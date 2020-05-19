@@ -1,7 +1,6 @@
 import { LoggerService } from './../../../../services/logger/logger.service';
-import { CommonService } from 'src/app/services/common/common.service';
 import { NetworkBoostService } from './../../../../services/gaming/gaming-networkboost/networkboost.service';
-import { Component, OnInit, Input, Output, EventEmitter, OnChanges, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 import { isUndefined } from 'util';
 
 @Component({
@@ -9,7 +8,7 @@ import { isUndefined } from 'util';
 	templateUrl: './networkboost-add-apps.component.html',
 	styleUrls: ['./networkboost-add-apps.component.scss']
 })
-export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy {
+export class NetworkboostAddAppsComponent implements OnInit, OnChanges{
 	loading = true;
 	runningList: any = [];
 	noAppsRunning = false;
@@ -18,7 +17,6 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterVie
 	ariaLabel = 'gaming.narrator.networkBoost.addApps.addAppsTitle';
 	statusAskAgain: boolean;
 	public isChecked: any = [];
-	noRunningInterval: any;
 	@Input() showAppsModal: boolean;
 	@Input() addedApps = 0;
 	maxAppsCount = 5;
@@ -27,17 +25,10 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterVie
 
 	ngOnInit() {
 		this.refreshNetworkBoostList();
+	}
 
-	}
-	ngAfterViewInit() {
-	}
 	ngOnChanges(changes: any) {
 		this.runningList.push({ iconName: '', processDescription: '', processPath: '' });
-	}
-	ngOnDestroy() {
-		if (this.noRunningInterval) {
-			clearInterval(this.noRunningInterval);
-		}
 	}
 
 	async onValueChange(event: any, i: number, item: any = {}) {
@@ -97,24 +88,25 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterVie
 		} catch (error) {
 			this.loading = false;
 			this.noAppsRunning = true;
-			this.focusElement('gaming_networkboost_running_applist');
+			this.focusElement();
 			this.loggerService.error('networkboost-add-apps.component => ERROR in refreshNetworkBoostList()', error);
 		} finally {
-			setTimeout(() => {
-				this.focusElement('gaming_networkboost_running_applist');
-			}, 2);
+			this.focusElement();
 		}
 	}
 
-	focusElement(id) {
-		if (document.getElementById(id)) {
-			document.getElementById(id).focus();
-		}
+	focusElement() {
+		setTimeout(() => {
+			const modal = document.getElementsByClassName('gaming-popup-window')[0] as HTMLElement;
+			if (modal) {
+				modal.focus();
+			}
+		}, 2);
 	}
 
 	closeModal(action: boolean) {
 		this.closeAddAppsModal.emit(action);
-		this.focusElement('main-wrapper');
+		document.getElementById('main-wrapper').focus();
 	}
 
 	runappKeyup(event, i) {
@@ -124,23 +116,17 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterVie
 			}
 			if (Number(this.addedApps) === 5) {
 				if (!this.checkApps(i)) {
-					this.focusClose();
+					this.focusElement();
 				}
 
 			} else {
 				if (i === this.runningList.length - 1) {
-					this.focusClose();
+					this.focusElement();
 				}
 			}
 		}
 	}
 
-	focusClose() {
-		setTimeout(() => {
-		 const modal = document.getElementsByClassName('networkboost_close_add_apps')[0] as HTMLElement;
-		 modal.focus();
-		}, 2);
-	}
 	checkApps(i) {
 		let isShow = false;
 		this.runningList.forEach((e, index) => {
@@ -154,10 +140,7 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterVie
 
 	checkFocus(event) {
 		if (this.noAppsRunning && event.which === 9) {
-			this.noRunningInterval = setInterval(() => {
-			 const modal = document.getElementsByClassName('networkboost_close_add_apps')[0] as HTMLElement;
-		   modal.focus();
-			}, 1);
+			this.focusElement();
 		}
 	}
 }

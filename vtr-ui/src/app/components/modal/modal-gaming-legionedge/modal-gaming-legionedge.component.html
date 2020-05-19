@@ -1,6 +1,6 @@
-<div class="gaming-help-popup">
+<div class="gaming-help-popup gaming-popup-window" role="none" tabindex="1" attr.aria-label="{{ 'gaming.dashboard.device.legionEdge.helpPopup.title' | translate }} window">
 	<div class="modal-header">
-		<div class="modal-title" tabindex="-1" aria-label="Legion Edge Help">
+		<div class="modal-title" tabindex="-1">
 			<img tabindex="-1" class="gaming-header-image" src="assets/images/gaming/legionEdge.png" _ngcontent-c6="" *ngIf="!liteGaming">
 			<img tabindex="-1" class="gaming-header-image" src="assets/images/gaming/ideaCentre@2x.png" _ngcontent-c6="" *ngIf="liteGaming && desktopMachine">
 			<img tabindex="-1" class="gaming-header-image" src="assets/images/gaming/ideaPad@2x.png" _ngcontent-c6="" *ngIf="liteGaming && !desktopMachine">
@@ -10,8 +10,8 @@
 		</button>
 	</div>
 	<div class="modal-body" tabindex="-1">
-		<div class="innerContent" tabindex="1" aria-describedby="help_dialog" role="dialog"
-			aria-labelledby="help_dialog" aria-modal="true" id="help_dialog" aria-label="Legion Edge help window">
+		<div class="innerContent" tabindex="1" aria-describedby="help_dialog"
+			aria-labelledby="help_dialog" aria-modal="true" id="help_dialog">
 			<p [innerHTML]="'gaming.dashboard.device.legionEdgeModal.line1' | translate"></p>
 			<p [innerHTML]="'gaming.dashboard.device.legionEdgeModal.line2' | translate"></p>
 			<p [innerHTML]="'gaming.dashboard.device.legionEdgeModal.line3' | translate"></p>

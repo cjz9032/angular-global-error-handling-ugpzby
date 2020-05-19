@@ -421,5 +421,5 @@
 </vtr-ui-smart-performance-scanning>
 <vtr-ui-smart-performance-scan-summary *ngIf="(isScanningCompleted || isSubscribed) && !isScanning "
 	[hasSubscribedScanCompleted]="hasSubscribedScanCompleted" [inputIsScanningCompleted]="showSubscribersummary"
-	(backToScan)="changeScanEvent()" [rating]="rating" [tune]="tune" [boost]="boost" [secure]="secure">
+	(backToScan)="changeScanEvent()" (backToNonSubscriber)="changeSummaryToHome()" [rating]="rating" [tune]="tune" [boost]="boost" [secure]="secure">
 </vtr-ui-smart-performance-scan-summary>

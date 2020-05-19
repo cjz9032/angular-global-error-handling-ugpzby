@@ -103,7 +103,7 @@
 															metricsItem="smartPerformance.subscribeModal"
 															metricsEvent="ItemClick"
 															metricsParent="pages.support.smartPerformance"
-															(click)=openSubscribeModal()>{{'smartPerformance.scanCompletePage.signupRepairButton' |translate }}</button>
+															(click)=backToNonSubScriberHome()>{{'smartPerformance.scanCompletePage.signupRepairButton' |translate }}</button>
 														<!-- <div class="desc col pl-5">
 															<p
 																[innerHTML]="'smartPerformance.scanCompletePage.monthlyPricing' |translate">
@@ -132,7 +132,7 @@
 																<b>{{'smartPerformance.subscriberScanHomePage.mostRecent' |translate }}</b><br>
 																{{mostRecentScan}}
 															</div>
-															<div class="desc desc2 col-auto">
+															<div class="desc desc2 col-auto" *ngIf="enableNextText">
 																<b>{{'smartPerformance.subscriberScanHomePage.nextScheduled' |translate }}</b><br>
 																{{nextScheduleScan}}
 															</div>
@@ -281,9 +281,9 @@
 																			</div>
 																		</div>
 																		<div class="col date-picker">
-																			<ngb-datepicker *ngIf="isFromDate" [(ngModel)]="selectedfromDate" [displayMonths]="displayMonths" [navigation] = "navigation" [maxDate]="maxDate"
+																			<ngb-datepicker *ngIf="isFromDate" [(ngModel)]="selectedfromDate" [displayMonths]="displayMonths" [navigation] = "navigation" [maxDate]="(maxDate && selectedTodate)" [minDate]="minDate"
 																				(select)="onDateSelected()"></ngb-datepicker>
-																			<ngb-datepicker *ngIf="!isFromDate" [(ngModel)]="selectedTodate" [displayMonths]="displayMonths" [navigation] = "navigation" [maxDate]="maxDate"
+																			<ngb-datepicker *ngIf="!isFromDate" [(ngModel)]="selectedTodate" [displayMonths]="displayMonths" [navigation] = "navigation" [maxDate]="maxDate" [minDate]="(minDate && selectedfromDate)"
 																				(select)="onDateSelected()"></ngb-datepicker>
 																		</div>
 																	</div>
