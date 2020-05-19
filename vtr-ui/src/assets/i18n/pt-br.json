@@ -1198,14 +1198,14 @@
                         "desc3_1": "Alguns dos modos podem ser ajustados automaticamente em uma gama mais ampla de desempenho com base em sua atividade. Para desativar o modo automático, pressione Fn + T."
                     },
                     "dytc61": {
-                        "title1": "Quiet mode(only for on battery mode)",
-                        "desc1": "The slider is on the far left. Both fan speed and performance are low for a cooler, quieter computer and the best battery life.",
-                        "title2": "Balanced mode",
-                        "desc2": "The slider is on the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
-                        "title3": "Performance mode",
-                        "desc3": "The slider is on the center or center right. Both fan speed and surface temperature are high.",
-                        "title4": "Ultra-performance mode",
-                        "desc4": "The slider is far right, providing ultra-high performance with bigger noise and higher surface temperature."
+                        "title1": "Modo silencioso (apenas no modo bateria)",
+                        "desc1": "O controle deslizante está na extremidade à esquerda. A velocidade e o desempenho do ventilador são diminuídos para oferecer um computador mais frio e silencioso e uma melhor vida útil da bateria.",
+                        "title2": "Modo equilibrado",
+                        "desc2": "O controle deslizante está à esquerda ou centralizado à esquerda. A velocidade e desempenho do ventilador são equilibrados dinamicamente para oferecer uma melhor experiência.",
+                        "title3": "Modo de desempenho",
+                        "desc3": "O controle deslizante está no centro ou centralizado à direita. A velocidade do ventilador e a temperatura da superfície estão altas.",
+                        "title4": "Modo de ultradesempenho",
+                        "desc4": "O controle deslizante está na extremidade à direita, proporcionando desempenho ultra-alto com ruído maior e temperatura de superfície mais alta."
                     }
                 },
                 "powerSettings": {
@@ -3763,7 +3763,9 @@
                 "q3": "Was the scan easy to use?",
                 "q4": "Happy about the fixes we did?",
                 "q5": "Do you see value for money? ",
-                "q6": "Will you refer it to your friends and family?"
+                "q6": "Will you refer it to your friends and family?",
+                "q7": "How likely are you to continue paying for the Smart Performance feature?",
+                "q8": "Overall how satisfied are you with the Smart Performance feature?"
             },
             "rating": {
                 "r1": "Hate it",
@@ -3777,7 +3779,11 @@
                 "r9": "No way",
                 "r10": "Looks worthy",
                 "r11": "Not so sure",
-                "r12": "Absolutely yes"
+                "r12": "Absolutely yes",
+                "r13": "Not at all likely",
+                "r14": "Very Likely",
+                "r15": "Not at all satisfied",
+                "r16": "Very Satisfied"
             },
             "commentTip": "Shout what you love and whisper what you hate.",
             "comments": "Please leave your comments here..."

@@ -32,7 +32,7 @@
         metricsParent="pages.support.smartPerformance">
         {{'smartPerformance.subscriptionDetails.manageSubscription' |translate }}
     </a> -->
-    <a *ngIf="!isSubscribed" class="link-text" (click)=openSubscribeModal() 
+    <a *ngIf="!isSubscribed" class="link-text" (click)=openSubscribeModal(true) 
         vtrMetrics
         metricsItem="btn.manageSubBeta"
         metricsEvent="FeatureClick"

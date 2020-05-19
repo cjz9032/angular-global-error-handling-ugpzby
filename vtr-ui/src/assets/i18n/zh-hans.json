@@ -1198,14 +1198,14 @@
                         "desc3_1": "有些模式可以根据您的活动在更广泛的性能范围内进行自动调节。要禁用自动模式，请按 Fn+ T。"
                     },
                     "dytc61": {
-                        "title1": "Quiet mode(only for on battery mode)",
-                        "desc1": "The slider is on the far left. Both fan speed and performance are low for a cooler, quieter computer and the best battery life.",
-                        "title2": "Balanced mode",
-                        "desc2": "The slider is on the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
-                        "title3": "Performance mode",
-                        "desc3": "The slider is on the center or center right. Both fan speed and surface temperature are high.",
-                        "title4": "Ultra-performance mode",
-                        "desc4": "The slider is far right, providing ultra-high performance with bigger noise and higher surface temperature."
+                        "title1": "安静模式（仅适用于电池模式）",
+                        "desc1": "滑块位于最左边。风扇速度和性能将降低，以使计算机温度更低、更安静，并且可获得最佳的电池使用时间。",
+                        "title2": "平衡模式",
+                        "desc2": "滑块位于左边或中央偏左的位置。以动态方式平衡风扇速度和性能以获得最佳体验。",
+                        "title3": "性能模式",
+                        "desc3": "滑块位于中央或中央偏右的位置。风扇速度和表面温度都较高。",
+                        "title4": "超性能模式",
+                        "desc4": "滑块位于最右边，可提供超高性能，伴随更大的噪音和更高的表面温度。"
                     }
                 },
                 "powerSettings": {
@@ -3763,7 +3763,9 @@
                 "q3": "Was the scan easy to use?",
                 "q4": "Happy about the fixes we did?",
                 "q5": "Do you see value for money? ",
-                "q6": "Will you refer it to your friends and family?"
+                "q6": "Will you refer it to your friends and family?",
+                "q7": "How likely are you to continue paying for the Smart Performance feature?",
+                "q8": "Overall how satisfied are you with the Smart Performance feature?"
             },
             "rating": {
                 "r1": "Hate it",
@@ -3777,7 +3779,11 @@
                 "r9": "No way",
                 "r10": "Looks worthy",
                 "r11": "Not so sure",
-                "r12": "Absolutely yes"
+                "r12": "Absolutely yes",
+                "r13": "Not at all likely",
+                "r14": "Very Likely",
+                "r15": "Not at all satisfied",
+                "r16": "Very Satisfied"
             },
             "commentTip": "Shout what you love and whisper what you hate.",
             "comments": "Please leave your comments here..."

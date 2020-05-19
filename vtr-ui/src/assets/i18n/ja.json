@@ -1198,14 +1198,14 @@
                         "desc3_1": "一部のモードでは、動作に基づいてより広範にパフォーマンスを自動調整できます。自動モードを無効にするには、Fn+ T を押します。"
                     },
                     "dytc61": {
-                        "title1": "Quiet mode(only for on battery mode)",
-                        "desc1": "The slider is on the far left. Both fan speed and performance are low for a cooler, quieter computer and the best battery life.",
-                        "title2": "Balanced mode",
-                        "desc2": "The slider is on the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
-                        "title3": "Performance mode",
-                        "desc3": "The slider is on the center or center right. Both fan speed and surface temperature are high.",
-                        "title4": "Ultra-performance mode",
-                        "desc4": "The slider is far right, providing ultra-high performance with bigger noise and higher surface temperature."
+                        "title1": "静音モード (バッテリー・モードのみ)",
+                        "desc1": "スライダーを左端に移動します。コンピューターの冷却と静音、およびバッテリー寿命を最長にするために、ファンの速度とパフォーマンスがともに低下します。",
+                        "title2": "バランス・モード",
+                        "desc2": "スライダーを左または中央左に移動します。最適なエクスペリエンスのために、ファンの速度とパフォーマンスが動的にバランスされます。",
+                        "title3": "パフォーマンス・モード",
+                        "desc3": "スライダーを中央または中央右に移動します。ファンの速度と表面温度がともに高くなります。",
+                        "title4": "ウルトラ・パフォーマンス・モード",
+                        "desc4": "スライダーを右端に移動すると、ノイズが大きくなって表面温度が高くなりますが、超高パフォーマンスで動作します。"
                     }
                 },
                 "powerSettings": {
@@ -1231,7 +1231,7 @@
                     "title": "Lenovo Vantage ツールバー",
                     "vantageToolbar": {
                         "title": "Lenovo Vantage ツールバーとプレミアム設定",
-                        "description": "Lenovo Vantage ツールバーを Windows のタスクバーに固定すると、最も頻繁に使用される設定に簡単にアクセスしたり、プレミアム・サービスやアップデートを入手したりできます。",
+                        "description": "Lenovo Vantage ツールバーを Windows のタスク バーに固定すると、最も頻繁に使用される設定に簡単にアクセスしたり、プレミアム・サービスやアップデートを入手したりできます。",
                         "hint": "画像のオプションは、マシンの容量によって異なります。たとえば、バックライト設定をサポートしているマシンもあれば、サポートしていないマシンもあります。"
                     }
                 },
@@ -3763,7 +3763,9 @@
                 "q3": "Was the scan easy to use?",
                 "q4": "Happy about the fixes we did?",
                 "q5": "Do you see value for money? ",
-                "q6": "Will you refer it to your friends and family?"
+                "q6": "Will you refer it to your friends and family?",
+                "q7": "How likely are you to continue paying for the Smart Performance feature?",
+                "q8": "Overall how satisfied are you with the Smart Performance feature?"
             },
             "rating": {
                 "r1": "Hate it",
@@ -3777,7 +3779,11 @@
                 "r9": "No way",
                 "r10": "Looks worthy",
                 "r11": "Not so sure",
-                "r12": "Absolutely yes"
+                "r12": "Absolutely yes",
+                "r13": "Not at all likely",
+                "r14": "Very Likely",
+                "r15": "Not at all satisfied",
+                "r16": "Very Satisfied"
             },
             "commentTip": "Shout what you love and whisper what you hate.",
             "comments": "Please leave your comments here..."

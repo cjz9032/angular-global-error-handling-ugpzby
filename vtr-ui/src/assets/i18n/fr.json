@@ -1198,14 +1198,14 @@
                         "desc3_1": "Certains modes peuvent être réglés automatiquement sur une gamme de performances plus vaste en fonction de votre activité. Pour désactiver le mode automatique, appuyez sur les touches Fn+ T."
                     },
                     "dytc61": {
-                        "title1": "Quiet mode(only for on battery mode)",
-                        "desc1": "The slider is on the far left. Both fan speed and performance are low for a cooler, quieter computer and the best battery life.",
-                        "title2": "Balanced mode",
-                        "desc2": "The slider is on the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
-                        "title3": "Performance mode",
-                        "desc3": "The slider is on the center or center right. Both fan speed and surface temperature are high.",
-                        "title4": "Ultra-performance mode",
-                        "desc4": "The slider is far right, providing ultra-high performance with bigger noise and higher surface temperature."
+                        "title1": "Mode silencieux (mode batterie uniquement)",
+                        "desc1": "Le curseur est placé à l'extrême gauche. La vitesse du ventilateur et les performances sont réduites pour permettre à l'ordinateur d'être plus froid, plus silencieux et pour une meilleure durée de vie de la batterie.",
+                        "title2": "Mode équilibré",
+                        "desc2": "Le curseur se trouve à gauche ou est centré à gauche. La vitesse du ventilateur et les performances sont réglées de manière dynamique pour optimiser les performances.",
+                        "title3": "Mode de performance",
+                        "desc3": "Le curseur se trouve au centre ou est centré à droite. La vitesse du ventilateur et la température de surface sont élevées.",
+                        "title4": "Mode hautes performances",
+                        "desc4": "Le curseur est placé à l'extrême droite, ce qui permet de hautes performances avec un système plus bruyant et une température de surface plus élevée."
                     }
                 },
                 "powerSettings": {
@@ -3763,7 +3763,9 @@
                 "q3": "Was the scan easy to use?",
                 "q4": "Happy about the fixes we did?",
                 "q5": "Do you see value for money? ",
-                "q6": "Will you refer it to your friends and family?"
+                "q6": "Will you refer it to your friends and family?",
+                "q7": "How likely are you to continue paying for the Smart Performance feature?",
+                "q8": "Overall how satisfied are you with the Smart Performance feature?"
             },
             "rating": {
                 "r1": "Hate it",
@@ -3777,7 +3779,11 @@
                 "r9": "No way",
                 "r10": "Looks worthy",
                 "r11": "Not so sure",
-                "r12": "Absolutely yes"
+                "r12": "Absolutely yes",
+                "r13": "Not at all likely",
+                "r14": "Very Likely",
+                "r15": "Not at all satisfied",
+                "r16": "Very Satisfied"
             },
             "commentTip": "Shout what you love and whisper what you hate.",
             "comments": "Please leave your comments here..."

@@ -1987,7 +1987,7 @@ body.focus-enable{
 		vtr-page-lightingcustomize,vtr-page-macrokey,
 		vtr-page-networkboost,vtr-page-autoclose,vtr-page-device-gaming{
 		.remove-app,li.add-icon div,.delete-btn,
-		.help-box button,vtr-ui-toggle button{
+		.help-box button,vtr-ui-toggle button,.gaming-popup-window{
 			&:focus{
 			@include outline-blue-gaming;
 			}
@@ -2287,6 +2287,11 @@ button {
 	}
 }
 .is-gaming{
+.gaming-popup-window {
+	&:focus{
+		outline: 0;
+	}
+}
 vtr-page-lightingcustomize,vtr-page-macrokey,
 vtr-page-networkboost,vtr-page-autoclose,
 vtr-page-device-gaming {

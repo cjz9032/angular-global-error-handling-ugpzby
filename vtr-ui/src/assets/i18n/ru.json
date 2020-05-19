@@ -1198,14 +1198,14 @@
                         "desc3_1": "Некоторые режимы могут автоматически изменяться в широком диапазоне производительности в зависимости от вашей активности. Чтобы выключить автоматический режим, нажмите сочетание клавиш Fn+ T."
                     },
                     "dytc61": {
-                        "title1": "Quiet mode(only for on battery mode)",
-                        "desc1": "The slider is on the far left. Both fan speed and performance are low for a cooler, quieter computer and the best battery life.",
-                        "title2": "Balanced mode",
-                        "desc2": "The slider is on the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
-                        "title3": "Performance mode",
-                        "desc3": "The slider is on the center or center right. Both fan speed and surface temperature are high.",
-                        "title4": "Ultra-performance mode",
-                        "desc4": "The slider is far right, providing ultra-high performance with bigger noise and higher surface temperature."
+                        "title1": "Тихий режим (только в режиме работы от аккумулятора)",
+                        "desc1": "Ползунок расположен в крайнем левом положении. Скорость вращения вентиляторов и производительность снижены, чтобы сократить уровень нагрева и шума компьютера, а также увеличить время работы аккумулятора.",
+                        "title2": "Сбалансированный режим",
+                        "desc2": "Ползунок расположен слева или по центру слева. Скорость вращения вентиляторов и производительность динамически оптимизируются для максимального комфорта использования.",
+                        "title3": "Режим производительности",
+                        "desc3": "Ползунок расположен в центре или по центру справа. Скорость вращения вентиляторов и температура поверхности увеличены.",
+                        "title4": "Режим высокой производительности",
+                        "desc4": "Ползунок находится в крайнем правом положении. Производительность находится на максимальном уровне, а уровень шума и температура поверхности увеличены."
                     }
                 },
                 "powerSettings": {
@@ -3763,7 +3763,9 @@
                 "q3": "Was the scan easy to use?",
                 "q4": "Happy about the fixes we did?",
                 "q5": "Do you see value for money? ",
-                "q6": "Will you refer it to your friends and family?"
+                "q6": "Will you refer it to your friends and family?",
+                "q7": "How likely are you to continue paying for the Smart Performance feature?",
+                "q8": "Overall how satisfied are you with the Smart Performance feature?"
             },
             "rating": {
                 "r1": "Hate it",
@@ -3777,7 +3779,11 @@
                 "r9": "No way",
                 "r10": "Looks worthy",
                 "r11": "Not so sure",
-                "r12": "Absolutely yes"
+                "r12": "Absolutely yes",
+                "r13": "Not at all likely",
+                "r14": "Very Likely",
+                "r15": "Not at all satisfied",
+                "r16": "Very Satisfied"
             },
             "commentTip": "Shout what you love and whisper what you hate.",
             "comments": "Please leave your comments here..."

@@ -47,6 +47,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 	public isAutoTransitionEnabled = false;
 	public autoTransitionIsReadMore = false;
 	public smartSettingsCapability = false;
+	public showMoreLessDytc6Clicked = false;
 	private isMobileWorkstation = false;
 
 	private readonly batterySavingModeId = 'quiteBatterySaving';
@@ -87,6 +88,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 				this.showPowerSmartSettings(true);
 			}
 		}
+
+
 	}
 
 
@@ -212,6 +215,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 
 	public showMoreDytc6() {
 		this.isCollapsed = !this.isCollapsed;
+		this.showMoreLessDytc6Clicked = true;
 	}
 
 	// Start Power Smart Settings for IdeaPad

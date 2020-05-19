@@ -88,7 +88,7 @@
 															</div>
 														</div>
 													</div>
-													
+
 												</div>
 											</div>
 											<div class="row">
@@ -103,7 +103,7 @@
 															metricsItem="smartPerformance.subscribeModal"
 															metricsEvent="ItemClick"
 															metricsParent="pages.support.smartPerformance"
-															(click)=openSubscribeModal()>{{'smartPerformance.scanCompletePage.signupRepairButton' |translate }}</button>
+															(click)=backToNonSubScriberHome()>{{'smartPerformance.scanCompletePage.signupRepairButton' |translate }}</button>
 														<!-- <div class="desc col pl-5">
 															<p
 																[innerHTML]="'smartPerformance.scanCompletePage.monthlyPricing' |translate">
@@ -122,19 +122,20 @@
 															vtrMetrics metricsItem="smartPerformance.scanNow"
 															metricsEvent="FeatureClick"
 															metricsParent="pages.support.smartPerformance">{{'smartPerformance.subscriberScanHomePage.scanNow' |translate }}</button>
-															
+
 															<button *ngIf="inputIsScanningCompleted" class="action-button" (click)="BackToSummary()"
 															vtrMetrics metricsItem="smartPerformance.scanNow"
 															metricsEvent="FeatureClick"
 															metricsParent="pages.support.smartPerformance">{{'smartPerformance.subscriberScanHomePage.backToHome' |translate }}</button>
-
-														<div class="desc desc1">
-															<b>{{'smartPerformance.subscriberScanHomePage.mostRecent' |translate }}</b><br>
-															{{mostRecentScan}}
-														</div>
-														<div class="desc desc2">
-															<b>{{'smartPerformance.subscriberScanHomePage.nextScheduled' |translate }}</b><br>
-															{{nextScheduleScan}}
+														<div class="desc-block">
+															<div class="desc desc1 col-auto">
+																<b>{{'smartPerformance.subscriberScanHomePage.mostRecent' |translate }}</b><br>
+																{{mostRecentScan}}
+															</div>
+															<div class="desc desc2 col-auto" *ngIf="enableNextText">
+																<b>{{'smartPerformance.subscriberScanHomePage.nextScheduled' |translate }}</b><br>
+																{{nextScheduleScan}}
+															</div>
 														</div>
 													</div>
 													<div  *ngIf="inputIsScanningCompleted" class="summary-block w-100 pt-3 mb-5">
@@ -201,7 +202,7 @@
 															</p>
 														</div>
 														<div class="summary-period">
-															<ul class="list-group list-group-horizontal">															
+															<ul class="list-group list-group-horizontal">
 																<li class="list-group-item"
 																	*ngFor="let item of menuItems;let ind=index"
 																	(click)="scanSummaryTime(ind)"
@@ -243,7 +244,7 @@
 																	[ngClass]="{'link-active': year.displayName == annualYear}">
 																	{{year.displayName}}
 																	<br>
-																</a>																
+																</a>
 															</div> -->
 
 															 <!-- Quarterly option is hidden for current 3.3 release  -->
@@ -254,7 +255,7 @@
 																		[ngClass]="{'link-active':menu.key == quarterlyMonth.key}">{{menu.displayName}}</a>
 																</div>
 															</div> -->
-	
+
 														<!-- </div> -->
 															<div *ngIf="isDropDownOpen && tabIndex === 1" class="calender-dropDown">
 																<div *ngIf="tabIndex === 1">
@@ -271,7 +272,7 @@
 																				<div class="col-1">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtTo' |translate }}</div>
 																				<div class="col-auto"><input type='text'  [ngModel]="displayToDate"
 																						(click)="selectToDate()" readonly /></div>
-	
+
 																			</div>
 																			<div class="row">
 																				<div class="col-3"></div>
@@ -280,9 +281,9 @@
 																			</div>
 																		</div>
 																		<div class="col date-picker">
-																			<ngb-datepicker *ngIf="isFromDate" [(ngModel)]="selectedfromDate" [displayMonths]="displayMonths" [navigation] = "navigation" [maxDate]="maxDate"
+																			<ngb-datepicker *ngIf="isFromDate" [(ngModel)]="selectedfromDate" [displayMonths]="displayMonths" [navigation] = "navigation" [maxDate]="(maxDate && selectedTodate)" [minDate]="minDate"
 																				(select)="onDateSelected()"></ngb-datepicker>
-																			<ngb-datepicker *ngIf="!isFromDate" [(ngModel)]="selectedTodate" [displayMonths]="displayMonths" [navigation] = "navigation" [maxDate]="maxDate"
+																			<ngb-datepicker *ngIf="!isFromDate" [(ngModel)]="selectedTodate" [displayMonths]="displayMonths" [navigation] = "navigation" [maxDate]="maxDate" [minDate]="(minDate && selectedfromDate)"
 																				(select)="onDateSelected()"></ngb-datepicker>
 																		</div>
 																	</div>
@@ -306,14 +307,14 @@
 																<div class="box-title d-flex  justify-content-between">
 																	<h5>{{'smartPerformance.tunePCPerformance.summaryTitle' |translate }}</h5>
 																	<div class="icon icon-performance"></div>
-																</div>	
+																</div>
 																<div class="value d-flex justify-content-center">
 																	{{historyRes.tuneCount || 0}} <span>{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}</span>
 																</div>
 																<p class="w-100 text-center">{{formatMemorySize(historyRes.tuneSize)}} <span class="mr-1">{{sizeExtension}}</span> {{'smartPerformance.subscriberScanHomePage.scanSummary.summaryCaption' |translate }}
 																</p>
 															</div>
-															
+
 														</div>
 													</div>
 													<div *ngIf="!isLoading" class="boost">
@@ -327,7 +328,7 @@
 																<p class="w-100 text-center">{{formatMemorySize(historyRes.boostSize)}}  <span class="mr-1">{{sizeExtension}}</span> {{'smartPerformance.subscriberScanHomePage.scanSummary.summaryCaption' |translate }}
 																</p>
 															</div>
-															
+
 														</div>
 													</div>
 													<div *ngIf="!isLoading" class="secure">
@@ -337,16 +338,16 @@
 																	<h5>{{'smartPerformance.malwareSecurity.summaryTitle' |translate }}</h5>
 																	<span class="icomoon icomoon-malware"></span>
 																</div>
-																
+
 																<div class="value d-flex justify-content-center">{{historyRes.secure || 0}} <span>{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}</span></div>
 																<!-- <p>{{'smartPerformance.subscriberScanHomePage.scanSummary.secureSummary' |translate }}</p> -->
 															</div>
-															
+
 														</div>
 													</div>
 												</div>
 											</div>
-											
+
 										</div>
 									</div>
 								</div>
@@ -400,8 +401,11 @@
 																						<b>{{item.scanruntime | date: 'MM/dd/yyyy'}}</b>
 																						<span> -
 																							{{item.scanruntime | date: 'h:mma'}}</span>
+																							<span class="ml-1" *ngIf="item.type.toUpperCase() == 'MS'">({{'smartPerformance.manual' |translate }})</span>
+																							<span class="ml-1" *ngIf="item.type.toUpperCase() == 'SS'">({{'smartPerformance.auto' |translate }})</span>
+
 																					</div>
-																					<div class="col-2">{{item.fixcount}} Fixes 
+																					<div class="col-2">{{item.fixcount}} Fixes
 																					</div>
 																					<div class="col-2" *ngIf="item.status === 'C'">
 																						<div class="icon-check">
@@ -452,11 +456,11 @@
 																								</fa-icon>
 																							</div>
 																						</div>
-		
+
 																						<div class="row pl-0 pr-0">
 																							<div class="col-1">&nbsp;</div>
 																							<div class="scan-items col-7">
-																								<div class="row">																									
+																								<div class="row">
 																									<div class="icon icon-internet-performance">
 																									</div>
 																									{{'smartPerformance.boostInternetPerformance.summaryTitle' |translate }}

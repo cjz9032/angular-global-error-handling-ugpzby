@@ -13,6 +13,8 @@ import { v4 as uuid } from 'uuid';
 import { formatDate } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
 import { ModalSmartPerformanceFeedbackComponent } from '../../modal/modal-smart-performance-feedback/modal-smart-performance-feedback.component';
+import { Router } from '@angular/router';
+import { enumSmartPerformance } from 'src/app/enums/smart-performance.enum';
 
 @Component({
 	selector: 'vtr-ui-smart-performance-scan-summary',
@@ -28,7 +30,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		private supportService: SupportService,
 		public smartPerformanceService: SmartPerformanceService,
 		public shellServices: VantageShellService,
-		private translate: TranslateService
+		private translate: TranslateService,
+		private router: Router
 	) { }
 	public sizeExtension: string;
 	public isLoading = false;
@@ -56,6 +59,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	@Input() boost = 0;
 	@Input() secure = 0;
 	@Input() rating = 0;
+
 	public tabIndex: number;
 	public toggleValue: number;
 	public currentYear: any;
@@ -89,6 +93,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	displayToDate: any;
 	customDate: any;
 	@Output() backToScan = new EventEmitter();
+	@Output() backToNonSubscriber = new EventEmitter();
 	// @Output() sendScanData = new EventEmitter();
 	@Output() sendScanData: EventEmitter<any> = new EventEmitter();
 	// scan settings
@@ -104,7 +109,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	frequencyValue = 1;
 	dayValue = 0;
 	dateValue = 0;
-	 
+	enableNextText: boolean = true
 	scanScheduleDate: any;
 	issueCount: any = 0;
 	nextScheduleScan: any;
@@ -114,8 +119,10 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	public scanData: any = {};
 	systemSerialNumber: any;
 	displayMonths:number = 1;
-    navigation:string = 'arrows';
+	navigation:string = 'arrows';
+	public minDate: any;
 	public maxDate: any;
+	spEnum:any = enumSmartPerformance;
 	// tuneindividualIssueCount: any = 0;
 	// boostindividualIssueCount: any = 0;
 	// secureindividualIssueCount: any = 0;
@@ -124,7 +131,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		{
 			UUID: uuid(),
 			StartDate: formatDate(new Date(), 'yyyy/MM/dd', 'en'),
-			EndDate: formatDate('2020/07/31', 'yyyy/MM/dd', 'en')
+			EndDate: formatDate(this.spEnum.SCHEDULESCANENDDATE, 'yyyy/MM/dd', 'en')
 		}
 	];
 	ngOnInit() {
@@ -148,20 +155,25 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.isDaySelectionEnable = false;
 		this.scanScheduleDate = this.selectedDate;
 		this.leftAnimator = '0%';
-		this.scanSummaryTime(0);
-
-		//  we are calling in ui-schedule scan component.
-		// if (this.isSubscribed) {
-		// 	this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
-		// }
-		// else {
-		// 	this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScan');
-		// }
-
+		if(this.isSubscribed){
+			this.scanSummaryTime(0);
+		}
+		
 		this.supportService.getMachineInfo().then(async (machineInfo) => {
 			this.systemSerialNumber = machineInfo.serialnumber;
 		});
 		this.initContentLoad();
+		
+		this.minDate = {
+			year: this.currentDate.getFullYear() - 1,
+			month: this.currentDate.getMonth() + 1,
+			day: this.currentDate.getDate() 
+		};
+		this.maxDate = {
+			year: this.currentDate.getFullYear(),
+			month: this.currentDate.getMonth() + 1,
+			day: this.currentDate.getDate()
+		};
 	}
 
 	getNextScanScheduleTime(scandate) {
@@ -205,8 +217,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.logger.info('ui-smart-performance-scan-summary.getNextScanRunTime', JSON.stringify(payload));
 		try {
 			const res: any = await this.smartPerformanceService.getNextScanRunTime(payload);
-
-			if (res != undefined) {
+			if(res.nextruntime) {
 				this.getNextScanScheduleTime(res.nextruntime);
 			}
 			this.logger.info('ui-smart-performance-scan-summary.getNextScanRunTime.then', JSON.stringify(res));
@@ -214,11 +225,6 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		} catch (err) {
 			this.logger.error('ui-smart-performance-scan-summary.getNextScanRunTime.then', err);
 		}
-		this.maxDate = {
-			year: this.currentDate.getFullYear(),
-			month: this.currentDate.getMonth() + 1,
-			day: this.currentDate.getDate()
-		};
 	}
 	// tslint:disable-next-line: use-lifecycle-interface
 	ngAfterViewInit() {
@@ -474,7 +480,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			const res: any = await this.smartPerformanceService.getHistory(
 				payload
 			);
-			this.logger.info('History Response', res);
+			this.logger.info('ui-smart-performance-scan-summary.getHistory', res);
 			if (res) {
 				this.isLoading = false;
 				this.historyRes = {
@@ -491,7 +497,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 				this.historyRes = {};
 			}
 		} catch (err) {
-			this.logger.error('History Response Error', err);
+			this.logger.error('Ui-smart-performance-scan-summary.getHistory Error', err);
 
 		}
 	}
@@ -509,7 +515,12 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		}
 	}
 	changeNextScanDateValue(nextScheduleScanEvent) {
-		// retrieved this event form ui-scan-schedule component.
+		// retrieved this event from ui-scan-schedule component.
+		if(!nextScheduleScanEvent) {
+			this.enableNextText = nextScheduleScanEvent;
+			return;
+		}
+		this.enableNextText = nextScheduleScanEvent['nextEnable']
 		this.nextScheduleScan =  nextScheduleScanEvent['nextScanDate'] + ' at ' + nextScheduleScanEvent['nextScanHour'] + ':' + nextScheduleScanEvent['nextScanMin'] + ' ' + nextScheduleScanEvent['nextScanAMPM'];
 
 		// if (this.isSubscribed) {
@@ -716,6 +727,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			windowClass: 'smart-performance-feedback-Modal'
 		});
 	}
-
+	backToNonSubScriberHome(){
+		this.backToNonSubscriber.emit();
+	}
 
 }
