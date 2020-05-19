@@ -4,7 +4,7 @@
 	[ngClass]="{'item-no-img': !item.Thumbnail, 'item-no-title': !item.Title}">
 	<div class="container-fluid">
 		<div class="row">
-			<a href="javascript:;"
+			<a role="link"
 				class="article-conetnt focus-with-border-radius"
 				tabindex="{{tabIndex}}"
 				vtrMetrics
@@ -60,8 +60,7 @@
 	[ngClass]="{'item-no-img': !item.FeatureImage, 'item-no-title': !item.Title}">
 	<div class="container-fluid">
 		<div class="row">
-			<a [attr.href]="item.ActionLink"
-				target="_blank"
+			<a role="link"
 				class="article-conetnt focus-with-border-radius"
 				vtrMetrics
 				id="{{'article-item-card-' + index}}"
