@@ -98,11 +98,12 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	};
 	private updatePreDevicePostureValue(preDevicePostureValue:  DeviceCondition[], devicePostureValue: DeviceCondition[]): DeviceCondition[] {
 		if(preDevicePostureValue.length <= devicePostureValue.length) return cloneDeep(devicePostureValue);
-		devicePostureValue.forEach((item, index) => {
-			if(item.name == preDevicePostureValue[index].name && item.vulnerable !== preDevicePostureValue[index].vulnerable) {
+		devicePostureValue.forEach((item) => {
+			let index = findIndex(preDevicePostureValue, {name: item.name});
+			if (preDevicePostureValue[index].vulnerable != item.vulnerable) {
 				preDevicePostureValue[index].vulnerable = item.vulnerable;
 			}
-		});
+		})
 		return cloneDeep(preDevicePostureValue);
 	};
 
