@@ -2094,7 +2094,7 @@
             "superResolution": {
                 "title": "Videófelbontás megnövelése",
                 "desc": "<p><label>Ez a funkció növeli a videók felbontását, és ezzel élvezetesebbé teszi a videók megtekintését. Különösen akkor hasznos, ha a videó felbontása alacsony.</label></p> <p><label>Ez a funkció befolyásolhatja az akkumulátor élettartamát és hőmérsékletét, továbbá zajt kelthet. Ne használja DC üzemmódban (a rendszer akkumulátorról üzemel). Ellenkező esetben felgyorsítja az energiafogyasztást és lerövidíti az akkumulátor élettartamát.</label></p>",
-                "tooltip": "<p>Ez a funkció kizárólag az alábbi videolejátszókkal működik:<br>Windows Media Player<br>Chrome-alapú lejátszó<br>Filmek+TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>A funkció PotPlayer és GOM Player lejátszókban való engedélyezésével kapcsolatban olvassa el a számítógéphez kapott felhasználói kézikönyvet.</p>",
+                "tooltip": "<p>Ez a funkció kizárólag az alábbi videolejátszókkal működik:<br>Windows Media Player<br>Chrome-alapú lejátszó<br>PotPlayer</p><p class='srTooltip'>A funkció PotPlayer lejátszóban való engedélyezésével kapcsolatban olvassa el a számítógéphez kapott felhasználói kézikönyvet.</p>",
                 "note": {
                     "description": "A funkció az alábbi esetekben nem működik:",
                     "description1": "A processzor hőmérséklete túl magas.",

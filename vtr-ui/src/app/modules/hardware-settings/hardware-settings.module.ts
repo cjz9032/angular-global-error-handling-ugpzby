@@ -101,6 +101,7 @@ import { SubpageDeviceSettingsPowerContainerComponent } from 'src/app/components
 import { BacklightThinkpadComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight-thinkpad/backlight-thinkpad.component';
 import { UiCustomSliderModule } from 'src/app/components/ui/ui-custom-slider/ui-custom-slider.module';
 import { AntiTheftComponent } from 'src/app/components/pages/page-smart-assist/anti-theft/anti-theft.component';
+import { SpinnerModule } from 'src/app/components/common/spinner/spinner.module';
 
 @NgModule({
 	declarations: [
@@ -168,7 +169,8 @@ import { AntiTheftComponent } from 'src/app/components/pages/page-smart-assist/a
 		SettingsPageLayoutModule,
 		BacklightModule,
 		UiCustomSliderModule,
-		PageSupportDetailModule
+		PageSupportDetailModule,
+		SpinnerModule
 	],
 	exports: [
 		CommonModule,
