@@ -19,9 +19,11 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col col-12 content">
-					<a [class.default-cursor]="isOfflineArm" tabindex="0"
+					<a [class.default-cursor]="isOfflineArm"
 						attr.aria-label="{{ item.Title | htmlText }}. {{ item.Description | htmlText }}"
-						[attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
+						role="link"
+						tabindex="0"
+						(keyup.enter)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 						(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 						vtrMetrics
 						id="{{containerCardId+'_doc_link'}}"
@@ -43,7 +45,7 @@
 							<div *ngIf="item.Title"
 								class="title text-four-ellipsis"
 								id="{{containerCardId+'-title'}}"
-								role="link"
+								role="text"
 								[title]=""
 								[innerHTML]="item.Title"
 								[ngbTooltip]="item.Title | htmlText"
@@ -53,7 +55,7 @@
 							<div *ngIf="item.Description"
 								class="caption text-two-ellipsis"
 								id="{{containerCardId+'-caption'}}"
-								role="link"
+								role="text"
 								[title]=""
 								[innerHtml]="item.Description"
 								[ngbTooltip]="item.Description | htmlText"
@@ -85,8 +87,10 @@
 			<div class="row">
 				<div class="col col-12 content">
 					<ng-container *ngIf="isOnline">
-						<a [attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
+						<a role="link"
+							tabindex="0"
 							attr.aria-label="{{ item.Title | htmlText }}. {{ item.Description | htmlText }}"
+							(keyup.enter)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 							(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 							vtrMetrics
 							id="{{containerCardId+'_link'}}"
@@ -105,11 +109,11 @@
 								class="title text-ellipsis"
 								[innerHtml]="item.Title"
 								id="{{containerCardId+'-title'}}"
-								role="link"></div>
+								role="text"></div>
 							<div *ngIf="item.Description"
 								class="caption text-two-ellipsis"
 								id="{{containerCardId+'-caption'}}"
-								role="link"
+								role="text"
 								[innerHtml]="item.Description"></div>
 							<div *ngIf="item.BrandImage || item.BrandName"
 								class="logo">
@@ -131,11 +135,11 @@
 								class="title text-ellipsis default-cursor"
 								[innerHtml]="item.Title"
 								id="{{containerCardId+'-title'}}"
-								role="link"></div>
+								role="text"></div>
 							<div *ngIf="item.Description text-two-ellipsis"
 								class="caption text-two-ellipsis default-cursor"
 								id="{{containerCardId+'-caption'}}"
-								role="link"
+								role="text"
 								[innerHtml]="item.Description"></div>
 							<div *ngIf="item.BrandImage || item.BrandName"
 								class="logo default-cursor">
@@ -160,8 +164,10 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col col-12 content">
-					<a [attr.tabindex]="deviceService.isGaming ? -1 : 0" [attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
+					<a [attr.tabindex]="deviceService.isGaming ? -1 : 0"
+						role="link"
 						attr.aria-label="{{ item.Title | htmlText }}"
+						(keyup.enter)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 						(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 						metricsItemCategory="highlight"
 						vtrMetrics
@@ -183,7 +189,7 @@
 								[title]=""
 								class="title text-three-ellipsis"
 								id="{{containerCardId+'-title'}}"
-								role="link"
+								role="text"
 								[innerHtml]="item.Title"
 								[ngbTooltip]="item.Title | htmlText"
 								tooltipClass="vtr-system-tooltip"
@@ -204,7 +210,9 @@
 			<a class="article-content"
 				[class.default-cursor]="isOfflineArm"
 				attr.aria-label="{{ item.Title | htmlText }}"
-				[attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
+				role="link"
+				tabindex="0"
+				(keyup.enter)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 				(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 				metricsItemCategory="article"
 				vtrMetrics
@@ -238,7 +246,7 @@
 								[style.margin-top.px]="containerCardArticle.clientWidth * 0"
 								[style.height.px]="containerCardArticle.clientWidth * 54 / 430"
 								[style.line-height.px]="containerCardArticle.clientWidth * 27 / 430"
-								role="link"
+								role="text"
 								[ngbTooltip]="item.Title | htmlText"
 								tooltipClass="vtr-system-tooltip"
 								container="body"
@@ -248,7 +256,7 @@
 								[style.line-height.px]="containerCardArticle.clientWidth * 27 / 430"
 								class="read-more">
 								<span class="link-label"
-									role="link"
+									role="text"
 									id="{{containerCardId+'-caption'}}"
 									[innerHTML]="item.Action"></span>
 								<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
@@ -268,7 +276,9 @@
 			<a class="article-content"
 				[class.default-cursor]="isOfflineArm"
 				attr.aria-label="{{ item.Title | htmlText }}"
-				[attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
+				role="link"
+				tabindex="0"
+				(keyup.enter)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 				(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 				metricsItemCategory="article"
 				vtrMetrics
@@ -302,7 +312,7 @@
 								[style.margin-top.px]="containerCardArticle.clientWidth * 13 / 436"
 								[style.height.px]="containerCardArticle.clientWidth * 54 / 430"
 								[style.line-height.px]="containerCardArticle.clientWidth * 27 / 430"
-								role="link"
+								role="text"
 								[ngbTooltip]="item.Title | htmlText"
 								tooltipClass="vtr-system-tooltip"
 								container="body"
@@ -312,7 +322,7 @@
 								[style.line-height.px]="containerCardArticle.clientWidth * 27 / 430"
 								class="read-more">
 								<span class="link-label"
-									role="link"
+									role="text"
 									id="{{containerCardId+'-caption'}}"
 									[innerHTML]="item.Action"></span>
 								<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
@@ -333,7 +343,8 @@
 			<div class="row">
 				<div class="col col-12 content">
 					<a tabindex="0"
-						[attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
+						role="link"
+						(keyup.enter)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 						(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 						target="_blank"
 						rel="noopener"
@@ -421,7 +432,7 @@
 								[title]=""
 								[innerHtml]="item.Title"
 								id="{{containerCardId+'-title'}}"
-								role="link"
+								role="text"
 								[ngbTooltip]="item.Title | htmlText"
 								tooltipClass="vtr-system-tooltip"
 								container="body"

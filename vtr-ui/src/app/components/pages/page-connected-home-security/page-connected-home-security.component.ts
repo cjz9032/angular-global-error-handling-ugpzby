@@ -6,7 +6,14 @@ import {
 	AfterViewInit
 } from '@angular/core';
 import {
-	EventTypes, ConnectedHomeSecurity, PluginMissingError, CHSAccountState, WifiSecurity, DevicePosture, CHSDeviceOverview
+	EventTypes, 
+	ConnectedHomeSecurity, 
+	PluginMissingError, 
+	CHSAccountState, 
+	WifiSecurity, 
+	DevicePosture, 
+	CHSDeviceOverview,
+	DeviceCondition
 } from '@lenovo/tan-client-bridge';
 import {
 	HomeSecurityAccount
@@ -32,7 +39,7 @@ import { HomeSecurityDevicePosture } from 'src/app/data-models/home-security/hom
 import { DeviceLocationPermission } from 'src/app/data-models/home-security/device-location-permission.model';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
-import { isEqual, pick } from 'lodash';
+import { isEqual, pick, cloneDeep, findIndex } from 'lodash';
 
 @Component({
 	selector: 'vtr-page-connected-home-security',
@@ -50,6 +57,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	allDevicesInfo: HomeSecurityAllDevice;
 	preDeviceOverview: CHSDeviceOverview;
 	homeSecurityDevicePosture: HomeSecurityDevicePosture;
+	preDevicePostureValue: DeviceCondition[] = [];
 	locationPermission: DeviceLocationPermission;
 	account: HomeSecurityAccount;
 	common: HomeSecurityCommon;
@@ -71,13 +79,36 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	};
 	devicePostureEventHandler = (devicePosture: DevicePosture) => {
 		if (devicePosture && devicePosture.value.length > 0) {
-			const cacheDevicePosture = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture);
-			this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(this.windowsVersionService, devicePosture, cacheDevicePosture, this.translateService);
-			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture, {
-				homeDevicePosture: this.homeSecurityDevicePosture.homeDevicePosture
-			});
+			if (this.devicePostureHasChange(this.preDevicePostureValue, devicePosture.value)) {
+				const cacheDevicePosture = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture);
+				this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(this.windowsVersionService, devicePosture, cacheDevicePosture, this.translateService);
+				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture, {
+					homeDevicePosture: this.homeSecurityDevicePosture.homeDevicePosture
+				});
+			}
 		}
 	};
+
+	private devicePostureHasChange(preDevicePostureValue: DeviceCondition[], newDevicePostureValue: DeviceCondition[]) : boolean {
+		let hasChange = false;
+		if(isEqual(preDevicePostureValue, newDevicePostureValue)) return false;
+		if (preDevicePostureValue.length <= newDevicePostureValue.length) {
+			this.preDevicePostureValue = cloneDeep(newDevicePostureValue);
+			hasChange = true;
+		}
+		else {
+			newDevicePostureValue.forEach((item) => {
+				let index = findIndex(preDevicePostureValue, {name: item.name});
+				if (preDevicePostureValue[index].vulnerable !== item.vulnerable) {
+					preDevicePostureValue[index].vulnerable = item.vulnerable;
+					hasChange = true;
+				}
+			});
+			if (hasChange) this.preDevicePostureValue = cloneDeep(preDevicePostureValue);
+		}
+		return hasChange;
+	}
+
 	chsEventHandler = (chs: ConnectedHomeSecurity) => {
 		if (chs.account) {
 			this.common = new HomeSecurityCommon(chs, this.isOnline, this.dialogService);
@@ -212,6 +243,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		}
 		const cacheDevicePosture = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture);
 		if (this.devicePosture && this.devicePosture.value.length > 0) {
+			this.preDevicePostureValue = cloneDeep(this.devicePosture.value);
 			this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(this.windowsVersionService, this.devicePosture, cacheDevicePosture, this.translateService);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture, {
 				homeDevicePosture: this.homeSecurityDevicePosture.homeDevicePosture

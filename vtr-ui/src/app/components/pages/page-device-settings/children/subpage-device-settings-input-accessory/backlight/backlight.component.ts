@@ -175,6 +175,7 @@ export class BacklightComponent implements OnInit, OnDestroy {
 			)
 			.subscribe(res => {
 				this.isSwitchChecked = res.value !== BacklightStatusEnum.OFF;
+				this.setActiveOption(res.value);
 				for (const modeItem of this.modes) {
 					modeItem.checked = res.value === modeItem.value;
 					modeItem.disabled = res.value === BacklightStatusEnum.DISABLED_OFF;
@@ -228,7 +229,7 @@ export class BacklightComponent implements OnInit, OnDestroy {
 			response.forEach(mode => {
 				this.kbBacklightUIModel.push({
 					componentId: `backlightMode${mode.value.toLocaleLowerCase()}`.replace(/\s/g, ''),
-					label: `device.deviceSettings.audio.microphone.optimize.options.${mode}`,
+					label: mode.title,
 					value: mode.value,
 					isChecked: mode.checked,
 					isDisabled: mode.disabled,
@@ -251,6 +252,14 @@ export class BacklightComponent implements OnInit, OnDestroy {
 				title: $event.label
 			};
 			this.update$.next(backlight);
+		}
+	}
+
+	private setActiveOption(value) {
+		if (this.kbBacklightUIModel && this.kbBacklightUIModel.length > 0) {
+			this.kbBacklightUIModel.forEach(model => {
+				model.isChecked = (model.value === value);
+			});
 		}
 	}
 }

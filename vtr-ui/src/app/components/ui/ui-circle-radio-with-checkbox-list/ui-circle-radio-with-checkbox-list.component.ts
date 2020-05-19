@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewChildren, QueryList } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChildren, QueryList, OnChanges, SimpleChanges, ViewChild, ElementRef } from '@angular/core';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metric.service';
 import { UiCircleRadioWithCheckBoxListModel } from './ui-circle-radio-with-checkbox-list.model';
@@ -9,7 +9,7 @@ import { KeyCode as KEYCODE } from 'src/app/enums/key-code.enum';
 	templateUrl: './ui-circle-radio-with-checkbox-list.component.html',
 	styleUrls: ['./ui-circle-radio-with-checkbox-list.component.scss']
 })
-export class UiCircleRadioWithCheckBoxListComponent implements OnInit {
+export class UiCircleRadioWithCheckBoxListComponent implements OnInit, OnChanges {
 	@Input() metricsParent: string;
 	@Input() tooltip: string;
 	@Input() theme = 'white';
@@ -19,6 +19,10 @@ export class UiCircleRadioWithCheckBoxListComponent implements OnInit {
 	@Output() optionChange: EventEmitter<UiCircleRadioWithCheckBoxListModel> = new EventEmitter();
 
 	@ViewChildren('radioRef') radioButtons: QueryList<any>;
+	@ViewChild('radioGroupRef', { static: false }) radioGroupRef: ElementRef;
+
+	public activeDescendantId;
+	public focusedComponentId = '';
 
 	constructor(logger: LoggerService, private metrics: MetricService) {
 	}
@@ -26,16 +30,24 @@ export class UiCircleRadioWithCheckBoxListComponent implements OnInit {
 	ngOnInit() {
 	}
 
+	ngOnChanges(changes: SimpleChanges) {
+		if (changes.radioDetails) {
+			this.activeDescendantId = this.getSelectedRadioId();
+		}
+	}
+
 	onClick($event) {
 		const { id } = $event.currentTarget;
 		const radio = this.updateSelection(id);
 		this.invokeSelectionChangeEvent(radio);
+		this.setFocusComponentId();
 		$event.preventDefault();
 	}
 
-	onKeyDown($event, index: number) {
+	onKeyDown($event) {
 		if (this.radioDetails && this.radioDetails.length > 0) {
-			this.handleKeyPressEvent($event, index);
+			this.handleKeyPressEvent($event);
+			this.setFocusComponentId();
 		}
 	}
 
@@ -48,6 +60,7 @@ export class UiCircleRadioWithCheckBoxListComponent implements OnInit {
 					radio = radioDetail;
 					hasFound = true;
 					radioDetail.isChecked = true;
+					this.activeDescendantId = radioId;
 				} else {
 					radioDetail.isChecked = false;
 				}
@@ -57,10 +70,16 @@ export class UiCircleRadioWithCheckBoxListComponent implements OnInit {
 			if (hasFound) {
 				this.radioButtons.forEach(radioButton => {
 					if (radioButton.nativeElement.id === radioId) {
-						radioButton.nativeElement.focus();
+						// radioButton.nativeElement.focus();
 						radioButton.nativeElement.checked = true;
+						radioButton.nativeElement.setAttribute('aria-checked', 'true');
 					}
 				});
+			}
+
+			if (this.radioGroupRef) {
+				this.radioGroupRef.nativeElement.setAttribute('aria-activedescendant', radioId);
+				this.radioGroupRef.nativeElement.focus();
 			}
 		}
 		return radio;
@@ -75,9 +94,36 @@ export class UiCircleRadioWithCheckBoxListComponent implements OnInit {
 		return null;
 	}
 
-	private handleKeyPressEvent(event, index: number) {
+	private getRadioById(componentId: string): number {
+		let itemIndex = -1;
+		if (this.radioDetails && this.radioDetails.length > 0) {
+			let hasFound = false;
+			this.radioDetails.forEach((radioDetail, index) => {
+				if ((radioDetail.componentId === componentId)) {
+					hasFound = true;
+					itemIndex = index;
+				}
+			});
+		}
+		return itemIndex;
+	}
+
+	private getSelectedRadioId(): string {
+		let selectedRadioId = '';
+		if (this.radioDetails && this.radioDetails.length > 0) {
+			this.radioDetails.forEach((radioDetail) => {
+				if ((radioDetail.isChecked)) {
+					selectedRadioId = radioDetail.componentId;
+				}
+			});
+		}
+		return selectedRadioId;
+	}
+
+	private handleKeyPressEvent(event) {
 		const { type } = event;
-		const { id } = event.target;
+		const id = this.getSelectedRadioId();
+		const index = this.getRadioById(id);
 		let nextIndex = index;
 		let isHandled = false;
 
@@ -149,4 +195,15 @@ export class UiCircleRadioWithCheckBoxListComponent implements OnInit {
 		}
 	}
 
+	onRadioGroupFocus($event) {
+		this.setFocusComponentId();
+	}
+
+	onRadioGroupBlur($event) {
+		this.focusedComponentId = '';
+	}
+
+	private setFocusComponentId(){
+		this.focusedComponentId = this.getSelectedRadioId();
+	}
 }

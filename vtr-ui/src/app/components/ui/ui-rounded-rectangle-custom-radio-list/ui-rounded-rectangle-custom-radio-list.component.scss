@@ -7,9 +7,6 @@
 
 .vtr-ui-rounded-rectangle-custom-radio-list {
 	$radio-gutter: 0.8rem;
-
-	margin: $radio-gutter;
-	$radio-gutter: 0.8rem;
 	$radio-width: 25rem;
 	$radio-height: 5rem;
 	$radio-border: 0.1rem;
@@ -24,7 +21,7 @@
 	$radio-selected-box-shadow: 0 0 0 0.2rem $grey_dark;
 	$radio-focus-box-shadow: 0 0 0 0.2rem $grey_dark, 0 0 0 0.4rem $light, 0 0 0 0.5rem $menu_hover;
 
-	margin: $radio-gutter;
+	// margin: $radio-gutter;
 
 	// display radio buttons in row manner
 	.horizontal {
@@ -39,6 +36,10 @@
 	}
 
 	.radio-group {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+
 		[role="radio"] {
 			margin: $radio-gutter;
 			position: relative;
@@ -47,6 +48,7 @@
 			box-shadow: $radio-unselected-box-shadow;
 			background: $grey_lighter;
 			width: $radio-width;
+			min-width: $radio-width - 10;
 			height: $radio-height;
 			border-radius: 20rem;
 			cursor: pointer;
@@ -146,5 +148,3 @@
 		}
 	}
 }
-
-	

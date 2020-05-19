@@ -1,8 +1,8 @@
-<div class="modal-main-wrapper"  tabindex="1"  id="{{!noAppsRunning? 'gaming_networkboost_running_applist':'nbAddApps_norunningapps'}}" attr.aria-label="{{ariaLabel | translate}}" role="presentation">
+<div class="modal-main-wrapper">
 	<div class="spinner-content h-100 d-flex align-items-center justify-content-center" *ngIf="loading">
 		<fa-icon [icon]="['fal', 'circle-notch']" class="spinner" [spin]="true"></fa-icon>
 	</div>
-	<ui-popover-apps>
+	<ui-popover-apps class="gaming-popup-window" tabindex="1" id="{{!noAppsRunning? 'gaming_networkboost_running_applist':'nbAddApps_norunningapps'}}" attr.aria-label="{{ariaLabel | translate}}">
 		<div class="modal-body vtr-modal-add-apps" *ngIf="!loading">
 			<div class="modal-body">
 				<div class="top-header">

@@ -6,6 +6,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalSmartPerformanceSubscribeComponent } from '../../modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
 import { v4 as uuid } from 'uuid';
 import { formatDate } from '@angular/common';
+import { enumSmartPerformance } from 'src/app/enums/smart-performance.enum';
 @Component({
   selector: 'vtr-widget-subscriptiondetails',
   templateUrl: './widget-subscriptiondetails.component.html',
@@ -21,13 +22,14 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	givenDate:Date;
 	public today = new Date();
 	myDate = new Date();
+	spEnum:any = enumSmartPerformance;
   constructor(private translate: TranslateService,private modalService: NgbModal,private commonService: CommonService) {
 	}
 	public localSubscriptionDetails = [
 		{
 			UUID: uuid(),
 			StartDate: formatDate(new Date(), 'yyyy/MM/dd', 'en'),
-			EndDate: formatDate("2020/07/31", 'yyyy/MM/dd', 'en')
+			EndDate: formatDate(this.spEnum.SCHEDULESCANENDDATE, 'yyyy/MM/dd', 'en')
 		}
 	];
   ngOnInit() {

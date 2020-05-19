@@ -3130,12 +3130,12 @@
         "processFinishedCannotBeCanceled": "Spustený proces už netreba zrušiť, pretože sa skončil.",
         "cancelMayTakeSomeTime": "Čakajte, zrušenie môže v závislosti od vášho systému trvať nejaký čas.",
         "scanFailureModal": {
-            "title": "Hardware Problem Detected",
-            "problemDetected": "There were detected problems on the following components on your computer:",
-            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
-            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
-            "supportButtonText": "Open Ticket",
-            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+            "title": "Zistil sa problém s hardvérom",
+            "problemDetected": "Vo vašom počítači sa zistili problémy s týmito komponentmi:",
+            "suggestedActionRbs": "Ukladacie zariadenia môžete skúsiť obnoviť kliknutím na položku <b>Obnoviť zlé sektory</b>. Ak problém pretrváva, môžete kliknúť na položku <b>Požiadať o poskytnutie služby</b> a získať ďalšiu podporu.",
+            "suggestedActionSupport": "Ak je počítač v záruke, kliknite na položku <b>Požiadať o poskytnutie služby</b> a požiadajte o náhradný diel. Ďalšie informácie nájdete na webovej lokalite podpory spoločnosti Lenovo.",
+            "supportButtonText": "Požiadať o poskytnutie služby",
+            "recoverBadSectorsButtonText": "Obnoviť chybné sektory"
         }
     },
     "smartPerformance": {

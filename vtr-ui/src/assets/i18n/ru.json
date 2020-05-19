@@ -1651,8 +1651,6 @@
                         "title": "Режим конфиденциальности камеры",
                         "tooltip": "При включенном режиме конфиденциальности камера перестает отправлять изображения в режиме реального времени. Включайте этот параметр, только если вы не хотите делиться изображениями с другими людьми во время видеовызовов.",
                         "cameraPrivacyAccessNote": "Перейдите на страницу <b>\"Параметры Windows\" → \"Конфиденциальность\" → \"Камера\"</b> и убедитесь, что следующие два параметра включены:<br>&bull; <b>Разрешить классическим приложениям доступ к камере</b><br>&bull; <b>Lenovo Vantage</b> в разделе \"Выбрать приложения (Microsoft Store), которые могут получать доступ к камере\""
-
-
                     },
                     "camera": {
                         "title": "Фотокамера",
@@ -3132,12 +3130,12 @@
         "processFinishedCannotBeCanceled": "Выполняемый процесс больше не требует отмены, так как он уже завершен.",
         "cancelMayTakeSomeTime": "Подождите. Отмена может занять некоторое время в зависимости от конфигурации системы.",
         "scanFailureModal": {
-            "title": "Hardware Problem Detected",
-            "problemDetected": "There were detected problems on the following components on your computer:",
-            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
-            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
-            "supportButtonText": "Open Ticket",
-            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+            "title": "Обнаружена проблема с оборудованием",
+            "problemDetected": "Обнаружены проблемы со следующими компонентами вашего компьютера:",
+            "suggestedActionRbs": "Вы можете попытаться восстановить устройства хранения данных, нажав <b>Восстановить поврежденные секторы</b>. Если проблема не исчезнет, нажмите <b>Открыть заявку</b>, чтобы получить дополнительную поддержку.",
+            "suggestedActionSupport": "Если ваш компьютер находится на гарантии, нажмите <b>Открыть заявку</b>, чтобы получить запасную часть. Дополнительную информацию см. на веб-сайте поддержки Lenovo.",
+            "supportButtonText": "Открыть заявку",
+            "recoverBadSectorsButtonText": "Восстановление поврежденных секторов"
         }
     },
     "smartPerformance": {

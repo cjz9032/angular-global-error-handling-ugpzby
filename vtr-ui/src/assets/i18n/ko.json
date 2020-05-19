@@ -3130,12 +3130,12 @@
         "processFinishedCannotBeCanceled": "실행 중인 프로세스가 완료되었으므로 더 이상 취소할 필요가 없습니다.",
         "cancelMayTakeSomeTime": "잠시 기다려 주십시오. 시스템에 따라 취소하는 데 시간이 걸릴 수 있습니다.",
         "scanFailureModal": {
-            "title": "Hardware Problem Detected",
-            "problemDetected": "There were detected problems on the following components on your computer:",
-            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
-            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
-            "supportButtonText": "Open Ticket",
-            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+            "title": "하드웨어 문제가 감지됨",
+            "problemDetected": "컴퓨터의 다음 구성 요소에서 문제가 발견되었습니다.",
+            "suggestedActionRbs": "<b>불량 섹터 복구</b>를 클릭하여 스토리지 장치를 복구할 수 있습니다. 문제가 지속되면 <b>티켓 열기</b>를 클릭하여 추가 지원을 받을 수 있습니다.",
+            "suggestedActionSupport": "컴퓨터에 보증 기간이 있는 경우 교체 부품에 대한 <b>티켓 열기</b>를 클릭합니다. 자세한 정보는 Lenovo 지원 웹 사이트를 방문하십시오.",
+            "supportButtonText": "티켓 열기",
+            "recoverBadSectorsButtonText": "불량 섹터 복구"
         }
     },
     "smartPerformance": {

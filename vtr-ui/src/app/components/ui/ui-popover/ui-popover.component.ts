@@ -43,7 +43,7 @@ export class UiPopoverComponent implements OnInit {
 	runappKeyup(event) {
 		if (event.which === 9) {
 			setTimeout(() => {
-				this.focusElement('.restart_popup_close_btn');
+				this.focusElement("ui-popover");
 			}, 2);
 		}
 	}
