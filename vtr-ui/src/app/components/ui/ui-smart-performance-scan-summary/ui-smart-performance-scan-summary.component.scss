@@ -380,11 +380,11 @@ vtr-ui-smart-performance-scan-summary {
             ngb-accordion{
                 .card {
                     border-radius: 0.6rem;
-                    border: 1px solid  $screen_dark_01;
-                    background: $grey_lighter;
-                    //padding: 1rem;
-                    margin: 1.5rem auto;
-                    width: 100%;
+					border: 1px solid  $screen_dark_01;
+					background: $grey_lighter;
+					//padding: 1rem;
+					margin: 1.5rem auto;
+					width: 100%;
                     .card-header {
                         background-color: transparent;
 						border-bottom: none;
@@ -504,6 +504,7 @@ vtr-ui-smart-performance-scan-summary {
 									width: auto;
 									height: 3rem;
 									align-items: center;
+									min-width: 7rem;
 								}
 								 p{
                                     font-size: 1.2rem;
