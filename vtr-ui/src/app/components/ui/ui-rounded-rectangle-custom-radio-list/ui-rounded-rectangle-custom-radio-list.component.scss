@@ -116,9 +116,10 @@
 
 		[role="radio"][aria-checked="true"] {
 			box-shadow: $radio-selected-box-shadow;
-			&:focus {
-				box-shadow: $radio-focus-box-shadow;
+			&.focus {
+				box-shadow: $radio-focus-box-shadow !important;
 			}
+
 			&:active {
 				box-shadow: $radio-selected-box-shadow;
 

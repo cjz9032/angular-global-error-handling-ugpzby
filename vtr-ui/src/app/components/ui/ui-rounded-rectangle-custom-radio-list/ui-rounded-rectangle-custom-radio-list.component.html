@@ -15,6 +15,7 @@
 			<div role="radio"
 				#radioRef
 				[id]="item.componentId"
+				[class.focus]="item.componentId === focusedComponentId"
 				[attr.aria-checked]="item.isChecked"
 				[attr.aria-disabled]="item.isDisabled"
 				[attr.aria-label]="item.label | translate"

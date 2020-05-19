@@ -51,12 +51,14 @@ export class UiRoundedRectangleCustomRadioListComponent implements OnInit, OnCha
 		const { id } = $event.target;
 		const radio = this.updateSelection(id);
 		this.invokeSelectionChangeEvent(radio);
+		this.setFocusComponentId();
 		$event.preventDefault();
 	}
 
 	onKeyDown($event) {
 		if (this.radioDetails && this.radioDetails.length > 0) {
 			this.handleKeyPressEvent($event);
+			this.setFocusComponentId();
 		}
 	}
 
