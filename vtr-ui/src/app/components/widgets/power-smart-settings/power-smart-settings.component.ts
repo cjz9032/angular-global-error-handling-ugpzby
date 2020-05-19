@@ -569,6 +569,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 		this.cache.autoModeToggle.status = this.enableIntelligentCoolingToggle;
 		this.cache.showIntelligentCoolingModes = this.showIntelligentCoolingModes;
 		this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
+		this.updateIntelligentCoolingUIModel(this.showIC);
 	}
 	private getCQLCapability() {
 		try {
