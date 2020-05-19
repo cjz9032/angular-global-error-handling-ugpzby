@@ -108,7 +108,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	frequencyValue = 1;
 	dayValue = 0;
 	dateValue = 0;
-	 
+	enableNextText: boolean = true
 	scanScheduleDate: any;
 	issueCount: any = 0;
 	nextScheduleScan: any;
@@ -515,7 +515,12 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		}
 	}
 	changeNextScanDateValue(nextScheduleScanEvent) {
-		// retrieved this event form ui-scan-schedule component.
+		// retrieved this event from ui-scan-schedule component.
+		if(!nextScheduleScanEvent) {
+			this.enableNextText = nextScheduleScanEvent;
+			return;
+		}
+		this.enableNextText = nextScheduleScanEvent['nextEnable']
 		this.nextScheduleScan =  nextScheduleScanEvent['nextScanDate'] + ' at ' + nextScheduleScanEvent['nextScanHour'] + ':' + nextScheduleScanEvent['nextScanMin'] + ' ' + nextScheduleScanEvent['nextScanAMPM'];
 
 		// if (this.isSubscribed) {
