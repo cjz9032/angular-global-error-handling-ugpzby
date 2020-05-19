@@ -162,6 +162,8 @@ export class UiScanScheduleComponent implements OnInit {
 	scheduleScanFrequency:any;
 	nextScheduleScanDate:any;
 	public enumLocalScanFrequncy:any;
+	firstScheduleTime: any
+	firstScheduleDay: any
 	
 	ngOnInit() {
 		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceSubscribed);
@@ -176,8 +178,10 @@ export class UiScanScheduleComponent implements OnInit {
 		this.scanScheduleDate = this.selectedDate;
 		this.enumLocalScanFrequncy = enumScanFrequency;
 		//this.scanSummaryTime(0);
-		this.scheduleScanFrequency = this.commonService.getLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency);
+		this.formatDateTime()
 
+		this.scheduleScanFrequency = this.commonService.getLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency);
+		
 		if(this.scheduleScanFrequency === undefined) {
 			this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, this.selectedFrequency);
 		} else {
@@ -188,13 +192,13 @@ export class UiScanScheduleComponent implements OnInit {
 		this.IsSmartPerformanceFirstRun = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun);
 		if (this.IsSmartPerformanceFirstRun === true && this.isSubscribed == true) {
 			this.unregisterScheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScan');
-			this.scheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix', 'onceaweek', this.days[new Date().getDay()], new Date(new Date().setHours(0,0,0,0)), []);
+			this.scheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix', 'onceaweek', this.firstScheduleDay, this.firstScheduleTime, []);
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, false);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, this.selectedFrequency);
 		}
 	
 		if (this.IsSmartPerformanceFirstRun === true && this.isSubscribed == false) {
-			this.scheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScan', 'onceaweek', this.days[new Date().getDay()], new Date(new Date().setHours(0,0,0,0)), []);
+			this.scheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScan', 'onceaweek', this.firstScheduleDay, this.firstScheduleTime, []);
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, false);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, this.selectedFrequency);
 		}
@@ -207,8 +211,8 @@ export class UiScanScheduleComponent implements OnInit {
 			this.scanDatekValueChange.emit(false)
 		}
 
-		// fetching next schedule date and time from api.
-		if (	this.scheduleScanFrequency !== undefined)	{
+		// fetching next schedule date and time from task scheduler
+		if(	this.scheduleScanFrequency !== undefined)	{
 			if (this.isSubscribed) {
 				this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
 			} else {
@@ -221,6 +225,12 @@ export class UiScanScheduleComponent implements OnInit {
 
 	}
 	// tslint:disable-next-line: use-lifecycle-interface
+
+	formatDateTime() {
+		const m = [moment().year(), moment().month(), moment().date(), moment().hour(), (Math.ceil(moment().minutes()/5)*5)];
+		this.firstScheduleTime = moment(m).format()
+		this.firstScheduleDay = moment().format('dddd')
+	}
 
 	expandRow(value) {
 		if (this.toggleValue === value) {
@@ -272,7 +282,8 @@ export class UiScanScheduleComponent implements OnInit {
 		this.frequencyValue = value;
 		this.scheduleTab = '';
 		this.isDaySelectionEnable = true;
-		// this.selectedDay = this.days[value];
+		this.selectedDay = this.days[value];
+		this.dayValue = value
 		this.selectedFrequency = this.scanFrequency[value];
 		this.changeScanDay(value)
 	}
@@ -454,6 +465,7 @@ export class UiScanScheduleComponent implements OnInit {
 			} else {
 				this.unregisterScheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScan');
 			}
+			// this.scanDatekValueChange.emit(false)
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled, false);
 			this.commonService.removeLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency);
 			
@@ -462,10 +474,10 @@ export class UiScanScheduleComponent implements OnInit {
 			this.IsScheduleScanEnabled = this.commonService.getLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled);
 			if(!this.IsScheduleScanEnabled) {
 				if (this.isSubscribed) {
-					this.scheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix', 'onceaweek', this.days[new Date().getDay()], new Date(new Date().setHours(0,0,0,0)), []);
+					this.scheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix', 'onceaweek', this.days[new Date().getDay()], new Date(new Date()), []);
 					// this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
 				} else {
-					this.scheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScan', 'onceaweek', this.days[new Date().getDay()], new Date(new Date().setHours(0,0,0,0)), []);
+					this.scheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScan', 'onceaweek', this.days[new Date().getDay()], new Date(new Date()), []);
 					// this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScan');
 				}
 				this.commonService.setLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled, true);
@@ -501,7 +513,6 @@ export class UiScanScheduleComponent implements OnInit {
 		this.logger.info('ui-smart-performance.getNextScanRunTime', JSON.stringify(payload));
 		try {
 			const res: any = await this.smartPerformanceService.getNextScanRunTime(payload);
-
 			// checking next scan run time fetched from api and when present passing th sendNextScheduleDate method.
 			if(res.nextruntime) {
 			const dt = moment(res.nextruntime).format('LLLL')
@@ -585,33 +596,26 @@ export class UiScanScheduleComponent implements OnInit {
 			case this.scanFrequency[0] :
 				if(moment().day() <= (this.dayValue)) {
 					nextScheduleScanEvent['nextScanDate'] = moment().day(this.dayValue).format('L').slice(0, 5)
-					// this.scanDatekValueChange.emit(nextScheduleScanEvent)
 				} else {
 					nextScheduleScanEvent['nextScanDate'] = moment().add(1, 'weeks').day(this.dayValue).format('L').slice(0, 5)
-					// this.scanDatekValueChange.emit(nextScheduleScanEvent)
 				}
 				break;
 			case this.scanFrequency[1] :
 				if(moment().day() <= this.dayValue) {
 					nextScheduleScanEvent['nextScanDate'] = moment().day(this.dayValue).format('L').slice(0, 5)
-					// this.scanDatekValueChange.emit(nextScheduleScanEvent)
 				} else {
 					nextScheduleScanEvent['nextScanDate'] = moment().add(2, 'weeks').day(this.dayValue).format('L').slice(0, 5)
-					// this.scanDatekValueChange.emit(nextScheduleScanEvent)
 				}
 				break;
 			case this.scanFrequency[2] :
 				if(this.dateValue <= moment().date()) {
 					nextScheduleScanEvent['nextScanDate'] = moment().date(this.dateValue + 1).add(1, 'month').format('MM/DD')
-					// this.scanDatekValueChange.emit(nextScheduleScanEvent)
 				} else {
 					nextScheduleScanEvent['nextScanDate'] = moment().date(this.dateValue + 1).format('MM/DD')
-					// this.scanDatekValueChange.emit(nextScheduleScanEvent)
 				}
 				break;
 		}
 		this.scanDatekValueChange.emit(nextScheduleScanEvent)
 	}
-
 
 }

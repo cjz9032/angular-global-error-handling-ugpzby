@@ -217,8 +217,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.logger.info('ui-smart-performance-scan-summary.getNextScanRunTime', JSON.stringify(payload));
 		try {
 			const res: any = await this.smartPerformanceService.getNextScanRunTime(payload);
-
-			if (res != undefined) {
+			if(res.nextruntime) {
 				this.getNextScanScheduleTime(res.nextruntime);
 			}
 			this.logger.info('ui-smart-performance-scan-summary.getNextScanRunTime.then', JSON.stringify(res));
