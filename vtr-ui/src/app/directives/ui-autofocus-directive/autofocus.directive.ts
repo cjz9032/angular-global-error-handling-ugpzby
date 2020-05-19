@@ -44,8 +44,8 @@ export class AutofocusDirective implements AfterContentInit, OnChanges {
 
 				window.setTimeout(() => {
 					// Added to reposition narrator focus position during hide and show.
-					let activeElement = document.activeElement as HTMLElement;
-					activeElement.blur();
+					/* let activeElement = document.activeElement as HTMLElement;
+					activeElement.blur(); */
 
 					this.element.addEventListener('blur', this.handleBur.bind(this));
 					this.element.focus();
