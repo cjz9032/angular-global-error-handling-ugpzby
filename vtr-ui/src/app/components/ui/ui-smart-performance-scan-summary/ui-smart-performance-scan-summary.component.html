@@ -132,7 +132,7 @@
 																<b>{{'smartPerformance.subscriberScanHomePage.mostRecent' |translate }}</b><br>
 																{{mostRecentScan}}
 															</div>
-															<div class="desc desc2 col-auto">
+															<div class="desc desc2 col-auto" *ngIf="enableNextText">
 																<b>{{'smartPerformance.subscriberScanHomePage.nextScheduled' |translate }}</b><br>
 																{{nextScheduleScan}}
 															</div>
