@@ -14,6 +14,7 @@ import { formatDate } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
 import { ModalSmartPerformanceFeedbackComponent } from '../../modal/modal-smart-performance-feedback/modal-smart-performance-feedback.component';
 import { Router } from '@angular/router';
+import { enumSmartPerformance } from 'src/app/enums/smart-performance.enum';
 
 @Component({
 	selector: 'vtr-ui-smart-performance-scan-summary',
@@ -120,6 +121,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	navigation:string = 'arrows';
 	public minDate: any;
 	public maxDate: any;
+	spEnum:any = enumSmartPerformance;
 	// tuneindividualIssueCount: any = 0;
 	// boostindividualIssueCount: any = 0;
 	// secureindividualIssueCount: any = 0;
@@ -128,7 +130,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		{
 			UUID: uuid(),
 			StartDate: formatDate(new Date(), 'yyyy/MM/dd', 'en'),
-			EndDate: formatDate('2020/07/31', 'yyyy/MM/dd', 'en')
+			EndDate: formatDate(this.spEnum.SCHEDULESCANENDDATE, 'yyyy/MM/dd', 'en')
 		}
 	];
 	ngOnInit() {
