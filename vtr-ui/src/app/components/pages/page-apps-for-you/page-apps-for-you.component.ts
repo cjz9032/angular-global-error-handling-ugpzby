@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
@@ -147,6 +147,7 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 			this.arrowClickable = true;
 		}, 20);
 	}
+
 	swipeLeftToRight() {
 		if (!this.arrowClickable) { return false; }
 		this.arrowClickable = false;
@@ -363,4 +364,28 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		return JSON.parse(JSON.stringify(obj));
 	}
 
+	shouldFocusScreenshot(position: number) {
+		return (position >= 1 && position <= 3)
+	}
+
+	@HostListener('keydown', ['$event'])
+	onKeyDown(event: KeyboardEvent) {
+		if (!event.shiftKey &&
+			event.key === 'Tab' &&
+			document.activeElement &&
+			(document.activeElement.className.includes('back')
+			|| document.activeElement.className.includes('btn-box')
+			|| document.activeElement.className.includes('screenshot-img'))
+		) {
+			clearInterval(this.screenshotInterval);
+			if (document.activeElement.className.includes('screenshot-img')) {
+				const focusClassName = document.activeElement.className.toLowerCase();
+				const positionClassName = focusClassName.replace('screenshot-img','').trim();
+				const position = Number(positionClassName.match(/\d+$/)[0]);
+				if (position >= 3) {
+					this.startScreenshotAutoSwipe();
+				}
+			}
+		}
+	}
 }
