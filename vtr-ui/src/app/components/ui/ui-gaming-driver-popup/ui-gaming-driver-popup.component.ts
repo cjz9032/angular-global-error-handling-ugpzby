@@ -41,7 +41,7 @@ export class UiGamingDriverPopupComponent implements OnInit {
 	runappKeyup(event) {
 		if (event.which === 9) {
 			setTimeout(() => {
-				this.focusElement('.driver_popup_close_btn');
+				this.focusElement('ui-gaming-driver-popup');
 			}, 2);
 		}
 	}

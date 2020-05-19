@@ -53,6 +53,7 @@
 					},
 					"ramOverlock": "RAM Overclock",
 					"popup": {
+						"title": "system restart is required",
 						"text": "Change will be effective after restarting computer.",
 						"button": "OK"
 					},
@@ -64,6 +65,9 @@
 						"cpuOverclockText": "Install driver to activate CPU Overclock (Reboot Required)",
 						"button": "INSTALL",
 						"link": "CANCEL"
+					},
+					"helpPopup": {
+						"title": "Legion Edge Help"
 					},
 					"lightingDriverPopup": {
 						"headerText": "Driver Install Required",
