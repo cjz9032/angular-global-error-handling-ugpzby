@@ -2,7 +2,7 @@
 	<div class="spinner-content h-100 d-flex align-items-center justify-content-center" *ngIf="loading">
 		<fa-icon [icon]="['fal', 'circle-notch']" class="spinner" [spin]="true"></fa-icon>
 	</div>
-	<ui-popover-apps *ngIf="!loading" id="{{!loadingNoApps ? 'gaming_autoclose_addapps':'gaming_autoclose_norunningapps'}}" tabindex="1"
+	<ui-popover-apps class="gaming-popup-window" *ngIf="!loading" id="{{!loadingNoApps ? 'gaming_autoclose_addapps':'gaming_autoclose_norunningapps'}}" tabindex="1"
 		attr.aria-label="{{ ariaLabel | translate }}">
 		<div class="modal-body vtr-modal-add-apps">
 			<div class="modal-body">

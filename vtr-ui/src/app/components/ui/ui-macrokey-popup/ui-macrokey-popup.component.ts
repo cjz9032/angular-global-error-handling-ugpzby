@@ -30,7 +30,7 @@ export class UiMacrokeyPopupComponent implements OnInit {
 
 	focusElement() {
 		setTimeout(() => {
-			const popupFocus = document.getElementsByClassName('macrokey_popup_close_btn')[0] as HTMLElement;
+			const popupFocus = document.getElementsByClassName('gaming-popup-window')[0] as HTMLElement;
 			if (popupFocus) {
 				popupFocus.focus();
 			}
