@@ -59,6 +59,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	@Input() boost = 0;
 	@Input() secure = 0;
 	@Input() rating = 0;
+
 	public tabIndex: number;
 	public toggleValue: number;
 	public currentYear: any;
@@ -727,7 +728,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			windowClass: 'smart-performance-feedback-Modal'
 		});
 	}
-	backToNonSubScriberHome(){	
+	backToNonSubScriberHome(){
 		this.backToNonSubscriber.emit();
 	}
 

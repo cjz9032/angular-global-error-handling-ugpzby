@@ -401,6 +401,9 @@
 																						<b>{{item.scanruntime | date: 'MM/dd/yyyy'}}</b>
 																						<span> -
 																							{{item.scanruntime | date: 'h:mma'}}</span>
+																							<span class="ml-1" *ngIf="item.type.toUpperCase() == 'MS'">({{'smartPerformance.manual' |translate }})</span>
+																							<span class="ml-1" *ngIf="item.type.toUpperCase() == 'SS'">({{'smartPerformance.auto' |translate }})</span>
+
 																					</div>
 																					<div class="col-2">{{item.fixcount}} Fixes
 																					</div>

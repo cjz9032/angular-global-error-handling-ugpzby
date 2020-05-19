@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -8,18 +8,19 @@ import { v4 as uuid } from 'uuid';
 import { formatDate } from '@angular/common';
 import { enumSmartPerformance } from 'src/app/enums/smart-performance.enum';
 @Component({
-  selector: 'vtr-widget-subscriptiondetails',
-  templateUrl: './widget-subscriptiondetails.component.html',
-  styleUrls: ['./widget-subscriptiondetails.component.scss']
+	selector: 'vtr-widget-subscriptiondetails',
+	templateUrl: './widget-subscriptiondetails.component.html',
+	styleUrls: ['./widget-subscriptiondetails.component.scss']
 })
 export class WidgetSubscriptiondetailsComponent implements OnInit {
-  isSubscribed:any;
-	subscriptionDetails:any;
-	startDate:any;
-	endDate:any;
-	status:any;
-	strStatus:any;
-	givenDate:Date;
+	@Output() subScribeEvent = new EventEmitter<boolean>();
+	isSubscribed: any;
+	subscriptionDetails: any;
+	startDate: any;
+	endDate: any;
+	status: any;
+	strStatus: any;
+	givenDate: Date;
 	public today = new Date();
 	myDate = new Date();
 	spEnum:any = enumSmartPerformance;
@@ -32,58 +33,60 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 			EndDate: formatDate(this.spEnum.SCHEDULESCANENDDATE, 'yyyy/MM/dd', 'en')
 		}
 	];
-  ngOnInit() {
-    this.isSubscribed=this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceSubscribed);
-	if(this.isSubscribed)
-  	{
-		this.subscriptionDetails = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails);
-		this.startDate = this.subscriptionDetails[0].StartDate;
-		this.endDate = this.subscriptionDetails[0].EndDate;
-		this.givenDate = new Date(this.subscriptionDetails[0].EndDate);
-		
-		if(this.givenDate > this.today){
-			this.status = 'smartPerformance.subscriptionDetails.activeStatus';
-			this.strStatus = 'ACTIVE';
+	ngOnInit() {
+		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceSubscribed);
+		if (this.isSubscribed) {
+			this.subscriptionDetails = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails);
+			this.startDate = this.subscriptionDetails[0].StartDate;
+			this.endDate = this.subscriptionDetails[0].EndDate;
+			this.givenDate = new Date(this.subscriptionDetails[0].EndDate);
+
+			if (this.givenDate > this.today) {
+				this.status = 'smartPerformance.subscriptionDetails.activeStatus';
+				this.strStatus = 'ACTIVE';
+			}
+			else {
+				this.status = 'smartPerformance.subscriptionDetails.inactiveStatus';
+				this.strStatus = 'INACTIVE';
+			}
 		}
 		else {
+			this.startDate = '---';
+			this.endDate = '---';
 			this.status = 'smartPerformance.subscriptionDetails.inactiveStatus';
 			this.strStatus = 'INACTIVE';
 		}
 	}
-	else
-	{
-		this.startDate="---";
-		this.endDate="---";
-		this.status='smartPerformance.subscriptionDetails.inactiveStatus';
-		this.strStatus = 'INACTIVE';
+
+	openSubscribeModal(event) {
+		if (this.isSubscribed === false) {
+			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceSubscribed, true);
+			this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.localSubscriptionDetails);
+			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
+			// location.reload();
+			// this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+			// 	this.router.navigate(['WidgetSubscriptiondetailsComponent']);
+			// });
+		}
+		else {
+			this.commonService.removeLocalStorageValue(LocalStorageKey.IsSmartPerformanceSubscribed);
+			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
+			this.commonService.removeLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails);
+			// this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+			// 	this.router.navigate(['WidgetSubscriptiondetailsComponent']);
+			// });
+			// location.reload();
+		}
+		this.subScribeEvent.emit(event)
+
+		// this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
+		//     backdrop: 'static',
+		//     size: 'lg',
+		//     centered: true,
+		//     windowClass: 'subscribe-modal',
+
+		// });
+
 	}
-  }
-
-  openSubscribeModal() {
-	  if(  this.isSubscribed==false)
-	  {
-		this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceSubscribed, true);
-		this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.localSubscriptionDetails);
-		this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
-		location.reload();
-	  }
-	  else
-	  {
-		this.commonService.removeLocalStorageValue(LocalStorageKey.IsSmartPerformanceSubscribed);
-		this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
-		this.commonService.removeLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails);
-
-		location.reload();
-	  }
-	
-    // this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
-    //     backdrop: 'static',
-    //     size: 'lg',
-    //     centered: true,
-    //     windowClass: 'subscribe-modal',
-
-	// });
-	
-}
 
 }
