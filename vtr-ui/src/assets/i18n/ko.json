@@ -1198,14 +1198,14 @@
                         "desc3_1": "일부 모드는 활동 내용을 기반으로 넓은 성능 범위에서 자동으로 조정될 수 있습니다. 자동 모드를 사용하지 않으려면 Fn+ T를 누르십시오."
                     },
                     "dytc61": {
-                        "title1": "Quiet mode(only for on battery mode)",
-                        "desc1": "The slider is on the far left. Both fan speed and performance are low for a cooler, quieter computer and the best battery life.",
-                        "title2": "Balanced mode",
-                        "desc2": "The slider is on the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
-                        "title3": "Performance mode",
-                        "desc3": "The slider is on the center or center right. Both fan speed and surface temperature are high.",
-                        "title4": "Ultra-performance mode",
-                        "desc4": "The slider is far right, providing ultra-high performance with bigger noise and higher surface temperature."
+                        "title1": "저소음 모드(배터리 모드에서만 사용할 경우)",
+                        "desc1": "슬라이더가 왼쪽 끝에 있습니다. 더 시원하고 조용한 컴퓨터와 최상의 배터리 수명을 제공하기 위해 팬 속도와 성능을 모두 낮춥니다.",
+                        "title2": "균형 조정 모드",
+                        "desc2": "슬라이더가 왼쪽 또는 가운데 왼쪽에 있습니다. 최상의 환경을 위해 팬 속도와 성능이 동적으로 균형을 이룹니다.",
+                        "title3": "성능 모드",
+                        "desc3": "슬라이더가 가운데 또는 가운데 오른쪽에 있습니다. 팬 속도와 표면 온도가 모두 높습니다.",
+                        "title4": "울트라 성능 모드",
+                        "desc4": "슬라이더가 가장 오른쪽에 있어 더 큰 소음과 높은 표면 온도에서 울트라 고성능을 제공합니다."
                     }
                 },
                 "powerSettings": {
@@ -3763,7 +3763,9 @@
                 "q3": "Was the scan easy to use?",
                 "q4": "Happy about the fixes we did?",
                 "q5": "Do you see value for money? ",
-                "q6": "Will you refer it to your friends and family?"
+                "q6": "Will you refer it to your friends and family?",
+                "q7": "How likely are you to continue paying for the Smart Performance feature?",
+                "q8": "Overall how satisfied are you with the Smart Performance feature?"
             },
             "rating": {
                 "r1": "Hate it",
@@ -3777,7 +3779,11 @@
                 "r9": "No way",
                 "r10": "Looks worthy",
                 "r11": "Not so sure",
-                "r12": "Absolutely yes"
+                "r12": "Absolutely yes",
+                "r13": "Not at all likely",
+                "r14": "Very Likely",
+                "r15": "Not at all satisfied",
+                "r16": "Very Satisfied"
             },
             "commentTip": "Shout what you love and whisper what you hate.",
             "comments": "Please leave your comments here..."

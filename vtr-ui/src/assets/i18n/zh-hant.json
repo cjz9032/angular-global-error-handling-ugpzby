@@ -1198,14 +1198,14 @@
                         "desc3_1": "部分模式可以根據您的活動在更大的效能範圍內自動調整。若要停用自動模式，請按 Fn+ T。"
                     },
                     "dytc61": {
-                        "title1": "Quiet mode(only for on battery mode)",
-                        "desc1": "The slider is on the far left. Both fan speed and performance are low for a cooler, quieter computer and the best battery life.",
-                        "title2": "Balanced mode",
-                        "desc2": "The slider is on the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
-                        "title3": "Performance mode",
-                        "desc3": "The slider is on the center or center right. Both fan speed and surface temperature are high.",
-                        "title4": "Ultra-performance mode",
-                        "desc4": "The slider is far right, providing ultra-high performance with bigger noise and higher surface temperature."
+                        "title1": "靜音模式（僅適用於電池模式）",
+                        "desc1": "調節器調到最左邊。散熱器的風扇速度和效能都會降低，電腦會更安靜，電池壽命最佳化。",
+                        "title2": "平衡模式",
+                        "desc2": "調節器調到左邊或中間靠左。風扇速度和效能能以動態方式平衡，以達最佳體驗。",
+                        "title3": "效能模式",
+                        "desc3": "調節器調到中間或中間靠右。風扇速度和表面溫度都會提高。",
+                        "title4": "超效模式",
+                        "desc4": "調節器調到最右邊可達到超高效能，但噪音更大，表面溫度也更高。"
                     }
                 },
                 "powerSettings": {
@@ -1231,7 +1231,7 @@
                     "title": "Lenovo Vantage 工具列",
                     "vantageToolbar": {
                         "title": "Lenovo Vantage 工具列和進階設定",
-                        "description": "將 Lenovo Vantage 工具列釘選到 Windows 工作列，即可輕鬆存取您最常用的設定，並獲得您專屬的特級產品和更新。",
+                        "description": "將 Lenovo Vantage 工作列釘選到 Windows 工作列便可輕鬆存取您最常用的設定，享有專屬於你的優質產品和更新。",
                         "hint": "映像中的選配產品取決於電腦的容量。例如，有些電腦支援背光設定，有些則可能不支援。"
                     }
                 },
@@ -3763,7 +3763,9 @@
                 "q3": "Was the scan easy to use?",
                 "q4": "Happy about the fixes we did?",
                 "q5": "Do you see value for money? ",
-                "q6": "Will you refer it to your friends and family?"
+                "q6": "Will you refer it to your friends and family?",
+                "q7": "How likely are you to continue paying for the Smart Performance feature?",
+                "q8": "Overall how satisfied are you with the Smart Performance feature?"
             },
             "rating": {
                 "r1": "Hate it",
@@ -3777,7 +3779,11 @@
                 "r9": "No way",
                 "r10": "Looks worthy",
                 "r11": "Not so sure",
-                "r12": "Absolutely yes"
+                "r12": "Absolutely yes",
+                "r13": "Not at all likely",
+                "r14": "Very Likely",
+                "r15": "Not at all satisfied",
+                "r16": "Very Satisfied"
             },
             "commentTip": "Shout what you love and whisper what you hate.",
             "comments": "Please leave your comments here..."
