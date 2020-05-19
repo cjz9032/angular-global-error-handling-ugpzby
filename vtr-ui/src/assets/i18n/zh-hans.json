@@ -2094,7 +2094,7 @@
             "superResolution": {
                 "title": "提高视频分辨率",
                 "desc": "<p><label>此功能通过提高视频分辨率来改善视频播放的体验。特别是在视频分辨率较差时，其效果尤为明显。</label></p> <p><label>此功能可能会影响电池寿命、电池温度并产生噪音。请不要在直流电模式（电池模式）下使用。否则，会加快耗电速度并缩短电池寿命。</label></p>",
-                "tooltip": "<p>此功能仅适用于以下视频播放器：<br>Windows Media Player<br>基于 Chrome 的播放器<br>电影和电视<br>PotPlayer</p><p class='srTooltip'>有关如何在 PotPlayer 上启用此功能的说明，请参阅计算机随附的《用户指南》。</p>",
+                "tooltip": "<p>此功能仅适用于以下视频播放器：<br>Windows Media Player<br>基于 Chrome 的播放器<br>PotPlayer</p><p class='srTooltip'>有关如何在 PotPlayer 上启用此功能的说明，请参阅计算机随附的《用户指南》。</p>",
                 "note": {
                     "description": "此功能在以下情况下无效：",
                     "description1": "CPU 温度过高。",

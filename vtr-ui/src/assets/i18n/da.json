@@ -2094,7 +2094,7 @@
             "superResolution": {
                 "title": "Opskalering af videoopløsning",
                 "desc": "<p><label>Denne funktion giver en bedre oplevelse i forbindelse med videoafspilning ved at forbedre videoopløsningen. Det fungerer især godt, når videoen er i dårlig opløsning.</label></p> <p><label>Denne funktion kan påvirke batteriets levetid, batteriets temperatur og medføre støj. Brug den ikke i DC-tilstand (batteritilstand). Ellers bliver strømforbruget større, og batterilevetiden afkortes.</label></p>",
-                "tooltip": "<p>Denne funktion fungerer kun med følgende videoafspillere<br>: Windows Media Player<br>Chrome-baserede afspiller<br>Film og tv<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Oplysninger om, hvordan denne funktion aktiveres på PotPlayer og GOM Player, finder du i den brugervejledning, der leveres sammen med computeren.</p>",
+                "tooltip": "<p>Denne funktion fungerer kun med følgende videoafspillere:<br>Windows Media Player<br>Chrome-baseret afspiller<br>PotPlayer</p><p class='srTooltip'>Oplysninger om, hvordan denne funktion aktiveres på PotPlayer, finder du i den brugervejledning, der leveres sammen med computeren.</p>",
                 "note": {
                     "description": "Denne funktion virker ikke i disse situationer:",
                     "description1": "CPU-temperaturen er for høj.",
