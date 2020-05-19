@@ -7,7 +7,10 @@
 
 .vtr-ui-rounded-rectangle-custom-radio-list {
 	$radio-gutter: 0.8rem;
-	$radio-width: 25rem;
+
+	margin: $radio-gutter;
+	$radio-gutter: 0.8rem;
+	$radio-width: 22rem;
 	$radio-height: 5rem;
 	$radio-border: 0.1rem;
 	$radio-indicator-size: 2rem;
@@ -27,6 +30,7 @@
 	.horizontal {
 		display: flex;
 		flex-direction: row;
+		flex-wrap: wrap;
 	}
 
 	// display radio buttons in row manner. for camera blur
