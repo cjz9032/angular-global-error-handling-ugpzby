@@ -50,8 +50,7 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	@Input()
 	set data(val: WifiHomeViewModel) {
 		if (!this._data || val.isLWSEnabled !== this._data.isLWSEnabled) {
-			this.switchLabel = val.isLWSEnabled ?
-				this.wsNameText + ' ' + this.wsEnabledText : this.wsNameText + ' ' + this.wsDisabledText;
+			this.switchLabel = `${this.wsNameText} ${val.isLWSEnabled ? this.wsEnabledText : this.wsDisabledText}`;
 		}
 		this._data = val;
 	}
