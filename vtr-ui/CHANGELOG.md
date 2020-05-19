@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.48](https://bitbucket.tc.lenovo.com///compare/v1.5.47...v1.5.48) (2020-05-19)
+
+
+### Bug Fixes
+
+* use template string to splice two variables ([f35276b](https://bitbucket.tc.lenovo.com///commit/f35276b69fed04a2fd9b2e45523c2c0111c7c649))
+* **LWS-Accessibility:** add condition to onChanges ([ad49323](https://bitbucket.tc.lenovo.com///commit/ad493232efe948f33333c17666fa02a5828d43d8))
+* **LWS-Accessibility:** change toggle switch description in scan mode ([fd53bac](https://bitbucket.tc.lenovo.com///commit/fd53bac413f5850f059fc8b317a770536275dc9e))
+
 ### [1.5.47](https://bitbucket.tc.lenovo.com///compare/v1.5.46...v1.5.47) (2020-05-19)
 
 ### [1.5.46](https://bitbucket.tc.lenovo.com///compare/v1.5.45...v1.5.46) (2020-05-18)
