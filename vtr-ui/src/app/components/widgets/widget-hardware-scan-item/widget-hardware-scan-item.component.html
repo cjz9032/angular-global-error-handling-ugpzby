@@ -33,14 +33,36 @@
 				</div>
 
 				<!-- Icon to expand and collapse test list -->
-				<a *ngIf="isScanExecute && !isEnableViewResults"
+				<div class="col-auto" *ngIf="isScanExecute && !isEnableViewResults">
+					<div class="collapse-control"
+						tabindex="0"
+						[attr.aria-label]="item.collapsed ? 'collapse-test-list':'expand-test-list'"
+						(click)="item.collapsed = !item.collapsed"
+						(keyup.enter)="item.collapsed = !item.collapsed"
+						role="button"
+						[attr.aria-expanded]="!item.collapsed"
+						>
+						<fa-icon *ngIf="item.collapsed"
+							[icon]="['fal', 'angle-up']"></fa-icon>
+						<fa-icon *ngIf="!item.collapsed"
+							[icon]="['fal', 'angle-down']"></fa-icon>
+					</div>
+				</div>
+
+				<!-- <a *ngIf="isScanExecute && !isEnableViewResults"
 					href="javascript:void(0);"
 					(click)="item.collapsed = !item.collapsed"
-					[ngClass]="{'rotate': item.collapsed}">
-					<fa-icon [icon]="['fal', 'angle-down']"
+					[attr.aria-label]="!item.collapsed ? 'collapse-test-list':'uncollapse-test-list'"
+					>
+					<fa-icon *ngIf="item.collapsed" [icon]="['fal', 'angle-up']"
+						[attr.aria-label]="'uncollapse-test-list'"
 						[attr.aria-expanded]="item.collapsed">
 					</fa-icon>
-				</a>
+					<fa-icon *ngIf="!item.collapsed" [icon]="['fal', 'angle-down']"
+						[attr.aria-label]="'collapse-test-list'"
+						[attr.aria-expanded]="!item.collapsed">
+					</fa-icon>
+				</a> -->
 			</div>
 		</div>
 

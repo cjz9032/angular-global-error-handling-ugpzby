@@ -121,4 +121,25 @@
 	.test-list{
 		padding-left: 4.2rem;
 	}
+
+	.collapse-control {
+		cursor: pointer;
+
+		fa-icon {
+			font-size: $fontsize_lg;
+			color: $blue_lightest;
+			vertical-align: middle;
+		}
+
+		&:hover {
+			opacity: 1;
+
+			.collapse-text {
+				text-decoration: underline;
+			}
+		}
+		&:focus {
+			@include outline-blue;
+		}
+	}
 }
