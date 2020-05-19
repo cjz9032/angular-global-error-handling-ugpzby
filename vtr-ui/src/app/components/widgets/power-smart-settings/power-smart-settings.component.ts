@@ -49,6 +49,10 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 	public smartSettingsCapability = false;
 	private isMobileWorkstation = false;
 
+	private readonly batterySavingModeId = 'quiteBatterySaving';
+	private readonly performanceModeId = 'radioICPerformance';
+	private readonly quiteCoolModeId = 'radioICQuiteCool';
+
 	@Output() isPowerSmartSettingVisible = new EventEmitter<boolean>();
 
 	public intelligentCoolingUIModel: Array<UiCircleRadioWithCheckBoxListModel> = [];
@@ -218,7 +222,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 			if (response && response.available) {
 				// (response.itsVersion === 3 || response.itsVersion === 4 || response.itsVersion >= 5)
 				if (response.itsVersion >= 3) {
-					this.initPowerSmartSettingsUIForIdeaPad(response);
+					this.initPowerSmartSettingsUIForIdeaPad(response, false);
 					this.startMonitorForICIdeapad();
 				}
 			}
@@ -228,7 +232,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 		}
 	}
 
-	initPowerSmartSettingsUIForIdeaPad(response: any) {
+	initPowerSmartSettingsUIForIdeaPad(response: any, isCallback: boolean) {
 		try {
 			if (response && response.available) {
 				if (response.itsVersion === 3) {
@@ -271,7 +275,11 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 					const currentMode = IntelligentCoolingModes.getMode(response.currentMode);
 					this.updateSelectedModeText(currentMode);
 					this.setPerformanceAndCool(currentMode);
-					this.updateIntelligentCoolingUIModel(this.showIC);
+					if (isCallback) {
+						this.updateIntelligentCoolingSelection();
+					} else {
+						this.updateIntelligentCoolingUIModel(this.showIC);
+					}
 				}
 			} else {
 				this.showPowerSmartSettings(false);
@@ -283,7 +291,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 	}
 
 	callbackForStartMonitorICIdeapad(response: any) {
-		this.initPowerSmartSettingsUIForIdeaPad(response);
+		this.initPowerSmartSettingsUIForIdeaPad(response, true);
 	}
 
 	startMonitorForICIdeapad() {
@@ -613,7 +621,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 				await this.powerService.setITSModeForICIdeapad(mode.ideapadType4);
 				if (mode === IntelligentCoolingModes.Cool) {
 					this.powerService.getITSModeForICIdeapad().then((response) => {
-						this.initPowerSmartSettingsUIForIdeaPad(response);
+						this.initPowerSmartSettingsUIForIdeaPad(response, true);
 					})
 				}
 			} else if (this.intelligentCoolingModes === IntelligentCoolingHardware.Legacy) {
@@ -845,7 +853,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 		this.intelligentCoolingUIModel = [];
 		if (showIC < 14) {
 			this.intelligentCoolingUIModel.push({
-				componentId: `radioICPerformance`,
+				componentId: this.performanceModeId,
 				label: `device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.performance${showIC}`,
 				value: 'performance',
 				isChecked: this.radioPerformance,
@@ -857,9 +865,9 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 			});
 		}
 		this.intelligentCoolingUIModel.push({
-			componentId: `radioICQuiteCool`,
+			componentId: this.quiteCoolModeId,
 			label: `device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.quiteCool${(showIC >= 15 ? 14 : showIC)}`,
-			value: showIC >= 14 ? 'LE-IntelligentCooling2x' : 'LE-CoolingDown2x',
+			value: 'intelligentCooling',
 			isChecked: this.radioQuietCool,
 			isDisabled: false,
 			processIcon: true,
@@ -870,7 +878,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 
 		if (showIC >= 14) {
 			this.intelligentCoolingUIModel.push({
-				componentId: `radioICPerformance`,
+				componentId: this.performanceModeId,
 				label: `device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.performance${(showIC >= 15 ? 14 : showIC)}`,
 				value: 'performance',
 				isChecked: this.radioPerformance,
@@ -882,7 +890,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 			});
 
 			this.intelligentCoolingUIModel.push({
-				componentId: `quiteBatterySaving`,
+				componentId: this.batterySavingModeId,
 				label: `device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.batterySaving`,
 				value: 'batterySaving',
 				isChecked: this.radioBatterySaving,
@@ -895,14 +903,30 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 		}
 	}
 
+	updateIntelligentCoolingSelection() {
+		if (this.intelligentCoolingUIModel && this.intelligentCoolingUIModel.length > 0) {
+			this.intelligentCoolingUIModel.forEach(element => {
+				if(element.componentId === this.batterySavingModeId){
+					element.isChecked = this.radioBatterySaving;
+				}
+				if(element.componentId === this.performanceModeId){
+					element.isChecked = this.radioPerformance;
+				}
+				if(element.componentId === this.quiteCoolModeId){
+					element.isChecked = this.radioQuietCool;
+				}
+			});
+		}
+	}
+
 	onIntelligentCoolingModeChange($event: UiCircleRadioWithCheckBoxListModel) {
 		this.logger.info('PowerSmartSettingsComponent.onIntelligentCoolingModeChange', $event);
 		if ($event) {
-			if ($event.componentId.toLowerCase() === 'radioicperformance') {
+			if ($event.componentId.toLowerCase() === this.performanceModeId.toLowerCase()) {
 				this.changePerformance()
-			} else if ($event.componentId.toLowerCase() === 'radioicquitecool') {
+			} else if ($event.componentId.toLowerCase() === this.quiteCoolModeId.toLowerCase()) {
 				this.changeQuietCool();
-			} else if ($event.componentId.toLowerCase() === 'quitebatterysaving') {
+			} else if ($event.componentId.toLowerCase() === this.batterySavingModeId.toLowerCase()) {
 				this.changeBatterySaving();
 			}
 		}
