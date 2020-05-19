@@ -370,5 +370,9 @@ export class UiSmartPerformanceComponent implements OnInit {
 		this.isScanningCompleted = false;
 		this.showSubscribersummary = false;
 	}
-
+	changeManageSubscription(event){
+		this.isSubscribed = this.commonService.getLocalStorageValue(
+			LocalStorageKey.IsSmartPerformanceSubscribed
+		);
+	}
 }

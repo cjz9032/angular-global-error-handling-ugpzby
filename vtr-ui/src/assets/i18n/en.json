@@ -2316,6 +2316,8 @@
 	"smartPerformance": {
 		"title": "Smart Performance",
 		"back": "BACK",
+		"auto": "Auto",
+		"manual":"Manual",
 		"performanceandSecurityCheckTitle": "Performance & Security Check",
 		"performanceandSecurityCheckSubTitle": "Let's diagnose and resolve performance and security issues in your computer",
 		"scanButton": "FREE PC SCAN",
