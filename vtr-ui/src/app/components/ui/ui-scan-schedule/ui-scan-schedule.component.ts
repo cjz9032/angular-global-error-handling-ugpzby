@@ -162,7 +162,8 @@ export class UiScanScheduleComponent implements OnInit {
 	scheduleScanFrequency:any;
 	nextScheduleScanDate:any;
 	public enumLocalScanFrequncy:any;
-	firstScheduleTime: Array<any>
+	firstScheduleTime: any
+	firstScheduleDay: any
 	
 	ngOnInit() {
 		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceSubscribed);
@@ -177,7 +178,7 @@ export class UiScanScheduleComponent implements OnInit {
 		this.scanScheduleDate = this.selectedDate;
 		this.enumLocalScanFrequncy = enumScanFrequency;
 		//this.scanSummaryTime(0);
-		this.firstScheduleTime = [moment().year(), moment().month(), moment().date(), moment().hour(), (Math.ceil(moment().minutes()/5)*5)]
+		this.formatDateTime()
 
 		this.scheduleScanFrequency = this.commonService.getLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency);
 		
@@ -191,13 +192,13 @@ export class UiScanScheduleComponent implements OnInit {
 		this.IsSmartPerformanceFirstRun = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun);
 		if (this.IsSmartPerformanceFirstRun === true && this.isSubscribed == true) {
 			this.unregisterScheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScan');
-			this.scheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix', 'onceaweek', moment().format('dddd'), moment(this.firstScheduleTime).format(), []);
+			this.scheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix', 'onceaweek', this.firstScheduleDay, this.firstScheduleTime, []);
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, false);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, this.selectedFrequency);
 		}
 	
 		if (this.IsSmartPerformanceFirstRun === true && this.isSubscribed == false) {
-			this.scheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScan', 'onceaweek', moment().format('dddd'), moment(this.firstScheduleTime).format(), []);
+			this.scheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScan', 'onceaweek', this.firstScheduleDay, this.firstScheduleTime, []);
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, false);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, this.selectedFrequency);
 		}
@@ -224,6 +225,12 @@ export class UiScanScheduleComponent implements OnInit {
 
 	}
 	// tslint:disable-next-line: use-lifecycle-interface
+
+	formatDateTime() {
+		const m = [moment().year(), moment().month(), moment().date(), moment().hour(), (Math.ceil(moment().minutes()/5)*5)];
+		this.firstScheduleTime = moment(m).format()
+		this.firstScheduleDay = moment().format('dddd')
+	}
 
 	expandRow(value) {
 		if (this.toggleValue === value) {
