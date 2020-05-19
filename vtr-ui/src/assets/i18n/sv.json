@@ -2094,7 +2094,7 @@
             "superResolution": {
                 "title": "Öka videoupplösningen",
                 "desc": "<p><label>Denna funktion förbättrar videoupplösningen, vilket gör videouppspelningen bättre. Den är särskilt användbar om videon har dålig upplösning.</label></p> <p><label>Funktionen kan påverka batteriets livslängd och temperatur och orsaka brus. Använd inte funktionen i DC-läge (batteriläge). Detta orsakar ökad energiförbrukning och batteriets livslängd förkortas.</label></p>",
-                "tooltip": "<p>Denna funktion fungerar bara för nedanstående videospelare:<br>Windows Media Player<br>Chrome-baserad spelare<br>Film & TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Anvisningar om hur du aktiverar denna funktion i PotPlayer och GOM Player finns i användarhandboken som medföljer datorn.</p>",
+                "tooltip": "<p>Denna funktion fungerar bara med nedanstående videospelare:<br>Windows Media Player<br>Chrome-baserad spelare<br>PotPlayer</p><p class='srTooltip'>Anvisningar om hur du aktiverar denna funktion i PotPlayer finns i användarhandboken som medföljer datorn.</p>",
                 "note": {
                     "description": "Funktionen fungerar inte när",
                     "description1": "processortemperaturen är för hög.",

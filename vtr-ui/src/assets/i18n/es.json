@@ -2094,7 +2094,7 @@
             "superResolution": {
                 "title": "Escalado de resolución del video",
                 "desc": "<p><label>Esta característica mejora la experiencia de la reproducción de video al mejorar la resolución del video. Funciona especialmente cuando el video tiene una mala resolución.</label></p> <p><label>Esta función puede afectar a la duración de la batería, a la temperatura de la batería y causar ruidos. No lo utilice en la modalidad de CC (modalidad de batería). De lo contrario, se acelerará el consumo de energía y se acortará la vida de la batería.</label></p>",
-                "tooltip": "<p>Esta característica solo funciona para los siguientes reproductores de video:<br>Windows Media Player<br>Reproductor basado en Chrome<br>Películas y TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Para obtener instrucciones sobre cómo habilitar esta función en PotPlayer y GOM Player, consulte la guía del usuario que se proporciona con el sistema.</p>",
+                "tooltip": "<p>Esta característica solo funciona para los siguientes reproductores de video:<br>Windows Media Player<br>Reproductor basado en Chrome<br>PotPlayer</p><p class='srTooltip'>Para obtener instrucciones sobre cómo habilitar esta función en PotPlayer, consulte la guía del usuario que se proporciona con el sistema.</p>",
                 "note": {
                     "description": "Esta característica no funciona cuando;",
                     "description1": "La temperatura de la CPU es demasiado alta.",

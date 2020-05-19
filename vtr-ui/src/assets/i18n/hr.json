@@ -2094,7 +2094,7 @@
             "superResolution": {
                 "title": "Povećanje razlučivosti videozapisa",
                 "desc": "<p><label>Ova značajka poboljšava iskustvo reprodukcije videa poboljšanjem razlučivosti videozapisa. Posebno djeluje kada je video loše razlučivosti.</label></p> <p><label>Ova funkcija može utjecati na trajanje baterije, temperaturu baterije i uzrokovati buku. Nemojte ga koristiti u DC načinu rada (način rada baterije). U suprotnom će doći do ubrzanja potrošnje električne energije i skraćivanja vijeka trajanja baterije.</label></p>",
-                "tooltip": "<p>Ova značajka radi samo za sljedeće reproduktore videozapisa:<br>Windows Media Player<br>Player sa sustavom Chrome<br>Filmovi i TV<br>PotPlayer<br>GOM player</p><p class='srTooltip'>Za upute o tome kako omogućiti ovu funkciju na reproduktorima PotPlayer i GOM player, pogledajte korisnički priručnik koji dolazi uz vaše računalo.</p>",
+                "tooltip": "<p>Ova značajka radi samo za video reproduktore navedene ispod:<br>Windows Media Player<br>Reproduktor temeljen na Chrome-u<br>PotPlayer</p><p class='srTooltip'>Za upute o tome kako omogućiti ovu funkciju na PotPlayeru, pogledajte vodič za korisnike koji je isporučen uz vaše računalo.</p>",
                 "note": {
                     "description": "Ova značajka ne funkcionira kad:",
                     "description1": "je temperatura CPU-a previsoka.",

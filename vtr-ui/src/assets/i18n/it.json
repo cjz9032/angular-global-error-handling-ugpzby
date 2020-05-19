@@ -2094,7 +2094,7 @@
             "superResolution": {
                 "title": "Upscaling della risoluzione video",
                 "desc": "<p><label>Questa funzione migliora l'esperienza della riproduzione video aumentando la risoluzione video. Funziona soprattutto in caso di scarsa risoluzione video.</label></p> <p><label>Questa funzione potrebbe influire sulla durata e la temperatura della batteria, aumentando la rumorosità del dispositivo. Non utilizzarla in modalità CC (modalità batteria). altrimenti accelererà il consumo energetico e ridurrà la durata della batteria.</label></p>",
-                "tooltip": "<p>Questa funzione è disponibile solo per i seguenti lettori video:<br>Windows Media Player<br>Lettore basato su Chrome<br>Film e TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Per istruzioni su come abilitare questa funzione su PotPlayer e GOM Player, consultare la guida per l'utente fornita con il computer.</p>",
+                "tooltip": "<p>Questa funzione è disponibile solo per i seguenti lettori video:<br>Windows Media Player<br>Lettore basato su Chrome<br>PotPlayer</p><p class='srTooltip'>Per istruzioni su come abilitare questa funzione su PotPlayer, consultare la guida per l'utente fornita con il computer.</p>",
                 "note": {
                     "description": "Questa funzione non può essere utilizzata quando:",
                     "description1": "La temperatura della CPU è elevata.",

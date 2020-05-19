@@ -2094,7 +2094,7 @@
             "superResolution": {
                 "title": "Skalowanie rozdzielczości wideo",
                 "desc": "<p><label>Ta funkcja poprawia rozdzielczość odtwarzania filmów, a tym samym zapewnia lepsze wrażenia z ich oglądania. Jej skuteczność jest największa w przypadku materiałów wideo o niskiej rozdzielczości.</label></p> <p><label>Ta funkcja może wpływać na żywotność baterii, temperaturę baterii i powodować hałas. Nie należy używać jej w trybie prądu stałego (tryb akumulatora). Może to przyspieszyć zużycie energii i skrócić żywotność akumulatora.</label></p>",
-                "tooltip": "<p>Ta funkcja działa tylko w przypadku następujących odtwarzaczy wideo:<br>Windows Media Player<br>Odtwarzacz działający w przeglądarce Chrome<br>Filmy i TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Aby dowiedzieć się, jak włączyć tę funkcję w odtwarzaczach PotPlayer i GOM Player, zapoznaj się z podręcznikiem użytkownika dostarczonym z komputerem.</p>",
+                "tooltip": "<p>Ta funkcja działa tylko w przypadku następujących odtwarzaczy wideo:<br>Windows Media Player<br>Odtwarzacz działający w przeglądarce Chrome<br>PotPlayer</p><p class='srTooltip'>Aby dowiedzieć się, jak włączyć tę funkcję w odtwarzaczu PotPlayer, zapoznaj się z podręcznikiem użytkownika dostarczonym z komputerem.</p>",
                 "note": {
                     "description": "Funkcja nie działa, gdy:",
                     "description1": "Temperatura procesora jest za wysoka.",

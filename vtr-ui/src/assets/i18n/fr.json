@@ -2094,7 +2094,7 @@
             "superResolution": {
                 "title": "Mise à l'échelle de la résolution vidéo",
                 "desc": "<p><label>Cette fonction améliore l'expérience de la lecture vidéo en améliorant la résolution de la vidéo. Cela est particulièrement efficace lorsque la vidéo est de faible résolution.</label></p> <p><label>Cette fonction peut influencer la durée de vie de la batterie, sa température et produire des sons. Veillez à ne pas l'utiliser en mode courant continu (mode batterie). Sinon, cela accélérera la consommation d'énergie et réduira la durée de vie de la batterie.</label></p>",
-                "tooltip": "<p>Cette fonction n'est disponible que pour les lecteurs vidéo suivants :<br>Windows Media Player<br>lecteur Chrome<br>Films et séries TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Pour savoir comment activer cette fonction sur PotPlayer et GOM Player, reportez-vous au guide d'utilisation fourni avec votre ordinateur.</p>",
+                "tooltip": "<p>Cette fonction n'est disponible que pour les lecteurs vidéo suivants :<br>Windows Media Player<br>Lecteur Chrome<br>PotPlayer</p><p class='srTooltip'>Pour savoir comment activer cette fonction sur PotPlayer, reportez-vous au guide d'utilisation fourni avec votre ordinateur.</p>",
                 "note": {
                     "description": "Cette fonction est inopérante quand :",
                     "description1": "La température de l'unité centrale est trop élevée.",
