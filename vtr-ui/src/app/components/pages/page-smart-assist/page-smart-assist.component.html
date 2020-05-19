@@ -469,10 +469,10 @@
 													[sliderId]="'smartAssist-intelligentSecurity-zeroTouchLock-distanceSensitivityAdjusting'"
 													*ngIf="zeroTouchPresenceLeaveDistanceCapability && !hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
 													[minLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.near' | translate"
-													[min]=0
+													[min]=1
 													[midLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.medium' | translate"
 													[maxLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.far' | translate"
-													[max]=2
+													[max]=3
 													(valueChange)="SetZeroTouchLockDistanceSensitivity($event)"
 													[value]="hsaIntelligentSecurity.zeroTouchLockDistance"
 													[isDisabled]="!intelligentSecurity.isZeroTouchLockEnabled || !hsaIntelligentSecurity.capacity"
@@ -522,8 +522,8 @@
 													(valueChange)="setHPDLeaveSensitivitySetting($event)"
 													[midLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.medium' | translate"
 													[maxLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
-													[min]="0"
-													[max]="2"
+													[min]="1"
+													[max]="3"
 													[value]="sensitivityAdjustVal"
 													[ariaLabel]="'zero touch lock sensitivity adjustment'"
 													[isDisabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.isHPDEnabled"

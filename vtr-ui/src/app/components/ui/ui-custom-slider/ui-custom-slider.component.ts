@@ -126,7 +126,16 @@ export class UiCustomSliderComponent implements OnInit {
 		// sliderBubble.innerHTML = `${this.value}${this.tipSuffix}`;
 		// console.log({ newPlace, value, newPoint, bubbleOffset, width });
 	}
+	// added for narrator reading
 	getLegend() {
-
+		const position = this.value === 0 ? 1 : (this.value / this.step);
+		let legend = this.minLegend;
+		switch (position) {
+			case 2: legend = this.midLegend?.length > 0 ? this.midLegend : legend;
+				break;
+			case 3: legend = this.maxLegend?.length > 0 ? this.maxLegend : this.midLegend;
+				break;
+		}
+		return legend;
 	}
 }

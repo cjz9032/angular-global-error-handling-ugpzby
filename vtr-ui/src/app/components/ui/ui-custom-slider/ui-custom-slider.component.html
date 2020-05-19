@@ -23,7 +23,7 @@
 			[attr.aria-valuemax]="max"
 			[attr.aria-valuenow]="value"
 			[attr.aria-label]="ariaLabel"
-			[attr.aria-valuetext]="showTip &&!isTooltipHidden? value+tipSuffix:value"
+			[attr.aria-valuetext]="showTip && tipSuffix? value+tipSuffix:getLegend()"
 			[attr.aria-orientation]="'horizontal'"
 			[step]="step"
 			[min]="min"
