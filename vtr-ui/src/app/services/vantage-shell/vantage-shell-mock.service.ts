@@ -366,7 +366,7 @@ export class VantageShellService {
 		};
 		sysInfo.getMachineInfo = this.getPromise(machineInfo);
 		sysInfo.getMachineInfoSync = this.getPromise(machineInfo);
-		sysInfo.getMachineType = this.getPromise(1); // 1 = ThinkPad
+		sysInfo.getMachineType = this.getPromise(0); // 1 = ThinkPad
 		sysInfo.getHardwareInfo = this.getPromise(hardwareInfo);
 		return sysInfo;
 	}

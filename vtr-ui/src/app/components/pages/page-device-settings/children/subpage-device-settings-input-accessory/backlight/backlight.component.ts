@@ -228,7 +228,7 @@ export class BacklightComponent implements OnInit, OnDestroy {
 			response.forEach(mode => {
 				this.kbBacklightUIModel.push({
 					componentId: `backlightMode${mode.value.toLocaleLowerCase()}`.replace(/\s/g, ''),
-					label: `device.deviceSettings.audio.microphone.optimize.options.${mode}`,
+					label: mode.title,
 					value: mode.value,
 					isChecked: mode.checked,
 					isDisabled: mode.disabled,
