@@ -17,6 +17,7 @@
 				metricsItemPosition="{{ index }}"
 				metricsViewOrder="{{metricsDatas.viewOrder}}"
 				metricsPageNumber="{{metricsDatas.pageNumber}}"
+				(keyup.enter)="clickContent()"
 				(click)="clickContent()">
 				<div *ngIf="item.Thumbnail"
 					title=""
@@ -72,6 +73,7 @@
 				metricsItemPosition="{{index}}"
 				metricsViewOrder="{{metricsDatas.viewOrder}}"
 				metricsPageNumber="{{metricsDatas.pageNumber}}"
+				(keyup.enter)="clickContent()"
 				(click)="clickContent()">
 				<div *ngIf="item.FeatureImage"
 					title=""
