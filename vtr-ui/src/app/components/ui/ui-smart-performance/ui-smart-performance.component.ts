@@ -105,7 +105,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 			if(res) {
 				this.showWarning.emit(false)
 			}
-			
+
 		})
 
 	}
@@ -210,11 +210,11 @@ export class UiSmartPerformanceComponent implements OnInit {
 		try {
 			if (response && response.payload) {
 				if(response.payload.percentage > 0){
-					this.scheduleScanObj = response;					
+					this.scheduleScanObj = response;
 					if (response.payload.percentage == 100) {
 						this.isScanningCompleted = true;
 						this.isScanning = false;
-					}					
+					}
 					if (!this.isScheduleScan) {
 						this.isScheduleScan = true;
 					}
@@ -272,7 +272,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 					res = await this.smartPerformanceService.startScan();
 				}
 				if (res && res.state === true) {
-                    // Subscriber Scan cancel model
+					// Subscriber Scan cancel model
 					let spSubscribeCancelModel = this.commonService.getLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted);
 					if (spSubscribeCancelModel) {
 						// this.hasSubscribedScanCompleted = false;
@@ -371,18 +371,15 @@ export class UiSmartPerformanceComponent implements OnInit {
 		this.isScanningCompleted = false;
 		this.showSubscribersummary = false;
 	}
-<<<<<<< HEAD
 	changeManageSubscription(event){
 		this.isSubscribed = this.commonService.getLocalStorageValue(
 			LocalStorageKey.IsSmartPerformanceSubscribed
 		);
 	}
-=======
 	changeSummaryToHome(){
-        this.isScanning = false;
-        this.isScanningCompleted = false;
-        this.showSubscribersummary = false;
-    }
+		this.isScanning = false;
+		this.isScanningCompleted = false;
+		this.showSubscribersummary = false;
+	}
 
->>>>>>> 21fadc9f354aebeed037d2e30c6c9aa4b1bcc19c
 }
