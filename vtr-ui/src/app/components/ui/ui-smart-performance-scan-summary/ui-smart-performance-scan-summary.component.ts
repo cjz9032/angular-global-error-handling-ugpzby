@@ -114,7 +114,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	public scanData: any = {};
 	systemSerialNumber: any;
 	displayMonths:number = 1;
-    navigation:string = 'arrows';
+	navigation:string = 'arrows';
+	public minDate: any;
 	public maxDate: any;
 	// tuneindividualIssueCount: any = 0;
 	// boostindividualIssueCount: any = 0;
@@ -162,6 +163,17 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			this.systemSerialNumber = machineInfo.serialnumber;
 		});
 		this.initContentLoad();
+		
+		this.minDate = {
+			year: this.currentDate.getFullYear() - 1,
+			month: this.currentDate.getMonth() + 1,
+			day: this.currentDate.getDate() 
+		};
+		this.maxDate = {
+			year: this.currentDate.getFullYear(),
+			month: this.currentDate.getMonth() + 1,
+			day: this.currentDate.getDate()
+		};
 	}
 
 	getNextScanScheduleTime(scandate) {
@@ -214,11 +226,6 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		} catch (err) {
 			this.logger.error('ui-smart-performance-scan-summary.getNextScanRunTime.then', err);
 		}
-		this.maxDate = {
-			year: this.currentDate.getFullYear(),
-			month: this.currentDate.getMonth() + 1,
-			day: this.currentDate.getDate()
-		};
 	}
 	// tslint:disable-next-line: use-lifecycle-interface
 	ngAfterViewInit() {
