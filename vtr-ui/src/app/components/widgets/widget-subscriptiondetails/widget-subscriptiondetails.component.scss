@@ -81,6 +81,14 @@
             &:last-child{
                 border-bottom: none;
             }
+            .question{
+				font-size: 1.6rem;
+				color: $grey_dark;
+				margin-top: 0.5rem;
+				&:hover {
+					color: $main;
+				}
+			}
         }
     }
     .labels {
