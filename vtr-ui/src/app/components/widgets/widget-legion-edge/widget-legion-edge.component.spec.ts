@@ -68,7 +68,6 @@ describe('WidgetLegionEdgeComponent', () => {
 				{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceMock },
 				{ provide: GamingOCService, useValue: gamingOCServiceMock },
 				{ provide: LoggerService, useValue: loggerServiceMock },
-
 				{ provide: NgbModal, useValue: { open: () => 0 } },
 			]
 		}).compileComponents();
@@ -90,85 +89,6 @@ describe('WidgetLegionEdgeComponent', () => {
 		expect(compiled.querySelector('div.help-box>button>fa-icon')).toBeTruthy();
 	}));
 
-	// it('should have default isCustomizable legionUpdate object true for auto close, networkboost & false for all', () => {
-	// 	fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
-	// 	component = fixture.debugElement.componentInstance;
-	// 	fixture.detectChanges();
-	// 	// Expected Default Behaviour
-	// 	expect(component.legionUpdate[0].isCustomizable).toEqual(false);
-	// 	expect(component.legionUpdate[1].isCustomizable).toEqual(false);
-	// 	expect(component.legionUpdate[2].isCustomizable).toEqual(true);
-	// 	expect(component.legionUpdate[3].isCustomizable).toEqual(true);
-	// 	expect(component.legionUpdate[4].isCustomizable).toEqual(false);
-	// 	expect(component.legionUpdate[5].isCustomizable).toEqual(false);
-	// });
-
-	// it('should have driver popup default legionUpdate object false for all', () => {
-	// 	fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
-	// 	component = fixture.debugElement.componentInstance;
-	// 	fixture.detectChanges();
-	// 	// Expected Default Behaviour
-	// 	expect(component.legionUpdate[0].isDriverPopup).toEqual(false);
-	// 	expect(component.legionUpdate[1].isDriverPopup).toEqual(false);
-	// 	expect(component.legionUpdate[2].isDriverPopup).toEqual(false);
-	// 	expect(component.legionUpdate[3].isDriverPopup).toEqual(false);
-	// 	expect(component.legionUpdate[4].isDriverPopup).toEqual(false);
-	// 	expect(component.legionUpdate[5].isDriverPopup).toEqual(false);
-	// });
-
-	// it('should have default isCheckedBoxVisible legionUpdate object false for CPU OverClock & True for all', () => {
-	// 	fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
-	// 	component = fixture.debugElement.componentInstance;
-	// 	fixture.detectChanges();
-	// 	// Expected Default Behaviour
-	// 	expect(component.legionUpdate[0].isCheckBoxVisible).toEqual(false);
-	// 	expect(component.legionUpdate[1].isCheckBoxVisible).toEqual(true);
-	// 	expect(component.legionUpdate[2].isCheckBoxVisible).toEqual(true);
-	// 	expect(component.legionUpdate[3].isCheckBoxVisible).toEqual(true);
-	// 	expect(component.legionUpdate[4].isCheckBoxVisible).toEqual(true);
-	// 	expect(component.legionUpdate[5].isCheckBoxVisible).toEqual(true);
-	// });
-
-	// it('should have default isSwitchVisible legionUpdate object false for CPU OverClock & True for all', () => {
-	// 	fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
-	// 	component = fixture.debugElement.componentInstance;
-	// 	fixture.detectChanges();
-	// 	// Expected Default Behaviour
-	// 	expect(component.legionUpdate[0].isSwitchVisible).toEqual(false);
-	// 	expect(component.legionUpdate[1].isSwitchVisible).toEqual(true);
-	// 	expect(component.legionUpdate[2].isSwitchVisible).toEqual(true);
-	// 	expect(component.legionUpdate[3].isSwitchVisible).toEqual(true);
-	// 	expect(component.legionUpdate[4].isSwitchVisible).toEqual(true);
-	// 	expect(component.legionUpdate[5].isSwitchVisible).toEqual(true);
-	// });
-
-	// it('should have default isCollapsible legionUpdate object true for CPU OverClock & false for all', () => {
-	// 	fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
-	// 	component = fixture.debugElement.componentInstance;
-	// 	fixture.detectChanges();
-	// 	// Expected Default Behaviour
-	// 	expect(component.legionUpdate[0].isCollapsible).toEqual(true);
-	// 	expect(component.legionUpdate[1].isCollapsible).toEqual(false);
-	// 	expect(component.legionUpdate[2].isCollapsible).toEqual(false);
-	// 	expect(component.legionUpdate[3].isCollapsible).toEqual(false);
-	// 	expect(component.legionUpdate[4].isCollapsible).toEqual(false);
-	// 	expect(component.legionUpdate[5].isCollapsible).toEqual(false);
-	// });
-
-
-	// it('should have default isPopup legionUpdate object true for RAM OverClock & false for all', () => {
-	// 	fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
-	// 	component = fixture.debugElement.componentInstance;
-	// 	fixture.detectChanges();
-	// 	// Expected Default Behaviour
-	// 	expect(component.legionUpdate[0].isPopup).toEqual(false);
-	// 	expect(component.legionUpdate[1].isPopup).toEqual(false);
-	// 	expect(component.legionUpdate[2].isPopup).toEqual(false);
-	// 	expect(component.legionUpdate[3].isPopup).toEqual(false);
-	// 	expect(component.legionUpdate[4].isPopup).toEqual(false);
-	// 	expect(component.legionUpdate[5].isPopup).toEqual(false);
-
-	// });
 
 	it('should have default isChecked legionUpdate object true for touchpadlock & false for all', () => {
 		fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
@@ -340,17 +260,13 @@ describe('WidgetLegionEdgeComponent', () => {
 		let touchpadLockPromisedData: boolean;
 		const uiTouchpadLockStatusValue = component.legionUpdate[5].isChecked;
 		const cacheTouchpadStatusValue = component.GetTouchpadLockCacheStatus();
-		// if we include following line this will increase covrage.
-		// const touchpadAllvalue = component.renderTouchpadLockStatus();
 		gamingKeyLockServiceMock.getKeyLockStatus.and.returnValue(Promise.resolve(uiTouchpadLockStatusValue));
 		gamingKeyLockServiceMock.getKeyLockStatus().then((response: any) => {
 			touchpadLockPromisedData = response;
 		});
 		tick(10);
 		fixture.detectChanges();
-		//expect(uiTouchpadLockStatusValue).toEqual(cacheTouchpadStatusValue);
 		 expect(uiTouchpadLockStatusValue).toEqual(touchpadLockPromisedData);
-		// expect(cacheTouchpadStatusValue).toEqual(touchpadLockPromisedData);
 	}));
 
 
@@ -359,14 +275,6 @@ describe('WidgetLegionEdgeComponent', () => {
 		component.onShowDropdown({ type: 'gaming.dashboard.device.legionEdge.title' });
 		expect(component.legionUpdate[0].isDriverPopup).toBe(true);
 	}));
-
-	// it('onIconClick', fakeAsync(() => {
-	// 	component.onIconClick({ value: true, name: 'gaming.dashboard.device.legionEdge.networkBoost' });
-	// 	component.gamingCapabilities.fbnetFilter = true;
-	// 	tick(10);
-	// 	fixture.detectChanges();
-	// 	expect(component.legionUpdate[2].isDriverPopup).toBe(false);
-	// }));
 
 
 	it('toggleOnOffRamOCStatus', fakeAsync(() => {
