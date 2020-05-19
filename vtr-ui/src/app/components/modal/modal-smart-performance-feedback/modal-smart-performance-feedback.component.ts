@@ -21,7 +21,7 @@ export class ModalSmartPerformanceFeedbackComponent implements OnInit {
 	questions = [
 		/* UnSubscribed Users */
 		{
-			likelyValues: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+			likelyValues: [0, 1, 2, 3, 4, 5],
 			name: 'fbQ1',
 			question: 'smartPerformance.feedbackContainer.questions.q1',
 			ratingValue: [
@@ -30,7 +30,7 @@ export class ModalSmartPerformanceFeedbackComponent implements OnInit {
 			]
 		},
 		{
-			likelyValues: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 
+			likelyValues: [0, 1, 2, 3, 4, 5], 
 			name: 'fbQ2',
 			question: 'smartPerformance.feedbackContainer.questions.q2',
 			ratingValue: [
@@ -39,7 +39,7 @@ export class ModalSmartPerformanceFeedbackComponent implements OnInit {
 			]
 		},
 		{
-			likelyValues: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+			likelyValues: [0, 1, 2, 3, 4, 5],
 			name: 'fbQ3',
 			question: 'smartPerformance.feedbackContainer.questions.q3',
 			ratingValue: [
@@ -58,7 +58,7 @@ export class ModalSmartPerformanceFeedbackComponent implements OnInit {
 		},
 		/* Subscribed Users */
 		{
-			likelyValues: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+			likelyValues: [0, 1, 2, 3, 4, 5],
 			name: 'fbQ5',
 			question: 'smartPerformance.feedbackContainer.questions.q5',
 			ratingValue: [
@@ -76,7 +76,7 @@ export class ModalSmartPerformanceFeedbackComponent implements OnInit {
 			]
 		},
 		{
-			likelyValues: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+			likelyValues: [0, 1, 2, 3, 4, 5],
 			name: 'fbQ7',
 			question: 'smartPerformance.feedbackContainer.questions.q7',
 			ratingValue: [

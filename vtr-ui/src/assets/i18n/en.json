@@ -2939,14 +2939,14 @@
 			"subtitle": "Tell us what you think about Smart Performance",
 			"buttonText": "send feedback",
 			"questions": {
-				"q1": "How difficult or easy was it to use the scan feature?",
-				"q2": "How difficult or easy was it to understand the scan results?",
-				"q3": "How likely are you to pay for a Smart Performance subscription in order to enhance your system’s performance?",
-				"q4": "Overall how satisfied are you with the Smart Performance feature?",
-				"q5": "How difficult or easy was it to understand the fixes that Smart Performance made to your system?",
-				"q6": "Did we find any malware on your system?",
-				"q7": "How likely are you to continue paying for the Smart Performance feature?",
-				"q8": "Overall how satisfied are you with the Smart Performance feature?"
+				"q1": "1. How difficult or easy was it to use the scan feature?",
+				"q2": "2. How difficult or easy was it to understand the scan results?",
+				"q3": "3. How likely are you to pay for a Smart Performance subscription in order to enhance your system’s performance?",
+				"q4": "4. Overall how satisfied are you with the Smart Performance feature?",
+				"q5": "1. How difficult or easy was it to understand the fixes that Smart Performance made to your system?",
+				"q6": "2. Did we find any malware on your system?",
+				"q7": "3. How likely are you to continue paying for the Smart Performance feature?",
+				"q8": "4. Overall how satisfied are you with the Smart Performance feature?"
 
 			},
 			"rating": {
@@ -2954,20 +2954,20 @@
 				"r2": "Very Easy",
 				"r3": "Very Difficult",
 				"r4": "Very Easy",
-				"r5": "Not at all likely",
+				"r5": "Not At All Likely",
 				"r6": "Very Likely",
-				"r7": "Not at all satisfied",
+				"r7": "Not At All Satisfied",
 				"r8": "Very Satisfied",
 				"r9": "Very Difficult",
 				"r10": "Very Easy",
 				"r11": "Yes",
 				"r12": "No",
-				"r13": "Not at all likely",
+				"r13": "Not At All Likely",
 				"r14": "Very Likely",
-				"r15": "Not at all satisfied",
+				"r15": "Not At All Satisfied",
 				"r16": "Very Satisfied"
 			},
-			"commentTip": "Please leave any comments or additional feedback below: (Open-ended feedback box)",
+			"commentTip": "Please leave any comments or additional feedback below:",
 			"comments": "Please leave your comments here..."
 		}
 	},
