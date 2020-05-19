@@ -119,7 +119,7 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 				title: group.name,
 				name: group.name,
 				status: HardwareScanTestResult.NotStarted,
-				isSelected: this.failedDevicesList.find(p => p === group.id) != undefined,
+				isSelected: this.failedDevicesList.some(p => p === group.id),
 				percent: 0,
 				numberOfSectors: 0,
 				numberOfBadSectors: 0,

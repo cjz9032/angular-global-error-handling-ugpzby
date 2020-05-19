@@ -3130,12 +3130,12 @@
         "processFinishedCannotBeCanceled": "Het actieve proces is voltooid en hoeft niet meer te worden geannuleerd.",
         "cancelMayTakeSomeTime": "Een ogenblik geduld, het annuleren kan even duren, afhankelijk van uw systeem.",
         "scanFailureModal": {
-            "title": "Hardware Problem Detected",
-            "problemDetected": "There were detected problems on the following components on your computer:",
-            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
-            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
-            "supportButtonText": "Open Ticket",
-            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+            "title": "Probleem in hardware aangetroffen",
+            "problemDetected": "Er zijn problemen aangetroffen bij de volgende onderdelen op uw computer:",
+            "suggestedActionRbs": "U kunt proberen om de opslagapparaten te herstellen door te klikken op <b>Slechte sectoren herstellen</b>. Als het probleem blijft bestaan, kunt u op <b>Ticket openen</b> klikken voor meer ondersteuning.",
+            "suggestedActionSupport": "Als uw computer nog onder garantie valt, klikt u op <b>Ticket openen</b> om een vervangend onderdeel aan te vragen. Ga voor meer informatie naar de ondersteuningswebsite van Lenovo.",
+            "supportButtonText": "Ticket openen",
+            "recoverBadSectorsButtonText": "Slechte sectoren herstellen"
         }
     },
     "smartPerformance": {

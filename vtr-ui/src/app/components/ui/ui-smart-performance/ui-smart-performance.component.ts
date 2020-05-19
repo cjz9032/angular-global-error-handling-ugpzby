@@ -84,6 +84,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 				.then((getReadinessFromService: any) => {
 					this.logger.info('ScanNow.getReadiness.then', getReadinessFromService);
 					if (!getReadinessFromService) {
+						this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
 						this.isScanning = true;
 						this.registerScheduleScanStatus();
 						this.getSmartPerformanceStartScanInformation();
@@ -232,14 +233,22 @@ export class UiSmartPerformanceComponent implements OnInit {
 				);
 				res = await this.smartPerformanceService.getScheduleScanStatus();
 				if (res && res.scanstatus != 'Idle') {
-					this.showSubscribersummary=true;
-					this.isScanningCompleted = true;
-					this.isScanning = false;
-					this.rating = res.rating;
-					this.tune = res.result.tune;
-					this.boost = res.result.boost;
-					this.secure = res.result.secure;
-					this.logger.info('changeScanStatus', this.isScanningCompleted + '>>>' + this.isScanning);
+					let spSubscribeCancelModel = this.commonService.getLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted);
+					if (spSubscribeCancelModel) {
+						// this.hasSubscribedScanCompleted = false;
+						this.showSubscribersummary = false;
+						// this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
+					}
+					else {
+						this.showSubscribersummary=true;
+						this.isScanningCompleted = true;
+						this.isScanning = false;
+						this.rating = res.rating;
+						this.tune = res.result.tune;
+						this.boost = res.result.boost;
+						this.secure = res.result.secure;
+						this.logger.info('changeScanStatus', this.isScanningCompleted + '>>>' + this.isScanning);
+					}
 				}
 			} catch (error) {
 				this.logger.error(

@@ -60,6 +60,10 @@
 			.button-container {
 				width: 100%;
 				text-align: left;
+				&:focus {
+					outline-offset: .2rem;
+					outline: 0.1rem solid $blueFill;
+				}
 			}
             .item-left {
                 float: left;

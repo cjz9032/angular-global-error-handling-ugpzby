@@ -1,21 +1,20 @@
-<div class="modal-header"
-	role="heading">
+<div class="modal-header">
 	<h4 class="modal-title intelligent-cooling-modal-title pl-5"
 		id="powerSmartSettings-intelligentCooling-intelligentCoolingModesModal-title">
 		{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.title' | translate}}
 	</h4>
+
 	<button class="close-button bg-white"
-		tabindex="1"
-		(click)="closeModal()"
-		(keydown.enter)="closeModal()"
-		attr.aria-label="intelligentCoolingModesModal-close-icon"
-		id="intelligentCoolingModesModal-close-icon">
-		<fa-icon role="img"
-			id="intelligentCoolingModesModal-close-icon"
-			attr.aria-label="intelligentCoolingModesModal-close-icon"
-			[icon]="['fal', 'times']">
-		</fa-icon>
-	</button>
+				type="button"
+				role="button"
+				id="intelligentCoolingModesModal-close-icon"
+				tabindex="1"
+				aria-label="close"
+				(click)="closeModal()"
+				(keydown.enter)="closeModal()">
+				<fa-icon [icon]="['fal', 'times']"></fa-icon>
+			</button>
+
 </div>
 <div class="modal-body vtr-modal-intelligent-cooling-modes">
 	<!-- <div class="row justify-content-end"
@@ -51,13 +50,15 @@
 						<span class="text-regular"
 							id="powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.coolingModesList.list1">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.coolingModesList.list1' | translate}}</span>
 					</div>
+				</li>
 					<div class="col ml-5 toolbar-block">
 						<img class="img-fluid ml-5"
 							role="img"
 							id="toolbar"
+							aria-label="sample toolbar"
 							src="assets/images/toolbar.PNG">
 					</div>
-				</li>
+				
 			</div>
 		</div>
 	</div>
@@ -74,13 +75,15 @@
 						<span class="text-regular"
 							id="powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.coolingModesList.list2">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.coolingModesList.list2' | translate}}</span>
 					</div>
+				</li>
 					<div class="col ml-5 battery-guage-block">
 						<img class="img-fluid ml-5 "
 							role="img"
 							id="battery-guage"
+							aria-label="sample battery-guage"
 							src="assets/images/battery-guage.jpg">
 					</div>
-				</li>
+				
 			</div>
 		</div>
 	</div>

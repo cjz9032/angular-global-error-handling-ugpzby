@@ -32,7 +32,6 @@ import { TranslateService } from '@ngx-translate/core';
 	styleUrls: ['./wifi-security.component.scss']
 })
 export class WifiSecurityComponent extends BaseComponent implements OnInit {
-	@Input() data: WifiHomeViewModel;
 	isShowMore = true; // less info, more info
 	isShowMoreLink = true; // show more link
 	isWifiSecurityEnabled = true;
@@ -42,8 +41,27 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	locatorButtonDisable = false;
 	@Output() toggleChange = new EventEmitter<void>()
 
+	private _data: WifiHomeViewModel;
+
+	get data(): WifiHomeViewModel {
+		return this._data;
+	}
+
+	@Input()
+	set data(val: WifiHomeViewModel) {
+		if (!this._data || val.isLWSEnabled !== this._data.isLWSEnabled) {
+			this.switchLabel = `${this.wsNameText} ${val.isLWSEnabled ? this.wsEnabledText : this.wsDisabledText}`;
+		}
+		this._data = val;
+	}
+
 	showMoreText = this.translate.instant('security.wifisecurity.container.showmore');
 	showLessText = this.translate.instant('security.wifisecurity.container.showless');
+
+	wsNameText = this.translate.instant('security.wifisecurity.container.name');
+	wsEnabledText = this.translate.instant('security.wifisecurity.container.enable');
+	wsDisabledText = this.translate.instant('security.wifisecurity.container.disable');
+	switchLabel = '';
 
 	networkLevel = [
 		'neutral network',

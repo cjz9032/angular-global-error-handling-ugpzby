@@ -46,7 +46,8 @@ vtr-ui-smart-performance-scan-summary {
 				}
 			}
 			.summary-period {
-				width: 62%;
+				//width: 62%;
+				width: auto;
 				position: relative;
 				@media #{$breakpoint_xl}{
 					width: 100%;
@@ -99,13 +100,13 @@ vtr-ui-smart-performance-scan-summary {
 						}
 					}
 					.list-selected-item{
-						width: 25rem;
+						width: 21rem;
 						cursor: default;
 						@media #{$breakpoint_lg}{
 							width: 20rem;
 						}
 						@media #{$breakpoint_md}{
-							width: 25rem;
+							width: 21rem;
 						}
 						@media #{$breakpoint_sm}{
 							width: auto;
@@ -389,12 +390,12 @@ vtr-ui-smart-performance-scan-summary {
 						border-bottom: none;
 						.btn-link{
 							width: 100%;
-							&:before{								
+							&:before{
 								content: "\276F";
 								transform-origin: 0 0;
   								transform: rotate(-90deg);
 								color:$shade_dark;
-								font-size:2rem;																
+								font-size:2rem;
 								width:1.75rem;
 								height:1.75rem;
 								right:2.75rem;
@@ -419,12 +420,12 @@ vtr-ui-smart-performance-scan-summary {
 							}
 						}
 						.collapsed{
-							&:before{								
+							&:before{
 								content: "\276E";
 								transform-origin: 0 0;
  								transform: rotate(-90deg);
 								color:$shade_dark;
-								font-size:2rem;								
+								font-size:2rem;
 								right:2.75rem;
 								@media #{$breakpoint_sm}{
 									right:5%;
@@ -437,8 +438,8 @@ vtr-ui-smart-performance-scan-summary {
 								width:1.75rem;
 								height:1.75rem;
 								position:absolute;
-								top:5.5rem;							
-							}														
+								top:5.5rem;
+							}
 						}
                         .heading {
                             h3, h2{
@@ -489,7 +490,7 @@ vtr-ui-smart-performance-scan-summary {
 										&.active {
                                             background-color: transparent;
                                             border-bottom-color: transparent;
-										}                                    
+										}
 									}
                                     &:first-child{
                                         .nav-link{
@@ -924,12 +925,15 @@ vtr-ui-smart-performance-scan-summary {
 				width: 100% !important;
 				justify-content: flex-start !important;
 			}
+			@media #{$breakpoint_sm}{
+				flex-direction: column;
+			}
 		}
 		.action-button {
 			border-radius: 2.5rem;
 			background: $gradient_main;
 			text-transform: uppercase;
-			padding: 0 5rem;
+			padding: 0 3rem;
 			color: $light;
 			font-size: 1.5rem;
 			height: 5rem;
@@ -943,27 +947,42 @@ vtr-ui-smart-performance-scan-summary {
 				padding: 0 2.4rem;
 				font-size: 1.2rem;
 			}
+			@media #{$breakpoint_sm}{
+				width: 100%;
+				margin-bottom: 1rem;
+			}
 		}
-		.desc {
-			font-size: 1.6rem;
-			line-height: 1.8rem;
-			width: auto;
-			margin: 0.5rem 1rem;
-			min-width: 11.5rem;
-			&.desc1 {
-				border-right: 0.1rem solid $shade_lighter;
-				width: 30%;
-				max-width: 13rem;
+		.desc-block {
+			display: flex;
+			flex-direction: row;
+			@media #{$breakpoint_sm}{
+				justify-content: center;
 			}
-			&.desc2{
-				margin-left: 0rem;
-				margin-right: 0rem;
-			}
-			b {
-				font-size: $fontsize_xs2;
-				font-weight: $weight_bold;
-				@media #{$breakpoint_xl}{
-					font-size: 1.1rem;
+			.desc {
+				font-size: 1.6rem;
+				line-height: 1.8rem;
+				// width: auto;
+				margin: 0.5rem 1rem;
+				// min-width: 11.5rem;
+
+				&.desc1 {
+					border-right: 0.1rem solid $shade_lighter;
+					// width: 30%;
+					// max-width: 13rem;
+				}
+
+				&.desc2 {
+					margin-left: 0rem;
+					margin-right: 0rem;
+				}
+
+				b {
+					font-size: $fontsize_xs2;
+					font-weight: $weight_bold;
+
+					@media #{$breakpoint_xl} {
+						font-size: 1.1rem;
+					}
 				}
 			}
 		}
@@ -1067,7 +1086,7 @@ vtr-ui-smart-performance-scan-summary {
 			opacity: 0.3;
 		}
 	}
-	.labels { 
+	.labels {
 		.badge {
 			font-size: 1.2rem;
 			margin-bottom: 0.6rem;
@@ -1162,7 +1181,7 @@ vtr-ui-smart-performance-scan-summary {
 			text-align: center;
 			border: 0rem;
 			cursor: pointer;
-			
+
 	}
 	.cancel-link {
 		color: $main;
@@ -1194,15 +1213,15 @@ vtr-ui-smart-performance-scan-summary {
 			.selected-frequency{
 				color: #11b85b;
 				font-weight: $weight_bold;
-				
+
 			}
 			.frequency-text{
 				cursor: pointer;
 			}
 			&:before {
 				content: '';
-				width: 0; 
-				height: 0; 
+				width: 0;
+				height: 0;
 				border-left: 10px solid transparent;
 				border-right: 10px solid transparent;
 				border-bottom: 10px solid $light;
@@ -1235,8 +1254,8 @@ vtr-ui-smart-performance-scan-summary {
 			}
 			&:before {
 				content: '';
-				width: 0; 
-				height: 0; 
+				width: 0;
+				height: 0;
 				border-left: 10px solid transparent;
 				border-right: 10px solid transparent;
 				border-bottom: 10px solid $light;
@@ -1266,8 +1285,8 @@ vtr-ui-smart-performance-scan-summary {
 			}
 			&:before {
 				content: '';
-				width: 0; 
-				height: 0; 
+				width: 0;
+				height: 0;
 				border-left: 10px solid transparent;
 				border-right: 10px solid transparent;
 				border-bottom: 10px solid $light;
@@ -1299,7 +1318,7 @@ vtr-ui-smart-performance-scan-summary {
 				border-bottom: 1px solid $shade_light;
 				padding-right: 2rem;
 				padding-left: 2rem;
-				
+
 				.hour-text{
 					cursor: pointer;
 				}
@@ -1335,8 +1354,8 @@ vtr-ui-smart-performance-scan-summary {
 			}
 			&:before {
 				content: '';
-				width: 0; 
-				height: 0; 
+				width: 0;
+				height: 0;
 				border-left: 10px solid transparent;
 				border-right: 10px solid transparent;
 				border-bottom: 10px solid $light;
@@ -1353,7 +1372,7 @@ vtr-ui-smart-performance-scan-summary {
 				}
 			}
 		}
-	
+
 }
 }
 .scanned-items{
@@ -1420,7 +1439,7 @@ vtr-ui-smart-performance-scan-summary {
 .loader {
 	position: absolute;
 	z-index: 999;
-	top: 70%;
+	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }

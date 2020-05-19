@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.47](https://bitbucket.tc.lenovo.com///compare/v1.5.46...v1.5.47) (2020-05-19)
+
+### [1.5.46](https://bitbucket.tc.lenovo.com///compare/v1.5.45...v1.5.46) (2020-05-18)
+
+
+### Bug Fixes
+
+* **QA-Accessibility:** QA item need add expanded/collapsed status ([108a19f](https://bitbucket.tc.lenovo.com///commit/108a19fe924db9e7c29c636503f90e7cdac374f6))
+
 ### [1.5.45](https://bitbucket.tc.lenovo.com///compare/v1.5.44...v1.5.45) (2020-05-16)
 
 ### [1.5.44](https://bitbucket.tc.lenovo.com///compare/v1.5.43...v1.5.44) (2020-05-15)

@@ -141,6 +141,8 @@ export class BacklightComponent implements OnInit, OnDestroy {
 						mode.checked = true;
 					}
 				}
+				this.updateBacklightModel(this.modes);
+
 			});
 		this.twoLevelSubscription = this.level$
 			.pipe(
@@ -155,13 +157,13 @@ export class BacklightComponent implements OnInit, OnDestroy {
 						mode.checked = true;
 					}
 				}
+				this.updateBacklightModel(this.modes);
 			});
 		this.update$.subscribe(mode => {
 			for (const modeItem of this.modes) {
 				modeItem.checked = false;
 			}
 			mode.checked = true;
-			this.updateBacklightModel(this.modes);
 		});
 
 		this.changeSubscription = this.backlightService.getBacklightOnSystemChange()
@@ -173,6 +175,7 @@ export class BacklightComponent implements OnInit, OnDestroy {
 			)
 			.subscribe(res => {
 				this.isSwitchChecked = res.value !== BacklightStatusEnum.OFF;
+				this.setActiveOption(res.value);
 				for (const modeItem of this.modes) {
 					modeItem.checked = res.value === modeItem.value;
 					modeItem.disabled = res.value === BacklightStatusEnum.DISABLED_OFF;
@@ -225,14 +228,14 @@ export class BacklightComponent implements OnInit, OnDestroy {
 			this.kbBacklightUIModel = [];
 			response.forEach(mode => {
 				this.kbBacklightUIModel.push({
-					componentId: `backlightMode${mode}`.replace(/\s/g, ''),
-					label: `device.deviceSettings.audio.microphone.optimize.options.${mode}`,
+					componentId: `backlightMode${mode.value.toLocaleLowerCase()}`.replace(/\s/g, ''),
+					label: mode.title,
 					value: mode.value,
 					isChecked: mode.checked,
 					isDisabled: mode.disabled,
 					processIcon: true,
-					customIcon: '',
-					hideIcon: false,
+					customIcon: mode.value,
+					hideIcon: true,
 					processLabel: true,
 				});
 			});
@@ -242,12 +245,21 @@ export class BacklightComponent implements OnInit, OnDestroy {
 
 	onBacklightRadioChange($event: UiCircleRadioWithCheckBoxListModel) {
 		if ($event) {
-			const componentId = $event.componentId.toLowerCase();
-			// if (componentId === 'radio1') {
-			// 	this.onChangeFunType(this.topRowKeyObj.primaryFunStatus);
-			// } else if (componentId === 'radio2') {
-			// 	this.onChangeFunType(!this.topRowKeyObj.primaryFunStatus);
-			// }
+			const backlight: BacklightMode = {
+				checked: true,
+				value: $event.value as BacklightStatusEnum,
+				disabled: false,
+				title: $event.label
+			};
+			this.update$.next(backlight);
+		}
+	}
+
+	private setActiveOption(value) {
+		if (this.kbBacklightUIModel && this.kbBacklightUIModel.length > 0) {
+			this.kbBacklightUIModel.forEach(model => {
+				model.isChecked = (model.value === value);
+			});
 		}
 	}
 }

@@ -32,19 +32,19 @@
 											title=""
 											[ngbTooltip]="'security.wifisecurity.container.name' | translate" tooltipClass="vtr-system-tooltip" container="body"
 											>
-											{{'security.wifisecurity.container.name' | translate}}
+											{{wsNameText}}
 										</h3>
 										<h3 class="wifisecurity-container-enable mb-0"><span
 												class="badge badge-pill badge-success line-height-2 p-0 pl-3 pr-3"
 												title=""
 												*ngIf="data.isLWSEnabled"
 												[ngbTooltip]="'security.wifisecurity.container.enable' | translate" tooltipClass="vtr-system-tooltip" container="body"
-												>{{'security.wifisecurity.container.enable' | translate}}</span>
+												>{{wsEnabledText}}</span>
 											<span class="badge badge-pill badge-danger line-height-2 p-0 pl-3 pr-3"
 												title=""
 												*ngIf="data.isLWSEnabled===false"
 												[ngbTooltip]="'security.wifisecurity.container.disable' | translate" tooltipClass="vtr-system-tooltip" container="body"
-												>{{'security.wifisecurity.container.disable' | translate}}</span>
+												>{{wsDisabledText}}</span>
 										</h3>
 									</div>
 								</div>
@@ -53,7 +53,7 @@
 									<vtr-ui-switch-onoff
 										[ngClass]="{'switch-disable': data.isLWSEnabled === undefined || data.wifiSecurity?.changeWifiSecurity}"
 										[value]="data.isLWSEnabled"
-										[ariaLabel]="'security.wifisecurity.container.name' | translate"
+										[ariaLabel]="switchLabel"
 										[onOffSwitchId]="'sa-ws-switch'"
 										[disabled]="data.isLWSEnabled === undefined || data.wifiSecurity?.changeWifiSecurity"
 										(toggle)="noticeToggleChange()">

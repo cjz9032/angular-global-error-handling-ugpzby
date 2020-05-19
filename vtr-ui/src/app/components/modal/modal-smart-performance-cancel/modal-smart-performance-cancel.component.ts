@@ -71,9 +71,9 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
 					}
 					// de-activates the pop-up,
 					this.activeModal.close(true);
-					if (this.promptMsg) {
-						this.promptMsg = false;
-					}
+					// if (this.promptMsg) {
+					// 	this.promptMsg = false;
+					// }
 
 				}
 			})

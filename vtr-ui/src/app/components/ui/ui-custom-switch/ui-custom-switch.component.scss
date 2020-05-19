@@ -73,19 +73,43 @@
 			&::before {
 				border: 0;
 				background: $input-checked-background;
+				@media #{$black-on-white} {
+					background: $high-contrast-white-textselected;
+				}
+				@media #{$white-on-black} {
+					background: $highlight_bright;
+				}
 			}
 			&::after {
 				background-color: $light;
 				transform: translateX(24px);
+				@media #{$black-on-white} {
+					background: $light;
+				}
+				@media #{$white-on-black} {
+					background: $dark;
+				}
 			}
 		}
 		.custom-control-input:not(:checked) ~ .custom-control-label {
 			&::before {
 				border-color: $grey_darker;
 				background-color: $grey_light;
+				@media #{$black-on-white} {
+					background: $dark;
+				}
+				@media #{$white-on-black} {
+					background:$light;
+				}
 			}
 			&::after {
 				background-color: $grey_darker;
+				@media #{$black-on-white} {
+					background: $light;
+				}
+				@media #{$white-on-black} {
+					background: $dark;
+				}
 			}
 		}
 

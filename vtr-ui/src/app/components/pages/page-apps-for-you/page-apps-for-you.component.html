@@ -116,7 +116,7 @@
 							#appsForYouImageContent
 							[style.height.px]="appsForYouImageContent.clientWidth / 5">
 							<div *ngFor="let screenshot of appDetails.screenshots, let i = index"
-								tabindex="0"
+								[tabindex]="shouldFocusScreenshot(screenshot.position) ? 0 : -1"
 								role="img"
 								class="screenshot-img position-{{screenshot.position}}"
 								id="{{screenshot.id}}"

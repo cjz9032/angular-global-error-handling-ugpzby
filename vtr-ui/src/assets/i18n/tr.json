@@ -3130,12 +3130,12 @@
         "processFinishedCannotBeCanceled": "Çalışan işlem tamamlandığından artık iptal edilmesi gerekmiyor.",
         "cancelMayTakeSomeTime": "Lütfen bekleyin, sisteminize bağlı olarak iptal işlemi biraz zaman alabilir.",
         "scanFailureModal": {
-            "title": "Hardware Problem Detected",
-            "problemDetected": "There were detected problems on the following components on your computer:",
-            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
-            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
-            "supportButtonText": "Open Ticket",
-            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+            "title": "Donanım Sorunu Algılandı",
+            "problemDetected": "Bilgisayarınızın aşağıdaki bileşenlerinde sorunlar algılandı:",
+            "suggestedActionRbs": "<b>Bozuk kesimleri kurtar</b>'ı tıklatarak depolama cihazlarınızı kurtarmayı deneyebilirsiniz. Sorun devam ederse daha fazla destek almak için <b>bilet aç</b>'ı tıklatabilirsiniz.",
+            "suggestedActionSupport": "Bilgisayarınız Garanti kapsamındaysa yedek parça için <b>bilet aç</b>'ı tıklatın. Daha fazla bilgi için Lenovo Destek Web sitesine gidin.",
+            "supportButtonText": "Bilet Aç",
+            "recoverBadSectorsButtonText": "Bozuk Kesimleri Kurtar"
         }
     },
     "smartPerformance": {

@@ -24,7 +24,10 @@ vtr-ui-row-switch {
 
 .antiTheftFeature {
   label {
-    margin-bottom: 0rem ;
+    margin-bottom: 0rem;
+  }
+  p {
+    margin-bottom: 0rem;
   }
 }
 
@@ -35,6 +38,7 @@ vtr-ui-row-switch {
     font-size: $fontsize_xs;
     color: $grey_dark;
     font-weight: 300;
+    margin-bottom: 10px;
   }
   .feature-note {
     label {
@@ -71,11 +75,15 @@ vtr-ui-row-switch {
   }
 
   .showPhoto {
-    .btn-link {
-      margin-top: -4px;
-      &:focus {
-        @include outline-border-blue;
-      }
+    margin-top: -4px;
+    .photoLink {
+      margin-left: 10px;
+    }
+  }
+
+  .btn-link {
+    &:focus {
+      @include outline-border-blue;
     }
   }
 

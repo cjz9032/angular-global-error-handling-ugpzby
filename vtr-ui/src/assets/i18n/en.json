@@ -2340,7 +2340,7 @@
 		"section2Description": "Our software can proactively scan your PC 24x7 to find and fix issues as they arise, so that your PC always has top-notch performance.",
 		"tunePCPerformance": {
 			"title": "TUNE PC PERFORMANCE",
-			"summaryTitle":"PC Performance",
+			"summaryTitle":"Tune PC Performance",
 			"heading": "Show your computer some extra love",
 			"description": "Even the best computer will benefit from periodic tune-ups. Get a tune-up and get more done with our powerful app.",
 			"tabSet1": {
@@ -2434,7 +2434,7 @@
 			"activeStatus": "ACTIVE",
 			"inactiveStatus": "INACTIVE",
 			"manageSubscription": "MANAGE SUBSCRIPTION",
-			"manageSubscriptionBeta":"SUBSCRIBE FOR BETA PROGRAM",
+			"manageSubscriptionBeta":"ENABLE FULL FEATURE",
 			"descriptionbeta": "Lenovo is offering pilot program to try Smart Performance feature till July.",
 			"descriptionbeta1": "You are welcomed to join and try the full feature."
 		},
@@ -2632,7 +2632,7 @@
 				"yearlyPricing": "$19.99 / Yr",
 				"monthlyPricing": "LESS THAN $2 PER MONTH.",
 				"longerTerm": "Longer term? Even more savings?",
-				"signupButton": "SUBSCRIBE FOR BETA PROGRAM"
+				"signupButton": "ENABLE FULL FEATURE"
 			},
 			"tunepc": {
 				"accumulatedjunkscannedareas": {

@@ -3130,12 +3130,12 @@
         "processFinishedCannotBeCanceled": "אין יותר צורך לבטל את תהליך ההפעלה מפני שהוא הושלם.",
         "cancelMayTakeSomeTime": "אנא המתינו, פעולת הביטול עשויה להימשך זמן מה, בהתאם למערכת.",
         "scanFailureModal": {
-            "title": "Hardware Problem Detected",
-            "problemDetected": "There were detected problems on the following components on your computer:",
-            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
-            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
-            "supportButtonText": "Open Ticket",
-            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+            "title": "זוהתה בעיית חומרה",
+            "problemDetected": "התגלו בעיות ברכיבים הבאים במחשב שלך:",
+            "suggestedActionRbs": "ניתן לנסות לשחזר התקני אחסון על ידי לחיצה על <b>שחזור סקטורים פגומים‬</b>. אם הבעיה נמשכת, לחצו על <b>פתיחת כרטיס</b> כדי לקבל תמיכה נוספת.",
+            "suggestedActionSupport": "אם יש אחריות על המחשב, לחצו על <b>‏‫פתיחת כרטיס</b> עבור חלק חילוף. למידע נוסף, היכנסו לאתר התמיכה של Lenovo.",
+            "supportButtonText": "פתיחת כרטיס",
+            "recoverBadSectorsButtonText": "שחזור סקטורים פגומים"
         }
     },
     "smartPerformance": {

@@ -361,12 +361,22 @@
 						}
 						.icomoon, .icon {
 							font-size: 2.2rem;
-							margin-right: 0.2rem;
+							margin-right: 0.8rem;
 							color: $menu_hover;
 							// @media #{$breakpoint_xl} {
 							// 	font-size: 2.2rem;
 							// 	margin-right: 0.5rem;
 							// }
+							@media #{$breakpoint_xl}{
+								font-size: 1.8rem;
+								margin-right: 0.2rem;
+								margin-left:0.1rem;
+							}
+							@media #{$breakpoint_md}{
+								font-size: 1.8rem;
+								margin-right: 0.2rem;
+								margin-left:0.1rem;
+							}
 							@media #{$breakpoint_sm}{
 								font-size: $fontsize_sm;
 								margin-right: 0.2rem;
@@ -378,8 +388,16 @@
 							font-weight: $weight_medium;
 							max-width: 6rem;
 							margin-top: 0.6rem;
-							line-height: 1.6rem;
+							line-height: 1.4rem;
 							color: #272A3B;
+							@media #{$breakpoint_xl} {
+								font-size: 1rem;
+								line-height: 1rem;
+							}
+							@media #{$breakpoint_md} {
+								font-size: 1rem;
+								line-height: 1rem;
+							}
 							@media #{$breakpoint_sm} {
 								font-size: 1rem;
 								line-height: 1rem;
