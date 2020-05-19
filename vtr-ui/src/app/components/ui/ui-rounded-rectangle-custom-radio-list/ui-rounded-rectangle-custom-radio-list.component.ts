@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewChildren, QueryList } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChildren, QueryList, SimpleChanges, OnChanges, ViewChild, ElementRef } from '@angular/core';
 import { KeyCode as KEYCODE } from 'src/app/enums/key-code.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metric.service';
@@ -13,7 +13,7 @@ import { UiRoundedRectangleRadioModel } from './ui-rounded-rectangle-radio-list.
 	templateUrl: './ui-rounded-rectangle-custom-radio-list.component.html',
 	styleUrls: ['./ui-rounded-rectangle-custom-radio-list.component.scss']
 })
-export class UiRoundedRectangleCustomRadioListComponent implements OnInit {
+export class UiRoundedRectangleCustomRadioListComponent implements OnInit, OnChanges {
 	@Input() groupName: string;
 	@Input() isVertical = false;
 	@Input() metricsEvent = 'ItemClick';
@@ -22,6 +22,9 @@ export class UiRoundedRectangleCustomRadioListComponent implements OnInit {
 	@Output() selectionChange = new EventEmitter<UiRoundedRectangleRadioModel>();
 
 	@ViewChildren('radioRef') radioButtons: QueryList<any>;
+	@ViewChild('radioGroupRef', { static: false }) radioGroupRef: ElementRef;
+	public activeDescendantId;
+	public focusedComponentId = '';
 
 	// public model1 = new UiRoundedRectangleRadioListModel(
 	// 	'pizza-radio-group',
@@ -38,6 +41,12 @@ export class UiRoundedRectangleCustomRadioListComponent implements OnInit {
 
 	ngOnInit() { }
 
+	ngOnChanges(changes: SimpleChanges) {
+		if (changes.radioDetails) {
+			this.activeDescendantId = this.getSelectedRadioId();
+		}
+	}
+
 	onClick($event) {
 		const { id } = $event.target;
 		const radio = this.updateSelection(id);
@@ -45,9 +54,9 @@ export class UiRoundedRectangleCustomRadioListComponent implements OnInit {
 		$event.preventDefault();
 	}
 
-	onKeyDown($event, index: number) {
+	onKeyDown($event) {
 		if (this.radioDetails && this.radioDetails.length > 0) {
-			this.handleKeyPressEvent($event, index);
+			this.handleKeyPressEvent($event);
 		}
 	}
 
@@ -66,13 +75,18 @@ export class UiRoundedRectangleCustomRadioListComponent implements OnInit {
 			});
 
 			// set selected if its found had requires focus
-			if (hasFound && hasFocus) {
+			if (hasFound) {
 				this.radioButtons.forEach(radioButton => {
 					if (radioButton.nativeElement.id === radioId) {
-						radioButton.nativeElement.focus();
 						radioButton.nativeElement.checked = true;
+						radioButton.nativeElement.setAttribute('aria-checked', 'true');
 					}
 				});
+			}
+
+			if (this.radioGroupRef) {
+				this.radioGroupRef.nativeElement.setAttribute('aria-activedescendant', radioId);
+				this.radioGroupRef.nativeElement.focus();
 			}
 		}
 		return radio;
@@ -87,9 +101,10 @@ export class UiRoundedRectangleCustomRadioListComponent implements OnInit {
 		return null;
 	}
 
-	private handleKeyPressEvent(event, index: number) {
+	private handleKeyPressEvent(event) {
 		const { type } = event;
-		const { id } = event.target;
+		const id = this.getSelectedRadioId();
+		const index = this.getRadioById(id);
 		let nextIndex = index;
 		let isHandled = false;
 
@@ -131,5 +146,43 @@ export class UiRoundedRectangleCustomRadioListComponent implements OnInit {
 
 	private invokeSelectionChangeEvent(radio: UiRoundedRectangleRadioModel) {
 		this.selectionChange.emit(radio);
+	}
+
+	onRadioGroupFocus($event) {
+		this.setFocusComponentId();
+	}
+
+	onRadioGroupBlur($event) {
+		this.focusedComponentId = '';
+	}
+
+	private setFocusComponentId(){
+		this.focusedComponentId = this.getSelectedRadioId();
+	}
+
+	private getRadioById(componentId: string): number {
+		let itemIndex = -1;
+		if (this.radioDetails && this.radioDetails.length > 0) {
+			let hasFound = false;
+			this.radioDetails.forEach((radioDetail, index) => {
+				if ((radioDetail.componentId === componentId)) {
+					hasFound = true;
+					itemIndex = index;
+				}
+			});
+		}
+		return itemIndex;
+	}
+
+	private getSelectedRadioId(): string {
+		let selectedRadioId = '';
+		if (this.radioDetails && this.radioDetails.length > 0) {
+			this.radioDetails.forEach((radioDetail) => {
+				if ((radioDetail.isChecked)) {
+					selectedRadioId = radioDetail.componentId;
+				}
+			});
+		}
+		return selectedRadioId;
 	}
 }

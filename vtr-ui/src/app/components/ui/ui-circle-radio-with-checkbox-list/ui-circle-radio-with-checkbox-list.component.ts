@@ -70,7 +70,6 @@ export class UiCircleRadioWithCheckBoxListComponent implements OnInit, OnChanges
 			if (hasFound) {
 				this.radioButtons.forEach(radioButton => {
 					if (radioButton.nativeElement.id === radioId) {
-						// radioButton.nativeElement.focus();
 						radioButton.nativeElement.checked = true;
 						radioButton.nativeElement.setAttribute('aria-checked', 'true');
 					}

@@ -2,6 +2,11 @@
 	<div role="radiogroup"
 		class="radio-group"
 		class="{{ isVertical ? 'vertical': 'horizontal'}}"
+		#radioGroupRef
+		(keydown)="onKeyDown($event)"
+		(blur)="onRadioGroupBlur($event)"
+		(focus)="onRadioGroupFocus($event)"
+		tabIndex="0"
 		[id]="groupName">
 		<ng-template ngFor
 			let-item
@@ -12,9 +17,8 @@
 				[id]="item.componentId"
 				[attr.aria-checked]="item.isChecked"
 				[attr.aria-disabled]="item.isDisabled"
+				[attr.aria-label]="item.label | translate"
 				(click)="onClick($event)"
-				(keydown)="onKeyDown($event, index)"
-				[tabIndex]="item.isDisabled ?-1:item.isChecked? 0 :-1"
 				vtrMetrics
 				[metricsEvent]="metricsEvent"
 				[metricsItem]="item.componentId"
