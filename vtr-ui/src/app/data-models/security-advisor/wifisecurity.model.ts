@@ -39,8 +39,8 @@ export class WifiHomeViewModel {
 			if (value) {
 				let cacheWifiSecurityHistoryNum = commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum);
 				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, value);
-					this.allHistories = wifiSecurity.wifiHistory;
-					this.allHistories = this.mappingHistory(this.allHistories);
+				this.allHistories = wifiSecurity.wifiHistory;
+				this.allHistories = this.mappingHistory(this.allHistories);
 				if(!isEqual(this.preAllHistories, this.allHistories)) {	
 					this.preAllHistories = cloneDeep(this.allHistories);
 					if (cacheWifiSecurityHistoryNum) {
