@@ -33,14 +33,21 @@
 				</div>
 
 				<!-- Icon to expand and collapse test list -->
-				<a *ngIf="isScanExecute && !isEnableViewResults"
-					href="javascript:void(0);"
-					(click)="item.collapsed = !item.collapsed"
-					[ngClass]="{'rotate': item.collapsed}">
-					<fa-icon [icon]="['fal', 'angle-down']"
-						[attr.aria-expanded]="item.collapsed">
-					</fa-icon>
-				</a>
+				<div class="col-auto" *ngIf="isScanExecute && !isEnableViewResults">
+					<div class="collapse-control"
+						tabindex="0"
+						[attr.aria-label]="item.collapsed ? item.module + 'collapse-test-list': item.module + 'expand-test-list'"
+						(click)="item.collapsed = !item.collapsed"
+						(keyup.enter)="item.collapsed = !item.collapsed"
+						role="button"
+						[attr.aria-expanded]="!item.collapsed"
+						>
+						<fa-icon *ngIf="item.collapsed; else expandArrow" [icon]="['fal', 'angle-up']"></fa-icon>
+						<ng-template #expandArrow>
+							<fa-icon [icon]="['fal', 'angle-down']"></fa-icon>
+						</ng-template>
+					</div>
+				</div>
 			</div>
 		</div>
 
