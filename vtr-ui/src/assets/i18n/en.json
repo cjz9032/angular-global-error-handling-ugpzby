@@ -2095,7 +2095,7 @@
 				"heading": "Intelligent Media",
 				"title": "Zero Touch Video Playback",
 				"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-				"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+				"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
 			},
 			"superResolution": {
 				"title": "Video resolution upscaling",
@@ -2627,9 +2627,10 @@
 			"signupRepairButton": "Back To Home",
 			"monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
 			"issueCount": "{{individualIssueCount}} ISSUES",
-			"tune": "{{tune}} ISSUES",
-			"boost": "{{boost}} ISSUES",
-			"secure": "{{secure}} ISSUES",
+			"issues": "ISSUES",
+			"tuneIssueCount": "{{tune}}",
+			"boostIssueCount": "{{boost}}",
+			"secureIssueCount": "{{secure}}",
 			"scannedAreas": "SCANNED AREAS",
 			"recommendedAction": {
 				"title": "RECOMMENDED ACTION",

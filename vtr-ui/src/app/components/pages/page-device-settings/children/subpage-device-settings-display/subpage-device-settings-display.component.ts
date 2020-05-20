@@ -221,6 +221,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		this.logger.debug('subpage-device-setting-display onInit');
 		this.commonService.checkPowerPageFlagAndHide();
 		this.initDataFromCache();
+		this.batteryService.getBatterySettings();
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});

@@ -50,13 +50,17 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	public isLoading = true;
 	public acAdapterInfoParams: any;
 	public param: any;
-	notificationSubscription: Subscription;
 	shortAcErrNote = true;
 	isWinRTLoading = true;
 	isUnsupportedBattery = false;
 	isThinkPad = false;
 
 	disableBatteryDetails: boolean;
+
+	notificationSubscription: Subscription;
+	bctInfoSubscription: Subscription;
+	airplaneModeSubscription: Subscription;
+	expressChargingSubscription: Subscription;
 
 	constructor(
 		private modalService: NgbModal,
@@ -65,7 +69,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		private commonService: CommonService,
 		private cd: ChangeDetectorRef,
 		private logger: LoggerService,
-		private powerService: PowerService,
 		private activatedRoute: ActivatedRoute) {
 	}
 
@@ -159,8 +162,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		// temp
 		this.registerBatteryEvents();
 
-		this.getBatterySettings();
-
 		this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
 			if (params.has('batterydetail')) {
 				const showBatteryDetail = this.activatedRoute.snapshot.queryParams.batterydetail;
@@ -171,12 +172,36 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
+
+		this.bctInfoSubscription = this.batteryService.getChargeThresholdInfo()
+			.subscribe((value: ChargeThreshold[]) => {
+				this.onPowerBatteryStatusEvent(value);
+		});
+
+		this.airplaneModeSubscription = this.batteryService.getAirplaneMode()
+			.subscribe((value: FeatureStatus) => {
+			this.batteryIndicator.isAirplaneMode = value.available && value.status;
+		});
+
+		this.expressChargingSubscription = this.batteryService.getExpressCharging()
+			.subscribe((value: FeatureStatus) => {
+			this.batteryIndicator.expressCharging = value.available && value.status;
+		});
 	}
 
 	ngOnDestroy() {
 		this.unRegisterBatteryEvents();
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
+		}
+		if (this.bctInfoSubscription) {
+			this.bctInfoSubscription.unsubscribe();
+		}
+		if(this.airplaneModeSubscription) {
+			this.airplaneModeSubscription.unsubscribe();
+		}
+		if(this.expressChargingSubscription) {
+			this.expressChargingSubscription.unsubscribe();
 		}
 		this.batteryService.stopMonitor();
 	}
@@ -215,7 +240,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	}
 
 	onPowerBatteryStatusEvent(thresholdInfo: ChargeThreshold[]) {
-		this.batteryService.setChargeThresholdInfo(thresholdInfo);
 		let bctCapability = false;
 		let bctStatus = false;
 
@@ -331,7 +355,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			this.batteryIndicator.batteryNotDetected || batteryErrorCount === this.batteryInfo.length;
 		if (powerDriverStatus !== this.batteryService.isPowerDriverMissing) {
 			this.batteryService.isPowerDriverMissing = powerDriverStatus;
-			this.getBatterySettings();
 			this.commonService.sendNotification('IsPowerDriverMissing', this.batteryService.isPowerDriverMissing);
 		}
 
@@ -463,75 +486,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			this.batteryConditionNotes.push(translation);
 		});
 	}
-
-	private getBatterySettings() {
-		if (this.isThinkPad) {
-			this.getBatteryThresholdInformation();
-			this.getAirplaneModeCapabilityThinkPad();
-		} else {
-			this.getRapidChargeModeStatusIdeaPad();
-		}
-	}
-
-	public getBatteryThresholdInformation() {
-		this.logger.info('Before getBatteryThresholdInformation');
-		if (this.powerService.isShellAvailable) {
-			this.powerService.getChargeThresholdInfo().then((response) => {
-				this.logger.info('getBatteryThresholdInformation.then', response);
-				this.onPowerBatteryStatusEvent(response);
-				this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, response);
-			}).catch ((error) => {
-				this.logger.error('getBatteryThresholdInformation :: error', error.message);
-				return EMPTY;
-			});
-		}
-	}
-
-	private getAirplaneModeCapabilityThinkPad() {
-		this.logger.info('Before getAirplaneModeCapabilityThinkPad.then ');
-		if (this.powerService.isShellAvailable) {
-			this.powerService.getAirplaneModeCapabilityThinkPad().then((value) => {
-				this.logger.info('getAirplaneModeCapabilityThinkPad.then ==>', value);
-				if (value) {
-					this.getAirplaneModeThinkPad()
-				} else {
-					const airplaneMode = new FeatureStatus(false, false);
-					this.batteryService.setAirplaneMode(airplaneMode);
-				}
-			}).catch((error) => {
-				this.logger.error('getAirplaneModeCapabilityThinkPad Error ==> ', error.message);
-				return EMPTY;
-			});
-		}
-	}
-
-	private getAirplaneModeThinkPad() {
-		if (this.powerService.isShellAvailable) {
-			this.powerService.getAirplaneModeThinkPad().then((value: any) => {
-				this.logger.info('getAirplaneModeThinkPad.then', value);
-				this.batteryIndicator.isAirplaneMode = value;
-				const airplaneMode = new FeatureStatus(true, value);
-				this.batteryService.setAirplaneMode(airplaneMode)
-			}).catch(error => {
-				this.logger.error('getAirplaneModeThinkPad', error.message);
-				return EMPTY;
-			});
-		}
-	}
-
-	private getRapidChargeModeStatusIdeaPad() {
-		this.logger.info('Before getRapidChargeModeStatusIdeaNoteBook');
-		if (this.powerService.isShellAvailable) {
-			this.powerService.getRapidChargeModeStatusIdeaNoteBook().then((featureStatus) => {
-				this.logger.info('getRapidChargeModeStatusIdeaNoteBook.then', featureStatus);
-				const expressCharging = new FeatureStatus(featureStatus.available, featureStatus.status);
-				this.batteryService.setExpressCharging(expressCharging);
-			}).catch((error) => {
-				this.logger.error('getRapidChargeModeStatusIdeaNoteBook', error.message);
-				return EMPTY;
-			});
-		}
-	}
+	
 
 	/**
 	 * shows a battery details modal

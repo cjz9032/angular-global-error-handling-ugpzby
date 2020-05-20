@@ -18,9 +18,9 @@
                         &:before{								
                             content: "\276F";
                             transform-origin: 0 0;
-                              transform: rotate(-90deg);
-                            color:$shade_dark;
-                            font-size:2rem;																
+                            transform: rotate(-90deg);
+                            color:$main_light;
+                            font-size:1.4rem;																
                             width:1.75rem;
                             height:1.75rem;
                             right:2.75rem;
@@ -48,9 +48,9 @@
                         &:before{								
                             content: "\276E";
                             transform-origin: 0 0;
-                             transform: rotate(-90deg);
-                            color:$shade_dark;
-                            font-size:2rem;								
+                            transform: rotate(-90deg);
+                            color:$main_light;
+                            font-size:1.4rem;								
                             right:2.75rem;
                             @media #{$breakpoint_sm}{
                                 right:5%;
