@@ -42,10 +42,7 @@
 						role="button"
 						[attr.aria-expanded]="!item.collapsed"
 						>
-						<fa-icon *ngIf="item.collapsed"
-							[icon]="['fal', 'angle-up']"></fa-icon>
-						<fa-icon *ngIf="!item.collapsed"
-							[icon]="['fal', 'angle-down']"></fa-icon>
+						<fa-icon *ngIf="item.collapsed else expandArrow" [icon]="['fal', 'angle-up']"></fa-icon>
 					</div>
 				</div>
 			</div>
@@ -119,4 +116,8 @@
 			</button>
 		</a>
 	</div>
+</ng-template>
+
+<ng-template #expandArrow>
+	<fa-icon [icon]="['fal', 'angle-down']"></fa-icon>
 </ng-template>
