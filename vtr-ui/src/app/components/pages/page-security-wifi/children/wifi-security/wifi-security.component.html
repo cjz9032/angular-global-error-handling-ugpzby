@@ -75,6 +75,7 @@
 									[hidden]="data?.histories?.length === 0">
 									<div class="row no-gutters wifi-card">
 										<div *ngFor="let history of data.histories; let i = index;"
+											[ngClass]="{'d-none': !history.visible}"
 											class="col-sm-12 col-md-6 col-lg-12 col-xl-6 pr-3 pb-3 wifi">
 											<div class="media pt-3 border-0">
 												<div class="status-icon pr-3 pl-3">

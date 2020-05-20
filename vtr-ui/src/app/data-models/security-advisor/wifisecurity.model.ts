@@ -17,16 +17,22 @@ interface DevicePostureDetail {
 	type: string;
 }
 
+interface WifiHistoryDetail {
+	ssid: string;
+	info: string;
+	good: string;
+	visible: boolean;
+  }
+
 export class WifiHomeViewModel {
 	wifiSecurity: WifiSecurity;
 	isLWSEnabled: boolean;
-	allHistories: Array<phoenix.WifiDetail>;
+	histories: WifiHistoryDetail[] = [];
 	hasMore: boolean;
-	histories: Array<phoenix.WifiDetail>;
 	tryNowUrl: string;
 	homeStatus: string;
 	tryNowEnable = false;
-	private preAllHistories: WifiDetail[] = [];
+	private preHistories: WifiHistoryDetail[] = [];
 
 	constructor(
 		wifiSecurity: phoenix.WifiSecurity,
@@ -37,31 +43,14 @@ export class WifiHomeViewModel {
 
 		wifiSecurity.on(EventTypes.wsWifiHistoryEvent, (value) => {
 			if (value) {
-				let cacheWifiSecurityHistoryNum = commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum);
+				const cacheWifiSecurityHistoryNum = commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum)? JSON.parse(commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum)): 4;
 				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, value);
-				this.allHistories = wifiSecurity.wifiHistory;
-				this.allHistories = this.mappingHistory(this.allHistories);
-				if(!isEqual(this.preAllHistories, this.allHistories)) {	
-					this.preAllHistories = cloneDeep(this.allHistories);
-					if (cacheWifiSecurityHistoryNum) {
-						cacheWifiSecurityHistoryNum = JSON.parse(cacheWifiSecurityHistoryNum);
-						if (this.allHistories.length > 4) {
-							this.hasMore = true;
-						} else {
-							this.hasMore = false;
-						}
-						this.histories = wifiSecurity.wifiHistory.slice(0, cacheWifiSecurityHistoryNum);
-					} else {
-						if (this.allHistories.length > 4) {
-							this.hasMore = true;
-						} else {
-							this.hasMore = false;
-						}
-						this.histories = wifiSecurity.wifiHistory.slice(0, 4);
-						commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
-					}
-					this.histories = this.mappingHistory(this.histories);
-				}	
+				this.histories = this.mappingHistory(wifiSecurity.wifiHistory);
+				if (!isEqual(this.preHistories, this.histories)) {
+					this.hasMore = this.histories.length > 4;
+					this.hideHistories(this.histories, cacheWifiSecurityHistoryNum);
+					commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, cacheWifiSecurityHistoryNum);
+				}
 			}
 		});
 		this.wifiSecurity = wifiSecurity;
@@ -77,47 +66,44 @@ export class WifiHomeViewModel {
 		}
 		if (wifiSecurity && wifiSecurity.wifiHistory) {
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, wifiSecurity.wifiHistory);
-			this.allHistories = wifiSecurity.wifiHistory;
-			this.allHistories = this.mappingHistory(this.allHistories);
-			this.preAllHistories = cloneDeep(this.allHistories);
-			if (this.allHistories.length > 4) {
-					this.hasMore = true;
-			} else {
-				this.hasMore = false;
-			}
-			this.histories = wifiSecurity.wifiHistory.slice(0, 4);
-			commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
-			this.histories = this.mappingHistory(this.histories);
+			this.initializeHistories(wifiSecurity.wifiHistory, 4);
+			this.preHistories = cloneDeep(this.histories);
 		} else if (cacheWifiSecurityHistory) {
-			this.allHistories = cacheWifiSecurityHistory;
-			this.allHistories = this.mappingHistory(this.allHistories);
-			if (this.allHistories.length > 4) {
-				this.hasMore = true;
-			} else {
-				this.hasMore = false;
-			}
-			this.histories = cacheWifiSecurityHistory.slice(0, 4);
-			commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
-			this.histories = this.mappingHistory(this.histories);
+			this.initializeHistories(cacheWifiSecurityHistory, 4);
 		}
 	}
 
-	mappingHistory(histories: Array<phoenix.WifiDetail>): Array<phoenix.WifiDetail> {
+	initializeHistories(wifiHistory: phoenix.WifiDetail[], visibleNum: number) {
+		this.histories = this.mappingHistory(wifiHistory);
+		this.hasMore = this.histories.length > 4;
+		this.hideHistories(this.histories, visibleNum);
+		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, visibleNum);
+	}
+
+	mappingHistory (histories: phoenix.WifiDetail[]): WifiHistoryDetail[] {
 		const Histories = [];
 		histories.forEach((item) => {
 			let i = {
 				ssid: '',
 				info: '',
-				good: null
+				good: null,
+				visible: true
 			};
-			i = item;
+			i.ssid = item.ssid? item.ssid: '';
+			i.info = item.info? item.info: '';
+			i.good = item.good? item.good: null;
 			if (i.info.indexOf('Connected') === -1) {
-				const info = i.info.replace(/T/g, ' ');
-				i.info = info;
+				i.info.replace(/T/g, ' ');
 			}
 			Histories.push(i);
 		});
 		return Histories;
+	}
+
+	hideHistories (histories: WifiHistoryDetail[], visibleNum: number) {
+		histories.forEach((item, index) => {
+			item.visible = index < visibleNum;
+		})
 	}
 }
 

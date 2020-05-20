@@ -89,18 +89,17 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		this.toggleChange.emit();
 	}
 
-	clickShowMore(): boolean {
-		const length = this.data.histories.length;
-		const allLength = this.data.allHistories.length;
+	clickShowMore() {
+		const length = this.data.histories.filter(item => !!item.visible).length;
+		const allLength = this.data.histories.length;
 		if (length === allLength || length === 8) {
-			this.data.histories = this.data.allHistories.slice(0, 4);
+			this.data.hideHistories(this.data.histories, 4);
 			this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
 			this.isShowMoreLink = true;
 		} else {
-			this.data.histories = this.data.allHistories.slice(0, 8);
+			this.data.hideHistories(this.data.histories, 8);
 			this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 8);
 			this.isShowMoreLink = false;
 		}
-		return false;
 	}
 }
