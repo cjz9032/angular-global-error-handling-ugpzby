@@ -1,17 +1,17 @@
 
 <div class="row">
-	<div class="col title">{{title}}</div>
+	<h2 class="col title">{{title}}</h2>
 </div>
 <div class="row hwscan-header" *ngIf="!isScanOrRBSFinished()">
 	<div class="col row1">
-		<span class="row">{{subTitle}}</span>
-		<span id="warning-message" class="row">{{'hardwareScan.warningMessage' | translate}}</span>
+		<p class="row">{{subTitle}}</p>
+		<p id="warning-message" class="row">{{'hardwareScan.warningMessage' | translate}}</p>
 	</div>
 	<div class="row">
 		<div class="row progress-div">
 			<div class="row progress-percent-text">
-				<span class="progress-value-text">{{percent}}</span>
-				<span class="progress-complete-text">% {{'hardwareScan.complete' | translate}}</span>
+				<p class="progress-value-text">{{percent}}%</p>
+				<p class="progress-complete-text">{{'hardwareScan.complete' | translate}}</p>
 			</div>
 		</div>
 	</div>
@@ -47,8 +47,17 @@
 		<div class="col-12 final-result-code" *ngIf="getFinalResultCode()">
 			<span class="result-code-value-text">{{'hardwareScan.finalResultCode' | translate}}:</span>
 			<span class="result-code-complete-text">{{getFinalResultCode()}}</span>
-			<fa-icon *ngIf="getTooltipInformation()" class="result-code-icon" triggers="click:blur" placement="auto" [ngbTooltip]="tooltipFinalResultCode" [icon]="['far', 'question-circle']" container="vtr-root" tooltipClass="vtr-tooltip">
-			</fa-icon>
+			<a *ngIf="getTooltipInformation()"
+				href="javascript:void(0)"
+				[attr.aria-label]="'final-result-code-question-mark, witch reads:' + getTooltipInformation()"
+				class="result-code-icon"
+				triggers="click"
+				placement="left"
+				[ngbTooltip]="tooltipFinalResultCode"
+				container="vtr-root"
+				tooltipClass="vtr-tooltip">
+				<fa-icon [icon]="['far', 'question-circle']"></fa-icon>
+			</a>
 		</div>
 	</div>
 </div>

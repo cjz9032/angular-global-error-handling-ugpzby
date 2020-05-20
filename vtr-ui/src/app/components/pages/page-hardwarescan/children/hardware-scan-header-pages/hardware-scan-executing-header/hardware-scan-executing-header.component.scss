@@ -34,7 +34,7 @@
 		font-size: $fontsize_xl;
 		font-weight: $weight_light;
 		line-height: 2.9rem;
-		display: inline;
+		display: inline-flex;
 		text-align: right;
 		.progress-value-text {
 			color: $light;
