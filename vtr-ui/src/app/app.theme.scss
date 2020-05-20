@@ -461,7 +461,7 @@ $high-contrast-white-disabled-maroon: #610000;
 	outline: 0;
 	border: 0.1rem solid $menu_hover;
 }
-@mixin button-outline-blue {
+@mixin button-outline-blue ($color : $menu_hover) {
 		content: '';
 		display: block;
 		position: absolute;
@@ -470,7 +470,7 @@ $high-contrast-white-disabled-maroon: #610000;
 		border-radius: 500px;
 		width: calc(100% + 0.8rem);
 		height: calc(100% + 0.8rem);
-		border: thin solid $menu_hover;
+		border: thin solid $color;
 }
 
 @mixin circular-button-outline {

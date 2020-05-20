@@ -25,6 +25,17 @@
 
 			&:hover {
 				background: $blue_gradient;
+				@media #{$black-on-white} {
+					background: $light;
+					color: $high-contrast-white-textselected;
+					border: 0.1rem solid $high-contrast-white-textselected;
+				}
+
+				@media #{$white-on-black} {
+					background: $dark;
+					color: $high-contrast-black-textselected;
+					border: 0.1rem solid $high-contrast-black-textselected;
+				}
 			}
 
 			&:focus {
@@ -32,6 +43,18 @@
 				box-shadow: none;
 				&::after {
 					@include button-outline-blue;
+				}
+
+				@media #{$black-on-white} {
+					&::after {
+						@include button-outline-blue($dark);
+					}
+				}
+
+				@media #{$white-on-black} {
+					&::after {
+						@include button-outline-blue($light);
+					}
 				}
 			}
 
@@ -67,6 +90,16 @@
 			cursor: default;
 			&:hover {
 				background: $grey_light !important;
+				@media #{$black-on-white} {
+					border: 0.1rem solid $high-contrast-white-disabled !important;
+					background: $light !important;
+					color: $high-contrast-white-disabled !important;
+				}
+				@media #{$white-on-black} {
+					border: 0.1rem solid $high-contrast-black-disabled !important;
+					background: $dark !important;
+					color: $high-contrast-black-disabled !important;
+				}
 			}
 			.text {
 				cursor: default;
@@ -109,8 +142,27 @@
 		.btn-red {
 			background: $gradient_red;
 			color: $light;
+			@media #{$black-on-white} {
+				background: $high-contrast-white-textselected;
+				color: $light;
+			}
+			@media #{$white-on-black} {
+				background: $high-contrast-black-textselected;
+				color: $dark;
+			}
 			&:hover {
 				background: linear-gradient(90deg, $button_red_start 0%, $button_red_start 100%);
+				@media #{$black-on-white} {
+					background: $light;
+					color: $high-contrast-white-textselected;
+					border: 0.1rem solid $high-contrast-white-textselected;
+				}
+
+				@media #{$white-on-black} {
+					background: $dark;
+					color: $high-contrast-black-textselected;
+					border: 0.1rem solid $high-contrast-black-textselected;
+				}
 			}
 		}
 
@@ -127,8 +179,27 @@
 		.btn-in-red-bg {
 			color: $stop_dark;
 			box-shadow: 0 0 0 0.1rem $alt;
+			@media #{$black-on-white} {
+				background: $high-contrast-white-textselected;
+				color: $light;
+			}
+			@media #{$white-on-black} {
+				background: $high-contrast-black-textselected;
+				color: $dark;
+			}
 			&:focus::after {
 				border: thin solid $orange;
+				@media #{$black-on-white} {
+					&::after {
+						@include button-outline-blue($dark);
+					}
+				}
+
+				@media #{$white-on-black} {
+					&::after {
+						@include button-outline-blue($light);
+					}
+				}
 			}
 		}
 	}

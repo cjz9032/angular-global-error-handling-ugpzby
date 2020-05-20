@@ -35,18 +35,6 @@
 		}
 	}
 
-	.white-button {
-		::ng-deep {
-			.button-box {
-				.button {
-					border: 1px solid $grey_dark !important;
-					color: $grey_darker !important;
-					background: linear-gradient(90deg, $grey_lighter 0%, $light 100%) !important;
-				}
-			}
-		}
-	}
-
 	.badge {
 		height: 1.5rem;
 		line-height: 1.5rem;
