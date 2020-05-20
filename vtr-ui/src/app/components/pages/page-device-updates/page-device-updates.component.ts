@@ -711,7 +711,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 						messageKey = this.mapStatusToMessageKey(payload.status);
 						this.setUpdateTitle(payload.status);
 					}
-
+					this.focusOnElement(this.backButton);
 					this.metricService.sendSystemUpdateMetric(0, '', messageKey, this.timeStartSearch);
 					break;
 				case UpdateProgress.UpdatesAvailable:
@@ -728,7 +728,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 							'success',
 							this.timeStartSearch);
 					}
-
+					this.focusOnElement(this.backButton);
 					break;
 				case UpdateProgress.InstallingUpdate:
 					this.isUpdateCheckInProgress = false;
