@@ -12,6 +12,7 @@ export class ContainerArticleComponent implements OnInit {
 	@Input() indexPreText = '';
 	@Input() startIndex: number;
 	@Input() indexTimes: number;
+	@Input() disableContentDisplay: boolean;
 
 	metricsDatas: {
 		viewOrder: number
