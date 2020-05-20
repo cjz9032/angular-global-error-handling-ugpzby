@@ -15,6 +15,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { ModalSmartPerformanceFeedbackComponent } from '../../modal/modal-smart-performance-feedback/modal-smart-performance-feedback.component';
 import { Router } from '@angular/router';
 import { enumSmartPerformance } from 'src/app/enums/smart-performance.enum';
+import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
 
 @Component({
 	selector: 'vtr-ui-smart-performance-scan-summary',
@@ -31,7 +32,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		public smartPerformanceService: SmartPerformanceService,
 		public shellServices: VantageShellService,
 		private translate: TranslateService,
-		private router: Router
+		private router: Router,
+		private formatLocaleDate: FormatLocaleDatePipe
 	) { }
 	public sizeExtension: string;
 	public isLoading = false;
@@ -67,6 +69,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	Data = [1,2,3]
 	historyRes: any = {};
 	historyScanResults = [];
+	historyScanResultsDateTime = []; 
 	public quarterlyMenu: any = [
 		{ displayName: 'Jan-Mar', ...this.getQuartesDates(0, 2), key: 1 },
 		{ displayName: 'Apr-Jun', ...this.getQuartesDates(3, 5), key: 2 },
@@ -176,6 +179,27 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		};
 	}
 
+	getScanHistoryWithTime() {
+		//Object historyScanResults Copy to object historyScanResultsDateTime
+		this.historyScanResultsDateTime = JSON.parse(JSON.stringify(this.historyScanResults));
+		
+		//Deleting unnecessary keys & manupulating date time.
+		for (let i = 0; i < 5; i++) {
+			//Adding new key scanrunDate with formating
+			this.historyScanResultsDateTime[i].scanrunDate = this.formatLocaleDate.transform(new Date(this.historyScanResultsDateTime[i].scanruntime));
+
+			//Adding new key scanrunTime
+			this.historyScanResultsDateTime[i].scanrunTime = new Intl.DateTimeFormat('default', {
+				hour12: true,
+				hour: 'numeric',
+				minute: 'numeric'
+			}).format(new Date(this.historyScanResultsDateTime[i].scanruntime));
+		}
+
+		return this.historyScanResultsDateTime;
+
+	}
+
 	getNextScanScheduleTime(scandate) {
 		try {
 			const dateObj = new Date(scandate);
@@ -196,8 +220,9 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	getMostecentScanDateTime(scandate) {
 		try {
 			const dateObj = new Date(scandate);
-			const momentObj = moment(dateObj);
-			const momentString = momentObj.format('YYYY-MM-DD');
+			// const momentObj = moment(dateObj);
+			// const momentString = momentObj.format('YYYY-MM-DD');
+			const spLocalDate = this.formatLocaleDate.transformWithoutYear(dateObj);
 			const now =
 				new Intl.DateTimeFormat('default',
 					{
@@ -205,7 +230,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 						hour: 'numeric',
 						minute: 'numeric'
 					}).format(dateObj);
-			this.mostRecentScan = (new Date(momentString).getMonth() + 1) + '/' + new Date(momentString).getDate() + ' at ' + now;
+			// this.mostRecentScan = (new Date(momentString).getMonth() + 1) + '/' + new Date(momentString).getDate() + ' at ' + now;
+			this.mostRecentScan = spLocalDate + ' at ' + now;
 		} catch (err) {
 			this.logger.error('ui-smart-performance-scan-summary.getMostecentScanDateTime.then', err);
 		}
@@ -285,14 +311,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 				this.toDate.day +
 				'/' +
 				this.toDate.year;
-			this.displayFromDate = moment
-				.utc(fromDateFormat)
-				.startOf('day')
-				.format('YYYY/MM/DD');
-			this.displayToDate = moment
-				.utc(toDateFormat)
-				.startOf('day')
-				.format('YYYY/MM/DD');
+			this.displayFromDate = this.formatLocaleDate.transform(fromDateFormat);
+			this.displayToDate = this.formatLocaleDate.transform(toDateFormat);
 			this.selectedfromDate = this.fromDate;
 			this.selectedTodate = this.toDate;
 			this.customDate = this.displayFromDate + ' - ' + this.displayToDate;
@@ -346,10 +366,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 				this.selectedfromDate.day +
 				'/' +
 				this.selectedfromDate.year;
-			this.displayFromDate = moment
-				.utc(fromDateFormat)
-				.startOf('day')
-				.format('YYYY/MM/DD');
+			this.displayFromDate =  this.formatLocaleDate.transform(fromDateFormat);
 		} else {
 			const fromDateFormat =
 				this.selectedTodate.month +
@@ -357,10 +374,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 				this.selectedTodate.day +
 				'/' +
 				this.selectedTodate.year;
-			this.displayToDate = moment
-				.utc(fromDateFormat)
-				.startOf('day')
-				.format('YYYY/MM/DD');
+			this.displayToDate = this.formatLocaleDate.transform(fromDateFormat);
 			this.logger.info('onDateSelected.else to date', this.displayToDate);
 		}
 	}
@@ -491,6 +505,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 					boostSize: res.Boostsize
 				};
 				this.historyScanResults = res.lastscanresults || [];
+				this.getScanHistoryWithTime();
 				this.getMostecentScanDateTime(this.historyScanResults[0].scanruntime);
 			} else {
 				this.historyScanResults = [];
@@ -521,7 +536,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			return;
 		}
 		this.enableNextText = nextScheduleScanEvent['nextEnable']
-		this.nextScheduleScan =  nextScheduleScanEvent['nextScanDate'] + ' at ' + nextScheduleScanEvent['nextScanHour'] + ':' + nextScheduleScanEvent['nextScanMin'] + ' ' + nextScheduleScanEvent['nextScanAMPM'];
+		const nextScheduleScanDayMonth = this.formatLocaleDate.transformWithoutYear(nextScheduleScanEvent['nextScanDate']);
+		this.nextScheduleScan =  nextScheduleScanDayMonth + ' at ' + nextScheduleScanEvent['nextScanHour'] + ':' + nextScheduleScanEvent['nextScanMin'] + ' ' + nextScheduleScanEvent['nextScanAMPM'];
 
 		// if (this.isSubscribed) {
 		// 	this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
