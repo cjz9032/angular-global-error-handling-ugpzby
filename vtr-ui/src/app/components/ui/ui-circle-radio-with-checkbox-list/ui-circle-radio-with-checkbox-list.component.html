@@ -44,6 +44,7 @@
 					</fa-layers>
 				</div>
 				<div class="text"
+					id="radio{{index+1}}-label"
 					[attr.aria-hidden]=true
 					[class.text-disabled]="item.isDisabled">
 					{{item.processLabel ? (item.label | translate | capitalizeFirst) : item.label | translate}}
