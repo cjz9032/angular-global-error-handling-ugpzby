@@ -343,6 +343,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.isPowerSectionAvailable = false;
 
 		this.getFlipToBootCapability();
+		this.batteryService.getBatterySettings();
 		switch (this.machineType) {
 			case 1:
 				// this.getAirplaneModeCapabilityThinkPad();
