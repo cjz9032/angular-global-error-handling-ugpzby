@@ -16,7 +16,8 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit {
 	@Input() index: any;
 	@Input() tabIndex: number;
 	@Input() articleType: string;
-	@Input() order: number | string;
+	@Input() disableContentDisplay: boolean;
+
 	@ViewChild('articleItemDiv', { static: true }) articleItemDiv: any;
 
 	private _item: FeatureContent;
@@ -39,9 +40,17 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit {
 	}
 
 	@Input() set item(itemValue: any) {
+<<<<<<< Updated upstream
 		this._item = itemValue;
 		if (!itemValue.isLocal) {
 			this.metricsService.sendContentDisplay(itemValue.Id, itemValue.DataSource, this.order as string);
+=======
+		if (itemValue
+			&& !itemValue.isLocal
+			&& !this.disableContentDisplay
+			&& (!this._item || this._item.Id !== itemValue.Id)) {
+			this.metricsService.sendContentDisplay(itemValue.Id, itemValue.DataSource, this.index as string);
+>>>>>>> Stashed changes
 		}
 	}
 
