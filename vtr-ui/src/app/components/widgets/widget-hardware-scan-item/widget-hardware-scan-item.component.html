@@ -29,8 +29,8 @@
 						(keyup.enter)="item.collapsed = !item.collapsed"
 						role="button"
 						[attr.aria-expanded]="!item.collapsed">
-						<fa-icon *ngIf="item.collapsed" [icon]="['fas', 'caret-up']"></fa-icon>
-						<fa-icon *ngIf="!item.collapsed" [icon]="['fas', 'caret-right']"></fa-icon>
+						<fa-icon *ngIf="item.collapsed; else expandIcon" [icon]="['fas', 'caret-up']"></fa-icon>
+						<ng-template #expandIcon><fa-icon [icon]="['fas', 'caret-right']"></fa-icon></ng-template>
 						{{ 'hardwareScan.details' | translate }}
 					</div>
 				</div>
