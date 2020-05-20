@@ -354,8 +354,9 @@
         }
         .icon {
             font-size: 2.2rem;
-            margin-right: 0.2rem;
+            margin-right: 0.6rem;
 			color: $main_shade;
+			margin-top: -0.3rem;
 			@media #{$breakpoint_xl} {
 				font-size: $fontsize_xl;
 				margin-right: 0.5rem;
@@ -369,10 +370,12 @@
             font-size: 1.2rem;
 			max-width: 8.1rem;
 			line-height: 1.2rem;
+			margin-top: 0.4rem;
 			@media #{$breakpoint_sm}{
 				font-size: 1rem;
 				line-height: 1.2rem;
 				margin-bottom: 0;
+				margin-top: 0;
 			}
         }
 	}
