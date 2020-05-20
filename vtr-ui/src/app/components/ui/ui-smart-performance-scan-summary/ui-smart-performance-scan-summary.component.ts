@@ -309,14 +309,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 				this.toDate.day +
 				'/' +
 				this.toDate.year;
-			this.displayFromDate = moment
-				.utc(fromDateFormat)
-				.startOf('day')
-				.format('YYYY/MM/DD');
-			this.displayToDate = moment
-				.utc(toDateFormat)
-				.startOf('day')
-				.format('YYYY/MM/DD');
+			this.displayFromDate = this.formatLocaleDate.transform(fromDateFormat);
+			this.displayToDate = this.formatLocaleDate.transform(toDateFormat);
 			this.selectedfromDate = this.fromDate;
 			this.selectedTodate = this.toDate;
 			this.customDate = this.displayFromDate + ' - ' + this.displayToDate;
@@ -370,10 +364,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 				this.selectedfromDate.day +
 				'/' +
 				this.selectedfromDate.year;
-			this.displayFromDate = moment
-				.utc(fromDateFormat)
-				.startOf('day')
-				.format('YYYY/MM/DD');
+			this.displayFromDate =  this.formatLocaleDate.transform(fromDateFormat);
 		} else {
 			const fromDateFormat =
 				this.selectedTodate.month +
@@ -381,10 +372,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 				this.selectedTodate.day +
 				'/' +
 				this.selectedTodate.year;
-			this.displayToDate = moment
-				.utc(fromDateFormat)
-				.startOf('day')
-				.format('YYYY/MM/DD');
+			this.displayToDate = this.formatLocaleDate.transform(fromDateFormat);
 			this.logger.info('onDateSelected.else to date', this.displayToDate);
 		}
 	}
