@@ -62,6 +62,9 @@
 			text-decoration: none;
 			cursor: pointer;
 		}
+		&:focus {
+			@include outline-blue;
+		}
 
 		fa-icon {
 			font-size: $fontsize_xs;

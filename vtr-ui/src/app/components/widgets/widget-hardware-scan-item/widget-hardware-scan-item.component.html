@@ -21,15 +21,18 @@
 					</div>
 
 					<!-- Icon to expand and collapse details list -->
-					<a *ngIf="isEnableViewResults || item.details"
-						href="javascript:void(0);"
-						aria-label="module-details"
+					<div *ngIf="isEnableViewResults || item.details"
 						class="details-link"
-						(click)="item.collapsed = !item.collapsed">
-						<fa-icon [icon]="['fas', 'caret-right']" *ngIf="!item.collapsed"></fa-icon>
-						<fa-icon [icon]="['fas', 'caret-up']" *ngIf="item.collapsed"></fa-icon>
+						tabindex="0"
+						[attr.aria-label]="item.collapsed ? item.module + 'collapse-module-details': item.module + 'expand-module-details'"
+						(click)="item.collapsed = !item.collapsed"
+						(keyup.enter)="item.collapsed = !item.collapsed"
+						role="button"
+						[attr.aria-expanded]="!item.collapsed">
+						<fa-icon *ngIf="item.collapsed" [icon]="['fas', 'caret-up']"></fa-icon>
+						<fa-icon *ngIf="!item.collapsed" [icon]="['fas', 'caret-right']"></fa-icon>
 						{{ 'hardwareScan.details' | translate }}
-					</a>
+					</div>
 				</div>
 
 				<!-- Icon to expand and collapse test list -->
