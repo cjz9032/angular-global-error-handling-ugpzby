@@ -18,10 +18,7 @@
 				position: relative;
 				width: $container-width;
 				margin-bottom: 1rem;
-				
-				@media screen and (min-width: 992px) and (max-width: 1199.9px) {
-					width: 18rem;
-				}
+
 				// circle UI part
 				[role="radio"] {
 					background: $foreground;
@@ -38,9 +35,6 @@
 						position: absolute;
 						top: 0.3rem;
 						left: 3.1rem;
-						@media screen and (min-width: 992px) and (max-width: 1199.9px) {
-							left: 6rem;
-						}
 					}
 
 					.check-circle {
@@ -219,9 +213,6 @@
 						&::before {
 							color: $background !important;
 						}
-						// @media screen and (min-width: 992px) and (max-width: 1199.9px) {
-						// 	width: 18rem;
-						// }
 					}
 				}
 			}

@@ -125,10 +125,10 @@
 						padding-bottom:2rem;
 						position:relative;
 						@media #{$black-on-white}{
-							padding-bottom:0rem;
+							padding-bottom:0rem!important;
 							}
 							@media #{$white-on-black}{
-								padding-bottom:0rem;
+								padding-bottom:0rem!important;
 							}
 						}
 					@media screen and (min-width: 992px) and (max-width: 1199.9px) { 
