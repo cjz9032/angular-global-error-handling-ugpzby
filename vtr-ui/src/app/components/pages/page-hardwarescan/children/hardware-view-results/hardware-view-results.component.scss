@@ -81,7 +81,12 @@
 			}
 
 			.left-result-code {
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+
 				.result-code-complete-text {
+					margin: 0rem; //Used to overwrite the default value to tag "P"
 					font-size: $fontsize_xs2;
 					color: $shade_darker;
 					font-weight: $weight_bold;
@@ -89,7 +94,7 @@
 
 				.result-code-icon {
 					margin-left: 0.5rem;
-					font-size: $fontsize_sm;
+					font-size: $fontsize_md;
 					color: $menu_hover;
 					cursor: pointer;
 
