@@ -220,8 +220,9 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	getMostecentScanDateTime(scandate) {
 		try {
 			const dateObj = new Date(scandate);
-			const momentObj = moment(dateObj);
-			const momentString = momentObj.format('YYYY-MM-DD');
+			// const momentObj = moment(dateObj);
+			// const momentString = momentObj.format('YYYY-MM-DD');
+			const spLocalDate = this.formatLocaleDate.transformWithoutYear(dateObj);
 			const now =
 				new Intl.DateTimeFormat('default',
 					{
@@ -229,7 +230,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 						hour: 'numeric',
 						minute: 'numeric'
 					}).format(dateObj);
-			this.mostRecentScan = (new Date(momentString).getMonth() + 1) + '/' + new Date(momentString).getDate() + ' at ' + now;
+			// this.mostRecentScan = (new Date(momentString).getMonth() + 1) + '/' + new Date(momentString).getDate() + ' at ' + now;
+			this.mostRecentScan = spLocalDate + ' at ' + now;
 		} catch (err) {
 			this.logger.error('ui-smart-performance-scan-summary.getMostecentScanDateTime.then', err);
 		}
