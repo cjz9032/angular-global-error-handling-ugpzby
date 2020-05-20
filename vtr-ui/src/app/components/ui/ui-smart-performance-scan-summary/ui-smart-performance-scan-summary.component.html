@@ -384,7 +384,7 @@
 																			</div>
 																		</li>
 																		<li class=" list-item"
-																			*ngFor="let item of historyScanResults;let ind=index">
+																			*ngFor="let item of historyScanResultsDateTime;let ind=index">
 																			<div class="container-fluid">
 																				<div class="row align-items-center">
 																					<div class="col-1 text-center">
@@ -398,9 +398,9 @@
 																						</fa-icon>
 																					</div>
 																					<div class="col-7">
-																						<b>{{item.scanruntime | date: 'MM/dd/yyyy'}}</b>
+																						<b>{{item.scanrunDate}}</b>
 																						<span> -
-																							{{item.scanruntime | date: 'h:mma'}}</span>
+																							{{item.scanrunTime | uppercase}}</span>
 																							<span class="ml-1" *ngIf="item.type.toUpperCase() == 'MS'">({{'smartPerformance.manual' |translate }})</span>
 																							<span class="ml-1" *ngIf="item.type.toUpperCase() == 'SS'">({{'smartPerformance.auto' |translate }})</span>
 

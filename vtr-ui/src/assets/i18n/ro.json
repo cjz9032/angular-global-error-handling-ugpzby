@@ -46,7 +46,8 @@
                     "ramOverlock": "Suprasolicitare RAM",
                     "popup": {
                         "text": "Modificările vor avea loc după repornirea computerului.",
-                        "button": "OK"
+                        "button": "OK",
+                        "title": "system restart is required"
                     },
                     "driverPopup": {
                         "headerText": "Instalarea driverului este obligatorie",
@@ -70,6 +71,9 @@
                     },
                     "lightingColorMessage": {
                         "text": "Selectarea culorii nu este disponibilă pentru acest efect."
+                    },
+                    "helpPopup": {
+                        "title": "Legion Edge Help"
                     }
                 },
                 "systemTools": {
@@ -3787,7 +3791,9 @@
             },
             "commentTip": "Shout what you love and whisper what you hate.",
             "comments": "Please leave your comments here..."
-        }
+        },
+        "auto": "Auto",
+        "manual": "Manual"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

@@ -69,7 +69,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		private commonService: CommonService,
 		private cd: ChangeDetectorRef,
 		private logger: LoggerService,
-		// private powerService: PowerService,
 		private activatedRoute: ActivatedRoute) {
 	}
 
@@ -163,10 +162,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		// temp
 		this.registerBatteryEvents();
 
-		// this.getBatterySettings();
-
 		this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
-			// this.logger.info('BatteryCardComponent.ngOnInit: Query Params', params);
 			if (params.has('batterydetail')) {
 				const showBatteryDetail = this.activatedRoute.snapshot.queryParams.batterydetail;
 				this.getBatteryDetails(showBatteryDetail);
@@ -244,7 +240,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	}
 
 	onPowerBatteryStatusEvent(thresholdInfo: ChargeThreshold[]) {
-		// this.batteryService.setChargeThresholdInfo(thresholdInfo);
 		let bctCapability = false;
 		let bctStatus = false;
 
@@ -318,9 +313,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				case 'AirplaneModeStatus':
 					this.batteryIndicator.isAirplaneMode = notification.payload.isCapable && notification.payload.isEnabled;
 					break;
-				// case 'ConservationModeStatus':
-				// 	this.batteryIndicator.isChargeThresholdOn = notification.payload.available && notification.payload.status;
-				// 	break;
 				case 'ExpressChargingStatus':
 					this.batteryIndicator.expressCharging = notification.payload.available && notification.payload.status;
 					break;
@@ -352,7 +344,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				}
 			});
 			this.batteryHealth = this.batteryInfo[0].batteryHealth;
-			// this.batteryIndicator.batteryNotDetected = this.batteryHealth === 4;
 			this.batteryService.isAcAttached = this.batteryGauge.isAttached;
 			this.batteryService.remainingPercentages = remainingPercentages;
 		} else {
@@ -364,7 +355,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			this.batteryIndicator.batteryNotDetected || batteryErrorCount === this.batteryInfo.length;
 		if (powerDriverStatus !== this.batteryService.isPowerDriverMissing) {
 			this.batteryService.isPowerDriverMissing = powerDriverStatus;
-			// this.batteryService.getBatterySettings();
 			this.commonService.sendNotification('IsPowerDriverMissing', this.batteryService.isPowerDriverMissing);
 		}
 
@@ -380,16 +370,11 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	}
 
 
-	/* showDetailModalOnKDEnter(event: any, content: any) {
-		var target = event.target || event.srcElement || event.currentTarget;
-		this.showDetailModal(content);
-	} */
-
+	
 	/**
 	 * sets a battery condition tip & icon from battery health & battery condition
 	 */
 	public getBatteryCondition() {
-		// const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 		let healthCondition: number;
 		const batteryConditions = [];
 
@@ -501,95 +486,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			this.batteryConditionNotes.push(translation);
 		});
 	}
-
-	// private getBatterySettings() {
-	// 	if (this.isThinkPad) {
-	// 		this.getBatteryThresholdInformation();
-	// 		this.getAirplaneModeCapabilityThinkPad();
-	// 	} else {
-	// 		// this.getConservationModeStatusIdeaPad();
-	// 		this.getRapidChargeModeStatusIdeaPad();
-	// 	}
-	// }
-
-	// public getBatteryThresholdInformation() {
-	// 	this.logger.info('Before getBatteryThresholdInformation');
-	// 	if (this.powerService.isShellAvailable) {
-	// 		this.powerService.getChargeThresholdInfo().then((response) => {
-	// 			this.logger.info('getBatteryThresholdInformation.then', response);
-	// 			this.onPowerBatteryStatusEvent(response);
-	// 			this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, response);
-	// 		}).catch ((error) => {
-	// 			this.logger.error('getBatteryThresholdInformation :: error', error.message);
-	// 			return EMPTY;
-	// 		});
-	// 	}
-	// }
-
-	// private getAirplaneModeCapabilityThinkPad() {
-	// 	this.logger.info('Before getAirplaneModeCapabilityThinkPad.then ');
-	// 	if (this.powerService.isShellAvailable) {
-	// 		this.powerService.getAirplaneModeCapabilityThinkPad().then((value) => {
-	// 			this.logger.info('getAirplaneModeCapabilityThinkPad.then ==>', value);
-	// 			if (value) {
-	// 				this.getAirplaneModeThinkPad()
-	// 			} else {
-	// 				const airplaneMode = new FeatureStatus(false, false);
-	// 				this.batteryService.setAirplaneMode(airplaneMode);
-	// 			}
-	// 		}).catch((error) => {
-	// 			this.logger.error('getAirplaneModeCapabilityThinkPad Error ==> ', error.message);
-	// 			return EMPTY;
-	// 		});
-	// 	}
-	// }
-
-	// private getAirplaneModeThinkPad() {
-	// 	if (this.powerService.isShellAvailable) {
-	// 		this.powerService.getAirplaneModeThinkPad().then((value: any) => {
-	// 			this.logger.info('getAirplaneModeThinkPad.then', value);
-	// 			this.batteryIndicator.isAirplaneMode = value;
-	// 			const airplaneMode = new FeatureStatus(true, value);
-	// 			this.batteryService.setAirplaneMode(airplaneMode)
-	// 		}).catch(error => {
-	// 			this.logger.error('getAirplaneModeThinkPad', error.message);
-	// 			return EMPTY;
-	// 		});
-	// 	}
-	// }
-
-	// private getConservationModeStatusIdeaPad() {
-	// 	this.logger.info('Before getConservationModeStatusIdeaNoteBook');
-	// 	if (this.powerService.isShellAvailable) {
-	// 		this.powerService.getConservationModeStatusIdeaNoteBook().then((featureStatus) => {
-	// 			this.logger.info('getConservationModeStatusIdeaNoteBook.then', featureStatus);
-	// 			this.commonService.sendNotification('ConservationModeStatus', {available: featureStatus.available, status: featureStatus.status});
-	// 			// this.conservationModeStatus = featureStatus;
-	// 			// this.updateBatteryLinkStatus(this.conservationModeStatus.available);
-
-	// 			// this.conservationModeCache = featureStatus;
-	// 			// this.conservationModeCache.isLoading = this.conservationModeLock;
-	// 			// this.commonService.setLocalStorageValue(LocalStorageKey.ConservationModeCapability, this.conservationModeCache);
-	// 		}).catch((error) => {
-	// 			this.logger.error('getConservationModeStatusIdeaNoteBook', error.message);
-	// 			return EMPTY;
-	// 		});
-	// 	}
-	// }
-
-	// private getRapidChargeModeStatusIdeaPad() {
-	// 	this.logger.info('Before getRapidChargeModeStatusIdeaNoteBook');
-	// 	if (this.powerService.isShellAvailable) {
-	// 		this.powerService.getRapidChargeModeStatusIdeaNoteBook().then((featureStatus) => {
-	// 			this.logger.info('getRapidChargeModeStatusIdeaNoteBook.then', featureStatus);
-	// 			const expressCharging = new FeatureStatus(featureStatus.available, featureStatus.status);
-	// 			this.batteryService.setExpressCharging(expressCharging);
-	// 		}).catch((error) => {
-	// 			this.logger.error('getRapidChargeModeStatusIdeaNoteBook', error.message);
-	// 			return EMPTY;
-	// 		});
-	// 	}
-	// }
+	
 
 	/**
 	 * shows a battery details modal
@@ -643,10 +540,5 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	reInitValue() {
 		this.flag = false;
 	}
-
-	/*
-		@HostListener('document:keydown.escape', ['$event']) onKeydownHandler(event: KeyboardEvent) {
-			this.closeModal();
-		} */
 
 }

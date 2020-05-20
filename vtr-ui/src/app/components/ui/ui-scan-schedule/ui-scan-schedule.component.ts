@@ -595,23 +595,23 @@ export class UiScanScheduleComponent implements OnInit {
 		switch(this.selectedFrequency) {
 			case this.scanFrequency[0] :
 				if(moment().day() <= (this.dayValue)) {
-					nextScheduleScanEvent['nextScanDate'] = moment().day(this.dayValue).format('L').slice(0, 5)
+					nextScheduleScanEvent['nextScanDate'] = moment().day(this.dayValue).format('L')
 				} else {
-					nextScheduleScanEvent['nextScanDate'] = moment().add(1, 'weeks').day(this.dayValue).format('L').slice(0, 5)
+					nextScheduleScanEvent['nextScanDate'] = moment().add(1, 'weeks').day(this.dayValue).format('L')
 				}
 				break;
 			case this.scanFrequency[1] :
 				if(moment().day() <= this.dayValue) {
-					nextScheduleScanEvent['nextScanDate'] = moment().day(this.dayValue).format('L').slice(0, 5)
+					nextScheduleScanEvent['nextScanDate'] = moment().day(this.dayValue).format('L')
 				} else {
-					nextScheduleScanEvent['nextScanDate'] = moment().add(2, 'weeks').day(this.dayValue).format('L').slice(0, 5)
+					nextScheduleScanEvent['nextScanDate'] = moment().add(2, 'weeks').day(this.dayValue).format('L')
 				}
 				break;
 			case this.scanFrequency[2] :
 				if(this.dateValue <= moment().date()) {
-					nextScheduleScanEvent['nextScanDate'] = moment().date(this.dateValue + 1).add(1, 'month').format('MM/DD')
+					nextScheduleScanEvent['nextScanDate'] = moment().date(this.dateValue + 1).add(1, 'month')
 				} else {
-					nextScheduleScanEvent['nextScanDate'] = moment().date(this.dateValue + 1).format('MM/DD')
+					nextScheduleScanEvent['nextScanDate'] = moment().date(this.dateValue + 1)
 				}
 				break;
 		}
