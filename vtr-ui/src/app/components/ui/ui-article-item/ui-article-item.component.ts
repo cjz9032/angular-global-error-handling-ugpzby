@@ -40,17 +40,11 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit {
 	}
 
 	@Input() set item(itemValue: any) {
-<<<<<<< Updated upstream
-		this._item = itemValue;
-		if (!itemValue.isLocal) {
-			this.metricsService.sendContentDisplay(itemValue.Id, itemValue.DataSource, this.order as string);
-=======
 		if (itemValue
 			&& !itemValue.isLocal
 			&& !this.disableContentDisplay
 			&& (!this._item || this._item.Id !== itemValue.Id)) {
 			this.metricsService.sendContentDisplay(itemValue.Id, itemValue.DataSource, this.index as string);
->>>>>>> Stashed changes
 		}
 	}
 
