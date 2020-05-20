@@ -254,7 +254,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	}
 	// tslint:disable-next-line: use-lifecycle-interface
 	ngAfterViewInit() {
-		this.leftAnimator = (this.rating * 10 - 1).toString() + '%';
+		this.leftAnimator = (this.rating * 10 - 1.7).toString() + '%';
 	}
 	expandRow(value) {
 		if (this.toggleValue === value) {
