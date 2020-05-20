@@ -46,6 +46,7 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit {
 			&& (!this._item || this._item.Id !== itemValue.Id)) {
 			this.metricsService.sendContentDisplay(itemValue.Id, itemValue.DataSource, this.index as string);
 		}
+		this._item = itemValue;
 	}
 
 	get item() {
