@@ -9,6 +9,7 @@ import { SegmentConst } from '../self-select/self-select.service';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 import { ContentActionType } from 'src/app/enums/content.enum';
+import { ContentSource } from './model';
 interface IContentGroup {
 	positionA: any[];
 	positionB: FeatureContent;
@@ -239,6 +240,7 @@ export class DashboardService {
 				title: this.translateString['dashboard.offlineInfo.welcomeToVantage'],
 				url: 'assets/cms-cache/offline/Default-SMB-Welcome.jpg',
 				ActionLink: null,
+				DataSource: ContentSource.Local,
 				isLocal: true
 			}
 		];
@@ -258,6 +260,7 @@ export class DashboardService {
 			Position: 'position-B',
 			ExpirationDate: null,
 			Filters: null,
+			DataSource: ContentSource.Local,
 			isLocal: true
 		};
 
@@ -277,6 +280,7 @@ export class DashboardService {
 			Position: 'position-C',
 			ExpirationDate: null,
 			Filters: null,
+			DataSource: ContentSource.Local,
 			isLocal: true
 		};
 
@@ -296,6 +300,7 @@ export class DashboardService {
 			Position: 'position-D',
 			ExpirationDate: null,
 			Filters: null,
+			DataSource: ContentSource.Local,
 			isLocal: true
 		};
 
@@ -315,6 +320,7 @@ export class DashboardService {
 			Position: 'position-E',
 			ExpirationDate: null,
 			Filters: null,
+			DataSource: ContentSource.Local,
 			isLocal: true
 		};
 
@@ -334,6 +340,7 @@ export class DashboardService {
 			Position: 'position-F',
 			ExpirationDate: null,
 			Filters: null,
+			DataSource: ContentSource.Local,
 			isLocal: true
 		};
 

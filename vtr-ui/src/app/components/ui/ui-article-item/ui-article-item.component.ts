@@ -4,6 +4,7 @@ import { CardService } from 'src/app/services/card/card.service';
 import { SupportContentStatus } from 'src/app/enums/support-content-status.enum';
 import { MetricService } from 'src/app/services/metric/metric.service';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
+import { ContentSource } from 'src/app/services/dashboard/model';
 
 @Component({
 	selector: 'vtr-ui-article-item',
@@ -40,9 +41,10 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit {
 	}
 
 	@Input() set item(itemValue: any) {
-		if (itemValue
-			&& !itemValue.isLocal
-			&& !this.disableContentDisplay
+		if (!this.disableContentDisplay
+			&& itemValue
+			&& itemValue.DataSource
+			&& itemValue.DataSource !== ContentSource.Local
 			&& (!this._item || this._item.Id !== itemValue.Id)) {
 			this.metricsService.sendContentDisplay(itemValue.Id, itemValue.DataSource, this.index as string);
 		}

@@ -5,6 +5,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { CardService, CardOverlayTheme } from 'src/app/services/card/card.service';
 import { MetricService } from 'src/app/services/metric/metric.service';
+import { ContentSource } from 'src/app/services/dashboard/model';
 
 @Component({
 	selector: 'vtr-widget-carousel',
@@ -95,7 +96,7 @@ export class WidgetCarouselComponent implements OnInit, OnChanges {
 				overlayThemeDark: !carousel.OverlayTheme || carousel.OverlayTheme !== CardOverlayTheme.Light,
 			});
 
-			if (!carousel.isLocal) {
+			if (carousel.DataSource && carousel.DataSource !== ContentSource.Local) {
 				this.metricsService.sendContentDisplay(carousel.id, carousel.DataSource, '1');
 			}
 		}
