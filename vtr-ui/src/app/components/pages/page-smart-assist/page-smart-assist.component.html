@@ -469,10 +469,10 @@
 													[sliderId]="'smartAssist-intelligentSecurity-zeroTouchLock-distanceSensitivityAdjusting'"
 													*ngIf="zeroTouchPresenceLeaveDistanceCapability && !hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
 													[minLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.near' | translate"
-													[min]=0
+													[min]=1
 													[midLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.medium' | translate"
 													[maxLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.far' | translate"
-													[max]=2
+													[max]=3
 													(valueChange)="SetZeroTouchLockDistanceSensitivity($event)"
 													[value]="hsaIntelligentSecurity.zeroTouchLockDistance"
 													[isDisabled]="!intelligentSecurity.isZeroTouchLockEnabled || !hsaIntelligentSecurity.capacity"
@@ -699,6 +699,9 @@
 													[maxLegend]="'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.endTime' | translate"
 													[min]="0"
 													[max]="60"
+													[showTip]="true"
+													[isTooltipHidden]="false"
+													[tipSuffix]="'minutes'"
 													[value]="intelligentScreen.readingOrBrowsingTime"
 													[ariaLabel]="'display dimmer time adjustment'"
 													[isDisabled]="!intelligentScreen.isReadingOrBrowsingEnabled"
