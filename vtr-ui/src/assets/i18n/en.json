@@ -2627,9 +2627,10 @@
 			"signupRepairButton": "Back To Home",
 			"monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
 			"issueCount": "{{individualIssueCount}} ISSUES",
-			"tune": "{{tune}} ISSUES",
-			"boost": "{{boost}} ISSUES",
-			"secure": "{{secure}} ISSUES",
+			"issues": "ISSUES",
+			"tuneIssueCount": "{{tune}}",
+			"boostIssueCount": "{{boost}}",
+			"secureIssueCount": "{{secure}}",
 			"scannedAreas": "SCANNED AREAS",
 			"recommendedAction": {
 				"title": "RECOMMENDED ACTION",
