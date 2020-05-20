@@ -420,7 +420,11 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			SettingParent: 'Page.Settings'
 		};
 		this.metrics.sendAsync(interestData);
-		(document.querySelector('#menu-main-lnk-l-logo') as HTMLElement).focus();
+		if (this.deviceService.isGaming) {
+			(document.querySelector('#menu-main-lnk-gaming-logo') as HTMLElement).focus();
+		} else {
+			(document.querySelector('#menu-main-lnk-l-logo') as HTMLElement).focus();
+		}
 	}
 
 	@HostListener('window: focus')
