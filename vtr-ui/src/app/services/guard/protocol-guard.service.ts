@@ -10,7 +10,7 @@ import { DeviceService } from '../device/device.service';
 export class ProtocolGuardService implements CanActivate {
   vantage3xSchema = 'lenovo-vantage3:';
   semanticToPath: { [semantic: string]: string } = {
-	dashboard: 'dashboard',
+	dashboard: '',
 	device: 'device',
 	'device-settings': 'device/device-settings/power',
 	'system-updates': 'device/system-updates',
@@ -99,25 +99,25 @@ export class ProtocolGuardService implements CanActivate {
   }
 
   public isRedirectUrlNeeded(args: string) : [boolean, string] {
-	const tempUrl = this.processPath(args);
-	if (tempUrl !== args && tempUrl !== '/') return [true, tempUrl];
+	const result = this.processPath(args);
+	if (result[0] && result[1] !== args) return result;
 
 	return [false, ''];
   }
 
-  private processPath(path: string) : string {
+  private processPath(path: string) : [boolean, string] {
 	const encodedProtocol = path.slice(path.indexOf(this.characteristicCode) + this.characteristicCode.length);
 	const originalProtocol = this.decodeBase64String(encodedProtocol);
-	if (!originalProtocol) return '/';
+	if (!originalProtocol) return [false, ''];
 
 	try {
-		let newPath = this.convertToUrlAssumeProtocolIs3x(originalProtocol);
-		if (!newPath) {
-			newPath = this.convertToUrlAssumeProtocolIs2x(originalProtocol);
+		let result = this.convertToUrlAssumeProtocolIs3x(originalProtocol);
+		if (!result[0]) {
+			result = this.convertToUrlAssumeProtocolIs2x(originalProtocol);
 		}
-		return `/${newPath}`;
+		return result;
 	} catch (e) {
-		return '/';
+		return [false, ''];
 	}
   }
 
@@ -126,39 +126,45 @@ export class ProtocolGuardService implements CanActivate {
 	return `${originQuery}&timestamp=${Date.now()}`;
   }
 
-  private convertToUrlAssumeProtocolIs3x(rawData: string) : string {
+  private convertToUrlAssumeProtocolIs3x(rawData: string) : [boolean, string] {
 	const url = this.constructURL(rawData);
-	if (!url) return '';
+	if (!url) return [false, ''];
 	const schema = url.protocol;
-	const semantic = url.pathname;
+	let semantic = '';
+	try {
+		semantic = url.pathname;
+	} catch (e) {}
 	const query = this.addTimestampQueryParam(url.search);
 
-	if (schema.toLowerCase() !== this.vantage3xSchema || !semantic) return '';
+	if (schema.toLowerCase() !== this.vantage3xSchema) return [false, ''];
+
+	if (!semantic) return [true, `/${query}`];
 
 	const path: string | undefined = this.semanticToPath[semantic.toLowerCase()];
 	if (path === undefined) {
-		return '';
+		return [false, ''];
 	}
 
-	return `${path}${query}`;
+	return [true, `/${path}${query}`];
   }
 
-  private convertToUrlAssumeProtocolIs2x(rawData: string) : string {
+  private convertToUrlAssumeProtocolIs2x(rawData: string) : [boolean, string] {
 	const url = this.constructURL(rawData.toLowerCase());
-	if (!url) return '';
+	if (!url) return [false, ''];
 	const schema = url.protocol;
-	const pathName = url.pathname;
 	const query = this.addTimestampQueryParam(url.search);
 	const queryParams = url.searchParams;
 
-	if (!schema || !this.backwardCompatibilitySchemas.includes(schema.toLowerCase()) || !pathName || pathName.toLowerCase() !== 'param') return '';
+	if (!schema || !this.backwardCompatibilitySchemas.includes(schema.toLowerCase())) return [false, ''];
+
+	if (!query) return [true, `/`];
 
 	const featureId: string | null = queryParams.get('featureid');
 	if (featureId) {
 		const featureSemantic: string | undefined = this.featureIdToSemantic[featureId.toLowerCase()];
 		if (featureSemantic) {
 			const path: string | undefined = this.semanticToPath[featureSemantic];
-			if (path) return `${path}${query}`;
+			if (path) return [true, `/${path}${query}`];
 		}
 	}
 
@@ -167,11 +173,11 @@ export class ProtocolGuardService implements CanActivate {
 		const sectionSemantic: string | undefined = this.sectionToSemantic[section.toLowerCase()];
 		if (sectionSemantic) {
 			const path = this.semanticToPath[sectionSemantic];
-			if (path) return `${path}${query}`;
+			if (path) return [true, `/${path}${query}`];
 		}
 	}
 
-	return '';
+	return [false, ''];
   }
 
   public canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) : boolean | UrlTree {
@@ -185,14 +191,11 @@ export class ProtocolGuardService implements CanActivate {
 				window.history.replaceState([], '', `#${this.deviceService.isGaming ? '/device-gaming' : '/dashboard'}`);
 			}
 
-			if (checkResult[1].startsWith('/dashboard') && this.deviceService.isGaming) {
-				checkResult[1].replace(/^\/dashboard/, '/device-gaming');
-			}
-
 			return this.router.parseUrl(checkResult[1]);
 		}
+		return !this.commonService.isFirstPageLoaded();
 	}
 
-	return !this.commonService.isFirstPageLoaded();
+	return true;
   }
 }
