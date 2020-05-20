@@ -403,10 +403,12 @@
 		#containerCardSidebarPartnerCorner>
 		<div class="container-fluid">
 			<div class="row">
-				<a class="col col-12 image"
+				<a tabindex="0"
+					role="link"
+					(keyup.enter)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
+					(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
+					class="col col-12 image"
 					attr.aria-label="{{ item.Title | htmlText }}"
-					[attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
-					target="_blank"
 					rel="noopener"
 					vtrMetrics
 					id="{{containerCardId+'_side_article'}}"

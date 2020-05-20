@@ -8,6 +8,7 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { SegmentConst } from '../self-select/self-select.service';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
+import { ContentActionType } from 'src/app/enums/content.enum';
 interface IContentGroup {
 	positionA: any[];
 	positionB: FeatureContent;
@@ -247,7 +248,7 @@ export class DashboardService {
 			Description: '',
 			FeatureImage: 'assets/cms-cache/offline/Default-SMB-Support.jpg',
 			Action: '',
-			ActionType: 'Internal',
+			ActionType: ContentActionType.Internal,
 			ActionLink: 'lenovo-vantage3:support',
 			BrandName: '',
 			BrandImage: '',
@@ -266,7 +267,7 @@ export class DashboardService {
 			Description: '',
 			FeatureImage: 'assets/cms-cache/offline/Default-SMB-Device-Settings.jpg',
 			Action: '',
-			ActionType: 'Internal',
+			ActionType: ContentActionType.Internal,
 			ActionLink: 'lenovo-vantage3:device-settings',
 			BrandName: '',
 			BrandImage: '',
@@ -285,7 +286,7 @@ export class DashboardService {
 			Description: '',
 			FeatureImage: 'assets/cms-cache/offline/Default-SMB-My-Device.jpg',
 			Action: '',
-			ActionType: 'Internal',
+			ActionType: ContentActionType.Internal,
 			ActionLink: 'lenovo-vantage3:device',
 			BrandName: '',
 			BrandImage: '',
@@ -304,7 +305,7 @@ export class DashboardService {
 			Description: '',
 			FeatureImage: 'assets/cms-cache/offline/Default-Preference-Settings.jpg',
 			Action: this.translateString['systemUpdates.readMore'],
-			ActionType: 'Internal',
+			ActionType: ContentActionType.Internal,
 			ActionLink: 'lenovo-vantage3:preference',
 			BrandName: '',
 			BrandImage: '',
@@ -323,7 +324,7 @@ export class DashboardService {
 			Description: '',
 			FeatureImage: 'assets/cms-cache/offline/Default-SMB-System-Update.jpg',
 			Action: this.translateString['systemUpdates.readMore'],
-			ActionType: 'Internal',
+			ActionType: ContentActionType.Internal,
 			ActionLink: 'lenovo-vantage3:system-updates',
 			BrandName: '',
 			BrandImage: '',

@@ -17,6 +17,7 @@ import { NonArmGuard } from 'src/app/services/guard/non-arm-guard';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { QaService } from '../../../services/qa/qa.service';
+import { ContentActionType } from 'src/app/enums/content.enum';
 
 declare const Windows: any;
 
@@ -285,7 +286,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			Description: '',
 			FeatureImage: 'assets/cms-cache/Alexa4x3-zone1.jpg',
 			Action: '',
-			ActionType: 'External',
+			ActionType: ContentActionType.External,
 			ActionLink: null,
 			BrandName: '',
 			BrandImage: '',
