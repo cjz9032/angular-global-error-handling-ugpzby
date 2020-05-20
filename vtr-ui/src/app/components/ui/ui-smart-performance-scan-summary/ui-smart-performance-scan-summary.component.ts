@@ -15,6 +15,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { ModalSmartPerformanceFeedbackComponent } from '../../modal/modal-smart-performance-feedback/modal-smart-performance-feedback.component';
 import { Router } from '@angular/router';
 import { enumSmartPerformance } from 'src/app/enums/smart-performance.enum';
+import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
 
 @Component({
 	selector: 'vtr-ui-smart-performance-scan-summary',
@@ -31,7 +32,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		public smartPerformanceService: SmartPerformanceService,
 		public shellServices: VantageShellService,
 		private translate: TranslateService,
-		private router: Router
+		private router: Router,
+		private formatLocaleDate: FormatLocaleDatePipe
 	) { }
 	public sizeExtension: string;
 	public isLoading = false;
@@ -67,6 +69,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	Data = [1,2,3]
 	historyRes: any = {};
 	historyScanResults = [];
+	historyScanResultsDateTime = []; 
 	public quarterlyMenu: any = [
 		{ displayName: 'Jan-Mar', ...this.getQuartesDates(0, 2), key: 1 },
 		{ displayName: 'Apr-Jun', ...this.getQuartesDates(3, 5), key: 2 },
@@ -174,6 +177,27 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			month: this.currentDate.getMonth() + 1,
 			day: this.currentDate.getDate()
 		};
+	}
+
+	getScanHistoryWithTime() {
+		//Object historyScanResults Copy to object historyScanResultsDateTime
+		this.historyScanResultsDateTime = JSON.parse(JSON.stringify(this.historyScanResults));
+		
+		//Deleting unnecessary keys & manupulating date time.
+		for (let i = 0; i < 5; i++) {
+			//Adding new key scanrunDate with formating
+			this.historyScanResultsDateTime[i].scanrunDate = this.formatLocaleDate.transform(new Date(this.historyScanResultsDateTime[i].scanruntime));
+
+			//Adding new key scanrunTime
+			this.historyScanResultsDateTime[i].scanrunTime = new Intl.DateTimeFormat('default', {
+				hour12: true,
+				hour: 'numeric',
+				minute: 'numeric'
+			}).format(new Date(this.historyScanResultsDateTime[i].scanruntime));
+		}
+
+		return this.historyScanResultsDateTime;
+
 	}
 
 	getNextScanScheduleTime(scandate) {
@@ -491,6 +515,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 					boostSize: res.Boostsize
 				};
 				this.historyScanResults = res.lastscanresults || [];
+				this.getScanHistoryWithTime();
 				this.getMostecentScanDateTime(this.historyScanResults[0].scanruntime);
 			} else {
 				this.historyScanResults = [];
