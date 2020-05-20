@@ -9,9 +9,6 @@ button:focus{
 			right: 0.4rem;
 			font-size: 3rem;
 		}
-		.close:focus{
-			@include default-button-border;
-		}
 		.header-text {
 			.title {
 				line-height: 2.8rem;
@@ -66,11 +63,7 @@ button:focus{
 					width: 3rem;
 					height: 3rem;
 					opacity: 0;
-					&:focus + label {
-						outline-offset: .1rem;
-						outline: 0.1rem solid $blueFill;
-					}
-				}      
+				}
 				.item-radio-button + label {
 					position: absolute;
 					top: .4rem;
@@ -139,10 +132,6 @@ button:focus{
 									background-color:  rgb(1, 96, 214);
 								}
 							}
-							&:focus {
-								outline-offset: .1rem;
-								outline: 0.1rem solid $blueFill;
-							}
 						}
 					}
 					.oc-description {
@@ -158,10 +147,6 @@ button:focus{
 							color: $blueFill;
 							text-decoration: underline;
 							display: inline-block;
-							&:focus {
-								outline-offset: .2rem;
-								outline: 0.1rem solid $blueFill;
-							}
 						}
 						&::ng-deep .oc-driver-link {
 							cursor: pointer;
@@ -172,10 +157,6 @@ button:focus{
 							text-decoration: underline;
 							white-space: nowrap;
 							display: inline-block;
-							&:focus {
-								outline-offset: .2rem;
-								outline: 0.1rem solid $blueFill;
-							}
 						}
 					}
 				}
@@ -190,9 +171,6 @@ button:focus{
 				.auto-switch-toggle {
 					margin: .1rem;
 					margin-right: 1rem;
-					&::ng-deep .toggle-button:focus {
-						outline: 0.1rem solid $blueFill;
-					}
 				}
 			}
 			.auto-switch-right {
@@ -210,3 +188,28 @@ button:focus{
 		height: auto !important;
 	}
 }
+
+::ng-deep body.focus-enable{
+	.is-gaming {
+        .gaming-modal-fun{
+			.modal-header {
+				.close:focus{
+					@include default-button-border;
+				}
+			}
+			.modal-body {
+				.item-radio-button:focus + label, .oc-checkbox:focus {
+					@include solid-button-outline;
+				}
+				.oc-advance-button:focus, .oc-driver-link:focus {
+					@include link-button-outline;
+				}
+				.toggle-button:focus {
+					@include toggle-button-outline;
+				}
+			}
+        }
+	}
+}
+
+

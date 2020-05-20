@@ -492,7 +492,7 @@ $high-contrast-black-yellow: #FFFF00;
 	height: calc(100% + 0.8rem);
 	border: thin solid $color;
 }
-@mixin under-line-button-outline ($color : $blueFill) {
+@mixin under-line-button-border ($color : $blueFill) {
 	content: '';
 	display: block;
 	position: absolute;
@@ -501,4 +501,16 @@ $high-contrast-black-yellow: #FFFF00;
 	width: calc(100% + 0.8rem);
 	height: calc(100% + 0.6rem);
 	border: thin solid $color;
+}
+@mixin solid-button-outline ($color : $blueFill) {
+	outline-offset: .1rem;
+	outline: 0.1rem solid $color;
+}
+
+@mixin link-button-outline ($color : $blueFill) {
+	outline-offset: .2rem;
+	outline: 0.1rem solid $color;
+}
+@mixin toggle-button-outline ($color : $blueFill) {
+	outline: 0.1rem solid $color;
 }

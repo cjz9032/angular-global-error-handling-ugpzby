@@ -82,7 +82,7 @@
             }
             .under-line-button:focus {
                 &::after {
-                    @include under-line-button-outline;
+                    @include under-line-button-border;
                 }
             }
             
