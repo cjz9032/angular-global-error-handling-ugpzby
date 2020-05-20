@@ -536,7 +536,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			return;
 		}
 		this.enableNextText = nextScheduleScanEvent['nextEnable']
-		this.nextScheduleScan =  nextScheduleScanEvent['nextScanDate'] + ' at ' + nextScheduleScanEvent['nextScanHour'] + ':' + nextScheduleScanEvent['nextScanMin'] + ' ' + nextScheduleScanEvent['nextScanAMPM'];
+		const nextScheduleScanDayMonth = this.formatLocaleDate.transformWithoutYear(nextScheduleScanEvent['nextScanDate']);
+		this.nextScheduleScan =  nextScheduleScanDayMonth + ' at ' + nextScheduleScanEvent['nextScanHour'] + ':' + nextScheduleScanEvent['nextScanMin'] + ' ' + nextScheduleScanEvent['nextScanAMPM'];
 
 		// if (this.isSubscribed) {
 		// 	this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
