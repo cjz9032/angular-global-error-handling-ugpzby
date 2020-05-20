@@ -16,7 +16,7 @@ import { UiCircleRadioWithCheckBoxListModel } from 'src/app/components/ui/ui-cir
 })
 export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 
-	@ViewChild('adv') showAdvEl: ElementRef
+	@ViewChild('adv') adv: ElementRef
 
 	public topRowKeyObj: TopRowFunctionsCapability;
 	public showAdvancedSection = false;
@@ -210,7 +210,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 
 	switchFocusToShowAdv() {
 		setTimeout(() => {
-			this.showAdvEl.nativeElement.focus()
+			this.adv.nativeElement.focus()
 		}, 0)
 	}
 
