@@ -36,15 +36,17 @@
 						*ngIf="item.isChecked"
 						[style.cursor]="item.isDisabled?'default': 'pointer'">
 						<fa-icon class="icon-circle"
+							[attr.aria-hidden]=true
 							[class.icon-circle-disabled]="item.isDisabled"
 							[icon]="['fas', 'circle']"></fa-icon>
 						<fa-icon class="check-circle"
+							[attr.aria-hidden]=true
 							[class.check-circle-disabled]="item.isDisabled"
 							[icon]="['far', 'check-circle']"></fa-icon>
 					</fa-layers>
 				</div>
 				<div class="text"
-					id="radio{{index+1}}-label"
+					[id]="item.componentId + '-label'"
 					[attr.aria-hidden]=true
 					[class.text-disabled]="item.isDisabled">
 					{{item.processLabel ? (item.label | translate | capitalizeFirst) : item.label | translate}}

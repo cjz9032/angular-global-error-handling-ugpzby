@@ -18,13 +18,14 @@
 			[metricsValue]="checked"
 			(change)="onChange($event)" />
 		<label *ngIf="hasChild; else elseBlock"
+			[id]="componentId+'_checkbox-label'"
 			class="custom-control-label"
 			[for]="componentId+'_checkbox'">
 			<ng-content></ng-content>
 		</label>
 		<ng-template #elseBlock>
 			<label [for]="componentId+'_checkbox'"
-				id="{{componentId}}_checkbox_label"
+				[id]="componentId+'_checkbox-label'"
 				class="custom-control-label">
 				{{ label }}
 			</label>
