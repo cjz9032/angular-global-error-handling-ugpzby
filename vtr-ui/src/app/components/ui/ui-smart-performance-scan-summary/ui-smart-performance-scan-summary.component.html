@@ -113,9 +113,14 @@
 													<vtr-ui-accordion [tune]="tune"	[boost]="boost" [secure]="secure" [scannigResultObj]= "scannigResultObj"></vtr-ui-accordion>
 												</div>
 												<div class="summary-block" *ngIf="isSubscribed">
-													<h3>{{'smartPerformance.subscriberScanHomePage.subTitle' |translate }}
+													<h3 *ngIf="!inputIsScanningCompleted">{{'smartPerformance.subscriberScanHomePage.subTitle' |translate }}
 													</h3>
-													<p>{{'smartPerformance.subscriberScanHomePage.description' |translate }}
+													<p *ngIf="!inputIsScanningCompleted">{{'smartPerformance.subscriberScanHomePage.description' |translate }}
+													</p>
+													
+													<h3 *ngIf="inputIsScanningCompleted">{{'smartPerformance.subscriberScanHomePage.successTitle' |translate }}
+													</h3>
+													<p *ngIf="inputIsScanningCompleted">{{'smartPerformance.subscriberScanHomePage.successDescription' |translate }}
 													</p>
 													<div class="d-flex justify-content-start my-5 w-75">
 														<button *ngIf="!inputIsScanningCompleted" class="action-button" (click)="ScanNowSummary()"

@@ -2910,6 +2910,8 @@
 			"returnto": "RETURN TO DASHBOARD",
 			"mostRecent": "MOST RECENT SCAN:",
 			"nextScheduled": "NEXT SCHEDULED SCAN:",
+			"successTitle": "Your Pc is tuned up !",
+			"successDescription": "Smart Performance resolved {{ issueCount }}  issues to keep your pc running smoothly, you can find scan summary and report below.",
 			"scanSummary": {
 				"title": "Scan summary:",
 				"description": "We are constantly tuning your computer",

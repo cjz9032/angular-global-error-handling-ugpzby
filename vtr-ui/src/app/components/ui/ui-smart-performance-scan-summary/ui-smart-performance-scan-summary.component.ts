@@ -507,6 +507,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 				this.historyScanResults = res.lastscanresults || [];
 				this.getScanHistoryWithTime();
 				this.getMostecentScanDateTime(this.historyScanResults[0].scanruntime);
+				
 			} else {
 				this.historyScanResults = [];
 				this.historyRes = {};
