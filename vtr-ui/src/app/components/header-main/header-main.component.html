@@ -12,7 +12,7 @@
 			[hidden]="hideBack"
 			id="{{backId}}"
 			href="javascript:void();"
-			tabindex="1"
+			tabindex="{{ hideBack ? -1 : 1 }}"
 			*ngIf="back && back.length > 0">
 			{{backarrow}}
 			<span>
