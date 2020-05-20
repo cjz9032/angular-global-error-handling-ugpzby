@@ -1,5 +1,5 @@
 import * as phoenix from '@lenovo/tan-client-bridge';
-import { EventTypes, WifiSecurity, DeviceInfo } from '@lenovo/tan-client-bridge';
+import { EventTypes, WifiSecurity, DeviceInfo, WifiDetail } from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from '../../enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
@@ -7,7 +7,7 @@ import { CommsService } from 'src/app/services/comms/comms.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { NgZone } from '@angular/core';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
-
+import { cloneDeep, isEqual } from 'lodash';
 
 interface DevicePostureDetail {
 	status: number; // 1,2
@@ -26,6 +26,7 @@ export class WifiHomeViewModel {
 	tryNowUrl: string;
 	homeStatus: string;
 	tryNowEnable = false;
+	private preAllHistories: WifiDetail[] = [];
 
 	constructor(
 		wifiSecurity: phoenix.WifiSecurity,
@@ -38,26 +39,29 @@ export class WifiHomeViewModel {
 			if (value) {
 				let cacheWifiSecurityHistoryNum = commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum);
 				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, value);
-				this.allHistories = wifiSecurity.wifiHistory;
-				this.allHistories = this.mappingHistory(this.allHistories);
-				if (cacheWifiSecurityHistoryNum) {
-					cacheWifiSecurityHistoryNum = JSON.parse(cacheWifiSecurityHistoryNum);
-					if (this.allHistories.length > 4) {
-						this.hasMore = true;
+					this.allHistories = wifiSecurity.wifiHistory;
+					this.allHistories = this.mappingHistory(this.allHistories);
+				if(!isEqual(this.preAllHistories, this.allHistories)) {	
+					this.preAllHistories = cloneDeep(this.allHistories);
+					if (cacheWifiSecurityHistoryNum) {
+						cacheWifiSecurityHistoryNum = JSON.parse(cacheWifiSecurityHistoryNum);
+						if (this.allHistories.length > 4) {
+							this.hasMore = true;
+						} else {
+							this.hasMore = false;
+						}
+						this.histories = wifiSecurity.wifiHistory.slice(0, cacheWifiSecurityHistoryNum);
 					} else {
-						this.hasMore = false;
+						if (this.allHistories.length > 4) {
+							this.hasMore = true;
+						} else {
+							this.hasMore = false;
+						}
+						this.histories = wifiSecurity.wifiHistory.slice(0, 4);
+						commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
 					}
-					this.histories = wifiSecurity.wifiHistory.slice(0, cacheWifiSecurityHistoryNum);
-				} else {
-					if (this.allHistories.length > 4) {
-						this.hasMore = true;
-					} else {
-						this.hasMore = false;
-					}
-					this.histories = wifiSecurity.wifiHistory.slice(0, 4);
-					commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
-				}
-				this.histories = this.mappingHistory(this.histories);
+					this.histories = this.mappingHistory(this.histories);
+				}	
 			}
 		});
 		this.wifiSecurity = wifiSecurity;
@@ -75,6 +79,7 @@ export class WifiHomeViewModel {
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, wifiSecurity.wifiHistory);
 			this.allHistories = wifiSecurity.wifiHistory;
 			this.allHistories = this.mappingHistory(this.allHistories);
+			this.preAllHistories = cloneDeep(this.allHistories);
 			if (this.allHistories.length > 4) {
 					this.hasMore = true;
 			} else {
