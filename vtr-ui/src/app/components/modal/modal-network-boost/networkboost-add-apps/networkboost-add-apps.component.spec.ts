@@ -282,8 +282,6 @@ describe('NetworkboostAddAppsComponent', () => {
 	it('checkFocus', fakeAsync(() => {
 		component.noAppsRunning = false;
 		const result = component.checkFocus({which: 9});
-		tick(3);
-	//	component.ngOnDestroy();
 		tick(10);
 		expect(result).toBe(undefined);
 	})
@@ -293,8 +291,7 @@ describe('NetworkboostAddAppsComponent', () => {
 	it('Focus close', fakeAsync(() => {
 		fixture.detectChanges();
 		component.noAppsRunning = false;
-		//const result = component.focusClose();
-		 tick(10);
+		tick(10);
 		expect(component).toBeTruthy();
 	})
 	);
@@ -309,6 +306,7 @@ describe('NetworkboostAddAppsComponent', () => {
 
 
 	it('ngOnChanges', () => {
+		// tslint:disable-next-line: prefer-const
 		let changeval: any;
 		const resp = component.ngOnChanges(changeval);
 		expect(resp).toBe(undefined);
@@ -321,15 +319,11 @@ describe('NetworkboostAddAppsComponent', () => {
 		);
 		p.then(result => {
 			fakeAsync(() => {
-				//const results = component.focusClose();
 				expect(component).toBeTruthy();
 			});
 			done();
 		});
 	});
-
-
-
 });
 
 

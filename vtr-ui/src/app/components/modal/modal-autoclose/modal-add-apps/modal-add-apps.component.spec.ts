@@ -96,7 +96,6 @@ describe('ModalAddAppsComponent', () => {
 	it('runappKeyup', fakeAsync(() => {
 		component.runningList = [1];
 		component.runappKeyup({ which: 9 }, 1);
-		//console.log('test in ',document.getElementById('close'));
 		expect(component).toBeTruthy();
 	})
 	);
@@ -116,10 +115,7 @@ describe('ModalAddAppsComponent', () => {
 
 	it('checkFocus', fakeAsync(() => {
 		component.loadingNoApps = false;
-		//component.noRunningInterval = true;
-		const result = component.checkFocus({which: 9});
-		tick(10);
-		//component.ngOnDestroy();
+		component.checkFocus({which: 9});
 		tick(10);
 		expect(component).toBeTruthy();
 	})
@@ -132,10 +128,6 @@ export function mockPipe(options: Pipe): Pipe {
 		name: options.name
 	};
 	return Pipe(metadata)(
-		class MockPipe {
-			// public transform(query: string, ...args: any[]): any {
-			// 	return query;
-			// }
-		}
+		class MockPipe {}
 	);
 }
