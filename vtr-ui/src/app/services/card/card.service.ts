@@ -5,6 +5,7 @@ import { ModalArticleDetailComponent } from 'src/app/components/modal/modal-arti
 import { ModalDccDetailComponent } from 'src/app/components/modal/modal-dcc-detail/modal-dcc-detail.component';
 import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
 import { DeviceService } from '../device/device.service';
+import { ContentActionType } from 'src/app/enums/content.enum';
 
 @Injectable({
 	providedIn: 'root'
@@ -18,7 +19,7 @@ export class CardService {
 	) { }
 
 	linkClicked(actionType: string, actionLink: string, isOfflineArm?: boolean, articleTitle: string = '') {
-		if (isOfflineArm) {
+		if (isOfflineArm || !actionType) {
 			return false;
 		}
 
@@ -26,11 +27,7 @@ export class CardService {
 		const isDccDetails = actionLink.startsWith('lenovo-vantage3:dcc-details');
 		const isDccDemo = actionLink.startsWith('dcc-demo');
 
-		if (!actionType || (actionType !== 'Internal' && !isProtocol)) {
-			return;
-		}
-
-		if (isProtocol && !isDccDetails) {
+		if ((isProtocol && !isDccDetails) || actionType === ContentActionType.External) {
 			WinRT.launchUri(actionLink);
 		} else if (isDccDetails || isDccDemo) {
 			this.appsForYouService.updateUnreadMessageCount('menu-main-lnk-open-dcc');

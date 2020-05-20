@@ -35,6 +35,7 @@ import map from 'lodash/map';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { WelcomeTextContent } from 'src/app/data-models/welcomeText/welcome-text.model';
 import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
+import { ContentActionType } from 'src/app/enums/content.enum';
 
 interface IConfigItem {
 	cardId: string;
@@ -473,7 +474,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy {
 			title: 'Lenovo exclusive offer of Adobe designer suite',
 			url: 'assets/images/dcc/hero-banner-dcc.jpg',
 			ActionLink: 'dcc-demo',
-			ActionType: 'Internal',
+			ActionType: ContentActionType.Internal,
 			DataSource: 'cms'
 		}];
 	}

@@ -21,6 +21,7 @@ import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { ContentActionType } from 'src/app/enums/content.enum';
 
 @Component({
 	selector: 'vtr-page-dashboard-android',
@@ -189,7 +190,7 @@ export class PageDashboardAndroidComponent implements OnInit {
 			Description: '',
 			FeatureImage: 'assets/cms-cache/Alexa4x3-zone1.jpg',
 			Action: '',
-			ActionType: 'External',
+			ActionType: ContentActionType.External,
 			ActionLink: null,
 			BrandName: '',
 			BrandImage: '',
@@ -207,7 +208,7 @@ export class PageDashboardAndroidComponent implements OnInit {
 			Description: '',
 			FeatureImage: 'assets/cms-cache/Security4x3-zone2.jpg',
 			Action: '',
-			ActionType: 'External',
+			ActionType: ContentActionType.External,
 			ActionLink: null,
 			BrandName: '',
 			BrandImage: '',
@@ -225,7 +226,7 @@ export class PageDashboardAndroidComponent implements OnInit {
 			Description: '',
 			FeatureImage: 'assets/cms-cache/Gamestore8x3-zone3.jpg',
 			Action: '',
-			ActionType: 'External',
+			ActionType: ContentActionType.External,
 			ActionLink: null,
 			BrandName: '',
 			BrandImage: '',
@@ -243,7 +244,7 @@ export class PageDashboardAndroidComponent implements OnInit {
 			Description: '',
 			FeatureImage: 'assets/cms-cache/content-card-4x4-support.jpg',
 			Action: '',
-			ActionType: 'External',
+			ActionType: ContentActionType.External,
 			ActionLink: null,
 			BrandName: '',
 			BrandImage: '',
@@ -261,7 +262,7 @@ export class PageDashboardAndroidComponent implements OnInit {
 			Description: '',
 			FeatureImage: 'assets/cms-cache/content-card-4x4-award.jpg',
 			Action: '',
-			ActionType: 'External',
+			ActionType: ContentActionType.External,
 			ActionLink: null,
 			BrandName: '',
 			BrandImage: '',

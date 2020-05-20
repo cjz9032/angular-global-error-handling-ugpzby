@@ -27,6 +27,7 @@ import { RouteHandlerService } from 'src/app/services/route-handler/route-handle
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metric.service';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
+import { ContentActionType } from 'src/app/enums/content.enum';
 
 @Component({
 	selector: 'vtr-page-device-updates',
@@ -253,7 +254,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 				Id: 'LenovoSupportWebsite',
 				Title: value,
 				FeatureImage: 'assets/images/support.jpg',
-				ActionType: 'External',
+				ActionType: ContentActionType.External,
 				ActionLink: this.supportLink,
 			}
 		});

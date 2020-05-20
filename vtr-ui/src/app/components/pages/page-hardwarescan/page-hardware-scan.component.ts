@@ -11,6 +11,7 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { Router } from '@angular/router';
 import { HardwareScanService } from '../../../services/hardware-scan/hardware-scan.service';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
+import { ContentActionType } from 'src/app/enums/content.enum';
 
 @Component({
 	selector: 'vtr-page-hardware-scan',
@@ -66,7 +67,7 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 			Title: this.translate.instant('hardwareScan.support.title'),
 			FeatureImage: 'assets/images/support.jpg',
 			Action: 'Read More',
-			ActionType: 'External',
+			ActionType: ContentActionType.External,
 			ActionLink: 'https://pcsupport.lenovo.com/lenovodiagnosticsolutions/downloads',
 			isLocal: true
 		});
