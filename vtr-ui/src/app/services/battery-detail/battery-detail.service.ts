@@ -66,10 +66,6 @@ export class BatteryDetailService {
 		}
 	}
 
-	// public setChargeThresholdInfo(info: ChargeThreshold[]) {
-	// 	this.chargeThresholdInfo.next(info);
-	// }
-
 	public getChargeThresholdInfo() {
 		return this.chargeThresholdInfo.asObservable();
 	}
@@ -78,17 +74,9 @@ export class BatteryDetailService {
 		return this.airplaneModeSubject.asObservable();
 	}
 
-	// public setAirplaneMode(value) {
-	// 	this.airplaneModeSubject.next(value);
-	// }
-
 	public getExpressCharging() {
 		return this.expressChargingSubject.asObservable();
 	}
-
-	// public setExpressCharging(value) {
-	// 	this.expressChargingSubject.next(value);
-	// }
 
 	public getBatterySettings() {
 		const isThinkPad = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType) === 1;
@@ -106,8 +94,6 @@ export class BatteryDetailService {
 		if (this.powerService.isShellAvailable) {
 			this.powerService.getChargeThresholdInfo().then((response) => {
 				this.logger.info('getBatteryThresholdInformation.then', response);
-				// this.onPowerBatteryStatusEvent(response);
-				// this.setChargeThresholdInfo(response);
 				this.chargeThresholdInfo.next(response);
 				this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, response);
 			}).catch ((error) => {
@@ -126,7 +112,6 @@ export class BatteryDetailService {
 					this.getAirplaneModeThinkPad()
 				} else {
 					const airplaneMode = new FeatureStatus(false, false);
-					// this.setAirplaneMode(airplaneMode);
 					this.airplaneModeSubject.next(airplaneMode);
 				}
 			}).catch((error) => {
@@ -140,9 +125,7 @@ export class BatteryDetailService {
 		if (this.powerService.isShellAvailable) {
 			this.powerService.getAirplaneModeThinkPad().then((value: any) => {
 				this.logger.info('getAirplaneModeThinkPad.then', value);
-				// this.batteryIndicator.isAirplaneMode = value;
 				const airplaneMode = new FeatureStatus(true, value);
-				// this.setAirplaneMode(airplaneMode)
 				this.airplaneModeSubject.next(airplaneMode);
 			}).catch(error => {
 				this.logger.error('getAirplaneModeThinkPad', error.message);
@@ -151,32 +134,12 @@ export class BatteryDetailService {
 		}
 	}
 
-	// private getConservationModeStatusIdeaPad() {
-	// 	this.logger.info('Before getConservationModeStatusIdeaNoteBook');
-	// 	if (this.powerService.isShellAvailable) {
-	// 		this.powerService.getConservationModeStatusIdeaNoteBook().then((featureStatus) => {
-	// 			this.logger.info('getConservationModeStatusIdeaNoteBook.then', featureStatus);
-	// 			this.commonService.sendNotification('ConservationModeStatus', {available: featureStatus.available, status: featureStatus.status});
-	// 			// this.conservationModeStatus = featureStatus;
-	// 			// this.updateBatteryLinkStatus(this.conservationModeStatus.available);
-
-	// 			// this.conservationModeCache = featureStatus;
-	// 			// this.conservationModeCache.isLoading = this.conservationModeLock;
-	// 			// this.commonService.setLocalStorageValue(LocalStorageKey.ConservationModeCapability, this.conservationModeCache);
-	// 		}).catch((error) => {
-	// 			this.logger.error('getConservationModeStatusIdeaNoteBook', error.message);
-	// 			return EMPTY;
-	// 		});
-	// 	}
-	// }
-
 	private getRapidChargeModeStatusIdeaPad() {
 		this.logger.info('Before getRapidChargeModeStatusIdeaNoteBook');
 		if (this.powerService.isShellAvailable) {
 			this.powerService.getRapidChargeModeStatusIdeaNoteBook().then((featureStatus) => {
 				this.logger.info('getRapidChargeModeStatusIdeaNoteBook.then', featureStatus);
 				const expressCharging = new FeatureStatus(featureStatus.available, featureStatus.status);
-				// this.setExpressCharging(expressCharging);
 				this.expressChargingSubject.next(expressCharging);
 			}).catch((error) => {
 				this.logger.error('getRapidChargeModeStatusIdeaNoteBook', error.message);
