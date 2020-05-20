@@ -46,7 +46,8 @@
                     "ramOverlock": "Overklok RAM memorije",
                     "popup": {
                         "text": "Izmena će biti primenjena nakon ponovnog pokretanja računara.",
-                        "button": "U redu"
+                        "button": "U redu",
+                        "title": "system restart is required"
                     },
                     "driverPopup": {
                         "headerText": "Potrebno je instaliranje upravljačkog programa",
@@ -70,7 +71,10 @@
                     "networkBoost": "Pojačanje mreže",
                     "hybridMode": "Hibridni režim",
                     "overDrive": "Over Drive",
-                    "touchpadLock": "Zaključ. dodirne table"
+                    "touchpadLock": "Zaključ. dodirne table",
+                    "helpPopup": {
+                        "title": "Legion Edge Help"
+                    }
                 },
                 "systemTools": {
                     "power": "Napajanje",
@@ -3787,7 +3791,9 @@
             },
             "commentTip": "Shout what you love and whisper what you hate.",
             "comments": "Please leave your comments here..."
-        }
+        },
+        "auto": "Auto",
+        "manual": "Manual"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

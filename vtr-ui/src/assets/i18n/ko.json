@@ -46,7 +46,8 @@
                     "ramOverlock": "RAM 오버클럭",
                     "popup": {
                         "text": "컴퓨터를 다시 시작하면, 변경 사항이 적용됩니다.",
-                        "button": "확인"
+                        "button": "확인",
+                        "title": "system restart is required"
                     },
                     "driverPopup": {
                         "headerText": "드라이버 설치 필요",
@@ -70,6 +71,9 @@
                     },
                     "lightingColorMessage": {
                         "text": "이 효과에 사용할 수 없는 색상 선택."
+                    },
+                    "helpPopup": {
+                        "title": "Legion Edge Help"
                     }
                 },
                 "systemTools": {
@@ -3787,7 +3791,9 @@
             },
             "commentTip": "Shout what you love and whisper what you hate.",
             "comments": "Please leave your comments here..."
-        }
+        },
+        "auto": "Auto",
+        "manual": "Manual"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

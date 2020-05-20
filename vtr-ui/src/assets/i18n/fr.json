@@ -46,7 +46,8 @@
                     "ramOverlock": "Overclocking RAM",
                     "popup": {
                         "text": "La modification prendra effet après le redémarrage de l'ordinateur.",
-                        "button": "OK"
+                        "button": "OK",
+                        "title": "system restart is required"
                     },
                     "driverPopup": {
                         "headerText": "Installation du pilote requise",
@@ -70,6 +71,9 @@
                     },
                     "lightingColorMessage": {
                         "text": "Sélection de la couleur non disponible pour cet effet."
+                    },
+                    "helpPopup": {
+                        "title": "Legion Edge Help"
                     }
                 },
                 "systemTools": {
@@ -3787,7 +3791,9 @@
             },
             "commentTip": "Shout what you love and whisper what you hate.",
             "comments": "Please leave your comments here..."
-        }
+        },
+        "auto": "Auto",
+        "manual": "Manual"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

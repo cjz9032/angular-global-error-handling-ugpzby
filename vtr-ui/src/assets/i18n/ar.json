@@ -48,7 +48,8 @@
                     "ramOverlock": "كسر سرعة وحدة RAM",
                     "popup": {
                         "text": "يسري التغيير بعد إعادة تشغيل الكمبيوتر.",
-                        "button": "موافق"
+                        "button": "موافق",
+                        "title": "system restart is required"
                     },
                     "driverPopup": {
                         "headerText": "تثبيت برنامج التشغيل مطلوب",
@@ -72,7 +73,10 @@
                     "networkBoost": "تعزيز الشبكة",
                     "hybridMode": "الوضع الهجين",
                     "overDrive": "Over Drive",
-                    "touchpadLock": "قفل لوحه اللمس"
+                    "touchpadLock": "قفل لوحه اللمس",
+                    "helpPopup": {
+                        "title": "Legion Edge Help"
+                    }
                 },
                 "systemTools": {
                     "power": "الطاقة",
@@ -3789,7 +3793,9 @@
             },
             "commentTip": "Shout what you love and whisper what you hate.",
             "comments": "Please leave your comments here..."
-        }
+        },
+        "auto": "Auto",
+        "manual": "Manual"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

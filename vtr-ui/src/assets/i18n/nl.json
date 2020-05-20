@@ -46,7 +46,8 @@
                     "ramOverlock": "RAM overklok",
                     "popup": {
                         "text": "De wijziging zal effectief zijn nadat u de computer opnieuw hebt opgestart.",
-                        "button": "OK"
+                        "button": "OK",
+                        "title": "system restart is required"
                     },
                     "driverPopup": {
                         "headerText": "Installatie van stuurprogramma vereist",
@@ -70,6 +71,9 @@
                     },
                     "lightingColorMessage": {
                         "text": "Het selecteren van kleur is niet beschikbaar voor dit effect."
+                    },
+                    "helpPopup": {
+                        "title": "Legion Edge Help"
                     }
                 },
                 "systemTools": {
@@ -3787,7 +3791,9 @@
             },
             "commentTip": "Shout what you love and whisper what you hate.",
             "comments": "Please leave your comments here..."
-        }
+        },
+        "auto": "Auto",
+        "manual": "Manual"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

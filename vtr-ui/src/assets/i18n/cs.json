@@ -46,7 +46,8 @@
                     "ramOverlock": "Přetaktování RAM",
                     "popup": {
                         "text": "Změny se projeví po restartování počítače.",
-                        "button": "OK"
+                        "button": "OK",
+                        "title": "system restart is required"
                     },
                     "driverPopup": {
                         "headerText": "Je vyžadována instalace ovladače",
@@ -70,7 +71,10 @@
                     "networkBoost": "Zvýšení vý-konu sítě",
                     "hybridMode": "Hybridní re-žim",
                     "overDrive": "Over Drive",
-                    "touchpadLock": "Zámek doty-kové plošky"
+                    "touchpadLock": "Zámek doty-kové plošky",
+                    "helpPopup": {
+                        "title": "Legion Edge Help"
+                    }
                 },
                 "systemTools": {
                     "power": "Napájení",
@@ -3787,7 +3791,9 @@
             },
             "commentTip": "Shout what you love and whisper what you hate.",
             "comments": "Please leave your comments here..."
-        }
+        },
+        "auto": "Auto",
+        "manual": "Manual"
     },
     "homeSecurity": {
         "title": "Connected Home Security",
