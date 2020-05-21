@@ -2097,8 +2097,8 @@
             },
             "superResolution": {
                 "title": "視訊解析度升級",
-                "desc": "<p><label>此功能可改進視訊解析度，藉此強化視訊播放體驗。特別適合視訊解析度不佳時。</label></p> <p><label>此功能可能會影響電池續航力、電池溫度，並造成噪音。請勿在 DC 模式（電池模式）下使用。否則，電力會消耗得更快，且電池壽命會變得更短。</label></p>",
-                "tooltip": "<p>此功能只適用於以下視訊播放程式：<br>Windows Media Player<br>Chrome 播放器<br>PotPlayer</p><p class='srTooltip'>如需在 PotPlayer 上啟用此功能的指示，請參閱電腦隨附的使用手冊。</p>",
+                "desc": "<p id='sr-describe-one' role='text'>此功能可改進視訊解析度，藉此強化視訊播放體驗。特別適合視訊解析度不佳時。</p><p id='sr-describe-two' role='text'>此功能可能會影響電池續航力、電池溫度，並造成噪音。請勿在 DC 模式（電池模式）下使用。否則，電力會消耗得更快，且電池壽命會變得更短。</p>",
+                "tooltip": "<p id='sr-tip-one' role='text'>此功能只適用於以下視訊播放程式：<br>Windows Media Player<br>Chrome 播放器<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>如需在 PotPlayer 上啟用此功能的指示，請參閱電腦隨附的使用手冊。</p>",
                 "note": {
                     "description": "此功能在下列情況中無法運作：",
                     "description1": "CPU 溫度過高。",
@@ -2110,8 +2110,8 @@
             "antiTheft": {
                 "heading": "智慧型感應",
                 "title": "智慧型移動警示",
-                "tooltip": "<div>當電腦處於休眠模式或關閉電源時，此功能無法運作。檢查下列動作中的設定：<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>闔上機蓋的動作</li><li>電力不足/偏低時的動作</li><li>電源按鈕動作</li><li>睡眠按鈕動作</li><li>閒置逾時設定進入休眠</li></ul></div>否則，它不會引發警示，也不會拍照。</div>",
-                "desc": "<p><label>啟用此功能時，裝置將在螢幕鎖定及偵測到移動時開始發出嗶聲，特別是在公共場所。</label></p> <p><label>若要關閉警示音，請登入 Windows。</label></p>",
+                "tooltip": "<div id='antiTheft-tooltips'>當電腦處於休眠模式或關閉電源時，此功能無法運作。檢查下列動作中的設定：<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>闔上機蓋的動作</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>電力不足/偏低時的動作</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>電源按鈕動作</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>睡眠按鈕動作</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>閒置逾時設定進入休眠</li></ul></div>否則，它不會引發警示，也不會拍照。</div>",
+                "desc": "<p id='antiTheft-describe-one' role='text'>啟用此功能時，裝置將在螢幕鎖定及偵測到移動時開始發出嗶聲，特別是在公共場所。</p><p id='antiTheft-describe-two' role='text'>若要關閉警示音，請登入 Windows。</p>",
                 "note": {
                     "description": "成功登入系統後，此功能將自動關閉。您必須重新啟用才能使用此功能。"
                 },
