@@ -69,6 +69,12 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	macroKeyRecordedStatus: MacroKeyRecordedChange[];
 	macroKeyInputData: MacroKeyInputChange = new MacroKeyInputChange();
 	macroKeyMessageData: any;
+	initEvent: any;
+	recordChangeEvent: any;
+	keyChangeEvent: any;
+	inputChangeEvent: any;
+	inputMessageChangeEvent: any;
+
 	constructor(
 		private macroKeyService: MacrokeyService,
 		private shellService: VantageShellService,
@@ -76,7 +82,13 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 		private commonService: CommonService,
 		private gamingCapabilityService: GamingAllCapabilitiesService,
 		private translate: TranslateService
-	) { }
+	) {
+		this.initEvent = this.onGamingMacroKeyInitializeEvent.bind(this);
+		this.recordChangeEvent = this.onGamingMacroKeyRecordedChangeEvent.bind(this);
+		this.keyChangeEvent = this.onGamingMacroKeyKeyChangeEvent.bind(this);
+		this.inputChangeEvent = this.onGamingMacroKeyInputChangeEvent.bind(this);
+		this.inputMessageChangeEvent = this.onGamingMacroKeyInputMessageEvent.bind(this);
+	}
 
 	ngOnInit() {
 		this.gamingProperties.macroKeyFeature = this.gamingCapabilityService.getCapabilityFromCache(
@@ -105,17 +117,6 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 			(number) => number.key === this.macroKeyInputData.key
 		)[0];
 
-
-		// let tipid = 2;
-		// if (this.macroKeyTypeStatus.MacroKeyStatus == tipid) {
-		// 	this.macroKeyOptions.dropOptions.forEach((option) => {
-		// 		if (option.value == tipid) {
-		// 			this.tooltips_value = this.translate.instant(option.name);
-		// 		}
-		// 	});
-		// }
-		//this.ngbtconfig.triggers = 'hover';
-		//this.ngbtconfig.placement = 'right';
 		if (this.macroKeyTypeStatus.MacroKeyStatus === 2) {
 			this.tooltips_value = this.translate.instant('gaming.macroKey.status.whileGaming.title');
 		}
@@ -133,18 +134,21 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	ngOnDestroy() {
 		this.shellService.unRegisterEvent(
 			EventTypes.gamingMacroKeyInitializeEvent,
-			this.onGamingMacroKeyInitializeEvent
+			this.initEvent
 		);
 		this.shellService.unRegisterEvent(
 			EventTypes.gamingMacroKeyRecordedChangeEvent,
-			this.onGamingMacroKeyRecordedChangeEvent
+			this.recordChangeEvent
 		);
-		this.shellService.unRegisterEvent(EventTypes.gamingMacroKeyKeyChangeEvent, this.onGamingMacroKeyKeyChangeEvent);
+		this.shellService.unRegisterEvent(
+			EventTypes.gamingMacroKeyKeyChangeEvent, 
+			this.keyChangeEvent
+		);
 		if (this.isRecording) {
 			this.macroKeyService.setStopRecording(this.numberSelected.key, false, true);
 			this.shellService.unRegisterEvent(
 				EventTypes.gamingMacroKeyKeyChangeEvent,
-				this.onGamingMacroKeyInputChangeEvent
+				this.keyChangeEvent
 			);
 		}
 	}
@@ -158,15 +162,15 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 			});
 			this.shellService.registerEvent(
 				EventTypes.gamingMacroKeyInitializeEvent,
-				this.onGamingMacroKeyInitializeEvent.bind(this)
+				this.initEvent
 			);
 			this.shellService.registerEvent(
 				EventTypes.gamingMacroKeyRecordedChangeEvent,
-				this.onGamingMacroKeyRecordedChangeEvent.bind(this)
+				this.recordChangeEvent
 			);
 			this.shellService.registerEvent(
 				EventTypes.gamingMacroKeyKeyChangeEvent,
-				this.onGamingMacroKeyKeyChangeEvent.bind(this)
+				this.keyChangeEvent
 			);
 		}
 	}
@@ -259,11 +263,11 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 			this.macroKeyService.setStartRecording(this.numberSelected.key);
 			this.shellService.registerEvent(
 				EventTypes.gamingMacroKeyInputChageEvent,
-				this.onGamingMacroKeyInputChangeEvent.bind(this)
+				this.inputChangeEvent
 			);
 			this.shellService.registerEvent(
 				EventTypes.gamingMacroKeyInputMessageEvent,
-				this.onGamingMacroKeyInputMessageEvent.bind(this)
+				this.inputMessageChangeEvent
 			);
 		} else {
 			this.macroKeyService.setStopRecording(
@@ -273,11 +277,11 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 			);
 			this.shellService.unRegisterEvent(
 				EventTypes.gamingMacroKeyKeyChangeEvent,
-				this.onGamingMacroKeyInputChangeEvent
+				this.inputChangeEvent
 			);
 			this.shellService.unRegisterEvent(
 				EventTypes.gamingMacroKeyInputMessageEvent,
-				this.onGamingMacroKeyInputMessageEvent
+				this.inputMessageChangeEvent
 			);
 		}
 	}
