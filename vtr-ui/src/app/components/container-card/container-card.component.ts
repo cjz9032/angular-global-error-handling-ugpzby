@@ -36,10 +36,11 @@ export class ContainerCardComponent implements OnInit {
 			this.isLoading = false;
 			this.overlayThemeDefaultIsDark = !itemValue.OverlayTheme || itemValue.OverlayTheme !== CardOverlayTheme.Light
 			this.overlayThemeDefaultIsLight = !itemValue.OverlayTheme || itemValue.OverlayTheme !== CardOverlayTheme.Dark
-			this._item = itemValue;
-			if (!itemValue.isLocal) {
+			if (!itemValue.isLocal && (!this._item || this._item.Id !== itemValue.Id)) {
+				// The Page would feed the content cards with the cache first and then feed them again when the online content return, and they would probably the same
 				this.metricsService.sendContentDisplay(itemValue.Id, itemValue.DataSource, this.order as string);
 			}
+			this._item = itemValue;
 		} else {
 			this._item = new FeatureContent();
 		}
