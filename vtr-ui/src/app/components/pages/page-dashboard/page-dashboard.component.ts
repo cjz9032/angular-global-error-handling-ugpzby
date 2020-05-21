@@ -35,6 +35,7 @@ import { LocalInfoService } from 'src/app/services/local-info/local-info.service
 import { WelcomeTextContent } from 'src/app/data-models/welcomeText/welcome-text.model';
 import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
 import { ContentActionType } from 'src/app/enums/content.enum';
+import { ContentSource } from 'src/app/enums/content.enum';
 
 interface IConfigItem {
 	cardId: string;
@@ -443,7 +444,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy {
 		const dataSource = 'upe';
 
 		contentCards.forEach(contentCard => {
-			let contents: any = this.cmsService.getOneCMSContent(response, contentCard.template, contentCard.positionParam);
+			let contents: any = this.cmsService.getOneCMSContent(response, contentCard.template, contentCard.positionParam, ContentSource.UPE);
 			contentCard.upeContent = null;
 			if (contents && contents.length > 0) {
 				contents = this.formalizeContent(contents, contentCard.positionParam, dataSource);
@@ -473,8 +474,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy {
 			url: 'assets/images/dcc/hero-banner-dcc.jpg',
 			ActionLink: 'dcc-demo',
 			ActionType: ContentActionType.Internal,
-			DataSource: 'cms',
-			isLocal: true
+			DataSource: ContentSource.Local
 		}];
 	}
 
