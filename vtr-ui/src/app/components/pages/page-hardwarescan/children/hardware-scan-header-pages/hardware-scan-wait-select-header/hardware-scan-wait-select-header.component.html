@@ -9,16 +9,18 @@
 			(click)="onQuickScan()"
 			tabindex="1"
 			>{{'hardwareScan.quickScan' | translate}}</button>
-		<a	href="javascript:void();"
-			vtrMetrics
-			metricsEvent="FeatureClick"
-			metricsParent="HardwareScan"
-			metricsItem="HardwareScan.CustomizeScan"
-			[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
-			[ngClass]="{'action-anchor': !isButtonDisable(), 'disabled-anchor': isButtonDisable()}"
-			tabindex="1"
-			(click)="onAnchor()"
-			>{{'hardwareScan.customize.name' | translate}}
-		</a>
-	</div>
+	 	<div class="row aling-items-center">
+			<a	href="javascript:void();"
+				vtrMetrics
+				metricsEvent="FeatureClick"
+				metricsParent="HardwareScan"
+				metricsItem="HardwareScan.CustomizeScan"
+				[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
+				[ngClass]="{'action-anchor': !isButtonDisable(), 'disabled-anchor': isButtonDisable()}"
+				tabindex="1"
+				(click)="onAnchor()"
+				>{{'hardwareScan.customize.name' | translate}}
+			</a>
+		</div>
+ 	</div>
 </div>
