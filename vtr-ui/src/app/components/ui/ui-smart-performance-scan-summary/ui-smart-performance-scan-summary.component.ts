@@ -114,7 +114,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	dateValue = 0;
 	enableNextText: boolean = true
 	scanScheduleDate: any;
-	issueCount: any = 0;
+	issueCount: number = 0;
 	nextScheduleScan: any;
 	mostRecentScan: any;
 	IsSmartPerformanceFirstRun: any;
@@ -507,6 +507,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 				this.historyScanResults = res.lastscanresults || [];
 				this.getScanHistoryWithTime();
 				this.getMostecentScanDateTime(this.historyScanResults[0].scanruntime);
+				
 			} else {
 				this.historyScanResults = [];
 				this.historyRes = {};
