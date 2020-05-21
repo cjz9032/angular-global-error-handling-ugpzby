@@ -1596,12 +1596,78 @@ vtr-ui-smart-performance-scanning {
 		background-color: $light;
 	}
 }
+// checked
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
 	@media #{$white-on-black} {
 		background-color: $high-contrast-black-textselected;
+		border-color: $high-contrast-black-textselected;
+		border-radius: 0rem !important;
 	}
 	@media #{$black-on-white} {
 		background-color: $high-contrast-white-textselected;
+		border-color: $high-contrast-white-textselected;
+		border-radius: 0rem !important;
+	}
+}
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
+	@media #{$white-on-black} {
+		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' style='-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);' preserveAspectRatio='xMidYMid meet' viewBox='0 0 512 512'><path fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='32' d='M416 128L192 384l-96-96'/></svg>") !important;
+	}
+}
+// disabled
+.custom-checkbox .custom-control-input:disabled:not(:checked) ~ .custom-control-label::before {
+	@media #{$white-on-black} {
+		border-color: $high-contrast-black-disabled !important;
+	}
+	@media #{$black-on-white} {
+		border-color: $high-contrast-white-disabled !important;
+	}
+}
+.custom-control-input:checked:disabled:checked ~ .custom-control-label::before {
+	@media #{$white-on-black} {
+		border-color: $high-contrast-black-disabled !important;
+		background-color: $dark;
+	}
+	@media #{$black-on-white} {
+		border-color: $high-contrast-white-disabled !important;
+		background-color: $light;
+	}
+}
+.custom-control-input:checked:disabled:checked ~ .custom-control-label::after {
+	@media #{$white-on-black} {
+		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' style='-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);' preserveAspectRatio='xMidYMid meet' viewBox='0 0 512 512'><path fill='none' stroke='#3be23b' stroke-linecap='round' stroke-linejoin='round' stroke-width='32' d='M416 128L192 384l-96-96'/></svg>") !important;
+	}
+	@media #{$black-on-white} {
+		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' style='-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);' preserveAspectRatio='xMidYMid meet' viewBox='0 0 512 512'><path fill='none' stroke='#AF7E7E' stroke-linecap='round' stroke-linejoin='round' stroke-width='32' d='M416 128L192 384l-96-96'/></svg>") !important;
+	}
+}
+// hover
+.custom-checkbox .custom-control-input:not(:checked):hover ~ .custom-control-label::before {
+	@media #{$white-on-black} {
+		border: 0.2rem solid $high-contrast-black-textselected;
+		border-radius: 0rem !important;
+	}
+	@media #{$black-on-white} {
+		border: 0.2rem solid $high-contrast-white-textselected;
+		border-radius: 0rem !important;
+	}
+}
+.custom-control-input:checked:hover ~ .custom-control-label::before {
+	@media #{$white-on-black} {
+		border-color: $high-contrast-black-textselected;
+		background-color: $dark;
+	}
+	@media #{$black-on-white} {
+		border-color: $high-contrast-white-textselected;
+		background-color: $light;
+	}
+}
+.custom-control-input:checked:hover ~ .custom-control-label::after {
+	@media #{$white-on-black} {
+		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' style='-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);' preserveAspectRatio='xMidYMid meet' viewBox='0 0 512 512'><path fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='32' d='M416 128L192 384l-96-96'/></svg>") !important;
+	}
+	@media #{$black-on-white} {
+		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' style='-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);' preserveAspectRatio='xMidYMid meet' viewBox='0 0 512 512'><path fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='32' d='M416 128L192 384l-96-96'/></svg>") !important;
 	}
 }
 
