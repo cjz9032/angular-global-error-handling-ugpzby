@@ -137,7 +137,7 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 	}
 
 	isValid(val: any) {
-		return !!val;
+		return Boolean(val);
 	}
 
 	ngOnDestroy() {
