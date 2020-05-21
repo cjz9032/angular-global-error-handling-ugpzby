@@ -110,7 +110,7 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 		this.subscribeForDataChange();
 		this.functionLockUIModel = [];
 		this.functionLockUIModel.push({
-			componentId: `radio1`,
+			componentId: `special-function-ideapad-radio-button`,
 			label: `device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.sFunKey`,
 			value: 'special-key',
 			isChecked: false,
@@ -121,7 +121,7 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 			processLabel: true,
 		});
 		this.functionLockUIModel.push({
-			componentId: `radio2`,
+			componentId: `f1-f12-funciton-ideapad-radio-button`,
 			label: `device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.fnKey`,
 			value: 'function-key',
 			isChecked: false,
@@ -146,11 +146,11 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 
 	subscribeForDataChange() {
 		this.hotkey$.subscribe(value => {
-			this.updateFunctionLockValue('radio1', value);
+			this.updateFunctionLockValue('special-function-ideapad-radio-button', value);
 		});
 
 		this.fnkey$.subscribe(value => {
-			this.updateFunctionLockValue('radio2', value);
+			this.updateFunctionLockValue('f1-f12-funciton-ideapad-radio-button', value);
 		});
 	}
 
@@ -158,9 +158,9 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 	onFunctionLockRadioChange($event: UiCircleRadioWithCheckBoxListModel) {
 		if ($event) {
 			const componentId = $event.componentId.toLowerCase();
-			if (componentId === 'radio1') {
+			if (componentId === 'special-function-ideapad-radio-button') {
 				this.update$.next(this.keyType.HOTKEY);
-			} else if (componentId === 'radio2') {
+			} else if (componentId === 'f1-f12-funciton-ideapad-radio-button') {
 				this.update$.next(this.keyType.FNKEY);
 			}
 		}

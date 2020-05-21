@@ -6,7 +6,7 @@
 				<div class="col-12 title-blck px-0 d-flex">
 					<div class="col-auto left-icon-column">
 						<div class="left-icon-block">
-							<fa-icon class="left-icon"
+							<fa-icon class="left-icon" id="top-row-functions" role="img"
 								[icon]="['fal', 'keyboard']"></fa-icon>
 						</div>
 					</div>
@@ -92,7 +92,7 @@
 				[isSwitchChecked]="topRowKeyObj.primaryFunStatus"
 				(rebootToggleOnOff)="rebootToggleOnOff($event)"
 				[theme]="'white'"
-				[switchId]="'inputAccessories-hiddenKeyboardFunctions'"
+				[switchId]="'inputAccessories-reversing-primary-function'"
 				[tooltipText]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionTwo.tooltipText' | translate">
 				<p class="pl-5 mt-2 mb-0">
 					<span class="sub-heading-caption"

@@ -155,7 +155,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 		const { primaryFunStatus, fnLockStatus } = this.topRowKeyObj;
 
 		this.functionLockUIModel.push({
-			componentId: `radio1`,
+			componentId: `special-function-radio-button`,
 			label: `device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.sFunKey`,
 			value: 'special-key',
 			isChecked: (primaryFunStatus && fnLockStatus) || (!primaryFunStatus && !fnLockStatus) ? true : false,
@@ -166,7 +166,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 			processLabel: true,
 		});
 		this.functionLockUIModel.push({
-			componentId: `radio2`,
+			componentId: `f1-f12-funciton-radio-button`,
 			label: `device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.fnKey`,
 			value: 'function-key',
 			isChecked: (primaryFunStatus && fnLockStatus) || (!primaryFunStatus && !fnLockStatus) ? false : true,
@@ -181,9 +181,9 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 	onFunctionLockRadioChange($event: UiCircleRadioWithCheckBoxListModel) {
 		if ($event) {
 			const componentId = $event.componentId.toLowerCase();
-			if (componentId === 'radio1') {
+			if (componentId === 'special-function-radio-button') {
 				this.onChangeFunType(this.topRowKeyObj.primaryFunStatus);
-			} else if (componentId === 'radio2') {
+			} else if (componentId === 'f1-f12-funciton-radio-button') {
 				this.onChangeFunType(!this.topRowKeyObj.primaryFunStatus);
 			}
 		}
