@@ -361,25 +361,7 @@
 					"forArm": false,
 					"sMode": true,
 					"subitems": []
-				},
-				{
-					"id": "smart-performance",
-					"label": "gaming.common.menu.smartPerformance",
-					"beta": true,
-					"path": "smart-performance",
-					"icon": "",
-					"metricsEvent": "itemClick",
-					"externallink": false,
-					"metricsParent": "navbar",
-					"metricsItem": "link.smartPerfomance",
-					"sMode": true,
-					"segment": "+[Consumer]",
-					"routerLinkActiveOptions": {
-						"exact": true
-					},
-					"forArm": true,
-					"subitems": []
-				}
+				}				
 			]
 		},
 		{
@@ -419,6 +401,27 @@
 				"flask"
 			],
 			"forArm": false,
+			"subitems": []
+		},
+		{
+			"id": "smart-performance",
+			"label": "gaming.common.menu.smartPerformance",
+			"beta": true,
+			"path": "smart-performance",
+			"icon": [
+				"fal",
+				"wrench"
+			],
+			"metricsEvent": "itemClick",
+			"externallink": false,
+			"metricsParent": "navbar",
+			"metricsItem": "link.smartPerfomance",
+			"sMode": true,
+			"segment": "+[Consumer]",
+			"routerLinkActiveOptions": {
+				"exact": true
+			},
+			"forArm": true,
 			"subitems": []
 		},
 		{
