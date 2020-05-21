@@ -260,6 +260,9 @@ export class BacklightComponent implements OnInit, OnDestroy {
 			this.kbBacklightUIModel.forEach(model => {
 				model.isChecked = (model.value === value);
 				model.isDisabled = value === BacklightStatusEnum.DISABLED_OFF;
+				if (value === BacklightStatusEnum.DISABLED_OFF && model.value === BacklightStatusEnum.OFF) {
+					model.isChecked = true;
+				}
 			});
 		}
 	}
