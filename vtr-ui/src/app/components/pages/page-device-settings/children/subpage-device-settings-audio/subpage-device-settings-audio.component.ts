@@ -317,6 +317,18 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	updateDolbyModeSelection() {
+		if (this.dolbyModesUIModel && this.dolbyModesUIModel.length > 0) {
+			this.dolbyModesUIModel.forEach(element => {
+				if (element.value === this.dolbyModeResponse.currentMode) {
+					element.isChecked = true;
+				} else {
+					element.isChecked = false;
+				}
+			});
+		}
+	}
+
 	updateDolbyModeModel(response: DolbyModeResponse) {
 		if (response && response.supportedModes) {
 			this.dolbyModesUIModel = [];
@@ -332,6 +344,18 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 					hideIcon: false,
 					processLabel: true,
 				});
+			});
+		}
+	}
+
+	updateOptimizeMicrophoneSelection() {
+		if (this.microphoneModesUIModel && this.microphoneModesUIModel.length > 0) {
+			this.microphoneModesUIModel.forEach(element => {
+				if (element.value === this.microOptimizeModeResponse.current) {
+					element.isChecked = true;
+				} else {
+					element.isChecked = false;
+				}
 			});
 		}
 	}
@@ -564,6 +588,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		this.dolbyModeResponse.isAudioProfileEnabled = (Object.keys(response).indexOf('isAudioProfileEnabled') !== -1 && response.isAudioProfileEnabled !== undefined) ? response.isAudioProfileEnabled : this.dolbyModeResponse.isAudioProfileEnabled;
 		this.dolbyModeResponse.eCourseStatus = (Object.keys(response).indexOf('eCourseStatus') !== -1 && response.eCourseStatus !== undefined) ? response.eCourseStatus : this.dolbyModeResponse.eCourseStatus;
 		this.dolbyModeResponse.driverAvailability = (Object.keys(response).indexOf('driverAvailability') !== -1 && response.driverAvailability !== undefined) ? response.driverAvailability : this.dolbyModeResponse.driverAvailability;
+		this.updateDolbyModeSelection();
 		this.refreshDolbyAudioProfileState();
 		this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyModeResponse);
 		this.initVisibility();
@@ -716,6 +741,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		}
 		this.microphoneLoader = false;
 		this.logger.info('startMonitorHandler for microphone', JSON.stringify(microphone));
+		this.updateOptimizeMicrophoneSelection();
 		this.updateMicrophoneCache();
 	}
 
@@ -802,12 +828,12 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		if (msg.hasOwnProperty('modes')) {
 			this.microOptimizeModeResponse.modes = msg.modes;
 			this.updateMicrophoneModel(this.microOptimizeModeResponse);
-
 		}
 		if (msg.hasOwnProperty('currentMode')) {
 			if (msg.currentMode && this.cacheFlag.currentMode) {
 				this.microphoneProperties.currentMode = msg.currentMode;
 				this.microOptimizeModeResponse.current = msg.currentMode;
+				this.updateOptimizeMicrophoneSelection();
 			}
 		}
 		if (msg.hasOwnProperty('keyboardNoiseSuppression') && this.cacheFlag.keyboardNoiseSuppression) {
