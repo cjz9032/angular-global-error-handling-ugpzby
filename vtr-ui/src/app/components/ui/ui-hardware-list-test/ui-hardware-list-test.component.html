@@ -6,26 +6,35 @@
 				<div class="custom-control custom-checkbox">
 					<input id="{{ item.id }}" type="checkbox" class="custom-control-input"
 						[indeterminate]="item.indeterminate" [(ngModel)]="item.selected"
+						[attr.aria-label]="item.name + '-checkbox'"
 						(change)="onSelectAllChildren(item.id)" (click)="onSelectAllChildren(item.id)" />
 					<label class="custom-control-label name" for="{{ item.id }}">{{ item.name }} - <span
 							class="subname">{{ item.subname }}</span></label>
 				</div>
-				<a href="javascript:void(0);"
-					(click)="item.collapsed = !item.collapsed"
-					[ngClass]="{'rotate': !item.collapsed}">
-					<fa-icon [icon]="['fal', 'angle-up']"
-						[attr.aria-expanded]="item.collapsed"
-						aria-controls="{{ id }}">
-					</fa-icon>
-				</a>
+
+				<div class="col-auto">
+					<div class="collapse-control select-item"
+						tabindex="0"
+						[attr.aria-label]="item.collapsed ? item.name + '-collapse-submodules-list': item.name + '-expand-submodules-list'"
+						(click)="item.collapsed = !item.collapsed"
+						(keyup.enter)="item.collapsed = !item.collapsed"
+						role="button"
+						[attr.aria-expanded]="!item.collapsed"
+						>
+						<fa-icon *ngIf="item.collapsed; else expandArrow" [icon]="['fal', 'angle-up']"></fa-icon>
+						<ng-template #expandArrow>
+							<fa-icon [icon]="['fal', 'angle-down']"></fa-icon>
+						</ng-template>
+					</div>
+				</div>
 			</div>
 			<div id="{{ id }}" class="sub-module" [ngbCollapse]="!item.collapsed">
 				<ul class="list-group">
 					<li class="list-group-item" *ngFor="let test of item.tests" (change)=onCheckChildren(item.id)>
 						<div class="custom-control custom-checkbox">
 							<input id="{{ test.id + id }}" type="checkbox" class="custom-control-input"
-								[(ngModel)]="test.selected" />
-							<label class="custom-control-label name-test"
+								[(ngModel)]="test.selected" [attr.aria-label]="item.name + test.name" />
+							<label class="custom-control-label name-test" [attr.aria-label]="item.name + test.name"
 								for="{{ test.id + id }}">{{ test.name }}</label>
 						</div>
 					</li>
