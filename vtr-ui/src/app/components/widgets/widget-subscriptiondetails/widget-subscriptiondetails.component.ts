@@ -40,7 +40,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		}
 	];
 	ngOnInit() {
-		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceSubscribed);
+		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
 		if (this.isSubscribed) {
 			this.subscriptionDetails = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails);
 			this.startDate = this.formatLocaleDate.transform(this.subscriptionDetails[0].StartDate);
@@ -66,7 +66,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 
 	openSubscribeModal(event) {
 		if (this.isSubscribed === false) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceSubscribed, true);
+			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.localSubscriptionDetails);
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
 			// location.reload();
@@ -75,7 +75,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 			// });
 		}
 		else {
-			this.commonService.removeLocalStorageValue(LocalStorageKey.IsSmartPerformanceSubscribed);
+			this.commonService.removeLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
 			this.commonService.removeLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails);
 			// this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {

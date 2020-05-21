@@ -166,7 +166,7 @@ export class UiScanScheduleComponent implements OnInit {
 	firstScheduleDay: any
 	
 	ngOnInit() {
-		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceSubscribed);
+		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
 		this.currentDate = new Date();
 		this.selectedDate = this.calendar.getToday();
 		this.toDate = this.selectedDate;

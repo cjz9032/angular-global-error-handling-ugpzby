@@ -152,7 +152,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.toDate = this.selectedDate;
 		this.fromDate = this.selectedDate;
 		this.isSubscribed = this.commonService.getLocalStorageValue(
-			LocalStorageKey.IsSmartPerformanceSubscribed
+			LocalStorageKey.IsFreeFullFeatureEnabled
 		);
 	 
 		this.isDaySelectionEnable = false;
@@ -405,11 +405,11 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		// 	centered: true,
 		// 	windowClass: 'subscribe-modal'
 		// });
-		this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceSubscribed, true);
+		this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
 		this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.subscriptionDetails);
 		//this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate(['support/smart-performance']));
 		this.isSubscribed = this.commonService.getLocalStorageValue(
-			LocalStorageKey.IsSmartPerformanceSubscribed
+			LocalStorageKey.IsFreeFullFeatureEnabled
 		);
 		if(this.inputIsScanningCompleted)
 		{

@@ -61,10 +61,10 @@ export class UiSmartPerformanceComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceSubscribed);
+		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
 		if (this.isSubscribed === undefined) {
 
-			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceSubscribed, false);
+			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled, true);
 			this.IsSmartPerformanceFirstRun = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun);
@@ -208,19 +208,17 @@ export class UiSmartPerformanceComponent implements OnInit {
 
 	updateScheduleScanStatus(response) {
 		try {
+			this.scheduleScanObj = response;
 			if (response && response.payload) {
-				if(response.payload.percentage > 0){
-					this.scheduleScanObj = response;
-					if (response.payload.percentage == 100) {
-						this.isScanningCompleted = true;
-						this.isScanning = false;
-					}
-					if (!this.isScheduleScan) {
-						this.isScheduleScan = true;
-					}
-					this.isScanning = true;
+				if (response.payload.percentage == 100) {
+					this.isScanningCompleted = true;
+					this.isScanning = false;
+				}
+				if (!this.isScheduleScan) {
+					this.isScheduleScan = true;
 				}
 			}
+			this.isScanning = true;
 		} catch (err) {
 			this.logger.error('ui-smart-performance.updateScheduleScanStatus.then', err);
 		}
@@ -231,7 +229,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 		if (this.smartPerformanceService.isShellAvailable) {
 			try {
 				this.isSubscribed = this.commonService.getLocalStorageValue(
-					LocalStorageKey.IsSmartPerformanceSubscribed
+					LocalStorageKey.IsFreeFullFeatureEnabled
 				);
 				res = await this.smartPerformanceService.getScheduleScanStatus();
 				if (res && res.scanstatus != 'Idle') {
@@ -264,7 +262,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 		if (this.smartPerformanceService.isShellAvailable) {
 			try {
 				this.isSubscribed = this.commonService.getLocalStorageValue(
-					LocalStorageKey.IsSmartPerformanceSubscribed
+					LocalStorageKey.IsFreeFullFeatureEnabled
 				);
 				if (this.isSubscribed == true) {
 					res = await this.smartPerformanceService.launchScanAndFix();
@@ -373,7 +371,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 	}
 	changeManageSubscription(event){
 		this.isSubscribed = this.commonService.getLocalStorageValue(
-			LocalStorageKey.IsSmartPerformanceSubscribed
+			LocalStorageKey.IsFreeFullFeatureEnabled
 		);
 	}
 	changeSummaryToHome(){
