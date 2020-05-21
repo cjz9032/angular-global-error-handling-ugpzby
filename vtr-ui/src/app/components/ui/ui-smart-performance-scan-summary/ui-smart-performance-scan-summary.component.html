@@ -134,7 +134,7 @@
 															metricsEvent="FeatureClick"
 															metricsParent="pages.support.smartPerformance">{{'smartPerformance.subscriberScanHomePage.backToHome' |translate }}</button>
 														<div class="desc-block">
-															<div class="desc desc1 col-auto">
+															<div class="desc desc1 col-auto" *ngIf="historyScanResultsDateTime && historyScanResultsDateTime.length > 0">
 																<b>{{'smartPerformance.subscriberScanHomePage.mostRecent' |translate }}</b><br>
 																{{mostRecentScan}}
 															</div>
