@@ -206,6 +206,8 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 		});
 	};
 
+	thermalModeEvent: any;
+
 	constructor(
 		private gamingCapabilityService: GamingAllCapabilitiesService,
 		private gamingThermalModeService: GamingThermalModeService,
@@ -218,7 +220,9 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 		private guard: GuardService,
 		private router: Router,
 		private logger: LoggerService,
-	) { }
+	) {
+		this.thermalModeEvent = this.onRegThermalModeEvent.bind(this);
+	}
 
 	ngOnInit() {
 		this.initializeWifiSecCache();
@@ -276,7 +280,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 	public unRegisterThermalModeEvent() {
 		this.shellServices.unRegisterEvent(
 			EventTypes.gamingThermalModeChangeEvent,
-			this.onRegThermalModeEvent.bind(this)
+			this.thermalModeEvent
 		);
 	}
 
@@ -285,7 +289,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 			this.gamingThermalModeService.regThermalModeChangeEvent();
 			this.shellServices.registerEvent(
 				EventTypes.gamingThermalModeChangeEvent,
-				this.onRegThermalModeEvent.bind(this)
+				this.thermalModeEvent
 			);
 		}
 	}
