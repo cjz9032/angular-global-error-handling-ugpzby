@@ -5,6 +5,11 @@
 		$container-width: 12rem;
 		margin-right: 1.5rem;
 		margin-top: 1.5rem;
+
+		.control-disabled {
+			color: $shade_blue;
+			pointer-events: none;
+		}
 		
 		.circle-radio {
 			outline: 0;
@@ -180,14 +185,6 @@
 							}
 						}
 					}
-					// &:focus {
-					// 	outline: 0;
-					// 	span {
-					// 		&.icomoon {
-					// 			display: block;
-					// 		}
-					// 	}
-					// }
 				}
 
 				.text {
@@ -204,7 +201,6 @@
 				// icon file css class name
 				span {
 					&.icomoon {
-						// display: none;
 						font-size: 6.8rem !important;
 						background: transparent;
 						position: absolute;
