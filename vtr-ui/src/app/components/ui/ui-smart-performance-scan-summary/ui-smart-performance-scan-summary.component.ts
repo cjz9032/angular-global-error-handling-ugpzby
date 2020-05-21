@@ -532,8 +532,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	}
 	changeNextScanDateValue(nextScheduleScanEvent) {
 		// retrieved this event from ui-scan-schedule component.
-		if(!nextScheduleScanEvent) {
-			this.enableNextText = nextScheduleScanEvent;
+		if(!nextScheduleScanEvent['nextEnable']) {
+			this.enableNextText = nextScheduleScanEvent['nextEnable'];
 			return;
 		}
 		this.enableNextText = nextScheduleScanEvent['nextEnable']
