@@ -2097,8 +2097,8 @@
             },
             "superResolution": {
                 "title": "Videófelbontás megnövelése",
-                "desc": "<p><label>Ez a funkció növeli a videók felbontását, és ezzel élvezetesebbé teszi a videók megtekintését. Különösen akkor hasznos, ha a videó felbontása alacsony.</label></p> <p><label>Ez a funkció befolyásolhatja az akkumulátor élettartamát és hőmérsékletét, továbbá zajt kelthet. Ne használja DC üzemmódban (a rendszer akkumulátorról üzemel). Ellenkező esetben felgyorsítja az energiafogyasztást és lerövidíti az akkumulátor élettartamát.</label></p>",
-                "tooltip": "<p>Ez a funkció kizárólag az alábbi videolejátszókkal működik:<br>Windows Media Player<br>Chrome-alapú lejátszó<br>PotPlayer</p><p class='srTooltip'>A funkció PotPlayer lejátszóban való engedélyezésével kapcsolatban olvassa el a számítógéphez kapott felhasználói kézikönyvet.</p>",
+                "desc": "<p id='sr-describe-one' role='text'>Ez a funkció növeli a videók felbontását, és ezzel élvezetesebbé teszi a videók megtekintését. Különösen akkor hasznos, ha a videó felbontása alacsony.</p><p id='sr-describe-two' role='text'>Ez a funkció befolyásolhatja az akkumulátor élettartamát és hőmérsékletét, továbbá zajt kelthet. Ne használja DC üzemmódban (a rendszer akkumulátorról üzemel). Ellenkező esetben felgyorsítja az energiafogyasztást és lerövidíti az akkumulátor élettartamát.</p>",
+                "tooltip": "<p id='sr-tip-one' role='text'>Ez a funkció kizárólag az alábbi videolejátszókkal működik:<br>Windows Media Player<br>Chrome-alapú lejátszó<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>A funkció PotPlayer lejátszóban való engedélyezésével kapcsolatban olvassa el a számítógéphez kapott felhasználói kézikönyvet.</p>",
                 "note": {
                     "description": "A funkció az alábbi esetekben nem működik:",
                     "description1": "A processzor hőmérséklete túl magas.",
@@ -2110,8 +2110,8 @@
             "antiTheft": {
                 "heading": "Intelligens észlelés",
                 "title": "Intelligens mozgásérzékeléses riasztás",
-                "tooltip": "<div>Ez a funkció nem működik, ha a számítógép hibernált módban van, és amikor ki van kapcsolva. Ellenőrizze a következő műveletekhez tartozó beállításokat:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>a képernyő lehajtása</li><li>kritikus/alacsony akkumulátortöltöttség</li><li>főkapcsoló használata</li><li>alvás gomb használata</li><li>tétlenségi miatti időtúllépés beállításai (hibernálás)</li></ul></div>Ellenkező esetben a gép nem fog riasztást aktiválni, sem fényképeket készíteni.</div>",
-                "desc": "<p><label>Ha bekapcsolja ezt a funkciót, az eszköz sípoló riasztást ad ki, amikor a képernyő zárolva van, és mozgást észlel a közelében. Ez különösen nyilvános helyeken lehet hasznos.</label></p> <p><label>A riasztás némításához jelentkezzen be a Windows rendszerbe.</label></p>",
+                "tooltip": "<div id='antiTheft-tooltips'>Ez a funkció nem működik, ha a számítógép hibernált módban van, és amikor ki van kapcsolva. Ellenőrizze a következő műveletekhez tartozó beállításokat:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>a képernyő lehajtása</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>kritikus/alacsony akkumulátortöltöttség</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>főkapcsoló használata</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>alvás gomb használata</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>tétlenségi miatti időtúllépés beállításai (hibernálás)</li></ul></div>Ellenkező esetben a gép nem fog riasztást aktiválni, sem fényképeket készíteni.</div>",
+                "desc": "<p id='antiTheft-describe-one' role='text'>Ha bekapcsolja ezt a funkciót, az eszköz sípoló riasztást ad ki, amikor a képernyő zárolva van, és mozgást észlel a közelében. Ez különösen nyilvános helyeken lehet hasznos.</p><p id='antiTheft-describe-two' role='text'>A riasztás némításához jelentkezzen be a Windows rendszerbe.</p>",
                 "note": {
                     "description": "Ha sikerült bejelentkeznie a rendszerbe, a funkció automatikusan kikapcsol. Ha szeretné ismét használni, Önnek újra be kell kapcsolnia."
                 },
@@ -3459,9 +3459,6 @@
                 "signupButton": "SIGN UP",
                 "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
-            "tune": "{{tune}} ISSUES",
-            "boost": "{{boost}} ISSUES",
-            "secure": "{{secure}} ISSUES",
             "tunepc": {
                 "accumulatedjunkscannedareas": {
                     "area1": "Scanned for junk in 85 locations",
@@ -3719,7 +3716,11 @@
                         "area6": "Validated in cloud remediation engine"
                     }
                 }
-            }
+            },
+            "issues": "ISSUES",
+            "tuneIssueCount": "{{tune}}",
+            "boostIssueCount": "{{boost}}",
+            "secureIssueCount": "{{secure}}"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your ",

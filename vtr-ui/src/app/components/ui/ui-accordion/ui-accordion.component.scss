@@ -32,11 +32,6 @@
                         &:hover, &:focus{
                             text-decoration: none;
                         }
-                        @media #{$breakpoint_sm}{
-                            padding-left: 0;
-                            padding-right: 0;
-                            width: 100%;
-                        }
                     }
                     .collapsed{
                         &:before{								
@@ -187,7 +182,7 @@
                         font-size: 1.6rem;
                         text-align: right;
                         color: $shade_dark;
-                        right: 5rem;
+                        position: relative;
                         padding-right:2rem;
                         letter-spacing: 0;
                         @media #{$breakpoint_sm}{

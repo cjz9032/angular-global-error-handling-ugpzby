@@ -2097,8 +2097,8 @@
             },
             "superResolution": {
                 "title": "Mărirea rezoluției video",
-                "desc": "<p><label>Această caracteristică îmbunătățește experiența de redare video, oferind o rezoluție video mai bună. Funcționează mai ales atunci când videoclipul este la o rezoluție slabă.</label></p> <p><label>Această caracteristică ar putea afecta durata de viață a bateriei, temperatura bateriei și poate provoca zgomote. Nu o utilizați în modul de alimentare c.c. (mod baterie). În caz contrar, va accelera consumul de energie și va scurta durata de viață a bateriei.</label></p>",
-                "tooltip": "<p>Această caracteristică funcționează numai cu următoarele playere video:<br>Windows Media Player<br>Playerul bazat pe Chrome<br>PotPlayer</p><p class='srTooltip'>Pentru instrucțiuni privind modul în care să activați această funcție în PotPlayer, consultați Ghidul utilizatorului care este livrat împreună cu computerul.</p>",
+                "desc": "<p id='sr-describe-one' role='text'>Această caracteristică îmbunătățește experiența de redare video, oferind o rezoluție video mai bună. Funcționează mai ales atunci când videoclipul este la o rezoluție slabă.</p><p id='sr-describe-two' role='text'>Această caracteristică ar putea afecta durata de viață a bateriei, temperatura bateriei și poate provoca zgomote. Nu o utilizați în modul de alimentare c.c. (mod baterie). În caz contrar, va accelera consumul de energie și va scurta durata de viață a bateriei.</p>",
+                "tooltip": "<p id='sr-tip-one' role='text'>Această caracteristică funcționează numai cu următoarele playere video:<br>Windows Media Player<br>Playerul bazat pe Chrome<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Pentru instrucțiuni privind modul în care să activați această funcție în PotPlayer, consultați Ghidul utilizatorului care este livrat împreună cu computerul.</p>",
                 "note": {
                     "description": "Această caracteristică nu funcționează când:",
                     "description1": "Temperatura procesorului este prea mare.",
@@ -2110,8 +2110,8 @@
             "antiTheft": {
                 "heading": "Detectare inteligentă",
                 "title": "Alertă Smart Motion",
-                "tooltip": "<div>Această caracteristică nu funcționează atunci când computerul este în modul de hibernare sau este oprit. Verificați setările pentru următoarele acțiuni:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>acțiuni de închidere a capacului</li><li>acțiuni pentru nivelul critic/scăzut al energiei bateriei</li><li>acțiuni ale butonului de alimentare</li><li>acțiuni ale butonului de repaus</li><li>setările de expirare a timpului de inactivitate până la trecerea în hibernare</li></ul></div>În caz contrar, caracteristica nu va declanșa alarma și nici nu va realiza fotografii.</div>",
-                "desc": "<p><label>Când activați această caracteristică, dispozitivul va începe să sune atunci când ecranul este blocat și se detectează mișcări, în special într-un loc public.</label></p> <p><label>Pentru a dezactiva alarma, conectați-vă la Windows.</label></p>",
+                "tooltip": "<div id='antiTheft-tooltips'>Această caracteristică nu funcționează atunci când computerul este în modul de hibernare sau este oprit. Verificați setările pentru următoarele acțiuni:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>acțiuni de închidere a capacului</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>acțiuni pentru nivelul critic/scăzut al energiei bateriei</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>acțiuni ale butonului de alimentare</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>acțiuni ale butonului de repaus</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>setările de expirare a timpului de inactivitate până la trecerea în hibernare</li></ul></div>În caz contrar, caracteristica nu va declanșa alarma și nici nu va realiza fotografii.</div>",
+                "desc": "<p id='antiTheft-describe-one' role='text'>Când activați această caracteristică, dispozitivul va începe să sune atunci când ecranul este blocat și se detectează mișcări, în special într-un loc public.</p><p id='antiTheft-describe-two' role='text'>Pentru a dezactiva alarma, conectați-vă la Windows.</p>",
                 "note": {
                     "description": "După ce v-ați conectat cu succes la sistem, această caracteristică va fi oprită automat. Trebuie să o activați din nou pentru a o utiliza."
                 },
@@ -3459,9 +3459,6 @@
                 "signupButton": "SIGN UP",
                 "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
-            "tune": "{{tune}} ISSUES",
-            "boost": "{{boost}} ISSUES",
-            "secure": "{{secure}} ISSUES",
             "tunepc": {
                 "accumulatedjunkscannedareas": {
                     "area1": "Scanned for junk in 85 locations",
@@ -3719,7 +3716,11 @@
                         "area6": "Validated in cloud remediation engine"
                     }
                 }
-            }
+            },
+            "issues": "ISSUES",
+            "tuneIssueCount": "{{tune}}",
+            "boostIssueCount": "{{boost}}",
+            "secureIssueCount": "{{secure}}"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your ",

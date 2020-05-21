@@ -113,9 +113,15 @@
 													<vtr-ui-accordion [tune]="tune"	[boost]="boost" [secure]="secure" [scannigResultObj]= "scannigResultObj"></vtr-ui-accordion>
 												</div>
 												<div class="summary-block" *ngIf="isSubscribed">
-													<h3>{{'smartPerformance.subscriberScanHomePage.subTitle' |translate }}
+													<h3 *ngIf="!inputIsScanningCompleted">{{'smartPerformance.subscriberScanHomePage.subTitle' |translate }}
 													</h3>
-													<p>{{'smartPerformance.subscriberScanHomePage.description' |translate }}
+													<p *ngIf="!inputIsScanningCompleted">{{'smartPerformance.subscriberScanHomePage.description' |translate }}
+													</p>
+													
+													<h3 *ngIf="inputIsScanningCompleted">{{'smartPerformance.subscriberScanHomePage.successTitle' |translate}}
+													</h3>
+													<p *ngIf="inputIsScanningCompleted" 
+														[innerHTML]="'smartPerformance.subscriberScanHomePage.successDescription' |translate:{issueCount: issueCount }">
 													</p>
 													<div class="d-flex justify-content-start my-5 w-75">
 														<button *ngIf="!inputIsScanningCompleted" class="action-button" (click)="ScanNowSummary()"
@@ -128,7 +134,7 @@
 															metricsEvent="FeatureClick"
 															metricsParent="pages.support.smartPerformance">{{'smartPerformance.subscriberScanHomePage.backToHome' |translate }}</button>
 														<div class="desc-block">
-															<div class="desc desc1 col-auto">
+															<div class="desc desc1 col-auto" *ngIf="historyScanResultsDateTime && historyScanResultsDateTime.length > 0">
 																<b>{{'smartPerformance.subscriberScanHomePage.mostRecent' |translate }}</b><br>
 																{{mostRecentScan}}
 															</div>

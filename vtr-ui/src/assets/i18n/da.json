@@ -2097,8 +2097,8 @@
             },
             "superResolution": {
                 "title": "Opskalering af videoopløsning",
-                "desc": "<p><label>Denne funktion giver en bedre oplevelse i forbindelse med videoafspilning ved at forbedre videoopløsningen. Det fungerer især godt, når videoen er i dårlig opløsning.</label></p> <p><label>Denne funktion kan påvirke batteriets levetid, batteriets temperatur og medføre støj. Brug den ikke i DC-tilstand (batteritilstand). Ellers bliver strømforbruget større, og batterilevetiden afkortes.</label></p>",
-                "tooltip": "<p>Denne funktion fungerer kun med følgende videoafspillere:<br>Windows Media Player<br>Chrome-baseret afspiller<br>PotPlayer</p><p class='srTooltip'>Oplysninger om, hvordan denne funktion aktiveres på PotPlayer, finder du i den brugervejledning, der leveres sammen med computeren.</p>",
+                "desc": "<p id='sr-describe-one' role='text'>Denne funktion giver en bedre oplevelse i forbindelse med videoafspilning ved at forbedre videoopløsningen. Det fungerer især godt, når videoen er i dårlig opløsning.</p><p id='sr-describe-two' role='text'>Denne funktion kan påvirke batteriets levetid, batteriets temperatur og medføre støj. Brug den ikke i DC-tilstand (batteritilstand). Ellers bliver strømforbruget større, og batterilevetiden afkortes.</p>",
+                "tooltip": "<p id='sr-tip-one' role='text'>Denne funktion fungerer kun med følgende videoafspillere:<br>Windows Media Player<br>Chrome-baseret afspiller<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Oplysninger om, hvordan denne funktion aktiveres på PotPlayer, finder du i den brugervejledning, der leveres sammen med computeren.</p>",
                 "note": {
                     "description": "Denne funktion virker ikke i disse situationer:",
                     "description1": "CPU-temperaturen er for høj.",
@@ -2110,8 +2110,8 @@
             "antiTheft": {
                 "heading": "Intelligent registrering",
                 "title": "Smart bevægelsesalarm",
-                "tooltip": "<div>Denne funktion fungerer ikke, når computeren er i slumretilstand eller slukket. Tjek indstillingerne for følgende handlinger:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>handlinger, når låget lukkes</li><li>handling ved kritisk/lavt batteriniveau</li><li>handling for tænd/sluk-knap</li><li>handling for slumreknap</li><li>Indstillinger for timeout til slumre ved inaktivitet</li></ul></div>Ellers udløser den ikke en alarm og tager ikke nogen billeder.</div>",
-                "desc": "<p><label>Når denne funktion er aktiveret, begynder enheden at bippe, når skærmen er låst, og der registreres bevægelser, især på et offentligt sted.</label></p> <p><label>Log på Windows, hvis du vil afvise alarmen.</label></p>",
+                "tooltip": "<div id='antiTheft-tooltips'>Denne funktion fungerer ikke, når computeren er i slumretilstand eller slukket. Tjek indstillingerne for følgende handlinger:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>handlinger, når låget lukkes</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>handling ved kritisk/lavt batteriniveau</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>handling for tænd/sluk-knap</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>handling for slumreknap</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>Indstillinger for timeout til slumre ved inaktivitet</li></ul></div>Ellers udløser den ikke en alarm og tager ikke nogen billeder.</div>",
+                "desc": "<p id='antiTheft-describe-one' role='text'>Når denne funktion er aktiveret, begynder enheden at bippe, når skærmen er låst, og der registreres bevægelser, især på et offentligt sted.</p><p id='antiTheft-describe-two' role='text'>Log på Windows, hvis du vil afvise alarmen.</p>",
                 "note": {
                     "description": "Når du er logget på systemet, bliver denne funktionen automatisk slået fra. Du skal aktivere den igen for at bruge den."
                 },
@@ -3459,9 +3459,6 @@
                 "signupButton": "SIGN UP",
                 "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
-            "tune": "{{tune}} ISSUES",
-            "boost": "{{boost}} ISSUES",
-            "secure": "{{secure}} ISSUES",
             "tunepc": {
                 "accumulatedjunkscannedareas": {
                     "area1": "Scanned for junk in 85 locations",
@@ -3719,7 +3716,11 @@
                         "area6": "Validated in cloud remediation engine"
                     }
                 }
-            }
+            },
+            "issues": "ISSUES",
+            "tuneIssueCount": "{{tune}}",
+            "boostIssueCount": "{{boost}}",
+            "secureIssueCount": "{{secure}}"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your ",

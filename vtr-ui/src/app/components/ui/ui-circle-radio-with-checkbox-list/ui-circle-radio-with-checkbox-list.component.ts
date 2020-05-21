@@ -14,6 +14,7 @@ export class UiCircleRadioWithCheckBoxListComponent implements OnInit, OnChanges
 	@Input() tooltip: string;
 	@Input() theme = 'white';
 	@Input() sendMetrics = true;
+	@Input() isDisabled = false;
 	@Input() groupName = '';
 	@Input() radioDetails: Array<UiCircleRadioWithCheckBoxListModel> = [];
 	@Output() optionChange: EventEmitter<UiCircleRadioWithCheckBoxListModel> = new EventEmitter();

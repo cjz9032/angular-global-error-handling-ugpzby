@@ -255,7 +255,7 @@ export enum LocalStorageKey {
 	TopRowFunctionsCapability = '[LocalStorageKey] TopRowFunctionsCapability',
 	BacklightCapability = '[LocalStorageKey] BacklightCapability',
 	GaugeResetInformation = '[LocalStorageKey] GaugeResetInformation',
-	IsSmartPerformanceSubscribed = '[LocalStorageKey] IsSmartPerformanceSubscribed',
+	IsFreeFullFeatureEnabled = '[LocalStorageKey] IsFreeFullFeatureEnabled',
 	IsSmartPerformanceForceClose = '[LocalStorageKey] IsSmartPerformanceForceClose',
 	SmartPerformanceSubscriptionDetails = '[LocalStorageKey] SmartPerformanceSubscriptionDetails',
 	HasSubscribedScanCompleted = '[LocalStorageKey] HasSubscribedScanCompleted',

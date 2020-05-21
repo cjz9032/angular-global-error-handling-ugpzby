@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.54](https://bitbucket.tc.lenovo.com///compare/v1.5.53...v1.5.54) (2020-05-21)
+
+### [1.5.53](https://bitbucket.tc.lenovo.com///compare/v1.5.52...v1.5.53) (2020-05-21)
+
+### [1.5.52](https://bitbucket.tc.lenovo.com///compare/v1.5.51...v1.5.52) (2020-05-21)
+
+
+### Bug Fixes
+
+* **coverity:** fix coverity finding(deadcode) ([d64268c](https://bitbucket.tc.lenovo.com///commit/d64268c46aa621471f8474b25cca5dc0c926459c))
+* **Coverity:** change the !! to Boolean() ([5661542](https://bitbucket.tc.lenovo.com///commit/56615421ada222accc68343e42126dc9ada6188c))
+* **Optimize code:** add assignment of preHistories ([81b3b4b](https://bitbucket.tc.lenovo.com///commit/81b3b4b01ebb131a3ed914d2bc5368e8fc9b0349))
+* **Optimize code:** change the display none to hidden ([1059242](https://bitbucket.tc.lenovo.com///commit/1059242c920fa58765fd457089b1c64e1d5bcfa7))
+* **Optimize code:** Optimize the code of wifi history section ([b0bd0cf](https://bitbucket.tc.lenovo.com///commit/b0bd0cf0ffc55cf2d015c9389265a2e0061948da))
+
 ### [1.5.51](https://bitbucket.tc.lenovo.com///compare/v1.5.50...v1.5.51) (2020-05-20)
 
 ### [1.5.50](https://bitbucket.tc.lenovo.com///compare/v1.5.49...v1.5.50) (2020-05-20)

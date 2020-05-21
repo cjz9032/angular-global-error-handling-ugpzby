@@ -2097,8 +2097,8 @@
             },
             "superResolution": {
                 "title": "提高视频分辨率",
-                "desc": "<p><label>此功能通过提高视频分辨率来改善视频播放的体验。特别是在视频分辨率较差时，其效果尤为明显。</label></p> <p><label>此功能可能会影响电池寿命、电池温度并产生噪音。请不要在直流电模式（电池模式）下使用。否则，会加快耗电速度并缩短电池寿命。</label></p>",
-                "tooltip": "<p>此功能仅适用于以下视频播放器：<br>Windows Media Player<br>基于 Chrome 的播放器<br>PotPlayer</p><p class='srTooltip'>有关如何在 PotPlayer 上启用此功能的说明，请参阅计算机随附的《用户指南》。</p>",
+                "desc": "<p id='sr-describe-one' role='text'>此功能通过提高视频分辨率来改善视频播放的体验。特别是在视频分辨率较差时，其效果尤为明显。</p><p id='sr-describe-two' role='text'>此功能可能会影响电池寿命、电池温度并产生噪音。请不要在直流电模式（电池模式）下使用。否则，会加快耗电速度并缩短电池寿命。</p>",
+                "tooltip": "<p id='sr-tip-one' role='text'>此功能仅适用于以下视频播放器：<br>Windows Media Player<br>基于 Chrome 的播放器<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>有关如何在 PotPlayer 上启用此功能的说明，请参阅计算机随附的《用户指南》。</p>",
                 "note": {
                     "description": "此功能在以下情况下无效：",
                     "description1": "CPU 温度过高。",
@@ -2110,8 +2110,8 @@
             "antiTheft": {
                 "heading": "智能感知",
                 "title": "智能运动警报",
-                "tooltip": "<div>计算机处于休眠模式或电源已关闭时，此功能无效。请检查以下操作的设置：<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>合上外盖操作</li><li>电量严重不足/电量低操作</li><li>电源按钮操作</li><li>睡眠按钮操作</li><li>休眠的空闲超时设置</li></ul></div>否则，不会触发警报和拍照。</div>",
-                "desc": "<p><label>启用此功能后，当屏幕锁定并检测到运动时（尤其是在公共场所），设备将发出蜂鸣声。</label></p> <p><label>要解除警报，请登录 Windows。</label></p>",
+                "tooltip": "<div id='antiTheft-tooltips'>计算机处于休眠模式或电源已关闭时，此功能无效。请检查以下操作的设置：<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>合上外盖操作</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>电量严重不足/电量低操作</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>电源按钮操作</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>睡眠按钮操作</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>休眠的空闲超时设置</li></ul></div>否则，不会触发警报和拍照。</div>",
+                "desc": "<p id='antiTheft-describe-one' role='text'>启用此功能后，当屏幕锁定并检测到运动时（尤其是在公共场所），设备将发出蜂鸣声。</p><p id='antiTheft-describe-two' role='text'>要解除警报，请登录 Windows。</p>",
                 "note": {
                     "description": "成功登录系统后，此功能将自动关闭。需要再次启用此功能才能使用。"
                 },
@@ -3459,9 +3459,6 @@
                 "signupButton": "SIGN UP",
                 "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
-            "tune": "{{tune}} ISSUES",
-            "boost": "{{boost}} ISSUES",
-            "secure": "{{secure}} ISSUES",
             "tunepc": {
                 "accumulatedjunkscannedareas": {
                     "area1": "Scanned for junk in 85 locations",
@@ -3719,7 +3716,11 @@
                         "area6": "Validated in cloud remediation engine"
                     }
                 }
-            }
+            },
+            "issues": "ISSUES",
+            "tuneIssueCount": "{{tune}}",
+            "boostIssueCount": "{{boost}}",
+            "secureIssueCount": "{{secure}}"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your ",

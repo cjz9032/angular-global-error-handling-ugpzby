@@ -110,7 +110,7 @@ export class ModalSmartPerformanceFeedbackComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.isSubscribed = this.commonService.getLocalStorageValue(
-			LocalStorageKey.IsSmartPerformanceSubscribed
+			LocalStorageKey.IsFreeFullFeatureEnabled
 		);
 
 		//generating the form

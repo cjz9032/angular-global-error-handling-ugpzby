@@ -2097,8 +2097,8 @@
             },
             "superResolution": {
                 "title": "Upscaling der Videoauflösung",
-                "desc": "<p><label>Diese Funktion optimiert die Videowiedergabe, indem die Videoauflösung verbessert wird. Sie ist besonders nützlich, wenn das Video eine schlechte Auflösung hat.</label></p> <p><label>Diese Funktion kann die Akkulebensdauer und -temperatur beeinflussen und Geräusche verursachen. Verwenden Sie sie nicht im Gleichstrommodus (Akkubetrieb). Andernfalls wird schneller Strom verbraucht und die Lebensdauer des Akkus verkürzt.</label></p>",
-                "tooltip": "<p>Diese Funktion funktioniert nur mit den folgenden Videoplayern:<br>Windows Media Player<br>Chrome-basierte Player<br>PotPlayer</p><p class='srTooltip'>Anweisungen zum Aktivieren dieser Funktion auf PotPlayer finden Sie im Benutzerhandbuch, das im Lieferumfang des Computers enthalten ist.</p>",
+                "desc": "<p id='sr-describe-one' role='text'>Diese Funktion optimiert die Videowiedergabe, indem die Videoauflösung verbessert wird. Sie ist besonders nützlich, wenn das Video eine schlechte Auflösung hat.</p><p id='sr-describe-two' role='text'>Diese Funktion kann die Akkulebensdauer und -temperatur beeinflussen und Geräusche verursachen. Verwenden Sie sie nicht im Gleichstrommodus (Akkubetrieb). Andernfalls wird schneller Strom verbraucht und die Lebensdauer des Akkus verkürzt.</p>",
+                "tooltip": "<p id='sr-tip-one' role='text'>Diese Funktion funktioniert nur mit den folgenden Videoplayern:<br>Windows Media Player<br>Chrome-basierte Player<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Anweisungen zum Aktivieren dieser Funktion auf PotPlayer finden Sie im Benutzerhandbuch, das im Lieferumfang des Computers enthalten ist.</p>",
                 "note": {
                     "description": "Diese Funktion funktioniert nicht, wenn:",
                     "description1": "Die CPU-Temperatur zu hoch ist.",
@@ -2110,8 +2110,8 @@
             "antiTheft": {
                 "heading": "Intelligente Sensorik",
                 "title": "Intelligenter Bewegungsalarm",
-                "tooltip": "<div>Diese Funktion funktioniert nicht, wenn sich der Computer im Ruhezustand befindet oder ausgeschaltet ist. Überprüfen Sie die Einstellungen der folgenden Aktionen:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>Aktionen beim Zuklappen</li><li>Aktion bei kritischem/niedrigem Akkuzustand</li><li>Aktion für Netzschalter</li><li>Aktion für Energiespartaste</li><li>Einstellungen für Leerlaufzeitüberschreitung zu Ruhezustand</li></ul></div>Andernfalls wird kein Alarm ausgelöst und es werden keine Fotos gespeichert.</div>",
-                "desc": "<p><label>Wenn diese Funktion aktiviert ist, beginnt die Einheit zu piepen, wenn der Bildschirm gesperrt ist und Bewegungen erkannt werden, vor allem an einem öffentlichen Ort.</label></p> <p><label>Melden Sie sich zum Beenden des Alarms bei Windows an.</label></p>",
+                "tooltip": "<div id='antiTheft-tooltips'>Diese Funktion funktioniert nicht, wenn sich der Computer im Ruhezustand befindet oder ausgeschaltet ist. Überprüfen Sie die Einstellungen der folgenden Aktionen:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>Aktionen beim Zuklappen</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>Aktion bei kritischem/niedrigem Akkuzustand</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>Aktion für Netzschalter</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>Aktion für Energiespartaste</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>Einstellungen für Leerlaufzeitüberschreitung zu Ruhezustand</li></ul></div>Andernfalls wird kein Alarm ausgelöst und es werden keine Fotos gespeichert.</div>",
+                "desc": "<p id='antiTheft-describe-one' role='text'>Wenn diese Funktion aktiviert ist, beginnt die Einheit zu piepen, wenn der Bildschirm gesperrt ist und Bewegungen erkannt werden, vor allem an einem öffentlichen Ort.</p><p id='antiTheft-describe-two' role='text'>Melden Sie sich zum Beenden des Alarms bei Windows an.</p>",
                 "note": {
                     "description": "Wenn Sie sich erfolgreich beim System angemeldet haben, wird die Funktion automatisch ausgeschaltet. Sie müssen sie erneut aktivieren, um sie verwenden zu können."
                 },
@@ -3459,9 +3459,6 @@
                 "signupButton": "SIGN UP",
                 "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
-            "tune": "{{tune}} ISSUES",
-            "boost": "{{boost}} ISSUES",
-            "secure": "{{secure}} ISSUES",
             "tunepc": {
                 "accumulatedjunkscannedareas": {
                     "area1": "Scanned for junk in 85 locations",
@@ -3719,7 +3716,11 @@
                         "area6": "Validated in cloud remediation engine"
                     }
                 }
-            }
+            },
+            "issues": "ISSUES",
+            "tuneIssueCount": "{{tune}}",
+            "boostIssueCount": "{{boost}}",
+            "secureIssueCount": "{{secure}}"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your ",

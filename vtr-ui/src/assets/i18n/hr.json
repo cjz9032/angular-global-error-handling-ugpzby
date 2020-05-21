@@ -2097,8 +2097,8 @@
             },
             "superResolution": {
                 "title": "Povećanje razlučivosti videozapisa",
-                "desc": "<p><label>Ova značajka poboljšava iskustvo reprodukcije videa poboljšanjem razlučivosti videozapisa. Posebno djeluje kada je video loše razlučivosti.</label></p> <p><label>Ova funkcija može utjecati na trajanje baterije, temperaturu baterije i uzrokovati buku. Nemojte ga koristiti u DC načinu rada (način rada baterije). U suprotnom će doći do ubrzanja potrošnje električne energije i skraćivanja vijeka trajanja baterije.</label></p>",
-                "tooltip": "<p>Ova značajka radi samo za video reproduktore navedene ispod:<br>Windows Media Player<br>Reproduktor temeljen na Chrome-u<br>PotPlayer</p><p class='srTooltip'>Za upute o tome kako omogućiti ovu funkciju na PotPlayeru, pogledajte vodič za korisnike koji je isporučen uz vaše računalo.</p>",
+                "desc": "<p id='sr-describe-one' role='text'>Ova značajka poboljšava iskustvo reprodukcije videa poboljšanjem razlučivosti videozapisa. Posebno djeluje kada je video loše razlučivosti.</p><p id='sr-describe-two' role='text'>Ova funkcija može utjecati na trajanje baterije, temperaturu baterije i uzrokovati buku. Nemojte ga koristiti u DC načinu rada (način rada baterije). U suprotnom će doći do ubrzanja potrošnje električne energije i skraćivanja vijeka trajanja baterije.</p>",
+                "tooltip": "<p id='sr-tip-one' role='text'>Ova značajka radi samo za video reproduktore navedene ispod:<br>Windows Media Player<br>Reproduktor temeljen na Chrome-u<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Za upute o tome kako omogućiti ovu funkciju na PotPlayeru, pogledajte vodič za korisnike koji je isporučen uz vaše računalo.</p>",
                 "note": {
                     "description": "Ova značajka ne funkcionira kad:",
                     "description1": "je temperatura CPU-a previsoka.",
@@ -2110,8 +2110,8 @@
             "antiTheft": {
                 "heading": "Pametno otkrivanje",
                 "title": "Pametni alarm kretanja",
-                "tooltip": "<div>Ova značajka ne radi ako je računalo u stanju hibernacije ili isključeno. Provjerite postavke u sljedećim radnjama:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>radnje zatvaranja poklopca</li><li>radnje kod kritične/slabe baterije</li><li>radnja gumba za napajanje</li><li>radnja gumba za stanje mirovanja</li><li>postavke vremenskog ograničenja mirovanja do hibernacije</li></ul></div>U suprotnom se alarm neće aktivirati, niti će fotografirati.</div>",
-                "desc": "<p><label>Kada omogućite ovu značajku, uređaj će početi piskati kad je vaš zaslon zaključan a otkrije se pokrete, naročito na javnom mjestu.</label></p> <p><label>Da biste isključili alarm, prijavite se u Windows.</label></p>",
+                "tooltip": "<div id='antiTheft-tooltips'>Ova značajka ne radi ako je računalo u stanju hibernacije ili isključeno. Provjerite postavke u sljedećim radnjama:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>radnje zatvaranja poklopca</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>radnje kod kritične/slabe baterije</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>radnja gumba za napajanje</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>radnja gumba za stanje mirovanja</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>postavke vremenskog ograničenja mirovanja do hibernacije</li></ul></div>U suprotnom se alarm neće aktivirati, niti će fotografirati.</div>",
+                "desc": "<p id='antiTheft-describe-one' role='text'>Kada omogućite ovu značajku, uređaj će početi piskati kad je vaš zaslon zaključan a otkrije se pokrete, naročito na javnom mjestu.</p><p id='antiTheft-describe-two' role='text'>Da biste isključili alarm, prijavite se u Windows.</p>",
                 "note": {
                     "description": "Nakon uspješne prijave u sustav, ova će se značajka automatski isključiti. Da biste je opet koristili morate je ponovo uključiti."
                 },
@@ -3459,9 +3459,6 @@
                 "signupButton": "SIGN UP",
                 "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
-            "tune": "{{tune}} ISSUES",
-            "boost": "{{boost}} ISSUES",
-            "secure": "{{secure}} ISSUES",
             "tunepc": {
                 "accumulatedjunkscannedareas": {
                     "area1": "Scanned for junk in 85 locations",
@@ -3719,7 +3716,11 @@
                         "area6": "Validated in cloud remediation engine"
                     }
                 }
-            }
+            },
+            "issues": "ISSUES",
+            "tuneIssueCount": "{{tune}}",
+            "boostIssueCount": "{{boost}}",
+            "secureIssueCount": "{{secure}}"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your ",

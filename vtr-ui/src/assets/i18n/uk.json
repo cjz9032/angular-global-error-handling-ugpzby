@@ -2097,8 +2097,8 @@
             },
             "superResolution": {
                 "title": "Підвищення роздільної здатності відео",
-                "desc": "<p><label>Ця функція вдосконалює відтворення відео за рахунок поліпшення роздільної здатності. Вона стає в пригоді, коли відео має низьку роздільну здатність.</label></p> <p><label>Ця функція може впливати на термін служби акумулятора, температуру акумулятора та викликати шум. Не використовуйте в режимі прямого струму (під час роботи від акумулятора). Інакше це прискорить споживання енергії та скоротить час автономної роботи.</label></p>",
-                "tooltip": "<p>Ця функція доступна лише для таких відеопрогравачів:<br>Windows Media Player<br>Програвач у Chrome<br>PotPlayer</p><p class='srTooltip'>Щоб дізнатися, як увімкнути цю функцію в програвачі PotPlayer, перегляньте посібник користувача, який постачається разом із комп'ютером.</p>",
+                "desc": "<p id='sr-describe-one' role='text'>Ця функція вдосконалює відтворення відео за рахунок поліпшення роздільної здатності. Вона стає в пригоді, коли відео має низьку роздільну здатність.</p><p id='sr-describe-two' role='text'>Ця функція може впливати на термін служби акумулятора, температуру акумулятора та викликати шум. Не використовуйте в режимі прямого струму (під час роботи від акумулятора). Інакше це прискорить споживання енергії та скоротить час автономної роботи.</p>",
+                "tooltip": "<p id='sr-tip-one' role='text'>Ця функція доступна лише для таких відеопрогравачів:<br>Windows Media Player<br>Програвач у Chrome<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Щоб дізнатися, як увімкнути цю функцію в програвачі PotPlayer, перегляньте посібник користувача, який постачається разом із комп'ютером.</p>",
                 "note": {
                     "description": "Ця функція не працює, коли:",
                     "description1": "Температура процесора зависока.",
@@ -2110,8 +2110,8 @@
             "antiTheft": {
                 "heading": "Інтелектуальне зчитування",
                 "title": "Інтелектуальна тривога за виявлення рухів",
-                "tooltip": "<div>Ця функція не працює, коли комп'ютер перебуває в режимі глибокого сну або вимкнений. Перевірте настройки таких дій:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>дії закриття кришки;</li><li>дія критично низького/низького заряду акумулятора;</li><li>дія кнопки живлення;</li><li>дія кнопки сну;</li><li>настройки часу без активності до переходу в режим сну.</li></ul></div>В іншому випадку сигнал тривоги не спрацює, крім того, не буде зроблено фото.</div>",
-                "desc": "<p><label>Якщо ввімкнути цю функцію, пристрій подаватиме сигнал в разі виявлення рухів перед заблокованим екраном, особливо в громадських місцях.</label></p> <p><label>Щоб відключити сигнал, увійдіть у Windows.</label></p>",
+                "tooltip": "<div id='antiTheft-tooltips'>Ця функція не працює, коли комп'ютер перебуває в режимі глибокого сну або вимкнений. Перевірте настройки таких дій:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>дії закриття кришки;</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>дія критично низького/низького заряду акумулятора;</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>дія кнопки живлення;</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>дія кнопки сну;</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>настройки часу без активності до переходу в режим сну.</li></ul></div>В іншому випадку сигнал тривоги не спрацює, крім того, не буде зроблено фото.</div>",
+                "desc": "<p id='antiTheft-describe-one' role='text'>Якщо ввімкнути цю функцію, пристрій подаватиме сигнал в разі виявлення рухів перед заблокованим екраном, особливо в громадських місцях.</p><p id='antiTheft-describe-two' role='text'>Щоб відключити сигнал, увійдіть у Windows.</p>",
                 "note": {
                     "description": "Після успішного входу в систему цю функцію буде автоматично вимкнуто. Для подальшого використання її доведеться ввімкнути."
                 },
@@ -3459,9 +3459,6 @@
                 "signupButton": "SIGN UP",
                 "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
-            "tune": "{{tune}} ISSUES",
-            "boost": "{{boost}} ISSUES",
-            "secure": "{{secure}} ISSUES",
             "tunepc": {
                 "accumulatedjunkscannedareas": {
                     "area1": "Scanned for junk in 85 locations",
@@ -3719,7 +3716,11 @@
                         "area6": "Validated in cloud remediation engine"
                     }
                 }
-            }
+            },
+            "issues": "ISSUES",
+            "tuneIssueCount": "{{tune}}",
+            "boostIssueCount": "{{boost}}",
+            "secureIssueCount": "{{secure}}"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your ",
