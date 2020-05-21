@@ -2097,8 +2097,8 @@
             },
             "superResolution": {
                 "title": "Zvýšení rozlišení videa",
-                "desc": "<p><label>Tato funkce vylepšuje zlepšením rozlišení videa zážitek z přehrávání videa. Funguje zejména v případě, kdy má video špatné rozlišení.</label></p> <p><label>Tato funkce může ovlivnit životnost baterie, teplotu baterie a způsobit šum. V režimu DC (režim s napájením z baterie) ji nepoužívejte. Jinak se zvýší spotřeba energie a zkrátí výdrž baterie.</label></p>",
-                "tooltip": "<p>Tato schopnost funguje jen pro dále uvedené přehrávače videa:<br>Windows Media Player<br>přehrávač založený na Chrome<br>PotPlayer</p><p class='srTooltip'>Návod, jak aktivovat tuto funkci v přehrávači PotPlayer, je uveden v uživatelské příručce k vašemu počítači.</p>",
+                "desc": "<p id='sr-describe-one' role='text'>Tato funkce vylepšuje zlepšením rozlišení videa zážitek z přehrávání videa. Funguje zejména v případě, kdy má video špatné rozlišení.</p><p id='sr-describe-two' role='text'>Tato funkce může ovlivnit životnost baterie, teplotu baterie a způsobit šum. V režimu DC (režim s napájením z baterie) ji nepoužívejte. Jinak se zvýší spotřeba energie a zkrátí výdrž baterie.</p>",
+                "tooltip": "<p id='sr-tip-one' role='text'>Tato schopnost funguje jen pro dále uvedené přehrávače videa:<br>Windows Media Player<br>přehrávač založený na Chrome<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Návod, jak aktivovat tuto funkci v přehrávači PotPlayer, je uveden v uživatelské příručce k vašemu počítači.</p>",
                 "note": {
                     "description": "Tato funkce nepracuje v následujících případech:",
                     "description1": "Teplota procesoru je příliš vysoká.",
@@ -2110,8 +2110,8 @@
             "antiTheft": {
                 "heading": "Inteligentní detekce",
                 "title": "Inteligentní varování při pohybu",
-                "tooltip": "<div>Tato funkce nefunguje, když je počítač v režimu hibernace nebo vypnutý. Zkontrolujte nastavení v následujících akcích:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>Akce uzavírání víka</li><li>Akce při nízké/kriticky nízké kapacitě baterie</li><li>Akce hlavního vypínače napájení</li><li>Akce tlačítka režimu spánku</li><li>Nastavení doby nečinnosti do přechodu k hibernaci</li></ul></div>Jinak se nespustí varování, ani se nepořídí snímky.</div>",
-                "desc": "<p><label>Při povolení této funkce začne zařízení vydávat zvukový signál, když je obrazovka uzamčena a je zjištěn pohyb, zejména na veřejném místě.</label></p> <p><label>Chcete-li varování zrušit, přihlaste se do systému Windows.</label></p>",
+                "tooltip": "<div id='antiTheft-tooltips'>Tato funkce nefunguje, když je počítač v režimu hibernace nebo vypnutý. Zkontrolujte nastavení v následujících akcích:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>Akce uzavírání víka</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>Akce při nízké/kriticky nízké kapacitě baterie</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>Akce hlavního vypínače napájení</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>Akce tlačítka režimu spánku</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>Nastavení doby nečinnosti do přechodu k hibernaci</li></ul></div>Jinak se nespustí varování, ani se nepořídí snímky.</div>",
+                "desc": "<p id='antiTheft-describe-one' role='text'>Při povolení této funkce začne zařízení vydávat zvukový signál, když je obrazovka uzamčena a je zjištěn pohyb, zejména na veřejném místě.</p><p id='antiTheft-describe-two' role='text'>Chcete-li varování zrušit, přihlaste se do systému Windows.</p>",
                 "note": {
                     "description": "Po úspěšném přihlášení do systému se tato funkce automaticky vypne. Abyste ji mohli používat, musíte ji znovu povolit."
                 },

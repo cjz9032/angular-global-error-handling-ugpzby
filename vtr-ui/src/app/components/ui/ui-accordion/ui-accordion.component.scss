@@ -16,54 +16,37 @@
                     .btn-link{
                         width: 100%;
                         &:before{								
-                            content: "\276F";
-                            transform-origin: 0 0;
-                            transform: rotate(-90deg);
-                            color:$main_light;
-                            font-size:1.4rem;																
+                            content: "\f077";
+                            font-family: 'Fontawesome';
+                            color: $main_light;
+                            font-size:1.4rem;
                             width:1.75rem;
                             height:1.75rem;
-                            right:2.75rem;
+                            position: absolute;
+                            right: 1.5rem;
+                            top: 3.5rem;
                             @media #{$breakpoint_sm}{
-                                right:5%;
-                                top:4.5rem!important;
+                                top: 2.2rem;
                             }
-                            @media #{$breakpoint_md}{
-                                right:4.5%;
-                                top:5.5rem;
-                            }
-                            position:absolute;
-                            top:5.5rem;
                         }
                         &:hover, &:focus{
                             text-decoration: none;
                         }
-                        @media #{$breakpoint_sm}{
-                            padding-left: 0;
-                            padding-right: 0;
-                            width: 100%;
-                        }
                     }
                     .collapsed{
                         &:before{								
-                            content: "\276E";
-                            transform-origin: 0 0;
-                            transform: rotate(-90deg);
-                            color:$main_light;
-                            font-size:1.4rem;								
-                            right:2.75rem;
-                            @media #{$breakpoint_sm}{
-                                right:5%;
-                                top:4.5rem!important;
-                            }
-                            @media #{$breakpoint_md}{
-                                right:4.5%;
-                                top:5.5rem;
-                            }
+                            content: "\f078";
+                            font-family: 'FontAwesome';
+                            color: $main_light;
+                            font-size:1.4rem;
                             width:1.75rem;
                             height:1.75rem;
-                            position:absolute;
-                            top:5.5rem;							
+                            position: absolute;
+                            right: 1.5rem;
+                            top: 3.5rem;
+                            @media #{$breakpoint_sm}{
+                                top: 2.2rem;
+                            }
                         }														
                     }
                     .heading {
@@ -199,7 +182,7 @@
                         font-size: 1.6rem;
                         text-align: right;
                         color: $shade_dark;
-                        right: 5rem;
+                        position: relative;
                         padding-right:2rem;
                         letter-spacing: 0;
                         @media #{$breakpoint_sm}{
