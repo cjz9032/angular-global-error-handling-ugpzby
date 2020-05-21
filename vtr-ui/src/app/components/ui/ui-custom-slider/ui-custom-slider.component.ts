@@ -128,7 +128,9 @@ export class UiCustomSliderComponent implements OnInit {
 	}
 	// added for narrator reading
 	getLegend() {
-		const position = this.value === 0 ? 1 : (this.value / this.step);
+		// let position= this.min===0 && this.step
+		const val = this.min === 0 && this.step !== 1 ? 1 : this.min === 0 && this.step === 1 ? this.value + 1 : this.value;
+		const position = val / this.step;
 		let legend = this.minLegend;
 		switch (position) {
 			case 2: legend = this.midLegend?.length > 0 ? this.midLegend : legend;
