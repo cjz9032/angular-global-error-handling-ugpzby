@@ -144,13 +144,6 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 			EventTypes.gamingMacroKeyKeyChangeEvent, 
 			this.keyChangeEvent
 		);
-		if (this.isRecording) {
-			this.macroKeyService.setStopRecording(this.numberSelected.key, false, true);
-			this.shellService.unRegisterEvent(
-				EventTypes.gamingMacroKeyKeyChangeEvent,
-				this.keyChangeEvent
-			);
-		}
 	}
 
 	public initMacroKeyEvents() {
