@@ -24,6 +24,10 @@
 				width: $container-width;
 				margin-bottom: 1rem;
 
+				.focus {
+					display: block;
+				}
+
 				// circle UI part
 				[role="radio"] {
 					background: $foreground;
@@ -35,6 +39,7 @@
 					border-radius: 50%;
 					text-align: center;
 					line-height: 6rem;
+					cursor: pointer;
 
 					.fa-layers {
 						position: absolute;
@@ -149,6 +154,10 @@
 					&:active {
 						background: $shade_blue;
 						border-color: $shade_blue;
+
+						.focus{
+							display: none;
+						}
 
 						.check-circle {
 							color: $shade_blue;

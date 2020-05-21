@@ -21,7 +21,7 @@
 					[attr.aria-disabled]="item.isDisabled || isDisabled"
 					[attr.aria-label]="item.label | translate"
 					(click)="onClick($event)">
-					<span class="icomoon icomoon-icon_state_Two_combined"
+					<span class="icomoon icomoon-icon_state_Two_combined focus"
 						*ngIf="item.componentId === focusedComponentId"
 						[attr.aria-hidden]=true></span>
 					<div *ngIf="!item.hideIcon"
@@ -34,8 +34,7 @@
 						[ngClass]="'icomoon icomoon-'+item.customIcon"></div>
 					<fa-layers [fixedWidth]="true"
 						[attr.aria-hidden]=true
-						*ngIf="item.isChecked"
-						[style.cursor]="item.isDisabled?'default': 'pointer'">
+						*ngIf="item.isChecked">
 						<fa-icon class="icon-circle"
 							[attr.aria-hidden]=true
 							[class.icon-circle-disabled]="item.isDisabled"
