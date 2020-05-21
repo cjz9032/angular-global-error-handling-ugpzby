@@ -114,27 +114,31 @@
 					border-radius: $border_radius_sm;		
 					background-color: $gaming_bg;
 					border: 1px solid $gaming_bg;
-					@media #{$black-on-white}{
-						border: 0px solid $gaming_bg;
-						}
-						@media #{$white-on-black}{
-							border: 0px solid $gaming_bg;
-						}
 					@media #{$breakpoint_md} {
 						float:left;	
 						padding-bottom:2rem;
 						position:relative;
-						@media #{$black-on-white}{
+						@media #{$black-on-white}{									
+							background-color:none!important;	
 							padding-bottom:0rem!important;
 							}
 							@media #{$white-on-black}{
-								padding-bottom:0rem!important;
+							background-color:none!important;	
+							padding-bottom:0rem!important;
 							}
 						}
 					@media screen and (min-width: 992px) and (max-width: 1199.9px) { 
 						float:left;	
 						padding-bottom:2rem;
 						position:relative;
+						@media #{$black-on-white}{									
+							background-color:none!important;	
+							padding-bottom:0rem!important;
+							}
+							@media #{$white-on-black}{
+							background-color:none!important;	
+							padding-bottom:0rem!important;
+							}
 					}
 					
 					.hd-item {
