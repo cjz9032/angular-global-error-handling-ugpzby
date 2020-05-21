@@ -16,24 +16,18 @@
                     .btn-link{
                         width: 100%;
                         &:before{								
-                            content: "\276F";
-                            transform-origin: 0 0;
-                            transform: rotate(-90deg);
+                            content: "\e9b9";
+                            font-family: "icomoon";
                             color:$main_light;
                             font-size:1.4rem;																
                             width:1.75rem;
                             height:1.75rem;
-                            right:2.75rem;
-                            @media #{$breakpoint_sm}{
-                                right:5%;
-                                top:4.5rem!important;
-                            }
-                            @media #{$breakpoint_md}{
-                                right:4.5%;
-                                top:5.5rem;
-                            }
                             position:absolute;
-                            top:5.5rem;
+                            top:3.5rem;
+                            right: 1rem;
+                            @media #{$breakpoint_sm}{
+                                top: 2.5rem;
+                            }
                         }
                         &:hover, &:focus{
                             text-decoration: none;
@@ -46,24 +40,18 @@
                     }
                     .collapsed{
                         &:before{								
-                            content: "\276E";
-                            transform-origin: 0 0;
-                            transform: rotate(-90deg);
+                            content: "\e9b8";
+                            font-family: "icomoon";
                             color:$main_light;
-                            font-size:1.4rem;								
-                            right:2.75rem;
-                            @media #{$breakpoint_sm}{
-                                right:5%;
-                                top:4.5rem!important;
-                            }
-                            @media #{$breakpoint_md}{
-                                right:4.5%;
-                                top:5.5rem;
-                            }
+                            font-size:1.4rem;																
                             width:1.75rem;
                             height:1.75rem;
                             position:absolute;
-                            top:5.5rem;							
+                            top:3.5rem;
+                            right: 1rem;
+                            @media #{$breakpoint_sm}{
+                                top: 2.5rem;
+                            }
                         }														
                     }
                     .heading {

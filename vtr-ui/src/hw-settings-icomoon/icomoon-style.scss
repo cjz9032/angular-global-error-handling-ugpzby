@@ -1,8 +1,37 @@
 @import "icomoon-variables";
 
+
+.icomoon-angle-down {
+  &:before {
+    content: $icomoon-angle-down; 
+  }
+}
+.icomoon-angle-up {
+  &:before {
+    content: $icomoon-angle-up; 
+  }
+}
+.icomoon-smartperformance {
+  &:before {
+    content: $icomoon-smartperformance;     
+    color: #5778bb;
+  }
+}
+.icomoon-7-protection {
+  &:before {
+    content: $icomoon-7-protection;     
+    color: #2081f7;
+  }
+}
 .icomoon-Active-protection {
   &:before {
     content: $icomoon-Active-protection; 
+  }
+}
+.icomoon-annoying-adware {
+  &:before {
+    content: $icomoon-annoying-adware;     
+    color: #2081f7;
   }
 }
 .icomoon-antiTheft {
@@ -26,9 +55,33 @@
     content: $icomoon-Auto; 
   }
 }
+.icomoon-automated {
+  &:before {
+    content: $icomoon-automated;     
+    color: #2081f7;
+  }
+}
 .icomoon-auto-screen-off {
   &:before {
     content: $icomoon-auto-screen-off; 
+  }
+}
+.icomoon-boost-internet {
+  &:before {
+    content: $icomoon-boost-internet;     
+    color: #2081f7;
+  }
+}
+.icomoon-browser-security {
+  &:before {
+    content: $icomoon-browser-security;     
+    color: #2081f7;
+  }
+}
+.icomoon-browser-settings {
+  &:before {
+    content: $icomoon-browser-settings;     
+    color: #2081f7;
   }
 }
 .icomoon-calendar {
@@ -136,6 +189,24 @@
 .icomoon-eCourse {
   &:before {
     content: $icomoon-eCourse; 
+  }
+}
+.icomoon-effective {
+  &:before {
+    content: $icomoon-effective;     
+    color: #2081f7;
+  }
+}
+.icomoon-e-junk {
+  &:before {
+    content: $icomoon-e-junk;     
+    color: #2081f7;
+  }
+}
+.icomoon-errant-program {
+  &:before {
+    content: $icomoon-errant-program;     
+    color: #2081f7;
   }
 }
 .icomoon-F1-F12-funciton {
@@ -728,6 +799,18 @@
     color: #2081f7;
   }
 }
+.icomoon-malware-scan {
+  &:before {
+    content: $icomoon-malware-scan;     
+    color: #2081f7;
+  }
+}
+.icomoon-malware-security {
+  &:before {
+    content: $icomoon-malware-security;     
+    color: #2081f7;
+  }
+}
 .icomoon-movie {
   &:before {
     content: $icomoon-movie;     
@@ -745,6 +828,12 @@
     content: $icomoon-music; 
   }
 }
+.icomoon-network-settings {
+  &:before {
+    content: $icomoon-network-settings;     
+    color: #2081f7;
+  }
+}
 .icomoon-NoBatteryError {
   &:before {
     content: $icomoon-NoBatteryError; 
@@ -758,6 +847,12 @@
 .icomoon-Off {
   &:before {
     content: $icomoon-Off; 
+  }
+}
+.icomoon-on-demand {
+  &:before {
+    content: $icomoon-on-demand;     
+    color: #2081f7;
   }
 }
 .icomoon-onlymyvoice {
@@ -823,10 +918,28 @@
     content: $icomoon-quick-setting-system-update; 
   }
 }
+.icomoon-registery-errors {
+  &:before {
+    content: $icomoon-registery-errors;     
+    color: #2081f7;
+  }
+}
 .icomoon-registryError {
   &:before {
     content: $icomoon-registryError;     
     color: #4a81fd;
+  }
+}
+.icomoon-schedule-scan {
+  &:before {
+    content: $icomoon-schedule-scan;     
+    color: #2081f7;
+  }
+}
+.icomoon-security-settings {
+  &:before {
+    content: $icomoon-security-settings;     
+    color: #2081f7;
   }
 }
 .icomoon-Special-function {
@@ -852,6 +965,12 @@
     color: #4a81fd;
   }
 }
+.icomoon-system-error {
+  &:before {
+    content: $icomoon-system-error;     
+    color: #2081f7;
+  }
+}
 .icomoon-Top-row-keys {
   &:before {
     content: $icomoon-Top-row-keys;     
@@ -861,6 +980,12 @@
 .icomoon-translation {
   &:before {
     content: $icomoon-translation; 
+  }
+}
+.icomoon-tune-pc {
+  &:before {
+    content: $icomoon-tune-pc;     
+    color: #2081f7;
   }
 }
 .icomoon-usibilityIssue {
@@ -892,6 +1017,12 @@
     color: #4a81fd;
   }
 }
+.icomoon-wifi {
+  &:before {
+    content: $icomoon-wifi;     
+    color: #2081f7;
+  }
+}
 .icomoon-wifiNetworks {
   &:before {
     content: $icomoon-wifiNetworks;     
@@ -902,6 +1033,12 @@
   &:before {
     content: $icomoon-windows;     
     color: #4a81fd;
+  }
+}
+.icomoon-zero-day {
+  &:before {
+    content: $icomoon-zero-day;     
+    color: #2081f7;
   }
 }
 .icomoon-zero-touch-lock {
