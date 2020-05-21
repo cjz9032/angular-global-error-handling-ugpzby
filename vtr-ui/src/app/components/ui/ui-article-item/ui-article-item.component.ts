@@ -41,12 +41,16 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit {
 	}
 
 	@Input() set item(itemValue: any) {
-		if (!this.disableContentDisplay
-			&& itemValue
-			&& itemValue.DataSource
-			&& itemValue.DataSource !== ContentSource.Local
-			&& (!this._item || this._item.Id !== itemValue.Id)) {
-			this.metricsService.sendContentDisplay(itemValue.Id, itemValue.DataSource, this.index as string);
+		if (itemValue) {
+			const preItem = this.item;
+			setTimeout(()=> {	// use settimeout to defer the code running to make sure that disableContentDisplay was initialized when it was run
+				if (!this.disableContentDisplay
+					&& itemValue.DataSource
+					&& itemValue.DataSource !== ContentSource.Local
+					&& (!preItem || preItem !== itemValue.Id)) {
+					this.metricsService.sendContentDisplay(itemValue.Id, itemValue.DataSource, this.index as string);
+				}
+			}, 0);
 		}
 		this._item = itemValue;
 	}
