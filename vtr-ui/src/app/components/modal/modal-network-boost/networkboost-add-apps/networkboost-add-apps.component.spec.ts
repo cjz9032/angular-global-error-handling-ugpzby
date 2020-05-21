@@ -287,16 +287,6 @@ describe('NetworkboostAddAppsComponent', () => {
 	})
 	);
 
-
-	it('Focus close', fakeAsync(() => {
-		fixture.detectChanges();
-		component.noAppsRunning = false;
-		tick(10);
-		expect(component).toBeTruthy();
-	})
-	);
-
-
 	it('onValueChange', fakeAsync(() => {
 		component.addedApps = 3;
 		const result = component.onValueChange({ target: { value: true } }, 1);
@@ -312,18 +302,6 @@ describe('NetworkboostAddAppsComponent', () => {
 		expect(resp).toBe(undefined);
 	});
 
-
-	it('focusClose', done => {
-		const p = new Promise((resolve, reject) =>
-			setTimeout(() => resolve(''), 2)
-		);
-		p.then(result => {
-			fakeAsync(() => {
-				expect(component).toBeTruthy();
-			});
-			done();
-		});
-	});
 });
 
 
