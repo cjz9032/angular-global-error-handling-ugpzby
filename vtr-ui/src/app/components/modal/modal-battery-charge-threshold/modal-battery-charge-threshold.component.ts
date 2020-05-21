@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-modal-battery-charge-threshold',
@@ -8,14 +9,16 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ModalBatteryChargeThresholdComponent implements OnInit {
 	title: string;
+	id: string;
 	description1: string;
 	description2: string;
 	positiveResponseText: string;
 	negativeResponseText: string;
-
-	constructor(public activeModal: NgbActiveModal) { }
+	buttonId: string;
+	constructor(public activeModal: NgbActiveModal, public translate: TranslateService) { }
 
 	ngOnInit() {
+		this.buttonId = this.translate.instant(this.positiveResponseText);
 		const modal = document.querySelector('.close-btn') as HTMLElement;
 		modal.focus();
 	}

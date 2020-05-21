@@ -1,5 +1,6 @@
 <div class="vtr-ui-time-picker">
 	<p role="heading"
+		id="{{linkId}}"
 		class="sub-heading">
 		{{ subHeadingText | translate | uppercase }}</p>
 	<div class="row">
@@ -31,8 +32,9 @@
 										attr.aria-label="hours">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit1' | translate | uppercase }}
 									</p>
-									<span class="" role="text"
-									id="{{linkId}}-hours-value">{{hours[hour]}}</span>
+									<span class=""
+										role="text"
+										id="{{linkId}}-hours-value">{{hours[hour]}}</span>
 								</div>
 								<div class="time-headings">
 									<p class=""
@@ -42,8 +44,8 @@
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit2' | translate | uppercase }}
 									</p>
 									<span class=""
-									role="text"
-									id="{{linkId}}-minutes-value">{{minutes[minute]}}</span>
+										role="text"
+										id="{{linkId}}-minutes-value">{{minutes[minute]}}</span>
 								</div>
 								<div class="time-headings">
 									<p class=""
@@ -53,8 +55,8 @@
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit3' | translate }}
 									</p>
 									<span class=""
-									role="text"
-									id="{{linkId}}-amPm-value">{{amPms[amPm] | translate}}</span>
+										role="text"
+										id="{{linkId}}-amPm-value">{{amPms[amPm] | translate}}</span>
 								</div>
 
 								<div class="toggle-icon align-right"
