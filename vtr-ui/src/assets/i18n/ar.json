@@ -48,7 +48,8 @@
                     "ramOverlock": "كسر سرعة وحدة RAM",
                     "popup": {
                         "text": "يسري التغيير بعد إعادة تشغيل الكمبيوتر.",
-                        "button": "موافق"
+                        "button": "موافق",
+                        "title": "system restart is required"
                     },
                     "driverPopup": {
                         "headerText": "تثبيت برنامج التشغيل مطلوب",
@@ -72,7 +73,10 @@
                     "networkBoost": "تعزيز الشبكة",
                     "hybridMode": "الوضع الهجين",
                     "overDrive": "Over Drive",
-                    "touchpadLock": "قفل لوحه اللمس"
+                    "touchpadLock": "قفل لوحه اللمس",
+                    "helpPopup": {
+                        "title": "Legion Edge Help"
+                    }
                 },
                 "systemTools": {
                     "power": "الطاقة",
@@ -2095,8 +2099,8 @@
             },
             "superResolution": {
                 "title": "رفع مستوى دقة الفيديو",
-                "desc": "<p><label>تعمل هذه الميزة على تحسين تجربة تشغيل الفيديو من خلال تحسين دقة الفيديو. وهي تعمل بشكل خاص عندما يكون الفيديو بدقة منخفضة.</label></p> <p><label>قد تؤثر هذه الوظيفة على عمر البطارية ودرجة حرارة البطارية، وقد تتسبب في حدوث ضوضاء. يرجى عدم الاستخدام في وضع التيار المباشر (وضع البطارية)‬. وإلا سوف تسرع استهلاك الطاقة وتقصير عمر البطارية.</label></p>",
-                "tooltip": "<p>تعمل هذه الميزة فقط مع مشغلات الفيديو التالية:<br>Windows Media Player<br>مشغل يعتمد على Chrome<br>PotPlayer</p><p class='srTooltip'>للحصول على إرشادات حول كيفية تمكين هذه الوظيفة على PotPlayer، راجع دليل المستخدم المرفق مع جهاز الكمبيوتر.</p>",
+                "desc": "<p id='sr-describe-one' role='text'>تعمل هذه الميزة على تحسين تجربة تشغيل الفيديو من خلال تحسين دقة الفيديو. وهي تعمل بشكل خاص عندما يكون الفيديو بدقة منخفضة.</p> <p id='sr-describe-two' role='text'>قد تؤثر هذه الوظيفة على عمر البطارية ودرجة حرارة البطارية، وقد تتسبب في حدوث ضوضاء. يرجى عدم الاستخدام في وضع التيار المباشر (وضع البطارية)‬. وإلا سوف تسرع استهلاك الطاقة وتقصير عمر البطارية.</p>",
+                "tooltip": "<p id='sr-tip-one' role='text'>تعمل هذه الميزة فقط مع مشغلات الفيديو التالية:<br>Windows Media Player<br>مشغل يعتمد على Chrome<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>للحصول على إرشادات حول كيفية تمكين هذه الوظيفة على PotPlayer، راجع دليل المستخدم المرفق مع جهاز الكمبيوتر.</p>",
                 "note": {
                     "description": "لا تعمل هذه الميزة في الحالات التالية:",
                     "description1": "درجة حرارة وحدة المعالجة المركزية (CPU) مرتفعة جدًا.",
@@ -2108,8 +2112,8 @@
             "antiTheft": {
                 "heading": "الاستشعار الذكي",
                 "title": "تنبيه الحركة الذكية",
-                "tooltip": "<div>لا تعمل هذه الميزة عندما يكون الكمبيوتر في وضع الإسبات أو غير موصول بالطاقة. تحقق من الإعدادات في الإجراءات التالية:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>إجراءات إغلاق الغطاء</li><li>إجراء بطارية حرجة/منخفضة الشحنة</li><li>إجراء زر الطاقة</li><li>إجراء زر السكون</li><li>إعدادات مهلة الخمول للإسبات</li></ul></div>بخلاف ذلك، لن تشغل المنبه، كما أنها لن تلتقط الصور.</div>",
-                "desc": "<p><label>عند تمكين هذه الميزة، سيبدأ الجهاز بإصدار صوت طنين عندما تكون الشاشة مقفلة ويتم اكتشاف الحركات خاصة في مكان عام.</label></p> <p><label>لرفض التنبيه، يرجى تسجيل الدخول إلى Windows.</label></p>",
+                "tooltip": "<div id='antiTheft-tooltips'>لا تعمل هذه الميزة عندما يكون الكمبيوتر في وضع الإسبات أو غير موصول بالطاقة. تحقق من الإعدادات في الإجراءات التالية:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>إجراءات إغلاق الغطاء</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>إجراء بطارية حرجة/منخفضة الشحنة</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>إجراء زر الطاقة</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>إجراء زر السكون</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>إعدادات مهلة الخمول للإسبات</li></ul></div>بخلاف ذلك، لن تشغل المنبه، كما أنها لن تلتقط الصور.</div>",
+                "desc": "<p id='antiTheft-describe-one' role='text'>عند تمكين هذه الميزة، سيبدأ الجهاز بإصدار صوت طنين عندما تكون الشاشة مقفلة ويتم اكتشاف الحركات خاصة في مكان عام.</p><p id='antiTheft-describe-two' role='text'>لرفض التنبيه، يرجى تسجيل الدخول إلى Windows.</p>",
                 "note": {
                     "description": "بمجرد تسجيل الدخول إلى النظام بنجاح، سيتم إيقاف تشغيل هذه الميزة تلقائيًا. يجب تمكينه مرة أخرى لاستخدامه."
                 },
@@ -3457,9 +3461,6 @@
                 "signupButton": "SIGN UP",
                 "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
-            "tune": "{{tune}} ISSUES",
-            "boost": "{{boost}} ISSUES",
-            "secure": "{{secure}} ISSUES",
             "tunepc": {
                 "accumulatedjunkscannedareas": {
                     "area1": "Scanned for junk in 85 locations",
@@ -3717,7 +3718,11 @@
                         "area6": "Validated in cloud remediation engine"
                     }
                 }
-            }
+            },
+            "issues": "ISSUES",
+            "tuneIssueCount": "{{tune}}",
+            "boostIssueCount": "{{boost}}",
+            "secureIssueCount": "{{secure}}"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your ",
@@ -3789,7 +3794,9 @@
             },
             "commentTip": "Shout what you love and whisper what you hate.",
             "comments": "Please leave your comments here..."
-        }
+        },
+        "auto": "Auto",
+        "manual": "Manual"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

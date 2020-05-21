@@ -59,20 +59,32 @@
 													[src]="image" />
 												<img *ngIf="additionalCapabilitiesObj.privacy"
 													class="keyboard-layer img-preview"
+													id="keyboardMap-privacyIcon-image"
+													role="img"
 													[src]="privacyIcon"
-													aria-hidden="true" />
+													aria-hidden="true"
+													 />
 												<img *ngIf="additionalCapabilitiesObj.backLight"
 													class="keyboard-layer img-preview"
 													[src]="kbdBlIcon"
-													aria-hidden="true" />
+													id="keyboardMap-kbdBlIcon-image"
+													role="img"
+													aria-hidden="true"
+													 />
 												<img *ngIf="additionalCapabilitiesObj.performance"
 													class="keyboard-layer img-preview"
+													id="keyboardMap-merlynIcon-image"
+													role="img"
 													[src]="merlynIcon"
-													aria-hidden="true" />
+													aria-hidden="true"
+													 />
 												<img *ngIf="additionalCapabilitiesObj.magnifier"
 													class="keyboard-layer img-preview"
+													id="keyboardMap-zoomIcon-image"
+													role="img"
 													[src]="zoomIcon"
-													aria-hidden="true" />
+													aria-hidden="true"
+													 />
 											</div>
 										</div>
 									</div>
@@ -152,7 +164,6 @@
 												{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.hasInstalledAppsDescription' | translate}}
 											</div>
 											<div role="radiogroup"
-												tabindex="0"
 												aria-label="installedApps selection list, select using arrow keys"
 												class="voip-keys-block">
 												<ng-container *ngFor="let installedApp of installedApps; index as i;">

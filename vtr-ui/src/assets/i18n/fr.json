@@ -46,7 +46,8 @@
                     "ramOverlock": "Overclocking RAM",
                     "popup": {
                         "text": "La modification prendra effet après le redémarrage de l'ordinateur.",
-                        "button": "OK"
+                        "button": "OK",
+                        "title": "system restart is required"
                     },
                     "driverPopup": {
                         "headerText": "Installation du pilote requise",
@@ -70,6 +71,9 @@
                     },
                     "lightingColorMessage": {
                         "text": "Sélection de la couleur non disponible pour cet effet."
+                    },
+                    "helpPopup": {
+                        "title": "Legion Edge Help"
                     }
                 },
                 "systemTools": {
@@ -2093,8 +2097,8 @@
             },
             "superResolution": {
                 "title": "Mise à l'échelle de la résolution vidéo",
-                "desc": "<p><label>Cette fonction améliore l'expérience de la lecture vidéo en améliorant la résolution de la vidéo. Cela est particulièrement efficace lorsque la vidéo est de faible résolution.</label></p> <p><label>Cette fonction peut influencer la durée de vie de la batterie, sa température et produire des sons. Veillez à ne pas l'utiliser en mode courant continu (mode batterie). Sinon, cela accélérera la consommation d'énergie et réduira la durée de vie de la batterie.</label></p>",
-                "tooltip": "<p>Cette fonction n'est disponible que pour les lecteurs vidéo suivants :<br>Windows Media Player<br>Lecteur Chrome<br>PotPlayer</p><p class='srTooltip'>Pour savoir comment activer cette fonction sur PotPlayer, reportez-vous au guide d'utilisation fourni avec votre ordinateur.</p>",
+                "desc": "<p id='sr-describe-one' role='text'>Cette fonction améliore l'expérience de la lecture vidéo en améliorant la résolution de la vidéo. Cela est particulièrement efficace lorsque la vidéo est de faible résolution.</p><p id='sr-describe-two' role='text'>Cette fonction peut influencer la durée de vie de la batterie, sa température et produire des sons. Veillez à ne pas l'utiliser en mode courant continu (mode batterie). Sinon, cela accélérera la consommation d'énergie et réduira la durée de vie de la batterie.</p>",
+                "tooltip": "<p id='sr-tip-one' role='text'>Cette fonction n'est disponible que pour les lecteurs vidéo suivants :<br>Windows Media Player<br>Lecteur Chrome<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Pour savoir comment activer cette fonction sur PotPlayer, reportez-vous au guide d'utilisation fourni avec votre ordinateur.</p>",
                 "note": {
                     "description": "Cette fonction est inopérante quand :",
                     "description1": "La température de l'unité centrale est trop élevée.",
@@ -2106,8 +2110,8 @@
             "antiTheft": {
                 "heading": "Capteur intelligent",
                 "title": "Alerte de mouvement intelligente",
-                "tooltip": "<div>Cette fonction n'est pas active lorsque l'ordinateur est en mode hibernation ou qu'il est hors tension. Vérifiez les paramètres lors des actions suivantes :<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions du fermeture du capot</li><li>action de batterie critique/faible</li><li>action de bouton d'alimentation</li><li>action du bouton de veille</li><li>paramètres de délai d'inactivité en mode hibernation</li></ul></div>Sinon, il ne déclenchera aucune alarme, ni ne prendra aucune photo.</div>",
-                "desc": "<p><label>Lorsque vous activez cette fonction, l'appareil émet un signal sonore lorsque l'écran est verrouillé et que des mouvements sont détectés, notamment dans un endroit public.</label></p> <p><label>Pour ignorer l'alarme, connectez-vous à Windows.</label></p>",
+                "tooltip": "<div id='antiTheft-tooltips'>Cette fonction n'est pas active lorsque l'ordinateur est en mode hibernation ou qu'il est hors tension. Vérifiez les paramètres lors des actions suivantes :<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>actions du fermeture du capot</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>action de batterie critique/faible</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>action de bouton d'alimentation</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>action du bouton de veille</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>paramètres de délai d'inactivité en mode hibernation</li></ul></div>Sinon, il ne déclenchera aucune alarme, ni ne prendra aucune photo.</div>",
+                "desc": "<p id='antiTheft-describe-one' role='text'>Lorsque vous activez cette fonction, l'appareil émet un signal sonore lorsque l'écran est verrouillé et que des mouvements sont détectés, notamment dans un endroit public.</p><p id='antiTheft-describe-two' role='text'>Pour ignorer l'alarme, connectez-vous à Windows.</p>",
                 "note": {
                     "description": "Une fois que vous vous êtes connecté au système, cette fonction sera automatiquement désactivée. Vous devez l'activer à nouveau pour l'utiliser."
                 },
@@ -3455,9 +3459,6 @@
                 "signupButton": "SIGN UP",
                 "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
-            "tune": "{{tune}} ISSUES",
-            "boost": "{{boost}} ISSUES",
-            "secure": "{{secure}} ISSUES",
             "tunepc": {
                 "accumulatedjunkscannedareas": {
                     "area1": "Scanned for junk in 85 locations",
@@ -3715,7 +3716,11 @@
                         "area6": "Validated in cloud remediation engine"
                     }
                 }
-            }
+            },
+            "issues": "ISSUES",
+            "tuneIssueCount": "{{tune}}",
+            "boostIssueCount": "{{boost}}",
+            "secureIssueCount": "{{secure}}"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your ",
@@ -3787,7 +3792,9 @@
             },
             "commentTip": "Shout what you love and whisper what you hate.",
             "comments": "Please leave your comments here..."
-        }
+        },
+        "auto": "Auto",
+        "manual": "Manual"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

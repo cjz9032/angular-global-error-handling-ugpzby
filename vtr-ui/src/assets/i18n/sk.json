@@ -46,7 +46,8 @@
                     "ramOverlock": "Pretaktovanie RAM",
                     "popup": {
                         "text": "Zmena sa prejaví po reštartovaní počítača.",
-                        "button": "OK"
+                        "button": "OK",
+                        "title": "system restart is required"
                     },
                     "driverPopup": {
                         "headerText": "Vyžaduje sa inštalácia ovládača",
@@ -70,6 +71,9 @@
                     },
                     "lightingColorMessage": {
                         "text": "Výber farby nie je pre tento efekt k dispozícii."
+                    },
+                    "helpPopup": {
+                        "title": "Legion Edge Help"
                     }
                 },
                 "systemTools": {
@@ -2093,8 +2097,8 @@
             },
             "superResolution": {
                 "title": "Zvýšenie rozlíšenia videa",
-                "desc": "<p><label>Táto funkcia zvyšuje zážitok z prehrávania videa zlepšením jeho rozlíšenia. Prejaví sa najmä pri nízkom rozlíšení videa.</label></p> <p><label>Táto funkcia môže ovplyvniť výdrž batérie, teplotu batérie a vytvárať hluk. Nepoužívajte v režime jednosmerného prúdu (režim napájania z batérie). V opačnom prípade sa zväčší spotreba energie a skráti životnosť batérie.</label></p>",
-                "tooltip": "<p>Táto funkcia funguje iba v prípade nasledujúcich prehrávačov videa:<br>Windows Media Player<br>Prehrávač založený na prehľadávači Chrome<br>PotPlayer</p><p class='srTooltip'>Pokyny na zapnutie tejto funkcie v prehrávači PotPlayer nájdete v používateľskej príručke dodanej s vaším počítačom.</p>",
+                "desc": "<p id='sr-describe-one' role='text'>Táto funkcia zvyšuje zážitok z prehrávania videa zlepšením jeho rozlíšenia. Prejaví sa najmä pri nízkom rozlíšení videa.</p><p id='sr-describe-two' role='text'>Táto funkcia môže ovplyvniť výdrž batérie, teplotu batérie a vytvárať hluk. Nepoužívajte v režime jednosmerného prúdu (režim napájania z batérie). V opačnom prípade sa zväčší spotreba energie a skráti životnosť batérie.</p>",
+                "tooltip": "<p id='sr-tip-one' role='text'>Táto funkcia funguje iba v prípade nasledujúcich prehrávačov videa:<br>Windows Media Player<br>Prehrávač založený na prehľadávači Chrome<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Pokyny na zapnutie tejto funkcie v prehrávači PotPlayer nájdete v používateľskej príručke dodanej s vaším počítačom.</p>",
                 "note": {
                     "description": "Funkcia nefunguje v týchto prípadoch:",
                     "description1": "Teplota procesora je príliš vysoká.",
@@ -2106,8 +2110,8 @@
             "antiTheft": {
                 "heading": "Inteligentné snímanie",
                 "title": "Inteligentná signalizácia pohybu",
-                "tooltip": "<div>Táto funkcia nefunguje, keď je počítač v režime dlhodobého spánku alebo je vypnutý. Skontrolujte nastavenia nasledujúcich akcií:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>akcie pri zatvorení krytu</li><li>akcia pri kriticky vybitej/takmer vybitej batérii</li><li>akcia pri stlačení tlačidla napájania</li><li>funkcia pri stlačení tlačidla spánku</li><li>nastavenia časového limitu prechodu z režimu nečinnosti do režimu dlhodobého spánku</li></ul></div>V opačnom prípade sa nespustí budík, ani sa nedá fotografovať.</div>",
-                "desc": "<p><label>Keď povolíte túto funkciu, zariadenie začne vydávať zvukový signál, keď je obrazovka uzamknutá a zistí sa pohyb, najmä vo verejnom priestore.</label></p> <p><label>Ak chcete toto upozornenie zrušiť, prihláste sa do systému Windows.</label></p>",
+                "tooltip": "<div id='antiTheft-tooltips'>Táto funkcia nefunguje, keď je počítač v režime dlhodobého spánku alebo je vypnutý. Skontrolujte nastavenia nasledujúcich akcií:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>akcie pri zatvorení krytu</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>akcia pri kriticky vybitej/takmer vybitej batérii</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>akcia pri stlačení tlačidla napájania</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>funkcia pri stlačení tlačidla spánku</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>nastavenia časového limitu prechodu z režimu nečinnosti do režimu dlhodobého spánku</li></ul></div>V opačnom prípade sa nespustí budík, ani sa nedá fotografovať.</div>",
+                "desc": "<p id='antiTheft-describe-one' role='text'>Keď povolíte túto funkciu, zariadenie začne vydávať zvukový signál, keď je obrazovka uzamknutá a zistí sa pohyb, najmä vo verejnom priestore.</p><p id='antiTheft-describe-two' role='text'>Ak chcete toto upozornenie zrušiť, prihláste sa do systému Windows.</p>",
                 "note": {
                     "description": "Po úspešnom prihlásení do systému sa táto funkcia automaticky vypne. Ak ju chcete používať, musíte ju znova povoliť."
                 },
@@ -3455,9 +3459,6 @@
                 "signupButton": "SIGN UP",
                 "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
-            "tune": "{{tune}} ISSUES",
-            "boost": "{{boost}} ISSUES",
-            "secure": "{{secure}} ISSUES",
             "tunepc": {
                 "accumulatedjunkscannedareas": {
                     "area1": "Scanned for junk in 85 locations",
@@ -3715,7 +3716,11 @@
                         "area6": "Validated in cloud remediation engine"
                     }
                 }
-            }
+            },
+            "issues": "ISSUES",
+            "tuneIssueCount": "{{tune}}",
+            "boostIssueCount": "{{boost}}",
+            "secureIssueCount": "{{secure}}"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your ",
@@ -3787,7 +3792,9 @@
             },
             "commentTip": "Shout what you love and whisper what you hate.",
             "comments": "Please leave your comments here..."
-        }
+        },
+        "auto": "Auto",
+        "manual": "Manual"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

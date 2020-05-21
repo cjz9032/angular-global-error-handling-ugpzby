@@ -299,11 +299,12 @@
 									[isSwitchChecked]="cameraPrivacyModeStatus.status"
 									[isDisabled]="shouldCameraSectionDisabled"
 									[showLoaderState]="cameraPrivacyModeStatus.isLoading"
-									[caption]= "'device.deviceSettings.displayCamera.camera.cameraPrivacy.tooltip' | translate">
+									[caption]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.tooltip' | translate">
 									<div class="row notemar">
 										<div class="col-12 pr-0 pl-5">
 											<div class="row permission-note">
-												<div class="col-12 well d-flex border-bottom-camera-privacy-note" *ngIf="hideNote">
+												<div class="col-12 well d-flex border-bottom-camera-privacy-note"
+													*ngIf="hideNote">
 													<div class="pr-0">
 														<p class="mb-0 mt-auto"
 															id="camera-privacy-mode-note"
@@ -321,9 +322,11 @@
 													</div>
 												</div>
 												<div class="well">
-													<p class="mb-0"
-													id="device-settings-camera-access-enabled-note"
-													[innerHTML] = "'device.deviceSettings.displayCamera.camera.cameraPrivacy.cameraPrivacyAccessNote' | translate"></p>
+													<p class="mb-0 boldColor"
+														role="heading"
+														id="device-settings-camera-access-enabled-note"
+														[innerHTML]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.cameraPrivacyAccessNote' | translate">
+													</p>
 												</div>
 											</div>
 										</div>

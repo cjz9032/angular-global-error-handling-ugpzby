@@ -46,7 +46,8 @@
                     "ramOverlock": "Υπερχρονισμός RAM",
                     "popup": {
                         "text": "Η αλλαγή θα εφαρμοστεί μετά την επανεκκίνηση του υπολογιστή.",
-                        "button": "OK"
+                        "button": "OK",
+                        "title": "system restart is required"
                     },
                     "driverPopup": {
                         "headerText": "Απαιτείται εγκατάσταση του προγράμματος οδήγησης",
@@ -70,6 +71,9 @@
                     },
                     "lightingColorMessage": {
                         "text": "Η επιλογή χρώματος δεν είναι διαθέσιμη για τον σκοπό αυτό."
+                    },
+                    "helpPopup": {
+                        "title": "Legion Edge Help"
                     }
                 },
                 "systemTools": {
@@ -2093,8 +2097,8 @@
             },
             "superResolution": {
                 "title": "Αναβάθμιση ανάλυσης βίντεο",
-                "desc": "<p><label>Αυτή η δυνατότητα αναβαθμίζει την εμπειρία αναπαραγωγής βίντεο βελτιώνοντας την ανάλυση βίντεο. Λειτουργεί ιδίως όταν η ανάλυση του βίντεο είναι κακή.</label></p> <p><label>Αυτή η λειτουργία ίσως επηρεάσει τη διάρκεια ζωής και τη θερμοκρασία της μπαταρίας και ίσως προκαλέσει θορύβους. Μη χρησιμοποιείτε τη δυνατότητα αυτή σε λειτουργία DC (λειτουργία μπαταρίας). Διαφορετικά, θα επιταχύνει την κατανάλωση ενέργειας και θα μειώσει τη διάρκεια ζωής της μπαταρίας.</label></p>",
-                "tooltip": "<p>Αυτό το χαρακτηριστικό λειτουργεί μόνο με τα ακόλουθα προγράμματα αναπαραγωγής βίντεο:<br>Windows Media Player<br>Πρόγραμμα αναπαραγωγής με βάση το Chrome<br>PotPlayer</p><p class='srTooltip'>Για οδηγίες σχετικά με τον τρόπο ενεργοποίησης αυτού του χαρακτηριστικού στο PotPlayer, ανατρέξτε στον Οδηγό Χρήσης που συνοδεύει τον υπολογιστή σας.</p>",
+                "desc": "<p id='sr-describe-one' role='text'>Αυτή η δυνατότητα αναβαθμίζει την εμπειρία αναπαραγωγής βίντεο βελτιώνοντας την ανάλυση βίντεο. Λειτουργεί ιδίως όταν η ανάλυση του βίντεο είναι κακή.</p><p id='sr-describe-two' role='text'>Αυτή η λειτουργία ίσως επηρεάσει τη διάρκεια ζωής και τη θερμοκρασία της μπαταρίας και ίσως προκαλέσει θορύβους. Μη χρησιμοποιείτε τη δυνατότητα αυτή σε λειτουργία DC (λειτουργία μπαταρίας). Διαφορετικά, θα επιταχύνει την κατανάλωση ενέργειας και θα μειώσει τη διάρκεια ζωής της μπαταρίας.</p>",
+                "tooltip": "<p id='sr-tip-one' role='text'>Αυτό το χαρακτηριστικό λειτουργεί μόνο με τα ακόλουθα προγράμματα αναπαραγωγής βίντεο:<br>Windows Media Player<br>Πρόγραμμα αναπαραγωγής με βάση το Chrome<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Για οδηγίες σχετικά με τον τρόπο ενεργοποίησης αυτού του χαρακτηριστικού στο PotPlayer, ανατρέξτε στον Οδηγό Χρήσης που συνοδεύει τον υπολογιστή σας.</p>",
                 "note": {
                     "description": "Αυτή η δυνατότητα δεν λειτουργεί όταν:",
                     "description1": "Η θερμοκρασία της CPU είναι πολύ υψηλή.",
@@ -2106,8 +2110,8 @@
             "antiTheft": {
                 "heading": "Έξυπνη ανίχνευση",
                 "title": "Έξυπνος συναγερμός κίνησης",
-                "tooltip": "<div>Αυτή η δυνατότητα δεν λειτουργεί, όταν ο υπολογιστής είναι σε κατάσταση αδρανοποίησης ή απενεργοποιημένος. Ελέγξτε τις ρυθμίσεις στις εξής ενέργειες:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>ενέργειες του καπακιού κλεισίματος</li><li>ενέργεια κρίσιμου/χαμηλού επιπέδου φόρτισης μπαταρίας</li><li>ενέργεια κουμπιού τροφοδοσίας</li><li>ενέργεια κουμπιού αναστολής λειτουργίας</li><li>ρυθμίσεις χρονικού ορίου αδράνειας για μετάβαση του συστήματος σε κατάσταση αδρανοποίησης</li></ul></div>Διαφορετικά, δεν θα ενεργοποιήσει συναγερμό, ούτε τη λήψη φωτογραφιών.</div>",
-                "desc": "<p><label>Όταν αυτή τη δυνατότητα είναι ενεργοποιημένη, η συσκευή θα αρχίσει να ηχεί όταν η οθόνη είναι κλειδωμένη και εντοπιστούν κινήσεις ιδίως σε δημόσιο χώρο.</label></p> <p><label>Για να απορρίψετε τον συναγερμό, συνδεθείτε στα Windows.</label></p>",
+                "tooltip": "<div id='antiTheft-tooltips'>Αυτή η δυνατότητα δεν λειτουργεί, όταν ο υπολογιστής είναι σε κατάσταση αδρανοποίησης ή απενεργοποιημένος. Ελέγξτε τις ρυθμίσεις στις εξής ενέργειες:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>ενέργειες του καπακιού κλεισίματος</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>ενέργεια κρίσιμου/χαμηλού επιπέδου φόρτισης μπαταρίας</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>ενέργεια κουμπιού τροφοδοσίας</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>ενέργεια κουμπιού αναστολής λειτουργίας</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>ρυθμίσεις χρονικού ορίου αδράνειας για μετάβαση του συστήματος σε κατάσταση αδρανοποίησης</li></ul></div>Διαφορετικά, δεν θα ενεργοποιήσει συναγερμό, ούτε τη λήψη φωτογραφιών.</div>",
+                "desc": "<p id='antiTheft-describe-one' role='text'>Όταν αυτή τη δυνατότητα είναι ενεργοποιημένη, η συσκευή θα αρχίσει να ηχεί όταν η οθόνη είναι κλειδωμένη και εντοπιστούν κινήσεις ιδίως σε δημόσιο χώρο.</p><p id='antiTheft-describe-two' role='text'>Για να απορρίψετε τον συναγερμό, συνδεθείτε στα Windows.</p>",
                 "note": {
                     "description": "Μόλις συνδεθείτε στο σύστημα με επιτυχία, αυτή η δυνατότητα θα απενεργοποιηθεί αυτόματα. Θα πρέπει να την ενεργοποιήσετε ξανά για να τη χρησιμοποιήσετε."
                 },
@@ -3455,9 +3459,6 @@
                 "signupButton": "SIGN UP",
                 "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
-            "tune": "{{tune}} ISSUES",
-            "boost": "{{boost}} ISSUES",
-            "secure": "{{secure}} ISSUES",
             "tunepc": {
                 "accumulatedjunkscannedareas": {
                     "area1": "Scanned for junk in 85 locations",
@@ -3715,7 +3716,11 @@
                         "area6": "Validated in cloud remediation engine"
                     }
                 }
-            }
+            },
+            "issues": "ISSUES",
+            "tuneIssueCount": "{{tune}}",
+            "boostIssueCount": "{{boost}}",
+            "secureIssueCount": "{{secure}}"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your ",
@@ -3787,7 +3792,9 @@
             },
             "commentTip": "Shout what you love and whisper what you hate.",
             "comments": "Please leave your comments here..."
-        }
+        },
+        "auto": "Auto",
+        "manual": "Manual"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

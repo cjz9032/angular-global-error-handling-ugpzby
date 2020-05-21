@@ -14,6 +14,7 @@ import { VoipErrorCodeEnum } from '../../../../../enums/voip.enum';
 import { BacklightLevelEnum } from './backlight/backlight.enum';
 import { BacklightService } from './backlight/backlight.service';
 import { TopRowFunctionsIdeapadService } from './top-row-functions-ideapad/top-row-functions-ideapad.service';
+import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-input-accessory',
@@ -70,13 +71,15 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 		private topRowFunctionsIdeapadService: TopRowFunctionsIdeapadService,
 		private commonService: CommonService,
 		private logger: LoggerService,
-		private backlightService: BacklightService
+		private backlightService: BacklightService,
+		private batteryService: BatteryDetailService
 	) {
 	}
 
 	ngOnInit() {
 		this.commonService.checkPowerPageFlagAndHide();
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
+		this.batteryService.getBatterySettings();
 		if (this.machineType === 1) {
 			this.initDataFromCache();
 			if (this.keyboardCompatibility) {

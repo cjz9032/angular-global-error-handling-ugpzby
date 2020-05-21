@@ -14,6 +14,7 @@ import { LoggerService } from '../logger/logger.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { throwError } from 'rxjs';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ContentSource } from 'src/app/enums/content.enum';
 
 const httpOptions = {
 	headers: new HttpHeaders({
@@ -290,7 +291,7 @@ export class CMSService {
 		});
 	}
 
-	getOneCMSContent(results, template, position): FeatureContent[] {
+	getOneCMSContent(results, template, position, dataSource = ContentSource.CMS): FeatureContent[] {
 		return results.filter((record) => {
 			return (
 				record.Template === template &&
@@ -304,6 +305,7 @@ export class CMSService {
 			try {
 				record.Title = this.sanitizer.sanitize(SecurityContext.HTML, record.Title);
 				record.Description = this.sanitizer.sanitize(SecurityContext.HTML, record.Description);
+				record.DataSource = dataSource;
 			} catch (ex) {
 				this.logger.error('CMSService.sanitize error:', ex.message);
 				return false;

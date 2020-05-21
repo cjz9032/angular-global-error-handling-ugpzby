@@ -22,11 +22,9 @@
 				</div>
 				<div class="my-3">
 					<div class="col-12 pl-0 d-flex methods-block"
-						role="radiogroup"
-						tabindex="0"
 						aria-label=" Function key selection list, select using arrow keys">
 						<!-- <div class="mr-5"> -->
-							<!-- <vtr-ui-rectangle-radio [radioId]="'radio1'"
+						<!-- <vtr-ui-rectangle-radio [radioId]="'radio1'"
 								[checked]="hotkey$ | async"
 								[group]="'top-row-functions-ideapad-radio'"
 								[label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.sFunKey' | translate"
@@ -34,7 +32,7 @@
 								(change)="update$.next(keyType.HOTKEY)"
 								[value]="keyType.HOTKEY">
 							</vtr-ui-rectangle-radio> -->
-							<!-- <vtr-ui-circle-radio-with-checkbox [theme]="'white'"
+						<!-- <vtr-ui-circle-radio-with-checkbox [theme]="'white'"
 								[radioId]="'radio1'"
 								[group]="'top-row-functions-ideapad-radio'"
 								[checked]="hotkey$ | async"
@@ -45,7 +43,7 @@
 							</vtr-ui-circle-radio-with-checkbox>
 						</div>
 						<div> -->
-							<!-- <vtr-ui-rectangle-radio [radioId]="'radio2'"
+						<!-- <vtr-ui-rectangle-radio [radioId]="'radio2'"
 								[group]="'top-row-functions-ideapad-radio'"
 								[checked]="fnkey$ | async"
 								[label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.fnKey' | translate"
@@ -54,7 +52,7 @@
 								[value]="keyType.FNKEY">
 							</vtr-ui-rectangle-radio> -->
 
-							<!-- <vtr-ui-circle-radio-with-checkbox [theme]="'white'"
+						<!-- <vtr-ui-circle-radio-with-checkbox [theme]="'white'"
 								[radioId]="'radio2'"
 								[group]="'top-row-functions-ideapad-radio'"
 								[checked]="fnkey$ | async"
@@ -65,7 +63,7 @@
 								[processLabel]="false">
 							</vtr-ui-circle-radio-with-checkbox> -->
 						<!-- </div> -->
-						<vtr-ui-circle-radio-with-checkbox-list [groupName]="'optimize-microphone-radio-group'"
+						<vtr-ui-circle-radio-with-checkbox-list [groupName]="'top-row-function-radio-group'"
 							(optionChange)="onFunctionLockRadioChange($event)"
 							[radioDetails]="functionLockUIModel">
 						</vtr-ui-circle-radio-with-checkbox-list>

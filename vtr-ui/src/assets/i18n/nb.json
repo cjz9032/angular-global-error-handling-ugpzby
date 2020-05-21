@@ -46,7 +46,8 @@
                     "ramOverlock": "RAM-overklokking",
                     "popup": {
                         "text": "Endringen vil være effektive etter at du har startet maskinen på nytt.",
-                        "button": "OK"
+                        "button": "OK",
+                        "title": "system restart is required"
                     },
                     "driverPopup": {
                         "headerText": "Installasjon av driver er påkrevd",
@@ -70,6 +71,9 @@
                     },
                     "lightingColorMessage": {
                         "text": "Valg av farge er ikke tilgjengelig for denne effekten."
+                    },
+                    "helpPopup": {
+                        "title": "Legion Edge Help"
                     }
                 },
                 "systemTools": {
@@ -2093,8 +2097,8 @@
             },
             "superResolution": {
                 "title": "Oppskalering av videooppløsning",
-                "desc": "<p><label>Denne funksjonen forbedrer opplevelsen av videoavspilling ved å forbedre videooppløsningen. Den fungerer spesielt når videoen har dårlig oppløsning.</label></p> <p><label>Denne funksjonen kan påvirke batteritiden, batteritemperaturen og forårsake støy. Ikke bruk i likestrømmodus (batterimodus). Ellers vil det øke strømforbruket og forkorte batteriets levetid.</label></p>",
-                "tooltip": "<p>Denne funksjonen fungerer bare for videospillerne nedenfor:<br>Windows Media Player<br>Chrome-basert spiller<br>PotPlayer</p><p class='srTooltip'>Hvis du vil ha informasjon om hvordan du aktiverer denne funksjonen på PotPlayer, kan du se i brukerveiledningen som følger med datamaskinen.</p>",
+                "desc": "<p id='sr-describe-one' role='text'>Denne funksjonen forbedrer opplevelsen av videoavspilling ved å forbedre videooppløsningen. Den fungerer spesielt når videoen har dårlig oppløsning.</p><p id='sr-describe-two' role='text'>Denne funksjonen kan påvirke batteritiden, batteritemperaturen og forårsake støy. Ikke bruk i likestrømmodus (batterimodus). Ellers vil det øke strømforbruket og forkorte batteriets levetid.</p>",
+                "tooltip": "<p id='sr-tip-one' role='text'>Denne funksjonen fungerer bare for videospillerne nedenfor:<br>Windows Media Player<br>Chrome-basert spiller<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Hvis du vil ha informasjon om hvordan du aktiverer denne funksjonen på PotPlayer, kan du se i brukerveiledningen som følger med datamaskinen.</p>",
                 "note": {
                     "description": "Denne funksjonen fungerer ikke når følgende er tilfelle:",
                     "description1": "CPU-temperaturen er for høy.",
@@ -2106,8 +2110,8 @@
             "antiTheft": {
                 "heading": "Intelligent føler",
                 "title": "Smartbevegelsesalarm",
-                "tooltip": "<div>Denne funksjonen fungerer ikke når datamaskinen er i dvalemodus eller er slått av. Kontroller innstillingene i disse handlingene:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>handlinger til lokket</li><li>handling ved kritisk lavt / svakt batteri</li><li>handling for strømbryter</li><li>handling for hvilemodus</li><li>tidsavbruddinnstillinger for dvalemodus</li></ul></div>Ellers vil det ikke utløses noen alarm eller blir tatt noen bilder.</div>",
-                "desc": "<p><label>Når du aktiverer denne funksjonen, avgir enheten et lydsignal når skjermen er låst og det oppdages bevegelse, spesielt på offentlige steder.</label></p> <p><label>Logg på Windows for å slå av alarmen.</label></p>",
+                "tooltip": "<div id='antiTheft-tooltips'>Denne funksjonen fungerer ikke når datamaskinen er i dvalemodus eller er slått av. Kontroller innstillingene i disse handlingene:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>handlinger til lokket</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>handling ved kritisk lavt / svakt batteri</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>handling for strømbryter</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>handling for hvilemodus</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>tidsavbruddinnstillinger for dvalemodus</li></ul></div>Ellers vil det ikke utløses noen alarm eller blir tatt noen bilder.</div>",
+                "desc": "<p id='antiTheft-describe-one' role='text'>Når du aktiverer denne funksjonen, avgir enheten et lydsignal når skjermen er låst og det oppdages bevegelse, spesielt på offentlige steder.</p><p id='antiTheft-describe-two' role='text'>Logg på Windows for å slå av alarmen.</p>",
                 "note": {
                     "description": "Når du har logget på systemet, vil denne funksjonen bli slått av automatisk. Du må aktivere den på nytt for å bruke den."
                 },
@@ -3455,9 +3459,6 @@
                 "signupButton": "SIGN UP",
                 "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
-            "tune": "{{tune}} ISSUES",
-            "boost": "{{boost}} ISSUES",
-            "secure": "{{secure}} ISSUES",
             "tunepc": {
                 "accumulatedjunkscannedareas": {
                     "area1": "Scanned for junk in 85 locations",
@@ -3715,7 +3716,11 @@
                         "area6": "Validated in cloud remediation engine"
                     }
                 }
-            }
+            },
+            "issues": "ISSUES",
+            "tuneIssueCount": "{{tune}}",
+            "boostIssueCount": "{{boost}}",
+            "secureIssueCount": "{{secure}}"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your ",
@@ -3787,7 +3792,9 @@
             },
             "commentTip": "Shout what you love and whisper what you hate.",
             "comments": "Please leave your comments here..."
-        }
+        },
+        "auto": "Auto",
+        "manual": "Manual"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

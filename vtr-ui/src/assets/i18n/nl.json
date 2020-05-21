@@ -46,7 +46,8 @@
                     "ramOverlock": "RAM overklok",
                     "popup": {
                         "text": "De wijziging zal effectief zijn nadat u de computer opnieuw hebt opgestart.",
-                        "button": "OK"
+                        "button": "OK",
+                        "title": "system restart is required"
                     },
                     "driverPopup": {
                         "headerText": "Installatie van stuurprogramma vereist",
@@ -70,6 +71,9 @@
                     },
                     "lightingColorMessage": {
                         "text": "Het selecteren van kleur is niet beschikbaar voor dit effect."
+                    },
+                    "helpPopup": {
+                        "title": "Legion Edge Help"
                     }
                 },
                 "systemTools": {
@@ -2093,8 +2097,8 @@
             },
             "superResolution": {
                 "title": "Schaalverhoging beeldschermresolutie",
-                "desc": "<p><label>Deze functie verbetert de beleving van het kijken van video's door de beeldschermresolutie te verbeteren. Dit werkt het beste als de video een lage resolutie heeft.</label></p> <p><label>Deze functie kan invloed hebben op de levensduur en temperatuur van de batterij en kan ruis veroorzaken. Niet gebruiken in gelijkstroommodus (batterijstroom). anders neemt het stroomverbruik toe en gaat de batterij minder lang mee.</label></p>",
-                "tooltip": "<p>Deze functie werkt alleen voor volgende videospelers:<br>Windows Media Player<br>Chrome-speler<br>PotPlayer</p><p class='srTooltip'>Instructies voor het inschakelen van deze functie in PotPlayer vindt u in de gebruikershandleiding van de computer.</p>",
+                "desc": "<p id='sr-describe-one' role='text'>Deze functie verbetert de beleving van het kijken van video's door de beeldschermresolutie te verbeteren. Dit werkt het beste als de video een lage resolutie heeft.</p><p id='sr-describe-two' role='text'>Deze functie kan invloed hebben op de levensduur en temperatuur van de batterij en kan ruis veroorzaken. Niet gebruiken in gelijkstroommodus (batterijstroom). anders neemt het stroomverbruik toe en gaat de batterij minder lang mee.</p>",
+                "tooltip": "<p id='sr-tip-one' role='text'>Deze functie werkt alleen voor volgende videospelers:<br>Windows Media Player<br>Chrome-speler<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Instructies voor het inschakelen van deze functie in PotPlayer vindt u in de gebruikershandleiding van de computer.</p>",
                 "note": {
                     "description": "Deze functie werkt niet als:",
                     "description1": "De CPU-temperatuur te hoog is.",
@@ -2106,8 +2110,8 @@
             "antiTheft": {
                 "heading": "Intelligente sensoren",
                 "title": "Slim bewegingsalarm",
-                "tooltip": "<div>Deze functie werkt niet als de computer in de sluimerstand staat of is uitgeschakeld. Schakel de instellingen voor de volgende acties in:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>acties voor sluiten van het deksel</li><li>actie voor bijna lege batterij</li><li>actie voor de aan/uit-knop</li><li>actie voor de slaapstandknop</li><li>instellingen voor time-out bij inactiviteit naar sluimerstand</li></ul></div>Als je deze niet instelt, worden geen waarschuwingen geactiveerd of foto's genomen.</div>",
-                "desc": "<p><label>Als u deze functie inschakelt, begint het apparaat te piepen wanneer uw scherm vergrendeld is en er bewegingen worden gedetecteerd, vooral in openbare omgevingen.</label></p> <p><label>Meld u aan bij Windows om het alarm te sluiten.</label></p>",
+                "tooltip": "<div id='antiTheft-tooltips'>Deze functie werkt niet als de computer in de sluimerstand staat of is uitgeschakeld. Schakel de instellingen voor de volgende acties in:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>acties voor sluiten van het deksel</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>actie voor bijna lege batterij</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>actie voor de aan/uit-knop</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>actie voor de slaapstandknop</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>instellingen voor time-out bij inactiviteit naar sluimerstand</li></ul></div>Als je deze niet instelt, worden geen waarschuwingen geactiveerd of foto's genomen.</div>",
+                "desc": "<p id='antiTheft-describe-one' role='text'>Als u deze functie inschakelt, begint het apparaat te piepen wanneer uw scherm vergrendeld is en er bewegingen worden gedetecteerd, vooral in openbare omgevingen.</p><p id='antiTheft-describe-two' role='text'>Meld u aan bij Windows om het alarm te sluiten.</p>",
                 "note": {
                     "description": "Als u eenmaal bij het systeem bent aangemeld, wordt deze functie automatisch uitgeschakeld. Om deze functie weer te gebruiken, moet u de functie opnieuw inschakelen."
                 },
@@ -3455,9 +3459,6 @@
                 "signupButton": "SIGN UP",
                 "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
-            "tune": "{{tune}} ISSUES",
-            "boost": "{{boost}} ISSUES",
-            "secure": "{{secure}} ISSUES",
             "tunepc": {
                 "accumulatedjunkscannedareas": {
                     "area1": "Scanned for junk in 85 locations",
@@ -3715,7 +3716,11 @@
                         "area6": "Validated in cloud remediation engine"
                     }
                 }
-            }
+            },
+            "issues": "ISSUES",
+            "tuneIssueCount": "{{tune}}",
+            "boostIssueCount": "{{boost}}",
+            "secureIssueCount": "{{secure}}"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your ",
@@ -3787,7 +3792,9 @@
             },
             "commentTip": "Shout what you love and whisper what you hate.",
             "comments": "Please leave your comments here..."
-        }
+        },
+        "auto": "Auto",
+        "manual": "Manual"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

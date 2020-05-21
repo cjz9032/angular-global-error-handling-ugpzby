@@ -46,7 +46,8 @@
                     "ramOverlock": "Overclock della RAM",
                     "popup": {
                         "text": "La modifica sarà effettiva dopo il riavvio del computer.",
-                        "button": "OK"
+                        "button": "OK",
+                        "title": "system restart is required"
                     },
                     "driverPopup": {
                         "headerText": "Installazione driver richiesta",
@@ -70,6 +71,9 @@
                     },
                     "lightingColorMessage": {
                         "text": "Scelta del colore non disponibile per questo effetto."
+                    },
+                    "helpPopup": {
+                        "title": "Legion Edge Help"
                     }
                 },
                 "systemTools": {
@@ -2093,8 +2097,8 @@
             },
             "superResolution": {
                 "title": "Upscaling della risoluzione video",
-                "desc": "<p><label>Questa funzione migliora l'esperienza della riproduzione video aumentando la risoluzione video. Funziona soprattutto in caso di scarsa risoluzione video.</label></p> <p><label>Questa funzione potrebbe influire sulla durata e la temperatura della batteria, aumentando la rumorosità del dispositivo. Non utilizzarla in modalità CC (modalità batteria). altrimenti accelererà il consumo energetico e ridurrà la durata della batteria.</label></p>",
-                "tooltip": "<p>Questa funzione è disponibile solo per i seguenti lettori video:<br>Windows Media Player<br>Lettore basato su Chrome<br>PotPlayer</p><p class='srTooltip'>Per istruzioni su come abilitare questa funzione su PotPlayer, consultare la guida per l'utente fornita con il computer.</p>",
+                "desc": "<p id='sr-describe-one' role='text'>Questa funzione migliora l'esperienza della riproduzione video aumentando la risoluzione video. Funziona soprattutto in caso di scarsa risoluzione video.</p><p id='sr-describe-two' role='text'>Questa funzione potrebbe influire sulla durata e la temperatura della batteria, aumentando la rumorosità del dispositivo. Non utilizzarla in modalità CC (modalità batteria). altrimenti accelererà il consumo energetico e ridurrà la durata della batteria.</p>",
+                "tooltip": "<p id='sr-tip-one' role='text'>Questa funzione è disponibile solo per i seguenti lettori video:<br>Windows Media Player<br>Lettore basato su Chrome<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Per istruzioni su come abilitare questa funzione su PotPlayer, consultare la guida per l'utente fornita con il computer.</p>",
                 "note": {
                     "description": "Questa funzione non può essere utilizzata quando:",
                     "description1": "La temperatura della CPU è elevata.",
@@ -2106,8 +2110,8 @@
             "antiTheft": {
                 "heading": "Rilevamento intelligente",
                 "title": "Avviso Smart Motion",
-                "tooltip": "<div>Questa funzione non è disponibile quando il computer è in modalità Ibernazione o è spento. Controllare le impostazioni nelle seguenti azioni:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>azioni del coperchio di chiusura</li><li>azione livello di carica batteria critico/basso</li><li>azione pulsante di alimentazione</li><li>azione pulsante Sospensione</li><li>impostazioni timeout inattività per la modalità Ibernazione</li></ul></div>In caso contrario, l'allarme non verrà attivato, né sarà possibile scattare foto.</div>",
-                "desc": "<p><label>Quando si abilita questa funzione, il dispositivo inizierà a emettere un segnale acustico quando lo schermo è bloccato e vengono rilevati movimenti, soprattutto in un luogo pubblico.</label></p> <p><label>Per annullare l'allarme, accedere a Windows.</label></p>",
+                "tooltip": "<div id='antiTheft-tooltips'>Questa funzione non è disponibile quando il computer è in modalità Ibernazione o è spento. Controllare le impostazioni nelle seguenti azioni:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>azioni del coperchio di chiusura</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>azione livello di carica batteria critico/basso</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>azione pulsante di alimentazione</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>azione pulsante Sospensione</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>impostazioni timeout inattività per la modalità Ibernazione</li></ul></div>In caso contrario, l'allarme non verrà attivato, né sarà possibile scattare foto.</div>",
+                "desc": "<p id='antiTheft-describe-one' role='text'>Quando si abilita questa funzione, il dispositivo inizierà a emettere un segnale acustico quando lo schermo è bloccato e vengono rilevati movimenti, soprattutto in un luogo pubblico.</p><p id='antiTheft-describe-two' role='text'>Per annullare l'allarme, accedere a Windows.</p>",
                 "note": {
                     "description": "Una volta effettuato l'accesso al sistema, questa funzione verrà disattivata automaticamente. Per utilizzare la funzione è necessario abilitarla nuovamente."
                 },
@@ -3455,9 +3459,6 @@
                 "signupButton": "SIGN UP",
                 "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
-            "tune": "{{tune}} ISSUES",
-            "boost": "{{boost}} ISSUES",
-            "secure": "{{secure}} ISSUES",
             "tunepc": {
                 "accumulatedjunkscannedareas": {
                     "area1": "Scanned for junk in 85 locations",
@@ -3715,7 +3716,11 @@
                         "area6": "Validated in cloud remediation engine"
                     }
                 }
-            }
+            },
+            "issues": "ISSUES",
+            "tuneIssueCount": "{{tune}}",
+            "boostIssueCount": "{{boost}}",
+            "secureIssueCount": "{{secure}}"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your ",
@@ -3787,7 +3792,9 @@
             },
             "commentTip": "Shout what you love and whisper what you hate.",
             "comments": "Please leave your comments here..."
-        }
+        },
+        "auto": "Auto",
+        "manual": "Manual"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

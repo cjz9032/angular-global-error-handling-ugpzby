@@ -232,8 +232,8 @@
 			padding-top: 0.5rem;
 
 			a {
-				padding-bottom: .2rem;
-				border-bottom: .2rem solid $main;
+				padding-bottom: 0.2rem;
+				border-bottom: 0.2rem solid $main;
 				&:hover {
 					text-decoration: none;
 					color: $main;
@@ -253,7 +253,7 @@
 
 	.feature-note {
 		background-color: $grey_lighter;
-		border:  0.1rem solid $note_border;
+		border: 0.1rem solid $note_border;
 		width: 100%;
 		p {
 			font-size: $fontsize_xs;
@@ -295,6 +295,7 @@
 	.voip-keys-block {
 		&:focus {
 			@include outline-blue;
+			outline-width: 0;
 		}
 	}
 }
@@ -306,10 +307,10 @@
 	vertical-align: middle;
 
 	&.icon-s4b {
-		background: url('~/assets/images/S4B_2016.png') center/cover;
+		background: url("~/assets/images/S4B_2016.png") center/cover;
 	}
 	&.icon-teams {
-		background: url('~/assets/images/Microsoft_Teams_1.0.png') center/cover;
+		background: url("~/assets/images/Microsoft_Teams_1.0.png") center/cover;
 	}
 }
 
@@ -317,7 +318,7 @@
 	vtr-ui-rectangle-radio {
 		.label {
 			word-wrap: normal;
-			word-break: normal!important;
+			word-break: normal !important;
 		}
 		.app-icon {
 			display: inline-block;
@@ -328,10 +329,10 @@
 			height: 4rem;
 
 			&.icon-s4b {
-				background: url('~/assets/images/S4B_2016.png') center/cover;
+				background: url("~/assets/images/S4B_2016.png") center/cover;
 			}
 			&.icon-teams {
-				background: url('~/assets/images/Microsoft_Teams_1.0.png') center/cover;
+				background: url("~/assets/images/Microsoft_Teams_1.0.png") center/cover;
 			}
 		}
 	}

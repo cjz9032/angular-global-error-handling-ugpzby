@@ -36,7 +36,28 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
+	public StartSpecialKeyMonitor(installDirectory: string): Promise<boolean> {
+		try {
+			if (this.keyboardManager) {
+				return this.keyboardManager.StartSpecialKeyMonitor(installDirectory);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
 
+	}
+	public EndSpecialKeyMonitor(): Promise<boolean> {
+		try {
+			if (this.keyboardManager) {
+				return this.keyboardManager.EndSpecialKeyMonitor();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+
+	}
 	public AddApplicationOrFiles(selectedUDK: string, appSelectorType: string): Promise<any> {
 		try {
 			if (this.keyboardManager) {

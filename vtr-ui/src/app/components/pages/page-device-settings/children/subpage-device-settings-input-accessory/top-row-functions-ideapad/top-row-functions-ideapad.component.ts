@@ -21,12 +21,17 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 
 	update$ = new Subject<KeyType>();
 	private setSubscription: Subscription;
+	private hotKeySubscription: Subscription;
+	private functionKeySubscription: Subscription;
 
 	hotkey$: Observable<boolean>;
 	fnkey$: Observable<boolean>;
 	private fnLockStatus$: Observable<FnLockStatus>;
 	private fnLockSubject$: Subject<FnLockStatus> = new Subject<FnLockStatus>();
 	public functionLockUIModel: Array<UiCircleRadioWithCheckBoxListModel> = [];
+
+	private readonly functionKeyId = 'ideapad-function-key-radio-button';
+	private readonly specialKeyId = 'ideapad-special-key-radio-button';
 
 	constructor(
 		private topRowFunctionsIdeapadService: TopRowFunctionsIdeapadService,
@@ -104,13 +109,19 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 		if (this.setSubscription) {
 			this.setSubscription.unsubscribe();
 		}
+		if (this.hotKeySubscription) {
+			this.hotKeySubscription.unsubscribe();
+		}
+		if (this.functionKeySubscription) {
+			this.functionKeySubscription.unsubscribe();
+		}
 	}
 
 	updateFunctionLockUIModel() {
 		this.subscribeForDataChange();
 		this.functionLockUIModel = [];
 		this.functionLockUIModel.push({
-			componentId: `radio1`,
+			componentId: this.specialKeyId,
 			label: `device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.sFunKey`,
 			value: 'special-key',
 			isChecked: false,
@@ -121,7 +132,7 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 			processLabel: true,
 		});
 		this.functionLockUIModel.push({
-			componentId: `radio2`,
+			componentId: this.functionKeyId,
 			label: `device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.fnKey`,
 			value: 'function-key',
 			isChecked: false,
@@ -139,18 +150,17 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 				if (model.componentId === componentId) {
 					model.isChecked = value;
 				}
-				model.isChecked = false;
 			});
 		}
 	}
 
 	subscribeForDataChange() {
-		this.hotkey$.subscribe(value => {
-			this.updateFunctionLockValue('radio1', value);
+		this.hotKeySubscription = this.hotkey$.subscribe(value => {
+			this.updateFunctionLockValue(this.specialKeyId, value);
 		});
 
-		this.fnkey$.subscribe(value => {
-			this.updateFunctionLockValue('radio2', value);
+		this.functionKeySubscription = this.fnkey$.subscribe(value => {
+			this.updateFunctionLockValue(this.functionKeyId, value);
 		});
 	}
 
@@ -158,9 +168,9 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 	onFunctionLockRadioChange($event: UiCircleRadioWithCheckBoxListModel) {
 		if ($event) {
 			const componentId = $event.componentId.toLowerCase();
-			if (componentId === 'radio1') {
+			if (componentId === this.specialKeyId) {
 				this.update$.next(this.keyType.HOTKEY);
-			} else if (componentId === 'radio2') {
+			} else if (componentId === this.functionKeyId) {
 				this.update$.next(this.keyType.FNKEY);
 			}
 		}

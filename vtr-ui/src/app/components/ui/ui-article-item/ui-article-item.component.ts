@@ -4,6 +4,7 @@ import { CardService } from 'src/app/services/card/card.service';
 import { SupportContentStatus } from 'src/app/enums/support-content-status.enum';
 import { MetricService } from 'src/app/services/metric/metric.service';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
+import { ContentSource } from 'src/app/enums/content.enum';
 
 @Component({
 	selector: 'vtr-ui-article-item',
@@ -16,7 +17,8 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit {
 	@Input() index: any;
 	@Input() tabIndex: number;
 	@Input() articleType: string;
-	@Input() order: number | string;
+	@Input() disableContentDisplay: boolean;
+
 	@ViewChild('articleItemDiv', { static: true }) articleItemDiv: any;
 
 	private _item: FeatureContent;
@@ -39,10 +41,18 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit {
 	}
 
 	@Input() set item(itemValue: any) {
-		this._item = itemValue;
-		if (!itemValue.isLocal) {
-			this.metricsService.sendContentDisplay(itemValue.Id, itemValue.DataSource, this.order as string);
+		if (itemValue) {
+			const preItem = this.item;
+			setTimeout(()=> {	// use settimeout to defer the code running to make sure that disableContentDisplay was initialized when it was run
+				if (!this.disableContentDisplay
+					&& itemValue.DataSource
+					&& itemValue.DataSource !== ContentSource.Local
+					&& (!preItem || preItem !== itemValue.Id)) {
+					this.metricsService.sendContentDisplay(itemValue.Id, itemValue.DataSource, this.index as string);
+				}
+			}, 0);
 		}
+		this._item = itemValue;
 	}
 
 	get item() {

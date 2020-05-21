@@ -55,9 +55,9 @@ export class UiCustomSliderComponent implements OnInit {
 	}
 
 	// ngAfterViewInit() {
-		// if (this.sliderBubble) {
-		// 	this.setBubbleValue(this.rangeSlider.nativeElement, this.sliderBubble.nativeElement);
-		// }
+	// if (this.sliderBubble) {
+	// 	this.setBubbleValue(this.rangeSlider.nativeElement, this.sliderBubble.nativeElement);
+	// }
 	// }
 
 	// private calculateTicks() {
@@ -125,5 +125,21 @@ export class UiCustomSliderComponent implements OnInit {
 		this.tipValue = `${this.value}${this.tipSuffix}`;
 		// sliderBubble.innerHTML = `${this.value}${this.tipSuffix}`;
 		// console.log({ newPlace, value, newPoint, bubbleOffset, width });
+	}
+	// added for narrator reading
+	getLegend() {
+		// let position= this.min===0 && this.step
+		const val = (this.min === 0 ? this.step + this.value : this.value);
+		const position = val / this.step;
+		let legend = this.minLegend;
+		switch (position) {
+			case 1: legend = this.minLegend
+				break;
+			case 2: legend = this.midLegend?.length > 0 ? this.midLegend : legend;
+				break;
+			case 3: legend = this.maxLegend?.length > 0 ? this.maxLegend : this.midLegend;
+				break;
+		}
+		return legend;
 	}
 }

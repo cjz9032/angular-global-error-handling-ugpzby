@@ -120,7 +120,7 @@
 
 		[role="radio"][aria-checked="true"] {
 			box-shadow: $radio-selected-box-shadow;
-			&.focus {
+			&.focus:not(:active) {
 				box-shadow: $radio-focus-box-shadow !important;
 			}
 

@@ -47,8 +47,9 @@
 					</div>
 					<div class="item-right" *ngIf="item.information">
 						<a href="javascript:void(0)"
+							role="img"
+							[attr.aria-label]="item.name + 'question-mark, which reads: ' + item.information"
 							(click)="getInformation(item.information)"
-							aria-label="test-description-question-mark"
 							class="result-code-icon"
 							triggers="click:blur"
 							[ngbTooltip]="tooltipRefItem"

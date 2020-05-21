@@ -46,7 +46,8 @@
                     "ramOverlock": "RAM Hız Aşırtma",
                     "popup": {
                         "text": "Değişiklik, bilgisayar yeniden başlatıldıktan sonra etkili olacaktır.",
-                        "button": "TAMAM"
+                        "button": "TAMAM",
+                        "title": "system restart is required"
                     },
                     "driverPopup": {
                         "headerText": "Sürücü Kurulumu Gerekli",
@@ -70,6 +71,9 @@
                     },
                     "lightingColorMessage": {
                         "text": "Bu efekt için renk seçimi yapılamıyor."
+                    },
+                    "helpPopup": {
+                        "title": "Legion Edge Help"
                     }
                 },
                 "systemTools": {
@@ -2093,8 +2097,8 @@
             },
             "superResolution": {
                 "title": "Video çözünürlüğünü yükseltme",
-                "desc": "<p><label>Bu özellik, video çözünürlüğünü iyileştirerek video oynatma deneyimini geliştirir. Özellikle video düşük çözünürlükte olduğunda çalışır.</label></p> <p><label>Bu işlev pil ömrünü, pil sıcaklığını etkileyebilir ve gürültüye neden olabilir. Lütfen DC kipinde (pil kipi) kullanmayın. Aksi takdirde, güç tüketimini hızlandırır ve pil ömrünü kısaltır.</label></p>",
-                "tooltip": "<p>Bu özellik yalnızca şu video oynatıcılarla kullanılabilir:<br>Windows Media Player<br>Chrome tabanlı oynatıcılar<br>PotPlayer</p><p class='srTooltip'>PotPlayer'da bu işlevin etkinleştirilmesiyle ilgili yönergeler için bilgisayarınızla birlikte verilen Kullanma Kılavuzu'na bakın.</p>",
+                "desc": "<p id='sr-describe-one' role='text'>Bu özellik, video çözünürlüğünü iyileştirerek video oynatma deneyimini geliştirir. Özellikle video düşük çözünürlükte olduğunda çalışır.</p><p id='sr-describe-two' role='text'>Bu işlev pil ömrünü, pil sıcaklığını etkileyebilir ve gürültüye neden olabilir. Lütfen DC kipinde (pil kipi) kullanmayın. Aksi takdirde, güç tüketimini hızlandırır ve pil ömrünü kısaltır.</p>",
+                "tooltip": "<p id='sr-tip-one' role='text'>Bu özellik yalnızca şu video oynatıcılarla kullanılabilir:<br>Windows Media Player<br>Chrome tabanlı oynatıcılar<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>PotPlayer'da bu işlevin etkinleştirilmesiyle ilgili yönergeler için bilgisayarınızla birlikte verilen Kullanma Kılavuzu'na bakın.</p>",
                 "note": {
                     "description": "Bu özellik şu durumlarda çalışmaz:",
                     "description1": "CPU sıcaklığı çok yüksek.",
@@ -2106,8 +2110,8 @@
             "antiTheft": {
                 "heading": "Akıllı algılama",
                 "title": "Akıllı hareket alarmı",
-                "tooltip": "<div>Bu özellik, bilgisayar uyku kipindeyken veya kapalıyken çalışmaz. Aşağıdaki işlemlerin ayarlarını kontrol edin:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>kapağı kapatma işlemleri</li><li>kritik düzeyde/düşük pil işlemi</li><li>Açma/kapama düğmesi işlemi</li><li>uyku düğmesi işlemi</li><li>uyku kipine geçiş için boşta kalma zaman aşımı ayarları</li></ul></div>Aksi takdirde, alarm tetiklenmez veya fotoğraf çekmez.</div>",
-                "desc": "<p><label>Bu özelliği etkin durumdayken, ekranınız kilitlendiğinde ve özellikle halka açık bir yerde hareket algılandığında cihaz bip sesi çıkarmaya başlar.</label></p> <p><label>Alarmı kapatmak için lütfen Windows'da oturum açın.</label></p>",
+                "tooltip": "<div id='antiTheft-tooltips'>Bu özellik, bilgisayar uyku kipindeyken veya kapalıyken çalışmaz. Aşağıdaki işlemlerin ayarlarını kontrol edin:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>kapağı kapatma işlemleri</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>kritik düzeyde/düşük pil işlemi</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>Açma/kapama düğmesi işlemi</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>uyku düğmesi işlemi</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>uyku kipine geçiş için boşta kalma zaman aşımı ayarları</li></ul></div>Aksi takdirde, alarm tetiklenmez veya fotoğraf çekmez.</div>",
+                "desc": "<p id='antiTheft-describe-one' role='text'>Bu özelliği etkin durumdayken, ekranınız kilitlendiğinde ve özellikle halka açık bir yerde hareket algılandığında cihaz bip sesi çıkarmaya başlar.</p><p id='antiTheft-describe-two' role='text'>Alarmı kapatmak için lütfen Windows'da oturum açın.</p>",
                 "note": {
                     "description": "Sisteme başarıyla giriş yaptıktan sonra, bu özellik otomatik olarak kapanır. Özelliği kullanmak için yeniden etkinleştirmeniz gerekir."
                 },
@@ -3455,9 +3459,6 @@
                 "signupButton": "SIGN UP",
                 "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
-            "tune": "{{tune}} ISSUES",
-            "boost": "{{boost}} ISSUES",
-            "secure": "{{secure}} ISSUES",
             "tunepc": {
                 "accumulatedjunkscannedareas": {
                     "area1": "Scanned for junk in 85 locations",
@@ -3715,7 +3716,11 @@
                         "area6": "Validated in cloud remediation engine"
                     }
                 }
-            }
+            },
+            "issues": "ISSUES",
+            "tuneIssueCount": "{{tune}}",
+            "boostIssueCount": "{{boost}}",
+            "secureIssueCount": "{{secure}}"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your ",
@@ -3787,7 +3792,9 @@
             },
             "commentTip": "Shout what you love and whisper what you hate.",
             "comments": "Please leave your comments here..."
-        }
+        },
+        "auto": "Auto",
+        "manual": "Manual"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

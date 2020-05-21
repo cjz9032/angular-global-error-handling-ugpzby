@@ -667,13 +667,11 @@ export class UiScanScheduleComponent implements OnInit {
 					nextScheduleScanEvent["nextScanDate"] = moment()
 						.day(this.dayValue)
 						.format("L")
-						.slice(0, 5);
 				} else {
 					nextScheduleScanEvent["nextScanDate"] = moment()
 						.add(1, "weeks")
 						.day(this.dayValue)
 						.format("L")
-						.slice(0, 5);
 				}
 				break;
 			case this.scanFrequency[1]:
@@ -681,13 +679,11 @@ export class UiScanScheduleComponent implements OnInit {
 					nextScheduleScanEvent["nextScanDate"] = moment()
 						.day(this.dayValue)
 						.format("L")
-						.slice(0, 5);
 				} else {
 					nextScheduleScanEvent["nextScanDate"] = moment()
 						.add(2, "weeks")
 						.day(this.dayValue)
 						.format("L")
-						.slice(0, 5);
 				}
 				break;
 			case this.scanFrequency[2]:

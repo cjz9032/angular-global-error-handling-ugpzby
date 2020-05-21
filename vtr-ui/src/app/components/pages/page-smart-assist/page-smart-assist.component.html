@@ -535,7 +535,8 @@
 													<div class="feature-note p-4">
 														<div class="row blur">
 															<div class="col">
-																<p id="smart-assist-intelligent-security-note">
+																<p id="smart-assist-intelligent-security-note"
+																	role="heading">
 																	{{'device.smartAssist.intelligentSecurity.note.description7' | translate}}
 																</p>
 															</div>
@@ -569,7 +570,8 @@
 													<div class="feature-note p-4 ml-4">
 														<div class="row blur">
 															<div class="col">
-																<p id="smart-assist-zeroTouchLock-note">
+																<p id="smart-assist-zeroTouchLock-note"
+																	role="heading">
 																	{{'device.smartAssist.intelligentSecurity.note.description2' | translate}}
 																</p>
 															</div>
@@ -691,7 +693,8 @@
 											[isSwitchChecked]="intelligentScreen.isReadingOrBrowsingEnabled">
 											<div class="pl-4 ml-4 pt-4">
 												<div class="display-dim-title"
-													id="smart-assist-display-slider-title">
+													id="smart-assist-display-slider-title"
+													role="heading">
 													{{'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.title' | translate}}
 												</div>
 												<vtr-ui-custom-slider [sliderId]="'keepMyDisplay'"
@@ -699,6 +702,9 @@
 													[maxLegend]="'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.endTime' | translate"
 													[min]="0"
 													[max]="60"
+													[showTip]="true"
+													[isTooltipHidden]="false"
+													[tipSuffix]="'minutes'"
 													[value]="intelligentScreen.readingOrBrowsingTime"
 													[ariaLabel]="'display dimmer time adjustment'"
 													[isDisabled]="!intelligentScreen.isReadingOrBrowsingEnabled"

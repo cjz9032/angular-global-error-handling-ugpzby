@@ -46,7 +46,8 @@
                     "ramOverlock": "RAM-muistin ylikellotus",
                     "popup": {
                         "text": "Muutos tulee voimaan, kun tietokone on käynnistetty uudelleen.",
-                        "button": "OK"
+                        "button": "OK",
+                        "title": "system restart is required"
                     },
                     "driverPopup": {
                         "headerText": "Ajurin asennus vaaditaan",
@@ -70,6 +71,9 @@
                     },
                     "lightingColorMessage": {
                         "text": "Värien valinta ei ole käytettävissä tässä tehosteessa."
+                    },
+                    "helpPopup": {
+                        "title": "Legion Edge Help"
                     }
                 },
                 "systemTools": {
@@ -198,7 +202,7 @@
                     "title": "Varoitus!",
                     "description": "Ylikellotuksen epäasianmukaiset asetukset saattavat aiheuttaa peruuttamatonta laitteistovahinkoa.",
                     "proceed": "JATKA",
-                    "legionAccessory": "Haluatko asentaa Legion Accessory Centralin?",
+                    "legionAccessory": "Haluatko asentaa Legion Accessory Central?",
                     "accessoryDesc": "Legion Accessory Central on sovellus, jolla voit hallita Legion-hiirtäsi, -näppäimistöäsi, -kuulokkeitasi jne."
                 },
                 "popup": {
@@ -2093,8 +2097,8 @@
             },
             "superResolution": {
                 "title": "Näytön tarkkuuden skaalaus",
-                "desc": "<p><label>Tämä ominaisuus parantaa videoiden katselukokemusta parantamalla videoiden resoluutiota. Se toimii erityisen hyvin, kun videon resoluutio on alhainen.</label></p> <p><label>Tämä toiminto saattaa heikentää akun käyttöaikaa, akun lämpötilaa ja aiheuttaa ääniä. Älä käytä sitä DC-tilassa (akkuvirralla). Muutoin se nopeuttaa virrankulutusta ja lyhentää akun käyttöikää.</label></p>",
-                "tooltip": "<p>Tämä ominaisuus toimii vain seuraavilla videosoittimilla:<br>Windows Media Player<br>Chrome-pohjainen soitin<br>PotPlayer</p><p class='srTooltip'>Lisätietoja tämän ominaisuuden ottamisesta käyttöön PotPlayer-soittimille on tietokoneesi mukana toimitetussa käyttöoppaassa.</p>",
+                "desc": "<p id='sr-describe-one' role='text'>Tämä ominaisuus parantaa videoiden katselukokemusta parantamalla videoiden resoluutiota. Se toimii erityisen hyvin, kun videon resoluutio on alhainen.</p><p id='sr-describe-two' role='text'>Tämä toiminto saattaa heikentää akun käyttöaikaa, akun lämpötilaa ja aiheuttaa ääniä. Älä käytä sitä DC-tilassa (akkuvirralla). Muutoin se nopeuttaa virrankulutusta ja lyhentää akun käyttöikää.</p>",
+                "tooltip": "<p id='sr-tip-one' role='text'>Tämä ominaisuus toimii vain seuraavilla videosoittimilla:<br>Windows Media Player<br>Chrome-pohjainen soitin<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Lisätietoja tämän ominaisuuden ottamisesta käyttöön PotPlayer-soittimille on tietokoneesi mukana toimitetussa käyttöoppaassa.</p>",
                 "note": {
                     "description": "Wi-Fi-toiminto ei toimi seuraavissa tilanteissa:",
                     "description1": "Keskusyksikön lämpötila on liian korkea.",
@@ -2106,8 +2110,8 @@
             "antiTheft": {
                 "heading": "Älykäs tunnistustoiminto",
                 "title": "Älykäs liikkeentunnistus",
-                "tooltip": "<div>Tämä ominaisuus ei toimi tietokoneen ollessa horrostilassa tai sammutettuna. Tarkista seuraavien toimintojen asetukset:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>kannen sulkemisen toiminnot</li><li>toiminto akun varauksen ollessa loppumassa</li><li>virtapainikkeen toiminto</li><li>lepotilapainikkeen toiminto</li><li>horrostilaan siirtymisen aikakatkaisun asetukset</li></ul></div>Muussa tapauksessa se ei aiheuta hälytystä tai ota valokuvia.</div>",
-                "desc": "<p><label>Kun tämä ominaisuus on käytössä, laite aloittaa äänimerkin toistamisen, jos näyttösi ollessa lukittuna havaitaan liikettä, varsinkin julkisissa tiloissa.</label></p> <p><label>Kirjaudu sisään Windowsiin hylätäksesi hälytyksen.</label></p>",
+                "tooltip": "<div id='antiTheft-tooltips'>Tämä ominaisuus ei toimi tietokoneen ollessa horrostilassa tai sammutettuna. Tarkista seuraavien toimintojen asetukset:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>kannen sulkemisen toiminnot</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>toiminto akun varauksen ollessa loppumassa</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>virtapainikkeen toiminto</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>lepotilapainikkeen toiminto</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>horrostilaan siirtymisen aikakatkaisun asetukset</li></ul></div>Muussa tapauksessa se ei aiheuta hälytystä tai ota valokuvia.</div>",
+                "desc": "<p id='antiTheft-describe-one' role='text'>Kun tämä ominaisuus on käytössä, laite aloittaa äänimerkin toistamisen, jos näyttösi ollessa lukittuna havaitaan liikettä, varsinkin julkisissa tiloissa.</p><p id='antiTheft-describe-two' role='text'>Kirjaudu sisään Windowsiin hylätäksesi hälytyksen.</p>",
                 "note": {
                     "description": "Kun kirjaudut järjestelmään onnistuneesti, tämä ominaisuus poistetaan automaattisesti käytöstä. Sinun täytyy ottaa se uudelleen käyttöön käyttääksesi sitä."
                 },
@@ -3455,9 +3459,6 @@
                 "signupButton": "SIGN UP",
                 "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
-            "tune": "{{tune}} ISSUES",
-            "boost": "{{boost}} ISSUES",
-            "secure": "{{secure}} ISSUES",
             "tunepc": {
                 "accumulatedjunkscannedareas": {
                     "area1": "Scanned for junk in 85 locations",
@@ -3715,7 +3716,11 @@
                         "area6": "Validated in cloud remediation engine"
                     }
                 }
-            }
+            },
+            "issues": "ISSUES",
+            "tuneIssueCount": "{{tune}}",
+            "boostIssueCount": "{{boost}}",
+            "secureIssueCount": "{{secure}}"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your ",
@@ -3787,7 +3792,9 @@
             },
             "commentTip": "Shout what you love and whisper what you hate.",
             "comments": "Please leave your comments here..."
-        }
+        },
+        "auto": "Auto",
+        "manual": "Manual"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

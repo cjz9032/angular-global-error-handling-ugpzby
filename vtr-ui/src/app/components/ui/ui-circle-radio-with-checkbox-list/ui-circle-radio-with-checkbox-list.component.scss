@@ -5,6 +5,11 @@
 		$container-width: 12rem;
 		margin-right: 1.5rem;
 		margin-top: 1.5rem;
+
+		.control-disabled {
+			color: $shade_blue;
+			pointer-events: none;
+		}
 		
 		.circle-radio {
 			outline: 0;
@@ -18,10 +23,11 @@
 				position: relative;
 				width: $container-width;
 				margin-bottom: 1rem;
-				
-				@media screen and (min-width: 992px) and (max-width: 1199.9px) {
-					width: 18rem;
+
+				.focus {
+					display: block;
 				}
+
 				// circle UI part
 				[role="radio"] {
 					background: $foreground;
@@ -33,14 +39,12 @@
 					border-radius: 50%;
 					text-align: center;
 					line-height: 6rem;
+					cursor: pointer;
 
 					.fa-layers {
 						position: absolute;
 						top: 0.3rem;
 						left: 3.1rem;
-						@media screen and (min-width: 992px) and (max-width: 1199.9px) {
-							left: 6rem;
-						}
 					}
 
 					.check-circle {
@@ -151,6 +155,10 @@
 						background: $shade_blue;
 						border-color: $shade_blue;
 
+						.focus{
+							display: none;
+						}
+
 						.check-circle {
 							color: $shade_blue;
 						}
@@ -186,14 +194,6 @@
 							}
 						}
 					}
-					// &:focus {
-					// 	outline: 0;
-					// 	span {
-					// 		&.icomoon {
-					// 			display: block;
-					// 		}
-					// 	}
-					// }
 				}
 
 				.text {
@@ -210,7 +210,6 @@
 				// icon file css class name
 				span {
 					&.icomoon {
-						// display: none;
 						font-size: 6.8rem !important;
 						background: transparent;
 						position: absolute;
@@ -219,9 +218,6 @@
 						&::before {
 							color: $background !important;
 						}
-						// @media screen and (min-width: 992px) and (max-width: 1199.9px) {
-						// 	width: 18rem;
-						// }
 					}
 				}
 			}

@@ -46,7 +46,8 @@
                     "ramOverlock": "RAM クロックアップ",
                     "popup": {
                         "text": "コンピューターを再起動すると、変更内容が有効になります。",
-                        "button": "OK"
+                        "button": "OK",
+                        "title": "system restart is required"
                     },
                     "driverPopup": {
                         "headerText": "ドライバーのインストールが必要です",
@@ -70,6 +71,9 @@
                     },
                     "lightingColorMessage": {
                         "text": "選択中の色はこの効果に使用できません。"
+                    },
+                    "helpPopup": {
+                        "title": "Legion Edge Help"
                     }
                 },
                 "systemTools": {
@@ -2093,8 +2097,8 @@
             },
             "superResolution": {
                 "title": "ビデオ解像度のアップスケーリング",
-                "desc": "<p><label>この機能は、ビデオ解像度を改善することで、ビデオ再生のエクスペリエンスを向上させます。特にビデオの解像度が低い場合に効果があります。</label></p> <p><label>この機能は、バッテリー寿命、バッテリー温度に影響を与え、ノイズを引き起こす可能性があります。DC モード (バッテリー・モード) では使用しないでください。そうしないと、電力消費が速くなり、バッテリー寿命が短くなります。</label></p>",
-                "tooltip": "<p>この機能は、以下のビデオプレーヤーでのみ機能します。<br>Windows Media Player<br>Chrome ベースのプレーヤー<br>PotPlayer</p><p class='srTooltip'>PotPlayer でこの機能を有効にする方法については、コンピューターに付属のユーザー・ガイドを参照してください。</p>",
+                "desc": "<p id='sr-describe-one' role='text'>この機能は、ビデオ解像度を改善することで、ビデオ再生のエクスペリエンスを向上させます。特にビデオの解像度が低い場合に効果があります。</p><p id='sr-describe-two' role='text'>この機能は、バッテリー寿命、バッテリー温度に影響を与え、ノイズを引き起こす可能性があります。DC モード (バッテリー・モード) では使用しないでください。そうしないと、電力消費が速くなり、バッテリー寿命が短くなります。</p>",
+                "tooltip": "<p id='sr-tip-one' role='text'>この機能は、以下のビデオプレーヤーでのみ機能します。<br>Windows Media Player<br>Chrome ベースのプレーヤー<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>PotPlayer でこの機能を有効にする方法については、コンピューターに付属のユーザー・ガイドを参照してください。</p>",
                 "note": {
                     "description": "この機能は次の場合は動作しません。",
                     "description1": "CPU の温度が高すぎる場合。",
@@ -2106,8 +2110,8 @@
             "antiTheft": {
                 "heading": "インテリジェント・センサー",
                 "title": "スマート・モーション・アラーム",
-                "tooltip": "<div>この機能は、コンピューターが休止状態または電源がオフのときは機能しません。次の動作の設定を確認してください。<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>閉じる動作</li><li>重要なアクション/バッテリー低下時の動作</li><li>電源ボタンの動作</li><li>スリープ・ボタンの動作</li><li>休止状態までのアイドル・タイムアウト設定</li></ul></div>それ以外の場合は、アラームがトリガーされず、写真も撮られません。</div>",
-                "desc": "<p><label>この機能を有効にした場合は、画面がロックされた状態で、特に公共の場所で動きが検出されると、デバイスのビープ音が鳴ります。</label></p> <p><label>アラームを解除するには、Windows にログインしてください。</label></p>",
+                "tooltip": "<div id='antiTheft-tooltips'>この機能は、コンピューターが休止状態または電源がオフのときは機能しません。次の動作の設定を確認してください。<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>閉じる動作</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>重要なアクション/バッテリー低下時の動作</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>電源ボタンの動作</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>スリープ・ボタンの動作</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>休止状態までのアイドル・タイムアウト設定</li></ul></div>それ以外の場合は、アラームがトリガーされず、写真も撮られません。</div>",
+                "desc": "<p id='antiTheft-describe-one' role='text'>この機能を有効にした場合は、画面がロックされた状態で、特に公共の場所で動きが検出されると、デバイスのビープ音が鳴ります。</p><p id='antiTheft-describe-two' role='text'>アラームを解除するには、Windows にログインしてください。</p>",
                 "note": {
                     "description": "システムに正しくログインすると、この機能は自動的にオフになります。使用するには、再度有効にする必要があります。"
                 },
@@ -3455,9 +3459,6 @@
                 "signupButton": "SIGN UP",
                 "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
-            "tune": "{{tune}} ISSUES",
-            "boost": "{{boost}} ISSUES",
-            "secure": "{{secure}} ISSUES",
             "tunepc": {
                 "accumulatedjunkscannedareas": {
                     "area1": "Scanned for junk in 85 locations",
@@ -3715,7 +3716,11 @@
                         "area6": "Validated in cloud remediation engine"
                     }
                 }
-            }
+            },
+            "issues": "ISSUES",
+            "tuneIssueCount": "{{tune}}",
+            "boostIssueCount": "{{boost}}",
+            "secureIssueCount": "{{secure}}"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your ",
@@ -3787,7 +3792,9 @@
             },
             "commentTip": "Shout what you love and whisper what you hate.",
             "comments": "Please leave your comments here..."
-        }
+        },
+        "auto": "Auto",
+        "manual": "Manual"
     },
     "homeSecurity": {
         "title": "Connected Home Security",
