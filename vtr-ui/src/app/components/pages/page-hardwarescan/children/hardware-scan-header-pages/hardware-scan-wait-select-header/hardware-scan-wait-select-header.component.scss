@@ -57,7 +57,7 @@
 		cursor: pointer;
 		&:hover {
 			border: none;
-			padding-bottom: 0.5rem;
+			padding-bottom: 0.5rem; // Centering the text after removing its text-decoration
 			text-decoration: none; //Remove underline on customize scan when the cursor is under the link
 		}
 	}
