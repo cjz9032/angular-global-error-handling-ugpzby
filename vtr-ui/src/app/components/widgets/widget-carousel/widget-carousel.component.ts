@@ -5,7 +5,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { CardService, CardOverlayTheme } from 'src/app/services/card/card.service';
 import { MetricService } from 'src/app/services/metric/metric.service';
-import { ContentSource } from 'src/app/services/dashboard/model';
+import { ContentSource } from 'src/app/enums/content.enum';
 
 @Component({
 	selector: 'vtr-widget-carousel',

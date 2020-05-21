@@ -8,8 +8,7 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { SegmentConst } from '../self-select/self-select.service';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
-import { ContentActionType } from 'src/app/enums/content.enum';
-import { ContentSource } from './model';
+import { ContentActionType, ContentSource } from 'src/app/enums/content.enum';
 interface IContentGroup {
 	positionA: any[];
 	positionB: FeatureContent;

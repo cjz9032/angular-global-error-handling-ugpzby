@@ -17,7 +17,7 @@ import { environment } from 'src/environments/environment';
 import { FeedbackService } from 'src/app/services/feedback/feedback.service';
 import { LicensesService } from 'src/app/services/licenses/licenses.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { ContentSource } from 'src/app/services/dashboard/model';
+import { ContentSource } from 'src/app/enums/content.enum';
 
 @Component({
 	selector: 'vtr-page-support',
@@ -387,6 +387,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 			(response: any) => {
 				if (response && response.length > 0) {
 					response.forEach(article => {
+						article.DataSource = ContentSource.CMS;
 						if (article.Thumbnail) {
 							article.Thumbnail = article.Thumbnail.replace('(', '%28').replace(')', '%29');
 						}

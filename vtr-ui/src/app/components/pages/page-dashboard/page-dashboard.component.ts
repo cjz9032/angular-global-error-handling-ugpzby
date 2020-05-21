@@ -35,7 +35,7 @@ import { LocalInfoService } from 'src/app/services/local-info/local-info.service
 import { WelcomeTextContent } from 'src/app/data-models/welcomeText/welcome-text.model';
 import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
 import { ContentActionType } from 'src/app/enums/content.enum';
-import { ContentSource } from 'src/app/services/dashboard/model';
+import { ContentSource } from 'src/app/enums/content.enum';
 
 interface IConfigItem {
 	cardId: string;

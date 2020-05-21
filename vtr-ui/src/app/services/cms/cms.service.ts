@@ -14,7 +14,7 @@ import { LoggerService } from '../logger/logger.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { throwError } from 'rxjs';
 import { DomSanitizer } from '@angular/platform-browser';
-import { ContentSource } from '../dashboard/model';
+import { ContentSource } from 'src/app/enums/content.enum';
 
 const httpOptions = {
 	headers: new HttpHeaders({
