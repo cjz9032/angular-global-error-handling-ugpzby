@@ -2910,6 +2910,8 @@
 			"returnto": "RETURN TO DASHBOARD",
 			"mostRecent": "MOST RECENT SCAN:",
 			"nextScheduled": "NEXT SCHEDULED SCAN:",
+			"successTitle": "Your Pc is tuned up !",
+			"successDescription": "Smart Performance resolved <b>{{issueCount}} issues</b> to keep your pc running smoothly, you can find scan summary and report below.",
 			"scanSummary": {
 				"title": "Scan summary:",
 				"description": "We are constantly tuning your computer",
@@ -2948,25 +2950,24 @@
 				"q6": "2. Did we find any malware on your system?",
 				"q7": "3. How likely are you to continue paying for the Smart Performance feature?",
 				"q8": "4. Overall how satisfied are you with the Smart Performance feature?"
-
 			},
 			"rating": {
-				"r1": "Very Difficult",
-				"r2": "Very Easy",
-				"r3": "Very Difficult",
-				"r4": "Very Easy",
-				"r5": "Not At All Likely",
-				"r6": "Very Likely",
-				"r7": "Not At All Satisfied",
-				"r8": "Very Satisfied",
-				"r9": "Very Difficult",
-				"r10": "Very Easy",
+				"r1": "Very difficult",
+				"r2": "Very easy",
+				"r3": "Very difficult",
+				"r4": "Very easy",
+				"r5": "Not at all likely",
+				"r6": "Very likely",
+				"r7": "Not at all satisfied",
+				"r8": "Very satisfied",
+				"r9": "Very difficult",
+				"r10": "Very easy",
 				"r11": "Yes",
 				"r12": "No",
-				"r13": "Not At All Likely",
-				"r14": "Very Likely",
-				"r15": "Not At All Satisfied",
-				"r16": "Very Satisfied"
+				"r13": "Not at all likely",
+				"r14": "Very likely",
+				"r15": "Not at all satisfied",
+				"r16": "Very satisfied"
 			},
 			"commentTip": "Please leave any comments or additional feedback below:",
 			"comments": "Please leave your comments here..."
