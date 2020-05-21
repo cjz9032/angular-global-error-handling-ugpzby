@@ -21,26 +21,36 @@
 					</div>
 
 					<!-- Icon to expand and collapse details list -->
-					<a *ngIf="isEnableViewResults || item.details"
-						href="javascript:void(0);"
-						aria-label="module-details"
+					<div *ngIf="isEnableViewResults || item.details"
 						class="details-link"
-						(click)="item.collapsed = !item.collapsed">
-						<fa-icon [icon]="['fas', 'caret-right']" *ngIf="!item.collapsed"></fa-icon>
-						<fa-icon [icon]="['fas', 'caret-up']" *ngIf="item.collapsed"></fa-icon>
+						tabindex="0"
+						[attr.aria-label]="item.collapsed ? item.module + 'collapse-module-details': item.module + 'expand-module-details'"
+						(click)="item.collapsed = !item.collapsed"
+						(keyup.enter)="item.collapsed = !item.collapsed"
+						role="button"
+						[attr.aria-expanded]="!item.collapsed">
+						<fa-icon *ngIf="item.collapsed; else expandIcon" [icon]="['fas', 'caret-up']"></fa-icon>
+						<ng-template #expandIcon><fa-icon [icon]="['fas', 'caret-right']"></fa-icon></ng-template>
 						{{ 'hardwareScan.details' | translate }}
-					</a>
+					</div>
 				</div>
 
 				<!-- Icon to expand and collapse test list -->
-				<a *ngIf="isScanExecute && !isEnableViewResults"
-					href="javascript:void(0);"
-					(click)="item.collapsed = !item.collapsed"
-					[ngClass]="{'rotate': item.collapsed}">
-					<fa-icon [icon]="['fal', 'angle-down']"
-						[attr.aria-expanded]="item.collapsed">
-					</fa-icon>
-				</a>
+				<div class="col-auto" *ngIf="isScanExecute && !isEnableViewResults">
+					<div class="collapse-control"
+						tabindex="0"
+						[attr.aria-label]="item.collapsed ? item.module + 'collapse-test-list': item.module + 'expand-test-list'"
+						(click)="item.collapsed = !item.collapsed"
+						(keyup.enter)="item.collapsed = !item.collapsed"
+						role="button"
+						[attr.aria-expanded]="!item.collapsed"
+						>
+						<fa-icon *ngIf="item.collapsed; else expandArrow" [icon]="['fal', 'angle-up']"></fa-icon>
+						<ng-template #expandArrow>
+							<fa-icon [icon]="['fal', 'angle-down']"></fa-icon>
+						</ng-template>
+					</div>
+				</div>
 			</div>
 		</div>
 
@@ -64,7 +74,7 @@
 				<a *ngIf="item.information"
 					href="javascript:void(0)"
 					(click)="getInformation(item.information)"
-					aria-label="module-result-code-question-mark"
+					[attr.aria-label]="item.module + 'result-code-question-mark, which reads:' + item.information"
 					class="result-code-icon"
 					triggers="click"
 					[ngbTooltip]="tooltipRefModule"

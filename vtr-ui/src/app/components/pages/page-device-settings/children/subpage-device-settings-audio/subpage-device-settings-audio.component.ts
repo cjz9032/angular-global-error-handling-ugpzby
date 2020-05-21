@@ -18,6 +18,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { PageAnchorLink } from 'src/app/data-models/common/page-achor-link.model';
 import { TranslateService } from '@ngx-translate/core';
 import { UiCircleRadioWithCheckBoxListModel } from 'src/app/components/ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
+import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-audio',
@@ -88,7 +89,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		private logger: LoggerService,
 		private commonService: CommonService,
 		private translate: TranslateService,
-		private vantageShellService: VantageShellService) {
+		private vantageShellService: VantageShellService,
+		private batteryService: BatteryDetailService) {
 		this.Windows = vantageShellService.getWindows();
 		if (this.Windows) {
 			this.microphoneDevice = this.Windows.Devices.Enumeration.DeviceAccessInformation
@@ -103,6 +105,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			this.onNotification(response);
 		});
 		this.isDTmachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
+		this.batteryService.getBatterySettings();
 		this.commonService.checkPowerPageFlagAndHide();
 
 		this.isOnline = this.commonService.isOnline;

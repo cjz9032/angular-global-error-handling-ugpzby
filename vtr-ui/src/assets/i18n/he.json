@@ -46,7 +46,8 @@
                     "ramOverlock": "אוברקלוק של RAM",
                     "popup": {
                         "text": "השינוי ייכנס לתוקף לאחר הפעלה מחדש של המחשב.",
-                        "button": "אישור"
+                        "button": "אישור",
+                        "title": "system restart is required"
                     },
                     "driverPopup": {
                         "headerText": "חובה להתקין מנהל התקן",
@@ -70,6 +71,9 @@
                     },
                     "lightingColorMessage": {
                         "text": "בחירת צבע לא זמינה לאפקט זה."
+                    },
+                    "helpPopup": {
+                        "title": "Legion Edge Help"
                     }
                 },
                 "systemTools": {
@@ -3787,7 +3791,9 @@
             },
             "commentTip": "Shout what you love and whisper what you hate.",
             "comments": "Please leave your comments here..."
-        }
+        },
+        "auto": "Auto",
+        "manual": "Manual"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

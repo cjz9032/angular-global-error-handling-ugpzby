@@ -46,7 +46,8 @@
                     "ramOverlock": "RAM 超频",
                     "popup": {
                         "text": "重新启动计算机后更改将生效。",
-                        "button": "确定"
+                        "button": "确定",
+                        "title": "system restart is required"
                     },
                     "driverPopup": {
                         "headerText": "需要安装驱动程序",
@@ -70,7 +71,10 @@
                     "networkBoost": "网络增强",
                     "hybridMode": "混合模式",
                     "overDrive": "Over Drive",
-                    "touchpadLock": "触摸板锁定"
+                    "touchpadLock": "触摸板锁定",
+                    "helpPopup": {
+                        "title": "Legion Edge Help"
+                    }
                 },
                 "systemTools": {
                     "power": "电源管理",
@@ -3787,7 +3791,9 @@
             },
             "commentTip": "Shout what you love and whisper what you hate.",
             "comments": "Please leave your comments here..."
-        }
+        },
+        "auto": "Auto",
+        "manual": "Manual"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

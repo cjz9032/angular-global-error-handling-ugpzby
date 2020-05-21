@@ -46,7 +46,8 @@
                     "ramOverlock": "RAM-Übertaktung",
                     "popup": {
                         "text": "Die Änderung wird nach dem Neustart des Computers wirksam.",
-                        "button": "OK"
+                        "button": "OK",
+                        "title": "system restart is required"
                     },
                     "driverPopup": {
                         "headerText": "Treiberinstallation erforderlich",
@@ -70,6 +71,9 @@
                     },
                     "lightingColorMessage": {
                         "text": "Für diesen Effekt ist keine Farbauswahl verfügbar."
+                    },
+                    "helpPopup": {
+                        "title": "Legion Edge Help"
                     }
                 },
                 "systemTools": {
@@ -3787,7 +3791,9 @@
             },
             "commentTip": "Shout what you love and whisper what you hate.",
             "comments": "Please leave your comments here..."
-        }
+        },
+        "auto": "Auto",
+        "manual": "Manual"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

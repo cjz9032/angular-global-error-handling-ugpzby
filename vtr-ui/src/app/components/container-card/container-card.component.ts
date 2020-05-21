@@ -6,6 +6,7 @@ import { CardService, CardOverlayTheme } from 'src/app/services/card/card.servic
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { MetricService } from 'src/app/services/metric/metric.service';
+import { ContentSource } from 'src/app/enums/content.enum';
 
 @Component({
 	selector: 'vtr-container-card',
@@ -36,10 +37,13 @@ export class ContainerCardComponent implements OnInit {
 			this.isLoading = false;
 			this.overlayThemeDefaultIsDark = !itemValue.OverlayTheme || itemValue.OverlayTheme !== CardOverlayTheme.Light
 			this.overlayThemeDefaultIsLight = !itemValue.OverlayTheme || itemValue.OverlayTheme !== CardOverlayTheme.Dark
-			this._item = itemValue;
-			if (!itemValue.isLocal) {
+			if (itemValue.DataSource
+				&& itemValue.DataSource !== ContentSource.Local
+				&& (!this._item || this._item.Id !== itemValue.Id)) {
+				// The Page would feed the content cards with the cache first and then feed them again when the online content return, and they would probably the same
 				this.metricsService.sendContentDisplay(itemValue.Id, itemValue.DataSource, this.order as string);
 			}
+			this._item = itemValue;
 		} else {
 			this._item = new FeatureContent();
 		}

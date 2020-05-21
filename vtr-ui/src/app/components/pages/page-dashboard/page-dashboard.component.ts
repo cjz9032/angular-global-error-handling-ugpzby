@@ -1,6 +1,6 @@
-import { Component, OnInit, OnDestroy, SecurityContext } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { NgbModal, NgbModalConfig, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModalConfig} from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { QaService } from '../../../services/qa/qa.service';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
@@ -18,7 +18,6 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
-import { DomSanitizer } from '@angular/platform-browser';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
@@ -36,6 +35,7 @@ import { LocalInfoService } from 'src/app/services/local-info/local-info.service
 import { WelcomeTextContent } from 'src/app/data-models/welcomeText/welcome-text.model';
 import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
 import { ContentActionType } from 'src/app/enums/content.enum';
+import { ContentSource } from 'src/app/enums/content.enum';
 
 interface IConfigItem {
 	cardId: string;
@@ -162,7 +162,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy {
 		private hypService: HypothesisService,
 		public warrantyService: WarrantyService,
 		private adPolicyService: AdPolicyService,
-		private sanitizer: DomSanitizer,
 		public dccService: DccService,
 		private selfselectService: SelfSelectService,
 		private feedbackService: FeedbackService,
@@ -445,7 +444,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy {
 		const dataSource = 'upe';
 
 		contentCards.forEach(contentCard => {
-			let contents: any = this.cmsService.getOneCMSContent(response, contentCard.template, contentCard.positionParam);
+			let contents: any = this.cmsService.getOneCMSContent(response, contentCard.template, contentCard.positionParam, ContentSource.UPE);
 			contentCard.upeContent = null;
 			if (contents && contents.length > 0) {
 				contents = this.formalizeContent(contents, contentCard.positionParam, dataSource);
@@ -475,7 +474,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy {
 			url: 'assets/images/dcc/hero-banner-dcc.jpg',
 			ActionLink: 'dcc-demo',
 			ActionType: ContentActionType.Internal,
-			DataSource: 'cms'
+			DataSource: ContentSource.Local
 		}];
 	}
 

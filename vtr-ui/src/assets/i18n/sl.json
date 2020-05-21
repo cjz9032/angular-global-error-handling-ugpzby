@@ -46,7 +46,8 @@
                     "ramOverlock": "Zvišanje takta pomnilnika RAM",
                     "popup": {
                         "text": "Sprememba bo začela veljati po vnovičnem zagonu računalnika.",
-                        "button": "V redu"
+                        "button": "V redu",
+                        "title": "system restart is required"
                     },
                     "driverPopup": {
                         "headerText": "Potrebna je namestitev gonilnika",
@@ -70,6 +71,9 @@
                     },
                     "lightingColorMessage": {
                         "text": "Izbira barve ni na voljo pri tem učinku."
+                    },
+                    "helpPopup": {
+                        "title": "Legion Edge Help"
                     }
                 },
                 "systemTools": {
@@ -3787,7 +3791,9 @@
             },
             "commentTip": "Shout what you love and whisper what you hate.",
             "comments": "Please leave your comments here..."
-        }
+        },
+        "auto": "Auto",
+        "manual": "Manual"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

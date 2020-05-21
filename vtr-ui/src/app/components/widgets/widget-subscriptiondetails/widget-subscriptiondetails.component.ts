@@ -7,6 +7,7 @@ import { ModalSmartPerformanceSubscribeComponent } from '../../modal/modal-smart
 import { v4 as uuid } from 'uuid';
 import { formatDate } from '@angular/common';
 import { enumSmartPerformance } from 'src/app/enums/smart-performance.enum';
+import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
 @Component({
 	selector: 'vtr-widget-subscriptiondetails',
 	templateUrl: './widget-subscriptiondetails.component.html',
@@ -24,7 +25,12 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	public today = new Date();
 	myDate = new Date();
 	spEnum:any = enumSmartPerformance;
-  constructor(private translate: TranslateService,private modalService: NgbModal,private commonService: CommonService) {
+  constructor(
+	  private translate: TranslateService,
+	  private modalService: NgbModal,
+	  private commonService: CommonService,
+	  private formatLocaleDate: FormatLocaleDatePipe
+	  ) {
 	}
 	public localSubscriptionDetails = [
 		{
@@ -37,8 +43,8 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceSubscribed);
 		if (this.isSubscribed) {
 			this.subscriptionDetails = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails);
-			this.startDate = this.subscriptionDetails[0].StartDate;
-			this.endDate = this.subscriptionDetails[0].EndDate;
+			this.startDate = this.formatLocaleDate.transform(this.subscriptionDetails[0].StartDate);
+			this.endDate = this.formatLocaleDate.transform(this.subscriptionDetails[0].EndDate);
 			this.givenDate = new Date(this.subscriptionDetails[0].EndDate);
 
 			if (this.givenDate > this.today) {
