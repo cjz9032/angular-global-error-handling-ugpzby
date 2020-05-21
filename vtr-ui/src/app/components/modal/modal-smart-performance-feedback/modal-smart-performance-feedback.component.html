@@ -178,6 +178,9 @@
 	<div class="feedback-success d-flex align-items-center justify-content-center"
 		*ngIf="feedbackSuccess">
 		<div>
+			<div class="icon">
+				<fa-icon [icon]="['fal', 'times']" (click)="closeModal()"></fa-icon>
+			</div>
 			<div class="success-icon">
 				<fa-icon [icon]="['fal', 'check-circle']"></fa-icon>
 			</div>
