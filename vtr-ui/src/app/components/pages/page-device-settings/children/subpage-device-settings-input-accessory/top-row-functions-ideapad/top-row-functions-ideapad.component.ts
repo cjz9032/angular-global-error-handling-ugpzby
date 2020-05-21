@@ -28,6 +28,9 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 	private fnLockSubject$: Subject<FnLockStatus> = new Subject<FnLockStatus>();
 	public functionLockUIModel: Array<UiCircleRadioWithCheckBoxListModel> = [];
 
+	private readonly functionKeyId = 'radio2';
+	private readonly specialKeyId = 'radio1';
+
 	constructor(
 		private topRowFunctionsIdeapadService: TopRowFunctionsIdeapadService,
 		private metrics: MetricService,
@@ -110,7 +113,7 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 		this.subscribeForDataChange();
 		this.functionLockUIModel = [];
 		this.functionLockUIModel.push({
-			componentId: `radio1`,
+			componentId: this.specialKeyId,
 			label: `device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.sFunKey`,
 			value: 'special-key',
 			isChecked: false,
@@ -121,7 +124,7 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 			processLabel: true,
 		});
 		this.functionLockUIModel.push({
-			componentId: `radio2`,
+			componentId: this.functionKeyId,
 			label: `device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.fnKey`,
 			value: 'function-key',
 			isChecked: false,
@@ -139,18 +142,17 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 				if (model.componentId === componentId) {
 					model.isChecked = value;
 				}
-				model.isChecked = false;
 			});
 		}
 	}
 
 	subscribeForDataChange() {
 		this.hotkey$.subscribe(value => {
-			this.updateFunctionLockValue('radio1', value);
+			this.updateFunctionLockValue(this.specialKeyId, value);
 		});
 
 		this.fnkey$.subscribe(value => {
-			this.updateFunctionLockValue('radio2', value);
+			this.updateFunctionLockValue(this.functionKeyId, value);
 		});
 	}
 
@@ -158,9 +160,9 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 	onFunctionLockRadioChange($event: UiCircleRadioWithCheckBoxListModel) {
 		if ($event) {
 			const componentId = $event.componentId.toLowerCase();
-			if (componentId === 'radio1') {
+			if (componentId === this.specialKeyId) {
 				this.update$.next(this.keyType.HOTKEY);
-			} else if (componentId === 'radio2') {
+			} else if (componentId === this.functionKeyId) {
 				this.update$.next(this.keyType.FNKEY);
 			}
 		}
