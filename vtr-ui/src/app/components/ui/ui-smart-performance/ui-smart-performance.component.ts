@@ -370,6 +370,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 		this.showSubscribersummary = false;
 	}
 	changeManageSubscription(event){
+		this.unregisterScheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScan');
 		this.isSubscribed = this.commonService.getLocalStorageValue(
 			LocalStorageKey.IsFreeFullFeatureEnabled
 		);
