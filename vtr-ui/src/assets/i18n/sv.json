@@ -2097,8 +2097,8 @@
             },
             "superResolution": {
                 "title": "Öka videoupplösningen",
-                "desc": "<p><label>Denna funktion förbättrar videoupplösningen, vilket gör videouppspelningen bättre. Den är särskilt användbar om videon har dålig upplösning.</label></p> <p><label>Funktionen kan påverka batteriets livslängd och temperatur och orsaka brus. Använd inte funktionen i DC-läge (batteriläge). Detta orsakar ökad energiförbrukning och batteriets livslängd förkortas.</label></p>",
-                "tooltip": "<p>Denna funktion fungerar bara med nedanstående videospelare:<br>Windows Media Player<br>Chrome-baserad spelare<br>PotPlayer</p><p class='srTooltip'>Anvisningar om hur du aktiverar denna funktion i PotPlayer finns i användarhandboken som medföljer datorn.</p>",
+                "desc": "<p id='sr-describe-one' role='text'>Denna funktion förbättrar videoupplösningen, vilket gör videouppspelningen bättre. Den är särskilt användbar om videon har dålig upplösning.</p><p id='sr-describe-two' role='text'>Funktionen kan påverka batteriets livslängd och temperatur och orsaka brus. Använd inte funktionen i DC-läge (batteriläge). Detta orsakar ökad energiförbrukning och batteriets livslängd förkortas.</p>",
+                "tooltip": "<p id='sr-tip-one' role='text'>Denna funktion fungerar bara med nedanstående videospelare:<br>Windows Media Player<br>Chrome-baserad spelare<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Anvisningar om hur du aktiverar denna funktion i PotPlayer finns i användarhandboken som medföljer datorn.</p>",
                 "note": {
                     "description": "Funktionen fungerar inte när",
                     "description1": "processortemperaturen är för hög.",
@@ -2110,8 +2110,8 @@
             "antiTheft": {
                 "heading": "Intelligent avkänning",
                 "title": "Smart rörelselarm",
-                "tooltip": "<div>Funktionen fungerar inte om datorn är i viloläge eller avstängd. Kontrollera inställningarna för följande åtgärder:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>stänga locket</li><li>kritisk/låg batteriladdning</li><li>strömbrytare</li><li>knapp för strömsparläge</li><li>från inaktiv till viloläge</li></ul></div>I annat fall utlöses inte larmet och det går inte heller att ta foton.</div>",
-                "desc": "<p><label>Om du aktiverar den här funktionen börjar enheten signalera när bildskärmen är låst och rörelser identifieras, speciellt på en offentlig plats.</label></p> <p><label>Logga in på Windows om du vill stänga av larmet.</label></p>",
+                "tooltip": "<div id='antiTheft-tooltips'>Funktionen fungerar inte om datorn är i viloläge eller avstängd. Kontrollera inställningarna för följande åtgärder:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>stänga locket</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>kritisk/låg batteriladdning</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>strömbrytare</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>knapp för strömsparläge</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>från inaktiv till viloläge</li></ul></div>I annat fall utlöses inte larmet och det går inte heller att ta foton.</div>",
+                "desc": "<p id='antiTheft-describe-one' role='text'>Om du aktiverar den här funktionen börjar enheten signalera när bildskärmen är låst och rörelser identifieras, speciellt på en offentlig plats.</p><p id='antiTheft-describe-two' role='text'>Logga in på Windows om du vill stänga av larmet.</p>",
                 "note": {
                     "description": "När du har loggat in på systemet stängs funktionen av automatiskt. Du måste aktivera den igen om du vill använda den."
                 },
