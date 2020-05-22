@@ -21,7 +21,7 @@ export class ModalSmartPerformanceFeedbackComponent implements OnInit {
 	questions = [
 		/* UnSubscribed Users */
 		{
-			likelyValues: [0, 1, 2, 3, 4, 5],
+			likelyValues: [1, 2, 3, 4, 5],
 			name: 'fbQ1',
 			question: 'smartPerformance.feedbackContainer.questions.q1',
 			ratingValue: [
@@ -30,7 +30,7 @@ export class ModalSmartPerformanceFeedbackComponent implements OnInit {
 			]
 		},
 		{
-			likelyValues: [0, 1, 2, 3, 4, 5], 
+			likelyValues: [1, 2, 3, 4, 5], 
 			name: 'fbQ2',
 			question: 'smartPerformance.feedbackContainer.questions.q2',
 			ratingValue: [
@@ -39,7 +39,7 @@ export class ModalSmartPerformanceFeedbackComponent implements OnInit {
 			]
 		},
 		{
-			likelyValues: [0, 1, 2, 3, 4, 5],
+			likelyValues: [1, 2, 3, 4, 5],
 			name: 'fbQ3',
 			question: 'smartPerformance.feedbackContainer.questions.q3',
 			ratingValue: [
@@ -58,7 +58,7 @@ export class ModalSmartPerformanceFeedbackComponent implements OnInit {
 		},
 		/* Subscribed Users */
 		{
-			likelyValues: [0, 1, 2, 3, 4, 5],
+			likelyValues: [1, 2, 3, 4, 5],
 			name: 'fbQ5',
 			question: 'smartPerformance.feedbackContainer.questions.q5',
 			ratingValue: [
@@ -76,7 +76,7 @@ export class ModalSmartPerformanceFeedbackComponent implements OnInit {
 			]
 		},
 		{
-			likelyValues: [0, 1, 2, 3, 4, 5],
+			likelyValues: [1, 2, 3, 4, 5],
 			name: 'fbQ7',
 			question: 'smartPerformance.feedbackContainer.questions.q7',
 			ratingValue: [
@@ -110,7 +110,7 @@ export class ModalSmartPerformanceFeedbackComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.isSubscribed = this.commonService.getLocalStorageValue(
-			LocalStorageKey.IsSmartPerformanceSubscribed
+			LocalStorageKey.IsFreeFullFeatureEnabled
 		);
 
 		//generating the form
@@ -150,27 +150,34 @@ export class ModalSmartPerformanceFeedbackComponent implements OnInit {
 
 	onFeedBackSubmit() {
 		const formData = this.feedbackForm.value;
+		let qa = {};
+		if(!this.isSubscribed){
+			qa = {
+				easeOfScanFeature: formData.fbQ1,
+				easeOfScanResult: formData.fbQ2,
+				likeToPaySubscription: formData.fbQ3,
+				overallExperience: formData.fbQ4
+			};
+		} else {
+			qa = {
+				easeToUnderstandFixes: formData.fbQ5,
+				caughtAnyMalware: formData.fbQ6,
+				likedToContinueSubscription: formData.fbQ7,
+				overallExperience: formData.fbQ8
+			};
+		}
+
 		const data = {
 			ItemType: 'UserFeedback',
 			ItemName: 'Submit',
-			ItemParent: 'Dialog.Feedback',
+			ItemParent: 'SmartPerformance.Dialog.Feedback',
 			Content: formData.fbComment,
 			Subscribed: this.isSubscribed,
-			QA: {
-				fbQ1: formData.fbQ1,
-				fbQ2: formData.fbQ2,
-				fbQ3: formData.fbQ3,
-				fbQ4: formData.fbQ4,
-				fbQ5: formData.fbQ5,
-				fbQ6: formData.fbQ6,
-				fbQ7: formData.fbQ7,
-				fbQ8: formData.fbQ8,
-				fbComment: formData.fbComment,
-			}
+			QA: qa
 		};
-		// if (this.metrics) {
-		// 	this.metrics.sendAsync(data);
-		// }
+		if (this.metrics) {
+			this.metrics.sendAsync(data);
+		}
 		this.feedbackForm.reset();
 		this.feedbackSuccess = true;
 		const leftTimeInterval = setInterval(() => {

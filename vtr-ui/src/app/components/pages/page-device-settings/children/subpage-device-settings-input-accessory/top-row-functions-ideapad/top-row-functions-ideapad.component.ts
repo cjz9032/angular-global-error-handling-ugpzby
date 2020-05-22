@@ -21,6 +21,8 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 
 	update$ = new Subject<KeyType>();
 	private setSubscription: Subscription;
+	private hotKeySubscription: Subscription;
+	private functionKeySubscription: Subscription;
 
 	hotkey$: Observable<boolean>;
 	fnkey$: Observable<boolean>;
@@ -107,6 +109,12 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 		if (this.setSubscription) {
 			this.setSubscription.unsubscribe();
 		}
+		if (this.hotKeySubscription) {
+			this.hotKeySubscription.unsubscribe();
+		}
+		if (this.functionKeySubscription) {
+			this.functionKeySubscription.unsubscribe();
+		}
 	}
 
 	updateFunctionLockUIModel() {
@@ -147,11 +155,11 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 	}
 
 	subscribeForDataChange() {
-		this.hotkey$.subscribe(value => {
+		this.hotKeySubscription = this.hotkey$.subscribe(value => {
 			this.updateFunctionLockValue(this.specialKeyId, value);
 		});
 
-		this.fnkey$.subscribe(value => {
+		this.functionKeySubscription = this.fnkey$.subscribe(value => {
 			this.updateFunctionLockValue(this.functionKeyId, value);
 		});
 	}
