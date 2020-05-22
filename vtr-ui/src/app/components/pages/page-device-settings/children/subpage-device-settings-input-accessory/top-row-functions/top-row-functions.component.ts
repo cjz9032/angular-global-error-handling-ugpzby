@@ -27,6 +27,9 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 	public readonly FALSE = 'false';
 	public topRowFunctionKeysUIModel: Array<UiRoundedRectangleRadioModel> = [];
 
+	private readonly functionKeyId = 'thinkpad-function-key-radio-button';
+	private readonly specialKeyId = 'thinkpad-special-key-radio-button';
+
 	constructor(
 		private keyboardService: InputAccessoriesService,
 		private logger: LoggerService,
@@ -141,6 +144,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 		this.keyboardService.setFnStickKeyStatus(value).then(res => {
 		});
 	}
+
 	public rebootToggleOnOff(event) {
 		this.keyboardService.setPrimaryFunction(event.switchValue).then((res: any) => {
 			if (res.RebootRequired === true) {
@@ -155,7 +159,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 		const { primaryFunStatus, fnLockStatus } = this.topRowKeyObj;
 
 		this.functionLockUIModel.push({
-			componentId: `special-function-radio-button`,
+			componentId: this.specialKeyId,
 			label: `device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.sFunKey`,
 			value: 'special-key',
 			isChecked: (primaryFunStatus && fnLockStatus) || (!primaryFunStatus && !fnLockStatus) ? true : false,
@@ -166,7 +170,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 			processLabel: true,
 		});
 		this.functionLockUIModel.push({
-			componentId: `f1-f12-funciton-radio-button`,
+			componentId: this.functionKeyId,
 			label: `device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.fnKey`,
 			value: 'function-key',
 			isChecked: (primaryFunStatus && fnLockStatus) || (!primaryFunStatus && !fnLockStatus) ? false : true,
@@ -181,9 +185,9 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 	onFunctionLockRadioChange($event: UiCircleRadioWithCheckBoxListModel) {
 		if ($event) {
 			const componentId = $event.componentId.toLowerCase();
-			if (componentId === 'special-function-radio-button') {
+			if (componentId === this.specialKeyId) {
 				this.onChangeFunType(this.topRowKeyObj.primaryFunStatus);
-			} else if (componentId === 'f1-f12-funciton-radio-button') {
+			} else if (componentId === this.functionKeyId) {
 				this.onChangeFunType(!this.topRowKeyObj.primaryFunStatus);
 			}
 		}
