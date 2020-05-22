@@ -41,7 +41,7 @@
 						<div class="col item-text"
 							[ngClass]="{'col-10': chevronVisibility, 'col-11': !chevronVisibility}">
 							<div class="row no-gutters" [ngClass]="{'flex-column': item.notificationDetail}">
-								<div id="{{item.itemId}}-title" attr.aria-label="{{item.title}}" role="link" class="title text-break d-flex align-items-center"
+								<div id="{{item.itemId}}-title" attr.aria-label="{{item.title}}" role="text" class="title text-break d-flex align-items-center"
 									[ngClass]="{'light-title':item.lightTitle, 'col-12':!item.detail, 'col-6': item.detail}"
 									[ngbTooltip]="item.title" tooltipClass="vtr-system-tooltip" container="body" [attr.aria-label]="item.title"
 									(mouseenter)="(ta.isOpen() ? ta.close() : true )">
