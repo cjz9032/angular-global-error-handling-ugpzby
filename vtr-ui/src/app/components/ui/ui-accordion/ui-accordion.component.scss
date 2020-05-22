@@ -61,7 +61,7 @@
                                 margin-bottom: 0;
                             }
                         }
-                        .icon{
+                        .icon, .icomoon{
                             color: $menu_hover;
                             @media #{$breakpoint_sm}{
                                 margin-right: 0.4rem;
@@ -126,7 +126,7 @@
                                     margin-top: 0;
                                 }
                             }
-                            .icon {
+                            .icon, .icomoon {
                                 font-size: 2.2rem;
                                 margin-right: 0.2rem;
                                 color: $main;
@@ -204,7 +204,7 @@
                             font-size: 2.5rem;
                             color: $dark !important;
                         }
-                        .icon{
+                        .icon, .icomoon{
                             color: $menu_hover;
                         }
                     }
@@ -226,7 +226,7 @@
     .heading {
         display: flex;
         align-items: center;
-        .icon{
+        .icon, .icomoon{
             font-size: 4.6rem;
             margin-right: 1.5rem;
             color: $main_gstart;
