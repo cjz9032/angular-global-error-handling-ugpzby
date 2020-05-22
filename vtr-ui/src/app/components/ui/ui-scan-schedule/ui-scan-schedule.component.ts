@@ -326,6 +326,9 @@ export class UiScanScheduleComponent implements OnInit {
 		this.selectedDay = this.days[value];
 		this.dayValue = value;
 		this.selectedFrequency = this.scanFrequency[value];
+		if(this.selectedFrequency === this.scanFrequency[2]) {
+			this.selectedNumber = this.dates[0]
+		}
 		this.changeScanDay(value);
 	}
 	changeScanDay(value) {
@@ -709,22 +712,22 @@ export class UiScanScheduleComponent implements OnInit {
 		let currentMom;
 		switch (typeRun) {
 			case "firstRun":
-				const currentMoment = moment().format(
+				currentMom = moment().format(
 					"dddd, YYYY, MM, D, HH, mm, ss"
 				);
 				const roundOffMin = (
-					Math.ceil(+currentMoment.split(",")[5] / 5) * 5
+					Math.ceil(+currentMom.split(",")[5] / 5) * 5
 				).toString();
 				const data = {
 					frequency: "onceaweek",
-					day: currentMoment.split(",")[0],
+					day: currentMom.split(",")[0],
 					time: moment([
-						currentMoment.split(",")[1],
-						currentMoment.split(",")[2],
-						currentMoment.split(",")[3],
-						currentMoment.split(",")[4],
+						currentMom.split(",")[1],
+						(+currentMom.split(",")[2]-1).toString(),
+						currentMom.split(",")[3],
+						currentMom.split(",")[4],
 						roundOffMin,
-						currentMoment.split(",")[6],
+						currentMom.split(",")[6],
 					]).format(),
 					date: [],
 				};
@@ -802,7 +805,7 @@ export class UiScanScheduleComponent implements OnInit {
 			day: freq !== "onceamonth" ? this.selectedDay : "",
 			time: moment([
 				currentMoment.split(",")[0],
-				currentMoment.split(",")[1],
+				(+currentMoment.split(",")[1]-1).toString(),
 				currentMoment.split(",")[2],
 				hours,
 				roundOffMin,
