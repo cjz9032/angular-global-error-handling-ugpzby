@@ -203,7 +203,7 @@
                     "description": "Forkerte indstillinger for overclocking kan medføre hardwareskader, der ikke kan genoprettes.",
                     "proceed": "FORTSÆT",
                     "legionAccessory": "Vil du installere Legion Accessory Central?",
-                    "accessoryDesc": "Legion Accessory Central er en app til konfiguration af Legion-mus, -tastatur, -hovedtelefoner osv."
+                    "accessoryDesc": "Legion Accessory Central er en app til konfiguration af Legion-mus, Legion-tastatur, Legion-hovedtelefoner osv."
                 },
                 "popup": {
                     "closeBtn": "close"
