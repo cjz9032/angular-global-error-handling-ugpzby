@@ -92,18 +92,8 @@ export class AppComponent implements OnInit, OnDestroy {
 			this.onNotification(notification);
 		});
 
-
-		//#endregion
-		window.addEventListener('online', (e) => {
-			this.notifyNetworkState();
-		}, false);
-		window.addEventListener('offline', (e) => {
-			this.notifyNetworkState();
-		}, false);
-		this.notifyNetworkState();
 		this.addInternetListener();
 		this.vantageFocusHelper.start();
-
 	}
 
 	ngOnInit() {
@@ -185,20 +175,18 @@ export class AppComponent implements OnInit, OnDestroy {
 		const win: any = window;
 		if (win.NetworkListener) {
 			win.NetworkListener.onnetworkchanged = (state) => {
-				this.notifyNetworkState();
+				this.notifyNetworkState(state.toString() === 'available');
 			};
-
-			this.notifyNetworkState();
 		} else {
 			window.addEventListener('online', (e) => {
-				this.notifyNetworkState();
+				this.notifyNetworkState(true);
 			}, false);
 			window.addEventListener('offline', (e) => {
-				this.notifyNetworkState();
+				this.notifyNetworkState(false);
 			}, false);
-
-			this.notifyNetworkState();
 		}
+		this.notifyNetworkState(navigator.onLine);
+
 	} // end of addInternetListener
 
 	private launchWelcomeModal() {
@@ -322,13 +310,9 @@ export class AppComponent implements OnInit, OnDestroy {
 		} catch (error) { }
 	}
 
-	private notifyNetworkState() {
-		this.commonService.isOnline = navigator.onLine;
-		if (navigator.onLine) {
-			this.commonService.sendNotification(NetworkStatus.Online, { isOnline: navigator.onLine });
-		} else {
-			this.commonService.sendNotification(NetworkStatus.Offline, { isOnline: navigator.onLine });
-		}
+	private notifyNetworkState(isOnline) {
+		this.commonService.isOnline = isOnline;
+		this.commonService.sendNotification(isOnline ? NetworkStatus.Online : NetworkStatus.Offline, { isOnline });
 	}
 
 	// VAN-5872, server switch feature
