@@ -507,6 +507,7 @@ export class HardwareScanService {
 
 				if (this.cancelRequested === true) {
 					this.scanExecution = false;
+					this.clearLastResponse();
 				}
 
 				this.workDone.next(true);
