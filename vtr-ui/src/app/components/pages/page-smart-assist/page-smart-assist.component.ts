@@ -517,6 +517,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 
 	public onHumanPresenceDetectStatusToggle($event: any) {
 		this.intelligentSecurity.isHPDEnabled = $event.switchValue;
+		this.updateZeroTouchLockTimersUIModel();
 		this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
 		this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 
