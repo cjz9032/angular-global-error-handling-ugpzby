@@ -409,8 +409,8 @@
 			"beta": true,
 			"path": "smart-performance",
 			"icon": [
-				"fal",
-				"wrench"
+				"icomoon",
+				"icomoon-smartperformance"
 			],
 			"metricsEvent": "itemClick",
 			"externallink": false,
