@@ -189,7 +189,6 @@ export class UiScanScheduleComponent implements OnInit {
 		this.isDaySelectionEnable = false;
 		this.scanScheduleDate = this.selectedDate;
 		this.enumLocalScanFrequncy = enumScanFrequency;
-		//this.scanSummaryTime(0);
 
 		this.scheduleScanFrequency = this.commonService.getLocalStorageValue(
 			LocalStorageKey.SPScheduleScanFrequency
@@ -198,7 +197,7 @@ export class UiScanScheduleComponent implements OnInit {
 		if (this.scheduleScanFrequency === undefined) {
 			this.commonService.setLocalStorageValue(
 				LocalStorageKey.SPScheduleScanFrequency,
-				this.selectedFrequency
+				this.scanFrequency[0]
 			);
 		} else {
 			this.selectedFrequency = this.scheduleScanFrequency;
@@ -228,7 +227,7 @@ export class UiScanScheduleComponent implements OnInit {
 			);
 			this.commonService.setLocalStorageValue(
 				LocalStorageKey.SPScheduleScanFrequency,
-				this.selectedFrequency
+				this.scanFrequency[0]
 			);
 		}
 
@@ -243,7 +242,7 @@ export class UiScanScheduleComponent implements OnInit {
 			);
 			this.commonService.setLocalStorageValue(
 				LocalStorageKey.SPScheduleScanFrequency,
-				this.selectedFrequency
+				this.scanFrequency[0]
 			);
 		}
 		this.IsScheduleScanEnabled = this.commonService.getLocalStorageValue(
