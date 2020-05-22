@@ -203,7 +203,7 @@
                     "description": "Ukorrekte innstillinger av Overklokking kan føre til uopprettelige maskinvareskader.",
                     "proceed": "FORTSETT",
                     "legionAccessory": "Vil du installere Legion Accessory Central?",
-                    "accessoryDesc": "Legion Accessory Central er en app for å konfigurere Legion-musen, -tastaturet, -hodetelefoner osv."
+                    "accessoryDesc": "Legion Accessory Central er en app for å konfigurere Legion-musen, Legion-tastaturet, Legion-hodetelefoner osv."
                 },
                 "popup": {
                     "closeBtn": "close"

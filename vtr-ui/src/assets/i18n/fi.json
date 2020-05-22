@@ -203,7 +203,7 @@
                     "description": "Ylikellotuksen epäasianmukaiset asetukset saattavat aiheuttaa peruuttamatonta laitteistovahinkoa.",
                     "proceed": "JATKA",
                     "legionAccessory": "Haluatko asentaa Legion Accessory Central?",
-                    "accessoryDesc": "Legion Accessory Central on sovellus, jolla voit hallita Legion-hiirtäsi, -näppäimistöäsi, -kuulokkeitasi jne."
+                    "accessoryDesc": "Legion Accessory Central on sovellus, jolla voit hallita Legion-hiirtäsi, Legion-näppäimistöäsi, Legion-kuulokkeitasi jne."
                 },
                 "popup": {
                     "closeBtn": "close"
