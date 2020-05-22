@@ -86,7 +86,7 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 			centered: true,
 			windowClass: 'Battery-Charge-Threshold-Modal'
 		});
-
+		modalRef.componentInstance.id = 'guageReset'
 		modalRef.componentInstance.title = 'device.deviceSettings.power.batterySettings.gaugeReset.title';
 		modalRef.componentInstance.negativeResponseText = 'device.deviceSettings.power.batterySettings.gaugeReset.popup.cancel';
 

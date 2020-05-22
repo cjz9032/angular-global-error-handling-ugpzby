@@ -112,7 +112,7 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, After
 					centered: true,
 					windowClass: 'Battery-Charge-Threshold-Modal'
 				});
-
+				modalRef.componentInstance.id = 'threshold'
 				modalRef.componentInstance.title = 'device.deviceSettings.power.batterySettings.batteryThreshold.popup.title';
 				modalRef.componentInstance.description1 = 'device.deviceSettings.power.batterySettings.batteryThreshold.popup.description1';
 				modalRef.componentInstance.description2 = 'device.deviceSettings.power.batterySettings.batteryThreshold.popup.description2';
