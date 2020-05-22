@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.56](https://bitbucket.tc.lenovo.com///compare/v1.5.55...v1.5.56) (2020-05-22)
+
+
+### Bug Fixes
+
+* **metrics:** the postion value is incorrect ([1932ba2](https://bitbucket.tc.lenovo.com///commit/1932ba2ed2c1a608e2c376c60dd17573a8eee496))
+
 ### [1.5.55](https://bitbucket.tc.lenovo.com///compare/v1.5.54...v1.5.55) (2020-05-22)
 
 ### [1.5.54](https://bitbucket.tc.lenovo.com///compare/v1.5.53...v1.5.54) (2020-05-21)
