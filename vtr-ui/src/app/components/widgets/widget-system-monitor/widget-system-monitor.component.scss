@@ -113,6 +113,12 @@
 					width: 100%;		
 					border-radius: $border_radius_sm;		
 					background-color: $gaming_bg;
+					@media #{$black-on-white}{									
+						background-color:none!important;
+						}
+						@media #{$white-on-black}{
+						background-color:none!important;
+						}
 					@media #{$breakpoint_md} {
 						float:left;	
 						padding-bottom:2rem;
