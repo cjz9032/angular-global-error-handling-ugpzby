@@ -411,7 +411,7 @@
 																							<span class="ml-1" *ngIf="item.type.toUpperCase() == 'SS'">({{'smartPerformance.auto' |translate }})</span>
 
 																					</div>
-																					<div class="col-2">{{item.fixcount}} Fixes
+																					<div class="col-2">{{item.fixcount}} Fix(es)
 																					</div>
 																					<div class="col-2" *ngIf="item.status === 'C'">
 																						<div class="icon-check">
@@ -425,8 +425,8 @@
 																					<div class="col-2" *ngIf="item.status === 'S'">
 																						<div class="icon-times">
 																							<div class="icon-bkg">
-																								<fa-icon
-																									[icon]="['fas', 'times']">
+																								<fa-icon 
+																									[icon]="['fas', 'exclamation']">
 																								</fa-icon>
 																							</div>
 																						</div>
@@ -448,7 +448,7 @@
 																								class="scan-item-value col-2">
 																								{{item.Tune || 0}}
 																							</div>
-																							<div class="scan-status col-2 px-2"
+																							<!-- <div class="scan-status col-2 px-2"
 																							*ngIf="item.status === 'C'">
 																								<fa-icon
 																									[icon]="['fas', 'circle']">
@@ -460,7 +460,7 @@
 																									class="red-icon"
 																									[icon]="['fas', 'circle']">
 																								</fa-icon>
-																							</div>
+																							</div> -->
 																						</div>
 
 																						<div class="row pl-0 pr-0">
@@ -476,7 +476,7 @@
 																								class="scan-item-value col-2">
 																								{{item.Boost || 0}}
 																							</div>
-																							<div class="scan-status col-2 px-2"
+																							<!-- <div class="scan-status col-2 px-2"
 																							*ngIf="item.status === 'C'">
 																								<fa-icon
 																									[icon]="['fas', 'circle']">
@@ -488,7 +488,7 @@
 																									class="red-icon"
 																									[icon]="['fas', 'circle']">
 																								</fa-icon>
-																							</div>
+																							</div> -->
 																						</div>
 																						<div class="row pl-0 pr-0">
 																								<div class="col-1">&nbsp;</div>
@@ -504,7 +504,7 @@
 																								class="scan-item-value col-2">
 																								{{item.Secure || 0}}
 																							</div>
-																							<div class="scan-status col-2 px-2"
+																							<!-- <div class="scan-status col-2 px-2"
 																							*ngIf="item.status === 'C'">
 																								<fa-icon
 																									[icon]="['fas', 'circle']">
@@ -516,7 +516,7 @@
 																									class="red-icon"
 																									[icon]="['fas', 'circle']">
 																								</fa-icon>
-																							</div>
+																							</div> -->
 																						</div>
 																					</div>
 																				</div>
