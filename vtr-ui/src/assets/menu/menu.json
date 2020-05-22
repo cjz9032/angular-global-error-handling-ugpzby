@@ -372,12 +372,12 @@
 					"externallink": false,
 					"metricsParent": "navbar",
 					"metricsItem": "link.smartPerfomance",
-					"sMode": true,
+					"sMode": false,
 					"segment": "+[Consumer]",
 					"routerLinkActiveOptions": {
 						"exact": true
 					},
-					"forArm": true,
+					"forArm": false,
 					"subitems": []
 				}
 			]
