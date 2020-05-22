@@ -16,17 +16,17 @@
                     .btn-link{
                         width: 100%;
                         &:before{								
-                            content: "\f077";
-                            font-family: 'Fontawesome';
-                            color: $main_light;
-                            font-size:1.4rem;
+                            content: "\e9b9";
+                            font-family: "icomoon";
+                            color:$main_light;
+                            font-size:1.4rem;																
                             width:1.75rem;
                             height:1.75rem;
-                            position: absolute;
-                            right: 1.5rem;
-                            top: 3.5rem;
+                            position:absolute;
+                            top:3.5rem;
+                            right: 1rem;
                             @media #{$breakpoint_sm}{
-                                top: 2.2rem;
+                                top: 2.5rem;
                             }
                         }
                         &:hover, &:focus{
@@ -35,17 +35,17 @@
                     }
                     .collapsed{
                         &:before{								
-                            content: "\f078";
-                            font-family: 'FontAwesome';
-                            color: $main_light;
-                            font-size:1.4rem;
+                            content: "\e9b8";
+                            font-family: "icomoon";
+                            color:$main_light;
+                            font-size:1.4rem;																
                             width:1.75rem;
                             height:1.75rem;
-                            position: absolute;
-                            right: 1.5rem;
-                            top: 3.5rem;
+                            position:absolute;
+                            top:3.5rem;
+                            right: 1rem;
                             @media #{$breakpoint_sm}{
-                                top: 2.2rem;
+                                top: 2.5rem;
                             }
                         }														
                     }

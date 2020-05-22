@@ -193,7 +193,7 @@
 								letter-spacing: 0;
 								font-weight: $weight_bold;
                             }
-                            .icon{
+                            .icomoon{
 								color: $menu_hover;
 								@media #{$breakpoint_sm}{
 									height: 3rem;
@@ -307,7 +307,7 @@
         .heading {
             display: flex;
             align-items: center;
-            .icon{
+            .icomoon{
                 font-size: 4.6rem;
                 margin-right: 1.5rem;
                 color: $main_gstart;
