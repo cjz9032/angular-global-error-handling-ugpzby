@@ -10,6 +10,10 @@
 		height: 23rem;
 		transform: scale(.25);
 		transform-origin: 0% 0%;
+		@media #{$breakpoint_xl6}{
+			transform: scale(1);
+			height: 22rem;
+		}
 		@media #{$breakpoint_xl2}{
 			transform: scale(1);
 			height: 22rem;

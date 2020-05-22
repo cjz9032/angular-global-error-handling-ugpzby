@@ -231,6 +231,13 @@
 							position: absolute;
 							right: -64%;
 							top: 2.2rem;
+							@media #{$breakpoint_xl6}{
+								right: 1rem;
+								transform: scale(0.25);
+								transform-origin: top right;
+								left: auto;
+								margin-top: 0rem;
+							}
 							@media #{$breakpoint_xl2}{
 								right: 1rem;
 								transform: scale(0.25);
