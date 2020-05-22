@@ -3755,7 +3755,9 @@
                 "results": "Results:",
                 "status": "Status"
             },
-            "backToHome": "Back To Home"
+            "backToHome": "Back To Home",
+            "successTitle": "Your Pc is tuned up !",
+            "successDescription": "Smart Performance resolved <b>{{issueCount}} issues</b> to keep your pc running smoothly, you can find scan summary and report below."
         },
         "runningWell": "PC is running well",
         "feedbackContainer": {

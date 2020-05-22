@@ -18,7 +18,7 @@
                         [isSwitchChecked]="antiTheft.status" 
                         [tooltipText]="'device.smartAssist.antiTheft.tooltip' | translate" 
                         (toggleOnOff)="setAntiTheftStatus($event)"
-                        [caption]="'device.smartAssist.antiTheft.desc' | translate" 
+                        [caption]="'device.smartAssist.antiTheft.desc' | translate"
                         [showLoaderState]="isLoading">
                     </vtr-ui-row-switch>
 
@@ -87,22 +87,32 @@
                         </div>
 
                         <div id="smartMotionAlertPhoto-region" *ngIf="antiTheft.cameraPrivacyState && antiTheft.authorizedAccessState && antiTheft.isSupportPhoto">
-                            <label id="smartMotionAlertPhotoTitle" 
-                                class="subTitle dropdownTitle" role="text">{{'device.smartAssist.antiTheft.photo.title' | translate}}
-                                <fa-icon id="smartMotionAlertPhotoIcon" class="right-icon" triggers="manual" role="img"
-                                    placement="auto" autoClose="false" [ngbTooltip]="tooltipRef"
-                                    #rightToolTip1="ngbTooltip" autoClose="true" [icon]="['far', 'question-circle']"
-                                    container="vtr-root" tooltipClass="vtr-tooltip"
-                                    (click)="onRightIconClick(rightToolTip1, $event)"
-                                    (keydown.enter)="onRightIconClick(rightToolTip1, $event)" tabindex="0"
-                                    attr.aria-label="{{'device.smartAssist.antiTheft.title' | translate}}+'Photos taken tooltip, which reads:'+ {{'device.smartAssist.antiTheft.photo.tooltip' | translate}}">
+                            <div class="photoDropdown" id='smartMotionAlertPhotoTitle-div'>
+                                <label id="smartMotionAlertPhotoTitle" 
+                                    class="subTitle dropdownTitle" role="text">{{'device.smartAssist.antiTheft.photo.title' | translate}}
+                                </label>
+                                <fa-icon id="smartMotionAlertPhotoIcon" 
+                                        class="right-icon" 
+                                        triggers="manual" 
+                                        role="img"
+                                        placement="auto" 
+                                        autoClose="false" 
+                                        [ngbTooltip]="tooltipRef"
+                                        #rightToolTip1="ngbTooltip" 
+                                        autoClose="true" 
+                                        [icon]="['far', 'question-circle']"
+                                        container="vtr-root" 
+                                        tooltipClass="vtr-tooltip"
+                                        (click)="onRightIconClick(rightToolTip1, $event)"
+                                        (keydown.enter)="onRightIconClick(rightToolTip1, $event)" tabindex="0"
+                                        attr.aria-label="{{'device.smartAssist.antiTheft.title' | translate}} Photos taken tooltip, which reads: {{'device.smartAssist.antiTheft.photo.tooltip' | translate}}">
                                 </fa-icon>
-                            </label>
-                            <ng-template #tooltipRef>
-                                <div id="smartMotionAlertPhotoTooltip" role="tooltip"
-                                    attr.aria-label="{{'device.smartAssist.antiTheft.photo.tooltip' | translate}}"
-                                    [innerHTML]="'device.smartAssist.antiTheft.photo.tooltip' | translate"></div>
-                            </ng-template>
+                                <ng-template #tooltipRef>
+                                    <div id="smartMotionAlertPhotoTooltip" role="tooltip"
+                                        attr.aria-label="{{'device.smartAssist.antiTheft.title' | translate}} Photos taken tooltip, which reads: {{'device.smartAssist.antiTheft.photo.tooltip' | translate}}"
+                                        [innerHTML]="'device.smartAssist.antiTheft.photo.tooltip' | translate"></div>
+                                </ng-template>
+                            </div>
                             <div class="select" id="smartMotionAlertPhotoNumberSelect">
                                 <vtr-ui-dropdown class="selectDropdown" 
                                     [list]="photoNumberList" 
@@ -116,19 +126,19 @@
 						</div>
 
                         <div class="showPhoto" id="smartMotionAlertShowPhotoLink">
-                            <p id="smartMotionAlertShowPhotoTitle" 
+                            <label id="smartMotionAlertShowPhotoTitle"
                                 class="subTitle" role="text">{{'device.smartAssist.antiTheft.showPhoto.title' | translate}}
-                                <button id="smartMotionAlertShowPhotoLinkButton" 
+                            </label>
+                            <button id="smartMotionAlertShowPhotoLinkButton"
                                     tabindex="0" 
                                     role="link"
                                     type="button" 
                                     class="btn-link photoLink" 
                                     [(ngModel)]="antiTheft.photoAddress"
-                                    attr.aria-label="{{'device.smartAssist.antiTheft.title' | translate}}{{'device.smartAssist.antiTheft.showPhoto.link' | translate}}"
+                                    attr.aria-label="{{'device.smartAssist.antiTheft.title' | translate}} {{'device.smartAssist.antiTheft.showPhoto.link' | translate}}"
                                     (click)="showPhotoFolder(antiTheft.photoAddress)">
                                     {{'device.smartAssist.antiTheft.showPhoto.link' | translate}}
-                                </button>
-                            </p>
+                            </button>
                         </div>
 
                         <div class="row" id="fileAuthorizationTips-row" *ngIf="isShowfileAuthorizationTips">

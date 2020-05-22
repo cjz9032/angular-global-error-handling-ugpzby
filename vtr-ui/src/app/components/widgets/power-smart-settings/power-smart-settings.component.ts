@@ -116,7 +116,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 			this.apsStatus = this.cache.apsState;
 			this.selectedModeText = this.cache.selectedModeText !== '' ? this.translate.instant(this.cache.selectedModeText) : '';
 			if (this.cache.mode) {
-				this.setPerformanceAndCool(this.cache.mode);
+				this.setPerformanceAndCool(this.cache.mode, true);
 			}
 			this.isAutoTransitionEnabled = this.cache.isAutoTransitionEnabled;
 
@@ -229,8 +229,11 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 					this.initPowerSmartSettingsUIForIdeaPad(response, false);
 					this.startMonitorForICIdeapad();
 				}
+			} else {
+				this.showPowerSmartSettings(false);
 			}
 		} catch (error) {
+			this.showPowerSmartSettings(false);
 			this.logger.exception('initPowerSmartSettingsForIdeaPad: ', error);
 			return EMPTY;
 		}
@@ -537,7 +540,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 			return new Promise((resolve) => { resolve(6); });
 		}
 	}
-	private setPerformanceAndCool(mode: IntelligentCoolingMode) {
+	private setPerformanceAndCool(mode: IntelligentCoolingMode, isInitFromCache = false) {
 		switch (mode.type) {
 			case ICModes.Cool:
 				this.radioQuietCool = true;
@@ -553,7 +556,10 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 				break;
 			case ICModes.Error:
 				const customEvent = { switchValue: true };
-				this.onIntelligentCoolingToggle(customEvent);
+				this.showIntelligentCoolingModes = false;
+				if (!isInitFromCache) {
+					this.onIntelligentCoolingToggle(customEvent);
+				}
 				this.enableIntelligentCoolingToggle = true;
 				break;
 			case IntelligentCoolingModes.BatterySaving.ideapadType4:

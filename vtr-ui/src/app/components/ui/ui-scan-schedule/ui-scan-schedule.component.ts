@@ -179,13 +179,13 @@ export class UiScanScheduleComponent implements OnInit {
 
 	ngOnInit() {
 		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
-		this.currentDate = new Date();
+		// this.currentDate = new Date();
 		this.selectedDate = this.calendar.getToday();
-		this.toDate = this.selectedDate;
-		this.fromDate = this.selectedDate;
-		this.selectedFrequency = this.scanFrequency[0];
-		this.selectedDay = this.days[0];
-		this.selectedNumber = this.dates[0];
+		// this.toDate = this.selectedDate;
+		// this.fromDate = this.selectedDate;
+		// this.selectedFrequency = this.scanFrequency[0];
+		// this.selectedDay = this.days[0];
+		// this.selectedNumber = this.dates[0];
 		this.isDaySelectionEnable = false;
 		this.scanScheduleDate = this.selectedDate;
 		this.enumLocalScanFrequncy = enumScanFrequency;
@@ -327,15 +327,6 @@ export class UiScanScheduleComponent implements OnInit {
 		this.dayValue = value;
 		this.selectedFrequency = this.scanFrequency[value];
 		this.changeScanDay(value);
-		if (this.selectedFrequency === "Once a week") {
-			this.type = "weekly";
-		}
-		if (this.selectedFrequency === "Every other week") {
-			this.type = "otherweek";
-		}
-		if (this.selectedFrequency === "Every month") {
-			this.type = "monthly";
-		}
 	}
 	changeScanDay(value) {
 		this.dayValue = value;
@@ -404,10 +395,23 @@ export class UiScanScheduleComponent implements OnInit {
 		this.scheduleTab = "";
 	}
 
+	setTypeOfFrequency() {
+		if (this.selectedFrequency === "Once a week") {
+			this.type = "weekly";
+		}
+		if (this.selectedFrequency === "Every other week") {
+			this.type = "otherweek";
+		}
+		if (this.selectedFrequency === "Every month") {
+			this.type = "monthly";
+		}
+	}
+
 	saveChangedScanSchedule() {
 		try {
 			this.scheduleTab = "";
 			this.isChangeSchedule = false;
+			this.setTypeOfFrequency()
 
 			if (!this.isSubscribed) {
 				this.unregisterScheduleScan(
@@ -456,15 +460,10 @@ export class UiScanScheduleComponent implements OnInit {
 	setEnableScanStatus(event: any) {
 		const nextScanEvent = { nextEnable: event.switchValue };
 
-		if (event.switchValue) {
-			this.type = "weekly";
-			this.payloadData(this.type);
-		}
-
 		this.logger.info("setEnableScanStatus", event.switchValue);
 		this.scanToggleValue = event.switchValue;
 
-		if (event.switchValue === false) {
+		if (!event.switchValue) {
 			if (this.isSubscribed) {
 				this.unregisterScheduleScan(
 					"Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix"
@@ -475,7 +474,6 @@ export class UiScanScheduleComponent implements OnInit {
 					"Lenovo.Vantage.SmartPerformance.ScheduleScan"
 				);
 			}
-			// this.scanDatekValueChange.emit(false)
 			this.commonService.setLocalStorageValue(
 				LocalStorageKey.IsSPScheduleScanEnabled,
 				false
@@ -488,6 +486,8 @@ export class UiScanScheduleComponent implements OnInit {
 				LocalStorageKey.IsSPScheduleScanEnabled
 			);
 			if (!this.IsScheduleScanEnabled) {
+				this.type = "firstRun";
+				this.payloadData(this.type);
 				this.scheduleScan(this.requestScanData);
 				this.commonService.setLocalStorageValue(
 					LocalStorageKey.IsSPScheduleScanEnabled,
@@ -565,7 +565,7 @@ export class UiScanScheduleComponent implements OnInit {
 				const dt = moment(res.nextruntime).format("LLLL");
 				if (
 					this.selectedFrequency === this.scanFrequency[0] ||
-					this.selectedFrequency === this.scanFrequency[0]
+					this.selectedFrequency === this.scanFrequency[1]
 				) {
 					this.selectedDay = dt.split(",")[0];
 					this.dayValue = this.days.indexOf(this.selectedDay);
@@ -586,6 +586,11 @@ export class UiScanScheduleComponent implements OnInit {
 					nextScanAMPM: this.scanTime.amPm,
 				};
 				this.sendNextScheduleDate(nextScanEvent);
+			} else {
+				// if no res than setting default values
+				this.selectedFrequency = this.scanFrequency[0];
+				this.selectedDay = this.days[0];
+				this.selectedNumber = this.dates[0];
 			}
 			this.logger.info(
 				"ui-smart-performance.getNextScanRunTime.then",
@@ -654,6 +659,7 @@ export class UiScanScheduleComponent implements OnInit {
 		}
 	}
 
+	// emitting Next Scheduled Scan date and time
 	sendNextScheduleDate(nextScheduleScanEvent) {
 		if (!nextScheduleScanEvent["nextEnable"]) {
 			this.scanDatekValueChange.emit(nextScheduleScanEvent);
@@ -689,17 +695,16 @@ export class UiScanScheduleComponent implements OnInit {
 					nextScheduleScanEvent["nextScanDate"] = moment()
 						.date(+this.selectedNumber)
 						.add(1, "month")
-						.format("MM/DD");
 				} else {
 					nextScheduleScanEvent["nextScanDate"] = moment()
 						.date(+this.selectedNumber)
-						.format("MM/DD");
 				}
 				break;
 		}
 		this.scanDatekValueChange.emit(nextScheduleScanEvent);
 	}
 
+	// setting paload for scanSchedule method
 	payloadData(typeRun: string) {
 		let currentMom;
 		switch (typeRun) {
@@ -783,13 +788,14 @@ export class UiScanScheduleComponent implements OnInit {
 		}
 	}
 
+	// repeating code in payload kept as method.
 	commonLines(currentMoment, frequency) {
 		const freq =
 			frequency === "Every month"
 				? frequency.replace("Every", "oncea").replace(" ", "")
 				: frequency.replace(" ", "").replace(" ", "");
 		const roundOffMin = (Math.ceil(+this.scanTime.min / 5) * 5).toString();
-		const tme = this.scanTime.hour + " " + this.scanTime.min;
+		const tme = this.scanTime.hour + " " + this.scanTime.amPm;
 		const hours = moment(tme, ["h A"]).format("HH");
 		const data = {
 			frequency: freq.toLowerCase(),

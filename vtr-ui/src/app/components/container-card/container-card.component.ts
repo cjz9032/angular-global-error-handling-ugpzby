@@ -41,7 +41,7 @@ export class ContainerCardComponent implements OnInit {
 				&& itemValue.DataSource !== ContentSource.Local
 				&& (!this._item || this._item.Id !== itemValue.Id)) {
 				// The Page would feed the content cards with the cache first and then feed them again when the online content return, and they would probably the same
-				this.metricsService.sendContentDisplay(itemValue.Id, itemValue.DataSource, this.order as string);
+				this.metricsService.sendContentDisplay(itemValue.Id, itemValue.DataSource, this.sideFlag + this.order);
 			}
 			this._item = itemValue;
 		} else {

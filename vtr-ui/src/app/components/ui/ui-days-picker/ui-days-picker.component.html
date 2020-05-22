@@ -1,6 +1,7 @@
 <div class='vtr-ui-days-picker'>
 	<p class="sub-heading"
-		role="heading">
+		role="heading"
+		id="{{linkId}}">
 		{{ subHeadingText | translate | uppercase }}</p>
 	<div class="row">
 		<div class="col-md-12 col-sm-12 pl-0">
@@ -10,8 +11,7 @@
 					tabindex="-1"
 					class="dropcheck d-none"
 					[checked]="showDropDown"
-					[label]="daysId"
-					>
+					[label]="daysId">
 				</vtr-ui-checkbox>
 				<label for="{{daysId}}"
 					#combo
@@ -19,7 +19,7 @@
 					attr.aria-label="{{ subHeadingText | translate}}, {{ smartStandbyService.scheduleLongForm}}"
 					[attr.aria-expanded]="showDropDown"
 					tabindex="0"
-					(click)="onToggleDropDown()"  
+					(click)="onToggleDropDown()"
 					(keydown.enter)="onToggleDropDown()"
 					class="dropbtn"
 					#dayslistbox>

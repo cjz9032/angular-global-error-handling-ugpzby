@@ -2,18 +2,20 @@
 	role="dialog"
 	aria-modal="true">
 	<div class="content">
-		<h1 id="ds-threshold-popup"
+		<h1 id="ds-{{id}}-popup"
 			attr.aria-label="ds-threshold-popup"
 			[innerHTML]="title | translate"></h1>
-		<p id="ds-thresholdpopup-description1"
-			attr.aria-label="ds-thresholdpopup-description1"
+		<p id="ds-{{id}}popup-description1"
+			role="heading"
+			attr.aria-label="ds-{{id}}popup-description1"
 			[innerHTML]="description1 | translate"></p>
-		<p id="ds-thresholdpopup-description2"
-			attr.aria-label="ds-thresholdpopup-description2"
+		<p id="ds-{{id}}popup-description2"
+			role="heading"
+			attr.aria-label="ds-{{id}}popup-description2"
 			[innerHTML]="description2 | translate"></p>
 		<hr aria-hidden="true">
 		<div class="row">
-			<button id="battery-threshold-popup-enable"
+			<button id="battery-{{id}}-popup-{{buttonId | lowercase}}"
 				attr.aria-label="battery-threshold-popup-enable"
 				tabindex="0"
 				class="btn enable-button"
@@ -21,7 +23,7 @@
 				(keydown.enter)="enableBatteryChargeThreshold()">
 				<span class="text-ellipsis">{{positiveResponseText | translate}}</span>
 			</button>
-			<a id="battery-threshold-popup-cancel"
+			<a id="battery-{{id}}-popup-cancel"
 				href="javascript:void();"
 				attr.aria-label="battery-threshold-popup-cancel"
 				role="button"
@@ -38,7 +40,7 @@
 		metricsEvent="FeatureClick"
 		metricsParent="Page.DeviceSettings.Power"
 		tabindex="0"
-		id="ds-threshold-popup-close-button"
+		id="ds-{{id}}-popup-close-button"
 		aria-label="close modal"
 		(click)="closeModal()">
 		<img [src]=" 'assets/icons/Close.svg' | svgInline | async"

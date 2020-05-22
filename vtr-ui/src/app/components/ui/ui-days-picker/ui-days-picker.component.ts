@@ -12,6 +12,7 @@ import { KeyCode } from 'src/app/enums/key-code.enum';
 export class UiDaysPickerComponent implements OnInit, OnChanges {
 	@Input() subHeadingText: string;
 	@Input() daysId: string;
+	@Input() linkId: string;
 	@Input() showDropDown: boolean;
 	@Output() setDays = new EventEmitter<string>();
 

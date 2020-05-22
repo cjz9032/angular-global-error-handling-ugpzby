@@ -28,6 +28,7 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 	batteryConditions: BatteryConditionModel[];
 	batteryChargeStatus = BatteryChargeStatus;
 	math = Math;
+	automationId = ['primary-battery', 'secondary-battery', 'tertiary-battery'];
 
 	hourText: string;
 	minutesText: string;
