@@ -359,7 +359,7 @@
 								</div>
 
 								<div class="vtr-device-information" *ngIf="isSubscribed">
-									<div class="vtr-ui-smart-performance-scan-summary">
+									<div class="vtr-ui-smart-performance-scan-summary" *ngIf="historyScanResultsDateTime && historyScanResultsDateTime.length > 0">
 										<div class="vtr-scan-information mt-5">
 											<div class="scan-summary-block">
 												<div class="row px-0">
