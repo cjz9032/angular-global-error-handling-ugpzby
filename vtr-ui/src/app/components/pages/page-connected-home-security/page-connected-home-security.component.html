@@ -30,7 +30,9 @@
 			<div class="row"
 				*ngIf="account?.state !== 'local' && showContentA">
 				<div class="col-12 px-0 pb-20 pt-0">
-					<vtr-container-card order="1"
+					<vtr-container-card
+						order="1"
+						sideFlag="r"
 						[item]="cardContentPositionA"
 						[type]="'subpage-article'"
 						[ratio]="1"
@@ -122,7 +124,7 @@
 											<div class="p-0">
 												<div class="pull right">
 													<img class="coronet_logo_teal"
-														[src]="'assets/images/coronet-logo.svg' | svgInline | async" 
+														[src]="'assets/images/coronet-logo.svg' | svgInline | async"
 														alt = "coronet logo"/>
 												</div>
 											</div>
