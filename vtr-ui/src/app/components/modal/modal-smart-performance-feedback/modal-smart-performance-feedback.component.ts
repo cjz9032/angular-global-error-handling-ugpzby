@@ -138,7 +138,7 @@ export class ModalSmartPerformanceFeedbackComponent implements OnInit {
 			&& (isNull(formData.fbQ6) || isUndefined(formData.fbQ6))
 			&& (isNull(formData.fbQ7) || isUndefined(formData.fbQ7))
 			&& (isNull(formData.fbQ8) || isUndefined(formData.fbQ8))
-			&& (isNull(formData.fbComment) || isUndefined(formData.fbComment) || formData.fbComment=='')
+			// && (isNull(formData.fbComment) || isUndefined(formData.fbComment) || formData.fbComment=='')
 		) {
 			this.isSubmitButtonActive = false;
 			return false;

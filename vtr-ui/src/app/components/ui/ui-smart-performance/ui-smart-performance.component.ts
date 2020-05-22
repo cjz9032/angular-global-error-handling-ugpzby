@@ -345,21 +345,12 @@ export class UiSmartPerformanceComponent implements OnInit {
 
 	onclickFeedback() {
 		this.modalService.open(ModalSmartPerformanceFeedbackComponent, {
+			// backdrop: 'static',
 			size: 'lg',
 			keyboard: false,
 			centered: true,
 			windowClass: 'smart-performance-feedback-Modal'
-		}).result.then(
-			result => {
-				if (result === 'enable') {
-					// this.toggleOnOff.emit($event);
-				} else if (result === 'close') {
-					// this.isSwitchChecked = !this.isSwitchChecked;
-				}
-			},
-			reason => {
-			}
-		);
+		})
 	}
 
 	cancelScanfromScanning() {
