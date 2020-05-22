@@ -12,9 +12,9 @@ export class CameraBackgroundBlurComponent implements OnInit, OnChanges {
 	@Input() option = new CameraBlur();
 	@Output() optionChanged = new EventEmitter<string>();
 
-	public readonly BLUR = 'blur';
-	public readonly COMIC = 'comic';
-	public readonly SKETCH = 'sketch';
+	public readonly BLUR = 'Blur';
+	public readonly COMIC = 'Comic';
+	public readonly SKETCH = 'Sketch';
 
 	constructor(private logger: LoggerService) { }
 
@@ -28,21 +28,21 @@ export class CameraBackgroundBlurComponent implements OnInit, OnChanges {
 				componentId: 'radio1',
 				label: 'device.deviceSettings.displayCamera.camera.camerablur.blurMode',
 				value: this.BLUR,
-				isChecked: this.option.currentMode.toLowerCase() === this.BLUR,
+				isChecked: this.option.currentMode.toLowerCase() === this.BLUR.toLowerCase(),
 				isDisabled: false
 			},
 			{
 				componentId: 'radio2',
 				label: 'device.deviceSettings.displayCamera.camera.camerablur.comicMode',
 				value: this.COMIC,
-				isChecked: this.option.currentMode.toLowerCase() === this.COMIC,
+				isChecked: this.option.currentMode.toLowerCase() === this.COMIC.toLowerCase(),
 				isDisabled: false
 			},
 			{
 				componentId: 'radio3',
 				label: 'device.deviceSettings.displayCamera.camera.camerablur.sketchMode',
 				value: this.SKETCH,
-				isChecked: this.option.currentMode.toLowerCase() === this.SKETCH,
+				isChecked: this.option.currentMode.toLowerCase() === this.SKETCH.toLowerCase(),
 				isDisabled: false
 			}];
 		}
