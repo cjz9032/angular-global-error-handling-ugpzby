@@ -75,7 +75,10 @@ vtr-ui-row-switch {
   }
 
   .showPhoto {
-    margin-top: -4px;
+    margin: 10px 0px;
+    .subTitle {
+      display:inline !important;
+    }
     .photoLink {
       margin-left: 10px;
     }
@@ -87,11 +90,15 @@ vtr-ui-row-switch {
     }
   }
 
+.photoDropdown {
+  margin: 10px 0px;
+  .subTitle {
+    display:inline !important;
+  }
   .right-icon {
     font-size: $fontsize_sm;
     color: $menu_hover;
-    cursor: pointer;
-    margin-left: 8px;
+    margin-left: 10px;
     &:hover {
       color: $highlight;
     }
@@ -99,7 +106,7 @@ vtr-ui-row-switch {
       @include outline-border-blue;
     }
   }
-
+}
   ::ng-deep .btn-link {
     text-decoration: underline !important;
     font-size: 1.4rem !important;
