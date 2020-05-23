@@ -383,6 +383,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 					// DYTC 4 supported
 					this.logger.info('PowerSmartSettingsComponent:initPowerSmartSettingsForThinkPad:: DYTC 4 supported');
 					this.showIC = 4;
+					this.showIntelligentCoolingModes = true;
 					this.showPowerSmartSettings(true);
 					this.cQLCapability = await this.getCQLCapability();
 					this.tIOCapability = await this.getTIOCapability();
@@ -392,13 +393,19 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 					if (this.cQLCapability || this.tIOCapability) {
 						this.showIntelligentCoolingToggle = true;
 						if (mode.type === ICModes.Error) {
+							this.enableIntelligentCoolingToggle = true;
 							const customEvent = { switchValue: this.enableIntelligentCoolingToggle };
 							this.onIntelligentCoolingToggle(customEvent);
 						}
 					} else {
+						if (mode.type === ICModes.Error) {
+							this.showPowerSmartSettings(false);
+							return;
+						}
 						this.captionText = this.translate.instant('device.deviceSettings.power.powerSmartSettings.nocqldesc');
 						this.cache.captionText = 'device.deviceSettings.power.powerSmartSettings.nocqldesc';
 						this.showIntelligentCoolingToggle = false;
+						this.showIntelligentCoolingModes = true;
 					}
 					this.setPerformanceAndCool(mode);
 					this.updateIntelligentCoolingUIModel(this.showIC);
