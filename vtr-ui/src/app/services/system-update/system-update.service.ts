@@ -148,8 +148,8 @@ export class SystemUpdateService {
 					this.updateInfo = { status, updateList: this.mapAvailableUpdateResponse(response.updateList) };
 					this.commonService.sendNotification(UpdateProgress.UpdatesAvailable, this.updateInfo);
 				} else {
-					while (this.percentCompleted < 100 && !this.isCheckingCancel) {
-						setTimeout(() => {
+					const interval = setInterval(()=>{
+						if(this.percentCompleted < 100 && !this.isCheckingCancel) {
 							const percent = this.percentCompleted + 10;
 							if (percent <= 100) {
 								this.percentCompleted = percent;
@@ -157,13 +157,15 @@ export class SystemUpdateService {
 								this.percentCompleted = 100;
 							}
 							this.commonService.sendNotification(UpdateProgress.UpdateCheckInProgress, this.percentCompleted);
-						}, 80);
-					}
-					this.percentCompleted = 0;
-					const payload = { ...response, status };
-					this.isInstallationSuccess = this.getInstallationSuccess(payload);
-					this.commonService.sendNotification(UpdateProgress.UpdateCheckCompleted, payload);
-					this.getScheduleUpdateStatus(false);
+						} else {
+							this.percentCompleted = 0;
+							const payload = { ...response, status };
+							this.isInstallationSuccess = this.getInstallationSuccess(payload);
+							this.commonService.sendNotification(UpdateProgress.UpdateCheckCompleted, payload);
+							this.getScheduleUpdateStatus(false);
+							clearInterval(interval);
+						}
+					}, 80);
 				}
 			}).catch((error) => {
 				this.percentCompleted = 0;
