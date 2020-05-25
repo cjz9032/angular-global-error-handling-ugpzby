@@ -149,15 +149,15 @@ export class SystemUpdateService {
 					this.commonService.sendNotification(UpdateProgress.UpdatesAvailable, this.updateInfo);
 				} else {
 					while (this.percentCompleted < 100 && !this.isCheckingCancel) {
-						const percent = this.percentCompleted + 10;
-						if (percent <= 100) {
-							this.percentCompleted = percent;
-						} else {
-							this.percentCompleted = 100;
-						}
-						this.commonService.sendNotification(UpdateProgress.UpdateCheckInProgress, this.percentCompleted);
-						const sleep = milliseconds => new Promise(resolve => setTimeout(resolve, milliseconds));
-						await sleep(80);
+						setTimeout(() => {
+							const percent = this.percentCompleted + 10;
+							if (percent <= 100) {
+								this.percentCompleted = percent;
+							} else {
+								this.percentCompleted = 100;
+							}
+							this.commonService.sendNotification(UpdateProgress.UpdateCheckInProgress, this.percentCompleted);
+						}, 80);
 					}
 					this.percentCompleted = 0;
 					const payload = { ...response, status };
