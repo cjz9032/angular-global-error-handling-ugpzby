@@ -2097,7 +2097,8 @@
             },
             "superResolution": {
                 "title": "Skalowanie rozdzielczości wideo",
-                "desc": "<p id='sr-describe-one' role='text'>Ta funkcja poprawia rozdzielczość odtwarzania filmów, a tym samym zapewnia lepsze wrażenia z ich oglądania. Jej skuteczność jest największa w przypadku materiałów wideo o niskiej rozdzielczości.</p><p id='sr-describe-two' role='text'>Ta funkcja może wpływać na żywotność baterii, temperaturę baterii i powodować hałas. Nie należy używać jej w trybie prądu stałego (tryb akumulatora). Może to przyspieszyć zużycie energii i skrócić żywotność akumulatora.</p>",
+                "desc1": "Ta funkcja poprawia rozdzielczość odtwarzania filmów, a tym samym zapewnia lepsze wrażenia z ich oglądania. Jej skuteczność jest największa w przypadku materiałów wideo o niskiej rozdzielczości.",
+                "desc2": "Ta funkcja może wpływać na żywotność baterii, temperaturę baterii i powodować hałas. Nie należy używać jej w trybie prądu stałego (tryb akumulatora). Może to przyspieszyć zużycie energii i skrócić żywotność akumulatora.",
                 "tooltip": "<p id='sr-tip-one' role='text'>Ta funkcja działa tylko w przypadku następujących odtwarzaczy wideo:<br>Windows Media Player<br>Odtwarzacz działający w przeglądarce Chrome<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Aby dowiedzieć się, jak włączyć tę funkcję w odtwarzaczu PotPlayer, zapoznaj się z podręcznikiem użytkownika dostarczonym z komputerem.</p>",
                 "note": {
                     "description": "Funkcja nie działa, gdy:",
@@ -2111,7 +2112,8 @@
                 "heading": "Inteligentna detekcja",
                 "title": "Inteligentny alert wykrycia ruchu",
                 "tooltip": "<div id='antiTheft-tooltips'>Ta funkcja nie działa, gdy komputer znajduje się w trybie hibernacji lub jest wyłączony. Sprawdź ustawienia dotyczące czynności wykonywanych w następujących sytuacjach:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>czynności wykonywane po zamknięciu pokrywy</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>czynność wykonywana w przypadku niskiego/krytycznie niskiego poziomu naładowania akumulatora</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>czynność wykonywana po naciśnięciu przycisku zasilania</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>czynność wykonywana po naciśnięciu przycisku uśpienia</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>ustawienia limitu czasu bezczynności do przełączenia w stan hibernacji</li></ul></div>W przeciwnym razie nie zostanie uruchomiony alarm ani nie zostaną wykonane zdjęcia.</div>",
-                "desc": "<p id='antiTheft-describe-one' role='text'>Jeśli włączysz tę funkcję, urządzenie zacznie emitować sygnał dźwiękowy, gdy po zablokowaniu ekranu zostanie wykryty ruch — zwłaszcza, jeśli urządzenie znajduje się w miejscu publicznym.</p><p id='antiTheft-describe-two' role='text'>Aby wyłączyć alarm, zaloguj się do systemu Windows.</p>",
+                "desc1": "Jeśli włączysz tę funkcję, urządzenie zacznie emitować sygnał dźwiękowy, gdy po zablokowaniu ekranu zostanie wykryty ruch — zwłaszcza, jeśli urządzenie znajduje się w miejscu publicznym.",
+                "desc2": "Aby wyłączyć alarm, zaloguj się do systemu Windows.",
                 "note": {
                     "description": "Po pomyślnym zalogowaniu się do systemu nastąpi automatyczne wyłączenie funkcji. Aby ponownie użyć tej funkcji, należy jeszcze raz ją włączyć."
                 },

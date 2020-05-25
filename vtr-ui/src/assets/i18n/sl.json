@@ -2097,7 +2097,8 @@
             },
             "superResolution": {
                 "title": "Povečanje ločljivosti videoposnetkov",
-                "desc": "<p id='sr-describe-one' role='text'>Ta funkcija s povečanjem ločljivosti videoposnetka izboljša izkušnjo predvajanja videoposnetkov. Posebej primerna je za videoposnetke v slabši ločljivosti.</p><p id='sr-describe-two' role='text'>Ta funkcija lahko vpliva na čas delovanja in temperaturo baterije ter poveča glasnost računalnika. Ne uporabljajte je pri napajanju iz baterije (način DC), sicer bo pospešila porabo energije in skrajšala čas delovanja baterije.</p>",
+                "desc1": "Ta funkcija s povečanjem ločljivosti videoposnetka izboljša izkušnjo predvajanja videoposnetkov. Posebej primerna je za videoposnetke v slabši ločljivosti.",
+                "desc2": "Ta funkcija lahko vpliva na čas delovanja in temperaturo baterije ter poveča glasnost računalnika. Ne uporabljajte je pri napajanju iz baterije (način DC), sicer bo pospešila porabo energije in skrajšala čas delovanja baterije.",
                 "tooltip": "<p id='sr-tip-one' role='text'>Ta funkcija deluje samo s temi predvajalniki videoposnetkov:<br>Windows Media Player<br>predvajalnik v brskalniku Chrome<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Navodila za omogočanje te funkcije v predvajalniku PotPlayer najdete v Vodiču za uporabnika, ki je priložen računalniku.</p>",
                 "note": {
                     "description": "Ta funkcija ne deluje v naslednjih primerih:",
@@ -2111,7 +2112,8 @@
                 "heading": "Pametno zaznavanje",
                 "title": "Pametno opozarjanje na premikanje",
                 "tooltip": "<div id='antiTheft-tooltips'>Ta funkcija ne deluje, če je računalnik v načinu mirovanja ali izklopljen. Za naslednja dejanja preverite nastavitve:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>dejanja zapiranja pokrova</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>dejanje kritične/nizke napolnjenosti baterije</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>dejanje gumba za vklop</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>dejanje gumba za spanje</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>nastavitve časovne omejitve nedejavnosti za preklop v način mirovanja</li></ul></div>V nasprotnem primeru se alarm ne bo sprožil in fotografije se ne bodo posnele.</div>",
-                "desc": "<p id='antiTheft-describe-one' role='text'>Ko je ta funkcija omogočena, naprava začne piskati, kadar pri zaklenjenem zaslonu in predvsem na javnem mestu zazna premikanje.</p><p id='antiTheft-describe-two' role='text'>Če želite izklopiti alarm, se prijavite v sistem Windows.</p>",
+                "desc1": "Ko je ta funkcija omogočena, naprava začne piskati, kadar pri zaklenjenem zaslonu in predvsem na javnem mestu zazna premikanje.",
+                "desc2": "Če želite izklopiti alarm, se prijavite v sistem Windows.",
                 "note": {
                     "description": "Po uspešni prijavi v sistem se ta funkcija samodejno izklopi. Pred vnovično uporabo jo boste morali znova omogočiti."
                 },

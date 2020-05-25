@@ -45,10 +45,14 @@
 						[isSwitchChecked]="isSRChecked"
 						[tooltipText]="'device.smartAssist.superResolution.tooltip' | translate"
 						(toggleOnOff)="setSuperResolutionStatus($event)"
-						[caption]="'device.smartAssist.superResolution.desc' | translate"
 						[theme]="'white'"
 						[showLoaderState]="isSRLoading">
 					</vtr-ui-row-switch>
+
+					<div id = "sr-describe-div" class="sr-describe-div">
+						<p id="sr-describe-one" role="text">{{'device.smartAssist.superResolution.desc1' | translate}}</p>
+						<p id="sr-describe-two" role="text">{{'device.smartAssist.superResolution.desc2' | translate}}</p>
+					</div>
 
 					<div class="superResolution-image" id="intelligent-media-superResolution-image">
 						<img [src]="image"
@@ -78,14 +82,14 @@
 							<div class="description-div" id="superResolution-description-region-ui-li">
 								<ul role="list" id="superResolution-description-ui">
 									<li role="listitem" id="superResolution-description-li-one">
-										<label id="superResolution-note-description-one"
+										<span id="superResolution-note-description-one"
 											role="text">
-											{{'device.smartAssist.superResolution.note.description1' | translate}}</label>
+											{{'device.smartAssist.superResolution.note.description1' | translate}}</span>
 									</li>
 									<li role="listitem" id="superResolution-description-li-two">
-										<label id="superResolution-note-description-two"
+										<span id="superResolution-note-description-two"
 											role="text">
-											{{'device.smartAssist.superResolution.note.description2' | translate}}</label>
+											{{'device.smartAssist.superResolution.note.description2' | translate}}</span>
 									</li>
 								</ul>
 							</div>
