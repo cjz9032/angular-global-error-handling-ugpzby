@@ -59,8 +59,8 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 
 	toggleSortOrder() {
 		this.sortAsc = !this.sortAsc;
-		if (this.systemUpdateService.isShellAvailable) {
-			this.systemUpdateService.sortInstallationHistory(this.installationHistory, this.sortAsc);
+		if (this.systemUpdateService.installationHistory) {
+			this.sortInstallationHistory(this.systemUpdateService.installationHistory);
 		}
 	}
 
