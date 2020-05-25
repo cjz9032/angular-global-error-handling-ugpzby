@@ -20,10 +20,10 @@ export class MetricService {
 	private focusDurationCounter;
 	private blurDurationCounter;
 	private suspendDurationCounter;
-	private dashboardFirstLoaded = 0;
 	private welcomeNeeded: any;
 	private hasSendAppLoadedEvent = false;
 	public readonly isFirstLaunch: boolean;
+	private loadingDuration: number;
 	constructor(
 		private shellService: VantageShellService,
 		private timerService: DurationCounterService,
@@ -137,9 +137,8 @@ export class MetricService {
 		);
 	}
 
-	private sendAppLoadedMetric(dashboardFirstLoaded: number) {
-		const vanStub = this.shellService.getVantageStub();
-		this.metricsClient.sendAsync(new AppLoaded((dashboardFirstLoaded - vanStub.navigateTime)));
+	private sendAppLoadedMetric(LoadingDuration: number) {
+		this.metricsClient.sendAsync(new AppLoaded(LoadingDuration));
 	}
 
 	private sendInstallationMetric(metricEnable) {
@@ -239,14 +238,10 @@ export class MetricService {
 		}
 		this.hasSendAppLoadedEvent = true;
 
-		if (!this.dashboardFirstLoaded) {
-			this.dashboardFirstLoaded = Date.now();
-		}
-
 		// the following metrics need to be send when the welcome page was done or the page was loaded at which point the metrics privacy was determined
 		this.sendAppLaunchMetric()
 		this.sendEnvInfoMetric();
-		this.sendAppLoadedMetric(this.dashboardFirstLoaded);
+		this.sendAppLoadedMetric(this.loadingDuration);
 	}
 
 	public async metricReady() {
@@ -256,8 +251,8 @@ export class MetricService {
 		await this.metricsClient.initPromise;
 	}
 
-	private async sendMetricsAfterPageLoad() {
-		if (this.welcomeNeeded === false && this.dashboardFirstLoaded) {
+	private async sendMetricsOnWebLoaded() {
+		if (this.welcomeNeeded === false && this.loadingDuration) {
 			await this.metricReady();
 			if (this.metricsClient.metricsEnabled) {	// in normal case for first run, if the welcome page was not done, the metrics will be disable.
 				this.handleAppLoadedEvent();	// send these metric event in dashboard at the scenarios when welcome page was done.
@@ -268,12 +263,13 @@ export class MetricService {
 	}
 
 	public async onPageLoaded() {
-		if (this.dashboardFirstLoaded) {
+		if (this.loadingDuration) {
 			return; 	// run once
 		}
 
-		this.dashboardFirstLoaded = Date.now(); // save the time while app finish loading.
-		this.sendMetricsAfterPageLoad();
+		const vanStub = this.shellService.getVantageStub();
+		this.loadingDuration = Date.now() - vanStub.navigateTime;
+		this.sendMetricsOnWebLoaded();
 	}
 
 	public async handleWelcomeDone() {
@@ -287,7 +283,7 @@ export class MetricService {
 
 	public async HandleCheckWelcomeNeeded(welcomeNeeded: boolean) {
 		this.welcomeNeeded = welcomeNeeded;
-		this.sendMetricsAfterPageLoad();
+		this.sendMetricsOnWebLoaded();
 	}
 
 	private toLower(content: string) {
