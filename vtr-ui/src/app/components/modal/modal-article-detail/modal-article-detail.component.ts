@@ -112,11 +112,15 @@ export class ModalArticleDetailComponent implements OnInit {
 	}
 
 	sendArticleViewMetric() {
-		const viewPort = document.querySelector('.modal-body .article-content') as HTMLElement;
+		const viewPort = this.articleDialogContent.nativeElement as HTMLElement;
 		let DocReadPosition = -1;
 		if (viewPort) {
-			DocReadPosition = (viewPort.scrollTop + viewPort.clientHeight) * 100 / viewPort.scrollHeight;
-			DocReadPosition = Math.round(DocReadPosition);
+			if (viewPort.scrollHeight === 0) {
+				DocReadPosition = 0;
+			} else {
+				DocReadPosition = (viewPort.scrollTop + viewPort.clientHeight) * 100 / viewPort.scrollHeight;
+				DocReadPosition = Math.round(DocReadPosition);
+			}
 		}
 		const focusDuration = this.focusDurationCounter !== null ? this.focusDurationCounter.getDuration() : 0;
 		const blurDuration = this.blurDurationCounter !== null ? this.blurDurationCounter.getDuration() : 0;
