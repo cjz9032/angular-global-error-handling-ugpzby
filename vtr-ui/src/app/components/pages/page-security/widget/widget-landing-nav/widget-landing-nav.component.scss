@@ -5,15 +5,15 @@
   padding: 0rem;
 
   .nav-item {
-	text-decoration: none;
+	  text-decoration: none;
     margin-right: 2rem;
-	min-width: 0;
-	&:hover {
-		text-decoration: none;
-	}
-	@media #{$mediaquery_X46} {
-		margin-right: 1rem;
-	}
+	  min-width: 0;
+    &:hover {
+      text-decoration: none;
+    }
+    @media #{$mediaquery_X46} {
+      margin-right: 1rem;
+    }
   }
 
   .nav-link {
@@ -24,10 +24,10 @@
     background-color: rgba(0, 0, 0, 0.15);
     height: 8rem;
     border-radius: 1rem 1rem 0 0;
-	padding: 0.5rem 2rem;
-	text-align: center;
-	@media #{$mediaquery_X46} {
-        padding: 0.5rem 1rem;
+    padding: 0.5rem 2rem;
+    text-align: center;
+	  @media #{$mediaquery_X46} {
+      padding: 0.5rem 1rem;
     }
 
     &:hover {
@@ -37,19 +37,9 @@
     &.active {
       color: $active_blue;
       background-color: $light;
-      box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
+      box-shadow: -2px -2px 2px 0px rgba(0,0,0,0.05), 2px -1px 2px 0px rgba(0,0,0,0.05);
       position: relative;
       top:1px;
-
-      &:after {
-        content: "";
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: $light;
-        height: 15px;
-      }
 
       &:hover {
         color: $grey_darker;
