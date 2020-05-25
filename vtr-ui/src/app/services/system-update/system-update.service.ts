@@ -150,10 +150,8 @@ export class SystemUpdateService {
 				} else {
 					const interval = setInterval(()=>{
 						if(this.percentCompleted < 100 && !this.isCheckingCancel) {
-							const percent = this.percentCompleted + 10;
-							if (percent <= 100) {
-								this.percentCompleted = percent;
-							} else {
+							this.percentCompleted += 10;
+							if (this.percentCompleted > 100) {
 								this.percentCompleted = 100;
 							}
 							this.commonService.sendNotification(UpdateProgress.UpdateCheckInProgress, this.percentCompleted);
