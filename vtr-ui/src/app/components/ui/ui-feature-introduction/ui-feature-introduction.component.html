@@ -5,7 +5,7 @@
 				<p class="title" [innerHTML]="items.featureTitle | translate"></p>
 				<p *ngIf="items.featureTitleDesc && !items.descHasLink" class="text-regular" [innerHTML]="items.featureTitleDesc | translate"></p>
 				<div *ngIf="items.descHasLink">
-					<p *vtrTranslate="items.featureTitleDesc | translate" class="text-regular">
+					<p *vtrTranslate="items.featureTitleDesc | translate" class="text-regular p-1">
 						<ng-content></ng-content>
 					</p>
 				</div>
