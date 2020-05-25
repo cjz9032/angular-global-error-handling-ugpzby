@@ -112,7 +112,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	frequencyValue = 1;
 	dayValue = 0;
 	dateValue = 0;
-	enableNextText: boolean = true
+	enableNextText: boolean;
 	scanScheduleDate: any;
 	issueCount: number = 0;
 	nextScheduleScan: any;
@@ -154,7 +154,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.isSubscribed = this.commonService.getLocalStorageValue(
 			LocalStorageKey.IsFreeFullFeatureEnabled
 		);
-	 
+		this.enableNextText = this.commonService.getLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled)
 		this.isDaySelectionEnable = false;
 		this.scanScheduleDate = this.selectedDate;
 		this.leftAnimator = '0%';
@@ -537,16 +537,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			return;
 		}
 		this.enableNextText = nextScheduleScanEvent['nextEnable']
-		const nextScheduleScanDayMonth = this.formatLocaleDate.transformWithoutYear(nextScheduleScanEvent['nextScanDate']);
-		this.nextScheduleScan =  nextScheduleScanDayMonth + ' at ' + nextScheduleScanEvent['nextScanHour'] + ':' + nextScheduleScanEvent['nextScanMin'] + ' ' + nextScheduleScanEvent['nextScanAMPM'];
-
-		// if (this.isSubscribed) {
-		// 	this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
-		// }
-		// else {
-		// 	this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScan');
-		// }
-
+		// const nextScheduleScanDayMonth = this.formatLocaleDate.transformWithoutYear(nextScheduleScanEvent['nextScanDate']);
+		this.nextScheduleScan =  nextScheduleScanEvent['nextScanDate'] + ' at ' + nextScheduleScanEvent['nextScanHour'] + ':' + nextScheduleScanEvent['nextScanMin'] + ' ' + nextScheduleScanEvent['nextScanAMPM'];
 	 }
 
 	public initContentLoad() {
