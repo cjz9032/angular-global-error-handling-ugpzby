@@ -109,11 +109,11 @@
                                         tooltipClass="vtr-tooltip"
                                         (click)="onRightIconClick(rightToolTip1, $event)"
                                         (keydown.enter)="onRightIconClick(rightToolTip1, $event)" tabindex="0"
-                                        attr.aria-label="{{'device.smartAssist.antiTheft.title' | translate}} Photos taken tooltip, which reads: {{'device.smartAssist.antiTheft.photo.tooltip' | translate}}">
+                                        attr.aria-label="{{'device.smartAssist.antiTheft.photo.title' | translate}} tooltip, which reads: {{'device.smartAssist.antiTheft.photo.tooltip' | translate}}">
                                 </fa-icon>
                                 <ng-template #tooltipRef>
                                     <div id="smartMotionAlertPhotoTooltip" role="tooltip"
-                                        attr.aria-label="{{'device.smartAssist.antiTheft.title' | translate}} Photos taken tooltip, which reads: {{'device.smartAssist.antiTheft.photo.tooltip' | translate}}"
+                                        attr.aria-label="{{'device.smartAssist.antiTheft.photo.title' | translate}} tooltip, which reads: {{'device.smartAssist.antiTheft.photo.tooltip' | translate}}"
                                         [innerHTML]="'device.smartAssist.antiTheft.photo.tooltip' | translate"></div>
                                 </ng-template>
                             </div>
@@ -139,7 +139,7 @@
                                     type="button" 
                                     class="btn-link photoLink" 
                                     [(ngModel)]="antiTheft.photoAddress"
-                                    attr.aria-label="{{'device.smartAssist.antiTheft.title' | translate}} {{'device.smartAssist.antiTheft.showPhoto.link' | translate}}"
+                                    attr.aria-label="{{'device.smartAssist.antiTheft.showPhoto.link' | translate}}"
                                     (click)="showPhotoFolder(antiTheft.photoAddress)">
                                     {{'device.smartAssist.antiTheft.showPhoto.link' | translate}}
                             </button>

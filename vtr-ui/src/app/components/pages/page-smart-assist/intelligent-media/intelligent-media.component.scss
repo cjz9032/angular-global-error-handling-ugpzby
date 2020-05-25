@@ -27,6 +27,11 @@
             margin-left: 1.5rem;
             ul li {
                 list-style-type: disc;
+                span {
+                    font-size: $fontsize_xs;
+                    color: $shade_blue;
+                    font-weight: 300;
+                }
             }
         }
     }
