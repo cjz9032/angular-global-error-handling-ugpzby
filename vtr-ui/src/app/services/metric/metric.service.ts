@@ -214,10 +214,10 @@ export class MetricService {
 	}
 
 	public getPageName() {
-		return  this.activeRouter.snapshot.data.pageName
-		|| this.activeRouter.snapshot.root.firstChild.data.pageName
-		|| this.activeRouter.snapshot.root.firstChild.firstChild.data.pageName
-		|| MetricConst.Unknown
+		return this.activeRouter.snapshot.data.pageName
+			|| this.activeRouter.snapshot.root.firstChild.data.pageName
+			|| this.activeRouter.snapshot.root.firstChild.firstChild.data.pageName
+			|| MetricConst.Unknown
 	}
 
 	public sendContentDisplay(itemID: string, dataSource: string, position: string) {
@@ -251,13 +251,13 @@ export class MetricService {
 		await this.metricsClient.initPromise;
 	}
 
-	private async sendMetricsOnWebLoaded() {
-		if (this.welcomeNeeded === false && this.loadingDuration) {
-			await this.metricReady();
-			if (this.metricsClient.metricsEnabled) {	// in normal case for first run, if the welcome page was not done, the metrics will be disable.
-				this.handleAppLoadedEvent();	// send these metric event in dashboard at the scenarios when welcome page was done.
-			}
+	private async onWebLoaded() {
+		await this.metricReady();
+		if (this.metricsClient.metricsEnabled) {	// in normal case for first run, if the welcome page was not done, the metrics will be disable.
+			this.handleAppLoadedEvent();	// send these metric event in dashboard at the scenarios when welcome page was done.
+		}
 
+		if (this.welcomeNeeded === false) {
 			this.sendInstallationMetric(this.metricsClient.metricsEnabled)
 		}
 	}
@@ -267,13 +267,12 @@ export class MetricService {
 			return; 	// run once
 		}
 
-		const vanStub = this.shellService.getVantageStub();
-		this.loadingDuration = Date.now() - vanStub.navigateTime;
-		this.sendMetricsOnWebLoaded();
+		const vantageStub = this.shellService.getVantageStub();
+		this.loadingDuration = Date.now() - vantageStub.navigateTime;
+		this.onWebLoaded();
 	}
 
 	public async handleWelcomeDone() {
-		await this.metricReady();
 		if (this.metricsClient.metricsEnabled) {
 			this.handleAppLoadedEvent();
 		}
@@ -283,7 +282,10 @@ export class MetricService {
 
 	public async HandleCheckWelcomeNeeded(welcomeNeeded: boolean) {
 		this.welcomeNeeded = welcomeNeeded;
-		this.sendMetricsOnWebLoaded();
+		if (this.welcomeNeeded === false) {
+			await this.metricReady();
+			this.sendInstallationMetric(this.metricsClient.metricsEnabled)
+		}
 	}
 
 	private toLower(content: string) {
