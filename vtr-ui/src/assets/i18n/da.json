@@ -2097,7 +2097,8 @@
             },
             "superResolution": {
                 "title": "Opskalering af videoopløsning",
-                "desc": "<p id='sr-describe-one' role='text'>Denne funktion giver en bedre oplevelse i forbindelse med videoafspilning ved at forbedre videoopløsningen. Det fungerer især godt, når videoen er i dårlig opløsning.</p><p id='sr-describe-two' role='text'>Denne funktion kan påvirke batteriets levetid, batteriets temperatur og medføre støj. Brug den ikke i DC-tilstand (batteritilstand). Ellers bliver strømforbruget større, og batterilevetiden afkortes.</p>",
+                "desc1": "Denne funktion giver en bedre oplevelse i forbindelse med videoafspilning ved at forbedre videoopløsningen. Det fungerer især godt, når videoen er i dårlig opløsning.",
+                "desc2": "Denne funktion kan påvirke batteriets levetid, batteriets temperatur og medføre støj. Brug den ikke i DC-tilstand (batteritilstand). Ellers bliver strømforbruget større, og batterilevetiden afkortes.",
                 "tooltip": "<p id='sr-tip-one' role='text'>Denne funktion fungerer kun med følgende videoafspillere:<br>Windows Media Player<br>Chrome-baseret afspiller<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Oplysninger om, hvordan denne funktion aktiveres på PotPlayer, finder du i den brugervejledning, der leveres sammen med computeren.</p>",
                 "note": {
                     "description": "Denne funktion virker ikke i disse situationer:",
@@ -2111,7 +2112,8 @@
                 "heading": "Intelligent registrering",
                 "title": "Smart bevægelsesalarm",
                 "tooltip": "<div id='antiTheft-tooltips'>Denne funktion fungerer ikke, når computeren er i slumretilstand eller slukket. Tjek indstillingerne for følgende handlinger:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>handlinger, når låget lukkes</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>handling ved kritisk/lavt batteriniveau</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>handling for tænd/sluk-knap</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>handling for slumreknap</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>Indstillinger for timeout til slumre ved inaktivitet</li></ul></div>Ellers udløser den ikke en alarm og tager ikke nogen billeder.</div>",
-                "desc": "<p id='antiTheft-describe-one' role='text'>Når denne funktion er aktiveret, begynder enheden at bippe, når skærmen er låst, og der registreres bevægelser, især på et offentligt sted.</p><p id='antiTheft-describe-two' role='text'>Log på Windows, hvis du vil afvise alarmen.</p>",
+                "desc1": "Når denne funktion er aktiveret, begynder enheden at bippe, når skærmen er låst, og der registreres bevægelser, især på et offentligt sted.",
+                "desc2": "Log på Windows, hvis du vil afvise alarmen.",
                 "note": {
                     "description": "Når du er logget på systemet, bliver denne funktionen automatisk slået fra. Du skal aktivere den igen for at bruge den."
                 },

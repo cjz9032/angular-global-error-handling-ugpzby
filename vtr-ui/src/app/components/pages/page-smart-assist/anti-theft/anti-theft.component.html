@@ -18,9 +18,13 @@
                         [isSwitchChecked]="antiTheft.status" 
                         [tooltipText]="'device.smartAssist.antiTheft.tooltip' | translate" 
                         (toggleOnOff)="setAntiTheftStatus($event)"
-                        [caption]="'device.smartAssist.antiTheft.desc' | translate"
                         [showLoaderState]="isLoading">
                     </vtr-ui-row-switch>
+
+                    <div id = "antiTheft-describe-div" class="antiTheft-describe-div">
+						<p id="antiTheft-describe-one" role="text">{{'device.smartAssist.antiTheft.desc1' | translate}}</p>
+						<p id="antiTheft-describe-two" role="text">{{'device.smartAssist.antiTheft.desc2' | translate}}</p>
+					</div>
 
                     <div id="smartMotionAlertSubFunctions" class="subFunctions">
                         <div class="row" id="smartMotionAlertSubFunctions-description-row">
