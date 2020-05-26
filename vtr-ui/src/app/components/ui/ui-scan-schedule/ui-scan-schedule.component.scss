@@ -878,9 +878,10 @@ vtr-ui-smart-performance-scan-summary {
 			background: $gaming_switch_light;
 			opacity: 0.3;
 			.status {
-				fa-icon {
-					cursor: default;
-				}
+				cursor: default;
+				// fa-icon {
+				// 	cursor: default;
+				// }
 			}
 		}
 	}
