@@ -47,7 +47,7 @@
 				</div>
 				<div class="text"
 					[id]="item.componentId + '-label'"
-					[attr.aria-hidden]=true
+					[attr.aria-hidden]=false
 					[class.text-disabled]="item.isDisabled || isDisabled">
 					{{item.processLabel ? (item.label | translate | capitalizeFirst) : item.label | translate}}
 				</div>
