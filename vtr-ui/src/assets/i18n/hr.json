@@ -1236,7 +1236,7 @@
                     "vantageToolbar": {
                         "title": "Alatna traka za Lenovo Vantage i premium postavke",
                         "description": "Pričvrstite alatnu traku Lenovo Vantage na programskoj traci sustava Windows kako biste jednostavno pristupili najčešće korištenim postavkama i dobili premium ponude i ažuriranja za vas.",
-                        "hint": "Mogućnosti slike ovise o mogućnostima računala. Neka računala, primjerice, podržavaju postavke pozadinskog osvjetljenja, a neka ne."
+                        "hint": "Mogućnosti slike ovise o mogućnostima računala. Na primjer, neki strojevi podržavaju postavke pozadinskog osvjetljenja, a neki ne."
                     }
                 },
                 "batterySettings": {
