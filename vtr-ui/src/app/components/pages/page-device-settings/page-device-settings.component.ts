@@ -195,9 +195,8 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 				if (inputAccessoriesCapability && (inputAccessoriesCapability.isKeyboardMapAvailable || inputAccessoriesCapability.isUdkAvailable)) {
 					isAvailable = inputAccessoriesCapability.isKeyboardMapAvailable || inputAccessoriesCapability.isUdkAvailable;
 				} else {
-					await this.keyboardService.GetAllCapability().then((response => {
-						isAvailable = (response != null && (Object.keys(response).indexOf('keyboardMapCapability') !== -1 || (Object.keys(response).indexOf('isUdkAvailable') !== -1))) ? true : false;
-					}));
+					const response = await this.keyboardService.GetAllCapability();
+					isAvailable = (response != null && (Object.keys(response).indexOf('keyboardMapCapability') !== -1 || (Object.keys(response).indexOf('isUdkAvailable') !== -1))) ? true : false;
 				}
 				const isVOIPAvailable = this.commonService.getLocalStorageValue(LocalStorageKey.VOIPCapability);
 				const topRowFunctionsIdeapadCapability = this.commonService.getLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability);
