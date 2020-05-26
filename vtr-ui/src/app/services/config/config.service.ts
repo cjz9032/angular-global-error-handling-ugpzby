@@ -500,8 +500,16 @@ export class ConfigService {
 
 		const result = await this.canShowSearch();
 		this.updateAvailability(menu, 'app-search', result);
-		const smartPerformanceResult = await this.showSmartPerformance();
-		this.updateAvailability(menu, 'smart-performance', smartPerformanceResult);
+		const machineInfo = this.deviceService.machineInfo;
+		const locale: string = machineInfo.locale.toLowerCase();
+		const country: string = machineInfo.country.toLowerCase();
+		let smartPerformanceResult = false;
+		if (locale === 'en' && country === 'us') {
+			smartPerformanceResult = await this.showSmartPerformance();
+			this.updateAvailability(menu, 'smart-performance', smartPerformanceResult);
+		} else {
+			this.updateAvailability(menu, 'smart-performance', smartPerformanceResult);
+		}
 
 		this.updateBetaService(menu);
 	}
@@ -519,6 +527,7 @@ export class ConfigService {
 		return menu;
 	}
 	public showSmartPerformance(): Promise<boolean> {
+
 		return new Promise(resolve => {
 			if (this.hypSettings) {
 				this.hypSettings.getFeatureSetting('SmartPerformance').then((result) => {
