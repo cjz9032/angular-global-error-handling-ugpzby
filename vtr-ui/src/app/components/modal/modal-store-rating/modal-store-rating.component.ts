@@ -1,7 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { MetricService } from 'src/app/services/metric/metric.service';
+import { MetricService } from 'src/app/services/metric/metrics.service';
 import { TaskAction, ItemView } from 'src/app/services/metric/metrics.model';
 
 import {

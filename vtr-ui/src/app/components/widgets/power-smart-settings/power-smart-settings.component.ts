@@ -9,7 +9,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { PowerService } from 'src/app/services/power/power.service';
 import { ModalIntelligentCoolingModesComponent } from '../../modal/modal-intelligent-cooling-modes/modal-intelligent-cooling-modes.component';
-import { MetricService } from 'src/app//services/metric/metric.service';
+import { MetricService } from 'src/app/services/metric/metrics.service';
 import { UiCircleRadioWithCheckBoxListModel } from '../../ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
 
 const thinkpad = 1;

@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MetricService } from './metric.service';
+import { MetricService } from './metrics.service';
 
 xdescribe('MetricService', () => {
 	beforeEach(() => TestBed.configureTestingModule({}));

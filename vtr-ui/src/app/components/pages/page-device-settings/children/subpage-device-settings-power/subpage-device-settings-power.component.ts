@@ -15,7 +15,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { PowerService } from 'src/app/services/power/power.service';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { MetricService } from '../../../../../services/metric/metric.service';
+import { MetricService } from '../../../../../services/metric/metrics.service';
 import { FlipToBootCurrentModeEnum, FlipToBootErrorCodeEnum, FlipToBootSetStatusEnum, FlipToBootSupportedEnum } from '../../../../../services/power/flipToBoot.enum';
 import { FlipToBootSetStatus } from '../../../../../services/power/flipToBoot.interface';
 

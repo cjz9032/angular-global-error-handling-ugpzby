@@ -18,7 +18,7 @@ import { BacklightLevelEnum, BacklightStatusEnum } from './backlight.enum';
 import { BacklightLevel, BacklightMode, BacklightStatus } from './backlight.interface';
 import { LocalStorageKey } from '../../../../../../enums/local-storage-key.enum';
 import { CommonService } from '../../../../../../services/common/common.service';
-import { MetricService } from '../../../../../../services/metric/metric.service';
+import { MetricService } from '../../../../../../services/metric/metrics.service';
 import { UiCircleRadioWithCheckBoxListModel } from 'src/app/components/ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
 
 @Component({

@@ -14,7 +14,7 @@ import { GamingThermalModeService } from 'src/app/services/gaming/gaming-thermal
 import { GamingOCService } from 'src/app/services/gaming/gaming-OC/gaming-oc.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { MetricService } from 'src/app/services/metric/metric.service';
+import { MetricService } from 'src/app/services/metric/metrics.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
 
 @Component({ selector: 'vtr-modal-gaming-prompt', template: '' })

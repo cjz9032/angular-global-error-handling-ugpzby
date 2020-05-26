@@ -5,7 +5,7 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { CardService, CardOverlayTheme } from 'src/app/services/card/card.service';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 import { DeviceService } from 'src/app/services/device/device.service';
-import { MetricService } from 'src/app/services/metric/metric.service';
+import { MetricService } from 'src/app/services/metric/metrics.service';
 import { ContentSource } from 'src/app/enums/content.enum';
 
 @Component({

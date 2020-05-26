@@ -272,7 +272,7 @@ export class MetricService {
 		this.onWebLoaded();
 	}
 
-	public async handleWelcomeDone() {
+	public handleWelcomeDone() {
 		if (this.metricsClient.metricsEnabled) {
 			this.handleAppLoadedEvent();
 		}

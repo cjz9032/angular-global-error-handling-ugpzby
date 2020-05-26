@@ -12,7 +12,7 @@ import { SystemUpdateStatus } from 'src/app/data-models/system-update/system-upd
 import { UpdateInstallSeverity } from 'src/app/enums/update-install-severity.enum';
 import { WinRT } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { MetricService } from '../metric/metric.service';
+import { MetricService } from '../metric/metrics.service';
 import { LoggerService } from '../logger/logger.service';
 
 @Injectable({

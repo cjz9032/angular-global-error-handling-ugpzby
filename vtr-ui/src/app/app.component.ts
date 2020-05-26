@@ -26,7 +26,7 @@ import { LoggerService } from './services/logger/logger.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
-import { MetricService } from './services/metric/metric.service';
+import { MetricService } from './services/metric/metrics.service';
 import { VantageFocusHelper } from 'src/app/services/timer/vantage-focus.helper';
 import { SegmentConst } from './services/self-select/self-select.service';
 import { NotificationType } from './components/notification/notification.component';

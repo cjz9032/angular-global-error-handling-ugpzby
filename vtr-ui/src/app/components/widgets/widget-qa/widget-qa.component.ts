@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { SecurityQaService } from 'src/app/services/security/securityQa.service';
-import { MetricService } from 'src/app/services/metric/metric.service';
+import { MetricService } from 'src/app/services/metric/metrics.service';
 
 @Component({
   selector: 'vtr-widget-qa',

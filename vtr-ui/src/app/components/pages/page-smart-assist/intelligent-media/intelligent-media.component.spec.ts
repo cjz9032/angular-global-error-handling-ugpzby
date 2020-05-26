@@ -7,7 +7,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { DisplayService } from 'src/app/services/display/display.service';
 import { TranslateService } from '@ngx-translate/core';
-import { MetricService } from 'src/app/services/metric/metric.service';
+import { MetricService } from 'src/app/services/metric/metrics.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { RouterTestingModule } from "@angular/router/testing";

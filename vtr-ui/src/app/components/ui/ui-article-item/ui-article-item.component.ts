@@ -2,7 +2,7 @@ import { Component, OnInit, AfterViewInit, Input, ViewChild } from '@angular/cor
 import { SupportService } from '../../../services/support/support.service';
 import { CardService } from 'src/app/services/card/card.service';
 import { SupportContentStatus } from 'src/app/enums/support-content-status.enum';
-import { MetricService } from 'src/app/services/metric/metric.service';
+import { MetricService } from 'src/app/services/metric/metrics.service';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 import { ContentSource } from 'src/app/enums/content.enum';
 

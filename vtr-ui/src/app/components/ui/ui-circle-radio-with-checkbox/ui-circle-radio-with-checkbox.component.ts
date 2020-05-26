@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { MetricService } from 'src/app/services/metric/metric.service';
+import { MetricService } from 'src/app/services/metric/metrics.service';
 import { UICustomRadio } from '../ui-custom-radio/ui-custom-radio';
 
 @Component({

@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, AfterViewInit } from '@angular/core';
 import { KeyCode } from 'src/app/enums/key-code.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { MetricService } from 'src/app/services/metric/metric.service';
+import { MetricService } from 'src/app/services/metric/metrics.service';
 import { UICustomRadio } from '../ui-custom-radio/ui-custom-radio';
 import { AppEvent } from './../../../enums/app-event.enum';
 
