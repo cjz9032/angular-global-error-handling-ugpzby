@@ -177,7 +177,9 @@
 						border-color: $grey_light;
 						background: $grey_light;
 						pointer-events: none;
-
+						.focus{
+							display: none;
+						}
 						.check-circle {
 							color: $shade_blue;
 							opacity: 0.6;
