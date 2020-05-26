@@ -69,6 +69,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.localSubscriptionDetails);
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
+			this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, 'Once a week')
 			// location.reload();
 			// this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
 			// 	this.router.navigate(['WidgetSubscriptiondetailsComponent']);
