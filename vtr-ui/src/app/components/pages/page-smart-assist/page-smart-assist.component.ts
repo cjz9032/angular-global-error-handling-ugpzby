@@ -912,7 +912,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 					metricsItem: 'IntelligentSecurity'
 				};
 			}
-			if (featurePath === 'sensing') {
+			else if (featurePath === 'sensing') {
 				featureHeaderMenu = {
 					title: 'device.smartAssist.antiTheft.heading',
 					path: 'sensing',
@@ -920,7 +920,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 					metricsItem: 'IntelligentSensing'
 				};
 			}
-			if (featurePath === 'screen') {
+			else if (featurePath === 'screen') {
 				featureHeaderMenu = {
 					title: 'device.smartAssist.intelligentScreen.title',
 					path: 'screen',
@@ -928,7 +928,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 					metricsItem: 'IntelligentScreen'
 				};
 			}
-			if (featurePath === 'media') {
+			else if (featurePath === 'media') {
 				featureHeaderMenu = {
 					title: 'device.smartAssist.intelligentMedia.heading',
 					path: 'media',
@@ -936,7 +936,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 					metricsItem: 'IntelligentMedia'
 				};
 			}
-			if (featurePath === 'aps') {
+			else if (featurePath === 'aps') {
 				featureHeaderMenu = {
 					title: 'device.smartAssist.activeProtectionSystem.title',
 					path: 'aps',
@@ -944,7 +944,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 					metricsItem: 'ActiveProtectionSystem'
 				};
 			}
-			if (featurePath === 'voice') {
+			else if (featurePath === 'voice') {
 				featureHeaderMenu = {
 					title: 'device.smartAssist.voice.title',
 					path: 'voice',
