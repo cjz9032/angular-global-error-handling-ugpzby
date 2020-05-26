@@ -9,7 +9,7 @@ export class UiRoundedRectangleRadioModel {
 	constructor(
 		public componentId: string,
 		public label: string,
-		public value: string,
+		public value: any,
 		public isChecked: boolean,
 		public isDisabled: boolean,
 	){}

@@ -366,7 +366,7 @@ export class VantageShellService {
 		};
 		sysInfo.getMachineInfo = this.getPromise(machineInfo);
 		sysInfo.getMachineInfoSync = this.getPromise(machineInfo);
-		sysInfo.getMachineType = this.getPromise(0); // 1 = ThinkPad
+		sysInfo.getMachineType = this.getPromise(1); // 1 = ThinkPad
 		sysInfo.getHardwareInfo = this.getPromise(hardwareInfo);
 		return sysInfo;
 	}
@@ -2018,12 +2018,12 @@ export class VantageShellService {
 
 	public getKeyboardObject(): any {
 		const keyboard = {
-			GetAutoKBDBacklightCapability: this.getPromise(true),
+			GetAutoKBDBacklightCapability: this.getPromise(false),
 			GetKBDBacklightCapability: this.getPromise(true),
 			GetAutoKBDStatus: this.getPromise(true),
-			GetKBDBacklightStatus: this.getPromise(true),
-			GetKBDBacklightLevel: this.getPromise(true),
-			SetKBDBacklightStatus: this.getPromise(true),
+			GetKBDBacklightStatus: this.getPromise('Level_1'),
+			GetKBDBacklightLevel: this.getPromise('TwoLevelsAuto'),
+			SetKBDBacklightStaus: this.getPromise('Level_1'), // function name has typo in JS bridge side, don't update it
 			SetAutomaticKBDBacklight: this.getPromise(true)
 		};
 
