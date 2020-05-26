@@ -2430,6 +2430,7 @@
 				"tab3Description": "No scareware, built with best practises"
 			}
 		},
+		"noScanResults":"Please click SCAN & FIX button to trigger scan process.",
 		"startScan": "<b>Ready to start the scan?</b> Let’s diagnose the performance and security issues in your computer.",
 		"subscriptionDetails": {
 			"title": "Subscription Details",
