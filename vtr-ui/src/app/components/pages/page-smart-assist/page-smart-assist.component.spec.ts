@@ -97,9 +97,14 @@ describe('Component: PageSmartAssistComponent', () => {
 		expect(smartAssistService.getSuperResolutionStatus).toHaveBeenCalled();
 	});
 
-	it("removeSensingHeaderMenu", () => {
+	it("updateSensingHeaderMenu", () => {
 		commonService = TestBed.get(CommonService);
-		component.removeSensingHeaderMenu();
+		component.updateSensingHeaderMenu(true);
+	});
+
+	it("updateSensingHeaderMenu", () => {
+		commonService = TestBed.get(CommonService);
+		component.updateSensingHeaderMenu(false);
 	});
 
 	it('getHPDAdvancedSetting', () => {
