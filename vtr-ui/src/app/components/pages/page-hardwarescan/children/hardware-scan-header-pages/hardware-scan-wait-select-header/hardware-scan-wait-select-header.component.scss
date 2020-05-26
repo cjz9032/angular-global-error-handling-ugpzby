@@ -60,6 +60,9 @@
 			padding-bottom: 0.5rem; // Centering the text after removing its text-decoration
 			text-decoration: none; //Remove underline on customize scan when the cursor is under the link
 		}
+		&:focus {
+			@include outline_blue;
+		}
 	}
 	.disabled-anchor {
 		font-size: $fontsize_xs2;
