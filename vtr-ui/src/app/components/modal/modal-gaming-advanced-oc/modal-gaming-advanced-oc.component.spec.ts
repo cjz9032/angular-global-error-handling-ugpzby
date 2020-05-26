@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { MetricService } from 'src/app/services/metric/metric.service';
+import { MetricService } from 'src/app/services/metric/metrics.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { Gaming } from './../../../enums/gaming.enum';
 import { of } from 'rxjs';
@@ -77,7 +77,7 @@ describe('ModalGamingAdvancedOCComponent : ', () => {
 
     let activeModalService: any;
     let modalService: any;
-    
+
     advancedOCService.isShellAvailable.and.returnValue(true);
 	advancedOCService.getAdvancedOCInfo.and.returnValue(Promise.resolve(advancedOCInfo));
 	advancedOCService.setAdvancedOCInfo.and.returnValue(Promise.resolve(true));
@@ -92,8 +92,8 @@ describe('ModalGamingAdvancedOCComponent : ', () => {
             declarations: [ ModalGamingAdvancedOCComponent, ModalGamingPromptStubComponent],
             imports: [ TranslationModule, HttpClientModule ],
             schemas: [NO_ERRORS_SCHEMA],
-            providers: [ 
-                HttpClient, 
+            providers: [
+                HttpClient,
                 TranslateStore,
                 NgbActiveModal,
                 { provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesService },
@@ -195,7 +195,7 @@ describe('ModalGamingAdvancedOCComponent : ', () => {
             expect(component.advancedOCInfo).toEqual(advancedOCInfo);
         }));
     })
-    
+
     describe('check open save modal : ', () => {
         it('should open save modal', () => {
             let modalRef = new ModalGamingPromptStubComponent();
@@ -245,7 +245,7 @@ describe('ModalGamingAdvancedOCComponent : ', () => {
             component.setRangeValue(45,1,'gpuParameterList',1,false);
             expect(component.advancedOCInfo.gpuParameterList[1].OCValue).toBe(45);
         }));
-        
+
 
         it('setRangeValue cpuParameterList', async() => {
             const arr1 = [2, 77, 34, 79, 102, 106];
@@ -290,7 +290,7 @@ describe('ModalGamingAdvancedOCComponent : ', () => {
             component.setRangeValue([40],15,'cpuParameterList',76,true);
             expect(arr1.includes(123)).toBe(false);
             expect(component.advancedOCInfo.cpuParameterList[15].OCValue).toBe(40);
-    
+
             component.setRangeValue(1,0,'cpuParameterList',2,false);
             expect(arr1.includes(2)).toBe(true);
 
@@ -370,7 +370,7 @@ describe('ModalGamingAdvancedOCComponent : ', () => {
             expect(component.advancedOCInfo.cpuParameterList[13].OCValue).not.toBe(20);
         }));
     })
-    
+
     describe('check  setToDefaultValue : ', () => {
         it('setToDefaultValue & length>0', () => {
             let cpuParameterList = [
@@ -393,7 +393,7 @@ describe('ModalGamingAdvancedOCComponent : ', () => {
             ]
             component.advancedOCInfo.cpuParameterList = cpuParameterList;
             component.setToDefaultValue(component.advancedOCInfo.cpuParameterList);
-           
+
             expect(component.advancedOCInfo.cpuParameterList[0].OCValue).toBe(40);
             expect(component.advancedOCInfo.cpuParameterList[1].OCValue).toBe(40);
             expect(component.advancedOCInfo.cpuParameterList[2].OCValue).toBe(40);
@@ -418,6 +418,6 @@ describe('ModalGamingAdvancedOCComponent : ', () => {
             expect(cpuParameterList.length).toBe(0);
         });
     })
-  
+
 });
 

@@ -4,12 +4,12 @@ import { GamingLightingService } from './../../../services/gaming/lighting/gamin
 import { CommonService } from './../../../services/common/common.service';
 import { HttpClientModule } from '@angular/common/http';
 import { Pipe, NO_ERRORS_SCHEMA } from '@angular/core';
-import { MetricService } from '../../../../../src/app/services/metric/metric.service';
+import { MetricService } from '../../../services/metric/metrics.service';
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 const gamingLightingServiceMock = jasmine.createSpyObj('GamingLightingService', ['getLightingProfileId', 'getLightingProfileById', 'setLightingProfileId', 'setLightingProfileBrightness',
     'isShellAvailable', 'getLightingCapabilities', 'setLightingDefaultProfileById', 'setLightingProfileEffectColor']);
-let commonServiceMock = {  
+let commonServiceMock = {
     getLocalStorageValue(key: any) {
         switch (key) {
             case '[LocalStorageKey] LightingCapabilitiesNewversionDesk':
@@ -102,7 +102,7 @@ describe('WidgetLightingDeskComponent', () => {
         }
         commonServiceMock.setLocalStorageValue('[LocalStorageKey] ProfileId', 2);
         fixture.detectChanges();
-    }));  
+    }));
 
     it('should create', fakeAsync(() => {
         expect(component).toBeTruthy();

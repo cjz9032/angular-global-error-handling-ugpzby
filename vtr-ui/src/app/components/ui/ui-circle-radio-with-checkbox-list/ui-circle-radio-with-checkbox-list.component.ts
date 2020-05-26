@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChildren, QueryList, OnChanges, SimpleChanges, ViewChild, ElementRef } from '@angular/core';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { MetricService } from 'src/app/services/metric/metric.service';
+import { MetricService } from 'src/app/services/metric/metrics.service';
 import { UiCircleRadioWithCheckBoxListModel } from './ui-circle-radio-with-checkbox-list.model';
 import { KeyCode as KEYCODE } from 'src/app/enums/key-code.enum';
 

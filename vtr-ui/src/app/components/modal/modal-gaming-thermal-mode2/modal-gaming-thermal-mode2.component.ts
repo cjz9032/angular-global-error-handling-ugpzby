@@ -13,7 +13,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
-import { MetricService } from 'src/app/services/metric/metric.service';
+import { MetricService } from 'src/app/services/metric/metrics.service';
 
 @Component({
   selector: 'vtr-modal-gaming-thermal-mode2',
@@ -199,7 +199,7 @@ export class ModalGamingThermalMode2Component implements OnInit {
     this.OCSettings = !this.OCSettings;
     if (this.gamingCapabilities.cpuOCFeature) {
       this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, this.OCSettings ? 1 : 3);
-    } 
+    }
     if (this.gamingCapabilities.gpuOCFeature) {
       this.commonService.setLocalStorageValue(LocalStorageKey.GpuOCStatus, this.OCSettings ? 1 : 3);
     }
@@ -212,7 +212,7 @@ export class ModalGamingThermalMode2Component implements OnInit {
           this.OCSettings = !this.OCSettings;
           if (this.gamingCapabilities.cpuOCFeature) {
             this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, this.OCSettings ? 1 : 3);
-          } 
+          }
           if (this.gamingCapabilities.gpuOCFeature) {
             this.commonService.setLocalStorageValue(LocalStorageKey.GpuOCStatus, this.OCSettings ? 1 : 3);
           }
@@ -334,7 +334,7 @@ export class ModalGamingThermalMode2Component implements OnInit {
 
   /**
    * metrics collection for thermalmode feature
-   * @param metricsdata 
+   * @param metricsdata
    */
   public sendFeatureClickMetrics(metricsdata:any) {
     try{

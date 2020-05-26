@@ -1,5 +1,5 @@
 import { Directive, AfterViewInit, Input } from '@angular/core';
-import { MetricService } from './metric.service';
+import { MetricService } from './metrics.service';
 
 @Directive({
 	selector: '[vtrPageLoadedDetector]'

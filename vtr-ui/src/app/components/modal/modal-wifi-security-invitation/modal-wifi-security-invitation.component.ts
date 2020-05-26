@@ -2,7 +2,7 @@ import { Component, OnInit, HostListener, ViewChild, ElementRef } from '@angular
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { ConnectedHomeSecurity } from '@lenovo/tan-client-bridge';
-import { MetricService } from 'src/app/services/metric/metric.service';
+import { MetricService } from 'src/app/services/metric/metrics.service';
 import { MetricsTranslateService } from 'src/app/services/mertics-traslate/metrics-translate.service';
 
 @Component({

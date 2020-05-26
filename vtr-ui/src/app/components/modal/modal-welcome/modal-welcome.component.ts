@@ -15,7 +15,7 @@ import { PowerService } from 'src/app/services/power/power.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
 import { LanguageService } from 'src/app/services/language/language.service';
-import { MetricService } from 'src/app/services/metric/metric.service';
+import { MetricService } from 'src/app/services/metric/metrics.service';
 import { GamingScenario } from 'src/app/enums/gaming-scenario.enum';
 import { InitializerService } from 'src/app/services/initializer/initializer.service';
 

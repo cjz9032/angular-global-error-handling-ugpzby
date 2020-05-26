@@ -15,7 +15,7 @@ import { AntivirusCommon } from 'src/app/data-models/security-advisor/antivirus-
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { TranslateService } from '@ngx-translate/core';
 import { AntivirusService } from 'src/app/services/security/antivirus.service';
-import { MetricService } from 'src/app/services/metric/metric.service';
+import { MetricService } from 'src/app/services/metric/metrics.service';
 import { MetricsTranslateService } from 'src/app/services/mertics-traslate/metrics-translate.service';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 

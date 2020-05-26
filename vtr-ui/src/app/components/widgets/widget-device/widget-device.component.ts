@@ -6,7 +6,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
 import { TranslateService } from '@ngx-translate/core';
 import { TimerService } from 'src/app/services/timer/timer.service';
-import { MetricService } from 'src/app/services/metric/metric.service';
+import { MetricService } from 'src/app/services/metric/metrics.service';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { map, mergeMap } from 'rxjs/operators';
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
