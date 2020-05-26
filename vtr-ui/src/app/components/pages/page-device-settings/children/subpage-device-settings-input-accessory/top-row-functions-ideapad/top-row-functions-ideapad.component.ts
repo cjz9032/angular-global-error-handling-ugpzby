@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, NgZone } from '@angular/core';
 import { TopRowFunctionsIdeapadService } from './top-row-functions-ideapad.service';
 import { FnLockStatus, KeyType, PrimaryKeySetting } from './top-row-functions-ideapad.interface';
 import { merge, Observable, of, Subject, Subscription } from 'rxjs';
@@ -36,7 +36,8 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 	constructor(
 		private topRowFunctionsIdeapadService: TopRowFunctionsIdeapadService,
 		private metrics: MetricService,
-		private commonService: CommonService
+		private commonService: CommonService,
+		private ngZone: NgZone
 	) {
 	}
 
@@ -103,6 +104,7 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 			.subscribe(res => this.fnLockSubject$.next(res));
 
 		this.updateFunctionLockUIModel();
+		this.subscribeForDataChange();
 	}
 
 	ngOnDestroy() {
@@ -118,7 +120,6 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 	}
 
 	updateFunctionLockUIModel() {
-		this.subscribeForDataChange();
 		this.functionLockUIModel = [];
 		this.functionLockUIModel.push({
 			componentId: this.specialKeyId,
@@ -156,11 +157,15 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 
 	subscribeForDataChange() {
 		this.hotKeySubscription = this.hotkey$.subscribe(value => {
-			this.updateFunctionLockValue(this.specialKeyId, value);
+			this.ngZone.run(() => {
+				this.updateFunctionLockValue(this.specialKeyId, value);
+			});
 		});
 
 		this.functionKeySubscription = this.fnkey$.subscribe(value => {
-			this.updateFunctionLockValue(this.functionKeyId, value);
+			this.ngZone.run(() => {
+				this.updateFunctionLockValue(this.functionKeyId, value);
+			});
 		});
 	}
 
