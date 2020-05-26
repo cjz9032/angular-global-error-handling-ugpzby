@@ -59,7 +59,7 @@
 											id="audio-dolby-voip"
 											*ngIf="voipStatus.available">
 											<div id="audio-dolby-voip-checkbox">
-												<vtr-ui-checkbox [componentId]="'voipCheckbox'"
+												<vtr-ui-checkbox [componentId]="'audio-voip'"
 													[value]="voipStatus.status"
 													[checked]="voipStatus.status"
 													[disabled]='automaticAudioDisabled'
@@ -68,7 +68,7 @@
 												</vtr-ui-checkbox>
 											</div>
 											<div id="audio-dolby-voip-tip">
-												<fa-icon id="voipRightIcon"
+												<fa-icon id="audio-voip-tooltip_right_icon"
 													class="right-icon"
 													role="img"
 													triggers="manual"
