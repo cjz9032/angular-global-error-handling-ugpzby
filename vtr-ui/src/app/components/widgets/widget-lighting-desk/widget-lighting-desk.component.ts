@@ -4,7 +4,7 @@ import { CommonService } from './../../../services/common/common.service';
 import { GamingLightingService } from './../../../services/gaming/lighting/gaming-lighting.service';
 import { LightingDataList } from 'src/app/data-models/gaming/lighting-new-version/lighting-data-list';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { MetricService } from '../../../../../src/app/services/metric/metric.service';
+import { MetricService } from '../../../services/metric/metrics.service';
 
 @Component({
   selector: 'vtr-widget-lighting-desk',
@@ -80,7 +80,7 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
           this.lightingProfileDetail(lightingProfileByIdRes,this.countObj['count'+this.currentProfileId],lightingCapabilitiesRes);
         }
       }
-    } catch (error){}   
+    } catch (error){}
   }
 
   public getLightingCapabilities(){
@@ -91,16 +91,16 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
           if(response){
             this.lightingCapabilities = response;
             this.commonService.setLocalStorageValue(LocalStorageKey.LightingCapabilitiesNewversionDesk,response);
-            this.imgDefaultOff();  
+            this.imgDefaultOff();
             this.getLightingProfileById(this.currentProfileId);
           }
         });
 			}
-    } catch (error){} 
+    } catch (error){}
   }
 
   public getLightingProfileById(currProfileId){
-    try { 
+    try {
         //if profileId is 0,no need to use interfae
         if(currProfileId === 0) return;
         if(this.gamingLightingService.isShellAvailable){
@@ -111,7 +111,7 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
             }
           })
          }
-    } catch (error){} 
+    } catch (error){}
   }
 
   public setLightingProfileId(event){
@@ -120,7 +120,7 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
         this.isShow = true;
         let profileId = Number(event.target.value);
         this.currentProfileId = profileId;
-        this.imgDefaultOff();  
+        this.imgDefaultOff();
         if (this.currentProfileId === 0) {
           this.isProfileOff = true;
         } else {
@@ -149,8 +149,8 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
           });
         }
     } catch (error) {}
-  } 
-  
+  }
+
   public colorPickerFun(){
     try {
         if(this.isShow){
@@ -263,11 +263,11 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
           }
         })
       }
-      
+
       this.sendFeatureClickMetrics(JSON.parse(`{"ItemName":"lighting_brightness","ItemValue":"${event[0]}"}`));
     } catch (error) {}
-  } 
-  
+  }
+
   public setLightingSpeed(event){
     try {
       this.lightingProfileCurrentDetail.lightSpeed = event[0];
@@ -300,7 +300,7 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
 
       this.sendFeatureClickMetrics(JSON.parse(`{"ItemName":"lighting_speed","ItemValue":"${event[0]}"}`));
     } catch (error) {}
-  } 
+  }
 
   public setDefaultProfile(profileId){
      try {
@@ -353,7 +353,7 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
     if(this.countObj['count'+this.currentProfileId] >= this.lightingCapabilities.LightPanelType.length-1){
       this.isDisabledrig[this.currentProfileId-1] = true;
     }
-    
+
   }
 
   public getCurrentName(lightingPanelImage,lightPanelType){
@@ -413,12 +413,12 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
           }
         }
         this.logger.info("lightingProfileDetail: ",this.lightingProfileCurrentDetail);
-      }  
+      }
     }catch(error){}
-    
-    
+
+
   }
- 
+
   public supportBrightFn(val){
     if(this.lightingCapabilities.SupportBrightnessSetList.indexOf(this.lightingProfileCurrentDetail.lightPanelType) > -1){   //support bright of panel
       if(this.lightingCapabilities.SupportRGBSetList.indexOf(this.lightingProfileCurrentDetail.lightPanelType) > -1){
@@ -458,7 +458,7 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
 
   public supportColorFn(val){
     if(this.lightingCapabilities.SupportRGBSetList.indexOf(this.lightingProfileCurrentDetail.lightPanelType) > -1){  //rgb color
-      if(val === 1 || val === 2 || val === 4 || val === 32){ 
+      if(val === 1 || val === 2 || val === 4 || val === 32){
         this.supportColor = true;
       }else{
         this.supportColor = false;
@@ -492,7 +492,7 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
     }
   }
 
-  public getCacheDefaultList(){ 
+  public getCacheDefaultList(){
     if(this.currentProfileId !== 0){
       if(this.commonService.getLocalStorageValue(LocalStorageKey['LightingProfileDeskDefault'+this.currentProfileId]) !== undefined){
         this.lightingProfileById = this.commonService.getLocalStorageValue(LocalStorageKey['LightingProfileByIdDesk'+this.currentProfileId]);
@@ -514,11 +514,11 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
         }else if(this.lightingCapabilities.LightPanelType.indexOf(16)>-1){
           this.lightingProfileCurrentDetail.panelImage = "assets/images/gaming/lighting/lighting-ui-new/T550_water_cold.png";
         }else if(this.lightingCapabilities.LightPanelType.indexOf(64)>-1){
-          this.lightingProfileCurrentDetail.panelImage = "assets/images/gaming/lighting/lighting-ui-new/T550_big_y.png";  
+          this.lightingProfileCurrentDetail.panelImage = "assets/images/gaming/lighting/lighting-ui-new/T550_big_y.png";
         }else if(this.lightingCapabilities.LightPanelType.indexOf(128)>-1){
-          this.lightingProfileCurrentDetail.panelImage = "assets/images/gaming/lighting/lighting-ui-new/T550G_front_line.png";  
+          this.lightingProfileCurrentDetail.panelImage = "assets/images/gaming/lighting/lighting-ui-new/T550G_front_line.png";
         }else if(this.lightingCapabilities.LightPanelType.indexOf(256)>-1){
-          this.lightingProfileCurrentDetail.panelImage = "assets/images/gaming/lighting/lighting-ui-new/T550_front.png";  
+          this.lightingProfileCurrentDetail.panelImage = "assets/images/gaming/lighting/lighting-ui-new/T550_front.png";
         }
      }
   }
@@ -568,7 +568,7 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
 
   /**
    * metrics collection for lighting feature of desktop machine
-   * @param metricsdata 
+   * @param metricsdata
    */
   public sendFeatureClickMetrics(metricsdata:any) {
     try{

@@ -97,7 +97,6 @@
 			}
 			.monitor-section {
 				border-radius: $border_radius_sm;
-				//background-color: $gaming_darkest;
 				background-color:$gaming_bg;				
 				border: 1px solid $gaming_bg;
 				height: 24rem;
@@ -111,24 +110,16 @@
 				.hds {
 					position:absolute;
 					width: 100%;		
-					border-radius: $border_radius_sm;		
-					background-color: $gaming_bg;
-					@media #{$black-on-white}{									
-						background-color:none!important;
-						}
-						@media #{$white-on-black}{
-						background-color:none!important;
-						}
+					border-radius: $border_radius_sm;
+					
 					@media #{$breakpoint_md} {
 						float:left;	
 						padding-bottom:2rem;
 						position:relative;
-						@media #{$black-on-white}{									
-							background-color:none!important;	
+						@media #{$black-on-white}{
 							padding-bottom:0rem!important;
 							}
-							@media #{$white-on-black}{
-							background-color:none!important;	
+							@media #{$white-on-black}{	
 							padding-bottom:0rem!important;
 							}
 						}
@@ -136,12 +127,10 @@
 						float:left;	
 						padding-bottom:2rem;
 						position:relative;
-						@media #{$black-on-white}{									
-							background-color:none!important;	
+						@media #{$black-on-white}{	
 							padding-bottom:0rem!important;
 							}
-							@media #{$white-on-black}{
-							background-color:none!important;	
+							@media #{$white-on-black}{	
 							padding-bottom:0rem!important;
 							}
 					}

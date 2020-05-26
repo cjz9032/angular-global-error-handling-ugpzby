@@ -26,9 +26,17 @@ vtr-ui-row-switch {
   label {
     margin-bottom: 0rem;
   }
-  p {
-    margin-bottom: 0rem;
-  }
+  
+}
+
+.antiTheft-describe-div {
+  width: 100%;
+  margin-top: -10px;
+  margin-left: 4.5rem !important;
+  padding-right: 4.5rem;
+  color: #667481;
+  font-size: 1.4rem;
+  font-weight: 300;
 }
 
 .subFunctions {
@@ -69,7 +77,7 @@ vtr-ui-row-switch {
   }
 
   .select {
-    max-width: 380px;
+    max-width: 400px;
     width: 45%;
     min-width: 360px;
   }

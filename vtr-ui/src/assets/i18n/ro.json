@@ -2097,7 +2097,8 @@
             },
             "superResolution": {
                 "title": "Mărirea rezoluției video",
-                "desc": "<p id='sr-describe-one' role='text'>Această caracteristică îmbunătățește experiența de redare video, oferind o rezoluție video mai bună. Funcționează mai ales atunci când videoclipul este la o rezoluție slabă.</p><p id='sr-describe-two' role='text'>Această caracteristică ar putea afecta durata de viață a bateriei, temperatura bateriei și poate provoca zgomote. Nu o utilizați în modul de alimentare c.c. (mod baterie). În caz contrar, va accelera consumul de energie și va scurta durata de viață a bateriei.</p>",
+                "desc1": "Această caracteristică îmbunătățește experiența de redare video, oferind o rezoluție video mai bună. Funcționează mai ales atunci când videoclipul este la o rezoluție slabă.",
+                "desc2": "Această caracteristică ar putea afecta durata de viață a bateriei, temperatura bateriei și poate provoca zgomote. Nu o utilizați în modul de alimentare c.c. (mod baterie). În caz contrar, va accelera consumul de energie și va scurta durata de viață a bateriei.",
                 "tooltip": "<p id='sr-tip-one' role='text'>Această caracteristică funcționează numai cu următoarele playere video:<br>Windows Media Player<br>Playerul bazat pe Chrome<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Pentru instrucțiuni privind modul în care să activați această funcție în PotPlayer, consultați Ghidul utilizatorului care este livrat împreună cu computerul.</p>",
                 "note": {
                     "description": "Această caracteristică nu funcționează când:",
@@ -2111,7 +2112,8 @@
                 "heading": "Detectare inteligentă",
                 "title": "Alertă Smart Motion",
                 "tooltip": "<div id='antiTheft-tooltips'>Această caracteristică nu funcționează atunci când computerul este în modul de hibernare sau este oprit. Verificați setările pentru următoarele acțiuni:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>acțiuni de închidere a capacului</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>acțiuni pentru nivelul critic/scăzut al energiei bateriei</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>acțiuni ale butonului de alimentare</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>acțiuni ale butonului de repaus</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>setările de expirare a timpului de inactivitate până la trecerea în hibernare</li></ul></div>În caz contrar, caracteristica nu va declanșa alarma și nici nu va realiza fotografii.</div>",
-                "desc": "<p id='antiTheft-describe-one' role='text'>Când activați această caracteristică, dispozitivul va începe să sune atunci când ecranul este blocat și se detectează mișcări, în special într-un loc public.</p><p id='antiTheft-describe-two' role='text'>Pentru a dezactiva alarma, conectați-vă la Windows.</p>",
+                "desc1": "Când activați această caracteristică, dispozitivul va începe să sune atunci când ecranul este blocat și se detectează mișcări, în special într-un loc public.",
+                "desc2": "Pentru a dezactiva alarma, conectați-vă la Windows.",
                 "note": {
                     "description": "După ce v-ați conectat cu succes la sistem, această caracteristică va fi oprită automat. Trebuie să o activați din nou pentru a o utiliza."
                 },

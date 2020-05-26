@@ -18,9 +18,13 @@
                         [isSwitchChecked]="antiTheft.status" 
                         [tooltipText]="'device.smartAssist.antiTheft.tooltip' | translate" 
                         (toggleOnOff)="setAntiTheftStatus($event)"
-                        [caption]="'device.smartAssist.antiTheft.desc' | translate"
                         [showLoaderState]="isLoading">
                     </vtr-ui-row-switch>
+
+                    <div id = "antiTheft-describe-div" class="antiTheft-describe-div">
+						<p id="antiTheft-describe-one" role="text">{{'device.smartAssist.antiTheft.desc1' | translate}}</p>
+						<p id="antiTheft-describe-two" role="text">{{'device.smartAssist.antiTheft.desc2' | translate}}</p>
+					</div>
 
                     <div id="smartMotionAlertSubFunctions" class="subFunctions">
                         <div class="row" id="smartMotionAlertSubFunctions-description-row">
@@ -105,11 +109,11 @@
                                         tooltipClass="vtr-tooltip"
                                         (click)="onRightIconClick(rightToolTip1, $event)"
                                         (keydown.enter)="onRightIconClick(rightToolTip1, $event)" tabindex="0"
-                                        attr.aria-label="{{'device.smartAssist.antiTheft.title' | translate}} Photos taken tooltip, which reads: {{'device.smartAssist.antiTheft.photo.tooltip' | translate}}">
+                                        attr.aria-label="{{'device.smartAssist.antiTheft.photo.title' | translate}} tooltip, which reads: {{'device.smartAssist.antiTheft.photo.tooltip' | translate}}">
                                 </fa-icon>
                                 <ng-template #tooltipRef>
                                     <div id="smartMotionAlertPhotoTooltip" role="tooltip"
-                                        attr.aria-label="{{'device.smartAssist.antiTheft.title' | translate}} Photos taken tooltip, which reads: {{'device.smartAssist.antiTheft.photo.tooltip' | translate}}"
+                                        attr.aria-label="{{'device.smartAssist.antiTheft.photo.title' | translate}} tooltip, which reads: {{'device.smartAssist.antiTheft.photo.tooltip' | translate}}"
                                         [innerHTML]="'device.smartAssist.antiTheft.photo.tooltip' | translate"></div>
                                 </ng-template>
                             </div>
@@ -135,7 +139,7 @@
                                     type="button" 
                                     class="btn-link photoLink" 
                                     [(ngModel)]="antiTheft.photoAddress"
-                                    attr.aria-label="{{'device.smartAssist.antiTheft.title' | translate}} {{'device.smartAssist.antiTheft.showPhoto.link' | translate}}"
+                                    attr.aria-label="{{'device.smartAssist.antiTheft.showPhoto.link' | translate}}"
                                     (click)="showPhotoFolder(antiTheft.photoAddress)">
                                     {{'device.smartAssist.antiTheft.showPhoto.link' | translate}}
                             </button>

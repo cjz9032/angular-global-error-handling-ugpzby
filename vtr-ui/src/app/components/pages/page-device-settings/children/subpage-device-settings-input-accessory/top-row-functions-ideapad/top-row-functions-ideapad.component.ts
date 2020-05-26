@@ -3,7 +3,7 @@ import { TopRowFunctionsIdeapadService } from './top-row-functions-ideapad.servi
 import { FnLockStatus, KeyType, PrimaryKeySetting } from './top-row-functions-ideapad.interface';
 import { merge, Observable, of, Subject, Subscription } from 'rxjs';
 import { concatMap, map, mergeMap, switchMap, takeWhile, tap, throttleTime } from 'rxjs/operators';
-import { MetricService } from '../../../../../../services/metric/metric.service';
+import { MetricService } from '../../../../../../services/metric/metrics.service';
 import { CommonService } from '../../../../../../services/common/common.service';
 import { LocalStorageKey } from '../../../../../../enums/local-storage-key.enum';
 import { StringBooleanEnum } from '../../../../../../data-models/common/common.interface';

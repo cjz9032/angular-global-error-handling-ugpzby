@@ -2097,7 +2097,8 @@
             },
             "superResolution": {
                 "title": "비디오 해상도 업스케일링",
-                "desc": "<p id='sr-describe-one' role='text'>이 기능은 비디오 해상도를 향상시켜 비디오 재생 경험을 향상시킵니다. 특히 비디오 해상도가 좋지 않을 때 해당 기능이 작동합니다.</p><p id='sr-describe-two' role='text'>이 기능은 배터리 수명과 배터리 온도에 영향을 줄 수 있으며, 소음을 유발할 수 있습니다. DC 모드(배터리 모드)에서는 사용하지 마십시오. 그렇지 않으면 전력 소모를 가속화하고 배터리 수명을 단축시킵니다.</p>",
+                "desc1": "이 기능은 비디오 해상도를 향상시켜 비디오 재생 경험을 향상시킵니다. 특히 비디오 해상도가 좋지 않을 때 해당 기능이 작동합니다.",
+                "desc2": "이 기능은 배터리 수명과 배터리 온도에 영향을 줄 수 있으며, 소음을 유발할 수 있습니다. DC 모드(배터리 모드)에서는 사용하지 마십시오. 그렇지 않으면 전력 소모를 가속화하고 배터리 수명을 단축시킵니다.",
                 "tooltip": "<p id='sr-tip-one' role='text'>이 기능은 아래의 비디오 플레이어에서만 작동합니다.<br>Windows Media Player<br>Chrome 기반 플레이어<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>PotPlayer에서 해당 기능을 사용하는 방법에 대한 지침은 컴퓨터와 함께 제공되는 사용 설명서를 참고하십시오.</p>",
                 "note": {
                     "description": "다음의 경우에는 이 기능이 작동하지 않습니다.",
@@ -2111,7 +2112,8 @@
                 "heading": "지능형 센싱",
                 "title": "스마트 모션 알람",
                 "tooltip": "<div id='antiTheft-tooltips'>컴퓨터가 최대 절전 모드이거나 전원이 꺼진 경우에는 해당 기능이 작동하지 않습니다. 다음 동작에서 설정을 확인하십시오.<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>덮개 닫기 동작</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>배터리 부족/경보 동작</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>전원 버튼 동작</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>절전 버튼 동작</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>최대 절전 모드에 대한 유휴 시간 제한 설정</li></ul></div>그렇지 않으면 알람이 울리지 않고 사진을 찍지도 않습니다.</div>",
-                "desc": "<p id='antiTheft-describe-one' role='text'>이 기능을 활성화하면 화면이 잠겨 있을 때, 특히 공공장소에서 이동이 감지될 때 장치에서 신호음이 울리기 시작합니다.</p><p id='antiTheft-describe-two' role='text'>알람을 해제하려면 Windows에 로그인하십시오.</p>",
+                "desc1": "이 기능을 활성화하면 화면이 잠겨 있을 때, 특히 공공장소에서 이동이 감지될 때 장치에서 신호음이 울리기 시작합니다.",
+                "desc2": "알람을 해제하려면 Windows에 로그인하십시오.",
                 "note": {
                     "description": "시스템에 로그인하면 이 기능이 자동으로 꺼집니다. 다시 기능을 활성화해야 사용할 수 있습니다."
                 },

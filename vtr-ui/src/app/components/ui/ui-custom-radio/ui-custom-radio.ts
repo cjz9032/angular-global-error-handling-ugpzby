@@ -1,6 +1,6 @@
 import { ElementRef, Input, ViewChild, AfterViewInit, OnInit, OnChanges } from '@angular/core';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { MetricService } from 'src/app/services/metric/metric.service';
+import { MetricService } from 'src/app/services/metric/metrics.service';
 import { KeyCode } from 'src/app/enums/key-code.enum';
 
 export class UICustomRadio implements OnInit, AfterViewInit, OnChanges {

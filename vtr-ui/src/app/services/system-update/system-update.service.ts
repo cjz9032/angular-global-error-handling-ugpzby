@@ -12,7 +12,7 @@ import { SystemUpdateStatus } from 'src/app/data-models/system-update/system-upd
 import { UpdateInstallSeverity } from 'src/app/enums/update-install-severity.enum';
 import { WinRT } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { MetricService } from '../metric/metric.service';
+import { MetricService } from '../metric/metrics.service';
 import { LoggerService } from '../logger/logger.service';
 
 @Injectable({
@@ -148,22 +148,22 @@ export class SystemUpdateService {
 					this.updateInfo = { status, updateList: this.mapAvailableUpdateResponse(response.updateList) };
 					this.commonService.sendNotification(UpdateProgress.UpdatesAvailable, this.updateInfo);
 				} else {
-					while (this.percentCompleted < 100 && !this.isCheckingCancel) {
-						const percent = this.percentCompleted + 10;
-						if (percent <= 100) {
-							this.percentCompleted = percent;
+					const interval = setInterval(()=>{
+						if(this.percentCompleted < 100 && !this.isCheckingCancel) {
+							this.percentCompleted += 10;
+							if (this.percentCompleted > 100) {
+								this.percentCompleted = 100;
+							}
+							this.commonService.sendNotification(UpdateProgress.UpdateCheckInProgress, this.percentCompleted);
 						} else {
-							this.percentCompleted = 100;
+							this.percentCompleted = 0;
+							const payload = { ...response, status };
+							this.isInstallationSuccess = this.getInstallationSuccess(payload);
+							this.commonService.sendNotification(UpdateProgress.UpdateCheckCompleted, payload);
+							this.getScheduleUpdateStatus(false);
+							clearInterval(interval);
 						}
-						this.commonService.sendNotification(UpdateProgress.UpdateCheckInProgress, this.percentCompleted);
-						const sleep = milliseconds => new Promise(resolve => setTimeout(resolve, milliseconds));
-						await sleep(80);
-					}
-					this.percentCompleted = 0;
-					const payload = { ...response, status };
-					this.isInstallationSuccess = this.getInstallationSuccess(payload);
-					this.commonService.sendNotification(UpdateProgress.UpdateCheckCompleted, payload);
-					this.getScheduleUpdateStatus(false);
+					}, 80);
 				}
 			}).catch((error) => {
 				this.percentCompleted = 0;

@@ -2099,7 +2099,8 @@
 			},
 			"superResolution": {
 				"title": "Video resolution upscaling",
-				"desc": "<p id='sr-describe-one' role='text'>This feature enhances the experience of video playback by improving the video resolution. It works especially when the video is in poor resolution.</p><p id='sr-describe-two' role='text'>This function might impact the battery life, battery temperature, and cause noises. Please do not use it in DC mode (battery mode). Otherwise, it will speed up the power consumption and shorten the battery life.</p>",
+				"desc1": "This feature enhances the experience of video playback by improving the video resolution. It works especially when the video is in poor resolution.",
+				"desc2": "This function might impact the battery life, battery temperature, and cause noises. Please do not use it in DC mode (battery mode). Otherwise, it will speed up the power consumption and shorten the battery life.",
 				"tooltip": "<p id='sr-tip-one' role='text'>This feature only works for below video players:<br>Windows Media Player<br>Chrome-based player<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>For instructions on how to enable this function on PotPlayer, refer to the User Guide that comes with your computer.</p>",
 				"note": {
 					"description": "This feature does not work when:",
@@ -2113,8 +2114,9 @@
                 "heading": "Intelligent sensing",
 				"title": "Smart motion alarm",
 				"tooltip":"<div id='antiTheft-tooltips'>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>actions of the closing lid</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>critical/low battery action</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>power button action</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>sleep button action</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>",
-                "desc": "<p id='antiTheft-describe-one' role='text'>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</p><p id='antiTheft-describe-two' role='text'>To dismiss the alarm, please log in to Windows.</p>",
-                "note": {
+                "desc1": "When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.",
+				"desc2": "To dismiss the alarm, please log in to Windows.",
+				"note": {
                     "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
                 },
                 "alarm": {
@@ -2421,7 +2423,7 @@
 			},
 			"tabSet2": {
 				"tab1Heading": "IT'S EASY",
-				"tab1Description": "We don't confuse you with tech mumbo jumbp",
+				"tab1Description": "We don't confuse you with tech mumbo jumbo",
 				"tab2Heading": "IT'S FAST",
 				"tab2Description": "Get a 100 point check done in under 5 minutes",
 				"tab3Heading": "IT'S SAFE",
@@ -2441,7 +2443,7 @@
 			"inactiveStatus": "INACTIVE",
 			"manageSubscription": "MANAGE SUBSCRIPTION",
 			"manageSubscriptionBeta":"ENABLE FULL FEATURE",
-			"descriptionbeta": "Lenovo is offering pilot program to try Smart Performance feature till July.",
+			"descriptionbeta": "Lenovo is offering pilot program to try Smart Performance feature till July 2020.",
 			"descriptionbeta1": "You are welcomed to join and try the full feature."
 		},
 		"scanSettings": {
@@ -2466,7 +2468,7 @@
 			"fri": "Friday",
 			"sat": "Saturday",
 			"sun": "Sunday",
-			"tooltipText": "Enable this toggle to automatically initiate a system performance scan on your selected date and time."
+			"tooltipText": "By keeping this toggle enabled, system performance and security scan will be automatically initiated on your set date and time."
 		},
 		"scanningPage": {
 			"title": "Performance & security check",
@@ -2488,7 +2490,7 @@
 				"upNext": "UP NEXT",
 				"tunePCDesc": "Let’s help improve your PC performance. We do it safely using industry best practices. Benefits for subscribers include reduced PC start time, improved performance, improved stability and faster launch of applications.",
 				"boostDesc": "Let’s help enhance your browsing experience. Let's fix network and access issues. Benefits for subscribers include betterment in internet connectivity, improvement in upload/download speeds and making internet more secure.",
-				"malwareDesc": "Let’s help quickly secure your PC, on-demand. We do it by removing spyware, malware and adware. We also remove near/zero-day infections. Benefits for subscribers include security of data and optimal system performance.",
+				"malwareDesc": "Let’s help quickly secure your PC, on-demand. We do it by removing spyware, malware and adware. We also remove near zero-day infections. Benefits for subscribers include security of data and optimal system performance.",
 				"proactiveDesc": "Let's tune your computer periodically and fix issues, Proactive and automated to keep your PC tuned and covered. Always",
 				"tunePCScanningItems": {
 					"accumulatedJunk": {
@@ -2566,7 +2568,7 @@
 						"itemd6": "Ensure Wi-Fi channels do not overlap"
 					},
 					"eJunk": {
-						"iteme1": "Eliminate clutter from 4 browsers",
+						"iteme1": "Eliminate clutter from browsers",
 						"iteme2": "Look for leftover e-junk",
 						"iteme3": "Look for outdated internet files",
 						"iteme4": "Clear unwanted web cache",
@@ -2623,19 +2625,19 @@
 			"description": "Here is what we found on your ",
 			"scanRates": "Our scan rates your PC at: ",
 			"summary": "Summary",
-			"summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+			"summaryDetails": "Our scan found <b>{{issueCount}} issue(s)</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
 			"signupRepairButton": "Back To Home",
 			"monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
 			"issueCount": "{{individualIssueCount}} ISSUES",
-			"issues": "ISSUES",
+			"issues": "ISSUE(S)",
 			"tuneIssueCount": "{{tune}}",
 			"boostIssueCount": "{{boost}}",
 			"secureIssueCount": "{{secure}}",
 			"scannedAreas": "SCANNED AREAS",
 			"recommendedAction": {
 				"title": "RECOMMENDED ACTION",
-				"description": "Lenovo is offering beta program of Smart Performance till July.",
-				"description1":"You are welcomed to enroll in the program to try the full feature of Smart Performance.",
+				"description": "Lenovo is offering beta program of Smart Performance till July 2020.",
+				"description1":"You are welcomed to join in the program to try the full feature of Smart Performance.",
 				"yearlyPricing": "$19.99 / Yr",
 				"monthlyPricing": "LESS THAN $2 PER MONTH.",
 				"longerTerm": "Longer term? Even more savings?",
@@ -2905,12 +2907,12 @@
 			"serialNumber": "Serial number: ",
 			"subTitle": "You are subscribed to Lenovo Smart Performance Service",
 			"description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
-			"scanNow": "SCAN NOW",
+			"scanNow": "SCAN & FIX",
 			"backToHome": "Back To Home",
 			"returnto": "RETURN TO DASHBOARD",
 			"mostRecent": "MOST RECENT SCAN:",
 			"nextScheduled": "NEXT SCHEDULED SCAN:",
-			"successTitle": "Your Pc is tuned up !",
+			"successTitle": "Your PC is tuned up !",
 			"successDescription": "Smart Performance resolved <b>{{issueCount}} issues</b> to keep your pc running smoothly, you can find scan summary and report below.",
 			"scanSummary": {
 				"title": "Scan summary:",
@@ -2918,7 +2920,7 @@
 				"tune": "Tune",
 				"tuneSummary": "Disk space reclaimed",
 				"summaryCaption": "space reclaimed",
-				"fixes": "fixes",
+				"fixes": "fix(es)",
 				"boost": "Boost",
 				"boostSummary": "Fixes to improve performance",
 				"secure": "Secure",
@@ -2932,8 +2934,8 @@
 			},
 			"lastScanResults": {
 				"title": "Last 5 scan results:",
-				"scanDate": "Scan date:",
-				"results": "Results:",
+				"scanDate": "Scan date",
+				"results": "Results",
 				"status": "Status"
 			}
 		},

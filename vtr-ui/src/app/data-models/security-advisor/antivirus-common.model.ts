@@ -5,7 +5,7 @@ import { LocalInfoService } from 'src/app/services/local-info/local-info.service
 import { TranslateService } from '@ngx-translate/core';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { MetricService } from 'src/app/services/metric/metric.service';
+import { MetricService } from 'src/app/services/metric/metrics.service';
 import { MetricsTranslateService } from 'src/app/services/mertics-traslate/metrics-translate.service';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 
@@ -73,7 +73,7 @@ export class AntivirusCommon {
 					if (this.antivirus.mcafee) {
 						this.mcafee = this.antivirus.mcafee;
 					}
-				}	
+				}
 			});
 			this.antivirus = antivirus;
 			if (this.antivirus.mcafee) {

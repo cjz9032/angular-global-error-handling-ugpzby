@@ -5,11 +5,11 @@ import { WidgetLightingNotebookComponent } from './widget-lighting-notebook.comp
 import { Pipe, NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { MetricService } from '../../../../../src/app/services/metric/metric.service';
+import { MetricService } from '../../../services/metric/metrics.service';
 
 const gamingLightingServiceMock = jasmine.createSpyObj('GamingLightingService', ['getLightingProfileId', 'getLightingProfileById', 'setLightingProfileId', 'setLightingProfileBrightness',
     'isShellAvailable', 'getLightingCapabilities', 'setLightingDefaultProfileById', 'setLightingProfileEffectColor', 'checkAreaColorFn', 'regLightingProfileIdChangeEvent']);
-let commonServiceMock = {  
+let commonServiceMock = {
     getLocalStorageValue(key: any) {
         switch (key) {
             case '[LocalStorageKey] KeyboardToggleStatusLNBx50':
@@ -134,7 +134,7 @@ describe('WidgetLightingNotebookComponent', () => {
         if (commonServiceMock.getLocalStorageValue('[LocalStorageKey] LedSwitchButtonFeature') == null) {
             commonServiceMock.setLocalStorageValue('[LocalStorageKey] LedSwitchButtonFeature', true);
         }
-        
+
         fixture.detectChanges();
     }));
 
@@ -359,7 +359,7 @@ describe('WidgetLightingNotebookComponent', () => {
 
     it('should set cache default list', () => {
          component.currentProfileId = 2;
-         component.setCacheDafaultList(); 
+         component.setCacheDafaultList();
          expect(component.currentProfileId).toEqual(2);
     })
 

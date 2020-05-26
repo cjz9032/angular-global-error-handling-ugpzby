@@ -6,7 +6,7 @@ import { GamingAdvancedOCService } from 'src/app/services/gaming/gaming-advanced
 import { CommonService } from 'src/app/services/common/common.service';
 import { ModalGamingPromptComponent } from './../../modal/modal-gaming-prompt/modal-gaming-prompt.component';
 import { AdvancedOCItemUnit } from 'src/app/data-models/gaming/advanced-overclock-unit';
-import { MetricService } from 'src/app/services/metric/metric.service';
+import { MetricService } from 'src/app/services/metric/metrics.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
 
@@ -59,7 +59,7 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
         }
     ]
   };
-  
+
   constructor(
     private modalService: NgbModal,
     public activeModal: NgbActiveModal,
@@ -195,7 +195,7 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
     }catch (error) {
       throw new Error('setAdvancedOCInfo ' + error.message);
     }
-    
+
   }
 
   public openSetToDefaultModal () {
@@ -235,7 +235,7 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 
   /**
   * metrics collection for advancedoc feature
-  * @param metricsdata 
+  * @param metricsdata
   */
   public sendFeatureClickMetrics(metricsdata:any) {
     try{
@@ -255,7 +255,7 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
   }
   /**
    * metrics collection of OC parameter changed
-   * @param occhangedinfo 
+   * @param occhangedinfo
    */
   public sendOCChangedMetricsData(occhangedinfo:any) {
     try{
@@ -272,11 +272,11 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
           }
         }
       }
-  
+
       this.sendFeatureClickMetrics(JSON.parse(`{"ItemParent":"Gaming.AdvancedOC.SaveChangeWarningModal","ItemName":"advancedoc_savechangewarningmodal_btn",
         "ItemValue":"${occhangedinfo === 1 ? "save" : occhangedinfo === 2 ? "don't save" : "close"}",
         "ItemParam":${(occhangedinfo === 1 && Object.keys(parameterValue).length !== 0) ? JSON.stringify(parameterValue) : null}}`));
-  
+
       if (occhangedinfo === 1 || occhangedinfo === 2) {
         this.sendPageViewMetricsData();
       }

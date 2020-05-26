@@ -2097,7 +2097,8 @@
             },
             "superResolution": {
                 "title": "Mise à l'échelle de la résolution vidéo",
-                "desc": "<p id='sr-describe-one' role='text'>Cette fonction améliore l'expérience de la lecture vidéo en améliorant la résolution de la vidéo. Cela est particulièrement efficace lorsque la vidéo est de faible résolution.</p><p id='sr-describe-two' role='text'>Cette fonction peut influencer la durée de vie de la batterie, sa température et produire des sons. Veillez à ne pas l'utiliser en mode courant continu (mode batterie). Sinon, cela accélérera la consommation d'énergie et réduira la durée de vie de la batterie.</p>",
+                "desc1": "Cette fonction améliore l'expérience de la lecture vidéo en améliorant la résolution de la vidéo. Cela est particulièrement efficace lorsque la vidéo est de faible résolution.",
+                "desc2": "Cette fonction peut influencer la durée de vie de la batterie, sa température et produire des sons. Veillez à ne pas l'utiliser en mode courant continu (mode batterie). Sinon, cela accélérera la consommation d'énergie et réduira la durée de vie de la batterie.",
                 "tooltip": "<p id='sr-tip-one' role='text'>Cette fonction n'est disponible que pour les lecteurs vidéo suivants :<br>Windows Media Player<br>Lecteur Chrome<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Pour savoir comment activer cette fonction sur PotPlayer, reportez-vous au guide d'utilisation fourni avec votre ordinateur.</p>",
                 "note": {
                     "description": "Cette fonction est inopérante quand :",
@@ -2111,7 +2112,8 @@
                 "heading": "Capteur intelligent",
                 "title": "Alerte de mouvement intelligente",
                 "tooltip": "<div id='antiTheft-tooltips'>Cette fonction n'est pas active lorsque l'ordinateur est en mode hibernation ou qu'il est hors tension. Vérifiez les paramètres lors des actions suivantes :<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>actions du fermeture du capot</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>action de batterie critique/faible</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>action de bouton d'alimentation</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>action du bouton de veille</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>paramètres de délai d'inactivité en mode hibernation</li></ul></div>Sinon, il ne déclenchera aucune alarme, ni ne prendra aucune photo.</div>",
-                "desc": "<p id='antiTheft-describe-one' role='text'>Lorsque vous activez cette fonction, l'appareil émet un signal sonore lorsque l'écran est verrouillé et que des mouvements sont détectés, notamment dans un endroit public.</p><p id='antiTheft-describe-two' role='text'>Pour ignorer l'alarme, connectez-vous à Windows.</p>",
+                "desc1": "Lorsque vous activez cette fonction, l'appareil émet un signal sonore lorsque l'écran est verrouillé et que des mouvements sont détectés, notamment dans un endroit public.",
+                "desc2": "Pour ignorer l'alarme, connectez-vous à Windows.",
                 "note": {
                     "description": "Une fois que vous vous êtes connecté au système, cette fonction sera automatiquement désactivée. Vous devez l'activer à nouveau pour l'utiliser."
                 },

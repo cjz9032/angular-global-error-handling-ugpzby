@@ -20,10 +20,10 @@ export class MetricService {
 	private focusDurationCounter;
 	private blurDurationCounter;
 	private suspendDurationCounter;
-	private dashboardFirstLoaded = 0;
 	private welcomeNeeded: any;
 	private hasSendAppLoadedEvent = false;
 	public readonly isFirstLaunch: boolean;
+	private loadingDuration: number;
 	constructor(
 		private shellService: VantageShellService,
 		private timerService: DurationCounterService,
@@ -137,9 +137,8 @@ export class MetricService {
 		);
 	}
 
-	private sendAppLoadedMetric(dashboardFirstLoaded: number) {
-		const vanStub = this.shellService.getVantageStub();
-		this.metricsClient.sendAsync(new AppLoaded((dashboardFirstLoaded - vanStub.navigateTime)));
+	private sendAppLoadedMetric(LoadingDuration: number) {
+		this.metricsClient.sendAsync(new AppLoaded(LoadingDuration));
 	}
 
 	private sendInstallationMetric(metricEnable) {
@@ -215,10 +214,10 @@ export class MetricService {
 	}
 
 	public getPageName() {
-		return  this.activeRouter.snapshot.data.pageName
-		|| this.activeRouter.snapshot.root.firstChild.data.pageName
-		|| this.activeRouter.snapshot.root.firstChild.firstChild.data.pageName
-		|| MetricConst.Unknown
+		return this.activeRouter.snapshot.data.pageName
+			|| this.activeRouter.snapshot.root.firstChild.data.pageName
+			|| this.activeRouter.snapshot.root.firstChild.firstChild.data.pageName
+			|| MetricConst.Unknown
 	}
 
 	public sendContentDisplay(itemID: string, dataSource: string, position: string) {
@@ -239,14 +238,10 @@ export class MetricService {
 		}
 		this.hasSendAppLoadedEvent = true;
 
-		if (!this.dashboardFirstLoaded) {
-			this.dashboardFirstLoaded = Date.now();
-		}
-
 		// the following metrics need to be send when the welcome page was done or the page was loaded at which point the metrics privacy was determined
 		this.sendAppLaunchMetric()
 		this.sendEnvInfoMetric();
-		this.sendAppLoadedMetric(this.dashboardFirstLoaded);
+		this.sendAppLoadedMetric(this.loadingDuration);
 	}
 
 	public async metricReady() {
@@ -256,28 +251,28 @@ export class MetricService {
 		await this.metricsClient.initPromise;
 	}
 
-	private async sendMetricsAfterPageLoad() {
-		if (this.welcomeNeeded === false && this.dashboardFirstLoaded) {
-			await this.metricReady();
-			if (this.metricsClient.metricsEnabled) {	// in normal case for first run, if the welcome page was not done, the metrics will be disable.
-				this.handleAppLoadedEvent();	// send these metric event in dashboard at the scenarios when welcome page was done.
-			}
+	private async onWebLoaded() {
+		await this.metricReady();
+		if (this.metricsClient.metricsEnabled) {	// in normal case for first run, if the welcome page was not done, the metrics will be disable.
+			this.handleAppLoadedEvent();	// send these metric event in dashboard at the scenarios when welcome page was done.
+		}
 
+		if (this.welcomeNeeded === false) {
 			this.sendInstallationMetric(this.metricsClient.metricsEnabled)
 		}
 	}
 
 	public async onPageLoaded() {
-		if (this.dashboardFirstLoaded) {
+		if (this.loadingDuration) {
 			return; 	// run once
 		}
 
-		this.dashboardFirstLoaded = Date.now(); // save the time while app finish loading.
-		this.sendMetricsAfterPageLoad();
+		const vantageStub = this.shellService.getVantageStub();
+		this.loadingDuration = Date.now() - vantageStub.navigateTime;
+		this.onWebLoaded();
 	}
 
-	public async handleWelcomeDone() {
-		await this.metricReady();
+	public handleWelcomeDone() {
 		if (this.metricsClient.metricsEnabled) {
 			this.handleAppLoadedEvent();
 		}
@@ -287,7 +282,10 @@ export class MetricService {
 
 	public async HandleCheckWelcomeNeeded(welcomeNeeded: boolean) {
 		this.welcomeNeeded = welcomeNeeded;
-		this.sendMetricsAfterPageLoad();
+		if (this.welcomeNeeded === false) {
+			await this.metricReady();
+			this.sendInstallationMetric(this.metricsClient.metricsEnabled)
+		}
 	}
 
 	private toLower(content: string) {

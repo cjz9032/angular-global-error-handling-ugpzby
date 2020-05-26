@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BacklightComponent } from './backlight.component';
 import { BacklightService } from './backlight.service';
-import { MetricService } from '../../../../../../services/metric/metric.service';
+import { MetricService } from '../../../../../../services/metric/metrics.service';
 import { EMPTY, NEVER, Observable, of } from 'rxjs';
 import { TranslateModule } from '@ngx-translate/core';
 import { RemoveSpacePipe } from '../../../../../../pipe/remove-space/remove-space.pipe';

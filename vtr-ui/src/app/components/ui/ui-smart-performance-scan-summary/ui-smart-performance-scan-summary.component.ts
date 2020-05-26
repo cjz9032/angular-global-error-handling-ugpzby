@@ -505,9 +505,9 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 					boostSize: res.Boostsize
 				};
 				this.historyScanResults = res.lastscanresults || [];
-				this.getScanHistoryWithTime();
 				this.getMostecentScanDateTime(this.historyScanResults[0].scanruntime);
-				
+				this.getScanHistoryWithTime();
+
 			} else {
 				this.historyScanResults = [];
 				this.historyRes = {};

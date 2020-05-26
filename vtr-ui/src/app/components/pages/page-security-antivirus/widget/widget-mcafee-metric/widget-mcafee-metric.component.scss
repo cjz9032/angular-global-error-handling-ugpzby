@@ -1,106 +1,110 @@
 @import "../../../../../app.theme";
 
 .vtr-widget-mcafee-metric {
-  border-radius: $border_radius;
-  background-color: rgb(20, 2, 63);
-  margin-right: 2rem;
-  padding: 1.5rem;
-  @media #{$breakpoint_xl} {
-    margin:0 0 4rem 0;
-  }
-  button {
-    height: 4rem;
-    border-radius: 3rem;
-    min-width: 12rem;
-    background: $gradient_main;
-    border: none;
-    color: $light;
-    font-size: 1.4rem;
-    font-weight: 600;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    padding: 0 2.5rem;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    letter-spacing: 0;
-    align-self: center;
-  }
-  .title {
-    color: $light;
-    font-size: 2rem;
-    font-weight: $weight_medium;
-    line-height: 2.9rem;
-  }
+	border-radius: $border_radius;
+	background-color: rgb(20, 2, 63);
+	margin-right: 2rem;
+	padding: 1.5rem;
 
-  .height-line {
-    width: 0.01rem;
-    margin: 0 1.5rem;
-    background-color: $shade_light;
-  }
+	@media #{$breakpoint_xl} {
+		margin: 0 0 4rem 0;
+	}
 
-  .divider {
-    margin: 2rem 0 1rem 0;
-    height: 0.2rem;
-    background-color: $shade_lighter;
-  }
+	button {
+		height: 4rem;
+		border-radius: 3rem;
+		min-width: 12rem;
+		background: $gradient_main;
+		border: none;
+		color: $light;
+		font-size: 1.4rem;
+		font-weight: 600;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		padding: 0 2.5rem;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		letter-spacing: 0;
+		align-self: center;
+	}
 
-  .inner {
-    padding: 1rem 0 1rem 2rem;
-    .title {
-      color: $main_darker;
-      font-size: 1.4rem;
-      font-weight: 600;
-      line-height: 2.3rem;
-      text-align: left;
-    }
+	.title {
+		color: $light;
+		font-size: 2rem;
+		font-weight: $weight_medium;
+		line-height: 2.9rem;
+	}
 
-    .logo {
-      align-self: center;
-      height: 6rem;
-    }
+	.height-line {
+		width: 0.01rem;
+		margin: 0 1.5rem;
+		background-color: $shade_light;
+	}
 
-    .number {
-      color: $go_light;
-      font-size: 4rem;
-      font-weight: 700;
-      line-height: 3rem;
-    }
+	.divider {
+		margin: 2rem 0 1rem 0;
+		height: 0.2rem;
+		background-color: $shade_lighter;
+	}
 
-    .subtitle {
-      color: $light;
-      font-size: 1.5rem;
-      font-weight: $weight_light;
-      text-transform: uppercase;
-    }
-  }
+	.inner {
+		padding: 1rem 0 1rem 2rem;
 
-  .icon-check {
-    background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
-    background-color: $go_dark;
-    border-color: $go_dark;
-    display: inline-block;
-    border-radius: 50%;
-    height: 5rem;
-    width: 5rem;
-    border-width: 0.3rem;
-    border-style: solid;
-    text-align: center;
-    margin-right: 1rem;
+		.title {
+			color: $main_darker;
+			font-size: 1.4rem;
+			font-weight: 600;
+			line-height: 2.3rem;
+			text-align: left;
+		}
 
-    fa-icon {
-      font-size: 3rem;
-      line-height: 4.5rem;
-      color: $light;
-    }
-  }
+		.logo {
+			align-self: center;
+			height: 6rem;
+		}
 
-  .icon-check:before {
-    content: "";
-  }
+		.number {
+			color: $go_light;
+			font-size: 4rem;
+			font-weight: 700;
+			line-height: 3rem;
+		}
+
+		.subtitle {
+			color: $light;
+			font-size: 1.5rem;
+			font-weight: $weight_light;
+			text-transform: uppercase;
+		}
+	}
+
+	.icon-check {
+		background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
+		background-color: $go_dark;
+		border-color: $go_dark;
+		display: inline-block;
+		border-radius: 50%;
+		height: 5rem;
+		width: 5rem;
+		border-width: 0.3rem;
+		border-style: solid;
+		text-align: center;
+		margin-right: 1rem;
+
+		fa-icon {
+			font-size: 3rem;
+			line-height: 4.5rem;
+			color: $light;
+		}
+	}
+
+	.icon-check:before {
+		content: "";
+	}
 }
 
 .m-top {
-  margin: 10rem 2rem 8rem 0;
+	margin: 10rem 2rem 8rem 0;
 }

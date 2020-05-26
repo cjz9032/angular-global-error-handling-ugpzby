@@ -6,7 +6,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { LightingDataList } from 'src/app/data-models/gaming/lighting-new-version/lighting-data-list';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { MetricService } from '../../../../../src/app/services/metric/metric.service';
+import { MetricService } from '../../../services/metric/metrics.service';
 
 @Component({
   selector: 'vtr-widget-lighting-notebook',
@@ -39,7 +39,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
   @HostListener('document:click', ['$event']) onClick(event) {
     this.isSetDefault =false;
   }
-  
+
   constructor(
     private ngZone:NgZone,
     private commonService: CommonService,
@@ -58,7 +58,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
       this.getLightingCapabilitiesFromcache(this.lightingCapabilities);
     }
     if (this.lightingProfileById !== undefined) {
-      this.getLightingProfileByIdFromcache(this.lightingProfileById); 
+      this.getLightingProfileByIdFromcache(this.lightingProfileById);
     }
     this.getLightingCapabilities();
 
@@ -93,7 +93,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
         }
       } catch (error) {}
   }
- 
+
  public getLightingCapabilities(){
     try {
       if (this.gamingLightingService.isShellAvailable) {
@@ -148,7 +148,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
         }
         this.getLightingCurrentDetail(this.lightingProfileById);
       }
-      
+
       /* Use cache before set    end */
 
       if (this.gamingLightingService.isShellAvailable) {
@@ -169,7 +169,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
                 }
                 this.getLightingCurrentDetail(this.lightingProfileById);
               }
-  
+
             }
           }
         });
@@ -208,7 +208,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
         this.getLightingProfileById(this.currentProfileId);
       }
     });
-    
+
   }
 
   public setLightingProfileEffect(event){
@@ -229,7 +229,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
        this.gamingLightingService.setLightingProfileEffectColor(effectJson).then((response: any) => {
          this.logger.info("setLightingProfileEffect: ",response);
          if (response.didSuccess) {
-           this.isEffectChange = true; 
+           this.isEffectChange = true;
            this.publicPageInfo(response);
          }else{
           this.isEffectChange = false;
@@ -394,7 +394,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
       this.sendFeatureClickMetrics(JSON.parse(`{"ItemName":"lighting_color_change","ItemValue":"${event}"}`));
     } catch (error) {}
   }
-  
+
   public getCurrentName(lightingPanelImage,lightPanelType){
     let nameObj = lightingPanelImage.filter((element) => {
       return element.value === lightPanelType;
@@ -486,7 +486,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
     }
   }
 
-  public setCacheDafaultList(){ 
+  public setCacheDafaultList(){
     let toggleOnCache:any,toggleOffCache:any;
     this.toggleStatus = this.commonService.getLocalStorageValue(LocalStorageKey.KeyboardToggleStatusLNBx50);
     if(this.toggleStatus !== undefined){
@@ -512,7 +512,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
       }
     }
   }
-   
+
   public getColorList(colorList){
     if(colorList.lightInfo.length > 0){
       const newList =  colorList.lightInfo.map(_ => colorList.lightInfo[0])
@@ -530,7 +530,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
       this.isDisabled = false;
     }
   }
- 
+
   public effectSupportSpeed(value){
     if(value === 1 || value === 1024){
       this.isSupportSpeed = false;
@@ -609,7 +609,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
 
   /**
    * metrics collection for lighting feature of notebook machine
-   * @param metricsdata 
+   * @param metricsdata
    */
   public sendFeatureClickMetrics(metricsdata:any) {
     try {

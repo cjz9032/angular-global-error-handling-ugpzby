@@ -2097,7 +2097,8 @@
             },
             "superResolution": {
                 "title": "Schaalverhoging beeldschermresolutie",
-                "desc": "<p id='sr-describe-one' role='text'>Deze functie verbetert de beleving van het kijken van video's door de beeldschermresolutie te verbeteren. Dit werkt het beste als de video een lage resolutie heeft.</p><p id='sr-describe-two' role='text'>Deze functie kan invloed hebben op de levensduur en temperatuur van de batterij en kan ruis veroorzaken. Niet gebruiken in gelijkstroommodus (batterijstroom). anders neemt het stroomverbruik toe en gaat de batterij minder lang mee.</p>",
+                "desc1": "Deze functie verbetert de beleving van het kijken van video's door de beeldschermresolutie te verbeteren. Dit werkt het beste als de video een lage resolutie heeft.",
+                "desc2": "Deze functie kan invloed hebben op de levensduur en temperatuur van de batterij en kan ruis veroorzaken. Niet gebruiken in gelijkstroommodus (batterijstroom). anders neemt het stroomverbruik toe en gaat de batterij minder lang mee.",
                 "tooltip": "<p id='sr-tip-one' role='text'>Deze functie werkt alleen voor volgende videospelers:<br>Windows Media Player<br>Chrome-speler<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Instructies voor het inschakelen van deze functie in PotPlayer vindt u in de gebruikershandleiding van de computer.</p>",
                 "note": {
                     "description": "Deze functie werkt niet als:",
@@ -2111,7 +2112,8 @@
                 "heading": "Intelligente sensoren",
                 "title": "Slim bewegingsalarm",
                 "tooltip": "<div id='antiTheft-tooltips'>Deze functie werkt niet als de computer in de sluimerstand staat of is uitgeschakeld. Schakel de instellingen voor de volgende acties in:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>acties voor sluiten van het deksel</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>actie voor bijna lege batterij</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>actie voor de aan/uit-knop</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>actie voor de slaapstandknop</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>instellingen voor time-out bij inactiviteit naar sluimerstand</li></ul></div>Als je deze niet instelt, worden geen waarschuwingen geactiveerd of foto's genomen.</div>",
-                "desc": "<p id='antiTheft-describe-one' role='text'>Als u deze functie inschakelt, begint het apparaat te piepen wanneer uw scherm vergrendeld is en er bewegingen worden gedetecteerd, vooral in openbare omgevingen.</p><p id='antiTheft-describe-two' role='text'>Meld u aan bij Windows om het alarm te sluiten.</p>",
+                "desc1": "Als u deze functie inschakelt, begint het apparaat te piepen wanneer uw scherm vergrendeld is en er bewegingen worden gedetecteerd, vooral in openbare omgevingen.",
+                "desc2": "Meld u aan bij Windows om het alarm te sluiten.",
                 "note": {
                     "description": "Als u eenmaal bij het systeem bent aangemeld, wordt deze functie automatisch uitgeschakeld. Om deze functie weer te gebruiken, moet u de functie opnieuw inschakelen."
                 },

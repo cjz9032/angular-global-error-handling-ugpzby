@@ -320,6 +320,10 @@
 					color: $blue-lighter;
 					font-size: 1.6rem;
 					text-decoration: underline;
+					&:focus {
+						outline: 0.1rem solid $menu_hover;
+						outline-offset: 0.1rem;
+					}
 				}
 			}
 

@@ -2097,7 +2097,8 @@
             },
             "superResolution": {
                 "title": "Näytön tarkkuuden skaalaus",
-                "desc": "<p id='sr-describe-one' role='text'>Tämä ominaisuus parantaa videoiden katselukokemusta parantamalla videoiden resoluutiota. Se toimii erityisen hyvin, kun videon resoluutio on alhainen.</p><p id='sr-describe-two' role='text'>Tämä toiminto saattaa heikentää akun käyttöaikaa, akun lämpötilaa ja aiheuttaa ääniä. Älä käytä sitä DC-tilassa (akkuvirralla). Muutoin se nopeuttaa virrankulutusta ja lyhentää akun käyttöikää.</p>",
+                "desc1": "Tämä ominaisuus parantaa videoiden katselukokemusta parantamalla videoiden resoluutiota. Se toimii erityisen hyvin, kun videon resoluutio on alhainen.",
+                "desc2": "Tämä toiminto saattaa heikentää akun käyttöaikaa, akun lämpötilaa ja aiheuttaa ääniä. Älä käytä sitä DC-tilassa (akkuvirralla). Muutoin se nopeuttaa virrankulutusta ja lyhentää akun käyttöikää.",
                 "tooltip": "<p id='sr-tip-one' role='text'>Tämä ominaisuus toimii vain seuraavilla videosoittimilla:<br>Windows Media Player<br>Chrome-pohjainen soitin<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Lisätietoja tämän ominaisuuden ottamisesta käyttöön PotPlayer-soittimille on tietokoneesi mukana toimitetussa käyttöoppaassa.</p>",
                 "note": {
                     "description": "Wi-Fi-toiminto ei toimi seuraavissa tilanteissa:",
@@ -2111,7 +2112,8 @@
                 "heading": "Älykäs tunnistustoiminto",
                 "title": "Älykäs liikkeentunnistus",
                 "tooltip": "<div id='antiTheft-tooltips'>Tämä ominaisuus ei toimi tietokoneen ollessa horrostilassa tai sammutettuna. Tarkista seuraavien toimintojen asetukset:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>kannen sulkemisen toiminnot</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>toiminto akun varauksen ollessa loppumassa</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>virtapainikkeen toiminto</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>lepotilapainikkeen toiminto</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>horrostilaan siirtymisen aikakatkaisun asetukset</li></ul></div>Muussa tapauksessa se ei aiheuta hälytystä tai ota valokuvia.</div>",
-                "desc": "<p id='antiTheft-describe-one' role='text'>Kun tämä ominaisuus on käytössä, laite aloittaa äänimerkin toistamisen, jos näyttösi ollessa lukittuna havaitaan liikettä, varsinkin julkisissa tiloissa.</p><p id='antiTheft-describe-two' role='text'>Kirjaudu sisään Windowsiin hylätäksesi hälytyksen.</p>",
+                "desc1": "Kun tämä ominaisuus on käytössä, laite aloittaa äänimerkin toistamisen, jos näyttösi ollessa lukittuna havaitaan liikettä, varsinkin julkisissa tiloissa.",
+                "desc2": "Kirjaudu sisään Windowsiin hylätäksesi hälytyksen.",
                 "note": {
                     "description": "Kun kirjaudut järjestelmään onnistuneesti, tämä ominaisuus poistetaan automaattisesti käytöstä. Sinun täytyy ottaa se uudelleen käyttöön käyttääksesi sitä."
                 },
