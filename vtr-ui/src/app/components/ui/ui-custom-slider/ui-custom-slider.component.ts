@@ -135,9 +135,9 @@ export class UiCustomSliderComponent implements OnInit {
 		switch (position) {
 			case 1: legend = this.minLegend
 				break;
-			case 2: legend = this.midLegend?.length > 0 ? this.midLegend : legend;
+			case 2: legend = (this.midLegend?.length > 0) ? this.midLegend : legend;
 				break;
-			case 3: legend = this.maxLegend?.length > 0 ? this.maxLegend : this.midLegend;
+			case 3: legend = (this.maxLegend?.length > 0) ? this.maxLegend : this.midLegend;
 				break;
 		}
 		return legend;
