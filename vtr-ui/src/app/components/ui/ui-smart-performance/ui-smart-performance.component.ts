@@ -170,6 +170,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 	}
 	//Scan Now event from Summary Page
 	changeScanEvent() {
+		this.isScanning = true;
 		this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
 		if (this.smartPerformanceService.isShellAvailable) {
 			this.smartPerformanceService
@@ -179,12 +180,11 @@ export class UiSmartPerformanceComponent implements OnInit {
 					if (getReadinessFromService) {
 						this.shellServices.registerEvent(EventTypes.smartPerformanceScanStatus,
 							event => {
-								this.scheduleScanObj=null;
+								this.scheduleScanObj = null;
 								this.updateScheduleScanStatus(event);
 							}
 						);
 						this.scanAndFixInformation();
-						this.isScanning = true;
 						// activates the pop-up, when user is navigating away while scanning - for subsciber
 						this.showWarning.emit(true);
 						// Subscriber Scan Completed
@@ -208,8 +208,8 @@ export class UiSmartPerformanceComponent implements OnInit {
 
 	updateScheduleScanStatus(response) {
 		try {
-			this.scheduleScanObj = response;
 			if (response && response.payload) {
+				this.scheduleScanObj = response;
 				if (response.payload.percentage == 100) {
 					this.isScanningCompleted = true;
 					this.isScanning = false;
@@ -218,7 +218,6 @@ export class UiSmartPerformanceComponent implements OnInit {
 					this.isScheduleScan = true;
 				}
 			}
-			this.isScanning = true;
 		} catch (err) {
 			this.logger.error('ui-smart-performance.updateScheduleScanStatus.then', err);
 		}
