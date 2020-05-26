@@ -247,6 +247,7 @@
 														{{application.value}}
 													</div>
 													<div class="app-name delete-app"
+														role="button"
 														id="delete-app-{{i+1}}"
 														attr-aria-label="delete-app-{{i+1}}"
 														(click)="deleteApplicationOrFile('0',application.key,application.value,i,'APPLICATIONS');"
@@ -310,6 +311,7 @@
 													</div>
 													<div class="app-name delete-app"
 														id="delete-file-{{i+1}}"
+														role="button"
 														attr-aria-label="delete-file-{{i+1}}"
 														(click)="deleteApplicationOrFile('0',file.key,file.value,i,'FILES');"
 														tabindex="0">
@@ -352,6 +354,7 @@
 													*ngIf="this.keyCode"
 													id="delete-key-sequence"
 													tabindex="0"
+													role="button"
 													attr.aria-label="invoke-key-sequence-delete"
 													(click)="resetInvokeSequence($event);"
 													(keydown)="resetInvokeSequence($event);">
