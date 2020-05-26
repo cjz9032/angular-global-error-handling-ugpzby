@@ -138,9 +138,9 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 		}
 	}
 
-	public onChangeKeyType($event) {
-		const value = $event.value;
-		this.topRowKeyObj.stickyFunStatus = JSON.parse(value);
+	public onChangeKeyType($event: UiRoundedRectangleRadioModel) {
+		const value = $event.value as boolean;
+		this.topRowKeyObj.stickyFunStatus = value;
 		this.keyboardService.setFnStickKeyStatus(value).then(res => {
 		});
 	}
@@ -199,15 +199,15 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 		this.topRowFunctionKeysUIModel = [{
 			componentId: 'nMehod_show',
 			label: 'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.nMehod',
-			value: this.FALSE,
-			isChecked: this.topRowKeyObj.stickyFunStatus === JSON.parse(this.FALSE),
+			value: false,
+			isChecked: this.topRowKeyObj.stickyFunStatus === false,
 			isDisabled: false
 		},
 		{
 			componentId: 'fnKeyMehod_show',
 			label: 'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.fnKeyMehod',
-			value: this.TRUE,
-			isChecked: this.topRowKeyObj.stickyFunStatus === JSON.parse(this.TRUE),
+			value: true,
+			isChecked: this.topRowKeyObj.stickyFunStatus === true,
 			isDisabled: false
 		}];
 	}
