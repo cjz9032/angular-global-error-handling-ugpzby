@@ -124,7 +124,7 @@
 					<h4 [style.display]="!advancedToggle?'block':'none'"
 						id="activeProtectionSystem-more">
 						{{ 'device.smartAssist.activeProtectionSystem.advanced.more' | translate }}</h4>
-					<a [style.display]="!advancedToggle?'block':'none'"
+					<a [style.display]="!advancedToggle?'inline-block':'none'"
 						id="{{advanceSettingsShowId}}"
 						role="link"
 						tabindex="0"
@@ -138,7 +138,8 @@
 						id="activeProtectionSystem_advanced_settings">
 						<h4 id="{{advanceSettings}}"
 							tabindex="-1"
-							attr.aria-label="{{advanceSettings}}">
+							attr.aria-label="{{advanceSettings}}"
+							class="advanced-settings-title">
 							{{ 'device.smartAssist.activeProtectionSystem.advanced.advanced-settings' | translate }}
 						</h4>
 						<ng-container *ngIf="advancedToggle">

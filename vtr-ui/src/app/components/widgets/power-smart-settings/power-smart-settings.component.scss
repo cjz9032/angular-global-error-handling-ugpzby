@@ -108,6 +108,9 @@
 			color: $menu_hover;
 			vertical-align: middle;
 		}
+		&.dytc6-info-link {
+			display: inline-block;
+		}
 	}
 	.read-more-link {
 		color: $grey_dark;
