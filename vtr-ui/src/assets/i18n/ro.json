@@ -1386,7 +1386,7 @@
                 },
                 "smartStandby": {
                     "title": "Stare de veghe inteligentă",
-                    "description": "Această caracteristică programează computerul să optimizeze modul de economisire a energiei bateriei în timpul orelor de inactivitate, fără a afecta experiența de reluare rapidă pentru <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Standby</a>, în timpul orelor de utilizare intensivă.",
+                    "description": "Această caracteristică programează computerul să optimizeze modul de economisire a energiei bateriei în timpul orelor de inactivitate, fără a afecta experiența de reluare rapidă pentru Modern Standby, în timpul orelor de utilizare intensivă.",
                     "tooltip": "Atunci când este activată Starea de veghe inteligentă, computerul dvs. trece în Starea de veghe modernă înaintea orei programate pentru PORNIRE și intră în hibernare după ce este inactiv o anumită perioadă de timp cu alimentare de la baterie. Această perioadă de timp este optimizată în funcție de programarea pe care o setați sau de modul de utilizare a computerului. Computerul trece din hibernare în Starea de veghe modernă doar în zilele planificate și nu face acest lucru atunci când este inactiv pe durata mai multor zile programate consecutive.",
                     "timer": {
                         "heading": "Timpul în care utilizați de obicei acest computer:",

@@ -1386,7 +1386,7 @@
                 },
                 "smartStandby": {
                     "title": "Intelligens készenlét",
-                    "description": "A funkció a számítógép működésének ütemezésével úgy optimalizálja az akkumulátor energiafogyasztását a használaton kívüli időszak alatt, hogy a <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern készenléti állapot</a> visszaállási művelete nem lesz lassabb a gép komolyabb használata során.",
+                    "description": "A funkció a számítógép működésének ütemezésével úgy optimalizálja az akkumulátor energiafogyasztását a használaton kívüli időszak alatt, hogy a Modern készenléti állapot visszaállási művelete nem lesz lassabb a gép komolyabb használata során.",
                     "tooltip": "Amikor aktiválja az Intelligens készenlét funkciót, a számítógép az ütemezett KEZDÉSI idő előtt Modern készenlétre vált, és hibernált állapotba kerül, ha akkumulátorról üzemel, és egy adott ideig nem használják. Ezt az időtartamot az Ön által beállított munkarend vagy az érzékelt számítógép-használati séma alapján optimalizálja a rendszer. A számítógép csak az ütemezett napokon vált hibernált módról Modern készenlétre, és ha egymást követő ütemezett napokon nem használják, nem történik meg a váltás.",
                     "timer": {
                         "heading": "Az idő, amikor általában használja a számítógépet:",

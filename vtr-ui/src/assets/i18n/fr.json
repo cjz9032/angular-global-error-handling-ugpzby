@@ -1386,7 +1386,7 @@
                 },
                 "smartStandby": {
                     "title": "Veille intelligente",
-                    "description": "Cette fonctionnalité programme votre ordinateur de sorte à optimiser la batterie et réduire sa consommation d'énergie pendant les périodes d'inactivité, tout en permettant une sortie rapide de la <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">veille moderne</a> pendant les heures d'utilisation intense.",
+                    "description": "Cette fonctionnalité programme votre ordinateur de sorte à optimiser la batterie et réduire sa consommation d'énergie pendant les périodes d'inactivité, tout en permettant une sortie rapide de la veille moderne pendant les heures d'utilisation intense.",
                     "tooltip": "Lorsque la Veille intelligente est activée, l'ordinateur passe à la Veille moderne avant l'heure de DÉBUT prévue et entre en mode hibernation au bout d'un certain temps d'inactivité lorsqu'il fonctionne sur la batterie. Ce laps de temps est optimisé en fonction de la période que vous aurez définie ou de l'utilisation de l'ordinateur. L'ordinateur passe du mode hibernation à la Veille moderne uniquement lors des jours programmés, et n'effectuera pas cette transition s'il est inactif pendant des jours programmés consécutifs.",
                     "timer": {
                         "heading": "Les heures pendant lesquelles vous utilisez généralement votre ordinateur :",

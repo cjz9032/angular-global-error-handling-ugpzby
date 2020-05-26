@@ -1386,7 +1386,7 @@
                 },
                 "smartStandby": {
                     "title": "Älykäs valmiustila",
-                    "description": "Tämän ominaisuuden avulla voit ajoittaa tietokoneen optimoimaan akun virransäästön käyttämättömyysaikana ilman, että <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Standby</a> -ominaisuuden nopea käynnistys hidastuu kovan käytön aikana.",
+                    "description": "Tämän ominaisuuden avulla voit ajoittaa tietokoneen optimoimaan akun virransäästön käyttämättömyysaikana ilman, että Modern Standby -ominaisuuden nopea käynnistys hidastuu kovan käytön aikana.",
                     "tooltip": "Kun älykäs valmiustila on käytössä, tietokone vaihtaa moderniin valmiustilaan ennen ajoitettua ALOITUSAIKAA ja siirtyy horrostilaan sen jälkeen, kun tietokone on ollut käyttämättömänä tietyn ajanjakson ajan akkuvirtaa käytettäessä. Tämä ajanjakso on optimoitu määrittämäsi aikataulun tai tietokoneen käytön mukaan. Tietokone vaihtaa horrostilasta moderniin valmiustilaan vain ajoitettuina päivinä eikä silloin, kun se on käyttämättömänä peräkkäisinä ajoitettuina päivinä.",
                     "timer": {
                         "heading": "Aika, jolloin yleensä käytät tätä tietokonetta:",

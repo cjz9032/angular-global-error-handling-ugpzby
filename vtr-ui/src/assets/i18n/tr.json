@@ -1386,7 +1386,7 @@
                 },
                 "smartStandby": {
                     "title": "Akıllı Bekleme",
-                    "description": "Bu özellik, yoğun kullanım zamanlarında <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Bekleme Durumu</a> hızlı başlatma deneyiminden ödün vermeden, bilgisayar boşta olduğunda pil gücü tasarrufunu iyileştirmek için bilgisayarınızı zamanlar.",
+                    "description": "Bu özellik, yoğun kullanım zamanlarında Modern Bekleme Durumu hızlı başlatma deneyiminden ödün vermeden, bilgisayar boşta olduğunda pil gücü tasarrufunu iyileştirmek için bilgisayarınızı zamanlar.",
                     "tooltip": "Akıllı Bekleme özelliği etkin olduğunda bilgisayarınız zamanlanan BAŞLANGIÇ saatinden önce Modern Bekleme Durumu kipine geçer ve pil gücünde belirli bir süre etkin olmadan beklediğinde hazırda bekleme kipine geçer. Bu süre, ayarladığınız zamanlamaya veya bilgisayar kullanım süresine göre iyileştirilir. Bilgisayar hazırda bekleme kipinden Modern Bekleme Durumu kipine yalnızca zamanlanan günlerde geçer ve zamanlanan günlerde art arda etkin olmadan beklediğinde kipi değiştirmez.",
                     "timer": {
                         "heading": "Bu bilgisayarı genelde kullandığınız saatler:",

@@ -1386,7 +1386,7 @@
                 },
                 "smartStandby": {
                     "title": "Smart-Standby",
-                    "description": "Mit dieser Funktion optimiert Ihr Computer während inaktiver Zeiten den Akkuverbrauch, ohne dass das schnelle Fortsetzen von <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern-Standby</a> bei intensiverer Nutzung beeinträchtigt wird.",
+                    "description": "Mit dieser Funktion optimiert Ihr Computer während inaktiver Zeiten den Akkuverbrauch, ohne dass das schnelle Fortsetzen von Modern-Standby bei intensiverer Nutzung beeinträchtigt wird.",
                     "tooltip": "Wenn Smart-Standby aktiviert ist, wechselt Ihr Computer vor der festgelegten START-Zeit zu Modern-Standby und wird in den Ruhezustand versetzt, wenn er für einen gewissen Zeitraum im Akkubetrieb inaktiv war. Dieser Zeitraum wird anhand des von Ihnen festgelegten Zeitplans oder Ihrer Computernutzung optimiert. Der Computer wechselt nur an geplanten Tagen vom Ruhezustand zu Modern-Standby und wechselt nicht, wenn er an aufeinanderfolgenden geplanten Tagen inaktiv ist.",
                     "timer": {
                         "heading": "Typische Nutzungszeiten für diesen Computer:",
