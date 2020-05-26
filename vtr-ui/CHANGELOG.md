@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.58](https://bitbucket.tc.lenovo.com///compare/v1.5.57...v1.5.58) (2020-05-26)
+
+
+### Bug Fixes
+
+* active nav menu can't show focus box completely ([961a7e3](https://bitbucket.tc.lenovo.com///commit/961a7e36b31adabce8ee525eecb147fd7c2e3533))
+* **SA:** modify guard of My Security tab ([ef33b89](https://bitbucket.tc.lenovo.com///commit/ef33b8990016926c19f59a1fbcf954f61d234c48))
+* outline box of link can't show completely ([d4b5506](https://bitbucket.tc.lenovo.com///commit/d4b5506d591ec9c3f5a76cfc0cc22c3ae38eee39))
+
 ### [1.5.57](https://bitbucket.tc.lenovo.com///compare/v1.5.56...v1.5.57) (2020-05-22)
 
 ### [1.5.56](https://bitbucket.tc.lenovo.com///compare/v1.5.55...v1.5.56) (2020-05-22)
