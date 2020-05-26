@@ -71,6 +71,11 @@
 		.hide-settings {
 			display: inline-block;
 		}
+		.advanced-settings-title {
+			&:focus {
+				outline: none;
+			}
+		}
 	}
 }
 
