@@ -47,6 +47,7 @@
 										*ngIf="dolbyModeResponse.isAudioProfileEnabled"
 										aria-label="dolby audio more list, select using arrow keys">
 										<vtr-ui-circle-radio-with-checkbox-list [groupName]="'dolby-mode-radio-group'"
+										[isDisabled]="dolbyModeDisabled"
 											(optionChange)="onDolbySettingRadioChange($event)"
 											[radioDetails]="dolbyModesUIModel">
 										</vtr-ui-circle-radio-with-checkbox-list>
