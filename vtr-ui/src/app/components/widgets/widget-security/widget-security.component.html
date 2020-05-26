@@ -39,6 +39,7 @@
 						id="sa-ov-btn-securityArticle"
 						[isDisabled]="!isOnline"
 						[btnHeight]=true
+						[rightCol]="'max-width-50'"
 						[label]="'security.landing.security101' | translate"
 						(buttonClick)="buttonClick()">
 						<h5 class="desc mb-0" [innerHTML]="btnDesc[statusItem?.fullyProtected ? 1 : 0] | translate"></h5>
