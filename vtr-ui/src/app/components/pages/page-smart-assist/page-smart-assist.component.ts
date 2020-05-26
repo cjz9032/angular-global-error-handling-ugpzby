@@ -69,45 +69,17 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	public isRegisterHPDRpcCallback = false;
 	private cameraAccessChangedHandler: any;
 
-	headerMenuItems: PageAnchorLink[] = [
-		{
-			title: 'device.smartAssist.intelligentSecurity.title',
-			path: 'security',
-			sortOrder: 1,
-			metricsItem: 'IntelligentSecurity'
-		},
-		{
-			title: 'device.smartAssist.antiTheft.heading',
-			path: 'sensing',
-			sortOrder: 2,
-			metricsItem: 'IntelligentSensing'
-		},
-		{
-			title: 'device.smartAssist.intelligentScreen.title',
-			path: 'screen',
-			sortOrder: 3,
-			metricsItem: 'IntelligentScreen'
-		},
-		{
-			title: 'device.smartAssist.intelligentMedia.heading',
-			path: 'media',
-			sortOrder: 4,
-			metricsItem: 'IntelligentMedia'
-		},
-		{
-			title: 'device.smartAssist.activeProtectionSystem.title',
-			path: 'aps',
-			sortOrder: 5,
-			metricsItem: 'ActiveProtectionSystem'
-		},
-		{
-			title: 'device.smartAssist.voice.title',
-			path: 'voice',
-			sortOrder: 6,
-			metricsItem: 'Voice'
-		},
+	public featureInitialize = {
+		security: true,
+		sensing: false,
+		screen: true,
+		media: false,
+		superResolution: false,
+		aps: false,
+		voice: true
+	}
 
-	];
+	headerMenuItems: PageAnchorLink[] = [];
 
 	cardContentPositionA: any = {};
 	private machineType: number;
@@ -182,9 +154,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		if (this.smartAssist.isShellAvailable) {
 			this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 			this.smartAssistCapability = this.commonService.getLocalStorageValue(LocalStorageKey.SmartAssistCapability, undefined);
-			if (this.smartAssistCapability.isSuperResolutionSupported) {
-				this.superResolution = this.smartAssistCapability.isSuperResolutionSupported;
-			}
 			this.getHPDAdvancedSetting();
 			this.initVisibility();
 			this.setIsThinkPad(this.machineType === 1);
@@ -253,26 +222,24 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	initVisibility() {
 		try {
 			this.logger.info('initVisibility: ', this.smartAssistCapability);
-			if (!this.smartAssistCapability.isIntelligentSecuritySupported) {
-				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'security');
-				this.checkMenuItemsLength();
+			if (this.smartAssistCapability.isIntelligentSecuritySupported) {
+				this.checkHeaderMenuItems(true, 'security');
 			}
 			this.lenovoVoice.available = this.smartAssistCapability.isLenovoVoiceSupported;
-			if (!this.smartAssistCapability.isLenovoVoiceSupported) {
-				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'voice');
-				this.checkMenuItemsLength();
+			if (this.smartAssistCapability.isLenovoVoiceSupported) {
+				this.checkHeaderMenuItems(true, 'voice');
 			}
-			if (!this.smartAssistCapability.isIntelligentMediaSupported.available && !this.superResolution.available) {
-				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'media');
-				this.checkMenuItemsLength();
+			if (this.smartAssistCapability.isIntelligentMediaSupported.available || this.smartAssistCapability.isSuperResolutionSupported.available) {
+				this.checkHeaderMenuItems(true, 'media');
 			}
-			if (!this.smartAssistCapability.isIntelligentScreenSupported) {
-				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'screen');
-				this.checkMenuItemsLength();
+			if (this.smartAssistCapability.isIntelligentScreenSupported) {
+				this.checkHeaderMenuItems(true, 'screen');
 			}
-			if (!this.smartAssistCapability.isAPSSupported) {
-				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'aps');
-				this.checkMenuItemsLength();
+			if (this.smartAssistCapability.isAPSSupported) {
+				this.checkHeaderMenuItems(true, 'aps');
+			}
+			if (this.smartAssistCapability.isAntiTheftSupported.available) {
+				this.checkHeaderMenuItems(true, 'sensing');
 			}
 		} catch (error) {
 			this.logger.exception('initVisibility', error.message);
@@ -406,10 +373,9 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				this.logger.info('APS Capability ---------------------------------', response);
 				(response[0] && response[1] && response[2] > 0) ? this.isAPSAvailable = true : this.isAPSAvailable = false;
 
-				if (!this.isAPSAvailable) {
-					this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'aps');
-					this.checkMenuItemsLength();
-				}
+				this.featureInitialize.aps = true;
+				this.checkHeaderMenuItems(this.isAPSAvailable, 'aps');
+
 				this.smartAssistCache.isAPSAvailable = this.isAPSAvailable;
 				this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 			})
@@ -435,11 +401,9 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			this.intelligentScreen.readingOrBrowsingTime = responses[6];
 			this.logger.info('PageSmartAssistComponent.Promise.IntelligentScreen(): responses', responses);
 			this.logger.info('PageSmartAssistComponent.Promise.IntelligentScreen(): intelligentScreen', this.intelligentScreen);
-			if (!(this.intelligentScreen.isIntelligentScreenVisible &&
-				this.smartAssistCapability.isIntelligentScreenSupported)) {
-				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'screen');
-				this.checkMenuItemsLength();
-			}
+
+			this.featureInitialize.screen = true;
+			this.checkHeaderMenuItems(this.intelligentScreen.isIntelligentScreenVisible, 'screen');
 
 			this.smartAssistCache.intelligentScreen = this.intelligentScreen;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
@@ -497,11 +461,9 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			this.intelligentSecurity.isHPDEnabled = responses[3];
 			this.intelligentSecurity.isIntelligentSecuritySupported = responses[4];
 
-			if (!this.intelligentSecurity.isIntelligentSecuritySupported) {
-				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'security');
-				this.intelligentSecurity.isIntelligentSecuritySupported = false;
-				this.checkMenuItemsLength();
-			}
+			this.featureInitialize.security = true;
+			this.checkHeaderMenuItems(this.intelligentSecurity.isIntelligentSecuritySupported, 'security');
+
 			this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 			//if (this.intelligentSecurity.isZeroTouchLockVisible && this.zeroTouchLockShowAdvancedSection) {
@@ -817,10 +779,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 					this.intelligentMedia = assistCapability.isIntelligentMediaSupported;
 					this.logger.debug('PageSmartAssistComponent.getVideoPauseResumeStatus: cache found', this.intelligentMedia);
 					this.isIntelligentMediaLoading = false;
-					if (!this.intelligentMedia.available && !this.superResolution.available) {
-						this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'media');
-						this.checkMenuItemsLength();
-					}
 				}
 
 				// get current value from API
@@ -831,10 +789,9 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 						this.intelligentMedia = response;
 						this.logger.debug('PageSmartAssistComponent.getVideoPauseResumeStatus: response from API', response);
 
-						if (!response.available && !this.superResolution.available) {
-							this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'media');
-							this.checkMenuItemsLength();
-						}
+						this.featureInitialize.media = true;
+						this.checkHeaderMenuItems(response.available, 'media');
+
 						this.smartAssistCache.intelligentMedia = this.intelligentMedia;
 						this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 					}).catch(error => {
@@ -870,10 +827,8 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 					.then((response: FeatureStatus) => {
 						this.isSuperResolutionLoading = false;
 						this.superResolution = response;
-						if (!response.available && !this.smartAssistCache.intelligentMedia.available) {
-							this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'media');
-							this.checkMenuItemsLength();
-						}
+						this.featureInitialize.superResolution = true;
+						this.checkHeaderMenuItems(response.available, 'media');
 					}).catch(error => {
 						this.logger.error('getSuperResolutionStatus.error', error);
 					});
@@ -883,12 +838,12 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public removeSensingHeaderMenu() {
+	public updateSensingHeaderMenu(value: boolean) {
 		try {
-			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'sensing');
-			this.checkMenuItemsLength();
+			this.featureInitialize.sensing = true;
+			this.checkHeaderMenuItems(value, 'sensing');
 		} catch (error) {
-			this.logger.error('removeSensingHeaderMenu' + error.message);
+			this.logger.error('updateSensingHeaderMenu' + error.message);
 		}
 	}
 
@@ -939,11 +894,94 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		this.logger.info(`zero touch lock facial recognition permissionChange - getFacialRecognitionStatus`);
 	}
 
+	public checkHeaderMenuItems(available: boolean, featurePath: string) {
+		let isExist = false;
+		this.headerMenuItems.some(function (item) {
+			if (item.path === featurePath) {
+				isExist = true;
+			}
+		});
 
-	public checkMenuItemsLength() {
-		if (this.headerMenuItems.length === 1) {
-			this.headerMenuItems = [];
-			this.jumpToSettingsTitle = '';
+		if (available && !isExist) {
+			let featureHeaderMenu = undefined;
+			if (featurePath === 'security') {
+				featureHeaderMenu = {
+					title: 'device.smartAssist.intelligentSecurity.title',
+					path: 'security',
+					sortOrder: 1,
+					metricsItem: 'IntelligentSecurity'
+				};
+			}
+			if (featurePath === 'sensing') {
+				featureHeaderMenu = {
+					title: 'device.smartAssist.antiTheft.heading',
+					path: 'sensing',
+					sortOrder: 2,
+					metricsItem: 'IntelligentSensing'
+				};
+			}
+			if (featurePath === 'screen') {
+				featureHeaderMenu = {
+					title: 'device.smartAssist.intelligentScreen.title',
+					path: 'screen',
+					sortOrder: 3,
+					metricsItem: 'IntelligentScreen'
+				};
+			}
+			if (featurePath === 'media') {
+				featureHeaderMenu = {
+					title: 'device.smartAssist.intelligentMedia.heading',
+					path: 'media',
+					sortOrder: 4,
+					metricsItem: 'IntelligentMedia'
+				};
+			}
+			if (featurePath === 'aps') {
+				featureHeaderMenu = {
+					title: 'device.smartAssist.activeProtectionSystem.title',
+					path: 'aps',
+					sortOrder: 5,
+					metricsItem: 'ActiveProtectionSystem'
+				};
+			}
+			if (featurePath === 'voice') {
+				featureHeaderMenu = {
+					title: 'device.smartAssist.voice.title',
+					path: 'voice',
+					sortOrder: 6,
+					metricsItem: 'Voice'
+				}
+			}
+			if (featureHeaderMenu != undefined) {
+				this.headerMenuItems = this.commonService.addToObjectsList(this.headerMenuItems, featureHeaderMenu);
+			}
+		}
+
+		if (!available && isExist) {
+			if (featurePath === 'media') {
+				if (this.featureInitialize.media && this.featureInitialize.superResolution && !this.superResolution.available && !this.intelligentMedia.available) {
+					this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, featurePath);
+				}
+			} else {
+				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, featurePath);
+			}
+		}
+
+		if (this.featureInitialize.aps
+			&& this.featureInitialize.media
+			&& this.featureInitialize.screen
+			&& this.featureInitialize.security
+			&& this.featureInitialize.sensing
+			&& this.featureInitialize.superResolution
+			&& this.featureInitialize.voice) {
+			if (this.headerMenuItems.length === 1) {
+				this.headerMenuItems = [];
+				this.jumpToSettingsTitle = '';
+			}
+		}
+
+		if (this.headerMenuItems.length >= 2) {
+			this.headerMenuItems = this.headerMenuItems.sort(function (a, b) { return a.sortOrder - b.sortOrder; })
 		}
 	}
 
@@ -976,5 +1014,3 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	}
 
 }
-
-

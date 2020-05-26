@@ -24,7 +24,7 @@ export class AntiTheftComponent implements OnInit {
 	@Input() isShowfileAuthorizationTips = false;
 	@Output() antiTheftToggle: EventEmitter<any> = new EventEmitter();
 	@Output() tooltipClick = new EventEmitter<boolean>();
-	@Output() removeSensingHeaderMenu = new EventEmitter();
+	@Output() updateSensingHeaderMenu = new EventEmitter<boolean>();
 	public antiTheft = new AntiTheftResponse(false, false, false, false, false);
 	public antiTheftCache: AntiTheftResponse = undefined;
 
@@ -195,8 +195,9 @@ export class AntiTheftComponent implements OnInit {
 						this.antiTheft.alarmOften = response.alarmOften;
 						this.antiTheft.photoNumber = response.photoNumber;
 						if (!this.antiTheft.available) {
-							this.removeSensingHeaderMenu.emit();
+							this.updateSensingHeaderMenu.emit(false);
 						} else {
+							this.updateSensingHeaderMenu.emit(true);
 							this.startMonitorAntiTheftStatus();
 							this.startMonitorCameraAuthorized(this.cameraAuthorizedChange.bind(this));
 		                    this.startMonitorForCameraPrivacy();
