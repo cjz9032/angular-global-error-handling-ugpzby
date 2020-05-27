@@ -94,7 +94,7 @@ export class WifiHomeViewModel {
 			i.info = item.info? item.info: '';
 			i.good = item.good? item.good: null;
 			if (i.info.indexOf('Connected') === -1) {
-				i.info.replace(/T/g, ' ');
+				i.info = i.info.replace(/T/g, ' ');
 			}
 			Histories.push(i);
 		});
