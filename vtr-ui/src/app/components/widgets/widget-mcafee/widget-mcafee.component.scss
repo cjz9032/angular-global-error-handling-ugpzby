@@ -1,82 +1,96 @@
 @import "../../../app.theme";
 
 .mcafee-logo {
-    width: 10rem;
-    padding-top: 1rem;
+	width: 10rem;
+	padding-top: 1rem;
 }
 
 .subtitle {
-    color: $main_shade;
-    font-size: 1.4rem;
-    font-weight: $weight_regular;
-    line-height: 2.3rem;
-    @media #{$mediaquery_lg} {
-        font-size: 1.2rem;
-    }
+	color: $main_shade;
+	font-size: 1.4rem;
+	font-weight: $weight_regular;
+	line-height: 2.3rem;
+
+	@media #{$mediaquery_lg} {
+		font-size: 1.2rem;
+	}
 }
 
 .list-group {
-    border-radius: $border_radius;
+	border-radius: $border_radius;
 
-    .list-group-item {
-        background: $shade_extralight;
-    }
+	.list-group-item {
+		background: $shade_extralight;
+	}
 
-    .text {
-        color: $shade_extradark;
-        padding: 2rem 0;
-        font-size: 1.4rem;
-        font-weight: $weight_bold;
-        letter-spacing: 0.89px;
-        line-height: 2.3rem;
-    }
+	.text {
+		color: $shade_extradark;
+		padding: 2rem 0;
+		font-size: 1.4rem;
+		font-weight: $weight_bold;
+		letter-spacing: 0.89px;
+		line-height: 2.3rem;
+	}
 }
 
 .title {
-    color: $screen_dark_70;
-    font-size: 2.5rem;
-    font-weight: $weight_regular;
-    line-height: 2.9rem;
-    @media #{$mediaquery_lg} {
-        font-size: 2.2rem;
-    }
+	color: $screen_dark_70;
+	font-size: 2.5rem;
+	font-weight: $weight_regular;
+	line-height: 2.9rem;
+
+	@media #{$mediaquery_lg} {
+		font-size: 2.2rem;
+	}
 }
 
 .text {
-    font-size: 1.5rem;
-    line-height: 2.1rem;
+	font-size: 1.5rem;
+	line-height: 2.1rem;
 }
 
 .mt-60 {
-    margin-top: 60px;
+	margin-top: 60px;
 }
 
 .md-margin {
-    @media #{$mediaquery_lg} {
-        margin-bottom: 2rem;
-      }
+	@media #{$mediaquery_lg} {
+		margin-bottom: 2rem;
+	}
 }
 
 .vtr-widget-mcafee {
-    @media #{$mediaquery_lg} {
-        justify-content: center !important;
-    }
+	@media #{$mediaquery_lg} {
+		justify-content: center !important;
+	}
 }
 
 .md-col {
-    @media #{$mediaquery_lg} {
-      max-width: 100%;
-      width: 100%;
-      flex-basis: 100%;
-    }
-}
-::ng-deep {
-    vtr-ui-button {
-		.button-box {
-			.button {
-				max-width: 100%;
-			}
-		}
-    }
+	@media #{$mediaquery_lg} {
+		max-width: 100%;
+		width: 100%;
+		flex-basis: 100%;
+	}
 }
 
+vtr-ui-description-button {
+	::ng-deep .vtr-ui-description-button {
+		.description {
+			flex: 0 0 66.666667%;
+			max-width: 66.66%;
+		}
+
+		.described-button {
+			justify-content: flex-start !important;
+			align-items: flex-start !important;
+			flex: 0 0 33.333333%;
+			max-width: 33.33%;
+
+			vtr-ui-button {
+				button {
+					width: 100%;
+				}
+			}
+		}
+	}
+}

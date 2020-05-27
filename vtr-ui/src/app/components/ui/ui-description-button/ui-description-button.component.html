@@ -1,6 +1,9 @@
-<div class="row col-12">
-	<ng-content></ng-content>
-	<div class="d-flex pull right flex-1 {{rightCol}} {{buttonPos}}">
+<div class="vtr-ui-description-button row col-12 d-flex justify-content-between">
+	<div class="description text-regular align-self-center col-6 col-sm-7 col-md-8 col-lg-8 col-xl-8 p-0">
+		<ng-content></ng-content>
+	</div>
+	
+	<div class="described-button align-items-center col-6 col-sm-5 col-md-4 col-lg-4 col-xl-4 p-0 d-flex justify-content-end">
 		<vtr-ui-button
 			[vtrMetricEnabled]="vtrMetricEnabled"
 			[metricsEvent]="metricsEvent"

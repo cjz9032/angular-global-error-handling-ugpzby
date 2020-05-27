@@ -24,8 +24,6 @@ export class UiDescriptionButtonComponent implements OnInit {
 	@Input() metricsPageNumber: string;
 
 	@Input() upperCaseLabel = true;
-	@Input() rightCol: string;
-	@Input() buttonPos: string;
 	@Output() buttonClick = new EventEmitter<Event>();
 
 	constructor() { }

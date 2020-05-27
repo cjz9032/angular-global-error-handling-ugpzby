@@ -8,16 +8,13 @@
 		[label]="install?launchMcafeeText:getMcafeeText"
 		[upperCaseLabel]="false"
 		[btnHeight]="true"
-		[rightCol]="'col-4'"
 		(buttonClick)="install?common.launch():common.openMcAfeePurchase('button')">
-		<div class="col min-width-50 flex-100 d-flex flex-column justify-content-center">
-			<div class="row">
-				<div class="col-auto px-0 mr-auto">
-					<div class="title pb-3">{{'security.antivirus.common.mcafeePremium' | translate}}</div>
-				</div>
-				<div class="subtitle">
-					{{'security.antivirus.common.protectedBy' | translate: {protectedName: name } }}
-				</div>
+		<div class="row">
+			<div class="col-auto px-0 mr-auto">
+				<div class="title pb-3">{{'security.antivirus.common.mcafeePremium' | translate}}</div>
+			</div>
+			<div class="subtitle">
+				{{'security.antivirus.common.protectedBy' | translate: {protectedName: name } }}
 			</div>
 		</div>
 	</vtr-ui-description-button>

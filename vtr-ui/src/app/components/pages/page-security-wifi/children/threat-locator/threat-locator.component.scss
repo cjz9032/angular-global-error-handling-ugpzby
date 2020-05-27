@@ -18,15 +18,42 @@
 			color: $main_dark;
 			font-size: 1.4rem;
 		}
-		.description-button {
-			margin: auto;
-			@media #{$mediaquery_md, $mediaquery_X45} {
-				justify-content: center !important;
-				::ng-deep vtr-ui-button {
-					width: 100%;
-					.button {
-						width: 100%;
+		@media #{$mediaquery_md, $mediaquery_X45} {
+			vtr-ui-description-button {
+				::ng-deep .vtr-ui-description-button {
+					.description {
+						flex: 0 0 100%;
 						max-width: 100%;
+					}
+					.described-button {
+						flex: 0 0 100%;
+						max-width: 100%;
+						vtr-ui-button {
+							width: 100%;
+							button {
+								width: 100%;
+							}
+						}
+					}
+				}
+			}
+		}
+		@media #{$mediaquery_X46} and (min-width: 1200px) {
+			vtr-ui-description-button {
+				::ng-deep .vtr-ui-description-button {
+					.description {
+						flex: 0 0 58.333333%;
+						max-width: 58.33%;
+					}
+					.described-button {
+						flex: 0 0 41.666667%;
+						max-width: 41.66%;
+						vtr-ui-button {
+							width: 100%;
+							button {
+								width: 100%;
+							}
+						}
 					}
 				}
 			}
