@@ -55,6 +55,7 @@
 										[value]="data.isLWSEnabled"
 										[ariaLabel]="switchLabel"
 										[onOffSwitchId]="'sa-ws-switch'"
+										[showOnOff]="false"
 										[disabled]="data.isLWSEnabled === undefined || data.wifiSecurity?.changeWifiSecurity"
 										(toggle)="noticeToggleChange()">
 									</vtr-ui-switch-onoff>

@@ -118,16 +118,6 @@
 
 				.sm-device-responsive {
 
-					vtr-ui-switch-onoff {
-						display: inline-block;
-
-						::ng-deep .checkbox {
-							input.wifi-checked+.switch {
-								background: linear-gradient($gradient_angle, $green_darker 0%, $green-light 100%);
-							}
-						}
-					}
-
 					.switch-disable {
 						opacity: 0.3;
 						cursor: auto;
