@@ -1678,7 +1678,16 @@ vtr-ui-smart-performance-scanning {
 .auto-screen-lock-help-icon {
 	ngb-tooltip-window.vtr-tooltip.tooltip {
 		.tooltip-inner {
-			width: 40rem;
+			width: 24.2rem;
+			@media #{$breakpoint_xl6}{
+				width: 44.2rem;
+			}
+			@media #{$breakpoint_xl3}{
+				width: 32.5rem;
+			}
+			@media #{$breakpoint_xl}{
+				width: 24.2rem;
+			}
 		}
 	}
 }
