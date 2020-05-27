@@ -348,6 +348,7 @@
 													[(ngModel)]="this.keyCode"
 													[placeholder]="'device.deviceSettings.inputAccessories.userDefinedKey.invokeKeySequence.placeholder' | translate"
 													(keydown)="invokeKeySequence($event)"
+													(focus)="checkSpecialKeyFileExistAndDelete()"
 													required></textarea>
 												<div class="del-btn"
 													#deleteKeyFocus
