@@ -141,7 +141,7 @@ export class WidgetCarouselComponent implements OnInit, OnChanges {
 		}
 	}
 
-	public onCarouselKeyUp($event: KeyboardEvent, slide: any) {
+	public onCarouselKeyUp($event: KeyboardEvent) {
 		// enter key pressed
 		if ($event.key.toLowerCase() === 'enter') {
 			$event.preventDefault();
