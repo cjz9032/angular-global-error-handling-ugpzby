@@ -1,59 +1,60 @@
 <!-- <div class="modal-header" [ngClass]="{'padding-header':loading}">
-  <button *ngIf="!loading" type="button" class="close close-button" aria-label="Close" (click)="closeModal()"><span aria-hidden="true">&times;</span></button>
+	<button *ngIf="!loading" type="button" class="close close-button" aria-label="Close" (click)="closeModal()"><span aria-hidden="true">&times;</span></button>
 </div> -->
 <div class="modal-body vtr-modal-cancel">
 
-  <h1 class="title">{{'hardwareScan.attention' | translate}}</h1>
+	<h1 class="title">{{'hardwareScan.attention' | translate}}</h1>
 
-  <p>{{description}}</p>
-  <p *ngIf="isInCountdown">{{'hardwareScan.cancelTextPrompt' | translate}}</p>
+	<p>{{description}}</p>
+	<p *ngIf="isInCountdown">{{'hardwareScan.cancelTextPrompt' | translate}}</p>
 
-  <div class="row">
-    <div class="col" *ngIf="!loading">
-      <!-- This is the regular button which is shown during the cancelation countdown and which is responsible for
-      cancel the scan/rbs process if the user clicks on it
-      NOTICE: It's mandatory to use a <div class="row"> here to prevent that the button could be clicked wrongly (in its near instead of itself), caused by its 'button box' internal div-->
-      <div class="row">
-        <vtr-ui-button *ngIf="isInCountdown"
-          [linkId]="'cancel_modal_yes'"
-          label="{{ buttonText }} ({{ secondsCountdown }})"
-          vtrMetrics
-          metricsEvent="FeatureClick"
-          metricsParent="{{ItemParent}}"
-          metricsItem="{{ConfirmItemName}}"
-          (click)= "onAgree()">
-        </vtr-ui-button>
-      </div>
+	<div class="row">
+		<div class="col" *ngIf="!loading">
+			<!-- This is the regular button which is shown during the cancelation countdown and which is responsible for
+			cancel the scan/rbs process if the user clicks on it
+			NOTICE: It's mandatory to use a <div class="row"> here to prevent that the button could be clicked wrongly (in its near instead of itself), caused by its 'button box' internal div-->
+			<div class="row">
+				<vtr-ui-button *ngIf="isInCountdown"
+					[linkId]="'cancel_modal_yes'"
+					label="{{ buttonText }} ({{ secondsCountdown }})"
+					vtrMetrics
+					metricsEvent="FeatureClick"
+					metricsParent="{{ItemParent}}"
+					metricsItem="{{ConfirmItemName}}"
+					(click)= "onAgree()">
+				</vtr-ui-button>
+			</div>
 
-      <!-- This button is shown only if the scan/rbs process has finished BEFORE the countdown has reached 0, when the process cannot be canceled anymore.
-      It's responsible for just close the popup. Its 'name' (#cancel_modal_ok) is indispensable once it'll be used to find it as soon as its visible to ensure its focus.
-      NOTICE: It's mandatory to use a <div class="row"> here to prevent that the button could be clicked wrongly (in its near instead of itself), caused by its 'button box' internal div -->
-      <div class="row">
-        <vtr-ui-button *ngIf="!isInCountdown"
-          #cancel_modal_ok
-          [linkId]="'cancel_modal_ok'"
-          (click)= "closeModal()"
-          label="{{ 'hardwareScan.ok' | translate }}">
-        </vtr-ui-button>
-      </div>
-    </div>
-    <div class="col loading" *ngIf="loading">
-        <fa-icon placement="auto" [spin]="true" [icon]="['fal', 'circle-notch']" container="body"></fa-icon>
-    </div>
-  </div>
+			<!-- This button is shown only if the scan/rbs process has finished BEFORE the countdown has reached 0, when the process cannot be canceled anymore.
+			It's responsible for just close the popup. Its 'name' (#cancel_modal_ok) is indispensable once it'll be used to find it as soon as its visible to ensure its focus.
+			NOTICE: It's mandatory to use a <div class="row"> here to prevent that the button could be clicked wrongly (in its near instead of itself), caused by its 'button box' internal div -->
+			<div class="row">
+				<vtr-ui-button *ngIf="!isInCountdown"
+					#cancel_modal_ok
+					[linkId]="'cancel_modal_ok'"
+					(click)= "closeModal()"
+					label="{{ 'hardwareScan.ok' | translate }}">
+				</vtr-ui-button>
+			</div>
+		</div>
+		<div class="col loading" *ngIf="loading">
+				<fa-icon placement="auto" [spin]="true" [icon]="['fal', 'circle-notch']" container="body"></fa-icon>
+		</div>
+	</div>
 
-  <a role="button"
-    href="javascript:;"
-    class="close-btn"
-    [ngClass]="{'padding-header':loading}"
-    *ngIf="!loading"
-    vtrMetrics
-    metricsEvent="FeatureClick"
-    metricsParent="{{ItemParent}}"
-    metricsItem="{{CancelItemName}}"
-    (click)="closeModal()">
-    <img [src]=" 'assets/icons/Close.svg' | svgInline | async"
-      alt=""
-      srcset="">
-  </a>
+	<a role="button"
+		aria-label="Close"
+		href="javascript:;"
+		class="close-btn"
+		[ngClass]="{'padding-header':loading}"
+		*ngIf="!loading"
+		vtrMetrics
+		metricsEvent="FeatureClick"
+		metricsParent="{{ItemParent}}"
+		metricsItem="{{CancelItemName}}"
+		(click)="closeModal()">
+		<img [src]=" 'assets/icons/Close.svg' | svgInline | async"
+			alt=""
+			srcset="">
+	</a>
 </div>

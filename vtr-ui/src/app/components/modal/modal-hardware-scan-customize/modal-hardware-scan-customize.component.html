@@ -16,6 +16,7 @@
 	</div>
 
 	<a role="button"
+		aria-label="Close"
 		href="javascript:;"
 		class="close-btn"
 		vtrMetrics
@@ -23,8 +24,6 @@
 		metricsParent="HardwareScan.CustomizeScan"
 		metricsItem="CustomizeScan.Close"
 		(click)="closeModal()">
-		<img [src]=" 'assets/icons/Close.svg' | svgInline | async"
-			alt=""
-			srcset="">
+		<img [src]=" 'assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
 	</a>
 </div>
