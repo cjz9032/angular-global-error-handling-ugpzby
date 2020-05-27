@@ -1,6 +1,7 @@
 @import "./../../../app.theme";
 
 @mixin theme($name, $background, $foreground, $label-color) {
+	$focus-indicator: 0 0 0 2px rgba(255, 255, 255, 1), 0 0 0 3px rgba(0, 123, 255, 1);
 	.vtr-ui-circle-radio-with-checkbox-list.#{$name} {
 		$container-width: 12rem;
 		margin-right: 1.5rem;
@@ -10,7 +11,7 @@
 			color: $shade_blue;
 			pointer-events: none;
 		}
-		
+
 		.circle-radio {
 			outline: 0;
 			display: flex;
@@ -40,6 +41,7 @@
 					text-align: center;
 					line-height: 6rem;
 					cursor: pointer;
+					outline: 0;
 
 					.fa-layers {
 						position: absolute;
@@ -66,6 +68,10 @@
 						&::before {
 							color: $background;
 						}
+					}
+
+					&:focus {
+						box-shadow: $focus-indicator;
 					}
 
 					&:hover {
@@ -103,14 +109,18 @@
 					}
 
 					&[aria-disabled="true"] {
-						border-color: $grey_lighter;
-						background: $grey_light;
+						border-color: $grey_light;
+						background: $grey_lighter;
 						pointer-events: none;
+
+						&:focus{
+							box-shadow: none;
+						}
 
 						.icomoon {
 							&::before {
 								color: $shade_blue;
-								opacity: 0.6;
+								opacity: 0.5;
 							}
 						}
 					}
@@ -131,6 +141,10 @@
 						&::before {
 							color: $light;
 						}
+					}
+
+					&:focus{
+						box-shadow: none;
 					}
 
 					&:hover {
@@ -154,7 +168,7 @@
 						background: $shade_blue;
 						border-color: $shade_blue;
 
-						.focus{
+						.focus {
 							display: none;
 						}
 
@@ -176,12 +190,12 @@
 						border-color: $grey_light;
 						background: $grey_light;
 						pointer-events: none;
-						.focus{
+						.focus {
 							display: none;
 						}
 						.check-circle {
 							color: $shade_blue;
-							opacity: 0.6;
+							opacity: 0.5;
 						}
 
 						.icon-circle {
@@ -191,7 +205,7 @@
 						.icomoon {
 							&::before {
 								color: $shade_blue;
-								opacity: 0.6;
+								// opacity: 0.6;
 							}
 						}
 					}

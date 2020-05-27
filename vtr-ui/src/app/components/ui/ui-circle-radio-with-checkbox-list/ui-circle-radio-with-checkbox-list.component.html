@@ -22,7 +22,7 @@
 					[attr.aria-label]="item.label | translate"
 					(click)="onClick($event)">
 					<span class="icomoon icomoon-icon_state_Two_combined focus"
-						*ngIf="item.componentId === focusedComponentId"
+						*ngIf="item.componentId === focusedComponentId && item.isChecked"
 						[attr.aria-hidden]=true></span>
 					<div *ngIf="!item.hideIcon"
 						[attr.aria-hidden]=true
@@ -42,7 +42,7 @@
 						<fa-icon class="check-circle"
 							[attr.aria-hidden]=true
 							[class.check-circle-disabled]="item.isDisabled"
-							[icon]="['far', 'check-circle']"></fa-icon>
+							[icon]="['fal', 'check-circle']"></fa-icon>
 					</fa-layers>
 				</div>
 				<div class="text"
