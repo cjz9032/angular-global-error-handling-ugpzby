@@ -1,15 +1,19 @@
 <div class="vtr-widget-carousel"
-	#carouselContainer  (swipeleft)= "swipe($event.type)" (swiperight)= "swipe($event.type)"
-	[style.height.px]="carouselContainer.clientWidth * 340 / 944" tabindex="0">
-	<ngb-carousel tabindex="-1"
+	#carouselContainer
+	(swipeleft)="swipe($event.type)"
+	(swiperight)="swipe($event.type)"
+	[style.height.px]="carouselContainer.clientWidth * 340 / 944">
+	<ngb-carousel tabindex="0"
 		*ngIf="carouselModel"
+		(keyup)="onCarouselKeyUp($event)"
+		(slide)="onCarouselSlideChange($event)"
 		[showNavigationArrows]="carouselModel.length>1"
 		[showNavigationIndicators]="carouselModel.length>1">
 		<ng-template *ngFor="let model of carouselModel let cIndex = index"
 			ngbSlide
-			id="ngb-slide-{{cIndex}}">
+			[id]="slideIdFormat+cIndex">
 			<a [href]="model.link"
-				tabindex="0"
+				tabindex="-1"
 				vtrMetrics
 				id="{{carouselId}}-{{cIndex}}"
 				metricsEvent="articleclick"
@@ -31,13 +35,15 @@
 					<h3 class="source text-three-ellipsis"
 						[innerHTML]="model.source"
 						id="{{carouselId}}-{{cIndex}}-source"
-						[ngbTooltip]="model.source | htmlText" tooltipClass="vtr-system-tooltip" container="body"
-						></h3>
+						[ngbTooltip]="model.source | htmlText"
+						tooltipClass="vtr-system-tooltip"
+						container="body"></h3>
 					<h2 class="title"
 						[innerHTML]="model.cardTitle"
 						id="{{carouselId}}-{{cIndex}}-title"
-						[ngbTooltip]="model.cardTitle | htmlText" tooltipClass="vtr-system-tooltip" container="body"
-						></h2>
+						[ngbTooltip]="model.cardTitle | htmlText"
+						tooltipClass="vtr-system-tooltip"
+						container="body"></h2>
 				</div>
 			</a>
 		</ng-template>

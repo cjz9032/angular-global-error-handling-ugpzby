@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, SimpleChanges, OnChanges, ViewChild } from '@angular/core';
-import { NgbCarouselConfig, NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarouselConfig, NgbCarousel, NgbSlideEvent } from '@ng-bootstrap/ng-bootstrap';
 import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
@@ -32,7 +32,9 @@ export class WidgetCarouselComponent implements OnInit, OnChanges {
 	@Input() order: number;
 	@Input() carouselId: string;
 
+	public readonly slideIdFormat = 'ngb-slide-';
 
+	currentSlideId = `${this.slideIdFormat}0`;
 	isOnline = true;
 
 	constructor(
@@ -131,6 +133,32 @@ export class WidgetCarouselComponent implements OnInit, OnChanges {
 					break;
 			}
 		}
+	}
+
+	public onCarouselSlideChange($event: NgbSlideEvent) {
+		if ($event.current) {
+			this.currentSlideId = $event.current;
+		}
+	}
+
+	public onCarouselKeyUp($event: KeyboardEvent, slide: any) {
+		// enter key pressed
+		if ($event.key.toLowerCase() === 'enter') {
+			$event.preventDefault();
+			const index = this.getIndexFromId(this.currentSlideId);
+			if (index >= 0) {
+				const model = this.carouselModel[index];
+				this.linkClicked($event, model.linkType, model.link, model.cardTitle)
+			}
+		}
+	}
+
+	private getIndexFromId(slideId: string): number {
+		if (slideId && slideId.length > 0) {
+			const index: string = slideId.split('-')[2];
+			return parseInt(index, 10);
+		}
+		return -1;
 	}
 
 }
