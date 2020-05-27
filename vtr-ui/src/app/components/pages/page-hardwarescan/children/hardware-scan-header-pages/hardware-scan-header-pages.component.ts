@@ -18,6 +18,7 @@ export class HardwareScanHeaderPagesComponent implements OnInit {
 	@Input() statusText: string;
 	@Input() disableCancel: boolean;
 	@Input() deviceInRecover: any; // Current device in Recover Bad Sectors
+	@Input() disableButtonScan: boolean;
 
 	// Metrics
 	@Input() itemParentCancel: string;

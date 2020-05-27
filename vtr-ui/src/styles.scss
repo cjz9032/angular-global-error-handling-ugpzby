@@ -151,6 +151,10 @@ button {
 	letter-spacing: 0.1em;
 }
 
+vtr-ui-button {
+	max-width: 100%;
+}
+
 // for bootstrap hamburger menu touch input
 .dropdown-backdrop {
 	z-index: 0;
@@ -325,6 +329,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 
 /* replace system tooltip with custom */
 ngb-tooltip-window.vtr-system-tooltip.tooltip {
+	z-index: 10002; // need higher than modal z-index: 10001
 
 	.tooltip-inner {
 		padding: 0.8rem;

@@ -16,7 +16,11 @@ export class UiBannerComponent implements OnInit  {
 	) {}
 
 	ngOnInit() {
-		this.nonProductionTips = this.translate.instant('nonProduction');
+		this.translate.stream('nonProduction').subscribe((res: any) => {
+			if (res) {
+				this.nonProductionTips = res;
+			}
+		});
 	}
 
 

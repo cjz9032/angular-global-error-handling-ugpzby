@@ -259,6 +259,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		touchpadLock: 6
 	};
 
+	thermalModeEvent: any;
+
 	constructor(
 		private modalService: NgbModal,
 		private ngZone: NgZone,
@@ -276,7 +278,10 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		private gamingOverDriveService: GamingOverDriveService,
 		private router: Router,
 		private logger: LoggerService
-	) { }
+	) { 
+		this.thermalModeEvent = this.onRegThermalModeRealStatusChangeEvent.bind(this);
+	}
+
 	ngOnInit() {
 		this.gamingCapabilities.hybridModeFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.hybridModeFeature
@@ -556,7 +561,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				this.gamingThermalModeService.regThermalModeRealStatusChangeEvent();
 				this.shellServices.registerEvent(
 					EventTypes.gamingThermalModeRealStatusChangeEvent,
-					this.onRegThermalModeRealStatusChangeEvent.bind(this)
+					this.thermalModeEvent
 				);
 				this.logger.info('Widget-LegionEdge-RegisterThermalModeRealStatusChangeEvent: register success');
 			} catch (error) {
@@ -570,7 +575,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	public unRegisterThermalModeRealStatusChangeEvent() {
 		this.shellServices.unRegisterEvent(
 			EventTypes.gamingThermalModeRealStatusChangeEvent,
-			this.onRegThermalModeRealStatusChangeEvent.bind(this)
+			this.thermalModeEvent
 		);
 	}
 

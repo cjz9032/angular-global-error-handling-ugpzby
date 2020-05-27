@@ -3,24 +3,23 @@
 </div>
 <div class="row">
  	<div class="col button-row">
-		<button [ngClass]="{'action-button': !isButtonDisable(), 'action-button-disable': isButtonDisable()}"
+		<button [ngClass]="{'action-button': !disableButtonScan, 'action-button-disable': disableButtonScan}"
 			[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
-			[disabled]="isButtonDisable()"
+			[disabled]="disableButtonScan"
 			(click)="onQuickScan()"
 			tabindex="1"
 			>{{'hardwareScan.quickScan' | translate}}</button>
-	 	<div class="row align-items-center">
-			<a	href="javascript:void();"
-				vtrMetrics
+		<div class="row align-items-center">
+			<button vtrMetrics
 				metricsEvent="FeatureClick"
 				metricsParent="HardwareScan"
 				metricsItem="HardwareScan.CustomizeScan"
+				[ngClass]="{'action-anchor': !disableButtonScan, 'disabled-anchor': disableButtonScan}"
 				[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
-				[ngClass]="{'action-anchor': !isButtonDisable(), 'disabled-anchor': isButtonDisable()}"
+				[disabled]="disableButtonScan"
 				tabindex="1"
-				(click)="onAnchor()"
-				>{{'hardwareScan.customize.name' | translate}}
-			</a>
+				(click)="onAnchor()">{{'hardwareScan.customize.name' | translate}}
+			</button>
 		</div>
- 	</div>
+	</div>
 </div>
