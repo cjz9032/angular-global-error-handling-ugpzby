@@ -405,9 +405,10 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		// 	centered: true,
 		// 	windowClass: 'subscribe-modal'
 		// });
+		this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
+		this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, 'Once a week')
 		this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
 		this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.subscriptionDetails);
-		this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
 		//this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate(['support/smart-performance']));
 		this.isSubscribed = this.commonService.getLocalStorageValue(
 			LocalStorageKey.IsFreeFullFeatureEnabled
@@ -538,8 +539,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			return;
 		}
 		this.enableNextText = nextScheduleScanEvent['nextEnable']
-		// const nextScheduleScanDayMonth = this.formatLocaleDate.transformWithoutYear(nextScheduleScanEvent['nextScanDate']);
-		this.nextScheduleScan =  nextScheduleScanEvent['nextScanDate'] + ' at ' + nextScheduleScanEvent['nextScanHour'] + ':' + nextScheduleScanEvent['nextScanMin'] + ' ' + nextScheduleScanEvent['nextScanAMPM'];
+		const nextScheduleScanDayMonth = this.formatLocaleDate.transformWithoutYear(nextScheduleScanEvent['nextScanDateWithYear']);
+		this.nextScheduleScan =  nextScheduleScanDayMonth + ' at ' + nextScheduleScanEvent['nextScanHour'] + ':' + nextScheduleScanEvent['nextScanMin'] + ' ' + nextScheduleScanEvent['nextScanAMPM'];
 	 }
 
 	public initContentLoad() {

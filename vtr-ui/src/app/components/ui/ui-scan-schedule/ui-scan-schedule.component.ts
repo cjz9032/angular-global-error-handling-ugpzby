@@ -153,7 +153,7 @@ export class UiScanScheduleComponent implements OnInit {
 		this.scheduleScanFrequency = this.commonService.getLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency);
 		this.IsSmartPerformanceFirstRun = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun);
 		this.IsScheduleScanEnabled = this.commonService.getLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled);
-
+				
 		// setting scan frequency when no value returned from local storage else using as selectedFrequency
 		if (this.scheduleScanFrequency === undefined) {
 			this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, this.scanFrequency[0]);
@@ -446,6 +446,7 @@ export class UiScanScheduleComponent implements OnInit {
 					nextScanHour: this.scanTime.hour,
 					nextScanMin: this.scanTime.min,
 					nextScanAMPM: this.scanTime.amPm,
+					nextScanDateWithYear: dt.split(",")[1]+'/'+dt.split(",")[2].trim()+'/'+dt.split(",")[3]
 				};
 				this.scanDatekValueChange.emit(nextScanEvent)
 			}
