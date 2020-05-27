@@ -5,39 +5,18 @@
 	</h4>
 
 	<button class="close-button bg-white"
-				type="button"
-				role="button"
-				id="intelligentCoolingModesModal-close-icon"
-				tabindex="1"
-				aria-label="close"
-				(click)="closeModal()"
-				(keydown.enter)="closeModal()">
-				<fa-icon [icon]="['fal', 'times']"></fa-icon>
-			</button>
+		type="button"
+		role="button"
+		id="intelligentCoolingModesModal-close-icon"
+		tabindex="1"
+		aria-label="close"
+		(click)="closeModal()"
+		(keydown.enter)="closeModal()">
+		<fa-icon [icon]="['fal', 'times']"></fa-icon>
+	</button>
 
 </div>
 <div class="modal-body vtr-modal-intelligent-cooling-modes">
-	<!-- <div class="row justify-content-end"
-		role="dialog">
-		<div class="btn-close">
-			<button type="button"
-				tabindex="1"
-				class="close"
-				(click)="closeModal()"
-				(keydown.enter)="closeModal()"
-				attr.aria-label="intelligentCoolingModesModal-close-modal"
-				id="intelligentCoolingModesModal-close-modal">
-				<fa-icon [icon]="['fal', 'times']"></fa-icon>
-			</button>
-		</div>
-	</div>
-	<h1 class="mb-3"
-		tabindex="0"
-		ngbAutofocus
-		>
-		{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.title' | translate}}
-	</h1> -->
-	<!-- <hr aria-hidden="true"> -->
 	<div class="row">
 		<div class="col">
 			<div class="number-list">
@@ -45,20 +24,22 @@
 					<div class="d-flex justify-content-start mb-2 mr-2">
 						<div class="serial-bakcground">
 							<p class="serial"
-								id="intelligent-cooling-modes-1">1</p>
+								aria-hidden="false"
+								id="intelligent-cooling-modes-no-1">1</p>
 						</div>
 						<span class="text-regular"
-							id="powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.coolingModesList.list1">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.coolingModesList.list1' | translate}}</span>
+							aria-hidden="false"
+							id="modal-intelligent-cooling-modes-list1">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.coolingModesList.list1' | translate}}</span>
 					</div>
 				</li>
-					<div class="col ml-5 toolbar-block">
-						<img class="img-fluid ml-5"
-							role="img"
-							id="toolbar"
-							aria-label="sample toolbar"
-							src="assets/images/toolbar.PNG">
-					</div>
-				
+				<div class="col ml-5 toolbar-block">
+					<img class="img-fluid ml-5"
+						role="img"
+						id="toolbar"
+						aria-label="sample toolbar"
+						src="assets/images/toolbar.PNG">
+				</div>
+
 			</div>
 		</div>
 	</div>
@@ -70,20 +51,24 @@
 					<div class="d-flex justify-content-start mb-2 mr-2">
 						<div class="serial-bakcground">
 							<p class="serial serial2"
-								id="intelligent-cooling-modes-2">2</p>
+								aria-hidden="false"
+								id="intelligent-cooling-modes-no-2">2</p>
 						</div>
 						<span class="text-regular"
-							id="powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.coolingModesList.list2">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.coolingModesList.list2' | translate}}</span>
+							aria-hidden="false"
+							id="modal-intelligent-cooling-modes-list2">
+							{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.coolingModesList.list2' | translate}}
+						</span>
 					</div>
 				</li>
-					<div class="col ml-5 battery-guage-block">
-						<img class="img-fluid ml-5 "
-							role="img"
-							id="battery-guage"
-							aria-label="sample battery-guage"
-							src="assets/images/battery-guage.jpg">
-					</div>
-				
+				<div class="col ml-5 battery-guage-block">
+					<img class="img-fluid ml-5 "
+						role="img"
+						id="battery-guage"
+						aria-label="sample battery-guage"
+						src="assets/images/battery-guage.jpg">
+				</div>
+
 			</div>
 		</div>
 	</div>
