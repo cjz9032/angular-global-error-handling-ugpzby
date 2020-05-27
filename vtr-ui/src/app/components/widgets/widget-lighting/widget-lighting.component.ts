@@ -29,6 +29,7 @@ export class WidgetLightingComponent implements OnInit {
 	public defaultLanguage: any;
 	public ledlayoutversion: any;
 	public ledSwitchButtonFeature: boolean;
+	profileChangeEvent: any;
 
 	constructor(
 		private ngZone: NgZone,
@@ -37,7 +38,9 @@ export class WidgetLightingComponent implements OnInit {
 		private deviceService: DeviceService,
 		public shellServices: VantageShellService,
 		private logger: LoggerService
-	) { }
+	) { 
+		this.profileChangeEvent = this.setProfileEvent.bind(this);
+	}
 
 	ngOnInit() {
 		this.setprofId = 0;
@@ -50,6 +53,13 @@ export class WidgetLightingComponent implements OnInit {
 		this.deviceService.getMachineInfo().then((value: any) => {
 			this.defaultLanguage = value.locale;
 		});
+	}
+
+	ngOnDestroy() {
+		this.shellServices.unRegisterEvent(
+			EventTypes.gamingLightingProfileIdChangeEvent,
+			this.profileChangeEvent
+		);
 	}
 
 	public getCapabilities() {
@@ -144,7 +154,7 @@ export class WidgetLightingComponent implements OnInit {
 		this.gamingLightingService.regLightingProfileIdChangeEvent();
 		this.shellServices.registerEvent(
 		  EventTypes.gamingLightingProfileIdChangeEvent,
-		  this.setProfileEvent.bind(this)
+		  this.profileChangeEvent
 		);
 	}
 
