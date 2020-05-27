@@ -15,6 +15,7 @@
 			</div>
 			<div class="col col-12 hardwarescan-background" *ngSwitchDefault>
 				<vtr-hardware-scan-wait-select-header
+					[disableButtonScan]="disableButtonScan"
 					(startQuickScan)="onQuickScan()"
 					(checkAnchor)="onAnchor()">
 				</vtr-hardware-scan-wait-select-header>
