@@ -85,7 +85,6 @@
 					}
 
 					&:active {
-						background: $shade_blue;
 						border-color: $shade_blue;
 
 						.check-circle {
@@ -98,7 +97,7 @@
 
 						.icomoon {
 							&::before {
-								color: $light;
+								color: $shade_blue;
 							}
 						}
 					}
