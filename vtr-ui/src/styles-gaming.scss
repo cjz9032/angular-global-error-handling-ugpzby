@@ -1344,6 +1344,23 @@
 								color: $gaming_lighter!important;
 							}
 						}
+						.details-list {
+							border-radius:$border_radius;
+							margin-left: 4.2rem;
+							background-color:$gaming_bg!important;
+							border-color:$gaming-Darkslate-blue!important;
+							margin-bottom:0.5rem;
+							.table-details, .table-active {
+								background-color:none!important;
+								tr{
+									th, td{							
+									color: $gaming_lighter!important;
+									background-color:none!important;
+									padding-left:1.5rem!important;
+									}
+								}
+							}
+						}
 						vtr-ui-hardware-list {
 							.vtr-ui-list-hardware {
 								.list-group {
@@ -1473,6 +1490,7 @@
 								}
 							}
 						}
+						
 					}
 				}
 			}
@@ -1948,7 +1966,10 @@
 					.subtitle {
 						color: $gaming_grey_lightest;
 					}
+					
 				}
+				
+				
 				vtr-ui-hardware-list {
 					.vtr-ui-list-hardware {
 						.list-group {

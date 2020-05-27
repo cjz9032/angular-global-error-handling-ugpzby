@@ -75,8 +75,10 @@
 
 	.details-list {
 		margin-left: 4.2rem;
-		.table-details {
-			border-radius: $border_radius;
+		border-radius: $border_radius;
+		.table-details {			
+			font-size:$fontsize_xs;
+			font-weight:$weight_regular;
 		}
 	}
 
