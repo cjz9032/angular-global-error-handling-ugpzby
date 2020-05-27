@@ -3,7 +3,6 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { WinRT, WifiSecurity } from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
-import { WifiHomeViewModel } from 'src/app/data-models/security-advisor/wifisecurity.model';
 
 @Component({
 	selector: 'vtr-modal-wifi-security-location-notice',

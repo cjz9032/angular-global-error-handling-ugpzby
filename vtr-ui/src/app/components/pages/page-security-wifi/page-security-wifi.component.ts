@@ -39,7 +39,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	wifiSecurity: phoenix.WifiSecurity;
 	homeSecurity: phoenix.ConnectedHomeSecurity;
 	isShowInvitationCode: boolean;
-	wifiHomeViewModel: WifiHomeViewModel;
 	securityHealthArticleId = '9CEBB4794F534648A64C5B376FBC2E39';
 	securityHealthArticleCategory: string;
 	cancelClick = false;
@@ -53,16 +52,9 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	wsPluginMissingEventHandler = () => {
 		this.handleError(new PluginMissingError());
 	};
-	wsStateEventHandler = (value) => {
-		if (value) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, value);
-			this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.commonService);
-		}
-	};
 	wsIsLocationServiceOnEventHandler = (value) => {
 		this.ngZone.run(() => {
 			if (value !== undefined) {
-				this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.commonService);
 				if (!value && this.wifiSecurity.state === 'enabled' && this.wifiSecurity.hasSystemPermissionShowed) {
 					this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
 				} else if (value) {
@@ -87,7 +79,8 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		private router: Router,
 		public configService: ConfigService,
 		public deviceService: DeviceService,
-		private localInfoService: LocalInfoService
+		private localInfoService: LocalInfoService,
+		public wifiHomeViewModel: WifiHomeViewModel
 	) { }
 
 	ngOnInit() {
@@ -95,7 +88,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.homeSecurity = this.shellService.getConnectedHomeSecurity();
 		this.segment = this.commonService.getLocalStorageValue(LocalStorageKey.LocalInfoSegment, this.segmentConst.Consumer);
 		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
-		this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.commonService);
 		this.localInfoService.getLocalInfo().then(result => {
 			this.region = result.GEO;
 		}).catch(e => {
@@ -104,7 +96,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.fetchCMSArticles();
 
 		this.wifiSecurity.on(EventTypes.wsPluginMissingEvent, this.wsPluginMissingEventHandler)
-			.on(EventTypes.wsStateEvent, this.wsStateEventHandler)
 			.on(EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHandler);
 
 		this.isOnline = this.commonService.isOnline;
@@ -149,7 +140,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			this.wifiSecurity.cancelGetWifiHistory();
 			this.wifiSecurity.cancelGetWifiSecurityState();
 			this.wifiSecurity.off(EventTypes.wsPluginMissingEvent, this.wsPluginMissingEventHandler);
-			this.wifiSecurity.off(EventTypes.wsStateEvent, this.wsStateEventHandler);
 			this.wifiSecurity.off(EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHandler);
 		}
 		if (this.notificationSubscription) {

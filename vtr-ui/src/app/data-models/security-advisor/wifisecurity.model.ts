@@ -2,20 +2,10 @@ import * as phoenix from '@lenovo/tan-client-bridge';
 import { EventTypes, WifiSecurity, DeviceInfo, WifiDetail } from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from '../../enums/local-storage-key.enum';
-import { TranslateService } from '@ngx-translate/core';
-import { CommsService } from 'src/app/services/comms/comms.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
-import { NgZone } from '@angular/core';
-import { DialogService } from 'src/app/services/dialog/dialog.service';
+import { Injectable } from '@angular/core';
 import { cloneDeep, isEqual } from 'lodash';
-
-interface DevicePostureDetail {
-	status: number; // 1,2
-	title: string; // name
-	detail: string; // failed,passed
-	path: string;
-	type: string;
-}
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
 interface WifiHistoryDetail {
 	ssid: string;
@@ -24,54 +14,77 @@ interface WifiHistoryDetail {
 	visible: boolean;
   }
 
+@Injectable({
+	providedIn: 'root'
+})
+
 export class WifiHomeViewModel {
 	wifiSecurity: WifiSecurity;
 	isLWSEnabled: boolean;
 	histories: WifiHistoryDetail[] = [];
 	hasMore: boolean;
-	tryNowUrl: string;
-	homeStatus: string;
-	tryNowEnable = false;
 	private preHistories: WifiHistoryDetail[] = [];
 
 	constructor(
-		wifiSecurity: phoenix.WifiSecurity,
-		private commonService: CommonService
+		private commonService: CommonService,
+		private shellService: VantageShellService
 		) {
 		const cacheWifiSecurityState = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
 		const cacheWifiSecurityHistory = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys);
 
+		const securityAdvisor = this.shellService.getSecurityAdvisor();
+		if (securityAdvisor) {
+			this.wifiSecurity = securityAdvisor.wifiSecurity;
+		}
+		if (this.wifiSecurity && this.wifiSecurity.state) {
+			if (this.wifiSecurity.isLocationServiceOn !== undefined) {
+				this.isLWSEnabled = (this.wifiSecurity.state === 'enabled' && this.wifiSecurity.isLocationServiceOn);
+			}
+			commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, this.wifiSecurity.state);
+		} else if (cacheWifiSecurityState) {
+			if (this.wifiSecurity && this.wifiSecurity.isLocationServiceOn !== undefined) {
+				this.isLWSEnabled = (cacheWifiSecurityState === 'enabled' && this.wifiSecurity.isLocationServiceOn);
+			}
+		}
+		if (this.wifiSecurity && this.wifiSecurity.wifiHistory) {
+			commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, this.wifiSecurity.wifiHistory);
+			this.initializeHistories(this.wifiSecurity.wifiHistory, 4);
+			this.preHistories = cloneDeep(this.histories);
+		} else if (cacheWifiSecurityHistory) {
+			this.initializeHistories(cacheWifiSecurityHistory, 4);
+		}
+		this.eventListener(this.wifiSecurity);
+	}
+
+	eventListener(wifiSecurity: phoenix.WifiSecurity) {
 		wifiSecurity.on(EventTypes.wsWifiHistoryEvent, (value) => {
 			if (value) {
-				const cacheWifiSecurityHistoryNum = commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum)? JSON.parse(commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum)): 4;
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, value);
+				const cacheWifiSecurityHistoryNum = this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum)? JSON.parse(this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum)): 4;
+				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, value);
 				this.histories = this.mappingHistory(wifiSecurity.wifiHistory);
 				if (!isEqual(this.preHistories, this.histories)) {
 					this.preHistories = cloneDeep(this.histories);
 					this.hasMore = this.histories.length > 4;
 					this.hideHistories(this.histories, cacheWifiSecurityHistoryNum);
-					commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, cacheWifiSecurityHistoryNum);
+					this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, cacheWifiSecurityHistoryNum);
 				}
 			}
 		});
-		this.wifiSecurity = wifiSecurity;
-		if (wifiSecurity && wifiSecurity.state) {
-			if (wifiSecurity.isLocationServiceOn !== undefined) {
-				this.isLWSEnabled = (wifiSecurity.state === 'enabled' && wifiSecurity.isLocationServiceOn);
+
+		wifiSecurity.on(EventTypes.wsStateEvent, (value) => {
+			if (value) {
+				if (typeof wifiSecurity.isLocationServiceOn === 'boolean') {
+					this.isLWSEnabled = (value === 'enabled' && wifiSecurity.isLocationServiceOn);
+				}
+				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, value);
 			}
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, wifiSecurity.state);
-		} else if (cacheWifiSecurityState) {
-			if (wifiSecurity && wifiSecurity.isLocationServiceOn !== undefined) {
-				this.isLWSEnabled = (cacheWifiSecurityState === 'enabled' && wifiSecurity.isLocationServiceOn);
+		});
+
+		wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
+			if (typeof value === 'boolean' && wifiSecurity.state) {
+				this.isLWSEnabled = (wifiSecurity.state === 'enabled' && value);
 			}
-		}
-		if (wifiSecurity && wifiSecurity.wifiHistory) {
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, wifiSecurity.wifiHistory);
-			this.initializeHistories(wifiSecurity.wifiHistory, 4);
-			this.preHistories = cloneDeep(this.histories);
-		} else if (cacheWifiSecurityHistory) {
-			this.initializeHistories(cacheWifiSecurityHistory, 4);
-		}
+		});
 	}
 
 	initializeHistories(wifiHistory: phoenix.WifiDetail[], visibleNum: number) {
@@ -81,7 +94,7 @@ export class WifiHomeViewModel {
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, visibleNum);
 	}
 
-	mappingHistory (histories: phoenix.WifiDetail[]): WifiHistoryDetail[] {
+	mappingHistory(histories: phoenix.WifiDetail[]): WifiHistoryDetail[] {
 		const Histories = [];
 		histories.forEach((item) => {
 			let i = {
@@ -101,45 +114,9 @@ export class WifiHomeViewModel {
 		return Histories;
 	}
 
-	hideHistories (histories: WifiHistoryDetail[], visibleNum: number) {
+	hideHistories(histories: WifiHistoryDetail[], visibleNum: number) {
 		histories.forEach((item, index) => {
 			item.visible = index < visibleNum;
 		})
-	}
-}
-
-export class SecurityHealthViewModel {
-	isLWSEnabled: boolean;
-	homeDevicePosture: DevicePostureDetail[] = [];
-
-	constructor(wifiSecurity: phoenix.WifiSecurity, private commonService: CommonService, public translate: TranslateService, private ngZone: NgZone) {
-		const cacheWifiSecurityState = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
-		if (wifiSecurity && wifiSecurity.state) {
-			if (wifiSecurity.isLocationServiceOn !== undefined) {
-				this.isLWSEnabled = (wifiSecurity.state === 'enabled' && wifiSecurity.isLocationServiceOn);
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, wifiSecurity.state);
-			}
-		} else if (cacheWifiSecurityState) {
-			if (wifiSecurity && wifiSecurity.isLocationServiceOn !== undefined) {
-				this.isLWSEnabled = (cacheWifiSecurityState === 'enabled' && wifiSecurity.isLocationServiceOn);
-			}
-		}
-		wifiSecurity.on(EventTypes.wsStateEvent, (value) => {
-			if (value) {
-				if (wifiSecurity.isLocationServiceOn !== undefined) {
-					this.isLWSEnabled = (value === 'enabled' && wifiSecurity.isLocationServiceOn);
-					commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, value);
-				}
-			}
-		});
-		wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
-			this.ngZone.run(() => {
-				if (value !== undefined) {
-					if (wifiSecurity.state) {
-						this.isLWSEnabled = (wifiSecurity.state === 'enabled' && value);
-					}
-				}
-			});
-		});
 	}
 }
