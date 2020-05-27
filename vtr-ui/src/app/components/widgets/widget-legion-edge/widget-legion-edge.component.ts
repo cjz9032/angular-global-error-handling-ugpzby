@@ -315,7 +315,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		);
 
 		// Version 3.2: Lite Gaming
-		this.gamingCapabilities.desktopType = this.commonService.getLocalStorageValue(LocalStorageKey.desktopType);
+		this.gamingCapabilities.desktopType = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.desktopType);
 		this.gamingCapabilities.liteGaming = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.liteGaming);
 		// Version 3.2: Thermal Mode 2.0 capability
 		this.gamingCapabilities.smartFanFeature = this.gamingCapabilityService.getCapabilityFromCache(
@@ -444,7 +444,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			try {
 				this.gamingOverDriveService.getOverDriveStatus().then( res => {
 					this.logger.info(`Widget-LegionEdge-intiOverDriveStatus: get value from ${this.legionUpdate[this.legionItemIndex.overDrive].isChecked} to ${res}`);
-					if( res !== this.legionUpdate[this.legionItemIndex.overDrive] && res !== undefined) {
+					if( res !== this.legionUpdate[this.legionItemIndex.overDrive].isChecked && res !== undefined) {
 						this.legionUpdate[this.legionItemIndex.overDrive].isChecked = res;
 						this.commonService.setLocalStorageValue(LocalStorageKey.overDriveStatus, res)
 					}
