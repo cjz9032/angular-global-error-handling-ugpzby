@@ -34,7 +34,7 @@
     </a> -->
     <a *ngIf="!isSubscribed" class="link-text" (click)=openSubscribeModal(true) 
         vtrMetrics
-        metricsItem="btn.manageSubBeta"
+        metricsItem="btn.{{'smartPerformance.subscriptionDetails.manageSubscriptionBeta' |translate | lowercase | removeSpace }}"
         metricsEvent="FeatureClick"
         metricsParent="pages.support.smartPerformance">
         {{'smartPerformance.subscriptionDetails.manageSubscriptionBeta' |translate }}

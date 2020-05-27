@@ -42,6 +42,7 @@ import { UiScanScheduleComponent } from '../../components/ui/ui-scan-schedule/ui
 import { UiAccordionComponent } from 'src/app/components/ui/ui-accordion/ui-accordion.component';
 import { ModalSmartPerformanceFeedbackComponent } from '../../components/modal/modal-smart-performance-feedback/modal-smart-performance-feedback.component';
 import { UiButtonModule } from 'src/app/components/ui/ui-button/ui-button.module';
+import { SharedModule } from 'src/app/modules/shared.module';
 
 @NgModule({
 	declarations: [
@@ -72,7 +73,8 @@ import { UiButtonModule } from 'src/app/components/ui/ui-button/ui-button.module
 		CommonUiModule,
 		SanitizeModule,
 		TranslationModule.forChild(),
-		UiButtonModule
+		UiButtonModule,
+		SharedModule,
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 	exports: [

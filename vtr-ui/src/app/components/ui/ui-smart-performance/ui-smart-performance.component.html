@@ -27,7 +27,7 @@
 										<div class="d-flex justify-content-center mb-4">
 											<button class="action-button" (click)="scanNow()"
 											vtrMetrics
-											metricsItem="btn.freePCScan"
+											metricsItem="btn.{{'smartPerformance.scanButton' |translate |lowercase | removeSpace}}"
 											metricsEvent="FeatureClick"
 											metricsParent="pages.support.smartPerformance"
 											>{{'smartPerformance.scanButton' |translate }}</button>
@@ -278,9 +278,9 @@
 											<div class="contents">
 												<button class="action-button btn-block" (click)="scanNow()"
 												vtrMetrics
-												metricsItem="btn.freePCScan"
+												metricsItem="btn.{{'smartPerformance.scanButton'|translate | lowercase| removeSpace }}"
 												metricsEvent="FeatureClick"
-												metricsParent="pages.support.smartPerformance">{{'smartPerformance.scanButton' |translate }}</button>
+												metricsParent="pages.support.smartPerformance">{{'smartPerformance.scanButton' |translate}}</button>
 												<div class="description">
 													<p [innerHTML]="'smartPerformance.startScan' |translate"></p>
 												</div>
@@ -338,11 +338,11 @@
 											vtrMetrics
 											metricsEvent="FeatureClick"
 											metricsParent="pages.support.smartPerformance"
-											metricsItem="btn.signupRepairButton"
+											metricsItem="btn.{{'smartPerformance.scanCompletePage.signupRepairButton' |translate| lowercase | removeSpace }}"
 											>{{'smartPerformance.scanCompletePage.signupRepairButton' |translate }}</button>
 											<div class="desc">
 												<p>{{'smartPerformance.scanCompletePage.monthlyPricing' |translate }}<a href="#" class="para-link" vtrMetrics
-													metricsItem="btn.monthlyPricing"
+													metricsItem="btn.{{'smartPerformance.scanCompletePage.monthlyPricing' |translate |lowercase | removeSpace}}"
 													metricsParent="pages.support.smartPerformance"
 													metricsEvent="FeatureClick">Learn more</a></p>
 											</div>

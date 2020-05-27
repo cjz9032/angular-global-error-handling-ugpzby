@@ -55,8 +55,8 @@
 															attr.aria-label="su_cancel_updates"
 															vtrMetrics
 															metricsEvent="ItemClick"
-															metricsParent="Pages.support.smartPerformance"
-															metricsItem="'btn.cancelScan'"
+															metricsParent="pages.support.smartPerformance"
+															metricsItem="'btn.{{'smartPerformance.scanningPage.cancelScan.button' |translate | lowercase| removeSpace}}'"
 															class="btn btn-link cancel-check"
 															[disabled]="percent === 0 || isCheckingStatus" (click)="openCancelScanModel()"
 															 >{{'smartPerformance.scanningPage.cancelScan.button' |translate }}</button>
@@ -257,7 +257,7 @@
 															<button class="feedback-btn"
 															vtrMetrics
 															metricsEvent="FeatureClick"
-            												metricsParent="pages.support.smartPerformance" metricsItem="sp.feedback" 
+            												metricsParent="pages.support.smartPerformance" metricsItem="sp.{{'smartPerformance.feedbackContainer.buttonText'| translate| lowercase| removeSpace}}" 
 															alt="" type="button"
 															(click)="onclickFeedback()">{{'smartPerformance.feedbackContainer.buttonText' | translate}}
 															</button>
