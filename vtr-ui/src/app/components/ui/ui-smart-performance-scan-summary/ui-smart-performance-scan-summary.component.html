@@ -299,10 +299,10 @@
 													</div>
 
 												</div>
-												<div *ngIf="!historyRes" class="row my-5 d-flex justify-content-between px-0 position-relative">
+												<div *ngIf="!historyScanResultsDateTime" class="row my-5 d-flex justify-content-between px-0 position-relative">
 													<h4>{{'smartPerformance.noScanResults' |translate }}</h4>
 												</div>
-												<div *ngIf="historyRes" class="row my-5 d-flex justify-content-between px-0 position-relative">
+												<div *ngIf="historyScanResultsDateTime && historyScanResultsDateTime.length > 0" class="row my-5 d-flex justify-content-between px-0 position-relative">
 													<div *ngIf="isLoading">
 														<div class="container" [style.height.px]="40">
 															<div class="loader center-block">
