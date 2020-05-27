@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.60](https://bitbucket.tc.lenovo.com///compare/v1.5.59...v1.5.60) (2020-05-27)
+
+
+### Bug Fixes
+
+* button width larger than that of container ([35b168f](https://bitbucket.tc.lenovo.com///commit/35b168f059559ae45cc4d11c8e87891d76b31a71))
+* **translate:** No words displayed in the banner. ([0d80a12](https://bitbucket.tc.lenovo.com///commit/0d80a122c9fc735fd88d5162df79e2d5e7e2f544))
+* **wifi security:** VAN-18735 remove redundant 'T' in wifi info ([aa146ea](https://bitbucket.tc.lenovo.com///commit/aa146eaf40bed0e7c75d45bb707d13f4d8c3a15b))
+
 ### [1.5.59](https://bitbucket.tc.lenovo.com///compare/v1.5.58...v1.5.59) (2020-05-26)
 
 ### [1.5.58](https://bitbucket.tc.lenovo.com///compare/v1.5.57...v1.5.58) (2020-05-26)
