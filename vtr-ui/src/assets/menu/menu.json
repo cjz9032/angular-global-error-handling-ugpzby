@@ -349,7 +349,7 @@
 			"subitems": [
 				{
 					"id": "support",
-					"label": "common.menu.support",
+					"label": "support.common.getSupport",
 					"path": null,
 					"icon": null,
 					"metricsEvent": "itemClick",
