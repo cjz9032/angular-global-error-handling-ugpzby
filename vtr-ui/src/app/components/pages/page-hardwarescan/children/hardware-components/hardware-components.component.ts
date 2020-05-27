@@ -620,6 +620,11 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			requests = this.hardwareScanService.getFilteredCustomScanRequest();
 		}
 
+		// Resets the 'collapse' state to the default value (opened)
+		for (const module of this.modules) {
+			module.collapsed = false;
+		}
+
 		// Used for metrics purposes
 		const testMapMetrics = {};
 		const testList = [];
@@ -720,6 +725,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				resultCode: module.resultCode,
 				information: module.description,
 				collapsed: false,
+				detailsCollapsed: true,
 				icon: module_id,
 				details: [],
 				listTest: []

@@ -838,7 +838,9 @@ export class HardwareScanService {
 						information: '',
 						icon: '',
 						metaInformation: [],
-						listTest: []
+						listTest: [],
+						collapsed: false,
+						detailsCollapsed : true
 					};
 
 					item.module = categoryInfo.name;
