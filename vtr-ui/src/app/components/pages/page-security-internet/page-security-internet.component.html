@@ -37,11 +37,8 @@
 							[label]="'security.vpn.getSufEasy' | translate"
 							[buttonPos]="'align-items-center'"
 							[btnHeight]="true"
-							[rightCol]="'max-width-50'"
 							(buttonClick)="getSurfEasy()">
-							<div class="text-regular col min-width-50 flex-100 d-flex flex-column justify-content-center">
-								{{'security.vpn.helpKeep' | translate}}
-							</div>
+							{{'security.vpn.helpKeep' | translate}}
 						</vtr-ui-description-button>
 					</div>
 					<div class="mt-20" *ngIf="statusItem.status === 'installed'">
@@ -53,9 +50,7 @@
 							[btnHeight]="true"
 							[rightCol]="'max-width-50'"
 							(buttonClick)="openSurfEasy()">
-							<div class="text-regular col min-width-50 flex-100 d-flex flex-column justify-content-center">
-								{{'security.vpn.helpKeep' | translate}}
-							</div>
+							{{'security.vpn.helpKeep' | translate}}
 						</vtr-ui-description-button>
 					</div>
 				</div>

@@ -39,12 +39,9 @@
 						id="sa-ov-btn-securityArticle"
 						[isDisabled]="!isOnline"
 						[btnHeight]=true
-						[rightCol]="'max-width-50'"
 						[label]="'security.landing.security101' | translate"
 						(buttonClick)="buttonClick()">
-						<div class="col min-width-50 flex-100 d-flex flex-column justify-content-center">
-							<h5 class="desc mb-0" [innerHTML]="btnDesc[statusItem?.fullyProtected ? 1 : 0] | translate"></h5>
-						</div>
+						<h5 class="desc mb-0" [innerHTML]="btnDesc[statusItem?.fullyProtected ? 1 : 0] | translate"></h5>
 					</vtr-ui-description-button>
 				</div>
 			</div>
