@@ -24,13 +24,13 @@
 					<div *ngIf="isEnableViewResults || item.details"
 						class="details-link"
 						tabindex="0"
-						[attr.aria-label]="item.collapsed ? item.module + 'collapse-module-details': item.module + 'expand-module-details'"
-						(click)="item.collapsed = !item.collapsed"
-						(keyup.enter)="item.collapsed = !item.collapsed"
+						[attr.aria-label]="item.detailsCollapsed ? item.module + 'expand-module-details': item.module + 'collapse-module-details'"
+						(click)="item.detailsCollapsed = !item.detailsCollapsed"
+						(keyup.enter)="item.detailsCollapsed = !item.detailsCollapsed"
 						role="button"
-						[attr.aria-expanded]="!item.collapsed">
-						<fa-icon *ngIf="item.collapsed; else expandIcon" [icon]="['fas', 'caret-up']"></fa-icon>
-						<ng-template #expandIcon><fa-icon [icon]="['fas', 'caret-right']"></fa-icon></ng-template>
+						[attr.aria-expanded]="!item.detailsCollapsed">
+						<fa-icon *ngIf="item.detailsCollapsed; else expandIcon" [icon]="['fas', 'caret-right']"></fa-icon>
+						<ng-template #expandIcon><fa-icon [icon]="['fas', 'caret-up']"></fa-icon></ng-template>
 						{{ 'hardwareScan.details' | translate }}
 					</div>
 				</div>
@@ -39,15 +39,14 @@
 				<div class="col-auto" *ngIf="isScanExecute && !isEnableViewResults">
 					<div class="collapse-control"
 						tabindex="0"
-						[attr.aria-label]="item.collapsed ? item.module + 'collapse-test-list': item.module + 'expand-test-list'"
+						[attr.aria-label]="item.collapsed ? item.module + 'expand-test-list': item.module + 'collapse-test-list'"
 						(click)="item.collapsed = !item.collapsed"
 						(keyup.enter)="item.collapsed = !item.collapsed"
 						role="button"
-						[attr.aria-expanded]="!item.collapsed"
-						>
-						<fa-icon *ngIf="item.collapsed; else expandArrow" [icon]="['fal', 'angle-up']"></fa-icon>
+						[attr.aria-expanded]="!item.collapsed">
+						<fa-icon *ngIf="item.collapsed; else expandArrow" [icon]="['fal', 'angle-down']"></fa-icon>
 						<ng-template #expandArrow>
-							<fa-icon [icon]="['fal', 'angle-down']"></fa-icon>
+							<fa-icon [icon]="['fal', 'angle-up']"></fa-icon>
 						</ng-template>
 					</div>
 				</div>
@@ -55,7 +54,7 @@
 		</div>
 
 		<!-- Details List with information about the module -->
-		<div class="row details-list" *ngIf="(isEnableViewResults || item.details) && item.collapsed">
+		<div class="row details-list" *ngIf="(isEnableViewResults || item.details) && !item.detailsCollapsed">
 			<table class="table table-details table-active table-borderless">
 				<tbody>
 					<tr *ngFor="let detail of item.details">
@@ -88,7 +87,7 @@
 			<!-- Test List with collapsed running test-->
 			<div class="test-list col" *ngIf="isScanExecute && !isEnableViewResults">
 				<vtr-ui-hardware-list
-					[ngbCollapse]="!item.collapsed"
+					[ngbCollapse]="item.collapsed"
 					[items]="item.listTest"
 					[template]="2">
 				</vtr-ui-hardware-list>
