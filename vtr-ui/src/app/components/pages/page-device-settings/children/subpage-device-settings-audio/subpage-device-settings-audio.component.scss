@@ -43,7 +43,6 @@
 			}
 
 			.checkbox {
-				margin-left: 1.5px;
 				margin-top: 1rem;
 				.right-icon {
 					font-size: $fontsize_sm;
@@ -52,9 +51,9 @@
 					margin-top: 2px;
 					cursor: pointer;
 					border: 0.1rem solid transparent;
-					// &:hover {
-					// 	color: $highlight;
-					// }
+					&:hover {
+						color: $highlight;
+					}
 					&:focus {
 						@include outline-border-blue;
 					}
