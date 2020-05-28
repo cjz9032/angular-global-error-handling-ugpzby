@@ -14,7 +14,7 @@ import { Gaming } from 'src/app/enums/gaming.enum';
 // It is better to import the bridge in service, but there is no service belong to wifi security to integrate all dependency
 import { EventTypes, WifiSecurity, PluginMissingError, SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { WifiSecurityService } from 'src/app/services/security/wifiSecurity.service';
+import { WifiSecurityService } from 'src/app/services/security/wifi-security.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { GuardService } from 'src/app/services/guard/guardService.service';
 import { DolbyModeResponse } from 'src/app/data-models/audio/dolby-mode-response';

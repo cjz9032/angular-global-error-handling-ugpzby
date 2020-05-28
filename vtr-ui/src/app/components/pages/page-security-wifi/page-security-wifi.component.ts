@@ -6,7 +6,7 @@ import { EventTypes, PluginMissingError } from '@lenovo/tan-client-bridge';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
-import { WifiSecurityService } from 'src/app/services/security/wifiSecurity.service';
+import { WifiSecurityService } from 'src/app/services/security/wifi-security.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';

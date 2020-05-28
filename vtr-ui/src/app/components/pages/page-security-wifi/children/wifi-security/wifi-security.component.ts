@@ -10,7 +10,7 @@ import {
 } from '@ng-bootstrap/ng-bootstrap';
 import {
 	WifiSecurityService
-} from 'src/app/services/security/wifiSecurity.service';
+} from 'src/app/services/security/wifi-security.service';
 import {
 	BaseComponent
 } from '../../../../base/base.component';
