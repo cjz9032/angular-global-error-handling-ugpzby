@@ -45,12 +45,12 @@ export class UserDefinedKeyComponent implements OnInit, OnDestroy {
 		private commonService: CommonService
 	) {
 		this.userDefinedKeyOptions = [
-			{
-				title: 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option1',
-				value: 1,
-				path: '1',
-				actionType: ''
-			},
+			// {
+			// 	title: 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option1',
+			// 	value: 1,
+			// 	path: '1',
+			// 	actionType: ''
+			// },
 			{
 				title: 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option4',
 				value: 4,
@@ -76,7 +76,7 @@ export class UserDefinedKeyComponent implements OnInit, OnDestroy {
 				actionType: OPEN_WEB.str
 			}
 		];
-		this.selectedValue = this.userDefinedKeyOptions[0];
+		this.selectedValue = 1;
 	}
 
 	ngOnInit() {
