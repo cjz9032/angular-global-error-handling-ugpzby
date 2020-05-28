@@ -280,6 +280,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 						// this.hasSubscribedScanCompleted = true;
 						this.showSubscribersummary = true;
 						this.isScanning = false;
+						this.showWarning.emit(false)
 						this.rating = res.rating;
 						this.tune = res.result.tune;
 						this.boost = res.result.boost;
