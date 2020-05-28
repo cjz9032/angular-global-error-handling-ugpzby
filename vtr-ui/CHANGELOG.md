@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.61](https://bitbucket.tc.lenovo.com///compare/v1.5.60...v1.5.61) (2020-05-28)
+
+
+### Bug Fixes
+
+* **switch toggle:** VAN-18729 remove the on/off text on switch toggle ([bc64c78](https://bitbucket.tc.lenovo.com///commit/bc64c787fbeaf85adb1af6bb4651045bf0e9421a))
+* **VAN-18729 modify switch toggle style:** hide wifi security switch toggle text ([9ef6e58](https://bitbucket.tc.lenovo.com///commit/9ef6e58ac801b0fd44e83c1800f5215ebad381e6))
+* button width larger than that of container ([ccfaa1d](https://bitbucket.tc.lenovo.com///commit/ccfaa1df6a1dec8243942b28085e70f4b885087b))
+* remove useless input ([4cd12b2](https://bitbucket.tc.lenovo.com///commit/4cd12b2a93682a2ae90e41f33c258b9f4c3304eb))
+* use semantic p to replace div ([f199a12](https://bitbucket.tc.lenovo.com///commit/f199a128614249c6f1f474fbd9137b9f63a288e5))
+
 ### [1.5.60](https://bitbucket.tc.lenovo.com///compare/v1.5.59...v1.5.60) (2020-05-27)
 
 
