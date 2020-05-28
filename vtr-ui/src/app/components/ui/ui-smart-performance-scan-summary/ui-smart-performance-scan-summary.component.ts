@@ -735,6 +735,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	   */
 	  onclickFeedback() {
 		this.modalService.open(ModalSmartPerformanceFeedbackComponent, {
+			backdrop: true,
 			size: 'lg',
 			keyboard: false,
 			centered: true,

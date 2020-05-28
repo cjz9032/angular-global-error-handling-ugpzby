@@ -352,7 +352,7 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 	   */
 	  onclickFeedback() {
 		this.modalService.open(ModalSmartPerformanceFeedbackComponent, {
-			// backdrop: 'static',
+			backdrop: true,
 			size: 'lg',
 			keyboard: false,
 			centered: true,
