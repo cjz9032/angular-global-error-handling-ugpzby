@@ -6,7 +6,7 @@
 		<vtr-spinner></vtr-spinner>
 	</div>
 	<label id="{{onOffSwitchId+'_toggleMain'}}"
-		class="pb-1 pl-1 checkbox"
+		class="pb-1 pl-1 checkbox m-0"
 		[ngClass]="{'switch-disable': isSwitchDisable, 'white-theme': theme==='white', 'blue-theme': theme==='blue'}"
 		#toggleMain
 		(click)="toggleMain.focus()"
@@ -44,10 +44,6 @@
 			aria-hidden="true"
 			(click)="stopPropagation($event);"
 			(keydown.enter)="stopPropagation($event);">
-			<span class="switch-label"
-				[ngClass]="{'off-label': !value, 'on-label': value}"
-				[innerText]="value ? switchOnText : switchOffText">
-			</span>
 			<small></small>
 		</span>
 	</label>

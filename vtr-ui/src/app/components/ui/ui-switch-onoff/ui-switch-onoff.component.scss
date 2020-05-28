@@ -4,7 +4,9 @@
 	display: inline-block;
 	position: relative;
 	cursor: pointer;
-	border: 0.1rem solid transparent;
+	border-radius: 10rem;
+	width: 5rem;
+	height: 2.4rem;
 	label {
 		cursor: pointer;
 		.switch-label,
@@ -12,14 +14,32 @@
 			cursor: pointer;
 		}
 	}
-	&.switch-disable {
-		pointer-events: none;
+}
+input:checked ~.switch{
+	border: 0.1rem solid transparent;
+}
+input:not(:checked) ~.switch {
+	border: 0.1rem solid $grey_dark;
+}
+input:disabled ~.switch {
+	border: 0.1rem solid $grey_dark;
+	small {
+		background-color: $grey_darker !important;
+		opacity: 0.4;
 	}
 }
+
 .switch-disable {
 	pointer-events: none;
 	.switch {
-		background: #e6eaeb !important;
+		background: $grey_light !important;
+		@media #{$black-on-white} {
+			background: $high-contrast-white-disabled !important;
+		}
+		@media #{$white-on-black} {
+			background: $high-contrast-black-disabled !important;
+		}
+
 	}
 }
 
@@ -55,7 +75,7 @@
 }
 
 input + .switch {
-	background: linear-gradient($gradient_angle, $shade_light 0%, $shade_lightest 100%);
+	background: $grey_light;
 	// margin-right: 0.7rem; // changed to match the UI Mockup.
 	@media #{$black-on-white} {
 		background: $dark;
@@ -67,7 +87,7 @@ input + .switch {
 }
 
 input.wifi-checked + .switch {
-	background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
+	background: linear-gradient($gradient_angle, $green_darker 0%, $green-light 100%);
 	transition: background 1.2s;
 	@media #{$black-on-white} {
 		background: $high-contrast-white-textselected;
@@ -85,7 +105,7 @@ input.wifi-checked + .switch {
 }
 
 .switch > small {
-	background-color: $shade_darker;
+	background-color: $shade_blue;
 	border-radius: 50%;
 	width: 2.2rem;
 	height: 2.2rem;
@@ -150,7 +170,8 @@ input.wifi-checked + .switch.switch-xs > small {
 }
 
 .switch.switch-xs {
-	margin-top: 0.5rem;
+	margin-top: 0.1rem;
+	left: -0.2rem;
 	height: 2rem;
 	width: 4.6rem;
 }
@@ -158,20 +179,6 @@ input.wifi-checked + .switch.switch-xs > small {
 .switch-xs small {
 	height: 1.4rem;
 	width: 1.4rem;
-}
-
-.switch-disable {
-	pointer-events: none;
-	.switch {
-		background: #e6eaeb !important;
-		@media #{$black-on-white} {
-			background: $high-contrast-white-disabled !important;
-		}
-		@media #{$white-on-black} {
-			background: $high-contrast-black-disabled !important;
-		}
-
-	}
 }
 
 /* Full Width Switch - Right Aligned */
@@ -226,8 +233,22 @@ input.wifi-checked + .switch.switch-xs > small {
 // 	}
 // }
 
-// .checkbox.white-theme {
-// 	&:focus {
-// 		@include outline-border-blue;
-// 	}
-// }
+.checkbox.white-theme {
+	&:focus {
+		outline: none;
+		border-radius: 10rem;
+		box-shadow: 0px -0.15px 0px 2px $shade_extralight, -0.15px 0px 0px 3.7px $menu_hover;
+		@media #{$black-on-white} {
+			box-shadow: 0px -0.15px 0px 2px $light, -0.15px 0px 0px 3.7px $dark;
+		}
+		@media #{$white-on-black} {
+			box-shadow: 0px -0.15px 0px 2px $dark, -0.15px 0px 0px 3.7px $light;
+		}
+	}
+	&:hover {
+		input:checked ~.switch {
+			background: $green_darker !important;
+			transition: none;
+		}
+	}
+}
