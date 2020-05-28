@@ -607,6 +607,9 @@
 															<div class="description">{{'smartPerformance.feedbackContainer.subtitle' | translate}}</div>
 															<div class="pt-5 text-center">
 																<button class="feedback-btn" alt="" type="button"
+																vtrMetrics
+																metricsEvent="FeatureClick"
+            													metricsParent="pages.support.smartPerformance" metricsItem="sp.{{'smartPerformance.feedbackContainer.buttonText'| translate| lowercase| removeSpace}}" 
 																(click)="onclickFeedback()">{{'smartPerformance.feedbackContainer.buttonText' | translate}}
 																</button>
 															</div>
