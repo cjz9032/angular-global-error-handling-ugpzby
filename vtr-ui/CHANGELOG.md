@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.62](https://bitbucket.tc.lenovo.com///compare/v1.5.61...v1.5.62) (2020-05-28)
+
+
+### Bug Fixes
+
+* **LWS-threat locator:** VAN-18726 remove threat locator dialog outline ([02a175f](https://bitbucket.tc.lenovo.com///commit/02a175f3c58393c560673380510a2cfad10026ff))
+* **optimization:** change the wifiHomeModel to wifiSecurityService ([00e78f6](https://bitbucket.tc.lenovo.com///commit/00e78f6c546bcf34985f1afa346bea1a7ac8343b))
+* **optimization:** change the wifiSecurity to wifi-security ([925e046](https://bitbucket.tc.lenovo.com///commit/925e046ba0565a253c4783016a9a0ec87ff33358))
+* **optimization:** Optimize the code of WiFi view module ([60e7822](https://bitbucket.tc.lenovo.com///commit/60e7822258430df6f2512a014b19f1b15a7b5623))
+
 ### [1.5.61](https://bitbucket.tc.lenovo.com///compare/v1.5.60...v1.5.61) (2020-05-28)
 
 

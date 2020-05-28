@@ -125,12 +125,12 @@
 													</p>
 													<div class="d-flex justify-content-start my-5 w-75">
 														<button *ngIf="!inputIsScanningCompleted" [ngClass]="isLoading? 'disabled-button': 'action-button'" (click)="ScanNowSummary()"
-															vtrMetrics metricsItem="smartPerformance.{{'smartPerformance.subscriberScanHomePage.scanNow' |translate| removeSpace }}"
+															vtrMetrics metricsItem="sp.{{'smartPerformance.subscriberScanHomePage.scanNow' |translate| lowercase| removeSpace }}"
 															metricsEvent="FeatureClick"
 															metricsParent="pages.support.smartPerformance">{{'smartPerformance.subscriberScanHomePage.scanNow' |translate }}</button>
 
 															<button *ngIf="inputIsScanningCompleted" class="action-button" (click)="BackToSummary()"
-															vtrMetrics metricsItem="smartPerformance.{{'smartPerformance.subscriberScanHomePage.backToHome' |translate| removeSpace }}"
+															vtrMetrics metricsItem="sp.{{'smartPerformance.subscriberScanHomePage.backToHome' |translate| lowercase | removeSpace }}"
 															metricsEvent="FeatureClick"
 															metricsParent="pages.support.smartPerformance">{{'smartPerformance.subscriberScanHomePage.backToHome' |translate }}</button>
 														<div class="desc-block">
@@ -584,7 +584,7 @@
 												</p> -->
 												<!-- These are commented as per new requirment please dont delete -->
 												<button class="action-button mt-2" vtrMetrics
-													metricsItem="smartPerformance.{{'smartPerformance.scanCompletePage.recommendedAction.signupButton' |translate| lowercase | removeSpace}}"
+													metricsItem="sp.{{'smartPerformance.scanCompletePage.recommendedAction.signupButton' |translate| lowercase | removeSpace}}"
 													metricsEvent="FeatureClick"
 													metricsParent="pages.support.smartPerformance"
 													(click)=openSubscribeModal()>{{'smartPerformance.scanCompletePage.recommendedAction.signupButton' |translate }}</button>
@@ -607,6 +607,9 @@
 															<div class="description">{{'smartPerformance.feedbackContainer.subtitle' | translate}}</div>
 															<div class="pt-5 text-center">
 																<button class="feedback-btn" alt="" type="button"
+																vtrMetrics
+																metricsEvent="FeatureClick"
+            													metricsParent="pages.support.smartPerformance" metricsItem="sp.{{'smartPerformance.feedbackContainer.buttonText'| translate| lowercase| removeSpace}}" 
 																(click)="onclickFeedback()">{{'smartPerformance.feedbackContainer.buttonText' | translate}}
 																</button>
 															</div>
