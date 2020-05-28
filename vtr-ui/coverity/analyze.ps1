@@ -9,7 +9,7 @@ Write-Host 'done';
 Get-Command 'cov-build' -ErrorAction Stop | Out-Null;
 Write-Host -NoNewline 'Now, capturing source files from src...'
 $src = Join-Path $projectRoot src\app;
-$command = 'cov-build --dir ' + $idirs + ' --delete-stale-tus --fs-capture-search ' + $src + ' --no-command --fs-capture-search-exclude-regex node_modules';
+$command = 'cov-build --dir ' + $idirs + ' --delete-stale-tus --fs-capture-search ' + $src + ' --no-command --fs-capture-search-exclude-regex node_modules --fs-capture-search-exclude-regex spec.ts';
 Invoke-Expression -Command $command | Out-Null;
 Write-Host 'done';
 
