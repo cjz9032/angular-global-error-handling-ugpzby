@@ -366,7 +366,7 @@ export class VantageShellService {
 		};
 		sysInfo.getMachineInfo = this.getPromise(machineInfo);
 		sysInfo.getMachineInfoSync = this.getPromise(machineInfo);
-		sysInfo.getMachineType = this.getPromise(0); // 1 = ThinkPad
+		sysInfo.getMachineType = this.getPromise(1); // 1 = ThinkPad
 		sysInfo.getHardwareInfo = this.getPromise(hardwareInfo);
 		return sysInfo;
 	}
@@ -1249,7 +1249,7 @@ export class VantageShellService {
 			intelligentCooling: {
 				getPMDriverStatus: this.getPromise(true),
 				getITSServiceStatus: this.getPromise(true),
-				getDYTCRevision: this.getPromise(4),
+				getDYTCRevision: this.getPromise(6),
 				getCQLCapability: this.getPromise(true),
 				getTIOCapability: this.getPromise(true),
 				setAutoModeSetting: this.getPromise(true),
