@@ -9,8 +9,8 @@ import {
 	NgbModal
 } from '@ng-bootstrap/ng-bootstrap';
 import {
-	WifiHomeViewModel
-} from 'src/app/data-models/security-advisor/wifisecurity.model';
+	WifiSecurityService
+} from 'src/app/services/security/wifi-security.service';
 import {
 	BaseComponent
 } from '../../../../base/base.component';
@@ -41,14 +41,14 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	locatorButtonDisable = false;
 	@Output() toggleChange = new EventEmitter<void>()
 
-	private _data: WifiHomeViewModel;
+	private _data: WifiSecurityService;
 
-	get data(): WifiHomeViewModel {
+	get data(): WifiSecurityService {
 		return this._data;
 	}
 
 	@Input()
-	set data(val: WifiHomeViewModel) {
+	set data(val: WifiSecurityService) {
 		if (!this._data || val.isLWSEnabled !== this._data.isLWSEnabled) {
 			this.switchLabel = `${this.wsNameText} ${val.isLWSEnabled ? this.wsEnabledText : this.wsDisabledText}`;
 		}
