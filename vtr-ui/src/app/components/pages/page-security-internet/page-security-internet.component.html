@@ -35,7 +35,6 @@
 							id="sa-vpn-btn-getsurfeasy"
 							[isDisabled]="statusItem.status === 'installing' || isOnline === false"
 							[label]="'security.vpn.getSufEasy' | translate"
-							[buttonPos]="'align-items-center'"
 							[btnHeight]="true"
 							(buttonClick)="getSurfEasy()">
 							{{'security.vpn.helpKeep' | translate}}
@@ -46,9 +45,7 @@
 							metricsItem="openSurfEasy"
 							[label]="'security.vpn.openSufEasy' | translate"
 							id="sa-vpn-btn-opensurfeasy"
-							[buttonPos]="'align-items-center'"
 							[btnHeight]="true"
-							[rightCol]="'max-width-50'"
 							(buttonClick)="openSurfEasy()">
 							{{'security.vpn.helpKeep' | translate}}
 						</vtr-ui-description-button>

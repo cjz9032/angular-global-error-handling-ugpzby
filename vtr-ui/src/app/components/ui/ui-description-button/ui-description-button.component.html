@@ -1,7 +1,7 @@
 <div class="vtr-ui-description-button row col-12 d-flex justify-content-between">
-	<div class="description text-regular align-self-center col-6 col-sm-7 col-md-8 col-lg-8 col-xl-8 p-0">
+	<p class="description text-regular mb-0 align-self-center col-6 col-sm-7 col-md-8 col-lg-8 col-xl-8 p-0">
 		<ng-content></ng-content>
-	</div>
+	</p>
 	
 	<div class="described-button align-items-center col-6 col-sm-5 col-md-4 col-lg-4 col-xl-4 p-0 d-flex justify-content-end">
 		<vtr-ui-button
@@ -17,6 +17,7 @@
 			[tabIndex]="tabIndex"
 			[upperCaseLabel]="upperCaseLabel"
 			[btnHeight]="btnHeight"
+			class="mw-100"
 			(onClick)="clickButton($event)"
 			[isDisabled]="isDisabled"
 			[label]="label"

@@ -9,13 +9,9 @@
 		[upperCaseLabel]="false"
 		[btnHeight]="true"
 		(buttonClick)="install?common.launch():common.openMcAfeePurchase('button')">
-		<div class="row">
-			<div class="col-auto px-0 mr-auto">
-				<div class="title pb-3">{{'security.antivirus.common.mcafeePremium' | translate}}</div>
-			</div>
-			<div class="subtitle">
-				{{'security.antivirus.common.protectedBy' | translate: {protectedName: name } }}
-			</div>
-		</div>
+		<p class="title pb-3">{{'security.antivirus.common.mcafeePremium' | translate}}</p>
+		<p class="subtitle">
+			{{'security.antivirus.common.protectedBy' | translate: {protectedName: name } }}
+		</p>
 	</vtr-ui-description-button>
 </div>
