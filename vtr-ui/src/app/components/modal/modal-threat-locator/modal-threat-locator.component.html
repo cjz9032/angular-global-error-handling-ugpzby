@@ -1,5 +1,5 @@
 <div class="modal-body vtr-modal-threat-locator" id="modal-threat-locator" [ngClass]="{'connection-error-modal': !online}" #domModalDiv tabindex="-1" role=dialog>
-	<h1>Threat locator</h1>
+	<h1 class="mb-3">Threat locator</h1>
 	<div class="iframe-container">
 		<div *ngIf="!online" class="disabled-network p-5">
 			<p class="title">{{ 'security.wifisecurity.threatlocator.connectionError' | translate}}</p>
@@ -11,10 +11,10 @@
 			scrolling="no"
 			frameborder="0"></iframe>
 	</div>
-	<div class="btn-modal-close">
+</div>
+<div class="btn-modal-close">
 	<vtr-ui-close-button linkId="sa-ws-btn-closelocator"
 		metricsItem="ThreatLocatorDialogCloseButton"
 		metricsParent="Wifi Security"
 		(clickClose)="closeModal()"></vtr-ui-close-button>
-	</div>
 </div>
