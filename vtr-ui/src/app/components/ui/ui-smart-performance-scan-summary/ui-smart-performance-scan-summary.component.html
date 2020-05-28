@@ -124,7 +124,7 @@
 														[innerHTML]="'smartPerformance.subscriberScanHomePage.successDescription' |translate:{issueCount: issueCount }">
 													</p>
 													<div class="d-flex justify-content-start my-5 w-75">
-														<button *ngIf="!inputIsScanningCompleted" class="action-button" (click)="ScanNowSummary()"
+														<button *ngIf="!inputIsScanningCompleted" [ngClass]="isLoading? 'disabled-button': 'action-button'" (click)="ScanNowSummary()"
 															vtrMetrics metricsItem="smartPerformance.{{'smartPerformance.subscriberScanHomePage.scanNow' |translate| removeSpace }}"
 															metricsEvent="FeatureClick"
 															metricsParent="pages.support.smartPerformance">{{'smartPerformance.subscriberScanHomePage.scanNow' |translate }}</button>

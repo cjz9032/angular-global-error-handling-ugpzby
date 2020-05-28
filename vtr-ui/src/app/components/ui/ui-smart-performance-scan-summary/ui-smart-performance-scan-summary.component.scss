@@ -693,6 +693,22 @@ vtr-ui-smart-performance-scan-summary {
 			border: 0rem;
 			cursor: pointer;
 		}
+		.disabled-button{
+			border-radius: 2.5rem;
+			background: $main_shade;
+			text-transform: uppercase;
+			padding: 0 3rem;
+			color: $light;
+			cursor: not-allowed;
+			font-size: 1.5rem;
+			height: 5rem;
+			font-weight: $weight_medium;
+			line-height: 5rem;
+			text-align: center;
+			border: 0rem;
+			opacity: 0.7;
+			min-width: 11.5rem;
+		}
 	}
 	.performance-slider-block {
 		margin: 2rem 0;
@@ -958,6 +974,22 @@ vtr-ui-smart-performance-scan-summary {
 				margin: 0 auto 1rem;
 			}
 		}
+		.disabled-button{
+			border-radius: 2.5rem;
+			background: $main_shade;
+			text-transform: uppercase;
+			padding: 0 3rem;
+			color: $light;
+			font-size: 1.5rem;
+			height: 5rem;
+			cursor: not-allowed;
+			font-weight: $weight_medium;
+			line-height: 5rem;
+			text-align: center;
+			border: 0rem;
+			opacity: 0.7;
+			min-width: 11.5rem;
+		}
 		.desc-block {
 			display: flex;
 			flex-direction: row;
@@ -1172,6 +1204,22 @@ vtr-ui-smart-performance-scan-summary {
 			border: 0rem;
 			cursor: pointer;
 			width: 100%;
+		}
+		.disabled-button{
+			border-radius: 2.5rem;
+			background: $main_shade;
+			text-transform: uppercase;
+			padding: 0 3rem;
+			cursor: not-allowed;
+			color: $light;
+			font-size: 1.5rem;
+			height: 5rem;
+			font-weight: $weight_medium;
+			line-height: 5rem;
+			text-align: center;
+			border: 0rem;
+			opacity: 0.7;
+			min-width: 11.5rem;
 		}
 	}
 	.save-button{

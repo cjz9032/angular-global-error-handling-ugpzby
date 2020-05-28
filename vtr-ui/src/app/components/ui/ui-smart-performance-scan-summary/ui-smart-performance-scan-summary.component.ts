@@ -264,70 +264,72 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		}
 	}
 	scanSummaryTime(value) {
-		this.dropDownToggle = true;
-		this.isDropDownOpen = false;
-		this.tabIndex = value;
-		this.logger.info('scanSummaryTime.tabIndex', this.tabIndex);
-		if (value === 0) {
-			// this.yearsList = [];
-			const d = new Date();
-			this.currentYear = d.getFullYear();
-			this.lastYear = d.getFullYear() - 1;
-			const month = d.getMonth();
-			const day = d.getDate();
-			const prevYear = new Date(this.lastYear, month, day);
-			const yearObj = this.getYearObj(prevYear, d);
-			if (yearObj) {
-				// this.yearsList.push(yearObj);
-				this.annualYear = yearObj.displayName;
+		if (!this.isLoading) {
+			this.dropDownToggle = true;
+			this.isDropDownOpen = false;
+			this.tabIndex = value;
+			this.logger.info('scanSummaryTime.tabIndex', this.tabIndex);
+			if (value === 0) {
+				// this.yearsList = [];
+				const d = new Date();
+				this.currentYear = d.getFullYear();
+				this.lastYear = d.getFullYear() - 1;
+				const month = d.getMonth();
+				const day = d.getDate();
+				const prevYear = new Date(this.lastYear, month, day);
+				const yearObj = this.getYearObj(prevYear, d);
+				if (yearObj) {
+					// this.yearsList.push(yearObj);
+					this.annualYear = yearObj.displayName;
+					this.getHistory(
+						yearObj.startDate,
+						yearObj.endDate
+					);
+				}
+			}
+			/* Quarterly option is hidden for current 3.3 release */
+			// if (value === 1) {
+			// 	this.quarterlyMonth = this.quarterlyMenu[0];
+			// 	this.getHistory(
+			// 		this.quarterlyMonth.startDate,
+			// 		this.quarterlyMonth.endDate
+			// 	);
+			// }
+			if (value === 1) {
+				this.fromDate = this.calendar.getToday();
+				this.toDate = this.calendar.getToday();
+
+				this.isFromDate = true;
+				const fromDateFormat =
+					this.fromDate.month +
+					'/' +
+					this.fromDate.day +
+					'/' +
+					this.fromDate.year;
+				const toDateFormat =
+					this.toDate.month +
+					'/' +
+					this.toDate.day +
+					'/' +
+					this.toDate.year;
+				this.displayFromDate = this.formatLocaleDate.transform(fromDateFormat);
+				this.displayToDate = this.formatLocaleDate.transform(toDateFormat);
+				this.selectedfromDate = this.fromDate;
+				this.selectedTodate = this.toDate;
+				this.customDate = this.displayFromDate + ' - ' + this.displayToDate;
 				this.getHistory(
-					yearObj.startDate,
-					yearObj.endDate
+					moment
+						.utc(this.fromDate)
+						.subtract(1, 'months')
+						.startOf('day')
+						.format('YYYY-MM-DD HH:mm:ss'),
+					moment
+						.utc(this.toDate)
+						.subtract(1, 'months')
+						.endOf('day')
+						.format('YYYY-MM-DD HH:mm:ss')
 				);
 			}
-		}
-		/* Quarterly option is hidden for current 3.3 release */
-		// if (value === 1) {
-		// 	this.quarterlyMonth = this.quarterlyMenu[0];
-		// 	this.getHistory(
-		// 		this.quarterlyMonth.startDate,
-		// 		this.quarterlyMonth.endDate
-		// 	);
-		// }
-		if (value === 1) {
-			this.fromDate = this.calendar.getToday();
-			this.toDate = this.calendar.getToday();
-
-			this.isFromDate = true;
-			const fromDateFormat =
-				this.fromDate.month +
-				'/' +
-				this.fromDate.day +
-				'/' +
-				this.fromDate.year;
-			const toDateFormat =
-				this.toDate.month +
-				'/' +
-				this.toDate.day +
-				'/' +
-				this.toDate.year;
-			this.displayFromDate = this.formatLocaleDate.transform(fromDateFormat);
-			this.displayToDate = this.formatLocaleDate.transform(toDateFormat);
-			this.selectedfromDate = this.fromDate;
-			this.selectedTodate = this.toDate;
-			this.customDate = this.displayFromDate + ' - ' + this.displayToDate;
-			this.getHistory(
-				moment
-					.utc(this.fromDate)
-					.subtract(1, 'months')
-					.startOf('day')
-					.format('YYYY-MM-DD HH:mm:ss'),
-				moment
-					.utc(this.toDate)
-					.subtract(1, 'months')
-					.endOf('day')
-					.format('YYYY-MM-DD HH:mm:ss')
-			);
 		}
 	}
 
@@ -419,7 +421,9 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		}
 	}
 	ScanNowSummary() {
-		this.backToScan.emit();
+		if (!this.isLoading) {
+			this.backToScan.emit();
+		}
 	}
 	BackToSummary(){
 		if(this.inputIsScanningCompleted)
