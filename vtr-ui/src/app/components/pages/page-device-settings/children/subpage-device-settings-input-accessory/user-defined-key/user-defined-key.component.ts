@@ -115,6 +115,33 @@ export class UserDefinedKeyComponent implements OnInit {
 		if (this.selectedValue.value === 1) {
 			this.hideApplyForDefault = false;
 		}
+		if (this.selectedValue.value === 4) {
+			this.setUDKTypeList('0', '0', 'LAUNCH_APPLICATION_FILE', '');
+			this.keyboardService.GetUDKTypeList()
+				.then((value: any) => {
+					try {
+						if (value
+							&& value.UDKType
+							&& value.UDKType.length
+							&& value.UDKType[0].FileList
+							&& value.UDKType[0].FileList.length
+							&& value.UDKType[0].FileList[0].Setting) {
+							const previousAppsFiles = value.UDKType[0].FileList[0].Setting;
+							this.applicationList = [];
+							this.fileList = [];
+							for (const data of previousAppsFiles) {
+								if (data.type === '1') {
+									this.applicationList.push({ value: data.value, key: data.key });
+								}
+								else {
+									this.fileList.push({ value: data.value, key: data.key });
+								}
+							}
+						}
+					} catch (error) {
+					}
+				});
+		}
 	}
 
 	initValues(udkActionInfo: UDKActionInfo) {
