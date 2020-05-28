@@ -1351,11 +1351,15 @@
 							border-color:$gaming-Darkslate-blue!important;
 							margin-bottom:0.5rem;
 							.table-details, .table-active {
-								background-color:none!important;
+								border-radius:$border_radius;
+								background-color:$gaming_darkest!important;
+								margin-bottom: 0rem!important;
 								tr{
+									background-color:$gaming_darkest!important;
+									border:0.1rem solid $gaming-Darkslate-blue;									
 									th, td{							
 									color: $gaming_lighter!important;
-									background-color:none!important;
+									background-color:$gaming_bg!important;
 									padding-left:1.5rem!important;
 									}
 								}
