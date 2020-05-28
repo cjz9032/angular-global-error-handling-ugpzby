@@ -52,6 +52,7 @@
 								(change)="checkedApp()" />
 							<label class="custom-control-label"
 								[tabindex]="!!(modernPreloadService.DownloadButtonStatus === DownloadButtonStatusEnum.DOWNLOADING || app.isCheckDisabled) ? -1 : 0"
+								[attr.aria-label]="app.title"
 								(keydown.enter)="setAppCheckStatus(app)"
 								for="modern-preload-app-{{app.udcId}}">
 								<div class="app-logo">
@@ -144,6 +145,7 @@
 										metricsItem="ModernPreload.redeemCodeEyeButton"
 										metricsEvent="FeatureClick"
 										metricsParent="Modern Preload"
+										[attr.aria-label]="app.isShowActiveCode ? 'hide redemption code' : 'show redemption code'"
 										id="modern-preload-button-eye-{{app.udcId}}-{{app.isShowActiveCode}}">
 										<fa-icon *ngIf="app.isShowActiveCode"
 											[icon]="['far', 'eye-slash']"></fa-icon>
@@ -159,6 +161,7 @@
 										metricsParent="Modern Preload"
 										#redeemCodeCopy
 										id="modern-preload-button-redeem-code-copy-{{app.udcId}}"
+										[attr.aria-label]="'copy redemption code'"
 										[ngxClipboard]
 										(keydown.enter)="copy(app.activationCode, 'redeemCodeCopy')"
 										[cbContent]="app.activationCode">
@@ -170,8 +173,8 @@
 							<div class="redemption-url d-flex align-items-center"
 								*ngIf="redemptionSupport && app.redemptionURL">
 								<a class="mr-2"
-									[href]="app.redemptionURL"
-									target="_blank"
+									href="javascript:void(0)"
+									(click)="launchURL(app.redemptionURL)"
 									vtrMetrics
 									metricsItem="ModernPreload.redeemWebsiteUrl"
 									metricsEvent="FeatureClick"
@@ -190,6 +193,7 @@
 									metricsParent="Modern Preload"
 									#redeemUrlCopy
 									id="modern-preload-button-redeem-url-copy-{{app.udcId}}"
+									[attr.aria-label]="'copy redemption link'"
 									[ngxClipboard]
 									(keydown.enter)="copy(app.redemptionURL, 'redeemUrlCopy')"
 									[cbContent]="app.redemptionURL">
