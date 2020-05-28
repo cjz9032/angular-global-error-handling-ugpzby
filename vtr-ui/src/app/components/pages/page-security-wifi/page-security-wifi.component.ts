@@ -6,7 +6,7 @@ import { EventTypes, PluginMissingError } from '@lenovo/tan-client-bridge';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
-import { WifiHomeViewModel } from 'src/app/data-models/security-advisor/wifisecurity.model';
+import { WifiSecurityService } from 'src/app/services/security/wifiSecurity.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
@@ -80,7 +80,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		public configService: ConfigService,
 		public deviceService: DeviceService,
 		private localInfoService: LocalInfoService,
-		public wifiHomeViewModel: WifiHomeViewModel
+		public wifiSecurityService: WifiSecurityService
 	) { }
 
 	ngOnInit() {
@@ -203,7 +203,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 
 	onToggleChange() {
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage) === true) {
-			if (this.wifiHomeViewModel.isLWSEnabled) {
+			if (this.wifiSecurityService.isLWSEnabled) {
 				this.wifiSecurity.disableWifiSecurity();
 			} else {
 				this.wifiSecurity.enableWifiSecurity().catch(() => {

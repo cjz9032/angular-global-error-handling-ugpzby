@@ -14,7 +14,7 @@ import { Gaming } from 'src/app/enums/gaming.enum';
 // It is better to import the bridge in service, but there is no service belong to wifi security to integrate all dependency
 import { EventTypes, WifiSecurity, PluginMissingError, SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { WifiHomeViewModel } from 'src/app/data-models/security-advisor/wifisecurity.model';
+import { WifiSecurityService } from 'src/app/services/security/wifiSecurity.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { GuardService } from 'src/app/services/guard/guardService.service';
 import { DolbyModeResponse } from 'src/app/data-models/audio/dolby-mode-response';
@@ -168,7 +168,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 		if (value) {
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, value);
 			if (this.wifiSecurity.isLocationServiceOn !== undefined) {
-				if (value === 'enabled' && this.wifiHomeViewModel.isLWSEnabled === true) {
+				if (value === 'enabled' && this.wifiSecurityService.isLWSEnabled === true) {
 					this.quickSettings[2].isChecked = true;
 				} else {
 					this.quickSettings[2].isChecked = false;
@@ -187,7 +187,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 						this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag, 'no');
 						this.wifiSecurity.enableWifiSecurity();
 					}
-					if (this.wifiHomeViewModel.isLWSEnabled) {
+					if (this.wifiSecurityService.isLWSEnabled) {
 						this.quickSettings[2].isChecked = true;
 					} else {
 						this.quickSettings[2].isChecked = false;
@@ -200,7 +200,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 	thermalModeEvent: any;
 
 	constructor(
-		public wifiHomeViewModel: WifiHomeViewModel,
+		public wifiSecurityService: WifiSecurityService,
 		private gamingCapabilityService: GamingAllCapabilitiesService,
 		private gamingThermalModeService: GamingThermalModeService,
 		private commonService: CommonService,
@@ -458,7 +458,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 			this.wifiSecurity.getWifiState().then((res) => { },(error) => {
 					this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
 				});
-			if (this.wifiHomeViewModel.isLWSEnabled) {
+			if (this.wifiSecurityService.isLWSEnabled) {
 				this.quickSettings[2].isChecked = true;
 			} else {
 				this.quickSettings[2].isChecked = false;
@@ -491,36 +491,36 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 
 	public async setWifiSecuritySettings(value: any) {
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInGamingDashboard) === true) {
-			if (this.wifiHomeViewModel.isLWSEnabled) {
-				this.wifiHomeViewModel.wifiSecurity.disableWifiSecurity().then((res) => {
+			if (this.wifiSecurityService.isLWSEnabled) {
+				this.wifiSecurityService.wifiSecurity.disableWifiSecurity().then((res) => {
 					if (res === true) {
-						this.wifiHomeViewModel.isLWSEnabled = false;
+						this.wifiSecurityService.isLWSEnabled = false;
 						this.quickSettings[2].isChecked = false;
 						this.quickSettings[2].readonly = true;
 					} else {
-						this.wifiHomeViewModel.isLWSEnabled = true;
+						this.wifiSecurityService.isLWSEnabled = true;
 						this.quickSettings[2].isChecked = true;
 						this.quickSettings[2].readonly = false;
 					}
 				});
 			} else {
-				this.wifiHomeViewModel.wifiSecurity.enableWifiSecurity().then(
+				this.wifiSecurityService.wifiSecurity.enableWifiSecurity().then(
 					(res) => {
 						if (res === true) {
-							this.wifiHomeViewModel.isLWSEnabled = true;
+							this.wifiSecurityService.isLWSEnabled = true;
 							this.quickSettings[2].isChecked = true;
 							this.quickSettings[2].readonly = false;
 						} else {
-							this.wifiHomeViewModel.isLWSEnabled = false;
+							this.wifiSecurityService.isLWSEnabled = false;
 							this.quickSettings[2].isChecked = false;
 							this.quickSettings[2].readonly = true;
 						}
 					},
 					(error) => {
-						this.dialogService.wifiSecurityLocationDialog(this.wifiHomeViewModel.wifiSecurity);
+						this.dialogService.wifiSecurityLocationDialog(this.wifiSecurityService.wifiSecurity);
 						this.quickSettings[2].isChecked = false;
 						this.quickSettings[2].readonly = true;
-						this.wifiHomeViewModel.isLWSEnabled = false;
+						this.wifiSecurityService.isLWSEnabled = false;
 					}
 				);
 			}

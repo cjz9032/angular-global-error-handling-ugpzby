@@ -18,7 +18,7 @@ interface WifiHistoryDetail {
 	providedIn: 'root'
 })
 
-export class WifiHomeViewModel {
+export class WifiSecurityService {
 	wifiSecurity: WifiSecurity;
 	isLWSEnabled: boolean;
 	histories: WifiHistoryDetail[] = [];
