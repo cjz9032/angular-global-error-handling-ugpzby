@@ -3798,7 +3798,8 @@
             "comments": "Please leave your comments here..."
         },
         "auto": "Auto",
-        "manual": "Manual"
+        "manual": "Manual",
+        "noScanResults": "Please click SCAN & FIX button to trigger scan process."
     },
     "homeSecurity": {
         "title": "Connected Home Security",
