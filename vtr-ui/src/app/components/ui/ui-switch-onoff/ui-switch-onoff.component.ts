@@ -19,7 +19,6 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 	@Input() tabIndex = 0;
 	@Input() isSwitchDisable = false;
 	@Input() ariaLabel: string;
-	@Input() showOnOff = true;
 	uiSubscription: Subscription;
 
 	size = 'switch-xs';

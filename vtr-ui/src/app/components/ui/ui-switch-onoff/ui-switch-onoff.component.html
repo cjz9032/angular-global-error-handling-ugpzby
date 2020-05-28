@@ -44,10 +44,6 @@
 			aria-hidden="true"
 			(click)="stopPropagation($event);"
 			(keydown.enter)="stopPropagation($event);">
-			<span [hidden]="!showOnOff" class="switch-label"
-				[ngClass]="{'off-label': !value, 'on-label': value}"
-				[innerText]="value ? switchOnText : switchOffText">
-			</span>
 			<small></small>
 		</span>
 	</label>
