@@ -8,6 +8,7 @@ import { ModernPreloadEnum } from 'src/app/enums/modern-preload.enum';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { ClipboardService } from 'ngx-clipboard';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
+import { WinRT } from '@lenovo/tan-client-bridge';
 
 @Component({
 	selector: 'vtr-modal-modern-preload',
@@ -274,6 +275,10 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 				this.isAppInstallError = true;
 			}
 		}
+	}
+
+	launchURL(url: string) {
+		WinRT.launchUri(url);
 	}
 
 	closeModal() {
