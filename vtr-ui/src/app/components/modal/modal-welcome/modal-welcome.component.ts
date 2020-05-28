@@ -252,7 +252,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			this.activeModal.close(tutorialData);
 			this.selfSelectService.saveConfig(false);
 			this.SetVantageToolbar(this.vantageToolbar);
-			this.metricService.handleWelcomeDone();
+			this.metricService.onWelcomePageDone();
 			this.initializerService.initializeAntivirus();
 		}
 		this.page = ++page;

@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, OnInit, HostListener, OnDestroy, Inject } from '@angular/core';
+import { Component, OnInit, HostListener, OnDestroy, Inject, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { DisplayService } from './services/display/display.service';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
@@ -43,7 +43,7 @@ declare var Windows;
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	machineInfo: any;
 	public isMachineInfoLoaded = false;
 	public isGaming: any = false;
@@ -212,7 +212,7 @@ export class AppComponent implements OnInit, OnDestroy {
 				welcomeNeeded = true;
 				this.openWelcomeModal(2, newTutorialVersion);
 			}
-			this.metricService.HandleCheckWelcomeNeeded(welcomeNeeded);
+			this.metricService.onCheckedWelcomePageNeeded(welcomeNeeded);
 		}
 	}
 
@@ -533,5 +533,9 @@ export class AppComponent implements OnInit, OnDestroy {
 			this.commonService.setSessionStorageValue(SessionStorageKey.FirstPageLoaded, true);
 		}
 		this.commonService.scrollTop();
+	}
+
+	ngAfterViewInit() {
+		this.metricService.onAppInitDone();
 	}
 }

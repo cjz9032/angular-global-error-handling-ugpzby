@@ -8,6 +8,7 @@ import { DeviceService } from '../device/device.service';
 import { DurationCounterService } from 'src/app/services/timer/timer-service-ex.service';
 import { GuardConstants } from './guard-constants';
 import { BasicGuard } from './basic-guard';
+import { MetricService } from '../metric/metrics.service';
 
 @Injectable({
 	providedIn: 'root',
@@ -30,15 +31,17 @@ export class GuardService extends BasicGuard {
 		private adPolicy: AdPolicyService,
 		private deviceService: DeviceService,
 		public guardConstants: GuardConstants,
-		private timerService: DurationCounterService) {
+		private timerService: DurationCounterService,
+		private metricsService: MetricService) {
 		super(commonService, guardConstants);
 		this.metrics = shellService.getMetrics();
 	}
 
 	canActivate(
-		activatedRouteSnapshot: ActivatedRouteSnapshot, 
+		activatedRouteSnapshot: ActivatedRouteSnapshot,
 		routerStateSnapshot: RouterStateSnapshot
 	): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+		this.metricsService.onPageRouteActivated();
 		this.focusDurationCounter = this.timerService.getFocusDurationCounter();
 		this.blurDurationCounter = this.timerService.getBlurDurationCounter();
 

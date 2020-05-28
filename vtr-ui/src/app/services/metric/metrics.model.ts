@@ -38,6 +38,8 @@ export class AppLoaded extends IMetricEvent {
 	}
 
 	public DurationForWeb: number;
+	public DurationActivatePage: number;
+	public TargePage: string;
 }
 
 export class ArticleDisplay extends IMetricEvent {
