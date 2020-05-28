@@ -51,6 +51,7 @@ $normalPadding: 2.4rem;
 
 		.form-check-inline {
 			margin-right: 2.5rem;
+			max-width: 3rem;
 
 			.form-check-input {
 				position: absolute;
@@ -79,6 +80,7 @@ $normalPadding: 2.4rem;
 			color: $shade_blue;
 			position: relative;
 			margin-bottom: 0;
+			text-indent: 0.5rem;
 
 			&::before,
 			&::after {
@@ -134,7 +136,7 @@ $normalPadding: 2.4rem;
 			display: flex;
 			justify-content: space-between;
 			flex-wrap: wrap;
-			margin: 0 -1rem;
+			margin: 0 0 0 -1rem;
 
 			.likely-text {
 				padding: 0 1rem;
