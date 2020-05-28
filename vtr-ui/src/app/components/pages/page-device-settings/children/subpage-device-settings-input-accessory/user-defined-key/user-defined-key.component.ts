@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -8,14 +8,14 @@ import { InputAccessoriesCapability } from 'src/app/data-models/input-accessorie
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
 import { keyboardMap } from './keyboardKeysMapping';
-
+declare var Windows;
 
 @Component({
 	selector: 'vtr-user-defined-key',
 	templateUrl: './user-defined-key.component.html',
 	styleUrls: ['./user-defined-key.component.scss']
 })
-export class UserDefinedKeyComponent implements OnInit {
+export class UserDefinedKeyComponent implements OnInit, OnDestroy {
 	@ViewChild('deleteKeyFocus') deleteKeyFocus: ElementRef;
 	title = 'device.deviceSettings.inputAccessories.title';
 	udkActionInfo: UDKActionInfo;
@@ -86,6 +86,7 @@ export class UserDefinedKeyComponent implements OnInit {
 
 	async getUDKCapability() {
 		try {
+			await this.keyboardService.StartSpecialKeyMonitor(Windows.Storage.ApplicationData.current.localFolder.path);
 			this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 			if (this.machineType === 1) {
 				let inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
@@ -320,9 +321,12 @@ export class UserDefinedKeyComponent implements OnInit {
 			event.preventDefault();
 		}
 	}
-	public invokeKeySequence(event) {
+	public async invokeKeySequence(event) {
 		event.preventDefault();
 		if (event.keyCode === 255 || (event.keyCode >= 173 && event.keyCode <= 222)) {
+			event.preventDefault();
+			event.key = ''
+		} else if (await this.checkSpecialKeyFileExistAndDelete()) {
 			event.preventDefault();
 			event.key = ''
 		}
@@ -380,5 +384,30 @@ export class UserDefinedKeyComponent implements OnInit {
 			return this.regExForUrlWithParam.test(url);
 		}
 		return false;
+	}
+
+	async checkSpecialKeyFileExistAndDelete() {
+		const specialKeyFileName = 'specialkey.txt';
+		const path = Windows.Storage.ApplicationData.current.localFolder.path;
+		let specialKeyFile = null;
+		let wasSpecialKeyPressed = false;
+		try {
+			const storageFolder = Windows.Storage.ApplicationData.current.localFolder;
+			specialKeyFile = await storageFolder.getFileAsync(specialKeyFileName);
+			wasSpecialKeyPressed = true;
+		} catch (error) {
+			wasSpecialKeyPressed = false;
+		}
+		if (wasSpecialKeyPressed) {
+			if (specialKeyFile != null) {
+				await specialKeyFile.deleteAsync();
+			}
+			return wasSpecialKeyPressed;
+		}
+		return false;
+	}
+
+	ngOnDestroy() {
+		this.keyboardService.EndSpecialKeyMonitor();
 	}
 }
