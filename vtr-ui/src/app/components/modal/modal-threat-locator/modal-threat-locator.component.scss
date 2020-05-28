@@ -2,6 +2,7 @@
 
 .vtr-modal-threat-locator {
 	position: relative;
+	outline: none;
 	&.modal-body {
 		padding: 0;
 	}
@@ -10,7 +11,6 @@
 		font-size: 3.1rem;
 		font-weight: normal;
 		color: $blue-dark;
-		margin-bottom: 3rem;
 	}
 	.disabled-network {
 		font-weight: normal;
