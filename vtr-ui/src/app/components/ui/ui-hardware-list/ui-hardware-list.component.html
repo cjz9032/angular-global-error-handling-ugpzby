@@ -6,8 +6,8 @@
 					<div class="item-left">
 						<div class="test-status" *ngIf="item.status >= 0">
 							<div [ngSwitch]="item.status">
-								<!--Aria-hidden defined as true to ignore faicon selection and defined a span with description to the icon-->
-								<fa-icon aria-label="status-loading-icon" role="img" class="loading" [icon]="['fas', 'circle-notch']" [spin]="true" *ngSwitchCase="0"></fa-icon>
+								<!--Defined an aria-label property with description to the icon-->
+								<fa-icon aria-label="status-loading" role="img" class="loading" [icon]="['fas', 'circle-notch']" [spin]="true" *ngSwitchCase="0"></fa-icon>
 
 								<span class="progress-value-text" *ngSwitchCase="1">{{item.percent}}%</span>
 
