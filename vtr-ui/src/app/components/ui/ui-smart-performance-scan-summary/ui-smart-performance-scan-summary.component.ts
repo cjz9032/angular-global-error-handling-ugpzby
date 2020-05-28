@@ -145,7 +145,6 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		if (cacheMachineFamilyName) {
 			this.machineFamilyName = cacheMachineFamilyName;
 		}
-		this.issueCount = this.tune + this.boost + this.secure;
 		// this.leftAnimatorCalc = ((this.rating*10) - 1);
 		this.currentDate = new Date();
 		this.selectedDate = this.calendar.getToday();
@@ -254,6 +253,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	}
 	// tslint:disable-next-line: use-lifecycle-interface
 	ngAfterViewInit() {
+		this.issueCount = this.tune + this.boost + this.secure;
 		this.leftAnimator = (this.rating * 10 - 0).toString() + '%';
 	}
 	expandRow(value) {
