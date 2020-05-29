@@ -7,9 +7,9 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
-	selector: "vtr-modal-smart-performance-cancel",
-	templateUrl: "./modal-smart-performance-cancel.component.html",
-	styleUrls: ["./modal-smart-performance-cancel.component.scss"],
+	selector: 'vtr-modal-smart-performance-cancel',
+	templateUrl: './modal-smart-performance-cancel.component.html',
+	styleUrls: ['./modal-smart-performance-cancel.component.scss'],
 })
 export class ModalSmartPerformanceCancelComponent implements OnInit {
 	@Input() promptMsg: boolean = false;
@@ -51,34 +51,35 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
 	private stopCountdown() {
 		clearInterval(this.timerRef);
 	}
-	@HostListener("window: focus")
+	@HostListener('window: focus')
 	onFocus(): void {
-		const modal = document.querySelector(".cancel-modal") as HTMLElement;
+		const modal = document.querySelector('.cancel-modal') as HTMLElement;
 		modal.focus();
 	}
 
 	public async cancelScan() {
+		if (this.timerRef) {
+			this.stopCountdown()
+		}
 		try {
 			this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, true);
 			this.isLoading = true;
-			await this.smartPerformanceService.cancelScan().then((cancelScanFromService: any) => {
-				if (cancelScanFromService) {
-					
-					// emiting cancel in smart performance scanning component.
-					this.cancelRequested.emit();
-					if (this.timerRef) {
-						this.stopCountdown()
-					}
-					// de-activates the pop-up,
-					this.activeModal.close(true);
-					// if (this.promptMsg) {
-					// 	this.promptMsg = false;
-					// }
+			const cancelScanFromService = await this.smartPerformanceService.cancelScan();
+			this.logger.info('modal-smart-performance-cancel.cancelScan', cancelScanFromService);
+			if (cancelScanFromService) {
+				//  emiting cancel in smart performance scanning component.
+				this.cancelRequested.emit();
 
-				}
-			})
+				//  de-activates the pop-up,
+				this.activeModal.close(true);
+				//  if (this.promptMsg) {
+				//   this.promptMsg = false;
+				//  }
+
+			}
+
 		} catch (err) {
-			this.logger.error("Error while leaving page", err.message);
+			this.logger.error('Error while leaving page', err.message);
 		}
 	}
 
