@@ -425,13 +425,14 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				this.initComponent();
 			})
 			.finally(() => {
-				const metricsResult = this.getMetricsTaskResult();
-				this.sendTaskActionMetrics(this.hardwareScanService.getCurrentTaskType(), metricsResult.countSuccesses,
-					'', metricsResult.scanResultJson, this.timerService.stop());
 				this.cleaningUpScan(undefined);
 
 				// Defines information about module details
 				this.onViewResults();
+
+				const metricsResult = this.getMetricsTaskResult();
+				this.sendTaskActionMetrics(this.hardwareScanService.getCurrentTaskType(), metricsResult.countSuccesses,
+					'', metricsResult.scanResultJson, this.timerService.stop());
 			});
 		}
 	}
