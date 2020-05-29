@@ -138,6 +138,10 @@ export class UserDefinedKeyComponent implements OnInit, OnDestroy {
 									this.fileList.push({ value: data.value, key: data.key });
 								}
 							}
+							if (previousAppsFiles.length > 0) {
+								this.showUDFSetSuccessMessage(OPEN_APPLICATIONS_OR_FILES.str);
+							}
+
 						}
 					} catch (error) {
 					}
@@ -212,10 +216,12 @@ export class UserDefinedKeyComponent implements OnInit, OnDestroy {
 			if (this.keyboardService.isShellAvailable) {
 				this.keyboardService.setUserDefinedKeySetting(type, actionType, settingKey, settingValue)
 					.then((value: any) => {
-						this.showUDFSetSuccessMessage(settingKey);
-						this.udkFormSubmitted = false;
-						this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions, '1');
-						this.logger.info('keyboard setUDKTypeList here -------------.>', value);
+						if (!(settingKey === 'LAUNCH_APPLICATION_FILE')) {
+							this.showUDFSetSuccessMessage(settingKey);
+							this.udkFormSubmitted = false;
+							this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions, '1');
+							this.logger.info('keyboard setUDKTypeList here -------------.>', value);
+						}
 					}).catch(error => {
 						this.logger.error('keyboard setUDKTypeList error here', error.message);
 						return EMPTY;

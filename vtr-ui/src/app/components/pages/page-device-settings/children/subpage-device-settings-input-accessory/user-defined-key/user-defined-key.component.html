@@ -321,6 +321,14 @@
 										</div>
 									</div>
 								</form>
+								<div class="col-12">
+									<div *ngIf="isUDFSetSuccessVisible"
+										class="select-text pt-3 udf-set-success"
+										id="userDefinedKey.website.successMessage"
+										attr.aria-label="userDefinedKey.website.successMessage">
+										{{'device.deviceSettings.inputAccessories.userDefinedKey.website.successMessage'| translate}}
+									</div>
+								</div>
 							</div>
 							<div class="col"
 								*ngIf="selectedValue.value == 5">
