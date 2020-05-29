@@ -2432,7 +2432,7 @@
             "basicDesc": "Az eszközön csak az alapvető biztonsági védelem van engedélyezve. A jobb védelem érdekében próbálja engedélyezni az UAC-értesítéseket és használjon jelszókezelőt.",
             "intermediate": "KÖZEPES",
             "intermediateTitle": "Közepes védelem",
-            "intermediateDesc": "Szép munka! Csak egy lépésre áll a komplex védelemtől, próbálja ki az adatok titkosítását és a hálózati biztonsági incidensek figyelését.",
+            "intermediateDesc": "Szép munka! Már csak egyetlen lépés választja el a komplex védelmi szint elérésétől. A következő szint eléréséhez próbálja ki az adatok titkosítását és a hálózati biztonsági incidensek figyelését.",
             "advanced": "KOMPLEX",
             "advancedTitle": "Komplex védelem",
             "advancedDesc": "Gratulálunk! Az eszközön alap-, közepes- vagy komplex biztonsági védelem van engedélyezve, nagyszerű munka!",

@@ -2432,7 +2432,7 @@
             "basicDesc": "Urządzenie ma zapewnioną tylko podstawową ochronę. Aby zapewnić sobie lepszą ochronę, włącz powiadomienia kontroli konta użytkownika i korzystaj z menedżera haseł.",
             "intermediate": "POŚREDNIA",
             "intermediateTitle": "Pośrednia ochrona",
-            "intermediateDesc": "Brawo! Jesteś o krok od uzyskania zaawansowanej ochrony — spróbuj zaszyfrować dane i monitorować sieć pod kątem naruszeń zabezpieczeń.",
+            "intermediateDesc": "Brawo! Tylko krok dzieli Cię od uzyskania zaawansowanego poziomu ochrony. Spróbuj zaszyfrować dane i monitorować sieć pod kątem naruszeń zabezpieczeń, aby przejść na wyższy poziom.",
             "advanced": "ZAAWANSOWANA",
             "advancedTitle": "Zaawansowana ochrona",
             "advancedDesc": "Gratulacje! Twoje urządzenie ma zapewnioną podstawową, pośrednią i zaawansowaną ochronę, świetna robota!",

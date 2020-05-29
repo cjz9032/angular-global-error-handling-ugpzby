@@ -2432,7 +2432,7 @@
             "basicDesc": "Vaša naprava ima omogočeno le osnovno varnostno zaščito. Za boljšo zaščito omogočite obvestila UAC in uporabite upravitelja gesel.",
             "intermediate": "SREDNJA",
             "intermediateTitle": "Srednja zaščita",
-            "intermediateDesc": "Odlično! Še korak vam manjka do dodatne zaščite. Šifrirajte podatke in spremljajte kršitve varnosti omrežja.",
+            "intermediateDesc": "Odlično! Le še en korak vas loči od napredne ravni zaščite. Poskusite šifrirati podatke in spremljati kršitve varnosti omrežja, da dosežete naslednjo raven.",
             "advanced": "DODATNA",
             "advancedTitle": "Dodatna zaščita",
             "advancedDesc": "Čestitamo! Vaša naprava ima omogočeno osnovno, srednjo in dodatno varnostno zaščito. Odlično!",

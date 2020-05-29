@@ -2432,7 +2432,7 @@
             "basicDesc": "Din enhed har kun grundlæggende sikkerhedsbeskyttelse aktiveret. Prøv at aktivere UAC-meddelelser og bruge Password Manager for at få bedre beskyttelse.",
             "intermediate": "MELLEM",
             "intermediateTitle": "Mellem beskyttelse",
-            "intermediateDesc": "Godt gået! Du er kun ét skridt fra at få avanceret beskyttelse. Prøv at kryptere dine data og overvåge sikkerhedsbrud i dit netværk.",
+            "intermediateDesc": "Godt gået! Du er kun ét skridt fra at nå det udvidede beskyttelsesniveau. Prøv at kryptere dine data og overvåge sikkerhedsbrud i dit netværk for at nå det næste niveau.",
             "advanced": "UDVIDET",
             "advancedTitle": "Avanceret beskyttelse",
             "advancedDesc": "Tillykke. Din enhed har grundlæggende, mellem og avanceret sikkerhedsbeskyttelse aktiveret, godt gået!",

@@ -2432,7 +2432,7 @@
             "basicDesc": "Na uređaju je omogućena samo osnovna sigurnosna zaštita. Za bolju zaštitu pokušajte omogućiti UAC obavijesti i koristiti upravitelj lozinkama.",
             "intermediate": "SREDNJE",
             "intermediateTitle": "Srednja zaštita",
-            "intermediateDesc": "Dobro obavljeno! Na korak ste od ostvarivanja napredne zaštite, pokušajte šifrirati svoje podatke i nadzirati kršenja mrežne sigurnosti.",
+            "intermediateDesc": "Dobro obavljeno! Nalazite se samo na korak od postizanja napredne razine zaštite. Pokušajte kriptirati svoje podatke i pratiti kršenja mrežne sigurnosti kako biste postigli sljedeću razinu.",
             "advanced": "NAPREDNO",
             "advancedTitle": "Napredna zaštita",
             "advancedDesc": "Čestitamo! Odlično, vaš uređaj ima omogućenu osnovnu, srednju i naprednu sigurnosnu zaštitu!",

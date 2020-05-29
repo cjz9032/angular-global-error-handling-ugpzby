@@ -3208,7 +3208,7 @@
 			"basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
 			"intermediate": "INTERMEDIATE",
 			"intermediateTitle": "Intermediate protection",
-			"intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
+			"intermediateDesc": "Good job! You are only one step away from reaching the advanced protection level. Try encrypting your data and monitoring your network security breaches to reach the next level.",
 			"advanced": "ADVANCED",
 			"advancedTitle": "Advanced protection",
 			"advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
