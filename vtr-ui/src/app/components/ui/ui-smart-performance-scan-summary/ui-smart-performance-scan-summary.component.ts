@@ -86,6 +86,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	isDropDownOpen: boolean;
 	dropDownToggle: boolean;
 	currentDate: any;
+	currentDateLocalFormat: any;
 	fromDate: any;
 	toDate: any;
 	selectedDate: any;
@@ -138,6 +139,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		}
 	];
 	ngOnInit() {
+		this.smartPerformanceService.scanningStopped.next(true)
 		const cacheMachineFamilyName = this.commonService.getLocalStorageValue(
 			LocalStorageKey.MachineFamilyName,
 			undefined
@@ -147,6 +149,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		}
 		// this.leftAnimatorCalc = ((this.rating*10) - 1);
 		this.currentDate = new Date();
+		this.currentDateLocalFormat = this.formatLocaleDate.transform(this.currentDate);
 		this.selectedDate = this.calendar.getToday();
 		this.toDate = this.selectedDate;
 		this.fromDate = this.selectedDate;
@@ -169,7 +172,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.minDate = {
 			year: this.currentDate.getFullYear() - 1,
 			month: this.currentDate.getMonth() + 1,
-			day: this.currentDate.getDate() 
+			day: this.currentDate.getDate() + 1
 		};
 		this.maxDate = {
 			year: this.currentDate.getFullYear(),

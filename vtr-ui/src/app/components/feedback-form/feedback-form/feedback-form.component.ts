@@ -5,6 +5,15 @@ import { VantageShellService } from '../../../services/vantage-shell/vantage-she
 import { DeviceService } from 'src/app/services/device/device.service';
 import { KeyCode } from 'src/app/enums/key-code.enum';
 
+interface IQuestion {
+	likelyValues?: number[]
+	idYes?: string
+	idNo?: string
+	hideInArm?: boolean
+	name: string
+	question: string
+}
+
 @Component({
 	selector: 'vtr-feedback-form',
 	templateUrl: './feedback-form.component.html',
@@ -19,7 +28,7 @@ export class FeedbackFormComponent implements OnInit {
 
 	private metrics: any;
 
-	questions = [
+	questions: IQuestion[] = [
 		{
 			likelyValues: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
 			name: 'remommendVantageToFriend',
@@ -29,12 +38,14 @@ export class FeedbackFormComponent implements OnInit {
 			idYes: 'feedback-su-awareness-yes',
 			idNo: 'feedback-su-awareness-no',
 			name: 'systemUpdateAwareness',
+			hideInArm: true,
 			question: 'dashboard.feedback.form.question7'
 		},
 		{
 			idYes: 'feedback-cus-support-usage-yes',
 			idNo: 'feedback-cus-support-usage-no',
 			name: 'cusSupportusage',
+			hideInArm: true,
 			question: 'dashboard.feedback.form.question8'
 		}
 	];
@@ -51,6 +62,9 @@ export class FeedbackFormComponent implements OnInit {
 	ngOnInit() {
 		this.createFeedbackForm();
 		this.getCurrentRegion();
+		if (this.deviceService.isArm) {
+			this.questions = this.questions.filter(q => !q.hideInArm);
+		}
 	}
 
 	 getCurrentRegion() {

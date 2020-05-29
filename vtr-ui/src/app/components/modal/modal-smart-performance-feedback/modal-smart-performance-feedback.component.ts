@@ -169,7 +169,7 @@ export class ModalSmartPerformanceFeedbackComponent implements OnInit {
 
 		const data = {
 			ItemType: 'UserFeedback',
-			ItemName: 'Submit',
+			ItemName: 'sp.submitfeedback',
 			ItemParent: 'SmartPerformance.Dialog.Feedback',
 			Content: formData.fbComment,
 			Subscribed: this.isSubscribed,

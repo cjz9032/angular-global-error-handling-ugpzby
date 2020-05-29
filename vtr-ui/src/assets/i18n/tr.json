@@ -2432,7 +2432,7 @@
             "basicDesc": "Cihazınızda yalnızca temel güvenlik koruması etkin. Daha iyi koruma için UAC bildirimlerini etkinleştirmeyi ve bir parola yöneticisi kullanmayı deneyin.",
             "intermediate": "ORTA DÜZEY",
             "intermediateTitle": "Orta düzey koruma",
-            "intermediateDesc": "Tebrikler! Gelişmiş koruma almak için yalnızca bir adımınız kaldı, verilerinizi şifrelemeyi ve ağ güvenliği ihlallerinizi izlemeyi deneyin.",
+            "intermediateDesc": "Tebrikler! Gelişmiş koruma düzeyinden yalnızca bir adım uzaktasınız. Bir sonraki düzeye ulaşmak için verilerinizi şifrelemeyi ve ağ güvenliği ihlallerinizi izlemeyi deneyin.",
             "advanced": "GELİŞMİŞ",
             "advancedTitle": "Gelişmiş koruma",
             "advancedDesc": "Tebrikler! Cihazınızda temel, orta ve gelişmiş güvenlik koruması etkin, harika bir iş çıkardınız!",

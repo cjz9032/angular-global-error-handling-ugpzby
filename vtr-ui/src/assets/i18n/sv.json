@@ -2432,7 +2432,7 @@
             "basicDesc": "Din enhet har endast grundläggande säkerhetsskydd aktiverat. För att få bättre skydd kan du prova att aktivera UAC-meddelanden och använda en lösenordshanterare.",
             "intermediate": "MEDEL",
             "intermediateTitle": "Medelstarkt skydd",
-            "intermediateDesc": "Bra! Du är bara ett steg ifrån att få avancerat skydd. Prova att kryptera dina data och övervaka säkerhetsintrången i nätverket.",
+            "intermediateDesc": "Bra! Du är bara ett steg ifrån att nå den avancerade skyddsnivån. Prova att kryptera dina data och övervaka säkerhetsintrången i nätverket för att nå nästa nivå.",
             "advanced": "AVANCERAT",
             "advancedTitle": "Avancerat skydd",
             "advancedDesc": "Du har tur! Utmärkt, din enhet har grundläggande, medelstarkt och avancerat säkerhetsskydd aktiverat!",

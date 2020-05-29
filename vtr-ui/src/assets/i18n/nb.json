@@ -2432,7 +2432,7 @@
             "basicDesc": "Enheten har bare grunnleggende sikkerhetsbeskyttelse aktivert. For bedre beskyttelse kan du prøve å aktivere UAC-varslinger og bruke passordbehandling.",
             "intermediate": "MIDDELS",
             "intermediateTitle": "Middels beskyttelse",
-            "intermediateDesc": "Bra jobba! Du er bare ett skritt unna avansert beskyttelse. Prøv å kryptere dataene dine og overvåke brudd på nettverkssikkerheten.",
+            "intermediateDesc": "Bra jobba! Du er bare ett trinn unna å nå nivået for avanserte beskyttelse. Prøv å kryptere dataene dine og overvåke nettverkssikkerhetsbruddene for å komme til det neste nivået.",
             "advanced": "AVANSERT",
             "advancedTitle": "Avansert beskyttelse",
             "advancedDesc": "Gratulerer! Enheten har grunnleggende, middels og avansert sikkerhetsbeskyttelse aktivert. Godt jobba!",

@@ -2432,7 +2432,7 @@
             "basicDesc": "Zařízení má povoleno pouze základní zabezpečení. Chcete-li se chránit lépe, zkuste zapnout oznámení UAC a používat správce hesel.",
             "intermediate": "STŘEDNĚ POKROČILÉ",
             "intermediateTitle": "Středně pokročilá ochrana",
-            "intermediateDesc": "Dobrá práce! Od rozšířené ochrany vás dělí jen krok. Zkuste zašifrovat svá data a sledovat, zda vaši síť něco neohrožuje.",
+            "intermediateDesc": "Dobrá práce! Jste jen krůček od dosažení pokročilé úrovně ochrany. Abyste dosáhli další úrovně, zkuste šifrovat svá data a sledovat porušení zabezpečení své sítě.",
             "advanced": "ROZŠÍŘENÉ",
             "advancedTitle": "Rozšířená ochrana",
             "advancedDesc": "Gratulujeme! Vaše zařízení má aktivní základní, středně pokročilé i rozšířené zabezpečení. Dobrá práce!",

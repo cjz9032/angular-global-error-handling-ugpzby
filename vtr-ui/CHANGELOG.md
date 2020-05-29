@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.65](https://bitbucket.tc.lenovo.com///compare/v1.5.64...v1.5.65) (2020-05-29)
+
+
+### Bug Fixes
+
+* modify the intermediate protection description ([bcb6490](https://bitbucket.tc.lenovo.com///commit/bcb649048800519fe509ea8d1f6000df44236c6f))
+
 ### [1.5.64](https://bitbucket.tc.lenovo.com///compare/v1.5.63...v1.5.64) (2020-05-29)
 
 ### [1.5.63](https://bitbucket.tc.lenovo.com///compare/v1.5.62...v1.5.63) (2020-05-28)

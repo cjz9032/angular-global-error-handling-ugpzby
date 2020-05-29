@@ -1,39 +1,60 @@
 <div class="vtr-widget-device">
 	<div class="container-fluid my-dev-pad">
 		<div class="d-flex device-status">
-			<div class="col device-info"
-				>
+			<div class="col device-info">
 				<div class="family"
 					id="myDevice-machine-info"
 					role="text">{{myDevice.family}}</div>
 				<div class="col-12 px-0 {{'dirClass' | translate}}">
 					<span class="sub-header-separator">
-						<fa-icon [icon]="['fas', 'minus']"></fa-icon>
+						<fa-icon [icon]="['fas', 'minus']"
+							role="img"
+							attr.aria-label="minus-{{'device.myDevice.serial' | translate}}">
+						</fa-icon>
 					</span>
 					<span class="device-sub-header">
-						<span class="{{'dirClass' | translate}}" id="myDevice-serial" role="text"
-							dir="{{'dir' | translate}}">{{'device.myDevice.serial' | translate}}</span>:
-						<span id="myDevice-serial-value" role="text">{{myDevice.sn}}</span>
+						<span class="{{'dirClass' | translate}}"
+							id="myDevice-serial"
+							role="text"
+							dir="{{'dir' | translate}}">{{'device.myDevice.serial' | translate}}
+						</span>:
+						<span id="myDevice-serial-value"
+							role="text">{{myDevice.sn}}
+						</span>
 					</span>
 				</div>
 				<div class="col-12 px-0">
 					<span class="sub-header-separator">
-						<fa-icon [icon]="['fas', 'minus']"></fa-icon>
+						<fa-icon [icon]="['fas', 'minus']"
+							role="img"
+							attr.aria-label="minus-{{'device.myDevice.productNumber' | translate}}">
+						</fa-icon>
 					</span>
 					<span class="device-sub-header">
-						<span class="{{'dirClass' | translate}}" id="myDevice-product-number" role="text"
+						<span class="{{'dirClass' | translate}}"
+							id="myDevice-product-number"
+							role="text"
 							dir="{{'dir' | translate}}">{{'device.myDevice.productNumber' | translate}}</span>:
-						<span id="myDevice-product-number-value" role="text">{{myDevice.productNo}}</span>
+						<span id="myDevice-product-number-value"
+							role="text">{{myDevice.productNo}}</span>
 					</span>
 				</div>
 				<div class="col-12 px-0">
 					<span class="sub-header-separator">
-						<fa-icon [icon]="['fas', 'minus']"></fa-icon>
+						<fa-icon [icon]="['fas', 'minus']"
+							role="img"
+							attr.aria-label="minus-{{'device.myDevice.biosVersion'|translate}}">
+						</fa-icon>
 					</span>
 					<span class="device-sub-header">
-						<span class="{{'dirClass' | translate}}" id="myDevice-bios-version" role="text"
-							dir="{{'dir' | translate}}">{{'device.myDevice.biosVersion'|translate}}</span>:
-						<span id="myDevice-bios-version-value" role="text">{{myDevice.bios}}</span>
+						<span class="{{'dirClass' | translate}}"
+							id="myDevice-bios-version"
+							role="text"
+							dir="{{'dir' | translate}}">{{'device.myDevice.biosVersion'|translate}}
+						</span>:
+						<span id="myDevice-bios-version-value"
+							role="text">{{myDevice.bios}}
+						</span>
 					</span>
 				</div>
 			</div>
@@ -64,7 +85,8 @@
 		</div>
 		<div class="row">
 			<div class="col">
-				<ul class="status-list" id="myDevice-status-list">
+				<ul class="status-list"
+					id="myDevice-status-list">
 					<li *ngFor="let item of deviceStatus; let i=index"
 						[ngClass]="[!item.status?'good':'bad']"
 						[hidden]="item.isHidden">
@@ -72,7 +94,11 @@
 							<div class="d-flex align-items-center {{'dirClass' | translate}}">
 								<div class="status-icon">
 									<div class="icon-bkg">
-										<fa-icon [icon]="['fas', !item.status?'check':'times']"></fa-icon>
+										<fa-icon role="img"
+											[attr.aria-label]="'myDevice-system-details-'+item.title
+										+'-status-'+(!item.status?'check':'times')"
+											[icon]="['fas', !item.status?'check':'times']">
+										</fa-icon>
 									</div>
 								</div>
 								<div class="d-flex status-content justify-content-between">
@@ -99,15 +125,20 @@
 										metricsEvent="itemClick"
 										[metricsValue]="'link.'+item.id"
 										id="myDevice-status-learn-more-{{item.id}}"
-										title=""
+										role="link"
+										attr.aria-label="{{item.detail}}"
 										*ngIf="item.isSystemLink===undefined || (item.isSystemLink!==undefined && item.isSystemLink===false && item.status !== 4)"
-										[ngbTooltip]="item.detail" tooltipClass="vtr-system-tooltip" container="body"
-										>
+										[ngbTooltip]="item.detail"
+										tooltipClass="vtr-system-tooltip"
+										container="body">
 										<p class="detail"
 											[ngClass]="{'highlight':item.asLink}">
 											<span class="{{'dirClass' | translate}}"
-												dir="{{'dir' | translate}}">{{item.detail}}&nbsp;<fa-icon
-													[icon]="['fas', 'arrow-right']"></fa-icon></span>
+												dir="{{'dir' | translate}}">{{item.detail}}&nbsp;
+												<fa-icon [icon]="['fas', 'arrow-right']"
+													role="img"
+													attr.aria-label="arrow-right-{{item.detail}}">
+												</fa-icon></span>
 										</p>
 									</a>
 									<!--Open Windows Settings /subapges if isSystemLink is not undefined or  then sanitise URL of windows settings page like (ms-settings:storagesense) , link href instead of routerlink value is set to URL-->
@@ -118,15 +149,21 @@
 										[metricsValue]="'link.'+item.id"
 										href="javascript:void(0);"
 										id="myDevice-status-learn-more-{{item.id}}"
-										title=""
+										role="link"
+										attr.aria-label="{{item.detail}}"
 										(click)="deviceService.launchUri(item.path)"
-										[ngbTooltip]="item.detail" tooltipClass="vtr-system-tooltip" container="body"
-										>
+										[ngbTooltip]="item.detail"
+										tooltipClass="vtr-system-tooltip"
+										container="body">
 										<p class="detail"
 											[ngClass]="{'highlight':item.asLink}">
 											<span class="{{'dirClass' | translate}}"
-												dir="{{'dir' | translate}}">{{item.detail}}&nbsp;<fa-icon
-													[icon]="['fas', 'arrow-right']"></fa-icon></span>
+												dir="{{'dir' | translate}}">{{item.detail}}&nbsp;
+												<fa-icon [icon]="['fas', 'arrow-right']"
+													role="img"
+													attr.aria-label="arrow-right-{{item.detail}}">
+												</fa-icon>
+											</span>
 										</p>
 									</a>
 									<!-- <div class="arrow">

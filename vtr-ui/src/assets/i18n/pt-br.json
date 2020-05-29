@@ -2432,7 +2432,7 @@
             "basicDesc": "Seu dispositivo possui apenas a proteção básica de segurança ativada. Para uma melhor proteção, tente ativar as notificações UAC e usar um password manager.",
             "intermediate": "INTERMEDIÁRIA",
             "intermediateTitle": "Proteção intermediária",
-            "intermediateDesc": "Bom trabalho! Você está a apenas um passo de obter proteção avançada, tente criptografar seus dados e monitorar as violações de segurança da rede.",
+            "intermediateDesc": "Bom trabalho! Você está a apenas um passo de alcançar o nível de proteção avançado. Tente criptografar seus dados e monitorar as violações de segurança da rede para alcançar o próximo nível.",
             "advanced": "AVANÇADO",
             "advancedTitle": "Proteção avançada",
             "advancedDesc": "Parabéns! Seu dispositivo possui proteção de segurança básica, intermediária e avançada ativada, ótimo trabalho!",

@@ -573,31 +573,27 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	}
 
 	getHPDAdvancedSetting() {
-		if (this.smartAssist.isHPDShellAvailable) {
-			this.smartAssist.getHPDAdvancedSetting()
-				.then((response) => {
-					this.zeroTouchLoginShowAdvancedSection = response.zeroTouchLoginAdvanced;
-					this.zeroTouchLockShowAdvancedSection = response.zeroTouchLockAdvanced;
-				});
-		}
+		this.smartAssist.getHPDAdvancedSetting()
+			.then((response) => {
+				this.zeroTouchLoginShowAdvancedSection = response.zeroTouchLoginAdvanced;
+				this.zeroTouchLockShowAdvancedSection = response.zeroTouchLockAdvanced;
+			});
 	}
 
 	setHPDAdvancedSetting(section: string) {
-		if (this.smartAssist.isHPDShellAvailable) {
-			const value = section === 'zeroTouchLogin' ? !this.zeroTouchLoginShowAdvancedSection : !this.zeroTouchLockShowAdvancedSection;
-			this.smartAssist.setHPDAdvancedSetting(section, value)
-				.then((response) => {
-					if (response) {
-						this.getHPDAdvancedSetting();
-					}
-					const metricsData = {
-						itemParent: 'Device.SmartAssist',
-						itemName: section + '-advancedSettings',
-						value
-					};
-					this.metrics.sendMetrics(metricsData);
-				});
-		}
+		const value = section === 'zeroTouchLogin' ? !this.zeroTouchLoginShowAdvancedSection : !this.zeroTouchLockShowAdvancedSection;
+		this.smartAssist.setHPDAdvancedSetting(section, value)
+			.then((response) => {
+				if (response) {
+					this.getHPDAdvancedSetting();
+				}
+				const metricsData = {
+					itemParent: 'Device.SmartAssist',
+					itemName: section + '-advancedSettings',
+					value
+				};
+				this.metrics.sendMetrics(metricsData);
+			});
 	}
 
 	public getHsaIntelligentSecurityStatus() {

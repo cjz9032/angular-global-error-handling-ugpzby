@@ -2432,7 +2432,7 @@
             "basicDesc": "Seule la protection de sécurité de base est activée sur votre appareil. Pour une meilleure protection, essayez d'activer les notifications UAC et d'utiliser un Password Manager.",
             "intermediate": "INTERMEDIAIRE",
             "intermediateTitle": "Protection intermédiaire",
-            "intermediateDesc": "Bon travail ! Vous n'êtes plus très loin d'obtenir une protection avancée, essayez de chiffrer vos données et d'analyser les failles de sécurité de votre réseau.",
+            "intermediateDesc": "Bon travail ! Il ne vous manque qu'une seule étape pour atteindre le niveau de protection avancé. Essayez de chiffrer vos données et de surveiller les failles de sécurité de votre réseau pour atteindre le niveau supérieur.",
             "advanced": "AVANCE",
             "advancedTitle": "Protection avancée",
             "advancedDesc": "Félicitations ! Votre appareil bénéficie d'une protection de sécurité de base, intermédiaire et avancée, bon travail !",

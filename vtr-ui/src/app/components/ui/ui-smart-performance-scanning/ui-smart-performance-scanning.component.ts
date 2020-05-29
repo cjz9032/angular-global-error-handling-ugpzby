@@ -71,6 +71,7 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 	) { }
 
 	ngOnInit() {
+		this.smartPerformanceService.scanningStopped.next(false)
 		this.percent=0;
 		this.spCategoryenum = SPCategory;
 		this.spSubCategoryenum = SPSubCategory;

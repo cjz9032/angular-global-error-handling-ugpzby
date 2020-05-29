@@ -259,38 +259,48 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			const tabElements = Array.from(document.querySelectorAll('[tabindex]:not([tabindex=\'-1\']'));
 			/// const tabElements = Array.from(document.querySelectorAll('[tabIndex = \'1\']'));
 			const curElementTabIndex = tabElements.indexOf(sourceElement);
-			let nextIndex;
-
+			// SHIFT+TAB
 			if ($event.shiftKey && $event.keyCode === 9) {
 				// if previous tabbable element not in the current active dropdown menu then close menu
-				if (anchors.indexOf(tabElements[curElementTabIndex - 1]) === -1) {
-					const element = tabElements[curElementTabIndex - 1] as HTMLElement;
+				const element = tabElements[curElementTabIndex - 1] as HTMLElement;
+				if (element.getAttribute('class').includes('dropdown-item')) {
 					$event.stopPropagation();
 					$event.preventDefault();
 					element.focus();
-					// console.log('ShIFT tab curElementTabIndex closing current element curElementTabIndex')
-					activeDropdown.close();
+				}
+				if (element.id === 'navbarDropdown' && anchors.indexOf(sourceElement)) {
+					(tabElements[curElementTabIndex - 1] as HTMLElement).focus();
+				}
+				else {
+					if (anchors.indexOf(element) === -1) {
+						$event.stopPropagation();
+						$event.preventDefault();
+						element.focus();
+						// console.log('ShIFT tab curElementTabIndex closing current element curElementTabIndex')
+						activeDropdown.close();
+					}
 				}
 
 			}
-
-			if ($event.keyCode === 9) {
+			// TAB
+			if (!$event.shiftKey && $event.keyCode === 9) {
 				// if next tabbable element not in the current active dropdown menu then close menu
-				if (anchors.indexOf(tabElements[curElementTabIndex + 1]) === -1) {
-					const element = tabElements[curElementTabIndex + 1] as HTMLElement;
+				const element = tabElements[curElementTabIndex + 1] as HTMLElement;
+				if (anchors.indexOf(element) === -1) {
 					$event.stopPropagation();
 					$event.preventDefault();
-
 					element.focus();
-					//console.log('tab curElementTabIndex closing current element curElementTabIndex');
+					if (element.id === 'navbarDropdown') {
+						// console.log(element.innerText);
+						const next = tabElements[curElementTabIndex + 2] as HTMLElement;
+						next.focus();
+					}
+
+					// console.log('tab curElementTabIndex closing current element curElementTabIndex');
 					activeDropdown.close();
 
 				}
-				/* nextIndex = currentIndex + 1;
-				if (nextIndex > anchors.length) {
-					activeDropdown.close();
-					// this.closeAllDD();
-				} */
+
 			}
 		}
 
@@ -459,6 +469,13 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		if (isActive && this.searchTipsTimeout) {
 			this.searchTipsTimeout = clearTimeout(this.searchTipsTimeout);
 			this.searchTipsTimeout = null;
+		}
+	}
+
+	onFocusMenuDropDown(menuDropDown) {
+		this.closeAllOtherDD(menuDropDown);
+		if (!this.modalService.hasOpenModals()) {
+			menuDropDown.open();
 		}
 	}
 

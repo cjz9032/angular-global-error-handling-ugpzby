@@ -67,9 +67,9 @@
 											<div class="transitionReadMore mt-3 row">
 												<div class="read-more-button mr-2"
 													role="button"
-													id=" autoTransitionIsReadMore
-													? powerSmartSettings-intelligentCooling-autoTransition-less
-													: powerSmartSettings-intelligentCooling-autoTransition-more"
+													[id]="autoTransitionIsReadMore
+													? 'powerSmartSettings-intelligentCooling-autoTransition-less'
+													: 'powerSmartSettings-intelligentCooling-autoTransition-more'"
 													[attr.aria-label]=" !autoTransitionIsReadMore ? 'more' : 'less'"
 													tabindex="0"
 													(keydown.enter)="autoTransitionReadMoreClick()"
@@ -160,19 +160,22 @@
 								<p id="readMoreMode1"
 									role="heading">
 									<span class="cooling-modes"
-										id="{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode1' | translate}}">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode1' | translate}}:</span>
+										id="device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode1">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode1' | translate}}:
+									</span>
 									{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line1' | translate}}
 								</p>
 								<p id="readMoreMode2"
 									role="heading">
 									<span class="cooling-modes"
-										id="{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode2' | translate}}">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode2' | translate}}:</span>
+										id="device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode2">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode2' | translate}}:
+									</span>
 									{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line2' | translate}}
 								</p>
 								<p id="readMoreMode3"
 									role="heading">
 									<span class="cooling-modes"
-										id="{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode3' | translate}}">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode3' | translate}}:</span>
+										id="device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode3">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode3' | translate}}:
+									</span>
 									{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line3' | translate}}
 								</p>
 							</div>
