@@ -4,8 +4,6 @@ import { CanComponentDeactivate } from '../../../services/guard/can-deactivate-g
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalSmartPerformanceCancelComponent } from '../../modal/modal-smart-performance-cancel/modal-smart-performance-cancel.component';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
-import { LoggerService } from 'src/app/services/logger/logger.service';
-import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
 @Component({
   selector: 'vtr-page-smart-performance',
@@ -20,8 +18,6 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy, CanComp
   constructor(
     private modalService: NgbModal,
     public smartPerformanceService: SmartPerformanceService,
-    private logger: LoggerService,
-    public shellServices: VantageShellService,
   ) { }
 
   ngOnInit() {

@@ -69,7 +69,7 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
 			if (cancelScanFromService) {
 				//  emiting cancel in smart performance scanning component.
 				this.cancelRequested.emit();
-
+				this.smartPerformanceService.scanningStopped.next(true)
 				//  de-activates the pop-up,
 				this.activeModal.close(true);
 				//  if (this.promptMsg) {
