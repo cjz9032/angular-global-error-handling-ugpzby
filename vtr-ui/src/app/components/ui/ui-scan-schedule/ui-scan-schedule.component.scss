@@ -1052,6 +1052,22 @@ vtr-ui-smart-performance-scan-summary {
 				text-align: center;
 				float:left;
 				border-right:1px solid #c8cbcb;
+				border-bottom:1px solid #c8cbcb;
+			}
+			.date-text:nth-child(4n+4) { 
+				border-right: none;
+			}
+			.date-text:nth-child(25) { 
+				border-bottom: none;
+			}
+			.date-text:nth-child(26) { 
+				border-bottom: none;
+			}
+			.date-text:nth-child(27) { 
+				border-bottom: none;
+			}
+			.date-text:nth-child(28) { 
+				border-bottom: none;
 			}
 			&:before {
 				content: "";
