@@ -12,6 +12,11 @@
                 </div>
                 <div class="status d-flex justify-content-end">
                     <vtr-ui-switch-onoff
+                        vtrMetrics
+                        metricsItem="SmartPerformance.enableScan"
+                        metricsEvent="ItemClick" 
+                        metricsParent="Page.Support.SmartPerformance"
+                        metricsValue="scanToggleValue"
                         [value]="scanToggleValue"
                         (toggle)="setEnableScanStatus($event)">
                     </vtr-ui-switch-onoff>
