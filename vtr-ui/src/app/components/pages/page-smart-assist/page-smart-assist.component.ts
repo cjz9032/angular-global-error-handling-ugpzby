@@ -213,6 +213,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				this.smartAssistCache.sensitivityVisibility = this.sensitivityVisibility;
 				this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 			}
+			this.smartAssistCache.intelligentSecurity.isIntelligentSecuritySupported = this.smartAssistCapability.isIntelligentSecuritySupported;
 			this.updateZeroTouchLockTimersUIModel();
 		} catch (error) {
 			this.logger.exception('initDataFromCache', error);
