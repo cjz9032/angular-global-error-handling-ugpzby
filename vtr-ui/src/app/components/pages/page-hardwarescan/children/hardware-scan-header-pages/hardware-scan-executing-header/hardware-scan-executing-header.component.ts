@@ -12,7 +12,7 @@ export class HardwareScanExecutingHeaderComponent implements OnInit {
 	@Input() percent = 0;
 	@Input() title = '';
 	@Input() subTitle = '';
-	@Input() statusText: string;
+	@Input() completed: boolean | undefined;
 	@Input() disableCancel: boolean;
 
 	// Metrics

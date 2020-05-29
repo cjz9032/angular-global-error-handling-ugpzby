@@ -22,8 +22,8 @@
 			<ngb-progressbar type="success" [value]="percent" [height]="'0.6rem'"></ngb-progressbar>
 		</div>
 	</div>
-	<div *ngIf="isScanOrRBSFinished()" class="col col-12 row status">
-		<span>{{statusText}}</span>
+	<div *ngIf="isScanOrRBSFinished() && (completed !== undefined)" class="col col-12 row status">
+		<span>{{ (completed ? 'hardwareScan.completed' : 'hardwareScan.notCompleted') | translate }}</span>
 	</div>
 
 

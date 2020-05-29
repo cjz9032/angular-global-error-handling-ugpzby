@@ -67,6 +67,9 @@ export class HardwareScanService {
 	private currentTaskType: TaskType;
 	private currentTaskStep: TaskStep;
 
+	private modulesStored: any;
+	private completedStatus: boolean | undefined = undefined;
+
 	private iconByModule = {
 		'cpu': 'icon_hardware_processor.svg',
 		'memory': 'icon_hardware_memory.svg',
@@ -239,10 +242,6 @@ export class HardwareScanService {
 
 	public isScanDoneExecuting() {
 		return this.isScanDone;
-	}
-
-	public getLastResponse() {
-		return this.modules;
 	}
 
 	public getDevicesToRecoverBadSectors() {
@@ -475,6 +474,7 @@ export class HardwareScanService {
 			this.workDone.next(false);
 			this.setScanOrRBSFinished(false);
 			this.clearLastResponse();
+			this.completedStatus = undefined;
 
 			// As user has started either a Quick or Custom Scan, it means that the actual
 			// hardware component list is already been retrieved, so let's show it in the
@@ -507,7 +507,6 @@ export class HardwareScanService {
 
 				if (this.cancelRequested === true) {
 					this.scanExecution = false;
-					this.clearLastResponse();
 				}
 
 				this.workDone.next(true);
@@ -515,6 +514,9 @@ export class HardwareScanService {
 
 				// Retrieve an updated version of Scan's last results
 				this.previousResultsResponse = this.hardwareScanBridge.getPreviousResults();
+
+				// Scan is finished, so we'll show its result instead of the running state
+				this.clearLastResponse();
 			});
 		}
 		return undefined;
@@ -590,6 +592,8 @@ export class HardwareScanService {
 			this.cancelRequested = false;
 			this.setScanOrRBSFinished(false);
 			this.workDone.next(false);
+			this.completedStatus = undefined;
+
 			return this.hardwareScanBridge.getRecoverBadSectors(payload, (response: any) => {
 				// Keeping track of the latest response allows the right render when user
 				// navigates to another page and then come back to the Hardware Scan page
@@ -615,6 +619,9 @@ export class HardwareScanService {
 				this.cleanUp();
 				this.workDone.next(true);
 				this.setScanOrRBSFinished(true);
+
+				// RBS is finished, so we'll show its result instead of the running state
+				this.clearLastResponse();
 			});
 		}
 	}
@@ -646,6 +653,7 @@ export class HardwareScanService {
 			status: statusRecover
 		};
 
+		this.completedStatus = statusRecover;
 		this.commonService.sendNotification(HardwareScanProgress.RecoverResponse, payload);
 	}
 
@@ -950,6 +958,7 @@ export class HardwareScanService {
 			}
 		}
 
+		this.completedStatus = this.modules.status;
 		this.commonService.sendNotification(HardwareScanProgress.ScanResponse, this.modules);
 	}
 
@@ -1292,5 +1301,17 @@ export class HardwareScanService {
 
 	public getPluginVersion(): string {
 		return this.pluginVersion;
+	}
+
+	public getModules() {
+		return this.modulesStored;
+	}
+
+	public setModules(value: any) {
+		this.modulesStored = value;
+	}
+
+	public getCompletedStatus(): boolean | undefined {
+		return this.completedStatus;
 	}
 }

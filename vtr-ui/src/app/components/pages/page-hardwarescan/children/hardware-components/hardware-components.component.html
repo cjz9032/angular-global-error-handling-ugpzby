@@ -8,7 +8,7 @@
 				[disableCancel]="isDisableCancel()"
 				(checkAnchor)="startScanWaitingModules(taskTypeEnum.CustomScan)"
 				(startQuickScan)="startScanWaitingModules(taskTypeEnum.QuickScan)"
-				[statusText]="finalStatusToken()"
+				[completed]="completedStatus"
 				[deviceInRecover]="deviceInRecover"
 				itemParentCancel="{{itemParentCancelScan}}"
 				itemNameCancel= "{{itemNameCancelScan}}">
