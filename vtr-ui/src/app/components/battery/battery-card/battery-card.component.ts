@@ -236,6 +236,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			});
 			this.batteryService.gaugeResetInfo = gaugeResetInfo;
 			this.batteryService.isGaugeResetRunning = isGaugeResetRunning;
+			this.batteryService.setGaugeResetSectionSubject.next(true);
 		}
 	}
 
@@ -370,7 +371,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	}
 
 
-	
+
 	/**
 	 * sets a battery condition tip & icon from battery health & battery condition
 	 */
@@ -486,7 +487,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			this.batteryConditionNotes.push(translation);
 		});
 	}
-	
+
 
 	/**
 	 * shows a battery details modal

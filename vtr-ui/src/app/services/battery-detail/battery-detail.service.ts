@@ -27,6 +27,7 @@ export class BatteryDetailService {
 	chargeThresholdInfo = new BehaviorSubject([new ChargeThreshold()]);
 	airplaneModeSubject = new BehaviorSubject(new FeatureStatus(false, false));
 	expressChargingSubject = new BehaviorSubject(new FeatureStatus(false, false));
+	setGaugeResetSectionSubject = new BehaviorSubject(false);
 
 	public isShellAvailable = false;
 	constructor(shellService: VantageShellService,

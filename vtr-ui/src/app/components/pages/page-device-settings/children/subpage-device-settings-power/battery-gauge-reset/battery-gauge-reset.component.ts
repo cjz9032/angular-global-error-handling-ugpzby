@@ -25,6 +25,8 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 	// gaugeResetBtnStatus: boolean[];
 	is12HrsFormat = false;
 	systemTimeFormatSubscription: Subscription;
+	gaugeResetSubscription: Subscription;
+
 	autoFocusButton = false;
 	// These following instance variables added for Keyboard navigation to radio button.
 	keyCode = Object.freeze({
@@ -46,6 +48,9 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 		this.setGaugeResetSection();
 		this.systemTimeFormatSubscription = this.commonService.getSystemTimeFormat().subscribe((value: boolean) => {
 			this.is12HrsFormat = value;
+		});
+		this.gaugeResetSubscription = this.batteryService.setGaugeResetSectionSubject.asObservable().subscribe((resp: boolean) => {
+			this.setGaugeResetSection();
 		});
 	}
 
