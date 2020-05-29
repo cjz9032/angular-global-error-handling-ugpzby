@@ -172,7 +172,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.minDate = {
 			year: this.currentDate.getFullYear() - 1,
 			month: this.currentDate.getMonth() + 1,
-			day: this.currentDate.getDate() 
+			day: this.currentDate.getDate() + 1
 		};
 		this.maxDate = {
 			year: this.currentDate.getFullYear(),
