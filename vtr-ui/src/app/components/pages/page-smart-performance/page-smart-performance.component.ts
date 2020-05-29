@@ -12,7 +12,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
   templateUrl: './page-smart-performance.component.html',
   styleUrls: ['./page-smart-performance.component.scss']
 })
-export class PageSmartPerformanceComponent implements OnInit, onDestroy, CanComponentDeactivate {
+export class PageSmartPerformanceComponent implements OnInit, OnDestroy, CanComponentDeactivate {
   isScanning: boolean = false;
   // showPromptMsg: boolean = true
   private scanningSub: Subscription;
