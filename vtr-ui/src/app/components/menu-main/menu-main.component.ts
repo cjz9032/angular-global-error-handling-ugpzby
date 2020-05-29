@@ -465,7 +465,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	onFocusMenuDropDown(menuDropDown)
 	{
 		this.closeAllOtherDD(menuDropDown);
-		if(!this.modalService.hasOpenModals()) {
+		if (!this.modalService.hasOpenModals()) {
 			menuDropDown.open();
 		}
 	}

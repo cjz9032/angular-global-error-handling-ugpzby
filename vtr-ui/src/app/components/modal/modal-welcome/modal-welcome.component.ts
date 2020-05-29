@@ -370,7 +370,6 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	focusOnModal() {
-		//document.getElementById('modal-welcome').focus();
 		(document.querySelector('.welcome-modal-size') as HTMLElement).focus();
 	}
 
