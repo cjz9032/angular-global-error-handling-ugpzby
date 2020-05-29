@@ -103,7 +103,7 @@
 							attr.new-tip-id="new-tip-{{item.id}}"
 							[metricsEvent]="item.metricsEvent"
 							[metricsParent]="item.metricsParent"
-							[metricsItem]="item.metricsItem" 
+							[metricsItem]="item.metricsItem"
 							routerLink="/{{item.path}}"
 							routerLinkActive="active"
 							href="javascript:void(0)"
@@ -151,7 +151,7 @@
 							aria-haspopup="true"
 							aria-expanded="false"
 							href="javascript:void(0)"
-							(focus)="[closeAllOtherDD(menuDropDown),menuDropDown.open()]"
+							(focus)="onFocusMenuDropDown(menuDropDown)"
 							(click)="onMenuItemClick(item)"
 							(keydown.enter)="[onMenuItemClick(item),menuItemKeyDown(item.path)]"
 							role="menu"
@@ -283,7 +283,7 @@
 							aria-haspopup="true"
 							aria-expanded="false"
 							href="javascript:void(0)"
-							(focus)="[closeAllOtherDD(menuDropDown),menuDropDown.open()]"
+							(focus)="onFocusMenuDropDown(menuDropDown)"
 							(click)="onMenuItemClick(item)"
 							(keydown.enter)="onMenuItemClick(item)">
 							<div class="user-initials">

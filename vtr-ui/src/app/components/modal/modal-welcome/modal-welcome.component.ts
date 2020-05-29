@@ -136,6 +136,9 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		const config = await this.selfSelectService.getConfig();
 		this.usageType = config.usageType;
 		this.interests = config.interests;
+		if(this.deviceService.isGaming){
+			this.gamingScenario = GamingScenario.Gaming;
+		}
 		this.getVantageToolBarCapability();
 	}
 
@@ -367,6 +370,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	focusOnModal() {
+		//document.getElementById('modal-welcome').focus();
 		(document.querySelector('.welcome-modal-size') as HTMLElement).focus();
 	}
 

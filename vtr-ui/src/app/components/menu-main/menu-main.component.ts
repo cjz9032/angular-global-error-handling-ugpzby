@@ -282,7 +282,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 					$event.preventDefault();
 
 					element.focus();
-					//console.log('tab curElementTabIndex closing current element curElementTabIndex');
+					// console.log('tab curElementTabIndex closing current element curElementTabIndex');
 					activeDropdown.close();
 
 				}
@@ -459,6 +459,14 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		if (isActive && this.searchTipsTimeout) {
 			this.searchTipsTimeout = clearTimeout(this.searchTipsTimeout);
 			this.searchTipsTimeout = null;
+		}
+	}
+
+	onFocusMenuDropDown(menuDropDown)
+	{
+		this.closeAllOtherDD(menuDropDown);
+		if(!this.modalService.hasOpenModals()) {
+			menuDropDown.open();
 		}
 	}
 
