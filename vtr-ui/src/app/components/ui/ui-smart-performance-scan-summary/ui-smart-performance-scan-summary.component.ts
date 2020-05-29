@@ -138,6 +138,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		}
 	];
 	ngOnInit() {
+		this.smartPerformanceService.scanningStopped.next(true)
 		const cacheMachineFamilyName = this.commonService.getLocalStorageValue(
 			LocalStorageKey.MachineFamilyName,
 			undefined
