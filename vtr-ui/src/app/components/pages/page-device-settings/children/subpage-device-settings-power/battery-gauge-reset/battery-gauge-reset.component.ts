@@ -56,6 +56,7 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 
 	ngOnDestroy() {
 		this.systemTimeFormatSubscription.unsubscribe();
+		this.gaugeResetSubscription.unsubscribe();
 	}
 
 	initBatteryGaugeResetInfo() {
