@@ -102,7 +102,7 @@
 														<button class="action-button" vtrMetrics
 															metricsItem="sp.{{'smartPerformance.scanCompletePage.signupRepairButton' |translate | lowercase| removeSpace }}"
 															metricsEvent="ItemClick"
-															metricsParent="pages.support.smartPerformance"
+															metricsParent="Page.Support.SmartPerformance"
 															(click)=backToNonSubScriberHome()>{{'smartPerformance.scanCompletePage.signupRepairButton' |translate }}</button>
 														<!-- <div class="desc col pl-5">
 															<p
@@ -127,12 +127,12 @@
 														<button *ngIf="!inputIsScanningCompleted" [ngClass]="isLoading? 'disabled-button': 'action-button'" (click)="ScanNowSummary()"
 															vtrMetrics metricsItem="sp.{{'smartPerformance.subscriberScanHomePage.scanNow' |translate| lowercase| removeSpace }}"
 															metricsEvent="FeatureClick"
-															metricsParent="pages.support.smartPerformance">{{'smartPerformance.subscriberScanHomePage.scanNow' |translate }}</button>
+															metricsParent="Page.Support.SmartPerformance">{{'smartPerformance.subscriberScanHomePage.scanNow' |translate }}</button>
 
 															<button *ngIf="inputIsScanningCompleted" class="action-button" (click)="BackToSummary()"
 															vtrMetrics metricsItem="sp.{{'smartPerformance.subscriberScanHomePage.backToHome' |translate| lowercase | removeSpace }}"
 															metricsEvent="FeatureClick"
-															metricsParent="pages.support.smartPerformance">{{'smartPerformance.subscriberScanHomePage.backToHome' |translate }}</button>
+															metricsParent="Page.Support.SmartPerformance">{{'smartPerformance.subscriberScanHomePage.backToHome' |translate }}</button>
 														<div class="desc-block">
 															<div class="desc desc1 col-auto" *ngIf="historyScanResultsDateTime && historyScanResultsDateTime.length > 0">
 																<b>{{'smartPerformance.subscriberScanHomePage.mostRecent' |translate }}</b><br>
@@ -570,7 +570,7 @@
 														<!-- <a href="#" class="link-text" vtrMetrics
 															metricsItem="smartPerformance.learnmore"
 															metricsEvent="ArticleClick"
-															metricsParent="pages.support.smartPerformance">{{'smartPerformance.subscriptionDetails.learnMore' |translate }}</a> -->
+															metricsParent="Page.Support.SmartPerformance">{{'smartPerformance.subscriptionDetails.learnMore' |translate }}</a> -->
 													</p>
 													<p>{{'smartPerformance.scanCompletePage.recommendedAction.description1' |translate }}</p>
 												</div>
@@ -586,7 +586,7 @@
 												<button class="action-button mt-2" vtrMetrics
 													metricsItem="sp.{{'smartPerformance.scanCompletePage.recommendedAction.signupButton' |translate| lowercase | removeSpace}}"
 													metricsEvent="FeatureClick"
-													metricsParent="pages.support.smartPerformance"
+													metricsParent="Page.Support.SmartPerformance"
 													(click)=openSubscribeModal()>{{'smartPerformance.scanCompletePage.recommendedAction.signupButton' |translate }}</button>
 											</div>
 										</div>
@@ -609,7 +609,7 @@
 																<button class="feedback-btn" alt="" type="button"
 																vtrMetrics
 																metricsEvent="FeatureClick"
-            													metricsParent="pages.support.smartPerformance" metricsItem="sp.{{'smartPerformance.feedbackContainer.buttonText'| translate| lowercase| removeSpace}}" 
+            													metricsParent="Page.Support.SmartPerformance" metricsItem="sp.{{'smartPerformance.feedbackContainer.buttonText'| translate| lowercase| removeSpace}}" 
 																(click)="onclickFeedback()">{{'smartPerformance.feedbackContainer.buttonText' | translate}}
 																</button>
 															</div>
