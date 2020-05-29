@@ -1,4 +1,6 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
+import { MetricService } from 'src/app/services/metric/metrics.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
 	selector: 'vtr-ui-custom-switch',
@@ -15,9 +17,10 @@ export class UiCustomSwitchComponent implements OnInit {
 	@Input() readonly = false;
 	@Input() label: string;
 	@Input() ariaLabel: string;
-	@Input() metricsEvent = 'ItemClick';
+	@Input() sendMetrics = true;
+	@Input() metricsParent;
 
-	constructor() { }
+	constructor(private metrics: MetricService, private activatedRoute: ActivatedRoute) { }
 
 	ngOnInit(): void {
 	}
@@ -26,5 +29,14 @@ export class UiCustomSwitchComponent implements OnInit {
 		const value = $event.target.checked;
 		this.value = value;
 		this.toggle.emit({ switchValue: value });
+		if (this.sendMetrics) {
+			const metricsData = {
+				ItemParent: this.metricsParent || this.activatedRoute.snapshot.data.pageName,
+				ItemType: 'ItemClick',
+				ItemName: this.componentId,
+				ItemValue: this.value
+			};
+			this.metrics.sendMetrics(metricsData);
+		}
 	}
 }

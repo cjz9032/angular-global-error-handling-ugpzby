@@ -3,6 +3,7 @@ import { KeyCode as KEYCODE } from 'src/app/enums/key-code.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { UiRoundedRectangleRadioModel } from './ui-rounded-rectangle-radio-list.model';
+import { ActivatedRoute } from '@angular/router';
 
 /**
  * this radio group implementation is based on W3C KB navigation example
@@ -16,7 +17,9 @@ import { UiRoundedRectangleRadioModel } from './ui-rounded-rectangle-radio-list.
 export class UiRoundedRectangleCustomRadioListComponent implements OnInit, OnChanges {
 	@Input() groupName: string;
 	@Input() isVertical = false;
+	@Input() sendMetrics = true;
 	@Input() metricsEvent = 'ItemClick';
+	@Input() metricsParent;
 	@Input() radioDetails: Array<UiRoundedRectangleRadioModel>;
 
 	@Output() selectionChange = new EventEmitter<UiRoundedRectangleRadioModel>();
@@ -26,17 +29,9 @@ export class UiRoundedRectangleCustomRadioListComponent implements OnInit, OnCha
 	public activeDescendantId;
 	public focusedComponentId = '';
 
-	// public model1 = new UiRoundedRectangleRadioListModel(
-	// 	'pizza-radio-group',
-	// 	[
-	// 		new UiRoundedRectangleRadioModel('regular-crust', 'regular crust', 'regular crust', false, false),
-	// 		new UiRoundedRectangleRadioModel('thin-crust', 'thin crust', 'thin crust', false, false),
-	// 		new UiRoundedRectangleRadioModel('deep-dish', 'deep dish', 'deep dish', false, false),
-	// 	]
-	// );
-
-
-	constructor(logger: LoggerService, metrics: MetricService) {
+	constructor(logger: LoggerService
+		, private metrics: MetricService
+		, private activatedRoute: ActivatedRoute) {
 	}
 
 	ngOnInit() { }
@@ -148,6 +143,16 @@ export class UiRoundedRectangleCustomRadioListComponent implements OnInit, OnCha
 
 	private invokeSelectionChangeEvent(radio: UiRoundedRectangleRadioModel) {
 		this.selectionChange.emit(radio);
+
+		if (this.sendMetrics) {
+			const metricsData = {
+				ItemParent: this.metricsParent || this.activatedRoute.snapshot.data.pageName,
+				ItemType: 'FeatureClick',
+				ItemName: radio.componentId,
+				ItemValue: radio.isChecked
+			};
+			this.metrics.sendMetrics(metricsData);
+		}
 	}
 
 	onRadioGroupFocus($event) {
@@ -158,7 +163,7 @@ export class UiRoundedRectangleCustomRadioListComponent implements OnInit, OnCha
 		this.focusedComponentId = '';
 	}
 
-	private setFocusComponentId(){
+	private setFocusComponentId() {
 		this.focusedComponentId = this.getSelectedRadioId();
 	}
 
