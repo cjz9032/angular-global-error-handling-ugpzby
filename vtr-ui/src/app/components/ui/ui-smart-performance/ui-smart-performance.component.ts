@@ -89,7 +89,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 						this.registerScheduleScanEvent();
 						this.getSmartPerformanceScheduleScanStatus();
 						// activates the pop-up, when scanning is triggered because of scheduled scan and user navigates
-						this.showWarning.emit(true)
+						// this.showWarning.emit(true)
 					}
 					else {
 						this.isScanning = false;
@@ -101,12 +101,11 @@ export class UiSmartPerformanceComponent implements OnInit {
 				});
 		}
 		// de-activates the pop-up, when user is navigating away while scanning
-		this.smartPerformanceService.scanningStopped.subscribe((res: boolean) => {
-			if(res) {
-				this.showWarning.emit(false)
-			}
-
-		})
+		// this.smartPerformanceService.scanningStopped.subscribe((res: boolean) => {
+		// 	if(res) {
+		// 		this.showWarning.emit(false)
+		// 	}
+		// })
 
 	}
 	async scheduleScan(scantype, frequency, day, time, date) {
@@ -280,7 +279,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 						// this.hasSubscribedScanCompleted = true;
 						this.showSubscribersummary = true;
 						this.isScanning = false;
-						this.showWarning.emit(false)
+						// this.showWarning.emit(false)
 						this.rating = res.rating;
 						this.tune = res.result.tune;
 						this.boost = res.result.boost;
@@ -354,7 +353,8 @@ export class UiSmartPerformanceComponent implements OnInit {
 	}
 
 	cancelScanfromScanning() {
-		this.showWarning.emit(false)
+		// this.showWarning.emit(false)
+		this.smartPerformanceService.scanningStopped.next(true)
 		this.isScanning = false;
 		this.isScanningCompleted = false;
 		this.showSubscribersummary = false;

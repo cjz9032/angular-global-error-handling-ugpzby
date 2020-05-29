@@ -71,6 +71,7 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 	) { }
 
 	ngOnInit() {
+		this.smartPerformanceService.scanningStopped.next(false)
 		this.percent=0;
 		this.spCategoryenum = SPCategory;
 		this.spSubCategoryenum = SPSubCategory;
@@ -270,9 +271,9 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 		// 	this.smartPerformanceService.scanningStopped.next(false)
 		// }
 		// de-activates the pop-up, when user is navigating away while scanning
-		if(this.percent === 100) {
-			this.smartPerformanceService.scanningStopped.next(true);
-		}
+		// if(this.percent === 100) {
+		// 	this.smartPerformanceService.scanningStopped.next(true);
+		// }
 	}
 
  
