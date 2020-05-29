@@ -243,9 +243,9 @@ vtr-ui-smart-performance-scan-summary {
 					}
 				}
 				p {
-					font-size: 1.4rem;
-					font-weight: $weight_light;
-					color: $shade;
+					font-size: 1.5rem;
+					font-weight: $weight_regular;
+					color: $main_shade;
 					width: 99.9%;
 					margin-bottom: 0;
 					@media #{$breakpoint_sm}{

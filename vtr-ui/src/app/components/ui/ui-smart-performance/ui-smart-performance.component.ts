@@ -209,13 +209,13 @@ export class UiSmartPerformanceComponent implements OnInit {
 		try {
 			if (response && response.payload) {
 				this.scheduleScanObj = response;
-				if (response.payload.percentage == 100) {
-					this.isScanningCompleted = true;
-					this.isScanning = false;
-				}
-				if (!this.isScheduleScan) {
-					this.isScheduleScan = true;
-				}
+				
+				// 	this.isScanningCompleted = true;
+				// 	this.isScanning = false;
+			
+				// if (!this.isScheduleScan) {
+				// 	this.isScheduleScan = true;
+				// }
 			}
 		} catch (err) {
 			this.logger.error('ui-smart-performance.updateScheduleScanStatus.then', err);
@@ -226,9 +226,9 @@ export class UiSmartPerformanceComponent implements OnInit {
 		let res;
 		if (this.smartPerformanceService.isShellAvailable) {
 			try {
-				this.isSubscribed = this.commonService.getLocalStorageValue(
-					LocalStorageKey.IsFreeFullFeatureEnabled
-				);
+				// this.isSubscribed = this.commonService.getLocalStorageValue(
+				// 	LocalStorageKey.IsFreeFullFeatureEnabled
+				// );
 				res = await this.smartPerformanceService.getScheduleScanStatus();
 				if (res && res.scanstatus != 'Idle') {
 					let spSubscribeCancelModel = this.commonService.getLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted);
@@ -236,13 +236,19 @@ export class UiSmartPerformanceComponent implements OnInit {
 						this.showSubscribersummary = false;
 					}
 					else {
-						this.showSubscribersummary=true;
-						this.isScanningCompleted = true;
-						this.isScanning = false;
 						this.rating = res.rating;
 						this.tune = res.result.tune;
 						this.boost = res.result.boost;
 						this.secure = res.result.secure;
+						if (res.percentage == 100) {
+							this.shellServices.unRegisterEvent(EventTypes.smartPerformanceScanStatus, event => {					
+									this.updateScheduleScanStatus(event);
+								}
+							);
+						}
+						this.isScanning = false;
+						this.isScanningCompleted = true;
+						this.showSubscribersummary=true;
 						this.logger.info('ui-smart-performance.getSmartPerformanceScheduleScanStatus', JSON.stringify(res));
 					}
 				}
@@ -284,6 +290,16 @@ export class UiSmartPerformanceComponent implements OnInit {
 						this.tune = res.result.tune;
 						this.boost = res.result.boost;
 						this.secure = res.result.secure;
+						if (res.percentage == 100) {
+							this.shellServices.unRegisterEvent(EventTypes.smartPerformanceScanStatus, event => {					
+									this.updateScheduleScanStatus(event);
+								}
+							);
+						}
+						this.showWarning.emit(false)
+						this.isScanning = false;
+						this.isScanningCompleted = true;
+						this.showSubscribersummary=true;
 						this.logger.info('ui-smart-performance.scanAndFixInformation ',JSON.stringify(res));
 					}
 				}
