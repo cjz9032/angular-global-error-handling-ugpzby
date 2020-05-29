@@ -2432,7 +2432,7 @@
             "basicDesc": "您的设备仅启用了基本安全保护。如需获得更高级别的保护，请尝试启用 UAC 通知并使用密码管理器。",
             "intermediate": "中级",
             "intermediateTitle": "中级保护",
-            "intermediateDesc": "做得好！还差一步就能享受高级保护了，请尝试加密数据并监视网络安全隐患。",
+            "intermediateDesc": "做得好！您距离达到高级保护级别仅一步之遥。请尝试加密数据并监控网络安全漏洞，以便达到更高的级别。",
             "advanced": "高级",
             "advancedTitle": "高级保护",
             "advancedDesc": "恭喜您！您的设备已启用基本、中级和高级安全保护，非常棒！",

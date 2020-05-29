@@ -2432,7 +2432,7 @@
             "basicDesc": "您的裝置僅啟用了基本的安全保護。為了獲得更好的保護，請嘗試啟用 UAC 通知並使用 Password Manager。",
             "intermediate": "中級",
             "intermediateTitle": "中級保護",
-            "intermediateDesc": "做得好！您還差一步就能獲得進階保護，請嘗試加密資料，並監控您的網路安全漏洞。",
+            "intermediateDesc": "做得好！您還差一步就能達到進階保護等級。請嘗試加密資料，並監控您的網路安全漏洞，以達到更高的水平。",
             "advanced": "進階",
             "advancedTitle": "進階保護",
             "advancedDesc": "恭喜您！您的裝置已啟用基本、中級和進階的安全保護，做得好！",
