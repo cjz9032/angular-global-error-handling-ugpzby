@@ -86,7 +86,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	isDropDownOpen: boolean;
 	dropDownToggle: boolean;
 	currentDate: any;
-	currentDateLocalFormat: any;
+	// currentDateLocalFormat: any;
 	fromDate: any;
 	toDate: any;
 	selectedDate: any;
@@ -149,7 +149,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		}
 		// this.leftAnimatorCalc = ((this.rating*10) - 1);
 		this.currentDate = new Date();
-		this.currentDateLocalFormat = this.formatLocaleDate.transform(this.currentDate);
+		// this.currentDateLocalFormat = this.formatLocaleDate.transform(this.currentDate);
 		this.selectedDate = this.calendar.getToday();
 		this.toDate = this.selectedDate;
 		this.fromDate = this.selectedDate;
@@ -418,6 +418,10 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.isSubscribed = this.commonService.getLocalStorageValue(
 			LocalStorageKey.IsFreeFullFeatureEnabled
 		);
+		if(this.isSubscribed) {
+			this.tabIndex = 0;
+			this.scanSummaryTime(this.tabIndex);
+		}
 		if(this.inputIsScanningCompleted)
 		{
 			this.inputIsScanningCompleted = false;
