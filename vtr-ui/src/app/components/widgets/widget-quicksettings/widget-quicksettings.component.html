@@ -1,4 +1,4 @@
-<div *ngIf="cameraStatus.available || !deviceService.isSMode"
+<div *ngIf="!deviceService.isSMode && (cameraStatus.available || microphoneStatus.available)"
 	class="vtr-widget-quicksettings vtr-widget">
 	<div class="container-fluid">
 		<div class="row">
@@ -11,8 +11,8 @@
 				</div>
 
 				<!-- microphone -->
-				<div [ngClass]="cameraStatus.available ? 'widget-icon-3': 'widget-icon-2'">
-					<div *ngIf="microphoneStatus.available">
+				<div [ngClass]="(cameraStatus.available && microphoneStatus.status)? 'widget-icon-3': 'widget-icon-2'">
+					<div *ngIf="microphoneStatus.status">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Microphone2x'"
 							[offIconDefinition]="'icomoon icomoon-FA-Microphone---slash2x'"
 							[value]="microphoneStatus.status && microphoneStatus.permission && !microPhoneGreyOut"
@@ -158,7 +158,7 @@
 				</div>
 			</div>
 
-			
+
 			<!-- <div *ngIf="!cameraStatus.permission && !cameraStatus.isLoading && cameraStatus.available && microphoneStatus.permission && cameraNoAccessNoteShow" -->
 			<!-- camera permission -->
 			<div *ngIf="!cameraStatus.permission && (!cameraStatus.isLoading) && (!(!microphoneStatus.permission && microphoneStatus.available)) && cameraNoAccessNoteShow"

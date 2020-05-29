@@ -26,13 +26,12 @@
 
 .widget-icon-2 {
 	display: flex;
-	justify-content: center;
 	> div {
 		&:first-child{
-			margin-right: 2.4rem;
+			margin-right: 30px;
 		}
 		&:nth-child(2n){
-			margin-right: 2.4rem;
+			margin-right: 30px;
 		}
 		&:last-child{
 			margin-right: 0 !important;
