@@ -1,4 +1,3 @@
-import { ModalGamingLegionedgeComponent } from './../../modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -7,17 +6,12 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { Title } from '@angular/platform-browser';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
-import { UPEService } from 'src/app/services/upe/upe.service';
-import { LoggerService } from 'src/app/services/logger/logger.service';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
-import { GamingLightingService } from 'src/app/services/gaming/lighting/gaming-lighting.service';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalGamingLightingComponent } from '../../modal/modal-gaming-lighting/modal-gaming-lighting.component';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { Gaming } from './../../../enums/gaming.enum';
 import { LocalStorageKey } from './../../../enums/local-storage-key.enum';
+import { Subscription } from 'rxjs/internal/Subscription';
 
 @Component({
 	selector: 'vtr-page-lightingcustomize',
@@ -33,6 +27,8 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	metrics: any;
 	dynamic_metricsItem: any = 'lighting_profile_cms_inner_content';
 	public ledlayoutversion: any;
+	langSubscription: Subscription;
+	notificationSubscription: Subscription;
 
 	constructor(
 		private titleService: Title,
@@ -40,7 +36,6 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 		private cmsService: CMSService,
 		private route: ActivatedRoute,
 		private shellService: VantageShellService,
-		private gamingLightService: GamingLightingService,
 		public dashboardService: DashboardService,
 		private translate: TranslateService,
 		public deviceService: DeviceService,
@@ -54,7 +49,7 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 
 		this.fetchCMSArticles();
 		// VAN-5872, server switch feature on language change
-		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+		this.langSubscription = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 			this.fetchCMSArticles();
 		});
 		this.isOnline = this.commonService.isOnline;
@@ -67,12 +62,19 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 				this.getLayOutversion();
 			}
 		});
-		this.commonService.notification.subscribe((notification: AppNotification) => {
+		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
 	}
 
-	ngOnDestroy() {}
+	ngOnDestroy() {
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
+		if (this.langSubscription) {
+			this.langSubscription.unsubscribe();
+		}
+	}
 
 	onNotification(notification: AppNotification) {
 		if (

@@ -25,7 +25,6 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 	@Input() metricsId = '';
 	@Input() vtrMetricEnabled: any;
 	@Output() onSliderChanged: EventEmitter<ChangeContext> = new EventEmitter();
-	triggerFocus: EventEmitter<PointerType> = new EventEmitter<PointerType>();
 	pointerType: any = PointerType;
 
 	constructor() { }

@@ -18,18 +18,20 @@ export class UiLightingSingleColorComponent implements OnInit, OnChanges {
 	);
 	@Output() public changeSingleColorOption = new EventEmitter<any>();
 	@Input() options: any;
+	public singleColorOpt: any = LightEffectSimpleType;
+
+	constructor(
+		private loggerService: LoggerService
+	) {}
+
+	ngOnInit() { }
 
 	getValue(optionId) {
 		this.selectedOption = this.options.filter((item) => item.id === optionId)[0];
 		this.selectedOptionId = optionId;
 		this.changeSingleColorOption.emit(optionId);
 	}
-	public singleColorOpt: any = LightEffectSimpleType;
-	constructor(
-		private loggerService: LoggerService
-	) {}
 
-	ngOnInit() {}
 	ngOnChanges(changes) {
 		if (!isUndefined(changes.selectedOptionId)) {
 			if (changes.selectedOptionId.previousValue !== changes.selectedOptionId.currentValue) {
