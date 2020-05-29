@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.66](https://bitbucket.tc.lenovo.com///compare/v1.5.65...v1.5.66) (2020-05-29)
+
+
+### Bug Fixes
+
+* **antivirus:** VAN18895 call launchMcAfeeBuy API only trialActive ([ee25721](https://bitbucket.tc.lenovo.com///commit/ee25721f0fe5bb3df88e4f9c53e93f14940d6d6d))
+
 ### [1.5.65](https://bitbucket.tc.lenovo.com///compare/v1.5.64...v1.5.65) (2020-05-29)
 
 
