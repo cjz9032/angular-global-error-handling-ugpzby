@@ -240,6 +240,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 				if (res && res.scanstatus != 'Idle') {
 					let spSubscribeCancelModel = this.commonService.getLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted);
 					if (spSubscribeCancelModel) {
+						this.scheduleScanObj = null;
 						this.showSubscribersummary = false;
 					}
 					else {
@@ -285,6 +286,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 					let spSubscribeCancelModel = this.commonService.getLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted);
 					if (spSubscribeCancelModel) {
 						// this.hasSubscribedScanCompleted = false;
+						this.scheduleScanObj = null;
 						this.showSubscribersummary = false;
 						// this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
 					}
