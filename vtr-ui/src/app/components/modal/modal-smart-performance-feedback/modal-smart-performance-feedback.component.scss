@@ -181,6 +181,12 @@ $normalPadding: 2.4rem;
 				}
 			}
 		}
+
+		.yesno-content {
+			display: flex;
+			justify-content: space-between;
+			width: 15rem;
+		}
 	}
 	.comment-tip {
 		color: $shade_blue;
@@ -221,7 +227,7 @@ $normalPadding: 2.4rem;
 	.btn-submit {
 		flex: 0 0 22rem;
 		max-width: 24rem;
-		margin-right: 1rem;
+		margin-left: 1.5rem;
 	}
 
 	
