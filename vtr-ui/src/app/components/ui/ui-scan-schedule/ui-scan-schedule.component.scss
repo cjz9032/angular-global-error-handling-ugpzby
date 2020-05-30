@@ -848,6 +848,9 @@ vtr-ui-smart-performance-scan-summary {
 								top: -0.5rem;
 							}
 						}
+						.white-theme:focus {
+							box-shadow: none;
+						}
 					}
 				}
 				.tooltip-btn {
