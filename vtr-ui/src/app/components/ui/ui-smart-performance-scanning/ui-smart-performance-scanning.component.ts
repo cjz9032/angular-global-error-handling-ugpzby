@@ -40,6 +40,7 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 	@Input() showProgress = true;
 	@Input() percent = 0;
 	@Input() isCheckingStatus = false;
+	@Input() isAutoScanRunning = false;
 	@Output() sendScanStatus = new EventEmitter();
 	@Output() sendModelStatus = new EventEmitter();
 	public onehundreadFlag = true;
@@ -76,7 +77,7 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 		this.spCategoryenum = SPCategory;
 		this.spSubCategoryenum = SPSubCategory;
 		this.activegroup = this.spCategoryenum.TUNEUPPERFORMANCE;
-	 
+
 		this.initSpeed();
 		this.sampleDesc = this.translate.instant(
 			'smartPerformance.scanningPage.nowScanningDetail.tunePCDesc'

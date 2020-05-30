@@ -27,6 +27,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 	public hasSubscribedScanCompleted = false;
 	subItems = [];
 	currentSubItemCategory: any = {};
+	isScheduleScanRunning = false;
 	@Input() activegroup = "Tune up performance";
 	isSubscribed = false;
 	public tune = 0;
@@ -177,6 +178,8 @@ export class UiSmartPerformanceComponent implements OnInit {
 				.then((getReadinessFromService: any) => {
 					this.logger.info('ScanNow.getReadiness.then', getReadinessFromService);
 					if (getReadinessFromService) {
+						this.isScheduleScanRunning = false;
+
 						this.shellServices.registerEvent(EventTypes.smartPerformanceScanStatus,
 							event => {
 								this.scheduleScanObj = null;
@@ -195,7 +198,11 @@ export class UiSmartPerformanceComponent implements OnInit {
 						}
 					}
 					else {
-						this.isScanning = false;
+						this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
+						this.isScanning = true;
+						this.registerScheduleScanEvent();
+						this.getSmartPerformanceScheduleScanStatus();
+						this.isScheduleScanRunning = true;
 					}
 				})
 				.catch(error => {
@@ -233,6 +240,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 				if (res && res.scanstatus != 'Idle') {
 					let spSubscribeCancelModel = this.commonService.getLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted);
 					if (spSubscribeCancelModel) {
+						this.scheduleScanObj = null;
 						this.showSubscribersummary = false;
 					}
 					else {
@@ -278,6 +286,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 					let spSubscribeCancelModel = this.commonService.getLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted);
 					if (spSubscribeCancelModel) {
 						// this.hasSubscribedScanCompleted = false;
+						this.scheduleScanObj = null;
 						this.showSubscribersummary = false;
 						// this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
 					}
@@ -320,6 +329,8 @@ export class UiSmartPerformanceComponent implements OnInit {
 				.then((getReadinessFromService: any) => {
 					this.logger.info('ScanNow.getReadiness.then', getReadinessFromService);
 					if (getReadinessFromService) {
+						this.isScheduleScanRunning = false;
+
 						this.shellServices.registerEvent(EventTypes.smartPerformanceScanStatus,
 							event => {
 								this.scheduleScanObj=null;
@@ -332,7 +343,12 @@ export class UiSmartPerformanceComponent implements OnInit {
 						this.scanAndFixInformation();
 					}
 					else {
-						this.isScanning = false;
+						this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
+						this.isScanning = true;
+						this.registerScheduleScanEvent();
+						this.getSmartPerformanceScheduleScanStatus();
+						this.isScheduleScanRunning = true;
+
 					}
 				})
 				.catch(error => { });
