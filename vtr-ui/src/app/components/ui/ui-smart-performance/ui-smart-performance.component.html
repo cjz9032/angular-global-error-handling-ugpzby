@@ -417,7 +417,7 @@
 </right-content>
 </vtr-page-layout>
 <vtr-ui-smart-performance-scanning *ngIf="isScanning" (sendModelStatus)="cancelScanfromScanning()"
-	[scheduleScanData]="scheduleScanObj" [isScheduleScan]="isScheduleScan">
+	[scheduleScanData]="scheduleScanObj" [isScheduleScan]="isScheduleScan" [isAutoScanRunning]="isScheduleScanRunning">
 </vtr-ui-smart-performance-scanning>
 <vtr-ui-smart-performance-scan-summary *ngIf="(isScanningCompleted || isSubscribed) && !isScanning "
 	[hasSubscribedScanCompleted]="hasSubscribedScanCompleted" [inputIsScanningCompleted]="showSubscribersummary"
