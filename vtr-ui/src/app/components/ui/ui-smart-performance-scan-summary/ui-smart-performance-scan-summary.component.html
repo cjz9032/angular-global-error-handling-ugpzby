@@ -222,8 +222,10 @@
 																		class="list-group-item cl list-selected-item">
 																		<fa-icon class="calender-icon"
 																			[icon]="['fal', 'calendar-alt']"></fa-icon>
-																		<span
-																			*ngIf="!dropDownToggle">{{currentDateLocalFormat}}</span>
+																		<!-- <span
+																			*ngIf="!dropDownToggle">{{currentDateLocalFormat}}</span> -->
+																			<span
+																			*ngIf="!dropDownToggle">{{annualYear}}</span>
 																		<span
 																			*ngIf="tabIndex === 0">{{annualYear}}</span>
 																		<!-- <span

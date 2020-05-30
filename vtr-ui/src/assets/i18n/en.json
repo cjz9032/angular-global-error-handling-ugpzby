@@ -2688,7 +2688,7 @@
 			},
 			"internetperformance": {
 				"ejunkscannedareas": {
-					"area1": "Identified clutter from 4 browsers",
+					"area1": "Identified clutter from browsers",
 					"area2": "Searched leftover e-junk",
 					"area3": "Scanned outdated internet files",
 					"area4": "Searched unwanted web cache",
@@ -2914,7 +2914,7 @@
 			"mostRecent": "MOST RECENT SCAN:",
 			"nextScheduled": "NEXT SCHEDULED SCAN:",
 			"successTitle": "Your PC is tuned up !",
-			"successDescription": "Smart Performance resolved <b>{{issueCount}} issues</b> to keep your pc running smoothly, you can find scan summary and report below.",
+			"successDescription": "Smart Performance resolved <b>{{issueCount}} issue(s)</b> to keep your pc running smoothly, you can find scan summary and report below.",
 			"scanSummary": {
 				"title": "Scan summary:",
 				"description": "We are constantly tuning your computer",
