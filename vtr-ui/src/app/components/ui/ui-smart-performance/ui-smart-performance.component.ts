@@ -370,7 +370,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 
 	cancelScanfromScanning() {
 		// this.showWarning.emit(false)
-		this.smartPerformanceService.scanningStopped.next(true)
+		// this.smartPerformanceService.scanningStopped.next(true)
 		this.isScanning = false;
 		this.isScanningCompleted = false;
 		this.showSubscribersummary = false;
