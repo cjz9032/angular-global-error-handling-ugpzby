@@ -13,7 +13,7 @@ import { WidgetSpeedometerComponent } from '../../widgets/widget-speedometer/wid
 import { NgbAccordion } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
-import { EventTypes } from '@lenovo/tan-client-bridge';
+import { EventTypes, SecureMath } from '@lenovo/tan-client-bridge';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
 import {
@@ -99,7 +99,7 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 	initSpeed() {
 		const self = this;
 		self.loop = setInterval(function () {
-			self.speedometer.speedCurrent = Math.floor(Math.random() * (self.speedometer.speedMax / 2)) + 1;
+			self.speedometer.speedCurrent = Math.floor(SecureMath.random() * (self.speedometer.speedMax / 2)) + 1;
 		}, 1000);
 
 		self.delay = setTimeout(function () {

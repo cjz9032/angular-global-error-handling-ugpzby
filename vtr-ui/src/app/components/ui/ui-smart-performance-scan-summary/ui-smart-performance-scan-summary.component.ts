@@ -617,17 +617,17 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		}
 		this.scannigResultObj.internetPerformance = {
 			firstSection: [{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.networksettingsscannedareas.area1'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.networksettingsscannedareas.area2')
-			},
-			{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.networksettingsscannedareas.area3'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.networksettingsscannedareas.area4')
-			},
-			{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.networksettingsscannedareas.area5'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.networksettingsscannedareas.area6')
-			}],
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.ejunkscannedareas.area1'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.ejunkscannedareas.area2')
+				}, {
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.ejunkscannedareas.area3'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.ejunkscannedareas.area4')
+				},
+				{
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.ejunkscannedareas.area5'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.ejunkscannedareas.area6')
+				}],
+	
 			secondSection: [{
 			firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.browsersettingsscannedareas.area1'),
 			secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.browsersettingsscannedareas.area2')
@@ -664,16 +664,17 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.wifiperformancescannedareas.area6')
 			}],
 			fifthSection: [{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.ejunkscannedareas.area1'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.ejunkscannedareas.area2')
-			}, {
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.ejunkscannedareas.area3'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.ejunkscannedareas.area4')
-			},
-			{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.ejunkscannedareas.area5'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.ejunkscannedareas.area6')
-			}],
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.networksettingsscannedareas.area1'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.networksettingsscannedareas.area2')
+				},
+				{
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.networksettingsscannedareas.area3'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.networksettingsscannedareas.area4')
+				},
+				{
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.networksettingsscannedareas.area5'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.networksettingsscannedareas.area6')
+				}],
 		}
 		this.scannigResultObj.malwareSecurity = {
 			firstSection: [{
