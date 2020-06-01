@@ -30,7 +30,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 	subItems = [];
 	currentSubItemCategory: any = {};
 	isScheduleScanRunning = false;
-	@Input() activegroup = "Tune up performance";
+	@Input() activegroup = 'Tune up performance';
 	isSubscribed = false;
 	public tune = 0;
 	public boost = 0;
@@ -238,6 +238,9 @@ export class UiSmartPerformanceComponent implements OnInit {
 	}
 
 	public async getSmartPerformanceScheduleScanStatus() {
+		const scanStartedTime: any = new Date().getTime;
+		let scanEndedTime;
+		let timeDeff;
 		let res;
 		if (this.smartPerformanceService.isShellAvailable) {
 			try {
@@ -250,7 +253,12 @@ export class UiSmartPerformanceComponent implements OnInit {
 					if (spSubscribeCancelModel) {
 						this.scheduleScanObj = null;
 						this.showSubscribersummary = false;
-						this.sendsmartPerformanceMetrics('smartPerformance.scanButton', 'Page.Support.SmartPerformance', 'not complet');
+						scanEndedTime = new Date().getTime();
+						if (scanStartedTime && scanEndedTime) {
+							timeDeff = scanEndedTime - scanStartedTime;
+						}
+						this.sendsmartPerformanceMetrics('smartPerformance.scanButton', 'Page.Support.SmartPerformance', 'Failure', timeDeff);
+
 					}
 					else {
 						this.rating = res.rating;
@@ -258,7 +266,11 @@ export class UiSmartPerformanceComponent implements OnInit {
 						this.boost = res.result.boost;
 						this.secure = res.result.secure;
 						if (res.percentage == 100) {
-							this.sendsmartPerformanceMetrics('smartPerformance.scanButton', 'Page.Support.SmartPerformance', 'complet');
+							scanEndedTime = new Date().getTime();
+							if (scanStartedTime && scanEndedTime) {
+								timeDeff = scanEndedTime - scanStartedTime;
+							}
+							this.sendsmartPerformanceMetrics('smartPerformance.scanButton', 'Page.Support.SmartPerformance', 'Success', timeDeff);
 							this.shellServices.unRegisterEvent(EventTypes.smartPerformanceScanStatus, event => {
 								this.updateScheduleScanStatus(event);
 							}
@@ -280,6 +292,9 @@ export class UiSmartPerformanceComponent implements OnInit {
 		}
 	}
 	public async scanAndFixInformation() {
+		const scanStartedTime: any = new Date().getTime();
+		let scanEndedTime;
+		let timeDeff;
 		let res;
 		if (this.smartPerformanceService.isShellAvailable) {
 			try {
@@ -298,7 +313,11 @@ export class UiSmartPerformanceComponent implements OnInit {
 						// this.hasSubscribedScanCompleted = false;
 						this.scheduleScanObj = null;
 						this.showSubscribersummary = false;
-						this.sendsmartPerformanceMetrics('smartPerformance.scanButton', 'Page.Support.SmartPerformance', 'not complet');
+						scanEndedTime = new Date().getTime();
+						if (scanStartedTime && scanEndedTime) {
+							timeDeff = scanEndedTime - scanStartedTime;
+						}
+						this.sendsmartPerformanceMetrics('smartPerformance.scanButton', 'Page.Support.SmartPerformance', 'Failure', timeDeff);
 						// this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
 					}
 					else {
@@ -311,7 +330,11 @@ export class UiSmartPerformanceComponent implements OnInit {
 						this.boost = res.result.boost;
 						this.secure = res.result.secure;
 						if (res.percentage == 100) {
-							this.sendsmartPerformanceMetrics('smartPerformance.scanButton', 'Page.Support.SmartPerformance', 'complet');
+							scanEndedTime = new Date().getTime();
+							if (scanStartedTime && scanEndedTime) {
+								timeDeff = scanEndedTime - scanStartedTime;
+							}
+							this.sendsmartPerformanceMetrics('smartPerformance.scanButton', 'Page.Support.SmartPerformance', 'Success', timeDeff);
 							this.shellServices.unRegisterEvent(EventTypes.smartPerformanceScanStatus, event => {
 								this.updateScheduleScanStatus(event);
 							}
@@ -365,16 +388,19 @@ export class UiSmartPerformanceComponent implements OnInit {
 				})
 				.catch(error => { })
 		}
-		
+
 	}
 
-	sendsmartPerformanceMetrics(itemName: string, itemParent: string, itemParam: any) {
-		//sendsmartPerformanceMetrics('smartPerformance.scanButton', 'Page.Support.SmartPerformance', complete);
+	sendsmartPerformanceMetrics(itemName: string, itemParent: string, taskResult: any, timeDeff) {
+		const taskDuration = Math.round(timeDeff/1000);
 		const data = {
 			ItemType: 'FeatureClick',
 			ItemName: 'btn.' + this.metricsTranslateService.translate(itemName),
 			ItemParent: itemParent,
-			ItemParam: itemParam
+			TaskResult: taskResult,
+			TaskCount: this.tune + this.boost + this.secure || 0,
+			TaskName: this.isSubscribed? 'ScanAndFix': 'Scan',
+			TaskDuration : taskDuration || 0
 		};
 		if (this.metrics) {
 			this.metrics.sendAsync(data);
