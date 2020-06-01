@@ -740,12 +740,14 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	}
 
 	public onResetDefaultSettings($event) {
-		this.smartAssist.resetHSAHPDSetting()
-			.then((response) => {
-				if (response === 0) {
-					this.logger.info('resetHSAHPDSetting done.')
-				}
-			});
+		if (this.smartAssist.isHPDShellAvailable) {
+			this.smartAssist.resetHSAHPDSetting()
+				.then((response) => {
+					if (response === 0) {
+						this.logger.info('resetHSAHPDSetting done.')
+					}
+				});
+		}
 
 		this.smartAssist.resetHPDSetting()
 			.then((isSuccess: boolean) => {

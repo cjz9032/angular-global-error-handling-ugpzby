@@ -229,6 +229,7 @@ export class SmartAssistService {
 				}
 				return Promise.resolve(intelligentSecurityDate);
 			}
+			return Promise.resolve(intelligentSecurityDate);
 		} catch (error) {
 			return Promise.reject(error.message);
 		}
@@ -255,6 +256,7 @@ export class SmartAssistService {
 			const result = this.hsaIntelligentSecurity.setPresenceLeaveDistanceAutoAdjust(value);
 			return Promise.resolve(result);
 		}
+		return undefined;
 	}
 
 	public setZeroTouchLockDistanceSensitivity(value: number): Promise<number> {
@@ -262,6 +264,7 @@ export class SmartAssistService {
 			const result = this.hsaIntelligentSecurity.setPresenceLeaveDistance(value);
 			return Promise.resolve(result);
 		}
+		return undefined;
 	}
 
 	public resetHSAHPDSetting(): Promise<number> {
@@ -269,6 +272,7 @@ export class SmartAssistService {
 			const result = this.hsaIntelligentSecurity.resetAllSetting();
 			return Promise.resolve(result);
 		}
+		return undefined;
 	}
 
 	public startMonitorHsaIntelligentSecurityStatus(callback: any): Promise<boolean> {
