@@ -2,7 +2,6 @@ import { LocalStorageKey } from './../../../enums/local-storage-key.enum';
 import { CommonService } from './../../../services/common/common.service';
 import { GamingLightingService } from './../../../services/gaming/lighting/gaming-lighting.service';
 import { Component, OnInit, Input } from '@angular/core';
-import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { LightingProfile } from 'src/app/data-models/gaming/lighting-profile';
 import {
 	LightingProfileEffectColorNUmber,
