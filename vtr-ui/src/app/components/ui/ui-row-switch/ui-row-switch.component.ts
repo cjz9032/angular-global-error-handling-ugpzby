@@ -57,6 +57,7 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, After
 	@Input() fnCtrltoolTip = false;
 	@Input() tooltipContent = [];
 	public contentExpand = false;
+	@Input() isMetricsEnabled = true;
 
 	@ViewChild('rightToolTip1', { static: false }) rightToolTip1: ElementRef;
 	@ViewChild('rightToolTip2', { static: false }) rightToolTip2: ElementRef;

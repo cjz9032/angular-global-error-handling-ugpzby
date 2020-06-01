@@ -11,6 +11,7 @@ import {
 	SmartAssistService
 } from 'src/app/services/smart-assist/smart-assist.service';
 import { TranslateService } from '@ngx-translate/core';
+import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
 
 
 @Component({
@@ -37,6 +38,12 @@ export class ActiveProtectionSystemComponent implements OnInit {
 	advanceSettingsCaption = 'activeProtectionSystem-advanced-settings-desc';
 	timeOut = 100;
 	// public taskBarDimmerValue: number;
+
+	constructor(
+		private smartAssist: SmartAssistService
+		, private translate: TranslateService
+		, private commonMetricsService: CommonMetricsService) { }
+
 
 	private populateIntervals() {
 		const seconds = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.seconds'); // 'seconds';
@@ -96,7 +103,6 @@ export class ActiveProtectionSystemComponent implements OnInit {
 		// }
 
 	}
-	constructor(private smartAssist: SmartAssistService, private translate: TranslateService) { }
 
 	ngOnInit() {
 		this.advancedToggle = false;
@@ -167,6 +173,9 @@ export class ActiveProtectionSystemComponent implements OnInit {
 		this.smartAssist
 			.setAPSMode(value)
 			.then(res => { });
+
+		// send metrics
+		this.commonMetricsService.sendMetrics(value, 'activeProtectionSystem')
 	}
 
 	setAPSSensitivityLevel($event: number) {
@@ -210,6 +219,8 @@ export class ActiveProtectionSystemComponent implements OnInit {
 						this.manualSnoozeTime = +(time);
 					});
 			});
+
+			this.commonMetricsService.sendMetrics(value, 'ActiveProtectionSystem.ManualOverride');
 	}
 
 	setSnoozeTime(event: DropDownInterval) {

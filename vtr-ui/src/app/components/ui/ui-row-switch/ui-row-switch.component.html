@@ -93,6 +93,7 @@
 				<div class=""
 					*ngIf="isSwitchVisible">
 					<vtr-ui-custom-switch [componentId]="switchId"
+						[sendMetrics]="isMetricsEnabled"
 						[value]="isSwitchChecked"
 						[ariaLabel]="title"
 						[isLoading]="showLoaderState"

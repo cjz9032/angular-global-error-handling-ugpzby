@@ -22,11 +22,7 @@
 							[theme]="'white'"
 							[showChildContent]='true'
 							(toggleOnOff)="setAPSMode($event)"
-							vtrMetrics
-							metricsEvent="FeatureClick"
-							metricsParent="Device.SmartAssist"
-							metricsItem="activeProtectionSystem"
-							[metricsValue]="!apsStatus">
+							[isMetricsEnabled]=false>
 							<div class="slider pr-0">
 								<vtr-ui-custom-slider [sliderId]="'activeProtectionSystemSensitivity'"
 									[minLegend]="'device.smartAssist.activeProtectionSystem.APS.lowSensitivity' | translate"
@@ -51,6 +47,7 @@
 									(toggle)="setAutoDisableSetting($event)"
 									[disabled]="!apsStatus"
 									[hasChild]="true"
+									[isMetricsEnabled]=false
 									[metricsEvent]="'ItemClick'"
 									[metricsParent]="'Device.SmartAssist'"
 									[metricsItem]="'ActiveProtectionSystem.AutoDisable'">
@@ -77,11 +74,8 @@
 						[showChildContent]="true"
 						(toggleOnOff)="setSnoozeSetting($event)"
 						[disabled]="!apsStatus"
-						vtrMetrics
-						metricsEvent="FeatureClick"
-						metricsParent="Device.SmartAssist"
-						metricsItem="ActiveProtectionSystem.ManualOverride"
-						[metricsValue]="!!(manualSnooze)">
+						[isMetricsEnabled]=false
+						>
 						<div *ngIf="manualSnooze"
 							class="dropdown row">
 							<section class="col-sm-6">

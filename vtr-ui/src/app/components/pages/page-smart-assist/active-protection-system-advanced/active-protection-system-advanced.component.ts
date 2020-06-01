@@ -10,6 +10,7 @@ import {
 	SmartAssistService
 } from 'src/app/services/smart-assist/smart-assist.service';
 import { TranslateService } from '@ngx-translate/core';
+import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
 @Component({
 	selector: 'vtr-active-protection-system-advanced',
 	templateUrl: './active-protection-system-advanced.component.html',
@@ -26,6 +27,10 @@ export class ActiveProtectionSystemAdvancedComponent implements OnInit {
 	penDelay: number;
 
 	public intervals: DropDownInterval[];
+	constructor(
+		private smartAssist: SmartAssistService
+		, private translate: TranslateService
+		, private commonMetricsService: CommonMetricsService) { }
 
 	private populateIntervals() {
 
@@ -58,7 +63,6 @@ export class ActiveProtectionSystemAdvancedComponent implements OnInit {
 		},
 		];
 	}
-	constructor(private smartAssist: SmartAssistService, private translate: TranslateService) { }
 
 	ngOnInit() {
 		this.populateIntervals();
@@ -104,7 +108,10 @@ export class ActiveProtectionSystemAdvancedComponent implements OnInit {
 					.catch(error => { });
 			})
 			.catch(err => { });
+
+		this.commonMetricsService.sendMetrics(value, 'ActiveProtectionSystem.Advanced.PenInput');
 	}
+
 	setPenDelayTime(event) {
 		const value = event.value;
 		this.penDelay = value;
@@ -133,6 +140,8 @@ export class ActiveProtectionSystemAdvancedComponent implements OnInit {
 					.catch(error => { });
 			})
 			.catch(err => { });
+
+		this.commonMetricsService.sendMetrics(this.touchStatus, 'ActiveProtectionSystem.Advanced.TouchInput');
 	}
 	setPSensorSetting(event) {
 		const value = !this.pSensorStatus;
@@ -147,5 +156,7 @@ export class ActiveProtectionSystemAdvancedComponent implements OnInit {
 					.catch(error => { });
 			})
 			.catch(err => { });
+
+		this.commonMetricsService.sendMetrics(this.pSensorStatus, 'ActiveProtectionSystem.Advanced.PSensorInput');
 	}
 }
