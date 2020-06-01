@@ -19,8 +19,7 @@
 						(click)="item.collapsed = !item.collapsed"
 						(keyup.enter)="item.collapsed = !item.collapsed"
 						role="button"
-						[attr.aria-expanded]="!item.collapsed"
-						>
+						[attr.aria-expanded]="item.collapsed">
 						<fa-icon *ngIf="item.collapsed; else expandArrow" [icon]="['fal', 'angle-up']"></fa-icon>
 						<ng-template #expandArrow>
 							<fa-icon [icon]="['fal', 'angle-down']"></fa-icon>

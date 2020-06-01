@@ -1,30 +1,29 @@
 <div class="modal-body">
-  <div class="title">{{'hardwareScan.warning' | translate}}</div>
-  <div class="description" [innerHtml]="modalDescription"></div>
+	<div class="title">{{'hardwareScan.warning' | translate}}</div>
+	<div class="description" [innerHtml]="modalDescription"></div>
 
-  <div class="row">
-	<vtr-ui-button
+	<div class="row">
+		<vtr-ui-button
+			vtrMetrics
+			metricsEvent="FeatureClick"
+			metricsParent="{{ItemParent}}"
+			metricsItem="{{ConfirmItemName}}"
+			[label]="buttonText"
+			[tooltipText]="buttonText"
+			(onClick)="onClosing()">
+		</vtr-ui-button>
+	</div>
+
+	<a role="button"
+		aria-label="Close"
+		href="javascript:;"
+		class="close-btn"
 		vtrMetrics
 		metricsEvent="FeatureClick"
 		metricsParent="{{ItemParent}}"
-		metricsItem="{{ConfirmItemName}}"
-		[label]="buttonText"
-		[tooltipText]="buttonText"
-		(onClick)="onClosing()">
-	</vtr-ui-button>
-  </div>
-
-  <a role="button"
-    href="javascript:;"
-    class="close-btn"
-    vtrMetrics
-    metricsEvent="FeatureClick"
-    metricsParent="{{ItemParent}}"
-    metricsItem="{{CancelItemName}}"
-    tabindex="0"
-    (click)="activeModal.dismiss('Cross click')">
-    <img [src]=" 'assets/icons/Close.svg' | svgInline | async"
-      alt=""
-      srcset="">
-  </a>
+		metricsItem="{{CancelItemName}}"
+		tabindex="0"
+		(click)="activeModal.dismiss('Cross click')">
+		<img [src]=" 'assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
+	</a>
 </div>

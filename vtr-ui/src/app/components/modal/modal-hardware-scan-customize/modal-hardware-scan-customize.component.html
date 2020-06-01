@@ -1,9 +1,9 @@
 <div class="modal-body vtr-modal-hardware-scan-customize">
 
 	<div class="row modal-information">
-		<div class="title">{{ title }}</div>
-		<div class="description">{{ description }}</div>
-		<div class="errorMessage">{{ errorMessage }}</div>
+		<h1 class="title">{{ title }}</h1>
+		<p class="description">{{ description }}</p>
+		<p class="errorMessage">{{ errorMessage }}</p>
 	</div>
 
 	<vtr-ui-hardware-list-test [items]="items" (selectAny)="receiveSelect()"></vtr-ui-hardware-list-test>
@@ -16,6 +16,7 @@
 	</div>
 
 	<a role="button"
+		aria-label="Close"
 		href="javascript:;"
 		class="close-btn"
 		vtrMetrics
@@ -23,8 +24,6 @@
 		metricsParent="HardwareScan.CustomizeScan"
 		metricsItem="CustomizeScan.Close"
 		(click)="closeModal()">
-		<img [src]=" 'assets/icons/Close.svg' | svgInline | async"
-			alt=""
-			srcset="">
+		<img [src]=" 'assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
 	</a>
 </div>
