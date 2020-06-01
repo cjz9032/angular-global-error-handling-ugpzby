@@ -39,7 +39,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	public resultItems: any;
 	public hardwareTitle = '';
 	public isScanDone = false;
-	public modules: any;
 	public progress = 0;
 	public tooltipInformation: any;
 
@@ -64,7 +63,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	private metrics: any;
 
 	public isOnline = true;
-	completeStatusToken: string;
 	public startScanClicked = false;
 
 	// "Wrapper" value to be accessed from the HTML
@@ -72,6 +70,18 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	// This is used to determine the scan overall status when sending metrics information
 	private resultSeverityConversion = {};
+
+	public set modules(value: any) {
+		this.hardwareScanService.setModules(value);
+	}
+
+	public get modules(): any {
+		return this.hardwareScanService.getModules();
+	}
+
+	public get completedStatus(): boolean | undefined {
+		return this.hardwareScanService.getCompletedStatus();
+	}
 
 	constructor(
 		public deviceService: DeviceService,
@@ -132,7 +142,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public initComponent() {
 		this.setPageTitle();
-		this.modules = this.getItemToDisplay();
 
 		if (this.hardwareScanService) {
 			if (this.hardwareScanService.isRecoverInit()) {
@@ -141,8 +150,13 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			}
 
 			if (this.hardwareScanService.hasLastResponse()) {
+				// Here we're executing a scan or RBS and the screen must reflect the running state
 				this.hardwareScanService.renderLastResponse();
-			} else {
+			} else if (!this.hardwareScanService.isScanOrRBSFinished()) {
+				// Here we "initialize" the homepage, but only if a scan or RBS isn't just finished.
+				// In that case, we'll keep the screen with the last state, which is already stored in "this.modules"
+				this.modules = this.getItemToDisplay();
+
 				if (this.hardwareScanService.isScanDoneExecuting()) {
 					this.hardwareScanService.setIsScanDone(false);
 					this.hardwareScanService.setScanExecutionStatus(false);
@@ -867,8 +881,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				results.items.push(item);
 			}
 
-		this.hardwareScanService.setViewResultItems(results);
-		this.modules = results.items;
+			this.hardwareScanService.setViewResultItems(results);
+			this.modules = results.items;
 		}
 	}
 
@@ -883,10 +897,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			case HardwareScanTestResult.Warning:
 				return this.translate.instant('hardwareScan.warning');
 		}
-	}
-
-	public finalStatusToken() {
-		return this.completeStatusToken;
 	}
 
 	public isDisableCancel() {
@@ -906,11 +916,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					break;
 				case HardwareScanProgress.ScanResponse:
 					this.modules = payload;
-					if (payload.status === false) {
-						this.completeStatusToken = this.translate.instant('hardwareScan.notCompleted');
-					} else {
-						this.completeStatusToken = this.translate.instant('hardwareScan.completed');
-					}
 					break;
 				case HardwareScanProgress.RecoverProgress:
 					this.ngZone.run(() => {
@@ -923,12 +928,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					if (payload.deviceInRecover) {
 						this.deviceInRecover = payload.deviceInRecover;
 					}
-
-					if (payload.status === false) {
-						this.completeStatusToken = this.translate.instant('hardwareScan.notCompleted');
-					} else {
-						this.completeStatusToken = this.translate.instant('hardwareScan.completed');
-					}
 					break;
 				case HardwareScanProgress.HasDevicesToRecoverBadSectors:
 					break;
@@ -940,6 +939,9 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					this.isOnline = notification.payload.isOnline;
 					break;
 				case HardwareScanProgress.BackEvent:
+					// User has pressed the back button, so we need to redirect them to the homepage instead of
+					// the scan or RBS result screen
+					this.hardwareScanService.setScanOrRBSFinished(false);
 					this.initComponent();
 					break;
 				default:

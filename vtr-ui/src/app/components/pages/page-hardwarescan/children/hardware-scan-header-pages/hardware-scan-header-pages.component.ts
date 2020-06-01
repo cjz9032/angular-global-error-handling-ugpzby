@@ -15,7 +15,7 @@ import { HardwareScanService } from '../../../../../services/hardware-scan/hardw
 export class HardwareScanHeaderPagesComponent implements OnInit {
 	// Inputs
 	@Input() percent = 0;
-	@Input() statusText: string;
+	@Input() completed: boolean | undefined;
 	@Input() disableCancel: boolean;
 	@Input() deviceInRecover: any; // Current device in Recover Bad Sectors
 	@Input() disableButtonScan: boolean;
