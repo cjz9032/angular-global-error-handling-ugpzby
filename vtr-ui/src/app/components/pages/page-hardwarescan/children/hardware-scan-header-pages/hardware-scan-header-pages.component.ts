@@ -52,7 +52,7 @@ export class HardwareScanHeaderPagesComponent implements OnInit {
 	public getDeviceTitle() {
 		if (this.hardwareScanService) {
 			if (this.hardwareScanService.isRecoverExecuting()) {
-				return this.deviceInRecover;
+				return this.hardwareScanService.getDeviceInRecover();
 			} else {
 				return this.translate.instant('hardwareScan.title');
 			}

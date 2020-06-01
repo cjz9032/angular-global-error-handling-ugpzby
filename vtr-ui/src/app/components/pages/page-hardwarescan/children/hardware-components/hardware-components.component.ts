@@ -49,7 +49,13 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public isRecoverBadSectorsInProgress = false;
 	public devicesRecoverBadSectors: any[];
-	public deviceInRecover: any; // Current device in Recover Bad Sectors
+
+	public set deviceInRecover(value: string) {
+		this.hardwareScanService.setDeviceInRecover(value);
+	}
+	public get deviceInRecover(): string {
+		return this.hardwareScanService.getDeviceInRecover();
+	}
 
 	private notificationSubscription: Subscription;
 	private customizeModal = ModalHardwareScanCustomizeComponent;
@@ -153,14 +159,18 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				// Here we're executing a scan or RBS and the screen must reflect the running state
 				this.hardwareScanService.renderLastResponse();
 			} else if (!this.hardwareScanService.isScanOrRBSFinished()) {
-				// Here we "initialize" the homepage, but only if a scan or RBS isn't just finished.
-				// In that case, we'll keep the screen with the last state, which is already stored in "this.modules"
-				this.modules = this.getItemToDisplay();
-
 				if (this.hardwareScanService.isScanDoneExecuting()) {
 					this.hardwareScanService.setIsScanDone(false);
 					this.hardwareScanService.setScanExecutionStatus(false);
 					this.hardwareScanService.setRecoverExecutionStatus(false);
+				}
+
+				// Here we "initialize" the homepage, but only if a scan or RBS isn't running or just finished.
+				// In that case, we'll keep the screen with the last state, which is already stored in "this.modules"
+				if (!this.hardwareScanService.isScanExecuting() &&
+					!this.hardwareScanService.isRecoverExecuting() &&
+					!this.hardwareScanService.isScanOrRBSFinished()) {
+					this.modules = this.getItemToDisplay();
 				}
 
 				if (!this.hardwareScanService.isLoadingDone()) {
@@ -487,7 +497,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					result.moduleName = category.name;
 					result.devices.push({
 						deviceId: deviceInfo.id,
-						deviceName: deviceInfo.name
+						deviceName: deviceInfo.name // device Name
 					});
 
 					return result;
@@ -809,6 +819,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					icon: storageModule.id,
 					name: device.name,
 					collapsed: false,
+					detailsCollapsed : true,
 					listTest: [{
 						id: '',
 						name: device.name,
@@ -851,6 +862,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					icon: storageModule.id,
 					name: device.name,
 					collapsed: false,
+					detailsCollapsed : true,
 					details: [
 						{ [this.translate.instant('hardwareScan.recoverBadSectors.numberSectors')]: device.numberOfSectors },
 						{ [this.translate.instant('hardwareScan.recoverBadSectors.numberBadSectors')]: device.numberOfBadSectors },
