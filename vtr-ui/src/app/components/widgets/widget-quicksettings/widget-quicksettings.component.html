@@ -11,8 +11,8 @@
 				</div>
 
 				<!-- microphone -->
-				<div [ngClass]="(cameraStatus.available && microphoneStatus.status)? 'widget-icon-3': 'widget-icon-2'">
-					<div *ngIf="microphoneStatus.status">
+				<div [ngClass]="(cameraStatus.available && microphoneStatus.available)? 'widget-icon-3': 'widget-icon-2'">
+					<div *ngIf="microphoneStatus.available">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Microphone2x'"
 							[offIconDefinition]="'icomoon icomoon-FA-Microphone---slash2x'"
 							[value]="microphoneStatus.status && microphoneStatus.permission && !microPhoneGreyOut"
