@@ -1,7 +1,7 @@
 import { LocalStorageKey } from './../../../enums/local-storage-key.enum';
 import { CommonService } from './../../../services/common/common.service';
 import { GamingLightingService } from './../../../services/gaming/lighting/gaming-lighting.service';
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { LightingProfile } from 'src/app/data-models/gaming/lighting-profile';
 import {
@@ -305,7 +305,6 @@ export class UiLightingProfileComponent implements OnInit {
 	defaultLanguage: any;
 	constructor(
 		private gamingLightingService: GamingLightingService,
-		private gamingAllCapabilities: GamingAllCapabilitiesService,
 		private commonService: CommonService,
 		private deviceService: DeviceService
 	) { }
