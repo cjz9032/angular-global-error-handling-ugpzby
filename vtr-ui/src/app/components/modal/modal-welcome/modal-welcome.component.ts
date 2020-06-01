@@ -83,6 +83,18 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			image: 'non-gaming.jpg',
 		},
 	];
+	allGamingFeatures = [
+		{ id: 'feature1', label: 'welcometutorial.gaming.gamingFeature1' },
+		{ id: 'feature2', label: 'welcometutorial.gaming.gamingFeature2' },
+		{ id: 'feature3', label: 'welcometutorial.gaming.gamingFeature3' },
+		{ id: 'feature4', label: 'welcometutorial.gaming.gamingFeature4' },
+		{ id: 'feature5', label: 'welcometutorial.gaming.gamingFeature5' },
+	];
+	allCoreFeatures = [
+		{ id: 'bullets1', label: 'welcometutorial.bullets1' },
+		{ id: 'bullets2', label: 'welcometutorial.bullets2' },
+		{ id: 'bullets3', label: 'welcometutorial.bullets3' },
+	];
 	interests = [];
 	hideMoreInterestBtn = false;
 	welcomeStart: any = new Date();

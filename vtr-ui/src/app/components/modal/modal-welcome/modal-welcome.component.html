@@ -47,25 +47,22 @@
 					<div class="row no-gutters justify-content-center align-items-center"
 						[hidden]="deviceService.isArm || deviceService.isGaming">
 						<div class="col-auto title2">
-							<ul>
-								<li id="welcome-tutorial-page-bullets1">{{"welcometutorial.bullets1" | translate }}</li>
-								<li *ngIf="machineInfo && machineInfo.brand!=='think'"
-									id="welcome-tutorial-page-bullets2">
-									{{"welcometutorial.bullets2" | translate }}</li>
-								<li id="welcome-tutorial-page-bullets3">{{"welcometutorial.bullets3" | translate }}</li>
-							</ul>
+							<div *ngFor="let item of allCoreFeatures"
+								[id]="'welcome-tutorial-page-' + item.id"
+								role="text"
+								[innerHTML]="item.label | translate"
+								[hidden]="item.id==='bullets2' && machineInfo && machineInfo.brand==='think'">
+							</div>
 						</div>
 					</div>
 					<div class="row no-gutters"
 						[hidden]="deviceService.isArm || !deviceService.isGaming">
 						<div class="col-auto title2">
-							<ul>
-								<li id="welcome-tutorial-page-gaming-feature1">{{"welcometutorial.gaming.gamingFeature1" | translate }}</li>
-								<li id="welcome-tutorial-page-gaming-feature2">{{"welcometutorial.gaming.gamingFeature2" | translate }}</li>
-								<li id="welcome-tutorial-page-gaming-feature3">{{"welcometutorial.gaming.gamingFeature3" | translate }}</li>
-								<li id="welcome-tutorial-page-gaming-feature4">{{"welcometutorial.gaming.gamingFeature4" | translate }}</li>
-								<li id="welcome-tutorial-page-gaming-feature5">{{"welcometutorial.gaming.gamingFeature5" | translate }}</li>
-							</ul>
+							<div *ngFor="let item of allGamingFeatures"
+								[id]="'welcome-tutorial-page-gaming-' + item.id"
+								role="text"
+								[innerHTML]="item.label | translate">
+							</div>
 						</div>
 					</div>
 				</div>
@@ -115,6 +112,7 @@
 								<input type="radio"
 									tabindex="0"
 									id="segment-choose-{{usage.id}}"
+									[attr.aria-label]="usage.textKey | translate"
 									[checked]="usageType && usageType === usage.value"
 									[value]="usage.value"
 									(click)="saveUsageType(usage.value)"
@@ -122,7 +120,10 @@
 								<img src="assets/images/welcome/{{usage.image}}"
 									alt="" />
 								<label for="segment-choose-{{usage.id}}"
-									class="centered">{{ usage.textKey | translate }}</label>
+									aria-hidden="true"
+									class="centered">
+									{{ usage.textKey | translate }}
+								</label>
 							</div>
 						</div>
 					</div>
@@ -135,6 +136,7 @@
 							<div class="device-image">
 								<input type="radio"
 									tabindex="0"
+									[attr.aria-label]="scenario.textKey | translate"
 									id="gaming-scenario-choose-{{scenario.id}}"
 									[checked]="gamingScenario && gamingScenario === scenario.value"
 									[value]="scenario.value"
@@ -143,7 +145,10 @@
 								<img src="assets/images/welcome/{{scenario.image}}"
 									alt="" />
 								<label for="gaming-scenario-choose-{{scenario.id}}"
-									class="centered">{{ scenario.textKey | translate }}</label>
+									aria-hidden="true"
+									class="centered">
+									{{ scenario.textKey | translate }}
+								</label>
 							</div>
 						</div>
 					</div>
@@ -160,12 +165,14 @@
 							*ngFor="let interest of interests; index as i"
 							[hidden]="i > 7 && !hideMoreInterestBtn">
 							<input type="checkbox"
+								[attr.aria-label]="'welcometutorial.interests.' + interest.label | translate"
 								[id]="interest.label + 'checkbox-welcome'"
-								#checkbox1
 								(click)="toggle($event, interest.label)"
 								(keypress)="onKeyPress($event)"
 								[checked]="interest.checked" />
-							<label [for]="interest.label + 'checkbox-welcome'">{{ "welcometutorial.interests." + interest.label | translate }}</label>
+							<label [for]="interest.label + 'checkbox-welcome'"
+								aria-hidden="true">{{ "welcometutorial.interests." + interest.label | translate }}</label>
+
 						</div>
 					</div>
 					<div *ngIf="!hideMoreInterestBtn"
