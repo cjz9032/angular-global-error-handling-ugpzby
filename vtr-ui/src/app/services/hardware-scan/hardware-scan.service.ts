@@ -686,19 +686,24 @@ export class HardwareScanService {
 
 	public async initLoadingModules(culture) {
 		this.hasItemsToRecoverBadSectors = false;
-		this.getAllItems(culture).then(() => {
-			this.getItemsToRecoverBadSectors().then((response) => {
+
+		this.getAllItems(culture)
+		.then(() => {
+			this.isLoadingModulesDone = true;
+			this.loadCustomModal();
+			return this.getItemsToRecoverBadSectors();
+		})
+		.then((response) => {
+			if (response && response.categoryList && response.categoryList.length > 0) {
 				this.devicesToRecoverBadSectors = response.categoryList[0];
 				if (this.devicesToRecoverBadSectors.groupList.length !== 0) {
 					this.hasItemsToRecoverBadSectors = true;
 				}
-
-				// Signalizes that the hardware list has been retrieved
-				this.hardwareModulesLoaded.next(true);
-				this.refreshingModules = false;
-			});
-			this.isLoadingModulesDone = true;
-			this.loadCustomModal();
+			}
+		}).finally(() => {
+			// Signalizes that the hardware list has been retrieved
+			this.hardwareModulesLoaded.next(true);
+			this.refreshingModules = false;
 		});
 	}
 
