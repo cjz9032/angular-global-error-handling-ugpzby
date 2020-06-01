@@ -284,6 +284,14 @@ export class HardwareScanService {
 		this.recoverInit = status;
 	}
 
+	public getDeviceInRecover() {
+		return this.deviceInRecover;
+	}
+
+	public setDeviceInRecover(value: string) {
+		this.deviceInRecover = value;
+	}
+
 	public setHasItemsToRecoverBadSectors(status: boolean) {
 		this.hasItemsToRecoverBadSectors = status;
 	}
@@ -642,8 +650,8 @@ export class HardwareScanService {
 				statusRecover = false;
 			}
 
-			if (response.devices[i].status === HardwareScanTestResult.InProgress && response.devices[i].deviceName !== '') {
-				this.deviceInRecover = response.devices[i].deviceName;
+			if (response.devices[i].status === HardwareScanTestResult.InProgress && response.devices[i].name) {
+				this.setDeviceInRecover(response.devices[i].name);
 			}
 		}
 
