@@ -12,6 +12,8 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { EMPTY } from 'rxjs';
 import { JsonPipe } from '@angular/common';
 import { ModalSmartPerformanceFeedbackComponent } from '../../modal/modal-smart-performance-feedback/modal-smart-performance-feedback.component';
+import { MetricsTranslateService } from 'src/app/services/mertics-traslate/metrics-translate.service';
+import { MetricService } from 'src/app/services/metric/metrics.service';
 @Component({
 	selector: 'vtr-ui-smart-performance',
 	templateUrl: './ui-smart-performance.component.html',
@@ -28,7 +30,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 	subItems = [];
 	currentSubItemCategory: any = {};
 	isScheduleScanRunning = false;
-	@Input() activegroup = "Tune up performance";
+	@Input() activegroup = 'Tune up performance';
 	isSubscribed = false;
 	public tune = 0;
 	public boost = 0;
@@ -50,6 +52,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 		'Friday',
 		'Saturday'
 	];
+	private metrics: any;
 	constructor(
 		private translate: TranslateService,
 		private modalService: NgbModal,
@@ -57,8 +60,13 @@ export class UiSmartPerformanceComponent implements OnInit {
 		public smartPerformanceService: SmartPerformanceService,
 		private logger: LoggerService,
 		public shellServices: VantageShellService,
+		public metricsTranslateService: MetricsTranslateService,
+		public metricsService: MetricService,
+		
 	) {
 		this.translateStrings();
+		this.shellServices.getMetrics();
+		this.metrics = this.shellServices.getMetrics();
 	}
 
 	ngOnInit() {
@@ -69,13 +77,13 @@ export class UiSmartPerformanceComponent implements OnInit {
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled, true);
 			this.IsSmartPerformanceFirstRun = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun);
-			 //if (this.IsSmartPerformanceFirstRun === true) {
-				this.unregisterScheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
+			//if (this.IsSmartPerformanceFirstRun === true) {
+			this.unregisterScheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
 			// 	this.scheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScan', 'onceaweek', this.days[new Date().getDay()], new Date(), []);
 			// 	//this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, false);
 			// }
 		}
-		if (this.isSubscribed !== undefined && this.isSubscribed===true) {
+		if (this.isSubscribed !== undefined && this.isSubscribed === true) {
 			this.unregisterScheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScan');
 		}
 
@@ -99,7 +107,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 				})
 				.catch(error => {
 					this.logger.error('ui-smart-performance.ngOnInit.getReadiness.then', error);
-				});
+				})
 		}
 		// de-activates the pop-up, when user is navigating away while scanning
 		// this.smartPerformanceService.scanningStopped.subscribe((res: boolean) => {
@@ -138,7 +146,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 	registerScheduleScanEvent() {
 		this.shellServices.registerEvent(EventTypes.smartPerformanceScheduleScanStatus,
 			event => {
-				this.scheduleScanObj=null;
+				this.scheduleScanObj = null;
 				this.updateScheduleScanStatus(event);
 			}
 		);
@@ -190,7 +198,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 						// activates the pop-up, when user is navigating away while scanning - for subsciber
 						this.showWarning.emit(true);
 						// Subscriber Scan Completed
-						if(this.isSubscribed) {
+						if (this.isSubscribed) {
 							this.hasSubscribedScanCompleted = true;
 						}
 						else {
@@ -216,10 +224,10 @@ export class UiSmartPerformanceComponent implements OnInit {
 		try {
 			if (response && response.payload) {
 				this.scheduleScanObj = response;
-				
+
 				// 	this.isScanningCompleted = true;
 				// 	this.isScanning = false;
-			
+
 				// if (!this.isScheduleScan) {
 				// 	this.isScheduleScan = true;
 				// }
@@ -230,6 +238,9 @@ export class UiSmartPerformanceComponent implements OnInit {
 	}
 
 	public async getSmartPerformanceScheduleScanStatus() {
+		const scanStartedTime: any = new Date().getTime;
+		let scanEndedTime;
+		let timeDeff;
 		let res;
 		if (this.smartPerformanceService.isShellAvailable) {
 			try {
@@ -240,8 +251,14 @@ export class UiSmartPerformanceComponent implements OnInit {
 				if (res && res.scanstatus != 'Idle') {
 					let spSubscribeCancelModel = this.commonService.getLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted);
 					if (spSubscribeCancelModel) {
-						this.scheduleScanObj = null;
+						this.scheduleScanObj = null;
 						this.showSubscribersummary = false;
+						scanEndedTime = new Date().getTime();
+						if (scanStartedTime && scanEndedTime) {
+							timeDeff = scanEndedTime - scanStartedTime;
+						}
+						this.sendsmartPerformanceMetrics('smartPerformance.scanButton', 'Page.Support.SmartPerformance', 'Failure', timeDeff);
+
 					}
 					else {
 						this.rating = res.rating;
@@ -249,14 +266,19 @@ export class UiSmartPerformanceComponent implements OnInit {
 						this.boost = res.result.boost;
 						this.secure = res.result.secure;
 						if (res.percentage == 100) {
-							this.shellServices.unRegisterEvent(EventTypes.smartPerformanceScanStatus, event => {					
-									this.updateScheduleScanStatus(event);
-								}
+							scanEndedTime = new Date().getTime();
+							if (scanStartedTime && scanEndedTime) {
+								timeDeff = scanEndedTime - scanStartedTime;
+							}
+							this.sendsmartPerformanceMetrics('smartPerformance.scanButton', 'Page.Support.SmartPerformance', 'Success', timeDeff);
+							this.shellServices.unRegisterEvent(EventTypes.smartPerformanceScanStatus, event => {
+								this.updateScheduleScanStatus(event);
+							}
 							);
 						}
 						this.isScanning = false;
 						this.isScanningCompleted = true;
-						this.showSubscribersummary=true;
+						this.showSubscribersummary = true;
 						this.logger.info('ui-smart-performance.getSmartPerformanceScheduleScanStatus', JSON.stringify(res));
 					}
 				}
@@ -270,6 +292,9 @@ export class UiSmartPerformanceComponent implements OnInit {
 		}
 	}
 	public async scanAndFixInformation() {
+		const scanStartedTime: any = new Date().getTime();
+		let scanEndedTime;
+		let timeDeff;
 		let res;
 		if (this.smartPerformanceService.isShellAvailable) {
 			try {
@@ -286,8 +311,13 @@ export class UiSmartPerformanceComponent implements OnInit {
 					let spSubscribeCancelModel = this.commonService.getLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted);
 					if (spSubscribeCancelModel) {
 						// this.hasSubscribedScanCompleted = false;
-						this.scheduleScanObj = null;
+						this.scheduleScanObj = null;
 						this.showSubscribersummary = false;
+						scanEndedTime = new Date().getTime();
+						if (scanStartedTime && scanEndedTime) {
+							timeDeff = scanEndedTime - scanStartedTime;
+						}
+						this.sendsmartPerformanceMetrics('smartPerformance.scanButton', 'Page.Support.SmartPerformance', 'Failure', timeDeff);
 						// this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
 					}
 					else {
@@ -300,16 +330,21 @@ export class UiSmartPerformanceComponent implements OnInit {
 						this.boost = res.result.boost;
 						this.secure = res.result.secure;
 						if (res.percentage == 100) {
-							this.shellServices.unRegisterEvent(EventTypes.smartPerformanceScanStatus, event => {					
-									this.updateScheduleScanStatus(event);
-								}
+							scanEndedTime = new Date().getTime();
+							if (scanStartedTime && scanEndedTime) {
+								timeDeff = scanEndedTime - scanStartedTime;
+							}
+							this.sendsmartPerformanceMetrics('smartPerformance.scanButton', 'Page.Support.SmartPerformance', 'Success', timeDeff);
+							this.shellServices.unRegisterEvent(EventTypes.smartPerformanceScanStatus, event => {
+								this.updateScheduleScanStatus(event);
+							}
 							);
 						}
 						this.showWarning.emit(false)
 						this.isScanning = false;
 						this.isScanningCompleted = true;
-						this.showSubscribersummary=true;
-						this.logger.info('ui-smart-performance.scanAndFixInformation ',JSON.stringify(res));
+						this.showSubscribersummary = true;
+						this.logger.info('ui-smart-performance.scanAndFixInformation ', JSON.stringify(res));
 					}
 				}
 			} catch (error) {
@@ -333,10 +368,10 @@ export class UiSmartPerformanceComponent implements OnInit {
 
 						this.shellServices.registerEvent(EventTypes.smartPerformanceScanStatus,
 							event => {
-								this.scheduleScanObj=null;
+								this.scheduleScanObj = null;
 								this.updateScheduleScanStatus(event);
 							}
-							);
+						);
 						this.isScanning = true;
 						// activates the pop-up, when user is navigating away while scanning - for non-subscriber
 						this.showWarning.emit(true)
@@ -351,14 +386,32 @@ export class UiSmartPerformanceComponent implements OnInit {
 
 					}
 				})
-				.catch(error => { });
+				.catch(error => { })
+		}
+
+	}
+
+	sendsmartPerformanceMetrics(itemName: string, itemParent: string, taskResult: any, timeDeff) {
+		const taskDuration = Math.round(timeDeff/1000);
+		const data = {
+			ItemType: 'FeatureClick',
+			ItemName: 'btn.' + this.metricsTranslateService.translate(itemName),
+			ItemParent: itemParent,
+			TaskResult: taskResult,
+			TaskCount: this.tune + this.boost + this.secure || 0,
+			TaskName: this.isSubscribed? 'ScanAndFix': 'Scan',
+			TaskDuration : taskDuration || 0
+		};
+		if (this.metrics) {
+			this.metrics.sendAsync(data);
 		}
 	}
 	cancelScan() {
 		this.isScanning = false;
 		this.isScanningCompleted = false;
-		this.showSubscribersummary=false;
+		this.showSubscribersummary = false;
 	}
+
 
 	async unregisterScheduleScan(scantype) {
 
@@ -391,13 +444,13 @@ export class UiSmartPerformanceComponent implements OnInit {
 		this.isScanningCompleted = false;
 		this.showSubscribersummary = false;
 	}
-	changeManageSubscription(event){
+	changeManageSubscription(event) {
 		this.unregisterScheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScan');
 		this.isSubscribed = this.commonService.getLocalStorageValue(
 			LocalStorageKey.IsFreeFullFeatureEnabled
 		);
 	}
-	changeSummaryToHome(){
+	changeSummaryToHome() {
 		this.isScanning = false;
 		this.isScanningCompleted = false;
 		this.showSubscribersummary = false;
