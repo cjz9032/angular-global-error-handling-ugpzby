@@ -11,7 +11,8 @@ const routes: Routes = [
 		canDeactivate: [GuardService, CanDeactivateGuardService],
 		canActivate: [GuardService],
 		data: {
-			pageName: 'smart'
+			pageName: 'Page.Support.SmartPerformance',
+			pageContent: 'Smart Performance'
 		}
 	}
 ];
