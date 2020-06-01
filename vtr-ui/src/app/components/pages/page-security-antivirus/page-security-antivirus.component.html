@@ -72,7 +72,7 @@
 								[label]="'security.antivirus.windowsDefender.buyNow' | translate"
 								[isLoading]="common.purchaseBtnIsLoading"
 								[vtrMetricEnabled]="false"
-								(click)="common.openMcAfeePurchase('button')"></vtr-ui-button>
+								(onClick)="common.openMcAfeePurchase('button')"></vtr-ui-button>
 						</div>
 					</div>
 					<div class="divider"></div>
@@ -144,14 +144,14 @@
 										[label]="'security.antivirus.mcafee.trialSubscribe' | translate:{remainingDays: viewModel.mcafee.expireAt}"
 										[isLoading]="common.purchaseBtnIsLoading"
 										[vtrMetricEnabled]="false"
-										(click)="common.openMcAfeePurchase('button')"></vtr-ui-button>
+										(onClick)="common.openMcAfeePurchase('button')"></vtr-ui-button>
 									<vtr-ui-button *ngIf="viewModel.mcafee.subscription === 'licenseActive'"
 										linkId="sa-av-btn-subscribe"
 										[upperCaseLabel]=false [btnHeight]=true [isDisabled]="isOnline === false"
 										[label]="'security.antivirus.mcafee.subscribe' | translate:{remainingDays: viewModel.mcafee.expireAt}"
 										[isLoading]="common.purchaseBtnIsLoading"
 										[vtrMetricEnabled]="false"
-										(click)="common.openMcAfeePurchase('button')"></vtr-ui-button>
+										(onClick)="common.openMcAfeePurchase('button')"></vtr-ui-button>
 									<div class="subtitle text-center"
 										[innerHTML]="'security.antivirus.mcafee.discount' | translate">
 									</div>
