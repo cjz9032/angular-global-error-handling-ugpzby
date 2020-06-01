@@ -497,7 +497,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					result.moduleName = category.name;
 					result.devices.push({
 						deviceId: deviceInfo.id,
-						deviceName: deviceInfo.name // device Name
+						deviceName: deviceInfo.name
 					});
 
 					return result;
