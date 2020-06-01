@@ -1,7 +1,6 @@
 import { GamingAutoCloseService } from './../../../services/gaming/gaming-autoclose/gaming-autoclose.service';
 import { Component, OnInit } from '@angular/core';
 import { CMSService } from 'src/app/services/cms/cms.service';
-import { DomSanitizer, Title } from '@angular/platform-browser';
 import { isUndefined } from 'util';
 import { AutoCloseStatus } from 'src/app/data-models/gaming/autoclose/autoclose-status.model';
 import { AutoCloseNeedToAsk } from 'src/app/data-models/gaming/autoclose/autoclose-need-to-ask.model';
@@ -10,9 +9,6 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { UPEService } from 'src/app/services/upe/upe.service';
-import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
-import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
@@ -42,9 +38,7 @@ export class PageAutocloseComponent implements OnInit {
 		private cmsService: CMSService,
 		private gamingAutoCloseService: GamingAutoCloseService,
 		private commonService: CommonService,
-		private upeService: UPEService,
 		private loggerService: LoggerService,
-		private hypService: HypothesisService,
 		private translate: TranslateService,
 		public deviceService: DeviceService,
 	) {
@@ -191,7 +185,6 @@ export class PageAutocloseComponent implements OnInit {
 
 	async deleteAppFromList(appData: any) {
 		try {
-			// this.autoCloseAppList.splice(appData.index, 1);
 			await this.gamingAutoCloseService.delAppsAutoCloseList(appData.name).then((response: boolean) => {
 				if (response) {
 					this.refreshAutoCloseList();
