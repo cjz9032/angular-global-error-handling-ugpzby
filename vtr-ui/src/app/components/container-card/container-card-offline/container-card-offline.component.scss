@@ -35,6 +35,7 @@
     font-size: $base;
     display: flex;
     opacity: 0;
+    visibility: hidden;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -44,6 +45,7 @@
   &:hover {
     .offline-message {
       opacity: 1;
+      visibility: visible;
     }
   }
 
