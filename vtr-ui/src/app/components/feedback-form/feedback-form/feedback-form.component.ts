@@ -10,6 +10,7 @@ interface IQuestion {
 	idYes?: string
 	idNo?: string
 	hideInArm?: boolean
+	hideInSMode?: boolean
 	name: string
 	question: string
 }
@@ -39,6 +40,7 @@ export class FeedbackFormComponent implements OnInit {
 			idNo: 'feedback-su-awareness-no',
 			name: 'systemUpdateAwareness',
 			hideInArm: true,
+			hideInSMode: true,
 			question: 'dashboard.feedback.form.question7'
 		},
 		{
@@ -64,6 +66,9 @@ export class FeedbackFormComponent implements OnInit {
 		this.getCurrentRegion();
 		if (this.deviceService.isArm) {
 			this.questions = this.questions.filter(q => !q.hideInArm);
+		}
+		else if (this.deviceService.isSMode) {
+			this.questions = this.questions.filter(q => !q.hideInSMode);
 		}
 	}
 
