@@ -135,6 +135,7 @@ export class UiScanScheduleComponent implements OnInit {
 	public enumLocalScanFrequncy: any;
 	requestScanData = {};
 	type: string;
+	isFirstVisit: boolean
 
 	ngOnInit() {
 		// this.currentDate = new Date();
@@ -166,6 +167,7 @@ export class UiScanScheduleComponent implements OnInit {
 
 		// when it is SP first run setting type and also formatted payload for backend as prescribed in confluence page.
 		if (this.IsSmartPerformanceFirstRun) {
+			this.isFirstVisit = true;
 			this.type = "firstRun";
 			this.payloadData(this.type);
 		}
@@ -390,6 +392,7 @@ export class UiScanScheduleComponent implements OnInit {
 			if (!this.IsScheduleScanEnabled) {
 				this.selectedFrequency = this.scanFrequency[0]
 				this.frequencyValue = this.scanFrequency.indexOf(this.selectedFrequency)
+				this.isFirstVisit = false;
 				this.type = "firstRun";
 				this.payloadData(this.type);
 				this.scheduleScan(this.requestScanData);
@@ -463,15 +466,25 @@ export class UiScanScheduleComponent implements OnInit {
 			case "firstRun":
 				let roundOffMin;
 				const roundOffSecToZero = '00';
-				// roundingoff minutes to hour when minutes greater than 55 else to multiples of 5 when minutes less than 55 - intermittent issue fix
-				if(moment().minute() > 55) {
-					currentMom = moment().add(1, 'hours').format("dddd, YYYY, MM, D, HH, mm, ss");
-					roundOffMin = '00'
-				} else {
-					currentMom = moment().format("dddd, YYYY, MM, D, HH, mm, ss");
-					roundOffMin = (Math.ceil(+currentMom.split(",")[5] / 5) * 5).toString()
+				if(this.isFirstVisit) {
+					if(moment().minute() > 55) {
+						currentMom = moment().add(2, 'hours').format("dddd, YYYY, MM, D, HH, mm, ss");
+						roundOffMin = '00'
+					} else {
+						currentMom = moment().add(1, 'hours').format("dddd, YYYY, MM, D, HH, mm, ss");
+						roundOffMin = (Math.ceil(+currentMom.split(",")[5] / 5) * 5).toString()
+					}
 				}
-				
+				if(!this.isFirstVisit) {
+					// roundingoff minutes to hour when minutes greater than 55 else to multiples of 5 when minutes less than 55 - intermittent issue fix
+					if(moment().minute() > 55) {
+						currentMom = moment().add(1, 'hours').format("dddd, YYYY, MM, D, HH, mm, ss");
+						roundOffMin = '00'
+					} else {
+						currentMom = moment().format("dddd, YYYY, MM, D, HH, mm, ss");
+						roundOffMin = (Math.ceil(+currentMom.split(",")[5] / 5) * 5).toString()
+					}
+				}
 				const data = {
 					frequency: "onceaweek",
 					day: currentMom.split(",")[0],
