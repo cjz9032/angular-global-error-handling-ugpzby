@@ -89,23 +89,35 @@
 													<div class="mt-5 mb-3 d-flex justify-content-between align-items-center">
 														<div class="icon-box d-flex justify-content-center align-items-center">
 															<div class="icomoon icomoon-e-junk" [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.HUNDEREADANDONE}"></div>
-															<p [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.HUNDEREADANDONE}">{{'smartPerformance.tunePCPerformance.tabSet1.tab1' |translate }}</p>
+															<p 
+															[title]="'smartPerformance.tunePCPerformance.tabSet1.tab1' |translate" 
+															[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.HUNDEREADANDONE}">
+															{{'smartPerformance.tunePCPerformance.tabSet1.tab1' |translate }}
+															</p>
 														</div>
 														<div class="icon-box d-flex justify-content-center align-items-center">
 															<div class="icomoon icomoon-usibilityIssue" [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.HUNDEREADANDTWO}"></div>
-															<p [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.HUNDEREADANDTWO}">{{'smartPerformance.tunePCPerformance.tabSet1.tab2' |translate }}</p>
+															<p
+															[title]="'smartPerformance.tunePCPerformance.tabSet1.tab2' |translate" 
+															[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.HUNDEREADANDTWO}">{{'smartPerformance.tunePCPerformance.tabSet1.tab2' |translate }}</p>
 														</div>
 														<div class="icon-box d-flex justify-content-center align-items-center">
 															<div class="icomoon icomoon-windows" [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.HUNDEREADANDTHREE}"></div>
-															<p [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.HUNDEREADANDTHREE}">{{'smartPerformance.tunePCPerformance.tabSet1.tab3' |translate }}</p>
+															<p
+															[title]="'smartPerformance.tunePCPerformance.tabSet1.tab3' |translate" 
+															[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.HUNDEREADANDTHREE}">{{'smartPerformance.tunePCPerformance.tabSet1.tab3' |translate }}</p>
 														</div>
 														<div class="icon-box d-flex justify-content-center align-items-center">
 															<div class="icomoon icomoon-system-error" [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.HUNDEREADANDFOUR}"></div>
-															<p [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.HUNDEREADANDFOUR}">{{'smartPerformance.tunePCPerformance.tabSet1.tab4' |translate }}</p>
+															<p 
+															[title]="'smartPerformance.tunePCPerformance.tabSet1.tab4' |translate" 
+															[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.HUNDEREADANDFOUR}">{{'smartPerformance.tunePCPerformance.tabSet1.tab4' |translate }}</p>
 														</div>
 														<div class="icon-box d-flex justify-content-center align-items-center">
 															<div class="icomoon icomoon-registery-errors"  [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.HUNDEREADANDFIVE}"></div>
-															<p [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.HUNDEREADANDFIVE}">{{'smartPerformance.tunePCPerformance.tabSet1.tab5' |translate }}</p>
+															<p 
+															[title]="'smartPerformance.tunePCPerformance.tabSet1.tab5' |translate" 
+															[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.HUNDEREADANDFIVE}">{{'smartPerformance.tunePCPerformance.tabSet1.tab5' |translate }}</p>
 														</div>
 													</div>
 													</ng-template>
@@ -132,23 +144,33 @@
 													<div class="mt-5 mb-3 d-flex justify-content-between align-items-center">
 														<div class="icon-box d-flex justify-content-center align-items-center">
 															<div class="icomoon icomoon-e-junk" [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.TWOHUNDEREADANDONE}"></div>
-															<p [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.TWOHUNDEREADANDONE}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab1' |translate }}</p>
+															<p 
+															[title]="'smartPerformance.boostInternetPerformance.tabSet1.tab1' |translate" 
+															[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.TWOHUNDEREADANDONE}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab1' |translate }}</p>
 														</div>
 														<div class="icon-box d-flex justify-content-center align-items-center">
 															<div class="icomoon icomoon-network-settings" [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.TWOHUNDEREADANDTWO}"></div>
-															<p [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.TWOHUNDEREADANDTWO}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab2' |translate }}</p>
+															<p 
+															[title]="'smartPerformance.boostInternetPerformance.tabSet1.tab2' |translate" 
+															[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.TWOHUNDEREADANDTWO}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab2' |translate }}</p>
 														</div>
 														<div class="icon-box d-flex justify-content-center align-items-center">
 															<div class="icomoon icomoon-browser-settings" [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.TWOHUNDEREADANDTHREE}"></div>
-															<p [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.TWOHUNDEREADANDTHREE}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab3' |translate }}</p>
+															<p 
+															[title]="'smartPerformance.boostInternetPerformance.tabSet1.tab3' |translate" 
+															[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.TWOHUNDEREADANDTHREE}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab3' |translate }}</p>
 														</div>
 														<div class="icon-box d-flex justify-content-center align-items-center">
 															<div class="icomoon icomoon-browser-security"  [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.TWOHUNDEREADANDFOUR}"></div>
-															<p [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.TWOHUNDEREADANDFOUR}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab4' |translate }}</p>
+															<p 
+															[title]="'smartPerformance.boostInternetPerformance.tabSet1.tab4' |translate" 
+															[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.TWOHUNDEREADANDFOUR}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab4' |translate }}</p>
 														</div>
 														<div class="icon-box d-flex justify-content-center align-items-center">
 															<div class="icomoon icomoon-wifi" [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.TWOHUNDEREADANDFIVE}"></div>
-															<p [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.TWOHUNDEREADANDFIVE}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab5' |translate }}</p>
+															<p 
+															[title]="'smartPerformance.boostInternetPerformance.tabSet1.tab5' |translate" 
+															[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.TWOHUNDEREADANDFIVE}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab5' |translate }}</p>
 														</div>
 													</div>
 													</ng-template>
@@ -172,23 +194,33 @@
 													<div class="mt-5 mb-3 d-flex justify-content-between align-items-center">
 														<div class="icon-box d-flex justify-content-center align-items-center">
 															<div class="icomoon icomoon-malware-scan" [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.THREEHUNDEREADANDONE}"></div>
-															<p [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.THREEHUNDEREADANDONE}">{{'smartPerformance.malwareSecurity.tabSet1.tab1' |translate }}</p>
+															<p 
+															[title]="'smartPerformance.malwareSecurity.tabSet1.tab1' |translate" 
+															[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.THREEHUNDEREADANDONE}">{{'smartPerformance.malwareSecurity.tabSet1.tab1' |translate }}</p>
 														</div>
 														<div class="icon-box d-flex justify-content-center align-items-center">
 															<div class="icomoon icomoon-zero-day" [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.THREEHUNDEREADANDTWO}"></div>
-															<p [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.THREEHUNDEREADANDTWO}">{{'smartPerformance.malwareSecurity.tabSet1.tab2' |translate }}</p>
+															<p 
+															[title]="'smartPerformance.malwareSecurity.tabSet1.tab2' |translate" 
+															[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.THREEHUNDEREADANDTWO}">{{'smartPerformance.malwareSecurity.tabSet1.tab2' |translate }}</p>
 														</div>
 														<div class="icon-box d-flex justify-content-center align-items-center">
 															<div class="icomoon icomoon-errant-program" [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.THREEHUNDEREADANDTHREE}"></div>
-															<p [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.THREEHUNDEREADANDTHREE}">{{'smartPerformance.malwareSecurity.tabSet1.tab3' |translate }}</p>
+															<p 
+															[title]="'smartPerformance.malwareSecurity.tabSet1.tab3' |translate" 
+															[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.THREEHUNDEREADANDTHREE}">{{'smartPerformance.malwareSecurity.tabSet1.tab3' |translate }}</p>
 														</div>
 														<div class="icon-box d-flex justify-content-center align-items-center">
 															<div class="icomoon icomoon-annoying-adware" [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.THREEHUNDEREADANDFOUR}"></div>
-															<p [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.THREEHUNDEREADANDFOUR}">{{'smartPerformance.malwareSecurity.tabSet1.tab4' |translate }}</p>
+															<p 
+															[title]="'smartPerformance.malwareSecurity.tabSet1.tab4' |translate" 
+															[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.THREEHUNDEREADANDFOUR}">{{'smartPerformance.malwareSecurity.tabSet1.tab4' |translate }}</p>
 														</div>
 														<div class="icon-box d-flex justify-content-center align-items-center">
 															<div class="icomoon icomoon-security-settings" [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.THREEHUNDEREADANDFIVE}"></div>
-															<p [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.THREEHUNDEREADANDFIVE}">{{'smartPerformance.malwareSecurity.tabSet1.tab5' |translate }}</p>
+															<p 
+															[title]="'smartPerformance.malwareSecurity.tabSet1.tab5' |translate" 
+															[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.THREEHUNDEREADANDFIVE}">{{'smartPerformance.malwareSecurity.tabSet1.tab5' |translate }}</p>
 														</div>
 													</div>
 													</ng-template>
