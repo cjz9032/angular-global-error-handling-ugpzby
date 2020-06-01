@@ -342,7 +342,7 @@
 		width: 20%;
 		position: relative;
 		@media #{$breakpoint_sm}{
-			width: auto;
+			//width: auto;
 			min-width: 6rem;
 		}
 		&::after {
@@ -353,9 +353,6 @@
 			background: $light;
 			right: 0;
 			top: 0;
-			@media #{$breakpoint_sm}{
-				right: 0.5rem;
-			}
 		}
         &:last-child {
             &::after {
@@ -386,6 +383,10 @@
 				line-height: 1.2rem;
 				margin-bottom: 0;
 				margin-top: 0;
+				white-space: nowrap;
+				max-width: 5.5rem;
+				overflow: hidden;
+				text-overflow: ellipsis;
 			}
         }
 	}

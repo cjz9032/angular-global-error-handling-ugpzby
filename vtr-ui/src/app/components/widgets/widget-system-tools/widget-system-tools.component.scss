@@ -111,13 +111,13 @@
 							z-index: 2;
 							height: 4rem;
 							width: 4rem;
-							background-image: url(~/assets/images/gaming/gaming-accessory.svg);
+							background-image: url(~/assets/images/gaming/gaming-accessory.png);
 							background-size: cover;
 							@media #{$black-on-white} {
-								background-image: url(~/assets/images/gaming/gaming-accessory-black.svg);
+								background-image: url(~/assets/images/gaming/gaming-accessory-black.png);
 							}
 							@media #{$white-on-black} {
-								background-image: url(~/assets/images/gaming/gaming-accessory-white.svg);
+								background-image: url(~/assets/images/gaming/gaming-accessory-white.png);
 							}
 						}
 					}
