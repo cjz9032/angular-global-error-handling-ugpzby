@@ -461,8 +461,17 @@ export class UiScanScheduleComponent implements OnInit {
 		let currentMom;
 		switch (typeRun) {
 			case "firstRun":
-				currentMom = moment().format("dddd, YYYY, MM, D, HH, mm, ss");
-				const roundOffMin = (Math.ceil(+currentMom.split(",")[5] / 5) * 5).toString();
+				let roundOffMin;
+				const roundOffSecToZero = '00';
+				// roundingoff minutes to hour when minutes greater than 55 else to multiples of 5 when minutes less than 55 - intermittent issue fix
+				if(moment().minute() > 55) {
+					currentMom = moment().add(1, 'hours').format("dddd, YYYY, MM, D, HH, mm, ss");
+					roundOffMin = '00'
+				} else {
+					currentMom = moment().format("dddd, YYYY, MM, D, HH, mm, ss");
+					roundOffMin = (Math.ceil(+currentMom.split(",")[5] / 5) * 5).toString()
+				}
+				
 				const data = {
 					frequency: "onceaweek",
 					day: currentMom.split(",")[0],
@@ -472,7 +481,7 @@ export class UiScanScheduleComponent implements OnInit {
 						currentMom.split(",")[3],
 						currentMom.split(",")[4],
 						roundOffMin,
-						currentMom.split(",")[6],
+						roundOffSecToZero,
 					]).format('YYYY-MM-DDTHH:mm:ss'),
 					date: [],
 				};
@@ -504,7 +513,7 @@ export class UiScanScheduleComponent implements OnInit {
 
 			case "monthly":
 				if (+this.selectedNumber < moment().date()) {
-					currentMom = moment().date(+this.selectedNumber).add(1, "month").format("YYYY, MM, D, ss");
+					currentMom = moment().date(+this.selectedNumber).add(1, "months").format("YYYY, MM, D, ss");
 				} else {
 					currentMom = moment().date(+this.selectedNumber).format("YYYY, MM, D, ss");
 				}
@@ -519,9 +528,9 @@ export class UiScanScheduleComponent implements OnInit {
 			frequency === "Every month"
 				? frequency.replace("Every", "oncea").replace(" ", "")
 				: frequency.replace(" ", "").replace(" ", "");
-		const roundOffMin = (Math.ceil(+this.scanTime.min / 5) * 5).toString();
+		const roundOffSecToZero = '00'
 		const tme = this.scanTime.hour + " " + this.scanTime.amPm;
-		const hours = moment(tme, ["h A"]).format("HH");
+		const roundedhours = moment(tme, ["h A"]).format("HH");
 		const data = {
 			frequency: freq.toLowerCase(),
 			day: freq !== "onceamonth" ? this.selectedDay : "",
@@ -529,9 +538,9 @@ export class UiScanScheduleComponent implements OnInit {
 				currentMoment.split(",")[0],
 				(+currentMoment.split(",")[1]-1).toString(),
 				currentMoment.split(",")[2],
-				hours,
-				roundOffMin,
-				currentMoment.split(",")[3],
+				roundedhours,
+				this.scanTime.min,
+				roundOffSecToZero,
 			]).format('YYYY-MM-DDTHH:mm:ss'),
 			date: freq === "onceamonth" ? [+this.selectedNumber] : [],
 		};

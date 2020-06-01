@@ -66,10 +66,14 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 
 	openSubscribeModal(event) {
 		if (this.isSubscribed === false) {
+			const scanEnabled = this.commonService.getLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled);
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.localSubscriptionDetails);
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, 'Once a week')
+			if(!scanEnabled) {
+				this.commonService.setLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled, true);
+			}
 			// location.reload();
 			// this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
 			// 	this.router.navigate(['WidgetSubscriptiondetailsComponent']);
