@@ -6,38 +6,20 @@
 					<div class="item-left">
 						<div class="test-status" *ngIf="item.status >= 0">
 							<div [ngSwitch]="item.status">
-								<!--Aria-hidden defined as true to ignore faicon selection and defined a span with description to the icon-->
-								<div *ngSwitchCase="0">
-									<fa-icon aria-hidden="true" aria-labelledby="status-loading-icon" class="loading" [icon]="['fas', 'circle-notch']" [spin]="true"></fa-icon>
-									<span id="status-loading-icon" class="sr-only">loading</span>
-								</div>
+								<!--Defined an aria-label property with description to the icon-->
+								<fa-icon aria-label="status-loading" role="img" class="loading" [icon]="['fas', 'circle-notch']" [spin]="true" *ngSwitchCase="0"></fa-icon>
 
 								<span class="progress-value-text" *ngSwitchCase="1">{{item.percent}}%</span>
 
-								<div *ngSwitchCase="2">
-									<fa-icon aria-hidden="true" aria-labelledby="status-success-icon" class="success" [icon]="['fas', 'check-circle']"></fa-icon>
-									<span id="status-success-icon" class="sr-only">success</span>
-								</div>
+								<fa-icon aria-label="status-success" role="img" class="success" [icon]="['fas', 'check-circle']" *ngSwitchCase="2"></fa-icon>
 
-								<div *ngSwitchCase="3">
-									<fa-icon aria-hidden="true" aria-labelledby="status-failure-icon" class="failure" [icon]="['fas', 'times-circle']"></fa-icon>
-									<span id="status-failure-icon" class="sr-only">failure</span>
-								</div>
+								<fa-icon aria-label="status-failure" role="img" class="failure" [icon]="['fas', 'times-circle']" *ngSwitchCase="3"></fa-icon>
 
-								<div *ngSwitchCase="4">
-									<fa-icon aria-hidden="true" aria-labelledby="status-warning-icon" class="warning" [icon]="['fas', 'exclamation-triangle']"></fa-icon>
-									<span id="status-warning-icon" class="sr-only">warning</span>
-								</div>
+								<fa-icon aria-label="status-warning" role="img" class="warning" [icon]="['fas', 'exclamation-triangle']" *ngSwitchCase="4"></fa-icon>
 
-								<div *ngSwitchCase="6">
-									<fa-icon aria-hidden="true" aria-labelledby="status-not-applicable-icon" class="not-applicable" [icon]="['fas', 'ban']"></fa-icon>
-									<span id="status-not-applicable-icon" class="sr-only">not applicable</span>
-								</div>
+								<fa-icon arialabel="status-not-applicable" role="img" class="not-applicable" [icon]="['fas', 'ban']" *ngSwitchCase="6"></fa-icon>
 
-								<div *ngSwitchDefault>
-									<fa-icon aria-hidden="true" aria-labelledby="status-canceled-icon" class="failure" [icon]="['fas', 'exclamation-circle']"></fa-icon>
-									<span id="status-canceled-icon" class="sr-only">canceled</span>
-								</div>
+								<fa-icon aria-label="status-canceled" role="img" class="failure" [icon]="['fas', 'exclamation-circle']" *ngSwitchDefault></fa-icon>
 							</div>
 						</div>
 
@@ -65,36 +47,18 @@
 							{{item.statusToken}}</div>
 						<div class="module-result-icon">
 							<div [ngSwitch]="item.resultIcon">
-								<!--Aria-hidden defined as true to ignore faicon selection and defined a span with description to the icon-->
-								<div *ngSwitchCase="2">
-									<fa-icon aria-hidden="true" aria-labelledby="result-success-icon" class="success" [icon]="['fas', 'check-circle']"></fa-icon>
-									<span id="result-success-icon" class="sr-only">success</span>
-								</div>
+								<!--Aria-hidden defined as true to ignore faicon selection-->
+								<fa-icon aria-hidden="true" class="success" [icon]="['fas', 'check-circle']" *ngSwitchCase="2"></fa-icon>
 
-								<div *ngSwitchCase="3">
-									<fa-icon aria-hidden="true" aria-labelledby="result-failure-icon" class="failure" [icon]="['fas', 'times-circle']"></fa-icon>
-									<span id="result-failure-icon" class="sr-only">failure</span>
-								</div>
+								<fa-icon aria-hidden="true" class="failure" [icon]="['fas', 'times-circle']" *ngSwitchCase="3"></fa-icon>
 
-								<div *ngSwitchCase="4">
-									<fa-icon aria-hidden="true" aria-labelledby="result-warning-icon" class="warning" [icon]="['fas', 'exclamation-triangle']"></fa-icon>
-									<span id="result-warning-icon" class="sr-only">warning</span>
-								</div>
+								<fa-icon aria-hidden="true" class="warning" [icon]="['fas', 'exclamation-triangle']" *ngSwitchCase="4"></fa-icon>
 
-								<div *ngSwitchCase="5">
-									<fa-icon aria-hidden="true" aria-labelledby="result-not-applicable-icon" class="not-applicable" [icon]="['fas', 'ban']"></fa-icon>
-									<span id="result-not-applicable-icon" class="sr-only">not applicable</span>
-								</div>
+								<fa-icon aria-hidden="true" class="not-applicable" [icon]="['fas', 'ban']" *ngSwitchCase="5"></fa-icon>
 
-								<div *ngSwitchCase="6">
-									<fa-icon aria-hidden="true" aria-labelledby="result-canceled-icon" class="failure" [icon]="['fas', 'exclamation-circle']"></fa-icon>
-									<span id="result-canceled-icon" class="sr-only">canceled</span>
-								</div>
+								<fa-icon aria-hidden="true" class="failure" [icon]="['fas', 'exclamation-circle']" *ngSwitchCase="6"></fa-icon>
 
-								<div *ngSwitchDefault>
-									<fa-icon aria-hidden="true" aria-labelledby="result-quetion-mark-icon" [icon]="['fas', 'question-circle']"></fa-icon>
-									<span id="result-quetion-mark-icon" class="sr-only">question mark</span>
-								</div>
+								<fa-icon aria-hidden="true" [icon]="['fas', 'question-circle']" *ngSwitchDefault></fa-icon>
 							</div>
 						</div>
 					</div>
