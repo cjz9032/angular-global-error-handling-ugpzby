@@ -4,6 +4,7 @@ import { MetricService } from 'src/app/services/metric/metrics.service';
 import { UiCircleRadioWithCheckBoxListModel } from './ui-circle-radio-with-checkbox-list.model';
 import { KeyCode as KEYCODE } from 'src/app/enums/key-code.enum';
 import { ActivatedRoute } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-ui-circle-radio-with-checkbox-list',
@@ -29,6 +30,7 @@ export class UiCircleRadioWithCheckBoxListComponent implements OnInit, OnChanges
 	constructor(
 		logger: LoggerService
 		, private metrics: MetricService
+		, private translate: TranslateService
 		, private activatedRoute: ActivatedRoute) {
 	}
 
@@ -171,11 +173,12 @@ export class UiCircleRadioWithCheckBoxListComponent implements OnInit, OnChanges
 		if (radio) {
 			this.optionChange.emit(radio);
 			if (this.sendMetrics) {
+				const label = this.translate.instant(radio.label);
 				const metricsData = {
 					ItemParent: this.metricsParent || this.activatedRoute.snapshot.data.pageName,
 					ItemType: 'FeatureClick',
-					ItemName: radio.componentId,
-					ItemValue: radio.value
+					ItemName: `radio.${label}`,
+					ItemValue: radio.isChecked
 				};
 				this.metrics.sendMetrics(metricsData);
 			}
