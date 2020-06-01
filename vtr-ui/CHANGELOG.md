@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.69](https://bitbucket.tc.lenovo.com///compare/v1.5.68...v1.5.69) (2020-06-01)
+
+
+### Bug Fixes
+
+* **Antivirus:** VAN-18896 fixed offlineMode button still clickable ([d744ed5](https://bitbucket.tc.lenovo.com///commit/d744ed5e963a7c411b682fa97abd2c622df6485d))
+
 ### [1.5.68](https://bitbucket.tc.lenovo.com///compare/v1.5.67...v1.5.68) (2020-05-30)
 
 ### [1.5.67](https://bitbucket.tc.lenovo.com///compare/v1.5.66...v1.5.67) (2020-05-30)
