@@ -12,6 +12,7 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 	@Output() toggle: EventEmitter<any> = new EventEmitter();
 	@Input() value: boolean;
 	@Input() onOffSwitchId: string;
+	@Input() onOffSwitchParam: string;
 	@Input() disabled = false;
 	@Input() showLoader = false;
 	@Input() theme = 'white';
