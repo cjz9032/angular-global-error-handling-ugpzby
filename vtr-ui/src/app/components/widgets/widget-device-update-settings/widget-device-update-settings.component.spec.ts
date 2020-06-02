@@ -42,33 +42,34 @@ describe('WidgetDeviceUpdateSettingsComponent', () => {
 		expect(component).toBeTruthy();
 	});
 
+
 	it('should check currentFocus', () => {
-		const id =1;
+		const id ='cold'+1;
 		component.currentFocus(id);
-		expect(component).toBeTruthy(undefined);
+		expect(component).toBeTruthy();
 	});
+
 
 	it('should check onToggleOnOff', () => {
 		const event =true;
+		spyOn(component.toggleOnOff,'emit').and.callThrough();
 		component.onToggleOnOff(event);
-		expect(component).toBeTruthy(undefined);
+		expect(component.toggleOnOff.emit).toHaveBeenCalled();
 	});
+
 
 	it('should check optionChanged', () => {
 		const option=1;
 		const item=1;
 		const id=1;
+		spyOn(component.optionSelected,'emit').and.callThrough();
 		component.optionChanged(option,item,id);
-		expect(component).toBeTruthy(undefined);
-	});
-
-	it('should check updateFocus', () => {
-		component.updateFocus('false');
-		expect(component).toBeTruthy(undefined);
+		expect(component.optionSelected.emit).toHaveBeenCalled();
 	});
 
 	it('should check onClosed', () => {
+		spyOn(component.popupClosed,'emit').and.callThrough();
 		component.onClosed('true','false');
-		expect(component).toBeTruthy();
+		expect(component.popupClosed.emit).toHaveBeenCalled();
 	});
 });
