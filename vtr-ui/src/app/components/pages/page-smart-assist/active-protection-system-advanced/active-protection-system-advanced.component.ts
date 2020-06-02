@@ -141,7 +141,7 @@ export class ActiveProtectionSystemAdvancedComponent implements OnInit {
 			})
 			.catch(err => { });
 
-		this.commonMetricsService.sendMetrics(this.touchStatus, 'ActiveProtectionSystem.Advanced.TouchInput');
+		this.commonMetricsService.sendMetrics(event.switchValue, 'ActiveProtectionSystem.Advanced.TouchInput');
 	}
 	setPSensorSetting(event) {
 		const value = !this.pSensorStatus;
@@ -157,6 +157,6 @@ export class ActiveProtectionSystemAdvancedComponent implements OnInit {
 			})
 			.catch(err => { });
 
-		this.commonMetricsService.sendMetrics(this.pSensorStatus, 'ActiveProtectionSystem.Advanced.PSensorInput');
+		this.commonMetricsService.sendMetrics(event.switchValue, 'ActiveProtectionSystem.Advanced.PSensorInput');
 	}
 }
