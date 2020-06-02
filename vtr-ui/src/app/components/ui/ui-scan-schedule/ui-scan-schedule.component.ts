@@ -380,10 +380,12 @@ export class UiScanScheduleComponent implements OnInit {
 		if (!event.switchValue) {
 			if (this.isSubscribed) {
 				this.unregisterScheduleScan("Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix");
+				this.setDefaultValWhenDisabled()
 				// hiding Next Schedule Scan in SP scan-summary
 				this.scanDatekValueChange.emit({ nextEnable: event.switchValue });
 			} else {
 				this.unregisterScheduleScan("Lenovo.Vantage.SmartPerformance.ScheduleScan");
+				this.setDefaultValWhenDisabled()
 			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled, false);
 			this.commonService.removeLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency);
@@ -456,6 +458,19 @@ export class UiScanScheduleComponent implements OnInit {
 			this.logger.info("ui-smart-performance.getNextScanRunTime.then", JSON.stringify(res));
 		} catch (err) {
 			this.logger.error("ui-smart-performance.getNextScanRunTime.then", err);
+		}
+	}
+
+	setDefaultValWhenDisabled() {
+		this.selectedFrequency = this.scanFrequency[0]
+		this.selectedDay = this.days[0]
+		this.scanTime = {
+			hour: this.hours[11],
+			hourId: 11,
+			min: this.mins[0],
+			minId: 0,
+			amPm: this.amPm[0],
+			amPmId: 0,
 		}
 	}
 
