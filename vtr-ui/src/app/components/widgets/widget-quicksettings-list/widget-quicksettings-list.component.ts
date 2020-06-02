@@ -463,15 +463,8 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 			} else {
 				this.quickSettings[2].isChecked = false;
 			}
-			if (
-				this.guard.previousPageName !== 'device-gaming' &&
-				!this.guard.previousPageName.startsWith('Security')
-			) {
-				// do nothing after getWifiSecurityState, is it reasonable?
-				// getWifiSecurityState is a intermediate API, if the data changed, we can be notified by events.
-				await this.wifiSecurity.refresh().catch((err) => this.handleError(err));
-				this.wifiSecurity.getWifiSecurityState();
-			}
+			await this.wifiSecurity.refresh().catch((err) => this.handleError(err));
+			this.wifiSecurity.getWifiSecurityState();
 		}
 	}
 
@@ -597,12 +590,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInGamingDashboard, false);
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog, false);
 		if (this.securityAdvisor !== undefined && this.securityAdvisor.wifiSecurity) {
-			if (
-				this.router.routerState.snapshot.url.indexOf('security') === -1 &&
-				this.router.routerState.snapshot.url.indexOf('device-gaming') === -1
-			) {
-				this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
-			}
+			this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
 			this.securityAdvisor.wifiSecurity.off(EventTypes.wsStateEvent, this.wsStateEventHandler);
 			this.securityAdvisor.wifiSecurity.off(EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHandler);
 			this.securityAdvisor.wifiSecurity.off(EventTypes.wsPluginMissingEvent, this.wsPluginMissingEventHandler);
