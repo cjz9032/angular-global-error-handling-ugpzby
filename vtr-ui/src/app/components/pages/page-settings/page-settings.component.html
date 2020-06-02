@@ -177,6 +177,7 @@
 											<div class="device-image mx-auto">
 												<input type="radio"
 													tabindex="0"
+													[attr.aria-label]="usage.textKey | translate"
 													id="settings-segment-choose-{{usage.id}}"
 													[checked]="usageType && usageType === usage.value"
 													[value]="usage.value"
@@ -184,7 +185,10 @@
 													name="settings-segment-choose" />
 												<img src="assets/images/welcome/{{usage.image}}" />
 												<label for="settings-segment-choose-{{usage.id}}"
-													class="centered">{{ usage.textKey | translate }}</label>
+													class="centered"
+													aria-hidden="true">
+													{{ usage.textKey | translate }}
+												</label>
 											</div>
 										</div>
 									</div>
@@ -210,12 +214,16 @@
 										<div class="inline-block interest-item"
 											*ngFor="let interest of interests">
 											<input type="checkbox"
+												[attr.aria-label]="'welcometutorial.interests.' + interest.label | translate"
 												[id]="interest.label + 'checkbox'"
 												#checkbox1
 												[checked]="interest.checked"
 												(keypress)="onKeyPress($event)"
 												(click)="onInterestToggle($event, interest.label)" />
-											<label [for]="interest.label + 'checkbox'">{{ "welcometutorial.interests." + interest.label | translate }}</label>
+											<label [for]="interest.label + 'checkbox'"
+												aria-hidden="true">
+												{{ "welcometutorial.interests." + interest.label | translate }}
+											</label>
 										</div>
 									</div>
 								</div>
