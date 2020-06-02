@@ -33,6 +33,9 @@ input:disabled ~.switch {
 	pointer-events: none;
 	.switch {
 		background: $grey_light !important;
+		@media #{$high-contrast} {
+			background: $high-contrast-black-disabled !important;
+		}
 		@media #{$black-on-white} {
 			background: $high-contrast-white-disabled !important;
 		}
@@ -77,6 +80,9 @@ input:disabled ~.switch {
 input + .switch {
 	background: $grey_light;
 	// margin-right: 0.7rem; // changed to match the UI Mockup.
+	@media #{$high-contrast} {
+		background:$light;
+	}
 	@media #{$black-on-white} {
 		background: $dark;
 	}
@@ -89,6 +95,9 @@ input + .switch {
 input.checked + .switch {
 	background: linear-gradient($gradient_angle, $green_darker 0%, $green-light 100%);
 	transition: background 1.2s;
+	@media #{$high-contrast} {
+		background: $highlight_bright;
+	}
 	@media #{$black-on-white} {
 		background: $high-contrast-white-textselected;
 	}
@@ -115,6 +124,9 @@ input.checked + .switch {
 	//-webkit-box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.4);
 	//box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.4);
 	transition: background-color 0.4s, left 0.2s;
+	@media #{$high-contrast} {
+		background-color: $dark;
+	}
 	@media #{$black-on-white} {
 		background-color: $light;
 	}
@@ -238,6 +250,9 @@ input.checked + .switch.switch-xs > small {
 		outline: none;
 		border-radius: 10rem;
 		box-shadow: 0px -0.15px 0px 2px $shade_extralight, -0.15px 0px 0px 3.7px $menu_hover;
+		@media #{$high-contrast} {
+			box-shadow: 0px -0.15px 0px 2px $dark, -0.15px 0px 0px 3.7px $light;
+		}
 		@media #{$black-on-white} {
 			box-shadow: 0px -0.15px 0px 2px $light, -0.15px 0px 0px 3.7px $dark;
 		}

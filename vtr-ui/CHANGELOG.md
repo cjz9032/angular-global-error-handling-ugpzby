@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.71](https://bitbucket.tc.lenovo.com///compare/v1.5.70...v1.5.71) (2020-06-02)
+
+
+### Bug Fixes
+
+* **gaming:** can't re-enable toggle in gaming dashboard ([8d3e4c1](https://bitbucket.tc.lenovo.com///commit/8d3e4c19cbf5506b35cab693e2af2c49b1aef494))
+* **Wifi style:** VAN-18884 modify wifi switch toggle style ([71cb3cb](https://bitbucket.tc.lenovo.com///commit/71cb3cb8b3ee54c5c9d45ce07d57c8527a93dc87))
+
 ### [1.5.70](https://bitbucket.tc.lenovo.com///compare/v1.5.69...v1.5.70) (2020-06-01)
 
 ### [1.5.69](https://bitbucket.tc.lenovo.com///compare/v1.5.68...v1.5.69) (2020-06-01)

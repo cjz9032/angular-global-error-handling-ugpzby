@@ -28,5 +28,5 @@ export enum enumScanFrequency{
 	ONCEAMONTH = 'Once a month',
 }
 export enum enumSmartPerformance{
-	SCHEDULESCANENDDATE = '2020/07/20',
+	SCHEDULESCANENDDATE = '2020/07/27',
 }
