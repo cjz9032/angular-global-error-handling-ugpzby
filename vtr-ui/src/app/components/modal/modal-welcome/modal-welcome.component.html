@@ -47,12 +47,15 @@
 					<div class="row no-gutters justify-content-center align-items-center"
 						[hidden]="deviceService.isArm || deviceService.isGaming">
 						<div class="col-auto title2">
-							<div *ngFor="let item of allCoreFeatures"
-								[id]="'welcome-tutorial-page-' + item.id"
-								role="text"
-								[innerHTML]="item.label | translate"
-								[hidden]="item.id==='bullets2' && machineInfo && machineInfo.brand==='think'">
-							</div>
+							<ul>
+								<li *ngFor="let item of allCoreFeatures"
+									[hidden]="item.id==='bullets2' && machineInfo && machineInfo.brand==='think'">
+									<div [id]="'welcome-tutorial-page-' + item.id"
+										role="text"
+										[innerHTML]="item.label | translate">
+									</div>
+								</li>
+							</ul>
 						</div>
 					</div>
 					<div class="row no-gutters"
