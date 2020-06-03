@@ -61,6 +61,16 @@ export class QaService {
 			like: false,
 			dislike: false,
 			itemId: 'widget-support-detail-6',
+		},
+		{
+			id: 1,
+			title: this.translate.instant('device.deviceSettings.batteryGauge.highDensityBattery.subtitle'),
+			category: 'q&a',
+			path: '/device/high-density-battery',
+			iconPath: 'assets/images/qa/svg_icon_qa_backup.svg',
+			like: false,
+			dislike: false,
+			itemId: 'high-density-battery',
 		}
 	];
 
@@ -79,7 +89,7 @@ export class QaService {
 			'faq.question6.title'
 		])
 		.subscribe((result) => {
-			for (let i = 0; i < this.qas.length; i++) {
+			for (let i = 0; i < this.qas.length -1; i++) {
 				const key = `faq.question${i + 1}.title`
 				this.qas[i].title = result[key];
 			}

@@ -1,0 +1,48 @@
+<vtr-page-layout [title]="'device.deviceSettings.batteryGauge.highDensityBattery.title'| translate"
+	[shiftLeftUp]="true"
+	[shiftRightUp]="true"
+	[back]="'common.ui.back' | translate">
+
+
+	<left-content>
+		<div class="container-fluid">
+				<div class="row card mb-5" [dir]="'dir' | translate">
+					<div class="col left-container">
+						<div class="row description-container">
+							<div>
+								<div class="title" id="high-density-battery-tittle" role="text">{{'device.deviceSettings.batteryGauge.highDensityBattery.subtitle' | translate}}</div>
+								<hr/>
+								<div class="para1">
+									{{'device.deviceSettings.batteryGauge.highDensityBattery.para1' | translate}}
+								</div>
+								<div class="mt-5">
+									{{'device.deviceSettings.batteryGauge.highDensityBattery.para2.item1' | translate}}
+								</div>
+								<div class="margin-top-2">
+									{{'device.deviceSettings.batteryGauge.highDensityBattery.para2.item2' | translate}}
+								</div>
+								<div class="margin-top-2 margin-bottom-16">
+									{{'device.deviceSettings.batteryGauge.highDensityBattery.para2.item3' | translate}}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</left-content>
+
+	<right-content>
+		<div class="container-fluid">
+		<div class="row mn-6">
+			<div class="col">
+				<vtr-widget-questions componentName="qa"
+					[title]="'common.qAndA.title' | translate"
+					[description]="'common.qAndA.subtitle' | translate"
+					[items]="qas"
+					blockPosition="r1"
+					[linkId]="'high-density-battery-qa'"></vtr-widget-questions>
+			</div>
+		</div>
+	</div>
+	</right-content>
+</vtr-page-layout>
