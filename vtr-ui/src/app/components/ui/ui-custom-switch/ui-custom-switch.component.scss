@@ -10,11 +10,9 @@
 	$custom-switch-height: 20px !default;
 	$custom-switch-indicator-border-radius: 10px;
 	$custom-switch-indicator-size: 14px;
-	$input-focus-indicator: 0 0 0 2px rgba(255, 255, 255, 1),
-		0 0 0 3px rgba(0, 123, 255, 1);
-	$input-checked-background: transparent
-		linear-gradient(113deg, $green_darker 0%, $green-light 100%) 0% 0%
-		no-repeat padding-box;
+	$input-focus-indicator: 0 0 0 2px rgba(255, 255, 255, 1), 0 0 0 3px rgba(0, 123, 255, 1);
+	$input-checked-background: transparent linear-gradient(113deg, $green_darker 0%, $green-light 100%) 0% 0% no-repeat
+		padding-box;
 
 	.custom-switch {
 		height: 26px;
@@ -71,7 +69,6 @@
 				background: $green_darker;
 			}
 		}
-
 		.custom-control-input:checked ~ .custom-control-label {
 			&::before {
 				border: 0;
@@ -81,11 +78,9 @@
 				}
 				@media #{$black-on-white} {
 					background: $high-contrast-white-textselected;
-					border-color: $high-contrast-white-textselected;
 				}
 				@media #{$white-on-black} {
-					background: $high-contrast-black-textselected;
-					border-color: $high-contrast-black-textselected;
+					background: $highlight_bright;
 				}
 			}
 			&::after {
@@ -107,13 +102,13 @@
 				border-color: $grey_darker;
 				background-color: $grey_light;
 				@media #{$high-contrast} {
-					background: $light;
+					background:$light;
 				}
 				@media #{$black-on-white} {
-					background: $light;
+					background: $dark;
 				}
 				@media #{$white-on-black} {
-					background: $dark;
+					background:$light;
 				}
 			}
 			&::after {
@@ -122,10 +117,10 @@
 					background: $dark;
 				}
 				@media #{$black-on-white} {
-					background: $dark;
+					background: $light;
 				}
 				@media #{$white-on-black} {
-					background: $light;
+					background: $dark;
 				}
 			}
 		}
@@ -136,33 +131,10 @@
 				background: $grey_light;
 				opacity: 0.8;
 				border: $grey_darker solid 1px;
-				@media #{$high-contrast} {
-					background: $high-contrast-white-disabled !important;
-				}
-				@media #{$black-on-white} {
-					border-color: $high-contrast-white-disabled;
-					background: $high-contrast-white-disabled;
-				}
-				@media #{$white-on-black} {
-					border-color: $high-contrast-black-disabled;
-					background: $high-contrast-black-disabled;
-				}
 			}
 			&::after {
 				background-color: $grey_darker;
 				opacity: 0.4;
-				@media #{$high-contrast} {
-					opacity: 1;
-					background: $light !important;
-				}
-				@media #{$black-on-white} {
-					opacity: 1;
-					background: $light !important;
-				}
-				@media #{$white-on-black} {
-					opacity: 1;
-					background: $dark !important;
-				}
 			}
 		}
 	}

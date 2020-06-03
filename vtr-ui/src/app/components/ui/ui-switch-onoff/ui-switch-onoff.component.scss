@@ -37,19 +37,12 @@ input:disabled ~.switch {
 			background: $high-contrast-black-disabled !important;
 		}
 		@media #{$black-on-white} {
-			border-color: $high-contrast-white-disabled;
 			background: $high-contrast-white-disabled !important;
-			small {
-				background: $light;
-			}
 		}
 		@media #{$white-on-black} {
-			border-color: $high-contrast-black-disabled;
 			background: $high-contrast-black-disabled !important;
-			small {
-				background: $dark;
-			}
 		}
+
 	}
 }
 
@@ -91,11 +84,12 @@ input + .switch {
 		background:$light;
 	}
 	@media #{$black-on-white} {
-		background: $light;
+		background: $dark;
 	}
 	@media #{$white-on-black} {
-		background:$dark;
+		background:$light;
 	}
+
 }
 
 input.checked + .switch {
@@ -105,12 +99,10 @@ input.checked + .switch {
 		background: $highlight_bright;
 	}
 	@media #{$black-on-white} {
-		border-color: $high-contrast-white-textselected;
 		background: $high-contrast-white-textselected;
 	}
 	@media #{$white-on-black} {
-		border-color: $high-contrast-black-textselected;
-		background: $high-contrast-black-textselected;
+		background: $highlight_bright;
 	}
 
 }
@@ -136,10 +128,10 @@ input.checked + .switch {
 		background-color: $dark;
 	}
 	@media #{$black-on-white} {
-		background-color: $dark;
+		background-color: $light;
 	}
 	@media #{$white-on-black} {
-		background-color: $light;
+		background-color: $dark;
 	}
 }
 
@@ -147,15 +139,6 @@ input.checked + .switch > small {
 	left: 2.2rem;
 	transition: background-color 0.4s, left 0.2s;
 	background-color: rgb(255, 255, 255);
-	@media #{$high-contrast} {
-		background-color: $dark;
-	}
-	@media #{$black-on-white} {
-		background-color: $light;
-	}
-	@media #{$white-on-black} {
-		background-color: $dark;
-	}
 }
 
 /* LARGE - LG */
@@ -262,60 +245,25 @@ input.checked + .switch.switch-xs > small {
 // 	}
 // }
 
-.checkbox {
+.checkbox.white-theme {
 	&:focus {
 		outline: none;
 		border-radius: 10rem;
-		&::after {
-			content: '';
-			display: block;
-			position: absolute;
-			left: -0.4rem;
-			top: -0.4rem;
-			border-radius: 10rem;
-			width: calc(100% + 0.8rem);
-			height: calc(100% + 0.8rem);
-			border: 0.2rem solid $menu_hover;
+		box-shadow: 0px -0.15px 0px 2px $shade_extralight, -0.15px 0px 0px 3.7px $menu_hover;
+		@media #{$high-contrast} {
+			box-shadow: 0px -0.15px 0px 2px $dark, -0.15px 0px 0px 3.7px $light;
+		}
+		@media #{$black-on-white} {
+			box-shadow: 0px -0.15px 0px 2px $light, -0.15px 0px 0px 3.7px $dark;
+		}
+		@media #{$white-on-black} {
+			box-shadow: 0px -0.15px 0px 2px $dark, -0.15px 0px 0px 3.7px $light;
 		}
 	}
 	&:hover {
 		input.checked ~.switch {
 			background: $green_darker !important;
 			transition: none;
-		}
-		input.checked ~.switch {
-			@media #{$black-on-white} {
-				background: $light;
-				border-color: $high-contrast-white-textselected;
-			}
-			@media #{$white-on-black} {
-				background: $dark;
-				border-color: $high-contrast-black-textselected;
-			}
-			small {
-				@media #{$black-on-white} {
-					background-color: $high-contrast-white-textselected;
-				}
-				@media #{$white-on-black} {
-					background-color: $high-contrast-black-textselected;
-				}
-			}
-		}
-		input ~.switch {
-			@media #{$black-on-white} {
-				border-color: $high-contrast-white-textselected;
-			}
-			@media #{$white-on-black} {
-				border-color: $high-contrast-black-textselected;
-			}
-			small {
-				@media #{$black-on-white} {
-					background-color: $high-contrast-white-textselected;
-				}
-				@media #{$white-on-black} {
-					background-color: $high-contrast-black-textselected;
-				}
-			}
 		}
 	}
 }
