@@ -5,7 +5,10 @@ import { MacroKeyMessageData } from 'src/app/enums/macrokey-message-data.enum';
 @Component({
 	selector: 'vtr-ui-macrokey-details',
 	templateUrl: './ui-macrokey-details.component.html',
-	styleUrls: ['./ui-macrokey-details.component.scss']
+	styleUrls: ['./ui-macrokey-details.component.scss'],
+	host: {
+		'(document:visibilitychange)': 'toggleOnPageMinimized()'
+	}
 })
 export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 	@Input() number;
@@ -31,19 +34,14 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 
 	constructor() { }
 
-	ngOnInit() {
-		const that = this;
-		document.addEventListener(
-			'visibilitychange',
-			function () {
-				if (document.hidden) {
-					if (that.recording) {
-						that.toggleRecording(true);
-					}
-				}
-			},
-			false
-		);
+	ngOnInit() {}
+	
+	toggleOnPageMinimized() {
+		if (document.hidden) {
+			if(this.recording) {
+				this.toggleRecording(true);
+			}
+		}
 	}
 
 	onStartClicked(event) {
