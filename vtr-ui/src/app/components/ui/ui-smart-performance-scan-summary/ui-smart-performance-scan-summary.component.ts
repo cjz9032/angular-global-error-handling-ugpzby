@@ -194,7 +194,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			this.historyScanResultsDateTime[i].scanrunTime = new Intl.DateTimeFormat('default', {
 				hour12: true,
 				hour: '2-digit',
-				minute: 'numeric'
+				minute: '2-digit'
 			}).format(new Date(this.historyScanResultsDateTime[i].scanruntime));
 
 			//Removing sapace between time stamp and AM/PM
