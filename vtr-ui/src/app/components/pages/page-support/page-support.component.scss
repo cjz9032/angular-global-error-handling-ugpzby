@@ -24,7 +24,6 @@
 			}
 		}
 
-
 		.quick-access {
 			border-radius: $border_radius;
 			box-shadow: $drop_shadow;
@@ -63,6 +62,9 @@
 					padding: 1.2rem;
 					text-decoration: none;
 					position: relative;
+					@media #{$high-contrast} {
+						-ms-high-contrast-adjust: none;
+					}
 
 					&:focus {
 						&:before {
@@ -89,13 +91,27 @@
 						width: 100%;
 						// border: 1px solid #ecf0f1;
 						border-radius: 0.5rem;
-						background: linear-gradient(180deg, #fbfcfc 0%, #f5f7f8 100%);
-						box-shadow: 0 0 0 0.1rem #e9ecec, 0 0 2rem 0 rgba(0, 0, 0, 0.01);
+						background: linear-gradient(
+							180deg,
+							#fbfcfc 0%,
+							#f5f7f8 100%
+						);
+						box-shadow: 0 0 0 0.1rem #e9ecec,
+							0 0 2rem 0 rgba(0, 0, 0, 0.01);
 						display: flex;
 						flex-flow: column;
 						justify-content: center;
 						text-align: center;
 						cursor: pointer;
+
+						@media #{$black-on-white} {
+							border: 0.1rem solid $dark;
+							background: $light;
+						}
+						@media #{$white-on-black} {
+							border: 0.1rem solid $light;
+							background: $dark;
+						}
 
 						.item-icon {
 							height: 5rem;
@@ -112,8 +128,7 @@
 							img {
 								position: relative;
 								top: 0;
-								height: 3.6rem;								
-								
+								height: 3.6rem;
 							}
 						}
 
@@ -131,6 +146,12 @@
 							justify-content: center;
 							letter-spacing: 0;
 							cursor: pointer;
+							@media #{$black-on-white} {
+								color: $dark;
+							}
+							@media #{$white-on-black} {
+								color: $light;
+							}
 						}
 
 						.item-button {
@@ -151,44 +172,100 @@
 							white-space: nowrap;
 							text-overflow: ellipsis;
 							cursor: pointer;
+							@media #{$black-on-white} {
+								background: $high-contrast-white-textselected;
+								color: $light;
+							}
+							@media #{$white-on-black} {
+								background: $high-contrast-black-textselected;
+								color: $dark;
+							}
 						}
 
 						&:hover,
 						&.selected {
-							background: linear-gradient(90deg, #3968d4 0%, #4a81fd 100%);
+							background: linear-gradient(
+								90deg,
+								#3968d4 0%,
+								#4a81fd 100%
+							);
 							box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.22);
-
 							@media #{$black-on-white} {
-								background: $high-contrast-grey;
+								background: $light;
 							}
 							@media #{$white-on-black} {
-								background: $high-contrast-grey;
+								background: $dark;
 							}
-
 							fa-icon {
 								color: white;
 							}
 
 							.item-title {
 								color: white;
+								@media #{$black-on-white} {
+									color: $dark;
+								}
+								@media #{$white-on-black} {
+									color: $light;
+								}
 							}
 
 							.item-button {
-								background: linear-gradient(270deg, #fbfcfc 0%, #f5f7f8 100%);
+								background: linear-gradient(
+									270deg,
+									#fbfcfc 0%,
+									#f5f7f8 100%
+								);
 								box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
 								// border: 1px solid #ECF0F1;
 								color: $main_dark;
 								cursor: pointer;
+								@media #{$black-on-white} {
+									color: $light;
+									background: $high-contrast-white-textselected;
+								}
+								@media #{$white-on-black} {
+									color: $dark;
+									background: $high-contrast-black-textselected;
+								}
 							}
 
 							.item-icon {
-								filter: grayscale(100%) invert(100%) contrast(2000%);
+								filter: grayscale(100%) invert(100%)
+									contrast(2000%);
+								@media #{$high-contrast} {
+									filter: none;
+								}
 							}
 						}
 
 						&.selected,
 						&.selected * {
 							cursor: default !important;
+							@media #{$black-on-white} {
+								background: $dark;
+							}
+							@media #{$white-on-black} {
+								background: $light;
+							}
+							.item-title {
+								@media #{$black-on-white} {
+									color: $light;
+								}
+								@media #{$white-on-black} {
+									color: $dark;
+								}
+							}
+							.item-button {
+								@media #{$black-on-white} {
+									color: $dark;
+									background: $light;
+								}
+								@media #{$white-on-black} {
+									color: $light;
+									background: $dark;
+								}
+							}
 						}
 					}
 				}
@@ -240,7 +317,6 @@
 		}
 	}
 }
-
 
 :host-context(.is-gaming) {
 	::ng-deep {
