@@ -48,6 +48,8 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
   @ViewChild('vc', { read: ViewContainerRef, static: false }) vc: ViewContainerRef;
 
   serverSwitchData: ServerSwitch;
+  countryNameList : any;
+  languageNameList : any;
   serverSwitchForm: FormGroup;
   sddInvalid: any = {
     status: false,
@@ -86,10 +88,12 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
 
   ngOnInit() {
     this.serverSwitchData = new ServerSwitch();
+    this.countryNameList = this.serverSwitchData.getCountryNameList();
+    this.languageNameList = this.serverSwitchData.getLanguageNameList();
 
     this.serverSwitchForm = new FormGroup({
-      country: new FormControl(this.serverSwitchData.countryList[0], Validators.required),
-      language: new FormControl(this.serverSwitchData.languageList[7], Validators.required),
+      country: new FormControl(this.countryNameList[0], Validators.required),
+      language: new FormControl(this.languageNameList[7], Validators.required),
       segment: new FormControl(this.serverSwitchData.segmentList[1], Validators.required),
       cmsserver: new FormControl(this.serverSwitchData.cmsServerList[3]['cmsserver'], Validators.required),
       oem: new FormControl(this.serverSwitchData.oemList[0], Validators.required),

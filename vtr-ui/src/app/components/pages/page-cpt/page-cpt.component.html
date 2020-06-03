@@ -58,15 +58,15 @@
 								<div class="form-group row mb-2">
 									<label for="country"
 										class="col-sm-3 col-form-label">Country</label>
-									<div class="col-sm-5">
+									<div class="col-sm-9">
 										<select name="country"
 											class="form-control"
 											id="country"
 											formControlName="country"
 											required>
-											<option *ngFor="let country of serverSwitchData.countryList"
+											<option *ngFor="let country of countryNameList"
 												[ngValue]="country">
-												{{country.Value}}</option>
+												{{country.Label}}</option>
 										</select>
 									</div>
 								</div>
@@ -79,9 +79,9 @@
 											id="language"
 											formControlName="language"
 											required>
-											<option *ngFor="let language of serverSwitchData.languageList"
+											<option *ngFor="let language of languageNameList"
 												[ngValue]="language">
-												{{language.Value}}</option>
+												{{language.Label}}</option>
 										</select>
 									</div>
 								</div>
