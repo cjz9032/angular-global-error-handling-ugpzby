@@ -1074,7 +1074,7 @@
 			}
 
 			vtr-ui-switch-onoff {
-				.checkbox {
+				.checkbox.white-theme {
 					input {
 						& + .switch {
 							background: $gaming_switch_light;
@@ -1091,8 +1091,8 @@
 							}
 						}
 
-						&.wifi-checked + .switch {
-							background: $gaming_green_gradient;
+						&.checked + .switch {
+							background: $green;
 							transition: all 0.2s ease-in;
 
 							small {
@@ -1100,6 +1100,12 @@
 								transition: all 0.2s ease-in;
 								//	left: 3.2rem;
 							}
+						}
+					}
+					&:hover {
+						input.checked ~.switch {
+							background: $green !important;
+							transition: none;
 						}
 					}
 
@@ -1356,8 +1362,8 @@
 								margin-bottom: 0rem!important;
 								tr{
 									background-color:$gaming_darkest!important;
-									border:0.1rem solid $gaming-Darkslate-blue;									
-									th, td{							
+									border:0.1rem solid $gaming-Darkslate-blue;
+									th, td{
 									color: $gaming_lighter!important;
 									background-color:$gaming_bg!important;
 									padding-left:1.5rem!important;
@@ -1494,7 +1500,7 @@
 								}
 							}
 						}
-						
+
 					}
 				}
 			}
@@ -1970,10 +1976,10 @@
 					.subtitle {
 						color: $gaming_grey_lightest;
 					}
-					
+
 				}
-				
-				
+
+
 				vtr-ui-hardware-list {
 					.vtr-ui-list-hardware {
 						.list-group {
@@ -2006,7 +2012,7 @@ body.focus-enable{
 	.is-gaming {
 		.navbar-brand.logo-y a{
 			&:focus{
-			border: 0.1rem solid $light !important;	
+			border: 0.1rem solid $light !important;
 			}
 		}
 		vtr-page-lightingcustomize,vtr-page-macrokey,
@@ -2049,10 +2055,10 @@ body.focus-enable{
 			}
 		}
 		button.close,a.close{
-		&:focus{	
+		&:focus{
 		opacity:1 !important
 		}
-		}	
+		}
 		vtr-ui-header-warranty{
 			.dropdown-content{
 				.dropdown-btn {
