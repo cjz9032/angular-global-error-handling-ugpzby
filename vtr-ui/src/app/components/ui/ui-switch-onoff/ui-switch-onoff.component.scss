@@ -119,8 +119,8 @@ input.checked + .switch {
 	width: 2.2rem;
 	height: 2.2rem;
 	position: absolute;
-	left: 0.3rem;
-	top: 0.3rem;
+	left: 0.4rem;
+	top: 0.4rem;
 	//-webkit-box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.4);
 	//box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.4);
 	transition: background-color 0.4s, left 0.2s;
@@ -182,10 +182,10 @@ input.checked + .switch.switch-xs > small {
 }
 
 .switch.switch-xs {
-	margin-top: 0.1rem;
-	left: -0.2rem;
-	height: 2rem;
-	width: 4.6rem;
+	left: -0.25rem;
+	height: 2.2rem;
+	width: 4.8rem;
+
 }
 
 .switch-xs small {
