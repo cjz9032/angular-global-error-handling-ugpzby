@@ -8,20 +8,12 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 export class UiLightingProfileToggleComponent implements OnInit {
 	@Input() currentProfile: any;
 	@Output() public setLightingProfileId = new EventEmitter<any>();
-	public p1Checked: boolean;
-	public p2Checked: boolean;
-	public p3Checked: boolean;
 	public isToggle: boolean = true;
 	@Input() id: string = '';
 	@Input() automationId: string ='';
-	constructor() {
+	constructor() {}
 
-
-	}
-
-	ngOnInit() {
-
-	}
+	ngOnInit() {}
 	SetProfile(event) {
 		const val = event.target.value;
 		this.currentProfile = Number(val);

@@ -1,15 +1,12 @@
 import { LocalStorageKey } from './../../../enums/local-storage-key.enum';
 import { CommonService } from './../../../services/common/common.service';
 import { GamingLightingService } from './../../../services/gaming/lighting/gaming-lighting.service';
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
-import { LightingCapabilities } from 'src/app/data-models/gaming/lighting-capabilities';
+import { Component, OnInit, Input } from '@angular/core';
 import { LightingProfile } from 'src/app/data-models/gaming/lighting-profile';
 import {
 	LightingProfileEffectColorNUmber,
 	LightingProfileEffectColorString
 } from 'src/app/data-models/gaming/lighting-profile-effect-color';
-import { isUndefined } from 'util';
 import { Options } from 'src/app/data-models/gaming/lighting-options';
 import { LightEffectComplexType } from 'src/app/enums/light-effect-complex-type';
 import { LightEffectRGBFeature, LightEffectSingleOrComplex } from 'src/app/enums/light-effect-rgbfeature';
@@ -307,7 +304,6 @@ export class UiLightingProfileComponent implements OnInit {
 	defaultLanguage: any;
 	constructor(
 		private gamingLightingService: GamingLightingService,
-		private gamingAllCapabilities: GamingAllCapabilitiesService,
 		private commonService: CommonService,
 		private deviceService: DeviceService
 	) { }

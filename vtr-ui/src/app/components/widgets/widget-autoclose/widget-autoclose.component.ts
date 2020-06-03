@@ -1,11 +1,4 @@
-import { AutoCloseStatus } from 'src/app/data-models/gaming/autoclose/autoclose-status.model';
 import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
-import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-capabilities';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
-import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose/gaming-autoclose.service';
-import { AutoCloseNeedToAsk } from 'src/app/data-models/gaming/autoclose/autoclose-need-to-ask.model';
-import { isUndefined } from 'util';
 
 @Component({
 	selector: 'vtr-widget-autoclose',
@@ -19,7 +12,7 @@ export class WidgetAutocloseComponent implements OnInit, OnChanges {
 	@Input() appListData: any[];
 	@Input() modalStatus: boolean = false;
 	hoverEle = -1;
-	constructor(private gamingAutoCloseService: GamingAutoCloseService) {}
+	constructor() {}
 
 	ngOnInit() {}
 

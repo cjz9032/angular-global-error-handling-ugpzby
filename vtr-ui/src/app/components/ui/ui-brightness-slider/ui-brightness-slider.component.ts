@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, AfterContentChecked } from '@angular/core';
-import { Options, ChangeContext, ValueToPositionFunction, PointerType } from 'ng5-slider';
+import { Options, ChangeContext, ValueToPositionFunction } from 'ng5-slider';
 
 @Component({
 	selector: 'vtr-ui-brightness-slider',
@@ -25,8 +25,6 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 	@Input() metricsId = '';
 	@Input() vtrMetricEnabled: any;
 	@Output() onSliderChanged: EventEmitter<ChangeContext> = new EventEmitter();
-	triggerFocus: EventEmitter<PointerType> = new EventEmitter<PointerType>();
-	pointerType: any = PointerType;
 
 	constructor() { }
 
