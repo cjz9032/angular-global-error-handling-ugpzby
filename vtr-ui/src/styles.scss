@@ -294,8 +294,8 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	border-radius: 0.4rem;
 	// z-index: 1;
 	background-color: $light;
-	box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
-
+	filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.15));
+	margin-right: 1rem;
 	@media #{$black-on-white} {
 		border: 0.1rem solid;
 	}
@@ -320,6 +320,17 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		@media #{$breakpoint_xl}{
 			max-width: 24.2rem !important;
 		}
+	}
+	.arrow {
+		top: calc(-0.9rem + 50%);
+		&::before{
+			border-left-color: $light;
+			border-width: 1rem 0 1rem 1rem;
+			left: 0.3rem;
+		}
+	}
+	&.show {
+		opacity: 1 !important;
 	}
 }
 
