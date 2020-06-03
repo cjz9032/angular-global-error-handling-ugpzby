@@ -3,13 +3,12 @@
 		<div class="d-flex device-status">
 			<div class="col device-info">
 				<div class="family"
-					id="myDevice-machine-info"
-					role="text">{{myDevice.family}}</div>
+					role="text"
+					id="myDevice-machine-info">{{myDevice.family}}</div>
 				<div class="col-12 px-0 {{'dirClass' | translate}}">
 					<span class="sub-header-separator">
 						<fa-icon [icon]="['fas', 'minus']"
-							role="img"
-							attr.aria-label="minus-{{'device.myDevice.serial' | translate}}">
+							role="img">
 						</fa-icon>
 					</span>
 					<span class="device-sub-header">
@@ -27,7 +26,7 @@
 					<span class="sub-header-separator">
 						<fa-icon [icon]="['fas', 'minus']"
 							role="img"
-							attr.aria-label="minus-{{'device.myDevice.productNumber' | translate}}">
+							aria-hidden="true">
 						</fa-icon>
 					</span>
 					<span class="device-sub-header">
@@ -43,7 +42,7 @@
 					<span class="sub-header-separator">
 						<fa-icon [icon]="['fas', 'minus']"
 							role="img"
-							attr.aria-label="minus-{{'device.myDevice.biosVersion'|translate}}">
+							aria-hidden="true">
 						</fa-icon>
 					</span>
 					<span class="device-sub-header">
@@ -77,7 +76,7 @@
 		<div class="row">
 			<div class="col">
 				<div class="subheader"
-					role="heading"
+					role="text"
 					id="myDevice-status-title"
 					attr.aria-label="myDevice-status-title"
 					dir="{{'dir' | translate}}">{{'device.myDevice.subtitle'|translate}}</div>
@@ -86,6 +85,7 @@
 		<div class="row">
 			<div class="col">
 				<ul class="status-list"
+					role="list"
 					id="myDevice-status-list">
 					<li *ngFor="let item of deviceStatus; let i=index"
 						[ngClass]="[!item.status?'good':'bad']"
@@ -95,18 +95,16 @@
 								<div class="status-icon">
 									<div class="icon-bkg">
 										<fa-icon role="img"
-											[attr.aria-label]="'myDevice-system-details-'+item.title
-										+'-status-'+(!item.status?'check':'times')"
+											[attr.aria-label]="(!item.status?' status good':' status bad')"
 											[icon]="['fas', !item.status?'check':'times']">
 										</fa-icon>
 									</div>
 								</div>
 								<div class="d-flex status-content justify-content-between">
 									<div class="title"
+										role="listitem"
 										[ngClass]="[!item.status?'good':'bad']"
-										id="myDevice-system-details-{{item.id}}"
-										attr.aria-label="myDevice-system-details-{{item.title}}-{{item.systemDetails}}"
-										dir="{{'dir' | translate}}">
+										id="myDevice-system-details-{{item.id}}">
 										{{item.title}}
 										<span *ngIf="item.systemDetails"
 											class='systemDetails'
@@ -157,11 +155,9 @@
 										container="body">
 										<p class="detail"
 											[ngClass]="{'highlight':item.asLink}">
-											<span class="{{'dirClass' | translate}}"
-												dir="{{'dir' | translate}}">{{item.detail}}&nbsp;
+											<span>{{item.detail}}&nbsp;
 												<fa-icon [icon]="['fas', 'arrow-right']"
-													role="img"
-													attr.aria-label="arrow-right-{{item.detail}}">
+													aria-hidden="true">
 												</fa-icon>
 											</span>
 										</p>
