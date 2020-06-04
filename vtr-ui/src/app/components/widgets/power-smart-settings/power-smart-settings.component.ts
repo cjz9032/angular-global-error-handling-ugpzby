@@ -73,10 +73,11 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 		if (thinkpad === this.machineType || this.isYogo730()) {
 			this.add = 0; // thinkpad
 			this.checkDriverForThinkPad();
-		}
-		if (ideapad === this.machineType) {
+		} else if (ideapad === this.machineType) {
 			this.add = 10; // Ideapad
 			this.initPowerSmartSettingsForIdeaPad();
+		} else {
+			this.showPowerSmartSettings(false);
 		}
 	}
 
