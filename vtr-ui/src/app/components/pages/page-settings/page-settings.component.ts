@@ -110,7 +110,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		public betaService: BetaService,
 		private localInfoService: LocalInfoService,
 		private loggerService: LoggerService,
-		public smartPerformanceService: SmartPerformanceService,
+		public smartPerformanceService: SmartPerformanceService
 	) {
 		this.preferenceSettings = this.shellService.getPreferenceSettings();
 		this.metrics = shellService.getMetrics();
