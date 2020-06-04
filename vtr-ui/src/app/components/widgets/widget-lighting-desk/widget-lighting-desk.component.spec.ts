@@ -150,6 +150,7 @@ describe('WidgetLightingDeskComponent', () => {
         component.supportBrightFn(1);
         expect(component.supportBrightness).toEqual(true);
         tick(10);
+        component.ledlayoutversion = 3;
         component.lightingProfileCurrentDetail.lightPanelType = 128;
         component.lightingCapabilities.SupportBrightnessSetList = [128];
         component.supportBrightFn(1);
@@ -321,6 +322,7 @@ describe('WidgetLightingDeskComponent', () => {
             UnifySetList: [0]
         };
         const count = 0;
+        component.ledlayoutversion = 3;
         component.lightingProfileDetail(lightingProfileByIdRes,count,lightingCapabilitiesRes);
         expect(component.lightingProfileCurrentDetail.lightPanelType).toBeLessThanOrEqual(16);
         component.lightingProfileCurrentDetail.lightPanelType = 1;
@@ -337,8 +339,10 @@ describe('WidgetLightingDeskComponent', () => {
         lightingProfileByIdRes.lightInfo[0].lightEffectType = 5;
         component.lightingProfileDetail(lightingProfileByIdRes,count,lightingCapabilitiesRes);
         expect(component.lightingProfileDetail(lightingProfileByIdRes,count,lightingCapabilitiesRes)).toBeUndefined();
-        lightingProfileByIdRes.lightInfo[0].lightBrightness = null;
-        lightingProfileByIdRes.lightInfo[0].lightSpeed = null;
+        component.ledlayoutversion = 5;
+        component.lightingProfileDetail(lightingProfileByIdRes,count,lightingCapabilitiesRes);
+        expect(component.lightingProfileDetail(lightingProfileByIdRes,count,lightingCapabilitiesRes)).toBeUndefined();
+        lightingCapabilitiesRes.LightPanelType = [0];
         component.lightingProfileDetail(lightingProfileByIdRes,count,lightingCapabilitiesRes);
         expect(component.lightingProfileDetail(lightingProfileByIdRes,count,lightingCapabilitiesRes)).toBeUndefined();
     });
@@ -346,6 +350,7 @@ describe('WidgetLightingDeskComponent', () => {
     it('should show default img when profile is 0', fakeAsync(() => {
         gamingLightingServiceMock.isShellAvailable = true;
         component.currentProfileId = 0;
+        component.ledlayoutversion = 3;
         component.lightingCapabilities.LightPanelType = [4];
         component.imgDefaultOff();
         tick(10);
@@ -371,6 +376,18 @@ describe('WidgetLightingDeskComponent', () => {
         tick(10);
         expect(component.lightingProfileCurrentDetail.panelImage).toMatch("assets/images/gaming/lighting/lighting-ui-new/T550_front.png");
 
+        component.lightingCapabilities.LightPanelType = [3];
+        component.imgDefaultOff();
+        tick(10);
+        expect(component.lightingProfileCurrentDetail.panelImage).toMatch("");
+
+        component.currentProfileId = 0;
+        component.ledlayoutversion = 5;
+        component.lightingCapabilities.LightPanelType = [16];
+        component.imgDefaultOff();
+        tick(10);
+        expect(component.lightingProfileCurrentDetail.panelImage).toMatch("assets/images/gaming/lighting/lighting-ui-new/T750_water.png");
+        
         component.lightingCapabilities.LightPanelType = [3];
         component.imgDefaultOff();
         tick(10);

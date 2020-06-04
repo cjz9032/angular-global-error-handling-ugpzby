@@ -13,6 +13,7 @@ import { MetricService } from '../../../services/metric/metrics.service';
 })
 export class WidgetLightingDeskComponent implements OnInit,OnChanges {
   @Input() currentProfileId: number;
+  @Input() ledlayoutversion: number;
   public countObj:any = {count1:0,count2:0,count3:0};
   public isDisabledlef:any = [true,true,true];
   public isDisabledrig:any = [false,false,false];
@@ -27,6 +28,7 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
   public lightingCapabilities:any = new LightingDataList().lightingCapality;
   public lightingProfileById:any;
   public lightingPanelImage:any = new LightingDataList().lightingPanelImage;
+  public lightingPanelImageT750:any = new LightingDataList().lightingPanelImageT750;
   public lightingEffectRgbData:any = new LightingDataList().lightingEffectRgbData;
   public lightingEffectSingleData:any = new LightingDataList().lightingEffectSingleData;
   public isEffectChange:boolean;
@@ -379,15 +381,21 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
           if(this.lightingProfileCurrentDetail.lightBrightness === null){
             this.lightingProfileCurrentDetail.lightBrightness = 3;
           }
-          currentNameImg = this.getCurrentName(this.lightingPanelImage,this.lightingProfileCurrentDetail.lightPanelType);
+          if(this.ledlayoutversion === 3){    // X50 
+            currentNameImg = this.getCurrentName(this.lightingPanelImage,this.lightingProfileCurrentDetail.lightPanelType);
+          }else if(this.ledlayoutversion === 5){ // x750
+            currentNameImg = this.getCurrentName(this.lightingPanelImageT750,this.lightingProfileCurrentDetail.lightPanelType);
+          }
           if(currentNameImg.length > 0){
             this.lightingProfileCurrentDetail.panelName = currentNameImg[0].panelName;
             this.lightingProfileCurrentDetail.pathUrl = currentNameImg[0].pathUrl;
             // this.lightingProfileCurrentDetail.panelImage = currentNameImg[0].panelImage;
             this.lightingProfileCurrentDetail.panelImageType = currentNameImg[0].panelImageType;
             this.lightingProfileCurrentDetail.length = lightingProfileByIdRes.lightInfo.length;
-            if(lightingCapabilitiesRes.LightPanelType.indexOf(16)>-1){
+            if(this.ledlayoutversion === 3 && lightingCapabilitiesRes.LightPanelType.indexOf(16)>-1){
               this.lightingProfileCurrentDetail.panelImage = 'assets/images/gaming/lighting/lighting-ui-new/T550_water_cold.png';
+            }else if(this.ledlayoutversion === 5 && lightingCapabilitiesRes.LightPanelType.indexOf(16)>-1){
+              this.lightingProfileCurrentDetail.panelImage = 'assets/images/gaming/lighting/lighting-ui-new/T750_water.png';
             }else{
               this.lightingProfileCurrentDetail.panelImage = currentNameImg[0].panelImage;
             }
@@ -432,9 +440,11 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
           this.supportBrightness = true;
         }else{
           this.supportBrightness = false;
-       }
-        if(this.lightingCapabilities.SupportBrightnessSetList.indexOf(128) > -1){  //T550G
-           this.supportBrightness = false;
+        }
+        if(this.ledlayoutversion === 3){
+          if(this.lightingCapabilities.SupportBrightnessSetList.indexOf(128) > -1){  //T550G
+              this.supportBrightness = false;
+          }
         }
       }
     }else{
@@ -509,17 +519,23 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
 
   public imgDefaultOff(){
      if(this.currentProfileId === 0){
-        if(this.lightingCapabilities.LightPanelType.indexOf(4)>-1){
-          this.lightingProfileCurrentDetail.panelImage = "assets/images/gaming/lighting/lighting-ui-new/T550_wind_cold.png";
-        }else if(this.lightingCapabilities.LightPanelType.indexOf(16)>-1){
-          this.lightingProfileCurrentDetail.panelImage = "assets/images/gaming/lighting/lighting-ui-new/T550_water_cold.png";
-        }else if(this.lightingCapabilities.LightPanelType.indexOf(64)>-1){
-          this.lightingProfileCurrentDetail.panelImage = "assets/images/gaming/lighting/lighting-ui-new/T550_big_y.png";
-        }else if(this.lightingCapabilities.LightPanelType.indexOf(128)>-1){
-          this.lightingProfileCurrentDetail.panelImage = "assets/images/gaming/lighting/lighting-ui-new/T550G_front_line.png";
-        }else if(this.lightingCapabilities.LightPanelType.indexOf(256)>-1){
-          this.lightingProfileCurrentDetail.panelImage = "assets/images/gaming/lighting/lighting-ui-new/T550_front.png";
+       if(this.ledlayoutversion === 3){
+          if(this.lightingCapabilities.LightPanelType.indexOf(4)>-1){
+            this.lightingProfileCurrentDetail.panelImage = "assets/images/gaming/lighting/lighting-ui-new/T550_wind_cold.png";
+          }else if(this.lightingCapabilities.LightPanelType.indexOf(16)>-1){
+            this.lightingProfileCurrentDetail.panelImage = "assets/images/gaming/lighting/lighting-ui-new/T550_water_cold.png";
+          }else if(this.lightingCapabilities.LightPanelType.indexOf(64)>-1){
+            this.lightingProfileCurrentDetail.panelImage = "assets/images/gaming/lighting/lighting-ui-new/T550_big_y.png";  
+          }else if(this.lightingCapabilities.LightPanelType.indexOf(128)>-1){
+            this.lightingProfileCurrentDetail.panelImage = "assets/images/gaming/lighting/lighting-ui-new/T550G_front_line.png";  
+          }else if(this.lightingCapabilities.LightPanelType.indexOf(256)>-1){
+            this.lightingProfileCurrentDetail.panelImage = "assets/images/gaming/lighting/lighting-ui-new/T550_front.png";  
+          }
+       }else if(this.ledlayoutversion === 5){
+        if(this.lightingCapabilities.LightPanelType.indexOf(16)>-1){
+          this.lightingProfileCurrentDetail.panelImage = 'assets/images/gaming/lighting/lighting-ui-new/T750_water.png';
         }
+       }
      }
   }
 

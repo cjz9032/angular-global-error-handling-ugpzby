@@ -727,7 +727,10 @@
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
                 "name7": "Legion Icon (Front)",
-                "name9": "Ambient  Lighting"
+                "name9": "Ambient  Lighting",
+                "name10": "Legion Liquid Cooling Lighting",
+				"name11": "Legion front Fan Lighting",
+				"name12": "Legion Top Fan Lighting"
             },
             "lightingEffect": {
                 "effectName1": "Static",
