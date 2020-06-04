@@ -1540,7 +1540,7 @@
 					},
 					"optimize": {
 						"title": "Optimize my microphone for:",
-						"tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
+						"tooltip": "Configure microphone effect to enhance your audio experience in different scenarios and environment.",
 						"options": {
 							"VoiceRecognition": "VOICE RECOGNITION",
 							"OnlyMyVoice": "ONLY MY VOICE",
