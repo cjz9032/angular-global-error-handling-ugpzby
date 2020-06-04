@@ -1,9 +1,9 @@
 <div class="subscription-details sidebar-widget">
     <div *ngIf="isSubscribed" class="title pb-3">{{'smartPerformance.subscriptionDetails.title' |translate }}</div>
-    <div *ngIf="!isSubscribed" class="title pb-3">{{'smartPerformance.subscriptionDetails.titlebeta' |translate }}</div>
+    <div *ngIf="!isSubscribed" class="title pb-3">{{'smartPerformance.subscriptionDetails.title' |translate }}</div>
     <div class="card-info">      
         <p *ngIf="isSubscribed">{{'smartPerformance.subscriptionDetails.description' |translate }}</p>
-        <p *ngIf="!isSubscribed">{{'smartPerformance.subscriptionDetails.descriptionbeta' |translate }} {{'smartPerformance.subscriptionDetails.descriptionbeta1' |translate }} </p>
+        <p *ngIf="!isSubscribed">{{'smartPerformance.subscriptionDetails.descriptionNonSubscriber' |translate }}</p>
         <!-- <a href="#" class="para-link"
             vtrMetrics
             metricsItem="smartPerformance.subscriptionDetails"
@@ -25,18 +25,18 @@
             <div class="status"><div [ngClass]="{'badge-danger': strStatus==='INACTIVE', 'badge-success': strStatus==='ACTIVE' }" class="badge badge-pill">{{status |translate}}</div></div>
         </li>
     </ul>
-    <!-- <a *ngIf="isSubscribed" class="link-text" (click)=openSubscribeModal() 
+    <a *ngIf="isSubscribed" class="link-text" (click)=openSubscribeModal(false) 
         vtrMetrics
         metricsItem="btn.manageSub"
         metricsEvent="FeatureClick"
         metricsParent="Page.Support.SmartPerformance">
         {{'smartPerformance.subscriptionDetails.manageSubscription' |translate }}
-    </a> -->
+    </a>
     <a *ngIf="!isSubscribed" class="link-text" (click)=openSubscribeModal(true) 
         vtrMetrics
         metricsItem="btn.{{'smartPerformance.subscriptionDetails.manageSubscriptionBeta' |translate | lowercase | removeSpace }}"
         metricsEvent="FeatureClick"
         metricsParent="Page.Support.SmartPerformance">
-        {{'smartPerformance.subscriptionDetails.manageSubscriptionBeta' |translate }}
+        {{'smartPerformance.subscriptionDetails.manageSubscription' |translate }}
     </a>
 </div>
