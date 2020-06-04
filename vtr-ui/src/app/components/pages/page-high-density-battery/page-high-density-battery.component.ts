@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { QA } from 'src/app/data-models/qa/qa.model';
 import { TranslateService } from '@ngx-translate/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'vtr-page-high-density-battery',
@@ -23,10 +24,16 @@ export class PageHighDensityBatteryComponent implements OnInit {
 			itemId: 'high-density-battery',
 		}
 	];
-	constructor(private translate: TranslateService, public modalService: NgbModal) { }
+	constructor(private translate: TranslateService,
+		public modalService: NgbModal,
+		public router: Router) { }
 
 	ngOnInit(): void {
 		this.modalService.dismissAll();
+	}
+
+	gotoBatteryDetails() {
+		this.router.navigate(['device/device-settings'], {queryParams: {batterydetail: true}})
 	}
 
 }

@@ -1,5 +1,7 @@
 <vtr-page-layout [title]="'device.deviceSettings.batteryGauge.highDensityBattery.title'| translate"
 	[shiftLeftUp]="true"
+	[isInnerBack]="true"
+	(innerBack)="gotoBatteryDetails()"
 	[shiftRightUp]="true"
 	[back]="'common.ui.back' | translate">
 
