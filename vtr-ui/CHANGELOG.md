@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.76](https://bitbucket.tc.lenovo.com///compare/v1.5.75...v1.5.76) (2020-06-04)
+
+
+### Bug Fixes
+
+* **article:** remove article detail first image alt. ([05c3430](https://bitbucket.tc.lenovo.com///commit/05c34301e63392ed7ac407b05acd22c8d8239517))
+* fix getMacfee disabled status in offline ([a8da3a7](https://bitbucket.tc.lenovo.com///commit/a8da3a77d0f4872a9531535c9ee1d46dc0b2dd01))
+* **antivirus:** VAN-19047 fixed can't trigger launchMcAfeeBuy API ([543eed5](https://bitbucket.tc.lenovo.com///commit/543eed50c29b7850e8cb2cf20610c1cbbdfb4143))
+* **antivirus:** VAN-19047 modify lowercase of mcafee state ([0e07236](https://bitbucket.tc.lenovo.com///commit/0e07236eba42e5b92ed7625d4aa6b8d72ae265d4))
+
 ### [1.5.75](https://bitbucket.tc.lenovo.com///compare/v1.5.74...v1.5.75) (2020-06-03)
 
 ### [1.5.74](https://bitbucket.tc.lenovo.com///compare/v1.5.73...v1.5.74) (2020-06-03)
