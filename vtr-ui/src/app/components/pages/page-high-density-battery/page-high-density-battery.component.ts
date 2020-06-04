@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 	styleUrls: ['./page-high-density-battery.component.scss']
 })
 export class PageHighDensityBatteryComponent implements OnInit {
-	title = 'High density battery'
 	qas: QA[] = [
 		{
 			id: 1,

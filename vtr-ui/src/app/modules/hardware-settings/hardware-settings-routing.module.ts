@@ -125,7 +125,7 @@ const routes: Routes = [
 		canDeactivate: [GuardService],
 		canActivate: [GuardService],
 		data: {
-			pageName: 'High.Density.Battery'
+			pageName: 'Device.HighDensityBattery'
 		}
 	}
 ];
