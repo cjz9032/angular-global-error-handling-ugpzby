@@ -361,14 +361,11 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		this.sendSettingMetrics('SettingBetaProgram', event.switchValue);
 		this.betaService.setBetaStatus(this.toggleBetaProgram ? BetaStatus.On : BetaStatus.Off);
 		this.commonService.sendReplayNotification(MenuItemEvent.MenuBetaItemChange, this.toggleBetaProgram);
-		this.isSPFullFeatureEnabled = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
-		if (this.isSPFullFeatureEnabled) {
-			this.unregisterScheduleScan("Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix");
-		} else {
-			this.unregisterScheduleScan("Lenovo.Vantage.SmartPerformance.ScheduleScan");
+		if(!event.switchValue)
+		{
+			this.startUnRegisteringScheduleScan();
 		}
 	}
-
 	sendMetrics(data: any) {
 		if (this.metrics && this.metrics.sendAsync) {
 			this.metrics.sendAsync(data);
@@ -435,12 +432,15 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		}
 		if(this.selfSelectService.usageType !== SegmentConst.Consumer)
 		{
-			this.isSPFullFeatureEnabled = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
-			if (this.isSPFullFeatureEnabled) {
-				this.unregisterScheduleScan("Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix");
-			} else {
-				this.unregisterScheduleScan("Lenovo.Vantage.SmartPerformance.ScheduleScan");
-			}
+			 this.startUnRegisteringScheduleScan();
+		}
+	}
+	startUnRegisteringScheduleScan() {
+		this.isSPFullFeatureEnabled = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
+		if (this.isSPFullFeatureEnabled) {
+			this.unregisterScheduleScan("Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix");
+		} else {
+			this.unregisterScheduleScan("Lenovo.Vantage.SmartPerformance.ScheduleScan");
 		}
 	}
 	// deletes records from task scheduler
