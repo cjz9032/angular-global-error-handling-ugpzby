@@ -16,6 +16,7 @@ export class PageHighDensityBatteryComponent implements OnInit {
 			category: 'q&a',
 			path: '/device/high-density-battery',
 			icon: ['fal','gem'],
+			isIconBackground: false,
 			like: false,
 			dislike: false,
 			itemId: 'high-density-battery',
