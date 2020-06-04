@@ -26,11 +26,12 @@
 				<div class="col button-row">
 					<vtr-ui-button metricsEvent="FeatureClick" metricsParent="HardwareScan.ScanFailureActions"
 						metricsItem="ScanFailureActions.RecoverBadSectors" id="rbsButton" (click)="goToRBSPage()"
-						[tooltipText]="'hardwareScan.scanFailureModal.supportButtonText' | translate"
+						[tooltipText]="'hardwareScan.scanFailureModal.recoverBadSectorsButtonText' | translate"
 						[label]="'hardwareScan.scanFailureModal.recoverBadSectorsButtonText' | translate">
 					</vtr-ui-button>
 					<button class="btn btn-link support-button" type="button" id="supportButtonWithRBS"
 						vtrMetrics metricsEvent="FeatureClick" metricsParent="HardwareScan.ScanFailureActions" metricsItem="HardwareScan.LenovoSupport"
+						[title]="'hardwareScan.scanFailureModal.supportButtonText' | translate"
 						(click)="openSupportPage()">{{'hardwareScan.scanFailureModal.supportButtonText' | translate }}</button>
 				</div>
 			</div>
