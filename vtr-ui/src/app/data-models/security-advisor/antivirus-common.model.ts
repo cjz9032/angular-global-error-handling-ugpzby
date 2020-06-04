@@ -105,9 +105,10 @@ export class AntivirusCommon {
 		if (type === 'button') {
 			this.purchaseBtnIsLoading = true;
 		}
+		const isTrial = this.mcafee.subscription.toLowerCase() === 'trialactive' || this.mcafee.subscription.toLowerCase() === 'trialinactive';
 		if (this.mcafee && this.mcafee.additionalCapabilities
 			&& this.mcafee.additionalCapabilities.includes('LaunchMcAfeeBuy')
-			&& this.mcafee.subscription === 'trialActive'
+			&& (isTrial)
 			&& this.pluginSupport) {
 			this.antivirus.openMcAfeePurchaseUrl().then((response) => {
 				this.purchaseBtnIsLoading = false;
