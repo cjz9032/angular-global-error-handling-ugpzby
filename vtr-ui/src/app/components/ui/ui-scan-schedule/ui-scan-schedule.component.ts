@@ -6,7 +6,6 @@ import {
 	EventEmitter,
 	HostListener,
 } from "@angular/core";
-import { NgbModal, NgbCalendar } from "@ng-bootstrap/ng-bootstrap";
 import { CommonService } from "src/app/services/common/common.service";
 import { LoggerService } from "src/app/services/logger/logger.service";
 import { SmartPerformanceService } from "src/app/services/smart-performance/smart-performance.service";
@@ -23,49 +22,10 @@ import { enumScanFrequency } from "src/app/enums/smart-performance.enum";
 export class UiScanScheduleComponent implements OnInit {
 	constructor(
 		private commonService: CommonService,
-		private calendar: NgbCalendar,
 		private logger: LoggerService,
 		public smartPerformanceService: SmartPerformanceService,
 		private translate: TranslateService
 	) {}
-	// public machineFamilyName: string;
-	// public today = new Date();
-	// public items: any = [];
-	// title = "smartPerformance.title";
-	// public menuItems: any = [
-		// 	{ itemName: "Annual", itemKey: "ANNUAL" },
-		// 	{ itemName: "Quarterly", itemKey: "QUARTERLY" },
-		// 	{ itemName: "Custom", itemKey: "CUSTOM" },
-		// ];
-		// leftAnimator: any;
-		// @Input() isScanning = false;
-		// @Input() isScanningCompleted = false;
-		// @Input() tune = 0;
-		// @Input() boost = 0;
-		// @Input() secure = 0;
-		// @Input() rating = 0;
-		// public tabIndex: number;
-		// public toggleValue: number;
-		// public currentYear: any;
-		// public lastYear: any;
-		// historyRes: any = {};
-		// historyScanResults = [];
-		// menuStatus = true;
-		// selectedResult: any;
-		// annualYear: any;
-		// quarterlyMonth: any;
-		// isDropDownOpen: boolean;
-		// dropDownToggle: boolean;
-		// currentDate: any;
-		// fromDate: any;
-		// toDate: any;
-		// isFromDate: boolean;
-		// selectedfromDate: any;
-		// selectedTodate: any;
-		// displayFromDate: any;
-		// displayToDate: any;
-		// customDate: any;
-		// @Output() backToScan = new EventEmitter();
 		
 	// scan settings
 	@Output() scanDatekValueChange = new EventEmitter();
@@ -138,14 +98,6 @@ export class UiScanScheduleComponent implements OnInit {
 	isFirstVisit: boolean
 
 	ngOnInit() {
-		// this.currentDate = new Date();
-		// this.selectedDate = this.calendar.getToday();
-		// this.toDate = this.selectedDate;
-		// this.fromDate = this.selectedDate;
-		// this.selectedFrequency = this.scanFrequency[0];
-		// this.selectedDay = this.days[0];
-		// this.selectedNumber = this.dates[0];
-		// this.scanScheduleDate = this.selectedDate;
 		this.isDaySelectionEnable = false;
 		this.enumLocalScanFrequncy = enumScanFrequency;
 
@@ -189,8 +141,7 @@ export class UiScanScheduleComponent implements OnInit {
 			this.scanToggleValue = true;
 		} else {
 			this.scanToggleValue = false;
-			// when no record is present and scan is disabled setting default frequency and day.
-			// this.selectedFrequency = this.scanFrequency[0];
+			// when no record is present and scan is disabled setting default day.
 			this.selectedDay = this.days[0]
 		}
 
@@ -203,15 +154,6 @@ export class UiScanScheduleComponent implements OnInit {
 			}
 		}
 	}
-	// tslint:disable-next-line: use-lifecycle-interface
-
-	// expandRow(value) {
-	// 	if (this.toggleValue === value) {
-	// 		this.toggleValue = null;
-	// 	} else {
-	// 		this.toggleValue = value;
-	// 	}
-	// }
 
 	// scan settings
 	changeScanSchedule() {
@@ -294,22 +236,10 @@ export class UiScanScheduleComponent implements OnInit {
 
 	saveChangeScanTime() {
 		this.scheduleTab = "";
-		// this.scanTime.hour = this.copyScanTime.hour;
-		// this.scanTime.min = this.copyScanTime.min;
-		// this.scanTime.amPm = this.copyScanTime.amPm;
-		// this.scanTime.hourId = this.copyScanTime.hourId;
-		// this.scanTime.minId = this.copyScanTime.minId;
-		// this.scanTime.amPmId = this.copyScanTime.amPmId;
 		this.scanTime = {...this.copyScanTime}
 	}
 	cancelChangeScanTime() {
 		this.scheduleTab = "";
-		// this.copyScanTime.hour = this.scanTime.hour;
-		// this.copyScanTime.min = this.scanTime.min;
-		// this.copyScanTime.amPm = this.scanTime.amPm;
-		// this.copyScanTime.hourId = this.scanTime.hourId;
-		// this.copyScanTime.minId = this.scanTime.minId;
-		// this.copyScanTime.amPmId = this.scanTime.amPmId;
 		this.copyScanTime = {...this.scanTime}
 	}
 	changeHoursTime(value) {
@@ -426,6 +356,7 @@ export class UiScanScheduleComponent implements OnInit {
 		this.logger.info("ui-smart-performance.getNextScanRunTime",	JSON.stringify(payload)	);
 		try {
 			const res: any = await this.smartPerformanceService.getNextScanRunTime(payload);
+			this.logger.info("ui-smart-performance.getNextScanRunTime.then", JSON.stringify(res));
 			// checking next scan run time fetched from api and when present emitting to sp scan summary component and also updating respective fields
 			if (res.nextruntime) {
 				const dt = moment(res.nextruntime).format("dddd, MM, D, YYYY, h, mm, A");
@@ -453,9 +384,22 @@ export class UiScanScheduleComponent implements OnInit {
 					nextScanAMPM: this.scanTime.amPm,
 					nextScanDateWithYear: dt.split(",")[1]+'/'+dt.split(",")[2].trim()+'/'+dt.split(",")[3]
 				};
-				this.scanDatekValueChange.emit(nextScanEvent)
+				this.scanDatekValueChange.emit(nextScanEvent);
+				return;
 			}
-			this.logger.info("ui-smart-performance.getNextScanRunTime.then", JSON.stringify(res));
+
+			// when vantage service is uninstalled and reinstalled this conditions executes
+			if(!res.state) {
+				this.selectedFrequency = this.scanFrequency[0]
+				this.frequencyValue = this.scanFrequency.indexOf(this.selectedFrequency)
+				this.isFirstVisit = false;
+				this.type = "firstRun";
+				this.payloadData(this.type);
+				this.scheduleScan(this.requestScanData);
+				this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, this.selectedFrequency);
+				return
+			}
+			
 		} catch (err) {
 			this.logger.error("ui-smart-performance.getNextScanRunTime.then", err);
 		}
