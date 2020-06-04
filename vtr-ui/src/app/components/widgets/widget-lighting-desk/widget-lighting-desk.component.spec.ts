@@ -337,6 +337,8 @@ describe('WidgetLightingDeskComponent', () => {
         expect(component.lightingProfileDetail(lightingProfileByIdRes,count,lightingCapabilitiesRes)).toBeUndefined();
         lightingProfileByIdRes.lightInfo[0].lightPanelType = 16;
         lightingProfileByIdRes.lightInfo[0].lightEffectType = 5;
+        lightingProfileByIdRes.lightInfo[0].lightBrightness = null;
+        lightingProfileByIdRes.lightInfo[0].lightSpeed = null;
         component.lightingProfileDetail(lightingProfileByIdRes,count,lightingCapabilitiesRes);
         expect(component.lightingProfileDetail(lightingProfileByIdRes,count,lightingCapabilitiesRes)).toBeUndefined();
         component.ledlayoutversion = 5;
