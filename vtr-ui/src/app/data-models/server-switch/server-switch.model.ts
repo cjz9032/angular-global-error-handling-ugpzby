@@ -1,5 +1,8 @@
 import CountryList from "src/assets/server-switch/CountryList.json";
 import LanguageList from "src/assets/server-switch/LanguageList.json";
+import CountryNames from "src/assets/server-switch/CountryNames.json";
+import LanguageNames from "src/assets/server-switch/LanguageNames.json";
+
 export class ServerSwitch {
 	public currentUrl: string;
 	public cmsserver: any;
@@ -16,7 +19,9 @@ export class ServerSwitch {
 	public page: any;
 
 	public countryList: any = CountryList;
+	public countryNames: {} = CountryNames;
 	public languageList: any = LanguageList;
+	public languageNames: {} = LanguageNames;
 
 	public segmentList: string[] = [
 		'Commercial',
@@ -88,5 +93,25 @@ export class ServerSwitch {
 		{'label': 'https://vantage.dxp-qa.lenovo.com (QA Content Delivery)', 'cmsserver': 'https://vantage.dxp-qa.lenovo.com'},
 		{'label': 'https://vantage-qa.csw.lenovo.com (QA LIVE/CDN)', 'cmsserver': 'https://vantage-qa.csw.lenovo.com'},
 	];
+
+	//CPT CountryList & CountryName Mapping
+	public getCountryNameList(): any {
+		let cList = []; 
+		this.countryList.forEach((v)=>{
+			let name = this.countryNames[v.Value];
+			cList.push({"ItemID": v.ItemID,"Value":v.Value,"Label": name});
+		});
+		return cList;
+	}
+
+	//CPT LanguageList & LanguageName Mapping
+	public getLanguageNameList(): any {
+		let lList = []; 
+		this.languageList.forEach((v)=>{
+			let name = this.languageNames[v.Value];
+			lList.push({"ItemID": v.ItemID,"Value": v.Value,"Label": name});
+		});
+		return lList;
+	}
 
 }
