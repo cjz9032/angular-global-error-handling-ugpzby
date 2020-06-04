@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
 import { DccService } from 'src/app/services/dcc/dcc.service';
 import { DeviceService } from 'src/app/services/device/device.service';
+import { HistoryManager } from 'src/app/services/history-manager/history-manager.service';
 
 @Component({
 	selector: 'vtr-header-main',
@@ -14,7 +15,7 @@ export class HeaderMainComponent implements OnInit, AfterViewInit {
 	@Input() title: string;
 	@Input() back: string;
 	@Input() backarrow = '<';
-	@Input() forwardLink: { path: string, label: string };
+	@Input() forwardLink: { path: string, label: string; };
 	@Input() menuItems: any[];
 	@Input() parentPath: string;
 	@Input() backId: string;
@@ -27,7 +28,8 @@ export class HeaderMainComponent implements OnInit, AfterViewInit {
 
 	constructor(
 		public deviceService: DeviceService,
-		public dccService: DccService
+		public dccService: DccService,
+		public historyManager: HistoryManager
 	) {
 	}
 
@@ -59,7 +61,7 @@ export class HeaderMainComponent implements OnInit, AfterViewInit {
 		if (this.isInnerBack) {
 			this.onInnerBack();
 		} else {
-			return window.history.back();
+			return this.historyManager.goBack();
 		}
 	}
 }

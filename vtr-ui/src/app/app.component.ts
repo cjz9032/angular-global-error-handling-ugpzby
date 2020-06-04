@@ -35,6 +35,7 @@ import { UpdateProgress } from './enums/update-progress.enum';
 import { HardwareScanProgress } from './enums/hw-scan-progress.enum';
 import { SecurityAdvisorNotifications } from './enums/security-advisor-notifications.enum';
 import { SessionStorageKey } from './enums/session-storage-key-enum';
+import { HistoryManager } from './services/history-manager/history-manager.service';
 
 
 declare var Windows;
@@ -72,6 +73,8 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		private appsForYouService: AppsForYouService,
 		private metricService: MetricService,
 		private storeRating: StoreRatingService,
+		// don't delete historyManager
+		private historyManager: HistoryManager,
 		@Inject(DOCUMENT) public document: Document
 	) {
 		this.patchNgbModalOpen();
@@ -168,7 +171,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 				Object.assign(arguments[1], { container: 'vtr-root div' });
 			}
 			return original.apply(this, arguments);
-		}
+		};
 	}
 
 	private addInternetListener() {
