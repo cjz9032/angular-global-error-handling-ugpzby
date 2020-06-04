@@ -1,38 +1,22 @@
-<div class="vtr-header-main"
-	id="pageHeader">
-	<img class="vtr-header-main-img"
-		[src]="dccService.headerBackground"
-		alt="">
+<div class="vtr-header-main" id="pageHeader">
+	<img class="vtr-header-main-img" [src]="dccService.headerBackground" alt="">
 	<div class="vtr-header-main-inner">
-		<a class="back"
-			vtrMetrics
-			metricsEvent="FeatureClick"
-			metricsItem="back"
-			(click)="goBack()"
-			[hidden]="hideBack"
-			id="{{backId}}"
-			href="javascript:void();"
-			tabindex="{{ hideBack ? -1 : 1 }}"
-			*ngIf="back && back.length > 0">
+		<a class="back" vtrMetrics metricsEvent="FeatureClick" metricsItem="back" (click)="goBack()" [hidden]="hideBack"
+			id="{{backId}}" tabindex="{{ hideBack ? -1 : 1 }}" *ngIf="back && back.length > 0">
 			{{backarrow}}
 			<span>
 				{{back}}
 			</span>
 		</a>
-		<h1 class="title"
-			id="{{textId}}-header-title"
-			attr.aria-label="{{title}}"
-			[hidden]="hideTitle || title === ''"
+		<h1 class="title" id="{{textId}}-header-title" attr.aria-label="{{title}}" [hidden]="hideTitle || title === ''"
 			[innerHTML]="title"></h1>
-		<div *ngIf="!deviceService.isGaming" class="welcomeText-placeholder"
-			[hidden]="!(hideTitle || title === '')"></div>
+		<div *ngIf="!deviceService.isGaming" class="welcomeText-placeholder" [hidden]="!(hideTitle || title === '')">
+		</div>
 		<ng-content></ng-content>
-		<div *ngIf="forwardLink"
-			class="forward-link">
+		<div *ngIf="forwardLink" class="forward-link">
 			<a routerLink="/{{forwardLink.path}}"><span role="text"
 					class="forward-link-label">{{forwardLink.label}}</span>
-				<fa-icon [icon]="['fas', 'arrow-right']"
-					class="forward-link-icon"></fa-icon>
+				<fa-icon [icon]="['fas', 'arrow-right']" class="forward-link-icon"></fa-icon>
 			</a>
 		</div>
 		<div class="menu">
