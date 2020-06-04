@@ -969,15 +969,17 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 }
 /*----- onclick-tooltip-style------*/
 .tooltip-click {
-	box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
+	// box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
 	background: $light;
+	filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.15));
+	margin-right: 1rem;
 	&.show {
 		opacity: 1;
 	}
 
 	&.tooltip {
 		font-size: $fontsize_xs;
-		border-radius: 1rem;
+		border-radius: 0.4rem;
 
 		ul {
 			padding: 0;
@@ -995,8 +997,8 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 
 	.tooltip-inner {
 		background: $light;
-		border-radius: 1rem;
-		padding: 2.4rem;
+		border-radius: 0.4rem;
+		padding: 1.2rem;
 		color: $grey_dark;
 		text-align: left;
 		max-width: 40rem;
@@ -1045,9 +1047,14 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 		}
 	}
 
-	// .arrow::before {
-	// 	border-top-color: $dark;
-	// }
+	.arrow {
+		top: calc(-0.9rem + 50%) !important;
+		&::before{
+			border-left-color: $light;
+			border-width: 1rem 0 1rem 1rem;
+			left: 0.3rem;
+		}
+	}
 }
 
 /*green and red button style*/
