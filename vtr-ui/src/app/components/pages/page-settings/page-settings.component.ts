@@ -13,6 +13,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { MenuItemEvent } from 'src/app/enums/menuItemEvent.enum';
+import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 
 @Component({
 	selector: 'vtr-page-settings',
@@ -97,7 +98,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	metricsPreference: any;
 	notificationSubscription: any;
 	activeElement: HTMLElement;
-
+	isSPFullFeatureEnabled:any;
 	constructor(
 		private shellService: VantageShellService,
 		public configService: ConfigService,
@@ -108,7 +109,8 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		private timerService: TimerService,
 		public betaService: BetaService,
 		private localInfoService: LocalInfoService,
-		private loggerService: LoggerService
+		private loggerService: LoggerService,
+		public smartPerformanceService: SmartPerformanceService,
 	) {
 		this.preferenceSettings = this.shellService.getPreferenceSettings();
 		this.metrics = shellService.getMetrics();
@@ -359,6 +361,12 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		this.sendSettingMetrics('SettingBetaProgram', event.switchValue);
 		this.betaService.setBetaStatus(this.toggleBetaProgram ? BetaStatus.On : BetaStatus.Off);
 		this.commonService.sendReplayNotification(MenuItemEvent.MenuBetaItemChange, this.toggleBetaProgram);
+		this.isSPFullFeatureEnabled = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
+		if (this.isSPFullFeatureEnabled) {
+			this.unregisterScheduleScan("Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix");
+		} else {
+			this.unregisterScheduleScan("Lenovo.Vantage.SmartPerformance.ScheduleScan");
+		}
 	}
 
 	sendMetrics(data: any) {
@@ -424,6 +432,29 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			(document.querySelector('#menu-main-lnk-gaming-logo') as HTMLElement).focus();
 		} else {
 			(document.querySelector('#menu-main-lnk-l-logo') as HTMLElement).focus();
+		}
+		if(this.selfSelectService.usageType !== SegmentConst.Consumer)
+		{
+			this.isSPFullFeatureEnabled = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
+			if (this.isSPFullFeatureEnabled) {
+				this.unregisterScheduleScan("Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix");
+			} else {
+				this.unregisterScheduleScan("Lenovo.Vantage.SmartPerformance.ScheduleScan");
+			}
+		}
+	}
+	// deletes records from task scheduler
+	async unregisterScheduleScan(scantype) {
+		const payload = {scantype};
+		try {
+			const res: any = await this.smartPerformanceService.unregisterScanSchedule(payload);
+			this.loggerService.info("page-settings.unregisterScheduleScan.then", res);
+			if(res && res.state)
+			{
+				this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
+			}
+		} catch (err) {
+			this.loggerService.error("page-settings.unregisterScheduleScan.then", err);
 		}
 	}
 
