@@ -4,7 +4,10 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { ConnectedHomeSecurity } from '@lenovo/tan-client-bridge';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { MetricsTranslateService } from 'src/app/services/mertics-traslate/metrics-translate.service';
-
+import { Subscription } from 'rxjs/internal/Subscription';
+import { CommonService } from 'src/app/services/common/common.service';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 @Component({
 	selector: 'vtr-modal-wifi-security-invitation',
 	templateUrl: './modal-wifi-security-invitation.component.html',
@@ -26,20 +29,36 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 	joinSuccess = false;
 	joinFailed = false;
 	isFocusIn = false;
+	disabledInput = false;
+	isOnline = true;
+	notificationSubscription: Subscription;
 
 	@ViewChild('domInput') domInput: ElementRef;
 	@ViewChild('connectingMsg') connectingMsg: ElementRef;
 	@ViewChild('successMsg') successMsg: ElementRef;
+	@ViewChild('offlineMsg') offlineMsg: ElementRef;
 
 	constructor(
 		public activeModal: NgbActiveModal,
 		private vantageShellService: VantageShellService,
 		public metrics: MetricService,
-		public metricsTranslateService: MetricsTranslateService) {
+		public metricsTranslateService: MetricsTranslateService,
+		private commonService: CommonService) {
 	}
 
 	ngOnInit() {
 		this.chs = this.vantageShellService.getConnectedHomeSecurity();
+		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+			if (this.isOnline == false) {
+				this.domInput.nativeElement.value = '';
+				this.disabledInput = true;
+				this.focusOut();
+				setTimeout(()=>{
+					this.offlineMsg.nativeElement.focus();
+				}, 0)
+			}
+		});
 	}
 
 	closeModal() {
@@ -121,6 +140,22 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 		this.isFocusIn = false;
 	}
 
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case NetworkStatus.Online:
+				case NetworkStatus.Offline:
+					this.isOnline = notification.payload.isOnline;
+					break;
+				default:
+					break;
+			}
+		}
+	}
+
+	ngOnDestroy() {
+		this.notificationSubscription.unsubscribe();
+	}
 
 	@HostListener('window: focus')
 	onFocus(): void {
