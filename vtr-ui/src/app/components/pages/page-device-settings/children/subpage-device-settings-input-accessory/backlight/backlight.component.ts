@@ -18,8 +18,8 @@ import { BacklightLevelEnum, BacklightStatusEnum } from './backlight.enum';
 import { BacklightLevel, BacklightMode, BacklightStatus } from './backlight.interface';
 import { LocalStorageKey } from '../../../../../../enums/local-storage-key.enum';
 import { CommonService } from '../../../../../../services/common/common.service';
-import { MetricService } from '../../../../../../services/metric/metrics.service';
 import { UiCircleRadioWithCheckBoxListModel } from 'src/app/components/ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
+import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
 
 @Component({
 	selector: 'vtr-backlight',
@@ -78,7 +78,7 @@ export class BacklightComponent implements OnInit, OnDestroy {
 	constructor(
 		private backlightService: BacklightService,
 		private commonService: CommonService,
-		private metrics: MetricService
+		private metrics: CommonMetricsService
 	) {
 	}
 
@@ -109,13 +109,7 @@ export class BacklightComponent implements OnInit, OnDestroy {
 			.pipe(
 				tap(update => {
 					const machineFamilyName = this.commonService.getLocalStorageValue(LocalStorageKey.MachineFamilyName);
-					const metricsData = {
-						ItemParent: 'Device.MyDeviceSettings',
-						ItemName: 'BacklightIdeapad',
-						ItemParam: { machineFamilyName },
-						ItemValue: update.value
-					};
-					this.metrics.sendMetrics(metricsData);
+					this.metrics.sendMetrics(update.value, 'BacklightIdeaPad', 'FeatureClick', machineFamilyName);
 				}),
 				switchMap(update => this.backlightService.setBacklight(update)),
 				// Throttle !!!!!!! Cause Common ui component fire two times !!!!!!!!!!!
