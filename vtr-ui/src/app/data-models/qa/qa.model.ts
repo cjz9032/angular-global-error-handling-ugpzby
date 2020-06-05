@@ -1,6 +1,8 @@
 export class QA {
 	id: number;
-	iconPath: string;
+	iconPath?: string;
+	icon?: string[];
+	isIconBackground?: boolean;
 	path: string;
 	title?: string;
 	keys?: string[];

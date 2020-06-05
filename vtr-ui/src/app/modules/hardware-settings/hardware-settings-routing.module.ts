@@ -13,6 +13,7 @@ import { NonGamingGuard } from 'src/app/services/guard/non-gaming-guard';
 import { NonArmGuard } from 'src/app/services/guard/non-arm-guard';
 import { NonSmodeGuard } from 'src/app/services/guard/non-smode-guard';
 import { SubpageDeviceSettingsPowerContainerComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power-container/subpage-device-settings-power-container.component';
+import { PageHighDensityBatteryComponent } from 'src/app/components/pages/page-high-density-battery/page-high-density-battery.component';
 
 const routes: Routes = [
 	{
@@ -116,6 +117,15 @@ const routes: Routes = [
 		canActivate: [GuardService],
 		data: {
 			pageName: 'Support.Detail'
+		}
+	},
+	{
+		path: 'high-density-battery',
+		component: PageHighDensityBatteryComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
+		data: {
+			pageName: 'Device.HighDensityBattery'
 		}
 	}
 ];

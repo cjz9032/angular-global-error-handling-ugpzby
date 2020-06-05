@@ -1,0 +1,95 @@
+@import "../../../app.theme.scss";
+
+.card {
+	border-radius: $border_radius;
+	box-shadow: $drop_shadow;
+	.left-container {
+		padding: 2.4rem;
+		.description-container {
+			font-size: $fontsize_sm;
+			display: block;
+			overflow-y: auto;
+			color: $grey_dark;
+			font-weight: $weight_light;
+		}
+
+		.text {
+			color: $shade_darker;
+			font-size: 1.8rem;
+			font-weight: $weight_light;
+			line-height: 1.8em;
+
+			&.smaller {
+				font-size: 1.4rem;
+			}
+		}
+
+		.title {
+			color: $shade_blue;
+			font-size: 3.6rem;
+			font-weight: $weight_light;
+			margin-bottom: 2rem;
+		}
+
+		.subtitle {
+			color: $grey_dark;
+			font-size: $fontsize_xs;
+			font-weight: $weight_light;
+			letter-spacing: 0.1rem;
+			line-height: 2rem;
+			margin-top: -2rem;
+		}
+
+		fa-icon {
+			font-size: 2.3rem;
+			line-height: 5rem;
+		}
+
+		.cursor-pointer {
+			cursor: pointer;
+		}
+
+		button {
+			a {
+				color: $light;
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+.sub-title {
+	color: $shade_blue;
+	font-size: $fontsize_xs;
+	font-weight: $weight-bold;
+	text-transform: uppercase;
+}
+
+
+.title {
+	font-size: 3.6rem;
+	font-weight: $weight_light;
+	color: $shade_blue;
+}
+
+.heading1 {
+	font-size: 1.4rem;
+	font-weight: $weight_bold;
+	color: $shade_blue;
+	text-transform: uppercase;
+}
+
+.para1 {
+	margin-bottom: 1rem;
+	margin-top: 1rem;
+}
+
+.margin-top-2 {
+	margin-top: 2rem !important;
+}
+
+.margin-bottom-16 {
+	margin-bottom: 16rem !important;
+}
