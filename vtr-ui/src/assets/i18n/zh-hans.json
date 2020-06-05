@@ -729,8 +729,8 @@
                 "name7": "拯救者大Y红灯",
                 "name9": "氛围蓝灯",
                 "name10": "水冷水泵彩灯 & 水冷风扇彩灯",
-				"name11": "前置风扇彩灯",
-				"name12": "上置风扇彩灯"
+                "name11": "前置风扇彩灯",
+                "name12": "上置风扇彩灯"
             },
             "lightingEffect": {
                 "effectName1": "静态",
@@ -3269,7 +3269,8 @@
             "titlebeta": "Lenovo Beta Program",
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
-            "descriptionbeta1": "You are welcomed to join and try the full feature."
+            "descriptionbeta1": "You are welcomed to join and try the full feature.",
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3305,7 +3306,9 @@
                 "title": "Cacel the scan?",
                 "description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
                 "yesButton": "YES, CANCEL",
-                "noButton": "NO, RESUME SCAN"
+                "noButton": "NO, RESUME SCAN",
+                "cancelMayTakeSomeTime": "请稍候，可能需要一些时间才能取消，具体情况视您的系统而定。",
+                "cancelTextPrompt": "您确定要取消吗？"
             },
             "waiting": "WAITING TO SCAN",
             "completed": "COMPLETED",
@@ -3461,8 +3464,7 @@
                 "yearlyPricing": "$19.99 / Yr",
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP",
-                "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
+                "signupButton": "SIGN UP"
             },
             "tunepc": {
                 "accumulatedjunkscannedareas": {
@@ -3725,7 +3727,8 @@
             "issues": "ISSUES",
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
-            "secureIssueCount": "{{secure}}"
+            "secureIssueCount": "{{secure}}",
+            "backToHome": "Back To Home"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your ",

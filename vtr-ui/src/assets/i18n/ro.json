@@ -729,8 +729,8 @@
                 "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
-				"name11": "Legion front Fan Lighting",
-				"name12": "Legion Top Fan Lighting"
+                "name11": "Legion front Fan Lighting",
+                "name12": "Legion Top Fan Lighting"
             },
             "lightingEffect": {
                 "effectName1": "Static",
@@ -3269,7 +3269,8 @@
             "titlebeta": "Lenovo Beta Program",
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
-            "descriptionbeta1": "You are welcomed to join and try the full feature."
+            "descriptionbeta1": "You are welcomed to join and try the full feature.",
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3305,7 +3306,9 @@
                 "title": "Cacel the scan?",
                 "description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
                 "yesButton": "YES, CANCEL",
-                "noButton": "NO, RESUME SCAN"
+                "noButton": "NO, RESUME SCAN",
+                "cancelMayTakeSomeTime": "Așteptați, anularea poate dura un anumit timp, în funcție de sistemul dumneavoastră.",
+                "cancelTextPrompt": "Sigur anulaţi?"
             },
             "waiting": "WAITING TO SCAN",
             "completed": "COMPLETED",
@@ -3461,8 +3464,7 @@
                 "yearlyPricing": "$19.99 / Yr",
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP",
-                "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
+                "signupButton": "SIGN UP"
             },
             "tunepc": {
                 "accumulatedjunkscannedareas": {
@@ -3725,7 +3727,8 @@
             "issues": "ISSUES",
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
-            "secureIssueCount": "{{secure}}"
+            "secureIssueCount": "{{secure}}",
+            "backToHome": "Back To Home"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your ",
