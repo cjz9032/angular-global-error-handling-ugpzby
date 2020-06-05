@@ -578,13 +578,17 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 	getDisplayColorTemperature() {
 		this.displayService.getDisplayColorTemperature().then((response) => {
 			this.logger.debug('getDisplayColorTemperature.then', response);
-			this.eyeCareDataSource = response;
-			if (this.isSet.isSetEyecaremodeValue) {
-				this.eyeCareDataSource.current = this.setValues.SetEyecaremodeValue;
-				this.isSet.isSetEyecaremodeValue = false;
+			this.displayColorTempDataSource = response;
+			this.displayColorTempCache.available = this.displayColorTempDataSource.available;
+			if (this.isSet.isSetDaytimeColorTemperatureValue) {
+				this.displayColorTempDataSource.current = this.setValues.SetDaytimeColorTemperatureValue;
+				this.isSet.isSetDaytimeColorTemperatureValue = false;
 			}
-			this.logger.debug('getDisplayColorTemperature.then', this.eyeCareDataSource);
-			this.commonService.setLocalStorageValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
+			this.displayColorTempCache.current = this.displayColorTempDataSource.current;
+			this.displayColorTempCache.maximum = this.displayColorTempDataSource.maximum;
+			this.displayColorTempCache.minimum = this.displayColorTempDataSource.minimum;
+			this.displayColorTempCache.eyeCareMode = this.displayColorTempDataSource.eyemodestate;
+			this.commonService.setLocalStorageValue(LocalStorageKey.DisplayColorTempCapability, this.displayColorTempCache);
 		});
 	}
 
@@ -942,7 +946,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 			// this.displayColorTempDataSource.current = this.eyeCareDataSource.current;
 			// this.onSetChangeDisplayColorTemp({value: this.eyeCareDataSource.current})
 			this.displayService.setDaytimeColorTemperature($event);
-			//this.onEyeCareTemperatureChange(this.eyeCareDataSource.current);
+			// this.onEyeCareTemperatureChange(this.eyeCareDataSource.current);
 
 		} else {
 			this.onSetChangeDisplayColorTemp($event);
