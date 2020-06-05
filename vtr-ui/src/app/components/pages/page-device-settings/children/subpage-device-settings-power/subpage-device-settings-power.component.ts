@@ -173,6 +173,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	// ************************** Start Getting Cached Data ****************************
 	initDataFromCache() {
+		this.initSmartSettingsFromCache();
 		this.initSmartStandbyFromCache();
 		this.initAirplanePowerFromCache();
 		this.initBatteryChargeThresholdFromCache();
@@ -183,6 +184,17 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.initOtherSettingsFromCache();
 		this.initEnergyStarFromCache();
 
+	}
+
+	initSmartSettingsFromCache() {
+		const capability = this.commonService.getLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, undefined);
+		if(capability && capability.showIC) {
+			if (capability.showIC === 0) {
+				this.updateSmartSettingsLinkStatus(false);
+			} else {
+				this.updateSmartSettingsLinkStatus(true);
+			}
+		}
 	}
 
 
