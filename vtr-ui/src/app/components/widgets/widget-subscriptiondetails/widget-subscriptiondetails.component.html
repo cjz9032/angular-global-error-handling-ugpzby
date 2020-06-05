@@ -39,4 +39,5 @@
         metricsParent="Page.Support.SmartPerformance">
         {{'smartPerformance.subscriptionDetails.manageSubscription' |translate }}
     </a>
+    <a *ngIf="!isSubscribed" class="link-text-payment" (click)="openPaymnetPopup()"> {{'smartPerformance.subscriptionDetails.manageSubscriptionBeta' |translate }}</a>
 </div>
