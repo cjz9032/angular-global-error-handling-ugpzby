@@ -7,6 +7,7 @@ import { v4 as uuid } from 'uuid';
 import { formatDate } from '@angular/common';
 import { SupportService } from 'src/app/services/support/support.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { PaymentPage } from 'src/app/enums/smart-performance.enum';
 
 @Component({
 	selector: 'vtr-modal-smart-performance-subscribe',
@@ -14,7 +15,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 	styleUrls: [ './modal-smart-performance-subscribe.component.scss' ]
 })
 export class ModalSmartPerformanceSubscribeComponent implements OnInit {
-	
+	public spPaymentPageenum: any;
 	myDate = new Date();
 	machineType: any;
 	systemSerialNumber: any;
@@ -39,7 +40,31 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		
+		this.spPaymentPageenum = PaymentPage;
+		this.supportService.getMachineInfo().then(async (machineInfo) => {
+			this.loggerService.info('MachineInfo ====================================================== ', machineInfo);
+			this.countryCode =  machineInfo.country;
+			this.systemSerialNumber = 'PC0ZEPQ6';// machineInfo.serialnumber;
+			this.systemMT = machineInfo.mt;
+			this.langCode = this.getSPSubscriptionSupportedLanguageFromCountry(this.countryCode);
+			this.paymenturl =
+				this.spPaymentPageenum.URL +
+				this.countryCode +
+				this.spPaymentPageenum.SLASH +
+				this.langCode +
+				this.spPaymentPageenum.SLASH +
+				this.spPaymentPageenum.URLSTRING +
+				this.spPaymentPageenum.SERIALQUERYPARAMETER +
+				this.systemSerialNumber +
+				this.spPaymentPageenum.SMARTPERFORMANCE +
+				this.spPaymentPageenum.TRUE +
+				this.spPaymentPageenum.SOURCEQUERYPARAMETER +
+				this.spPaymentPageenum.APPLICATIONNAME;
+				this.loggerService.info(
+				'paymenturl========================================================',
+				this.paymenturl
+			);
+		});
 	}
 	closeModal() {
 		this.activeModal.close('close');
