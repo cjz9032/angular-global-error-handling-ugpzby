@@ -61,6 +61,7 @@
 											*ngIf="voipStatus.available">
 											<div id="audio-dolby-voip-checkbox">
 												<vtr-ui-checkbox [componentId]="'audio-voip'"
+													[isMetricsEnabled]=true
 													[value]="voipStatus.status"
 													[checked]="voipStatus.status"
 													[disabled]='automaticAudioDisabled'
@@ -101,6 +102,7 @@
 											*ngIf="entertainmentStatus.available">
 											<div id="audio-dolby-entertainment-checkbox">
 												<vtr-ui-checkbox [componentId]="'entertainmentCheckbox'"
+													[isMetricsEnabled]=true
 													[value]="entertainmentStatus.status"
 													[checked]="entertainmentStatus.status"
 													[disabled]='automaticAudioDisabled'
