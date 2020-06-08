@@ -161,7 +161,7 @@
 
 			<!-- <div *ngIf="!cameraStatus.permission && !cameraStatus.isLoading && cameraStatus.available && microphoneStatus.permission && cameraNoAccessNoteShow" -->
 			<!-- camera permission -->
-			<div *ngIf="!cameraStatus.permission && (!cameraStatus.isLoading) && (!(!microphoneStatus.permission && microphoneStatus.available)) && cameraNoAccessNoteShow"
+			<div *ngIf="cameraStatus.available && !cameraStatus.permission && (!cameraStatus.isLoading) && (!(!microphoneStatus.permission && microphoneStatus.available)) && cameraNoAccessNoteShow"
 				class="row permission-note mt-4">
 				<div class="col-12 p-3 d-flex">
 					<div class="col-1 pl-0 text-center">
@@ -188,7 +188,7 @@
 
 			<!-- <div *ngIf="!microphoneStatus.permission && !cameraStatus.permission && !cameraStatus.isLoading && cameraNoAccessNoteShow" -->
 			<!-- microphone & camera permission -->
-			<div *ngIf="microphoneStatus.available && (!microphoneStatus.permission) && !cameraStatus.permission && !cameraStatus.isLoading && cameraNoAccessNoteShow"
+			<div *ngIf="cameraStatus.available && microphoneStatus.available && (!microphoneStatus.permission) && !cameraStatus.permission && !cameraStatus.isLoading && cameraNoAccessNoteShow"
 				class="row permission-note mt-4">
 				<div class="col-12 p-3 d-flex">
 					<div class="col-1 pl-0 text-center">
