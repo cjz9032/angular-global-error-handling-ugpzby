@@ -54,6 +54,7 @@
 						<div id="smartMotionAlertAlarmTimeSelect"
 							class="select">
 							<vtr-ui-dropdown class="selectDropdown"
+								[isMetricsEnabled]=true
 								[list]="alarmTimeList"
 								[value]="antiTheft.alarmOften"
 								(change)="setAlarmOften($event.value)"

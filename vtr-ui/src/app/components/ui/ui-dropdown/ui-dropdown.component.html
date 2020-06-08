@@ -64,10 +64,6 @@
 				[ngClass]="{ 'selected-list-item': selectedValue === i }"
 				id="{{ item.text }}"
 				(click)="closeDropdown({ value: i, hideList: false })"
-				vtrMetrics
-				metricsEvent="FeatureClick"
-				[metricsItem]="dropDownName"
-				[metricsValue]="item.value"
 				tabindex="-1"
 				[attr.aria-selected]="selectedValue === i ? true : false">{{ item.text }}</a>
 		</ng-container>
@@ -78,11 +74,7 @@
 				role="option"
 				tabindex="-1"
 				(click)="closeDropdown({ value: i, hideList: false })"
-				[attr.aria-selected]="selectedValue === i ? true : false"
-				vtrMetrics
-				metricsEvent="FeatureClick"
-				[metricsItem]="dropDownName"
-				metricsValue="{{ item.title | translate }}">{{ item.title | translate }}</a>
+				[attr.aria-selected]="selectedValue === i ? true : false">{{ item.title | translate }}</a>
 		</ng-container>
 	</div>
 </div>
