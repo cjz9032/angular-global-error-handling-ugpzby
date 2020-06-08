@@ -80,16 +80,16 @@
 				</div>
 			</div>
 
-			<div class="row" *ngFor="let item of rightCards; index as i" [hidden]="!item.show">
+			<div class="row" *ngFor="let card of rightCards; index as i" [hidden]="!card.show">
 				<div class="col col-12 mb-5">
-					<vtr-container-card [item]="item.cardContent"
-						[id]="item.id"
-						[attr.aria-label]="item.ariaLabel"
-						[type]="item.type"
-						[order]="(!showSecurityWidget ? item.order - 1 : item.order).toString()"
+					<vtr-container-card [item]="card.cardContent"
+						[id]="card.id"
+						[attr.aria-label]="card.ariaLabel"
+						[type]="card.type"
+						[order]="(!showSecurityWidget ? card.order - 1 : card.order).toString()"
 						sideFlag='r'
 						[ratio]="2"
-						[cornerShift]="item.cornerShift ? item.cornerShift : ''">
+						[cornerShift]="card.cornerShift ? card.cornerShift : ''">
 					</vtr-container-card>
 				</div>
 			</div>
