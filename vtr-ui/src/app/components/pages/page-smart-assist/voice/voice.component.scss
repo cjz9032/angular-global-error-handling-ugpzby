@@ -37,6 +37,7 @@ vtr-spinner {
 			@include button-outline-blue;
 		}
 	}
+	@include ui-button-high-contrast-black;
 }
 
 // ::ng-deep .vtr-ui-switch-row .white-theme {
