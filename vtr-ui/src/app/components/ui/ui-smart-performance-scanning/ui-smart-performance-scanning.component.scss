@@ -27,12 +27,6 @@
             color: $light;
             font-size: 3.4rem;
 			font-weight: $weight_light;
-			@media #{$breakpoint_md}{
-				font-size: 2.8rem;
-			}
-			@media #{$breakpoint_sm}{
-				font-size: 2.2rem;
-			}
         }
         h3 {
             font-size: $fontsize_sm;
@@ -40,12 +34,6 @@
             opacity: 0.5;
 			line-height: 2;
 			font-weight: $weight_regular;
-			@media #{$breakpoint_md}{
-				font-size: 1.4rem;
-			}
-			@media #{$breakpoint_sm}{
-				font-size: 1rem;
-			}
         }
         .icon {
             color: #7D5FEF;
@@ -70,10 +58,10 @@
             .progress-title{
                 color: $light !important;
 				font-size: 2.6rem;
-				@media #{$breakpoint_sm}{
-					font-size: 1.3rem;
-					padding-top: 0.3rem;
-				}
+				// @media #{$breakpoint_sm}{
+				// 	font-size: 1.3rem;
+				// 	padding-top: 0.3rem;
+				// }
 				.progress-sub-title{
 					font-size: 1.3rem;
 				}
@@ -81,9 +69,9 @@
             .progress-value-text {
                 color: $light !important;
 				font-size: 2.6rem;
-				@media #{$breakpoint_sm}{
-					font-size: 1.6rem;
-				}
+				// @media #{$breakpoint_sm}{
+				// 	font-size: 1.6rem;
+				// }
             }
             .progress-complete-text{
                 color: $light !important;
@@ -91,10 +79,10 @@
                 padding-top: 1rem;
                 padding-left: 0.3rem;
 				text-transform: lowercase;
-				@media #{$breakpoint_sm}{
-					font-size: 1rem;
-					padding-top: 0.5rem;
-				}
+				// @media #{$breakpoint_sm}{
+				// 	font-size: 1rem;
+				// 	padding-top: 0.5rem;
+				// }
             }
         }
 		.progress-bar-div-container {
