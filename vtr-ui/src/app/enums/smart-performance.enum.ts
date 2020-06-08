@@ -30,3 +30,14 @@ export enum enumScanFrequency{
 export enum enumSmartPerformance{
 	SCHEDULESCANENDDATE = '2020/07/27',
 }
+export enum PaymentPage{
+	URL = 'https://uatpcsupport.lenovo.com/',
+	APPLICATIONNAME = 'COMPANION',
+	URLSTRING = 'upgradewarranty?',
+	SMARTPERFORMANCE = '&smartperformance=',
+	SERIALQUERYPARAMETER='serial=',
+	MTQUERYPARAMETER='&mt=',
+	SOURCEQUERYPARAMETER='&source=',
+	SLASH='/',
+	TRUE='true'
+}

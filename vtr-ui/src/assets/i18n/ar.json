@@ -731,8 +731,8 @@
                 "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
-				"name11": "Legion front Fan Lighting",
-				"name12": "Legion Top Fan Lighting"
+                "name11": "Legion front Fan Lighting",
+                "name12": "Legion Top Fan Lighting"
             },
             "lightingEffect": {
                 "effectName1": "ساكن",
@@ -1068,7 +1068,8 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "لتمديد عمر البطارية، قمنا بتحسين سعة شحنها الكاملة بالاستناد إلى استخدامك. قد لا تتوفر سعة البطارية الكاملة حتى تفريغ الشحنة إلى 20% وإعادة الشحن."
+                    "fccTooltipText": "لتمديد عمر البطارية، قمنا بتحسين سعة شحنها الكاملة بالاستناد إلى استخدامك. قد لا تتوفر سعة البطارية الكاملة حتى تفريغ الشحنة إلى 20% وإعادة الشحن.",
+                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
                 },
                 "condition": {
                     "Illegal": "البطارية المركّبة <b>غير مدعومة</b> بواسطة النظام ولن يتم شحنها. الرجاء استبدال البطارية ببطارية Lenovo المناسبة لهذا النظام.",
@@ -1096,6 +1097,16 @@
                 "gaugeResetWarning": "<b>ملاحظة:</b> إعادة تعيين مقياس البطارية قيد التقدم. يرجى إبقاء محول طاقة التيار المتردد متصلاً.",
                 "dualConditions": {
                     "NotDetected": "<b>لم يتم الكشف عن البطارية الرئيسية.</b>"
+                },
+                "highDensityBattery": {
+                    "title": "High density battery",
+                    "subtitle": "How your battey works",
+                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "para2": {
+                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
+                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
+                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                    }
                 }
             },
             "power": {
@@ -2243,6 +2254,9 @@
         "support": {
             "title": "موقع دعم Lenovo على الويب"
         },
+        "security": {
+            "title": "For a better protection for your device"
+        },
         "banner": {
             "neverChecked": "مرحبًا بك في استخدام تحديث النظام.",
             "title": "النظام المحدّث هو نظام سليم.",
@@ -3271,7 +3285,8 @@
             "titlebeta": "Lenovo Beta Program",
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
-            "descriptionbeta1": "You are welcomed to join and try the full feature."
+            "descriptionbeta1": "You are welcomed to join and try the full feature.",
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3307,7 +3322,9 @@
                 "title": "Cacel the scan?",
                 "description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
                 "yesButton": "YES, CANCEL",
-                "noButton": "NO, RESUME SCAN"
+                "noButton": "NO, RESUME SCAN",
+                "cancelMayTakeSomeTime": "يرجى الانتظار، قد يستغرق الأمر بعض الوقت للإلغاء حسب نظامك.",
+                "cancelTextPrompt": "هل تريد بالتأكيد الإلغاء؟"
             },
             "waiting": "WAITING TO SCAN",
             "completed": "COMPLETED",
@@ -3463,8 +3480,7 @@
                 "yearlyPricing": "$19.99 / Yr",
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP",
-                "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
+                "signupButton": "SIGN UP"
             },
             "tunepc": {
                 "accumulatedjunkscannedareas": {
@@ -3727,7 +3743,8 @@
             "issues": "ISSUES",
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
-            "secureIssueCount": "{{secure}}"
+            "secureIssueCount": "{{secure}}",
+            "backToHome": "Back To Home"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your ",

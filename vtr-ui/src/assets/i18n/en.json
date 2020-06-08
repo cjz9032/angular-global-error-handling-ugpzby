@@ -1840,8 +1840,8 @@
 					}
 				},
 				"fnCtrlKey": {
-					"title": "Fn and Ctrl key swap",
-					"description": "If you habitually pressed the Fn key when intending to press the Ctrl key, you can exchange the functions of the two keys.",
+					"title": "FN key and Ctrl key swap",
+					"description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
 					"restartNote": "Swapping the function of two keys requires you to restart your computer, are you sure to restart?",
 					"title2": "Fn works as Ctrl for frequently used key combinations",
 					"description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
@@ -2254,6 +2254,9 @@
 		"support": {
 			"title": "Lenovo Support website"
 		},
+		"security": {
+			"title": "For a better protection for your device"
+		},
 		"banner": {
 			"neverChecked": "Welcome to use System Update.",
 			"title": "An up-to-date system is a healthy system.",
@@ -2495,6 +2498,8 @@
 				"button": "CANCEL SCAN",
 				"title": "Cancel the scan?",
 				"description": "If you leave the current screen, the scan will be cancelled and you will be returned to the Home. However, you can run the scan again at any time.",
+				"cancelMayTakeSomeTime": "Please wait, it may take some time to cancel depending on your system.",
+				"cancelTextPrompt": "Are you sure you would like to cancel?",
 				"yesButton": "YES, CANCEL",
 				"noButton": "NO, RESUME SCAN"
 			},

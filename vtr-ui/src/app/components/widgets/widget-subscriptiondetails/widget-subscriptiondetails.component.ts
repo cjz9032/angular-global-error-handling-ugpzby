@@ -99,5 +99,13 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		// });
 
 	}
+	openPaymnetPopup(){
+		this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
+		    backdrop: 'static',
+		    size: 'lg',
+		    centered: true,
+		    windowClass: 'subscribe-modal',
 
+		});
+	}
 }

@@ -22,4 +22,5 @@ export class FeatureContent {
 	Filters?: any
 	DataSource?: string
 	isLocal?: boolean
+	SupportOffline?: boolean
 }

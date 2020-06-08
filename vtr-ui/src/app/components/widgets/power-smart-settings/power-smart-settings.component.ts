@@ -19,7 +19,7 @@ const ideapad = 0;
 	templateUrl: './power-smart-settings.component.html',
 	styleUrls: ['./power-smart-settings.component.scss']
 })
-export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterViewInit {
+export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	intelligentCoolingModes = IntelligentCoolingHardware.ITS;
 	dYTCRevision = 0;
 	cQLCapability = false;
@@ -81,30 +81,12 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 		}
 	}
 
-	ngAfterViewInit() {
-		if (this.cache) {
-			if (this.cache.showIC === 0) {
-				this.showPowerSmartSettings(false);
-			} else {
-				this.showPowerSmartSettings(true);
-			}
-		}
-
-
-	}
-
-
 
 	initDataFromCache() {
 		this.cache = this.commonService.getLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, undefined);
 		if (this.cache) {
 			// init ui
 			this.showIC = this.cache.showIC;
-			// if (this.showIC === 0) {
-			// 	this.showPowerSmartSettings(false);
-			// 	return;
-			// }
-			// this.showPowerSmartSettings(true);
 			if (this.showIC === 6) {
 				this.dytc6Mode = this.cache.captionText;
 				this.dytc6IsAutoModeSupported = this.cache.autoModeToggle.available;

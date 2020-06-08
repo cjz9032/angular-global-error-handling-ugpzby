@@ -193,9 +193,12 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			//Adding new key scanrunTime
 			this.historyScanResultsDateTime[i].scanrunTime = new Intl.DateTimeFormat('default', {
 				hour12: true,
-				hour: 'numeric',
-				minute: 'numeric'
+				hour: '2-digit',
+				minute: '2-digit'
 			}).format(new Date(this.historyScanResultsDateTime[i].scanruntime));
+
+			//Removing sapace between time stamp and AM/PM
+			this.historyScanResultsDateTime[i].scanrunTime = this.historyScanResultsDateTime[i].scanrunTime.replace(/ /g, "");
 		}
 
 		return this.historyScanResultsDateTime;
@@ -404,32 +407,32 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		);
 	}
 	openSubscribeModal() {
-		// this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
-		// 	backdrop: 'static',
-		// 	size: 'lg',
-		// 	centered: true,
-		// 	windowClass: 'subscribe-modal'
-		// });
-		const scanEnabled = this.commonService.getLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled);
-		this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
-		this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, 'Once a week')
-		this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
-		this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.subscriptionDetails);
-		if(!scanEnabled) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled, true);
-		}
-		//this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate(['support/smart-performance']));
-		this.isSubscribed = this.commonService.getLocalStorageValue(
-			LocalStorageKey.IsFreeFullFeatureEnabled
-		);
-		if(this.isSubscribed) {
-			this.tabIndex = 0;
-			this.scanSummaryTime(this.tabIndex);
-		}
-		if(this.inputIsScanningCompleted)
-		{
-			this.inputIsScanningCompleted = false;
-		}
+		this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
+			backdrop: 'static',
+			size: 'lg',
+			centered: true,
+			windowClass: 'subscribe-modal'
+		});
+		// const scanEnabled = this.commonService.getLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled);
+		// this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
+		// this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, 'Once a week')
+		// this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
+		// this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.subscriptionDetails);
+		// if(!scanEnabled) {
+		// 	this.commonService.setLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled, true);
+		// }
+		// //this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate(['support/smart-performance']));
+		// this.isSubscribed = this.commonService.getLocalStorageValue(
+		// 	LocalStorageKey.IsFreeFullFeatureEnabled
+		// );
+		// if(this.isSubscribed) {
+		// 	this.tabIndex = 0;
+		// 	this.scanSummaryTime(this.tabIndex);
+		// }
+		// if(this.inputIsScanningCompleted)
+		// {
+		// 	this.inputIsScanningCompleted = false;
+		// }
 	}
 	ScanNowSummary() {
 		if (!this.isLoading) {
