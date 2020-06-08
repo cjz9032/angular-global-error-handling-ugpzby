@@ -1,6 +1,6 @@
-<div class="ui-dropdown" [ngClass]="{ 'knock-out-wrap': disabled }">
-	<button
-		#toggleBtn
+<div class="ui-dropdown"
+	[ngClass]="{ 'knock-out-wrap': disabled }">
+	<button #toggleBtn
 		class="ui-dropdown-btn"
 		[ngClass]="{
 			'knock-out-btn': disabled,
@@ -22,45 +22,34 @@
 		(mouseleave)="applyHoverClass = false"
 		(focus)="applyFocusClass = true"
 		(blur)="applyFocusClass = false"
-		tabindex="0"
-	>
-		<div
-			*ngIf="dropdownType === 'oled-dimmer'"
+		tabindex="0">
+		<div *ngIf="dropdownType === 'oled-dimmer'"
 			aria-hidden="true"
 			class="ui-dropdown-btn-s-label"
-			[ngClass]="{ 'knock-out-label': disabled }"
-		>
+			[ngClass]="{ 'knock-out-label': disabled }">
 			{{ name }}
 			{{ placeholder }}
 		</div>
-		<div
-			*ngIf="dropdownType === 'userdefined-key'"
+		<div *ngIf="dropdownType === 'userdefined-key'"
 			aria-hidden="true"
 			class="ui-dropdown-btn-m-label"
-			[ngClass]="{ 'knock-out-label': disabled }"
-		>
+			[ngClass]="{ 'knock-out-label': disabled }">
 			{{ name }}
-			<span
-				class="ui-dropdown-btn-m-label-s"
-				[ngClass]="{ 'knock-out-label': disabled }"
-				>{{ placeholder }}</span
-			>
+			<span class="ui-dropdown-btn-m-label-s"
+				[ngClass]="{ 'knock-out-label': disabled }">{{ placeholder }}</span>
 		</div>
-		<span
-			><fa-icon
-				class="chevron"
+		<span>
+			<fa-icon class="chevron"
 				[ngClass]="{
 					'knock-out-chevron': disabled,
 					'apply-chevron-up': isDropDownOpen
 				}"
 				(click)="toggleList($event)"
-				[icon]="isDropDownOpen ? iconUp : iconDown"
-			>
-			</fa-icon
-		></span>
+				[icon]="isDropDownOpen ? iconUp : iconDown">
+			</fa-icon>
+		</span>
 	</button>
-	<div
-		uiDropdownNavigate
+	<div uiDropdownNavigate
 		[isDropdownOpen]="isDropDownOpen"
 		[selectedChild]="selectedValue"
 		(closeDropdown)="closeDropdown($event)"
@@ -68,11 +57,9 @@
 		*ngIf="isDropDownOpen && !disabled"
 		role="listbox"
 		[tabindex]="isDropDownOpen ? 0 : -1"
-		[attr.aria-labelledby]="dropDownId"
-	>
+		[attr.aria-labelledby]="dropDownId">
 		<ng-container *ngIf="dropdownType === 'oled-dimmer'">
-			<a
-				*ngFor="let item of list; let i = index"
+			<a *ngFor="let item of list; let i = index"
 				role="option"
 				[ngClass]="{ 'selected-list-item': selectedValue === i }"
 				id="{{ item.text }}"
@@ -82,13 +69,10 @@
 				[metricsItem]="dropDownName"
 				[metricsValue]="item.value"
 				tabindex="-1"
-				[attr.aria-selected]="selectedValue === i ? true : false"
-				>{{ item.text }}</a
-			>
+				[attr.aria-selected]="selectedValue === i ? true : false">{{ item.text }}</a>
 		</ng-container>
 		<ng-container *ngIf="dropdownType === 'userdefined-key'">
-			<a
-				*ngFor="let item of list; let i = index"
+			<a *ngFor="let item of list; let i = index"
 				[ngClass]="{ 'selected-list-item': selectedValue === i }"
 				id="userdefinedkey-{{ i }}"
 				role="option"
@@ -98,9 +82,7 @@
 				vtrMetrics
 				metricsEvent="FeatureClick"
 				[metricsItem]="dropDownName"
-				metricsValue="{{ item.title | translate }}"
-				>{{ item.title | translate }}</a
-			>
+				metricsValue="{{ item.title | translate }}">{{ item.title | translate }}</a>
 		</ng-container>
 	</div>
 </div>
