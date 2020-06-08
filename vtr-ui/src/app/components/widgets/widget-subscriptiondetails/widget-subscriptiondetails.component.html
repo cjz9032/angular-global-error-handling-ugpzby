@@ -6,7 +6,7 @@
         <p *ngIf="!isSubscribed">{{'smartPerformance.subscriptionDetails.descriptionNonSubscriber' |translate }}</p>
         <!-- <a href="#" class="para-link"
             vtrMetrics
-            metricsItem="smartPerformance.subscriptionDetails"
+            metricsItem="btn.sp.subscriptionDetails"
             metricsParent="Page.Support.SmartPerformance"
             metricsEvent="FeatureClick"
             >{{'smartPerformance.subscriptionDetails.learnMore' |translate }}</a> -->
@@ -34,7 +34,7 @@
     </a>
     <a *ngIf="!isSubscribed" class="link-text" (click)=openSubscribeModal(true) 
         vtrMetrics
-        metricsItem="btn.{{'smartPerformance.subscriptionDetails.manageSubscriptionBeta' |translate | lowercase | removeSpace }}"
+        metricsItem="btn.enablefullfeature"
         metricsEvent="FeatureClick"
         metricsParent="Page.Support.SmartPerformance">
         {{'smartPerformance.subscriptionDetails.manageSubscription' |translate }}
