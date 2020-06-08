@@ -19,11 +19,7 @@
 				[attr.aria-checked]="item.isChecked"
 				[attr.aria-disabled]="item.isDisabled"
 				[attr.aria-label]="item.label | translate"
-				(click)="onClick($event)"
-				vtrMetrics
-				[metricsEvent]="metricsEvent"
-				[metricsItem]="item.componentId"
-				[metricsValue]="item.isChecked">
+				(click)="onClick($event)">
 				{{item.label | translate}}
 			</div>
 		</ng-template>
