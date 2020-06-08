@@ -80,10 +80,10 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 			// });
 		}
 		else {
-			this.commonService.removeLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
-			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
-			this.commonService.removeLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails);
-			// this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+			// this.commonService.removeLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
+			// this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
+			// this.commonService.removeLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails);
+			// // this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
 			// 	this.router.navigate(['WidgetSubscriptiondetailsComponent']);
 			// });
 			// location.reload();
@@ -99,5 +99,13 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		// });
 
 	}
+	openPaymnetPopup(){
+		this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
+		    backdrop: 'static',
+		    size: 'lg',
+		    centered: true,
+		    windowClass: 'subscribe-modal',
 
+		});
+	}
 }

@@ -293,6 +293,7 @@ export class InputAccessoriesService {
 	}
 
 	// FnCtrlSwap feature start here
+	// fnCtrlSwap & fnAsCtrl features hidden in 3.2.001
 	public GetFnCtrlSwapCapability(): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
@@ -325,6 +326,7 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
+	// FnCtrlSwap feature end here
 
 	public GetFnAsCtrlCapability(): Promise<boolean> {
 		try {

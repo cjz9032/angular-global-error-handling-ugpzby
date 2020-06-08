@@ -19,6 +19,7 @@ export class UiCustomSwitchComponent implements OnInit {
 	@Input() ariaLabel: string;
 	@Input() sendMetrics = true;
 	@Input() metricsParent;
+	@Input() switchParam: string;
 
 	constructor(private metrics: MetricService, private activatedRoute: ActivatedRoute) { }
 
@@ -34,6 +35,7 @@ export class UiCustomSwitchComponent implements OnInit {
 				ItemParent: this.metricsParent || this.activatedRoute.snapshot.data.pageName,
 				ItemType: 'ItemClick',
 				ItemName: this.componentId,
+				ItemParam: this.switchParam,
 				ItemValue: this.value
 			};
 			this.metrics.sendMetrics(metricsData);

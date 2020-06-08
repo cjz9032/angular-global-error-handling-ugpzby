@@ -368,7 +368,6 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 			return EMPTY;
 		}
 	}
-
 	// FnCtrlSwap feature end here
 
 	// FnAsCtrl feature start here

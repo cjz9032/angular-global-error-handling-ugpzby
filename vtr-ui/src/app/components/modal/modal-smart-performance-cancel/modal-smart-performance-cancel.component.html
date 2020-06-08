@@ -9,7 +9,8 @@
 	</div>
 	<div class="content-block px-3">
 		<h1>{{'smartPerformance.scanningPage.cancelScan.title' |translate }}</h1>
-		<p>{{'smartPerformance.scanningPage.cancelScan.description' |translate }}</p>
+		<p>{{'smartPerformance.scanningPage.cancelScan.cancelMayTakeSomeTime' |translate }}</p>
+		<p *ngIf="!isLoading">{{'smartPerformance.scanningPage.cancelScan.cancelTextPrompt' |translate }}</p>
 		<!-- <h5 *ngIf="promptMsg" class="mt-2">{{ 'hardwareScan.cancelTextPrompt' | translate }}</h5> -->
 		<hr>
 		<div *ngIf="isLoading">

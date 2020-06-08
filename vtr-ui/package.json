@@ -1,6 +1,6 @@
 {
   "name": "vtr-ui",
-  "version": "1.6.0",
+  "version": "1.6.2",
   "scripts": {
     "build:dev": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build -c=dev",
     "build:dev1": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng test --watch=false --browsers=ChromeHeadless --codeCoverage=true",
@@ -27,7 +27,9 @@
     "sme": "ng build & source-map-explorer 'dist/vtr-ui/*.js'",
     "mock-serve": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng serve -c=mock --watch",
     "remove-console": "npx jscodeshift -t prebuild/removeConsole.js --extensions=ts --parser=ts src --ignore-config=./prebuild/jscodeshiftIgnore",
-    "detect-console": "node prebuild/detectConsole.js"
+    "detect-console": "node prebuild/detectConsole.js",
+    "diff": "node tools/code-diff.js",
+    "get-https": "node tools/collect-https.js"
   },
   "private": true,
   "dependencies": {
@@ -89,6 +91,7 @@
     "@types/node": "^13.7.4",
     "acorn": "^6.4.1",
     "codelyzer": "^5.1.2",
+    "glob": "^7.1.6",
     "html-loader": "^0.5.5",
     "htmlparser2": "^4.0.0",
     "husky": "^4.2.3",
@@ -104,6 +107,7 @@
     "ng-packagr": "^9.0.0",
     "protractor": "^7.0.0",
     "recursive-readdir": "^2.2.2",
+    "simple-git": "^2.5.0",
     "standard-version": "^8.0.0",
     "ts-node": "^8.7.0",
     "tslint": "^6.1.0",

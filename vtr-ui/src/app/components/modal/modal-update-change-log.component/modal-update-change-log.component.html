@@ -1,7 +1,7 @@
-<div class="modal-body vtr-modal-update-change-log">
+<div class="modal-body vtr-modal-update-change-log" tabindex="-1" #logModal>
 	<h1>{{'systemUpdates.readMore' | translate}}</h1>
-	<div class="log-content">
-		<pre tabindex="0" [innerHTML]="articleBody"></pre>
+	<div class="log-content" id="updateLogContent">
+		<pre [innerHTML]="articleBody" #logContent></pre>
 	</div>
 	<div class="btn-modal-close">
 		<vtr-ui-close-button linkId="update-change-log-close"

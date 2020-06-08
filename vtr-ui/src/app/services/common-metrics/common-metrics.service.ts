@@ -13,12 +13,13 @@ export class CommonMetricsService {
 	) {
 	}
 
-	public sendMetrics(itemValue: any, itemName: string, itemType = 'FeatureClick') {
+	public sendMetrics(itemValue: any, itemName: string, itemType = 'FeatureClick', itemParam: any = null) {
 		const metricsData = {
 			ItemParent: this.activatedRoute.snapshot.data.pageName,
 			ItemType: itemType,
 			ItemName: itemName,
-			ItemValue: itemValue
+			ItemValue: itemValue,
+			ItemParam: itemParam
 		};
 		this.metrics.sendMetrics(metricsData);
 	}

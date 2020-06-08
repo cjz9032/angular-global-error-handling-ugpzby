@@ -1,7 +1,8 @@
-import { Component, OnInit, OnDestroy, SecurityContext, HostListener } from '@angular/core';
+import { Component, OnInit, OnDestroy, SecurityContext, HostListener, ElementRef, ViewChild } from '@angular/core';
 import { SafeHtml, DomSanitizer } from '@angular/platform-browser';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { CommonService } from 'src/app/services/common/common.service';
 
 declare let Windows: any;
 
@@ -18,10 +19,14 @@ export class ModalUpdateChangeLogComponent implements OnInit, OnDestroy {
 	iframeInterval: any;
 	articleBody: SafeHtml = '';
 
+	@ViewChild('logModal') logModal: ElementRef;
+	@ViewChild('logContent') logContent: ElementRef;
+
 	constructor(
 		public activeModal: NgbActiveModal,
 		private sanitizer: DomSanitizer,
-		private shellService: VantageShellService
+		private shellService: VantageShellService,
+		private commonService: CommonService
 	) {
 		this.metrics = this.shellService.getMetrics();
 	}
@@ -40,6 +45,7 @@ export class ModalUpdateChangeLogComponent implements OnInit, OnDestroy {
 			} catch (e) {}
 			httpClient.close();
 		})();
+		setTimeout(() => { this.logModal.nativeElement.focus(); }, 0);
 	}
 
 	ngOnDestroy() {
@@ -69,4 +75,18 @@ export class ModalUpdateChangeLogComponent implements OnInit, OnDestroy {
 		modal.focus();
 	}
 
+	@HostListener('document:keydown.pageup')
+	onClickPageUp() {
+		this.commonService.scrollElementByDistance(this.logContent.nativeElement, this.logContent.nativeElement.clientHeight - 40, true)
+	}
+
+	@HostListener('document:keydown.pagedown')
+	onClickPageDown() {
+		this.commonService.scrollElementByDistance(this.logContent.nativeElement, this.logContent.nativeElement.clientHeight - 40)
+	}
+
+	@HostListener('document:keydown.escape', ['$event'])
+	onClickEscape($event) {
+		this.closeModal();
+	}
 }

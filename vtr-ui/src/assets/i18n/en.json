@@ -729,7 +729,10 @@
 				"name5": "Legion Liquid Cooling Pump Lighting",
 				"name6": "Legion Liquid Cooling Fan Lighting",
 				"name7": "Legion Icon (Front)",
-				"name9": "Ambient  Lighting"
+				"name9": "Ambient  Lighting",
+				"name10": "Legion Liquid Cooling Lighting",
+				"name11": "Legion front Fan Lighting",
+				"name12": "Legion Top Fan Lighting"
 			},
 			"lightingEffect": {
 				"effectName1": "Static",
@@ -1069,7 +1072,8 @@
 						"celxpert": "Celxpert",
 						"smp": "SMP"
 					},
-					"fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+					"fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge.",
+					"moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
 				},
 				"condition": {
 					"Illegal": "The battery installed is <b>not supported</b> by the system and will not charge. Please replace the battery with the correct Lenovo battery for this system.",
@@ -1093,6 +1097,16 @@
 				},
 				"dualConditions": {
 					"NotDetected": "<b>The primary battery is not detected.</b>"
+				},
+				"highDensityBattery": {
+					"title": "High density battery",
+					"subtitle": "How your battey works",
+					"para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+					"para2": {
+						"item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
+						"item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
+						"item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+					}
 				}
 			},
 			"power": {
@@ -1540,7 +1554,7 @@
 					},
 					"optimize": {
 						"title": "Optimize my microphone for:",
-						"tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
+						"tooltip": "Configure microphone effect to enhance your audio experience in different scenarios and environment.",
 						"options": {
 							"VoiceRecognition": "VOICE RECOGNITION",
 							"OnlyMyVoice": "ONLY MY VOICE",
@@ -1826,8 +1840,8 @@
 					}
 				},
 				"fnCtrlKey": {
-					"title": "Fn and Ctrl key swap",
-					"description": "If you habitually pressed the Fn key when intending to press the Ctrl key, you can exchange the functions of the two keys.",
+					"title": "FN key and Ctrl key swap",
+					"description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
 					"restartNote": "Swapping the function of two keys requires you to restart your computer, are you sure to restart?",
 					"title2": "Fn works as Ctrl for frequently used key combinations",
 					"description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
@@ -2240,6 +2254,9 @@
 		"support": {
 			"title": "Lenovo Support website"
 		},
+		"security": {
+			"title": "For a better protection for your device"
+		},
 		"banner": {
 			"neverChecked": "Welcome to use System Update.",
 			"title": "An up-to-date system is a healthy system.",
@@ -2435,6 +2452,7 @@
 		"subscriptionDetails": {
 			"title": "Subscription Details",
 			"titlebeta":"Lenovo Beta Program",
+			"descriptionNonSubscriber":"You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
 			"description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
 			"learnMore": "Learn more",
 			"startDate": "Start date",
@@ -2480,6 +2498,8 @@
 				"button": "CANCEL SCAN",
 				"title": "Cancel the scan?",
 				"description": "If you leave the current screen, the scan will be cancelled and you will be returned to the Home. However, you can run the scan again at any time.",
+				"cancelMayTakeSomeTime": "Please wait, it may take some time to cancel depending on your system.",
+				"cancelTextPrompt": "Are you sure you would like to cancel?",
 				"yesButton": "YES, CANCEL",
 				"noButton": "NO, RESUME SCAN"
 			},
@@ -2627,7 +2647,8 @@
 			"scanRates": "Our scan rates your PC at: ",
 			"summary": "Summary",
 			"summaryDetails": "Our scan found <b>{{issueCount}} issue(s)</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
-			"signupRepairButton": "Back To Home",
+			"signupRepairButton": "SIGN UP & REPAIR NOW",
+			"backToHome": "Back To Home",
 			"monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
 			"issueCount": "{{individualIssueCount}} ISSUES",
 			"issues": "ISSUE(S)",
@@ -2637,12 +2658,11 @@
 			"scannedAreas": "SCANNED AREAS",
 			"recommendedAction": {
 				"title": "RECOMMENDED ACTION",
-				"description": "Lenovo is offering beta program of Smart Performance till July 2020.",
-				"description1":"You are welcome to join in the program to try the full feature of Smart Performance.",
+				"description": "We will automatically fix these issues. Once today and every week thereafter",
 				"yearlyPricing": "$19.99 / Yr",
 				"monthlyPricing": "LESS THAN $2 PER MONTH.",
 				"longerTerm": "Longer term? Even more savings?",
-				"signupButton": "ENABLE FULL FEATURE"
+				"signupButton": "SIGN UP"
 			},
 			"tunepc": {
 				"accumulatedjunkscannedareas": {

@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.2](https://bitbucket.tc.lenovo.com///compare/v1.6.1...v1.6.2) (2020-06-06)
+
+### [1.6.1](https://bitbucket.tc.lenovo.com///compare/v1.6.0...v1.6.1) (2020-06-05)
+
+
+### Bug Fixes
+
+* **Menu:** code review action: reformat html file ([1aacdd2](https://bitbucket.tc.lenovo.com///commit/1aacdd288a78600353d2be639ee8fe0ca5c43881))
+* **Menu:** fix syntax error on a link ([da8441e](https://bitbucket.tc.lenovo.com///commit/da8441ec28f2851d8900da2c2ca44350b750578a))
+* **Menu:** merge history manager to consumer side ([4c0623a](https://bitbucket.tc.lenovo.com///commit/4c0623a81fdbe9740a7486c213a6c75a276a02b7))
+* To expand a collapsed widget on Anti-virus page ([d8ed480](https://bitbucket.tc.lenovo.com///commit/d8ed480613e536e711a9b7d16edbf36367cf301f))
+
 ## [1.6.0](https://bitbucket.tc.lenovo.com///compare/v1.5.71...v1.6.0) (2020-06-03)
 
 ### [1.5.71](https://bitbucket.tc.lenovo.com///compare/v1.5.70...v1.5.71) (2020-06-02)

@@ -102,6 +102,7 @@ import { BacklightThinkpadComponent } from 'src/app/components/pages/page-device
 import { UiCustomSliderModule } from 'src/app/components/ui/ui-custom-slider/ui-custom-slider.module';
 import { AntiTheftComponent } from 'src/app/components/pages/page-smart-assist/anti-theft/anti-theft.component';
 import { SpinnerModule } from 'src/app/components/common/spinner/spinner.module';
+import { PageHighDensityBatteryComponent } from 'src/app/components/pages/page-high-density-battery/page-high-density-battery.component';
 
 @NgModule({
 	declarations: [
@@ -146,7 +147,8 @@ import { SpinnerModule } from 'src/app/components/common/spinner/spinner.module'
 		SubpageDeviceSettingsPowerDpmComponent,
 		SubpageDeviceSettingsPowerContainerComponent,
 		BacklightThinkpadComponent,
-		AntiTheftComponent
+		AntiTheftComponent,
+		PageHighDensityBatteryComponent
 	],
 	imports: [
 		CommonModule,
