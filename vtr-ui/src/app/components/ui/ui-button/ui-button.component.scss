@@ -48,9 +48,7 @@
 				border: 0.1rem solid $dark;
 
 			}
-			@media #{$white-on-black} {
-				border: 0.1rem solid $light;
-			}
+			@include ui-button-high-contrast-black;
 			@media #{$mediaquery_X4} {
 				min-width: 10rem;
 			}
@@ -79,14 +77,8 @@
 			}
 			@media #{$black-on-white} {
 				border: 0.1rem solid $high-contrast-white-disabled !important;
-
-
 			}
-			@media #{$white-on-black} {
-				border: 0.1rem solid $high-contrast-black-disabled !important;
-
-
-			}
+			@include ui-button-high-contrast-black-disabled;
 		}
 
 		.loading {

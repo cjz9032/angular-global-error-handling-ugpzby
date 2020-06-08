@@ -427,6 +427,8 @@ $high-contrast-white-disabled: #600000;
 $high-contrast-black-textselected: #1aebff;
 $high-contrast-black-disabled: #3be23b;
 $high-contrast-black-yellow: #FFFF00;
+$high-contrast-black-btn-color: #00EBFF;
+$high-contrast-black-disabled-green: #30F42C;
 
 @mixin outline-blue {
 	outline: 0.1rem solid $menu_hover;
@@ -514,3 +516,27 @@ $high-contrast-black-yellow: #FFFF00;
 @mixin toggle-button-outline ($color : $blueFill) {
 	outline: 0.1rem solid $color;
 }
+
+@mixin ui-button-high-contrast-black {
+	@media #{$white-on-black} {
+		background: $high-contrast-black-btn-color;
+		color: $light;
+		&:hover, &:active {
+			background: $dark;
+			color: $high-contrast-black-btn-color;
+			border: 0.1rem solid $high-contrast-black-btn-color;
+		}
+	}
+}
+
+@mixin ui-button-high-contrast-black-disabled {
+	@media #{$white-on-black} {
+		background: $dark;
+		color: $high-contrast-black-disabled-green;
+		border: 0.1rem solid $high-contrast-black-disabled-green !important;
+		&:hover, &:active {
+			color: $high-contrast-black-disabled-green;
+		}
+	}
+}
+
