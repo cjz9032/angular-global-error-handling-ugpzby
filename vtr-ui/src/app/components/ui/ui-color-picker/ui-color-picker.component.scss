@@ -3,32 +3,61 @@
     .ui-color-picker{
         width: 100%;
         height: 100%;
+        .picker-contant{
+            // width: 320px;
+            background: #283756;
+            border-radius: 4px;
+            box-shadow: 0 0 1px #283756;
+            box-shadow: 0 16px 32px rgba(0,0,0,0.2);
+            padding: 1rem;
+            .picker-icon{
+                width: 100%;
+                height: 4rem;
+                padding: 0 11rem;
+                margin-bottom: 1rem;
+                button{
+                    width: 4rem;
+                    height: 4rem;
+                    border-radius: 4px;
+                    float: left;
+                    color: $gaming_light_02;
+                    &.selected{
+                        background-color: $gaming_light_02;
+                        color: $light;
+                    }
+                    svg{
+                        font-size: 2rem;
+                    }
+                }
+                
+            }
+        }
         .preset-color{
-            width: 350px;
+            width: 300px;
             overflow: hidden;
             border-radius: 4px;
             background: #283756;
-            box-shadow: 0 0 1px #283756;
-            padding-bottom: 35px;
-            box-shadow: 0 16px 32px rgba(0,0,0,0.2);
             @media #{$high-contrast} {
                 -ms-high-contrast-adjust: none;
             }
             ul{
                 width: 100%;
-                padding: 10px 20px 10px 10px;
                 overflow: hidden;
+                padding: 2px;
                 li{
-                    width: 30px; 
-                    height: 30px;
+                    width: 20px; 
+                    height: 20px;
                     // width: calc((100% - 16.5rem)/8);
                     // height: calc((100% - 16.5rem)/8);
                     // padding: calc((100% - 12rem)/16);
-                    border-radius:4px;
+                    border-radius:2px;
                     float: left;
-                    margin-left: 10px;
-                    margin-top: 10px;
+                    margin-right: 10.66px;
+                    margin-bottom: 10.66px;
                     cursor: pointer;
+                    &:nth-child(10n){
+                        margin-right: 0;
+                    }
                     @media #{$high-contrast} {
                         -ms-high-contrast-adjust: none;
                     }
@@ -56,7 +85,7 @@
             }
         }
         .inp-color-picker{
-            box-shadow: 0 16px 32px rgba(0,0,0,0.2);
+            // box-shadow: 0 16px 32px rgba(0,0,0,0.2);
             @media #{$high-contrast} {
                 -ms-high-contrast-adjust: none;
             }
@@ -68,12 +97,23 @@
         }
         .color-picker{
             overflow: hidden;
-            padding-bottom: 3rem;
+            padding-bottom: 1rem;
             background: #283756 !important;
             border: 1px solid #283756 !important;
-            border-radius: 0.5rem;
-            box-shadow: 0 0 1rem #283756;
             z-index: 5 !important;
+            .saturation-lightness{
+                border-radius: 4px;
+                height: 131px;
+
+            }
+            .selected-color-background{
+                border-radius: 4px;
+                background-image: none;
+            }
+            .selected-color{
+                border: none;
+                border-radius: 4px;
+            }
             .cursor{
                 background: $light;
                 box-shadow: 0 16px 32px rgba(0,0,0,0.2);
@@ -95,19 +135,21 @@
                 }
             }
             .button-area{
+                padding: 0px 20px 20px;
                 .btn-apply{
-                    width: 47% !important;
+                    width: 47.5% !important;
                     float: left;
                     font-size: 14px;
                     line-height: 20px;
                     font-family: "Segoe UI";
                     font-weight: bold;
                     color: $white100;
-                    padding: 8px 20px;
+                    padding: 7px 20px;
                     background-color: $blueFill;
                     border-radius: 20px;
                     width: auto;
                     transition: all 0.2s ease;
+                    margin-left: 0px;
                     &:hover {
                       background-color: $blueHover;
                       cursor: pointer;
@@ -117,18 +159,19 @@
                     }
                 }
                 .btn-cancel{
-                    width: 47% !important;
+                    width: 47.5% !important;
                     float: right;
                     font-size: 14px;
                     line-height: 20px;
                     font-family: "Segoe UI";
                     font-weight: bold;
                     color: $white100;
-                    padding: 8px 20px;
+                    padding: 7px 20px;
                     background-color: $white60;
                     border-radius: 20px;
                     width: auto;
                     transition: all 0.2s ease;
+                    margin-left: 0px;
                     &:hover {
                       background-color: $white20;
                       cursor: pointer;
@@ -147,8 +190,9 @@
             width: 100%;
             position: absolute;
             z-index:999999;
-            bottom: 83px;
-            padding: 0 24px;
+            left: 0px;
+            bottom: 73px;
+            padding: 0 34px;
             font-size: 14px;
             color: $light;
             display: flex;
