@@ -72,6 +72,8 @@
 				@include button-outline-blue;
 			}
 		}
+		@include ui-button-high-contrast-black;
+		@include ui-button-high-contrast-white;
 	}
 
 

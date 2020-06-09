@@ -1542,13 +1542,8 @@ vtr-ui-smart-performance-scan-summary {
 			}
 		}
 
-		@media #{$black-on-white} {
-			border: 0.1rem solid $dark;
-
-		}
-		@media #{$white-on-black} {
-			border: 0.1rem solid $light;
-		}
+		@include ui-button-high-contrast-black;
+		@include ui-button-high-contrast-white;
 		@media #{$mediaquery_X4} {
 			min-width: 10rem;
 		}

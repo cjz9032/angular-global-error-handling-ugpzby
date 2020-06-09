@@ -65,6 +65,8 @@
 						@include button-outline-blue;
 					}
 				}
+				@include ui-button-high-contrast-black;
+				@include ui-button-high-contrast-white;
 			}
 			.action-button-disable {
 				border-radius: 2.5rem;
@@ -79,6 +81,8 @@
 				text-align: center;
 				border: 0rem;
 				cursor: default;
+				@include ui-button-high-contrast-white-disabled;
+				@include ui-button-high-contrast-black-disabled;
 			}
 			.action-anchor {
 				font-size: $fontsize_xs2;
