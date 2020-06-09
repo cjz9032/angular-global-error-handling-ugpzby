@@ -2133,9 +2133,10 @@
                 "title": "스마트 모션 알람",
                 "tooltip": "<div id='antiTheft-tooltips'>컴퓨터가 최대 절전 모드이거나 전원이 꺼진 경우에는 해당 기능이 작동하지 않습니다. 다음 동작에서 설정을 확인하십시오.<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>덮개 닫기 동작</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>배터리 부족/경보 동작</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>전원 버튼 동작</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>절전 버튼 동작</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>최대 절전 모드에 대한 유휴 시간 제한 설정</li></ul></div>그렇지 않으면 알람이 울리지 않고 사진을 찍지도 않습니다.</div>",
                 "desc1": "이 기능을 활성화하면 화면이 잠겨 있을 때, 특히 공공장소에서 이동이 감지될 때 장치에서 신호음이 울리기 시작합니다.",
-                "desc2": "알람을 해제하려면 Windows에 로그인하십시오.",
-                "note": {
-                    "description": "시스템에 로그인하면 이 기능이 자동으로 꺼집니다. 다시 기능을 활성화해야 사용할 수 있습니다."
+                "desc2": "Log into Windows and the alarm will be automatically turned off. To use the feature, you need to enable it again.",
+				"note": {
+					"descriptionTitle": "Attention:",
+                    "description": "Valid sign-in options such as a password or PIN code are needed when you log into Windows. Otherwise, the Smart motion alarm feature might be mistakenly disabled by any un-authorized user who accesses your computer."
                 },
                 "alarm": {
                     "title": " 알람은 다음 시간 동안 울립니다",

@@ -2133,9 +2133,10 @@
                 "title": "Pametni alarm kretanja",
                 "tooltip": "<div id='antiTheft-tooltips'>Ova značajka ne radi ako je računalo u stanju hibernacije ili isključeno. Provjerite postavke u sljedećim radnjama:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>radnje zatvaranja poklopca</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>radnje kod kritične/slabe baterije</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>radnja gumba za napajanje</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>radnja gumba za stanje mirovanja</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>postavke vremenskog ograničenja mirovanja do hibernacije</li></ul></div>U suprotnom se alarm neće aktivirati, niti će fotografirati.</div>",
                 "desc1": "Kada omogućite ovu značajku, uređaj će početi piskati kad je vaš zaslon zaključan a otkrije se pokrete, naročito na javnom mjestu.",
-                "desc2": "Da biste isključili alarm, prijavite se u Windows.",
-                "note": {
-                    "description": "Nakon uspješne prijave u sustav, ova će se značajka automatski isključiti. Da biste je opet koristili morate je ponovo uključiti."
+                "desc2": "Log into Windows and the alarm will be automatically turned off. To use the feature, you need to enable it again.",
+				"note": {
+					"descriptionTitle": "Attention:",
+                    "description": "Valid sign-in options such as a password or PIN code are needed when you log into Windows. Otherwise, the Smart motion alarm feature might be mistakenly disabled by any un-authorized user who accesses your computer."
                 },
                 "alarm": {
                     "title": " ALARM ĆE TRAJATI",

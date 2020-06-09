@@ -2133,9 +2133,10 @@
                 "title": "Alerte de mouvement intelligente",
                 "tooltip": "<div id='antiTheft-tooltips'>Cette fonction n'est pas active lorsque l'ordinateur est en mode hibernation ou qu'il est hors tension. Vérifiez les paramètres lors des actions suivantes :<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>actions du fermeture du capot</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>action de batterie critique/faible</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>action de bouton d'alimentation</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>action du bouton de veille</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>paramètres de délai d'inactivité en mode hibernation</li></ul></div>Sinon, il ne déclenchera aucune alarme, ni ne prendra aucune photo.</div>",
                 "desc1": "Lorsque vous activez cette fonction, l'appareil émet un signal sonore lorsque l'écran est verrouillé et que des mouvements sont détectés, notamment dans un endroit public.",
-                "desc2": "Pour ignorer l'alarme, connectez-vous à Windows.",
-                "note": {
-                    "description": "Une fois que vous vous êtes connecté au système, cette fonction sera automatiquement désactivée. Vous devez l'activer à nouveau pour l'utiliser."
+                "desc2": "Log into Windows and the alarm will be automatically turned off. To use the feature, you need to enable it again.",
+				"note": {
+					"descriptionTitle": "Attention:",
+                    "description": "Valid sign-in options such as a password or PIN code are needed when you log into Windows. Otherwise, the Smart motion alarm feature might be mistakenly disabled by any un-authorized user who accesses your computer."
                 },
                 "alarm": {
                     "title": " L'ALARME DURERA",

@@ -2133,9 +2133,10 @@
                 "title": "Έξυπνος συναγερμός κίνησης",
                 "tooltip": "<div id='antiTheft-tooltips'>Αυτή η δυνατότητα δεν λειτουργεί, όταν ο υπολογιστής είναι σε κατάσταση αδρανοποίησης ή απενεργοποιημένος. Ελέγξτε τις ρυθμίσεις στις εξής ενέργειες:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>ενέργειες του καπακιού κλεισίματος</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>ενέργεια κρίσιμου/χαμηλού επιπέδου φόρτισης μπαταρίας</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>ενέργεια κουμπιού τροφοδοσίας</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>ενέργεια κουμπιού αναστολής λειτουργίας</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>ρυθμίσεις χρονικού ορίου αδράνειας για μετάβαση του συστήματος σε κατάσταση αδρανοποίησης</li></ul></div>Διαφορετικά, δεν θα ενεργοποιήσει συναγερμό, ούτε τη λήψη φωτογραφιών.</div>",
                 "desc1": "Όταν αυτή τη δυνατότητα είναι ενεργοποιημένη, η συσκευή θα αρχίσει να ηχεί όταν η οθόνη είναι κλειδωμένη και εντοπιστούν κινήσεις ιδίως σε δημόσιο χώρο.",
-                "desc2": "Για να απορρίψετε τον συναγερμό, συνδεθείτε στα Windows.",
-                "note": {
-                    "description": "Μόλις συνδεθείτε στο σύστημα με επιτυχία, αυτή η δυνατότητα θα απενεργοποιηθεί αυτόματα. Θα πρέπει να την ενεργοποιήσετε ξανά για να τη χρησιμοποιήσετε."
+                "desc2": "Log into Windows and the alarm will be automatically turned off. To use the feature, you need to enable it again.",
+				"note": {
+					"descriptionTitle": "Attention:",
+                    "description": "Valid sign-in options such as a password or PIN code are needed when you log into Windows. Otherwise, the Smart motion alarm feature might be mistakenly disabled by any un-authorized user who accesses your computer."
                 },
                 "alarm": {
                     "title": " Ο ΣΥΝΑΓΕΡΜΟΣ ΘΑ ΔΙΑΡΚΕΣΕΙ",

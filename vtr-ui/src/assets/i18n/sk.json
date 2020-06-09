@@ -2133,9 +2133,10 @@
                 "title": "Inteligentná signalizácia pohybu",
                 "tooltip": "<div id='antiTheft-tooltips'>Táto funkcia nefunguje, keď je počítač v režime dlhodobého spánku alebo je vypnutý. Skontrolujte nastavenia nasledujúcich akcií:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>akcie pri zatvorení krytu</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>akcia pri kriticky vybitej/takmer vybitej batérii</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>akcia pri stlačení tlačidla napájania</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>funkcia pri stlačení tlačidla spánku</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>nastavenia časového limitu prechodu z režimu nečinnosti do režimu dlhodobého spánku</li></ul></div>V opačnom prípade sa nespustí budík, ani sa nedá fotografovať.</div>",
                 "desc1": "Keď povolíte túto funkciu, zariadenie začne vydávať zvukový signál, keď je obrazovka uzamknutá a zistí sa pohyb, najmä vo verejnom priestore.",
-                "desc2": "Ak chcete toto upozornenie zrušiť, prihláste sa do systému Windows.",
-                "note": {
-                    "description": "Po úspešnom prihlásení do systému sa táto funkcia automaticky vypne. Ak ju chcete používať, musíte ju znova povoliť."
+                "desc2": "Log into Windows and the alarm will be automatically turned off. To use the feature, you need to enable it again.",
+				"note": {
+					"descriptionTitle": "Attention:",
+                    "description": "Valid sign-in options such as a password or PIN code are needed when you log into Windows. Otherwise, the Smart motion alarm feature might be mistakenly disabled by any un-authorized user who accesses your computer."
                 },
                 "alarm": {
                     "title": " UPOZORNENIE BUDE TRVAŤ",

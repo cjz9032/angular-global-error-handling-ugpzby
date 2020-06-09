@@ -2133,9 +2133,10 @@
                 "title": "Inteligentní varování při pohybu",
                 "tooltip": "<div id='antiTheft-tooltips'>Tato funkce nefunguje, když je počítač v režimu hibernace nebo vypnutý. Zkontrolujte nastavení v následujících akcích:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>Akce uzavírání víka</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>Akce při nízké/kriticky nízké kapacitě baterie</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>Akce hlavního vypínače napájení</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>Akce tlačítka režimu spánku</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>Nastavení doby nečinnosti do přechodu k hibernaci</li></ul></div>Jinak se nespustí varování, ani se nepořídí snímky.</div>",
                 "desc1": "Při povolení této funkce začne zařízení vydávat zvukový signál, když je obrazovka uzamčena a je zjištěn pohyb, zejména na veřejném místě.",
-                "desc2": "Chcete-li varování zrušit, přihlaste se do systému Windows.",
-                "note": {
-                    "description": "Po úspěšném přihlášení do systému se tato funkce automaticky vypne. Abyste ji mohli používat, musíte ji znovu povolit."
+                "desc2": "Log into Windows and the alarm will be automatically turned off. To use the feature, you need to enable it again.",
+				"note": {
+					"descriptionTitle": "Attention:",
+                    "description": "Valid sign-in options such as a password or PIN code are needed when you log into Windows. Otherwise, the Smart motion alarm feature might be mistakenly disabled by any un-authorized user who accesses your computer."
                 },
                 "alarm": {
                     "title": " VAROVÁNÍ BUDE TRVAT",

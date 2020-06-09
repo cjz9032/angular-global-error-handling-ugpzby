@@ -2133,9 +2133,10 @@
                 "title": "Интеллектуальное оповещение о движении",
                 "tooltip": "<div id='antiTheft-tooltips'>Эта функция не работает, когда компьютер находится в режиме гибернации или выключен. Проверьте настройки в следующих действиях:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>действия закрытия крышки</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>действие при критически низком уровне заряда аккумулятора</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>действие кнопки питания</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>действие кнопки спящего режима</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>настройки тайм-аута бездействия до перехода в режим гибернации</li></ul></div>В противном случае не будет включен сигнал и не будут сделаны фотографии.</div>",
                 "desc1": "Если эта функция включена, устройство будет подавать звуковой сигнал при заблокированном экране, если обнаружено движение, особенно в общественных местах.",
-                "desc2": "Чтобы отключить сигнал, войдите в Windows.",
-                "note": {
-                    "description": "После успешного входа в систему эта функция будет автоматически отключена. Для использования ее нужно снова включить."
+                "desc2": "Log into Windows and the alarm will be automatically turned off. To use the feature, you need to enable it again.",
+				"note": {
+					"descriptionTitle": "Attention:",
+                    "description": "Valid sign-in options such as a password or PIN code are needed when you log into Windows. Otherwise, the Smart motion alarm feature might be mistakenly disabled by any un-authorized user who accesses your computer."
                 },
                 "alarm": {
                     "title": " ДЛИТЕЛЬНОСТЬ ЗВУКОВОГО СИГНАЛА",

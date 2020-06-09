@@ -2133,9 +2133,10 @@
                 "title": "Intelligenter Bewegungsalarm",
                 "tooltip": "<div id='antiTheft-tooltips'>Diese Funktion funktioniert nicht, wenn sich der Computer im Ruhezustand befindet oder ausgeschaltet ist. Überprüfen Sie die Einstellungen der folgenden Aktionen:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>Aktionen beim Zuklappen</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>Aktion bei kritischem/niedrigem Akkuzustand</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>Aktion für Netzschalter</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>Aktion für Energiespartaste</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>Einstellungen für Leerlaufzeitüberschreitung zu Ruhezustand</li></ul></div>Andernfalls wird kein Alarm ausgelöst und es werden keine Fotos gespeichert.</div>",
                 "desc1": "Wenn diese Funktion aktiviert ist, beginnt die Einheit zu piepen, wenn der Bildschirm gesperrt ist und Bewegungen erkannt werden, vor allem an einem öffentlichen Ort.",
-                "desc2": "Melden Sie sich zum Beenden des Alarms bei Windows an.",
-                "note": {
-                    "description": "Wenn Sie sich erfolgreich beim System angemeldet haben, wird die Funktion automatisch ausgeschaltet. Sie müssen sie erneut aktivieren, um sie verwenden zu können."
+                "desc2": "Log into Windows and the alarm will be automatically turned off. To use the feature, you need to enable it again.",
+				"note": {
+					"descriptionTitle": "Attention:",
+                    "description": "Valid sign-in options such as a password or PIN code are needed when you log into Windows. Otherwise, the Smart motion alarm feature might be mistakenly disabled by any un-authorized user who accesses your computer."
                 },
                 "alarm": {
                     "title": " ALARM ENDET NACH",

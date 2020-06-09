@@ -2133,9 +2133,10 @@
                 "title": "Avviso Smart Motion",
                 "tooltip": "<div id='antiTheft-tooltips'>Questa funzione non è disponibile quando il computer è in modalità Ibernazione o è spento. Controllare le impostazioni nelle seguenti azioni:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>azioni del coperchio di chiusura</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>azione livello di carica batteria critico/basso</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>azione pulsante di alimentazione</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>azione pulsante Sospensione</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>impostazioni timeout inattività per la modalità Ibernazione</li></ul></div>In caso contrario, l'allarme non verrà attivato, né sarà possibile scattare foto.</div>",
                 "desc1": "Quando si abilita questa funzione, il dispositivo inizierà a emettere un segnale acustico quando lo schermo è bloccato e vengono rilevati movimenti, soprattutto in un luogo pubblico.",
-                "desc2": "Per annullare l'allarme, accedere a Windows.",
-                "note": {
-                    "description": "Una volta effettuato l'accesso al sistema, questa funzione verrà disattivata automaticamente. Per utilizzare la funzione è necessario abilitarla nuovamente."
+                "desc2": "Log into Windows and the alarm will be automatically turned off. To use the feature, you need to enable it again.",
+				"note": {
+					"descriptionTitle": "Attention:",
+                    "description": "Valid sign-in options such as a password or PIN code are needed when you log into Windows. Otherwise, the Smart motion alarm feature might be mistakenly disabled by any un-authorized user who accesses your computer."
                 },
                 "alarm": {
                     "title": " L'ALLARME DURERÀ PER",
