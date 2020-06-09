@@ -309,18 +309,7 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 		}
 	}
 
-
 	onBacklightRadioChange($event: UiCircleRadioWithCheckBoxListModel) {
-		// if ($event) {
-		// 	const backlight: BacklightMode = {
-		// 		checked: true,
-		// 		value: $event.value as BacklightStatusEnum,
-		// 		disabled: false,
-		// 		title: $event.label
-		// 	};
-		// 	this.update$.next(backlight);
-		// }
-
 		this.currentMode = $event.value as BacklightStatusEnum;
 		this.cacheData.currentMode = this.currentMode;
 		this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData)
@@ -332,5 +321,4 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 			this.setAutomaticKBDBacklight(false);
 		}
 	}
-
 }

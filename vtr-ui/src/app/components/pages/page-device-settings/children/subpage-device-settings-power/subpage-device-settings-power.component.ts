@@ -18,6 +18,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { MetricService } from '../../../../../services/metric/metrics.service';
 import { FlipToBootCurrentModeEnum, FlipToBootErrorCodeEnum, FlipToBootSetStatusEnum, FlipToBootSupportedEnum } from '../../../../../services/power/flipToBoot.enum';
 import { FlipToBootSetStatus } from '../../../../../services/power/flipToBoot.interface';
+import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 
 enum PowerMode {
 	Sleep = 'ChargeFromSleep',
@@ -102,6 +103,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	gotoLinks = ['other', 'smartSettings', 'smartStandby', 'battery', 'power'];
 
 	headerMenuItems = [];
+	public readonly metricsParent  = CommonMetricsModel.ParentDeviceSettings;
 
 	constructor(
 		private routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method

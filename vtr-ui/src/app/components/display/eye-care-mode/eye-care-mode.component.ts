@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange
 import { ChangeContext } from 'ng5-slider';
 import { EyeCareMode } from 'src/app/data-models/camera/eyeCareMode.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 
 @Component({
 	selector: 'vtr-eye-care-mode',
@@ -21,6 +22,7 @@ export class EyeCareModeComponent implements OnInit, OnChanges {
 	@Output() eyeCareTemperatureValueChange = new EventEmitter<number>();
 	@Output() resetTemperature: EventEmitter<any> = new EventEmitter();
 	@Output() sunsetToSunrise = new EventEmitter<any>();
+	public readonly metricsParent  = CommonMetricsModel.ParentDeviceSettings;
 
 	public sunriseToSunsetText = '';
 

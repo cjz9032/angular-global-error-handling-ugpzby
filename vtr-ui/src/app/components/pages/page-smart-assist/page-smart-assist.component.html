@@ -157,9 +157,9 @@
 													(valueChange)="setZeroTouchLoginSensitivity($event)"
 													[value]="intelligentSecurity.zeroTouchLoginDistance"
 													[isDisabled]="!intelligentSecurity.isZeroTouchLoginEnabled"
-													[metricsItem]="'distanceSensitivity'"
-													[ariaLabel]="'zero touch login distance sensitivity adjustment'"
-													[metricsValue]="intelligentSecurity.zeroTouchLoginDistance">
+													[isMetricsEnabled]=true
+													[metricsParent]="metricsParent"
+													[ariaLabel]="'zero touch login distance sensitivity adjustment'">
 												</vtr-ui-custom-slider>
 											</div>
 											<!-- note -->
@@ -245,9 +245,9 @@
 													(valueChange)="setZeroTouchLoginSensitivity($event)"
 													[value]="intelligentSecurity.zeroTouchLoginDistance"
 													[isDisabled]="!intelligentSecurity.isHPDEnabled || !intelligentSecurity.isZeroTouchLoginEnabled"
-													[metricsItem]="'thinkpadDistanceSensitivity'"
-													[ariaLabel]="'zero touch login distance sensitivity adjustment'"
-													[metricsValue]="intelligentSecurity.zeroTouchLoginDistance">
+													[isMetricsEnabled]=true
+													[metricsParent]="metricsParent"
+													[ariaLabel]="'zero touch login distance sensitivity adjustment'">
 												</vtr-ui-custom-slider>
 												<div class="pt-3"
 													[class.blur-1]="!intelligentSecurity.isZeroTouchLoginEnabled || !intelligentSecurity.isHPDEnabled"
@@ -476,9 +476,9 @@
 													(valueChange)="SetZeroTouchLockDistanceSensitivity($event)"
 													[value]="hsaIntelligentSecurity.zeroTouchLockDistance"
 													[isDisabled]="!intelligentSecurity.isZeroTouchLockEnabled || !hsaIntelligentSecurity.capacity"
-													[metricsItem]="'zeroTouchLockDistanceSensitivity'"
-													[ariaLabel]="'zero touch lock distance sensitivity adjustment'"
-													[metricsValue]="hsaIntelligentSecurity.zeroTouchLockDistance">
+													[isMetricsEnabled]=true
+													[metricsParent]="metricsParent"
+													[ariaLabel]="'zero touch lock distance sensitivity adjustment'">
 												</vtr-ui-custom-slider>
 											</div>
 										</div>
@@ -527,8 +527,8 @@
 													[value]="sensitivityAdjustVal"
 													[ariaLabel]="'zero touch lock sensitivity adjustment'"
 													[isDisabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.isHPDEnabled"
-													[metricsItem]="'thinkpadSensitivity'"
-													[metricsValue]="sensitivityAdjustVal">
+													[isMetricsEnabled]=true
+													[metricsParent]="metricsParent">
 												</vtr-ui-custom-slider>
 												<div class="pt-3"
 													[class.blur-1]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
@@ -707,8 +707,8 @@
 													[value]="intelligentScreen.readingOrBrowsingTime"
 													[ariaLabel]="'display dimmer time adjustment'"
 													[isDisabled]="!intelligentScreen.isReadingOrBrowsingEnabled"
-													[metricsItem]="'keepMyDisplay'"
-													[metricsValue]="intelligentScreen.readingOrBrowsingTime"
+													[isMetricsEnabled]=true
+													[metricsParent]="metricsParent"
 													(valueChange)="onDisplayDimTimeChange($event)">
 												</vtr-ui-custom-slider>
 											</div>

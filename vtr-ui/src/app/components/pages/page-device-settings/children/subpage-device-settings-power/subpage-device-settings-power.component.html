@@ -40,18 +40,17 @@
 										<div class="col px-5">
 											<div class="row mt-4 ml-4">
 												<div class="toolbar-img">
-													<img *ngIf="isDesktopMachine" alt=""
+													<img *ngIf="isDesktopMachine"
+														alt="Pin Lenovo Vantage toolbar to Windows taskbar"
 														class="img-fluid mx-auto d-block"
-														src="assets/images/pin_toolbar_desktop.png"
-													>
-													<img *ngIf="!isDesktopMachine" alt=""
+														src="assets/images/pin_toolbar_desktop.png">
+													<img *ngIf="!isDesktopMachine"
+														alt="Pin Lenovo Vantage toolbar to Windows taskbar"
 														class="img-fluid mx-auto d-block"
-														src="assets/images/pin_toolbar_laptop.png"
-													>
+														src="assets/images/pin_toolbar_laptop.png">
 												</div>
 											</div>
-											<label
-												id="device.deviceSettings.power.otherSettings.vantageToolbar.hint"
+											<label id="device.deviceSettings.power.otherSettings.vantageToolbar.hint"
 												attr.aria-label="{{'device.deviceSettings.power.otherSettings.vantageToolbar.hint' | translate}}"
 												class="auto-detection-note">
 												{{  'device.deviceSettings.power.otherSettings.vantageToolbar.hint' | translate }}
@@ -205,6 +204,8 @@
 									<div class="row">
 										<div class="col px-5">
 											<vtr-ui-checkbox [componentId]="'cb-airplane-mode'"
+												[isMetricsEnabled]=true
+												[metricsParent]='metricsParent'
 												[value]="airplaneAutoDetection"
 												[checked]="airplaneAutoDetection"
 												[label]="'device.deviceSettings.power.batterySettings.airPlanePower.checkBoxDesc' | translate"
@@ -265,6 +266,8 @@
 									<div class="row">
 										<div class="col px-5">
 											<vtr-ui-checkbox *ngIf="usbChargingInBatteryModeStatus"
+												[isMetricsEnabled]=true
+												[metricsParent]='metricsParent'
 												[componentId]="'cb-always-on-usb'"
 												[disabled]="!toggleAlwaysOnUsbFlag"
 												[value]="usbChargingCheckboxFlag"

@@ -1,16 +1,17 @@
-import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges, OnChanges } from '@angular/core';
 import { DropDownInterval } from '../../../data-models/common/drop-down-interval.model';
 import { TranslateService } from '@ngx-translate/core';
 import { DisplayService } from 'src/app/services/display/display.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
+import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 
 @Component({
 	selector: 'vtr-oled-power-settings',
 	templateUrl: './oled-power-settings.component.html',
 	styleUrls: ['./oled-power-settings.component.scss']
 })
-export class OledPowerSettingsComponent implements OnInit {
+export class OledPowerSettingsComponent implements OnInit, OnChanges {
 	@Input() description: any;
 	@Input() hasOLEDPowerControlCapability;
 	title: string;
@@ -18,6 +19,7 @@ export class OledPowerSettingsComponent implements OnInit {
 	public taskBarDimmerValue: number;
 	public backgroundDimmerValue: number;
 	public displayDimmerValue: number;
+	public metricsParent  = CommonMetricsModel.ParentDeviceSettings;
 
 	constructor(
 		public displayService: DisplayService,
@@ -49,67 +51,78 @@ export class OledPowerSettingsComponent implements OnInit {
 			name: alwaysOn,
 			value: 0,
 			placeholder: '',
-			text: alwaysOn
+			text: alwaysOn,
+			metricsValue: 'always on'
 		},
 		{
 			name: '30',
 			value: 1,
 			placeholder: seconds,
-			text: `30 ${seconds}`
+			text: `30 ${seconds}`,
+			metricsValue:'30 seconds'
 		},
 		{
 			name: '1',
 			value: 2,
 			placeholder: minute,
-			text: `1 ${minute}`
+			text: `1 ${minute}`,
+			metricsValue: '1 minute'
 		},
 		{
 			name: '2',
 			value: 3,
 			placeholder: minutes,
-			text: `2 ${minutes}`
+			text: `2 ${minutes}`,
+			metricsValue: '2 minutes'
 		},
 		{
 			name: '3',
 			value: 4,
 			placeholder: minutes,
-			text: `3 ${minutes}`
+			text: `3 ${minutes}`,
+			metricsValue: '3 minutes'
 		},
 		{
 			name: '5',
 			value: 5,
 			placeholder: minutes,
-			text: `5 ${minutes}`
+			text: `5 ${minutes}`,
+			metricsValue: '3 minutes'
 		},
 		{
 			name: '10',
 			value: 6,
 			placeholder: minutes,
-			text: `10 ${minutes}`
+			text: `10 ${minutes}`,
+			metricsValue: '10 minutes'
 		},
 		{
 			name: '15',
 			value: 7,
 			placeholder: minutes,
-			text: `15 ${minutes}`
+			text: `15 ${minutes}`,
+			metricsValue: '15 minutes'
 		},
 		{
 			name: '20',
 			value: 8,
 			placeholder: minutes,
-			text: `20 ${minutes}`
+			text: `20 ${minutes}`,
+			metricsValue: '20 minutes'
 		},
 		{
 			name: never,
 			value: 9,
 			placeholder: '',
-			text: never
+			text: never,
+			metricsValue: 'never'
 		},
 		{
 			name: halfTime,
 			value: 10,
 			placeholder: '',
-			text: halfTime
+			text: halfTime,
+			metricsValue: 'half time of display off timer'
 		}];
 	}
 

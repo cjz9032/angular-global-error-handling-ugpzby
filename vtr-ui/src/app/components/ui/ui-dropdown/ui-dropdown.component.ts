@@ -4,6 +4,7 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons/faChevronUp';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
+import { DropDownInterval } from 'src/app/data-models/common/drop-down-interval.model';
 
 @Component({
 	selector: 'vtr-ui-dropdown',
@@ -13,14 +14,15 @@ import { CommonMetricsService } from 'src/app/services/common-metrics/common-met
 export class UiDropDownComponent implements OnInit, OnChanges {
 	@Input() dropDownId: string;
 	@Input() dropDownName: string;
-	@Input() list: any[];
+	@Input() list: DropDownInterval[];
 	@Input() value: number;
 	@Input() disabled = false;
 	@Input() isMetricsEnabled = false;
 	@Input() textCase: string;
 	@Input() metricsItem: string;
+	@Input() metricsParent: string;
 	@Input() dropdownType = 'oled-dimmer';
-	@Output() change: EventEmitter<any> = new EventEmitter<any>();
+	@Output() selectionChange: EventEmitter<any> = new EventEmitter<any>();
 	iconUp = faChevronUp;
 	iconDown = faChevronDown;
 	isDropDownOpen = false;
@@ -59,12 +61,12 @@ export class UiDropDownComponent implements OnInit, OnChanges {
 	}
 
 	// refactoring duplicate lines of code for userdefined key
-	setUserDefinedKey(key) {
+	setUserDefinedKey(key: DropDownInterval) {
 		this.selectedValue = this.list.indexOf(key);
 		this.name = this.translate.instant(
 			'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.title'
 		);
-		this.placeholder = this.translate.instant(key.title);
+		this.placeholder = this.translate.instant(key.text);
 		this.narratorLabel = this.name + '-' + this.placeholder;
 	}
 
@@ -132,13 +134,14 @@ export class UiDropDownComponent implements OnInit, OnChanges {
 			this.isDropDownOpen = event.hideList;
 
 			if (this.isMetricsEnabled) {
+				const parent = this.metricsParent || 'vtr-ui-dropdown';
 				const itemName = this.metricsItem || `${this.dropDownName}`;
-				this.metrics.sendMetrics(value.value, itemName);
+				this.metrics.sendMetrics(value.metricsValue, itemName, parent);
 			}
 
 			if (this.dropdownType === 'oled-dimmer' && value !== undefined) {
 				this.settingDimmerIntervals(value);
-				this.change.emit(value);
+				this.selectionChange.emit(value);
 				return;
 			}
 			if (
@@ -146,7 +149,7 @@ export class UiDropDownComponent implements OnInit, OnChanges {
 				value !== undefined
 			) {
 				this.setUserDefinedKey(value);
-				this.change.emit(value);
+				this.selectionChange.emit(value);
 				return;
 			}
 		} catch (error) {

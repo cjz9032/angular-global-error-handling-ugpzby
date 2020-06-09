@@ -22,6 +22,7 @@ import { RouteHandlerService } from 'src/app/services/route-handler/route-handle
 import { HsaIntelligentSecurityResponse } from 'src/app/data-models/smart-assist/hsa-intelligent-security.model/hsa-intelligent-security.model';
 import { UiRoundedRectangleRadioModel } from '../../ui/ui-rounded-rectangle-custom-radio-list/ui-rounded-rectangle-radio-list.model';
 import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
+import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 
 @Component({
 	selector: 'vtr-page-smart-assist',
@@ -68,6 +69,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	public zeroTouchPresenceLeaveDistanceAutoAdjustCapability = false;
 	public isRegisterHPDRpcCallback = false;
 	private cameraAccessChangedHandler: any;
+	public readonly metricsParent  = CommonMetricsModel.ParentDeviceSettings;
 
 	public featureInitialize = {
 		security: true,
@@ -588,7 +590,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				if (response) {
 					this.getHPDAdvancedSetting();
 				}
-				this.metrics.sendMetrics(value, section + '-advancedSettings');
+				this.metrics.sendMetrics(value, section + '-advancedSettings', CommonMetricsModel.ParentSmartAssist);
 			});
 	}
 

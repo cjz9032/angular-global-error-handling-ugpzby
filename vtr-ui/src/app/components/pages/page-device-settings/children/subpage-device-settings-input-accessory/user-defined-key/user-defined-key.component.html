@@ -77,12 +77,14 @@
 									</div>
 								</div> -->
 								<vtr-ui-dropdown [dropdownType]="'userdefined-key'"
+									[isMetricsEnabled]=true
+									[metricsParent]="metricsParent"
 									[dropDownName]="'UserDefinedKeyState.Dropdown'"
 									[value]="selectedValue.value"
 									[dropDownId]="'ip-userdefinedkey-dropdown-btn'"
 									[list]="userDefinedKeyOptions"
 									[disabled]="false"
-									(change)="onChange($event)">
+									(selectionChange)="onChange($event)">
 								</vtr-ui-dropdown>
 							</div>
 

@@ -23,10 +23,11 @@
 				</h5>
 			</div>
 			<vtr-ui-dropdown [list]="intervals"
+				[metricsParent]="metricsParent"
 				[isMetricsEnabled]=true
 				[value]="taskBarDimmerValue"
 				[textCase]="'oled'"
-				(change)="onTaskBarDimmerChange($event)"
+				(selectionChange)="onTaskBarDimmerChange($event)"
 				[dropDownName]="'OledPowerSettings.TaskBarDimmer'"
 				[dropDownId]="'oled-taskbar-dimmer-dropDown'">
 			</vtr-ui-dropdown>
@@ -40,9 +41,10 @@
 			</div>
 			<vtr-ui-dropdown [list]="intervals"
 				[isMetricsEnabled]=true
+				[metricsParent]="metricsParent"
 				[value]="backgroundDimmerValue"
 				[textCase]="'oled'"
-				(change)="onBackgroundDimmerChange($event)"
+				(selectionChange)="onBackgroundDimmerChange($event)"
 				[dropDownName]="'OledPowerSettings.BackgroundDimmer'"
 				[dropDownId]="'oled-background-dimmer-dropDown'">
 			</vtr-ui-dropdown>
@@ -56,8 +58,9 @@
 			</div>
 			<vtr-ui-dropdown [list]="intervals"
 				[isMetricsEnabled]=true
+				[metricsParent]="metricsParent"
 				[value]="displayDimmerValue"
-				(change)="onDisplayDimmerChange($event)"
+				(selectionChange)="onDisplayDimmerChange($event)"
 				[textCase]="'oled'"
 				[dropDownName]="'OledPowerSettings.DisplayDimmer'"
 				[dropDownId]="'oled-display-dimmer-dropDown'">

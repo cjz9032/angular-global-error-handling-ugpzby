@@ -19,6 +19,7 @@ import { PageAnchorLink } from 'src/app/data-models/common/page-achor-link.model
 import { TranslateService } from '@ngx-translate/core';
 import { UiCircleRadioWithCheckBoxListModel } from 'src/app/components/ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
 import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
+import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-audio',
@@ -81,6 +82,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	cacheFlag = { autoOptimization: true, keyboardNoiseSuppression: true, AEC: true, currentMode: true };
 
 	public dolbyAudioToggleCache: DolbyAudioToggleCapability;
+	public readonly metricsParent  = CommonMetricsModel.ParentDeviceSettings;
 
 	constructor(
 		private routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method

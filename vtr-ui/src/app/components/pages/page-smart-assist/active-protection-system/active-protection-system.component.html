@@ -35,8 +35,8 @@
 									[step]=50
 									[ariaLabel]="'active protection shocks sensitivity adjustment'"
 									(valueChange)='setAPSSensitivityLevel($event)'
-									[metricsItem]="'ActiveProtectionSystem.Sensitivity.Slider'"
-									[metricsValue]="apsSensitivity">
+									[isMetricsEnabled]=true
+									[metricsParent]="metricsParent">
 								</vtr-ui-custom-slider>
 							</div>
 						</vtr-ui-row-switch>
@@ -46,11 +46,7 @@
 									[checked]="repeatShock"
 									(toggle)="setAutoDisableSetting($event)"
 									[disabled]="!apsStatus"
-									[hasChild]="true"
-									[isMetricsEnabled]=false
-									[metricsEvent]="'ItemClick'"
-									[metricsParent]="'Device.SmartAssist'"
-									[metricsItem]="'ActiveProtectionSystem.AutoDisable'">
+									[hasChild]="true">
 									<span [ngClass]="{'disabled': !apsStatus}"
 										id="aps-toggle-checkbox-text"
 										attr.aria-label="aps-toggle-checkbox-text">
@@ -74,8 +70,7 @@
 						[showChildContent]="true"
 						(toggleOnOff)="setSnoozeSetting($event)"
 						[disabled]="!apsStatus"
-						[isMetricsEnabled]=false
-						>
+						[isMetricsEnabled]=false>
 						<div *ngIf="manualSnooze"
 							class="dropdown row">
 							<section class="col-sm-6">
@@ -85,15 +80,12 @@
 									{{ 'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.dropdown-title' | translate }}
 								</p>
 								<vtr-ui-dropdown [dropDownId]="'manualSnoozeTimeDropDown'"
+									[isMetricsEnabled]=true
+									[metricsParent]="metricsParent"
 									[list]="intervals"
 									[value]="manualSnoozeTime"
-									(change)="setSnoozeTime($event)"
-									[disabled]="!apsStatus"
-									vtrMetrics
-									metricsEvent="FeatureClick"
-									metricsParent="Device.SmartAssist"
-									metricsItem="ActiveProtectionSystem.ManualOverride.Dropdown"
-									[metricsValue]="selectedSnoozeTime">
+									(selectionChange)="setSnoozeTime($event)"
+									[disabled]="!apsStatus">
 								</vtr-ui-dropdown>
 							</section>
 							<section class="col-sm-5">

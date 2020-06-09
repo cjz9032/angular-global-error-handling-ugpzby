@@ -55,9 +55,10 @@
 							class="select">
 							<vtr-ui-dropdown class="selectDropdown"
 								[isMetricsEnabled]=true
+								[metricsParent]="metricsParent"
 								[list]="alarmTimeList"
 								[value]="antiTheft.alarmOften"
-								(change)="setAlarmOften($event.value)"
+								(selectionChange)="setAlarmOften($event.value)"
 								[dropDownId]="'smartMotionAlert-alarmTime-dropDown'"
 								[dropDownName]="'smartMotionAlert-alarmTime-dropDown'">
 							</vtr-ui-dropdown>
@@ -161,9 +162,11 @@
 							<div class="select"
 								id="smartMotionAlertPhotoNumberSelect">
 								<vtr-ui-dropdown class="selectDropdown"
+									[isMetricsEnabled]=true
+									[metricsParent]="metricsParent"
 									[list]="photoNumberList"
 									[value]="antiTheft.photoNumber"
-									(change)="setPhotoNumber($event.value)"
+									(selectionChange)="setPhotoNumber($event.value)"
 									[dropDownId]="'smartMotionAlert-photoNumber-dropDown'"
 									[dropDownName]="'smartMotionAlert-photoNumber-dropDown'">
 								</vtr-ui-dropdown>

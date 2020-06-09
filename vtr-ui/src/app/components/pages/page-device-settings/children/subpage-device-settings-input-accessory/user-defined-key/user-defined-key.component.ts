@@ -8,6 +8,8 @@ import { InputAccessoriesCapability } from 'src/app/data-models/input-accessorie
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
 import { keyboardMap } from './keyboardKeysMapping';
+import { DropDownInterval } from 'src/app/data-models/common/drop-down-interval.model';
+import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 declare var Windows;
 
 @Component({
@@ -25,7 +27,7 @@ export class UserDefinedKeyComponent implements OnInit, OnDestroy {
 	public url: string;
 	public hideApplyForDefault = false;
 	public udkFormSubmitted = false;
-	userDefinedKeyOptions: any[] = [];
+	userDefinedKeyOptions: DropDownInterval[] = [];
 	public selectedValue: any;
 	public isUDFSetSuccessVisible = false;
 	public isUDFSetFailedVisible = false;
@@ -37,6 +39,7 @@ export class UserDefinedKeyComponent implements OnInit, OnDestroy {
 	public counter = 0;
 	public keyboardMappedValues: any;
 	private regExForUrlWithParam = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/;
+	public metricsParent  = CommonMetricsModel.ParentDeviceSettings;
 
 	constructor(
 		private keyboardService: InputAccessoriesService,
@@ -46,34 +49,39 @@ export class UserDefinedKeyComponent implements OnInit, OnDestroy {
 	) {
 		this.userDefinedKeyOptions = [
 			{
-				title: 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option1',
+				text: 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option1',
 				value: 1,
-				path: '1',
-				actionType: ''
+				name: '',
+				placeholder:'',
+				metricsValue: 'none',
 			},
 			{
-				title: 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option4',
+				text: 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option4',
 				value: 4,
-				path: '4',
-				actionType: OPEN_APPLICATIONS_OR_FILES.str
+				name: OPEN_APPLICATIONS_OR_FILES.str,
+				placeholder:'',
+				metricsValue: OPEN_APPLICATIONS_OR_FILES.str
 			},
 			{
-				title: 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option2',
+				text: 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option2',
 				value: 2,
-				path: '2',
-				actionType: INPUT_TEXT.str
+				name: INPUT_TEXT.str,
+				placeholder:'',
+				metricsValue: INPUT_TEXT.str
 			},
 			{
-				title: 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option5',
+				text: 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option5',
 				value: 5,
-				path: '5',
-				actionType: INVOKE_KEY_SEQUENCE.str
+				name: INVOKE_KEY_SEQUENCE.str,
+				placeholder:'',
+				metricsValue: INVOKE_KEY_SEQUENCE.str
 			},
 			{
-				title: 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option3',
+				text: 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option3',
 				value: 3,
-				path: '3',
-				actionType: OPEN_WEB.str
+				name: OPEN_WEB.str,
+				placeholder:'',
+				metricsValue: OPEN_WEB.str
 			}
 		];
 		this.selectedValue = this.userDefinedKeyOptions[0];

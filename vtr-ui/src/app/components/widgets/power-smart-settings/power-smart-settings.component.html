@@ -39,7 +39,7 @@
 									<div class="row no-gutters ml-2 cooling-mode-list-block"
 										*ngIf="showIntelligentCoolingModes">
 										<vtr-ui-circle-radio-with-checkbox-list [sendMetrics]=true
-										[metricsParent]="'Device.MyDeviceSettings'"
+											[metricsParent]="metricsParent"
 											[groupName]="'intelligent-cooling-radio-group'"
 											(optionChange)="onIntelligentCoolingModeChange($event)"
 											[radioDetails]="intelligentCoolingUIModel">
@@ -58,6 +58,8 @@
 										<div class="transition"
 											*ngIf="showIC>=15 && radioQuietCool">
 											<vtr-ui-checkbox [componentId]="'IntelligentCooling-5.0-AutoTransition'"
+												[isMetricsEnabled]=true
+												[metricsParent]='metricsParent'
 												[value]="isAutoTransitionEnabled"
 												[checked]="isAutoTransitionEnabled"
 												[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.autoTransition.description' | translate"

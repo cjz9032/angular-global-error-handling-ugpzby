@@ -11,6 +11,7 @@ import { PowerService } from 'src/app/services/power/power.service';
 import { ModalIntelligentCoolingModesComponent } from '../../modal/modal-intelligent-cooling-modes/modal-intelligent-cooling-modes.component';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { UiCircleRadioWithCheckBoxListModel } from '../../ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
+import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 
 const thinkpad = 1;
 const ideapad = 0;
@@ -53,6 +54,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	private readonly batterySavingModeId = 'quiteBatterySaving';
 	private readonly performanceModeId = 'radioICPerformance';
 	private readonly quiteCoolModeId = 'radioICQuiteCool';
+	public readonly metricsParent  = CommonMetricsModel.ParentDeviceSettings;
 
 	@Output() isPowerSmartSettingVisible = new EventEmitter<boolean>();
 

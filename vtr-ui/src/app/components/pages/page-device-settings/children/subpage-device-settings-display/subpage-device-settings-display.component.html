@@ -196,6 +196,8 @@
 										<div class="col-12">
 											<div class="custom-control custom-checkbox privacy-checkbox">
 												<vtr-ui-checkbox [componentId]="'cb-privacy-guard'"
+													[isMetricsEnabled]=true
+													[metricsParent]='metricsParent'
 													[disabled]="privacyGuardToggleStatus"
 													[ngClass]="{'custom-control-label-disabled': privacyGuardToggleStatus}"
 													[value]="privacyGuardCheckBox"

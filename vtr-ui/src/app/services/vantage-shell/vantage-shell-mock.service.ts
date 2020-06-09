@@ -2275,7 +2275,7 @@ export class VantageShellService {
 			cameraAllowed: true,
 			photoAddress: 'c:\\users',
 			alarmDuration: 30,
-			photoNumber: 5,
+			photoNumber: 10,
 			errorCode: 0
 		};
 		return {

@@ -12,6 +12,7 @@ import {
 } from 'src/app/services/smart-assist/smart-assist.service';
 import { TranslateService } from '@ngx-translate/core';
 import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
+import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 
 
 @Component({
@@ -37,6 +38,7 @@ export class ActiveProtectionSystemComponent implements OnInit {
 	advanceSettings = 'activeProtectionSystem_advanced_advanced_settings';
 	advanceSettingsCaption = 'activeProtectionSystem-advanced-settings-desc';
 	timeOut = 100;
+	public metricsParent  = CommonMetricsModel.ParentDeviceSettings;
 	// public taskBarDimmerValue: number;
 
 	constructor(
@@ -54,25 +56,29 @@ export class ActiveProtectionSystemComponent implements OnInit {
 			name: '30',
 			value: 0.5,
 			placeholder: seconds,
-			text: `30 ${seconds}`
+			text: `30 ${seconds}`,
+			metricsValue: `30 seconds`
 		},
 		{
 			name: '1',
 			value: 1,
 			placeholder: minute,
-			text: `1 ${minute}`
+			text: `1 ${minute}`,
+			metricsValue: `1 minute`
 		},
 		{
 			name: '2',
 			value: 2,
 			placeholder: minutes,
-			text: `2 ${minutes}`
+			text: `2 ${minutes}`,
+			metricsValue: `2 minutes`
 		},
 		{
 			name: '3',
 			value: 3,
 			placeholder: minutes,
-			text: `3 ${minutes}`
+			text: `3 ${minutes}`,
+			metricsValue: `3 minutes`
 		}
 		];
 	}
@@ -175,7 +181,7 @@ export class ActiveProtectionSystemComponent implements OnInit {
 			.then(res => { });
 
 		// send metrics
-		this.commonMetricsService.sendMetrics(value, 'activeProtectionSystem')
+		this.commonMetricsService.sendMetrics(value, 'activeProtectionSystem', CommonMetricsModel.ParentDeviceSettings);
 	}
 
 	setAPSSensitivityLevel($event: number) {
@@ -205,6 +211,7 @@ export class ActiveProtectionSystemComponent implements OnInit {
 		this.smartAssist
 			.setAutoDisableSetting(event)
 			.then(res => { });
+			this.commonMetricsService.sendMetrics(event, 'ActiveProtectionSystem.AutoDisable', CommonMetricsModel.ParentDeviceSettings);
 	}
 
 	setSnoozeSetting(event) {
@@ -220,7 +227,7 @@ export class ActiveProtectionSystemComponent implements OnInit {
 					});
 			});
 
-			this.commonMetricsService.sendMetrics(value, 'ActiveProtectionSystem.ManualOverride');
+		this.commonMetricsService.sendMetrics(value, 'ActiveProtectionSystem.ManualOverride', CommonMetricsModel.ParentDeviceSettings);
 	}
 
 	setSnoozeTime(event: DropDownInterval) {
