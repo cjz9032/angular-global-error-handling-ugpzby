@@ -72,7 +72,6 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 	) { }
 
 	ngOnInit() {
-		this.smartPerformanceService.scanningStopped.next(false)
 		this.percent=0;
 		this.spCategoryenum = SPCategory;
 		this.spSubCategoryenum = SPSubCategory;
@@ -267,14 +266,6 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 				this.sampleDesc
 			);
 		}
-
-		// if(this.percent > 0 && this.percent < 99) {
-		// 	this.smartPerformanceService.scanningStopped.next(false)
-		// }
-		// de-activates the pop-up, when user is navigating away while scanning
-		// if(this.percent === 100) {
-		// 	this.smartPerformanceService.scanningStopped.next(true);
-		// }
 	}
 
  
@@ -289,7 +280,6 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 		const response = await modalCancel.result
 		if(response) {
 			this.sendModelStatus.emit()
-			// this.smartPerformanceService.scanningStopped.next(true)
 		}
 		// modalCancel.componentInstance.cancelRequested.subscribe(() => {
 		// 	this.sendModelStatus.emit();

@@ -90,6 +90,8 @@ export class UserDefinedKeyComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		this.keyboardMappedValues = keyboardMap;
 		this.getUDKCapability();
+		this.initialize();
+
 	}
 
 	async getUDKCapability() {
@@ -125,35 +127,38 @@ export class UserDefinedKeyComponent implements OnInit, OnDestroy {
 			this.hideApplyForDefault = false;
 		}
 		if (this.selectedValue.value === 4) {
-			this.setUDKTypeList('0', '0', 'LAUNCH_APPLICATION_FILE', '');
-			this.keyboardService.GetUDKTypeList()
-				.then((value: any) => {
-					try {
-						if (value
-							&& value.UDKType
-							&& value.UDKType.length
-							&& value.UDKType[0].FileList
-							&& value.UDKType[0].FileList.length
-							&& value.UDKType[0].FileList[0].Setting) {
-							const previousAppsFiles = value.UDKType[0].FileList[0].Setting;
-							this.applicationList = [];
-							this.fileList = [];
-							for (const data of previousAppsFiles) {
-								if (data.type === '1') {
-									this.applicationList.push({ value: data.value, key: data.key });
+			if (this.fileList.length > 0 || this.applicationList.length > 0) {
+				this.setUDKTypeList('0', '0', 'LAUNCH_APPLICATION_FILE', '');
+				this.keyboardService.GetUDKTypeList()
+					.then((value: any) => {
+						try {
+							if (value
+								&& value.UDKType
+								&& value.UDKType.length
+								&& value.UDKType[0].FileList
+								&& value.UDKType[0].FileList.length
+								&& value.UDKType[0].FileList[0].Setting) {
+								const previousAppsFiles = value.UDKType[0].FileList[0].Setting;
+								this.applicationList = [];
+								this.fileList = [];
+								for (const data of previousAppsFiles) {
+									if (data.type === '1') {
+										this.applicationList.push({ value: data.value, key: data.key });
+									}
+									else {
+										this.fileList.push({ value: data.value, key: data.key });
+									}
 								}
-								else {
-									this.fileList.push({ value: data.value, key: data.key });
+								if (previousAppsFiles.length > 0) {
+									this.showUDFSetSuccessMessage(OPEN_APPLICATIONS_OR_FILES.str);
 								}
-							}
-							if (previousAppsFiles.length > 0) {
-								this.showUDFSetSuccessMessage(OPEN_APPLICATIONS_OR_FILES.str);
-							}
 
+							}
+						} catch (error) {
 						}
-					} catch (error) {
-					}
-				});
+					});
+
+			}
 		}
 	}
 
@@ -199,6 +204,23 @@ export class UserDefinedKeyComponent implements OnInit, OnDestroy {
 		}
 	}
 
+
+	public initialize() {
+		try {
+			if (this.keyboardService.isShellAvailable) {
+				this.keyboardService.Initialize()
+					.then((value: any) => {
+						this.logger.info('keyboard initialize here -------------.>', value);
+					}).catch(error => {
+						this.logger.error('keyboard initialize error here', error.message);
+						return EMPTY;
+					});
+			}
+		} catch (error) {
+			this.logger.error('keyboard initialize error here' + error.message);
+			return EMPTY;
+		}
+	}
 	public getUDKTypeList() {
 		try {
 			if (this.keyboardService.isShellAvailable) {

@@ -58,6 +58,17 @@ export class InputAccessoriesService {
 		}
 
 	}
+	public Initialize(): Promise<boolean> {
+		try {
+			if (this.keyboardManager) {
+				return this.keyboardManager.Initialize();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+
+	}
 	public AddApplicationOrFiles(selectedUDK: string, appSelectorType: string): Promise<any> {
 		try {
 			if (this.keyboardManager) {

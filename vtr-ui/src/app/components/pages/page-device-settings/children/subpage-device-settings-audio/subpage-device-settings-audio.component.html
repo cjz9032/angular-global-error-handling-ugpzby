@@ -56,7 +56,7 @@
 									<div class="audioDolbySub pl-5"
 										id="audioDolbySub"
 										*ngIf="dolbyModeResponse.isAudioProfileEnabled">
-										<div class="checkbox voipCheckbox"
+										<div class="checkbox voipCheckbox d-flex justify-content-start"
 											id="audio-dolby-voip"
 											*ngIf="voipStatus.available">
 											<div id="audio-dolby-voip-checkbox">
@@ -75,7 +75,7 @@
 													class="right-icon"
 													role="img"
 													triggers="manual"
-													placement="auto"
+													placement="left"
 													autoClose="false"
 													[ngbTooltip]="tooltipRef"
 													#rightToolTip1="ngbTooltip"
@@ -98,7 +98,7 @@
 											</div>
 										</div>
 
-										<div class="checkbox entertainmentCheckout"
+										<div class="checkbox entertainmentCheckout d-flex justify-content-start"
 											id="audio-dolby-entertainment"
 											*ngIf="entertainmentStatus.available">
 											<div id="audio-dolby-entertainment-checkbox">
@@ -117,7 +117,7 @@
 													class="right-icon"
 													role="img"
 													triggers="manual"
-													placement="auto"
+													placement="left"
 													autoClose="false"
 													[ngbTooltip]="tooltipRef"
 													#rightToolTip1="ngbTooltip"

@@ -1100,7 +1100,7 @@
 				},
 				"highDensityBattery": {
 					"title": "High density battery",
-					"subtitle": "How your battey works",
+					"subtitle": "How your battery works",
 					"para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
 					"para2": {
 						"item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
@@ -1670,7 +1670,7 @@
 					"cameraPrivacy": {
 						"title": "Camera Privacy Mode",
 						"tooltip": "The camera stops sending live images when the privacy setting is enabled. Turn this setting on, only when you do not want to share your images to others while video calling.",
-						"cameraPrivacyAccessNote": "Please go to the <b>Windows Settings → Privacy → Camera</b> page and make sure the following two options are truned on:<br>&bull; <b>Allow desktop apps to access your camera</b><br>&bull; <b>Lenovo Vantage</b> under \"Choose which (Microsoft Store) apps can access your camera\""
+						"cameraPrivacyAccessNote": "Please go to the <b>Windows Settings → Privacy → Camera</b> page and make sure the following two options are turned on:<br>&bull; <b>Allow desktop apps to access your camera</b><br>&bull; <b>Lenovo Vantage</b> under \"Choose which (Microsoft Store) apps can access your camera\""
 					},
 					"camera": {
 						"title": "Camera",
@@ -1788,7 +1788,7 @@
 				"backlight": {
 					"title": "Keyboard backlight",
 					"description": {
-						"base": "Activate the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backllight settings by pressing the Fn+Space key combinations.",
+						"base": "Activate the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key combinations.",
 						"auto": "Activate the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key combinations or set it as \"Auto\". In \"Auto\" mode, the system automatically adjusts the keyboard backlight according to the ambient light."
 					},
 					"level": {
@@ -1842,7 +1842,7 @@
 				"fnCtrlKey": {
 					"title": "FN key and Ctrl key swap",
 					"description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-					"restartNote": "Swapping the function of two keys requires you to restart your computer, are you sure to restart?",
+					"restartNote": "Swapping the function of two keys requires you to restart your computer. Are you sure to restart?",
 					"title2": "Fn works as Ctrl for frequently used key combinations",
 					"description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
 					"featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
