@@ -45,6 +45,7 @@
 			background-size: contain;
 			background-position: 50%;
 			background-repeat: no-repeat;
+			max-width: 20%;
 			@media #{$breakpoint_sm}{
 				height: 6rem;
 				width: 6rem;
