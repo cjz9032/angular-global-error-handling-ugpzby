@@ -2052,6 +2052,13 @@ body.focus-enable{
 		&:focus{	
 		opacity:1 !important
 		}
+		}
+		.expand-icon{
+			&:focus {
+				fa-icon{
+					@include outline-blue-gaming;
+				}
+			}
 		}	
 		vtr-ui-header-warranty{
 			.dropdown-content{

@@ -19,7 +19,7 @@ const ideapad = 0;
 	templateUrl: './power-smart-settings.component.html',
 	styleUrls: ['./power-smart-settings.component.scss']
 })
-export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterViewInit {
+export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	intelligentCoolingModes = IntelligentCoolingHardware.ITS;
 	dYTCRevision = 0;
 	cQLCapability = false;
@@ -73,25 +73,13 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 		if (thinkpad === this.machineType || this.isYogo730()) {
 			this.add = 0; // thinkpad
 			this.checkDriverForThinkPad();
-		}
-		if (ideapad === this.machineType) {
+		} else if (ideapad === this.machineType) {
 			this.add = 10; // Ideapad
 			this.initPowerSmartSettingsForIdeaPad();
+		} else {
+			this.showPowerSmartSettings(false);
 		}
 	}
-
-	ngAfterViewInit() {
-		if (this.cache) {
-			if (this.cache.showIC === 0) {
-				this.showPowerSmartSettings(false);
-			} else {
-				this.showPowerSmartSettings(true);
-			}
-		}
-
-
-	}
-
 
 
 	initDataFromCache() {
@@ -99,11 +87,6 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 		if (this.cache) {
 			// init ui
 			this.showIC = this.cache.showIC;
-			// if (this.showIC === 0) {
-			// 	this.showPowerSmartSettings(false);
-			// 	return;
-			// }
-			// this.showPowerSmartSettings(true);
 			if (this.showIC === 6) {
 				this.dytc6Mode = this.cache.captionText;
 				this.dytc6IsAutoModeSupported = this.cache.autoModeToggle.available;

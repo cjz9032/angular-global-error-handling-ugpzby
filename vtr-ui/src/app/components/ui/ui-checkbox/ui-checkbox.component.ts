@@ -5,6 +5,7 @@ import {
 	OnInit,
 	Output
 } from '@angular/core';
+import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
 
 @Component({
 	selector: 'vtr-ui-checkbox',
@@ -20,13 +21,11 @@ export class UiCheckboxComponent implements OnInit {
 	@Input() disabled = false;
 	@Input() value: any;
 	@Input() hasChild = false; // for ng-content
-	@Input() metricsEvent = 'ItemClick';
-	@Input() metricsParent: string;
 	@Input() metricsItem: string;
-	@Input() metricsValue: any;
+	@Input() isMetricsEnabled = false;
 	@Output() toggle: EventEmitter<boolean> = new EventEmitter();
 
-	constructor() { }
+	constructor(private metrics: CommonMetricsService) { }
 
 	ngOnInit() { }
 
@@ -34,5 +33,10 @@ export class UiCheckboxComponent implements OnInit {
 		const value = event.target.checked;
 		this.checked = value;
 		this.toggle.emit(value);
+		if (this.isMetricsEnabled) {
+			const itemName = this.metricsItem || `${this.componentId}`;
+			this.metrics.sendMetrics(value, itemName);
+		}
 	}
+
 }

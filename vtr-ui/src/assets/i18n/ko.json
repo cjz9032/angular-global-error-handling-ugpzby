@@ -727,7 +727,10 @@
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
                 "name7": "Legion Icon (Front)",
-                "name9": "Ambient  Lighting"
+                "name9": "Ambient  Lighting",
+                "name10": "Legion Liquid Cooling Lighting",
+                "name11": "Legion front Fan Lighting",
+                "name12": "Legion Top Fan Lighting"
             },
             "lightingEffect": {
                 "effectName1": "고정",
@@ -1063,7 +1066,8 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "배터리 수명을 연장하기 위해 사용량에 따라 완전 충전 용량을 최적화했습니다. 완전 충전 용량은 배터리를 20%까지 방전시킨 다음 재충전해야 사용할 수 있습니다."
+                    "fccTooltipText": "배터리 수명을 연장하기 위해 사용량에 따라 완전 충전 용량을 최적화했습니다. 완전 충전 용량은 배터리를 20%까지 방전시킨 다음 재충전해야 사용할 수 있습니다.",
+                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
                 },
                 "condition": {
                     "Illegal": "시스템에서 <b>지원되지 않는</b> 배터리를 설치하여 충전되지 않습니다. 이 시스템에 맞는 Lenovo 배터리로 교체하십시오.",
@@ -1091,6 +1095,16 @@
                 "gaugeResetWarning": "<b>참고:</b> 배터리 게이지 리셋이 진행 중입니다. AC 전원 어댑터를 연결 상태로 두십시오.",
                 "dualConditions": {
                     "NotDetected": "<b>기본 배터리를 찾을 수 없습니다.</b>"
+                },
+                "highDensityBattery": {
+                    "title": "High density battery",
+                    "subtitle": "How your battey works",
+                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "para2": {
+                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
+                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
+                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                    }
                 }
             },
             "power": {
@@ -2238,6 +2252,9 @@
         "support": {
             "title": "Lenovo 지원 웹 사이트"
         },
+        "security": {
+            "title": "For a better protection for your device"
+        },
         "banner": {
             "neverChecked": "시스템 업데이트를 시작합니다.",
             "title": "최신 시스템은 정상적인 시스템입니다.",
@@ -3266,7 +3283,8 @@
             "titlebeta": "Lenovo Beta Program",
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
-            "descriptionbeta1": "You are welcomed to join and try the full feature."
+            "descriptionbeta1": "You are welcomed to join and try the full feature.",
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3302,7 +3320,9 @@
                 "title": "Cacel the scan?",
                 "description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
                 "yesButton": "YES, CANCEL",
-                "noButton": "NO, RESUME SCAN"
+                "noButton": "NO, RESUME SCAN",
+                "cancelMayTakeSomeTime": "잠시 기다려 주십시오. 시스템에 따라 취소하는 데 시간이 걸릴 수 있습니다.",
+                "cancelTextPrompt": "정말 취소하시겠습니까?"
             },
             "waiting": "WAITING TO SCAN",
             "completed": "COMPLETED",
@@ -3458,8 +3478,7 @@
                 "yearlyPricing": "$19.99 / Yr",
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP",
-                "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
+                "signupButton": "SIGN UP"
             },
             "tunepc": {
                 "accumulatedjunkscannedareas": {
@@ -3722,7 +3741,8 @@
             "issues": "ISSUES",
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
-            "secureIssueCount": "{{secure}}"
+            "secureIssueCount": "{{secure}}",
+            "backToHome": "Back To Home"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your ",

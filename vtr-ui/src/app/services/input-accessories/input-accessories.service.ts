@@ -58,6 +58,17 @@ export class InputAccessoriesService {
 		}
 
 	}
+	public Initialize(): Promise<boolean> {
+		try {
+			if (this.keyboardManager) {
+				return this.keyboardManager.Initialize();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+
+	}
 	public AddApplicationOrFiles(selectedUDK: string, appSelectorType: string): Promise<any> {
 		try {
 			if (this.keyboardManager) {
@@ -291,9 +302,10 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
+
 	// FnCtrlSwap feature start here
 	// fnCtrlSwap & fnAsCtrl features hidden in 3.2.001
-	/*public GetFnCtrlSwapCapability(): Promise<boolean> {
+	public GetFnCtrlSwapCapability(): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
 				return this.keyboardManager.GetFnCtrlSwapCapability();
@@ -325,11 +337,9 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
-	*/
 	// FnCtrlSwap feature end here
 
-	// FnAsCtrl feature start here
-	/*public GetFnAsCtrlCapability(): Promise<boolean> {
+	public GetFnAsCtrlCapability(): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
 				return this.keyboardManager.GetFnAsCtrlCapability();
@@ -361,8 +371,9 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
-	*/
+
 	// FnAsCtrl feature end here
+
 	public getMouseCapability(): Promise<boolean> {
 		try {
 			if (this.mouseAndTouchPad) {

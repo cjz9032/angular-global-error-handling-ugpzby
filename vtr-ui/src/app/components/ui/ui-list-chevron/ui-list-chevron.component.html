@@ -25,7 +25,7 @@
 							<fa-icon *ngIf="item.circle === 'questionCircle'" class="question-icon" placement="auto"
 								[icon]="['far', 'question-circle']" container="body"></fa-icon>
 							<div class="item-icon" *ngIf="item.icon">
-								<div class="icon-bkg" id="{{'icon-' + item.icon + '-' + item.id}}">
+								<div [class.icon-bkg]="item.isIconBackground" id="{{'icon-' + item.icon + '-' + item.id}}">
 									<fa-icon [icon]="item.icon"></fa-icon>
 								</div>
 							</div>
@@ -78,7 +78,7 @@
 							<fa-icon *ngIf="item.circle === 'questionCircle'" class="question-icon" placement="auto"
 								[icon]="['far', 'question-circle']" container="body"></fa-icon>
 							<div class="item-icon" *ngIf="item.icon">
-								<div class="icon-bkg" id="{{'icon-' + item.icon + '-' + item.id}}">
+								<div [class.icon-bkg]="item.isIconBackground" id="{{'icon-' + item.icon + '-' + item.id}}">
 									<fa-icon [icon]="item.icon"></fa-icon>
 								</div>
 							</div>

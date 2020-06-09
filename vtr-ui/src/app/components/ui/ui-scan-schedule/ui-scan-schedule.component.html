@@ -11,18 +11,12 @@
                     <strong>{{'smartPerformance.scanSettings.enableScan' |translate }}</strong>
                 </div>
                 <div class="status d-flex justify-content-end">
-                    <vtr-ui-switch-onoff
-                        [onOffSwitchId]="'SmartPerformance.enableScan'"
-                        [onOffSwitchParam]="'SmartPerformance.enableScan'"
+                    <vtr-ui-custom-switch
+                        [componentId]="'sp.enableScan'"
+                        [switchParam]="'sp.enableScan'"
                         [value]="scanToggleValue"
                         (toggle)="setEnableScanStatus($event)">
-                    </vtr-ui-switch-onoff>
-                    <!-- <button type="button" class="btn btn-outline-secondary tooltip-btn" placement="left" triggers="click" [autoClose]="'outside'"
-                        ngbTooltip="{{'smartPerformance.scanSettings.scanToolTip' |translate }}" tooltipClass="schedule-scan">
-                        <fa-icon [icon]="['far', 'question-circle']"></fa-icon>
-                    </button>  -->
-
-
+                    </vtr-ui-custom-switch>
                     <fa-icon class="question"
                         tabindex="0"
                         triggers="click:blur"

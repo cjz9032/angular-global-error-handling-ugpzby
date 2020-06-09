@@ -3,6 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons/faChevronUp';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
 
 @Component({
 	selector: 'vtr-ui-dropdown',
@@ -15,7 +16,9 @@ export class UiDropDownComponent implements OnInit, OnChanges {
 	@Input() list: any[];
 	@Input() value: number;
 	@Input() disabled = false;
+	@Input() isMetricsEnabled = false;
 	@Input() textCase: string;
+	@Input() metricsItem: string;
 	@Input() dropdownType = 'oled-dimmer';
 	@Output() change: EventEmitter<any> = new EventEmitter<any>();
 	iconUp = faChevronUp;
@@ -30,14 +33,15 @@ export class UiDropDownComponent implements OnInit, OnChanges {
 
 	constructor(
 		private translate: TranslateService,
-		private logger: LoggerService
+		private logger: LoggerService,
+		private metrics: CommonMetricsService
 	) { }
 
 	ngOnInit() {
 		this.setDropDownValue();
 	}
 	ngOnChanges(changes: SimpleChanges) {
-		if (changes && changes['value'] && changes.value['previousValue'] !== changes.value['currentValue']) {
+		if (changes && changes.value && changes.value.previousValue !== changes.value.currentValue) {
 			this.setDropDownValue();
 		}
 
@@ -66,7 +70,7 @@ export class UiDropDownComponent implements OnInit, OnChanges {
 
 	// checks for any previous selected value if any; if no value then calls 'setDropDropValue method
 	setDropDownValue() {
-		if (this.value != undefined && this.list) {
+		if (this.value !== undefined && this.list) {
 			const itemValue = this.list.find(
 				(item) => item.value === this.value
 			);
@@ -126,6 +130,12 @@ export class UiDropDownComponent implements OnInit, OnChanges {
 		try {
 			const value = this.list.find((item, idx) => idx === event.value);
 			this.isDropDownOpen = event.hideList;
+
+			if (this.isMetricsEnabled) {
+				const itemName = this.metricsItem || `${this.dropDownName}`;
+				this.metrics.sendMetrics(value.value, itemName);
+			}
+
 			if (this.dropdownType === 'oled-dimmer' && value !== undefined) {
 				this.settingDimmerIntervals(value);
 				this.change.emit(value);

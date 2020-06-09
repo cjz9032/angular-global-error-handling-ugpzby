@@ -834,22 +834,9 @@ vtr-ui-smart-performance-scan-summary {
 				// 	cursor: pointer;
 				// }
 				&::ng-deep{
-					vtr-ui-switch-onoff {
-						.checkbox {
-							height: 2rem;
-							width: 4.6rem;
-							top: 1rem;
-							left: -1rem;
-							.switch.switch-xs{
-								margin-top: -1.7rem;
-								margin-left: -0.3rem;
-							}
-							.switch-label{
-								top: -0.5rem;
-							}
-						}
-						.white-theme:focus {
-							box-shadow: none;
+					vtr-ui-custom-switch {
+						.custom-switch {
+							margin-top: 1rem;
 						}
 					}
 				}

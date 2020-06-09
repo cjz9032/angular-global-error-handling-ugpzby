@@ -11,11 +11,6 @@
 			[attr.aria-disabled]="disabled"
 			[attr.aria-checked]="checked"
 			tabIndex="0"
-			vtrMetrics
-			[metricsEvent]="metricsEvent"
-			[metricsParent]="metricsParent"
-			[metricsItem]="componentId+'_checkbox'"
-			[metricsValue]="checked"
 			(change)="onChange($event)" />
 		<label *ngIf="hasChild; else elseBlock"
 			[id]="componentId+'_checkbox-label'"

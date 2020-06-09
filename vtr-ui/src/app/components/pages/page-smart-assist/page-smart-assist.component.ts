@@ -20,8 +20,8 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { SmartAssistCache } from 'src/app/data-models/smart-assist/smart-assist-cache.model';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 import { HsaIntelligentSecurityResponse } from 'src/app/data-models/smart-assist/hsa-intelligent-security.model/hsa-intelligent-security.model';
-import { MetricService } from 'src/app/services/metric/metrics.service';
 import { UiRoundedRectangleRadioModel } from '../../ui/ui-rounded-rectangle-custom-radio-list/ui-rounded-rectangle-radio-list.model';
+import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
 
 @Component({
 	selector: 'vtr-page-smart-assist',
@@ -123,7 +123,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		public modalService: NgbModal,
 		private router: Router,
 		private vantageShellService: VantageShellService,
-		private metrics: MetricService
+		private metrics: CommonMetricsService
 	) {
 		this.jumpToSettingsTitle = this.translate.instant('device.smartAssist.jumpTo.title');
 		// VAN-5872, server switch feature on language change
@@ -182,7 +182,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		if (this.isRegisterHPDRpcCallback) {
 			this.smartAssist.unRegisterHPDRpcCallback()
 				.then((response) => {
-					if (response === 0) {//response is the count of the registered callback_event
+					if (response === 0) {// response is the count of the registered callback_event
 						this.logger.info('UnRegister HPD RPC Callback done.');
 					}
 				})
@@ -467,9 +467,9 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 
 			this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
-			//if (this.intelligentSecurity.isZeroTouchLockVisible && this.zeroTouchLockShowAdvancedSection) {
+			// if (this.intelligentSecurity.isZeroTouchLockVisible && this.zeroTouchLockShowAdvancedSection) {
 			this.updateZeroTouchLockTimersUIModel();
-			//}
+			// }
 
 			this.logger.info('PageSmartAssistComponent.Promise.initZeroTouchLock()', this.intelligentSecurity);
 		}).catch(error => {
@@ -530,7 +530,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 
 
 	public onZeroTouchLockTimerChange($event) {
-		let value = $event.value;
+		const value = $event.value;
 		this.intelligentSecurity.autoScreenLockTimer = value;
 
 		this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
@@ -588,12 +588,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				if (response) {
 					this.getHPDAdvancedSetting();
 				}
-				const metricsData = {
-					itemParent: 'Device.SmartAssist',
-					itemName: section + '-advancedSettings',
-					value
-				};
-				this.metrics.sendMetrics(metricsData);
+				this.metrics.sendMetrics(value, section + '-advancedSettings');
 			});
 	}
 
@@ -609,8 +604,8 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 						if (!this.isRegisterHPDRpcCallback) {
 							if (this.zeroTouchPresenceLeaveDistanceCapability || this.zeroTouchPresenceLeaveDistanceAutoAdjustCapability) {
 								this.smartAssist.registerHPDRpcCallback()
-									.then((response) => {
-										if (response === 1) { //response is the count of the registered callback_event
+									.then((hpdResponse) => {
+										if (hpdResponse === 1) { // response is the count of the registered callback_event
 											this.isRegisterHPDRpcCallback = true;
 											this.logger.info('Register HPD RPC Callback done.');
 										}
@@ -895,14 +890,14 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 
 	public checkHeaderMenuItems(available: boolean, featurePath: string) {
 		let isExist = false;
-		this.headerMenuItems.some(function (item) {
+		this.headerMenuItems.some((item) => {
 			if (item.path === featurePath) {
 				isExist = true;
 			}
 		});
 
 		if (available && !isExist) {
-			let featureHeaderMenu = undefined;
+			let featureHeaderMenu;
 			if (featurePath === 'security') {
 				featureHeaderMenu = {
 					title: 'device.smartAssist.intelligentSecurity.title',
@@ -951,7 +946,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 					metricsItem: 'Voice'
 				}
 			}
-			if (featureHeaderMenu != undefined) {
+			if (featureHeaderMenu !== undefined) {
 				this.headerMenuItems = this.commonService.addToObjectsList(this.headerMenuItems, featureHeaderMenu);
 			}
 		}
@@ -980,7 +975,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		}
 
 		if (this.headerMenuItems.length >= 2) {
-			this.headerMenuItems = this.headerMenuItems.sort(function (a, b) { return a.sortOrder - b.sortOrder; })
+			this.headerMenuItems = this.headerMenuItems.sort((a, b)=> { return a.sortOrder - b.sortOrder; })
 		}
 	}
 

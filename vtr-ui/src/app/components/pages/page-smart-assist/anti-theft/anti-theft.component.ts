@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input, OnDestroy } from '@angular/core';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { Router, NavigationExtras } from '@angular/router';
@@ -16,7 +16,7 @@ import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-as
 	templateUrl: './anti-theft.component.html',
 	styleUrls: ['./anti-theft.component.scss']
 })
-export class AntiTheftComponent implements OnInit {
+export class AntiTheftComponent implements OnInit, OnDestroy {
 	@Input() antiTheftAvailable = true;
 	@Input() isLoading = true;
 	@Input() checkboxDisabled = false;
@@ -200,7 +200,7 @@ export class AntiTheftComponent implements OnInit {
 							this.updateSensingHeaderMenu.emit(true);
 							this.startMonitorAntiTheftStatus();
 							this.startMonitorCameraAuthorized(this.cameraAuthorizedChange.bind(this));
-		                    this.startMonitorForCameraPrivacy();
+							this.startMonitorForCameraPrivacy();
 						}
 						this.commonService.setLocalStorageValue(LocalStorageKey.AntiTheftCache, this.antiTheft);
 						this.isLoading = false;
@@ -236,9 +236,9 @@ export class AntiTheftComponent implements OnInit {
 		try {
 			if (this.smartAssist.isShellAvailable) {
 				this.smartAssist.setAlarmOften(value)
-					.then((value: boolean) => {
+					.then((response: boolean) => {
 						this.commonService.setLocalStorageValue(LocalStorageKey.AntiTheftCache, this.antiTheft);
-						this.logger.info('setAlarmOften.then', value);
+						this.logger.info('setAlarmOften.then', { value, response });
 					}).catch(error => {
 						this.logger.error('setAlarmOften', error.message);
 					});
@@ -253,9 +253,9 @@ export class AntiTheftComponent implements OnInit {
 		try {
 			if (this.smartAssist.isShellAvailable) {
 				this.smartAssist.setPhotoNumber(value)
-					.then((value: boolean) => {
+					.then((response: boolean) => {
 						this.commonService.setLocalStorageValue(LocalStorageKey.AntiTheftCache, this.antiTheft);
-						this.logger.info('setPhotoNumber.then', value);
+						this.logger.info('setPhotoNumber.then', { value, response });
 					}).catch(error => {
 						this.logger.error('setPhotoNumber', error.message);
 					});
@@ -269,9 +269,9 @@ export class AntiTheftComponent implements OnInit {
 		this.antiTheft.isSupportPhoto = value;
 		try {
 			this.smartAssist.setAllowCamera(value)
-				.then((value: boolean) => {
+				.then((response: boolean) => {
 					this.commonService.setLocalStorageValue(LocalStorageKey.AntiTheftCache, this.antiTheft);
-					this.logger.info('setAllowCamera.then', value);
+					this.logger.info('setAllowCamera.then', {value, response});
 				}).catch(error => {
 					this.logger.error('setAllowCamera', error.message);
 				});
@@ -308,7 +308,7 @@ export class AntiTheftComponent implements OnInit {
 				this.isShowfileAuthorizationTips = false;
 			}
 		} catch (error) {
-			this.logger.info('showPhotoFolder error message:' + error.message + "error number:" + error.number);
+			this.logger.info('showPhotoFolder error message:' + error.message + 'error number:' + error.number);
 			if (error.number === -2147024891) {
 				this.isShowfileAuthorizationTips = true;
 			}
@@ -337,6 +337,7 @@ export class AntiTheftComponent implements OnInit {
 									break;
 								case 1:
 									callback({ status: true });
+									break;
 								default:
 									break;
 							}
