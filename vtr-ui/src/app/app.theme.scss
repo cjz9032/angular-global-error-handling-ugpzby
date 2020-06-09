@@ -429,6 +429,8 @@ $high-contrast-black-disabled: #3be23b;
 $high-contrast-black-yellow: #FFFF00;
 $high-contrast-black-btn-color: #00EBFF;
 $high-contrast-black-disabled-green: #30F42C;
+$high-contrast-white-btn-color: #370070;
+$high-contrast-white-disabled-maroon: #610000;
 
 @mixin outline-blue {
 	outline: 0.1rem solid $menu_hover;
@@ -536,6 +538,29 @@ $high-contrast-black-disabled-green: #30F42C;
 		border: 0.1rem solid $high-contrast-black-disabled-green !important;
 		&:hover, &:active {
 			color: $high-contrast-black-disabled-green;
+		}
+	}
+}
+
+@mixin ui-button-high-contrast-white {
+	@media #{$black-on-white} {
+		background: $high-contrast-white-btn-color;
+		color: $dark;
+		&:hover, &:active {
+			background: $light;
+			color: $high-contrast-white-btn-color;
+			border: 0.1rem solid $high-contrast-white-btn-color;
+		}
+	}
+}
+
+@mixin ui-button-high-contrast-white-disabled {
+	@media #{$black-on-white} {
+		background: $light;
+		color: $high-contrast-white-disabled-maroon;
+		border: 0.1rem solid $high-contrast-white-disabled-maroon !important;
+		&:hover, &:active {
+			color: $high-contrast-white-disabled-maroon;
 		}
 	}
 }

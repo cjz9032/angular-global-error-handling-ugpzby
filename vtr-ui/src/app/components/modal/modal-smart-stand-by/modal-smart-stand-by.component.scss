@@ -43,6 +43,8 @@
 				@include button-outline-blue;
 			}
 		}
+		@include ui-button-high-contrast-black;
+		@include ui-button-high-contrast-white;
 	}
 	.legends-row {
 		// max-width: 93.5%;

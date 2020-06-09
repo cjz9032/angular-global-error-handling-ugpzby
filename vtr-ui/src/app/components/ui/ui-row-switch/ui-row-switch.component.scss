@@ -190,6 +190,7 @@
 				background: $blue_gradient;
 			}
 			@include ui-button-high-contrast-black;
+			@include ui-button-high-contrast-white;
 		}
 	}
 }
