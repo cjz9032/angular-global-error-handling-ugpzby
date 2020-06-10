@@ -239,6 +239,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		]
 	};
 
+
 	public cpuOCStatus: CPUOCStatus = new CPUOCStatus();
 	public setCpuOCStatus: any;
 	public cacheMemOCFeature = false;
@@ -260,7 +261,10 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	};
 
 	thermalModeEvent: any;
-
+	sectionAutoId:any;
+	popupAutoId:any;
+	thermalId:any;
+	thermalModeHomeAutoId:any;
 	constructor(
 		private modalService: NgbModal,
 		private ngZone: NgZone,
@@ -278,8 +282,9 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		private gamingOverDriveService: GamingOverDriveService,
 		private router: Router,
 		private logger: LoggerService
-	) { 
+	) {
 		this.thermalModeEvent = this.onRegThermalModeRealStatusChangeEvent.bind(this);
+		this.getAutomationId(this.thermalModeRealStatus, this.OCSettings);
 	}
 
 	ngOnInit() {
@@ -335,7 +340,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		this.gamingCapabilities.overDriveFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.overDriveFeature
 		)
-		// Version 3.2: init Thermal Mode 2.0 status for cache 
+		// Version 3.2: init Thermal Mode 2.0 status for cache
 		if (this.gamingCapabilities.smartFanFeature) {
 			if (this.gamingCapabilities.thermalModeVersion === 2) {
 				const thermalModeRealStatusCache = this.commonService.getLocalStorageValue(LocalStorageKey.RealThermalModeStatus);
@@ -377,11 +382,56 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				this.legionEdgeInit();
 			}
 		});
+
+		if (!this.gamingCapabilities.liteGaming) {
+			this.sectionAutoId = 'right_section_legion_edge';
+			this.popupAutoId = 'help_popup_legion_edge';
+		} else if (!this.gamingCapabilities.liteGaming && this.gamingCapabilities.desktopType) {
+			this.sectionAutoId = 'right_section_ideacentre_gaming';
+			this.popupAutoId = 'help_popup_ideacentre_gaming';
+		} else if(this.gamingCapabilities.liteGaming && !this.gamingCapabilities.desktopType) {
+			this.sectionAutoId = 'right_section_ideapad_gaming';
+			this.popupAutoId = 'help_popup_ideapad_gaming';
+		}
+
 	}
 
 	ngOnDestroy(): void {
 		this.unRegisterThermalModeRealStatusChangeEvent();
 	}
+
+	getAutomationId(status: any, OCSetting: any) {
+		if (status === this.thermalMode2Enum.performance && !OCSetting)
+			this.thermalModeHomeAutoId = 'thermal_mode_performance';
+		if (status === this.thermalMode2Enum.performance && OCSetting)
+			this.thermalModeHomeAutoId = 'thermal_mode_performance_overclock_on';
+		if (status === this.thermalMode2Enum.balance)
+			this.thermalModeHomeAutoId = 'thermal_mode_balance';
+		if (status === this.thermalMode2Enum.quiet)
+			this.thermalModeHomeAutoId = 'thermal_mode_quiet';
+	}
+	// getAutomationId(status: any, OCSettings: any ) {
+	// 	switch (status) {
+	// 		case this.thermalMode2Enum.performance && !OCSettings :
+	// 			this.thermalModeHomeAutoId = 'thermal_mode_performance';
+	// 			break;
+	// 		case this.thermalMode2Enum.performance && OCSettings :
+	// 			this.thermalModeHomeAutoId = 'thermal_mode_performance_overclock_on';
+	// 			break;
+	// 		case this.thermalMode2Enum.balance :
+	// 			this.thermalModeHomeAutoId = 'thermal_mode_balance';
+	// 			break;
+	// 		case this.thermalMode2Enum.quiet :
+	// 			this.thermalModeHomeAutoId = 'thermal_mode_quiet';
+	// 			break;
+	// 		default:
+	// 			break;
+	// 	}
+	// }
+
+
+
+
 
 	legionEdgeInit() {
 		const gamingStatus = this.gamingCapabilities;
@@ -538,7 +588,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			});
 		} catch (error) { }
 	}
-	// Version 3.2: real status of thermal mode 2 
+	// Version 3.2: real status of thermal mode 2
 	public renderThermalMode2RealStatus() {
 		try {
 			this.gamingThermalModeService.getThermalModeRealStatus().then(res => {
@@ -547,6 +597,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 					this.thermalModeRealStatus = res;
 					this.commonService.setLocalStorageValue(LocalStorageKey.RealThermalModeStatus, this.thermalModeRealStatus);
 				}
+				//this.getAutomationId(this.thermalModeRealStatus, this.OCSettings);
 			});
 		} catch (error) {
 			this.logger.error('Widget-LegionEdge-RenderThermalMode2RealStatus: get fail; Error message: ', error.message);
@@ -586,6 +637,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				this.thermalModeRealStatus = currentRealStatus;
 				this.commonService.setLocalStorageValue(LocalStorageKey.RealThermalModeStatus, this.thermalModeRealStatus);
 			}
+			// this.getAutomationId(this.thermalModeRealStatus, this.OCSettings);
 		});
 	}
 	// Version 3.2: performanceOC

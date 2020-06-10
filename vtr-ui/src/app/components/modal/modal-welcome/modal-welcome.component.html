@@ -9,19 +9,16 @@
 		<div class="card shadow-sm">
 			<div class="card-body p-0"
 				*ngIf="'welcometutorial.title1' | translate">
-				<div class="banner-page-1 row justify-content-center align-items-center">
-					<div class="col-auto title-alignment">
+				<div class="banner-page-1 row justify-content-center align-items-center" id="tutorial_header_image_first_page" role="text">
+					<div class="col-auto title-alignment" id="tutorial_weclome_text" role="text">
 						<div class="row justify-content-center align-items-center">
 							<div class="col-auto title1 text-center"
-								id="welcome-tutorial-page-title"
-								role="text">
+								>
 								{{ "welcometutorial.title1" | translate }}
 							</div>
 						</div>
 						<div class="row justify-content-center align-items-center ">
-							<div class="col-auto px-1 title1 uppercase text-center"
-								id="welcome-tutorial-page-subtitle"
-								role="text">
+							<div class="col-auto px-1 title1 uppercase text-center">
 								{{ "welcometutorial.title2" | translate }}
 								<span>{{ "welcometutorial.title3" | translate }}</span>
 							</div>
@@ -39,7 +36,7 @@
 						</div>
 						<div class="col-auto title2"
 							*ngIf="deviceService.isGaming"
-							id="welcome-tutorial-page-gaming-description"
+							id="tutorial_text_list_description"
 							role="text"
 							[innerHTML]="'welcometutorial.gaming.gamingDescription'| translate">
 						</div>
@@ -62,7 +59,7 @@
 						[hidden]="deviceService.isArm || !deviceService.isGaming">
 						<div class="col-auto title2">
 							<div *ngFor="let item of allGamingFeatures"
-								[id]="'welcome-tutorial-page-gaming-' + item.id"
+								[id]="item.autoid"
 								role="text"
 								[innerHTML]="item.label | translate">
 							</div>
@@ -95,13 +92,13 @@
 		<div class="card shadow-sm">
 			<div class="card-body p-0"
 				*ngIf="'welcometutorial.subtitle1' | translate">
-				<div class="banner-page-2 row justify-content-center align-items-center">
+				<div class="banner-page-2 row justify-content-center align-items-center" id="tutorial_header_image_second_page" role="text">
 				</div>
 				<div class="content-page-2"
 					id="welcome-body-scroll">
 					<div class="row justify-content-center align-items-center font-14-bold mb-20">
 						<div class="col-auto title2 uppercase text-center"
-							id="welcome-tutorial-page-2-subtitle1"
+							id="tutorial_select_theme_text"
 							role="text">
 							{{ "welcometutorial.subtitle1" | translate }}
 						</div>
@@ -115,6 +112,7 @@
 								<input type="radio"
 									tabindex="0"
 									id="segment-choose-{{usage.id}}"
+									role="radiogroup"
 									[attr.aria-label]="usage.textKey | translate"
 									[checked]="usageType && usageType === usage.value"
 									[value]="usage.value"
@@ -148,6 +146,7 @@
 								<img src="assets/images/welcome/{{scenario.image}}"
 									alt="" />
 								<label for="gaming-scenario-choose-{{scenario.id}}"
+								id="{{'welcometutorial_scenario_choose_'+scenario.value | lowercase}}"
 									aria-hidden="true"
 									class="centered">
 									{{ scenario.textKey | translate }}
@@ -158,7 +157,7 @@
 
 					<div class="row justify-content-center align-items-center font-14-bold col-12 mb-20">
 						<div class="col-auto title2 uppercase text-center"
-							id="welcome-tutorial-page-2-subtitle2"
+							id="tutorial_interests_text"
 							role="text">
 							{{ "welcometutorial.subtitle2" | translate}}
 						</div>
@@ -173,8 +172,8 @@
 								(click)="toggle($event, interest.label)"
 								(keypress)="onKeyPress($event)"
 								[checked]="interest.checked" />
-							<label [for]="interest.label + 'checkbox-welcome'"
-								aria-hidden="true">{{ "welcometutorial.interests." + interest.label | translate }}</label>
+							<label [for]="interest.label + 'checkbox-welcome'" id="{{'welcometutorial_interests_'+ interest.label | lowercase}}"
+							aria-hidden="true">{{ "welcometutorial.interests." + interest.label | translate }}</label>
 
 						</div>
 					</div>
@@ -198,11 +197,11 @@
 								class="custom-control-input"
 								(keypress)="onKeyPress($event)"
 								id="welcome-toolbar-label">
-							<label class="custom-control-label-out"></label>
-							<label class="custom-control-label"
+							<label class="custom-control-label-out" ></label>
+							<label  class="custom-control-label" [id]="!vantageToolbar? 'tutorial_enable_toolbar_checkbox_unchecked':'tutorial_enable_toolbar_checkbox_checked'"
 								dir="{{'dir' | translate}}"
 								for="welcome-toolbar-label">
-								{{ "welcometutorial.toolbartitle" | translate }}
+								<span id="tutorial_enable_toolbar_text" role="text">{{ "welcometutorial.toolbartitle" | translate }}</span>
 							</label>
 						</div>
 					</div>
@@ -214,12 +213,12 @@
 								(keypress)="onKeyPress($event)"
 								[checked]="privacyPolicy"
 								class="custom-control-input"
-								id="welcome-privacy-label">
+								id="welcome-privacy-label" >
 							<label class="custom-control-label-out"></label>
-							<label class="custom-control-label"
+							<label class="custom-control-label" [id]="!privacyPolicy ? 'tutorial_metrics_collection_checkbox_unchecked':'tutorial_metrics_collection_checkbox_checked'"
 								for="welcome-privacy-label"
 								[dir]="'dir' | translate">
-								{{ "welcometutorial.privacytitle" | translate }}
+								<span id="tutorial_metrics_collection_text" role="text">{{ "welcometutorial.privacytitle" | translate }} </span>
 								<a class="linktext"
 									tabindex="0"
 									id="welcome-privacy-link"
