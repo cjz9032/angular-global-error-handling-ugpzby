@@ -1,10 +1,10 @@
 <div class="ui-lighting-notebook">
     <div class="lighting-notebook-content">
-        <div class="lighting-describe">
+        <div class="lighting-describe" id="gaming_lighting_profile_description_fn+space" role="text">
             {{'gaming.lightingNewversion.tipText.title1' | translate}}
         </div>
         <div class="lighting-profile-toggle">
-            <vtr-ui-lighting-profile-toggle [currentProfile]="currentProfileId" 
+            <vtr-ui-lighting-profile-toggle [currentProfile]="currentProfileId"
             (setLightingProfileId)="setLightingProfileId($event)"
             [id]="'profile'" [automationId]="'profile'"></vtr-ui-lighting-profile-toggle>
         </div>
@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class="lighting-color">
-                <h3 class="content-title">{{'gaming.lightingProfile.colourwheel.text7.title' | translate}} </h3> 
+                <h3 class="content-title">{{'gaming.lightingProfile.colourwheel.text7.title' | translate}} </h3>
                 <div class="lighting-color-inner">
                     <vtr-ui-lighting-keyboard-lnbx50 [listInfo]="lightInfo" [isDisabled]="isDisabled"
                         [isDefault]="isDefault" [profileId]="currentProfileId" [isColorPicker]="isColorPicker"
@@ -48,7 +48,7 @@
         </div>
         <div *ngIf="isProfileOff"
              class="lighting-off d-flex justify-content-center align-items-center">
-        {{'gaming.lightingProfile.profile.text1.title' | translate}}   
+        {{'gaming.lightingProfile.profile.text1.title' | translate}}
         </div>
     </div>
 </div>
