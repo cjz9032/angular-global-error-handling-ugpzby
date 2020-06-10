@@ -33,6 +33,12 @@
 			max-width: 12rem;
 		}
 
+		.mcafee-black-invert {
+			@media #{$white-on-black} {
+				filter: invert(1);
+			}
+		}
+
 		.divider {
 			margin: 2rem 0 1rem 0;
 			height: 0.1rem;
