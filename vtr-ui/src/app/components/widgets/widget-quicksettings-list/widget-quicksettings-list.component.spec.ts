@@ -9,6 +9,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { CommonService } from 'src/app/services/common/common.service';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { GamingThermalModeService } from 'src/app/services/gaming/gaming-thermal-mode/gaming-thermal-mode.service';
+import { WifiSecurityService } from 'src/app/services/security/wifi-security.service';
 import { AudioService } from 'src/app/services/audio/audio.service';
 import { PowerService } from 'src/app/services/power/power.service';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
@@ -121,6 +122,7 @@ describe("WidgetQuicksettingsListComponent", () => {
 
 	let shellServiveSpy = jasmine.createSpyObj('VantageService', ['getGamingAllCapabilities', 'registerEvent', 'unRegisterEvent', ,'getSecurityAdvisor', 'getLogger']);
 	let gamingThermalModeServiceSpy = jasmine.createSpyObj('GamingThermalModeService', ['getThermalModeStatus', 'setThermalModeStatus', 'regThermalModeChangeEvent']);
+	let wifiSecurityServiceSpy = jasmine.createSpyObj('WifiSecurityService', ['isLWSEnabled', 'wifiSecurity']);
 	let audioServiceSpy = jasmine.createSpyObj('AudioService', ['getDolbyMode', 'setDolbyAudioState', 'startMonitorForDolby', 'stopMonitorForDolby']);
 	let powerServiceSpy = jasmine.createSpyObj('PowerService', ['getRapidChargeModeStatusIdeaNoteBook', 'setRapidChargeModeStatusIdeaNoteBook', ]);
 	let dialogServiceSpy = jasmine.createSpyObj('DialogService', ['wifiSecurityLocationDialog', '']);
@@ -165,6 +167,7 @@ describe("WidgetQuicksettingsListComponent", () => {
 					{ provide: CommonService, useValue: commonServiceMock},
 					{ provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock},
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceMock},
+					{ provide: WifiSecurityService, useValue: wifiSecurityServiceSpy},
 					{ provide: AudioService, useValue: audioServiceSpy},
 					{ provide: PowerService, useValue: powerServiceSpy},
 					{ provide: DialogService, useValue: dialogServiceSpy},
@@ -355,6 +358,7 @@ describe("WidgetQuicksettingsListComponent", () => {
 					{ provide: CommonService, useValue: commonServiceMock},
 					{ provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock},
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy},
+					{ provide: WifiSecurityService, useValue: wifiSecurityServiceSpy},
 					{ provide: AudioService, useValue: audioServiceSpy},
 					{ provide: PowerService, useValue: powerServiceMock},
 					{ provide: DialogService, useValue: dialogServiceSpy},
@@ -690,6 +694,7 @@ describe("WidgetQuicksettingsListComponent", () => {
 					{ provide: CommonService, useValue: commonServiceMock},
 					{ provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock},
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy},
+					{ provide: WifiSecurityService, useValue: wifiSecurityServiceSpy},
 					{ provide: AudioService, useValue: audioServiceMock},
 					{ provide: PowerService, useValue: powerServiceSpy},
 					{ provide: DialogService, useValue: dialogServiceSpy},
