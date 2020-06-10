@@ -120,6 +120,8 @@
 			&:hover {
 				background: linear-gradient(90deg, $grey_lighter 0%, $grey_lighter 100%);
 			}
+			@include ui-button-high-contrast-white;
+			@include ui-button-high-contrast-black;
 		}
 		.btn-in-red-bg {
 			color: $stop_dark;

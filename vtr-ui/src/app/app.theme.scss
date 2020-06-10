@@ -427,9 +427,9 @@ $high-contrast-white-disabled: #600000;
 $high-contrast-black-textselected: #1aebff;
 $high-contrast-black-disabled: #3be23b;
 $high-contrast-black-yellow: #FFFF00;
-$high-contrast-black-btn-color: #00EBFF;
+$high-contrast-black-cyan: #00EBFF;
 $high-contrast-black-disabled-green: #30F42C;
-$high-contrast-white-btn-color: #370070;
+$high-contrast-white-dark-magenta: #370070;
 $high-contrast-white-disabled-maroon: #610000;
 
 @mixin outline-blue {
@@ -521,12 +521,13 @@ $high-contrast-white-disabled-maroon: #610000;
 
 @mixin ui-button-high-contrast-black {
 	@media #{$white-on-black} {
-		background: $high-contrast-black-btn-color;
+		background: $dark;
 		color: $light;
+		border: 0.1rem solid $light;
 		&:hover, &:active {
 			background: $dark;
-			color: $high-contrast-black-btn-color;
-			border: 0.1rem solid $high-contrast-black-btn-color;
+			color: $high-contrast-black-cyan;
+			border: 0.1rem solid $high-contrast-black-cyan;
 		}
 	}
 }
@@ -544,12 +545,13 @@ $high-contrast-white-disabled-maroon: #610000;
 
 @mixin ui-button-high-contrast-white {
 	@media #{$black-on-white} {
-		background: $high-contrast-white-btn-color;
+		background: $light;
 		color: $dark;
+		border: 0.1rem solid $dark;
 		&:hover, &:active {
 			background: $light;
-			color: $high-contrast-white-btn-color;
-			border: 0.1rem solid $high-contrast-white-btn-color;
+			color: $high-contrast-white-dark-magenta;
+			border: 0.1rem solid $high-contrast-white-dark-magenta;
 		}
 	}
 }
