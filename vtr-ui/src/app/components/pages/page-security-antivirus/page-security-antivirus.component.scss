@@ -102,6 +102,18 @@
 			}
 		}
 
+		.high-contrast-border {
+			@media #{$black-on-white} {
+				border: 0.1rem solid $dark;
+				box-shadow: none;
+			}
+
+			@media #{$white-on-black} {
+				border: 0.1rem solid $light;
+				box-shadow: none;
+			}
+		}
+
 		.mcafee {
 			.vtr-widget-offline-info {
 				@media #{$breakpoint_xl} {
@@ -306,6 +318,34 @@
 					&:hover {
 						background: $light;
 						color: $main;
+					}
+
+					@media #{$high-contrast} {
+						-ms-high-contrast-adjust: none;
+					}
+
+					@media #{$black-on-white} {
+						border-color: $dark !important;
+						background: $light !important;
+						color: $dark !important;
+
+						&:hover {
+							border-color: $high-contrast-white-textselected !important;
+							background: $high-contrast-white-textselected !important;
+							color: $light !important;
+						}
+					}
+
+					@media #{$white-on-black} {
+						color: $light !important;
+						border-color: $light !important;
+						background: $dark !important;
+
+						&:hover {
+							color: $dark !important;
+							border-color: $high-contrast-black-textselected !important;
+							background: $high-contrast-black-textselected !important;
+						}
 					}
 				}
 			}

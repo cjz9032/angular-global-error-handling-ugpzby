@@ -109,6 +109,32 @@
 					color: $main!important;
 					min-width: 24rem !important;
 					font-weight: $weight_bold;
+
+					@media #{$high-contrast} {
+						-ms-high-contrast-adjust: none;
+					}
+
+					@media #{$black-on-white} {
+						border-color: $dark !important;
+						background: $light !important;
+						color: $dark!important;
+						&:hover {
+							border-color: $high-contrast-white-textselected !important;
+							background: $high-contrast-white-textselected !important;
+							color: $light!important;
+						}
+					}
+
+					@media #{$white-on-black} {
+						color: $light !important;
+						border-color: $light !important;
+						background: $dark !important;
+						&:hover {
+							color: $dark !important;
+							border-color: $high-contrast-black-textselected !important;
+							background: $high-contrast-black-textselected !important;
+						}
+					}
 				}
 			}
 		}
@@ -120,6 +146,27 @@
 				.button {
 					color: $light!important;
 					min-width: 20rem;
+					@media #{$high-contrast} {
+						-ms-high-contrast-adjust: none;
+					}
+					@media #{$black-on-white} {
+						border-color: $high-contrast-white-textselected !important;
+						background: $high-contrast-white-textselected !important;
+						&:hover {
+							background: $light!important;
+							color: $high-contrast-white-textselected!important;
+						}
+					}
+
+					@media #{$white-on-black} {
+						color: $dark!important;
+						border-color: $high-contrast-black-textselected !important;
+						background: $high-contrast-black-textselected!important;
+						&:hover {
+							background: $dark!important;
+							color: $high-contrast-black-textselected !important;
+						}
+					}
 				}
 				.disable {
 					background: $grey_light !important;
@@ -133,6 +180,29 @@
 					.text {
 						cursor: default;
 						opacity: 0.5;
+					}
+
+					@media #{$black-on-white} {
+						border: 0.1rem solid $high-contrast-white-disabled !important;
+						background: $light !important;
+						color: $high-contrast-white-disabled !important;
+
+						&:hover {
+							border: 0.1rem solid $high-contrast-white-disabled !important;
+							background: $light !important;
+							color: $high-contrast-white-disabled !important;
+						}
+					}
+
+					@media #{$white-on-black} {
+						border: 0.1rem solid $high-contrast-black-disabled !important;
+						background: $dark!important;
+						color: $high-contrast-black-disabled!important;
+						&:hover {
+							border: 0.1rem solid $high-contrast-black-disabled !important;
+							background: $dark !important;
+							color: $high-contrast-black-disabled !important;
+						}
 					}
 				}
 			}
@@ -166,12 +236,28 @@
 				font-size: 1.3rem;
 				line-height: 2rem;
 			}
+
 		}
 
 		.icon-check {
 			background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
 			background-color: $go_dark;
 			border-color: $go_dark;
+			@media #{$black-on-white} {
+				background: $dark;
+
+				fa-icon {
+					color: $light;
+				}
+			}
+
+			@media #{$white-on-black} {
+				background: $light;
+
+				fa-icon {
+					color: $dark;
+				}
+			}
 		}
 
 		.icon-check:before {
@@ -182,6 +268,19 @@
 			background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
 			background-color: $stop_dark;
 			border-color: $stop_dark;
+			@media #{$black-on-white} {
+				background: $dark;
+				fa-icon {
+					color: $light;
+				}
+			}
+
+			@media #{$white-on-black} {
+				background: $light;
+				fa-icon {
+					color: $dark;
+				}
+			}
 		}
 
 		.icon-dot {
