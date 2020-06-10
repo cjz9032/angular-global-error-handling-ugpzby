@@ -3,11 +3,12 @@ import { TopRowFunctionsIdeapadService } from './top-row-functions-ideapad.servi
 import { FnLockStatus, KeyType, PrimaryKeySetting } from './top-row-functions-ideapad.interface';
 import { merge, Observable, of, Subject, Subscription } from 'rxjs';
 import { concatMap, map, mergeMap, switchMap, takeWhile, tap, throttleTime } from 'rxjs/operators';
-import { MetricService } from '../../../../../../services/metric/metrics.service';
 import { CommonService } from '../../../../../../services/common/common.service';
 import { LocalStorageKey } from '../../../../../../enums/local-storage-key.enum';
 import { StringBooleanEnum } from '../../../../../../data-models/common/common.interface';
 import { UiCircleRadioWithCheckBoxListModel } from 'src/app/components/ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
+import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
+import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 
 @Component({
 	selector: 'vtr-top-row-functions-ideapad',
@@ -35,7 +36,7 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 
 	constructor(
 		private topRowFunctionsIdeapadService: TopRowFunctionsIdeapadService,
-		private metrics: MetricService,
+		private metrics: CommonMetricsService,
 		private commonService: CommonService,
 		private ngZone: NgZone
 	) {
@@ -59,13 +60,14 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 					takeWhile(status1 => status1),
 					tap(() => {
 						const machineFamilyName = this.commonService.getLocalStorageValue(LocalStorageKey.MachineFamilyName);
-						const metricsData = {
-							ItemParent: 'Device.MyDeviceSettings',
-							ItemName: 'TopRowFunctionsIdeapad',
-							ItemParam: { machineFamilyName },
-							ItemValue: KeyType.HOTKEY
-						};
-						this.metrics.sendMetrics(metricsData);
+
+						this.metrics.sendMetrics(
+							KeyType.HOTKEY
+							, 'radio.TopRowFunctionsIdeapad'
+							, CommonMetricsModel.ParentDeviceSettings
+							, CommonMetricsModel.ItemType
+							, { machineFamilyName }
+						);
 					})
 				))
 			);
@@ -80,13 +82,14 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 					takeWhile(status1 => status1),
 					tap(() => {
 						const machineFamilyName = this.commonService.getLocalStorageValue(LocalStorageKey.MachineFamilyName);
-						const metricsData = {
-							ItemParent: 'Device.MyDeviceSettings',
-							ItemName: 'TopRowFunctionsIdeapad',
-							ItemParam: { machineFamilyName },
-							ItemValue: KeyType.FNKEY
-						};
-						this.metrics.sendMetrics(metricsData);
+
+						this.metrics.sendMetrics(
+							KeyType.FNKEY
+							, 'radio.TopRowFunctionsIdeapad'
+							, CommonMetricsModel.ParentDeviceSettings
+							, CommonMetricsModel.ItemType
+							, { machineFamilyName }
+						);
 					})
 				))
 			);

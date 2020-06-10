@@ -148,7 +148,7 @@ export class UiRoundedRectangleCustomRadioListComponent implements OnInit, OnCha
 			const metricsData = {
 				ItemParent: this.metricsParent || this.activatedRoute.snapshot.data.pageName,
 				ItemType: 'FeatureClick',
-				ItemName: radio.componentId,
+				ItemName: radio.metricsValue,
 				ItemValue: radio.isChecked
 			};
 			this.metrics.sendMetrics(metricsData);

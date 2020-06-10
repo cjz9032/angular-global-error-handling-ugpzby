@@ -211,7 +211,7 @@ export class ActiveProtectionSystemComponent implements OnInit {
 		this.smartAssist
 			.setAutoDisableSetting(event)
 			.then(res => { });
-			this.commonMetricsService.sendMetrics(event, 'ActiveProtectionSystem.AutoDisable', CommonMetricsModel.ParentDeviceSettings);
+			this.commonMetricsService.sendMetrics(event, 'cb.aps-auto-disable', CommonMetricsModel.ParentDeviceSettings);
 	}
 
 	setSnoozeSetting(event) {
@@ -227,7 +227,7 @@ export class ActiveProtectionSystemComponent implements OnInit {
 					});
 			});
 
-		this.commonMetricsService.sendMetrics(value, 'ActiveProtectionSystem.ManualOverride', CommonMetricsModel.ParentDeviceSettings);
+		this.commonMetricsService.sendMetrics(value, 'cb.aps-manual-override', CommonMetricsModel.ParentDeviceSettings);
 	}
 
 	setSnoozeTime(event: DropDownInterval) {

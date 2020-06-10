@@ -69,7 +69,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	public zeroTouchPresenceLeaveDistanceAutoAdjustCapability = false;
 	public isRegisterHPDRpcCallback = false;
 	private cameraAccessChangedHandler: any;
-	public readonly metricsParent  = CommonMetricsModel.ParentDeviceSettings;
+	public readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
 
 	public featureInitialize = {
 		security: true,
@@ -95,21 +95,24 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		label: 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.fast',
 		value: this.FAST,
 		isChecked: this.intelligentSecurity.autoScreenLockTimer === this.FAST,
-		isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled)
+		isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled),
+		metricsValue: 'radio.fast'
 	},
 	{
 		componentId: 'autoScreenLockTimer_medium',
 		label: 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.medium',
 		value: this.MEDIUM,
 		isChecked: this.intelligentSecurity.autoScreenLockTimer === this.MEDIUM,
-		isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled)
+		isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled),
+		metricsValue: 'radio.medium'
 	},
 	{
 		componentId: 'autoScreenLockTimer_slow',
 		label: 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.slow',
 		value: this.SLOW,
 		isChecked: this.intelligentSecurity.autoScreenLockTimer === this.SLOW,
-		isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled)
+		isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled),
+		metricsValue: 'radio.slow'
 	}];
 
 
@@ -977,36 +980,15 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		}
 
 		if (this.headerMenuItems.length >= 2) {
-			this.headerMenuItems = this.headerMenuItems.sort((a, b)=> { return a.sortOrder - b.sortOrder; })
+			this.headerMenuItems = this.headerMenuItems.sort((a, b) => { return a.sortOrder - b.sortOrder; })
 		}
 	}
 
-
 	updateZeroTouchLockTimersUIModel() {
-		// let uniqueName = 'zero-Touch-Lock';
-		// let disabled = !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled);
-		this.zeroTouchLockTimersUIModel = [];
-		this.zeroTouchLockTimersUIModel = [{
-			componentId: 'autoScreenLockTimer_fast',
-			label: 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.fast',
-			value: this.FAST,
-			isChecked: this.intelligentSecurity.autoScreenLockTimer === this.FAST,
-			isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled)
-		},
-		{
-			componentId: 'autoScreenLockTimer_medium',
-			label: 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.medium',
-			value: this.MEDIUM,
-			isChecked: this.intelligentSecurity.autoScreenLockTimer === this.MEDIUM,
-			isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled)
-		},
-		{
-			componentId: 'autoScreenLockTimer_slow',
-			label: 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.slow',
-			value: this.SLOW,
-			isChecked: this.intelligentSecurity.autoScreenLockTimer === this.SLOW,
-			isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled)
-		}];
+		if (this.zeroTouchLockTimersUIModel && this.zeroTouchLockTimersUIModel.length > 0) {
+			this.zeroTouchLockTimersUIModel.forEach(model => {
+				model.isChecked = (this.intelligentSecurity.autoScreenLockTimer === model.value);
+			});
+		}
 	}
-
 }

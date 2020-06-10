@@ -458,7 +458,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			const other = {
 				title: 'device.deviceSettings.power.otherSettings.title',
 				path: 'other',
-				metricsItem: 'OtherSettings',
+				metricsItem: 'LenovoVantageToolbar',
 				order: 1
 			};
 			this.headerMenuItems = this.commonService.addToObjectsList(this.headerMenuItems, other);

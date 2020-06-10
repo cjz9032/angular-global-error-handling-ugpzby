@@ -206,6 +206,7 @@
 											<vtr-ui-checkbox [componentId]="'cb-airplane-mode'"
 												[isMetricsEnabled]=true
 												[metricsParent]='metricsParent'
+												[metricsItem]="'cb.airplane-mode'"
 												[value]="airplaneAutoDetection"
 												[checked]="airplaneAutoDetection"
 												[label]="'device.deviceSettings.power.batterySettings.airPlanePower.checkBoxDesc' | translate"
@@ -268,6 +269,7 @@
 											<vtr-ui-checkbox *ngIf="usbChargingInBatteryModeStatus"
 												[isMetricsEnabled]=true
 												[metricsParent]='metricsParent'
+												[metricsItem]="'cb.always-on-usb'"
 												[componentId]="'cb-always-on-usb'"
 												[disabled]="!toggleAlwaysOnUsbFlag"
 												[value]="usbChargingCheckboxFlag"
