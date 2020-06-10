@@ -15,8 +15,6 @@ import { PowerService } from 'src/app/services/power/power.service';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { GuardService } from 'src/app/services/guard/guardService.service';
 
-import { Emitter } from 'mitt';
-
 describe("WidgetQuicksettingsListComponent", () => {
 
 	let component: WidgetQuicksettingsListComponent;
