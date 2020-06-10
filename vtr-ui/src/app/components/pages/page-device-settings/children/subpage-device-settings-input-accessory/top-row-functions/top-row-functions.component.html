@@ -27,6 +27,7 @@
 					<div class="mb-3">
 						<div class="col-12 pl-0 d-flex methods-block">
 							<vtr-ui-circle-radio-with-checkbox-list [groupName]="'top-row-function-radio-group'"
+								[sendMetrics]=true
 								[isDisabled]="topRowKeyObj.stickyFunStatus"
 								(optionChange)="onFunctionLockRadioChange($event)"
 								[radioDetails]="functionLockUIModel">
