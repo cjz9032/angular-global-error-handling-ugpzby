@@ -71,6 +71,10 @@
 		.logo {
 			align-self: center;
 			height: 6rem;
+
+			@media #{$black-on-white} {
+				filter: invert(1);
+			}
 		}
 
 		.number {

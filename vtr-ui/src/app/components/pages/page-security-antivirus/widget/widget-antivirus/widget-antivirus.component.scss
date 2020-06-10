@@ -11,6 +11,16 @@
 	border-radius: $border_radius;
 	background: $light;
 
+	@media #{$black-on-white} {
+		border: 0.1rem solid $dark;
+		box-shadow: none;
+	}
+
+	@media #{$white-on-black} {
+		border: 0.1rem solid $light;
+		box-shadow: none;
+	}
+
 	.title {
 		color: $main_darkest;
 		font-size: $fontsize_xl;

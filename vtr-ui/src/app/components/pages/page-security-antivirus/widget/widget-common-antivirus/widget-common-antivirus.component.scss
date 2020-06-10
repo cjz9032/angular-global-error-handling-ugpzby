@@ -17,6 +17,16 @@
 	}
 
 	.content {
+		@media #{$black-on-white} {
+			border: 0.1rem solid $dark;
+			box-shadow: none;
+		}
+	
+		@media #{$white-on-black} {
+			border: 0.1rem solid $light;
+			box-shadow: none;
+		}
+
 		@media #{$breakpoint_xl} {
 			flex-direction: column;
 		}
