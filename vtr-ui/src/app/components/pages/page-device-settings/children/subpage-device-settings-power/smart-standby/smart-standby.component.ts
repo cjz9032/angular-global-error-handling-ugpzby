@@ -134,6 +134,8 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	}
 
 	initSmartStandby() {
+		// fix for VAN-19096: called so that SmartStandby section is reinitialized(shell side) hence the update in capability response
+		this.getIsAutonomicCapability();
 		this.initDataFromCache();
 		this.splitStartEndTime();
 	}
