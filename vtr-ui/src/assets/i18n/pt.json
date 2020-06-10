@@ -1066,8 +1066,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "Para prolongar a vida útil da bateria, otimizámos a capacidade de carga completa com na sua utilização. A capacidade total da bateria poderá não estar disponível enquanto não a descarregar até 20% e a voltar a carregar.",
-                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
+                    "fccTooltipText": "Para prolongar a vida útil da bateria, otimizámos a capacidade de carga completa com na sua utilização. A capacidade total da bateria poderá não estar disponível enquanto não a descarregar até 20% e a voltar a carregar."
                 },
                 "condition": {
                     "Illegal": "A bateria instalada <b>não é suportada</b> pelo sistema e não será carregada. Substitua a bateria pela bateria correta da Lenovo para este sistema.",
@@ -1095,16 +1094,6 @@
                 "gaugeResetWarning": "<b>Nota:</b> A reposição do indicador de bateria está em curso. Mantenha o transformador CA conectado.",
                 "dualConditions": {
                     "NotDetected": "<b>A bateria principal não foi detetada.</b>"
-                },
-                "highDensityBattery": {
-                    "title": "High density battery",
-                    "subtitle": "How your battey works",
-                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
-                    "para2": {
-                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
-                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
-                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
-                    }
                 }
             },
             "power": {
@@ -2251,9 +2240,6 @@
         },
         "support": {
             "title": "Sítio de suporte na Web da Lenovo"
-        },
-        "security": {
-            "title": "For a better protection for your device"
         },
         "banner": {
             "neverChecked": "Bem-vindo à Atualização do Sistema.",

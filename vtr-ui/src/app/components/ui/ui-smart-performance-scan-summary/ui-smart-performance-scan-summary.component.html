@@ -14,7 +14,7 @@
 												<div class="col col-12 offline-info-background">
 													<div class="w-100">
 														<div class="row d-flex justify-content-between">
-															<div class="mt-5 hero-text" *ngIf="!isSubscribed">
+															<div class="mt-5" *ngIf="!isSubscribed">
 																<h1>{{'smartPerformance.scanCompletePage.title' |translate }}
 																</h1>
 																<h3>{{'smartPerformance.scanCompletePage.description' |translate }}
@@ -416,7 +416,7 @@
 																							<span class="ml-1" *ngIf="item.type.toUpperCase() == 'SS'">({{'smartPerformance.auto' |translate }})</span>
 
 																					</div>
-																					<div class="col-2">{{item.fixcount | number:'2.0'}} Fix(es)
+																					<div class="col-2">{{item.fixcount === 0 ? item.fixcount : (item.fixcount | number:'2.0')}} {{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' | translate}}
 																					</div>
 																					<div class="col-2" *ngIf="item.status === 'C'">
 																						<div class="icon-check">

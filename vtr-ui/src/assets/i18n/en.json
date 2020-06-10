@@ -2254,9 +2254,6 @@
 		"support": {
 			"title": "Lenovo Support website"
 		},
-		"security": {
-			"title": "For a better protection for your device"
-		},
 		"banner": {
 			"neverChecked": "Welcome to use System Update.",
 			"title": "An up-to-date system is a healthy system.",
@@ -2941,7 +2938,7 @@
 				"tune": "Tune",
 				"tuneSummary": "Disk space reclaimed",
 				"summaryCaption": "space reclaimed",
-				"fixes": "fix(es)",
+				"fixes": "Fix(es)",
 				"boost": "Boost",
 				"boostSummary": "Fixes to improve performance",
 				"secure": "Secure",

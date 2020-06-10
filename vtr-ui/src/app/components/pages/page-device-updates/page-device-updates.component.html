@@ -80,20 +80,33 @@
 				</div>
 			</div>
 
-			<div class="row" *ngFor="let card of rightCards; index as i" [hidden]="!card.show">
+			<div class="row">
 				<div class="col col-12 mb-5">
-					<vtr-container-card [item]="card.cardContent"
-						[id]="card.id"
-						[attr.aria-label]="card.ariaLabel"
-						[type]="card.type"
-						[order]="(!showSecurityWidget ? card.order - 1 : card.order).toString()"
+					<vtr-container-card [item]="supportWebsiteCard"
+						id="su-web-support-cardcontent"
+						aria-label="su-web-support-cardcontent"
+						[type]="'subpage-partner-corner'"
+						order="2"
 						sideFlag='r'
-						[ratio]="2"
-						[cornerShift]="card.cornerShift ? card.cornerShift : ''">
+						[ratio]="2">
 					</vtr-container-card>
 				</div>
 			</div>
 
+			<div class="row">
+				<div class="col col-12 mb-5">
+					<vtr-container-card
+						id="su-positionA-cardcontent"
+						aria-label="su-positionA-cardcontent"
+						[item]="cardContentPositionA"
+						[type]="'subpage-corner'"
+						order="3"
+						sideFlag='r'
+						[ratio]="2"
+						[cornerShift]="'large'">
+					</vtr-container-card>
+				</div>
+			</div>
 		</div>
 	</right-content>
 

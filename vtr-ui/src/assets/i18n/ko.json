@@ -1066,8 +1066,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "배터리 수명을 연장하기 위해 사용량에 따라 완전 충전 용량을 최적화했습니다. 완전 충전 용량은 배터리를 20%까지 방전시킨 다음 재충전해야 사용할 수 있습니다.",
-                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
+                    "fccTooltipText": "배터리 수명을 연장하기 위해 사용량에 따라 완전 충전 용량을 최적화했습니다. 완전 충전 용량은 배터리를 20%까지 방전시킨 다음 재충전해야 사용할 수 있습니다."
                 },
                 "condition": {
                     "Illegal": "시스템에서 <b>지원되지 않는</b> 배터리를 설치하여 충전되지 않습니다. 이 시스템에 맞는 Lenovo 배터리로 교체하십시오.",
@@ -1095,16 +1094,6 @@
                 "gaugeResetWarning": "<b>참고:</b> 배터리 게이지 리셋이 진행 중입니다. AC 전원 어댑터를 연결 상태로 두십시오.",
                 "dualConditions": {
                     "NotDetected": "<b>기본 배터리를 찾을 수 없습니다.</b>"
-                },
-                "highDensityBattery": {
-                    "title": "High density battery",
-                    "subtitle": "How your battey works",
-                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
-                    "para2": {
-                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
-                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
-                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
-                    }
                 }
             },
             "power": {
@@ -2251,9 +2240,6 @@
         },
         "support": {
             "title": "Lenovo 지원 웹 사이트"
-        },
-        "security": {
-            "title": "For a better protection for your device"
         },
         "banner": {
             "neverChecked": "시스템 업데이트를 시작합니다.",
