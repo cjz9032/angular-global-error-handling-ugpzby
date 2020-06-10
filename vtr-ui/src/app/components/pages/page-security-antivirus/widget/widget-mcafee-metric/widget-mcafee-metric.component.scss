@@ -10,6 +10,14 @@
 		margin: 0 0 4rem 0;
 	}
 
+	@media #{$black-on-white} {
+		border: 0.1rem solid $dark;
+	}
+
+	@media #{$white-on-black} {
+		border: 0.1rem solid $light;
+	}
+
 	button {
 		height: 4rem;
 		border-radius: 3rem;
@@ -97,6 +105,18 @@
 			font-size: 3rem;
 			line-height: 4.5rem;
 			color: $light;
+		}
+
+		@media #{$black-on-white} {
+			color: $light;
+			background: $dark;
+			border: none;
+		}
+		
+		@media #{$white-on-black} {
+			color: $dark;
+			background: $light;
+			border: none;
 		}
 	}
 
