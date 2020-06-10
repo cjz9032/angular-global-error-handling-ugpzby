@@ -31,4 +31,9 @@ export class WidgetHardwareScanItemComponent implements OnInit {
 	public getInformation(text: string) {
 		this.tooltipText = text;
 	}
+
+	public statusCollapse (item: any) {
+		item.collapsed = !item.collapsed;
+		item.userCollapse = !item.userCollapse;
+	}
 }

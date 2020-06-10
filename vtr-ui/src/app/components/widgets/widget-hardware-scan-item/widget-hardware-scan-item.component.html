@@ -40,8 +40,8 @@
 					<div class="collapse-control"
 						tabindex="0"
 						[attr.aria-label]="item.collapsed ? item.module + 'expand-test-list': item.module + 'collapse-test-list'"
-						(click)="item.collapsed = !item.collapsed"
-						(keyup.enter)="item.collapsed = !item.collapsed"
+						(click)="statusCollapse(item)"
+						(keyup.enter)="statusCollapse(item)"
 						role="button"
 						[attr.aria-expanded]="!item.collapsed">
 						<fa-icon *ngIf="item.collapsed; else expandArrow" [icon]="['fal', 'angle-down']"></fa-icon>

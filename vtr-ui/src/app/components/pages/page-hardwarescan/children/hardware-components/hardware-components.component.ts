@@ -645,9 +645,10 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			requests = this.hardwareScanService.getFilteredCustomScanRequest();
 		}
 
-		// Resets the 'collapse' state to the default value (opened)
+		// Resets the 'collapse' state to the default value (closed)
 		for (const module of this.modules) {
-			module.collapsed = false;
+			module.collapsed = true;
+			module.userCollapse = false;
 		}
 
 		// Used for metrics purposes
@@ -749,7 +750,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				name: module.name,
 				resultCode: module.resultCode,
 				information: module.description,
-				collapsed: false,
+				collapsed: true,
+				userCollapse: false,
 				detailsCollapsed: true,
 				icon: module_id,
 				details: [],

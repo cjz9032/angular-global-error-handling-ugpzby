@@ -860,7 +860,8 @@ export class HardwareScanService {
 						icon: '',
 						metaInformation: [],
 						listTest: [],
-						collapsed: false,
+						collapsed: true,
+						userCollapse: false,
 						detailsCollapsed : true
 					};
 
@@ -953,6 +954,17 @@ export class HardwareScanService {
 		for (const scanResponse of doScanResponse) {
 			for (const groupResult of scanResponse.groupResults) {
 				groupResults.push(groupResult);
+			}
+		}
+
+		for (const module of this.modules) {
+			if(!module.userCollapse){
+				if (!module.resultCode) {
+					module.collapsed = false;
+					break;
+				} else {
+					module.collapsed = true;
+				}
 			}
 		}
 
@@ -1082,7 +1094,9 @@ export class HardwareScanService {
 					item.name = groupResultMeta.name;
 					item.resultCode = groupResult[i].resultCode;
 					item.information = groupResult[i].resultDescription;
-					item.collapsed = false;
+					item.collapsed = true;
+					item.userCollapse = false;
+					item.detailsCollapsed = true;
 					item.icon = moduleName;
 					if (!this.isDesktopMachine) {
 						if (item.icon === 'pci_express') {
