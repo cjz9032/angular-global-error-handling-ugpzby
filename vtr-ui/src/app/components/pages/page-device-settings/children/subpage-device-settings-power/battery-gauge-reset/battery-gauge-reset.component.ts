@@ -8,6 +8,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { PowerService } from 'src/app/services/power/power.service';
 import { KeyCode } from 'src/app/enums/key-code.enum';
+import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 
 @Component({
 	selector: 'vtr-battery-gauge-reset',
@@ -26,6 +27,8 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 	is12HrsFormat = false;
 	systemTimeFormatSubscription: Subscription;
 	gaugeResetSubscription: Subscription;
+	public readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
+	public readonly metricsType = CommonMetricsModel.ItemType;
 
 	autoFocusButton = false;
 	// These following instance variables added for Keyboard navigation to radio button.

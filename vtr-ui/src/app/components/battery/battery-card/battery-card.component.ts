@@ -19,6 +19,7 @@ import { BatteryGaugeReset } from 'src/app/data-models/device/battery-gauge-rese
 import { PowerService } from 'src/app/services/power/power.service';
 import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.model';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
+import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 
 declare var Windows;
 
@@ -61,6 +62,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	bctInfoSubscription: Subscription;
 	airplaneModeSubscription: Subscription;
 	expressChargingSubscription: Subscription;
+	public readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
+	public readonly metricsType = CommonMetricsModel.ItemType;
 
 	constructor(
 		private modalService: NgbModal,
