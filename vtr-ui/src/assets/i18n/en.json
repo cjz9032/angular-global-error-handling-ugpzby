@@ -2938,7 +2938,7 @@
 				"tune": "Tune",
 				"tuneSummary": "Disk space reclaimed",
 				"summaryCaption": "space reclaimed",
-				"fixes": "fix(es)",
+				"fixes": "Fix(es)",
 				"boost": "Boost",
 				"boostSummary": "Fixes to improve performance",
 				"secure": "Secure",

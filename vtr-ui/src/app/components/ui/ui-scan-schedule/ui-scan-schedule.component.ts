@@ -124,19 +124,6 @@ export class UiScanScheduleComponent implements OnInit {
 			this.payloadData(this.type);
 		}
 
-		if (this.IsSmartPerformanceFirstRun === true &&	this.isSubscribed == true) {
-			this.unregisterScheduleScan("Lenovo.Vantage.SmartPerformance.ScheduleScan");
-			this.scheduleScan(this.requestScanData);
-			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, false);
-			this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, this.scanFrequency[0]);
-		}
-
-		if (this.IsSmartPerformanceFirstRun === true && this.isSubscribed == false) {
-			this.scheduleScan(this.requestScanData);
-			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, false);
-			this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, this.scanFrequency[0]);
-		}
-
 		if (this.IsScheduleScanEnabled) {
 			this.scanToggleValue = true;
 		} else {
@@ -145,8 +132,21 @@ export class UiScanScheduleComponent implements OnInit {
 			this.selectedDay = this.days[0]
 		}
 
+		if (this.IsSmartPerformanceFirstRun === true &&	this.isSubscribed == true) {
+			this.unregisterScheduleScan("Lenovo.Vantage.SmartPerformance.ScheduleScan");
+			// this.scheduleScan(this.requestScanData);
+			// this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, false);
+			// this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, this.scanFrequency[0]);
+		}
+
+		if (this.IsSmartPerformanceFirstRun === true && this.isSubscribed == false) {
+			this.scheduleScan(this.requestScanData);
+			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, false);
+			this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, this.scanFrequency[0]);
+		}
+
 		// fetching next schedule date and time from task scheduler
-		if (this.scheduleScanFrequency !== undefined && this.IsScheduleScanEnabled) {
+		if (this.scheduleScanFrequency !== undefined && this.IsScheduleScanEnabled && !this.IsSmartPerformanceFirstRun) {
 			if (this.isSubscribed) {
 				this.getNextScanRunTime("Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix");
 			} else {
@@ -278,9 +278,9 @@ export class UiScanScheduleComponent implements OnInit {
 			this.isChangeSchedule = false;
 			this.setTypeOfFrequency()
 
-			if (!this.isSubscribed) {
-				this.unregisterScheduleScan("Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix");
-			}
+			// if (!this.isSubscribed) {
+			// 	this.unregisterScheduleScan("Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix");
+			// }
 			this.payloadData(this.type);
 			this.scheduleScan(this.requestScanData);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, this.selectedFrequency);
@@ -296,6 +296,12 @@ export class UiScanScheduleComponent implements OnInit {
 		this.logger.info("ui-smart-performance.unregisterScheduleScan", JSON.stringify(payload));
 		try {
 			const res: any = await this.smartPerformanceService.unregisterScanSchedule(payload);
+			// when unregisterScheduleScan is successful and scheduledScan is enabled, sending request to set schedule scan
+			if(res.state && this.scanToggleValue) {
+				this.scheduleScan(this.requestScanData);
+				this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, false);
+				this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, this.scanFrequency[0]);
+			}
 			this.logger.info("ui-smart-performance.unregisterScheduleScan.then", JSON.stringify(res));
 		} catch (err) {
 			this.logger.error("ui-smart-performance.unregisterScheduleScan.then", err);

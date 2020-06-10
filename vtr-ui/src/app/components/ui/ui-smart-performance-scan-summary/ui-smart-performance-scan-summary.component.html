@@ -416,7 +416,7 @@
 																							<span class="ml-1" *ngIf="item.type.toUpperCase() == 'SS'">({{'smartPerformance.auto' |translate }})</span>
 
 																					</div>
-																					<div class="col-2">{{item.fixcount | number:'2.0'}} Fix(es)
+																					<div class="col-2">{{item.fixcount === 0 ? item.fixcount : (item.fixcount | number:'2.0')}} {{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' | translate}}
 																					</div>
 																					<div class="col-2" *ngIf="item.status === 'C'">
 																						<div class="icon-check">
