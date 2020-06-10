@@ -1066,8 +1066,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "Da bismo produžili vijek trajanja baterije, optimizirali smo njezin puni kapacitet na temelju vaše upotrebe. Puni kapacitet baterije možda neće biti dostupan dok je ne ispraznite na 20% i ponovno je napunite.",
-                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
+                    "fccTooltipText": "Da bismo produžili vijek trajanja baterije, optimizirali smo njezin puni kapacitet na temelju vaše upotrebe. Puni kapacitet baterije možda neće biti dostupan dok je ne ispraznite na 20% i ponovno je napunite."
                 },
                 "condition": {
                     "Illegal": "Ovaj sustav <b>ne podržava</b> umetnutu bateriju te je neće puniti. Bateriju zamijenite odgovarajućom baterijom tvrtke Lenovo za ovaj sustav.",
@@ -1095,16 +1094,6 @@
                 "gaugeResetWarning": "<b>Napomena:</b> U tijeku je ponovno postavljanje mjerača baterije. Neka prilagodnik izmjeničnog napona ostane priključen.",
                 "dualConditions": {
                     "NotDetected": "<b>Primarna baterija nije otkrivena.</b>"
-                },
-                "highDensityBattery": {
-                    "title": "High density battery",
-                    "subtitle": "How your battey works",
-                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
-                    "para2": {
-                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
-                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
-                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
-                    }
                 }
             },
             "power": {
@@ -2251,9 +2240,6 @@
         },
         "support": {
             "title": "Web-mjesto za podršku tvrtke Lenovo"
-        },
-        "security": {
-            "title": "For a better protection for your device"
         },
         "banner": {
             "neverChecked": "Slobodno se koristite Ažuriranjem sustava.",

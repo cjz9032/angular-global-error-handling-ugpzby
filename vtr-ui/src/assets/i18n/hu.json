@@ -1066,8 +1066,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "Az akkumulátor élettartamának meghosszabbítása érdekében optimalizáltuk az akkumulátor teljes töltési kapacitását a használati séma alapján. Előfordulhat, hogy a teljes akkumulátorkapacitás csak azután áll rendelkezésre, hogy az akkumulátor 20%-ra lemerült és feltöltődött.",
-                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
+                    "fccTooltipText": "Az akkumulátor élettartamának meghosszabbítása érdekében optimalizáltuk az akkumulátor teljes töltési kapacitását a használati séma alapján. Előfordulhat, hogy a teljes akkumulátorkapacitás csak azután áll rendelkezésre, hogy az akkumulátor 20%-ra lemerült és feltöltődött."
                 },
                 "condition": {
                     "Illegal": "A telepített akkumulátort a rendszer <b>nem támogatja</b> és nem tölti fel. Cserélje ki az akkumulátort egy a rendszerhez megfelelő Lenovo akkumulátorra.",
@@ -1095,16 +1094,6 @@
                 "gaugeResetWarning": "<b>Megjegyzés:</b> Az akkumulátormérő nullázása folyamatban van. Hagyja a hálózati adaptert csatlakoztatott állapotban.",
                 "dualConditions": {
                     "NotDetected": "<b>Az elsődleges akkumulátor nem észlelhető.</b>"
-                },
-                "highDensityBattery": {
-                    "title": "High density battery",
-                    "subtitle": "How your battey works",
-                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
-                    "para2": {
-                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
-                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
-                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
-                    }
                 }
             },
             "power": {
@@ -2251,9 +2240,6 @@
         },
         "support": {
             "title": "A Lenovo támogatási weboldala"
-        },
-        "security": {
-            "title": "For a better protection for your device"
         },
         "banner": {
             "neverChecked": "Üdvözöljük a Rendszerfrissítés szolgáltatásban!",
