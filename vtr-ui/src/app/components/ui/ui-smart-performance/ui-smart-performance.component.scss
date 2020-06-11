@@ -7,6 +7,14 @@
 		box-shadow: $drop_shadow;
 		border-radius: 0.8rem;
 		background: $light;
+
+		::ng-deep .tooltip-inner {
+			@include tt-inner()
+		}
+		::ng-deep .arrow::before {
+			@include arrow-before()
+		}
+		
 		.offline-info-background {
 			border-top-left-radius: 0.8rem;
 			border-top-right-radius: 0.8rem;
@@ -464,6 +472,12 @@
 				display: flex;
 				justify-content: center;
 				width: 100%;
+				::ng-deep .tooltip-inner {
+					@include tt-inner()
+				}
+				::ng-deep .arrow::before {
+					@include arrow-before()
+				}
 				.action-button {
 					border-radius: 2.5rem;
 					background: $gradient_main;
@@ -767,6 +781,14 @@
 			font-size: $fontsize_xs;
 			font-weight: $weight_light;
 		}
+
+		::ng-deep .tooltip-inner {
+			@include tt-inner()
+		}
+		::ng-deep .arrow::before {
+			@include arrow-before()
+		}
+
 		.feedback-btn {
 			padding: 0 2.5rem;
 			position: relative;
