@@ -134,12 +134,8 @@
 						height: 4.4rem;
 					}
 					.system-tool-title{
-						@media #{$black-on-white} {
-							color: $high-contrast-blue
-						}
-						@media #{$white-on-black} {
-							color: $high-contrast-black-yellow
-						}
+						@include hyperlink-blue-white;
+						@include hyperlink-yellow-black;
 					}
 				}
 				.button-container {
