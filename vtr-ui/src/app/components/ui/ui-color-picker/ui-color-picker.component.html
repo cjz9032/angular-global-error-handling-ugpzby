@@ -23,10 +23,10 @@
       </div>
       <div *ngIf="isToggleMoreColor">
          <div class="inp-color-picker">
-            <input type="button" class="color-inp" [(colorPicker)]="'#'+color" [style.background]="'#'+color" [cpWidth]="'300'" 
+            <input type="button" class="color-inp" [(colorPicker)]="'#'+color" [style.background]="'#'+color" [cpWidth]="'300'"
             [cpAlphaChannel]="'disabled'" [cpDialogDisplay]="'inline'" [cpToggle]="isToggleMoreColor" [cpOutputFormat]="'rgba'"
-            [cpOKButton]="true" [cpOKButtonText]="'gaming.lightingProfile.colourwheel.text2.title' | translate" [cpOKButtonClass]="'btn btn-apply'" 
-            [cpCancelButton]="true" [cpCancelButtonText]="'gaming.dashboard.device.legionEdge.lightingDriverPopup.link' | translate" [cpCancelButtonClass]="'btn btn-cancel'" 
+            [cpOKButton]="true" [cpOKButtonText]="'gaming.lightingProfile.colourwheel.text2.title' | translate" [cpOKButtonClass]="'btn btn-apply'"
+            [cpCancelButton]="true" [cpCancelButtonText]="'gaming.dashboard.device.legionEdge.lightingDriverPopup.link' | translate" [cpCancelButtonClass]="'btn btn-cancel'"
             (colorPickerSelect)="colorPickerSelectFun()" (colorPickerCancel)="colorPickerCancelFun()" (colorPickerChange)="colorPickerChangeFun($event)"
             (cpSliderDragEnd) = "cpSliderDragEndFun($event)">
          </div>
@@ -37,5 +37,5 @@
          </div>
       </div>
    </div>
-   
-</div> 
+
+</div>

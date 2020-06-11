@@ -21,6 +21,7 @@ export class UiColorPickerComponent implements OnInit , OnChanges {
   public isSliderOut:boolean;
   public clickEvent:any = {target:''};
   public isFirstTrigger:boolean;
+  @Input() automationId:any;
 
   @HostListener('window:resize', ['$event']) onResize($event) {
 	this.isColorPicker = false;
