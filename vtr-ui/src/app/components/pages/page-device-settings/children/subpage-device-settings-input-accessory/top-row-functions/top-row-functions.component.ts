@@ -167,7 +167,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 			processIcon: true,
 			customIcon: 'Special-function',
 			hideIcon: true,
-			processLabel: true,
+			processLabel: false,
 		});
 		this.functionLockUIModel.push({
 			componentId: this.functionKeyId,
@@ -178,7 +178,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 			processIcon: true,
 			customIcon: 'F1-F12-funciton',
 			hideIcon: true,
-			processLabel: true,
+			processLabel: false,
 		});
 	}
 
@@ -202,7 +202,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 			value: false,
 			isChecked: this.topRowKeyObj.stickyFunStatus === false,
 			isDisabled: false,
-			metricsValue: 'radio.normal-key'
+			metricsValue: 'radio.top-row-fn.normal-key'
 		},
 		{
 			componentId: 'fnKeyMehod_show',
@@ -210,7 +210,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 			value: true,
 			isChecked: this.topRowKeyObj.stickyFunStatus === true,
 			isDisabled: false,
-			metricsValue: 'radio.fn-sticky-Key'
+			metricsValue: 'radio.top-row-fn.fn-sticky-Key'
 		}];
 	}
 
