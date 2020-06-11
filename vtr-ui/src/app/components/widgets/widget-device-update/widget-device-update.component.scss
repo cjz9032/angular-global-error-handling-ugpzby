@@ -144,7 +144,10 @@
 						margin-top: 0;
 
 						@media #{$high-contrast} {
-							background: $high-contrast-blue !important;
+							background: $light !important;
+						}
+						@media #{$black-on-white} {
+							background: $dark !important;
 						}
 
 						&.bg-info {
