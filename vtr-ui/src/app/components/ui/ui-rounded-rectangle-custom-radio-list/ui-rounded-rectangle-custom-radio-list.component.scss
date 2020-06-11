@@ -5,6 +5,49 @@
 * https://xd.adobe.com/spec/4dd677d9-0bab-4b71-46f7-ac1f2efe0878-3be7/screen/b2046b82-01ad-465f-b000-572df2e3b668/Selectors/
 */
 
+@mixin high-contrast-black-border {
+	@media #{$white-on-black} {
+		border-color: $high-contrast-black-cyan;
+		border-width: 0.2rem;
+	}
+}
+
+@mixin high-contrast-white-border {
+	@media #{$black-on-white} {
+		border-color: $high-contrast-white-dark-magenta;
+		border-width: 0.2rem;
+	}
+}
+
+@mixin high-contrast-disabled-border {
+	@media #{$white-on-black} {
+		border-color: $high-contrast-black-disabled-green;
+		border-width: 0.2rem;
+	}
+	@media #{$black-on-white} {
+		border-color: $high-contrast-white-disabled-maroon;
+		border-width: 0.2rem;
+	}
+}
+
+@mixin high-contrast-background {
+	@media #{$white-on-black} {
+		background-color: $high-contrast-black-cyan;
+	}
+	@media #{$black-on-white} {
+		background-color: $high-contrast-white-dark-magenta;
+	}
+}
+
+@mixin high-contrast-disabled-background {
+	@media #{$white-on-black} {
+		background-color: $high-contrast-black-disabled-green;
+	}
+	@media #{$black-on-white} {
+		background-color: $high-contrast-white-disabled-maroon;
+	}
+}
+
 .vtr-ui-rounded-rectangle-custom-radio-list {
 	$radio-gutter: 0.8rem;
 
@@ -61,6 +104,15 @@
 			font-size: $base;
 			color: $grey_darker;
 
+			@media #{$white-on-black} {
+				background: $dark;
+				border: 0.1rem solid $light;
+			}
+			@media #{$black-on-white} {
+				background: $light;
+				border: 0.1rem solid $dark;
+			}
+
 			// common style for indicator and indicator outer side
 			&::before,
 			&::after {
@@ -77,12 +129,22 @@
 				height: $radio-indicator-size;
 				border: $radio-border solid $grey_dark;
 				background: $light;
+				@media #{$white-on-black} {
+					border-color: $light;
+					border-width: 0.2rem;
+				}
+				@media #{$black-on-white} {
+					border-color: $dark;
+					border-width: 0.2rem;
+				}
 			}
 
 			&:hover {
 				box-shadow: $radio-selected-box-shadow;
 				&::before {
 					border-color: $menu_hover;
+					@include high-contrast-black-border;
+					@include high-contrast-white-border;
 				}
 			}
 
@@ -100,6 +162,8 @@
 
 				&::before {
 					border-color: $grey_darker;
+					@include high-contrast-black-border;
+					@include high-contrast-white-border;
 				}
 			}
 
@@ -114,8 +178,11 @@
 
 				&::before {
 					border-color: $grey_darker;
+					@include high-contrast-disabled-border;
 				}
+
 			}
+
 		}
 
 		[role="radio"][aria-checked="true"] {
@@ -129,9 +196,12 @@
 
 				&::before {
 					border-color: $grey_darker;
+					@include high-contrast-black-border;
+					@include high-contrast-white-border;
 				}
 				&::after {
 					background-color: $grey_darker;
+					@include high-contrast-background;
 				}
 			}
 			&::after {
@@ -141,6 +211,11 @@
 				width: $radio-indicator-inner-size;
 				height: $radio-indicator-inner-size;
 				content: "";
+				@include high-contrast-background;
+			}
+			&::before {
+				@include high-contrast-black-border;
+				@include high-contrast-white-border;
 			}
 			&[aria-disabled="true"] {
 				background: $grey_lighter;
@@ -149,6 +224,10 @@
 
 				&::after {
 					background-color: $grey_darker;
+					@include high-contrast-disabled-background;
+				}
+				&::before {
+					@include high-contrast-disabled-border;
 				}
 			}
 		}
