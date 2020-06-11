@@ -1,6 +1,6 @@
 import { NetworkBoostStatus } from './../../../data-models/gaming/networkboost-status.model';
 import { ModalGamingLegionedgeComponent } from './../../modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, OnInit, NgZone, OnDestroy } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RamOCSatus } from 'src/app/data-models/gaming/ram-overclock-status.model';
 import { GamingSystemUpdateService } from 'src/app/services/gaming/gaming-system-update/gaming-system-update.service';
@@ -26,13 +26,14 @@ import { EventTypes } from '@lenovo/tan-client-bridge';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { GamingOverDriveService } from 'src/app/services/gaming/gaming-over-drive/gaming-over-drive.service';
 import { GamingThermal2 } from 'src/app/enums/gaming-thermal2.enum';
+import { AutomationId } from './../../../enums/automation-id.enum';
 
 @Component({
 	selector: 'vtr-widget-legion-edge',
 	templateUrl: './widget-legion-edge.component.html',
 	styleUrls: ['./widget-legion-edge.component.scss']
 })
-export class WidgetLegionEdgeComponent implements OnInit {
+export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 	public RamOCSatusObj = new RamOCSatus();
 	public hybrimodeStatus = false;
 	public HybrimodeStatusObj = new HybridModeStatus();
@@ -284,7 +285,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		private logger: LoggerService
 	) {
 		this.thermalModeEvent = this.onRegThermalModeRealStatusChangeEvent.bind(this);
-		this.getAutomationId(this.thermalModeRealStatus, this.OCSettings);
 	}
 
 	ngOnInit() {
@@ -393,45 +393,19 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			this.sectionAutoId = 'right_section_ideapad_gaming';
 			this.popupAutoId = 'help_popup_ideapad_gaming';
 		}
-
 	}
 
 	ngOnDestroy(): void {
 		this.unRegisterThermalModeRealStatusChangeEvent();
 	}
 
-	getAutomationId(status: any, OCSetting: any) {
-		if (status === this.thermalMode2Enum.performance && !OCSetting)
-			this.thermalModeHomeAutoId = 'thermal_mode_performance';
-		if (status === this.thermalMode2Enum.performance && OCSetting)
-			this.thermalModeHomeAutoId = 'thermal_mode_performance_overclock_on';
-		if (status === this.thermalMode2Enum.balance)
-			this.thermalModeHomeAutoId = 'thermal_mode_balance';
-		if (status === this.thermalMode2Enum.quiet)
-			this.thermalModeHomeAutoId = 'thermal_mode_quiet';
+	getThermalModeAutomationId() {
+		const thermalStatus = {};
+    thermalStatus[GamingThermal2.performance] = this.OCSettings ? AutomationId.PerformanceOverclockOn : AutomationId.Performance;
+    thermalStatus[GamingThermal2.balance] = AutomationId.Balance;
+		thermalStatus[GamingThermal2.quiet] = AutomationId.Quiet;
+		return thermalStatus[this.thermalModeRealStatus];
 	}
-	// getAutomationId(status: any, OCSettings: any ) {
-	// 	switch (status) {
-	// 		case this.thermalMode2Enum.performance && !OCSettings :
-	// 			this.thermalModeHomeAutoId = 'thermal_mode_performance';
-	// 			break;
-	// 		case this.thermalMode2Enum.performance && OCSettings :
-	// 			this.thermalModeHomeAutoId = 'thermal_mode_performance_overclock_on';
-	// 			break;
-	// 		case this.thermalMode2Enum.balance :
-	// 			this.thermalModeHomeAutoId = 'thermal_mode_balance';
-	// 			break;
-	// 		case this.thermalMode2Enum.quiet :
-	// 			this.thermalModeHomeAutoId = 'thermal_mode_quiet';
-	// 			break;
-	// 		default:
-	// 			break;
-	// 	}
-	// }
-
-
-
-
 
 	legionEdgeInit() {
 		const gamingStatus = this.gamingCapabilities;
@@ -597,7 +571,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 					this.thermalModeRealStatus = res;
 					this.commonService.setLocalStorageValue(LocalStorageKey.RealThermalModeStatus, this.thermalModeRealStatus);
 				}
-				//this.getAutomationId(this.thermalModeRealStatus, this.OCSettings);
 			});
 		} catch (error) {
 			this.logger.error('Widget-LegionEdge-RenderThermalMode2RealStatus: get fail; Error message: ', error.message);
@@ -637,7 +610,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				this.thermalModeRealStatus = currentRealStatus;
 				this.commonService.setLocalStorageValue(LocalStorageKey.RealThermalModeStatus, this.thermalModeRealStatus);
 			}
-			// this.getAutomationId(this.thermalModeRealStatus, this.OCSettings);
 		});
 	}
 	// Version 3.2: performanceOC
