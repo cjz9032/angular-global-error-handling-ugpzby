@@ -155,6 +155,8 @@
                         "cpuOCName79": "Bufferspenningsforskyvning",
                         "cpuOCName122": "7 Kjerne-forhold",
                         "cpuOCName123": "8 Kjerne-forhold",
+                        "cpuOCName124": "9 Kjerne-forhold",
+                        "cpuOCName125": "10 Kjerne-forhold",
                         "cpuOCName102": "Kjerne ICCMAX",
                         "cpuOCName106": "Buffer ICCMAX",
                         "cpuOCName114": "AVX-forhold forskyvning"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Endelig spenningsforskyvning som tilføres bufferspenningen.",
                         "cpuOCTip122": "Angi den maksimale kjernemultiplikator som kjernene kan operere ved. Verdien av kjernefrekvensen er produktet av dette forhold og referanseklokkefrekvensen.",
                         "cpuOCTip123": "Angi den maksimale kjernemultiplikator som kjernene kan operere ved. Verdien av kjernefrekvensen er produktet av dette forhold og referanseklokkefrekvensen.",
+                        "cpuOCTip124": "Angi den maksimale kjernemultiplikator som kjernene kan operere ved. Verdien av kjernefrekvensen er produktet av dette forhold og referanseklokkefrekvensen.",
+                        "cpuOCTip125": "Angi den maksimale kjernemultiplikator som kjernene kan operere ved. Verdien av kjernefrekvensen er produktet av dette forhold og referanseklokkefrekvensen.",
                         "cpuOCTip102": "Angi ICCMAX for spenningsregulatoren til prosessorkjernen.",
                         "cpuOCTip106": "Angi ICCMAX for prosessorbuffer og Ring Bus-spenningsregulator.",
                         "cpuOCTip114": "For å utlede den effektive aktive kjerneforholdsgrensen når AVX er aktiv, subtraheres denne verdi fra den tilsvarende aktive kjerneforholdsgrensen."

@@ -155,6 +155,8 @@
                         "cpuOCName79": "Välimuistijännitteen poikkeama",
                         "cpuOCName122": "7 Ytimen suhde",
                         "cpuOCName123": "8 Ytimen suhde",
+                        "cpuOCName124": "9 Ytimen suhde",
+                        "cpuOCName125": "10 Ytimen suhde",
                         "cpuOCName102": "Ytimen ICCMAX",
                         "cpuOCName106": "Välimuistin ICCMAX",
                         "cpuOCName114": "AVX-suhteen poikkeama"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Välimuistijännitteeseen sovellettava viimeinen jännitepoikkeama.",
                         "cpuOCTip122": "Aseta enimmäisydinkerroin, jolla ytimet voivat toimia. Ydintaajuuden arvo on tämän suhteen ja viitekellotaajuuden tuote.",
                         "cpuOCTip123": "Aseta enimmäisydinkerroin, jolla ytimet voivat toimia. Ydintaajuuden arvo on tämän suhteen ja viitekellotaajuuden tuote.",
+                        "cpuOCTip124": "Aseta enimmäisydinkerroin, jolla ytimet voivat toimia. Ydintaajuuden arvo on tämän suhteen ja viitekellotaajuuden tuote.",
+                        "cpuOCTip125": "Aseta enimmäisydinkerroin, jolla ytimet voivat toimia. Ydintaajuuden arvo on tämän suhteen ja viitekellotaajuuden tuote.",
                         "cpuOCTip102": "Määritä ICCMAX suorittimen ydinjännitteen säätelijälle.",
                         "cpuOCTip106": "Määritä ICCMAX suorittimen välimuistin ja rengasväylän jännitteen säätelijälle.",
                         "cpuOCTip114": "Efektiivisen aktiivisen ydinsuhderajan laskemiseksi AVX:n ollessa aktiivinen, vähennä tämä arvo vastaavasta aktiivisesta ytimen suhteen rajasta."

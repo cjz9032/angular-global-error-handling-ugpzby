@@ -155,6 +155,8 @@
                         "cpuOCName79": "Önbellek Voltajı Sapması",
                         "cpuOCName122": "7 Çekirdek Oranı",
                         "cpuOCName123": "8 Çekirdek Oranı",
+                        "cpuOCName124": "9 Çekirdek Oranı",
+                        "cpuOCName125": "10 Çekirdek Oranı",
                         "cpuOCName102": "Çekirdek ICCMAX",
                         "cpuOCName106": "Önbellek ICCMAX",
                         "cpuOCName114": "AVX Oranı Sapması"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Önbellek Voltajına uygulanan son voltaj sapması.",
                         "cpuOCTip122": "Çekirdeklerin çalışabileceği maksimum çekirdek çarpanını ayarlayın. Çekirdek frekansının değeri, bu oranın ve referans saat frekansının ürünüdür.",
                         "cpuOCTip123": "Çekirdeklerin çalışabileceği maksimum çekirdek çarpanını ayarlayın. Çekirdek frekansının değeri, bu oranın ve referans saat frekansının ürünüdür.",
+                        "cpuOCTip124": "Çekirdeklerin çalışabileceği maksimum çekirdek çarpanını ayarlayın. Çekirdek frekansının değeri, bu oranın ve referans saat frekansının ürünüdür.",
+                        "cpuOCTip125": "Çekirdeklerin çalışabileceği maksimum çekirdek çarpanını ayarlayın. Çekirdek frekansının değeri, bu oranın ve referans saat frekansının ürünüdür.",
                         "cpuOCTip102": "İşlemci Çekirdek Voltaj Regülatörü için ICCMAX'i ayarlayın.",
                         "cpuOCTip106": "İşlemci Önbellek ve Halka Veriyolu Voltaj Regülatörü için ICCMAX'i ayarlayın.",
                         "cpuOCTip114": "AVX etkin durumdayken etkili etkin çekirdek oranı sınırını elde etmek için bu değeri, karşılık gelen etkin çekirdek oranı sınırından çıkarın."

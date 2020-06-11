@@ -155,6 +155,8 @@
                         "cpuOCName79": "Offset Cache-Spannung",
                         "cpuOCName122": "7-Kern-Verhältnis",
                         "cpuOCName123": "8-Kern-Verhältnis",
+                        "cpuOCName124": "9-Kern-Verhältnis",
+                        "cpuOCName125": "10-Kern-Verhältnis",
                         "cpuOCName102": "Core-ICCMAX",
                         "cpuOCName106": "Cache-ICCMAX",
                         "cpuOCName114": "Offset AVX-Verhältnis"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Letzter Spannungsoffset, der auf die Cache-Spannung angewendet wird.",
                         "cpuOCTip122": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
                         "cpuOCTip123": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
+                        "cpuOCTip124": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
+                        "cpuOCTip125": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
                         "cpuOCTip102": "ICCMAX für Prozessorkern-Spannungsregler festlegen.",
                         "cpuOCTip106": "ICCMAX für Prozessorcache- und Ringbus-Spannungsregler festlegen.",
                         "cpuOCTip114": "Sie können den effektiven Grenzwert für das Verhältnis aktiver Kerne bei aktiviertem AVX ableiten, indem Sie diesen Wert vom entsprechenden Grenzwert für das Verhältnis aktiver Kerne abziehen."

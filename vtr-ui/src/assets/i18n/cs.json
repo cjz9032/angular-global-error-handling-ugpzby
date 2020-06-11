@@ -155,6 +155,8 @@
                         "cpuOCName79": "Kompenzace napětí mezipaměti",
                         "cpuOCName122": "Poměr jádra 7",
                         "cpuOCName123": "Poměr jádra 8",
+                        "cpuOCName124": "Poměr jádra 9",
+                        "cpuOCName125": "Poměr jádra 10",
                         "cpuOCName102": "ICCMAX jádra",
                         "cpuOCName106": "ICCMAX mezipaměti",
                         "cpuOCName114": "Kompenzace poměru AVX"
@@ -173,6 +175,9 @@
                         "cpuOCTip79": "Konečná kompenzace napětí, která se použije pro napětí mezipaměti.",
                         "cpuOCTip122": "Nastavte maximální násobič jádra, při kterém mohou jádra fungovat. Hodnota frekvence jádra je produktem tohoto poměru a referenční frekvence taktu.",
                         "cpuOCTip123": "Nastavte maximální násobič jádra, při kterém mohou jádra fungovat. Hodnota frekvence jádra je produktem tohoto poměru a referenční frekvence taktu.",
+                        "cpuOCTip124": "Nastavte maximální násobič jádra, při kterém mohou jádra fungovat. Hodnota frekvence jádra je produktem tohoto poměru a referenční frekvence taktu.",
+                        "cpuOCTip125": "Nastavte maximální násobič jádra, při kterém mohou jádra fungovat. Hodnota frekvence jádra je produktem tohoto poměru a referenční frekvence taktu.",
+                        
                         "cpuOCTip102": "Nastavte ICCMAX pro regulátor napětí jádra procesoru.",
                         "cpuOCTip106": "Nastavte ICCMAX pro regulátor napětí mezipaměti a sběrnice Ring Bus procesoru.",
                         "cpuOCTip114": "Chcete-li odvodit limit poměru aktivního jádra, když je AVX aktivní, odečtěte tuto hodnotu od odpovídajícího limitu poměru aktivního jádra."
