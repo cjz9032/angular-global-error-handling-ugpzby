@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, Output, EventEmitter } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -23,7 +23,7 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 	countryCode: any;
 	langCode: any;
 	paymenturl: string;
-
+	@Output() cancelPaymentRequest: EventEmitter<any> = new EventEmitter();
 	public subscriptionDetails = [
 		{
 			UUID: uuid(),
@@ -67,6 +67,7 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 		});
 	}
 	closeModal() {
+		this.cancelPaymentRequest.emit();
 		this.activeModal.close('close');
 	}
 	selectBilledMonthly() {
