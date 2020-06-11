@@ -646,6 +646,9 @@ vtr-ui-smart-performance-scan-summary {
 		@media #{$breakpoint_xl}{
 			padding: 0 2.4rem;
 		}
+		.hero-text{
+			max-width: 80%;
+		}
 		h1 {
 			color: $light;
 			font-size: 3.4rem;
@@ -671,6 +674,7 @@ vtr-ui-smart-performance-scan-summary {
 			color: #7D5FEF;
 			font-size: 10rem;
 			margin-bottom: -4.5rem;
+			max-width: 20%;
 			@media #{$breakpoint_xl}{
 				font-size: 9rem;
 			}
