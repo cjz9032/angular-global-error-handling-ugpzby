@@ -1066,7 +1066,8 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "Per estendere la durata di vita della batteria, ne abbiamo ottimizzato la capacità di carica completa in base all'uso. La capacità completa della batteria potrebbe non essere disponibile finché questa non si scarica al 20% e non viene ricaricata."
+                    "fccTooltipText": "Per estendere la durata di vita della batteria, ne abbiamo ottimizzato la capacità di carica completa in base all'uso. La capacità completa della batteria potrebbe non essere disponibile finché questa non si scarica al 20% e non viene ricaricata.",
+                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
                 },
                 "condition": {
                     "Illegal": "La batteria installata <b>non è supportata</b> dal sistema e non verrà caricata. Sostituire la batteria con la batteria Lenovo corretta per questo sistema.",
@@ -1094,6 +1095,16 @@
                 "gaugeResetWarning": "<b>Nota:</b> è in corso la reimpostazione dell'indicatore della batteria. Non scollegare l'adattatore di alimentazione CA.",
                 "dualConditions": {
                     "NotDetected": "<b>La batteria principale non è stata rilevata.</b>"
+                },
+                "highDensityBattery": {
+                    "title": "High density battery",
+                    "subtitle": "How your battery works",
+                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "para2": {
+                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
+                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
+                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                    }
                 }
             },
             "power": {
