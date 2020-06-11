@@ -262,10 +262,8 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 	};
 
 	thermalModeEvent: any;
-	sectionAutoId:any;
-	popupAutoId:any;
-	thermalId:any;
-	thermalModeHomeAutoId:any;
+	legionPopupId:any;
+	legionHelpIconId:any;
 	constructor(
 		private modalService: NgbModal,
 		private ngZone: NgZone,
@@ -382,21 +380,24 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 				this.legionEdgeInit();
 			}
 		});
-
-		if (!this.gamingCapabilities.liteGaming) {
-			this.sectionAutoId = 'right_section_legion_edge';
-			this.popupAutoId = 'help_popup_legion_edge';
-		} else if (!this.gamingCapabilities.liteGaming && this.gamingCapabilities.desktopType) {
-			this.sectionAutoId = 'right_section_ideacentre_gaming';
-			this.popupAutoId = 'help_popup_ideacentre_gaming';
-		} else if(this.gamingCapabilities.liteGaming && !this.gamingCapabilities.desktopType) {
-			this.sectionAutoId = 'right_section_ideapad_gaming';
-			this.popupAutoId = 'help_popup_ideapad_gaming';
-		}
+		this.getMachineSpecificId();
 	}
 
 	ngOnDestroy(): void {
 		this.unRegisterThermalModeRealStatusChangeEvent();
+	}
+
+	getMachineSpecificId() {
+		if (!this.gamingCapabilities.liteGaming) {
+			this.legionPopupId = AutomationId.RightSectionLegionEdge;
+			this.legionHelpIconId = AutomationId.HelpPopupLegionEdge;
+		} else if (!this.gamingCapabilities.liteGaming && this.gamingCapabilities.desktopType) {
+			this.legionPopupId = AutomationId.RightSectionIdeaCentreGaming;
+			this.legionHelpIconId = AutomationId.HelpPopupIdeaCentreGaming;
+		} else if(this.gamingCapabilities.liteGaming && !this.gamingCapabilities.desktopType) {
+			this.legionPopupId = AutomationId.RightSectionIdeapadGaming;
+			this.legionHelpIconId = AutomationId.HelpPopupIdeapadGaming;
+		}
 	}
 
 	getThermalModeAutomationId() {

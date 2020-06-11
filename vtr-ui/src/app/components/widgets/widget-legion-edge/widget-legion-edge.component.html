@@ -1,4 +1,4 @@
-<div class="vtr-widget-legion-edge" tabindex="1" aria-label="legion edge container" id="{{sectionAutoId}}" role="text">
+<div class="vtr-widget-legion-edge" tabindex="1" aria-label="legion edge container" id="{{legionPopupId}}" role="text">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col d-flex justify-content-between">
@@ -6,7 +6,7 @@
 				<img id="gaming_idea_centre" role="img" class="gaming-header-image" *ngIf="gamingCapabilities.liteGaming && gamingCapabilities.desktopType" [src]="'assets/images/gaming/ideaCentre@2x.png'  | svgInline | async" />
 				<img id="gaming_ideapad" role="img" class="gaming-header-image" *ngIf="gamingCapabilities.liteGaming && !gamingCapabilities.desktopType" [src]="'assets/images/gaming/ideaPad@2x.png'  | svgInline | async" />
 				<div class="help-box" >
-					<button (click)="openModal()" id="{{popupAutoId}}"
+					<button (click)="openModal()" id="{{legionHelpIconId}}"
 					 tabindex="1" aria-label="legion edge help">
 						<!-- <i class="icon icon-question" ></i> -->
 						<fa-icon class="icon" [icon]="['fal', 'question-circle']"></fa-icon>

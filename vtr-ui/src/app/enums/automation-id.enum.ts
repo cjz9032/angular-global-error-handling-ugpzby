@@ -5,5 +5,11 @@ export enum AutomationId {
 	Performance = 'thermal_mode_performance',
 	PerformanceOverclockOn = 'thermal_mode_performance_overclock_on',
 	Balance = 'thermal_mode_balance',
-	Quiet = 'thermal_mode_quit'
+	Quiet = 'thermal_mode_quit',
+	RightSectionLegionEdge = 'right_section_legion_edge',
+	HelpPopupLegionEdge = 'help_popup_legion_edge',
+	RightSectionIdeaCentreGaming = 'right_section_ideacentre_gaming',
+	HelpPopupIdeaCentreGaming = 'help_popup_ideacentre_gaming',
+	RightSectionIdeapadGaming = 'right_section_ideapad_gaming',
+	HelpPopupIdeapadGaming = 'help_popup_ideapad_gaming'
 }
