@@ -64,7 +64,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		}
 	}
 
-	openSubscribeModal(event) {
+	enableFullFeature(event) {
 		if (this.isSubscribed === false) {
 			const scanEnabled = this.commonService.getLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled);
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
@@ -99,13 +99,18 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		// });
 
 	}
-	openPaymnetPopup(){
-		this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
+	openSubscribeModal(){
+		const modalCancel = this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
 		    backdrop: 'static',
 		    size: 'lg',
 		    centered: true,
 		    windowClass: 'subscribe-modal',
 
+		});
+
+		modalCancel.componentInstance.cancelPaymentRequest.subscribe(() => {
+			this.status = 'smartPerformance.subscriptionDetails.processStatus';
+			this.strStatus = 'PROCESSING';
 		});
 	}
 }
