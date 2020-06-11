@@ -18,10 +18,10 @@
 	<div class="row">
 		<div class="col legionEdge-list-items">
 			<div class="item" *ngIf = "gamingCapabilities.thermalModeVersion === 2 && gamingCapabilities.smartFanFeature" >
-				<button class="button-container"
+				<button class="button-container" [id]="getThermalModeAutomationId()"
 				tabindex="1"  (click)="openThermalMode2Modal()"
 				vtrMetrics metricsEvent="featureClick" metricsItem="legion_edge_thermalmode_link" metricsParent="Gaming.Dashboard">
-					<div class="item-left" [id]="getThermalModeAutomationId()" role="text">
+					<div class="item-left">
 						<div  class="title">{{'gaming.dashboard.device.quickSettings.title' | translate}}</div>
 						<div class="mode-status">
 							<span  *ngIf = "thermalModeRealStatus === thermalMode2Enum.performance">{{'gaming.dashboard.device.legionEdge.thermalMode2.performance' | translate}}</span>
@@ -32,9 +32,9 @@
 					</div>
 					<div class="item-right">
 						<div  class="icon">
-							<img id="thermal_mode_performance_snowflake" class="pngStatus performance" *ngIf = "thermalModeRealStatus === thermalMode2Enum.performance">
-							<img id="thermal_mode_balance_snowflake" class="pngStatus balance" *ngIf = "thermalModeRealStatus === thermalMode2Enum.balance">
-							<img id="thermal_mode_quiet_battery_leaf" class="pngStatus quiet" *ngIf = "thermalModeRealStatus === thermalMode2Enum.quiet">
+							<img class="pngStatus performance" *ngIf = "thermalModeRealStatus === thermalMode2Enum.performance">
+							<img class="pngStatus balance" *ngIf = "thermalModeRealStatus === thermalMode2Enum.balance">
+							<img class="pngStatus quiet" *ngIf = "thermalModeRealStatus === thermalMode2Enum.quiet">
 						</div>
 					</div>
 				</button>
