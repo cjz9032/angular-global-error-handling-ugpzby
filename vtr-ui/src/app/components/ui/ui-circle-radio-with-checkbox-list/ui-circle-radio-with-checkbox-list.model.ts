@@ -9,6 +9,6 @@ export class UiCircleRadioWithCheckBoxListModel {
 		public processLabel: boolean,
 		public hideIcon: boolean,
 		public customIcon = '',
-		// public isVisible = true,
+		public metricsItem: string,
 	) { }
 }

@@ -168,6 +168,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 			customIcon: 'Special-function',
 			hideIcon: true,
 			processLabel: false,
+			metricsItem: 'radio.top-row-fn.special-function'
 		});
 		this.functionLockUIModel.push({
 			componentId: this.functionKeyId,
@@ -179,6 +180,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 			customIcon: 'F1-F12-funciton',
 			hideIcon: true,
 			processLabel: false,
+			metricsItem: 'radio.top-row-fn.function-key'
 		});
 	}
 
@@ -194,15 +196,13 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 	}
 
 	setUpTopRowFunctionsKeysUIModel() {
-		const uniqueName = 'top-Row-Functions';
-
 		this.topRowFunctionKeysUIModel = [{
 			componentId: 'nMehod_show',
 			label: 'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.nMehod',
 			value: false,
 			isChecked: this.topRowKeyObj.stickyFunStatus === false,
 			isDisabled: false,
-			metricsValue: 'radio.top-row-fn.normal-key'
+			metricsItem: 'radio.top-row-fn.normal-key'
 		},
 		{
 			componentId: 'fnKeyMehod_show',
@@ -210,7 +210,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 			value: true,
 			isChecked: this.topRowKeyObj.stickyFunStatus === true,
 			isDisabled: false,
-			metricsValue: 'radio.top-row-fn.fn-sticky-Key'
+			metricsItem: 'radio.top-row-fn.fn-sticky-Key'
 		}];
 	}
 

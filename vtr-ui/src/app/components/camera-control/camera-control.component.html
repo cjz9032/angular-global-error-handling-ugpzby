@@ -48,6 +48,7 @@
 						(valueChange)="onBrightnessSliderChange($event)"
 						[isMetricsEnabled]=true
 						[metricsParent]="metricsParent"
+						[metricsItem]="'slider.camera.brightness'"
 						[ariaLabel]="'camera brightness'"
 						[sliderId]="'cameraSettings-brightness'">
 					</vtr-ui-custom-slider>
@@ -67,6 +68,7 @@
 						[value]="cameraSettings.contrast.value"
 						[isMetricsEnabled]=true
 						[metricsParent]="metricsParent"
+						[metricsItem]="'slider.camera.contrast'"
 						(valueChange)="onContrastSliderChange($event)"
 						[ariaLabel]="'camera contrast'"
 						[sliderId]="'cameraSettings-contrast'">
@@ -98,6 +100,7 @@
 							[value]="cameraSettings.exposure.value"
 							[isMetricsEnabled]=true
 							[metricsParent]="metricsParent"
+							[metricsItem]="'slider.camera.auto-exposure'"
 							(valueChange)="onExposureSliderChange($event)"
 							[ariaLabel]="'camera exposure'"
 							[sliderId]="'cameraSettings-autoExposure'">

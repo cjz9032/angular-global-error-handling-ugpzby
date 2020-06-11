@@ -231,6 +231,7 @@
 												[value]="microphoneProperties.volume"
 												[isMetricsEnabled]=true
 												[metricsParent]="metricsParent"
+												[metricsItem]="'slider.microphone.volume'"
 												(valueChange)="onMicrophoneVolumeChange($event)"
 												[isDisabled]="!microphoneProperties.permission"
 												[ariaLabel]="'microphone volume'"

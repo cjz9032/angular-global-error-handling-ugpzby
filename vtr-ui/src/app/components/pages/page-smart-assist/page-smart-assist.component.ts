@@ -96,7 +96,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		value: this.FAST,
 		isChecked: this.intelligentSecurity.autoScreenLockTimer === this.FAST,
 		isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled),
-		metricsValue: 'radio.screen-lock-timer.fast'
+		metricsItem: 'radio.screen-lock-timer.fast'
 	},
 	{
 		componentId: 'autoScreenLockTimer_medium',
@@ -104,7 +104,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		value: this.MEDIUM,
 		isChecked: this.intelligentSecurity.autoScreenLockTimer === this.MEDIUM,
 		isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled),
-		metricsValue: 'radio.screen-lock-timer.medium'
+		metricsItem: 'radio.screen-lock-timer.medium'
 	},
 	{
 		componentId: 'autoScreenLockTimer_slow',
@@ -112,7 +112,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		value: this.SLOW,
 		isChecked: this.intelligentSecurity.autoScreenLockTimer === this.SLOW,
 		isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled),
-		metricsValue: 'radio.screen-lock-timer.slow'
+		metricsItem: 'radio.screen-lock-timer.slow'
 	}];
 
 

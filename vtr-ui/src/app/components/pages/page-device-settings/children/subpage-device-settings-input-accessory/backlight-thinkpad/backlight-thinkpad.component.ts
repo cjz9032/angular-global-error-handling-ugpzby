@@ -294,8 +294,9 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 		if (response && response.length > 0) {
 			this.kbBacklightUIModel = [];
 			response.forEach(mode => {
+				const value = mode.value.toLocaleLowerCase();
 				this.kbBacklightUIModel.push({
-					componentId: `backlightMode${mode.value.toLocaleLowerCase()}`.replace(/\s/g, ''),
+					componentId: `backlightMode${value}`.replace(/\s/g, ''),
 					label: mode.title,
 					value: mode.value,
 					isChecked: mode.value === this.currentMode,
@@ -304,6 +305,7 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 					customIcon: mode.value,
 					hideIcon: true,
 					processLabel: true,
+					metricsItem: `radio.kb-backlight.${value}`
 				});
 			});
 		}
