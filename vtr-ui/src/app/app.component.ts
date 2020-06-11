@@ -170,6 +170,10 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 			if (arguments.length > 1 && 'container' in arguments[1] === false) {
 				Object.assign(arguments[1], { container: 'vtr-root div' });
 			}
+			setTimeout(() => {
+				const modal: HTMLElement = document.querySelector('.modal');
+				if (modal) { modal.focus(); }
+			}, 0);
 			return original.apply(this, arguments);
 		};
 	}
