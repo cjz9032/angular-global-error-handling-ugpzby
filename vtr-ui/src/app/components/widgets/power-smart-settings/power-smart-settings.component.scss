@@ -88,12 +88,8 @@
 			cursor: pointer;
 			font-size: $body;
 			font-weight: $weight_bold;
-			@media #{$black-on-white} {
-				color: $high-contrast-blue;
-			}
-			@media #{$white-on-black} {
-				color: $yellow;
-			}
+			@include hyperlink-blue-white;
+			@include hyperlink-yellow-black;
 			&:hover {
 				list-style: none;
 				color: $menu_hover;
@@ -117,12 +113,8 @@
 		text-decoration: underline;
 		cursor: pointer;
 		border: 0.1rem solid transparent;
-		@media #{$black-on-white} {
-			color: $high-contrast-blue;
-		}
-		@media #{$white-on-black} {
-			color: $yellow;
-		}
+		@include hyperlink-blue-white;
+		@include hyperlink-yellow-black;
 		&:focus {
 			@include outline-border-blue;
 		}
@@ -172,12 +164,8 @@
 			cursor: pointer;
 			font-size: $body;
 			font-weight: $weight_bold;
-			@media #{$black-on-white} {
-				color: $high-contrast-blue;
-			}
-			@media #{$white-on-black} {
-				color: $yellow;
-			}
+			@include hyperlink-blue-white;
+			@include hyperlink-yellow-black;
 			&:hover {
 				list-style: none;
 				color: #4a81fd;

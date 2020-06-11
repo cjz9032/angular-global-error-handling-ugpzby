@@ -427,6 +427,7 @@ $high-contrast-white-disabled: #600000;
 $high-contrast-black-textselected: #1aebff;
 $high-contrast-black-disabled: #3be23b;
 $high-contrast-black-yellow: #FFFF00;
+$high-contrast-white-blue: #0000A2;
 $high-contrast-black-cyan: #00EBFF;
 $high-contrast-black-disabled-green: #30F42C;
 $high-contrast-white-dark-magenta: #370070;
@@ -567,3 +568,37 @@ $high-contrast-white-disabled-maroon: #610000;
 	}
 }
 
+@mixin dropdownarrow-yellow-black {
+	@media #{$white-on-black} {
+		background: $high-contrast-black-yellow;
+	}
+}
+
+@mixin dropdownarrow-blue-white {
+	@media #{$black-on-white} {
+		background: $high-contrast-white-blue;
+	}
+}
+@mixin hyperlink-blue-white {
+@media #{$black-on-white} {
+	color: $high-contrast-white-blue;
+}
+}
+@mixin hyperlink-yellow-black {
+@media #{$white-on-black} {
+	color: $high-contrast-black-yellow;
+}
+}
+
+@mixin privacylink-blue-white {
+@media #{$black-on-white} {
+	color: $high-contrast-white-blue;
+	border:none;
+}
+}
+@mixin privacylink-yellow-black {
+@media #{$white-on-black} {
+	color: $high-contrast-black-yellow;
+	border:none;
+}
+}

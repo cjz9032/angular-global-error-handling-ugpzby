@@ -83,12 +83,8 @@ ul.list-group {
 	margin-top: 3rem;
 	display: inline-block;
 	cursor: pointer;
-	@media #{$black-on-white} {
-		color: $high-contrast-blue;
-	}
-	@media #{$white-on-black} {
-		color: $high-contrast-black-yellow;
-	}
+	@include hyperlink-yellow-black;
+	@include hyperlink-blue-white;
 	&:focus {
 		@include outline-blue;
 	}

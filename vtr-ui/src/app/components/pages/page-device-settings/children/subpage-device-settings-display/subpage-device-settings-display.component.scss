@@ -85,14 +85,8 @@
 			.privacy-button {
 				font-size: 1.2rem;
 				letter-spacing: 0.76px;
-				@media #{$black-on-white} {
-					color: $high-contrast-blue;
-					border:none;
-				}
-				@media #{$white-on-black} {
-					color: $high-contrast-black-yellow;
-					border:none;
-				}
+				@include privacylink-yellow-black;
+				@include privacylink-blue-white;
 			}
 		}
 	}
@@ -203,14 +197,8 @@
 			text-align: left;
 			font-family: "Segoe UI", sans-serif;
 			font-weight: $weight_light;
-			@media #{$black-on-white} {
-				color: $high-contrast-blue;
-				border:none;
-			}
-			@media #{$white-on-black} {
-				color: $high-contrast-black-yellow;
-				border: none;
-			}
+			@include privacylink-yellow-black;
+			@include privacylink-blue-white;
 			&:focus {
 				@include outline-blue;
 			}
