@@ -11,6 +11,21 @@
 		<p id="ds-{{id}}popup-description2"
 			role="heading"
 			[innerHTML]="description2 | translate"></p>
+
+		<div class="row" *ngIf="id==='threshold' && batteryService.isTemporaryChargeModes[0]">
+			<div class="col">
+				<div class="note-box">
+					<div class="note"
+						id="threshold-temporary-charge-mode"
+						role="note">
+						{{'device.deviceSettings.power.batterySettings.batteryThreshold.popup.description3' | translate}}
+						<p id=""
+							role="text"
+							[innerHtml]="'device.deviceSettings.batteryGauge.details.moreInfo' | translate"></p>
+					</div>
+				</div>
+			</div>
+		</div>
 		<hr aria-hidden="true">
 		<div class="row">
 			<button id="battery-{{id}}-popup-{{buttonId | lowercase}}"

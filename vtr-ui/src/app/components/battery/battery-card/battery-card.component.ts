@@ -62,6 +62,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	bctInfoSubscription: Subscription;
 	airplaneModeSubscription: Subscription;
 	expressChargingSubscription: Subscription;
+
+	activatedRouteSubscription: Subscription;
+
 	public readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
 	public readonly metricsType = CommonMetricsModel.ItemType;
 
@@ -165,7 +168,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		// temp
 		this.registerBatteryEvents();
 
-		this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
+		this.activatedRouteSubscription = this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
 			if (params.has('batterydetail')) {
 				const showBatteryDetail = this.activatedRoute.snapshot.queryParams.batterydetail;
 				this.getBatteryDetails(showBatteryDetail);
@@ -205,6 +208,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		}
 		if(this.expressChargingSubscription) {
 			this.expressChargingSubscription.unsubscribe();
+		}
+		if(this.activatedRouteSubscription) {
+			this.activatedRouteSubscription.unsubscribe();
 		}
 		this.batteryService.stopMonitor();
 	}
@@ -500,6 +506,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	 * @param content: battery Information
 	 */
 	public showDetailModal(content: any): void {
+		this.batteryService.currentOpenModal = 'battery-details';
 		if(!this.batteryService.isBatteryModalShown) {
 			this.batteryService.isBatteryModalShown = true;
 			this.modalService

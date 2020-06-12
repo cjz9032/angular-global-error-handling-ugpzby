@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, EventEmitter, Input, NgZone, OnDestroy, OnInit, Output, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, Input, NgZone, OnDestroy, OnInit, Output, QueryList, ViewChild, ViewChildren, OnChanges, SimpleChanges, ChangeDetectionStrategy } from '@angular/core';
 import { NgbModal, NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
 import { Subject } from 'rxjs';
@@ -6,7 +6,6 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { throttleTime } from 'rxjs/operators';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { BaseComponent } from '../../base/base.component';
-import { ModalBatteryChargeThresholdComponent } from '../../modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
 import { ModalRebootConfirmComponent } from '../../modal/modal-reboot-confirm/modal-reboot-confirm.component';
 import { ModalVoiceComponent } from '../../modal/modal-voice/modal-voice.component';
 
@@ -65,6 +64,7 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, After
 	@ViewChild('captionRef', { static: false }) captionRef: ElementRef;
 	@ViewChildren(NgbTooltip) toolTips: QueryList<NgbTooltip>;
 	scrollEvent = new Subject();
+
 	subscriptionList = [];
 
 	constructor(
@@ -72,7 +72,7 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, After
 		private deviceService: DeviceService,
 		private translate: TranslateService,
 		private ngZone: NgZone
-	) { super(); }
+	) {	super(); }
 
 	ngAfterViewInit(): void {
 		try {
@@ -97,47 +97,11 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, After
 		// 	window.addEventListener('scroll', () => { this.scrollEvent.next(); }, true);
 		// });
 
-		// this.commonService.notification.subscribe((notification: AppNotification) => {
-		// 	this.onNotification(notification);
-		// });
 	}
 
 	public onOnOffChange($event) {
-		// if (this.title === 'Battery Charge Threshold') {
 		const activeElement = document.activeElement as HTMLElement;
-		if (this.title === this.translate.instant('device.deviceSettings.power.batterySettings.batteryThreshold.title')) {
-			this.isSwitchChecked = !this.isSwitchChecked;
-			if (this.isSwitchChecked) {
-				const modalRef = this.modalService.open(ModalBatteryChargeThresholdComponent, {
-					backdrop: 'static',
-					centered: true,
-					windowClass: 'Battery-Charge-Threshold-Modal'
-				});
-				modalRef.componentInstance.id = 'threshold'
-				modalRef.componentInstance.title = 'device.deviceSettings.power.batterySettings.batteryThreshold.popup.title';
-				modalRef.componentInstance.description1 = 'device.deviceSettings.power.batterySettings.batteryThreshold.popup.description1';
-				modalRef.componentInstance.description2 = 'device.deviceSettings.power.batterySettings.batteryThreshold.popup.description2';
-				modalRef.componentInstance.positiveResponseText = 'device.deviceSettings.power.batterySettings.batteryThreshold.popup.enable';
-				modalRef.componentInstance.negativeResponseText = 'device.deviceSettings.power.batterySettings.batteryThreshold.popup.cancel';
-
-				modalRef.result.then(
-					result => {
-						if (result === 'positive') {
-							this.toggleOnOff.emit($event);
-						} else if (result === 'negative') {
-							this.isSwitchChecked = !this.isSwitchChecked;
-						}
-						activeElement.focus();
-					},
-					reason => {
-					}
-				);
-			} else {
-				this.toggleOnOff.emit($event);
-			}
-		} else {
-			this.toggleOnOff.emit($event);
-		}
+		this.toggleOnOff.emit($event);
 		this.rebootConfirm($event);
 	}
 	public rebootConfirm($event) {
@@ -184,7 +148,6 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, After
 	}
 
 	checkToolTips() {
-		// console.log('==THROTTLE');
 		const subscription = this.scrollEvent.asObservable().pipe(throttleTime(100)).subscribe(event => {
 			this.toggleToolTip(this.rightToolTip1);
 			this.toggleToolTip(this.rightToolTip2);
@@ -254,17 +217,6 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, After
 	// private closeTooltip($event: Event) {
 	// 	if (!$event.srcElement.classList.contains('fa-question-circle') && this.tooltip && this.tooltip.isOpen()) {
 	// 		this.tooltip.close();
-	// 	}
-	// }
-
-	// private onNotification(notification: AppNotification) {
-	// 	const { type, payload } = notification;
-	// 	switch (type) {
-	// 		case AppEvent.Click:
-	// 			this.closeTooltip(payload);
-	// 			break;
-	// 		default:
-	// 			break;
 	// 	}
 	// }
 
