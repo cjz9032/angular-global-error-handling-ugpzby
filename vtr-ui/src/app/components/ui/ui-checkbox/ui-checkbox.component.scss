@@ -85,6 +85,13 @@
 			&::before {
 				box-shadow: $check-box-shadow;
 				border-color: $menu_hover;
+				
+				@media #{$black-on-white} {
+					border: 0.1rem solid $high-contrast-white-dark-magenta;
+					background-color:$light;
+				}
+
+				
 			}
 		}
 
@@ -95,12 +102,24 @@
 			&::before {
 				border-color: $shade_blue;
 				background-color: $shade_blue;
+				@media #{$black-on-white} {
+					background-color: $high-contrast-white-dark-magenta;
+						
+				}
+				
 			}
 		}
 		.custom-control-input:active:checked ~ .custom-control-label {
 			&::before {
 				border-color: $shade_blue;
 				background-color: $shade_blue;
+
+				@media #{$black-on-white} {
+					background-color: $high-contrast-white-dark-magenta;
+						
+				}
+				
+				
 			}
 		}
 
@@ -114,6 +133,13 @@
 			&::before {
 				border-color: $shade_blue;
 				opacity: $disabled-opacity;
+
+				
+				@media #{$black-on-white} {
+					border-color: $high-contrast-white-disabled-maroon;
+						
+				}
+				
 			}
 		}
 		.custom-control-input:disabled:checked ~ .custom-control-label {
@@ -123,6 +149,12 @@
 				border-color: $shade_blue;
 				background-color: $shade_blue;
 				opacity: $disabled-opacity;
+				
+				@media #{$black-on-white} {
+					border: 0.1rem
+						solid $high-contrast-white-disabled-maroon;
+						background-color:$light;
+				}
 			}
 		}
 
