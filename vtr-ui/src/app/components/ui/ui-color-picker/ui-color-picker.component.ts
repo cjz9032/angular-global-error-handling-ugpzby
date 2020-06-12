@@ -15,7 +15,6 @@ export class UiColorPickerComponent implements OnInit , OnChanges {
   @Input() color:any;
   @Output() isToggleColorPicker = new EventEmitter<any>();
   @Output() setColor = new EventEmitter<any>();
-  public isTogglePresetColor = true;
   public isToggleMoreColor = false;
   public presetColorList:any = new LightingDataList().presetColorListData;
   public isSliderOut:boolean;
