@@ -2,7 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { Component, OnInit, HostListener, OnDestroy, Inject, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { DisplayService } from './services/display/display.service';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbModalRef, NgbTooltipConfig } from '@ng-bootstrap/ng-bootstrap';
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
 import { DeviceService } from './services/device/device.service';
 import { CommonService } from './services/common/common.service';
@@ -72,11 +72,13 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		private logger: LoggerService,
 		private appsForYouService: AppsForYouService,
 		private metricService: MetricService,
+		private ngbTooltipConfig: NgbTooltipConfig,
 		private storeRating: StoreRatingService,
 		// don't delete historyManager
 		private historyManager: HistoryManager,
 		@Inject(DOCUMENT) public document: Document
 	) {
+		this.ngbTooltipConfig.triggers = 'hover';
 		this.patchNgbModalOpen();
 		// to check web and js bridge version in browser console
 		const win: any = window;
