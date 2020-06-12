@@ -647,8 +647,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 		// Resets the 'collapse' state to the default value (closed)
 		for (const module of this.modules) {
-			module.collapsed = true;
-			module.userCollapse = false;
+			module.expanded = true;
+			module.expandedByUser = false;
 		}
 
 		// Used for metrics purposes
@@ -750,9 +750,9 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				name: module.name,
 				resultCode: module.resultCode,
 				information: module.description,
-				collapsed: true,
-				userCollapse: false,
-				detailsCollapsed: true,
+				expanded: false,
+				expandedByUser: false,
+				detailsExpanded: false,
 				icon: module_id,
 				details: [],
 				listTest: []
@@ -820,8 +820,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					module: storageModule.name,
 					icon: storageModule.id,
 					name: device.name,
-					collapsed: false,
-					detailsCollapsed : true,
+					expanded: false,
+					detailsExpanded: false,
 					listTest: [{
 						id: '',
 						name: device.name,
@@ -863,8 +863,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					module: storageModule.name,
 					icon: storageModule.id,
 					name: device.name,
-					collapsed: false,
-					detailsCollapsed : true,
+					expanded: false,
+					detailsExpanded: false,
 					details: [
 						{ [this.translate.instant('hardwareScan.recoverBadSectors.numberSectors')]: device.numberOfSectors },
 						{ [this.translate.instant('hardwareScan.recoverBadSectors.numberBadSectors')]: device.numberOfBadSectors },

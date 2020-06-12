@@ -860,9 +860,9 @@ export class HardwareScanService {
 						icon: '',
 						metaInformation: [],
 						listTest: [],
-						collapsed: true,
-						userCollapse: false,
-						detailsCollapsed : true
+						expanded: false,
+						expandedByUser: false,
+						detailsExpanded: false
 					};
 
 					item.module = categoryInfo.name;
@@ -957,15 +957,18 @@ export class HardwareScanService {
 			}
 		}
 
-		for (const module of this.modules) {
-			if(!module.userCollapse){
-				if (!module.resultCode) {
-					module.collapsed = false;
-					break;
-				} else {
-					module.collapsed = true;
-				}
-			}
+		// Finds the first model without result code and expand it
+		// to show the current test in execution
+		this.modules.find(module => !module.resultCode).expanded = false;
+
+		// Finds the first module with result code and the user doesn't modify the collapse status.
+		const currentModuleToCollapse =
+			this.modules.find(module => !module.expandedByUser && !module.expanded && module.resultCode);
+
+		// Validates if currentModuleToCollapse returns a valid value and
+		// collapse the test list of this module
+		if(currentModuleToCollapse){
+			currentModuleToCollapse.expanded = true;
 		}
 
 		for (const module of this.modules) {
@@ -1094,9 +1097,9 @@ export class HardwareScanService {
 					item.name = groupResultMeta.name;
 					item.resultCode = groupResult[i].resultCode;
 					item.information = groupResult[i].resultDescription;
-					item.collapsed = true;
-					item.userCollapse = false;
-					item.detailsCollapsed = true;
+					item.expanded = false;
+					item.expandedByUser = false;
+					item.detailsExpanded = false;
 					item.icon = moduleName;
 					if (!this.isDesktopMachine) {
 						if (item.icon === 'pci_express') {
