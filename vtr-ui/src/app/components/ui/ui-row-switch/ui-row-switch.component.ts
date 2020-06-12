@@ -91,12 +91,6 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, After
 	ngOnInit() {
 		this.childContent = {};
 		this.childContent.innerHTML = '';
-		// below commented due to VAN-14567
-		// this.checkToolTips();
-		// this.ngZone.runOutsideAngular(() => {
-		// 	window.addEventListener('scroll', () => { this.scrollEvent.next(); }, true);
-		// });
-
 	}
 
 	public onOnOffChange($event) {
@@ -214,10 +208,5 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, After
 			return source;
 		}
 	}
-	// private closeTooltip($event: Event) {
-	// 	if (!$event.srcElement.classList.contains('fa-question-circle') && this.tooltip && this.tooltip.isOpen()) {
-	// 		this.tooltip.close();
-	// 	}
-	// }
 
 }
