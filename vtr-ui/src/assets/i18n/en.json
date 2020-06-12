@@ -1765,10 +1765,11 @@
 							"note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
 						},
 						"popup": {
-							"title": "Restart computer",
+							"title": "Restart your computer",
 							"description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
 							"reboot": "REBOOT",
-							"cancel": "NOT NOW"
+							"cancel": "NOT NOW",
+							"yes": "YES"
 						},
 						"note": {
 							"sFunKey": "To access F1-F12 function, press Fn and the keys on the top row.",
@@ -1844,9 +1845,9 @@
 					}
 				},
 				"fnCtrlKey": {
-					"title": "FN key and Ctrl key swap",
+					"title": "Fn and Ctrl key swap",
 					"description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-					"restartNote": "Swapping the function of two keys requires you to restart your computer. Are you sure to restart?",
+					"restartNote": "Swapping the function of the two keys requires you to restart your computer. Are you sure to restart?",
 					"title2": "Fn works as Ctrl for frequently used key combinations",
 					"description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
 					"featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
