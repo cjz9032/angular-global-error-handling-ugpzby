@@ -645,11 +645,11 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			requests = this.hardwareScanService.getFilteredCustomScanRequest();
 		}
 
-		// Resets the 'collapse' state to the default value (closed)
-		for (const module of this.modules) {
-			module.expanded = true;
-			module.expandedByUser = false;
-		}
+		// Resets the 'expanded' state and User visibility to the default value (closed)
+		this.modules.forEach(module => {
+			module.expanded = false;
+			module.visibilityChangedByUser = false;
+		});
 
 		// Used for metrics purposes
 		const testMapMetrics = {};
@@ -751,7 +751,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				resultCode: module.resultCode,
 				information: module.description,
 				expanded: false,
-				expandedByUser: false,
+				visibilityChangedByUser: false,
 				detailsExpanded: false,
 				icon: module_id,
 				details: [],

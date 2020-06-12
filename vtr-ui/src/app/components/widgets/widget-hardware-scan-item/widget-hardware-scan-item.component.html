@@ -87,7 +87,7 @@
 			<!-- Test List with collapsed running test-->
 			<div class="test-list col" *ngIf="isScanExecute && !isEnableViewResults">
 				<vtr-ui-hardware-list
-					[ngbCollapse]="item.expanded"
+					[ngbCollapse]="!item.expanded"
 					[items]="item.listTest"
 					[template]="2">
 				</vtr-ui-hardware-list>

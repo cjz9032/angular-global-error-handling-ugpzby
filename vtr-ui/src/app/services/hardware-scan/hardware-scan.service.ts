@@ -861,7 +861,7 @@ export class HardwareScanService {
 						metaInformation: [],
 						listTest: [],
 						expanded: false,
-						expandedByUser: false,
+						visibilityChangedByUser: false,
 						detailsExpanded: false
 					};
 
@@ -957,18 +957,24 @@ export class HardwareScanService {
 			}
 		}
 
-		// Finds the first model without result code and expand it
-		// to show the current test in execution
-		this.modules.find(module => !module.resultCode).expanded = false;
+		// Finds the first model without result code
+		const currentModuleToExpand =
+			this.modules.find(module => !module.resultCode)
 
-		// Finds the first module with result code and the user doesn't modify the collapse status.
+		// Validates if currentModuleToExpand returns a value doesn't modify by user
+		// and expand it to show the current test in execution
+		if(!currentModuleToExpand.visibilityChangedByUser) {
+			currentModuleToExpand.expanded = true;
+		}
+
+		// Finds the first module with result code and the user doesn't modify the expanded status.
 		const currentModuleToCollapse =
-			this.modules.find(module => !module.expandedByUser && !module.expanded && module.resultCode);
+			this.modules.find(module => !module.visibilityChangedByUser && module.expanded && module.resultCode);
 
 		// Validates if currentModuleToCollapse returns a valid value and
 		// collapse the test list of this module
 		if(currentModuleToCollapse){
-			currentModuleToCollapse.expanded = true;
+			currentModuleToCollapse.expanded = false;
 		}
 
 		for (const module of this.modules) {
@@ -1098,7 +1104,7 @@ export class HardwareScanService {
 					item.resultCode = groupResult[i].resultCode;
 					item.information = groupResult[i].resultDescription;
 					item.expanded = false;
-					item.expandedByUser = false;
+					item.visibilityChangedByUser = false;
 					item.detailsExpanded = false;
 					item.icon = moduleName;
 					if (!this.isDesktopMachine) {
