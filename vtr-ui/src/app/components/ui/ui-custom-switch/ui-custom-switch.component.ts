@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input, OnDestroy } from '@angular/core';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
@@ -8,7 +8,7 @@ import { Subject } from 'rxjs';
 	templateUrl: './ui-custom-switch.component.html',
 	styleUrls: ['./ui-custom-switch.component.scss']
 })
-export class UiCustomSwitchComponent implements OnInit {
+export class UiCustomSwitchComponent implements OnInit, OnDestroy {
 	public static switchChange: Subject<boolean> = new Subject<boolean>();
 
 	@Output() toggle: EventEmitter<any> = new EventEmitter();
@@ -33,6 +33,12 @@ export class UiCustomSwitchComponent implements OnInit {
 	 }
 
 	ngOnInit(): void {
+	}
+
+	ngOnDestroy(): void {
+		if (UiCustomSwitchComponent.switchChange) {
+			UiCustomSwitchComponent.switchChange.unsubscribe();
+		}
 	}
 
 	public onChange($event) {
