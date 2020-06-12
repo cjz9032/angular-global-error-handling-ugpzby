@@ -52,19 +52,28 @@ vtr-ui-smart-performance-scan-summary {
 				position: relative;
 				@media #{$breakpoint_xl}{
 					width: 100%;
+					display: flex;
+					flex-direction: row;
 				}
 				@media #{$breakpoint_lg}{
 					width: 62%;
+					display: flex;
+					flex-direction: row-reverse;
 				}
 				@media #{$breakpoint_md}{
 					width: 100%;
+					display: flex;
+					flex-direction: row;
 				}
 				@media #{$breakpoint_sm}{
 					width: 100%;
+					display: flex;
+					flex-direction: row;
 				}
 				.list-group {
-					background: #303D49;
+					background: $main_darker;
 					border-radius: 0.5rem;
+					max-width: 35.5rem;
 					.list-group-item {
 						border-radius: 0.5rem;
 						border: none;
