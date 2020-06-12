@@ -1586,7 +1586,7 @@
 				"display": {
 					"title": "Display",
 					"displayColorTemperature": {
-						"title": "Eye care mode",
+						"title": "Eye Care Mode",
 						"description": "To avoid eye strain, you can adjust the color temperature of your display to filter out the blue light when you use your computer for a long time. In addition, warm colors are good for your sleeping especially in the night.",
 						"link": {
 							"click": "Click",
@@ -1608,7 +1608,7 @@
 							"title": "Note",
 							"description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
 						},
-						"tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+						"tips": "Please run Windows Update or manually install graphics driver to recover Eye Care Mode."
 					},
 					"oledPowerSettings": {
 						"title": "OLED Power Settings",
