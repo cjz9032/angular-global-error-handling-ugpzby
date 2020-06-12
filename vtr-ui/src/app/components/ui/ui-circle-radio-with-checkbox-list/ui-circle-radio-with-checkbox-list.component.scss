@@ -54,6 +54,14 @@
 						right: -2.5rem;
 						top: 0.5rem;
 						font-size: 2rem;
+						@media #{$black-on-white} {
+							right: -2.6rem;
+							top: 0.4rem;
+						}
+						@media #{$white-on-black} {
+							right: -2.6rem;
+							top: 0.4rem;
+						}
 					}
 
 					.icon-circle {
@@ -76,10 +84,22 @@
 
 					&:hover {
 						border-color: $blue-light;
+						@media #{$black-on-white} {
+							border-color: $high-contrast-white-dark-magenta;
+						}
+						@media #{$white-on-black} {
+							border-color: $high-contrast-black-cyan;
+						}
 
 						.icomoon {
 							&::before {
 								color: $blue-light;
+								@media #{$black-on-white} {
+									color: $high-contrast-white-dark-magenta;
+								}
+								@media #{$white-on-black} {
+									color: $high-contrast-black-cyan;
+								}
 							}
 						}
 					}
@@ -128,18 +148,44 @@
 
 				[role="radio"][aria-checked="true"] {
 					background: $background;
+					@media #{$black-on-white} {
+						background: transparent;
+						border: 0.2rem solid $high-contrast-white-dark-magenta;
+					}
+					@media #{$white-on-black} {
+						background: transparent;
+						border: 0.2rem solid $high-contrast-black-cyan;
+					}
 
 					.check-circle {
 						color: $main;
+						@media #{$black-on-white} {
+							color: $light;
+						}
+						@media #{$white-on-black} {
+							color: $dark;
+						}
 					}
 
 					.icon-circle {
 						color: $light;
+						@media #{$black-on-white} {
+							color: $high-contrast-white-dark-magenta;
+						}
+						@media #{$white-on-black} {
+							color: $high-contrast-black-cyan;
+						}
 					}
 					.icomoon {
 						font-size: 3rem;
 						&::before {
 							color: $light;
+							@media #{$black-on-white} {
+								color: $high-contrast-white-dark-magenta;
+							}
+							@media #{$white-on-black} {
+								color: $high-contrast-black-cyan;
+							}
 						}
 					}
 
@@ -232,6 +278,12 @@
 						top: -0.1rem;
 						&::before {
 							color: $background !important;
+							@media #{$black-on-white} {
+								display: none;
+							}
+							@media #{$white-on-black} {
+								display: none;
+							}
 						}
 					}
 				}
