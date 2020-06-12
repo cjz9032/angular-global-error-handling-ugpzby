@@ -2445,7 +2445,7 @@
 				"tab2Heading": "IT'S FAST",
 				"tab2Description": "Get a 100 point check done in under 5 minutes",
 				"tab3Heading": "IT'S SAFE",
-				"tab3Description": "No scareware, built with best practises"
+				"tab3Description": "No scareware, built with best practices"
 			}
 		},
 		"noScanResults":"Please click SCAN & FIX button to trigger scan process.",
@@ -2453,7 +2453,7 @@
 		"subscriptionDetails": {
 			"title": "Subscription Details",
 			"titlebeta":"Lenovo Beta Program",
-			"descriptionNonSubscriber":"You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+			"descriptionNonSubscriber":"You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothly.",
 			"description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
 			"learnMore": "Learn more",
 			"startDate": "Start date",
@@ -2953,7 +2953,8 @@
 				"custom": "Custom",
 				"txtFrom": "From",
 				"txtTo": "To",
-				"txtGo": "Go"
+				"txtGo": "Go",
+				"txtClr": "Clear"
 			},
 			"lastScanResults": {
 				"title": "Last 5 scan results:",
