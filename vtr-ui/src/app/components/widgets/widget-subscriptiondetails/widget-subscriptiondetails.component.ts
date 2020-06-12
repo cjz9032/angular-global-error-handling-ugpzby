@@ -8,6 +8,7 @@ import { v4 as uuid } from 'uuid';
 import { formatDate } from '@angular/common';
 import { enumSmartPerformance } from 'src/app/enums/smart-performance.enum';
 import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
+import moment from 'moment';
 @Component({
 	selector: 'vtr-widget-subscriptiondetails',
 	templateUrl: './widget-subscriptiondetails.component.html',
@@ -25,6 +26,11 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	public today = new Date();
 	myDate = new Date();
 	spEnum:any = enumSmartPerformance;
+	public subscriptionDate: any;
+	public modalStatus: any = {};
+	currentTime: string;
+	intervalTime: string;
+
   constructor(
 	  private translate: TranslateService,
 	  private modalService: NgbModal,
@@ -32,34 +38,41 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	  private formatLocaleDate: FormatLocaleDatePipe
 	  ) {
 	}
-	public localSubscriptionDetails = [
-		{
+	public localSubscriptionDetails = {
 			UUID: uuid(),
-			StartDate: formatDate(new Date(), 'yyyy/MM/dd', 'en'),
-			EndDate: formatDate(this.spEnum.SCHEDULESCANENDDATE, 'yyyy/MM/dd', 'en')
+			startDate: formatDate(new Date(), 'yyyy/MM/dd', 'en'),
+			endDate: formatDate(this.spEnum.SCHEDULESCANENDDATE, 'yyyy/MM/dd', 'en')
 		}
-	];
 	ngOnInit() {
 		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
+		this.initSubscripionDetails();
+		this.modalStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus);
+		if(this.modalStatus && this.modalStatus.isOpened && this.modalStatus.initiatedTime < this.intervalTime){
+			this.getAccessToken();
+			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.processStatus';
+			this.strStatus = 'PROCESSING';
+		}
+	}
+	initSubscripionDetails() {
+		let subScriptionDates: any = {};
 		if (this.isSubscribed) {
-			this.subscriptionDetails = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails);
-			this.startDate = this.formatLocaleDate.transform(this.subscriptionDetails[0].StartDate);
-			this.endDate = this.formatLocaleDate.transform(this.subscriptionDetails[0].EndDate);
-			this.givenDate = new Date(this.subscriptionDetails[0].EndDate);
+			subScriptionDates = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails);
+			this.subscriptionDetails.startDate = this.formatLocaleDate.transform(subScriptionDates.startDate);
+			this.subscriptionDetails.endDate = this.formatLocaleDate.transform(subScriptionDates.endDate);
 
-			if (this.givenDate > this.today) {
-				this.status = 'smartPerformance.subscriptionDetails.activeStatus';
+			if (this.subscriptionDetails.endDate > this.today) {
+				this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.activeStatus';
 				this.strStatus = 'ACTIVE';
 			}
 			else {
-				this.status = 'smartPerformance.subscriptionDetails.inactiveStatus';
+				this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.inactiveStatus';
 				this.strStatus = 'INACTIVE';
 			}
 		}
 		else {
-			this.startDate = '---';
-			this.endDate = '---';
-			this.status = 'smartPerformance.subscriptionDetails.inactiveStatus';
+			this.subscriptionDetails.startDate = '---';
+			this.subscriptionDetails.endDate = '---';
+			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.inactiveStatus';
 			this.strStatus = 'INACTIVE';
 		}
 	}
@@ -99,18 +112,79 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		// });
 
 	}
-	openSubscribeModal(){
+	openSubscribeModal() {
+		this.currentTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
+		this.intervalTime = moment(this.currentTime).add(10, 'm').format('YYYY-MM-DD HH:mm:ss');
+		this.modalStatus = {
+			initiatedTime: this.currentTime,
+			isOpened: true
+		}
+		this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, this.modalStatus);
 		const modalCancel = this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
-		    backdrop: 'static',
-		    size: 'lg',
-		    centered: true,
-		    windowClass: 'subscribe-modal',
+			backdrop: 'static',
+			size: 'lg',
+			centered: true,
+			windowClass: 'subscribe-modal',
 
 		});
 
 		modalCancel.componentInstance.cancelPaymentRequest.subscribe(() => {
-			this.status = 'smartPerformance.subscriptionDetails.processStatus';
+			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.processStatus';
 			this.strStatus = 'PROCESSING';
+			this.getAccessToken();
 		});
+	}
+
+	async getAccessToken() {
+		const url = 'https://rsgw-eservice-uat.motorola.com/auth/oauth/v2/token';
+		const body = {
+			client_id: 'l764087a49cc4641668079e49d0320ef17',
+			client_secret: 'ca49aace91a1419a825cbe7562cdc027',
+			grant_type: 'client_credentials'
+		}
+		this.getSubscriptionDetails()
+		// const accessToken = this.smartPerformanceService.getAccessToken(url, body);
+	}
+
+	async getSubscriptionDetails() {
+		const url = 'https://rsgw-eservice-uat.motorola.com/main.upsell.dit/smart/getorders';
+		const obj = {
+			serialNumber: 'PC0ZEPQ6'
+		}
+		// const subscriptionDetails = await this.smartPerformanceService.getPaymentnDetails(url, obj);
+		const subscriptionData = [
+			{
+				releaseDate: '2020-06-11T08:25:10.528+0000',
+				createTime: '2020-06-11T08:20:02.323+0000',
+				status: 'COMPLETED',
+				products: [
+					{
+						productCode: '5WS0X58670',
+						productName: 'Smart Performance',
+						productType: 'SmartPerformance',
+						unitTerm: 24
+					}
+				]
+			}
+		]
+		if (subscriptionData && subscriptionData.length > 0) {
+			const releaseDate = moment(subscriptionData[0].releaseDate);
+			const addUnitTerm = moment(releaseDate).add(subscriptionData[0].products[0].unitTerm, 'M');
+			const expiredDate = moment(addUnitTerm).endOf('month');
+			this.subscriptionDetails = {
+				startDate: moment(releaseDate).format('YYYY-MM-DD HH:mm:ss'),
+				endDate: moment(expiredDate).format('YYYY-MM-DD HH:mm:ss'),
+				productNumber: subscriptionData[0].products[0].productCode || ''
+			}
+			this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.subscriptionDetails);
+			this.modalStatus.isOpened = false;
+			this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, this.modalStatus);
+		} else {
+			setTimeout(() => {
+				if (this.intervalTime < this.currentTime) {
+					this.getSubscriptionDetails()
+				}
+			}, 3000);
+		}
 	}
 }
