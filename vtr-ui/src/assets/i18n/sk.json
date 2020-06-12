@@ -155,6 +155,8 @@
                         "cpuOCName79": "Zmena napätia vyrovnávacej pamäte",
                         "cpuOCName122": "Násobič jadra 7",
                         "cpuOCName123": "Násobič jadra 8",
+                        "cpuOCName124": "Násobič jadra 9",
+                        "cpuOCName125": "Násobič jadra 10",
                         "cpuOCName102": "ICCMAX jadra",
                         "cpuOCName106": "ICCMAX vyrovnávacej pamäte",
                         "cpuOCName114": "Zmena násobiča pre AVX"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Finálna zmena napätia, ktorá sa použije na napätie vyrovnávacej pamäte.",
                         "cpuOCTip122": "Nastavenie maximálneho násobiča jadra. Frekvencia jadra je súčinom tohto násobiča a referenčnej frekvencie.",
                         "cpuOCTip123": "Nastavenie maximálneho násobiča jadra. Frekvencia jadra je súčinom tohto násobiča a referenčnej frekvencie.",
+                        "cpuOCTip124": "Nastavenie maximálneho násobiča jadra. Frekvencia jadra je súčinom tohto násobiča a referenčnej frekvencie.",
+                        "cpuOCTip125": "Nastavenie maximálneho násobiča jadra. Frekvencia jadra je súčinom tohto násobiča a referenčnej frekvencie.",
                         "cpuOCTip102": "Nastavenie hodnoty ICCMAX pre regulátor napätia jadra procesora.",
                         "cpuOCTip106": "Nastavenie hodnoty ICCMAX pre regulátor napätia vyrovnávacej pamäte procesora a kruhovej zbernice.",
                         "cpuOCTip114": "Ak chcete odvodiť limit násobiča aktívneho jadra, keď je aktívny súbor inštrukcií AVX, odpočítajte túto hodnotu od príslušného limitu násobiča aktívneho jadra."

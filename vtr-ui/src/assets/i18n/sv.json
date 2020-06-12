@@ -131,6 +131,8 @@
                         "cpuOCName79": "Förskjutning av cachespänning",
                         "cpuOCName122": "Förhållande 7 kärnor",
                         "cpuOCName123": "Förhållande 8 kärnor",
+                        "cpuOCName124": "Förhållande 9 kärnor",
+                        "cpuOCName125": "Förhållande 10 kärnor",
                         "cpuOCName102": "Kärn-ICCMAX",
                         "cpuOCName106": "Cache-ICCMAX",
                         "cpuOCName114": "Förskjutning av AVX-förhållande"
@@ -149,6 +151,8 @@
                         "cpuOCTip79": "Den slutliga förskjutning som tillämpas på cachespänningen.",
                         "cpuOCTip122": "Ställ in maximal kärnmultiplikator med vilken kärnorna kan fungera. Värdet på kärnfrekvensen är produkten av detta förhållande och referensklockfrekvensen.",
                         "cpuOCTip123": "Ställ in maximal kärnmultiplikator med vilken kärnorna kan fungera. Värdet på kärnfrekvensen är produkten av detta förhållande och referensklockfrekvensen.",
+                        "cpuOCTip124": "Ställ in maximal kärnmultiplikator med vilken kärnorna kan fungera. Värdet på kärnfrekvensen är produkten av detta förhållande och referensklockfrekvensen.",
+                        "cpuOCTip125": "Ställ in maximal kärnmultiplikator med vilken kärnorna kan fungera. Värdet på kärnfrekvensen är produkten av detta förhållande och referensklockfrekvensen.",
                         "cpuOCTip102": "Ställ in ICCMAX för processorns kärnspänningsregulator.",
                         "cpuOCTip106": "Ställ in ICCMAX för processorcache- och ringbusspänningsregulator.",
                         "cpuOCTip114": "Härled faktisk gräns för aktivt kärnförhållande när AVX är aktivt genom att subtrahera detta värde från motsvarande gräns för aktivt kärnförhållande."

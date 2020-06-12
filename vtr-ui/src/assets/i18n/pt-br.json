@@ -155,6 +155,8 @@
                         "cpuOCName79": "Deslocamento da Voltagem do Cache",
                         "cpuOCName122": "7 Taxa do Núcleo",
                         "cpuOCName123": "8 Taxa do Núcleo",
+                        "cpuOCName124": "9 Taxa do Núcleo",
+                        "cpuOCName125": "10 Taxa do Núcleo",
                         "cpuOCName102": "ICCMAX do Núcleo",
                         "cpuOCName106": "ICCMAX do Cache",
                         "cpuOCName114": "Deslocamento da Taxa AVX"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Deslocamento final de voltagem aplicado à Voltagem do Cache.",
                         "cpuOCTip122": "Defina o multiplicador máximo de núcleos no qual os núcleos podem operar. O valor da frequência do núcleo é o produto dessa taxa e a frequência do relógio de referência.",
                         "cpuOCTip123": "Defina o multiplicador máximo de núcleos no qual os núcleos podem operar. O valor da frequência do núcleo é o produto dessa taxa e a frequência do relógio de referência.",
+                        "cpuOCTip124": "Defina o multiplicador máximo de núcleos no qual os núcleos podem operar. O valor da frequência do núcleo é o produto dessa taxa e a frequência do relógio de referência.",
+                        "cpuOCTip125": "Defina o multiplicador máximo de núcleos no qual os núcleos podem operar. O valor da frequência do núcleo é o produto dessa taxa e a frequência do relógio de referência.",
                         "cpuOCTip102": "Defina ICCMAX para Regulador de Voltagem do Núcleo do Processador.",
                         "cpuOCTip106": "Defina ICCMAX para Regulador de Voltagem do Barramento em Anel e Cache do Processador.",
                         "cpuOCTip114": "Para derivar o limite efetivo da taxa do núcleo ativo quando o AVX estiver ativo, subtraia esse valor ao limite da taxa do núcleo ativo correspondente."

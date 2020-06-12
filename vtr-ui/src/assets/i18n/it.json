@@ -155,6 +155,8 @@
                         "cpuOCName79": "Offset voltaggio cache",
                         "cpuOCName122": "7 rapporto core",
                         "cpuOCName123": "8 rapporto core",
+                        "cpuOCName124": "9 rapporto core",
+                        "cpuOCName125": "10 rapporto core",
                         "cpuOCName102": "Core ICCMAX",
                         "cpuOCName106": "Cache ICCMAX",
                         "cpuOCName114": "Offset rapporto AVX"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Offset tensione finale applicato alla tensione cache.",
                         "cpuOCTip122": "Impostare il moltiplicatore core massimo a cui i core possono funzionare. Il valore della frequenza core è il prodotto di questo rapporto e della frequenza del clock di riferimento.",
                         "cpuOCTip123": "Impostare il moltiplicatore core massimo a cui i core possono funzionare. Il valore della frequenza core è il prodotto di questo rapporto e della frequenza del clock di riferimento.",
+                        "cpuOCTip124": "Impostare il moltiplicatore core massimo a cui i core possono funzionare. Il valore della frequenza core è il prodotto di questo rapporto e della frequenza del clock di riferimento.",
+                        "cpuOCTip125": "Impostare il moltiplicatore core massimo a cui i core possono funzionare. Il valore della frequenza core è il prodotto di questo rapporto e della frequenza del clock di riferimento.",
                         "cpuOCTip102": "Impostare ICCMAX per il regolatore di tensione core processore.",
                         "cpuOCTip106": "Impostare ICCMAX per il regolatore di tensione cache e ring bus processore.",
                         "cpuOCTip114": "Per ricavare il limite del rapporto core attivo effettivo quando AVX è attivo, sottrarre questo valore dal limite del rapporto core attivo corrispondente."

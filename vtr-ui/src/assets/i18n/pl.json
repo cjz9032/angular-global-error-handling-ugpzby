@@ -155,6 +155,8 @@
                         "cpuOCName79": "Przesunięcie napięcia pam. podręcznej",
                         "cpuOCName122": "Współczynnik rdzenia 7",
                         "cpuOCName123": "Współczynnik rdzenia 8",
+                        "cpuOCName124": "Współczynnik rdzenia 9",
+                        "cpuOCName125": "Współczynnik rdzenia 10",
                         "cpuOCName102": "ICCMAX rdzenia",
                         "cpuOCName106": "ICCMAX pamięci podręcznej",
                         "cpuOCName114": "Przesunięcie współczynnika AVX"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Ostateczne przesunięcie napięcia stosowane do napięcia pamięci podręcznej.",
                         "cpuOCTip122": "Ustaw maksymalny mnożnik rdzenia, przy którym rdzenie mogą działać. Wartość częstotliwości rdzenia jest iloczynem tego stosunku i częstotliwości zegara odniesienia.",
                         "cpuOCTip123": "Ustaw maksymalny mnożnik rdzenia, przy którym rdzenie mogą działać. Wartość częstotliwości rdzenia jest iloczynem tego stosunku i częstotliwości zegara odniesienia.",
+                        "cpuOCTip124": "Ustaw maksymalny mnożnik rdzenia, przy którym rdzenie mogą działać. Wartość częstotliwości rdzenia jest iloczynem tego stosunku i częstotliwości zegara odniesienia.",
+                        "cpuOCTip125": "Ustaw maksymalny mnożnik rdzenia, przy którym rdzenie mogą działać. Wartość częstotliwości rdzenia jest iloczynem tego stosunku i częstotliwości zegara odniesienia.",
                         "cpuOCTip102": "Ustaw ICCMAX dla regulatora napięcia rdzenia procesora.",
                         "cpuOCTip106": "Ustaw ICCMAX dla regulatora napięcia pamięci podręcznej i magistrali pierścieniowej.",
                         "cpuOCTip114": "Aby uzyskać efektywny limit współczynnika aktywnego rdzenia, gdy AVX jest aktywny, odejmij tę wartość od limitu współczynnika odpowiedniego aktywnego rdzenia."

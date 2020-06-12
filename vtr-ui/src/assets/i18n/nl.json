@@ -155,6 +155,8 @@
                         "cpuOCName79": "Cache offsetspanning",
                         "cpuOCName122": "7 Kernverhouding",
                         "cpuOCName123": "8 Kernverhouding",
+                        "cpuOCName124": "9 Kernverhouding",
+                        "cpuOCName125": "10 Kernverhouding",
                         "cpuOCName102": "Kern-ICCMAX",
                         "cpuOCName106": "Cache-ICCMAX",
                         "cpuOCName114": "AVX-verhouding offset"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "De definitieve offsetspanning die wordt toegepast voor de cache-spanning.",
                         "cpuOCTip122": "Stel de maximale kernvermenigvuldiging in waarmee de kernen kunnen functioneren. De waarde van de kernfrequentie is het product van deze verhouding en de frequentie van de referentieklok.",
                         "cpuOCTip123": "Stel de maximale kernvermenigvuldiging in waarmee de kernen kunnen functioneren. De waarde van de kernfrequentie is het product van deze verhouding en de frequentie van de referentieklok.",
+                        "cpuOCTip124": "Stel de maximale kernvermenigvuldiging in waarmee de kernen kunnen functioneren. De waarde van de kernfrequentie is het product van deze verhouding en de frequentie van de referentieklok.",
+                        "cpuOCTip125": "Stel de maximale kernvermenigvuldiging in waarmee de kernen kunnen functioneren. De waarde van de kernfrequentie is het product van deze verhouding en de frequentie van de referentieklok.",
                         "cpuOCTip102": "Stel ICCMAX in voor de kernspanningsregelaar van de processor.",
                         "cpuOCTip106": "Stel ICCMAX in voor de cache- en ringbus-spanningsregelaar van de processor.",
                         "cpuOCTip114": "Om de effectief actieve limiet van de kernverhouding af te leiden als de AVX actief is, trekt u deze waarde af van de overeenkomstige actieve limiet van de kernverhouding."

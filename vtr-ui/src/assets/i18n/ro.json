@@ -155,6 +155,8 @@
                         "cpuOCName79": "Decalaj tensiune cache",
                         "cpuOCName122": "7 raport nucleu",
                         "cpuOCName123": "8 raport nucleu",
+                        "cpuOCName124": "9 raport nucleu",
+                        "cpuOCName125": "10 raport nucleu",
                         "cpuOCName102": "ICCMAX nucleu",
                         "cpuOCName106": "ICCMAX cache",
                         "cpuOCName114": "Decalaj raport AVX"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Decalajul final al tensiunii care este aplicat tensiunii cache-ului.",
                         "cpuOCTip122": "Setați multiplicatorul maxim la care nucleele pot funcționa. Valoarea frecvenței nucleului este produsul dintre acest raport și frecvența de referință a ceasului.",
                         "cpuOCTip123": "Setați multiplicatorul maxim la care nucleele pot funcționa. Valoarea frecvenței nucleului este produsul dintre acest raport și frecvența de referință a ceasului.",
+                        "cpuOCTip124": "Setați multiplicatorul maxim la care nucleele pot funcționa. Valoarea frecvenței nucleului este produsul dintre acest raport și frecvența de referință a ceasului.",
+                        "cpuOCTip125": "Setați multiplicatorul maxim la care nucleele pot funcționa. Valoarea frecvenței nucleului este produsul dintre acest raport și frecvența de referință a ceasului.",
                         "cpuOCTip102": "Setați ICCMAX pentru regulatorul de tensiune al nucleului procesorului.",
                         "cpuOCTip106": "Setați ICCMAX pentru regulatorul de tensiune al cache-ului și al magistralei de tip inel ale procesorului.",
                         "cpuOCTip114": "Pentru a obține limita efectivă activă a raportului nucleului atunci când AVX este activ, reduceți această valoare la limita corespunzătoare activă a raportului nucleului."

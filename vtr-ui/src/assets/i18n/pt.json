@@ -155,6 +155,8 @@
                         "cpuOCName79": "Desvio da Tensão da Cache",
                         "cpuOCName122": "Velocidade do Núcleo 7",
                         "cpuOCName123": "Velocidade do Núcleo 8",
+                        "cpuOCName124": "Velocidade do Núcleo 9",
+                        "cpuOCName125": "Velocidade do Núcleo 10",
                         "cpuOCName102": "ICCMAX do Núcleo",
                         "cpuOCName106": "ICCMAX da Cache",
                         "cpuOCName114": "Desvio da Velocidade do AVX"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Desvio da tensão final que é aplicado à Tensão da cache.",
                         "cpuOCTip122": "Defina o multiplicador máximo do núcleo no qual os núcleos podem funcionar. O valor de frequência do núcleo é o produto entre esta relação e a frequência do relógio de referência.",
                         "cpuOCTip123": "Defina o multiplicador máximo do núcleo no qual os núcleos podem funcionar. O valor de frequência do núcleo é o produto entre esta relação e a frequência do relógio de referência.",
+                        "cpuOCTip124": "Defina o multiplicador máximo do núcleo no qual os núcleos podem funcionar. O valor de frequência do núcleo é o produto entre esta relação e a frequência do relógio de referência.",
+                        "cpuOCTip125": "Defina o multiplicador máximo do núcleo no qual os núcleos podem funcionar. O valor de frequência do núcleo é o produto entre esta relação e a frequência do relógio de referência.",
                         "cpuOCTip102": "Defina o ICCMAX para o Regulador de Tensão do Núcleo do Processador.",
                         "cpuOCTip106": "Defina o ICCMAX para o Regulador de Tensão do Barramento em Anel e da Cache do Processador.",
                         "cpuOCTip114": "Para calcular o limite de velocidade do núcleo ativo eficaz quando o AVX está ativo, subtraia este valor ao limite de velocidade do núcleo ativo correspondente."

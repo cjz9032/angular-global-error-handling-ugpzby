@@ -155,6 +155,8 @@
                         "cpuOCName79": "Forskydning for cachespænding",
                         "cpuOCName122": "7 kerneforhold (Core Ratio)",
                         "cpuOCName123": "8 kerneforhold (Core Ratio)",
+                        "cpuOCName124": "9 kerneforhold (Core Ratio)",
+                        "cpuOCName125": "10 kerneforhold (Core Ratio)",
                         "cpuOCName102": "Kerne-ICCMAX",
                         "cpuOCName106": "Cache-ICCMAX",
                         "cpuOCName114": "Forskydning for AVX-forhold"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Den endelige spændingsforskydning anvendes til cachespændingen.",
                         "cpuOCTip122": "Angiv den maksimale kernemultiplikator, som kernerne kan fungere med. Kernefrekvensens værdi er produktet af dette forhold (multiplikator) og reference-clockfrekvensen.",
                         "cpuOCTip123": "Angiv den maksimale kernemultiplikator, som kernerne kan fungere med. Kernefrekvensens værdi er produktet af dette forhold (multiplikator) og reference-clockfrekvensen.",
+                        "cpuOCTip124": "Angiv den maksimale kernemultiplikator, som kernerne kan fungere med. Kernefrekvensens værdi er produktet af dette forhold (multiplikator) og reference-clockfrekvensen.",
+                        "cpuOCTip125": "Angiv den maksimale kernemultiplikator, som kernerne kan fungere med. Kernefrekvensens værdi er produktet af dette forhold (multiplikator) og reference-clockfrekvensen.",
                         "cpuOCTip102": "Indstil ICCMAX for spændingsregulatoren for processorkernen.",
                         "cpuOCTip106": "Indstil ICCMAX for spændingsregulatoren for processorcachen og ringbussen.",
                         "cpuOCTip114": "For at få den effektive, aktive grænse for kerneforholdet, når AVX er aktiv, skal du trække denne værdi fra den tilsvarende aktive kerneforholdsgrænse."

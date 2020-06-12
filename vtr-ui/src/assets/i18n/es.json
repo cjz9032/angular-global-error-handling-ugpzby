@@ -155,6 +155,8 @@
                         "cpuOCName79": "Desp. de voltaje de memoria caché",
                         "cpuOCName122": "Relación de 7 núcleos",
                         "cpuOCName123": "Relación de 8 núcleos",
+                        "cpuOCName124": "Relación de 9 núcleos",
+                        "cpuOCName125": "Relación de 10 núcleos",
                         "cpuOCName102": "ICCMAX de núcleo",
                         "cpuOCName106": "ICCMAX de memoria caché",
                         "cpuOCName114": "Desplazamiento de relación de AVX"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Desplazamiento final de voltaje que se aplica al voltaje de la memoria caché.",
                         "cpuOCTip122": "Defina el multiplicador central máximo al que pueden funcionar los núcleos. El valor de la frecuencia básica es el producto de esta relación y la frecuencia del reloj de referencia.",
                         "cpuOCTip123": "Defina el multiplicador central máximo al que pueden funcionar los núcleos. El valor de la frecuencia básica es el producto de esta relación y la frecuencia del reloj de referencia.",
+                        "cpuOCTip124": "Defina el multiplicador central máximo al que pueden funcionar los núcleos. El valor de la frecuencia básica es el producto de esta relación y la frecuencia del reloj de referencia.",
+                        "cpuOCTip125": "Defina el multiplicador central máximo al que pueden funcionar los núcleos. El valor de la frecuencia básica es el producto de esta relación y la frecuencia del reloj de referencia.",
                         "cpuOCTip102": "Establezca ICCMAX para el regulador de voltaje del núcleo del procesador.",
                         "cpuOCTip106": "Establezca ICCMAX para el regulador de voltaje de la memoria caché y bus del anillo del procesador.",
                         "cpuOCTip114": "Para derivar el límite de velocidad del núcleo activo efectivo cuando AVX está activo, reste este valor al límite de proporción de núcleo activo correspondiente."
