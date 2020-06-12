@@ -1,7 +1,7 @@
 <div class="vtr-menu-main">
 	<nav class="navbar navbar-expand-xl pr-0">
-		<div id="vantage_image_L" *ngIf="!deviceService.isGaming && !isGamingHome"
-			class="navbar-brand p-0">
+		<div *ngIf="!deviceService.isGaming && !isGamingHome"
+			class="navbar-brand p-0" id="vantage_image_L" role="img">
 			<img class="menu-main-logo"
 				*ngIf="dashboardService.isDashboardDisplayed"
 				[src]="VantageLogo | sanitize : 'resourceUrl'"
