@@ -1,4 +1,5 @@
 @import '../../../app.theme.scss';
+
 .light-dashline {
 	border-top: 1px solid $screen_light_15;
 }
@@ -955,6 +956,15 @@ vtr-ui-smart-performance-scan-summary {
 				flex-direction: column;
 			}
 		}
+
+		::ng-deep .tooltip-inner {
+			@include tt-inner()
+		}
+
+		::ng-deep .arrow::before {
+				@include arrow-before()
+		}
+		
 		.action-button {
 			border-radius: 2.5rem;
 			background: $gradient_main;
@@ -1517,6 +1527,14 @@ vtr-ui-smart-performance-scan-summary {
 		font-size: $fontsize_xs;
 		font-weight: $weight_light;
 	}
+
+	::ng-deep .tooltip-inner {
+		@include tt-inner()
+	}
+	::ng-deep .arrow::before {
+		@include arrow-before()
+	}
+	
 	.feedback-btn {
 		padding: 0 2.5rem;
 		position: relative;

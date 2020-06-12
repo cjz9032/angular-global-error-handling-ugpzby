@@ -145,6 +145,15 @@
 				cursor: pointer;
 			}
 		}
+
+		.scan-cancel-btn {
+			::ng-deep .tooltip-inner {
+				@include tt-inner()
+			}
+			::ng-deep .arrow::before {
+				@include arrow-before()
+			}
+		}
     }
 
 
@@ -677,6 +686,14 @@
 		font-size: $fontsize_xs;
 		font-weight: $weight_light;
 	}
+
+	::ng-deep .tooltip-inner {
+		@include tt-inner()
+	}
+	::ng-deep .arrow::before {
+		@include arrow-before()
+	}
+
 	.feedback-btn {
 		padding: 0 2.5rem;
 		position: relative;
