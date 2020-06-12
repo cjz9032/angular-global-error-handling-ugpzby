@@ -30,6 +30,9 @@
 			}
 			.custom-control {
 				display: inline-block;
+				.custom-control-input {
+					z-index: 0;
+				}
 				.custom-control-label {
 					padding-left: 1.2rem;
 					@media #{$breakpoint_sm} {
