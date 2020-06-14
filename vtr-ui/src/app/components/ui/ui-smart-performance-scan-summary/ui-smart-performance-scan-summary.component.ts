@@ -407,11 +407,12 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	}
 
 	ResetCustomDateScanSummary() {
-		this.displayFromDate = '';
-		this.displayToDate = '';
+		this.displayFromDate = null;
+		this.displayToDate = null;
+		this.selectedfromDate = this.minDate;
 		this.selectedTodate = this.maxDate;
-		this.selectedfromDate = this.maxDate;
 	}
+	
 	openSubscribeModal() {
 		this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
 			backdrop: 'static',
