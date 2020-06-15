@@ -1,13 +1,16 @@
-import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input, OnDestroy } from '@angular/core';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { ActivatedRoute } from '@angular/router';
+import { Subject } from 'rxjs';
 
 @Component({
 	selector: 'vtr-ui-custom-switch',
 	templateUrl: './ui-custom-switch.component.html',
 	styleUrls: ['./ui-custom-switch.component.scss']
 })
-export class UiCustomSwitchComponent implements OnInit {
+export class UiCustomSwitchComponent implements OnInit, OnDestroy {
+	public static switchChange: Subject<boolean> = new Subject<boolean>();
+
 	@Output() toggle: EventEmitter<any> = new EventEmitter();
 	@Input() value = false;
 	@Input() componentId = 'toggle-switch';
@@ -21,9 +24,21 @@ export class UiCustomSwitchComponent implements OnInit {
 	@Input() metricsParent;
 	@Input() switchParam: string;
 
-	constructor(private metrics: MetricService, private activatedRoute: ActivatedRoute) { }
+	constructor(private metrics: MetricService, private activatedRoute: ActivatedRoute) {
+		UiCustomSwitchComponent.switchChange.subscribe(res => {
+			if (this.componentId === 'ds-power-battery-threshold') {
+				this.value = res;
+			}
+		});
+	 }
 
 	ngOnInit(): void {
+	}
+
+	ngOnDestroy(): void {
+		if (UiCustomSwitchComponent.switchChange) {
+			UiCustomSwitchComponent.switchChange.unsubscribe();
+		}
 	}
 
 	public onChange($event) {

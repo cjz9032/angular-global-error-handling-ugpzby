@@ -44,15 +44,15 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 		this.supportService.getMachineInfo().then(async (machineInfo) => {
 			this.loggerService.info('MachineInfo ====================================================== ', machineInfo);
 			this.countryCode =  machineInfo.country;
-			this.systemSerialNumber = 'PC0ZEPQ6';// machineInfo.serialnumber;
+			this.systemSerialNumber = machineInfo.serialnumber;//'PC0ZEPQ6';
 			this.systemMT = machineInfo.mt;
 			this.langCode = this.getSPSubscriptionSupportedLanguageFromCountry(this.countryCode);
 			this.paymenturl =
 				this.spPaymentPageenum.URL +
-				this.countryCode +
-				this.spPaymentPageenum.SLASH +
-				this.langCode +
-				this.spPaymentPageenum.SLASH +
+				//this.countryCode +
+				//this.spPaymentPageenum.SLASH +
+				//this.langCode +
+				//this.spPaymentPageenum.SLASH +
 				this.spPaymentPageenum.URLSTRING +
 				this.spPaymentPageenum.SERIALQUERYPARAMETER +
 				this.systemSerialNumber +

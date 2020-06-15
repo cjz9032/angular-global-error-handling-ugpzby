@@ -244,7 +244,7 @@ export class OledPowerSettingsComponent implements OnInit, OnChanges {
 	}
 
 
-	private setTaskbarDimmerSetting(value: number) {
+	setTaskbarDimmerSetting(value: number) {
 		try {
 			this.logger.info('OLED-Power-Settings : setTaskbarDimmerSetting changed in display', value);
 			if (this.displayService.isShellAvailable && this.hasOLEDPowerControlCapability) {
@@ -264,7 +264,7 @@ export class OledPowerSettingsComponent implements OnInit, OnChanges {
 	}
 
 
-	private setBackgroundDimmerSetting(value: number) {
+	setBackgroundDimmerSetting(value: number) {
 		try {
 			this.logger.info('OLED-Power-Settings : setBackgroundDimmerSetting changed in display', value);
 
@@ -286,7 +286,7 @@ export class OledPowerSettingsComponent implements OnInit, OnChanges {
 	}
 
 
-	private setDisplayDimmerSetting(value: number) {
+	setDisplayDimmerSetting(value: number) {
 		try {
 			this.logger.info('OLED-Power-Settings : setDisplayDimmerSetting changed in display', value);
 
