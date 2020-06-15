@@ -1766,7 +1766,8 @@
                             "title": "Bilgisayarı yeniden başlatın",
                             "description": "Varsayılan üst sıra işlevlerinde değişiklik yapılması bilgisayarınızın yeniden başlatmanızı gerektirir. Yeniden başlatmak istediğinizden emin misiniz?",
                             "reboot": "YENİDEN YÜKLE",
-                            "cancel": "ŞİMDİ DEĞİL"
+                            "cancel": "ŞİMDİ DEĞİL",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "F1-F12 işlevlerine erişmek için Fn tuşuna ve en üst sıradaki tuşlara basın.",
@@ -3771,7 +3772,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

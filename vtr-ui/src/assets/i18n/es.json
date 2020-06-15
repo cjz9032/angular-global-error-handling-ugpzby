@@ -1766,7 +1766,8 @@
                             "title": "Reinicie el equipo",
                             "description": "Cambiar la función de fila superior predeterminada requiere que reinicie su equipo. ¿Está seguro de que desea reiniciar?",
                             "reboot": "REINICIAR",
-                            "cancel": "NO AHORA"
+                            "cancel": "NO AHORA",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Para tener acceso a la función F1-F12, presione Fn y las teclas de la fila superior.",
@@ -3771,7 +3772,8 @@
                 "txtTo": "Hacia",
                 "txtGo": "Ir",
                 "summaryCaption": "Espacio reclamado",
-                "fixes": "corrección(es)"
+                "fixes": "corrección(es)",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Últimos 5 resultados de análisis:",

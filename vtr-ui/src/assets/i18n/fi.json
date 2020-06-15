@@ -1766,7 +1766,8 @@
                             "title": "Tietokoneen käynnistäminen uudelleen",
                             "description": "Ylärivin oletustoiminnon muuttaminen edellyttää tietokoneen käynnistämistä uudelleen. Haluatko varmasti käynnistää tietokoneen uudelleen?",
                             "reboot": "KÄYNNISTÄ UUDELLEEN",
-                            "cancel": "EI NYT"
+                            "cancel": "EI NYT",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Jos haluat käyttää näppäinten F1–F12 toimintoja, paina Fn-näppäintä ja ylärivin näppäimiä.",
@@ -3771,7 +3772,8 @@
                 "txtTo": "Vastaanottaja",
                 "txtGo": "Siirtyminen",
                 "summaryCaption": "vapautettava tila",
-                "fixes": "korjaukset"
+                "fixes": "korjaukset",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "5 edellisen tarkistuksen tulokset:",

@@ -1766,7 +1766,8 @@
                             "title": "Riavviare il computer",
                             "description": "La modifica della funzione della riga superiore richiede il riavvio del computer. Riavviare?",
                             "reboot": "RIAVVIA",
-                            "cancel": "NON ORA"
+                            "cancel": "NON ORA",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Per accedere alla funzione F1-F12, premere Fn e i tasti sulla riga superiore.",
@@ -3771,7 +3772,8 @@
                 "txtTo": "A",
                 "txtGo": "Vai",
                 "summaryCaption": "recupero spazio completato",
-                "fixes": "correzioni"
+                "fixes": "correzioni",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Risultati delle ultime 5 scansioni:",

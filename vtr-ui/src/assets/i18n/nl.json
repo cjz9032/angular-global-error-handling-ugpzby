@@ -1766,7 +1766,8 @@
                             "title": "Start de computer opnieuw op",
                             "description": "Als u de standaardfunctie van de bovenste rij wijzigt, moet u uw computer opnieuw opstarten. Weet u zeker dat u opnieuw wilt opstarten?",
                             "reboot": "OPNIEUW OPSTARTEN",
-                            "cancel": "NIET NU"
+                            "cancel": "NIET NU",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Om de functietoetsen F1-F12 te gebruiken, druk op Fn en de toetsen op de bovenste rij.",
@@ -3771,7 +3772,8 @@
                 "txtTo": "Naar",
                 "txtGo": "Ga",
                 "summaryCaption": "teruggehaalde ruimte",
-                "fixes": "Opgeloste problemen"
+                "fixes": "Opgeloste problemen",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Laatste 5 scanresultaten:",

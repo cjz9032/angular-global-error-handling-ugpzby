@@ -1766,7 +1766,8 @@
                             "title": "Reiniciar o computador",
                             "description": "Tem de reiniciar o computador para alterar as funções predefinidas da linha superior. Tem a certeza de que pretende reiniciar?",
                             "reboot": "REINICIAR",
-                            "cancel": "AGORA NÃO"
+                            "cancel": "AGORA NÃO",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Para aceder à função das teclas F1-F12, prima Fn e as teclas na linha superior.",
@@ -3771,7 +3772,8 @@
                 "txtTo": "Para",
                 "txtGo": "Ir",
                 "summaryCaption": "espaço reclamado",
-                "fixes": "correção(ões)"
+                "fixes": "correção(ões)",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Resultados das 5 últimas análises:",

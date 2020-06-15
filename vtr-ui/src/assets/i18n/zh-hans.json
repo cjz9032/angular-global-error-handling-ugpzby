@@ -1766,7 +1766,8 @@
                             "title": "重新启动计算机",
                             "description": "更改首行的缺省功能后，您需要重新启动计算机。是否确实要重新启动？",
                             "reboot": "重新启动",
-                            "cancel": "暂不"
+                            "cancel": "暂不",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "要实现 F1 - F12 键的功能，请按 Fn 键和首行按键。",
@@ -3771,7 +3772,8 @@
                 "txtTo": "终于",
                 "txtGo": "执行",
                 "summaryCaption": "回收的空间",
-                "fixes": "修复"
+                "fixes": "修复",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "最后 5 个扫描结果：",

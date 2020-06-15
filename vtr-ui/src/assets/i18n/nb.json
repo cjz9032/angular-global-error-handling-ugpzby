@@ -1766,7 +1766,8 @@
                             "title": "Start datamaskinen på nytt",
                             "description": "Du må starte datamaskinen på nytt hvis du endrer standardfunksjonen for den øverste raden. Er du sikker på at du vil starte på nytt?",
                             "reboot": "START PÅ NYTT",
-                            "cancel": "IKKE NÅ"
+                            "cancel": "IKKE NÅ",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Du får tilgang til F1–F12-funksjonen ved å trykke på Fn og tastene på den øverste raden.",
@@ -3771,7 +3772,8 @@
                 "txtTo": "Til",
                 "txtGo": "Start",
                 "summaryCaption": "plass gjenvunnet",
-                "fixes": "reparasjon(er)"
+                "fixes": "reparasjon(er)",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Siste fem skanneresultater:",
