@@ -55,6 +55,7 @@
                             color: $main_shade !important;
                             letter-spacing: 0;
                             font-weight: $weight_bold;
+                            text-align: left;
                             @media #{$breakpoint_sm}{
                                 font-size: 1.7rem;
                                 letter-spacing: -0.02rem;
@@ -152,6 +153,7 @@
                             .list-item {
                                 p{
                                     font-size: 1.4rem;
+                                    overflow: hidden;
                                 }
                                 fa-icon {
                                     font-size: 1.4rem;

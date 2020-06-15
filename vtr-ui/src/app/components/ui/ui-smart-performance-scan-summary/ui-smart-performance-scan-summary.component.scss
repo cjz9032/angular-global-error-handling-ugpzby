@@ -454,7 +454,9 @@ vtr-ui-smart-performance-scan-summary {
 						}
                         .heading {						
                             h3, h2{
+								text-align: left;
 								font-size: $fontsize_md;
+								text-align: left;
 								color: $main_shade !important;
 								letter-spacing: 0;
 								font-weight: $weight_bold;
@@ -551,7 +553,8 @@ vtr-ui-smart-performance-scan-summary {
                                 padding: 0;
                                 .list-item {
                                     p{
-                                        font-size: 1.4rem;
+										font-size: 1.4rem;
+										overflow: hidden;
                                     }
 									fa-icon {
 										font-size: 1.4rem;

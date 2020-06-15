@@ -430,7 +430,8 @@ vtr-ui-smart-performance-scan-summary {
                                 padding: 0;
                                 .list-item {
                                     p{
-                                        font-size: 1.4rem;
+										font-size: 1.4rem;
+										overflow:hidden;
                                     }
                                         fa-icon {
                                             font-size: 1.4rem;
