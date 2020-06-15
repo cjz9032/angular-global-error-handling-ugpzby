@@ -5,7 +5,7 @@
     <p>
         <span id="{{(ariaLabelValue !== 'Speed') ? automationId+'level'+value:automationId+'level'+value}}" role="text">{{value}}<span *ngIf="unit">{{unit}}</span></span>
     </p>
-    <button (click)="addFn()" [ngClass]="{'disabled': value == maxData}" [ngStyle]="{'width':btnWidth}" [tabindex]="tabIndexNum" role="button" id="{{value == minData ? automationId +'_plus_icon_unclickable' : automationId+'_plus_icon_clickable'}}" (focus)="hideColorPicker()">
+    <button (click)="addFn()" [ngClass]="{'disabled': value == maxData}" [ngStyle]="{'width':btnWidth}" [tabindex]="tabIndexNum" role="button" id="{{value == maxData ? automationId +'_plus_icon_unclickable' : automationId+'_plus_icon_clickable'}}" (focus)="hideColorPicker()">
         {{ariaLabelValue}} <span tabindex="-1">+</span> <em *ngIf="value == maxData">Maximum value</em>  {{value}} {{unit}}
     </button>
 </div>

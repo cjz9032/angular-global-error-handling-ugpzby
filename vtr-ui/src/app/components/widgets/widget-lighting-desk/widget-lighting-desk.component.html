@@ -73,7 +73,7 @@
                     </div>
                 </div>
                 <div class="lighting-default-text">
-                    <button vtrMetrics [metricsItem]="'lighting_set_to_default'" metricsEvent="featureClick"
+                    <button id="gaming_lighting_setdefault_profile_{{currentProfileId}}" vtrMetrics [metricsItem]="'lighting_set_to_default'" metricsEvent="featureClick"
                     class="under-line-button"  (click)="setDefaultProfile(currentProfileId)" title="{{'gaming.lightingProfile.button.default.title' | translate}}"
                     [attr.aria-label]="'set to default'" (focus)="isColorPicker=false;isShow=true;">{{'gaming.lightingProfile.button.default.title' | translate}}</button>
                 </div>
