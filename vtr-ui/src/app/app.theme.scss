@@ -602,3 +602,36 @@ $high-contrast-white-disabled-maroon: #610000;
 	border:none;
 }
 }
+
+@mixin high-contrast-black-border {
+	border: 0.1rem solid $high-contrast-black-cyan;
+}
+
+@mixin high-contrast-white-border {
+	border: 0.1rem solid $high-contrast-white-dark-magenta;
+}
+
+@mixin high-contrast-black-disabled-border {
+	border: 0.1rem solid $high-contrast-black-disabled-green;
+}
+
+@mixin high-contrast-white-disabled-border {
+	border: 0.1rem solid $high-contrast-white-disabled-maroon;
+}
+
+@mixin high-contrast-black-text-color {
+	color: $high-contrast-black-cyan;
+}
+
+@mixin high-contrast-white-text-color {
+	color: $high-contrast-white-dark-magenta;
+}
+
+@mixin high-contrast-black-text-color-disabled {
+	color: $high-contrast-black-disabled-green;
+}
+
+@mixin high-contrast-white-text-color-disabled {
+	color: $high-contrast-white-disabled-maroon;
+}
+
