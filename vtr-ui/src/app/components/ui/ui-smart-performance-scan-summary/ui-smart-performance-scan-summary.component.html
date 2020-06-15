@@ -217,7 +217,7 @@
 																	*ngFor="let item of menuItems;let ind=index"
 																	(click)="scanSummaryTime(ind)"
 																	[ngClass]="{'selected-list-item': tabIndex === ind}">
-																	{{item.itemName}}
+																	{{item.itemName | translate}}
 																	<!-- <div class="list-item" >
 																	</div> -->
 																</li>
