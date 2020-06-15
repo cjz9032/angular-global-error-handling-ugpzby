@@ -49,10 +49,10 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 			this.langCode = this.getSPSubscriptionSupportedLanguageFromCountry(this.countryCode);
 			this.paymenturl =
 				this.spPaymentPageenum.URL +
-				this.countryCode +
-				this.spPaymentPageenum.SLASH +
-				this.langCode +
-				this.spPaymentPageenum.SLASH +
+				//this.countryCode +
+				//this.spPaymentPageenum.SLASH +
+				//this.langCode +
+				//this.spPaymentPageenum.SLASH +
 				this.spPaymentPageenum.URLSTRING +
 				this.spPaymentPageenum.SERIALQUERYPARAMETER +
 				this.systemSerialNumber +
