@@ -1369,6 +1369,7 @@
 							"title": "Enable Battery Charge Threshold",
 							"description1": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life.",
 							"description2": "In order to fully enable this feature, please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+							"description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold.",
 							"enable": "ENABLE",
 							"cancel": "CANCEL"
 						},
