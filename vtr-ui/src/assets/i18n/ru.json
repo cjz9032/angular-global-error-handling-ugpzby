@@ -1766,7 +1766,8 @@
                             "title": "Перезапуск компьютера",
                             "description": "Для вступления в силу изменения функции верхнего ряда по умолчанию требуется перезапустить компьютер. Перезапустить?",
                             "reboot": "ПЕРЕЗАГРУЗИТЬ",
-                            "cancel": "НЕ СЕЙЧАС"
+                            "cancel": "НЕ СЕЙЧАС",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Для получения доступа к функциям F1–F12 нажмите клавишу Fn и клавиши в верхнем ряду.",
@@ -3771,7 +3772,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

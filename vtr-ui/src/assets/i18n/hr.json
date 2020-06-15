@@ -1766,7 +1766,8 @@
                             "title": "Ponovno pokretanje računala",
                             "description": "Kako bi se promijenile zadane funkcije u gornjem redu, potrebno je ponovno pokretanje računala. Želite li zaista ponovno pokretanje?",
                             "reboot": "PONOVNO POKRETANJE",
-                            "cancel": "NE SADA"
+                            "cancel": "NE SADA",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Da biste pristupili funkcijama F1 – F12, pritisnite Fn i tipke u gornjem redu.",
@@ -3771,7 +3772,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

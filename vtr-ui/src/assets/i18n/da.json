@@ -1766,7 +1766,8 @@
                             "title": "Genstart computer",
                             "description": "Ændring af standardfunktionen for øverste række kræver, at du genstarter computeren. Er du sikker på, du vil genstarte?",
                             "reboot": "GENSTART",
-                            "cancel": "IKKE NU"
+                            "cancel": "IKKE NU",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Hvis du vil have adgang til F1-F12-funktionen, skal du trykke på Fn og tasterne på den øverste række.",
@@ -3771,7 +3772,8 @@
                 "txtTo": "Til",
                 "txtGo": "Gå",
                 "summaryCaption": "tilbageført plads",
-                "fixes": "rettelse(r)"
+                "fixes": "rettelse(r)",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Resultat af seneste 5 scanninger:",

@@ -1766,7 +1766,8 @@
                             "title": "Computer neu starten",
                             "description": "Nach Ändern der Standardfunktion der oberen Reihe müssen Sie Ihren Computer neu starten. Möchten Sie wirklich neu starten?",
                             "reboot": "NEU STARTEN",
-                            "cancel": "NICHT JETZT"
+                            "cancel": "NICHT JETZT",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Um die F1-F12-Funktion zu verwenden, drücken Sie die Fn-Taste und die Tasten in der obersten Reihe.",
@@ -3771,7 +3772,8 @@
                 "txtTo": "Bis",
                 "txtGo": "Start",
                 "summaryCaption": "gewonnener Speicherplatz",
-                "fixes": "Korrektur(en)"
+                "fixes": "Korrektur(en)",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Letzte 5 Scan-Ergebnisse:",

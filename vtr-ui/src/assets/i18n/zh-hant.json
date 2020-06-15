@@ -1766,7 +1766,8 @@
                             "title": "重新啟動電腦",
                             "description": "如果變更最上面一排的預設功能，您必須重新啟動電腦。您確定要重新啟動嗎？",
                             "reboot": "重新開機",
-                            "cancel": "現在不要"
+                            "cancel": "現在不要",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "若要存取 F1-F12 功能，請按下 Fn 和最上面一排的按鍵。",
@@ -3771,7 +3772,8 @@
                 "txtTo": "至",
                 "txtGo": "執行",
                 "summaryCaption": "空間已收回",
-                "fixes": "修正"
+                "fixes": "修正",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "最後 5 次掃描結果：",

@@ -1766,7 +1766,8 @@
                             "title": "הפעילו מחדש את המחשב",
                             "description": "שינוי פונקציות ברירת המחדל של השורה העליונה דורש הפעלה מחדש של המחשב. להפעיל מחדש, בטוח?",
                             "reboot": "הפעלה מחדש",
-                            "cancel": "לא עכשיו"
+                            "cancel": "לא עכשיו",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "כדי לגשת לפונקציות F1-F12, לחצו על המקש Fn ועל המקשים בשורה העליונה.",
@@ -3771,7 +3772,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

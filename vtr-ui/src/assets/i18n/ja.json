@@ -1766,7 +1766,8 @@
                             "title": "コンピューターを再起動する",
                             "description": "最上部の行の機能を変更するには、コンピューターを再起動する必要があります。再起動しますか?",
                             "reboot": "リブート",
-                            "cancel": "今はしない"
+                            "cancel": "今はしない",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "F1 ～ F12 機能を使用するには、Fn および最上部の行のキーを押します。",
@@ -3771,7 +3772,8 @@
                 "txtTo": "何日まで",
                 "txtGo": "移動",
                 "summaryCaption": "解放される容量",
-                "fixes": "修正"
+                "fixes": "修正",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "直近 5 件のスキャン結果:",

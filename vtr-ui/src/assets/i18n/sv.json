@@ -1766,7 +1766,8 @@
                             "title": "Starta om datorn",
                             "description": "Om du ändrar standardfunktionen för den översta raden måste du starta om datorn. Vill du starta om?",
                             "reboot": "STARTA OM",
-                            "cancel": "INTE NU"
+                            "cancel": "INTE NU",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Tryck på Fn och på tangenterna på den översta raden om du vill komma åt funktion F1 till och med F12.",
@@ -3771,7 +3772,8 @@
                 "txtTo": "Till",
                 "txtGo": "Kör",
                 "summaryCaption": "återställt utrymme",
-                "fixes": "korrigering(ar)"
+                "fixes": "korrigering(ar)",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Senaste 5 genomsökningsresultaten:",

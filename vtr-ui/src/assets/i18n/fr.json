@@ -1766,7 +1766,8 @@
                             "title": "Redémarrez l'ordinateur",
                             "description": "Si vous modifiez la fonction par défaut de la rangée supérieure, vous devez redémarrer l'ordinateur. Voulez-vous vraiment redémarrer ?",
                             "reboot": "REDÉMARRER",
-                            "cancel": "PAS MAINTENANT"
+                            "cancel": "PAS MAINTENANT",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Pour accéder aux touches de fonction F1-F12, appuyez simultanément sur la touche Fn et sur l'une des touches de la rangée supérieure.",
@@ -3771,7 +3772,8 @@
                 "txtTo": "Vers",
                 "txtGo": "OK",
                 "summaryCaption": "espace récupéré",
-                "fixes": "correctif(s)"
+                "fixes": "correctif(s)",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Résultat des 5 dernières analyses :",

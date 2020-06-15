@@ -1766,7 +1766,8 @@
                             "title": "Reiniciar o computador",
                             "description": "Alterações à função padrão da fileira superior requerem a reinicialização do computador. Tem certeza de que deseja reiniciar?",
                             "reboot": "REINICIALIZAR",
-                            "cancel": "NÃO AGORA"
+                            "cancel": "NÃO AGORA",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Para acessar as funções F1-F12, pressione Fn e as teclas da fileira superior.",
@@ -3771,7 +3772,8 @@
                 "txtTo": "Para",
                 "txtGo": "Ir",
                 "summaryCaption": "espaço solicitado",
-                "fixes": "correções"
+                "fixes": "correções",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Resultados das últimas cinco verificações:",
