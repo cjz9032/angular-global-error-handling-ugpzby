@@ -1,31 +1,28 @@
-import { NetworkBoostStatus } from './../../../data-models/gaming/networkboost-status.model';
 import { ModalGamingLegionedgeComponent } from './../../modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
 import { Component, OnInit, NgZone } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { RamOCSatus } from 'src/app/data-models/gaming/ram-overclock-status.model';
-import { GamingSystemUpdateService } from 'src/app/services/gaming/gaming-system-update/gaming-system-update.service';
-import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
-import { HybridModeStatus } from 'src/app/data-models/gaming/hybrid-mode-status.model';
-import { TouchpadLockStatus } from 'src/app/data-models/gaming/touchpad-lock-status.model';
-import { CommonService } from 'src/app/services/common/common.service';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
-import { GamingKeyLockService } from 'src/app/services/gaming/gaming-keylock/gaming-key-lock.service';
-import { GamingHybridModeService } from 'src/app/services/gaming/gaming-hybrid-mode/gaming-hybrid-mode.service';
-import { NetworkBoostService } from 'src/app/services/gaming/gaming-networkboost/networkboost.service';
-import { Gaming } from 'src/app/enums/gaming.enum';
-import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-capabilities';
 import { Router } from '@angular/router';
-import { AutoCloseStatus } from 'src/app/data-models/gaming/autoclose/autoclose-status.model';
-import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose/gaming-autoclose.service';
-import { ModalGamingThermalMode2Component } from '../../modal/modal-gaming-thermal-mode2/modal-gaming-thermal-mode2.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { EventTypes } from '@lenovo/tan-client-bridge';
+// model & enum
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { Gaming } from 'src/app/enums/gaming.enum';
+import { GamingThermal2 } from 'src/app/enums/gaming-thermal2.enum';
+import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-capabilities';
+// service
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { CommonService } from 'src/app/services/common/common.service';
+import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { GamingThermalModeService } from 'src/app/services/gaming/gaming-thermal-mode/gaming-thermal-mode.service';
 import { GamingOCService } from 'src/app/services/gaming/gaming-OC/gaming-oc.service';
-import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { EventTypes } from '@lenovo/tan-client-bridge';
-import { LoggerService } from 'src/app/services/logger/logger.service';
+import { GamingSystemUpdateService } from 'src/app/services/gaming/gaming-system-update/gaming-system-update.service';
+import { NetworkBoostService } from 'src/app/services/gaming/gaming-networkboost/networkboost.service';
+import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose/gaming-autoclose.service';
+import { GamingHybridModeService } from 'src/app/services/gaming/gaming-hybrid-mode/gaming-hybrid-mode.service';
 import { GamingOverDriveService } from 'src/app/services/gaming/gaming-over-drive/gaming-over-drive.service';
-import { GamingThermal2 } from 'src/app/enums/gaming-thermal2.enum';
+import { GamingKeyLockService } from 'src/app/services/gaming/gaming-keylock/gaming-key-lock.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+// component
+import { ModalGamingThermalMode2Component } from '../../modal/modal-gaming-thermal-mode2/modal-gaming-thermal-mode2.component';
 
 @Component({
 	selector: 'vtr-widget-legion-edge',
@@ -33,16 +30,26 @@ import { GamingThermal2 } from 'src/app/enums/gaming-thermal2.enum';
 	styleUrls: ['./widget-legion-edge.component.scss']
 })
 export class WidgetLegionEdgeComponent implements OnInit {
-	public RamOCSatusObj = new RamOCSatus();
-	public hybrimodeStatus = false;
-	public HybrimodeStatusObj = new HybridModeStatus();
-	public networkboostStatus = false;
-	public NetworkBoostStatusObj = new NetworkBoostStatus();
-	public autoCloseStatusObj = new AutoCloseStatus();
-	public touchpadLockStatus: any;
-	public TouchpadLockStatusObj = new TouchpadLockStatus();
 	public gamingCapabilities: GamingAllCapabilities = new GamingAllCapabilities();
 	public disableButtons = false;
+	// Version 3.2: thermal mode 2.0 & performance OC
+	public thermalMode2Enum = GamingThermal2;
+	public thermalModeRealStatus = this.thermalMode2Enum.balance;
+	public thermalModeEvent: any;
+	public performanceOCSettings = false;
+
+	// use enum instead of hard code on 200319 by Guo Jing
+	public legionItemIndex = {
+		cpuOverclock: 0,
+		ramOverlock: 1,
+		networkBoost: 2,
+		autoClose: 3,
+		hybridMode: 4,
+		overDrive: 5,
+		touchpadLock: 6
+	};
+
+	// item info in legion edge 
 	public legionUpdate = [
 		{
 			readMoreText: '',
@@ -204,6 +211,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		}
 	];
 
+	// CPU over clock dropdown info
 	public drop = {
 		curSelected: 1,
 		modeType: 1,
@@ -239,27 +247,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		]
 	};
 
-	public cpuOCStatus: CPUOCStatus = new CPUOCStatus();
-	public setCpuOCStatus: any;
-	public cacheMemOCFeature = false;
-	public cacheHybridModeFeature = false;
-	public cacheAutoCloseFeature = false;
-	// Version 3.2: thermal mode 2.0 & performance OC
-	public thermalMode2Enum = GamingThermal2;
-	public thermalModeRealStatus = this.thermalMode2Enum.balance;
-	thermalModeEvent: any;
-	public performanceOCSettings = false;
-	// use enum instead of hard code on 200319 by Guo Jing
-	public legionItemIndex = {
-		cpuOverclock: 0,
-		ramOverlock: 1,
-		networkBoost: 2,
-		autoClose: 3,
-		hybridMode: 4,
-		overDrive: 5,
-		touchpadLock: 6
-	};
-
 	constructor(
 		private modalService: NgbModal,
 		private ngZone: NgZone,
@@ -279,48 +266,55 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	) { }
 
 	ngOnInit() {
-		// Get capabilities from cache                           
-		// Feature 0: machine type
-		// Version 3.2
+		//////////////////////////////////////////////////////////////////////
+		// Get capabilities from cache                                      //
+		// Feature 0: Version 3.2, machine type                             //
+		// Feature 1: Version 3.2, Thermal Mode 2 & performanceOC           //
+		// Feature 2: CPU over clock                                        //
+		// Feature 3: Memory over clock                                     //
+		// Feature 4: Network boost                                         //
+		// Feature 5: Auto close                                            //
+		// Feature 6: Hybrid mode                                           //
+		// Feature 7: Version 3.3, Over drive                               //
+		// Feature 8: Touchpad lock                                         //
+		//////////////////////////////////////////////////////////////////////
 		this.gamingCapabilities.desktopType = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.desktopType);
 		this.gamingCapabilities.liteGaming = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.liteGaming);
 
-		// Feature 1: thermal mode 2.0 and performanceOC
-		// Version 3.2
 		this.gamingCapabilities.smartFanFeature = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.smartFanFeature);
 		this.gamingCapabilities.thermalModeVersion = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.thermalModeVersion);
 		this.gamingCapabilities.gpuOCFeature = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.gpuOCFeature);
 		this.gamingCapabilities.nvDriver = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.nvDriver);
 
-		// Feature 2: CPU Over clock
 		this.gamingCapabilities.cpuOCFeature = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.cpuOCFeature);
 		this.gamingCapabilities.xtuService = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.xtuService);
 
-		// Feature 3: memory Over clock
 		this.gamingCapabilities.memOCFeature = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.memOCFeature);
 
-		// Feature 4: network boost
 		this.gamingCapabilities.networkBoostFeature = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.networkBoostFeature);
 		this.gamingCapabilities.fbnetFilter = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.fbNetFilter);
 
-		// Feature 5: auto close
 		this.gamingCapabilities.optimizationFeature = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.optimizationFeature);
 
-		// Feature 6: hybrid mode
 		this.gamingCapabilities.hybridModeFeature = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.hybridModeFeature);
 
-		// Feature 7: over drive
 		this.gamingCapabilities.overDriveFeature = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.overDriveFeature);
 
-		// Feature 8: touchpad lock
 		this.gamingCapabilities.touchpadLockFeature = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.touchpadLockFeature);
 		this.gamingCapabilities.touchpadLockStatus = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.TouchpadLockStatus);
 		this.gamingCapabilities.winKeyLockFeature = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.winKeyLockFeature);
 
 		//////////////////////////////////////////////////////////////////////
-		// Get status from cache
-		// Feature 1: thermal mode real status & performanceOC status
-		// Version 3.2
+		// Get status from localStorage                                     //
+		// Feature 1: Version 3.2, Thermal Mode 2 & performanceOC           //
+		// Feature 2: CPU over clock                                        //
+		// Feature 3: Memory over clock                                     //
+		// Feature 4: Network boost                                         //
+		// Feature 5: Auto close                                            //
+		// Feature 6: Hybrid mode                                           //
+		// Feature 7: Version 3.3, Over drive                               //
+		// Feature 8: Touchpad lock                                         //
+		//////////////////////////////////////////////////////////////////////
 		if (this.gamingCapabilities.smartFanFeature && this.gamingCapabilities.thermalModeVersion === 2) {
 			this.thermalModeRealStatus = this.commonService.getLocalStorageValue(LocalStorageKey.RealThermalModeStatus, 2);
 			if (this.gamingCapabilities.cpuOCFeature && this.gamingCapabilities.gpuOCFeature) {
@@ -338,42 +332,37 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			}
 		}
 
-		// Feature 2: CPU over lock status
 		if (this.gamingCapabilities.thermalModeVersion === 1 && this.gamingCapabilities.cpuOCFeature) {
 			this.drop.curSelected = this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus, 1)
 		}
 
-		// Feature 3: memory over lock status
 		if (this.gamingCapabilities.memOCFeature) {
 			this.legionUpdate[this.legionItemIndex.ramOverlock].isChecked = this.commonService.getLocalStorageValue(LocalStorageKey.memOCFeatureStatus, false);
 		}
 
-		// Feature 4: network boost status
 		if (this.gamingCapabilities.networkBoostFeature) {
 			this.legionUpdate[this.legionItemIndex.networkBoost].isChecked = this.commonService.getLocalStorageValue(LocalStorageKey.NetworkBoostStatus, false);
 		}
 
-		// Feature 5: auto close status
 		if (this.gamingCapabilities.optimizationFeature) {
 			this.legionUpdate[this.legionItemIndex.autoClose].isChecked = this.commonService.getLocalStorageValue(LocalStorageKey.AutoCloseStatus, false);
 		}
 
-		// Feature 6: hybrid mode status
 		if (this.gamingCapabilities.hybridModeFeature) {
 			this.legionUpdate[this.legionItemIndex.hybridMode].isChecked = this.commonService.getLocalStorageValue(LocalStorageKey.hybridModeFeatureStatus, false);
 		}
 
-		// Feature 7: over drive status
 		if (this.gamingCapabilities.overDriveFeature) {
 			this.legionUpdate[this.legionItemIndex.overDrive].isChecked = this.commonService.getLocalStorageValue(LocalStorageKey.overDriveStatus, true);
 		}
-		// Feature 8: touchpad lock status
+		// TODO: Historical issue, this should be a status but not a gamingCapability
 		if (this.gamingCapabilities.touchpadLockFeature) {
 			this.legionUpdate[this.legionItemIndex.touchpadLock].isChecked = this.gamingCapabilities.touchpadLockStatus;
 		}
 
 		//////////////////////////////////////////////////////////////////////
-		// Initialize Legion Edge component
+		// Initialize Legion Edge component                                 //
+		//////////////////////////////////////////////////////////////////////
 		this.legionEdgeInit();
 		this.commonService.getCapabalitiesNotification().subscribe((response) => {
 			if (response.type === Gaming.GamingCapabilities) {
@@ -389,9 +378,16 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	}
 
 	legionEdgeInit() {
-		// Render isvisible according to gamingCapabilities
-		// Feature 2: CPU over clock
-		// Version 3.2
+		//////////////////////////////////////////////////////////////////////
+		// Render isvisible according to gamingCapabilities                 //
+		// Feature 2: CPU over clock                                        //
+		// Feature 3: Memory over clock                                     //
+		// Feature 4: Network boost                                         //
+		// Feature 5: Auto close                                            //
+		// Feature 6: Hybrid mode                                           //
+		// Feature 7: Version 3.3, Over drive                               //
+		// Feature 8: Touchpad lock                                         //
+		//////////////////////////////////////////////////////////////////////
 		if (this.gamingCapabilities.thermalModeVersion === 2) {
 			this.legionUpdate[this.legionItemIndex.cpuOverclock].isVisible = false;
 		} else {
@@ -403,10 +399,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			}
 		}
 
-		// Feature 3: memory over clock
 		this.legionUpdate[this.legionItemIndex.ramOverlock].isVisible = this.gamingCapabilities.memOCFeature;
 
-		// Feature 4: network boost
 		this.legionUpdate[this.legionItemIndex.networkBoost].isVisible = this.gamingCapabilities.networkBoostFeature || false;
 		if (this.gamingCapabilities.fbnetFilter) {
 			this.legionUpdate[this.legionItemIndex.networkBoost].readonly = false;
@@ -414,22 +408,25 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			this.legionUpdate[this.legionItemIndex.networkBoost].readonly = true;
 		}
 
-		// Feature 5: auto close 
 		this.legionUpdate[this.legionItemIndex.autoClose].isVisible = this.gamingCapabilities.optimizationFeature || false;
 
-		// Feature 6: hybrid mode
 		this.legionUpdate[this.legionItemIndex.hybridMode].isVisible = this.gamingCapabilities.hybridModeFeature;
 
-		// Feature 7: over drive
 		this.legionUpdate[this.legionItemIndex.overDrive].isVisible = this.gamingCapabilities.overDriveFeature;
 
-		// Feature 8: touchpad lock
 		this.legionUpdate[this.legionItemIndex.touchpadLock].isVisible = this.gamingCapabilities.touchpadLockFeature;
 
-		/////////////////////////////////////////////////////////////////////////////////////////
-		// Get status from JSbridge
-		// Feature 1: Thermal Mode 2 & performanceOC
-		// Version 3.2
+		//////////////////////////////////////////////////////////////////////
+		// Init status from JSbridge                                        //
+		// Feature 1: Version 3.2, Thermal Mode 2 & performanceOC           //
+		// Feature 2: CPU over clock                                        //
+		// Feature 3: Memory over clock                                     //
+		// Feature 4: Network boost                                         //
+		// Feature 5: Auto close                                            //
+		// Feature 6: Hybrid mode                                           //
+		// Feature 7: Version 3.3, Over drive                               //
+		// Feature 8: Touchpad lock                                         //
+		//////////////////////////////////////////////////////////////////////
 		if (this.gamingCapabilities.smartFanFeature && this.gamingCapabilities.thermalModeVersion === 2) {
 			this.thermalModeEvent = this.onRegThermalModeRealStatusChangeEvent.bind(this);
 			this.renderThermalMode2RealStatus();
@@ -439,46 +436,45 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			}
 		}
 
-		// Feature 2: CPU over clock
 		if (this.gamingCapabilities.thermalModeVersion === 1 && this.gamingCapabilities.cpuOCFeature) {
 			this.renderCPUOverClockStatus();
 		}
 
-		// Feature 3: memory over clock
 		if (this.gamingCapabilities.memOCFeature) {
 			this.renderRamOverClockStatus();
 		}
 
-		// Feature 4: network boost 
 		if (this.gamingCapabilities.networkBoostFeature) {
-			// this.legionUpdate[2].readonly = false;
 			this.renderNetworkBoostStatus();
 		}
 
-		// Feature 5: auto close
 		if (this.gamingCapabilities.optimizationFeature) {
 			this.renderAutoCloseStatus();
 		}
 
-		// Feature 6: hybrid mode
 		if (this.gamingCapabilities.hybridModeFeature) {
 			this.renderHybridModeStatus();
 		}
 
-		// Feature 7: over drive
 		if (this.gamingCapabilities.overDriveFeature) {
 			this.renderOverDriveStatus();
 		}
 
-		// Feature 8: touchpad lock
 		if (this.gamingCapabilities.touchpadLockFeature && this.gamingCapabilities.winKeyLockFeature) {
 			this.renderTouchpadLockStatus();
 		}
 	}
 
 	//////////////////////////////////////////////////////////////////////
-	// Version 3.2: get real status of thermal mode 2 from JSBridge
-	public renderThermalMode2RealStatus() {
+	// Version 3.2: Thermal Mode 2 & PerformanceOC                      //
+	// 1. Get real status of thermal mode 2 from JSBridge               //
+	// 2. Register thermal mode real-status event                       //
+	// 3. Unregister thermal mode real-status event                     //
+	// 4. Callback of thermal mode real-status event                    //
+	// 5. Get performanceOC status from JSBridge                        //
+	// 6. Open popup of thermal mode 2                                  //
+	//////////////////////////////////////////////////////////////////////
+	renderThermalMode2RealStatus() {
 		try {
 			this.gamingThermalModeService.getThermalModeRealStatus().then(res => {
 				this.logger.info(`Widget-LegionEdge-RenderThermalMode2RealStatus: get value from ${this.thermalModeRealStatus} to ${res}`);
@@ -491,15 +487,11 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			this.logger.error('Widget-LegionEdge-RenderThermalMode2RealStatus: get fail; Error message: ', error.message);
 		}
 	}
-	// Version 3.2: register thermal mode real status event
-	public registerThermalModeRealStatusChangeEvent() {
+	registerThermalModeRealStatusChangeEvent() {
 		if (this.gamingCapabilities.smartFanFeature) {
 			try {
 				this.gamingThermalModeService.regThermalModeRealStatusChangeEvent();
-				this.shellServices.registerEvent(
-					EventTypes.gamingThermalModeRealStatusChangeEvent,
-					this.thermalModeEvent
-				);
+				this.shellServices.registerEvent(EventTypes.gamingThermalModeRealStatusChangeEvent, this.thermalModeEvent);
 				this.logger.info('Widget-LegionEdge-RegisterThermalModeRealStatusChangeEvent: register success');
 			} catch (error) {
 				this.logger.error('Widget-LegionEdge-RegisterThermalModeRealStatusChangeEvent: register fail; Error message: ', error.message);
@@ -508,15 +500,10 @@ export class WidgetLegionEdgeComponent implements OnInit {
 
 		}
 	}
-	// Version 3.2: unregister thermal mode real status event
-	public unRegisterThermalModeRealStatusChangeEvent() {
-		this.shellServices.unRegisterEvent(
-			EventTypes.gamingThermalModeRealStatusChangeEvent,
-			this.thermalModeEvent
-		);
+	unRegisterThermalModeRealStatusChangeEvent() {
+		this.shellServices.unRegisterEvent(EventTypes.gamingThermalModeRealStatusChangeEvent, this.thermalModeEvent);
 	}
-	// Version 3.2: callback of thermal mode real status event
-	public onRegThermalModeRealStatusChangeEvent(currentRealStatus: any) {
+	onRegThermalModeRealStatusChangeEvent(currentRealStatus: any) {
 		this.ngZone.run(() => {
 			this.logger.info(`Widget-LegionEdge-OnRegThermalModeRealStatusChangeEvent: call back from ${this.thermalModeRealStatus} to ${currentRealStatus}`);
 			if (currentRealStatus !== undefined && this.thermalModeRealStatus !== currentRealStatus) {
@@ -525,8 +512,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			}
 		});
 	}
-	// Version 3.2: get performanceOC status from JSBridge
-	public renderThermalMode2OCSettings() {
+	renderThermalMode2OCSettings() {
 		try {
 			this.gamingOCService.getPerformanceOCSetting().then(res => {
 				this.logger.info(`Widget-LegionEdge-RenderThermalMode2OCSettings: get value from ${this.performanceOCSettings} to ${res}`);
@@ -562,7 +548,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			throw new Error(error.message);
 		}
 	}
-	// Version 3.2: open popup of thermal mode 2
 	openThermalMode2Modal() {
 		const modalRef = this.modalService.open(ModalGamingThermalMode2Component, { backdrop: 'static', windowClass: 'modal-fun' });
 		modalRef.componentInstance.OCSettingsMsg.subscribe(res => {
@@ -571,53 +556,68 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	}
 
 	//////////////////////////////////////////////////////////////////////
-	// open popup of legion edge help
+	// Open popup of legion edge help                                   //
+	//////////////////////////////////////////////////////////////////////
 	openModal() {
 		this.modalService.open(ModalGamingLegionedgeComponent, { backdrop: true, windowClass: 'gaming-help-modal' });
 	}
 
 	//////////////////////////////////////////////////////////////////////
-	// get CPU over clock status from JSBridge
-	public renderCPUOverClockStatus() {
+	// Original: CPU over clock                                         //
+	// 1. Get CPU over clock status from JSBridge                       //
+	// 2. Set CPU Over clock status                                     //
+	// 3. Show dropdown of CPU over clock                               //
+	//////////////////////////////////////////////////////////////////////
+	renderCPUOverClockStatus() {
 		try {
 			this.gamingSystemUpdateService.getCpuOCStatus().then((cpuOCStatus) => {
 				this.logger.info(`Widget-LegionEdge-renderCPUOverClockStatus: get value from ${this.drop.curSelected} to ${cpuOCStatus}`);
-				if (cpuOCStatus !== undefined) {
-					if (cpuOCStatus !== this.drop.curSelected) {
-						this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, cpuOCStatus);
-					}
+				if (cpuOCStatus !== undefined && cpuOCStatus !== this.drop.curSelected) {
 					this.drop.curSelected = cpuOCStatus;
+					this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, cpuOCStatus);
 				}
 			});
 		} catch (error) {
 			this.logger.error('Widget-LegionEdge-renderCPUOverClockStatus: get fail; Error message: ', error.message);
 		}
 	}
-	// set CPU Over clock status
 	onOptionSelected(event: any) {
 		if (event.target.name === 'gaming.dashboard.device.legionEdge.title') {
-			this.gamingSystemUpdateService.setCpuOCStatus(this.setCpuOCStatus.cpuOCStatus).then((value: boolean) => {
+			this.gamingSystemUpdateService.setCpuOCStatus(event.option.value).then((value: boolean) => {
 				this.logger.info(`Widget-LegionEdge-onOptionSelected: set value to ${event.option.value}, return value is ${value}`);
-				if (!value) {
-					this.drop.curSelected = this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus, 1);
-				} else {
-					this.drop.curSelected = this.setCpuOCStatus.cpuOCStatus;
+				if (value) {
+					this.drop.curSelected = event.option.value;
 					this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, this.drop.curSelected);
+				} else {
+					this.drop.curSelected = this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus, 1);
 				}
 			}).catch((error) => {
+				this.drop.curSelected = this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus, 1);
 				this.logger.error('Widget-LegionEdge-onOptionSelected: set fail; Error message: ', error.message);
 			});
 		}
 	}
+	onShowDropdown(event) {
+		if (event.type === 'gaming.dashboard.device.legionEdge.title') {
+			if (this.drop.hideDropDown) {
+				// TODO
+				// this.closeLegionEdgePopups();
+				this.legionUpdate[this.legionItemIndex.cpuOverclock].isDriverPopup = true;
+			}
+		}
+	}
 
 	//////////////////////////////////////////////////////////////////////
-	// Get memory over clock status from JSBridge
-	public renderRamOverClockStatus() {
+	// Original: Memory over clock                                      //
+	// 1. Get memory over clock status from JSBridge                    //
+	// 2. Set memory Over clock status                                  //
+	//////////////////////////////////////////////////////////////////////
+	renderRamOverClockStatus() {
 		if (this.gamingCapabilities.xtuService === true) {
 			try {
 				this.gamingSystemUpdateService.getRamOCStatus().then((ramOcStatus) => {
 					this.logger.info(`Widget-LegionEdge-renderRamOverClockStatus: get value from ${this.legionUpdate[this.legionItemIndex.ramOverlock].isChecked} to ${ramOcStatus}`);
-					if (ramOcStatus !== undefined) {
+					if (ramOcStatus !== undefined && ramOcStatus !== this.legionUpdate[this.legionItemIndex.ramOverlock].isChecked) {
 						this.legionUpdate[this.legionItemIndex.ramOverlock].isChecked = ramOcStatus;
 						this.commonService.setLocalStorageValue(LocalStorageKey.memOCFeatureStatus, ramOcStatus);
 					}
@@ -627,16 +627,29 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			}
 		}
 	}
+	setRamOverClockStatus(status: any) {
+		try {
+			this.gamingSystemUpdateService.setRamOCStatus(!status).then((res: boolean) => {
+				// the status and cache will update after reboot
+				this.logger.info(`Widget-LegionEdge-setRamOverClockStatus: set value to ${status}, ande return value is ${res}`);
+			});
+		} catch (error) {
+			this.logger.error('Widget-LegionEdge-setRamOverClockStatus: set fail; Error message: ', error.message);
+		}
+	}
 
 	//////////////////////////////////////////////////////////////////////
-	// Get network boost status from JSBridge
-	public renderNetworkBoostStatus() {
+	// Original: Network work                                           //
+	// 1. Get network boost status from JSBridge                        //
+	// 2. Set network boost status                                      //
+	//////////////////////////////////////////////////////////////////////
+	renderNetworkBoostStatus() {
 		try {
 			this.gamingNetworkBoostService.getNetworkBoostStatus().then((networkBoostModeStatus) => {
 				this.logger.info(`Widget-LegionEdge-renderNetworkBoostStatus: get value from ${this.legionUpdate[this.legionItemIndex.networkBoost].isChecked} to ${networkBoostModeStatus}`);
-				if (networkBoostModeStatus !== undefined) {
-					this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoostStatus, networkBoostModeStatus);
+				if (networkBoostModeStatus !== undefined && networkBoostModeStatus !== this.legionUpdate[this.legionItemIndex.networkBoost].isChecked) {
 					this.legionUpdate[this.legionItemIndex.networkBoost].isChecked = networkBoostModeStatus;
+					this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoostStatus, networkBoostModeStatus);
 					if (!networkBoostModeStatus) {
 						if (this.commonService.getLocalStorageValue(LocalStorageKey.NetworkBoosNeedToAskPopup) === 2) {
 							this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoosNeedToAskPopup, 1);
@@ -648,30 +661,68 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			this.logger.error('Widget-LegionEdge-renderNetworkBoostStatus: get fail; Error message: ', error.message);
 		}
 	}
+	setNetworkBoostStatus(status: any) {
+		try {
+			this.gamingNetworkBoostService.setNetworkBoostStatus(status).then((res) => {
+				this.logger.info(`Widget-LegionEdge-setNetworkBoostStatus: set value to ${status}, ande return value is ${res}`);
+				if (res) {
+					this.legionUpdate[this.legionItemIndex.networkBoost].isChecked = status;
+					this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoostStatus, status);
+				} else {
+					this.legionUpdate[this.legionItemIndex.networkBoost].isChecked = !status;
+				}
+			});
+		} catch (error) {
+			this.legionUpdate[this.legionItemIndex.networkBoost].isChecked = !status;
+			this.logger.error('Widget-LegionEdge-setNetworkBoostStatus: set fail; Error message: ', error.message);
+		}
+	}
 
 	//////////////////////////////////////////////////////////////////////
-	// Get auto close status from JSBridge
-	public renderAutoCloseStatus() {
+	// Original: Auto close                                             //
+	// 1. Get auto close status from JSBridge                           //
+	// 2. Set auto close status                                         //
+	//////////////////////////////////////////////////////////////////////
+	renderAutoCloseStatus() {
 		try {
 			this.gamingAutoCloseService.getAutoCloseStatus().then((autoCloseModeStatus) => {
 				this.logger.info(`Widget-LegionEdge-renderAutoCloseStatus: get value from ${this.legionUpdate[this.legionItemIndex.autoClose].isChecked} to ${autoCloseModeStatus}`);
-				if (autoCloseModeStatus !== undefined) {
-					this.commonService.setLocalStorageValue(LocalStorageKey.AutoCloseStatus, autoCloseModeStatus);
+				if (autoCloseModeStatus !== undefined && autoCloseModeStatus !== this.legionUpdate[this.legionItemIndex.autoClose].isChecked) {
 					this.legionUpdate[this.legionItemIndex.autoClose].isChecked = autoCloseModeStatus;
+					this.commonService.setLocalStorageValue(LocalStorageKey.AutoCloseStatus, autoCloseModeStatus);
 				}
 			});
 		} catch (error) {
 			this.logger.error('Widget-LegionEdge-renderAutoCloseStatus: get fail; Error message: ', error.message);
 		}
 	}
+	setAutoCloseStatus(status: any) {
+		try {
+			this.gamingAutoCloseService.setAutoCloseStatus(status).then((res) => {
+				this.logger.info(`Widget-LegionEdge-setAutoCloseStatus: set value to ${status}, ande return value is ${res}`);
+				if (res) {
+					this.legionUpdate[this.legionItemIndex.autoClose].isChecked = status;
+					this.commonService.setLocalStorageValue(LocalStorageKey.AutoCloseStatus, status);
+				} else {
+					this.legionUpdate[this.legionItemIndex.autoClose].isChecked = !status;
+				}
+			});
+		} catch (error) {
+			this.legionUpdate[this.legionItemIndex.autoClose].isChecked = !status;
+			this.logger.error('Widget-LegionEdge-setAutoCloseStatus: set fail; Error message: ', error.message);
+		}
+	}
 
 	//////////////////////////////////////////////////////////////////////
-	// Get hybrid mode status from JSBridge
-	public renderHybridModeStatus() {
+	// Original: Hybrid mode                                            //
+	// 1. Get hybrid mode status from JSBridge                          //
+	// 2. Set hybrid mode status                                        //
+	//////////////////////////////////////////////////////////////////////
+	renderHybridModeStatus() {
 		try {
 			this.gamingHybridModeService.getHybridModeStatus().then((hybridModeStatus) => {
 				this.logger.info(`Widget-LegionEdge-renderHybridModeStatus: get value from ${this.legionUpdate[this.legionItemIndex.hybridMode].isChecked} to ${hybridModeStatus}`);
-				if (hybridModeStatus !== undefined) {
+				if (hybridModeStatus !== undefined && hybridModeStatus !== this.legionUpdate[this.legionItemIndex.hybridMode].isChecked) {
 					this.legionUpdate[this.legionItemIndex.hybridMode].isChecked = hybridModeStatus;
 					this.commonService.setLocalStorageValue(LocalStorageKey.hybridModeFeatureStatus, hybridModeStatus);
 				}
@@ -680,181 +731,202 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			this.logger.error('Widget-LegionEdge-renderHybridModeStatus: get fail; Error message: ', error.message);
 		}
 	}
+	setHybridModeStatus(status: any) {
+		try {
+			this.gamingHybridModeService.setHybridModeStatus(!status).then((res: boolean) => {
+				// the status and cache will update after reboot
+				this.logger.info(`Widget-LegionEdge-setHybridModeStatus: set value to ${status}, ande return value is ${res}`);
+			});
+		} catch (error) {
+			this.logger.error('Widget-LegionEdge-setHybridModeStatus: set fail; Error message: ', error.message);
+		}
+	}
 
 	//////////////////////////////////////////////////////////////////////
-	// Get over drive status from JSBridge
+	// Version 3.3: Over drive                                          //
+	// 1. Get over drive status from JSBridge                           //
+	// 2. Set over drive status                                         //
+	//////////////////////////////////////////////////////////////////////
 	renderOverDriveStatus() {
 		try {
 			this.gamingOverDriveService.getOverDriveStatus().then(res => {
-				this.logger.info(`Widget-LegionEdge-intiOverDriveStatus: get value from ${this.legionUpdate[this.legionItemIndex.overDrive].isChecked} to ${res}`);
-				if (res !== this.legionUpdate[this.legionItemIndex.overDrive].isChecked && res !== undefined) {
+				this.logger.info(`Widget-LegionEdge-renderOverDriveStatus: get value from ${this.legionUpdate[this.legionItemIndex.overDrive].isChecked} to ${res}`);
+				if (res !== undefined && res !== this.legionUpdate[this.legionItemIndex.overDrive].isChecked) {
 					this.legionUpdate[this.legionItemIndex.overDrive].isChecked = res;
 					this.commonService.setLocalStorageValue(LocalStorageKey.overDriveStatus, res)
 				}
 			});
 		} catch (error) {
-			this.logger.error('Widget-LegionEdge-intiOverDriveStatus: get fail; Error message: ', error.message);
+			this.logger.error('Widget-LegionEdge-renderOverDriveStatus: get fail; Error message: ', error.message);
+		}
+	}
+	setOverDriveStatus(status: any) {
+		try {
+			this.gamingOverDriveService.setOverDriveStatus(status).then(res => {
+				if (res) {
+					this.logger.info(`Widget-LegionEdge-setOverDriveStatus: set overDrive return value: ${res}, overDrive status from ${this.legionUpdate[this.legionItemIndex.overDrive].isChecked} to ${status}`);
+					this.legionUpdate[this.legionItemIndex.overDrive].isChecked = status;
+					this.commonService.setLocalStorageValue(LocalStorageKey.overDriveStatus, status);
+				} else {
+					this.legionUpdate[this.legionItemIndex.overDrive].isChecked = !status;
+					this.logger.error(`Widget-LegionEdge-setOverDriveStatus: set overDrive return false, overDrive status keep ${this.legionUpdate[this.legionItemIndex.overDrive].isChecked}`);
+				}
+			});
+		} catch (error) {
+			this.legionUpdate[this.legionItemIndex.overDrive].isChecked = !status;
+			this.logger.error('Widget-LegionEdge-setOverDriveStatus: set overDrive fail, error message: ', error.message);
 		}
 	}
 
 	//////////////////////////////////////////////////////////////////////
-	// Get touchpad lock status from JSBridge
-	public renderTouchpadLockStatus() {
+	// Original: Touchpad lock                                          //
+	// 1. Get touchpad lock status from JSBridge                        //
+	// 2. Set touchpad lock status                                      //
+	//////////////////////////////////////////////////////////////////////
+	renderTouchpadLockStatus() {
 		try {
 			this.gamingKeyLockService.getKeyLockStatus().then((touchpadLockStatus) => {
 				this.logger.info(`Widget-LegionEdge-renderTouchpadLockStatus: get value from ${this.legionUpdate[this.legionItemIndex.touchpadLock].isChecked} to ${touchpadLockStatus}`);
-				if (touchpadLockStatus !== undefined) {
-					this.commonService.setLocalStorageValue(LocalStorageKey.TouchpadLockStatus, touchpadLockStatus);
+				if (touchpadLockStatus !== undefined && touchpadLockStatus !== this.legionUpdate[this.legionItemIndex.touchpadLock].isChecked) {
 					this.legionUpdate[this.legionItemIndex.touchpadLock].isChecked = touchpadLockStatus;
+					this.commonService.setLocalStorageValue(LocalStorageKey.TouchpadLockStatus, touchpadLockStatus);
 				}
 			});
 		} catch (error) {
 			this.logger.error('Widget-LegionEdge-renderTouchpadLockStatus: get fail; Error message: ', error.message);
 		}
 	}
-
-	
-	//////////////////////////////////////////////////////////////////////
-	// TODO
-	public async setAutoCloseStatus(status: any) {
+	setTouchpadLockStatus(status: any) {
 		try {
-			const isStatusUpdated = await this.gamingAutoCloseService.setAutoCloseStatus(status);
-			if (isStatusUpdated) {
-				this.commonService.setLocalStorageValue(LocalStorageKey.AutoCloseStatus, status);
-			}
-		} catch (err) { }
-	}
-
-	public async setNetworkBoostStatus(status: any) {
-		try {
-			const isStatusUpdated = await this.gamingNetworkBoostService.setNetworkBoostStatus(status);
-			if (isStatusUpdated) {
-				this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoostStatus, status);
-				this.legionUpdate[this.legionItemIndex.networkBoost].isChecked = status;
-			} else {
-				this.legionUpdate[this.legionItemIndex.networkBoost].isChecked = !status;
-			}
-		} catch (err) { }
-	}
-
-
-	public closeLegionEdgePopups() {
-		Object.entries(this.legionUpdate).forEach(([key]) => {
-			this.legionUpdate[key].isDriverPopup = false;
-			this.legionUpdate[key].isPopup = false;
-		});
-	}
-
-	public onPopupClosed($event) {
-		const name = $event.name;
-		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
-			this.legionUpdate[this.legionItemIndex.ramOverlock].isDriverPopup = false;
-			this.legionUpdate[this.legionItemIndex.ramOverlock].isPopup = false;
-			this.commonService.sendNotification(name, this.legionUpdate[this.legionItemIndex.ramOverlock].isChecked);
-		}
-		if (name === 'gaming.dashboard.device.legionEdge.hybridMode') {
-			this.legionUpdate[this.legionItemIndex.hybridMode].isPopup = false;
-			this.commonService.sendNotification(name, this.legionUpdate[this.legionItemIndex.hybridMode].isChecked);
-		}
-		if (name === 'gaming.dashboard.device.legionEdge.title') {
-			this.legionUpdate[this.legionItemIndex.cpuOverclock].isDriverPopup = false;
-			this.legionUpdate[this.legionItemIndex.cpuOverclock].isPopup = false;
-		}
-		if (name === 'gaming.dashboard.device.legionEdge.networkBoost') {
-			this.legionUpdate[this.legionItemIndex.networkBoost].isDriverPopup = false;
-			this.legionUpdate[this.legionItemIndex.networkBoost].isPopup = false;
-		}
-	}
-
-	public async toggleOnOffRamOCStatus($event) {
-		const { name, checked } = $event.target;
-		let status = $event.target.value;
-		status = status === 'false' ? false : status;
-		status = status === 'true' ? true : status;
-		this.closeLegionEdgePopups();
-		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
-			if (this.gamingCapabilities.xtuService === false) {
-				this.legionUpdate[this.legionItemIndex.ramOverlock].isDriverPopup = true;
-			} else {
-				this.legionUpdate[this.legionItemIndex.ramOverlock].isPopup = true;
-			}
-			this.gamingSystemUpdateService
-				.setRamOCStatus(!status)
-				.then((value: boolean) => { })
-				.catch((error) => { });
-		}
-		if (name === 'gaming.dashboard.device.legionEdge.hybridMode') {
-			this.legionUpdate[this.legionItemIndex.hybridMode].isPopup = true;
-			this.gamingHybridModeService
-				.setHybridModeStatus(!status)
-				.then((value: boolean) => { })
-				.catch((error) => { });
-		}
-		if (name === 'gaming.dashboard.device.legionEdge.touchpadLock') {
-			this.gamingKeyLockService.setKeyLockStatus(status).then((value: boolean) => {
-				if (value) {
+			this.gamingKeyLockService.setKeyLockStatus(status).then((res: boolean) => {
+				this.logger.info(`Widget-LegionEdge-setTouchpadLockStatus: set value to ${status}, ande return value is ${res}`);
+				if (res) {
+					this.legionUpdate[this.legionItemIndex.touchpadLock].isChecked = status;
 					this.commonService.setLocalStorageValue(LocalStorageKey.TouchpadLockStatus, status);
 				} else {
+					this.legionUpdate[this.legionItemIndex.touchpadLock].isChecked = !status;
+					this.logger.error(`Widget-LegionEdge-setTouchpadLockStatus: set touchpadLock Status return false, touchpadLock status keep ${this.legionUpdate[this.legionItemIndex.touchpadLock].isChecked}`);
 				}
-			}).catch((error) => { });
-		}
-
-		if (name === 'gaming.dashboard.device.legionEdge.autoClose') {
-			await this.setAutoCloseStatus(status);
-		}
-
-		if (name === 'gaming.dashboard.device.legionEdge.networkBoost') {
-			this.gamingCapabilities.fbnetFilter = !!this.gamingCapabilities.fbnetFilter;
-			if (!this.gamingCapabilities.fbnetFilter) {
-				this.legionUpdate[this.legionItemIndex.networkBoost].isDriverPopup = true;
-			} else {
-				await this.setNetworkBoostStatus(status);
-			}
-		}
-		// Version 3.3: set over drive status by toggle
-		if (name === 'gaming.dashboard.device.legionEdge.overDrive') {
-			try {
-				this.gamingOverDriveService.setOverDriveStatus(status).then(res => {
-					if (res) {
-						this.logger.info(`Widget-LegionEdge-toggleOnOffRamOCStatus: set overDrive return value: ${res}, overDrive status from ${this.legionUpdate[this.legionItemIndex.overDrive].isChecked} to ${status}`);
-						this.legionUpdate[this.legionItemIndex.overDrive].isChecked = status;
-						this.commonService.setLocalStorageValue(LocalStorageKey.overDriveStatus, status);
-					} else {
-						this.legionUpdate[this.legionItemIndex.overDrive].isChecked = !status;
-						this.logger.error(`Widget-LegionEdge-toggleOnOffRamOCStatus: set overDrive return false, overDrive status keep ${this.legionUpdate[this.legionItemIndex.overDrive].isChecked}`);
-					}
-				});
-			} catch (error) {
-				this.legionUpdate[this.legionItemIndex.overDrive].isChecked = !status;
-				this.logger.error('Widget-LegionEdge-toggleOnOffRamOCStatus: set overDrive fail, error message: ', error.message);
-				throw new Error(error.message);
-			}
+			});
+		} catch (error) {
+			this.legionUpdate[this.legionItemIndex.touchpadLock].isChecked = !status;
+			this.logger.error(`Widget-LegionEdge-setTouchpadLockStatus: set touchpadLock Status error, touchpadLock status keep ${this.legionUpdate[this.legionItemIndex.touchpadLock].isChecked}`);
 		}
 	}
 
+	//////////////////////////////////////////////////////////////////////
+	// TODO Similar to onPopupClosed()                                  // 
+	// What is the purpose of this function?                            //
+	// If pass the test of PA, remove the code that commented by TODO   //
+	//////////////////////////////////////////////////////////////////////
+	// public closeLegionEdgePopups() {
+	// 	Object.entries(this.legionUpdate).forEach(([key]) => {
+	// 		this.legionUpdate[key].isDriverPopup = false;
+	// 		this.legionUpdate[key].isPopup = false;
+	// 	});
+	// }
+
+	//////////////////////////////////////////////////////////////////////
+	// TODO Common function: Close popup windows                        //
+	// Such as driver lack or reboot notifactions                       //
+	// But name isn't equal to $event                                   //
+	// And popup windows can close normaly without this function        //
+	// If pass the test of PA, remove the code that commented by TODO   //
+	//////////////////////////////////////////////////////////////////////
+	public onPopupClosed($event) {
+		// const name = $event;
+		// if (name === 'gaming.dashboard.device.legionEdge.title') {
+		// 	this.legionUpdate[this.legionItemIndex.cpuOverclock].isDriverPopup = false;
+		// 	this.legionUpdate[this.legionItemIndex.cpuOverclock].isPopup = false;
+		// }
+		// if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
+		// 	this.legionUpdate[this.legionItemIndex.ramOverlock].isDriverPopup = false;
+		// 	this.legionUpdate[this.legionItemIndex.ramOverlock].isPopup = false;
+		// 	this.commonService.sendNotification(name, this.legionUpdate[this.legionItemIndex.ramOverlock].isChecked);
+		// }
+		// if (name === 'gaming.dashboard.device.legionEdge.networkBoost') {
+		// 	this.legionUpdate[this.legionItemIndex.networkBoost].isDriverPopup = false;
+		// 	this.legionUpdate[this.legionItemIndex.networkBoost].isPopup = false;
+		// }
+		// if (name === 'gaming.dashboard.device.legionEdge.hybridMode') {
+		// 	this.legionUpdate[this.legionItemIndex.hybridMode].isPopup = false;
+		// 	this.commonService.sendNotification(name, this.legionUpdate[this.legionItemIndex.hybridMode].isChecked);
+		// }
+	}
+
+	//////////////////////////////////////////////////////////////////////
+	// Common function: Icon for routing                                //
+	// Feature 4: Network boost                                         //
+	// Feature 5: Auto close                                            //
+	//////////////////////////////////////////////////////////////////////
 	onIconClick(event: any) {
-		event = event || { name: '' };
-		const { name } = event;
-		this.closeLegionEdgePopups();
-		if (name === 'gaming.dashboard.device.legionEdge.networkBoost') {
-			this.gamingCapabilities.fbnetFilter = !!this.gamingCapabilities.fbnetFilter;
-			if (!this.gamingCapabilities.fbnetFilter) {
-				this.legionUpdate[this.legionItemIndex.networkBoost].isDriverPopup = true;
-			} else {
+		this.logger.info(`Widget-LegionEdge-onIconClick: event.name value is ${event.name}`);
+		// TODO
+		// this.closeLegionEdgePopups();
+		if (event.name === 'gaming.dashboard.device.legionEdge.networkBoost') {
+			if (this.gamingCapabilities.fbnetFilter) {
 				this.router.navigate(['/gaming/networkboost']);
+			} else {
+				this.legionUpdate[this.legionItemIndex.networkBoost].isDriverPopup = true;
+				this.logger.error(`Widget-LegionEdge-onIconClick: event.name is ${event.name}, fbnetFilter is ${this.gamingCapabilities.fbnetFilter}`);
 			}
 		}
-		if (name === 'gaming.dashboard.device.legionEdge.autoClose') {
+		if (event.name === 'gaming.dashboard.device.legionEdge.autoClose') {
 			this.router.navigate(['/gaming/autoclose']);
 		}
 	}
 
-	onShowDropdown(event) {
-		if (event.type === 'gaming.dashboard.device.legionEdge.title') {
-			if (this.drop.hideDropDown) {
-				this.closeLegionEdgePopups();
-				this.legionUpdate[this.legionItemIndex.cpuOverclock].isDriverPopup = true;
+	//////////////////////////////////////////////////////////////////////
+	// Common function: Toggle on/off status                            //
+	// Feature 3: Memory over clock                                     //
+	// Feature 4: Network boost                                         //
+	// Feature 5: Auto close                                            //
+	// Feature 6: Hybrid mode                                           //
+	// Feature 7: Version 3.3, Over drive                               //
+	// Feature 8: Touchpad lock                                         //
+	//////////////////////////////////////////////////////////////////////
+	toggleOnOffStatus($event) {
+		let name = $event.target.name;
+		let status = $event.target.value;
+		status = status === 'false' ? false : status;
+		status = status === 'true' ? true : status;
+		// TODO
+		// this.closeLegionEdgePopups();
+		this.logger.info(`Widget-LegionEdge-toggleOnOffStatus: event name is ${name}, event status is ${status}`);
+		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
+			if (this.gamingCapabilities.xtuService) {
+				this.legionUpdate[this.legionItemIndex.ramOverlock].isPopup = true;
+				this.setRamOverClockStatus(!status);
+			} else {
+				this.legionUpdate[this.legionItemIndex.ramOverlock].isDriverPopup = true;
+				this.logger.error(`Widget-LegionEdge-toggleOnOffStatus: event name is ${name}, xtuService is ${this.gamingCapabilities.xtuService}`);
 			}
+		}
+
+		if (name === 'gaming.dashboard.device.legionEdge.networkBoost') {
+			if (this.gamingCapabilities.fbnetFilter) {
+				this.setNetworkBoostStatus(status);
+			} else {
+				this.legionUpdate[this.legionItemIndex.networkBoost].isDriverPopup = true;
+				this.logger.error(`Widget-LegionEdge-toggleOnOffStatus: event name is ${name}, fbnetFilter is ${this.gamingCapabilities.fbnetFilter}`);
+			}
+		}
+
+		if (name === 'gaming.dashboard.device.legionEdge.autoClose') {
+			this.setAutoCloseStatus(status);
+		}
+
+		if (name === 'gaming.dashboard.device.legionEdge.hybridMode') {
+			this.legionUpdate[this.legionItemIndex.hybridMode].isPopup = true;
+			this.setHybridModeStatus(!status);
+		}
+
+		if (name === 'gaming.dashboard.device.legionEdge.overDrive') {
+			this.setOverDriveStatus(status);
+		}
+
+		if (name === 'gaming.dashboard.device.legionEdge.touchpadLock') {
+			this.setTouchpadLockStatus(status);
 		}
 	}
 }
