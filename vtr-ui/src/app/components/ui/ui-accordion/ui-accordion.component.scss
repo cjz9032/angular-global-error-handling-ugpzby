@@ -119,9 +119,11 @@
                                 max-width: 8.1rem;
                                 margin-top: 0.6rem;
                                 line-height: 1.2rem;
+                                overflow: hidden;
+								text-overflow: ellipsis;
                                 @media #{$breakpoint_sm}{
-                                    font-size: 0.8rem;
-                                    line-height: 1.2rem;
+                                    font-size: 1rem;
+                                    line-height: 1rem;
                                     max-width: 100%;
                                     margin-top: 0;
                                 }
