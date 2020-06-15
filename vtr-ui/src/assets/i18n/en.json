@@ -2937,7 +2937,7 @@
 			"returnto": "RETURN TO DASHBOARD",
 			"mostRecent": "MOST RECENT SCAN:",
 			"nextScheduled": "NEXT SCHEDULED SCAN:",
-			"successTitle": "Your PC is tuned up !",
+			"successTitle": "Your PC is tuned up!",
 			"successDescription": "Smart Performance resolved <b>{{issueCount}} issue(s)</b> to keep your pc running smoothly, you can find scan summary and report below.",
 			"scanSummary": {
 				"title": "Scan summary:",
