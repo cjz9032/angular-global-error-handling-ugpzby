@@ -501,28 +501,63 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		}
 	}
 
+	// Last scan result method.
+	async getLastScanResult() {
+		try {
+			const lastScanResultRequest = {
+				scanType: this.isSubscribed ? "ScanAndFix" : "Scan"
+			}
+			const response = await this.smartPerformanceService.getLastScanResult(lastScanResultRequest);
+			this.logger.info('ui-smart-performance-scan-summary.getLastScanResult', response);
+			if(response) {
+				this.isLoading = false;
+				this.historyRes = {
+					tuneCount: response.Tune,
+					boostCount: response.Boost,
+					secure: response.Secure
+				}
+				this.issueCount = response.Tune + response.Boost + response.Secure
+				this.leftAnimator = (response.rating * 10 - 0).toString() + '%';
+			}
+		} catch (error) {
+			this.logger.error('Smart-Performance, LastScanResult error:', error)
+		}
+	}
+
 	async getHistory(startDate, endDate) {
 		this.isLoading = true;
-
 		const payload = {
 			filterType: 'C',
 			startDate,
 			endDate
 		};
 		try {
-			const res: any = await this.smartPerformanceService.getHistory(
-				payload
-			);
+			const res: any = await this.smartPerformanceService.getHistory(payload);
 			this.logger.info('ui-smart-performance-scan-summary.getHistory', res);
+			const now = moment().format('hh:mm A')
+			const fiveMinutesFromRecentScan = moment(res.recentscantime).add(5, 'minutes').format('hh:mm A')
 			if (res) {
-				this.isLoading = false;
-				this.historyRes = {
-					tuneCount: res.Tunecount,
-					boostCount: res.Boostcount,
-					secure: res.Secure,
-					tuneSize: res.Tunesize,
-					boostSize: res.Boostsize
-				};
+				if(now < fiveMinutesFromRecentScan) {
+					// last scan result can be fetched in two ways, since we need to make another service call with getLastScanResult method, 
+					// commented getLastScanResult method as data is available in getHistory method.
+					// this.getLastScanResult()
+					this.isLoading = false;
+					this.historyRes = {
+						tuneCount: res.lastscanresults[0].Tune,
+						boostCount: res.lastscanresults[0].Boost,
+						secure: res.lastscanresults[0].Secure
+					}
+				} 
+				if(now > fiveMinutesFromRecentScan) {
+					this.isLoading = false;
+					this.historyRes = {
+						tuneCount: res.Tunecount,
+						boostCount: res.Boostcount,
+						secure: res.Secure,
+						tuneSize: res.Tunesize,
+						boostSize: res.Boostsize
+					};
+				}
 				this.historyScanResults = res.lastscanresults || [];
 				this.getMostecentScanDateTime(this.historyScanResults[0].scanruntime);
 				this.getScanHistoryWithTime();
