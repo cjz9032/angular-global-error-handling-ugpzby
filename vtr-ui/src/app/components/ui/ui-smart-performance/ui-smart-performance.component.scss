@@ -356,6 +356,7 @@
 						@media #{$breakpoint_sm}{
 							width: auto;
 							min-width: 7rem;
+							position:static;
 						}
 						&::after {
 							content: '';
@@ -404,7 +405,9 @@
 							max-width: 8.1rem;
 							margin-top: 0.6rem;
 							line-height: 1.4rem;
-							color: #272A3B;
+							color: #272A3B;							
+							overflow: hidden;
+							text-overflow: ellipsis;
 							@media #{$breakpoint_xl} {
 								font-size: 1rem;
 								line-height: 1rem;
