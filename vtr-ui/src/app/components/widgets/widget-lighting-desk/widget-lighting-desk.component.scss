@@ -221,10 +221,12 @@
                             @media #{$below-large-screen} {
                                 position: relative;
                                 align-items: left !important;
+                                justify-content: space-between !important;
                             }
                             @media #{$small-screen} {
                                 position: relative;
                                 align-items: left !important;
+                                justify-content: center !important;
                             }
                         }
                         .color-default{
@@ -241,35 +243,8 @@
                             position: absolute;
                             margin-left: 4.1rem;
                             z-index: 2;
-                            @media #{$below-large-screen} {
-                               top: 50%;
-                            }
-                            @media #{$small-screen} {
-                                top: 50%;
-                            }
                             @media #{$mediaquery_X49} {
                                 margin-left: 32px;
-                            }
-                            ::ng-deep{
-                                .ui-color-picker{
-                                    .preset-color{
-                                        @media #{$below-large-screen} {
-                                            margin-top: -146px;
-                                        }
-                                        @media #{$small-screen} {
-                                            margin-top: -146px;
-                                      
-                                        }
-                                    } 
-                                    .inp-color-picker{
-                                        @media #{$below-large-screen} {
-                                            margin-top: -182.5px;
-                                        }
-                                        @media #{$small-screen} {
-                                            margin-top: -182.5px;
-                                        }
-                                    }
-                                }
                             }
                         }
                     }
