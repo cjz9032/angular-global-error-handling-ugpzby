@@ -39,5 +39,8 @@ export enum PaymentPage{
 	MTQUERYPARAMETER='&mt=',
 	SOURCEQUERYPARAMETER='&source=',
 	SLASH='/',
-	TRUE='true'
+	TRUE='true',
+	ORDERDETAILS = 'http://ditpcsupport.earth.xpaas.lenovo.com/nl/nl/api/v4/upsell/smart/getorders?serialNumber=',
+	ORDERWAITINGTIME = 10 // MINUTES
+
 }

@@ -14,15 +14,15 @@
     <ul class="status-list">
         <li class="d-flex justify-content-between">
             <div class="item">{{'smartPerformance.subscriptionDetails.startDate' |translate }}</div>
-            <div class="status">{{startDate}}</div>
+            <div class="status">{{subscriptionDetails.startDate}}</div>
         </li>
         <li class="d-flex justify-content-between">
             <div class="item">{{'smartPerformance.subscriptionDetails.endDate' |translate }}</div>
-            <div class="status">{{endDate}}</div>
+            <div class="status">{{subscriptionDetails.endDate}}</div>
         </li>
         <li class="d-flex justify-content-between">
             <div class="item">{{'smartPerformance.subscriptionDetails.status' |translate }}</div>
-            <div class="status"><div [ngClass]="{'badge-danger': strStatus==='INACTIVE', 'badge-success': strStatus==='ACTIVE', 'badge-processing' : strStatus==='PROCESSING' }" class="badge badge-pill">{{status |translate}}</div></div>
+            <div class="status"><div [ngClass]="{'badge-danger': strStatus==='INACTIVE', 'badge-success': strStatus==='ACTIVE', 'badge-processing' : strStatus==='PROCESSING' }" class="badge badge-pill">{{subscriptionDetails.status |translate}}</div></div>
         </li>
     </ul>
     <a *ngIf="isSubscribed" class="link-text" (click)=openSubscribeModal() 
