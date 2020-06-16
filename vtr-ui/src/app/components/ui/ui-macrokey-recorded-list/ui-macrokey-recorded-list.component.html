@@ -109,7 +109,7 @@
 	</div>
 	<div class="bottom-fix" *ngIf="!recordingStatus">
 		<div class="text-right">
-			<div class="delete-btn" (click)="clearRecords()" vtrMetrics [metricsItem]="'macrokey_clear_records'"
+			<div class="delete-wrapper" (click)="clearRecords()" vtrMetrics [metricsItem]="'macrokey_clear_records'"
 				metricsEvent="featureClick" id="macrokey_clear_records"
 				attr.aria-label="{{ 'gaming.macroKey.narrator.clearText' | translate }}" tabindex="1"
 				(keyup.enter)="clearRecords()" role="button">
@@ -131,7 +131,7 @@
 							id="delete---anticon" fill="url(#linearGradient-1)" fill-rule="nonzero"></path>
 					</g>
 				</svg>
-				<span>{{ 'gaming.macroKey.details.recorded.clear' | translate }}</span>
+				<span class="delete-btn">{{ 'gaming.macroKey.details.recorded.clear' | translate }}</span>
 			</div>
 		</div>
 	</div>

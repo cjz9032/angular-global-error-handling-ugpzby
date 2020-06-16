@@ -71,11 +71,12 @@
 								<a  *ngIf="!isPopupVisible" [routerLink]="['/gaming/lightingcustomize/'+setprofId]"
 									vtrMetrics [metricsItem]="'lighting_customize'" metricsEvent="featureClick"
 									metricsParam="lightingcustomize" metricsValue="{{setprofId}}"
-									metricsParent="Gaming.Dashboard" id="lighting_customize" class="d-inline-block mt-2"
+									metricsParent="Gaming.Dashboard" id="lighting_customize" class="lighting-gear-icon" 
 									attr.aria-label="lighting customize" tabindex="1" role="link">
 									<!--    <i class="icon icon-gear"></i> -->
-									  <fa-icon class="icon" [icon]="['fal', 'cog']" id="gaming_dashboard_lighting_customize_gear" role="img"></fa-icon>
-									  {{'gaming.lightingProfile.lightingProfileHeading.Customize.title' | translate}}</a>
+									  <fa-icon class="icon gear-icon-gaming" [icon]="['fal', 'cog']" id="gaming_dashboard_lighting_customize_gear" role="img"></fa-icon>
+									  {{'gaming.lightingProfile.lightingProfileHeading.Customize.title' | translate}}
+								</a>
 							</li>
 						</ul>
 					</div>

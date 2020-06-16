@@ -132,3 +132,68 @@
 		}
 	}
 }
+
+::ng-deep {
+	.is-gaming {
+		.button-box {
+			.btn, .button {
+				height: 4rem !important;
+				min-height: 4rem !important;
+				padding: 0 2rem !important;
+				background: none !important;
+				background-image: none !important;
+				background-color: $blueFill !important;
+				line-height: 4rem !important;
+				border-radius: 2rem !important;
+				-webkit-transition: 0.2s ease !important;
+				transition: 0.2s ease !important;
+				display: inline-block !important;
+				cursor: pointer !important;
+				-webkit-user-select: none !important;
+				-moz-user-select: none !important;
+				-ms-user-select: none !important;
+				user-select: none !important;
+				letter-spacing: 0.1rem !important;
+				font-weight: bold !important;
+				
+				&.smallBtn {
+					height: 3rem !important;
+					line-height: 3rem !important;
+					border-radius: 1.5rem !important;
+				}
+
+				&.greyBtn {
+					background-color: $white20 !important;
+				}
+
+				&:hover {
+					background-color: $blueHover !important;
+				}
+
+				.text {
+					letter-spacing: inherit !important;
+				}
+			}
+
+			.underlineBtn {
+				font-size: 1.4rem !important;
+				color: $blueFill !important;
+				font-weight: bold !important;
+				height: 2rem !important;
+				line-height: 2rem !important;
+				border-bottom: 0.2rem solid $blueFill !important;
+				display: inline-block !important;
+				cursor: pointer !important;
+				-webkit-user-select: none !important;
+				-moz-user-select: none !important;
+				-ms-user-select: none !important;
+				user-select: none !important;
+				-webkit-transition: 0.2s ease !important;
+				transition: 0.2s ease !important;
+				&:hover {
+					color: $blueHover !important;
+				}
+			}
+		}
+	}
+}

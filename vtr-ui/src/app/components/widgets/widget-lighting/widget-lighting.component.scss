@@ -215,9 +215,6 @@
 				color: $gaming_switch_light;
 				text-decoration: none;
 				padding-left: 0;
-				//display: flex;
-				//width: 11rem;
-				//align-items: center;
 				white-space: nowrap;
 				text-overflow: ellipsis;
 				overflow: hidden;
@@ -225,25 +222,15 @@
 				color: $shade_light;
 				line-height: 1.5rem;
 				&:hover {
-					color: $gaming_lightest;					
-					.icon{
-						background:$screen_dark_20;
-						color: $gaming_lightest;
-					}
+					color: $gaming_lightest;
 				}
-				.icon {
-					margin-right: -0.5rem;
-					font-size: 2rem;
-					transition: all .2s ease-in-out;
-					border-radius: 50%;
-					padding: 0.6rem;
-					color: $gaming_grey_lightest;
-					vertical-align: middle;
-					height: 3.2rem;
-					widows: 3.3rem;
-					display: inline-block;
-					text-align: center;
-					line-height: 1.2rem;
+				&.lighting-gear-icon {
+					.gear-icon-gaming {
+						margin-right: 0.5rem;
+						&:after {
+							left:-0.25rem;
+						}
+					}					
 				}
 			}
 		}

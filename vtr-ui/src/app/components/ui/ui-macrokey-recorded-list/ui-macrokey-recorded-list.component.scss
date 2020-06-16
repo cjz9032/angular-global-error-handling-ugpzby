@@ -224,26 +224,43 @@
 	}
 }
 
-.delete-btn {
-	cursor: pointer;
-	font-size: 1.6rem;
-	font-weight: 700;
-	color: $gaming_light_blue;
-	display: inline-block;
-	//text-transform: uppercase;
-	padding: 0.4rem;
+.delete-wrapper {
+	.delete-btn {
+		font-size: 1.4rem;
+		color: $blueFill;
+		font-weight: bold;
+		line-height: 2rem;
+		border-bottom: 0.2rem solid $blueFill;
+		display: inline-block;
+		cursor: pointer;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		-webkit-transition: 0.2s ease;
+		transition: 0.2s ease;
+	}
+
 	svg {
 		path {
-			fill: $gaming_light_blue;
+			-webkit-transition: 0.2s ease;
+			transition: 0.2s ease;
+			fill: $blueFill;
 		}
 		margin: 0.4rem;
-		height: 2.6rem;
-		width: 2.6rem;
+		height: 2rem;
+		width: 2rem;
 	}
-	span {
-		display: inline-block;
-		letter-spacing: 0.2rem;
-		padding: 0.4rem;
-		border-bottom: 0.2rem solid $gaming_light_blue;
+
+	&:hover {
+		.delete-btn {
+			color: $blueHover;
+			border-bottom: 0.2rem solid $blueHover;
+		}
+		svg {
+			path {
+				fill: $blueHover;
+			}
+		}
 	}
 }
