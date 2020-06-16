@@ -93,9 +93,11 @@ export class UiScanScheduleComponent implements OnInit {
 	sliceDay: boolean = true;
 
 	ngOnInit() {
-		if (this.translate.currentLang !== 'en') {
-			this.sliceDay = false;
-		}
+		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+			if (this.translate.currentLang !== 'en') {
+				this.sliceDay = false;
+			}
+		});
 		this.scanFrequency.forEach(sf => {
 			this.translate.stream(sf).subscribe((value) => {
 				sf = value;
@@ -108,6 +110,10 @@ export class UiScanScheduleComponent implements OnInit {
 				d = value;
 			});
 		});
+
+		if (this.translate.currentLang !== 'en') {
+			this.sliceDay = false;
+		}
 
 		this.isDaySelectionEnable = false;
 		this.enumLocalScanFrequncy = enumScanFrequency;
