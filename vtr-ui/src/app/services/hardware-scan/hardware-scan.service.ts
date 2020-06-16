@@ -990,6 +990,26 @@ export class HardwareScanService {
 				}
 				module.listTest[i].percent = currentGroup.testResultList[i].percentageComplete;
 			}
+
+				module.result = HardwareScanTestResult.Pass;
+				module.resultIcon = HardwareScanTestResult.Pass;
+
+				for (const test of module.listTest){
+					if ((test.status === HardwareScanTestResult.Cancelled ||
+						test.status === HardwareScanTestResult.NotStarted) &&
+						module.result !== HardwareScanTestResult[HardwareScanTestResult.Warning]) {
+						module.result = HardwareScanTestResult[HardwareScanTestResult.Cancelled];
+						module.resultIcon = HardwareScanTestResult.Cancelled;
+					} else if (test.status === HardwareScanTestResult.Fail) {
+						module.result = HardwareScanTestResult[HardwareScanTestResult.Fail];
+						module.resultIcon = HardwareScanTestResult.Fail;
+						break;
+					} else if (test.status === HardwareScanTestResult.Warning) {
+						module.result = HardwareScanTestResult[HardwareScanTestResult.Warning];
+						module.resultIcon = HardwareScanTestResult.Warning;
+					}
+				}
+			
 		}
 
 		this.completedStatus = this.modules.status;
@@ -1081,7 +1101,6 @@ export class HardwareScanService {
 			previousResults.finalResultCode = response.scanSummary.finalResultCode;
 			previousResults.status = HardwareScanTestResult[HardwareScanTestResult.Pass];
 			previousResults.statusValue = HardwareScanTestResult.Pass;
-			previousResults.statusToken = this.statusToken(HardwareScanTestResult.Pass);
 
 			const date = response.scanSummary.ScanDate.toString().replace(/-/g, '/').split('T');
 			previousResults.date = date[0] + ' ' + date[1].slice(0, 8);
@@ -1131,28 +1150,23 @@ export class HardwareScanService {
 						testInfo.name = testMeta.find(x => x.id === test[j].id).name;
 						testInfo.information = testMeta.find(x => x.id === test[j].id).description;
 						testInfo.status = test[j].result;
-						testInfo.statusToken = this.statusToken(test[j].result);
 
 						if (testInfo.status === HardwareScanTestResult.NotStarted ||
 							testInfo.status === HardwareScanTestResult.InProgress) {
 							testInfo.status = HardwareScanOverallResult.Cancelled;
-							testInfo.statusToken = this.statusToken(HardwareScanOverallResult.Cancelled);
 						}
 
 						if ((test[j].result === HardwareScanTestResult.Cancelled ||
 							test[j].result === HardwareScanTestResult.NotStarted) && !hasFailed && !hasWarning) {
 							previousResults.status = HardwareScanTestResult[HardwareScanTestResult.Cancelled];
 							previousResults.statusValue = HardwareScanTestResult.Cancelled;
-							previousResults.statusToken = this.statusToken(HardwareScanTestResult.Cancelled);
 						} else if (test[j].result === HardwareScanTestResult.Fail) {
 							previousResults.status = HardwareScanTestResult[HardwareScanTestResult.Fail];
 							previousResults.statusValue = HardwareScanTestResult.Fail;
-							previousResults.statusToken = this.statusToken(HardwareScanTestResult.Fail);
 							hasFailed = true;
 						} else if (test[j].result === HardwareScanTestResult.Warning && !hasFailed) {
 							previousResults.status = HardwareScanTestResult[HardwareScanTestResult.Warning];
 							previousResults.statusValue = HardwareScanTestResult.Warning;
-							previousResults.statusToken = this.statusToken(HardwareScanTestResult.Warning);
 							hasWarning = true;
 						}
 						item.listTest.push(testInfo);
@@ -1178,7 +1192,6 @@ export class HardwareScanService {
 			module.subname = item.name;
 			module.result = HardwareScanTestResult[HardwareScanTestResult.Pass];
 			module.resultIcon = HardwareScanTestResult.Pass;
-			module.statusToken = this.statusToken(HardwareScanTestResult.Pass);
 
 			for (const test of item.listTest) {
 				if ((test.status === HardwareScanTestResult.Cancelled ||
@@ -1186,34 +1199,18 @@ export class HardwareScanService {
 					module.result !== HardwareScanTestResult[HardwareScanTestResult.Warning]) {
 					module.result = HardwareScanTestResult[HardwareScanTestResult.Cancelled];
 					module.resultIcon = HardwareScanTestResult.Cancelled;
-					module.statusToken = this.statusToken(HardwareScanTestResult.Cancelled);
 				} else if (test.status === HardwareScanTestResult.Fail) {
 					module.result = HardwareScanTestResult[HardwareScanTestResult.Fail];
 					module.resultIcon = HardwareScanTestResult.Fail;
-					module.statusToken = this.statusToken(HardwareScanTestResult.Fail);
 					break;
 				} else if (test.status === HardwareScanTestResult.Warning) {
 					module.result = HardwareScanTestResult[HardwareScanTestResult.Warning];
 					module.resultIcon = HardwareScanTestResult.Warning;
-					module.statusToken = this.statusToken(HardwareScanTestResult.Warning);
 				}
 			}
 			previousItems.modules.push(module);
 		}
 		this.previousItemsWidget = previousItems;
-	}
-
-	private statusToken(status) {
-		switch (status) {
-			case HardwareScanTestResult.Cancelled:
-				return this.translate.instant('hardwareScan.cancelled');
-			case HardwareScanTestResult.Fail:
-				return this.translate.instant('hardwareScan.fail');
-			case HardwareScanTestResult.Pass:
-				return this.translate.instant('hardwareScan.pass');
-			case HardwareScanTestResult.Warning:
-				return this.translate.instant('hardwareScan.warning');
-		}
 	}
 
 	public getStatus() {

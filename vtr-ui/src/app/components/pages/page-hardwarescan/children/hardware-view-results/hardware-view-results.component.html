@@ -45,8 +45,15 @@
 								</div>
 							</div>
 						</div>
+
 						<div class="text-status">
-							<div class="title">{{ item.statusToken }}</div>
+							<!-- Defines a title to previus result -->
+							<div [ngSwitch]="item.statusValue">
+								<p *ngSwitchCase="2" class="title">{{ 'hardwareScan.pass' | translate }}</p>
+								<p *ngSwitchCase="3" class="title">{{ 'hardwareScan.fail' | translate }}</p>
+								<p *ngSwitchCase="4" class="title">{{ 'hardwareScan.attention' | translate }}</p>
+								<p *ngSwitchCase="5" class="title">{{ 'hardwareScan.cancelled' | translate }}</p>
+							</div>
 							<div class="subtitle">{{ item.date }}</div>
 						</div>
 					</div>

@@ -439,6 +439,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 				// Defines information about module details
 				this.onViewResults();
+				this.modules.forEach(module => {module.expanded = true;});
 
 				const metricsResult = this.getMetricsTaskResult();
 				this.sendTaskActionMetrics(this.hardwareScanService.getCurrentTaskType(), metricsResult.countSuccesses,
@@ -730,7 +731,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			finalResultCode: this.hardwareScanService.getFinalResultCode(),
 			status: HardwareScanTestResult[HardwareScanTestResult.Pass],
 			statusValue: HardwareScanTestResult.Pass,
-			statusToken: this.statusToken(HardwareScanTestResult.Pass),
 			date: this.hardwareScanService.getFinalResultStartDate(),
 			information: this.hardwareScanService.getFinalResultDescription(),
 			items: []
@@ -755,7 +755,9 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				detailsExpanded: false,
 				icon: module_id,
 				details: [],
-				listTest: []
+				listTest: [],
+				result: HardwareScanTestResult[HardwareScanTestResult.Pass],
+				resultIcon: HardwareScanTestResult.Pass,
 			};
 
 			for (const metaInfo of module.metaInformation) {
@@ -770,23 +772,39 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					name: test.name,
 					status: test.status,
 					information: test.description,
-					statusToken: this.statusToken(test.status)
 				});
 
 				if (test.status === HardwareScanTestResult.Cancelled) {
 					results.status = HardwareScanTestResult[HardwareScanTestResult.Cancelled];
 					results.statusValue = HardwareScanTestResult.Cancelled;
-					results.statusToken = this.statusToken(HardwareScanTestResult.Cancelled);
 				} else if (test.status === HardwareScanTestResult.Fail) {
 					results.status = HardwareScanTestResult[HardwareScanTestResult.Fail];
 					results.statusValue = HardwareScanTestResult.Fail;
-					results.statusToken = this.statusToken(HardwareScanTestResult.Fail);
 				} else if (test.status === HardwareScanTestResult.Warning) {
 					results.status = HardwareScanTestResult[HardwareScanTestResult.Warning];
 					results.statusValue = HardwareScanTestResult.Warning;
-					results.statusToken = this.statusToken(HardwareScanTestResult.Warning);
 				}
 			}
+			
+			item.result = HardwareScanTestResult[HardwareScanTestResult.Pass];
+			item.resultIcon = HardwareScanTestResult.Pass;
+
+			for (const test of item.listTest) {
+				if ((test.status === HardwareScanTestResult.Cancelled ||
+					test.status === HardwareScanTestResult.NotStarted) &&
+					item.result !== HardwareScanTestResult[HardwareScanTestResult.Warning]) {
+					item.result = HardwareScanTestResult[HardwareScanTestResult.Cancelled];
+					item.resultIcon = HardwareScanTestResult.Cancelled;
+				} else if (test.status === HardwareScanTestResult.Fail) {
+					item.result = HardwareScanTestResult[HardwareScanTestResult.Fail];
+					item.resultIcon = HardwareScanTestResult.Fail;
+					break;
+				} else if (test.status === HardwareScanTestResult.Warning) {
+					item.result = HardwareScanTestResult[HardwareScanTestResult.Warning];
+					item.resultIcon = HardwareScanTestResult.Warning;
+				}
+			}
+
 			results.items.push(item);
 		}
 
@@ -853,7 +871,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			const results = {
 				status: HardwareScanTestResult[HardwareScanTestResult.Pass],
 				statusValue: HardwareScanTestResult.Pass,
-				statusToken: this.statusToken(HardwareScanTestResult.Pass),
 				date: dateString,
 				items: []
 			};
@@ -883,34 +900,18 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				if (device.status === HardwareScanTestResult.Cancelled) {
 					results.status = HardwareScanTestResult[HardwareScanTestResult.Cancelled];
 					results.statusValue = HardwareScanTestResult.Cancelled;
-					results.statusToken = this.statusToken(HardwareScanTestResult.Cancelled);
 				} else if (device.status === HardwareScanTestResult.Fail) {
 					results.status = HardwareScanTestResult[HardwareScanTestResult.Fail];
 					results.statusValue = HardwareScanTestResult.Fail;
-					results.statusToken = this.statusToken(HardwareScanTestResult.Fail);
 				} else if (device.status === HardwareScanTestResult.Warning) {
 					results.status = HardwareScanTestResult[HardwareScanTestResult.Warning];
 					results.statusValue = HardwareScanTestResult.Warning;
-					results.statusToken = this.statusToken(HardwareScanTestResult.Warning);
 				}
 				results.items.push(item);
 			}
 
 			this.hardwareScanService.setViewResultItems(results);
 			this.modules = results.items;
-		}
-	}
-
-	private statusToken(status) {
-		switch (status) {
-			case HardwareScanTestResult.Cancelled:
-				return this.translate.instant('hardwareScan.cancelled');
-			case HardwareScanTestResult.Fail:
-				return this.translate.instant('hardwareScan.fail');
-			case HardwareScanTestResult.Pass:
-				return this.translate.instant('hardwareScan.pass');
-			case HardwareScanTestResult.Warning:
-				return this.translate.instant('hardwareScan.warning');
 		}
 	}
 
