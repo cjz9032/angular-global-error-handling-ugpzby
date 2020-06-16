@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.13](https://bitbucket.tc.lenovo.com///compare/v1.6.12...v1.6.13) (2020-06-16)
+
+
+### Bug Fixes
+
+* **Menu:** click last submenu item, can't tab to next element ([0d49724](https://bitbucket.tc.lenovo.com///commit/0d497241ce797164ec0b4cc06f7c9ef17c808e41))
+
 ### [1.6.12](https://bitbucket.tc.lenovo.com///compare/v1.6.11...v1.6.12) (2020-06-15)
 
 ### [1.6.11](https://bitbucket.tc.lenovo.com///compare/v1.6.10...v1.6.11) (2020-06-15)
