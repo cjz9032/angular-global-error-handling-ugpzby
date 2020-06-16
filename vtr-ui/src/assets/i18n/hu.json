@@ -1275,7 +1275,8 @@
                             "description1": "Az egyéni akkumulátortöltés használatával megnövelhető az akkumulátor eszközhasználat közbeni élettartama.Ha azonban nem tölti fel teljesen az akkumulátort, az üzemidő rövidebb lesz.",
                             "description2": "A funkció teljes kihasználásához válassza le a gépet az elektromos hálózatról,és hagyja, hogy az akkumulátor teljesen vagy a töltésleállítási küszöbérték alá merüljön le.",
                             "enable": "ENGEDÉLYEZÉS",
-                            "cancel": "MÉGSE"
+                            "cancel": "MÉGSE",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Töltés kezdete ilyen érték alatt",

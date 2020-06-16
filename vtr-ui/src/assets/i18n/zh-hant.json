@@ -1275,7 +1275,8 @@
                             "description1": "啟用自訂電池充電可讓您在使用此裝置時，整體電池性能更持久。不過，若充電不完全會減少執行階段電池壽命。",
                             "description2": "為了完全啟用此功能，請拔除您的裝置，讓電池電力清空至停止充電臨界值或以下。",
                             "enable": "啟用",
-                            "cancel": "取消"
+                            "cancel": "取消",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "低於以下電量時開始充電",

@@ -1275,7 +1275,8 @@
                             "description1": "Activarea unei taxe particularizate pentru baterie va permite ca timpul general de utilizare a bateriei să dureze mai mult pe măsură ce utilizaţi acest dispozitiv.Cu toate acestea, fără o încărcare completă, bateria va avea o durată de utilizare mai mică.",
                             "description2": "Pentru a activa pe deplin această caracteristică, deconectați aparatul și lăsați bateria să se descarce până la sau sub pragul de oprire a încărcării.",
                             "enable": "ACTIVARE",
-                            "cancel": "ANULARE"
+                            "cancel": "ANULARE",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Pornire încărcare când este sub",

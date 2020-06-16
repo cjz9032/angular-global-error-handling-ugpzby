@@ -1275,7 +1275,8 @@
                             "description1": "L'abilitazione della carica personalizzata della batteria consente di prolungare la durata della batteria e di utilizzare il dispositivo più a lungo.Tuttavia, se la carica non è completa, l'autonomia della batteria sarà inferiore.",
                             "description2": "Per abilitare questa funzione, scollegare la presa di alimentazione del computer escaricare completamente la batteria o scendere sotto la soglia di arresto della carica.",
                             "enable": "ABILITA",
-                            "cancel": "ANNULLA"
+                            "cancel": "ANNULLA",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Avvia carica quando inferiore a",
