@@ -392,7 +392,7 @@
 																					<div class="offset-1 col-7">
 																						{{'smartPerformance.subscriberScanHomePage.lastScanResults.scanDate' |translate }}
 																					</div>
-																					<div class="col-2 fixes">
+																					<div class="col-2">
 																						{{'smartPerformance.subscriberScanHomePage.lastScanResults.results' |translate }}
 																					</div>
 																					<div class="col-2">
@@ -417,13 +417,11 @@
 																					</div>
 																					<div class="col-7">
 																						<b>{{item.scanrunDate}}</b>
-																						<span> -
-																							{{item.scanrunTime | uppercase}}</span>
-																							<span class="ml-1" *ngIf="item.type.toUpperCase() == 'MS'">({{'smartPerformance.manual' |translate }})</span>
-																							<span class="ml-1" *ngIf="item.type.toUpperCase() == 'SS'">({{'smartPerformance.auto' |translate }})</span>
-
+																						<span>{{item.scanrunTime | uppercase}}</span>
+																						<span class="ml-1" *ngIf="item.type.toUpperCase() == 'MS'">({{'smartPerformance.manual' |translate }})</span>
+																						<span class="ml-1" *ngIf="item.type.toUpperCase() == 'SS'">({{'smartPerformance.auto' |translate }})</span>
 																					</div>
-																					<div class="col-2">{{item.fixcount === 0 ? item.fixcount : (item.fixcount | number:'2.0')}} {{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' | translate}}
+																					<div class="col-2 fixes">{{item.fixcount === 0 ? item.fixcount : (item.fixcount | number:'2.0')}} {{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' | translate}}
 																					</div>
 																					<div class="col-2" *ngIf="item.status === 'C'">
 																						<div class="icon-check">

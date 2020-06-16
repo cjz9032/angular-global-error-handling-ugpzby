@@ -387,6 +387,15 @@ vtr-ui-smart-performance-scan-summary {
 								}
 							}
 						}
+						.fixes {
+							@media #{$breakpoint_sm}{
+								max-width: 7rem;
+								display: inline-block;
+								text-overflow: ellipsis;
+								overflow-x: hidden;
+								padding: 0;
+							}
+						}
 					}
 				}
 			}
