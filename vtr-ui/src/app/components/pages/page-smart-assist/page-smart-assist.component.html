@@ -688,7 +688,8 @@
 											</div>
 										</div>
 									</li>
-									<li class="pt-3 keep-my-display-block">
+									<li class="pt-3 keep-my-display-block"
+										*ngIf='intelligentScreen.isReadingOrBrowsingVisible'>
 										<vtr-ui-row-switch [switchId]="'keepMyDisplay'"
 											[title]="'device.smartAssist.intelligentScreen.keepMyDisplay.title' | translate"
 											[caption]="'device.smartAssist.intelligentScreen.keepMyDisplay.caption' | translate"
