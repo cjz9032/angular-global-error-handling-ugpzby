@@ -224,11 +224,22 @@ vtr-ui-smart-performance-scan-summary {
 					}
 					@media #{$breakpoint_sm}{
 						font-size: 1.4rem;
+						display: inline-block;
+						max-width: 85%;
+						overflow-x: hidden;
+						text-overflow: ellipsis;
 					}
 				}
 				.value {
 					font-size: 5rem;
 					font-weight: $weight_bold;
+					width: 95%;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					margin: auto;
+					text-align: center;
+					display: block !important;
 					@media #{$breakpoint_xl}{
 						font-size: 3.2rem;
 					}

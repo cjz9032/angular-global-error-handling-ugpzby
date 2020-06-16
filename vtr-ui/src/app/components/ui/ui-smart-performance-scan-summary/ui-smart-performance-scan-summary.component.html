@@ -319,10 +319,10 @@
 														<div class="d-flex">
 															<div class="w-100">
 																<div class="box-title d-flex  justify-content-between">
-																	<h5>{{'smartPerformance.tunePCPerformance.summaryTitle' |translate }}</h5>
+																	<h5 title="{{'smartPerformance.tunePCPerformance.summaryTitle' |translate }}">{{'smartPerformance.tunePCPerformance.summaryTitle' |translate }}</h5>
 																	<div class="icon icon-performance"></div>
 																</div>
-																<div class="value d-flex justify-content-center">
+																<div class="value d-flex justify-content-center" title="{{historyRes.tuneCount || 0}} {{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}">
 																	{{historyRes.tuneCount || 0}} <span>{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}</span>
 																</div>
 																<p class="w-100 text-center">{{formatMemorySize(historyRes.tuneSize)}} <span class="mr-1">{{sizeExtension}}</span> {{'smartPerformance.subscriberScanHomePage.scanSummary.summaryCaption' |translate }}
@@ -335,10 +335,12 @@
 														<div class="d-flex">
 															<div class="w-100">
 																<div class="box-title d-flex  justify-content-between">
-																	<h5>{{'smartPerformance.boostInternetPerformance.summaryTitle' |translate }}</h5>
+																	<h5 title="{{'smartPerformance.boostInternetPerformance.summaryTitle' |translate }}">{{'smartPerformance.boostInternetPerformance.summaryTitle' |translate }}</h5>
 																	<div class="icon icon-internet-performance"></div>
 																</div>
-																<div class="value d-flex justify-content-center">{{historyRes.boostCount || 0}} <span>{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}</span></div>
+																<div class="value d-flex justify-content-center" title="{{historyRes.boostCount || 0}} {{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}">
+																	{{historyRes.boostCount || 0}} <span>{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}</span>
+																</div>
 																<p class="w-100 text-center">{{formatMemorySize(historyRes.boostSize)}}  <span class="mr-1">{{sizeExtension}}</span> {{'smartPerformance.subscriberScanHomePage.scanSummary.summaryCaption' |translate }}
 																</p>
 															</div>
@@ -349,11 +351,13 @@
 														<div class="d-flex">
 															<div class="w-100">
 																<div class="box-title d-flex  justify-content-between">
-																	<h5>{{'smartPerformance.malwareSecurity.summaryTitle' |translate }}</h5>
+																	<h5 title="{{'smartPerformance.malwareSecurity.summaryTitle' |translate }}">{{'smartPerformance.malwareSecurity.summaryTitle' |translate }}</h5>
 																	<span class="icomoon icomoon-malware"></span>
 																</div>
 
-																<div class="value d-flex justify-content-center">{{historyRes.secure || 0}} <span>{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}</span></div>
+																<div class="value d-flex justify-content-center" title="{{historyRes.secure || 0}} {{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}">
+																	{{historyRes.secure || 0}} <span>{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}</span>
+																</div>
 																<!-- <p>{{'smartPerformance.subscriberScanHomePage.scanSummary.secureSummary' |translate }}</p> -->
 															</div>
 
@@ -388,7 +392,7 @@
 																					<div class="offset-1 col-7">
 																						{{'smartPerformance.subscriberScanHomePage.lastScanResults.scanDate' |translate }}
 																					</div>
-																					<div class="col-2">
+																					<div class="col-2 fixes">
 																						{{'smartPerformance.subscriberScanHomePage.lastScanResults.results' |translate }}
 																					</div>
 																					<div class="col-2">
