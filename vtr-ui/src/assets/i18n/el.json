@@ -155,6 +155,8 @@
                         "cpuOCName79": "Μετατόπιση τάσης cache",
                         "cpuOCName122": "Αναλογία 7 πυρήνων",
                         "cpuOCName123": "Αναλογία 8 πυρήνων",
+                        "cpuOCName124": "Αναλογία 9 πυρήνων",
+                        "cpuOCName125": "Αναλογία 10 πυρήνων",
                         "cpuOCName102": "IccMax πυρήνα",
                         "cpuOCName106": "IccMax μνήμης cache",
                         "cpuOCName114": "Μετατόπιση αναλογίας AVX"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Τελική μετατόπιση τάσης που εφαρμόζεται στην τάση μνήμης cache.",
                         "cpuOCTip122": "Ορίστε τον μέγιστο πολλαπλασιαστή πυρήνα στον οποίο μπορούν να λειτουργούν οι πυρήνες. Η τιμή της συχνότητας πυρήνα είναι το γινόμενο αυτής της αναλογίας και της συχνότητας ρολογιού αναφοράς.",
                         "cpuOCTip123": "Ορίστε τον μέγιστο πολλαπλασιαστή πυρήνα στον οποίο μπορούν να λειτουργούν οι πυρήνες. Η τιμή της συχνότητας πυρήνα είναι το γινόμενο αυτής της αναλογίας και της συχνότητας ρολογιού αναφοράς.",
+                        "cpuOCTip124": "Ορίστε τον μέγιστο πολλαπλασιαστή πυρήνα στον οποίο μπορούν να λειτουργούν οι πυρήνες. Η τιμή της συχνότητας πυρήνα είναι το γινόμενο αυτής της αναλογίας και της συχνότητας ρολογιού αναφοράς.",
+                        "cpuOCTip125": "Ορίστε τον μέγιστο πολλαπλασιαστή πυρήνα στον οποίο μπορούν να λειτουργούν οι πυρήνες. Η τιμή της συχνότητας πυρήνα είναι το γινόμενο αυτής της αναλογίας και της συχνότητας ρολογιού αναφοράς.",
                         "cpuOCTip102": "Ορίστε το IccMax για τον ρυθμιστή τάσης πυρήνα του επεξεργαστή.",
                         "cpuOCTip106": "Ορίστε το IccMax για τον ρυθμιστή τάσης μνήμης cache και δακτυλιοειδούς διαύλου του επεξεργαστή.",
                         "cpuOCTip114": "Για να προσδιορίσετε το πραγματικό όριο αναλογίας ενεργών πυρήνων όταν το AVX είναι ενεργό, αφαιρέστε αυτή την τιμή από το αντίστοιχο όριο αναλογίας ενεργών πυρήνων."
@@ -1762,7 +1766,8 @@
                             "title": "Επανεκκίνηση υπολογιστή",
                             "description": "Η αλλαγή της προεπιλεγμένης λειτουργίας επάνω σειράς απαιτεί να κάνετε επανεκκίνηση του υπολογιστή σας. Είστε βέβαιοι ότι θέλετε επανεκκίνηση;",
                             "reboot": "ΕΠΑΝΕΚΚΙΝΗΣΗ",
-                            "cancel": "ΟΧΙ ΤΩΡΑ"
+                            "cancel": "ΟΧΙ ΤΩΡΑ",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Για να αποκτήσετε πρόσβαση στη λειτουργία F1-F12, πιέστε το πλήκτρο Fn και τα πλήκτρα στην επάνω σειρά.",
@@ -3281,7 +3286,8 @@
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+            "processStatus": "PROCESSING"
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3766,7 +3772,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

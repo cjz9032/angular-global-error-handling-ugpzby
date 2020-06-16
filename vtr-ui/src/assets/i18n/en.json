@@ -160,6 +160,8 @@
 						"cpuOCName79": "Cache Voltage Offset",
 						"cpuOCName122": "7 Core Ratio",
 						"cpuOCName123": "8 Core Ratio",
+						"cpuOCName124": "9 Core Ratio",
+						"cpuOCName125": "10 Core Ratio",
 						"cpuOCName102": "Core ICCMAX",
 						"cpuOCName106": "Cache ICCMAX",
 						"cpuOCName114": "AVX Ratio Offset"
@@ -178,6 +180,8 @@
 						"cpuOCTip79": "Final voltage offset that is applied to the Cache Voltage.",
 						"cpuOCTip122": "Set the maximum core multiplier at which the cores can operate. The value of the core frequency is the product of this ratio and the reference clock frequency.",
 						"cpuOCTip123": "Set the maximum core multiplier at which the cores can operate. The value of the core frequency is the product of this ratio and the reference clock frequency.",
+						"cpuOCTip124": "Set the maximum core multiplier at which the cores can operate. The value of the core frequency is the product of this ratio and the reference clock frequency.",
+						"cpuOCTip125": "Set the maximum core multiplier at which the cores can operate. The value of the core frequency is the product of this ratio and the reference clock frequency.",
 						"cpuOCTip102": "Set ICCMAX for Processor Core Voltage Regulator.",
 						"cpuOCTip106": "Set ICCMAX for Processor Cache and Ring Bus Voltage Regulator.",
 						"cpuOCTip114": "To derive the effective active core ratio limit when AVX is active, subtract this value to the corresponding active core ratio limit."
@@ -1365,6 +1369,7 @@
 							"title": "Enable Battery Charge Threshold",
 							"description1": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life.",
 							"description2": "In order to fully enable this feature, please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+							"description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold.",
 							"enable": "ENABLE",
 							"cancel": "CANCEL"
 						},
@@ -1582,7 +1587,7 @@
 				"display": {
 					"title": "Display",
 					"displayColorTemperature": {
-						"title": "Eye care mode",
+						"title": "Eye Care Mode",
 						"description": "To avoid eye strain, you can adjust the color temperature of your display to filter out the blue light when you use your computer for a long time. In addition, warm colors are good for your sleeping especially in the night.",
 						"link": {
 							"click": "Click",
@@ -1604,7 +1609,7 @@
 							"title": "Note",
 							"description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
 						},
-						"tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+						"tips": "Please run Windows Update or manually install graphics driver to recover Eye Care Mode."
 					},
 					"oledPowerSettings": {
 						"title": "OLED Power Settings",
@@ -1761,10 +1766,11 @@
 							"note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
 						},
 						"popup": {
-							"title": "Restart computer",
+							"title": "Restart your computer",
 							"description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
 							"reboot": "REBOOT",
-							"cancel": "NOT NOW"
+							"cancel": "NOT NOW",
+							"yes": "YES"
 						},
 						"note": {
 							"sFunKey": "To access F1-F12 function, press Fn and the keys on the top row.",
@@ -1840,9 +1846,9 @@
 					}
 				},
 				"fnCtrlKey": {
-					"title": "FN key and Ctrl key swap",
+					"title": "Fn and Ctrl key swap",
 					"description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-					"restartNote": "Swapping the function of two keys requires you to restart your computer. Are you sure to restart?",
+					"restartNote": "Swapping the function of the two keys requires you to restart your computer. Are you sure to restart?",
 					"title2": "Fn works as Ctrl for frequently used key combinations",
 					"description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
 					"featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
@@ -2441,7 +2447,7 @@
 				"tab2Heading": "IT'S FAST",
 				"tab2Description": "Get a 100 point check done in under 5 minutes",
 				"tab3Heading": "IT'S SAFE",
-				"tab3Description": "No scareware, built with best practises"
+				"tab3Description": "No scareware, built with best practices"
 			}
 		},
 		"noScanResults":"Please click SCAN & FIX button to trigger scan process.",
@@ -2449,7 +2455,7 @@
 		"subscriptionDetails": {
 			"title": "Subscription Details",
 			"titlebeta":"Lenovo Beta Program",
-			"descriptionNonSubscriber":"You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+			"descriptionNonSubscriber":"You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothly.",
 			"description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
 			"learnMore": "Learn more",
 			"startDate": "Start date",
@@ -2931,7 +2937,7 @@
 			"returnto": "RETURN TO DASHBOARD",
 			"mostRecent": "MOST RECENT SCAN:",
 			"nextScheduled": "NEXT SCHEDULED SCAN:",
-			"successTitle": "Your PC is tuned up !",
+			"successTitle": "Your PC is tuned up!",
 			"successDescription": "Smart Performance resolved <b>{{issueCount}} issue(s)</b> to keep your pc running smoothly, you can find scan summary and report below.",
 			"scanSummary": {
 				"title": "Scan summary:",
@@ -2949,7 +2955,8 @@
 				"custom": "Custom",
 				"txtFrom": "From",
 				"txtTo": "To",
-				"txtGo": "Go"
+				"txtGo": "Go",
+				"txtClr": "Clear"
 			},
 			"lastScanResults": {
 				"title": "Last 5 scan results:",

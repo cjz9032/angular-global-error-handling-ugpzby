@@ -49,8 +49,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	// 	{ itemName: 'Custom', itemKey: 'CUSTOM' }
 	// ];
 	public menuItems: any = [
-		{ itemName: 'Annual', itemKey: 'ANNUAL' },
-		{ itemName: 'Custom', itemKey: 'CUSTOM' }
+		{ itemName: "smartPerformance.subscriberScanHomePage.scanSummary.annual", itemKey: "ANNUAL" },
+		{ itemName: "smartPerformance.subscriberScanHomePage.scanSummary.custom", itemKey: "CUSTOM" }
 	];
 	leftAnimator: any;
 	@Input() isScanning = false;

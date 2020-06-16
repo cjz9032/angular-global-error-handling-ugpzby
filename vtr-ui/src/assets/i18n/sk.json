@@ -155,6 +155,8 @@
                         "cpuOCName79": "Zmena napätia vyrovnávacej pamäte",
                         "cpuOCName122": "Násobič jadra 7",
                         "cpuOCName123": "Násobič jadra 8",
+                        "cpuOCName124": "Násobič jadra 9",
+                        "cpuOCName125": "Násobič jadra 10",
                         "cpuOCName102": "ICCMAX jadra",
                         "cpuOCName106": "ICCMAX vyrovnávacej pamäte",
                         "cpuOCName114": "Zmena násobiča pre AVX"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Finálna zmena napätia, ktorá sa použije na napätie vyrovnávacej pamäte.",
                         "cpuOCTip122": "Nastavenie maximálneho násobiča jadra. Frekvencia jadra je súčinom tohto násobiča a referenčnej frekvencie.",
                         "cpuOCTip123": "Nastavenie maximálneho násobiča jadra. Frekvencia jadra je súčinom tohto násobiča a referenčnej frekvencie.",
+                        "cpuOCTip124": "Nastavenie maximálneho násobiča jadra. Frekvencia jadra je súčinom tohto násobiča a referenčnej frekvencie.",
+                        "cpuOCTip125": "Nastavenie maximálneho násobiča jadra. Frekvencia jadra je súčinom tohto násobiča a referenčnej frekvencie.",
                         "cpuOCTip102": "Nastavenie hodnoty ICCMAX pre regulátor napätia jadra procesora.",
                         "cpuOCTip106": "Nastavenie hodnoty ICCMAX pre regulátor napätia vyrovnávacej pamäte procesora a kruhovej zbernice.",
                         "cpuOCTip114": "Ak chcete odvodiť limit násobiča aktívneho jadra, keď je aktívny súbor inštrukcií AVX, odpočítajte túto hodnotu od príslušného limitu násobiča aktívneho jadra."
@@ -1762,7 +1766,8 @@
                             "title": "Reštartovanie počítača",
                             "description": "Zmena predvolenej funkcie horného riadka si vyžaduje reštartovanie počítača. Naozaj chcete vykonať reštartovanie?",
                             "reboot": "REŠTARTOVAŤ",
-                            "cancel": "TERAZ NIE"
+                            "cancel": "TERAZ NIE",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Funkcie klávesov F1 – F12 môžete použiť stlačením klávesu Fn a klávesov v hornom riadku.",
@@ -3281,7 +3286,8 @@
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+            "processStatus": "PROCESSING"
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3766,7 +3772,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

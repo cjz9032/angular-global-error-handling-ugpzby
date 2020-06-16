@@ -155,6 +155,8 @@
                         "cpuOCName79": "Odmik napetosti predpomnilnika",
                         "cpuOCName122": "Razmerje za 7 jeder",
                         "cpuOCName123": "Razmerje za 8 jeder",
+                        "cpuOCName124": "Razmerje za 9 jeder",
+                        "cpuOCName125": "Razmerje za 10 jeder",
                         "cpuOCName102": "ICCMAX za jedro",
                         "cpuOCName106": "ICCMAX za predpomnilnik",
                         "cpuOCName114": "Odmik razmerja AVX"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Končni odmik napetosti, ki je uporabljen za napetost predpomnilnika.",
                         "cpuOCTip122": "Nastavite največji množitelj za jedra, pri katerem lahko jedra delujejo. Vrednost frekvence jeder je zmnožek tega razmerja in referenčne taktne frekvence.",
                         "cpuOCTip123": "Nastavite največji množitelj za jedra, pri katerem lahko jedra delujejo. Vrednost frekvence jeder je zmnožek tega razmerja in referenčne taktne frekvence.",
+                        "cpuOCTip124": "Nastavite največji množitelj za jedra, pri katerem lahko jedra delujejo. Vrednost frekvence jeder je zmnožek tega razmerja in referenčne taktne frekvence.",
+                        "cpuOCTip125": "Nastavite največji množitelj za jedra, pri katerem lahko jedra delujejo. Vrednost frekvence jeder je zmnožek tega razmerja in referenčne taktne frekvence.",
                         "cpuOCTip102": "Nastavite ICCMAX za regulator napetosti jedra procesorja.",
                         "cpuOCTip106": "Nastavite ICCMAX za regulator napetosti predpomnilnika in krožnega vodila procesorja.",
                         "cpuOCTip114": "Veljavno omejitev razmerja aktivnih jeder, ko je AVX aktiven, izpeljete tako, da to vrednost odštejete od ustrezne omejitve razmerja aktivnih jeder."
@@ -1762,7 +1766,8 @@
                             "title": "Znova zaženite računalnik",
                             "description": "Sprememba funkcije zgornje vrstice bo začela veljati šele po vnovičnem zagonu računalnika. Ali ste prepričani, da želite znova zagnati?",
                             "reboot": "VNOVIČNI ZAGON",
-                            "cancel": "NE ZDAJ"
+                            "cancel": "NE ZDAJ",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Za dostop do funkcij F1–F12 pritisnite Fn in tipke v zgornji vrstici.",
@@ -3281,7 +3286,8 @@
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+            "processStatus": "PROCESSING"
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3766,7 +3772,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

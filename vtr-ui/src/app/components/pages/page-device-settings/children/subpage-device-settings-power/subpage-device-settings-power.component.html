@@ -101,7 +101,7 @@
 									[rightIcon]="['far', 'question-circle']"
 									[showChildContent]="true"
 									[isSwitchChecked]="chargeThresholdStatus"
-									(toggleOnOff)="toggleBCTSwitch($event)"
+									(toggleOnOff)="onToggleBCTSwitch($event)"
 									[switchId]="'ds-power-battery-threshold'"
 									[isDisabled]="batteryService.isGaugeResetRunning || batteryService.isInvalidBattery"
 									[tooltipText]="'device.deviceSettings.power.batterySettings.batteryThreshold.tooltip' | translate">

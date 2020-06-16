@@ -1,4 +1,5 @@
 @import '../../../app.theme.scss';
+
 .light-dashline {
 	border-top: 1px solid $screen_light_15;
 }
@@ -51,19 +52,28 @@ vtr-ui-smart-performance-scan-summary {
 				position: relative;
 				@media #{$breakpoint_xl}{
 					width: 100%;
+					display: flex;
+					flex-direction: row;
 				}
 				@media #{$breakpoint_lg}{
 					width: 62%;
+					display: flex;
+					flex-direction: row-reverse;
 				}
 				@media #{$breakpoint_md}{
 					width: 100%;
+					display: flex;
+					flex-direction: row;
 				}
 				@media #{$breakpoint_sm}{
 					width: 100%;
+					display: flex;
+					flex-direction: row;
 				}
 				.list-group {
-					background: #303D49;
+					background: $main_darker;
 					border-radius: 0.5rem;
+					max-width: 35.5rem;
 					.list-group-item {
 						border-radius: 0.5rem;
 						border: none;
@@ -175,6 +185,7 @@ vtr-ui-smart-performance-scan-summary {
 						display: inline-block;
 						cursor: pointer;
 						padding: 0.4rem 2.5rem;
+						margin: 0 0.2rem;
 					}
 				}
 			}
@@ -441,9 +452,11 @@ vtr-ui-smart-performance-scan-summary {
 								top:5.5rem;
 							}
 						}
-                        .heading {
+                        .heading {						
                             h3, h2{
-                                font-size: $fontsize_md;
+								text-align: left;
+								font-size: $fontsize_md;
+								text-align: left;
 								color: $main_shade !important;
 								letter-spacing: 0;
 								font-weight: $weight_bold;
@@ -511,11 +524,13 @@ vtr-ui-smart-performance-scan-summary {
                                     max-width: 8.1rem;
                                     margin-top: 0.6rem;
 									line-height: 1.2rem;
+									overflow: hidden;
+									text-overflow: ellipsis;																		
 									@media #{$breakpoint_sm}{
-										font-size: 0.8rem;
-										line-height: 1.2rem;
+										font-size:1rem;
+										line-height: 1rem;
 										max-width: 100%;
-										margin-top: 0;
+										margin-top: 0;										
 									}
                                 }
                                 .icon {
@@ -538,7 +553,8 @@ vtr-ui-smart-performance-scan-summary {
                                 padding: 0;
                                 .list-item {
                                     p{
-                                        font-size: 1.4rem;
+										font-size: 1.4rem;
+										overflow: hidden;
                                     }
 									fa-icon {
 										font-size: 1.4rem;
@@ -955,6 +971,15 @@ vtr-ui-smart-performance-scan-summary {
 				flex-direction: column;
 			}
 		}
+
+		::ng-deep .tooltip-inner {
+			@include tt-inner()
+		}
+
+		::ng-deep .arrow::before {
+				@include arrow-before()
+		}
+		
 		.action-button {
 			border-radius: 2.5rem;
 			background: $gradient_main;
@@ -1517,6 +1542,14 @@ vtr-ui-smart-performance-scan-summary {
 		font-size: $fontsize_xs;
 		font-weight: $weight_light;
 	}
+
+	::ng-deep .tooltip-inner {
+		@include tt-inner()
+	}
+	::ng-deep .arrow::before {
+		@include arrow-before()
+	}
+	
 	.feedback-btn {
 		padding: 0 2.5rem;
 		position: relative;

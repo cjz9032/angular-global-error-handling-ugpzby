@@ -155,6 +155,8 @@
                         "cpuOCName79": "Pomak napona predmemorije",
                         "cpuOCName122": "7 omjer jezgre",
                         "cpuOCName123": "8 omjer jezgre",
+                        "cpuOCName124": "9 omjer jezgre",
+                        "cpuOCName125": "10 omjer jezgre",
                         "cpuOCName102": "Jezgra ICCMAX",
                         "cpuOCName106": "Predmemorija ICCMAX",
                         "cpuOCName114": "Pomak AVX omjera"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Konačni pomak napona koji se primjenjuje na napon predmemorije.",
                         "cpuOCTip122": "Postavite maksimalni množitelj jezgre pri kojemu jezgre mogu raditi. Vrijednost frekvencije jezgre proizvod je tog omjera i frekvencije referentnog takta.",
                         "cpuOCTip123": "Postavite maksimalni množitelj jezgre pri kojemu jezgre mogu raditi. Vrijednost frekvencije jezgre proizvod je tog omjera i frekvencije referentnog takta.",
+                        "cpuOCTip124": "Postavite maksimalni množitelj jezgre pri kojemu jezgre mogu raditi. Vrijednost frekvencije jezgre proizvod je tog omjera i frekvencije referentnog takta.",
+                        "cpuOCTip125": "Postavite maksimalni množitelj jezgre pri kojemu jezgre mogu raditi. Vrijednost frekvencije jezgre proizvod je tog omjera i frekvencije referentnog takta.",
                         "cpuOCTip102": "Postavite ICCMAX za regulator napona jezgre procesora.",
                         "cpuOCTip106": "Postavite ICCMAX za regulator napona predmemorije i prstenaste sabirnice procesora.",
                         "cpuOCTip114": "Da biste dobili stvarno ograničenje omjera aktivne jezgre kad je AVX aktivan, oduzmite tu vrijednost od odgovarajućeg ograničenja omjera aktivne jezgre."
@@ -1762,7 +1766,8 @@
                             "title": "Ponovno pokretanje računala",
                             "description": "Kako bi se promijenile zadane funkcije u gornjem redu, potrebno je ponovno pokretanje računala. Želite li zaista ponovno pokretanje?",
                             "reboot": "PONOVNO POKRETANJE",
-                            "cancel": "NE SADA"
+                            "cancel": "NE SADA",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Da biste pristupili funkcijama F1 – F12, pritisnite Fn i tipke u gornjem redu.",
@@ -3281,7 +3286,8 @@
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+            "processStatus": "PROCESSING"
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3766,7 +3772,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

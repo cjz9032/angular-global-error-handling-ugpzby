@@ -155,6 +155,8 @@
                         "cpuOCName79": "Gyorsítótár feszültségének eltolása",
                         "cpuOCName122": "7 magos arány",
                         "cpuOCName123": "8 magos arány",
+                        "cpuOCName124": "9 magos arány",
+                        "cpuOCName125": "10 magos arány",
                         "cpuOCName102": "ICCMAX mag",
                         "cpuOCName106": "ICCMAX gyorsítótár",
                         "cpuOCName114": "AVX arány eltolása"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "A végleges feszültségtolás, amelyet a gyorsítótár feszültségére alkalmaznak.",
                         "cpuOCTip122": "Állítsa be a maximális magszorzó értékét, amelyen a magok működőképesek. A magfrekvencia értéke ennek az aránynak és a referencia órajel frekvenciának a szorzata.",
                         "cpuOCTip123": "Állítsa be a maximális magszorzó értékét, amelyen a magok működőképesek. A magfrekvencia értéke ennek az aránynak és a referencia órajel frekvenciának a szorzata.",
+                        "cpuOCTip124": "Állítsa be a maximális magszorzó értékét, amelyen a magok működőképesek. A magfrekvencia értéke ennek az aránynak és a referencia órajel frekvenciának a szorzata.",
+                        "cpuOCTip125": "Állítsa be a maximális magszorzó értékét, amelyen a magok működőképesek. A magfrekvencia értéke ennek az aránynak és a referencia órajel frekvenciának a szorzata.",
                         "cpuOCTip102": "Állítsa be az ICCMAX-ot a processzor magfeszültség-szabályozójához.",
                         "cpuOCTip106": "Állítsa be az ICCMAX-ot a processzor gyorsítótárának és gyűrűs buszának feszültségszabályozójához.",
                         "cpuOCTip114": "Az effektív aktív magarány korlátjának meghatározásához az AVX aktív állapotában vonja le ezt az értéket a megfelelő aktív magarány korlátjából."
@@ -1762,7 +1766,8 @@
                             "title": "A számítógép újraindítása",
                             "description": "Az alapértelmezett felső sor funkciója módosításának érvénybe léptetéséhez újra kell indítania a számítógépet. Biztosan újraindítja?",
                             "reboot": "ÚJRAINDÍTÁS",
-                            "cancel": "NE MOST"
+                            "cancel": "NE MOST",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Az F1–F12 funkcióbillentyűk funkcióit az Fn és a fenti soron lévő billentyűk megnyomásával érheti el.",
@@ -3281,7 +3286,8 @@
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+            "processStatus": "PROCESSING"
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3766,7 +3772,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

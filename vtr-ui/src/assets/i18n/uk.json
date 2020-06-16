@@ -155,6 +155,8 @@
                         "cpuOCName79": "Зміщення напруги кешу",
                         "cpuOCName122": "Множник 7-го ядра",
                         "cpuOCName123": "Множник 8-го ядра",
+                        "cpuOCName124": "Множник 9-го ядра",
+                        "cpuOCName125": "Множник 10-го ядра",
                         "cpuOCName102": "Максимум струму ядра",
                         "cpuOCName106": "Максимум струму кешу",
                         "cpuOCName114": "Зміщення коефіцієнта AVX"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Остаточне зміщення, яке застосовується до напруги кешу.",
                         "cpuOCTip122": "Установіть максимальний множник, за якого можуть працювати ядра. Частота ядра розраховується як добуток цього множника та базової тактової частоти.",
                         "cpuOCTip123": "Установіть максимальний множник, за якого можуть працювати ядра. Частота ядра розраховується як добуток цього множника та базової тактової частоти.",
+                        "cpuOCTip124": "Установіть максимальний множник, за якого можуть працювати ядра. Частота ядра розраховується як добуток цього множника та базової тактової частоти.",
+                        "cpuOCTip125": "Установіть максимальний множник, за якого можуть працювати ядра. Частота ядра розраховується як добуток цього множника та базової тактової частоти.",
                         "cpuOCTip102": "Установіть максимальний струм для регулятора напруги ядра процесора.",
                         "cpuOCTip106": "Установіть максимальний струм для регулятора напруги кешу та кільцевої шини процесора.",
                         "cpuOCTip114": "Відніміть це значення від відповідного граничного значення множника активного ядра, щоб отримати значення за ввімкнутого VX."
@@ -1762,7 +1766,8 @@
                             "title": "Перезавантажте комп'ютер",
                             "description": "Якщо змінити режим роботи верхнього рядка, потрібно перезавантажити комп'ютер. Готові перезавантажити?",
                             "reboot": "ПЕРЕЗАВАНТАЖИТИ",
-                            "cancel": "НЕ ЗАРАЗ"
+                            "cancel": "НЕ ЗАРАЗ",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Щоб скористатися функціональними клавішами F1-F12, натисніть клавішу Fn і потрібну клавішу з верхнього ряду.",
@@ -3281,7 +3286,8 @@
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+            "processStatus": "PROCESSING"
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3766,7 +3772,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

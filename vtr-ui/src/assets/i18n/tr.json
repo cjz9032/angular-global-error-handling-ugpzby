@@ -155,6 +155,8 @@
                         "cpuOCName79": "Önbellek Voltajı Sapması",
                         "cpuOCName122": "7 Çekirdek Oranı",
                         "cpuOCName123": "8 Çekirdek Oranı",
+                        "cpuOCName124": "9 Çekirdek Oranı",
+                        "cpuOCName125": "10 Çekirdek Oranı",
                         "cpuOCName102": "Çekirdek ICCMAX",
                         "cpuOCName106": "Önbellek ICCMAX",
                         "cpuOCName114": "AVX Oranı Sapması"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Önbellek Voltajına uygulanan son voltaj sapması.",
                         "cpuOCTip122": "Çekirdeklerin çalışabileceği maksimum çekirdek çarpanını ayarlayın. Çekirdek frekansının değeri, bu oranın ve referans saat frekansının ürünüdür.",
                         "cpuOCTip123": "Çekirdeklerin çalışabileceği maksimum çekirdek çarpanını ayarlayın. Çekirdek frekansının değeri, bu oranın ve referans saat frekansının ürünüdür.",
+                        "cpuOCTip124": "Çekirdeklerin çalışabileceği maksimum çekirdek çarpanını ayarlayın. Çekirdek frekansının değeri, bu oranın ve referans saat frekansının ürünüdür.",
+                        "cpuOCTip125": "Çekirdeklerin çalışabileceği maksimum çekirdek çarpanını ayarlayın. Çekirdek frekansının değeri, bu oranın ve referans saat frekansının ürünüdür.",
                         "cpuOCTip102": "İşlemci Çekirdek Voltaj Regülatörü için ICCMAX'i ayarlayın.",
                         "cpuOCTip106": "İşlemci Önbellek ve Halka Veriyolu Voltaj Regülatörü için ICCMAX'i ayarlayın.",
                         "cpuOCTip114": "AVX etkin durumdayken etkili etkin çekirdek oranı sınırını elde etmek için bu değeri, karşılık gelen etkin çekirdek oranı sınırından çıkarın."
@@ -1762,7 +1766,8 @@
                             "title": "Bilgisayarı yeniden başlatın",
                             "description": "Varsayılan üst sıra işlevlerinde değişiklik yapılması bilgisayarınızın yeniden başlatmanızı gerektirir. Yeniden başlatmak istediğinizden emin misiniz?",
                             "reboot": "YENİDEN YÜKLE",
-                            "cancel": "ŞİMDİ DEĞİL"
+                            "cancel": "ŞİMDİ DEĞİL",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "F1-F12 işlevlerine erişmek için Fn tuşuna ve en üst sıradaki tuşlara basın.",
@@ -3281,7 +3286,8 @@
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+            "processStatus": "PROCESSING"
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3766,7 +3772,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

@@ -143,7 +143,8 @@ describe('ActiveProtectionSystemComponent', () => {
 			name: '30',
 			value: 0.5,
 			placeholder: 'seconds',
-			text: `30 seconds`
+			text: `30 seconds`,
+			metricsValue: {}
 		};
 		spyOn(component, 'setSnoozeTime');
 		component.setSnoozeTime(interval);
