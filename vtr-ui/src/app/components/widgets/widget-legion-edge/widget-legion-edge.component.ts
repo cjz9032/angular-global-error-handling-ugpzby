@@ -495,9 +495,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				this.logger.info('Widget-LegionEdge-RegisterThermalModeRealStatusChangeEvent: register success');
 			} catch (error) {
 				this.logger.error('Widget-LegionEdge-RegisterThermalModeRealStatusChangeEvent: register fail; Error message: ', error.message);
-				throw new Error(error.message);
 			}
-
 		}
 	}
 	unRegisterThermalModeRealStatusChangeEvent() {
@@ -545,7 +543,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		} catch (error) {
 			this.performanceOCSettings = false;
 			this.logger.error('Widget-LegionEdge-RenderThermalMode2OCSettings: get fail; Error message: ', error.message);
-			throw new Error(error.message);
 		}
 	}
 	openThermalMode2Modal() {
@@ -583,18 +580,20 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	}
 	onOptionSelected(event: any) {
 		if (event.target.name === 'gaming.dashboard.device.legionEdge.title') {
-			this.gamingSystemUpdateService.setCpuOCStatus(event.option.value).then((value: boolean) => {
-				this.logger.info(`Widget-LegionEdge-onOptionSelected: set value to ${event.option.value}, return value is ${value}`);
-				if (value) {
-					this.drop.curSelected = event.option.value;
-					this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, this.drop.curSelected);
-				} else {
-					this.drop.curSelected = this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus, 1);
-				}
-			}).catch((error) => {
+			try {
+				this.gamingSystemUpdateService.setCpuOCStatus(event.option.value).then((value: boolean) => {
+					this.logger.info(`Widget-LegionEdge-onOptionSelected: set value to ${event.option.value}, return value is ${value}`);
+					if (value) {
+						this.drop.curSelected = event.option.value;
+						this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, this.drop.curSelected);
+					} else {
+						this.drop.curSelected = this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus, 1);
+					}
+				})
+			} catch (error) {
 				this.drop.curSelected = this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus, 1);
 				this.logger.error('Widget-LegionEdge-onOptionSelected: set fail; Error message: ', error.message);
-			});
+			}
 		}
 	}
 	onShowDropdown(event) {
@@ -629,7 +628,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	}
 	setRamOverClockStatus(status: any) {
 		try {
-			this.gamingSystemUpdateService.setRamOCStatus(!status).then((res: boolean) => {
+			this.gamingSystemUpdateService.setRamOCStatus(status).then((res: boolean) => {
 				// the status and cache will update after reboot
 				this.logger.info(`Widget-LegionEdge-setRamOverClockStatus: set value to ${status}, ande return value is ${res}`);
 			});
@@ -733,7 +732,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	}
 	setHybridModeStatus(status: any) {
 		try {
-			this.gamingHybridModeService.setHybridModeStatus(!status).then((res: boolean) => {
+			this.gamingHybridModeService.setHybridModeStatus(status).then((res: boolean) => {
 				// the status and cache will update after reboot
 				this.logger.info(`Widget-LegionEdge-setHybridModeStatus: set value to ${status}, ande return value is ${res}`);
 			});
