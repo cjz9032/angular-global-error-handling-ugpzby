@@ -6,7 +6,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalSmartPerformanceSubscribeComponent } from '../../modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
 import { v4 as uuid } from 'uuid';
 import { formatDate } from '@angular/common';
-import { enumSmartPerformance } from 'src/app/enums/smart-performance.enum';
+import { enumSmartPerformance, PaymentPage } from 'src/app/enums/smart-performance.enum';
 import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
 import moment from 'moment';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
@@ -71,9 +71,9 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		}
 		const currentTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
 		this.modalStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus);
-		if(this.modalStatus && this.modalStatus.isOpened && this.modalStatus.initiatedTime > currentTime){
+		if(this.modalStatus && this.modalStatus.isOpened){
 			this.getSubscriptionDetails();
-				this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.processStatus';
+			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.processStatus';
 			this.strStatus = 'PROCESSING';
 		}
 
@@ -116,7 +116,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	}
 	openSubscribeModal() {
 		const currentTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
-		this.intervalTime = moment(currentTime).add(10, 'm').format('YYYY-MM-DD HH:mm:ss');
+		this.intervalTime = moment(currentTime).add(PaymentPage.ORDERWAITINGTIME, 'm').format('YYYY-MM-DD HH:mm:ss');
 		this.modalStatus = {
 			initiatedTime: this.intervalTime,
 			isOpened: true
@@ -138,39 +138,43 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	}
 
 	async getSubscriptionDetails() {
+		this.modalStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus);
 		const serialNumber = 'PC0ZEPQ5';
 		let subscriptionData = []
 		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails(serialNumber);
-		if (subscriptionDetails) {
-			subscriptionData = subscriptionDetails.data;
-			if (subscriptionData) {
-				const releaseDate = new Date(subscriptionData[0].releaseDate);
-				releaseDate.setMonth(releaseDate.getMonth() + +subscriptionData[0].products[0].unitTerm);
-				releaseDate.setDate(releaseDate.getDate() - 1);
-				this.subscriptionDetails = {
-					startDate: this.formatLocaleDate.transform(subscriptionData[0].releaseDate),
-					endDate: this.formatLocaleDate.transform(releaseDate.toLocaleDateString()),
-					productNumber: subscriptionData[0].products[0].productCode || ''
-				}
-				this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.subscriptionDetails);
-				this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.activeStatus';
-				this.strStatus = 'ACTIVE';
-				this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
-				this.modalStatus.isOpened = false;
-				this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, this.modalStatus);
-				this.isSubscribed = true;
-				this.subScribeEvent.emit(this.isSubscribed);
+		subscriptionData = subscriptionDetails.data;
+		if (subscriptionData && subscriptionData.length > 0) {
+			const releaseDate = new Date(subscriptionData[0].releaseDate);
+			releaseDate.setMonth(releaseDate.getMonth() + +subscriptionData[0].products[0].unitTerm);
+			releaseDate.setDate(releaseDate.getDate() - 1);
+			this.subscriptionDetails = {
+				startDate: this.formatLocaleDate.transform(subscriptionData[0].releaseDate),
+				endDate: this.formatLocaleDate.transform(releaseDate.toLocaleDateString()),
+				productNumber: subscriptionData[0].products[0].productCode || ''
+			}
+			this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.subscriptionDetails);
+			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.activeStatus';
+			this.strStatus = 'ACTIVE';
+			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
+			this.modalStatus.isOpened = false;
+			this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, this.modalStatus);
+			this.isSubscribed = true;
+			this.subScribeEvent.emit(this.isSubscribed);
 
-			} else {
+		} else {
+			const currentTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
 				this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.processStatus';
 				this.strStatus = 'PROCESSING';
-				const currentTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
 				setTimeout(() => {
 					if (this.intervalTime < currentTime) {
 						this.getSubscriptionDetails()
+					} else {
+						this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.inactiveStatus';
+						this.strStatus = 'INACTIVE';
+						this.modalStatus.isOpened = false;
+						this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, this.modalStatus);
 					}
 				}, 30000);
-			}
 		}
 
 	}
