@@ -1275,7 +1275,8 @@
                             "description1": "Ativar uma carga de bateria personalizada permitirá que a integridade geral da bateria dure mais conforme você usar este dispositivo.No entanto, não ter uma carga máxima permitirá menos tempo de execução da vida útil da bateria.",
                             "description2": "Para ativar completamente esse recurso, desconecte sua máquina epermita que a bateria descarregue até ou abaixo do limite de interrupção de carga.",
                             "enable": "ATIVAR",
-                            "cancel": "CANCELAR"
+                            "cancel": "CANCELAR",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Iniciar carregamento quando abaixo de",

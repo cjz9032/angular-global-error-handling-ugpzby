@@ -1275,7 +1275,8 @@
                             "description1": "Omogućivanje prilagođenog punjenja baterije omogućit će dulje sveukupno trajanje baterije dok koristite ovaj uređaj.Međutim, ako baterija nije u potpunosti napunjena, njezino trajanje bit će kraće.",
                             "description2": "Kako biste u potpunosti omogućili tu značajku, odspojite uređaj ipustite da se baterija isprazni na prag za zaustavljanje punjenja ili ispod njega.",
                             "enable": "OMOGUĆI",
-                            "cancel": "ODUSTANI"
+                            "cancel": "ODUSTANI",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Pokreni punjenje kada je ispod",

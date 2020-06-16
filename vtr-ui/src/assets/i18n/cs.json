@@ -1275,7 +1275,8 @@
                             "description1": "Aktivací vlastního nabíjení baterie umožníte prodloužení celkové výdrže baterie při používání tohoto zařízení.Bez nabíjení do plna se však zkrátí provozní životnost baterie.",
                             "description2": "Chcete-li tuto funkci plně aktivovat, odpojte počítač a nechtebaterii vybít na nebo pod limit nabíjení baterie.",
                             "enable": "POVOLIT",
-                            "cancel": "STORNO"
+                            "cancel": "STORNO",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Začít nabíjení při poklesu pod",

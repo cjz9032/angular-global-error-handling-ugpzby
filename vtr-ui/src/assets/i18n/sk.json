@@ -1275,7 +1275,8 @@
                             "description1": "Zapnutie vlastnej hraničnej úrovne nabitia batérie umožní predĺžiť životnosť batérie pri používaní tohto zariadenia.Ak však batéria nie je plne nabitá, jej výdrž je kratšia.",
                             "description2": "Ak chcete túto funkciu v plnej miere zapnúť, odpojte zariadeniea nechajte batériu, aby sa vybila na alebo pod hraničnú úroveň nabitia.",
                             "enable": "ZAPNÚŤ",
-                            "cancel": "ZRUŠIŤ"
+                            "cancel": "ZRUŠIŤ",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Začať nabíjanie pri hodnote nižšej ako",

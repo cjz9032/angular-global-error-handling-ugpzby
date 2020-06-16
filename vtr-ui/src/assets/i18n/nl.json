@@ -1275,7 +1275,8 @@
                             "description1": "Als u opladen tot een aangepast niveau inschakelt, blijft de batterij tijdens het gebruik van het apparaat langer in goede conditie.Maar als u de batterij niet volledig oplaadt, kunt u het apparaat minder lang gebruiken alvorens de batterij leeg is.",
                             "description2": "Haal de stekker uit het stopcontact en ontlaad de batterij tot onder het niveauwaarop het opladen wordt gestopt om deze functie volledig te activeren.",
                             "enable": "INSCHAKELEN",
-                            "cancel": "ANNULEREN"
+                            "cancel": "ANNULEREN",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Beginnen met opladen als de resterende capaciteit van de batterij lager is dan",
