@@ -1,0 +1,34 @@
+
+@import "../../../app.theme";
+
+.vtr-ui-hardware-scan-test-result {
+
+	.item-right {
+		display: flex;
+		justify-content: right;
+		align-items: center;
+
+		.module-result-text {
+			padding-right: 1rem;
+			font-size: $fontsize_xs2;
+			font-weight: $weight_bold;
+			text-transform: uppercase;
+		}
+
+		.module-result-icon {
+			font-size: $fontsize_lg;
+		}
+	}
+
+	.text-status {
+		margin: 0rem;
+	}
+
+	.not-applicable {
+		color: $light-grey;
+	}
+
+	.warning {
+		color: $warning_light;
+	}
+}

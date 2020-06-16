@@ -45,6 +45,7 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons/faCheckCircle';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons/faTimesCircle';
 import { HardwareScanExecutingHeaderComponent } from '../../components/pages/page-hardwarescan/children/hardware-scan-header-pages/hardware-scan-executing-header/hardware-scan-executing-header.component';
 import { HardwareScanWaitSelectHeaderComponent } from '../../components/pages/page-hardwarescan/children/hardware-scan-header-pages/hardware-scan-wait-select-header/hardware-scan-wait-select-header.component';
+import { UiHardwareScanTestResultComponent } from '../../components/ui/ui-hardware-scan-test-result/ui-hardware-scan-test-result.component';
 
 @NgModule({
 	declarations: [
@@ -71,7 +72,8 @@ import { HardwareScanWaitSelectHeaderComponent } from '../../components/pages/pa
 		RecoverBadSectorsComponent,
 		HardwareScanHeaderPagesComponent,
 		HardwareScanExecutingHeaderComponent,
-		HardwareScanWaitSelectHeaderComponent
+		HardwareScanWaitSelectHeaderComponent,
+		UiHardwareScanTestResultComponent
 	],
 	imports: [
 		CommonModule,
