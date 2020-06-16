@@ -119,7 +119,7 @@
                     "thermalMode2SettingTitle": "إعدادات الوضع الحراري",
                     "thermalMode2SettingDesc": "اختر الوضع الذي تريد استخدامه.",
                     "fnQDesc": "يمكنك تبديل الوضع باستخدام اختصار Fn+Q.",
-                    "perormanceTitle": "وضع الأداء",
+                    "performanceTitle": "وضع الأداء",
                     "performanceDesc": "عزز أداء الكمبيوتر لديك مع زيادة سرعة المروحة والمزيد من استهلاك الطاقة. ",
                     "OCDesc": "يمكنك اختيار تشغيل وظيفة زيادة الأداء.",
                     "ac_dcDesc": "لا ينطبق وضع الأداء إلا عند توصيل محول التيار المتردد.",
@@ -1277,7 +1277,8 @@
                             "description1": "يؤدي تمكين شحن البطارية المخصص إلى أن تدوم سلامة البطارية أطول من ذي قبل أثناء استخدامك لهذا الجهاز.على الرغم من ذلك، سيؤدي عدم الشحن بشكل كامل إلى تقليل فترة تشغيل البطارية.",
                             "description2": "وحتى يتسنى لك تمكين هذه الميزة بشكل كامل، افصل الطاقة عن الجهاز،ودع البطارية تستهلك الطاقة حتى تصل إلى حد إيقاف الشحن أو أقل منه.",
                             "enable": "تمكين",
-                            "cancel": "إلغاء"
+                            "cancel": "إلغاء",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "بدء الشحن عندما تكون الشحنة أقل من",
@@ -1766,7 +1767,8 @@
                             "title": "إعادة تشغيل الكمبيوتر",
                             "description": "يتطلب تغيير وظيفة الصف العلوي الافتراضي إعادة تشغيل الكمبيوتر. هل تريد بالتأكيد إعادة التشغيل؟",
                             "reboot": "إعادة تشغيل",
-                            "cancel": "ليس الآن"
+                            "cancel": "ليس الآن",
+                            "yes": "YES"
                         },
                         "showAdvSettings": "إظهار الإعدادات المتقدمة",
                         "hideAdvSettings": "إخفاء الإعدادات المتقدمة",
@@ -3773,7 +3775,8 @@
                 "txtTo": "إلى",
                 "txtGo": "انتقال",
                 "summaryCaption": "المساحة المُستردة",
-                "fixes": "عملية (عمليات) الإصلاح"
+                "fixes": "عملية (عمليات) الإصلاح",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "نتائج آخر 5 عمليات فحص:",

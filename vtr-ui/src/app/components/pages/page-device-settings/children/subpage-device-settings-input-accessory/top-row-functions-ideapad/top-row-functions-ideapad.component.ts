@@ -133,7 +133,8 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 			processIcon: true,
 			customIcon: 'Special-function',
 			hideIcon: true,
-			processLabel: true,
+			processLabel: false,
+			metricsItem: 'radio.top-row-fn.special-function'
 		});
 		this.functionLockUIModel.push({
 			componentId: this.functionKeyId,
@@ -144,7 +145,8 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 			processIcon: true,
 			customIcon: 'F1-F12-funciton',
 			hideIcon: true,
-			processLabel: true,
+			processLabel: false,
+			metricsItem: 'radio.top-row-fn.function-key'
 		});
 	}
 

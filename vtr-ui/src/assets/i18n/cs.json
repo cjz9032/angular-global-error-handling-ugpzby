@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Nastavení teplotního režimu",
                     "thermalMode2SettingDesc": "Vyberte režim, který chcete použít.",
                     "fnQDesc": "Režim můžete přepnout pomocí klávesové zkratky Fn+Q.",
-                    "perormanceTitle": "Režim výkonu",
+                    "performanceTitle": "Režim výkonu",
                     "performanceDesc": "Zvyšte výkon svého počítače vyšší rychlostí ventilátoru a vyšší spotřebou energie. ",
                     "OCDesc": "Můžete se rozhodnout zapnout funkci přetaktování.",
                     "ac_dcDesc": "Režim Performance (Výkon) je použitelný pouze v případě, že je připojen napájecí adaptér.",
@@ -1275,7 +1275,8 @@
                             "description1": "Aktivací vlastního nabíjení baterie umožníte prodloužení celkové výdrže baterie při používání tohoto zařízení.Bez nabíjení do plna se však zkrátí provozní životnost baterie.",
                             "description2": "Chcete-li tuto funkci plně aktivovat, odpojte počítač a nechtebaterii vybít na nebo pod limit nabíjení baterie.",
                             "enable": "POVOLIT",
-                            "cancel": "STORNO"
+                            "cancel": "STORNO",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Začít nabíjení při poklesu pod",
@@ -1766,7 +1767,8 @@
                             "title": "Restartujte počítač",
                             "description": "V případě změny funkce horní řady kláves je nutno počítač restartovat, aby se změny projevily. Skutečně chcete restartovat?",
                             "reboot": "RESTARTOVAT",
-                            "cancel": "TEĎ NE"
+                            "cancel": "TEĎ NE",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Pomocí podržení klávesy Fn a stisknutí jedné z kláves v horní řadě aktivujete jejich funkce F1-F12.",
@@ -3771,7 +3773,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

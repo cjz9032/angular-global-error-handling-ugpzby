@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Lämpö-tila-asetus",
                     "thermalMode2SettingDesc": "Valitse haluamasi tila.",
                     "fnQDesc": "Voit vaihtaa tilaa käyttämällä pikanäppäintä Fn+Q.",
-                    "perormanceTitle": "Suorituskykytila",
+                    "performanceTitle": "Suorituskykytila",
                     "performanceDesc": "Paranna tietokoneesi suorituskykyä korkeammalla tuulettimen nopeudella ja virrankulutuksella. ",
                     "OCDesc": "Voit halutessasi ottaa käyttöön ylikellotustoiminnon.",
                     "ac_dcDesc": "Suorituskykytila on käytettävissä vain, kun verkkolaite on liitetty tietokoneeseen.",
@@ -1275,7 +1275,8 @@
                             "description1": "Kun otat mukautetun akun varauksen käyttöön, tämän laitteen akku pysyy toimintakunnossa pitempään.Akun varauksen kesto käytön aikana kuitenkin lyhenee, koska akku ei lataudu täyteen.",
                             "description2": "Jotta voit ottaa tämän toiminnon täysin käyttöön, irrota laite jaanna akun tyhjentyä latauksen lopettamisen kynnysarvoon asti tai sen alle.",
                             "enable": "OTA KÄYTTÖÖN",
-                            "cancel": "PERUUTA"
+                            "cancel": "PERUUTA",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Aloita lataus varauksen ollessa alle",
@@ -1766,7 +1767,8 @@
                             "title": "Tietokoneen käynnistäminen uudelleen",
                             "description": "Ylärivin oletustoiminnon muuttaminen edellyttää tietokoneen käynnistämistä uudelleen. Haluatko varmasti käynnistää tietokoneen uudelleen?",
                             "reboot": "KÄYNNISTÄ UUDELLEEN",
-                            "cancel": "EI NYT"
+                            "cancel": "EI NYT",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Jos haluat käyttää näppäinten F1–F12 toimintoja, paina Fn-näppäintä ja ylärivin näppäimiä.",
@@ -3771,7 +3773,8 @@
                 "txtTo": "Vastaanottaja",
                 "txtGo": "Siirtyminen",
                 "summaryCaption": "vapautettava tila",
-                "fixes": "korjaukset"
+                "fixes": "korjaukset",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "5 edellisen tarkistuksen tulokset:",

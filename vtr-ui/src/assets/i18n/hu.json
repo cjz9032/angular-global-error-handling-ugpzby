@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Termál mód beállítása",
                     "thermalMode2SettingDesc": "Válassza ki a használni kívánt módot.",
                     "fnQDesc": "Másik módra az Fn+Q paranccsal válthat.",
-                    "perormanceTitle": "Teljesítményközpontú mód",
+                    "performanceTitle": "Teljesítményközpontú mód",
                     "performanceDesc": "Számítógépe teljesítményének növelése nagyobb ventilátorsebességgel és energiafogyasztással. ",
                     "OCDesc": "Úgy is dönthet, hogy bekapcsolja a Túlpörgetés funkciót.",
                     "ac_dcDesc": "A Teljesítmény mód csak akkor alkalmazható, ha a hálózati adapter csatlakoztatva van.",
@@ -1275,7 +1275,8 @@
                             "description1": "Az egyéni akkumulátortöltés használatával megnövelhető az akkumulátor eszközhasználat közbeni élettartama.Ha azonban nem tölti fel teljesen az akkumulátort, az üzemidő rövidebb lesz.",
                             "description2": "A funkció teljes kihasználásához válassza le a gépet az elektromos hálózatról,és hagyja, hogy az akkumulátor teljesen vagy a töltésleállítási küszöbérték alá merüljön le.",
                             "enable": "ENGEDÉLYEZÉS",
-                            "cancel": "MÉGSE"
+                            "cancel": "MÉGSE",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Töltés kezdete ilyen érték alatt",
@@ -1766,7 +1767,8 @@
                             "title": "A számítógép újraindítása",
                             "description": "Az alapértelmezett felső sor funkciója módosításának érvénybe léptetéséhez újra kell indítania a számítógépet. Biztosan újraindítja?",
                             "reboot": "ÚJRAINDÍTÁS",
-                            "cancel": "NE MOST"
+                            "cancel": "NE MOST",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Az F1–F12 funkcióbillentyűk funkcióit az Fn és a fenti soron lévő billentyűk megnyomásával érheti el.",
@@ -3771,7 +3773,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

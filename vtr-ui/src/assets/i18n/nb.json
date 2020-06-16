@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Innstillinger termisk modus",
                     "thermalMode2SettingDesc": "Velg modusen du vil bruke.",
                     "fnQDesc": "Du kan endre modus ved å bruke hurtigtastene Fn+Q.",
-                    "perormanceTitle": "Ytelsesmodus",
+                    "performanceTitle": "Ytelsesmodus",
                     "performanceDesc": "Øk datamaskinens ytelse med høyere viftehastighet og høyere strømforbruk. ",
                     "OCDesc": "Du kan velge å skru på funksjonen for overklokking.",
                     "ac_dcDesc": "Ytelsesmodus er bare tilgjengelig når en strømadapter er koblet til.",
@@ -1275,7 +1275,8 @@
                             "description1": "Hvis du aktiverer en tilpasset batterilading, er det mulig at batteriet varer lenger når du bruker denne enheten.Hvis du ikke har fulladet batteri, får du imidlertid mindre batteritid under kjøretid.",
                             "description2": "For fullstendig aktivering av denne funksjonen må du koble fra maskinen din ogla batterinivået gå ned til eller under terskelen for ladestopp.",
                             "enable": "AKTIVER",
-                            "cancel": "AVBRYT"
+                            "cancel": "AVBRYT",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Start lading når under",
@@ -1766,7 +1767,8 @@
                             "title": "Start datamaskinen på nytt",
                             "description": "Du må starte datamaskinen på nytt hvis du endrer standardfunksjonen for den øverste raden. Er du sikker på at du vil starte på nytt?",
                             "reboot": "START PÅ NYTT",
-                            "cancel": "IKKE NÅ"
+                            "cancel": "IKKE NÅ",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Du får tilgang til F1–F12-funksjonen ved å trykke på Fn og tastene på den øverste raden.",
@@ -3771,7 +3773,8 @@
                 "txtTo": "Til",
                 "txtGo": "Start",
                 "summaryCaption": "plass gjenvunnet",
-                "fixes": "reparasjon(er)"
+                "fixes": "reparasjon(er)",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Siste fem skanneresultater:",

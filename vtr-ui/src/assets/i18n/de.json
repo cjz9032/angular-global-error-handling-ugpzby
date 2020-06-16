@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Einstellung Wärmemodus",
                     "thermalMode2SettingDesc": "Wählen Sie den gewünschten Modus aus.",
                     "fnQDesc": "Sie können den Modus über die Tastenkombination Fn+Q wechseln.",
-                    "perormanceTitle": "Leistungsmodus",
+                    "performanceTitle": "Leistungsmodus",
                     "performanceDesc": "Steigert die Leistung Ihres Computers. Dies führt zu höherer Lüftergeschwindigkeit und mehr Stromverbrauch. ",
                     "OCDesc": "Sie können die Overclocking-Funktion aktivieren.",
                     "ac_dcDesc": "Der Leistungsmodus kann nur eingesetzt werden, wenn das Netzteil angeschlossen ist.",
@@ -1275,7 +1275,8 @@
                             "description1": "Durch die Aktivierung einer angepassten Akkuladung verlängert sich die Gesamtnutzungszeit des Akkus beim Verwenden dieses Geräts.Wenn Sie den Akku jedoch nicht komplett aufladen, ist die Akkulebenszeit kürzer.",
                             "description2": "Um diese Funktion komplett zu aktivieren, trennen Sie bitte Ihr Gerät von der Stromversorgung undwarten Sie, bis der Akku ganz entladen ist oder die Kapazität unter dem Schwellenwert liegt.",
                             "enable": "AKTIVIEREN",
-                            "cancel": "ABBRECHEN"
+                            "cancel": "ABBRECHEN",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Aufladen starten bei",
@@ -1766,7 +1767,8 @@
                             "title": "Computer neu starten",
                             "description": "Nach Ändern der Standardfunktion der oberen Reihe müssen Sie Ihren Computer neu starten. Möchten Sie wirklich neu starten?",
                             "reboot": "NEU STARTEN",
-                            "cancel": "NICHT JETZT"
+                            "cancel": "NICHT JETZT",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Um die F1-F12-Funktion zu verwenden, drücken Sie die Fn-Taste und die Tasten in der obersten Reihe.",
@@ -3771,7 +3773,8 @@
                 "txtTo": "Bis",
                 "txtGo": "Start",
                 "summaryCaption": "gewonnener Speicherplatz",
-                "fixes": "Korrektur(en)"
+                "fixes": "Korrektur(en)",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Letzte 5 Scan-Ergebnisse:",

@@ -189,7 +189,7 @@
                     "thermalMode2SettingTitle": "熱模式設定",
                     "thermalMode2SettingDesc": "選擇您要使用的模式。",
                     "fnQDesc": "您可以使用快捷鍵 Fn+Q 切換模式。",
-                    "perormanceTitle": "效能模式",
+                    "performanceTitle": "效能模式",
                     "performanceDesc": "以更高的風扇速度和耗電量提高電腦效能。",
                     "OCDesc": "您可以選擇開啟超頻功能。",
                     "ac_dcDesc": "只有在已插入 AC 電源整流器時，才適用效能模式。",
@@ -1275,7 +1275,8 @@
                             "description1": "啟用自訂電池充電可讓您在使用此裝置時，整體電池性能更持久。不過，若充電不完全會減少執行階段電池壽命。",
                             "description2": "為了完全啟用此功能，請拔除您的裝置，讓電池電力清空至停止充電臨界值或以下。",
                             "enable": "啟用",
-                            "cancel": "取消"
+                            "cancel": "取消",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "低於以下電量時開始充電",
@@ -1766,7 +1767,8 @@
                             "title": "重新啟動電腦",
                             "description": "如果變更最上面一排的預設功能，您必須重新啟動電腦。您確定要重新啟動嗎？",
                             "reboot": "重新開機",
-                            "cancel": "現在不要"
+                            "cancel": "現在不要",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "若要存取 F1-F12 功能，請按下 Fn 和最上面一排的按鍵。",
@@ -3771,7 +3773,8 @@
                 "txtTo": "至",
                 "txtGo": "執行",
                 "summaryCaption": "空間已收回",
-                "fixes": "修正"
+                "fixes": "修正",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "最後 5 次掃描結果：",

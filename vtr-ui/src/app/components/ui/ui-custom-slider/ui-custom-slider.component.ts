@@ -15,7 +15,7 @@ import { CommonMetricsService } from 'src/app/services/common-metrics/common-met
 	styleUrls: ['./ui-custom-slider.component.scss'],
 })
 export class UiCustomSliderComponent implements OnInit {
-	@Input() metricsItem;
+	@Input() metricsItem: string;
 	@Input() isDisabled = false;
 	@Input() sliderId = 'rangeSlider';
 	@Input() value = 1; // initial slider value

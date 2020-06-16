@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "サーマル・モード設定",
                     "thermalMode2SettingDesc": "使用するモードを選択します。",
                     "fnQDesc": "ショートカット Fn+Q を使用してモードを切り替えることができます。",
-                    "perormanceTitle": "パフォーマンス・モード",
+                    "performanceTitle": "パフォーマンス・モード",
                     "performanceDesc": "ファン速度と電力消費を上げコンピューターのパフォーマンスを向上させます。",
                     "OCDesc": "クロックアップ機能をオンにできます。",
                     "ac_dcDesc": "パフォーマンス・モードは、AC 電源アダプターが接続されている場合にのみ適用できます。",
@@ -1275,7 +1275,8 @@
                             "description1": "バッテリーのカスタム充電を有効にすると、バッテリー状態がより長期間良好に保たれる可能性が高くなります。ただし、フル充電したときよりバッテリー持ち時間は短くなります。",
                             "description2": "この機能を完全に有効にするには、ACアダプターを抜き、充電停止しきい値以下までバッテリーを放電してください。",
                             "enable": "有効にする",
-                            "cancel": "キャンセル"
+                            "cancel": "キャンセル",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "次の時点を下回った場合に充電を開始",
@@ -1766,7 +1767,8 @@
                             "title": "コンピューターを再起動する",
                             "description": "最上部の行の機能を変更するには、コンピューターを再起動する必要があります。再起動しますか?",
                             "reboot": "リブート",
-                            "cancel": "今はしない"
+                            "cancel": "今はしない",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "F1 ～ F12 機能を使用するには、Fn および最上部の行のキーを押します。",
@@ -3771,7 +3773,8 @@
                 "txtTo": "何日まで",
                 "txtGo": "移動",
                 "summaryCaption": "解放される容量",
-                "fixes": "修正"
+                "fixes": "修正",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "直近 5 件のスキャン結果:",

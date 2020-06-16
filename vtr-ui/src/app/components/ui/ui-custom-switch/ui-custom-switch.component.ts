@@ -25,14 +25,14 @@ export class UiCustomSwitchComponent implements OnInit, OnDestroy {
 	@Input() switchParam: string;
 
 	constructor(private metrics: MetricService, private activatedRoute: ActivatedRoute) {
+	 }
+
+	ngOnInit(): void {
 		UiCustomSwitchComponent.switchChange.subscribe(res => {
 			if (this.componentId === 'ds-power-battery-threshold') {
 				this.value = res;
 			}
 		});
-	 }
-
-	ngOnInit(): void {
 	}
 
 	ngOnDestroy(): void {

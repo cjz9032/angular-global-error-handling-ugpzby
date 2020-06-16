@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Ustawienia trybu term.",
                     "thermalMode2SettingDesc": "Wybierz tryb, którego chcesz używać.",
                     "fnQDesc": "Możesz przełączyć tryb za pomocą skrótu Fn+Q.",
-                    "perormanceTitle": "Tryb wydajny",
+                    "performanceTitle": "Tryb wydajny",
                     "performanceDesc": "Zwiększ wydajność swojego komputera z wyższą prędkością wentylatora i większym zużyciem energii. ",
                     "OCDesc": "Możesz włączyć funkcję Przetaktowania.",
                     "ac_dcDesc": "Tryb wydajności ma zastosowanie tylko wtedy, gdy podłączony jest zasilacz sieciowy.",
@@ -1275,7 +1275,8 @@
                             "description1": "Włączenie niestandardowego progu ładowania akumulatora umożliwi dłuższe utrzymywanie akumulatora w dobrym stanie podczas korzystania z tego urządzenia.Niepełne ładowanie akumulatora skróci jednak czas pracy na nim.",
                             "description2": "W celu pełnego włączenia tej funkcji należy odłączyć komputer od zasilania z sieci elektrycznej ipoczekać, aż stopień naładowania akumulatora spadnie co najmniej do wartości progu zatrzymania ładowania.",
                             "enable": "WŁĄCZ",
-                            "cancel": "ANULUJ"
+                            "cancel": "ANULUJ",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Rozpocznij ładowanie poniżej",
@@ -1766,7 +1767,8 @@
                             "title": "Uruchom ponownie komputer",
                             "description": "Aby zmiana funkcji klawisza z górnego wiersza zaczęła obowiązywać, należy ponownie uruchomić komputer. Czy na pewno chcesz uruchomić ponownie?",
                             "reboot": "URUCHOM PONOWNIE",
-                            "cancel": "NIE TERAZ"
+                            "cancel": "NIE TERAZ",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Aby uzyskać dostęp do klawiszy F1-F12, należy przytrzymać klawisz Fn, a następnie nacisnąć odpowiedni klawisz w górnym rzędzie.",
@@ -3771,7 +3773,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

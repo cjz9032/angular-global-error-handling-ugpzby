@@ -71,7 +71,8 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 	public isOnline: any = true;
 	private cameraAccessChangedHandler: any;
 	private windowsObj: any;
-	public readonly metricsParent  = CommonMetricsModel.ParentDeviceSettings;
+	public biosVersion: string;
+	public readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
 	isSet = {
 		isSetDaytimeColorTemperatureValue: false,
 		isSetEyecaremodeValue: false,
@@ -217,6 +218,9 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 			this.windowsObj = this.Windows.Devices.Enumeration.DeviceAccessInformation
 				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.videoCapture);
 		}
+		this.deviceService.getMachineInfo().then((data) => {
+			this.biosVersion = data.biosVersion;
+		});
 	}
 
 	ngOnInit() {
@@ -255,14 +259,14 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 				}, 500);
 			});
 
-			if (this.windowsObj) {
-				this.cameraAccessChangedHandler = (args:any) => {
-					if (args && this.isAllInOneMachineFlag) {
-						this.getCameraDetails();
-					}
+		if (this.windowsObj) {
+			this.cameraAccessChangedHandler = (args: any) => {
+				if (args && this.isAllInOneMachineFlag) {
+					this.getCameraDetails();
 				}
-				this.windowsObj.addEventListener('accesschanged', this.cameraAccessChangedHandler);
 			}
+			this.windowsObj.addEventListener('accesschanged', this.cameraAccessChangedHandler);
+		}
 	}
 
 	ngAfterViewInit() {
@@ -644,14 +648,14 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		}
 	}
 
-	setEyeCareModeToggleValue(flag: boolean, isMissingGraphicDriver=false) {
+	setEyeCareModeToggleValue(flag: boolean, isMissingGraphicDriver = false) {
 		if (this.isSet.isSetEyecaremodeStatus) {
 			this.eyeCareModeStatus.status = this.setValues.SetEyecaremodeStatus;
 			this.isSet.isSetEyecaremodeStatus = false;
 		} else {
 			this.eyeCareModeStatus.status = flag;
 		}
-		if(!isMissingGraphicDriver) {
+		if (!isMissingGraphicDriver) {
 			this.enableSlider = this.eyeCareModeStatus.status;
 		}
 	}

@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Nastavenie tepelného režimu",
                     "thermalMode2SettingDesc": "Vyberte režim, ktorý chcete použiť.",
                     "fnQDesc": "Režim môžete prepínať pomocou klávesovej skratky Fn+Q.",
-                    "perormanceTitle": "Režim vysokého výkonu",
+                    "performanceTitle": "Režim vysokého výkonu",
                     "performanceDesc": "Zvýšte výkon počítača zvýšením otáčok ventilátora a spotreby energie. ",
                     "OCDesc": "Môžete sa rozhodnúť zapnúť funkciu pretaktovania.",
                     "ac_dcDesc": "Režim vysokého výkonu je možné použiť, len ak je pripojený sieťový adaptér.",
@@ -1275,7 +1275,8 @@
                             "description1": "Zapnutie vlastnej hraničnej úrovne nabitia batérie umožní predĺžiť životnosť batérie pri používaní tohto zariadenia.Ak však batéria nie je plne nabitá, jej výdrž je kratšia.",
                             "description2": "Ak chcete túto funkciu v plnej miere zapnúť, odpojte zariadeniea nechajte batériu, aby sa vybila na alebo pod hraničnú úroveň nabitia.",
                             "enable": "ZAPNÚŤ",
-                            "cancel": "ZRUŠIŤ"
+                            "cancel": "ZRUŠIŤ",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Začať nabíjanie pri hodnote nižšej ako",
@@ -1766,7 +1767,8 @@
                             "title": "Reštartovanie počítača",
                             "description": "Zmena predvolenej funkcie horného riadka si vyžaduje reštartovanie počítača. Naozaj chcete vykonať reštartovanie?",
                             "reboot": "REŠTARTOVAŤ",
-                            "cancel": "TERAZ NIE"
+                            "cancel": "TERAZ NIE",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Funkcie klávesov F1 – F12 môžete použiť stlačením klávesu Fn a klávesov v hornom riadku.",
@@ -3771,7 +3773,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

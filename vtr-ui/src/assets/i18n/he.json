@@ -189,7 +189,7 @@
                     "thermalMode2SettingTitle": "הגדרת מצב תרמי",
                     "thermalMode2SettingDesc": "בחרו את המצב הרצוי.",
                     "fnQDesc": "ניתן להחליף מצב באמצעות קיצור דרך Fn+Q.",
-                    "perormanceTitle": "מצב ביצועים",
+                    "performanceTitle": "מצב ביצועים",
                     "performanceDesc": "שפרו את ביצועי המחשב עם מהירות מאוורר גבוהה יותר וצריכת חשמל רבה יותר. ",
                     "OCDesc": "תוכלו לבחור להפעיל את התכונה 'אוברקלוקינג'.",
                     "ac_dcDesc": "מצב הביצועים רלוונטי רק כאשר מתאם מתח AC מחובר לחשמל.",
@@ -1275,7 +1275,8 @@
                             "description1": "הפעלה של טעינת סוללה מותאמת אישית תשפר את רמת התקינות הכללית של הסוללה ותאפשר לה לפעול זמן רב יותר, בעת השימוש בהתקן זה.עם זאת, הימנעות מטעינה מלאה תקצר את משך הפעילות הרציפה של הסוללה.",
                             "description2": "כדי להפעיל תכונה זו באופן מלא, נתקו את המחשב מהחשמלואפשרו לסוללה להתרוקן עד לסף עצירת הטעינה, או מתחתיו.",
                             "enable": "הפעלה",
-                            "cancel": "ביטול"
+                            "cancel": "ביטול",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "התחילו בטעינה כשהסוללה מתחת",
@@ -1766,7 +1767,8 @@
                             "title": "הפעילו מחדש את המחשב",
                             "description": "שינוי פונקציות ברירת המחדל של השורה העליונה דורש הפעלה מחדש של המחשב. להפעיל מחדש, בטוח?",
                             "reboot": "הפעלה מחדש",
-                            "cancel": "לא עכשיו"
+                            "cancel": "לא עכשיו",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "כדי לגשת לפונקציות F1-F12, לחצו על המקש Fn ועל המקשים בשורה העליונה.",
@@ -3771,7 +3773,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

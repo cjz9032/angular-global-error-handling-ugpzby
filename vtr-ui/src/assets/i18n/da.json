@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Indstil. for varmetilstand",
                     "thermalMode2SettingDesc": "Vælg den tilstand, du vil bruge.",
                     "fnQDesc": "Du kan skifte tilstand ved hjælp af genvejen Fn+Q.",
-                    "perormanceTitle": "Ydeevnetilstand",
+                    "performanceTitle": "Ydeevnetilstand",
                     "performanceDesc": "Boost computerens ydeevne med højere blæserhastighed og strømforbrug. ",
                     "OCDesc": "Du kan vælge at aktivere overclockingfunktionen.",
                     "ac_dcDesc": "Ydeevnetilstand kan kun benyttes, når vekselstrømsadapteren er tilsluttet.",
@@ -1275,7 +1275,8 @@
                             "description1": "Ved at bruge tilpasset opladning af batteriet kan du forlænge den samlede batterilevetid, mens du bruger enheden.Når batteriet ikke lades helt op, vil batteriets driftstid dog være kortere.",
                             "description2": "For at aktivere denne funktion fuldt ud skal du tage maskinens strømstik ud oglade batteriet aflade til under den grænse, hvor enheden stopper med at oplade.",
                             "enable": "AKTIVÉR",
-                            "cancel": "ANNULLER"
+                            "cancel": "ANNULLER",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Start opladning, når under",
@@ -1766,7 +1767,8 @@
                             "title": "Genstart computer",
                             "description": "Ændring af standardfunktionen for øverste række kræver, at du genstarter computeren. Er du sikker på, du vil genstarte?",
                             "reboot": "GENSTART",
-                            "cancel": "IKKE NU"
+                            "cancel": "IKKE NU",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Hvis du vil have adgang til F1-F12-funktionen, skal du trykke på Fn og tasterne på den øverste række.",
@@ -3771,7 +3773,8 @@
                 "txtTo": "Til",
                 "txtGo": "Gå",
                 "summaryCaption": "tilbageført plads",
-                "fixes": "rettelse(r)"
+                "fixes": "rettelse(r)",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Resultat af seneste 5 scanninger:",

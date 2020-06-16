@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Config. de modo térmico",
                     "thermalMode2SettingDesc": "Seleccione la modalidad que desea utilizar.",
                     "fnQDesc": "Puede cambiar de modalidad utilizando la combinación de teclas Fn+Q.",
-                    "perormanceTitle": "Modalidad de rendimiento",
+                    "performanceTitle": "Modalidad de rendimiento",
                     "performanceDesc": "Aumente el rendimiento del equipo con mayor velocidad del ventilador y consumo de energía. ",
                     "OCDesc": "Puede seleccionar que se active la función de Aceleración.",
                     "ac_dcDesc": "La modalidad de rendimiento solo se aplica cuando está conectado el adaptador de alimentación de CA.",
@@ -1275,7 +1275,8 @@
                             "description1": "Activar una carga de batería personalizada permitirá que la duración general de la batería sea más prolongada mientras utiliza este dispositivo.Sin embargo, si la batería no está cargada completamente, el tiempo de duración de esta en funcionamiento será menor.",
                             "description2": "Para activar completamente esta característica, desconecte la máquina ydeje que la batería se agote o quede bajo el umbral de detención de carga.",
                             "enable": "HABILITAR",
-                            "cancel": "CANCELAR"
+                            "cancel": "CANCELAR",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Comenzar a cargar cuando esté por debajo de",
@@ -1766,7 +1767,8 @@
                             "title": "Reinicie el equipo",
                             "description": "Cambiar la función de fila superior predeterminada requiere que reinicie su equipo. ¿Está seguro de que desea reiniciar?",
                             "reboot": "REINICIAR",
-                            "cancel": "NO AHORA"
+                            "cancel": "NO AHORA",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Para tener acceso a la función F1-F12, presione Fn y las teclas de la fila superior.",
@@ -3771,7 +3773,8 @@
                 "txtTo": "Hacia",
                 "txtGo": "Ir",
                 "summaryCaption": "Espacio reclamado",
-                "fixes": "corrección(es)"
+                "fixes": "corrección(es)",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Últimos 5 resultados de análisis:",

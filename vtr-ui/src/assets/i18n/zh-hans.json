@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "散热模式设置",
                     "thermalMode2SettingDesc": "选择要使用的模式。",
                     "fnQDesc": "可使用快捷键 Fn+Q 切换模式。",
-                    "perormanceTitle": "野兽模式",
+                    "performanceTitle": "野兽模式",
                     "performanceDesc": "提升计算机性能，同时会提高风扇速度和功耗。",
                     "OCDesc": "可选择开启超频功能。",
                     "ac_dcDesc": "仅在插入交流电源适配器时才能使用野兽模式。",
@@ -1275,7 +1275,8 @@
                             "description1": "在您使用此设备时，启用自定义电池充电可延长电池的整体使用寿命。然而，未能完全充满电将缩短电池寿命。",
                             "description2": "为完全发挥此功能的作用，请拔下计算机的电源插头并消耗电池电量，使电池电量达到或低于停止充电阈值。",
                             "enable": "启用",
-                            "cancel": "取消"
+                            "cancel": "取消",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "低于以下电量时开始充电",
@@ -1766,7 +1767,8 @@
                             "title": "重新启动计算机",
                             "description": "更改首行的缺省功能后，您需要重新启动计算机。是否确实要重新启动？",
                             "reboot": "重新启动",
-                            "cancel": "暂不"
+                            "cancel": "暂不",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "要实现 F1 - F12 键的功能，请按 Fn 键和首行按键。",
@@ -3771,7 +3773,8 @@
                 "txtTo": "终于",
                 "txtGo": "执行",
                 "summaryCaption": "回收的空间",
-                "fixes": "修复"
+                "fixes": "修复",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "最后 5 个扫描结果：",

@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Postavke toplotnog režima",
                     "thermalMode2SettingDesc": "Odaberite režim koji želite da koristite.",
                     "fnQDesc": "Možete prebaciti režim koristeći prečicu Fn+Q.",
-                    "perormanceTitle": "Režim učinka",
+                    "performanceTitle": "Režim učinka",
                     "performanceDesc": "Pojačajte performanse računara pomoću veće brzine ventilatora i veće potrošnje struje. ",
                     "OCDesc": "Možete odabrati da uključite funkciju Overkloking.",
                     "ac_dcDesc": "Režim performansi je primenljiv samo kada je uključen adapter za napajanja na struju.",
@@ -1275,7 +1275,8 @@
                             "description1": "Omogućavanje prilagođenoj punjenja baterija omogućiće da opšte zdravlje baterije duže traje dok koristite ovaj uređaj.Međutim, ako baterija ne bude napunjena u potpunosti, trajanje baterije pri izvršavanju će biti kraće.",
                             "description2": "Da biste u potpunosti omogućili ovu funkciju, isključite mašinu iomogućite da se baterija isprazni ili da bude ispod praga za prestanak punjenja.",
                             "enable": "OMOGUĆI",
-                            "cancel": "OTKAŽI"
+                            "cancel": "OTKAŽI",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Pokreni punjenje kada je ispod",
@@ -1764,7 +1765,8 @@
                             "title": "Ponovo pokrenite računar",
                             "description": "Za promenu podrazumevane funkcije gornjeg reda potrebno je da ponovo pokrenete računar. Želite li zaista da ponovo pokrenete?",
                             "reboot": "PONOVO POKRENI",
-                            "cancel": "NE SAD"
+                            "cancel": "NE SAD",
+                            "yes": "YES"
                         },
                         "showAdvSettings": "PRIKAŽI NAPREDNE POSTAVKE",
                         "hideAdvSettings": "SAKRI NAPREDNE POSTAVKE",
@@ -3771,7 +3773,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",
