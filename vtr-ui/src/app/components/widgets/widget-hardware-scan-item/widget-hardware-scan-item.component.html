@@ -35,19 +35,27 @@
 					</div>
 				</div>
 
-				<!-- Icon to expand and collapse test list -->
-				<div class="col-auto" *ngIf="isScanExecute && !isEnableViewResults">
-					<div class="collapse-control"
-						tabindex="0"
-						[attr.aria-label]="!item.expanded ? item.module + 'expand-test-list': item.module + 'collapse-test-list'"
-						(click)="toggleTestListVisibility(item)"
-						(keyup.enter)="toggleTestListVisibility(item)"
-						role="button"
-						[attr.aria-expanded]="item.expanded">
-						<fa-icon *ngIf="!item.expanded; else expandArrow" [icon]="['fal', 'angle-down']"></fa-icon>
-						<ng-template #expandArrow>
-							<fa-icon [icon]="['fal', 'angle-up']"></fa-icon>
-						</ng-template>
+				<div class="row">
+					<!-- Defines a status to module list when finish all subtests -->
+					<vtr-ui-hardware-scan-test-result
+						*ngIf="isScanExecute && item.resultCode"
+						[module]="item">
+					</vtr-ui-hardware-scan-test-result>
+
+					<!-- Icon to expand and collapse test list -->
+					<div class="col-auto" *ngIf="isScanExecute && !isEnableViewResults">
+						<div class="collapse-control"
+							tabindex="0"
+							[attr.aria-label]="!item.expanded ? item.module + 'expand-test-list': item.module + 'collapse-test-list'"
+							(click)="toggleTestListVisibility(item)"
+							(keyup.enter)="toggleTestListVisibility(item)"
+							role="button"
+							[attr.aria-expanded]="item.expanded">
+							<fa-icon *ngIf="!item.expanded; else expandArrow" [icon]="['fal', 'angle-down']"></fa-icon>
+							<ng-template #expandArrow>
+								<fa-icon [icon]="['fal', 'angle-up']"></fa-icon>
+							</ng-template>
+						</div>
 					</div>
 				</div>
 			</div>
