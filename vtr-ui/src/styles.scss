@@ -1210,16 +1210,18 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 					line-height: 2rem;
 					color: $main_lightest;
 					position: relative;
-					z-index: 5;
+					z-index: 5;					
 					@media #{$breakpoint_xl} {
 						font-size: $fontsize_xs2;
 						padding: 1.5rem;
 						height: 16rem;
+						word-break: break-all;
 					}
 					@media #{$breakpoint_sm} {
 						font-size: 0.9rem;
 						line-height: 1.2rem;
 						height: 12rem;
+						word-break: break-all;
 					}
 					.icon, .icomoon {
 						height: 12rem;
