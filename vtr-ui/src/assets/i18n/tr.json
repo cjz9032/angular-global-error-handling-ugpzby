@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Isı Kipi Ayarı",
                     "thermalMode2SettingDesc": "Kullanmak istediğiniz kipi seçin.",
                     "fnQDesc": "Fn+Q kısayolunu kullanarak kipi değiştirebilirsiniz.",
-                    "perormanceTitle": "Performans Kipi",
+                    "performanceTitle": "Performans Kipi",
                     "performanceDesc": "Daha yüksek fan hızı ve daha fazla güç tüketimi ile bilgisayarınızın performansını artırın. ",
                     "OCDesc": "Hız Aşırtma işlevini açmayı seçebilirsiniz.",
                     "ac_dcDesc": "Performans Kipi yalnızca AC güç bağdaştırıcısı takılıyken geçerlidir.",

@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "散热模式设置",
                     "thermalMode2SettingDesc": "选择要使用的模式。",
                     "fnQDesc": "可使用快捷键 Fn+Q 切换模式。",
-                    "perormanceTitle": "野兽模式",
+                    "performanceTitle": "野兽模式",
                     "performanceDesc": "提升计算机性能，同时会提高风扇速度和功耗。",
                     "OCDesc": "可选择开启超频功能。",
                     "ac_dcDesc": "仅在插入交流电源适配器时才能使用野兽模式。",

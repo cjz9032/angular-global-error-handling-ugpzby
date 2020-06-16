@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Postavlj. termičkog načina",
                     "thermalMode2SettingDesc": "Odaberite način rada koji želite koristiti.",
                     "fnQDesc": "Možete prebaciti način rada s pomoću prečaca Fn+Q.",
-                    "perormanceTitle": "Način rada performansi",
+                    "performanceTitle": "Način rada performansi",
                     "performanceDesc": "Povećajte performanse računala uz veću brzinu ventilatora i bolju potrošnju energije. ",
                     "OCDesc": "Možete odabrati uključivanje funkcije overclockinga.",
                     "ac_dcDesc": "Način performansi rada primjenjiv je samo kad je uključen ispravljač.",

@@ -189,7 +189,7 @@
                     "thermalMode2SettingTitle": "熱模式設定",
                     "thermalMode2SettingDesc": "選擇您要使用的模式。",
                     "fnQDesc": "您可以使用快捷鍵 Fn+Q 切換模式。",
-                    "perormanceTitle": "效能模式",
+                    "performanceTitle": "效能模式",
                     "performanceDesc": "以更高的風扇速度和耗電量提高電腦效能。",
                     "OCDesc": "您可以選擇開啟超頻功能。",
                     "ac_dcDesc": "只有在已插入 AC 電源整流器時，才適用效能模式。",

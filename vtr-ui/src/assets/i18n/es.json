@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Config. de modo térmico",
                     "thermalMode2SettingDesc": "Seleccione la modalidad que desea utilizar.",
                     "fnQDesc": "Puede cambiar de modalidad utilizando la combinación de teclas Fn+Q.",
-                    "perormanceTitle": "Modalidad de rendimiento",
+                    "performanceTitle": "Modalidad de rendimiento",
                     "performanceDesc": "Aumente el rendimiento del equipo con mayor velocidad del ventilador y consumo de energía. ",
                     "OCDesc": "Puede seleccionar que se active la función de Aceleración.",
                     "ac_dcDesc": "La modalidad de rendimiento solo se aplica cuando está conectado el adaptador de alimentación de CA.",

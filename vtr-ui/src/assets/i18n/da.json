@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Indstil. for varmetilstand",
                     "thermalMode2SettingDesc": "Vælg den tilstand, du vil bruge.",
                     "fnQDesc": "Du kan skifte tilstand ved hjælp af genvejen Fn+Q.",
-                    "perormanceTitle": "Ydeevnetilstand",
+                    "performanceTitle": "Ydeevnetilstand",
                     "performanceDesc": "Boost computerens ydeevne med højere blæserhastighed og strømforbrug. ",
                     "OCDesc": "Du kan vælge at aktivere overclockingfunktionen.",
                     "ac_dcDesc": "Ydeevnetilstand kan kun benyttes, når vekselstrømsadapteren er tilsluttet.",

@@ -122,7 +122,7 @@
 					"thermalMode2SettingTitle": "Thermal Mode Setting",
 					"thermalMode2SettingDesc": "Choose the mode you want to use.",
 					"fnQDesc": "You can switch mode using shortcut Fn+Q.",
-					"perormanceTitle": "Performance Mode",
+					"performanceTitle": "Performance Mode",
 					"performanceDesc": "Boost your computer performance with higher fan speed and power consumption.",
 					"OCDesc": "You can choose to turn on the Overclocking function.",
 					"ac_dcDesc": "Performance Mode is applicable only when ac power adaptor is plugged in.",
