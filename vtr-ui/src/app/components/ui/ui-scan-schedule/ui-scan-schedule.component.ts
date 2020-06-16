@@ -11,7 +11,7 @@ import { LoggerService } from "src/app/services/logger/logger.service";
 import { SmartPerformanceService } from "src/app/services/smart-performance/smart-performance.service";
 import { LocalStorageKey } from "src/app/enums/local-storage-key.enum";
 import moment from "moment";
-import { TranslateService } from "@ngx-translate/core";
+import { TranslateService, LangChangeEvent } from "@ngx-translate/core";
 import { enumScanFrequency } from "src/app/enums/smart-performance.enum";
 
 @Component({
@@ -89,13 +89,18 @@ export class UiScanScheduleComponent implements OnInit {
 	public enumLocalScanFrequncy: any;
 	requestScanData = {};
 	type: string;
-	isFirstVisit: boolean
+	isFirstVisit: boolean;
+	sliceDay: boolean = true;
 
 	ngOnInit() {
+		if (this.translate.currentLang !== 'en') {
+			this.sliceDay = false;
+		}
 		this.scanFrequency.forEach(sf => {
 			this.translate.stream(sf).subscribe((value) => {
 				sf = value;
 			});
+			
 		});
 
 		this.days.forEach(d => {
@@ -103,6 +108,7 @@ export class UiScanScheduleComponent implements OnInit {
 				d = value;
 			});
 		});
+
 		this.isDaySelectionEnable = false;
 		this.enumLocalScanFrequncy = enumScanFrequency;
 
@@ -134,7 +140,8 @@ export class UiScanScheduleComponent implements OnInit {
 		} else {
 			this.scanToggleValue = false;
 			// when no record is present and scan is disabled setting default day.
-			this.selectedDay = this.days[0]
+			this.setDefaultDay(this.days[0]);
+			// this.selectedDay = this.days[0]
 		}
 
 		if (this.IsSmartPerformanceFirstRun === true &&	this.isSubscribed == true) {
@@ -151,13 +158,20 @@ export class UiScanScheduleComponent implements OnInit {
 		}
 
 		// fetching next schedule date and time from task scheduler
-		if (this.scheduleScanFrequency !== undefined && this.IsScheduleScanEnabled && !this.IsSmartPerformanceFirstRun) {
-			if (this.isSubscribed) {
-				this.getNextScanRunTime("Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix");
-			} else {
-				this.getNextScanRunTime("Lenovo.Vantage.SmartPerformance.ScheduleScan");
+		this.fetchNextScheduleDateTime();
+
+	}
+
+	ngAfterViewInit() {
+		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+			if (this.translate.currentLang !== 'en') {
+				this.sliceDay = false;
+				if(!this.scanToggleValue) {
+					this.setDefaultDay(this.days[0]);
+				}
+				this.fetchNextScheduleDateTime();
 			}
-		}
+		});
 	}
 
 	// scan settings
@@ -165,6 +179,7 @@ export class UiScanScheduleComponent implements OnInit {
 		if (this.scanToggleValue) {
 			this.isChangeSchedule = true;
 		}
+		this.selectedDayTranslation();
 	}
 	openScanScheduleDropDown(value) {
 		if (value === this.scheduleTab) {
@@ -373,6 +388,14 @@ export class UiScanScheduleComponent implements OnInit {
 				const dt = moment(res.nextruntime).format("dddd, MM, D, YYYY, h, mm, A");
 				if (this.selectedFrequency === this.scanFrequency[0] || this.selectedFrequency === this.scanFrequency[1]) {
 					this.selectedDay = dt.split(",")[0];
+					this.selectedDayTranslation();
+					if(this.sliceDay) {
+						// this.selectedDay = this.translate.instant(this.selectedDay).slice(0,3);
+						this.translate.stream(this.selectedDay).subscribe((value) => {
+							this.selectedDay = value;
+							this.selectedDay = this.selectedDay.slice(0,3);
+						})
+					}
 					this.dayValue = this.days.indexOf(this.selectedDay);
 				}
 				if (this.selectedFrequency === this.scanFrequency[2]) {
@@ -418,7 +441,8 @@ export class UiScanScheduleComponent implements OnInit {
 
 	setDefaultValWhenDisabled() {
 		this.selectedFrequency = this.scanFrequency[0]
-		this.selectedDay = this.days[0]
+		// this.selectedDay = this.days[0]
+		this.setDefaultDay(this.days[0]);
 		this.scanTime = {
 			hour: this.hours[11],
 			hourId: 11,
@@ -534,4 +558,52 @@ export class UiScanScheduleComponent implements OnInit {
 			this.requestScanData = {scantype: "Lenovo.Vantage.SmartPerformance.ScheduleScan", ...data,};
 		}
 	}
+
+	selectedDayTranslation() {
+		if(this.selectedDay) {
+			if(this.selectedDay==="Sunday" || this.selectedDay==="Sun") {
+				this.selectedDay="smartPerformance.scanSettings.sun";
+			}
+			if(this.selectedDay==="Monday" || this.selectedDay==="Mon") {
+				this.selectedDay="smartPerformance.scanSettings.mon";
+			}
+			if(this.selectedDay==="Tuesday" || this.selectedDay==="Tue") {
+				this.selectedDay="smartPerformance.scanSettings.tue";
+			}
+			if(this.selectedDay==="Wednesday" || this.selectedDay==="Wed") {
+				this.selectedDay="smartPerformance.scanSettings.wed";
+			}
+			if(this.selectedDay==="Thursday" || this.selectedDay==="Thu") {
+				this.selectedDay="smartPerformance.scanSettings.thurs";
+			}
+			if(this.selectedDay==="Friday" || this.selectedDay==="Fri") {
+				this.selectedDay="smartPerformance.scanSettings.fri";
+			}
+			if(this.selectedDay==="Saturday" || this.selectedDay==="Sat") {
+				this.selectedDay="smartPerformance.scanSettings.sat";
+			}
+		}
+	}
+
+	setDefaultDay(lang) {
+		if(this.sliceDay) {
+			this.translate.stream(lang).subscribe((value) => {
+				this.selectedDay = value;
+				this.selectedDay = this.selectedDay.slice(0,3);
+			})
+		} else{
+			this.selectedDay = this.days[0]
+		}
+	}
+
+	fetchNextScheduleDateTime(){
+		if (this.scheduleScanFrequency !== undefined && this.IsScheduleScanEnabled && !this.IsSmartPerformanceFirstRun) {
+			if (this.isSubscribed) {
+				this.getNextScanRunTime("Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix");
+			} else {
+				this.getNextScanRunTime("Lenovo.Vantage.SmartPerformance.ScheduleScan");
+			}
+		}
+	}
+
 }

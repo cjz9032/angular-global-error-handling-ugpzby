@@ -39,7 +39,7 @@
                     <strong>{{selectedFrequency | translate}}</strong>
                 </div>
                 <div class="status d-flex justify-content-end" >
-                    <p class="mr-3 text-uppercase" *ngIf="frequencyValue === 0 || frequencyValue === 1"><strong>{{selectedDay | slice:0:3}}</strong> | {{scanTime.hour}}:{{scanTime.min}} {{scanTime.amPm}}</p>
+                    <p class="mr-3 text-uppercase" *ngIf="frequencyValue === 0 || frequencyValue === 1"><strong *ngIf="sliceDay">{{selectedDay}}</strong><strong *ngIf="!sliceDay">{{selectedDay | translate}}</strong> | {{scanTime.hour}}:{{scanTime.min}} {{scanTime.amPm}}</p>
                     <p class="mr-3 text-uppercase" *ngIf="frequencyValue === 2"><strong>{{(this.selectedNumber)}}</strong> | {{scanTime.hour}}:{{scanTime.min}} {{scanTime.amPm}}</p>
                     <fa-icon [icon]="['fas', 'chevron-down']"></fa-icon>
                 </div>
