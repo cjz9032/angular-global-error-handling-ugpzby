@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { CommonService } from "../common/common.service";
 import { VantageShellService } from "../vantage-shell/vantage-shell.service";
 import { Subject } from 'rxjs';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
 
 @Injectable({
 	providedIn: "root"
@@ -10,7 +11,7 @@ export class SmartPerformanceService {
 	getSmartPerformance: any;
 	public isShellAvailable = false;
 	scanningStopped = new Subject<boolean>()
-	constructor(shellService: VantageShellService) {
+	constructor(shellService: VantageShellService, private http: HttpClient) {
 		
 		this.getSmartPerformance = shellService.getSmartPerformance();
 		if (this.getSmartPerformance) {
@@ -158,5 +159,14 @@ export class SmartPerformanceService {
 		} catch (error) {
 			throw new Error(error.message);
 		}
+	}
+
+	getPaymentnDetails(serialNumber): Promise<any> {
+		return new Promise(resolve => {
+			const xhr = new XMLHttpRequest();
+			xhr.open('GET', 'http://ditpcsupport.earth.xpaas.lenovo.com/nl/nl/api/v4/upsell/smart/getorders?serialNumber=' + serialNumber, true);
+			xhr.onreadystatechange = () => {if (xhr.readyState === 4 && xhr.status === 200) {  resolve(xhr.responseText); }};
+			xhr.send();
+		  });
 	}
 }
