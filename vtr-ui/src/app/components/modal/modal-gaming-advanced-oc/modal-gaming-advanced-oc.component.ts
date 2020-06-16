@@ -61,10 +61,21 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
   };
 
   modalAutomationId: any = {
-		section: 'advance_oc_warning_dialog',
-		closeButton : 'advance_oc_warning_dialog_close_button',
-		cancelButton: 'advance_oc_warning_dialog_cancel_button',
-		installButton: 'advance_oc_warning_dialog_proceed_button'
+    section: 'save_change_dialog',
+    headerText: 'save_change_dialog_header_text',
+    description: 'save_change_dialog_oc_recovery_description',
+		closeButton : 'save_change_dialog_close_button',
+		cancelButton: 'save_change_dialog_do_not_save_button',
+		okButton: 'save_change_dialog_save_button'
+	}
+
+  defaultModalAutomationId: any = {
+		section: 'set_to_default_dialog',
+		headerText : 'set_to_default_header_text',
+		description : 'set_to_default_description',
+		closeButton : 'set_to_default_close_button',
+		cancelButton: 'set_to_default_cancel_button',
+		okButton: 'set_to_default_ok_button'
 	}
 
   constructor(
@@ -215,6 +226,7 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
         cancelButton : "gaming.dashboard.device.legionEdge.driverPopup.link",
         comfirmButtonAriaLabel : "OK",
         cancelButtonAriaLabel : "CANCEL",
+        id : this.defaultModalAutomationId
     };
     waringModalRef.componentInstance.emitService.subscribe((emmitedValue) => {
       this.logger.info('openSetToDefaultModal emmitedValue',emmitedValue);
@@ -305,5 +317,11 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
         this.metrics.sendMetrics(pageViewMetrics);
       }
     } catch (error) {}
+  }
+
+  public removeSpaces(str: any) {
+    if (str) {
+      return str.replace(/ /g,'_').toLowerCase();
+    }  
   }
 }
