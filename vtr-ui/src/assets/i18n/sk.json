@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Nastavenie tepelného režimu",
                     "thermalMode2SettingDesc": "Vyberte režim, ktorý chcete použiť.",
                     "fnQDesc": "Režim môžete prepínať pomocou klávesovej skratky Fn+Q.",
-                    "perormanceTitle": "Režim vysokého výkonu",
+                    "performanceTitle": "Režim vysokého výkonu",
                     "performanceDesc": "Zvýšte výkon počítača zvýšením otáčok ventilátora a spotreby energie. ",
                     "OCDesc": "Môžete sa rozhodnúť zapnúť funkciu pretaktovania.",
                     "ac_dcDesc": "Režim vysokého výkonu je možné použiť, len ak je pripojený sieťový adaptér.",

@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Lämpö-tila-asetus",
                     "thermalMode2SettingDesc": "Valitse haluamasi tila.",
                     "fnQDesc": "Voit vaihtaa tilaa käyttämällä pikanäppäintä Fn+Q.",
-                    "perormanceTitle": "Suorituskykytila",
+                    "performanceTitle": "Suorituskykytila",
                     "performanceDesc": "Paranna tietokoneesi suorituskykyä korkeammalla tuulettimen nopeudella ja virrankulutuksella. ",
                     "OCDesc": "Voit halutessasi ottaa käyttöön ylikellotustoiminnon.",
                     "ac_dcDesc": "Suorituskykytila on käytettävissä vain, kun verkkolaite on liitetty tietokoneeseen.",

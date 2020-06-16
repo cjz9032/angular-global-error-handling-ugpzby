@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Innstillinger termisk modus",
                     "thermalMode2SettingDesc": "Velg modusen du vil bruke.",
                     "fnQDesc": "Du kan endre modus ved å bruke hurtigtastene Fn+Q.",
-                    "perormanceTitle": "Ytelsesmodus",
+                    "performanceTitle": "Ytelsesmodus",
                     "performanceDesc": "Øk datamaskinens ytelse med høyere viftehastighet og høyere strømforbruk. ",
                     "OCDesc": "Du kan velge å skru på funksjonen for overklokking.",
                     "ac_dcDesc": "Ytelsesmodus er bare tilgjengelig når en strømadapter er koblet til.",

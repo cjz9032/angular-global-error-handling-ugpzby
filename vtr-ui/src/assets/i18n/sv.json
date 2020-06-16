@@ -185,7 +185,7 @@
                     "thermalMode2SettingTitle": "Inst. för temperaturläge",
                     "thermalMode2SettingDesc": "Välj det läge du vill använda.",
                     "fnQDesc": "Du kan växla läge med kortkommandot Fn+Q.",
-                    "perormanceTitle": "Prestandaläge",
+                    "performanceTitle": "Prestandaläge",
                     "performanceDesc": "Öka datorns prestanda med högre fläkthastighet och effektförbrukning. ",
                     "OCDesc": "Du kan välja att slå på överklockningsfunktionen.",
                     "ac_dcDesc": "Prestandaläget går bara att använda när nätadaptern är inkopplad.",

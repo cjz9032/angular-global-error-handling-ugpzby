@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "サーマル・モード設定",
                     "thermalMode2SettingDesc": "使用するモードを選択します。",
                     "fnQDesc": "ショートカット Fn+Q を使用してモードを切り替えることができます。",
-                    "perormanceTitle": "パフォーマンス・モード",
+                    "performanceTitle": "パフォーマンス・モード",
                     "performanceDesc": "ファン速度と電力消費を上げコンピューターのパフォーマンスを向上させます。",
                     "OCDesc": "クロックアップ機能をオンにできます。",
                     "ac_dcDesc": "パフォーマンス・モードは、AC 電源アダプターが接続されている場合にのみ適用できます。",

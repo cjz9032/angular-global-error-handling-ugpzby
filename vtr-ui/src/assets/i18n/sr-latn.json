@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Postavke toplotnog režima",
                     "thermalMode2SettingDesc": "Odaberite režim koji želite da koristite.",
                     "fnQDesc": "Možete prebaciti režim koristeći prečicu Fn+Q.",
-                    "perormanceTitle": "Režim učinka",
+                    "performanceTitle": "Režim učinka",
                     "performanceDesc": "Pojačajte performanse računara pomoću veće brzine ventilatora i veće potrošnje struje. ",
                     "OCDesc": "Možete odabrati da uključite funkciju Overkloking.",
                     "ac_dcDesc": "Režim performansi je primenljiv samo kada je uključen adapter za napajanja na struju.",

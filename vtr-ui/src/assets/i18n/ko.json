@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "열 모드 설정",
                     "thermalMode2SettingDesc": "사용할 모드를 선택합니다.",
                     "fnQDesc": "바로 가기 Fn+Q를 사용해 모드를 전환할 수 있습니다.",
-                    "perormanceTitle": "Performance 모드",
+                    "performanceTitle": "Performance 모드",
                     "performanceDesc": "팬 속도와 전력 소모 수준을 높여 컴퓨터 성능을 향상시킵니다. ",
                     "OCDesc": "오버클럭 기능을 사용하도록 선택할 수 있습니다.",
                     "ac_dcDesc": "Performance 모드는 AC 전원 어댑터가 연결되어 있는 경우에만 적용됩니다.",

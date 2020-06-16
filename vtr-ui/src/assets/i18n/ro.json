@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Setări mod termic",
                     "thermalMode2SettingDesc": "Alegeți modul pe care doriți să îl utilizați.",
                     "fnQDesc": "Puteți comuta modul utilizând comanda rapidă Fn+Q.",
-                    "perormanceTitle": "Mod performanță",
+                    "performanceTitle": "Mod performanță",
                     "performanceDesc": "Măriți performanța computerului crescând viteza ventilatorului și consumul de energie. ",
                     "OCDesc": "Puteți porni funcția Overclocking.",
                     "ac_dcDesc": "Modul Performanță este disponibil numai atunci când este conectat un adaptor de c. a.",

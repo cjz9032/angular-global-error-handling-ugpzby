@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Termál mód beállítása",
                     "thermalMode2SettingDesc": "Válassza ki a használni kívánt módot.",
                     "fnQDesc": "Másik módra az Fn+Q paranccsal válthat.",
-                    "perormanceTitle": "Teljesítményközpontú mód",
+                    "performanceTitle": "Teljesítményközpontú mód",
                     "performanceDesc": "Számítógépe teljesítményének növelése nagyobb ventilátorsebességgel és energiafogyasztással. ",
                     "OCDesc": "Úgy is dönthet, hogy bekapcsolja a Túlpörgetés funkciót.",
                     "ac_dcDesc": "A Teljesítmény mód csak akkor alkalmazható, ha a hálózati adapter csatlakoztatva van.",

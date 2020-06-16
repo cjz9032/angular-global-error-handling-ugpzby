@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Einstellung Wärmemodus",
                     "thermalMode2SettingDesc": "Wählen Sie den gewünschten Modus aus.",
                     "fnQDesc": "Sie können den Modus über die Tastenkombination Fn+Q wechseln.",
-                    "perormanceTitle": "Leistungsmodus",
+                    "performanceTitle": "Leistungsmodus",
                     "performanceDesc": "Steigert die Leistung Ihres Computers. Dies führt zu höherer Lüftergeschwindigkeit und mehr Stromverbrauch. ",
                     "OCDesc": "Sie können die Overclocking-Funktion aktivieren.",
                     "ac_dcDesc": "Der Leistungsmodus kann nur eingesetzt werden, wenn das Netzteil angeschlossen ist.",
