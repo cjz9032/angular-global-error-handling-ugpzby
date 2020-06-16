@@ -140,56 +140,39 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	async getSubscriptionDetails() {
 		const serialNumber = 'PC0ZEPQ5';
 		let subscriptionData = []
-		const subscriptionDetails = await this.smartPerformanceService.getPaymentnDetails(serialNumber);
-		// if (subscriptionDetails) {
-		// 	console.log(JSON.stringify(subscriptionDetails.data));
-		// 	console.log(subscriptionDetails, 'RES');
-		// 	subscriptionData = subscriptionDetails.data
-		// 	console.log(JSON.stringify(subscriptionData));
-		// }
-		// const subscriptionData = [
-		// 	{
-		// 		releaseDate: '2020-06-11T08:25:10.528+0000',
-		// 		createTime: '2020-06-11T08:20:02.323+0000',
-		// 		status: 'COMPLETED',
-		// 		products: [
-		// 			{
-		// 				productCode: '5WS0X58670',
-		// 				productName: 'Smart Performance',
-		// 				productType: 'SmartPerformance',
-		// 				unitTerm: 24
-		// 			}
-		// 		]
-		// 	}
-		// ]
-		// console.log(JSON.stringify(subscriptionDetails.data))
-		// if (subscriptionDetails.data) {
-		// 	const releaseDate = moment(subscriptionData[0].releaseDate);
-		// 	const addUnitTerm = moment(releaseDate).add(subscriptionData[0].products[0].unitTerm, 'M');
-		// 	const expiredDate = moment(addUnitTerm).endOf('month');
-		// 	this.subscriptionDetails = {
-		// 		startDate: this.formatLocaleDate.transform(releaseDate),
-		// 		endDate: this.formatLocaleDate.transform(expiredDate),
-		// 		productNumber: subscriptionData[0].products[0].productCode || ''
-		// 	}
-		// 	this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.subscriptionDetails);
-		// 	this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.activeStatus';
-		// 	this.strStatus = 'ACTIVE';
-		// 	this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
-		// 	this.modalStatus.isOpened = false;
-		// 	this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, this.modalStatus);
-		// 	this.isSubscribed = true;
-		// 	this.subScribeEvent.emit(this.isSubscribed);
+		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails(serialNumber);
+		if (subscriptionDetails) {
+			subscriptionData = subscriptionDetails.data;
+			if (subscriptionData) {
+				const releaseDate = new Date(subscriptionData[0].releaseDate);
+				releaseDate.setMonth(releaseDate.getMonth() + +subscriptionData[0].products[0].unitTerm);
+				releaseDate.setDate(releaseDate.getDate() - 1);
+				this.subscriptionDetails = {
+					startDate: this.formatLocaleDate.transform(subscriptionData[0].releaseDate),
+					endDate: this.formatLocaleDate.transform(releaseDate.toLocaleDateString()),
+					productNumber: subscriptionData[0].products[0].productCode || ''
+				}
+				this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.subscriptionDetails);
+				this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.activeStatus';
+				this.strStatus = 'ACTIVE';
+				this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
+				this.modalStatus.isOpened = false;
+				this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, this.modalStatus);
+				this.isSubscribed = true;
+				this.subScribeEvent.emit(this.isSubscribed);
 
-		// } else {
-		// 	this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.processStatus';
-		// 	this.strStatus = 'PROCESSING';
-		// 	const currentTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
-		// 	setTimeout(() => {
-		// 		if (this.intervalTime < currentTime) {
-		// 			this.getSubscriptionDetails()
-		// 		}
-		// 	}, 30000);
-		// }
+			} else {
+				this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.processStatus';
+				this.strStatus = 'PROCESSING';
+				const currentTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
+				setTimeout(() => {
+					if (this.intervalTime < currentTime) {
+						this.getSubscriptionDetails()
+					}
+				}, 30000);
+			}
+		}
+
 	}
+
 }

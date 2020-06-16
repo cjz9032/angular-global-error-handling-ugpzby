@@ -161,11 +161,11 @@ export class SmartPerformanceService {
 		}
 	}
 
-	getPaymentnDetails(serialNumber): Promise<any> {
+	getPaymentDetails(serialNumber): Promise<any> {
 		return new Promise(resolve => {
 			const xhr = new XMLHttpRequest();
 			xhr.open('GET', 'http://ditpcsupport.earth.xpaas.lenovo.com/nl/nl/api/v4/upsell/smart/getorders?serialNumber=' + serialNumber, true);
-			xhr.onreadystatechange = () => {if (xhr.readyState === 4 && xhr.status === 200) {  resolve(xhr.responseText); }};
+			xhr.onreadystatechange = () => {if (xhr.readyState === 4 && xhr.status === 200) {  resolve(JSON.parse(xhr.responseText)); }};
 			xhr.send();
 		  });
 	}
