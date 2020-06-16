@@ -1,0 +1,26 @@
+<div class="vtr-widget-location-status">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col location-disable-background">
+				<div class="d-flex w-100 hidden-if-overflow">
+					<div class="location-disable-icon">
+						<fa-icon [icon]="['fal', 'map-marker-alt-slash']" class="icon"></fa-icon>
+					</div>
+					<div class="location-disable-content">
+						<div class="title">{{title}}</div>
+						<div class="subtitle" *ngIf="isSubtitleVisible" [innerHTML]="subtitle">
+						</div>
+					</div>
+				</div>
+				<div class="d-flex button-row" *ngIf="isButtonVisible">
+					<vtr-ui-button [ngClass]="{'disable': locationPermission?.isLoading}" metricsItem="enableLocation"
+						metricsEvent="featureClick" (onClick)="enableLocation($event)"
+						[isDisabled]="locationPermission?.isLoading" [linkId]="linkId" [label]="buttonText">
+					</vtr-ui-button>
+				</div>
+				<div class="description hidden-if-overflow" *ngIf="isDescriptionVisible" [innerHTML]="description">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

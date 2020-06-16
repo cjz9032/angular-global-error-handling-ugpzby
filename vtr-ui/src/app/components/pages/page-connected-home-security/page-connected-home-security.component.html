@@ -10,7 +10,20 @@
 		<div class="container-fluid">
 			<div class="row"
 				*ngIf="account?.state !== 'local'">
-				<div class="col-12 px-0 pb-20 pt-0">
+				<div class="location" [hidden]="locationPermission?.isLocationServiceOn">
+					<vtr-widget-location-status linkId="chs-btn-enableLocation"
+						[title]="'security.homeprotection.homesecurity.offlineInfo.title' | translate"
+						[isSubtitleVisible]="true"
+						[isButtonVisible]="true"
+						(buttonClick)="dialogService?.openCHSPermissionModal(locationPermission)"
+						[subtitle]="'security.homeprotection.homesecurity.offlineInfo.subtitle' | translate"
+						[buttonText]="'security.homeprotection.homesecurity.offlineInfo.buttonText' | translate"
+						[isDescriptionVisible]="true"
+						[description]="'security.homeprotection.homesecurity.offlineInfo.howToEnableLocation' | translate"
+						>
+					</vtr-widget-location-status>
+				</div>
+				<div class="col-12 px-0 pb-20 pt-0" [hidden]="!locationPermission?.isLocationServiceOn">
 					<vtr-home-security-after-signup [allDevices]="allDevicesInfo"
 						[account]="account"
 						[common]="common"

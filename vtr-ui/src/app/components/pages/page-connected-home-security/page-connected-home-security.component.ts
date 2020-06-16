@@ -6,12 +6,12 @@ import {
 	AfterViewInit
 } from '@angular/core';
 import {
-	EventTypes, 
-	ConnectedHomeSecurity, 
-	PluginMissingError, 
-	CHSAccountState, 
-	WifiSecurity, 
-	DevicePosture, 
+	EventTypes,
+	ConnectedHomeSecurity,
+	PluginMissingError,
+	CHSAccountState,
+	WifiSecurity,
+	DevicePosture,
 	CHSDeviceOverview,
 	DeviceCondition
 } from '@lenovo/tan-client-bridge';
@@ -143,19 +143,9 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		if (location) {
 			this.devicePosture.getDevicePosture();
 			this.commonService.setSessionStorageValue(SessionStorageKey.ChsLocationDialogNextShowFlag, true);
-		} else if (!location
-			&& this.commonService.getSessionStorageValue(SessionStorageKey.ChsLocationDialogNextShowFlag, false)
-			&& this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, false)) {
-			setTimeout(() => {
-				if (this.chs.account.state !== CHSAccountState.local) {
-					const openPermissionModal = this.dialogService.openCHSPermissionModal(this.locationPermission);
-					if (openPermissionModal) {
-						openPermissionModal.result.then(() => {
-							this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'finish');
-						});
-					}
-				}
-			}, 0);
+			if (!this.isOnline) {
+				this.dialogService.homeSecurityOfflineDialog();
+			}
 		}
 		this.updateHomeSecurityLocationModel();
 	};
@@ -204,7 +194,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			if (showPluginMissingDialog === 'notShow') {
 				const showWelcomeDialog = this.commonService.getSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog);
 				if (showWelcomeDialog === 'notShow' || showWelcomeDialog === 'finish') {
-					if (!this.isOnline && this.isOnline !== cacheIsOnline) {
+					if (!this.isOnline && this.isOnline !== cacheIsOnline && (this.locationPermission.isLocationServiceOn || this.account.state === CHSAccountState.local)) {
 						this.dialogService.homeSecurityOfflineDialog();
 					}
 					cacheIsOnline = this.isOnline;
@@ -345,9 +335,6 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 					this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'notShow');
 					return;
 				}
-				this.dialogService.openCHSPermissionModal(this.locationPermission).result.then(() => {
-					this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'finish');
-				})
 			} else {
 				this.dialogService.openWelcomeModal(showWelcome, this.locationPermission).result.then(() => {
 					this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'finish');

@@ -2,6 +2,10 @@
 
 ::ng-deep {
 	.vtr-page-connected-home-security {
+		.location {
+			width: 100% !important;
+		}
+
 		.vtr-security-health {
 			border-radius: $border_radius;
 			background-color: $light;
@@ -117,5 +121,12 @@
 	}
 	.bottom-content {
 		margin-bottom: 2rem;
+	}
+
+	.stay-at-botom{
+		width: 100%;
+		padding-right: 5.6rem;
+		position: absolute;
+		top: calc(60vh);
 	}
 }
