@@ -22,6 +22,13 @@
 		right: 0%;
 	}
 
+	@media #{$black-on-white} {
+		border: 0.1rem solid $dark;
+	}
+	@media #{$white-on-black} {
+		border: 0.1rem solid $light;
+	}
+
 	.beta {
 		font-size: 1rem;
 		color: rgb(146, 229, 255);
@@ -176,11 +183,11 @@
 						height: 100%;
 
 						@media #{$black-on-white} {
-							border-bottom: $gaming_lightest solid 0.5rem;
+							border-bottom: $light solid 0.5rem;
 						}
 
 						@media #{$white-on-black} {
-							border-bottom: $gaming_darkest solid 0.5rem;
+							border-bottom: $dark solid 0.5rem;
 						}
 
 						/*@media #{$mediaquery_7} {
@@ -213,11 +220,13 @@
 							border-bottom: $menu_hover solid 0.5rem;
 
 							@media #{$black-on-white} {
-								border-bottom: $gaming_darkest solid 0.5rem;
+								border-bottom: $high-contrast-white-dark-magenta solid 0.5rem;
+								@include high-contrast-white-text-color;
 							}
 
 							@media #{$white-on-black} {
-								border-bottom: $gaming_lightest solid 0.5rem;
+								border-bottom: $high-contrast-black-cyan solid 0.5rem;
+								@include high-contrast-black-text-color;
 							}
 
 							.fa-icon {
@@ -257,10 +266,26 @@
 								height: 4.6rem;
 								border-radius: 2.3rem;
 								background-color: $main_darker;
+								@media #{$black-on-white} {
+									border: 0.1rem solid $dark;
+								}
+
+								@media #{$white-on-black} {
+									border: 0.1rem solid $light;
+								}
 							}
 						}
 						&:focus {
 							outline: 0;
+						}
+						&:hover, &:focus {
+							@media #{$black-on-white} {
+								@include high-contrast-white-text-color;
+							}
+
+							@media #{$white-on-black} {
+								@include high-contrast-black-text-color;
+							}
 						}
 					}
 
@@ -273,11 +298,15 @@
 						transform: translateX(0%);
 
 						@media #{$black-on-white} {
-							background: $high-contrast-grey;
+							background: $light;
+							box-shadow: none;
+							filter: drop-shadow(0 0 0.1rem $dark);
 						}
 
 						@media #{$white-on-black} {
-							background: $high-contrast-grey;
+							background: $dark;
+							box-shadow: none;
+							filter: drop-shadow(0 0 0.1rem $light);
 						}
 
 						//left: 50%;
@@ -308,11 +337,11 @@
 								z-index: 0;
 
 								@media #{$black-on-white} {
-									color: $high-contrast-grey;
+									color: $light;
 								}
 
 								@media #{$white-on-black} {
-									color: $high-contrast-grey;
+									color: $dark;
 								}
 							}
 						}
@@ -335,12 +364,24 @@
 
 								&:hover {
 									color: $menu_hover;
+									@media #{$black-on-white} {
+										@include high-contrast-white-text-color;
+									}
+									@media #{$white-on-black} {
+										@include high-contrast-black-text-color;
+									}
 								}
 							}
 
 							&.link-active {
 								color: $main;
 								font-weight: bold;
+								@media #{$black-on-white} {
+									@include high-contrast-white-text-color;
+								}
+								@media #{$white-on-black} {
+									@include high-contrast-black-text-color;
+								}
 								&:focus {
 									outline: 0;
 								}
@@ -387,8 +428,14 @@
 								transform: rotate(45deg);
 								right: 1.2rem;
 								top: 3.8rem;
-								@include dropdownarrow-blue-white;
-								@include dropdownarrow-yellow-black;
+
+								@media #{$black-on-white} {
+									@include dropdown-arrow-blue-white;
+								}
+
+								@media #{$white-on-black} {
+									@include dropdown-arrow-yellow-black;
+								}
 							}
 
 							&::before {
@@ -401,19 +448,42 @@
 								transform: rotate(135deg);
 								right: 2rem;
 								top: 3.8rem;
-								@include dropdownarrow-blue-white;
-								@include dropdownarrow-yellow-black;
+
+								@media #{$black-on-white} {
+									@include dropdown-arrow-blue-white;
+								}
+
+								@media #{$white-on-black} {
+									@include dropdown-arrow-yellow-black;
+								}
 							}
+
+							&:hover::after, &:hover::before, &.active::after, &.active::before {
+								@media #{$black-on-white} {
+									@include high-contrast-white-background;
+								}
+
+								@media #{$white-on-black} {
+									@include high-contrast-black-background;
+								}
+							}
+
 
 							&.user {
 								padding-right: 5.2rem;
 
 								@media #{$black-on-white} {
-									background: $high-contrast-grey;
+									background: $light;
+									color: $dark;
+									border-left: 0.1rem solid $dark;
+									border-right: 0.1rem solid $dark;
 								}
 
 								@media #{$white-on-black} {
-									background: $high-contrast-grey;
+									background: $dark;
+									color: $light;
+									border-left: 0.1rem solid $light;
+									border-right: 0.1rem solid $light;
 								}
 
 								@media #{$mediaquery_9} {
@@ -460,10 +530,25 @@
 							z-index: 1;
 							height: auto;
 
+							@media #{$black-on-white} {
+								border-left: 0.5rem solid $light;
+							}
+
+							@media #{$white-on-black} {
+								border-left: 0.5rem solid $dark;
+							}
 
 							&.active {
 								border-bottom: none;
 								border-left: $menu_hover solid 0.5rem;
+
+								@media #{$black-on-white} {
+									border-left: 0.5rem solid $high-contrast-white-dark-magenta;
+								}
+
+								@media #{$white-on-black} {
+									border-left: 0.5rem solid $high-contrast-black-cyan;
+								}
 
 								.fa-icon {
 									color: $main;
@@ -523,6 +608,15 @@
 								&.menu-pointer {
 									display: none;
 								}
+							}
+							@media #{$black-on-white} {
+								background: transparent;
+								filter: none;
+							}
+
+							@media #{$white-on-black} {
+								background: transparent;
+								filter: none;
 							}
 						}
 						&:nth-last-child(5) {

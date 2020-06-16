@@ -73,26 +73,116 @@
 			&::before {
 				border: 0;
 				background: $input-checked-background;
-				
-				@include high-contrast-white-toggle-enabled;
-				@include high-contrast-black-toggle-enabled;
+
+				@media #{$black-on-white} {
+					@include high-contrast-white-background;
+				}
+
+				@media #{$white-on-black} {
+					@include high-contrast-black-background;
+				}
 			}
 			&::after {
 				background-color: $light;
 				transform: translateX(24px);
-				
+
+			}
+			&:hover::before {
+				@media #{$black-on-white} {
+					background: $light;
+					@include high-contrast-white-border;
+				}
+
+				@media #{$white-on-black} {
+					background: $dark;
+					@include high-contrast-black-border;
+				}
+			}
+			&:hover::after {
+				@media #{$black-on-white} {
+					@include high-contrast-white-background;
+				}
+
+				@media #{$white-on-black} {
+					@include high-contrast-black-background;
+				}
+			}
+			&:active::before {
+				@media #{$black-on-white} {
+					@include high-contrast-white-background;
+					border: none;
+				}
+
+				@media #{$white-on-black} {
+					@include high-contrast-black-background;
+					border: none;
+				}
+			}
+			&:active::after {
+				@media #{$black-on-white} {
+					background: $light;
+				}
+
+				@media #{$white-on-black} {
+					background: $dark;
+				}
 			}
 		}
 		.custom-control-input:not(:checked) ~ .custom-control-label {
 			&::before {
 				border-color: $grey_darker;
 				background-color: $grey_light;
-				
+
 			}
 			&::after {
 				background-color: $grey_darker;
-				@include high-contrast-white-toggle-disabled;
-				@include high-contrast-black-toggle-disabled;
+
+				@media #{$black-on-white} {
+					background: $dark;
+				}
+
+				@media #{$white-on-black} {
+					background: $light;
+				}
+			}
+
+			&:hover::before {
+				@media #{$black-on-white} {
+					@include high-contrast-white-border;
+				}
+
+				@media #{$white-on-black} {
+					@include high-contrast-black-border;
+				}
+			}
+			&:hover::after {
+				@media #{$black-on-white} {
+					@include high-contrast-white-background;
+				}
+
+				@media #{$white-on-black} {
+					@include high-contrast-black-background;
+				}
+			}
+			&:active::before {
+				@media #{$black-on-white} {
+					@include high-contrast-white-background;
+					border: none;
+				}
+
+				@media #{$white-on-black} {
+					@include high-contrast-black-background;
+					border: none;
+				}
+			}
+			&:active::after {
+				@media #{$black-on-white} {
+					background: $light;
+				}
+
+				@media #{$white-on-black} {
+					background: $dark;
+				}
 			}
 		}
 
@@ -102,14 +192,14 @@
 				background: $grey_light;
 				opacity: 0.8;
 				border: $grey_darker solid 1px;
-				
+
 				@media #{$black-on-white} {
-					background: $high-contrast-white-disabled-maroon;
-					border-color: $high-contrast-white-disabled-maroon;
+					@include high-contrast-white-background-disabled;
+					@include high-contrast-white-disabled-border;
 				}
 				@media #{$white-on-black} {
-					background: $high-contrast-black-disabled-green;
-					border-color: $high-contrast-black-disabled-green;
+					@include high-contrast-black-background-disabled;
+					@include high-contrast-black-disabled-border;
 				}
 			}
 			&::after {
@@ -121,7 +211,7 @@
 				@media #{$white-on-black} {
 					background: $dark;
 				}
-				
+
 			}
 		}
 	}
@@ -129,5 +219,27 @@
 	vtr-spinner {
 		font-size: 2rem !important;
 		color: $menu_hover;
+	}
+}
+
+@mixin toggle-on-off-active-before {
+	@media #{$black-on-white} {
+		@include high-contrast-white-background;
+		border: none;
+	}
+
+	@media #{$white-on-black} {
+		@include high-contrast-black-background;
+		border: none;
+	}
+}
+
+@mixin toggle-on-off-active-after {
+	@media #{$black-on-white} {
+		background: $light;
+	}
+
+	@media #{$white-on-black} {
+		background: $dark;
 	}
 }
