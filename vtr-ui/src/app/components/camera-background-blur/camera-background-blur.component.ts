@@ -30,7 +30,7 @@ export class CameraBackgroundBlurComponent implements OnInit, OnChanges {
 				value: this.BLUR,
 				isChecked: this.option.currentMode.toLowerCase() === this.BLUR.toLowerCase(),
 				isDisabled: false,
-				metricsValue: `radio.${this.BLUR}`
+				metricsItem: `radio.camera-blur.${this.BLUR}`
 			},
 			{
 				componentId: 'radio2',
@@ -38,7 +38,7 @@ export class CameraBackgroundBlurComponent implements OnInit, OnChanges {
 				value: this.COMIC,
 				isChecked: this.option.currentMode.toLowerCase() === this.COMIC.toLowerCase(),
 				isDisabled: false,
-				metricsValue: `radio.${this.COMIC}`
+				metricsItem: `radio.camera-blur.${this.COMIC}`
 			},
 			{
 				componentId: 'radio3',
@@ -46,7 +46,7 @@ export class CameraBackgroundBlurComponent implements OnInit, OnChanges {
 				value: this.SKETCH,
 				isChecked: this.option.currentMode.toLowerCase() === this.SKETCH.toLowerCase(),
 				isDisabled: false,
-				metricsValue: `radio.${this.SKETCH}`
+				metricsItem: `radio.camera-blur.${this.SKETCH}`
 			}];
 		}
 	}

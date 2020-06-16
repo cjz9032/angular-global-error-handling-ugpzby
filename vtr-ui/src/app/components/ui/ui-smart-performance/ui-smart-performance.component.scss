@@ -206,7 +206,7 @@
 				}
 				.pc-status-info{
 					margin-left: 2rem;
-					.info-text{
+					.info-text{						
 						color: $alt;
 						margin-top: 1.8rem;
 						margin-bottom: 0rem;
@@ -220,6 +220,8 @@
 							width: calc(60.5% - 2rem);
 						}
 						span{
+							background: $grey_lighter;
+							padding:0rem 0.2rem;
 							position: relative;
 							z-index: 9;
 						}

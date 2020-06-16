@@ -46,7 +46,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		value: this.AUTOMATIC_MODE,
 		isChecked: this.checkbox === true ? true : false,
 		isDisabled: !this.smartStandby.isEnabled,
-		metricsValue: 'radio.automatic-mode'
+		metricsItem: 'radio.smart-standby.automatic-mode'
 	},
 	{
 		componentId: 'Manual mode',
@@ -54,7 +54,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		value: this.MANUAL_MODE,
 		isChecked: this.checkbox !== true ? true : false,
 		isDisabled: !this.smartStandby.isEnabled,
-		metricsValue: 'radio.manual-mode'
+		metricsItem: 'radio.smart-standby.manual-mode'
 	}];
 
 	constructor(
