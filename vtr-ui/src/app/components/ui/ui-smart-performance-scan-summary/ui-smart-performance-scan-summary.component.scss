@@ -1068,9 +1068,16 @@ vtr-ui-smart-performance-scan-summary {
 				b {
 					font-size: $fontsize_xs2;
 					font-weight: $weight_bold;
-
 					@media #{$breakpoint_xl} {
 						font-size: 1.1rem;
+					}
+					@media #{$breakpoint_md} {
+						font-size: 1.1rem;
+						max-width: 13.5rem;
+						white-space: nowrap;
+						text-overflow: ellipsis;
+						overflow-x: hidden;
+						display: inline-block;
 					}
 				}
 			}
