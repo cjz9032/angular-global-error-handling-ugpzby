@@ -1275,7 +1275,8 @@
                             "description1": "バッテリーのカスタム充電を有効にすると、バッテリー状態がより長期間良好に保たれる可能性が高くなります。ただし、フル充電したときよりバッテリー持ち時間は短くなります。",
                             "description2": "この機能を完全に有効にするには、ACアダプターを抜き、充電停止しきい値以下までバッテリーを放電してください。",
                             "enable": "有効にする",
-                            "cancel": "キャンセル"
+                            "cancel": "キャンセル",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "次の時点を下回った場合に充電を開始",

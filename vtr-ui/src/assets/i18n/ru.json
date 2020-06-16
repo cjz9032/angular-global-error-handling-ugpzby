@@ -1275,7 +1275,8 @@
                             "description1": "Включение функции пользовательской зарядки аккумулятора позволяет увеличить общее время его работоспособности при использовании этого устройства.Однако при неполной зарядке аккумулятора время его автономной работы уменьшается.",
                             "description2": "Чтобы полностью включить эту функцию, отключите компьютер от сети переменного тока идайте аккумулятору разрядиться до порогового уровня прекращения зарядки или ниже его.",
                             "enable": "ВКЛЮЧИТЬ",
-                            "cancel": "ОТМЕНА"
+                            "cancel": "ОТМЕНА",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Начинать зарядку при уровне ниже",

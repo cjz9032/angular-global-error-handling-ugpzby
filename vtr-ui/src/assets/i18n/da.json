@@ -1275,7 +1275,8 @@
                             "description1": "Ved at bruge tilpasset opladning af batteriet kan du forlænge den samlede batterilevetid, mens du bruger enheden.Når batteriet ikke lades helt op, vil batteriets driftstid dog være kortere.",
                             "description2": "For at aktivere denne funktion fuldt ud skal du tage maskinens strømstik ud oglade batteriet aflade til under den grænse, hvor enheden stopper med at oplade.",
                             "enable": "AKTIVÉR",
-                            "cancel": "ANNULLER"
+                            "cancel": "ANNULLER",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Start opladning, når under",

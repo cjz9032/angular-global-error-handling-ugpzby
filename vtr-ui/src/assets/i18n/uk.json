@@ -1275,7 +1275,8 @@
                             "description1": "Якщо налаштувати граничне значення заряджання акумулятора, акумулятор він довше залишатиметься в хорошому стані.Проте через неповний заряд ваш пристрій працюватиме від акумулятора протягом меншого часу.",
                             "description2": "Щоб повністю ввімкнути цю функцію, відключіть комп'ютер від електромережі тадайте акумулятору розрядитися до граничного значення або сильніше.",
                             "enable": "УВІМКНУТИ",
-                            "cancel": "СКАСУВАТИ"
+                            "cancel": "СКАСУВАТИ",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Розпочати заряджання, коли рівень заряду буде нижче",

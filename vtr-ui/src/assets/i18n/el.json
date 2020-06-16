@@ -1275,7 +1275,8 @@
                             "description1": "Η ενεργοποίηση μιας προσαρμοσμένης φόρτισης μπαταρίας θα επιτρέψει τη συνολική εύρυθμη λειτουργία της μπαταρίας να διαρκέσει περισσότερο καθώς χρησιμοποιείτε αυτήν τη συσκευή.Ωστόσο, η μη πλήρης φόρτιση θα επιφέρει μικρότερη διάρκεια της εύρυθμης λειτουργίας της μπαταρίας.",
                             "description2": "Για να ενεργοποιήσετε πλήρως αυτήν τη δυνατότητα, αποσυνδέστε το μηχάνημά σας καιαφήστε τη μπαταρία σας να εξαντληθεί στο όριο φόρτισης ή κάτω απ' αυτό.",
                             "enable": "ΕΝΕΡΓΟΠΟΙΗΣΗ",
-                            "cancel": "ΑΚΥΡΟ"
+                            "cancel": "ΑΚΥΡΟ",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Έναρξη φόρτισης όταν είναι κάτω από",

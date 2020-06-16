@@ -1275,7 +1275,8 @@
                             "description1": "사용자 지정 배터리 충전을 사용하면 이 장치를 사용할 때 전체 배터리 상태가 더 오래 지속될 수 있습니다.그러나 완전 충전을 하지 않으면, 런타임 배터리 수명이 줄어듭니다.",
                             "description2": "이 기능을 완벽하게 사용하려면, 컴퓨터 플러그를 뽑고충전 중지 임계값 이하로 배터리를 방전하십시오.",
                             "enable": "사용",
-                            "cancel": "취소"
+                            "cancel": "취소",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "충전 시작 기준",
