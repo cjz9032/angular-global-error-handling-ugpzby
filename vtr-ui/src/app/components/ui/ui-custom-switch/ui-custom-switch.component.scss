@@ -73,55 +73,26 @@
 			&::before {
 				border: 0;
 				background: $input-checked-background;
-				@media #{$high-contrast} {
-					background: $highlight_bright;
-				}
-				@media #{$black-on-white} {
-					background: $high-contrast-white-textselected;
-				}
-				@media #{$white-on-black} {
-					background: $highlight_bright;
-				}
+				
+				@include high-contrast-white-toggle-enabled;
+				@include high-contrast-black-toggle-enabled;
 			}
 			&::after {
 				background-color: $light;
 				transform: translateX(24px);
-				@media #{$high-contrast} {
-					background: $dark;
-				}
-				@media #{$black-on-white} {
-					background: $light;
-				}
-				@media #{$white-on-black} {
-					background: $dark;
-				}
+				
 			}
 		}
 		.custom-control-input:not(:checked) ~ .custom-control-label {
 			&::before {
 				border-color: $grey_darker;
 				background-color: $grey_light;
-				@media #{$high-contrast} {
-					background:$light;
-				}
-				@media #{$black-on-white} {
-					background: $dark;
-				}
-				@media #{$white-on-black} {
-					background:$light;
-				}
+				
 			}
 			&::after {
 				background-color: $grey_darker;
-				@media #{$high-contrast} {
-					background: $dark;
-				}
-				@media #{$black-on-white} {
-					background: $light;
-				}
-				@media #{$white-on-black} {
-					background: $dark;
-				}
+				@include high-contrast-white-toggle-disabled;
+				@include high-contrast-black-toggle-disabled;
 			}
 		}
 
@@ -131,10 +102,26 @@
 				background: $grey_light;
 				opacity: 0.8;
 				border: $grey_darker solid 1px;
+				
+				@media #{$black-on-white} {
+					background: $high-contrast-white-disabled-maroon;
+					border-color: $high-contrast-white-disabled-maroon;
+				}
+				@media #{$white-on-black} {
+					background: $high-contrast-black-disabled-green;
+					border-color: $high-contrast-black-disabled-green;
+				}
 			}
 			&::after {
 				background-color: $grey_darker;
 				opacity: 0.4;
+				@media #{$black-on-white} {
+					background: $light;
+				}
+				@media #{$white-on-black} {
+					background: $dark;
+				}
+				
 			}
 		}
 	}

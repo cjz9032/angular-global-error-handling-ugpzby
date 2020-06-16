@@ -635,3 +635,38 @@ $high-contrast-white-disabled-maroon: #610000;
 	color: $high-contrast-white-disabled-maroon;
 }
 
+@mixin  high-contrast-white-toggle-enabled{
+@media #{$black-on-white} {
+	background: $high-contrast-white-dark-magenta;
+}
+}
+
+@mixin  high-contrast-black-toggle-enabled{
+@media #{$white-on-black} {
+	background: $high-contrast-black-cyan;
+}
+}
+
+@mixin high-contrast-white-toggle-disabled{
+@media #{$black-on-white} {
+	background: $dark;
+}
+}
+
+@mixin high-contrast-black-toggle-disabled{
+@media #{$white-on-black} {
+	background: $light;
+}
+}
+
+@mixin high-contrast-white-rectangleradio-enabled{
+@media #{$black-on-white} {
+	background-color: $high-contrast-white-dark-magenta;
+}
+}
+
+@mixin  high-contrast-black-rectangleradio-enabled{
+@media #{$white-on-black} {
+	background-color: $high-contrast-black-cyan;
+}	
+}
