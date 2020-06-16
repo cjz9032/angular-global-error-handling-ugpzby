@@ -37,24 +37,18 @@ export class UiScanScheduleComponent implements OnInit {
 	selectedDay: any;
 	selectedNumber: any;
 	scanFrequency: any = [
-		this.translate.instant(
-			"smartPerformance.scanSettings.scanFrequencyWeek"
-		),
-		this.translate.instant(
-			"smartPerformance.scanSettings.scanFrequencyEveryWeek"
-		),
-		this.translate.instant(
-			"smartPerformance.scanSettings.scanFrequencyMonth"
-		),
+		"smartPerformance.scanSettings.scanFrequencyWeek",
+		"smartPerformance.scanSettings.scanFrequencyEveryWeek",
+		"smartPerformance.scanSettings.scanFrequencyMonth"
 	];
 	days: any = [
-		this.translate.instant("smartPerformance.scanSettings.sun"),
-		this.translate.instant("smartPerformance.scanSettings.mon"),
-		this.translate.instant("smartPerformance.scanSettings.tue"),
-		this.translate.instant("smartPerformance.scanSettings.wed"),
-		this.translate.instant("smartPerformance.scanSettings.thu"),
-		this.translate.instant("smartPerformance.scanSettings.fri"),
-		this.translate.instant("smartPerformance.scanSettings.sat"),
+		"smartPerformance.scanSettings.sun",
+		"smartPerformance.scanSettings.mon",
+		"smartPerformance.scanSettings.tue",
+		"smartPerformance.scanSettings.wed",
+		"smartPerformance.scanSettings.thu",
+		"smartPerformance.scanSettings.fri",
+		"smartPerformance.scanSettings.sat",
 	];
 	dates: any = ["1", "2", "3", "4", "5", "6", "7",
 		"8", "9", "10", "11", "12", "13", "14", "15",
@@ -98,6 +92,17 @@ export class UiScanScheduleComponent implements OnInit {
 	isFirstVisit: boolean
 
 	ngOnInit() {
+		this.scanFrequency.forEach(sf => {
+			this.translate.stream(sf).subscribe((value) => {
+				sf = value;
+			});
+		});
+
+		this.days.forEach(d => {
+			this.translate.stream(d).subscribe((value) => {
+				d = value;
+			});
+		});
 		this.isDaySelectionEnable = false;
 		this.enumLocalScanFrequncy = enumScanFrequency;
 

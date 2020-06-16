@@ -36,7 +36,7 @@
                 <div class="item d-flex">
                     <span class="icomoon icomoon-calendar"></span>
                     <!-- <strong>{{'smartPerformance.scanCompletePage.Onceaweek' |translate }}</strong> -->
-                    <strong>{{selectedFrequency}}</strong>
+                    <strong>{{selectedFrequency | translate}}</strong>
                 </div>
                 <div class="status d-flex justify-content-end" >
                     <p class="mr-3 text-uppercase" *ngIf="frequencyValue === 0 || frequencyValue === 1"><strong>{{selectedDay | slice:0:3}}</strong> | {{scanTime.hour}}:{{scanTime.min}} {{scanTime.amPm}}</p>
@@ -61,7 +61,7 @@
                 </div>
                 <a class="status d-flex justify-content-end" (click)="openScanScheduleDropDown(1)">
                     <!-- <p class="mr-3">{{selectedFrequency}}</p> -->
-                    {{selectedFrequency}}
+                    {{selectedFrequency | translate}}
                     <span class="ml-3">
                         <fa-icon  *ngIf="scheduleTab != 1"
                         [icon]="['fas', 'chevron-down']"></fa-icon>
@@ -71,7 +71,7 @@
                 </a>
                 <div *ngIf="scheduleTab === 1" class="freq-dropdown">
                     <div *ngFor="let freq of scanFrequency;let ind=index" class="frequency-text"
-                        (click)="changeScanFrequency(ind)" [ngClass]="{'selected-frequency':frequencyValue === ind}">{{freq}}</div>
+                        (click)="changeScanFrequency(ind)" [ngClass]="{'selected-frequency':frequencyValue === ind}">{{freq | translate}}</div>
                 </div>
             </li>
 
@@ -102,7 +102,7 @@
                 </div>
                 <a class="status d-flex justify-content-end" (click)="openScanScheduleDropDown(3)">
                     <!-- <p class="mr-3">{{selectedDay}}</p> -->
-                    {{selectedDay}}
+                    {{selectedDay| translate}}
                     <span class="ml-3">
                         <fa-icon *ngIf="scheduleTab != 3" [icon]="['fas', 'chevron-down']"
                         ></fa-icon>
@@ -112,7 +112,7 @@
                 </a>
                 <div *ngIf="scheduleTab === 3" class="day-dropdown">
                     <div *ngFor="let day of days;let ind=index"
-                        (click)="changeScanDay(ind)" class="days-text" [ngClass]="{'selected-day':dayValue === ind}">{{day}}</div>
+                        (click)="changeScanDay(ind)" class="days-text" [ngClass]="{'selected-day':dayValue === ind}">{{day | translate}}</div>
                 </div>
             </li>
             <li class="d-flex justify-content-between">
