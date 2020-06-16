@@ -177,7 +177,6 @@
                         "cpuOCTip123": "Nastavte maximální násobič jádra, při kterém mohou jádra fungovat. Hodnota frekvence jádra je produktem tohoto poměru a referenční frekvence taktu.",
                         "cpuOCTip124": "Nastavte maximální násobič jádra, při kterém mohou jádra fungovat. Hodnota frekvence jádra je produktem tohoto poměru a referenční frekvence taktu.",
                         "cpuOCTip125": "Nastavte maximální násobič jádra, při kterém mohou jádra fungovat. Hodnota frekvence jádra je produktem tohoto poměru a referenční frekvence taktu.",
-                        
                         "cpuOCTip102": "Nastavte ICCMAX pro regulátor napětí jádra procesoru.",
                         "cpuOCTip106": "Nastavte ICCMAX pro regulátor napětí mezipaměti a sběrnice Ring Bus procesoru.",
                         "cpuOCTip114": "Chcete-li odvodit limit poměru aktivního jádra, když je AVX aktivní, odečtěte tuto hodnotu od odpovídajícího limitu poměru aktivního jádra."
@@ -1767,7 +1766,8 @@
                             "title": "Restartujte počítač",
                             "description": "V případě změny funkce horní řady kláves je nutno počítač restartovat, aby se změny projevily. Skutečně chcete restartovat?",
                             "reboot": "RESTARTOVAT",
-                            "cancel": "TEĎ NE"
+                            "cancel": "TEĎ NE",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Pomocí podržení klávesy Fn a stisknutí jedné z kláves v horní řadě aktivujete jejich funkce F1-F12.",
@@ -3286,7 +3286,8 @@
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+            "processStatus": "PROCESSING"
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3771,7 +3772,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

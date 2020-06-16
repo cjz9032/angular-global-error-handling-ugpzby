@@ -19,6 +19,10 @@ import { MetricService } from '../../../../../services/metric/metrics.service';
 import { FlipToBootCurrentModeEnum, FlipToBootErrorCodeEnum, FlipToBootSetStatusEnum, FlipToBootSupportedEnum } from '../../../../../services/power/flipToBoot.enum';
 import { FlipToBootSetStatus } from '../../../../../services/power/flipToBoot.interface';
 import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ModalBatteryChargeThresholdComponent } from 'src/app/components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
+import { UiCustomSwitchComponent } from 'src/app/components/ui/ui-custom-switch/ui-custom-switch.component';
+
 
 enum PowerMode {
 	Sleep = 'ChargeFromSleep',
@@ -97,6 +101,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	airplaneModeSubscription: Subscription;
 	expressChargingSubscription: Subscription;
 
+	activatedRouteSubscription: Subscription;
+
 	isBatterySectionAvailable = false;
 	isPowerSectionAvailable = false;
 	isPowerPageAvailable = false;
@@ -114,7 +120,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		public modalService: NgbModal,
 		public shellServices: VantageShellService,
 		private metrics: MetricService,
-	) {
+		private activatedRoute: ActivatedRoute) {
 	}
 
 	ngOnInit() {
@@ -152,6 +158,20 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			.subscribe((value: FeatureStatus) => {
 			this.setExpressChargingUI(value);
 		});
+
+		this.activatedRouteSubscription = this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
+			setTimeout(() => {
+				if (params.has('threshold')) {
+					const element = document.querySelector('#battery') as HTMLElement;
+					if (element) {
+						element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+						// Fix for Edge browser
+					}
+					const showThreshold = this.activatedRoute.snapshot.queryParams.threshold;
+					this.onToggleBCTSwitch({ switchValue: showThreshold});
+				}
+			}, 1000);
+		});
 	}
 
 	ngOnDestroy() {
@@ -166,6 +186,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 		if(this.expressChargingSubscription) {
 			this.expressChargingSubscription.unsubscribe();
+		}
+		if (this.activatedRouteSubscription) {
+			this.activatedRouteSubscription.unsubscribe();
 		}
 		this.stopMonitor();
 		if (this.toolBarSubscription) {
@@ -1107,8 +1130,38 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.updateBatteryLinkStatus(this.chargeThresholdCapability);
 	}
 
-	public toggleBCTSwitch(event: any) {
-		const value = event.switchValue;
+	onToggleBCTSwitch(event: any) {
+		if (event.switchValue) {
+			const modalRef = this.modalService.open(ModalBatteryChargeThresholdComponent, {
+				backdrop: 'static',
+				centered: true,
+				windowClass: 'Battery-Charge-Threshold-Modal'
+			});
+			modalRef.componentInstance.id = 'threshold'
+			modalRef.componentInstance.title = 'device.deviceSettings.power.batterySettings.batteryThreshold.popup.title';
+			modalRef.componentInstance.description1 = 'device.deviceSettings.power.batterySettings.batteryThreshold.popup.description1';
+			modalRef.componentInstance.description2 = 'device.deviceSettings.power.batterySettings.batteryThreshold.popup.description2';
+			modalRef.componentInstance.positiveResponseText = 'device.deviceSettings.power.batterySettings.batteryThreshold.popup.enable';
+			modalRef.componentInstance.negativeResponseText = 'device.deviceSettings.power.batterySettings.batteryThreshold.popup.cancel';
+
+			modalRef.result.then(
+				result => {
+					if (result === 'positive') {
+						this.toggleBCTSwitch(event.switchValue);
+					} else if (result === 'negative') {
+						this.chargeThresholdStatus = false;
+						UiCustomSwitchComponent.switchChange.next(this.chargeThresholdStatus);
+					}
+				},
+				reason => {
+				}
+			);
+		} else {
+			this.toggleBCTSwitch(event.switchValue);
+		}
+	}
+
+	public toggleBCTSwitch(value: boolean) {
 		if (value) {
 			let count = 0;
 			this.thresholdInfo.forEach(battery => {

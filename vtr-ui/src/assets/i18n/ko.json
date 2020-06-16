@@ -1766,7 +1766,8 @@
                             "title": "컴퓨터 다시 시작",
                             "description": "기본 맨 윗줄 기능을 변경하면, 컴퓨터를 다시 시작해야 해야 합니다. 다시 시작하시겠습니까?",
                             "reboot": "다시 부팅",
-                            "cancel": "나중에"
+                            "cancel": "나중에",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "F1-F12 기능에 액세스하려면, Fn 키와 맨 윗줄의 키를 누르십시오.",
@@ -3285,7 +3286,8 @@
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+            "processStatus": "PROCESSING"
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3770,7 +3772,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

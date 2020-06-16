@@ -1766,7 +1766,8 @@
                             "title": "إعادة تشغيل الكمبيوتر",
                             "description": "يتطلب تغيير وظيفة الصف العلوي الافتراضي إعادة تشغيل الكمبيوتر. هل تريد بالتأكيد إعادة التشغيل؟",
                             "reboot": "إعادة تشغيل",
-                            "cancel": "ليس الآن"
+                            "cancel": "ليس الآن",
+                            "yes": "YES"
                         },
                         "showAdvSettings": "إظهار الإعدادات المتقدمة",
                         "hideAdvSettings": "إخفاء الإعدادات المتقدمة",
@@ -3165,15 +3166,15 @@
         }
     },
     "smartPerformance": {
-        "title": "Health & Support",
-        "back": "BACK",
-        "performanceandSecurityCheckTitle": "Performance & Security Check",
-        "performanceandSecurityCheckSubTitle": "Let's diagnose and resolve performance and security issues in your computer",
-        "scanButton": "FREE PC SCAN",
-        "section1Heading": "How would you rate your PC Performance?",
-        "section1Description": "PC running slow? Applications taking too long to respond? Windows errors? Malware concerns? Let's diagnose whats's causing the problem and fix it.",
-        "critical": "CRITICAL",
-        "allisWell": "ALL IS WELL",
+        "title": "Smart Performance",
+        "back": "السابق",
+        "performanceandSecurityCheckTitle": "فحص الأداء والأمان",
+        "performanceandSecurityCheckSubTitle": "لنساعدك على تشخيص وحل مشاكل الأداء والأمان في جهاز الكمبيوتر الخاص بك",
+        "scanButton": "فحص الكمبيوتر الشخصي مجانًا",
+        "section1Heading": "ما تقييمك لأداء جهاز الكمبيوتر الشخصي الخاص بك؟",
+        "section1Description": "هل يعمل الكمبيوتر الشخصي ببطء؟ هل تستغرق استجابة التطبيقات وقتًا طويلاً للغاية؟ هل تواجه أخطاءً في Windows؟ هل لديك مخاوف من البرامج الضارة؟ لنبدأ بتشخيص سبب المشكلة ثم إصلاحها.",
+        "critical": "مهمة",
+        "allisWell": "كل شيء على ما يرام",
         "zero": 0,
         "one": 1,
         "two": 2,
@@ -3185,644 +3186,646 @@
         "eight": 8,
         "nine": 9,
         "ten": 10,
-        "tuneUP": "Your PC needs a tune-up",
-        "section2Heading": "Top-notch PC Performance. Always",
-        "section2Description": "Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+        "tuneUP": "يحتاج جهاز الكمبيوتر الخاص بك إلى عملية ضبط",
+        "section2Heading": "أداء الكمبيوتر الشخصي ممتاز. دائمًا",
+        "section2Description": "يمكن لبرامجنا فحص جهاز الكمبيوتر الشخصي الخاص بك على مدار الساعة وطوال أيام الأسبوع بشكل استباقي للعثور على المشاكل وحلها عند ظهورها، وذلك حتى يكون أداء جهازك دائمًا ممتازًا.",
         "tunePCPerformance": {
-            "title": "TUNE PC PERFORMANCE",
-            "heading": "Show your computer some extra love",
-            "description": "Even the best computer will benefit from periodic tune-ups. Get a tune-up and get more done with our powerful app.",
+            "title": "ضبط أداء الكمبيوتر الشخصي",
+            "heading": "امنَح الكمبيوتر الخاص بك المزيد من الاهتمام",
+            "description": "حتى أفضل جهاز كمبيوتر سيستفيد من عمليات الضبط الدورية. استفِد من عملية الضبط ودَع تطبيقنا فائق الإمكانات يقوم بالكثير من المهام نيابةً عنك.",
             "tabSet1": {
-                "tab1": "Accumulated Junk",
-                "tab2": "Usability Issues",
-                "tab3": "Windows Settings",
-                "tab4": "Systems Errors",
-                "tab5": "Registry Errors"
+                "tab1": "الملفات غير المهمة المتراكمة",
+                "tab2": "مشاكل سهولة الاستخدام",
+                "tab3": "إعدادات Windows",
+                "tab4": "أخطاء النظم",
+                "tab5": "أخطاء السجل"
             },
             "tabSet2": {
-                "tab1Heading": "IT'S EASY",
-                "tab1Description": "We don't confuse you with tech mumbo jumbp",
-                "tab2Heading": "IT'S FAST",
-                "tab2Description": "Get a 100 point check done in under 5 minutes",
-                "tab3Heading": "IT'S SAFE",
-                "tab3Description": "No scareware, built with best practises"
+                "tab1Heading": "العملية في غاية السهولة",
+                "tab1Description": "لن نربكك بمصطلحات تقنية متخصصة صعبة الفهم",
+                "tab2Heading": "العملية في غاية السرعة",
+                "tab2Description": "عملية الفحص مكوّنة من 100 نقطة وتكتمل في أقل من 5 دقائق",
+                "tab3Heading": "العملية في غاية الأمان",
+                "tab3Description": "لن تجد برامج ضارة تخويفية أو ما يُعرف باسم Scareware، كما أن عملية الفحص قد تم تطويرها باعتماد أفضل الممارسات"
             },
-            "summaryTitle": "Tune PC Performance"
+            "summaryTitle": "ضبط أداء الكمبيوتر الشخصي"
         },
         "boostInternetPerformance": {
-            "title": "BOOST INTERNET PERFORMANCE",
-            "extraTitle": "INTERNET PERFORMANCE",
-            "heading": "Give your internet a boost",
-            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "title": "تعزيز أداء الإنترنت",
+            "extraTitle": "أداء الإنترنت",
+            "heading": "عزّز أداء الإنترنت الخاص بك",
+            "description": "بالنسبة للكثيرين، يُعد بطء شبكة Wi-Fi أو عدم توفرها كالعيش داخل قوقعة. دعنا نساعدك في تكوين إعدادات الإنترنت وشبكة Wi-Fi والمستعرض للحصول على الأداء الأمثل.",
             "tabSet1": {
-                "tab1": "Network Settings",
-                "tab2": "Browser Settings",
-                "tab3": "Browser Security",
-                "tab4": "Wi-Fi Performance",
-                "tab5": "E-junk"
+                "tab1": "الرسائل الإلكترونية غير المهمة",
+                "tab2": "إعدادات الشبكة",
+                "tab3": "إعدادات المستعرض",
+                "tab4": "أمان المستعرض",
+                "tab5": "أداء شبكة Wi-Fi"
             },
             "tabSet2": {
-                "tab1Heading": "ZERO DAY VIRUS",
-                "tab1Description": "We remove even the newest malware infections",
-                "tab2Heading": "SPYWARE REMOVAL",
-                "tab2Description": "We remove all potentially unwanted programs",
-                "tab3Heading": "LIGHT AND FAST",
-                "tab3Description": "Scan typically takes 5-10 minutes"
+                "tab1Heading": "مشاكل المستعرض",
+                "tab1Description": "يمكننا تكوين وإصلاح مشاكل جميع مستعرضات الويب الرائجة.",
+                "tab2Heading": "أخطاء الاتصال",
+                "tab2Description": "يمكننا تشخيص وإصلاح مشاكل الاتصال لديك.",
+                "tab3Heading": "بطء الإنترنت",
+                "tab3Description": "سنساعدك في الحصول على أفضل أداء."
             },
-            "summaryTitle": "Internet Performance"
+            "summaryTitle": "أداء الإنترنت"
         },
         "malwareSecurity": {
-            "title": "MALWARE & SECURITY",
-            "heading": "Give your internet a boost",
-            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "title": "البرامج الضارة والأمان",
+            "heading": "امنَح جهاز الكمبيوتر الخاص بك الاهتمام الإضافي الذي يحتاجه",
+            "description": "يمكن أن تؤدي البرامج الضارة إلى تعطل جهاز الكمبيوتر واختراق البيانات وتراجع الأداء. استفِد من ميزة إزالة البرامج الضارة وأكثر من ذلك بكثير.",
             "tabSet1": {
-                "tab1": "Malware scan",
-                "tab2": "Zero-day infections",
-                "tab3": "Security settings",
-                "tab4": "Errant programs",
-                "tab5": "Annoying adware"
+                "tab1": "فحص البرامج الضارة",
+                "tab2": "الإصابات الأولية المباغتة",
+                "tab3": "البرامج ذات الأخطاء",
+                "tab4": "البرامج الإعلانية المزعجة",
+                "tab5": "إعدادات الأمان"
             },
             "tabSet2": {
-                "tab1Heading": "SLOW INTERNET",
-                "tab1Description": "We will help you get maximum performance.",
-                "tab2Heading": "CONNECTIVITY ERRORS",
-                "tab2Description": "We can diagnose and repair your connectivity problems.",
-                "tab3Heading": "BROWSER ISSUES",
-                "tab3Description": "We configure and fix all your popular web browsers."
+                "tab1Heading": "الفيروسات الأولية المباغتة",
+                "tab1Description": "نزيل حتى أحدث إصابات البرامج الضارة",
+                "tab2Heading": "إزالة برامج التجسس",
+                "tab2Description": "نزيل جميع البرامج المُحتمل أن تكون غير مرغوب فيها",
+                "tab3Heading": "الخفة والسرعة",
+                "tab3Description": "يستغرق الفحص عادةً من 5 إلى 10 دقائق"
             },
-            "summaryTitle": "Malware & Security"
+            "summaryTitle": "البرامج الضارة والأمان"
         },
         "proactiveAutomated": {
-            "title": "PROACTIVE & AUTOMATED",
-            "heading": "Get the power to resolve issues, before they impact you!",
-            "description": "Smart Performance constantly looks for hundreads of issues that impact PC performance. We fix them proactively, giving you peace of mind.",
+            "title": "الاستباقية والتلقائية",
+            "heading": "استفِد من إمكانات حل المشاكل قبل أن تؤثر عليك.",
+            "description": "تبحث ميزة Smart Performance باستمرار عن مئات المشاكل التي تؤثر على أداء أجهزة الكمبيوتر الشخصي. ويقوم بإصلاحها بشكل استباقي، وبهذا تنعم بالطمأنينة على جهازك.",
             "tabSet1": {
-                "tab1": "Schedule Scan",
-                "tab2": "On-demand scan",
-                "tab3": "Automated resolution",
-                "tab4": "It's effective",
-                "tab5": "24/7 Protection"
+                "tab1": "جدولة الفحص",
+                "tab2": "الفحص عند الطلب",
+                "tab3": "الحل التلقائي",
+                "tab4": "العملية في غاية الفعالية",
+                "tab5": "حماية على مدار الساعة وطوال أيام الأسبوع"
             },
             "tabSet2": {
-                "tab1Heading": "IT'S EASY",
-                "tab1Description": "We don't confuse you with tech mumbo jumbp",
-                "tab2Heading": "IT'S FAST",
-                "tab2Description": "Get a 100 point check done in under 5 minutes",
-                "tab3Heading": "IT'S SAFE",
-                "tab3Description": "No scareware, built with best practises"
+                "tab1Heading": "العملية في غاية السهولة",
+                "tab1Description": "لن نربكك بمصطلحات تقنية متخصصة صعبة الفهم",
+                "tab2Heading": "العملية في غاية السرعة",
+                "tab2Description": "عملية الفحص مكوّنة من 100 نقطة وتكتمل في أقل من 5 دقائق",
+                "tab3Heading": "العملية في غاية الأمان",
+                "tab3Description": "لن تجد برامج ضارة تخويفية أو ما يُعرف باسم Scareware، كما أن عملية الفحص قد تم تطويرها باعتماد أفضل الممارسات"
             }
         },
-        "startScan": "<b>Ready to start the scan?</b> Let's diagnose and resolve performance and security issues in your computer",
+        "startScan": "<b>هل أنت مستعد لبدء الفحص؟</b> لنساعدك على تشخيص مشاكل الأداء والأمان في جهاز الكمبيوتر الخاص بك.",
         "subscriptionDetails": {
-            "title": "Subscription details",
-            "description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
-            "learnMore": "Learn more",
-            "startDate": "Start date",
-            "endDate": "End date",
-            "status": "Status",
-            "activeStatus": "ACTIVE",
-            "inactiveStatus": "INACTIVE",
-            "manageSubscription": "MANAGE SUBSCRIPTION",
-            "titlebeta": "Lenovo Beta Program",
-            "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
-            "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
-            "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "title": "تفاصيل الاشتراك",
+            "description": "أنت مشترك في ميزة Smart Performance من Lenovo. خلال هذا الوقت، تتوفر جميع الميزات بشكل كامل للحفاظ على حماية جهاز الكمبيوتر الشخصي الخاص بك وأدائه السلس.",
+            "learnMore": "تعلم المزيد",
+            "startDate": "وقت البدء",
+            "endDate": "تاريخ الانتهاء",
+            "status": "الحالة",
+            "activeStatus": "نشط",
+            "inactiveStatus": "غير نشط",
+            "manageSubscription": "إدارة الاشتراك",
+            "titlebeta": "برنامج Lenovo التجريبي",
+            "manageSubscriptionBeta": "تفعيل الميزة بشكل كامل",
+            "descriptionbeta": "يعرض Lenovo برنامجًا تجريبيًا لتجربة ميزة Smart Performance حتى يوليو 2020.",
+            "descriptionbeta1": "ونحن ندعوك بكل ترحاب إلى الانضمام وتجربة الميزة الكاملة.",
+            "descriptionNonSubscriber": "أنت غير مشترك في ميزة Smart Performance من Lenovo. ستتمكن فقط من فحص جهاز الكمبيوتر الخاص بك. اشترِك الآن للحصول على الفوائد الكاملة للحفاظ على حماية جهاز الكمبيوتر الخاص بك وأدائه السلس.",
+            "processStatus": "PROCESSING"
         },
         "scanSettings": {
-            "title": "Scan settings",
-            "description": "Enable or disable the scan and set the scan schedule",
-            "enableScan": "Enable Scan",
-            "changeScanTitle": "Change scan schedule",
-            "changeScanDescription": "Edit the scan schedule to run when you need it.",
-            "frequency": "Frequency",
-            "txtDate": "Date",
-            "txtDay": "Day",
-            "txtTime": "Time",
-            "txtSave": "save",
-            "txtCancel": "cancel",
-            "scanFrequencyWeek": "Once a week",
-            "scanFrequencyEveryWeek": "Every other week",
-            "scanFrequencyMonth": "Every month",
-            "mon": "Monday",
-            "tue": "Tuesday",
-            "wed": "Wednesday",
-            "thu": "Thursday",
-            "fri": "Friday",
-            "sat": "Saturday",
-            "sun": "Sunday",
-            "tooltipText": "Enable this toggle to automatically initiate a system performance scan on your selected date and time."
+            "title": "إعدادات جدولة الفحص",
+            "description": "تفعيل الفحص أو تعطيله وضبط جدول الفحص",
+            "enableScan": "تفعيل الفحص",
+            "changeScanTitle": "تغيير جدول الفحص",
+            "changeScanDescription": "يمكنك تحرير جدول الفحص للتشغيل عند الحاجة إليه.",
+            "frequency": "معدّل التكرار",
+            "txtDate": "التاريخ",
+            "txtDay": "اليوم",
+            "txtTime": "الوقت",
+            "txtSave": "حفظ",
+            "txtCancel": "إلغاء",
+            "scanFrequencyWeek": "مرة في الأسبوع",
+            "scanFrequencyEveryWeek": "كل أسبوعين",
+            "scanFrequencyMonth": "كل شهر",
+            "mon": "الاثنين",
+            "tue": "الثلاثاء",
+            "wed": "الأربعاء",
+            "thu": "الخميس",
+            "fri": "الجمعة",
+            "sat": "السبت",
+            "sun": "الأحد",
+            "tooltipText": "من خلال استمرار تفعيل مفتاح التبديل هذا، سيبدأ فحص أمان وأداء النظام تلقائيًا في التاريخ والوقت المضبوطين."
         },
         "scanningPage": {
-            "title": "Performance & security check",
-            "description": "Please wait while we scan your system for potential problems and threats.",
-            "scanningSystem": "Scanning system",
-            "complete": "complete",
+            "title": "فحص الأداء والأمان",
+            "description": "يُرجى الانتظار بينما نقوم بفحص نظامك بحثًا عن المشاكل والتهديدات المحتملة.",
+            "scanningSystem": "جارٍ فحص النظام",
+            "complete": "اكتمل",
             "cancelScan": {
-                "button": "CANCEL SCAN",
-                "title": "Cacel the scan?",
-                "description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
-                "yesButton": "YES, CANCEL",
-                "noButton": "NO, RESUME SCAN",
+                "button": "إلغاء الفحص",
+                "title": "هل تريد إلغاء الفحص؟",
+                "description": "إذا غادرت الشاشة الحالية، فسيتم إلغاء الفحص وستعود إلى الصفحة الرئيسية. ومع ذلك، يمكنك تشغيل الفحص مرة أخرى في أي وقت.",
+                "yesButton": "نعم، قم بالإلغاء",
+                "noButton": "لا، استأنِف الفحص",
                 "cancelMayTakeSomeTime": "يرجى الانتظار، قد يستغرق الأمر بعض الوقت للإلغاء حسب نظامك.",
                 "cancelTextPrompt": "هل تريد بالتأكيد الإلغاء؟"
             },
-            "waiting": "WAITING TO SCAN",
-            "completed": "COMPLETED",
+            "waiting": "جارٍ الانتظار للفحص",
+            "completed": "اكتمل",
             "nowScanningDetail": {
-                "cardTitle": "NOW SCANNING DETAIL",
-                "current": "CURRENT: ",
-                "upNext": "UP NEXT",
-                "tunePCDesc": "Let’s help improve your PC performance. We do it safely using industry best practices. Benefits for subscribers include reduced PC start time, improved performance, improved stability and faster launch of applications.",
-                "boostDesc": "Let’s help enhance your browsing experience. Let's fix network and access issues. Benefits for subscribers include betterment in internet connectivity, improvement in upload/download speeds and making internet more secure.",
-                "malwareDesc": "Let’s help quickly secure your PC, on-demand. We do it by removing spyware, malware and adware. We also remove near/zero-day infections. Benefits for subscribers include security of data and optimal system performance.",
-                "proactiveDesc": "Let's tune your computer periodically and fix issues, Proactive and automated to keep your PC tuned and covered. Always",
+                "cardTitle": "تفاصيل الفحص الجاري",
+                "current": "الحالي: ",
+                "upNext": "التالي",
+                "tunePCDesc": "دعنا نساعدك في تحسين أداء جهاز الكمبيوتر. نجري العملية بكل أمان باستخدام أفضل ممارسات المجال. تشمل مزايا المشتركين تقليل وقت بدء تشغيل الكمبيوتر وتحسين الأداء والاستقرار وتشغيل التطبيقات بشكل أسرع.",
+                "boostDesc": "دعنا نساعدك في تحسين تجربة الاستعراض الخاصة بك. دعنا نساعدك في إصلاح مشاكل الشبكة والوصول. تشمل مزايا المشتركين تحسين الاتصال بالإنترنت وتحسين سرعات التحميل / التنزيل وزيادة أمان الإنترنت.",
+                "malwareDesc": "دعنا نساعدك في تأمين جهاز الكمبيوتر الخاص بك بسرعة عند الطلب. ونحن نقوم بذلك عن طريق إزالة برامج التجسس والبرامج الضارة والبرامج الإعلانية. ونزيل أيضًا الإصابات شبه الأولية المباغتة. تشمل مزايا المشتركين أمان البيانات والأداء الأمثل للنظام.",
+                "proactiveDesc": "دعنا نقوم بضبط جهاز الكمبيوتر الخاص بك بشكل دوري وإصلاح المشاكل بشكل استباقي وتلقائي للحفاظ على جهاز الكمبيوتر الخاص بك مضبوطًا ومحميًا. دائمًا",
                 "tunePCScanningItems": {
                     "accumulatedJunk": {
-                        "itema1": "Look for junk in 85 locations",
-                        "itema2": "System log files that aren’t needed",
-                        "itema3": "Unnecessary application residues",
-                        "itema4": "Temporary files that clog diskspace",
-                        "itema5": "Files that you deleted so long ago",
-                        "itema6": "Outdated errors and alerts"
+                        "itema1": "البحث عن الملفات غير المهمة في 85 موقعًا",
+                        "itema2": "ملفات سجل النظام غير المطلوبة",
+                        "itema3": "مخلفات التطبيقات غير الضرورية",
+                        "itema4": "الملفات المؤقتة التي تملأ مساحة القرص",
+                        "itema5": "الملفات التي حذفتها قبل فترة طويلة",
+                        "itema6": "الأخطاء والتنبيهات القديمة"
                     },
                     "usabilityIssues": {
-                        "itemb1": "Address dozens of usability challenges",
-                        "itemb2": "Check external devices connectivity",
-                        "itemb3": "Keeping Windows updates always current",
-                        "itemb4": "Do apps render and appear at its best",
-                        "itemb5": "Analyzing processing power utilization",
-                        "itemb6": "Help locate files easily"
+                        "itemb1": "معالجة العشرات من تحديات سهولة الاستخدام",
+                        "itemb2": "التحقق من اتصال الأجهزة الخارجية",
+                        "itemb3": "الحفاظ على التحديث الدائم لنظام Windows",
+                        "itemb4": "ظهور التطبيقات وعرضها في أفضل حالاتها",
+                        "itemb5": "تحليل استخدام طاقة المعالجة",
+                        "itemb6": "المساعدة في تحديد موقع الملفات بسهولة"
                     },
                     "windowsSettings": {
-                        "itemc1": "Diagnose dozens of Windows OS settings",
-                        "itemc2": "Ensure all is well with your Windows",
-                        "itemc3": "Ensure essential services are running",
-                        "itemc4": "Check health of connectivity settings",
-                        "itemc5": "Check ability to share files in network",
-                        "itemc6": "Check biometric and access settings"
+                        "itemc1": "تشخيص العشرات من إعدادات نظام التشغيل Windows",
+                        "itemc2": "التأكد من أن كل شيء على ما يرام في نظام Windows الخاص بك",
+                        "itemc3": "التأكد من استمرار تشغيل الخدمات الأساسية",
+                        "itemc4": "التحقق من سلامة إعدادات الاتصال",
+                        "itemc5": "التحقق من القدرة على مشاركة الملفات في الشبكة",
+                        "itemc6": "التحقق من الإعدادات البيومترية وإعدادات الوصول"
                     },
                     "systemErrors": {
-                        "itemd1": "Ensure essential services are running",
-                        "itemd2": "Select services for higher performance",
-                        "itemd3": "Look for software conflict errors",
-                        "itemd4": "Optimize Windows error management",
-                        "itemd5": "Check and fix apps launching errors",
-                        "itemd6": "Configure system error reports"
+                        "itemd1": "التأكد من استمرار تشغيل الخدمات الأساسية",
+                        "itemd2": "اختيار خدمات تعزيز الأداء",
+                        "itemd3": "البحث عن أخطاء تعارض البرامج",
+                        "itemd4": "تحسين إدارة أخطاء Windows",
+                        "itemd5": "التحقق من أخطاء تشغيل التطبيقات وإصلاحها",
+                        "itemd6": "تكوين تقارير أخطاء النظام"
                     },
                     "registryErrors": {
-                        "iteme1": "Deep check Windows registry,",
-                        "iteme2": "Scanning for invalid Windows services",
-                        "iteme3": "Finding corrupted registry entries",
-                        "iteme4": "Look for useless file extensions",
-                        "iteme5": "Search broken entries of installed apps",
-                        "iteme6": "Look for useless leftover entries"
+                        "iteme1": "الفحص المتعمق لسجلّ Windows",
+                        "iteme2": "الفحص بحثًا عن خدمات Windows غير الصالحة",
+                        "iteme3": "البحث عن إدخالات السجلّ التالفة",
+                        "iteme4": "البحث عن امتدادات الملفات غير المفيدة",
+                        "iteme5": "البحث عن الإدخالات المُعطَّلة الخاصة بالتطبيقات المُثبتة",
+                        "iteme6": "البحث عن الإدخالات المتبقية غير المفيدة"
                     }
                 },
                 "boostScanningItems": {
                     "networkSettings": {
-                        "itema1": "Diagnose network and Internet settings",
-                        "itema2": "Verify network configuration settings",
-                        "itema3": "Verify available network settings",
-                        "itema4": "Configure to load websites faster",
-                        "itema5": "Look for page rendering errors",
-                        "itema6": "Are connection service(s) running well"
+                        "itema1": "تشخيص إعدادات الشبكة والإنترنت",
+                        "itema2": "التحقق من إعدادات تكوين الشبكة",
+                        "itema3": "التحقق من إعدادات الشبكة المتوفرة",
+                        "itema4": "التكوين لتحميل مواقع الويب بشكل أسرع",
+                        "itema5": "البحث عن أخطاء عرض الصفحات",
+                        "itema6": "التأكّد من أن خدمات الاتصال تعمل بشكل جيد"
                     },
                     "browserSettings": {
-                        "itemb1": "Enable better browsing experience",
-                        "itemb2": "Configure settings faster websites rendering",
-                        "itemb3": "Ensure browser security services are OK",
-                        "itemb4": "Ensure webpages are rendering properly",
-                        "itemb5": "Check settings for faster downloads",
-                        "itemb6": "Check permissions and access control"
+                        "itemb1": "إتاحة تجربة استعراض أفضل",
+                        "itemb2": "تكوين إعدادات لعرض مواقع الويب بشكل أسرع",
+                        "itemb3": "التأكد من أن خدمات أمان المستعرض على ما يرام",
+                        "itemb4": "التأكد من عرض صفحات الويب بشكل صحيح",
+                        "itemb5": "التحقق من الإعدادات لزيادة سرعة عمليات التنزيل",
+                        "itemb6": "التحقق من الأذونات والتحكم في الوصول"
                     },
                     "browserSecurity": {
-                        "itemc1": "Ensure security services are running",
-                        "itemc2": "Configure browser security features",
-                        "itemc3": "Check network services are running well",
-                        "itemc4": "Configure protocol settings",
-                        "itemc5": "Verify Browser content settings are OK",
-                        "itemc6": "Verify browser plugins & extensions"
+                        "itemc1": "التأكد من استمرار تشغيل خدمات الأمان",
+                        "itemc2": "تكوين ميزات أمان المستعرض",
+                        "itemc3": "التحقق من أن خدمات الشبكة تعمل بشكل جيد",
+                        "itemc4": "تكوين إعدادات البروتوكولات",
+                        "itemc5": "التحقق من أن إعدادات محتوى المستعرض على ما يرام",
+                        "itemc6": "التحقق من المكوّنات الإضافية للمستعرض وملحقاته"
                     },
                     "wifiPerformance": {
-                        "itemd1": "Optimize Wi-Fi experience settings",
-                        "itemd2": "Ensure your home network is secure",
-                        "itemd3": "Check Wi-Fi services settings",
-                        "itemd4": "Secure network sharing settings",
-                        "itemd5": "Check Wi-Fi security standards",
-                        "itemd6": "Ensure Wi-Fi channels do not overlap"
+                        "itemd1": "تحسين إعدادات تجربة Wi-Fi",
+                        "itemd2": "التأكد من أمان شبكتك المنزلية",
+                        "itemd3": "التحقق من إعدادات خدمات Wi-Fi",
+                        "itemd4": "إعدادات المشاركة الآمنة للشبكة",
+                        "itemd5": "التحقق من معايير أمان Wi-Fi",
+                        "itemd6": "التأكد من عدم تداخل قنوات Wi-Fi"
                     },
                     "eJunk": {
-                        "iteme1": "Eliminate clutter from 4 browsers",
-                        "iteme2": "Look for leftover e-junk",
-                        "iteme3": "Look for outdated internet files",
-                        "iteme4": "Clear unwanted web cache",
-                        "iteme5": "Clear cookies",
-                        "iteme6": "Remove browser residues"
+                        "iteme1": "التخلص من الفوضى الناتجة عن المستعرضات",
+                        "iteme2": "البحث عن الرسائل الإلكترونية غير المهمة المتبقية",
+                        "iteme3": "البحث عن ملفات الإنترنت القديمة",
+                        "iteme4": "محو ذاكرة التخزين المؤقت للويب غير المرغوب فيها",
+                        "iteme5": "محو ملفات تعريف الارتباط",
+                        "iteme6": "إزالة مخلفات المستعرضات"
                     }
                 },
                 "malwareScanningItems": {
                     "malwareScan": {
-                        "itema1": "Scan common loading points",
-                        "itema2": "Check critical locations for threats",
-                        "itema3": "Check for virus, spyware and malware",
-                        "itema4": "Scan for 50+ file types",
-                        "itema5": "Scan for malware remnants",
-                        "itema6": "Leverage from cloud remediation engine"
+                        "itema1": "فحص نقاط التحميل الشائعة",
+                        "itema2": "التحقق من المواقع المهمة بحثًا عن التهديدات",
+                        "itema3": "الفحص بحثًا عن الفيروسات وبرامج التجسس والبرامج الضارة",
+                        "itema4": "الفحص بحثًا عن أكثر من 50 نوعًا من الملفات",
+                        "itema5": "الفحص بحثًا عن بقايا البرامج الضارة",
+                        "itema6": "الاستفادة من محرك التصحيح القائم على السحابة الإلكترونية"
                     },
                     "zerodayInfections": {
-                        "itemb1": "Look for zero-day virus",
-                        "itemb2": "Look for recent, undiagnosed malware",
-                        "itemb3": "Scan with cloud-based remediation",
-                        "itemb4": "Perform behavioral monitoring",
-                        "itemb5": "Scan files with aggregated engine",
-                        "itemb6": "Scan against latest definitions"
+                        "itemb1": "البحث عن الفيروس الأولي المباغت",
+                        "itemb2": "البحث عن البرامج الضارة الأخيرة التي لم يتم تشخيصها",
+                        "itemb3": "الفحص باستخدام التصحيح القائم على السحابة الإلكترونية",
+                        "itemb4": "إجراء المراقبة السلوكية",
+                        "itemb5": "فحص الملفات باستخدام محرك مجمّع",
+                        "itemb6": "الفحص بالاستناد إلى أحدث التعريفات"
                     },
                     "securitySettings": {
-                        "itemc1": "Keep Windows updates always current",
-                        "itemc2": "Ensure Windows firewall service is OK",
-                        "itemc3": "Keep browser settings secure",
-                        "itemc4": "Check essential security services",
-                        "itemc5": "Configure user access settings",
-                        "itemc6": "Verify authentication services"
+                        "itemc1": "الحفاظ على التحديث الدائم لنظام Windows",
+                        "itemc2": "التأكد من أن خدمة جدار الحماية لـ Windows على ما يرام",
+                        "itemc3": "الحفاظ على أمان إعدادات المستعرض",
+                        "itemc4": "التحقق من خدمات الأمان الأساسية",
+                        "itemc5": "تكوين إعدادات وصول المستخدم",
+                        "itemc6": "التحقق من خدمات المصادقة"
                     },
                     "errantPrograms": {
-                        "itemd1": "Look for errant apps",
-                        "itemd2": "Look for potentially unwanted apps",
-                        "itemd3": "Detect inactive and hidden apps",
-                        "itemd4": "Verify apps for malicious behavior",
-                        "itemd5": "Check apps based on reputation factor",
-                        "itemd6": "Check errant programs in registry"
+                        "itemd1": "البحث عن التطبيقات ذات الأخطاء",
+                        "itemd2": "البحث عن التطبيقات المُحتمل أن تكون غير مرغوب فيها",
+                        "itemd3": "كشف التطبيقات المخفية وغير النشطة",
+                        "itemd4": "التحقق من التطبيقات لاكتشاف السلوك الضار",
+                        "itemd5": "التحقق من التطبيقات بناءً على عامل السمعة",
+                        "itemd6": "التحقق من البرامج ذات الأخطاء في السجل"
                     },
                     "annoyingAdware": {
-                        "iteme1": "Look for browser(s) adware",
-                        "iteme2": "Revise browser(s) pop-up settings",
-                        "iteme3": "Eliminate browser re-direction threats",
-                        "iteme4": "Check for adware leftovers",
-                        "iteme5": "Optimize browser experience settings",
-                        "iteme6": "verify in cloud remediation engine"
+                        "iteme1": "البحث عن البرامج الإعلانية في المستعرضات",
+                        "iteme2": "مراجعة إعدادات النوافذ المنبثقة في المستعرضات",
+                        "iteme3": "القضاء على تهديدات إعادة توجيه المستعرض",
+                        "iteme4": "التحقق بحثًا عن بقايا البرامج الإعلانية",
+                        "iteme5": "تحسين إعدادات تجربة المستعرض",
+                        "iteme6": "التحقق في محرك التصحيح القائم على السحابة الإلكترونية"
                     }
                 }
             }
         },
         "scanCompletePage": {
-            "title": "System scan is complete",
-            "description": "Here is what we found on your ",
-            "scanRates": "Our scan rates your PC at: ",
-            "summary": "Summary",
-            "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
-            "signupRepairButton": "SIGN UP & REPAIR NOW",
-            "monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
-            "issueCount": "{{individualIssueCount}} ISSUES",
-            "scannedAreas": "SCANNED AREAS",
+            "title": "اكتمل فحص النظام",
+            "description": "إليك ما وجدناه على ",
+            "scanRates": "تعمل عملية الفحص على تقييم جهاز الكمبيوتر الخاص بك في: ",
+            "summary": "ملخص",
+            "summaryDetails": "اكتشفت عملية الفحص عدد <b>{{issueCount}} من المشاكل</b> في الأماكن التالية أدناه. اشترِك الآن لإصلاح هذه المشاكل والحفاظ على التشغيل السلس لنظامك. يمكن لبرامجنا فحص هذه الأماكن في نظامك على مدار الساعة وطوال أيام الأسبوع بشكل استباقي للعثور على المشاكل وحلها عند ظهورها، وذلك حتى يكون أداء جهازك دائمًا ممتازًا.",
+            "signupRepairButton": "اشترِك ودعنا نصلح مشاكلك الآن",
+            "monthlyPricing": "<b>أقل من 2$ شهريًا.</b> سنصلح هذه المشاكل تلقائيًا. مرة واحدة اليوم وكل أسبوع بعد ذلك <a  href=\"#\">مزيد من المعلومات</a>",
+            "issueCount": "عدد المشاكل: {{individualIssueCount}}",
+            "scannedAreas": "الأماكن التي تم فحصها",
             "recommendedAction": {
-                "title": "RECOMMENDED ACTION",
-                "description": "We will automatically fix these issues. Once today and every week thereafter",
-                "yearlyPricing": "$19.99 / Yr",
-                "monthlyPricing": "LESS THAN $2 PER MONTH.",
-                "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP"
+                "title": "الإجراء الموصى به",
+                "description": "سنصلح هذه المشاكل تلقائيًا. مرة واحدة اليوم وكل أسبوع بعد ذلك",
+                "yearlyPricing": "19.99 $ / العام",
+                "monthlyPricing": "أقل من 2$ شهريًا.",
+                "longerTerm": "هل تريد اشتراكًا طويل المدى؟ هل تريد توفير المزيد؟",
+                "signupButton": "اشترِك الآن"
             },
             "tunepc": {
                 "accumulatedjunkscannedareas": {
-                    "area1": "Scanned for junk in 85 locations",
-                    "area2": "System log files that aren’t needed",
-                    "area3": "Unnecessary application residues",
-                    "area4": "Temporary files that clog diskspace",
-                    "area5": "Files that you deleted so long ago",
-                    "area6": "Outdated errors and alerts"
+                    "area1": "تم الفحص بحثًا عن الملفات غير المهمة في 85 موقعًا",
+                    "area2": "ملفات سجل النظام غير المطلوبة",
+                    "area3": "مخلفات التطبيقات غير الضرورية",
+                    "area4": "الملفات المؤقتة التي تملأ مساحة القرص",
+                    "area5": "الملفات التي حذفتها قبل فترة طويلة",
+                    "area6": "الأخطاء والتنبيهات القديمة"
                 },
                 "registryerrorsscannedareas": {
-                    "area1": "Completed deep check of Windows registry",
-                    "area2": "Scanned for invalid Windows services",
-                    "area3": "Checked for corrupted registry entries",
-                    "area4": "Scanned for useless file extensions",
-                    "area5": "Searched broken entries of installed apps",
-                    "area6": "Checked for useless leftover entries"
+                    "area1": "تم الانتهاء من الفحص المتعمق لسجلّ Windows",
+                    "area2": "تم الفحص بحثًا عن خدمات Windows غير الصالحة",
+                    "area3": "تم البحث عن إدخالات السجلّ التالفة",
+                    "area4": "تم الفحص بحثًا عن امتدادات الملفات غير المفيدة",
+                    "area5": "تم البحث عن الإدخالات المُعطَّلة الخاصة بالتطبيقات المُثبتة",
+                    "area6": "تم البحث عن الإدخالات المتبقية غير المفيدة"
                 },
                 "windowssettingsscannedareas": {
-                    "area1": "Diagnosed dozens of Windows OS settings",
-                    "area2": "Checked all is well with your Windows",
-                    "area3": "Confirmed essential services are running",
-                    "area4": "Checked health of connectivity settings",
-                    "area5": "Checked ability to share files in network",
-                    "area6": "Checked biometric and access settings"
+                    "area1": "تم تشخيص العشرات من إعدادات نظام التشغيل Windows",
+                    "area2": "تم التأكد من أن كل شيء على ما يرام في نظام Windows الخاص بك",
+                    "area3": "تم التأكد من استمرار تشغيل الخدمات الأساسية",
+                    "area4": "تم التحقق من سلامة إعدادات الاتصال",
+                    "area5": "تم التحقق من القدرة على مشاركة الملفات في الشبكة",
+                    "area6": "تم التحقق من الإعدادات البيومترية وإعدادات الوصول"
                 },
                 "usabilityissuesscannedareas": {
-                    "area1": "Checked for usability challenges",
-                    "area2": "Checked external devices connectivity",
-                    "area3": "Checked Windows updates status",
-                    "area4": "Verified apps rendering setting",
-                    "area5": "Analyzed processing power utilization",
-                    "area6": "Help locate files easily"
+                    "area1": "تم التحقق بحثًا عن تحديات سهولة الاستخدام",
+                    "area2": "تم التحقق من اتصال الأجهزة الخارجية",
+                    "area3": "تم التحقق من حالة تحديثات Windows",
+                    "area4": "تم التحقق من إعداد عرض التطبيقات",
+                    "area5": "تم تحليل استخدام طاقة المعالجة",
+                    "area6": "المساعدة في تحديد موقع الملفات بسهولة"
                 },
                 "systemerrorsscannedareas": {
-                    "area1": "Checked if essential services are running",
-                    "area2": "Look services for higher performance",
-                    "area3": "Look for software conflict errors",
-                    "area4": "Analyzed Windows error management",
-                    "area5": "Scanned for apps launching errors",
-                    "area6": "Checked system error reports configuration"
+                    "area1": "تم التحقق من استمرار تشغيل الخدمات الأساسية",
+                    "area2": "تم البحث عن خدمات تعزيز الأداء",
+                    "area3": "البحث عن أخطاء تعارض البرامج",
+                    "area4": "تم تحليل إدارة أخطاء Windows",
+                    "area5": "تم الفحص بحثًا عن أخطاء تشغيل التطبيقات",
+                    "area6": "تم التحقق من تكوين تقارير أخطاء النظام"
                 }
             },
-            "Diskspace": "Disk Space Reclaimed :",
-            "Performanceimprovements": "Performance Improvements :",
-            "Securityimprovements": "Security Improvements:",
-            "Onceaweek": "Once a week",
+            "Diskspace": "مساحة القرص المُستردة:",
+            "Performanceimprovements": "تحسينات الأداء:",
+            "Securityimprovements": "تحسينات الأمان:",
+            "Onceaweek": "مرة في الأسبوع",
             "internetperformance": {
                 "ejunkscannedareas": {
-                    "area1": "Identified clutter from 4 browsers",
-                    "area2": "Searched leftover e-junk",
-                    "area3": "Scanned outdated internet files",
-                    "area4": "Searched unwanted web cache",
-                    "area5": "Checked cookies for clearance",
-                    "area6": "Scanned browser residues"
+                    "area1": "تم تحديد الفوضى الناتجة عن المستعرضات",
+                    "area2": "تم البحث عن الرسائل الإلكترونية غير المهمة المتبقية",
+                    "area3": "تم الفحص بحثًا عن ملفات الإنترنت القديمة",
+                    "area4": "تم البحث عن ذاكرة التخزين المؤقت للويب غير المرغوب فيها",
+                    "area5": "تم التحقق من ملفات تعريف الارتباط لمحوها",
+                    "area6": "تم فحص مخلفات المستعرض"
                 },
                 "browsersecurityscannedareas": {
-                    "area1": "Checked security services are running",
-                    "area2": "Checked browser security features",
-                    "area3": "Verified network services",
-                    "area4": "Configure protocol settings",
-                    "area5": "Checked Browser content settings",
-                    "area6": "Scanned browser plugins & extensions"
+                    "area1": "تم التحقق من استمرار تشغيل خدمات الأمان",
+                    "area2": "تم التحقق من ميزات أمان المستعرض",
+                    "area3": "تم التحقق من خدمات الشبكة",
+                    "area4": "تكوين إعدادات البروتوكولات",
+                    "area5": "تم التحقق من إعدادات محتوى المستعرض",
+                    "area6": "تم فحص المكوّنات الإضافية للمستعرض وملحقاته"
                 },
                 "networksettingsscannedareas": {
-                    "area1": "Diagnosed network and Internet settings",
-                    "area2": "Diagnosed network configuration settings",
-                    "area3": "Verified connected network settings",
-                    "area4": "Diagnosed settings for faster websites rendering",
-                    "area5": "Scanned for page rendering errors",
-                    "area6": "Scanned all connection service(s)"
+                    "area1": "تم تشخيص إعدادات الشبكة والإنترنت",
+                    "area2": "تم تشخيص إعدادات تكوين الشبكة",
+                    "area3": "تم التحقق من إعدادات الشبكة المتصلة",
+                    "area4": "تم تشخيص الإعدادات لزيادة سرعة عرض مواقع الويب",
+                    "area5": "تم الفحص بحثًا عن أخطاء عرض الصفحات",
+                    "area6": "تم فحص جميع خدمات الاتصال"
                 },
                 "browsersettingsscannedareas": {
-                    "area1": "Enable better browsing experience",
-                    "area2": "Diagnosed settings for faster websites rendering",
-                    "area3": "Verified browser security services",
-                    "area4": "Checked if webpages are rendering properly",
-                    "area5": "Scanned settings for faster downloads",
-                    "area6": "Analyzed permissions and access control"
+                    "area1": "إتاحة تجربة استعراض أفضل",
+                    "area2": "تم تشخيص الإعدادات لزيادة سرعة عرض مواقع الويب",
+                    "area3": "تم التحقق من خدمات أمان المستعرض",
+                    "area4": "تم التحقق من عرض صفحات الويب بشكل صحيح",
+                    "area5": "تم فحص الإعدادات لزيادة سرعة عمليات التنزيل",
+                    "area6": "تم تحليل الأذونات والتحكم في الوصول"
                 },
                 "wifiperformancescannedareas": {
-                    "area1": "Verified Wi-Fi experience settings",
-                    "area2": "Verified secure home network",
-                    "area3": "Scanned Wi-Fi services settings",
-                    "area4": "Verified Secure network sharing settings",
-                    "area5": "Verified Wi-Fi security standards",
-                    "area6": "Analyzed Wi-Fi channels do not overlap"
+                    "area1": "تم التحقق من إعدادات تجربة Wi-Fi",
+                    "area2": "تم التحقق من أمان الشبكة المنزلية",
+                    "area3": "تم فحص إعدادات خدمات Wi-Fi",
+                    "area4": "تم التحقق من إعدادات المشاركة الآمنة للشبكة",
+                    "area5": "تم التحقق من معايير أمان Wi-Fi",
+                    "area6": "تم تحليل عدم تداخل قنوات Wi-Fi"
                 }
             },
             "malwaresecurity": {
                 "malwarescanscannedareas": {
-                    "area1": "Scanned common loading points",
-                    "area2": "Scanned critical locations for threats",
-                    "area3": "Scanned for virus, spyware and malware",
-                    "area4": "Scanned 50+ file types for threats",
-                    "area5": "Checked for malware remnants",
-                    "area6": "Verified in cloud remediation engine"
+                    "area1": "تم فحص نقاط التحميل الشائعة",
+                    "area2": "تم فحص المواقع المهمة بحثًا عن التهديدات",
+                    "area3": "تم الفحص بحثًا عن الفيروسات وبرامج التجسس والبرامج الضارة",
+                    "area4": "تم فحص أكثر من 50 نوعًا من الملفات بحثًا عن التهديدات",
+                    "area5": "تم التحقق بحثًا عن بقايا البرامج الضارة",
+                    "area6": "تم التحقق في محرك التصحيح القائم على السحابة الإلكترونية"
                 },
                 "errantprogramsscannedareas": {
-                    "area1": "Look for errant apps",
-                    "area2": "Inspected for potentially unwanted apps",
-                    "area3": "Searched for inactive and hidden apps",
-                    "area4": "Scanned for malicious apps",
-                    "area5": "Checked apps based on reputation factor",
-                    "area6": "Checked errant programs in registry"
+                    "area1": "البحث عن التطبيقات ذات الأخطاء",
+                    "area2": "تم الفحص بحثًا عن التطبيقات المُحتمل أن تكون غير مرغوب فيها",
+                    "area3": "تم البحث عن التطبيقات المخفية وغير النشطة",
+                    "area4": "تم الفحص بحثًا عن التطبيقات الضارة",
+                    "area5": "تم التحقق من التطبيقات بناءً على عامل السمعة",
+                    "area6": "تم التحقق من البرامج ذات الأخطاء في السجل"
                 },
                 "zerodayinfectionsscannedareas": {
-                    "area1": "Scanned for zero-day virus",
-                    "area2": "Searched for recent, undiagnosed malware",
-                    "area3": "Verified with cloud-based remediation",
-                    "area4": "Performed behavioral monitoring",
-                    "area5": "Verified files with aggregated engine",
-                    "area6": "Scanned against updated definitions"
+                    "area1": "تم الفحص بحثًا عن الفيروس الأولي المباغت",
+                    "area2": "تم البحث عن البرامج الضارة الأخيرة التي لم يتم تشخيصها",
+                    "area3": "تم التحقق باستخدام التصحيح القائم على السحابة الإلكترونية",
+                    "area4": "تم إجراء المراقبة السلوكية",
+                    "area5": "تم التحقق من الملفات باستخدام محرك مجمّع",
+                    "area6": "تم الفحص بالاستناد إلى التعريفات المُحدّثة"
                 },
                 "securitysettingsscannedareas": {
-                    "area1": "Verified Windows updates are current",
-                    "area2": "Verified Windows firewall service",
-                    "area3": "Checked for secure browser settings",
-                    "area4": "Diagnosed essential security services",
-                    "area5": "Verified user access settings",
-                    "area6": "Verified authentication services"
+                    "area1": "تم التحقق من تنفيذ آخر تحديثات Windows",
+                    "area2": "تم التحقق من خدمة جدار الحماية لـ Windows",
+                    "area3": "تم التحقق بحثًا عن إعدادات أمان المستعرض",
+                    "area4": "تم تشخيص خدمات الأمان الأساسية",
+                    "area5": "تم التحقق من إعدادات وصول المستخدم",
+                    "area6": "تم التحقق من خدمات المصادقة"
                 },
                 "annoyingadwarescannedareas": {
-                    "area1": "Scanned for browser(s) adware",
-                    "area2": "Verify browser(s) pop-up settings",
-                    "area3": "Scanned browser re-direction threats",
-                    "area4": "Checked adware leftovers",
-                    "area5": "Verified browser experience settings",
-                    "area6": "Verified with cloud remediation engine"
+                    "area1": "تم الفحص بحثًا عن البرامج الإعلانية في المستعرضات",
+                    "area2": "تم التحقق من إعدادات النوافذ المنبثقة في المستعرضات",
+                    "area3": "تم فحص تهديدات إعادة توجيه المستعرض",
+                    "area4": "تم التحقق من بقايا البرامج الإعلانية",
+                    "area5": "تم التحقق من إعدادات تجربة المستعرض",
+                    "area6": "تم التحقق باستخدام محرك التصحيح القائم على السحابة الإلكترونية"
                 }
             },
             "subscriber": {
                 "tunepc": {
                     "accumulatedjunkscannedareas": {
-                        "area1": "Cleaned of junk in 85 locations",
-                        "area2": "Cleared System log files that aren’t needed",
-                        "area3": "Deleted application residues",
-                        "area4": "Removed Temporary files to free up diskspace",
-                        "area5": "Eliminated files that you deleted so long ago",
-                        "area6": "Cleared errors and alerts"
+                        "area1": "تم محو الملفات غير المهمة في 85 موقعًا",
+                        "area2": "تم محو ملفات سجل النظام غير المطلوبة",
+                        "area3": "تم حذف مخلفات التطبيقات",
+                        "area4": "تمت إزالة الملفات المؤقتة لإخلاء مساحة القرص",
+                        "area5": "تمت إزالة الملفات التي حذفتها قبل فترة طويلة",
+                        "area6": "تم محو الأخطاء والتنبيهات"
                     },
                     "registryerrorsscannedareas": {
-                        "area1": "Completed deep check of Windows registry",
-                        "area2": "Fixed any invalid Windows services",
-                        "area3": "Removed any corrupted registry entries",
-                        "area4": "Deleted any obsolete file extensions",
-                        "area5": "Cleaned broken entries of installed apps",
-                        "area6": "Cleared unwanted leftover entries"
+                        "area1": "تم الانتهاء من الفحص المتعمق لسجلّ Windows",
+                        "area2": "تم إصلاح جميع خدمات Windows غير الصالحة",
+                        "area3": "تمت إزالة جميع إدخالات السجلّ التالفة",
+                        "area4": "تم حذف جميع امتدادات الملفات القديمة",
+                        "area5": "تم محو الإدخالات المُعطَّلة الخاصة بالتطبيقات المُثبتة",
+                        "area6": "تم محو الإدخالات المتبقية غير المرغوب فيها"
                     },
                     "windowssettingsscannedareas": {
-                        "area1": "Validated Windows settings",
-                        "area2": "Optimized all Windows services",
-                        "area3": "Modified essential Windows services",
-                        "area4": "Modified essential Windows services",
-                        "area5": "Verified ability to share files in network",
-                        "area6": "Verified biometric and access settings"
+                        "area1": "تم التحقق من إعدادات Windows",
+                        "area2": "تم تحسين جميع خدمات Windows",
+                        "area3": "تم تعديل خدمات Windows الأساسية",
+                        "area4": "تم تعديل خدمات Windows الأساسية",
+                        "area5": "تم التحقق من القدرة على مشاركة الملفات في الشبكة",
+                        "area6": "تم التحقق من الإعدادات البيومترية وإعدادات الوصول"
                     },
                     "usabilityissuesscannedareas": {
-                        "area1": "Fixed any usability challenges",
-                        "area2": "Verified external devices connectivity",
-                        "area3": "Made sure Windows updates are always current",
-                        "area4": "Confirmed apps render and appear at its best",
-                        "area5": "Modified settings for processing power utilization",
-                        "area6": "Modified settings to Help locate files easily"
+                        "area1": "تم إصلاح جميع تحديات سهولة الاستخدام",
+                        "area2": "تم التحقق من اتصال الأجهزة الخارجية",
+                        "area3": "تم التأكد من التحديث الدائم لنظام Windows",
+                        "area4": "تم التأكد من ظهور التطبيقات وعرضها في أفضل حالاتها",
+                        "area5": "تم تعديل إعدادات استخدام طاقة المعالجة",
+                        "area6": "تم تعديل الإعدادات للمساعدة في تحديد موقع الملفات بسهولة"
                     },
                     "systemerrorsscannedareas": {
-                        "area1": "Checked if essential services are running",
-                        "area2": "Modified services for higher performance",
-                        "area3": "Fixed any software conflict errors",
-                        "area4": "Optimized Windows error management",
-                        "area5": "Checked and fixed any apps launching errors",
-                        "area6": "Configured system error reports"
+                        "area1": "تم التحقق من استمرار تشغيل الخدمات الأساسية",
+                        "area2": "تم تعديل خدمات تعزيز الأداء",
+                        "area3": "تم إصلاح جميع أخطاء تعارض البرامج",
+                        "area4": "تم تحسين إدارة أخطاء Windows",
+                        "area5": "تم التحقق من جميع أخطاء تشغيل التطبيقات وإصلاحها",
+                        "area6": "تم تكوين تقارير أخطاء النظام"
                     }
                 },
                 "internetperformance": {
                     "ejunkscannedareas": {
-                        "area1": "Removed clutter from 4 browser(s)",
-                        "area2": "Cleaned leftover e-junk",
-                        "area3": "Deleted outdated internet files",
-                        "area4": "Cleared unwanted web cache",
-                        "area5": "Cleared Cookies",
-                        "area6": "Cleaned any browser residues"
+                        "area1": "تمت إزالة الفوضى من 4 مستعرضات",
+                        "area2": "تم محو الرسائل الإلكترونية غير المهمة المتبقية",
+                        "area3": "تم حذف ملفات الإنترنت القديمة",
+                        "area4": "تم محو ذاكرة التخزين المؤقت للويب غير المرغوب فيها",
+                        "area5": "تم محو ملفات تعريف الارتباط",
+                        "area6": "تم محو جميع مخلفات المستعرضات"
                     },
                     "browsersecurityscannedareas": {
-                        "area1": "Ensured security services are running",
-                        "area2": "Configured browser security features",
-                        "area3": "Checked and fixed network services",
-                        "area4": "Configured protocol settings",
-                        "area5": "Verified Browser content settings are OK",
-                        "area6": "Scanned browser plugins & extensions"
+                        "area1": "تم التأكد من استمرار تشغيل خدمات الأمان",
+                        "area2": "تم تكوين ميزات أمان المستعرض",
+                        "area3": "تم التحقق من خدمات الشبكة وإصلاحها",
+                        "area4": "تم تكوين إعدادات البروتوكولات",
+                        "area5": "تم التحقق من أن إعدادات محتوى المستعرض على ما يرام",
+                        "area6": "تم فحص المكوّنات الإضافية للمستعرض وملحقاته"
                     },
                     "networksettingsscannedareas": {
-                        "area1": "Fixed network and Internet settings",
-                        "area2": "Checked network configuration settings",
-                        "area3": "Modified connected network settings",
-                        "area4": "Diagnosed settings for faster websites rendering",
-                        "area5": "Fixed any page rendering errors",
-                        "area6": "Scanned all connection service(s)"
+                        "area1": "تم إصلاح إعدادات الشبكة والإنترنت",
+                        "area2": "تم التحقق من إعدادات تكوين الشبكة",
+                        "area3": "تم تعديل إعدادات الشبكة المتصلة",
+                        "area4": "تم تشخيص الإعدادات لزيادة سرعة عرض مواقع الويب",
+                        "area5": "تم إصلاح جميع أخطاء عرض الصفحات",
+                        "area6": "تم فحص جميع خدمات الاتصال"
                     },
                     "browsersettingsscannedareas": {
-                        "area1": "Modified settings for better browsing experience",
-                        "area2": "Verified settings for faster websites rendering",
-                        "area3": "Ensured browser security services are OK",
-                        "area4": "Modified settings to load webpages properly",
-                        "area5": "Fixed settings for faster downloads",
-                        "area6": "Fixed permissions and access control settings"
+                        "area1": "تم تعديل الإعدادات لتحسين تجربة الاستعراض",
+                        "area2": "تم التحقق من الإعدادات لزيادة سرعة عرض مواقع الويب",
+                        "area3": "تم التأكد من أن خدمات أمان المستعرض على ما يرام",
+                        "area4": "تم تعديل الإعدادات لتحميل صفحات الويب بشكل صحيح",
+                        "area5": "تم إصلاح الإعدادات لزيادة سرعة عمليات التنزيل",
+                        "area6": "تم إصلاح إعدادات التحكم في الوصول والأذونات"
                     },
                     "wifiperformancescannedareas": {
-                        "area1": "Modified Wi-Fi experience settings",
-                        "area2": "Validated secure home network settings",
-                        "area3": "Fixed Wi-Fi services settings",
-                        "area4": "Modified Secure network sharing settings",
-                        "area5": "Verified Wi-Fi security standards",
-                        "area6": "Validated Wi-Fi channels"
+                        "area1": "تم تعديل إعدادات تجربة Wi-Fi",
+                        "area2": "تم التحقق من إعدادات أمان الشبكة المنزلية",
+                        "area3": "تم إصلاح إعدادات خدمات Wi-Fi",
+                        "area4": "تم تعديل إعدادات المشاركة الآمنة للشبكة",
+                        "area5": "تم التحقق من معايير أمان Wi-Fi",
+                        "area6": "تم التحقق من قنوات Wi-Fi"
                     }
                 },
                 "malwaresecurity": {
                     "malwarescanscannedareas": {
-                        "area1": "Checked & Removed threats in common loading points",
-                        "area2": "Checked and removed threats in critical locations",
-                        "area3": "Removed any threats from PC",
-                        "area4": "Validated 50+ file types for threats",
-                        "area5": "Cleaned any malware remnants",
-                        "area6": "Verified in cloud remediation engine"
+                        "area1": "تم التحقق من التهديدات في نقاط التحميل الشائعة وإزالتها",
+                        "area2": "تم التحقق من التهديدات في المواقع المهمة وإزالتها",
+                        "area3": "تمت إزالة جميع التهديدات من جهاز الكمبيوتر",
+                        "area4": "تم التحقق من أكثر من 50 نوعًا من الملفات بحثًا عن التهديدات",
+                        "area5": "تم محو جميع مخلفات البرامج الضارة",
+                        "area6": "تم التحقق في محرك التصحيح القائم على السحابة الإلكترونية"
                     },
                     "errantprogramsscannedareas": {
-                        "area1": "Validated all installed apps",
-                        "area2": "Validated potentially unwanted apps",
-                        "area3": "Cleaned any inactive and hidden apps",
-                        "area4": "Removed any malicious and errant apps",
-                        "area5": "Validated apps based on reputation factor",
-                        "area6": "Completed registry check for errant programs"
+                        "area1": "تم التحقق من جميع التطبيقات المُثبّتة",
+                        "area2": "تم التحقق من التطبيقات المُحتمل أن تكون غير مرغوب فيها",
+                        "area3": "تم محو جميع التطبيقات المخفية وغير النشطة",
+                        "area4": "تمت إزالة جميع التطبيقات الضارة وذات الأخطاء",
+                        "area5": "تم التحقق من التطبيقات بناءً على عامل السمعة",
+                        "area6": "تم الانتهاء من فحص السجلّ بحثًا عن البرامج ذات الأخطاء"
                     },
                     "zerodayinfectionsscannedareas": {
-                        "area1": "Analyzed for zero-day virus",
-                        "area2": "Removed any malware from PC",
-                        "area3": "Validated in cloud remediation engine",
-                        "area4": "Completed behavioral monitoring of apps",
-                        "area5": "Validated against aggregated engine",
-                        "area6": "Validated against latest definitions"
+                        "area1": "تم التحليل بحثًا عن الفيروس الأولي المباغت",
+                        "area2": "تمت إزالة جميع البرامج الضارة من جهاز الكمبيوتر الشخصي",
+                        "area3": "تم التحقق في محرك التصحيح القائم على السحابة الإلكترونية",
+                        "area4": "تم الانتهاء من المراقبة السلوكية للتطبيقات",
+                        "area5": "تم التحقق بالاستناد إلى المحرك المُجمّع",
+                        "area6": "تم التحقق بالاستناد إلى آخر التعريفات"
                     },
                     "securitysettingsscannedareas": {
-                        "area1": "Optimized Windows update settings",
-                        "area2": "Tuned Windows firewall service",
-                        "area3": "Secured browser(s) settings",
-                        "area4": "Diagnosed essential security services",
-                        "area5": "Optimized user access settings",
-                        "area6": "Modified authentication services"
+                        "area1": "تم تحسين إعدادات تحديث Windows",
+                        "area2": "تم ضبط خدمة جدار الحماية لـ Windows",
+                        "area3": "تم تأمين إعدادات المستعرضات",
+                        "area4": "تم تشخيص خدمات الأمان الأساسية",
+                        "area5": "تم تحسين إعدادات وصول المستخدم",
+                        "area6": "تم تعديل خدمات المصادقة"
                     },
                     "annoyingadwarescannedareas": {
-                        "area1": "Removed browser(s) adware",
-                        "area2": "Tuned browser(s) pop-up settings",
-                        "area3": "Diagnosed browser re-direction threats",
-                        "area4": "Cleared adware leftovers",
-                        "area5": "Optimized browser experience settings",
-                        "area6": "Validated in cloud remediation engine"
+                        "area1": "تمت إزالة البرامج الإعلانية في المستعرضات",
+                        "area2": "تم ضبط إعدادات النوافذ المنبثقة في المستعرضات",
+                        "area3": "تم تشخيص تهديدات إعادة توجيه المستعرض",
+                        "area4": "تم محو بقايا البرامج الإعلانية",
+                        "area5": "تم تحسين إعدادات تجربة المستعرض",
+                        "area6": "تم التحقق في محرك التصحيح القائم على السحابة الإلكترونية"
                     }
                 }
             },
-            "issues": "ISSUES",
+            "issues": "مشكلة (مشاكل)",
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
-            "backToHome": "Back To Home"
+            "backToHome": "العودة إلى الصفحة الرئيسية"
         },
         "subscriberScanHomePage": {
-            "title": "All is well with your ",
-            "serialNumber": "Serial number: ",
-            "subTitle": "You are subscribed to Lenovo Smart Performance Service",
-            "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
-            "scanNow": "SCAN NOW",
-            "returnto": "RETURN TO DASHBOARD",
-            "mostRecent": "MOST RECENT SCAN:",
-            "nextScheduled": "NEXT SCHEDULED SCAN:",
+            "title": "كل شيء على ما يرام في ",
+            "serialNumber": "الرقم التسلسلي: ",
+            "subTitle": "أنت مشترك في ميزة Smart Performance من Lenovo",
+            "description": "نقوم في كثير من الأحيان بفحص الكمبيوتر بحثًا عن مشاكل الأداء فيه وفي الإنترنت ومشاكل البرامج الضارة، ثم نصلح هذه المشاكل بشكل استباقي. يتمتع جهازك بحماية كافية. يمكنك أيضًا بدء فحص الأداء عند الطلب من خلال النقر على زر \"فحص الآن\".",
+            "scanNow": "فحص وإصلاح",
+            "returnto": "العودة إلى لوحة المعلومات",
+            "mostRecent": "آخر فحص:",
+            "nextScheduled": "الفحص المُجدول التالي",
             "scanSummary": {
-                "title": "Scan summary:",
-                "description": "We are constantly tuning your computer",
-                "tune": "Tune",
-                "tuneSummary": "Disk space reclaimed",
-                "boost": "Boost",
-                "boostSummary": "Fixes to improve performance",
-                "secure": "Secure",
-                "secureSummary": "Fixes to improve security",
-                "annual": "Annual",
-                "quarterly": "Quarterly",
-                "custom": "Custom",
-                "txtFrom": "From",
-                "txtTo": "To",
-                "txtGo": "Go",
-                "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "title": "ملخص الفحص:",
+                "description": "نعمل دائمًا على ضبط جهاز الكمبيوتر الخاص بك",
+                "tune": "ضبط",
+                "tuneSummary": "مساحة القرص المُستردة",
+                "boost": "تعزيز",
+                "boostSummary": "عمليات الإصلاح لتحسين الأداء",
+                "secure": "تأمين",
+                "secureSummary": "عمليات الإصلاح لتحسين الأمان",
+                "annual": "سنوية",
+                "quarterly": "ربع سنوية",
+                "custom": "مخصص",
+                "txtFrom": "من",
+                "txtTo": "إلى",
+                "txtGo": "انتقال",
+                "summaryCaption": "المساحة المُستردة",
+                "fixes": "عملية (عمليات) الإصلاح",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
-                "title": "Last 5 scan results:",
-                "scanDate": "Scan date:",
-                "results": "Results:",
-                "status": "Status"
+                "title": "نتائج آخر 5 عمليات فحص:",
+                "scanDate": "تاريخ الفحص",
+                "results": "النتائج",
+                "status": "الحالة"
             },
-            "backToHome": "Back To Home",
-            "successTitle": "Your Pc is tuned up !",
-            "successDescription": "Smart Performance resolved <b>{{issueCount}} issues</b> to keep your pc running smoothly, you can find scan summary and report below."
+            "backToHome": "العودة إلى الصفحة الرئيسية",
+            "successTitle": "تم ضبط الكمبيوتر الخاص بك.",
+            "successDescription": "انتهت ميزة Smart Performance من حل <b>{{issueCount}} المشاكل</b> للحفاظ على سلاسة تشغيل جهاز الكمبيوتر الخاص بك، ويمكنك العثور على ملخص وتقرير الفحص أدناه."
         },
-        "runningWell": "PC is running well",
+        "runningWell": "يعمل جهاز الكمبيوتر الشخصي بشكل جيد",
         "feedbackContainer": {
-            "title": "Leave us some feedback",
-            "subtitle": "Tell us what you think about Vantage",
-            "buttonText": "send feedback",
+            "title": "اترك لنا بعض الملاحظات",
+            "subtitle": "أخبرنا عن رأيك في Smart Performance",
+            "buttonText": "إرسال ملاحظات",
             "questions": {
-                "q1": "Does the product look and feel good?",
-                "q2": "Do the feature seen comprehensive?",
-                "q3": "Was the scan easy to use?",
-                "q4": "Happy about the fixes we did?",
-                "q5": "Do you see value for money? ",
-                "q6": "Will you refer it to your friends and family?",
-                "q7": "How likely are you to continue paying for the Smart Performance feature?",
-                "q8": "Overall how satisfied are you with the Smart Performance feature?"
+                "q1": "1. ما مدى صعوبة أو سهولة استخدام ميزة الفحص؟",
+                "q2": "2. ما مدى صعوبة أو سهولة فهم نتائج الفحص؟",
+                "q3": "3. ما مدى احتمالية أن تدفع مقابل اشتراك Smart Performance من أجل تحسين أداء النظام الخاص بك؟",
+                "q4": "4. بشكل عام، ما مدى رضاك عن ميزة Smart Performance؟",
+                "q5": "1. ما مدى صعوبة أو سهولة فهم الإصلاحات التي أجرتها ميزة Smart Performance على نظامك؟",
+                "q6": "2. هل وجدنا أي برامج ضارة على نظامك؟",
+                "q7": "3. ما مدى احتمالية استمرارك في الدفع مقابل ميزة Smart Performance؟",
+                "q8": "4. بشكل عام، ما مدى رضاك عن ميزة Smart Performance؟"
             },
             "rating": {
-                "r1": "Hate it",
-                "r2": "Love it",
-                "r3": "Seems lacking",
-                "r4": "Good enough",
-                "r5": "Crazy",
-                "r6": "Cool",
-                "r7": "Not so sure",
-                "r8": "Absolutely yes",
-                "r9": "No way",
-                "r10": "Looks worthy",
-                "r11": "Not so sure",
-                "r12": "Absolutely yes",
-                "r13": "Not at all likely",
-                "r14": "Very Likely",
-                "r15": "Not at all satisfied",
-                "r16": "Very Satisfied"
+                "r1": "صعوبة كبيرة",
+                "r2": "سهولة كبيرة",
+                "r3": "صعوبة كبيرة",
+                "r4": "سهولة كبيرة",
+                "r5": "غير محتمل على الإطلاق",
+                "r6": "احتمالية كبيرة",
+                "r7": "غير راض بالمرة",
+                "r8": "راض جدًا",
+                "r9": "صعوبة كبيرة",
+                "r10": "سهولة كبيرة",
+                "r11": "نعم",
+                "r12": "لا",
+                "r13": "غير محتمل على الإطلاق",
+                "r14": "احتمالية كبيرة",
+                "r15": "غير راض بالمرة",
+                "r16": "راض جدًا"
             },
-            "commentTip": "Shout what you love and whisper what you hate.",
-            "comments": "Please leave your comments here..."
+            "commentTip": "يُرجى ترك أي تعليقات أو ملاحظات إضافية أدناه:",
+            "comments": "الرجاء ترك تعليقاتك هنا..."
         },
-        "auto": "Auto",
-        "manual": "Manual",
-        "noScanResults": "Please click SCAN & FIX button to trigger scan process."
+        "auto": "تلقائي",
+        "manual": "يدوي",
+        "noScanResults": "يُرجى النقر فوق الزر SCAN & FIX (فحص وإصلاح) لبدء عملية الفحص."
     },
     "homeSecurity": {
         "title": "Connected Home Security",

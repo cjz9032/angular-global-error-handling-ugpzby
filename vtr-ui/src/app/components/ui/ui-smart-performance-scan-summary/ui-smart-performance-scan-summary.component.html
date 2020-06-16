@@ -217,7 +217,7 @@
 																	*ngFor="let item of menuItems;let ind=index"
 																	(click)="scanSummaryTime(ind)"
 																	[ngClass]="{'selected-list-item': tabIndex === ind}">
-																	{{item.itemName}}
+																	{{item.itemName | translate}}
 																	<!-- <div class="list-item" >
 																	</div> -->
 																</li>
@@ -286,10 +286,9 @@
 																						(click)="selectToDate()" readonly /></div>
 
 																			</div>
-																			<div class="row">
-																				<div class="col-3"></div>
-																				<div class="col-9"><button class="custom-go-btn mt-3" (click)="customDateScanSummary()">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtGo' |translate }}</button>
-																				</div>
+																			<div class="row d-flex justify-content-center">
+																				<button class="custom-go-btn mt-3" (click)="customDateScanSummary()">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtGo' |translate }}</button>
+																				<button class="custom-go-btn mt-3" (click)="customDateScanSummary()">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtClr' |translate }}</button>
 																			</div>
 																		</div>
 																		<div class="col date-picker">

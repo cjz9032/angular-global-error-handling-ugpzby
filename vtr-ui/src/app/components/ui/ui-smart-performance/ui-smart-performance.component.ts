@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges} from '@angular/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalSmartPerformanceSubscribeComponent } from '../../modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
@@ -19,7 +19,8 @@ import { MetricService } from 'src/app/services/metric/metrics.service';
 	templateUrl: './ui-smart-performance.component.html',
 	styleUrls: ['./ui-smart-performance.component.scss']
 })
-export class UiSmartPerformanceComponent implements OnInit {
+export class UiSmartPerformanceComponent implements OnInit, OnChanges {
+
 	title = 'smartPerformance.title';
 	back = 'smartPerformance.back';
 	backarrow = '< ';
@@ -31,6 +32,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 	currentSubItemCategory: any = {};
 	isScheduleScanRunning = false;
 	@Input() activegroup = 'Tune up performance';
+	@Input() isScanningStarted = 0;
 	isSubscribed = false;
 	public tune = 0;
 	public boost = 0;
@@ -61,13 +63,18 @@ export class UiSmartPerformanceComponent implements OnInit {
 		public shellServices: VantageShellService,
 		public metricsTranslateService: MetricsTranslateService,
 		public metricsService: MetricService,
-		
+
 	) {
 		this.translateStrings();
 		this.shellServices.getMetrics();
 		this.metrics = this.shellServices.getMetrics();
 	}
 
+	ngOnChanges(changes: SimpleChanges): void {
+		if (changes && changes.isScanningStarted && !changes.isScanningStarted.firstChange) {
+			this.checkReadiness();
+		}
+	}
 	ngOnInit() {
 		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
 		if (this.isSubscribed === undefined) {
@@ -87,25 +94,28 @@ export class UiSmartPerformanceComponent implements OnInit {
 		}
 
 		if (this.smartPerformanceService.isShellAvailable) {
-			this.smartPerformanceService
-				.getReadiness()
-				.then((getReadinessFromService: any) => {
-					this.logger.info('ui-smart-performance.ngOnInit.getReadiness.then', getReadinessFromService);
-					if (!getReadinessFromService) {
-						this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
-						this.isScanning = true;
-						this.registerScheduleScanEvent();
-						this.getSmartPerformanceScheduleScanStatus();
-					}
-					else {
-						this.isScanning = false;
-					}
-				})
-				.catch(error => {
-					this.logger.error('ui-smart-performance.ngOnInit.getReadiness.then', error);
-				})
+		this.checkReadiness();
 		}
 	}
+	checkReadiness() {
+        this.smartPerformanceService.getReadiness()
+			.then((getReadinessFromService: any) => {
+				this.logger.info('ui-smart-performance.ngOnInit.getReadiness.then', getReadinessFromService);
+				if (!getReadinessFromService) {
+					this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
+					this.isScanning = true;
+					this.registerScheduleScanEvent();
+					this.getSmartPerformanceScheduleScanStatus();
+				}
+				else {
+					this.isScanning = false;
+				}
+			})
+			.catch(error => {
+				this.logger.error('ui-smart-performance.ngOnInit.getReadiness.then', error);
+			})
+    }
+
 	async scheduleScan(scantype, frequency, day, time, date) {
 		const payload = {
 			scantype,

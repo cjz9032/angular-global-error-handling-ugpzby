@@ -1766,7 +1766,8 @@
                             "title": "Uruchom ponownie komputer",
                             "description": "Aby zmiana funkcji klawisza z górnego wiersza zaczęła obowiązywać, należy ponownie uruchomić komputer. Czy na pewno chcesz uruchomić ponownie?",
                             "reboot": "URUCHOM PONOWNIE",
-                            "cancel": "NIE TERAZ"
+                            "cancel": "NIE TERAZ",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Aby uzyskać dostęp do klawiszy F1-F12, należy przytrzymać klawisz Fn, a następnie nacisnąć odpowiedni klawisz w górnym rzędzie.",
@@ -3285,7 +3286,8 @@
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+            "processStatus": "PROCESSING"
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3770,7 +3772,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

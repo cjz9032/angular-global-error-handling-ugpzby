@@ -1766,7 +1766,8 @@
                             "title": "Επανεκκίνηση υπολογιστή",
                             "description": "Η αλλαγή της προεπιλεγμένης λειτουργίας επάνω σειράς απαιτεί να κάνετε επανεκκίνηση του υπολογιστή σας. Είστε βέβαιοι ότι θέλετε επανεκκίνηση;",
                             "reboot": "ΕΠΑΝΕΚΚΙΝΗΣΗ",
-                            "cancel": "ΟΧΙ ΤΩΡΑ"
+                            "cancel": "ΟΧΙ ΤΩΡΑ",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Για να αποκτήσετε πρόσβαση στη λειτουργία F1-F12, πιέστε το πλήκτρο Fn και τα πλήκτρα στην επάνω σειρά.",
@@ -3285,7 +3286,8 @@
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+            "processStatus": "PROCESSING"
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3770,7 +3772,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

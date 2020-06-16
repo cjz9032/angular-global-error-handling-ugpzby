@@ -1766,7 +1766,8 @@
                             "title": "Tietokoneen käynnistäminen uudelleen",
                             "description": "Ylärivin oletustoiminnon muuttaminen edellyttää tietokoneen käynnistämistä uudelleen. Haluatko varmasti käynnistää tietokoneen uudelleen?",
                             "reboot": "KÄYNNISTÄ UUDELLEEN",
-                            "cancel": "EI NYT"
+                            "cancel": "EI NYT",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Jos haluat käyttää näppäinten F1–F12 toimintoja, paina Fn-näppäintä ja ylärivin näppäimiä.",
@@ -3163,15 +3164,15 @@
         }
     },
     "smartPerformance": {
-        "title": "Health & Support",
-        "back": "BACK",
-        "performanceandSecurityCheckTitle": "Performance & Security Check",
-        "performanceandSecurityCheckSubTitle": "Let's diagnose and resolve performance and security issues in your computer",
-        "scanButton": "FREE PC SCAN",
-        "section1Heading": "How would you rate your PC Performance?",
-        "section1Description": "PC running slow? Applications taking too long to respond? Windows errors? Malware concerns? Let's diagnose whats's causing the problem and fix it.",
-        "critical": "CRITICAL",
-        "allisWell": "ALL IS WELL",
+        "title": "Smart Performance",
+        "back": "EDELLINEN",
+        "performanceandSecurityCheckTitle": "Suorituskyvyn ja suojauksen tarkistus",
+        "performanceandSecurityCheckSubTitle": "Määritetään ja ratkaistaan tietokoneen suorituskykyyn ja suojaukseen liittyvät ongelmat",
+        "scanButton": "ILMAINEN TIETOKONEEN TARKISTUS",
+        "section1Heading": "Miten arvioit tietokoneesi suorituskyvyn?",
+        "section1Description": "Toimiiko tietokone hitaasti? Kestääkö sovelluksen vastaaminen liian kauan? Windows-virheitä? Huolta haittaohjelmista? Määritetään ongelman syy ja korjataan se.",
+        "critical": "TÄRKEÄ",
+        "allisWell": "KAIKKI ON KUNNOSSA",
         "zero": 0,
         "one": 1,
         "two": 2,
@@ -3183,644 +3184,646 @@
         "eight": 8,
         "nine": 9,
         "ten": 10,
-        "tuneUP": "Your PC needs a tune-up",
-        "section2Heading": "Top-notch PC Performance. Always",
-        "section2Description": "Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+        "tuneUP": "Tietokoneesi on virittämisen tarpeessa",
+        "section2Heading": "Huippuluokan tietokoneen suorituskyky. Aina",
+        "section2Description": "Ohjelmistomme tarkistaa tietokoneesi ympäri vuorokauden ennakoivasti niin, että ongelmat löydetään ja korjataan heti niiden ilmetessä. Näin tietokoneesi suorituskyky on aina parhaimmillaan.",
         "tunePCPerformance": {
-            "title": "TUNE PC PERFORMANCE",
-            "heading": "Show your computer some extra love",
-            "description": "Even the best computer will benefit from periodic tune-ups. Get a tune-up and get more done with our powerful app.",
+            "title": "VIRITÄ TIETOKONEEN SUORITUSKYKYÄ",
+            "heading": "Helli tietokonettasi enemmän",
+            "description": "Parhaatkin tietokoneet hyötyvät säännöllisistä virityksistä. Tehokkaalla sovelluksellamme voit virittää tietokoneesi ja saat entistä enemmän aikaan.",
             "tabSet1": {
-                "tab1": "Accumulated Junk",
-                "tab2": "Usability Issues",
-                "tab3": "Windows Settings",
-                "tab4": "Systems Errors",
-                "tab5": "Registry Errors"
+                "tab1": "Kertynyt roska",
+                "tab2": "Käytettävyysongelmat",
+                "tab3": "Windows asetukset",
+                "tab4": "Järjestelmävirheet",
+                "tab5": "Rekisterivirheet"
             },
             "tabSet2": {
-                "tab1Heading": "IT'S EASY",
-                "tab1Description": "We don't confuse you with tech mumbo jumbp",
-                "tab2Heading": "IT'S FAST",
-                "tab2Description": "Get a 100 point check done in under 5 minutes",
-                "tab3Heading": "IT'S SAFE",
-                "tab3Description": "No scareware, built with best practises"
+                "tab1Heading": "SE ON HELPPOA",
+                "tab1Description": "Emme hämmennä sinua teknisellä hölynpölyllä",
+                "tab2Heading": "SE ON NOPEAA",
+                "tab2Description": "Sadan kohdan tarkistus tehdään alle 5 minuutissa",
+                "tab3Heading": "SE ON TURVALLISTA",
+                "tab3Description": "Ei pelotteluohjelmia, luotu parhaita käytäntöjä noudattaen"
             },
-            "summaryTitle": "Tune PC Performance"
+            "summaryTitle": "Viritä tietokoneen suorituskykyä"
         },
         "boostInternetPerformance": {
-            "title": "BOOST INTERNET PERFORMANCE",
-            "extraTitle": "INTERNET PERFORMANCE",
-            "heading": "Give your internet a boost",
-            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "title": "PARANNA INTERNETIN SUORITUSKYKYÄ",
+            "extraTitle": "INTERNETIN SUORITUSKYKY",
+            "heading": "Paranna Internetiä",
+            "description": "Monen mielestä elämä hitaan Wi-Fi kanssa tai ilman Wi-Fi on kuin eläisi kokonaan irti verkosta. Määritetään Internet-, Wi-Fi ja selainasetukset suorituskyvyn optimoimiseksi.",
             "tabSet1": {
-                "tab1": "Network Settings",
-                "tab2": "Browser Settings",
-                "tab3": "Browser Security",
-                "tab4": "Wi-Fi Performance",
-                "tab5": "E-junk"
+                "tab1": "E-roska",
+                "tab2": "Verkon asetukset",
+                "tab3": "Selaimen asetukset",
+                "tab4": "Selaimen suojaus",
+                "tab5": "Wi-Fi-suorituskyky"
             },
             "tabSet2": {
-                "tab1Heading": "ZERO DAY VIRUS",
-                "tab1Description": "We remove even the newest malware infections",
-                "tab2Heading": "SPYWARE REMOVAL",
-                "tab2Description": "We remove all potentially unwanted programs",
-                "tab3Heading": "LIGHT AND FAST",
-                "tab3Description": "Scan typically takes 5-10 minutes"
+                "tab1Heading": "SELAIMEN ONGELMAT",
+                "tab1Description": "Määritämme ja korjaamme kaikki yleiset verkkoselaimet.",
+                "tab2Heading": "YHTEYSVIRHEET",
+                "tab2Description": "Voimme määrittää ja korjata yhteysongelmasi.",
+                "tab3Heading": "HIDAS INTERNET",
+                "tab3Description": "Me autamme sinua saamaan parhaan mahdollisen suorituskyvyn."
             },
-            "summaryTitle": "Internet Performance"
+            "summaryTitle": "Internetin suorituskyky"
         },
         "malwareSecurity": {
-            "title": "MALWARE & SECURITY",
-            "heading": "Give your internet a boost",
-            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "title": "HAITTAOHJELMAT JA SUOJAUS",
+            "heading": "Anna tietokoneelle sen tarvitsemaa hoivaa",
+            "description": "Haittaohjelmat voivat johtaa tietokoneen kaatumiseen, tietojen vaarantumiseen ja suorituskyvyn heikkenemiseen. Saat haittaohjelmat poistettua ja paljon muuta.",
             "tabSet1": {
-                "tab1": "Malware scan",
-                "tab2": "Zero-day infections",
-                "tab3": "Security settings",
-                "tab4": "Errant programs",
-                "tab5": "Annoying adware"
+                "tab1": "Haittaohjelmien tarkistus",
+                "tab2": "Nollapäivätartunnat",
+                "tab3": "Virheelliset ohjelmat",
+                "tab4": "Ärsyttävät mainosohjelmat",
+                "tab5": "Suojausasetukset"
             },
             "tabSet2": {
-                "tab1Heading": "SLOW INTERNET",
-                "tab1Description": "We will help you get maximum performance.",
-                "tab2Heading": "CONNECTIVITY ERRORS",
-                "tab2Description": "We can diagnose and repair your connectivity problems.",
-                "tab3Heading": "BROWSER ISSUES",
-                "tab3Description": "We configure and fix all your popular web browsers."
+                "tab1Heading": "NOLLAPÄIVÄN VIRUS",
+                "tab1Description": "Poistamme uusimmatkin haittaohjelmatartunnat",
+                "tab2Heading": "VAKOILUOHJELMIEN POISTO",
+                "tab2Description": "Poistamme kaikki mahdollisesti ei-toivotut ohjelmat",
+                "tab3Heading": "KEVYT JA NOPEA",
+                "tab3Description": "Tarkistus kestää yleensä 5–10 minuuttia"
             },
-            "summaryTitle": "Malware & Security"
+            "summaryTitle": "Haittaohjelmat ja suojaus"
         },
         "proactiveAutomated": {
-            "title": "PROACTIVE & AUTOMATED",
-            "heading": "Get the power to resolve issues, before they impact you!",
-            "description": "Smart Performance constantly looks for hundreads of issues that impact PC performance. We fix them proactively, giving you peace of mind.",
+            "title": "ENNAKOIVA JA AUTOMATISOITU",
+            "heading": "Saat virtaa ratkaista ongelmat ennen kuin ne edes vaikuttavat sinuun!",
+            "description": "Smart Performance etsii jatkuvasti satoja erilaisia tietokoneen suorituskykyyn vaikuttavia ongelmia. Me korjaamme ne ennakoivasti ja annamme sinulle mielenrauhaa.",
             "tabSet1": {
-                "tab1": "Schedule Scan",
-                "tab2": "On-demand scan",
-                "tab3": "Automated resolution",
-                "tab4": "It's effective",
-                "tab5": "24/7 Protection"
+                "tab1": "Ajoita virustarkistus",
+                "tab2": "Tarvittaessa tehtävä tarkistus",
+                "tab3": "Automatisoitu tarkkuus",
+                "tab4": "Se on tehokas",
+                "tab5": "Ympärivuorokautinen suojaus"
             },
             "tabSet2": {
-                "tab1Heading": "IT'S EASY",
-                "tab1Description": "We don't confuse you with tech mumbo jumbp",
-                "tab2Heading": "IT'S FAST",
-                "tab2Description": "Get a 100 point check done in under 5 minutes",
-                "tab3Heading": "IT'S SAFE",
-                "tab3Description": "No scareware, built with best practises"
+                "tab1Heading": "SE ON HELPPOA",
+                "tab1Description": "Emme hämmennä sinua teknisellä hölynpölyllä",
+                "tab2Heading": "SE ON NOPEAA",
+                "tab2Description": "Sadan kohdan tarkistus tehdään alle 5 minuutissa",
+                "tab3Heading": "SE ON TURVALLISTA",
+                "tab3Description": "Ei pelotteluohjelmia, luotu parhaita käytäntöjä noudattaen"
             }
         },
-        "startScan": "<b>Ready to start the scan?</b> Let's diagnose and resolve performance and security issues in your computer",
+        "startScan": "<b>Oletko valmis aloittamaan tarkistuksen?</b> Määritetään tietokoneesi suorituskykyyn ja suojaukseen liittyvät ongelmat.",
         "subscriptionDetails": {
-            "title": "Subscription details",
-            "description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
-            "learnMore": "Learn more",
-            "startDate": "Start date",
-            "endDate": "End date",
-            "status": "Status",
-            "activeStatus": "ACTIVE",
-            "inactiveStatus": "INACTIVE",
-            "manageSubscription": "MANAGE SUBSCRIPTION",
-            "titlebeta": "Lenovo Beta Program",
-            "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
-            "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
-            "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "title": "Tilauksen tiedot",
+            "description": "Olet tilannut Lenovo Smart Performance -palvelun. Tänä aikana käytössäsi ovat kaikki ominaisuudet, jotta tietokoneesi pysyy suojattuna ja hyvässä kunnossa.",
+            "learnMore": "Lisätietoja",
+            "startDate": "Aloituspäivä",
+            "endDate": "Päättymispäivämäärä",
+            "status": "Tila",
+            "activeStatus": "KÄYTÖSSÄ",
+            "inactiveStatus": "EI KÄYTÖSSÄ",
+            "manageSubscription": "HALLITSE TILAUSTA",
+            "titlebeta": "Lenovo Beta -ohjelma",
+            "manageSubscriptionBeta": "OTA KÄYTTÖÖN TÄYSVERSIO",
+            "descriptionbeta": "Lenovo tarjoaa pilottiohjelman Smart Performance -ominaisuuden kokeilemiseen heinäkuuhun 2020 asti.",
+            "descriptionbeta1": "Olet tervetullut liittymään ja kokeilemaan täysversiota.",
+            "descriptionNonSubscriber": "Et ole tilannut Lenovo Smart Performance -palvelua. Voit vain tarkistaa tietokoneesi. Tilaa nyt, niin saat täydet edut tietokoneesi pitämisestä suojattuna ja hyvässä kunnossa.",
+            "processStatus": "PROCESSING"
         },
         "scanSettings": {
-            "title": "Scan settings",
-            "description": "Enable or disable the scan and set the scan schedule",
-            "enableScan": "Enable Scan",
-            "changeScanTitle": "Change scan schedule",
-            "changeScanDescription": "Edit the scan schedule to run when you need it.",
-            "frequency": "Frequency",
-            "txtDate": "Date",
-            "txtDay": "Day",
-            "txtTime": "Time",
-            "txtSave": "save",
-            "txtCancel": "cancel",
-            "scanFrequencyWeek": "Once a week",
-            "scanFrequencyEveryWeek": "Every other week",
-            "scanFrequencyMonth": "Every month",
-            "mon": "Monday",
-            "tue": "Tuesday",
-            "wed": "Wednesday",
-            "thu": "Thursday",
-            "fri": "Friday",
-            "sat": "Saturday",
-            "sun": "Sunday",
-            "tooltipText": "Enable this toggle to automatically initiate a system performance scan on your selected date and time."
+            "title": "Tarkistusaikataulun asetukset",
+            "description": "Ota tarkistus käyttöön tai poista se käytöstä ja ajasta tarkistus",
+            "enableScan": "Ota tarkistus käyttöön",
+            "changeScanTitle": "Muuta tarkistusaikataulua",
+            "changeScanDescription": "Muuta tarkistusaikataulua niin, että tarkistus tehdään tarvittaessa.",
+            "frequency": "Toistoväli",
+            "txtDate": "Päivämäärä",
+            "txtDay": "Päivä",
+            "txtTime": "Aika",
+            "txtSave": "tallenna",
+            "txtCancel": "peruuta",
+            "scanFrequencyWeek": "Kerran viikossa",
+            "scanFrequencyEveryWeek": "Joka toinen viikko",
+            "scanFrequencyMonth": "Joka kuukausi",
+            "mon": "Maanantaina",
+            "tue": "Tiistaina",
+            "wed": "Keskiviikkona",
+            "thu": "Torstaina",
+            "fri": "Perjantaina",
+            "sat": "Lauantaina",
+            "sun": "Sunnuntaina",
+            "tooltipText": "Kun tämä vaihtoehto on valittuna, järjestelmän suorituskyvyn ja suojauksen tarkistus aloitetaan automaattisesti valittuna päivänä ja kellonaikana."
         },
         "scanningPage": {
-            "title": "Performance & security check",
-            "description": "Please wait while we scan your system for potential problems and threats.",
-            "scanningSystem": "Scanning system",
-            "complete": "complete",
+            "title": "Suorituskyvyn ja suojauksen tarkistus",
+            "description": "Odota, kunnes järjestelmämme on tarkistanut mahdolliset ongelmat ja uhat.",
+            "scanningSystem": "Tarkistetaan järjestelmää",
+            "complete": "valmis",
             "cancelScan": {
-                "button": "CANCEL SCAN",
-                "title": "Cacel the scan?",
-                "description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
-                "yesButton": "YES, CANCEL",
-                "noButton": "NO, RESUME SCAN",
+                "button": "PERUUTA TARKISTUS",
+                "title": "Peruutetaanko tarkistus?",
+                "description": "Jos poistut nykyisestä näytöstä, tarkistus peruutetaan ja palaat takaisin aloitusnäyttöön. Voit kuitenkin tehdä tarkistuksen uudelleen milloin tahansa.",
+                "yesButton": "KYLLÄ, PERUUTA",
+                "noButton": "EI, JATKA TARKISTUSTA",
                 "cancelMayTakeSomeTime": "Odota hetki, peruutus saattaa kestää jonkin aikaa järjestelmästäsi riippuen.",
                 "cancelTextPrompt": "Haluatko varmasti peruuttaa?"
             },
-            "waiting": "WAITING TO SCAN",
-            "completed": "COMPLETED",
+            "waiting": "ODOTETAAN TARKISTUSTA",
+            "completed": "VALMIS",
             "nowScanningDetail": {
-                "cardTitle": "NOW SCANNING DETAIL",
-                "current": "CURRENT: ",
-                "upNext": "UP NEXT",
-                "tunePCDesc": "Let’s help improve your PC performance. We do it safely using industry best practices. Benefits for subscribers include reduced PC start time, improved performance, improved stability and faster launch of applications.",
-                "boostDesc": "Let’s help enhance your browsing experience. Let's fix network and access issues. Benefits for subscribers include betterment in internet connectivity, improvement in upload/download speeds and making internet more secure.",
-                "malwareDesc": "Let’s help quickly secure your PC, on-demand. We do it by removing spyware, malware and adware. We also remove near/zero-day infections. Benefits for subscribers include security of data and optimal system performance.",
-                "proactiveDesc": "Let's tune your computer periodically and fix issues, Proactive and automated to keep your PC tuned and covered. Always",
+                "cardTitle": "TÄMÄN TARKISTUKSEN TIEDOT",
+                "current": "TÄMÄNHETKINEN: ",
+                "upNext": "SEURAAVAKSI",
+                "tunePCDesc": "Autetaan parantamaan tietokoneesi suorituskykyä. Teemme sen turvallisesti alan parhaiden käytäntöjen mukaisesti. Tilaajan etuja ovat muun muassa tietokoneen käynnistysajan lyheneminen, suorituskyvyn paraneminen, vakauden parantaminen ja sovellusten nopeampi käynnistyminen.",
+                "boostDesc": "Autetaan parantamaan selauskokemusta. Korjataan verkko- ja käyttöongelmat. Tilaajan etuja ovat muun muassa Internet-yhteyksien, latausnopeuksien ja Internet-suojauksen paraneminen.",
+                "malwareDesc": "Autetaan suojaamaan tietokoneesi nopeasti tarvittaessa. Teemme sen poistamalla vakoilu-, haitta- ja mainosohjelmat. Poistamme myös nollapäivätartunnat. Tilaajan etuja ovat muun muassa tietojen suojaus ja järjestelmän optimaalinen suorituskyky.",
+                "proactiveDesc": "Viritetään tietokone säännöllisesti ja korjataan ongelmat ennakoivasti ja automatisoidusti, jotta tietokoneesi pysyy ajan tasalla ja suojattuna. Aina",
                 "tunePCScanningItems": {
                     "accumulatedJunk": {
-                        "itema1": "Look for junk in 85 locations",
-                        "itema2": "System log files that aren’t needed",
-                        "itema3": "Unnecessary application residues",
-                        "itema4": "Temporary files that clog diskspace",
-                        "itema5": "Files that you deleted so long ago",
-                        "itema6": "Outdated errors and alerts"
+                        "itema1": "Etsi roskaa 85 sijainnista",
+                        "itema2": "Järjestelmän tarpeettomat lokitiedostot",
+                        "itema3": "Tarpeettomat sovellusjäännökset",
+                        "itema4": "Tilapäiset tiedostot, jotka tukkivat levytilaa",
+                        "itema5": "Tiedostot, jotka olet poistanut kauan sitten",
+                        "itema6": "Vanhentuneet virheet ja ilmoitukset"
                     },
                     "usabilityIssues": {
-                        "itemb1": "Address dozens of usability challenges",
-                        "itemb2": "Check external devices connectivity",
-                        "itemb3": "Keeping Windows updates always current",
-                        "itemb4": "Do apps render and appear at its best",
-                        "itemb5": "Analyzing processing power utilization",
-                        "itemb6": "Help locate files easily"
+                        "itemb1": "Tartu kymmeniin käytettävyyshaasteisiin",
+                        "itemb2": "Tarkista ulkoisten laitteiden yhteydet",
+                        "itemb3": "Windows-päivitysten pitäminen aina ajan tasalla",
+                        "itemb4": "Renderöivätkö ja näkyvätkö sovellukset aina parhaalla mahdollisella tavalla",
+                        "itemb5": "Käsittelytehon käytön analysointi",
+                        "itemb6": "Auta paikantamaan tiedostot helposti"
                     },
                     "windowsSettings": {
-                        "itemc1": "Diagnose dozens of Windows OS settings",
-                        "itemc2": "Ensure all is well with your Windows",
-                        "itemc3": "Ensure essential services are running",
-                        "itemc4": "Check health of connectivity settings",
-                        "itemc5": "Check ability to share files in network",
-                        "itemc6": "Check biometric and access settings"
+                        "itemc1": "Määritä kymmenien Windows-käyttöjärjestelmän asetusten ongelmat",
+                        "itemc2": "Varmista, että Windows on kaikki hyvin",
+                        "itemc3": "Varmista, että tärkeät palvelut toimivat",
+                        "itemc4": "Tarkista yhteysasetusten kunto",
+                        "itemc5": "Tarkista mahdollisuus jakaa tiedostoja verkostossa",
+                        "itemc6": "Tarkista biometria- ja käyttöoikeusasetukset"
                     },
                     "systemErrors": {
-                        "itemd1": "Ensure essential services are running",
-                        "itemd2": "Select services for higher performance",
-                        "itemd3": "Look for software conflict errors",
-                        "itemd4": "Optimize Windows error management",
-                        "itemd5": "Check and fix apps launching errors",
-                        "itemd6": "Configure system error reports"
+                        "itemd1": "Varmista, että tärkeät palvelut toimivat",
+                        "itemd2": "Valitse palvelut, jotka parantavat suorituskykyä",
+                        "itemd3": "Etsi yhteensopimattomien ohjelmistojen virheitä",
+                        "itemd4": "Optimoi Windows-virheiden hallinta",
+                        "itemd5": "Tarkista ja korjaa sovellusten käynnistysvirheet",
+                        "itemd6": "Määritä järjestelmävirheraportit"
                     },
                     "registryErrors": {
-                        "iteme1": "Deep check Windows registry,",
-                        "iteme2": "Scanning for invalid Windows services",
-                        "iteme3": "Finding corrupted registry entries",
-                        "iteme4": "Look for useless file extensions",
-                        "iteme5": "Search broken entries of installed apps",
-                        "iteme6": "Look for useless leftover entries"
+                        "iteme1": "Tarkista Windows-rekisteri perusteellisesti,",
+                        "iteme2": "Virheellisten Windows-palvelujen tarkistus",
+                        "iteme3": "Vioittuneiden rekisterimerkintöjen löytäminen",
+                        "iteme4": "Etsi turhia tiedostotunnisteita",
+                        "iteme5": "Hae asennettujen sovellusten rikkinäisiä merkintöjä",
+                        "iteme6": "Etsi turhia jäljelle jääneitä merkintöjä"
                     }
                 },
                 "boostScanningItems": {
                     "networkSettings": {
-                        "itema1": "Diagnose network and Internet settings",
-                        "itema2": "Verify network configuration settings",
-                        "itema3": "Verify available network settings",
-                        "itema4": "Configure to load websites faster",
-                        "itema5": "Look for page rendering errors",
-                        "itema6": "Are connection service(s) running well"
+                        "itema1": "Määritä verkko- ja Internet-asetusten ongelmat",
+                        "itema2": "Vahvista verkon kokoonpanoasetukset",
+                        "itema3": "Vahvista saatavilla olevat verkkoasetukset",
+                        "itema4": "Määritä nopeuttaaksesi verkkosivujen latautumista",
+                        "itema5": "Etsi sivun renderöintivirheitä",
+                        "itema6": "Toimivatko yhteyspalvelut hyvin"
                     },
                     "browserSettings": {
-                        "itemb1": "Enable better browsing experience",
-                        "itemb2": "Configure settings faster websites rendering",
-                        "itemb3": "Ensure browser security services are OK",
-                        "itemb4": "Ensure webpages are rendering properly",
-                        "itemb5": "Check settings for faster downloads",
-                        "itemb6": "Check permissions and access control"
+                        "itemb1": "Mahdollista parempi selauskokemus",
+                        "itemb2": "Määritä asetukset nopeuttaaksesi verkkosivujen renderöintiä",
+                        "itemb3": "Varmista, että selaimen suojauspalvelut ovat OK",
+                        "itemb4": "Varmista, että verkkosivujen renderöinti toimii",
+                        "itemb5": "Tarkista asetukset latausten nopeuttamiseksi",
+                        "itemb6": "Tarkista käyttöoikeudet ja käytönvalvonta"
                     },
                     "browserSecurity": {
-                        "itemc1": "Ensure security services are running",
-                        "itemc2": "Configure browser security features",
-                        "itemc3": "Check network services are running well",
-                        "itemc4": "Configure protocol settings",
-                        "itemc5": "Verify Browser content settings are OK",
-                        "itemc6": "Verify browser plugins & extensions"
+                        "itemc1": "Varmista, että suojauspalvelut toimivat",
+                        "itemc2": "Määritä selaimen suojausominaisuudet",
+                        "itemc3": "Tarkista, että verkkopalvelut toimivat hyvin",
+                        "itemc4": "Määritä protokolla-asetukset",
+                        "itemc5": "Vahvista, että selaimen sisältöasetukset ovat OK",
+                        "itemc6": "Tarkista selaimen liitännäiset ja laajennukset"
                     },
                     "wifiPerformance": {
-                        "itemd1": "Optimize Wi-Fi experience settings",
-                        "itemd2": "Ensure your home network is secure",
-                        "itemd3": "Check Wi-Fi services settings",
-                        "itemd4": "Secure network sharing settings",
-                        "itemd5": "Check Wi-Fi security standards",
-                        "itemd6": "Ensure Wi-Fi channels do not overlap"
+                        "itemd1": "Optimoi Wi-Fi-kokemuksen asetukset",
+                        "itemd2": "Varmista, että kotiverkkosi on suojattu",
+                        "itemd3": "Tarkista Wi-Fi-palvelujen asetukset",
+                        "itemd4": "Suojatun verkon jakamisen asetukset",
+                        "itemd5": "Tarkista Wi-Fi-suojausstandardit",
+                        "itemd6": "Varmista, että Wi-Fi-kanavista ei ole käytössä useaa versiota"
                     },
                     "eJunk": {
-                        "iteme1": "Eliminate clutter from 4 browsers",
-                        "iteme2": "Look for leftover e-junk",
-                        "iteme3": "Look for outdated internet files",
-                        "iteme4": "Clear unwanted web cache",
-                        "iteme5": "Clear cookies",
-                        "iteme6": "Remove browser residues"
+                        "iteme1": "Poista selainten epäjärjestystä",
+                        "iteme2": "Etsi jäljelle jäänyttä e-roskaa",
+                        "iteme3": "Etsi vanhentuneita Internet-tiedostoja",
+                        "iteme4": "Poista ei-toivotut välimuistitiedot",
+                        "iteme5": "Poista evästeet",
+                        "iteme6": "Poista selaimen jäännökset"
                     }
                 },
                 "malwareScanningItems": {
                     "malwareScan": {
-                        "itema1": "Scan common loading points",
-                        "itema2": "Check critical locations for threats",
-                        "itema3": "Check for virus, spyware and malware",
-                        "itema4": "Scan for 50+ file types",
-                        "itema5": "Scan for malware remnants",
-                        "itema6": "Leverage from cloud remediation engine"
+                        "itema1": "Tarkista yleiset kuormituspisteet",
+                        "itema2": "Tarkista tärkeät sijainnit uhkien varalta",
+                        "itema3": "Tarkista tietokone virusten, vakoiluohjelmien ja haittaohjelmien varalta",
+                        "itema4": "Tarkista yli 50 tiedostotyyppiä",
+                        "itema5": "Etsi haittaohjelmien jäännöksiä",
+                        "itema6": "Hyödynnä pilvipohjaista korjausmoottoria"
                     },
                     "zerodayInfections": {
-                        "itemb1": "Look for zero-day virus",
-                        "itemb2": "Look for recent, undiagnosed malware",
-                        "itemb3": "Scan with cloud-based remediation",
-                        "itemb4": "Perform behavioral monitoring",
-                        "itemb5": "Scan files with aggregated engine",
-                        "itemb6": "Scan against latest definitions"
+                        "itemb1": "Etsi nollapäivän viruksia",
+                        "itemb2": "Etsi viimeaikaisia haittaohjelmia, joita ei ole löydetty aiemmin",
+                        "itemb3": "Tarkista pilvipohjaisella virheenkorjauksella",
+                        "itemb4": "Suorita käyttäytymisen seurantaa",
+                        "itemb5": "Tarkista tiedostoja kootulla moottorilla",
+                        "itemb6": "Tarkista uusimpien määritysten mukaisesti"
                     },
                     "securitySettings": {
-                        "itemc1": "Keep Windows updates always current",
-                        "itemc2": "Ensure Windows firewall service is OK",
-                        "itemc3": "Keep browser settings secure",
-                        "itemc4": "Check essential security services",
-                        "itemc5": "Configure user access settings",
-                        "itemc6": "Verify authentication services"
+                        "itemc1": "Pidä Windows-päivitykset aina ajan tasalla",
+                        "itemc2": "Varmista, että Windows-palomuuripalvelu on OK",
+                        "itemc3": "Pidä selaimen asetukset suojattuina",
+                        "itemc4": "Tarkista tärkeät suojauspalvelut",
+                        "itemc5": "Määritä käyttöoikeusasetukset",
+                        "itemc6": "Vahvista todennuspalvelut"
                     },
                     "errantPrograms": {
-                        "itemd1": "Look for errant apps",
-                        "itemd2": "Look for potentially unwanted apps",
-                        "itemd3": "Detect inactive and hidden apps",
-                        "itemd4": "Verify apps for malicious behavior",
-                        "itemd5": "Check apps based on reputation factor",
-                        "itemd6": "Check errant programs in registry"
+                        "itemd1": "Etsi virheellisiä sovelluksia",
+                        "itemd2": "Etsi mahdollisesti ei-toivottuja sovelluksia",
+                        "itemd3": "Tunnista passiiviset ja piilotetut sovellukset",
+                        "itemd4": "Tarkista sovellukset haitallisen käyttäytymisen varalta",
+                        "itemd5": "Tarkista sovellukset maineen perusteella",
+                        "itemd6": "Tarkista rekisterin virheelliset ohjelmat"
                     },
                     "annoyingAdware": {
-                        "iteme1": "Look for browser(s) adware",
-                        "iteme2": "Revise browser(s) pop-up settings",
-                        "iteme3": "Eliminate browser re-direction threats",
-                        "iteme4": "Check for adware leftovers",
-                        "iteme5": "Optimize browser experience settings",
-                        "iteme6": "verify in cloud remediation engine"
+                        "iteme1": "Etsi selainten mainosohjelmia",
+                        "iteme2": "Tarkista selainten ponnahdusikkuna-asetukset",
+                        "iteme3": "Poista selaimen uudelleenohjauksen uhat",
+                        "iteme4": "Tarkista tietokone jäljelle jääneiden mainosohjelmien varalta",
+                        "iteme5": "Optimoi selainkokemuksen asetukset",
+                        "iteme6": "vahvista pilvipohjaisessa korjausmoottorissa"
                     }
                 }
             }
         },
         "scanCompletePage": {
-            "title": "System scan is complete",
-            "description": "Here is what we found on your ",
-            "scanRates": "Our scan rates your PC at: ",
+            "title": "Järjestelmän tarkistus on valmis",
+            "description": "Löysimme seuraavat asiat ",
+            "scanRates": "Tarkistuksemme pohjalta tehty arvio tietokoneestasi: ",
             "summary": "Summary",
-            "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
-            "signupRepairButton": "SIGN UP & REPAIR NOW",
-            "monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
-            "issueCount": "{{individualIssueCount}} ISSUES",
-            "scannedAreas": "SCANNED AREAS",
+            "summaryDetails": "Tarkistuksessa löydettiin <b>{{issueCount}} ongelmaa</b> seuraavilla alueilla. Rekisteröidy nyt, niin voit korjata nämä ongelmat ja pitää järjestelmän toimintakunnossa. Ohjelmistomme tarkistaa nämä järjestelmäsi alueet ympäri vuorokauden ennakoivasti niin, että ongelmat löydetään ja korjataan heti niiden ilmetessä. Näin tietokoneesi suorituskyky on aina parhaimmillaan.",
+            "signupRepairButton": "REKISTERÖIDY JA KORJAA NYT",
+            "monthlyPricing": "<b>Alle 2 $ kuukaudessa.</b> Korjaamme nämä ongelmat automaattisesti. Kerran tänään ja joka viikko sen jälkeen <a  href=\"#\">Lue lisää</a>",
+            "issueCount": "{{individualIssueCount}} ONGELMAA",
+            "scannedAreas": "TARKISTETUT ALUEET",
             "recommendedAction": {
-                "title": "RECOMMENDED ACTION",
-                "description": "We will automatically fix these issues. Once today and every week thereafter",
-                "yearlyPricing": "$19.99 / Yr",
-                "monthlyPricing": "LESS THAN $2 PER MONTH.",
-                "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP"
+                "title": "SUOSITELTAVA TOIMINTO",
+                "description": "Korjaamme nämä ongelmat automaattisesti. Kerran tänään ja joka viikko sen jälkeen",
+                "yearlyPricing": "19,99 $/v",
+                "monthlyPricing": "ALLE 2 $ KUUKAUDESSA.",
+                "longerTerm": "Pidempi aikaväli? Suurempia säästöjä?",
+                "signupButton": "REKISTERÖIDY"
             },
             "tunepc": {
                 "accumulatedjunkscannedareas": {
-                    "area1": "Scanned for junk in 85 locations",
-                    "area2": "System log files that aren’t needed",
-                    "area3": "Unnecessary application residues",
-                    "area4": "Temporary files that clog diskspace",
-                    "area5": "Files that you deleted so long ago",
-                    "area6": "Outdated errors and alerts"
+                    "area1": "Etsittiin roskaa 85 sijainnista",
+                    "area2": "Järjestelmän tarpeettomat lokitiedostot",
+                    "area3": "Tarpeettomat sovellusjäännökset",
+                    "area4": "Tilapäiset tiedostot, jotka tukkivat levytilaa",
+                    "area5": "Tiedostot, jotka olet poistanut kauan sitten",
+                    "area6": "Vanhentuneet virheet ja ilmoitukset"
                 },
                 "registryerrorsscannedareas": {
-                    "area1": "Completed deep check of Windows registry",
-                    "area2": "Scanned for invalid Windows services",
-                    "area3": "Checked for corrupted registry entries",
-                    "area4": "Scanned for useless file extensions",
-                    "area5": "Searched broken entries of installed apps",
-                    "area6": "Checked for useless leftover entries"
+                    "area1": "Windows rekisterin perusteellinen tarkistus on valmis",
+                    "area2": "Etsittiin virheellisiä Windows-palveluita",
+                    "area3": "Tarkistettiin vioittuneet rekisterimerkinnät",
+                    "area4": "Etsittiin turhia tiedostotunnisteita",
+                    "area5": "Haettiin asennettujen sovellusten rikkinäisiä merkintöjä",
+                    "area6": "Tarkistettiin turhat jäljelle jääneet merkinnät"
                 },
                 "windowssettingsscannedareas": {
-                    "area1": "Diagnosed dozens of Windows OS settings",
-                    "area2": "Checked all is well with your Windows",
-                    "area3": "Confirmed essential services are running",
-                    "area4": "Checked health of connectivity settings",
-                    "area5": "Checked ability to share files in network",
-                    "area6": "Checked biometric and access settings"
+                    "area1": "Määritettiin kymmenien Windows-käyttöjärjestelmän asetusten ongelmat",
+                    "area2": "Tarkistettiin, että Windows on kaikki hyvin",
+                    "area3": "Vahvistettiin, että tärkeät palvelut toimivat",
+                    "area4": "Tarkistettiin yhteysasetusten kunto",
+                    "area5": "Tarkistettiin mahdollisuus jakaa tiedostoja verkossa",
+                    "area6": "Tarkistettiin biometria- ja käyttöoikeusasetukset"
                 },
                 "usabilityissuesscannedareas": {
-                    "area1": "Checked for usability challenges",
-                    "area2": "Checked external devices connectivity",
-                    "area3": "Checked Windows updates status",
-                    "area4": "Verified apps rendering setting",
-                    "area5": "Analyzed processing power utilization",
-                    "area6": "Help locate files easily"
+                    "area1": "Tarkistettiin käytettävyyshaasteet",
+                    "area2": "Tarkistettiin ulkoisten laitteiden yhteydet",
+                    "area3": "Tarkistettiin Windows-päivitysten tila",
+                    "area4": "Vahvistettiin sovellusten renderöintiasetukset",
+                    "area5": "Analysoitiin käsittelytehon käyttö",
+                    "area6": "Auta paikantamaan tiedostot helposti"
                 },
                 "systemerrorsscannedareas": {
-                    "area1": "Checked if essential services are running",
-                    "area2": "Look services for higher performance",
-                    "area3": "Look for software conflict errors",
-                    "area4": "Analyzed Windows error management",
-                    "area5": "Scanned for apps launching errors",
-                    "area6": "Checked system error reports configuration"
+                    "area1": "Tarkistettiin, että tärkeät palvelut toimivat",
+                    "area2": "Etsi palveluita suorituskyvyn parantamiseksi",
+                    "area3": "Etsi yhteensopimattomien ohjelmistojen virheitä",
+                    "area4": "Analysoitiin Windows-virheiden hallinta",
+                    "area5": "Etsittiin sovellusten käynnistysvirheitä",
+                    "area6": "Tarkistettiin järjestelmävirheraporttien kokoonpano"
                 }
             },
-            "Diskspace": "Disk Space Reclaimed :",
-            "Performanceimprovements": "Performance Improvements :",
-            "Securityimprovements": "Security Improvements:",
-            "Onceaweek": "Once a week",
+            "Diskspace": "Vapautettava levytila:",
+            "Performanceimprovements": "Suorituskyvyn parannukset:",
+            "Securityimprovements": "Suojauksen parannukset:",
+            "Onceaweek": "Kerran viikossa",
             "internetperformance": {
                 "ejunkscannedareas": {
-                    "area1": "Identified clutter from 4 browsers",
-                    "area2": "Searched leftover e-junk",
-                    "area3": "Scanned outdated internet files",
-                    "area4": "Searched unwanted web cache",
-                    "area5": "Checked cookies for clearance",
-                    "area6": "Scanned browser residues"
+                    "area1": "Tunnistettiin selainten epäjärjestystä",
+                    "area2": "Etsittiin jäljelle jäänyttä e-roskaa",
+                    "area3": "Etsittiin vanhentuneita Internet-tiedostoja",
+                    "area4": "Etsittiin ei-toivottuja välimuistitietoja",
+                    "area5": "Etsittiin poistettavia evästeitä",
+                    "area6": "Etsittiin selaimen jäännöksiä"
                 },
                 "browsersecurityscannedareas": {
-                    "area1": "Checked security services are running",
-                    "area2": "Checked browser security features",
-                    "area3": "Verified network services",
-                    "area4": "Configure protocol settings",
-                    "area5": "Checked Browser content settings",
-                    "area6": "Scanned browser plugins & extensions"
+                    "area1": "Tarkistettiin, että suojauspalvelut toimivat",
+                    "area2": "Tarkistettiin selaimen suojausominaisuudet",
+                    "area3": "Vahvistettiin verkkopalvelut",
+                    "area4": "Määritä protokolla-asetukset",
+                    "area5": "Tarkistettiin selaimen sisältöasetukset",
+                    "area6": "Tarkistettiin selaimen liitännäiset ja laajennukset"
                 },
                 "networksettingsscannedareas": {
-                    "area1": "Diagnosed network and Internet settings",
-                    "area2": "Diagnosed network configuration settings",
-                    "area3": "Verified connected network settings",
-                    "area4": "Diagnosed settings for faster websites rendering",
-                    "area5": "Scanned for page rendering errors",
-                    "area6": "Scanned all connection service(s)"
+                    "area1": "Määritettiin verkko- ja Internet-asetusten ongelmat",
+                    "area2": "Määritettiin verkon kokoonpanoasetusten ongelmat",
+                    "area3": "Vahvistettiin yhdistettyjen verkkojen asetukset",
+                    "area4": "Määritettiin verkkosivujen renderöintiä nopeuttavien asetusten ongelmat",
+                    "area5": "Etsittiin sivun renderöintivirheitä",
+                    "area6": "Tarkistettiin kaikki yhteyspalvelut"
                 },
                 "browsersettingsscannedareas": {
-                    "area1": "Enable better browsing experience",
-                    "area2": "Diagnosed settings for faster websites rendering",
-                    "area3": "Verified browser security services",
-                    "area4": "Checked if webpages are rendering properly",
-                    "area5": "Scanned settings for faster downloads",
-                    "area6": "Analyzed permissions and access control"
+                    "area1": "Mahdollista parempi selauskokemus",
+                    "area2": "Määritettiin verkkosivujen renderöintiä nopeuttavien asetusten ongelmat",
+                    "area3": "Vahvistettiin selaimen suojauspalvelut",
+                    "area4": "Tarkistettiin, että verkkosivujen renderöinti toimii",
+                    "area5": "Tarkistettiin latauksia nopeuttavat asetukset",
+                    "area6": "Analysoitiin käyttöoikeudet ja käytönvalvonta"
                 },
                 "wifiperformancescannedareas": {
-                    "area1": "Verified Wi-Fi experience settings",
-                    "area2": "Verified secure home network",
-                    "area3": "Scanned Wi-Fi services settings",
-                    "area4": "Verified Secure network sharing settings",
-                    "area5": "Verified Wi-Fi security standards",
-                    "area6": "Analyzed Wi-Fi channels do not overlap"
+                    "area1": "Vahvistettiin Wi-Fi-kokemuksen asetukset",
+                    "area2": "Vahvistettiin suojattu kotiverkko",
+                    "area3": "Tarkistettiin Wi-Fi-palvelujen asetukset",
+                    "area4": "Vahvistettiin suojatun verkon jakamisen asetukset",
+                    "area5": "Vahvistettiin Wi-Fi-suojausstandardit",
+                    "area6": "Analysoitiin, onko Wi-Fi-kanavista käytössä useita versioita"
                 }
             },
             "malwaresecurity": {
                 "malwarescanscannedareas": {
-                    "area1": "Scanned common loading points",
-                    "area2": "Scanned critical locations for threats",
-                    "area3": "Scanned for virus, spyware and malware",
-                    "area4": "Scanned 50+ file types for threats",
-                    "area5": "Checked for malware remnants",
-                    "area6": "Verified in cloud remediation engine"
+                    "area1": "Tarkistettiin yleiset kuormituspisteet",
+                    "area2": "Tarkistettiin tärkeät sijainnit uhkien varalta",
+                    "area3": "Etsittiin viruksia, vakoiluohjelmia ja haittaohjelmia",
+                    "area4": "Tarkistettiin yli 50 tiedostotyyppiä uhkien varalta",
+                    "area5": "Tarkistettiin haittaohjelmien jäännösten varalta",
+                    "area6": "Vahvistettiin pilvipohjaisessa korjausmoottorissa"
                 },
                 "errantprogramsscannedareas": {
-                    "area1": "Look for errant apps",
-                    "area2": "Inspected for potentially unwanted apps",
-                    "area3": "Searched for inactive and hidden apps",
-                    "area4": "Scanned for malicious apps",
-                    "area5": "Checked apps based on reputation factor",
-                    "area6": "Checked errant programs in registry"
+                    "area1": "Etsi virheellisiä sovelluksia",
+                    "area2": "Tarkistettiin mahdollisesti ei-toivottujen sovellusten varalta",
+                    "area3": "Etsittiin passiivisia ja piilotettuja sovelluksia",
+                    "area4": "Etsittiin haitallisia sovelluksia",
+                    "area5": "Tarkistettiin sovellukset maineen perusteella",
+                    "area6": "Tarkistettiin rekisterin virheelliset ohjelmat"
                 },
                 "zerodayinfectionsscannedareas": {
-                    "area1": "Scanned for zero-day virus",
-                    "area2": "Searched for recent, undiagnosed malware",
-                    "area3": "Verified with cloud-based remediation",
-                    "area4": "Performed behavioral monitoring",
-                    "area5": "Verified files with aggregated engine",
-                    "area6": "Scanned against updated definitions"
+                    "area1": "Etsittiin nollapäivän viruksia",
+                    "area2": "Etsittiin uusia diagnosoimattomia haittaohjelmia",
+                    "area3": "Vahvistettiin pilvipohjaisella virheenkorjauksella",
+                    "area4": "Suoritettiin käyttäytymisen seurantaa",
+                    "area5": "Vahvistettiin tiedostoja kootulla moottorilla",
+                    "area6": "Tarkistettiin päivitettyjen määritysten mukaisesti"
                 },
                 "securitysettingsscannedareas": {
-                    "area1": "Verified Windows updates are current",
-                    "area2": "Verified Windows firewall service",
-                    "area3": "Checked for secure browser settings",
-                    "area4": "Diagnosed essential security services",
-                    "area5": "Verified user access settings",
-                    "area6": "Verified authentication services"
+                    "area1": "Vahvistettiin, että Windows-päivitykset ovat ajan tasalla",
+                    "area2": "Vahvistettiin Windows-palomuuripalvelu",
+                    "area3": "Tarkistettiin selaimen suojausasetukset",
+                    "area4": "Määritettiin tärkeimpien suojauspalveluiden ongelmat",
+                    "area5": "Vahvistettiin käyttöoikeusasetukset",
+                    "area6": "Vahvistettiin todennuspalvelut"
                 },
                 "annoyingadwarescannedareas": {
-                    "area1": "Scanned for browser(s) adware",
-                    "area2": "Verify browser(s) pop-up settings",
-                    "area3": "Scanned browser re-direction threats",
-                    "area4": "Checked adware leftovers",
-                    "area5": "Verified browser experience settings",
-                    "area6": "Verified with cloud remediation engine"
+                    "area1": "Etsittiin selainten mainosohjelmia",
+                    "area2": "Vahvista selainten ponnahdusikkuna-asetukset",
+                    "area3": "Etsittiin selaimen uudelleenohjauksen uhkia",
+                    "area4": "Tarkistettiin mainosohjelmien jäännökset",
+                    "area5": "Vahvistettiin selainkokemuksen asetukset",
+                    "area6": "Vahvistettiin pilvipohjaisella korjausmoottorilla"
                 }
             },
             "subscriber": {
                 "tunepc": {
                     "accumulatedjunkscannedareas": {
-                        "area1": "Cleaned of junk in 85 locations",
-                        "area2": "Cleared System log files that aren’t needed",
-                        "area3": "Deleted application residues",
-                        "area4": "Removed Temporary files to free up diskspace",
-                        "area5": "Eliminated files that you deleted so long ago",
-                        "area6": "Cleared errors and alerts"
+                        "area1": "Poistettiin roska 85 sijainnista",
+                        "area2": "Poistettiin järjestelmän tarpeettomat lokitiedostot",
+                        "area3": "Poistettiin sovellusten jäämät",
+                        "area4": "Poistettiin tilapäistiedostoja levytilan vapauttamiseksi",
+                        "area5": "Poistettiin tiedostot, jotka olet poistanut kauan sitten",
+                        "area6": "Tyhjennettiin virheet ja ilmoitukset"
                     },
                     "registryerrorsscannedareas": {
-                        "area1": "Completed deep check of Windows registry",
-                        "area2": "Fixed any invalid Windows services",
-                        "area3": "Removed any corrupted registry entries",
-                        "area4": "Deleted any obsolete file extensions",
-                        "area5": "Cleaned broken entries of installed apps",
-                        "area6": "Cleared unwanted leftover entries"
+                        "area1": "Windows rekisterin perusteellinen tarkistus on valmis",
+                        "area2": "Korjattiin virheelliset Windows-palvelut",
+                        "area3": "Poistettiin vioittuneet rekisterimerkinnät",
+                        "area4": "Poistettiin vanhentuneet tiedostotunnisteet",
+                        "area5": "Poistettiin asennettujen sovellusten rikkinäiset merkinnät",
+                        "area6": "Poistettiin jäljelle jääneet ei-toivotut merkinnät"
                     },
                     "windowssettingsscannedareas": {
-                        "area1": "Validated Windows settings",
-                        "area2": "Optimized all Windows services",
-                        "area3": "Modified essential Windows services",
-                        "area4": "Modified essential Windows services",
-                        "area5": "Verified ability to share files in network",
-                        "area6": "Verified biometric and access settings"
+                        "area1": "Vahvistettiin Windows-asetukset",
+                        "area2": "Optimoitiin kaikki Windows-palvelut",
+                        "area3": "Muokattiin tärkeitä Windows-palveluita",
+                        "area4": "Muokattiin tärkeitä Windows-palveluita",
+                        "area5": "Vahvistettiin mahdollisuus jakaa tiedostoja verkossa",
+                        "area6": "Vahvistettiin biometria- ja käyttöoikeusasetukset"
                     },
                     "usabilityissuesscannedareas": {
-                        "area1": "Fixed any usability challenges",
-                        "area2": "Verified external devices connectivity",
-                        "area3": "Made sure Windows updates are always current",
-                        "area4": "Confirmed apps render and appear at its best",
-                        "area5": "Modified settings for processing power utilization",
-                        "area6": "Modified settings to Help locate files easily"
+                        "area1": "Korjattiin käytettävyyshaasteet",
+                        "area2": "Vahvistettiin ulkoisten laitteiden yhteydet",
+                        "area3": "Varmistettiin, että Windows-päivitykset ovat aina ajan tasalla",
+                        "area4": "Vahvistettiin, että sovellukset renderöivät ja näkyvät aina parhaalla mahdollisella tavalla",
+                        "area5": "Muokattiin käsittelytehon käytön asetuksia",
+                        "area6": "Muokattiin asetuksia tiedostojen paikantamisen helpottamiseksi"
                     },
                     "systemerrorsscannedareas": {
-                        "area1": "Checked if essential services are running",
-                        "area2": "Modified services for higher performance",
-                        "area3": "Fixed any software conflict errors",
-                        "area4": "Optimized Windows error management",
-                        "area5": "Checked and fixed any apps launching errors",
-                        "area6": "Configured system error reports"
+                        "area1": "Tarkistettiin, että tärkeät palvelut toimivat",
+                        "area2": "Muokattiin palveluita suorituskyvyn parantamiseksi",
+                        "area3": "Korjattiin yhteensopimattomien ohjelmistojen virheet",
+                        "area4": "Optimoitiin Windows-virheiden hallinta",
+                        "area5": "Tarkistettiin ja korjattiin sovellusten käynnistysvirheet",
+                        "area6": "Määritettiin järjestelmävirheraportit"
                     }
                 },
                 "internetperformance": {
                     "ejunkscannedareas": {
-                        "area1": "Removed clutter from 4 browser(s)",
-                        "area2": "Cleaned leftover e-junk",
-                        "area3": "Deleted outdated internet files",
-                        "area4": "Cleared unwanted web cache",
-                        "area5": "Cleared Cookies",
-                        "area6": "Cleaned any browser residues"
+                        "area1": "Poistettiin epäjärjestystä neljästä selaimesta",
+                        "area2": "Poistettiin jäljelle jäänyt e-roska",
+                        "area3": "Poistettiin vanhentuneita Internet-tiedostoja",
+                        "area4": "Poistettiin ei-toivotut välimuistitiedot",
+                        "area5": "Poistettiin evästeet",
+                        "area6": "Poistettiin selaimen jäännökset"
                     },
                     "browsersecurityscannedareas": {
-                        "area1": "Ensured security services are running",
-                        "area2": "Configured browser security features",
-                        "area3": "Checked and fixed network services",
-                        "area4": "Configured protocol settings",
-                        "area5": "Verified Browser content settings are OK",
-                        "area6": "Scanned browser plugins & extensions"
+                        "area1": "Varmistettiin, että suojauspalvelut toimivat",
+                        "area2": "Määritettiin selaimen suojausominaisuudet",
+                        "area3": "Tarkistettiin ja korjattiin verkkopalvelut",
+                        "area4": "Määritettiin protokolla-asetukset",
+                        "area5": "Vahvistettiin, että selaimen sisältöasetukset ovat OK",
+                        "area6": "Tarkistettiin selaimen liitännäiset ja laajennukset"
                     },
                     "networksettingsscannedareas": {
-                        "area1": "Fixed network and Internet settings",
-                        "area2": "Checked network configuration settings",
-                        "area3": "Modified connected network settings",
-                        "area4": "Diagnosed settings for faster websites rendering",
-                        "area5": "Fixed any page rendering errors",
-                        "area6": "Scanned all connection service(s)"
+                        "area1": "Korjattiin verkko- ja Internet-asetukset",
+                        "area2": "Tarkistettiin verkon kokoonpanoasetukset",
+                        "area3": "Muokattiin yhdistettyjen verkkojen asetuksia",
+                        "area4": "Määritettiin verkkosivujen renderöintiä nopeuttavien asetusten ongelmat",
+                        "area5": "Korjattiin sivujen renderöintivirheet",
+                        "area6": "Tarkistettiin kaikki yhteyspalvelut"
                     },
                     "browsersettingsscannedareas": {
-                        "area1": "Modified settings for better browsing experience",
-                        "area2": "Verified settings for faster websites rendering",
-                        "area3": "Ensured browser security services are OK",
-                        "area4": "Modified settings to load webpages properly",
-                        "area5": "Fixed settings for faster downloads",
-                        "area6": "Fixed permissions and access control settings"
+                        "area1": "Muokattiin asetuksia selauskokemuksen parantamiseksi",
+                        "area2": "Vahvistettiin asetukset verkkosivujen renderöinnin nopeuttamiseksi",
+                        "area3": "Varmistettiin, että selaimen suojauspalvelut ovat OK",
+                        "area4": "Muokattiin asetuksia, jotta verkkosivut latautuvat oikein",
+                        "area5": "Korjattiin asetuksia latausten nopeuttamiseksi",
+                        "area6": "Korjattiin käyttöoikeuksien ja käytönvalvonnan asetukset"
                     },
                     "wifiperformancescannedareas": {
-                        "area1": "Modified Wi-Fi experience settings",
-                        "area2": "Validated secure home network settings",
-                        "area3": "Fixed Wi-Fi services settings",
-                        "area4": "Modified Secure network sharing settings",
-                        "area5": "Verified Wi-Fi security standards",
-                        "area6": "Validated Wi-Fi channels"
+                        "area1": "Muokattiin Wi-Fi-kokemuksen asetuksia",
+                        "area2": "Vahvistettiin suojatun kotiverkon asetukset",
+                        "area3": "Korjattiin Wi-Fi-palvelujen asetukset",
+                        "area4": "Muokattiin suojatun verkon jakamisen asetuksia",
+                        "area5": "Vahvistettiin Wi-Fi-suojausstandardit",
+                        "area6": "Vahvistettiin Wi-Fi-kanavat"
                     }
                 },
                 "malwaresecurity": {
                     "malwarescanscannedareas": {
-                        "area1": "Checked & Removed threats in common loading points",
-                        "area2": "Checked and removed threats in critical locations",
-                        "area3": "Removed any threats from PC",
-                        "area4": "Validated 50+ file types for threats",
-                        "area5": "Cleaned any malware remnants",
-                        "area6": "Verified in cloud remediation engine"
+                        "area1": "Tarkistettiin ja poistettiin yleisten kuormituspisteiden uhat",
+                        "area2": "Tarkistettiin ja poistettiin tärkeiden sijaintien uhat",
+                        "area3": "Poistettiin tietokoneesta kaikki uhat",
+                        "area4": "Vahvistettiin yli 50 tiedostotyyppiä uhkien varalta",
+                        "area5": "Poistettiin haittaohjelmien jäännökset",
+                        "area6": "Vahvistettiin pilvipohjaisessa korjausmoottorissa"
                     },
                     "errantprogramsscannedareas": {
-                        "area1": "Validated all installed apps",
-                        "area2": "Validated potentially unwanted apps",
-                        "area3": "Cleaned any inactive and hidden apps",
-                        "area4": "Removed any malicious and errant apps",
-                        "area5": "Validated apps based on reputation factor",
-                        "area6": "Completed registry check for errant programs"
+                        "area1": "Vahvistettiin kaikki asennetut sovellukset",
+                        "area2": "Vahvistettiin mahdollisesti ei-toivotut sovellukset",
+                        "area3": "Poistettiin kaikki passiiviset ja piilotetut sovellukset",
+                        "area4": "Poistettiin kaikki haitalliset ja virheelliset sovellukset",
+                        "area5": "Vahvistettiin sovellukset maineen perusteella",
+                        "area6": "Tarkistettiin rekisteri virheellisten ohjelmien varalta"
                     },
                     "zerodayinfectionsscannedareas": {
-                        "area1": "Analyzed for zero-day virus",
-                        "area2": "Removed any malware from PC",
-                        "area3": "Validated in cloud remediation engine",
-                        "area4": "Completed behavioral monitoring of apps",
-                        "area5": "Validated against aggregated engine",
-                        "area6": "Validated against latest definitions"
+                        "area1": "Analysoitiin nollapäivän virusten varalta",
+                        "area2": "Poistettiin tietokoneesta kaikki haittaohjelmat",
+                        "area3": "Vahvistettiin pilvipohjaisessa korjausmoottorissa",
+                        "area4": "Suoritettiin sovellusten käyttäytymisen seuranta",
+                        "area5": "Vahvistettiin kootulla moottorilla",
+                        "area6": "Vahvistettiin uusimpien määritysten mukaisesti"
                     },
                     "securitysettingsscannedareas": {
-                        "area1": "Optimized Windows update settings",
-                        "area2": "Tuned Windows firewall service",
-                        "area3": "Secured browser(s) settings",
-                        "area4": "Diagnosed essential security services",
-                        "area5": "Optimized user access settings",
-                        "area6": "Modified authentication services"
+                        "area1": "Optimoitiin Windows Update -asetukset",
+                        "area2": "Säädettiin Windows-palomuuripalvelu",
+                        "area3": "Suojattiin selaimen asetukset",
+                        "area4": "Määritettiin tärkeimpien suojauspalveluiden ongelmat",
+                        "area5": "Optimoitiin käyttöoikeusasetukset",
+                        "area6": "Muokattiin todennuspalveluita"
                     },
                     "annoyingadwarescannedareas": {
-                        "area1": "Removed browser(s) adware",
-                        "area2": "Tuned browser(s) pop-up settings",
-                        "area3": "Diagnosed browser re-direction threats",
-                        "area4": "Cleared adware leftovers",
-                        "area5": "Optimized browser experience settings",
-                        "area6": "Validated in cloud remediation engine"
+                        "area1": "Poistettiin selainten mainosohjelmat",
+                        "area2": "Säädettiin selainten ponnahdusikkuna-asetuksia",
+                        "area3": "Määritettiin selaimen uudelleenohjauksen uhat",
+                        "area4": "Poistettiin mainosohjelmien jäännökset",
+                        "area5": "Optimoitiin selainkokemuksen asetukset",
+                        "area6": "Vahvistettiin pilvipohjaisessa korjausmoottorissa"
                     }
                 }
             },
-            "issues": "ISSUES",
+            "issues": "ONGELMAA",
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
-            "backToHome": "Back To Home"
+            "backToHome": "Takaisin aloitussivulle"
         },
         "subscriberScanHomePage": {
-            "title": "All is well with your ",
-            "serialNumber": "Serial number: ",
-            "subTitle": "You are subscribed to Lenovo Smart Performance Service",
-            "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
-            "scanNow": "SCAN NOW",
-            "returnto": "RETURN TO DASHBOARD",
-            "mostRecent": "MOST RECENT SCAN:",
-            "nextScheduled": "NEXT SCHEDULED SCAN:",
+            "title": "Kaikki hyvin laitteessasi ",
+            "serialNumber": "Sarjanumero: ",
+            "subTitle": "Olet tilannut Lenovo Smart Performance -palvelun",
+            "description": "Tarkistamme ja korjaamme tietokonettasi usein ennakoivasti tietokoneen suorituskykyyn, Internetin suorituskykyyn ja haittaohjelmiin liittyvien ongelmien varalta. Tietokoneesi on tarpeeksi hyvin suojattu. Voit myös aloittaa suorituskyvyn tarkistuksen tarvittaessa napsauttamalla Tarkista nyt -painiketta.",
+            "scanNow": "TARKISTA JA KORJAA",
+            "returnto": "PALAA KOONTINÄKYMÄÄN",
+            "mostRecent": "VIIMEISIN TARKISTUS:",
+            "nextScheduled": "SEURAAVA AJOITETTU TARKISTUS:",
             "scanSummary": {
-                "title": "Scan summary:",
-                "description": "We are constantly tuning your computer",
-                "tune": "Tune",
-                "tuneSummary": "Disk space reclaimed",
-                "boost": "Boost",
-                "boostSummary": "Fixes to improve performance",
-                "secure": "Secure",
-                "secureSummary": "Fixes to improve security",
-                "annual": "Annual",
-                "quarterly": "Quarterly",
-                "custom": "Custom",
-                "txtFrom": "From",
-                "txtTo": "To",
-                "txtGo": "Go",
-                "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "title": "Tarkistuksen yhteenveto:",
+                "description": "Viritämme tietokonettasi jatkuvasti",
+                "tune": "Viritä",
+                "tuneSummary": "Vapautettava levytila",
+                "boost": "Tehosta",
+                "boostSummary": "Suorituskykyä parantavat korjaukset",
+                "secure": "Suojaus",
+                "secureSummary": "Suojausta parantavat korjaukset",
+                "annual": "Vuosittainen",
+                "quarterly": "Neljännesvuosittain",
+                "custom": "Mukautettu",
+                "txtFrom": "Lähettäjä",
+                "txtTo": "Vastaanottaja",
+                "txtGo": "Siirtyminen",
+                "summaryCaption": "vapautettava tila",
+                "fixes": "korjaukset",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
-                "title": "Last 5 scan results:",
-                "scanDate": "Scan date:",
-                "results": "Results:",
-                "status": "Status"
+                "title": "5 edellisen tarkistuksen tulokset:",
+                "scanDate": "Tarkistuksen päivämäärä",
+                "results": "Tulokset",
+                "status": "Tila"
             },
-            "backToHome": "Back To Home",
-            "successTitle": "Your Pc is tuned up !",
-            "successDescription": "Smart Performance resolved <b>{{issueCount}} issues</b> to keep your pc running smoothly, you can find scan summary and report below."
+            "backToHome": "Takaisin aloitussivulle",
+            "successTitle": "Tietokoneesi on viritetty!",
+            "successDescription": "Smart Performance ratkaisi <b>{{issueCount}} ongelmaa</b>, jotta tietokoneesi pysyy hyvässä kunnossa. Tarkistuksen yhteenveto ja raportti ovat alla."
         },
-        "runningWell": "PC is running well",
+        "runningWell": "Tietokone toimii hyvin",
         "feedbackContainer": {
-            "title": "Leave us some feedback",
-            "subtitle": "Tell us what you think about Vantage",
-            "buttonText": "send feedback",
+            "title": "Lähetä meille palautetta",
+            "subtitle": "Kerro meille, mitä mieltä olet Smart Performancesta",
+            "buttonText": "lähetä palautetta",
             "questions": {
-                "q1": "Does the product look and feel good?",
-                "q2": "Do the feature seen comprehensive?",
-                "q3": "Was the scan easy to use?",
-                "q4": "Happy about the fixes we did?",
-                "q5": "Do you see value for money? ",
-                "q6": "Will you refer it to your friends and family?",
-                "q7": "How likely are you to continue paying for the Smart Performance feature?",
-                "q8": "Overall how satisfied are you with the Smart Performance feature?"
+                "q1": "1. Kuinka vaikeaa tai helppoa tarkistustoiminnon käyttö oli?",
+                "q2": "2. Kuinka vaikeaa tai helppoa oli ymmärtää tarkistuksen tulokset?",
+                "q3": "3. Kuinka todennäköistä on, että maksat Smart Performance -tilauksesta parantaaksesi järjestelmäsi suorituskykyä?",
+                "q4": "4. Kuinka tyytyväinen olet kaiken kaikkiaan Smart Performance -ominaisuuteen?",
+                "q5": "1. Kuinka vaikeaa tai helppoa oli ymmärtää korjauksia, joita Smart Performance teki järjestelmääsi?",
+                "q6": "2. Löysimmekö järjestelmästäsi haittaohjelmia?",
+                "q7": "3. Kuinka todennäköistä on, että jatkat Smart Performance -ominaisuudesta maksamista?",
+                "q8": "4. Kuinka tyytyväinen olet kaiken kaikkiaan Smart Performance -ominaisuuteen?"
             },
             "rating": {
-                "r1": "Hate it",
-                "r2": "Love it",
-                "r3": "Seems lacking",
-                "r4": "Good enough",
-                "r5": "Crazy",
-                "r6": "Cool",
-                "r7": "Not so sure",
-                "r8": "Absolutely yes",
-                "r9": "No way",
-                "r10": "Looks worthy",
-                "r11": "Not so sure",
-                "r12": "Absolutely yes",
-                "r13": "Not at all likely",
-                "r14": "Very Likely",
-                "r15": "Not at all satisfied",
-                "r16": "Very Satisfied"
+                "r1": "Erittäin vaikeaa",
+                "r2": "Erittäin helppoa",
+                "r3": "Erittäin vaikeaa",
+                "r4": "Erittäin helppoa",
+                "r5": "Ei lainkaan todennäköistä",
+                "r6": "Hyvin todennäköisesti",
+                "r7": "En lainkaan tyytyväinen",
+                "r8": "Erittäin tyytyväinen",
+                "r9": "Erittäin vaikeaa",
+                "r10": "Erittäin helppoa",
+                "r11": "Kyllä",
+                "r12": "Ei",
+                "r13": "Ei lainkaan todennäköistä",
+                "r14": "Hyvin todennäköisesti",
+                "r15": "En lainkaan tyytyväinen",
+                "r16": "Erittäin tyytyväinen"
             },
-            "commentTip": "Shout what you love and whisper what you hate.",
-            "comments": "Please leave your comments here..."
+            "commentTip": "Kirjoita halutessasi kommentteja tai palautetta alle:",
+            "comments": "Kirjoita kommenttisi tähän..."
         },
-        "auto": "Auto",
-        "manual": "Manual",
-        "noScanResults": "Please click SCAN & FIX button to trigger scan process."
+        "auto": "Automaattinen",
+        "manual": "Manuaalinen",
+        "noScanResults": "Aloita tarkistus napsauttamalla TARKISTA JA KORJAA -painiketta."
     },
     "homeSecurity": {
         "title": "Connected Home Security",

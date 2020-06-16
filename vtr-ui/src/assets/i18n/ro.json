@@ -1766,7 +1766,8 @@
                             "title": "Reporniţi computerul",
                             "description": "Pentru ca schimbarea funcției implicite a rândului de sus să aibă efect, computerul trebuie repornit. Sigur reporniți?",
                             "reboot": "REPORNIȚI",
-                            "cancel": "NU ACUM"
+                            "cancel": "NU ACUM",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Pentru a accesa funcţiile F1–F12, apăsaţi Fn şi tastele de pe rândul de sus.",
@@ -3285,7 +3286,8 @@
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+            "processStatus": "PROCESSING"
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3770,7 +3772,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",
