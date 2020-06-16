@@ -271,7 +271,7 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private compare(value: string): BacklightStatusEnum {
+	compare(value: string): BacklightStatusEnum {
 		switch (value) {
 			case BacklightStatusEnum.AUTO:
 				return BacklightStatusEnum.AUTO;

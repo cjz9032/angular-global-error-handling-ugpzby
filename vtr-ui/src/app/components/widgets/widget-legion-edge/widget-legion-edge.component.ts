@@ -1,13 +1,14 @@
 import { ModalGamingLegionedgeComponent } from './../../modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, OnInit, NgZone, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 // model & enum
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { Gaming } from 'src/app/enums/gaming.enum';
-import { GamingThermal2 } from 'src/app/enums/gaming-thermal2.enum';
 import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-capabilities';
+import { GamingThermal2 } from 'src/app/enums/gaming-thermal2.enum';
+import { AutomationId } from './../../../enums/automation-id.enum';
 // service
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -24,12 +25,13 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 // component
 import { ModalGamingThermalMode2Component } from '../../modal/modal-gaming-thermal-mode2/modal-gaming-thermal-mode2.component';
 
+
 @Component({
 	selector: 'vtr-widget-legion-edge',
 	templateUrl: './widget-legion-edge.component.html',
 	styleUrls: ['./widget-legion-edge.component.scss']
 })
-export class WidgetLegionEdgeComponent implements OnInit {
+export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 	public gamingCapabilities: GamingAllCapabilities = new GamingAllCapabilities();
 	public disableButtons = false;
 	// Version 3.2: thermal mode 2.0 & performance OC
@@ -37,6 +39,9 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	public thermalModeRealStatus = this.thermalMode2Enum.balance;
 	public thermalModeEvent: any;
 	public performanceOCSettings = false;
+	// Version 3.3: automation ID
+	public legionPopupId:any;
+	public legionHelpIconId:any;
 
 	// use enum instead of hard code on 200319 by Guo Jing
 	public legionItemIndex = {
@@ -463,6 +468,36 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		if (this.gamingCapabilities.touchpadLockFeature && this.gamingCapabilities.winKeyLockFeature) {
 			this.renderTouchpadLockStatus();
 		}
+		//////////////////////////////////////////////////////////////////////
+		// Version 3.3: Init automation ID                                  //
+		//////////////////////////////////////////////////////////////////////
+		this.getMachineSpecificId();
+	}
+
+	//////////////////////////////////////////////////////////////////////
+	// Version 3.3: Init automation ID                                  //
+	// 1. Get machine specific ID                                       //
+	// 2. Get thermal mode automation ID                                //
+	//////////////////////////////////////////////////////////////////////
+	getMachineSpecificId() {
+		if (!this.gamingCapabilities.liteGaming) {
+			this.legionPopupId = AutomationId.RightSectionLegionEdge;
+			this.legionHelpIconId = AutomationId.HelpPopupLegionEdge;
+		} else if (!this.gamingCapabilities.liteGaming && this.gamingCapabilities.desktopType) {
+			this.legionPopupId = AutomationId.RightSectionIdeaCentreGaming;
+			this.legionHelpIconId = AutomationId.HelpPopupIdeaCentreGaming;
+		} else if (this.gamingCapabilities.liteGaming && !this.gamingCapabilities.desktopType) {
+			this.legionPopupId = AutomationId.RightSectionIdeapadGaming;
+			this.legionHelpIconId = AutomationId.HelpPopupIdeapadGaming;
+		}
+	}
+
+	getThermalModeAutomationId() {
+		const thermalStatus = {};
+		thermalStatus[GamingThermal2.performance] = this.performanceOCSettings ? AutomationId.PerformanceOverclockOn : AutomationId.Performance;
+		thermalStatus[GamingThermal2.balance] = AutomationId.Balance;
+		thermalStatus[GamingThermal2.quiet] = AutomationId.Quiet;
+		return thermalStatus[this.thermalModeRealStatus];
 	}
 
 	//////////////////////////////////////////////////////////////////////

@@ -150,17 +150,9 @@
                     vtr-ui-color-picker{
                         position: absolute;
                         left: 50%;
-                        margin-left: -175px;
+                        transform: translate(-50%,-50%);
                         top: 50%;
                         z-index: 5;
-                        ::ng-deep{
-                            .preset-color{
-                                margin-top: -142.6px;
-                             }
-                             .color-picker{
-                                 margin-top: -170px;
-                             }
-                        } 
                     }
                 }
             }

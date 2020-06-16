@@ -514,3 +514,16 @@ $high-contrast-black-yellow: #FFFF00;
 @mixin toggle-button-outline ($color : $blueFill) {
 	outline: 0.1rem solid $color;
 }
+
+@mixin tt-inner {
+	color: $main_dark;
+	background-color: $light;
+	border: 0.1rem solid $grey_dark;
+	font-size: 1.2rem;
+	text-align: left;
+	border-radius: 0rem;
+}
+
+@mixin arrow-before {
+border: none;
+}

@@ -155,6 +155,8 @@
                         "cpuOCName79": "Смещение напряжения кэша",
                         "cpuOCName122": "Коэффициент ядра 7",
                         "cpuOCName123": "Коэффициент ядра 8",
+                        "cpuOCName124": "Коэффициент ядра 9",
+                        "cpuOCName125": "Коэффициент ядра 10",
                         "cpuOCName102": "ICCMAX ядер",
                         "cpuOCName106": "ICCMAX кэша",
                         "cpuOCName114": "Смещение коэффициента AVX"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Итоговое смещение напряжения, применяемое к напряжению кэша.",
                         "cpuOCTip122": "Задает максимальный множитель ядер, с которым могут работать ядра. Значение частоты ядер является произведением этого коэффициента и эталонной тактовой частоты.",
                         "cpuOCTip123": "Задает максимальный множитель ядер, с которым могут работать ядра. Значение частоты ядер является произведением этого коэффициента и эталонной тактовой частоты.",
+                        "cpuOCTip124": "Задает максимальный множитель ядер, с которым могут работать ядра. Значение частоты ядер является произведением этого коэффициента и эталонной тактовой частоты.",
+                        "cpuOCTip125": "Задает максимальный множитель ядер, с которым могут работать ядра. Значение частоты ядер является произведением этого коэффициента и эталонной тактовой частоты.",
                         "cpuOCTip102": "Задает значение ICCMAX для регулятора напряжения ядер процессора.",
                         "cpuOCTip106": "Задает значение ICCMAX для регулятора напряжения кэша процессора и кольцевой шины.",
                         "cpuOCTip114": "Чтобы вывести фактический лимит коэффициента активных ядер при активном расширении AVX, необходимо вычесть это значение из соответствующего лимита коэффициента активных ядер."
@@ -1066,7 +1070,8 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "Чтобы увеличить срок службы аккумулятора, мы оптимизировали его емкость полной зарядки с учетом характера использования. Емкость полной зарядки может быть недоступна, пока аккумулятор не будет разряжен до 20% и снова заряжен."
+                    "fccTooltipText": "Чтобы увеличить срок службы аккумулятора, мы оптимизировали его емкость полной зарядки с учетом характера использования. Емкость полной зарядки может быть недоступна, пока аккумулятор не будет разряжен до 20% и снова заряжен.",
+                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
                 },
                 "condition": {
                     "Illegal": "Установленный аккумулятор <b>не поддерживается</b> данной системой и не будет заряжаться. Замените аккумулятор на соответствующий данной системе аккумулятор Lenovo.",
@@ -1094,6 +1099,16 @@
                 "gaugeResetWarning": "<b>Примечание.</b> Выполняется сброс индикатора аккумулятора. Не отключайте адаптер электропитания.",
                 "dualConditions": {
                     "NotDetected": "<b>Основной аккумулятор не обнаружен.</b>"
+                },
+                "highDensityBattery": {
+                    "title": "High density battery",
+                    "subtitle": "How your battery works",
+                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "para2": {
+                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
+                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
+                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                    }
                 }
             },
             "power": {
@@ -1751,7 +1766,8 @@
                             "title": "Перезапуск компьютера",
                             "description": "Для вступления в силу изменения функции верхнего ряда по умолчанию требуется перезапустить компьютер. Перезапустить?",
                             "reboot": "ПЕРЕЗАГРУЗИТЬ",
-                            "cancel": "НЕ СЕЙЧАС"
+                            "cancel": "НЕ СЕЙЧАС",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Для получения доступа к функциям F1–F12 нажмите клавишу Fn и клавиши в верхнем ряду.",
@@ -3270,7 +3286,8 @@
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+            "processStatus": "PROCESSING"
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3755,7 +3772,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

@@ -148,4 +148,15 @@ export class SmartPerformanceService {
             throw new Error(error.message);
         }
 	}
+
+	getLastScanResult(payload: any): Promise<any> {
+		try {
+			if (this.isShellAvailable) {
+				return this.getSmartPerformance.getLastScanResult(payload);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
 }

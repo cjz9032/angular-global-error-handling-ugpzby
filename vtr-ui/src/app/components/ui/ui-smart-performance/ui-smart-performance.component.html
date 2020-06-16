@@ -30,7 +30,8 @@
 											metricsItem="btn.freepcscan"
 											metricsEvent="FeatureClick"
 											metricsParent="Page.Support.SmartPerformance"
-											>{{'smartPerformance.scanButton' |translate }}</button>
+											[ngbTooltip]="'smartPerformance.scanButton' | translate"
+											placement="top">{{'smartPerformance.scanButton' |translate }}</button>
 										</div>
 									</div>
 								</div>
@@ -280,7 +281,9 @@
 												vtrMetrics
 												metricsItem="btn.freepcscan"
 												metricsEvent="FeatureClick"
-												metricsParent="Page.Support.SmartPerformance">{{'smartPerformance.scanButton' |translate}}</button>
+												metricsParent="Page.Support.SmartPerformance"
+												[ngbTooltip]="'smartPerformance.scanButton' | translate"
+												placement="top">{{'smartPerformance.scanButton' |translate}}</button>
 												<div class="description">
 													<p [innerHTML]="'smartPerformance.startScan' |translate"></p>
 												</div>
@@ -397,8 +400,12 @@
 														<button class="feedback-btn"
 														vtrMetrics
 														metricsEvent="FeatureClick"
-            											metricsParent="Page.Support.SmartPerformance" metricsItem="btn.sp.sendfeedback" alt="" type="button"
-														(click)="onclickFeedback()">{{'smartPerformance.feedbackContainer.buttonText' | translate}}
+														metricsParent="Page.Support.SmartPerformance" 
+														metricsItem="btn.sp.sendfeedback"
+														type="button"
+														(click)="onclickFeedback()"
+														[ngbTooltip]="'smartPerformance.feedbackContainer.buttonText' | translate"
+														placement="top">{{'smartPerformance.feedbackContainer.buttonText' | translate}}
 														</button>
 													</div>
 												</div>

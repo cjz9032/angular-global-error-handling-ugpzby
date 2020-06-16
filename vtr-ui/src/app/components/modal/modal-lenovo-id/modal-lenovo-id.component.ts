@@ -317,11 +317,7 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 				}, 500);
 			}
 		}).catch((error) => {
-			if (error && error.description) {
-				self.devService.writeLog('getLoginUrl() exception happen, ' + error.description);
-			} else {
-				self.devService.writeLog('getLoginUrl() exception happen');
-			}
+			self.devService.writeLog('getLoginUrl() exception happen');
 			setTimeout(() => {
 				if (error && error.errorcode === 513) {
 					self.activeModal.dismiss(ssoErroType.SSO_ErrorType_AccountPluginDoesnotExist);

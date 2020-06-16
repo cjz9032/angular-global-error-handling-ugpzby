@@ -155,6 +155,8 @@
                         "cpuOCName79": "Önbellek Voltajı Sapması",
                         "cpuOCName122": "7 Çekirdek Oranı",
                         "cpuOCName123": "8 Çekirdek Oranı",
+                        "cpuOCName124": "9 Çekirdek Oranı",
+                        "cpuOCName125": "10 Çekirdek Oranı",
                         "cpuOCName102": "Çekirdek ICCMAX",
                         "cpuOCName106": "Önbellek ICCMAX",
                         "cpuOCName114": "AVX Oranı Sapması"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Önbellek Voltajına uygulanan son voltaj sapması.",
                         "cpuOCTip122": "Çekirdeklerin çalışabileceği maksimum çekirdek çarpanını ayarlayın. Çekirdek frekansının değeri, bu oranın ve referans saat frekansının ürünüdür.",
                         "cpuOCTip123": "Çekirdeklerin çalışabileceği maksimum çekirdek çarpanını ayarlayın. Çekirdek frekansının değeri, bu oranın ve referans saat frekansının ürünüdür.",
+                        "cpuOCTip124": "Çekirdeklerin çalışabileceği maksimum çekirdek çarpanını ayarlayın. Çekirdek frekansının değeri, bu oranın ve referans saat frekansının ürünüdür.",
+                        "cpuOCTip125": "Çekirdeklerin çalışabileceği maksimum çekirdek çarpanını ayarlayın. Çekirdek frekansının değeri, bu oranın ve referans saat frekansının ürünüdür.",
                         "cpuOCTip102": "İşlemci Çekirdek Voltaj Regülatörü için ICCMAX'i ayarlayın.",
                         "cpuOCTip106": "İşlemci Önbellek ve Halka Veriyolu Voltaj Regülatörü için ICCMAX'i ayarlayın.",
                         "cpuOCTip114": "AVX etkin durumdayken etkili etkin çekirdek oranı sınırını elde etmek için bu değeri, karşılık gelen etkin çekirdek oranı sınırından çıkarın."
@@ -1066,7 +1070,8 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "Pilinizin ömrünü uzatmak için tam dolum kapasitesini kullanımınıza göre iyileştirdik. Pil kapasitesinin tamamını kullanmak için pili %20'ye kadar boşaltıp yeniden doldurmanız gerekmektedir."
+                    "fccTooltipText": "Pilinizin ömrünü uzatmak için tam dolum kapasitesini kullanımınıza göre iyileştirdik. Pil kapasitesinin tamamını kullanmak için pili %20'ye kadar boşaltıp yeniden doldurmanız gerekmektedir.",
+                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
                 },
                 "condition": {
                     "Illegal": "Takılı pil, sistem tarafından <b>desteklenmiyor</b> ve doldurulmayacak. Lütfen yerine bu sistem için doğru olan Lenovo pilini takın.",
@@ -1094,6 +1099,16 @@
                 "gaugeResetWarning": "<b>Not:</b> Pil göstergesi sıfırlama işlemi devam ediyor. Lütfen AC güç bağdaştırıcısı bağlı tutun.",
                 "dualConditions": {
                     "NotDetected": "<b>Birincil pil algılanmadı.</b>"
+                },
+                "highDensityBattery": {
+                    "title": "High density battery",
+                    "subtitle": "How your battery works",
+                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "para2": {
+                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
+                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
+                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                    }
                 }
             },
             "power": {
@@ -1751,7 +1766,8 @@
                             "title": "Bilgisayarı yeniden başlatın",
                             "description": "Varsayılan üst sıra işlevlerinde değişiklik yapılması bilgisayarınızın yeniden başlatmanızı gerektirir. Yeniden başlatmak istediğinizden emin misiniz?",
                             "reboot": "YENİDEN YÜKLE",
-                            "cancel": "ŞİMDİ DEĞİL"
+                            "cancel": "ŞİMDİ DEĞİL",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "F1-F12 işlevlerine erişmek için Fn tuşuna ve en üst sıradaki tuşlara basın.",
@@ -3270,7 +3286,8 @@
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+            "processStatus": "PROCESSING"
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3755,7 +3772,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

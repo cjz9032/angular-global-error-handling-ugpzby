@@ -155,6 +155,8 @@
                         "cpuOCName79": "Kompenzace napětí mezipaměti",
                         "cpuOCName122": "Poměr jádra 7",
                         "cpuOCName123": "Poměr jádra 8",
+                        "cpuOCName124": "Poměr jádra 9",
+                        "cpuOCName125": "Poměr jádra 10",
                         "cpuOCName102": "ICCMAX jádra",
                         "cpuOCName106": "ICCMAX mezipaměti",
                         "cpuOCName114": "Kompenzace poměru AVX"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Konečná kompenzace napětí, která se použije pro napětí mezipaměti.",
                         "cpuOCTip122": "Nastavte maximální násobič jádra, při kterém mohou jádra fungovat. Hodnota frekvence jádra je produktem tohoto poměru a referenční frekvence taktu.",
                         "cpuOCTip123": "Nastavte maximální násobič jádra, při kterém mohou jádra fungovat. Hodnota frekvence jádra je produktem tohoto poměru a referenční frekvence taktu.",
+                        "cpuOCTip124": "Nastavte maximální násobič jádra, při kterém mohou jádra fungovat. Hodnota frekvence jádra je produktem tohoto poměru a referenční frekvence taktu.",
+                        "cpuOCTip125": "Nastavte maximální násobič jádra, při kterém mohou jádra fungovat. Hodnota frekvence jádra je produktem tohoto poměru a referenční frekvence taktu.",
                         "cpuOCTip102": "Nastavte ICCMAX pro regulátor napětí jádra procesoru.",
                         "cpuOCTip106": "Nastavte ICCMAX pro regulátor napětí mezipaměti a sběrnice Ring Bus procesoru.",
                         "cpuOCTip114": "Chcete-li odvodit limit poměru aktivního jádra, když je AVX aktivní, odečtěte tuto hodnotu od odpovídajícího limitu poměru aktivního jádra."
@@ -1066,7 +1070,8 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "Abychom prodloužili životnost baterie, optimalizovali jsme její plnou kapacitu nabíjení na základě vašeho používání. Plná kapacita baterie nemusí být k dispozici, dokud baterii nevybijete na 20% a znovu nenabijete."
+                    "fccTooltipText": "Abychom prodloužili životnost baterie, optimalizovali jsme její plnou kapacitu nabíjení na základě vašeho používání. Plná kapacita baterie nemusí být k dispozici, dokud baterii nevybijete na 20% a znovu nenabijete.",
+                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
                 },
                 "condition": {
                     "Illegal": "Nainstalovaná baterie <b>není</b> tímto systémem podporována a nebude se dobíjet. Vyměňte baterii za správnou baterii Lenovo určenou pro tento systém.",
@@ -1094,6 +1099,16 @@
                 "gaugeResetWarning": "<b>Poznámka:</b> Probíhá reset měřiče baterie. Ponechejte připojený napájecí adaptér.",
                 "dualConditions": {
                     "NotDetected": "<b>Primární baterie nebyla detekována.</b>"
+                },
+                "highDensityBattery": {
+                    "title": "High density battery",
+                    "subtitle": "How your battery works",
+                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "para2": {
+                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
+                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
+                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                    }
                 }
             },
             "power": {
@@ -1751,7 +1766,8 @@
                             "title": "Restartujte počítač",
                             "description": "V případě změny funkce horní řady kláves je nutno počítač restartovat, aby se změny projevily. Skutečně chcete restartovat?",
                             "reboot": "RESTARTOVAT",
-                            "cancel": "TEĎ NE"
+                            "cancel": "TEĎ NE",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Pomocí podržení klávesy Fn a stisknutí jedné z kláves v horní řadě aktivujete jejich funkce F1-F12.",
@@ -3270,7 +3286,8 @@
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+            "processStatus": "PROCESSING"
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3755,7 +3772,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

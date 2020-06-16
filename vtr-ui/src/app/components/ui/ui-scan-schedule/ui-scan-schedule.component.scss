@@ -363,7 +363,7 @@ vtr-ui-smart-performance-scan-summary {
 						}
                         .heading {
                             h3, h2{
-                                font-size: $fontsize_md;
+								font-size: $fontsize_md;
 								color: $main_shade !important;
 								letter-spacing: 0;
 								font-weight: $weight_bold;
@@ -412,6 +412,8 @@ vtr-ui-smart-performance-scan-summary {
                                     max-width: 8.1rem;
                                     margin-top: 0.6rem;
 									line-height: 1.6rem;
+									overflow: hidden;
+									text-overflow: ellipsis;
 									@media #{$breakpoint_sm} {
 										font-size: 1rem;
 										line-height: 1rem;
@@ -428,7 +430,8 @@ vtr-ui-smart-performance-scan-summary {
                                 padding: 0;
                                 .list-item {
                                     p{
-                                        font-size: 1.4rem;
+										font-size: 1.4rem;
+										overflow:hidden;
                                     }
                                         fa-icon {
                                             font-size: 1.4rem;

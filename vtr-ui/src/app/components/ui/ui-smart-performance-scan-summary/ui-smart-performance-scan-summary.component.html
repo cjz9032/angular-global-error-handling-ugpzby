@@ -127,12 +127,16 @@
 														<button *ngIf="!inputIsScanningCompleted" [ngClass]="isLoading? 'disabled-button': 'action-button'" (click)="ScanNowSummary()"
 															vtrMetrics metricsItem="btn.scan&fix"
 															metricsEvent="FeatureClick"
-															metricsParent="Page.Support.SmartPerformance">{{'smartPerformance.subscriberScanHomePage.scanNow' |translate }}</button>
+															metricsParent="Page.Support.SmartPerformance" 
+															[ngbTooltip]="'smartPerformance.subscriberScanHomePage.scanNow' | translate" 
+															placement="top">{{'smartPerformance.subscriberScanHomePage.scanNow' |translate }}</button>
 
 															<button *ngIf="inputIsScanningCompleted" class="action-button" (click)="BackToSummary()"
 															vtrMetrics metricsItem="btn.backtohome"
 															metricsEvent="FeatureClick"
-															metricsParent="Page.Support.SmartPerformance">{{'smartPerformance.subscriberScanHomePage.backToHome' |translate }}</button>
+															metricsParent="Page.Support.SmartPerformance"
+															[ngbTooltip]="'smartPerformance.subscriberScanHomePage.backToHome' | translate"
+															placement="top">{{'smartPerformance.subscriberScanHomePage.backToHome' |translate }}</button>
 														<div class="desc-block">
 															<div class="desc desc1 col-auto" *ngIf="historyScanResultsDateTime && historyScanResultsDateTime.length > 0">
 																<b>{{'smartPerformance.subscriberScanHomePage.mostRecent' |translate }}</b><br>
@@ -213,7 +217,7 @@
 																	*ngFor="let item of menuItems;let ind=index"
 																	(click)="scanSummaryTime(ind)"
 																	[ngClass]="{'selected-list-item': tabIndex === ind}">
-																	{{item.itemName}}
+																	{{item.itemName | translate}}
 																	<!-- <div class="list-item" >
 																	</div> -->
 																</li>
@@ -282,10 +286,9 @@
 																						(click)="selectToDate()" readonly /></div>
 
 																			</div>
-																			<div class="row">
-																				<div class="col-3"></div>
-																				<div class="col-9"><button class="custom-go-btn mt-3" (click)="customDateScanSummary()">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtGo' |translate }}</button>
-																				</div>
+																			<div class="row d-flex justify-content-center">
+																				<button class="custom-go-btn mt-3" (click)="customDateScanSummary()">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtGo' |translate }}</button>
+																				<button class="custom-go-btn mt-3" (click)="customDateScanSummary()">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtClr' |translate }}</button>
 																			</div>
 																		</div>
 																		<div class="col date-picker">
@@ -608,11 +611,14 @@
 															<div class="title">{{'smartPerformance.feedbackContainer.title' | translate}}</div>
 															<div class="description">{{'smartPerformance.feedbackContainer.subtitle' | translate}}</div>
 															<div class="pt-5 text-center">
-																<button class="feedback-btn" alt="" type="button"
+																<button class="feedback-btn" type="button"
 																vtrMetrics
 																metricsEvent="FeatureClick"
-            													metricsParent="Page.Support.SmartPerformance" metricsItem="btn.sp.sendfeedback" 
-																(click)="onclickFeedback()">{{'smartPerformance.feedbackContainer.buttonText' | translate}}
+																metricsParent="Page.Support.SmartPerformance" 
+																metricsItem="btn.sp.sendfeedback" 
+																(click)="onclickFeedback()"
+																[ngbTooltip]="'smartPerformance.feedbackContainer.buttonText' | translate"
+																placement="top">{{'smartPerformance.feedbackContainer.buttonText' | translate}}
 																</button>
 															</div>
 														</div>
