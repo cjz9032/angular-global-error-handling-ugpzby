@@ -2269,11 +2269,18 @@ export class VantageShellService {
 	}
 
 	public getAntiTheft(): any {
-		const win: any = window;
-		if (win.VantageShellExtension && win.VantageShellExtension.SmartMotionAlertRpcClient) {
-			return new win.VantageShellExtension.SmartMotionAlertRpcClient();
+		const response = {
+			available: true,
+			enabled: true,
+			cameraAllowed: true,
+			photoAddress: 'c:\\users',
+			alarmDuration: 30,
+			photoNumber: 10,
+			errorCode: 0
+		};
+		return {
+			getMotionAlertSetting: () => JSON.stringify(response)
 		}
-		return undefined;
 	}
 
 	public getHsaIntelligentSecurity(): any {

@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input, OnDestroy } from '@angular/core';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { Router, NavigationExtras } from '@angular/router';
@@ -10,13 +10,14 @@ import { AntiTheftResponse } from 'src/app/data-models/antiTheft/antiTheft.model
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
+import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 
 @Component({
 	selector: 'vtr-anti-theft',
 	templateUrl: './anti-theft.component.html',
 	styleUrls: ['./anti-theft.component.scss']
 })
-export class AntiTheftComponent implements OnInit {
+export class AntiTheftComponent implements OnInit, OnDestroy {
 	@Input() antiTheftAvailable = true;
 	@Input() isLoading = true;
 	@Input() checkboxDisabled = false;
@@ -40,6 +41,7 @@ export class AntiTheftComponent implements OnInit {
 	public alarmTimeList: DropDownInterval[];
 	public photoNumberList: DropDownInterval[];
 	private smartAssistCapability: SmartAssistCapability = undefined;
+	public readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
 
 	constructor(
 		private smartAssist: SmartAssistService,
@@ -92,33 +94,37 @@ export class AntiTheftComponent implements OnInit {
 			name: time1,
 			value: 10,
 			placeholder: '',
-			text: `${time1}`
+			text: `${time1}`,
+			metricsValue: '10 seconds',
 		},
 		{
 			name: time2,
 			value: 20,
 			placeholder: '',
-			text: `${time2}`
+			text: `${time2}`,
+			metricsValue: '20 seconds'
 		},
 		{
 			name: time3,
 			value: 30,
 			placeholder: '',
-			text: `${time3}`
+			text: `${time3}`,
+			metricsValue: '30 seconds'
 		},
 		{
 			name: time4,
 			value: 60,
 			placeholder: '',
-			text: `${time4}`
+			text: `${time4}`,
+			metricsValue: '1 minute'
 		},
 		{
 			name: time5,
 			value: 0,
 			placeholder: '',
-			text: `${time5}`
-		},
-		];
+			text: `${time5}`,
+			metricsValue: 'never-stop'
+		}];
 	}
 
 	private populatePhotoNumberList() {
@@ -132,39 +138,44 @@ export class AntiTheftComponent implements OnInit {
 			name: number1,
 			value: 5,
 			placeholder: '',
-			text: `${number1}`
+			text: `${number1}`,
+			metricsValue: 5
 		},
 		{
 			name: number2,
 			value: 10,
 			placeholder: '',
-			text: `${number2}`
+			text: `${number2}`,
+			metricsValue: 10
 		},
 		{
 			name: number3,
 			value: 15,
 			placeholder: '',
-			text: `${number3}`
+			text: `${number3}`,
+			metricsValue: 15
 		},
 		{
 			name: number4,
 			value: 20,
 			placeholder: '',
-			text: `${number4}`
+			text: `${number4}`,
+			metricsValue: 20
 		},
 		{
 			name: number5,
 			value: 25,
 			placeholder: '',
-			text: `${number5}`
+			text: `${number5}`,
+			metricsValue: 25
 		},
 		{
 			name: number6,
 			value: 30,
 			placeholder: '',
-			text: `${number6}`
-		},
-		];
+			text: `${number6}`,
+			metricsValue: 30
+		}];
 	}
 
 	public onRightIconClick(tooltip: any, $event: any) {
@@ -200,7 +211,7 @@ export class AntiTheftComponent implements OnInit {
 							this.updateSensingHeaderMenu.emit(true);
 							this.startMonitorAntiTheftStatus();
 							this.startMonitorCameraAuthorized(this.cameraAuthorizedChange.bind(this));
-		                    this.startMonitorForCameraPrivacy();
+							this.startMonitorForCameraPrivacy();
 						}
 						this.commonService.setLocalStorageValue(LocalStorageKey.AntiTheftCache, this.antiTheft);
 						this.isLoading = false;
@@ -236,9 +247,9 @@ export class AntiTheftComponent implements OnInit {
 		try {
 			if (this.smartAssist.isShellAvailable) {
 				this.smartAssist.setAlarmOften(value)
-					.then((value: boolean) => {
+					.then((response: boolean) => {
 						this.commonService.setLocalStorageValue(LocalStorageKey.AntiTheftCache, this.antiTheft);
-						this.logger.info('setAlarmOften.then', value);
+						this.logger.info('setAlarmOften.then', { value, response });
 					}).catch(error => {
 						this.logger.error('setAlarmOften', error.message);
 					});
@@ -253,9 +264,9 @@ export class AntiTheftComponent implements OnInit {
 		try {
 			if (this.smartAssist.isShellAvailable) {
 				this.smartAssist.setPhotoNumber(value)
-					.then((value: boolean) => {
+					.then((response: boolean) => {
 						this.commonService.setLocalStorageValue(LocalStorageKey.AntiTheftCache, this.antiTheft);
-						this.logger.info('setPhotoNumber.then', value);
+						this.logger.info('setPhotoNumber.then', { value, response });
 					}).catch(error => {
 						this.logger.error('setPhotoNumber', error.message);
 					});
@@ -269,9 +280,9 @@ export class AntiTheftComponent implements OnInit {
 		this.antiTheft.isSupportPhoto = value;
 		try {
 			this.smartAssist.setAllowCamera(value)
-				.then((value: boolean) => {
+				.then((response: boolean) => {
 					this.commonService.setLocalStorageValue(LocalStorageKey.AntiTheftCache, this.antiTheft);
-					this.logger.info('setAllowCamera.then', value);
+					this.logger.info('setAllowCamera.then', { value, response });
 				}).catch(error => {
 					this.logger.error('setAllowCamera', error.message);
 				});
@@ -308,7 +319,7 @@ export class AntiTheftComponent implements OnInit {
 				this.isShowfileAuthorizationTips = false;
 			}
 		} catch (error) {
-			this.logger.info('showPhotoFolder error message:' + error.message + "error number:" + error.number);
+			this.logger.info('showPhotoFolder error message:' + error.message + 'error number:' + error.number);
 			if (error.number === -2147024891) {
 				this.isShowfileAuthorizationTips = true;
 			}
@@ -337,6 +348,7 @@ export class AntiTheftComponent implements OnInit {
 									break;
 								case 1:
 									callback({ status: true });
+									break;
 								default:
 									break;
 							}

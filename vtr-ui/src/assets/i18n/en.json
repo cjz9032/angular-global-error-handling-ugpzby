@@ -160,6 +160,8 @@
 						"cpuOCName79": "Cache Voltage Offset",
 						"cpuOCName122": "7 Core Ratio",
 						"cpuOCName123": "8 Core Ratio",
+						"cpuOCName124": "9 Core Ratio",
+						"cpuOCName125": "10 Core Ratio",
 						"cpuOCName102": "Core ICCMAX",
 						"cpuOCName106": "Cache ICCMAX",
 						"cpuOCName114": "AVX Ratio Offset"
@@ -178,6 +180,8 @@
 						"cpuOCTip79": "Final voltage offset that is applied to the Cache Voltage.",
 						"cpuOCTip122": "Set the maximum core multiplier at which the cores can operate. The value of the core frequency is the product of this ratio and the reference clock frequency.",
 						"cpuOCTip123": "Set the maximum core multiplier at which the cores can operate. The value of the core frequency is the product of this ratio and the reference clock frequency.",
+						"cpuOCTip124": "Set the maximum core multiplier at which the cores can operate. The value of the core frequency is the product of this ratio and the reference clock frequency.",
+						"cpuOCTip125": "Set the maximum core multiplier at which the cores can operate. The value of the core frequency is the product of this ratio and the reference clock frequency.",
 						"cpuOCTip102": "Set ICCMAX for Processor Core Voltage Regulator.",
 						"cpuOCTip106": "Set ICCMAX for Processor Cache and Ring Bus Voltage Regulator.",
 						"cpuOCTip114": "To derive the effective active core ratio limit when AVX is active, subtract this value to the corresponding active core ratio limit."
@@ -927,7 +931,7 @@
 		},
 		"systemStatus": {
 			"title": "System Status",
-			"subtitle": "Quick catch up your device status.",
+			"subtitle": "Quickly catch up your device status.",
 			"memory": {
 				"title": "Memory",
 				"detail": {
@@ -1100,7 +1104,7 @@
 				},
 				"highDensityBattery": {
 					"title": "High density battery",
-					"subtitle": "How your battey works",
+					"subtitle": "How your battery works",
 					"para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
 					"para2": {
 						"item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
@@ -1129,7 +1133,7 @@
 					"description3": "Intelligent Cooling automatically balances thermal performance to adjust to your needs. The Intelligent Cooling feature adjusts performance settings to provide a cooler surface for your comfort, when the notebook is being held. When the device is on a desktop surface, this feature optimizes performance.",
 					"description13": "When on, this feature dynamically adjusts thermal settings to your needs. It adjusts settings to keep the device cool and quiet while being held or idle. While the device is on a stable surface, it optimizes the performance. When off, you can manually set the thermal priority.",
 					"description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
-					"description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider.",
+					"description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode, and Performance mode) and is now accessible by the Windows performance power slider.",
 					"readMore": "Read more",
 					"gotoWindows": {
 						"title": "Go to Windows settings",
@@ -1365,6 +1369,7 @@
 							"title": "Enable Battery Charge Threshold",
 							"description1": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life.",
 							"description2": "In order to fully enable this feature, please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+							"description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold.",
 							"enable": "ENABLE",
 							"cancel": "CANCEL"
 						},
@@ -1431,7 +1436,7 @@
 						"title": "Airplane Power Mode",
 						"description": "This feature enables you to use the ac power outlet on an airplane where a certain power limit applies. In this mode, the power consumption of your computer is reduced to a safe level by limiting the battery charge rate and computer performance.",
 						"checkBoxDesc": "Auto detection",
-						"note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
+						"note": "If Auto detection is checked, your computer will turn on Airplane Power Mode automatically when it detects an airplane onboard environment and turn off it when you leave."
 					}
 				},
 				"energyStar": {
@@ -1582,7 +1587,7 @@
 				"display": {
 					"title": "Display",
 					"displayColorTemperature": {
-						"title": "Eye care mode",
+						"title": "Eye Care Mode",
 						"description": "To avoid eye strain, you can adjust the color temperature of your display to filter out the blue light when you use your computer for a long time. In addition, warm colors are good for your sleeping especially in the night.",
 						"link": {
 							"click": "Click",
@@ -1592,19 +1597,19 @@
 					},
 					"eyeCareMode": {
 						"title": "Color Temperature in Eye Care Mode",
-						"checkbox": "Schedule eye care mode from sunset to sunrise",
+						"checkbox": "Schedule Eye Care Mode from sunset to sunrise",
 						"options": {
 							"warm": "Warm (Better for eyes)",
 							"cold": "Cold"
 						},
 						"reset": "Reset",
 						"tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-						"onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+						"onSunsetToSunriseScheduleDescription": "Schedule Eye Care Mode from sunset to sunrise",
 						"note": {
 							"title": "Note",
 							"description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
 						},
-						"tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+						"tips": "Please run Windows Update or manually install graphics driver to recover Eye Care Mode."
 					},
 					"oledPowerSettings": {
 						"title": "OLED Power Settings",
@@ -1636,7 +1641,7 @@
 						},
 						"reset": "Reset",
 						"tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-						"onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+						"onSunsetToSunriseScheduleDescription": "Schedule Eye Care Mode from sunset to sunrise",
 						"note": {
 							"title": "Note",
 							"description": "When the Eye Care Mode is enabled, this color temperature does not take effect. However, you can drag the slider to get a preview of it. To make it effective, turn off the Eye Care Mode."
@@ -1670,7 +1675,7 @@
 					"cameraPrivacy": {
 						"title": "Camera Privacy Mode",
 						"tooltip": "The camera stops sending live images when the privacy setting is enabled. Turn this setting on, only when you do not want to share your images to others while video calling.",
-						"cameraPrivacyAccessNote": "Please go to the <b>Windows Settings → Privacy → Camera</b> page and make sure the following two options are truned on:<br>&bull; <b>Allow desktop apps to access your camera</b><br>&bull; <b>Lenovo Vantage</b> under \"Choose which (Microsoft Store) apps can access your camera\""
+						"cameraPrivacyAccessNote": "Please go to the <b>Windows Settings → Privacy → Camera</b> page and make sure the following two options are turned on:<br>&bull; <b>Allow desktop apps to access your camera</b><br>&bull; <b>Lenovo Vantage</b> under \"Choose which (Microsoft Store) apps can access your camera\""
 					},
 					"camera": {
 						"title": "Camera",
@@ -1761,10 +1766,11 @@
 							"note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
 						},
 						"popup": {
-							"title": "Restart computer",
+							"title": "Restart your computer",
 							"description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
 							"reboot": "REBOOT",
-							"cancel": "NOT NOW"
+							"cancel": "NOT NOW",
+							"yes": "YES"
 						},
 						"note": {
 							"sFunKey": "To access F1-F12 function, press Fn and the keys on the top row.",
@@ -1788,7 +1794,7 @@
 				"backlight": {
 					"title": "Keyboard backlight",
 					"description": {
-						"base": "Activate the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backllight settings by pressing the Fn+Space key combinations.",
+						"base": "Activate the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key combinations.",
 						"auto": "Activate the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key combinations or set it as \"Auto\". In \"Auto\" mode, the system automatically adjusts the keyboard backlight according to the ambient light."
 					},
 					"level": {
@@ -1800,7 +1806,7 @@
 				},
 				"userDefinedKey": {
 					"title": "User-defined Key",
-					"caption": "The key represented by the star icon allows you to set user defined function",
+					"caption": "The key represented by the star icon allows you to set user defined function.",
 					"tooltip": "Content to be filled",
 					"apply": {
 						"title": "APPLY"
@@ -1828,7 +1834,7 @@
 					},
 					"dropDown": {
 						"title": "ACTION USER DEFINED KEY",
-						"note": "Note: This can be used to enter commonly entered key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information.",
+						"note": "Note: This can be used to enter commonly entered key, such as e-mail or postal addresses. Never use this feature to store passwords or any other private information.",
 						"invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function.",
 						"options": {
 							"option1": "Please select",
@@ -1840,9 +1846,9 @@
 					}
 				},
 				"fnCtrlKey": {
-					"title": "FN key and Ctrl key swap",
+					"title": "Fn and Ctrl key swap",
 					"description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-					"restartNote": "Swapping the function of two keys requires you to restart your computer, are you sure to restart?",
+					"restartNote": "Swapping the function of the two keys requires you to restart your computer. Are you sure to restart?",
 					"title2": "Fn works as Ctrl for frequently used key combinations",
 					"description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
 					"featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
@@ -2441,7 +2447,7 @@
 				"tab2Heading": "IT'S FAST",
 				"tab2Description": "Get a 100 point check done in under 5 minutes",
 				"tab3Heading": "IT'S SAFE",
-				"tab3Description": "No scareware, built with best practises"
+				"tab3Description": "No scareware, built with best practices"
 			}
 		},
 		"noScanResults":"Please click SCAN & FIX button to trigger scan process.",
@@ -2449,7 +2455,7 @@
 		"subscriptionDetails": {
 			"title": "Subscription Details",
 			"titlebeta":"Lenovo Beta Program",
-			"descriptionNonSubscriber":"You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+			"descriptionNonSubscriber":"You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothly.",
 			"description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
 			"learnMore": "Learn more",
 			"startDate": "Start date",
@@ -2457,6 +2463,7 @@
 			"status": "Status",
 			"activeStatus": "ACTIVE",
 			"inactiveStatus": "INACTIVE",
+			"processStatus": "PROCESSING",
 			"manageSubscription": "MANAGE SUBSCRIPTION",
 			"manageSubscriptionBeta":"ENABLE FULL FEATURE",
 			"descriptionbeta": "Lenovo is offering pilot program to try Smart Performance feature till July 2020.",
@@ -2930,7 +2937,7 @@
 			"returnto": "RETURN TO DASHBOARD",
 			"mostRecent": "MOST RECENT SCAN:",
 			"nextScheduled": "NEXT SCHEDULED SCAN:",
-			"successTitle": "Your PC is tuned up !",
+			"successTitle": "Your PC is tuned up!",
 			"successDescription": "Smart Performance resolved <b>{{issueCount}} issue(s)</b> to keep your pc running smoothly, you can find scan summary and report below.",
 			"scanSummary": {
 				"title": "Scan summary:",
@@ -2938,7 +2945,7 @@
 				"tune": "Tune",
 				"tuneSummary": "Disk space reclaimed",
 				"summaryCaption": "space reclaimed",
-				"fixes": "fix(es)",
+				"fixes": "Fix(es)",
 				"boost": "Boost",
 				"boostSummary": "Fixes to improve performance",
 				"secure": "Secure",
@@ -2948,7 +2955,8 @@
 				"custom": "Custom",
 				"txtFrom": "From",
 				"txtTo": "To",
-				"txtGo": "Go"
+				"txtGo": "Go",
+				"txtClr": "Clear"
 			},
 			"lastScanResults": {
 				"title": "Last 5 scan results:",

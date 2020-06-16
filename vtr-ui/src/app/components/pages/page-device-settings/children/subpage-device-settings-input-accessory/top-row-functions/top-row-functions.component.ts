@@ -201,14 +201,16 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 			label: 'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.nMehod',
 			value: false,
 			isChecked: this.topRowKeyObj.stickyFunStatus === false,
-			isDisabled: false
+			isDisabled: false,
+			metricsValue: 'radio.normal-key'
 		},
 		{
 			componentId: 'fnKeyMehod_show',
 			label: 'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.fnKeyMehod',
 			value: true,
 			isChecked: this.topRowKeyObj.stickyFunStatus === true,
-			isDisabled: false
+			isDisabled: false,
+			metricsValue: 'radio.fn-sticky-Key'
 		}];
 	}
 

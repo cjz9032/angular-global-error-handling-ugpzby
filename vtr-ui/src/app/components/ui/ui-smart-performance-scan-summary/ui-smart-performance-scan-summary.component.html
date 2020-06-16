@@ -100,7 +100,7 @@
 													</p>
 													<div class="d-flex justify-content-between my-5">
 														<button class="action-button" vtrMetrics
-															metricsItem="sp.{{'smartPerformance.scanCompletePage.backToHome' |translate | lowercase| removeSpace }}"
+															metricsItem="btn.backtohome"
 															metricsEvent="ItemClick"
 															metricsParent="Page.Support.SmartPerformance"
 															(click)=backToNonSubScriberHome()>{{'smartPerformance.scanCompletePage.backToHome' |translate }}</button>
@@ -125,14 +125,18 @@
 													</p>
 													<div class="d-flex justify-content-start my-5 w-75">
 														<button *ngIf="!inputIsScanningCompleted" [ngClass]="isLoading? 'disabled-button': 'action-button'" (click)="ScanNowSummary()"
-															vtrMetrics metricsItem="sp.{{'smartPerformance.subscriberScanHomePage.scanNow' |translate| lowercase| removeSpace }}"
+															vtrMetrics metricsItem="btn.scan&fix"
 															metricsEvent="FeatureClick"
-															metricsParent="Page.Support.SmartPerformance">{{'smartPerformance.subscriberScanHomePage.scanNow' |translate }}</button>
+															metricsParent="Page.Support.SmartPerformance" 
+															[ngbTooltip]="'smartPerformance.subscriberScanHomePage.scanNow' | translate" 
+															placement="top">{{'smartPerformance.subscriberScanHomePage.scanNow' |translate }}</button>
 
 															<button *ngIf="inputIsScanningCompleted" class="action-button" (click)="BackToSummary()"
-															vtrMetrics metricsItem="sp.{{'smartPerformance.subscriberScanHomePage.backToHome' |translate| lowercase | removeSpace }}"
+															vtrMetrics metricsItem="btn.backtohome"
 															metricsEvent="FeatureClick"
-															metricsParent="Page.Support.SmartPerformance">{{'smartPerformance.subscriberScanHomePage.backToHome' |translate }}</button>
+															metricsParent="Page.Support.SmartPerformance"
+															[ngbTooltip]="'smartPerformance.subscriberScanHomePage.backToHome' | translate"
+															placement="top">{{'smartPerformance.subscriberScanHomePage.backToHome' |translate }}</button>
 														<div class="desc-block">
 															<div class="desc desc1 col-auto" *ngIf="historyScanResultsDateTime && historyScanResultsDateTime.length > 0">
 																<b>{{'smartPerformance.subscriberScanHomePage.mostRecent' |translate }}</b><br>
@@ -213,7 +217,7 @@
 																	*ngFor="let item of menuItems;let ind=index"
 																	(click)="scanSummaryTime(ind)"
 																	[ngClass]="{'selected-list-item': tabIndex === ind}">
-																	{{item.itemName}}
+																	{{item.itemName | translate}}
 																	<!-- <div class="list-item" >
 																	</div> -->
 																</li>
@@ -282,10 +286,9 @@
 																						(click)="selectToDate()" readonly /></div>
 
 																			</div>
-																			<div class="row">
-																				<div class="col-3"></div>
-																				<div class="col-9"><button class="custom-go-btn mt-3" (click)="customDateScanSummary()">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtGo' |translate }}</button>
-																				</div>
+																			<div class="row d-flex justify-content-center">
+																				<button class="custom-go-btn mt-3" (click)="customDateScanSummary()">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtGo' |translate }}</button>
+																				<button class="custom-go-btn mt-3" (click)="customDateScanSummary()">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtClr' |translate }}</button>
 																			</div>
 																		</div>
 																		<div class="col date-picker">
@@ -416,7 +419,7 @@
 																							<span class="ml-1" *ngIf="item.type.toUpperCase() == 'SS'">({{'smartPerformance.auto' |translate }})</span>
 
 																					</div>
-																					<div class="col-2">{{item.fixcount | number:'2.0'}} Fix(es)
+																					<div class="col-2">{{item.fixcount === 0 ? item.fixcount : (item.fixcount | number:'2.0')}} {{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' | translate}}
 																					</div>
 																					<div class="col-2" *ngIf="item.status === 'C'">
 																						<div class="icon-check">
@@ -586,7 +589,7 @@
 												</p>
 												<!-- These are commented as per new requirment please dont delete -->
 												<button class="action-button mt-2" vtrMetrics
-													metricsItem="sp.{{'smartPerformance.scanCompletePage.recommendedAction.signupButton' |translate| lowercase | removeSpace}}"
+													metricsItem="btn.enablefullfeature"
 													metricsEvent="FeatureClick"
 													metricsParent="Page.Support.SmartPerformance"
 													(click)=openSubscribeModal()>{{'smartPerformance.scanCompletePage.recommendedAction.signupButton' |translate }}</button>
@@ -608,11 +611,14 @@
 															<div class="title">{{'smartPerformance.feedbackContainer.title' | translate}}</div>
 															<div class="description">{{'smartPerformance.feedbackContainer.subtitle' | translate}}</div>
 															<div class="pt-5 text-center">
-																<button class="feedback-btn" alt="" type="button"
+																<button class="feedback-btn" type="button"
 																vtrMetrics
 																metricsEvent="FeatureClick"
-            													metricsParent="Page.Support.SmartPerformance" metricsItem="sp.{{'smartPerformance.feedbackContainer.buttonText'| translate| lowercase| removeSpace}}" 
-																(click)="onclickFeedback()">{{'smartPerformance.feedbackContainer.buttonText' | translate}}
+																metricsParent="Page.Support.SmartPerformance" 
+																metricsItem="btn.sp.sendfeedback" 
+																(click)="onclickFeedback()"
+																[ngbTooltip]="'smartPerformance.feedbackContainer.buttonText' | translate"
+																placement="top">{{'smartPerformance.feedbackContainer.buttonText' | translate}}
 																</button>
 															</div>
 														</div>

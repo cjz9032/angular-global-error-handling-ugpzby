@@ -155,6 +155,8 @@
                         "cpuOCName79": "Gyorsítótár feszültségének eltolása",
                         "cpuOCName122": "7 magos arány",
                         "cpuOCName123": "8 magos arány",
+                        "cpuOCName124": "9 magos arány",
+                        "cpuOCName125": "10 magos arány",
                         "cpuOCName102": "ICCMAX mag",
                         "cpuOCName106": "ICCMAX gyorsítótár",
                         "cpuOCName114": "AVX arány eltolása"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "A végleges feszültségtolás, amelyet a gyorsítótár feszültségére alkalmaznak.",
                         "cpuOCTip122": "Állítsa be a maximális magszorzó értékét, amelyen a magok működőképesek. A magfrekvencia értéke ennek az aránynak és a referencia órajel frekvenciának a szorzata.",
                         "cpuOCTip123": "Állítsa be a maximális magszorzó értékét, amelyen a magok működőképesek. A magfrekvencia értéke ennek az aránynak és a referencia órajel frekvenciának a szorzata.",
+                        "cpuOCTip124": "Állítsa be a maximális magszorzó értékét, amelyen a magok működőképesek. A magfrekvencia értéke ennek az aránynak és a referencia órajel frekvenciának a szorzata.",
+                        "cpuOCTip125": "Állítsa be a maximális magszorzó értékét, amelyen a magok működőképesek. A magfrekvencia értéke ennek az aránynak és a referencia órajel frekvenciának a szorzata.",
                         "cpuOCTip102": "Állítsa be az ICCMAX-ot a processzor magfeszültség-szabályozójához.",
                         "cpuOCTip106": "Állítsa be az ICCMAX-ot a processzor gyorsítótárának és gyűrűs buszának feszültségszabályozójához.",
                         "cpuOCTip114": "Az effektív aktív magarány korlátjának meghatározásához az AVX aktív állapotában vonja le ezt az értéket a megfelelő aktív magarány korlátjából."
@@ -1066,7 +1070,8 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "Az akkumulátor élettartamának meghosszabbítása érdekében optimalizáltuk az akkumulátor teljes töltési kapacitását a használati séma alapján. Előfordulhat, hogy a teljes akkumulátorkapacitás csak azután áll rendelkezésre, hogy az akkumulátor 20%-ra lemerült és feltöltődött."
+                    "fccTooltipText": "Az akkumulátor élettartamának meghosszabbítása érdekében optimalizáltuk az akkumulátor teljes töltési kapacitását a használati séma alapján. Előfordulhat, hogy a teljes akkumulátorkapacitás csak azután áll rendelkezésre, hogy az akkumulátor 20%-ra lemerült és feltöltődött.",
+                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
                 },
                 "condition": {
                     "Illegal": "A telepített akkumulátort a rendszer <b>nem támogatja</b> és nem tölti fel. Cserélje ki az akkumulátort egy a rendszerhez megfelelő Lenovo akkumulátorra.",
@@ -1094,6 +1099,16 @@
                 "gaugeResetWarning": "<b>Megjegyzés:</b> Az akkumulátormérő nullázása folyamatban van. Hagyja a hálózati adaptert csatlakoztatott állapotban.",
                 "dualConditions": {
                     "NotDetected": "<b>Az elsődleges akkumulátor nem észlelhető.</b>"
+                },
+                "highDensityBattery": {
+                    "title": "High density battery",
+                    "subtitle": "How your battery works",
+                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "para2": {
+                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
+                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
+                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                    }
                 }
             },
             "power": {
@@ -1751,7 +1766,8 @@
                             "title": "A számítógép újraindítása",
                             "description": "Az alapértelmezett felső sor funkciója módosításának érvénybe léptetéséhez újra kell indítania a számítógépet. Biztosan újraindítja?",
                             "reboot": "ÚJRAINDÍTÁS",
-                            "cancel": "NE MOST"
+                            "cancel": "NE MOST",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Az F1–F12 funkcióbillentyűk funkcióit az Fn és a fenti soron lévő billentyűk megnyomásával érheti el.",
@@ -3270,7 +3286,8 @@
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+            "processStatus": "PROCESSING"
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3755,7 +3772,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

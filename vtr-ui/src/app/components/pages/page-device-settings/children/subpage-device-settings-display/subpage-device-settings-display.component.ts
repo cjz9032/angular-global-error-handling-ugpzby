@@ -23,6 +23,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { Md5 } from 'ts-md5';
 import { WhiteListCapability } from '../../../../../data-models/eye-care-mode/white-list-capability.interface';
+import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-display',
@@ -70,6 +71,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 	public isOnline: any = true;
 	private cameraAccessChangedHandler: any;
 	private windowsObj: any;
+	public readonly metricsParent  = CommonMetricsModel.ParentDeviceSettings;
 	isSet = {
 		isSetDaytimeColorTemperatureValue: false,
 		isSetEyecaremodeValue: false,

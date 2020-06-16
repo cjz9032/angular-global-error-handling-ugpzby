@@ -1,8 +1,9 @@
 <div class="vtr-eye-care-mode">
 	<div class="row d-flex justify-content-between align-items-center">
 		<div class="slider-block">
-			<vtr-ui-custom-slider
-				[step]=100
+			<vtr-ui-custom-slider [step]=100
+				[isMetricsEnabled]=true
+				[metricsParent]="metricsParent"
 				[isDisabled]="enableSlider"
 				[min]="displayColorTempSettings.minimum"
 				[max]="displayColorTempSettings.maximum"
@@ -22,9 +23,12 @@
 		<div class="button-block">
 			<div class="reset-temperature">
 				<div class="button-box">
-					<vtr-ui-button (onClick)="onResetTemperature($event)" metricsEvent="itemClick"
-						metricsParent="eye-care-mode" metricsItem="btn.eye-care-mode.ResetTemperature"
-						[isDisabled]="disableReset" [isFullWidth]="false"
+					<vtr-ui-button (onClick)="onResetTemperature($event)"
+						metricsEvent="itemClick"
+						metricsParent="eye-care-mode"
+						metricsItem="btn.eye-care-mode.ResetTemperature"
+						[isDisabled]="disableReset"
+						[isFullWidth]="false"
 						[label]="'device.deviceSettings.displayCamera.display.dispColorTemp.reset' | translate"
 						[linkId]="'day-time-color-temp-reset-btn'">
 					</vtr-ui-button>
@@ -32,5 +36,4 @@
 			</div>
 		</div>
 	</div>
-
 </div>

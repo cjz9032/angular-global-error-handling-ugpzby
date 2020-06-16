@@ -11,6 +11,7 @@ import { PowerService } from 'src/app/services/power/power.service';
 import { ModalIntelligentCoolingModesComponent } from '../../modal/modal-intelligent-cooling-modes/modal-intelligent-cooling-modes.component';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { UiCircleRadioWithCheckBoxListModel } from '../../ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
+import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 
 const thinkpad = 1;
 const ideapad = 0;
@@ -19,7 +20,7 @@ const ideapad = 0;
 	templateUrl: './power-smart-settings.component.html',
 	styleUrls: ['./power-smart-settings.component.scss']
 })
-export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterViewInit {
+export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	intelligentCoolingModes = IntelligentCoolingHardware.ITS;
 	dYTCRevision = 0;
 	cQLCapability = false;
@@ -53,6 +54,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 	private readonly batterySavingModeId = 'quiteBatterySaving';
 	private readonly performanceModeId = 'radioICPerformance';
 	private readonly quiteCoolModeId = 'radioICQuiteCool';
+	public readonly metricsParent  = CommonMetricsModel.ParentDeviceSettings;
 
 	@Output() isPowerSmartSettingVisible = new EventEmitter<boolean>();
 
@@ -81,30 +83,12 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 		}
 	}
 
-	ngAfterViewInit() {
-		if (this.cache) {
-			if (this.cache.showIC === 0) {
-				this.showPowerSmartSettings(false);
-			} else {
-				this.showPowerSmartSettings(true);
-			}
-		}
-
-
-	}
-
-
 
 	initDataFromCache() {
 		this.cache = this.commonService.getLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, undefined);
 		if (this.cache) {
 			// init ui
 			this.showIC = this.cache.showIC;
-			// if (this.showIC === 0) {
-			// 	this.showPowerSmartSettings(false);
-			// 	return;
-			// }
-			// this.showPowerSmartSettings(true);
 			if (this.showIC === 6) {
 				this.dytc6Mode = this.cache.captionText;
 				this.dytc6IsAutoModeSupported = this.cache.autoModeToggle.available;

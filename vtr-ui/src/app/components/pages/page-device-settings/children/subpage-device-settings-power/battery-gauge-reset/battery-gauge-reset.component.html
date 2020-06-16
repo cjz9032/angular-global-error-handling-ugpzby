@@ -157,10 +157,10 @@
 									[class.disabled-btn]="(batteryService.isGaugeResetRunning &&
 										(batteryService.gaugeResetInfo.length > 1 && !battery.isResetRunning)) ||
 										!batteryService.isAcAttached">
-									<vtr-ui-button metricsItem="Battery.Gauge.RESET"
-										metricsParent="Page.Settings"
-										metricsEvent="FeatureClick"
-										[isRegular]="true"
+									<vtr-ui-button [isRegular]="true"
+										[metricsItem]="'btn.battery-gauge-reset'"
+										[metricsParent]="metricsParent"
+										[metricsEvent]="metricsType"
 										[autoFocus]="autoFocusButton"
 										[isDisabled]="(batteryService.isGaugeResetRunning &&
 											(batteryService.gaugeResetInfo.length > 1 && !battery.isResetRunning)) ||

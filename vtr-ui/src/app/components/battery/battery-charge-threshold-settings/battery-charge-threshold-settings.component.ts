@@ -5,6 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.model';
 import { CommonService } from 'src/app/services/common/common.service';
 import { KeyCode } from 'src/app/enums/key-code.enum';
+import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 
 @Component({
 	selector: 'vtr-battery-charge-threshold-settings',
@@ -43,6 +44,7 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	public selectedOptionsData: any = {};
 	@ViewChildren(NgbDropdown) dropDowns: QueryList<NgbDropdown>;
 	timeOut = 100;
+	public readonly metricsParent  = CommonMetricsModel.ParentDeviceSettings;
 	constructor(private commonService: CommonService, private translate: TranslateService) { }
 
 

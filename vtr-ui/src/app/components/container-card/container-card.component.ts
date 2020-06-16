@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Subscription } from 'rxjs/internal/Subscription';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
@@ -13,7 +14,7 @@ import { ContentSource } from 'src/app/enums/content.enum';
 	templateUrl: './container-card.component.html',
 	styleUrls: ['./container-card.component.scss', './container-card.component.gaming.scss']
 })
-export class ContainerCardComponent implements OnInit {
+export class ContainerCardComponent implements OnInit, OnDestroy {
 	@Input() type = '';
 	@Input() ratio = 0.5;
 	@Input() cornerShift = '';
@@ -29,6 +30,7 @@ export class ContainerCardComponent implements OnInit {
 
 	isLoading = true;
 	isOnline = true;
+	notificationSubscription: Subscription;
 
 	private _item: FeatureContent;
 
@@ -59,13 +61,20 @@ export class ContainerCardComponent implements OnInit {
 		public deviceService: DeviceService,
 		private metricsService: MetricService
 	) { }
-
+	
 	ngOnInit() {
 		this.isOnline = this.commonService.isOnline;
-		this.commonService.notification.subscribe((notification: AppNotification) => {
+		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
 	}
+
+	ngOnDestroy() {
+		if(this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
+	}
+
 
 	handleLoading() {
 		if (this.item && this.item.FeatureImage) {

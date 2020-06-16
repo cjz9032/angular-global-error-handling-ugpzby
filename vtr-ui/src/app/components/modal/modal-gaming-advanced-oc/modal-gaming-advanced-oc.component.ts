@@ -60,6 +60,13 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
     ]
   };
 
+  modalAutomationId: any = {
+		section: 'advance_oc_warning_dialog',
+		closeButton : 'advance_oc_warning_dialog_close_button',
+		cancelButton: 'advance_oc_warning_dialog_cancel_button',
+		installButton: 'advance_oc_warning_dialog_proceed_button'
+	}
+
   constructor(
     private modalService: NgbModal,
     public activeModal: NgbActiveModal,
@@ -159,7 +166,8 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
         comfirmButton : "gaming.dashboard.device.savePromptPopup.save",
         cancelButton : "gaming.dashboard.device.savePromptPopup.notSave",
         comfirmButtonAriaLabel : "SAVE",
-        cancelButtonAriaLabel : "DON'T SAVE",
+        cancelButtonAriaLabel: "DON'T SAVE",
+        id : this.modalAutomationId
     };
     waringModalRef.componentInstance.emitService.subscribe((emmitedValue) => {
       this.logger.info('openSaveChangeModal emmitedValue',emmitedValue);

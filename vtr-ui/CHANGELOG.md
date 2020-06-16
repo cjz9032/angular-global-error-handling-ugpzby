@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.12](https://bitbucket.tc.lenovo.com///compare/v1.6.11...v1.6.12) (2020-06-15)
+
+### [1.6.11](https://bitbucket.tc.lenovo.com///compare/v1.6.10...v1.6.11) (2020-06-15)
+
+### [1.6.10](https://bitbucket.tc.lenovo.com///compare/v1.6.9...v1.6.10) (2020-06-13)
+
+### [1.6.9](https://bitbucket.tc.lenovo.com///compare/v1.6.8...v1.6.9) (2020-06-12)
+
+### [1.6.8](https://bitbucket.tc.lenovo.com///compare/v1.6.7...v1.6.8) (2020-06-11)
+
+### [1.6.7](https://bitbucket.tc.lenovo.com///compare/v1.6.6...v1.6.7) (2020-06-10)
+
+### [1.6.6](https://bitbucket.tc.lenovo.com///compare/v1.6.5...v1.6.6) (2020-06-09)
+
+### [1.6.5](https://bitbucket.tc.lenovo.com///compare/v1.6.4...v1.6.5) (2020-06-09)
+
+### [1.6.4](https://bitbucket.tc.lenovo.com///compare/v1.6.3...v1.6.4) (2020-06-09)
+
+### [1.6.3](https://bitbucket.tc.lenovo.com///compare/v1.6.2...v1.6.3) (2020-06-08)
+
 ### [1.6.2](https://bitbucket.tc.lenovo.com///compare/v1.6.1...v1.6.2) (2020-06-06)
 
 ### [1.6.1](https://bitbucket.tc.lenovo.com///compare/v1.6.0...v1.6.1) (2020-06-05)

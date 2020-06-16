@@ -6,7 +6,7 @@
         <p *ngIf="!isSubscribed">{{'smartPerformance.subscriptionDetails.descriptionNonSubscriber' |translate }}</p>
         <!-- <a href="#" class="para-link"
             vtrMetrics
-            metricsItem="smartPerformance.subscriptionDetails"
+            metricsItem="btn.sp.subscriptionDetails"
             metricsParent="Page.Support.SmartPerformance"
             metricsEvent="FeatureClick"
             >{{'smartPerformance.subscriptionDetails.learnMore' |translate }}</a> -->
@@ -22,22 +22,22 @@
         </li>
         <li class="d-flex justify-content-between">
             <div class="item">{{'smartPerformance.subscriptionDetails.status' |translate }}</div>
-            <div class="status"><div [ngClass]="{'badge-danger': strStatus==='INACTIVE', 'badge-success': strStatus==='ACTIVE' }" class="badge badge-pill">{{status |translate}}</div></div>
+            <div class="status"><div [ngClass]="{'badge-danger': strStatus==='INACTIVE', 'badge-success': strStatus==='ACTIVE', 'badge-processing' : strStatus==='PROCESSING' }" class="badge badge-pill">{{status |translate}}</div></div>
         </li>
     </ul>
-    <a *ngIf="isSubscribed" class="link-text" (click)=openSubscribeModal(false) 
+    <a *ngIf="isSubscribed" class="link-text" (click)=openSubscribeModal() 
         vtrMetrics
         metricsItem="btn.manageSub"
         metricsEvent="FeatureClick"
         metricsParent="Page.Support.SmartPerformance">
         {{'smartPerformance.subscriptionDetails.manageSubscription' |translate }}
     </a>
-    <a *ngIf="!isSubscribed" class="link-text" (click)=openSubscribeModal(true) 
+    <a *ngIf="!isSubscribed" class="link-text" (click)=openSubscribeModal() 
         vtrMetrics
-        metricsItem="btn.{{'smartPerformance.subscriptionDetails.manageSubscriptionBeta' |translate | lowercase | removeSpace }}"
+        metricsItem="btn.managesubscription"
         metricsEvent="FeatureClick"
         metricsParent="Page.Support.SmartPerformance">
         {{'smartPerformance.subscriptionDetails.manageSubscription' |translate }}
     </a>
-    <a *ngIf="!isSubscribed" class="link-text-payment" (click)="openPaymnetPopup()"> {{'smartPerformance.subscriptionDetails.manageSubscriptionBeta' |translate }}</a>
+    <a *ngIf="!isSubscribed" class="link-text-payment" (click)="enableFullFeature(true)"> -> </a>
 </div>

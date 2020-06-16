@@ -90,10 +90,9 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 			if (inputAccessoriesCapability) {
 				this.hasUDKCapability = inputAccessoriesCapability.isUdkAvailable;
 			}
-			// fnCtrlSwap & fnAsCtrl features hidden in 3.2.001
 
-			// this.getFnCtrlSwapCapability();
-			// this.getFnAsCtrlCapability();
+			this.getFnCtrlSwapCapability();
+			this.getFnAsCtrlCapability();
 		}
 		this.getMouseAndTouchPadCapability();
 		this.getVoipHotkeysSettings();
@@ -372,7 +371,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	// FnCtrlSwap feature end here
 
 	// FnAsCtrl feature start here
-	/*public getFnAsCtrlCapability() {
+	public getFnAsCtrlCapability() {
 		try {
 			if (this.keyboardService.isShellAvailable) {
 				this.keyboardService.GetFnAsCtrlCapability().then(res => {
@@ -419,7 +418,8 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 			return EMPTY;
 		}
 	}
-	*/
+
+
 	public getLayoutTable(layOutName) {
 		this.fnCtrlKeyTooltipContent = [];
 		let array = [];

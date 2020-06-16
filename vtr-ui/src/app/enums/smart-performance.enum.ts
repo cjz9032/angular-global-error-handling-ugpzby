@@ -31,7 +31,7 @@ export enum enumSmartPerformance{
 	SCHEDULESCANENDDATE = '2020/07/27',
 }
 export enum PaymentPage{
-	URL = 'https://uatpcsupport.lenovo.com/',
+	URL = 'http://ditpcsupport.earth.xpaas.lenovo.com/',
 	APPLICATIONNAME = 'COMPANION',
 	URLSTRING = 'upgradewarranty?',
 	SMARTPERFORMANCE = '&smartperformance=',

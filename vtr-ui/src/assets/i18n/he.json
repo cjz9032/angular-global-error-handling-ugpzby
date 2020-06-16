@@ -131,6 +131,8 @@
                         "cpuOCName79": "מתח מטמון בהפעלה",
                         "cpuOCName122": "יחס ליבה 7",
                         "cpuOCName123": "יחס ליבה 8",
+                        "cpuOCName124": "יחס ליבה 9",
+                        "cpuOCName125": "יחס ליבה 10",
                         "cpuOCName102": "ליבת ICCMAX",
                         "cpuOCName106": "מטמון ICCMAX",
                         "cpuOCName114": "הפעלת יחס AVX"
@@ -149,6 +151,8 @@
                         "cpuOCTip79": "מתח בהפעלה סופי המוחל על מתח המטמון.",
                         "cpuOCTip122": "הגדירו את מכפיל הליבה המרבי שבו יכולות הליבות לפעול. הערך של תדר הליבה הוא תוצר של יחס זה ושל תדר שעון המשמש להתייחסות.",
                         "cpuOCTip123": "הגדירו את מכפיל הליבה המרבי שבו יכולות הליבות לפעול. הערך של תדר הליבה הוא תוצר של יחס זה ושל תדר שעון המשמש להתייחסות.",
+                        "cpuOCTip124": "הגדירו את מכפיל הליבה המרבי שבו יכולות הליבות לפעול. הערך של תדר הליבה הוא תוצר של יחס זה ושל תדר שעון המשמש להתייחסות.",
+                        "cpuOCTip125": "הגדירו את מכפיל הליבה המרבי שבו יכולות הליבות לפעול. הערך של תדר הליבה הוא תוצר של יחס זה ושל תדר שעון המשמש להתייחסות.",
                         "cpuOCTip102": "הגדירו ICCMAX עבור וסת מתח הליבה של מעבד.",
                         "cpuOCTip106": "הגדירו ICCMAX עבור וסת מתח המטמון ואפיק טבעתי של מעבד.",
                         "cpuOCTip114": "כדי לגזור את גבול יחס הליבה הפעיל האפקטיבי כאשר AVX פעיל, גרעו ערך זה מגבול יחס הליבה הפעיל המתאים."
@@ -1066,7 +1070,8 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "להארכת משך חיי הסוללה, ביצענו מיטוב של קיבולת הטעינה המלאה שלה בהתאם לשימוש. יתכן שקיבולת הסוללה המלאה לא תהיה זמינה עד שהסוללה תתרוקן עד 20% ותוטען מחדש."
+                    "fccTooltipText": "להארכת משך חיי הסוללה, ביצענו מיטוב של קיבולת הטעינה המלאה שלה בהתאם לשימוש. יתכן שקיבולת הסוללה המלאה לא תהיה זמינה עד שהסוללה תתרוקן עד 20% ותוטען מחדש.",
+                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
                 },
                 "condition": {
                     "Illegal": "הסוללה המותקנת <b>אינה נתמכת</b> על-ידי המערכת ולא תיטען. החליפו אותה בסוללה של Lenovo המתאימה למערכת זו.",
@@ -1094,6 +1099,16 @@
                 "gaugeResetWarning": "<b>הערה:</b> איפוס מד הסוללה מתבצע. השאירו את מתאם מתח ה-AC מחובר.",
                 "dualConditions": {
                     "NotDetected": "<b>הסוללה הראשית לא זוהתה.</b>"
+                },
+                "highDensityBattery": {
+                    "title": "High density battery",
+                    "subtitle": "How your battery works",
+                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "para2": {
+                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
+                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
+                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                    }
                 }
             },
             "power": {
@@ -1751,7 +1766,8 @@
                             "title": "הפעילו מחדש את המחשב",
                             "description": "שינוי פונקציות ברירת המחדל של השורה העליונה דורש הפעלה מחדש של המחשב. להפעיל מחדש, בטוח?",
                             "reboot": "הפעלה מחדש",
-                            "cancel": "לא עכשיו"
+                            "cancel": "לא עכשיו",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "כדי לגשת לפונקציות F1-F12, לחצו על המקש Fn ועל המקשים בשורה העליונה.",
@@ -3270,7 +3286,8 @@
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+            "processStatus": "PROCESSING"
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3755,7 +3772,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

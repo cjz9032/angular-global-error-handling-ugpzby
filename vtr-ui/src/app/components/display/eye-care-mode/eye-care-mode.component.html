@@ -4,6 +4,8 @@
 		*ngIf="eyeCareModeSettings.current">
 		<div class="slider-block">
 			<vtr-ui-custom-slider [step]=100
+				[isMetricsEnabled]=true
+				[metricsParent]="metricsParent"
 				[isDisabled]="enableSlider"
 				[min]="eyeCareModeSettings.minimum"
 				[max]="eyeCareModeSettings.maximum"
@@ -36,6 +38,9 @@
 	<div class="custom-control custom-checkbox eye-care-checkbox"
 		*ngIf="sunsetToSunriseStatus && sunsetToSunriseStatus.available && enableSunsetToSunrise">
 		<vtr-ui-checkbox componentId="cb-eye-care-schedule"
+			[isMetricsEnabled]=true
+			[metricsParent]='metricsParent'
+			[metricsItem]="'cb.eye-care-schedule'"
 			[disabled]="enableSunsetToSunrise || missingGraphicDriver"
 			[checked]="sunsetToSunriseStatus.status"
 			[value]="sunsetToSunriseStatus.status"
@@ -49,6 +54,9 @@
 	<div class="custom-control custom-checkbox eye-care-checkbox"
 		*ngIf="sunsetToSunriseStatus && sunsetToSunriseStatus.available && !enableSunsetToSunrise">
 		<vtr-ui-checkbox componentId="cb-eye-care-schedule"
+			[isMetricsEnabled]=true
+			[metricsParent]='metricsParent'
+			[metricsItem]="'cb.eye-care-schedule'"
 			[disabled]="missingGraphicDriver"
 			[checked]="sunsetToSunriseStatus.status"
 			[value]="sunsetToSunriseStatus.status"

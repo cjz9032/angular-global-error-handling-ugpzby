@@ -20,10 +20,16 @@
 				margin-top: 2rem !important;
 			}
 		}
+		.hero-text{
+			max-width: 80%;
+		}
         h1 {
             color: $light;
             font-size: 3.4rem;
 			font-weight: $weight_light;
+			@media #{$breakpoint_xl}{
+				font-size: 2.4rem;
+			}
 			@media #{$breakpoint_sm}{
 				font-size: 2.2rem;
 			}
@@ -34,31 +40,35 @@
             opacity: 0.5;
 			line-height: 2;
 			font-weight: $weight_regular;
-			@media #{$breakpoint_sm}{
-				font-size: 1rem;
-			}
         }
-        .icon, .icomoon {
+        .icon {
             color: #7D5FEF;
 			height: 10rem;
-			width: auto;
+			width: 10rem;
 			margin-top:2rem;
+			//background: url("data:image/svg+xml;utf8, <svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 512 512' enable-background='new 0 0 512 512' xml:space='preserve'><style type='text/css'>@keyframes scaning{0%{transform:translateX(0%)}25%{transform:translateX(7%)}50%{transform:translateX(0)}75%{transform:translateX(-5%)}100%{transform:translateX(0)}}#search{animation:scaning 2s linear 0.5s infinite !important}</style><g id='laptop'> <g> <g> <g> <path fill='#815EED' d='M221,90.6h83.3c3,0,5.5,2.4,5.5,5.5v5.1c0,3-2.4,5.5-5.5,5.5H221c-3,0-5.5-2.4-5.5-5.5v-5.1 C215.5,93,218,90.6,221,90.6z'/> <path fill='#815EED' d='M332.6,90.6h57.9c3,0,5.4,2.4,5.4,5.4v5.3c0,3-2.4,5.4-5.4,5.4h-57.9c-3,0-5.4-2.4-5.4-5.4V96 C327.3,93,329.7,90.6,332.6,90.6z'/> <path fill='#815EED' d='M92.6,90.6h98.1c2.9,0,5.3,2.4,5.3,5.3v5.4c0,2.9-2.4,5.3-5.3,5.3H92.6c-2.9,0-5.3-2.4-5.3-5.3v-5.4 C87.2,93,89.6,90.6,92.6,90.6z'/> <path fill='#815EED' d='M245.1,128.2h100.6c3.1,0,5.6,2.5,5.6,5.6v4.8c0,3.1-2.5,5.6-5.6,5.6H245.1c-3.1,0-5.6-2.5-5.6-5.6v-4.8 C239.5,130.7,242,128.2,245.1,128.2z'/> <path fill='#815EED' d='M92.4,128.2h118.8c2.8,0,5.1,2.3,5.1,5.1v5.8c0,2.8-2.3,5.1-5.1,5.1H92.4c-2.8,0-5.1-2.3-5.1-5.1v-5.8 C87.2,130.5,89.5,128.2,92.4,128.2z'/> <path fill='#815EED' d='M92.9,166.3h74.8c3.1,0,5.7,2.6,5.7,5.7v4.6c0,3.1-2.6,5.7-5.7,5.7H92.9c-3.1,0-5.7-2.6-5.7-5.7V172 C87.2,168.8,89.8,166.3,92.9,166.3z'/> <path fill='#815EED' d='M506.6,390.8l-50.1-114.3c0-0.1-0.1-0.2-0.2-0.3c0.2-0.9,0.3-1.8,0.3-2.7V70.2c0-9.2-7.6-16.8-16.8-16.8 H72.7c-9.2,0-16.8,7.6-16.8,16.8v203.3c0,0.9,0.1,1.8,0.3,2.7c-0.1,0.1-0.1,0.2-0.2,0.3L5.9,390.8c-2.1,4.7,3.3,8.6,11.9,8.6 h175.5c1.8,0,3.5-1.1,4.1-2.8c0.4-1.1,0.7-3.1,0.6-4.2c-0.1-1.7-0.3-2.4-0.7-3.9c-0.5-1.9-2.3-3.1-4.2-3.1H30.4 c-3.2,0-5.3-3.3-4.1-6.2l40.9-93.4c0.3,0,0.6,0,1,0h102.3c2.7,0,4.8-2.4,4.4-5c-0.2-1.2-0.3-2.4-0.4-3.7c0-0.5,0-1,0-1.5 c0-2.5-2.1-4.5-4.6-4.5l-99.4,0c-0.2,0-0.4,0-0.7,0V71.9c0-2.4,2-4.4,4.4-4.4h363.9c2.4,0,4.4,2,4.4,4.4v199.3 c-0.2,0-0.4,0-0.7,0h-34.7c-2.7,0-4.8,2.4-4.4,5c0.2,1.2,0.3,2.4,0.4,3.7c0,0.5,0,1,0,1.5c0,2.5,2.1,4.5,4.6,4.5l36.4,0 c0.3,0,0.7,0,1,0l40.9,93.4c1.3,2.9-0.9,6.2-4.1,6.2l-45.1,0c-1.8,0-3.4,1-4.1,2.7c-0.6,1.5-1,3.3-0.9,4.5 c0.1,1.7,0.5,3.3,1.2,4.6c0.7,1.4,2.3,2.3,3.9,2.3l57.6,0C503.4,399.4,508.7,395.5,506.6,390.8z'/> </g> </g> </g> </g> <g id='search'> <g> <g> <g> <path fill='#815EED' d='M445.8,465.6c-4.8,0-9.2-1.8-12.6-5.2l-81.8-81.8c-6.9-6.9-6.9-18.2,0-25.2c6.9-6.9,18.2-6.9,25.2,0 l81.8,81.8c6.9,6.9,6.9,18.2,0,25.2C455,463.7,450.5,465.6,445.8,465.6z M364,363.5c-0.7,0-1.3,0.2-1.8,0.7c-1,1-1,2.6,0,3.6 l81.8,81.8c1,1,2.6,1,3.6,0c1-1,1-2.6,0-3.6l-81.8-81.8C365.3,363.7,364.6,363.5,364,363.5z'/> </g> <g> <path fill='#815EED' d='M289.4,397.4c-26.7,0-53.4-10.2-73.7-30.5c-40.6-40.6-40.6-106.8,0-147.4c40.6-40.6,106.8-40.6,147.4,0 c40.6,40.6,40.6,106.8,0,147.4C342.8,387.2,316.1,397.4,289.4,397.4z M289.4,206.8c-22.1,0-44.3,8.4-61.1,25.3 c-33.7,33.7-33.7,88.5,0,122.2c33.7,33.7,88.5,33.7,122.2,0c33.7-33.7,33.7-88.5,0-122.2C333.6,215.2,311.5,206.8,289.4,206.8z' /> </g> <g> <path fill='#815EED' d='M289.3,369.5c-20.4,0-39.4-7.9-53.9-22.3c-13.5-13.5-21.5-31.6-22.3-50.7c-0.2-4.2,3.1-7.8,7.3-7.9 c4.2-0.2,7.8,3.1,7.9,7.3c0.6,15.3,7,29.7,17.8,40.5c11.9,11.9,27.8,18.3,44.8,17.8c4.3-0.1,7.7,3.2,7.8,7.4 c0.1,4.2-3.2,7.7-7.4,7.8C290.7,369.4,290,369.5,289.3,369.5z'/> </g> </g> </g> </g> </svg>");
+			background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMS4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDUxMiA1MTIiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KCQ0KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4NCiAgICBAa2V5ZnJhbWVzIHNjYW5pbmcgew0KICAgICAgICAwJSB7DQogICAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoMCUpOw0KICAgICAgICB9DQogICAgICAgIDI1JSB7DQogICAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoNyUpOw0KICAgICAgICB9DQogICAgICAgIDUwJSB7DQogICAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoMCk7DQogICAgICAgIH0NCgkJNzUlIHsNCiAgICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWCgtNSUpOw0KICAgICAgICB9DQogICAgICAgIDEwMCUgew0KICAgICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKDApOw0KICAgICAgICB9DQogICAgfQ0KCSNzZWFyY2ggew0KICAgICAgICBhbmltYXRpb246IHNjYW5pbmcgMnMgbGluZWFyIDAuNXMgaW5maW5pdGUgIWltcG9ydGFudDsNCiAgICB9DQo8L3N0eWxlPg0KCQ0KPGcgaWQ9ImxhcHRvcCI+DQoJPGc+DQoJCTxnPg0KCQkJPGc+DQoJCQkJPHBhdGggZmlsbD0iIzgxNUVFRCIgZD0iTTIyMSw5MC42aDgzLjNjMywwLDUuNSwyLjQsNS41LDUuNXY1LjFjMCwzLTIuNCw1LjUtNS41LDUuNUgyMjFjLTMsMC01LjUtMi40LTUuNS01LjV2LTUuMQ0KCQkJCQlDMjE1LjUsOTMsMjE4LDkwLjYsMjIxLDkwLjZ6Ii8+DQoJCQkJPHBhdGggZmlsbD0iIzgxNUVFRCIgZD0iTTMzMi42LDkwLjZoNTcuOWMzLDAsNS40LDIuNCw1LjQsNS40djUuM2MwLDMtMi40LDUuNC01LjQsNS40aC01Ny45Yy0zLDAtNS40LTIuNC01LjQtNS40Vjk2DQoJCQkJCUMzMjcuMyw5MywzMjkuNyw5MC42LDMzMi42LDkwLjZ6Ii8+DQoJCQkJPHBhdGggZmlsbD0iIzgxNUVFRCIgZD0iTTkyLjYsOTAuNmg5OC4xYzIuOSwwLDUuMywyLjQsNS4zLDUuM3Y1LjRjMCwyLjktMi40LDUuMy01LjMsNS4zSDkyLjZjLTIuOSwwLTUuMy0yLjQtNS4zLTUuM3YtNS40DQoJCQkJCUM4Ny4yLDkzLDg5LjYsOTAuNiw5Mi42LDkwLjZ6Ii8+DQoJCQkJPHBhdGggZmlsbD0iIzgxNUVFRCIgZD0iTTI0NS4xLDEyOC4yaDEwMC42YzMuMSwwLDUuNiwyLjUsNS42LDUuNnY0LjhjMCwzLjEtMi41LDUuNi01LjYsNS42SDI0NS4xYy0zLjEsMC01LjYtMi41LTUuNi01LjZ2LTQuOA0KCQkJCQlDMjM5LjUsMTMwLjcsMjQyLDEyOC4yLDI0NS4xLDEyOC4yeiIvPg0KCQkJCTxwYXRoIGZpbGw9IiM4MTVFRUQiIGQ9Ik05Mi40LDEyOC4yaDExOC44YzIuOCwwLDUuMSwyLjMsNS4xLDUuMXY1LjhjMCwyLjgtMi4zLDUuMS01LjEsNS4xSDkyLjRjLTIuOCwwLTUuMS0yLjMtNS4xLTUuMXYtNS44DQoJCQkJCUM4Ny4yLDEzMC41LDg5LjUsMTI4LjIsOTIuNCwxMjguMnoiLz4NCgkJCQk8cGF0aCBmaWxsPSIjODE1RUVEIiBkPSJNOTIuOSwxNjYuM2g3NC44YzMuMSwwLDUuNywyLjYsNS43LDUuN3Y0LjZjMCwzLjEtMi42LDUuNy01LjcsNS43SDkyLjljLTMuMSwwLTUuNy0yLjYtNS43LTUuN1YxNzINCgkJCQkJQzg3LjIsMTY4LjgsODkuOCwxNjYuMyw5Mi45LDE2Ni4zeiIvPg0KCQkJCTxwYXRoIGZpbGw9IiM4MTVFRUQiIGQ9Ik01MDYuNiwzOTAuOGwtNTAuMS0xMTQuM2MwLTAuMS0wLjEtMC4yLTAuMi0wLjNjMC4yLTAuOSwwLjMtMS44LDAuMy0yLjdWNzAuMmMwLTkuMi03LjYtMTYuOC0xNi44LTE2LjgNCgkJCQkJSDcyLjdjLTkuMiwwLTE2LjgsNy42LTE2LjgsMTYuOHYyMDMuM2MwLDAuOSwwLjEsMS44LDAuMywyLjdjLTAuMSwwLjEtMC4xLDAuMi0wLjIsMC4zTDUuOSwzOTAuOGMtMi4xLDQuNywzLjMsOC42LDExLjksOC42DQoJCQkJCWgxNzUuNWMxLjgsMCwzLjUtMS4xLDQuMS0yLjhjMC40LTEuMSwwLjctMy4xLDAuNi00LjJjLTAuMS0xLjctMC4zLTIuNC0wLjctMy45Yy0wLjUtMS45LTIuMy0zLjEtNC4yLTMuMUgzMC40DQoJCQkJCWMtMy4yLDAtNS4zLTMuMy00LjEtNi4ybDQwLjktOTMuNGMwLjMsMCwwLjYsMCwxLDBoMTAyLjNjMi43LDAsNC44LTIuNCw0LjQtNWMtMC4yLTEuMi0wLjMtMi40LTAuNC0zLjdjMC0wLjUsMC0xLDAtMS41DQoJCQkJCWMwLTIuNS0yLjEtNC41LTQuNi00LjVsLTk5LjQsMGMtMC4yLDAtMC40LDAtMC43LDBWNzEuOWMwLTIuNCwyLTQuNCw0LjQtNC40aDM2My45YzIuNCwwLDQuNCwyLDQuNCw0LjR2MTk5LjMNCgkJCQkJYy0wLjIsMC0wLjQsMC0wLjcsMGgtMzQuN2MtMi43LDAtNC44LDIuNC00LjQsNWMwLjIsMS4yLDAuMywyLjQsMC40LDMuN2MwLDAuNSwwLDEsMCwxLjVjMCwyLjUsMi4xLDQuNSw0LjYsNC41bDM2LjQsMA0KCQkJCQljMC4zLDAsMC43LDAsMSwwbDQwLjksOTMuNGMxLjMsMi45LTAuOSw2LjItNC4xLDYuMmwtNDUuMSwwYy0xLjgsMC0zLjQsMS00LjEsMi43Yy0wLjYsMS41LTEsMy4zLTAuOSw0LjUNCgkJCQkJYzAuMSwxLjcsMC41LDMuMywxLjIsNC42YzAuNywxLjQsMi4zLDIuMywzLjksMi4zbDU3LjYsMEM1MDMuNCwzOTkuNCw1MDguNywzOTUuNSw1MDYuNiwzOTAuOHoiLz4NCgkJCTwvZz4NCgkJPC9nPg0KCTwvZz4NCjwvZz4NCjxnIGlkPSJzZWFyY2giPg0KCTxnPg0KCQk8Zz4NCgkJCTxnPg0KCQkJCTxwYXRoIGZpbGw9IiM4MTVFRUQiIGQ9Ik00NDUuOCw0NjUuNmMtNC44LDAtOS4yLTEuOC0xMi42LTUuMmwtODEuOC04MS44Yy02LjktNi45LTYuOS0xOC4yLDAtMjUuMmM2LjktNi45LDE4LjItNi45LDI1LjIsMA0KCQkJCQlsODEuOCw4MS44YzYuOSw2LjksNi45LDE4LjIsMCwyNS4yQzQ1NSw0NjMuNyw0NTAuNSw0NjUuNiw0NDUuOCw0NjUuNnogTTM2NCwzNjMuNWMtMC43LDAtMS4zLDAuMi0xLjgsMC43Yy0xLDEtMSwyLjYsMCwzLjYNCgkJCQkJbDgxLjgsODEuOGMxLDEsMi42LDEsMy42LDBjMS0xLDEtMi42LDAtMy42bC04MS44LTgxLjhDMzY1LjMsMzYzLjcsMzY0LjYsMzYzLjUsMzY0LDM2My41eiIvPg0KCQkJPC9nPg0KCQkJPGc+DQoJCQkJPHBhdGggZmlsbD0iIzgxNUVFRCIgZD0iTTI4OS40LDM5Ny40Yy0yNi43LDAtNTMuNC0xMC4yLTczLjctMzAuNWMtNDAuNi00MC42LTQwLjYtMTA2LjgsMC0xNDcuNGM0MC42LTQwLjYsMTA2LjgtNDAuNiwxNDcuNCwwDQoJCQkJCWM0MC42LDQwLjYsNDAuNiwxMDYuOCwwLDE0Ny40QzM0Mi44LDM4Ny4yLDMxNi4xLDM5Ny40LDI4OS40LDM5Ny40eiBNMjg5LjQsMjA2LjhjLTIyLjEsMC00NC4zLDguNC02MS4xLDI1LjMNCgkJCQkJYy0zMy43LDMzLjctMzMuNyw4OC41LDAsMTIyLjJjMzMuNywzMy43LDg4LjUsMzMuNywxMjIuMiwwYzMzLjctMzMuNywzMy43LTg4LjUsMC0xMjIuMkMzMzMuNiwyMTUuMiwzMTEuNSwyMDYuOCwyODkuNCwyMDYuOHoiDQoJCQkJCS8+DQoJCQk8L2c+DQoJCQk8Zz4NCgkJCQk8cGF0aCBmaWxsPSIjODE1RUVEIiBkPSJNMjg5LjMsMzY5LjVjLTIwLjQsMC0zOS40LTcuOS01My45LTIyLjNjLTEzLjUtMTMuNS0yMS41LTMxLjYtMjIuMy01MC43Yy0wLjItNC4yLDMuMS03LjgsNy4zLTcuOQ0KCQkJCQljNC4yLTAuMiw3LjgsMy4xLDcuOSw3LjNjMC42LDE1LjMsNywyOS43LDE3LjgsNDAuNWMxMS45LDExLjksMjcuOCwxOC4zLDQ0LjgsMTcuOGM0LjMtMC4xLDcuNywzLjIsNy44LDcuNA0KCQkJCQljMC4xLDQuMi0zLjIsNy43LTcuNCw3LjhDMjkwLjcsMzY5LjQsMjkwLDM2OS41LDI4OS4zLDM2OS41eiIvPg0KCQkJPC9nPg0KCQk8L2c+DQoJPC9nPg0KPC9nPg0KPC9zdmc+DQo=");
+			background-size: contain;
+			background-position: 50%;
+			background-repeat: no-repeat;
+			max-width: 20%;
 			@media #{$breakpoint_sm}{
 				height: 6rem;
+				width: 6rem;
 			}
-			@media #{$breakpoint_sm}{
-				font-size: 7rem;
-				margin-top: 1rem;
+			@media #{$breakpoint_md}{
+				width: 8rem;
+				height: 8rem;
 			}
 		}
 		.progress-div {
             .progress-title{
                 color: $light !important;
 				font-size: 2.6rem;
-				@media #{$breakpoint_sm}{
-					font-size: 1.3rem;
-					padding-top: 0.3rem;
-				}
+				// @media #{$breakpoint_sm}{
+				// 	font-size: 1.3rem;
+				// 	padding-top: 0.3rem;
+				// }
 				.progress-sub-title{
 					font-size: 1.3rem;
 				}
@@ -66,9 +76,9 @@
             .progress-value-text {
                 color: $light !important;
 				font-size: 2.6rem;
-				@media #{$breakpoint_sm}{
-					font-size: 1.6rem;
-				}
+				// @media #{$breakpoint_sm}{
+				// 	font-size: 1.6rem;
+				// }
             }
             .progress-complete-text{
                 color: $light !important;
@@ -76,10 +86,10 @@
                 padding-top: 1rem;
                 padding-left: 0.3rem;
 				text-transform: lowercase;
-				@media #{$breakpoint_sm}{
-					font-size: 1rem;
-					padding-top: 0.5rem;
-				}
+				// @media #{$breakpoint_sm}{
+				// 	font-size: 1rem;
+				// 	padding-top: 0.5rem;
+				// }
             }
         }
 		.progress-bar-div-container {
@@ -141,6 +151,15 @@
 				cursor: pointer;
 			}
 		}
+
+		.scan-cancel-btn {
+			::ng-deep .tooltip-inner {
+				@include tt-inner()
+			}
+			::ng-deep .arrow::before {
+				@include arrow-before()
+			}
+		}
     }
 
 
@@ -177,7 +196,6 @@
 						width: calc(100% - 0.9rem);
 					}
                     .card-header {
-                        background-color: transparent;
 						border-bottom: none;
 						min-height: 6.3rem;
 						display: flex;
@@ -191,10 +209,13 @@
 						}
                         .heading {
                             h3, h2{
-                                font-size: $fontsize_sm;
+								font-size: $fontsize_sm;
 								color: $main_shade !important;
 								letter-spacing: 0;
 								font-weight: $weight_bold;
+								@media #{$breakpoint_sm}{				
+									font-size: $fontsize_xs2;
+								}
                             }
                             .icomoon{
 								color: $menu_hover;
@@ -227,7 +248,8 @@
 							letter-spacing: 0;
 							@media #{$breakpoint_sm}{
 								top: 32.3%;
-								right: 1.5rem;
+								right: 1.5rem;								
+								font-size: $fontsize_xs2;
 							}
 						}
 						vtr-widget-speedometer {
@@ -673,6 +695,14 @@
 		font-size: $fontsize_xs;
 		font-weight: $weight_light;
 	}
+
+	::ng-deep .tooltip-inner {
+		@include tt-inner()
+	}
+	::ng-deep .arrow::before {
+		@include arrow-before()
+	}
+
 	.feedback-btn {
 		padding: 0 2.5rem;
 		position: relative;

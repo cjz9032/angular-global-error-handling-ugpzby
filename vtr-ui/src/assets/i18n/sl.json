@@ -155,6 +155,8 @@
                         "cpuOCName79": "Odmik napetosti predpomnilnika",
                         "cpuOCName122": "Razmerje za 7 jeder",
                         "cpuOCName123": "Razmerje za 8 jeder",
+                        "cpuOCName124": "Razmerje za 9 jeder",
+                        "cpuOCName125": "Razmerje za 10 jeder",
                         "cpuOCName102": "ICCMAX za jedro",
                         "cpuOCName106": "ICCMAX za predpomnilnik",
                         "cpuOCName114": "Odmik razmerja AVX"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Končni odmik napetosti, ki je uporabljen za napetost predpomnilnika.",
                         "cpuOCTip122": "Nastavite največji množitelj za jedra, pri katerem lahko jedra delujejo. Vrednost frekvence jeder je zmnožek tega razmerja in referenčne taktne frekvence.",
                         "cpuOCTip123": "Nastavite največji množitelj za jedra, pri katerem lahko jedra delujejo. Vrednost frekvence jeder je zmnožek tega razmerja in referenčne taktne frekvence.",
+                        "cpuOCTip124": "Nastavite največji množitelj za jedra, pri katerem lahko jedra delujejo. Vrednost frekvence jeder je zmnožek tega razmerja in referenčne taktne frekvence.",
+                        "cpuOCTip125": "Nastavite največji množitelj za jedra, pri katerem lahko jedra delujejo. Vrednost frekvence jeder je zmnožek tega razmerja in referenčne taktne frekvence.",
                         "cpuOCTip102": "Nastavite ICCMAX za regulator napetosti jedra procesorja.",
                         "cpuOCTip106": "Nastavite ICCMAX za regulator napetosti predpomnilnika in krožnega vodila procesorja.",
                         "cpuOCTip114": "Veljavno omejitev razmerja aktivnih jeder, ko je AVX aktiven, izpeljete tako, da to vrednost odštejete od ustrezne omejitve razmerja aktivnih jeder."
@@ -1066,7 +1070,8 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "Na podlagi vaše uporabe računalnika smo optimizirali zmogljivost baterije pri polni napolnjenosti in tako podaljšali njeno življenjsko dobo. Polna zmogljivost baterije morda ne bo na voljo, dokler se ne izprazni na 20 % in znova napolni."
+                    "fccTooltipText": "Na podlagi vaše uporabe računalnika smo optimizirali zmogljivost baterije pri polni napolnjenosti in tako podaljšali njeno življenjsko dobo. Polna zmogljivost baterije morda ne bo na voljo, dokler se ne izprazni na 20 % in znova napolni.",
+                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
                 },
                 "condition": {
                     "Illegal": "Sistem <b>ne podpira</b> nameščene baterije, zato se ne bo polnila. Baterijo zamenjajte z ustrezno baterijo Lenovo za ta sistem.",
@@ -1094,6 +1099,16 @@
                 "gaugeResetWarning": "<b>Opomba:</b> poteka ponastavitev merilnika baterije. Poskrbite, da bo napajalnik vseskozi priključen.",
                 "dualConditions": {
                     "NotDetected": "<b>Glavna baterija ni zaznana.</b>"
+                },
+                "highDensityBattery": {
+                    "title": "High density battery",
+                    "subtitle": "How your battery works",
+                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "para2": {
+                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
+                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
+                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                    }
                 }
             },
             "power": {
@@ -1751,7 +1766,8 @@
                             "title": "Znova zaženite računalnik",
                             "description": "Sprememba funkcije zgornje vrstice bo začela veljati šele po vnovičnem zagonu računalnika. Ali ste prepričani, da želite znova zagnati?",
                             "reboot": "VNOVIČNI ZAGON",
-                            "cancel": "NE ZDAJ"
+                            "cancel": "NE ZDAJ",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Za dostop do funkcij F1–F12 pritisnite Fn in tipke v zgornji vrstici.",
@@ -3270,7 +3286,8 @@
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+            "processStatus": "PROCESSING"
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3755,7 +3772,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",
