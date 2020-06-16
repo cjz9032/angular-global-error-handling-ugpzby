@@ -221,25 +221,3 @@
 		color: $menu_hover;
 	}
 }
-
-@mixin toggle-on-off-active-before {
-	@media #{$black-on-white} {
-		@include high-contrast-white-background;
-		border: none;
-	}
-
-	@media #{$white-on-black} {
-		@include high-contrast-black-background;
-		border: none;
-	}
-}
-
-@mixin toggle-on-off-active-after {
-	@media #{$black-on-white} {
-		background: $light;
-	}
-
-	@media #{$white-on-black} {
-		background: $dark;
-	}
-}
