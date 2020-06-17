@@ -70,8 +70,14 @@
 			z-index: 2;
 			cursor: pointer;
 			transition: all 200ms ease-in;
-			@include high-contrast-black-rectangleradio-enabled;
-			@include high-contrast-white-rectangleradio-enabled;
+
+			@media #{$black-on-white} {
+				@include  high-contrast-white-background;
+			}
+
+			@media #{$white-on-black} {
+				@include high-contrast-black-background;
+			}
 		}
 
 		.label {

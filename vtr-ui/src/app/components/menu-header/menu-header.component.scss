@@ -145,7 +145,7 @@
 				z-index: 2;
 
 				@media #{$black-on-white} {
-					color: $shade_extralight;
+					color: $light;
 				}
 				@media #{$white-on-black} {
 					color: $dark;

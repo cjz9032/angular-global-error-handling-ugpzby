@@ -47,6 +47,12 @@
 		&:focus {
 			@include outline-border-blue;
 		}
+		@media #{$white-on-black} {
+			@include hyperlink-yellow-black;
+		}
+		@media #{$black-on-white} {
+			@include hyperlink-blue-white;
+		}
     }
     .sectn-padding {
         padding: 2rem 0.7rem 1.5rem;
