@@ -31,7 +31,7 @@ export enum enumSmartPerformance{
 	SCHEDULESCANENDDATE = '2020/07/27',
 }
 export enum PaymentPage{
-	URL = 'http://ditpcsupport.earth.xpaas.lenovo.com/',
+	URL = 'https://uatpcsupport.lenovo.com/',
 	APPLICATIONNAME = 'COMPANION',
 	URLSTRING = 'upgradewarranty?',
 	SMARTPERFORMANCE = '&smartperformance=',
@@ -40,7 +40,7 @@ export enum PaymentPage{
 	SOURCEQUERYPARAMETER='&source=',
 	SLASH='/',
 	TRUE='true',
-	ORDERDETAILS = 'http://ditpcsupport.earth.xpaas.lenovo.com/nl/nl/api/v4/upsell/smart/getorders?serialNumber=',
+	ORDERDETAILS = 'https://uatpcsupport.lenovo.com/api/v4/upsell/smart/getorders?serialNumber=',
 	ORDERWAITINGTIME = 10 // MINUTES
 
 }
