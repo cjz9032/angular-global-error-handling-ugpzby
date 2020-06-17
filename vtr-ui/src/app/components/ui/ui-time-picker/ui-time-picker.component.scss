@@ -33,8 +33,18 @@
 				}
 				&:focus {
 					@include outline-blue;
-				}
+				}	
+				&:hover {
+					@media #{$white-on-black} {	
+						@include high-contrast-black-border;
+						@include high-contrast-black-text-color ;
+						}
+						@media #{$black-on-white} {
+							@include  high-contrast-white-border;
+							@include high-contrast-white-text-color ;
+						}
 			}
+		}
 			span {
 				color: $shade_light;
 				font-size: 1.6rem;
@@ -74,6 +84,16 @@
 			&:focus {
 				@include outline-border-blue;
 			}
+			&:hover {
+				@media #{$white-on-black} {	
+					@include high-contrast-black-border;
+					@include high-contrast-black-text-color ;
+					}
+					@media #{$black-on-white} {
+						@include  high-contrast-white-border;
+						@include high-contrast-white-text-color ;
+					}
+		}
 		}
 	}
 	.weekdays-block {
