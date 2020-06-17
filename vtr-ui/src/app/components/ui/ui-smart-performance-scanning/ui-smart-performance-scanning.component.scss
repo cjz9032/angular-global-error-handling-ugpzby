@@ -27,6 +27,12 @@
             color: $light;
             font-size: 3.4rem;
 			font-weight: $weight_light;
+			@media #{$breakpoint_xl}{
+				font-size: 2.4rem;
+			}
+			@media #{$breakpoint_sm}{
+				font-size: 2.2rem;
+			}
         }
         h3 {
             font-size: $fontsize_sm;
@@ -45,6 +51,7 @@
 			background-size: contain;
 			background-position: 50%;
 			background-repeat: no-repeat;
+			max-width: 20%;
 			@media #{$breakpoint_sm}{
 				height: 6rem;
 				width: 6rem;
@@ -144,6 +151,15 @@
 				cursor: pointer;
 			}
 		}
+
+		.scan-cancel-btn {
+			::ng-deep .tooltip-inner {
+				@include tt-inner()
+			}
+			::ng-deep .arrow::before {
+				@include arrow-before()
+			}
+		}
     }
 
 
@@ -180,7 +196,6 @@
 						width: calc(100% - 0.9rem);
 					}
                     .card-header {
-                        background-color: transparent;
 						border-bottom: none;
 						min-height: 6.3rem;
 						display: flex;
@@ -194,10 +209,13 @@
 						}
                         .heading {
                             h3, h2{
-                                font-size: $fontsize_sm;
+								font-size: $fontsize_sm;
 								color: $main_shade !important;
 								letter-spacing: 0;
 								font-weight: $weight_bold;
+								@media #{$breakpoint_sm}{				
+									font-size: $fontsize_xs2;
+								}
                             }
                             .icomoon{
 								color: $menu_hover;
@@ -230,7 +248,8 @@
 							letter-spacing: 0;
 							@media #{$breakpoint_sm}{
 								top: 32.3%;
-								right: 1.5rem;
+								right: 1.5rem;								
+								font-size: $fontsize_xs2;
 							}
 						}
 						vtr-widget-speedometer {
@@ -676,6 +695,14 @@
 		font-size: $fontsize_xs;
 		font-weight: $weight_light;
 	}
+
+	::ng-deep .tooltip-inner {
+		@include tt-inner()
+	}
+	::ng-deep .arrow::before {
+		@include arrow-before()
+	}
+
 	.feedback-btn {
 		padding: 0 2.5rem;
 		position: relative;

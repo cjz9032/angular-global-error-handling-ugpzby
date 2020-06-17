@@ -70,4 +70,20 @@
 			@include outline-blue;
 		}
 	}
+
+	.note-box {
+		border: 1px solid $shade_lighter;
+		border-radius: $border_radius_sm;
+		background-color: $shade_lightest;
+		margin: 1rem 0rem 1.5rem 0rem;
+		.note {
+			color: $grey_darker;
+			font-size: $fontsize_xs;;
+			padding: 1.5rem;
+		}
+		p {
+			color: $grey_darker;
+			padding: 0.5rem 0 0 0;
+		}
+	}
 }

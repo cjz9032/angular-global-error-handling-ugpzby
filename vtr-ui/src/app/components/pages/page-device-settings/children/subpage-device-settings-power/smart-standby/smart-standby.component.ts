@@ -13,8 +13,6 @@ import { PowerService } from 'src/app/services/power/power.service';
 import { SmartStandbyService } from 'src/app/services/smart-standby/smart-standby.service';
 import { UiRoundedRectangleRadioModel } from 'src/app/components/ui/ui-rounded-rectangle-custom-radio-list/ui-rounded-rectangle-radio-list.model';
 
-
-
 @Component({
 	selector: 'vtr-smart-standby',
 	templateUrl: './smart-standby.component.html',
@@ -47,14 +45,16 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		label: 'device.deviceSettings.power.smartStandby.automaticMode',
 		value: this.AUTOMATIC_MODE,
 		isChecked: this.checkbox === true ? true : false,
-		isDisabled: !this.smartStandby.isEnabled
+		isDisabled: !this.smartStandby.isEnabled,
+		metricsItem: 'radio.smart-standby.automatic-mode'
 	},
 	{
 		componentId: 'Manual mode',
 		label: 'device.deviceSettings.power.smartStandby.manualMode',
 		value: this.MANUAL_MODE,
 		isChecked: this.checkbox !== true ? true : false,
-		isDisabled: !this.smartStandby.isEnabled
+		isDisabled: !this.smartStandby.isEnabled,
+		metricsItem: 'radio.smart-standby.manual-mode'
 	}];
 
 	constructor(
@@ -131,11 +131,11 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, this.cache);
 			this.updateScheduleComputerModesUIModel();
 		}
-
-		// this.initSmartStandby();
 	}
 
 	initSmartStandby() {
+		// fix for VAN-19096: called so that SmartStandby section is reinitialized(shell side) hence the update in capability response
+		this.getIsAutonomicCapability();
 		this.initDataFromCache();
 		this.splitStartEndTime();
 	}
@@ -417,20 +417,21 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	}
 
 	updateScheduleComputerModesUIModel() {
-		// let uniqueName = 'smartStandby-schedule';
-		this.scheduleComputerModesUIModel = [{
-			componentId: 'Automatic mode',
-			label: 'device.deviceSettings.power.smartStandby.automaticMode',
-			value: this.AUTOMATIC_MODE,
-			isChecked: this.checkbox === true ? true : false,
-			isDisabled: !this.smartStandby.isEnabled
-		},
-		{
-			componentId: 'Manual mode',
-			label: 'device.deviceSettings.power.smartStandby.manualMode',
-			value: this.MANUAL_MODE,
-			isChecked: this.checkbox !== true ? true : false,
-			isDisabled: !this.smartStandby.isEnabled
-		}];
+		if (this.scheduleComputerModesUIModel && this.scheduleComputerModesUIModel.length > 0) {
+			this.scheduleComputerModesUIModel.forEach(model => {
+				switch (model.value) {
+					case this.AUTOMATIC_MODE:
+						model.isChecked = this.checkbox;
+						model.isDisabled = !this.smartStandby.isEnabled;
+						break;
+					case this.MANUAL_MODE:
+						model.isChecked = !this.checkbox;
+						model.isDisabled = !this.smartStandby.isEnabled;
+						break;
+					default:
+						break;
+				}
+			});
+		}
 	}
 }

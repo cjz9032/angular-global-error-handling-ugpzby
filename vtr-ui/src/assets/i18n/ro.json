@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Setări mod termic",
                     "thermalMode2SettingDesc": "Alegeți modul pe care doriți să îl utilizați.",
                     "fnQDesc": "Puteți comuta modul utilizând comanda rapidă Fn+Q.",
-                    "perormanceTitle": "Mod performanță",
+                    "performanceTitle": "Mod performanță",
                     "performanceDesc": "Măriți performanța computerului crescând viteza ventilatorului și consumul de energie. ",
                     "OCDesc": "Puteți porni funcția Overclocking.",
                     "ac_dcDesc": "Modul Performanță este disponibil numai atunci când este conectat un adaptor de c. a.",
@@ -155,6 +155,8 @@
                         "cpuOCName79": "Decalaj tensiune cache",
                         "cpuOCName122": "7 raport nucleu",
                         "cpuOCName123": "8 raport nucleu",
+                        "cpuOCName124": "9 raport nucleu",
+                        "cpuOCName125": "10 raport nucleu",
                         "cpuOCName102": "ICCMAX nucleu",
                         "cpuOCName106": "ICCMAX cache",
                         "cpuOCName114": "Decalaj raport AVX"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Decalajul final al tensiunii care este aplicat tensiunii cache-ului.",
                         "cpuOCTip122": "Setați multiplicatorul maxim la care nucleele pot funcționa. Valoarea frecvenței nucleului este produsul dintre acest raport și frecvența de referință a ceasului.",
                         "cpuOCTip123": "Setați multiplicatorul maxim la care nucleele pot funcționa. Valoarea frecvenței nucleului este produsul dintre acest raport și frecvența de referință a ceasului.",
+                        "cpuOCTip124": "Setați multiplicatorul maxim la care nucleele pot funcționa. Valoarea frecvenței nucleului este produsul dintre acest raport și frecvența de referință a ceasului.",
+                        "cpuOCTip125": "Setați multiplicatorul maxim la care nucleele pot funcționa. Valoarea frecvenței nucleului este produsul dintre acest raport și frecvența de referință a ceasului.",
                         "cpuOCTip102": "Setați ICCMAX pentru regulatorul de tensiune al nucleului procesorului.",
                         "cpuOCTip106": "Setați ICCMAX pentru regulatorul de tensiune al cache-ului și al magistralei de tip inel ale procesorului.",
                         "cpuOCTip114": "Pentru a obține limita efectivă activă a raportului nucleului atunci când AVX este activ, reduceți această valoare la limita corespunzătoare activă a raportului nucleului."
@@ -1098,7 +1102,7 @@
                 },
                 "highDensityBattery": {
                     "title": "High density battery",
-                    "subtitle": "How your battey works",
+                    "subtitle": "How your battery works",
                     "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
                     "para2": {
                         "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
@@ -1271,7 +1275,8 @@
                             "description1": "Activarea unei taxe particularizate pentru baterie va permite ca timpul general de utilizare a bateriei să dureze mai mult pe măsură ce utilizaţi acest dispozitiv.Cu toate acestea, fără o încărcare completă, bateria va avea o durată de utilizare mai mică.",
                             "description2": "Pentru a activa pe deplin această caracteristică, deconectați aparatul și lăsați bateria să se descarce până la sau sub pragul de oprire a încărcării.",
                             "enable": "ACTIVARE",
-                            "cancel": "ANULARE"
+                            "cancel": "ANULARE",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Pornire încărcare când este sub",
@@ -1762,7 +1767,8 @@
                             "title": "Reporniţi computerul",
                             "description": "Pentru ca schimbarea funcției implicite a rândului de sus să aibă efect, computerul trebuie repornit. Sigur reporniți?",
                             "reboot": "REPORNIȚI",
-                            "cancel": "NU ACUM"
+                            "cancel": "NU ACUM",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Pentru a accesa funcţiile F1–F12, apăsaţi Fn şi tastele de pe rândul de sus.",
@@ -2251,9 +2257,6 @@
         },
         "support": {
             "title": "Site-ul Web de asistență Lenovo"
-        },
-        "security": {
-            "title": "For a better protection for your device"
         },
         "banner": {
             "neverChecked": "Începeţi utilizarea Actualizare sistem.",
@@ -3284,7 +3287,8 @@
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+            "processStatus": "PROCESSING"
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3769,7 +3773,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

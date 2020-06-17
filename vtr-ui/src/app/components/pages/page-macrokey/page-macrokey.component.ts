@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs/internal/Subscription';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -18,7 +19,7 @@ import { DeviceService } from 'src/app/services/device/device.service';
 	templateUrl: './page-macrokey.component.html',
 	styleUrls: [ './page-macrokey.component.scss' ]
 })
-export class PageMacrokeyComponent implements OnInit {
+export class PageMacrokeyComponent implements OnInit, OnDestroy {
 	isOnline = true;
 	backId = 'vtr-gaming-macrokey-btn-back';
 	startDateTime: any = new Date();
@@ -26,6 +27,9 @@ export class PageMacrokeyComponent implements OnInit {
 	cardContentPositionC: any = {};
 	cardContentPositionF: any = {};
 	dynamic_metricsItem: any = 'macrokey_cms_inner_content';
+	translateSubscrition: Subscription;
+	notificationSubscrition: Subscription;
+	fetchSubscrition: Subscription;
 
 	constructor(
 		// private titleService: Title,
@@ -43,16 +47,30 @@ export class PageMacrokeyComponent implements OnInit {
 		this.metrics = this.shellService.getMetrics();
 		this.fetchCMSArticles();
 		// VAN-5872, server switch feature on language change
-		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+		this.translateSubscrition = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 			this.fetchCMSArticles();
 		});
 		this.isOnline = this.commonService.isOnline;
 	}
 
 	ngOnInit() {
-		this.commonService.notification.subscribe((notification: AppNotification) => {
+		this.notificationSubscrition = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
+	}
+
+	ngOnDestroy() {
+		if(this.translateSubscrition) {
+			this.translateSubscrition.unsubscribe();
+		}
+		
+		if(this.notificationSubscrition) {
+			this.notificationSubscrition.unsubscribe();
+		}
+
+		if(this.fetchSubscrition) {
+			this.fetchSubscrition.unsubscribe();
+		}
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -74,7 +92,7 @@ export class PageMacrokeyComponent implements OnInit {
 		const queryOptions = {
 			Page: 'macro-key'
 		};
-		this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
+		this.fetchSubscrition = this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
 			const cardContentPositionC = this.cmsService.getOneCMSContent(
 				response,
 				'half-width-title-description-link-image',

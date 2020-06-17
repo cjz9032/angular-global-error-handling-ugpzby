@@ -94,9 +94,6 @@ export class ModalThreatLocatorComponent implements OnInit {
 		this.buildThreatLocatorUrl(
 			this.getThreatLocatorLanguageId(navigator.language)
 		);
-		setTimeout(() => {
-			this.domModalDiv.nativeElement.focus();
-		}, 0);
 	}
 
 	closeModal() {

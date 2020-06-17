@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Температурный режим",
                     "thermalMode2SettingDesc": "Выберите режим, который необходимо использовать.",
                     "fnQDesc": "Для переключения режима можно использовать сочетание клавиш Fn+Q.",
-                    "perormanceTitle": "Режим производительности",
+                    "performanceTitle": "Режим производительности",
                     "performanceDesc": "Повышение производительности компьютера за счет увеличения скорости вентиляторов и энергопотребления. ",
                     "OCDesc": "Можно включить функцию разгона.",
                     "ac_dcDesc": "Режим производительности можно включить, только если подключен адаптер электропитания.",
@@ -155,6 +155,8 @@
                         "cpuOCName79": "Смещение напряжения кэша",
                         "cpuOCName122": "Коэффициент ядра 7",
                         "cpuOCName123": "Коэффициент ядра 8",
+                        "cpuOCName124": "Коэффициент ядра 9",
+                        "cpuOCName125": "Коэффициент ядра 10",
                         "cpuOCName102": "ICCMAX ядер",
                         "cpuOCName106": "ICCMAX кэша",
                         "cpuOCName114": "Смещение коэффициента AVX"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Итоговое смещение напряжения, применяемое к напряжению кэша.",
                         "cpuOCTip122": "Задает максимальный множитель ядер, с которым могут работать ядра. Значение частоты ядер является произведением этого коэффициента и эталонной тактовой частоты.",
                         "cpuOCTip123": "Задает максимальный множитель ядер, с которым могут работать ядра. Значение частоты ядер является произведением этого коэффициента и эталонной тактовой частоты.",
+                        "cpuOCTip124": "Задает максимальный множитель ядер, с которым могут работать ядра. Значение частоты ядер является произведением этого коэффициента и эталонной тактовой частоты.",
+                        "cpuOCTip125": "Задает максимальный множитель ядер, с которым могут работать ядра. Значение частоты ядер является произведением этого коэффициента и эталонной тактовой частоты.",
                         "cpuOCTip102": "Задает значение ICCMAX для регулятора напряжения ядер процессора.",
                         "cpuOCTip106": "Задает значение ICCMAX для регулятора напряжения кэша процессора и кольцевой шины.",
                         "cpuOCTip114": "Чтобы вывести фактический лимит коэффициента активных ядер при активном расширении AVX, необходимо вычесть это значение из соответствующего лимита коэффициента активных ядер."
@@ -1098,7 +1102,7 @@
                 },
                 "highDensityBattery": {
                     "title": "High density battery",
-                    "subtitle": "How your battey works",
+                    "subtitle": "How your battery works",
                     "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
                     "para2": {
                         "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
@@ -1271,7 +1275,8 @@
                             "description1": "Включение функции пользовательской зарядки аккумулятора позволяет увеличить общее время его работоспособности при использовании этого устройства.Однако при неполной зарядке аккумулятора время его автономной работы уменьшается.",
                             "description2": "Чтобы полностью включить эту функцию, отключите компьютер от сети переменного тока идайте аккумулятору разрядиться до порогового уровня прекращения зарядки или ниже его.",
                             "enable": "ВКЛЮЧИТЬ",
-                            "cancel": "ОТМЕНА"
+                            "cancel": "ОТМЕНА",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Начинать зарядку при уровне ниже",
@@ -1762,7 +1767,8 @@
                             "title": "Перезапуск компьютера",
                             "description": "Для вступления в силу изменения функции верхнего ряда по умолчанию требуется перезапустить компьютер. Перезапустить?",
                             "reboot": "ПЕРЕЗАГРУЗИТЬ",
-                            "cancel": "НЕ СЕЙЧАС"
+                            "cancel": "НЕ СЕЙЧАС",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Для получения доступа к функциям F1–F12 нажмите клавишу Fn и клавиши в верхнем ряду.",
@@ -2251,9 +2257,6 @@
         },
         "support": {
             "title": "Веб-сайт поддержки Lenovo"
-        },
-        "security": {
-            "title": "For a better protection for your device"
         },
         "banner": {
             "neverChecked": "Вас приветствует программа \"Обновление системы\".",
@@ -3284,7 +3287,8 @@
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+            "processStatus": "PROCESSING"
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3769,7 +3773,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

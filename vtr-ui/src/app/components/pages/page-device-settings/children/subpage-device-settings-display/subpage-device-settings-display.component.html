@@ -196,6 +196,9 @@
 										<div class="col-12">
 											<div class="custom-control custom-checkbox privacy-checkbox">
 												<vtr-ui-checkbox [componentId]="'cb-privacy-guard'"
+													[isMetricsEnabled]=true
+													[metricsParent]='metricsParent'
+													[metricsItem]="'cb.display.privacy-guard'"
 													[disabled]="privacyGuardToggleStatus"
 													[ngClass]="{'custom-control-label-disabled': privacyGuardToggleStatus}"
 													[value]="privacyGuardCheckBox"
@@ -333,7 +336,8 @@
 									</div>
 								</vtr-ui-row-switch>
 							</li>
-							<li class="camera-block common-li-padding">
+							<li class="camera-block common-li-padding"
+								*ngIf="this.biosVersion.slice(0,3) !== 'N2P'">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.displayCamera.camera.camera.title' | translate"
 									componentName="Camera"

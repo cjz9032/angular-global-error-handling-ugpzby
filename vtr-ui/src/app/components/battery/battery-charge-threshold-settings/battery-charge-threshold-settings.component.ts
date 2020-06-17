@@ -5,6 +5,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.model';
 import { CommonService } from 'src/app/services/common/common.service';
 import { KeyCode } from 'src/app/enums/key-code.enum';
+import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
+import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
 
 @Component({
 	selector: 'vtr-battery-charge-threshold-settings',
@@ -43,7 +45,12 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	public selectedOptionsData: any = {};
 	@ViewChildren(NgbDropdown) dropDowns: QueryList<NgbDropdown>;
 	timeOut = 100;
-	constructor(private commonService: CommonService, private translate: TranslateService) { }
+	public readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
+	constructor(
+		private commonService: CommonService
+		, private translate: TranslateService
+		, private metrics: CommonMetricsService
+	) { }
 
 
 	ngOnInit() {
@@ -65,6 +72,7 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 			this.changeBCTInfo.emit(bctInfo);
 		}
 		this.delayButtonFocus(activeDropdown, button);
+		this.metrics.sendMetrics(`${startVal}%`, `${this.textId}-start-option`, CommonMetricsModel.ParentDeviceSettings)
 	}
 	// this added to introduce the delay between option selection , and focus back on button to fix issue with narrator reading collapsed twice.
 	delayButtonFocus(activeDropdown: NgbDropdown, button: HTMLElement) {
@@ -87,7 +95,7 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 			this.changeBCTInfo.emit(bctInfo);
 		}
 		this.delayButtonFocus(activeDropdown, button);
-
+		this.metrics.sendMetrics(`${stopVal}%`, `${this.textId}-stop-option`, CommonMetricsModel.ParentDeviceSettings)
 	}
 
 	public toggleAutoChargeSettings($event: boolean) {

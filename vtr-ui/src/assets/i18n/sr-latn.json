@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Postavke toplotnog režima",
                     "thermalMode2SettingDesc": "Odaberite režim koji želite da koristite.",
                     "fnQDesc": "Možete prebaciti režim koristeći prečicu Fn+Q.",
-                    "perormanceTitle": "Režim učinka",
+                    "performanceTitle": "Režim učinka",
                     "performanceDesc": "Pojačajte performanse računara pomoću veće brzine ventilatora i veće potrošnje struje. ",
                     "OCDesc": "Možete odabrati da uključite funkciju Overkloking.",
                     "ac_dcDesc": "Režim performansi je primenljiv samo kada je uključen adapter za napajanja na struju.",
@@ -155,6 +155,8 @@
                         "cpuOCName79": "Keširan pomak napona",
                         "cpuOCName122": "7 Osnovni odnos",
                         "cpuOCName123": "8 Osnovni odnos",
+                        "cpuOCName124": "9 Osnovni odnos",
+                        "cpuOCName125": "10 Osnovni odnos",
                         "cpuOCName102": "Osnovni ICCMAX",
                         "cpuOCName106": "Keširan ICCMAX",
                         "cpuOCName114": "Pomak AVX odnosa"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Konačni pomak napona koji se primenjuje keširan napon.",
                         "cpuOCTip122": "Postavite maksimalan osnovni množilac na kome jezgra mogu da funkcionišu. Vrednost osnovne frekvencije je proizvod ovog odnosa i učestalost referentnog sata.",
                         "cpuOCTip123": "Postavite maksimalan osnovni množilac na kome jezgra mogu da funkcionišu. Vrednost osnovne frekvencije je proizvod ovog odnosa i učestalost referentnog sata.",
+                        "cpuOCTip124": "Postavite maksimalan osnovni množilac na kome jezgra mogu da funkcionišu. Vrednost osnovne frekvencije je proizvod ovog odnosa i učestalost referentnog sata.",
+                        "cpuOCTip125": "Postavite maksimalan osnovni množilac na kome jezgra mogu da funkcionišu. Vrednost osnovne frekvencije je proizvod ovog odnosa i učestalost referentnog sata.",
                         "cpuOCTip102": "Postavite ICCMAX za regulator osnovnog napona procesora.",
                         "cpuOCTip106": "Postavite ICCMAX za regulator keširanog i magistralnog napona procesora.",
                         "cpuOCTip114": "Da biste probili efikasno aktivno ograničenje osnovnog odnosa kada je AVX aktivan, oduzmite ovu vrednost od odgovarajućeg aktivnog ograničenja osnovnog odnosa."
@@ -1098,7 +1102,7 @@
                 },
                 "highDensityBattery": {
                     "title": "High density battery",
-                    "subtitle": "How your battey works",
+                    "subtitle": "How your battery works",
                     "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
                     "para2": {
                         "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
@@ -1271,7 +1275,8 @@
                             "description1": "Omogućavanje prilagođenoj punjenja baterija omogućiće da opšte zdravlje baterije duže traje dok koristite ovaj uređaj.Međutim, ako baterija ne bude napunjena u potpunosti, trajanje baterije pri izvršavanju će biti kraće.",
                             "description2": "Da biste u potpunosti omogućili ovu funkciju, isključite mašinu iomogućite da se baterija isprazni ili da bude ispod praga za prestanak punjenja.",
                             "enable": "OMOGUĆI",
-                            "cancel": "OTKAŽI"
+                            "cancel": "OTKAŽI",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Pokreni punjenje kada je ispod",
@@ -1760,7 +1765,8 @@
                             "title": "Ponovo pokrenite računar",
                             "description": "Za promenu podrazumevane funkcije gornjeg reda potrebno je da ponovo pokrenete računar. Želite li zaista da ponovo pokrenete?",
                             "reboot": "PONOVO POKRENI",
-                            "cancel": "NE SAD"
+                            "cancel": "NE SAD",
+                            "yes": "YES"
                         },
                         "showAdvSettings": "PRIKAŽI NAPREDNE POSTAVKE",
                         "hideAdvSettings": "SAKRI NAPREDNE POSTAVKE",
@@ -2251,9 +2257,6 @@
         },
         "support": {
             "title": "Veb lokacija Lenovo podrška"
-        },
-        "security": {
-            "title": "For a better protection for your device"
         },
         "banner": {
             "neverChecked": "Dobro došli u Ažuriranje sistema.",
@@ -3284,7 +3287,8 @@
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+            "processStatus": "PROCESSING"
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3769,7 +3773,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

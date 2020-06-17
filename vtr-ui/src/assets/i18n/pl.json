@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Ustawienia trybu term.",
                     "thermalMode2SettingDesc": "Wybierz tryb, którego chcesz używać.",
                     "fnQDesc": "Możesz przełączyć tryb za pomocą skrótu Fn+Q.",
-                    "perormanceTitle": "Tryb wydajny",
+                    "performanceTitle": "Tryb wydajny",
                     "performanceDesc": "Zwiększ wydajność swojego komputera z wyższą prędkością wentylatora i większym zużyciem energii. ",
                     "OCDesc": "Możesz włączyć funkcję Przetaktowania.",
                     "ac_dcDesc": "Tryb wydajności ma zastosowanie tylko wtedy, gdy podłączony jest zasilacz sieciowy.",
@@ -155,6 +155,8 @@
                         "cpuOCName79": "Przesunięcie napięcia pam. podręcznej",
                         "cpuOCName122": "Współczynnik rdzenia 7",
                         "cpuOCName123": "Współczynnik rdzenia 8",
+                        "cpuOCName124": "Współczynnik rdzenia 9",
+                        "cpuOCName125": "Współczynnik rdzenia 10",
                         "cpuOCName102": "ICCMAX rdzenia",
                         "cpuOCName106": "ICCMAX pamięci podręcznej",
                         "cpuOCName114": "Przesunięcie współczynnika AVX"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Ostateczne przesunięcie napięcia stosowane do napięcia pamięci podręcznej.",
                         "cpuOCTip122": "Ustaw maksymalny mnożnik rdzenia, przy którym rdzenie mogą działać. Wartość częstotliwości rdzenia jest iloczynem tego stosunku i częstotliwości zegara odniesienia.",
                         "cpuOCTip123": "Ustaw maksymalny mnożnik rdzenia, przy którym rdzenie mogą działać. Wartość częstotliwości rdzenia jest iloczynem tego stosunku i częstotliwości zegara odniesienia.",
+                        "cpuOCTip124": "Ustaw maksymalny mnożnik rdzenia, przy którym rdzenie mogą działać. Wartość częstotliwości rdzenia jest iloczynem tego stosunku i częstotliwości zegara odniesienia.",
+                        "cpuOCTip125": "Ustaw maksymalny mnożnik rdzenia, przy którym rdzenie mogą działać. Wartość częstotliwości rdzenia jest iloczynem tego stosunku i częstotliwości zegara odniesienia.",
                         "cpuOCTip102": "Ustaw ICCMAX dla regulatora napięcia rdzenia procesora.",
                         "cpuOCTip106": "Ustaw ICCMAX dla regulatora napięcia pamięci podręcznej i magistrali pierścieniowej.",
                         "cpuOCTip114": "Aby uzyskać efektywny limit współczynnika aktywnego rdzenia, gdy AVX jest aktywny, odejmij tę wartość od limitu współczynnika odpowiedniego aktywnego rdzenia."
@@ -1098,7 +1102,7 @@
                 },
                 "highDensityBattery": {
                     "title": "High density battery",
-                    "subtitle": "How your battey works",
+                    "subtitle": "How your battery works",
                     "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
                     "para2": {
                         "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
@@ -1271,7 +1275,8 @@
                             "description1": "Włączenie niestandardowego progu ładowania akumulatora umożliwi dłuższe utrzymywanie akumulatora w dobrym stanie podczas korzystania z tego urządzenia.Niepełne ładowanie akumulatora skróci jednak czas pracy na nim.",
                             "description2": "W celu pełnego włączenia tej funkcji należy odłączyć komputer od zasilania z sieci elektrycznej ipoczekać, aż stopień naładowania akumulatora spadnie co najmniej do wartości progu zatrzymania ładowania.",
                             "enable": "WŁĄCZ",
-                            "cancel": "ANULUJ"
+                            "cancel": "ANULUJ",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Rozpocznij ładowanie poniżej",
@@ -1762,7 +1767,8 @@
                             "title": "Uruchom ponownie komputer",
                             "description": "Aby zmiana funkcji klawisza z górnego wiersza zaczęła obowiązywać, należy ponownie uruchomić komputer. Czy na pewno chcesz uruchomić ponownie?",
                             "reboot": "URUCHOM PONOWNIE",
-                            "cancel": "NIE TERAZ"
+                            "cancel": "NIE TERAZ",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Aby uzyskać dostęp do klawiszy F1-F12, należy przytrzymać klawisz Fn, a następnie nacisnąć odpowiedni klawisz w górnym rzędzie.",
@@ -2251,9 +2257,6 @@
         },
         "support": {
             "title": "Strona internetowa pomocy technicznej Lenovo"
-        },
-        "security": {
-            "title": "For a better protection for your device"
         },
         "banner": {
             "neverChecked": "Witamy w programie Aktualizacja systemu.",
@@ -3284,7 +3287,8 @@
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+            "processStatus": "PROCESSING"
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3769,7 +3773,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

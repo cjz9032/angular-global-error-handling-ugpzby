@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges} from '@angular/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalSmartPerformanceSubscribeComponent } from '../../modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
@@ -19,7 +19,8 @@ import { MetricService } from 'src/app/services/metric/metrics.service';
 	templateUrl: './ui-smart-performance.component.html',
 	styleUrls: ['./ui-smart-performance.component.scss']
 })
-export class UiSmartPerformanceComponent implements OnInit {
+export class UiSmartPerformanceComponent implements OnInit, OnChanges {
+
 	title = 'smartPerformance.title';
 	back = 'smartPerformance.back';
 	backarrow = '< ';
@@ -31,12 +32,12 @@ export class UiSmartPerformanceComponent implements OnInit {
 	currentSubItemCategory: any = {};
 	isScheduleScanRunning = false;
 	@Input() activegroup = 'Tune up performance';
+	@Input() isScanningStarted = 0;
 	isSubscribed = false;
 	public tune = 0;
 	public boost = 0;
 	public secure = 0;
 	public rating = 0;
-	@Output() showWarning = new EventEmitter<boolean>()
 
 	scheduleScanObj = null;
 	isScheduleScan = false;
@@ -62,13 +63,18 @@ export class UiSmartPerformanceComponent implements OnInit {
 		public shellServices: VantageShellService,
 		public metricsTranslateService: MetricsTranslateService,
 		public metricsService: MetricService,
-		
+
 	) {
 		this.translateStrings();
 		this.shellServices.getMetrics();
 		this.metrics = this.shellServices.getMetrics();
 	}
 
+	ngOnChanges(changes: SimpleChanges): void {
+		if (changes && changes.isScanningStarted && !changes.isScanningStarted.firstChange) {
+			this.checkReadiness();
+		}
+	}
 	ngOnInit() {
 		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
 		if (this.isSubscribed === undefined) {
@@ -88,35 +94,28 @@ export class UiSmartPerformanceComponent implements OnInit {
 		}
 
 		if (this.smartPerformanceService.isShellAvailable) {
-			this.smartPerformanceService
-				.getReadiness()
-				.then((getReadinessFromService: any) => {
-					this.logger.info('ui-smart-performance.ngOnInit.getReadiness.then', getReadinessFromService);
-					if (!getReadinessFromService) {
-						this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
-						this.isScanning = true;
-						this.registerScheduleScanEvent();
-						this.getSmartPerformanceScheduleScanStatus();
-						// activates the pop-up, when scanning is triggered because of scheduled scan and user navigates
-						// this.showWarning.emit(true)
-					}
-					else {
-						this.isScanning = false;
-						// this.showWarning.emit(false)
-					}
-				})
-				.catch(error => {
-					this.logger.error('ui-smart-performance.ngOnInit.getReadiness.then', error);
-				})
+		this.checkReadiness();
 		}
-		// de-activates the pop-up, when user is navigating away while scanning
-		// this.smartPerformanceService.scanningStopped.subscribe((res: boolean) => {
-		// 	if(res) {
-		// 		this.showWarning.emit(false)
-		// 	}
-		// })
-
 	}
+	checkReadiness() {
+        this.smartPerformanceService.getReadiness()
+			.then((getReadinessFromService: any) => {
+				this.logger.info('ui-smart-performance.ngOnInit.getReadiness.then', getReadinessFromService);
+				if (!getReadinessFromService) {
+					this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
+					this.isScanning = true;
+					this.registerScheduleScanEvent();
+					this.getSmartPerformanceScheduleScanStatus();
+				}
+				else {
+					this.isScanning = false;
+				}
+			})
+			.catch(error => {
+				this.logger.error('ui-smart-performance.ngOnInit.getReadiness.then', error);
+			})
+    }
+
 	async scheduleScan(scantype, frequency, day, time, date) {
 		const payload = {
 			scantype,
@@ -195,8 +194,6 @@ export class UiSmartPerformanceComponent implements OnInit {
 							}
 						);
 						this.scanAndFixInformation();
-						// activates the pop-up, when user is navigating away while scanning - for subsciber
-						this.showWarning.emit(true);
 						// Subscriber Scan Completed
 						if (this.isSubscribed) {
 							this.hasSubscribedScanCompleted = true;
@@ -324,7 +321,6 @@ export class UiSmartPerformanceComponent implements OnInit {
 						// this.hasSubscribedScanCompleted = true;
 						this.showSubscribersummary = true;
 						this.isScanning = false;
-						// this.showWarning.emit(false)
 						this.rating = res.rating;
 						this.tune = res.result.tune;
 						this.boost = res.result.boost;
@@ -340,7 +336,6 @@ export class UiSmartPerformanceComponent implements OnInit {
 							}
 							);
 						}
-						this.showWarning.emit(false)
 						this.isScanning = false;
 						this.isScanningCompleted = true;
 						this.showSubscribersummary = true;
@@ -373,8 +368,6 @@ export class UiSmartPerformanceComponent implements OnInit {
 							}
 						);
 						this.isScanning = true;
-						// activates the pop-up, when user is navigating away while scanning - for non-subscriber
-						this.showWarning.emit(true)
 						this.scanAndFixInformation();
 					}
 					else {
@@ -439,8 +432,6 @@ export class UiSmartPerformanceComponent implements OnInit {
 	}
 
 	cancelScanfromScanning() {
-		// this.showWarning.emit(false)
-		// this.smartPerformanceService.scanningStopped.next(true)
 		this.isScanning = false;
 		this.isScanningCompleted = false;
 		this.showSubscribersummary = false;

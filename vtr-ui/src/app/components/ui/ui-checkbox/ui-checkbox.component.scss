@@ -22,6 +22,7 @@
 
 		/* main styling */
 		.custom-control-input {
+			z-index: 0;
 			width: $check-box-size + 1;
 			height: $check-box-size + 0.5;
 		}

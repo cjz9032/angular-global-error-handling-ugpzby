@@ -1,8 +1,9 @@
+import { Subscription } from 'rxjs/internal/Subscription';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { AppNotification } from './../../../data-models/common/app-notification.model';
 import { CommonService } from './../../../services/common/common.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NetworkBoostService } from 'src/app/services/gaming/gaming-networkboost/networkboost.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { UPEService } from 'src/app/services/upe/upe.service';
@@ -16,7 +17,7 @@ import { DeviceService } from 'src/app/services/device/device.service';
 	templateUrl: './page-networkboost.component.html',
 	styleUrls: ['./page-networkboost.component.scss']
 })
-export class PageNetworkboostComponent implements OnInit {
+export class PageNetworkboostComponent implements OnInit, OnDestroy {
 	public showTurnOnModal = false;
 	public showAppsModal = false;
 	changeListNum = 0;
@@ -31,6 +32,10 @@ export class PageNetworkboostComponent implements OnInit {
 	cardContentPositionF: any = {};
 	dynamic_metricsItem: any = 'networkboost_cms_inner_content';
 	backId = 'vtr-gaming-networkboost-btn-back';
+	translateSubscrition: Subscription;
+	notificationSubscrition: Subscription;
+	fetchSubscrition: Subscription;
+	fetchCacheSubscrition: Subscription;
 
 	constructor(
 		private cmsService: CMSService,
@@ -44,14 +49,14 @@ export class PageNetworkboostComponent implements OnInit {
 	) {
 		this.fetchCMSArticles();
 		// VAN-5872, server switch feature on language change
-		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+		this.translateSubscrition = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 			this.fetchCMSArticles();
 		});
 		this.isOnline = this.commonService.isOnline;
 	}
 
 	ngOnInit() {
-		this.commonService.notification.subscribe((notification: AppNotification) => {
+		this.notificationSubscrition = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
 		// AutoClose Init
@@ -61,7 +66,7 @@ export class PageNetworkboostComponent implements OnInit {
 			Page: 'network-boost'
 		};
 
-		this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
+		this.fetchCacheSubscrition = this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
 			const cardContentPositionF = this.cmsService.getOneCMSContent(
 				response,
 				'half-width-top-image-title-link',
@@ -84,6 +89,25 @@ export class PageNetworkboostComponent implements OnInit {
 			}
 		});
 	}
+
+	ngOnDestroy() {
+		if(this.translateSubscrition) {
+			this.translateSubscrition.unsubscribe();
+		}
+		
+		if(this.notificationSubscrition) {
+			this.notificationSubscrition.unsubscribe();
+		}
+
+		if(this.fetchCacheSubscrition) {
+			this.fetchCacheSubscrition.unsubscribe();
+		}
+
+		if(this.fetchSubscrition) {
+			this.fetchSubscrition.unsubscribe();
+		}
+	}
+
 	async openTargetModal() {
 		try {
 			this.needToAsk = this.networkBoostService.getNeedToAsk();
@@ -196,7 +220,7 @@ export class PageNetworkboostComponent implements OnInit {
 		const queryOptions = {
 			Page: 'network-boost'
 		};
-		this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
+		this.fetchSubscrition = this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
 			const cardContentPositionC = this.cmsService.getOneCMSContent(
 				response,
 				'half-width-title-description-link-image',

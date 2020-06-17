@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { EyeCareMode } from 'src/app/data-models/camera/eyeCareMode.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 
 @Component({
 	selector: 'vtr-display-color-temp',
@@ -15,6 +16,7 @@ export class DisplayColorTempComponent implements OnInit {
 	@Output() displayColorTempChange: any = new EventEmitter();
 	@Output() resetTemperature: any = new EventEmitter();
 	@Output() colorPreviewValue: any = new EventEmitter();
+	public readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
 
 	constructor(private logger: LoggerService) { }
 

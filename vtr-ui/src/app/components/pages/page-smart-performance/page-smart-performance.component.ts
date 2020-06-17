@@ -1,60 +1,53 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
-import { CanComponentDeactivate } from '../../../services/guard/can-deactivate-guard.service';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalSmartPerformanceCancelComponent } from '../../modal/modal-smart-performance-cancel/modal-smart-performance-cancel.component';
-import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {SystemEventService} from '../../../services/system-event/system-event.service';
+import {CommonService} from '../../../services/common/common.service';
+import {Subscription} from 'rxjs';
 
 @Component({
-  selector: 'vtr-page-smart-performance',
-  templateUrl: './page-smart-performance.component.html',
-  styleUrls: ['./page-smart-performance.component.scss']
+	selector: 'vtr-page-smart-performance',
+	templateUrl: './page-smart-performance.component.html',
+	styleUrls: ['./page-smart-performance.component.scss']
 })
-export class PageSmartPerformanceComponent implements OnInit, OnDestroy, CanComponentDeactivate {
-  isScanning: boolean = false;
-  // showPromptMsg: boolean = true
-  private scanningSub: Subscription;
+export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
+	private notificationSub: Subscription;
+	eventName = 'SmartPerformance.ScheduleEventStarted'
+	isScanningStarted = 0;
+	retryCount = 0;
 
-  constructor(
-    private modalService: NgbModal,
-    public smartPerformanceService: SmartPerformanceService,
-  ) { }
+	constructor(private systemEventService: SystemEventService,
+				private commonService: CommonService) {
+	}
 
-  ngOnInit() {
-    this.scanningSub = this.smartPerformanceService.scanningStopped.subscribe((res: boolean) => {
-      if(res) {
-        this.isScanning = false
-      } else {
-        this.isScanning = true
-      }
-    })
-  }
+	ngOnInit() {
+		this.registerScanEvent();
+	}
 
-  // toggleScanning(value: boolean) {
-  //   this.isScanning = value
-  // }
-
-  canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
-		if(this.isScanning) { 
-      return this.openModal()    
+	async registerScanEvent() {
+		const isRegistered = await this.systemEventService.registerCustomEvent(this.eventName);
+		if (isRegistered) {
+			this.notificationSub = this.commonService.notification.subscribe(notification => {
+				if (notification && notification.type && notification.type.toString() === this.eventName) {
+					this.isScanningStarted += 1;
+				}
+			})
 		} else {
-			return true
+			await this.unregisterScanEvent();
+			if (this.retryCount < 1) {
+				this.registerScanEvent();
+			}
+			this.retryCount += 1;
 		}
-  }
+	}
 
-  async openModal(): Promise<boolean> {
-    const modalRef = this.modalService.open(ModalSmartPerformanceCancelComponent, {
-      backdrop: 'static',
-      centered: true,
-      windowClass: 'cancel-modal'
-    });
-    // modalRef.componentInstance.promptMsg = this.showPromptMsg
-    const response = await modalRef.result
-    return response;
-  }
+	async unregisterScanEvent() {
+		await this.systemEventService.unRegisterCustomEvent(this.eventName)
+	}
 
-  ngOnDestroy() {
-    this.scanningSub.unsubscribe()
-  }
+	ngOnDestroy(): void {
+		this.unregisterScanEvent();
+		if (this.notificationSub) {
+			this.notificationSub.unsubscribe();
+		}
+	}
 
 }

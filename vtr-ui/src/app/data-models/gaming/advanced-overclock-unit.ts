@@ -12,6 +12,8 @@ export class AdvancedOCItemUnit {
 	public cpuAdvancedOC79 = 'V';
 	public cpuAdvancedOC122 = 'x';
 	public cpuAdvancedOC123 = 'x';
+	public cpuAdvancedOC124 = 'x';
+	public cpuAdvancedOC125 = 'x';
 	public cpuAdvancedOC102 = 'A';
 	public cpuAdvancedOC106 = 'A';
 	public cpuAdvancedOC114 = 'x';
@@ -31,6 +33,8 @@ export class AdvancedOCItemUnit {
 		cpuOCName79: "Cache Voltage Offset",
 		cpuOCName122: "7 Core Ratio",
 		cpuOCName123: "8 Core Ratio",
+		cpuOCName124: "9 Core Ratio",
+		cpuOCName125: "10 Core Ratio",
 		cpuOCName102: "Core ICCMAX",
 		cpuOCName106: "Cache ICCMAX",
 		cpuOCName114: "AVX Ratio Offset"

@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "열 모드 설정",
                     "thermalMode2SettingDesc": "사용할 모드를 선택합니다.",
                     "fnQDesc": "바로 가기 Fn+Q를 사용해 모드를 전환할 수 있습니다.",
-                    "perormanceTitle": "Performance 모드",
+                    "performanceTitle": "Performance 모드",
                     "performanceDesc": "팬 속도와 전력 소모 수준을 높여 컴퓨터 성능을 향상시킵니다. ",
                     "OCDesc": "오버클럭 기능을 사용하도록 선택할 수 있습니다.",
                     "ac_dcDesc": "Performance 모드는 AC 전원 어댑터가 연결되어 있는 경우에만 적용됩니다.",
@@ -155,6 +155,8 @@
                         "cpuOCName79": "캐시 전압 오프셋",
                         "cpuOCName122": "7 코어비",
                         "cpuOCName123": "8 코어비",
+                        "cpuOCName124": "9 코어비",
+                        "cpuOCName125": "10 코어비",
                         "cpuOCName102": "코어 ICCMAX",
                         "cpuOCName106": "캐시 ICCMAX",
                         "cpuOCName114": "AVX 비율 오프셋"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "캐시 전압에 적용되는 최종 전압 오프셋입니다.",
                         "cpuOCTip122": "코어가 작동할 수 있는 최대 코어 승산기를 설정하십시오. 코어 주파수의 값은 이 비율과 참조 클럭 주파수의 곱입니다.",
                         "cpuOCTip123": "코어가 작동할 수 있는 최대 코어 승산기를 설정하십시오. 코어 주파수의 값은 이 비율과 참조 클럭 주파수의 곱입니다.",
+                        "cpuOCTip124": "코어가 작동할 수 있는 최대 코어 승산기를 설정하십시오. 코어 주파수의 값은 이 비율과 참조 클럭 주파수의 곱입니다.",
+                        "cpuOCTip125": "코어가 작동할 수 있는 최대 코어 승산기를 설정하십시오. 코어 주파수의 값은 이 비율과 참조 클럭 주파수의 곱입니다.",
                         "cpuOCTip102": "프로세서 코어 전압 조절기에 대한 ICCMAX를 설정합니다.",
                         "cpuOCTip106": "프로세서 캐시 및 환상 모선 조절기에 대한 ICCMAX를 설정합니다.",
                         "cpuOCTip114": "AVX가 활성화 상태일 때 유효 활성 코어비 한계을 도출하려면, 이 값을 해당하는 활성 코어비 한계로 뺍니다."
@@ -1098,7 +1102,7 @@
                 },
                 "highDensityBattery": {
                     "title": "High density battery",
-                    "subtitle": "How your battey works",
+                    "subtitle": "How your battery works",
                     "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
                     "para2": {
                         "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
@@ -1271,7 +1275,8 @@
                             "description1": "사용자 지정 배터리 충전을 사용하면 이 장치를 사용할 때 전체 배터리 상태가 더 오래 지속될 수 있습니다.그러나 완전 충전을 하지 않으면, 런타임 배터리 수명이 줄어듭니다.",
                             "description2": "이 기능을 완벽하게 사용하려면, 컴퓨터 플러그를 뽑고충전 중지 임계값 이하로 배터리를 방전하십시오.",
                             "enable": "사용",
-                            "cancel": "취소"
+                            "cancel": "취소",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "충전 시작 기준",
@@ -1762,7 +1767,8 @@
                             "title": "컴퓨터 다시 시작",
                             "description": "기본 맨 윗줄 기능을 변경하면, 컴퓨터를 다시 시작해야 해야 합니다. 다시 시작하시겠습니까?",
                             "reboot": "다시 부팅",
-                            "cancel": "나중에"
+                            "cancel": "나중에",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "F1-F12 기능에 액세스하려면, Fn 키와 맨 윗줄의 키를 누르십시오.",
@@ -2251,9 +2257,6 @@
         },
         "support": {
             "title": "Lenovo 지원 웹 사이트"
-        },
-        "security": {
-            "title": "For a better protection for your device"
         },
         "banner": {
             "neverChecked": "시스템 업데이트를 시작합니다.",
@@ -3284,7 +3287,8 @@
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+            "processStatus": "PROCESSING"
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3769,7 +3773,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

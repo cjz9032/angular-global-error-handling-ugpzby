@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Nastavenie tepelného režimu",
                     "thermalMode2SettingDesc": "Vyberte režim, ktorý chcete použiť.",
                     "fnQDesc": "Režim môžete prepínať pomocou klávesovej skratky Fn+Q.",
-                    "perormanceTitle": "Režim vysokého výkonu",
+                    "performanceTitle": "Režim vysokého výkonu",
                     "performanceDesc": "Zvýšte výkon počítača zvýšením otáčok ventilátora a spotreby energie. ",
                     "OCDesc": "Môžete sa rozhodnúť zapnúť funkciu pretaktovania.",
                     "ac_dcDesc": "Režim vysokého výkonu je možné použiť, len ak je pripojený sieťový adaptér.",
@@ -155,6 +155,8 @@
                         "cpuOCName79": "Zmena napätia vyrovnávacej pamäte",
                         "cpuOCName122": "Násobič jadra 7",
                         "cpuOCName123": "Násobič jadra 8",
+                        "cpuOCName124": "Násobič jadra 9",
+                        "cpuOCName125": "Násobič jadra 10",
                         "cpuOCName102": "ICCMAX jadra",
                         "cpuOCName106": "ICCMAX vyrovnávacej pamäte",
                         "cpuOCName114": "Zmena násobiča pre AVX"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Finálna zmena napätia, ktorá sa použije na napätie vyrovnávacej pamäte.",
                         "cpuOCTip122": "Nastavenie maximálneho násobiča jadra. Frekvencia jadra je súčinom tohto násobiča a referenčnej frekvencie.",
                         "cpuOCTip123": "Nastavenie maximálneho násobiča jadra. Frekvencia jadra je súčinom tohto násobiča a referenčnej frekvencie.",
+                        "cpuOCTip124": "Nastavenie maximálneho násobiča jadra. Frekvencia jadra je súčinom tohto násobiča a referenčnej frekvencie.",
+                        "cpuOCTip125": "Nastavenie maximálneho násobiča jadra. Frekvencia jadra je súčinom tohto násobiča a referenčnej frekvencie.",
                         "cpuOCTip102": "Nastavenie hodnoty ICCMAX pre regulátor napätia jadra procesora.",
                         "cpuOCTip106": "Nastavenie hodnoty ICCMAX pre regulátor napätia vyrovnávacej pamäte procesora a kruhovej zbernice.",
                         "cpuOCTip114": "Ak chcete odvodiť limit násobiča aktívneho jadra, keď je aktívny súbor inštrukcií AVX, odpočítajte túto hodnotu od príslušného limitu násobiča aktívneho jadra."
@@ -1098,7 +1102,7 @@
                 },
                 "highDensityBattery": {
                     "title": "High density battery",
-                    "subtitle": "How your battey works",
+                    "subtitle": "How your battery works",
                     "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
                     "para2": {
                         "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
@@ -1271,7 +1275,8 @@
                             "description1": "Zapnutie vlastnej hraničnej úrovne nabitia batérie umožní predĺžiť životnosť batérie pri používaní tohto zariadenia.Ak však batéria nie je plne nabitá, jej výdrž je kratšia.",
                             "description2": "Ak chcete túto funkciu v plnej miere zapnúť, odpojte zariadeniea nechajte batériu, aby sa vybila na alebo pod hraničnú úroveň nabitia.",
                             "enable": "ZAPNÚŤ",
-                            "cancel": "ZRUŠIŤ"
+                            "cancel": "ZRUŠIŤ",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Začať nabíjanie pri hodnote nižšej ako",
@@ -1762,7 +1767,8 @@
                             "title": "Reštartovanie počítača",
                             "description": "Zmena predvolenej funkcie horného riadka si vyžaduje reštartovanie počítača. Naozaj chcete vykonať reštartovanie?",
                             "reboot": "REŠTARTOVAŤ",
-                            "cancel": "TERAZ NIE"
+                            "cancel": "TERAZ NIE",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Funkcie klávesov F1 – F12 môžete použiť stlačením klávesu Fn a klávesov v hornom riadku.",
@@ -2251,9 +2257,6 @@
         },
         "support": {
             "title": "Webová lokalita podpory spoločnosti Lenovo"
-        },
-        "security": {
-            "title": "For a better protection for your device"
         },
         "banner": {
             "neverChecked": "Vitajte v službe aktualizácie systému.",
@@ -3284,7 +3287,8 @@
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+            "processStatus": "PROCESSING"
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3769,7 +3773,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

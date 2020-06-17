@@ -22,6 +22,7 @@ import { RouteHandlerService } from 'src/app/services/route-handler/route-handle
 import { HsaIntelligentSecurityResponse } from 'src/app/data-models/smart-assist/hsa-intelligent-security.model/hsa-intelligent-security.model';
 import { UiRoundedRectangleRadioModel } from '../../ui/ui-rounded-rectangle-custom-radio-list/ui-rounded-rectangle-radio-list.model';
 import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
+import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 
 @Component({
 	selector: 'vtr-page-smart-assist',
@@ -68,6 +69,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	public zeroTouchPresenceLeaveDistanceAutoAdjustCapability = false;
 	public isRegisterHPDRpcCallback = false;
 	private cameraAccessChangedHandler: any;
+	public readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
 
 	public featureInitialize = {
 		security: true,
@@ -93,21 +95,24 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		label: 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.fast',
 		value: this.FAST,
 		isChecked: this.intelligentSecurity.autoScreenLockTimer === this.FAST,
-		isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled)
+		isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled),
+		metricsItem: 'radio.screen-lock-timer.fast'
 	},
 	{
 		componentId: 'autoScreenLockTimer_medium',
 		label: 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.medium',
 		value: this.MEDIUM,
 		isChecked: this.intelligentSecurity.autoScreenLockTimer === this.MEDIUM,
-		isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled)
+		isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled),
+		metricsItem: 'radio.screen-lock-timer.medium'
 	},
 	{
 		componentId: 'autoScreenLockTimer_slow',
 		label: 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.slow',
 		value: this.SLOW,
 		isChecked: this.intelligentSecurity.autoScreenLockTimer === this.SLOW,
-		isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled)
+		isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled),
+		metricsItem: 'radio.screen-lock-timer.slow'
 	}];
 
 
@@ -588,7 +593,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				if (response) {
 					this.getHPDAdvancedSetting();
 				}
-				this.metrics.sendMetrics(value, section + '-advancedSettings');
+				this.metrics.sendMetrics(value, section + '-advancedSettings', CommonMetricsModel.ParentSmartAssist);
 			});
 	}
 
@@ -975,36 +980,15 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		}
 
 		if (this.headerMenuItems.length >= 2) {
-			this.headerMenuItems = this.headerMenuItems.sort((a, b)=> { return a.sortOrder - b.sortOrder; })
+			this.headerMenuItems = this.headerMenuItems.sort((a, b) => { return a.sortOrder - b.sortOrder; })
 		}
 	}
 
-
 	updateZeroTouchLockTimersUIModel() {
-		// let uniqueName = 'zero-Touch-Lock';
-		// let disabled = !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled);
-		this.zeroTouchLockTimersUIModel = [];
-		this.zeroTouchLockTimersUIModel = [{
-			componentId: 'autoScreenLockTimer_fast',
-			label: 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.fast',
-			value: this.FAST,
-			isChecked: this.intelligentSecurity.autoScreenLockTimer === this.FAST,
-			isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled)
-		},
-		{
-			componentId: 'autoScreenLockTimer_medium',
-			label: 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.medium',
-			value: this.MEDIUM,
-			isChecked: this.intelligentSecurity.autoScreenLockTimer === this.MEDIUM,
-			isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled)
-		},
-		{
-			componentId: 'autoScreenLockTimer_slow',
-			label: 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.slow',
-			value: this.SLOW,
-			isChecked: this.intelligentSecurity.autoScreenLockTimer === this.SLOW,
-			isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled)
-		}];
+		if (this.zeroTouchLockTimersUIModel && this.zeroTouchLockTimersUIModel.length > 0) {
+			this.zeroTouchLockTimersUIModel.forEach(model => {
+				model.isChecked = (this.intelligentSecurity.autoScreenLockTimer === model.value);
+			});
+		}
 	}
-
 }

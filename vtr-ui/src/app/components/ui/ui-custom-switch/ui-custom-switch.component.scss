@@ -22,6 +22,7 @@
 		.custom-control-input {
 			width: 48px;
 			height: 25px;
+			z-index: 0;
 			&:focus {
 				outline: 0;
 			}

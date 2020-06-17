@@ -1,18 +1,18 @@
-<div class="gaming-advanced-prompt gaming-modal-prompt">
+<div class="gaming-advanced-prompt gaming-modal-prompt"  role="text" [id]="info.id.section">
     <div class="modal-header">
-        <h2>{{info.title | translate }}</h2>
-        <button type="button" tabindex="1" class="close" aria-label="close" (click)="closeModal()" id="gaming-advanced-prompt-close">
+        <h2 role="text" id="warning_dialog_warning_text">{{info.title | translate }}</h2>
+        <button type="button" role="button" [id]="info.id.closeButton" tabindex="1" class="close" aria-label="close" (click)="closeModal()">
             ×
         </button>
     </div>
     <div class="modal-body" tabindex="-1">
-        <p>{{info.description | translate }}</p>
+        <p role="text" id="warning_dialog_warning_description">{{info.description | translate }}</p>
         <p class="detailed-description" *ngIf="info.description2">{{info.description2 | translate }}</p>
         <p class="detailed-description" *ngIf="info.description3">{{info.description3 | translate }}</p>
     </div>
     <div class="modal-footer">
-        <button type="button" tabindex="1" [attr.aria-label]="info.comfirmButtonAriaLabel" class="border-radius-button" *ngIf="info.comfirmButton" (click)="confirmFn()">{{info.comfirmButton | translate }}</button>
-        <button type="button" tabindex="1" [attr.aria-label]="info.cancelButtonAriaLabel" class="under-line-button cancel" *ngIf="info.cancelButton" (click)="cancleFn()">{{info.cancelButton | translate }}</button>
+          <button type="button" role="button" [id]="info.id.installButton" tabindex="1" [attr.aria-label]="info.comfirmButtonAriaLabel" class="border-radius-button" *ngIf="info.comfirmButton" (click)="confirmFn()">{{info.comfirmButton | translate }}</button>
+        <button type="button" role="button" [id]="info.id.cancelButton" tabindex="1" [attr.aria-label]="info.cancelButtonAriaLabel" class="under-line-button cancel" *ngIf="info.cancelButton" (click)="cancleFn()">{{info.cancelButton | translate }}</button>
     </div>
 </div>
-    
+
