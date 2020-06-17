@@ -698,6 +698,14 @@ vtr-ui-smart-performance-scan-summary {
 				border-left:1px solid $shade_darkest;
 			}
 		}
+		.pc-status-info{
+			.info-text{				
+				span{
+					background:#2a2f43!important;					
+				}			
+
+			}
+		}
 	}
 	.summary-block{
 		padding: 3rem 3rem 0;
