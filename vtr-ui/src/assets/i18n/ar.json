@@ -2135,10 +2135,10 @@
                 "title": "تنبيه الحركة الذكية",
                 "tooltip": "<div id='antiTheft-tooltips'>لا تعمل هذه الميزة عندما يكون الكمبيوتر في وضع الإسبات أو غير موصول بالطاقة. تحقق من الإعدادات في الإجراءات التالية:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>إجراءات إغلاق الغطاء</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>إجراء بطارية حرجة/منخفضة الشحنة</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>إجراء زر الطاقة</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>إجراء زر السكون</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>إعدادات مهلة الخمول للإسبات</li></ul></div>بخلاف ذلك، لن تشغل المنبه، كما أنها لن تلتقط الصور.</div>",
                 "desc1": "عند تمكين هذه الميزة، سيبدأ الجهاز بإصدار صوت طنين عندما تكون الشاشة مقفلة ويتم اكتشاف الحركات خاصة في مكان عام.",
-                "desc2": "Log into Windows and the alarm will be automatically turned off. To use the feature, you need to enable it again.",
+                "desc2": "سجّل دخولك إلى Windows وسيتوقف التنبيه بشكل تلقائي. لاستخدام الميزة، يجب تمكينها مرة أخرى.",
 				"note": {
-					"descriptionTitle": "Attention:",
-                    "description": "Valid sign-in options such as a password or PIN code are needed when you log into Windows. Otherwise, the Smart motion alarm feature might be mistakenly disabled by any un-authorized user who accesses your computer."
+					"descriptionTitle": "تنبيه:",
+                    "description": "هناك حاجة إلى خيارات تسجيل دخول صالحة مثل كلمة المرور أو رمز PIN عندما تسجل دخولك إلى Windows. بخلاف ذلك، قد يتم تعطيل ميزة تنبيه الحركة الذكية‬ عن طريق الخطأ من قبل أي مستخدم غير مخوّل يصل إلى جهاز الكمبيوتر الخاص بك."
                 },
                 "alarm": {
                     "title": " يستمر المنبه لمدة",
@@ -2150,7 +2150,7 @@
                 },
                 "allowCamera": {
                     "title": "التقاط الصور",
-                    "describe": "عند تمكين هذه الميزة، تلتقط الكاميرا الصور تلقائيًا عند اكتشاف الحركات إذا كانت شاشتك مقفلة. تتم معالجة هذه البيانات محليًا على جهازك. Lenovo لا يمكنها الوصول إليها أو استخدامها.",
+                    "describe": "عند تمكين هذه الميزة، تلتقط الكاميرا الصور تلقائيًا عند اكتشاف الحركات إذا كانت شاشتك مقفلة. تتم معالجة هذه البيانات محليًا على جهازك. Lenovo لا يمكنها الوصول إليها أو استخدامها. تذكر أنه يجب إيقاف تشغيل مصراع الكاميرا للتأكد من أنه يمكنه التقاط الصور أثناء التنبيه.",
                     "checkBoxText": "قم بتمكين هذه الميزة"
                 },
                 "cameraPrivacy": {

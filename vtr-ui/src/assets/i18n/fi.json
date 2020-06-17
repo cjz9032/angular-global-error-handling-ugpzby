@@ -2133,10 +2133,10 @@
                 "title": "Älykäs liikkeentunnistus",
                 "tooltip": "<div id='antiTheft-tooltips'>Tämä ominaisuus ei toimi tietokoneen ollessa horrostilassa tai sammutettuna. Tarkista seuraavien toimintojen asetukset:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>kannen sulkemisen toiminnot</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>toiminto akun varauksen ollessa loppumassa</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>virtapainikkeen toiminto</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>lepotilapainikkeen toiminto</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>horrostilaan siirtymisen aikakatkaisun asetukset</li></ul></div>Muussa tapauksessa se ei aiheuta hälytystä tai ota valokuvia.</div>",
                 "desc1": "Kun tämä ominaisuus on käytössä, laite aloittaa äänimerkin toistamisen, jos näyttösi ollessa lukittuna havaitaan liikettä, varsinkin julkisissa tiloissa.",
-                "desc2": "Log into Windows and the alarm will be automatically turned off. To use the feature, you need to enable it again.",
+                "desc2": "Kirjaudu sisään Windowsiin, niin hälytys katkaistaan automaattisesti. Sinun täytyy ottaa tämä ominaisuus uudelleen käyttöön käyttääksesi sitä.",
 				"note": {
-					"descriptionTitle": "Attention:",
-                    "description": "Valid sign-in options such as a password or PIN code are needed when you log into Windows. Otherwise, the Smart motion alarm feature might be mistakenly disabled by any un-authorized user who accesses your computer."
+					"descriptionTitle": "Huomio:",
+                    "description": "Windowsiin sisäänkirjautuminen edellyttää voimassa olevaa kirjautumisvaihtoehtoa, kuten salasanaa tai PIN-koodia. Muussa tapauksessa valtuuttamaton käyttäjä, joka pääsee tietokoneellesi, voisi poistaa älykkään liikkeentunnistusominaisuuden vahingossa käytöstä."
                 },
                 "alarm": {
                     "title": " HÄLYTYS KESTÄÄ",
@@ -2148,7 +2148,7 @@
                 },
                 "allowCamera": {
                     "title": "VALOKUVIEN OTTAMINEN",
-                    "describe": "Kun tämä ominaisuus on käytössä, kamera ottaa automaattisesti valokuvia, kun liikettä havaitaan näyttösi ollessa lukittuna. Nämä tiedot käsitellään laitteessa paikallisesti. Lenovolla ei ole pääsyä tietoihin eikä se voi käyttää niitä.",
+                    "describe": "Kun tämä ominaisuus on käytössä, kamera ottaa automaattisesti valokuvia, kun liikettä havaitaan näyttösi ollessa lukittuna. Nämä tiedot käsitellään laitteessa paikallisesti. Lenovolla ei ole pääsyä tietoihin eikä se voi käyttää niitä. Huomaa, että sinun tulisi poistaa kameran suljin käytöstä varmistaaksesi, että se voi ottaa kuvia hälytyksen aikana.",
                     "checkBoxText": "Ota tämä ominaisuus käyttöön"
                 },
                 "cameraPrivacy": {

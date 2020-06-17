@@ -2133,10 +2133,10 @@
                 "title": "Akıllı hareket alarmı",
                 "tooltip": "<div id='antiTheft-tooltips'>Bu özellik, bilgisayar uyku kipindeyken veya kapalıyken çalışmaz. Aşağıdaki işlemlerin ayarlarını kontrol edin:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>kapağı kapatma işlemleri</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>kritik düzeyde/düşük pil işlemi</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>Açma/kapama düğmesi işlemi</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>uyku düğmesi işlemi</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>uyku kipine geçiş için boşta kalma zaman aşımı ayarları</li></ul></div>Aksi takdirde, alarm tetiklenmez veya fotoğraf çekmez.</div>",
                 "desc1": "Bu özelliği etkin durumdayken, ekranınız kilitlendiğinde ve özellikle halka açık bir yerde hareket algılandığında cihaz bip sesi çıkarmaya başlar.",
-                "desc2": "Log into Windows and the alarm will be automatically turned off. To use the feature, you need to enable it again.",
+                "desc2": "Windows'da oturum açtığınızda alarm otomatik olarak kapanır. Özelliği kullanmak için yeniden etkinleştirmeniz gerekir.",
 				"note": {
-					"descriptionTitle": "Attention:",
-                    "description": "Valid sign-in options such as a password or PIN code are needed when you log into Windows. Otherwise, the Smart motion alarm feature might be mistakenly disabled by any un-authorized user who accesses your computer."
+					"descriptionTitle": "Dikkat:",
+                    "description": "Windows'da oturum açarken parola veya PIN kodu gibi geçerli oturum açma seçeneklerinin kullanılması gerekir. Aksi takdirde, Akıllı hareket alarmı özelliği, bilgisayarınıza erişen yetkili olmayan bir kullanıcı tarafından yanlışlıkla devre dışı bırakılabilir."
                 },
                 "alarm": {
                     "title": " ALARM SÜRESİ",
@@ -2148,7 +2148,7 @@
                 },
                 "allowCamera": {
                     "title": "FOTOĞRAF ÇEKME",
-                    "describe": "Bu özellik etkin durumdayken, ekranınız kilitliyse herhangi bir hareket algılandığında kamera otomatik olarak fotoğraf çeker. Bu veriler cihazınızda yerel olarak işlenir. Lenovo bu verilere erişmez ya da onları kullanmaz.",
+                    "describe": "Bu özellik etkin durumdayken, ekranınız kilitliyse herhangi bir hareket algılandığında kamera otomatik olarak fotoğraf çeker. Bu veriler cihazınızda yerel olarak işlenir. Lenovo bu verilere erişmez ya da onları kullanmaz. Alarm sırasında fotoğraf çekilebildiğinden emin olmak için kamera deklanşörünü kapatmanız gerektiğini unutmayın.",
                     "checkBoxText": "Bu özelliği etkinleştir"
                 },
                 "cameraPrivacy": {

@@ -2133,10 +2133,10 @@
                 "title": "התראת Smart Motion",
                 "tooltip": "<div id='antiTheft-tooltips'>תכונה זו אינה פועלת כאשר המחשב נמצא במצב שינה או במצב כיבוי. בדקו את ההגדרות בפעולות הבאות:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>פעולות של מכסה הסגירה</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>פעולה של סוללה נמוכה/במצב קריטי</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>פעולה של מתג הפעלה</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>פעולה של לחצן שינה</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>הגדרות פסק זמן ללא פעילות למצב שינה</li></ul></div>אחרת, לא תופעל אזעקה, וגם לא יופעל צילום תמונות.</div>",
                 "desc1": "בעת הפעלת תכונה זו, המכשיר יתחיל לצפצף כאשר המסך נעול ויזוהו תנועות, במיוחד במקום ציבורי.",
-                "desc2": "Log into Windows and the alarm will be automatically turned off. To use the feature, you need to enable it again.",
+                "desc2": "היכנסו ל- Windows וההתראה תכבה אוטומטית. כדי להשתמש בתכונה צריך להפעיל אותה שוב.",
 				"note": {
-					"descriptionTitle": "Attention:",
-                    "description": "Valid sign-in options such as a password or PIN code are needed when you log into Windows. Otherwise, the Smart motion alarm feature might be mistakenly disabled by any un-authorized user who accesses your computer."
+					"descriptionTitle": "שימו לב:",
+                    "description": "בעת כניסה ל- Windows יש להשתמש באפשרויות כניסה תקפות כמו סיסמה או קוד PIN. אחרת, ייתכן שהתכונה של התראת Smart Motion‬ תושבת בטעות על ידי משתמש שאינו מורשה לגשת למחשב שלכם."
                 },
                 "alarm": {
                     "title": " האזעקה תימשך",
@@ -2148,7 +2148,7 @@
                 },
                 "allowCamera": {
                     "title": "צילום תמונות",
-                    "describe": "כאשר תכונה זו מופעלת, המצלמה מצלמת תמונות באופן אוטומטי כאשר היא מזהה תנועה כלשהי אם המסך נעול. נתונים אלה מעובדים באופן מקומי במכשיר שלכם. Lenovo אינה ניגשת אליו ואינה משתמשת בו.",
+                    "describe": "כאשר תכונה זו מופעלת, המצלמה מצלמת תמונות באופן אוטומטי כאשר היא מזהה תנועה כלשהי אם המסך נעול. נתונים אלה מעובדים באופן מקומי במכשיר שלכם. Lenovo אינה ניגשת אליו ואינה משתמשת בו. שימו לב שיש לכבות את מכסה המצלמה כדי להבטיח שהיא תוכל לצלם במהלך ההתראה.",
                     "checkBoxText": "להפעלת התכונה"
                 },
                 "cameraPrivacy": {

@@ -2133,10 +2133,10 @@
                 "title": "Avviso Smart Motion",
                 "tooltip": "<div id='antiTheft-tooltips'>Questa funzione non è disponibile quando il computer è in modalità Ibernazione o è spento. Controllare le impostazioni nelle seguenti azioni:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>azioni del coperchio di chiusura</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>azione livello di carica batteria critico/basso</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>azione pulsante di alimentazione</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>azione pulsante Sospensione</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>impostazioni timeout inattività per la modalità Ibernazione</li></ul></div>In caso contrario, l'allarme non verrà attivato, né sarà possibile scattare foto.</div>",
                 "desc1": "Quando si abilita questa funzione, il dispositivo inizierà a emettere un segnale acustico quando lo schermo è bloccato e vengono rilevati movimenti, soprattutto in un luogo pubblico.",
-                "desc2": "Log into Windows and the alarm will be automatically turned off. To use the feature, you need to enable it again.",
+                "desc2": "Accedere a Windows e l'avviso verrà disattivato automaticamente. Per utilizzare la funzione è necessario abilitarla nuovamente.",
 				"note": {
-					"descriptionTitle": "Attention:",
-                    "description": "Valid sign-in options such as a password or PIN code are needed when you log into Windows. Otherwise, the Smart motion alarm feature might be mistakenly disabled by any un-authorized user who accesses your computer."
+					"descriptionTitle": "Attenzione:",
+                    "description": "Le opzioni di accesso valide, come ad esempio una password o un codice PIN, sono necessarie quando si accede a Windows. In caso contrario, la funzione di avviso Smart Motion potrebbe essere erroneamente disabilitata da un utente non autorizzato che accede al computer."
                 },
                 "alarm": {
                     "title": " L'ALLARME DURERÀ PER",
@@ -2148,7 +2148,7 @@
                 },
                 "allowCamera": {
                     "title": "SCATTO FOTO",
-                    "describe": "Quando si abilita questa funzione, la fotocamera scatta automaticamente le foto quando rileva dei movimenti se lo schermo è bloccato. Questi dati vengono elaborati in locale sul dispositivo. Lenovo non accede a questi dati o li utilizza.",
+                    "describe": "Quando si abilita questa funzione, la fotocamera scatta automaticamente le foto quando rileva dei movimenti se lo schermo è bloccato. Questi dati vengono elaborati in locale sul dispositivo. Lenovo non accede a questi dati o li utilizza. Tenere presente che è necessario chiudere il coperchio della fotocamera per scattare foto durante l'avviso.",
                     "checkBoxText": "Abilita questa funzione"
                 },
                 "cameraPrivacy": {

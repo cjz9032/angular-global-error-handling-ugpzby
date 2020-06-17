@@ -2133,10 +2133,10 @@
                 "title": "Smartbevegelsesalarm",
                 "tooltip": "<div id='antiTheft-tooltips'>Denne funksjonen fungerer ikke når datamaskinen er i dvalemodus eller er slått av. Kontroller innstillingene i disse handlingene:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>handlinger til lokket</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>handling ved kritisk lavt / svakt batteri</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>handling for strømbryter</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>handling for hvilemodus</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>tidsavbruddinnstillinger for dvalemodus</li></ul></div>Ellers vil det ikke utløses noen alarm eller blir tatt noen bilder.</div>",
                 "desc1": "Når du aktiverer denne funksjonen, avgir enheten et lydsignal når skjermen er låst og det oppdages bevegelse, spesielt på offentlige steder.",
-                "desc2": "Log into Windows and the alarm will be automatically turned off. To use the feature, you need to enable it again.",
+                "desc2": "Logg deg på Windows og alarmen vil bli slått av automatisk. Du må aktivere funksjonen på nytt for å bruke den.",
 				"note": {
-					"descriptionTitle": "Attention:",
-                    "description": "Valid sign-in options such as a password or PIN code are needed when you log into Windows. Otherwise, the Smart motion alarm feature might be mistakenly disabled by any un-authorized user who accesses your computer."
+					"descriptionTitle": "NB:",
+                    "description": "Det kreves gyldige påloggingsalternativer, for eksempel et passord eller en PIN-kode når du logger deg på Windows. Ellers kan funksjonen Smartbevegelsesalarm bli feilaktig deaktivert av enhver ikke-autorisert bruker som får tilgang til data maskinen din."
                 },
                 "alarm": {
                     "title": " ALARMEN SKAL VARE I",
@@ -2148,7 +2148,7 @@
                 },
                 "allowCamera": {
                     "title": "TA BILDER",
-                    "describe": "Når du aktiverer denne funksjonen, tar kameraet automatisk bilder når det blir oppdaget bevegelse hvis skjermen er låst. Disse dataene behandles lokalt på enheten. Lenovo har verken tilgang til eller bruker dem.",
+                    "describe": "Når du aktiverer denne funksjonen, tar kameraet automatisk bilder når det blir oppdaget bevegelse hvis skjermen er låst. Disse dataene behandles lokalt på enheten. Lenovo har verken tilgang til eller bruker dem. Vær oppmerksom på at du bør slå av kameralukkerfunksjonen for å være sikker på at det kan ta bilder under alarmen.",
                     "checkBoxText": "Aktiver denne funksjonen"
                 },
                 "cameraPrivacy": {

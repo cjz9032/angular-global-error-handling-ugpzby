@@ -2133,10 +2133,10 @@
                 "title": "Inteligentná signalizácia pohybu",
                 "tooltip": "<div id='antiTheft-tooltips'>Táto funkcia nefunguje, keď je počítač v režime dlhodobého spánku alebo je vypnutý. Skontrolujte nastavenia nasledujúcich akcií:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>akcie pri zatvorení krytu</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>akcia pri kriticky vybitej/takmer vybitej batérii</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>akcia pri stlačení tlačidla napájania</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>funkcia pri stlačení tlačidla spánku</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>nastavenia časového limitu prechodu z režimu nečinnosti do režimu dlhodobého spánku</li></ul></div>V opačnom prípade sa nespustí budík, ani sa nedá fotografovať.</div>",
                 "desc1": "Keď povolíte túto funkciu, zariadenie začne vydávať zvukový signál, keď je obrazovka uzamknutá a zistí sa pohyb, najmä vo verejnom priestore.",
-                "desc2": "Log into Windows and the alarm will be automatically turned off. To use the feature, you need to enable it again.",
+                "desc2": "Prihláste sa do systému Windows a alarm sa automaticky vypne. Ak chcete funkciu používať, musíte ju znova povoliť.",
 				"note": {
-					"descriptionTitle": "Attention:",
-                    "description": "Valid sign-in options such as a password or PIN code are needed when you log into Windows. Otherwise, the Smart motion alarm feature might be mistakenly disabled by any un-authorized user who accesses your computer."
+					"descriptionTitle": "Upozornenie:",
+                    "description": "Pri prihlásení sa do systému Windows sú potrebné platné možnosti prihlásenia, napríklad heslo alebo kód PIN. V opačnom prípade môže inteligentnú signalizáciu pohybu omylom deaktivovať ktorýkoľvek neoprávnený používateľ, ktorý má prístup k vášmu počítaču."
                 },
                 "alarm": {
                     "title": " UPOZORNENIE BUDE TRVAŤ",
@@ -2148,7 +2148,7 @@
                 },
                 "allowCamera": {
                     "title": "SNÍMANIE FOTOGRAFIÍ",
-                    "describe": "Keď povolíte túto funkciu, fotoaparát automaticky sníma fotografie pri zistení pohybu, ak je obrazovka uzamknutá. Tieto údaje sa spracúvajú lokálne vo vašom zariadení. Spoločnosť Lenovo k nim nemá prístup a nepoužíva ich.",
+                    "describe": "Keď povolíte túto funkciu, fotoaparát automaticky sníma fotografie pri zistení pohybu, ak je obrazovka uzamknutá. Tieto údaje sa spracúvajú lokálne vo vašom zariadení. Spoločnosť Lenovo k nim nemá prístup a nepoužíva ich. Nezabudnite, že by ste mali vypnúť funkciu krytu kamery, aby mohla počas alarmu úspešne snímať zábery.",
                     "checkBoxText": "Povolenie tejto funkcie"
                 },
                 "cameraPrivacy": {
