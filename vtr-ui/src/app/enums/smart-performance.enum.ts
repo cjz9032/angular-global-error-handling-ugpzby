@@ -40,7 +40,7 @@ export enum PaymentPage{
 	SOURCEQUERYPARAMETER='&source=',
 	SLASH='/',
 	TRUE='true',
-	ORDERDETAILS = 'https://uatpcsupport.lenovo.com/api/v4/upsell/smart/getorders?serialNumber=',
+	ORDERDETAILS = 'http://uatpcsupport.lenovo.com/nl/nl/api/v4/upsell/smart/getorders?serialNumber=',
 	ORDERWAITINGTIME = 10 // MINUTES
 
 }
