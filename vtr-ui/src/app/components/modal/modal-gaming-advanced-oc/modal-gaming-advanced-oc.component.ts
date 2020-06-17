@@ -318,4 +318,10 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 			}
 		} catch (error) { }
 	}
+
+	public removeSpaces(str: any) {
+		if (str) {
+			return str.replace(/ /g,'_').toLowerCase();
+		}
+  }
 }
