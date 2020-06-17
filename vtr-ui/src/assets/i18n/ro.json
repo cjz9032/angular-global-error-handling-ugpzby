@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Setări mod termic",
                     "thermalMode2SettingDesc": "Alegeți modul pe care doriți să îl utilizați.",
                     "fnQDesc": "Puteți comuta modul utilizând comanda rapidă Fn+Q.",
-                    "perormanceTitle": "Mod performanță",
+                    "performanceTitle": "Mod performanță",
                     "performanceDesc": "Măriți performanța computerului crescând viteza ventilatorului și consumul de energie. ",
                     "OCDesc": "Puteți porni funcția Overclocking.",
                     "ac_dcDesc": "Modul Performanță este disponibil numai atunci când este conectat un adaptor de c. a.",
@@ -1275,7 +1275,8 @@
                             "description1": "Activarea unei taxe particularizate pentru baterie va permite ca timpul general de utilizare a bateriei să dureze mai mult pe măsură ce utilizaţi acest dispozitiv.Cu toate acestea, fără o încărcare completă, bateria va avea o durată de utilizare mai mică.",
                             "description2": "Pentru a activa pe deplin această caracteristică, deconectați aparatul și lăsați bateria să se descarce până la sau sub pragul de oprire a încărcării.",
                             "enable": "ACTIVARE",
-                            "cancel": "ANULARE"
+                            "cancel": "ANULARE",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Pornire încărcare când este sub",

@@ -2,6 +2,8 @@ import { Injectable } from "@angular/core";
 import { CommonService } from "../common/common.service";
 import { VantageShellService } from "../vantage-shell/vantage-shell.service";
 import { Subject } from 'rxjs';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { PaymentPage } from 'src/app/enums/smart-performance.enum';
 
 @Injectable({
 	providedIn: "root"
@@ -10,7 +12,7 @@ export class SmartPerformanceService {
 	getSmartPerformance: any;
 	public isShellAvailable = false;
 	scanningStopped = new Subject<boolean>()
-	constructor(shellService: VantageShellService) {
+	constructor(shellService: VantageShellService, private http: HttpClient) {
 		
 		this.getSmartPerformance = shellService.getSmartPerformance();
 		if (this.getSmartPerformance) {
@@ -158,5 +160,15 @@ export class SmartPerformanceService {
 		} catch (error) {
 			throw new Error(error.message);
 		}
+	}
+
+	getPaymentDetails(serialNumber): Promise<any> {
+		const reqUrl = PaymentPage.ORDERDETAILS;
+		return new Promise(resolve => {
+			const xhr = new XMLHttpRequest();
+			xhr.open('GET', reqUrl + serialNumber, true);
+			xhr.onreadystatechange = () => {if (xhr.readyState === 4 && xhr.status === 200) {  resolve(JSON.parse(xhr.responseText)); }};
+			xhr.send();
+		  });
 	}
 }

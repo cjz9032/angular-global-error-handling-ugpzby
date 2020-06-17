@@ -189,7 +189,7 @@
                     "thermalMode2SettingTitle": "Inst. för temperaturläge",
                     "thermalMode2SettingDesc": "Välj det läge du vill använda.",
                     "fnQDesc": "Du kan växla läge med kortkommandot Fn+Q.",
-                    "perormanceTitle": "Prestandaläge",
+                    "performanceTitle": "Prestandaläge",
                     "performanceDesc": "Öka datorns prestanda med högre fläkthastighet och effektförbrukning. ",
                     "OCDesc": "Du kan välja att slå på överklockningsfunktionen.",
                     "ac_dcDesc": "Prestandaläget går bara att använda när nätadaptern är inkopplad.",
@@ -1275,7 +1275,8 @@
                             "description1": "Genom att aktivera anpassad batteriladdning kan du få batteriet att räcka längre när du använder enheten.Mindre än full laddning ger kortare batteritid under körning.",
                             "description2": "Aktivera funktionen genom att koppla från enheten ochladda ur batteriet till stoppunkten eller mer.",
                             "enable": "AKTIVERA",
-                            "cancel": "AVBRYT"
+                            "cancel": "AVBRYT",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Börja ladda när nivån är under",

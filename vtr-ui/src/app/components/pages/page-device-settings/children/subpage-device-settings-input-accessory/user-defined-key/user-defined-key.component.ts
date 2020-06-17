@@ -39,7 +39,7 @@ export class UserDefinedKeyComponent implements OnInit, OnDestroy {
 	public counter = 0;
 	public keyboardMappedValues: any;
 	private regExForUrlWithParam = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/;
-	public metricsParent  = CommonMetricsModel.ParentDeviceSettings;
+	public metricsParent = CommonMetricsModel.ParentDeviceSettings;
 
 	constructor(
 		private keyboardService: InputAccessoriesService,
@@ -52,36 +52,36 @@ export class UserDefinedKeyComponent implements OnInit, OnDestroy {
 				text: 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option1',
 				value: 1,
 				name: '',
-				placeholder:'',
-				metricsValue: 'none',
+				placeholder: '',
+				metricsValue: 'please select',
 			},
 			{
 				text: 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option4',
 				value: 4,
 				name: OPEN_APPLICATIONS_OR_FILES.str,
-				placeholder:'',
-				metricsValue: OPEN_APPLICATIONS_OR_FILES.str
+				placeholder: '',
+				metricsValue: 'open applications or files'
 			},
 			{
 				text: 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option2',
 				value: 2,
-				name: INPUT_TEXT.str,
-				placeholder:'',
-				metricsValue: INPUT_TEXT.str
+				name: OPEN_WEB.str,
+				placeholder: '',
+				metricsValue: 'open website'
 			},
 			{
 				text: 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option5',
 				value: 5,
 				name: INVOKE_KEY_SEQUENCE.str,
-				placeholder:'',
-				metricsValue: INVOKE_KEY_SEQUENCE.str
+				placeholder: '',
+				metricsValue: 'invoke key sequence'
 			},
 			{
 				text: 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option3',
 				value: 3,
-				name: OPEN_WEB.str,
-				placeholder:'',
-				metricsValue: OPEN_WEB.str
+				name: INPUT_TEXT.str,
+				placeholder: '',
+				metricsValue: 'enter text'
 			}
 		];
 		this.selectedValue = this.userDefinedKeyOptions[0];

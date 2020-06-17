@@ -69,7 +69,6 @@ export class ModalArticleDetailComponent implements OnInit {
 						.replace(/(<\/video>)/gi, '</iframe>')
 						.replace(/(autoplay=\")/gi, 'allow="');
 					this.articleBody = this.sanitizer.bypassSecurityTrustHtml(replaceBody);
-					setTimeout(() => { this.articleDetailModal.nativeElement.focus(); }, 0);
 					this.contentStatus = this.AllContentStatus.Content;
 					if (response.Results.Category && response.Results.Category.length > 0) {
 						this.articleCategory = response.Results.Category.map((category: any) => category.Id).join(' ');

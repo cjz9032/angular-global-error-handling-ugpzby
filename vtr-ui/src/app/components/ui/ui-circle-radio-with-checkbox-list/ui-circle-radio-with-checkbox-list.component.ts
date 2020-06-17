@@ -177,7 +177,7 @@ export class UiCircleRadioWithCheckBoxListComponent implements OnInit, OnChanges
 				const metricsData = {
 					ItemParent: this.metricsParent || this.activatedRoute.snapshot.data.pageName,
 					ItemType: 'FeatureClick',
-					ItemName: `radio.${label}`,
+					ItemName: radio.metricsItem,
 					ItemValue: radio.isChecked
 				};
 				this.metrics.sendMetrics(metricsData);

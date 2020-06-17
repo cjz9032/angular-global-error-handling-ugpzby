@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Paramètres mode thermique",
                     "thermalMode2SettingDesc": "Sélectionnez le mode que vous souhaitez utiliser.",
                     "fnQDesc": "Vous pouvez changer de mode à l'aide du raccourci Fn+Q.",
-                    "perormanceTitle": "Mode de performance",
+                    "performanceTitle": "Mode de performance",
                     "performanceDesc": "Améliorez les performances de votre ordinateur avec une vitesse de ventilateur supérieure et une consommation d'énergie plus élevée. ",
                     "OCDesc": "Vous pouvez choisir d'activer la fonction overclocking.",
                     "ac_dcDesc": "Le mode de performance n'est applicable que lorsque le boîtier d'alimentation est branché.",
@@ -1275,7 +1275,8 @@
                             "description1": "Le fait d'activer la charge de batterie personnalisée optimise l'état de santé général de la batterie lorsque vous utilisez ce périphérique.Toutefois, si la batterie n'est pas entièrement chargée, son autonomie sera réduite.",
                             "description2": "Afin d'activer pleinement cette fonctionnalité, veuillez débrancher votre appareil et laisser votre batterie se vider jusqu'au seuil d'arrêt de chargement ou en dessous de celui-ci.",
                             "enable": "ACTIVER",
-                            "cancel": "ANNULER"
+                            "cancel": "ANNULER",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Commence le chargement quand le niveau est inférieur à",

@@ -41,13 +41,13 @@ export class UiAddReduceButtonComponent implements OnInit {
           sq2 = 0;
       }
       m = Math.pow(10,Math.max(sq1, sq2));
-      
+
       if(type){
           return (Math.round(num1 * m) + Math.round(num2 * m)) / m;
       }else{
           return (Math.round(num1 * m) - Math.round(num2 * m)) / m;
       }
-      
+
   }
   public reduceFn(){
       if(this.value == this.minData){
@@ -78,7 +78,7 @@ export class UiAddReduceButtonComponent implements OnInit {
 
   public hideColorPicker(){
       if(document.getElementById("colorPicker")){
-         document.getElementById("colorPicker").style.display = "none"; 
+         document.getElementById("colorPicker").style.display = "none";
       }
   }
 }
