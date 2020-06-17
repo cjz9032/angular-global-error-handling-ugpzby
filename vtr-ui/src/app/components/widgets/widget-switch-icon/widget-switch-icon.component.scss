@@ -57,14 +57,40 @@
 			box-shadow: 0px 0px 0.1rem 0.1rem $go;
 			background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
 			// outline: none;
+			
+				@media #{$white-on-black} {				
+					@include high-contrast-black-background-transparent;
+					box-shadow: 0px 0px 0.1rem 0.1rem $high-contrast-black-cyan;
+				}	
+				@media #{$black-on-white} {
+					@include high-contrast-white-background-transparent;
+					box-shadow: 0px 0px 0.1rem 0.1rem $high-contrast-white-dark-magenta;
+				}	
+				
 
 			.title {
 				color: $light;
+				@media #{$white-on-black} {	
+				@include  high-contrast-black-text-color;
+				}
+				@media #{$black-on-white} {
+				@include high-contrast-white-text-color;
+				}
 			}
 
 			.icon-container {
 				background: linear-gradient($gradient_angle_reverse, $go 0%, $go_lighter 100%);
 				color: $light;
+				@media #{$white-on-black} {				
+					@include  high-contrast-black-text-color;
+					@include high-contrast-black-background-transparent;
+					
+				}	
+				@media #{$black-on-white} {
+					@include  high-contrast-white-text-color;
+					@include high-contrast-white-background-transparent;
+					
+				}	
 			}
 			&:focus {
 				box-shadow: 0px 0px 0.1rem 0.1rem $go;
@@ -75,14 +101,45 @@
 			box-shadow: 0px 0px 0.1rem 0.1rem $shade_lighter;
 			background: linear-gradient($gradient_angle, $shade_lighter 0%, $light 100%);
 			// outline: none;
+			@media #{$white-on-black} {				
+				@include high-contrast-black-background-transparent;
+				box-shadow: 0px 0px 0.1rem 0.1rem $high-contrast-black-disabled-green;
+				
+			}	
+			@media #{$black-on-white} {
+				@include high-contrast-white-background-transparent;
+				box-shadow: 0px 0px 0.1rem 0.1rem $high-contrast-white-disabled-maroon;
+				
+			}	
 
 			.title {
 				color: $shade_darker;
+
+				@media #{$white-on-black} {	
+					@include high-contrast-black-text-color-disabled;
+					
+					}
+					@media #{$black-on-white} {
+						@include high-contrast-white-text-color-disabled;
+						
+					}
 			}
 
 			.icon-container {
 				background: linear-gradient($gradient_angle_reverse, $shade_lighter 0%, $light 100%);
 				color: $shade_darker;
+				@media #{$white-on-black} {				
+					@include high-contrast-black-background-transparent;
+					@include high-contrast-black-text-color-disabled;
+					
+				}	
+				@media #{$black-on-white} {
+					@include high-contrast-white-background-transparent;
+					@include high-contrast-white-text-color-disabled;
+					
+				}	
+				
+				
 			}
 
 			&:focus {
@@ -176,9 +233,23 @@
 			font-weight: $weight_medium;
 			.off-label {
 				color: $shade_darker;
+				@media #{$white-on-black} {	
+					@include high-contrast-black-text-color-disabled;
+					}
+					@media #{$black-on-white} {
+						@include high-contrast-white-text-color-disabled;
+					}
 			}
+
+			
 			.on-label {
 				color: $light;
+				@media #{$white-on-black} {	
+					@include  high-contrast-black-text-color;
+					}
+					@media #{$black-on-white} {
+					@include high-contrast-white-text-color;
+					}
 			}
 			// @media #{$breakpoint_lg} {
 			// 	font-size: 2rem;

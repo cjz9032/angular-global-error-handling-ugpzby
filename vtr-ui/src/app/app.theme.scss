@@ -642,3 +642,12 @@ $high-contrast-white-disabled-maroon: #610000;
 @mixin arrow-before {
 border: none;
 }
+@mixin high-contrast-black-background-transparent{
+			
+		background: transparent;
+}
+	
+	@mixin high-contrast-white-background-transparent{
+	
+		background: transparent;
+	}
