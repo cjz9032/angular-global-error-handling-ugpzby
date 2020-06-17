@@ -258,6 +258,7 @@ export enum LocalStorageKey {
 	IsFreeFullFeatureEnabled = '[LocalStorageKey] IsFreeFullFeatureEnabled',
 	IsSmartPerformanceForceClose = '[LocalStorageKey] IsSmartPerformanceForceClose',
 	SmartPerformanceSubscriptionDetails = '[LocalStorageKey] SmartPerformanceSubscriptionDetails',
+	SmartPerformanceSubscriptionModalStatus = '[LocalStorageKey] SmartPerformanceSubscriptionModalStatus',
 	HasSubscribedScanCompleted = '[LocalStorageKey] HasSubscribedScanCompleted',
 	IsPowerPageAvailable = '[LocalStorageKey] isPowerPageAvailable',
 	DashboardWelcomeTexts = '[LocalStorageKey] DashboardWelcomeTexts',

@@ -70,9 +70,7 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 		this.cancelPaymentRequest.emit();
 		this.activeModal.close('close');
 	}
-	selectBilledMonthly() {
 	
-	}
 
 	@HostListener('window: focus')
 	onFocus(): void {

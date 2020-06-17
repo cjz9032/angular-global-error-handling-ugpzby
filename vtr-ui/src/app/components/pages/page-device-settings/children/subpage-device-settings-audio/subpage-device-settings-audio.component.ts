@@ -345,6 +345,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 					customIcon: '',
 					hideIcon: false,
 					processLabel: true,
+					metricsItem: `radio.dolby-audio.${dolbyMode}`
 				});
 			});
 		}
@@ -376,6 +377,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 					customIcon: micMode.toLowerCase() === 'normal' ? 'LE-VoiceRecognition2x': '',
 					hideIcon: micMode.toLowerCase() === 'normal',
 					processLabel: true,
+					metricsItem: `radio.optimize-mic.${micMode}`
 				});
 			});
 		}

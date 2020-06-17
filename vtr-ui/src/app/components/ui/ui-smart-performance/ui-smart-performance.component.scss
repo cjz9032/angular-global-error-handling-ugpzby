@@ -53,7 +53,7 @@
 						margin-bottom: 1.2rem;
 					}
 					@media #{$breakpoint_sm}{
-						font-size: 2.5rem;
+						font-size: 2rem;
 						margin-bottom: 1.2rem;
 					}
 				}
@@ -66,8 +66,9 @@
 					line-height: 2.4rem;
 					@media #{$breakpoint_sm}{
 						font-weight: $weight_light;
-						font-size: $fontsize_md;
+						font-size: $fontsize_sm;
 						margin-bottom: 3.2rem;
+						line-height: auto;
 					}
 				}
 			}
@@ -84,8 +85,8 @@
 				@media #{$breakpoint_sm} {
 					font-size: 9.7rem;
 					margin-top: -2rem;
-					width: 9.7rem;
-					height: 8.4rem;
+					width: 8rem;
+					height: 8rem;
 				}
 			}
 			.action-button {
@@ -101,9 +102,14 @@
 				text-align: center;
 				border: 0rem;
 				cursor: pointer;
-				@media #{$breakpoint_sm}{
-					margin-bottom: -1rem;
-				}
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			@media #{$breakpoint_sm}{
+				font-size: 1.2rem;
+				padding:0rem 2.5rem;
+				margin-bottom:-1rem;					
+			}
 			}
 		}
 		.pc-performance-block {
@@ -123,13 +129,13 @@
 				}
 			}
 			h2 {
-				font-size: 2.5rem;
+				font-size: $fontsize_xl;
 				font-weight: $weight_light;
 				color: $shade_blue;
 				margin-bottom: 2rem;
 				padding: 0;
 				@media #{$breakpoint_sm}{
-					font-size: 2.1rem;
+					font-size: $fontsize_lg;
 					margin-bottom: 1rem;
 				}
 			}
@@ -141,6 +147,10 @@
 				max-width: 60rem;
 				@media #{$breakpoint_xl}{
 					max-width: 54rem;
+				}
+				@media #{$breakpoint_sm}{
+					font-size: $fontsize_xs;
+					margin-bottom: 1rem;
 				}
 			}
 			.performance-slider-block {
@@ -206,7 +216,7 @@
 				}
 				.pc-status-info{
 					margin-left: 2rem;
-					.info-text{
+					.info-text{						
 						color: $alt;
 						margin-top: 1.8rem;
 						margin-bottom: 0rem;
@@ -220,6 +230,8 @@
 							width: calc(60.5% - 2rem);
 						}
 						span{
+							background: $grey_lighter;
+							padding:0rem 0.2rem;
 							position: relative;
 							z-index: 9;
 						}
@@ -356,6 +368,7 @@
 						@media #{$breakpoint_sm}{
 							width: auto;
 							min-width: 7rem;
+							position:static;
 						}
 						&::after {
 							content: '';
@@ -404,7 +417,9 @@
 							max-width: 8.1rem;
 							margin-top: 0.6rem;
 							line-height: 1.4rem;
-							color: #272A3B;
+							color: #272A3B;							
+							overflow: hidden;
+							text-overflow: ellipsis;
 							@media #{$breakpoint_xl} {
 								font-size: 1rem;
 								line-height: 1rem;
@@ -493,13 +508,20 @@
 					cursor: pointer;
 					margin-right: 3rem;
 					max-width: 25rem;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
 					@media #{$breakpoint_md}{
 						margin-right: 2rem;
 					}
 					@media #{$breakpoint_sm}{
-						font-size: 1.4rem;
+						font-size: 1.2rem;
 						max-width: 15.2rem;
+						padding:0rem 1rem;					
 					}
+				}
+				:after{
+					content:'...';
 				}
 				.description {
 					max-width: 40rem;

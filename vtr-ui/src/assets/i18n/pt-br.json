@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Config. do Modo Térmico",
                     "thermalMode2SettingDesc": "Escolha o modo que deseja usar.",
                     "fnQDesc": "Você pode alternar o modo usando o atalho Fn+Q.",
-                    "perormanceTitle": "Modo de Desempenho",
+                    "performanceTitle": "Modo de Desempenho",
                     "performanceDesc": "Aumente o desempenho do computador com velocidade do ventilador e consumo de energia mais altos. ",
                     "OCDesc": "Você pode escolher ativar a função de Overclocking.",
                     "ac_dcDesc": "O Modo de Desempenho é aplicável apenas quando o adaptador de energia CA está conectado.",
@@ -1275,7 +1275,8 @@
                             "description1": "Ativar uma carga de bateria personalizada permitirá que a integridade geral da bateria dure mais conforme você usar este dispositivo.No entanto, não ter uma carga máxima permitirá menos tempo de execução da vida útil da bateria.",
                             "description2": "Para ativar completamente esse recurso, desconecte sua máquina epermita que a bateria descarregue até ou abaixo do limite de interrupção de carga.",
                             "enable": "ATIVAR",
-                            "cancel": "CANCELAR"
+                            "cancel": "CANCELAR",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Iniciar carregamento quando abaixo de",
@@ -1766,7 +1767,8 @@
                             "title": "Reiniciar o computador",
                             "description": "Alterações à função padrão da fileira superior requerem a reinicialização do computador. Tem certeza de que deseja reiniciar?",
                             "reboot": "REINICIALIZAR",
-                            "cancel": "NÃO AGORA"
+                            "cancel": "NÃO AGORA",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Para acessar as funções F1-F12, pressione Fn e as teclas da fileira superior.",
@@ -2131,9 +2133,10 @@
                 "title": "Alerta de movimento inteligente",
                 "tooltip": "<div id='antiTheft-tooltips'>Este recurso não funciona quando o computador está no modo de hibernação ou desligado. Verifique as configurações nas seguintes ações:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>ações de fechamento da tampa</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>ação de bateria fraca/crítica</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>ação do botão liga/desliga</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>ação do botão de suspensão</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>configurações de tempo limite inativo para hibernação</li></ul></div>Caso contrário, ele não dispara o alarme nem tira fotos.</div>",
                 "desc1": "Ao ativar esse recurso, o dispositivo começará a emitir um sinal sonoro quando a tela estiver bloqueada e movimentos forem detectados, principalmente em um local público.",
-                "desc2": "Para descartar o alarme, faça login no Windows.",
-                "note": {
-                    "description": "Após o login no sistema, esse recurso será desativado automaticamente. Você precisa habilitá-lo novamente para usá-lo."
+                "desc2": "Faça login no Windows e o alarme será desativado automaticamente. Para usar o recurso, você precisa habilitá-lo novamente.",
+				"note": {
+					"descriptionTitle": "Atenção:",
+                    "description": "Opções de entrada válidas, como senha ou código PIN, são necessárias quando você faz login no Windows. Caso contrário, o recurso de alarme por movimento inteligente pode ser desativado por engano por qualquer usuário não autorizado que acesse o seu computador."
                 },
                 "alarm": {
                     "title": " O ALARME PERMANECERÁ ATIVO POR",
@@ -2145,7 +2148,7 @@
                 },
                 "allowCamera": {
                     "title": "TIRAR FOTOS",
-                    "describe": "Ao ativar esse recurso, a câmera tira fotos automaticamente ao detectar movimentos se a tela estiver bloqueada. Esses dados são processados localmente no dispositivo. A Lenovo não acessa nem usa esses dados.",
+                    "describe": "Ao ativar esse recurso, a câmera tira fotos automaticamente ao detectar movimentos se a tela estiver bloqueada. Esses dados são processados localmente no dispositivo. A Lenovo não acessa nem usa esses dados. Lembre-se de desligar o obturador da câmera para garantir que ela possa tirar fotos com sucesso durante o alarme.",
                     "checkBoxText": "Ativar esse recurso"
                 },
                 "cameraPrivacy": {
@@ -3771,7 +3774,8 @@
                 "txtTo": "Para",
                 "txtGo": "Ir",
                 "summaryCaption": "espaço solicitado",
-                "fixes": "correções"
+                "fixes": "correções",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Resultados das últimas cinco verificações:",

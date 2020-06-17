@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "サーマル・モード設定",
                     "thermalMode2SettingDesc": "使用するモードを選択します。",
                     "fnQDesc": "ショートカット Fn+Q を使用してモードを切り替えることができます。",
-                    "perormanceTitle": "パフォーマンス・モード",
+                    "performanceTitle": "パフォーマンス・モード",
                     "performanceDesc": "ファン速度と電力消費を上げコンピューターのパフォーマンスを向上させます。",
                     "OCDesc": "クロックアップ機能をオンにできます。",
                     "ac_dcDesc": "パフォーマンス・モードは、AC 電源アダプターが接続されている場合にのみ適用できます。",
@@ -1275,7 +1275,8 @@
                             "description1": "バッテリーのカスタム充電を有効にすると、バッテリー状態がより長期間良好に保たれる可能性が高くなります。ただし、フル充電したときよりバッテリー持ち時間は短くなります。",
                             "description2": "この機能を完全に有効にするには、ACアダプターを抜き、充電停止しきい値以下までバッテリーを放電してください。",
                             "enable": "有効にする",
-                            "cancel": "キャンセル"
+                            "cancel": "キャンセル",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "次の時点を下回った場合に充電を開始",
@@ -1766,7 +1767,8 @@
                             "title": "コンピューターを再起動する",
                             "description": "最上部の行の機能を変更するには、コンピューターを再起動する必要があります。再起動しますか?",
                             "reboot": "リブート",
-                            "cancel": "今はしない"
+                            "cancel": "今はしない",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "F1 ～ F12 機能を使用するには、Fn および最上部の行のキーを押します。",
@@ -2131,9 +2133,10 @@
                 "title": "スマート・モーション・アラーム",
                 "tooltip": "<div id='antiTheft-tooltips'>この機能は、コンピューターが休止状態または電源がオフのときは機能しません。次の動作の設定を確認してください。<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>閉じる動作</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>重要なアクション/バッテリー低下時の動作</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>電源ボタンの動作</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>スリープ・ボタンの動作</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>休止状態までのアイドル・タイムアウト設定</li></ul></div>それ以外の場合は、アラームがトリガーされず、写真も撮られません。</div>",
                 "desc1": "この機能を有効にした場合は、画面がロックされた状態で、特に公共の場所で動きが検出されると、デバイスのビープ音が鳴ります。",
-                "desc2": "アラームを解除するには、Windows にログインしてください。",
-                "note": {
-                    "description": "システムに正しくログインすると、この機能は自動的にオフになります。使用するには、再度有効にする必要があります。"
+                "desc2": "Windows にログインすると、アラームは自動的にオフになります。機能を使用するには、再度有効にする必要があります。",
+				"note": {
+					"descriptionTitle": "重要:",
+                    "description": "Windows にログインするときは、パスワードや PIN コードなどの有効なサインイン・オプションが必要です。そうしないと、スマート・モーション・アラーム機能がコンピューターにアクセスする権限のないユーザーによって誤って無効にされる可能性があります。"
                 },
                 "alarm": {
                     "title": " アラームの継続時間",
@@ -2145,7 +2148,7 @@
                 },
                 "allowCamera": {
                     "title": "写真撮影",
-                    "describe": "この機能を有効にした場合、画面がロックされた状態で動きが検出されると、カメラによって自動的に写真が撮影されます。このデータはデバイスでローカルに処理されます。Lenovo はアクセスも使用もしません。",
+                    "describe": "この機能を有効にした場合、画面がロックされた状態で動きが検出されると、カメラによって自動的に写真が撮影されます。このデータはデバイスでローカルに処理されます。Lenovo はアクセスも使用もしません。アラーム発生時に正常に写真を撮れるようにするには、カメラ・シャッターをオフにする必要があることに注意してください。",
                     "checkBoxText": "この機能を有効にする"
                 },
                 "cameraPrivacy": {
@@ -3771,7 +3774,8 @@
                 "txtTo": "何日まで",
                 "txtGo": "移動",
                 "summaryCaption": "解放される容量",
-                "fixes": "修正"
+                "fixes": "修正",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "直近 5 件のスキャン結果:",

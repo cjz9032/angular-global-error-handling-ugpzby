@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Ustawienia trybu term.",
                     "thermalMode2SettingDesc": "Wybierz tryb, którego chcesz używać.",
                     "fnQDesc": "Możesz przełączyć tryb za pomocą skrótu Fn+Q.",
-                    "perormanceTitle": "Tryb wydajny",
+                    "performanceTitle": "Tryb wydajny",
                     "performanceDesc": "Zwiększ wydajność swojego komputera z wyższą prędkością wentylatora i większym zużyciem energii. ",
                     "OCDesc": "Możesz włączyć funkcję Przetaktowania.",
                     "ac_dcDesc": "Tryb wydajności ma zastosowanie tylko wtedy, gdy podłączony jest zasilacz sieciowy.",
@@ -1275,7 +1275,8 @@
                             "description1": "Włączenie niestandardowego progu ładowania akumulatora umożliwi dłuższe utrzymywanie akumulatora w dobrym stanie podczas korzystania z tego urządzenia.Niepełne ładowanie akumulatora skróci jednak czas pracy na nim.",
                             "description2": "W celu pełnego włączenia tej funkcji należy odłączyć komputer od zasilania z sieci elektrycznej ipoczekać, aż stopień naładowania akumulatora spadnie co najmniej do wartości progu zatrzymania ładowania.",
                             "enable": "WŁĄCZ",
-                            "cancel": "ANULUJ"
+                            "cancel": "ANULUJ",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Rozpocznij ładowanie poniżej",
@@ -1766,7 +1767,8 @@
                             "title": "Uruchom ponownie komputer",
                             "description": "Aby zmiana funkcji klawisza z górnego wiersza zaczęła obowiązywać, należy ponownie uruchomić komputer. Czy na pewno chcesz uruchomić ponownie?",
                             "reboot": "URUCHOM PONOWNIE",
-                            "cancel": "NIE TERAZ"
+                            "cancel": "NIE TERAZ",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Aby uzyskać dostęp do klawiszy F1-F12, należy przytrzymać klawisz Fn, a następnie nacisnąć odpowiedni klawisz w górnym rzędzie.",
@@ -2131,9 +2133,10 @@
                 "title": "Inteligentny alert wykrycia ruchu",
                 "tooltip": "<div id='antiTheft-tooltips'>Ta funkcja nie działa, gdy komputer znajduje się w trybie hibernacji lub jest wyłączony. Sprawdź ustawienia dotyczące czynności wykonywanych w następujących sytuacjach:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>czynności wykonywane po zamknięciu pokrywy</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>czynność wykonywana w przypadku niskiego/krytycznie niskiego poziomu naładowania akumulatora</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>czynność wykonywana po naciśnięciu przycisku zasilania</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>czynność wykonywana po naciśnięciu przycisku uśpienia</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>ustawienia limitu czasu bezczynności do przełączenia w stan hibernacji</li></ul></div>W przeciwnym razie nie zostanie uruchomiony alarm ani nie zostaną wykonane zdjęcia.</div>",
                 "desc1": "Jeśli włączysz tę funkcję, urządzenie zacznie emitować sygnał dźwiękowy, gdy po zablokowaniu ekranu zostanie wykryty ruch — zwłaszcza, jeśli urządzenie znajduje się w miejscu publicznym.",
-                "desc2": "Aby wyłączyć alarm, zaloguj się do systemu Windows.",
-                "note": {
-                    "description": "Po pomyślnym zalogowaniu się do systemu nastąpi automatyczne wyłączenie funkcji. Aby ponownie użyć tej funkcji, należy jeszcze raz ją włączyć."
+                "desc2": "Zaloguj się do systemu Windows, a alarm zostanie automatycznie wyłączony. Aby użyć tej funkcji, musisz ponownie ją włączyć.",
+				"note": {
+					"descriptionTitle": "Uwaga:",
+                    "description": "Podczas logowania do systemu Windows należy skorzystać z jednej z prawidłowych opcji logowania, takich jak hasło lub kod PIN. W przeciwnym razie funkcja inteligentnego alertu wykrycia ruchu może zostać omyłkowo wyłączona przez dowolnego nieautoryzowanego użytkownika uzyskującego dostęp do komputera."
                 },
                 "alarm": {
                     "title": " CZAS TRWANIA ALARMU",
@@ -2145,7 +2148,7 @@
                 },
                 "allowCamera": {
                     "title": "WYKONYWANIE ZDJĘĆ",
-                    "describe": "Jeśli włączysz tę funkcję, w przypadku wykrycia ruchu po zablokowaniu ekranu kamera automatycznie zacznie robić zdjęcia. Dane są przetwarzane lokalnie na twoim urządzeniu. Lenovo nie ma do nich dostępu ani z nich nie korzysta.",
+                    "describe": "Jeśli włączysz tę funkcję, w przypadku wykrycia ruchu po zablokowaniu ekranu kamera automatycznie zacznie robić zdjęcia. Dane są przetwarzane lokalnie na twoim urządzeniu. Lenovo nie ma do nich dostępu ani z nich nie korzysta. Należy pamiętać o wyłączeniu zasuwki kamery, aby umożliwić wykonywanie zdjęć po aktywacji alarmu.",
                     "checkBoxText": "Włącz tę funkcję"
                 },
                 "cameraPrivacy": {
@@ -3771,7 +3774,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

@@ -98,8 +98,7 @@ export class UiSmartPerformanceComponent implements OnInit, OnChanges {
 		}
 	}
 	checkReadiness() {
-		console.log('readiness called-------');
-		this.smartPerformanceService.getReadiness()
+        this.smartPerformanceService.getReadiness()
 			.then((getReadinessFromService: any) => {
 				this.logger.info('ui-smart-performance.ngOnInit.getReadiness.then', getReadinessFromService);
 				if (!getReadinessFromService) {
@@ -115,7 +114,7 @@ export class UiSmartPerformanceComponent implements OnInit, OnChanges {
 			.catch(error => {
 				this.logger.error('ui-smart-performance.ngOnInit.getReadiness.then', error);
 			})
-	}
+    }
 
 	async scheduleScan(scantype, frequency, day, time, date) {
 		const payload = {

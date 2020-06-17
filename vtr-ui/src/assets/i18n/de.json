@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Einstellung Wärmemodus",
                     "thermalMode2SettingDesc": "Wählen Sie den gewünschten Modus aus.",
                     "fnQDesc": "Sie können den Modus über die Tastenkombination Fn+Q wechseln.",
-                    "perormanceTitle": "Leistungsmodus",
+                    "performanceTitle": "Leistungsmodus",
                     "performanceDesc": "Steigert die Leistung Ihres Computers. Dies führt zu höherer Lüftergeschwindigkeit und mehr Stromverbrauch. ",
                     "OCDesc": "Sie können die Overclocking-Funktion aktivieren.",
                     "ac_dcDesc": "Der Leistungsmodus kann nur eingesetzt werden, wenn das Netzteil angeschlossen ist.",
@@ -1275,7 +1275,8 @@
                             "description1": "Durch die Aktivierung einer angepassten Akkuladung verlängert sich die Gesamtnutzungszeit des Akkus beim Verwenden dieses Geräts.Wenn Sie den Akku jedoch nicht komplett aufladen, ist die Akkulebenszeit kürzer.",
                             "description2": "Um diese Funktion komplett zu aktivieren, trennen Sie bitte Ihr Gerät von der Stromversorgung undwarten Sie, bis der Akku ganz entladen ist oder die Kapazität unter dem Schwellenwert liegt.",
                             "enable": "AKTIVIEREN",
-                            "cancel": "ABBRECHEN"
+                            "cancel": "ABBRECHEN",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Aufladen starten bei",
@@ -1766,7 +1767,8 @@
                             "title": "Computer neu starten",
                             "description": "Nach Ändern der Standardfunktion der oberen Reihe müssen Sie Ihren Computer neu starten. Möchten Sie wirklich neu starten?",
                             "reboot": "NEU STARTEN",
-                            "cancel": "NICHT JETZT"
+                            "cancel": "NICHT JETZT",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Um die F1-F12-Funktion zu verwenden, drücken Sie die Fn-Taste und die Tasten in der obersten Reihe.",
@@ -2131,9 +2133,10 @@
                 "title": "Intelligenter Bewegungsalarm",
                 "tooltip": "<div id='antiTheft-tooltips'>Diese Funktion funktioniert nicht, wenn sich der Computer im Ruhezustand befindet oder ausgeschaltet ist. Überprüfen Sie die Einstellungen der folgenden Aktionen:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>Aktionen beim Zuklappen</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>Aktion bei kritischem/niedrigem Akkuzustand</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>Aktion für Netzschalter</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>Aktion für Energiespartaste</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>Einstellungen für Leerlaufzeitüberschreitung zu Ruhezustand</li></ul></div>Andernfalls wird kein Alarm ausgelöst und es werden keine Fotos gespeichert.</div>",
                 "desc1": "Wenn diese Funktion aktiviert ist, beginnt die Einheit zu piepen, wenn der Bildschirm gesperrt ist und Bewegungen erkannt werden, vor allem an einem öffentlichen Ort.",
-                "desc2": "Melden Sie sich zum Beenden des Alarms bei Windows an.",
-                "note": {
-                    "description": "Wenn Sie sich erfolgreich beim System angemeldet haben, wird die Funktion automatisch ausgeschaltet. Sie müssen sie erneut aktivieren, um sie verwenden zu können."
+                "desc2": "Melden Sie sich bei Windows an und der Alarm wird automatisch ausgeschaltet. Sie müssen die Funktion erneut aktivieren, um sie verwenden zu können.",
+				"note": {
+					"descriptionTitle": "Achtung:",
+                    "description": "Für die Anmeldung bei Windows sind gültige Anmeldeoptionen erforderlich, z. B. ein Kennwort oder PIN-Code. Andernfalls kann die Funktion für den intelligenten Bewegungsalarm versehentlich von einem nicht autorisierten Benutzer deaktiviert werden, der auf Ihren Computer zugreift."
                 },
                 "alarm": {
                     "title": " ALARM ENDET NACH",
@@ -2145,7 +2148,7 @@
                 },
                 "allowCamera": {
                     "title": "FOTOS AUFNEHMEN",
-                    "describe": "Wenn diese Funktion aktiviert ist, nimmt die Kamera automatisch Fotos auf, wenn bei gesperrtem Bildschirm Bewegungen erkannt werden. Diese Daten werden lokal auf Ihrem Gerät verarbeitet. Lenovo greift nicht auf diese Daten zu und verwendet sie nicht.",
+                    "describe": "Wenn diese Funktion aktiviert ist, nimmt die Kamera automatisch Fotos auf, wenn bei gesperrtem Bildschirm Bewegungen erkannt werden. Diese Daten werden lokal auf Ihrem Gerät verarbeitet. Lenovo greift nicht auf diese Daten zu und verwendet sie nicht. Beachten Sie, dass Sie den Kameraverschluss ausschalten sollten, damit Ihr Computer bei einem Alarm erfolgreich Fotos machen kann.",
                     "checkBoxText": "Funktion aktivieren"
                 },
                 "cameraPrivacy": {
@@ -3771,7 +3774,8 @@
                 "txtTo": "Bis",
                 "txtGo": "Start",
                 "summaryCaption": "gewonnener Speicherplatz",
-                "fixes": "Korrektur(en)"
+                "fixes": "Korrektur(en)",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Letzte 5 Scan-Ergebnisse:",

@@ -36,11 +36,12 @@ export class ModalGamingThermalMode2Component implements OnInit {
   @Output() OCSettingsMsg = new EventEmitter<boolean>();
   modalAutomationId: any = {
 		section: 'thermal_mode_warning_dialog',
+    headerText: 'warning_dialog_warning_text',
+    description: 'warning_dialog_warning_description',
 		closeButton : 'thermal_mode_warning_dialog_close_button',
 		cancelButton: 'thermal_mode_warning_dialog_cancel_button',
-		installButton: 'thermal_mode_warning_dialog_proceed_button'
+		okButton: 'thermal_mode_warning_dialog_proceed_button'
 	}
-
   constructor(
     private modalService: NgbModal,
     private activeModalService: NgbActiveModal,

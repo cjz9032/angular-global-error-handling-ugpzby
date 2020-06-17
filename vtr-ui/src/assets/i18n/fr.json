@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Paramètres mode thermique",
                     "thermalMode2SettingDesc": "Sélectionnez le mode que vous souhaitez utiliser.",
                     "fnQDesc": "Vous pouvez changer de mode à l'aide du raccourci Fn+Q.",
-                    "perormanceTitle": "Mode de performance",
+                    "performanceTitle": "Mode de performance",
                     "performanceDesc": "Améliorez les performances de votre ordinateur avec une vitesse de ventilateur supérieure et une consommation d'énergie plus élevée. ",
                     "OCDesc": "Vous pouvez choisir d'activer la fonction overclocking.",
                     "ac_dcDesc": "Le mode de performance n'est applicable que lorsque le boîtier d'alimentation est branché.",
@@ -1275,7 +1275,8 @@
                             "description1": "Le fait d'activer la charge de batterie personnalisée optimise l'état de santé général de la batterie lorsque vous utilisez ce périphérique.Toutefois, si la batterie n'est pas entièrement chargée, son autonomie sera réduite.",
                             "description2": "Afin d'activer pleinement cette fonctionnalité, veuillez débrancher votre appareil et laisser votre batterie se vider jusqu'au seuil d'arrêt de chargement ou en dessous de celui-ci.",
                             "enable": "ACTIVER",
-                            "cancel": "ANNULER"
+                            "cancel": "ANNULER",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Commence le chargement quand le niveau est inférieur à",
@@ -1766,7 +1767,8 @@
                             "title": "Redémarrez l'ordinateur",
                             "description": "Si vous modifiez la fonction par défaut de la rangée supérieure, vous devez redémarrer l'ordinateur. Voulez-vous vraiment redémarrer ?",
                             "reboot": "REDÉMARRER",
-                            "cancel": "PAS MAINTENANT"
+                            "cancel": "PAS MAINTENANT",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Pour accéder aux touches de fonction F1-F12, appuyez simultanément sur la touche Fn et sur l'une des touches de la rangée supérieure.",
@@ -2131,9 +2133,10 @@
                 "title": "Alerte de mouvement intelligente",
                 "tooltip": "<div id='antiTheft-tooltips'>Cette fonction n'est pas active lorsque l'ordinateur est en mode hibernation ou qu'il est hors tension. Vérifiez les paramètres lors des actions suivantes :<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>actions du fermeture du capot</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>action de batterie critique/faible</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>action de bouton d'alimentation</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>action du bouton de veille</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>paramètres de délai d'inactivité en mode hibernation</li></ul></div>Sinon, il ne déclenchera aucune alarme, ni ne prendra aucune photo.</div>",
                 "desc1": "Lorsque vous activez cette fonction, l'appareil émet un signal sonore lorsque l'écran est verrouillé et que des mouvements sont détectés, notamment dans un endroit public.",
-                "desc2": "Pour ignorer l'alarme, connectez-vous à Windows.",
-                "note": {
-                    "description": "Une fois que vous vous êtes connecté au système, cette fonction sera automatiquement désactivée. Vous devez l'activer à nouveau pour l'utiliser."
+                "desc2": "En vous connectant à Windows, l'alarme sera automatiquement désactivée. Vous devez l'activer à nouveau pour l'utiliser.",
+				"note": {
+					"descriptionTitle": "Attention :",
+                    "description": "Des options de connexion valides telles qu'un mot de passe ou un code PIN sont nécessaires lorsque vous vous connectez à Windows. Sinon, il est possible que la fonction d'alarme de mouvement intelligente soit désactivée par un utilisateur non autorisé à accéder à votre ordinateur."
                 },
                 "alarm": {
                     "title": " L'ALARME DURERA",
@@ -2145,7 +2148,7 @@
                 },
                 "allowCamera": {
                     "title": "PRISE DE PHOTOS",
-                    "describe": "Lorsque vous activez cette fonctionnalité, la caméra prend automatiquement des photos lors de la détection de mouvements si l'écran est verrouillé. Ces données sont traitées localement sur votre appareil. Lenovo ne peut ni y accéder ni les utiliser.",
+                    "describe": "Lorsque vous activez cette fonctionnalité, la caméra prend automatiquement des photos lors de la détection de mouvements si l'écran est verrouillé. Ces données sont traitées localement sur votre appareil. Lenovo ne peut ni y accéder ni les utiliser. Notez que vous devez désactiver le cache de la caméra pour qu'elle puisse bien prendre des photos lorsque l'alarme est enclenchée.",
                     "checkBoxText": "Activer cette fonctionnalité"
                 },
                 "cameraPrivacy": {
@@ -3771,7 +3774,8 @@
                 "txtTo": "Vers",
                 "txtGo": "OK",
                 "summaryCaption": "espace récupéré",
-                "fixes": "correctif(s)"
+                "fixes": "correctif(s)",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Résultat des 5 dernières analyses :",

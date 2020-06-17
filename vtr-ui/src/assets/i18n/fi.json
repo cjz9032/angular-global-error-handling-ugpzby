@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Lämpö-tila-asetus",
                     "thermalMode2SettingDesc": "Valitse haluamasi tila.",
                     "fnQDesc": "Voit vaihtaa tilaa käyttämällä pikanäppäintä Fn+Q.",
-                    "perormanceTitle": "Suorituskykytila",
+                    "performanceTitle": "Suorituskykytila",
                     "performanceDesc": "Paranna tietokoneesi suorituskykyä korkeammalla tuulettimen nopeudella ja virrankulutuksella. ",
                     "OCDesc": "Voit halutessasi ottaa käyttöön ylikellotustoiminnon.",
                     "ac_dcDesc": "Suorituskykytila on käytettävissä vain, kun verkkolaite on liitetty tietokoneeseen.",
@@ -1275,7 +1275,8 @@
                             "description1": "Kun otat mukautetun akun varauksen käyttöön, tämän laitteen akku pysyy toimintakunnossa pitempään.Akun varauksen kesto käytön aikana kuitenkin lyhenee, koska akku ei lataudu täyteen.",
                             "description2": "Jotta voit ottaa tämän toiminnon täysin käyttöön, irrota laite jaanna akun tyhjentyä latauksen lopettamisen kynnysarvoon asti tai sen alle.",
                             "enable": "OTA KÄYTTÖÖN",
-                            "cancel": "PERUUTA"
+                            "cancel": "PERUUTA",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Aloita lataus varauksen ollessa alle",
@@ -1766,7 +1767,8 @@
                             "title": "Tietokoneen käynnistäminen uudelleen",
                             "description": "Ylärivin oletustoiminnon muuttaminen edellyttää tietokoneen käynnistämistä uudelleen. Haluatko varmasti käynnistää tietokoneen uudelleen?",
                             "reboot": "KÄYNNISTÄ UUDELLEEN",
-                            "cancel": "EI NYT"
+                            "cancel": "EI NYT",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Jos haluat käyttää näppäinten F1–F12 toimintoja, paina Fn-näppäintä ja ylärivin näppäimiä.",
@@ -2131,9 +2133,10 @@
                 "title": "Älykäs liikkeentunnistus",
                 "tooltip": "<div id='antiTheft-tooltips'>Tämä ominaisuus ei toimi tietokoneen ollessa horrostilassa tai sammutettuna. Tarkista seuraavien toimintojen asetukset:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>kannen sulkemisen toiminnot</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>toiminto akun varauksen ollessa loppumassa</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>virtapainikkeen toiminto</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>lepotilapainikkeen toiminto</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>horrostilaan siirtymisen aikakatkaisun asetukset</li></ul></div>Muussa tapauksessa se ei aiheuta hälytystä tai ota valokuvia.</div>",
                 "desc1": "Kun tämä ominaisuus on käytössä, laite aloittaa äänimerkin toistamisen, jos näyttösi ollessa lukittuna havaitaan liikettä, varsinkin julkisissa tiloissa.",
-                "desc2": "Kirjaudu sisään Windowsiin hylätäksesi hälytyksen.",
-                "note": {
-                    "description": "Kun kirjaudut järjestelmään onnistuneesti, tämä ominaisuus poistetaan automaattisesti käytöstä. Sinun täytyy ottaa se uudelleen käyttöön käyttääksesi sitä."
+                "desc2": "Kirjaudu sisään Windowsiin, niin hälytys katkaistaan automaattisesti. Sinun täytyy ottaa tämä ominaisuus uudelleen käyttöön käyttääksesi sitä.",
+				"note": {
+					"descriptionTitle": "Huomio:",
+                    "description": "Windowsiin sisäänkirjautuminen edellyttää voimassa olevaa kirjautumisvaihtoehtoa, kuten salasanaa tai PIN-koodia. Muussa tapauksessa valtuuttamaton käyttäjä, joka pääsee tietokoneellesi, voisi poistaa älykkään liikkeentunnistusominaisuuden vahingossa käytöstä."
                 },
                 "alarm": {
                     "title": " HÄLYTYS KESTÄÄ",
@@ -2145,7 +2148,7 @@
                 },
                 "allowCamera": {
                     "title": "VALOKUVIEN OTTAMINEN",
-                    "describe": "Kun tämä ominaisuus on käytössä, kamera ottaa automaattisesti valokuvia, kun liikettä havaitaan näyttösi ollessa lukittuna. Nämä tiedot käsitellään laitteessa paikallisesti. Lenovolla ei ole pääsyä tietoihin eikä se voi käyttää niitä.",
+                    "describe": "Kun tämä ominaisuus on käytössä, kamera ottaa automaattisesti valokuvia, kun liikettä havaitaan näyttösi ollessa lukittuna. Nämä tiedot käsitellään laitteessa paikallisesti. Lenovolla ei ole pääsyä tietoihin eikä se voi käyttää niitä. Huomaa, että sinun tulisi poistaa kameran suljin käytöstä varmistaaksesi, että se voi ottaa kuvia hälytyksen aikana.",
                     "checkBoxText": "Ota tämä ominaisuus käyttöön"
                 },
                 "cameraPrivacy": {
@@ -3771,7 +3774,8 @@
                 "txtTo": "Vastaanottaja",
                 "txtGo": "Siirtyminen",
                 "summaryCaption": "vapautettava tila",
-                "fixes": "korjaukset"
+                "fixes": "korjaukset",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "5 edellisen tarkistuksen tulokset:",

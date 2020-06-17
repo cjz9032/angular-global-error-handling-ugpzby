@@ -1,10 +1,10 @@
-<div class="ui-color-picker" tabindex="0"  id="colorPicker" [attr.aria-label]="'lighting colorPicker'">
+<div class="ui-color-picker" tabindex="0"  id="colorPicker" [attr.aria-label]="'lighting colorPicker'" role="text">
    <div class="picker-content">
       <div class="picker-icon">
-         <button [ngClass]="{'selected': !isToggleMoreColor}" (click)="moreColorFun(1);$event.stopPropagation();" tabindex="-1">
+         <button id="gaming_lighting_color_palette" [ngClass]="{'selected': !isToggleMoreColor}" (click)="moreColorFun(1);$event.stopPropagation();" tabindex="-1">
             <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="th" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-th fa-w-16 fa-lg"><path fill="currentColor" d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z" class=""></path></svg>
          </button>
-         <button [ngClass]="{'selected': isToggleMoreColor}" (click)="moreColorFun(2);$event.stopPropagation();" tabindex="-1">
+         <button id="gaming_lighting_color_picker_more" [ngClass]="{'selected': isToggleMoreColor}" (click)="moreColorFun(2);$event.stopPropagation();" tabindex="-1">
             <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="sliders-v" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-sliders-v fa-w-14 fa-fw fa-lg"><path fill="currentColor" d="M272 352h-24V16c0-8.8-7.2-16-16-16h-16c-8.8 0-16 7.2-16 16v336h-24c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h24v80c0 8.8 7.2 16 16 16h16c8.8 0 16-7.2 16-16v-80h24c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zM112 96H88V16c0-8.8-7.2-16-16-16H56c-8.8 0-16 7.2-16 16v80H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h24v336c0 8.8 7.2 16 16 16h16c8.8 0 16-7.2 16-16V160h24c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm320 128h-24V16c0-8.8-7.2-16-16-16h-16c-8.8 0-16 7.2-16 16v208h-24c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h24v208c0 8.8 7.2 16 16 16h16c8.8 0 16-7.2 16-16V288h24c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16z" class=""></path></svg>
          </button>
       </div>
@@ -18,19 +18,19 @@
       </div>
       <div *ngIf="isToggleMoreColor">
          <div class="inp-color-picker">
-            <input type="button" class="color-inp" [(colorPicker)]="'#'+color" [style.background]="'#'+color" [cpWidth]="'300'" 
+            <input type="button" class="color-inp" [(colorPicker)]="'#'+color" [style.background]="'#'+color" [cpWidth]="'300'"
             [cpAlphaChannel]="'disabled'" [cpDialogDisplay]="'inline'" [cpToggle]="isToggleMoreColor" [cpOutputFormat]="'rgba'"
-            [cpOKButton]="true" [cpOKButtonText]="'gaming.lightingProfile.colourwheel.text2.title' | translate" [cpOKButtonClass]="'btn btn-apply'" 
-            [cpCancelButton]="true" [cpCancelButtonText]="'gaming.dashboard.device.legionEdge.lightingDriverPopup.link' | translate" [cpCancelButtonClass]="'btn btn-cancel'" 
+            [cpOKButton]="true" [cpOKButtonText]="'gaming.lightingProfile.colourwheel.text2.title' | translate" [cpOKButtonClass]="'btn btn-apply'"
+            [cpCancelButton]="true" [cpCancelButtonText]="'gaming.dashboard.device.legionEdge.lightingDriverPopup.link' | translate" [cpCancelButtonClass]="'btn btn-cancel'"
             (colorPickerSelect)="colorPickerSelectFun()" (colorPickerCancel)="colorPickerCancelFun()" (colorPickerChange)="colorPickerChangeFun($event)"
             (cpSliderDragEnd) = "cpSliderDragEndFun($event)">
          </div>
          <div class="color-name">
-            <span>{{'gaming.lightingNewversion.colorPicker.text3' | translate}}</span>
-            <span>{{'gaming.lightingNewversion.colorPicker.text4' | translate}}</span>
-            <span>{{'gaming.lightingNewversion.colorPicker.text5' | translate}}</span>
+            <span id="gaming_lighting_color_palette_text_R" role="text">{{'gaming.lightingNewversion.colorPicker.text3' | translate}}</span>
+            <span id="gaming_lighting_color_palette_text_G" role="text">{{'gaming.lightingNewversion.colorPicker.text4' | translate}}</span>
+            <span id="gaming_lighting_color_palette_text_B" role="text">{{'gaming.lightingNewversion.colorPicker.text5' | translate}}</span>
          </div>
       </div>
    </div>
-   
-</div> 
+
+</div>

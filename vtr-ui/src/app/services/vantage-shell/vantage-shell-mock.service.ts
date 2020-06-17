@@ -2301,4 +2301,11 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
+	public getSysEventFeature(): Phoenix.SystemEventFeature {
+		if (this.phoenix) {
+			return this.phoenix.systemEvent;
+		}
+		return undefined;
+	}
 }

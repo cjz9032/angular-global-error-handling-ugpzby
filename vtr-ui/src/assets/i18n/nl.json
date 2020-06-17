@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Instelling thermische modus",
                     "thermalMode2SettingDesc": "Selecteer de modus die u wilt gebruiken.",
                     "fnQDesc": "U kunt de modus wijzigen met de sneltoets Fn+Q.",
-                    "perormanceTitle": "Prestatiemodus",
+                    "performanceTitle": "Prestatiemodus",
                     "performanceDesc": "Verhoog de prestaties van uw computer met een hogere ventilatorsnelheid en een hoger energieverbruik. ",
                     "OCDesc": "U kunt de functie Overklokken inschakelen.",
                     "ac_dcDesc": "De prestatiemodus is alleen te gebruiken als de netvoedingsadapter is aangesloten.",
@@ -1275,7 +1275,8 @@
                             "description1": "Als u opladen tot een aangepast niveau inschakelt, blijft de batterij tijdens het gebruik van het apparaat langer in goede conditie.Maar als u de batterij niet volledig oplaadt, kunt u het apparaat minder lang gebruiken alvorens de batterij leeg is.",
                             "description2": "Haal de stekker uit het stopcontact en ontlaad de batterij tot onder het niveauwaarop het opladen wordt gestopt om deze functie volledig te activeren.",
                             "enable": "INSCHAKELEN",
-                            "cancel": "ANNULEREN"
+                            "cancel": "ANNULEREN",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Beginnen met opladen als de resterende capaciteit van de batterij lager is dan",
@@ -1766,7 +1767,8 @@
                             "title": "Start de computer opnieuw op",
                             "description": "Als u de standaardfunctie van de bovenste rij wijzigt, moet u uw computer opnieuw opstarten. Weet u zeker dat u opnieuw wilt opstarten?",
                             "reboot": "OPNIEUW OPSTARTEN",
-                            "cancel": "NIET NU"
+                            "cancel": "NIET NU",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Om de functietoetsen F1-F12 te gebruiken, druk op Fn en de toetsen op de bovenste rij.",
@@ -2131,9 +2133,10 @@
                 "title": "Slim bewegingsalarm",
                 "tooltip": "<div id='antiTheft-tooltips'>Deze functie werkt niet als de computer in de sluimerstand staat of is uitgeschakeld. Schakel de instellingen voor de volgende acties in:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>acties voor sluiten van het deksel</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>actie voor bijna lege batterij</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>actie voor de aan/uit-knop</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>actie voor de slaapstandknop</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>instellingen voor time-out bij inactiviteit naar sluimerstand</li></ul></div>Als je deze niet instelt, worden geen waarschuwingen geactiveerd of foto's genomen.</div>",
                 "desc1": "Als u deze functie inschakelt, begint het apparaat te piepen wanneer uw scherm vergrendeld is en er bewegingen worden gedetecteerd, vooral in openbare omgevingen.",
-                "desc2": "Meld u aan bij Windows om het alarm te sluiten.",
-                "note": {
-                    "description": "Als u eenmaal bij het systeem bent aangemeld, wordt deze functie automatisch uitgeschakeld. Om deze functie weer te gebruiken, moet u de functie opnieuw inschakelen."
+                "desc2": "Meld u aan bij Windows om het alarm automatisch uit te schakelen. U moet de functie opnieuw inschakelen om deze weer te gebruiken.",
+				"note": {
+					"descriptionTitle": "Let op:",
+                    "description": "Als u zich aanmeldt bij Windows, zijn geldige aanmeldingsopties vereist, zoals een wachtwoord of PIN-code. Anders wordt het slimme bewegingsalarm mogelijk per ongeluk uitgeschakeld door onbevoegde gebruikers die toegang hebben tot uw computer."
                 },
                 "alarm": {
                     "title": " HET ALARM DUURT",
@@ -2145,7 +2148,7 @@
                 },
                 "allowCamera": {
                     "title": "FOTO'S NEMEN",
-                    "describe": "Als u deze functie inschakelt, neemt de camera automatisch foto's als beweging worden gedetecteerd terwijl uw scherm vergrendeld is. Deze gegevens worden lokaal op uw apparaat verwerkt. Lenovo heeft geen toegang tot uw afbeelding en gebruikt deze ook niet.",
+                    "describe": "Als u deze functie inschakelt, neemt de camera automatisch foto's als beweging worden gedetecteerd terwijl uw scherm vergrendeld is. Deze gegevens worden lokaal op uw apparaat verwerkt. Lenovo heeft geen toegang tot uw afbeelding en gebruikt deze ook niet. Let erop dat u de cameraschuif moet uitschakelen om te zorgen dat er tijdens het alarm foto's kunnen worden gemaakt.",
                     "checkBoxText": "Schakel deze functie in"
                 },
                 "cameraPrivacy": {
@@ -3771,7 +3774,8 @@
                 "txtTo": "Naar",
                 "txtGo": "Ga",
                 "summaryCaption": "teruggehaalde ruimte",
-                "fixes": "Opgeloste problemen"
+                "fixes": "Opgeloste problemen",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Laatste 5 scanresultaten:",
