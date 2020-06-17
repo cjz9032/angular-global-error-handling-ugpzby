@@ -732,6 +732,13 @@ vtr-ui-smart-performance-scan-summary {
 			text-align: center;
 			border: 0rem;
 			cursor: pointer;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			@media #{$breakpoint_sm}{
+				font-size: 1.2rem;
+				padding:0rem 2.5rem;					
+			}
 		}
 		.disabled-button{
 			border-radius: 2.5rem;
