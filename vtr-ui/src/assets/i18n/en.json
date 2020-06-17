@@ -2366,6 +2366,8 @@
 		"runningWell": "PC is running well",
 		"section2Heading": "Top-notch PC Performance. Always",
 		"section2Description": "Our software can proactively scan your PC 24x7 to find and fix issues as they arise, so that your PC always has top-notch performance.",
+		"am": "AM",
+        "pm": "PM",
 		"tunePCPerformance": {
 			"title": "TUNE PC PERFORMANCE",
 			"summaryTitle":"Tune PC Performance",
