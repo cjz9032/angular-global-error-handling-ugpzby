@@ -32,7 +32,7 @@
         metricsParent="Page.Support.SmartPerformance">
         {{'smartPerformance.subscriptionDetails.manageSubscription' |translate }}
     </a> -->
-    <a *ngIf="!isSubscribed" class="link-text" [attr.disabled] = "strStatus==='PROCESSING'" (click)=openSubscribeModal() 
+    <a *ngIf="!isSubscribed" [ngClass]="{'disabled-link' : strStatus==='PROCESSING' }" class="link-text"  [class.disabled] = "strStatus==='PROCESSING'" (click)=openSubscribeModal() 
         vtrMetrics
         metricsItem="btn.managesubscription"
         metricsEvent="FeatureClick"
