@@ -2133,9 +2133,10 @@
                 "title": "Intelligens mozgásérzékeléses riasztás",
                 "tooltip": "<div id='antiTheft-tooltips'>Ez a funkció nem működik, ha a számítógép hibernált módban van, és amikor ki van kapcsolva. Ellenőrizze a következő műveletekhez tartozó beállításokat:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>a képernyő lehajtása</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>kritikus/alacsony akkumulátortöltöttség</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>főkapcsoló használata</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>alvás gomb használata</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>tétlenségi miatti időtúllépés beállításai (hibernálás)</li></ul></div>Ellenkező esetben a gép nem fog riasztást aktiválni, sem fényképeket készíteni.</div>",
                 "desc1": "Ha bekapcsolja ezt a funkciót, az eszköz sípoló riasztást ad ki, amikor a képernyő zárolva van, és mozgást észlel a közelében. Ez különösen nyilvános helyeken lehet hasznos.",
-                "desc2": "A riasztás némításához jelentkezzen be a Windows rendszerbe.",
-                "note": {
-                    "description": "Ha sikerült bejelentkeznie a rendszerbe, a funkció automatikusan kikapcsol. Ha szeretné ismét használni, Önnek újra be kell kapcsolnia."
+                "desc2": "Jelentkezzen be a Windows rendszerbe, és a riasztás automatikusan kikapcsol. A funkció használatához ismét engedélyeznie kell.",
+				"note": {
+					"descriptionTitle": "Figyelem:",
+                    "description": "Állítson be valamilyen érvényes bejelentkezési lehetőséget, például jelszót vagy PIN-kódot a Windows rendszerbe való bejelentkezéshez. Ha ezt nem teszi meg, az Intelligens mozgásérzékeléses riasztás funkciót a számítógéphez hozzáférő bármely jogosulatlan felhasználó kikapcsolhatja."
                 },
                 "alarm": {
                     "title": " A RIASZTÁS ENNYI IDEIG SZÓL:",
@@ -2147,7 +2148,7 @@
                 },
                 "allowCamera": {
                     "title": "FÉNYKÉP KÉSZÍTÉSE",
-                    "describe": "Ha bekapcsolja ezt a funkciót, a fényképezőgép automatikusan fényképeket készít, amikor a rendszer zárolt képernyő mellett mozgást észlel a közelben. Ezeket az adatokat helyben dolgozza fel az eszköz. A Lenovo nem fér hozzájuk, és nem használja fel őket.",
+                    "describe": "Ha bekapcsolja ezt a funkciót, a fényképezőgép automatikusan fényképeket készít, amikor a rendszer zárolt képernyő mellett mozgást észlel a közelben. Ezeket az adatokat helyben dolgozza fel az eszköz. A Lenovo nem fér hozzájuk, és nem használja fel őket. Ne felejtse el kikapcsolni a kamerafedelet, hogy a kamera biztosan el tudja készíteni a fényképeket a riasztás során.",
                     "checkBoxText": "A funkció engedélyezése"
                 },
                 "cameraPrivacy": {

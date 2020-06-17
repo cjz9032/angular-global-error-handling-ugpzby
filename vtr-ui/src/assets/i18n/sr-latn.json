@@ -2133,9 +2133,10 @@
                 "title": "Pametno upozorenje o pokretu",
                 "tooltip": "<div id='antiTheft-tooltips'>Ova funkcija ne radi kada se računar nalazi u režimu hibernacije ili je isključen. Proverite postavke u sledećim radnjama:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>radnje zatvaranja poklopca</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>radnja prazne / gotovo ispražnjene baterije</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>radnja dugmeta za napajanje</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>radnja dugmeta za spavanje</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>postavke vremenskog ograničenja u stanju mirovanja u stanje hibernacije</li></ul></div>U suprotnom, neće se aktivirati alarm, niti će se fotografisati.</div>",
                 "desc1": "Kada omogućite ovu funkciju, uređaj će početi da emituje zvučne signale kada je ekran zaključan, a detektuju se pokreti, posebno na javnom mestu.",
-                "desc2": "Da biste odbacili alarm, prijavite se u Windows.",
-                "note": {
-                    "description": "Kada uspešno prijavite sistem, ova funkcija se automatski isključuje. Potrebno je da je ponovo omogućite da biste je koristili."
+                "desc2": "Prijavite se na Windows i alarm će se automatski isključiti. Da biste koristili ovu funkciju, omogućite je ponovo.",
+				"note": {
+					"descriptionTitle": "Pažnja",
+                    "description": "Važeće opcije za prijavljivanje, kao što su lozinka ili PIN kôd, potrebne su prilikom prijavljivanja na Windows. U suprotnom, funkciju Pametno upozorenje o pokretu može greškom da onemogući neki neovlašćeni korisnik koji pristupa vašem računaru."
                 },
                 "alarm": {
                     "title": " ALARM ĆE TRAJATI",
@@ -2147,7 +2148,7 @@
                 },
                 "allowCamera": {
                     "title": "FOTOGRAFISANJE",
-                    "describe": "Kada omogućite ovu funkciju, kamera automatski snima fotografije kada se detektuju pokreti ako je ekran zaključan. Ovi podaci se obrađuju lokalno na vašem uređaju. Lenovo im ne pristupa niti ih koristi.",
+                    "describe": "Kada omogućite ovu funkciju, kamera automatski snima fotografije kada se detektuju pokreti ako je ekran zaključan. Ovi podaci se obrađuju lokalno na vašem uređaju. Lenovo im ne pristupa niti ih koristi. Vodite računa da isključite poklopac kamere kako biste bili sigurni da može uspešno da snima fotografije tokom alarma.",
                     "checkBoxText": "Omogućite ovu funkciju"
                 },
                 "cameraPrivacy": {
