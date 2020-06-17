@@ -186,6 +186,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 			win.NetworkListener.onnetworkchanged = (state) => {
 				this.notifyNetworkState(state.toString() === 'available');
 			};
+			this.notifyNetworkState(win.NetworkListener.isInternetAccess());
 		} else {
 			window.addEventListener('online', (e) => {
 				this.notifyNetworkState(true);
@@ -193,10 +194,9 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 			window.addEventListener('offline', (e) => {
 				this.notifyNetworkState(false);
 			}, false);
+			this.notifyNetworkState(navigator.onLine);
 		}
-		this.notifyNetworkState(navigator.onLine);
-
-	} // end of addInternetListener
+	}
 
 	private launchWelcomeModal() {
 		if (!this.deviceService.isArm && !this.deviceService.isAndroid) {
