@@ -31,7 +31,7 @@
 				font-size: 2.4rem;
 			}
 			@media #{$breakpoint_sm}{
-				font-size: 2.2rem;
+				font-size: 2rem;
 			}
         }
         h3 {
@@ -40,6 +40,9 @@
             opacity: 0.5;
 			line-height: 2;
 			font-weight: $weight_regular;
+			@media #{$breakpoint_sm}{
+				line-height: auto;
+			}
         }
         .icon {
             color: #7D5FEF;
@@ -57,18 +60,18 @@
 				width: 6rem;
 			}
 			@media #{$breakpoint_md}{
-				width: 8rem;
-				height: 8rem;
+				width: 6rem;
+				height: 6rem;
 			}
 		}
 		.progress-div {
             .progress-title{
                 color: $light !important;
 				font-size: 2.6rem;
-				// @media #{$breakpoint_sm}{
-				// 	font-size: 1.3rem;
-				// 	padding-top: 0.3rem;
-				// }
+				 @media #{$breakpoint_sm}{
+				 	font-size: 2rem;
+				 	padding-top: 0.3rem;
+				 }
 				.progress-sub-title{
 					font-size: 1.3rem;
 				}
@@ -76,9 +79,9 @@
             .progress-value-text {
                 color: $light !important;
 				font-size: 2.6rem;
-				// @media #{$breakpoint_sm}{
-				// 	font-size: 1.6rem;
-				// }
+				 @media #{$breakpoint_sm}{
+				 	font-size: 2rem;
+				 }
             }
             .progress-complete-text{
                 color: $light !important;
@@ -213,8 +216,11 @@
 								color: $main_shade !important;
 								letter-spacing: 0;
 								font-weight: $weight_bold;
+								@media #{$breakpoint_lg}{				
+									font-size: $fontsize_xs;
+								}
 								@media #{$breakpoint_sm}{				
-									font-size: $fontsize_xs2;
+									font-size: 1.1rem;
 								}
                             }
                             .icomoon{
@@ -236,21 +242,41 @@
 						}
                     }
                     .status-text{
-                        flex-grow: 8;
+						flex-grow: 8;
+						@media #{$breakpoint_sm}{
+							margin-top: 1.25rem;
+						}
                         p {
                             text-transform: uppercase;
                             font-size: $fontsize_xs;
                             text-align: right;
 							color: $shade_dark;
 							position: absolute;
-							right: 5rem;
+							right: 1.5rem;
 							top: 40%;
 							letter-spacing: 0;
-							@media #{$breakpoint_sm}{
-								top: 32.3%;
-								right: 1.5rem;								
-								font-size: $fontsize_xs2;
+							
+							@media #{$breakpoint_xl}{
+								right: 1.5rem;					
+								font-size: $fontsize_xs;
+								top: 36%;
 							}
+							@media #{$breakpoint_lg}{
+								right: 1.5rem;					
+								font-size: $fontsize_xs;
+								top: 36%;
+							}
+							@media #{$breakpoint_md}{
+								top: 36%;								
+								right: 1.5rem;								
+								font-size: 1.1rem;
+							}
+							@media #{$breakpoint_sm}{
+								top: 32.5%;
+								right: 1.5rem;								
+								font-size: 1.1rem;
+							}
+							
 						}
 						vtr-widget-speedometer {
 							position: absolute;
