@@ -96,21 +96,38 @@
 			}
 		}
 	}
+
 	.dropdown-toggle {
-		display: flex;
-		justify-content: space-between;
-		font-size: 1.6rem;
-		color: $shade_light;
-		margin-bottom: -1.2rem;
+		height: 4rem;
+		width: 100%;
+		min-width: 20rem;
+		background-color: $white5;
+		border-radius: 0.4rem;
+		display: -webkit-inline-box;
+		display: -ms-inline-flexbox;
+		display: inline-flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		line-height: 4rem;
+		cursor: pointer;
+		position: relative;
+		-webkit-transition: 0.2s ease;
+		transition: 0.2s ease;
 		.name {
-			max-width: calc(100% - 6rem) !important;
+			flex: 1;
+			margin-left: 1rem;
+			max-width: calc(100% - 1.6rem) !important;
 			white-space: nowrap;
 			text-overflow: ellipsis;
 			overflow: hidden;
+			color: $gaming_lightest;
+			font-size: $fontsize_xs;
 		}
 		.icon {
 			position: relative;
-			font-size: 2.2rem;
+			font-size: 1.8rem;
+   			margin-right: 1rem;
 			top: 0px !important;
 			@media #{$black-on-white} {
 				color: $high-contrast-grey;
@@ -122,11 +139,14 @@
 		&::after {
 			display: none;
 		}
+		&:hover {
+			background-color: $white10;
+		}
 	}
 	.gaming-dropdown-menu {
 		min-width: 100%;
 		max-width: 150%;
-		background-color: $gaming_shade;
+		background-color: $darkPopup;
 		@media #{$black-on-white} {
 			border: 0.1rem solid $dark;
 		}
@@ -134,11 +154,11 @@
 			border: 0.1rem solid $light;
 		}
 		border: none;
-		border-radius: 0.8rem;
+		border-radius: 0.4rem;
 		position: absolute;
 		overflow: hidden;
 		z-index: 10;
-		top: 3.5rem;
+		top: 4.5rem;
 		@media #{$black-on-white} {
 			background-color: $high-contrast-grey;
 			border: 0.1rem solid $dark;
@@ -150,72 +170,58 @@
 		li {
 			list-style: none;
 			.dropdown-item {
+				cursor: pointer;
+				width: auto;
 				white-space: nowrap;
 				text-overflow: ellipsis;
 				overflow: hidden;
 				color: $gaming_lightest;
-				font-size: 1.6rem;
-				height: 5.5rem;
-				line-height: 5.5rem;
+				font-size: $fontsize_xs;
+				height: 4rem;
+				line-height: 4rem;
 				position: relative;
-				padding-left: 4rem;
-				padding-right: 2rem;
-				.icon {
-					position: absolute;
-					left: 1.3rem;
-					font-size: 2rem;
-					background: $gaming_green_gradient;
-					-webkit-background-clip: text;
-					-webkit-text-fill-color: transparent;
-					background-clip: text;
-					opacity: 0;
-				}
-				&:hover {
-					background: $gaming_hover;
-					@media #{$black-on-white} {
-						background-color: $high-contrast-grey;
-						border: 0.1rem solid $dark;
-					}
-					@media #{$white-on-black} {
-						background-color: $high-contrast-grey;
-						border: 0.1rem solid $light;
-					}
-				}
+				margin-left: 1rem;
+				padding: 0rem;
 			}
 			&.selected {
+				background: $darkCell;
 				.dropdown-item {
-					.icon {
-						opacity: 1;
-						color: $good_dark;
-					}
+					color: $blueFill;
 				}
 			}
-			&:first-child{
-        a.dropdown-item{
-        border-radius: 0.8rem 0.8rem 0 0;
-        }
-      }
-      &:last-child{
-				a.dropdown-item{
-				border-radius: 0 0 0.8rem 0.8rem;
+			&:hover {
+				background: $darkCell;
+				@media #{$black-on-white} {
+					background-color: $high-contrast-grey;
+					border: 0.1rem solid $dark;
 				}
-      }
+				@media #{$white-on-black} {
+					background-color: $high-contrast-grey;
+					border: 0.1rem solid $light;
+				}
+			}
+			&:focus {
+				background: $darkCell;
+				.dropdown-item {
+					background-color: inherit;
+				}
+			}
+			&:active {
+				background: $darkCell;
+				.dropdown-item { 
+					background-color: inherit;
+				}
+			}
 		}
 		.information {
-			margin: 1.6rem;
-			margin-top: 0;
 			border-top: 1px solid $gaming_darkest;
-			padding-top: 1.6rem;
 			p {
+				margin-top: 0.5rem;
+				margin-left: 1rem;
 				font-size: 1.4rem;
 				color: $main_lightest;
 			}
 		}
-	}
-}
-.dropdown-item {
-	&:focus {
-		background: $gaming_hover;
 	}
 }
 ::ng-deep vtr-ui-lighting-effect {

@@ -88,69 +88,20 @@
 		}
 	}
 	.select-wrapper {
-		background: $white5;
 		@media #{$black-on-white} {
 			border: 0.1rem solid $dark;
 		}
 		@media #{$white-on-black} {
 			border: 0.1rem solid $light;
 		}
-		border-radius: 0.8rem;
-		padding-bottom: 1.4rem;
 		margin: 1rem 0;
 		@media #{$breakpoint_xl} {
 			width: auto;
 		}
-		.dropdown-toggle {
-			cursor: pointer;
-			display: flex;
-			justify-content: space-between;
-			font-size: 1.6rem;
-			color: $shade_light;
-			margin-bottom: -1.2rem;
-			margin-top: 1.2rem;
-			padding-top: 1.2rem;
-			span {
-				padding-left: 1.2rem;
-				color: $gaming_lightest;
-				cursor: pointer;
-				overflow: hidden;
-				text-overflow: ellipsis;
-				white-space: nowrap;
-			}
-			.icon {
-				position: relative;
-				font-size: 2.2rem;
-				padding-right: 1.2rem;
-				top: 0rem !important;
-			}
-			&::after {
-				display: none;
-			}
-		}
 
 		.gaming-dropdown-menu {
-			top: 5rem !important;
 			max-height: 35rem;
 			overflow: auto !important;
-			li {
-				a {
-					height: auto !important;
-					line-height: inherit !important;
-					padding-top: 1.6rem;
-					padding-bottom: 1.6rem;
-					white-space: nowrap;
-					.icon {
-						top: 0px;
-						bottom: 0px;
-						height: 3rem;
-						margin: auto;
-					}
-				}
-			}
-			.information {
-				margin-bottom: 1.4rem !important;
-			}
 		}
 	}
 
