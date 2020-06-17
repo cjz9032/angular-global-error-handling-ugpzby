@@ -65,6 +65,8 @@
 				border-radius: $border_radius;
 				overflow: hidden;
 
+				@include high-contrast-background-image;
+
 				&.overlay-dark {
 					&::after {
 						@include overlay();
@@ -234,6 +236,8 @@
 				border-radius: $border_radius;
 				overflow: hidden;
 
+				@include high-contrast-background-image;
+
 				&.overlay-dark {
 					&::after {
 						@include overlay();
@@ -337,6 +341,8 @@
 				display: block;
 				border-radius: $border_radius;
 				overflow: hidden;
+
+				@include high-contrast-background-image;
 
 				&.overlay-dark {
 					&::after {
@@ -492,6 +498,8 @@
 			background-position: center center;
 			background-repeat: no-repeat;
 			border-radius: $border_radius;
+
+			@include high-contrast-background-image;
 		}
 
 		.default-cursor {
