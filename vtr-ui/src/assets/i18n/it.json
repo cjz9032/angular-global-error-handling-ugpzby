@@ -3825,7 +3825,9 @@
         },
         "auto": "Automatico",
         "manual": "Manuale",
-        "noScanResults": "Fai clic sul pulsante AVVIA SCANSIONE E CORREGGI per avviare il processo di scansione."
+        "noScanResults": "Fai clic sul pulsante AVVIA SCANSIONE E CORREGGI per avviare il processo di scansione.",
+        "am": "AM",
+        "pm": "PM"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

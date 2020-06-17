@@ -3824,7 +3824,9 @@
         },
         "auto": "自動",
         "manual": "手動",
-        "noScanResults": "「スキャンして修正」ボタンをクリックしてスキャン・プロセスを起動してください。"
+        "noScanResults": "「スキャンして修正」ボタンをクリックしてスキャン・プロセスを起動してください。",
+        "am": "AM",
+        "pm": "PM"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

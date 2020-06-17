@@ -3825,7 +3825,9 @@
         },
         "auto": "Automaattinen",
         "manual": "Manuaalinen",
-        "noScanResults": "Aloita tarkistus napsauttamalla TARKISTA JA KORJAA -painiketta."
+        "noScanResults": "Aloita tarkistus napsauttamalla TARKISTA JA KORJAA -painiketta.",
+        "am": "AM",
+        "pm": "PM"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

@@ -3825,7 +3825,9 @@
         },
         "auto": "Automatiskt",
         "manual": "Manuellt",
-        "noScanResults": "Klicka på Genomsök och åtgärda för att starta genomsökningen."
+        "noScanResults": "Klicka på Genomsök och åtgärda för att starta genomsökningen.",
+        "am": "AM",
+        "pm": "PM"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

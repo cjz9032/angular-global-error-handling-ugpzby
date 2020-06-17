@@ -3825,7 +3825,9 @@
         },
         "auto": "Automatisch",
         "manual": "Manuell",
-        "noScanResults": "Klicken Sie auf \"SCANNEN UND REPARIEREN\", um den Scan zu starten."
+        "noScanResults": "Klicken Sie auf \"SCANNEN UND REPARIEREN\", um den Scan zu starten.",
+        "am": "AM",
+        "pm": "PM"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

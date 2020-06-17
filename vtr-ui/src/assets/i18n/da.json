@@ -3825,7 +3825,9 @@
         },
         "auto": "Auto",
         "manual": "Manuelt",
-        "noScanResults": "Klik på knappen SCAN & FIX for at aktivere scanningsprocessen."
+        "noScanResults": "Klik på knappen SCAN & FIX for at aktivere scanningsprocessen.",
+        "am": "AM",
+        "pm": "PM"
     },
     "homeSecurity": {
         "title": "Connected Home Security",
