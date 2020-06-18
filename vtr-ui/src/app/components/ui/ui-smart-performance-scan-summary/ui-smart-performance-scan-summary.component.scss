@@ -545,7 +545,8 @@ vtr-ui-smart-performance-scan-summary {
                                     margin-top: 0.6rem;
 									line-height: 1.2rem;
 									overflow: hidden;
-									text-overflow: ellipsis;																		
+									text-overflow: ellipsis;
+									white-space:nowrap;																		
 									@media #{$breakpoint_sm}{
 										font-size:1rem;
 										line-height: 1rem;
