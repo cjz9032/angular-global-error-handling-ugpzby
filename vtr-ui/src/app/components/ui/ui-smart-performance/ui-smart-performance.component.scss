@@ -120,11 +120,11 @@
 				color: $shade_blue;
 				margin-bottom: 2rem;
 				@media #{$breakpoint_xl}{
-					font-size: 2.5rem;
+					font-size: 2.2rem;
 					margin-bottom: 1rem;
 				}
 				@media #{$breakpoint_sm}{
-					font-size: 2.1rem;
+					font-size: 2rem;
 					margin-bottom: 1rem;
 				}
 			}
@@ -318,6 +318,10 @@
 					color: $shade_blue;
 					@media #{$breakpoint_sm}{
 						font-size: $fontsize_xs;
+						max-width: 100%;
+						display: inline-block;
+						overflow: hidden;
+						text-overflow: ellipsis;
 					}
 				}
 				p {
@@ -414,12 +418,9 @@
 						p {
 							font-size: 1.2rem;
 							font-weight: $weight_medium;
-							max-width: 8.1rem;
 							margin-top: 0.6rem;
 							line-height: 1.4rem;
 							color: #272A3B;							
-							overflow: hidden;
-							text-overflow: ellipsis;
 							@media #{$breakpoint_xl} {
 								font-size: 1rem;
 								line-height: 1rem;
@@ -427,10 +428,16 @@
 							@media #{$breakpoint_md} {
 								font-size: 1rem;
 								line-height: 1rem;
+								max-width: 8.1rem;
 							}
 							@media #{$breakpoint_sm} {
 								font-size: 1rem;
 								line-height: 1rem;
+								max-width: 8.1rem;
+								overflow: hidden;
+								text-overflow: ellipsis;
+								min-height: 1.2rem;
+								padding-top: 0.2rem;
 							}
 						}
 					}

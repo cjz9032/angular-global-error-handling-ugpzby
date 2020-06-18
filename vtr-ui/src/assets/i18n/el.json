@@ -2134,8 +2134,8 @@
                 "tooltip": "<div id='antiTheft-tooltips'>Αυτή η δυνατότητα δεν λειτουργεί, όταν ο υπολογιστής είναι σε κατάσταση αδρανοποίησης ή απενεργοποιημένος. Ελέγξτε τις ρυθμίσεις στις εξής ενέργειες:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>ενέργειες του καπακιού κλεισίματος</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>ενέργεια κρίσιμου/χαμηλού επιπέδου φόρτισης μπαταρίας</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>ενέργεια κουμπιού τροφοδοσίας</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>ενέργεια κουμπιού αναστολής λειτουργίας</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>ρυθμίσεις χρονικού ορίου αδράνειας για μετάβαση του συστήματος σε κατάσταση αδρανοποίησης</li></ul></div>Διαφορετικά, δεν θα ενεργοποιήσει συναγερμό, ούτε τη λήψη φωτογραφιών.</div>",
                 "desc1": "Όταν αυτή τη δυνατότητα είναι ενεργοποιημένη, η συσκευή θα αρχίσει να ηχεί όταν η οθόνη είναι κλειδωμένη και εντοπιστούν κινήσεις ιδίως σε δημόσιο χώρο.",
                 "desc2": "Συνδεθείτε στα Windows και ο συναγερμός θα απενεργοποιηθεί αυτόματα. Για να χρησιμοποιήσετε τη δυνατότητα, θα πρέπει να την επανενεργοποιήσετε.",
-				"note": {
-					"descriptionTitle": "Προσοχή:",
+                "note": {
+                    "descriptionTitle": "Προσοχή:",
                     "description": "Όταν συνδέεστε στα Windows, απαιτούνται έγκυρες επιλογές εισόδου, όπως κωδικός πρόσβασης ή κωδικός PIN. Διαφορετικά, η δυνατότητα έξυπνου συναγερμού κίνησης ενδέχεται να απενεργοποιηθεί κατά λάθος από οποιονδήποτε μη εξουσιοδοτημένο χρήστη που έχει πρόσβαση στον υπολογιστή σας."
                 },
                 "alarm": {
@@ -3826,8 +3826,8 @@
         "auto": "Auto",
         "manual": "Manual",
         "noScanResults": "Please click SCAN & FIX button to trigger scan process.",
-        "am": "AM",
-        "pm": "PM"
+        "am": "πμ",
+        "pm": "μμ"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

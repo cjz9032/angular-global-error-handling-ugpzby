@@ -254,7 +254,7 @@ export class UiSmartPerformanceComponent implements OnInit, OnChanges {
 						if (scanStartedTime && scanEndedTime) {
 							timeDeff = scanEndedTime - scanStartedTime;
 						}
-						this.sendsmartPerformanceMetrics('Failure', timeDeff);
+						this.sendsmartPerformanceMetrics('Cancelled', timeDeff);
 
 					}
 					else {
@@ -314,7 +314,7 @@ export class UiSmartPerformanceComponent implements OnInit, OnChanges {
 						if (scanStartedTime && scanEndedTime) {
 							timeDeff = scanEndedTime - scanStartedTime;
 						}
-						this.sendsmartPerformanceMetrics('Failure', timeDeff);
+						this.sendsmartPerformanceMetrics('Cancelled', timeDeff);
 						// this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
 					}
 					else {

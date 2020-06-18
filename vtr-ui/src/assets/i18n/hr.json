@@ -2134,8 +2134,8 @@
                 "tooltip": "<div id='antiTheft-tooltips'>Ova značajka ne radi ako je računalo u stanju hibernacije ili isključeno. Provjerite postavke u sljedećim radnjama:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>radnje zatvaranja poklopca</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>radnje kod kritične/slabe baterije</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>radnja gumba za napajanje</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>radnja gumba za stanje mirovanja</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>postavke vremenskog ograničenja mirovanja do hibernacije</li></ul></div>U suprotnom se alarm neće aktivirati, niti će fotografirati.</div>",
                 "desc1": "Kada omogućite ovu značajku, uređaj će početi piskati kad je vaš zaslon zaključan a otkrije se pokrete, naročito na javnom mjestu.",
                 "desc2": "Prijavite se u sustav Windows i alarm će se automatski isključiti. Da biste koristili značajku, trebate je ponovno omogućiti.",
-				"note": {
-					"descriptionTitle": "Pažnja:",
+                "note": {
+                    "descriptionTitle": "Pažnja:",
                     "description": "Važne mogućnosti za prijavu kao što su lozinka ili PIN kôd potrebne su prilikom prijave u sustav Windows. U protivnom, značajku pametnog alarma pokreta može pogrešno onemogućiti svaki neovlašteni korisnik koji pristupa vašem računalu."
                 },
                 "alarm": {
@@ -3826,8 +3826,8 @@
         "auto": "Auto",
         "manual": "Manual",
         "noScanResults": "Please click SCAN & FIX button to trigger scan process.",
-        "am": "AM",
-        "pm": "PM"
+        "am": "PRIJEPODNE",
+        "pm": "POSLIJEPODNE"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

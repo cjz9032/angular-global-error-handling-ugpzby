@@ -40,7 +40,11 @@
             opacity: 0.5;
 			line-height: 2;
 			font-weight: $weight_regular;
+			white-space:no-wrap;
+			overflow:hidden;
+			text-overflow:ellipsis;
 			@media #{$breakpoint_sm}{
+				font-size: 1rem;
 				line-height: auto;
 			}
         }
@@ -188,7 +192,6 @@
                     //padding: 1rem;
                     margin: 1.5rem auto;
 					width: 96%;
-					pointer-events: none;
 					@media #{$breakpoint_xl}{
 						width: calc(100% - 0.9rem);
 					}
@@ -202,6 +205,7 @@
 						border-bottom: none;
 						min-height: 6.3rem;
 						display: flex;
+						pointer-events: none;
 						.btn-link{
 							@media #{$breakpoint_sm}{
 								padding-left: 0rem;
@@ -220,7 +224,7 @@
 									font-size: $fontsize_xs;
 								}
 								@media #{$breakpoint_sm}{				
-									font-size: 1.1rem;
+									font-size: 1rem;
 								}
                             }
                             .icomoon{

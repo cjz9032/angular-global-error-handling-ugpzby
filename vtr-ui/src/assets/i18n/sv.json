@@ -2134,8 +2134,8 @@
                 "tooltip": "<div id='antiTheft-tooltips'>Funktionen fungerar inte om datorn är i viloläge eller avstängd. Kontrollera inställningarna för följande åtgärder:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>stänga locket</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>kritisk/låg batteriladdning</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>strömbrytare</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>knapp för strömsparläge</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>från inaktiv till viloläge</li></ul></div>I annat fall utlöses inte larmet och det går inte heller att ta foton.</div>",
                 "desc1": "Om du aktiverar den här funktionen börjar enheten signalera när bildskärmen är låst och rörelser identifieras, speciellt på en offentlig plats.",
                 "desc2": "Larmet stängs av automatiskt när du loggar in på Windows. För att använda funktionen måste du aktivera den igen.",
-				"note": {
-					"descriptionTitle": "Viktigt!",
+                "note": {
+                    "descriptionTitle": "Viktigt!",
                     "description": "Giltiga inloggningsalternativ, till exempel lösenord eller PIN-kod, krävs vid inloggning på Windows. I annat fall kan larmfunktionen Smart rörelselarm inaktiveras av misstag av obehöriga användare som har åtkomst till datorn."
                 },
                 "alarm": {
@@ -3826,8 +3826,8 @@
         "auto": "Automatiskt",
         "manual": "Manuellt",
         "noScanResults": "Klicka på Genomsök och åtgärda för att starta genomsökningen.",
-        "am": "AM",
-        "pm": "PM"
+        "am": "FM",
+        "pm": "EM"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

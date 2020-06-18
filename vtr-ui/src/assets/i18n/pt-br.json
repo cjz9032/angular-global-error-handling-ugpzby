@@ -2134,8 +2134,8 @@
                 "tooltip": "<div id='antiTheft-tooltips'>Este recurso não funciona quando o computador está no modo de hibernação ou desligado. Verifique as configurações nas seguintes ações:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>ações de fechamento da tampa</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>ação de bateria fraca/crítica</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>ação do botão liga/desliga</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>ação do botão de suspensão</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>configurações de tempo limite inativo para hibernação</li></ul></div>Caso contrário, ele não dispara o alarme nem tira fotos.</div>",
                 "desc1": "Ao ativar esse recurso, o dispositivo começará a emitir um sinal sonoro quando a tela estiver bloqueada e movimentos forem detectados, principalmente em um local público.",
                 "desc2": "Faça login no Windows e o alarme será desativado automaticamente. Para usar o recurso, você precisa habilitá-lo novamente.",
-				"note": {
-					"descriptionTitle": "Atenção:",
+                "note": {
+                    "descriptionTitle": "Atenção:",
                     "description": "Opções de entrada válidas, como senha ou código PIN, são necessárias quando você faz login no Windows. Caso contrário, o recurso de alarme por movimento inteligente pode ser desativado por engano por qualquer usuário não autorizado que acesse o seu computador."
                 },
                 "alarm": {
@@ -3826,8 +3826,8 @@
         "auto": "Automático",
         "manual": "Manual",
         "noScanResults": "Clique no botão VERIFICAR E CORRIGIR para iniciar o processo de verificação.",
-        "am": "AM",
-        "pm": "PM"
+        "am": "MANHÃ",
+        "pm": "TARDE"
     },
     "homeSecurity": {
         "title": "Connected Home Security",
