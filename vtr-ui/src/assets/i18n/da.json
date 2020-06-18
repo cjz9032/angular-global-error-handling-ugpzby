@@ -2134,8 +2134,8 @@
                 "tooltip": "<div id='antiTheft-tooltips'>Denne funktion fungerer ikke, når computeren er i slumretilstand eller slukket. Tjek indstillingerne for følgende handlinger:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>handlinger, når låget lukkes</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>handling ved kritisk/lavt batteriniveau</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>handling for tænd/sluk-knap</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>handling for slumreknap</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>Indstillinger for timeout til slumre ved inaktivitet</li></ul></div>Ellers udløser den ikke en alarm og tager ikke nogen billeder.</div>",
                 "desc1": "Når denne funktion er aktiveret, begynder enheden at bippe, når skærmen er låst, og der registreres bevægelser, især på et offentligt sted.",
                 "desc2": "Hvis du logger på Windows, bliver alarmen automatisk slået fra. Du skal aktivere den igen for at bruge denne funktion.",
-				"note": {
-					"descriptionTitle": "Vigtigt:",
+                "note": {
+                    "descriptionTitle": "Vigtigt:",
                     "description": "Der kræves gyldige indstillinger for logon, f. eks. en adgangskode eller en PIN-kode, når du logger på Windows. Ellers kan funktionen Smart bevægelsesalarm blive deaktiveret ved en fejl af en ikke-godkendt bruger, der får adgang til din computer."
                 },
                 "alarm": {

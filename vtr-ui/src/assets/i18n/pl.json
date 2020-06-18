@@ -2134,8 +2134,8 @@
                 "tooltip": "<div id='antiTheft-tooltips'>Ta funkcja nie działa, gdy komputer znajduje się w trybie hibernacji lub jest wyłączony. Sprawdź ustawienia dotyczące czynności wykonywanych w następujących sytuacjach:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>czynności wykonywane po zamknięciu pokrywy</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>czynność wykonywana w przypadku niskiego/krytycznie niskiego poziomu naładowania akumulatora</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>czynność wykonywana po naciśnięciu przycisku zasilania</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>czynność wykonywana po naciśnięciu przycisku uśpienia</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>ustawienia limitu czasu bezczynności do przełączenia w stan hibernacji</li></ul></div>W przeciwnym razie nie zostanie uruchomiony alarm ani nie zostaną wykonane zdjęcia.</div>",
                 "desc1": "Jeśli włączysz tę funkcję, urządzenie zacznie emitować sygnał dźwiękowy, gdy po zablokowaniu ekranu zostanie wykryty ruch — zwłaszcza, jeśli urządzenie znajduje się w miejscu publicznym.",
                 "desc2": "Zaloguj się do systemu Windows, a alarm zostanie automatycznie wyłączony. Aby użyć tej funkcji, musisz ponownie ją włączyć.",
-				"note": {
-					"descriptionTitle": "Uwaga:",
+                "note": {
+                    "descriptionTitle": "Uwaga:",
                     "description": "Podczas logowania do systemu Windows należy skorzystać z jednej z prawidłowych opcji logowania, takich jak hasło lub kod PIN. W przeciwnym razie funkcja inteligentnego alertu wykrycia ruchu może zostać omyłkowo wyłączona przez dowolnego nieautoryzowanego użytkownika uzyskującego dostęp do komputera."
                 },
                 "alarm": {
@@ -3826,8 +3826,8 @@
         "auto": "Auto",
         "manual": "Manual",
         "noScanResults": "Please click SCAN & FIX button to trigger scan process.",
-        "am": "AM",
-        "pm": "PM"
+        "am": "rano",
+        "pm": "wieczorem"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

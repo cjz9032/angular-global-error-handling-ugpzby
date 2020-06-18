@@ -2134,8 +2134,8 @@
                 "tooltip": "<div id='antiTheft-tooltips'>Ez a funkció nem működik, ha a számítógép hibernált módban van, és amikor ki van kapcsolva. Ellenőrizze a következő műveletekhez tartozó beállításokat:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>a képernyő lehajtása</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>kritikus/alacsony akkumulátortöltöttség</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>főkapcsoló használata</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>alvás gomb használata</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>tétlenségi miatti időtúllépés beállításai (hibernálás)</li></ul></div>Ellenkező esetben a gép nem fog riasztást aktiválni, sem fényképeket készíteni.</div>",
                 "desc1": "Ha bekapcsolja ezt a funkciót, az eszköz sípoló riasztást ad ki, amikor a képernyő zárolva van, és mozgást észlel a közelében. Ez különösen nyilvános helyeken lehet hasznos.",
                 "desc2": "Jelentkezzen be a Windows rendszerbe, és a riasztás automatikusan kikapcsol. A funkció használatához ismét engedélyeznie kell.",
-				"note": {
-					"descriptionTitle": "Figyelem:",
+                "note": {
+                    "descriptionTitle": "Figyelem:",
                     "description": "Állítson be valamilyen érvényes bejelentkezési lehetőséget, például jelszót vagy PIN-kódot a Windows rendszerbe való bejelentkezéshez. Ha ezt nem teszi meg, az Intelligens mozgásérzékeléses riasztás funkciót a számítógéphez hozzáférő bármely jogosulatlan felhasználó kikapcsolhatja."
                 },
                 "alarm": {
@@ -3826,8 +3826,8 @@
         "auto": "Auto",
         "manual": "Manual",
         "noScanResults": "Please click SCAN & FIX button to trigger scan process.",
-        "am": "AM",
-        "pm": "PM"
+        "am": "DÉLE",
+        "pm": "DÉLU"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

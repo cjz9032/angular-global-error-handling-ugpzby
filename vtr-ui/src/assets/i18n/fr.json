@@ -2134,8 +2134,8 @@
                 "tooltip": "<div id='antiTheft-tooltips'>Cette fonction n'est pas active lorsque l'ordinateur est en mode hibernation ou qu'il est hors tension. Vérifiez les paramètres lors des actions suivantes :<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>actions du fermeture du capot</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>action de batterie critique/faible</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>action de bouton d'alimentation</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>action du bouton de veille</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>paramètres de délai d'inactivité en mode hibernation</li></ul></div>Sinon, il ne déclenchera aucune alarme, ni ne prendra aucune photo.</div>",
                 "desc1": "Lorsque vous activez cette fonction, l'appareil émet un signal sonore lorsque l'écran est verrouillé et que des mouvements sont détectés, notamment dans un endroit public.",
                 "desc2": "En vous connectant à Windows, l'alarme sera automatiquement désactivée. Vous devez l'activer à nouveau pour l'utiliser.",
-				"note": {
-					"descriptionTitle": "Attention :",
+                "note": {
+                    "descriptionTitle": "Attention :",
                     "description": "Des options de connexion valides telles qu'un mot de passe ou un code PIN sont nécessaires lorsque vous vous connectez à Windows. Sinon, il est possible que la fonction d'alarme de mouvement intelligente soit désactivée par un utilisateur non autorisé à accéder à votre ordinateur."
                 },
                 "alarm": {

@@ -2134,8 +2134,8 @@
                 "tooltip": "<div id='antiTheft-tooltips'>Deze functie werkt niet als de computer in de sluimerstand staat of is uitgeschakeld. Schakel de instellingen voor de volgende acties in:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>acties voor sluiten van het deksel</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>actie voor bijna lege batterij</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>actie voor de aan/uit-knop</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>actie voor de slaapstandknop</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>instellingen voor time-out bij inactiviteit naar sluimerstand</li></ul></div>Als je deze niet instelt, worden geen waarschuwingen geactiveerd of foto's genomen.</div>",
                 "desc1": "Als u deze functie inschakelt, begint het apparaat te piepen wanneer uw scherm vergrendeld is en er bewegingen worden gedetecteerd, vooral in openbare omgevingen.",
                 "desc2": "Meld u aan bij Windows om het alarm automatisch uit te schakelen. U moet de functie opnieuw inschakelen om deze weer te gebruiken.",
-				"note": {
-					"descriptionTitle": "Let op:",
+                "note": {
+                    "descriptionTitle": "Let op:",
                     "description": "Als u zich aanmeldt bij Windows, zijn geldige aanmeldingsopties vereist, zoals een wachtwoord of PIN-code. Anders wordt het slimme bewegingsalarm mogelijk per ongeluk uitgeschakeld door onbevoegde gebruikers die toegang hebben tot uw computer."
                 },
                 "alarm": {

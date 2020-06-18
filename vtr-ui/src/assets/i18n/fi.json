@@ -2134,8 +2134,8 @@
                 "tooltip": "<div id='antiTheft-tooltips'>Tämä ominaisuus ei toimi tietokoneen ollessa horrostilassa tai sammutettuna. Tarkista seuraavien toimintojen asetukset:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>kannen sulkemisen toiminnot</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>toiminto akun varauksen ollessa loppumassa</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>virtapainikkeen toiminto</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>lepotilapainikkeen toiminto</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>horrostilaan siirtymisen aikakatkaisun asetukset</li></ul></div>Muussa tapauksessa se ei aiheuta hälytystä tai ota valokuvia.</div>",
                 "desc1": "Kun tämä ominaisuus on käytössä, laite aloittaa äänimerkin toistamisen, jos näyttösi ollessa lukittuna havaitaan liikettä, varsinkin julkisissa tiloissa.",
                 "desc2": "Kirjaudu sisään Windowsiin, niin hälytys katkaistaan automaattisesti. Sinun täytyy ottaa tämä ominaisuus uudelleen käyttöön käyttääksesi sitä.",
-				"note": {
-					"descriptionTitle": "Huomio:",
+                "note": {
+                    "descriptionTitle": "Huomio:",
                     "description": "Windowsiin sisäänkirjautuminen edellyttää voimassa olevaa kirjautumisvaihtoehtoa, kuten salasanaa tai PIN-koodia. Muussa tapauksessa valtuuttamaton käyttäjä, joka pääsee tietokoneellesi, voisi poistaa älykkään liikkeentunnistusominaisuuden vahingossa käytöstä."
                 },
                 "alarm": {
@@ -3826,8 +3826,8 @@
         "auto": "Automaattinen",
         "manual": "Manuaalinen",
         "noScanResults": "Aloita tarkistus napsauttamalla TARKISTA JA KORJAA -painiketta.",
-        "am": "AM",
-        "pm": "PM"
+        "am": "aamupäivä",
+        "pm": "iltapäivä"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

@@ -2134,8 +2134,8 @@
                 "tooltip": "<div id='antiTheft-tooltips'>Denne funksjonen fungerer ikke når datamaskinen er i dvalemodus eller er slått av. Kontroller innstillingene i disse handlingene:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>handlinger til lokket</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>handling ved kritisk lavt / svakt batteri</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>handling for strømbryter</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>handling for hvilemodus</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>tidsavbruddinnstillinger for dvalemodus</li></ul></div>Ellers vil det ikke utløses noen alarm eller blir tatt noen bilder.</div>",
                 "desc1": "Når du aktiverer denne funksjonen, avgir enheten et lydsignal når skjermen er låst og det oppdages bevegelse, spesielt på offentlige steder.",
                 "desc2": "Logg deg på Windows og alarmen vil bli slått av automatisk. Du må aktivere funksjonen på nytt for å bruke den.",
-				"note": {
-					"descriptionTitle": "NB:",
+                "note": {
+                    "descriptionTitle": "NB:",
                     "description": "Det kreves gyldige påloggingsalternativer, for eksempel et passord eller en PIN-kode når du logger deg på Windows. Ellers kan funksjonen Smartbevegelsesalarm bli feilaktig deaktivert av enhver ikke-autorisert bruker som får tilgang til data maskinen din."
                 },
                 "alarm": {

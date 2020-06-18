@@ -2134,8 +2134,8 @@
                 "tooltip": "<div id='antiTheft-tooltips'>この機能は、コンピューターが休止状態または電源がオフのときは機能しません。次の動作の設定を確認してください。<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>閉じる動作</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>重要なアクション/バッテリー低下時の動作</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>電源ボタンの動作</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>スリープ・ボタンの動作</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>休止状態までのアイドル・タイムアウト設定</li></ul></div>それ以外の場合は、アラームがトリガーされず、写真も撮られません。</div>",
                 "desc1": "この機能を有効にした場合は、画面がロックされた状態で、特に公共の場所で動きが検出されると、デバイスのビープ音が鳴ります。",
                 "desc2": "Windows にログインすると、アラームは自動的にオフになります。機能を使用するには、再度有効にする必要があります。",
-				"note": {
-					"descriptionTitle": "重要:",
+                "note": {
+                    "descriptionTitle": "重要:",
                     "description": "Windows にログインするときは、パスワードや PIN コードなどの有効なサインイン・オプションが必要です。そうしないと、スマート・モーション・アラーム機能がコンピューターにアクセスする権限のないユーザーによって誤って無効にされる可能性があります。"
                 },
                 "alarm": {
@@ -2764,7 +2764,8 @@
         "ssoErrorTimeStampIncorrect": "PC の時刻が正しくないようです。PC の時刻を修正してから再試行してください。",
         "ssoErrorNetworkDisconnected": "申し訳ございませんが接続に失敗しました!インターネット接続を確認してから再試行してください。",
         "ssoErrorCommunicating": "ネットワーク・エラー。接続を確認してから再試行してください。",
-        "ssoErrorAccountPluginNotExist": "プラグインが見つかりません。インターネットに接続されている場合、バックグラウンドでプラグインを自動復元します。これには多少の時間がかかるため、後で再試行してください。"
+        "ssoErrorAccountPluginNotExist": "プラグインが見つかりません。インターネットに接続されている場合、バックグラウンドでプラグインを自動復元します。これには多少の時間がかかるため、後で再試行してください。",
+        "welcomeText8": "Who likes happy little trees?"
     },
     "faq": {
         "pageTitle": "サポート詳細",
@@ -3825,8 +3826,8 @@
         "auto": "自動",
         "manual": "手動",
         "noScanResults": "「スキャンして修正」ボタンをクリックしてスキャン・プロセスを起動してください。",
-        "am": "AM",
-        "pm": "PM"
+        "am": "午前",
+        "pm": "午後"
     },
     "homeSecurity": {
         "title": "Connected Home Security",
