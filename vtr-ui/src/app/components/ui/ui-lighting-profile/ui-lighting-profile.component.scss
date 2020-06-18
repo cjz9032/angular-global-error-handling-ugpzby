@@ -102,23 +102,10 @@
         vtr-ui-lighting-effect {
           ::ng-deep {
             &.select-box {
-              height: 4.8rem;
-              line-height: 6.8rem;
-              border-radius: 0.6rem;
-              background: $white5;
-              margin-bottom: 5rem;
-              .dropdown-toggle {
-                cursor: pointer;
-                padding-left: 2rem;
-                padding-right: 2rem;
-                line-height: 4.8rem;
-                .icon {
-                  top: 0.3rem;
-                }
-              }
-              .gaming-dropdown-menu {
-                top: 4.9rem;
-              }
+				height: 7.2rem;
+				svg {
+					color: $gaming_lightest !important;
+				}
             }
           }
         }

@@ -135,6 +135,9 @@
 			@media #{$white-on-black} {
 				color: $high-contrast-grey;
 			}
+			> svg {
+				color: $gaming_lightest !important;
+			}
 		}
 		&::after {
 			display: none;
