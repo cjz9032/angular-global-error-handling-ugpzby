@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.enum';
 
 @Component({
   selector: 'vtr-ui-hardware-scan-test-result',
@@ -8,6 +9,9 @@ import { Component, OnInit, Input } from '@angular/core';
 export class UiHardwareScanTestResultComponent implements OnInit {
 
   @Input() module: any;
+
+  // "Wrapper" value to be accessed from the HTML
+	public testResultEnum = HardwareScanTestResult;
 
   constructor() { }
 

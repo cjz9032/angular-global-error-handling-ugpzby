@@ -49,10 +49,10 @@
 						<div class="text-status">
 							<!-- Defines a title to previus result -->
 							<div [ngSwitch]="item.resultIcon">
-								<p *ngSwitchCase="2" class="title">{{ 'hardwareScan.pass' | translate }}</p>
-								<p *ngSwitchCase="3" class="title">{{ 'hardwareScan.fail' | translate }}</p>
-								<p *ngSwitchCase="4" class="title">{{ 'hardwareScan.attention' | translate }}</p>
-								<p *ngSwitchCase="5" class="title">{{ 'hardwareScan.cancelled' | translate }}</p>
+								<p *ngSwitchCase="testResultEnum.Pass" class="title">{{ 'hardwareScan.pass' | translate }}</p>
+								<p *ngSwitchCase="testResultEnum.Fail" class="title">{{ 'hardwareScan.fail' | translate }}</p>
+								<p *ngSwitchCase="testResultEnum.Warning" class="title">{{ 'hardwareScan.attention' | translate }}</p>
+								<p *ngSwitchCase="testResultEnum.Cancelled" class="title">{{ 'hardwareScan.cancelled' | translate }}</p>
 							</div>
 							<div class="subtitle">{{ item.date }}</div>
 						</div>

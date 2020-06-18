@@ -35,6 +35,6 @@ export class WidgetHardwareScanItemComponent implements OnInit {
 	// Changes status expanded of the module test list when the user request
 	public toggleTestListVisibility (item: any) {
 		item.expanded = !item.expanded;
-		item.visibilityChangedByUser = !item.visibilityChangedByUser;
+		item.expandedStatusChangedByUser = !item.expandedStatusChangedByUser;
 	}
 }

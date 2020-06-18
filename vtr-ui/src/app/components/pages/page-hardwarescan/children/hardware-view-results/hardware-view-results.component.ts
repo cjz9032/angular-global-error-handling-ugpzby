@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { TranslateService } from '@ngx-translate/core';
+import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.enum';
 import { HardwareScanService } from '../../../../../services/hardware-scan/hardware-scan.service';
 
 @Component({
@@ -19,6 +20,9 @@ export class HardwareViewResultsComponent implements OnInit, OnDestroy {
 	public showProgress = false;
 	public isLoadingDone = false;
 	public lenovoSupport = this.translate.instant('hardwareScan.support.subtitle');
+
+	// "Wrapper" value to be accessed from the HTML
+	public testResultEnum = HardwareScanTestResult;
 
 	constructor(
 		public deviceService: DeviceService,

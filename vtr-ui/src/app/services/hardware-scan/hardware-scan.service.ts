@@ -861,7 +861,7 @@ export class HardwareScanService {
 						metaInformation: [],
 						listTest: [],
 						expanded: false,
-						visibilityChangedByUser: false,
+						expandedStatusChangedByUser: false,
 						detailsExpanded: false
 					};
 
@@ -963,13 +963,13 @@ export class HardwareScanService {
 
 		// Validates if currentModuleToExpand returns a value doesn't modify by user
 		// and expand it to show the current test in execution
-		if(!currentModuleToExpand.visibilityChangedByUser) {
+		if(!currentModuleToExpand.expandedStatusChangedByUser) {
 			currentModuleToExpand.expanded = true;
 		}
 
 		// Finds the first module with result code and the user doesn't modify the expanded status.
 		const currentModuleToCollapse =
-			this.modules.find(module => !module.visibilityChangedByUser && module.expanded && module.resultCode);
+			this.modules.find(module => !module.expandedStatusChangedByUser && module.expanded && module.resultCode);
 
 		// Validates if currentModuleToCollapse returns a valid value and
 		// collapse the test list of this module
@@ -1121,7 +1121,7 @@ export class HardwareScanService {
 					item.resultCode = groupResult[i].resultCode;
 					item.information = groupResult[i].resultDescription;
 					item.expanded = false;
-					item.visibilityChangedByUser = false;
+					item.expandedStatusChangedByUser = false;
 					item.detailsExpanded = false;
 					item.icon = moduleName;
 					item.resultIcon = HardwareScanTestResult.Pass;

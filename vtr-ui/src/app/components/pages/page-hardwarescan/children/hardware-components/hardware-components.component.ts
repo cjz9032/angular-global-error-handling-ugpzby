@@ -649,7 +649,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		// Resets the 'expanded' state and User visibility to the default value (closed)
 		this.modules.forEach(module => {
 			module.expanded = false;
-			module.visibilityChangedByUser = false;
+			module.expandedStatusChangedByUser = false;
 		});
 
 		// Used for metrics purposes
@@ -751,7 +751,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				resultCode: module.resultCode,
 				information: module.description,
 				expanded: false,
-				visibilityChangedByUser: false,
+				expandedStatusChangedByUser: false,
 				detailsExpanded: false,
 				icon: module_id,
 				details: [],
