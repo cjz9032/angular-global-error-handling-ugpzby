@@ -545,12 +545,13 @@ vtr-ui-smart-performance-scan-summary {
                                     margin-top: 0.6rem;
 									line-height: 1.2rem;
 									overflow: hidden;
-									text-overflow: ellipsis;																		
+									text-overflow: ellipsis;																	
 									@media #{$breakpoint_sm}{
 										font-size:1rem;
 										line-height: 1rem;
 										max-width: 100%;
 										margin-top: 0;										
+										white-space:nowrap;											
 									}
                                 }
                                 .icon {
@@ -1518,6 +1519,12 @@ vtr-ui-smart-performance-scan-summary {
 			color: $grey_dark;
 			padding-left: 1.6rem;
 			margin-bottom: 0;
+			white-space:no-wrap;
+			overflow:hidden;
+			text-overflow:ellipsis;
+			@media #{$breakpoint_sm}{
+				font-size: 1.1rem;
+			}
 		}
 	}
 	.status{
