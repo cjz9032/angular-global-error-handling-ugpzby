@@ -7,7 +7,7 @@ export enum AutomationId {
 	Balance = 'thermal_mode_balance',
 	Quiet = 'thermal_mode_quiet',
 	RightSectionLegionEdge = 'right_section_legion_edge',
-	HelpPopupLegionEdge = 'gamig_dashboard_help',
+	HelpPopupLegionEdge = 'gaming_dashboard_help',
 	RightSectionIdeaCentreGaming = 'right_section_ideacentre_gaming',
 	HelpPopupIdeaCentreGaming = 'help_popup_ideacentre_gaming',
 	RightSectionIdeapadGaming = 'right_section_ideapad_gaming',
