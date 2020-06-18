@@ -33,12 +33,12 @@
                 </div>
             </li>
             <li class="d-flex justify-content-between calendar-list" [ngClass]="{'disable-list':!scanToggleValue}" (click)="changeScanSchedule()">
-                <div class="item d-flex">
+                <div class="item d-flex w-60">
                     <span class="icomoon icomoon-calendar"></span>
                     <!-- <strong>{{'smartPerformance.scanCompletePage.Onceaweek' |translate }}</strong> -->
                     <strong>{{selectedFrequency}}</strong>
                 </div>
-                <div class="status d-flex justify-content-end" >
+                <div class="status d-flex justify-content-end w-40">
                     <p class="mr-3 text-uppercase" *ngIf="frequencyValue === 0 || frequencyValue === 1"><strong>{{selectedDay | slice:0:3}}</strong> | {{scanTime.hour}}:{{scanTime.min}} {{scanTime.amPm}}</p>
                     <p class="mr-3 text-uppercase" *ngIf="frequencyValue === 2"><strong>{{(this.selectedNumber)}}</strong> | {{scanTime.hour}}:{{scanTime.min}} {{scanTime.amPm}}</p>
                     <fa-icon [icon]="['fas', 'chevron-down']"></fa-icon>
