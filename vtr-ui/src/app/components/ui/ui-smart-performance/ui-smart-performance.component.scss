@@ -416,21 +416,21 @@
 							font-weight: $weight_medium;
 							max-width: 8.1rem;
 							margin-top: 0.6rem;
-							line-height: 1.4rem;
+							//line-height: 1.4rem;
 							color: #272A3B;							
 							overflow: hidden;
 							text-overflow: ellipsis;
 							@media #{$breakpoint_xl} {
 								font-size: 1rem;
-								line-height: 1rem;
+								// line-height: 1rem;
 							}
 							@media #{$breakpoint_md} {
 								font-size: 1rem;
-								line-height: 1rem;
+								// line-height: 1rem;
 							}
 							@media #{$breakpoint_sm} {
 								font-size: 1rem;
-								line-height: 1rem;
+								// line-height: 1rem;
 							}
 						}
 					}
