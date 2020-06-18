@@ -1100,7 +1100,7 @@ export class HardwareScanService {
 			this.hasLastResults = response.hasPreviousResults;
 			previousResults.finalResultCode = response.scanSummary.finalResultCode;
 			previousResults.status = HardwareScanTestResult[HardwareScanTestResult.Pass];
-			previousResults.statusValue = HardwareScanTestResult.Pass;
+			previousResults.resultIcon = HardwareScanTestResult.Pass;
 
 			const date = response.scanSummary.ScanDate.toString().replace(/-/g, '/').split('T');
 			previousResults.date = date[0] + ' ' + date[1].slice(0, 8);
@@ -1126,6 +1126,8 @@ export class HardwareScanService {
 					item.visibilityChangedByUser = false;
 					item.detailsExpanded = false;
 					item.icon = moduleName;
+					item.resultIcon = HardwareScanTestResult.Pass;
+
 					if (!this.isDesktopMachine) {
 						if (item.icon === 'pci_express') {
 							item.icon += "_laptop";
@@ -1157,16 +1159,20 @@ export class HardwareScanService {
 						}
 
 						if ((test[j].result === HardwareScanTestResult.Cancelled ||
-							test[j].result === HardwareScanTestResult.NotStarted) && !hasFailed && !hasWarning) {
+							test[j].result === HardwareScanTestResult.NotStarted && 
+							test[j].result !== HardwareScanTestResult.Warning) ) {
 							previousResults.status = HardwareScanTestResult[HardwareScanTestResult.Cancelled];
-							previousResults.statusValue = HardwareScanTestResult.Cancelled;
+							previousResults.resultIcon = HardwareScanTestResult.Cancelled;
+							item.resultIcon = previousResults.resultIcon;
 						} else if (test[j].result === HardwareScanTestResult.Fail) {
 							previousResults.status = HardwareScanTestResult[HardwareScanTestResult.Fail];
-							previousResults.statusValue = HardwareScanTestResult.Fail;
+							previousResults.resultIcon = HardwareScanTestResult.Fail;
+							item.resultIcon = previousResults.resultIcon;
 							hasFailed = true;
-						} else if (test[j].result === HardwareScanTestResult.Warning && !hasFailed) {
+						} else if (test[j].result === HardwareScanTestResult.Warning) {
 							previousResults.status = HardwareScanTestResult[HardwareScanTestResult.Warning];
-							previousResults.statusValue = HardwareScanTestResult.Warning;
+							previousResults.resultIcon = HardwareScanTestResult.Warning;
+							item.resultIcon = previousResults.resultIcon;
 							hasWarning = true;
 						}
 						item.listTest.push(testInfo);
