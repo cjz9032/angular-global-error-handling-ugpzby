@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Config. de modo térmico",
                     "thermalMode2SettingDesc": "Seleccione la modalidad que desea utilizar.",
                     "fnQDesc": "Puede cambiar de modalidad utilizando la combinación de teclas Fn+Q.",
-                    "perormanceTitle": "Modalidad de rendimiento",
+                    "performanceTitle": "Modalidad de rendimiento",
                     "performanceDesc": "Aumente el rendimiento del equipo con mayor velocidad del ventilador y consumo de energía. ",
                     "OCDesc": "Puede seleccionar que se active la función de Aceleración.",
                     "ac_dcDesc": "La modalidad de rendimiento solo se aplica cuando está conectado el adaptador de alimentación de CA.",
@@ -1275,7 +1275,8 @@
                             "description1": "Activar una carga de batería personalizada permitirá que la duración general de la batería sea más prolongada mientras utiliza este dispositivo.Sin embargo, si la batería no está cargada completamente, el tiempo de duración de esta en funcionamiento será menor.",
                             "description2": "Para activar completamente esta característica, desconecte la máquina ydeje que la batería se agote o quede bajo el umbral de detención de carga.",
                             "enable": "HABILITAR",
-                            "cancel": "CANCELAR"
+                            "cancel": "CANCELAR",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Comenzar a cargar cuando esté por debajo de",
@@ -2132,9 +2133,10 @@
                 "title": "Alerta de movimiento inteligente",
                 "tooltip": "<div id='antiTheft-tooltips'>Esta característica no funciona cuando el sistema está en modalidad de hibernación o está apagado. Compruebe los valores en las siguientes acciones:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>acciones de la cubierta de cierre</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>acción de batería crítica/baja</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>acción del botón de encendido</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>acción del botón de suspensión</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>valores de tiempo de espera de inactividad hasta hibernación</li></ul></div>De lo contrario, no activará la alarma ni tomará las fotos.</div>",
                 "desc1": "Al habilitar esta característica, el dispositivo empezará a emitir un pitido cuando la pantalla esté bloqueada y se detecten movimientos, especialmente en un espacio público.",
-                "desc2": "Para descartar la alarma, inicie sesión en Windows.",
-                "note": {
-                    "description": "Una vez inicie sesión satisfactoriamente en el sistema, esta característica se desactivará automáticamente. Debe habilitarla de nuevo para utilizarla."
+                "desc2": "Inicie sesión en Windows y la alerta se apagará automáticamente. Para utilizar la característica, debe activarla de nuevo.",
+				"note": {
+					"descriptionTitle": "Atención:",
+                    "description": "Se necesitan opciones de inicio de sesión válidas, como una contraseña o un código PIN, para iniciar sesión en Windows. De lo contrario, es posible que algún usuario no autorizado con acceso a su sistema deshabilite por error la característica Alerta de movimiento inteligente."
                 },
                 "alarm": {
                     "title": " LA ALARMA DURARÁ",
@@ -2146,7 +2148,7 @@
                 },
                 "allowCamera": {
                     "title": "TOMAR FOTOGRAFÍAS",
-                    "describe": "Al habilitar esta característica, la cámara toma las fotos automáticamente al detectar cualquier movimiento si la pantalla está bloqueada. Estos datos se procesan localmente en su dispositivo. Lenovo no accede a ellos ni los utiliza.",
+                    "describe": "Al habilitar esta característica, la cámara toma las fotos automáticamente al detectar cualquier movimiento si la pantalla está bloqueada. Estos datos se procesan localmente en su dispositivo. Lenovo no accede a ellos ni los utiliza. Tenga en cuenta que debe apagar el obturador de la cámara para asegurarse de que pueda tomar fotos de manera satisfactoria durante la alerta.",
                     "checkBoxText": "Habilite esta característica"
                 },
                 "cameraPrivacy": {
@@ -3823,7 +3825,9 @@
         },
         "auto": "Automático",
         "manual": "Manual",
-        "noScanResults": "Haga clic en el botón ANALIZAR Y CORREGIR para activar el proceso de análisis."
+        "noScanResults": "Haga clic en el botón ANALIZAR Y CORREGIR para activar el proceso de análisis.",
+        "am": "AM",
+        "pm": "PM"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Postavlj. termičkog načina",
                     "thermalMode2SettingDesc": "Odaberite način rada koji želite koristiti.",
                     "fnQDesc": "Možete prebaciti način rada s pomoću prečaca Fn+Q.",
-                    "perormanceTitle": "Način rada performansi",
+                    "performanceTitle": "Način rada performansi",
                     "performanceDesc": "Povećajte performanse računala uz veću brzinu ventilatora i bolju potrošnju energije. ",
                     "OCDesc": "Možete odabrati uključivanje funkcije overclockinga.",
                     "ac_dcDesc": "Način performansi rada primjenjiv je samo kad je uključen ispravljač.",
@@ -1275,7 +1275,8 @@
                             "description1": "Omogućivanje prilagođenog punjenja baterije omogućit će dulje sveukupno trajanje baterije dok koristite ovaj uređaj.Međutim, ako baterija nije u potpunosti napunjena, njezino trajanje bit će kraće.",
                             "description2": "Kako biste u potpunosti omogućili tu značajku, odspojite uređaj ipustite da se baterija isprazni na prag za zaustavljanje punjenja ili ispod njega.",
                             "enable": "OMOGUĆI",
-                            "cancel": "ODUSTANI"
+                            "cancel": "ODUSTANI",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Pokreni punjenje kada je ispod",
@@ -2132,9 +2133,10 @@
                 "title": "Pametni alarm kretanja",
                 "tooltip": "<div id='antiTheft-tooltips'>Ova značajka ne radi ako je računalo u stanju hibernacije ili isključeno. Provjerite postavke u sljedećim radnjama:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>radnje zatvaranja poklopca</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>radnje kod kritične/slabe baterije</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>radnja gumba za napajanje</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>radnja gumba za stanje mirovanja</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>postavke vremenskog ograničenja mirovanja do hibernacije</li></ul></div>U suprotnom se alarm neće aktivirati, niti će fotografirati.</div>",
                 "desc1": "Kada omogućite ovu značajku, uređaj će početi piskati kad je vaš zaslon zaključan a otkrije se pokrete, naročito na javnom mjestu.",
-                "desc2": "Da biste isključili alarm, prijavite se u Windows.",
-                "note": {
-                    "description": "Nakon uspješne prijave u sustav, ova će se značajka automatski isključiti. Da biste je opet koristili morate je ponovo uključiti."
+                "desc2": "Prijavite se u sustav Windows i alarm će se automatski isključiti. Da biste koristili značajku, trebate je ponovno omogućiti.",
+				"note": {
+					"descriptionTitle": "Pažnja:",
+                    "description": "Važne mogućnosti za prijavu kao što su lozinka ili PIN kôd potrebne su prilikom prijave u sustav Windows. U protivnom, značajku pametnog alarma pokreta može pogrešno onemogućiti svaki neovlašteni korisnik koji pristupa vašem računalu."
                 },
                 "alarm": {
                     "title": " ALARM ĆE TRAJATI",
@@ -2146,7 +2148,7 @@
                 },
                 "allowCamera": {
                     "title": "FOTOGRAFIRANJE",
-                    "describe": "Kad se omogući ovu značajku, ako je zaslon zaključan kamera automatski fotografira kad se otkriju pokreti. Ti se podaci obrađuju lokalno na vašem uređaju. Lenovo im ne pristupa niti ih upotrebljava.",
+                    "describe": "Kad se omogući ovu značajku, ako je zaslon zaključan kamera automatski fotografira kad se otkriju pokreti. Ti se podaci obrađuju lokalno na vašem uređaju. Lenovo im ne pristupa niti ih upotrebljava. Imajte na umu da biste trebali isključiti zatvarač kamere kako biste osigurali da ona može uspješno snimiti fotografije za vrijeme alarma.",
                     "checkBoxText": "Omogućite ovu značajku"
                 },
                 "cameraPrivacy": {
@@ -3823,7 +3825,9 @@
         },
         "auto": "Auto",
         "manual": "Manual",
-        "noScanResults": "Please click SCAN & FIX button to trigger scan process."
+        "noScanResults": "Please click SCAN & FIX button to trigger scan process.",
+        "am": "AM",
+        "pm": "PM"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

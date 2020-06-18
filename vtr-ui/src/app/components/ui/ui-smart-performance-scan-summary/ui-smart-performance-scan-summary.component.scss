@@ -224,11 +224,22 @@ vtr-ui-smart-performance-scan-summary {
 					}
 					@media #{$breakpoint_sm}{
 						font-size: 1.4rem;
+						display: inline-block;
+						max-width: 85%;
+						overflow-x: hidden;
+						text-overflow: ellipsis;
 					}
 				}
 				.value {
 					font-size: 5rem;
 					font-weight: $weight_bold;
+					width: 95%;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					margin: auto;
+					text-align: center;
+					display: block !important;
 					@media #{$breakpoint_xl}{
 						font-size: 3.2rem;
 					}
@@ -376,6 +387,15 @@ vtr-ui-smart-performance-scan-summary {
 								}
 							}
 						}
+						.fixes {
+							@media #{$breakpoint_sm}{
+								max-width: 7rem;
+								display: inline-block;
+								text-overflow: ellipsis;
+								overflow-x: hidden;
+								padding: 0;
+							}
+						}
 					}
 				}
 			}
@@ -455,13 +475,13 @@ vtr-ui-smart-performance-scan-summary {
                         .heading {						
                             h3, h2{
 								text-align: left;
-								font-size: $fontsize_md;
+								font-size: $fontsize_sm;
 								text-align: left;
 								color: $main_shade !important;
 								letter-spacing: 0;
 								font-weight: $weight_bold;
 								@media #{$breakpoint_sm}{
-									font-size: 1.7rem;
+									font-size: 1.2rem;
 									letter-spacing: -0.02rem;
 									margin-bottom: 0;
 								}
@@ -494,11 +514,11 @@ vtr-ui-smart-performance-scan-summary {
 										height: 5rem;
 										@media #{$breakpoint_xl}{
 											padding: 0.5rem 0.2rem;
-											height: 4.5rem;
+											height: 5rem;
 										}
 										@media #{$breakpoint_sm}{
 											padding: 0.5rem 0.2rem;
-											height: 3.5rem;
+											height: 5rem;
 										}
 										&.active {
                                             background-color: transparent;
@@ -568,7 +588,7 @@ vtr-ui-smart-performance-scan-summary {
                     .status-text{
 						margin-top: 2.2rem;
 						@media #{$breakpoint_sm}{
-							margin-top: 0rem;
+							margin-top: 1.25rem;
 						}
                         p {
                             text-transform: uppercase;
@@ -578,8 +598,8 @@ vtr-ui-smart-performance-scan-summary {
 							right: 5rem;
 							padding-right:2rem;
 							letter-spacing: 0;
-							@media #{$breakpoint_sm}{
-								margin-top: 1rem;
+							@media #{$breakpoint_sm}{								
+								font-size: 1.2rem;
 							}
 							// top: 40%;
 						}
@@ -684,6 +704,7 @@ vtr-ui-smart-performance-scan-summary {
 			font-weight: $weight_regular;
 			@media #{$breakpoint_sm}{
 				font-size: 1.4rem;
+				line-height: auto;
 			}
 		}
 		.icomoon {
@@ -695,8 +716,8 @@ vtr-ui-smart-performance-scan-summary {
 				font-size: 9rem;
 			}
 			@media #{$breakpoint_sm}{
-				font-size: 7rem;
-				margin-top: 1rem;
+				font-size: 6rem;
+				margin-top: 2rem;
 			}
 		}
 		.action-button {
@@ -712,6 +733,13 @@ vtr-ui-smart-performance-scan-summary {
 			text-align: center;
 			border: 0rem;
 			cursor: pointer;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			@media #{$breakpoint_sm}{
+				font-size: 1.2rem;
+				padding:0rem 2.5rem;					
+			}
 		}
 		.disabled-button{
 			border-radius: 2.5rem;
@@ -742,6 +770,9 @@ vtr-ui-smart-performance-scan-summary {
 			font-weight: $weight_regular;
 			font-size: 2.2rem !important;
 			opacity: 1 !important;
+			@media #{$breakpoint_sm}{
+				font-size:$fontsize_sm!important;
+			}
 		}
 		.slider {
 			width: calc(100% - 1rem);
@@ -867,7 +898,7 @@ vtr-ui-smart-performance-scan-summary {
 			}
 			.pc-status-info{
 				margin-top: 2rem;
-				.info-text{
+				.info-text{					
 					color: $alt;
 					margin-top: 1.8rem;
 					margin-bottom: 0rem;
@@ -881,6 +912,8 @@ vtr-ui-smart-performance-scan-summary {
 						width: calc(60.5% - 2rem);
 					}
 					span{
+						background:#2a2f43!important;
+						padding:0rem 0.2rem;
 						position: relative;
 						z-index: 9;
 					}
@@ -1046,9 +1079,16 @@ vtr-ui-smart-performance-scan-summary {
 				b {
 					font-size: $fontsize_xs2;
 					font-weight: $weight_bold;
-
 					@media #{$breakpoint_xl} {
 						font-size: 1.1rem;
+					}
+					@media #{$breakpoint_md} {
+						font-size: 1.1rem;
+						max-width: 13.5rem;
+						white-space: nowrap;
+						text-overflow: ellipsis;
+						overflow-x: hidden;
+						display: inline-block;
 					}
 				}
 			}

@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "散热模式设置",
                     "thermalMode2SettingDesc": "选择要使用的模式。",
                     "fnQDesc": "可使用快捷键 Fn+Q 切换模式。",
-                    "perormanceTitle": "野兽模式",
+                    "performanceTitle": "野兽模式",
                     "performanceDesc": "提升计算机性能，同时会提高风扇速度和功耗。",
                     "OCDesc": "可选择开启超频功能。",
                     "ac_dcDesc": "仅在插入交流电源适配器时才能使用野兽模式。",
@@ -1275,7 +1275,8 @@
                             "description1": "在您使用此设备时，启用自定义电池充电可延长电池的整体使用寿命。然而，未能完全充满电将缩短电池寿命。",
                             "description2": "为完全发挥此功能的作用，请拔下计算机的电源插头并消耗电池电量，使电池电量达到或低于停止充电阈值。",
                             "enable": "启用",
-                            "cancel": "取消"
+                            "cancel": "取消",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "低于以下电量时开始充电",
@@ -2132,9 +2133,10 @@
                 "title": "智能运动警报",
                 "tooltip": "<div id='antiTheft-tooltips'>计算机处于休眠模式或电源已关闭时，此功能无效。请检查以下操作的设置：<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>合上外盖操作</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>电量严重不足/电量低操作</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>电源按钮操作</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>睡眠按钮操作</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>休眠的空闲超时设置</li></ul></div>否则，不会触发警报和拍照。</div>",
                 "desc1": "启用此功能后，当屏幕锁定并检测到运动时（尤其是在公共场所），设备将发出蜂鸣声。",
-                "desc2": "要解除警报，请登录 Windows。",
-                "note": {
-                    "description": "成功登录系统后，此功能将自动关闭。需要再次启用此功能才能使用。"
+                "desc2": "登录到 Windows，警报将自动关闭。要使用此功能，需要将其再次启用。",
+				"note": {
+					"descriptionTitle": "注意：",
+                    "description": "登录到 Windows 时，需要有效的登录选项，例如密码或 PIN 码。否则，智能运动警报功能可能被任何访问计算机的未经授权的用户错误地禁用。"
                 },
                 "alarm": {
                     "title": " 警报将持续",
@@ -2146,7 +2148,7 @@
                 },
                 "allowCamera": {
                     "title": "拍照",
-                    "describe": "启用此功能后，如果屏幕被锁定，摄像头在检测到运动时会自动拍照。此数据将在您的设备上进行本地处理。Lenovo 不会访问或使用它。",
+                    "describe": "启用此功能后，如果屏幕被锁定，摄像头在检测到运动时会自动拍照。此数据将在您的设备上进行本地处理。Lenovo 不会访问或使用它。请注意，应禁用镜头挡板以确保在警报期间可以成功拍摄照片。",
                     "checkBoxText": "启用此功能"
                 },
                 "cameraPrivacy": {
@@ -3823,7 +3825,9 @@
         },
         "auto": "自动",
         "manual": "手动",
-        "noScanResults": "请单击“扫描并修复”按钮以触发扫描过程。"
+        "noScanResults": "请单击“扫描并修复”按钮以触发扫描过程。",
+        "am": "AM",
+        "pm": "PM"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

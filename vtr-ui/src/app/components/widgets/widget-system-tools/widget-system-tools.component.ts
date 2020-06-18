@@ -27,7 +27,7 @@ export class WidgetSystemToolsComponent implements OnInit {
 		section: 'legion_accessory_central_install_popup',
 		closeButton : 'legion_accessory_close_button',
 		cancelButton: 'legion_accessory_central_install_popup_cancel_button',
-		installButton: 'legion_accessory_central_install_popup_install_button'
+		okButton: 'legion_accessory_central_install_popup_install_button'
 	}
 	constructor(
 		private modalService: NgbModal,

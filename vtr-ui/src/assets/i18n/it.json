@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Impost. modalità termica",
                     "thermalMode2SettingDesc": "Seleziona la modalità che preferisci.",
                     "fnQDesc": "È possibile cambiare la modalità utilizzando la combinazione di tasti Fn+Q.",
-                    "perormanceTitle": "Modalità Prestazioni",
+                    "performanceTitle": "Modalità Prestazioni",
                     "performanceDesc": "Aumenta le prestazioni del computer con una velocità della ventola e un consumo energetico più elevati. ",
                     "OCDesc": "È possibile scegliere di attivare la funzione di overclock.",
                     "ac_dcDesc": "La modalità Prestazioni è attivabile solo quando l'adattatore di alimentazione CA è collegato.",
@@ -1275,7 +1275,8 @@
                             "description1": "L'abilitazione della carica personalizzata della batteria consente di prolungare la durata della batteria e di utilizzare il dispositivo più a lungo.Tuttavia, se la carica non è completa, l'autonomia della batteria sarà inferiore.",
                             "description2": "Per abilitare questa funzione, scollegare la presa di alimentazione del computer escaricare completamente la batteria o scendere sotto la soglia di arresto della carica.",
                             "enable": "ABILITA",
-                            "cancel": "ANNULLA"
+                            "cancel": "ANNULLA",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Avvia carica quando inferiore a",
@@ -2132,9 +2133,10 @@
                 "title": "Avviso Smart Motion",
                 "tooltip": "<div id='antiTheft-tooltips'>Questa funzione non è disponibile quando il computer è in modalità Ibernazione o è spento. Controllare le impostazioni nelle seguenti azioni:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>azioni del coperchio di chiusura</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>azione livello di carica batteria critico/basso</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>azione pulsante di alimentazione</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>azione pulsante Sospensione</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>impostazioni timeout inattività per la modalità Ibernazione</li></ul></div>In caso contrario, l'allarme non verrà attivato, né sarà possibile scattare foto.</div>",
                 "desc1": "Quando si abilita questa funzione, il dispositivo inizierà a emettere un segnale acustico quando lo schermo è bloccato e vengono rilevati movimenti, soprattutto in un luogo pubblico.",
-                "desc2": "Per annullare l'allarme, accedere a Windows.",
-                "note": {
-                    "description": "Una volta effettuato l'accesso al sistema, questa funzione verrà disattivata automaticamente. Per utilizzare la funzione è necessario abilitarla nuovamente."
+                "desc2": "Accedere a Windows e l'avviso verrà disattivato automaticamente. Per utilizzare la funzione è necessario abilitarla nuovamente.",
+				"note": {
+					"descriptionTitle": "Attenzione:",
+                    "description": "Le opzioni di accesso valide, come ad esempio una password o un codice PIN, sono necessarie quando si accede a Windows. In caso contrario, la funzione di avviso Smart Motion potrebbe essere erroneamente disabilitata da un utente non autorizzato che accede al computer."
                 },
                 "alarm": {
                     "title": " L'ALLARME DURERÀ PER",
@@ -2146,7 +2148,7 @@
                 },
                 "allowCamera": {
                     "title": "SCATTO FOTO",
-                    "describe": "Quando si abilita questa funzione, la fotocamera scatta automaticamente le foto quando rileva dei movimenti se lo schermo è bloccato. Questi dati vengono elaborati in locale sul dispositivo. Lenovo non accede a questi dati o li utilizza.",
+                    "describe": "Quando si abilita questa funzione, la fotocamera scatta automaticamente le foto quando rileva dei movimenti se lo schermo è bloccato. Questi dati vengono elaborati in locale sul dispositivo. Lenovo non accede a questi dati o li utilizza. Tenere presente che è necessario chiudere il coperchio della fotocamera per scattare foto durante l'avviso.",
                     "checkBoxText": "Abilita questa funzione"
                 },
                 "cameraPrivacy": {
@@ -3823,7 +3825,9 @@
         },
         "auto": "Automatico",
         "manual": "Manuale",
-        "noScanResults": "Fai clic sul pulsante AVVIA SCANSIONE E CORREGGI per avviare il processo di scansione."
+        "noScanResults": "Fai clic sul pulsante AVVIA SCANSIONE E CORREGGI per avviare il processo di scansione.",
+        "am": "AM",
+        "pm": "PM"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

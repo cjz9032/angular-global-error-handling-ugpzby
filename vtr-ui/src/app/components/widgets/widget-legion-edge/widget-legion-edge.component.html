@@ -25,7 +25,7 @@
 						<div class="title">{{'gaming.dashboard.device.quickSettings.title' | translate}}</div>
 						<div class="mode-status">
 							<span *ngIf = "thermalModeRealStatus === thermalMode2Enum.performance">{{'gaming.dashboard.device.legionEdge.thermalMode2.performance' | translate}}</span>
-							<span *ngIf = "thermalModeRealStatus === thermalMode2Enum.performance && OCSettings"> | {{'gaming.dashboard.device.legionEdge.thermalMode2.OC_On' | translate}}</span>
+							<span *ngIf = "thermalModeRealStatus === thermalMode2Enum.performance && performanceOCSettings"> | {{'gaming.dashboard.device.legionEdge.thermalMode2.OC_On' | translate}}</span>
 							<span *ngIf = "thermalModeRealStatus === thermalMode2Enum.balance">{{'gaming.dashboard.device.legionEdge.thermalMode2.balance' | translate}}</span>
 							<span *ngIf = "thermalModeRealStatus === thermalMode2Enum.quiet">{{'gaming.dashboard.device.legionEdge.thermalMode2.quiet' | translate}}</span>
 						</div>
@@ -41,7 +41,7 @@
 			</div>
 
 			<vtr-widget-device-update-settings componentName="Legion Edge" [items]="legionUpdate" [options]="drop"
-				[disableButtons]="disableButtons" (toggleOnOff)="toggleOnOffRamOCStatus($event)"
+				[disableButtons]="disableButtons" (toggleOnOff)="toggleOnOffStatus($event)"
 				(optionSelected)="onOptionSelected($event)" (popupClosed)="onPopupClosed($event)"
 				(iconClick)="onIconClick($event)" (showDropDown)="onShowDropdown($event)">
 			</vtr-widget-device-update-settings>

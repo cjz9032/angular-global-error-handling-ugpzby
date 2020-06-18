@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.14](https://bitbucket.tc.lenovo.com///compare/v1.6.13...v1.6.14) (2020-06-17)
+
+
+### Bug Fixes
+
+* **Overall:** using same data source of network state ([552f64e](https://bitbucket.tc.lenovo.com///commit/552f64e88607f7be90558a938db5bb25668b641f))
+* **warranty:** add warranty details missing space in offline mode.VAN-19219 ([16294ae](https://bitbucket.tc.lenovo.com///commit/16294aeee8f2cb812128d87e7ac3aa430722635f))
+
+### [1.6.13](https://bitbucket.tc.lenovo.com///compare/v1.6.12...v1.6.13) (2020-06-16)
+
+
+### Bug Fixes
+
+* **Menu:** click last submenu item, can't tab to next element ([0d49724](https://bitbucket.tc.lenovo.com///commit/0d497241ce797164ec0b4cc06f7c9ef17c808e41))
+
 ### [1.6.12](https://bitbucket.tc.lenovo.com///compare/v1.6.11...v1.6.12) (2020-06-15)
 
 ### [1.6.11](https://bitbucket.tc.lenovo.com///compare/v1.6.10...v1.6.11) (2020-06-15)
