@@ -38,12 +38,26 @@
 						vertical-align: middle;
 						text-decoration: underline;
 						cursor: pointer;
+						@media #{$white-on-black} {	
+							@include hyperlink-yellow-black;
+							}
+							@media #{$black-on-white} {
+		
+								@include hyperlink-blue-white;
+							}
 					}
 
 					fa-icon {
 						font-size: 2.0rem;
 						color: $color;
 						vertical-align: middle;
+						@media #{$white-on-black} {	
+							@include hyperlink-yellow-black;
+							}
+							@media #{$black-on-white} {
+		
+								@include hyperlink-blue-white;
+							}
 					}
 
 					&:hover {

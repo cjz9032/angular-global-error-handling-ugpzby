@@ -67,11 +67,19 @@
 				text-decoration: underline;
 				cursor: pointer;
 			}
+			@media #{$white-on-black} {	
+				@include hyperlink-yellow-black;
+				}
+				@media #{$black-on-white} {
+
+					@include hyperlink-blue-white;
+				}
 		}
 		.hide-settings {
 			display: inline-block;
 		}
 		.advanced-settings-title {
+			
 			&:focus {
 				outline: none;
 			}
