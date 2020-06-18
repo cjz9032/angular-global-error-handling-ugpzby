@@ -275,13 +275,13 @@
 																		<div class="col">
 																			<div class="row custom-from-date py-3"
 																				[ngClass]="{'selected-custom-date':isFromDate}">
-																				<div class="col-1">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtFrom' |translate }}</div>
+																				<div class="col-3">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtFrom' |translate }}</div>
 																				<div class="col-auto"><input type='text' [ngModel]="displayFromDate"
 																						(click)="selectFromDate()" readonly /></div>
 																			</div>
 																			<div class="row custom-to-date mt-3 py-3"
 																				[ngClass]="{'selected-custom-date':!isFromDate}">
-																				<div class="col-1">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtTo' |translate }}</div>
+																				<div class="col-3">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtTo' |translate }}</div>
 																				<div class="col-auto"><input type='text'  [ngModel]="displayToDate"
 																						(click)="selectToDate()" readonly /></div>
 
