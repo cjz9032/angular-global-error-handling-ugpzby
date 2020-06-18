@@ -3825,7 +3825,9 @@
         },
         "auto": "Automático",
         "manual": "Manual",
-        "noScanResults": "Clique no botão VERIFICAR E CORRIGIR para iniciar o processo de verificação."
+        "noScanResults": "Clique no botão VERIFICAR E CORRIGIR para iniciar o processo de verificação.",
+        "am": "AM",
+        "pm": "PM"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

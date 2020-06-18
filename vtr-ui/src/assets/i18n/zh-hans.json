@@ -3825,7 +3825,9 @@
         },
         "auto": "自动",
         "manual": "手动",
-        "noScanResults": "请单击“扫描并修复”按钮以触发扫描过程。"
+        "noScanResults": "请单击“扫描并修复”按钮以触发扫描过程。",
+        "am": "AM",
+        "pm": "PM"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

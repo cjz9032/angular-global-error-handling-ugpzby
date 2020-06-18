@@ -3825,7 +3825,9 @@
         },
         "auto": "自動",
         "manual": "手動",
-        "noScanResults": "請按一下「掃描並修復」按鈕以觸發掃描程序。"
+        "noScanResults": "請按一下「掃描並修復」按鈕以觸發掃描程序。",
+        "am": "AM",
+        "pm": "PM"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

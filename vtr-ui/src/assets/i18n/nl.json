@@ -3825,7 +3825,9 @@
         },
         "auto": "Automatisch",
         "manual": "Handmatig",
-        "noScanResults": "Klik op de knop SCANNEN EN HERSTELLEN om het scanproces te starten."
+        "noScanResults": "Klik op de knop SCANNEN EN HERSTELLEN om het scanproces te starten.",
+        "am": "AM",
+        "pm": "PM"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

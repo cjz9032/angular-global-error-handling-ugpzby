@@ -3825,7 +3825,9 @@
         },
         "auto": "Automático",
         "manual": "Manual",
-        "noScanResults": "Haga clic en el botón ANALIZAR Y CORREGIR para activar el proceso de análisis."
+        "noScanResults": "Haga clic en el botón ANALIZAR Y CORREGIR para activar el proceso de análisis.",
+        "am": "AM",
+        "pm": "PM"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

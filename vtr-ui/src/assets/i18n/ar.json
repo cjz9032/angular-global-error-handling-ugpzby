@@ -3827,7 +3827,9 @@
         },
         "auto": "تلقائي",
         "manual": "يدوي",
-        "noScanResults": "يُرجى النقر فوق الزر SCAN & FIX (فحص وإصلاح) لبدء عملية الفحص."
+        "noScanResults": "يُرجى النقر فوق الزر SCAN & FIX (فحص وإصلاح) لبدء عملية الفحص.",
+        "am": "AM",
+        "pm": "PM"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

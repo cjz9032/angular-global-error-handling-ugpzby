@@ -3825,7 +3825,9 @@
         },
         "auto": "Auto",
         "manual": "Manual",
-        "noScanResults": "Clique no botão ANALISAR E CORRIGIR para acionar o processo de análise."
+        "noScanResults": "Clique no botão ANALISAR E CORRIGIR para acionar o processo de análise.",
+        "am": "AM",
+        "pm": "PM"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

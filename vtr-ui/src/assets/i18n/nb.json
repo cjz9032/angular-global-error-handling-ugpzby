@@ -3825,7 +3825,9 @@
         },
         "auto": "Auto",
         "manual": "Manuell",
-        "noScanResults": "Klikk på SKANN OG REPARER hvis du vil utløse skanneprosessen."
+        "noScanResults": "Klikk på SKANN OG REPARER hvis du vil utløse skanneprosessen.",
+        "am": "AM",
+        "pm": "PM"
     },
     "homeSecurity": {
         "title": "Connected Home Security",
