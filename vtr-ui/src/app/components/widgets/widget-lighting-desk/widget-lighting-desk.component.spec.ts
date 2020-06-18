@@ -390,6 +390,13 @@ describe('WidgetLightingDeskComponent', () => {
         tick(10);
         expect(component.lightingProfileCurrentDetail.panelImage).toMatch("assets/images/gaming/lighting/lighting-ui-new/T750_water.png");
         
+        component.currentProfileId = 0;
+        component.ledlayoutversion = 5;
+        component.lightingCapabilities.LightPanelType = [4];
+        component.imgDefaultOff();
+        tick(10);
+        expect(component.lightingProfileCurrentDetail.panelImage).toMatch("assets/images/gaming/lighting/lighting-ui-new/T750_wind.png");
+
         component.lightingCapabilities.LightPanelType = [3];
         component.imgDefaultOff();
         tick(10);

@@ -1,4 +1,10 @@
 @import '../../../app.theme.scss';
+.w-60{
+	width:60%;
+	}
+.w-40{
+	width:40%;
+}
 .light-dashline {
 	border-top: 1px solid $screen_light_15;
 }
@@ -839,6 +845,9 @@ vtr-ui-smart-performance-scan-summary {
 					font-weight: $weight_bold;
 					line-height: 3rem;
 					color: $shade_blue;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
 				}
 				&:first-child{
 					.icomoon{

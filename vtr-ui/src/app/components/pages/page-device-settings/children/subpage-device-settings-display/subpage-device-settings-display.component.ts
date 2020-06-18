@@ -71,7 +71,6 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 	public isOnline: any = true;
 	private cameraAccessChangedHandler: any;
 	private windowsObj: any;
-	public biosVersion: string;
 	public readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
 	isSet = {
 		isSetDaytimeColorTemperatureValue: false,
@@ -218,9 +217,6 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 			this.windowsObj = this.Windows.Devices.Enumeration.DeviceAccessInformation
 				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.videoCapture);
 		}
-		this.deviceService.getMachineInfo().then((data) => {
-			this.biosVersion = data.biosVersion;
-		});
 	}
 
 	ngOnInit() {
