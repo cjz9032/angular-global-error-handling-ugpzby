@@ -694,6 +694,14 @@
 	justify-content: center;
 	align-items: center;
 	letter-spacing: 0;
+
+	@media #{$black-on-white} {
+		border: 0.1rem solid $dark;
+	}
+
+	@media #{$white-on-black} {
+		border: 0.1rem solid $light;
+	}
 }
 
 .search-dropdown-sm {
