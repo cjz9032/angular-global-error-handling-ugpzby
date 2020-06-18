@@ -660,11 +660,3 @@ border: none;
 		background-image: none !important;
 	}
 }
-
-@mixin high-contrast-white-color-dark{
-	color: $dark;
-}
-
-@mixin high-contrast-black-color-light{	
-	color: $light
-}
