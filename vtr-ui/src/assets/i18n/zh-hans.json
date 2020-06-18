@@ -1254,7 +1254,7 @@
                     "vantageToolbar": {
                         "title": "Lenovo Vantage 工具栏和高级设置",
                         "description": "将 Lenovo Vantage 工具栏固定到 Windows 任务栏，即可轻松访问您最常用的设置并为您获取高级产品和更新。",
-                        "hint": "图像中的选项取决于该机型的容量。例如，有些机型支持背光设置，有些不支持。"
+                        "hint": "上图仅为工具栏示意，具体可用的功能取决于电脑的硬件特性和匹配的驱动程序。例如，有些机型支持键盘背光设置，有些不支持。"
                     }
                 },
                 "batterySettings": {

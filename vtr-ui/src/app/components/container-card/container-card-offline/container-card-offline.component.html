@@ -1,9 +1,14 @@
 <div class="row offline-icon col col-12"
 	id="{{containerCardId+'-offline-icon'}}"
-	aria-label="offline-icon"
-	role="img">
-  <fa-icon [icon]="['fal', 'wifi-slash']"></fa-icon>
-  <div class="offline-message">
-    {{  'common.offline.connectToUseFeature' | translate}}
-  </div>
+	aria-labelledby="offline-icon-message">
+	<fa-icon [icon]="['fal', 'wifi-slash']"
+		aria-label="offline icon, image"
+		a11yRole="text"></fa-icon>
+	<div class="offline-message"
+		id="offline-icon-message"
+		role="text"
+		aria-hidden="true">
+		{{ 'common.offline.connectToUseFeature' | translate }}
+	</div>
+	<div class="offline-icon-scan-text">Offline icon, image.</div>
 </div>

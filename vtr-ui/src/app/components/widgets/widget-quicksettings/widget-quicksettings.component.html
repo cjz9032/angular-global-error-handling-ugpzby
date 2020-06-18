@@ -1,4 +1,5 @@
-<div *ngIf="!deviceService.isSMode && (cameraStatus.available || microphoneStatus.available)"
+<!-- Following condition will make sure at least any 2 feature is available we need to show quicksettings otherwise we need to hide entire quicksetting feature. e.g A, B & C are 3 feature & to check at least 2's availability, condition will be [(A&B)||(B&C)||(A&C)]  -->
+<div *ngIf="((!deviceService.isSMode && cameraStatus.available) || (cameraStatus.available && microphoneStatus.available) || (!deviceService.isSMode && microphoneStatus.available))"
 	class="vtr-widget-quicksettings vtr-widget">
 	<div class="container-fluid">
 		<div class="row">
@@ -11,7 +12,7 @@
 				</div>
 
 				<!-- microphone -->
-				<div [ngClass]="(cameraStatus.available && microphoneStatus.available)? 'widget-icon-3': 'widget-icon-2'">
+				<div [ngClass]="(!deviceService.isSMode && cameraStatus.available && microphoneStatus.available) ? 'widget-icon-3': 'widget-icon-2'">
 					<div *ngIf="microphoneStatus.available">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Microphone2x'"
 							[offIconDefinition]="'icomoon icomoon-FA-Microphone---slash2x'"

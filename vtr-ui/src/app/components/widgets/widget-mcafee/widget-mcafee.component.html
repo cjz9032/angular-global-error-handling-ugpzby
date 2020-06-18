@@ -6,6 +6,7 @@
 		metricsParent="security.antivirus"
 		[id]="install?'sa-av-btn-launchmcafee':'sa-av-btn-getMcafee'"
 		[label]="install?launchMcafeeText:getMcafeeText"
+		[isDisabled]="isOnline === false && !install"
 		[upperCaseLabel]="false"
 		[btnHeight]="true"
 		(buttonClick)="install?common.launch():common.openMcAfeePurchase('button')">

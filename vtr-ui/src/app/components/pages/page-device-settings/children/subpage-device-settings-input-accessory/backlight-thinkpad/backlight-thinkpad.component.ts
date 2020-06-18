@@ -198,6 +198,7 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 							this.currentMode = this.compare(res);
 							this.cacheData.currentMode = this.currentMode;
 							this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData)
+							this.updateBacklightSelection();
 						}
 					}).catch(error => {
 						this.logger.error('BacklightThinkpadComponent:GetKBDBacklightStatus', error.message);
@@ -310,6 +311,19 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 			});
 		}
 	}
+
+	updateBacklightSelection() {
+		if (this.kbBacklightUIModel && this.kbBacklightUIModel.length > 0) {
+			this.kbBacklightUIModel.forEach(element => {
+				if (element.value === this.currentMode) {
+					element.isChecked = true;
+				} else {
+					element.isChecked = false;
+				}
+			});
+		}
+	}
+
 
 	onBacklightRadioChange($event: UiCircleRadioWithCheckBoxListModel) {
 		this.currentMode = $event.value as BacklightStatusEnum;

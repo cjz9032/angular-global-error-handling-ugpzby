@@ -152,7 +152,7 @@ export class AntiVirusViewModel {
 			this.mcafee.expireAt = data;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfee, this.mcafee);
 		}).on(EventTypes.avMcafeeSubscriptionEvent, (data) => {
-			this.mcafee.subscription = data;
+			this.mcafee.subscription = data.toLowerCase();
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfee, this.mcafee);
 			this.updateCommonInfo();
 		}).on(EventTypes.avMcafeeRegisteredEvent, (data) => {
@@ -204,7 +204,7 @@ export class AntiVirusViewModel {
 		this.mcafee = Object.assign({}, {
 			localName: this.antiVirus.mcafee.localName,
 			registered: this.antiVirus.mcafee.registered,
-			subscription: this.antiVirus.mcafee.subscription,
+			subscription: this.antiVirus.mcafee.subscription.toLowerCase(),
 			trialUrl: this.antiVirus.mcafee.trialUrl,
 			enabled: this.antiVirus.mcafee.enabled,
 			firewallStatus: this.antiVirus.mcafee.firewallStatus,
