@@ -2133,9 +2133,10 @@
                 "title": "Smart rörelselarm",
                 "tooltip": "<div id='antiTheft-tooltips'>Funktionen fungerar inte om datorn är i viloläge eller avstängd. Kontrollera inställningarna för följande åtgärder:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>stänga locket</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>kritisk/låg batteriladdning</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>strömbrytare</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>knapp för strömsparläge</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>från inaktiv till viloläge</li></ul></div>I annat fall utlöses inte larmet och det går inte heller att ta foton.</div>",
                 "desc1": "Om du aktiverar den här funktionen börjar enheten signalera när bildskärmen är låst och rörelser identifieras, speciellt på en offentlig plats.",
-                "desc2": "Logga in på Windows om du vill stänga av larmet.",
-                "note": {
-                    "description": "När du har loggat in på systemet stängs funktionen av automatiskt. Du måste aktivera den igen om du vill använda den."
+                "desc2": "Larmet stängs av automatiskt när du loggar in på Windows. För att använda funktionen måste du aktivera den igen.",
+				"note": {
+					"descriptionTitle": "Viktigt!",
+                    "description": "Giltiga inloggningsalternativ, till exempel lösenord eller PIN-kod, krävs vid inloggning på Windows. I annat fall kan larmfunktionen Smart rörelselarm inaktiveras av misstag av obehöriga användare som har åtkomst till datorn."
                 },
                 "alarm": {
                     "title": " LARMET SKA PÅGÅ I",
@@ -2147,7 +2148,7 @@
                 },
                 "allowCamera": {
                     "title": "TA FOTON",
-                    "describe": "När du aktiverar den här funktionen tar kameran automatiskt foton när rörelser identifieras och skärmen är låst. Informationen bearbetas lokalt på datorn. Lenovo har inte till åtkomst till denna information och använder den inte.",
+                    "describe": "När du aktiverar den här funktionen tar kameran automatiskt foton när rörelser identifieras och skärmen är låst. Informationen bearbetas lokalt på datorn. Lenovo har inte till åtkomst till denna information och använder den inte. Tänk på att slå av kameraskyddsfunktionen för att kunna ta foton under ett larm.",
                     "checkBoxText": "Aktivera funktionen"
                 },
                 "cameraPrivacy": {
@@ -3824,7 +3825,9 @@
         },
         "auto": "Automatiskt",
         "manual": "Manuellt",
-        "noScanResults": "Klicka på Genomsök och åtgärda för att starta genomsökningen."
+        "noScanResults": "Klicka på Genomsök och åtgärda för att starta genomsökningen.",
+        "am": "AM",
+        "pm": "PM"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

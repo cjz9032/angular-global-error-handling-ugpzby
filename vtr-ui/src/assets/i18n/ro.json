@@ -2133,9 +2133,10 @@
                 "title": "Alertă Smart Motion",
                 "tooltip": "<div id='antiTheft-tooltips'>Această caracteristică nu funcționează atunci când computerul este în modul de hibernare sau este oprit. Verificați setările pentru următoarele acțiuni:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>acțiuni de închidere a capacului</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>acțiuni pentru nivelul critic/scăzut al energiei bateriei</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>acțiuni ale butonului de alimentare</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>acțiuni ale butonului de repaus</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>setările de expirare a timpului de inactivitate până la trecerea în hibernare</li></ul></div>În caz contrar, caracteristica nu va declanșa alarma și nici nu va realiza fotografii.</div>",
                 "desc1": "Când activați această caracteristică, dispozitivul va începe să sune atunci când ecranul este blocat și se detectează mișcări, în special într-un loc public.",
-                "desc2": "Pentru a dezactiva alarma, conectați-vă la Windows.",
-                "note": {
-                    "description": "După ce v-ați conectat cu succes la sistem, această caracteristică va fi oprită automat. Trebuie să o activați din nou pentru a o utiliza."
+                "desc2": "Conectați-vă la Windows și alarma se va opri în mod automat. Pentru a utiliza această caracteristică, trebuie să o activați din nou.",
+				"note": {
+					"descriptionTitle": "Atenție:",
+                    "description": "Atunci când vă conectați la Windows sunt necesare opțiuni de conectare valide, precum o parolă sau un cod PIN. În caz contrar, caracteristica Alertă Smart Motion poate fi dezactivată din greșeală de către orice utilizator neautorizat care vă accesează computerul."
                 },
                 "alarm": {
                     "title": " ALARMA VA DURA TIMP DE",
@@ -2147,7 +2148,7 @@
                 },
                 "allowCamera": {
                     "title": "REALIZARE FOTOGRAFII",
-                    "describe": "Când activați această caracteristică, camera fotografiază automat când detectează mișcare, dacă ecranul este blocat. Aceste date sunt procesate local pe dispozitivul dumneavoastră. Lenovo nu accesează datele și nu le folosește.",
+                    "describe": "Când activați această caracteristică, camera fotografiază automat când detectează mișcare, dacă ecranul este blocat. Aceste date sunt procesate local pe dispozitivul dvs. Lenovo nu accesează datele și nu le folosește. Rețineți că trebuie să opriți obturatorul camerei, pentru a vă asigura că va realiza fotografii în timpul alarmei.",
                     "checkBoxText": "Activați această caracteristică"
                 },
                 "cameraPrivacy": {
@@ -3824,7 +3825,9 @@
         },
         "auto": "Auto",
         "manual": "Manual",
-        "noScanResults": "Please click SCAN & FIX button to trigger scan process."
+        "noScanResults": "Please click SCAN & FIX button to trigger scan process.",
+        "am": "AM",
+        "pm": "PM"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

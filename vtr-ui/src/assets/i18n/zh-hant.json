@@ -2133,9 +2133,10 @@
                 "title": "智慧型移動警示",
                 "tooltip": "<div id='antiTheft-tooltips'>當電腦處於休眠模式或關閉電源時，此功能無法運作。檢查下列動作中的設定：<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>闔上機蓋的動作</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>電力不足/偏低時的動作</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>電源按鈕動作</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>睡眠按鈕動作</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>閒置逾時設定進入休眠</li></ul></div>否則，它不會引發警示，也不會拍照。</div>",
                 "desc1": "啟用此功能時，裝置將在螢幕鎖定及偵測到移動時開始發出嗶聲，特別是在公共場所。",
-                "desc2": "若要關閉警示音，請登入 Windows。",
-                "note": {
-                    "description": "成功登入系統後，此功能將自動關閉。您必須重新啟用才能使用此功能。"
+                "desc2": "登入 Windows，警示將會自動關閉。若要使用此功能，您必須重新啟用。",
+				"note": {
+					"descriptionTitle": "注意：",
+                    "description": "當您登入 Windows 時，需要有效的登入選項（例如密碼或 PIN 碼）。否則，任何存取您電腦的未經授權使用者都有可能會錯誤地停用智慧型移動警示功能。"
                 },
                 "alarm": {
                     "title": " 警示音持續時間",
@@ -2147,7 +2148,7 @@
                 },
                 "allowCamera": {
                     "title": "拍照",
-                    "describe": "啟用此功能時，若您的螢幕已鎖定，相機將在偵測到動作時自動拍照。這份資料將由您的裝置本機進行處理，Lenovo 絕不會逕自存取或加以使用。",
+                    "describe": "啟用此功能時，若您的螢幕已鎖定，相機將在偵測到動作時自動拍照。這份資料將由您的裝置本機進行處理，Lenovo 絕不會逕自存取或加以使用。請注意，應關閉攝影機玻璃擋片以確保在警示期間可以順利拍照。",
                     "checkBoxText": "啟用這項功能"
                 },
                 "cameraPrivacy": {
@@ -3824,7 +3825,9 @@
         },
         "auto": "自動",
         "manual": "手動",
-        "noScanResults": "請按一下「掃描並修復」按鈕以觸發掃描程序。"
+        "noScanResults": "請按一下「掃描並修復」按鈕以觸發掃描程序。",
+        "am": "AM",
+        "pm": "PM"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

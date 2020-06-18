@@ -811,12 +811,12 @@
             "notEnrolled": "未登録"
         },
         "qAndA": {
-            "title": "ご使用のデバイスのQ&A",
+            "title": "ご使用のマシンの Q&A",
             "subtitle": "ご使用のデバイスのお役立ちヒントを探します。",
-            "question1": "ファイルをバックアップし、復元する",
+            "question1": "ファイルのバックアップおよび復元",
             "question2": "PC を初期状態に戻す方法",
-            "question3": "ご使用のマシンの CPU を知る方法",
-            "question4": "マシンのバッテリーの使用を確認する",
+            "question3": "ご使用のマシンの CPU を確認",
+            "question4": "マシンのバッテリー使用状況を確認",
             "question5": "PC をタブレットのように使用する",
             "question6": "パーソナル・アシスタントの Cortana についてもっと知る"
         },
@@ -872,13 +872,13 @@
         "offlineInfo": {
             "title": "インターネット接続は検出されませんでした",
             "subtitle": "接続の問題を解決する方法の詳細については、",
-            "buttonText": "サポートを受ける",
+            "buttonText": "サポートを依頼",
             "welcomeToVantage": "次世代の Vantage へようこそ",
             "systemHealth": "システム正常性"
         },
         "feedback": {
             "title": "フィードバックを送る",
-            "subtitle": "Vantage の感想をお聞かせください。",
+            "subtitle": "VANTAGE に関するフィードバックをお送りください。",
             "button": "フィードバックを送る",
             "form": {
                 "email": "Email (optional)",
@@ -930,14 +930,14 @@
                 "title": "メモリー",
                 "detail": {
                     "notFound": "メモリーが見つかりません",
-                    "of": "の"
+                    "of": "/"
                 }
             },
             "diskSpace": {
                 "title": "ディスク容量",
                 "detail": {
                     "notFound": "ディスクが見つかりません",
-                    "of": "の"
+                    "of": "/"
                 }
             },
             "warranty": {
@@ -968,7 +968,7 @@
             "serial": "シリアル",
             "productNumber": "製品番号",
             "biosVersion": "BIOS バージョン",
-            "learnMore": "さらに詳しい説明を見る",
+            "learnMore": "詳細はこちら",
             "freeMemory": "空きメモリー",
             "systemUpdate": {
                 "title": "システム アップデート",
@@ -1011,7 +1011,7 @@
                     "support": "サポート"
                 }
             },
-            "helpful": "役に立つコンテンツ"
+            "helpful": "役に立つ情報"
         },
         "deviceSettings": {
             "helpful": "役に立つコンテンツ",
@@ -1114,9 +1114,9 @@
             "power": {
                 "title": "電源",
                 "subtitle": "電源設定",
-                "description": "このセクションでは、熱性能を動的に調整してバッテリー寿命を最大化することができます。また、一般的な電源関連機能もここにあります。このセクションでデフォルト設定を確認し、必要に応じてシステムをカスタマイズできます。",
+                "description": "このセクションでは、熱性能を動的に調整してバッテリー寿命を最大化することができます。また、一般的な電源機能も実行できます。このセクションでデフォルト設定を確認し、必要に応じてシステムをカスタマイズできます。",
                 "jumpto": {
-                    "title": "設定に移動",
+                    "title": "設定を表示",
                     "battery": "バッテリー",
                     "power": "電源",
                     "other": "その他"
@@ -1130,7 +1130,7 @@
                     "description3": "インテリジェント・クーリングは熱性能のバランスを必要に応じて自動的に調整します。ノートブックを手で持っている場合、インテリジェントクーリング機能はパフォーマンス設定を調整して表面の熱を軽減させ、使いやすくします。デバイスが机上に置かれると、この機能はパフォーマンスを最適化します。",
                     "description13": "オンにすると、この機能は必要に応じて熱設定を動的に調整します。デバイスを手に持っているときやアイドル状態のときはデバイスの温度を低めに、静かに保ちます。 デバイスが安定した場所にあると、パフォーマンスが最適化されます。オフにすると、熱の優先度を手動で設定できます。",
                     "description14": "この機能により、必要に応じて、ファン速度を調整したり、システムパフォーマンスを最大化したり、バッテリ寿命を延ばしたりすことができます。以下の 3 つのモードがあります。また、ホットキー (Fn+Q) を使うか Lenovo Vantage ツールバーからモードを切り替えることもできます。",
-                    "readMore": "表示を多くする",
+                    "readMore": "さらに読む",
                     "gotoWindows": {
                         "title": "Windows 設定に移動",
                         "modalBodyText1": "Windows のパフォーマンスの電源スライダーにアクセスするには、Windows のシステム トレイのバッテリー・アイコンをクリックします"
@@ -1264,7 +1264,7 @@
                         "description": "コンピューターを主に AC アダプターに接続して使用し、バッテリー電源はそれほど使用しない場合は、充電のしきい値を 100 % より下に変更してバッテリー寿命を延ばすことができます。それほど使用しないバッテリーは完全に充電しない状態を維持することで寿命が長くなるため、効果的です。",
                         "tooltip": "現状でバッテリーが充電停止しきい値を超えて充電されている場合は、ACアダプターを取り外して、バッテリーを充電停止しきい値以下まで放電させてください。バッテリーの状態 (古いまたは新しい) によって、充電の正確な開始点および停止点は、最大 2 パーセントのポイントで異なります。この機能が有効の場合、バッテリーの状態が正しく報告されるように定期的にバッテリー・ゲージのリセットを実行することをお勧めします。",
                         "note": "お願い",
-                        "readMoreText": "表示を多くする。",
+                        "readMoreText": "さらに読む。",
                         "noteInfo": " バッテリー充電のしきい値はまだ完全に有効になっていません。ACアダプターを抜き、充電停止しきい値以下までバッテリを放電してください。",
                         "settings": {
                             "title1": "プライマリー・バッテリーのしきい値",
@@ -1570,7 +1570,7 @@
             "displayCamera": {
                 "title": "ディスプレイとカメラ",
                 "subtitle": "ディスプレイとカメラの設定",
-                "description": "このセクションでは、ビジュアル・エクスペリエンスの向上や、カメラのプロパティの構成を行うことができます。ここでたくさんある機能を調べて、ディスプレイ・エクスペリエンスをカスタマイズします。",
+                "description": "このセクションでは、ビジュアル関連の向上や、カメラのプロパティの構成を行うことができます。ここでたくさんある機能を調べて、表示設定をカスタマイズします。",
                 "jumpTo": {
                     "title": "設定に移動",
                     "shortcuts": {
@@ -1610,7 +1610,7 @@
                         "tips": "Windows Update を実行するか、グラフィック・ドライバーを手動でインストールして、アイ・ケア・モードを復元してください"
                     },
                     "dispColorTemp": {
-                        "title": "ディスプレイの色温度",
+                        "title": "日中の色温度",
                         "options": {
                             "warm": "暖色 (目に優しい)",
                             "cold": "寒色"
@@ -1923,7 +1923,7 @@
             },
             "intelligentSecurity": {
                 "title": "インテリジェント・セキュリティー",
-                "readMore": "表示を多くする",
+                "readMore": "さらに読む",
                 "image": {
                     "title": "インテリジェント・セキュリティー",
                     "description": "お使いの PC でインテリジェント・センサー技術を使用し、プライバシーを保護し、バッテリーの電力を節約してください。"
@@ -2133,9 +2133,10 @@
                 "title": "スマート・モーション・アラーム",
                 "tooltip": "<div id='antiTheft-tooltips'>この機能は、コンピューターが休止状態または電源がオフのときは機能しません。次の動作の設定を確認してください。<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>閉じる動作</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>重要なアクション/バッテリー低下時の動作</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>電源ボタンの動作</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>スリープ・ボタンの動作</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>休止状態までのアイドル・タイムアウト設定</li></ul></div>それ以外の場合は、アラームがトリガーされず、写真も撮られません。</div>",
                 "desc1": "この機能を有効にした場合は、画面がロックされた状態で、特に公共の場所で動きが検出されると、デバイスのビープ音が鳴ります。",
-                "desc2": "アラームを解除するには、Windows にログインしてください。",
-                "note": {
-                    "description": "システムに正しくログインすると、この機能は自動的にオフになります。使用するには、再度有効にする必要があります。"
+                "desc2": "Windows にログインすると、アラームは自動的にオフになります。機能を使用するには、再度有効にする必要があります。",
+				"note": {
+					"descriptionTitle": "重要:",
+                    "description": "Windows にログインするときは、パスワードや PIN コードなどの有効なサインイン・オプションが必要です。そうしないと、スマート・モーション・アラーム機能がコンピューターにアクセスする権限のないユーザーによって誤って無効にされる可能性があります。"
                 },
                 "alarm": {
                     "title": " アラームの継続時間",
@@ -2147,7 +2148,7 @@
                 },
                 "allowCamera": {
                     "title": "写真撮影",
-                    "describe": "この機能を有効にした場合、画面がロックされた状態で動きが検出されると、カメラによって自動的に写真が撮影されます。このデータはデバイスでローカルに処理されます。Lenovo はアクセスも使用もしません。",
+                    "describe": "この機能を有効にした場合、画面がロックされた状態で動きが検出されると、カメラによって自動的に写真が撮影されます。このデータはデバイスでローカルに処理されます。Lenovo はアクセスも使用もしません。アラーム発生時に正常に写真を撮れるようにするには、カメラ・シャッターをオフにする必要があることに注意してください。",
                     "checkBoxText": "この機能を有効にする"
                 },
                 "cameraPrivacy": {
@@ -2215,7 +2216,7 @@
     "systemUpdates": {
         "title": "システム アップデート",
         "back": "戻る",
-        "history": "全履歴",
+        "history": "これまでの記録",
         "notAvailable": "利用できません",
         "notInstalled": "未インストール",
         "criticalUpdates": "重要な更新",
@@ -2225,7 +2226,7 @@
         "successInstall": "正常にインストールされました。",
         "failedInstall": "インストール失敗:",
         "at": "の",
-        "readMore": "表示を多くする",
+        "readMore": "さらに読む",
         "popup": {
             "reboot": "再起動",
             "shutdown": "シャットダウン",
@@ -2260,7 +2261,7 @@
         },
         "banner": {
             "neverChecked": "システム アップデートへようこそ。",
-            "title": "最新のシステムは健全なシステムです。",
+            "title": "システムを安全にご利用いただくために、常に最新の状態にしてください。",
             "installingTitle": "更新時に、ご使用のコンピューターをスリープ状態または休止状態にしないでください。",
             "last": "最終更新日:",
             "next": "次回の更新スケジュール:",
@@ -2339,7 +2340,7 @@
     },
     "support": {
         "common": {
-            "getSupport": "サポートを受ける"
+            "getSupport": "サポートを依頼"
         },
         "warranty": {
             "titleInWarranty": "保証期間内",
@@ -2393,8 +2394,8 @@
         },
         "quickAccess": {
             "categories": "カテゴリー",
-            "categoriesDesc": "記事を読んで役に立つ情報を見つけてください。",
-            "seeArticles": "記事を見る"
+            "categoriesDesc": "記事から役に立つ情報を検索。",
+            "seeArticles": "記事を確認"
         }
     },
     "security": {
@@ -2727,20 +2728,19 @@
         "loggingOut": "ログアウト中...",
         "unlockExclusives": "専用機能をロック解除",
         "user": "ユーザー",
-        "welcomeText1": "今日はエネルギーにあふれているように見えます、{{firstName}} さん!",
+        "welcomeText1": "今日はエネルギーに満ち溢れた日です。",
         "welcomeText2": "{{firstName}}さん、またお会いできて嬉しいです",
-        "welcomeText3": "{{firstName}}さん、とても嬉しい驚きです",
-        "welcomeText4": "{{firstName}}さんが笑うと、みんなが笑顔になります:)",
-        "welcomeText5": "コンコン、{{firstName}}さん",
+        "welcomeText3": "{{firstName}}さん、お久しぶりです",
+        "welcomeText4": "{{firstName}}さんが笑うと、みんなが笑顔になります。",
+        "welcomeText5": "{{firstName}}さん、こんにちは",
         "welcomeText6": "素晴らしい場所に出発しましょう！",
-        "welcomeText7": "今日はあなたの日です、{{firstName}}さん！",
-        "welcomeText8": "幸運の小さな木が好きなのは誰ですか？",
-        "welcomeText9": "パーティーをしましょう、{{firstName}}さん！",
-        "welcomeText10": "冷静を保ち、Vantage をオンにしましょう",
-        "welcomeText11": "コスパの高い Vantage",
-        "welcomeText12": "Vantage を家に持ち帰りましょう",
-        "welcomeText13": "食べて寝て、Vantage、そしてその繰り返し",
-        "welcomeText14": "いつでも新鮮な Vantage",
+        "welcomeText7": "{{firstName}}さん、準備はいいですか。",
+        "welcomeText9": "{{firstName}}さん、さあ始めましょう。",
+        "welcomeText10": "慌てずに、Vantageを立ち上げよう",
+        "welcomeText11": "Vantage は高品質かつお求めやすい価格です",
+        "welcomeText12": "ぜひ Vantage をご購入ください",
+        "welcomeText13": "毎日 Vantage をご活用ください",
+        "welcomeText14": "Vantage には常に新しい発見があります。",
         "welcomeText15": "Vantage を最大限に活用しましょう",
         "welcomeTextWithoutUserName1": "今日はエネルギーにあふれているように見えます!",
         "welcomeTextWithoutUserName2": "またお会いできて嬉しいです",
@@ -3276,7 +3276,7 @@
         "subscriptionDetails": {
             "title": "サブスクリプションの詳細",
             "description": "Lenovo Smart Performance Service に登録されています。期間中、すべての機能を最大限に利用し、PC を保護して円滑な稼働を維持できます。",
-            "learnMore": "さらに詳しい説明を見る",
+            "learnMore": "詳細はこちら",
             "startDate": "開始日",
             "endDate": "終了日",
             "status": "ステータス",
@@ -3824,7 +3824,9 @@
         },
         "auto": "自動",
         "manual": "手動",
-        "noScanResults": "「スキャンして修正」ボタンをクリックしてスキャン・プロセスを起動してください。"
+        "noScanResults": "「スキャンして修正」ボタンをクリックしてスキャン・プロセスを起動してください。",
+        "am": "AM",
+        "pm": "PM"
     },
     "homeSecurity": {
         "title": "Connected Home Security",
