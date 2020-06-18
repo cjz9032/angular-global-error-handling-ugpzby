@@ -91,7 +91,6 @@ export class UserDefinedKeyComponent implements OnInit, OnDestroy {
 		this.keyboardMappedValues = keyboardMap;
 		this.getUDKCapability();
 		this.initialize();
-
 	}
 
 	async getUDKCapability() {
@@ -168,12 +167,12 @@ export class UserDefinedKeyComponent implements OnInit, OnDestroy {
 				this.selectedValue = this.userDefinedKeyOptions[this.udkActionInfo.index];
 				this.applicationList = this.udkActionInfo.applicationList;
 				this.fileList = this.udkActionInfo.fileList;
-				this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions, '1');
+				this.userDefinedKeyOptions = this.commonService.removeObjFromUserDefined(this.userDefinedKeyOptions, 1);
 				break;
 			case 2:
 				this.selectedValue = this.userDefinedKeyOptions[this.udkActionInfo.index];
 				this.url = this.udkActionInfo.actionValue;
-				this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions, '1');
+				this.userDefinedKeyOptions = this.commonService.removeObjFromUserDefined(this.userDefinedKeyOptions, 1);
 				break;
 			case 3:
 				this.selectedValue = this.userDefinedKeyOptions[this.udkActionInfo.index];
@@ -187,12 +186,12 @@ export class UserDefinedKeyComponent implements OnInit, OnDestroy {
 				}
 				mappedString = mappedString.substring(1);
 				this.keyCode = mappedString;
-				this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions, '1');
+				this.userDefinedKeyOptions = this.commonService.removeObjFromUserDefined(this.userDefinedKeyOptions, 1);
 				break;
 			case 4:
 				this.selectedValue = this.userDefinedKeyOptions[this.udkActionInfo.index];
 				this.description = this.udkActionInfo.actionValue;
-				this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions, '1');
+				this.userDefinedKeyOptions = this.commonService.removeObjFromUserDefined(this.userDefinedKeyOptions, 1);
 				break;
 		}
 	}
@@ -249,7 +248,7 @@ export class UserDefinedKeyComponent implements OnInit, OnDestroy {
 						if (!(settingKey === 'LAUNCH_APPLICATION_FILE')) {
 							this.showUDFSetSuccessMessage(settingKey);
 							this.udkFormSubmitted = false;
-							this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions, '1');
+							this.userDefinedKeyOptions = this.commonService.removeObjFromUserDefined(this.userDefinedKeyOptions, 1);
 							this.logger.info('keyboard setUDKTypeList here -------------.>', value);
 						}
 					}).catch(error => {
@@ -269,7 +268,7 @@ export class UserDefinedKeyComponent implements OnInit, OnDestroy {
 				this.keyboardService.AddApplicationOrFiles(selectedUDK, appSelectorType)
 					.then((value: any) => {
 						this.udkFormSubmitted = false;
-						this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions, '1');
+						this.userDefinedKeyOptions = this.commonService.removeObjFromUserDefined(this.userDefinedKeyOptions, 1);
 						const applicationValue = value.UDKType[0].FileList[0].Setting[0].value;
 						const applicationKey = value.UDKType[0].FileList[0].Setting[0].key;
 						if (applicationOrFile === '4') {
@@ -305,7 +304,7 @@ export class UserDefinedKeyComponent implements OnInit, OnDestroy {
 				this.keyboardService.DeleteUDKApplication(udkType, itemId, displayName)
 					.then((value: any) => {
 						this.udkFormSubmitted = false;
-						this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions, '1');
+						this.userDefinedKeyOptions = this.commonService.removeObjFromUserDefined(this.userDefinedKeyOptions, 1);
 						if (selectedDropdownType === 'APPLICATIONS') {
 							this.applicationList.splice(index, 1);
 						}

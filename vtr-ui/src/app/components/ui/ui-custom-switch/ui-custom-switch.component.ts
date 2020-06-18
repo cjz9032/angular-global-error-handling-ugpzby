@@ -1,7 +1,7 @@
 import { Component, OnInit, EventEmitter, Output, Input, OnDestroy } from '@angular/core';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { ActivatedRoute } from '@angular/router';
-import { Subject } from 'rxjs';
+import { Subject, Subscription } from 'rxjs';
 
 @Component({
 	selector: 'vtr-ui-custom-switch',
@@ -24,11 +24,13 @@ export class UiCustomSwitchComponent implements OnInit, OnDestroy {
 	@Input() metricsParent;
 	@Input() switchParam: string;
 
+	switchChangeSubscription: Subscription;
+
 	constructor(private metrics: MetricService, private activatedRoute: ActivatedRoute) {
 	 }
 
 	ngOnInit(): void {
-		UiCustomSwitchComponent.switchChange.subscribe(res => {
+		this.switchChangeSubscription = UiCustomSwitchComponent.switchChange.asObservable().subscribe(res => {
 			if (this.componentId === 'ds-power-battery-threshold') {
 				this.value = res;
 			}
@@ -36,8 +38,8 @@ export class UiCustomSwitchComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy(): void {
-		if (UiCustomSwitchComponent.switchChange) {
-			UiCustomSwitchComponent.switchChange.unsubscribe();
+		if (this.switchChangeSubscription) {
+			this.switchChangeSubscription.unsubscribe();
 		}
 	}
 

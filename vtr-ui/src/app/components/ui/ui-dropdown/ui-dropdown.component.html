@@ -31,6 +31,7 @@
 			{{ placeholder }}
 		</div>
 		<div *ngIf="dropdownType === 'userdefined-key'"
+			(click)="toggleList($event)"
 			aria-hidden="true"
 			class="ui-dropdown-btn-m-label"
 			[ngClass]="{ 'knock-out-label': disabled }">

@@ -38,6 +38,11 @@
             font-size: $fontsize_xs;
         }
     }
+    .disabled-link{
+        cursor: not-allowed;
+        color: $grey_dark;
+        border-bottom: 0.2rem solid $grey_dark;
+    }
     .status-list {
         padding-left: 0;
         padding: 1rem 1.4rem;

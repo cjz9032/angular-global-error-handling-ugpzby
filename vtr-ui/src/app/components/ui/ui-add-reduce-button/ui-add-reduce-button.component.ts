@@ -17,7 +17,7 @@ export class UiAddReduceButtonComponent implements OnInit {
   @Input() ariaLabelValue:string = "";
   @Input() tabIndexNum:number = 0;
   @Output() setVal = new EventEmitter<any>();
-  @Input() automationId:string;
+  @Input() automationId = '';
   constructor() { }
 
   ngOnInit() {

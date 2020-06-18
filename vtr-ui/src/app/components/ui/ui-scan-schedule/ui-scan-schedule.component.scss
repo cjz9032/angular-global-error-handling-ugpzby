@@ -1,4 +1,10 @@
 @import '../../../app.theme.scss';
+.w-60{
+	width:60%;
+	}
+.w-40{
+	width:40%;
+}
 .light-dashline {
 	border-top: 1px solid $screen_light_15;
 }
@@ -363,7 +369,7 @@ vtr-ui-smart-performance-scan-summary {
 						}
                         .heading {
                             h3, h2{
-								font-size: $fontsize_md;
+								font-size: $fontsize_sm;
 								color: $main_shade !important;
 								letter-spacing: 0;
 								font-weight: $weight_bold;
@@ -388,11 +394,11 @@ vtr-ui-smart-performance-scan-summary {
 										height: 5rem;
 										@media #{$breakpoint_xl}{
 											padding: 0.5rem 0.2rem;
-											height: 4.5rem;
+											height: 5rem;
 										}
 										@media #{$breakpoint_sm}{
 											padding: 0.5rem 0.2rem;
-											height: 3.5rem;
+											height: 5rem;
 										}
 										&.active {
                                             background-color: transparent;
@@ -443,7 +449,10 @@ vtr-ui-smart-performance-scan-summary {
                         }
                     }
                     .status-text{
-                        flex-grow: 8;
+						flex-grow: 8;
+						@media #{$breakpoint_sm}{
+							margin-top: 1.25rem;
+						}
                         p {
                             text-transform: uppercase;
                             font-size: 1.6rem;
@@ -452,6 +461,9 @@ vtr-ui-smart-performance-scan-summary {
 							position: absolute;
 							right: 5rem;
 							letter-spacing: 0;
+							@media #{$breakpoint_sm}{
+								font-size: 1.2rem;
+							}
 							// top: 40%;
 						}
 						vtr-widget-speedometer {
@@ -543,7 +555,8 @@ vtr-ui-smart-performance-scan-summary {
 			line-height: 2;
 			font-weight: $weight_regular;
 			@media #{$breakpoint_sm}{
-				font-size: 1.4rem;
+				font-size: $fontsize_sm;
+				line-height: auto;
 			}
 		}
 		.icon {
@@ -571,6 +584,13 @@ vtr-ui-smart-performance-scan-summary {
 			text-align: center;
 			border: 0rem;
 			cursor: pointer;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			@media #{$breakpoint_sm}{
+				font-size: 1.2rem;
+				padding:0rem 2.5rem;					
+			}
 		}
 	}
 	.performance-slider-block {
@@ -585,6 +605,9 @@ vtr-ui-smart-performance-scan-summary {
 			font-weight: $weight_regular;
 			font-size: 2.2rem !important;
 			opacity: 1 !important;
+			@media #{$breakpoint_sm}{
+				font-size:$fontsize_sm!important;
+			}
 		}
 		.slider {
 			width: calc(100% - 1rem);
@@ -679,6 +702,14 @@ vtr-ui-smart-performance-scan-summary {
 				position:absolute;
 				left:50%;
 				border-left:1px solid $shade_darkest;
+			}
+		}
+		.pc-status-info{
+			.info-text{				
+				span{
+					background:#2a2f43!important;					
+				}			
+
 			}
 		}
 	}
@@ -814,6 +845,9 @@ vtr-ui-smart-performance-scan-summary {
 					font-weight: $weight_bold;
 					line-height: 3rem;
 					color: $shade_blue;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
 				}
 				&:first-child{
 					.icomoon{

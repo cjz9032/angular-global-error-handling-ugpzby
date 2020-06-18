@@ -733,7 +733,7 @@
                 "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
-                "name11": "Legion front Fan Lighting",
+                "name11": "Legion Front Fan Lighting",
                 "name12": "Legion Top Fan Lighting"
             },
             "lightingEffect": {
@@ -2133,9 +2133,10 @@
                 "title": "Alerta de movimiento inteligente",
                 "tooltip": "<div id='antiTheft-tooltips'>Esta característica no funciona cuando el sistema está en modalidad de hibernación o está apagado. Compruebe los valores en las siguientes acciones:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>acciones de la cubierta de cierre</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>acción de batería crítica/baja</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>acción del botón de encendido</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>acción del botón de suspensión</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>valores de tiempo de espera de inactividad hasta hibernación</li></ul></div>De lo contrario, no activará la alarma ni tomará las fotos.</div>",
                 "desc1": "Al habilitar esta característica, el dispositivo empezará a emitir un pitido cuando la pantalla esté bloqueada y se detecten movimientos, especialmente en un espacio público.",
-                "desc2": "Para descartar la alarma, inicie sesión en Windows.",
-                "note": {
-                    "description": "Una vez inicie sesión satisfactoriamente en el sistema, esta característica se desactivará automáticamente. Debe habilitarla de nuevo para utilizarla."
+                "desc2": "Inicie sesión en Windows y la alerta se apagará automáticamente. Para utilizar la característica, debe activarla de nuevo.",
+				"note": {
+					"descriptionTitle": "Atención:",
+                    "description": "Se necesitan opciones de inicio de sesión válidas, como una contraseña o un código PIN, para iniciar sesión en Windows. De lo contrario, es posible que algún usuario no autorizado con acceso a su sistema deshabilite por error la característica Alerta de movimiento inteligente."
                 },
                 "alarm": {
                     "title": " LA ALARMA DURARÁ",
@@ -2147,7 +2148,7 @@
                 },
                 "allowCamera": {
                     "title": "TOMAR FOTOGRAFÍAS",
-                    "describe": "Al habilitar esta característica, la cámara toma las fotos automáticamente al detectar cualquier movimiento si la pantalla está bloqueada. Estos datos se procesan localmente en su dispositivo. Lenovo no accede a ellos ni los utiliza.",
+                    "describe": "Al habilitar esta característica, la cámara toma las fotos automáticamente al detectar cualquier movimiento si la pantalla está bloqueada. Estos datos se procesan localmente en su dispositivo. Lenovo no accede a ellos ni los utiliza. Tenga en cuenta que debe apagar el obturador de la cámara para asegurarse de que pueda tomar fotos de manera satisfactoria durante la alerta.",
                     "checkBoxText": "Habilite esta característica"
                 },
                 "cameraPrivacy": {
@@ -3824,7 +3825,9 @@
         },
         "auto": "Automático",
         "manual": "Manual",
-        "noScanResults": "Haga clic en el botón ANALIZAR Y CORREGIR para activar el proceso de análisis."
+        "noScanResults": "Haga clic en el botón ANALIZAR Y CORREGIR para activar el proceso de análisis.",
+        "am": "AM",
+        "pm": "PM"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

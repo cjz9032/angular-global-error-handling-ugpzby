@@ -87,7 +87,7 @@ export class OledPowerSettingsComponent implements OnInit, OnChanges {
 			value: 5,
 			placeholder: minutes,
 			text: `5 ${minutes}`,
-			metricsValue: '3 minutes'
+			metricsValue: '5 minutes'
 		},
 		{
 			name: '10',

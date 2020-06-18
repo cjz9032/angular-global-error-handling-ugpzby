@@ -733,7 +733,7 @@
                 "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
-                "name11": "Legion front Fan Lighting",
+                "name11": "Legion Front Fan Lighting",
                 "name12": "Legion Top Fan Lighting"
             },
             "lightingEffect": {
@@ -2133,9 +2133,10 @@
                 "title": "Smart bevægelsesalarm",
                 "tooltip": "<div id='antiTheft-tooltips'>Denne funktion fungerer ikke, når computeren er i slumretilstand eller slukket. Tjek indstillingerne for følgende handlinger:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>handlinger, når låget lukkes</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>handling ved kritisk/lavt batteriniveau</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>handling for tænd/sluk-knap</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>handling for slumreknap</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>Indstillinger for timeout til slumre ved inaktivitet</li></ul></div>Ellers udløser den ikke en alarm og tager ikke nogen billeder.</div>",
                 "desc1": "Når denne funktion er aktiveret, begynder enheden at bippe, når skærmen er låst, og der registreres bevægelser, især på et offentligt sted.",
-                "desc2": "Log på Windows, hvis du vil afvise alarmen.",
-                "note": {
-                    "description": "Når du er logget på systemet, bliver denne funktionen automatisk slået fra. Du skal aktivere den igen for at bruge den."
+                "desc2": "Hvis du logger på Windows, bliver alarmen automatisk slået fra. Du skal aktivere den igen for at bruge denne funktion.",
+				"note": {
+					"descriptionTitle": "Vigtigt:",
+                    "description": "Der kræves gyldige indstillinger for logon, f. eks. en adgangskode eller en PIN-kode, når du logger på Windows. Ellers kan funktionen Smart bevægelsesalarm blive deaktiveret ved en fejl af en ikke-godkendt bruger, der får adgang til din computer."
                 },
                 "alarm": {
                     "title": " ALARMEN SKAL VARE I",
@@ -2147,7 +2148,7 @@
                 },
                 "allowCamera": {
                     "title": "TAG FOTOS",
-                    "describe": "Når du aktiverer denne funktion, tager kameraet automatisk fotos, når der registreres bevægelser, mens skærmen er låst. Disse data behandles lokalt på din enhed. Lenovo kan ikke få adgang til eller bruge dem.",
+                    "describe": "Når du aktiverer denne funktion, tager kameraet automatisk fotos, når der registreres bevægelser, mens skærmen er låst. Disse data behandles lokalt på din enhed. Lenovo kan ikke få adgang til eller bruge dem. Vær opmærksom på, at du skal deaktivere kameralukkeren for at sikre, at det kan tage billeder under alarmen.",
                     "checkBoxText": "Aktiver denne funktion"
                 },
                 "cameraPrivacy": {
@@ -3824,7 +3825,9 @@
         },
         "auto": "Auto",
         "manual": "Manuelt",
-        "noScanResults": "Klik på knappen SCAN & FIX for at aktivere scanningsprocessen."
+        "noScanResults": "Klik på knappen SCAN & FIX for at aktivere scanningsprocessen.",
+        "am": "AM",
+        "pm": "PM"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

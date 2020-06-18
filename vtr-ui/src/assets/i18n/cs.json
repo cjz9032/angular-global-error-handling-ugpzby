@@ -733,7 +733,7 @@
                 "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
-                "name11": "Legion front Fan Lighting",
+                "name11": "Legion Front Fan Lighting",
                 "name12": "Legion Top Fan Lighting"
             },
             "lightingEffect": {
@@ -2133,9 +2133,10 @@
                 "title": "Inteligentní varování při pohybu",
                 "tooltip": "<div id='antiTheft-tooltips'>Tato funkce nefunguje, když je počítač v režimu hibernace nebo vypnutý. Zkontrolujte nastavení v následujících akcích:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>Akce uzavírání víka</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>Akce při nízké/kriticky nízké kapacitě baterie</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>Akce hlavního vypínače napájení</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>Akce tlačítka režimu spánku</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>Nastavení doby nečinnosti do přechodu k hibernaci</li></ul></div>Jinak se nespustí varování, ani se nepořídí snímky.</div>",
                 "desc1": "Při povolení této funkce začne zařízení vydávat zvukový signál, když je obrazovka uzamčena a je zjištěn pohyb, zejména na veřejném místě.",
-                "desc2": "Chcete-li varování zrušit, přihlaste se do systému Windows.",
-                "note": {
-                    "description": "Po úspěšném přihlášení do systému se tato funkce automaticky vypne. Abyste ji mohli používat, musíte ji znovu povolit."
+                "desc2": "Přihlaste se do systému Windows a varování se automaticky vypne. Chcete-li tuto funkci použít, musíte ji znovu povolit.",
+				"note": {
+					"descriptionTitle": "Upozornění:",
+                    "description": "Při přihlášení do systému Windows jsou třeba platné možnosti přihlášení, například heslo nebo kód PIN. Jinak může funkci inteligentního varování při pohybu omylem deaktivovat kterýkoli neautorizovaný uživatel, který přistupuje k vašemu počítači."
                 },
                 "alarm": {
                     "title": " VAROVÁNÍ BUDE TRVAT",
@@ -2147,7 +2148,7 @@
                 },
                 "allowCamera": {
                     "title": "POŘIZOVAT FOTOGRAFIE",
-                    "describe": "Pokud je obrazovka uzamčena, pořizuje kamera při povolení této funkce fotografie automaticky při detekci pohybu. Tato data jsou ve vašem zařízení zpracovávána lokálně. Lenovo k nim nemá přístup ani je nepoužívá.",
+                    "describe": "Pokud je obrazovka uzamčena, pořizuje kamera při povolení této funkce fotografie automaticky při detekci pohybu. Tato data jsou ve vašem zařízení zpracovávána lokálně. Lenovo k nim nemá přístup ani je nepoužívá. Měli byste vypnout záklopku kamery, aby bylo možno během varování úspěšně pořizovat fotografie.",
                     "checkBoxText": "Povolit tuto funkci"
                 },
                 "cameraPrivacy": {
@@ -3824,7 +3825,9 @@
         },
         "auto": "Auto",
         "manual": "Manual",
-        "noScanResults": "Please click SCAN & FIX button to trigger scan process."
+        "noScanResults": "Please click SCAN & FIX button to trigger scan process.",
+        "am": "AM",
+        "pm": "PM"
     },
     "homeSecurity": {
         "title": "Connected Home Security",
