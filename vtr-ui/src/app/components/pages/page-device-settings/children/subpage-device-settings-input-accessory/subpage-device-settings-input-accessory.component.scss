@@ -238,7 +238,13 @@
 					text-decoration: none;
 					color: $main;
 				}
-
+				@media #{$black-on-white} {
+					@include hyperlink-blue-white;
+				  }
+				  @media #{$white-on-black} {
+					@include  hyperlink-yellow-black;
+				  }
+				
 				// span {
 				// 	padding-bottom: .2rem;
 				// 	border-bottom: .2rem solid $main;
