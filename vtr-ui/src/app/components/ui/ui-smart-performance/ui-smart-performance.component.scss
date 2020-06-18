@@ -318,6 +318,10 @@
 					color: $shade_blue;
 					@media #{$breakpoint_sm}{
 						font-size: $fontsize_xs;
+						max-width: 100%;
+						display: inline-block;
+						overflow: hidden;
+						text-overflow: ellipsis;
 					}
 				}
 				p {
