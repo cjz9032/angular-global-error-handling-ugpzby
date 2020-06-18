@@ -42,6 +42,12 @@
 							font-size: 1.2rem;
 							line-height: 1.6rem;
 							color: $light;
+							@media #{$white-on-black} {
+								color: $dark;
+							}
+							@media #{$black-on-white} {
+								color: $light;
+							}
 						}
 					}
 				}
@@ -66,6 +72,14 @@
 						background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
 						background-color: $go_dark;
 						border-color: $go_dark;
+						@media #{$black-on-white} {
+							background: $dark;
+							border-color: $dark;
+						}
+						@media #{$white-on-black} {
+							background: $light;
+							border-color: $light;
+						}
 					}
 				}
 			}
@@ -76,6 +90,14 @@
 						background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
 						background-color: $stop_dark;
 						border-color: $stop_dark;
+						@media #{$black-on-white} {
+							background: $dark;
+							border-color: $dark;
+						}
+						@media #{$white-on-black} {
+							background: $light;
+							border-color: $light;
+						}
 					}
 				}
 			}
@@ -86,6 +108,14 @@
 						background: linear-gradient($gradient_angle, $orange 0%, $orange-light 100%);
 						background-color: $yellow_dark;
 						border-color: $yellow_dark;
+						@media #{$black-on-white} {
+							background: $dark;
+							border-color: $dark;
+						}
+						@media #{$white-on-black} {
+							background: $light;
+							border-color: $light;
+						}
 					}
 				}
 			}
@@ -96,6 +126,14 @@
 						background: linear-gradient($gradient_angle, $main 0%, $main_light 100%);
 						background-color: $main_gstart;
 						border-color: $main_gstart;
+						@media #{$black-on-white} {
+							background: $dark;
+							border-color: $dark;
+						}
+						@media #{$white-on-black} {
+							background: $light;
+							border-color: $light;
+						}
 
 						fa-icon {
 							font-size: 0.5rem;
@@ -142,6 +180,14 @@
 				height: 2.3rem;
 				width: 3rem;
 				padding-right: 1rem;
+				img {
+					@media #{$white-on-black} {
+						filter: brightness(0) invert(1);
+					}
+					@media #{$black-on-white} {
+						filter: brightness(0);
+					}
+				}
 
 			}
 			.item-icon-class {
@@ -173,6 +219,12 @@
 					&.light-title {
 						font-weight: $weight_light;
 						cursor: pointer;
+					}
+					@media #{$black-on-white} {
+						color: $dark;
+					}
+					@media #{$white-on-black} {
+						color: $light;
 					}
 				}
 
@@ -230,6 +282,12 @@
 							text-decoration: none;
 						}
 					}
+					@media #{$black-on-white} {
+						color: $dark;
+					}
+					@media #{$white-on-black} {
+						color: $light;
+					}
 				}
 
 				.sub-text {
@@ -260,8 +318,14 @@
 					@media #{$white-on-black} {
 						color: $light;
 					}
-
-
+				}
+				.ng-fa-icon {
+					@media #{$black-on-white} {
+						color: $dark;
+					}
+					@media #{$white-on-black} {
+						color: $light;
+					}
 				}
 			}
 
