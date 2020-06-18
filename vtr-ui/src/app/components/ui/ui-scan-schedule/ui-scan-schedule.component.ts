@@ -12,7 +12,8 @@ import { SmartPerformanceService } from "src/app/services/smart-performance/smar
 import { LocalStorageKey } from "src/app/enums/local-storage-key.enum";
 import moment from "moment";
 import { TranslateService, LangChangeEvent } from "@ngx-translate/core";
-import { enumScanFrequency } from "src/app/enums/smart-performance.enum";
+import { enumScanFrequency, enumDaysOfTheWeek } from "src/app/enums/smart-performance.enum";
+import { Subscription } from 'rxjs/internal/Subscription';
 
 @Component({
 	selector: "vtr-ui-scan-schedule",
@@ -29,6 +30,9 @@ export class UiScanScheduleComponent implements OnInit {
 		
 	// scan settings
 	@Output() scanDatekValueChange = new EventEmitter();
+	private spTransLangEvent: Subscription;
+	private spTransLangScanFreq: Subscription;
+	private spTransLangDays: Subscription
 	selectedDate: any;
 	isSubscribed: any;
 	scheduleTab;
@@ -50,6 +54,7 @@ export class UiScanScheduleComponent implements OnInit {
 		"smartPerformance.scanSettings.fri",
 		"smartPerformance.scanSettings.sat",
 	];
+	public daysOfTheWeek: any;
 	dates: any = ["1", "2", "3", "4", "5", "6", "7",
 		"8", "9", "10", "11", "12", "13", "14", "15",
 		"16", "17", "18", "19", "20", "21", "22", "23",
@@ -93,19 +98,19 @@ export class UiScanScheduleComponent implements OnInit {
 	sliceDay: boolean = true;
 
 	ngOnInit() {
-		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+		this.spTransLangEvent = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 			if (this.translate.currentLang !== 'en') {
 				this.sliceDay = false;
 			}
 		});
-		this.scanFrequency.forEach(sf => {
+		this.spTransLangScanFreq = this.scanFrequency.forEach(sf => {
 			this.translate.stream(sf).subscribe((value) => {
 				sf = value;
 			});
 			
 		});
 
-		this.days.forEach(d => {
+		this.spTransLangDays = this.days.forEach(d => {
 			this.translate.stream(d).subscribe((value) => {
 				d = value;
 			});
@@ -178,6 +183,18 @@ export class UiScanScheduleComponent implements OnInit {
 				this.fetchNextScheduleDateTime();
 			}
 		});
+	}
+
+	ngOnDestroy() {
+		if (this.spTransLangEvent) {
+			this.spTransLangEvent.unsubscribe();
+		}
+		if (this.spTransLangScanFreq) {
+			this.spTransLangScanFreq.unsubscribe();
+		}
+		if (this.spTransLangDays) {
+			this.spTransLangDays.unsubscribe();
+		}
 	}
 
 	// scan settings
@@ -566,43 +583,44 @@ export class UiScanScheduleComponent implements OnInit {
 	}
 
 	selectedDayTranslation() {
-		if(this.selectedDay) {
-			if(this.selectedDay==="Sunday" || this.selectedDay==="Sun") {
-				this.selectedDay="smartPerformance.scanSettings.sun";
+		this.daysOfTheWeek = enumDaysOfTheWeek;
+		if (this.selectedDay) {
+			if (this.selectedDay === this.daysOfTheWeek.sun || this.selectedDay === this.daysOfTheWeek.sun) {
+				this.selectedDay = this.daysOfTheWeek.sunLang;
 			}
-			if(this.selectedDay==="Monday" || this.selectedDay==="Mon") {
-				this.selectedDay="smartPerformance.scanSettings.mon";
+			if (this.selectedDay === this.daysOfTheWeek.mon || this.selectedDay === this.daysOfTheWeek.monShort) {
+				this.selectedDay = this.daysOfTheWeek.monLang;
 			}
-			if(this.selectedDay==="Tuesday" || this.selectedDay==="Tue") {
-				this.selectedDay="smartPerformance.scanSettings.tue";
+			if (this.selectedDay === this.daysOfTheWeek.tue || this.selectedDay === this.daysOfTheWeek.tueShort) {
+				this.selectedDay = this.daysOfTheWeek.tueLang;
 			}
-			if(this.selectedDay==="Wednesday" || this.selectedDay==="Wed") {
-				this.selectedDay="smartPerformance.scanSettings.wed";
+			if (this.selectedDay === this.daysOfTheWeek.wed || this.selectedDay === this.daysOfTheWeek.wedShort) {
+				this.selectedDay = this.daysOfTheWeek.wedLang;
 			}
-			if(this.selectedDay==="Thursday" || this.selectedDay==="Thu") {
-				this.selectedDay="smartPerformance.scanSettings.thurs";
+			if (this.selectedDay === this.daysOfTheWeek.thurs || this.selectedDay === this.daysOfTheWeek.thursShort) {
+				this.selectedDay = this.daysOfTheWeek.thursLang;
 			}
-			if(this.selectedDay==="Friday" || this.selectedDay==="Fri") {
-				this.selectedDay="smartPerformance.scanSettings.fri";
+			if (this.selectedDay === this.daysOfTheWeek.fri || this.selectedDay === this.daysOfTheWeek.friShort) {
+				this.selectedDay = this.daysOfTheWeek.friLang;
 			}
-			if(this.selectedDay==="Saturday" || this.selectedDay==="Sat") {
-				this.selectedDay="smartPerformance.scanSettings.sat";
+			if (this.selectedDay === this.daysOfTheWeek.sat || this.selectedDay === this.daysOfTheWeek.satShort) {
+				this.selectedDay = this.daysOfTheWeek.satLang;
 			}
 		}
 	}
 
 	setDefaultDay(lang) {
-		if(this.sliceDay) {
+		if (this.sliceDay) {
 			this.translate.stream(lang).subscribe((value) => {
 				this.selectedDay = value;
-				this.selectedDay = this.selectedDay.slice(0,3);
+				this.selectedDay = this.selectedDay.slice(0, 3);
 			})
-		} else{
+		} else {
 			this.selectedDay = this.days[0]
 		}
 	}
 
-	fetchNextScheduleDateTime(){
+	fetchNextScheduleDateTime() {
 		if (this.scheduleScanFrequency !== undefined && this.IsScheduleScanEnabled && !this.IsSmartPerformanceFirstRun) {
 			if (this.isSubscribed) {
 				this.getNextScanRunTime("Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix");
