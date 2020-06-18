@@ -71,7 +71,6 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 	public isOnline: any = true;
 	private cameraAccessChangedHandler: any;
 	private windowsObj: any;
-	public biosVersion: string;
 	public readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
 	isSet = {
 		isSetDaytimeColorTemperatureValue: false,
@@ -218,9 +217,6 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 			this.windowsObj = this.Windows.Devices.Enumeration.DeviceAccessInformation
 				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.videoCapture);
 		}
-		this.deviceService.getMachineInfo().then((data) => {
-			this.biosVersion = data.biosVersion;
-		});
 	}
 
 	ngOnInit() {
@@ -362,7 +358,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 				this.displayColorTempDataSource.current = this.displayColorTempCache.current;
 				this.displayColorTempDataSource.maximum = this.displayColorTempCache.maximum;
 				this.displayColorTempDataSource.minimum = this.displayColorTempCache.minimum;
-				this.displayColorTempDataSource.eyemodestate = this.displayColorTempCache.eyeCareMode;
+				this.eyeCareDataSource = this.displayColorTempCache;
 			} else {
 				this.displayColorTempCache = new EyeCareModeResponse();
 			}
@@ -593,7 +589,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 			this.displayColorTempCache.current = this.displayColorTempDataSource.current;
 			this.displayColorTempCache.maximum = this.displayColorTempDataSource.maximum;
 			this.displayColorTempCache.minimum = this.displayColorTempDataSource.minimum;
-			this.displayColorTempCache.eyeCareMode = this.displayColorTempDataSource.eyemodestate;
+			this.eyeCareDataSource = this.displayColorTempDataSource;
 			this.commonService.setLocalStorageValue(LocalStorageKey.DisplayColorTempCapability, this.displayColorTempCache);
 		});
 	}

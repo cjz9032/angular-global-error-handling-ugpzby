@@ -733,7 +733,7 @@
                 "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
-                "name11": "Legion front Fan Lighting",
+                "name11": "Legion Front Fan Lighting",
                 "name12": "Legion Top Fan Lighting"
             },
             "lightingEffect": {
@@ -2133,9 +2133,10 @@
                 "title": "Интеллектуальное оповещение о движении",
                 "tooltip": "<div id='antiTheft-tooltips'>Эта функция не работает, когда компьютер находится в режиме гибернации или выключен. Проверьте настройки в следующих действиях:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>действия закрытия крышки</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>действие при критически низком уровне заряда аккумулятора</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>действие кнопки питания</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>действие кнопки спящего режима</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>настройки тайм-аута бездействия до перехода в режим гибернации</li></ul></div>В противном случае не будет включен сигнал и не будут сделаны фотографии.</div>",
                 "desc1": "Если эта функция включена, устройство будет подавать звуковой сигнал при заблокированном экране, если обнаружено движение, особенно в общественных местах.",
-                "desc2": "Чтобы отключить сигнал, войдите в Windows.",
+                "desc2": "Войдите в Windows, и сигнал автоматически отключится. Для использования этой функции ее нужно снова включить.",
                 "note": {
-                    "description": "После успешного входа в систему эта функция будет автоматически отключена. Для использования ее нужно снова включить."
+                    "descriptionTitle": "Внимание:",
+                    "description": "Для входа в Windows необходимо использовать действительные параметры входа, такие как пароль или PIN-код. В противном случае функция интеллектуального оповещения о движении может ошибочно быть отключена любым неавторизованным пользователем, получившим доступ к компьютеру."
                 },
                 "alarm": {
                     "title": " ДЛИТЕЛЬНОСТЬ ЗВУКОВОГО СИГНАЛА",
@@ -2147,7 +2148,7 @@
                 },
                 "allowCamera": {
                     "title": "ФОТОФИКСАЦИЯ",
-                    "describe": "Если эта функция включена, камера будет автоматически делать снимки при заблокированном экране, если обнаружено движение. Эти данные обрабатываются локально, на вашем устройстве. Lenovo не имеет к ним доступа и не использует их.",
+                    "describe": "Если эта функция включена, камера будет автоматически делать снимки при заблокированном экране, если обнаружено движение. Эти данные обрабатываются локально, на вашем устройстве. Lenovo не имеет к ним доступа и не использует их. Обратите внимание, что следует отключить шторку камеры, чтобы камера могла делать снимки при включенном сигнале.",
                     "checkBoxText": "Включить эту функцию"
                 },
                 "cameraPrivacy": {
@@ -3824,7 +3825,9 @@
         },
         "auto": "Auto",
         "manual": "Manual",
-        "noScanResults": "Please click SCAN & FIX button to trigger scan process."
+        "noScanResults": "Please click SCAN & FIX button to trigger scan process.",
+        "am": "AM",
+        "pm": "PM"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

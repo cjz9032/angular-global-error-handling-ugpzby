@@ -735,7 +735,7 @@
 				"name7": "Legion Icon (Front)",
 				"name9": "Ambient  Lighting",
 				"name10": "Legion Liquid Cooling Lighting",
-				"name11": "Legion front Fan Lighting",
+				"name11": "Legion Front Fan Lighting",
 				"name12": "Legion Top Fan Lighting"
 			},
 			"lightingEffect": {
@@ -2135,9 +2135,10 @@
 				"title": "Smart motion alarm",
 				"tooltip":"<div id='antiTheft-tooltips'>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>actions of the closing lid</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>critical/low battery action</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>power button action</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>sleep button action</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>",
                 "desc1": "When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.",
-				"desc2": "To dismiss the alarm, please log in to Windows.",
+				"desc2": "Log into Windows and the alarm will be automatically turned off. To use the feature, you need to enable it again.",
 				"note": {
-                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
+					"descriptionTitle": "Attention:",
+                    "description": "Valid sign-in options such as a password or PIN code are needed when you log into Windows. Otherwise, the Smart motion alarm feature might be mistakenly disabled by any un-authorized user who accesses your computer."
                 },
                 "alarm": {
                     "title":" THE ALARM WILL LAST FOR",
@@ -2149,7 +2150,7 @@
                 },
                 "allowCamera": {
                     "title":"TAKING PHOTOS",
-                    "describe":"When enabling this feature, the camera takes photos automatically when movements are detected if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
+                    "describe":"When enabling this feature, the camera takes photos automatically when movements are detected if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it. Be aware that you should turn off the camera shutter to ensure it can successfully take photos during alarm.",
                     "checkBoxText":"Enable this feature"
                 },
                 "cameraPrivacy": {
@@ -2366,6 +2367,8 @@
 		"runningWell": "PC is running well",
 		"section2Heading": "Top-notch PC Performance. Always",
 		"section2Description": "Our software can proactively scan your PC 24x7 to find and fix issues as they arise, so that your PC always has top-notch performance.",
+		"am": "AM",
+        "pm": "PM",
 		"tunePCPerformance": {
 			"title": "TUNE PC PERFORMANCE",
 			"summaryTitle":"Tune PC Performance",

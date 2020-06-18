@@ -475,13 +475,13 @@ vtr-ui-smart-performance-scan-summary {
                         .heading {						
                             h3, h2{
 								text-align: left;
-								font-size: $fontsize_md;
+								font-size: $fontsize_sm;
 								text-align: left;
 								color: $main_shade !important;
 								letter-spacing: 0;
 								font-weight: $weight_bold;
 								@media #{$breakpoint_sm}{
-									font-size: 1.7rem;
+									font-size: 1.2rem;
 									letter-spacing: -0.02rem;
 									margin-bottom: 0;
 								}
@@ -514,11 +514,11 @@ vtr-ui-smart-performance-scan-summary {
 										height: 5rem;
 										@media #{$breakpoint_xl}{
 											padding: 0.5rem 0.2rem;
-											height: 4.5rem;
+											height: 5rem;
 										}
 										@media #{$breakpoint_sm}{
 											padding: 0.5rem 0.2rem;
-											height: 3.5rem;
+											height: 5rem;
 										}
 										&.active {
                                             background-color: transparent;
@@ -545,12 +545,13 @@ vtr-ui-smart-performance-scan-summary {
                                     margin-top: 0.6rem;
 									line-height: 1.2rem;
 									overflow: hidden;
-									text-overflow: ellipsis;																		
+									text-overflow: ellipsis;																	
 									@media #{$breakpoint_sm}{
 										font-size:1rem;
 										line-height: 1rem;
 										max-width: 100%;
 										margin-top: 0;										
+										white-space:nowrap;											
 									}
                                 }
                                 .icon {
@@ -588,7 +589,7 @@ vtr-ui-smart-performance-scan-summary {
                     .status-text{
 						margin-top: 2.2rem;
 						@media #{$breakpoint_sm}{
-							margin-top: 0rem;
+							margin-top: 1.25rem;
 						}
                         p {
                             text-transform: uppercase;
@@ -598,8 +599,8 @@ vtr-ui-smart-performance-scan-summary {
 							right: 5rem;
 							padding-right:2rem;
 							letter-spacing: 0;
-							@media #{$breakpoint_sm}{
-								margin-top: 1rem;
+							@media #{$breakpoint_sm}{								
+								font-size: 1.2rem;
 							}
 							// top: 40%;
 						}
@@ -690,10 +691,10 @@ vtr-ui-smart-performance-scan-summary {
 			font-size: 3.4rem;
 			font-weight: $weight_light;
 			@media #{$breakpoint_xl}{
-				font-size: 2.4rem;
+				font-size: 2.2rem;
 			}
 			@media #{$breakpoint_sm}{
-				font-size: 2.2rem;
+				font-size: 2rem;
 			}
 		}
 		h3 {
@@ -704,6 +705,7 @@ vtr-ui-smart-performance-scan-summary {
 			font-weight: $weight_regular;
 			@media #{$breakpoint_sm}{
 				font-size: 1.4rem;
+				line-height: auto;
 			}
 		}
 		.icomoon {
@@ -715,8 +717,8 @@ vtr-ui-smart-performance-scan-summary {
 				font-size: 9rem;
 			}
 			@media #{$breakpoint_sm}{
-				font-size: 7rem;
-				margin-top: 1rem;
+				font-size: 6rem;
+				margin-top: 2rem;
 			}
 		}
 		.action-button {
@@ -732,6 +734,13 @@ vtr-ui-smart-performance-scan-summary {
 			text-align: center;
 			border: 0rem;
 			cursor: pointer;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			@media #{$breakpoint_sm}{
+				font-size: 1.2rem;
+				padding:0rem 2.5rem;					
+			}
 		}
 		.disabled-button{
 			border-radius: 2.5rem;
@@ -762,6 +771,9 @@ vtr-ui-smart-performance-scan-summary {
 			font-weight: $weight_regular;
 			font-size: 2.2rem !important;
 			opacity: 1 !important;
+			@media #{$breakpoint_sm}{
+				font-size:$fontsize_sm!important;
+			}
 		}
 		.slider {
 			width: calc(100% - 1rem);
@@ -901,7 +913,7 @@ vtr-ui-smart-performance-scan-summary {
 						width: calc(60.5% - 2rem);
 					}
 					span{
-						background: $grey_lighter;
+						background:#2a2f43!important;
 						padding:0rem 0.2rem;
 						position: relative;
 						z-index: 9;
@@ -1507,6 +1519,12 @@ vtr-ui-smart-performance-scan-summary {
 			color: $grey_dark;
 			padding-left: 1.6rem;
 			margin-bottom: 0;
+			white-space:no-wrap;
+			overflow:hidden;
+			text-overflow:ellipsis;
+			@media #{$breakpoint_sm}{
+				font-size: 1.1rem;
+			}
 		}
 	}
 	.status{

@@ -10,6 +10,7 @@ import { enumSmartPerformance, PaymentPage } from 'src/app/enums/smart-performan
 import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
 import moment from 'moment';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
+import { SupportService } from 'src/app/services/support/support.service';
 @Component({
 	selector: 'vtr-widget-subscriptiondetails',
 	templateUrl: './widget-subscriptiondetails.component.html',
@@ -28,7 +29,8 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	myDate = new Date();
 	spEnum:any = enumSmartPerformance;
 	public subscriptionDate: any;
-	public modalStatus: any = {intervalTime: '', isOpened: false};;
+	public modalStatus: any = {intervalTime: '', isOpened: false};
+	systemSerialNumber: any;
 	currentTime: string;
 	intervalTime: string;
 
@@ -37,7 +39,9 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	  private modalService: NgbModal,
 	  private commonService: CommonService,
 	  private formatLocaleDate: FormatLocaleDatePipe,
-	  private smartPerformanceService: SmartPerformanceService
+	  private smartPerformanceService: SmartPerformanceService,
+	  private supportService: SupportService,
+
 	  ) {
 	}
 	public localSubscriptionDetails = {
@@ -46,6 +50,9 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 			endDate: formatDate(this.spEnum.SCHEDULESCANENDDATE, 'yyyy/MM/dd', 'en')
 		}
 	ngOnInit() {
+		this.supportService.getMachineInfo().then(async (machineInfo) => {
+			this.systemSerialNumber = machineInfo.serialnumber;
+		});
 		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
 		this.initSubscripionDetails();
 	}
@@ -139,10 +146,17 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 
 	async getSubscriptionDetails() {
 		this.modalStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus);
-		const serialNumber = 'PC0ZEPQ5';
+		let subscriptionDetails: any;
 		let subscriptionData = []
-		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails(serialNumber);
-		subscriptionData = subscriptionDetails.data;
+		// const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails(serialNumber);
+		this.smartPerformanceService.getPaymentDetails(this.systemSerialNumber).then(res =>{
+			subscriptionDetails = res;
+		})
+		if(subscriptionDetails){
+			subscriptionData = subscriptionDetails.data? subscriptionDetails.data : [];
+		} else {
+			subscriptionData = [];
+		}
 		if (subscriptionData && subscriptionData.length > 0) {
 			const releaseDate = new Date(subscriptionData[0].releaseDate);
 			releaseDate.setMonth(releaseDate.getMonth() + +subscriptionData[0].products[0].unitTerm);

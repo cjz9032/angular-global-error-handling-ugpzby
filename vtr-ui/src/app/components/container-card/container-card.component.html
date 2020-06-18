@@ -277,7 +277,7 @@
 				[class.default-cursor]="isOfflineArm"
 				attr.aria-label="{{ item.Title | htmlText }}"
 				role="link"
-				tabindex="0"
+				[tabindex]="isOnline ? 0 : -1"
 				(keyup.enter)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 				(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 				metricsItemCategory="article"
@@ -316,10 +316,12 @@
 								[ngbTooltip]="item.Title | htmlText"
 								tooltipClass="vtr-system-tooltip"
 								container="body"
+								[attr.aria-hidden]="!isOnline"
 								></div>
 							<div *ngIf="item.ActionLink && !isOfflineArm"
 								[style.height.px]="containerCardArticle.clientWidth * 27 / 430"
 								[style.line-height.px]="containerCardArticle.clientWidth * 27 / 430"
+								[attr.aria-hidden]="!isOnline"
 								class="read-more">
 								<span class="link-label"
 									role="text"
@@ -342,7 +344,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col col-12 content">
-					<a tabindex="0"
+					<a [tabindex]="isOnline ? 0 : -1"
 						role="link"
 						(keyup.enter)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 						(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
@@ -368,6 +370,7 @@
 								tooltipClass="vtr-system-tooltip"
 								container="body"
 								role="text"
+								[attr.aria-hidden]="!isOnline"
 								></div>
 							<div *ngIf="item.Description"
 								class="caption text-two-ellipsis">
@@ -378,6 +381,7 @@
 									tooltipClass="vtr-system-tooltip"
 									container="body"
 									role="text"
+									[attr.aria-hidden]="!isOnline"
 									></div>
 							</div>
 							<div *ngIf="item.BrandImage || item.BrandName"
@@ -403,7 +407,7 @@
 		#containerCardSidebarPartnerCorner>
 		<div class="container-fluid">
 			<div class="row">
-				<a tabindex="0"
+				<a [tabindex]="isOnline ? 0 : -1"
 					role="link"
 					(keyup.enter)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 					(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
@@ -438,6 +442,7 @@
 								[ngbTooltip]="item.Title | htmlText"
 								tooltipClass="vtr-system-tooltip"
 								container="body"
+								[attr.aria-hidden]="!isOnline"
 								></div>
 							<div *ngIf="item.ActionLink"
 								class="read-more">

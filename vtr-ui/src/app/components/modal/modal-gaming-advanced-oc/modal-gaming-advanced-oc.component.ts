@@ -42,29 +42,40 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 		],
 		gpuParameterList: [
 			{
-				"tuneId": 0,
-				"defaultValue": "100",
-				"OCValue": "100",
-				"minValue": "200",
-				"maxValue": "300",
-				"stepValue": "1"
+				tuneId: 0,
+				defaultValue: '100',
+				OCValue: '100',
+				minValue: '200',
+				maxValue: '300',
+				stepValue: '1'
 			},
 			{
-				"tuneId": 1,
-				"defaultValue": "100",
-				"OCValue": "100",
-				"minValue": "200",
-				"maxValue": "300",
-				"stepValue": "1"
+				tuneId: 1,
+				defaultValue: '100',
+				OCValue: '100',
+				minValue: '200',
+				maxValue: '300',
+				stepValue: '1'
 			}
 		]
 	};
 
-	modalAutomationId: any = {
-		section: 'advance_oc_warning_dialog',
-		closeButton: 'advance_oc_warning_dialog_close_button',
-		cancelButton: 'advance_oc_warning_dialog_cancel_button',
-		installButton: 'advance_oc_warning_dialog_proceed_button'
+  modalAutomationId: any = {
+	section: 'save_change_dialog',
+	headerText: 'save_change_dialog_header_text',
+	description: 'save_change_dialog_oc_recovery_description',
+		closeButton : 'save_change_dialog_close_button',
+		cancelButton: 'save_change_dialog_do_not_save_button',
+		okButton: 'save_change_dialog_save_button'
+	}
+
+  defaultModalAutomationId: any = {
+		section: 'set_to_default_dialog',
+		headerText : 'set_to_default_header_text',
+		description : 'set_to_default_description',
+		closeButton : 'set_to_default_close_button',
+		cancelButton: 'set_to_default_cancel_button',
+		okButton: 'set_to_default_ok_button'
 	}
 
 	constructor(
@@ -157,16 +168,16 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 	}
 
 	public openSaveChangeModal() {
-		let waringModalRef = this.modalService.open(ModalGamingPromptComponent, { backdrop: 'static', windowClass: 'modal-prompt', backdropClass: 'backdrop-prompt' });
+		const waringModalRef = this.modalService.open(ModalGamingPromptComponent, { backdrop: 'static', windowClass: 'modal-prompt', backdropClass: 'backdrop-prompt' });
 		waringModalRef.componentInstance.info = {
-			title: "gaming.dashboard.device.savePromptPopup.title",
-			description: "gaming.dashboard.device.savePromptPopup.description1",
-			description2: "gaming.dashboard.device.savePromptPopup.description2",
-			description3: "gaming.dashboard.device.savePromptPopup.description3",
-			comfirmButton: "gaming.dashboard.device.savePromptPopup.save",
-			cancelButton: "gaming.dashboard.device.savePromptPopup.notSave",
-			comfirmButtonAriaLabel: "SAVE",
-			cancelButtonAriaLabel: "DON'T SAVE",
+			title: 'gaming.dashboard.device.savePromptPopup.title',
+			description: 'gaming.dashboard.device.savePromptPopup.description1',
+			description2: 'gaming.dashboard.device.savePromptPopup.description2',
+			description3: 'gaming.dashboard.device.savePromptPopup.description3',
+			comfirmButton: 'gaming.dashboard.device.savePromptPopup.save',
+			cancelButton: 'gaming.dashboard.device.savePromptPopup.notSave',
+			comfirmButtonAriaLabel: 'SAVE',
+			cancelButtonAriaLabel: 'DON\'T SAVE',
 			id: this.modalAutomationId
 		};
 		waringModalRef.componentInstance.emitService.subscribe((emmitedValue) => {
@@ -206,29 +217,29 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 
 	}
 
-	public openSetToDefaultModal() {
-		let waringModalRef = this.modalService.open(ModalGamingPromptComponent, { backdrop: 'static', windowClass: 'modal-prompt', backdropClass: 'backdrop-prompt' });
-		waringModalRef.componentInstance.info = {
-			title: "gaming.dashboard.device.defaultPromptPopup.title",
-			description: "gaming.dashboard.device.defaultPromptPopup.description",
-			comfirmButton: "gaming.dashboard.device.legionEdge.popup.button",
-			cancelButton: "gaming.dashboard.device.legionEdge.driverPopup.link",
-			comfirmButtonAriaLabel: "OK",
-			cancelButtonAriaLabel: "CANCEL",
-			id: this.modalAutomationId
-		};
-		waringModalRef.componentInstance.emitService.subscribe((emmitedValue) => {
-			this.logger.info('openSetToDefaultModal emmitedValue', emmitedValue);
-			if (emmitedValue === 1) {
-				this.isChange = false;
-				this.setToDefaultValue(this.advancedOCInfo.cpuParameterList);
-				this.setToDefaultValue(this.advancedOCInfo.gpuParameterList);
-				this.setAdvancedOCInfo(this.advancedOCInfo);
-			}
+  public openSetToDefaultModal () {
+	const waringModalRef = this.modalService.open(ModalGamingPromptComponent, { backdrop:'static', windowClass: 'modal-prompt',backdropClass:'backdrop-prompt' });
+	waringModalRef.componentInstance.info = {
+		title : 'gaming.dashboard.device.defaultPromptPopup.title',
+		description : 'gaming.dashboard.device.defaultPromptPopup.description',
+		comfirmButton : 'gaming.dashboard.device.legionEdge.popup.button',
+		cancelButton : 'gaming.dashboard.device.legionEdge.driverPopup.link',
+		comfirmButtonAriaLabel : 'OK',
+		cancelButtonAriaLabel : 'CANCEL',
+		id : this.defaultModalAutomationId
+	};
+	waringModalRef.componentInstance.emitService.subscribe((emmitedValue) => {
+		this.logger.info('openSetToDefaultModal emmitedValue',emmitedValue);
+		if(emmitedValue === 1) {
+		this.isChange = false;
+		this.setToDefaultValue(this.advancedOCInfo.cpuParameterList);
+		this.setToDefaultValue(this.advancedOCInfo.gpuParameterList);
+		this.setAdvancedOCInfo(this.advancedOCInfo);
+		}
 
 			this.sendFeatureClickMetrics(JSON.parse(`{"ItemParent":"Gaming.AdvancedOC.SetToDefaultWarningModal",
       "ItemName":"advancedoc_settodefaultwarningmodal_btn",
-      "ItemValue":"${emmitedValue === 1 ? "ok" : emmitedValue === 2 ? "cancel" : "close"}"}`));
+      "ItemValue":"${emmitedValue === 1 ? 'ok' : emmitedValue === 2 ? 'cancel' : 'close'}"}`));
 		});
 
 		this.sendFeatureClickMetrics(JSON.parse(`{"ItemName":"advancedoc_settodefault_warningmodal"}`));
@@ -268,7 +279,7 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 	 */
 	public sendOCChangedMetricsData(occhangedinfo: any) {
 		try {
-			let parameterValue = {};
+			const parameterValue = {};
 			if (occhangedinfo === 1) {
 				if (Object.prototype.hasOwnProperty.call(this.advancedOCInfo, 'cpuParameterList')) {
 					for (let i = 0; i < this.advancedOCInfo.cpuParameterList.length; i += 1) {
@@ -283,7 +294,7 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 			}
 
 			this.sendFeatureClickMetrics(JSON.parse(`{"ItemParent":"Gaming.AdvancedOC.SaveChangeWarningModal","ItemName":"advancedoc_savechangewarningmodal_btn",
-        "ItemValue":"${occhangedinfo === 1 ? "save" : occhangedinfo === 2 ? "don't save" : "close"}",
+        "ItemValue":"${occhangedinfo === 1 ? 'save' : occhangedinfo === 2 ? 'don\'t save' : 'close'}",
         "ItemParam":${(occhangedinfo === 1 && Object.keys(parameterValue).length !== 0) ? JSON.stringify(parameterValue) : null}}`));
 
 			if (occhangedinfo === 1 || occhangedinfo === 2) {
@@ -307,4 +318,10 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 			}
 		} catch (error) { }
 	}
+
+	public removeSpaces(str: any) {
+		if (str) {
+			return str.replace(/ /g,'_').toLowerCase();
+		}
+  }
 }

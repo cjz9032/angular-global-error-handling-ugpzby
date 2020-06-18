@@ -534,6 +534,8 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
        }else if(this.ledlayoutversion === 5){
         if(this.lightingCapabilities.LightPanelType.indexOf(16)>-1){
           this.lightingProfileCurrentDetail.panelImage = 'assets/images/gaming/lighting/lighting-ui-new/T750_water.png';
+        }else if(this.lightingCapabilities.LightPanelType.indexOf(4)>-1){
+          this.lightingProfileCurrentDetail.panelImage = 'assets/images/gaming/lighting/lighting-ui-new/T750_wind.png';
         }
        }
      }

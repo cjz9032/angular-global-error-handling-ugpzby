@@ -51,15 +51,15 @@
                     }
                     .heading {
                         h3, h2{
-                            font-size: $fontsize_md;
+                            font-size: $fontsize_sm;
                             color: $main_shade !important;
                             letter-spacing: 0;
                             font-weight: $weight_bold;
                             text-align: left;
                             @media #{$breakpoint_sm}{
-                                font-size: 1.7rem;
+                                font-size: 1.1rem;
                                 letter-spacing: -0.02rem;
-                                margin-bottom: 0;
+                                margin-bottom: -0.25rem;
                             }
                         }
                         .icon, .icomoon{
@@ -121,12 +121,13 @@
                                 margin-top: 0.6rem;
                                 line-height: 1.2rem;
                                 overflow: hidden;
-								text-overflow: ellipsis;
+                                text-overflow: ellipsis;
                                 @media #{$breakpoint_sm}{
                                     font-size: 1rem;
                                     line-height: 1rem;
                                     max-width: 100%;
-                                    margin-top: 0;
+                                    margin-top: 0;                                    
+                                    white-space: nowrap;
                                 }
                             }
                             .icon, .icomoon {
@@ -179,7 +180,7 @@
                 .status-text{
                     margin-top: 2.2rem;
                     @media #{$breakpoint_sm}{
-                        margin-top: 0rem;
+                        margin-top: 1.25rem;
                     }
                     p {
                         text-transform: uppercase;
@@ -190,7 +191,7 @@
                         padding-right:2rem;
                         letter-spacing: 0;
                         @media #{$breakpoint_sm}{
-                            margin-top: 1rem;
+                            font-size: 1.2rem;
                         }
                         // top: 40%;
                     }

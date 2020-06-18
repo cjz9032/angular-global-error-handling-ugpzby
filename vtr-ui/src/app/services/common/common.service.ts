@@ -224,6 +224,13 @@ export class CommonService {
 			return array;
 		}
 	}
+	public removeObjFromUserDefined(array: any[], value: number) {
+		if (this.isPresentUserDefined(array, value)) {
+			return array.filter(e => e.value !== value);
+		} else {
+			return array;
+		}
+	}
 
 	// public isFoundInArray(array: any[], path: string) {
 	// 	const element = array.find(e => e.path === path);
@@ -236,6 +243,11 @@ export class CommonService {
 
 	public isPresent(array: any[], path: string) {
 		const element = array.find(e => e.path === path);
+		return element ? true : false;
+	}
+
+	public isPresentUserDefined(array: any[], value: number) {
+		const element = array.find(e => e.value === value);
 		return element ? true : false;
 	}
 
@@ -316,11 +328,11 @@ export class CommonService {
 		// Solution to fix the issue VAN-14826.
 		const isPowerPageAvailable = this.getLocalStorageValue(LocalStorageKey.IsPowerPageAvailable, true);
 		if (!isPowerPageAvailable) {
-			this.sendNotification(LocalStorageKey.IsPowerPageAvailable, {available: isPowerPageAvailable, link: false });
+			this.sendNotification(LocalStorageKey.IsPowerPageAvailable, { available: isPowerPageAvailable, link: false });
 		}
 	}
 
-	isFirstPageLoaded() : boolean {
+	isFirstPageLoaded(): boolean {
 		return this.getSessionStorageValue(SessionStorageKey.FirstPageLoaded, false);
 	}
 }

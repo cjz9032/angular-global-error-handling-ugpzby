@@ -733,7 +733,7 @@
                 "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
-                "name11": "Legion front Fan Lighting",
+                "name11": "Legion Front Fan Lighting",
                 "name12": "Legion Top Fan Lighting"
             },
             "lightingEffect": {
@@ -2133,9 +2133,10 @@
                 "title": "Alarme de movimento inteligente",
                 "tooltip": "<div id='antiTheft-tooltips'>Esta funcionalidade não funciona quando o computador está modo de hibernação ou desligado. Verifique as definições nas seguintes ações:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>ações após o fecho da tampa</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>ação de bateria crítica/baixa</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>ação do interruptor de alimentação</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>ação do botão de suspensão</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>definições de tempo de espera por inatividade para hibernação</li></ul></div>Caso contrário, não aciona o alarme, nem tira fotografias.</div>",
                 "desc1": "Ao ativar esta funcionalidade, o dispositivo começará a emitir um sinal sonoro quando o seu ecrã estiver bloqueado e forem detetados movimentos, especialmente num local público.",
-                "desc2": "Para dispensar o alarme, inicie sessão no Windows.",
+                "desc2": "Inicie sessão no Windows para o alarme ser desativado automaticamente. Para utilizar a funcionalidade, terá de voltar a ativá-la.",
                 "note": {
-                    "description": "Depois de iniciar sessão com êxito no sistema, esta funcionalidade será desativada automaticamente. Terá de voltar a ativá-la para utilizá-la."
+                    "descriptionTitle": "Atenção:",
+                    "description": "São necessárias opções de início de sessão válidas, como uma palavra-passe ou um código PIN, quando inicia sessão no Windows. Caso contrário, a funcionalidade Alarme de movimento inteligente poderá ser desativada por erro por qualquer utilizador não autorizado que aceda ao seu computador."
                 },
                 "alarm": {
                     "title": " O ALARME É EMITIDO",
@@ -2147,7 +2148,7 @@
                 },
                 "allowCamera": {
                     "title": "TIRAR FOTOGRAFIAS",
-                    "describe": "Quando ativar esta funcionalidade, a câmara tira fotografias automaticamente quando são detetados movimentos se o ecrã estiver bloqueado. Estes dados são processados localmente no seu dispositivo. A Lenovo não tem acesso nem utiliza estes dados.",
+                    "describe": "Quando ativar esta funcionalidade, a câmara tira fotografias automaticamente quando são detetados movimentos se o ecrã estiver bloqueado. Estes dados são processados localmente no seu dispositivo. A Lenovo não tem acesso nem utiliza estes dados. Tenha em atenção que deve desativar a tampa para lente para assegurar que consegue tirar fotografias durante o alarme.",
                     "checkBoxText": "Ativar esta funcionalidade"
                 },
                 "cameraPrivacy": {
@@ -3824,7 +3825,9 @@
         },
         "auto": "Auto",
         "manual": "Manual",
-        "noScanResults": "Clique no botão ANALISAR E CORRIGIR para acionar o processo de análise."
+        "noScanResults": "Clique no botão ANALISAR E CORRIGIR para acionar o processo de análise.",
+        "am": "AM",
+        "pm": "PM"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

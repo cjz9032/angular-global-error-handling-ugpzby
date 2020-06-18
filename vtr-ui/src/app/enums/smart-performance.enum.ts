@@ -31,7 +31,7 @@ export enum enumSmartPerformance{
 	SCHEDULESCANENDDATE = '2020/07/27',
 }
 export enum PaymentPage{
-	URL = 'http://ditpcsupport.earth.xpaas.lenovo.com/',
+	URL = 'https://uatpcsupport.lenovo.com/',
 	APPLICATIONNAME = 'COMPANION',
 	URLSTRING = 'upgradewarranty?',
 	SMARTPERFORMANCE = '&smartperformance=',
@@ -40,7 +40,31 @@ export enum PaymentPage{
 	SOURCEQUERYPARAMETER='&source=',
 	SLASH='/',
 	TRUE='true',
-	ORDERDETAILS = 'http://ditpcsupport.earth.xpaas.lenovo.com/nl/nl/api/v4/upsell/smart/getorders?serialNumber=',
+	ORDERDETAILS = 'http://uatpcsupport.lenovo.com/nl/nl/api/v4/upsell/smart/getorders?serialNumber=',
 	ORDERWAITINGTIME = 10 // MINUTES
+
+}
+export enum enumDaysOfTheWeek {
+	sun='Sunday',
+	mon='Monday',
+	tue='Tuesday',
+	wed='Wednesday',
+	thurs='Thursday',
+	fri='Friday',
+	sat='Saturday',
+	sunShort='Sun',
+	monShort='Mon',
+	tueShort='Tue',
+	wedShort='Wed',
+	thursShort='Thu',
+	friShort='Fri',
+	satShort='Sat',
+	sunLang='smartPerformance.scanSettings.sun',
+	monLang='smartPerformance.scanSettings.mon',
+	tueLang='smartPerformance.scanSettings.tue',
+	wedLang='smartPerformance.scanSettings.wed',
+	thursLang='smartPerformance.scanSettings.thu',
+	friLang='smartPerformance.scanSettings.fri',
+	satLang='smartPerformance.scanSettings.sat'
 
 }
