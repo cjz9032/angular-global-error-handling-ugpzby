@@ -35,12 +35,12 @@
 								</div>
 
 								<div *ngSwitchCase="4">
-									<fa-icon aria-hidden="true" aria-labelledby="warning-icon" class="warning" [icon]="['fas', 'exclamation-triangle']"></fa-icon>
-									<span id="warning-icon" class="sr-only">warning</span>
+									<fa-icon aria-hidden="true" aria-labelledby="warning-icon" class="warning" [icon]="['fas', 'exclamation-circle']"></fa-icon>
+									<span id="warning-icon" class="sr-only">attention</span>
 								</div>
 
 								<div *ngSwitchDefault>
-									<fa-icon aria-hidden="true" aria-labelledby="canceled-icon" class="failure" [icon]="['fas', 'exclamation-circle']"></fa-icon>
+									<fa-icon aria-hidden="true" aria-labelledby="canceled-icon" class="not-applicable" [icon]="['fas', 'ban']"></fa-icon>
 									<span id="canceled-icon" class="sr-only">canceled</span>
 								</div>
 							</div>
