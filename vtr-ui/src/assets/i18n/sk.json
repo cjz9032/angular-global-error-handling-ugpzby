@@ -2134,8 +2134,8 @@
                 "tooltip": "<div id='antiTheft-tooltips'>Táto funkcia nefunguje, keď je počítač v režime dlhodobého spánku alebo je vypnutý. Skontrolujte nastavenia nasledujúcich akcií:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>akcie pri zatvorení krytu</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>akcia pri kriticky vybitej/takmer vybitej batérii</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>akcia pri stlačení tlačidla napájania</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>funkcia pri stlačení tlačidla spánku</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>nastavenia časového limitu prechodu z režimu nečinnosti do režimu dlhodobého spánku</li></ul></div>V opačnom prípade sa nespustí budík, ani sa nedá fotografovať.</div>",
                 "desc1": "Keď povolíte túto funkciu, zariadenie začne vydávať zvukový signál, keď je obrazovka uzamknutá a zistí sa pohyb, najmä vo verejnom priestore.",
                 "desc2": "Prihláste sa do systému Windows a alarm sa automaticky vypne. Ak chcete funkciu používať, musíte ju znova povoliť.",
-				"note": {
-					"descriptionTitle": "Upozornenie:",
+                "note": {
+                    "descriptionTitle": "Upozornenie:",
                     "description": "Pri prihlásení sa do systému Windows sú potrebné platné možnosti prihlásenia, napríklad heslo alebo kód PIN. V opačnom prípade môže inteligentnú signalizáciu pohybu omylom deaktivovať ktorýkoľvek neoprávnený používateľ, ktorý má prístup k vášmu počítaču."
                 },
                 "alarm": {
@@ -3826,8 +3826,8 @@
         "auto": "Auto",
         "manual": "Manual",
         "noScanResults": "Please click SCAN & FIX button to trigger scan process.",
-        "am": "AM",
-        "pm": "PM"
+        "am": "Dop",
+        "pm": "pop"
     },
     "homeSecurity": {
         "title": "Connected Home Security",
