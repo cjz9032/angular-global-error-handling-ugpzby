@@ -357,7 +357,8 @@
 										attr.aria-label="powersmartsettings-dytc6-toolbar"
 										alt="powersmartsettings-dytc6-toolbar"
 										class="img-fluid mx-auto d-block"
-										src="assets/images/dytc6_toolbar.png">
+										src="assets/images/dytc6_toolbar.png"
+										id="powersmartsettings-dytc6-toolbar">
 								</div>
 							</div>
 							<div *ngIf="isCollapsed"
@@ -404,19 +405,20 @@
 								(keydown.enter)="showMoreDytc6()"
 								[autofocus]="!isCollapsed && showMoreLessDytc6Clicked"
 								[attr.aria-expanded]="isCollapsed"
-								tabindex="0"
-								role="button">
+								tabindex="0">
 								<div class="row">
 									<div class="more-info-button mr-2"
 										*ngIf="!isCollapsed"
-										role="link"
+										aria-hidden="false"
+										role="button"
 										id="powerSmartSettings-intelligentCooling-more-info"
 										attr.aria-label="powerSmartSettings-intelligentCooling-more-info">
 										{{'device.deviceSettings.inputAccessories.controlOptions.more' | translate}}
 									</div>
 									<div class="more-info-button mr-2"
 										*ngIf="isCollapsed"
-										role="link"
+										aria-hidden="false"
+										role="button"
 										id="powerSmartSettings-intelligentCooling-less-info"
 										attr.aria-label="powerSmartSettings-intelligentCooling-less-info">
 										{{'device.deviceSettings.inputAccessories.controlOptions.less' | translate}}
