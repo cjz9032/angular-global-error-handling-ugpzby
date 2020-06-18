@@ -96,7 +96,7 @@ export class UiScanScheduleComponent implements OnInit {
 	requestScanData = {};
 	type: string;
 	isFirstVisit: boolean
-
+	loading: boolean
 	ngOnInit() {
 		this.isDaySelectionEnable = false;
 		this.enumLocalScanFrequncy = enumScanFrequency;
@@ -357,6 +357,7 @@ export class UiScanScheduleComponent implements OnInit {
 	}
 
 	async getNextScanRunTime(scantype: string) {
+		this.loading = true
 		const payload = { scantype };
 		let nextScanEvent = {};
 		this.logger.info("ui-smart-performance.getNextScanRunTime",	JSON.stringify(payload)	);
@@ -365,6 +366,7 @@ export class UiScanScheduleComponent implements OnInit {
 			this.logger.info("ui-smart-performance.getNextScanRunTime.then", JSON.stringify(res));
 			// checking next scan run time fetched from api and when present emitting to sp scan summary component and also updating respective fields
 			if (res.nextruntime) {
+				this.loading = false
 				const dt = moment(res.nextruntime).format("dddd, MM, D, YYYY, h, mm, A");
 				if (this.selectedFrequency === this.scanFrequency[0] || this.selectedFrequency === this.scanFrequency[1]) {
 					this.selectedDay = dt.split(",")[0];
