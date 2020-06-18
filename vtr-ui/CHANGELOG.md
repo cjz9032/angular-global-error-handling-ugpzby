@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.15](https://bitbucket.tc.lenovo.com///compare/v1.6.14...v1.6.15) (2020-06-18)
+
+
+### Bug Fixes
+
+* change JA 'of' to '/' ([525b450](https://bitbucket.tc.lenovo.com///commit/525b45064fbf82812a6542e74ddde2133ffba610))
+* **article:** remove article detail first image alt. ([ef0e353](https://bitbucket.tc.lenovo.com///commit/ef0e35390b2c3aa3de86db88b52b3b6cd666f155))
+* **translation:** update some Japanese translations ([27638bb](https://bitbucket.tc.lenovo.com///commit/27638bb436ce693ef5d661d74c45b2e335032fc1))
+
 ### [1.6.14](https://bitbucket.tc.lenovo.com///compare/v1.6.13...v1.6.14) (2020-06-17)
 
 
