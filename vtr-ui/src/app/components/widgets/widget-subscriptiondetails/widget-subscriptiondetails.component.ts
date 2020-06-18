@@ -29,8 +29,8 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	myDate = new Date();
 	spEnum:any = enumSmartPerformance;
 	public subscriptionDate: any;
-	public modalStatus: any = {intervalTime: '', isOpened: false};systemSerialNumber: any;
-;
+	public modalStatus: any = {intervalTime: '', isOpened: false};
+	systemSerialNumber: any;
 	currentTime: string;
 	intervalTime: string;
 
