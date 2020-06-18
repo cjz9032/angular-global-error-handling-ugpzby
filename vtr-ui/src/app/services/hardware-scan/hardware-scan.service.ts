@@ -1094,8 +1094,6 @@ export class HardwareScanService {
 	private buildPreviousResults(response: any) {
 		const previousResults: any = {};
 		let moduleId = 0;
-		let hasFailed = false;
-		let hasWarning = false;
 		if (response.hasPreviousResults) {
 			this.hasLastResults = response.hasPreviousResults;
 			previousResults.finalResultCode = response.scanSummary.finalResultCode;
@@ -1159,7 +1157,7 @@ export class HardwareScanService {
 						}
 
 						if ((test[j].result === HardwareScanTestResult.Cancelled ||
-							test[j].result === HardwareScanTestResult.NotStarted && 
+							test[j].result === HardwareScanTestResult.NotStarted &&
 							test[j].result !== HardwareScanTestResult.Warning) ) {
 							previousResults.status = HardwareScanTestResult[HardwareScanTestResult.Cancelled];
 							previousResults.resultIcon = HardwareScanTestResult.Cancelled;
@@ -1168,12 +1166,10 @@ export class HardwareScanService {
 							previousResults.status = HardwareScanTestResult[HardwareScanTestResult.Fail];
 							previousResults.resultIcon = HardwareScanTestResult.Fail;
 							item.resultIcon = previousResults.resultIcon;
-							hasFailed = true;
 						} else if (test[j].result === HardwareScanTestResult.Warning) {
 							previousResults.status = HardwareScanTestResult[HardwareScanTestResult.Warning];
 							previousResults.resultIcon = HardwareScanTestResult.Warning;
 							item.resultIcon = previousResults.resultIcon;
-							hasWarning = true;
 						}
 						item.listTest.push(testInfo);
 					}
