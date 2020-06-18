@@ -140,9 +140,17 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	async getSubscriptionDetails() {
 		this.modalStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus);
 		const serialNumber = 'PC0ZEPQ5';
+		let subscriptionDetails: any;
 		let subscriptionData = []
-		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails(serialNumber);
-		subscriptionData = subscriptionDetails.data;
+		// const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails(serialNumber);
+		this.smartPerformanceService.getPaymentDetails(serialNumber).then(res =>{
+			subscriptionDetails = res;
+		})
+		if(subscriptionDetails){
+			subscriptionData = subscriptionDetails.data? subscriptionDetails.data : [];
+		} else {
+			subscriptionData = [];
+		}
 		if (subscriptionData && subscriptionData.length > 0) {
 			const releaseDate = new Date(subscriptionData[0].releaseDate);
 			releaseDate.setMonth(releaseDate.getMonth() + +subscriptionData[0].products[0].unitTerm);
