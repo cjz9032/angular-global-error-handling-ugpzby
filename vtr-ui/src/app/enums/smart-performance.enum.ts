@@ -44,3 +44,27 @@ export enum PaymentPage{
 	ORDERWAITINGTIME = 10 // MINUTES
 
 }
+export enum enumDaysOfTheWeek {
+	sun='Sunday',
+	mon='Monday',
+	tue='Tuesday',
+	wed='Wednesday',
+	thurs='Thursday',
+	fri='Friday',
+	sat='Saturday',
+	sunShort='Sun',
+	monShort='Mon',
+	tueShort='Tue',
+	wedShort='Wed',
+	thursShort='Thu',
+	friShort='Fri',
+	satShort='Sat',
+	sunLang='smartPerformance.scanSettings.sun',
+	monLang='smartPerformance.scanSettings.mon',
+	tueLang='smartPerformance.scanSettings.tue',
+	wedLang='smartPerformance.scanSettings.wed',
+	thursLang='smartPerformance.scanSettings.thu',
+	friLang='smartPerformance.scanSettings.fri',
+	satLang='smartPerformance.scanSettings.sat'
+
+}
