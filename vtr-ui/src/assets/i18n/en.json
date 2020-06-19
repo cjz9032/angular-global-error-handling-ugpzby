@@ -1675,7 +1675,9 @@
 					"cameraPrivacy": {
 						"title": "Camera Privacy Mode",
 						"tooltip": "The camera stops sending live images when the privacy setting is enabled. Turn this setting on, only when you do not want to share your images to others while video calling.",
-						"cameraPrivacyAccessNote": "Please go to the <b>Windows Settings → Privacy → Camera</b> page and make sure the following two options are turned on:<br>&bull; <b>Allow desktop apps to access your camera</b><br>&bull; <b>Lenovo Vantage</b> under \"Choose which (Microsoft Store) apps can access your camera\""
+						"cameraPrivacyAccessNote": "Please go to the <b>Windows Settings → Privacy → Camera</b> page and make sure the following two options are turned on:<br>&bull; <b>Allow desktop apps to access your camera</b><br>&bull; <b>Lenovo Vantage</b> under \"Choose which (Microsoft Store) apps can access your camera\"",
+						"noPermissionNote": "Lenovo Vantage doesn't have access to your Camera or the toggle \"Allow desktop apps to access your camera\" is not enabled",
+						"accessUrl": "Go to Windows Settings to give access"
 					},
 					"camera": {
 						"title": "Camera",
