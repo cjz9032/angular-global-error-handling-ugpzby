@@ -98,13 +98,20 @@ ui-popover {
 		font-weight: $weight_bold;
 	}
 	.cancel-link {
-		height: 2.5rem;
+		font-size: 1.4rem;
 		color: $blueFill;
-		font-size: $fontsize_sm;
-		vertical-align: middle;
-		padding: 0 0.5rem;
+		font-weight: bold;
+		line-height: 2rem;
+		border-bottom: 0.2rem solid $blueFill;
+		display: inline-block;
+		cursor: pointer;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		-webkit-transition: 0.2s ease;
+		transition: 0.2s ease;
 		font-weight: $weight_600;
-		margin-top: 1rem;
 		margin-left: 3rem;
 		border-bottom: 2px solid $blueFill;
 		cursor: pointer;
@@ -112,11 +119,11 @@ ui-popover {
 			color: $blueHover;
 			border-bottom: 2px solid $blueHover;			
 			cursor: pointer;
-		  }
+		}
 		&:focus{
 			outline: none !important;
-		&::before{
-			position: absolute;
+			&::before{
+				position: absolute;
 				display: block;
 				content: "";
 				top: -0.3rem;
@@ -124,7 +131,7 @@ ui-popover {
 				right: 0rem;
 				bottom: -0.3rem;
 				border: 1px solid $blueFill !important;
-		}	
+			}	
 		}	
 	}
 	.macro-key-btn-content{

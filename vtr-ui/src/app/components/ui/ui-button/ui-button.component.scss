@@ -155,7 +155,8 @@
 				user-select: none !important;
 				letter-spacing: 0.1rem !important;
 				font-weight: bold !important;
-				
+				min-width: 4rem !important;
+
 				&.smallBtn {
 					height: 3rem !important;
 					line-height: 3rem !important;
@@ -168,6 +169,10 @@
 
 				&:hover {
 					background-color: $blueHover !important;
+				}
+
+				&:active {
+					transform: scale(0.96);
 				}
 
 				.text {
