@@ -75,7 +75,7 @@
 
 		<div class="row col">
 			<!-- Result code information -->
-			<div class="result-code" *ngIf="item.resultCode">
+			<div class="result-code" *ngIf="item.resultCode && (item.expanded || item.details)">
 				<p class="title">{{resultCodeText}}:</p>
 				<p class="subtitle">{{item.resultCode}}</p>
 				<a *ngIf="item.information"
