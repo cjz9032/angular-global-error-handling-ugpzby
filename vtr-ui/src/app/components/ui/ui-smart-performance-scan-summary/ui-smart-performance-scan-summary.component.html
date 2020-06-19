@@ -471,7 +471,7 @@
 										<div class="vtr-scan-information mt-5">
 											<div class="scan-summary-block">
 												<div class="row px-0">
-													<div class="title-block">
+													<div class="title-block full-width">
 														<h3>{{'smartPerformance.subscriberScanHomePage.lastScanResults.title' |translate }}
 														</h3>
 													</div>
@@ -516,7 +516,7 @@
 																						</fa-icon>
 																					</div>
 																					<div class="col-7">
-																						<b>{{item.scanrunDate}}</b>
+																						<b>{{item.scanrunDate}}</b> - 
 																						<span>{{item.scanrunTime | uppercase}}</span>
 																						<span class="ml-1"
 																							*ngIf="item.type.toUpperCase() == 'MS'">({{'smartPerformance.manual' |translate }})</span>
