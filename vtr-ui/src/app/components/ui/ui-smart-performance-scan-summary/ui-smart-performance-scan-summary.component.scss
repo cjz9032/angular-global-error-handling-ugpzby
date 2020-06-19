@@ -216,11 +216,12 @@ vtr-ui-smart-performance-scan-summary {
 					font-size: 1.8rem;
 					font-weight: $weight_bold;
 					margin-bottom: 0;
+					word-break: break-all;
 					@media #{$breakpoint_xl}{
 						font-size: 1.6rem;
 					}
 					@media #{$breakpoint_md}{
-						font-size: 1.6rem;
+						font-size: 1.4rem;
 					}
 					@media #{$breakpoint_sm}{
 						font-size: 1.4rem;
@@ -984,6 +985,24 @@ vtr-ui-smart-performance-scan-summary {
 	}
 	.summary-block{
 		padding: 2.4rem 2.4rem 0;
+		.col-auto-1{
+			flex:0 0 auto;
+			width:auto;
+			max-width:50%;	
+			@media #{$breakpoint_md}{				
+				width:auto;
+				max-width:65%!important;
+			}
+			@media #{$mediaquery_X8}{				
+				width:auto;
+				max-width:100%;
+			}
+			@media only screen and (min-width: 1200px){				
+				width:auto;
+				max-width:100%;
+			}	
+					
+		}
 		.title-big{
 			font-size: 3.5rem;
 			font-weight: $weight_light;
