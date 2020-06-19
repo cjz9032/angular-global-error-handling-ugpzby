@@ -294,6 +294,7 @@ export class VantageShellService {
 
 		device.getMachineInfo = this.getPromise(obj);
 		device.getMachineInfoSync = this.getPromise(obj);
+		device.getDeviceInfo = this.getPromise({sn: obj.serialnumber});
 		return device;
 	}
 
