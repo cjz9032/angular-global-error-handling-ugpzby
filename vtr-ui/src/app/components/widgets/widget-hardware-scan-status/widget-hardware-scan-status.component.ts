@@ -40,7 +40,7 @@ export class WidgetHardwareScanStatusComponent implements OnInit {
 			const lastScan = this.translate.instant('hardwareScan.lastScanOn') + ' ' + this.item.date;
 
 			let result;
-			const existsNotPass = this.item.modules.filter(i => i.resultIcon !== HardwareScanTestResult.Pass);
+			const existsNotPass = this.item.modules.filter(i => i.resultModule !== HardwareScanTestResult.Pass);
 
 			if (existsNotPass && existsNotPass.length === 0) {
 				result = ' - ' + this.translate.instant('hardwareScan.result') + ': ' + this.translate.instant('hardwareScan.complete');

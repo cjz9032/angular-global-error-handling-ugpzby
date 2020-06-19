@@ -74,9 +74,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	// "Wrapper" value to be accessed from the HTML
 	public taskTypeEnum = TaskType;
 
-	// This is used to determine the scan overall status when sending metrics information
-	private resultSeverityConversion = {};
-
 	public set modules(value: any) {
 		this.hardwareScanService.setModules(value);
 	}
@@ -125,25 +122,12 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		});
 
 		this.initComponent();
-		this.initResultSeverityConversion();
 	}
 
 	ngOnDestroy() {
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
 		}
-	}
-
-	private initResultSeverityConversion() {
-		// the enum HardwareScanTestResult isn't really in the best order to determine the severity of the results
-		// because of that, I'm creating a map with the best order to determine the scan overall status
-		this.resultSeverityConversion[HardwareScanTestResult.NotStarted] = 0;
-		this.resultSeverityConversion[HardwareScanTestResult.InProgress] = 1;
-		this.resultSeverityConversion[HardwareScanTestResult.Na] = 2;
-		this.resultSeverityConversion[HardwareScanTestResult.Pass] = 3;
-		this.resultSeverityConversion[HardwareScanTestResult.Warning] = 4;
-		this.resultSeverityConversion[HardwareScanTestResult.Fail] = 5;
-		this.resultSeverityConversion[HardwareScanTestResult.Cancelled] = 6;
 	}
 
 	public initComponent() {
@@ -729,8 +713,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	public onViewResults() {
 		const results = {
 			finalResultCode: this.hardwareScanService.getFinalResultCode(),
-			status: HardwareScanTestResult[HardwareScanTestResult.Pass],
-			statusValue: HardwareScanTestResult.Pass,
 			date: this.hardwareScanService.getFinalResultStartDate(),
 			information: this.hardwareScanService.getFinalResultDescription(),
 			items: []
@@ -756,8 +738,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				icon: module_id,
 				details: [],
 				listTest: [],
-				result: HardwareScanTestResult[HardwareScanTestResult.Pass],
-				resultIcon: HardwareScanTestResult.Pass,
+				resultModule: HardwareScanTestResult.Pass,
 			};
 
 			for (const metaInfo of module.metaInformation) {
@@ -770,41 +751,12 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				item.listTest.push({
 					id: test.id,
 					name: test.name,
-					status: test.status,
+					statusTest: test.statusTest,
 					information: test.description,
 				});
-
-				if (test.status === HardwareScanTestResult.Cancelled) {
-					results.status = HardwareScanTestResult[HardwareScanTestResult.Cancelled];
-					results.statusValue = HardwareScanTestResult.Cancelled;
-				} else if (test.status === HardwareScanTestResult.Fail) {
-					results.status = HardwareScanTestResult[HardwareScanTestResult.Fail];
-					results.statusValue = HardwareScanTestResult.Fail;
-				} else if (test.status === HardwareScanTestResult.Warning) {
-					results.status = HardwareScanTestResult[HardwareScanTestResult.Warning];
-					results.statusValue = HardwareScanTestResult.Warning;
-				}
-			}
-			
-			item.result = HardwareScanTestResult[HardwareScanTestResult.Pass];
-			item.resultIcon = HardwareScanTestResult.Pass;
-
-			for (const test of item.listTest) {
-				if ((test.status === HardwareScanTestResult.Cancelled ||
-					test.status === HardwareScanTestResult.NotStarted) &&
-					item.result !== HardwareScanTestResult[HardwareScanTestResult.Warning]) {
-					item.result = HardwareScanTestResult[HardwareScanTestResult.Cancelled];
-					item.resultIcon = HardwareScanTestResult.Cancelled;
-				} else if (test.status === HardwareScanTestResult.Fail) {
-					item.result = HardwareScanTestResult[HardwareScanTestResult.Fail];
-					item.resultIcon = HardwareScanTestResult.Fail;
-					break;
-				} else if (test.status === HardwareScanTestResult.Warning) {
-					item.result = HardwareScanTestResult[HardwareScanTestResult.Warning];
-					item.resultIcon = HardwareScanTestResult.Warning;
-				}
 			}
 
+			item.resultModule = this.hardwareScanService.consolidateResults(item.listTest.map(item => item.statusTest));
 			results.items.push(item);
 		}
 
@@ -843,7 +795,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					listTest: [{
 						id: '',
 						name: device.name,
-						status: device.status,
+						statusTest: device.status,
 						percent:device.percent,
 					}],
 				};
@@ -855,7 +807,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	}
 
 	public onViewResultsRecover() {
-
 		const moduleInformation = this.hardwareScanService.getModulesRetrieved();
 		if ( moduleInformation ) {
 			let storageModule = moduleInformation.categoryList.find( category => category.id === 'storage' );
@@ -869,8 +820,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			const dateString = year + '/' + monthString + '/' + day + ' ' + time[0];
 
 			const results = {
-				status: HardwareScanTestResult[HardwareScanTestResult.Pass],
-				statusValue: HardwareScanTestResult.Pass,
+				resultModule: HardwareScanTestResult.Pass,
 				date: dateString,
 				items: []
 			};
@@ -892,23 +842,15 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					listTest: [{
 						id: '',
 						name: device.name,
-						status: device.status,
+						statusTest: device.status,
 						percent:device.percent,
 					}],
 				};
 
-				if (device.status === HardwareScanTestResult.Cancelled) {
-					results.status = HardwareScanTestResult[HardwareScanTestResult.Cancelled];
-					results.statusValue = HardwareScanTestResult.Cancelled;
-				} else if (device.status === HardwareScanTestResult.Fail) {
-					results.status = HardwareScanTestResult[HardwareScanTestResult.Fail];
-					results.statusValue = HardwareScanTestResult.Fail;
-				} else if (device.status === HardwareScanTestResult.Warning) {
-					results.status = HardwareScanTestResult[HardwareScanTestResult.Warning];
-					results.statusValue = HardwareScanTestResult.Warning;
-				}
 				results.items.push(item);
 			}
+
+			results.resultModule = this.hardwareScanService.consolidateResults(this.devicesRecoverBadSectors.map(item => item.status));
 
 			this.hardwareScanService.setViewResultItems(results);
 			this.modules = results.items;
@@ -1033,14 +975,10 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 						countSuccesses = countSuccesses + 1;
 					}
 
-					// Only change result when finds a worse case
-					if (this.resultSeverityConversion[overalTestResult] < this.resultSeverityConversion[test.status]) {
-						overalTestResult = test.status;
-					}
-
 					resultJson.TestsList[testName].push(testObj);
 				}
 			}
+			overalTestResult = this.hardwareScanService.consolidateResults(this.modules.listTest.map(test => test.status));
 		}
 
 		resultJson.Result = HardwareScanTestResult[overalTestResult];
@@ -1057,16 +995,12 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		let result = HardwareScanTestResult.Na;
 
 		for (const device of rbsFinalResponse.devices) {
-			// Only change result when finds a worse case
-			if (this.resultSeverityConversion[result] < this.resultSeverityConversion[device.status]) {
-				result = device.status;
-			}
-
 			// Counting the devices where RBS was successful
 			if (device.status == HardwareScanTestResult.Pass) {
 				numberOfSuccess++;
 			}
 		}
+		result = this.hardwareScanService.consolidateResults(rbsFinalResponse.devices.map(item => item.status));
 
 		return {
 			taskCount: numberOfSuccess,

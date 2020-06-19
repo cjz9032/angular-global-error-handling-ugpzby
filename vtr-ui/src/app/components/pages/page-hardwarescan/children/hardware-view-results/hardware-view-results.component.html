@@ -15,7 +15,8 @@
 				<div class="final-result">
 					<div class="col col-5 status">
 						<div class="test-status">
-							<div [ngSwitch]="item.resultIcon">
+							<div [ngSwitch]="item.resultTestsTitle">
+
 								<!--Aria-hidden defined as true to ignore faicon selection and defined a span with description to the icon-->
 								<div *ngSwitchCase="0">
 									<fa-icon aria-hidden="true" aria-labelledby="loading-icon" class="loading" [icon]="['fas', 'circle-notch']" [spin]="true"></fa-icon>
@@ -38,7 +39,6 @@
 									<fa-icon aria-hidden="true" aria-labelledby="warning-icon" class="warning" [icon]="['fas', 'exclamation-circle']"></fa-icon>
 									<span id="warning-icon" class="sr-only">attention</span>
 								</div>
-
 								<div *ngSwitchDefault>
 									<fa-icon aria-hidden="true" aria-labelledby="canceled-icon" class="not-applicable" [icon]="['fas', 'ban']"></fa-icon>
 									<span id="canceled-icon" class="sr-only">canceled</span>
@@ -48,7 +48,7 @@
 
 						<div class="text-status">
 							<!-- Defines a title to previus result -->
-							<div [ngSwitch]="item.resultIcon">
+							<div [ngSwitch]="item.resultTestsTitle">
 								<p *ngSwitchCase="testResultEnum.Pass" class="title">{{ 'hardwareScan.pass' | translate }}</p>
 								<p *ngSwitchCase="testResultEnum.Fail" class="title">{{ 'hardwareScan.fail' | translate }}</p>
 								<p *ngSwitchCase="testResultEnum.Warning" class="title">{{ 'hardwareScan.attention' | translate }}</p>
@@ -79,9 +79,7 @@
 
 				<hr>
 
-				<vtr-widget-hardware-scan-item [items]="item.items" [resultCodeText]="resultCodeText"
-					[detailsText]="detailsText"
-					[isLoadingDone]="true">
+				<vtr-widget-hardware-scan-item [items]="item.items" [resultCodeText]="resultCodeText" [detailsText]="detailsText" [isLoadingDone]="true">
 				</vtr-widget-hardware-scan-item>
 			</div>
 		</div>

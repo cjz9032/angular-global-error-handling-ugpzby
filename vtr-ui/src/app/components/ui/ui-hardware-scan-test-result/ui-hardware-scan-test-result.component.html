@@ -1,20 +1,20 @@
-
 <div class="vtr-ui-hardware-scan-test-result">
-    <div class="item-right">
-        <div class="module-result-text" [ngSwitch]="module.resultIcon">
+	<div class="item-right">
+		<div class="module-result-text" [ngSwitch]="module.resultModule">
 			<p class="success text-status" *ngSwitchCase="testResultEnum.Pass">{{ 'hardwareScan.pass' | translate }}</p>
 			<p class="failure text-status" *ngSwitchCase="testResultEnum.Fail">{{ 'hardwareScan.fail' | translate }}</p>
 			<p class="warning text-status" *ngSwitchCase="testResultEnum.Warning">{{ 'hardwareScan.attention' | translate }}</p>
 			<p class="not-applicable text-status" *ngSwitchCase="testResultEnum.Cancelled">{{ 'hardwareScan.cancelled' | translate }}</p>
 		</div>
 		<div class="module-result-icon">
-			<div [ngSwitch]="module.resultIcon">
+			<div [ngSwitch]="module.resultModule">
 				<!--Aria-hidden defined as true to ignore faicon selection-->
 				<fa-icon aria-hidden="true" class="success" [icon]="['fas', 'check-circle']" *ngSwitchCase="testResultEnum.Pass"></fa-icon>
 				<fa-icon aria-hidden="true" class="failure" [icon]="['fas', 'times-circle']" *ngSwitchCase="testResultEnum.Fail"></fa-icon>
 				<fa-icon aria-hidden="true" class="warning" [icon]="['fas', 'exclamation-circle']" *ngSwitchCase="testResultEnum.Warning"></fa-icon>
 				<fa-icon aria-hidden="true" class="not-applicable" [icon]="['fas', 'ban']" *ngSwitchCase="testResultEnum.Cancelled"></fa-icon>
 			</div>
-        </div>
-    </div>
+		</div>
+	</div>
 </div>
+
