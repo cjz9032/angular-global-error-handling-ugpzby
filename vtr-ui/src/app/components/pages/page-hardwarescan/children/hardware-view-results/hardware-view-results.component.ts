@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { TranslateService } from '@ngx-translate/core';
+import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.enum';
 import { HardwareScanService } from '../../../../../services/hardware-scan/hardware-scan.service';
 
 @Component({
@@ -20,6 +21,9 @@ export class HardwareViewResultsComponent implements OnInit, OnDestroy {
 	public isLoadingDone = false;
 	public lenovoSupport = this.translate.instant('hardwareScan.support.subtitle');
 
+	// "Wrapper" value to be accessed from the HTML
+	public testResultEnum = HardwareScanTestResult;
+
 	constructor(
 		public deviceService: DeviceService,
 		private hardwareScanService: HardwareScanService,
@@ -32,9 +36,8 @@ export class HardwareViewResultsComponent implements OnInit, OnDestroy {
 
 	ngOnDestroy() {
 		this.hardwareScanService.setIsViewingRecoverLog(false);
-		// Clearing the last response received from Scan/RBS to ensure that
-		// the Hardware Components page will be shown, since user just clicked
-		// in the back button from View Results page.
-		this.hardwareScanService.clearLastResponse();
+		// Ensure that the homepage will be shown,
+		// in case of reaching here from the results page
+		this.hardwareScanService.setScanOrRBSFinished(false);
 	}
 }
