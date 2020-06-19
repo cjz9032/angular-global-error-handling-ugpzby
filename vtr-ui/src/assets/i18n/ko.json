@@ -3115,7 +3115,9 @@
                 "yes": "예",
                 "no": "아니요"
             },
-            "waitAvailability": "하드웨어 정보가 로드되고 있거나 스캔 중인 파일이 있을 때 저장 장치가 해당 기능을 지원하지 않는 경우 버튼이 비활성화 됩니다."
+            "waitAvailability": "하드웨어 정보가 로드되고 있거나 스캔 중인 파일이 있을 때 저장 장치가 해당 기능을 지원하지 않는 경우 버튼이 비활성화 됩니다.",
+            "executingTitle": "Recovering now...",
+            "recoverCompleted": "Recovery completed"
         },
         "support": {
             "title": "전문 진단 도구 다운로드",
@@ -3163,7 +3165,19 @@
             "suggestedActionSupport": "컴퓨터에 보증 기간이 있는 경우 교체 부품에 대한 <b>티켓 열기</b>를 클릭합니다. 자세한 정보는 Lenovo 지원 웹 사이트를 방문하십시오.",
             "supportButtonText": "티켓 열기",
             "recoverBadSectorsButtonText": "불량 섹터 복구"
-        }
+        },
+        "scanFinishedHeader": {
+            "titleSuccess": "Scan completed. Your device passed all the tests.",
+            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
+            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
+            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
+            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
+            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
+            "finalResultCodeLabel": "Final Result Code: ",
+            "scanAgainButtonText": "Scan Again",
+            "supportButtonText": "Lenovo Support"
+        },
+        "executingScanTitle": "Scanning {{title}}..."
     },
     "smartPerformance": {
         "title": "Health & Support",

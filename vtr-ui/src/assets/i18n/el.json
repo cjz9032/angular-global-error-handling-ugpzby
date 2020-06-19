@@ -3115,7 +3115,9 @@
                 "yes": "Ναι",
                 "no": "Όχι"
             },
-            "waitAvailability": "Το κουμπί είναι απενεργοποιημένο, εάν οι συσκευές αποθήκευσης δεν υποστηρίζουν αυτή τη λειτουργία, ενώ οι πληροφορίες υλικού φορτώνονται ή εάν υπάρχει σάρωση σε εξέλιξη."
+            "waitAvailability": "Το κουμπί είναι απενεργοποιημένο, εάν οι συσκευές αποθήκευσης δεν υποστηρίζουν αυτή τη λειτουργία, ενώ οι πληροφορίες υλικού φορτώνονται ή εάν υπάρχει σάρωση σε εξέλιξη.",
+            "executingTitle": "Recovering now...",
+            "recoverCompleted": "Recovery completed"
         },
         "support": {
             "title": "Κατεβάστε επαγγελματικά διαγνωστικά εργαλεία",
@@ -3163,7 +3165,19 @@
             "suggestedActionSupport": "Εάν ο υπολογιστής σας καλύπτεται από εγγύηση, κάντε κλικ στο <b>άνοιγμα δελτίου</b> για να ζητήσετε ανταλλακτικό. Για περισσότερες πληροφορίες, επισκεφθείτε τον Δικτυακό τόπο υποστήριξης της Lenovo.",
             "supportButtonText": "Άνοιγμα δελτίου",
             "recoverBadSectorsButtonText": "Αποκατάσταση κατεστραμμένων τομέων"
-        }
+        },
+        "scanFinishedHeader": {
+            "titleSuccess": "Scan completed. Your device passed all the tests.",
+            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
+            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
+            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
+            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
+            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
+            "finalResultCodeLabel": "Final Result Code: ",
+            "scanAgainButtonText": "Scan Again",
+            "supportButtonText": "Lenovo Support"
+        },
+        "executingScanTitle": "Scanning {{title}}..."
     },
     "smartPerformance": {
         "title": "Health & Support",

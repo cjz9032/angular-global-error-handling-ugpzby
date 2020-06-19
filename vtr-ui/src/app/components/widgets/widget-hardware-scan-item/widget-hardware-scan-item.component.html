@@ -113,7 +113,7 @@
 </div>
 <ng-template #tooltipRefModule>
 	<div [innerHTML]="tooltipText"></div>
-	<div class='button-box'>
+	<div class="link-support">
 		<a [attr.href]="'https://support.lenovo.com/contactus'"
 			target="_blank"
 			vtrMetrics
@@ -122,8 +122,8 @@
 			metricsItemCategory="partnerarticle"
 			metricsEvent="articleclick"
 			metricsPageNumber="1"
-			tabindex="-1">
-			<button class='btn button'> {{ 'hardwareScan.support.subtitle' | translate }} </button>
+			tabindex="0">
+			{{ 'hardwareScan.support.subtitle' | translate }}
 		</a>
 	</div>
 </ng-template>

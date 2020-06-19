@@ -10,6 +10,7 @@ import { first } from 'rxjs/operators';
 import { TaskType, TaskStep } from 'src/app/enums/hardware-scan-metrics.enum';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { HardwareScanType } from 'src/app/enums/hardware-scan-type';
 
 @Injectable({
 	providedIn: 'root'
@@ -35,6 +36,7 @@ export class HardwareScanService {
 	private isViewingRecoverLog = false;
 	private hasDevicesToRecover = false;
 	private scanOrRBSFinished = false;
+	private scanTypeFinished = HardwareScanType;
 
 	private quickScanRequest: any = []; // request modules
 	private quickScanResponse: any = []; // response modules
@@ -62,6 +64,11 @@ export class HardwareScanService {
 	private hypSettingsPromise: any = undefined;
 	private pluginVersion: string;
 	private isDesktopMachine: boolean = false;
+	private executingModule: string;
+	private failedTests:number = 0;
+	private lastTaskType: TaskType;
+	private lastFilteredCustomScanRequest = [];
+	private lastFilteredCustomScanResponse = [];
 
 	// Used to store information related to metrics
 	private currentTaskType: TaskType;
@@ -140,6 +147,10 @@ export class HardwareScanService {
 		return this.scanOrRBSFinished;
 	}
 
+	public getScanTypeFinished() {
+		return this.scanTypeFinished;
+	}
+
 	public getCulture() {
 		return this.culture;
 	}
@@ -194,6 +205,10 @@ export class HardwareScanService {
 
 	public setScanOrRBSFinished(value: boolean) {
 		this.scanOrRBSFinished = value;
+	}
+
+	public setScanTypeFinished(value: any) {
+		this.scanTypeFinished = value;
 	}
 
 	public setViewResultItems(items: any) {
@@ -481,10 +496,13 @@ export class HardwareScanService {
 		if (this.hardwareScanBridge) {
 			this.cancelRequested = false;
 			this.modules = modules;
+			this.executingModule = modules[0].module;
+			this.failedTests = 0;
 			this.scanExecution = true;
 			this.disableCancel = true;
 			this.workDone.next(false);
 			this.setScanOrRBSFinished(false);
+			this.setScanTypeFinished(HardwareScanType.None);
 			this.clearLastResponse();
 			this.completedStatus = undefined;
 
@@ -503,6 +521,7 @@ export class HardwareScanService {
 			}, cancelHandler)
 			.then((response) => {
 				if (response !== null && response.finalResultCode !== null) {
+					this.executingModule = undefined;
 					this.lastResponse = response;
 					return response;
 				} else {
@@ -523,6 +542,7 @@ export class HardwareScanService {
 
 				this.workDone.next(true);
 				this.setScanOrRBSFinished(true);
+				this.setScanTypeFinished(HardwareScanType.Scan);
 
 				// Retrieve an updated version of Scan's last results
 				this.previousResultsResponse = this.hardwareScanBridge.getPreviousResults();
@@ -603,6 +623,7 @@ export class HardwareScanService {
 			this.clearLastResponse();
 			this.cancelRequested = false;
 			this.setScanOrRBSFinished(false);
+			this.setScanTypeFinished(HardwareScanType.None);
 			this.workDone.next(false);
 			this.completedStatus = undefined;
 
@@ -631,6 +652,7 @@ export class HardwareScanService {
 				this.cleanUp();
 				this.workDone.next(true);
 				this.setScanOrRBSFinished(true);
+				this.setScanTypeFinished(HardwareScanType.RecoverBadSectors);
 
 				// RBS is finished, so we'll show its result instead of the running state
 				this.clearLastResponse();
@@ -929,9 +951,13 @@ export class HardwareScanService {
 		let totalTests = 0;
 		let testsCompleted = 0;
 
+		this.failedTests = 0;
 		for (const scanResp of response.responses) {
 			for (const group of scanResp.groupResults) {
 				for (const test of group.testResultList) {
+					if (test.result === HardwareScanTestResult.Fail) {
+						this.failedTests++;
+					}
 					totalTests++;
 					if (test.percentageComplete === 100) {
 						testsCompleted++;
@@ -961,6 +987,7 @@ export class HardwareScanService {
 			}
 		}
 
+		this.executingModule = this.getCurrentModule();
 		// Finds the first model without result code
 		const currentModuleToExpand =
 			this.modules.find(module => !module.resultCode)
@@ -994,7 +1021,7 @@ export class HardwareScanService {
 				}
 				module.listTest[i].percent = currentGroup.testResultList[i].percentageComplete;
 			}
-			module.resultModule = this.consolidateResults(module.listTest.map(item => item.statusTest));			
+			module.resultModule = this.consolidateResults(module.listTest.map(item => item.statusTest));
 		}
 
 		this.completedStatus = this.modules.status;
@@ -1079,7 +1106,7 @@ export class HardwareScanService {
 	private buildPreviousResults(response: any) {
 		const previousResults: any = {};
 		let moduleId = 0;
-		
+
 		if (response.hasPreviousResults) {
 			this.hasLastResults = response.hasPreviousResults;
 			previousResults.finalResultCode = response.scanSummary.finalResultCode;
@@ -1305,6 +1332,45 @@ export class HardwareScanService {
 		return this.completedStatus;
 	}
 
+	public getExecutingModule() {
+		return this.executingModule;
+	}
+
+	public getFailedTests() {
+		return this.failedTests;
+	}
+
+	public getLastTaskType() {
+		return this.lastTaskType;
+	}
+
+	public setLastTaskType(taskType: TaskType) {
+		this.lastTaskType = taskType;
+	}
+
+	public getLastFilteredCustomScanRequest() {
+		return this.lastFilteredCustomScanRequest;
+	}
+
+	public setLastFilteredCustomScanRequest(lastFilteredCustomScanRequest) {
+		this.lastFilteredCustomScanRequest = JSON.parse(JSON.stringify(lastFilteredCustomScanRequest));
+	}
+
+	public getLastFilteredCustomScanResponse() {
+		return this.lastFilteredCustomScanResponse;
+	}
+
+	public setLastFilteredCustomScanResponse(lastFilteredCustomScanResponse) {
+		this.lastFilteredCustomScanResponse = JSON.parse(JSON.stringify(lastFilteredCustomScanResponse));
+	}
+
+	public getCurrentModule(): string {
+		for (const module of this.modules) {
+			if (module.resultCode == null) {
+				return module.module;
+			}
+		}
+	}
 	private initResultSeverityConversion() {
 		// the enum HardwareScanTestResult isn't really in the best order to determine the severity of the results
 		// because of that, I'm creating a map with the best order to determine the scan overall status

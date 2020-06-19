@@ -1,9 +1,15 @@
 <div class="vtr-hardware-scan-header-pages">
 	<div class="container-fluid">
-		<div class="row" [ngSwitch]="isExecutingAnyScan()">
-			<div class="col col-12 hardwarescan-background" *ngSwitchCase="true">
+		<div class="row" [ngSwitch]="getCurrentScanState()">
+			<div class="col col-12 hardwarescan-background" *ngSwitchCase="scanStateEnum.StateHome">
+				<vtr-hardware-scan-wait-select-header
+					[disableButtonScan]="disableButtonScan"
+					(startQuickScan)="onQuickScan()"
+					(checkAnchor)="onAnchor()">
+				</vtr-hardware-scan-wait-select-header>
+			</div>
+			<div class="col col-12 hardwarescan-background" *ngSwitchCase="scanStateEnum.StateExecuting">
 				<vtr-hardware-scan-executing-header
-					[title]="getDeviceTitle()"
 					[subTitle]="getDeviceSubTitle()"
 					[percent]="percent"
 					(checkCancel)="onCancel()"
@@ -13,14 +19,15 @@
 					itemNameCancel= "{{itemNameCancel}}">
 				</vtr-hardware-scan-executing-header>
 			</div>
+			<div class="col col-12 hardwarescan-background" *ngSwitchCase="scanStateEnum.StateFinished">
+				<vtr-hardware-scan-finished-header
+					itemParentCancel="{{itemParentCancel}}"
+					itemNameCancel= "{{itemNameCancel}}"
+					(scanAgain)="onScanAgain()">
+				</vtr-hardware-scan-finished-header>
+			</div>
 			<div class="col col-12 hardwarescan-background" *ngSwitchDefault>
-				<vtr-hardware-scan-wait-select-header
-					[disableButtonScan]="disableButtonScan"
-					(startQuickScan)="onQuickScan()"
-					(checkAnchor)="onAnchor()">
-				</vtr-hardware-scan-wait-select-header>
 			</div>
 		</div>
 	</div>
 </div>
-

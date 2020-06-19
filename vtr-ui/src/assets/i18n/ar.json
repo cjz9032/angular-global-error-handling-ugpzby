@@ -3117,7 +3117,9 @@
                 "yes": "نعم",
                 "no": "لا"
             },
-            "waitAvailability": "يتم تعطيل الزر إذا كانت أجهزة التخزين لا تدعم هذه الوظيفة، أثناء تحميل معلومات الجهاز أو في حالة وجود عملية مسح قيد التقدم."
+            "waitAvailability": "يتم تعطيل الزر إذا كانت أجهزة التخزين لا تدعم هذه الوظيفة، أثناء تحميل معلومات الجهاز أو في حالة وجود عملية مسح قيد التقدم.",
+            "executingTitle": "Recovering now...",
+            "recoverCompleted": "Recovery completed"
         },
         "support": {
             "title": "تنزيل أدوات تشخيص احترافية",
@@ -3165,7 +3167,19 @@
             "suggestedActionSupport": "إذا كان جهاز الكمبيوتر خاضعًا للضمان، فانقر فوق <b>فتح تذكرة</b> للحصول على قطعة بديلة. لمزيد من المعلومات، انتقل إلى موقع ويب دعم Lenovo.",
             "supportButtonText": "فتح تذكرة",
             "recoverBadSectorsButtonText": "استعادة القطاعات المصابة"
-        }
+        },
+        "scanFinishedHeader": {
+            "titleSuccess": "Scan completed. Your device passed all the tests.",
+            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
+            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
+            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
+            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
+            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
+            "finalResultCodeLabel": "Final Result Code: ",
+            "scanAgainButtonText": "Scan Again",
+            "supportButtonText": "Lenovo Support"
+        },
+        "executingScanTitle": "Scanning {{title}}..."
     },
     "smartPerformance": {
         "title": "Smart Performance",

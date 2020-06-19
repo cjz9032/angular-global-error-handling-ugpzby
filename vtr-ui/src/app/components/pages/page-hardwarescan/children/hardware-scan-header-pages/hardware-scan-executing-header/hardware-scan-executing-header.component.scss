@@ -1,21 +1,12 @@
 @import "../../../../../../app.theme";
 
-.status {
-	font-size: $fontsize_lg;
-	color: $light;
-	padding-right: 2.4rem;
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-	text-align: right;
-}
 .title {
 	color: $light;
-	font-size: $fontsize_xl2;
-	font-weight: $weight_light;
+	font-size: $fontsize_xl;
+	font-weight: $weight_600;
 	line-height: 4.2rem;
 	padding-left: 2.4rem;
-	padding-top: 3rem;
+	padding-top: 1rem;
 	padding-bottom: 0.5rem;
 	padding-right: 2.4rem;
 }
@@ -90,10 +81,19 @@
 	color: $light;
 	font-size: $fontsize_xs;
 	font-weight: $weight_medium;
-	line-height: 1.5rem;
 	text-align: center;
 	text-transform: uppercase;
-	padding: 1rem !important;
+	padding-top: 0.5rem;
+
+	.cancel-check-button {
+		border-bottom: 0.2rem solid $light;
+
+		&:hover:enabled {
+			border: none;
+			padding-bottom: 0.2rem;
+			text-decoration: none;
+		}
+	}
 
 	&:focus {
 		@include outline-blue;
@@ -101,35 +101,6 @@
 }
 
 .hwscan-header {
-	padding-bottom: 1.5rem;
+	padding-bottom: 2.5rem;
 }
-.final-result-code {
-	color: $light;
-	font-size: $fontsize_xs2;
-	line-height: 1.5rem;
-	padding-left: 5rem;
-	padding-top: 2rem;
-	padding-bottom: 1rem;
-	padding-right: 2.4rem;
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-	.result-code-value-text {
-		opacity: 0.5;
-	}
-	.result-code-complete-text {
-		margin-left: 0.5rem;
-		text-transform: uppercase;
-	}
-	.result-code-icon {
-		margin-left: 0.5rem;
-		font-size: $fontsize_sm;
-		color: $menu_hover;
-		cursor: pointer;
-		&:hover {
-			color: $highlight;
-		}
-	}
-}
-
 

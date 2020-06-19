@@ -76,7 +76,7 @@
 	.details-list {
 		margin-left: 4.2rem;
 		border-radius: $border_radius;
-		.table-details {			
+		.table-details {
 			font-size:$fontsize_xs;
 			font-weight:$weight_regular;
 		}
@@ -101,6 +101,13 @@
 			text-decoration: none;
 			display: inline-block;
 			padding: 0 2.5rem;
+		}
+	}
+
+	.link-support {
+		padding-top: 1rem;
+		&:hover {
+			color: $menu_hover;
 		}
 	}
 

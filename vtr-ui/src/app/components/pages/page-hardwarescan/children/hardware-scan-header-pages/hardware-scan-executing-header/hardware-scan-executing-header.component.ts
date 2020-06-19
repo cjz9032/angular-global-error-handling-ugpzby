@@ -14,6 +14,7 @@ export class HardwareScanExecutingHeaderComponent implements OnInit {
 	@Input() subTitle = '';
 	@Input() completed: boolean | undefined;
 	@Input() disableCancel: boolean;
+	@Input() disableButtonScan: boolean;
 
 	// Metrics
 	@Input() itemParentCancel: string;
@@ -21,6 +22,10 @@ export class HardwareScanExecutingHeaderComponent implements OnInit {
 
 	// Emitters
 	@Output() checkCancel = new EventEmitter();
+	@Output() startQuickScan = new EventEmitter();
+	@Output() checkAnchor = new EventEmitter();
+
+	public lastExecutedModule: string = '';
 
 	constructor(private hardwareScanService: HardwareScanService) { }
 
@@ -30,21 +35,23 @@ export class HardwareScanExecutingHeaderComponent implements OnInit {
 		this.checkCancel.emit();
 	}
 
-	public isScanOrRBSFinished() {
-		return this.hardwareScanService.isScanOrRBSFinished();
+	public getDeviceTitle() {
+		if (this.hardwareScanService) {
+			if (this.hardwareScanService.isRecoverExecuting()) {
+				return this.hardwareScanService.getDeviceInRecover();
+			}
+
+			const module = this.hardwareScanService.getExecutingModule();
+			if (module !== undefined) {
+				this.lastExecutedModule = module;
+				return module;
+			} else {
+				return this.lastExecutedModule;
+			}
+		}
 	}
 
-	public getFinalResultCode() {
-		if (this.hardwareScanService) {
-			return this.hardwareScanService.getFinalResultCode();
-		}
-		return '';
-	}
-
-	public getTooltipInformation() {
-		if (this.hardwareScanService) {
-			return this.hardwareScanService.getFinalResultDescription();
-		}
-		return '';
+	public isRecoverExecuting() {
+		return this.hardwareScanService.isRecoverExecuting();
 	}
 }

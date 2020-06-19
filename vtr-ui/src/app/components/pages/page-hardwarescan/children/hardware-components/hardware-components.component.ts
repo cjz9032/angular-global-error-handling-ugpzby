@@ -592,6 +592,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public startScanWaitingModules(taskType: TaskType) {
 		this.startScanClicked = true; // Disable button, preventing multiple clicks by the user
+		this.hardwareScanService.setLastTaskType(taskType);
 
 		if (!this.hardwareScanService.isLoadingDone()) {
 			const modalWait = this.openWaitHardwareComponentsModal();
@@ -616,7 +617,14 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public checkPreScanInfo(taskType: TaskType) {
+	public scanAgain(){
+		this.hardwareScanService.setEnableViewResults(false);
+		this.hardwareScanService.setIsScanDone(false);
+		this.hardwareScanService.setScanExecutionStatus(true);
+		this.checkPreScanInfo(this.hardwareScanService.getLastTaskType(), true);
+	}
+
+	public checkPreScanInfo(taskType: TaskType, scanAgain = false) {
 		this.hardwareScanService.cleanResponses();
 		this.hardwareScanService.setCurrentTaskType(taskType);
 
@@ -626,8 +634,17 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			requests = this.hardwareScanService.getQuickScanRequest();
 
 		} else if (taskType === TaskType.CustomScan) { // custom
-			this.modules = this.hardwareScanService.getFilteredCustomScanResponse();
-			requests = this.hardwareScanService.getFilteredCustomScanRequest();
+			if (scanAgain) {
+				this.modules = this.hardwareScanService.getLastFilteredCustomScanResponse();
+				requests = this.hardwareScanService.getLastFilteredCustomScanRequest();
+			} else {
+				this.modules = this.hardwareScanService.getFilteredCustomScanResponse();
+				requests = this.hardwareScanService.getFilteredCustomScanRequest();
+
+				// Saving the selected filter in case the user wants to redo the same scan
+				this.hardwareScanService.setLastFilteredCustomScanResponse(this.modules);
+				this.hardwareScanService.setLastFilteredCustomScanRequest(requests);
+			}
 		}
 
 		// Resets the 'expanded' state and User visibility to the default value (closed)
