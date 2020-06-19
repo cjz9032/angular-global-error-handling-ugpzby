@@ -5,16 +5,15 @@ import {
 	Output,
 	EventEmitter,
 	HostListener,
-} from '@angular/core';
-import { CommonService } from 'src/app/services/common/common.service';
-import { LoggerService } from 'src/app/services/logger/logger.service';
-import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import moment from 'moment';
-import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import { enumScanFrequency, enumDaysOfTheWeek } from 'src/app/enums/smart-performance.enum';
-import { Subscription } from 'rxjs/internal/Subscription';
-
+} from "@angular/core";
+import { CommonService } from "src/app/services/common/common.service";
+import { LoggerService } from "src/app/services/logger/logger.service";
+import { SmartPerformanceService } from "src/app/services/smart-performance/smart-performance.service";
+import { LocalStorageKey } from "src/app/enums/local-storage-key.enum";
+import moment from "moment";
+import { TranslateService, LangChangeEvent } from "@ngx-translate/core";
+import { enumScanFrequency, enumDaysOfTheWeek } from "src/app/enums/smart-performance.enum";
+import { Subscription } from 'rxjs';
 @Component({
 	selector: 'vtr-ui-scan-schedule',
 	templateUrl: './ui-scan-schedule.component.html',
@@ -585,7 +584,7 @@ export class UiScanScheduleComponent implements OnInit {
 	selectedDayTranslation() {
 		this.daysOfTheWeek = enumDaysOfTheWeek;
 		if (this.selectedDay) {
-			if (this.selectedDay === this.daysOfTheWeek.sun || this.selectedDay === this.daysOfTheWeek.sun) {
+			if (this.selectedDay === this.daysOfTheWeek.sun || this.selectedDay === this.daysOfTheWeek.sunShort) {
 				this.selectedDay = this.daysOfTheWeek.sunLang;
 			}
 			if (this.selectedDay === this.daysOfTheWeek.mon || this.selectedDay === this.daysOfTheWeek.monShort) {
