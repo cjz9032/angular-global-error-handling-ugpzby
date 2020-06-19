@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "Pilinizin ömrünü uzatmak için tam dolum kapasitesini kullanımınıza göre iyileştirdik. Pil kapasitesinin tamamını kullanmak için pili %20'ye kadar boşaltıp yeniden doldurmanız gerekmektedir.",
-                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
+                    "moreInfo": "Ek bilgi için <a role=\"link\" href=\"#/device/high-density-battery\">burayı</a> tıklatın."
                 },
                 "condition": {
                     "Illegal": "Takılı pil, sistem tarafından <b>desteklenmiyor</b> ve doldurulmayacak. Lütfen yerine bu sistem için doğru olan Lenovo pilini takın.",
@@ -1101,13 +1101,13 @@
                     "NotDetected": "<b>Birincil pil algılanmadı.</b>"
                 },
                 "highDensityBattery": {
-                    "title": "High density battery",
-                    "subtitle": "How your battery works",
-                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "title": "Yüksek yoğunluklu pil",
+                    "subtitle": "Piliniz nasıl çalışır?",
+                    "para1": "Pil ömrünü uzatmak için piliniz kişisel kullanım düzeninize göre şarj voltajını ve kapasitesini otomatik olarak ayarlar.",
                     "para2": {
-                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
-                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
-                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                        "item1": "- Pilinizin kapasitesinin %65'inden daha azını bir hafta veya daha uzun süre kullanırsanız pil, şarj voltajını ve kapasitesini geçici olarak düşürebilir. Kapasitedeki azalma küçüktür ve kullanım düzeninizde fark edilmez.",
+                        "item2": "- Pilinizi, pil seviyesi %20'nin altına düşecek kadar boşaltıp ardından pili tamamen şarj ettiğinizde tam kapasite geri yüklenir.",
+                        "item3": "- Ayrıca, 2 hafta veya daha uzun süre pilinizin kapasitesinin %10'undan daha azını kullanırsanız pil, şarj voltajını ve kapasitesini geçici olarak azaltılmış pil kapasitesinin %50'si olana kadar daha da düşürebilir."
                     }
                 }
             },
@@ -1276,7 +1276,7 @@
                             "description2": "Bu özelliği tamamen etkinleştirmek için lütfen makinenizi fişten çekin vepilinizin tam olarak boşalmasını veya doldurmayı durdurma eşiğinin altına düşmesini bekleyin.",
                             "enable": "ETKİNLEŞTİR",
                             "cancel": "İPTAL",
-                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
+                            "description3": "Piliniz, kullanım düzeninize göre şarj voltajını ve kapasitesini otomatik olarak optimize eder. Pilinizi hafif kullanıyorsanız Pil Şarj Eşiği'ni etkinleştirmeniz gerekmez."
                         },
                         "options": {
                             "start": "Şu değerden az olduğunda şarj etmeye başla",
@@ -1302,7 +1302,7 @@
                         "title": "Uçak Güç Kipi",
                         "description": "Bu özellik, belirli bir güç sınırının geçerli olduğu bir uçaktaki AC güç çıkışını kullanabilmenizi sağlar. Bu kipte, pil şarj oranı ve bilgisayar performansı sınırlanarak bilgisayarınızın pil tüketimi güvenli bir düzeye düşürülür.",
                         "checkBoxDesc": "Otomatik algılama",
-                        "note": "Otomatik algılama işaretlenirse bilgisayarınız uçak kabini ortamını algıladığında otomatik olarak Uçak güç kipini açar ve kullanmadığınızda kapanır."
+                        "note": "Otomatik algılama işaretlenirse bilgisayarınız uçak kabini ortamını algıladığında otomatik olarak Uçak Güç Kipi'ni açar ve kullanmadığınızda kapanır."
                     },
                     "gaugeReset": {
                         "title": "Pil göstergesi sıfırlama",
@@ -1557,7 +1557,7 @@
                     },
                     "optimize": {
                         "title": "Mikrofonumu şunun için en iyi konuma getirin:",
-                        "tooltip": "Ses deneyiminizi farklı senaryolar ve ortamlarla geliştirmek için mikrofon efektini yapılandırın.",
+                        "tooltip": "Ses deneyiminizi farklı senaryolar ve ortamlarda geliştirmek için mikrofon efektini yapılandırın.",
                         "options": {
                             "VoiceRecognition": "SES TANIMA",
                             "OnlyMyVoice": "YALNIZCA BENİM SESİM",
@@ -1585,7 +1585,7 @@
                 "display": {
                     "title": "Ekran",
                     "displayColorTemperature": {
-                        "title": "Göz koruması kipi",
+                        "title": "Göz Koruması Kipi",
                         "description": "Göz yorgunluğunu önlemek için bilgisayarınızı uzun süre kullandığınızda ekranınızın renk sıcaklığını mavi ışığı filtreleyecek şekilde ayarlayabilirsiniz. Ayrıca, sıcak renkler özellikle geceleri uyumanız için iyidir.",
                         "link": {
                             "click": "Renk sıcaklığını değiştirmek için",
@@ -1595,19 +1595,19 @@
                     },
                     "eyeCareMode": {
                         "title": "Göz Koruması Kipi",
-                        "checkbox": "Göz koruması kipini gün batımından gün doğumuna kadar sürecek şekilde ayarlayın",
+                        "checkbox": "Göz Koruması Kipi'ni gün batımından gün doğumuna kadar sürecek şekilde ayarla",
                         "options": {
                             "warm": "Sıcak (Gözler için daha iyi)",
                             "cold": "Soğuk"
                         },
                         "reset": "Sıfırla",
                         "tooltip": "Göz Koruması Kipi, mavi ışığı filtreleyip göz yorgunluğunu azaltmak için ekranınızın renk sıcaklığını ayarlar.",
-                        "onSunsetToSunriseScheduleDescription": "Göz koruması kipini gün batımından gün doğumuna kadar sürecek şekilde ayarlayın",
+                        "onSunsetToSunriseScheduleDescription": "Göz Koruması Kipi'ni gün batımından gün doğumuna kadar sürecek şekilde ayarla",
                         "note": {
                             "title": "Not",
                             "description": "Lenovo Vantage'ın, bölgenizdeki gün batımı ve gün doğumu saatlerini hesaplamak için konum bilgilerinize erişmesi gerekir."
                         },
-                        "tips": "Göz Koruması Kipi'ne dönmek için Windows Update'i çalıştırın veya grafik kartı sürücüsünü manuel olarak yükleyin"
+                        "tips": "Göz Koruması Kipi'ne dönmek için Windows Update'i çalıştırın veya grafik kartı sürücüsünü manuel olarak yükleyin."
                     },
                     "dispColorTemp": {
                         "title": "Ekran rengi sıcaklığı",
@@ -1617,7 +1617,7 @@
                         },
                         "reset": "Sıfırla",
                         "tooltip": "Göz Koruması Kipi, mavi ışığı filtreleyip göz yorgunluğunu azaltmak için ekranınızın renk sıcaklığını ayarlar.",
-                        "onSunsetToSunriseScheduleDescription": "Göz koruması kipini gün batımından gün doğumuna kadar sürecek şekilde ayarlayın",
+                        "onSunsetToSunriseScheduleDescription": "Göz Koruması Kipi'ni gün batımından gün doğumuna kadar sürecek şekilde ayarla",
                         "note": {
                             "title": "Not",
                             "description": "Göz Koruması Kipi etkinleştirildiğinde, bu renk sıcaklığı etkili olmaz. Ancak önizlemesini almak için kaydırıcıyı sürükleyebilirsiniz. Etkinleştirmek için Göz Koruması Kipini kapatın."
@@ -1764,11 +1764,11 @@
                             "note": "Fn tuşuna iki kez bastığınızda, tekrar basılıncaya kadar Fn tuşu basılı konumda kilitli kalır. Fn tuşu kilitlendiğinde, Fn Kilidi göstergesi yanar. Varsayılan dışındaki işlevi başlatmak için doğrudan istediğiniz işlev tuşuna basabilirsiniz."
                         },
                         "popup": {
-                            "title": "Bilgisayarı yeniden başlatın",
+                            "title": "Bilgisayarınızı yeniden başlatın",
                             "description": "Varsayılan üst sıra işlevlerinde değişiklik yapılması bilgisayarınızın yeniden başlatmanızı gerektirir. Yeniden başlatmak istediğinizden emin misiniz?",
                             "reboot": "YENİDEN YÜKLE",
                             "cancel": "ŞİMDİ DEĞİL",
-                            "yes": "YES"
+                            "yes": "EVET"
                         },
                         "note": {
                             "sFunKey": "F1-F12 işlevlerine erişmek için Fn tuşuna ve en üst sıradaki tuşlara basın.",
@@ -1791,10 +1791,10 @@
                 },
                 "userDefinedKey": {
                     "title": "Kullanıcı Tanımlı Tuş",
-                    "caption": "Yıldız simgesiyle temsil edilen tuş, kullanıcı tanımlı işlevi belirlemenize olanak sağlar",
+                    "caption": "Yıldız simgesiyle temsil edilen tuş, kullanıcı tanımlı işlevi belirlemenize olanak sağlar.",
                     "dropDown": {
                         "title": "Kullanıcı Tanımlı Tuş İşlemi",
-                        "note": "Not: E-posta veya normal posta adresi gibi sık kullanılan metinleri girmek için kullanılabilir. Lenovo bu özelliğin parola veya başka bir özel bilgi saklamak ve girmek için kullanılmamasını önerir.",
+                        "note": "Not: E-posta veya normal posta adresi gibi sık kullanılan metinleri girmek için kullanılabilir. Bu özelliği hiçbir zaman parolaları veya diğer özel bilgileri saklamak için kullanmayın.",
                         "options": {
                             "option1": "Lütfen seçin:",
                             "option2": "Web sitesini aç",
@@ -1833,7 +1833,7 @@
                 "fnCtrlKey": {
                     "title": "Fn tuşu ve Ctrl tuşu arasında işlev değiş tokuşu",
                     "description": "Ctrl tuşu yerine alışkanlıkla Fn tuşuna basıyorsanız bu iki tuşun işlevlerini değiştirebilirsiniz.",
-                    "restartNote": "İki tuşun işlevini değiştirmek için bilgisayarınızı yeniden başlatmanız gerekir, yeniden başlatmak istediğinizden emin misiniz?",
+                    "restartNote": "İki tuşun işlevini değiştirmek için bilgisayarınızı yeniden başlatmanız gerekir. Yeniden başlatmak istediğinizden emin misiniz?",
                     "title2": "Fn tuşu sık kullanılan tuş bileşimlerinde Ctrl görevi görür",
                     "description2": "Fn tuşu bazı sık kullanılan tuş bileşimlerinde Ctrl tuşu görevi görür. Ctrl tuşunun işlevi değişmez.",
                     "featureNote": "Bu işlev ve Fn tuşu ile Ctrl tuşunu değiştirme işlevi aynı anda etkin olamaz. Bu işlevlerden biri etkinse diğeri otomatik olarak devre dışı kalır.",
@@ -3289,7 +3289,7 @@
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
             "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
-            "processStatus": "PROCESSING"
+            "processStatus": "İŞLENİYOR"
         },
         "scanSettings": {
             "title": "Scan settings",

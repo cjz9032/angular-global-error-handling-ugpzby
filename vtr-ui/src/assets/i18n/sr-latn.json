@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "Da biste produžili vek trajanja baterije, optimizovali su njen pun kapacitet punjenja na osnovu vašeg korišćenja. Pun kapacitet baterije možda neće biti dostupan sve dok je ne ispraznite na 20% i dopunite.",
-                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
+                    "moreInfo": "Kliknite <a role=\"link\" href=\"#/device/high-density-battery\">ovde</a> za više informacija."
                 },
                 "condition": {
                     "Illegal": "Ovaj sistem <b>ne podržava</b> instaliranu bateriju i ona se neće puniti. Zamenite bateriju odgovarajućom Lenovo baterijom za ovaj sistem.",
@@ -1101,13 +1101,13 @@
                     "NotDetected": "<b>Primarna baterija nije pronađena.</b>"
                 },
                 "highDensityBattery": {
-                    "title": "High density battery",
-                    "subtitle": "How your battery works",
-                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "title": "Baterija visoke gustine",
+                    "subtitle": "Kako funkcioniše baterija",
+                    "para1": "Da biste povećali vek trajanja baterije, baterija automatski podešava napon punjenja i kapacitet kao odgovor na vaš lični šablon korišćenja.",
                     "para2": {
-                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
-                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
-                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                        "item1": "- Ako koristite manje od 65% kapaciteta baterije jednu nedelju ili duže vreme, baterija može privremeno da smanji napon punjenja i kapacitet. Smanjenje kapaciteta je manje i neprimetno za vaš šablon korišćenja.",
+                        "item2": "- Pun kapacitet se vraća kada ispraznite bateriju ispod 20%, a zatim je potpuno napunite.",
+                        "item3": "- Pored toga, ako koristite manje od 10% kapaciteta baterije 2 nedelje ili duže, baterija može privremeno dodatno da smanji napon punjenja i kapacitet, sve dok se ne iskoristi 50% kapaciteta smanjene baterije."
                     }
                 }
             },
@@ -1276,7 +1276,7 @@
                             "description2": "Da biste u potpunosti omogućili ovu funkciju, isključite mašinu iomogućite da se baterija isprazni ili da bude ispod praga za prestanak punjenja.",
                             "enable": "OMOGUĆI",
                             "cancel": "OTKAŽI",
-                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
+                            "description3": "Baterija automatski optimizuje svoj napon i kapacitet na osnovu šablona korišćenja. Ako ne preopterećujete bateriju, ne treba da omogućavate prag punjenja baterije."
                         },
                         "options": {
                             "start": "Pokreni punjenje kada je ispod",
@@ -1557,7 +1557,7 @@
                     },
                     "optimize": {
                         "title": "Optimizuj mikrofon na sledeći način:",
-                        "tooltip": "Konfigurišite efekat mikrofona da biste poboljšali audio doživljaj različitim scenarijima i okruženjem.",
+                        "tooltip": "Konfigurišite efekat mikrofona da biste poboljšali audio doživljaj u različitim scenarijima i okruženjem.",
                         "options": {
                             "VoiceRecognition": "PREPOZNAVANJE GLASA",
                             "OnlyMyVoice": "SAMO MOJ GLAS",
@@ -1595,19 +1595,19 @@
                     },
                     "eyeCareMode": {
                         "title": "Režim za zaštitu vida",
-                        "checkbox": "Zakažite režim za zaštitu vida od zalaska do izlaska sunca",
+                        "checkbox": "Zakazivanje režima za zaštitu vida od zalaska do izlaska sunca",
                         "options": {
                             "warm": "Toplo (bolje za oči)",
                             "cold": "Hladno"
                         },
                         "reset": "Poništi",
                         "tooltip": "Režim za zaštitu vida prilagođava temperaturu boja ekrana kako bi se isfiltriralo plavo svetlo i smanjilo naprezanje očiju.",
-                        "onSunsetToSunriseScheduleDescription": "Zakažite režim za zaštitu vida od zalaska do izlaska sunca",
+                        "onSunsetToSunriseScheduleDescription": "Zakazivanje režima za zaštitu vida od zalaska do izlaska sunca",
                         "note": {
                             "title": "Napomena",
                             "description": "Lenovo Vantage treba da pristupi informacijama o lokaciji kako bi se izračunalo vreme zalaska i izlaska sunca u vašem regionu."
                         },
-                        "tips": "Pokrenite Windows Update ili ručno instalirajte grafički upravljački program da biste oporavili režim zaštite vida"
+                        "tips": "Pokrenite Windows Update ili ručno instalirajte grafički upravljački program da biste oporavili režim zaštite vida."
                     },
                     "dispColorTemp": {
                         "title": "Temperatura boje ekrana",
@@ -1617,7 +1617,7 @@
                         },
                         "reset": "Poništi",
                         "tooltip": "Režim za zaštitu vida prilagođava temperaturu boja ekrana kako bi se isfiltriralo plavo svetlo i smanjilo naprezanje očiju.",
-                        "onSunsetToSunriseScheduleDescription": "Zakažite režim za zaštitu vida od zalaska do izlaska sunca",
+                        "onSunsetToSunriseScheduleDescription": "Zakazivanje režima za zaštitu vida od zalaska do izlaska sunca",
                         "note": {
                             "title": "Napomena",
                             "description": "Kada je režim za zaštitu vida omogućen, ova temperatura boja se ne primenjuje. Međutim, možete da prevučete klizač da biste dobili njen pregled. Da biste je primenili, isključite režim za zaštitu vida."
@@ -1762,11 +1762,11 @@
                             "note": "Kada Fn taster pritisnete dva puta, Fn taster ostaje zaključan u pritisnutom stanju sve dok ga ponovo ne pritisnete. Kada je taster Fn zaključan, indikator Fn Lock je uključen. Možete direktno da pritisnete željeni funkcijski taster da biste pokrenuli nepodrazumevanu funkciju."
                         },
                         "popup": {
-                            "title": "Ponovo pokrenite računar",
+                            "title": "Ponovno pokretanje računara",
                             "description": "Za promenu podrazumevane funkcije gornjeg reda potrebno je da ponovo pokrenete računar. Želite li zaista da ponovo pokrenete?",
                             "reboot": "PONOVO POKRENI",
                             "cancel": "NE SAD",
-                            "yes": "YES"
+                            "yes": "DA"
                         },
                         "showAdvSettings": "PRIKAŽI NAPREDNE POSTAVKE",
                         "hideAdvSettings": "SAKRI NAPREDNE POSTAVKE",
@@ -1791,10 +1791,10 @@
                 },
                 "userDefinedKey": {
                     "title": "Korisnički definisan taster",
-                    "caption": "Taster koji je označen ikonom sa zvezdicom vam omogućava da podesite korisnički definisanu funkciju",
+                    "caption": "Taster koji je označen ikonom sa zvezdicom vam omogućava da podesite korisnički definisanu funkciju.",
                     "dropDown": {
                         "title": "Radnja korisnički definisanog tastera",
-                        "note": "Napomena: Ovo može da se koristi za unos tastera koji se često unosi kao što je e-pošta ili poštanska adresa. Lenovo preporučuje da nikada ne koristite ovu funkciju za čuvanje i unošenje lozinki ili bilo kojih drugih privatnih informacija.",
+                        "note": "Napomena: Ovo može da se koristi za unos tastera koji se često unosi kao što je e-pošta ili poštanska adresa. Nikada nemojte koristiti ovu funkciju za skladištenje lozinki ili drugih privatnih informacija.",
                         "options": {
                             "option1": "Izaberite",
                             "option2": "Open website",
@@ -1832,7 +1832,7 @@
                 },
                 "fnCtrlKey": {
                     "title": "Zamena tastera Fn i Ctrl",
-                    "description": "Ako četo pritiskate taster Fn kada nameravate da pritisnete taster Ctrl, možete da zamenite funkcije ova dva tastera.",
+                    "description": "Ako četo pritiskate taster Fn kada nameravate da pritisnete taster Ctrl, možete da zamenite funkciju ova dva tastera.",
                     "restartNote": "Premeštanje funkcije dva tastera zahteva od vas da ponovo pokrenete računar. Želite li zaista da ponovo pokrenete?",
                     "title2": "Fn funkcioniše kao Ctrl za često korišćene kombinacije tastera",
                     "description2": "Taster Fn funkcioniše kao taster Ctrl kod nekih često korišćenih kombinacija tastera. Funkcija taster Ctrl se ne menja.",
@@ -3289,7 +3289,7 @@
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
             "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
-            "processStatus": "PROCESSING"
+            "processStatus": "OBRADA"
         },
         "scanSettings": {
             "title": "Scan settings",

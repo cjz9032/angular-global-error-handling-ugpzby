@@ -925,7 +925,7 @@
         },
         "systemStatus": {
             "title": "État du système",
-            "subtitle": "Détecter rapidement l'état de votre appareil.",
+            "subtitle": "Détectez rapidement l'état du périphérique.",
             "memory": {
                 "title": "Mémoire",
                 "detail": {
@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "Pour prolonger la durée de vie de votre batterie, nous avons optimisé sa capacité de charge complète en fonction de votre utilisation. La capacité totale de la batterie peut ne pas être disponible tant que vous n'avez pas laissé la batterie se vider jusqu'à 20 % avant de la recharger.",
-                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
+                    "moreInfo": "Cliquez <a role=\"link\" href=\"#/device/high-density-battery\">ici</a> pour plus d'informations."
                 },
                 "condition": {
                     "Illegal": "La batterie installée n'est <b>pas prise en charge</b> par ce système et ne va pas se charger. Remplacez la batterie par une batterie agréée par Lenovo et compatible avec ce système.",
@@ -1101,13 +1101,13 @@
                     "NotDetected": "<b>La batterie principale n'est pas détectée.</b>"
                 },
                 "highDensityBattery": {
-                    "title": "High density battery",
-                    "subtitle": "How your battery works",
-                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "title": "Batterie haute densité",
+                    "subtitle": "Fonctionnement de votre batterie",
+                    "para1": "Pour augmenter la durée de vie de la batterie, celle-ci ajuste automatiquement la tension de chargement et la capacité en fonction de votre modèle d'utilisation personnel.",
                     "para2": {
-                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
-                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
-                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                        "item1": "- Si vous utilisez moins de 65 % de la capacité de votre batterie pendant au moins une semaine, la batterie peut réduire temporairement la tension et la capacité de chargement. La réduction de la capacité est mineure et peut ne pas avoir d'impact sur votre modèle d'utilisation.",
+                        "item2": "- La capacité totale est rétablie lorsque vous chargez la batterie en dessous de 20 % et qu'ensuite vous rechargez complètement la batterie.",
+                        "item3": "- En outre, si vous utilisez moins de 10 % de la capacité de votre batterie pendant au moins 2 semaines, la batterie peut réduire temporairement la tension et la capacité de chargement, jusqu'à ce que vous utilisiez une capacité de batterie inférieure à 50 %."
                     }
                 }
             },
@@ -1276,7 +1276,7 @@
                             "description2": "Afin d'activer pleinement cette fonctionnalité, veuillez débrancher votre appareil et laisser votre batterie se vider jusqu'au seuil d'arrêt de chargement ou en dessous de celui-ci.",
                             "enable": "ACTIVER",
                             "cancel": "ANNULER",
-                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
+                            "description3": "Votre batterie optimise automatiquement sa tension et sa capacité de chargement en fonction de votre modèle d'utilisation. Si vous utilisez légèrement la batterie, il n'est pas nécessaire d'activer le seuil de chargement de la batterie."
                         },
                         "options": {
                             "start": "Commence le chargement quand le niveau est inférieur à",
@@ -1557,7 +1557,7 @@
                     },
                     "optimize": {
                         "title": "Optimiser mon micro pour :",
-                        "tooltip": "Configurez l'effet micro pour améliorer votre expérience audio pour des situations et des environnements différents.",
+                        "tooltip": "Configurez l'effet micro pour améliorer votre expérience audio dans des scénarios et des environnements différents.",
                         "options": {
                             "VoiceRecognition": "RECONNAISSANCE VOCALE",
                             "OnlyMyVoice": "UNIQUEMENT MA VOIX",
@@ -1595,19 +1595,19 @@
                     },
                     "eyeCareMode": {
                         "title": "Mode Protection visuelle",
-                        "checkbox": "Programmer le mode Protection visuelle entre le coucher et le lever du soleil",
+                        "checkbox": "Planifier le mode Protection des yeux entre le coucher et le lever du soleil",
                         "options": {
                             "warm": "Chaude (meilleur pour les yeux)",
                             "cold": "Froide"
                         },
                         "reset": "Réinitialiser",
                         "tooltip": "Le mode Protection visuelle règle la température de couleur de votre écran pour filtrer la lumière bleue et ainsi réduire la fatigue des yeux.",
-                        "onSunsetToSunriseScheduleDescription": "Programmer le mode Protection visuelle entre le coucher et le lever du soleil",
+                        "onSunsetToSunriseScheduleDescription": "Planifier le mode Protection des yeux entre le coucher et le lever du soleil",
                         "note": {
                             "title": "Important",
                             "description": "Lenovo Vantage doit accéder aux informations concernant votre emplacement pour calculer l'heure du coucher et du lever du soleil pour votre région."
                         },
-                        "tips": "Exécutez Windows Update ou installez manuellement le pilote graphique pour restaurer le mode Protection des yeux"
+                        "tips": "Exécutez Windows Update ou installez manuellement le pilote graphique pour restaurer le mode Protection des yeux."
                     },
                     "dispColorTemp": {
                         "title": "Température de couleur de l'écran",
@@ -1617,7 +1617,7 @@
                         },
                         "reset": "Réinitialiser",
                         "tooltip": "Le mode Protection visuelle règle la température de couleur de votre écran pour filtrer la lumière bleue et ainsi réduire la fatigue des yeux.",
-                        "onSunsetToSunriseScheduleDescription": "Programmer le mode Protection visuelle entre le coucher et le lever du soleil",
+                        "onSunsetToSunriseScheduleDescription": "Planifier le mode Protection des yeux entre le coucher et le lever du soleil",
                         "note": {
                             "title": "Important",
                             "description": "Lorsque le mode Protection visuelle est activé, ce réglage de la température de couleur n'est pas disponible. Cependant, vous pouvez faire glisser le curseur pour en obtenir un aperçu. Pour l'activer, désactivez le mode Protection visuelle."
@@ -1764,11 +1764,11 @@
                             "note": "Lorsque vous appuyez deux fois sur la touche Fn, celle-ci est verrouillée jusqu'à ce que vous appuyiez de nouveau dessus. Lorsque la touche Fn est verrouillée, l'indicateur de verrouillage Fn est allumé. Vous pouvez appuyer directement sur la touche de fonction souhaitée pour lancer la fonction autre que celle par défaut."
                         },
                         "popup": {
-                            "title": "Redémarrez l'ordinateur",
+                            "title": "Redémarrer l'ordinateur",
                             "description": "Si vous modifiez la fonction par défaut de la rangée supérieure, vous devez redémarrer l'ordinateur. Voulez-vous vraiment redémarrer ?",
                             "reboot": "REDÉMARRER",
                             "cancel": "PAS MAINTENANT",
-                            "yes": "YES"
+                            "yes": "OUI"
                         },
                         "note": {
                             "sFunKey": "Pour accéder aux touches de fonction F1-F12, appuyez simultanément sur la touche Fn et sur l'une des touches de la rangée supérieure.",
@@ -1791,10 +1791,10 @@
                 },
                 "userDefinedKey": {
                     "title": "Touche définie par l'utilisateur",
-                    "caption": "La touche représentée par une icône en forme d'étoile vous permet de définir la fonction définie par l'utilisateur",
+                    "caption": "La touche représentée par une icône en forme d'étoile vous permet de définir la fonction définie par l'utilisateur.",
                     "dropDown": {
                         "title": "Touche d'action définie par l'utilisateur",
-                        "note": "Remarque : cela permet d'entrer les touches les plus fréquemment saisies, comme les adresses e-mail ou postales. Lenovo recommande de ne jamais utiliser cette fonctionnalité pour stocker ou saisir des mots de passe ou toute information privée.",
+                        "note": "Remarque : cela permet d'entrer les touches les plus fréquemment saisies, comme les adresses e-mail ou postales. N'utilisez jamais cette fonction pour stocker des mots de passe ou toute autre information privée.",
                         "options": {
                             "option1": "Sélectionnez",
                             "option2": "Site ouvert",
@@ -1832,8 +1832,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "Permutation touches Fn et Ctrl",
-                    "description": "Si vous appuyez habituellement sur la touche Fn pour utiliser la touche Ctrl, vous pouvez permuter les fonctions de ces deux touches.",
-                    "restartNote": "La permutation de la fonction de deux touches nécessite le redémarrage de l'ordinateur, voulez-vous vraiment redémarrer ?",
+                    "description": "Si vous appuyez habituellement sur la touche Fn pour utiliser la touche Ctrl, vous pouvez permuter la fonction de ces deux touches.",
+                    "restartNote": "La permutation de la fonction de deux touches nécessite le redémarrage de l'ordinateur. Voulez-vous vraiment redémarrer ?",
                     "title2": "La touche Fn fonctionne en tant que touche Ctrl pour les combinaisons de touches fréquemment utilisées",
                     "description2": "La touche Fn fonctionne comme la touche Ctrl pour certaines combinaisons de touches fréquemment utilisées. La fonction de la touche Ctrl n'est pas modifiée.",
                     "featureNote": "Cette fonction et l'inversion des touches Fn et Ctrl ne peuvent pas être activées en même temps. Si une des fonctions est activée, l'autre sera automatiquement désactivée.",
@@ -3289,7 +3289,7 @@
             "descriptionbeta": "Lenovo propose un programme pilote pour essayer les fonctions Smart Performance jusqu’en juillet 2020.",
             "descriptionbeta1": "N’hésitez pas à vous inscrire pour profiter de toutes les fonctionnalités.",
             "descriptionNonSubscriber": "Vous n’êtes pas abonné(e) au service Lenovo Smart Performance. Vous ne pourrez analyser que votre PC. Abonnez-vous dès maintenant pour profiter pleinement des avantages d’un PC bien protégé et propre.",
-            "processStatus": "PROCESSING"
+            "processStatus": "TRAITEMENT"
         },
         "scanSettings": {
             "title": "Programmer les paramètres d’analyse",

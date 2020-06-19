@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "Akun käyttöiän pidentämiseksi olemme optimoineet sen täyden varauskapasiteetin käyttösi perusteella. Akun täysi kapasiteetti on ehkä käytettävissä vasta sitten, kun purat ensin akun varauksen 20 %:iin ja lataat sitten akun uudelleen.",
-                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
+                    "moreInfo": "Napsauta <a role=\"link\" href=\"#/device/high-density-battery\">tästä</a> saadaksesi lisätietoja."
                 },
                 "condition": {
                     "Illegal": "Järjestelmä <b>ei tue</b> asennettua akkua, ja sitä ei ladata. Vaihda akku oikeaan, tälle järjestelmälle tarkoitettuun Lenovon akkuun.",
@@ -1101,13 +1101,13 @@
                     "NotDetected": "<b>Ensisijaista akkua ei havaittu.</b>"
                 },
                 "highDensityBattery": {
-                    "title": "High density battery",
-                    "subtitle": "How your battery works",
-                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "title": "Energiatiheä akku",
+                    "subtitle": "Miten akkusi toimii",
+                    "para1": "Akku säätää sen latausjännitettä ja kapasiteettia omien käyttötapojesi mukaan pidentääkseen sen käyttöikää.",
                     "para2": {
-                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
-                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
-                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                        "item1": "- Jos käytät alle 65 % akun kapasiteetista viikon ajan tai kauemmin, akku saattaa väliaikaisesti laskea akun latausjännitettä ja kapasiteettia. Kapasiteetin lasku on vähäinen eikä havaittavissa tavallisen käytön aikana.",
+                        "item2": "- Täysi kapasiteetti palautuu, kun kulutat akkua alle 20 % varauksen ja lataat akun sitten täyteen.",
+                        "item3": "- Lisäksi, jos käytät alle 10 % akun kapasiteetista 2 viikon ajan tai kauemmin, akku voi väliaikaisesti laskea latausjännitettä ja kapasiteettia lisää, kunnes 50 % akun vähennetystä kapasiteetista on käytössä."
                     }
                 }
             },
@@ -1276,7 +1276,7 @@
                             "description2": "Jotta voit ottaa tämän toiminnon täysin käyttöön, irrota laite jaanna akun tyhjentyä latauksen lopettamisen kynnysarvoon asti tai sen alle.",
                             "enable": "OTA KÄYTTÖÖN",
                             "cancel": "PERUUTA",
-                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
+                            "description3": "Akku optimoi sen latausjännitettä ja kapasiteettia automaattisesti omien käyttötapojesi mukaan. Jos käytät akkua säästeliäästi, akun varauksen kynnysarvoa ei tarvitse ottaa käyttöön."
                         },
                         "options": {
                             "start": "Aloita lataus varauksen ollessa alle",
@@ -1595,19 +1595,19 @@
                     },
                     "eyeCareMode": {
                         "title": "Silmien hoitotila",
-                        "checkbox": "Ajoita silmien hoitotila auringonlaskusta auringonnousuun",
+                        "checkbox": "Ajoita Silmien hoitotila auringonlaskusta auringonnousuun",
                         "options": {
                             "warm": "Lämmin (parempi silmille)",
                             "cold": "Kylmä"
                         },
                         "reset": "Uudelleenasetus",
                         "tooltip": "Silmien hoitotila suodattaa sinistä valoa ja vähentää rasitusta silmille säätämällä näytön värilämpötilaa.",
-                        "onSunsetToSunriseScheduleDescription": "Ajoita silmien hoitotila auringonlaskusta auringonnousuun",
+                        "onSunsetToSunriseScheduleDescription": "Ajoita Silmien hoitotila auringonlaskusta auringonnousuun",
                         "note": {
                             "title": "Huomautus",
                             "description": "Lenovo Vantage -ohjelman on käytettävä sijaintitietojasi oman alueesi auringon lasku- ja nousuajan laskemiseen."
                         },
-                        "tips": "Käytä Windows Update -ominaisuutta tai asenna näytönohjain manuaalisesti, jotta voit palauttaa silmien hoitotilan"
+                        "tips": "Käytä Windows Update -ominaisuutta tai asenna näytönohjain manuaalisesti palauttaaksesi Silmien hoitotilan."
                     },
                     "dispColorTemp": {
                         "title": "Näytön värilämpötila",
@@ -1617,7 +1617,7 @@
                         },
                         "reset": "Uudelleenasetus",
                         "tooltip": "Silmien hoitotila suodattaa sinistä valoa ja vähentää rasitusta silmille säätämällä näytön värilämpötilaa.",
-                        "onSunsetToSunriseScheduleDescription": "Ajoita silmien hoitotila auringonlaskusta auringonnousuun",
+                        "onSunsetToSunriseScheduleDescription": "Ajoita Silmien hoitotila auringonlaskusta auringonnousuun",
                         "note": {
                             "title": "Huomautus",
                             "description": "Kun silmien hoitotila on käytössä, tämä värilämpötila ei tule voimaan. Voit kuitenkin liukusäädintä vetämällä katsoa, miltä se näyttää. Jos haluat käyttää värilämpötilaa, poista silmien hoitotila käytöstä."
@@ -1764,11 +1764,11 @@
                             "note": "Kun painat Fn-näppäintä kahdesti, Fn-näppäin lukitaan painettuun tilaan, kunnes painat sitä uudelleen. Kun Fn-näppäin lukitaan, Fn-näppäinlukon merkkivalo syttyy. Voit painaa haluttua toimintonäppäintä suoraan, kun haluat käyttää muuta kuin oletustoimintoa."
                         },
                         "popup": {
-                            "title": "Tietokoneen käynnistäminen uudelleen",
+                            "title": "Käynnistä tietokone uudelleen",
                             "description": "Ylärivin oletustoiminnon muuttaminen edellyttää tietokoneen käynnistämistä uudelleen. Haluatko varmasti käynnistää tietokoneen uudelleen?",
                             "reboot": "KÄYNNISTÄ UUDELLEEN",
                             "cancel": "EI NYT",
-                            "yes": "YES"
+                            "yes": "KYLLÄ"
                         },
                         "note": {
                             "sFunKey": "Jos haluat käyttää näppäinten F1–F12 toimintoja, paina Fn-näppäintä ja ylärivin näppäimiä.",
@@ -1791,10 +1791,10 @@
                 },
                 "userDefinedKey": {
                     "title": "Käyttäjän määrittämä näppäin",
-                    "caption": "Tähdellä varustetun näppäimen avulla voit määrittää käyttäjän määrittämän toiminnon",
+                    "caption": "Tähdellä varustetun näppäimen avulla voit määrittää käyttäjän määrittämän toiminnon.",
                     "dropDown": {
                         "title": "Käyttäjän määrittämän näppäimen toiminto",
-                        "note": "Huomautus: Tämän avulla voit kirjoittaa usein kirjoitetun tekstin, kuten sähköpostiosoitteen tai postiosoitteen. Lenovo suosittelee, ettei tämän toiminnon avulla koskaan tallenneta ja kirjoiteta salasanoja tai muita yksityisiä tietoja.",
+                        "note": "Huomautus: Tämän avulla voit kirjoittaa usein kirjoitetun tekstin, kuten sähköpostiosoitteen tai postiosoitteen. Älä koskaan käytä tätä toimintoa salasanojen tai muiden yksityisten tietojen tallentamiseen.",
                         "options": {
                             "option1": "Valitse",
                             "option2": "Avaa verkkosivusto",
@@ -1833,7 +1833,7 @@
                 "fnCtrlKey": {
                     "title": "Fn- ja Ctrl-näppäimen vaihto",
                     "description": "Jos painat usein Fn-näppäintä, kun aioit painaa Ctrl-näppäintä, voit vaihtaa näiden kahden näppäimen toimintoja.",
-                    "restartNote": "Kahden näppäimen toiminnon vaihtaminen edellyttää tietokoneen käynnistämistä uudelleen. Haluatko varmasti käynnistää tietokoneen uudelleen?",
+                    "restartNote": "Näiden kahden näppäimen toimintojen vaihtaminen edellyttää tietokoneen käynnistämistä uudelleen. Haluatko varmasti käynnistää tietokoneen uudelleen?",
                     "title2": "Fn toimii kuten Ctrl usein käytetyissä näppäinyhdistelmissä",
                     "description2": "Fn-näppäin toimii kuten Ctrl-näppäin joissakin usein käytetyissä näppäinyhdistelmissä. Ctrl-näppäimen toiminto ei muutu.",
                     "featureNote": "Tämä toiminto ja Fn-näppäin- ja Ctrl-näppäinyhdistelmän vaihtotoiminto eivät voi olla käytössä samaan aikaan. Jos yksi tila on käytössä, toinen tila poistetaan käytöstä automaattisesti.",
@@ -3289,7 +3289,7 @@
             "descriptionbeta": "Lenovo tarjoaa pilottiohjelman Smart Performance -ominaisuuden kokeilemiseen heinäkuuhun 2020 asti.",
             "descriptionbeta1": "Olet tervetullut liittymään ja kokeilemaan täysversiota.",
             "descriptionNonSubscriber": "Et ole tilannut Lenovo Smart Performance -palvelua. Voit vain tarkistaa tietokoneesi. Tilaa nyt, niin saat täydet edut tietokoneesi pitämisestä suojattuna ja hyvässä kunnossa.",
-            "processStatus": "PROCESSING"
+            "processStatus": "KÄSITELLÄÄN"
         },
         "scanSettings": {
             "title": "Tarkistusaikataulun asetukset",

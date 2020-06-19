@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "For at forlænge batterilevetiden har vi optimeret dets kapacitet ved fuld opladning baseret på din brug. Den fulde batterikapacitet er muligvis ikke tilgængelig, før du aflader til 20 % og oplader igen.",
-                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
+                    "moreInfo": "Klik <a role=\"link\" href=\"#/device/high-density-battery\">her</a> for at få flere oplysninger."
                 },
                 "condition": {
                     "Illegal": "Det batteri, der er installeret, <b>understøttes ikke</b> af dette system og vil ikke blive opladet. Udskift batteriet med det korrekte Lenovo-batteri til systemet.",
@@ -1101,13 +1101,13 @@
                     "NotDetected": "<b>Det primære batteri blev ikke fundet.</b>"
                 },
                 "highDensityBattery": {
-                    "title": "High density battery",
-                    "subtitle": "How your battery works",
-                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "title": "Batteri med høj tæthed",
+                    "subtitle": "Sådan fungerer batteriet",
+                    "para1": "Batteriet justerer automatisk spændingen og kapaciteten under opladningen baseret på dit personlige forbrugsmønster for at øge batterilevetiden.",
                     "para2": {
-                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
-                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
-                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                        "item1": "- Hvis du bruger mindre end 65 % af batteriets kapacitet over en uge eller længere tid, kan batteriet midlertidigt reducere spændingen og kapaciteten under opladningen. Den reducerede kapacitet er lille og ikke mærkbar for dit forbrugsmønster.",
+                        "item2": "- Den fulde kapacitet gendannes, når du aflader batteriet til under 20 % og derefter oplader det fuldt ud.",
+                        "item3": "- Hvis du bruger mindre end 10 % af batteriets kapacitet over to uger eller længere, kan batteriet desuden yderligere reducere spændingen og kapaciteten under opladningen midlertidigt, indtil 50 % af den reducerede batterikapacitet er brugt."
                     }
                 }
             },
@@ -1276,7 +1276,7 @@
                             "description2": "For at aktivere denne funktion fuldt ud skal du tage maskinens strømstik ud oglade batteriet aflade til under den grænse, hvor enheden stopper med at oplade.",
                             "enable": "AKTIVÉR",
                             "cancel": "ANNULLER",
-                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
+                            "description3": "Batteriet optimerer automatisk spændingen og kapaciteten under opladning baseret på din brug. Hvis du kun bruger batteriet en smule, er der ingen grund til at aktivere Opladningsgrænse for batteri."
                         },
                         "options": {
                             "start": "Start opladning, når under",
@@ -1595,19 +1595,19 @@
                     },
                     "eyeCareMode": {
                         "title": "Øjenbeskyttelsestilstand",
-                        "checkbox": "Planlæg øjenbeskyttelsestilstand fra solnedgang til solopgang",
+                        "checkbox": "Planlæg Øjenbeskyttelsestilstand fra solnedgang til solopgang",
                         "options": {
                             "warm": "Varm (bedre for øjne)",
                             "cold": "Kold"
                         },
                         "reset": "Nulstil",
                         "tooltip": "Øjenbeskyttelsestilstand justerer automatisk din skærms farvetemperatur, så blåt lys filtreres ud, og dine øjne belastes mindre.",
-                        "onSunsetToSunriseScheduleDescription": "Planlæg øjenbeskyttelsestilstand fra solnedgang til solopgang",
+                        "onSunsetToSunriseScheduleDescription": "Planlæg Øjenbeskyttelsestilstand fra solnedgang til solopgang",
                         "note": {
                             "title": "Bemærk",
                             "description": "Lenovo Vantage skal have adgang til dine placeringsoplysninger for at beregne tiden for solnedgang og solopgang i dit område."
                         },
-                        "tips": "Kør Windows Update, eller installer grafikdriveren manuelt for at genoprette Øjenbeskyttelsestilstand"
+                        "tips": "Kør Windows Update, eller installér grafikdriveren manuelt for at genoprette Øjenbeskyttelsestilstand."
                     },
                     "dispColorTemp": {
                         "title": "Skærmens farvetemperatur",
@@ -1617,7 +1617,7 @@
                         },
                         "reset": "Nulstil",
                         "tooltip": "Øjenbeskyttelsestilstand justerer automatisk din skærms farvetemperatur, så blåt lys filtreres ud, og dine øjne belastes mindre.",
-                        "onSunsetToSunriseScheduleDescription": "Planlæg øjenbeskyttelsestilstand fra solnedgang til solopgang",
+                        "onSunsetToSunriseScheduleDescription": "Planlæg Øjenbeskyttelsestilstand fra solnedgang til solopgang",
                         "note": {
                             "title": "Bemærk",
                             "description": "Når øjenbeskyttelsestilstanden er aktiveret, har denne farvetemperatur ingen effekt. Men du kan trække skyderen for at få vist et eksempel af den. Hvis den skal have en effekt, skal du slå øjenbeskyttelsestilstanden fra."
@@ -1764,11 +1764,11 @@
                             "note": "Når du trykker to gange på Fn-tasten, låses Fn-tasten i nedtrykket tilstand, indtil du trykker på den igen. Når Fn-tasten er låst, er Fn Lock-indikatoren tændt. Du kan trykke direkte på den ønskede funktionstast for at starte ikke-standardfunktionen."
                         },
                         "popup": {
-                            "title": "Genstart computer",
+                            "title": "Genstart computeren",
                             "description": "Ændring af standardfunktionen for øverste række kræver, at du genstarter computeren. Er du sikker på, du vil genstarte?",
                             "reboot": "GENSTART",
                             "cancel": "IKKE NU",
-                            "yes": "YES"
+                            "yes": "JA"
                         },
                         "note": {
                             "sFunKey": "Hvis du vil have adgang til F1-F12-funktionen, skal du trykke på Fn og tasterne på den øverste række.",
@@ -1791,10 +1791,10 @@
                 },
                 "userDefinedKey": {
                     "title": "Brugerdefineret tast",
-                    "caption": "Den tast, der er repræsenteret ved stjerneikonet, giver dig mulighed for at indstille en brugerdefineret funktion",
+                    "caption": "Den tast, der er repræsenteret ved stjerneikonet, giver dig mulighed for at indstille en brugerdefineret funktion.",
                     "dropDown": {
                         "title": "Handling for brugerdefineret tast",
-                        "note": "Bemærk: Denne kan bruges til at skrive almindelig tekst, f.eks. e-mail- eller postadresser. Lenovo anbefaler, at denne funktion aldrig bruges til at gemme og skrive adgangskoder eller andre private oplysninger.",
+                        "note": "Bemærk: Denne kan bruges til at skrive almindelig tekst, f.eks. e-mail- eller postadresser. Brug aldrig denne funktion til at gemme adgangskoder eller andre private oplysninger.",
                         "options": {
                             "option1": "Vælg",
                             "option2": "Åben hjemmeside",
@@ -1832,7 +1832,7 @@
                 },
                 "fnCtrlKey": {
                     "title": "Ombytning af Fn- og Ctrl-tast",
-                    "description": "Hvis du ofte kommer til at trykke på Fn-tasten, når du vil trykke på Ctrl-tasten, kan du bytte om på funktionen for de to taster.",
+                    "description": "Hvis du ofte kommer til at trykke på Fn-tasten, når du vil trykke på Ctrl-tasten, kan du ombytte funktionen af de to taster.",
                     "restartNote": "Hvis du vil bytte om på funktionen for to taster, skal computeren genstartes. Er du sikker på, du vil genstarte?",
                     "title2": "Fn fungerer som Ctrl for kombinationer, der bruges ofte",
                     "description2": "Fn-tasten fungerer som Ctrl-tasten for nogle tastekombinationer, som bruges ofte. Ctrl-tastens funktion ændres ikke.",
@@ -3289,7 +3289,7 @@
             "descriptionbeta": "Lenovo tilbyder et pilotprogram, hvor du kan afprøve Smart Performance-funktionen indtil juli 2020.",
             "descriptionbeta1": "Du er velkommen til at deltage og teste den komplette funktion.",
             "descriptionNonSubscriber": "Du abonnerer ikke på Lenovo Smart Performance-service. Du kan kun scanne din computer. Abonner nu for at få alle fordelene ved at holde computeren beskyttet og arbejde problemfrit.",
-            "processStatus": "PROCESSING"
+            "processStatus": "BEHANDLING"
         },
         "scanSettings": {
             "title": "Planlæg scanningsindstillinger",
