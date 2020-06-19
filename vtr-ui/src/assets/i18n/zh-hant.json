@@ -3115,7 +3115,9 @@
                 "yes": "是",
                 "no": "否"
             },
-            "waitAvailability": "當儲存裝置不支援這項功能而硬體資訊即將載入，或者其中正在進行掃描時，此按鈕為停用狀態。"
+            "waitAvailability": "當儲存裝置不支援這項功能而硬體資訊即將載入，或者其中正在進行掃描時，此按鈕為停用狀態。",
+            "executingTitle": "Recovering now...",
+            "recoverCompleted": "Recovery completed"
         },
         "support": {
             "title": "下載專業診斷工具",
@@ -3163,7 +3165,19 @@
             "suggestedActionSupport": "如果您的電腦還在保固期間內，請點擊<b>打開服務票據</b>以更換零件。如需進一步的資訊，請前往「Lenovo支援中心」網站。",
             "supportButtonText": "打開服務票據",
             "recoverBadSectorsButtonText": "回復錯誤磁區"
-        }
+        },
+        "scanFinishedHeader": {
+            "titleSuccess": "Scan completed. Your device passed all the tests.",
+            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
+            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
+            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
+            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
+            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
+            "finalResultCodeLabel": "Final Result Code: ",
+            "scanAgainButtonText": "Scan Again",
+            "supportButtonText": "Lenovo Support"
+        },
+        "executingScanTitle": "Scanning {{title}}..."
     },
     "smartPerformance": {
         "title": "Smart Performance",

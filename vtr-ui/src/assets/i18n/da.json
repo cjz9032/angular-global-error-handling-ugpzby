@@ -3115,7 +3115,9 @@
                 "yes": "Ja",
                 "no": "Nej"
             },
-            "waitAvailability": "Knappen deaktiveres, hvis lagerenhederne ikke understøtter denne funktion, mens hardwareoplysningerne indlæses, eller hvis der er en scanning i gang."
+            "waitAvailability": "Knappen deaktiveres, hvis lagerenhederne ikke understøtter denne funktion, mens hardwareoplysningerne indlæses, eller hvis der er en scanning i gang.",
+            "executingTitle": "Recovering now...",
+            "recoverCompleted": "Recovery completed"
         },
         "support": {
             "title": "Download professionelle fejlfindingsværktøjer",
@@ -3163,7 +3165,19 @@
             "suggestedActionSupport": "Hvis computeren er dækket af garantien, skal du klikke på <b>Åbn supportanmodning</b> i forbindelse med udskiftningsdel. Du kan få flere oplysninger på Lenovos supportwebsted.",
             "supportButtonText": "Åbn supportanmodning",
             "recoverBadSectorsButtonText": "Gendan dårlige sektorer"
-        }
+        },
+        "scanFinishedHeader": {
+            "titleSuccess": "Scan completed. Your device passed all the tests.",
+            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
+            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
+            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
+            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
+            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
+            "finalResultCodeLabel": "Final Result Code: ",
+            "scanAgainButtonText": "Scan Again",
+            "supportButtonText": "Lenovo Support"
+        },
+        "executingScanTitle": "Scanning {{title}}..."
     },
     "smartPerformance": {
         "title": "Smart Performance",

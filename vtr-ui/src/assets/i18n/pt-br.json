@@ -3115,7 +3115,9 @@
                 "yes": "Sim",
                 "no": "Não"
             },
-            "waitAvailability": "O botão será desativado se os dispositivos de armazenamento não forem compatíveis com essa funcionalidade, enquanto as informações de hardware estiverem sendo carregadas ou se houver uma verificação em andamento."
+            "waitAvailability": "O botão será desativado se os dispositivos de armazenamento não forem compatíveis com essa funcionalidade, enquanto as informações de hardware estiverem sendo carregadas ou se houver uma verificação em andamento.",
+            "executingTitle": "Recovering now...",
+            "recoverCompleted": "Recovery completed"
         },
         "support": {
             "title": "Baixar ferramentas de diagnóstico profissional",
@@ -3163,7 +3165,20 @@
             "suggestedActionRbs": "Você pode tentar recuperar os seus dispositivos de armazenamento clicando em <b>recuperar setores ruins</b>. Se o problema persistir, você pode clicar em <b>abrir tíquete</b> para suporte adicional.",
             "supportButtonText": "Abrir tíquete",
             "recoverBadSectorsButtonText": "Recuperar Setores Ruins"
-        }
+        },
+        "scanFinishedHeader": {
+            "titleSuccess": "Scan completed. Your device passed all the tests.",
+            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
+            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
+            "warningText": "WARNING",
+            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
+            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
+            "finalResultCodeLabel": "Final Result Code: ",
+            "scanAgainButtonText": "Scan Again",
+            "supportButtonText": "Lenovo Support",
+            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result."
+        },
+        "executingScanTitle": "Scanning {{title}}..."
     },
     "smartPerformance": {
         "title": "Smart Performance",

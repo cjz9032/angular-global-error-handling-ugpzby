@@ -3115,7 +3115,9 @@
                 "yes": "是",
                 "no": "否"
             },
-            "waitAvailability": "如果存储设备不支持此功能，当正在加载硬件信息或正在进行扫描时，将禁用此按钮。"
+            "waitAvailability": "如果存储设备不支持此功能，当正在加载硬件信息或正在进行扫描时，将禁用此按钮。",
+            "executingTitle": "Recovering now...",
+            "recoverCompleted": "Recovery completed"
         },
         "support": {
             "title": "下载专业诊断工具",
@@ -3163,7 +3165,19 @@
             "suggestedActionSupport": "如果您的计算机在保修期内，请单击<b>打开凭单</b>以更换部件。有关更多信息，请访问 Lenovo 支持网站。",
             "supportButtonText": "打开凭单",
             "recoverBadSectorsButtonText": "恢复坏扇区"
-        }
+        },
+        "scanFinishedHeader": {
+            "titleSuccess": "Scan completed. Your device passed all the tests.",
+            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
+            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
+            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
+            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
+            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
+            "finalResultCodeLabel": "Final Result Code: ",
+            "scanAgainButtonText": "Scan Again",
+            "supportButtonText": "Lenovo Support"
+        },
+        "executingScanTitle": "Scanning {{title}}..."
     },
     "smartPerformance": {
         "title": "Smart Performance",
