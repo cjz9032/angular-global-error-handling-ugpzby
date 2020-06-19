@@ -85,7 +85,7 @@ vtr-ui-smart-performance-scan-summary {
 				.list-group {
 					background: $main_darker;
 					border-radius: 0.5rem;
-					max-width: 35.5rem;
+					max-width: 100%;
 					.list-group-item {
 						border-radius: 0.5rem;
 						border: none;
@@ -93,7 +93,7 @@ vtr-ui-smart-performance-scan-summary {
 						color: $light;
 						font-size: 1.2rem;
 						font-weight: $weight_bold;
-						padding: 0.8rem;
+						padding: 0.6rem;
 						margin: 0.45rem;
 						cursor: pointer;
 						@media #{$breakpoint_sm}{
