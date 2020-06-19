@@ -4,8 +4,8 @@
 			<div class="col text button-box">
 				<div class="row item-line">
 					<div class="item-left">
-						<div class="test-status" *ngIf="item.status >= 0">
-							<div [ngSwitch]="item.status">
+						<div class="test-status" *ngIf="item.statusTest >= 0">
+							<div [ngSwitch]="item.statusTest">
 								<!--Defined an aria-label property with description to the icon-->
 								<fa-icon aria-label="status-loading" role="img" class="loading" [icon]="['fas', 'circle-notch']" [spin]="true" *ngSwitchCase="0"></fa-icon>
 
@@ -23,9 +23,9 @@
 							</div>
 						</div>
 
-						<div class="title" [ngClass]="{'not-applicable': item.status === 6}">{{item.name}}</div>
+						<div class="title" [ngClass]="{'not-applicable': item.statusTest === 6}">{{item.name}}</div>
 						<div class="subtitle" *ngIf="item.subname">{{item.subname}}</div>
-						<div class="span-not-applicable" *ngIf="item.status === 6">{{testNotApplicable}}</div>
+						<div class="span-not-applicable" *ngIf="item.statusTest === 6">{{testNotApplicable}}</div>
 					</div>
 					<div class="item-right" *ngIf="item.information">
 						<a href="javascript:void(0)"
@@ -41,7 +41,6 @@
 							<fa-icon [icon]="['far', 'question-circle']"></fa-icon>
 						</a>
 					</div>
-
 					<vtr-ui-hardware-scan-test-result
 						*ngIf="item.result"
 						[module]="item">
