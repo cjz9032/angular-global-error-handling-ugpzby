@@ -988,6 +988,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		if (this.zeroTouchLockTimersUIModel && this.zeroTouchLockTimersUIModel.length > 0) {
 			this.zeroTouchLockTimersUIModel.forEach(model => {
 				model.isChecked = (this.intelligentSecurity.autoScreenLockTimer === model.value);
+				model.isDisabled= !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled)
 			});
 		}
 	}
