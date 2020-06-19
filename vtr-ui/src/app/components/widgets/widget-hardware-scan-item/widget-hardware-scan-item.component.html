@@ -67,7 +67,7 @@
 
 		<div class="row col">
 			<!-- Result code information -->
-			<div class="result-code" *ngIf="isScanExecute && item.resultCode">
+			<div class="result-code" *ngIf="item.resultCode">
 				<p class="title">{{resultCodeText}}:</p>
 				<p class="subtitle">{{item.resultCode}}</p>
 				<a *ngIf="item.information"
