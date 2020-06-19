@@ -203,6 +203,8 @@
 			text-align: left;
 			font-family: "Segoe UI", sans-serif;
 			font-weight: $weight_light;
+			text-decoration: underline;
+			color: #4a81fd;
 			@media #{$black-on-white} {
 				color: $high-contrast-blue;
 				border:none;
@@ -214,6 +216,9 @@
 			&:focus {
 				@include outline-blue;
 			}
+		}
+		.noteColor {
+			color: $shade_blue;
 		}
 	}
 	.cam-privacy-switch {
@@ -254,12 +259,6 @@
 	}
 	.notemar {
 		margin-top: 10px;
-	}
-	.border-bottom-camera-privacy-note {
-		border-bottom: 0.1rem solid $shade_lighter;
-	}
-	.boldColor {
-		color:#34495e;
 	}
 }
 
