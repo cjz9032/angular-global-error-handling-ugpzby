@@ -5,16 +5,15 @@ import {
 	Output,
 	EventEmitter,
 	HostListener,
-} from '@angular/core';
-import { CommonService } from 'src/app/services/common/common.service';
-import { LoggerService } from 'src/app/services/logger/logger.service';
-import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import moment from 'moment';
-import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import { enumScanFrequency, enumDaysOfTheWeek } from 'src/app/enums/smart-performance.enum';
-import { Subscription } from 'rxjs/internal/Subscription';
-
+} from "@angular/core";
+import { CommonService } from "src/app/services/common/common.service";
+import { LoggerService } from "src/app/services/logger/logger.service";
+import { SmartPerformanceService } from "src/app/services/smart-performance/smart-performance.service";
+import { LocalStorageKey } from "src/app/enums/local-storage-key.enum";
+import moment from "moment";
+import { TranslateService, LangChangeEvent } from "@ngx-translate/core";
+import { enumScanFrequency, enumDaysOfTheWeek } from "src/app/enums/smart-performance.enum";
+import { Subscription } from 'rxjs';
 @Component({
 	selector: 'vtr-ui-scan-schedule',
 	templateUrl: './ui-scan-schedule.component.html',
@@ -94,7 +93,8 @@ export class UiScanScheduleComponent implements OnInit {
 	public enumLocalScanFrequncy: any;
 	requestScanData = {};
 	type: string;
-	isFirstVisit: boolean;
+	isFirstVisit: boolean
+	loading: boolean
 	sliceDay = true;
 
 	ngOnInit() {
@@ -400,6 +400,7 @@ export class UiScanScheduleComponent implements OnInit {
 	}
 
 	async getNextScanRunTime(scantype: string) {
+		this.loading = true
 		const payload = { scantype };
 		let nextScanEvent = {};
 		this.logger.info('ui-smart-performance.getNextScanRunTime',	JSON.stringify(payload)	);
@@ -408,7 +409,8 @@ export class UiScanScheduleComponent implements OnInit {
 			this.logger.info('ui-smart-performance.getNextScanRunTime.then', JSON.stringify(res));
 			// checking next scan run time fetched from api and when present emitting to sp scan summary component and also updating respective fields
 			if (res.nextruntime) {
-				const dt = moment(res.nextruntime).format('dddd, MM, D, YYYY, h, mm, A');
+				this.loading = false
+				const dt = moment(res.nextruntime).format("dddd, MM, D, YYYY, h, mm, A");
 				if (this.selectedFrequency === this.scanFrequency[0] || this.selectedFrequency === this.scanFrequency[1]) {
 					this.selectedDay = dt.split(',')[0];
 					this.selectedDayTranslation();
@@ -585,7 +587,7 @@ export class UiScanScheduleComponent implements OnInit {
 	selectedDayTranslation() {
 		this.daysOfTheWeek = enumDaysOfTheWeek;
 		if (this.selectedDay) {
-			if (this.selectedDay === this.daysOfTheWeek.sun || this.selectedDay === this.daysOfTheWeek.sun) {
+			if (this.selectedDay === this.daysOfTheWeek.sun || this.selectedDay === this.daysOfTheWeek.sunShort) {
 				this.selectedDay = this.daysOfTheWeek.sunLang;
 			}
 			if (this.selectedDay === this.daysOfTheWeek.mon || this.selectedDay === this.daysOfTheWeek.monShort) {
