@@ -11,6 +11,7 @@ import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-loc
 import moment from 'moment';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { SupportService } from 'src/app/services/support/support.service';
+import * as CryptoJS from 'crypto-js';
 @Component({
 	selector: 'vtr-widget-subscriptiondetails',
 	templateUrl: './widget-subscriptiondetails.component.html',
@@ -29,8 +30,9 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	myDate = new Date();
 	spEnum:any = enumSmartPerformance;
 	public subscriptionDate: any;
-	public modalStatus: any = {intervalTime: '', isOpened: false};
-	systemSerialNumber: any;
+	public modalStatus: any = {intervalTime: '', isOpened: false};ciphertext: any;
+	public partNumbersList: any = [];
+	public systemSerialNumber: any;
 	currentTime: string;
 	intervalTime: string;
 
@@ -54,8 +56,14 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 			this.systemSerialNumber = machineInfo.serialnumber;
 		});
 		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
+		this.decryptPNListData();
 		this.initSubscripionDetails();
 	}
+	decryptPNListData() {
+		const bytes  = CryptoJS.AES.decrypt(PaymentPage.PNLIST, 'secret key 123');
+		this.partNumbersList = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+	  }
+
 	initSubscripionDetails() {
 		let subScriptionDates: any = {startDate: '', endDate: '', status: ''};
 		if (this.isSubscribed) {
