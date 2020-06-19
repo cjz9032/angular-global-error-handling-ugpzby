@@ -925,7 +925,7 @@
         },
         "systemStatus": {
             "title": "Starea sistemului",
-            "subtitle": "Fiți la curent cu starea dispozitivului dvs.",
+            "subtitle": "Fiți la curent cu starea dispozitivului dumneavoastră.",
             "memory": {
                 "title": "Memorie",
                 "detail": {
@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "Pentru a extinde durata de viață a bateriei, am optimizat capacitatea de încărcare completă a acesteia, în funcție de utilizare. Capacitatea completă a bateriei este posibil să nu fie disponibilă până când nu o descărcați la 20% și o reîncărcați.",
-                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
+                    "moreInfo": "Pentru informații suplimentare, faceți clic <a role=\"link\" href=\"#/device/high-density-battery\">aici</a>."
                 },
                 "condition": {
                     "Illegal": "Bateria instalată <b>nu este acceptată</b> de sistem şi nu se va încărca. Înlocuiţi bateria cu bateria Lenovo corectă pentru acest sistem.",
@@ -1101,13 +1101,13 @@
                     "NotDetected": "<b>Bateria principală nu este detectată.</b>"
                 },
                 "highDensityBattery": {
-                    "title": "High density battery",
-                    "subtitle": "How your battery works",
-                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "title": "Baterie cu densitate mare",
+                    "subtitle": "Cum funcționează bateria dumneavoastră",
+                    "para1": "Pentru creșterea duratei de viață a bateriei, aceasta își reglează automat tensiunea și capacitatea, conform modelului dumneavoastră de utilizare.",
                     "para2": {
-                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
-                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
-                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                        "item1": "– Dacă utilizați mai puțin de 65% din capacitatea bateriei timp de minimum o săptămână, atunci bateria poate reduce temporar tensiunea și capacitatea de încărcare. Reducerea capacității este mică și nu este observabilă în cadrul modelului dumneavoastră de utilizare.",
+                        "item2": "– Capacitatea completă este restabilită atunci când descărcați bateria sub 20% și o reîncărcați complet.",
+                        "item3": "– În plus, dacă utilizați mai puțin de 10% din capacitatea bateriei timp de minimum 2 săptămâni, atunci bateria poate reduce temporar și mai mult tensiunea și capacitatea de încărcare, până când se va utiliza 50% din capacitatea redusă a bateriei."
                     }
                 }
             },
@@ -1276,7 +1276,7 @@
                             "description2": "Pentru a activa pe deplin această caracteristică, deconectați aparatul și lăsați bateria să se descarce până la sau sub pragul de oprire a încărcării.",
                             "enable": "ACTIVARE",
                             "cancel": "ANULARE",
-                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
+                            "description3": "Bateria își optimizează în mod automat tensiunea și capacitatea de încărcare, în funcție de modelul dumneavoastră de utilizare. Dacă utilizați mai puțin bateria, nu este necesar să activați funcția Prag încărcare baterie."
                         },
                         "options": {
                             "start": "Pornire încărcare când este sub",
@@ -1302,7 +1302,7 @@
                         "title": "Mod alimentare avion",
                         "description": "Această caracteristică vă permite să utilizați priza electrică într-un avion în care se aplică o anumită limită de putere. În acest mod, consumul de energie al computerului scade până la un nivel sigur prin limitarea ratei de încărcare a bateriei și a performanței computerului.",
                         "checkBoxDesc": "Autodetecție",
-                        "note": "Dacă detectarea automată este activată, calculatorul va porni automat modul de alimentare Avion când detectează un mediu de bord de avion și îl va opri când părăsiți acel mediu."
+                        "note": "Dacă detectarea automată este activată, computerul va porni automat modul de alimentare avion când detectează că se află la bordul unui avion și îl va opri atunci când părăsiți acel mediu."
                     },
                     "gaugeReset": {
                         "title": "Resetare indicator baterie",
@@ -1557,7 +1557,7 @@
                     },
                     "optimize": {
                         "title": "Optimizare microfon propriu la:",
-                        "tooltip": "Configurați efectul microfonului pentru a vă îmbunătăți experiența audio prin diferite scenarii și medii.",
+                        "tooltip": "Configurați efectul microfonului pentru a vă îmbunătăți experiența audio în diferite scenarii și medii.",
                         "options": {
                             "VoiceRecognition": "RECUNOAȘTERE VOCE",
                             "OnlyMyVoice": "DOAR VOCEA MEA",
@@ -1585,7 +1585,7 @@
                 "display": {
                     "title": "Afișaj",
                     "displayColorTemperature": {
-                        "title": "Modul de protejare a ochilor",
+                        "title": "Modul de îngrijire ochi",
                         "description": "Pentru a evita oboseala ochilor, puteți regla temperatura culorii afișajului pentru a filtra lumina albastră, atunci când utilizați computerul un timp îndelungat. În plus, culorile calde sunt recomandate pentru somnul dumneavoastră, în special noaptea.",
                         "link": {
                             "click": "Clic",
@@ -1595,19 +1595,19 @@
                     },
                     "eyeCareMode": {
                         "title": "Modul de îngrijire a ochilor",
-                        "checkbox": "Programați modul de protejare a ochilor de la apus până la răsărit",
+                        "checkbox": "Programați Modul de îngrijire ochi de la apus până la răsărit",
                         "options": {
                             "warm": "Cald (mai bine pentru ochi)",
                             "cold": "Rece"
                         },
                         "reset": "Resetare",
                         "tooltip": "Modul de protejare a ochilor ajustează temperatura culorii ecranului dvs. pentru a filtra lumina albastră și pentru a proteja ochii.",
-                        "onSunsetToSunriseScheduleDescription": "Programați modul de protejare a ochilor de la apus până la răsărit",
+                        "onSunsetToSunriseScheduleDescription": "Programați Modul de îngrijire ochi de la apus până la răsărit",
                         "note": {
                             "title": "Notă",
                             "description": "Lenovo Vantage trebuie să vă acceseze informațiile privind locația pentru determinarea orei de apus și răsărit din regiunea dvs."
                         },
-                        "tips": "Pentru a recupera modul de îngrijire a ochilor, rulați Windows Update sau instalați manual driverul pentru placa grafică"
+                        "tips": "Pentru a recupera Modul de îngrijire ochi, rulați Windows Update sau instalați manual driverul pentru placa grafică."
                     },
                     "dispColorTemp": {
                         "title": "Temperatură culoare afișaj",
@@ -1617,7 +1617,7 @@
                         },
                         "reset": "Resetare",
                         "tooltip": "Modul de protejare a ochilor ajustează temperatura culorii ecranului dvs. pentru a filtra lumina albastră și pentru a proteja ochii.",
-                        "onSunsetToSunriseScheduleDescription": "Programați modul de protejare a ochilor de la apus până la răsărit",
+                        "onSunsetToSunriseScheduleDescription": "Programați Modul de îngrijire ochi de la apus până la răsărit",
                         "note": {
                             "title": "Notă",
                             "description": "La activarea modului de îngrijire a ochilor, această temperatură de culoare nu se aplică. Cu toate acestea, puteți deplasa glisorul pentru a obține o previzualizare a acesteia. Pentru aplicarea acesteia, dezactivați modul de îngrijire a ochilor."
@@ -1764,11 +1764,11 @@
                             "note": "Dacă apăsați tasta Fn de două ori, tasta Fn este păstrată în starea apăsată până când apăsați tasta Fn din nou. Când tasta Fn este blocată, indicatorul Fn Lock este aprins. Puteți apăsa direct pe tasta funcțională dorită pentru a iniția funcția care nu este implicită."
                         },
                         "popup": {
-                            "title": "Reporniţi computerul",
+                            "title": "Repornire computer",
                             "description": "Pentru ca schimbarea funcției implicite a rândului de sus să aibă efect, computerul trebuie repornit. Sigur reporniți?",
                             "reboot": "REPORNIȚI",
                             "cancel": "NU ACUM",
-                            "yes": "YES"
+                            "yes": "DA"
                         },
                         "note": {
                             "sFunKey": "Pentru a accesa funcţiile F1–F12, apăsaţi Fn şi tastele de pe rândul de sus.",
@@ -1791,10 +1791,10 @@
                 },
                 "userDefinedKey": {
                     "title": "Tastă definită de utilizator",
-                    "caption": "Tasta marcată cu o stea vă permite să configurați funcții definite de utilizator",
+                    "caption": "Tasta marcată cu o stea vă permite să configurați funcții definite de utilizator.",
                     "dropDown": {
                         "title": "Acțiunea tastei definite de utilizator",
-                        "note": "Notă: aceasta poate fi utilizată pentru introducerea textului obișnuit, cum ar fi e-mailuri sau adrese poștale. Lenovo nu recomandă ca această caracteristică să fie utilizată pentru stocarea şi introducerea parolelor sau a altor informaţii confidenţiale.",
+                        "note": "Notă: aceasta poate fi utilizată pentru introducerea textului obișnuit, cum ar fi e-mailuri sau adrese poștale. Nu utilizați niciodată această caracteristică pentru a stoca parole sau orice altă informație confidențială.",
                         "options": {
                             "option1": "Selectaţi",
                             "option2": "Deschideți site-ul web",
@@ -1831,9 +1831,9 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "Schimbare taste Fn şi Ctrl",
-                    "description": "Dacă apăsaţi în mod obişnuit tasta Fn când de fapt intenţionaţi să apăsaţi tasta Ctrl, puteţi schimba între ele funcţiile celor două taste.",
-                    "restartNote": "Comutarea funcţiei a două taste necesită repornirea computerului. Sigur reporniţi?",
+                    "title": "Schimbare taste Fn și Ctrl",
+                    "description": "Dacă apăsați în mod obișnuit tasta Fn atunci când intenționați să apăsați tasta Ctrl, puteți comuta funcția celor două chei.",
+                    "restartNote": "Schimbarea funcției celor două taste necesită repornirea computerului. Sigur reporniți?",
                     "title2": "Fn funcţionează ca Ctrl pentru combinaţiile de taste utilizate frecvent",
                     "description2": "Tasta Fn funcţionează ca tasta Ctrl pentru unele combinaţii de taste utilizate frecvent. Funcţia tastei Ctrl nu se modifică.",
                     "featureNote": "Această funcţie şi funcţia de comutare a tastei Fn+Ctrl nu pot fi pornite în acelaşi timp. Dacă o funcţie este pornită, cealaltă va fi oprită în mod automat.",
@@ -3289,7 +3289,7 @@
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
             "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
-            "processStatus": "PROCESSING"
+            "processStatus": "SE PROCESEAZĂ"
         },
         "scanSettings": {
             "title": "Scan settings",

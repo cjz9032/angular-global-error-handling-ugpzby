@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "Щоб продовжити термін служби акумулятора, ми оптимізували повну ємність його заряду відповідно до вашої роботи. Повна ємність акумулятора може бути недоступною, доки ви не розрядите його до 20% і не перезарядите знову.",
-                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
+                    "moreInfo": "Клацніть <a role=\"link\" href=\"#/device/high-density-battery\">тут</a>, щоб дізнатися більше."
                 },
                 "condition": {
                     "Illegal": "Установлений акумулятор <b>не підтримується</b> цією системою та не буде заряджатися. Замініть акумулятор акумулятором Lenovo, придатним для цієї системи.",
@@ -1101,13 +1101,13 @@
                     "NotDetected": "<b>Основний акумулятор не знайдено.</b>"
                 },
                 "highDensityBattery": {
-                    "title": "High density battery",
-                    "subtitle": "How your battery works",
-                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "title": "Акумулятор високої щільності",
+                    "subtitle": "Як працює акумулятор",
+                    "para1": "Щоб подовжити термін експлуатації, акумулятор автоматично регулює напругу та ємність відповідно до вашої моделі використання.",
                     "para2": {
-                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
-                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
-                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                        "item1": "- Якщо ви використовуєте менше 65% від ємності акумулятора протягом тижня або довше, акумулятор може тимчасово знизити напругу і ємність заряду. Ємність знижується помірно й непомітно для вашої моделі використання.",
+                        "item2": "- Повна ємність відновлюється, коли ви розряджаєте акумулятор нижче 20%, а потім повністю заряджаєте його.",
+                        "item3": "- Крім того, якщо ви використовуєте менше 10% від ємності акумулятора протягом 2 і більше тижнів, акумулятор може додатково знизити напругу і ємність, поки не буде використано 50% зниженої ємності акумулятора."
                     }
                 }
             },
@@ -1276,7 +1276,7 @@
                             "description2": "Щоб повністю ввімкнути цю функцію, відключіть комп'ютер від електромережі тадайте акумулятору розрядитися до граничного значення або сильніше.",
                             "enable": "УВІМКНУТИ",
                             "cancel": "СКАСУВАТИ",
-                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
+                            "description3": "Акумулятор автоматично регулює напругу та ємність відповідно до вашої моделі використання. Якщо ви рідко використовуєте акумулятор, не потрібно вмикати граничне значення заряду акумулятора."
                         },
                         "options": {
                             "start": "Розпочати заряджання, коли рівень заряду буде нижче",
@@ -1557,7 +1557,7 @@
                     },
                     "optimize": {
                         "title": "Оптимізувати мікрофон для:",
-                        "tooltip": "Налаштуйте ефект мікрофона, який покращуватиме звук у певних середовищах за допомогою різних сценаріїв.",
+                        "tooltip": "Налаштуйте ефект мікрофона, який покращуватиме звук у певних середовищах і сценаріях.",
                         "options": {
                             "VoiceRecognition": "РОЗПІЗНАВАННЯ ГОЛОСУ",
                             "OnlyMyVoice": "ЛИШЕ МІЙ ГОЛОС",
@@ -1607,7 +1607,7 @@
                             "title": "Примітка",
                             "description": "Lenovo Vantage потребує інформацію про ваше місцезнаходження, щоб розрахувати час заходу та сходу сонця у вашому регіоні."
                         },
-                        "tips": "Запустіть Windows Update або інсталюйте графічний драйвер вручну, щоб відновити режим захисту зору"
+                        "tips": "Запустіть Windows Update або інсталюйте графічний драйвер вручну, щоб відновити режим захисту зору."
                     },
                     "dispColorTemp": {
                         "title": "Температура кольору екрана",
@@ -1768,7 +1768,7 @@
                             "description": "Якщо змінити режим роботи верхнього рядка, потрібно перезавантажити комп'ютер. Готові перезавантажити?",
                             "reboot": "ПЕРЕЗАВАНТАЖИТИ",
                             "cancel": "НЕ ЗАРАЗ",
-                            "yes": "YES"
+                            "yes": "ТАК"
                         },
                         "note": {
                             "sFunKey": "Щоб скористатися функціональними клавішами F1-F12, натисніть клавішу Fn і потрібну клавішу з верхнього ряду.",
@@ -1791,10 +1791,10 @@
                 },
                 "userDefinedKey": {
                     "title": "Клавіша, яка визначається користувачем",
-                    "caption": "За допомогою клавіші, позначеної зірочкою, користувач може призначити функцію",
+                    "caption": "За допомогою клавіші, позначеної зірочкою, користувач може призначити функцію.",
                     "dropDown": {
                         "title": "Дія клавіші, яка визначається користувачем",
-                        "note": "Примітка. Застосовується для введення ключів, наприклад адрес електронної або звичайної пошти. Компанія Lenovo не рекомендує використовувати цю функцію для зберігання та введення паролів або іншої конфіденційної інформації.",
+                        "note": "Примітка. Застосовується для введення ключів, наприклад адрес електронної або звичайної пошти. Ніколи не використовуйте цю функцію для зберігання паролів чи будь-яких інших персональних даних.",
                         "options": {
                             "option1": "Виберіть",
                             "option2": "Відкрити веб-сайт",
@@ -1832,8 +1832,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "Зміна функцій клавіш Fn і Ctrl",
-                    "description": "Якщо ви зазвичай натискаєте клавішу Fn замість клавіші Ctrl, функції цих двох клавіш можна поміняти.",
-                    "restartNote": "Щоб переключити функції двох клавіш, потрібно перезавантажити комп'ютер. Справді перезавантажити?",
+                    "description": "Якщо ви звично натискаєте клавішу Fn замість клавіші Ctrl, функції цих двох клавіш можна поміняти.",
+                    "restartNote": "Якщо поміняти функції двох клавіш, доведеться перезавантажити комп'ютер. Готові перезавантажити?",
                     "title2": "Клавіша Fn працює як Ctrl для часто використовуваних комбінацій клавіш",
                     "description2": "Клавіша Fn працює як клавіша Ctrl для деяких часто використовуваних комбінацій клавіш. Функція клавіші Ctrl не змінюється.",
                     "featureNote": "Цю функція та заміну клавіш Fn і Ctrl не можна ввімкнути одночасно. Якщо увімкнуто одну функцію, іншу буде автоматично вимкнуто.",
@@ -3289,7 +3289,7 @@
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
             "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
-            "processStatus": "PROCESSING"
+            "processStatus": "ОБРОБКА"
         },
         "scanSettings": {
             "title": "Scan settings",

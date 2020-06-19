@@ -925,7 +925,7 @@
         },
         "systemStatus": {
             "title": "Stav systému",
-            "subtitle": "Rychlé zachycení stavu zařízení.",
+            "subtitle": "Rychle zachyťte stav svého zařízení.",
             "memory": {
                 "title": "Paměť",
                 "detail": {
@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "Abychom prodloužili životnost baterie, optimalizovali jsme její plnou kapacitu nabíjení na základě vašeho používání. Plná kapacita baterie nemusí být k dispozici, dokud baterii nevybijete na 20% a znovu nenabijete.",
-                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
+                    "moreInfo": "Kliknutím <a role=\"link\" href=\"#/device/high-density-battery\">sem</a> zobrazíte další informace."
                 },
                 "condition": {
                     "Illegal": "Nainstalovaná baterie <b>není</b> tímto systémem podporována a nebude se dobíjet. Vyměňte baterii za správnou baterii Lenovo určenou pro tento systém.",
@@ -1101,13 +1101,13 @@
                     "NotDetected": "<b>Primární baterie nebyla detekována.</b>"
                 },
                 "highDensityBattery": {
-                    "title": "High density battery",
-                    "subtitle": "How your battery works",
-                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "title": "Baterie s vysokou hustotou",
+                    "subtitle": "Jak vaše baterie funguje",
+                    "para1": "Aby se prodloužila její životnost, vaše baterie automaticky upraví nabíjecí napětí a kapacitu v závislosti na vašem osobním způsobu používání.",
                     "para2": {
-                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
-                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
-                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                        "item1": "- Používáte-li méně než 65 % kapacity baterie na týden nebo déle, může baterie dočasně snížit nabíjecí napětí a kapacitu. Snížení kapacity je malé a při vašem způsobu použití není patrné.",
+                        "item2": "- Plná kapacita se obnoví, když vybijete baterii pod 20 % a poté ji zcela nabijete.",
+                        "item3": "- Pokud navíc použijete méně než 10 % kapacity baterie po dobu 2 týdnů nebo déle, může baterie ještě výrazněji dočasně snížit nabíjecí napětí a kapacitu, dokud se nepoužije 50 % snížené kapacity baterie."
                     }
                 }
             },
@@ -1276,7 +1276,7 @@
                             "description2": "Chcete-li tuto funkci plně aktivovat, odpojte počítač a nechtebaterii vybít na nebo pod limit nabíjení baterie.",
                             "enable": "POVOLIT",
                             "cancel": "STORNO",
-                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
+                            "description3": "Baterie automaticky optimalizuje své nabíjecí napětí a kapacitu podle toho, jak ji využíváte. Pokud baterii využíváte nepříliš zatěžujícím způsobem, není nutné povolit limit nabíjení baterie."
                         },
                         "options": {
                             "start": "Začít nabíjení při poklesu pod",
@@ -1302,7 +1302,7 @@
                         "title": "Napájecí schéma Letadlo",
                         "description": "Tato funkce umožňuje používat elektrické zásuvky v letadlech, které dokážou dodávat jen omezené množství energie. Tento režim snižuje rychlost dobíjení baterie a výkon hardwaru, aby byla omezena spotřeba energie počítačem na bezpečnou úroveň.",
                         "checkBoxDesc": "Automatická detekce",
-                        "note": "Je li zaškrtnuta automatická detekce, aktivuje počítač automaticky napájecí schéma Letadlo, když detekuje prostředí letadla a vypne jej, když prostředí letadla opustíte."
+                        "note": "Je li zaškrtnuta automatická detekce, aktivuje počítač automaticky schéma napájení Letadlo, jakmile detekuje prostředí letadla, a vypne je, když prostředí letadla opustíte."
                     },
                     "gaugeReset": {
                         "title": "Reset ukazatele stavu baterie",
@@ -1557,7 +1557,7 @@
                     },
                     "optimize": {
                         "title": "Optimalizace mikrofonu pro:",
-                        "tooltip": "Konfigurací mikrofonového efektu můžete vylepšit zvukový zážitek o různé scénáře a prostředí.",
+                        "tooltip": "Konfigurací mikrofonového efektu lze vylepšit zvukový zážitek různými scénáři a prostředími.",
                         "options": {
                             "VoiceRecognition": "ROZPOZNÁNÍ ŘEČI",
                             "OnlyMyVoice": "POUZE MŮJ HLAS",
@@ -1595,19 +1595,19 @@
                     },
                     "eyeCareMode": {
                         "title": "Režim Péče o oči",
-                        "checkbox": "Naplánovat režim péče o zrak od západu do východu slunce",
+                        "checkbox": "Naplánovat režim péče o oči od západu do východu slunce",
                         "options": {
                             "warm": "Teplé (lepší pro oči)",
                             "cold": "Studená"
                         },
                         "reset": "Reset",
                         "tooltip": "Režim Péče o oči upravuje teplotu barev displeje tak, aby odfiltroval modré světlo a snížil tak únavu očí.",
-                        "onSunsetToSunriseScheduleDescription": "Naplánovat režim péče o zrak od západu do východu slunce",
+                        "onSunsetToSunriseScheduleDescription": "Naplánovat režim péče o oči od západu do východu slunce",
                         "note": {
                             "title": "Poznámka",
                             "description": "Program Lenovo Vantage potřebuje získat přístup k informacím o umístění pro výpočet času západu a východu slunce."
                         },
-                        "tips": "Režim Péče o oči obnovíte spuštěním Windows Update nebo ruční instalací ovladače grafické karty"
+                        "tips": "Režim Péče o oči obnovíte spuštěním Windows Update nebo ruční instalací ovladače grafické karty."
                     },
                     "dispColorTemp": {
                         "title": "Teplota barev displeje",
@@ -1617,7 +1617,7 @@
                         },
                         "reset": "Reset",
                         "tooltip": "Režim Péče o oči upravuje teplotu barev displeje tak, aby odfiltroval modré světlo a snížil tak únavu očí.",
-                        "onSunsetToSunriseScheduleDescription": "Naplánovat režim péče o zrak od západu do východu slunce",
+                        "onSunsetToSunriseScheduleDescription": "Naplánovat režim péče o oči od západu do východu slunce",
                         "note": {
                             "title": "Poznámka",
                             "description": "Pokud je aktivován režim péče o oči, tato teplota barev se neprojeví. Můžete však přetáhnout jezdec a zobrazit její náhled. Chcete-li ji využít, vypněte režim péče o oči."
@@ -1764,11 +1764,11 @@
                             "note": "Pokud klávesu Fn stisknete dvakrát po sobě, zůstane stav klávesy Fn uzamčen jako stisknutý až do dalšího stisku klávesy Fn. Je-li klávesa Fn uzamčena, svítí indikátor Fn Lock. Nyní lze stisknout požadovanou funkční klávesu přímo a vyvolat tak její alternativní funkci."
                         },
                         "popup": {
-                            "title": "Restartujte počítač",
+                            "title": "Restartovat počítač",
                             "description": "V případě změny funkce horní řady kláves je nutno počítač restartovat, aby se změny projevily. Skutečně chcete restartovat?",
                             "reboot": "RESTARTOVAT",
                             "cancel": "TEĎ NE",
-                            "yes": "YES"
+                            "yes": "ANO"
                         },
                         "note": {
                             "sFunKey": "Pomocí podržení klávesy Fn a stisknutí jedné z kláves v horní řadě aktivujete jejich funkce F1-F12.",
@@ -1791,10 +1791,10 @@
                 },
                 "userDefinedKey": {
                     "title": "Uživatelem definovaná klávesa",
-                    "caption": "Této klávese, označené ikonou hvězdy, lze přiřadit funkci podle svého přání",
+                    "caption": "Této klávese, označené ikonou hvězdy, můžete přiřadit funkci podle svého přání.",
                     "dropDown": {
                         "title": "Akce při stisku uživatelem definované klávesy",
-                        "note": "Poznámka: Tuto funkci lze použít k zadání často používaného textu – například e-mailové či poštovní adresy. Společnost Lenovo nicméně doporučuje nikdy ji nepoužívat k zadávání hesel ani osobních údajů.",
+                        "note": "Poznámka: Tuto funkci lze použít k zadání často používaného textu – například e-mailové či poštovní adresy. Tuto funkci nikdy nepoužívejte k ukládání hesel nebo jiných soukromých informací.",
                         "options": {
                             "option1": "Proveďte výběr",
                             "option2": "Otevřete webové stránky",
@@ -1833,7 +1833,7 @@
                 "fnCtrlKey": {
                     "title": "Záměna kláves Fn a Ctrl",
                     "description": "Pokud se vám stává, že místo klávesy Ctrl stisknete klávesu Fn, funkce obou kláves můžete zaměnit.",
-                    "restartNote": "Záměna funkcí dvou kláves vyžaduje restart počítače. Opravdu chcete počítač restartovat?",
+                    "restartNote": "Záměna funkcí dvou kláves vyžaduje restart počítače, aby se změny projevily. Skutečně chcete restartovat?",
                     "title2": "U často používaných kombinací kláves funguje klávesa Fn jako klávesa Ctrl",
                     "description2": "U některých často používaných kombinací kláves funguje klávesa Fn jako klávesa Ctrl. Funkce klávesy Ctrl se nemění.",
                     "featureNote": "Tuto funkci a funkci záměny klávesy Fn a Ctrl nelze mít zapnutou současně. V případě zapnutí jedné z nich se druhá automaticky vypne.",
@@ -3289,7 +3289,7 @@
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
             "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
-            "processStatus": "PROCESSING"
+            "processStatus": "ZPRACOVÁNÍ"
         },
         "scanSettings": {
             "title": "Scan settings",

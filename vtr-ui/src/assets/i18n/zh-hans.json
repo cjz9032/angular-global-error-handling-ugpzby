@@ -1072,7 +1072,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "为延长电池的使用寿命，我们根据您的使用情况优化了其完全充电电量。要想使用完全电池电量，可能需要先放电至 20% 并重新充电。",
-                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
+                    "moreInfo": "单击<a role=\"link\" href=\"#/device/high-density-battery\">此处</a>以获取更多信息。"
                 },
                 "condition": {
                     "Illegal": "系统<b>不支持</b>所安装的电池，电池无法充电。请将该电池更换为用于此系统的正确 Lenovo 电池。",
@@ -1101,13 +1101,13 @@
                     "NotDetected": "<b>未检测到主电池。</b>"
                 },
                 "highDensityBattery": {
-                    "title": "High density battery",
-                    "subtitle": "How your battery works",
-                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "title": "高密度电池",
+                    "subtitle": "电池的工作方式",
+                    "para1": "为延长电池寿命，电池会根据您的个人使用模式自动调整充电电压和容量。",
                     "para2": {
-                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
-                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
-                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                        "item1": "- 如果您在一周或更长的时间内使用了不到 65% 的电池容量，则电池可能会暂时降低充电电压和容量。减少的容量很小，对于您的使用模式而言并不明显。",
+                        "item2": "- 当将电池放电为低于 20% 的电量，然后将电池充满电时，将恢复为全部容量。",
+                        "item3": "- 另外，如果您在 2 周或更长的时间内使用了不到 10% 的电池容量，则电池可能会暂时降低充电电压和容量，直到使用减少的电池容量的 50% 为止。"
                     }
                 }
             },
@@ -1276,7 +1276,7 @@
                             "description2": "为完全发挥此功能的作用，请拔下计算机的电源插头并消耗电池电量，使电池电量达到或低于停止充电阈值。",
                             "enable": "启用",
                             "cancel": "取消",
-                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
+                            "description3": "电池会根据您的使用模式自动优化其充电电压和容量。如果您使用电池的程度较轻，可不必启用“电池充电阈值”。"
                         },
                         "options": {
                             "start": "低于以下电量时开始充电",
@@ -1595,19 +1595,19 @@
                     },
                     "eyeCareMode": {
                         "title": "护眼模式",
-                        "checkbox": "设定从日落到日出的护眼模式",
+                        "checkbox": "设定从日出到日落的护眼模式",
                         "options": {
                             "warm": "暖（更护眼）",
                             "cold": "冷"
                         },
                         "reset": "重置",
                         "tooltip": "护眼模式会调节显示屏色温以过滤掉蓝光，从而减轻视疲劳。",
-                        "onSunsetToSunriseScheduleDescription": "设定从日落到日出的护眼模式",
+                        "onSunsetToSunriseScheduleDescription": "设定从日出到日落的护眼模式",
                         "note": {
                             "title": "注",
                             "description": "Lenovo Vantage 需要访问您的位置信息以计算您所在地区的日落日出时间。"
                         },
-                        "tips": "请运行 Windows Update 或手动安装显卡驱动程序以恢复护眼模式"
+                        "tips": "请运行 Windows Update 或手动安装显卡驱动程序以恢复护眼模式。"
                     },
                     "oledPowerSettings": {
                         "title": "OLED 电源设置",
@@ -1639,7 +1639,7 @@
                         },
                         "reset": "重置",
                         "tooltip": "护眼模式会调节显示屏色温以过滤掉蓝光，从而减轻视疲劳。",
-                        "onSunsetToSunriseScheduleDescription": "设定从日落到日出的护眼模式",
+                        "onSunsetToSunriseScheduleDescription": "设定从日出到日落的护眼模式",
                         "note": {
                             "title": "注",
                             "description": "启用护眼模式时，此色温不会生效。但是，您可以拖动滑块进行预览。要使其生效，请关闭护眼模式。"
@@ -1764,11 +1764,11 @@
                             "note": "如果按两次 Fn 键，Fn 键将锁定在按下状态，直至再次按该键。Fn 键锁定后，Fn 锁指示灯点亮。您可以直接按所需的功能键以启动非缺省功能。"
                         },
                         "popup": {
-                            "title": "重新启动计算机",
+                            "title": "请重新启动计算机",
                             "description": "更改首行的缺省功能后，您需要重新启动计算机。是否确实要重新启动？",
                             "reboot": "重新启动",
                             "cancel": "暂不",
-                            "yes": "YES"
+                            "yes": "是"
                         },
                         "note": {
                             "sFunKey": "要实现 F1 - F12 键的功能，请按 Fn 键和首行按键。",
@@ -1791,11 +1791,11 @@
                 },
                 "userDefinedKey": {
                     "title": "用户自定义键",
-                    "caption": "您可以对标有星形图标的按键设置用户自定义功能",
+                    "caption": "您可以对标有星形图标的按键设置用户自定义功能。",
                     "tooltip": "Content to be filled",
                     "dropDown": {
                         "title": "用户自定义键的操作",
-                        "note": "注：可使用该功能输入经常输入的内容，如电子邮件地址或邮寄地址。Lenovo 建议不要使用该功能存储或输入密码或其他私密信息。",
+                        "note": "注：可使用该功能输入经常输入的内容，如电子邮件地址或邮寄地址。切勿使用此功能存储密码或任何其他私人信息。",
                         "options": {
                             "option1": "请选择",
                             "option2": "打开网站",
@@ -1833,7 +1833,7 @@
                 "fnCtrlKey": {
                     "title": "互换 Fn 键和 Ctrl 键",
                     "description": "如果当您想要按 Ctrl 键时却习惯按下 Fn 键，则您可以互换这两个键的功能。",
-                    "restartNote": "交换两个键的功能需要重新启动计算机，确定要重新启动吗？",
+                    "restartNote": "交换两个键的功能需要重新启动计算机。是否确实要重新启动？",
                     "title2": "Fn 可以作为常用组合键的 Ctrl",
                     "description2": "Fn 键可以作为一些常用组合键的 Ctrl 键。Ctrl 键的功能不变。",
                     "featureNote": "此功能与 Fn 键和 Ctrl 键互换功能不能同时开启。如果开启其中一个功能，则将自动关闭另一个功能。",
@@ -3289,7 +3289,7 @@
             "descriptionbeta": "Lenovo 现在提供 Smart Performance 试用计划，截止时间为 2020 年 7 月。",
             "descriptionbeta1": "欢迎您加入并尝试完整功能。",
             "descriptionNonSubscriber": "您尚未订阅 Lenovo Smart Performance 服务。您将只能扫描您的电脑。立即订阅，充分享受电脑受到保护并顺利运行的所有优点。",
-            "processStatus": "PROCESSING"
+            "processStatus": "处理中"
         },
         "scanSettings": {
             "title": "计划扫描设置",
