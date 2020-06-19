@@ -151,7 +151,11 @@
                         .scanned-list {
                             list-style-type: none;
                             padding: 0;
+                            margin-bottom: 0;
                             .list-item {
+                                .item-text{
+                                    margin-bottom: 1rem;
+                                }
                                 p{
                                     font-size: 1.4rem;
                                     overflow: hidden;
