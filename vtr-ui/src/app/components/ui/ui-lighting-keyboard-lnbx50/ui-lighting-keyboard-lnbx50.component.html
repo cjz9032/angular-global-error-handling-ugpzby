@@ -3,20 +3,20 @@
         <div class="toggle-box">
             <vtr-ui-toggle (toggleStatus)="onToggleOnOff($event)" [toggleId]="'Divide Area'" [parentId]="'Gaming.Lighting'" [onOffSwitchId]="'lighting_colorareadivideSwitch'" [value]="isDivideArea" [tabIndexNum]="0" (hideColordisk)="hideColordisk()">
             </vtr-ui-toggle>
-            <p *ngIf="isDivideArea" title="{{'gaming.lightingNewversion.colorPicker.text7' | translate}}">{{'gaming.lightingNewversion.colorPicker.text7' | translate}}</p>
-            <p *ngIf="!isDivideArea" title="{{'gaming.lightingNewversion.colorPicker.text6' | translate}}">{{'gaming.lightingNewversion.colorPicker.text6' | translate}}</p>
+            <p *ngIf="isDivideArea" id="gaming_lighting_divide_area_description_on" role="text" title="{{'gaming.lightingNewversion.colorPicker.text7' | translate}}">{{'gaming.lightingNewversion.colorPicker.text7' | translate}}</p>
+            <p *ngIf="!isDivideArea" id="gaming_lighting_divide_area_description_off" role="text" title="{{'gaming.lightingNewversion.colorPicker.text6' | translate}}">{{'gaming.lightingNewversion.colorPicker.text6' | translate}}</p>
         </div>
         <!-- <div class="keyboard-description">
             Click on keyboard image below to change colors.
         </div> -->
     </div>
-    <div *ngIf="isDisabled" class="disabled-description">{{'gaming.lightingNewversion.colorPicker.text8' | translate}}</div>
-    <div class="keyboard-main">
+    <div *ngIf="isDisabled" id="gaming_lighting_color_description_unsupported" role="text" class="disabled-description">{{'gaming.lightingNewversion.colorPicker.text8' | translate}}</div>
+    <div class="keyboard-main" role="text" [id]="!isDisabled ? 'gaming_lighting_keyboard_area_one' : 'gaming_lighting_unsupport_color_selection'">
         <div class="keyboard-box">
             <div *ngIf="isDisabled" class="disabledBox">
                 <div class="disabled-border"></div>
             </div>
-            <div class="keyboard-area {{'keyboard-area'+areaIndex}}" *ngFor="let area of listInfo; let areaIndex = index" role="button" [id]="'keyboard-area'+areaIndex" (click)="selectAreaFn(area.lightPanelType,area.lightColor);$event.stopPropagation();" (mouseover)="mouseoverFn($event,area.lightPanelType,area.lightColor)"
+            <div class="keyboard-area {{'keyboard-area'+areaIndex}}" *ngFor="let area of listInfo; let areaIndex = index" role="button" [id]="isDivideArea ? 'keyboard-area'+areaIndex : 'keyboard-area-one'" (click)="selectAreaFn(area.lightPanelType,area.lightColor);$event.stopPropagation();" (mouseover)="mouseoverFn($event,area.lightPanelType,area.lightColor)"
                 (mouseout)="mouseoutFn($event,area.lightPanelType)">
                 <ul class="keyboard-area-line {{'area' + areaIndex + 'Line' + lineIndex}}" *ngFor="let line of keyboardInfo[areaIndex].area; let lineIndex = index">
                     <li *ngFor="let item of line; let idx = index" [ngStyle]="{'width': item.width,'padding-bottom':item.height}" class="{{'area' + areaIndex + 'Line' + lineIndex + 'Block' + idx}}" [ngClass]="{'opacity100': (!isDisabled && isDivideArea && selectPanel === area.lightPanelType && selectedArea === area.lightPanelType) || (!isDivideArea && selectPanel != 0),
