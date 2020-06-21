@@ -66,5 +66,15 @@ export enum enumDaysOfTheWeek {
 	thursLang='smartPerformance.scanSettings.thu',
 	friLang='smartPerformance.scanSettings.fri',
 	satLang='smartPerformance.scanSettings.sat'
-
 }
+
+export const actualScanFrequency: any = ["Once a week", "Every other week", "Every month"]
+export const actualDays: any = [
+	'Sunday',
+	'Monday',
+	'Tuesday',
+	'Wednesday',
+	'Thursday',
+	'Friday',
+	'Saturday'
+]

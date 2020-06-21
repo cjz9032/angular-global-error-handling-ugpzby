@@ -1,19 +1,19 @@
 import {
 	Component,
 	OnInit,
-	Input,
 	Output,
 	EventEmitter,
 	HostListener,
-} from "@angular/core";
-import { CommonService } from "src/app/services/common/common.service";
-import { LoggerService } from "src/app/services/logger/logger.service";
-import { SmartPerformanceService } from "src/app/services/smart-performance/smart-performance.service";
-import { LocalStorageKey } from "src/app/enums/local-storage-key.enum";
-import moment from "moment";
-import { TranslateService, LangChangeEvent } from "@ngx-translate/core";
-import { enumScanFrequency, enumDaysOfTheWeek } from "src/app/enums/smart-performance.enum";
-import { Subscription } from 'rxjs';
+} from '@angular/core';
+import { CommonService } from 'src/app/services/common/common.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import moment from 'moment';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { enumScanFrequency, enumDaysOfTheWeek, actualScanFrequency, actualDays } from 'src/app/enums/smart-performance.enum';
+// import { Subscription } from 'rxjs';
+
 @Component({
 	selector: 'vtr-ui-scan-schedule',
 	templateUrl: './ui-scan-schedule.component.html',
@@ -29,9 +29,9 @@ export class UiScanScheduleComponent implements OnInit {
 
 	// scan settings
 	@Output() scanDatekValueChange = new EventEmitter();
-	private spTransLangEvent: Subscription;
-	private spTransLangScanFreq: Subscription;
-	private spTransLangDays: Subscription
+	// private spTransLangEvent: Subscription;
+	// private spTransLangScanFreq: Subscription;
+	// private spTransLangDays: Subscription
 	selectedDate: any;
 	isSubscribed: any;
 	scheduleTab;
@@ -83,42 +83,39 @@ export class UiScanScheduleComponent implements OnInit {
 		amPm: this.amPm[0],
 		amPmId: 0,
 	};
-	// scanScheduleDate: any;
 	IsScheduleScanEnabled: any;
 	IsSmartPerformanceFirstRun: any;
 	selectedFrequencyCopy: any;
-	// public scanData: any = {};
 	scheduleScanFrequency: any;
 	nextScheduleScanDate: any;
 	public enumLocalScanFrequncy: any;
 	requestScanData = {};
 	type: string;
-	isFirstVisit: boolean
-	loading: boolean
+	isFirstVisit: boolean;
 	sliceDay = true;
 
 	ngOnInit() {
-		this.spTransLangEvent = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-			if (this.translate.currentLang !== 'en') {
-				this.sliceDay = false;
-			}
-		});
-		this.spTransLangScanFreq = this.scanFrequency.forEach(sf => {
-			this.translate.stream(sf).subscribe((value) => {
-				sf = value;
-			});
+		// this.spTransLangEvent = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+		// 	if (this.translate.currentLang !== 'en') {
+		// 		this.sliceDay = false;
+		// 	}
+		// });
+		// this.spTransLangScanFreq = this.scanFrequency.forEach(sf => {
+		// 	this.translate.stream(sf).subscribe((value) => {
+		// 		sf = value;
+		// 	});
 
-		});
+		// });
 
-		this.spTransLangDays = this.days.forEach(d => {
-			this.translate.stream(d).subscribe((value) => {
-				d = value;
-			});
-		});
+		// this.spTransLangDays = this.days.forEach(d => {
+		// 	this.translate.stream(d).subscribe((value) => {
+		// 		d = value;
+		// 	});
+		// });
 
-		if (this.translate.currentLang !== 'en') {
-			this.sliceDay = false;
-		}
+		// if (this.translate.currentLang !== 'en') {
+		// 	this.sliceDay = false;
+		// }
 
 		this.isDaySelectionEnable = false;
 		this.enumLocalScanFrequncy = enumScanFrequency;
@@ -131,12 +128,12 @@ export class UiScanScheduleComponent implements OnInit {
 
 		// setting scan frequency when no value returned from local storage else using as selectedFrequency
 		if (this.scheduleScanFrequency === undefined) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, this.scanFrequency[0]);
+			this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, actualScanFrequency[0]);
 			this.selectedFrequency = this.scanFrequency[0]
 			this.frequencyValue = this.scanFrequency.indexOf(this.selectedFrequency);
 		} else {
-			this.selectedFrequency = this.scheduleScanFrequency;
-			this.frequencyValue = this.scanFrequency.indexOf(this.selectedFrequency);
+			this.frequencyValue = actualScanFrequency.indexOf(this.scheduleScanFrequency);
+			this.selectedFrequency = this.scanFrequency[this.frequencyValue]
 		}
 
 		// when it is SP first run setting type and also formatted payload for backend as prescribed in confluence page.
@@ -151,58 +148,62 @@ export class UiScanScheduleComponent implements OnInit {
 		} else {
 			this.scanToggleValue = false;
 			// when no record is present and scan is disabled setting default day.
-			this.setDefaultDay(this.days[0]);
-			// this.selectedDay = this.days[0]
+			// this.setDefaultDay(this.days[0]);
+			this.selectedDay = this.days[0]
 		}
 
 		if (this.IsSmartPerformanceFirstRun === true &&	this.isSubscribed == true) {
 			this.unregisterScheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScan');
-			// this.scheduleScan(this.requestScanData);
-			// this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, false);
-			// this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, this.scanFrequency[0]);
 		}
 
 		if (this.IsSmartPerformanceFirstRun === true && this.isSubscribed == false) {
 			this.scheduleScan(this.requestScanData);
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, false);
-			this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, this.scanFrequency[0]);
+			this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, actualScanFrequency[0]);
 		}
 
 		// fetching next schedule date and time from task scheduler
-		this.fetchNextScheduleDateTime();
-
-	}
-
-	ngAfterViewInit() {
-		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-			if (this.translate.currentLang !== 'en') {
-				this.sliceDay = false;
-				if(!this.scanToggleValue) {
-					this.setDefaultDay(this.days[0]);
-				}
-				this.fetchNextScheduleDateTime();
+		// this.fetchNextScheduleDateTime();
+		if (this.scheduleScanFrequency !== undefined && this.IsScheduleScanEnabled && !this.IsSmartPerformanceFirstRun) {
+			if (this.isSubscribed) {
+				this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
+			} else {
+				this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScan');
 			}
-		});
+		}
+
 	}
 
-	ngOnDestroy() {
-		if (this.spTransLangEvent) {
-			this.spTransLangEvent.unsubscribe();
-		}
-		if (this.spTransLangScanFreq) {
-			this.spTransLangScanFreq.unsubscribe();
-		}
-		if (this.spTransLangDays) {
-			this.spTransLangDays.unsubscribe();
-		}
-	}
+	// ngAfterViewInit() {
+	// 	this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+	// 		if (this.translate.currentLang !== 'en') {
+	// 			this.sliceDay = false;
+	// 			if(!this.scanToggleValue) {
+	// 				this.setDefaultDay(this.days[0]);
+	// 			}
+	// 			this.fetchNextScheduleDateTime();
+	// 		}
+	// 	});
+	// }
+
+	// ngOnDestroy() {
+	// 	if (this.spTransLangEvent) {
+	// 		this.spTransLangEvent.unsubscribe();
+	// 	}
+	// 	if (this.spTransLangScanFreq) {
+	// 		this.spTransLangScanFreq.unsubscribe();
+	// 	}
+	// 	if (this.spTransLangDays) {
+	// 		this.spTransLangDays.unsubscribe();
+	// 	}
+	// }
 
 	// scan settings
 	changeScanSchedule() {
 		if (this.scanToggleValue) {
 			this.isChangeSchedule = true;
 		}
-		this.selectedDayTranslation();
+		// this.selectedDayTranslation();
 	}
 	openScanScheduleDropDown(value) {
 		if (value === this.scheduleTab) {
@@ -269,7 +270,7 @@ export class UiScanScheduleComponent implements OnInit {
 		this.scheduleTab = '';
 		this.isChangeSchedule = false;
 		this.scheduleScanFrequency = this.commonService.getLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency);
-		this.changeScanFrequency(this.scanFrequency.indexOf(this.scheduleScanFrequency));
+		this.changeScanFrequency(actualScanFrequency.indexOf(this.scheduleScanFrequency));
 		if (this.isSubscribed) {
 			this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
 		} else {
@@ -320,13 +321,9 @@ export class UiScanScheduleComponent implements OnInit {
 			this.scheduleTab = '';
 			this.isChangeSchedule = false;
 			this.setTypeOfFrequency()
-
-			// if (!this.isSubscribed) {
-			// 	this.unregisterScheduleScan("Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix");
-			// }
 			this.payloadData(this.type);
 			this.scheduleScan(this.requestScanData);
-			this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, this.selectedFrequency);
+			this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, actualScanFrequency[this.frequencyValue]);
 			this.logger.info('ui-scan-schedule.component.saveChangedScanSchedule', JSON.stringify(this.requestScanData))
 		} catch (err) {
 			this.logger.error('ui-scan-schedule.component.saveChangedScanSchedule', err);
@@ -343,7 +340,7 @@ export class UiScanScheduleComponent implements OnInit {
 			if(res.state && this.scanToggleValue) {
 				this.scheduleScan(this.requestScanData);
 				this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, false);
-				this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, this.scanFrequency[0]);
+				this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, actualScanFrequency[0]);
 			}
 			this.logger.info('ui-smart-performance.unregisterScheduleScan.then', JSON.stringify(res));
 		} catch (err) {
@@ -378,12 +375,13 @@ export class UiScanScheduleComponent implements OnInit {
 				this.payloadData(this.type);
 				this.scheduleScan(this.requestScanData);
 				this.commonService.setLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled, true);
-				this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, this.selectedFrequency);
+				this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, actualScanFrequency[this.frequencyValue]);
 			}
 		}
 	}
 
 	async scheduleScan(payload) {
+		console.log('payload', JSON.stringify(payload))
 		try {
 			const res: any = await this.smartPerformanceService.setScanSchedule(payload);
 			// when saving schedule scan is successful, fetching next scan runtime from backend and updating respective fields
@@ -400,7 +398,6 @@ export class UiScanScheduleComponent implements OnInit {
 	}
 
 	async getNextScanRunTime(scantype: string) {
-		this.loading = true
 		const payload = { scantype };
 		let nextScanEvent = {};
 		this.logger.info('ui-smart-performance.getNextScanRunTime',	JSON.stringify(payload)	);
@@ -409,19 +406,19 @@ export class UiScanScheduleComponent implements OnInit {
 			this.logger.info('ui-smart-performance.getNextScanRunTime.then', JSON.stringify(res));
 			// checking next scan run time fetched from api and when present emitting to sp scan summary component and also updating respective fields
 			if (res.nextruntime) {
-				this.loading = false
-				const dt = moment(res.nextruntime).format("dddd, MM, D, YYYY, h, mm, A");
+				const dt = moment(res.nextruntime).format('dddd, MM, D, YYYY, h, mm, A');
 				if (this.selectedFrequency === this.scanFrequency[0] || this.selectedFrequency === this.scanFrequency[1]) {
-					this.selectedDay = dt.split(',')[0];
-					this.selectedDayTranslation();
-					if(this.sliceDay) {
-						// this.selectedDay = this.translate.instant(this.selectedDay).slice(0,3);
-						this.translate.stream(this.selectedDay).subscribe((value) => {
-							this.selectedDay = value;
-							this.selectedDay = this.selectedDay.slice(0,3);
-						})
-					}
-					this.dayValue = this.days.indexOf(this.selectedDay);
+					// this.selectedDay = this.days.find(day => this.translate.instant(day) === dt.split(',')[0]);
+					// this.selectedDayTranslation();
+					// if(this.sliceDay) {
+					// 	// this.selectedDay = this.translate.instant(this.selectedDay).slice(0,3);
+					// 	this.translate.stream(this.selectedDay).subscribe((value) => {
+					// 		this.selectedDay = value;
+					// 		this.selectedDay = this.selectedDay.slice(0,3);
+					// 	})
+					// }
+					this.dayValue = actualDays.indexOf(dt.split(',')[0]);
+					this.selectedDay = this.days[this.dayValue]
 				}
 				if (this.selectedFrequency === this.scanFrequency[2]) {
 					this.selectedNumber = dt.split(',')[2];
@@ -455,7 +452,7 @@ export class UiScanScheduleComponent implements OnInit {
 				this.type = 'firstRun';
 				this.payloadData(this.type);
 				this.scheduleScan(this.requestScanData);
-				this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, this.selectedFrequency);
+				this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, actualScanFrequency[0]);
 				return
 			}
 
@@ -466,8 +463,8 @@ export class UiScanScheduleComponent implements OnInit {
 
 	setDefaultValWhenDisabled() {
 		this.selectedFrequency = this.scanFrequency[0]
-		// this.selectedDay = this.days[0]
-		this.setDefaultDay(this.days[0]);
+		this.selectedDay = this.days[0]
+		// this.setDefaultDay(this.days[0]);
 		this.scanTime = {
 			hour: this.hours[11],
 			hourId: 11,
@@ -531,7 +528,7 @@ export class UiScanScheduleComponent implements OnInit {
 				} else {
 					currentMom = moment().day(this.dayValue).add(1, 'weeks').format('YYYY, MM, D, ss');
 				}
-				this.commonLines(currentMom, this.selectedFrequency);
+				this.commonLines(currentMom, actualScanFrequency[this.frequencyValue]);
 				break;
 
 			case 'otherweek':
@@ -540,7 +537,7 @@ export class UiScanScheduleComponent implements OnInit {
 				} else {
 					currentMom = moment().day(this.dayValue).add(2, 'weeks').format('YYYY, MM, D, ss');
 				}
-				this.commonLines(currentMom, this.selectedFrequency);
+				this.commonLines(currentMom, actualScanFrequency[this.frequencyValue]);
 				break;
 
 			case 'monthly':
@@ -549,7 +546,7 @@ export class UiScanScheduleComponent implements OnInit {
 				} else {
 					currentMom = moment().date(+this.selectedNumber).format('YYYY, MM, D, ss');
 				}
-				this.commonLines(currentMom, this.selectedFrequency);
+				this.commonLines(currentMom, actualScanFrequency[this.frequencyValue]);
 				break;
 		}
 	}
@@ -565,7 +562,7 @@ export class UiScanScheduleComponent implements OnInit {
 		const roundedhours = moment(tme, ['h A']).format('HH');
 		const data = {
 			frequency: freq.toLowerCase(),
-			day: freq !== 'onceamonth' ? this.selectedDay : '',
+			day: freq !== 'onceamonth' ? actualDays[this.dayValue] : '',
 			time: moment([
 				currentMoment.split(',')[0],
 				(+currentMoment.split(',')[1]-1).toString(),
@@ -584,52 +581,52 @@ export class UiScanScheduleComponent implements OnInit {
 		}
 	}
 
-	selectedDayTranslation() {
-		this.daysOfTheWeek = enumDaysOfTheWeek;
-		if (this.selectedDay) {
-			if (this.selectedDay === this.daysOfTheWeek.sun || this.selectedDay === this.daysOfTheWeek.sunShort) {
-				this.selectedDay = this.daysOfTheWeek.sunLang;
-			}
-			if (this.selectedDay === this.daysOfTheWeek.mon || this.selectedDay === this.daysOfTheWeek.monShort) {
-				this.selectedDay = this.daysOfTheWeek.monLang;
-			}
-			if (this.selectedDay === this.daysOfTheWeek.tue || this.selectedDay === this.daysOfTheWeek.tueShort) {
-				this.selectedDay = this.daysOfTheWeek.tueLang;
-			}
-			if (this.selectedDay === this.daysOfTheWeek.wed || this.selectedDay === this.daysOfTheWeek.wedShort) {
-				this.selectedDay = this.daysOfTheWeek.wedLang;
-			}
-			if (this.selectedDay === this.daysOfTheWeek.thurs || this.selectedDay === this.daysOfTheWeek.thursShort) {
-				this.selectedDay = this.daysOfTheWeek.thursLang;
-			}
-			if (this.selectedDay === this.daysOfTheWeek.fri || this.selectedDay === this.daysOfTheWeek.friShort) {
-				this.selectedDay = this.daysOfTheWeek.friLang;
-			}
-			if (this.selectedDay === this.daysOfTheWeek.sat || this.selectedDay === this.daysOfTheWeek.satShort) {
-				this.selectedDay = this.daysOfTheWeek.satLang;
-			}
-		}
-	}
+	// selectedDayTranslation() {
+	// 	this.daysOfTheWeek = enumDaysOfTheWeek;
+	// 	if (this.selectedDay) {
+	// 		if (this.selectedDay === this.daysOfTheWeek.sun || this.selectedDay === this.daysOfTheWeek.sun) {
+	// 			this.selectedDay = this.daysOfTheWeek.sunLang;
+	// 		}
+	// 		if (this.selectedDay === this.daysOfTheWeek.mon || this.selectedDay === this.daysOfTheWeek.monShort) {
+	// 			this.selectedDay = this.daysOfTheWeek.monLang;
+	// 		}
+	// 		if (this.selectedDay === this.daysOfTheWeek.tue || this.selectedDay === this.daysOfTheWeek.tueShort) {
+	// 			this.selectedDay = this.daysOfTheWeek.tueLang;
+	// 		}
+	// 		if (this.selectedDay === this.daysOfTheWeek.wed || this.selectedDay === this.daysOfTheWeek.wedShort) {
+	// 			this.selectedDay = this.daysOfTheWeek.wedLang;
+	// 		}
+	// 		if (this.selectedDay === this.daysOfTheWeek.thurs || this.selectedDay === this.daysOfTheWeek.thursShort) {
+	// 			this.selectedDay = this.daysOfTheWeek.thursLang;
+	// 		}
+	// 		if (this.selectedDay === this.daysOfTheWeek.fri || this.selectedDay === this.daysOfTheWeek.friShort) {
+	// 			this.selectedDay = this.daysOfTheWeek.friLang;
+	// 		}
+	// 		if (this.selectedDay === this.daysOfTheWeek.sat || this.selectedDay === this.daysOfTheWeek.satShort) {
+	// 			this.selectedDay = this.daysOfTheWeek.satLang;
+	// 		}
+	// 	}
+	// }
 
-	setDefaultDay(lang) {
-		if (this.sliceDay) {
-			this.translate.stream(lang).subscribe((value) => {
-				this.selectedDay = value;
-				this.selectedDay = this.selectedDay.slice(0, 3);
-			})
-		} else {
-			this.selectedDay = this.days[0]
-		}
-	}
+	// setDefaultDay(lang) {
+	// 	if (this.sliceDay) {
+	// 		this.translate.stream(lang).subscribe((value) => {
+	// 			this.selectedDay = value;
+	// 			this.selectedDay = this.selectedDay.slice(0, 3);
+	// 		})
+	// 	} else {
+	// 		this.selectedDay = this.days[0]
+	// 	}
+	// }
 
-	fetchNextScheduleDateTime() {
-		if (this.scheduleScanFrequency !== undefined && this.IsScheduleScanEnabled && !this.IsSmartPerformanceFirstRun) {
-			if (this.isSubscribed) {
-				this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
-			} else {
-				this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScan');
-			}
-		}
-	}
+	// fetchNextScheduleDateTime() {
+	// 	if (this.scheduleScanFrequency !== undefined && this.IsScheduleScanEnabled && !this.IsSmartPerformanceFirstRun) {
+	// 		if (this.isSubscribed) {
+	// 			this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
+	// 		} else {
+	// 			this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScan');
+	// 		}
+	// 	}
+	// }
 
 }
