@@ -11,8 +11,8 @@ import { SmartPerformanceService } from 'src/app/services/smart-performance/smar
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import moment from 'moment';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import { enumScanFrequency, enumDaysOfTheWeek, actualScanFrequency, actualDays } from 'src/app/enums/smart-performance.enum';
-// import { Subscription } from 'rxjs';
+import { enumScanFrequency, actualScanFrequency, actualDays } from 'src/app/enums/smart-performance.enum';
+import { Subscription } from 'rxjs';
 
 @Component({
 	selector: 'vtr-ui-scan-schedule',
@@ -29,9 +29,7 @@ export class UiScanScheduleComponent implements OnInit {
 
 	// scan settings
 	@Output() scanDatekValueChange = new EventEmitter();
-	// private spTransLangEvent: Subscription;
-	// private spTransLangScanFreq: Subscription;
-	// private spTransLangDays: Subscription
+	private spTransLangEvent: Subscription;
 	selectedDate: any;
 	isSubscribed: any;
 	scheduleTab;
@@ -92,30 +90,21 @@ export class UiScanScheduleComponent implements OnInit {
 	requestScanData = {};
 	type: string;
 	isFirstVisit: boolean;
-	sliceDay = true;
+	loading: boolean;
+	sliceDay:boolean = true;
 
 	ngOnInit() {
-		// this.spTransLangEvent = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-		// 	if (this.translate.currentLang !== 'en') {
-		// 		this.sliceDay = false;
-		// 	}
-		// });
-		// this.spTransLangScanFreq = this.scanFrequency.forEach(sf => {
-		// 	this.translate.stream(sf).subscribe((value) => {
-		// 		sf = value;
-		// 	});
+		this.spTransLangEvent = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+			if (this.translate.currentLang !== 'en') {
+				this.sliceDay = false;
+			} else {
+				this.sliceDay = true;
+			}
+		});
 
-		// });
-
-		// this.spTransLangDays = this.days.forEach(d => {
-		// 	this.translate.stream(d).subscribe((value) => {
-		// 		d = value;
-		// 	});
-		// });
-
-		// if (this.translate.currentLang !== 'en') {
-		// 	this.sliceDay = false;
-		// }
+		if (this.translate.currentLang !== 'en') {
+			this.sliceDay = false;
+		}
 
 		this.isDaySelectionEnable = false;
 		this.enumLocalScanFrequncy = enumScanFrequency;
@@ -174,29 +163,11 @@ export class UiScanScheduleComponent implements OnInit {
 
 	}
 
-	// ngAfterViewInit() {
-	// 	this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-	// 		if (this.translate.currentLang !== 'en') {
-	// 			this.sliceDay = false;
-	// 			if(!this.scanToggleValue) {
-	// 				this.setDefaultDay(this.days[0]);
-	// 			}
-	// 			this.fetchNextScheduleDateTime();
-	// 		}
-	// 	});
-	// }
-
-	// ngOnDestroy() {
-	// 	if (this.spTransLangEvent) {
-	// 		this.spTransLangEvent.unsubscribe();
-	// 	}
-	// 	if (this.spTransLangScanFreq) {
-	// 		this.spTransLangScanFreq.unsubscribe();
-	// 	}
-	// 	if (this.spTransLangDays) {
-	// 		this.spTransLangDays.unsubscribe();
-	// 	}
-	// }
+	ngOnDestroy() {
+		if (this.spTransLangEvent) {
+			this.spTransLangEvent.unsubscribe();
+		}
+	}
 
 	// scan settings
 	changeScanSchedule() {
@@ -398,6 +369,7 @@ export class UiScanScheduleComponent implements OnInit {
 	}
 
 	async getNextScanRunTime(scantype: string) {
+		this.loading = true;
 		const payload = { scantype };
 		let nextScanEvent = {};
 		this.logger.info('ui-smart-performance.getNextScanRunTime',	JSON.stringify(payload)	);
@@ -406,17 +378,9 @@ export class UiScanScheduleComponent implements OnInit {
 			this.logger.info('ui-smart-performance.getNextScanRunTime.then', JSON.stringify(res));
 			// checking next scan run time fetched from api and when present emitting to sp scan summary component and also updating respective fields
 			if (res.nextruntime) {
+				this.loading = false;
 				const dt = moment(res.nextruntime).format('dddd, MM, D, YYYY, h, mm, A');
 				if (this.selectedFrequency === this.scanFrequency[0] || this.selectedFrequency === this.scanFrequency[1]) {
-					// this.selectedDay = this.days.find(day => this.translate.instant(day) === dt.split(',')[0]);
-					// this.selectedDayTranslation();
-					// if(this.sliceDay) {
-					// 	// this.selectedDay = this.translate.instant(this.selectedDay).slice(0,3);
-					// 	this.translate.stream(this.selectedDay).subscribe((value) => {
-					// 		this.selectedDay = value;
-					// 		this.selectedDay = this.selectedDay.slice(0,3);
-					// 	})
-					// }
 					this.dayValue = actualDays.indexOf(dt.split(',')[0]);
 					this.selectedDay = this.days[this.dayValue]
 				}
@@ -580,53 +544,5 @@ export class UiScanScheduleComponent implements OnInit {
 			this.requestScanData = {scantype: 'Lenovo.Vantage.SmartPerformance.ScheduleScan', ...data,};
 		}
 	}
-
-	// selectedDayTranslation() {
-	// 	this.daysOfTheWeek = enumDaysOfTheWeek;
-	// 	if (this.selectedDay) {
-	// 		if (this.selectedDay === this.daysOfTheWeek.sun || this.selectedDay === this.daysOfTheWeek.sun) {
-	// 			this.selectedDay = this.daysOfTheWeek.sunLang;
-	// 		}
-	// 		if (this.selectedDay === this.daysOfTheWeek.mon || this.selectedDay === this.daysOfTheWeek.monShort) {
-	// 			this.selectedDay = this.daysOfTheWeek.monLang;
-	// 		}
-	// 		if (this.selectedDay === this.daysOfTheWeek.tue || this.selectedDay === this.daysOfTheWeek.tueShort) {
-	// 			this.selectedDay = this.daysOfTheWeek.tueLang;
-	// 		}
-	// 		if (this.selectedDay === this.daysOfTheWeek.wed || this.selectedDay === this.daysOfTheWeek.wedShort) {
-	// 			this.selectedDay = this.daysOfTheWeek.wedLang;
-	// 		}
-	// 		if (this.selectedDay === this.daysOfTheWeek.thurs || this.selectedDay === this.daysOfTheWeek.thursShort) {
-	// 			this.selectedDay = this.daysOfTheWeek.thursLang;
-	// 		}
-	// 		if (this.selectedDay === this.daysOfTheWeek.fri || this.selectedDay === this.daysOfTheWeek.friShort) {
-	// 			this.selectedDay = this.daysOfTheWeek.friLang;
-	// 		}
-	// 		if (this.selectedDay === this.daysOfTheWeek.sat || this.selectedDay === this.daysOfTheWeek.satShort) {
-	// 			this.selectedDay = this.daysOfTheWeek.satLang;
-	// 		}
-	// 	}
-	// }
-
-	// setDefaultDay(lang) {
-	// 	if (this.sliceDay) {
-	// 		this.translate.stream(lang).subscribe((value) => {
-	// 			this.selectedDay = value;
-	// 			this.selectedDay = this.selectedDay.slice(0, 3);
-	// 		})
-	// 	} else {
-	// 		this.selectedDay = this.days[0]
-	// 	}
-	// }
-
-	// fetchNextScheduleDateTime() {
-	// 	if (this.scheduleScanFrequency !== undefined && this.IsScheduleScanEnabled && !this.IsSmartPerformanceFirstRun) {
-	// 		if (this.isSubscribed) {
-	// 			this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
-	// 		} else {
-	// 			this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScan');
-	// 		}
-	// 	}
-	// }
 
 }
