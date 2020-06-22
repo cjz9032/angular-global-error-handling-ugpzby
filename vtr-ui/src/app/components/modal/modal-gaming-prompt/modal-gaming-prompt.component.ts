@@ -8,32 +8,41 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ModalGamingPromptComponent implements OnInit {
   @Output() emitService = new EventEmitter();
-  public info:any = {};
+  public info: any = {
+	id: {
+		section: '',
+		headerText: '',
+		closeButton: '',
+		description: '',
+		okButton: '',
+		cancelButton: ''
+	}
+  };
   constructor(
-    public activeModal: NgbActiveModal,
-    private modalService: NgbModal,
+	public activeModal: NgbActiveModal,
+	private modalService: NgbModal,
   ) { }
 
   ngOnInit() {
-    setTimeout(()=>{
-      document.getElementById('gaming-advanced-prompt-close').focus(); 
-    },230)
+	setTimeout(()=>{
+		document.getElementById('gaming-advanced-prompt-close').focus();
+	},230)
   }
   emitFn(info) {
-    this.emitService.next(info)
+	this.emitService.next(info)
   }
   closeModal() {
-    this.emitFn(0);
+	this.emitFn(0);
 		this.activeModal.close('close');
   }
-  
+
   confirmFn(){
-    this.emitFn(1);
-    this.activeModal.close('close');
+	this.emitFn(1);
+	this.activeModal.close('close');
   }
-  
+
   cancleFn() {
-    this.emitFn(2);
-    this.activeModal.close('close');
+	this.emitFn(2);
+	this.activeModal.close('close');
   }
 }
