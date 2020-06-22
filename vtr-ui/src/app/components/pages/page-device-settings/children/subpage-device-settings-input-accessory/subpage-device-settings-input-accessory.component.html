@@ -91,7 +91,7 @@
 								</vtr-ui-row-switch>
 							</li>
 
-							<li *ngIf="machineType === 1">
+							<li *ngIf="machineType === 1 && fnLockCapability">
 								<vtr-top-row-functions></vtr-top-row-functions>
 							</li>
 							<li *ngIf="machineType === 0 && fnLockCapability">
