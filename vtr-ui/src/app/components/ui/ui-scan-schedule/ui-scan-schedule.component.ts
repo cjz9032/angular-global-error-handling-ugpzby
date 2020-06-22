@@ -352,7 +352,6 @@ export class UiScanScheduleComponent implements OnInit {
 	}
 
 	async scheduleScan(payload) {
-		console.log('payload', JSON.stringify(payload))
 		try {
 			const res: any = await this.smartPerformanceService.setScanSchedule(payload);
 			// when saving schedule scan is successful, fetching next scan runtime from backend and updating respective fields
