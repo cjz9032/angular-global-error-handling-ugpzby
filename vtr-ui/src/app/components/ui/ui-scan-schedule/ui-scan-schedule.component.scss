@@ -706,13 +706,21 @@ vtr-ui-smart-performance-scan-summary {
 			}
 		}
 		.pc-status-info{
-			.info-text{				
+			.needs-tune-up{				
 				span{
-					background:#2a2f43!important;					
+					background:#252a3f!important;				
 				}			
 
 			}
 		}
+		.pc-status-info{
+			.running-well{				
+				span{
+					background:#2a2f43!important;					
+				}
+			}
+		}
+
 	}
 	.summary-block{
 		padding: 3rem 3rem 0;
