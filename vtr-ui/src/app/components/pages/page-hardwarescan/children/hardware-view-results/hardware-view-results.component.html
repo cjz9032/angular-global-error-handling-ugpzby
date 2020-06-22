@@ -86,19 +86,22 @@
 	</div>
 </div>
 
+
 <ng-template #tooltipRef>
-	<div [innerHTML]="item.information"></div>
-	<div class='button-box'>
-		<a [attr.href]="'https://support.lenovo.com/contactus'"
-			target="_blank"
-			vtrMetrics
-			metricsItemID="HardwareScan.ResultSupport"
-			metricsItemPosition="r1"
-			metricsItemCategory="partnerarticle"
-			metricsEvent="articleclick"
-			metricsPageNumber="1"
-			tabindex="-1">
-			<button class='btn button'> {{ lenovoSupport }} </button>
-		</a>
-	</div>
-</ng-template>
+		<div [innerHTML]="'hardwareScan.scanFinishedHeader.frcSuccessDescription' | translate"></div>
+		<div>
+			<a [attr.href]="'https://support.lenovo.com/contactus'"
+				class="link-support"
+				id="supportButton"
+				target="_blank"
+				vtrMetrics
+				metricsItemID="HardwareScan.ResultSupport"
+				metricsItemPosition="r1"
+				metricsItemCategory="partnerarticle"
+				metricsEvent="articleclick"
+				metricsPageNumber="1"
+				tabindex="1">
+				{{ 'hardwareScan.scanFinishedHeader.supportButtonText' | translate }}
+			</a>
+		</div>
+	</ng-template>
