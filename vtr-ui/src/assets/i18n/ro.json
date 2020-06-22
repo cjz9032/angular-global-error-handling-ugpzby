@@ -1673,7 +1673,9 @@
                     "cameraPrivacy": {
                         "title": "Modul de confidențialitate a camerei",
                         "tooltip": "Camera nu mai trimite imagini live când setarea confidențialitate este activată. Activaţi această setare numai când nu doriţi să partajaţi imaginile cu celelalte persoane în timpul unui apel video.",
-                        "cameraPrivacyAccessNote": "Accesați pagina <b>Setări Windows → Confidențialitate → Cameră</b> și asigurați-vă că următoarele două opțiuni sunt activate:<br>&bull; <b>Permiteți aplicațiilor desktop să vă acceseze camera</b><br>&bull; și <b>Lenovo Vantage</b>, din secțiunea „Selectați aplicațiile (Microsoft Store) care vă pot accesa camera”"
+                        "cameraPrivacyAccessNote": "Accesați pagina <b>Setări Windows → Confidențialitate → Cameră</b> și asigurați-vă că următoarele două opțiuni sunt activate:<br>&bull; <b>Permiteți aplicațiilor desktop să vă acceseze camera</b><br>&bull; și <b>Lenovo Vantage</b>, din secțiunea „Selectați aplicațiile (Microsoft Store) care vă pot accesa camera”",
+                        "noPermissionNote": "Lenovo Vantage nu are acces la cameră sau opțiunea „Permiteți aplicațiilor desktop să vă acceseze camera” nu este activată.",
+                        "accessUrl": "Accesați setările Windows pentru a acorda acces."
                     },
                     "camera": {
                         "title": "Cameră",

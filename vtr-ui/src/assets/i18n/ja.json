@@ -1673,7 +1673,9 @@
                     "cameraPrivacy": {
                         "title": "カメラ・プライバシー・モード",
                         "tooltip": "プライバシー設定を有効にすると、ライブ画像はカメラから送信されなくなります。ビデオ通話中に自分の画像を共有にしたくない場合にのみ、この設定をオンにしてください。",
-                        "cameraPrivacyAccessNote": "<b>「Windows 設定」 → 「プライバシー」 → 「カメラ」</b>ページに移動して、次の 2 つのオプションがオンになっていることを確認します。<br>&bull; <b>デスクトップ・アプリがカメラにアクセスすることを許可する</b><br>&bull; <b>Lenovo Vantage</b> (「カメラにアクセスできる (Microsoft Store) アプリを選択する」 の下にある)"
+                        "cameraPrivacyAccessNote": "<b>「Windows 設定」 → 「プライバシー」 → 「カメラ」</b>ページに移動して、次の 2 つのオプションがオンになっていることを確認します。<br>&bull; <b>デスクトップ・アプリがカメラにアクセスすることを許可する</b><br>&bull; <b>Lenovo Vantage</b> (「カメラにアクセスできる (Microsoft Store) アプリを選択する」 の下にある)",
+                        "noPermissionNote": "Lenovo Vantage がカメラにアクセスできないか、「デスクトップ・アプリがカメラにアクセスすることを許可する」の切り替えが有効になっていません。",
+                        "accessUrl": "Windows の設定に移動してアクセスできるようにします"
                     },
                     "camera": {
                         "title": "カメラ",

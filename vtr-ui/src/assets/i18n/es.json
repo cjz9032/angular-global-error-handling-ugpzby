@@ -1673,7 +1673,9 @@
                     "cameraPrivacy": {
                         "title": "Modo de privacidad de cámara",
                         "tooltip": "La cámara deja de enviar imágenes en vivo cuando se activa la configuración Privado. Active esta configuración solo cuando no desee compartir sus imágenes a otros durante las llamadas de video.",
-                        "cameraPrivacyAccessNote": "Vaya a la página <b>Valores de Windows → Privacidad → Cámara</b> y asegúrese de que las dos opciones a continuación estén habilitadas:<br>&bull; <b>Permitir que las aplicaciones de escritorio accedan a la cámara</b><br>&bull; <b>Lenovo Vantage</b> en “Elegir las aplicaciones de Microsoft Store que pueden acceder a la cámara”"
+                        "cameraPrivacyAccessNote": "Vaya a la página <b>Valores de Windows → Privacidad → Cámara</b> y asegúrese de que las dos opciones a continuación estén habilitadas:<br>&bull; <b>Permitir que las aplicaciones de escritorio accedan a la cámara</b><br>&bull; <b>Lenovo Vantage</b> en “Elegir las aplicaciones de Microsoft Store que pueden acceder a la cámara”",
+                        "noPermissionNote": "Lenovo Vantage no tiene acceso a la cámara o el alternador “Permitir que las aplicaciones de escritorio accedan a la cámara” no está habilitado.",
+                        "accessUrl": "Vaya a la configuración de Windows para dar acceso"
                     },
                     "camera": {
                         "title": "Cámara",

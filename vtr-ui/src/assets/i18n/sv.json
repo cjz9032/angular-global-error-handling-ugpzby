@@ -1673,7 +1673,9 @@
                     "cameraPrivacy": {
                         "title": "Kamerasekretessläge",
                         "tooltip": "När sekretessinställningen aktiveras slutar kameran att skicka bilder. Välj endast sekretessinställningen om du inte vill att andra ska se din bild under videosamtal.",
-                        "cameraPrivacyAccessNote": "Gå till sidan <b>Windows-inställningar → Sekretess → Kamera</b> och se till att följande två alternativ har aktiverats:<br>&bull; <b>Låt skrivbordsappar använda din kamera</b><br>&bull; <b>Lenovo Vantage</b> under ”Välj Microsoft Store-appar som får använda din kamera”"
+                        "cameraPrivacyAccessNote": "Gå till sidan <b>Windows-inställningar → Sekretess → Kamera</b> och se till att följande två alternativ har aktiverats:<br>&bull; <b>Låt skrivbordsappar använda din kamera</b><br>&bull; <b>Lenovo Vantage</b> under ”Välj Microsoft Store-appar som får använda din kamera”",
+                        "noPermissionNote": "Lenovo Vantage har inte åtkomst till kameran, eller reglaget ”Låt skrivbordsappar använda din kamera” är inte aktiverat.",
+                        "accessUrl": "Öppna Windows-inställningar för att ge åtkomst"
                     },
                     "camera": {
                         "title": "Kamera",

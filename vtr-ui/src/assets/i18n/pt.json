@@ -1673,7 +1673,9 @@
                     "cameraPrivacy": {
                         "title": "Modo de Privacidade da Câmara",
                         "tooltip": "Quando a definição de privacidade está ativada, a câmara para de enviar imagens em direto. Ative esta definição, apenas quando não pretender partilhar as suas imagens com outras pessoas durante as chamadas de vídeo.",
-                        "cameraPrivacyAccessNote": "Vá à página <b>Definições do Windows → Privacidade → Câmara</b> e certifique-se de que as duas opções a seguir estão ativadas:<br>&bull; <b>Permitir que aplicações de área de trabalho acedam à sua câmara</b><br>&bull; <b>Lenovo Vantage</b> em \"Escolha que aplicações (Microsoft Store) podem aceder à sua câmara\""
+                        "cameraPrivacyAccessNote": "Vá à página <b>Definições do Windows → Privacidade → Câmara</b> e certifique-se de que as duas opções a seguir estão ativadas:<br>&bull; <b>Permitir que aplicações de área de trabalho acedam à sua câmara</b><br>&bull; <b>Lenovo Vantage</b> em \"Escolha que aplicações (Microsoft Store) podem aceder à sua câmara\"",
+                        "noPermissionNote": "A Lenovo Vantage não tem acesso à sua câmara ou a opção “Permitir que aplicações de desktop acedam à sua câmara” não está ativada.",
+                        "accessUrl": "Vá às Definições do Windows para dar acesso"
                     },
                     "camera": {
                         "title": "Câmara",
