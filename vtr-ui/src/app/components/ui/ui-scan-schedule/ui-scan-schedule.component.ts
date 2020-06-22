@@ -92,19 +92,29 @@ export class UiScanScheduleComponent implements OnInit {
 	isFirstVisit: boolean;
 	loading: boolean;
 	sliceDay:boolean = true;
+	amPmPosition:boolean = false;
 
 	ngOnInit() {
 		this.spTransLangEvent = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 			if (this.translate.currentLang !== 'en') {
 				this.sliceDay = false;
+				if(this.translate.currentLang === 'ar') {
+					this.amPmPosition = true;
+				}
 			} else {
 				this.sliceDay = true;
+				this.amPmPosition = false;
 			}
 		});
 
 		if (this.translate.currentLang !== 'en') {
 			this.sliceDay = false;
 		}
+
+		// if(this.translate.currentLang === 'ar') {
+		// 	this.amPmPosition = true;
+		// 	this.sliceDay = false;
+		// }
 
 		this.isDaySelectionEnable = false;
 		this.enumLocalScanFrequncy = enumScanFrequency;
@@ -122,7 +132,8 @@ export class UiScanScheduleComponent implements OnInit {
 			this.frequencyValue = this.scanFrequency.indexOf(this.selectedFrequency);
 		} else {
 			this.frequencyValue = actualScanFrequency.indexOf(this.scheduleScanFrequency);
-			this.selectedFrequency = this.scanFrequency[this.frequencyValue]
+			this.selectedFrequency = this.scanFrequency[this.frequencyValue];
+			this.translationCheck();
 		}
 
 		// when it is SP first run setting type and also formatted payload for backend as prescribed in confluence page.
@@ -541,6 +552,18 @@ export class UiScanScheduleComponent implements OnInit {
 		}
 		if (!this.isSubscribed) {
 			this.requestScanData = {scantype: 'Lenovo.Vantage.SmartPerformance.ScheduleScan', ...data,};
+		}
+	}
+
+	translationCheck() {
+		if (this.translate.currentLang !== 'en') {
+			this.sliceDay = false;
+			if(this.translate.currentLang === 'ar') {
+				this.amPmPosition = true;
+			}
+		} else {
+			this.sliceDay = true;
+			this.amPmPosition = false;
 		}
 	}
 
