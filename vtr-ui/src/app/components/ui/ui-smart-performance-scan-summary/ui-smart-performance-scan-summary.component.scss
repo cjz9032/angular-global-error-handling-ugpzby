@@ -913,6 +913,16 @@ vtr-ui-smart-performance-scan-summary {
 			}
 			.pc-status-info{
 				margin-top: 2rem;
+				.needs-tune-up{				
+					span{
+						background:#252a3f!important;					
+					}		
+				}
+				.running-well{				
+					span{
+						background:#2a2f43!important;					
+					}
+				}
 				.info-text{					
 					color: $alt;
 					margin-top: 1.8rem;
@@ -927,7 +937,7 @@ vtr-ui-smart-performance-scan-summary {
 						width: calc(60.5% - 2rem);
 					}
 					span{
-						background:#2a2f43!important;
+						//background:#2a2f43!important;
 						padding:0rem 0.2rem;
 						position: relative;
 						z-index: 9;
