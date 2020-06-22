@@ -73,10 +73,26 @@
 							background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
 							background-color: $go_dark;
 							border: 0.1rem solid $go_dark;
+							@media #{$white-on-black} {
+								background: $light;
+								border: 0.1rem solid $light;
+							}
+							@media #{$black-on-white} {
+								background: $dark;
+								border: 0.1rem solid $dark;
+							}
 						}
 
 						&::before {
 							content: "";
+						}
+						.ng-fa-icon {
+							@media #{$white-on-black} {
+								color: $dark;
+							}
+							@media #{$black-on-white} {
+								color: $light;
+							}
 						}
 					}
 					.icon-times {
@@ -90,16 +106,30 @@
 							line-height: 1.5rem;
 							font-size: 1rem;
 							text-align: center;
-							background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
-							background-color: $go_dark;
-							border: 0.1rem solid $go_dark;
 							border: 0.1rem solid $stop_dark;
 							background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
 							background-color: $stop_dark;
+
+							@media #{$white-on-black} {
+								background: $light;
+								border: 0.1rem solid $light;
+							}
+							@media #{$black-on-white} {
+								background: $dark;
+								border: 0.1rem solid $dark;
+							}
 						}
 
 						&::before {
 							content: "";
+						}
+						.ng-fa-icon {
+							@media #{$white-on-black} {
+								color: $dark;
+							}
+							@media #{$black-on-white} {
+								color: $light;
+							}
 						}
 					}
 
