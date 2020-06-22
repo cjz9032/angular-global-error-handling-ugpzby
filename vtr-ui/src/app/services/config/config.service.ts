@@ -500,16 +500,18 @@ export class ConfigService {
 
 		const result = await this.canShowSearch();
 		this.updateAvailability(menu, 'app-search', result);
-		const machineInfo = this.deviceService.machineInfo;
-		const locale: string = machineInfo.locale.toLowerCase();
-		const country: string = machineInfo.country.toLowerCase();
+		// const machineInfo = this.deviceService.machineInfo;
+		// const locale: string = machineInfo.locale.toLowerCase();
+		// const country: string = machineInfo.country.toLowerCase();
 		let smartPerformanceResult = false;
-		if (locale === 'en' && country === 'us') {
-			smartPerformanceResult = await this.showSmartPerformance();
-			this.updateAvailability(menu, 'smart-performance', smartPerformanceResult);
-		} else {
-			this.updateAvailability(menu, 'smart-performance', smartPerformanceResult);
-		}
+		smartPerformanceResult = await this.showSmartPerformance();
+		this.updateAvailability(menu, 'smart-performance', smartPerformanceResult);
+		// if (locale === 'en' && country === 'us') {
+		// 	smartPerformanceResult = await this.showSmartPerformance();
+		// 	this.updateAvailability(menu, 'smart-performance', smartPerformanceResult);
+		// } else {
+		// 	this.updateAvailability(menu, 'smart-performance', smartPerformanceResult);
+		// }
 
 		this.updateBetaService(menu);
 	}

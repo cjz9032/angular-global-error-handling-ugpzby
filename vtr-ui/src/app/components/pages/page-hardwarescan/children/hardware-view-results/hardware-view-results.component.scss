@@ -61,6 +61,7 @@
 					font-size: $fontsize_md;
 					font-weight: $weight_bold;
 					padding-left: 1rem;
+					margin: 0rem;
 				}
 
 				.subtitle {
@@ -174,5 +175,9 @@
 
 	.warning {
 		color: $warning_dark;
+	}
+
+	.not-applicable {
+		color: $light-grey;
 	}
 }

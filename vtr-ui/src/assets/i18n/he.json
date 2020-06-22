@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "להארכת משך חיי הסוללה, ביצענו מיטוב של קיבולת הטעינה המלאה שלה בהתאם לשימוש. יתכן שקיבולת הסוללה המלאה לא תהיה זמינה עד שהסוללה תתרוקן עד 20% ותוטען מחדש.",
-                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
+                    "moreInfo": "לחצו <a role=\"link\" href=\"#/device/high-density-battery\">כאן</a> למידע נוסף."
                 },
                 "condition": {
                     "Illegal": "הסוללה המותקנת <b>אינה נתמכת</b> על-ידי המערכת ולא תיטען. החליפו אותה בסוללה של Lenovo המתאימה למערכת זו.",
@@ -1101,13 +1101,13 @@
                     "NotDetected": "<b>הסוללה הראשית לא זוהתה.</b>"
                 },
                 "highDensityBattery": {
-                    "title": "High density battery",
-                    "subtitle": "How your battery works",
-                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "title": "סוללה בצפיפות גבוהה",
+                    "subtitle": "איך הסוללה עובדת",
+                    "para1": "כדי להגדיל את אורך חיי הסוללה, הסוללה מכווננת אוטומטית את מתח הטעינה ואת הקיבולת בתגובה לדפוס השימוש האישי שלכם.",
                     "para2": {
-                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
-                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
-                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                        "item1": "- אם אתם משתמשים בפחות מ-65% מקיבולת הסוללה במשך שבוע או יותר, הסוללה עשויה להפחית באופן זמני את מתח הטעינה ואת הקיבולת. הפחתת הקיבולת היא מינורית ולא מורגשת לצורך דפוס השימוש שלכם.",
+                        "item2": "- קיבולת מלאה מוחזרת כשאתם פורקים את הסוללה מתחת ל- 20% ואז טוענים את הסוללה במלואה.",
+                        "item3": "- בנוסף, אם אתם משתמשים בפחות מ- 10% מקיבולת הסוללה למשך שבועיים או יותר, הסוללה עשויה להפחית באופן זמני את מתח הטעינה ואת הקיבולת, עד לשימוש ב- 50% מהסוללה."
                     }
                 }
             },
@@ -1276,7 +1276,7 @@
                             "description2": "כדי להפעיל תכונה זו באופן מלא, נתקו את המחשב מהחשמלואפשרו לסוללה להתרוקן עד לסף עצירת הטעינה, או מתחתיו.",
                             "enable": "הפעלה",
                             "cancel": "ביטול",
-                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
+                            "description3": "הסוללה ממטבת באופן אוטומטי את מתח הטעינה ואת הקיבולת שלה בהתאם לדפוס השימוש שלכם. אם אתם משתמשים בסוללה במידה מועטה, אין צורך להפעיל את סף טעינת הסוללה."
                         },
                         "options": {
                             "start": "התחילו בטעינה כשהסוללה מתחת",
@@ -1302,7 +1302,7 @@
                         "title": "מצב צריכת חשמל בטיסה",
                         "description": "תכונה זו מאפשרת לך להשתמש בשקע חשמל AC במטוס כאשר יש מגבלה מסוימת מבחינת צריכת החשמל. במצב זה, המחשב מצמצם את צריכת החשמל על-ידי הגבלת קצב טעינת הסוללה וביצועי המחשב.",
                         "checkBoxDesc": "זיהוי אוטומטי",
-                        "note": "אם הזיהוי האוטומטי מסומן, המחשב יפעיל את מצב הטיסה באופן אוטומטי כשהוא יזהה ציוד שנמצא במטוסים ויכבה את מצב הטיסה כאשר תצאו מהמטוס."
+                        "note": "אם הזיהוי האוטומטי מסומן, המחשב יפעיל באופן אוטומטי את מצב צריכת החשמל בטיסה כשהוא יזהה ציוד שנמצא במטוסים ויכבה את מצב הטיסה כאשר תצאו מהמטוס."
                     },
                     "gaugeReset": {
                         "title": "איפוס מד הסוללה",
@@ -1557,7 +1557,7 @@
                     },
                     "optimize": {
                         "title": "מיטוב המיקרופון עבור:",
-                        "tooltip": "הגדירו אפקט מיקרופון כדי לשפר את חוויית השמע באמצעות סביבות ותרחישים שונים.",
+                        "tooltip": "הגדירו אפקט מיקרופון כדי לשפר את חוויית השמע בסביבות ובתרחישים שונים.",
                         "options": {
                             "VoiceRecognition": "זיהוי קול",
                             "OnlyMyVoice": "הקול שלי בלבד",
@@ -1607,7 +1607,7 @@
                             "title": "הערה",
                             "description": "Lenovo Vantage צריך לגשת לפרטי המיקום שלכם לחישוב זמן השקיעה והזריחה באזורכם."
                         },
-                        "tips": "הפעילו את Windows Update או התקינו מנהל התקן גרפי באופן ידני כדי לשחזר את מצב השמירה על העיניים"
+                        "tips": "הפעילו את Windows Update או התקינו מנהל התקן גרפי באופן ידני כדי לשחזר את מצב השמירה על העיניים."
                     },
                     "dispColorTemp": {
                         "title": "טמפרטורת צבע התצוגה",
@@ -1768,7 +1768,7 @@
                             "description": "שינוי פונקציות ברירת המחדל של השורה העליונה דורש הפעלה מחדש של המחשב. להפעיל מחדש, בטוח?",
                             "reboot": "הפעלה מחדש",
                             "cancel": "לא עכשיו",
-                            "yes": "YES"
+                            "yes": "כן"
                         },
                         "note": {
                             "sFunKey": "כדי לגשת לפונקציות F1-F12, לחצו על המקש Fn ועל המקשים בשורה העליונה.",
@@ -1791,10 +1791,10 @@
                 },
                 "userDefinedKey": {
                     "title": "מקש המוגדר על ידי המשתמש",
-                    "caption": "המקש המיוצג על ידי סמל הכוכב מאפשר לכם להגדיר פונקציה על ידי המשתמש",
+                    "caption": "המקש המיוצג על ידי סמל הכוכב מאפשר לכם להגדיר פונקציה על ידי המשתמש.",
                     "dropDown": {
                         "title": "פעולת המקש המוגדר על ידי המשתמש",
-                        "note": "הערה: ניתן להשתמש באפשרות זו כדי להכניס מקש של פריטים נפוצים, כמו דואר אלקטרוני או כתובות דואר. Lenovo ממליצה לא להשתמש בתכונה זו לעולם לשם אחסון והזנת סיסמאות או מידע פרטי אחר.",
+                        "note": "הערה: ניתן להשתמש באפשרות זו כדי להכניס מקש של פריטים נפוצים, כמו דואר אלקטרוני או כתובות דואר. לעולם אל תשתמשו בתכונה זו כדי לאחסן סיסמאות או מידע פרטי אחר.",
                         "options": {
                             "option1": "יש לבחור",
                             "option2": "פתח אתר אינטרנט",
@@ -1832,8 +1832,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "‏‫החלפה בין מקש Fn למקש Ctrl‬",
-                    "description": "אם אתם לוחצים לעתים קרובות על מקש Fn במקום ללחוץ על מקש Ctrl, אפשר להחליף בין הפונקציות של שני המקשים.",
-                    "restartNote": "החלפת הפונקציה של שני מקשים מחייבת הפעלה מחדש של המחשב, האם אתם בטוחים שברצונכם להפעיל מחדש?",
+                    "description": "אם לוחצים לעתים קרובות על מקש Fn כאשר מתכוונים ללחוץ על מקש Ctrl, אפשר להחליף את הפונקציה של שני המקשים.",
+                    "restartNote": "החלפת הפונקציה של שני המפתחות הדורשים הפעלה מחדש של המחשב. להפעיל מחדש, בטוח?",
                     "title2": "Fn פועל כ-Ctrl עבור צירופי מקשים שנמצאים בשימוש תכוף",
                     "description2": "מקש Fn פועל בתור מקש Ctrl עבור כמה צירופי מקשים שכיחים. הפונקציה של מקש Ctrl אינה משתנה.",
                     "featureNote": "לא ניתן להפעיל פונקציה זו ו‫החלפה בין מקש Fn למקש Ctrl‬ בו זמנית. אם מפעילים אחד מהמצבים, השני יושבת אוטומטית.",
@@ -3115,7 +3115,9 @@
                 "yes": "כן",
                 "no": "לא"
             },
-            "waitAvailability": "הלחצן מושבת אם התקני האחסון לא תומכים בפונקציונליות זו, בזמן שמידע מהחומרה נטען או אם מתבצעת סריקה."
+            "waitAvailability": "הלחצן מושבת אם התקני האחסון לא תומכים בפונקציונליות זו, בזמן שמידע מהחומרה נטען או אם מתבצעת סריקה.",
+            "executingTitle": "Recovering now...",
+            "recoverCompleted": "Recovery completed"
         },
         "support": {
             "title": "הורידו כלי אבחון מקצועיים",
@@ -3163,7 +3165,19 @@
             "suggestedActionSupport": "אם יש אחריות על המחשב, לחצו על <b>‏‫פתיחת כרטיס</b> עבור חלק חילוף. למידע נוסף, היכנסו לאתר התמיכה של Lenovo.",
             "supportButtonText": "פתיחת כרטיס",
             "recoverBadSectorsButtonText": "שחזור סקטורים פגומים"
-        }
+        },
+        "scanFinishedHeader": {
+            "titleSuccess": "Scan completed. Your device passed all the tests.",
+            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
+            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
+            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
+            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
+            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
+            "finalResultCodeLabel": "Final Result Code: ",
+            "scanAgainButtonText": "Scan Again",
+            "supportButtonText": "Lenovo Support"
+        },
+        "executingScanTitle": "Scanning {{title}}..."
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3289,7 +3303,7 @@
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
             "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
-            "processStatus": "PROCESSING"
+            "processStatus": "מעבד"
         },
         "scanSettings": {
             "title": "Scan settings",

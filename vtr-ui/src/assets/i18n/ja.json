@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "バッテリーの寿命を延ばすために、使用状況に基づいてフル充電容量を最適化しました。20% まで放電して再充電するまで、バッテリーの全容量を使用できない場合があります。",
-                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
+                    "moreInfo": "詳細については<a role=\"link\" href=\"#/device/high-density-battery\">ここ</a>をクリック。"
                 },
                 "condition": {
                     "Illegal": "取り付けられているバッテリーはシステムでは<b>サポートされない</b>ため、充電は行われません。ご使用のシステムに適した Lenovo バッテリーに交換してください。",
@@ -1101,13 +1101,13 @@
                     "NotDetected": "<b>プライマリー・バッテリーが検出されませんでした。</b>"
                 },
                 "highDensityBattery": {
-                    "title": "High density battery",
-                    "subtitle": "How your battery works",
-                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "title": "高密度バッテリー",
+                    "subtitle": "バッテリーの仕組み",
+                    "para1": "寿命を延ばすために、バッテリーは個人の使用パターンに応じて充電電圧と容量を自動的に調整します。",
                     "para2": {
-                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
-                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
-                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                        "item1": "- バッテリーの容量が 65% 未満で 1 週間以上使用すると、バッテリーによっては充電電圧と容量が一時的に低下する場合があります。容量の減少はわずかであり、お客様の使用パターンでは顕著ではありません。",
+                        "item2": "- バッテリーを 20% 未満に放電してから完全に充電すると、フル容量が復元されます。",
+                        "item3": "- さらに、バッテリーの容量の10% 未満で 2 週間以上使用すると、バッテリーは、低下した容量の 50% が使用されるまで、充電電圧と容量を一時的にさらに低下させる可能性があります。"
                     }
                 }
             },
@@ -1276,7 +1276,7 @@
                             "description2": "この機能を完全に有効にするには、ACアダプターを抜き、充電停止しきい値以下までバッテリーを放電してください。",
                             "enable": "有効にする",
                             "cancel": "キャンセル",
-                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
+                            "description3": "バッテリーは、使用パターンに基づいて充電電圧と容量を自動的に最適化します。バッテリーを軽く使用する場合は、バッテリー充電しきい値を有効にする必要はありません。"
                         },
                         "options": {
                             "start": "次の時点を下回った場合に充電を開始",
@@ -1557,7 +1557,7 @@
                     },
                     "optimize": {
                         "title": "マイクロホンの最適化:",
-                        "tooltip": "さまざまなシナリオや環境に合わせてオーディオ体験を向上させるために、マイク効果を構成します。",
+                        "tooltip": "さまざまなシナリオや環境でオーディオ体験を向上させるために、マイク効果を構成します。",
                         "options": {
                             "VoiceRecognition": "音声認識",
                             "OnlyMyVoice": "自分の声のみ",
@@ -1607,7 +1607,7 @@
                             "title": "お願い",
                             "description": "Lenovo Vantage はその地域の日没と日の出の時刻を計算するために、位置情報にアクセスする必要があります。"
                         },
-                        "tips": "Windows Update を実行するか、グラフィック・ドライバーを手動でインストールして、アイ・ケア・モードを復元してください"
+                        "tips": "Windows Update を実行するか、グラフィック・ドライバーを手動でインストールして、アイ・ケア・モードを復元してください。"
                     },
                     "dispColorTemp": {
                         "title": "日中の色温度",
@@ -1764,11 +1764,11 @@
                             "note": "Fn キーを 2 回押すと、Fn キーをもう一度押すまで、Fn キーは押された状態でロックされます。Fn キーがロックされているときは、Fn Lock インジケーターが点灯します。目的のファンクション・キーを直接押して、デフォルトではない機能を起動できます。"
                         },
                         "popup": {
-                            "title": "コンピューターを再起動する",
+                            "title": "コンピューターを再起動します",
                             "description": "最上部の行の機能を変更するには、コンピューターを再起動する必要があります。再起動しますか?",
                             "reboot": "リブート",
                             "cancel": "今はしない",
-                            "yes": "YES"
+                            "yes": "はい"
                         },
                         "note": {
                             "sFunKey": "F1 ～ F12 機能を使用するには、Fn および最上部の行のキーを押します。",
@@ -1791,10 +1791,10 @@
                 },
                 "userDefinedKey": {
                     "title": "ユーザー定義キー",
-                    "caption": "星のアイコンがついているキーには、ユーザー定義機能を設定できます",
+                    "caption": "星のアイコンがついているキーには、ユーザー定義機能を設定できます。",
                     "dropDown": {
                         "title": "ユーザー定義キーの操作",
-                        "note": "注: メールや郵便番号など、よく入力するキーの入力に使用します。パスワードや個人情報の保存や入力には、この機能を使用しないことをお勧めします。",
+                        "note": "注: メールや郵便番号など、よく入力するキーの入力に使用します。この機能を使用して、パスワードやその他の個人情報を保存しないでください。",
                         "options": {
                             "option1": "選択してください",
                             "option2": "ウェブサイトを開く",
@@ -1832,8 +1832,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "Fn キーと Ctr キーの入れ替え",
-                    "description": "Ctrl キーを押そうとする際に Fn キーを押してしまう場合は、2 つのキーの機能を入れ替えることができます。",
-                    "restartNote": "2 つのキーの機能を交換するには、コンピューターを再起動する必要があります。再起動してもよろしいですか?",
+                    "description": "Ctrl キーを押そうとする際に Fn キーを押してしまう場合、2 つのキーの機能を入れ替えることができます。",
+                    "restartNote": "2 つのキーの機能を交換するには、コンピューターを再起動する必要があります。再起動しますか?",
                     "title2": "頻繁に使用する組み合わせキーとして Fn キーが Ctrl キーとして機能する",
                     "description2": "一部の頻繁に使用する組み合わせキーに関して、Fn キーがCtrl キーとして機能します。Ctrl キーの機能は変更されません。",
                     "featureNote": "この機能と Fn キーおよび Ctrl キーの入れ替え機能を同時にオンにすることはできません。モードのいずれかがオンの場合は、もう一方のモードは自動的にオフになります。",
@@ -3115,7 +3115,9 @@
                 "yes": "はい",
                 "no": "いいえ"
             },
-            "waitAvailability": "ストレージ・デバイスがこの機能をサポートしていない場合、ハードウェア情報を読み込み中の場合、またはスキャンが進行中の場合は、ボタンが無効になります。"
+            "waitAvailability": "ストレージ・デバイスがこの機能をサポートしていない場合、ハードウェア情報を読み込み中の場合、またはスキャンが進行中の場合は、ボタンが無効になります。",
+            "executingTitle": "Recovering now...",
+            "recoverCompleted": "Recovery completed"
         },
         "support": {
             "title": "プロの診断ツールをダウンロードする",
@@ -3163,7 +3165,19 @@
             "suggestedActionSupport": "お使いのコンピューターが保証期間中の場合、「<b>チケットを開く</b>」をクリックして、交換部品をご入手いただけます。詳細については、Lenovo サポート Web サイトをご覧ください。",
             "supportButtonText": "チケットを開く",
             "recoverBadSectorsButtonText": "不良セクターの復元"
-        }
+        },
+        "scanFinishedHeader": {
+            "titleSuccess": "Scan completed. Your device passed all the tests.",
+            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
+            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
+            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
+            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
+            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
+            "finalResultCodeLabel": "Final Result Code: ",
+            "scanAgainButtonText": "Scan Again",
+            "supportButtonText": "Lenovo Support"
+        },
+        "executingScanTitle": "Scanning {{title}}..."
     },
     "smartPerformance": {
         "title": "Smart Performance",
@@ -3289,7 +3303,7 @@
             "descriptionbeta": "Lenovo は、2020 年 7 月まで Smart Performance 機能をお試しいただけるパイロット・プログラムを提供しています。",
             "descriptionbeta1": "参加して全機能を試すことができます。",
             "descriptionNonSubscriber": "Lenovo Smart Performance Service に登録されていません。PC のみをスキャンできます。今すぐ登録して、PC 保護とスムーズな動作のメリットを最大限に活用しましょう。",
-            "processStatus": "PROCESSING"
+            "processStatus": "処理中です"
         },
         "scanSettings": {
             "title": "スキャン設定のスケジュール",

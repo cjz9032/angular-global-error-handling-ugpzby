@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "Om de werkingsduur van de batterij te verlengen, hebben we de volledige laadcapaciteit op basis van uw gebruik geoptimaliseerd. De volledige batterijcapaciteit is mogelijk pas beschikbaar nadat u tot 20% hebt ontladen en opnieuw hebt opgeladen.",
-                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
+                    "moreInfo": "Klik <a role=\"link\" href=\"#/device/high-density-battery\">hier</a> voor meer informatie."
                 },
                 "condition": {
                     "Illegal": "De geïnstalleerde batterij wordt <b>niet ondersteund</b> door het systeem en kan niet worden opgeladen. Vervang de batterij door een Lenovo-batterij die geschikt is voor dit systeem.",
@@ -1101,13 +1101,13 @@
                     "NotDetected": "<b>De primaire batterij is niet gevonden.</b>"
                 },
                 "highDensityBattery": {
-                    "title": "High density battery",
-                    "subtitle": "How your battery works",
-                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "title": "Batterij met hoge dichtheid",
+                    "subtitle": "De werking van de batterij",
+                    "para1": "Om de levensduur van de batterij te verlengen, worden automatisch de laadspanning en capaciteit aangepast als reactie op uw persoonlijke gebruikspatroon.",
                     "para2": {
-                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
-                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
-                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                        "item1": "- Als u een week of langer minder dan 65% van de batterijcapaciteit gebruikt, kan de ladingsspanning en capaciteit van de batterij tijdelijk worden verlaagd. De capaciteitsverlaging is gering en niet merkbaar voor uw gebruikspatroon.",
+                        "item2": "- De volledige capaciteit wordt hersteld als u de batterij tot minder dan 20% ontlaadt en vervolgens volledig laadt.",
+                        "item3": "- Als u verder gedurende 2 weken of langer minder dan 10% van de batterijcapaciteit gebruikt, worden de laadspanning en capaciteit mogelijk verder verlaagd, totdat 50% van de verminderde batterijcapaciteit wordt gebruikt."
                     }
                 }
             },
@@ -1276,7 +1276,7 @@
                             "description2": "Haal de stekker uit het stopcontact en ontlaad de batterij tot onder het niveauwaarop het opladen wordt gestopt om deze functie volledig te activeren.",
                             "enable": "INSCHAKELEN",
                             "cancel": "ANNULEREN",
-                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
+                            "description3": "De batterij optimaliseert automatisch de laadspanning en capaciteit op basis van uw gebruikspatroon. Als u de batterij weinig gebruikt, hoeft u de drempelwaarde voor de batterijlading niet in te schakelen."
                         },
                         "options": {
                             "start": "Beginnen met opladen als de resterende capaciteit van de batterij lager is dan",
@@ -1557,7 +1557,7 @@
                     },
                     "optimize": {
                         "title": "Microfoon optimaliseren voor:",
-                        "tooltip": "Microfoon effect configureren om uw audio-ervaring te verbeteren door verschillende scenario's en omgeving.",
+                        "tooltip": "Microfooneffect configureren om uw audio-ervaring te verbeteren in verschillende scenario's en omgevingen.",
                         "options": {
                             "VoiceRecognition": "SPRAAKHERKENNING",
                             "OnlyMyVoice": "ALLEEN MIJN STEM",
@@ -1585,7 +1585,7 @@
                 "display": {
                     "title": "Weergave",
                     "displayColorTemperature": {
-                        "title": "Oogzorgmodus",
+                        "title": "Oogzorg-modus",
                         "description": "Om de vermoeide ogen te voorkomen, kunt u de kleurtemperatuur van het beeldscherm aanpassen om het blauwe lampje uit te filteren als u de computer voor langere tijd gebruikt. Bovendien zijn warme kleuren goed voor uw slaap, vooral 's avonds.",
                         "link": {
                             "click": "Klik",
@@ -1607,7 +1607,7 @@
                             "title": "Opmerking",
                             "description": "Lenovo Vantage heeft toegang nodig tot uw locatiegegevens voor het berekenen van de tijd voor zonsondergang en zonsopgang van uw regio."
                         },
-                        "tips": "Voer Windows Update uit of installeer handmatig een grafisch stuurprogramma om de Oogzorg-modus te herstellen"
+                        "tips": "Voer Windows Update uit of installeer handmatig een grafisch stuurprogramma om de Oogzorg-modus te herstellen."
                     },
                     "dispColorTemp": {
                         "title": "Kleurtemperatuur weergeven",
@@ -1764,11 +1764,11 @@
                             "note": "Als u tweemaal op de Fn-toets drukt, blijft de Fn-toets in de ingeschakelde toestand totdat u weer op de Fn-toets drukt. Als de Fn-toets vergrendeld is, brandt de indicator voor de Fn-toets. U kunt de gewenste functietoets direct indrukken om de niet-standaardfunctie te gebruiken."
                         },
                         "popup": {
-                            "title": "Start de computer opnieuw op",
+                            "title": "De computer opnieuw opstarten",
                             "description": "Als u de standaardfunctie van de bovenste rij wijzigt, moet u uw computer opnieuw opstarten. Weet u zeker dat u opnieuw wilt opstarten?",
                             "reboot": "OPNIEUW OPSTARTEN",
                             "cancel": "NIET NU",
-                            "yes": "YES"
+                            "yes": "JA"
                         },
                         "note": {
                             "sFunKey": "Om de functietoetsen F1-F12 te gebruiken, druk op Fn en de toetsen op de bovenste rij.",
@@ -1791,10 +1791,10 @@
                 },
                 "userDefinedKey": {
                     "title": "Door gebruiker gedefinieerde toets",
-                    "caption": "Met de toets met het sterpictogram kunt u een door de gebruiker gedefinieerde functie instellen",
+                    "caption": "Met de toets met het sterpictogram kunt u de door de gebruiker gedefinieerde functie instellen.",
                     "dropDown": {
                         "title": "Actie van de door de gebruiker gedefinieerde toets",
-                        "note": "Opmerking: dit kan worden gebruikt om veelgebruikte toetsenreeksen in te voeren, zoals een e-mail- of postadres. Lenovo raadt u aan deze functie nooit te gebruiken voor het opslaan en invoeren van wachtwoorden of andere privégegevens.",
+                        "note": "Opmerking: dit kan worden gebruikt om veelgebruikte toetsenreeksen in te voeren, zoals een e-mail- of postadres. Gebruik deze functie nooit om wachtwoorden of andere persoonlijke informatie op te slaan.",
                         "options": {
                             "option1": "Maak een keuze",
                             "option2": "Open de website",
@@ -1832,8 +1832,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "Fn-toets en Ctrl-toets wisselen",
-                    "description": "Als u uit gewoonte op de Fn-toets drukt als u op de Ctrl-toets wilt drukken, kunt u de functie van de twee toetsen omwisselen.",
-                    "restartNote": "Als u de functie van twee toetsen wilt wisselen, moet u de computer opnieuw opstarten. Weet u zeker dat u opnieuw wilt opstarten?",
+                    "description": "Als u uit gewoonte op de Fn-toets drukt als u op de Ctrl-toets wilt drukken dan kunt u de functie van de twee toetsen verwisselen.",
+                    "restartNote": "Als u de functie van de twee toetsen omwisselt, moet u uw computer opnieuw opstarten. Weet u zeker dat u opnieuw wilt opstarten?",
                     "title2": "Fn werkt als Ctrl voor vaak gebruikte toetsencombinaties",
                     "description2": "De Fn-toets werkt als de Ctrl-toets voor sommige vaak gebruikte toetsencombinaties. De functie van de Ctrl-toets wijzigt niet.",
                     "featureNote": "U kunt deze functie en de Fn-toets en de Ctrl-toets niet tegelijk gebruiken. Als de ene wordt ingeschakeld, wordt de andere automatisch uitgeschakeld.",
@@ -3115,7 +3115,9 @@
                 "yes": "Ja",
                 "no": "Nee"
             },
-            "waitAvailability": "De knop wordt uitgeschakeld als de opslagapparaten deze functionaliteit niet ondersteunen, terwijl de hardwaregegevens worden geladen of als er een scan wordt uitgevoerd."
+            "waitAvailability": "De knop wordt uitgeschakeld als de opslagapparaten deze functionaliteit niet ondersteunen, terwijl de hardwaregegevens worden geladen of als er een scan wordt uitgevoerd.",
+            "executingTitle": "Recovering now...",
+            "recoverCompleted": "Recovery completed"
         },
         "support": {
             "title": "Professionele diagnosehulpprogramma's downloaden",
@@ -3163,7 +3165,19 @@
             "suggestedActionSupport": "Als uw computer nog onder garantie valt, klikt u op <b>Ticket openen</b> om een vervangend onderdeel aan te vragen. Ga voor meer informatie naar de ondersteuningswebsite van Lenovo.",
             "supportButtonText": "Ticket openen",
             "recoverBadSectorsButtonText": "Slechte sectoren herstellen"
-        }
+        },
+        "scanFinishedHeader": {
+            "titleSuccess": "Scan completed. Your device passed all the tests.",
+            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
+            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
+            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
+            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
+            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
+            "finalResultCodeLabel": "Final Result Code: ",
+            "scanAgainButtonText": "Scan Again",
+            "supportButtonText": "Lenovo Support"
+        },
+        "executingScanTitle": "Scanning {{title}}..."
     },
     "smartPerformance": {
         "title": "Smart Performance",
@@ -3289,7 +3303,7 @@
             "descriptionbeta": "Lenovo biedt een pilotprogramma aan om de Smart Performance-functie tot en met juli 2020 uit te proberen.",
             "descriptionbeta1": "U wordt uitgenodigd om de volledige functie uit te proberen.",
             "descriptionNonSubscriber": "U bent niet geabonneerd op Lenovo Smart Performance Service. U kunt alleen uw pc scannen. Abonneer u nu en profiteer optimaal van de voordelen om uw pc te beschermen en goed te laten werken.",
-            "processStatus": "PROCESSING"
+            "processStatus": "BEZIG"
         },
         "scanSettings": {
             "title": "Scaninstellingen plannen",

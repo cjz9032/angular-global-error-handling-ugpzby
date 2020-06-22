@@ -1073,7 +1073,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "لتمديد عمر البطارية، قمنا بتحسين سعة شحنها الكاملة بالاستناد إلى استخدامك. قد لا تتوفر سعة البطارية الكاملة حتى تفريغ الشحنة إلى 20% وإعادة الشحن.",
-                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
+                    "moreInfo": "انقر <a role=\"link\" href=\"#/device/high-density-battery\">هنا</a> للحصول على مزيد من المعلومات."
                 },
                 "condition": {
                     "Illegal": "البطارية المركّبة <b>غير مدعومة</b> بواسطة النظام ولن يتم شحنها. الرجاء استبدال البطارية ببطارية Lenovo المناسبة لهذا النظام.",
@@ -1103,13 +1103,13 @@
                     "NotDetected": "<b>لم يتم الكشف عن البطارية الرئيسية.</b>"
                 },
                 "highDensityBattery": {
-                    "title": "High density battery",
-                    "subtitle": "How your battery works",
-                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "title": "بطارية عالية الكثافة",
+                    "subtitle": "كيف تعمل بطاريتك",
+                    "para1": "لزيادة عمر البطارية، تضبط البطارية بشكل تلقائي جهد الشحن وسعته استجابة لنمط استخدامك الشخصي.",
                     "para2": {
-                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
-                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
-                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                        "item1": "- إذا كنت تستخدم أقل من 65% من سعة البطارية لمدة أسبوع أو أكثر، فقد تقلل البطارية جهد الشحن وسعته بشكل مؤقت. يعد انخفاض السعة طفيفًا ولا يمكن ملاحظته لنمط استخدامك.",
+                        "item2": "- تُستعاد السعة الكاملة عند تفريغ البطارية أقل إلى نسبة تقل عن 20% ثم شحنها بالكامل.",
+                        "item3": "- بالإضافة إلى ذلك، إذا كنت تستخدم أقل من 10% من سعة البطارية لمدة أسبوعين (2) أو أكثر، فقد تزيد البطارية من تقليل جهد الشحن وسعته بشكل مؤقت، حتى يتم استخدام 50% من سعة البطارية المخفضة."
                     }
                 }
             },
@@ -1278,7 +1278,7 @@
                             "description2": "وحتى يتسنى لك تمكين هذه الميزة بشكل كامل، افصل الطاقة عن الجهاز،ودع البطارية تستهلك الطاقة حتى تصل إلى حد إيقاف الشحن أو أقل منه.",
                             "enable": "تمكين",
                             "cancel": "إلغاء",
-                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
+                            "description3": "تعمل البطارية تلقائيًا على تحسين جهد شحنها وسعتها استنادًا إلى نمط الاستخدام الخاص بك. إذا كنت تستخدم البطارية بصورة طفيفة، فلا يلزم تمكين حد شحن البطارية."
                         },
                         "options": {
                             "start": "بدء الشحن عندما تكون الشحنة أقل من",
@@ -1304,7 +1304,7 @@
                         "title": "وضع الطاقة في الطائرة",
                         "description": "تمكنك هذه الميزة من استخدام مأخذ طاقة التيار المتردد على متن الطائرة حيث يتم تطبيق حد معين للطاقة. في هذا الوضع، يخفض الكمبيوتر استهلاك الطاقة إلى مستوى آمن من خلال الحد من سرعة شحن البطارية وأداء الكمبيوتر.",
                         "checkBoxDesc": "الكشف التلقائي",
-                        "note": "إذا تم اختيار ميزة \"الكشف التلقائي\"، فسيقوم الكمبيوتر بتشغيل وضع الطاقة في الطائرة تلقائيًا عندما يكتشف بيئة متن الطائرة ويغلقه عند مغادرة هذه البيئة."
+                        "note": "إذا تم اختيار ميزة الكشف التلقائي، فسيقوم الكمبيوتر بتشغيل وضع الطاقة في الطائرة تلقائيًا عندما يكتشف بيئة على الطائرة ويغلقه عند مغادرة هذه البيئة."
                     },
                     "gaugeReset": {
                         "title": "إعادة تعيين مقياس البطارية",
@@ -1559,7 +1559,7 @@
                     },
                     "optimize": {
                         "title": "تحسين الميكروفون من أجل:",
-                        "tooltip": "قم بتكوين تأثير الميكروفون لتحسين تجربة الصوت من خلال سيناريوهات وبيئات مختلفة.",
+                        "tooltip": "قم بتكوين تأثير الميكروفون لتحسين تجربة الصوت في سيناريوهات وبيئات مختلفة.",
                         "options": {
                             "VoiceRecognition": "التعرف على الصوت",
                             "OnlyMyVoice": "صوتي فقط",
@@ -1609,7 +1609,7 @@
                             "title": "ملحوظة",
                             "description": "يحتاج Lenovo Vantage إلى الوصول إلى معلومات موقعك لحساب وقت الغروب وشروق الشمس في منطقتك."
                         },
-                        "tips": "يرجى تشغيل Windows Update أو تثبيت برنامج تشغيل الرسومات يدويًا لاسترداد وضع العناية بالعين"
+                        "tips": "يرجى تشغيل Windows Update أو تثبيت برنامج تشغيل الرسومات يدويًا لاسترداد وضع العناية بالعين."
                     },
                     "dispColorTemp": {
                         "title": "درجة حرارة ألوان جهاز العرض",
@@ -1768,7 +1768,7 @@
                             "description": "يتطلب تغيير وظيفة الصف العلوي الافتراضي إعادة تشغيل الكمبيوتر. هل تريد بالتأكيد إعادة التشغيل؟",
                             "reboot": "إعادة تشغيل",
                             "cancel": "ليس الآن",
-                            "yes": "YES"
+                            "yes": "نعم"
                         },
                         "showAdvSettings": "إظهار الإعدادات المتقدمة",
                         "hideAdvSettings": "إخفاء الإعدادات المتقدمة",
@@ -1793,10 +1793,10 @@
                 },
                 "userDefinedKey": {
                     "title": "مفتاح معرّف من قِبل المستخدم",
-                    "caption": "يسمح لك المفتاح الممثل بواسطة أيقونة النجمة بتعيين وظيفة معرّفة من قِبل المستخدم",
+                    "caption": "يسمح لك المفتاح الممثل بواسطة أيقونة النجمة بتعيين وظيفة معرّفة من قِبل المستخدم.",
                     "dropDown": {
                         "title": "إجراء مفتاح معرّف من قِبل المستخدم",
-                        "note": "ملاحظة: يمكن استخدام هذا لإدخال مفتاح الذي يتم إدخاله بشكل شائع، كالبريد الإلكتروني أو العناوين البريدية. تنصح Lenovo بعدم استخدام هذه الميزة إطلاقًا لتخزين وإدخال كلمات المرور أو أي معلومات أخرى خاصة.",
+                        "note": "ملاحظة: يمكن استخدام هذا لإدخال مفتاح الذي يتم إدخاله بشكل شائع، كالبريد الإلكتروني أو العناوين البريدية. لا تستخدم هذه الميزة إطلاقًا لتخزين كلمات المرور أو أي معلومات خاصة أخرى.",
                         "options": {
                             "option1": "يُرجى تحديد",
                             "option2": "افتح الموقع",
@@ -1834,7 +1834,7 @@
                 },
                 "fnCtrlKey": {
                     "title": "مبادلة المفتاح Fn والمفتاح Ctrl‬",
-                    "description": "إذا كنت تضغط عادةً على المفتاح Fn عندما تريد الضغط على المفتاح Ctrl، فيمكنك مبادلة وظائف المفتاحين.",
+                    "description": "إذا كنت معتادًا على الضغط على المفتاح Fn عند الرغبة في الضغط على المفتاح Ctrl، يمكنك تبديل وظيفة المفتاحين.",
                     "restartNote": "يتطلب تبديل وظيفة المفتاحين إعادة تشغيل الكمبيوتر. هل تريد بالتأكيد إعادة التشغيل؟",
                     "title2": "يعمل المفتاح Fn كمفتاح Ctrl في مجموعات المفاتيح شائعة الاستخدام.",
                     "description2": "ويعمل المفتاح Fn كمفتاح Ctrl في بعض مجموعات المفاتيح شائعة الاستخدام. لا تتغير وظيفة المفتاح Ctrl.",
@@ -3117,7 +3117,9 @@
                 "yes": "نعم",
                 "no": "لا"
             },
-            "waitAvailability": "يتم تعطيل الزر إذا كانت أجهزة التخزين لا تدعم هذه الوظيفة، أثناء تحميل معلومات الجهاز أو في حالة وجود عملية مسح قيد التقدم."
+            "waitAvailability": "يتم تعطيل الزر إذا كانت أجهزة التخزين لا تدعم هذه الوظيفة، أثناء تحميل معلومات الجهاز أو في حالة وجود عملية مسح قيد التقدم.",
+            "executingTitle": "Recovering now...",
+            "recoverCompleted": "Recovery completed"
         },
         "support": {
             "title": "تنزيل أدوات تشخيص احترافية",
@@ -3165,7 +3167,19 @@
             "suggestedActionSupport": "إذا كان جهاز الكمبيوتر خاضعًا للضمان، فانقر فوق <b>فتح تذكرة</b> للحصول على قطعة بديلة. لمزيد من المعلومات، انتقل إلى موقع ويب دعم Lenovo.",
             "supportButtonText": "فتح تذكرة",
             "recoverBadSectorsButtonText": "استعادة القطاعات المصابة"
-        }
+        },
+        "scanFinishedHeader": {
+            "titleSuccess": "Scan completed. Your device passed all the tests.",
+            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
+            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
+            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
+            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
+            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
+            "finalResultCodeLabel": "Final Result Code: ",
+            "scanAgainButtonText": "Scan Again",
+            "supportButtonText": "Lenovo Support"
+        },
+        "executingScanTitle": "Scanning {{title}}..."
     },
     "smartPerformance": {
         "title": "Smart Performance",
@@ -3291,7 +3305,7 @@
             "descriptionbeta": "يعرض Lenovo برنامجًا تجريبيًا لتجربة ميزة Smart Performance حتى يوليو 2020.",
             "descriptionbeta1": "ونحن ندعوك بكل ترحاب إلى الانضمام وتجربة الميزة الكاملة.",
             "descriptionNonSubscriber": "أنت غير مشترك في ميزة Smart Performance من Lenovo. ستتمكن فقط من فحص جهاز الكمبيوتر الخاص بك. اشترِك الآن للحصول على الفوائد الكاملة للحفاظ على حماية جهاز الكمبيوتر الخاص بك وأدائه السلس.",
-            "processStatus": "PROCESSING"
+            "processStatus": "معالجة"
         },
         "scanSettings": {
             "title": "إعدادات جدولة الفحص",

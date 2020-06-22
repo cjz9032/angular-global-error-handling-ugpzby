@@ -925,7 +925,7 @@
         },
         "systemStatus": {
             "title": "Systemstatus",
-            "subtitle": "Schnelle Übersicht über den Gerätestatus.",
+            "subtitle": "Schnelle Übersicht über den Status Ihrer Einheit.",
             "memory": {
                 "title": "Hauptspeicher",
                 "detail": {
@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "Um die Lebensdauer Ihres Akkus zu verlängern, haben wir die volle Ladekapazität anhand Ihrer Nutzung optimiert. Die volle Akkukapazität ist möglicherweise erst verfügbar, wenn Sie den Akku bis auf 20 % entladen und anschließend wieder laden.",
-                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
+                    "moreInfo": "Klicken Sie <a role=\"link\" href=\"#/device/high-density-battery\">hier</a>, um weitere Informationen zu erhalten."
                 },
                 "condition": {
                     "Illegal": "Der installierte Akku wird vom System <b>nicht unterstützt</b> und kann nicht geladen werden. Ersetzen Sie den Akku mit dem richtigen Lenovo Akku für dieses System.",
@@ -1101,13 +1101,13 @@
                     "NotDetected": "<b>Der primäre Akku wird nicht erkannt.</b>"
                 },
                 "highDensityBattery": {
-                    "title": "High density battery",
-                    "subtitle": "How your battery works",
-                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "title": "Akku mit hoher Dichte",
+                    "subtitle": "Funktionsweise des Akkus",
+                    "para1": "Um die Lebensdauer des Akkus zu verlängern, passt der Akku ausgehend von Ihrem Nutzungsverhalten automatisch die Ladespannung und Kapazität an.",
                     "para2": {
-                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
-                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
-                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                        "item1": "– Wenn Sie eine Woche oder länger maximal 65 % der Kapazität Ihres Akkus verwenden, kann der Akku vorübergehend die Ladespannung und Kapazität verringern. Die Reduzierung ist geringfügig und unmerklich für Ihr Nutzungsverhalten.",
+                        "item2": "– Die vollständige Kapazität wird wiederhergestellt, wenn Sie den Akku unter 20 % entladen und den Akku anschließend vollständig aufladen.",
+                        "item3": "– Wenn Sie außerdem zwei Wochen oder länger maximal 10 % der Kapazität Ihres Akkus verwenden, kann der Akku vorübergehend die Ladespannung und Kapazität noch weiter verringern, bis 50 % der reduzierten Akkukapazität verwendet wird."
                     }
                 }
             },
@@ -1276,7 +1276,7 @@
                             "description2": "Um diese Funktion komplett zu aktivieren, trennen Sie bitte Ihr Gerät von der Stromversorgung undwarten Sie, bis der Akku ganz entladen ist oder die Kapazität unter dem Schwellenwert liegt.",
                             "enable": "AKTIVIEREN",
                             "cancel": "ABBRECHEN",
-                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
+                            "description3": "Der Akku passt ausgehend von Ihrem Nutzungsverhalten automatisch die Ladespannung und Kapazität an. Wenn Sie den Akku selten verwenden, müssen Sie den Schwellenwert für Akkuladung nicht aktivieren."
                         },
                         "options": {
                             "start": "Aufladen starten bei",
@@ -1557,7 +1557,7 @@
                     },
                     "optimize": {
                         "title": "Mein Mikrofon optimieren für:",
-                        "tooltip": "Konfigurieren Sie den Mikrofoneffekt, um Ihr Klangerlebnis durch verschiedene Szenarien und Umgebungen zu verbessern.",
+                        "tooltip": "Konfigurieren Sie den Mikrofoneffekt, um Ihr Klangerlebnis in verschiedenen Szenarien und Umgebungen zu verbessern.",
                         "options": {
                             "VoiceRecognition": "SPRACHERKENNUNG",
                             "OnlyMyVoice": "NUR MEINE STIMME",
@@ -1607,7 +1607,7 @@
                             "title": "Anmerkung",
                             "description": "Lenovo Vantage muss auf Ihre Standortinformationen zugreifen, um die Sonnenuntergangs- und Sonnenaufgangszeit Ihrer Gegend zu berechnen."
                         },
-                        "tips": "Führen Sie Windows Update aus oder installieren Sie den Grafiktreiber manuell, um den Modus \"Augen schonen\" wiederherzustellen"
+                        "tips": "Führen Sie Windows Update aus oder installieren Sie den Grafiktreiber manuell, um den Modus \"Augen schonen\" wiederherzustellen."
                     },
                     "dispColorTemp": {
                         "title": "Farbtemperatur der Anzeige",
@@ -1768,7 +1768,7 @@
                             "description": "Nach Ändern der Standardfunktion der oberen Reihe müssen Sie Ihren Computer neu starten. Möchten Sie wirklich neu starten?",
                             "reboot": "NEU STARTEN",
                             "cancel": "NICHT JETZT",
-                            "yes": "YES"
+                            "yes": "JA"
                         },
                         "note": {
                             "sFunKey": "Um die F1-F12-Funktion zu verwenden, drücken Sie die Fn-Taste und die Tasten in der obersten Reihe.",
@@ -1791,10 +1791,10 @@
                 },
                 "userDefinedKey": {
                     "title": "Benutzerdefinierte Taste",
-                    "caption": "Für die Taste mit dem Stern-Symbol können Sie eine benutzerdefinierte Funktion festlegen",
+                    "caption": "Für die Taste mit dem Stern-Symbol können Sie eine benutzerdefinierte Funktion festlegen.",
                     "dropDown": {
                         "title": "Aktion für benutzerdefinierte Taste",
-                        "note": "Hinweis: Mit dieser Funktion kann Text eingefügt werden, z. B. eine E-Mail-Adresse oder Postanschrift. Lenovo empfiehlt, diese Funktion niemals zum Speichern und Eingeben von Kennwörtern oder anderen vertraulichen Daten zu verwenden.",
+                        "note": "Hinweis: Mit dieser Funktion kann Text eingefügt werden, z. B. eine E-Mail-Adresse oder Postanschrift. Verwenden Sie diese Funktion niemals zum Speichern von Kennwörtern oder anderen privaten Daten.",
                         "options": {
                             "option1": "Bitte auswählen",
                             "option2": "Webseite öffnen",
@@ -1833,7 +1833,7 @@
                 "fnCtrlKey": {
                     "title": "Austausch der Funktionen von Fn- und Strg-Taste",
                     "description": "Falls Sie aus Gewohnheit die Fn-Taste drücken, wenn Sie eigentlich die Strg-Taste drücken möchten, können Sie die Funktion der beiden Tasten vertauschen.",
-                    "restartNote": "Sie müssen den Computer neu starten, um die Funktion der beiden Tasten zu tauschen. Möchten Sie den Computer jetzt neu starten?",
+                    "restartNote": "Nach dem Funktionswechsel der zwei Tasten müssen Sie Ihren Computer neu starten. Möchten Sie wirklich neu starten?",
                     "title2": "Fn funktioniert wie Strg für häufig verwendete Tastenkombinationen",
                     "description2": "Die Fn-Taste funktioniert für einige häufig verwendete Tastenkombinationen wie die Strg-Taste. Die Strg-Taste funktioniert weiterhin wie gewohnt.",
                     "featureNote": "Diese Funktion und die Funktion zum Wechseln von Fn-Taste und Strg-Taste können nicht gleichzeitig aktiviert sein. Wenn eine Funktion eingeschaltet ist, wird die andere automatisch ausgeschaltet.",
@@ -3115,7 +3115,9 @@
                 "yes": "Ja",
                 "no": "Nein"
             },
-            "waitAvailability": "Falls die Speichereinheiten diese Funktionalität nicht unterstützen und die Hardwareinformationen abgerufen werden oder ein Scanvorgang durchgeführt wird, ist die Schaltfläche deaktiviert."
+            "waitAvailability": "Falls die Speichereinheiten diese Funktionalität nicht unterstützen und die Hardwareinformationen abgerufen werden oder ein Scanvorgang durchgeführt wird, ist die Schaltfläche deaktiviert.",
+            "executingTitle": "Recovering now...",
+            "recoverCompleted": "Recovery completed"
         },
         "support": {
             "title": "Professionelle Diagnosetools herunterladen",
@@ -3163,7 +3165,19 @@
             "suggestedActionSupport": "Wenn Ihr Computer unter die Garantie fällt, klicken Sie auf <b>Ticket eröffnen</b>, um ein Ersatzteil zu erhalten. Weitere Informationen finden Sie auf der Lenovo Unterstützungswebsite.",
             "supportButtonText": "Ticket eröffnen",
             "recoverBadSectorsButtonText": "Wiederherstellung von fehlerhaften Sektoren"
-        }
+        },
+        "scanFinishedHeader": {
+            "titleSuccess": "Scan completed. Your device passed all the tests.",
+            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
+            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
+            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
+            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
+            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
+            "finalResultCodeLabel": "Final Result Code: ",
+            "scanAgainButtonText": "Scan Again",
+            "supportButtonText": "Lenovo Support"
+        },
+        "executingScanTitle": "Scanning {{title}}..."
     },
     "smartPerformance": {
         "title": "Smart Performance",
@@ -3289,7 +3303,7 @@
             "descriptionbeta": "Lenovo bietet ein Pilotprogramm zum Testen der Smart Performance-Funktionen bis Juli 2020.",
             "descriptionbeta1": "Melden Sie sich gern an, um alle Funktionen auszuprobieren.",
             "descriptionNonSubscriber": "Sie haben den Lenovo Smart Performance Service nicht abonniert. Sie können nur Ihren PC scannen. Abonnieren Sie jetzt für Zugriff auf alle Funktionen, mit denen Ihr PC durchgängig geschützt wird und reibungslos funktioniert.",
-            "processStatus": "PROCESSING"
+            "processStatus": "LÄUFT"
         },
         "scanSettings": {
             "title": "Scanzeitplan festlegen",

@@ -925,7 +925,7 @@
         },
         "systemStatus": {
             "title": "Status sustava",
-            "subtitle": "Brzo shvatite status svog uređaja.",
+            "subtitle": "Brzo saznajte status uređaja.",
             "memory": {
                 "title": "Memorija",
                 "detail": {
@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "Da bismo produžili vijek trajanja baterije, optimizirali smo njezin puni kapacitet na temelju vaše upotrebe. Puni kapacitet baterije možda neće biti dostupan dok je ne ispraznite na 20% i ponovno je napunite.",
-                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
+                    "moreInfo": "Kliknite <a role=\"link\" href=\"#/device/high-density-battery\">ovdje</a> za više informacija."
                 },
                 "condition": {
                     "Illegal": "Ovaj sustav <b>ne podržava</b> umetnutu bateriju te je neće puniti. Bateriju zamijenite odgovarajućom baterijom tvrtke Lenovo za ovaj sustav.",
@@ -1101,13 +1101,13 @@
                     "NotDetected": "<b>Primarna baterija nije otkrivena.</b>"
                 },
                 "highDensityBattery": {
-                    "title": "High density battery",
-                    "subtitle": "How your battery works",
-                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "title": "Baterija velike gustoće",
+                    "subtitle": "Kada radi vaša baterija",
+                    "para1": "Da bi povećala radni vijek baterije, vaša baterija automatski prilagođava napon punjenja i kapacitet kao odgovor na vaš obrazac osobne upotrebe.",
                     "para2": {
-                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
-                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
-                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                        "item1": "- Ako koristite manje od 65 % kapaciteta baterije tjedan dana ili duže, baterija može privremeno smanjiti napon punjenja i kapacitet. Smanjenje kapaciteta je malo i nije vidljivo za vaš obrazac upotrebe.",
+                        "item2": "- Kada ispraznite bateriju ispod 20 %, a zatim je potpuno napunite vraćen je puni kapacitet baterije.",
+                        "item3": "- Osim toga, ako koristite manje od 10 % kapaciteta baterije 2 tjedna ili duže, baterija može privremeno smanjiti napon punjenja i kapacitet sve dok se ne potroši 50 % smanjenog kapaciteta baterije."
                     }
                 }
             },
@@ -1195,7 +1195,7 @@
                             "battery&Quite": "BATERIJA I TIŠINA"
                         }
                     },
-                    "description5": "Pametno hlađenje podešava brzinu ventilatora i maksimalne performanse te upravlja trajanjem baterije. Ova značajka ima 3 načina rada (tihi način rada, balansirani način i način performansi), a sada je dostupna putem klizača napajanja sustava Windows.",
+                    "description5": "Pametno hlađenje podešava brzinu ventilatora i maksimalne performanse te upravlja trajanjem baterije. Ova značajka ima 3 načina rada (Tihi način rada, Balansirani način rada i Način rada izvedbe) i sada joj možete pristupiti putem klizača performansi sustava Windows.",
                     "nocqldesc": "Inteligentno hlađenje vam omogućava podešavanje performansi sustava i temperature zagrijavanja. U načinu \"Performanse\" optimizira performanse sustava. Isto tako, u načinu \"Hladno i tiho\" pomaže u održavanju hladnijeg ili tišeg rada sustava.",
                     "dytc6": {
                         "desc1": "Pametno hlađenje podešava brzinu ventilatora i maksimalne performanse te upravlja trajanjem baterije.",
@@ -1276,7 +1276,7 @@
                             "description2": "Kako biste u potpunosti omogućili tu značajku, odspojite uređaj ipustite da se baterija isprazni na prag za zaustavljanje punjenja ili ispod njega.",
                             "enable": "OMOGUĆI",
                             "cancel": "ODUSTANI",
-                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
+                            "description3": "Vaša baterija automatski optimizira napon i kapacitet napunjenosti na temelju vašeg obrasca upotrebe. Ako koristite bateriju u manjoj mjeri nije potrebno omogućiti Prag punjenja baterije."
                         },
                         "options": {
                             "start": "Pokreni punjenje kada je ispod",
@@ -1302,7 +1302,7 @@
                         "title": "Način napajanja u zrakoplovu",
                         "description": "Ova značajka omogućuje vam da koristite izmjeničnu utičnicu u zrakoplovu gdje vrijedi određeno ogranićenje snage. U ovom se načinu potrošnja energije vašeg računala smanjuje na sigurnu razinu ograničavanjem brzine napunjenosti baterije i performansi računala.",
                         "checkBoxDesc": "Automatsko otkrivanje",
-                        "note": "Ako je označeno Automatsko otkrivanje, računalo će automatski uključiti Način napajanja u zrakoplovu kada otkrije okruženje unutar zrakoplova i isključiti ga po napuštanju okruženja."
+                        "note": "Ako je označeno Automatsko otkrivanje, vaše računalo će automatski uključiti način rada u zrakoplovu kada otkrije okruženje zrakoplova i isključiti ga kad odete."
                     },
                     "gaugeReset": {
                         "title": "Ponovno postavljanje mjerača napunjenosti baterije",
@@ -1557,7 +1557,7 @@
                     },
                     "optimize": {
                         "title": "Optimiziraj mikrofon za:",
-                        "tooltip": "Konfigurirajte efekt mikrofona kako biste poboljšali svoje audio iskustvo u skladu s različitim scenarijima i okruženjima.",
+                        "tooltip": "Konfigurirajte učinak mikrofona za poboljšani audio doživljaj u različitim scenarijima i okruženju.",
                         "options": {
                             "VoiceRecognition": "PREPOZNAVANJE GLASA",
                             "OnlyMyVoice": "SAMO MOJ GLAS",
@@ -1607,7 +1607,7 @@
                             "title": "Napomena",
                             "description": "Lenovo Vantage mora pristupiti informacijama o lokaciji kako bi izračunao vrijeme zalaska i izlaska sunca u vašoj regiji."
                         },
-                        "tips": "Pokrenite Windows Update ili ručno instalirajte grafički upravljački program da biste oporavili način Eye Care"
+                        "tips": "Pokrenite Windows Update ili ručno instalirajte grafički upravljački program da biste oporavili način rada ugodan za oči."
                     },
                     "dispColorTemp": {
                         "title": "Temperatura boje prikaza",
@@ -1764,11 +1764,11 @@
                             "note": "Kada tipku Fn pritisnete dva puta, ona će se zaključati u pritisnutom stanju sve dok je ponovno ne pritisnete. Kada je tipka Fn zaključana, uključi se indikator zaključavanja tipke Fn. Kako biste pokrenuli funkciju koja nije zadana, možete izravno pritisnuti željenu funkcijsku tipku."
                         },
                         "popup": {
-                            "title": "Ponovno pokretanje računala",
+                            "title": "Ponovno pokrenite računalo",
                             "description": "Kako bi se promijenile zadane funkcije u gornjem redu, potrebno je ponovno pokretanje računala. Želite li zaista ponovno pokretanje?",
                             "reboot": "PONOVNO POKRETANJE",
                             "cancel": "NE SADA",
-                            "yes": "YES"
+                            "yes": "DA"
                         },
                         "note": {
                             "sFunKey": "Da biste pristupili funkcijama F1 – F12, pritisnite Fn i tipke u gornjem redu.",
@@ -1791,10 +1791,10 @@
                 },
                 "userDefinedKey": {
                     "title": "Korisnički definirana tipka",
-                    "caption": "Tipka označena ikonom zvijezde omogućuje vam postavljanje korisnički definirane funkcije",
+                    "caption": "Tipka označena ikonom zvijezde omogućuje vam postavljanje korisnički definirane funkcije.",
                     "dropDown": {
                         "title": "Radnja korisnički definirane tipke",
-                        "note": "Napomena: Ovo je moguće koristiti za često korišteni niz, primjerice e-poštu ili poštansku adresu. Lenovo preporučuje da ovu značajku nikad ne koristite za pohranu i unos lozinki ili drugih osobnih podataka.",
+                        "note": "Napomena: Ovo je moguće koristiti za često korišteni niz, primjerice e-poštu ili poštansku adresu. Nikada ne koristite ovu značajku za pohranu lozinki ili drugih privatnih podataka.",
                         "options": {
                             "option1": "Odaberite",
                             "option2": "Otvori web-lokaciju",
@@ -1832,8 +1832,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "Zamjena tipki Fn i Ctrl",
-                    "description": "Ako obično pritisnete tipku Fn kada ste namjeravali pritisnuti tipku Ctrl, možete zamijeniti funkcije te dvije tipke.",
-                    "restartNote": "Zamjena funkcije dvije tipke zahtijeva ponovno pokretanje, jeste li sigurni da želite ponovno pokrenuti računalo?",
+                    "description": "Ako najčešće umjesto tipke Ctrl pritisnete tipku Fn, možete zamijeniti funkcije tih dviju tipki.",
+                    "restartNote": "Zamjena funkcije dvije tipke zahtijeva ponovno pokretanje računala. Želite li zaista ponovno pokretanje?",
                     "title2": "Fn funkcionira kao Ctrl za najčešće korištene kombinacije tipki",
                     "description2": "Tipka Fn funkcionira kao tipka Ctrl za najčešće korištene kombinacije tipki. Funkcija tipke Ctrl neće se promijeniti.",
                     "featureNote": "Ova funkcija i tipka Fn i tipka Ctrl za zamjenu tipki ne mogu biti uključene istovremeno. Ako je jedno na drugom, automatski će se isključiti.",
@@ -3115,7 +3115,9 @@
                 "yes": "Da",
                 "no": "Ne"
             },
-            "waitAvailability": "Gumb je onemogućen ako uređaji za pohranu ne podržavaju ovu funkciju, dok se podaci o hardveru učitavaju ili je u tijeku skeniranje."
+            "waitAvailability": "Gumb je onemogućen ako uređaji za pohranu ne podržavaju ovu funkciju, dok se podaci o hardveru učitavaju ili je u tijeku skeniranje.",
+            "executingTitle": "Recovering now...",
+            "recoverCompleted": "Recovery completed"
         },
         "support": {
             "title": "Preuzmite profesionalne dijagnostičke alate",
@@ -3163,7 +3165,19 @@
             "suggestedActionSupport": "Ako je vaše računalo pod jamstvom, kliknite na <b>otvori zahtjev</b> za zamjenski dio. Dodatne informacije potražite na web-mjestu Podrška tvrtke Lenovo.",
             "supportButtonText": "Otvori zahtjev",
             "recoverBadSectorsButtonText": "Oporavak neispravnih sektora"
-        }
+        },
+        "scanFinishedHeader": {
+            "titleSuccess": "Scan completed. Your device passed all the tests.",
+            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
+            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
+            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
+            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
+            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
+            "finalResultCodeLabel": "Final Result Code: ",
+            "scanAgainButtonText": "Scan Again",
+            "supportButtonText": "Lenovo Support"
+        },
+        "executingScanTitle": "Scanning {{title}}..."
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3289,7 +3303,7 @@
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
             "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
-            "processStatus": "PROCESSING"
+            "processStatus": "OBRADA"
         },
         "scanSettings": {
             "title": "Scan settings",

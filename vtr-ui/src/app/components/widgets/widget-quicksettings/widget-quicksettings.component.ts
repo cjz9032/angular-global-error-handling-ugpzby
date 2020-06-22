@@ -139,9 +139,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		if (this.windowsObj) {
 			this.cameraAccessChangedHandler = (args:any) => {
 				if (args) {
-					if (this.cameraStatus.available) {
-						this.getCameraPermission();
-					}
+					this.getCameraPrivacyStatus();
 				}
 			}
 			this.windowsObj.addEventListener('accesschanged', this.cameraAccessChangedHandler);
@@ -327,18 +325,16 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 					.getCameraStatus()
 					.then((featureStatus: FeatureStatus) => {
 						this.logger.debug('WidgetQuicksettingsComponent.getCameraPrivacyStatus: response Camera Privacy', featureStatus);
+						this.cameraPrivacyGreyOut = false;
 						this.cameraStatus.available = featureStatus.available;
+						this.cameraStatus.permission = featureStatus.permission;
 						// add for camera privacy cache
 						if (!this.cameraStatusChangeBySet) {
 							this.cameraStatus.status = featureStatus.status;
 						}
 						this.cameraStatusChangeBySet = false;
 						this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraStatus);
-						// if privacy available then start monitoring
-						if (featureStatus.available) {
-							this.getCameraPermission();
-							this.startMonitorForCameraPrivacy();
-						}
+						this.startMonitorForCameraPrivacy();
 					})
 					.catch(error => {
 						this.logger.error('WidgetQuicksettingsComponent.getCameraPrivacyStatus: promise error', error.message);
@@ -352,8 +348,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	}
 
 	startMonitorHandlerForCamera(value: FeatureStatus) {
-        this.cameraStatus.available = value.available;
-        this.cameraStatus.status = value.status;
+        this.cameraStatus = {...this.cameraStatus, ...value};
         this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraStatus);
     }
 

@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "For å forlenge batteriets levetid har vi optimalisert full ladekapasitet basert på bruken din. Full batterikapasitet er kanskje ikke tilgjengelig før det er ladet ut til 20 % og ladet opp igjen.",
-                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
+                    "moreInfo": "Klikk <a role=\"link\" href=\"#/device/high-density-battery\">her</a> hvis du vil ha flere opplysninger."
                 },
                 "condition": {
                     "Illegal": "Det installerte batteriet <b>støttes ikke</b> av dette systemet, og vil ikke kunne lades opp. Batteriet må bare byttes ut med korrekt Lenovo-batteri for dette systemet.",
@@ -1101,13 +1101,13 @@
                     "NotDetected": "<b>Finner ikke hovedbatteriet.</b>"
                 },
                 "highDensityBattery": {
-                    "title": "High density battery",
-                    "subtitle": "How your battery works",
-                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "title": "Høytetthetsbatteri",
+                    "subtitle": "Hvordan batteriet fungerer",
+                    "para1": "For å øke batterilevetiden justerer batteriet automatisk ladespenningen og kapasiteten i henhold til bruksmønsteret ditt.",
                     "para2": {
-                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
-                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
-                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                        "item1": "– Hvis du bruker mindre enn 65 % av batterikapasiteten i løpet av en uke eller lenger, kan batteriet redusere ladespenningen og kapasiteten midlertidig. Reduksjonen i kapasitet er liten og ikke synlig for bruksmønsteret ditt.",
+                        "item2": "– Full kapasitet gjenopprettes når du utlader batteriet under 20 %, og deretter fullader batteriet.",
+                        "item3": "– Hvis du i tillegg bruker mindre enn 10 % av batterikapasiteten i løpet av to uker eller lenger, kan batteriet midlertidig redusere ladespenningen og kapasiteten ytterligere, inntil 50 % av redusert batterikapasitet er brukt."
                     }
                 }
             },
@@ -1195,7 +1195,7 @@
                             "battery&Quite": "BATTERI OG STILLEGÅENDE"
                         }
                     },
-                    "description5": "Intelligent kjøling justerer viftehastighet, maksimal ytelse og håndterer batterilevetiden. Denne funksjonen har tre modi (stille modus, balansert modus og ytelsesmodus) og er nå tilgjengelig på glidebryteren for Windows-ytelse.",
+                    "description5": "Intelligent kjøling justerer viftehastighet, maksimal ytelse og håndterer batterilevetiden. Denne funksjonen har tre moduser (stillemodus, balansert modus og ytelsesmodus) og er nå tilgjengelig på glidebryteren for Windows-ytelse.",
                     "nocqldesc": "Med Intelligent kjøling kan du justere systemets ytelse og termiske temperatur. I modusen «Ytelse» optimaliserer den systemets ytelse. Samtidig bidrar den til å holde systemet kjøligere eller mer stillegående i modusen «Stille og rolig».",
                     "dytc6": {
                         "desc1": "Intelligent kjøling justerer viftehastighet, maksimal ytelse og håndterer batterilevetiden.",
@@ -1276,7 +1276,7 @@
                             "description2": "For fullstendig aktivering av denne funksjonen må du koble fra maskinen din ogla batterinivået gå ned til eller under terskelen for ladestopp.",
                             "enable": "AKTIVER",
                             "cancel": "AVBRYT",
-                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
+                            "description3": "Batteriet optimaliserer automatisk ladespenningen og -kapasiteten basert på bruksmønsteret ditt. Hvis du bruker batteriet ditt lite, trenger du ikke å aktivere batteriladeterskelen."
                         },
                         "options": {
                             "start": "Start lading når under",
@@ -1302,7 +1302,7 @@
                         "title": "Strømmodus for fly",
                         "description": "Denne funksjonen lar deg bruke strømuttaket på et fly der en bestemt strømgrense er gjeldende. I denne modusen reduseres datamaskinens strømforbruk til et sikkert nivå ved å begrense batteriets ladehastighet og datamaskinens ytelse.",
                         "checkBoxDesc": "Automatisk oppdagelse",
-                        "note": "Hvis automatisk oppdaging er sjekket, slår datamaskinen automatisk på strømmodusen for fly når den registrerer at du er om bord i et fly og slå av den når du drar."
+                        "note": "Hvis automatisk oppdaging er avmerket, slår datamaskinen automatisk på strømmodusen for fly når den registrerer at du er om bord i et fly og slår den av når du drar."
                     },
                     "gaugeReset": {
                         "title": "Tilbakestilling av batterimåler",
@@ -1557,7 +1557,7 @@
                     },
                     "optimize": {
                         "title": "Optimaliser mikrofonen for:",
-                        "tooltip": "Konfigurer mikrofoneffekter for å skreddersy lyden etter ulike scenarioer og omgivelser.",
+                        "tooltip": "Konfigurer mikrofoneffekter for å skreddersy lyden i ulike scenarioer og omgivelser.",
                         "options": {
                             "VoiceRecognition": "TALEGJENKJENNING",
                             "OnlyMyVoice": "BARE MIN STEMME",
@@ -1607,7 +1607,7 @@
                             "title": "Merk",
                             "description": "Lenovo Vantage trenger tilgang til informasjon om plasseringen din for å beregne tidspunkter for solnedgang og soloppgang for regionen din."
                         },
-                        "tips": "Kjør Windows Update eller installer grafikkdriver manuelt for å gjenopprette Eye Care-modus"
+                        "tips": "Kjør Windows Update eller installer grafikkdriver manuelt for å gjenopprette øyebeskyttelsesmodus."
                     },
                     "dispColorTemp": {
                         "title": "Skjermens fargetemperatur",
@@ -1768,7 +1768,7 @@
                             "description": "Du må starte datamaskinen på nytt hvis du endrer standardfunksjonen for den øverste raden. Er du sikker på at du vil starte på nytt?",
                             "reboot": "START PÅ NYTT",
                             "cancel": "IKKE NÅ",
-                            "yes": "YES"
+                            "yes": "JA"
                         },
                         "note": {
                             "sFunKey": "Du får tilgang til F1–F12-funksjonen ved å trykke på Fn og tastene på den øverste raden.",
@@ -1791,10 +1791,10 @@
                 },
                 "userDefinedKey": {
                     "title": "Brukerdefinert tast",
-                    "caption": "Tasten som representeres med stjerneikonet, lar deg angi en brukerdefinert funksjon",
+                    "caption": "Tasten som representeres med stjerneikonet, lar deg angi en brukerdefinert funksjon.",
                     "dropDown": {
                         "title": "Handling ved brukerdefinert tast",
-                        "note": "Merk: Dette kan brukes til å angi ofte brukt informasjon, som for eksempel e-postadresser eller postadresser. Lenovo anbefaler å aldri bruke denne funksjonen for lagring og angivelse av passord eller annen privat informasjon.",
+                        "note": "Merk: Dette kan brukes til å angi ofte brukt informasjon, som for eksempel e-postadresser eller postadresser. Du må aldri bruke denne funksjonen til å lagre passord eller privat informasjon.",
                         "options": {
                             "option1": "Vennligst velg",
                             "option2": "Åpen nettside",
@@ -1832,8 +1832,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "Bytte av Fn- og Ctrl-tasten",
-                    "description": "Hvis du av vane trykket på Fn-tasten da du mente å trykke på Ctrl-tasten, kan du bytte funksjonen til de to tastene.",
-                    "restartNote": "Hvis du bytter funksjon for to taster, må du starte datamaskinen på nytt. Er du sikker på at du vil starte på nytt?",
+                    "description": "Hvis du har for vane å trykke på Fn-tasten når du mener å trykke på Ctrl-tasten, kan du bytte funksjonen til de to tastene.",
+                    "restartNote": "Hvis du bytter funksjon for de to tastene, må du starte datamaskinen på nytt. Er du sikker på at du vil starte på nytt?",
                     "title2": "Fn fungerer som Ctrl for ofte brukte tastekombinasjoner",
                     "description2": "Fn-tasten fungerer som Ctrl-tasten for noen ofte brukte tastekombinasjoner. Funksjonen til Ctrl-tasten endres ikke.",
                     "featureNote": "Denne funksjonen og funksjonen for bytte av Fn- og Ctrl-tasten kan ikke være aktivert samtidig. Hvis én er aktivert, deaktiveres den andre automatisk.",
@@ -3120,7 +3120,9 @@
                 "no": "Nei",
                 "description": "Å skanne og reparere kan føre til tap av data. Vi anbefaler å sikkerhetskopiere før du gjør dette. Er du sikker på at du vil fortsette?"
             },
-            "waitAvailability": "Knappen er deaktivert hvis lagringsenhetene ikke støtter denne funksjonaliteten, mens maskinvareinformasjonen lastes inn eller hvis det pågår en skanning."
+            "waitAvailability": "Knappen er deaktivert hvis lagringsenhetene ikke støtter denne funksjonaliteten, mens maskinvareinformasjonen lastes inn eller hvis det pågår en skanning.",
+            "executingTitle": "Recovering now...",
+            "recoverCompleted": "Recovery completed"
         },
         "support": {
             "title": "Last ned profesjonelle feil søkings verktøy",
@@ -3163,7 +3165,19 @@
             "suggestedActionSupport": "Hvis datamaskinen din dekkes av garantien, klikker du på <b>opprett forespørsel</b> for en erstatningsdel. Hvis du vil ha mer informasjon, kan du gå til Lenovos nettsted for kundestøtte.",
             "supportButtonText": "Opprett forespørsel",
             "recoverBadSectorsButtonText": "Gjenopprett skadde sektorer"
-        }
+        },
+        "scanFinishedHeader": {
+            "titleSuccess": "Scan completed. Your device passed all the tests.",
+            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
+            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
+            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
+            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
+            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
+            "finalResultCodeLabel": "Final Result Code: ",
+            "scanAgainButtonText": "Scan Again",
+            "supportButtonText": "Lenovo Support"
+        },
+        "executingScanTitle": "Scanning {{title}}..."
     },
     "smartPerformance": {
         "title": "Smart Performance",
@@ -3289,7 +3303,7 @@
             "descriptionbeta": "Lenovo tilbyr et prøveprogram for å teste ut Smart Performance til juli 2020.",
             "descriptionbeta1": "Du er velkommen til å bli med og prøve alle funksjonene.",
             "descriptionNonSubscriber": "Du abonnerer ikke på Lenovo Smart Performance Service. Du vil bare kunne skanne PC-en. Abonner nå for å få alle fordelene for at PC-en blir beskyttet og kjører problemfritt.",
-            "processStatus": "PROCESSING"
+            "processStatus": "BEHANDLER"
         },
         "scanSettings": {
             "title": "Innstillinger for skanneplanlegging",
