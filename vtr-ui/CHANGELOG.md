@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.20](https://bitbucket.tc.lenovo.com///compare/v1.6.19...v1.6.20) (2020-06-22)
+
+
+### Bug Fixes
+
+* **automationId:** add automation id on some texts for UI test ([354ad9e](https://bitbucket.tc.lenovo.com///commit/354ad9e6f2b56522212977fc8f2ca38983d1695b))
+* **automationId:** add automationId for UI test ([cfee78b](https://bitbucket.tc.lenovo.com///commit/cfee78b497ae386ccfc6f101da164319a90689fb))
+* **ModernPreload:** fix navigateByUrl lost queryParams issue ([1e0a926](https://bitbucket.tc.lenovo.com///commit/1e0a926c651d58a1537afc77a9dfc54146ce39f7))
+* **Security landing widget style:** VAN-19608 modify the security widget display ([66073cd](https://bitbucket.tc.lenovo.com///commit/66073cd704106db0aa90db668c789b2c7c8b048a))
+
 ### [1.6.19](https://bitbucket.tc.lenovo.com///compare/v1.6.18...v1.6.19) (2020-06-22)
 
 ### [1.6.18](https://bitbucket.tc.lenovo.com///compare/v1.6.17...v1.6.18) (2020-06-20)
