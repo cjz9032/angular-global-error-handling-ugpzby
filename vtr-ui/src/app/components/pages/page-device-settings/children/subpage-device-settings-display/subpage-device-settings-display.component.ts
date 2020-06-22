@@ -196,6 +196,12 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 				}
 			]
 		};
+
+	// hide camera preview on devices which has
+	// BIOS versions/ID starts with below number
+	private biosVersions = ['05WT', '04WT'];
+	public isCameraPreviewHidden = true;
+
 	constructor(
 		public baseCameraDetail: BaseCameraDetail,
 		private deviceService: DeviceService,
@@ -223,6 +229,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 
 	ngOnInit() {
 		this.logger.debug('subpage-device-setting-display onInit');
+		this.hideCameraPreviewByBiosId();
 		this.commonService.checkPowerPageFlagAndHide();
 		this.initDataFromCache();
 		this.batteryService.getBatterySettings();
@@ -419,6 +426,20 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 				&& whitelist.includes(Md5.hashStr(res.biosVersion.substr(0, 5)) as string));
 	}
 
+	hideCameraPreviewByBiosId() {
+		this.isCameraPreviewHidden = this.commonService.getLocalStorageValue(LocalStorageKey.IsCameraPreviewHidden, false);
+		this.deviceService.getMachineInfo()
+			.then(res => {
+				// for yoga book need to check first 4 character
+				const biosVersion = res.biosVersion.substr(0, 4);
+				this.isCameraPreviewHidden = this.biosVersions.includes(biosVersion.toUpperCase());
+				if (!this.isCameraPreviewHidden) {
+					this.initCameraMonitor();
+				}
+				this.commonService.setLocalStorageValue(LocalStorageKey.IsCameraPreviewHidden, this.isCameraPreviewHidden);
+			});
+	}
+
 	async initCameraSection() {
 		this.isDTmachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 		this.isAllInOneMachineFlag = await this.isAllInOneMachine();
@@ -427,9 +448,13 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		} else {
 			this.getCameraPrivacyModeStatus();
 			this.getCameraDetails();
-			this.displayService.startMonitorForCameraPermission();
-			this.startCameraPrivacyMonitor();
+			this.initCameraMonitor();
 		}
+	}
+
+	private initCameraMonitor() {
+		this.displayService.startMonitorForCameraPermission();
+		this.startCameraPrivacyMonitor();
 	}
 
 	async isAllInOneMachine() {
@@ -1026,7 +1051,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		if (!this.cameraPrivacyModeStatus.permission) {
 			this.cameraChangeFollowAccess();
 		}
-		if (this.cameraAccessTemp === false &&  this.cameraPrivacyModeStatus.permission === true) {
+		if (this.cameraAccessTemp === false && this.cameraPrivacyModeStatus.permission === true) {
 			this.cameraControl.initializeCameraAsync('ViewChild.cameraPreview');
 			this.getCameraDetails();
 		}
@@ -1461,7 +1486,9 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		this.shouldCameraSectionDisabled = true;
 		this.hideNote = true;
 		this.cameraFeatureAccess.showAutoExposureSlider = true;
-		this.cameraControl.cleanupCameraAsync('ViewChild.cameraPreview');
+		if (!this.isCameraPreviewHidden) {
+			this.cameraControl.cleanupCameraAsync('ViewChild.cameraPreview');
+		}
 	}
 	//#endregion
 }

@@ -305,7 +305,8 @@
 									[caption]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.tooltip' | translate">
 								</vtr-ui-row-switch>
 							</li>
-							<li class="camera-block common-li-padding">
+							<li class="camera-block common-li-padding" 
+							*ngIf="!isCameraPreviewHidden">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.displayCamera.camera.camera.title' | translate"
 									componentName="Camera"

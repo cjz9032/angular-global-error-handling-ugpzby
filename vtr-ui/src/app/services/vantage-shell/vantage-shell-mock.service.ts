@@ -294,7 +294,7 @@ export class VantageShellService {
 
 		device.getMachineInfo = this.getPromise(obj);
 		device.getMachineInfoSync = this.getPromise(obj);
-		device.getDeviceInfo = this.getPromise({sn: obj.serialnumber});
+		device.getDeviceInfo = this.getPromise({ sn: obj.serialnumber });
 		return device;
 	}
 
@@ -367,7 +367,13 @@ export class VantageShellService {
 		};
 		sysInfo.getMachineInfo = this.getPromise(machineInfo);
 		sysInfo.getMachineInfoSync = this.getPromise(machineInfo);
-		sysInfo.getMachineType = this.getPromise(1); // 1 = ThinkPad
+		/**
+		 * 0  = "ideaPad",
+		 * 1  = "thinkPad",
+		 * 2  = "ideaCenter",
+		 * 3  = "thinkCenter"
+		 */
+		sysInfo.getMachineType = this.getPromise(1);
 		sysInfo.getHardwareInfo = this.getPromise(hardwareInfo);
 		return sysInfo;
 	}
