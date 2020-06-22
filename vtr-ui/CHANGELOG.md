@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.86](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.5.85...v1.5.86) (2020-06-22)
+
+
+### Bug Fixes
+
+* **SmartPerformance:** fix smart performance disappear in menu ([cd12e48](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/cd12e486be5a0cb6172f7a7d81c21e8ed3198a43))
+
 ### [1.5.85](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.5.84...v1.5.85) (2020-06-20)
 
 ### [1.5.84](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.5.83...v1.5.84) (2020-06-20)
