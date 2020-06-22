@@ -1673,7 +1673,9 @@
                     "cameraPrivacy": {
                         "title": "Personvernmodus for kamera",
                         "tooltip": "Kameraet slutter å sende direktebilder når personverninnstillingen er aktivert. Slå på denne innstillingen bare når du vil dele bildene dine med andre under videosamtaler.",
-                        "cameraPrivacyAccessNote": "Gå til <b>siden Windows-innstillinger → Personvern → Kamera</b>, og kontroller at disse to alternativene er på:<br>&bull; <b>Gi skrivebordsapper tilgang til kameraet</b><br>&bull; <b>Lenovo Vantage</b> under \"Velg hvilke Microsoft Store-apper som har tilgang til kameraet\""
+                        "cameraPrivacyAccessNote": "Gå til <b>siden Windows-innstillinger → Personvern → Kamera</b>, og kontroller at disse to alternativene er på:<br>&bull; <b>Gi skrivebordsapper tilgang til kameraet</b><br>&bull; <b>Lenovo Vantage</b> under \"Velg hvilke Microsoft Store-apper som har tilgang til kameraet\"",
+                        "noPermissionNote": "Lenovo Vantage har ikke tilgang til kameraet eller veksleknappen \"Tillat at skrivebordsapper får tilgang til kameraet\" er ikke aktivert",
+                        "accessUrl": "Gå til Windows-innstillingene for å gi tilgang"
                     },
                     "camera": {
                         "title": "Kamera",

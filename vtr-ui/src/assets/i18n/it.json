@@ -1673,7 +1673,9 @@
                     "cameraPrivacy": {
                         "title": "Modalità privacy fotocamera",
                         "tooltip": "La fotocamera non invia più immagini dal vivo quando l'impostazione relativa alla privacy è abilitata. Attiva questa impostazione solo se non desideri condividere le tue immagini con altri durante le videochiamate.",
-                        "cameraPrivacyAccessNote": "Accedere alla pagina <b>Impostazioni di Windows → Privacy → Fotocamera</b> e verificare che le seguenti due opzioni siano attivate:<br>&bull; <b>Consenti alle app desktop di accedere alla fotocamera</b><br>&bull; <b>Lenovo Vantage</b> in \"Scegli le app di Microsoft Store che possono accedere alla fotocamera\""
+                        "cameraPrivacyAccessNote": "Accedere alla pagina <b>Impostazioni di Windows → Privacy → Fotocamera</b> e verificare che le seguenti due opzioni siano attivate:<br>&bull; <b>Consenti alle app desktop di accedere alla fotocamera</b><br>&bull; <b>Lenovo Vantage</b> in \"Scegli le app di Microsoft Store che possono accedere alla fotocamera\"",
+                        "noPermissionNote": "Lenovo Vantage non ha accesso alla fotocamera o l'interruttore \"Consenti alle app desktop di accedere alla fotocamera\" non è abilitato",
+                        "accessUrl": "Accedere alle impostazioni di Windows per consentire l'accesso"
                     },
                     "camera": {
                         "title": "Fotocamera",

@@ -1673,7 +1673,9 @@
                     "cameraPrivacy": {
                         "title": "Režim súkromia kamery",
                         "tooltip": "Keď je zapnuté nastavenie Súkromné, kamera neodosiela obraz naživo. Toto nastavenie zapnite, len ak nechcete, aby počas videohovorov ostatní videli váš obraz.",
-                        "cameraPrivacyAccessNote": "Prejdite na stránku <b>Nastavenia systému Windows → Súkromie → Fotoaparát</b> a ubezpečte sa, že sú na stránke povolené nasledujúce dve možnosti:<br>&bull; <b>Povoliť počítačovým aplikáciám prístup k fotoaparátu</b><br>&bull; <b>Lenovo Vantage</b> v časti „Vyberte, ktoré aplikácie (Microsoft Store) majú prístup k vášmu fotoaparátu“"
+                        "cameraPrivacyAccessNote": "Prejdite na stránku <b>Nastavenia systému Windows → Súkromie → Fotoaparát</b> a ubezpečte sa, že sú na stránke povolené nasledujúce dve možnosti:<br>&bull; <b>Povoliť počítačovým aplikáciám prístup k fotoaparátu</b><br>&bull; <b>Lenovo Vantage</b> v časti „Vyberte, ktoré aplikácie (Microsoft Store) majú prístup k vášmu fotoaparátu“",
+                        "noPermissionNote": "Aplikácia Lenovo Vantage nemá prístup k vášmu fotoaparátu alebo funkcia „Povoliť počítačovým aplikáciám prístup k fotoaparátu“ nie je zapnutá",
+                        "accessUrl": "Prejdite do nastavení systému Windows a povoľte prístup"
                     },
                     "camera": {
                         "title": "Kamera",
