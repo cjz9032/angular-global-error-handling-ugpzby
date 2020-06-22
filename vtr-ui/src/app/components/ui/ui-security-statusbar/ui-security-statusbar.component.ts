@@ -9,6 +9,7 @@ export class UiSecurityStatusbarComponent implements OnInit {
 
 	@Input() statusList: Array<any>;
 	@Input() regular: false;
+	@Input() textId = '';
 
 	constructor() { }
 
