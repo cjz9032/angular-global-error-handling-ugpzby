@@ -88,7 +88,7 @@
 
 
 <ng-template #tooltipRef>
-	<div [innerHTML]="'hardwareScan.scanFinishedHeader.frcSuccessDescription' | translate"></div>
+	<div [innerHTML]="item.information"></div>
 	<div>
 		<a [attr.href]="'https://support.lenovo.com/contactus'"
 			class="link-support"
