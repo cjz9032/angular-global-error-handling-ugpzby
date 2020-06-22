@@ -12,6 +12,7 @@
 		>
 	</vtr-menu-main>
 	<div tabindex="-1" class="vtr-app container-fluid"
+		#pageContainer (scroll)="onPageScroll($event)"
 		[ngClass]="{'is-android': deviceService.isAndroid}">
 		<div class="row">
 			<div class="col p-0">

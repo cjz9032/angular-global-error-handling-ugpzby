@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ElementRef } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { MetricConst, MetricEventName as EventName } from 'src/app/enums/metrics.enum';
 import { AppAction, GetEnvInfo, AppLoaded, FirstRun, TaskAction, ArticleView, ContentDisplay } from 'src/app/services/metric/metrics.model';
@@ -28,6 +28,9 @@ export class MetricService {
 	private appInitDuration: number;
 	private firstPageActiveDuration: number;
 	public readonly isFirstLaunch: boolean;
+	public readonly maxScrollRecorder = {}
+	public pageContainer: ElementRef
+	private pageScollEvent: any = () => {}
 
 	constructor(
 		private shellService: VantageShellService,
@@ -355,5 +358,31 @@ export class MetricService {
 
 	private toLower(content: string) {
 		return content && content.toLowerCase();
+	}
+
+	public getScrollPercentage(container: any) {
+		if (!container) {
+			return 0;
+		}
+		return Math.round((container.scrollTop + container.clientHeight) * 100 / container.scrollHeight);
+	}
+
+	public activateScrollCounter(pageName: any) {
+		this.maxScrollRecorder[pageName] = 0;
+		this.pageScollEvent = (htmlElm)=>{
+			const curRecord = this.getScrollPercentage(htmlElm);
+			const preRecord = this.maxScrollRecorder[pageName];
+			if (!preRecord || preRecord < curRecord) {
+				this.maxScrollRecorder[pageName] = curRecord;
+			}
+		}
+	}
+
+	public deactivateScrollCounter(pageName: any = null) {
+		this.pageScollEvent = () => {};
+	}
+
+	public notifyPageScollEvent(htmlElm) {
+		this.pageScollEvent(htmlElm || this.pageContainer.nativeElement);
 	}
 }
