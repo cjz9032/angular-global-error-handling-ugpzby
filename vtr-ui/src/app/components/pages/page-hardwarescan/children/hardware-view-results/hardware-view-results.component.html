@@ -88,20 +88,20 @@
 
 
 <ng-template #tooltipRef>
-		<div [innerHTML]="'hardwareScan.scanFinishedHeader.frcSuccessDescription' | translate"></div>
-		<div>
-			<a [attr.href]="'https://support.lenovo.com/contactus'"
-				class="link-support"
-				id="supportButton"
-				target="_blank"
-				vtrMetrics
-				metricsItemID="HardwareScan.ResultSupport"
-				metricsItemPosition="r1"
-				metricsItemCategory="partnerarticle"
-				metricsEvent="articleclick"
-				metricsPageNumber="1"
-				tabindex="1">
-				{{ 'hardwareScan.scanFinishedHeader.supportButtonText' | translate }}
-			</a>
-		</div>
+	<div [innerHTML]="'hardwareScan.scanFinishedHeader.frcSuccessDescription' | translate"></div>
+	<div>
+		<a [attr.href]="'https://support.lenovo.com/contactus'"
+			class="link-support"
+			id="supportButton"
+			target="_blank"
+			vtrMetrics
+			metricsItemID="HardwareScan.ResultSupport"
+			metricsItemPosition="r1"
+			metricsItemCategory="partnerarticle"
+			metricsEvent="articleclick"
+			metricsPageNumber="1"
+			tabindex="1">
+			{{ 'hardwareScan.scanFinishedHeader.supportButtonText' | translate }}
+		</a>
+	</div>
 	</ng-template>
