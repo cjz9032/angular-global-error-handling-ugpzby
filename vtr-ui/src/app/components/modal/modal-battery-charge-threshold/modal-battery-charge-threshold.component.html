@@ -12,11 +12,11 @@
 			role="heading"
 			[innerHTML]="description2 | translate"></p>
 
-		<div class="row" *ngIf="id==='threshold' && batteryService.isTemporaryChargeModes[0]">
+		<div class="row" *ngIf="id==='threshold' && batteryService.isDlsPiCapable">
 			<div class="col">
 				<div class="note-box">
 					<div class="note"
-						id="threshold-temporary-charge-mode"
+						id="threshold-dls-pi-mode"
 						role="note">
 						{{'device.deviceSettings.power.batterySettings.batteryThreshold.popup.description3' | translate}}
 						<p id=""
