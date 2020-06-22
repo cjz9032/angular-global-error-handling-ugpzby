@@ -53,12 +53,8 @@ export class GuardService extends BasicGuard {
 			return super.canActivate(activatedRouteSnapshot, routerStateSnapshot);
 		}
 		if (routerStateSnapshot.url.includes('high-density-battery')) {
-			if(this.batteryService.isTemporaryChargeModes && this.batteryService.isTemporaryChargeModes.length > 0) {
-				if(this.batteryService.isTemporaryChargeModes.length > 1) {
-					return this.batteryService.isTemporaryChargeModes[0] || this.batteryService.isTemporaryChargeModes[1];
-				} else {
-					return this.batteryService.isTemporaryChargeModes[0];
-				}
+			if(this.batteryService.isTemporaryChargeMode) {
+					return (this.batteryService.isTemporaryChargeMode || this.batteryService.isDlsPiCapable);
 			}
 		}
 		if (routerStateSnapshot.url.includes('dashboard')) { }

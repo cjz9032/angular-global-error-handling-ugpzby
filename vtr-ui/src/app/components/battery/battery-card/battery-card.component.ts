@@ -347,10 +347,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		if (this.batteryInfo && this.batteryInfo.length > 0) {
 			this.initBatteryInformation();
 			const remainingPercentages = [];
-			const isTemporaryChargeModes = []
 			this.batteryInfo.forEach((info) => {
 				remainingPercentages.push(info.remainingPercent);
-				isTemporaryChargeModes.push(info.isTemporaryChargeMode);
 				if (info.chargeStatus === -1 || info.chargeStatus === -2) {
 					batteryErrorCount = batteryErrorCount + 1;
 				}
@@ -358,7 +356,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			this.batteryHealth = this.batteryInfo[0].batteryHealth;
 			this.batteryService.isAcAttached = this.batteryGauge.isAttached;
 			this.batteryService.remainingPercentages = remainingPercentages;
-			this.batteryService.isTemporaryChargeModes = isTemporaryChargeModes;
+			this.batteryService.isTemporaryChargeMode = this.batteryInfo[0].isTemporaryChargeMode;
+			this.batteryService.isDlsPiCapable = this.batteryInfo[0].isDlsPiCapable;
 		} else {
 			this.batteryIndicator.batteryNotDetected = false;
 		}
