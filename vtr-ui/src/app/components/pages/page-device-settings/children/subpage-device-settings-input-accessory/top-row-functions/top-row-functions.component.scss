@@ -67,4 +67,14 @@
         font-size: $fontsize_md;
         font-weight: $weight_600;
     }
+   
+    .autofocus{
+        outline: none;
+        @media #{$white-on-black} {
+            border:none;
+		}
+		@media #{$black-on-white} {
+            border:none;
+        }
+    }
 }

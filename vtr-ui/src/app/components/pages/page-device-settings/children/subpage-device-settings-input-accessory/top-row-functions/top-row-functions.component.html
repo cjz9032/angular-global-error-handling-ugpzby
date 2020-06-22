@@ -39,7 +39,7 @@
 							{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.description' | translate}}
 						</p>
 						<div *ngIf="!showAdvancedSection">
-							<a class="link-text mt-4"
+							<a class="link-text mt-4 autofocus"
 								role="link"
 								id="inputAccessory.topRowFunctions.showAdvSettings"
 								(click)="showAdvancedSection = !showAdvancedSection"
@@ -57,7 +57,7 @@
 	</div>
 	<div *ngIf="showAdvancedSection">
 		<div *ngIf="topRowKeyObj.primaryFunCap"
-			class="common-li-padding"
+			class="common-li-padding autofocus"
 			[autofocus]="showAdvancedSection">
 			<vtr-ui-row-switch
 				[title]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionTwo.title' | translate"
@@ -130,7 +130,7 @@
 			</div>
 		</div>
 		<div class="pl-5">
-			<a class="link-text mt-2 ml-4"
+			<a class="link-text mt-2 ml-4 autofocus"
 				role="link"
 				id="inputAccessory.topRowFunctions.hideAdvSettings"
 				(click)="showAdvancedSection = !showAdvancedSection; switchFocusToShowAdv()"
