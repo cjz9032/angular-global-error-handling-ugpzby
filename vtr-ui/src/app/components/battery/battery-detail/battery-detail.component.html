@@ -173,7 +173,7 @@
 										metricsItem="FullChargeCapacityTooltip"
 										role="img"
 										id="fullChargeCapacity_tooltip_icon"
-										attr.aria-label="{{ 'device.deviceSettings.batteryGauge.details.fullChargeCap' | translate }} tooltip, which reads: {{ 'device.deviceSettings.batteryGauge.details.fccTooltipText' | translate }}"
+										attr.aria-label="{{ 'device.deviceSettings.batteryGauge.details.fullChargeCap' | translate }} tooltip, which reads: {{ 'device.deviceSettings.batteryGauge.details.fccTooltipText' | translate }}. Click here for more information."
 										tabindex="0"
 										class="fcc-tooltip-icon"
 										triggers="manual"
@@ -253,17 +253,17 @@
 
 
 <ng-template #fcctooltipRef>
-	<div [innerHTML]="'device.deviceSettings.batteryGauge.details.fccTooltipText' | translate"
+	<div tabindex="0"
+		role="tooltip"
+		attr.aria-label="{{ 'device.deviceSettings.batteryGauge.details.fccTooltipText' | translate }}. Click here for more information.">
+		<div [innerHTML]="'device.deviceSettings.batteryGauge.details.fccTooltipText' | translate"
 		id="fullChargeCapacity-toolTip"
-		role="tooltip"
-		tabindex="0"
-		attr.aria-label="fccTooltipText">
-	</div>
-	<div class="mt-3"
-		[innerHTML]="'device.deviceSettings.batteryGauge.details.moreInfo' | translate"
-		id="fullChargeCapacity-moreInfo"
-		role="tooltip"
-		tabindex="0"
-		att.aria-label="full charge capacity more information">
+		aria-hidden="true">
+		</div>
+		<div class="mt-3"
+			[innerHTML]="'device.deviceSettings.batteryGauge.details.moreInfo' | translate"
+			id="fullChargeCapacity-moreInfo"
+			aria-hidden="true">
+		</div>
 	</div>
 </ng-template>

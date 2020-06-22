@@ -1673,7 +1673,9 @@
                     "cameraPrivacy": {
                         "title": "Kameran yksityisyystila",
                         "tooltip": "Kamera ei lähetä videokuvaa, kun yksityisyysasetus on käytössä. Ota tämä asetus käyttöön vain silloin, kun et haluat jakaa kuvia muiden kanssa videopuhelun aikana.",
-                        "cameraPrivacyAccessNote": "Avaa <b>Windows-asetukset → Tietosuoja → Kamera</b> ja varmista, että seuraavat kaksi vaihtoehtoa ovat käytössä:<br>&bull; <b>Salli sovellusten käyttää kameraasi</b><br>&bull; <b>Lenovo Vantage</b> kohdassa \"Valitse, mitkä (Microsoft Storen) sovellukset voivat käyttää kameraasi\""
+                        "cameraPrivacyAccessNote": "Avaa <b>Windows-asetukset → Tietosuoja → Kamera</b> ja varmista, että seuraavat kaksi vaihtoehtoa ovat käytössä:<br>&bull; <b>Salli sovellusten käyttää kameraasi</b><br>&bull; <b>Lenovo Vantage</b> kohdassa \"Valitse, mitkä (Microsoft Storen) sovellukset voivat käyttää kameraasi\"",
+                        "noPermissionNote": "Lenovo Vantagella ei ole kamerasi käyttöoikeutta tai \"Salli sovellusten käyttää kameraasi\" -vaihtoehtoa ei ole otettu käyttöön.",
+                        "accessUrl": "Siirry Windows-asetuksiin ja anna käyttöoikeus"
                     },
                     "camera": {
                         "title": "Kamera",
@@ -3485,7 +3487,7 @@
             "title": "Järjestelmän tarkistus on valmis",
             "description": "Löysimme seuraavat asiat ",
             "scanRates": "Tarkistuksemme pohjalta tehty arvio tietokoneestasi: ",
-            "summary": "Summary",
+            "summary": "Yhteenveto",
             "summaryDetails": "Tarkistuksessa löydettiin <b>{{issueCount}} ongelmaa</b> seuraavilla alueilla. Rekisteröidy nyt, niin voit korjata nämä ongelmat ja pitää järjestelmän toimintakunnossa. Ohjelmistomme tarkistaa nämä järjestelmäsi alueet ympäri vuorokauden ennakoivasti niin, että ongelmat löydetään ja korjataan heti niiden ilmetessä. Näin tietokoneesi suorituskyky on aina parhaimmillaan.",
             "signupRepairButton": "REKISTERÖIDY JA KORJAA NYT",
             "monthlyPricing": "<b>Alle 2 $ kuukaudessa.</b> Korjaamme nämä ongelmat automaattisesti. Kerran tänään ja joka viikko sen jälkeen <a  href=\"#\">Lue lisää</a>",

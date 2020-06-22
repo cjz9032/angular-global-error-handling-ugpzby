@@ -1673,7 +1673,9 @@
                     "cameraPrivacy": {
                         "title": "Kamera Gizlilik Kipi",
                         "tooltip": "Gizlilik ayarı etkinleştirildiğinde kamera canlı görüntü göndermeyi durdurur. Yalnızca video görüşmeleri sırasında görüntülerinizin görülmesini istemediğiniz zamanlarda bu seçeneğini kullanın.",
-                        "cameraPrivacyAccessNote": "Lütfen <b>Windows Ayarları → Gizlilik → Kamera</b> sayfasına gidin ve şu iki seçeneğin etkinleştirildiğinden emin olun:<br>&bull; <b>Masaüstü uygulamalarının kameranıza erişmesine izin verin</b><br>&bull; “Hangi (Microsoft Store) uygulamaların fotoğraf makinenize erişebileceğini seçin” bölümünün altında <b>Lenovo Vantage</b>"
+                        "cameraPrivacyAccessNote": "Lütfen <b>Windows Ayarları → Gizlilik → Kamera</b> sayfasına gidin ve şu iki seçeneğin etkinleştirildiğinden emin olun:<br>&bull; <b>Masaüstü uygulamalarının kameranıza erişmesine izin verin</b><br>&bull; “Hangi (Microsoft Store) uygulamaların fotoğraf makinenize erişebileceğini seçin” bölümünün altında <b>Lenovo Vantage</b>",
+                        "noPermissionNote": "Lenovo Vantage'ın Kameranıza erişimi yok veya “Masaüstü uygulamalarının kameranıza erişmesine izin ver” ayarı etkin değil.",
+                        "accessUrl": "Erişim izni vermek için Windows Ayarları bölümüne gidin"
                     },
                     "camera": {
                         "title": "Kamera",
