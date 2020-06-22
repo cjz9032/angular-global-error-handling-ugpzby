@@ -149,6 +149,18 @@ export class FeedbackFormComponent implements OnInit {
 		modal.focus();
 	}
 
+	@HostListener('keydown', ['$event'])
+	onKeyDown(event: KeyboardEvent) {
+		if (event.shiftKey &&
+			event.key === 'Tab' &&
+			document.activeElement &&
+			document.activeElement.id.includes('feedback-likely')
+		) {
+			document.getElementById('feedback-modal-btn-close').focus();
+			event.preventDefault();
+		}
+	}
+
 	setRadioStatus(name: string, status: boolean) {
 		this.feedbackForm.patchValue({ [name]: status });
 	}

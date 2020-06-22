@@ -17,11 +17,12 @@
 					*ngIf="qa.idYes">
 					<input class="form-check-input"
 						type="radio"
-						[formControlName]="qa.name"
 						[name]="qa.name"
 						[id]="qa.idYes"
 						[tabindex]="feedbackSuccess ? -1 : 0"
-						(keyup.enter)="setRadioStatus(qa.name, true)"
+						(click)="setRadioStatus(qa.name, true)"
+						(keydown.enter)="setRadioStatus(qa.name, true)"
+						[checked]="feedbackForm.value[qa.name] === true"
 						[value]="true">
 					<label class="form-check-label-out"></label>
 					<label class="form-check-label" [id]="qa.idYes + '-label'" role="text"
@@ -31,11 +32,12 @@
 					*ngIf="qa.idNo">
 					<input class="form-check-input"
 						type="radio"
-						[formControlName]="qa.name"
 						[name]="qa.name"
 						[id]="qa.idNo"
 						[tabindex]="feedbackSuccess ? -1 : 0"
-						(keyup.enter)="setRadioStatus(qa.name, false)"
+						(click)="setRadioStatus(qa.name, false)"
+						(keydown.enter)="setRadioStatus(qa.name, false)"
+						[checked]="feedbackForm.value[qa.name] === false"
 						[value]="false">
 					<label class="form-check-label-out"></label>
 					<label class="form-check-label"  [id]="qa.idNo + '-label'" role="text"
@@ -47,11 +49,12 @@
 						*ngFor="let likely of qa.likelyValues">
 						<input class="form-check-input"
 							type="radio"
-							[formControlName]="qa.name"
 							[name]="qa.name"
 							[id]="'feedback-likely-' + likely"
 							[tabindex]="feedbackSuccess ? -1 : 0"
-							(keyup.enter)="setLikelyStatus(qa.name, likely)"
+							(click)="setLikelyStatus(qa.name, likely)"
+							(keydown.enter)="setLikelyStatus(qa.name, likely)"
+							[checked]="feedbackForm.value[qa.name] === likely"
 							[value]="likely">
 						<label class="form-check-label-out"></label>
 						<label class="form-check-label" [id]="'feedback-form-likely-' + likely" role="text"
