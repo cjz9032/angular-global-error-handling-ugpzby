@@ -1674,7 +1674,7 @@
                         "title": "Kamera privát üzemmódja",
                         "tooltip": "A Privát beállítás engedélyezése esetén a kamera nem küld élőképeket. Akkor használja a beállítást, ha nem szeretne képeket megosztani másokkal videohívás közben.",
                         "cameraPrivacyAccessNote": "Lépjen <b>A Windows beállításai → Adatvédelem → Kamera</b> oldalra, és ellenőrizze, hogy a következő két beállítás engedélyezve van-e:<br>&bull; <b>A kamera elérésének engedélyezése az asztali alkalmazások számára</b><br>&bull; <b>Lenovo Vantage</b> a következő menüpontban: „Válassza ki, hogy mely (Microsoft Store) alkalmazások kapnak hozzáférést a kamerához”",
-                        "noPermissionNote": "A Lenovo Vantage nem kapott hozzáférést a kamerához, vagy „A kamera elérésének engedélyezése az asztali alkalmazások számára” váltókapcsoló nincs engedélyezett értékre kapcsolva",
+                        "noPermissionNote": "A Lenovo Vantage nem kapott hozzáférést a kamerához, vagy „A kamera elérésének engedélyezése az asztali alkalmazások számára” váltókapcsoló nincs engedélyezett értékre kapcsolva.",
                         "accessUrl": "A Windows beállításaiban adhatja meg a hozzáférést"
                     },
                     "camera": {
