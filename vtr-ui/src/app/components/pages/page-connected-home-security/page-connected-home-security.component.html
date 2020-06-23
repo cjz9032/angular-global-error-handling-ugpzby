@@ -13,11 +13,11 @@
 				*ngIf="account?.state !== 'local'">
 				<div class="w-100 location" [hidden]="locationPermission?.isLocationServiceOn">
 					<vtr-widget-location-status linkId="chs-btn-enableLocation"
-						[title]="'security.homeprotection.homesecurity.offlineInfo.title' | translate"
+						[title]="'security.homeprotection.homesecurity.locationDisabledInfo.title' | translate"
 						(buttonClick)="launchLocationSettings('ms-settings:privacy-location')"
-						[subtitle]="'security.homeprotection.homesecurity.offlineInfo.subtitle' | translate"
-						[buttonText]="'security.homeprotection.homesecurity.offlineInfo.buttonText' | translate"
-						[description]="'security.homeprotection.homesecurity.offlineInfo.howToEnableLocation' | translate"
+						[subtitle]="'security.homeprotection.homesecurity.locationDisabledInfo.subtitle' | translate"
+						[buttonText]="'security.homeprotection.homesecurity.locationDisabledInfo.buttonText' | translate"
+						[description]="'security.homeprotection.homesecurity.locationDisabledInfo.howToEnableLocation' | translate"
 						>
 					</vtr-widget-location-status>
 				</div>

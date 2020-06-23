@@ -2596,7 +2596,7 @@
                 "tryNow": "Попробовать сейчас",
                 "visit": "Visit",
                 "goToChs": "go to connected home security",
-                "offlineInfo": {
+                "locationDisabledInfo": {
 					"title": "Location disabled",
 					"subtitle": "Allow Vantage to access your location to use Connected Home Security",
 					"buttonText": "Go To Location Settings",
