@@ -12,7 +12,6 @@ export class WidgetPoweredByInfoComponent {
 	@Input() detail: string;
 	@Input() privacyUrl: string;
 	@Input() termsUrl: string;
-	@Input() textId = '';
 	constructor() { }
 
 }
