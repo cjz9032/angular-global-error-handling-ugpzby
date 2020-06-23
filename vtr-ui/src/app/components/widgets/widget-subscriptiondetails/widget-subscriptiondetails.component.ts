@@ -30,7 +30,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	myDate = new Date();
 	spEnum:any = enumSmartPerformance;
 	public subscriptionDate: any;
-	public modalStatus: any = {intervalTime: '', isOpened: false};ciphertext: any;
+	public modalStatus: any = {initiatedTime: '', isOpened: false};
 	public partNumbersList: any = [];
 	public systemSerialNumber: any;
 	currentTime: string;
@@ -84,8 +84,8 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.inactiveStatus';
 			this.strStatus = 'INACTIVE';
 		}
-		const currentTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
 		this.modalStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus);
+		this.intervalTime = this.modalStatus.initiatedTime;
 		if(this.modalStatus && this.modalStatus.isOpened){
 			this.getSubscriptionDetails();
 			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.processStatus';
@@ -155,22 +155,21 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	async getSubscriptionDetails() {
 		this.modalStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus);
 		let subscriptionData = []
-		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails(this.systemSerialNumber);
-
+		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails('PF11B18D');
 		if(subscriptionDetails){
 			subscriptionData = subscriptionDetails.data? subscriptionDetails.data : [];
 		} else {
 			subscriptionData = [];
 		}
-
 		if (subscriptionData && subscriptionData.length > 0) {
-			const releaseDate = new Date(subscriptionData[0].releaseDate);
-			releaseDate.setMonth(releaseDate.getMonth() + +subscriptionData[0].products[0].unitTerm);
+			const lastItem = subscriptionData[subscriptionData.length-1];
+			const releaseDate = new Date(lastItem.releaseDate);
+			releaseDate.setMonth(releaseDate.getMonth() + +lastItem.products[0].unitTerm);
 			releaseDate.setDate(releaseDate.getDate() - 1);
 			this.subscriptionDetails = {
-				startDate: this.formatLocaleDate.transform(subscriptionData[0].releaseDate),
+				startDate: this.formatLocaleDate.transform(lastItem.releaseDate),
 				endDate: this.formatLocaleDate.transform(releaseDate.toLocaleDateString()),
-				productNumber: subscriptionData[0].products[0].productCode || ''
+				productNumber: lastItem.products[0].productCode || ''
 			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.subscriptionDetails);
 			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.activeStatus';
@@ -186,7 +185,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 				this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.processStatus';
 				this.strStatus = 'PROCESSING';
 				setTimeout(() => {
-					if (this.intervalTime < currentTime) {
+					if (this.intervalTime && this.intervalTime > currentTime) {
 						this.getSubscriptionDetails()
 					} else {
 						this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.inactiveStatus';
