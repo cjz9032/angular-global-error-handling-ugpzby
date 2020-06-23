@@ -640,11 +640,10 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			} else {
 				this.modules = this.hardwareScanService.getFilteredCustomScanResponse();
 				requests = this.hardwareScanService.getFilteredCustomScanRequest();
-
-				// Saving the selected filter in case the user wants to redo the same scan
-				this.hardwareScanService.setLastFilteredCustomScanResponse(this.modules);
-				this.hardwareScanService.setLastFilteredCustomScanRequest(requests);
 			}
+			// Saving the selected filter in case the user wants to redo the same scan
+			this.hardwareScanService.setLastFilteredCustomScanResponse(this.modules);
+			this.hardwareScanService.setLastFilteredCustomScanRequest(requests);
 		}
 
 		// Resets the 'expanded' state and User visibility to the default value (closed)
