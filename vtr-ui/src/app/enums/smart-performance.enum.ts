@@ -29,6 +29,7 @@ export enum enumScanFrequency{
 }
 export enum enumSmartPerformance{
 	SCHEDULESCANENDDATE = '2020/07/27',
+	SUMMARYWAITINGTIME = 5
 }
 export enum PaymentPage{
 	URL = 'https://uatpcsupport.lenovo.com/',

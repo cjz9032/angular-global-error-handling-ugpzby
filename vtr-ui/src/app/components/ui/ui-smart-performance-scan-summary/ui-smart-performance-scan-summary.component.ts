@@ -14,7 +14,7 @@ import { formatDate } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
 import { ModalSmartPerformanceFeedbackComponent } from '../../modal/modal-smart-performance-feedback/modal-smart-performance-feedback.component';
 import { Router } from '@angular/router';
-import { enumSmartPerformance } from 'src/app/enums/smart-performance.enum';
+import { enumSmartPerformance, PaymentPage } from 'src/app/enums/smart-performance.enum';
 import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
 
 @Component({
@@ -534,9 +534,12 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		try {
 			const res: any = await this.smartPerformanceService.getHistory(payload);
 			this.logger.info('ui-smart-performance-scan-summary.getHistory', res);
-			const now = moment().format('hh:mm A')
-			const fiveMinutesFromRecentScan = moment(res.recentscantime).add(5, 'minutes').format('hh:mm A')
+			const now = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
+			const fiveMinutesFromRecentScan =moment(now).add(enumSmartPerformance.SUMMARYWAITINGTIME, 'm').format('YYYY-MM-DD HH:mm:ss');
+		
 			if (res) {
+				this.getLastScanResult();
+				//console.log(now+"--------------------------"+fiveMinutesFromRecentScan);
 				if(now < fiveMinutesFromRecentScan) {
 					// last scan result can be fetched in two ways, since we need to make another service call with getLastScanResult method, 
 					// commented getLastScanResult method as data is available in getHistory method.
