@@ -20,11 +20,14 @@
 						appSearchName="search-internet-protection"
 						featureTitle="security.vpn.header"
 						description="security.vpn.whatIsSufEasy"
+						textId="sa-vpn"
 						imgAlt="surfEasy logo"
 						imgSrc="assets/images/SurfEasy-logo.png"></vtr-ui-feature-heading>
 					<div class="row mt-20">
 						<div class="col get-app-code-box">
-							<vtr-ui-security-statusbar [statusList]="[statusItem]">
+							<vtr-ui-security-statusbar
+								[statusList]="[statusItem]"
+								textId="sa-vpn-surfeasy">
 							</vtr-ui-security-statusbar>
 						</div>
 					</div>
@@ -37,7 +40,7 @@
 							[label]="'security.vpn.getSufEasy' | translate"
 							[btnHeight]="true"
 							(buttonClick)="getSurfEasy()">
-							{{'security.vpn.helpKeep' | translate}}
+							<p id="sa-vpn-surfeasy-desc-1" role="text">{{'security.vpn.helpKeep' | translate}}</p>
 						</vtr-ui-description-button>
 					</div>
 					<div class="mt-20" *ngIf="statusItem.status === 'installed'">
@@ -47,12 +50,12 @@
 							id="sa-vpn-btn-opensurfeasy"
 							[btnHeight]="true"
 							(buttonClick)="openSurfEasy()">
-							{{'security.vpn.helpKeep' | translate}}
+							<p id="sa-vpn-surfeasy-desc-1" role="text">{{'security.vpn.helpKeep' | translate}}</p>
 						</vtr-ui-description-button>
 					</div>
 				</div>
 			</div>
-			<vtr-ui-feature-introduction [items]="featureIntroduction">
+			<vtr-ui-feature-introduction [items]="featureIntroduction" textId="sa-vpn">
 			</vtr-ui-feature-introduction>
 			<hr class="d-none d-lg-block">
 			<vtr-widget-powered-by-info class="d-none d-lg-block"
@@ -60,6 +63,7 @@
 				[detail]="'common.securityAdvisor.privacyPolicyAndTermsOfService'"
 				[imgUrl]="'assets/images/SurfEasy-logo.png'"
 				linkId="sa-vpn-lnk"
+				textId="sa-vpn"
 				privacyUrl="https://www.surfeasy.com/privacy_policy/"
 				termsUrl="https://www.surfeasy.com/terms_of_service/">
 			</vtr-widget-powered-by-info>
