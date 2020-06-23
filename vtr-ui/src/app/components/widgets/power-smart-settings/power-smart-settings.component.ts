@@ -89,6 +89,9 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		if (this.cache) {
 			// init ui
 			this.showIC = this.cache.showIC;
+			if (this.showIC !== 0) {
+				this.smartSettingsCapability = true;
+			}
 			if (this.showIC === 6) {
 				this.dytc6Mode = this.cache.captionText;
 				this.dytc6IsAutoModeSupported = this.cache.autoModeToggle.available;
@@ -358,9 +361,14 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 			const itsServiceStatus = await this.getITSServiceStatus();
 			const its = await this.getDYTCRevision();
 			this.logger.info('PowerSmartSettingsComponent:initPowerSmartSettingsForThinkPad its version', its);
-			if (itsServiceStatus && (its === 4 || its === 5 || its === 6)) {
+			if (its === 4 || its === 5 || its === 6) {
 				// ITS supported or DYTC 4 or 5
 				isITS = true;
+				if (!itsServiceStatus) {
+					this.showPowerSmartSettings(false);
+					return;
+				}
+
 				this.intelligentCoolingModes = IntelligentCoolingHardware.ITS;
 				if (its === 4) {
 					this.captionText = this.translate.instant('device.deviceSettings.power.powerSmartSettings.description1');
