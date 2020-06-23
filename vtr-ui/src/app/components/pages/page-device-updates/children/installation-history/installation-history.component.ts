@@ -121,6 +121,7 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 		if (this.systemUpdateService.installationHistory) {
 			this.sortInstallationHistory(this.systemUpdateService.installationHistory);
 		}
+		document.getElementById('system-update-back-btn').focus();
 	}
 
 	public convertReleaseDate(datestr: string) {
