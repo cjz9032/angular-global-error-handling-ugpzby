@@ -10,7 +10,6 @@ import { UiScanScheduleComponent } from './ui-scan-schedule.component';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { CommonService } from 'src/app/services/common/common.service';
-import { By } from '@angular/platform-browser';
 
 
 describe('UiScanScheduleComponent', () => {
