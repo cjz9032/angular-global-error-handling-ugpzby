@@ -112,18 +112,17 @@
 	</div>
 </div>
 <ng-template #tooltipRefModule>
-	<div [innerHTML]="tooltipText"></div>
-	<div class="link-support">
-		<a [attr.href]="'https://support.lenovo.com/contactus'"
-			target="_blank"
-			vtrMetrics
-			metricsItemID="HardwareScan.ResultSupport"
-			metricsItemPosition="r1"
-			metricsItemCategory="partnerarticle"
-			metricsEvent="articleclick"
-			metricsPageNumber="1"
-			tabindex="0">
-			{{ 'hardwareScan.support.subtitle' | translate }}
-		</a>
-	</div>
+	<div [innerHTML]="tooltipText"></div>	
+	<a [attr.href]="'https://support.lenovo.com/contactus'"
+		class="link-support"
+		target="_blank"
+		vtrMetrics
+		metricsItemID="HardwareScan.ResultSupport"
+		metricsItemPosition="r1"
+		metricsItemCategory="partnerarticle"
+		metricsEvent="articleclick"
+		metricsPageNumber="1"
+		tabindex="0">
+		{{ 'hardwareScan.support.subtitle' | translate }}
+	</a>
 </ng-template>
