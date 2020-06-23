@@ -79,7 +79,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		FeatureImage: 'assets/images/connected-home-security/card-gamestore.png'
 	};
 	devicePostureEventHandler = (devicePosture: DevicePosture) => {
-		if (devicePosture && devicePosture.value.length > 0) {
+		if (devicePosture && Array.isArray(devicePosture.value) && devicePosture.value.length > 0) {
 			if (this.devicePostureHasChange(this.preDevicePostureValue, devicePosture.value)) {
 				const cacheDevicePosture = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture);
 				this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(this.windowsVersionService, devicePosture, cacheDevicePosture, this.translateService);
@@ -216,12 +216,12 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		const cacheAccount = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount);
 		if (cacheAccount) {
 			this.account = cacheAccount;
-			if (this.chs.account) {
+			if (this.chs && this.chs.account) {
 				this.common = new HomeSecurityCommon(this.chs, this.isOnline, this.dialogService);
 				this.account = new HomeSecurityAccount(this.chs, this.common);
 			}
 		}
-		if (this.chs.account && this.chs.account.state) {
+		if (this.chs && this.chs.account && this.chs.account.state) {
 			this.common = new HomeSecurityCommon(this.chs, this.isOnline, this.dialogService);
 			this.account = new HomeSecurityAccount(this.chs, this.common);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, {
@@ -234,7 +234,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			}
 		}
 		const cacheDevicePosture = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture);
-		if (this.devicePosture && this.devicePosture.value.length > 0) {
+		if (this.devicePosture && Array.isArray(this.devicePosture.value) && this.devicePosture.value.length > 0) {
 			this.preDevicePostureValue = cloneDeep(this.devicePosture.value);
 			this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(this.windowsVersionService, this.devicePosture, cacheDevicePosture, this.translateService);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture, {
@@ -277,7 +277,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	}
 
 	ngAfterViewInit(): void {
-		if (this.account.state !== CHSAccountState.local) {
+		if (this.account && this.account.state !== CHSAccountState.local) {
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
 		}
 		this.showWelcomeDialog();
@@ -332,7 +332,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			const welcomeComplete = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, false) === true;
 			const showWelcome = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityShowWelcome, 0);
 			if (welcomeComplete) {
-				if ((this.locationPermission.hasSystemPermissionShowed && this.locationPermission.isLocationServiceOn)
+				if ((this.locationPermission && this.locationPermission.hasSystemPermissionShowed && this.locationPermission.isLocationServiceOn)
 					|| (this.chs.account.state === CHSAccountState.local)) {
 					this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'notShow');
 					return;

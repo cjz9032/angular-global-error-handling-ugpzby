@@ -87,7 +87,9 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.securityAdvisor = this.shellService.getSecurityAdvisor();
 		this.homeSecurity = this.shellService.getConnectedHomeSecurity();
 		this.segment = this.commonService.getLocalStorageValue(LocalStorageKey.LocalInfoSegment, this.segmentConst.Consumer);
-		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
+		if (this.securityAdvisor) {
+			this.wifiSecurity = this.securityAdvisor.wifiSecurity;
+		}
 		this.localInfoService.getLocalInfo().then(result => {
 			this.region = result.GEO;
 		}).catch(e => {

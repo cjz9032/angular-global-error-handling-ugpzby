@@ -32,14 +32,14 @@ export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		this.chs = this.vantageShellService.getConnectedHomeSecurity();
 		this.consoleUrlCallback = (data) => {
-			if (data.account.consoleUrl && !this.currentConsoleUrl) {
+			if (data && data.account && data.account.consoleUrl && !this.currentConsoleUrl) {
 				this.currentConsoleUrl = data.account.consoleUrl;
 				this.showWhichPage = CHSTrialModalPage.trial;
 				this.countdown();
 			}
 		};
 		if (this.showWhichPage === CHSTrialModalPage.loading) {
-			if (this.chs.account.consoleUrl) {
+			if (this.chs && this.chs.account && this.chs.account.consoleUrl) {
 				this.showWhichPage = CHSTrialModalPage.trial;
 				this.countdown();
 			} else if (!this.currentConsoleUrl) {
