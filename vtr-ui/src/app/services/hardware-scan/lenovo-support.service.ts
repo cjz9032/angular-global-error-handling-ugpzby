@@ -11,8 +11,9 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 	providedIn: 'root'
 })
 export class LenovoSupportService {
-	private static readonly LenovoSupportBaseUrl = 'https://pcsupport.lenovo.com';
-	private static readonly ETicketUrlPath = 'eticketwithservice';
+	private static readonly LenovoSupportBaseUrl = 'https://support.lenovo.com';
+	private static readonly ServiceRequestPath = 'servicerequest';
+	private static readonly ProblemType = '/hardware/repair/';
 
 	private deviceInfo: Promise<MyDevice>;
 
@@ -28,20 +29,15 @@ export class LenovoSupportService {
 		const machineSerialNumber = (await this.deviceInfo).sn;
 		const scanDate =  this.hardwareScanService.getFinalResultStartDate();
 
-		// base64EncodedParams is as follows:
-		//   base64(SerialNumber=<machine serial number>&DiagCode=<scan final result code>&Channel=vantage&TestDate=<scan start date>)
-		const scanParameters = new HttpParams()
-			.set('SerialNumber', machineSerialNumber)
-			.set('DiagCode', this.hardwareScanService.getFinalResultCode())
-			.set('Channel', 'vantage')
-			.set('TestDate', formatDate(scanDate, 'yyyyMMdd', 'en-US'))
-		const base64Parameters = btoa(scanParameters.toString());
-
-		// e-Ticket url is as follows:
-		//   https://pcsupport.lenovo.com/eticketwithservice?data=<base64EncodedParams>
+		// new e-Ticket url is as follows:
+		//   https://support.lenovo.com/servicerequest?SerialNumber=xxxxxxx&ProblemType=/hardware/repair/&DiagnosticsCode=xxxxxx&DiagnosticsDate=yyyy-MM-dd'T'HH:mm:ss'Z'
 		const urlParameters = new HttpParams()
-			.set('data', base64Parameters);
-		let url = new URL(LenovoSupportService.ETicketUrlPath, LenovoSupportService.LenovoSupportBaseUrl);
+			.set('SerialNumber', machineSerialNumber)
+			.set('ProblemType', LenovoSupportService.ProblemType)
+			.set('DiagnosticsCode', this.hardwareScanService.getFinalResultCode())
+			.set('DiagnosticsDate', formatDate(scanDate, "yyyy-MM-dd'T'HH:mm:ss'Z'", 'en-US'))
+
+		let url = new URL(LenovoSupportService.ServiceRequestPath, LenovoSupportService.LenovoSupportBaseUrl);
 		url.search = urlParameters.toString();
 
 		this.logger.info('[LenovoSupportService.getETicketUrl] URL:', url.toString());
