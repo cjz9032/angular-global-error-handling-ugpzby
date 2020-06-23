@@ -40,6 +40,7 @@ import { DeviceLocationPermission } from 'src/app/data-models/home-security/devi
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 import { isEqual, pick, cloneDeep, findIndex } from 'lodash';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-page-connected-home-security',
@@ -166,7 +167,8 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		private modalService: NgbModal,
 		private commonService: CommonService,
 		private cmsService: CMSService,
-		private windowsVersionService: WindowsVersionService
+		private windowsVersionService: WindowsVersionService,
+		private deviceService: DeviceService
 	) { }
 
 	ngOnInit() {
@@ -452,5 +454,11 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	private updateHomeSecurityLocationModel(): void {
 		this.locationPermission = new DeviceLocationPermission(this.wifiSecurity);
 		this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityLocation, this.locationPermission);
+	}
+
+	launchLocationSettings(path: string) {
+		if (path) {
+			this.deviceService.launchUri(path);
+		}
 	}
 }

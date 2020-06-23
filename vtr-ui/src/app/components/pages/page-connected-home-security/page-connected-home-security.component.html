@@ -1,6 +1,7 @@
 <vtr-page-layout [title]="'homeSecurity.title' | translate"
 	[textId]="'connected-home-security'"
 	[pageCssClass]="'connected-home-security'"
+	[ngClass]="{'leftPageColumnHeight': account?.state !== 'local'}"
 	[shiftLeftUp]="true"
 	[shiftRightUp]="true"
 	[back]="'common.ui.back' | translate"
@@ -10,12 +11,12 @@
 		<div class="container-fluid">
 			<div class="row"
 				*ngIf="account?.state !== 'local'">
-				<div class="location" [hidden]="locationPermission?.isLocationServiceOn">
+				<div class="w-100 location" [hidden]="locationPermission?.isLocationServiceOn">
 					<vtr-widget-location-status linkId="chs-btn-enableLocation"
 						[title]="'security.homeprotection.homesecurity.offlineInfo.title' | translate"
 						[isSubtitleVisible]="true"
 						[isButtonVisible]="true"
-						(buttonClick)="dialogService?.openCHSPermissionModal(locationPermission)"
+						(buttonClick)="launchLocationSettings('ms-settings:privacy-location')"
 						[subtitle]="'security.homeprotection.homesecurity.offlineInfo.subtitle' | translate"
 						[buttonText]="'security.homeprotection.homesecurity.offlineInfo.buttonText' | translate"
 						[isDescriptionVisible]="true"
@@ -54,8 +55,8 @@
 					</vtr-container-card>
 				</div>
 			</div>
-			<div class="bottom-content" hidden>
-				<div class="d-none d-md-block">
+			<div class="bottom-content w-100 stay-at-botom" [ngClass]="{'stay-at-botom': account?.state !== 'local'}">
+				<div class="d-none d-lg-block">
 					<hr>
 					<vtr-widget-powered-by-info [title]="'homeSecurity.overview.poweredBy'"
 						[detail]="'common.securityAdvisor.privacyPolicyAndTermsOfService'"
@@ -170,8 +171,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="bottom-content" hidden>
-			<div class="d-block d-md-none">
+		<div class="bottom-content" >
+			<div class="d-block d-lg-none">
 				<hr>
 				<vtr-widget-powered-by-info [title]="'homeSecurity.overview.poweredBy'"
 					[detail]="'common.securityAdvisor.privacyPolicyAndTermsOfService'"
