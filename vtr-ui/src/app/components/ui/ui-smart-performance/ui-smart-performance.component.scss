@@ -419,13 +419,19 @@
 							font-size: 1.2rem;
 							font-weight: $weight_medium;
 							margin-top: 0.6rem;
-							color: #272A3B;							
+							color: #272A3B;	
+							overflow: hidden;
+							text-overflow: ellipsis;						
 							@media #{$breakpoint_xl} {
 								font-size: 1rem;
+								padding: 0.2rem;
 							}
 							@media #{$breakpoint_md} {
 								font-size: 1rem;
-								max-width: 8.1rem;
+								max-width: 8.1rem;								
+								padding: 0.2rem;
+								overflow: hidden;
+								text-overflow: ellipsis;
 								font-weight:$weight_light;
 							}
 							@media #{$breakpoint_sm} {

@@ -292,6 +292,7 @@ vtr-ui-smart-performance-scan-summary {
 					color: $main;
 					font-size: 4rem;
 					line-height: 1;
+					margin-left:0.5rem;
 					@media #{$breakpoint_xl}{
 						font-size: 3.5rem;
 					}
@@ -1105,21 +1106,20 @@ vtr-ui-smart-performance-scan-summary {
 				font-size: 1.6rem;
 				line-height: 1.8rem;
 				// width: auto;
-				margin: 0.5rem 1rem;
+				padding-left:0.5rem;				
 				// min-width: 11.5rem;
-
 				&.desc1 {
 					border-right: 0.1rem solid $shade_lighter;
 					// width: 30%;
-					// max-width: 13rem;
+					// max-width: 13rem;					
+					margin: 0.5rem 0.5rem 0.5rem 1rem;
 				}
 
-				&.desc2 {
-					margin-left: 0rem;
-					margin-right: 0rem;
+				&.desc2 {					
+					margin: 0.5rem 0rem 0rem 0.5rem;
 				}
 
-				b {
+				b {					
 					font-size: $fontsize_xs2;
 					font-weight: $weight_bold;
 					@media #{$breakpoint_xl} {
