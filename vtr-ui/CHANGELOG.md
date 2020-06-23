@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.87](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.5.86...v1.5.87) (2020-06-23)
+
+
+### Bug Fixes
+
+* **CHS:** fix CHS display exception ([d45c0ac](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/d45c0ac426b1b2c0269b8eebe89926cb7901f3bb))
+
 ### [1.5.86](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.5.85...v1.5.86) (2020-06-22)
 
 
