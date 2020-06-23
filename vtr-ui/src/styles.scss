@@ -367,6 +367,11 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 		.tooltip-inner {
 			width: 20rem !important;
 		}
+		a {
+			&:focus {
+				@include outline-border-blue;
+			}
+		}
 }
 
 .fnctrl-tooltip.tooltip {
@@ -1210,7 +1215,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 					line-height: 2rem;
 					color: $main_lightest;
 					position: relative;
-					z-index: 5;					
+					z-index: 5;
 					@media #{$breakpoint_xl} {
 						font-size: $fontsize_xs2;
 						padding: 1.5rem;
@@ -1859,5 +1864,27 @@ ngb-tooltip-window.schedule-scan.tooltip {
 		font-size: $fontsize_xs;
 		text-align: left;
 		max-width: 24.2rem;
+	}
+}
+
+.antiTheftFeature {
+	.photoDropdown {
+		ngb-tooltip-window.vtr-tooltip.tooltip {
+			margin-bottom: 0.5rem;
+			margin-right: 0;
+
+			.arrow {
+				top: auto;
+				bottom: 1rem;
+				left: calc(-0.8rem + 50%);
+
+				&::before {
+					border-top-color: $light;
+					border-left-color: transparent;
+					left: 0;
+					transform: rotate(135deg);
+				}
+			}
+		}
 	}
 }
