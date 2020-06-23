@@ -96,6 +96,12 @@
 						background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
 						background-color: $go_dark;
 						border-color: $go_dark;
+						@media #{$white-on-black} {
+							background:$light;
+						}
+						@media #{$black-on-white} {
+							background:$dark;
+						}
 					}
 				}
 
@@ -116,6 +122,12 @@
 						background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
 						background-color: $stop_dark;
 						border-color: $stop_dark;
+						@media #{$white-on-black} {
+							background:$light;
+						}
+						@media #{$black-on-white} {
+							background:$dark;
+						}
 					}
 				}
 				.detail {
@@ -150,7 +162,19 @@
 						font-size: $fontsize_sm;
 						line-height: $fontsize_xl;
 						color: $light;
+						@media #{$black-on-white} {
+							font-size: $fontsize_sm;
+							line-height: $fontsize_xl;
+							color: $light;
+						}
+						@media #{$white-on-black} {
+							font-size: $fontsize_sm;
+							line-height: $fontsize_xl;
+							color: $dark;
+						}
+
 					}
+				
 				}
 			}
 			.status-content {
