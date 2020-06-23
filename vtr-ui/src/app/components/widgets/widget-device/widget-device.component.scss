@@ -163,13 +163,9 @@
 						line-height: $fontsize_xl;
 						color: $light;
 						@media #{$black-on-white} {
-							font-size: $fontsize_sm;
-							line-height: $fontsize_xl;
 							color: $light;
 						}
 						@media #{$white-on-black} {
-							font-size: $fontsize_sm;
-							line-height: $fontsize_xl;
 							color: $dark;
 						}
 
