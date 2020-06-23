@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.21](https://bitbucket.tc.lenovo.com///compare/v1.6.20...v1.6.21) (2020-06-23)
+
+
+### Bug Fixes
+
+* **automationId:** add automation id in VPN page for UI test ([5434445](https://bitbucket.tc.lenovo.com///commit/543444596ff74906a6441f5c25ab8463cbbdd95b))
+* **close button:** keydown event in close button would cause error ([96cfaca](https://bitbucket.tc.lenovo.com///commit/96cfacae0d61a736f0e24be85af7fc678d96769d))
+* remove extra ids in component ([fff7545](https://bitbucket.tc.lenovo.com///commit/fff754546efe9c4c807335e474af6292cefb977b))
+
 ### [1.6.20](https://bitbucket.tc.lenovo.com///compare/v1.6.19...v1.6.20) (2020-06-22)
 
 
