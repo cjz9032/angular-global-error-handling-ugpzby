@@ -480,6 +480,9 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 			const { type, payload } = notification;
 			switch (type) {
 				case DeviceMonitorStatus.CameraStatus:
+					if (!this.cameraPrivacyModeStatus.permission) {
+						break;
+					}
 					this.logger.debug('DeviceMonitorStatus.CameraStatus', payload);
 					this.dataSource.permission = payload;
 					this.hideNote = !this.dataSource.permission;
@@ -564,23 +567,6 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 				.then((response) => {
 					this.logger.debug('getCameraDetails.then', response);
 					this.dataSource = response;
-					this.cameraAccessTemp = this.dataSource.permission;
-					if (this.dataSource.permission === true) {
-						this.shouldCameraSectionDisabled = false;
-						this.logger.debug('getCameraDetails.then permission', this.dataSource.permission);
-						this.hideNote = false;
-					} else {
-						// 	response.exposure.autoValue = true;
-						this.dataSource = this.emptyCameraDetails[0];
-						this.shouldCameraSectionDisabled = true;
-						this.hideNote = true;
-						this.cameraFeatureAccess.showAutoExposureSlider = true;
-						this.logger.debug('no camera permission .then', this.emptyCameraDetails[0]);
-						const privacy = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy);
-						// privacy.status = false;
-						// this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, privacy);
-						this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, privacy);
-					}
 					this.cameraFeatureAccess.showAutoExposureSlider = false;
 					if (this.dataSource.exposure.autoValue === true && !this.shouldCameraSectionDisabled) {
 						this.cameraFeatureAccess.exposureAutoValue = true;
@@ -1033,8 +1019,9 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 					this.cameraPrivacyModeStatus.isLoading = false;
 					this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraPrivacyModeStatus);
 					if (!this.cameraPrivacyModeStatus.permission) {
-						this.cameraChangeFollowAccess();
+						this.cameraControl.cleanupCameraAsync('desktopAppAccess');
 					}
+					this.cameraChangeFollowAccess(this.cameraPrivacyModeStatus.permission);
 				})
 				.catch(error => {
 					this.cameraPrivacyModeStatus.isLoading = false;
@@ -1048,13 +1035,16 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		this.logger.debug('startMonitorHandlerForCamera', value);
 		this.cameraPrivacyModeStatus.isLoading = false;
 		this.cameraPrivacyModeStatus = { ...this.cameraPrivacyModeStatus, ...value };
-		if (!this.cameraPrivacyModeStatus.permission) {
-			this.cameraChangeFollowAccess();
+		if (this.cameraAccessTemp === true && this.cameraPrivacyModeStatus.permission === false) {
+			this.cameraChangeFollowAccess(this.cameraPrivacyModeStatus.permission);
+			this.cameraControl.cleanupCameraAsync('desktopAppAccess');
 		}
 		if (this.cameraAccessTemp === false && this.cameraPrivacyModeStatus.permission === true) {
-			this.cameraControl.initializeCameraAsync('ViewChild.cameraPreview');
+			this.cameraControl.initializeCameraAsync('desktopAppAccess');
 			this.getCameraDetails();
+			this.cameraChangeFollowAccess(this.cameraPrivacyModeStatus.permission);
 		}
+		this.cameraAccessTemp = this.cameraPrivacyModeStatus.permission;
 		// this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, this.cameraPrivacyModeStatus);
 		this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraPrivacyModeStatus);
 	}
@@ -1481,13 +1471,21 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 			return EMPTY;
 		}
 	}
-	cameraChangeFollowAccess() {
-		this.dataSource = this.emptyCameraDetails[0];
-		this.shouldCameraSectionDisabled = true;
-		this.hideNote = true;
-		this.cameraFeatureAccess.showAutoExposureSlider = true;
-		if (!this.isCameraPreviewHidden) {
-			this.cameraControl.cleanupCameraAsync('ViewChild.cameraPreview');
+	cameraChangeFollowAccess(access) {
+		if (access === true) {
+			this.shouldCameraSectionDisabled = false;
+			this.hideNote = false;
+		} else {
+			this.dataSource = this.emptyCameraDetails[0];
+			this.shouldCameraSectionDisabled = true;
+			this.hideNote = true;
+			this.cameraFeatureAccess.showAutoExposureSlider = true;
+		}
+		if (this.dataSource.exposure.autoValue === true && !this.shouldCameraSectionDisabled) {
+			this.cameraFeatureAccess.exposureAutoValue = true;
+
+		} else {
+			this.cameraFeatureAccess.exposureAutoValue = false;
 		}
 	}
 	//#endregion
