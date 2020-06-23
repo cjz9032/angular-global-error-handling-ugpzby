@@ -426,6 +426,7 @@
 							@media #{$breakpoint_md} {
 								font-size: 1rem;
 								max-width: 8.1rem;
+								font-weight:$weight_light;
 							}
 							@media #{$breakpoint_sm} {
 								font-size: 1rem;
@@ -434,6 +435,7 @@
 								text-overflow: ellipsis;
 								min-height: 1.2rem;
 								padding-top: 0.2rem;
+								font-weight:$weight_light;
 							}
 						}
 					}
