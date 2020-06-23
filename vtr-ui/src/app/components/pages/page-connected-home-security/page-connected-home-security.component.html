@@ -125,7 +125,7 @@
 										<vtr-ui-button [ngClass]="{'disable': locationPermission?.isLoading}"
 											metricsItem="enableLocationSecurityHealth"
 											metricsEvent="featureClick"
-											(onClick)="dialogService?.openCHSPermissionModal(locationPermission)"
+											(onClick)="launchLocationSettings('ms-settings:privacy-location')"
 											[isDisabled]="locationPermission?.isLoading"
 											linkId="chs-btn-enableLocation"
 											[label]="'security.homeprotection.securityhealth.button' | translate">
