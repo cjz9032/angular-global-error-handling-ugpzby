@@ -652,6 +652,7 @@
 	mask-mode: alpha;
 	position: relative;
 	left: 3rem;
+	width: calc(100% - 2rem);
 	.ms-slider__words {
 		display: inline-block;
 		margin: 0;
@@ -665,7 +666,13 @@
 		animation-iteration-count: infinite;
 		-webkit-animation-duration: 20s;
 		animation-duration: 20s;
-		max-width:90%;
+		width: 100%;
+		li {
+			white-space: nowrap;
+			max-width: calc(100% - 1rem);
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
 	}
 }
 .page-heading {
