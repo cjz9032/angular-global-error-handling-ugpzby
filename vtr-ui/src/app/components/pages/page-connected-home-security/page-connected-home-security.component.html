@@ -14,12 +14,9 @@
 				<div class="w-100 location" [hidden]="locationPermission?.isLocationServiceOn">
 					<vtr-widget-location-status linkId="chs-btn-enableLocation"
 						[title]="'security.homeprotection.homesecurity.offlineInfo.title' | translate"
-						[isSubtitleVisible]="true"
-						[isButtonVisible]="true"
 						(buttonClick)="launchLocationSettings('ms-settings:privacy-location')"
 						[subtitle]="'security.homeprotection.homesecurity.offlineInfo.subtitle' | translate"
 						[buttonText]="'security.homeprotection.homesecurity.offlineInfo.buttonText' | translate"
-						[isDescriptionVisible]="true"
 						[description]="'security.homeprotection.homesecurity.offlineInfo.howToEnableLocation' | translate"
 						>
 					</vtr-widget-location-status>

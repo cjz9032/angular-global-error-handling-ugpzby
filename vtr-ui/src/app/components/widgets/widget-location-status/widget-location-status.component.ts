@@ -11,11 +11,8 @@ export class WidgetLocationStatusComponent implements OnInit {
 	@Input() linkId: string;
 	@Input() title: string;
 	@Input() subtitle: string;
-	@Input() isSubtitleVisible = false;
 	@Input() description: string;
-	@Input() isDescriptionVisible = false;
 	@Input() buttonText: string;
-	@Input() isButtonVisible = false;
 	@Input() locationPermission: DeviceLocationPermission = undefined;
 	@Output() buttonClick = new EventEmitter();
 
