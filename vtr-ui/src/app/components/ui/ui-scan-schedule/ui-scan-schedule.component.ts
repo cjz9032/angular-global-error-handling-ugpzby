@@ -96,25 +96,12 @@ export class UiScanScheduleComponent implements OnInit {
 
 	ngOnInit() {
 		this.spTransLangEvent = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-			if (this.translate.currentLang !== 'en') {
-				this.sliceDay = false;
-				if(this.translate.currentLang === 'ar') {
-					this.amPmPosition = true;
-				}
-			} else {
-				this.sliceDay = true;
-				this.amPmPosition = false;
-			}
+			this.translationCheck();
 		});
 
 		if (this.translate.currentLang !== 'en') {
 			this.sliceDay = false;
 		}
-
-		// if(this.translate.currentLang === 'ar') {
-		// 	this.amPmPosition = true;
-		// 	this.sliceDay = false;
-		// }
 
 		this.isDaySelectionEnable = false;
 		this.enumLocalScanFrequncy = enumScanFrequency;
