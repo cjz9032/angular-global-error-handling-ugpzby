@@ -367,6 +367,11 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 		.tooltip-inner {
 			width: 20rem !important;
 		}
+		a {
+			&:focus {
+				@include outline-border-blue;
+			}
+		}
 }
 
 .fnctrl-tooltip.tooltip {
