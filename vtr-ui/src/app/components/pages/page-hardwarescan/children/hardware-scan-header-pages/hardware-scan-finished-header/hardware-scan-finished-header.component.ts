@@ -12,8 +12,7 @@ import { HardwareScanFinishedHeaderType } from 'src/app/enums/hardware-scan-fini
 })
 export class HardwareScanFinishedHeaderComponent implements OnInit {
 
-	// Inputs
-	@Input() supportUrl: string;
+	supportUrl: string;
 
 	// Metrics
 	@Input() itemParentCancel: string;
@@ -39,7 +38,7 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 	}
 
 	private async configureSupportUrl() {
-		await this.lenovoSupportService.getPremierUrl()
+		await this.lenovoSupportService.getETicketUrl()
 			.then((response) => {
 					this.supportUrl = response;
 			});
