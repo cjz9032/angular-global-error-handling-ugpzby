@@ -3169,14 +3169,13 @@
             "recoverBadSectorsButtonText": "Recuperar Setores Ruins"
         },
         "scanFinishedHeader": {
-            "titleSuccess": "Digitalização concluída. Seu dispositivo passou em todos os testes.",
-            "titleErrorPlural": "Digitalização concluída. Seu dispositivo falhou em {{numberTestsFailed}} testes.",
-            "titleErrorSingular": "Digitalização concluída. Seu dispositivo falhou em 1 teste.",
-            "warningText": "WARNING",
+            "titleSuccess": "Verificação concluída. Seu dispositivo passou em todos os testes.",
+            "titleErrorPlural": "Verificação concluída. Seu dispositivo falhou em {{numberTestsFailed}} testes.",
+            "titleErrorSingular": "Verificação concluída. Seu dispositivo falhou em 1 teste.",
             "frcSuccessDescription": "Este código de resultado final indica que não foram encontrados problemas com essa verificação. Se qualquer teste exibir uma mensagem de aviso ou não aplicável, não significa que um problema foi encontrado. Se um agente de suporte Lenovo pediu para que você executasse esse teste, use esse código como prova; caso contrário, nenhuma ação da sua parte é necessária neste momento. Se acredita que ainda está com problemas, entre em contato com o Suporte Lenovo.",
             "frcFailureDescription": "O código de resultado final indica que problemas foram encontrados com essa verificação.",
             "finalResultCodeLabel": "Código de resultado final: ",
-            "scanAgainButtonText": "Digitalizar novamente",
+            "scanAgainButtonText": "Verificar novamente",
             "supportButtonText": "Suporte Lenovo",
             "lenovoSupportInstruction": "No Suporte Lenovo, você pode abrir um tíquete de verificação usando o código do seu resultado final."
         },
