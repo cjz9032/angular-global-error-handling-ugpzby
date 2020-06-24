@@ -84,8 +84,9 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.inactiveStatus';
 			this.strStatus = 'INACTIVE';
 		}
+		const currentTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
 		this.modalStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus);
-		this.intervalTime = this.modalStatus.initiatedTime;
+		this.intervalTime = this.modalStatus.initiatedTime || currentTime;
 		if(this.modalStatus && this.modalStatus.isOpened){
 			this.getSubscriptionDetails();
 			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.processStatus';
