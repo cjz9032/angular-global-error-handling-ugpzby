@@ -23,10 +23,13 @@ export class ModalGamingPromptComponent implements OnInit {
 	private modalService: NgbModal,
   ) { }
 
-  ngOnInit() {
-	setTimeout(()=>{
-		document.getElementById('gaming-advanced-prompt-close').focus();
-	},230)
+	ngOnInit() {
+		const elem = document.getElementById('gaming-advanced-prompt-close');	
+		if (elem) {
+			setTimeout(() => {
+				elem.focus();
+			}, 230);
+		}
   }
   emitFn(info) {
 	this.emitService.next(info)
@@ -41,7 +44,7 @@ export class ModalGamingPromptComponent implements OnInit {
 	this.activeModal.close('close');
   }
 
-  cancleFn() {
+  cancelFn() {
 	this.emitFn(2);
 	this.activeModal.close('close');
   }

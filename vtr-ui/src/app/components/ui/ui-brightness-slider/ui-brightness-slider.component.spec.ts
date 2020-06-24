@@ -46,15 +46,6 @@ describe('UiBrightnessSliderComponent', () => {
 		expect(component.onFocusSlider).toHaveBeenCalled();
 	}));
 
-	it('ngOnInit show ticks when step arrays return value', () => {
-		spyOn(component, 'ngOnInit').and.callThrough();
-		component.ngOnInit();
-		fixture.detectChanges();
-		fixture.whenStable().then(() => {
-			expect(component.stepsArray.length).toBeGreaterThan(0);
-		});
-	});
-
 	it('set attribute to slider when mouse hover', (() => {
 			component.onMouseSlider();
 		  fixture.detectChanges();
