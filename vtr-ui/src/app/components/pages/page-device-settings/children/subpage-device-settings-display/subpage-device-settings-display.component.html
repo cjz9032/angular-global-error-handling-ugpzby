@@ -275,7 +275,7 @@
 
 			<!-- Camera -->
 			<div class="row pt-5 smart-settings-card pb-40"
-				*ngIf="this.isAllInOneMachineFlag"
+				*ngIf="this.isAllInOneMachineFlag || (!cameraPrivacyModeStatus.available && isCameraPreviewHidden)"
 				id="camera"
 				[hidden]="isCameraHidden">
 				<div class="col-12 mx-auto  container-card ">
