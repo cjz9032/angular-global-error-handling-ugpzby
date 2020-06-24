@@ -471,6 +471,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 
 	}
 
+
 	//////////////////////////////////////////////////////////////////////
 	// Version 3.3: Init automation ID                                  //
 	// 1. Get machine specific ID                                       //

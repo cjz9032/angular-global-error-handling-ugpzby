@@ -203,15 +203,7 @@ describe('WidgetLegionEdgeComponent', () => {
 	gamingOverDriveServiceSpy.getOverDriveStatus.and.returnValue(Promise.resolve(true));
 	gamingKeyLockServiceSpy.getKeyLockStatus.and.returnValue(Promise.resolve(false));
 
-	enum GamingThermal2Mock {
-		cpu_gpu = 3,
-		cpu = 2,
-		gpu = 1,
-		none = 0,
-		performance = 3,
-		balance = 2,
-		quiet = 1
-	}
+	enum GamingThermal2Mock {}
 	describe('thermal mode 2 & performanceOC', () => {
 		let thermalModeRealStatus = 2;
 		let performanceOCStatus = false;
@@ -573,13 +565,13 @@ describe('WidgetLegionEdgeComponent', () => {
 			component.performanceOCSettings=true;
 			spyOn(component, 'getThermalModeAutomationId').and.callThrough();
 			component.getThermalModeAutomationId();
-			expect(GamingThermal2Mock.balance).toBe(2);
+			expect(GamingThermal2.balance).toBe(2);
 			tick();
 			component.getThermalModeAutomationId();
-			expect(GamingThermal2Mock.performance).toBe(3);
+			expect(GamingThermal2.performance).toBe(3);
 			tick();
 			component.getThermalModeAutomationId();
-			expect(GamingThermal2Mock.quiet).toBe(1);
+			expect(GamingThermal2.quiet).toBe(1);
 		}));
 	});
 
