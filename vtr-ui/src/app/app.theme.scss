@@ -644,11 +644,7 @@ border: none;
 }
 
 
-@mixin high-contrast-black-background-transparent {
-	background: transparent;
-}
-
-@mixin high-contrast-white-background-transparent {
+@mixin high-contrast-background-transparent {
 	background: transparent;
 }
 
@@ -659,4 +655,12 @@ border: none;
 	@media #{$black-on-white} {
 		background-image: none !important;
 	}
+}
+
+@mixin white-border {
+	border: 0.1rem solid $light;
+}
+
+@mixin black-border {
+	border: 0.1rem solid $dark;
 }
