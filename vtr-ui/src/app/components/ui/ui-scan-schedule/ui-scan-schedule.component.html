@@ -43,7 +43,7 @@
                     <span></span>
                     <span></span>
                 </div>
-                <div *ngIf="!loading" class="status d-flex justify-content-end w-40">
+                <div *ngIf="!loading" class="status d-flex justify-content-end w-60">
                     <p class="mr-3 text-uppercase" *ngIf="(frequencyValue === 0 || frequencyValue === 1) && amPmPosition">{{scanTime.amPm}} {{scanTime.min}}:<span class="ar-time">{{scanTime.hour}}</span> | <strong *ngIf="!sliceDay">{{selectedDay | translate}}</strong></p>
                     <p class="mr-3 text-uppercase" *ngIf="(frequencyValue === 0 || frequencyValue === 1) && !amPmPosition"><strong *ngIf="sliceDay">{{selectedDay | translate | slice:0:3}}</strong><strong *ngIf="!sliceDay">{{selectedDay | translate}}</strong> | {{scanTime.hour+':'+scanTime.min+' '+scanTime.amPm}}</p>
                     <p class="mr-3 text-uppercase" *ngIf="frequencyValue === 2"><strong>{{(selectedNumber)}}</strong> | {{scanTime.hour}}:{{scanTime.min}} {{scanTime.amPm}}</p>
