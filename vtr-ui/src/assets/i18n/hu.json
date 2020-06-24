@@ -3118,8 +3118,8 @@
                 "no": "Nem"
             },
             "waitAvailability": "A gomb le van tiltva, ha a tárolóeszközök nem támogatják ezt a funkciót a hardverinformáció betöltése közben, vagy ha vizsgálat van folyamatban.",
-            "executingTitle": "Recovering now...",
-            "recoverCompleted": "Recovery completed"
+            "executingTitle": "Helyreállítás folyamatban...",
+            "recoverCompleted": "Helyreállítás kész"
         },
         "support": {
             "title": "Professzionális diagnosztikai eszközök letöltése",
@@ -3169,17 +3169,17 @@
             "recoverBadSectorsButtonText": "Hibás szektorok helyreállítása"
         },
         "scanFinishedHeader": {
-            "titleSuccess": "Scan completed. Your device passed all the tests.",
-            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
-            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
-            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
-            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
-            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
-            "finalResultCodeLabel": "Final Result Code: ",
-            "scanAgainButtonText": "Scan Again",
-            "supportButtonText": "Lenovo Support"
+            "titleSuccess": "A vizsgálat befejeződött. Az Ön készüléke sikeresen teljesítette az összes tesztet.",
+            "titleErrorPlural": "A vizsgálat befejeződött. Az Ön készüléke {{numberTestsFailed}} teszten megbukott.",
+            "titleErrorSingular": "A vizsgálat befejeződött. Az Ön készüléke 1 teszten megbukott.",
+            "frcSuccessDescription": "Ez a végső eredménykód azt jelzi, hogy nincs probléma a vizsgálattal. Nem jelez problémát, ha valamelyik teszt után figyelmeztetés vagy nem megfelelő üzenet jelenik meg. Ha a Lenovo-támogatás szakembere kérte a teszt futtatását, akkor a kódot igazolásként használhatja. Ebben az esetben nincs teendője. Ha továbbra is úgy érzi, hogy valamilyen hiba áll fenn, lépjen kapcsolatba a Lenovo-támogatással.",
+            "frcFailureDescription": "Ez a végső eredménykód azt jelzi, hogy a vizsgálat során probléma merült fel.",
+            "lenovoSupportInstruction": "Nyisson egy ellenőrzési jegyet a végső eredménykód segítségével a Lenovo-támogatásban.",
+            "finalResultCodeLabel": "Végső eredménykód: ",
+            "scanAgainButtonText": "Vizsgálat megismétlése",
+            "supportButtonText": "Lenovo-támogatás"
         },
-        "executingScanTitle": "Scanning {{title}}..."
+        "executingScanTitle": "{{title}} vizsgálata..."
     },
     "smartPerformance": {
         "title": "Health & Support",

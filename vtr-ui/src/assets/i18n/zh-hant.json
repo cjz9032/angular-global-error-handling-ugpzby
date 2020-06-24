@@ -3118,8 +3118,8 @@
                 "no": "否"
             },
             "waitAvailability": "當儲存裝置不支援這項功能而硬體資訊即將載入，或者其中正在進行掃描時，此按鈕為停用狀態。",
-            "executingTitle": "Recovering now...",
-            "recoverCompleted": "Recovery completed"
+            "executingTitle": "現在正在回復...",
+            "recoverCompleted": "回復已完成"
         },
         "support": {
             "title": "下載專業診斷工具",
@@ -3169,17 +3169,17 @@
             "recoverBadSectorsButtonText": "回復錯誤磁區"
         },
         "scanFinishedHeader": {
-            "titleSuccess": "Scan completed. Your device passed all the tests.",
-            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
-            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
-            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
-            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
-            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
-            "finalResultCodeLabel": "Final Result Code: ",
-            "scanAgainButtonText": "Scan Again",
-            "supportButtonText": "Lenovo Support"
+            "titleSuccess": "掃描已完成。您的裝置已通過所有測試。",
+            "titleErrorPlural": "掃描已完成。您的裝置未通過 {{numberTestsFailed}} 次測試。",
+            "titleErrorSingular": "掃描已完成。您的裝置未通過 1 次測試。",
+            "frcSuccessDescription": "此最終結果代碼表示此次掃描沒有發現問題。如果任何測試顯示警告或「不適用」訊息，並不表示發現了問題。如果 Lenovo 支援中心專員要求您執行此測試，請使用此代碼做為憑據；否則，此時您不需要執行任何動作。如果您仍然遇到問題，請聯絡 Lenovo 支援中心。",
+            "frcFailureDescription": "最終結果代碼表示此次掃描發現的問題。",
+            "lenovoSupportInstruction": "在 Lenovo 支援中心，您可以使用最終結果的代碼打開驗證票證。",
+            "finalResultCodeLabel": "最終結果代碼：",
+            "scanAgainButtonText": "再掃描一次",
+            "supportButtonText": "Lenovo 支援中心"
         },
-        "executingScanTitle": "Scanning {{title}}..."
+        "executingScanTitle": "正在掃描 {{title}}..."
     },
     "smartPerformance": {
         "title": "Smart Performance",

@@ -3123,8 +3123,8 @@
                 "description": "Å skanne og reparere kan føre til tap av data. Vi anbefaler å sikkerhetskopiere før du gjør dette. Er du sikker på at du vil fortsette?"
             },
             "waitAvailability": "Knappen er deaktivert hvis lagringsenhetene ikke støtter denne funksjonaliteten, mens maskinvareinformasjonen lastes inn eller hvis det pågår en skanning.",
-            "executingTitle": "Recovering now...",
-            "recoverCompleted": "Recovery completed"
+            "executingTitle": "Gjenoppretter nå ...",
+            "recoverCompleted": "Gjenoppretting fullført"
         },
         "support": {
             "title": "Last ned profesjonelle feil søkings verktøy",
@@ -3169,17 +3169,17 @@
             "recoverBadSectorsButtonText": "Gjenopprett skadde sektorer"
         },
         "scanFinishedHeader": {
-            "titleSuccess": "Scan completed. Your device passed all the tests.",
-            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
-            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
-            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
-            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
-            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
-            "finalResultCodeLabel": "Final Result Code: ",
-            "scanAgainButtonText": "Scan Again",
-            "supportButtonText": "Lenovo Support"
+            "titleSuccess": "Skanning fullført. Enheten har bestått alle testene.",
+            "titleErrorPlural": "Skanning fullført. Enheten mislyktes med {{numberTestsFailed}} av testene.",
+            "titleErrorSingular": "Skanning fullført. Enheten mislyktes med 1 av testene.",
+            "frcSuccessDescription": "Denne sluttresultatkoden betyr at det ikke ble funnet problemer under skanningen. Hvis en test viser en advarsel eller en gjelder-ikke-melding, betyr ikke dette at det ble funnet et problem. Hvis du ble bedt om å kjøre denne testen av en kundestøtterepresentant fra Lenovo, bruker du denne koden som bevis. Hvis ikke trenger du ikke gjøre noe nå. Kontakt Lenovos kundestøtte hvis problemene vedvarer.",
+            "frcFailureDescription": "Denne sluttresultatkoden betyr at det ble funnet problemer under skanningen.",
+            "lenovoSupportInstruction": "I Lenovo kundestøtte kan du åpne en verifiseringskvittering ved hjelp av koden for det endelige resultatet.",
+            "finalResultCodeLabel": "Sluttresultatkode: ",
+            "scanAgainButtonText": "Skann på nytt",
+            "supportButtonText": "Lenovo kundestøtte"
         },
-        "executingScanTitle": "Scanning {{title}}..."
+        "executingScanTitle": "Skanner {{title}}..."
     },
     "smartPerformance": {
         "title": "Smart Performance",

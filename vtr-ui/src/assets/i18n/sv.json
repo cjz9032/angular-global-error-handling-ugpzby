@@ -3118,8 +3118,8 @@
                 "no": "Nej"
             },
             "waitAvailability": "Knappen är inaktiverad om lagringsenheterna inte stöder den här funktionen, om maskinvaruinformationen läses in eller om en genomsökning pågår.",
-            "executingTitle": "Recovering now...",
-            "recoverCompleted": "Recovery completed"
+            "executingTitle": "Återställer nu …",
+            "recoverCompleted": "Återställningen är klar"
         },
         "support": {
             "title": "Hämta professionella diagnostikverktyg",
@@ -3169,17 +3169,17 @@
             "recoverBadSectorsButtonText": "Återställa skadade sektorer"
         },
         "scanFinishedHeader": {
-            "titleSuccess": "Scan completed. Your device passed all the tests.",
-            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
-            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
-            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
-            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
-            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
-            "finalResultCodeLabel": "Final Result Code: ",
-            "scanAgainButtonText": "Scan Again",
+            "titleSuccess": "Genomsökningen är klar. Enheten klarade alla tester.",
+            "titleErrorPlural": "Genomsökningen är klar. Enheten klarade inte {{numberTestsFailed}} tester.",
+            "titleErrorSingular": "Genomsökningen är klar. Enheten klarade inte ett test.",
+            "frcSuccessDescription": "Slutresultatkoden visar att det inte påträffades några problem under genomsökningen. Om ett test visar en varning eller ett meddelande om att testet inte är tillämpligt betyder det inte att det påträffades ett problem. Om en Lenovo-supportansvarig ber dig köra testet kan du uppge denna kod som bevis. I annat fall behövs ingen åtgärd just nu. Kontakta Lenovos support om du fortfarande upplever problem.",
+            "frcFailureDescription": "Slutresultatkoden visar att det påträffades problem under genomsökningen.",
+            "lenovoSupportInstruction": "Du kan skapa ett verifieringsärende hos Lenovos support genom att ange slutresultatkoden.",
+            "finalResultCodeLabel": "Slutresultatkod: ",
+            "scanAgainButtonText": "Genomsök igen",
             "supportButtonText": "Lenovo Support"
         },
-        "executingScanTitle": "Scanning {{title}}..."
+        "executingScanTitle": "Genomsöker {{title}} …"
     },
     "smartPerformance": {
         "title": "Smart Performance",
