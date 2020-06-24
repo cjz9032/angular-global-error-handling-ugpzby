@@ -34,6 +34,12 @@
             letter-spacing: normal;
             font-family: 'SegoeUI';
             outline: none;
+            &:hover {
+                color: $blueHover;
+            }
+            &:active {
+                transform: scale(0.96);
+            }
         }
     }
     .modal-body {

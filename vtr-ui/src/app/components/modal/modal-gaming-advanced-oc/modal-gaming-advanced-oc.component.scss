@@ -103,10 +103,13 @@
             }
             &.ng5-slider-pointer {
                 background-image: none!important;
-                background-color: $light!important;
+                background-color: $gaming_lightest!important;
                 height: 20px!important;
                 width: 20px!important;
                 top: -7px!important;
+                &:hover{
+                    background-color: #C9CACC!important;
+                }
                 @media #{$high-contrast} {
                     border: 1px solid #999;
                 }
