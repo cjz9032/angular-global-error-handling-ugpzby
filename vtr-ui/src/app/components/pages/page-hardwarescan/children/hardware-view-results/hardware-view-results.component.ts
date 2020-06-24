@@ -37,7 +37,7 @@ export class HardwareViewResultsComponent implements OnInit, OnDestroy {
 		this.previousResultService.updateLastFailuredTest(this.item.items);
 
 		// Sets the Header with the type "View Results"
-		this.hardwareScanService.setScanTypeFinished(HardwareScanFinishedHeaderType.ViewResults);
+		this.hardwareScanService.setScanFinishedHeaderType(HardwareScanFinishedHeaderType.ViewResults);
 	}
 
 	ngOnDestroy() {
@@ -48,6 +48,6 @@ export class HardwareViewResultsComponent implements OnInit, OnDestroy {
 		this.hardwareScanService.setScanOrRBSFinished(false);
 
 		// Sets the Header with the type "None"
-		this.hardwareScanService.setScanTypeFinished(HardwareScanFinishedHeaderType.None);
+		this.hardwareScanService.setScanFinishedHeaderType(HardwareScanFinishedHeaderType.None);
 	}
 }

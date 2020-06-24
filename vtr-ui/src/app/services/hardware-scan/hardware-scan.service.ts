@@ -36,7 +36,7 @@ export class HardwareScanService {
 	private isViewingRecoverLog = false;
 	private hasDevicesToRecover = false;
 	private scanOrRBSFinished = false;
-	private scanTypeFinished = HardwareScanFinishedHeaderType;
+	private scanHeaderTypeFinished = HardwareScanFinishedHeaderType;
 	private isDesktopMachine: boolean = false;
 
 	private quickScanRequest: any = []; // request modules
@@ -88,7 +88,7 @@ export class HardwareScanService {
 
 	constructor(shellService: VantageShellService, private commonService: CommonService, private ngZone: NgZone,
 				private translate: TranslateService, private hypSettings: HypothesisService, 
-				private hardwareResultService: HardwareScanResultService, private previousResultService: PreviousResultService) {
+				private hardwareScanResultService: HardwareScanResultService, private previousResultService: PreviousResultService) {
 		this.hardwareScanBridge = shellService.getHardwareScan();
 
 		// Starts all priority requests as soon as possible when this service starts.
@@ -141,8 +141,8 @@ export class HardwareScanService {
 		return this.scanOrRBSFinished;
 	}
 
-	public getScanTypeFinished() {
-		return this.scanTypeFinished;
+	public getScanFinishedHeaderType() {
+		return this.scanHeaderTypeFinished;
 	}
 
 	public getCulture() {
@@ -197,8 +197,8 @@ export class HardwareScanService {
 		this.scanOrRBSFinished = value;
 	}
 
-	public setScanTypeFinished(value: any) {
-		this.scanTypeFinished = value;
+	public setScanFinishedHeaderType(value: any) {
+		this.scanHeaderTypeFinished = value;
 	}
 
 	public getDevicesRecover() {
@@ -471,12 +471,12 @@ export class HardwareScanService {
 			this.cancelRequested = false;
 			this.modules = modules;
 			this.executingModule = modules[0].module;
-			this.hardwareResultService.clearFailedTests();
+			this.hardwareScanResultService.clearFailedTests();
 			this.scanExecution = true;
 			this.disableCancel = true;
 			this.workDone.next(false);
 			this.setScanOrRBSFinished(false);
-			this.setScanTypeFinished(HardwareScanFinishedHeaderType.None);
+			this.setScanFinishedHeaderType(HardwareScanFinishedHeaderType.None);
 			this.clearLastResponse();
 			this.completedStatus = undefined;
 
@@ -516,7 +516,7 @@ export class HardwareScanService {
 
 				this.workDone.next(true);
 				this.setScanOrRBSFinished(true);
-				this.setScanTypeFinished(HardwareScanFinishedHeaderType.Scan);
+				this.setScanFinishedHeaderType(HardwareScanFinishedHeaderType.Scan);
 
 				// Retrieve an updated version of Scan's last results
 				this.previousResultService.updatePreviousResultsResponse();
@@ -597,7 +597,7 @@ export class HardwareScanService {
 			this.clearLastResponse();
 			this.cancelRequested = false;
 			this.setScanOrRBSFinished(false);
-			this.setScanTypeFinished(HardwareScanFinishedHeaderType.None);
+			this.setScanFinishedHeaderType(HardwareScanFinishedHeaderType.None);
 			this.workDone.next(false);
 			this.completedStatus = undefined;
 
@@ -626,7 +626,7 @@ export class HardwareScanService {
 				this.cleanUp();
 				this.workDone.next(true);
 				this.setScanOrRBSFinished(true);
-				this.setScanTypeFinished(HardwareScanFinishedHeaderType.RecoverBadSectors);
+				this.setScanFinishedHeaderType(HardwareScanFinishedHeaderType.RecoverBadSectors);
 
 				// RBS is finished, so we'll show its result instead of the running state
 				this.clearLastResponse();
@@ -925,7 +925,7 @@ export class HardwareScanService {
 		let totalTests = 0;
 		let testsCompleted = 0;
 
-		this.hardwareResultService.clearFailedTests();
+		this.hardwareScanResultService.clearFailedTests();
 		for (const scanResp of response.responses) {
 			for (const group of scanResp.groupResults) {
 				for (const test of group.testResultList) {
@@ -936,7 +936,7 @@ export class HardwareScanService {
 				}
 
 				//Calcute Failed Tests 
-				this.hardwareResultService.countFailedTests(group.testResultList);
+				this.hardwareScanResultService.countFailedTests(group.testResultList);
 			}
 		}
 
@@ -995,7 +995,7 @@ export class HardwareScanService {
 				}
 				module.listTest[i].percent = currentGroup.testResultList[i].percentageComplete;
 			}
-			module.resultModule = this.hardwareResultService.consolidateResults(module.listTest.map(item => item.statusTest));
+			module.resultModule = this.hardwareScanResultService.consolidateResults(module.listTest.map(item => item.statusTest));
 		}
 
 		this.completedStatus = this.modules.status;

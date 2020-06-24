@@ -23,13 +23,13 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 	@Output() scanAgain = new EventEmitter();
 
 	//Wrapper
-	public enumScanTypeFinished = HardwareScanFinishedHeaderType;
+	public enumScanHeaderTypeFinished = HardwareScanFinishedHeaderType;
 	public numberTestsFailed: number;
 	public dateDescription: string;
 
 	constructor(private hardwareScanService: HardwareScanService,
 				private previousResultService: PreviousResultService,
-				private hardwareResultService: HardwareScanResultService,
+				private hardwareScanResultService: HardwareScanResultService,
 				private lenovoSupportService: LenovoSupportService) { }
 
 	ngOnInit() {
@@ -48,13 +48,13 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 	public setupFailedTests() {
 		this.numberTestsFailed = 0;
 		if (this.hardwareScanService) {
-			this.numberTestsFailed = this.hardwareResultService.getFailedTests();
+			this.numberTestsFailed = this.hardwareScanResultService.getFailedTests();
 		}
 	}
 
-	public scanTypeFinished() {
+	public scanHeaderTypeFinished() {
 		if (this.hardwareScanService) {
-			return this.hardwareScanService.getScanTypeFinished();
+			return this.hardwareScanService.getScanFinishedHeaderType();
 		}
 		return HardwareScanFinishedHeaderType.None;
 	}

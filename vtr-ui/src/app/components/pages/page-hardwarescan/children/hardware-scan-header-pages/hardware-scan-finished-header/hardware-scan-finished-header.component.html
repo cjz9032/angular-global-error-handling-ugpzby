@@ -1,10 +1,10 @@
 <div class="hwscan-header">
 	<div class="row">
-		<div [ngSwitch]="scanTypeFinished()">
-			<div class="col title" *ngSwitchCase="enumScanTypeFinished.RecoverBadSectors">
+		<div [ngSwitch]="scanHeaderTypeFinished()">
+			<div class="col title" *ngSwitchCase="enumScanHeaderTypeFinished.RecoverBadSectors">
 				{{'hardwareScan.recoverBadSectors.recoverCompleted' | translate }}
 			</div>
-			<div *ngSwitchCase="enumScanTypeFinished.Scan">
+			<div *ngSwitchCase="enumScanHeaderTypeFinished.Scan">
 				<div class="col title" [ngSwitch]="numberTestsFailed">
 					<div *ngSwitchCase="0">
 						{{'hardwareScan.scanFinishedHeader.titleSuccess' | translate }}
@@ -89,7 +89,7 @@
 					</ng-template>
 				</div>
 			</div>
-			<div *ngSwitchCase="enumScanTypeFinished.ViewResults">
+			<div *ngSwitchCase="enumScanHeaderTypeFinished.ViewResults">
 
 				<!-- Defines a title -->
 				<div class="col title"  [ngSwitch]="numberTestsFailed"> 
@@ -127,7 +127,7 @@
 					</a>
 				</div>
 
-				<!-- Defines a mensage about lenovo support -->
+				<!-- Defines a message about lenovo support -->
 				<div class="description-row" *ngIf="numberTestsFailed > 0">
 					<p class="row failure-description"> {{ 'hardwareScan.scanFinishedHeader.frcFailureDescription' | translate }}</p>
 					<p class="row failure-description"> {{ 'hardwareScan.scanFinishedHeader.lenovoSupportInstruction' | translate }}</p>

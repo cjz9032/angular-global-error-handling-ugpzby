@@ -93,7 +93,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		private commonService: CommonService,
 		private hardwareScanService: HardwareScanService,
 		private previousResultService: PreviousResultService,
-		private hardwareResultService: HardwareScanResultService,
+		private hardwareScanResultService: HardwareScanResultService,
 		private ngZone: NgZone,
 		private modalService: NgbModal,
 		config: NgbModalConfig,
@@ -776,7 +776,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				});
 			}
 
-			item.resultModule = this.hardwareResultService.consolidateResults(item.listTest.map(item => item.statusTest));
+			item.resultModule = this.hardwareScanResultService.consolidateResults(item.listTest.map(item => item.statusTest));
 			results.items.push(item);
 		}
 
@@ -870,7 +870,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				results.items.push(item);
 			}
 
-			results.resultModule = this.hardwareResultService.consolidateResults(this.devicesRecoverBadSectors.map(item => item.status));
+			results.resultModule = this.hardwareScanResultService.consolidateResults(this.devicesRecoverBadSectors.map(item => item.status));
 
 			this.previousResultService.setViewResultItems(results);
 			this.modules = results.items;
@@ -998,7 +998,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					resultJson.TestsList[testName].push(testObj);
 				}
 			}
-			overalTestResult = this.hardwareResultService.consolidateResults(this.modules.listTest.map(test => test.status));
+			overalTestResult = this.hardwareScanResultService.consolidateResults(this.modules.listTest.map(test => test.status));
 		}
 
 		resultJson.Result = HardwareScanTestResult[overalTestResult];
@@ -1020,7 +1020,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				numberOfSuccess++;
 			}
 		}
-		result = this.hardwareResultService.consolidateResults(rbsFinalResponse.devices.map(item => item.status));
+		result = this.hardwareScanResultService.consolidateResults(rbsFinalResponse.devices.map(item => item.status));
 
 		return {
 			taskCount: numberOfSuccess,

@@ -22,12 +22,12 @@ export class PreviousResultService {
 	private previousItemsWidget = {};
 	private previousResultsResponse: any = undefined;
 
-	constructor( shellService: VantageShellService,
+	constructor(shellService: VantageShellService,
 				private translate: TranslateService,
 				private commonService: CommonService,
-				private hardwareResultService: HardwareScanResultService) { 
-					this.hardwareScanBridge = shellService.getHardwareScan();
-				}
+				private hardwareScanResultService: HardwareScanResultService) { 
+		this.hardwareScanBridge = shellService.getHardwareScan();	
+	}
 
 	public getLastPreviousResultDate() {
 		const item: any = this.getPreviousResultsWidget();
@@ -56,7 +56,7 @@ export class PreviousResultService {
 			const module: any = {};
 			module.name = item.module;
 			module.subname = item.name;
-			module.resultModule = this.hardwareResultService.consolidateResults(item.listTest.map(item => item.statusTest));
+			module.resultModule = this.hardwareScanResultService.consolidateResults(item.listTest.map(item => item.statusTest));
 
 			previousItems.modules.push(module);
 		}
@@ -132,13 +132,13 @@ export class PreviousResultService {
 						}
 						item.listTest.push(testInfo);
 					}
-					item.resultModule = this.hardwareResultService.consolidateResults(test.map(item => item.result));
+					item.resultModule = this.hardwareScanResultService.consolidateResults(test.map(item => item.result));
 					previousResults.items.push(item);
 				}
 
 				moduleId++;
 			}
-			previousResults.resultTestsTitle = this.hardwareResultService.consolidateResults(previousResults.items.map(item => item.resultModule));
+			previousResults.resultTestsTitle = this.hardwareScanResultService.consolidateResults(previousResults.items.map(item => item.resultModule));
 
 			this.previousResults = previousResults;
 			this.buildPreviousResultsWidget(this.previousResults);
@@ -161,8 +161,11 @@ export class PreviousResultService {
 	}
 
 	public updateLastFailuredTest(moduleList: any) {
+		// Clear Failed Tests before count
+		this.hardwareScanResultService.clearFailedTests();
+
 		moduleList.forEach(module => {
-			this.hardwareResultService.countFailedTests(module.listTest);
+			this.hardwareScanResultService.countFailedTests(module.listTest);
 		});
 	}
 
