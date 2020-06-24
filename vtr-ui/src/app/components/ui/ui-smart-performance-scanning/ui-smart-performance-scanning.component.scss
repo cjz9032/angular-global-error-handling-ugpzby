@@ -216,8 +216,8 @@
 							}
 						}
                         .heading {
-								max-width:50%;
-								width:50%;
+								max-width:55%;
+								width:55%;
 								text-align:left;
 								word-break:break-all;
                             h3, h2{
@@ -230,9 +230,7 @@
 								}	
 								@media #{$breakpoint_md}{				
 									font-size: $fontsize_xs2;
-								}						
-													
-								
+								}														
                             }
                             .icomoon{
 								color: $menu_hover;
