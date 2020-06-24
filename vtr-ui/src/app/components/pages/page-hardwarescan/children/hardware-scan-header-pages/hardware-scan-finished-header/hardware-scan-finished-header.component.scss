@@ -54,8 +54,10 @@
 
 .link-support {
 	padding-top: 1rem;
+	text-decoration: underline;
 	&:hover {
 		color: $menu_hover;
+		text-decoration: none;
 	}
 }
 

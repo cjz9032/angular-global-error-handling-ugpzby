@@ -25,7 +25,7 @@
 						href="javascript:void(0)"
 						class="result-code-icon"
 						triggers="click"
-						placement="auto"
+						[placement]="['left','right']"
 						[ngbTooltip]="tooltipFinalResultCode"
 						container="vtr-root"
 						tabindex="1"
@@ -93,8 +93,8 @@
 
 	<ng-template #tooltipFinalResultCode>
 		<div [innerHTML]="'hardwareScan.scanFinishedHeader.frcSuccessDescription' | translate"></div>
-		<div class="link-support">
 			<a [attr.href]="supportUrl"
+				class="link-support"
 				id="supportButton"
 				target="_blank"
 				vtrMetrics
@@ -106,6 +106,5 @@
 				tabindex="1">
 				{{ 'hardwareScan.scanFinishedHeader.supportButtonText' | translate }}
 			</a>
-		</div>
 	</ng-template>
 </div>

@@ -19,7 +19,6 @@ export class HardwareViewResultsComponent implements OnInit, OnDestroy {
 	public anchorText = this.translate.instant('hardwareScan.save');
 	public showProgress = false;
 	public isLoadingDone = false;
-	public lenovoSupport = this.translate.instant('hardwareScan.support.subtitle');
 
 	// "Wrapper" value to be accessed from the HTML
 	public testResultEnum = HardwareScanTestResult;

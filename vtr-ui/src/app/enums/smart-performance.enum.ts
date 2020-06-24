@@ -41,7 +41,7 @@ export enum PaymentPage{
 	SLASH='/',
 	TRUE='true',
 	ORDERDETAILS = 'http://uatpcsupport.lenovo.com/api/v4/upsell/smart/getorders?serialNumber=',
-	ORDERWAITINGTIME = 10, // MINUTES,
+	ORDERWAITINGTIME = 2, // MINUTES,
 	PNLIST = 'U2FsdGVkX1+X2TVVOmuZWob7GGBAX0MqhbFG7Py5rjlN9MWpGuBkRkz23xBRr9xZllutntrWS2FDYJ9/CW0JIK8DaxmmShtyQEe+aqm9jYk='
 }
 
