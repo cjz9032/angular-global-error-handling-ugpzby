@@ -49,7 +49,7 @@ import { DeviceService } from 'src/app/services/device/device.service';
 })
 export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, AfterViewInit {
 	pageStatus: HomeSecurityPageStatus;
-
+	url = 'ms-settings:privacy-location';
 	chs: ConnectedHomeSecurity;
 	devicePosture: DevicePosture;
 	wifiSecurity: WifiSecurity;
@@ -90,16 +90,16 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		}
 	};
 
-	private devicePostureHasChange(preDevicePostureValue: DeviceCondition[], newDevicePostureValue: DeviceCondition[]) : boolean {
+	private devicePostureHasChange(preDevicePostureValue: DeviceCondition[], newDevicePostureValue: DeviceCondition[]): boolean {
 		let hasChange = false;
-		if(isEqual(preDevicePostureValue, newDevicePostureValue)) return false;
+		if (isEqual(preDevicePostureValue, newDevicePostureValue)) return false;
 		if (preDevicePostureValue.length <= newDevicePostureValue.length) {
 			this.preDevicePostureValue = cloneDeep(newDevicePostureValue);
 			hasChange = true;
 		}
 		else {
 			newDevicePostureValue.forEach((item) => {
-				let index = findIndex(preDevicePostureValue, {name: item.name});
+				let index = findIndex(preDevicePostureValue, { name: item.name });
 				if (preDevicePostureValue[index].vulnerable !== item.vulnerable) {
 					preDevicePostureValue[index].vulnerable = item.vulnerable;
 					hasChange = true;
@@ -124,7 +124,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			}
 		}
 		if (chs.deviceOverview) {
-			if(this.deviceOverviewHasChange(this.preDeviceOverview, chs.deviceOverview)) {
+			if (this.deviceOverviewHasChange(this.preDeviceOverview, chs.deviceOverview)) {
 				this.preDeviceOverview = Object.assign({}, this.chs.deviceOverview);
 				this.allDevicesInfo = new HomeSecurityAllDevice(this.translateService, this.chs.deviceOverview);
 			}
@@ -132,7 +132,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		}
 	};
 
-	private deviceOverviewHasChange(preDeviceOverview: CHSDeviceOverview, newDeviceOverview: CHSDeviceOverview) : boolean {
+	private deviceOverviewHasChange(preDeviceOverview: CHSDeviceOverview, newDeviceOverview: CHSDeviceOverview): boolean {
 		const attrNeedToCompare = ['familyMembersCount', 'placesCount', 'personalDevicesCount', 'wifiNetworkCount', 'homeDevicesCount'];
 		return isEqual(pick(preDeviceOverview, attrNeedToCompare), pick(newDeviceOverview, attrNeedToCompare)) ? false : true;
 	}
@@ -456,9 +456,22 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityLocation, this.locationPermission);
 	}
 
-	launchLocationSettings(path: string) {
-		if (path) {
-			this.deviceService.launchUri(path);
+	launchLocationSettings() {
+		if (this.locationPermission
+			&& this.locationPermission.isAllAppsServiceOn
+			&& this.locationPermission.isDeviceServiceOn
+			&& !this.locationPermission.hasSystemPermissionShowed) {
+			this.requestVantagePermission();
+		} else {
+			this.permission.openSettingsApp(this.url);
 		}
+	}
+
+	requestVantagePermission() {
+		this.permission.requestPermission('geoLocatorStatus').then((status: boolean) => {
+			if (status) {
+				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
+			}
+		});
 	}
 }

@@ -14,7 +14,7 @@
 				<div class="w-100 location" [hidden]="locationPermission?.isLocationServiceOn">
 					<vtr-widget-location-status linkId="chs-btn-enableLocation"
 						[title]="'security.homeprotection.homesecurity.locationDisabledInfo.title' | translate"
-						(buttonClick)="launchLocationSettings('ms-settings:privacy-location')"
+						(buttonClick)="launchLocationSettings()"
 						[subtitle]="'security.homeprotection.homesecurity.locationDisabledInfo.subtitle' | translate"
 						[buttonText]="'security.homeprotection.homesecurity.locationDisabledInfo.buttonText' | translate"
 						[description]="'security.homeprotection.homesecurity.locationDisabledInfo.howToEnableLocation' | translate"
@@ -122,7 +122,7 @@
 										<vtr-ui-button [ngClass]="{'disable': locationPermission?.isLoading}"
 											metricsItem="enableLocationSecurityHealth"
 											metricsEvent="featureClick"
-											(onClick)="launchLocationSettings('ms-settings:privacy-location')"
+											(onClick)="launchLocationSettings()"
 											[isDisabled]="locationPermission?.isLoading"
 											linkId="chs-btn-enableLocation"
 											[label]="'security.homeprotection.securityhealth.button' | translate">
