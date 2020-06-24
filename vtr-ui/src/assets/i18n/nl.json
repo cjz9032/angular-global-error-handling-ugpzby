@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "Om de werkingsduur van de batterij te verlengen, hebben we de volledige laadcapaciteit op basis van uw gebruik geoptimaliseerd. De volledige batterijcapaciteit is mogelijk pas beschikbaar nadat u tot 20% hebt ontladen en opnieuw hebt opgeladen.",
-                    "moreInfo": "Klik <a role=\"link\" href=\"#/device/high-density-battery\">hier</a> voor meer informatie."
+                    "moreInfo": "Klik <a role=\"link\" href=\"#/device/high-density-battery\" tabindex=\"0\">hier</a> voor meer informatie."
                 },
                 "condition": {
                     "Illegal": "De geïnstalleerde batterij wordt <b>niet ondersteund</b> door het systeem en kan niet worden opgeladen. Vervang de batterij door een Lenovo-batterij die geschikt is voor dit systeem.",

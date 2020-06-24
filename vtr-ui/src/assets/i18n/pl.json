@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "Aby przedłużyć żywotność baterii, zoptymalizowaliśmy jej pełną pojemność ładowania w zależności od sposobu użytkowania. Pełna pojemność baterii może być niedostępna do momentu rozładowania do 20% i ponownego naładowania.",
-                    "moreInfo": "Kliknij <a role=\"link\" href=\"#/device/high-density-battery\">tutaj</a>, aby uzyskać więcej informacji."
+                    "moreInfo": "Kliknij <a role=\"link\" href=\"#/device/high-density-battery\" tabindex=\"0\">tutaj</a>, aby uzyskać więcej informacji."
                 },
                 "condition": {
                     "Illegal": "Zainstalowany akumulator <b>nie jest obsługiwany</b> w tym systemie i nie będzie ładowany. Wymień go na właściwy akumulator Lenovo dla tego systemu.",
