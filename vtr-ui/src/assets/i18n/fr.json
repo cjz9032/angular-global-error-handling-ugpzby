@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "Pour prolonger la durée de vie de votre batterie, nous avons optimisé sa capacité de charge complète en fonction de votre utilisation. La capacité totale de la batterie peut ne pas être disponible tant que vous n'avez pas laissé la batterie se vider jusqu'à 20 % avant de la recharger.",
-                    "moreInfo": "Cliquez <a role=\"link\" href=\"#/device/high-density-battery\">ici</a> pour plus d'informations."
+                    "moreInfo": "Cliquez <a role=\"link\" href=\"#/device/high-density-battery\" tabindex=\"0\">ici</a> pour plus d'informations."
                 },
                 "condition": {
                     "Illegal": "La batterie installée n'est <b>pas prise en charge</b> par ce système et ne va pas se charger. Remplacez la batterie par une batterie agréée par Lenovo et compatible avec ce système.",

@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "為了延長電池的壽命，我們已根據您的使用情形將其原始充飽容量最佳化。在您放電至 20％ 並重新充電之前，可能無法使用電池的充飽容量。",
-                    "moreInfo": "如需相關資訊，請按一下<a role=\"link\" href=\"#/device/high-density-battery\">這裡</a>。"
+                    "moreInfo": "如需相關資訊，請按一下<a role=\"link\" href=\"#/device/high-density-battery\" tabindex=\"0\">這裡</a>。"
                 },
                 "condition": {
                     "Illegal": "此系統<b>不支援</b>安裝的電池，因此無法充電。請使用此系統適用的正確 Lenovo 電池進行更換。",

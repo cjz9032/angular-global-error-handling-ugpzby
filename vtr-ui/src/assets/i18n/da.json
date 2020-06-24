@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "For at forlænge batterilevetiden har vi optimeret dets kapacitet ved fuld opladning baseret på din brug. Den fulde batterikapacitet er muligvis ikke tilgængelig, før du aflader til 20 % og oplader igen.",
-                    "moreInfo": "Klik <a role=\"link\" href=\"#/device/high-density-battery\">her</a> for at få flere oplysninger."
+                    "moreInfo": "Klik <a role=\"link\" href=\"#/device/high-density-battery\" tabindex=\"0\">her</a> for at få flere oplysninger."
                 },
                 "condition": {
                     "Illegal": "Det batteri, der er installeret, <b>understøttes ikke</b> af dette system og vil ikke blive opladet. Udskift batteriet med det korrekte Lenovo-batteri til systemet.",

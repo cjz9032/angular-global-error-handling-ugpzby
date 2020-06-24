@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "Az akkumulátor élettartamának meghosszabbítása érdekében optimalizáltuk az akkumulátor teljes töltési kapacitását a használati séma alapján. Előfordulhat, hogy a teljes akkumulátorkapacitás csak azután áll rendelkezésre, hogy az akkumulátor 20%-ra lemerült és feltöltődött.",
-                    "moreInfo": "További információkért kattintson <a role=\"link\" href=\"#/device/high-density-battery\">ide</a>."
+                    "moreInfo": "További információkért kattintson <a role=\"link\" href=\"#/device/high-density-battery\" tabindex=\"0\">ide</a>."
                 },
                 "condition": {
                     "Illegal": "A telepített akkumulátort a rendszer <b>nem támogatja</b> és nem tölti fel. Cserélje ki az akkumulátort egy a rendszerhez megfelelő Lenovo akkumulátorra.",

@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "Abychom prodloužili životnost baterie, optimalizovali jsme její plnou kapacitu nabíjení na základě vašeho používání. Plná kapacita baterie nemusí být k dispozici, dokud baterii nevybijete na 20% a znovu nenabijete.",
-                    "moreInfo": "Kliknutím <a role=\"link\" href=\"#/device/high-density-battery\">sem</a> zobrazíte další informace."
+                    "moreInfo": "Kliknutím <a role=\"link\" href=\"#/device/high-density-battery\" tabindex=\"0\">sem</a> zobrazíte další informace."
                 },
                 "condition": {
                     "Illegal": "Nainstalovaná baterie <b>není</b> tímto systémem podporována a nebude se dobíjet. Vyměňte baterii za správnou baterii Lenovo určenou pro tento systém.",

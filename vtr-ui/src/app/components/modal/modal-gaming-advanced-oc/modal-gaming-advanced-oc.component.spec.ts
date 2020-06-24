@@ -419,5 +419,12 @@ describe('ModalGamingAdvancedOCComponent : ', () => {
         });
     })
 
+    describe('check the automation id string  : ', () => {
+        it('should replace empty space to underscore from a string', () => {
+            const result = component.removeSpaces('automation Id');
+            expect(result).toEqual('automation_id');
+        });
+    })
+
 });
 
