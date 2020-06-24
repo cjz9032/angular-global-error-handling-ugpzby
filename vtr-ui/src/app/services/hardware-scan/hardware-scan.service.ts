@@ -4,13 +4,15 @@ import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.
 import { HardwareScanOverallResult } from 'src/app/enums/hardware-scan-overall-result.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { PreviousResultService } from 'src/app/services/hardware-scan/previous-result.service';
+import { HardwareScanResultService } from 'src/app/services/hardware-scan/hardware-scan-result.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { Subject, Observable } from 'rxjs';
 import { first } from 'rxjs/operators';
 import { TaskType, TaskStep } from 'src/app/enums/hardware-scan-metrics.enum';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { HardwareScanType } from 'src/app/enums/hardware-scan-type';
+import { HardwareScanFinishedHeaderType } from 'src/app/enums/hardware-scan-finished-header-type.enum';
 
 @Injectable({
 	providedIn: 'root'
@@ -22,12 +24,10 @@ export class HardwareScanService {
 	private isLoadingModulesDone = false;
 	private isScanDone = false;
 	private scanExecution = false;
-	private hasLastResults = false;
 	private hasItemsToRecoverBadSectors = false;
 	private devicesToRecoverBadSectors;
 	private progress = 0;
 	private modules: any; // modules displayed on screen
-	private viewResultItems: any;
 	private devices: any[];
 	private recoverExecution = false;
 	private recoverInProgress = false;
@@ -36,7 +36,8 @@ export class HardwareScanService {
 	private isViewingRecoverLog = false;
 	private hasDevicesToRecover = false;
 	private scanOrRBSFinished = false;
-	private scanTypeFinished = HardwareScanType;
+	private scanTypeFinished = HardwareScanFinishedHeaderType;
+	private isDesktopMachine: boolean = false;
 
 	private quickScanRequest: any = []; // request modules
 	private quickScanResponse: any = []; // response modules
@@ -46,8 +47,6 @@ export class HardwareScanService {
 	private categoryInformationList: any = []; // List of categoryInformation
 	private filteredCustomScanRequest = [];
 	private filteredCustomScanResponse = [];
-	private previousResults = {};
-	private previousItemsWidget = {};
 	private cancelRequested: boolean;
 	private disableCancel = false;
 	private finalResponse: any;
@@ -59,13 +58,10 @@ export class HardwareScanService {
 	private ALL_MODULES = 2;
 	private refreshingModules: boolean = false;
 	private showComponentList: boolean = false;
-	private previousResultsResponse: any = undefined;
 	private hardwareModulesLoaded = new Subject<boolean>();
 	private hypSettingsPromise: any = undefined;
 	private pluginVersion: string;
-	private isDesktopMachine: boolean = false;
 	private executingModule: string;
-	private failedTests:number = 0;
 	private lastTaskType: TaskType;
 	private lastFilteredCustomScanRequest = [];
 	private lastFilteredCustomScanResponse = [];
@@ -74,8 +70,6 @@ export class HardwareScanService {
 	private currentTaskType: TaskType;
 	private currentTaskStep: TaskStep;
 
-	// This is used to determine the scan overall status when sending metrics information
-	private resultSeverityConversion = {};
 
 	private modulesStored: any;
 	private completedStatus: boolean | undefined = undefined;
@@ -93,11 +87,11 @@ export class HardwareScanService {
 	private static readonly HARDWARE_SCAN_HYPHOTESIS_CONFIG_NAME: string = 'HardwareScan';
 
 	constructor(shellService: VantageShellService, private commonService: CommonService, private ngZone: NgZone,
-				private translate: TranslateService, private hypSettings: HypothesisService) {
+				private translate: TranslateService, private hypSettings: HypothesisService, 
+				private hardwareResultService: HardwareScanResultService, private previousResultService: PreviousResultService) {
 		this.hardwareScanBridge = shellService.getHardwareScan();
 
 		// Starts all priority requests as soon as possible when this service starts.
-		this.initResultSeverityConversion();
 		this.doPriorityRequests();
 	}
 
@@ -125,8 +119,8 @@ export class HardwareScanService {
 						}
 					});
 
-					// Retrive the last Scan's results (it does not use the CLI)
-					this.previousResultsResponse = this.hardwareScanBridge.getPreviousResults();
+					// Retrieve an updated the last Scan's results (it does not use the CLI)
+					this.previousResultService.updatePreviousResultsResponse();
 
 					// Retrive the hardware component list (it does use the CLI)
 					this.culture = window.navigator.languages[0];
@@ -199,20 +193,12 @@ export class HardwareScanService {
 		return this.isDesktopMachine;
 	}
 
-	public getViewResultItems() {
-		return this.viewResultItems;
-	}
-
 	public setScanOrRBSFinished(value: boolean) {
 		this.scanOrRBSFinished = value;
 	}
 
 	public setScanTypeFinished(value: any) {
 		this.scanTypeFinished = value;
-	}
-
-	public setViewResultItems(items: any) {
-		this.viewResultItems = items;
 	}
 
 	public getDevicesRecover() {
@@ -223,24 +209,12 @@ export class HardwareScanService {
 		this.devices = items;
 	}
 
-	public getPreviousResults() {
-		return this.previousResults;
-	}
-
-	public getPreviousResultsWidget() {
-		return this.previousItemsWidget;
-	}
-
 	public getHasDevicesToRecover() {
 		return this.hasDevicesToRecover;
 	}
 
 	public isScanExecuting() {
 		return this.scanExecution;
-	}
-
-	public hasPreviousResults() {
-		return this.hasLastResults;
 	}
 
 	public setScanExecutionStatus(status: boolean) {
@@ -497,12 +471,12 @@ export class HardwareScanService {
 			this.cancelRequested = false;
 			this.modules = modules;
 			this.executingModule = modules[0].module;
-			this.failedTests = 0;
+			this.hardwareResultService.clearFailedTests();
 			this.scanExecution = true;
 			this.disableCancel = true;
 			this.workDone.next(false);
 			this.setScanOrRBSFinished(false);
-			this.setScanTypeFinished(HardwareScanType.None);
+			this.setScanTypeFinished(HardwareScanFinishedHeaderType.None);
 			this.clearLastResponse();
 			this.completedStatus = undefined;
 
@@ -542,10 +516,10 @@ export class HardwareScanService {
 
 				this.workDone.next(true);
 				this.setScanOrRBSFinished(true);
-				this.setScanTypeFinished(HardwareScanType.Scan);
+				this.setScanTypeFinished(HardwareScanFinishedHeaderType.Scan);
 
 				// Retrieve an updated version of Scan's last results
-				this.previousResultsResponse = this.hardwareScanBridge.getPreviousResults();
+				this.previousResultService.updatePreviousResultsResponse();
 
 				// Scan is finished, so we'll show its result instead of the running state
 				this.clearLastResponse();
@@ -623,7 +597,7 @@ export class HardwareScanService {
 			this.clearLastResponse();
 			this.cancelRequested = false;
 			this.setScanOrRBSFinished(false);
-			this.setScanTypeFinished(HardwareScanType.None);
+			this.setScanTypeFinished(HardwareScanFinishedHeaderType.None);
 			this.workDone.next(false);
 			this.completedStatus = undefined;
 
@@ -652,7 +626,7 @@ export class HardwareScanService {
 				this.cleanUp();
 				this.workDone.next(true);
 				this.setScanOrRBSFinished(true);
-				this.setScanTypeFinished(HardwareScanType.RecoverBadSectors);
+				this.setScanTypeFinished(HardwareScanFinishedHeaderType.RecoverBadSectors);
 
 				// RBS is finished, so we'll show its result instead of the running state
 				this.clearLastResponse();
@@ -951,18 +925,18 @@ export class HardwareScanService {
 		let totalTests = 0;
 		let testsCompleted = 0;
 
-		this.failedTests = 0;
+		this.hardwareResultService.clearFailedTests();
 		for (const scanResp of response.responses) {
 			for (const group of scanResp.groupResults) {
 				for (const test of group.testResultList) {
-					if (test.result === HardwareScanTestResult.Fail) {
-						this.failedTests++;
-					}
 					totalTests++;
 					if (test.percentageComplete === 100) {
 						testsCompleted++;
 					}
 				}
+
+				//Calcute Failed Tests 
+				this.hardwareResultService.countFailedTests(group.testResultList);
 			}
 		}
 
@@ -1021,7 +995,7 @@ export class HardwareScanService {
 				}
 				module.listTest[i].percent = currentGroup.testResultList[i].percentageComplete;
 			}
-			module.resultModule = this.consolidateResults(module.listTest.map(item => item.statusTest));
+			module.resultModule = this.hardwareResultService.consolidateResults(module.listTest.map(item => item.statusTest));
 		}
 
 		this.completedStatus = this.modules.status;
@@ -1091,110 +1065,6 @@ export class HardwareScanService {
 				this.filteredCustomScanResponse.push(...moduleResponse.filter(x => x.listTest.length !== 0));
 			}
 		}
-	}
-
-	public getLastResults() {
-		if (this.hardwareScanBridge) {
-			return this.previousResultsResponse
-				.then((response) => {
-				this.buildPreviousResults(response);
-			});
-		}
-		return undefined;
-	}
-
-	private buildPreviousResults(response: any) {
-		const previousResults: any = {};
-		let moduleId = 0;
-
-		if (response.hasPreviousResults) {
-			this.hasLastResults = response.hasPreviousResults;
-			previousResults.finalResultCode = response.scanSummary.finalResultCode;
-			previousResults.resultTestsTitle = HardwareScanTestResult.Pass;
-
-			const date = response.scanSummary.ScanDate.toString().replace(/-/g, '/').split('T');
-			previousResults.date = date[0] + ' ' + date[1].slice(0, 8);
-
-			previousResults.information = response.scanSummary.finalResultCodeDescription;
-			previousResults.items = [];
-
-			for (const module of response.modulesResults) {
-				const groupResult = module.response.groupResults;
-				const groupsResultMeta = module.categoryInformation.groupList;
-
-				for (let i = 0; i < module.response.groupResults.length; i++) {
-					const item: any = {};
-					const groupResultMeta = groupsResultMeta.find(x => x.id === groupResult[i].id);
-					const moduleName = groupResult[i].moduleName;
-
-					item.id = moduleId;
-					item.module = module.categoryInformation.name;
-					item.name = groupResultMeta.name;
-					item.resultCode = groupResult[i].resultCode;
-					item.information = groupResult[i].resultDescription;
-					item.expanded = false;
-					item.expandedStatusChangedByUser = false;
-					item.detailsExpanded = false;
-					item.icon = moduleName;
-					item.resultModule = HardwareScanTestResult.Pass;
-
-					if (!this.isDesktopMachine) {
-						if (item.icon === 'pci_express') {
-							item.icon += "_laptop";
-						}
-					}
-					item.details = [];
-
-					for (let j = 0; j < groupResultMeta.metaInformation.length; j++) {
-						const meta = groupResultMeta.metaInformation[j];
-						const detail = {};
-						detail[meta.name] = meta.value;
-						item.details.push(detail);
-					}
-
-					item.listTest = [];
-					const test = groupResult[i].testResultList;
-					const testMeta = groupResultMeta.testList;
-
-					for (let j = 0; j < groupResult[i].testResultList.length; j++) {
-						const testInfo: any = {};
-						testInfo.id = test[j].id;
-						testInfo.name = testMeta.find(x => x.id === test[j].id).name;
-						testInfo.information = testMeta.find(x => x.id === test[j].id).description;
-						testInfo.statusTest = test[j].result;
-
-						if (testInfo.statusTest === HardwareScanTestResult.NotStarted ||
-							testInfo.statusTest === HardwareScanTestResult.InProgress) {
-							testInfo.statusTest = HardwareScanOverallResult.Cancelled;
-						}
-						item.listTest.push(testInfo);
-					}
-					item.resultModule = this.consolidateResults(test.map(item => item.result));
-					previousResults.items.push(item);
-				}
-
-				moduleId++;
-			}
-			previousResults.resultTestsTitle = this.consolidateResults(previousResults.items.map(item => item.resultModule));
-
-			this.previousResults = previousResults;
-			this.buildPreviousResultsWidget(this.previousResults);
-		}
-	}
-
-	private buildPreviousResultsWidget(previousResults: any) {
-		const previousItems: any = {};
-		previousItems.date = previousResults.date;
-		previousItems.modules = [];
-		for (const item of previousResults.items) {
-			const module: any = {};
-			module.name = item.module;
-			module.subname = item.name;
-			module.resultModule = this.consolidateResults(item.listTest.map(item => item.statusTest));
-
-			previousItems.modules.push(module);
-		}
-		this.previousItemsWidget = previousItems;
 	}
 
 	public getStatus() {
@@ -1336,10 +1206,6 @@ export class HardwareScanService {
 		return this.executingModule;
 	}
 
-	public getFailedTests() {
-		return this.failedTests;
-	}
-
 	public getLastTaskType() {
 		return this.lastTaskType;
 	}
@@ -1371,29 +1237,4 @@ export class HardwareScanService {
 			}
 		}
 	}
-	private initResultSeverityConversion() {
-		// the enum HardwareScanTestResult isn't really in the best order to determine the severity of the results
-		// because of that, I'm creating a map with the best order to determine the scan overall status
-		this.resultSeverityConversion[HardwareScanTestResult.NotStarted] = 0;
-		this.resultSeverityConversion[HardwareScanTestResult.InProgress] = 1;
-		this.resultSeverityConversion[HardwareScanTestResult.Na] = 2;
-		this.resultSeverityConversion[HardwareScanTestResult.Pass] = 3;
-		this.resultSeverityConversion[HardwareScanTestResult.Warning] = 4;
-		this.resultSeverityConversion[HardwareScanTestResult.Fail] = 5;
-		this.resultSeverityConversion[HardwareScanTestResult.Cancelled] = 6;
-	}
-
-	public consolidateResults(partialResults: any): HardwareScanTestResult {
-		let consolidatedResult = HardwareScanTestResult.Pass;
-
-		partialResults.forEach(partialResult => {
-			// Only change result when finds a worse case
-			if (this.resultSeverityConversion[consolidatedResult] < this.resultSeverityConversion[partialResult]) {
-				consolidatedResult = partialResult;
-			}
-		});
-
-		return consolidatedResult;
-	}
-
 }

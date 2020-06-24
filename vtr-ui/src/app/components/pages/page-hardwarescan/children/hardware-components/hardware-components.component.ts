@@ -13,6 +13,8 @@ import { ModalCancelComponent } from '../../../../modal/modal-cancel/modal-cance
 import { ModalScanFailureComponent } from '../../../../modal/modal-scan-failure/modal-scan-failure.component';
 import { ModalScheduleScanCollisionComponent } from '../../../../modal/modal-schedule-scan-collision/modal-schedule-scan-collision.component';
 import { HardwareScanService } from '../../../../../services/hardware-scan/hardware-scan.service';
+import { HardwareScanResultService } from '../../../../../services/hardware-scan/hardware-scan-result.service';
+import { PreviousResultService } from '../../../../../services/hardware-scan/previous-result.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { VantageShellService } from '../../../../../services/vantage-shell/vantage-shell.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
@@ -90,6 +92,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		public deviceService: DeviceService,
 		private commonService: CommonService,
 		private hardwareScanService: HardwareScanService,
+		private previousResultService: PreviousResultService,
+		private hardwareResultService: HardwareScanResultService,
 		private ngZone: NgZone,
 		private modalService: NgbModal,
 		config: NgbModalConfig,
@@ -772,12 +776,12 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				});
 			}
 
-			item.resultModule = this.hardwareScanService.consolidateResults(item.listTest.map(item => item.statusTest));
+			item.resultModule = this.hardwareResultService.consolidateResults(item.listTest.map(item => item.statusTest));
 			results.items.push(item);
 		}
 
 		//Update the ViewResultItem
-		this.hardwareScanService.setViewResultItems(results);
+		this.previousResultService.setViewResultItems(results);
 
 		//If a cancellation was requested, the application will return the HW Scan home page.
 		//So, in this case, the modules list will be updated with the data to be displayed on
@@ -866,9 +870,9 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				results.items.push(item);
 			}
 
-			results.resultModule = this.hardwareScanService.consolidateResults(this.devicesRecoverBadSectors.map(item => item.status));
+			results.resultModule = this.hardwareResultService.consolidateResults(this.devicesRecoverBadSectors.map(item => item.status));
 
-			this.hardwareScanService.setViewResultItems(results);
+			this.previousResultService.setViewResultItems(results);
 			this.modules = results.items;
 		}
 	}
@@ -994,7 +998,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					resultJson.TestsList[testName].push(testObj);
 				}
 			}
-			overalTestResult = this.hardwareScanService.consolidateResults(this.modules.listTest.map(test => test.status));
+			overalTestResult = this.hardwareResultService.consolidateResults(this.modules.listTest.map(test => test.status));
 		}
 
 		resultJson.Result = HardwareScanTestResult[overalTestResult];
@@ -1016,7 +1020,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				numberOfSuccess++;
 			}
 		}
-		result = this.hardwareScanService.consolidateResults(rbsFinalResponse.devices.map(item => item.status));
+		result = this.hardwareResultService.consolidateResults(rbsFinalResponse.devices.map(item => item.status));
 
 		return {
 			taskCount: numberOfSuccess,
