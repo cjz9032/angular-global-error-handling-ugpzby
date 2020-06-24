@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.enum';
 import { HardwareScanService } from '../../../services/hardware-scan/hardware-scan.service';
+import { PreviousResultService } from '../../../services/hardware-scan/previous-result.service';
 
 @Component({
 	selector: 'vtr-widget-hardware-scan-status',
@@ -16,45 +16,29 @@ export class WidgetHardwareScanStatusComponent implements OnInit {
 
 	constructor(
 		private hardwareScanService: HardwareScanService,
+		private previousResultService: PreviousResultService,
 		private translate: TranslateService,
 	) { }
 
 	ngOnInit() {
 		if (!this.hardwareScanService.isScanExecuting() && !this.hardwareScanService.isRecoverExecuting()) {
-			this.hardwareScanService.getLastResults().then(() => {
-				this.item = this.hardwareScanService.getPreviousResultsWidget();
-				this.descriptionFormatter();
+			this.previousResultService.getLastResults().then(() => {
+				this.item = this.previousResultService.getPreviousResultsWidget();
+				this.description = this.previousResultService.getLastPreviousResultDate();
 			});
 		}
 	}
 
 	public onPreviousResults() {
 		if (this.hardwareScanService) {
-			const resultItems = this.hardwareScanService.getPreviousResults();
-			this.hardwareScanService.setViewResultItems(resultItems);
-		}
-	}
-
-	public descriptionFormatter() {
-		if (this.hardwareScanService.hasPreviousResults()) {
-			const lastScan = this.translate.instant('hardwareScan.lastScanOn') + ' ' + this.item.date;
-
-			let result;
-			const existsNotPass = this.item.modules.filter(i => i.resultModule !== HardwareScanTestResult.Pass);
-
-			if (existsNotPass && existsNotPass.length === 0) {
-				result = ' - ' + this.translate.instant('hardwareScan.result') + ': ' + this.translate.instant('hardwareScan.complete');
-			} else {
-				result = ' - ' + this.translate.instant('hardwareScan.result') + ': ' + this.translate.instant('hardwareScan.incomplete');
-			}
-
-			this.description = lastScan + result;
+			const resultItems = this.previousResultService.getPreviousResults();
+			this.previousResultService.setViewResultItems(resultItems);
 		}
 	}
 
 	public hasPreviousResults() {
 		if (this.hardwareScanService) {
-			return this.hardwareScanService.hasPreviousResults();
+			return this.previousResultService.hasPreviousResults();
 		}
 	}
 }

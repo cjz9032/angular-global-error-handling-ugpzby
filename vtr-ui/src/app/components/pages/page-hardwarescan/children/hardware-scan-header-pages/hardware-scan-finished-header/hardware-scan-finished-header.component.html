@@ -1,26 +1,119 @@
 <div class="hwscan-header">
 	<div class="row">
-		<div [ngSwitch]="scanTypeFinished()">
-		<div class="col title" *ngSwitchCase="enumScanTypeFinished.RecoverBadSectors">
-			{{'hardwareScan.recoverBadSectors.recoverCompleted' | translate }}
-		</div>
-		<div *ngSwitchCase="enumScanTypeFinished.Scan">
-			<div class="col title" [ngSwitch]="numberTestsFailed">
-				<div *ngSwitchCase="0">
-					{{'hardwareScan.scanFinishedHeader.titleSuccess' | translate }}
+		<div [ngSwitch]="scanHeaderTypeFinished()">
+			<div class="col title" *ngSwitchCase="enumScanHeaderTypeFinished.RecoverBadSectors">
+				{{'hardwareScan.recoverBadSectors.recoverCompleted' | translate }}
+			</div>
+			<div *ngSwitchCase="enumScanHeaderTypeFinished.Scan">
+				<div class="col title" [ngSwitch]="numberTestsFailed">
+					<div *ngSwitchCase="0">
+						{{'hardwareScan.scanFinishedHeader.titleSuccess' | translate }}
+					</div>
+					<div *ngSwitchCase="1">
+						{{'hardwareScan.scanFinishedHeader.titleErrorSingular' | translate }}
+					</div>
+					<div *ngSwitchDefault> <!-- More than one failure -->
+						{{'hardwareScan.scanFinishedHeader.titleErrorPlural' | translate:{'numberTestsFailed':numberTestsFailed} }}
+					</div>
 				</div>
-				<div *ngSwitchCase="1">
-					{{'hardwareScan.scanFinishedHeader.titleErrorSingular' | translate }}
+
+				<div class="description-row">
+					<div class="row final-result-code">
+						<p class="result-code-value-text">{{'hardwareScan.scanFinishedHeader.finalResultCodeLabel' | translate }} </p>
+						<p class="result-code-complete-text">{{getFinalResultCode()}}</p>
+						<a *ngIf="numberTestsFailed === 0"
+							href="javascript:void(0)"
+							class="result-code-icon"
+							triggers="click"
+							[placement]="['left','right']"
+							[ngbTooltip]="tooltipFinalResultCode"
+							container="vtr-root"
+							tabindex="1"
+							tooltipClass="vtr-tooltip">
+							<fa-icon [icon]="['far', 'question-circle']"></fa-icon>
+						</a>
+					</div>
 				</div>
-				<div *ngSwitchDefault> <!-- More than one failure -->
-					{{'hardwareScan.scanFinishedHeader.titleErrorPlural' | translate:{'numberTestsFailed':numberTestsFailed} }}
+
+				<div class="description-row">
+					<div *ngIf="numberTestsFailed > 0">
+						<span class="row failure-description"> {{ 'hardwareScan.scanFinishedHeader.frcFailureDescription' | translate }}</span>
+						<span class="row failure-description"> {{ 'hardwareScan.scanFinishedHeader.lenovoSupportInstruction' | translate }}</span>
+					</div>
+				</div>
+
+				<div class="button-row">
+					<div class="row" *ngIf="numberTestsFailed > 0; else successfulScan">
+						<vtr-ui-button
+							vtrMetrics
+							metricsEvent="FeatureClick"
+							metricsParent="HardwareScan.ScanFailureActions"
+							metricsItem="ScanFailureActions.LenovoSupport"
+							id="supportButton"
+							[href]="supportUrl"
+							tabindex="1"
+							[tooltipText]="'hardwareScan.scanFinishedHeader.supportButtonText' | translate"
+							[label]="'hardwareScan.scanFinishedHeader.supportButtonText' | translate">
+						</vtr-ui-button>
+
+						<div class="row align-items-center">
+							<button type="button"
+								id="scanAgainWhenFail"
+								vtrMetrics
+								metricsEvent="FeatureClick"
+								metricsParent="HardwareScan"
+								metricsItem="HardwareScan.ScanAgain"
+								class="scan-again-button"
+								[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
+								tabindex="1"
+								(click)="onScanAgain()">{{'hardwareScan.scanFinishedHeader.scanAgainButtonText' | translate}}
+							</button>
+						</div>
+					</div>
+
+					<ng-template #successfulScan>
+						<div class="row" *ngIf="numberTestsFailed == 0">
+							<div class="row">
+								<vtr-ui-button
+									id="scanAgainWhenSuccess"
+									vtrMetrics
+									metricsEvent="FeatureClick"
+									metricsParent="HardwareScan"
+									metricsItem="HardwareScan.ScanAgain"
+									(click)="onScanAgain()"
+									[tooltipText]="'hardwareScan.scanFinishedHeader.scanAgainButtonText' | translate"
+									[label]="'hardwareScan.scanFinishedHeader.scanAgainButtonText' | translate">
+								</vtr-ui-button>
+							</div>
+						</div>
+					</ng-template>
 				</div>
 			</div>
+			<div *ngSwitchCase="enumScanHeaderTypeFinished.ViewResults">
 
-			<div class="description-row">
+				<!-- Defines a title -->
+				<div class="col title"  [ngSwitch]="numberTestsFailed"> 
+					<h2 *ngSwitchCase="0">
+						{{'hardwareScan.scanFinishedHeader.titleSuccess' | translate }}
+					</h2>
+
+					<h2 *ngSwitchCase="1">
+						{{'hardwareScan.scanFinishedHeader.titleErrorSingular' | translate }}
+					</h2>
+
+					<!-- More than one failure -->
+					<h2 *ngSwitchDefault>
+						{{'hardwareScan.scanFinishedHeader.titleErrorPlural' | translate:{'numberTestsFailed':numberTestsFailed} }}
+					</h2>
+				</div>
+
+				<!-- Show the date and result about the last scan -->
+				<p class="result-date-description">{{dateDescription}}</p>
+
+				<!-- Show the result code -->
 				<div class="row final-result-code">
-					<p class="result-code-value-text">{{'hardwareScan.scanFinishedHeader.finalResultCodeLabel' | translate }} </p>
-					<p class="result-code-complete-text">{{getFinalResultCode()}}</p>
+					<p class="result-code-value-text">{{'hardwareScan.finalResultCode' | translate }} </p>
+					<p class="result-code-complete-text">{{getLastFinalResultCode()}}</p>
 					<a *ngIf="numberTestsFailed === 0"
 						href="javascript:void(0)"
 						class="result-code-icon"
@@ -33,60 +126,28 @@
 						<fa-icon [icon]="['far', 'question-circle']"></fa-icon>
 					</a>
 				</div>
-			</div>
 
-			<div class="description-row">
-				<div *ngIf="numberTestsFailed > 0">
-					<span class="row failure-description"> {{ 'hardwareScan.scanFinishedHeader.frcFailureDescription' | translate }}</span>
-					<span class="row failure-description"> {{ 'hardwareScan.scanFinishedHeader.lenovoSupportInstruction' | translate }}</span>
+				<!-- Defines a message about lenovo support -->
+				<div class="description-row" *ngIf="numberTestsFailed > 0">
+					<p class="row failure-description"> {{ 'hardwareScan.scanFinishedHeader.frcFailureDescription' | translate }}</p>
+					<p class="row failure-description"> {{ 'hardwareScan.scanFinishedHeader.lenovoSupportInstruction' | translate }}</p>
 				</div>
-			</div>
 
-			<div class="button-row">
-				<div class="row" *ngIf="numberTestsFailed > 0; else successfulScan">
-					<vtr-ui-button
-						vtrMetrics
-						metricsEvent="FeatureClick"
-						metricsParent="HardwareScan.ScanFailureActions"
-						metricsItem="ScanFailureActions.LenovoSupport"
-						id="supportButton"
-						[href]="supportUrl"
-						tabindex="1"
-						[tooltipText]="'hardwareScan.scanFinishedHeader.supportButtonText' | translate"
-						[label]="'hardwareScan.scanFinishedHeader.supportButtonText' | translate">
-					</vtr-ui-button>
-
-					<div class="row align-items-center">
-						<button type="button"
-							id="scanAgainWhenFail"
+				<div class="button-row" *ngIf="numberTestsFailed > 0">
+					<div class="row">
+						<vtr-ui-button
 							vtrMetrics
 							metricsEvent="FeatureClick"
-							metricsParent="HardwareScan"
-							metricsItem="HardwareScan.ScanAgain"
-							class="scan-again-button"
-							[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
+							metricsParent="HardwareScan.ScanFailureActions"
+							metricsItem="ScanFailureActions.LenovoSupport"
+							id="supportButton"
+							[href]="supportUrl"
 							tabindex="1"
-							(click)="onScanAgain()">{{'hardwareScan.scanFinishedHeader.scanAgainButtonText' | translate}}
-						</button>
+							[tooltipText]="'hardwareScan.scanFinishedHeader.supportButtonText' | translate"
+							[label]="'hardwareScan.scanFinishedHeader.supportButtonText' | translate">
+						</vtr-ui-button>
 					</div>
 				</div>
-
-				<ng-template #successfulScan>
-					<div class="row" *ngIf="numberTestsFailed == 0">
-						<div class="row">
-							<vtr-ui-button
-								id="scanAgainWhenSuccess"
-								vtrMetrics
-								metricsEvent="FeatureClick"
-								metricsParent="HardwareScan"
-								metricsItem="HardwareScan.ScanAgain"
-								(click)="onScanAgain()"
-								[tooltipText]="'hardwareScan.scanFinishedHeader.scanAgainButtonText' | translate"
-								[label]="'hardwareScan.scanFinishedHeader.scanAgainButtonText' | translate">
-							</vtr-ui-button>
-						</div>
-					</div>
-				</ng-template>
 			</div>
 		</div>
 	</div>
