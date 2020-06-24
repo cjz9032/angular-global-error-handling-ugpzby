@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "För att förlänga batteritiden har vi optimerat kapaciteten för full laddning baserat på din användning. Full batterikapacitet kan kräva att batteriet laddas ur till 20 % och sedan laddas om.",
-                    "moreInfo": "Klicka <a role=\"link\" href=\"#/device/high-density-battery\">här</a> för mer information."
+                    "moreInfo": "Klicka <a role=\"link\" href=\"#/device/high-density-battery\" tabindex=\"0\">här</a> för mer information."
                 },
                 "condition": {
                     "Illegal": "Det installerade batteriet <b>stöds inte</b> på enheten och kommer inte att laddas. Byt ut batteriet mot ett Lenovo-batteri.",

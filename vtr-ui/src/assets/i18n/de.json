@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "Um die Lebensdauer Ihres Akkus zu verlängern, haben wir die volle Ladekapazität anhand Ihrer Nutzung optimiert. Die volle Akkukapazität ist möglicherweise erst verfügbar, wenn Sie den Akku bis auf 20 % entladen und anschließend wieder laden.",
-                    "moreInfo": "Klicken Sie <a role=\"link\" href=\"#/device/high-density-battery\">hier</a>, um weitere Informationen zu erhalten."
+                    "moreInfo": "Klicken Sie <a role=\"link\" href=\"#/device/high-density-battery\" tabindex=\"0\">hier</a>, um weitere Informationen zu erhalten."
                 },
                 "condition": {
                     "Illegal": "Der installierte Akku wird vom System <b>nicht unterstützt</b> und kann nicht geladen werden. Ersetzen Sie den Akku mit dem richtigen Lenovo Akku für dieses System.",

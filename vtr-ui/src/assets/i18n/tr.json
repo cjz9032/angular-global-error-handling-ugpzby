@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "Pilinizin ömrünü uzatmak için tam dolum kapasitesini kullanımınıza göre iyileştirdik. Pil kapasitesinin tamamını kullanmak için pili %20'ye kadar boşaltıp yeniden doldurmanız gerekmektedir.",
-                    "moreInfo": "Ek bilgi için <a role=\"link\" href=\"#/device/high-density-battery\">burayı</a> tıklatın."
+                    "moreInfo": "Ek bilgi için <a role=\"link\" href=\"#/device/high-density-battery\" tabindex=\"0\">burayı</a> tıklatın."
                 },
                 "condition": {
                     "Illegal": "Takılı pil, sistem tarafından <b>desteklenmiyor</b> ve doldurulmayacak. Lütfen yerine bu sistem için doğru olan Lenovo pilini takın.",

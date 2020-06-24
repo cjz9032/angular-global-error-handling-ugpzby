@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "Da biste produžili vek trajanja baterije, optimizovali su njen pun kapacitet punjenja na osnovu vašeg korišćenja. Pun kapacitet baterije možda neće biti dostupan sve dok je ne ispraznite na 20% i dopunite.",
-                    "moreInfo": "Kliknite <a role=\"link\" href=\"#/device/high-density-battery\">ovde</a> za više informacija."
+                    "moreInfo": "Kliknite <a role=\"link\" href=\"#/device/high-density-battery\" tabindex=\"0\">ovde</a> za više informacija."
                 },
                 "condition": {
                     "Illegal": "Ovaj sistem <b>ne podržava</b> instaliranu bateriju i ona se neće puniti. Zamenite bateriju odgovarajućom Lenovo baterijom za ovaj sistem.",

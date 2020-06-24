@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "バッテリーの寿命を延ばすために、使用状況に基づいてフル充電容量を最適化しました。20% まで放電して再充電するまで、バッテリーの全容量を使用できない場合があります。",
-                    "moreInfo": "詳細については<a role=\"link\" href=\"#/device/high-density-battery\">ここ</a>をクリック。"
+                    "moreInfo": "詳細については<a role=\"link\" href=\"#/device/high-density-battery\" tabindex=\"0\">ここ</a>をクリック。"
                 },
                 "condition": {
                     "Illegal": "取り付けられているバッテリーはシステムでは<b>サポートされない</b>ため、充電は行われません。ご使用のシステムに適した Lenovo バッテリーに交換してください。",
