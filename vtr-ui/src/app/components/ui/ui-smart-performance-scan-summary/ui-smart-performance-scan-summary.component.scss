@@ -229,18 +229,21 @@ vtr-ui-smart-performance-scan-summary {
 					font-weight: $weight_bold;
 					margin-bottom: 0;
 					word-break: break-all;
+					overflow-x: hidden;
+					text-overflow: ellipsis;
 					@media #{$breakpoint_xl}{
 						font-size: 1.6rem;
+						height:6rem;
 					}
 					@media #{$breakpoint_md}{
-						font-size: 1.4rem;
+						font-size: 1.4rem;						
+						height:5rem;
 					}
 					@media #{$breakpoint_sm}{
-						font-size: 1.4rem;
+						font-size: 1.4rem;						
+						height:5rem;
 						display: inline-block;
 						max-width: 85%;
-						overflow-x: hidden;
-						text-overflow: ellipsis;
 					}
 				}
 				.value {
@@ -1011,7 +1014,7 @@ vtr-ui-smart-performance-scan-summary {
 		.col-auto-1{
 			flex:0 0 auto;
 			width:auto;
-			max-width:50%;	
+			max-width:48%;	
 			@media #{$breakpoint_md}{				
 				width:auto;
 				max-width:65%!important;
@@ -1021,8 +1024,8 @@ vtr-ui-smart-performance-scan-summary {
 				max-width:100%;
 			}
 			@media only screen and (min-width: 1200px){				
-				width:auto;
-				max-width:100%;
+				width:100%;
+				max-width:100%!important;
 			}	
 					
 		}
@@ -1108,16 +1111,19 @@ vtr-ui-smart-performance-scan-summary {
 				// width: auto;
 				padding-left:0.5rem;				
 				// min-width: 11.5rem;
+				
 				&.desc1 {
 					border-right: 0.1rem solid $shade_lighter;
 					// width: 30%;
 					// max-width: 13rem;					
 					margin: 0.5rem 0.5rem 0.5rem 1rem;
 				}
+				
 
 				&.desc2 {					
 					margin: 0.5rem 0rem 0rem 0.5rem;
-				}
+					word-break:break-all!important;
+					}
 
 				b {					
 					font-size: $fontsize_xs2;
