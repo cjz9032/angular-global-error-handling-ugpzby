@@ -12,6 +12,7 @@ import moment from 'moment';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { SupportService } from 'src/app/services/support/support.service';
 import * as CryptoJS from 'crypto-js';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 @Component({
 	selector: 'vtr-widget-subscriptiondetails',
 	templateUrl: './widget-subscriptiondetails.component.html',
@@ -43,8 +44,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	  private formatLocaleDate: FormatLocaleDatePipe,
 	  private smartPerformanceService: SmartPerformanceService,
 	  private supportService: SupportService,
-
-	  ) {
+	  private logger: LoggerService ) {
 	}
 	public localSubscriptionDetails = {
 			UUID: uuid(),
@@ -157,6 +157,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		this.modalStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus);
 		let subscriptionData = []
 		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails(this.systemSerialNumber);
+		this.logger.info('Subscription Details', subscriptionDetails);
 		if(subscriptionDetails){
 			subscriptionData = subscriptionDetails.data? subscriptionDetails.data : [];
 		} else {
