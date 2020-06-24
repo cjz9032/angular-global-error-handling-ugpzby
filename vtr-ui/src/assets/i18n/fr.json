@@ -3329,6 +3329,8 @@
             "fri": "Vendredi",
             "sat": "Samedi",
             "sun": "Dimanche",
+            "am": "AM",
+            "pm": "PM",
             "tooltipText": "Lorsque cette option est activée, une analyse des performances du système et de sécurité sera automatiquement lancée à la date et à l’heure choisies."
         },
         "scanningPage": {

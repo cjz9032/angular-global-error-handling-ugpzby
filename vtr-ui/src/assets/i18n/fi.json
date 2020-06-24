@@ -3329,6 +3329,8 @@
             "fri": "Perjantaina",
             "sat": "Lauantaina",
             "sun": "Sunnuntaina",
+            "am": "AM",
+            "pm": "PM",
             "tooltipText": "Kun tämä vaihtoehto on valittuna, järjestelmän suorituskyvyn ja suojauksen tarkistus aloitetaan automaattisesti valittuna päivänä ja kellonaikana."
         },
         "scanningPage": {

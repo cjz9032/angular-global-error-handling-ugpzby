@@ -4,6 +4,7 @@ import {
 	Output,
 	EventEmitter,
 	HostListener,
+	OnDestroy,
 } from '@angular/core';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
@@ -11,7 +12,7 @@ import { SmartPerformanceService } from 'src/app/services/smart-performance/smar
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import moment from 'moment';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import { enumScanFrequency, actualScanFrequency, actualDays } from 'src/app/enums/smart-performance.enum';
+import { enumScanFrequency, actualScanFrequency, actualDays, actualMeridiem } from 'src/app/enums/smart-performance.enum';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -19,7 +20,7 @@ import { Subscription } from 'rxjs';
 	templateUrl: './ui-scan-schedule.component.html',
 	styleUrls: ['./ui-scan-schedule.component.scss'],
 })
-export class UiScanScheduleComponent implements OnInit {
+export class UiScanScheduleComponent implements OnInit, OnDestroy {
 	constructor(
 		private commonService: CommonService,
 		private logger: LoggerService,
@@ -59,7 +60,7 @@ export class UiScanScheduleComponent implements OnInit {
 	hours: any = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 	mins: any = ['00', '05', '10', '15', '20', '25', '30',
 		'35', '40', '45', '50', '55',];
-	amPm: any = ['AM', 'PM'];
+	amPm: Array<string> = ['smartPerformance.scanSettings.am', 'smartPerformance.scanSettings.pm'];
 	isDaySelectionEnable: boolean;
 	scanToggleValue = true;
 	frequencyValue = 0;
@@ -70,7 +71,7 @@ export class UiScanScheduleComponent implements OnInit {
 		hourId: 11,
 		min: this.mins[0],
 		minId: 0,
-		amPm: this.amPm[0],
+		amPm: actualMeridiem[0],
 		amPmId: 0,
 	};
 	copyScanTime: any = {
@@ -78,7 +79,7 @@ export class UiScanScheduleComponent implements OnInit {
 		hourId: 11,
 		min: this.mins[0],
 		minId: 0,
-		amPm: this.amPm[0],
+		amPm: actualMeridiem[0],
 		amPmId: 0,
 	};
 	IsScheduleScanEnabled: any;
@@ -93,6 +94,7 @@ export class UiScanScheduleComponent implements OnInit {
 	loading: boolean;
 	sliceDay:boolean = true;
 	amPmPosition:boolean = false;
+	selectedMeridiem: string;
 
 	ngOnInit() {
 		this.spTransLangEvent = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
@@ -135,8 +137,8 @@ export class UiScanScheduleComponent implements OnInit {
 		} else {
 			this.scanToggleValue = false;
 			// when no record is present and scan is disabled setting default day.
-			// this.setDefaultDay(this.days[0]);
-			this.selectedDay = this.days[0]
+			// this.selectedDay = this.days[0];
+			this.setDefaultValWhenDisabled();
 		}
 
 		if (this.IsSmartPerformanceFirstRun === true &&	this.isSubscribed == true) {
@@ -150,7 +152,6 @@ export class UiScanScheduleComponent implements OnInit {
 		}
 
 		// fetching next schedule date and time from task scheduler
-		// this.fetchNextScheduleDateTime();
 		if (this.scheduleScanFrequency !== undefined && this.IsScheduleScanEnabled && !this.IsSmartPerformanceFirstRun) {
 			if (this.isSubscribed) {
 				this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
@@ -161,18 +162,11 @@ export class UiScanScheduleComponent implements OnInit {
 
 	}
 
-	ngOnDestroy() {
-		if (this.spTransLangEvent) {
-			this.spTransLangEvent.unsubscribe();
-		}
-	}
-
 	// scan settings
 	changeScanSchedule() {
 		if (this.scanToggleValue) {
 			this.isChangeSchedule = true;
 		}
-		// this.selectedDayTranslation();
 	}
 	openScanScheduleDropDown(value) {
 		if (value === this.scheduleTab) {
@@ -264,8 +258,9 @@ export class UiScanScheduleComponent implements OnInit {
 		this.copyScanTime.minId = value;
 	}
 	changeAmPm(value) {
-		this.copyScanTime.amPm = this.amPm[value];
+		this.copyScanTime.amPm = actualMeridiem[value];
 		this.copyScanTime.amPmId = value;
+		this.selectedMeridiem = this.amPm[value];
 	}
 	changeScanScheduleDate() {
 		this.scheduleTab = '';
@@ -391,14 +386,15 @@ export class UiScanScheduleComponent implements OnInit {
 				this.copyScanTime.amPm = dt.split(',')[6].trim();
 				this.copyScanTime.hourId = this.hours.indexOf(+this.copyScanTime.hour);
 				this.copyScanTime.minId = this.mins.indexOf(this.copyScanTime.min);
-				this.copyScanTime.amPmId = this.amPm.indexOf(this.copyScanTime.amPm);
+				this.copyScanTime.amPmId = actualMeridiem.indexOf(this.copyScanTime.amPm);
+				this.selectedMeridiem = this.amPm[this.copyScanTime.amPmId];
 				this.scanTime = {...this.copyScanTime}
 				nextScanEvent = {
 					nextEnable: true,
 					nextScanDate: dt.split(',')[1]+'/'+dt.split(',')[2].trim(),
 					nextScanHour: this.scanTime.hour,
 					nextScanMin: this.scanTime.min,
-					nextScanAMPM: this.scanTime.amPm,
+					nextScanAMPM: this.selectedMeridiem,
 					nextScanDateWithYear: dt.split(',')[1]+'/'+dt.split(',')[2].trim()+'/'+dt.split(',')[3]
 				};
 				this.scanDatekValueChange.emit(nextScanEvent);
@@ -424,14 +420,14 @@ export class UiScanScheduleComponent implements OnInit {
 
 	setDefaultValWhenDisabled() {
 		this.selectedFrequency = this.scanFrequency[0]
-		this.selectedDay = this.days[0]
-		// this.setDefaultDay(this.days[0]);
+		this.selectedDay = this.days[0];
+		this.selectedMeridiem = this.amPm[0];
 		this.scanTime = {
 			hour: this.hours[11],
 			hourId: 11,
 			min: this.mins[0],
 			minId: 0,
-			amPm: this.amPm[0],
+			amPm: actualMeridiem[0],
 			amPmId: 0,
 		}
 	}
@@ -551,6 +547,12 @@ export class UiScanScheduleComponent implements OnInit {
 		} else {
 			this.sliceDay = true;
 			this.amPmPosition = false;
+		}
+	}
+
+	ngOnDestroy() {
+		if (this.spTransLangEvent) {
+			this.spTransLangEvent.unsubscribe();
 		}
 	}
 

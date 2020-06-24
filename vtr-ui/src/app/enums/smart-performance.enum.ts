@@ -59,3 +59,5 @@ export const actualDays: any = [
 	'Friday',
 	'Saturday'
 ]
+
+export const actualMeridiem = ['AM', 'PM']

@@ -3329,6 +3329,8 @@
             "fri": "Sexta",
             "sat": "Sábado",
             "sun": "Domingo",
+            "am": "AM",
+            "pm": "PM",
             "tooltipText": "Mantendo essa opção ativada, o desempenho do sistema e a verificação de segurança serão iniciados automaticamente na data e hora definidas."
         },
         "scanningPage": {

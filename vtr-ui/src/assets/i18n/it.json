@@ -3329,6 +3329,8 @@
             "fri": "Venerdì",
             "sat": "Sabato",
             "sun": "Domenica",
+            "am": "AM",
+            "pm": "PM",
             "tooltipText": "Abilitando questo interruttore, le prestazioni del sistema e la scansione della protezione verranno avviate automaticamente alla data e all'ora impostate."
         },
         "scanningPage": {

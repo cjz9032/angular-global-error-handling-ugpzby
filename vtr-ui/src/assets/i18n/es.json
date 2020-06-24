@@ -3329,6 +3329,8 @@
             "fri": "Viernes",
             "sat": "Sábado",
             "sun": "Domingo",
+            "am": "AM",
+            "pm": "PM",
             "tooltipText": "Al mantener activada esta alternación, el análisis de rendimiento del sistema y seguridad puede iniciarse automáticamente en la fecha y hora que establezca."
         },
         "scanningPage": {

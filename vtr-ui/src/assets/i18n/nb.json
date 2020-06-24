@@ -3329,6 +3329,8 @@
             "fri": "Fredag",
             "sat": "Lørdag",
             "sun": "Søndag",
+            "am": "AM",
+            "pm": "PM",
             "tooltipText": "Hvis denne forblir aktivert, startes systemets ytelses- og sikkerhetsskanning automatisk på planlagt dato og klokkeslett."
         },
         "scanningPage": {

@@ -3329,6 +3329,8 @@
             "fri": "Freitag",
             "sat": "Samstag",
             "sun": "Sonntag",
+            "am": "AM",
+            "pm": "PM",
             "tooltipText": "Wenn diese Option aktiviert ist, wird der Systemleistungs‑ und Sicherheitsscan automatisch zum von Ihnen festgelegten Datum und zur bestimmten Uhrzeit gestartet."
         },
         "scanningPage": {

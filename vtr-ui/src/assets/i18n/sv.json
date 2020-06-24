@@ -3329,6 +3329,8 @@
             "fri": "fredagar",
             "sat": "lördagar",
             "sun": "söndagar",
+            "am": "FM",
+            "pm": "EM",
             "tooltipText": "När funktionen är aktiverad startas systemprestanda- och säkerhetskontrollen automatiskt angivet datum och klockslag."
         },
         "scanningPage": {

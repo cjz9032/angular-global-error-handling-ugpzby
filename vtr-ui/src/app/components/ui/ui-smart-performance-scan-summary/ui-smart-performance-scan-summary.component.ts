@@ -557,7 +557,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		}
 		this.enableNextText = nextScheduleScanEvent['nextEnable']
 		const nextScheduleScanDayMonth = this.formatLocaleDate.transformWithoutYear(nextScheduleScanEvent['nextScanDateWithYear']);
-		this.nextScheduleScan =  nextScheduleScanDayMonth + ' at ' + nextScheduleScanEvent['nextScanHour'] + ':' + nextScheduleScanEvent['nextScanMin'] + ' ' + nextScheduleScanEvent['nextScanAMPM'];
+		this.nextScheduleScan =  nextScheduleScanDayMonth + ' at ' + nextScheduleScanEvent['nextScanHour'] + ':' + nextScheduleScanEvent['nextScanMin'] + ' ' + this.translate.instant(nextScheduleScanEvent['nextScanAMPM']);
 	 }
 
 	public initContentLoad() {
