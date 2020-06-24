@@ -3,7 +3,7 @@ import {
 	EventEmitter,
 	Input,
 	OnInit,
-	Output
+	Output,
 } from '@angular/core';
 import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
 
@@ -18,7 +18,7 @@ export class UiCheckboxComponent implements OnInit {
 	@Input() ariaLabel: string;
 	@Input() label: string;
 	@Input() checked = false;
-	@Input() indeterminate = false;
+	@Input() indeterminate
 	@Input() disabled = false;
 	@Input() value: any;
 	@Input() hasChild = false; // for ng-content
@@ -26,10 +26,20 @@ export class UiCheckboxComponent implements OnInit {
 	@Input() metricsParent: string;
 	@Input() isMetricsEnabled = false;
 	@Output() toggle: EventEmitter<boolean> = new EventEmitter();
+	@Output() state: EventEmitter<number> = new EventEmitter<number>();
 
 	constructor(private metrics: CommonMetricsService) { }
-
 	ngOnInit() { }
+
+	onClick(event) {
+		if (!event.target.checked && !event.target.indeterminate) {
+			this.state.emit(0);
+		} else if (event.target.checked) {
+			this.state.emit(1);
+		} else {
+			this.state.emit(2);
+		}
+	}
 
 	onChange(event) {
 		const value = event.target.checked;

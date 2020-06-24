@@ -9,7 +9,7 @@
 						[componentId]="item.id"
 						[ariaLabel]="item.name + '-checkbox'"
 					 	[indeterminate]="item.indeterminate"
-						(toggle)="onSelectParent(item.id, $event)"
+						(state)="onStateChange(item.id, $event)"
 						[hasChild]="true"
 						[checked]="item.selected"
 						class="custom-control-component"
