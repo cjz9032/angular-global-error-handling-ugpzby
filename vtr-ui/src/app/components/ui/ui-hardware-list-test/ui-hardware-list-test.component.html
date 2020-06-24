@@ -3,13 +3,20 @@
 		<li class="list-group-item" *ngFor="let item of items; let id = index"
 			[ngClass]="{'isSelected-item' : item.selected || item.indeterminate}">
 			<div class="module">
-				<div class="custom-control custom-checkbox">
-					<input id="{{ item.id }}" type="checkbox" class="custom-control-input"
-						[indeterminate]="item.indeterminate" [(ngModel)]="item.selected"
-						[attr.aria-label]="item.name + '-checkbox'"
-						(change)="onSelectAllChildren(item.id)" (click)="onSelectAllChildren(item.id)" />
-					<label class="custom-control-label name" for="{{ item.id }}">{{ item.name }} - <span
-							class="subname">{{ item.subname }}</span></label>
+				<div class="custom-control">
+					<vtr-ui-checkbox
+						[id]="item.id"
+						[componentId]="item.id"
+						[ariaLabel]="item.name + '-checkbox'"
+					 	[indeterminate]="item.indeterminate"
+						(toggle)="onSelectParent(item.id, $event)"
+						[hasChild]="true"
+						[checked]="item.selected"
+						class="custom-control-component"
+					>
+
+						<b>{{ item.name }}</b><span class="subname"> {{ item.subname }}</span>
+					</vtr-ui-checkbox>
 				</div>
 
 				<div class="col-auto">
@@ -27,14 +34,25 @@
 					</div>
 				</div>
 			</div>
-			<div id="{{ id }}" class="sub-module" [ngbCollapse]="!item.collapsed">
+			<div id="{{ id }}" class="sub-module" [ngbCollapse]="!item.collapsed" >
 				<ul class="list-group">
 					<li class="list-group-item" *ngFor="let test of item.tests" (change)=onCheckChildren(item.id)>
 						<div class="custom-control custom-checkbox">
-							<input id="{{ test.id + id }}" type="checkbox" class="custom-control-input"
-								[(ngModel)]="test.selected" [attr.aria-label]="item.name + test.name" />
-							<label class="custom-control-label name-test" [attr.aria-label]="item.name + test.name"
-								for="{{ test.id + id }}">{{ test.name }}</label>
+							<vtr-ui-checkbox
+								[id]="test.id + id"
+								[componentId]="test.id + id"
+								[ariaLabel]="item.name + test.name"
+								[hasChild]="false"
+								[label]="test.name"
+								[checked]="test.selected"
+								(toggle)="test.selected = $event"
+								class="custom-control-component"
+							>
+							</vtr-ui-checkbox>
+<!--							<input id="{{ test.id + id }}" type="checkbox" class="custom-control-input"-->
+<!--								[(ngModel)]="test.selected" [attr.aria-label]="item.name + test.name" />-->
+<!--							<label class="custom-control-label name-test" [attr.aria-label]="item.name + test.name"-->
+<!--								for="{{ test.id + id }}">{{ test.name }}</label>-->
 						</div>
 					</li>
 				</ul>

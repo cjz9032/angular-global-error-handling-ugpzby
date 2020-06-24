@@ -47,6 +47,7 @@ import { HardwareScanExecutingHeaderComponent } from '../../components/pages/pag
 import { HardwareScanWaitSelectHeaderComponent } from '../../components/pages/page-hardwarescan/children/hardware-scan-header-pages/hardware-scan-wait-select-header/hardware-scan-wait-select-header.component';
 import { HardwareScanFinishedHeaderComponent } from '../../components/pages/page-hardwarescan/children/hardware-scan-header-pages/hardware-scan-finished-header/hardware-scan-finished-header.component';
 import { UiHardwareScanTestResultComponent } from '../../components/ui/ui-hardware-scan-test-result/ui-hardware-scan-test-result.component';
+import {CommonUiModule} from "../common/common-ui.module";
 
 @NgModule({
 	declarations: [
@@ -91,7 +92,8 @@ import { UiHardwareScanTestResultComponent } from '../../components/ui/ui-hardwa
 		ContainerCardModule,
 		MetricsModule,
 		PageLayoutModule,
-		FontAwesomeModule
+		FontAwesomeModule,
+		CommonUiModule
 	],
 	exports: [
 		NgbCollapseModule

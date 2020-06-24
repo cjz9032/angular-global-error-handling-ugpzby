@@ -17,7 +17,6 @@
 				justify-content: space-between;
 				align-items: center;
 				padding: 0 3rem 0 1.5rem;
-				height: 5.25rem;
 
 				.rotate {
 					-webkit-transform: rotate(180deg);
@@ -30,7 +29,7 @@
 
 			.sub-module {
 				.list-group-item {
-					padding: 1rem 4rem;
+					padding: 0 4rem;
 					border-radius: 0 !important;
 					border-left: 0 !important;
 					border-right: 0 !important;
@@ -55,11 +54,8 @@
 			.custom-control {
 				display: inline-block;
 
-				.custom-control-input {
-					top: 0.10rem;
-					left: -0.10rem;
-					width: 1.9rem;
-					height: 1.9rem;
+				.custom-control-component ::ng-deep .auto-set-checkbox{
+					margin-bottom: 2rem;
 				}
 
 				.custom-control-label {
@@ -83,6 +79,11 @@
 					}
 				}
 			}
+
+			//.custom-checkbox ::ng-deep .auto-set-checkbox{
+			//	margin-bottom: 1rem;
+			//	margin-top: 1rem;
+			//}
 
 			.name {
 				font-size: $fontsize_xs;

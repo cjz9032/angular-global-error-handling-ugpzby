@@ -17,6 +17,7 @@ export class UiHardwareListTestComponent implements OnInit {
 	allOptions = this.translate.instant('hardwareScan.allOptions');
 
 	ngOnInit() {
+		this.onDeselectAll()
 	}
 
 	public onSelectAll() {
@@ -36,6 +37,16 @@ export class UiHardwareListTestComponent implements OnInit {
 		});
 	}
 
+	public onSelectParent(itemId, $event) {
+		const isSelected = $event;
+		if ($event) {
+			this.items.find(item => item.id === itemId).tests.map(test => test.selected = isSelected);
+		}
+		this.items.find(item => item.id === itemId).tests.map(test => test.selected = isSelected);
+		this.items.find(item => item.id === itemId).indeterminate = false;
+		this.selectAny.emit();
+	}
+
 	public onSelectAllChildren(itemId: any) {
 		const isSelected = this.items.find(item => item.id === itemId).selected;
 		this.items.find(item => item.id === itemId).tests.map(test => test.selected = isSelected);
@@ -46,7 +57,6 @@ export class UiHardwareListTestComponent implements OnInit {
 	public onCheckChildren(itemId: any) {
 		const children = this.items.find(item => item.id === itemId).tests.length;
 		const childrenSelected = this.items.find(item => item.id === itemId).tests.filter(test => test.selected).length;
-
 		if (childrenSelected === 0) {
 			this.items.find(item => item.id === itemId).selected = false;
 			this.items.find(item => item.id === itemId).indeterminate = false;
