@@ -54,7 +54,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 		touchpadLock: 6
 	};
 
-	// item info in legion edge 
+	// item info in legion edge
 	public legionUpdate = [
 		{
 			readMoreText: '',
@@ -468,10 +468,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 		if (this.gamingCapabilities.touchpadLockFeature && this.gamingCapabilities.winKeyLockFeature) {
 			this.renderTouchpadLockStatus();
 		}
-		//////////////////////////////////////////////////////////////////////
-		// Version 3.3: Init automation ID                                  //
-		//////////////////////////////////////////////////////////////////////
-		this.getMachineSpecificId();
+
 	}
 
 	//////////////////////////////////////////////////////////////////////
@@ -479,19 +476,6 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 	// 1. Get machine specific ID                                       //
 	// 2. Get thermal mode automation ID                                //
 	//////////////////////////////////////////////////////////////////////
-	getMachineSpecificId() {
-		if (!this.gamingCapabilities.liteGaming) {
-			this.legionPopupId = AutomationId.RightSectionLegionEdge;
-			this.legionHelpIconId = AutomationId.HelpPopupLegionEdge;
-		} else if (!this.gamingCapabilities.liteGaming && this.gamingCapabilities.desktopType) {
-			this.legionPopupId = AutomationId.RightSectionIdeaCentreGaming;
-			this.legionHelpIconId = AutomationId.HelpPopupIdeaCentreGaming;
-		} else if (this.gamingCapabilities.liteGaming && !this.gamingCapabilities.desktopType) {
-			this.legionPopupId = AutomationId.RightSectionIdeapadGaming;
-			this.legionHelpIconId = AutomationId.HelpPopupIdeapadGaming;
-		}
-	}
-
 	getThermalModeAutomationId() {
 		const thermalStatus = {};
 		thermalStatus[GamingThermal2.performance] = this.performanceOCSettings ? AutomationId.PerformanceOverclockOn : AutomationId.Performance;
@@ -849,7 +833,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 	}
 
 	//////////////////////////////////////////////////////////////////////
-	// TODO Similar to onPopupClosed()                                  // 
+	// TODO Similar to onPopupClosed()                                  //
 	// What is the purpose of this function?                            //
 	// If pass the test of PA, remove the code that commented by TODO   //
 	//////////////////////////////////////////////////////////////////////

@@ -21,6 +21,7 @@ import { GamingKeyLockService } from 'src/app/services/gaming/gaming-keylock/gam
 
 import { SvgInlinePipe } from 'src/app/pipe/svg-inline/svg-inline.pipe';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { GamingThermal2 } from 'src/app/enums/gaming-thermal2.enum';
 
 describe('WidgetLegionEdgeComponent', () => {
 	let component: WidgetLegionEdgeComponent;
@@ -202,6 +203,15 @@ describe('WidgetLegionEdgeComponent', () => {
 	gamingOverDriveServiceSpy.getOverDriveStatus.and.returnValue(Promise.resolve(true));
 	gamingKeyLockServiceSpy.getKeyLockStatus.and.returnValue(Promise.resolve(false));
 
+	enum GamingThermal2Mock {
+		cpu_gpu = 3,
+		cpu = 2,
+		gpu = 1,
+		none = 0,
+		performance = 3,
+		balance = 2,
+		quiet = 1
+	}
 	describe('thermal mode 2 & performanceOC', () => {
 		let thermalModeRealStatus = 2;
 		let performanceOCStatus = false;
@@ -236,6 +246,7 @@ describe('WidgetLegionEdgeComponent', () => {
 					{ provide: Router, useClass: class { navigate = jasmine.createSpy('navigate'); } },
 					{ provide: CommonService, useValue: commonServiceMock },
 					{ provide: VantageShellService },
+					{ provide: GamingThermal2, useValue: GamingThermal2Mock },
 					{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesServiceMock },
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceMock },
 					{ provide: GamingOCService, useValue: gamingOCServiceMoke },
@@ -556,6 +567,19 @@ describe('WidgetLegionEdgeComponent', () => {
 			spyOn(component, 'openModal').and.callThrough();
 			const result = component.openModal();
 			expect(component.openModal).toHaveBeenCalled();
+		}));
+
+		it('getThermalModeAutomationId', fakeAsync(() => {
+			component.performanceOCSettings=true;
+			spyOn(component, 'getThermalModeAutomationId').and.callThrough();
+			component.getThermalModeAutomationId();
+			expect(GamingThermal2Mock.balance).toBe(2);
+			tick();
+			component.getThermalModeAutomationId();
+			expect(GamingThermal2Mock.performance).toBe(3);
+			tick();
+			component.getThermalModeAutomationId();
+			expect(GamingThermal2Mock.quiet).toBe(1);
 		}));
 	});
 
@@ -1792,7 +1816,7 @@ describe('WidgetLegionEdgeComponent', () => {
 			expect(hybridModeStatusCache).toBe(false, `hybridModeStatusCache should keep false`);
 			expect(loggerServiceSpy.error).toHaveBeenCalledTimes(++calledTimes);
 		});
-		
+
 		it('renderOverDriveStatus catch error', () => {
 			gamingOverDriveServiceSpy.getOverDriveStatus.and.throwError('getOverDriveStatus error');
 			component.legionUpdate[5].isChecked = false;
