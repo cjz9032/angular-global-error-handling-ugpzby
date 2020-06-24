@@ -3791,7 +3791,7 @@
                 "txtGo": "Start",
                 "summaryCaption": "plass gjenvunnet",
                 "fixes": "reparasjon(er)",
-                "txtClr": "Clear"
+                "txtClr": "Nullstill"
             },
             "lastScanResults": {
                 "title": "Siste fem skanneresultater:",

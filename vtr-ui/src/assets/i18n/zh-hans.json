@@ -3791,7 +3791,7 @@
                 "txtGo": "执行",
                 "summaryCaption": "回收的空间",
                 "fixes": "修复",
-                "txtClr": "Clear"
+                "txtClr": "清除"
             },
             "lastScanResults": {
                 "title": "最后 5 个扫描结果：",
