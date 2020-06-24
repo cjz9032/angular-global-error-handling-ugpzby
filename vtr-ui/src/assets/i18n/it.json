@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "Per estendere la durata di vita della batteria, ne abbiamo ottimizzato la capacità di carica completa in base all'uso. La capacità completa della batteria potrebbe non essere disponibile finché questa non si scarica al 20% e non viene ricaricata.",
-                    "moreInfo": "Per ulteriori informazioni, fare clic <a role=\"link\" href=\"#/device/high-density-battery\">qui</a>."
+                    "moreInfo": "Per ulteriori informazioni, fare clic <a role=\"link\" href=\"#/device/high-density-battery\" tabindex=\"0\">qui</a>."
                 },
                 "condition": {
                     "Illegal": "La batteria installata <b>non è supportata</b> dal sistema e non verrà caricata. Sostituire la batteria con la batteria Lenovo corretta per questo sistema.",

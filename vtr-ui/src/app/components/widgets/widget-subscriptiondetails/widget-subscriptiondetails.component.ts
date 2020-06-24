@@ -12,6 +12,7 @@ import moment from 'moment';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { SupportService } from 'src/app/services/support/support.service';
 import * as CryptoJS from 'crypto-js';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 @Component({
 	selector: 'vtr-widget-subscriptiondetails',
 	templateUrl: './widget-subscriptiondetails.component.html',
@@ -43,8 +44,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	  private formatLocaleDate: FormatLocaleDatePipe,
 	  private smartPerformanceService: SmartPerformanceService,
 	  private supportService: SupportService,
-
-	  ) {
+	  private logger: LoggerService ) {
 	}
 	public localSubscriptionDetails = {
 			UUID: uuid(),
@@ -84,8 +84,9 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.inactiveStatus';
 			this.strStatus = 'INACTIVE';
 		}
+		const currentTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
 		this.modalStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus);
-		this.intervalTime = this.modalStatus.initiatedTime;
+		this.intervalTime = this.modalStatus.initiatedTime || currentTime;
 		if(this.modalStatus && this.modalStatus.isOpened){
 			this.getSubscriptionDetails();
 			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.processStatus';
@@ -156,6 +157,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		this.modalStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus);
 		let subscriptionData = []
 		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails(this.systemSerialNumber);
+		this.logger.info('Subscription Details', subscriptionDetails);
 		if(subscriptionDetails){
 			subscriptionData = subscriptionDetails.data? subscriptionDetails.data : [];
 		} else {

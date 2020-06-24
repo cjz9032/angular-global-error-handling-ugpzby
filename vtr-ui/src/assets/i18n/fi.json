@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "Akun käyttöiän pidentämiseksi olemme optimoineet sen täyden varauskapasiteetin käyttösi perusteella. Akun täysi kapasiteetti on ehkä käytettävissä vasta sitten, kun purat ensin akun varauksen 20 %:iin ja lataat sitten akun uudelleen.",
-                    "moreInfo": "Napsauta <a role=\"link\" href=\"#/device/high-density-battery\">tästä</a> saadaksesi lisätietoja."
+                    "moreInfo": "Napsauta <a role=\"link\" href=\"#/device/high-density-battery\" tabindex=\"0\">tästä</a> saadaksesi lisätietoja."
                 },
                 "condition": {
                     "Illegal": "Järjestelmä <b>ei tue</b> asennettua akkua, ja sitä ei ladata. Vaihda akku oikeaan, tälle järjestelmälle tarkoitettuun Lenovon akkuun.",

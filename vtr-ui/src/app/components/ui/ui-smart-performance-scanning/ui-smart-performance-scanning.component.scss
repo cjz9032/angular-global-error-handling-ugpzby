@@ -207,6 +207,7 @@
 						display: flex;
 						pointer-events: none;
 						.btn-link{
+							width:100%;
 							@media #{$breakpoint_sm}{
 								padding-left: 0rem;
 							}
@@ -215,17 +216,23 @@
 							}
 						}
                         .heading {
+								max-width:50%;
+								width:50%;
+								text-align:left;
+								word-break:break-all;
                             h3, h2{
 								font-size: $fontsize_sm;
 								color: $main_shade !important;
 								letter-spacing: 0;
-								font-weight: $weight_bold;
+								font-weight: $weight_bold;									
 								@media #{$breakpoint_lg}{				
 									font-size: $fontsize_xs;
-								}
-								@media #{$breakpoint_sm}{				
-									font-size: 1rem;
-								}
+								}	
+								@media #{$breakpoint_md}{				
+									font-size: $fontsize_xs2;
+								}						
+													
+								
                             }
                             .icomoon{
 								color: $menu_hover;
@@ -247,6 +254,8 @@
                     }
                     .status-text{
 						flex-grow: 8;
+						width:48%;
+						max-width:48%;
 						@media #{$breakpoint_sm}{
 							margin-top: 1.25rem;
 						}
@@ -259,12 +268,8 @@
 							right: 1.5rem;
 							top: 40%;
 							letter-spacing: 0;
+							word-break:break-all;						
 							
-							@media #{$breakpoint_xl}{
-								right: 1.5rem;					
-								font-size: $fontsize_xs;
-								top: 36%;
-							}
 							@media #{$breakpoint_lg}{
 								right: 1.5rem;					
 								font-size: $fontsize_xs;
@@ -273,7 +278,12 @@
 							@media #{$breakpoint_md}{
 								top: 36%;								
 								right: 1.5rem;								
-								font-size: 1.1rem;
+								font-size: $fontsize_xs2;
+							}
+							@media #{$breakpoint_xl}{
+								right: 1.5rem;					
+								font-size: $fontsize_xs2;
+								top: 36%;
 							}
 							@media #{$breakpoint_sm}{
 								top: 32.5%;

@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "Para estender a vida útil da bateria, otimizamos sua capacidade de carga máxima com base no seu uso. A capacidade máxima da bateria pode não estar disponível até você descarregar para 20% e recarregar.",
-                    "moreInfo": "Clique <a role=\"link\" href=\"#/device/high-density-battery\">aqui</a> para obter mais informações."
+                    "moreInfo": "Clique <a role=\"link\" href=\"#/device/high-density-battery\" tabindex=\"0\">aqui</a> para obter mais informações."
                 },
                 "condition": {
                     "Illegal": "A bateria instalada <b>não é aceita</b> pelo sistema e não será carregada. Substitua a bateria pela bateria correta da Lenovo para esse sistema.",
