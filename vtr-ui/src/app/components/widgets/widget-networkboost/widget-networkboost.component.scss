@@ -1,6 +1,6 @@
 @import "../../../app.theme.scss";
 .isdisabled {
-	background-color: $gaming_darker !important;
+	background-color: $gaming_square_button20 !important;
 	@media #{$black-on-white} {
 		opacity: 0.15;
 	}
@@ -18,7 +18,7 @@
 		padding: 3rem;
 		li.add-icon {
 			div:nth-child(1) {
-				background: $gaming_white60;
+				background: $gaming_square_button20;
 				line-height: 4.5rem;
 				cursor: pointer;
 				text-align: center;
@@ -32,7 +32,7 @@
 					border: 0.1rem solid $light;
 				}
 				&:hover {
-					background: $gaming_white80;
+					background: $gaming_square_button10;
 				}
 
 				&:active {
