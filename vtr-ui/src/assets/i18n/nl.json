@@ -3118,8 +3118,8 @@
                 "no": "Nee"
             },
             "waitAvailability": "De knop wordt uitgeschakeld als de opslagapparaten deze functionaliteit niet ondersteunen, terwijl de hardwaregegevens worden geladen of als er een scan wordt uitgevoerd.",
-            "executingTitle": "Recovering now...",
-            "recoverCompleted": "Recovery completed"
+            "executingTitle": "Herstellen...",
+            "recoverCompleted": "Herstelactie voltooid"
         },
         "support": {
             "title": "Professionele diagnosehulpprogramma's downloaden",
@@ -3169,17 +3169,17 @@
             "recoverBadSectorsButtonText": "Slechte sectoren herstellen"
         },
         "scanFinishedHeader": {
-            "titleSuccess": "Scan completed. Your device passed all the tests.",
-            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
-            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
-            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
-            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
-            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
-            "finalResultCodeLabel": "Final Result Code: ",
-            "scanAgainButtonText": "Scan Again",
-            "supportButtonText": "Lenovo Support"
+            "titleSuccess": "De scan is voltooid. Uw apparaat heeft alle tests doorstaan.",
+            "titleErrorPlural": "De scan is voltooid. Uw apparaat heeft {{numberTestsFailed}} tests niet doorstaan.",
+            "titleErrorSingular": "De scan is voltooid. Uw apparaat heeft 1 test niet doorstaan.",
+            "frcSuccessDescription": "Deze laatste resultaatcode geeft aan dat er geen problemen met deze scan zijn gevonden. Als een test een waarschuwingsbericht weergeeft of een melding 'Niet van toepassing', betekent dat niet dat er een probleem is aangetroffen. Als een medewerker van ondersteuning van Lenovo u heeft gevraagd deze test uit te voeren, gebruikt u deze code als bewijs; anders is op dit moment geen actie van uw kant nodig. Als u denkt dat u nog steeds problemen hebt, neem dan contact op met ondersteuning van Lenovo.",
+            "frcFailureDescription": "De code van het laatste resultaat geeft aan dat in deze scan problemen zijn gedetecteerd.",
+            "lenovoSupportInstruction": "Bij de ondersteuning van Lenovo kunt u een verificatieticket openen met de code van uw uiteindelijke resultaat.",
+            "finalResultCodeLabel": "Laatste resultaatcode: ",
+            "scanAgainButtonText": "Opnieuw scannen",
+            "supportButtonText": "Ondersteuning van Lenovo"
         },
-        "executingScanTitle": "Scanning {{title}}..."
+        "executingScanTitle": "{{title}} scannen..."
     },
     "smartPerformance": {
         "title": "Smart Performance",

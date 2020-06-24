@@ -3118,8 +3118,8 @@
                 "no": "Não"
             },
             "waitAvailability": "O botão será desativado se os dispositivos de armazenamento não forem compatíveis com essa funcionalidade, enquanto as informações de hardware estiverem sendo carregadas ou se houver uma verificação em andamento.",
-            "executingTitle": "Recovering now...",
-            "recoverCompleted": "Recovery completed"
+            "executingTitle": "Recuperando agora...",
+            "recoverCompleted": "Recuperação concluída"
         },
         "support": {
             "title": "Baixar ferramentas de diagnóstico profissional",
@@ -3169,17 +3169,18 @@
             "recoverBadSectorsButtonText": "Recuperar Setores Ruins"
         },
         "scanFinishedHeader": {
-            "titleSuccess": "Scan completed. Your device passed all the tests.",
-            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
-            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
-            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
-            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
-            "finalResultCodeLabel": "Final Result Code: ",
-            "scanAgainButtonText": "Scan Again",
-            "supportButtonText": "Lenovo Support",
-            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result."
+            "titleSuccess": "Digitalização concluída. Seu dispositivo passou em todos os testes.",
+            "titleErrorPlural": "Digitalização concluída. Seu dispositivo falhou em {{numberTestsFailed}} testes.",
+            "titleErrorSingular": "Digitalização concluída. Seu dispositivo falhou em 1 teste.",
+            "warningText": "WARNING",
+            "frcSuccessDescription": "Este código de resultado final indica que não foram encontrados problemas com essa verificação. Se qualquer teste exibir uma mensagem de aviso ou não aplicável, não significa que um problema foi encontrado. Se um agente de suporte Lenovo pediu para que você executasse esse teste, use esse código como prova; caso contrário, nenhuma ação da sua parte é necessária neste momento. Se acredita que ainda está com problemas, entre em contato com o Suporte Lenovo.",
+            "frcFailureDescription": "O código de resultado final indica que problemas foram encontrados com essa verificação.",
+            "finalResultCodeLabel": "Código de resultado final: ",
+            "scanAgainButtonText": "Digitalizar novamente",
+            "supportButtonText": "Suporte Lenovo",
+            "lenovoSupportInstruction": "No Suporte Lenovo, você pode abrir um tíquete de verificação usando o código do seu resultado final."
         },
-        "executingScanTitle": "Scanning {{title}}..."
+        "executingScanTitle": "Verificando {{title}}..."
     },
     "smartPerformance": {
         "title": "Smart Performance",

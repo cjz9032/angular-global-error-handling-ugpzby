@@ -3118,8 +3118,8 @@
                 "no": "Hayır"
             },
             "waitAvailability": "Depolama aygıtları bu işlevi desteklemiyorsa, donanım bilgileri yüklenirken veya devam eden bir tarama olduğunda düğme devre dışı bırakılır.",
-            "executingTitle": "Recovering now...",
-            "recoverCompleted": "Recovery completed"
+            "executingTitle": "Şimdi kurtarılıyor...",
+            "recoverCompleted": "Kurtarma tamamlandı"
         },
         "support": {
             "title": "Profesyonel tanılama araçlarını indirin",
@@ -3169,17 +3169,17 @@
             "recoverBadSectorsButtonText": "Bozuk Kesimleri Kurtar"
         },
         "scanFinishedHeader": {
-            "titleSuccess": "Scan completed. Your device passed all the tests.",
-            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
-            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
-            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
-            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
-            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
-            "finalResultCodeLabel": "Final Result Code: ",
-            "scanAgainButtonText": "Scan Again",
-            "supportButtonText": "Lenovo Support"
+            "titleSuccess": "Tarama tamamlandı. Cihazınız tüm testlerden geçti.",
+            "titleErrorPlural": "Tarama tamamlandı. Cihazınız {{numberTestsFailed}} testte başarısız oldu.",
+            "titleErrorSingular": "Tarama tamamlandı. Cihazınız 1 testte başarısız oldu.",
+            "frcSuccessDescription": "Bu nihai sonuç kodu, bu taramada sorun bulunmadığını belirtmektedir. Herhangi bir teste bir uyarı veya geçersiz ileti görüntülenirse bu bir sorun bulunduğu anlamına gelmez. Bir Lenovo destek aracısı sizden bu testi gerçekleştirmenizi isterse kanıt olarak bu kodu kullanın. Bunun dışında şu anda sizin yapmanız gereken bir eylem bulunmamaktadır. Hala sorun yaşadığınızı düşünüyorsanız Lenovo Destek ile iletişime geçin.",
+            "frcFailureDescription": "Nihai sonuç kodu, bu taramada sorunlar bulunduğunu belirtmektedir.",
+            "lenovoSupportInstruction": "Lenovo Destek'te, nihai sonuç kodunu kullanarak bir doğrulama bileti açabilirsiniz.",
+            "finalResultCodeLabel": "Nihai Sonuç Kodu: ",
+            "scanAgainButtonText": "Tekrar Tara",
+            "supportButtonText": "Lenovo Destek"
         },
-        "executingScanTitle": "Scanning {{title}}..."
+        "executingScanTitle": "{{title}} taranıyor..."
     },
     "smartPerformance": {
         "title": "Health & Support",

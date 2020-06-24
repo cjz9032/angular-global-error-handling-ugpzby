@@ -3118,8 +3118,8 @@
                 "no": "לא"
             },
             "waitAvailability": "הלחצן מושבת אם התקני האחסון לא תומכים בפונקציונליות זו, בזמן שמידע מהחומרה נטען או אם מתבצעת סריקה.",
-            "executingTitle": "Recovering now...",
-            "recoverCompleted": "Recovery completed"
+            "executingTitle": "משחזר כעת...",
+            "recoverCompleted": "השחזור הושלם"
         },
         "support": {
             "title": "הורידו כלי אבחון מקצועיים",
@@ -3169,17 +3169,17 @@
             "recoverBadSectorsButtonText": "שחזור סקטורים פגומים"
         },
         "scanFinishedHeader": {
-            "titleSuccess": "Scan completed. Your device passed all the tests.",
-            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
-            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
-            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
-            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
-            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
-            "finalResultCodeLabel": "Final Result Code: ",
-            "scanAgainButtonText": "Scan Again",
-            "supportButtonText": "Lenovo Support"
+            "titleSuccess": "הסריקה הושלמה. המכשיר שלכם עבר את כל הבדיקות.",
+            "titleErrorPlural": "הסריקה הושלמה. המכשיר נכשל ב-{{numberTestsFailed}} בדיקות.",
+            "titleErrorSingular": "הסריקה הושלמה. המכשיר נכשל בבדיקה אחת.",
+            "frcSuccessDescription": "קוד התוצאה הסופי הזה מצביע על כך שלא נמצאו בעיות בסריקה. אם בדיקה כלשהי מציגה אזהרה או הודעה, אין פירוש הדבר שנמצאה בעיה. אם נציג תמיכה של Lenovo ביקש מכם להפעיל בדיקה זו, השתמשו בקוד זה כהוכחה; אחרת, שום פעולה מצדכם איננה נדרשת בשלב זה. אם עדיין יש לכם בעיות, צרו קשר עם התמיכה של Lenovo.",
+            "frcFailureDescription": "קוד התוצאה הסופי מצביע על כך שנמצאו בעיות בסריקה.",
+            "lenovoSupportInstruction": "בתמיכה של Lenovo ניתן לפתוח כרטיס אימות באמצעות קוד התוצאה הסופית שלכם.",
+            "finalResultCodeLabel": "קוד תוצאה סופי: ",
+            "scanAgainButtonText": "יש לסרוק שוב",
+            "supportButtonText": "התמיכה של Lenovo"
         },
-        "executingScanTitle": "Scanning {{title}}..."
+        "executingScanTitle": "סורק את {{title}}..."
     },
     "smartPerformance": {
         "title": "Health & Support",

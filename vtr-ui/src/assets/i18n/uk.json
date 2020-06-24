@@ -3118,8 +3118,8 @@
                 "no": "Ні"
             },
             "waitAvailability": "Кнопка неактивна, якщо накопичувачі не підтримують цю функцію, доки інформація про обладнання завантажується або триває сканування.",
-            "executingTitle": "Recovering now...",
-            "recoverCompleted": "Recovery completed"
+            "executingTitle": "Триває відновлення...",
+            "recoverCompleted": "Відновлення завершено"
         },
         "support": {
             "title": "Завантаження професійних інструментів діагностики",
@@ -3169,17 +3169,17 @@
             "recoverBadSectorsButtonText": "Відновлення пошкоджених секторів"
         },
         "scanFinishedHeader": {
-            "titleSuccess": "Scan completed. Your device passed all the tests.",
-            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
-            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
-            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
-            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
-            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
-            "finalResultCodeLabel": "Final Result Code: ",
-            "scanAgainButtonText": "Scan Again",
-            "supportButtonText": "Lenovo Support"
+            "titleSuccess": "Сканування завершено. Ваш пристрій пройшов усі тести.",
+            "titleErrorPlural": "Сканування завершено. Пристрій не пройшов стільки тестів: {{numberTestsFailed}}.",
+            "titleErrorSingular": "Сканування завершено. Пристрій не пройшов 1 тест.",
+            "frcSuccessDescription": "Код кінцевого результату вказує, що проблем зі скануванням не виявлено. Якщо будь-яка перевірка завершується попередженням або повідомленням про незастосовність, це не обов'язково означає наявність проблеми. Якщо представник служби підтримки Lenovo попросив вас виконати цю перевірку, надайте йому код результату як підтвердження. Якщо ні, дії з вашого боку не потребуються. Якщо проблеми не усунуто, зверніться до служби підтримки Lenovo.",
+            "frcFailureDescription": "Код кінцевого результату вказує, що виявлено проблеми зі скануванням.",
+            "lenovoSupportInstruction": "Ви можете надіслати запит на перевірку до служби підтримки Lenovo, зазначивши код кінцевого результату.",
+            "finalResultCodeLabel": "Код кінцевого результату: ",
+            "scanAgainButtonText": "Сканувати ще раз",
+            "supportButtonText": "Служба підтримки Lenovo"
         },
-        "executingScanTitle": "Scanning {{title}}..."
+        "executingScanTitle": "Сканування {{title}}..."
     },
     "smartPerformance": {
         "title": "Health & Support",

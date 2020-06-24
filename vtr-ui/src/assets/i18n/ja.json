@@ -3118,8 +3118,8 @@
                 "no": "いいえ"
             },
             "waitAvailability": "ストレージ・デバイスがこの機能をサポートしていない場合、ハードウェア情報を読み込み中の場合、またはスキャンが進行中の場合は、ボタンが無効になります。",
-            "executingTitle": "Recovering now...",
-            "recoverCompleted": "Recovery completed"
+            "executingTitle": "リカバリー中...",
+            "recoverCompleted": "リカバリーが完了しました"
         },
         "support": {
             "title": "プロの診断ツールをダウンロードする",
@@ -3169,17 +3169,17 @@
             "recoverBadSectorsButtonText": "不良セクターの復元"
         },
         "scanFinishedHeader": {
-            "titleSuccess": "Scan completed. Your device passed all the tests.",
-            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
-            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
-            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
-            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
-            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
-            "finalResultCodeLabel": "Final Result Code: ",
-            "scanAgainButtonText": "Scan Again",
-            "supportButtonText": "Lenovo Support"
+            "titleSuccess": "スキャンが完了しました。お使いのデバイスはすべてのテストに合格しました。",
+            "titleErrorPlural": "スキャンが完了しました。お使いのデバイスは {{numberTestsFailed}} 個のテストで不合格になりました。",
+            "titleErrorSingular": "スキャンが完了しました。お使いのデバイスは 1 個のテストで不合格になりました。",
+            "frcSuccessDescription": "この最終結果コードは、このスキャンで問題が検出されなかったことを示しています。いずれかのテストで警告または適用外のメッセージが表示されても、問題が見つかったという意味ではありません。Lenovo サポート担当者からこのテストの実行を求められた場合は、このコードを証明として使用してください。 それ以外の場合は、現時点ではお客様の側で何もする必要はありません。まだ問題が発生していると思われる場合は、Lenovo サポートにお問い合わせください。",
+            "frcFailureDescription": "最終結果コードは、このスキャンで問題が検出されたことを示しています。",
+            "lenovoSupportInstruction": "Lenovo サポートで、最終結果のコードを使用して検証チケットを開くことができます。",
+            "finalResultCodeLabel": "最終結果コード:",
+            "scanAgainButtonText": "再スキャン",
+            "supportButtonText": "Lenovo サポート"
         },
-        "executingScanTitle": "Scanning {{title}}..."
+        "executingScanTitle": "{{title}} をスキャン中..."
     },
     "smartPerformance": {
         "title": "Smart Performance",

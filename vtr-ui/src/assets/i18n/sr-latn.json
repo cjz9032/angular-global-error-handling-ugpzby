@@ -3118,8 +3118,8 @@
                 "no": "Ne"
             },
             "waitAvailability": "Dugme je onemogućeno ukoliko uređaji za skladištenje ne podržavaju ovu funkcionalnost, tokom učitavanja informacija o hardveru ili ako je u toku skeniranje.",
-            "executingTitle": "Recovering now...",
-            "recoverCompleted": "Recovery completed"
+            "executingTitle": "Oporavlja se sada...",
+            "recoverCompleted": "Oporavak je dovršen"
         },
         "support": {
             "title": "Preuzmite profesionalne dijagnostičke alatke",
@@ -3169,17 +3169,17 @@
             "recoverBadSectorsButtonText": "Oporavi neispravne sektore"
         },
         "scanFinishedHeader": {
-            "titleSuccess": "Scan completed. Your device passed all the tests.",
-            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
-            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
-            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
-            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
-            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
-            "finalResultCodeLabel": "Final Result Code: ",
-            "scanAgainButtonText": "Scan Again",
-            "supportButtonText": "Lenovo Support"
+            "titleSuccess": "Skeniranje je dovršeno. Uređaj je prošao sve testove.",
+            "titleErrorPlural": "Skeniranje je dovršeno. Vaš uređaj nije prošao {{numberTestsFailed}} testa.",
+            "titleErrorSingular": "Skeniranje je dovršeno. Vaš uređaj nije prošao 1 test.",
+            "frcSuccessDescription": "Ovaj konačni povratni kôd ukazuje da nisu pronađeni problemi u ovom skeniranju. Ukoliko neki test prikazuje upozorenje ili poruku da nešto nije primenljivo, to ne znači da je pronađen problem. Ukoliko agent Lenovo podrške zatraži od vas da pokrenete ovaj test, koristite ovaj kôd kao dokaz; u suprotnom nije potrebno ništa da uradite u ovom trenutku. Ako smatrate da i dalje imate problema, kontaktirajte Lenovo podršku.",
+            "frcFailureDescription": "Konačan povratni kôd ukazuje da su pronađeni problemi u ovom skeniranju.",
+            "lenovoSupportInstruction": "U aplikaciji Lenovo podrška možete da otvorite verifikacioni tiket koristeći kôd konačnog rezultata.",
+            "finalResultCodeLabel": "Konačni povratni kôd: ",
+            "scanAgainButtonText": "Skeniraj ponovo",
+            "supportButtonText": "Lenovo podrška"
         },
-        "executingScanTitle": "Scanning {{title}}..."
+        "executingScanTitle": "Skenira se {{title}}..."
     },
     "smartPerformance": {
         "title": "Health & Support",

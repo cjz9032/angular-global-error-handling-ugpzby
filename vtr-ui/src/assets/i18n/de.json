@@ -3118,8 +3118,8 @@
                 "no": "Nein"
             },
             "waitAvailability": "Falls die Speichereinheiten diese Funktionalität nicht unterstützen und die Hardwareinformationen abgerufen werden oder ein Scanvorgang durchgeführt wird, ist die Schaltfläche deaktiviert.",
-            "executingTitle": "Recovering now...",
-            "recoverCompleted": "Recovery completed"
+            "executingTitle": "Wiederherstellung läuft...",
+            "recoverCompleted": "Wiederherstellung abgeschlossen"
         },
         "support": {
             "title": "Professionelle Diagnosetools herunterladen",
@@ -3169,17 +3169,17 @@
             "recoverBadSectorsButtonText": "Wiederherstellung von fehlerhaften Sektoren"
         },
         "scanFinishedHeader": {
-            "titleSuccess": "Scan completed. Your device passed all the tests.",
-            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
-            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
-            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
-            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
-            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
-            "finalResultCodeLabel": "Final Result Code: ",
-            "scanAgainButtonText": "Scan Again",
-            "supportButtonText": "Lenovo Support"
+            "titleSuccess": "Scan abgeschlossen. Ihr Gerät hat alle Tests bestanden.",
+            "titleErrorPlural": "Scan abgeschlossen. Ihr Gerät hat {{numberTestsFailed}} Tests nicht bestanden.",
+            "titleErrorSingular": "Scan abgeschlossen. Ihr Gerät hat 1 Test nicht bestanden.",
+            "frcSuccessDescription": "Dieser letzte Ergebniscode zeigt an, dass bei diesem Scan keine Probleme gefunden wurden. Wenn ein Test eine Warnung oder eine nicht zutreffende Meldung anzeigt, bedeutet das nicht, dass ein Problem gefunden wurde. Wenn Sie von einem Mitarbeiter der Lenovo Unterstützung aufgefordert wurden, den Test durchzuführen, verwenden Sie diesen Code als Beweis; andernfalls ist zu diesem Zeitpunkt keine Aktion Ihrerseits erforderlich. Wenn Sie das Gefühl haben, dass Sie immer noch Probleme haben, wenden Sie sich an die Lenovo Unterstützung.",
+            "frcFailureDescription": "Der letzte Ergebniscode zeigt an, dass bei diesem Scan Probleme gefunden wurden.",
+            "lenovoSupportInstruction": "Über die Lenovo Unterstützung können Sie mit dem Code Ihres Endergebnisses ein Verifizierungsticket eröffnen.",
+            "finalResultCodeLabel": "Letzter Ergebniscode: ",
+            "scanAgainButtonText": "Scan erneut ausführen",
+            "supportButtonText": "Lenovo Unterstützung"
         },
-        "executingScanTitle": "Scanning {{title}}..."
+        "executingScanTitle": "{{title}} wird gescannt..."
     },
     "smartPerformance": {
         "title": "Smart Performance",
