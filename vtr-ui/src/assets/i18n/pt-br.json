@@ -3172,7 +3172,6 @@
             "titleSuccess": "Scan completed. Your device passed all the tests.",
             "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
             "titleErrorSingular": "Scan completed. Your device failed 1 test.",
-            "warningText": "WARNING",
             "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
             "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
             "finalResultCodeLabel": "Final Result Code: ",
@@ -3792,7 +3791,7 @@
                 "txtGo": "Ir",
                 "summaryCaption": "espaço solicitado",
                 "fixes": "correções",
-                "txtClr": "Clear"
+                "txtClr": "Limpar"
             },
             "lastScanResults": {
                 "title": "Resultados das últimas cinco verificações:",
