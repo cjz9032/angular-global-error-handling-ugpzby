@@ -54,6 +54,7 @@
 			.custom-control {
 				display: inline-block;
 
+				// modifying global checkbox component
 				.custom-control-component ::ng-deep .auto-set-checkbox{
 					margin-bottom: 2rem;
 				}
@@ -79,11 +80,6 @@
 					}
 				}
 			}
-
-			//.custom-checkbox ::ng-deep .auto-set-checkbox{
-			//	margin-bottom: 1rem;
-			//	margin-top: 1rem;
-			//}
 
 			.name {
 				font-size: $fontsize_xs;

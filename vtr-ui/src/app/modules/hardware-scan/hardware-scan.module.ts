@@ -2,6 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbModalModule, NgbDropdownModule, NgbDatepickerModule, NgbCollapseModule, NgbTooltipModule, NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { CommonUiModule } from '../common/common-ui.module';
 import { HardwareScanRoutingModule } from './hardware-scan-routing.module';
 import { ModalWaitComponent } from '../../components/modal/modal-wait/modal-wait.component';
 import { ModalCancelComponent } from '../../components/modal/modal-cancel/modal-cancel.component';
@@ -47,7 +48,6 @@ import { HardwareScanExecutingHeaderComponent } from '../../components/pages/pag
 import { HardwareScanWaitSelectHeaderComponent } from '../../components/pages/page-hardwarescan/children/hardware-scan-header-pages/hardware-scan-wait-select-header/hardware-scan-wait-select-header.component';
 import { HardwareScanFinishedHeaderComponent } from '../../components/pages/page-hardwarescan/children/hardware-scan-header-pages/hardware-scan-finished-header/hardware-scan-finished-header.component';
 import { UiHardwareScanTestResultComponent } from '../../components/ui/ui-hardware-scan-test-result/ui-hardware-scan-test-result.component';
-import {CommonUiModule} from "../common/common-ui.module";
 
 @NgModule({
 	declarations: [
@@ -80,6 +80,7 @@ import {CommonUiModule} from "../common/common-ui.module";
 	],
 	imports: [
 		CommonModule,
+		CommonUiModule,
 		HardwareScanRoutingModule,
 		NgbDatepickerModule,
 		NgbDropdownModule,
@@ -92,8 +93,7 @@ import {CommonUiModule} from "../common/common-ui.module";
 		ContainerCardModule,
 		MetricsModule,
 		PageLayoutModule,
-		FontAwesomeModule,
-		CommonUiModule
+		FontAwesomeModule
 	],
 	exports: [
 		NgbCollapseModule

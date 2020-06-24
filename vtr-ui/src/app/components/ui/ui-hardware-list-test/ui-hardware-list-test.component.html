@@ -12,9 +12,9 @@
 						(state)="onStateChange(item.id, $event)"
 						[hasChild]="true"
 						[checked]="item.selected"
+						[value]="item.selected"
 						class="custom-control-component"
 					>
-
 						<b>{{ item.name }}</b><span class="subname"> {{ item.subname }}</span>
 					</vtr-ui-checkbox>
 				</div>
@@ -42,17 +42,13 @@
 								[id]="test.id + id"
 								[componentId]="test.id + id"
 								[ariaLabel]="item.name + test.name"
-								[hasChild]="false"
 								[label]="test.name"
 								[checked]="test.selected"
+								[value]="test.selected"
 								(toggle)="test.selected = $event"
 								class="custom-control-component"
 							>
 							</vtr-ui-checkbox>
-<!--							<input id="{{ test.id + id }}" type="checkbox" class="custom-control-input"-->
-<!--								[(ngModel)]="test.selected" [attr.aria-label]="item.name + test.name" />-->
-<!--							<label class="custom-control-label name-test" [attr.aria-label]="item.name + test.name"-->
-<!--								for="{{ test.id + id }}">{{ test.name }}</label>-->
 						</div>
 					</li>
 				</ul>

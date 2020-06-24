@@ -3,7 +3,7 @@ import {
 	EventEmitter,
 	Input,
 	OnInit,
-	Output,
+	Output
 } from '@angular/core';
 import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
 
