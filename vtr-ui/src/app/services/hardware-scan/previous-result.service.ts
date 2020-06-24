@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-
+import { CommonService } from 'src/app/services/common/common.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.enum';
 import { HardwareScanOverallResult } from 'src/app/enums/hardware-scan-overall-result.enum';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
@@ -23,6 +24,7 @@ export class PreviousResultService {
 
 	constructor( shellService: VantageShellService,
 				private translate: TranslateService,
+				private commonService: CommonService,
 				private hardwareResultService: HardwareScanResultService) { 
 					this.hardwareScanBridge = shellService.getHardwareScan();
 				}
@@ -96,7 +98,10 @@ export class PreviousResultService {
 					item.icon = moduleName;
 					item.resultModule = HardwareScanTestResult.Pass;
 
-					if (!false) {
+					// Use this validation prevent cyclical dependency with hardwareScanService
+					// [NOTICE] When remove the isDesktopMachine from hardware-scan.service to another service
+					//			change this line to use the newest function
+					if (!this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine)) {
 						if (item.icon === 'pci_express') {
 							item.icon += "_laptop";
 						}
