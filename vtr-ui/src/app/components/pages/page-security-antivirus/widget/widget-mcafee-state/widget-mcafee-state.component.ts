@@ -35,13 +35,13 @@ export class WidgetMcafeeStateComponent implements OnInit {
   constructor() {
   }
   ngOnInit() {
-	if (this.windowsDefender && this.url) {
-		this.statusList = this.windowsMcAfee;
-	}
+    if (this.windowsDefender && this.url) {
+      this.statusList = this.windowsMcAfee;
+    }
 
-	if (this.windowsDefender && !this.url) {
-		this.windowsList = this.windowsMcAfee.slice(2);
-	}
+    if (this.windowsDefender && !this.url) {
+      this.windowsList = this.windowsMcAfee.slice(2);
+    }
   }
 
   retry(item) {

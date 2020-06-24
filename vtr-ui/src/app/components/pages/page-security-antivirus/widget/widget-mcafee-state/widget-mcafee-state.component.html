@@ -1,5 +1,5 @@
 <ul class="list-group" [ngClass]="{'windows-group': windowsDefender}">
-    <li class="group-item" *ngFor="let list of statusList">
+    <li class="group-item" *ngFor="let list of statusList let i=index" id="sa-av-widget-mcAfee-state-{{i}}">
       <div class="row align-items-center">
         <div class="col-auto pl-0 windows-padding">
           <div [hidden]="list.status==='loading'" class="bullet-icon">
@@ -15,10 +15,10 @@
 		  </div>
         </div>
         <div class="col-7 text px-0"
-			title=""
-      [innerHTML]="list.title | translate | characterLimit:28"
-      [ngbTooltip]="list.title | translate" tooltipClass="vtr-system-tooltip" container="body"
-      >
+			    title=""
+          [innerHTML]="list.title | translate | characterLimit:28"
+          [ngbTooltip]="list.title | translate" tooltipClass="vtr-system-tooltip" container="body"
+        >
         </div>
         <div class="col-3 text-right px-0 ml-auto">
 		     <h3 class="text-ellipsis text-color mb-0"
