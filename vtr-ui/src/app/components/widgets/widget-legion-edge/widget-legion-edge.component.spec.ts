@@ -204,7 +204,6 @@ describe('WidgetLegionEdgeComponent', () => {
 	gamingOverDriveServiceSpy.getOverDriveStatus.and.returnValue(Promise.resolve(true));
 	gamingKeyLockServiceSpy.getKeyLockStatus.and.returnValue(Promise.resolve(false));
 
-	enum GamingThermal2Mock {}
 	describe('thermal mode 2 & performanceOC', () => {
 		let thermalModeRealStatus = 2;
 		let performanceOCStatus = false;
@@ -239,7 +238,6 @@ describe('WidgetLegionEdgeComponent', () => {
 					{ provide: Router, useClass: class { navigate = jasmine.createSpy('navigate'); } },
 					{ provide: CommonService, useValue: commonServiceMock },
 					{ provide: VantageShellService },
-					{ provide: GamingThermal2, useValue: GamingThermal2Mock },
 					{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesServiceMock },
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceMock },
 					{ provide: GamingOCService, useValue: gamingOCServiceMoke },
@@ -556,10 +554,18 @@ describe('WidgetLegionEdgeComponent', () => {
 			expect(component.performanceOCSettings).toBe(false, `component.performanceOCSettings should be false`);
 		}));
 
+
 		it('openModal', fakeAsync(() => {
 			spyOn(component, 'openModal').and.callThrough();
 			const result = component.openModal();
 			expect(component.openModal).toHaveBeenCalled();
+		}));
+
+		it('get thermal_mode_performance as automationId', fakeAsync(() => {
+			component.thermalModeRealStatus = GamingThermal2.performance;
+			const res =	component.getThermalModeAutomationId();
+			fixture.detectChanges();
+			expect(res).toBe(AutomationId.Performance);
 		}));
 
 		it('get thermal_mode_performance_overclock_on as automationId', fakeAsync(() => {
