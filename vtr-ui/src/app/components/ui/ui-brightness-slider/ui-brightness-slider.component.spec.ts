@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core
 import { UiBrightnessSliderComponent } from './ui-brightness-slider.component';
 import { By } from '@angular/platform-browser';
 
-fdescribe('UiBrightnessSliderComponent', () => {
+describe('UiBrightnessSliderComponent', () => {
 	let component: UiBrightnessSliderComponent;
 	let fixture: ComponentFixture<UiBrightnessSliderComponent>;
 
