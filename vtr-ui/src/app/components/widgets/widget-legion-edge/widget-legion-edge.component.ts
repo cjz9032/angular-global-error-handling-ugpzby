@@ -39,9 +39,6 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 	public thermalModeRealStatus = this.thermalMode2Enum.balance;
 	public thermalModeEvent: any;
 	public performanceOCSettings = false;
-	// Version 3.3: automation ID
-	public legionPopupId:any;
-	public legionHelpIconId:any;
 
 	// use enum instead of hard code on 200319 by Guo Jing
 	public legionItemIndex = {
