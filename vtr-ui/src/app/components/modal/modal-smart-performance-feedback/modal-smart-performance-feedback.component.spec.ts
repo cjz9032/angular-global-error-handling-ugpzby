@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ModalSmartPerformanceFeedbackComponent } from './modal-smart-performance-feedback.component';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('ModalSmartPerformanceFeedbackComponent', () => {
   let component: ModalSmartPerformanceFeedbackComponent;
@@ -8,7 +12,9 @@ describe('ModalSmartPerformanceFeedbackComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ModalSmartPerformanceFeedbackComponent ]
+      declarations: [ ModalSmartPerformanceFeedbackComponent ],
+      imports: [HttpClientTestingModule, TranslateModule.forRoot()],
+      providers:[NgbActiveModal]
     })
     .compileComponents();
   }));
