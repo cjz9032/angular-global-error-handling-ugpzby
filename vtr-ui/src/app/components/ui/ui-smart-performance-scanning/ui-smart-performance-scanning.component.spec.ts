@@ -26,7 +26,7 @@ const responseData = {
     state:true
 }
 
-fdescribe("UiSmartPerformanceScanningComponent", () => {
+describe("UiSmartPerformanceScanningComponent", () => {
 	let component: UiSmartPerformanceScanningComponent;
 	let fixture: ComponentFixture<UiSmartPerformanceScanningComponent>;
 	let shellService: VantageShellService;
