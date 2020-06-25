@@ -387,6 +387,12 @@ vtr-ui-smart-performance-scan-summary {
 								color: $main;
 								padding-right: 1rem;
 							}
+							.text{
+								overflow: hidden;
+								text-overflow: ellipsis;
+								max-width: 100%;
+								white-space: nowrap;
+							}
 						}
 						.scan-item-value {
 							font-size: 1.2rem;
