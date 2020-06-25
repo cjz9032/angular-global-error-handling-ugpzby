@@ -11,6 +11,8 @@ import {
 } from 'src/app/services/smart-assist/smart-assist.service';
 import { TranslateService } from '@ngx-translate/core';
 import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
+import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
+
 @Component({
 	selector: 'vtr-active-protection-system-advanced',
 	templateUrl: './active-protection-system-advanced.component.html',
@@ -25,6 +27,7 @@ export class ActiveProtectionSystemAdvancedComponent implements OnInit {
 	touchStatus: boolean;
 	pSensorStatus: boolean;
 	penDelay: number;
+	public metricsParent  = CommonMetricsModel.ParentDeviceSettings;
 
 	public intervals: DropDownInterval[];
 	constructor(
@@ -41,25 +44,29 @@ export class ActiveProtectionSystemAdvancedComponent implements OnInit {
 			name: '0',
 			value: 0,
 			placeholder: seconds,
-			text: `0 ${seconds}`
+			text: `0 ${seconds}`,
+			metricsValue: `0 seconds`
 		},
 		{
 			name: '5',
 			value: 5,
 			placeholder: seconds,
-			text: `5 ${seconds}`
+			text: `5 ${seconds}`,
+			metricsValue: `5 seconds`
 		},
 		{
 			name: '10',
 			value: 10,
 			placeholder: seconds,
-			text: `10 ${seconds}`
+			text: `10 ${seconds}`,
+			metricsValue: `10 seconds`
 		},
 		{
 			name: '15',
 			value: 15,
 			placeholder: seconds,
-			text: `15 ${seconds}`
+			text: `15 ${seconds}`,
+			metricsValue: `15 seconds`
 		},
 		];
 	}
@@ -109,7 +116,7 @@ export class ActiveProtectionSystemAdvancedComponent implements OnInit {
 			})
 			.catch(err => { });
 
-		this.commonMetricsService.sendMetrics(value, 'ActiveProtectionSystem.Advanced.PenInput');
+		this.commonMetricsService.sendMetrics(value, 'ActiveProtectionSystem.Advanced.PenInput', CommonMetricsModel.ParentDeviceSettings);
 	}
 
 	setPenDelayTime(event) {
@@ -141,7 +148,7 @@ export class ActiveProtectionSystemAdvancedComponent implements OnInit {
 			})
 			.catch(err => { });
 
-		this.commonMetricsService.sendMetrics(event.switchValue, 'ActiveProtectionSystem.Advanced.TouchInput');
+		this.commonMetricsService.sendMetrics(event.switchValue, 'ActiveProtectionSystem.Advanced.TouchInput', CommonMetricsModel.ParentDeviceSettings);
 	}
 	setPSensorSetting(event) {
 		const value = !this.pSensorStatus;
@@ -157,6 +164,6 @@ export class ActiveProtectionSystemAdvancedComponent implements OnInit {
 			})
 			.catch(err => { });
 
-		this.commonMetricsService.sendMetrics(event.switchValue, 'ActiveProtectionSystem.Advanced.PSensorInput');
+		this.commonMetricsService.sendMetrics(event.switchValue, 'ActiveProtectionSystem.Advanced.PSensorInput', CommonMetricsModel.ParentDeviceSettings);
 	}
 }

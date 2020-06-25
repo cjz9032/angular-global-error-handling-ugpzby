@@ -38,12 +38,10 @@
 						class="subFunctions">
 						<div class="row"
 							id="smartMotionAlertSubFunctions-description-row">
-							<div class="feature-note p-4"
+							<div class="feature-note descriptionText"
 								id="smartMotionAlertSubFunctions-description">
-								<label id="smartMotionAlertDescription"
-									class="antiTheftDescription"
-									role="text">
-									{{'device.smartAssist.antiTheft.note.description' | translate}}</label>
+								<label id="smartMotionAlertDescription-title" role="text">{{'device.smartAssist.antiTheft.note.descriptionTitle' | translate}}</label><br>
+								<label id="smartMotionAlertDescription" role="text">{{'device.smartAssist.antiTheft.note.description' | translate}}</label>
 							</div>
 						</div>
 						<p id="smartMotionAlertAlarmTitle"
@@ -55,9 +53,10 @@
 							class="select">
 							<vtr-ui-dropdown class="selectDropdown"
 								[isMetricsEnabled]=true
+								[metricsParent]="metricsParent"
 								[list]="alarmTimeList"
 								[value]="antiTheft.alarmOften"
-								(change)="setAlarmOften($event.value)"
+								(selectionChange)="setAlarmOften($event.value)"
 								[dropDownId]="'smartMotionAlert-alarmTime-dropDown'"
 								[dropDownName]="'smartMotionAlert-alarmTime-dropDown'">
 							</vtr-ui-dropdown>
@@ -77,6 +76,8 @@
 								id="smartMotionAlertSupportPhoto-checkbox-div">
 								<vtr-ui-checkbox [componentId]="'Smart-motion-alarm.photo-checkbox'"
 									[isMetricsEnabled]=true
+									[metricsParent]="metricsParent"
+									[metricsItem]="'cb.smart-motion-alarm-photo'"
 									[disabled]="checkboxDisabled"
 									[value]="antiTheft.isSupportPhoto"
 									[checked]="antiTheft.isSupportPhoto"
@@ -161,9 +162,11 @@
 							<div class="select"
 								id="smartMotionAlertPhotoNumberSelect">
 								<vtr-ui-dropdown class="selectDropdown"
+									[isMetricsEnabled]=true
+									[metricsParent]="metricsParent"
 									[list]="photoNumberList"
 									[value]="antiTheft.photoNumber"
-									(change)="setPhotoNumber($event.value)"
+									(selectionChange)="setPhotoNumber($event.value)"
 									[dropDownId]="'smartMotionAlert-photoNumber-dropDown'"
 									[dropDownName]="'smartMotionAlert-photoNumber-dropDown'">
 								</vtr-ui-dropdown>

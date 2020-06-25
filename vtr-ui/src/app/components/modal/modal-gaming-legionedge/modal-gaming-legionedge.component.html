@@ -1,9 +1,9 @@
 <div class="gaming-help-popup gaming-popup-window" role="none" tabindex="1" attr.aria-label="{{ 'gaming.dashboard.device.legionEdge.helpPopup.title' | translate }} window">
 	<div class="modal-header">
 		<div class="modal-title" tabindex="-1">
-			<img tabindex="-1" class="gaming-header-image" src="assets/images/gaming/legionEdge.png" _ngcontent-c6="" *ngIf="!liteGaming">
-			<img tabindex="-1" class="gaming-header-image" src="assets/images/gaming/ideaCentre@2x.png" _ngcontent-c6="" *ngIf="liteGaming && desktopMachine">
-			<img tabindex="-1" class="gaming-header-image" src="assets/images/gaming/ideaPad@2x.png" _ngcontent-c6="" *ngIf="liteGaming && !desktopMachine">
+			<img id="help_popup_legion_edge" role="img" tabindex="-1" class="gaming-header-image" src="assets/images/gaming/legionEdge.png" _ngcontent-c6="" *ngIf="!liteGaming">
+			<img tabindex="-1" id="help_popup_ideacentre_gaming" role="img" class="gaming-header-image" src="assets/images/gaming/ideaCentre@2x.png" _ngcontent-c6="" *ngIf="liteGaming && desktopMachine">
+			<img id="help_popup_ideapad_gaming" role="img" tabindex="-1" class="gaming-header-image" src="assets/images/gaming/ideaPad@2x.png" _ngcontent-c6="" *ngIf="liteGaming && !desktopMachine">
 		</div>
 		<button type="button" tabindex="1" class="close" (click)="closeModal()" aria-label="close" id="legion_edge_help_close" role="button">
 			<fa-icon [icon]="['fas', 'times']"></fa-icon>

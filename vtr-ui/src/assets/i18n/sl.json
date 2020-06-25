@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Nastavitev toplotnega nač.",
                     "thermalMode2SettingDesc": "Izberite način, ki ga želite uporabiti.",
                     "fnQDesc": "Med načini lahko preklapljate z bližnjico Fn+Q.",
-                    "perormanceTitle": "Zmogljivi način",
+                    "performanceTitle": "Zmogljivi način",
                     "performanceDesc": "Povečajte zmogljivost računalnika z večjo hitrostjo ventilatorja in večjo porabo energije. ",
                     "OCDesc": "Vklopite lahko funkcijo Zvišanje takta.",
                     "ac_dcDesc": "Zmogljivejši način lahko uporabite le, kadar je v računalnik priključen napajalnik.",
@@ -155,6 +155,8 @@
                         "cpuOCName79": "Odmik napetosti predpomnilnika",
                         "cpuOCName122": "Razmerje za 7 jeder",
                         "cpuOCName123": "Razmerje za 8 jeder",
+                        "cpuOCName124": "Razmerje za 9 jeder",
+                        "cpuOCName125": "Razmerje za 10 jeder",
                         "cpuOCName102": "ICCMAX za jedro",
                         "cpuOCName106": "ICCMAX za predpomnilnik",
                         "cpuOCName114": "Odmik razmerja AVX"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Končni odmik napetosti, ki je uporabljen za napetost predpomnilnika.",
                         "cpuOCTip122": "Nastavite največji množitelj za jedra, pri katerem lahko jedra delujejo. Vrednost frekvence jeder je zmnožek tega razmerja in referenčne taktne frekvence.",
                         "cpuOCTip123": "Nastavite največji množitelj za jedra, pri katerem lahko jedra delujejo. Vrednost frekvence jeder je zmnožek tega razmerja in referenčne taktne frekvence.",
+                        "cpuOCTip124": "Nastavite največji množitelj za jedra, pri katerem lahko jedra delujejo. Vrednost frekvence jeder je zmnožek tega razmerja in referenčne taktne frekvence.",
+                        "cpuOCTip125": "Nastavite največji množitelj za jedra, pri katerem lahko jedra delujejo. Vrednost frekvence jeder je zmnožek tega razmerja in referenčne taktne frekvence.",
                         "cpuOCTip102": "Nastavite ICCMAX za regulator napetosti jedra procesorja.",
                         "cpuOCTip106": "Nastavite ICCMAX za regulator napetosti predpomnilnika in krožnega vodila procesorja.",
                         "cpuOCTip114": "Veljavno omejitev razmerja aktivnih jeder, ko je AVX aktiven, izpeljete tako, da to vrednost odštejete od ustrezne omejitve razmerja aktivnih jeder."
@@ -729,7 +733,7 @@
                 "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
-                "name11": "Legion front Fan Lighting",
+                "name11": "Legion Front Fan Lighting",
                 "name12": "Legion Top Fan Lighting"
             },
             "lightingEffect": {
@@ -1098,7 +1102,7 @@
                 },
                 "highDensityBattery": {
                     "title": "High density battery",
-                    "subtitle": "How your battey works",
+                    "subtitle": "How your battery works",
                     "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
                     "para2": {
                         "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
@@ -1271,7 +1275,8 @@
                             "description1": "Če omogočite polnjenje baterije po meri, bo pri uporabi te naprave splošno zdravje baterije trajalo dlje.Toda če baterija ni napolnjena v celoti, je tudi njen čas delovanja krajši.",
                             "description2": "Če želite to funkcijo omogočiti v celoti, odklopite računalnik inpustite, da se baterija izprazni do praga za ustavitev polnjenja ali pod njega.",
                             "enable": "OMOGOČI",
-                            "cancel": "PREKLIČI"
+                            "cancel": "PREKLIČI",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Začni polniti, ko je pod",
@@ -1762,7 +1767,8 @@
                             "title": "Znova zaženite računalnik",
                             "description": "Sprememba funkcije zgornje vrstice bo začela veljati šele po vnovičnem zagonu računalnika. Ali ste prepričani, da želite znova zagnati?",
                             "reboot": "VNOVIČNI ZAGON",
-                            "cancel": "NE ZDAJ"
+                            "cancel": "NE ZDAJ",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Za dostop do funkcij F1–F12 pritisnite Fn in tipke v zgornji vrstici.",
@@ -2127,9 +2133,10 @@
                 "title": "Pametno opozarjanje na premikanje",
                 "tooltip": "<div id='antiTheft-tooltips'>Ta funkcija ne deluje, če je računalnik v načinu mirovanja ali izklopljen. Za naslednja dejanja preverite nastavitve:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>dejanja zapiranja pokrova</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>dejanje kritične/nizke napolnjenosti baterije</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>dejanje gumba za vklop</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>dejanje gumba za spanje</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>nastavitve časovne omejitve nedejavnosti za preklop v način mirovanja</li></ul></div>V nasprotnem primeru se alarm ne bo sprožil in fotografije se ne bodo posnele.</div>",
                 "desc1": "Ko je ta funkcija omogočena, naprava začne piskati, kadar pri zaklenjenem zaslonu in predvsem na javnem mestu zazna premikanje.",
-                "desc2": "Če želite izklopiti alarm, se prijavite v sistem Windows.",
+                "desc2": "Prijavite se v sistem Windows in alarm se bo samodejno izklopil. Če želite uporabljati to funkcijo, jo boste morali znova omogočiti.",
                 "note": {
-                    "description": "Po uspešni prijavi v sistem se ta funkcija samodejno izklopi. Pred vnovično uporabo jo boste morali znova omogočiti."
+                    "descriptionTitle": "Pozor:",
+                    "description": "Ob prijavi v sistem Windows so potrebne veljavne možnosti vpisa, kot je geslo ali koda PIN. V nasprotnem primeru lahko funkcijo pametnega opozarjanja na premikanje pomotoma onemogoči nepooblaščen uporabnik, ki dostopa do vašega računalnika."
                 },
                 "alarm": {
                     "title": " OPOZARJANJE BO TRAJALO",
@@ -2141,7 +2148,7 @@
                 },
                 "allowCamera": {
                     "title": "SNEMANJE FOTOGRAFIJ",
-                    "describe": "Ko je ta funkcija omogočena, kamera začne samodejno snemati fotografije, kadar pri zaklenjenem zaslonu zazna premikanje. Ti podatki so obdelani lokalno v vaši napravi. Lenovo do njih ne dostopa in jih ne uporablja.",
+                    "describe": "Ko je ta funkcija omogočena, kamera začne samodejno snemati fotografije, kadar pri zaklenjenem zaslonu zazna premikanje. Ti podatki so obdelani lokalno v vaši napravi. Lenovo do njih ne dostopa in jih ne uporablja. Upoštevajte, da morate za uspešno snemanje fotografij med alarmom izklopiti prekrivalo kamere.",
                     "checkBoxText": "Omogoči to funkcijo"
                 },
                 "cameraPrivacy": {
@@ -2251,9 +2258,6 @@
         },
         "support": {
             "title": "Spletno mesto za podporo Lenovo"
-        },
-        "security": {
-            "title": "For a better protection for your device"
         },
         "banner": {
             "neverChecked": "Uporabite posodobitev sistema.",
@@ -3284,7 +3288,8 @@
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+            "processStatus": "PROCESSING"
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3769,7 +3774,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",
@@ -3819,7 +3825,9 @@
         },
         "auto": "Auto",
         "manual": "Manual",
-        "noScanResults": "Please click SCAN & FIX button to trigger scan process."
+        "noScanResults": "Please click SCAN & FIX button to trigger scan process.",
+        "am": "dop",
+        "pm": "pop"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

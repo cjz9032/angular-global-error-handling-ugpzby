@@ -7,6 +7,7 @@ import {
 	ElementRef,
 	ViewChild,
 } from '@angular/core';
+import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
 
 @Component({
 	selector: 'vtr-ui-custom-slider',
@@ -14,9 +15,7 @@ import {
 	styleUrls: ['./ui-custom-slider.component.scss'],
 })
 export class UiCustomSliderComponent implements OnInit {
-	@Input() metricsItem;
-	@Input() metricsEvent = 'featureClick';
-	@Input() metricsValue;
+	@Input() metricsItem: string;
 	@Input() isDisabled = false;
 	@Input() sliderId = 'rangeSlider';
 	@Input() value = 1; // initial slider value
@@ -32,6 +31,8 @@ export class UiCustomSliderComponent implements OnInit {
 	// show current value in tooltip, for example ECM current temperature value like 6500K
 	@Input() showTip = false; // displays value when slider is dragged.
 	@Input() tipSuffix = ''; // add
+	@Input() metricsParent: string;
+	@Input() isMetricsEnabled = false;
 
 	// fires on every value change
 	@Output() valueChange = new EventEmitter<number>();
@@ -46,7 +47,7 @@ export class UiCustomSliderComponent implements OnInit {
 	// public ticksArray = [];
 	public isTooltipHidden = true;
 	public tipValue = '0';
-	constructor() { }
+	constructor(private metrics: CommonMetricsService) { }
 
 	ngOnInit() {
 		// if (this.hasTicks) {
@@ -102,6 +103,10 @@ export class UiCustomSliderComponent implements OnInit {
 		const value = $event.target.valueAsNumber;
 		this.value = value;
 		this.dragEnd.emit(value);
+		if (this.isMetricsEnabled) {
+			const itemName = this.metricsItem || `${this.sliderId}`;
+			this.metrics.sendMetrics(value, itemName, this.metricsParent);
+		}
 	}
 
 	private setBubbleValue(rangeSlider, sliderBubble) {
@@ -135,9 +140,9 @@ export class UiCustomSliderComponent implements OnInit {
 		switch (position) {
 			case 1: legend = this.minLegend
 				break;
-			case 2: legend = (this.midLegend?.length > 0) ? this.midLegend : legend;
+			case 2: legend = (this.midLegend && this.midLegend.length > 0) ? this.midLegend : legend;
 				break;
-			case 3: legend = (this.maxLegend?.length > 0) ? this.maxLegend : this.midLegend;
+			case 3: legend = (this.maxLegend && this.maxLegend.length > 0) ? this.maxLegend : this.midLegend;
 				break;
 		}
 		return legend;

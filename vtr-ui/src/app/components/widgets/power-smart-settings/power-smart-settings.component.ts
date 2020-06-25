@@ -11,6 +11,7 @@ import { PowerService } from 'src/app/services/power/power.service';
 import { ModalIntelligentCoolingModesComponent } from '../../modal/modal-intelligent-cooling-modes/modal-intelligent-cooling-modes.component';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { UiCircleRadioWithCheckBoxListModel } from '../../ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
+import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 
 const thinkpad = 1;
 const ideapad = 0;
@@ -53,6 +54,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	private readonly batterySavingModeId = 'quiteBatterySaving';
 	private readonly performanceModeId = 'radioICPerformance';
 	private readonly quiteCoolModeId = 'radioICQuiteCool';
+	public readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
 
 	@Output() isPowerSmartSettingVisible = new EventEmitter<boolean>();
 
@@ -863,6 +865,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				customIcon: '',
 				hideIcon: false,
 				processLabel: true,
+				metricsItem: 'radio.power-smart-settings.performance'
 			});
 		}
 		this.intelligentCoolingUIModel.push({
@@ -875,6 +878,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 			customIcon: showIC >= 14 ? 'LE-IntelligentCooling2x' : 'LE-CoolingDown2x',
 			hideIcon: true,
 			processLabel: true,
+			metricsItem: 'radio.power-smart-settings.intelligent-cooling'
 		});
 
 		if (showIC >= 14) {
@@ -888,6 +892,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				customIcon: '',
 				hideIcon: false,
 				processLabel: true,
+				metricsItem: 'radio.power-smart-settings.performance'
 			});
 
 			this.intelligentCoolingUIModel.push({
@@ -900,6 +905,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				customIcon: 'LE-Battery-Life-mode2x',
 				hideIcon: true,
 				processLabel: true,
+				metricsItem: 'radio.power-smart-settings.battery-saving'
 			});
 		}
 	}
@@ -907,13 +913,13 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	updateIntelligentCoolingSelection() {
 		if (this.intelligentCoolingUIModel && this.intelligentCoolingUIModel.length > 0) {
 			this.intelligentCoolingUIModel.forEach(element => {
-				if(element.componentId === this.batterySavingModeId){
+				if (element.componentId === this.batterySavingModeId) {
 					element.isChecked = this.radioBatterySaving;
 				}
-				if(element.componentId === this.performanceModeId){
+				if (element.componentId === this.performanceModeId) {
 					element.isChecked = this.radioPerformance;
 				}
-				if(element.componentId === this.quiteCoolModeId){
+				if (element.componentId === this.quiteCoolModeId) {
 					element.isChecked = this.radioQuietCool;
 				}
 			});

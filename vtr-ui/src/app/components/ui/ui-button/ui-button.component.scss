@@ -103,6 +103,7 @@
 		.btn-gradient {
 			background-color: $button_gradient_start;
 			background-image: linear-gradient(to right, $button_gradient_start, $button_gradient_end);
+			@include high-contrast-background-image;
 		}
 
 		.btn-red {

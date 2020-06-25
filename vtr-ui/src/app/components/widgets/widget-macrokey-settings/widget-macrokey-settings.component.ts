@@ -1,3 +1,4 @@
+import { Subscription } from 'rxjs/internal/Subscription';
 import { Status } from './../../../data-models/widgets/status.model';
 import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { GamingCollapsableContainerEvent } from 'src/app/data-models/gaming/gaming-collapsable-container-event';
@@ -74,6 +75,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	keyChangeEvent: any;
 	inputChangeEvent: any;
 	inputMessageChangeEvent: any;
+	notificationSubscription: Subscription;
 
 	constructor(
 		private macroKeyService: MacrokeyService,
@@ -95,7 +97,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 			LocalStorageKey.macroKeyFeature
 		);
 		this.initMacroKeySubpage();
-		this.commonService.notification.subscribe((response) => {
+		this.notificationSubscription = this.commonService.notification.subscribe((response) => {
 			if (response.type === Gaming.GamingCapabilities) {
 				this.gamingProperties = response.payload;
 				this.initMacroKeySubpage();
@@ -144,6 +146,9 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 			EventTypes.gamingMacroKeyKeyChangeEvent, 
 			this.keyChangeEvent
 		);
+		if(this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
 	}
 
 	public initMacroKeyEvents() {

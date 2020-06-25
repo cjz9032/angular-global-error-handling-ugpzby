@@ -22,6 +22,7 @@
 
 		/* main styling */
 		.custom-control-input {
+			z-index: 0;
 			width: $check-box-size + 1;
 			height: $check-box-size + 0.5;
 		}
@@ -58,9 +59,40 @@
 			&::before {
 				background-color: $menu_hover;
 				box-shadow: $check-box-shadow;
+				@media #{$white-on-black} {
+					background-color: $high-contrast-black-cyan;
+					border: none;
+				}
+				@media #{$black-on-white} {
+					background-color: $high-contrast-white-dark-magenta;
+					border: none;
+				}
 			}
 			&::after {
 				@include check-icon();
+				@media #{$white-on-black} {
+					@include check-icon("black");
+				}
+			}
+			&:hover {
+				&::after {
+					@media #{$white-on-black} {
+						@include check-icon();
+					}
+					@media #{$black-on-white} {
+						@include check-icon("black");
+					}
+				}
+				&::before {
+					@media #{$white-on-black} {
+						background-color: $dark;
+						@include high-contrast-black-border;
+					}
+					@media #{$black-on-white} {
+						background-color: $light;
+						@include high-contrast-white-border;
+					}
+				}
 			}
 		}
 
@@ -85,13 +117,17 @@
 			&::before {
 				box-shadow: $check-box-shadow;
 				border-color: $menu_hover;
-				
+
 				@media #{$black-on-white} {
-					border: 0.1rem solid $high-contrast-white-dark-magenta;
-					background-color:$light;
+					@include high-contrast-white-border;
+					background-color: $light;
+				}
+				@media #{$white-on-black} {
+					@include high-contrast-black-border;
+					background-color: $dark;
 				}
 
-				
+
 			}
 		}
 
@@ -103,10 +139,14 @@
 				border-color: $shade_blue;
 				background-color: $shade_blue;
 				@media #{$black-on-white} {
-					background-color: $high-contrast-white-dark-magenta;
-						
+					@include high-contrast-white-border;
+					background-color: $light;
 				}
-				
+				@media #{$white-on-black} {
+					@include high-contrast-black-border;
+					background-color: $dark;
+				}
+
 			}
 		}
 		.custom-control-input:active:checked ~ .custom-control-label {
@@ -116,10 +156,19 @@
 
 				@media #{$black-on-white} {
 					background-color: $high-contrast-white-dark-magenta;
-						
 				}
-				
-				
+				@media #{$white-on-black} {
+					background-color: $high-contrast-black-cyan;
+				}
+			}
+
+			&::after {
+				@media #{$white-on-black} {
+					@include check-icon();
+				}
+				@media #{$black-on-white} {
+					@include check-icon("black");
+				}
 			}
 		}
 
@@ -134,12 +183,14 @@
 				border-color: $shade_blue;
 				opacity: $disabled-opacity;
 
-				
+
 				@media #{$black-on-white} {
-					border-color: $high-contrast-white-disabled-maroon;
-						
+					@include high-contrast-white-disabled-border;
 				}
-				
+				@media #{$white-on-black} {
+					@include high-contrast-black-disabled-border;
+				}
+
 			}
 		}
 		.custom-control-input:disabled:checked ~ .custom-control-label {
@@ -149,12 +200,24 @@
 				border-color: $shade_blue;
 				background-color: $shade_blue;
 				opacity: $disabled-opacity;
-				
+
 				@media #{$black-on-white} {
-					border: 0.1rem
-						solid $high-contrast-white-disabled-maroon;
-						background-color:$light;
+					@include high-contrast-white-disabled-border;
+					background: $light;
 				}
+				@media #{$white-on-black} {
+					@include high-contrast-black-disabled-border;
+					background: $dark;
+				}
+			}
+			&::after {
+				@media #{$white-on-black} {
+					@include check-icon("green");
+				}
+				@media #{$black-on-white} {
+					@include check-icon("maroon");
+				}
+
 			}
 		}
 

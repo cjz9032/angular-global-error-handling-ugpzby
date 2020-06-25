@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Nastavenie tepelného režimu",
                     "thermalMode2SettingDesc": "Vyberte režim, ktorý chcete použiť.",
                     "fnQDesc": "Režim môžete prepínať pomocou klávesovej skratky Fn+Q.",
-                    "perormanceTitle": "Režim vysokého výkonu",
+                    "performanceTitle": "Režim vysokého výkonu",
                     "performanceDesc": "Zvýšte výkon počítača zvýšením otáčok ventilátora a spotreby energie. ",
                     "OCDesc": "Môžete sa rozhodnúť zapnúť funkciu pretaktovania.",
                     "ac_dcDesc": "Režim vysokého výkonu je možné použiť, len ak je pripojený sieťový adaptér.",
@@ -155,6 +155,8 @@
                         "cpuOCName79": "Zmena napätia vyrovnávacej pamäte",
                         "cpuOCName122": "Násobič jadra 7",
                         "cpuOCName123": "Násobič jadra 8",
+                        "cpuOCName124": "Násobič jadra 9",
+                        "cpuOCName125": "Násobič jadra 10",
                         "cpuOCName102": "ICCMAX jadra",
                         "cpuOCName106": "ICCMAX vyrovnávacej pamäte",
                         "cpuOCName114": "Zmena násobiča pre AVX"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Finálna zmena napätia, ktorá sa použije na napätie vyrovnávacej pamäte.",
                         "cpuOCTip122": "Nastavenie maximálneho násobiča jadra. Frekvencia jadra je súčinom tohto násobiča a referenčnej frekvencie.",
                         "cpuOCTip123": "Nastavenie maximálneho násobiča jadra. Frekvencia jadra je súčinom tohto násobiča a referenčnej frekvencie.",
+                        "cpuOCTip124": "Nastavenie maximálneho násobiča jadra. Frekvencia jadra je súčinom tohto násobiča a referenčnej frekvencie.",
+                        "cpuOCTip125": "Nastavenie maximálneho násobiča jadra. Frekvencia jadra je súčinom tohto násobiča a referenčnej frekvencie.",
                         "cpuOCTip102": "Nastavenie hodnoty ICCMAX pre regulátor napätia jadra procesora.",
                         "cpuOCTip106": "Nastavenie hodnoty ICCMAX pre regulátor napätia vyrovnávacej pamäte procesora a kruhovej zbernice.",
                         "cpuOCTip114": "Ak chcete odvodiť limit násobiča aktívneho jadra, keď je aktívny súbor inštrukcií AVX, odpočítajte túto hodnotu od príslušného limitu násobiča aktívneho jadra."
@@ -729,7 +733,7 @@
                 "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
-                "name11": "Legion front Fan Lighting",
+                "name11": "Legion Front Fan Lighting",
                 "name12": "Legion Top Fan Lighting"
             },
             "lightingEffect": {
@@ -1098,7 +1102,7 @@
                 },
                 "highDensityBattery": {
                     "title": "High density battery",
-                    "subtitle": "How your battey works",
+                    "subtitle": "How your battery works",
                     "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
                     "para2": {
                         "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
@@ -1271,7 +1275,8 @@
                             "description1": "Zapnutie vlastnej hraničnej úrovne nabitia batérie umožní predĺžiť životnosť batérie pri používaní tohto zariadenia.Ak však batéria nie je plne nabitá, jej výdrž je kratšia.",
                             "description2": "Ak chcete túto funkciu v plnej miere zapnúť, odpojte zariadeniea nechajte batériu, aby sa vybila na alebo pod hraničnú úroveň nabitia.",
                             "enable": "ZAPNÚŤ",
-                            "cancel": "ZRUŠIŤ"
+                            "cancel": "ZRUŠIŤ",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Začať nabíjanie pri hodnote nižšej ako",
@@ -1762,7 +1767,8 @@
                             "title": "Reštartovanie počítača",
                             "description": "Zmena predvolenej funkcie horného riadka si vyžaduje reštartovanie počítača. Naozaj chcete vykonať reštartovanie?",
                             "reboot": "REŠTARTOVAŤ",
-                            "cancel": "TERAZ NIE"
+                            "cancel": "TERAZ NIE",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Funkcie klávesov F1 – F12 môžete použiť stlačením klávesu Fn a klávesov v hornom riadku.",
@@ -2127,9 +2133,10 @@
                 "title": "Inteligentná signalizácia pohybu",
                 "tooltip": "<div id='antiTheft-tooltips'>Táto funkcia nefunguje, keď je počítač v režime dlhodobého spánku alebo je vypnutý. Skontrolujte nastavenia nasledujúcich akcií:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>akcie pri zatvorení krytu</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>akcia pri kriticky vybitej/takmer vybitej batérii</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>akcia pri stlačení tlačidla napájania</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>funkcia pri stlačení tlačidla spánku</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>nastavenia časového limitu prechodu z režimu nečinnosti do režimu dlhodobého spánku</li></ul></div>V opačnom prípade sa nespustí budík, ani sa nedá fotografovať.</div>",
                 "desc1": "Keď povolíte túto funkciu, zariadenie začne vydávať zvukový signál, keď je obrazovka uzamknutá a zistí sa pohyb, najmä vo verejnom priestore.",
-                "desc2": "Ak chcete toto upozornenie zrušiť, prihláste sa do systému Windows.",
+                "desc2": "Prihláste sa do systému Windows a alarm sa automaticky vypne. Ak chcete funkciu používať, musíte ju znova povoliť.",
                 "note": {
-                    "description": "Po úspešnom prihlásení do systému sa táto funkcia automaticky vypne. Ak ju chcete používať, musíte ju znova povoliť."
+                    "descriptionTitle": "Upozornenie:",
+                    "description": "Pri prihlásení sa do systému Windows sú potrebné platné možnosti prihlásenia, napríklad heslo alebo kód PIN. V opačnom prípade môže inteligentnú signalizáciu pohybu omylom deaktivovať ktorýkoľvek neoprávnený používateľ, ktorý má prístup k vášmu počítaču."
                 },
                 "alarm": {
                     "title": " UPOZORNENIE BUDE TRVAŤ",
@@ -2141,7 +2148,7 @@
                 },
                 "allowCamera": {
                     "title": "SNÍMANIE FOTOGRAFIÍ",
-                    "describe": "Keď povolíte túto funkciu, fotoaparát automaticky sníma fotografie pri zistení pohybu, ak je obrazovka uzamknutá. Tieto údaje sa spracúvajú lokálne vo vašom zariadení. Spoločnosť Lenovo k nim nemá prístup a nepoužíva ich.",
+                    "describe": "Keď povolíte túto funkciu, fotoaparát automaticky sníma fotografie pri zistení pohybu, ak je obrazovka uzamknutá. Tieto údaje sa spracúvajú lokálne vo vašom zariadení. Spoločnosť Lenovo k nim nemá prístup a nepoužíva ich. Nezabudnite, že by ste mali vypnúť funkciu krytu kamery, aby mohla počas alarmu úspešne snímať zábery.",
                     "checkBoxText": "Povolenie tejto funkcie"
                 },
                 "cameraPrivacy": {
@@ -2251,9 +2258,6 @@
         },
         "support": {
             "title": "Webová lokalita podpory spoločnosti Lenovo"
-        },
-        "security": {
-            "title": "For a better protection for your device"
         },
         "banner": {
             "neverChecked": "Vitajte v službe aktualizácie systému.",
@@ -3284,7 +3288,8 @@
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+            "processStatus": "PROCESSING"
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3769,7 +3774,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",
@@ -3819,7 +3825,9 @@
         },
         "auto": "Auto",
         "manual": "Manual",
-        "noScanResults": "Please click SCAN & FIX button to trigger scan process."
+        "noScanResults": "Please click SCAN & FIX button to trigger scan process.",
+        "am": "Dop",
+        "pm": "pop"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

@@ -17,9 +17,33 @@
 }
 input.switch ~.switch {
 	border: 0.1rem solid $grey_dark;
+	@media #{$black-on-white} {
+		@include black-border;
+		@include high-contrast-background-transparent;
+		small {
+			background-color: $dark;
+		}
+	}
+	@media #{$white-on-black} {
+		@include white-border;
+		@include high-contrast-background-transparent;
+		small {
+			background-color: $light;
+		}
+	}
 }
 input.checked ~.switch{
 	border: 0.1rem solid transparent;
+	@media #{$black-on-white} {
+		small {
+			background-color: $light;
+		}
+	}
+	@media #{$white-on-black} {
+		small {
+			background-color: $dark;
+		}
+	}
 }
 input:disabled ~.switch {
 	border: 0.1rem solid $grey_dark;
@@ -27,6 +51,21 @@ input:disabled ~.switch {
 		background-color: $grey_darker !important;
 		opacity: 0.4;
 	}
+	@media #{$black-on-white} {
+		border: 0.1rem solid transparent;
+		small {
+			background: $light;
+			opacity: 1;
+		}
+	}
+	@media #{$white-on-black} {
+		border: 0.1rem solid transparent;
+		small {
+			background: $dark;
+			opacity: 1;
+		}
+	}
+
 }
 
 .switch-disable {
@@ -98,11 +137,13 @@ input.checked + .switch {
 	@media #{$high-contrast} {
 		background: $highlight_bright;
 	}
-	@media #{$black-on-white} {
-		background: $high-contrast-white-textselected;
-	}
 	@media #{$white-on-black} {
-		background: $highlight_bright;
+		@include high-contrast-black-background;
+		@include high-contrast-black-border;
+	}
+	@media #{$black-on-white} {
+		@include high-contrast-white-background;
+		@include high-contrast-white-border;
 	}
 
 }
@@ -119,8 +160,8 @@ input.checked + .switch {
 	width: 2.2rem;
 	height: 2.2rem;
 	position: absolute;
-	left: 0.3rem;
-	top: 0.3rem;
+	left: 0.4rem;
+	top: 0.4rem;
 	//-webkit-box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.4);
 	//box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.4);
 	transition: background-color 0.4s, left 0.2s;
@@ -182,10 +223,10 @@ input.checked + .switch.switch-xs > small {
 }
 
 .switch.switch-xs {
-	margin-top: 0.1rem;
-	left: -0.2rem;
-	height: 2rem;
-	width: 4.6rem;
+	left: -0.25rem;
+	height: 2.2rem;
+	width: 4.8rem;
+
 }
 
 .switch-xs small {

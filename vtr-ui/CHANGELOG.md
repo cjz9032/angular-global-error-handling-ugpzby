@@ -2,6 +2,53 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.15](https://bitbucket.tc.lenovo.com///compare/v1.6.14...v1.6.15) (2020-06-18)
+
+
+### Bug Fixes
+
+* change JA 'of' to '/' ([525b450](https://bitbucket.tc.lenovo.com///commit/525b45064fbf82812a6542e74ddde2133ffba610))
+* **article:** remove article detail first image alt. ([ef0e353](https://bitbucket.tc.lenovo.com///commit/ef0e35390b2c3aa3de86db88b52b3b6cd666f155))
+* **translation:** update some Japanese translations ([27638bb](https://bitbucket.tc.lenovo.com///commit/27638bb436ce693ef5d661d74c45b2e335032fc1))
+
+### [1.6.14](https://bitbucket.tc.lenovo.com///compare/v1.6.13...v1.6.14) (2020-06-17)
+### [1.5.78](https://bitbucket.tc.lenovo.com///compare/v1.5.77...v1.5.78) (2020-06-04)
+
+### [1.5.77](https://bitbucket.tc.lenovo.com///compare/v1.5.76...v1.5.77) (2020-06-04)
+
+### [1.5.76](https://bitbucket.tc.lenovo.com///compare/v1.5.75...v1.5.76) (2020-06-04)
+
+
+### Bug Fixes
+
+* **Overall:** using same data source of network state ([552f64e](https://bitbucket.tc.lenovo.com///commit/552f64e88607f7be90558a938db5bb25668b641f))
+* **warranty:** add warranty details missing space in offline mode.VAN-19219 ([16294ae](https://bitbucket.tc.lenovo.com///commit/16294aeee8f2cb812128d87e7ac3aa430722635f))
+
+### [1.6.13](https://bitbucket.tc.lenovo.com///compare/v1.6.12...v1.6.13) (2020-06-16)
+
+
+### Bug Fixes
+
+* **Menu:** click last submenu item, can't tab to next element ([0d49724](https://bitbucket.tc.lenovo.com///commit/0d497241ce797164ec0b4cc06f7c9ef17c808e41))
+
+### [1.6.12](https://bitbucket.tc.lenovo.com///compare/v1.6.11...v1.6.12) (2020-06-15)
+
+### [1.6.11](https://bitbucket.tc.lenovo.com///compare/v1.6.10...v1.6.11) (2020-06-15)
+
+### [1.6.10](https://bitbucket.tc.lenovo.com///compare/v1.6.9...v1.6.10) (2020-06-13)
+
+### [1.6.9](https://bitbucket.tc.lenovo.com///compare/v1.6.8...v1.6.9) (2020-06-12)
+
+### [1.6.8](https://bitbucket.tc.lenovo.com///compare/v1.6.7...v1.6.8) (2020-06-11)
+
+### [1.6.7](https://bitbucket.tc.lenovo.com///compare/v1.6.6...v1.6.7) (2020-06-10)
+
+### [1.6.6](https://bitbucket.tc.lenovo.com///compare/v1.6.5...v1.6.6) (2020-06-09)
+
+### [1.6.5](https://bitbucket.tc.lenovo.com///compare/v1.6.4...v1.6.5) (2020-06-09)
+
+### [1.6.4](https://bitbucket.tc.lenovo.com///compare/v1.6.3...v1.6.4) (2020-06-09)
+
 ### [1.6.3](https://bitbucket.tc.lenovo.com///compare/v1.6.2...v1.6.3) (2020-06-08)
 
 ### [1.6.2](https://bitbucket.tc.lenovo.com///compare/v1.6.1...v1.6.2) (2020-06-06)
@@ -17,6 +64,18 @@ All notable changes to this project will be documented in this file. See [standa
 * To expand a collapsed widget on Anti-virus page ([d8ed480](https://bitbucket.tc.lenovo.com///commit/d8ed480613e536e711a9b7d16edbf36367cf301f))
 
 ## [1.6.0](https://bitbucket.tc.lenovo.com///compare/v1.5.71...v1.6.0) (2020-06-03)
+* **article:** remove article detail first image alt. ([05c3430](https://bitbucket.tc.lenovo.com///commit/05c34301e63392ed7ac407b05acd22c8d8239517))
+* fix getMacfee disabled status in offline ([a8da3a7](https://bitbucket.tc.lenovo.com///commit/a8da3a77d0f4872a9531535c9ee1d46dc0b2dd01))
+* **antivirus:** VAN-19047 fixed can't trigger launchMcAfeeBuy API ([543eed5](https://bitbucket.tc.lenovo.com///commit/543eed50c29b7850e8cb2cf20610c1cbbdfb4143))
+* **antivirus:** VAN-19047 modify lowercase of mcafee state ([0e07236](https://bitbucket.tc.lenovo.com///commit/0e07236eba42e5b92ed7625d4aa6b8d72ae265d4))
+
+### [1.5.75](https://bitbucket.tc.lenovo.com///compare/v1.5.74...v1.5.75) (2020-06-03)
+
+### [1.5.74](https://bitbucket.tc.lenovo.com///compare/v1.5.73...v1.5.74) (2020-06-03)
+
+### [1.5.73](https://bitbucket.tc.lenovo.com///compare/v1.5.72...v1.5.73) (2020-06-02)
+
+### [1.5.72](https://bitbucket.tc.lenovo.com///compare/v1.5.71...v1.5.72) (2020-06-02)
 
 ### [1.5.71](https://bitbucket.tc.lenovo.com///compare/v1.5.70...v1.5.71) (2020-06-02)
 

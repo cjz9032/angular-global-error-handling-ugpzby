@@ -16,6 +16,7 @@ import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-cam
 import { Subscription } from 'rxjs/internal/Subscription';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 
 @Component({
 	selector: 'vtr-camera-control',
@@ -58,6 +59,8 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	private orientationSensor: any;
 	private deviceOrientation: any;
 	private simpleOrientation: any;
+	public readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
+
 
 	@ViewChild('cameraPreview', { static: false }) set content(content: ElementRef) {
 		// when camera preview video element is visible then start camera feed

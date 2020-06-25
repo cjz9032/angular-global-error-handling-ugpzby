@@ -113,14 +113,14 @@
 		// @media #{$breakpoint_sm} {
 		// 	height: 18.6rem !important;
 		// }
+
+		@include high-contrast-background-image;
 	}
 	@media #{$black-on-white} {
-		border: 0.1rem solid ;
-		border-radius: $border_radius;
+		border: 0.1rem solid $dark;
 	}
 	@media #{$white-on-black} {
-		border: 0.1rem solid ;
-		border-radius: $border_radius;
+		border: 0.1rem solid $light;
 	}
 }
 
@@ -136,6 +136,12 @@
 			}
 			.carousel-control-prev,.carousel-control-next {
 				width: 8.5%;
+				@media #{$white-on-black} {
+					opacity: 1;
+				}
+				@media #{$black-on-white} {
+					opacity: 1;
+				}
 			}
 			.carousel-control-next-icon {
 				background-image: none;
@@ -144,6 +150,16 @@
 				border-top: 0.3rem solid $light;
 				border-right: 0.3rem solid $light;
 				transform: rotate(45deg);
+				&:hover, &:active {
+					@media #{$white-on-black} {
+						border-top: 0.3rem solid $high-contrast-black-cyan;
+						border-right: 0.3rem solid $high-contrast-black-cyan;
+					}
+					@media #{$black-on-white} {
+						border-top: 0.3rem solid $high-contrast-white-dark-magenta;
+						border-right: 0.3rem solid $high-contrast-white-dark-magenta;
+					}
+				}
 			}
 			.carousel-control-prev-icon {
 				background-image: none;
@@ -152,6 +168,16 @@
 				border-top: 0.3rem solid $light;
 				border-left: 0.3rem solid $light;
 				transform: rotate(-45deg);
+				&:hover, &:active {
+					@media #{$white-on-black} {
+						border-top: 0.3rem solid $high-contrast-black-cyan;
+						border-left: 0.3rem solid $high-contrast-black-cyan;
+					}
+					@media #{$black-on-white} {
+						border-top: 0.3rem solid $high-contrast-white-dark-magenta;
+						border-left: 0.3rem solid $high-contrast-white-dark-magenta;
+					}
+				}
 			}
 
 			@media #{$high-contrast} {
@@ -160,6 +186,18 @@
 					border: 0.1rem solid currentColor;
 				}
 			}
+
+				.carousel-indicators li  {
+					&.active {
+						@media #{$black-on-white} {
+							@include high-contrast-white-background;
+						}
+						@media #{$white-on-black} {
+							@include high-contrast-black-background;
+						}
+					}
+				}
+
 
 			// .carousel-control-prev,
 			// .carousel-control-next {

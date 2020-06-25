@@ -131,6 +131,8 @@
                         "cpuOCName79": "快取電壓偏移",
                         "cpuOCName122": "7 核心比率",
                         "cpuOCName123": "8 核心比率",
+                        "cpuOCName124": "9 核心比率",
+                        "cpuOCName125": "10 核心比率",
                         "cpuOCName102": "核心 ICCMAX",
                         "cpuOCName106": "快取 ICCMAX",
                         "cpuOCName114": "AVX 比率偏移"
@@ -149,6 +151,8 @@
                         "cpuOCTip79": "套用至快取電壓的最終電壓偏移。",
                         "cpuOCTip122": "設定核心可據以運作的最大核心乘數。核心頻率的值是此比率與參考時鐘頻率的乘積。",
                         "cpuOCTip123": "設定核心可據以運作的最大核心乘數。核心頻率的值是此比率與參考時鐘頻率的乘積。",
+                        "cpuOCTip124": "設定核心可據以運作的最大核心乘數。核心頻率的值是此比率與參考時鐘頻率的乘積。",
+                        "cpuOCTip125": "設定核心可據以運作的最大核心乘數。核心頻率的值是此比率與參考時鐘頻率的乘積。",
                         "cpuOCTip102": "設定處理器核心電壓整流器的 ICCMAX。",
                         "cpuOCTip106": "設定處理器快取和環狀匯流排電壓整流器的 ICCMAX。",
                         "cpuOCTip114": "若要得出 AVX 處於使用中狀態時的有效使用中核心比率限制，請減去此值至對應的使用中核心比率限制。"
@@ -185,7 +189,7 @@
                     "thermalMode2SettingTitle": "熱模式設定",
                     "thermalMode2SettingDesc": "選擇您要使用的模式。",
                     "fnQDesc": "您可以使用快捷鍵 Fn+Q 切換模式。",
-                    "perormanceTitle": "效能模式",
+                    "performanceTitle": "效能模式",
                     "performanceDesc": "以更高的風扇速度和耗電量提高電腦效能。",
                     "OCDesc": "您可以選擇開啟超頻功能。",
                     "ac_dcDesc": "只有在已插入 AC 電源整流器時，才適用效能模式。",
@@ -729,7 +733,7 @@
                 "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
-                "name11": "Legion front Fan Lighting",
+                "name11": "Legion Front Fan Lighting",
                 "name12": "Legion Top Fan Lighting"
             },
             "lightingEffect": {
@@ -1098,7 +1102,7 @@
                 },
                 "highDensityBattery": {
                     "title": "High density battery",
-                    "subtitle": "How your battey works",
+                    "subtitle": "How your battery works",
                     "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
                     "para2": {
                         "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
@@ -1271,7 +1275,8 @@
                             "description1": "啟用自訂電池充電可讓您在使用此裝置時，整體電池性能更持久。不過，若充電不完全會減少執行階段電池壽命。",
                             "description2": "為了完全啟用此功能，請拔除您的裝置，讓電池電力清空至停止充電臨界值或以下。",
                             "enable": "啟用",
-                            "cancel": "取消"
+                            "cancel": "取消",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "低於以下電量時開始充電",
@@ -1762,7 +1767,8 @@
                             "title": "重新啟動電腦",
                             "description": "如果變更最上面一排的預設功能，您必須重新啟動電腦。您確定要重新啟動嗎？",
                             "reboot": "重新開機",
-                            "cancel": "現在不要"
+                            "cancel": "現在不要",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "若要存取 F1-F12 功能，請按下 Fn 和最上面一排的按鍵。",
@@ -2127,9 +2133,10 @@
                 "title": "智慧型移動警示",
                 "tooltip": "<div id='antiTheft-tooltips'>當電腦處於休眠模式或關閉電源時，此功能無法運作。檢查下列動作中的設定：<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>闔上機蓋的動作</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>電力不足/偏低時的動作</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>電源按鈕動作</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>睡眠按鈕動作</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>閒置逾時設定進入休眠</li></ul></div>否則，它不會引發警示，也不會拍照。</div>",
                 "desc1": "啟用此功能時，裝置將在螢幕鎖定及偵測到移動時開始發出嗶聲，特別是在公共場所。",
-                "desc2": "若要關閉警示音，請登入 Windows。",
+                "desc2": "登入 Windows，警示將會自動關閉。若要使用此功能，您必須重新啟用。",
                 "note": {
-                    "description": "成功登入系統後，此功能將自動關閉。您必須重新啟用才能使用此功能。"
+                    "descriptionTitle": "注意：",
+                    "description": "當您登入 Windows 時，需要有效的登入選項（例如密碼或 PIN 碼）。否則，任何存取您電腦的未經授權使用者都有可能會錯誤地停用智慧型移動警示功能。"
                 },
                 "alarm": {
                     "title": " 警示音持續時間",
@@ -2141,7 +2148,7 @@
                 },
                 "allowCamera": {
                     "title": "拍照",
-                    "describe": "啟用此功能時，若您的螢幕已鎖定，相機將在偵測到動作時自動拍照。這份資料將由您的裝置本機進行處理，Lenovo 絕不會逕自存取或加以使用。",
+                    "describe": "啟用此功能時，若您的螢幕已鎖定，相機將在偵測到動作時自動拍照。這份資料將由您的裝置本機進行處理，Lenovo 絕不會逕自存取或加以使用。請注意，應關閉攝影機玻璃擋片以確保在警示期間可以順利拍照。",
                     "checkBoxText": "啟用這項功能"
                 },
                 "cameraPrivacy": {
@@ -2251,9 +2258,6 @@
         },
         "support": {
             "title": "Lenovo 支援網站"
-        },
-        "security": {
-            "title": "For a better protection for your device"
         },
         "banner": {
             "neverChecked": "歡迎使用系統更新。",
@@ -3162,15 +3166,15 @@
         }
     },
     "smartPerformance": {
-        "title": "Health & Support",
-        "back": "BACK",
-        "performanceandSecurityCheckTitle": "Performance & Security Check",
-        "performanceandSecurityCheckSubTitle": "Let's diagnose and resolve performance and security issues in your computer",
-        "scanButton": "FREE PC SCAN",
-        "section1Heading": "How would you rate your PC Performance?",
-        "section1Description": "PC running slow? Applications taking too long to respond? Windows errors? Malware concerns? Let's diagnose whats's causing the problem and fix it.",
-        "critical": "CRITICAL",
-        "allisWell": "ALL IS WELL",
+        "title": "Smart Performance",
+        "back": "上一步",
+        "performanceandSecurityCheckTitle": "效能與安全性檢查",
+        "performanceandSecurityCheckSubTitle": "讓我們來診斷並解決電腦中的效能與安全性問題",
+        "scanButton": "免費 PC 掃描",
+        "section1Heading": "您如何評價 PC 效能？",
+        "section1Description": "PC 執行緩慢？應用程式遲遲無法回應？Windows 錯誤？惡意軟體問題？讓我們來診斷造成問題的原因並加以解決。",
+        "critical": "重大",
+        "allisWell": "都沒問題",
         "zero": 0,
         "one": 1,
         "two": 2,
@@ -3182,644 +3186,648 @@
         "eight": 8,
         "nine": 9,
         "ten": 10,
-        "tuneUP": "Your PC needs a tune-up",
-        "section2Heading": "Top-notch PC Performance. Always",
-        "section2Description": "Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+        "tuneUP": "您的 PC 需要調整一下",
+        "section2Heading": "PC 效能出眾。永遠",
+        "section2Description": "我們的軟體可以全天候主動掃描 PC，在問題開始出現時及早發現並進行修復，讓您的 PC 始終保持頂尖效能。",
         "tunePCPerformance": {
-            "title": "TUNE PC PERFORMANCE",
-            "heading": "Show your computer some extra love",
-            "description": "Even the best computer will benefit from periodic tune-ups. Get a tune-up and get more done with our powerful app.",
+            "title": "調校 PC 效能",
+            "heading": "給您的電腦多一些關愛",
+            "description": "即使最好的電腦也能從定期調整中受益。使用我們強大的應用程式進行調升，達到事半功倍的效果。",
             "tabSet1": {
-                "tab1": "Accumulated Junk",
-                "tab2": "Usability Issues",
-                "tab3": "Windows Settings",
-                "tab4": "Systems Errors",
-                "tab5": "Registry Errors"
+                "tab1": "垃圾檔囤積",
+                "tab2": "可用性問題",
+                "tab3": "Windows 設定",
+                "tab4": "系統錯誤",
+                "tab5": "登錄錯誤"
             },
             "tabSet2": {
-                "tab1Heading": "IT'S EASY",
-                "tab1Description": "We don't confuse you with tech mumbo jumbp",
-                "tab2Heading": "IT'S FAST",
-                "tab2Description": "Get a 100 point check done in under 5 minutes",
-                "tab3Heading": "IT'S SAFE",
-                "tab3Description": "No scareware, built with best practises"
+                "tab1Heading": "簡單",
+                "tab1Description": "我們不會滿口技術行話，使您困惑",
+                "tab2Heading": "迅速",
+                "tab2Description": "5 分鐘內百分之百完成檢查",
+                "tab3Heading": "安全",
+                "tab3Description": "依循最佳實務所建構，恐嚇軟體絕跡"
             },
-            "summaryTitle": "Tune PC Performance"
+            "summaryTitle": "調校 PC 效能"
         },
         "boostInternetPerformance": {
-            "title": "BOOST INTERNET PERFORMANCE",
-            "extraTitle": "INTERNET PERFORMANCE",
-            "heading": "Give your internet a boost",
-            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "title": "提升網際網路效能",
+            "extraTitle": "網際網路效能",
+            "heading": "大力加持您的網際網路",
+            "description": "對許多人來說，網速慢、無 Wi-Fi，就跟離群索居、水電自理沒兩樣。讓我們來配置您的網際網路、Wi-Fi 和瀏覽器設定，以獲致最佳效能。",
             "tabSet1": {
-                "tab1": "Network Settings",
-                "tab2": "Browser Settings",
-                "tab3": "Browser Security",
-                "tab4": "Wi-Fi Performance",
-                "tab5": "E-junk"
+                "tab1": "電子垃圾",
+                "tab2": "網路設定",
+                "tab3": "瀏覽器設定",
+                "tab4": "瀏覽器安全性",
+                "tab5": "Wi-Fi 效能"
             },
             "tabSet2": {
-                "tab1Heading": "ZERO DAY VIRUS",
-                "tab1Description": "We remove even the newest malware infections",
-                "tab2Heading": "SPYWARE REMOVAL",
-                "tab2Description": "We remove all potentially unwanted programs",
-                "tab3Heading": "LIGHT AND FAST",
-                "tab3Description": "Scan typically takes 5-10 minutes"
+                "tab1Heading": "瀏覽器問題",
+                "tab1Description": "我們會配置並修正您所有的常用 Web 瀏覽器。",
+                "tab2Heading": "連線錯誤",
+                "tab2Description": "我們可以診斷並修復您的連線問題。",
+                "tab3Heading": "網際網路速度緩慢",
+                "tab3Description": "我們會幫助您獲得最佳效能。"
             },
-            "summaryTitle": "Internet Performance"
+            "summaryTitle": "網際網路效能"
         },
         "malwareSecurity": {
-            "title": "MALWARE & SECURITY",
-            "heading": "Give your internet a boost",
-            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "title": "惡意軟體和安全性",
+            "heading": "特別照顧您的電腦，進行必要的維護",
+            "description": "惡意軟體可能導致電腦當機、資料洩露和效能降低。不僅根除惡意軟體，還完成許許多多工作。",
             "tabSet1": {
-                "tab1": "Malware scan",
-                "tab2": "Zero-day infections",
-                "tab3": "Security settings",
-                "tab4": "Errant programs",
-                "tab5": "Annoying adware"
+                "tab1": "惡意軟體掃描",
+                "tab2": "零時差感染",
+                "tab3": "違規程式",
+                "tab4": "惱人的廣告軟體",
+                "tab5": "安全設定"
             },
             "tabSet2": {
-                "tab1Heading": "SLOW INTERNET",
-                "tab1Description": "We will help you get maximum performance.",
-                "tab2Heading": "CONNECTIVITY ERRORS",
-                "tab2Description": "We can diagnose and repair your connectivity problems.",
-                "tab3Heading": "BROWSER ISSUES",
-                "tab3Description": "We configure and fix all your popular web browsers."
+                "tab1Heading": "零時差病毒",
+                "tab1Description": "甚至最新的惡意軟體感染我們都能移除",
+                "tab2Heading": "移除間諜軟體",
+                "tab2Description": "我們會移除所有可能有害的程式",
+                "tab3Heading": "輕巧且快速",
+                "tab3Description": "掃描通常需要 5-10 分鐘"
             },
-            "summaryTitle": "Malware & Security"
+            "summaryTitle": "惡意軟體和安全性"
         },
         "proactiveAutomated": {
-            "title": "PROACTIVE & AUTOMATED",
-            "heading": "Get the power to resolve issues, before they impact you!",
-            "description": "Smart Performance constantly looks for hundreads of issues that impact PC performance. We fix them proactively, giving you peace of mind.",
+            "title": "主動且自動",
+            "heading": "提供強大功能，幫助您在問題造成影響之前杜絕後患！",
+            "description": "Smart Performance 不斷尋找數以百計影響 PC 效能的問題。我們會主動修復這些問題，讓您高枕無憂。",
             "tabSet1": {
-                "tab1": "Schedule Scan",
-                "tab2": "On-demand scan",
-                "tab3": "Automated resolution",
-                "tab4": "It's effective",
-                "tab5": "24/7 Protection"
+                "tab1": "排程掃描",
+                "tab2": "隨需掃描",
+                "tab3": "自動化解析",
+                "tab4": "有效",
+                "tab5": "全天候防護"
             },
             "tabSet2": {
-                "tab1Heading": "IT'S EASY",
-                "tab1Description": "We don't confuse you with tech mumbo jumbp",
-                "tab2Heading": "IT'S FAST",
-                "tab2Description": "Get a 100 point check done in under 5 minutes",
-                "tab3Heading": "IT'S SAFE",
-                "tab3Description": "No scareware, built with best practises"
+                "tab1Heading": "簡單",
+                "tab1Description": "我們不會滿口技術行話，使您困惑",
+                "tab2Heading": "迅速",
+                "tab2Description": "5 分鐘內百分之百完成檢查",
+                "tab3Heading": "安全",
+                "tab3Description": "依循最佳實務所建構，恐嚇軟體絕跡"
             }
         },
-        "startScan": "<b>Ready to start the scan?</b> Let's diagnose and resolve performance and security issues in your computer",
+        "startScan": "<b>準備好開始掃描了嗎？</b>讓我們來診斷電腦中的效能與安全性問題。",
         "subscriptionDetails": {
-            "title": "Subscription details",
-            "description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
-            "learnMore": "Learn more",
-            "startDate": "Start date",
-            "endDate": "End date",
-            "status": "Status",
-            "activeStatus": "ACTIVE",
-            "inactiveStatus": "INACTIVE",
-            "manageSubscription": "MANAGE SUBSCRIPTION",
-            "titlebeta": "Lenovo Beta Program",
-            "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
-            "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
-            "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "title": "訂閱詳細資訊",
+            "description": "您已經訂閱 Lenovo Smart Performance 服務。在此期間、所有功能都完全可以用來讓您的 PC 受到保護且執行順暢。",
+            "learnMore": "進一步瞭解",
+            "startDate": "開始日期",
+            "endDate": "結束日期",
+            "status": "狀態",
+            "activeStatus": "使用中",
+            "inactiveStatus": "非作用中",
+            "manageSubscription": "訂閱管理",
+            "titlebeta": "Lenovo Beta 程式",
+            "manageSubscriptionBeta": "啟用完整功能",
+            "descriptionbeta": "Lenovo 提供試驗計畫，可讓您試用 Smart Performance 功能，至 2020 年 7 月截止。",
+            "descriptionbeta1": "歡迎加入本計畫並試用完整功能。",
+            "descriptionNonSubscriber": "您沒有訂閱 Lenovo Smart Performance 服務。您只能掃描自己的 PC。立即訂閱以獲得可讓 PC 受到保護且執行順暢的完整權益。",
+            "processStatus": "PROCESSING"
         },
         "scanSettings": {
-            "title": "Scan settings",
-            "description": "Enable or disable the scan and set the scan schedule",
-            "enableScan": "Enable Scan",
-            "changeScanTitle": "Change scan schedule",
-            "changeScanDescription": "Edit the scan schedule to run when you need it.",
-            "frequency": "Frequency",
-            "txtDate": "Date",
-            "txtDay": "Day",
-            "txtTime": "Time",
-            "txtSave": "save",
-            "txtCancel": "cancel",
-            "scanFrequencyWeek": "Once a week",
-            "scanFrequencyEveryWeek": "Every other week",
-            "scanFrequencyMonth": "Every month",
-            "mon": "Monday",
-            "tue": "Tuesday",
-            "wed": "Wednesday",
-            "thu": "Thursday",
-            "fri": "Friday",
-            "sat": "Saturday",
-            "sun": "Sunday",
-            "tooltipText": "Enable this toggle to automatically initiate a system performance scan on your selected date and time."
+            "title": "排程掃描設定",
+            "description": "啟用或停用掃描並設定掃描排程",
+            "enableScan": "啟用掃描",
+            "changeScanTitle": "變更掃描排程",
+            "changeScanDescription": "編輯掃描排程，以在需要時執行。",
+            "frequency": "頻率",
+            "txtDate": "日期",
+            "txtDay": "天",
+            "txtTime": "時間",
+            "txtSave": "儲存",
+            "txtCancel": "取消",
+            "scanFrequencyWeek": "每週一次",
+            "scanFrequencyEveryWeek": "每隔一週",
+            "scanFrequencyMonth": "每個月",
+            "mon": "星期一",
+            "tue": "星期二",
+            "wed": "星期三",
+            "thu": "星期四",
+            "fri": "星期五",
+            "sat": "星期六",
+            "sun": "星期日",
+            "tooltipText": "保持啟用此切換開關，系統效能與安全性掃描就會自動在您設定的日期和時間開始執行。"
         },
         "scanningPage": {
-            "title": "Performance & security check",
-            "description": "Please wait while we scan your system for potential problems and threats.",
-            "scanningSystem": "Scanning system",
-            "complete": "complete",
+            "title": "效能與安全性檢查",
+            "description": "請稍候，我們正在掃描您的系統是否有潛在問題和威脅。",
+            "scanningSystem": "正在掃描系統",
+            "complete": "完成",
             "cancelScan": {
-                "button": "CANCEL SCAN",
-                "title": "Cacel the scan?",
-                "description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
-                "yesButton": "YES, CANCEL",
-                "noButton": "NO, RESUME SCAN",
+                "button": "取消掃描",
+                "title": "取消掃描？",
+                "description": "如果您離開目前的畫面，就會取消掃描並返回首頁。不過，您隨時都可以再次執行掃描。",
+                "yesButton": "是，取消",
+                "noButton": "否、繼續掃描",
                 "cancelMayTakeSomeTime": "請稍候，視您的系統而定，取消可能需要一些時間。",
                 "cancelTextPrompt": "您確定要取消嗎？"
             },
-            "waiting": "WAITING TO SCAN",
-            "completed": "COMPLETED",
+            "waiting": "正在等待掃描",
+            "completed": "已完成",
             "nowScanningDetail": {
-                "cardTitle": "NOW SCANNING DETAIL",
-                "current": "CURRENT: ",
-                "upNext": "UP NEXT",
-                "tunePCDesc": "Let’s help improve your PC performance. We do it safely using industry best practices. Benefits for subscribers include reduced PC start time, improved performance, improved stability and faster launch of applications.",
-                "boostDesc": "Let’s help enhance your browsing experience. Let's fix network and access issues. Benefits for subscribers include betterment in internet connectivity, improvement in upload/download speeds and making internet more secure.",
-                "malwareDesc": "Let’s help quickly secure your PC, on-demand. We do it by removing spyware, malware and adware. We also remove near/zero-day infections. Benefits for subscribers include security of data and optimal system performance.",
-                "proactiveDesc": "Let's tune your computer periodically and fix issues, Proactive and automated to keep your PC tuned and covered. Always",
+                "cardTitle": "立即掃描詳細資料",
+                "current": "目前：",
+                "upNext": "接下來",
+                "tunePCDesc": "讓我們來協助改善您的電腦效能。我們會採用業界最佳實務，穩妥地完成。訂閱者所獲得的好處包括縮短 PC 啟動時間、提升效能、改善穩定性，以及加快啟動應用程式。",
+                "boostDesc": "讓我們來協助增進您的瀏覽體驗。讓我們來修正網路及存取問題。訂閱者所獲得的好處包括改善網際網路連線能力、提升上傳/下載速度，以及加強網際網路安全。",
+                "malwareDesc": "讓我們來協助您視需要快速保護 PC 安全。我們會透過移除間諜軟體、惡意軟體和廣告軟體來完成。我們還會移除幾近零時差的感染。訂閱者所獲得的好處包括資料安全性和最佳系統效能。",
+                "proactiveDesc": "讓我們來定期調整您的電腦並修正問題、主動且自動地讓電腦維持運作相協調、資源受保護。永遠",
                 "tunePCScanningItems": {
                     "accumulatedJunk": {
-                        "itema1": "Look for junk in 85 locations",
-                        "itema2": "System log files that aren’t needed",
-                        "itema3": "Unnecessary application residues",
-                        "itema4": "Temporary files that clog diskspace",
-                        "itema5": "Files that you deleted so long ago",
-                        "itema6": "Outdated errors and alerts"
+                        "itema1": "尋找 85 個位置中的垃圾",
+                        "itema2": "不需要的系統日誌檔",
+                        "itema3": "沒必要的應用程式殘留項目",
+                        "itema4": "塞滿磁碟空間的暫存檔案",
+                        "itema5": "很久以前刪除的檔案",
+                        "itema6": "過時的錯誤和警示"
                     },
                     "usabilityIssues": {
-                        "itemb1": "Address dozens of usability challenges",
-                        "itemb2": "Check external devices connectivity",
-                        "itemb3": "Keeping Windows updates always current",
-                        "itemb4": "Do apps render and appear at its best",
-                        "itemb5": "Analyzing processing power utilization",
-                        "itemb6": "Help locate files easily"
+                        "itemb1": "解決數十種可用性問題",
+                        "itemb2": "檢查外部裝置連線",
+                        "itemb3": "保持 Windows 更新始終為最新",
+                        "itemb4": "應用程式是否在其最佳狀態下呈現並顯示",
+                        "itemb5": "分析處理能力使用率",
+                        "itemb6": "協助輕鬆尋找檔案"
                     },
                     "windowsSettings": {
-                        "itemc1": "Diagnose dozens of Windows OS settings",
-                        "itemc2": "Ensure all is well with your Windows",
-                        "itemc3": "Ensure essential services are running",
-                        "itemc4": "Check health of connectivity settings",
-                        "itemc5": "Check ability to share files in network",
-                        "itemc6": "Check biometric and access settings"
+                        "itemc1": "診斷幾十個 Windows 作業系統設定",
+                        "itemc2": "確保 Windows 一切正常",
+                        "itemc3": "確保基本服務正常執行",
+                        "itemc4": "檢查連線設定的性能狀況",
+                        "itemc5": "檢查在網路上共用檔案的能力",
+                        "itemc6": "檢查生物特徵辨識及存取設定"
                     },
                     "systemErrors": {
-                        "itemd1": "Ensure essential services are running",
-                        "itemd2": "Select services for higher performance",
-                        "itemd3": "Look for software conflict errors",
-                        "itemd4": "Optimize Windows error management",
-                        "itemd5": "Check and fix apps launching errors",
-                        "itemd6": "Configure system error reports"
+                        "itemd1": "確保基本服務正常執行",
+                        "itemd2": "選擇服務以取得更高效能",
+                        "itemd3": "尋找軟體衝突錯誤",
+                        "itemd4": "最佳化 Windows 錯誤管理",
+                        "itemd5": "檢查並修正應用程式啟動錯誤",
+                        "itemd6": "配置系統錯誤報告"
                     },
                     "registryErrors": {
-                        "iteme1": "Deep check Windows registry,",
-                        "iteme2": "Scanning for invalid Windows services",
-                        "iteme3": "Finding corrupted registry entries",
-                        "iteme4": "Look for useless file extensions",
-                        "iteme5": "Search broken entries of installed apps",
-                        "iteme6": "Look for useless leftover entries"
+                        "iteme1": "深層檢查 Windows 登錄，",
+                        "iteme2": "掃描無效的 Windows 服務",
+                        "iteme3": "尋找損毀的登錄項目",
+                        "iteme4": "尋找無用的副檔名",
+                        "iteme5": "搜尋已安裝應用程式的損毀項目",
+                        "iteme6": "尋找無用的殘餘項目"
                     }
                 },
                 "boostScanningItems": {
                     "networkSettings": {
-                        "itema1": "Diagnose network and Internet settings",
-                        "itema2": "Verify network configuration settings",
-                        "itema3": "Verify available network settings",
-                        "itema4": "Configure to load websites faster",
-                        "itema5": "Look for page rendering errors",
-                        "itema6": "Are connection service(s) running well"
+                        "itema1": "診斷網路和網際網路設定",
+                        "itema2": "驗證網路配置設定",
+                        "itema3": "驗證可用網路設定",
+                        "itema4": "配置以加快載入網站",
+                        "itema5": "尋找頁面轉譯錯誤",
+                        "itema6": "連線服務執行狀況是否良好"
                     },
                     "browserSettings": {
-                        "itemb1": "Enable better browsing experience",
-                        "itemb2": "Configure settings faster websites rendering",
-                        "itemb3": "Ensure browser security services are OK",
-                        "itemb4": "Ensure webpages are rendering properly",
-                        "itemb5": "Check settings for faster downloads",
-                        "itemb6": "Check permissions and access control"
+                        "itemb1": "啟用更好的瀏覽體驗",
+                        "itemb2": "配置設定以加快網站轉譯",
+                        "itemb3": "確保瀏覽器安全性服務狀況良好",
+                        "itemb4": "確保網頁正確轉譯",
+                        "itemb5": "檢查設定以加快下載速度",
+                        "itemb6": "檢查權限和存取控制"
                     },
                     "browserSecurity": {
-                        "itemc1": "Ensure security services are running",
-                        "itemc2": "Configure browser security features",
-                        "itemc3": "Check network services are running well",
-                        "itemc4": "Configure protocol settings",
-                        "itemc5": "Verify Browser content settings are OK",
-                        "itemc6": "Verify browser plugins & extensions"
+                        "itemc1": "確保安全性服務正常執行",
+                        "itemc2": "配置瀏覽器安全性功能",
+                        "itemc3": "檢查網路服務執行狀況是否良好",
+                        "itemc4": "配置通訊協定設定",
+                        "itemc5": "驗證瀏覽器內容設定是否正確",
+                        "itemc6": "驗證瀏覽器外掛程式及擴充功能"
                     },
                     "wifiPerformance": {
-                        "itemd1": "Optimize Wi-Fi experience settings",
-                        "itemd2": "Ensure your home network is secure",
-                        "itemd3": "Check Wi-Fi services settings",
-                        "itemd4": "Secure network sharing settings",
-                        "itemd5": "Check Wi-Fi security standards",
-                        "itemd6": "Ensure Wi-Fi channels do not overlap"
+                        "itemd1": "最佳化 Wi-Fi 體驗設定",
+                        "itemd2": "確保您的家用網路安全",
+                        "itemd3": "檢查 Wi-Fi 服務設定",
+                        "itemd4": "保護網路共用設定安全",
+                        "itemd5": "檢查 Wi-Fi 安全性標準",
+                        "itemd6": "確保 Wi-Fi 頻道不重疊"
                     },
                     "eJunk": {
-                        "iteme1": "Eliminate clutter from 4 browsers",
-                        "iteme2": "Look for leftover e-junk",
-                        "iteme3": "Look for outdated internet files",
-                        "iteme4": "Clear unwanted web cache",
-                        "iteme5": "Clear cookies",
-                        "iteme6": "Remove browser residues"
+                        "iteme1": "讓瀏覽器不再雜亂無章",
+                        "iteme2": "尋找殘餘的電子垃圾",
+                        "iteme3": "尋找過時的網際網路檔案",
+                        "iteme4": "清除不要的 Web 快取",
+                        "iteme5": "清除 Cookie",
+                        "iteme6": "移除瀏覽器殘留項目"
                     }
                 },
                 "malwareScanningItems": {
                     "malwareScan": {
-                        "itema1": "Scan common loading points",
-                        "itema2": "Check critical locations for threats",
-                        "itema3": "Check for virus, spyware and malware",
-                        "itema4": "Scan for 50+ file types",
-                        "itema5": "Scan for malware remnants",
-                        "itema6": "Leverage from cloud remediation engine"
+                        "itema1": "掃描一般載入點",
+                        "itema2": "檢查重要位置是否存在威脅",
+                        "itema3": "檢查是否有病毒、間諜軟體和惡意軟體",
+                        "itema4": "掃描 50 多種檔案類型",
+                        "itema5": "掃描惡意軟體殘餘部分",
+                        "itema6": "善用雲端修復引擎"
                     },
                     "zerodayInfections": {
-                        "itemb1": "Look for zero-day virus",
-                        "itemb2": "Look for recent, undiagnosed malware",
-                        "itemb3": "Scan with cloud-based remediation",
-                        "itemb4": "Perform behavioral monitoring",
-                        "itemb5": "Scan files with aggregated engine",
-                        "itemb6": "Scan against latest definitions"
+                        "itemb1": "尋找零時差病毒",
+                        "itemb2": "尋找最新未確診的惡意軟體",
+                        "itemb3": "搭配雲端式修復進行掃描",
+                        "itemb4": "執行行為監控",
+                        "itemb5": "使用聚合引擎掃描檔案",
+                        "itemb6": "根據最新病毒定義檔掃描"
                     },
                     "securitySettings": {
-                        "itemc1": "Keep Windows updates always current",
-                        "itemc2": "Ensure Windows firewall service is OK",
-                        "itemc3": "Keep browser settings secure",
-                        "itemc4": "Check essential security services",
-                        "itemc5": "Configure user access settings",
-                        "itemc6": "Verify authentication services"
+                        "itemc1": "保持 Windows 更新始終為最新",
+                        "itemc2": "確保 Windows 防火牆服務狀況良好",
+                        "itemc3": "確保瀏覽器設定安全",
+                        "itemc4": "檢查基本安全性服務",
+                        "itemc5": "配置使用者存取設定",
+                        "itemc6": "驗證身分鑑別服務"
                     },
                     "errantPrograms": {
-                        "itemd1": "Look for errant apps",
-                        "itemd2": "Look for potentially unwanted apps",
-                        "itemd3": "Detect inactive and hidden apps",
-                        "itemd4": "Verify apps for malicious behavior",
-                        "itemd5": "Check apps based on reputation factor",
-                        "itemd6": "Check errant programs in registry"
+                        "itemd1": "尋找違規應用程式",
+                        "itemd2": "尋找可能有害的應用程式",
+                        "itemd3": "偵測停用和隱藏的應用程式",
+                        "itemd4": "確認應用程式是否有惡意行為",
+                        "itemd5": "根據信譽因素檢查應用程式",
+                        "itemd6": "檢查登錄中的違規程式"
                     },
                     "annoyingAdware": {
-                        "iteme1": "Look for browser(s) adware",
-                        "iteme2": "Revise browser(s) pop-up settings",
-                        "iteme3": "Eliminate browser re-direction threats",
-                        "iteme4": "Check for adware leftovers",
-                        "iteme5": "Optimize browser experience settings",
-                        "iteme6": "verify in cloud remediation engine"
+                        "iteme1": "尋找瀏覽器廣告軟體",
+                        "iteme2": "修訂瀏覽器彈出式視窗設定",
+                        "iteme3": "消除瀏覽器重新導向威脅",
+                        "iteme4": "檢查是否有廣告軟體殘餘項目",
+                        "iteme5": "最佳化瀏覽器體驗設定",
+                        "iteme6": "在雲端修復引擎中驗證"
                     }
                 }
             }
         },
         "scanCompletePage": {
-            "title": "System scan is complete",
-            "description": "Here is what we found on your ",
-            "scanRates": "Our scan rates your PC at: ",
-            "summary": "Summary",
-            "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
-            "signupRepairButton": "SIGN UP & REPAIR NOW",
-            "monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
-            "issueCount": "{{individualIssueCount}} ISSUES",
-            "scannedAreas": "SCANNED AREAS",
+            "title": "系統掃描完成",
+            "description": "以下是在您的電腦中發現的問題",
+            "scanRates": "我們對您的 PC 掃描評分為：",
+            "summary": "摘要",
+            "summaryDetails": "我們的掃描在以下區域發現 <b>{{issueCount}} 個問題</b>。立即註冊，以修正這些問題並保持系統執行順暢。我們的軟體可以全天候主動掃描系統的這些區域，在問題開始出現時及早發現並進行修復，讓您的 PC 始終保持頂尖效能。",
+            "signupRepairButton": "立即註冊並修復",
+            "monthlyPricing": "<b>每月不到 $2。</b>我們會自動修正這些問題。今天一次，此後每週一次<a  href=\"#\">瞭解更多</a>",
+            "issueCount": "{{individualIssueCount}} 個問題",
+            "scannedAreas": "掃描區域",
             "recommendedAction": {
-                "title": "RECOMMENDED ACTION",
-                "description": "We will automatically fix these issues. Once today and every week thereafter",
-                "yearlyPricing": "$19.99 / Yr",
-                "monthlyPricing": "LESS THAN $2 PER MONTH.",
-                "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP"
+                "title": "建議動作",
+                "description": "我們會自動修正這些問題。今天一次，此後每週一次",
+                "yearlyPricing": "$19.99/年",
+                "monthlyPricing": "每月不到 $2。",
+                "longerTerm": "更長期限？更加省錢？",
+                "signupButton": "註冊"
             },
             "tunepc": {
                 "accumulatedjunkscannedareas": {
-                    "area1": "Scanned for junk in 85 locations",
-                    "area2": "System log files that aren’t needed",
-                    "area3": "Unnecessary application residues",
-                    "area4": "Temporary files that clog diskspace",
-                    "area5": "Files that you deleted so long ago",
-                    "area6": "Outdated errors and alerts"
+                    "area1": "掃描 85 個位置中的垃圾",
+                    "area2": "不需要的系統日誌檔",
+                    "area3": "沒必要的應用程式殘留項目",
+                    "area4": "塞滿磁碟空間的暫存檔案",
+                    "area5": "很久以前刪除的檔案",
+                    "area6": "過時的錯誤和警示"
                 },
                 "registryerrorsscannedareas": {
-                    "area1": "Completed deep check of Windows registry",
-                    "area2": "Scanned for invalid Windows services",
-                    "area3": "Checked for corrupted registry entries",
-                    "area4": "Scanned for useless file extensions",
-                    "area5": "Searched broken entries of installed apps",
-                    "area6": "Checked for useless leftover entries"
+                    "area1": "已完成 Windows 登錄的深層檢查",
+                    "area2": "已掃描無效的 Windows 服務",
+                    "area3": "已檢查損毀的登錄項目",
+                    "area4": "已掃描無用的副檔名",
+                    "area5": "已搜尋已安裝應用程式的損毀項目",
+                    "area6": "已檢查無用的殘餘項目"
                 },
                 "windowssettingsscannedareas": {
-                    "area1": "Diagnosed dozens of Windows OS settings",
-                    "area2": "Checked all is well with your Windows",
-                    "area3": "Confirmed essential services are running",
-                    "area4": "Checked health of connectivity settings",
-                    "area5": "Checked ability to share files in network",
-                    "area6": "Checked biometric and access settings"
+                    "area1": "已診斷幾十個 Windows 作業系統設定",
+                    "area2": "已確認 Windows 一切正常",
+                    "area3": "已確認基本服務正常執行",
+                    "area4": "已檢查連線設定的性能狀況",
+                    "area5": "已檢查在網路上共用檔案的能力",
+                    "area6": "已檢查生物特徵辨識及存取設定"
                 },
                 "usabilityissuesscannedareas": {
-                    "area1": "Checked for usability challenges",
-                    "area2": "Checked external devices connectivity",
-                    "area3": "Checked Windows updates status",
-                    "area4": "Verified apps rendering setting",
-                    "area5": "Analyzed processing power utilization",
-                    "area6": "Help locate files easily"
+                    "area1": "已檢查是否有可用性問題",
+                    "area2": "已檢查外部裝置連線",
+                    "area3": "已檢查 Windows 更新狀態",
+                    "area4": "已驗證應用程式轉譯設定",
+                    "area5": "已分析處理能力使用率",
+                    "area6": "協助輕鬆尋找檔案"
                 },
                 "systemerrorsscannedareas": {
-                    "area1": "Checked if essential services are running",
-                    "area2": "Look services for higher performance",
-                    "area3": "Look for software conflict errors",
-                    "area4": "Analyzed Windows error management",
-                    "area5": "Scanned for apps launching errors",
-                    "area6": "Checked system error reports configuration"
+                    "area1": "已檢查基本服務是否正常執行",
+                    "area2": "查看服務是否有較高效能",
+                    "area3": "尋找軟體衝突錯誤",
+                    "area4": "已分析 Windows 錯誤管理",
+                    "area5": "已掃描應用程式啟動錯誤",
+                    "area6": "已檢查系統錯誤報告配置"
                 }
             },
-            "Diskspace": "Disk Space Reclaimed :",
-            "Performanceimprovements": "Performance Improvements :",
-            "Securityimprovements": "Security Improvements:",
-            "Onceaweek": "Once a week",
+            "Diskspace": "磁碟空間已收回：",
+            "Performanceimprovements": "效能改善：",
+            "Securityimprovements": "安全性改善：",
+            "Onceaweek": "每週一次",
             "internetperformance": {
                 "ejunkscannedareas": {
-                    "area1": "Identified clutter from 4 browsers",
-                    "area2": "Searched leftover e-junk",
-                    "area3": "Scanned outdated internet files",
-                    "area4": "Searched unwanted web cache",
-                    "area5": "Checked cookies for clearance",
-                    "area6": "Scanned browser residues"
+                    "area1": "已發現瀏覽器中的雜亂情況",
+                    "area2": "已搜尋殘餘的電子垃圾",
+                    "area3": "已掃描過時的網際網路檔案",
+                    "area4": "已搜尋不要的 Web 快取",
+                    "area5": "已檢查 Cookie 是否清除",
+                    "area6": "已掃描瀏覽器殘留項目"
                 },
                 "browsersecurityscannedareas": {
-                    "area1": "Checked security services are running",
-                    "area2": "Checked browser security features",
-                    "area3": "Verified network services",
-                    "area4": "Configure protocol settings",
-                    "area5": "Checked Browser content settings",
-                    "area6": "Scanned browser plugins & extensions"
+                    "area1": "已確認安全性服務正常執行",
+                    "area2": "已檢查瀏覽器安全性功能",
+                    "area3": "已驗證網路服務",
+                    "area4": "配置通訊協定設定",
+                    "area5": "已檢查瀏覽器內容設定",
+                    "area6": "已掃描瀏覽器外掛程式及擴充功能"
                 },
                 "networksettingsscannedareas": {
-                    "area1": "Diagnosed network and Internet settings",
-                    "area2": "Diagnosed network configuration settings",
-                    "area3": "Verified connected network settings",
-                    "area4": "Diagnosed settings for faster websites rendering",
-                    "area5": "Scanned for page rendering errors",
-                    "area6": "Scanned all connection service(s)"
+                    "area1": "已診斷網路和網際網路設定",
+                    "area2": "已診斷網路配置設定",
+                    "area3": "已驗證連線網路設定",
+                    "area4": "已診斷設定以加快網站轉譯",
+                    "area5": "已掃描頁面轉譯錯誤",
+                    "area6": "已掃描所有連線服務"
                 },
                 "browsersettingsscannedareas": {
-                    "area1": "Enable better browsing experience",
-                    "area2": "Diagnosed settings for faster websites rendering",
-                    "area3": "Verified browser security services",
-                    "area4": "Checked if webpages are rendering properly",
-                    "area5": "Scanned settings for faster downloads",
-                    "area6": "Analyzed permissions and access control"
+                    "area1": "啟用更好的瀏覽體驗",
+                    "area2": "已診斷設定以加快網站轉譯",
+                    "area3": "已驗證瀏覽器安全性服務",
+                    "area4": "已檢查網頁是否正確轉譯",
+                    "area5": "已掃描設定以加快下載速度",
+                    "area6": "已分析權限和存取控制"
                 },
                 "wifiperformancescannedareas": {
-                    "area1": "Verified Wi-Fi experience settings",
-                    "area2": "Verified secure home network",
-                    "area3": "Scanned Wi-Fi services settings",
-                    "area4": "Verified Secure network sharing settings",
-                    "area5": "Verified Wi-Fi security standards",
-                    "area6": "Analyzed Wi-Fi channels do not overlap"
+                    "area1": "已驗證 Wi-Fi 體驗設定",
+                    "area2": "已驗證安全家用網路",
+                    "area3": "已掃描 Wi-Fi 服務設定",
+                    "area4": "已驗證安全網路共用設定",
+                    "area5": "已驗證 Wi-Fi 安全性標準",
+                    "area6": "已分析 Wi-Fi 頻道未重疊"
                 }
             },
             "malwaresecurity": {
                 "malwarescanscannedareas": {
-                    "area1": "Scanned common loading points",
-                    "area2": "Scanned critical locations for threats",
-                    "area3": "Scanned for virus, spyware and malware",
-                    "area4": "Scanned 50+ file types for threats",
-                    "area5": "Checked for malware remnants",
-                    "area6": "Verified in cloud remediation engine"
+                    "area1": "已掃描一般載入點",
+                    "area2": "已掃描重要位置是否存在威脅",
+                    "area3": "已掃描是否有病毒、間諜軟體和惡意軟體",
+                    "area4": "已掃描 50 多種檔案類型是否有威脅",
+                    "area5": "已檢查惡意軟體殘餘部分",
+                    "area6": "已在雲端修復引擎中驗證"
                 },
                 "errantprogramsscannedareas": {
-                    "area1": "Look for errant apps",
-                    "area2": "Inspected for potentially unwanted apps",
-                    "area3": "Searched for inactive and hidden apps",
-                    "area4": "Scanned for malicious apps",
-                    "area5": "Checked apps based on reputation factor",
-                    "area6": "Checked errant programs in registry"
+                    "area1": "尋找違規應用程式",
+                    "area2": "已檢查可能有害的應用程式",
+                    "area3": "已搜尋停用和隱藏的應用程式",
+                    "area4": "已掃描惡意應用程式",
+                    "area5": "已根據信譽因素檢查應用程式",
+                    "area6": "已檢查登錄中的違規程式"
                 },
                 "zerodayinfectionsscannedareas": {
-                    "area1": "Scanned for zero-day virus",
-                    "area2": "Searched for recent, undiagnosed malware",
-                    "area3": "Verified with cloud-based remediation",
-                    "area4": "Performed behavioral monitoring",
-                    "area5": "Verified files with aggregated engine",
-                    "area6": "Scanned against updated definitions"
+                    "area1": "已搜尋零時差病毒",
+                    "area2": "已搜尋最新未確診的惡意軟體",
+                    "area3": "已搭配雲端式修復進行驗證",
+                    "area4": "已執行行為監控",
+                    "area5": "已使用聚合引擎驗證檔案",
+                    "area6": "已根據更新的病毒定義檔進行掃描"
                 },
                 "securitysettingsscannedareas": {
-                    "area1": "Verified Windows updates are current",
-                    "area2": "Verified Windows firewall service",
-                    "area3": "Checked for secure browser settings",
-                    "area4": "Diagnosed essential security services",
-                    "area5": "Verified user access settings",
-                    "area6": "Verified authentication services"
+                    "area1": "已驗證 Windows 更新是最新的",
+                    "area2": "已驗證 Windows 防火牆服務",
+                    "area3": "已檢查安全瀏覽器設定",
+                    "area4": "已診斷基本安全性服務",
+                    "area5": "已驗證使用者存取設定",
+                    "area6": "已驗證身分鑑別服務"
                 },
                 "annoyingadwarescannedareas": {
-                    "area1": "Scanned for browser(s) adware",
-                    "area2": "Verify browser(s) pop-up settings",
-                    "area3": "Scanned browser re-direction threats",
-                    "area4": "Checked adware leftovers",
-                    "area5": "Verified browser experience settings",
-                    "area6": "Verified with cloud remediation engine"
+                    "area1": "已掃描瀏覽器廣告軟體",
+                    "area2": "驗證瀏覽器彈出式視窗設定",
+                    "area3": "已掃描瀏覽器重新導向威脅",
+                    "area4": "已檢查廣告軟體殘餘項目",
+                    "area5": "已驗證瀏覽器體驗設定",
+                    "area6": "已透過雲端修復引擎進行驗證"
                 }
             },
             "subscriber": {
                 "tunepc": {
                     "accumulatedjunkscannedareas": {
-                        "area1": "Cleaned of junk in 85 locations",
-                        "area2": "Cleared System log files that aren’t needed",
-                        "area3": "Deleted application residues",
-                        "area4": "Removed Temporary files to free up diskspace",
-                        "area5": "Eliminated files that you deleted so long ago",
-                        "area6": "Cleared errors and alerts"
+                        "area1": "已清除 85 個位置中的垃圾",
+                        "area2": "已清除不需要的系統日誌檔",
+                        "area3": "已刪除應用程式殘留項目",
+                        "area4": "已移除暫存檔案以釋放磁碟空間",
+                        "area5": "已排除很久以前刪除的檔案",
+                        "area6": "已清除錯誤和警示"
                     },
                     "registryerrorsscannedareas": {
-                        "area1": "Completed deep check of Windows registry",
-                        "area2": "Fixed any invalid Windows services",
-                        "area3": "Removed any corrupted registry entries",
-                        "area4": "Deleted any obsolete file extensions",
-                        "area5": "Cleaned broken entries of installed apps",
-                        "area6": "Cleared unwanted leftover entries"
+                        "area1": "已完成 Windows 登錄的深層檢查",
+                        "area2": "已修正所有無效的 Windows 服務",
+                        "area3": "已移除所有損毀的登錄項目",
+                        "area4": "已刪除所有過時的副檔名",
+                        "area5": "已清除已安裝應用程式的損毀項目",
+                        "area6": "已清除不要的殘餘項目"
                     },
                     "windowssettingsscannedareas": {
-                        "area1": "Validated Windows settings",
-                        "area2": "Optimized all Windows services",
-                        "area3": "Modified essential Windows services",
-                        "area4": "Modified essential Windows services",
-                        "area5": "Verified ability to share files in network",
-                        "area6": "Verified biometric and access settings"
+                        "area1": "已驗證 Windows 設定",
+                        "area2": "已最佳化所有 Windows 服務",
+                        "area3": "已修改基本 Windows 服務",
+                        "area4": "已修改基本 Windows 服務",
+                        "area5": "已驗證在網路上共用檔案的能力",
+                        "area6": "已驗證生物特徵辨識及存取設定"
                     },
                     "usabilityissuesscannedareas": {
-                        "area1": "Fixed any usability challenges",
-                        "area2": "Verified external devices connectivity",
-                        "area3": "Made sure Windows updates are always current",
-                        "area4": "Confirmed apps render and appear at its best",
-                        "area5": "Modified settings for processing power utilization",
-                        "area6": "Modified settings to Help locate files easily"
+                        "area1": "已修正所有可用性問題",
+                        "area2": "已驗證外部裝置連線",
+                        "area3": "已確定 Windows 更新始終為最新",
+                        "area4": "已確認應用程式是在其最佳狀態下呈現並顯示",
+                        "area5": "已修改處理能力使用率的設定",
+                        "area6": "已修改協助輕鬆尋找檔案的設定"
                     },
                     "systemerrorsscannedareas": {
-                        "area1": "Checked if essential services are running",
-                        "area2": "Modified services for higher performance",
-                        "area3": "Fixed any software conflict errors",
-                        "area4": "Optimized Windows error management",
-                        "area5": "Checked and fixed any apps launching errors",
-                        "area6": "Configured system error reports"
+                        "area1": "已檢查基本服務是否正常執行",
+                        "area2": "已修改服務以取得更高效能",
+                        "area3": "已修正所有軟體衝突錯誤",
+                        "area4": "已最佳化 Windows 錯誤管理",
+                        "area5": "已檢查並修正所有應用程式啟動錯誤",
+                        "area6": "已配置系統錯誤報告"
                     }
                 },
                 "internetperformance": {
                     "ejunkscannedareas": {
-                        "area1": "Removed clutter from 4 browser(s)",
-                        "area2": "Cleaned leftover e-junk",
-                        "area3": "Deleted outdated internet files",
-                        "area4": "Cleared unwanted web cache",
-                        "area5": "Cleared Cookies",
-                        "area6": "Cleaned any browser residues"
+                        "area1": "已消除 4 個瀏覽器中的雜亂情況",
+                        "area2": "已清除殘餘的電子垃圾",
+                        "area3": "已刪除過時的網際網路檔案",
+                        "area4": "已清除不要的 Web 快取",
+                        "area5": "已清除 Cookie",
+                        "area6": "已清除所有瀏覽器殘留項目"
                     },
                     "browsersecurityscannedareas": {
-                        "area1": "Ensured security services are running",
-                        "area2": "Configured browser security features",
-                        "area3": "Checked and fixed network services",
-                        "area4": "Configured protocol settings",
-                        "area5": "Verified Browser content settings are OK",
-                        "area6": "Scanned browser plugins & extensions"
+                        "area1": "已確定安全性服務在正常執行",
+                        "area2": "已配置瀏覽器安全性功能",
+                        "area3": "已檢查並修正網路服務",
+                        "area4": "已配置通訊協定設定",
+                        "area5": "已驗證瀏覽器內容設定是否正確",
+                        "area6": "已掃描瀏覽器外掛程式及擴充功能"
                     },
                     "networksettingsscannedareas": {
-                        "area1": "Fixed network and Internet settings",
-                        "area2": "Checked network configuration settings",
-                        "area3": "Modified connected network settings",
-                        "area4": "Diagnosed settings for faster websites rendering",
-                        "area5": "Fixed any page rendering errors",
-                        "area6": "Scanned all connection service(s)"
+                        "area1": "已修正網路和網際網路設定",
+                        "area2": "已檢查網路配置設定",
+                        "area3": "已修改連線網路設定",
+                        "area4": "已診斷設定以加快網站轉譯",
+                        "area5": "已修正所有頁面轉譯錯誤",
+                        "area6": "已掃描所有連線服務"
                     },
                     "browsersettingsscannedareas": {
-                        "area1": "Modified settings for better browsing experience",
-                        "area2": "Verified settings for faster websites rendering",
-                        "area3": "Ensured browser security services are OK",
-                        "area4": "Modified settings to load webpages properly",
-                        "area5": "Fixed settings for faster downloads",
-                        "area6": "Fixed permissions and access control settings"
+                        "area1": "已修改設定以獲得更好的瀏覽體驗",
+                        "area2": "已驗證設定以加快網站轉譯",
+                        "area3": "已確定瀏覽器安全性服務狀況良好",
+                        "area4": "已修改設定以正確載入網頁",
+                        "area5": "已修正設定以加快下載速度",
+                        "area6": "已修正權限和存取控制設定"
                     },
                     "wifiperformancescannedareas": {
-                        "area1": "Modified Wi-Fi experience settings",
-                        "area2": "Validated secure home network settings",
-                        "area3": "Fixed Wi-Fi services settings",
-                        "area4": "Modified Secure network sharing settings",
-                        "area5": "Verified Wi-Fi security standards",
-                        "area6": "Validated Wi-Fi channels"
+                        "area1": "已修改 Wi-Fi 體驗設定",
+                        "area2": "已驗證安全家用網路設定",
+                        "area3": "已修正 Wi-Fi 服務設定",
+                        "area4": "已修改安全網路共用設定",
+                        "area5": "已驗證 Wi-Fi 安全性標準",
+                        "area6": "已驗證 Wi-Fi 頻道"
                     }
                 },
                 "malwaresecurity": {
                     "malwarescanscannedareas": {
-                        "area1": "Checked & Removed threats in common loading points",
-                        "area2": "Checked and removed threats in critical locations",
-                        "area3": "Removed any threats from PC",
-                        "area4": "Validated 50+ file types for threats",
-                        "area5": "Cleaned any malware remnants",
-                        "area6": "Verified in cloud remediation engine"
+                        "area1": "已檢查並移除一般載入點中的威脅",
+                        "area2": "已檢查並移除重要位置中的威脅",
+                        "area3": "已移除 PC 中的所有威脅",
+                        "area4": "已驗證 50 多種檔案類型是否有威脅",
+                        "area5": "已清除所有惡意軟體殘餘部分",
+                        "area6": "已在雲端修復引擎中驗證"
                     },
                     "errantprogramsscannedareas": {
-                        "area1": "Validated all installed apps",
-                        "area2": "Validated potentially unwanted apps",
-                        "area3": "Cleaned any inactive and hidden apps",
-                        "area4": "Removed any malicious and errant apps",
-                        "area5": "Validated apps based on reputation factor",
-                        "area6": "Completed registry check for errant programs"
+                        "area1": "已驗證所有已安裝的應用程式",
+                        "area2": "已驗證可能有害的應用程式",
+                        "area3": "已清除所有停用和隱藏的應用程式",
+                        "area4": "已移除所有惡意和違規應用程式",
+                        "area5": "已根據信譽因素驗證應用程式",
+                        "area6": "已完成對違規應用程式的登錄檢查"
                     },
                     "zerodayinfectionsscannedareas": {
-                        "area1": "Analyzed for zero-day virus",
-                        "area2": "Removed any malware from PC",
-                        "area3": "Validated in cloud remediation engine",
-                        "area4": "Completed behavioral monitoring of apps",
-                        "area5": "Validated against aggregated engine",
-                        "area6": "Validated against latest definitions"
+                        "area1": "已分析零時差病毒",
+                        "area2": "已移除 PC 中的所有惡意軟體",
+                        "area3": "已在雲端修復引擎中進行驗證",
+                        "area4": "已完成對應用程式的行為監控",
+                        "area5": "已向聚合引擎驗證",
+                        "area6": "已根據最新病毒定義檔進行驗證"
                     },
                     "securitysettingsscannedareas": {
-                        "area1": "Optimized Windows update settings",
-                        "area2": "Tuned Windows firewall service",
-                        "area3": "Secured browser(s) settings",
-                        "area4": "Diagnosed essential security services",
-                        "area5": "Optimized user access settings",
-                        "area6": "Modified authentication services"
+                        "area1": "已最佳化 Windows Update 設定",
+                        "area2": "已調校 Windows 防火牆服務",
+                        "area3": "已確保瀏覽器設定安全",
+                        "area4": "已診斷基本安全性服務",
+                        "area5": "已最佳化使用者存取設定",
+                        "area6": "已修改身分鑑別服務"
                     },
                     "annoyingadwarescannedareas": {
-                        "area1": "Removed browser(s) adware",
-                        "area2": "Tuned browser(s) pop-up settings",
-                        "area3": "Diagnosed browser re-direction threats",
-                        "area4": "Cleared adware leftovers",
-                        "area5": "Optimized browser experience settings",
-                        "area6": "Validated in cloud remediation engine"
+                        "area1": "已移除瀏覽器廣告軟體",
+                        "area2": "已調校瀏覽器彈出式視窗設定",
+                        "area3": "已診斷瀏覽器重新導向威脅",
+                        "area4": "已清除廣告軟體殘餘項目",
+                        "area5": "已最佳化瀏覽器體驗設定",
+                        "area6": "已在雲端修復引擎中進行驗證"
                     }
                 }
             },
-            "issues": "ISSUES",
+            "issues": "問題",
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
-            "backToHome": "Back To Home"
+            "backToHome": "返回首頁"
         },
         "subscriberScanHomePage": {
-            "title": "All is well with your ",
-            "serialNumber": "Serial number: ",
-            "subTitle": "You are subscribed to Lenovo Smart Performance Service",
-            "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
-            "scanNow": "SCAN NOW",
-            "returnto": "RETURN TO DASHBOARD",
-            "mostRecent": "MOST RECENT SCAN:",
-            "nextScheduled": "NEXT SCHEDULED SCAN:",
+            "title": "您的系統一切正常",
+            "serialNumber": "序號：",
+            "subTitle": "您已經訂閱 Lenovo Smart Performance 服務",
+            "description": "我們經常主動針對 PC 效能、網際網路效能和惡意軟體等問題，掃描並修正您的電腦。您享有充分的保護。您還可以視需要按一下「立即掃描」按鈕來啟動效能檢查。",
+            "scanNow": "掃描並修正",
+            "returnto": "返回儀表板",
+            "mostRecent": "最近的掃描：",
+            "nextScheduled": "下一個排程掃描：",
             "scanSummary": {
-                "title": "Scan summary:",
-                "description": "We are constantly tuning your computer",
-                "tune": "Tune",
-                "tuneSummary": "Disk space reclaimed",
-                "boost": "Boost",
-                "boostSummary": "Fixes to improve performance",
-                "secure": "Secure",
-                "secureSummary": "Fixes to improve security",
-                "annual": "Annual",
-                "quarterly": "Quarterly",
-                "custom": "Custom",
-                "txtFrom": "From",
-                "txtTo": "To",
-                "txtGo": "Go",
-                "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "title": "掃描摘要：",
+                "description": "我們一直不斷調校您的電腦",
+                "tune": "調校",
+                "tuneSummary": "磁碟空間已收回",
+                "boost": "提升",
+                "boostSummary": "修正以改善效能",
+                "secure": "安全",
+                "secureSummary": "修正以改善安全性",
+                "annual": "每年",
+                "quarterly": "每季",
+                "custom": "自訂",
+                "txtFrom": "從",
+                "txtTo": "至",
+                "txtGo": "執行",
+                "summaryCaption": "空間已收回",
+                "fixes": "修正",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
-                "title": "Last 5 scan results:",
-                "scanDate": "Scan date:",
-                "results": "Results:",
-                "status": "Status"
+                "title": "最後 5 次掃描結果：",
+                "scanDate": "掃描日期",
+                "results": "結果",
+                "status": "狀態"
             },
-            "backToHome": "Back To Home",
-            "successTitle": "Your Pc is tuned up !",
-            "successDescription": "Smart Performance resolved <b>{{issueCount}} issues</b> to keep your pc running smoothly, you can find scan summary and report below."
+            "backToHome": "返回首頁",
+            "successTitle": "您的電腦效能已調升！",
+            "successDescription": "Smart Performance 已解決 <b>{{issueCount}} 個問題，</b>以保持電腦順暢執行，您可在下方找到掃描摘要和報告。"
         },
-        "runningWell": "PC is running well",
+        "runningWell": "PC 執行狀況良好",
         "feedbackContainer": {
-            "title": "Leave us some feedback",
-            "subtitle": "Tell us what you think about Vantage",
-            "buttonText": "send feedback",
+            "title": "給我們一些意見回饋",
+            "subtitle": "告訴我們您對 Smart Performance 的想法",
+            "buttonText": "傳送意見回饋",
             "questions": {
-                "q1": "Does the product look and feel good?",
-                "q2": "Do the feature seen comprehensive?",
-                "q3": "Was the scan easy to use?",
-                "q4": "Happy about the fixes we did?",
-                "q5": "Do you see value for money? ",
-                "q6": "Will you refer it to your friends and family?",
-                "q7": "How likely are you to continue paying for the Smart Performance feature?",
-                "q8": "Overall how satisfied are you with the Smart Performance feature?"
+                "q1": "1.使用掃描功能的難易程度如何？",
+                "q2": "2.了解掃描結果的難易程度如何？",
+                "q3": "3.為了提高系統效能，您付費訂閱 Smart Performance 的可能性如何？",
+                "q4": "4.您對 Smart Performance 功能的整體滿意度如何？",
+                "q5": "1.了解 Smart Performance 對您的系統所做修正的難易程度如何？",
+                "q6": "2.我們是否在您的系統上找到任何惡意軟體？",
+                "q7": "3.您繼續付費使用 Smart Performance 功能的可能性如何？",
+                "q8": "4.您對 Smart Performance 功能的整體滿意度如何？"
             },
             "rating": {
-                "r1": "Hate it",
-                "r2": "Love it",
-                "r3": "Seems lacking",
-                "r4": "Good enough",
-                "r5": "Crazy",
-                "r6": "Cool",
-                "r7": "Not so sure",
-                "r8": "Absolutely yes",
-                "r9": "No way",
-                "r10": "Looks worthy",
-                "r11": "Not so sure",
-                "r12": "Absolutely yes",
-                "r13": "Not at all likely",
-                "r14": "Very Likely",
-                "r15": "Not at all satisfied",
-                "r16": "Very Satisfied"
+                "r1": "非常困難",
+                "r2": "非常容易",
+                "r3": "非常困難",
+                "r4": "非常容易",
+                "r5": "完全不可能",
+                "r6": "很有可能",
+                "r7": "完全不滿意",
+                "r8": "非常滿意",
+                "r9": "非常困難",
+                "r10": "非常容易",
+                "r11": "是",
+                "r12": "否",
+                "r13": "完全不可能",
+                "r14": "很有可能",
+                "r15": "完全不滿意",
+                "r16": "非常滿意"
             },
-            "commentTip": "Shout what you love and whisper what you hate.",
-            "comments": "Please leave your comments here..."
+            "commentTip": "請在下方留言，或告訴我們任何其他意見：",
+            "comments": "請在這裡留下您的寶貴意見..."
         },
-        "auto": "Auto",
-        "manual": "Manual",
-        "noScanResults": "Please click SCAN & FIX button to trigger scan process."
+        "auto": "自動",
+        "manual": "手動",
+        "noScanResults": "請按一下「掃描並修復」按鈕以觸發掃描程序。",
+        "am": "上午",
+        "pm": "下午"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

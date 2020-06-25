@@ -2275,7 +2275,7 @@ export class VantageShellService {
 			cameraAllowed: true,
 			photoAddress: 'c:\\users',
 			alarmDuration: 30,
-			photoNumber: 5,
+			photoNumber: 10,
 			errorCode: 0
 		};
 		return {
@@ -2298,6 +2298,13 @@ export class VantageShellService {
 		const win = window as any;
 		if (win.VantageShellExtension) {
 			return win.VantageShellExtension.Utils.MSStore;
+		}
+		return undefined;
+	}
+
+	public getSysEventFeature(): Phoenix.SystemEventFeature {
+		if (this.phoenix) {
+			return this.phoenix.systemEvent;
 		}
 		return undefined;
 	}

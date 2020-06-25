@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Ρύθ. θερμικής λειτουργίας",
                     "thermalMode2SettingDesc": "Επιλέξτε τη λειτουργία που θέλετε να χρησιμοποιήσετε.",
                     "fnQDesc": "Μπορείτε να αλλάξετε τη λειτουργία χρησιμοποιώντας τη συντόμευση Fn+Q.",
-                    "perormanceTitle": "Λειτουργία απόδοσης",
+                    "performanceTitle": "Λειτουργία απόδοσης",
                     "performanceDesc": "Ενισχύστε την απόδοση του υπολογιστή σας με μεγαλύτερη ταχύτητα ανεμιστήρα και κατανάλωση ενέργειας. ",
                     "OCDesc": "Μπορείτε να επιλέξετε να ενεργοποιήσετε τη λειτουργία Υπερχρονισμού.",
                     "ac_dcDesc": "Η λειτουργία απόδοσης ισχύει μόνο όταν είναι συνδεδεμένος ένας μετασχηματιστής εναλλασσόμενου ρεύματος.",
@@ -155,6 +155,8 @@
                         "cpuOCName79": "Μετατόπιση τάσης cache",
                         "cpuOCName122": "Αναλογία 7 πυρήνων",
                         "cpuOCName123": "Αναλογία 8 πυρήνων",
+                        "cpuOCName124": "Αναλογία 9 πυρήνων",
+                        "cpuOCName125": "Αναλογία 10 πυρήνων",
                         "cpuOCName102": "IccMax πυρήνα",
                         "cpuOCName106": "IccMax μνήμης cache",
                         "cpuOCName114": "Μετατόπιση αναλογίας AVX"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Τελική μετατόπιση τάσης που εφαρμόζεται στην τάση μνήμης cache.",
                         "cpuOCTip122": "Ορίστε τον μέγιστο πολλαπλασιαστή πυρήνα στον οποίο μπορούν να λειτουργούν οι πυρήνες. Η τιμή της συχνότητας πυρήνα είναι το γινόμενο αυτής της αναλογίας και της συχνότητας ρολογιού αναφοράς.",
                         "cpuOCTip123": "Ορίστε τον μέγιστο πολλαπλασιαστή πυρήνα στον οποίο μπορούν να λειτουργούν οι πυρήνες. Η τιμή της συχνότητας πυρήνα είναι το γινόμενο αυτής της αναλογίας και της συχνότητας ρολογιού αναφοράς.",
+                        "cpuOCTip124": "Ορίστε τον μέγιστο πολλαπλασιαστή πυρήνα στον οποίο μπορούν να λειτουργούν οι πυρήνες. Η τιμή της συχνότητας πυρήνα είναι το γινόμενο αυτής της αναλογίας και της συχνότητας ρολογιού αναφοράς.",
+                        "cpuOCTip125": "Ορίστε τον μέγιστο πολλαπλασιαστή πυρήνα στον οποίο μπορούν να λειτουργούν οι πυρήνες. Η τιμή της συχνότητας πυρήνα είναι το γινόμενο αυτής της αναλογίας και της συχνότητας ρολογιού αναφοράς.",
                         "cpuOCTip102": "Ορίστε το IccMax για τον ρυθμιστή τάσης πυρήνα του επεξεργαστή.",
                         "cpuOCTip106": "Ορίστε το IccMax για τον ρυθμιστή τάσης μνήμης cache και δακτυλιοειδούς διαύλου του επεξεργαστή.",
                         "cpuOCTip114": "Για να προσδιορίσετε το πραγματικό όριο αναλογίας ενεργών πυρήνων όταν το AVX είναι ενεργό, αφαιρέστε αυτή την τιμή από το αντίστοιχο όριο αναλογίας ενεργών πυρήνων."
@@ -729,7 +733,7 @@
                 "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
-                "name11": "Legion front Fan Lighting",
+                "name11": "Legion Front Fan Lighting",
                 "name12": "Legion Top Fan Lighting"
             },
             "lightingEffect": {
@@ -1098,7 +1102,7 @@
                 },
                 "highDensityBattery": {
                     "title": "High density battery",
-                    "subtitle": "How your battey works",
+                    "subtitle": "How your battery works",
                     "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
                     "para2": {
                         "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
@@ -1271,7 +1275,8 @@
                             "description1": "Η ενεργοποίηση μιας προσαρμοσμένης φόρτισης μπαταρίας θα επιτρέψει τη συνολική εύρυθμη λειτουργία της μπαταρίας να διαρκέσει περισσότερο καθώς χρησιμοποιείτε αυτήν τη συσκευή.Ωστόσο, η μη πλήρης φόρτιση θα επιφέρει μικρότερη διάρκεια της εύρυθμης λειτουργίας της μπαταρίας.",
                             "description2": "Για να ενεργοποιήσετε πλήρως αυτήν τη δυνατότητα, αποσυνδέστε το μηχάνημά σας καιαφήστε τη μπαταρία σας να εξαντληθεί στο όριο φόρτισης ή κάτω απ' αυτό.",
                             "enable": "ΕΝΕΡΓΟΠΟΙΗΣΗ",
-                            "cancel": "ΑΚΥΡΟ"
+                            "cancel": "ΑΚΥΡΟ",
+                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
                         },
                         "options": {
                             "start": "Έναρξη φόρτισης όταν είναι κάτω από",
@@ -1762,7 +1767,8 @@
                             "title": "Επανεκκίνηση υπολογιστή",
                             "description": "Η αλλαγή της προεπιλεγμένης λειτουργίας επάνω σειράς απαιτεί να κάνετε επανεκκίνηση του υπολογιστή σας. Είστε βέβαιοι ότι θέλετε επανεκκίνηση;",
                             "reboot": "ΕΠΑΝΕΚΚΙΝΗΣΗ",
-                            "cancel": "ΟΧΙ ΤΩΡΑ"
+                            "cancel": "ΟΧΙ ΤΩΡΑ",
+                            "yes": "YES"
                         },
                         "note": {
                             "sFunKey": "Για να αποκτήσετε πρόσβαση στη λειτουργία F1-F12, πιέστε το πλήκτρο Fn και τα πλήκτρα στην επάνω σειρά.",
@@ -2127,9 +2133,10 @@
                 "title": "Έξυπνος συναγερμός κίνησης",
                 "tooltip": "<div id='antiTheft-tooltips'>Αυτή η δυνατότητα δεν λειτουργεί, όταν ο υπολογιστής είναι σε κατάσταση αδρανοποίησης ή απενεργοποιημένος. Ελέγξτε τις ρυθμίσεις στις εξής ενέργειες:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>ενέργειες του καπακιού κλεισίματος</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>ενέργεια κρίσιμου/χαμηλού επιπέδου φόρτισης μπαταρίας</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>ενέργεια κουμπιού τροφοδοσίας</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>ενέργεια κουμπιού αναστολής λειτουργίας</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>ρυθμίσεις χρονικού ορίου αδράνειας για μετάβαση του συστήματος σε κατάσταση αδρανοποίησης</li></ul></div>Διαφορετικά, δεν θα ενεργοποιήσει συναγερμό, ούτε τη λήψη φωτογραφιών.</div>",
                 "desc1": "Όταν αυτή τη δυνατότητα είναι ενεργοποιημένη, η συσκευή θα αρχίσει να ηχεί όταν η οθόνη είναι κλειδωμένη και εντοπιστούν κινήσεις ιδίως σε δημόσιο χώρο.",
-                "desc2": "Για να απορρίψετε τον συναγερμό, συνδεθείτε στα Windows.",
+                "desc2": "Συνδεθείτε στα Windows και ο συναγερμός θα απενεργοποιηθεί αυτόματα. Για να χρησιμοποιήσετε τη δυνατότητα, θα πρέπει να την επανενεργοποιήσετε.",
                 "note": {
-                    "description": "Μόλις συνδεθείτε στο σύστημα με επιτυχία, αυτή η δυνατότητα θα απενεργοποιηθεί αυτόματα. Θα πρέπει να την ενεργοποιήσετε ξανά για να τη χρησιμοποιήσετε."
+                    "descriptionTitle": "Προσοχή:",
+                    "description": "Όταν συνδέεστε στα Windows, απαιτούνται έγκυρες επιλογές εισόδου, όπως κωδικός πρόσβασης ή κωδικός PIN. Διαφορετικά, η δυνατότητα έξυπνου συναγερμού κίνησης ενδέχεται να απενεργοποιηθεί κατά λάθος από οποιονδήποτε μη εξουσιοδοτημένο χρήστη που έχει πρόσβαση στον υπολογιστή σας."
                 },
                 "alarm": {
                     "title": " Ο ΣΥΝΑΓΕΡΜΟΣ ΘΑ ΔΙΑΡΚΕΣΕΙ",
@@ -2141,7 +2148,7 @@
                 },
                 "allowCamera": {
                     "title": "ΛΗΨΗ ΦΩΤΟΓΡΑΦΙΩΝ",
-                    "describe": "Όταν αυτή τη δυνατότητα είναι ενεργοποιημένη, η κάμερα λαμβάνει φωτογραφίες αυτόματα όταν ανιχνεύονται κινήσεις, εάν η οθόνη είναι κλειδωμένη. Αυτά τα δεδομένα υπόκεινται σε τοπική επεξεργασία στη συσκευή σας. Η Lenovo ούτε έχει πρόσβαση ούτε τα χρησιμοποιεί.",
+                    "describe": "Όταν αυτή τη δυνατότητα είναι ενεργοποιημένη, η κάμερα λαμβάνει φωτογραφίες αυτόματα όταν ανιχνεύονται κινήσεις, εάν η οθόνη είναι κλειδωμένη. Αυτά τα δεδομένα υπόκεινται σε τοπική επεξεργασία στη συσκευή σας. Η Lenovo ούτε έχει πρόσβαση ούτε τα χρησιμοποιεί. Να έχετε υπόψη ότι θα πρέπει να απενεργοποιήσετε το κλείστρο της κάμερας για να διασφαλιστεί ότι μπορεί να τραβήξει με επιτυχία φωτογραφίες στη διάρκεια του συναγερμού.",
                     "checkBoxText": "Ενεργοποίηση αυτής της δυνατότητας"
                 },
                 "cameraPrivacy": {
@@ -2251,9 +2258,6 @@
         },
         "support": {
             "title": "Δικτυακός τόπος υποστήριξης Lenovo"
-        },
-        "security": {
-            "title": "For a better protection for your device"
         },
         "banner": {
             "neverChecked": "Καλωσορίσατε στη χρήση της Ενημέρωσης συστήματος.",
@@ -3284,7 +3288,8 @@
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+            "processStatus": "PROCESSING"
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3769,7 +3774,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",
@@ -3819,7 +3825,9 @@
         },
         "auto": "Auto",
         "manual": "Manual",
-        "noScanResults": "Please click SCAN & FIX button to trigger scan process."
+        "noScanResults": "Please click SCAN & FIX button to trigger scan process.",
+        "am": "πμ",
+        "pm": "μμ"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

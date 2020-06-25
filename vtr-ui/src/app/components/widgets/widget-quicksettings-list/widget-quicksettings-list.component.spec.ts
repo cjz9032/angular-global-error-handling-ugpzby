@@ -9,12 +9,12 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { CommonService } from 'src/app/services/common/common.service';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { GamingThermalModeService } from 'src/app/services/gaming/gaming-thermal-mode/gaming-thermal-mode.service';
+import { WifiSecurityService } from 'src/app/services/security/wifi-security.service';
 import { AudioService } from 'src/app/services/audio/audio.service';
 import { PowerService } from 'src/app/services/power/power.service';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { GuardService } from 'src/app/services/guard/guardService.service';
-
-import { Emitter } from 'mitt';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 describe("WidgetQuicksettingsListComponent", () => {
 
@@ -121,6 +121,7 @@ describe("WidgetQuicksettingsListComponent", () => {
 
 	let shellServiveSpy = jasmine.createSpyObj('VantageService', ['getGamingAllCapabilities', 'registerEvent', 'unRegisterEvent', ,'getSecurityAdvisor', 'getLogger']);
 	let gamingThermalModeServiceSpy = jasmine.createSpyObj('GamingThermalModeService', ['getThermalModeStatus', 'setThermalModeStatus', 'regThermalModeChangeEvent']);
+	let wifiSecurityServiceSpy = jasmine.createSpyObj('WifiSecurityService', ['isLWSEnabled', 'wifiSecurity']);
 	let audioServiceSpy = jasmine.createSpyObj('AudioService', ['getDolbyMode', 'setDolbyAudioState', 'startMonitorForDolby', 'stopMonitorForDolby']);
 	let powerServiceSpy = jasmine.createSpyObj('PowerService', ['getRapidChargeModeStatusIdeaNoteBook', 'setRapidChargeModeStatusIdeaNoteBook', ]);
 	let dialogServiceSpy = jasmine.createSpyObj('DialogService', ['wifiSecurityLocationDialog', '']);
@@ -165,6 +166,7 @@ describe("WidgetQuicksettingsListComponent", () => {
 					{ provide: CommonService, useValue: commonServiceMock},
 					{ provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock},
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceMock},
+					{ provide: WifiSecurityService, useValue: wifiSecurityServiceSpy},
 					{ provide: AudioService, useValue: audioServiceSpy},
 					{ provide: PowerService, useValue: powerServiceSpy},
 					{ provide: DialogService, useValue: dialogServiceSpy},
@@ -355,6 +357,7 @@ describe("WidgetQuicksettingsListComponent", () => {
 					{ provide: CommonService, useValue: commonServiceMock},
 					{ provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock},
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy},
+					{ provide: WifiSecurityService, useValue: wifiSecurityServiceSpy},
 					{ provide: AudioService, useValue: audioServiceSpy},
 					{ provide: PowerService, useValue: powerServiceMock},
 					{ provide: DialogService, useValue: dialogServiceSpy},
@@ -549,6 +552,19 @@ describe("WidgetQuicksettingsListComponent", () => {
 				}
 			}
 		}
+
+		let wifiSecurityServiceMock = {
+			isLWSEnabled: false,
+			wifiSecurity: {
+				disableWifiSecurity() {
+					return Promise.resolve(setReturnValue);
+				},
+				enableWifiSecurity() {
+					return Promise.resolve(setReturnValue);
+				}
+			}
+		}				
+
 		let guardMock = {
 			previousPageName: '',
 			getWifiSecurityState() {
@@ -571,6 +587,7 @@ describe("WidgetQuicksettingsListComponent", () => {
 					{ provide: CommonService, useValue: commonServiceMock},
 					{ provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock},
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy},
+					{ provide: WifiSecurityService, useValue: wifiSecurityServiceMock},
 					{ provide: AudioService, useValue: audioServiceSpy},
 					{ provide: PowerService, useValue: powerServiceSpy},
 					{ provide: DialogService, useValue: dialogServiceSpy},
@@ -585,9 +602,10 @@ describe("WidgetQuicksettingsListComponent", () => {
 			fixture.detectChanges();
 		}));
 
-		it('should create', () => {
-			expect(component).toBeDefined();
-		});
+		afterEach(() => {
+			wifiSecurityServiceMock.isLWSEnabled = false;
+		})
+
 
 		it('ngOnInit not support wifiSecurity', () => {
 			wifiSecurityFeatureCache =  false;
@@ -619,13 +637,13 @@ describe("WidgetQuicksettingsListComponent", () => {
 			expect(securityWifiSecurityShowPluginMissingDialogCache).toBe(true, `isLWSEnabled is flase, securityWifiSecurityShowPluginMissingDialogCache shoulde be true`);
 			expect(component.quickSettings[2].isChecked).toBe(false, `isLWSEnabled is flase, wifi Security checked shoulde be false`)
 
-			// securityWifiSecurityInGamingDashboardCache = false;
-			// securityWifiSecurityShowPluginMissingDialogCache = false;
-			// component.wifiHomeViewModel.isLWSEnabled = true;
-			// component.getWifiSecuritySettings();
-			// expect(securityWifiSecurityInGamingDashboardCache).toBe(true, `isLWSEnabled is true, securityWifiSecurityInGamingDashboardCache shoulde be true`);
-			// expect(securityWifiSecurityShowPluginMissingDialogCache).toBe(true, `isLWSEnabled is true, securityWifiSecurityShowPluginMissingDialogCache shoulde be true`);
-			// expect(component.quickSettings[2].isChecked).toBe(true, `isLWSEnabled is true, wifi Security checked shoulde be true`)
+			securityWifiSecurityInGamingDashboardCache = false;
+			securityWifiSecurityShowPluginMissingDialogCache = false;
+			wifiSecurityServiceMock.isLWSEnabled = true;
+			component.getWifiSecuritySettings();
+			expect(securityWifiSecurityInGamingDashboardCache).toBe(true, `isLWSEnabled is true, securityWifiSecurityInGamingDashboardCache shoulde be true`);
+			expect(securityWifiSecurityShowPluginMissingDialogCache).toBe(true, `isLWSEnabled is true, securityWifiSecurityShowPluginMissingDialogCache shoulde be true`);
+			expect(component.quickSettings[2].isChecked).toBe(true, `isLWSEnabled is true, wifi Security checked shoulde be true`)
 		});
 
 		it('updateWifiSecurityState', () => {
@@ -639,15 +657,41 @@ describe("WidgetQuicksettingsListComponent", () => {
 
 		});
 
-		// it('setWifiSecuritySettings', fakeAsync(() => {
-		// 	securityWifiSecurityInGamingDashboardCache = true;
-		// 	component.wifiHomeViewModel.isLWSEnabled = true;
-		// 	component.quickSettings[2].isChecked = true;
-		// 	component.setWifiSecuritySettings(false);
-		// 	tick();
-		// 	expect(component.wifiHomeViewModel.isLWSEnabled).toBe(true);
-		// 	expect(component.quickSettings[2].isChecked).toBe(true);
-		// }));
+		it('setWifiSecuritySettings', fakeAsync(() => {
+			securityWifiSecurityInGamingDashboardCache = true;
+			wifiSecurityServiceMock.isLWSEnabled = true;
+			component.quickSettings[2].isChecked = true;
+			setReturnValue = true;
+			component.setWifiSecuritySettings(false);
+			tick();
+			expect(wifiSecurityServiceMock.isLWSEnabled).toBe(false, `setReturnValue is true, set false, wifiSecurityServiceMock.isLWSEnabled should be false`);
+			expect(component.quickSettings[2].isChecked).toBe(false, `setReturnValue is true, set false, wifiSecurityServiceMock.isChecked should be false`);
+			expect(component.quickSettings[2].readonly ).toBe(true, `setReturnValue is true, set false, wifiSecurityServiceMock.readonly should be true`);
+
+			wifiSecurityServiceMock.isLWSEnabled = true;
+			setReturnValue = false;
+			component.setWifiSecuritySettings(false);
+			tick();
+			expect(wifiSecurityServiceMock.isLWSEnabled).toBe(true, `setReturnValue is false, set false, wifiSecurityServiceMock.isLWSEnabled should keep true`);
+			expect(component.quickSettings[2].isChecked).toBe(true, `setReturnValue is false, set false, wifiSecurityServiceMock.isChecked should keep true`);
+			expect(component.quickSettings[2].readonly ).toBe(false, `setReturnValue is false, set false, wifiSecurityServiceMock.readonly should keep false`);
+
+			wifiSecurityServiceMock.isLWSEnabled = false;
+			setReturnValue = true;
+			component.setWifiSecuritySettings(true);
+			tick();
+			expect(wifiSecurityServiceMock.isLWSEnabled).toBe(true, `setReturnValue is true, set true, wifiSecurityServiceMock.isLWSEnabled should be true`);
+			expect(component.quickSettings[2].isChecked).toBe(true, `setReturnValue is true, set true, wifiSecurityServiceMock.isChecked should be true`);
+			expect(component.quickSettings[2].readonly ).toBe(false, `setReturnValue is true, set true, wifiSecurityServiceMock.readonly should be false`);
+
+			wifiSecurityServiceMock.isLWSEnabled = false;
+			setReturnValue = false;
+			component.setWifiSecuritySettings(true);
+			tick();
+			expect(wifiSecurityServiceMock.isLWSEnabled).toBe(false, `setReturnValue is false, set true, wifiSecurityServiceMock.isLWSEnabled should be false`);
+			expect(component.quickSettings[2].isChecked).toBe(false, `setReturnValue is false, set true, wifiSecurityServiceMock.isChecked should be false`);
+			expect(component.quickSettings[2].readonly ).toBe(true, `setReturnValue is false, set true, wifiSecurityServiceMock.readonly should be true`);
+		}));
 	});
 
 	describe("dolby", function () {
@@ -690,6 +734,7 @@ describe("WidgetQuicksettingsListComponent", () => {
 					{ provide: CommonService, useValue: commonServiceMock},
 					{ provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock},
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy},
+					{ provide: WifiSecurityService, useValue: wifiSecurityServiceSpy},
 					{ provide: AudioService, useValue: audioServiceMock},
 					{ provide: PowerService, useValue: powerServiceSpy},
 					{ provide: DialogService, useValue: dialogServiceSpy},
@@ -949,4 +994,55 @@ describe("WidgetQuicksettingsListComponent", () => {
 			expect(dolbyAudioToggleCache.isAudioProfileEnabled).toBe(false, `dolbyAudioToggle.isAudioProfileEnabled = undefined, dolbyAudioToggleCache.isAudioProfileEnabled should keep false`);
 		}));
 	});
+
+	describe('catch error', () => {
+		let loggerServiceSpy = jasmine.createSpyObj('LoggerService', ['getMessage', 'debug', 'error', 'info', 'exception']);
+		beforeEach(async(() => {
+			shellServiveSpy.getSecurityAdvisor.and.returnValue(new Promise(resolve => { resolve(true)}));
+			audioServiceSpy.getDolbyMode.and.returnValue(new Promise( resolve => { resolve(dolbyAudioToggle)}));
+			audioServiceSpy.startMonitorForDolby.and.returnValue(new Promise( resolve => { resolve(setReturnValue)}));
+			audioServiceSpy.stopMonitorForDolby.and.returnValue(new Promise( resolve => { resolve(setReturnValue)}));
+			powerServiceSpy.getRapidChargeModeStatusIdeaNoteBook.and.returnValue(new Promise( resolve => {resolve(rapidChargeSettings)}));
+			TestBed.configureTestingModule({
+				declarations: [
+					WidgetQuicksettingsListComponent
+				],
+				imports: [],
+				providers: [
+					{ provide: VantageShellService, useValue: shellServiveSpy },
+					{ provide: CommonService, useValue: commonServiceMock},
+					{ provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock},
+					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy},
+					{ provide: WifiSecurityService, useValue: wifiSecurityServiceSpy},
+					{ provide: AudioService, useValue: audioServiceSpy},
+					{ provide: PowerService, useValue: powerServiceSpy},
+					{ provide: DialogService, useValue: dialogServiceSpy},
+					{ provide: GuardService, useValue: guardSpy},
+					{ provide: Router, useValue: routerSpy},
+					{ provide: LoggerService, useValue: loggerServiceSpy}
+				],
+				schemas: [NO_ERRORS_SCHEMA]
+			}).compileComponents();
+			fixture = TestBed.createComponent(WidgetQuicksettingsListComponent);
+			component = fixture.debugElement.componentInstance;
+			spyOn(component, 'runLocationService').and.returnValue();
+			fixture.detectChanges();
+		}));
+
+		it('getDolbySettings error', fakeAsync(() => {
+			audioServiceSpy.getDolbyMode.and.throwError('getDolbySettings error');
+			let calledTimes = loggerServiceSpy.error.calls.count();
+			component.getDolbySettings()
+			tick();
+			expect(loggerServiceSpy.error).toHaveBeenCalledTimes(++calledTimes);
+		}));
+
+		it('getDolbySettings error', fakeAsync(() => {
+			audioServiceSpy.setDolbyAudioState.and.throwError('getDolbySettings error');
+			let calledTimes = loggerServiceSpy.error.calls.count();
+			component.setDolbySettings(true)
+			tick();
+			expect(loggerServiceSpy.error).toHaveBeenCalledTimes(++calledTimes);
+		}));
+	})
 })

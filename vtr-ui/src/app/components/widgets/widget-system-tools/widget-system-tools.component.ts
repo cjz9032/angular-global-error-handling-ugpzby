@@ -23,6 +23,12 @@ export class WidgetSystemToolsComponent implements OnInit {
 	// version 3.3 for accessory entrance
 	public showLegionAccessory: boolean = false;
 	public toolLength: number = 3;
+	modalAutomationId: any = {
+		section: 'legion_accessory_central_install_popup',
+		closeButton : 'legion_accessory_close_button',
+		cancelButton: 'legion_accessory_central_install_popup_cancel_button',
+		okButton: 'legion_accessory_central_install_popup_install_button'
+	}
 	constructor(
 		private modalService: NgbModal,
 		private commonService: CommonService, 
@@ -108,7 +114,8 @@ export class WidgetSystemToolsComponent implements OnInit {
 			title: "gaming.dashboard.device.warningPromptPopup.legionAccessory",
 			description: "gaming.dashboard.device.warningPromptPopup.accessoryDesc",
 			comfirmButton: "gaming.dashboard.device.legionEdge.driverPopup.button",
-			cancelButton: "gaming.dashboard.device.legionEdge.driverPopup.link"
+			cancelButton: "gaming.dashboard.device.legionEdge.driverPopup.link",
+			id : this.modalAutomationId
 		}
 		waringModalRef.componentInstance.emitService.subscribe((emmitedValue) => {
 			if(emmitedValue === 1) {
