@@ -29,23 +29,12 @@ export class PreviousResultService {
 		this.hardwareScanBridge = shellService.getHardwareScan();
 	}
 
-	public getLastPreviousResultDate() {
+	public getLastPreviousResultCompletionInfo() {
 		const item: any = this.getPreviousResultsWidget();
-
-		if (this.hasPreviousResults()) {
-			const lastScan = this.translate.instant('hardwareScan.lastScanOn') + ' ' + item.date;
-
-			let result;
-			const existsNotPass = item.modules.filter(i => i.resultModule !== HardwareScanTestResult.Pass);
-
-			if (existsNotPass && existsNotPass.length === 0) {
-				result = ' - ' + this.translate.instant('hardwareScan.result') + ': ' + this.translate.instant('hardwareScan.complete');
-			} else {
-				result = ' - ' + this.translate.instant('hardwareScan.result') + ': ' + this.translate.instant('hardwareScan.incomplete');
-			}
-
-			return lastScan + result;
-		}
+		return {
+			date: item.date,
+			isCompleted: item.modules.every(i => i.resultModule == HardwareScanTestResult.Pass)
+		};
 	}
 
 	private buildPreviousResultsWidget(previousResults: any) {

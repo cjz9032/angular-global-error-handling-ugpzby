@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 import { HardwareScanService } from '../../../services/hardware-scan/hardware-scan.service';
 import { PreviousResultService } from '../../../services/hardware-scan/previous-result.service';
+import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.enum';
 
 @Component({
 	selector: 'vtr-widget-hardware-scan-status',
@@ -9,22 +9,23 @@ import { PreviousResultService } from '../../../services/hardware-scan/previous-
 	styleUrls: ['./widget-hardware-scan-status.component.scss']
 })
 export class WidgetHardwareScanStatusComponent implements OnInit {
-	public title = this.translate.instant('hardwareScan.previousResult');
-	public description: string;
-	public item: any;
+	public previousResultsModules: any = undefined;
+	public lastScanResultCompletionInfo: any = undefined;
 	public viewResultsPath = '/hardware-scan/view-results';
 
 	constructor(
 		private hardwareScanService: HardwareScanService,
-		private previousResultService: PreviousResultService,
-		private translate: TranslateService,
+		private previousResultService: PreviousResultService
 	) { }
 
 	ngOnInit() {
 		if (!this.hardwareScanService.isScanExecuting() && !this.hardwareScanService.isRecoverExecuting()) {
 			this.previousResultService.getLastResults().then(() => {
-				this.item = this.previousResultService.getPreviousResultsWidget();
-				this.description = this.previousResultService.getLastPreviousResultDate();
+				const previousResultsWidget: any = this.previousResultService.getPreviousResultsWidget();
+				if (previousResultsWidget) {
+					this.previousResultsModules = previousResultsWidget.modules;
+					this.lastScanResultCompletionInfo = this.previousResultService.getLastPreviousResultCompletionInfo();
+				}
 			});
 		}
 	}

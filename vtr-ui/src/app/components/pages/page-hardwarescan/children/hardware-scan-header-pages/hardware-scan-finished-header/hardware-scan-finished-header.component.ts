@@ -24,7 +24,7 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 	//Wrapper
 	public enumScanHeaderTypeFinished = HardwareScanFinishedHeaderType;
 	public numberTestsFailed: number;
-	public dateDescription: string;
+	public lastScanResultCompletionInfo: any;
 
 	constructor(private hardwareScanService: HardwareScanService,
 				private previousResultService: PreviousResultService,
@@ -34,7 +34,7 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 	ngOnInit() {
 		this.configureSupportUrl();
 		this.setupFailedTests();
-		this.dateDescription = this.previousResultService.getLastPreviousResultDate();
+		this.lastScanResultCompletionInfo = this.previousResultService.getLastPreviousResultCompletionInfo();
 	}
 
 	private async configureSupportUrl() {

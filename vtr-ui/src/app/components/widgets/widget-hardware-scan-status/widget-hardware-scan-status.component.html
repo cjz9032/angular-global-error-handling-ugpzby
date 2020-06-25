@@ -1,15 +1,19 @@
-<div class="vtr-widget-hardware-scan-status" *ngIf="hasPreviousResults() && item">
+<div class="vtr-widget-hardware-scan-status" *ngIf="hasPreviousResults() && previousResultsModules">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col">
-				<h2 class="title">{{title}}</h2>
-				<p class="description">{{description}}</p>
+				<h2 class="title">{{ 'hardwareScan.previousResult' | translate }}</h2>
+				<p class="description">
+					{{ 'hardwareScan.lastScanOn' | translate }} {{ lastScanResultCompletionInfo.date | formatLocaleDateTime }}
+					- {{ 'hardwareScan.result' | translate }}:
+					{{ (lastScanResultCompletionInfo.isCompleted ? 'hardwareScan.complete' : 'hardwareScan.incomplete') | translate }}
+				</p>
 			</div>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col">
-			<vtr-ui-hardware-list [items]="item.modules" [template]="3">
+			<vtr-ui-hardware-list [items]="previousResultsModules" [template]="3">
 			</vtr-ui-hardware-list>
 		</div>
 	</div>
