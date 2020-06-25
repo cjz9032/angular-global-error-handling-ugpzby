@@ -57,7 +57,7 @@
 						</fa-icon>
 					</div>
 
-					<div class="refresh-message" *ngIf="isRefreshingModules() && !isRecoverExecuting()">
+					<div class="refresh-message" *ngIf="isRefreshingModules() && !isRecoverExecuting()" aria-live="polite">
 						{{ 'hardwareScan.refreshMessage' | translate }}
 					</div>
 				</div>
