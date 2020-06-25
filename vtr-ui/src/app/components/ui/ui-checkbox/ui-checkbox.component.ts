@@ -22,6 +22,7 @@ export class UiCheckboxComponent implements OnInit {
 	@Input() value: any;
 	@Input() hasChild = false; // for ng-content
 	@Input() metricsItem: string;
+	@Input() metricsParent: string;
 	@Input() isMetricsEnabled = false;
 	@Output() toggle: EventEmitter<boolean> = new EventEmitter();
 
@@ -35,7 +36,7 @@ export class UiCheckboxComponent implements OnInit {
 		this.toggle.emit(value);
 		if (this.isMetricsEnabled) {
 			const itemName = this.metricsItem || `${this.componentId}`;
-			this.metrics.sendMetrics(value, itemName);
+			this.metrics.sendMetrics(value, itemName, this.metricsParent);
 		}
 	}
 

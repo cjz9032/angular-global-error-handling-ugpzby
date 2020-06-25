@@ -144,21 +144,21 @@ xdescribe('Component: PowerSmartSetting', () => {
 	it('should call changeQuietCool', () => {
 		const event = new Event('cool')
 		const spy = spyOn<any>(component, 'setManualModeSetting').and.callThrough()
-		component.changeQuietCool(event)
+		component.changeQuietCool()
 		expect(spy).toHaveBeenCalled()
 	});
 
 	it('should call changePerformance', () => {
 		const event = new Event('cool')
 		const spy = spyOn<any>(component, 'setManualModeSetting').and.callThrough()
-		component.changePerformance(event)
+		component.changePerformance()
 		expect(spy).toHaveBeenCalled()
 	});
 
 	it('should call changeBatterySaving', () => {
 		const event = new Event('cool')
 		const spy = spyOn<any>(component, 'setManualModeSetting').and.callThrough()
-		component.changeBatterySaving(event)
+		component.changeBatterySaving()
 		expect(spy).toHaveBeenCalled()
 	});
 
@@ -225,7 +225,7 @@ xdescribe('Component: PowerSmartSetting', () => {
 			itsVersion: 3,
 			currentMode: 'ITS_Auto'
 		}
-		component.initPowerSmartSettingsUIForIdeaPad(response)
+		component.initPowerSmartSettingsUIForIdeaPad(response, false)
 		expect(component.intelligentCoolingModes).toEqual(IntelligentCoolingHardware.ITS13)
 	})
 
@@ -234,7 +234,7 @@ xdescribe('Component: PowerSmartSetting', () => {
 			available: true,
 			itsVersion: 4,
 		}
-		component.initPowerSmartSettingsUIForIdeaPad(response)
+		component.initPowerSmartSettingsUIForIdeaPad(response, false)
 		expect(component.intelligentCoolingModes).toEqual(IntelligentCoolingHardware.ITS14)
 	})
 
@@ -243,7 +243,7 @@ xdescribe('Component: PowerSmartSetting', () => {
 			available: true,
 			itsVersion: 5,
 		}
-		component.initPowerSmartSettingsUIForIdeaPad(response)
+		component.initPowerSmartSettingsUIForIdeaPad(response, false)
 		expect(component.intelligentCoolingModes).toEqual(IntelligentCoolingHardware.ITS15)
 	})
 
@@ -253,13 +253,13 @@ xdescribe('Component: PowerSmartSetting', () => {
 			available: true,
 			itsVersion: ''
 		}
-		component.initPowerSmartSettingsUIForIdeaPad(response)
+		component.initPowerSmartSettingsUIForIdeaPad(response, false)
 		expect(component.intelligentCoolingModes).toEqual(IntelligentCoolingHardware.ITS)
 	});
 
 	it('should call initPowerSmartSettingsUIForIdeaPad response is empty', () => {
 		const response = {}
-		component.initPowerSmartSettingsUIForIdeaPad(response)
+		component.initPowerSmartSettingsUIForIdeaPad(response, false)
 		expect(component.intelligentCoolingModes).not.toEqual(IntelligentCoolingHardware.ITS13)
 	});
 
@@ -614,7 +614,7 @@ xdescribe('Component: PowerSmartSetting', () => {
 			itsVersion: 5,
 			isAutoTransitionEnabled: true
 		}
-		component.initPowerSmartSettingsUIForIdeaPad(response)
+		component.initPowerSmartSettingsUIForIdeaPad(response, false)
 		expect(component.intelligentCoolingModes).toEqual(IntelligentCoolingHardware.ITS15)
 	})
 });

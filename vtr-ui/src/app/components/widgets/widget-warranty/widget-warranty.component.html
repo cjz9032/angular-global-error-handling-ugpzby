@@ -23,8 +23,8 @@
 						id="support-warranty-description"
 						role="text">
 						<span [innerHTML]="'support.warranty.subDescription1' | translate"></span>
-						<span *ngIf="!isConnected && item.cache">{{'support.warranty.offlineTips1' | translate}}</span>
-						<span *ngIf="!isConnected && !item.cache">{{'support.warranty.offlineTips2' | translate}}</span>
+						<span *ngIf="!isConnected && item.cache"> {{'support.warranty.offlineTips1' | translate}}</span>
+						<span *ngIf="!isConnected && !item.cache"> {{'support.warranty.offlineTips2' | translate}}</span>
 					</div>
 					<div class="sub-title"
 						id="support-warranty-details-title"
@@ -54,8 +54,8 @@
 						id="support-warranty-not-found-description"
 						role="text">
 						<span [innerHTML]="'support.warranty.subDescription2' | translate"></span>
-						<span *ngIf="!isConnected && item.cache">{{'support.warranty.offlineTips1' | translate}}</span>
-						<span *ngIf="!isConnected && !item.cache">{{'support.warranty.offlineTips2' | translate}}</span>
+						<span *ngIf="!isConnected && item.cache"> {{'support.warranty.offlineTips1' | translate}}</span>
+						<span *ngIf="!isConnected && !item.cache"> {{'support.warranty.offlineTips2' | translate}}</span>
 					</div>
 				</div>
 				<div class="button-box">

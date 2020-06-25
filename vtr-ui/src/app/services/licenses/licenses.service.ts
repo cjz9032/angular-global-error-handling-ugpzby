@@ -1,40 +1,42 @@
 import { Injectable } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { TranslateService } from '@ngx-translate/core';
 import { ModalLicenseComponent } from 'src/app/components/modal/modal-license/modal-license.component';
+import { LocalInfoService } from '../local-info/local-info.service';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class LicensesService {
 
-	lang = 'en';
-
 	constructor(
-		private translate: TranslateService,
 		public modalService: NgbModal,
+		public localInfoService: LocalInfoService,
 	) { }
 
 	openLicensesAgreement(isCalledbyAbout?: boolean) {
 		if (!isCalledbyAbout && this.modalService.hasOpenModals()) return;
-		if (this.translate.currentLang) { this.lang = this.translate.currentLang; }
-		const useLang = this.checkLangName(this.lang);
-		const agreementUrl = `assets/licenses/Agreement/${useLang}.html`;
-		const licenseModalMetrics = {
-			pageName: 'Page.Support.Article',
-			pageContext: 'License agreement',
-			closeButton: 'LicenseAgreementCloseButton',
-		};
-		const licenseModal: NgbModalRef = this.modalService.open(ModalLicenseComponent, {
-			backdrop: true,
-			size: 'lg',
-			centered: true,
-			ariaLabelledBy: 'license-agreement-dialog-basic-title',
-			windowClass: 'license-Modal'
+		this.localInfoService.getLocalInfo().then(localInfo => {
+			let fileName = this.checkLangName(localInfo.Lang);
+			if (localInfo.GEO === 'cn' && localInfo.Lang === 'zh-hans') {
+				fileName = 'zh-Hans-cn';
+			}
+			const agreementUrl = `assets/licenses/Agreement/${fileName}.html`;
+			const licenseModalMetrics = {
+				pageName: 'Page.Support.Article',
+				pageContext: 'License agreement',
+				closeButton: 'LicenseAgreementCloseButton',
+			};
+			const licenseModal: NgbModalRef = this.modalService.open(ModalLicenseComponent, {
+				backdrop: true,
+				size: 'lg',
+				centered: true,
+				ariaLabelledBy: 'license-agreement-dialog-basic-title',
+				windowClass: 'license-Modal'
+			});
+			licenseModal.componentInstance.url = agreementUrl;
+			licenseModal.componentInstance.type = 'html';
+			licenseModal.componentInstance.licenseModalMetrics = licenseModalMetrics;
 		});
-		licenseModal.componentInstance.url = agreementUrl;
-		licenseModal.componentInstance.type = 'html';
-		licenseModal.componentInstance.licenseModalMetrics = licenseModalMetrics;
 	}
 
 	openOpenSource(isCalledbyAbout?: boolean) {

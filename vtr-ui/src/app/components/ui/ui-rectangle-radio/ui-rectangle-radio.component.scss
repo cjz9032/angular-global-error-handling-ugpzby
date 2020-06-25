@@ -72,11 +72,13 @@
 			transition: all 200ms ease-in;
 
 			@media #{$black-on-white} {
-				background-color: $high-contrast-white-textselected;
+				@include  high-contrast-white-background;
 			}
+
 			@media #{$white-on-black} {
-				background-color: $high-contrast-black-textselected;
-			}		}
+				@include high-contrast-black-background;
+			}
+		}
 
 		.label {
 			position: absolute;

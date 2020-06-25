@@ -36,6 +36,7 @@
 				button {
 					&.btn-outline-shadow {
 						background-color: #f5f7f8 !important;
+
 					}
 					.dropdown-icon {
 						fa-icon {
@@ -62,6 +63,20 @@
 					&:focus {
 						outline: 0.1rem solid $menu_hover !important;
 						outline-offset: 0.2rem !important;
+						@media #{$white-on-black} {
+							@include high-contrast-black-border;
+						}
+						@media #{$black-on-white} {
+							@include high-contrast-white-border;
+						}
+					}
+					&:hover, &:active {
+						@media #{$white-on-black} {
+							@include high-contrast-black-border;
+						}
+						@media #{$black-on-white} {
+							@include high-contrast-white-border;
+						}
 					}
 				}
 				.dropdown-icon {
@@ -76,11 +91,31 @@
 			font-size: 1.3rem;
 			&:hover {
 				background: $main_lightest;
+				@media #{$white-on-black} {
+					@include high-contrast-black-text-color;
+				}
+				@media #{$black-on-white} {
+					@include high-contrast-white-text-color;
+				}
+			}
+			&:focus {
+				@media #{$white-on-black} {
+					@include high-contrast-black-text-color;
+				}
+				@media #{$black-on-white} {
+					@include high-contrast-white-text-color;
+				}
 			}
 			&.disabled {
 				pointer-events: none;
 				background: $shade_lightest;
 				color: $shade;
+				@media #{$white-on-black} {
+					@include high-contrast-black-text-color-disabled;
+				}
+				@media #{$black-on-white} {
+					@include high-contrast-white-text-color-disabled;
+				}
 			}
 		}
 
@@ -91,6 +126,14 @@
 
 		.dropdown-menu {
 			margin-left: auto;
+			&:hover {
+				@media #{$white-on-black} {
+					@include high-contrast-black-border;
+				}
+				@media #{$black-on-white} {
+					@include high-contrast-white-border;
+				}
+			}
 		}
 
 		.dropdown .dropdown-menu:not(.show) {

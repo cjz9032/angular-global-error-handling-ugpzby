@@ -157,9 +157,10 @@
 													(valueChange)="setZeroTouchLoginSensitivity($event)"
 													[value]="intelligentSecurity.zeroTouchLoginDistance"
 													[isDisabled]="!intelligentSecurity.isZeroTouchLoginEnabled"
-													[metricsItem]="'distanceSensitivity'"
-													[ariaLabel]="'zero touch login distance sensitivity adjustment'"
-													[metricsValue]="intelligentSecurity.zeroTouchLoginDistance">
+													[isMetricsEnabled]=true
+													[metricsParent]="metricsParent"
+													[metricsItem]="'slider.zero-touch-login.distance-sensitivity'"
+													[ariaLabel]="'zero touch login distance sensitivity adjustment'">
 												</vtr-ui-custom-slider>
 											</div>
 											<!-- note -->
@@ -245,9 +246,10 @@
 													(valueChange)="setZeroTouchLoginSensitivity($event)"
 													[value]="intelligentSecurity.zeroTouchLoginDistance"
 													[isDisabled]="!intelligentSecurity.isHPDEnabled || !intelligentSecurity.isZeroTouchLoginEnabled"
-													[metricsItem]="'thinkpadDistanceSensitivity'"
-													[ariaLabel]="'zero touch login distance sensitivity adjustment'"
-													[metricsValue]="intelligentSecurity.zeroTouchLoginDistance">
+													[isMetricsEnabled]=true
+													[metricsParent]="metricsParent"
+													[metricsItem]="'slider.zero-touch-login.distance-sensitivity'"
+													[ariaLabel]="'zero touch login distance sensitivity adjustment'">
 												</vtr-ui-custom-slider>
 												<div class="pt-3"
 													[class.blur-1]="!intelligentSecurity.isZeroTouchLoginEnabled || !intelligentSecurity.isHPDEnabled"
@@ -329,6 +331,9 @@
 												<div class="smart-assist-checkbox">
 													<vtr-ui-checkbox
 														[componentId]="'smartAssist-intelligentSecurity-zeroTouchLock-facial-recognition'"
+														[isMetricsEnabled]=true
+														[metricsParent]='metricsParent'
+														[metricsItem]="'cb.intelligent-security.facial-recognition'"
 														[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.facilRecognitionCameraAccess
 															|| intelligentSecurity.facialRecognitionCameraPrivacyMode"
 														[value]="intelligentSecurity.isZeroTouchLockFacialRecoEnabled"
@@ -401,7 +406,7 @@
 											<!-- radio buttons -->
 											<div class="slider-note"
 												[class.blur-1]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
-												<vtr-ui-rounded-rectangle-custom-radio-list
+												<vtr-ui-rounded-rectangle-custom-radio-list [sendMetrics]=true
 													[groupName]="'Zero-Touch-Lock-Timer-radio-group'"
 													[radioDetails]="zeroTouchLockTimersUIModel"
 													(selectionChange)="onZeroTouchLockTimerChange($event)">
@@ -476,9 +481,10 @@
 													(valueChange)="SetZeroTouchLockDistanceSensitivity($event)"
 													[value]="hsaIntelligentSecurity.zeroTouchLockDistance"
 													[isDisabled]="!intelligentSecurity.isZeroTouchLockEnabled || !hsaIntelligentSecurity.capacity"
-													[metricsItem]="'zeroTouchLockDistanceSensitivity'"
-													[ariaLabel]="'zero touch lock distance sensitivity adjustment'"
-													[metricsValue]="hsaIntelligentSecurity.zeroTouchLockDistance">
+													[isMetricsEnabled]=true
+													[metricsParent]="metricsParent"
+													[metricsItem]="'slider.zero-touch-lock.distance-sensitivity'"
+													[ariaLabel]="'zero touch lock distance sensitivity adjustment'">
 												</vtr-ui-custom-slider>
 											</div>
 										</div>
@@ -507,6 +513,7 @@
 										</vtr-ui-row-switch>
 										<div *ngIf="sensitivityVisibility"
 											class="pl-5 bold-title no-border-bottom pb-4">
+											<!-- SENSITIVITY ADJUSTING -->
 											<vtr-ui-row-switch [switchId]="'thinkpadSensitivity'"
 												[title]="'device.smartAssist.intelligentSecurity.sensitivityAdjusting.title' | translate"
 												[isSwitchVisible]="false"
@@ -527,8 +534,9 @@
 													[value]="sensitivityAdjustVal"
 													[ariaLabel]="'zero touch lock sensitivity adjustment'"
 													[isDisabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.isHPDEnabled"
-													[metricsItem]="'thinkpadSensitivity'"
-													[metricsValue]="sensitivityAdjustVal">
+													[isMetricsEnabled]=true
+													[metricsParent]="metricsParent"
+													[metricsItem]="'slider.zero-touch-lock.distance-sensitivity'">
 												</vtr-ui-custom-slider>
 												<div class="pt-3"
 													[class.blur-1]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
@@ -548,6 +556,7 @@
 										<div class="bold-title no-border-bottom pl-5 pb-4 border-bottom auto-screen-lock-help-icon"
 											*ngIf="intelligentSecurity.isZeroTouchLockVisible"
 											[class.col-pad-margin]="isThinkPad">
+											<!-- AUTO SCREEN LOCK TIMER -->
 											<vtr-ui-row-switch [switchId]="'autoScreenLockTimer'"
 												[title]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.title' | translate"
 												[isSwitchVisible]="false"
@@ -560,7 +569,7 @@
 											<div class="slider-note"
 												[class.blur-1]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
 
-												<vtr-ui-rounded-rectangle-custom-radio-list
+												<vtr-ui-rounded-rectangle-custom-radio-list [sendMetrics]=true
 													[groupName]="'Zero-Touch-Lock-Timer-radio-group'"
 													[radioDetails]="zeroTouchLockTimersUIModel"
 													(selectionChange)="onZeroTouchLockTimerChange($event)">
@@ -681,7 +690,8 @@
 											</div>
 										</div>
 									</li>
-									<li class="pt-3 keep-my-display-block">
+									<li class="pt-3 keep-my-display-block"
+										*ngIf='intelligentScreen.isReadingOrBrowsingVisible'>
 										<vtr-ui-row-switch [switchId]="'keepMyDisplay'"
 											[title]="'device.smartAssist.intelligentScreen.keepMyDisplay.title' | translate"
 											[caption]="'device.smartAssist.intelligentScreen.keepMyDisplay.caption' | translate"
@@ -707,8 +717,9 @@
 													[value]="intelligentScreen.readingOrBrowsingTime"
 													[ariaLabel]="'display dimmer time adjustment'"
 													[isDisabled]="!intelligentScreen.isReadingOrBrowsingEnabled"
-													[metricsItem]="'keepMyDisplay'"
-													[metricsValue]="intelligentScreen.readingOrBrowsingTime"
+													[isMetricsEnabled]=true
+													[metricsParent]="metricsParent"
+													[metricsItem]="'slider.intelligent-screen.keep-my-display'"
 													(valueChange)="onDisplayDimTimeChange($event)">
 												</vtr-ui-custom-slider>
 											</div>

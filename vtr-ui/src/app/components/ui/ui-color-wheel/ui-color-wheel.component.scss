@@ -104,30 +104,32 @@
 		margin-left: 4rem;
 	}
 	.enable-button {
-		background: $gradient_main;
-		border-radius: 0.5rem;
+		background: $blueFill;
+		border-radius: 2rem;
 		color: $light;
 		font-size: $fontsize_sm;
-		font-weight: 500;
-		margin-left: -3rem;
-		min-width: 14rem;
 		text-align: center;
 		font-weight: $weight_bold;
-		height: 4.88rem;
+		height: 4rem;
+		padding: 0rem 2rem;
+		letter-spacing: 0.1rem;
 		span {
 			display: inline-block;
-			padding: 0.6rem 0rem;
+		}
+		&:hover {
+			background: $blueHover;
 		}
 		&:focus{
-			outline: 1px solid $blueFill !important;
+			outline: 1px solid $blueHover !important;
 		}
 		&::before{
 			display: none !important;
 		}
 	}
 	.disable-button {
-		background: $gaming_shade;
+		background: $gaming_shade !important;
 		box-shadow: none!important;
+		pointer-events: none;
 	}
 	.backColorDpiv {
 		height: 3rem;

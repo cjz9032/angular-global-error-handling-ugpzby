@@ -10,6 +10,17 @@
 		//background: linear-gradient($gradient_angle, $main_darkest 0%, $main_darker 100%);
 		background: $gaming_darkest;
 		box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
+		@media #{$white-on-black} {
+			box-shadow: none;
+			@include white-border;
+			border-bottom: none;
+		}
+		@media #{$black-on-white} {
+			box-shadow: none;
+			@include black-border;
+			border-bottom: none;
+		}
+
 
 		.title {
 			color: $light;
@@ -123,6 +134,14 @@
 				padding: 1rem;
 				border-radius: 1.5rem;
 				background: linear-gradient($gradient_angle_reverse, $main_darkest 0%, $main_darker 100%);
+				@media #{$high-contrast} {
+					border:0.1rem solid $light;
+					background:none;
+				}
+				@media #{$black-on-white} {
+					border:0.1rem solid $dark;
+					background:none;
+				}
 
 				::ng-deep .mat-progress-bar-fill::after {
 					background: linear-gradient(90deg, $go 0%, $go 100%);
@@ -144,16 +163,22 @@
 						margin-top: 0;
 
 						@media #{$high-contrast} {
-							background: $light !important;
+							background: $light;
 						}
 						@media #{$black-on-white} {
-							background: $dark !important;
+							background: $dark;
 						}
-
 						&.bg-info {
 							background: linear-gradient(90deg, $go_light 0%, $go_dark 100%) !important;
 						}
 					}
+					@media #{$high-contrast} {
+						border: 0.1rem solid $light;
+					}
+					@media #{$black-on-white} {
+						border: 0.1rem solid $dark;
+					}
+					
 				}
 			}
 		}

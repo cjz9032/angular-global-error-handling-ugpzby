@@ -11,20 +11,11 @@
 		automationId="[backlight.title, backlight.description.base]">
 		<div class="row backlight-modes-list"
 			aria-label="backlight mode list, select using arrow keys">
-			<!-- <vtr-ui-circle-radio-with-checkbox *ngFor="let mode of modes"
-				[theme]="'white'"
-				[radioId]="'backlightMode' + mode.value | removeSpace"
-				[group]="'backlight'"
-				[label]="mode.title | translate"
-				[value]="mode.value"
-				[checked]="mode.value === currentMode"
-				(optionChange)="updateMode(mode.value)"
-				[textId]="'myDevice-settings-inputAccessories-backlight-thinkpad'">
-			</vtr-ui-circle-radio-with-checkbox> -->
 			<vtr-ui-circle-radio-with-checkbox-list [groupName]="'optimize-microphone-radio-group'"
-					(optionChange)="onBacklightRadioChange($event)"
-					[radioDetails]="kbBacklightUIModel">
-				</vtr-ui-circle-radio-with-checkbox-list>
+				[sendMetrics]=true
+				(optionChange)="onBacklightRadioChange($event)"
+				[radioDetails]="kbBacklightUIModel">
+			</vtr-ui-circle-radio-with-checkbox-list>
 		</div>
 	</vtr-ui-row-switch>
 </div>

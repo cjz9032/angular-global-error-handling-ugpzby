@@ -19,6 +19,7 @@ import { BatteryGaugeReset } from 'src/app/data-models/device/battery-gauge-rese
 import { PowerService } from 'src/app/services/power/power.service';
 import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.model';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
+import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 
 declare var Windows;
 
@@ -61,6 +62,11 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	bctInfoSubscription: Subscription;
 	airplaneModeSubscription: Subscription;
 	expressChargingSubscription: Subscription;
+
+	activatedRouteSubscription: Subscription;
+
+	public readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
+	public readonly metricsType = CommonMetricsModel.ItemType;
 
 	constructor(
 		private modalService: NgbModal,
@@ -162,7 +168,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		// temp
 		this.registerBatteryEvents();
 
-		this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
+		this.activatedRouteSubscription = this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
 			if (params.has('batterydetail')) {
 				const showBatteryDetail = this.activatedRoute.snapshot.queryParams.batterydetail;
 				this.getBatteryDetails(showBatteryDetail);
@@ -202,6 +208,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		}
 		if(this.expressChargingSubscription) {
 			this.expressChargingSubscription.unsubscribe();
+		}
+		if(this.activatedRouteSubscription) {
+			this.activatedRouteSubscription.unsubscribe();
 		}
 		this.batteryService.stopMonitor();
 	}
@@ -497,6 +506,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	 * @param content: battery Information
 	 */
 	public showDetailModal(content: any): void {
+		this.batteryService.currentOpenModal = 'battery-details';
 		if(!this.batteryService.isBatteryModalShown) {
 			this.batteryService.isBatteryModalShown = true;
 			this.modalService

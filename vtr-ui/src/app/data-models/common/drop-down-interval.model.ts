@@ -15,4 +15,9 @@ export interface DropDownInterval {
 	 * value to show in list when drop down is open
 	 */
 	text: string;
+	/**
+	 * value to sent in Metrics
+	 */
+	metricsValue: any;
+
 }

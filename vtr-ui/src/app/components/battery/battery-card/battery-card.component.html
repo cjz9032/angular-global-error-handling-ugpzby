@@ -138,10 +138,10 @@
 
 		<div class="pt-4 text-center"
 			[class.btn-disabled]="disableBatteryDetails">
-			<vtr-ui-button metricsItem="See.Battery.Details"
-				metricsParent="Page.Settings"
-				metricsEvent="FeatureClick"
-				[isFullWidth]="true"
+			<vtr-ui-button [isFullWidth]="true"
+				[metricsItem]="'btn.see-battery-details'"
+				[metricsParent]="metricsParent"
+				[metricsEvent]="metricsType"
 				(click)="showDetailModal(batteryDetail)"
 				[isDisabled]="disableBatteryDetails"
 				id="myDevice-settings-battery-details-btn"

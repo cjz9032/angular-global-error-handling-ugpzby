@@ -1,14 +1,13 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { TranslateService } from '@ngx-translate/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'vtr-modal-scan-failure',
 	templateUrl: './modal-scan-failure.component.html',
 	styleUrls: ['./modal-scan-failure.component.scss']
 })
-export class ModalScanFailureComponent implements OnInit {
+export class ModalScanFailureComponent {
 
 	@Input() supportUrl: string;
 	@Input() hasFailedRbsDevice: boolean;
@@ -17,13 +16,10 @@ export class ModalScanFailureComponent implements OnInit {
 	rbsDevices: any;
 	private failedRbsDevices: Array<string>;
 
-	constructor(public activeModal: NgbActiveModal, private translate: TranslateService,
-		private route: ActivatedRoute,
+	constructor(public activeModal: NgbActiveModal,
 		private router: Router) {
 		this.failedRbsDevices = [];
 	}
-
-	ngOnInit() { }
 
 	// closes modal
 	closeModal() {
@@ -69,8 +65,8 @@ export class ModalScanFailureComponent implements OnInit {
 
 	// Goes to RBS page, passing defective device list to be selected when RBS page loads
 	goToRBSPage() {
-		this.router.navigate(['recover-bad-sectors'], {
-			relativeTo: this.route,
+		// Using absolute URL, since the user could be outside HWScan when this popup is shown.
+		this.router.navigate(['/hardware-scan/recover-bad-sectors'], {
 			queryParams: {
 				failedDevices: this.failedRbsDevices
 			},

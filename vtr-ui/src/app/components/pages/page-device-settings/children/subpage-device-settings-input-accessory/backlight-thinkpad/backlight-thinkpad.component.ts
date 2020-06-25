@@ -198,6 +198,7 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 							this.currentMode = this.compare(res);
 							this.cacheData.currentMode = this.currentMode;
 							this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData)
+							this.updateBacklightSelection();
 						}
 					}).catch(error => {
 						this.logger.error('BacklightThinkpadComponent:GetKBDBacklightStatus', error.message);
@@ -271,7 +272,7 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private compare(value: string): BacklightStatusEnum {
+	compare(value: string): BacklightStatusEnum {
 		switch (value) {
 			case BacklightStatusEnum.AUTO:
 				return BacklightStatusEnum.AUTO;
@@ -294,8 +295,9 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 		if (response && response.length > 0) {
 			this.kbBacklightUIModel = [];
 			response.forEach(mode => {
+				const value = mode.value.toLocaleLowerCase();
 				this.kbBacklightUIModel.push({
-					componentId: `backlightMode${mode.value.toLocaleLowerCase()}`.replace(/\s/g, ''),
+					componentId: `backlightMode${value}`.replace(/\s/g, ''),
 					label: mode.title,
 					value: mode.value,
 					isChecked: mode.value === this.currentMode,
@@ -304,23 +306,26 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 					customIcon: mode.value,
 					hideIcon: true,
 					processLabel: true,
+					metricsItem: `radio.kb-backlight.${value}`
 				});
+			});
+		}
+	}
+
+	updateBacklightSelection() {
+		if (this.kbBacklightUIModel && this.kbBacklightUIModel.length > 0) {
+			this.kbBacklightUIModel.forEach(element => {
+				if (element.value === this.currentMode) {
+					element.isChecked = true;
+				} else {
+					element.isChecked = false;
+				}
 			});
 		}
 	}
 
 
 	onBacklightRadioChange($event: UiCircleRadioWithCheckBoxListModel) {
-		// if ($event) {
-		// 	const backlight: BacklightMode = {
-		// 		checked: true,
-		// 		value: $event.value as BacklightStatusEnum,
-		// 		disabled: false,
-		// 		title: $event.label
-		// 	};
-		// 	this.update$.next(backlight);
-		// }
-
 		this.currentMode = $event.value as BacklightStatusEnum;
 		this.cacheData.currentMode = this.currentMode;
 		this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData)
@@ -332,5 +337,4 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 			this.setAutomaticKBDBacklight(false);
 		}
 	}
-
 }

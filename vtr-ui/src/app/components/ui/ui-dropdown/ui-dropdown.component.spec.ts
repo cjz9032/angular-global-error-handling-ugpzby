@@ -11,37 +11,43 @@ const interval = [{
 	name: 'Always on',
 	value: 0,
 	placeholder: '',
-	text: 'Always on'
+	text: 'Always on',
+	metricsValue: {}
 },
 {
 	name: '30',
 	value: 1,
 	placeholder: 'seconds',
-	text: '30 seconds'
+	text: '30 seconds',
+	metricsValue: {}
 },
 {
 	name: '1',
 	value: 2,
 	placeholder: 'minute',
-	text: '1 minute'
+	text: '1 minute',
+	metricsValue: {}
 },
 {
 	name: '15',
 	value: 7,
 	placeholder: 'minutes',
-	text: '15 minutes'
+	text: '15 minutes',
+	metricsValue: {}
 },
 {
 	name: 'Never',
 	value: 9,
 	placeholder: '',
-	text: 'Never'
+	text: 'Never',
+	metricsValue: {}
 },
 {
 	name: 'Half time of display off timer',
 	value: 10,
 	placeholder: '',
-	text: 'Half time of display off timer'
+	text: 'Half time of display off timer',
+	metricsValue: {}
 }]
 
 xdescribe('UiDropdownComponent', () => {

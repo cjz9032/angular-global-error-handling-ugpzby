@@ -2,6 +2,7 @@
 	class="vtr-backlight">
 	<div *ngSwitchCase="backlightLevelEnum.ONE_LEVEL">
 		<vtr-ui-row-switch [title]="'device.deviceSettings.inputAccessories.backlight.title' | translate"
+			[isMetricsEnabled]=false
 			componentName="Input Accessories"
 			[caption]="'device.deviceSettings.inputAccessories.backlight.description.base' | translate"
 			[leftIcon]="['fal', 'keyboard']"
@@ -41,6 +42,7 @@
 	<!--	</div>-->
 	<div *ngSwitchCase="backlightLevelEnum.TWO_LEVELS_AUTO">
 		<vtr-ui-row-switch [title]="'device.deviceSettings.inputAccessories.backlight.title' | translate"
+			[isMetricsEnabled]=false
 			componentName="Input Accessories"
 			[caption]="'device.deviceSettings.inputAccessories.backlight.description.auto' | translate"
 			[leftIcon]="['fal', 'keyboard']"
