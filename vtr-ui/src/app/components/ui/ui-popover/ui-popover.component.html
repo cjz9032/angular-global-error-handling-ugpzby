@@ -17,19 +17,13 @@
 		<hr>
 		<div class="row" >
 			<div class="action-container">
-			<a id="{{automationId+'_restart_popup_ok_btn'}}" attr.aria-label="gaming popup ok" tabindex="1"
-				class="btn enable-button" vtrMetrics
-				[metricsItem]="'popover_ok'"
-				metricsEvent="featureClick" metricsParent="Gaming.Dashboard"
-				(click)="close()"
-				(keyup.enter)="close()" (keydown)="runappKeyup($event)"
-				 role="button">{{'gaming.dashboard.device.legionEdge.popup.button' | translate}}</a>
-				</div>
+			<vtr-ui-button [linkId]="automationId+'_restart_popup_ok_btn'" [tabIndex]="1" [ariaLabel]="'gaming popup'"
+				metricsEvent="featureClick" [metricsItem]="'popover_ok'" metricsParent="Gaming.Dashboard"
+				[label]="'gaming.dashboard.device.legionEdge.popup.button' | translate" 
+				(keydown)="runappKeyup($event)" [btnHeight]=true [isGradient]=true (keyup.enter)="close()" (click)="close()">
+			</vtr-ui-button>
+			</div>
 		</div>
 	</div>
-	<!--Need input from Raghu on this-->
-	<!-- <span id="restart_popup" style="visibility: hidden;">{{'gaming.dashboard.device.legionEdge.popup.text' | translate}}</span>
-	<span id="popup_close" style="visibility: hidden;">close</span> -->
-
 </ui-popover>
 
