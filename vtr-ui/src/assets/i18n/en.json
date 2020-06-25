@@ -2496,6 +2496,8 @@
 			"fri": "Friday",
 			"sat": "Saturday",
 			"sun": "Sunday",
+			"am": "AM",
+			"pm": "PM",
 			"tooltipText": "By keeping this toggle enabled, system performance and security scan will be automatically initiated on your set date and time."
 		},
 		"scanningPage": {

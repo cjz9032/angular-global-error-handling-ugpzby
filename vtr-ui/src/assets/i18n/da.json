@@ -3329,6 +3329,8 @@
             "fri": "Fredag",
             "sat": "Lørdag",
             "sun": "Søndag",
+            "am": "AM",
+            "pm": "PM",
             "tooltipText": "Når du aktiverer denne funktion, startes systemets scanning af ydeevne og sikkerhed automatisk på angivet dato og klokkeslæt."
         },
         "scanningPage": {

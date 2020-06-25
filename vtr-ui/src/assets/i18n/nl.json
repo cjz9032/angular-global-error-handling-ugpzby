@@ -3329,6 +3329,8 @@
             "fri": "Vrijdag",
             "sat": "Zaterdag",
             "sun": "Zondag",
+            "am": "VM",
+            "pm": "NM",
             "tooltipText": "Als deze schakeloptie is ingeschakeld, worden de controle van de systeemprestaties en de beveiligingsscan automatisch op de door u ingestelde datum en tijd gestart."
         },
         "scanningPage": {

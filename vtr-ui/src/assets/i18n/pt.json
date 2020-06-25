@@ -3329,6 +3329,8 @@
             "fri": "Sexta-feira",
             "sat": "Sábado",
             "sun": "Domingo",
+            "am": "AM",
+            "pm": "PM",
             "tooltipText": "Ao manter esta alternância ativada, a análise do desempenho e da segurança do sistema serão iniciados automaticamente na data e hora que definir."
         },
         "scanningPage": {

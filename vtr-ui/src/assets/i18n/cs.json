@@ -3041,8 +3041,8 @@
         "type": "Typ",
         "hours": "Hodin",
         "minutes": "Minut",
-        "am": "dop.",
-        "pm": "odp.",
+        "am": "dop",
+        "pm": "odp",
         "previousResult": "Předchozí výsledky",
         "lastScanOn": "Minulá kontrola",
         "result": "Výsledek",
@@ -3329,6 +3329,8 @@
             "fri": "Friday",
             "sat": "Saturday",
             "sun": "Sunday",
+            "am": "dop",
+            "pm": "odp",
             "tooltipText": "Enable this toggle to automatically initiate a system performance scan on your selected date and time."
         },
         "scanningPage": {
