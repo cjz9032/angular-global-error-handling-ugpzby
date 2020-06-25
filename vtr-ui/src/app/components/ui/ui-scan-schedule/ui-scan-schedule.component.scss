@@ -369,10 +369,22 @@ vtr-ui-smart-performance-scan-summary {
 						}
                         .heading {
                             h3, h2{
+								text-align: left;
 								font-size: $fontsize_sm;
 								color: $main_shade !important;
 								letter-spacing: 0;
-								font-weight: $weight_bold;
+								font-weight: $weight_bold;									
+								@media #{$breakpoint_lg}{				
+									font-size: $fontsize_xs;
+								}	
+								@media #{$breakpoint_md}{				
+									font-size: $fontsize_xs2;
+								}	
+								@media #{$breakpoint_sm}{				
+									font-size:1.1rem;
+									letter-spacing: -0.02rem;									
+									margin-bottom: 0;
+								}
                             }
                             .icon{
                                 color: $menu_hover;
