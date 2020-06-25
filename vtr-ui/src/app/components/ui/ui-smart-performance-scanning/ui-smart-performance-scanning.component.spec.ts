@@ -32,9 +32,10 @@ fdescribe("UiSmartPerformanceScanningComponent", () => {
 	let shellService: VantageShellService;
 	let smartPerformanceService: SmartPerformanceService;
 	let logger: LoggerService;
-	let modalService: NgbModal;
+    let modalService: NgbModal;
+    var originalTimeout;
 
-	beforeEach(async(() => {
+	beforeEach(() => {
 		TestBed.configureTestingModule({
 			schemas: [NO_ERRORS_SCHEMA],
 			declarations: [UiSmartPerformanceScanningComponent],
@@ -46,21 +47,19 @@ fdescribe("UiSmartPerformanceScanningComponent", () => {
 				NgbModal
 			],
 			imports: [TranslationModule, NgbModule]
-		});
-	}));
+        });
+        fixture = TestBed.createComponent(UiSmartPerformanceScanningComponent);
+		component = fixture.componentInstance;
+    });
 
 	it("should create", () => {
-		fixture = TestBed.createComponent(UiSmartPerformanceScanningComponent);
-		component = fixture.componentInstance;
 		shellService = TestBed.get(VantageShellService);
 		spyOn(component, "GetCurrentScanninRollingTexts");
 		fixture.detectChanges();
 		expect(component).toBeTruthy();
 	});
 
-	it("should call updateScanResponse -category - 100 & subcategory -101", async(() => {
-		fixture = TestBed.createComponent(UiSmartPerformanceScanningComponent);
-        component = fixture.componentInstance;
+	it("should call updateScanResponse -category - 100 & subcategory -101", () => {
         component.spSubCategoryenum = SPSubCategory;
         component.spCategoryenum = SPCategory;
         spyOn(component, "GetCurrentScanninRollingTexts");
@@ -71,11 +70,9 @@ fdescribe("UiSmartPerformanceScanningComponent", () => {
         event.payload.status.subcategory = 101;
         component.updateScanResponse(event);
         expect(component.activegroup).toEqual('Tune up performance')
-    }));
+    });
 
-    it("should call updateScanResponse -category - 100 & subcategory -102", async(() => {
-		fixture = TestBed.createComponent(UiSmartPerformanceScanningComponent);
-        component = fixture.componentInstance;
+    it("should call updateScanResponse -category - 100 & subcategory -102", () => {
         component.spSubCategoryenum = SPSubCategory;
         component.spCategoryenum = SPCategory;
         const spy = spyOn(component, "GetCurrentScanninRollingTexts");
@@ -86,11 +83,9 @@ fdescribe("UiSmartPerformanceScanningComponent", () => {
         event.payload.status.subcategory = 102;
         component.updateScanResponse(event);
         expect(spy).toHaveBeenCalled()
-    }));
+    });
 
-    it("should call updateScanResponse -category - 100 & subcategory -103", async(() => {
-		fixture = TestBed.createComponent(UiSmartPerformanceScanningComponent);
-        component = fixture.componentInstance;
+    it("should call updateScanResponse -category - 100 & subcategory -103", () => {
         component.spSubCategoryenum = SPSubCategory;
         component.spCategoryenum = SPCategory;
         const spy = spyOn(component, "GetCurrentScanninRollingTexts");
@@ -101,11 +96,9 @@ fdescribe("UiSmartPerformanceScanningComponent", () => {
         event.payload.status.subcategory = 103;
         component.updateScanResponse(event);
         expect(spy).toHaveBeenCalled()
-    }));
+    });
 
-    it("should call updateScanResponse -category - 100 & subcategory -104", async(() => {
-		fixture = TestBed.createComponent(UiSmartPerformanceScanningComponent);
-        component = fixture.componentInstance;
+    it("should call updateScanResponse -category - 100 & subcategory -104", () => {
         component.spSubCategoryenum = SPSubCategory;
         component.spCategoryenum = SPCategory;
         const spy = spyOn(component, "GetCurrentScanninRollingTexts");
@@ -116,11 +109,9 @@ fdescribe("UiSmartPerformanceScanningComponent", () => {
         event.payload.status.subcategory = 104;
         component.updateScanResponse(event);
         expect(spy).toHaveBeenCalled()
-    }));
+    });
 
-    it("should call updateScanResponse -category - 100 & subcategory -105", async(() => {
-		fixture = TestBed.createComponent(UiSmartPerformanceScanningComponent);
-        component = fixture.componentInstance;
+    it("should call updateScanResponse -category - 100 & subcategory -105", () => {
         component.spSubCategoryenum = SPSubCategory;
         component.spCategoryenum = SPCategory;
         const spy = spyOn(component, "GetCurrentScanninRollingTexts");
@@ -131,11 +122,9 @@ fdescribe("UiSmartPerformanceScanningComponent", () => {
         event.payload.status.subcategory = 105;
         component.updateScanResponse(event);
         expect(spy).toHaveBeenCalled()
-    }));
+    });
     
-    it("should call updateScanResponse -category - 200 & subcategory - 201", async(() => {
-		fixture = TestBed.createComponent(UiSmartPerformanceScanningComponent);
-        component = fixture.componentInstance;
+    it("should call updateScanResponse -category - 200 & subcategory - 201", () => {
         component.spSubCategoryenum = SPSubCategory;
         component.spCategoryenum = SPCategory;
         spyOn(component, "GetCurrentScanninRollingTexts");
@@ -146,11 +135,9 @@ fdescribe("UiSmartPerformanceScanningComponent", () => {
         event.payload.status.subcategory = 201;
         component.updateScanResponse(event);
         expect(component.activegroup).toEqual('Internet performance')
-    }));
+    });
 
-    it("should call updateScanResponse -category - 200 & subcategory - 202", async(() => {
-		fixture = TestBed.createComponent(UiSmartPerformanceScanningComponent);
-        component = fixture.componentInstance;
+    it("should call updateScanResponse -category - 200 & subcategory - 202", () => {
         component.spSubCategoryenum = SPSubCategory;
         component.spCategoryenum = SPCategory;
         const spy = spyOn(component, "GetCurrentScanninRollingTexts");
@@ -161,11 +148,9 @@ fdescribe("UiSmartPerformanceScanningComponent", () => {
         event.payload.status.subcategory = 202;
         component.updateScanResponse(event);
         expect(spy).toHaveBeenCalled()
-    }));
+    });
 
-    it("should call updateScanResponse -category - 200 & subcategory - 203", async(() => {
-		fixture = TestBed.createComponent(UiSmartPerformanceScanningComponent);
-        component = fixture.componentInstance;
+    it("should call updateScanResponse -category - 200 & subcategory - 203", () => {
         component.spSubCategoryenum = SPSubCategory;
         component.spCategoryenum = SPCategory;
         const spy = spyOn(component, "GetCurrentScanninRollingTexts");
@@ -176,11 +161,9 @@ fdescribe("UiSmartPerformanceScanningComponent", () => {
         event.payload.status.subcategory = 203;
         component.updateScanResponse(event);
         expect(spy).toHaveBeenCalled()
-    }));
+    });
 
-    it("should call updateScanResponse -category - 200 & subcategory - 204", async(() => {
-		fixture = TestBed.createComponent(UiSmartPerformanceScanningComponent);
-        component = fixture.componentInstance;
+    it("should call updateScanResponse -category - 200 & subcategory - 204", () => {
         component.spSubCategoryenum = SPSubCategory;
         component.spCategoryenum = SPCategory;
         const spy = spyOn(component, "GetCurrentScanninRollingTexts");
@@ -191,11 +174,9 @@ fdescribe("UiSmartPerformanceScanningComponent", () => {
         event.payload.status.subcategory = 204;
         component.updateScanResponse(event);
         expect(spy).toHaveBeenCalled()
-    }));
+    });
 
-    it("should call updateScanResponse -category - 200 & subcategory - 205", async(() => {
-		fixture = TestBed.createComponent(UiSmartPerformanceScanningComponent);
-        component = fixture.componentInstance;
+    it("should call updateScanResponse -category - 200 & subcategory - 205", () => {
         component.spSubCategoryenum = SPSubCategory;
         component.spCategoryenum = SPCategory;
         const spy = spyOn(component, "GetCurrentScanninRollingTexts");
@@ -206,11 +187,9 @@ fdescribe("UiSmartPerformanceScanningComponent", () => {
         event.payload.status.subcategory = 205;
         component.updateScanResponse(event);
         expect(spy).toHaveBeenCalled()
-    }));
+    });
     
-    it("should call updateScanResponse -category - 300 -& subcategory - 301", async(() => {
-		fixture = TestBed.createComponent(UiSmartPerformanceScanningComponent);
-        component = fixture.componentInstance;
+    it("should call updateScanResponse -category - 300 -& subcategory - 301", () => {
         component.spSubCategoryenum = SPSubCategory;
         component.spCategoryenum = SPCategory;
         spyOn(component, "GetCurrentScanninRollingTexts");
@@ -221,11 +200,9 @@ fdescribe("UiSmartPerformanceScanningComponent", () => {
         event.payload.status.subcategory = 301;
         component.updateScanResponse(event);
         expect(component.activegroup).toEqual('Malware & Security')
-    }));
+    });
     
-    it("should call updateScanResponse -category - 300 & subcategory - 302", async(() => {
-		fixture = TestBed.createComponent(UiSmartPerformanceScanningComponent);
-        component = fixture.componentInstance;
+    it("should call updateScanResponse -category - 300 & subcategory - 302", () => {
         component.spSubCategoryenum = SPSubCategory;
         component.spCategoryenum = SPCategory;
         const spy = spyOn(component, "GetCurrentScanninRollingTexts");
@@ -236,11 +213,9 @@ fdescribe("UiSmartPerformanceScanningComponent", () => {
         event.payload.status.subcategory = 302;
         component.updateScanResponse(event);
         expect(spy).toHaveBeenCalled()
-    }));
+    });
 
-    it("should call updateScanResponse -category - 300 & subcategory - 303", async(() => {
-		fixture = TestBed.createComponent(UiSmartPerformanceScanningComponent);
-        component = fixture.componentInstance;
+    it("should call updateScanResponse -category - 300 & subcategory - 303", () => {
         component.spSubCategoryenum = SPSubCategory;
         component.spCategoryenum = SPCategory;
         const spy = spyOn(component, "GetCurrentScanninRollingTexts");
@@ -251,11 +226,9 @@ fdescribe("UiSmartPerformanceScanningComponent", () => {
         event.payload.status.subcategory = 303;
         component.updateScanResponse(event);
         expect(spy).toHaveBeenCalled()
-    }));
+    });
 
-    it("should call updateScanResponse -category - 300 & subcategory - 304", async(() => {
-		fixture = TestBed.createComponent(UiSmartPerformanceScanningComponent);
-        component = fixture.componentInstance;
+    it("should call updateScanResponse -category - 300 & subcategory - 304", () => {
         component.spSubCategoryenum = SPSubCategory;
         component.spCategoryenum = SPCategory;
         const spy = spyOn(component, "GetCurrentScanninRollingTexts");
@@ -266,11 +239,9 @@ fdescribe("UiSmartPerformanceScanningComponent", () => {
         event.payload.status.subcategory = 304;
         component.updateScanResponse(event);
         expect(spy).toHaveBeenCalled()
-    }));
+    });
 
-    it("should call updateScanResponse -category - 300 & subcategory - 305", async(() => {
-		fixture = TestBed.createComponent(UiSmartPerformanceScanningComponent);
-        component = fixture.componentInstance;
+    it("should call updateScanResponse -category - 300 & subcategory - 305", () => {
         component.spSubCategoryenum = SPSubCategory;
         component.spCategoryenum = SPCategory;
         const spy = spyOn(component, "GetCurrentScanninRollingTexts");
@@ -281,5 +252,15 @@ fdescribe("UiSmartPerformanceScanningComponent", () => {
         event.payload.status.subcategory = 305;
         component.updateScanResponse(event);
         expect(spy).toHaveBeenCalled()
-    }));
+    });
+
+    it("should call GetCurrentScanninRollingTexts when passing value", () => {
+        component.activegroup = 'Tune up performance';
+        component.GetCurrentScanninRollingTexts('Look for junk in 85 locations');
+        const spyToggle = spyOn(component, "toggle");
+        const spyGetCurrentScanninRollingTexts = spyOn(component, "GetCurrentScanninRollingTexts");
+        fixture.detectChanges();
+        expect(spyGetCurrentScanninRollingTexts).toHaveBeenCalled();
+    });
+
 });
