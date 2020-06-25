@@ -73,7 +73,6 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 					this.topRowKeyObj.primaryFunCap = res[2];
 					this.getAllStatuses();
 					this.setTopRowStatusCallback();
-					this.updateFunctionLockUIModel()
 					this.logger.error('TopRowFunctionsComponent.getFunctionCapabilities', this.topRowKeyObj);
 				});
 			}
@@ -115,6 +114,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 		this.keyboardService.getFnLockStatus().then(res => {
 			this.logger.info('TopRowFunctionsComponent.getStatusOfFnLock', res);
 			this.topRowKeyObj.fnLockStatus = res;
+			this.updateFunctionLockUIModel()
 		});
 	}
 	public getStatusOfStickyFun() {
@@ -128,6 +128,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 		this.keyboardService.getPrimaryFunctionStatus().then(res => {
 			this.logger.info('TopRowFunctionsComponent.getStatusOfPrimaryFun', res);
 			this.topRowKeyObj.primaryFunStatus = res;
+			this.updateFunctionLockUIModel()
 		});
 	}
 
