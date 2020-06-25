@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { HardwareScanResultService } from './hardware-scan-result.service.service';
+import { HardwareScanResultService } from './hardware-scan-result.service';
 
 describe('HardwareScanUtilsService', () => {
   let service: HardwareScanResultService;

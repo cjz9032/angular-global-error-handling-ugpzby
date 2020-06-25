@@ -42,7 +42,8 @@ const dataInfo: BatteryDetail[] = [
 		temperature: 34,
 		voltage: 10.843,
 		wattage: 9,
-		isTemporaryChargeMode: false
+		isTemporaryChargeMode: false,
+		isDlsPiCapable: false
 	}
 ];
 
