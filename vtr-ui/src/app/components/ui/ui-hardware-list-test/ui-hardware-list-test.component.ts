@@ -37,13 +37,11 @@ export class UiHardwareListTestComponent implements OnInit {
 	}
 
 	onStateChange(itemId, state) {
-		if (state !== 2) {
-			const item = this.items.find(item => item.id === itemId)
-			item.tests.forEach(test => test.selected = state);
-			item.indeterminate = false;
-			item.selected = state;
-			this.selectAny.emit();
-		}
+		const item = this.items.find(item => item.id === itemId)
+		item.tests.forEach(test => test.selected = state);
+		item.indeterminate = false;
+		item.selected = state;
+		this.selectAny.emit();
 	}
 
 	public onCheckChildren(itemId: any) {
@@ -51,14 +49,14 @@ export class UiHardwareListTestComponent implements OnInit {
 		const children = item.tests.length;
 		const childrenSelected = item.tests.filter(test => test.selected).length;
 		if (childrenSelected === 0) {
-			this.items.find(item => item.id === itemId).selected = false;
-			this.items.find(item => item.id === itemId).indeterminate = false;
+			item.selected = false;
+			item.indeterminate = false;
 		} else if (children > childrenSelected) {
-			this.items.find(item => item.id === itemId).selected = false;
-			this.items.find(item => item.id === itemId).indeterminate = true;
+			item.selected = false;
+			item.indeterminate = true;
 		} else {
-			this.items.find(item => item.id === itemId).selected = true;
-			this.items.find(item => item.id === itemId).indeterminate = false;
+			item.selected = true;
+			item.indeterminate = false;
 		}
 
 		this.selectAny.emit();
