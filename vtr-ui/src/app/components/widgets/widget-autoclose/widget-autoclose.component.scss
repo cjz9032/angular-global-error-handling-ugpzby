@@ -9,21 +9,21 @@
 		padding: 2rem;
 		li.add-icon {
 			div:nth-child(1) {
-				background: $gaming_white60;
+				background: $gaming_square_button20;
 				line-height: 4.5rem;
 				cursor: pointer;
 				text-align: center;
 				border-radius: 0.3rem;
 				@media #{$black-on-white} {
-					background-color: $high-contrast-grey;
-					border: 0.1rem solid $dark;
+					background-color: $screen_dark_50;
+					// border: 0.1rem solid $dark;
 				}
 				@media #{$white-on-black} {
-					background-color: $high-contrast-grey;
-					border: 0.1rem solid $light;
+					background-color: $screen_dark_50;
+					// border: 0.1rem solid $light;
 				}
 				&:hover {
-					background: $gaming_white80;
+					background: $gaming_square_button10;
 				}
 				&:active {
 					transform: scale(0.95);
