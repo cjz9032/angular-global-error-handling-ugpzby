@@ -129,11 +129,12 @@ $gray_out: #99A4AE;
 $QA_dark: #194A65;
 
 // updated button color, hover & active effect
-$btn_primary_color: #0073ff;
-$btn_secondary_color: #2486ff;
+$btn_primary_color: #0160D6;
+$btn_secondary_color: #257EFF;
 $gaming_white60: rgba(251, 253, 255, 0.6);//as per VAN-11517
 $gaming_white80: rgba(251, 253, 255, 0.8);// as per VAN-11517
-
+$gaming_square_button20: rgba(251,253,255,0.20);// as per VAN-19064
+$gaming_square_button10:  rgba(251,253,255,0.10);// as per VAN-19064
 $screen_dark_0: rgba(0, 0, 0, 0);
 $screen_dark_05: rgba(0, 0, 0, 0.05);
 $screen_dark_10: rgba(0, 0, 0, 0.1);
@@ -416,6 +417,7 @@ $mediaquery_XXL350X: "only screen and (min-width: 1601px) and (max-width: 4000px
 
 /*media query for high contrast mode*/
 $high-contrast-grey: #c0c0c0;
+$high-contrast-magenta: #FF00FE;
 $high-contrast: "screen and (-ms-high-contrast)";
 $black-on-white: "screen and (-ms-high-contrast: black-on-white)";
 $white-on-black: "screen and (-ms-high-contrast: white-on-black)";
