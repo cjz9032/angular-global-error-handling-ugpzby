@@ -489,19 +489,28 @@ vtr-ui-smart-performance-scan-summary {
 								top:5.5rem;
 							}
 						}
-                        .heading {						
+                        .heading {	
+							max-width:60%;
+							width:60%;	
+							text-align:left;
+							word-break:break-all;		
                             h3, h2{
 								text-align: left;
 								font-size: $fontsize_sm;
-								text-align: left;
 								color: $main_shade !important;
 								letter-spacing: 0;
 								font-weight: $weight_bold;
-								@media #{$breakpoint_sm}{
-									font-size: 1.2rem;
-									letter-spacing: -0.02rem;
-									margin-bottom: 0;
+								@media #{$breakpoint_lg}{				
+									font-size: $fontsize_xs!important;;
+								}	
+								@media #{$breakpoint_md}{				
+									font-size: $fontsize_xs2!important;
 								}
+								 @media #{$breakpoint_sm}{
+								 	font-size: 1.1rem!important;;
+								 	letter-spacing: -0.02rem;
+								 	margin-bottom: 0;
+								 }
                             }
                             .icon{
 								color: $menu_hover;
@@ -606,7 +615,9 @@ vtr-ui-smart-performance-scan-summary {
                         }
                     }
                     .status-text{
-						margin-top: 2.2rem;
+						margin-top: 2rem!important;
+						width:36%;
+						max-width:36%;
 						@media #{$breakpoint_sm}{
 							margin-top: 1.25rem;
 						}
@@ -617,11 +628,28 @@ vtr-ui-smart-performance-scan-summary {
 							color: $shade_dark;
 							right: 5rem;
 							padding-right:2rem;
-							letter-spacing: 0;
-							@media #{$breakpoint_sm}{								
-								font-size: 1.2rem;
+							letter-spacing: 0;							
+							word-break:break-all;
+							@media #{$breakpoint_lg}{
+								right: 1.5rem;					
+								font-size: $fontsize_xs;
+								top: 36%;
 							}
-							// top: 40%;
+							@media #{$breakpoint_md}{
+								top: 36%;								
+								right: 1.5rem;								
+								font-size: $fontsize_xs2;
+							}
+							@media #{$breakpoint_xl}{
+								right: 1.5rem;					
+								font-size: $fontsize_xs2;
+								top: 36%;
+							}
+							@media #{$breakpoint_sm}{
+								top: 32.5%;
+								right: 1.5rem;								
+								font-size: 1.1rem;
+							}
 						}
 						vtr-widget-speedometer {
 							position: absolute;
