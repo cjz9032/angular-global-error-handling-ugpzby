@@ -87,7 +87,7 @@ export class HardwareScanService {
 	private static readonly HARDWARE_SCAN_HYPHOTESIS_CONFIG_NAME: string = 'HardwareScan';
 
 	constructor(shellService: VantageShellService, private commonService: CommonService, private ngZone: NgZone,
-				private translate: TranslateService, private hypSettings: HypothesisService, 
+				private translate: TranslateService, private hypSettings: HypothesisService,
 				private hardwareScanResultService: HardwareScanResultService, private previousResultService: PreviousResultService) {
 		this.hardwareScanBridge = shellService.getHardwareScan();
 
@@ -935,7 +935,7 @@ export class HardwareScanService {
 					}
 				}
 
-				//Calcute Failed Tests 
+				//Calcute Failed Tests
 				this.hardwareScanResultService.countFailedTests(group.testResultList);
 			}
 		}

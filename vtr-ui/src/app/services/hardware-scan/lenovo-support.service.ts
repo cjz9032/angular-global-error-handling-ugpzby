@@ -30,12 +30,12 @@ export class LenovoSupportService {
 		const scanDate =  this.hardwareScanService.getFinalResultStartDate();
 
 		// new e-Ticket url is as follows:
-		//   https://support.lenovo.com/servicerequest?SerialNumber=xxxxxxx&ProblemType=/hardware/repair/&DiagnosticsCode=xxxxxx&DiagnosticsDate=yyyy-MM-dd'T'HH:mm:ss'Z'
+		//   https://support.lenovo.com/servicerequest?SerialNumber=xxxxxxx&ProblemType=/hardware/repair/&DiagnosticsCode=xxxxxx&DiagnosticsDate=yyyy-MM-dd
 		const urlParameters = new HttpParams()
 			.set('SerialNumber', machineSerialNumber)
 			.set('ProblemType', LenovoSupportService.ProblemType)
 			.set('DiagnosticsCode', this.hardwareScanService.getFinalResultCode())
-			.set('DiagnosticsDate', formatDate(scanDate, "yyyy-MM-dd'T'HH:mm:ss'Z'", 'en-US'))
+			.set('DiagnosticsDate', formatDate(scanDate, "yyyy-MM-dd", 'en-US'))
 
 		let url = new URL(LenovoSupportService.ServiceRequestPath, LenovoSupportService.LenovoSupportBaseUrl);
 		url.search = urlParameters.toString();

@@ -25,8 +25,8 @@ export class PreviousResultService {
 	constructor(shellService: VantageShellService,
 				private translate: TranslateService,
 				private commonService: CommonService,
-				private hardwareScanResultService: HardwareScanResultService) { 
-		this.hardwareScanBridge = shellService.getHardwareScan();	
+				private hardwareScanResultService: HardwareScanResultService) {
+		this.hardwareScanBridge = shellService.getHardwareScan();
 	}
 
 	public getLastPreviousResultDate() {
@@ -72,8 +72,7 @@ export class PreviousResultService {
 			previousResults.finalResultCode = response.scanSummary.finalResultCode;
 			previousResults.resultTestsTitle = HardwareScanTestResult.Pass;
 
-			const date = response.scanSummary.ScanDate.toString().replace(/-/g, '/').split('T');
-			previousResults.date = date[0] + ' ' + date[1].slice(0, 8);
+			previousResults.date = new Date(response.scanSummary.ScanDate);
 
 			previousResults.information = response.scanSummary.finalResultCodeDescription;
 			previousResults.items = [];
