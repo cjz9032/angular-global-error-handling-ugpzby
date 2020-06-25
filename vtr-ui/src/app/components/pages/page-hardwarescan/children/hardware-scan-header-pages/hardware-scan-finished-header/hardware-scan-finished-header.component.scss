@@ -8,7 +8,15 @@
 	padding-left: 2.4rem;
 	padding-top: 1rem;
 	padding-bottom: 0.5rem;
-	padding-right: 2.4rem;
+	padding-right: 2.4rem;	
+}
+
+.result-date-description {
+	color: $main_shade;
+	font-size: $fontsize_xs;
+	font-weight: $weight_light;
+	padding-bottom: 1.5rem;
+	padding-left: 2.4rem;
 }
 
 .description-row {
@@ -65,9 +73,7 @@
 	color: $light;
 	font-size: $fontsize_xs2;
 	line-height: 1.5rem;
-	padding-left: 2.4rem;
-	padding-top: 1rem;
-	padding-right: 2.4rem;
+	padding: 1rem 2.4rem;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;

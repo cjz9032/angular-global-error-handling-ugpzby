@@ -216,11 +216,12 @@
 							}
 						}
                         .heading {
-								max-width:50%;
-								width:50%;
+								max-width:60%;
+								width:60%;
 								text-align:left;
 								word-break:break-all;
                             h3, h2{
+								text-align: left;
 								font-size: $fontsize_sm;
 								color: $main_shade !important;
 								letter-spacing: 0;
@@ -230,7 +231,12 @@
 								}	
 								@media #{$breakpoint_md}{				
 									font-size: $fontsize_xs2;
-								}						
+								}	
+								@media #{$breakpoint_sm}{				
+									font-size:1.1rem;
+									letter-spacing: -0.02rem;									
+									margin-bottom: 0;
+								}					
 													
 								
                             }
@@ -254,8 +260,8 @@
                     }
                     .status-text{
 						flex-grow: 8;
-						width:48%;
-						max-width:48%;
+						width:38%;
+						max-width:38%;
 						@media #{$breakpoint_sm}{
 							margin-top: 1.25rem;
 						}

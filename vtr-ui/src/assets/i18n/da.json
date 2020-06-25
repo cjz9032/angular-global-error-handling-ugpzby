@@ -3118,8 +3118,8 @@
                 "no": "Nej"
             },
             "waitAvailability": "Knappen deaktiveres, hvis lagerenhederne ikke understøtter denne funktion, mens hardwareoplysningerne indlæses, eller hvis der er en scanning i gang.",
-            "executingTitle": "Recovering now...",
-            "recoverCompleted": "Recovery completed"
+            "executingTitle": "Retablerer nu...",
+            "recoverCompleted": "Retableringen er fuldført"
         },
         "support": {
             "title": "Download professionelle fejlfindingsværktøjer",
@@ -3169,17 +3169,17 @@
             "recoverBadSectorsButtonText": "Gendan dårlige sektorer"
         },
         "scanFinishedHeader": {
-            "titleSuccess": "Scan completed. Your device passed all the tests.",
-            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
-            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
-            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
-            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
-            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
-            "finalResultCodeLabel": "Final Result Code: ",
-            "scanAgainButtonText": "Scan Again",
+            "titleSuccess": "Søgningen er fuldført. Din enheden har bestået alle test.",
+            "titleErrorPlural": "Søgningen er fuldført. Din enhed bestod ikke {{numberTestsFailed}} test.",
+            "titleErrorSingular": "Søgningen er fuldført. Din enhed bestod ikke 1 test.",
+            "frcSuccessDescription": "Denne kode for det endelige resultat angiver, at der ikke blev fundet problemer med denne søgning. Hvis en test viser en advarsel eller en meddelelse om, at den ikke er relevant, betyder det ikke, at der blev registreret et problem. Hvis en Lenovo-supportmedarbejder har bedt dig om at køre denne test, kan du bruge denne kode som bevis. Ellers behøver du ikke at foretage dig yderligere i øjeblikket. Hvis du fortsat oplever problemer, skal du kontakt Lenovo Support.",
+            "frcFailureDescription": "Koden for det endelige resultat angiver, at der blev fundet problemer med denne søgning.",
+            "lenovoSupportInstruction": "Hos Lenovo Support du kan åbne en bekræftelsesanmodning ved hjælp af koden for det endelige resultat.",
+            "finalResultCodeLabel": "Kode for det endelige resultat: ",
+            "scanAgainButtonText": "Søg igen",
             "supportButtonText": "Lenovo Support"
         },
-        "executingScanTitle": "Scanning {{title}}..."
+        "executingScanTitle": "Søger i {{title}}..."
     },
     "smartPerformance": {
         "title": "Smart Performance",
@@ -3329,6 +3329,8 @@
             "fri": "Fredag",
             "sat": "Lørdag",
             "sun": "Søndag",
+            "am": "AM",
+            "pm": "PM",
             "tooltipText": "Når du aktiverer denne funktion, startes systemets scanning af ydeevne og sikkerhed automatisk på angivet dato og klokkeslæt."
         },
         "scanningPage": {
@@ -3791,7 +3793,7 @@
                 "txtGo": "Gå",
                 "summaryCaption": "tilbageført plads",
                 "fixes": "rettelse(r)",
-                "txtClr": "Clear"
+                "txtClr": "Ryd"
             },
             "lastScanResults": {
                 "title": "Resultat af seneste 5 scanninger:",

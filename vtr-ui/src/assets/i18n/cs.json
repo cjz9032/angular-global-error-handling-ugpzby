@@ -3041,8 +3041,8 @@
         "type": "Typ",
         "hours": "Hodin",
         "minutes": "Minut",
-        "am": "dop.",
-        "pm": "odp.",
+        "am": "dop",
+        "pm": "odp",
         "previousResult": "Předchozí výsledky",
         "lastScanOn": "Minulá kontrola",
         "result": "Výsledek",
@@ -3118,8 +3118,8 @@
                 "no": "Ne"
             },
             "waitAvailability": "Tlačítko je vypnuto, pokud úložná zařízení nepodporují tuto funkci v průběhu načítaní informací o hardwaru nebo pokud probíhá kontrola.",
-            "executingTitle": "Recovering now...",
-            "recoverCompleted": "Recovery completed"
+            "executingTitle": "Probíhá obnova...",
+            "recoverCompleted": "Obnovení dokončeno"
         },
         "support": {
             "title": "Stáhnout profesionální diagnostické nástroje",
@@ -3169,17 +3169,17 @@
             "recoverBadSectorsButtonText": "Obnovit vadné sektory"
         },
         "scanFinishedHeader": {
-            "titleSuccess": "Scan completed. Your device passed all the tests.",
-            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
-            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
-            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
-            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
-            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
-            "finalResultCodeLabel": "Final Result Code: ",
-            "scanAgainButtonText": "Scan Again",
-            "supportButtonText": "Lenovo Support"
+            "titleSuccess": "Snímání dokončeno. Vaše zařízení prošlo všemi testy.",
+            "titleErrorPlural": "Snímání dokončeno. Vaše zařízení selhalo v {{numberTestsFailed}} testech.",
+            "titleErrorSingular": "Snímání dokončeno. Vaše zařízení selhalo v 1 testu.",
+            "frcSuccessDescription": "Tento výsledný kód chyby značí, že nebyly zjištěny žádné problémy s touto kontrolou. Pokud nějaký test zobrazí varování nebo zprávu o tom, že příslušný test není použitelný, nemusí to znamenat, že byl nalezen problém. Pokud vás o provedení tohoto testu požádal zástupce podpory Lenovo, použijte tento kód jako doklad; v opačném případě není v tuto chvíli potřeba provádět žádnou akci. Pokud jste přesvědčeni, že se problémy nadále objevují, kontaktujte podporu společnosti Lenovo.",
+            "frcFailureDescription": "Tento výsledný kód značí, že v průběhu tohoto snímání byly zjištěny problémy.",
+            "lenovoSupportInstruction": "V podpoře Lenovo můžete otevřít ověřovací lístek pomocí výsledného kódu.",
+            "finalResultCodeLabel": "Výsledný kód: ",
+            "scanAgainButtonText": "Nové snímání",
+            "supportButtonText": "Technická podpora Lenovo"
         },
-        "executingScanTitle": "Scanning {{title}}..."
+        "executingScanTitle": "Snímání {{title}}..."
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3329,6 +3329,8 @@
             "fri": "Friday",
             "sat": "Saturday",
             "sun": "Sunday",
+            "am": "dop",
+            "pm": "odp",
             "tooltipText": "Enable this toggle to automatically initiate a system performance scan on your selected date and time."
         },
         "scanningPage": {

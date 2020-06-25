@@ -3118,8 +3118,8 @@
                 "no": "Não"
             },
             "waitAvailability": "O botão está desativado se os dispositivos de armazenamento não suportarem esta funcionalidade, enquanto as informações de hardware estiverem a ser carregadas ou se estiver a decorrer uma verificação.",
-            "executingTitle": "Recovering now...",
-            "recoverCompleted": "Recovery completed"
+            "executingTitle": "A recuperar agora...",
+            "recoverCompleted": "A recuperação está concluída"
         },
         "support": {
             "title": "Transferir ferramentas de diagnóstico profissionais",
@@ -3169,17 +3169,17 @@
             "recoverBadSectorsButtonText": "Recuperar setores danificados"
         },
         "scanFinishedHeader": {
-            "titleSuccess": "Scan completed. Your device passed all the tests.",
-            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
-            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
-            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
-            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
-            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
-            "finalResultCodeLabel": "Final Result Code: ",
-            "scanAgainButtonText": "Scan Again",
-            "supportButtonText": "Lenovo Support"
+            "titleSuccess": "Análise concluída. O seu dispositivo passou todos os testes.",
+            "titleErrorPlural": "Análise concluída. O seu dispositivo falhou {{numberTestsFailed}} testes.",
+            "titleErrorSingular": "Análise concluída. O seu dispositivo falhou 1 teste.",
+            "frcSuccessDescription": "Este código do resultado final indica que não foram encontrados problemas nesta verificação. Se algum dos testes apresentar um aviso ou mensagem não aplicável, tal não significa que foi encontrado um problema. Se o agente de suporte da Lenovo solicitou que executasse este teste, utilize este código como prova; caso contrário, não é necessária qualquer ação da sua parte neste momento. Se continuar a deparar-se com problemas, contacte o Suporte da Lenovo.",
+            "frcFailureDescription": "O código do resultado final indica que foram encontrados problemas nesta verificação.",
+            "lenovoSupportInstruction": "No Suporte Lenovo pode abrir um ticket de verificação utilizando o código do resultado final.",
+            "finalResultCodeLabel": "Código do resultado final: ",
+            "scanAgainButtonText": "Analisar novamente",
+            "supportButtonText": "Suporte Lenovo"
         },
-        "executingScanTitle": "Scanning {{title}}..."
+        "executingScanTitle": "A analisar {{title}}..."
     },
     "smartPerformance": {
         "title": "Smart Performance",
@@ -3329,6 +3329,8 @@
             "fri": "Sexta-feira",
             "sat": "Sábado",
             "sun": "Domingo",
+            "am": "AM",
+            "pm": "PM",
             "tooltipText": "Ao manter esta alternância ativada, a análise do desempenho e da segurança do sistema serão iniciados automaticamente na data e hora que definir."
         },
         "scanningPage": {
@@ -3791,7 +3793,7 @@
                 "txtGo": "Ir",
                 "summaryCaption": "espaço reclamado",
                 "fixes": "correção(ões)",
-                "txtClr": "Clear"
+                "txtClr": "Limpar"
             },
             "lastScanResults": {
                 "title": "Resultados das 5 últimas análises:",

@@ -3120,8 +3120,8 @@
                 "no": "لا"
             },
             "waitAvailability": "يتم تعطيل الزر إذا كانت أجهزة التخزين لا تدعم هذه الوظيفة، أثناء تحميل معلومات الجهاز أو في حالة وجود عملية مسح قيد التقدم.",
-            "executingTitle": "Recovering now...",
-            "recoverCompleted": "Recovery completed"
+            "executingTitle": "جارٍ الاسترداد الآن...",
+            "recoverCompleted": "اكتمل الاسترداد"
         },
         "support": {
             "title": "تنزيل أدوات تشخيص احترافية",
@@ -3171,17 +3171,17 @@
             "recoverBadSectorsButtonText": "استعادة القطاعات المصابة"
         },
         "scanFinishedHeader": {
-            "titleSuccess": "Scan completed. Your device passed all the tests.",
-            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
-            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
-            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
-            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
-            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
-            "finalResultCodeLabel": "Final Result Code: ",
-            "scanAgainButtonText": "Scan Again",
-            "supportButtonText": "Lenovo Support"
+            "titleSuccess": "اكتمل الفحص. اجتاز جهازك جميع الاختبارات.",
+            "titleErrorPlural": "اكتمل الفحص. فشل جهازك في اختبارات {{numberTestsFailed}}.",
+            "titleErrorSingular": "اكتمل الفحص. فشل جهازك في اختبار واحد.",
+            "frcSuccessDescription": "يشير رمز النتيجة النهائية هذا إلى عدم العثور على مشاكل تتعلق بهذا الفحص. إذا أدى أي اختبار إلى ظهور تحذير أو رسالة غير منطبقة، فهذا لا يشير إلى الكشف عن مشكلة. إذا طالبك وكيل دعم Lenovo بتشغيل هذا الاختبار، فاستخدم هذا الرمز كإثبات؛ وإلا فلا حاجة إلى اتخاذ أي إجراء من جانبك في هذه المرحلة. إذا شعرت بأنك ما زلت تواجه المشاكل، فاتصل بدعم Lenovo.",
+            "frcFailureDescription": "يشير رمز النتيجة النهائية إلى العثور على مشاكل تتعلق بهذا الفحص.",
+            "lenovoSupportInstruction": "في دعم Lenovo، يمكنك فتح تذكرة تحقق باستخدام رمز النتيجة النهائية الخاصة بك.",
+            "finalResultCodeLabel": "رمز النتيجة النهائية: ",
+            "scanAgainButtonText": "فحص مرة أخرى",
+            "supportButtonText": "دعم Lenovo"
         },
-        "executingScanTitle": "Scanning {{title}}..."
+        "executingScanTitle": "جارٍ فحص {{title}}..."
     },
     "smartPerformance": {
         "title": "Smart Performance",
@@ -3331,6 +3331,8 @@
             "fri": "الجمعة",
             "sat": "السبت",
             "sun": "الأحد",
+            "am": "ص",
+            "pm": "م",
             "tooltipText": "من خلال استمرار تفعيل مفتاح التبديل هذا، سيبدأ فحص أمان وأداء النظام تلقائيًا في التاريخ والوقت المضبوطين."
         },
         "scanningPage": {
@@ -3793,7 +3795,7 @@
                 "txtGo": "انتقال",
                 "summaryCaption": "المساحة المُستردة",
                 "fixes": "عملية (عمليات) الإصلاح",
-                "txtClr": "Clear"
+                "txtClr": "مسح"
             },
             "lastScanResults": {
                 "title": "نتائج آخر 5 عمليات فحص:",

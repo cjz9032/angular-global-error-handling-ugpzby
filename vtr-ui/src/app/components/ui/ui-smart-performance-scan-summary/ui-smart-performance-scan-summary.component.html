@@ -175,12 +175,12 @@
 														<div class="desc-block">
 															<div class="desc desc1 col-auto"
 																*ngIf="historyScanResultsDateTime && historyScanResultsDateTime.length > 0">
-																<b>{{'smartPerformance.subscriberScanHomePage.mostRecent' |translate }}</b><br>
+																<b title="{{'smartPerformance.subscriberScanHomePage.mostRecent' |translate }}">{{'smartPerformance.subscriberScanHomePage.mostRecent' |translate }}</b><br>
 																{{mostRecentScan}}
 															</div>
 															<div class="desc desc2 col-auto-1"
 																*ngIf="enableNextText">
-																<b>{{'smartPerformance.subscriberScanHomePage.nextScheduled' |translate }}</b><br>
+																<b title="{{'smartPerformance.subscriberScanHomePage.nextScheduled' |translate }}">{{'smartPerformance.subscriberScanHomePage.nextScheduled' |translate }}</b><br>
 																{{nextScheduleScan}}
 															</div>
 														</div>
@@ -523,7 +523,7 @@
 																						<span class="ml-1"
 																							*ngIf="item.type.toUpperCase() == 'SS'">({{'smartPerformance.auto' |translate }})</span>
 																					</div>
-																					<div class="col-2 fixes">
+																					<div class="col-2 fixes" title="{{item.fixcount === 0 ? item.fixcount : (item.fixcount | number:'2.0')}} {{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' | translate}}">
 																						{{item.fixcount === 0 ? item.fixcount : (item.fixcount | number:'2.0')}}
 																						{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' | translate}}
 																					</div>

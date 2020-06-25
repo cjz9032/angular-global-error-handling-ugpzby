@@ -1,87 +1,22 @@
-<div class="vtr-hardware-components p-5 mb-5">
-	<div class="row">
-		<div class="col">
-			<div class="header">
-				<h1 [ngClass]="{'heading1': !showProgress, 'heading2': showProgress}">{{ title }}</h1>
-				<!-- <a class="action-anchor">{{ anchorText }}</a> -->
-			</div>
-		</div>
+<div class="vtr-hardware-components">
+	<!-- Defines the header component -->
+	<div class="col col-12 hardwarescan-background">
+		<vtr-hardware-scan-finished-header></vtr-hardware-scan-finished-header>
 	</div>
 
+	
+	<h2 class="header2">{{ 'hardwareScan.hardwareComponents' | translate }}</h2>
+	<hr>
+
+	<!-- Defines the last test list executed -->
 	<div class="row">
 		<div class="col">
-			<div class="hardware-lists-container">
-
-				<div class="final-result">
-					<div class="col col-5 status">
-						<div class="test-status">
-							<div [ngSwitch]="item.resultTestsTitle">
-
-								<!--Aria-hidden defined as true to ignore faicon selection and defined a span with description to the icon-->
-								<div *ngSwitchCase="0">
-									<fa-icon aria-hidden="true" aria-labelledby="loading-icon" class="loading" [icon]="['fas', 'circle-notch']" [spin]="true"></fa-icon>
-									<span id="loading-icon" class="sr-only">loading</span>
-								</div>
-
-								<span class="progress-value-text" *ngSwitchCase="1">{{item.percent}}%</span>
-
-								<div *ngSwitchCase="2">
-									<fa-icon aria-hidden="true" aria-labelledby="success-icon" class="success" [icon]="['fas', 'check-circle']"></fa-icon>
-									<span id="success-icon" class="sr-only">success</span>
-								</div>
-
-								<div *ngSwitchCase="3">
-									<fa-icon aria-hidden="true" aria-labelledby="failure-icon" class="failure" [icon]="['fas', 'times-circle']"></fa-icon>
-									<span id="failure-icon" class="sr-only">failure</span>
-								</div>
-
-								<div *ngSwitchCase="4">
-									<fa-icon aria-hidden="true" aria-labelledby="warning-icon" class="warning" [icon]="['fas', 'exclamation-circle']"></fa-icon>
-									<span id="warning-icon" class="sr-only">attention</span>
-								</div>
-								<div *ngSwitchDefault>
-									<fa-icon aria-hidden="true" aria-labelledby="canceled-icon" class="not-applicable" [icon]="['fas', 'ban']"></fa-icon>
-									<span id="canceled-icon" class="sr-only">canceled</span>
-								</div>
-							</div>
-						</div>
-
-						<div class="text-status">
-							<!-- Defines a title to previus result -->
-							<div [ngSwitch]="item.resultTestsTitle">
-								<p *ngSwitchCase="testResultEnum.Pass" class="title">{{ 'hardwareScan.pass' | translate }}</p>
-								<p *ngSwitchCase="testResultEnum.Fail" class="title">{{ 'hardwareScan.fail' | translate }}</p>
-								<p *ngSwitchCase="testResultEnum.Warning" class="title">{{ 'hardwareScan.attention' | translate }}</p>
-								<p *ngSwitchCase="testResultEnum.Cancelled" class="title">{{ 'hardwareScan.cancelled' | translate }}</p>
-							</div>
-							<div class="subtitle">{{ item.date }}</div>
-						</div>
-					</div>
-					<div class="col col-7">
-						<div class="final-result-code" *ngIf="item.finalResultCode">
-							<div class="result-code-value-text"><span>{{finalResultCodeText}}:</span></div>
-							<div class="left-result-code">
-								<p class="result-code-complete-text"> {{item.finalResultCode}}</p>
-								<a href="javascript:void(0)"
-									[attr.aria-label]="'final-result-code-tooltip, which reads:' + item.information"
-									class="result-code-icon"
-									triggers="click"
-									[ngbTooltip]="tooltipRef"
-									container="vtr-root"
-									tooltipClass="vtr-tooltip"
-									placement="left">
-									<fa-icon [icon]="['far', 'question-circle']"></fa-icon>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<hr>
-
-				<vtr-widget-hardware-scan-item [items]="item.items" [resultCodeText]="resultCodeText" [detailsText]="detailsText" [isLoadingDone]="true">
-				</vtr-widget-hardware-scan-item>
-			</div>
+			<vtr-widget-hardware-scan-item 
+				[items]="item.items" 
+				[resultCodeText]="resultCodeText" 
+				[detailsText]="detailsText" 
+				[isLoadingDone]="true">
+			</vtr-widget-hardware-scan-item>
 		</div>
 	</div>
 </div>

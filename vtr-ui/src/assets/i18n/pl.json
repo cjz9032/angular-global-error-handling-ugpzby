@@ -3118,8 +3118,8 @@
                 "no": "Nie"
             },
             "waitAvailability": "Podczas ładowania informacji o sprzęcie lub w trakcie skanowania, przycisk jest wyłączony, jeśli urządzenia pamięci nie obsługują tej funkcji.",
-            "executingTitle": "Recovering now...",
-            "recoverCompleted": "Recovery completed"
+            "executingTitle": "Trwa odzyskiwanie...",
+            "recoverCompleted": "Odzyskiwanie zakończone"
         },
         "support": {
             "title": "Pobierz profesjonalne narzędzia diagnostyczne",
@@ -3169,17 +3169,17 @@
             "recoverBadSectorsButtonText": "Odzyskaj uszkodzone sektory"
         },
         "scanFinishedHeader": {
-            "titleSuccess": "Scan completed. Your device passed all the tests.",
-            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
-            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
-            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
-            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
-            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
-            "finalResultCodeLabel": "Final Result Code: ",
-            "scanAgainButtonText": "Scan Again",
-            "supportButtonText": "Lenovo Support"
+            "titleSuccess": "Skanowanie zakończone. Twoje urządzenie przeszło wszystkie testy.",
+            "titleErrorPlural": "Skanowanie zakończone. Wynik {{numberTestsFailed}} testów dotyczących Twojego urządzenia wskazywał na ich niepowodzenie.",
+            "titleErrorSingular": "Skanowanie zakończone. 1 test Twojego urządzenia zakończył się niepowodzeniem.",
+            "frcSuccessDescription": "Kod wyniku końcowego wskazuje, że podczas skanowania nie znaleziono problemów. Jeśli test wyświetla ostrzeżenie lub nieodpowiedni komunikat, nie oznacza to, że problem został znaleziony. Jeśli agent pomocy technicznej firmy Lenovo poprosił Cię o przeprowadzenie tego testu, użyj kodu jako dowodu; w przeciwnym razie nie musisz wykonywać żadnych czynności. Jeśli uważasz, że nadal występują problemy, skontaktuj się z pomocą techniczną firmy Lenovo.",
+            "frcFailureDescription": "Kod wyniku końcowego wskazuje, że podczas skanowania znaleziono problemy.",
+            "lenovoSupportInstruction": "Prześlij do działu pomocy technicznej firmy Lenovo prośbę o weryfikację, podając kod wyniku końcowego.",
+            "finalResultCodeLabel": "Kod wyniku końcowego: ",
+            "scanAgainButtonText": "Przeprowadź ponowne skanowanie",
+            "supportButtonText": "Pomoc techniczna firmy Lenovo"
         },
-        "executingScanTitle": "Scanning {{title}}..."
+        "executingScanTitle": "Skanowanie {{title}}..."
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3329,6 +3329,8 @@
             "fri": "Friday",
             "sat": "Saturday",
             "sun": "Sunday",
+            "am": "AM",
+            "pm": "PM",
             "tooltipText": "Enable this toggle to automatically initiate a system performance scan on your selected date and time."
         },
         "scanningPage": {

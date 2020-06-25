@@ -21,6 +21,8 @@ import { GamingKeyLockService } from 'src/app/services/gaming/gaming-keylock/gam
 
 import { SvgInlinePipe } from 'src/app/pipe/svg-inline/svg-inline.pipe';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { GamingThermal2 } from 'src/app/enums/gaming-thermal2.enum';
+import { AutomationId } from 'src/app/enums/automation-id.enum';
 
 describe('WidgetLegionEdgeComponent', () => {
 	let component: WidgetLegionEdgeComponent;
@@ -552,10 +554,40 @@ describe('WidgetLegionEdgeComponent', () => {
 			expect(component.performanceOCSettings).toBe(false, `component.performanceOCSettings should be false`);
 		}));
 
+
 		it('openModal', fakeAsync(() => {
 			spyOn(component, 'openModal').and.callThrough();
 			const result = component.openModal();
 			expect(component.openModal).toHaveBeenCalled();
+		}));
+
+		it('get thermal_mode_performance as automationId', fakeAsync(() => {
+			component.thermalModeRealStatus = GamingThermal2.performance;
+			const res =	component.getThermalModeAutomationId();
+			fixture.detectChanges();
+			expect(res).toBe(AutomationId.Performance);
+		}));
+
+		it('get thermal_mode_performance_overclock_on as automationId', fakeAsync(() => {
+			component.performanceOCSettings = true;
+			component.thermalModeRealStatus = GamingThermal2.performance;
+			const res =	component.getThermalModeAutomationId();
+			fixture.detectChanges();
+			expect(res).toBe(AutomationId.PerformanceOverclockOn);
+		}));
+
+		it('get thermal_mode_balance as automationId', fakeAsync(() => {
+			component.thermalModeRealStatus = GamingThermal2.balance;
+			const res =	component.getThermalModeAutomationId();
+			fixture.detectChanges();
+			expect(res).toBe(AutomationId.Balance);
+		}));
+
+		it('get thermal_mode_quiet as automationId', fakeAsync(() => {
+			component.thermalModeRealStatus = GamingThermal2.quiet;
+			const res =	component.getThermalModeAutomationId();
+			fixture.detectChanges();
+			expect(res).toBe(AutomationId.Quiet);
 		}));
 	});
 
@@ -1792,7 +1824,7 @@ describe('WidgetLegionEdgeComponent', () => {
 			expect(hybridModeStatusCache).toBe(false, `hybridModeStatusCache should keep false`);
 			expect(loggerServiceSpy.error).toHaveBeenCalledTimes(++calledTimes);
 		});
-		
+
 		it('renderOverDriveStatus catch error', () => {
 			gamingOverDriveServiceSpy.getOverDriveStatus.and.throwError('getOverDriveStatus error');
 			component.legionUpdate[5].isChecked = false;

@@ -3118,8 +3118,8 @@
                 "no": "Όχι"
             },
             "waitAvailability": "Το κουμπί είναι απενεργοποιημένο, εάν οι συσκευές αποθήκευσης δεν υποστηρίζουν αυτή τη λειτουργία, ενώ οι πληροφορίες υλικού φορτώνονται ή εάν υπάρχει σάρωση σε εξέλιξη.",
-            "executingTitle": "Recovering now...",
-            "recoverCompleted": "Recovery completed"
+            "executingTitle": "Εκτελείται αποκατάσταση τώρα...",
+            "recoverCompleted": "Η αποκατάσταση ολοκληρώθηκε"
         },
         "support": {
             "title": "Κατεβάστε επαγγελματικά διαγνωστικά εργαλεία",
@@ -3169,17 +3169,17 @@
             "recoverBadSectorsButtonText": "Αποκατάσταση κατεστραμμένων τομέων"
         },
         "scanFinishedHeader": {
-            "titleSuccess": "Scan completed. Your device passed all the tests.",
-            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
-            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
-            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
-            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
-            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
-            "finalResultCodeLabel": "Final Result Code: ",
-            "scanAgainButtonText": "Scan Again",
-            "supportButtonText": "Lenovo Support"
+            "titleSuccess": "Η σάρωση ολοκληρώθηκε. Η συσκευή σας πέρασε όλες τις δοκιμές.",
+            "titleErrorPlural": "Η σάρωση ολοκληρώθηκε. Η συσκευή σας απέτυχε {{numberTestsFailed}} δοκιμές.",
+            "titleErrorSingular": "Η σάρωση ολοκληρώθηκε. Η συσκευή σας απέτυχε 1 δοκιμή.",
+            "frcSuccessDescription": "Αυτός ο κωδικός τελικού αποτελέσματος υποδεικνύει ότι δεν εντοπίστηκαν προβλήματα με αυτήν τη σάρωση. Εάν οποιαδήποτε δοκιμή εμφανίσει ένα προειδοποιητικό ή μη εφαρμόσιμο μήνυμα, αυτό δεν σημαίνει ότι εντοπίστηκε κάποιο πρόβλημα. Εάν κάποιος εκπρόσωπος από την Υποστήριξη Lenovo σας ζήτησε να εκτελέσετε αυτήν τη δοκιμή, χρησιμοποιήστε αυτόν τον κωδικό ως αποδεικτικό στοιχείο, διαφορετικά, δεν απαιτείται καμία ενέργεια από την πλευρά σας αυτήν τη στιγμή. Εάν αισθάνεστε ότι συνεχίζετε να αντιμετωπίζετε προβλήματα, απευθυνθείτε στην Υποστήριξη Lenovo.",
+            "frcFailureDescription": "Ο κωδικός τελικού αποτελέσματος υποδεικνύει ότι εντοπίστηκαν προβλήματα με αυτή τη σάρωση.",
+            "lenovoSupportInstruction": "Στην Υποστήριξη Lenovo μπορείτε να ανοίξετε ένα δελτίο επαλήθευσης χρησιμοποιώντας τον κωδικό του τελικού αποτελέσματος.",
+            "finalResultCodeLabel": "Κωδικός τελικού αποτελέσματος: ",
+            "scanAgainButtonText": "Σάρωση ξανά",
+            "supportButtonText": "Υποστήριξη Lenovo"
         },
-        "executingScanTitle": "Scanning {{title}}..."
+        "executingScanTitle": "Εκτελείται σάρωση {{title}}..."
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3329,6 +3329,8 @@
             "fri": "Friday",
             "sat": "Saturday",
             "sun": "Sunday",
+            "am": "πμ",
+            "pm": "μμ",
             "tooltipText": "Enable this toggle to automatically initiate a system performance scan on your selected date and time."
         },
         "scanningPage": {

@@ -3118,8 +3118,8 @@
                 "no": "Ei"
             },
             "waitAvailability": "Painike on poistettu käytöstä, jos tallennuslaitteet eivät tue tätä toimintoa, kun laitteisto tietoja ladataan tai jos tarkistus on meneillään.",
-            "executingTitle": "Recovering now...",
-            "recoverCompleted": "Recovery completed"
+            "executingTitle": "Elvytetään...",
+            "recoverCompleted": "Elvytys on valmis"
         },
         "support": {
             "title": "Lataa ammattimaiset vianmääritystyökalut",
@@ -3169,17 +3169,17 @@
             "recoverBadSectorsButtonText": "Korjaa vialliset sektorit"
         },
         "scanFinishedHeader": {
-            "titleSuccess": "Scan completed. Your device passed all the tests.",
-            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
-            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
-            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
-            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
-            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
-            "finalResultCodeLabel": "Final Result Code: ",
-            "scanAgainButtonText": "Scan Again",
-            "supportButtonText": "Lenovo Support"
+            "titleSuccess": "Tarkistus on valmis. Laitteesi läpäisi kaikki testit.",
+            "titleErrorPlural": "Tarkistus on valmis. Laite ei läpäissyt {{numberTestsFailed}} testiä.",
+            "titleErrorSingular": "Tarkistus on valmis. Laite ei läpäissyt 1 testiä.",
+            "frcSuccessDescription": "Lopullinen tuloskoodi osoittaa, että tässä tarkistuksessa ei havaittu ongelmia. Mikäli jonkin testin tuloksena näkyy varoitus tai ei käytettävissä -viesti, se ei tarkoita ongelman havaitsemista. Jos Lenovo-tuen edustajan pyysi tämän testin suorittamista, käytä tätä koodia testin todisteena. Muussa tapauksessa sinun ei tarvitse tehdä mitään tällä hetkellä. Jos ongelmia ilmenee edelleen, ota yhteyttä Lenovo-tukeen.",
+            "frcFailureDescription": "Lopullinen tuloskoodi osoittaa, että tässä tarkistuksessa havaittiin ongelmia.",
+            "lenovoSupportInstruction": "Voit avata tarkistusraportin Lenovo-tuen palvelussa käyttämällä lopullisen tuloksesi koodia.",
+            "finalResultCodeLabel": "Lopullinen tuloskoodi: ",
+            "scanAgainButtonText": "Tarkista uudelleen",
+            "supportButtonText": "Lenovo-tuki"
         },
-        "executingScanTitle": "Scanning {{title}}..."
+        "executingScanTitle": "Tarkistetaan {{title}}..."
     },
     "smartPerformance": {
         "title": "Smart Performance",
@@ -3329,6 +3329,8 @@
             "fri": "Perjantaina",
             "sat": "Lauantaina",
             "sun": "Sunnuntaina",
+            "am": "AM",
+            "pm": "PM",
             "tooltipText": "Kun tämä vaihtoehto on valittuna, järjestelmän suorituskyvyn ja suojauksen tarkistus aloitetaan automaattisesti valittuna päivänä ja kellonaikana."
         },
         "scanningPage": {
@@ -3791,7 +3793,7 @@
                 "txtGo": "Siirtyminen",
                 "summaryCaption": "vapautettava tila",
                 "fixes": "korjaukset",
-                "txtClr": "Clear"
+                "txtClr": "Tyhjennä"
             },
             "lastScanResults": {
                 "title": "5 edellisen tarkistuksen tulokset:",

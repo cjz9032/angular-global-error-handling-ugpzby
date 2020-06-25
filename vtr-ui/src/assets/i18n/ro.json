@@ -3118,8 +3118,8 @@
                 "no": "Nu"
             },
             "waitAvailability": "Butonul este dezactivat dacă dispozitivele de stocare nu acceptă această funcționalitate, în timp ce informațiile hardware sunt încărcate sau dacă există o scanare în curs.",
-            "executingTitle": "Recovering now...",
-            "recoverCompleted": "Recovery completed"
+            "executingTitle": "Se recuperează acum...",
+            "recoverCompleted": "Recuperare finalizată"
         },
         "support": {
             "title": "Descărcare instrumente profesionale de diagnosticare",
@@ -3169,17 +3169,17 @@
             "recoverBadSectorsButtonText": "Recuperarea sectoarelor defecte"
         },
         "scanFinishedHeader": {
-            "titleSuccess": "Scan completed. Your device passed all the tests.",
-            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
-            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
-            "frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
-            "frcFailureDescription": "The final result code indicates that problems were found with this scan.",
-            "lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
-            "finalResultCodeLabel": "Final Result Code: ",
-            "scanAgainButtonText": "Scan Again",
-            "supportButtonText": "Lenovo Support"
+            "titleSuccess": "Scanare finalizată. Dispozitivul dumneavoastră a trecut toate testele.",
+            "titleErrorPlural": "Scanare finalizată. Dispozitivul dumneavoastră nu a trecut {{numberTestsFailed}} teste.",
+            "titleErrorSingular": "Scanare finalizată. Dispozitivul dumneavoastră nu a trecut 1 test.",
+            "frcSuccessDescription": "Acest cod al rezultatului final indică faptul că nu s-au descoperit probleme în urma scanării. Dacă un test afișează o avertizare sau mesajul „neaplicabil”, nu înseamnă că s-a descoperit o problemă. Dacă un agent de asistență Lenovo v-a solicitat să rulați acest test, utilizați acest cod ca dovadă; în caz contrar, momentan nu este necesară nicio acțiune din partea dumneavoastră. În cazul în care considerați că încă întâmpinați probleme, contactați Asistența Lenovo.",
+            "frcFailureDescription": "Codul rezultatului final indică faptul că s-au descoperit probleme în urma scanării.",
+            "lenovoSupportInstruction": "În secțiunea Asistență Lenovo puteți deschide un tichet de verificare, utilizând codul rezultatului final.",
+            "finalResultCodeLabel": "Codul rezultatului final: ",
+            "scanAgainButtonText": "Scanați din nou",
+            "supportButtonText": "Asistență Lenovo"
         },
-        "executingScanTitle": "Scanning {{title}}..."
+        "executingScanTitle": "Se scanează {{title}}..."
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3329,6 +3329,8 @@
             "fri": "Friday",
             "sat": "Saturday",
             "sun": "Sunday",
+            "am": "AM",
+            "pm": "PM",
             "tooltipText": "Enable this toggle to automatically initiate a system performance scan on your selected date and time."
         },
         "scanningPage": {
