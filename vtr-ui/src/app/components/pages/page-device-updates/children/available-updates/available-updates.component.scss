@@ -3,6 +3,14 @@
 .vtr-available-updates {
 	background-color: $light;
 	box-shadow: 0 0.7rem 1.5rem 0 rgba(0,0,0,0.15);
+	@media #{$white-on-black} {
+		box-shadow: none;
+		@include white-border;
+	}
+	@media #{$black-on-white} {
+		box-shadow: none;
+		@include black-border;
+	}
 	.header {
 		.heading {
 			color: $main_darker;

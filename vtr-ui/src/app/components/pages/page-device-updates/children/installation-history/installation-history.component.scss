@@ -196,6 +196,8 @@
 								padding-right: 0.4rem;
 								font-size: $fontsize_xs;
 								font-weight: $weight_light;
+								padding-top: 0.7rem;
+								padding-bottom: 0.2rem;
 							}
 
 							.sort-icon {
@@ -203,6 +205,9 @@
 								color: $main;
 								line-height: 2.8rem;
 								font-size: 2rem;
+							}
+							&:focus {
+								outline-offset: 0;
 							}
 						}
 					}

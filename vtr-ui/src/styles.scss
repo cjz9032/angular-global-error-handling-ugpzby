@@ -588,14 +588,14 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 		border-radius: 1rem;
 		background: $light;
 		padding: 4rem;
-		@media #{$white-on-black} {	
-			
-			border: 0.1rem solid $light;
+		@media #{$white-on-black} {
+
+			@include white-border;
 			}
 			@media #{$black-on-white} {
 
-				
-				border: 0.1rem solid $dark;
+
+				@include black-border;
 			}
 	}
 }
@@ -982,6 +982,12 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	background: $light;
 	filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.15));
 	margin-right: 1rem;
+	@media #{$white-on-black} {
+		@include white-border;
+	}
+	@media #{$black-on-white} {
+		@include black-border;
+	}
 	&.show {
 		opacity: 1;
 	}
@@ -1219,7 +1225,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 					line-height: 2rem;
 					color: $main_lightest;
 					position: relative;
-					z-index: 5;					
+					z-index: 5;
 					@media #{$breakpoint_xl} {
 						font-size: $fontsize_xs2;
 						padding: 1.5rem;
@@ -1868,5 +1874,52 @@ ngb-tooltip-window.schedule-scan.tooltip {
 		font-size: $fontsize_xs;
 		text-align: left;
 		max-width: 24.2rem;
+	}
+}
+
+.vtr-autoupdate-settings {
+	.vtr-ui-switch-onoff {
+		.switch {
+			&.switch-xs {
+				height: 1.8rem;
+				top: 0.6rem;
+				width: 4.5rem;
+			}
+		}
+		.switch > small {
+			top: 0.2rem !important;
+		}
+
+		input.checked + .switch > small {
+			top: 0.2rem;
+		}
+		.checkbox.white-theme {
+			&:focus {
+				outline: none;
+				box-shadow: none;
+				border-radius: 0;
+				&::after {
+					@include button-outline-blue;
+					width: 100%;
+					height: 100%;
+					top: 0.4rem;
+					left: -0.1rem;
+				}
+			}
+			@media #{$white-on-black} {
+				&:focus {
+					&::after {
+						display: none;
+					}
+				}
+			}
+			@media #{$black-on-white} {
+				&:focus {
+					&::after {
+						display: none;
+					}
+				}
+			}
+		}
 	}
 }

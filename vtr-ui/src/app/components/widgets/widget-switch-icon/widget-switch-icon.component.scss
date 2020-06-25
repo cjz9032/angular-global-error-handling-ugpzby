@@ -59,11 +59,11 @@
 			// outline: none;
 
 				@media #{$white-on-black} {
-					@include high-contrast-black-background-transparent;
+					@include high-contrast-background-transparent;
 					box-shadow: 0px 0px 0.1rem 0.1rem $high-contrast-black-cyan;
 				}
 				@media #{$black-on-white} {
-					@include high-contrast-white-background-transparent;
+					@include high-contrast-background-transparent;
 					box-shadow: 0px 0px 0.1rem 0.1rem $high-contrast-white-dark-magenta;
 				}
 
@@ -83,12 +83,12 @@
 				color: $light;
 				@media #{$white-on-black} {
 					@include  high-contrast-black-text-color;
-					@include high-contrast-black-background-transparent;
+					@include high-contrast-background-transparent;
 					box-shadow: 0px 0px 0.1rem 0.1rem $high-contrast-black-cyan;
 				}
 				@media #{$black-on-white} {
 					@include  high-contrast-white-text-color;
-					@include high-contrast-white-background-transparent;
+					@include high-contrast-background-transparent;
 					box-shadow: 0px 0px 0.1rem 0.1rem $high-contrast-white-dark-magenta;
 				}
 			}
@@ -102,12 +102,12 @@
 			background: linear-gradient($gradient_angle, $shade_lighter 0%, $light 100%);
 			// outline: none;
 			@media #{$white-on-black} {
-				@include high-contrast-black-background-transparent;
+				@include high-contrast-background-transparent;
 				box-shadow: 0px 0px 0.1rem 0.1rem $high-contrast-black-disabled-green;
 
 			}
 			@media #{$black-on-white} {
-				@include high-contrast-white-background-transparent;
+				@include high-contrast-background-transparent;
 				box-shadow: 0px 0px 0.1rem 0.1rem $high-contrast-white-disabled-maroon;
 
 			}
@@ -129,12 +129,12 @@
 				background: linear-gradient($gradient_angle_reverse, $shade_lighter 0%, $light 100%);
 				color: $shade_darker;
 				@media #{$white-on-black} {
-					@include high-contrast-black-background-transparent;
+					@include high-contrast-background-transparent;
 					@include high-contrast-black-text-color-disabled;
 
 				}
 				@media #{$black-on-white} {
-					@include high-contrast-white-background-transparent;
+					@include high-contrast-background-transparent;
 					@include high-contrast-white-text-color-disabled;
 
 				}
