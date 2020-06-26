@@ -17,44 +17,53 @@
 
 					<!-- Defines a style title based on the response received -->
 					<div class="row">
-						<p class="title">{{item.module}}</p><p class="subtitle">{{item.name}}</p>
+						<p class="title">{{item.module}}</p>
+						<p class="subtitle">{{item.name}}</p>
 					</div>
 
 					<!-- Icon to expand and collapse details list -->
 					<div *ngIf="isEnableViewResults || item.details"
 						class="details-link"
 						tabindex="0"
-						[attr.aria-label]="item.detailsCollapsed ? item.module + 'expand-module-details': item.module + 'collapse-module-details'"
-						(click)="item.detailsCollapsed = !item.detailsCollapsed"
-						(keyup.enter)="item.detailsCollapsed = !item.detailsCollapsed"
+						[attr.aria-label]="!item.detailsExpanded ? item.module + 'expand-module-details': item.module + 'collapse-module-details'"
+						(click)="item.detailsExpanded = !item.detailsExpanded"
+						(keyup.enter)="item.detailsExpanded = !item.detailsExpanded"
 						role="button"
-						[attr.aria-expanded]="!item.detailsCollapsed">
-						<fa-icon *ngIf="item.detailsCollapsed; else expandIcon" [icon]="['fas', 'caret-right']"></fa-icon>
+						[attr.aria-expanded]="item.detailsExpanded">
+						<fa-icon *ngIf="!item.detailsExpanded; else expandIcon" [icon]="['fas', 'caret-right']"></fa-icon>
 						<ng-template #expandIcon><fa-icon [icon]="['fas', 'caret-up']"></fa-icon></ng-template>
 						{{ 'hardwareScan.details' | translate }}
 					</div>
 				</div>
 
-				<!-- Icon to expand and collapse test list -->
-				<div class="col-auto" *ngIf="isScanExecute && !isEnableViewResults">
-					<div class="collapse-control"
-						tabindex="0"
-						[attr.aria-label]="item.collapsed ? item.module + 'expand-test-list': item.module + 'collapse-test-list'"
-						(click)="item.collapsed = !item.collapsed"
-						(keyup.enter)="item.collapsed = !item.collapsed"
-						role="button"
-						[attr.aria-expanded]="!item.collapsed">
-						<fa-icon *ngIf="item.collapsed; else expandArrow" [icon]="['fal', 'angle-down']"></fa-icon>
-						<ng-template #expandArrow>
-							<fa-icon [icon]="['fal', 'angle-up']"></fa-icon>
-						</ng-template>
+				<div class="row not-wrap">
+					<!-- Defines a status to module list when finish all subtests -->
+					<vtr-ui-hardware-scan-test-result
+						*ngIf="item.resultCode"
+						[module]="item">
+					</vtr-ui-hardware-scan-test-result>
+
+					<!-- Icon to expand and collapse test list -->
+					<div class="col-auto" *ngIf="isScanExecute && !isEnableViewResults">
+						<div class="collapse-control"
+							tabindex="0"
+							[attr.aria-label]="!item.expanded ? item.module + 'expand-test-list': item.module + 'collapse-test-list'"
+							(click)="toggleTestListVisibility(item)"
+							(keyup.enter)="toggleTestListVisibility(item)"
+							role="button"
+							[attr.aria-expanded]="item.expanded">
+							<fa-icon *ngIf="!item.expanded; else expandArrow" [icon]="['fal', 'angle-down']"></fa-icon>
+							<ng-template #expandArrow>
+								<fa-icon [icon]="['fal', 'angle-up']"></fa-icon>
+							</ng-template>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
 		<!-- Details List with information about the module -->
-		<div class="row details-list" *ngIf="(isEnableViewResults || item.details) && !item.detailsCollapsed">
+		<div class="row details-list" *ngIf="(isEnableViewResults || item.details) && item.detailsExpanded">
 			<table class="table table-details table-active table-borderless">
 				<tbody>
 					<tr *ngFor="let detail of item.details">
@@ -67,12 +76,10 @@
 
 		<div class="row col">
 			<!-- Result code information -->
-			<div class="result-code" *ngIf="isScanExecute && item.resultCode">
+			<div class="result-code" *ngIf="item.resultCode && (item.expanded || item.details)">
 				<p class="title">{{resultCodeText}}:</p>
 				<p class="subtitle">{{item.resultCode}}</p>
-				<a *ngIf="item.information"
-					href="javascript:void(0)"
-					(click)="getInformation(item.information)"
+				<a *ngIf="item.information" href="javascript:void(0)" (click)="getInformation(item.information)"
 					[attr.aria-label]="item.module + 'result-code-tooltip, which reads:' + item.information"
 					class="result-code-icon"
 					triggers="click"
@@ -87,7 +94,7 @@
 			<!-- Test List with collapsed running test-->
 			<div class="test-list col" *ngIf="isScanExecute && !isEnableViewResults">
 				<vtr-ui-hardware-list
-					[ngbCollapse]="item.collapsed"
+					[ngbCollapse]="!item.expanded"
 					[items]="item.listTest"
 					[template]="2">
 				</vtr-ui-hardware-list>
@@ -95,7 +102,7 @@
 
 			<!-- Test List with deails test-->
 			<div class="test-list col" *ngIf="isEnableViewResults || item.details || isRecoverExecute">
-				<vtr-ui-hardware-list
+				<vtr-ui-hardware-list 
 					[items]="item.listTest"
 					[template]="2">
 				</vtr-ui-hardware-list>
@@ -105,18 +112,17 @@
 	</div>
 </div>
 <ng-template #tooltipRefModule>
-	<div [innerHTML]="tooltipText"></div>
-	<div class='button-box'>
-		<a [attr.href]="'https://support.lenovo.com/contactus'"
-			target="_blank"
-			vtrMetrics
-			metricsItemID="HardwareScan.ResultSupport"
-			metricsItemPosition="r1"
-			metricsItemCategory="partnerarticle"
-			metricsEvent="articleclick"
-			metricsPageNumber="1"
-			tabindex="-1">
-			<button class='btn button'> {{ 'hardwareScan.support.subtitle' | translate }} </button>
-		</a>
-	</div>
+	<div [innerHTML]="tooltipText"></div>	
+	<a [attr.href]="'https://support.lenovo.com/contactus'"
+		class="link-support"
+		target="_blank"
+		vtrMetrics
+		metricsItemID="HardwareScan.ResultSupport"
+		metricsItemPosition="r1"
+		metricsItemCategory="partnerarticle"
+		metricsEvent="articleclick"
+		metricsPageNumber="1"
+		tabindex="0">
+		{{ 'hardwareScan.support.subtitle' | translate }}
+	</a>
 </ng-template>

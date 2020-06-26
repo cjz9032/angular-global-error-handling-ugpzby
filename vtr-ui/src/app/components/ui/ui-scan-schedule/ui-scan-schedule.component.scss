@@ -369,10 +369,22 @@ vtr-ui-smart-performance-scan-summary {
 						}
                         .heading {
                             h3, h2{
+								text-align: left;
 								font-size: $fontsize_sm;
 								color: $main_shade !important;
 								letter-spacing: 0;
-								font-weight: $weight_bold;
+								font-weight: $weight_bold;									
+								@media #{$breakpoint_lg}{				
+									font-size: $fontsize_xs;
+								}	
+								@media #{$breakpoint_md}{				
+									font-size: $fontsize_xs2;
+								}	
+								@media #{$breakpoint_sm}{				
+									font-size:1.1rem;
+									letter-spacing: -0.02rem;									
+									margin-bottom: 0;
+								}
                             }
                             .icon{
                                 color: $menu_hover;
@@ -706,13 +718,21 @@ vtr-ui-smart-performance-scan-summary {
 			}
 		}
 		.pc-status-info{
-			.info-text{				
+			.needs-tune-up{				
 				span{
-					background:#2a2f43!important;					
+					background:#252a3f!important;				
 				}			
 
 			}
 		}
+		.pc-status-info{
+			.running-well{				
+				span{
+					background:#2a2f43!important;					
+				}
+			}
+		}
+
 	}
 	.summary-block{
 		padding: 3rem 3rem 0;
@@ -840,6 +860,28 @@ vtr-ui-smart-performance-scan-summary {
 			line-height: 3rem;
 			font-size: 1.4rem;
 			height: 6rem;
+			.loader {
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+				& > span {
+					display: inline-block;
+					background-color: $shade_extradark;
+					width: 0rem;
+					height: 0rem;
+					border-radius: 50%;
+					margin: 0rem 0.4rem;
+					transform: translate3d(0);
+					animation: bounce 0.6s infinite alternate;
+				}
+				& > span:nth-child(2) {
+					background-color: $shade_darker;
+					animation-delay: 0.2s;
+				}
+				& > span:nth-child(3) {
+					animation-delay: 0.4s;
+				}
+			}
 			.item{
 				strong {
 					font-size: $fontsize_xs;
@@ -867,6 +909,9 @@ vtr-ui-smart-performance-scan-summary {
 				cursor: pointer;
 				strong{
 					font-weight: $weight_bold;
+				}
+				.ar-time {
+					margin-left: -0.4rem;
 				}
 				// fa-icon {
 				// 	cursor: pointer;
@@ -1239,3 +1284,11 @@ vtr-ui-smart-performance-scan-summary {
 		width: 102%;
 	}
 }
+
+@keyframes bounce {
+	to {
+	  width: 0.5rem;
+	  height: 0.5rem;
+	  transform: translate3d(0, -0.5rem, 0);
+	}
+  }

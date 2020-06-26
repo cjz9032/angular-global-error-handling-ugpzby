@@ -1,12 +1,14 @@
 <section class="vtr-widget-landing-security">
-    <div *ngFor="let item of items" class="item">
+    <div *ngFor="let item of items let i=index" class="item">
         <div *ngIf="item" class="">
 			<div class="title-box row flex-nowrap align-items-center no-gutters mb-2">
 				<span class="col-1 basis-width" [ngClass]="['icomoon', 'icomoon-' + item.icon]"></span>
 				<div class="col-11 pl-3 row align-items-center justify-content-between flex-nowrap">
-					<h3 class="mb-0">{{item.title}}</h3>
+					<h3 class="mb-0" id="sa-ov-widget-security-title-{{i+1}}">{{item.title}}</h3>
 					<span [hidden]="item.showOwn" class="badge text-ellipsis ml-auto"
 						title=""
+						role="text"
+						id="sa-ov-widget-security-status-{{i+1}}"
 						[ngClass]="{'status-enabled':item.status === 'enabled' || item.status === 'installed' ,
 						'status-disabled': item.status === 'disabled' || item.status === 'not-installed',
 						'status-loading': item.status === 'loading' || item.status === 'installing' || item.status === 'failedLoad'}"
@@ -15,6 +17,8 @@
 						{{item.detail}}</span>
 					<span [hidden]="!item.showOwn" class="badge text-ellipsis status-haveOwn ml-auto"
 						title=""
+						role="text"
+						id="sa-ov-widget-security-badgeContent-{{i+1}}"
 						[ngbTooltip]="badgeContent | translate" tooltipClass="vtr-system-tooltip" container="body"
 						>
 						{{badgeContent | translate}}</span>
@@ -27,7 +31,7 @@
 			<div class="desc-box row no-gutters">
 				<div class="col-1 basis-width"></div>
 				<section class="landing-content col-11 pl-3">
-					<p>{{item.content}}</p>
+					<p id="sa-ov-widget-security-content-{{i+1}}" role="text">{{item.content}}</p>
 					<vtr-ui-button *ngIf="!item.showOwn && item.buttonLink" [label]="item.buttonLabel"
 						linkId="{{item.id}}"
 						[metricsItem]="item.id"

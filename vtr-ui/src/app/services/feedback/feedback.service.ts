@@ -14,7 +14,7 @@ export class FeedbackService {
 	openFeedbackModal() {
 		if (this.modalService.hasOpenModals()) return;
 		this.modalService.open(FeedbackFormComponent, {
-			backdrop: true,
+			backdrop: 'static',
 			size: 'lg',
 			centered: true,
 			ariaLabelledBy: 'feedback-dialog-basic-title',

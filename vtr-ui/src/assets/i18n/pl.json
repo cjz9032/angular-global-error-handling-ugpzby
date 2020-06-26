@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "Aby przedłużyć żywotność baterii, zoptymalizowaliśmy jej pełną pojemność ładowania w zależności od sposobu użytkowania. Pełna pojemność baterii może być niedostępna do momentu rozładowania do 20% i ponownego naładowania.",
-                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
+                    "moreInfo": "Kliknij <a role=\"link\" href=\"#/device/high-density-battery\" tabindex=\"0\">tutaj</a>, aby uzyskać więcej informacji."
                 },
                 "condition": {
                     "Illegal": "Zainstalowany akumulator <b>nie jest obsługiwany</b> w tym systemie i nie będzie ładowany. Wymień go na właściwy akumulator Lenovo dla tego systemu.",
@@ -1101,13 +1101,13 @@
                     "NotDetected": "<b>Nie wykryto podstawowego akumulatora.</b>"
                 },
                 "highDensityBattery": {
-                    "title": "High density battery",
-                    "subtitle": "How your battery works",
-                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "title": "Akumulator o wysokiej gęstości",
+                    "subtitle": "Jak działa akumulator",
+                    "para1": "Aby wydłużyć swój czas eksploatacji, akumulator automatycznie dostosowuje napięcie i pojemność ładowania w zależności od indywidualnego sposobu użytkowania.",
                     "para2": {
-                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
-                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
-                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                        "item1": "- Jeśli zużywasz mniej niż 65% pojemności akumulatora przez tydzień lub dłużej, akumulator może tymczasowo zmniejszyć napięcie i pojemność ładowania. Zmniejszenie pojemności jest niewielkie i niezauważalne dla sposobu użytkowania.",
+                        "item2": "- Pełna pojemność jest przywracana, gdy rozładujesz akumulator poniżej 20%, a następnie całkowicie go naładujesz.",
+                        "item3": "- Ponadto, jeśli zużyjesz mniej niż 10% pojemności przez 2 tygodnie lub dłużej, akumulator może tymczasowo jeszcze bardziej zmniejszyć napięcie i pojemność ładowania, aż do momentu zużycia 50% zmniejszonej pojemności akumulatora."
                     }
                 }
             },
@@ -1195,7 +1195,7 @@
                             "battery&Quite": "AKUMULATOR I CICHA PRACA"
                         }
                     },
-                    "description5": "Funkcja Inteligentne chłodzenie dostosowuje szybkość wentylatora, maksymalną wydajność oraz zarządza czasem eksploatacji. Ta funkcja ma trzy tryby (tryb cichy, tryb zrównoważony i tryb wydajności) i jest teraz dostępna za pomocą suwaka wydajności systemu Windows.",
+                    "description5": "Funkcja Inteligentne chłodzenie dostosowuje szybkość wentylatora, maksymalną wydajność oraz zarządza czasem eksploatacji. Ta funkcja ma 3 tryby (tryb cichy, tryb zrównoważony i tryb wydajności) i jest teraz dostępna za pomocą suwaka wydajności systemu Windows.",
                     "nocqldesc": "Inteligentne chłodzenie umożliwia dostosowanie wydajności systemu i parametrów termicznych. W trybie „Wydajność” optymalizuje pracę systemu. Jeśli chcesz, aby komputer nie nagrzewał się lub pracował ciszej, przejdź do trybu „Chłodny i cichy”.",
                     "dytc6": {
                         "desc1": "Funkcja Inteligentne chłodzenie dostosowuje szybkość wentylatora, maksymalną wydajność oraz zarządza czasem eksploatacji.",
@@ -1276,7 +1276,7 @@
                             "description2": "W celu pełnego włączenia tej funkcji należy odłączyć komputer od zasilania z sieci elektrycznej ipoczekać, aż stopień naładowania akumulatora spadnie co najmniej do wartości progu zatrzymania ładowania.",
                             "enable": "WŁĄCZ",
                             "cancel": "ANULUJ",
-                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
+                            "description3": "Akumulator automatycznie optymalizuje napięcie i pojemność ładowania z uwzględnieniem indywidualnego sposobu użytkowania. W przypadku niezbyt intensywnego użytkowania akumulatora nie ma potrzeby włączania progu ładowania baterii."
                         },
                         "options": {
                             "start": "Rozpocznij ładowanie poniżej",
@@ -1302,7 +1302,7 @@
                         "title": "Tryb samolotowy",
                         "description": "Funkcja umożliwia korzystanie z gniazdka elektrycznego w samolocie z określonym limitem mocy. Jeśli tryb samolotowy jest włączony, zużycie energii przez komputer zostaje zmniejszone do bezpiecznego poziomu przy jednoczesnym ograniczeniu szybkości ładowania akumulatora i wydajności systemu.",
                         "checkBoxDesc": "Autowykrywanie",
-                        "note": "Jeśli automatyczne wykrywanie jest włączone, komputer przełączy się do samolotowego trybu zasilania, gdy wykryje, że znajduje się na pokładzie samolotu i wyłączy go po opuszczeniu samolotu."
+                        "note": "Jeśli automatyczne wykrywanie jest włączone, komputer przełączy się do samolotowego trybu zasilania, gdy wykryje, że znajduje się na pokładzie samolotu, i wyłączy go po opuszczeniu samolotu."
                     },
                     "gaugeReset": {
                         "title": "Resetowanie wskaźnika stanu akumulatora",
@@ -1607,7 +1607,7 @@
                             "title": "Uwaga",
                             "description": "Aplikacja Lenovo Vantage musi uzyskać dostęp do informacji o lokalizacji w celu obliczenia czasu zachodu i wschodu słońca w Twoim regionie."
                         },
-                        "tips": "Uruchom Windows Update lub ręcznie zainstaluj sterownik karty graficznej, aby przywrócić tryb Eye Care"
+                        "tips": "Uruchom Windows Update lub ręcznie zainstaluj sterownik karty graficznej, aby przywrócić tryb ochrony oczu."
                     },
                     "dispColorTemp": {
                         "title": "Temperatura barwowa ekranu",
@@ -1673,7 +1673,9 @@
                     "cameraPrivacy": {
                         "title": "Tryb prywatności kamery",
                         "tooltip": "Kamera przestaje wysyłać obrazy na żywo, gdy włączone jest ustawienie prywatności. Włącz to ustawienie tylko, jeśli nie chcesz wysyłać swoich zdjęć do innych podczas rozmów wideo.",
-                        "cameraPrivacyAccessNote": "Przejdź na stronę <b>Ustawienia systemu Windows → Prywatność → Aparat</b> i upewnij się, że następujące dwie opcje są włączone:<br>&bull; <b>Zezwalaj aplikacjom na dostęp do swojej kamery</b><br>&bull; <b>Lenovo Vantage</b> w obszarze „Określ, które aplikacje (ze sklepu Microsoft Store) mogą uzyskiwać dostęp do Twojej kamery”"
+                        "cameraPrivacyAccessNote": "Przejdź na stronę <b>Ustawienia systemu Windows → Prywatność → Aparat</b> i upewnij się, że następujące dwie opcje są włączone:<br>&bull; <b>Zezwalaj aplikacjom na dostęp do swojej kamery</b><br>&bull; <b>Lenovo Vantage</b> w obszarze „Określ, które aplikacje (ze sklepu Microsoft Store) mogą uzyskiwać dostęp do Twojej kamery”",
+                        "noPermissionNote": "Lenovo Vantage nie ma dostępu do kamery lub przełącznik opcji „Zezwalaj aplikacjom na dostęp do swojej kamery” nie jest ustawiony w położeniu Włączone.",
+                        "accessUrl": "Przejdź do ustawień systemu Windows, aby udzielić dostępu"
                     },
                     "camera": {
                         "title": "Aparat",
@@ -1764,11 +1766,11 @@
                             "note": "Dwukrotne naciśnięcie klawisza Fn pozostawia go w tej pozycji do czasu jego ponownego naciśnięcia. Wskaźnik blokady klawisza Fn jest włączony, gdy przycisk Fn jest wciśnięty. Możesz bezpośrednio nacisnąć żądany klawisz funkcji, a zostanie uruchomiona funkcja inna niż domyślna."
                         },
                         "popup": {
-                            "title": "Uruchom ponownie komputer",
+                            "title": "Ponowne uruchamianie komputera",
                             "description": "Aby zmiana funkcji klawisza z górnego wiersza zaczęła obowiązywać, należy ponownie uruchomić komputer. Czy na pewno chcesz uruchomić ponownie?",
                             "reboot": "URUCHOM PONOWNIE",
                             "cancel": "NIE TERAZ",
-                            "yes": "YES"
+                            "yes": "TAK"
                         },
                         "note": {
                             "sFunKey": "Aby uzyskać dostęp do klawiszy F1-F12, należy przytrzymać klawisz Fn, a następnie nacisnąć odpowiedni klawisz w górnym rzędzie.",
@@ -1791,10 +1793,10 @@
                 },
                 "userDefinedKey": {
                     "title": "Klawisz zdefiniowany przez użytkownika",
-                    "caption": "Do klawisza z ikoną gwiazdki można przypisać funkcję zdefiniowaną przez użytkownika",
+                    "caption": "Do klawisza z ikoną gwiazdki można przypisać funkcję zdefiniowaną przez użytkownika.",
                     "dropDown": {
                         "title": "Działanie klawisza zdefiniowanego przez użytkownika",
-                        "note": "Uwaga: może służyć do wprowadzania często wpisywanych tekstów, takich jak adresy e-mail lub adresy pocztowe. Lenovo zaleca, aby nigdy nie używać tej funkcji do przechowywania i wprowadzania haseł ani żadnych innych prywatnych informacji.",
+                        "note": "Uwaga: może służyć do wprowadzania często wpisywanych tekstów, takich jak adresy e-mail lub adresy pocztowe. Nigdy nie używaj tej funkcji do przechowywania haseł ani innych prywatnych informacji.",
                         "options": {
                             "option1": "Wybierz",
                             "option2": "Otwórz stronę internetową",
@@ -1833,7 +1835,7 @@
                 "fnCtrlKey": {
                     "title": "Klawisz przełączania Fn i Ctrl",
                     "description": "Jeśli zwykle naciskasz klawisz Fn, gdy chcesz nacisnąć klawisz Ctrl, funkcje tych dwóch klawiszy można zamienić.",
-                    "restartNote": "Zamiana funkcji dwóch klawiszy wymaga ponownego uruchomienia komputera. Czy na pewno chcesz ponownie go uruchomić?",
+                    "restartNote": "Zamiana funkcji dwóch klawiszy wymaga ponownego uruchomienia komputera. Czy na pewno chcesz uruchomić ponownie?",
                     "title2": "W przypadku często używanych kombinacji klawiszy klawisz Fn działa jak klawisz Ctrl",
                     "description2": "Klawisz Fn działa jak klawisz Ctrl w przypadku niektórych często używanych kombinacji klawiszy. Działanie klawisza Ctrl nie ulega zmianie.",
                     "featureNote": "Opisana funkcja, klawisz Fn i funkcja zamiany klawisza Ctrl nie mogą być włączone jednocześnie. Jeśli jeden z trybów jest włączony, drugi zostanie automatycznie wyłączony.",
@@ -3115,7 +3117,9 @@
                 "yes": "Tak",
                 "no": "Nie"
             },
-            "waitAvailability": "Podczas ładowania informacji o sprzęcie lub w trakcie skanowania, przycisk jest wyłączony, jeśli urządzenia pamięci nie obsługują tej funkcji."
+            "waitAvailability": "Podczas ładowania informacji o sprzęcie lub w trakcie skanowania, przycisk jest wyłączony, jeśli urządzenia pamięci nie obsługują tej funkcji.",
+            "executingTitle": "Trwa odzyskiwanie...",
+            "recoverCompleted": "Odzyskiwanie zakończone"
         },
         "support": {
             "title": "Pobierz profesjonalne narzędzia diagnostyczne",
@@ -3163,7 +3167,19 @@
             "suggestedActionSupport": "Jeśli komputer jest objęty gwarancją, kliknij opcję <b>Utwórz zgłoszenie</b>, aby uzyskać część zamienną. Aby uzyskać więcej informacji, przejdź do serwisu WWW wsparcia Lenovo.",
             "supportButtonText": "Utwórz zgłoszenie",
             "recoverBadSectorsButtonText": "Odzyskaj uszkodzone sektory"
-        }
+        },
+        "scanFinishedHeader": {
+            "titleSuccess": "Skanowanie zakończone. Twoje urządzenie przeszło wszystkie testy.",
+            "titleErrorPlural": "Skanowanie zakończone. Wynik {{numberTestsFailed}} testów dotyczących Twojego urządzenia wskazywał na ich niepowodzenie.",
+            "titleErrorSingular": "Skanowanie zakończone. 1 test Twojego urządzenia zakończył się niepowodzeniem.",
+            "frcSuccessDescription": "Kod wyniku końcowego wskazuje, że podczas skanowania nie znaleziono problemów. Jeśli test wyświetla ostrzeżenie lub nieodpowiedni komunikat, nie oznacza to, że problem został znaleziony. Jeśli agent pomocy technicznej firmy Lenovo poprosił Cię o przeprowadzenie tego testu, użyj kodu jako dowodu; w przeciwnym razie nie musisz wykonywać żadnych czynności. Jeśli uważasz, że nadal występują problemy, skontaktuj się z pomocą techniczną firmy Lenovo.",
+            "frcFailureDescription": "Kod wyniku końcowego wskazuje, że podczas skanowania znaleziono problemy.",
+            "lenovoSupportInstruction": "Prześlij do działu pomocy technicznej firmy Lenovo prośbę o weryfikację, podając kod wyniku końcowego.",
+            "finalResultCodeLabel": "Kod wyniku końcowego: ",
+            "scanAgainButtonText": "Przeprowadź ponowne skanowanie",
+            "supportButtonText": "Pomoc techniczna firmy Lenovo"
+        },
+        "executingScanTitle": "Skanowanie {{title}}..."
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3289,7 +3305,7 @@
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
             "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
-            "processStatus": "PROCESSING"
+            "processStatus": "PRZETWARZANIE"
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3313,6 +3329,8 @@
             "fri": "Friday",
             "sat": "Saturday",
             "sun": "Sunday",
+            "am": "AM",
+            "pm": "PM",
             "tooltipText": "Enable this toggle to automatically initiate a system performance scan on your selected date and time."
         },
         "scanningPage": {

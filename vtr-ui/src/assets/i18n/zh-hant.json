@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "為了延長電池的壽命，我們已根據您的使用情形將其原始充飽容量最佳化。在您放電至 20％ 並重新充電之前，可能無法使用電池的充飽容量。",
-                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
+                    "moreInfo": "如需相關資訊，請按一下<a role=\"link\" href=\"#/device/high-density-battery\" tabindex=\"0\">這裡</a>。"
                 },
                 "condition": {
                     "Illegal": "此系統<b>不支援</b>安裝的電池，因此無法充電。請使用此系統適用的正確 Lenovo 電池進行更換。",
@@ -1101,13 +1101,13 @@
                     "NotDetected": "<b>未偵測到主要電池。</b>"
                 },
                 "highDensityBattery": {
-                    "title": "High density battery",
-                    "subtitle": "How your battery works",
-                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "title": "高密度電池",
+                    "subtitle": "電池的運作方式",
+                    "para1": "為延長電池的壽命，電池會自動調整充電電壓和容量以回應您的個人使用模式。",
                     "para2": {
-                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
-                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
-                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                        "item1": "- 如果您一週（含）以上使用不到 65% 的電池容量，電池可能會暫時降低充電電壓和容量。縮減的容量很小，對您的使用模式影響並不明顯。",
+                        "item2": "- 當您將電池放電為低於 20% 的電量，然後再充飽電時，會回復充飽容量。",
+                        "item3": "- 此外，如果您兩週（含）以上使用不到 10% 的電池容量，電池可能會暫時再降低充電電壓和容量，直到使用縮減的電池容量的 50% 時。"
                     }
                 }
             },
@@ -1276,7 +1276,7 @@
                             "description2": "為了完全啟用此功能，請拔除您的裝置，讓電池電力清空至停止充電臨界值或以下。",
                             "enable": "啟用",
                             "cancel": "取消",
-                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
+                            "description3": "電池會根據您的使用模式自動最佳化其充電電壓和容量。如果您很少使用電池，則不需啟用電池充電臨界值。"
                         },
                         "options": {
                             "start": "低於以下電量時開始充電",
@@ -1607,7 +1607,7 @@
                             "title": "備注",
                             "description": "Lenovo Vantage 需要存取您的位置資訊，才能計算您所在當地的日出和日落時間。"
                         },
-                        "tips": "請執行 Windows Update 或手動安裝圖形驅動程式，以回復護眼模式"
+                        "tips": "請執行 Windows Update 或手動安裝圖形驅動程式，以回復護眼模式。"
                     },
                     "dispColorTemp": {
                         "title": "顯示器色溫",
@@ -1673,7 +1673,9 @@
                     "cameraPrivacy": {
                         "title": "攝影機隱私模式",
                         "tooltip": "啟用隱私設定時，攝影機會停止傳送即時影像。請僅在您不想在視訊通話時與其他人共用您的影像時開啟此設定。",
-                        "cameraPrivacyAccessNote": "請前往 <b>Windows 設定 → 隱私權 → 相機</b> 頁面，並確保開啟以下兩個選項：<br>&bull;<b> 允許桌面應用存取您的相機</b><br>&bull; 在「選擇哪些 (Microsoft Store) 應用程式可以存取您的相機」下的 <b>Lenovo Vantage</b>"
+                        "cameraPrivacyAccessNote": "請前往 <b>Windows 設定 → 隱私權 → 相機</b> 頁面，並確保開啟以下兩個選項：<br>&bull;<b> 允許桌面應用存取您的相機</b><br>&bull; 在「選擇哪些 (Microsoft Store) 應用程式可以存取您的相機」下的 <b>Lenovo Vantage</b>",
+                        "noPermissionNote": "Lenovo Vantage 無法存取您的相機，或者未啟用開關「允許桌面應用程式存取您的相機」。",
+                        "accessUrl": "移至 Windows 設定以授與存取權"
                     },
                     "camera": {
                         "title": "相機",
@@ -1764,11 +1766,11 @@
                             "note": "當您按兩次 Fn 鍵時，Fn 鍵會鎖定在按住的狀態，直到您再次按下它為止。當 Fn 鍵鎖定時，Fn Lock 指示燈會開啟。您可以按下所需的功能鍵，直接啟動非預設功能。"
                         },
                         "popup": {
-                            "title": "重新啟動電腦",
+                            "title": "請重新啟動電腦",
                             "description": "如果變更最上面一排的預設功能，您必須重新啟動電腦。您確定要重新啟動嗎？",
                             "reboot": "重新開機",
                             "cancel": "現在不要",
-                            "yes": "YES"
+                            "yes": "是"
                         },
                         "note": {
                             "sFunKey": "若要存取 F1-F12 功能，請按下 Fn 和最上面一排的按鍵。",
@@ -1791,10 +1793,10 @@
                 },
                 "userDefinedKey": {
                     "title": "使用者定義鍵",
-                    "caption": "以星星圖示代表的按鍵可讓您設定使用者定義的功能",
+                    "caption": "以星星圖示代表的按鍵可讓您設定使用者定義的功能。",
                     "dropDown": {
                         "title": "使用者定義鍵的動作",
-                        "note": "附註：這可用來輸入經常輸入的按鍵，例如電子郵件地址或郵寄地址。Lenovo 建議您絕對不要使用這項功能來儲存及輸入密碼或任何其他私人資訊。",
+                        "note": "附註：這可用來輸入經常輸入的按鍵，例如電子郵件地址或郵寄地址。絕對不要使用這項功能來儲存密碼或任何其他私人資訊。",
                         "options": {
                             "option1": "請選取",
                             "option2": "打開網站",
@@ -1833,7 +1835,7 @@
                 "fnCtrlKey": {
                     "title": "Fn 與 Ctrl 鍵交換",
                     "description": "如果您在想要按 Ctrl 鍵時卻習慣按下 Fn 鍵，可以交換這兩個鍵的功能。",
-                    "restartNote": "交換兩個鍵的功能需要重新啟動電腦，您確定要重新啟動嗎？",
+                    "restartNote": "交換兩個鍵的功能需要重新啟動電腦。您確定要重新啟動嗎？",
                     "title2": "Fn 可做為常用組合鍵的 Ctrl",
                     "description2": "Fn 鍵可做為一些常用組合鍵的 Ctrl 鍵。Ctrl 鍵的功能不變。",
                     "featureNote": "此功能與 Fn 鍵和 Ctrl 鍵交換功能無法同時開啟。如果開啟其中一個，另一個將會自動關閉。",
@@ -3115,7 +3117,9 @@
                 "yes": "是",
                 "no": "否"
             },
-            "waitAvailability": "當儲存裝置不支援這項功能而硬體資訊即將載入，或者其中正在進行掃描時，此按鈕為停用狀態。"
+            "waitAvailability": "當儲存裝置不支援這項功能而硬體資訊即將載入，或者其中正在進行掃描時，此按鈕為停用狀態。",
+            "executingTitle": "現在正在回復...",
+            "recoverCompleted": "回復已完成"
         },
         "support": {
             "title": "下載專業診斷工具",
@@ -3163,7 +3167,19 @@
             "suggestedActionSupport": "如果您的電腦還在保固期間內，請點擊<b>打開服務票據</b>以更換零件。如需進一步的資訊，請前往「Lenovo支援中心」網站。",
             "supportButtonText": "打開服務票據",
             "recoverBadSectorsButtonText": "回復錯誤磁區"
-        }
+        },
+        "scanFinishedHeader": {
+            "titleSuccess": "掃描已完成。您的裝置已通過所有測試。",
+            "titleErrorPlural": "掃描已完成。您的裝置未通過 {{numberTestsFailed}} 次測試。",
+            "titleErrorSingular": "掃描已完成。您的裝置未通過 1 次測試。",
+            "frcSuccessDescription": "此最終結果代碼表示此次掃描沒有發現問題。如果任何測試顯示警告或「不適用」訊息，並不表示發現了問題。如果 Lenovo 支援中心專員要求您執行此測試，請使用此代碼做為憑據；否則，此時您不需要執行任何動作。如果您仍然遇到問題，請聯絡 Lenovo 支援中心。",
+            "frcFailureDescription": "最終結果代碼表示此次掃描發現的問題。",
+            "lenovoSupportInstruction": "在 Lenovo 支援中心，您可以使用最終結果的代碼打開驗證票證。",
+            "finalResultCodeLabel": "最終結果代碼：",
+            "scanAgainButtonText": "再掃描一次",
+            "supportButtonText": "Lenovo 支援中心"
+        },
+        "executingScanTitle": "正在掃描 {{title}}..."
     },
     "smartPerformance": {
         "title": "Smart Performance",
@@ -3289,7 +3305,7 @@
             "descriptionbeta": "Lenovo 提供試驗計畫，可讓您試用 Smart Performance 功能，至 2020 年 7 月截止。",
             "descriptionbeta1": "歡迎加入本計畫並試用完整功能。",
             "descriptionNonSubscriber": "您沒有訂閱 Lenovo Smart Performance 服務。您只能掃描自己的 PC。立即訂閱以獲得可讓 PC 受到保護且執行順暢的完整權益。",
-            "processStatus": "PROCESSING"
+            "processStatus": "處理中"
         },
         "scanSettings": {
             "title": "排程掃描設定",
@@ -3313,6 +3329,8 @@
             "fri": "星期五",
             "sat": "星期六",
             "sun": "星期日",
+            "am": "上午",
+            "pm": "下午",
             "tooltipText": "保持啟用此切換開關，系統效能與安全性掃描就會自動在您設定的日期和時間開始執行。"
         },
         "scanningPage": {
@@ -3775,7 +3793,7 @@
                 "txtGo": "執行",
                 "summaryCaption": "空間已收回",
                 "fixes": "修正",
-                "txtClr": "Clear"
+                "txtClr": "清除"
             },
             "lastScanResults": {
                 "title": "最後 5 次掃描結果：",

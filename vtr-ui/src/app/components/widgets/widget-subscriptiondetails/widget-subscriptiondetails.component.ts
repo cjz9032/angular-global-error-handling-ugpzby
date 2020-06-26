@@ -12,6 +12,7 @@ import moment from 'moment';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { SupportService } from 'src/app/services/support/support.service';
 import * as CryptoJS from 'crypto-js';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 @Component({
 	selector: 'vtr-widget-subscriptiondetails',
 	templateUrl: './widget-subscriptiondetails.component.html',
@@ -30,7 +31,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	myDate = new Date();
 	spEnum:any = enumSmartPerformance;
 	public subscriptionDate: any;
-	public modalStatus: any = {intervalTime: '', isOpened: false};ciphertext: any;
+	public modalStatus: any = {initiatedTime: '', isOpened: false};
 	public partNumbersList: any = [];
 	public systemSerialNumber: any;
 	currentTime: string;
@@ -43,8 +44,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	  private formatLocaleDate: FormatLocaleDatePipe,
 	  private smartPerformanceService: SmartPerformanceService,
 	  private supportService: SupportService,
-
-	  ) {
+	  private logger: LoggerService ) {
 	}
 	public localSubscriptionDetails = {
 			UUID: uuid(),
@@ -86,6 +86,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		}
 		const currentTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
 		this.modalStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus);
+		this.intervalTime = this.modalStatus.initiatedTime || currentTime;
 		if(this.modalStatus && this.modalStatus.isOpened){
 			this.getSubscriptionDetails();
 			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.processStatus';
@@ -154,25 +155,23 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 
 	async getSubscriptionDetails() {
 		this.modalStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus);
-		let subscriptionDetails: any;
 		let subscriptionData = []
-		// const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails(serialNumber);
-		this.smartPerformanceService.getPaymentDetails(this.systemSerialNumber).then(res =>{
-			subscriptionDetails = res;
-		})
+		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails(this.systemSerialNumber);
+		this.logger.info('Subscription Details', subscriptionDetails);
 		if(subscriptionDetails){
 			subscriptionData = subscriptionDetails.data? subscriptionDetails.data : [];
 		} else {
 			subscriptionData = [];
 		}
 		if (subscriptionData && subscriptionData.length > 0) {
-			const releaseDate = new Date(subscriptionData[0].releaseDate);
-			releaseDate.setMonth(releaseDate.getMonth() + +subscriptionData[0].products[0].unitTerm);
+			const lastItem = subscriptionData[subscriptionData.length-1];
+			const releaseDate = new Date(lastItem.releaseDate);
+			releaseDate.setMonth(releaseDate.getMonth() + +lastItem.products[0].unitTerm);
 			releaseDate.setDate(releaseDate.getDate() - 1);
 			this.subscriptionDetails = {
-				startDate: this.formatLocaleDate.transform(subscriptionData[0].releaseDate),
+				startDate: this.formatLocaleDate.transform(lastItem.releaseDate),
 				endDate: this.formatLocaleDate.transform(releaseDate.toLocaleDateString()),
-				productNumber: subscriptionData[0].products[0].productCode || ''
+				productNumber: lastItem.products[0].productCode || ''
 			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.subscriptionDetails);
 			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.activeStatus';
@@ -188,7 +187,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 				this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.processStatus';
 				this.strStatus = 'PROCESSING';
 				setTimeout(() => {
-					if (this.intervalTime < currentTime) {
+					if (this.intervalTime && this.intervalTime > currentTime) {
 						this.getSubscriptionDetails()
 					} else {
 						this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.inactiveStatus';

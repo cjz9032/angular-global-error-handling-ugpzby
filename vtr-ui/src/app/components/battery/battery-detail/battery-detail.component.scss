@@ -17,8 +17,10 @@
 			font-size: 1.8rem;
 			cursor: pointer;
 			color: #496afd;
+			&:focus {
+				@include outline-border-blue;
+			}
 		}
-
 
 		.battery-indicator {
 			width: 35rem;

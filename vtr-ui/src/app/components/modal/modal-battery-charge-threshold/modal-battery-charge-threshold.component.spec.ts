@@ -2,10 +2,11 @@ import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core
 
 import { ModalBatteryChargeThresholdComponent } from './modal-battery-charge-threshold.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { TranslationModule } from 'src/app/modules/translation.module';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { TranslateStore } from '@ngx-translate/core';
 import { SvgInlinePipe } from 'src/app/pipe/svg-inline/svg-inline.pipe';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
 
 describe('ModalBatteryChargeThresholdComponent', () => {
 
@@ -14,12 +15,14 @@ describe('ModalBatteryChargeThresholdComponent', () => {
 	let description2: string;
 	let positiveResponseText: string;
 	let negativeResponseText: string;
+	let batteryDetailService: BatteryDetailService;
+	let activeModal;
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			declarations: [ModalBatteryChargeThresholdComponent, SvgInlinePipe],
-			imports: [FontAwesomeModule, TranslationModule],
-			providers: [NgbActiveModal, TranslateStore]
+			imports: [FontAwesomeModule, TranslateModule.forRoot(), HttpClientTestingModule],
+			providers: [NgbActiveModal, BatteryDetailService, TranslateService]
 		}).compileComponents();
 	}));
 
@@ -32,89 +35,37 @@ describe('ModalBatteryChargeThresholdComponent', () => {
 		}
 
 		it('should create the app', (() => {
-			const { component } = setup();
+			const { fixture, component } = setup();
+			const translate = TestBed.get(TranslateService);
+			const spy = spyOn(translate, 'instant');
+			batteryDetailService = TestBed.get(BatteryDetailService);
+			batteryDetailService.currentOpenModal = '1';
+			fixture.detectChanges();
 			expect(component).toBeTruthy();
 		}));
 
 		it('enableBatteryChargeThreshold calling activeModal close', async(() => {
 			const { fixture, component } = setup();
-			spyOn(component.activeModal, 'close').and.returnValue(Promise.resolve('positive'));
-
-			fixture.detectChanges();//ngOnInit
+			activeModal = TestBed.get(NgbActiveModal);
+			const spy = spyOn(activeModal, 'close');
 			component.enableBatteryChargeThreshold();
-
-			expect(component.activeModal.close).toHaveBeenCalled();
+			expect(spy).toHaveBeenCalled();
 		}));
 
 		it('closeModal calling activeModal close', async(() => {
 			const { fixture, component } = setup();
 			spyOn(component.activeModal, 'close').and.returnValue(Promise.resolve('negative'));
-
-			fixture.detectChanges();//ngOnInit
 			component.closeModal();
-
 			expect(component.activeModal.close).toHaveBeenCalled();
 		}));
 
 		it('onKeydownHandler calling activeModal close', async(() => {
 			const { fixture, component } = setup();
 			spyOn(component, 'closeModal');
-
-			fixture.detectChanges();//ngOnInit
 			component.onKeydownHandler(KeyboardEvent);
-
 			expect(component.closeModal).toHaveBeenCalled();
 		}));
-
-		// it('onFocus calling modal focus', (() => {
-		// 	const { fixture, component } = setup();
-
-		// 	fixture.detectChanges();//ngOnInit
-
-		// 	let modal = document.createElement('div');
-		// 	modal.setAttribute('class', 'Battery-Charge-Threshold-Modal');
-		// 	fixture.debugElement.nativeElement.append(modal);
-		// 	component.onFocus();
-
-		// 	expect(modal).toBeTruthy();
-		// }));
-
-		//
-		// it('button clicked called closeModal', async(async () => {
-		// 	const { fixture, component } = setup();
-		// 	spyOn(component, 'closeModal');
-
-		// 	fixture.detectChanges();//ngOnInit
-		// 	let button = fixture.debugElement.nativeElement.querySelector('#ds-threshold-popup-close-button');
-		// 	button.click();
-		// 	await fixture.whenStable();
-		// 	expect(component.closeModal).toHaveBeenCalled();
-
-		// }));
-
 
 	});
 
 });
-
-// xdescribe('ModalBatteryChargeThresholdComponent', () => {
-// 	let component: ModalBatteryChargeThresholdComponent;
-// 	let fixture: ComponentFixture<ModalBatteryChargeThresholdComponent>;
-
-// 	beforeEach(async(() => {
-// 		TestBed.configureTestingModule({
-// 			declarations: [ModalBatteryChargeThresholdComponent]
-// 		})
-// 			.compileComponents();
-// 	}));
-
-// 	beforeEach(() => {
-// 		fixture = TestBed.createComponent(ModalBatteryChargeThresholdComponent);
-// 		component = fixture.componentInstance;
-// 		fixture.detectChanges();
-// 	});
-
-// 	it('should create', () => {
-// 		expect(component).toBeTruthy();
-// 	});
-// });

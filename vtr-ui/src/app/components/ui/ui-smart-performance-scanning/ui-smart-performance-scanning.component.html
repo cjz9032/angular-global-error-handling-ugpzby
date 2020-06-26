@@ -79,7 +79,7 @@
 													<div class="d-flex justify-content-between">
 														<div class="heading">
 															<div class="icomoon icomoon-tune-pc"></div>
-															<h2>{{'smartPerformance.tunePCPerformance.title' |translate }}</h2>
+															<h2 title="{{'smartPerformance.tunePCPerformance.title' |translate }}">{{'smartPerformance.tunePCPerformance.title' |translate }}</h2>
 														</div>
 														<div class="status-text float-right pull-right" >
 															<vtr-widget-speedometer #speedometer *ngIf="activegroup == spCategoryenum.TUNEUPPERFORMANCE"></vtr-widget-speedometer>
@@ -266,7 +266,7 @@
 												</div>
 												<div class="ms-slider">
 													<ul class="junk-list ms-slider__words">
-															<li class="ms-slider__word" *ngFor="let item of subItems.items">{{item.key}}</li>
+															<li class="ms-slider__word" *ngFor="let item of subItems.items" title="{{item.key}}">{{item.key}}</li>
 														<!-- <li class="ms-slider__word">Applying registry and shortcut fixes</li>
 														<li class="ms-slider__word">Scanning and fixing critical services</li>
 														<li class="ms-slider__word">Modifying windows settings</li>

@@ -175,12 +175,12 @@
 														<div class="desc-block">
 															<div class="desc desc1 col-auto"
 																*ngIf="historyScanResultsDateTime && historyScanResultsDateTime.length > 0">
-																<b>{{'smartPerformance.subscriberScanHomePage.mostRecent' |translate }}</b><br>
+																<b title="{{'smartPerformance.subscriberScanHomePage.mostRecent' |translate }}">{{'smartPerformance.subscriberScanHomePage.mostRecent' |translate }}</b><br>
 																{{mostRecentScan}}
 															</div>
 															<div class="desc desc2 col-auto-1"
 																*ngIf="enableNextText">
-																<b>{{'smartPerformance.subscriberScanHomePage.nextScheduled' |translate }}</b><br>
+																<b title="{{'smartPerformance.subscriberScanHomePage.nextScheduled' |translate }}">{{'smartPerformance.subscriberScanHomePage.nextScheduled' |translate }}</b><br>
 																{{nextScheduleScan}}
 															</div>
 														</div>
@@ -191,7 +191,7 @@
 															<div class="heading"
 																_ngcontent-dag-c274="">
 																<div class="icon icon-performance"></div>
-																<h3>TUNE PC PERFORMANCE</h3>
+																<h3>{{'smartPerformance.tunePCPerformance.title' |translate }}</h3>
 															</div>
 															<div class="status">
 																<div class="icon-check">
@@ -205,7 +205,7 @@
 															<div class="heading"
 																_ngcontent-dag-c274="">
 																<div class="icon icon-internet-performance"></div>
-																<h3>INTERNET PERFORMANCE</h3>
+																<h3>{{'smartPerformance.boostInternetPerformance.extraTitle' |translate }}</h3>
 															</div>
 															<div class="status">
 																<div class="icon-check">
@@ -219,7 +219,7 @@
 															<div class="heading"
 																_ngcontent-dag-c274="">
 																<div class="icon icon-malware-security"></div>
-																<h3>MALWARE & SECURITY</h3>
+																<h3>{{'smartPerformance.malwareSecurity.title' |translate }}</h3>
 															</div>
 															<div class="status">
 																<div class="icon-check">
@@ -318,7 +318,7 @@
 																		<div class="col">
 																			<div class="row custom-from-date py-3"
 																				[ngClass]="{'selected-custom-date':isFromDate}">
-																				<div class="col-3">
+																				<div class="col-5">
 																					{{'smartPerformance.subscriberScanHomePage.scanSummary.txtFrom' |translate }}
 																				</div>
 																				<div class="col-auto"><input type='text'
@@ -328,7 +328,7 @@
 																			</div>
 																			<div class="row custom-to-date mt-3 py-3"
 																				[ngClass]="{'selected-custom-date':!isFromDate}">
-																				<div class="col-3">
+																				<div class="col-5">
 																					{{'smartPerformance.subscriberScanHomePage.scanSummary.txtTo' |translate }}
 																				</div>
 																				<div class="col-auto"><input type='text'
@@ -471,7 +471,7 @@
 										<div class="vtr-scan-information mt-5">
 											<div class="scan-summary-block">
 												<div class="row px-0">
-													<div class="title-block full-width">
+													<div class="title-block w-100">
 														<h3>{{'smartPerformance.subscriberScanHomePage.lastScanResults.title' |translate }}
 														</h3>
 													</div>
@@ -523,7 +523,7 @@
 																						<span class="ml-1"
 																							*ngIf="item.type.toUpperCase() == 'SS'">({{'smartPerformance.auto' |translate }})</span>
 																					</div>
-																					<div class="col-2 fixes">
+																					<div class="col-2 fixes" title="{{item.fixcount === 0 ? item.fixcount : (item.fixcount | number:'2.0')}} {{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' | translate}}">
 																						{{item.fixcount === 0 ? item.fixcount : (item.fixcount | number:'2.0')}}
 																						{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' | translate}}
 																					</div>
@@ -554,13 +554,10 @@
 																						<div class="row pl-0 pr-0 pt-3">
 																							<div class="col-1">&nbsp;
 																							</div>
-																							<div
-																								class="scan-items col-7">
+																							<div class="scan-items col-7">
 																								<div class="row">
-																									<div
-																										class="icon icon-performance">
-																									</div>
-																									{{'smartPerformance.tunePCPerformance.summaryTitle' |translate }}
+																									<div class="col-2 px-0 icon icon-performance"></div>
+																									<div class="col-10 px-0 text" title="{{'smartPerformance.tunePCPerformance.summaryTitle' |translate }}">{{'smartPerformance.tunePCPerformance.summaryTitle' |translate }}</div>
 																								</div>
 																							</div>
 																							<div
@@ -585,13 +582,10 @@
 																						<div class="row pl-0 pr-0">
 																							<div class="col-1">&nbsp;
 																							</div>
-																							<div
-																								class="scan-items col-7">
+																							<div class="scan-items col-7">
 																								<div class="row">
-																									<div
-																										class="icon icon-internet-performance">
-																									</div>
-																									{{'smartPerformance.boostInternetPerformance.summaryTitle' |translate }}
+																									<div class="col-2 px-0 icon icon-internet-performance"></div>
+																									<div class="col-10 px-0 text" title="{{'smartPerformance.boostInternetPerformance.summaryTitle' |translate }}">{{'smartPerformance.boostInternetPerformance.summaryTitle' |translate }}</div>
 																								</div>
 																							</div>
 																							<div
@@ -615,13 +609,10 @@
 																						<div class="row pl-0 pr-0">
 																							<div class="col-1">&nbsp;
 																							</div>
-																							<div
-																								class="scan-items col-7">
+																							<div class="scan-items col-7">
 																								<div class="row">
-																									<div
-																										class="icon icon-malware-security">
-																									</div>
-																									{{'smartPerformance.malwareSecurity.summaryTitle' |translate }}
+																									<div class="col-2 px-0 icon icon-malware-security"></div>
+																									<div class="col-10 px-0 text" title="{{'smartPerformance.malwareSecurity.summaryTitle' |translate }}">{{'smartPerformance.malwareSecurity.summaryTitle' |translate }}</div>
 																								</div>
 																							</div>
 																							<div

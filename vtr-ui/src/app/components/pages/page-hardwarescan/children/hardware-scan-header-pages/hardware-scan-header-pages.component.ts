@@ -5,6 +5,7 @@ import { ModalWaitComponent } from '../../../../modal/modal-wait/modal-wait.comp
 import { NgbModal, NgbModalRef, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from '../../../../../services/vantage-shell/vantage-shell.service';
 import { HardwareScanService } from '../../../../../services/hardware-scan/hardware-scan.service';
+import { HardwareScanState } from 'src/app/enums/hardware-scan-state';
 
 @Component({
 	selector: 'vtr-hardware-scan-header-pages',
@@ -28,6 +29,10 @@ export class HardwareScanHeaderPagesComponent implements OnInit {
 	@Output() startQuickScan = new EventEmitter();
 	@Output() checkAnchor = new EventEmitter();
 	@Output() checkCancel = new EventEmitter();
+	@Output() scanAgain = new EventEmitter();
+
+	// "Wrapper" value to be accessed from the HTML
+	public scanStateEnum = HardwareScanState;
 
 	constructor(
 		private hardwareScanService: HardwareScanService,
@@ -49,14 +54,8 @@ export class HardwareScanHeaderPagesComponent implements OnInit {
 		this.checkCancel.emit();
 	}
 
-	public getDeviceTitle() {
-		if (this.hardwareScanService) {
-			if (this.hardwareScanService.isRecoverExecuting()) {
-				return this.hardwareScanService.getDeviceInRecover();
-			} else {
-				return this.translate.instant('hardwareScan.title');
-			}
-		}
+	onScanAgain() {
+		this.scanAgain.emit();
 	}
 
 	public getDeviceSubTitle() {
@@ -69,12 +68,18 @@ export class HardwareScanHeaderPagesComponent implements OnInit {
 		}
 	}
 
-	public isExecutingAnyScan(){
+	public getCurrentScanState(){
 		if (this.hardwareScanService) {
-			return (
-				this.hardwareScanService.isScanExecuting() ||
-				this.hardwareScanService.isRecoverExecuting()
-			);
+			if (this.hardwareScanService.isScanExecuting() || this.hardwareScanService.isRecoverExecuting()) {
+				if (this.hardwareScanService.isScanOrRBSFinished()) {
+					return HardwareScanState.StateFinished;
+				} else {
+					return HardwareScanState.StateExecuting;
+				}
+			}
+			else { // main screen
+				return HardwareScanState.StateHome;
+			}
 		}
 	}
 }

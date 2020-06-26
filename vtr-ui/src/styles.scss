@@ -311,19 +311,19 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		font-size: 1.4rem;
 		text-align: left;
 		max-width: 24.2rem;
-		@media #{$breakpoint_xl6}{
+		@media #{$breakpoint_xl6} {
 			max-width: 44.2rem !important;
 		}
-		@media #{$breakpoint_xl3}{
+		@media #{$breakpoint_xl3} {
 			max-width: 32.5rem !important;
 		}
-		@media #{$breakpoint_xl}{
+		@media #{$breakpoint_xl} {
 			max-width: 24.2rem !important;
 		}
 	}
 	.arrow {
 		top: calc(-0.9rem + 50%);
-		&::before{
+		&::before {
 			border-left-color: $light;
 			border-width: 1rem 0 1rem 1rem;
 			left: 0.3rem;
@@ -341,13 +341,12 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	.tooltip-inner {
 		padding: 0.8rem;
 		color: $main_dark;
-		border-radius: 0rem;
+		border-radius: 0rem;
 		background-color: $light;
 		border: 0.1rem solid $grey_dark;
 		font-size: 1.2rem;
-		text-align: left;
+		text-align: left;
 		max-width: 24.2rem;
-
 
 		@media #{$breakpoint_xl} {
 			max-width: 24.2rem !important;
@@ -364,9 +363,14 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 }
 
 .fcc-note-tooltip {
-		.tooltip-inner {
-			width: 20rem !important;
+	.tooltip-inner {
+		width: 20rem !important;
+	}
+	a {
+		&:focus {
+			@include outline-border-blue;
 		}
+	}
 }
 
 .fnctrl-tooltip.tooltip {
@@ -427,7 +431,8 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	}
 }
 
-.wifi-security-invitation-modal,  .wifi-security-location-modal {
+.wifi-security-invitation-modal,
+.wifi-security-location-modal {
 	.modal-dialog {
 		margin: auto;
 
@@ -467,8 +472,8 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 .Battery-Charge-Threshold-Modal {
 	.modal-dialog {
 		width: 49rem;
-		max-width:90%;
-		margin:auto;
+		max-width: 90%;
+		margin: auto;
 
 		// RESPONSIVE EFFORT
 		// @media #{$mediaquery_11} {
@@ -540,7 +545,6 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 		}
 		@media #{$white-on-black} {
 			border: 0.1rem solid $light;
-
 		}
 	}
 }
@@ -589,14 +593,11 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 		background: $light;
 		padding: 4rem;
 		@media #{$white-on-black} {
-
 			@include white-border;
-			}
-			@media #{$black-on-white} {
-
-
-				@include black-border;
-			}
+		}
+		@media #{$black-on-white} {
+			@include black-border;
+		}
 	}
 }
 
@@ -941,7 +942,8 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	}
 }
 
-.feedback-modal, .smart-performance-feedback-Modal {
+.feedback-modal,
+.smart-performance-feedback-Modal {
 	.modal-dialog {
 		margin: 1.75rem auto;
 		width: 50rem;
@@ -1042,7 +1044,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 				outline: none;
 				border: 0.1rem solid $menu_hover;
 				@media #{$high-contrast} {
-					border: 0.1rem solid $high-contrast-black-textselected!important;
+					border: 0.1rem solid $high-contrast-black-textselected !important;
 				}
 			}
 		}
@@ -1056,7 +1058,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 				outline: none;
 				border: 0.1rem solid $menu_hover;
 				@media #{$high-contrast} {
-					border: 0.1rem solid $high-contrast-black-textselected!important;
+					border: 0.1rem solid $high-contrast-black-textselected !important;
 				}
 			}
 		}
@@ -1064,7 +1066,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 
 	.arrow {
 		top: calc(-0.9rem + 50%) !important;
-		&::before{
+		&::before {
 			border-left-color: $light;
 			border-width: 1rem 0 1rem 1rem;
 			left: 0.3rem;
@@ -1238,14 +1240,15 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 						height: 12rem;
 						word-break: break-all;
 					}
-					.icon, .icomoon {
+					.icon,
+					.icomoon {
 						height: 12rem;
 						width: 10rem;
 						line-height: 12rem;
 						text-align: center;
 						font-size: 8rem;
 						color: $main_light;
-						@media #{$breakpoint_xl}{
+						@media #{$breakpoint_xl} {
 							font-size: 6.4rem;
 							height: 6.4rem;
 							width: 6.4rem;
@@ -1481,7 +1484,7 @@ vtr-ui-smart-performance-scanning {
 					}
 				}
 			}
-			.btn-light{
+			.btn-light {
 				cursor: pointer;
 			}
 			.bg-primary {
@@ -1520,7 +1523,7 @@ vtr-ui-smart-performance-scanning {
 							.ngb-dp-weekday {
 								font-style: normal;
 							}
-							.btn-light:hover{
+							.btn-light:hover {
 								cursor: pointer;
 							}
 						}
@@ -1559,7 +1562,7 @@ vtr-ui-smart-performance-scanning {
 
 /* battery-detail-modal */
 .battery-modal-size {
-	display:flex!important;
+	display: flex !important;
 	align-items: center;
 	.modal-dialog {
 		max-width: 110rem;
@@ -1574,14 +1577,14 @@ vtr-ui-smart-performance-scanning {
 		}
 		@media #{$breakpoint_sm} {
 			max-width: 40rem;
-			margin:auto;
+			margin: auto;
 		}
 		.modal-content {
 			border-radius: 1rem;
 			.vtr-battery-indicator {
-				.cell{
+				.cell {
 					@media #{$breakpoint_md} {
-						width:95%;
+						width: 95%;
 					}
 				}
 			}
@@ -1665,7 +1668,6 @@ vtr-ui-smart-performance-scanning {
 			border-radius: 1rem;
 		}
 	}
-
 }
 .installation-history-container {
 	.vtr-container-collapsible.white-theme {
@@ -1673,7 +1675,7 @@ vtr-ui-smart-performance-scanning {
 		border-top-right-radius: 0 !important;
 		border-bottom-left-radius: 0.7rem !important;
 		border-bottom-right-radius: 0.7rem !important;
-		box-shadow: 0 0.7rem 1.5rem 0 rgba(0,0,0,0.15) !important;
+		box-shadow: 0 0.7rem 1.5rem 0 rgba(0, 0, 0, 0.15) !important;
 		.card-header {
 			border-bottom: none;
 		}
@@ -1681,9 +1683,9 @@ vtr-ui-smart-performance-scanning {
 }
 
 .no-border-bottom {
- .vtr-ui-switch-row.white-theme {
-	   border-bottom: none !important;
-   }
+	.vtr-ui-switch-row.white-theme {
+		border-bottom: none !important;
+	}
 }
 
 .slider-note {
@@ -1703,20 +1705,20 @@ vtr-ui-smart-performance-scanning {
 	}
 }
 
-.np-l{
-	padding-left:0rem!important;
+.np-l {
+	padding-left: 0rem !important;
 }
 .auto-screen-lock-help-icon {
 	ngb-tooltip-window.vtr-tooltip.tooltip {
 		.tooltip-inner {
 			width: 24.2rem;
-			@media #{$breakpoint_xl6}{
+			@media #{$breakpoint_xl6} {
 				width: 44.2rem;
 			}
-			@media #{$breakpoint_xl3}{
+			@media #{$breakpoint_xl3} {
 				width: 32.5rem;
 			}
-			@media #{$breakpoint_xl}{
+			@media #{$breakpoint_xl} {
 				width: 24.2rem;
 			}
 		}
@@ -1737,15 +1739,15 @@ vtr-ui-smart-performance-scanning {
 				.card-image {
 					height: 100% !important;
 					min-height: 28.5rem;
-						@media #{$breakpoint_xl} {
-							min-height: 20rem;
-						}
-						@media #{$breakpoint_lg} {
-							min-height: 28.5rem;
-						}
-						@media #{$breakpoint_sm} {
-							min-height: 20rem;
-						}
+					@media #{$breakpoint_xl} {
+						min-height: 20rem;
+					}
+					@media #{$breakpoint_lg} {
+						min-height: 28.5rem;
+					}
+					@media #{$breakpoint_sm} {
+						min-height: 20rem;
+					}
 				}
 			}
 		}
@@ -1762,7 +1764,8 @@ vtr-ui-smart-performance-scanning {
 	}
 }
 
-.vtr-backlight, .vtr-backlight-thinkpad {
+.vtr-backlight,
+.vtr-backlight-thinkpad {
 	.vtr-ui-switch-row.white-theme {
 		.col-12 {
 			margin-left: 2rem;
@@ -1794,20 +1797,23 @@ vtr-ui-smart-performance-scanning {
 .subpage-device-settings-display,
 .subpage-device-settings-input-accessories,
 .vtr-page-smart-assist {
-	.vtr-container-collapsible.blue-theme, .vtr-container-collapsible.white-theme {
+	.vtr-container-collapsible.blue-theme,
+	.vtr-container-collapsible.white-theme {
 		.card-header {
 			padding: 0.75rem 0.9rem;
 		}
 		.card-body {
 			padding-left: 0.9rem !important;
 			padding-right: 2.4rem !important;
-			padding-top: 2rem !important
+			padding-top: 2rem !important;
 		}
 	}
-	.vtr-ui-switch-row.blue-theme, .vtr-ui-switch-row.white-theme {
+	.vtr-ui-switch-row.blue-theme,
+	.vtr-ui-switch-row.white-theme {
 		padding: 0 0 1.5rem !important;
 	}
-	.intelligent-security-block, .power-settings-block {
+	.intelligent-security-block,
+	.power-settings-block {
 		.vtr-container-collapsible.white-theme {
 			.card-body {
 				padding-top: 0 !important;
@@ -1828,7 +1834,9 @@ vtr-ui-smart-performance-scanning {
 	height: 3rem;
 }
 
-a, input, label {
+a,
+input,
+label {
 	&:focus {
 		@include outline-blue;
 	}
@@ -1838,7 +1846,7 @@ a, input, label {
 	&:focus {
 		outline: none !important;
 		&:before {
-			content: '';
+			content: "";
 			position: absolute;
 			width: calc(100% + 0.6rem);
 			height: calc(100% + 0.6rem);
@@ -1918,6 +1926,28 @@ ngb-tooltip-window.schedule-scan.tooltip {
 					&::after {
 						display: none;
 					}
+				}
+			}
+		}
+	}
+}
+
+.antiTheftFeature {
+	.photoDropdown {
+		ngb-tooltip-window.vtr-tooltip.tooltip {
+			margin-bottom: 0.5rem;
+			margin-right: 0;
+
+			.arrow {
+				top: auto;
+				bottom: 1rem;
+				left: calc(-0.8rem + 50%);
+
+				&::before {
+					border-top-color: $light;
+					border-left-color: transparent;
+					left: 0;
+					transform: rotate(135deg);
 				}
 			}
 		}

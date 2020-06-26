@@ -2205,7 +2205,13 @@ vtr-container-card {
 						padding:0;
 						margin:0;
 						.spinner-content {
-						height: 50vh;
+							height: auto;
+							.spinner-border{
+								width: 2rem !important;
+								height: 2rem !important;
+								padding: 2rem;
+								margin-top: -2.4rem;
+							}
 						}
 					}
 				}

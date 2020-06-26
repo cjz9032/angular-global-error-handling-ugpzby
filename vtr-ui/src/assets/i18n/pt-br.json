@@ -925,7 +925,7 @@
         },
         "systemStatus": {
             "title": "Status do sistema",
-            "subtitle": "Atualize o status do dispositivo rapidamente.",
+            "subtitle": "Mantenha o status do dispositivo atualizado rapidamente.",
             "memory": {
                 "title": "Memória",
                 "detail": {
@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "Para estender a vida útil da bateria, otimizamos sua capacidade de carga máxima com base no seu uso. A capacidade máxima da bateria pode não estar disponível até você descarregar para 20% e recarregar.",
-                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
+                    "moreInfo": "Clique <a role=\"link\" href=\"#/device/high-density-battery\" tabindex=\"0\">aqui</a> para obter mais informações."
                 },
                 "condition": {
                     "Illegal": "A bateria instalada <b>não é aceita</b> pelo sistema e não será carregada. Substitua a bateria pela bateria correta da Lenovo para esse sistema.",
@@ -1101,13 +1101,13 @@
                     "NotDetected": "<b>A bateria principal não foi detectada.</b>"
                 },
                 "highDensityBattery": {
-                    "title": "High density battery",
-                    "subtitle": "How your battery works",
-                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "title": "Bateria de alta densidade",
+                    "subtitle": "Como sua bateria funciona",
+                    "para1": "Para aumentar a vida útil da bateria, a bateria ajusta automaticamente a tensão e a capacidade da carga em resposta ao seu padrão de uso pessoal.",
                     "para2": {
-                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
-                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
-                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                        "item1": "- Se você usar menos de 65% da capacidade da bateria por uma semana ou mais, a bateria poderá reduzir temporariamente a tensão e a capacidade de carga. A redução na capacidade é pequena e não é perceptível para o seu padrão de uso.",
+                        "item2": "- A capacidade total é restaurada quando você descarrega a bateria abaixo de 20% e, em seguida, carrega a bateria completamente.",
+                        "item3": "- Além disso, se você usar menos de 10% da capacidade da bateria por 2 semanas ou mais, ela poderá reduzir temporariamente ainda mais a tensão e a capacidade de carga, até que 50% da capacidade reduzida da bateria seja usada."
                     }
                 }
             },
@@ -1195,7 +1195,7 @@
                             "battery&Quite": "BATERIA E SILÊNCIO"
                         }
                     },
-                    "description5": "O Resfriamento inteligente ajusta a velocidade do ventilador, o desempenho máximo e gerencia a duração da bateria. Este recurso possui 3 modos (modo Silencioso, Equilibrado e de Desempenho) e agora pode ser acessado pelo controle deslizante de energia de desempenho do Windows.",
+                    "description5": "O Resfriamento inteligente ajusta a velocidade do ventilador, o desempenho máximo e gerencia a duração da bateria. Este recurso tem 3 modos (modo Silencioso, Equilibrado e de Desempenho) e agora pode ser acessado pelo controle deslizante de energia de desempenho do Windows.",
                     "nocqldesc": "O Resfriamento Inteligente permite ajustar o desempenho do sistema e a temperatura térmica. No modo \"Desempenho\", ele otimiza o desempenho do sistema. Enquanto ajuda a manter o sistema mais frio ou mais silencioso no modo \"Refrigerado e silencioso\".",
                     "dytc6": {
                         "desc1": "O Resfriamento inteligente ajusta a velocidade do ventilador, o desempenho máximo e gerencia a duração da bateria.",
@@ -1276,7 +1276,7 @@
                             "description2": "Para ativar completamente esse recurso, desconecte sua máquina epermita que a bateria descarregue até ou abaixo do limite de interrupção de carga.",
                             "enable": "ATIVAR",
                             "cancel": "CANCELAR",
-                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
+                            "description3": "A bateria otimiza automaticamente sua tensão e capacidade de carga com base no seu padrão de uso. Se você usar a bateria levemente, não há necessidade de ativar o Limite de carga da bateria."
                         },
                         "options": {
                             "start": "Iniciar carregamento quando abaixo de",
@@ -1557,7 +1557,7 @@
                     },
                     "optimize": {
                         "title": "Otimizar meu microfone para:",
-                        "tooltip": "Configurar o efeito do microfone para melhorar a experiência de áudio em diferentes cenários e ambientes.",
+                        "tooltip": "Configure o efeito do microfone para aprimorar sua experiência de áudio em diferentes cenários e ambientes.",
                         "options": {
                             "VoiceRecognition": "RECONHECIMENTO DE VOZ",
                             "OnlyMyVoice": "SOMENTE MINHA VOZ",
@@ -1585,7 +1585,7 @@
                 "display": {
                     "title": "Monitor",
                     "displayColorTemperature": {
-                        "title": "Modo de proteção ocular",
+                        "title": "Modo Proteção Ocular",
                         "description": "Para evitar cansaço visual, você pode ajustar a temperatura da cor da tela para filtrar a luz azul quando usar o computador por um longo período de tempo. Além disso, cores quentes são boas para dormir, especialmente à noite.",
                         "link": {
                             "click": "Clique",
@@ -1595,19 +1595,19 @@
                     },
                     "eyeCareMode": {
                         "title": "Modo Proteção Ocular",
-                        "checkbox": "Agendar o modo proteção ocular do pôr do sol ao nascer do sol",
+                        "checkbox": "Agendar o Modo Proteção Ocular do pôr do sol ao nascer do sol",
                         "options": {
                             "warm": "Quente (melhor para os olhos)",
                             "cold": "Fria"
                         },
                         "reset": "Redefinir",
                         "tooltip": "O Modo Proteção Ocular ajusta a temperatura das cores do monitor para filtrar a luz azul e reduzir a tensão ocular.",
-                        "onSunsetToSunriseScheduleDescription": "Agendar o modo proteção ocular do pôr do sol ao nascer do sol",
+                        "onSunsetToSunriseScheduleDescription": "Agendar o Modo Proteção Ocular do pôr do sol ao nascer do sol",
                         "note": {
                             "title": "Nota",
                             "description": "O Lenovo Vantage precisa acessar suas informações de localização para calcular o horário do pôr do sol e do nascer do sol de sua região."
                         },
-                        "tips": "Execute o Windows Update ou instale manualmente o driver gráfico para recuperar o modo Proteção Ocular"
+                        "tips": "Execute o Windows Update ou instale manualmente o driver gráfico para recuperar o Modo Proteção Ocular."
                     },
                     "dispColorTemp": {
                         "title": "Temperatura das cores do monitor",
@@ -1617,7 +1617,7 @@
                         },
                         "reset": "Redefinir",
                         "tooltip": "O Modo Proteção Ocular ajusta a temperatura das cores do monitor para filtrar a luz azul e reduzir a tensão ocular.",
-                        "onSunsetToSunriseScheduleDescription": "Agendar o modo proteção ocular do pôr do sol ao nascer do sol",
+                        "onSunsetToSunriseScheduleDescription": "Agendar o Modo Proteção Ocular do pôr do sol ao nascer do sol",
                         "note": {
                             "title": "Nota",
                             "description": "Quando o Modo Proteção Ocular está ativado, a temperatura das cores não é aplicada. No entanto, você pode arrastar o controle deslizante para visualizá-la. Para ativá-la, desative o Modo Proteção Ocular."
@@ -1673,7 +1673,9 @@
                     "cameraPrivacy": {
                         "title": "Modo de privacidade da câmera",
                         "tooltip": "A câmera interrompe o envio de imagens ao vivo quando a configuração de privacidade está ativada. Ative essa configuração somente quando não desejar compartilhar suas imagens durante chamadas com vídeo.",
-                        "cameraPrivacyAccessNote": "Vá para a página <b>Configurações do Windows → Privacidade → Câmera</b> e verifique se as duas opções a seguir estão ativadas:<br>&bull; <b>Permitir que aplicativos de desktop acessem sua câmera</b><br>&bull; <b>Lenovo Vantage</b> em \"Escolha quais aplicativos (Microsoft Store) podem acessar sua câmera\""
+                        "cameraPrivacyAccessNote": "Vá para a página <b>Configurações do Windows → Privacidade → Câmera</b> e verifique se as duas opções a seguir estão ativadas:<br>&bull; <b>Permitir que aplicativos de desktop acessem sua câmera</b><br>&bull; <b>Lenovo Vantage</b> em \"Escolha quais aplicativos (Microsoft Store) podem acessar sua câmera\"",
+                        "noPermissionNote": "O Lenovo Vantage não tem acesso à sua câmera ou a opção \"Permitir que aplicativos de desktop acessem sua câmera\" não está ativada.",
+                        "accessUrl": "Ir para as Configurações do Windows para dar acesso"
                     },
                     "camera": {
                         "title": "Câmera",
@@ -1768,7 +1770,7 @@
                             "description": "Alterações à função padrão da fileira superior requerem a reinicialização do computador. Tem certeza de que deseja reiniciar?",
                             "reboot": "REINICIALIZAR",
                             "cancel": "NÃO AGORA",
-                            "yes": "YES"
+                            "yes": "SIM"
                         },
                         "note": {
                             "sFunKey": "Para acessar as funções F1-F12, pressione Fn e as teclas da fileira superior.",
@@ -1791,10 +1793,10 @@
                 },
                 "userDefinedKey": {
                     "title": "Tecla definida pelo usuário",
-                    "caption": "A tecla representada pelo ícone de estrela permite configurar a função definida pelo usuário",
+                    "caption": "A tecla representada pelo ícone de estrela permite configurar a função definida pelo usuário.",
                     "dropDown": {
                         "title": "Ação da tecla definida pelo usuário",
-                        "note": "Nota: pode ser usado para inserir tecla comumente usada, como endereços postal ou de e-mail. A Lenovo recomenda nunca usar esse recurso para armazenar e inserir senhas ou outras informações privadas.",
+                        "note": "Nota: pode ser usado para inserir tecla comumente usada, como endereços postal ou de e-mail. Nunca use esse recurso para armazenar senhas ou qualquer outra informação privada.",
                         "options": {
                             "option1": "Selecione",
                             "option2": "Abrir site",
@@ -1832,7 +1834,7 @@
                 },
                 "fnCtrlKey": {
                     "title": "Permuta entre as teclas Fn e Ctrl",
-                    "description": "Se você costuma pressionar a tecla Fn quando deseja pressionar a tecla Ctrl, é possível trocar as funções das duas teclas.",
+                    "description": "Se você costuma pressionar a tecla Fn quando deseja pressionar a tecla Ctrl, é possível trocar a função das duas teclas.",
                     "restartNote": "Trocar a função de duas teclas requer a reinicialização do computador. Tem certeza de que deseja reiniciar?",
                     "title2": "A tecla Fn funciona como a tecla Ctrl para combinações de teclas usadas com frequência",
                     "description2": "A tecla Fn funciona como a tecla Ctrl para algumas combinações de teclas usadas com frequência. A função da tecla Ctrl não muda.",
@@ -3115,7 +3117,9 @@
                 "yes": "Sim",
                 "no": "Não"
             },
-            "waitAvailability": "O botão será desativado se os dispositivos de armazenamento não forem compatíveis com essa funcionalidade, enquanto as informações de hardware estiverem sendo carregadas ou se houver uma verificação em andamento."
+            "waitAvailability": "O botão será desativado se os dispositivos de armazenamento não forem compatíveis com essa funcionalidade, enquanto as informações de hardware estiverem sendo carregadas ou se houver uma verificação em andamento.",
+            "executingTitle": "Recuperando agora...",
+            "recoverCompleted": "Recuperação concluída"
         },
         "support": {
             "title": "Baixar ferramentas de diagnóstico profissional",
@@ -3163,7 +3167,19 @@
             "suggestedActionRbs": "Você pode tentar recuperar os seus dispositivos de armazenamento clicando em <b>recuperar setores ruins</b>. Se o problema persistir, você pode clicar em <b>abrir tíquete</b> para suporte adicional.",
             "supportButtonText": "Abrir tíquete",
             "recoverBadSectorsButtonText": "Recuperar Setores Ruins"
-        }
+        },
+        "scanFinishedHeader": {
+            "titleSuccess": "Verificação concluída. Seu dispositivo passou em todos os testes.",
+            "titleErrorPlural": "Verificação concluída. Seu dispositivo falhou em {{numberTestsFailed}} testes.",
+            "titleErrorSingular": "Verificação concluída. Seu dispositivo falhou em 1 teste.",
+            "frcSuccessDescription": "Este código de resultado final indica que não foram encontrados problemas com essa verificação. Se qualquer teste exibir uma mensagem de aviso ou não aplicável, não significa que um problema foi encontrado. Se um agente de suporte Lenovo pediu para que você executasse esse teste, use esse código como prova; caso contrário, nenhuma ação da sua parte é necessária neste momento. Se acredita que ainda está com problemas, entre em contato com o Suporte Lenovo.",
+            "frcFailureDescription": "O código de resultado final indica que problemas foram encontrados com essa verificação.",
+            "finalResultCodeLabel": "Código de resultado final: ",
+            "scanAgainButtonText": "Verificar novamente",
+            "supportButtonText": "Suporte Lenovo",
+            "lenovoSupportInstruction": "No Suporte Lenovo, você pode abrir um tíquete de verificação usando o código do seu resultado final."
+        },
+        "executingScanTitle": "Verificando {{title}}..."
     },
     "smartPerformance": {
         "title": "Smart Performance",
@@ -3289,7 +3305,7 @@
             "descriptionbeta": "A Lenovo está oferecendo um programa piloto para testar o recurso Smart Performance até julho de 2020.",
             "descriptionbeta1": "Você é convidado a participar e experimentar o recurso completo.",
             "descriptionNonSubscriber": "Você não está inscrito no serviço Lenovo Smart Performance. Você só poderá fazer uma varredura no seu PC. Inscreva-se agora para obter todos os benefícios de manter seu PC protegido e funcionando sem problemas.",
-            "processStatus": "PROCESSING"
+            "processStatus": "PROCESSANDO"
         },
         "scanSettings": {
             "title": "Configurações de programação de verificação",
@@ -3313,6 +3329,8 @@
             "fri": "Sexta",
             "sat": "Sábado",
             "sun": "Domingo",
+            "am": "AM",
+            "pm": "PM",
             "tooltipText": "Mantendo essa opção ativada, o desempenho do sistema e a verificação de segurança serão iniciados automaticamente na data e hora definidas."
         },
         "scanningPage": {
@@ -3775,7 +3793,7 @@
                 "txtGo": "Ir",
                 "summaryCaption": "espaço solicitado",
                 "fixes": "correções",
-                "txtClr": "Clear"
+                "txtClr": "Limpar"
             },
             "lastScanResults": {
                 "title": "Resultados das últimas cinco verificações:",

@@ -134,7 +134,7 @@
 		<div *ngIf="!microphoneStatus.isLoading || !cameraStatus.isLoading">
 			<!-- <div *ngIf="(!microphoneStatus.permission && cameraStatus.permission) || (!microphoneStatus.permission && !isCameraPrivacyCacheExist && !microPhoneGreyOut && cameraPrivacyGreyOut)" -->
 			<!-- microphone permission -->
-			<div *ngIf="microphoneStatus.available && (!microphoneStatus.permission) && (!(!cameraStatus.permission && cameraStatus.available))"
+			<div *ngIf="microphoneStatus.available && (!microphoneStatus.permission)"
 				class="row permission-note mt-4">
 				<div class="col-12 p-3 d-flex">
 					<div class="col-1 pl-0 text-center">
@@ -162,7 +162,7 @@
 
 			<!-- <div *ngIf="!cameraStatus.permission && !cameraStatus.isLoading && cameraStatus.available && microphoneStatus.permission && cameraNoAccessNoteShow" -->
 			<!-- camera permission -->
-			<div *ngIf="cameraStatus.available && !cameraStatus.permission && (!cameraStatus.isLoading) && (!(!microphoneStatus.permission && microphoneStatus.available)) && cameraNoAccessNoteShow"
+			<!-- <div *ngIf="cameraStatus.available && !cameraStatus.permission && (!cameraStatus.isLoading) && (!(!microphoneStatus.permission && microphoneStatus.available)) && cameraNoAccessNoteShow"
 				class="row permission-note mt-4">
 				<div class="col-12 p-3 d-flex">
 					<div class="col-1 pl-0 text-center">
@@ -185,11 +185,11 @@
 						</button>
 					</div>
 				</div>
-			</div>
+			</div> -->
 
 			<!-- <div *ngIf="!microphoneStatus.permission && !cameraStatus.permission && !cameraStatus.isLoading && cameraNoAccessNoteShow" -->
 			<!-- microphone & camera permission -->
-			<div *ngIf="cameraStatus.available && microphoneStatus.available && (!microphoneStatus.permission) && !cameraStatus.permission && !cameraStatus.isLoading && cameraNoAccessNoteShow"
+			<!-- <div *ngIf="cameraStatus.available && microphoneStatus.available && (!microphoneStatus.permission) && !cameraStatus.permission && !cameraStatus.isLoading && cameraNoAccessNoteShow"
 				class="row permission-note mt-4">
 				<div class="col-12 p-3 d-flex">
 					<div class="col-1 pl-0 text-center">
@@ -230,7 +230,7 @@
 						</button>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 
 		<!-- my device settings link -->
