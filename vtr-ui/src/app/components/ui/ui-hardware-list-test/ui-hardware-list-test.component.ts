@@ -36,33 +36,31 @@ export class UiHardwareListTestComponent implements OnInit {
 		});
 	}
 
-	public onClick(itemId, event) {
-		const clickedItem = this.items.find(item => item.id === itemId)
+	public onDeviceSelectionClicked(item, isChecked) {
 
-		// Toggle the clickedItem state base on the user click event
-		clickedItem.tests.forEach(test => test.selected = event);
-		clickedItem.indeterminate = false;
-		clickedItem.selected = event;
+		// Toggle the item state base on the user click event
+		item.tests.forEach(test => test.selected = isChecked);
+		item.indeterminate = false;
+		item.selected = isChecked;
 
 		this.selectAny.emit();
 	}
 
-	public onCheckChildren(itemId: any) {
-		const parentItem = this.items.find(item => item.id === itemId)
+	public onCheckChildren(item) {
 
-		// Change the parentItem state based on the quantity of selected tests
-		const numberOfTests = parentItem.tests.length;
-		const numberOfSelectedTests = parentItem.tests.filter(test => test.selected).length;
+		// Change the item state based on the quantity of selected tests
+		const numberOfTests = item.tests.length;
+		const numberOfSelectedTests = item.tests.filter(test => test.selected).length;
 
 		if (numberOfSelectedTests === 0) {
-			parentItem.selected = false;
-			parentItem.indeterminate = false;
+			item.selected = false;
+			item.indeterminate = false;
 		} else if (numberOfTests > numberOfSelectedTests) {
-			parentItem.selected = false;
-			parentItem.indeterminate = true;
+			item.selected = false;
+			item.indeterminate = true;
 		} else {
-			parentItem.selected = true;
-			parentItem.indeterminate = false;
+			item.selected = true;
+			item.indeterminate = false;
 		}
 
 		this.selectAny.emit();

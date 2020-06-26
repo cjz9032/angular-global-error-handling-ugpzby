@@ -10,14 +10,15 @@
 						[componentId]="item.id"
 						[ariaLabel]="item.name + '-checkbox'"
 					 	[indeterminate]="item.indeterminate"
-						(click)="onClick(item.id,checkbox.checked)"
+						(click)="onDeviceSelectionClicked(item,checkbox.checked)"
 						[hasChild]="true"
 						[checked]="item.selected"
 						[value]="item.selected"
 						class="custom-control-component"
 					>
-						<p class="custom-control-label-text">
-							<b class="name">{{ item.name }}</b><span class="subname">&nbsp;{{ item.subname }}</span>
+						<p class="custom-control-label-text name">
+							{{ item.name }}
+							<span class="subname">{{ item.subname }}</span>
 						</p>
 					</vtr-ui-checkbox>
 				</div>
@@ -39,7 +40,7 @@
 			</div>
 			<div id="{{ id }}" class="sub-module" [ngbCollapse]="!item.collapsed" >
 				<ul class="list-group">
-					<li class="list-group-item" *ngFor="let test of item.tests" (change)=onCheckChildren(item.id)>
+					<li class="list-group-item" *ngFor="let test of item.tests" (change)=onCheckChildren(item)>
 						<div class="custom-control custom-checkbox">
 							<vtr-ui-checkbox
 								[id]="test.id + id"
