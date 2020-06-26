@@ -58,7 +58,7 @@ describe('Backlight', () => {
 			],
 			providers: [
 				BacklightService,
-				{provide: MetricService, useClass: MockMetricService},
+				{ provide: MetricService, useClass: MockMetricService },
 				VantageShellService
 			]
 		});
@@ -66,7 +66,7 @@ describe('Backlight', () => {
 		backlightService = TestBed.inject(BacklightService);
 	});
 
-	it('should create Backlight Component', async(() => {
+	it('should create Backlight Component', (() => {
 		// backlightServiceSpy.backlight.and.returnValue(of(stubValue));
 		fixture = TestBed.createComponent(BacklightComponent);
 		component = fixture.componentInstance;
@@ -75,7 +75,7 @@ describe('Backlight', () => {
 		fixture.destroy();
 	}));
 
-	it('should call onToggleOnOff - when switchValue is true', async(() => {
+	it('should call onToggleOnOff - when switchValue is true', (() => {
 		fixture = TestBed.createComponent(BacklightComponent);
 		component = fixture.componentInstance;
 		const event = {
@@ -86,7 +86,7 @@ describe('Backlight', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call onToggleOnOff - when no switchValue', async(() => {
+	it('should call onToggleOnOff - when no switchValue', (() => {
 		fixture = TestBed.createComponent(BacklightComponent);
 		component = fixture.componentInstance;
 		const event = {};
@@ -122,7 +122,7 @@ describe('Backlight', () => {
 		fixture.destroy();
 	});
 
-	it('should check off mode when backlight status is disabledOff - TWO_LEVELS_AUTO', async(() => {
+	it('should check off mode when backlight status is disabledOff - TWO_LEVELS_AUTO', (() => {
 		const stubValue = [
 			{
 				key: 'KeyboardBacklightLevel',
@@ -146,7 +146,7 @@ describe('Backlight', () => {
 		fixture.destroy();
 	}));
 
-	it('should check off mode when backlight status is disabledOff - TWO_LEVELS', async(() => {
+	it('should check off mode when backlight status is disabledOff - TWO_LEVELS', (() => {
 		const stubValue = [
 			{
 				key: 'KeyboardBacklightLevel',
@@ -170,7 +170,7 @@ describe('Backlight', () => {
 		fixture.destroy();
 	}));
 
-	it('should check off mode when backlight status is disabledOff - TWO_LEVELS_AUTO onSystemChange', async(() => {
+	it('should check off mode when backlight status is disabledOff - TWO_LEVELS_AUTO onSystemChange', (() => {
 		const stubValue = [
 			{
 				key: 'KeyboardBacklightLevel',
@@ -223,7 +223,7 @@ describe('Backlight', () => {
 		fixture.destroy();
 	}));
 
-	it('should check level_one', async(() => {
+	it('should check level_one', (() => {
 		const stubValue = [
 			{
 				key: 'KeyboardBacklightLevel',
@@ -248,7 +248,7 @@ describe('Backlight', () => {
 		fixture.destroy();
 	}));
 
-	it('should check level_one', async(() => {
+	it('should check level_one', (() => {
 		const stubValue = [
 			{
 				key: 'KeyboardBacklightLevel',
