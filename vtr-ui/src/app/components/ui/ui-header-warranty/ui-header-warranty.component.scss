@@ -28,6 +28,14 @@
 			color: #fff;
 			font-weight: $weight_bold;
 			cursor: pointer;
+			@media #{$white-on-black} {
+				color: $dark;
+				background: $light;
+			}
+			@media #{$black-on-white} {
+				color: $light;
+				background: $dark;
+			}
 
 			&.in-warranty {
 				background: #4b97ff;
@@ -37,6 +45,12 @@
 
 		&:hover {
 			opacity: 0.7;
+			@media #{$white-on-black} {
+				opacity: 1;
+			}
+			@media #{$black-on-white} {
+				opacity: 1;
+			}
 		}
 
 		&::before,
@@ -68,6 +82,17 @@
 		}
 		&.in-warranty {
 			background: linear-gradient(to left bottom, #4980fc, #2e62d9);
+			@media #{$white-on-black} {
+				background: $dark;
+				box-shadow: none;
+				filter: drop-shadow(0 0 0.1rem $light);
+			}
+
+			@media #{$black-on-white} {
+				background: $light;
+				box-shadow: none;
+				filter: drop-shadow(0 0 0.1rem $dark);
+			}
 
 			.menu-pointer {
 				background: #3c72eb;
@@ -76,6 +101,17 @@
 
 		&.expired {
 			background: linear-gradient(to left top, #f17f14, #ed4e04);
+			@media #{$white-on-black} {
+				background: $dark;
+				box-shadow: none;
+				filter: drop-shadow(0 0 0.1rem $light);
+			}
+
+			@media #{$black-on-white} {
+				background: $light;
+				box-shadow: none;
+				filter: drop-shadow(0 0 0.1rem $dark);
+			}
 
 			.menu-pointer {
 				background: #ed5105;
@@ -108,6 +144,12 @@
 			border-right: 0px;
 			border-bottom: 0px;
 			cursor: pointer;
+			@media #{$white-on-black} {
+				border: none;
+			}
+			@media #{$black-on-white} {
+				border: none;
+			}
 		}
 
 		.dropdown-item {
