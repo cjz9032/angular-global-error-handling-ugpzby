@@ -32,15 +32,15 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 				private lenovoSupportService: LenovoSupportService) { }
 
 	ngOnInit() {
+		this.lastScanResultCompletionInfo = this.previousResultService.getLastPreviousResultCompletionInfo();
 		this.configureSupportUrl();
 		this.setupFailedTests();
-		this.lastScanResultCompletionInfo = this.previousResultService.getLastPreviousResultCompletionInfo();
 	}
 
 	private async configureSupportUrl() {
-		await this.lenovoSupportService.getETicketUrl()
+		await this.lenovoSupportService.getETicketUrl(this.lastScanResultCompletionInfo.date)
 			.then((response) => {
-					this.supportUrl = response;
+				this.supportUrl = response;
 			});
 	}
 

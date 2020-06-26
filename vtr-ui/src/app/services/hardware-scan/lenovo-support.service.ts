@@ -25,9 +25,8 @@ export class LenovoSupportService {
 		this.deviceInfo = deviceService.getDeviceInfo();
 	}
 
-	public async getETicketUrl(): Promise<string> {
+	public async getETicketUrl(scanDate: Date): Promise<string> {
 		const machineSerialNumber = (await this.deviceInfo).sn;
-		const scanDate =  this.hardwareScanService.getFinalResultStartDate();
 
 		// new e-Ticket url is as follows:
 		//   https://support.lenovo.com/servicerequest?SerialNumber=xxxxxxx&ProblemType=/hardware/repair/&DiagnosticsCode=xxxxxx&DiagnosticsDate=yyyy-MM-dd
