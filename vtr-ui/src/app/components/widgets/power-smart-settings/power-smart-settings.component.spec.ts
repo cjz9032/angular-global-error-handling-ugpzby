@@ -24,7 +24,7 @@ import { promise } from 'protractor';
 import { DevService } from 'src/app/services/dev/dev.service';
 import { RouterTestingModule } from '@angular/router/testing';
 
-fdescribe('Component: PowerSmartSetting', () => {
+describe('Component: PowerSmartSetting', () => {
 	let component: PowerSmartSettingsComponent;
 	let fixture: ComponentFixture<PowerSmartSettingsComponent>;
 	let commonService: CommonService;
