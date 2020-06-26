@@ -211,7 +211,7 @@ export class UiSmartPerformanceComponent implements OnInit, OnChanges {
 					}
 				})
 				.catch(error => {
-
+					this.logger.error('Chane scan Event', error);
 				});
 		}
 		this.isScanningCompleted = false;
@@ -379,7 +379,9 @@ export class UiSmartPerformanceComponent implements OnInit, OnChanges {
 
 					}
 				})
-				.catch(error => { })
+				.catch(error => { 
+					this.logger.error('ScanNow.getReadiness.then', error)
+				})
 		}
 
 	}
