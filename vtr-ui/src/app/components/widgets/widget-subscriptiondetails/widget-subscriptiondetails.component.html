@@ -12,17 +12,38 @@
             >{{'smartPerformance.subscriptionDetails.learnMore' |translate }}</a> -->
     </div>
     <ul class="status-list">
-        <li class="d-flex justify-content-between">
+        <li class="d-flex justify-content-between start-date-spinner">
             <div class="item">{{'smartPerformance.subscriptionDetails.startDate' |translate }}</div>
-            <div class="status">{{subscriptionDetails.startDate}}</div>
+            <div class="status" *ngIf="!isLoading">{{subscriptionDetails.startDate}}</div>
+            <div *ngIf="isLoading">
+                <div class="container" [style.height.px]="40">
+                    <div class="loader center-block">
+                        <div class="spinner-border text-secondary progress-spinner" role="status"></div>
+                    </div>
+                </div>
+            </div>
         </li>
-        <li class="d-flex justify-content-between">
+        <li class="d-flex justify-content-between end-date-spinner">
             <div class="item">{{'smartPerformance.subscriptionDetails.endDate' |translate }}</div>
-            <div class="status">{{subscriptionDetails.endDate}}</div>
+            <div class="status" *ngIf="!isLoading">{{subscriptionDetails.endDate}}</div>
+            <div *ngIf="isLoading">
+                <div class="container" [style.height.px]="40">
+                    <div class="loader center-block">
+                        <div class="spinner-border text-secondary progress-spinner" role="status"></div>
+                    </div>
+                </div>
+            </div>
         </li>
-        <li class="d-flex justify-content-between">
+        <li class="d-flex justify-content-between status-spinner">
             <div class="item">{{'smartPerformance.subscriptionDetails.status' |translate }}</div>
-            <div class="status"><div [ngClass]="{'badge-danger': strStatus==='INACTIVE', 'badge-success': strStatus==='ACTIVE', 'badge-processing' : strStatus==='PROCESSING' }" class="badge badge-pill">{{subscriptionDetails.status |translate}}</div></div>
+            <div class="status" *ngIf="strStatus"><div [ngClass]="{'badge-danger': strStatus==='INACTIVE', 'badge-success': strStatus==='ACTIVE', 'badge-processing' : strStatus==='PROCESSING' }" class="badge badge-pill">{{subscriptionDetails.status |translate}}</div></div>
+            <div *ngIf="isLoading && !strStatus">
+                <div class="container" [style.height.px]="40">
+                    <div class="loader center-block">
+                        <div class="spinner-border text-secondary progress-spinner" role="status"></div>
+                    </div>
+                </div>
+            </div>
         </li>
     </ul>
     <!-- <a *ngIf="isSubscribed" class="link-text" (click)=openSubscribeModal() 
