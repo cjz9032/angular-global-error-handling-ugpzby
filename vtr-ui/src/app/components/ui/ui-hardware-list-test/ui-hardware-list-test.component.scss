@@ -16,7 +16,8 @@
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
-				padding: 0 3rem 0 1.5rem;
+				padding: 0 3rem 0 1rem;
+				height: 5.8rem;
 
 				.rotate {
 					-webkit-transform: rotate(180deg);
@@ -29,6 +30,9 @@
 
 			.sub-module {
 				.list-group-item {
+					display: flex;
+					align-items: center;
+					height: 5.8rem;
 					padding: 0 4rem;
 					border-radius: 0 !important;
 					border-left: 0 !important;
@@ -56,27 +60,17 @@
 
 				// modifying global checkbox component
 				.custom-control-component ::ng-deep .auto-set-checkbox{
-					margin-bottom: 2rem;
-				}
+					margin: 0;
 
-				.custom-control-label {
-					padding-left: 1rem;
-					cursor: pointer;
-					line-height: 1.35;
 
-					// rounded square-box background
-					&::before {
-						top: 0.3rem;
-						width: 1.6rem;
-						height: 1.6rem;
-					}
+					// removing default p margin
+					.custom-control-label {
+						padding-left: 1rem;
+						cursor: pointer;
 
-					// tick mark
-					&::after {
-						top: 0.1rem;
-						width: 2rem;
-						height: 2rem;
-						left: -1.7rem;
+						.custom-control-label-text {
+							margin-bottom: 0;
+						}
 					}
 				}
 			}
