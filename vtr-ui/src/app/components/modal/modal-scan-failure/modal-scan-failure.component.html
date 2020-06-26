@@ -1,8 +1,8 @@
-<div class="modal-body vtr-modal-scan-failure">
+<div class="modal-body vtr-modal-scan-failure" aria-labelledby="scan-failure-title" aria-describedby="scan-failure-description">
 
 	<div class="modal-information">
-		<h1 class="title">{{ 'hardwareScan.scanFailureModal.title' | translate }}</h1>
-		<p class="description">{{ 'hardwareScan.scanFailureModal.problemDetected' | translate }}</p>
+		<h1 id="scan-failure-title" class="title">{{ 'hardwareScan.scanFailureModal.title' | translate }}</h1>
+		<p id="scan-failure-description" class="description">{{ 'hardwareScan.scanFailureModal.problemDetected' | translate }}</p>
 
 		<div class="modules">
 			<li class="list-module" *ngFor="let module of failedModules;">
