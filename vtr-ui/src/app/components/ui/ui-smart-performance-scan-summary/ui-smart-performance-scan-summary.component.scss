@@ -225,22 +225,23 @@ vtr-ui-smart-performance-scan-summary {
 					width: calc(33.33% - 0.5rem);
 				}
 				h5 {
-					font-size: 1.8rem;
+					font-size: $fontsize_md;
 					font-weight: $weight_bold;
 					margin-bottom: 0;
-					//word-break: break-all;
+					word-break: break-all;
 					overflow: hidden;
 					text-overflow: ellipsis;
+					height:6rem;
 					@media #{$breakpoint_xl}{
-						font-size: 1.6rem;
+						font-size: $fontsize_sm;
 						height:6rem;
 					}
 					@media #{$breakpoint_md}{
-						font-size: 1.4rem;						
+						font-size:$fontsize_xs;						
 						height:5rem;
 					}
 					@media #{$breakpoint_sm}{
-						font-size: 1.4rem;						
+						font-size:$fontsize_xs;						
 						height:5rem;
 						display: inline-block;
 						max-width: 85%;
