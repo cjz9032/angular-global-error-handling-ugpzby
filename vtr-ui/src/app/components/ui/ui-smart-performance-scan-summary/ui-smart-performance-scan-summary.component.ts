@@ -66,19 +66,21 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	public toggleValue: number;
 	public currentYear: any;
 	public lastYear: any;
-	Data = [1,2,3]
+	Data = [1, 2, 3]
 	historyRes: any = {};
 	historyScanResults = [];
-	historyScanResultsDateTime = []; 
+	historyScanResultsDateTime = [];
 	public quarterlyMenu: any = [
 		{ displayName: 'Jan-Mar', ...this.getQuartesDates(0, 2), key: 1 },
 		{ displayName: 'Apr-Jun', ...this.getQuartesDates(3, 5), key: 2 },
 		{ displayName: 'Jul-Sept', ...this.getQuartesDates(6, 8), key: 3 },
 		{ displayName: 'Oct-Dec', ...this.getQuartesDates(9, 11), key: 4 }
 	];
-	public scannigResultObj = {tunePc : {firstSection: [], secondSection: [], thirdSection: [], fourthSection: [], fifthSection:[]},
-	internetPerformance : {firstSection: [], secondSection: [], thirdSection: [], fourthSection: [], fifthSection:[]},
-	malwareSecurity : {firstSection: [], secondSection: [], thirdSection: [], fourthSection: [], fifthSection:[]},};
+	public scannigResultObj = {
+		tunePc: { firstSection: [], secondSection: [], thirdSection: [], fourthSection: [], fifthSection: [] },
+		internetPerformance: { firstSection: [], secondSection: [], thirdSection: [], fourthSection: [], fifthSection: [] },
+		malwareSecurity: { firstSection: [], secondSection: [], thirdSection: [], fourthSection: [], fifthSection: [] },
+	};
 	menuStatus = true;
 	selectedResult: any;
 	annualYear: any;
@@ -107,7 +109,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	selectedDay: any;
 	selectedNumber: any;
 	yearsList: any[] = [];// removed last year, "this.getYearObj(-1)" to fix van-17574
-	 
+
 	isDaySelectionEnable = true;
 	scanToggleValue = true;
 	frequencyValue = 1;
@@ -122,15 +124,15 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	IsScheduleScanEnabled: any;
 	public scanData: any = {};
 	systemSerialNumber: any;
-	displayMonths:number = 1;
-	navigation:string = 'arrows';
+	displayMonths: number = 1;
+	navigation: string = 'arrows';
 	public minDate: any;
 	public maxDate: any;
-	spEnum:any = enumSmartPerformance;
+	spEnum: any = enumSmartPerformance;
 	// tuneindividualIssueCount: any = 0;
 	// boostindividualIssueCount: any = 0;
 	// secureindividualIssueCount: any = 0;
-	public data = [{name: 'D', value: 4}]
+	public data = [{ name: 'D', value: 4 }]
 	public subscriptionDetails = [
 		{
 			UUID: uuid(),
@@ -159,15 +161,17 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.isDaySelectionEnable = false;
 		this.scanScheduleDate = this.selectedDate;
 		this.leftAnimator = '0%';
-		if(this.isSubscribed){
+		if (this.isSubscribed) {
+			//	this.getLastScanResult();
 			this.scanSummaryTime(0);
 		}
-		
+
 		this.supportService.getMachineInfo().then(async (machineInfo) => {
 			this.systemSerialNumber = machineInfo.serialnumber;
 		});
+
 		this.initContentLoad();
-		
+
 		this.minDate = {
 			year: this.currentDate.getFullYear() - 1,
 			month: this.currentDate.getMonth() + 1,
@@ -183,7 +187,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	getScanHistoryWithTime() {
 		//Object historyScanResults Copy to object historyScanResultsDateTime
 		this.historyScanResultsDateTime = JSON.parse(JSON.stringify(this.historyScanResults));
-		
+
 		//Deleting unnecessary keys & manupulating date time.
 		for (let i = 0; i < 5; i++) {
 			//Adding new key scanrunDate with formating
@@ -247,7 +251,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.logger.info('ui-smart-performance-scan-summary.getNextScanRunTime', JSON.stringify(payload));
 		try {
 			const res: any = await this.smartPerformanceService.getNextScanRunTime(payload);
-			if(res.nextruntime) {
+			if (res.nextruntime) {
 				this.getNextScanScheduleTime(res.nextruntime);
 			}
 			this.logger.info('ui-smart-performance-scan-summary.getNextScanRunTime.then', JSON.stringify(res));
@@ -373,7 +377,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 				this.selectedfromDate.day +
 				'/' +
 				this.selectedfromDate.year;
-			this.displayFromDate =  this.formatLocaleDate.transform(fromDateFormat);
+			this.displayFromDate = this.formatLocaleDate.transform(fromDateFormat);
 		} else {
 			const fromDateFormat =
 				this.selectedTodate.month +
@@ -438,9 +442,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			this.backToScan.emit();
 		}
 	}
-	BackToSummary(){
-		if(this.inputIsScanningCompleted)
-		{
+	BackToSummary() {
+		if (this.inputIsScanningCompleted) {
 			this.inputIsScanningCompleted = false;
 		}
 	}
@@ -469,7 +472,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.logger.info('setEnableScanStatus', event.switchValue);
 		this.scanToggleValue = event.switchValue;
 	}
-	 
+
 	changeScanScheduleDate() {
 		this.scheduleTab = '';
 	}
@@ -495,7 +498,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		// 	endDate: year.endOf('year').format('YYYY-MM-DD HH:mm:ss')
 		// };
 		return {
-			displayName: moment(prevDate).format('YYYY')+ '-'+ moment(currentDate).format('YYYY'),
+			displayName: moment(prevDate).format('YYYY') + '-' + moment(currentDate).format('YYYY'),
 			startDate: moment(prevDate).format('YYYY-MM-DD HH:mm:ss'),
 			endDate: moment(currentDate).format('YYYY-MM-DD HH:mm:ss')
 		}
@@ -509,16 +512,26 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			}
 			const response = await this.smartPerformanceService.getLastScanResult(lastScanResultRequest);
 			this.logger.info('ui-smart-performance-scan-summary.getLastScanResult', response);
-			if(response) {
-				this.isLoading = false;
-				this.historyRes = {
-					tuneCount: response.Tune,
-					boostCount: response.Boost,
-					secure: response.Secure
+			const scanRunTime = response.scanruntime;
+			const now = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
+			const fiveMinutesFromRecentScan = moment(scanRunTime).add(enumSmartPerformance.SUMMARYWAITINGTIME, 'm').format('YYYY-MM-DD HH:mm:ss');
+
+			if (now < fiveMinutesFromRecentScan) {
+                if (response) {
+					this.isLoading = false;
+					this.historyRes = {
+						tuneCount: response.Tune,
+						boostCount: response.Boost,
+						secure: response.Secure
+					}
+					this.rating = response.rating;
+					this.issueCount = response.Tune + response.Boost + response.Secure
+					this.leftAnimator = (response.rating * 10 - 0).toString() + '%';
+					this.isScanning = false;
+					this.inputIsScanningCompleted = true;
 				}
-				this.issueCount = response.Tune + response.Boost + response.Secure
-				this.leftAnimator = (response.rating * 10 - 0).toString() + '%';
-			}
+            }
+
 		} catch (error) {
 			this.logger.error('Smart-Performance, LastScanResult error:', error)
 		}
@@ -534,36 +547,22 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		try {
 			const res: any = await this.smartPerformanceService.getHistory(payload);
 			this.logger.info('ui-smart-performance-scan-summary.getHistory', res);
-			const now = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
-			const fiveMinutesFromRecentScan =moment(now).add(enumSmartPerformance.SUMMARYWAITINGTIME, 'm').format('YYYY-MM-DD HH:mm:ss');
-		
+
 			if (res) {
-				this.getLastScanResult();
-				//console.log(now+"--------------------------"+fiveMinutesFromRecentScan);
-				if(now < fiveMinutesFromRecentScan) {
-					// last scan result can be fetched in two ways, since we need to make another service call with getLastScanResult method, 
-					// commented getLastScanResult method as data is available in getHistory method.
-					// this.getLastScanResult()
-					this.isLoading = false;
-					this.historyRes = {
-						tuneCount: res.lastscanresults[0].Tune,
-						boostCount: res.lastscanresults[0].Boost,
-						secure: res.lastscanresults[0].Secure
-					}
-				} 
-				if(now > fiveMinutesFromRecentScan) {
-					this.isLoading = false;
-					this.historyRes = {
-						tuneCount: res.Tunecount,
-						boostCount: res.Boostcount,
-						secure: res.Secure,
-						tuneSize: res.Tunesize,
-						boostSize: res.Boostsize
-					};
-				}
+
+				this.isLoading = false;
+				this.historyRes = {
+					tuneCount: res.Tunecount,
+					boostCount: res.Boostcount,
+					secure: res.Secure,
+					tuneSize: res.Tunesize,
+					boostSize: res.Boostsize
+				};
+
 				this.historyScanResults = res.lastscanresults || [];
 				this.getMostecentScanDateTime(this.historyScanResults[0].scanruntime);
 				this.getScanHistoryWithTime();
+				this.getLastScanResult();
 
 			} else {
 				this.historyScanResults = [];
@@ -589,203 +588,203 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	}
 	changeNextScanDateValue(nextScheduleScanEvent) {
 		// retrieved this event from ui-scan-schedule component.
-		if(!nextScheduleScanEvent['nextEnable']) {
+		if (!nextScheduleScanEvent['nextEnable']) {
 			this.enableNextText = nextScheduleScanEvent['nextEnable'];
 			return;
 		}
 		this.enableNextText = nextScheduleScanEvent['nextEnable']
 		const nextScheduleScanDayMonth = this.formatLocaleDate.transformWithoutYear(nextScheduleScanEvent['nextScanDateWithYear']);
-		this.nextScheduleScan =  nextScheduleScanDayMonth + ' at ' + nextScheduleScanEvent['nextScanHour'] + ':' + nextScheduleScanEvent['nextScanMin'] + ' ' + this.translate.instant(nextScheduleScanEvent['nextScanAMPM']);
-	 }
+		this.nextScheduleScan = nextScheduleScanDayMonth + ' at ' + nextScheduleScanEvent['nextScanHour'] + ':' + nextScheduleScanEvent['nextScanMin'] + ' ' + this.translate.instant(nextScheduleScanEvent['nextScanAMPM']);
+	}
 
 	public initContentLoad() {
 		this.scannigResultObj.tunePc = {
 			firstSection: [{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.accumulatedjunkscannedareas.area1'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.accumulatedjunkscannedareas.area2')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.accumulatedjunkscannedareas.area1'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.accumulatedjunkscannedareas.area2')
 			},
 			{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.accumulatedjunkscannedareas.area3'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.accumulatedjunkscannedareas.area4')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.accumulatedjunkscannedareas.area3'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.accumulatedjunkscannedareas.area4')
 			},
 			{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.accumulatedjunkscannedareas.area5'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.accumulatedjunkscannedareas.area6')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.accumulatedjunkscannedareas.area5'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.accumulatedjunkscannedareas.area6')
 			}],
 			secondSection: [{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.usabilityissuesscannedareas.area1'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.usabilityissuesscannedareas.area2')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.usabilityissuesscannedareas.area1'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.usabilityissuesscannedareas.area2')
 			},
 			{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.usabilityissuesscannedareas.area3'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.usabilityissuesscannedareas.area4')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.usabilityissuesscannedareas.area3'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.usabilityissuesscannedareas.area4')
 			},
 			{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.usabilityissuesscannedareas.area5'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.usabilityissuesscannedareas.area6')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.usabilityissuesscannedareas.area5'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.usabilityissuesscannedareas.area6')
 			}
 			],
 			thirdSection: [{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.windowssettingsscannedareas.area1'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.windowssettingsscannedareas.area2')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.windowssettingsscannedareas.area1'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.windowssettingsscannedareas.area2')
 			}, {
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.windowssettingsscannedareas.area3'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.windowssettingsscannedareas.area4')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.windowssettingsscannedareas.area3'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.windowssettingsscannedareas.area4')
 			},
 			{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.windowssettingsscannedareas.area5'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.windowssettingsscannedareas.area6')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.windowssettingsscannedareas.area5'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.windowssettingsscannedareas.area6')
 			}],
 			fourthSection: [{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.systemerrorsscannedareas.area1'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.systemerrorsscannedareas.area2')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.systemerrorsscannedareas.area1'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.systemerrorsscannedareas.area2')
 			}, {
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.systemerrorsscannedareas.area3'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.systemerrorsscannedareas.area4')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.systemerrorsscannedareas.area3'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.systemerrorsscannedareas.area4')
 			},
 			{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.systemerrorsscannedareas.area5'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.systemerrorsscannedareas.area6')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.systemerrorsscannedareas.area5'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.systemerrorsscannedareas.area6')
 			}],
 			fifthSection: [{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.registryerrorsscannedareas.area1'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.registryerrorsscannedareas.area2')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.registryerrorsscannedareas.area1'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.registryerrorsscannedareas.area2')
 			}, {
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.registryerrorsscannedareas.area3'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.registryerrorsscannedareas.area4')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.registryerrorsscannedareas.area3'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.registryerrorsscannedareas.area4')
 			},
 			{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.registryerrorsscannedareas.area5'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.registryerrorsscannedareas.area6')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.registryerrorsscannedareas.area5'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.registryerrorsscannedareas.area6')
 			}],
 		}
 		this.scannigResultObj.internetPerformance = {
 			firstSection: [{
 				firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.ejunkscannedareas.area1'),
 				secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.ejunkscannedareas.area2')
-				}, {
+			}, {
 				firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.ejunkscannedareas.area3'),
 				secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.ejunkscannedareas.area4')
-				},
-				{
+			},
+			{
 				firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.ejunkscannedareas.area5'),
 				secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.ejunkscannedareas.area6')
-				}],
-				secondSection: [{
-					firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.networksettingsscannedareas.area1'),
-					secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.networksettingsscannedareas.area2')
-					},
-					{
-					firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.networksettingsscannedareas.area3'),
-					secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.networksettingsscannedareas.area4')
-					},
-					{
-					firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.networksettingsscannedareas.area5'),
-					secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.networksettingsscannedareas.area6')
-					}],
+			}],
+			secondSection: [{
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.networksettingsscannedareas.area1'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.networksettingsscannedareas.area2')
+			},
+			{
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.networksettingsscannedareas.area3'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.networksettingsscannedareas.area4')
+			},
+			{
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.networksettingsscannedareas.area5'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.networksettingsscannedareas.area6')
+			}],
 			thirdSection: [{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.browsersettingsscannedareas.area1'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.browsersettingsscannedareas.area2')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.browsersettingsscannedareas.area1'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.browsersettingsscannedareas.area2')
 			},
 			{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.browsersettingsscannedareas.area3'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.browsersettingsscannedareas.area4')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.browsersettingsscannedareas.area3'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.browsersettingsscannedareas.area4')
 			},
 			{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.browsersettingsscannedareas.area5'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.browsersettingsscannedareas.area6')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.browsersettingsscannedareas.area5'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.browsersettingsscannedareas.area6')
 			}
 			],
 			fourthSection: [{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.browsersecurityscannedareas.area1'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.browsersecurityscannedareas.area2')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.browsersecurityscannedareas.area1'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.browsersecurityscannedareas.area2')
 			}, {
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.browsersecurityscannedareas.area3'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.browsersecurityscannedareas.area4')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.browsersecurityscannedareas.area3'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.browsersecurityscannedareas.area4')
 			},
 			{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.browsersecurityscannedareas.area5'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.browsersecurityscannedareas.area6')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.browsersecurityscannedareas.area5'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.browsersecurityscannedareas.area6')
 			}],
 			fifthSection: [{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.wifiperformancescannedareas.area1'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.wifiperformancescannedareas.area2')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.wifiperformancescannedareas.area1'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.wifiperformancescannedareas.area2')
 			}, {
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.wifiperformancescannedareas.area3'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.wifiperformancescannedareas.area4')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.wifiperformancescannedareas.area3'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.wifiperformancescannedareas.area4')
 			},
 			{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.wifiperformancescannedareas.area5'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.wifiperformancescannedareas.area6')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.wifiperformancescannedareas.area5'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.wifiperformancescannedareas.area6')
 			}],
-			
+
 		}
 		this.scannigResultObj.malwareSecurity = {
 			firstSection: [{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.malwarescanscannedareas.area1'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.malwarescanscannedareas.area2')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.malwarescanscannedareas.area1'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.malwarescanscannedareas.area2')
 			},
 			{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.malwarescanscannedareas.area3'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.malwarescanscannedareas.area4')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.malwarescanscannedareas.area3'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.malwarescanscannedareas.area4')
 			},
 			{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.malwarescanscannedareas.area5'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.malwarescanscannedareas.area6')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.malwarescanscannedareas.area5'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.malwarescanscannedareas.area6')
 			}],
 			secondSection: [{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.zerodayinfectionsscannedareas.area1'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.zerodayinfectionsscannedareas.area2')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.zerodayinfectionsscannedareas.area1'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.zerodayinfectionsscannedareas.area2')
 			},
 			{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.zerodayinfectionsscannedareas.area3'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.zerodayinfectionsscannedareas.area4')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.zerodayinfectionsscannedareas.area3'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.zerodayinfectionsscannedareas.area4')
 			},
 			{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.zerodayinfectionsscannedareas.area5'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.zerodayinfectionsscannedareas.area6')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.zerodayinfectionsscannedareas.area5'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.zerodayinfectionsscannedareas.area6')
 			}
 			],
 			fifthSection: [{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.securitysettingsscannedareas.area1'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.securitysettingsscannedareas.area2')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.securitysettingsscannedareas.area1'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.securitysettingsscannedareas.area2')
 			}, {
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.securitysettingsscannedareas.area3'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.securitysettingsscannedareas.area4')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.securitysettingsscannedareas.area3'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.securitysettingsscannedareas.area4')
 			},
 			{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.securitysettingsscannedareas.area5'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.securitysettingsscannedareas.area6')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.securitysettingsscannedareas.area5'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.securitysettingsscannedareas.area6')
 			}],
 			thirdSection: [{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.errantprogramsscannedareas.area1'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.errantprogramsscannedareas.area2')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.errantprogramsscannedareas.area1'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.errantprogramsscannedareas.area2')
 			}, {
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.errantprogramsscannedareas.area3'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.errantprogramsscannedareas.area4')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.errantprogramsscannedareas.area3'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.errantprogramsscannedareas.area4')
 			},
 			{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.errantprogramsscannedareas.area5'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.errantprogramsscannedareas.area6')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.errantprogramsscannedareas.area5'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.errantprogramsscannedareas.area6')
 			}],
 			fourthSection: [{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.annoyingadwarescannedareas.area1'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.annoyingadwarescannedareas.area2')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.annoyingadwarescannedareas.area1'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.annoyingadwarescannedareas.area2')
 			}, {
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.annoyingadwarescannedareas.area3'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.annoyingadwarescannedareas.area4')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.annoyingadwarescannedareas.area3'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.annoyingadwarescannedareas.area4')
 			},
 			{
-			firstText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.annoyingadwarescannedareas.area5'),
-			secondText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.annoyingadwarescannedareas.area6')
+				firstText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.annoyingadwarescannedareas.area5'),
+				secondText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.annoyingadwarescannedareas.area6')
 			}],
 		}
-	  }
+	}
 
-	  /**
-	   * SP Feedback form
-	   */
-	  onclickFeedback() {
+	/**
+	 * SP Feedback form
+	 */
+	onclickFeedback() {
 		this.modalService.open(ModalSmartPerformanceFeedbackComponent, {
 			backdrop: true,
 			size: 'lg',
@@ -794,7 +793,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			windowClass: 'smart-performance-feedback-Modal'
 		});
 	}
-	backToNonSubScriberHome(){
+	backToNonSubScriberHome() {
 		this.backToNonSubscriber.emit();
 	}
 
