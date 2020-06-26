@@ -8,6 +8,15 @@
 		color: $light;
 		margin: 0 2rem 0.1rem;
 
+		@media #{$white-on-black} {
+			filter: drop-shadow(0 0 0.1rem $light);
+			border: 0.1rem solid transparent;
+		}
+		@media #{$black-on-white} {
+			filter: drop-shadow(0 0 0.1rem $dark);
+			border: 0.1rem solid transparent;
+		}
+
 		@media #{$breakpoint_xl} {
 			margin: 0 1rem 0.1rem;
 		}
@@ -33,6 +42,12 @@
 		&.active {
 			.tab-label {
 				font-weight: $weight_600;
+				@media #{$white-on-black} {
+					@include high-contrast-black-text-color;
+				}
+				@media #{$black-on-white} {
+					@include high-contrast-white-text-color;
+				}
 			}
 		}
 
@@ -131,6 +146,14 @@
 					display: inline-block;
 				}
 			}
+			&:hover {
+				@media #{$white-on-black} {
+					@include high-contrast-black-text-color;
+				}
+				@media #{$black-on-white} {
+					@include high-contrast-white-text-color;
+				}
+			}
 		}
 		fa-icon {
 			&.menu-pointer {
@@ -154,6 +177,14 @@
 		}
 		&:focus {
 			outline: 0.1rem solid $menu_hover;
+			@media #{$white-on-black} {
+				outline: 0;
+				border: 0.1rem solid $light;
+			}
+			@media #{$black-on-white} {
+				outline: 0;
+				border: 0.1rem solid $dark;
+			}
 		}
 	}
 }
