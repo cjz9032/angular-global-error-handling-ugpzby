@@ -12,7 +12,6 @@
 			[attr.aria-disabled]="disabled"
 			[attr.aria-checked]="checked"
 			tabIndex="0"
-			(click)="onClick($event)"
 			(change)="onChange($event)" />
 		<label *ngIf="hasChild; else elseBlock"
 			[id]="componentId+'_checkbox-label'"

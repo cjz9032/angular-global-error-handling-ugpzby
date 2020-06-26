@@ -26,14 +26,9 @@ export class UiCheckboxComponent implements OnInit {
 	@Input() metricsParent: string;
 	@Input() isMetricsEnabled = false;
 	@Output() toggle: EventEmitter<boolean> = new EventEmitter();
-	@Output() clickEvent: EventEmitter<number> = new EventEmitter<number>();
 
 	constructor(private metrics: CommonMetricsService) { }
 	ngOnInit() { }
-
-	onClick(event) {
-		this.clickEvent.emit(event.target.checked);
-	}
 
 	onChange(event) {
 		const value = event.target.checked;
