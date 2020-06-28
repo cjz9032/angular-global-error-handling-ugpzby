@@ -193,7 +193,7 @@
                 "savePromptPopup": {
                     "title": "Guardar Alteração?",
                     "description1": "Def. impróprias Overclocking podem causar danos irreversíveis no HW. Siga um dos seguintes procedimentos, caso encontre algum problema: ",
-                    "description2": "•  Premir sem soltar o botão para ligar/desligar por 8 segundos para reiniciar o computador e restaurar os parâmetros predefinidos.",
+                    "description2": "•  Premir sem soltar o botão para ligar/desligar por 8-15 segundos para reiniciar o computador e restaurar os parâmetros predefinidos.",
                     "description3": "•  Usar “Restore Default Overclocking” no BIOS p/restaurar parâmetros predefinidos.",
                     "save": "GUARDAR",
                     "notSave": "NÃO GUARDAR"

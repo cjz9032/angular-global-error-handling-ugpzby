@@ -193,7 +193,7 @@
                 "savePromptPopup": {
                     "title": "Änderungen speich.?",
                     "description1": "Falsche Übertaktungseinstellungen führen zu irreparablen Hardwareschäden. Führen Sie bei einem Fehler einen der folgenden Schritte aus: ",
-                    "description2": "•  Halten Sie für einen Neustart und Wiederherstellen der Std.parameter die Einschalttaste 8 Sek. lang gedrückt.",
+                    "description2": "•  Halten Sie für einen Neustart und Wiederherstellen der Std.parameter die Einschalttaste 8-15 Sek. lang gedrückt.",
                     "description3": "•  Stellen Sie die Std.parameter mit \"Standard-Übertaktung wiederherstellen\" in den BIOS-Einstellungen wieder her.",
                     "save": "SPEICHERN",
                     "notSave": "ABBRECHEN"

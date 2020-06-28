@@ -198,7 +198,7 @@
 				"savePromptPopup": {
 					"title": "Save Change ?",
 					"description1": "Improper settings of Overclocking may lead to irreversible hardware damage. Please do either of the following if you encounter any problem: ",
-					"description2": "•  Press and hold the power button for 8 seconds to restart the computer and restore the default parameters.",
+					"description2": "•  Press and hold the power button for 8-15 seconds to restart the computer and restore the default parameters.",
 					"description3": "•  Use the “Restore Default Overclocking” toggle in BIOS settings to restore the default parameters.",
 					"save": "SAVE",
 					"notSave": "DON'T SAVE"

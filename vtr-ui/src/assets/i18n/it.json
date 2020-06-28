@@ -193,7 +193,7 @@
                 "savePromptPopup": {
                     "title": "Salvare la modifica?",
                     "description1": "Impostazioni overclock errate possono causare danni HW irreversibili Eseguire una delle seguenti operazioni se si verifica un problema: ",
-                    "description2": "•  Tenere premuto il pulsante di alim. 8 sec per riavviare il PC e ripristinare i parametri predefiniti.",
+                    "description2": "•  Tenere premuto il pulsante di alim. 8-15 sec per riavviare il PC e ripristinare i parametri predefiniti.",
                     "description3": "•  Per ripristinare overclock predefinito, passare a impostazioni BIOS.",
                     "save": "SALVA",
                     "notSave": "NON SALVARE"

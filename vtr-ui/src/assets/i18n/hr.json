@@ -193,7 +193,7 @@
                 "savePromptPopup": {
                     "title": "Spremi promjene?",
                     "description1": "Nepr. postavke Overclocking-a mogu dovesti do nepovratnih ošt. hard. Ako naiđete na bilo koji problem učinite nešto od sljedećeg: ",
-                    "description2": "•  Pritisnite gumb nap. na 8 sek. za pon. pokr. i vraćanje zad. par.",
+                    "description2": "•  Pritisnite gumb nap. na 8-15 sek. za pon. pokr. i vraćanje zad. par.",
                     "description3": "•  Za vrać. zad. par. upotr. prek. \"Vrati zad. Overclocking\" u BIOS-u.",
                     "save": "SPREMI",
                     "notSave": "NE SPREMAJ"
