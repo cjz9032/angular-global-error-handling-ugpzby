@@ -13,6 +13,7 @@ import { SmartPerformanceService } from 'src/app/services/smart-performance/smar
 import { SupportService } from 'src/app/services/support/support.service';
 import * as CryptoJS from 'crypto-js';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { environment } from 'src/environments/environment';
 @Component({
 	selector: 'vtr-widget-subscriptiondetails',
 	templateUrl: './widget-subscriptiondetails.component.html',
@@ -67,7 +68,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		}
 	}
 	decryptPNListData() {
-		const bytes = CryptoJS.AES.decrypt(PaymentPage.PNLIST, 'secret key 123');
+		const bytes = CryptoJS.AES.decrypt(environment.spPnListKey, 'secret key 123');
 		this.partNumbersList = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
 	}
 

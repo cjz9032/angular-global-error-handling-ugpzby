@@ -1,19 +1,19 @@
-import { Injectable } from "@angular/core";
-import { CommonService } from "../common/common.service";
-import { VantageShellService } from "../vantage-shell/vantage-shell.service";
+import { Injectable } from '@angular/core';
+import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { Subject } from 'rxjs';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
+import {  HttpClient } from '@angular/common/http';
 import { PaymentPage } from 'src/app/enums/smart-performance.enum';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
-	providedIn: "root"
+	providedIn: 'root'
 })
 export class SmartPerformanceService {
 	getSmartPerformance: any;
 	public isShellAvailable = false;
 	scanningStopped = new Subject<boolean>()
 	constructor(shellService: VantageShellService, private http: HttpClient) {
-		
+
 		this.getSmartPerformance = shellService.getSmartPerformance();
 		if (this.getSmartPerformance) {
 			this.isShellAvailable = true;
@@ -33,7 +33,7 @@ export class SmartPerformanceService {
 
 	startScan(): Promise<any> {
 		try {
-			const payload = { type: "MS" };
+			const payload = { type: 'MS' };
 
 			if (this.isShellAvailable) {
 				return this.getSmartPerformance.startScan(payload);
@@ -46,7 +46,7 @@ export class SmartPerformanceService {
 
 	launchScanAndFix(): Promise<any> {
 		try {
-			const payload = { type: "MS" };
+			const payload = { type: 'MS' };
 			if (this.isShellAvailable) {
 				return this.getSmartPerformance.launchScanAndFix(payload);
 			}
@@ -147,8 +147,8 @@ export class SmartPerformanceService {
 			}
 			return undefined;
 		} catch (error) {
-            throw new Error(error.message);
-        }
+			throw new Error(error.message);
+		}
 	}
 
 	getLastScanResult(payload: any): Promise<any> {
@@ -163,7 +163,7 @@ export class SmartPerformanceService {
 	}
 
 	getPaymentDetails(serialNumber): Promise<any> {
-		const reqUrl = PaymentPage.ORDERDETAILS;
+		const reqUrl = environment.spGetOrdersApiRoot;
 		return new Promise(resolve => {
 			const xhr = new XMLHttpRequest();
 			xhr.open('GET', reqUrl + serialNumber, true);
