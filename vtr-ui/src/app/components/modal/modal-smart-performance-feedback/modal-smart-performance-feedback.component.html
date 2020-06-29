@@ -178,7 +178,7 @@
 				<vtr-ui-button linkId="modal-btn-sendfeedback" metricsEvent="FeatureClick"
 					metricsItem="btn.sp.submitfeedback" metricsParent="SmartPerformance.Dialog.Feedback"
 					[tabIndex]="feedbackSuccess ? -1 : 0" [btnHeight]="true" [isFullWidth]="true"
-					[isDisabled]="!feedbackForm.valid"
+					[isDisabled]="!feedbackForm.dirty"
 					[label]="'smartPerformance.feedbackContainer.buttonText' | translate"
 					(onClick)="onFeedBackSubmit()"></vtr-ui-button>
 			</div>
