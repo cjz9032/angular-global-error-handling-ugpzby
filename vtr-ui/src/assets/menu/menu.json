@@ -218,7 +218,7 @@
 					"metricsParent": "navbar",
 					"metricsItem": "link.systemupdates",
 					"routerLinkActiveOptions": {
-						"exact": true
+						"exact": false
 					},
 					"adPolicyId": "E40B12CE-C5DD-4571-BBC6-7EA5879A8472",
 					"subitems": []
