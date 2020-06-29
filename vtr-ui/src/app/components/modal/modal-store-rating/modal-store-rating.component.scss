@@ -41,6 +41,12 @@
                 top: 4px;
                 transform: scale(0.8);
 
+                .img-chatbox{
+                    @media #{$white-on-black} {
+                        filter: invert(100%);
+                    }
+                }
+
                 .hint-icon{
                     position: absolute;
                     left: 50%;
