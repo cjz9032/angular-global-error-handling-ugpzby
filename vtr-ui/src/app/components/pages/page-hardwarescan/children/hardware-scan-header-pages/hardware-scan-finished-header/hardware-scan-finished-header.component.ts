@@ -4,6 +4,7 @@ import { PreviousResultService } from '../../../../../../services/hardware-scan/
 import { HardwareScanResultService } from '../../../../../../services/hardware-scan/hardware-scan-result.service';
 import { LenovoSupportService } from 'src/app/services/hardware-scan/lenovo-support.service';
 import { HardwareScanFinishedHeaderType } from 'src/app/enums/hardware-scan-finished-header-type.enum';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'vtr-hardware-scan-finished-header',
@@ -29,6 +30,7 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 	constructor(private hardwareScanService: HardwareScanService,
 				private previousResultService: PreviousResultService,
 				private hardwareScanResultService: HardwareScanResultService,
+				private translate: TranslateService,
 				private lenovoSupportService: LenovoSupportService) { }
 
 	ngOnInit() {
