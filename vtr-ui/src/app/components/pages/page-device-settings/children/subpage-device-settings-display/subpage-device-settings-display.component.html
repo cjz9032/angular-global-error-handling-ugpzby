@@ -275,7 +275,7 @@
 
 			<!-- Camera -->
 			<div class="row pt-5 smart-settings-card pb-40"
-				*ngIf="this.isAllInOneMachineFlag"
+				*ngIf="this.isAllInOneMachineFlag || (!cameraPrivacyModeStatus.available && isCameraPreviewHidden)"
 				id="camera"
 				[hidden]="isCameraHidden">
 				<div class="col-12 mx-auto  container-card ">
@@ -302,42 +302,12 @@
 									[isSwitchChecked]="cameraPrivacyModeStatus.status"
 									[isDisabled]="shouldCameraSectionDisabled"
 									[showLoaderState]="cameraPrivacyModeStatus.isLoading"
-									[caption]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.tooltip' | translate">
-									<div class="row notemar">
-										<div class="col-12 pr-0 pl-5">
-											<div class="row permission-note">
-												<div class="col-12 well d-flex border-bottom-camera-privacy-note"
-													*ngIf="hideNote">
-													<div class="pr-0">
-														<p class="mb-0 mt-auto"
-															id="camera-privacy-mode-note"
-															attr.aria-label="camera-privacy-mode-note">
-															{{'dashboard.quickSettings.note.cameraPrivacyNote' | translate}}
-														</p>
-														<button type="button"
-															class="btn btn-link privacy-button pl-0"
-															(click)="onClick('ms-settings:privacy-webcam')"
-															id="camera-privacy-mode-access-url"
-															attr.aria-label="camera-privacy-mode-access-url"
-															role="link">
-															{{'dashboard.quickSettings.note.accessUrl' | translate}}
-														</button>
-													</div>
-												</div>
-												<div class="well">
-													<p class="mb-0 boldColor"
-														role="heading"
-														id="device-settings-camera-access-enabled-note"
-														[innerHTML]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.cameraPrivacyAccessNote' | translate">
-													</p>
-												</div>
-											</div>
-										</div>
-									</div>
+									[caption]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.tooltip' | translate"
+									[isLastChild]="isCameraPreviewHidden">
 								</vtr-ui-row-switch>
 							</li>
-							<li class="camera-block common-li-padding"
-								*ngIf="this.biosVersion.slice(0,3) !== 'N2P'">
+							<li class="camera-block common-li-padding" 
+							*ngIf="!isCameraPreviewHidden">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.displayCamera.camera.camera.title' | translate"
 									componentName="Camera"
@@ -359,10 +329,10 @@
 												class="row permission-note my-2">
 												<div class="col-12 well d-flex">
 													<div class="pr-0">
-														<p class="mb-0 mt-auto"
+														<p class="mb-0 mt-auto noteColor"
 															id="device-settings-camera-privacy-note"
 															attr.aria-label="device-settings-camera-privacy-note">
-															{{'dashboard.quickSettings.note.cameraPrivacyNote' | translate}}
+															{{'device.deviceSettings.displayCamera.camera.cameraPrivacy.noPermissionNote' | translate}}
 														</p>
 														<button type="button"
 															class="btn btn-link privacy-button pl-0"
@@ -370,7 +340,7 @@
 															id="device-settings-camera-access-url"
 															attr.aria-label="device-settings-camera-access-url"
 															role="link">
-															{{'dashboard.quickSettings.note.accessUrl' | translate}}
+															{{'device.deviceSettings.displayCamera.camera.cameraPrivacy.accessUrl' | translate}}
 														</button>
 													</div>
 												</div>
@@ -381,7 +351,8 @@
 											[path]="'ms-settings:privacy-webcam'"
 											 *ngIf="!dataSource.permission">
 										</vtr-widget-permission-note> -->
-											<vtr-camera-control [cameraSettings]="dataSource"
+											<vtr-camera-control #cameraControl
+												[cameraSettings]="dataSource"
 												[manualRefresh]="manualRefresh"
 												[cameraFeatureAccess]="cameraFeatureAccess"
 												(brightnessChange)="onBrightnessChange($event)"

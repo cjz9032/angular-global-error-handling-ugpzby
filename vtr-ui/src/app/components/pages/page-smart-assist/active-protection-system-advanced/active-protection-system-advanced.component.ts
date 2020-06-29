@@ -12,6 +12,7 @@ import {
 import { TranslateService } from '@ngx-translate/core';
 import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
 import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
+
 @Component({
 	selector: 'vtr-active-protection-system-advanced',
 	templateUrl: './active-protection-system-advanced.component.html',

@@ -40,7 +40,11 @@
             opacity: 0.5;
 			line-height: 2;
 			font-weight: $weight_regular;
+			white-space:no-wrap;
+			overflow:hidden;
+			text-overflow:ellipsis;
 			@media #{$breakpoint_sm}{
+				font-size: 1rem;
 				line-height: auto;
 			}
         }
@@ -188,7 +192,6 @@
                     //padding: 1rem;
                     margin: 1.5rem auto;
 					width: 96%;
-					pointer-events: none;
 					@media #{$breakpoint_xl}{
 						width: calc(100% - 0.9rem);
 					}
@@ -202,7 +205,9 @@
 						border-bottom: none;
 						min-height: 6.3rem;
 						display: flex;
+						pointer-events: none;
 						.btn-link{
+							width:100%;
 							@media #{$breakpoint_sm}{
 								padding-left: 0rem;
 							}
@@ -211,17 +216,29 @@
 							}
 						}
                         .heading {
+								max-width:60%;
+								width:60%;
+								text-align:left;
+								word-break:break-all;
                             h3, h2{
+								text-align: left;
 								font-size: $fontsize_sm;
 								color: $main_shade !important;
 								letter-spacing: 0;
-								font-weight: $weight_bold;
+								font-weight: $weight_bold;									
 								@media #{$breakpoint_lg}{				
 									font-size: $fontsize_xs;
-								}
+								}	
+								@media #{$breakpoint_md}{				
+									font-size: $fontsize_xs2;
+								}	
 								@media #{$breakpoint_sm}{				
-									font-size: 1.1rem;
-								}
+									font-size:1.1rem;
+									letter-spacing: -0.02rem;									
+									margin-bottom: 0;
+								}					
+													
+								
                             }
                             .icomoon{
 								color: $menu_hover;
@@ -243,6 +260,8 @@
                     }
                     .status-text{
 						flex-grow: 8;
+						width:38%;
+						max-width:38%;
 						@media #{$breakpoint_sm}{
 							margin-top: 1.25rem;
 						}
@@ -255,12 +274,8 @@
 							right: 1.5rem;
 							top: 40%;
 							letter-spacing: 0;
+							word-break:break-all;						
 							
-							@media #{$breakpoint_xl}{
-								right: 1.5rem;					
-								font-size: $fontsize_xs;
-								top: 36%;
-							}
 							@media #{$breakpoint_lg}{
 								right: 1.5rem;					
 								font-size: $fontsize_xs;
@@ -269,7 +284,12 @@
 							@media #{$breakpoint_md}{
 								top: 36%;								
 								right: 1.5rem;								
-								font-size: 1.1rem;
+								font-size: $fontsize_xs2;
+							}
+							@media #{$breakpoint_xl}{
+								right: 1.5rem;					
+								font-size: $fontsize_xs2;
+								top: 36%;
 							}
 							@media #{$breakpoint_sm}{
 								top: 32.5%;
@@ -648,15 +668,7 @@
 	mask-mode: alpha;
 	position: relative;
 	left: 3rem;
-	// &::after {
-	// 	content: '';
-	// 	position: absolute;
-	// 	height: 50%;
-	// 	width: 100%;
-	// 	bottom: 0;
-	// 	left: 0;
-	// 	background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-	// }
+	width: calc(100% - 2rem);
 	.ms-slider__words {
 		display: inline-block;
 		margin: 0;
@@ -670,6 +682,13 @@
 		animation-iteration-count: infinite;
 		-webkit-animation-duration: 20s;
 		animation-duration: 20s;
+		width: 100%;
+		li {
+			white-space: nowrap;
+			max-width: calc(100% - 1rem);
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
 	}
 }
 .page-heading {

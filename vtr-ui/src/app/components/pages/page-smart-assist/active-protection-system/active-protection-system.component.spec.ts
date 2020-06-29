@@ -29,7 +29,12 @@ import {
 import {
 	DropDownInterval
 } from '../../../../data-models/common/drop-down-interval.model';
-
+import { CommonService } from 'src/app/services/common/common.service';
+import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
+import { DevService } from '../../../../services/dev/dev.service';
+import { MetricService } from '../../../../services/metric/metrics.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 class MockAPS {
 	getAPSMode() {
 		return Promise.resolve(true);
@@ -67,8 +72,11 @@ describe('ActiveProtectionSystemComponent', () => {
 	let fixture: ComponentFixture<ActiveProtectionSystemComponent>;
 	let debugElement;
 	let smartAssist;
+	let commonMetricsService: CommonMetricsService;
+	let metricService: MetricService;
+	let devService: DevService;
 
-	beforeEach(async(() => {
+	beforeEach((() => {
 		TestBed.configureTestingModule({
 			declarations: [ActiveProtectionSystemComponent],
 			schemas: [NO_ERRORS_SCHEMA],
@@ -80,16 +88,16 @@ describe('ActiveProtectionSystemComponent', () => {
 				},
 				isolate: false
 			}),
-			TranslationModule.forChild(), HttpClientModule
+			TranslateModule.forChild(), HttpClientTestingModule, RouterTestingModule
 			],
 			providers: [TranslateService, {
 				provide: SmartAssistService,
 				useClass: MockAPS
-			}]
+			}, CommonMetricsService, MetricService, DevService]
 		}).compileComponents();
 	}));
 
-	beforeEach(async(() => {
+	beforeEach((() => {
 		fixture = TestBed.createComponent(ActiveProtectionSystemComponent);
 		debugElement = fixture.debugElement;
 		component = fixture.componentInstance;
@@ -102,7 +110,7 @@ describe('ActiveProtectionSystemComponent', () => {
 		expect(component).toBeTruthy();
 	});
 
-	it('should set APS mode', async () => {
+	it('should set APS mode', () => {
 		const flag = component.apsStatus; // the value that is changing in component
 		spyOn(component, 'setAPSMode');
 		component.setAPSMode();
@@ -152,11 +160,13 @@ describe('ActiveProtectionSystemComponent', () => {
 		// expect(component.selectedSnoozeTime).toEqual(interval.value);
 	});
 
-	it('should suspent APS feature', () => {
+	it('should suspend now APS feature', () => {
 		const timeValue = 1; // the value that is changing in component
 		spyOn(component, 'suspendNow');
+		fixture.detectChanges();
 		component.suspendNow();
 		expect(component.suspendNow).toHaveBeenCalled();
 	});
+
 
 });

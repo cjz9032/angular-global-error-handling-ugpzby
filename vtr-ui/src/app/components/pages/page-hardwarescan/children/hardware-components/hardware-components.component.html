@@ -8,6 +8,7 @@
 				[disableCancel]="isDisableCancel()"
 				(checkAnchor)="startScanWaitingModules(taskTypeEnum.CustomScan)"
 				(startQuickScan)="startScanWaitingModules(taskTypeEnum.QuickScan)"
+				(scanAgain)="scanAgain()"
 				[completed]="completedStatus"
 				[deviceInRecover]="deviceInRecover"
 				itemParentCancel="{{itemParentCancelScan}}"
@@ -56,7 +57,7 @@
 						</fa-icon>
 					</div>
 
-					<div class="refresh-message" *ngIf="isRefreshingModules() && !isRecoverExecuting()">
+					<div class="refresh-message" *ngIf="isRefreshingModules() && !isRecoverExecuting()" aria-live="polite">
 						{{ 'hardwareScan.refreshMessage' | translate }}
 					</div>
 				</div>

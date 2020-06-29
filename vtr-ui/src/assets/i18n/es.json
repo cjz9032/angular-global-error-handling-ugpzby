@@ -193,7 +193,7 @@
                 "savePromptPopup": {
                     "title": "¿Guardar cambios?",
                     "description1": "Ajuste incorrecto Acel. puede causar daños de hard. irreversibles. Realice una de las siguientes acciones si encuentra algún problema: ",
-                    "description2": "•  Presione bot. enc. por 8 seg. para rein. sist. y rest. par. omisión.",
+                    "description2": "•  Presione bot. enc. por 8-15 seg. para rein. sist. y rest. par. omisión.",
                     "description3": "•  Use “Rest. val. predet. sinc.” en val. BIOS para rest. los par. omi.",
                     "save": "GUARDAR",
                     "notSave": "NO GUARDAR"
@@ -733,7 +733,7 @@
                 "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
-                "name11": "Legion front Fan Lighting",
+                "name11": "Legion Front Fan Lighting",
                 "name12": "Legion Top Fan Lighting"
             },
             "lightingEffect": {
@@ -925,7 +925,7 @@
         },
         "systemStatus": {
             "title": "Estado del sistema",
-            "subtitle": "Una rápida puesta al día acerca del estado de su dispositivo.",
+            "subtitle": "Actualización rápida del estado de su dispositivo.",
             "memory": {
                 "title": "Memoria",
                 "detail": {
@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "Para ampliar la vida de la batería, hemos optimizado su capacidad de carga completa según su uso. Es posible que la capacidad máxima de la batería no esté disponible hasta que se descargue hasta el 20 % y se recargue.",
-                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
+                    "moreInfo": "Haga clic <a role=\"link\" href=\"#/device/high-density-battery\" tabindex=\"0\">aquí</a> para obtener más información."
                 },
                 "condition": {
                     "Illegal": "El sistema <b>no admite</b> la batería instalada, por lo que esta no cargará. Sustituya la batería con la batería Lenovo correcta para este sistema.",
@@ -1101,13 +1101,13 @@
                     "NotDetected": "<b>No se detectó la batería principal.</b>"
                 },
                 "highDensityBattery": {
-                    "title": "High density battery",
-                    "subtitle": "How your battery works",
-                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "title": "Batería de alta densidad",
+                    "subtitle": "Funcionamiento de la batería",
+                    "para1": "Para aumentar la duración de la batería, la batería ajusta automáticamente el voltaje de carga y la capacidad en respuesta a su patrón de utilización personal.",
                     "para2": {
-                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
-                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
-                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                        "item1": "-Si utiliza menos del 65 % de la capacidad de la batería durante una semana o más, la batería puede reducir temporalmente el voltaje de carga y la capacidad. La reducción de capacidad es leve y no es perceptible para su patrón de utilización.",
+                        "item2": "- La capacidad completa se restaura cuando se carga la batería por debajo de un 20 % y, a continuación, se recarga completamente la batería.",
+                        "item3": "- Además, si utiliza menos del 10 % de la capacidad de la batería durante 2 semanas o más, la batería puede reducir temporalmente el voltaje de carga y la capacidad aún más, hasta que se utilice el 50 % de la capacidad reducida de la batería."
                     }
                 }
             },
@@ -1276,7 +1276,7 @@
                             "description2": "Para activar completamente esta característica, desconecte la máquina ydeje que la batería se agote o quede bajo el umbral de detención de carga.",
                             "enable": "HABILITAR",
                             "cancel": "CANCELAR",
-                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
+                            "description3": "La batería optimiza automáticamente su voltaje y capacidad de carga según el patrón de utilización. Si utiliza la batería de forma ligera, no es necesario habilitar el Umbral de carga de la batería."
                         },
                         "options": {
                             "start": "Comenzar a cargar cuando esté por debajo de",
@@ -1557,7 +1557,7 @@
                     },
                     "optimize": {
                         "title": "Optimizar el micrófono para:",
-                        "tooltip": "Configure el efecto de micrófono para mejorar su experiencia de audio mediante diferentes escenarios y entornos.",
+                        "tooltip": "Configure el efecto de micrófono para mejorar su experiencia de audio en diferentes escenarios y entornos.",
                         "options": {
                             "VoiceRecognition": "RECONOCIMIENTO DE VOZ",
                             "OnlyMyVoice": "SOLO MI VOZ",
@@ -1585,7 +1585,7 @@
                 "display": {
                     "title": "Pantalla",
                     "displayColorTemperature": {
-                        "title": "Modalidad cuidado visión",
+                        "title": "Modalidad de Cuidado de la visión",
                         "description": "Para evitar la fatiga ocular, puede ajustar la temperatura del color de la pantalla para filtrar la luz azul cuando utilice el sistema durante mucho tiempo. Además, los colores cálidos son buenos para su sueño, especialmente en la noche.",
                         "link": {
                             "click": "Hacer clic en",
@@ -1595,14 +1595,14 @@
                     },
                     "eyeCareMode": {
                         "title": "Modalidad de cuidado de la visión",
-                        "checkbox": "Programar el modo de cuidado ocular de anochecer a amanecer",
+                        "checkbox": "Planificación de la modalidad de Cuidado de la visión de anochecer a amanecer",
                         "options": {
                             "warm": "Cálido (mejor para los ojos)",
                             "cold": "Frío"
                         },
                         "reset": "Restablecer",
                         "tooltip": "La modalidad de cuidado de la visión ajusta la temperatura del color de la pantalla para filtrar la luz azul y reducir el esfuerzo para los ojos.",
-                        "onSunsetToSunriseScheduleDescription": "Programar el modo de cuidado ocular de anochecer a amanecer",
+                        "onSunsetToSunriseScheduleDescription": "Planificación de la modalidad de Cuidado de la visión de anochecer a amanecer",
                         "note": {
                             "title": "Nota",
                             "description": "Lenovo Vantage necesita acceder a la información de ubicación para calcular la hora del atardecer y amanecer de su región."
@@ -1617,7 +1617,7 @@
                         },
                         "reset": "Restablecer",
                         "tooltip": "La modalidad de cuidado de la visión ajusta la temperatura del color de la pantalla para filtrar la luz azul y reducir el esfuerzo para los ojos.",
-                        "onSunsetToSunriseScheduleDescription": "Programar el modo de cuidado ocular de anochecer a amanecer",
+                        "onSunsetToSunriseScheduleDescription": "Planificación de la modalidad de Cuidado de la visión de anochecer a amanecer",
                         "note": {
                             "title": "Nota",
                             "description": "Cuando el Modo de cuidado ocular está habilitado, esta temperatura de color no se aplica. Sin embargo, puede arrastrar el control deslizante para obtener una vista previa del mismo. Para aplicar los valores seleccionados, desactive el Modo de cuidado ocular."
@@ -1673,7 +1673,9 @@
                     "cameraPrivacy": {
                         "title": "Modo de privacidad de cámara",
                         "tooltip": "La cámara deja de enviar imágenes en vivo cuando se activa la configuración Privado. Active esta configuración solo cuando no desee compartir sus imágenes a otros durante las llamadas de video.",
-                        "cameraPrivacyAccessNote": "Vaya a la página <b>Valores de Windows → Privacidad → Cámara</b> y asegúrese de que las dos opciones a continuación estén habilitadas:<br>&bull; <b>Permitir que las aplicaciones de escritorio accedan a la cámara</b><br>&bull; <b>Lenovo Vantage</b> en “Elegir las aplicaciones de Microsoft Store que pueden acceder a la cámara”"
+                        "cameraPrivacyAccessNote": "Vaya a la página <b>Valores de Windows → Privacidad → Cámara</b> y asegúrese de que las dos opciones a continuación estén habilitadas:<br>&bull; <b>Permitir que las aplicaciones de escritorio accedan a la cámara</b><br>&bull; <b>Lenovo Vantage</b> en “Elegir las aplicaciones de Microsoft Store que pueden acceder a la cámara”",
+                        "noPermissionNote": "Lenovo Vantage no tiene acceso a la cámara o el alternador “Permitir que las aplicaciones de escritorio accedan a la cámara” no está habilitado.",
+                        "accessUrl": "Vaya a la configuración de Windows para dar acceso"
                     },
                     "camera": {
                         "title": "Cámara",
@@ -1764,11 +1766,11 @@
                             "note": "Cuando presiona la tecla Fn dos veces, la tecla Fn se bloquea en condición pulsada hasta que vuelva a pulsarla. Cuando la tecla Fn está bloqueada, se enciende el indicador de bloqueo Fn. Puede presionar la tecla de función deseada directamente para iniciar la función no predeterminada."
                         },
                         "popup": {
-                            "title": "Reinicie el equipo",
+                            "title": "Reinicie el sistema",
                             "description": "Cambiar la función de fila superior predeterminada requiere que reinicie su equipo. ¿Está seguro de que desea reiniciar?",
                             "reboot": "REINICIAR",
                             "cancel": "NO AHORA",
-                            "yes": "YES"
+                            "yes": "Sí"
                         },
                         "note": {
                             "sFunKey": "Para tener acceso a la función F1-F12, presione Fn y las teclas de la fila superior.",
@@ -1791,10 +1793,10 @@
                 },
                 "userDefinedKey": {
                     "title": "Tecla definida por el usuario",
-                    "caption": "La tecla representada por el icono de la estrella le permite establecer la función definida por el usuario",
+                    "caption": "La tecla representada por el icono de la estrella le permite establecer la función definida por el usuario.",
                     "dropDown": {
                         "title": "Acción de la tecla definida por el usuario",
-                        "note": "Nota: esto se puede utilizar para ingresar la tecla comúnmente ingresada, como direcciones de correo electrónico o postales. Lenovo le recomienda no utilizar nunca esta característica para almacenar e ingresar contraseñas u otra información privada.",
+                        "note": "Nota: esto se puede utilizar para ingresar la tecla comúnmente ingresada, como direcciones de correo electrónico o postales. No utilice nunca esta característica para almacenar contraseñas o cualquier otra información privada.",
                         "options": {
                             "option1": "Seleccione",
                             "option2": "Sitio web abierto",
@@ -1832,8 +1834,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "Cambio de teclas Fn y Ctrl",
-                    "description": "Si normalmente presionaba la tecla Fn al intentar presionar la tecla Ctrl, you puede intercambiar las funciones de ambas teclas.",
-                    "restartNote": "Para intercambiar la función de dos claves es necesario reiniciar el sistema. ¿Está seguro de que desea reiniciarlo?",
+                    "description": "Si normalmente presiona la tecla Fn al intentar presionar la tecla Ctrl, you puede intercambiar la función de ambas teclas.",
+                    "restartNote": "Cambiar la función de las dos teclas superiores requiere que reinicie su equipo. ¿Está seguro de que desea reiniciar?",
                     "title2": "Fn funciona como Ctrl para combinaciones de teclas de uso frecuente",
                     "description2": "La tecla Fn funciona como la tecla Ctrl para algunas combinaciones de teclas de uso frecuente. La función de la tecla Ctrl no cambia.",
                     "featureNote": "Esta función y la tecla Fn y la función de intercambio de teclas Ctrl no pueden estar habilitadas al mismo tiempo. Si una está encendida, la otra se apagará automáticamente.",
@@ -2134,8 +2136,8 @@
                 "tooltip": "<div id='antiTheft-tooltips'>Esta característica no funciona cuando el sistema está en modalidad de hibernación o está apagado. Compruebe los valores en las siguientes acciones:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>acciones de la cubierta de cierre</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>acción de batería crítica/baja</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>acción del botón de encendido</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>acción del botón de suspensión</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>valores de tiempo de espera de inactividad hasta hibernación</li></ul></div>De lo contrario, no activará la alarma ni tomará las fotos.</div>",
                 "desc1": "Al habilitar esta característica, el dispositivo empezará a emitir un pitido cuando la pantalla esté bloqueada y se detecten movimientos, especialmente en un espacio público.",
                 "desc2": "Inicie sesión en Windows y la alerta se apagará automáticamente. Para utilizar la característica, debe activarla de nuevo.",
-				"note": {
-					"descriptionTitle": "Atención:",
+                "note": {
+                    "descriptionTitle": "Atención:",
                     "description": "Se necesitan opciones de inicio de sesión válidas, como una contraseña o un código PIN, para iniciar sesión en Windows. De lo contrario, es posible que algún usuario no autorizado con acceso a su sistema deshabilite por error la característica Alerta de movimiento inteligente."
                 },
                 "alarm": {
@@ -3115,7 +3117,9 @@
                 "yes": "Sí",
                 "no": "No"
             },
-            "waitAvailability": "El botón está deshabilitado si los dispositivos de almacenamiento no admiten esta funcionalidad, mientras que la información de hardware se está cargando o si hay un análisis en curso."
+            "waitAvailability": "El botón está deshabilitado si los dispositivos de almacenamiento no admiten esta funcionalidad, mientras que la información de hardware se está cargando o si hay un análisis en curso.",
+            "executingTitle": "Recuperando...",
+            "recoverCompleted": "Recuperación completada"
         },
         "support": {
             "title": "Descargar herramientas de diagnóstico profesionales",
@@ -3163,7 +3167,19 @@
             "suggestedActionSupport": "Si el sistema está en garantía, haga clic en <b>Abrir ticket</b> para solicitar una unidad de sustitución. Para obtener más información, vaya al sitio web de soporte de Lenovo.",
             "supportButtonText": "Abrir ticket",
             "recoverBadSectorsButtonText": "Recuperar sectores incorrectos"
-        }
+        },
+        "scanFinishedHeader": {
+            "titleSuccess": "Exploración completada. El dispositivo aprobó todas las pruebas.",
+            "titleErrorPlural": "Exploración completada. El dispositivo falló {{numberTestsFailed}} pruebas.",
+            "titleErrorSingular": "Exploración completada. El dispositivo falló 1 prueba.",
+            "frcSuccessDescription": "Este código de resultado final indica que no se encontraron problemas con esta exploración. Si cualquier prueba muestra un mensaje de advertencia o no aplicable, no significa que se encontró un problema. Si un agente de soporte de Lenovo le pidió ejecutar esta prueba, utilice el código de este como prueba; de lo contrario, no necesita realizar ninguna acción en este momento. Si cree que sigue experimentando problemas, póngase en contacto con soporte de Lenovo.",
+            "frcFailureDescription": "El código de resultado final indica que se encontraron problemas con esta exploración.",
+            "lenovoSupportInstruction": "En el soporte de Lenovo, puede abrir un informe de verificación utilizando el código del resultado final.",
+            "finalResultCodeLabel": "Código de resultado final: ",
+            "scanAgainButtonText": "Volver a escanear",
+            "supportButtonText": "Soporte de Lenovo"
+        },
+        "executingScanTitle": "Explorando {{title}}..."
     },
     "smartPerformance": {
         "title": "Smart Performance",
@@ -3289,7 +3305,7 @@
             "descriptionbeta": "Lenovo ofrece un programa piloto para probar la característica Smart Performance hasta julio de 2020.",
             "descriptionbeta1": "Lo invitamos a unirse y probar la característica completa.",
             "descriptionNonSubscriber": "No está suscrito al servicio Smart Performance de Lenovo. Solo podrá analizar su PC. Suscríbase ahora para obtener todos los beneficios de mantener su PC protegido y funcionando sin problemas.",
-            "processStatus": "PROCESSING"
+            "processStatus": "PROCESANDO"
         },
         "scanSettings": {
             "title": "Configuración de planificación del análisis",
@@ -3313,6 +3329,8 @@
             "fri": "Viernes",
             "sat": "Sábado",
             "sun": "Domingo",
+            "am": "AM",
+            "pm": "PM",
             "tooltipText": "Al mantener activada esta alternación, el análisis de rendimiento del sistema y seguridad puede iniciarse automáticamente en la fecha y hora que establezca."
         },
         "scanningPage": {
@@ -3775,7 +3793,7 @@
                 "txtGo": "Ir",
                 "summaryCaption": "Espacio reclamado",
                 "fixes": "corrección(es)",
-                "txtClr": "Clear"
+                "txtClr": "Borrar"
             },
             "lastScanResults": {
                 "title": "Últimos 5 resultados de análisis:",
@@ -3825,7 +3843,9 @@
         },
         "auto": "Automático",
         "manual": "Manual",
-        "noScanResults": "Haga clic en el botón ANALIZAR Y CORREGIR para activar el proceso de análisis."
+        "noScanResults": "Haga clic en el botón ANALIZAR Y CORREGIR para activar el proceso de análisis.",
+        "am": "AM",
+        "pm": "PM"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

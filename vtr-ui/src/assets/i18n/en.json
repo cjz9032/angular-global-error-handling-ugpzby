@@ -198,7 +198,7 @@
 				"savePromptPopup": {
 					"title": "Save Change ?",
 					"description1": "Improper settings of Overclocking may lead to irreversible hardware damage. Please do either of the following if you encounter any problem: ",
-					"description2": "•  Press and hold the power button for 8 seconds to restart the computer and restore the default parameters.",
+					"description2": "•  Press and hold the power button for 8-15 seconds to restart the computer and restore the default parameters.",
 					"description3": "•  Use the “Restore Default Overclocking” toggle in BIOS settings to restore the default parameters.",
 					"save": "SAVE",
 					"notSave": "DON'T SAVE"
@@ -735,7 +735,7 @@
 				"name7": "Legion Icon (Front)",
 				"name9": "Ambient  Lighting",
 				"name10": "Legion Liquid Cooling Lighting",
-				"name11": "Legion front Fan Lighting",
+				"name11": "Legion Front Fan Lighting",
 				"name12": "Legion Top Fan Lighting"
 			},
 			"lightingEffect": {
@@ -1077,7 +1077,7 @@
 						"smp": "SMP"
 					},
 					"fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge.",
-					"moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
+					"moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\" tabindex=\"0\">here</a> for more information."
 				},
 				"condition": {
 					"Illegal": "The battery installed is <b>not supported</b> by the system and will not charge. Please replace the battery with the correct Lenovo battery for this system.",
@@ -1675,7 +1675,9 @@
 					"cameraPrivacy": {
 						"title": "Camera Privacy Mode",
 						"tooltip": "The camera stops sending live images when the privacy setting is enabled. Turn this setting on, only when you do not want to share your images to others while video calling.",
-						"cameraPrivacyAccessNote": "Please go to the <b>Windows Settings → Privacy → Camera</b> page and make sure the following two options are turned on:<br>&bull; <b>Allow desktop apps to access your camera</b><br>&bull; <b>Lenovo Vantage</b> under \"Choose which (Microsoft Store) apps can access your camera\""
+						"cameraPrivacyAccessNote": "Please go to the <b>Windows Settings → Privacy → Camera</b> page and make sure the following two options are turned on:<br>&bull; <b>Allow desktop apps to access your camera</b><br>&bull; <b>Lenovo Vantage</b> under \"Choose which (Microsoft Store) apps can access your camera\"",
+						"noPermissionNote": "Lenovo Vantage doesn't have access to your Camera or the toggle \"Allow desktop apps to access your camera\" is not enabled.",
+						"accessUrl": "Go to Windows Settings to give access"
 					},
 					"camera": {
 						"title": "Camera",
@@ -2494,6 +2496,8 @@
 			"fri": "Friday",
 			"sat": "Saturday",
 			"sun": "Sunday",
+			"am": "AM",
+			"pm": "PM",
 			"tooltipText": "By keeping this toggle enabled, system performance and security scan will be automatically initiated on your set date and time."
 		},
 		"scanningPage": {
@@ -2666,8 +2670,8 @@
 			"recommendedAction": {
 				"title": "RECOMMENDED ACTION",
 				"description": "We will automatically fix these issues. Once today and every week thereafter",
-				"yearlyPricing": "$19.99 / Yr",
-				"monthlyPricing": "LESS THAN $2 PER MONTH.",
+				"yearlyPricing": "$29.99 / Yr",
+				"monthlyPricing": "LESS THAN $2.5 PER MONTH.",
 				"longerTerm": "Longer term? Even more savings?",
 				"signupButton": "SIGN UP"
 			},
@@ -3915,7 +3919,9 @@
 				"yes": "Yes",
 				"no": "No"
 			},
-			"waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+			"waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded.",
+			"executingTitle": "Recovering now...",
+			"recoverCompleted": "Recovery completed"
 		},
 		"support": {
 			"title": "Download professional diagnostic tools",
@@ -3943,9 +3949,21 @@
 			"storage": "Storage",
 			"wireless": "Wireless"
 		},
+		"scanFinishedHeader": {
+            "titleSuccess": "Scan completed. Your device passed all the tests.",
+            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
+            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
+			"frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays an attention or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
+			"frcFailureDescription": "The final result code indicates that problems were found with this scan.",
+			"lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
+			"finalResultCodeLabel": "Final Result Code: ",
+			"scanAgainButtonText": "Scan Again",
+			"supportButtonText": "Lenovo Support"
+        },
 		"warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates",
 		"refreshMessage": "Refresh may take some time as it needs to load all the components again",
-		"processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
+		"processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed.",
+		"executingScanTitle": "Scanning {{title}}..."
 	},
 	"notification": {
 		"menu": {

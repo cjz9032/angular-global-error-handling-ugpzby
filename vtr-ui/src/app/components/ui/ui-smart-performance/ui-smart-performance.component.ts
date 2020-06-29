@@ -211,7 +211,7 @@ export class UiSmartPerformanceComponent implements OnInit, OnChanges {
 					}
 				})
 				.catch(error => {
-
+					this.logger.error('Chane scan Event', error);
 				});
 		}
 		this.isScanningCompleted = false;
@@ -254,7 +254,7 @@ export class UiSmartPerformanceComponent implements OnInit, OnChanges {
 						if (scanStartedTime && scanEndedTime) {
 							timeDeff = scanEndedTime - scanStartedTime;
 						}
-						this.sendsmartPerformanceMetrics('Failure', timeDeff);
+						this.sendsmartPerformanceMetrics('Cancelled', timeDeff);
 
 					}
 					else {
@@ -314,7 +314,7 @@ export class UiSmartPerformanceComponent implements OnInit, OnChanges {
 						if (scanStartedTime && scanEndedTime) {
 							timeDeff = scanEndedTime - scanStartedTime;
 						}
-						this.sendsmartPerformanceMetrics('Failure', timeDeff);
+						this.sendsmartPerformanceMetrics('Cancelled', timeDeff);
 						// this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
 					}
 					else {
@@ -379,7 +379,9 @@ export class UiSmartPerformanceComponent implements OnInit, OnChanges {
 
 					}
 				})
-				.catch(error => { })
+				.catch(error => { 
+					this.logger.error('ScanNow.getReadiness.then', error)
+				})
 		}
 
 	}
@@ -438,9 +440,10 @@ export class UiSmartPerformanceComponent implements OnInit, OnChanges {
 	}
 	changeManageSubscription(event) {
 		this.unregisterScheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScan');
-		this.isSubscribed = this.commonService.getLocalStorageValue(
-			LocalStorageKey.IsFreeFullFeatureEnabled
-		);
+		// this.isSubscribed = this.commonService.getLocalStorageValue(
+		// 	LocalStorageKey.IsFreeFullFeatureEnabled
+		// );
+		this.isSubscribed = event;
 	}
 	changeSummaryToHome() {
 		this.isScanning = false;

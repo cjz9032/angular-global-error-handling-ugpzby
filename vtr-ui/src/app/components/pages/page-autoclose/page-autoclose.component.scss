@@ -36,7 +36,7 @@
 							}
 						}
 					}
-					&.wifi-checked + .switch {
+					&.checked + .switch {
 						background: $gaming_green_gradient;
 						transition: all 0.2s ease-in;
 						small {

@@ -1,4 +1,10 @@
 @import '../../../app.theme.scss';
+.w-60{
+	width:60%;
+	}
+.w-40{
+	width:40%;
+}
 .light-dashline {
 	border-top: 1px solid $screen_light_15;
 }
@@ -363,10 +369,22 @@ vtr-ui-smart-performance-scan-summary {
 						}
                         .heading {
                             h3, h2{
+								text-align: left;
 								font-size: $fontsize_sm;
 								color: $main_shade !important;
 								letter-spacing: 0;
-								font-weight: $weight_bold;
+								font-weight: $weight_bold;									
+								@media #{$breakpoint_lg}{				
+									font-size: $fontsize_xs;
+								}	
+								@media #{$breakpoint_md}{				
+									font-size: $fontsize_xs2;
+								}	
+								@media #{$breakpoint_sm}{				
+									font-size:1.1rem;
+									letter-spacing: -0.02rem;									
+									margin-bottom: 0;
+								}
                             }
                             .icon{
                                 color: $menu_hover;
@@ -416,7 +434,8 @@ vtr-ui-smart-performance-scan-summary {
 									text-overflow: ellipsis;
 									@media #{$breakpoint_sm} {
 										font-size: 1rem;
-										line-height: 1rem;
+										line-height: 1rem;										
+										white-space: nowrap;
 									}
                                 }
                                 .icon {
@@ -698,6 +717,22 @@ vtr-ui-smart-performance-scan-summary {
 				border-left:1px solid $shade_darkest;
 			}
 		}
+		.pc-status-info{
+			.needs-tune-up{				
+				span{
+					background:#252a3f!important;				
+				}			
+
+			}
+		}
+		.pc-status-info{
+			.running-well{				
+				span{
+					background:#2a2f43!important;					
+				}
+			}
+		}
+
 	}
 	.summary-block{
 		padding: 3rem 3rem 0;
@@ -825,12 +860,24 @@ vtr-ui-smart-performance-scan-summary {
 			line-height: 3rem;
 			font-size: 1.4rem;
 			height: 6rem;
+			.loader {
+				height: 2.8rem;
+				width: 2.8rem;
+				box-sizing: border-box;
+				border-radius: 50%;
+				border: 0.3rem solid $grey_light;
+				border-top-color: $grey_dark;
+				animation: spinner 0.7s linear infinite;
+			}
 			.item{
 				strong {
 					font-size: $fontsize_xs;
 					font-weight: $weight_bold;
 					line-height: 3rem;
 					color: $shade_blue;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
 				}
 				&:first-child{
 					.icomoon{
@@ -849,6 +896,9 @@ vtr-ui-smart-performance-scan-summary {
 				cursor: pointer;
 				strong{
 					font-weight: $weight_bold;
+				}
+				.ar-time {
+					margin-left: -0.4rem;
 				}
 				// fa-icon {
 				// 	cursor: pointer;
@@ -1221,3 +1271,9 @@ vtr-ui-smart-performance-scan-summary {
 		width: 102%;
 	}
 }
+
+@keyframes spinner {
+	to {
+	  transform: rotate(360deg);
+	}
+  }

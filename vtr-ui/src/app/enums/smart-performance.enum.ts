@@ -29,9 +29,10 @@ export enum enumScanFrequency{
 }
 export enum enumSmartPerformance{
 	SCHEDULESCANENDDATE = '2020/07/27',
+	SUMMARYWAITINGTIME = 5
 }
 export enum PaymentPage{
-	URL = 'http://ditpcsupport.earth.xpaas.lenovo.com/',
+	URL = 'https://uatpcsupport.lenovo.com/',
 	APPLICATIONNAME = 'COMPANION',
 	URLSTRING = 'upgradewarranty?',
 	SMARTPERFORMANCE = '&smartperformance=',
@@ -40,7 +41,24 @@ export enum PaymentPage{
 	SOURCEQUERYPARAMETER='&source=',
 	SLASH='/',
 	TRUE='true',
-	ORDERDETAILS = 'http://ditpcsupport.earth.xpaas.lenovo.com/nl/nl/api/v4/upsell/smart/getorders?serialNumber=',
-	ORDERWAITINGTIME = 10 // MINUTES
-
+	ORDERDETAILS = 'https://uatpcsupport.lenovo.com/api/v4/upsell/smart/getorders?serialNumber=',
+	ORDERWAITINGTIME = 2, // MINUTES,
+	PNLIST = 'U2FsdGVkX1+X2TVVOmuZWob7GGBAX0MqhbFG7Py5rjlN9MWpGuBkRkz23xBRr9xZllutntrWS2FDYJ9/CW0JIK8DaxmmShtyQEe+aqm9jYk='
 }
+
+export const actualScanFrequency: any = [
+	"Once a week", 
+	"Every other week", 
+	"Every month"
+]
+export const actualDays: any = [
+	'Sunday',
+	'Monday',
+	'Tuesday',
+	'Wednesday',
+	'Thursday',
+	'Friday',
+	'Saturday'
+]
+
+export const actualMeridiem = ['AM', 'PM']

@@ -73,7 +73,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 					this.topRowKeyObj.primaryFunCap = res[2];
 					this.getAllStatuses();
 					this.setTopRowStatusCallback();
-					this.updateFunctionLockUIModel()
+					this.logger.error('TopRowFunctionsComponent.getFunctionCapabilities', this.topRowKeyObj);
 				});
 			}
 		} catch (error) {
@@ -112,17 +112,23 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 	}
 	public getStatusOfFnLock() {
 		this.keyboardService.getFnLockStatus().then(res => {
+			this.logger.info('TopRowFunctionsComponent.getStatusOfFnLock', res);
 			this.topRowKeyObj.fnLockStatus = res;
+			this.updateFunctionLockUIModel()
 		});
 	}
 	public getStatusOfStickyFun() {
 		this.keyboardService.getFnStickKeyStatus().then(res => {
+			this.logger.info('TopRowFunctionsComponent.getStatusOfStickyFun', res);
 			this.topRowKeyObj.stickyFunStatus = res;
+			this.updateTopRowFunctionsKeysUIModel();
 		});
 	}
 	public getStatusOfPrimaryFun() {
 		this.keyboardService.getPrimaryFunctionStatus().then(res => {
+			this.logger.info('TopRowFunctionsComponent.getStatusOfPrimaryFun', res);
 			this.topRowKeyObj.primaryFunStatus = res;
+			this.updateFunctionLockUIModel()
 		});
 	}
 
@@ -195,7 +201,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 		}
 	}
 
-	setUpTopRowFunctionsKeysUIModel() {
+	private setUpTopRowFunctionsKeysUIModel() {
 		this.topRowFunctionKeysUIModel = [{
 			componentId: 'nMehod_show',
 			label: 'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.nMehod',
@@ -212,6 +218,21 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 			isDisabled: false,
 			metricsItem: 'radio.top-row-fn.fn-sticky-Key'
 		}];
+	}
+
+	private updateTopRowFunctionsKeysUIModel() {
+		this.topRowFunctionKeysUIModel.forEach((model) => {
+			switch (model.componentId) {
+				case 'nMehod_show':
+					model.isChecked = this.topRowKeyObj.stickyFunStatus === false;
+					break;
+				case 'fnKeyMehod_show':
+					model.isChecked = this.topRowKeyObj.stickyFunStatus === true;
+					break;
+				default:
+					break;
+			}
+		});
 	}
 
 	switchFocusToShowAdv() {

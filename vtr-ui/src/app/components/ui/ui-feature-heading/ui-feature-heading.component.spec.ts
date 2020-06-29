@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UiFeatureHeadingComponent } from './ui-feature-heading.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { TranslateModule } from '@ngx-translate/core';
+import { SvgInlinePipe } from 'src/app/pipe/svg-inline/svg-inline.pipe';
 
 describe('UiFeatureHeadingComponent', () => {
   let component: UiFeatureHeadingComponent;
@@ -8,7 +11,9 @@ describe('UiFeatureHeadingComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UiFeatureHeadingComponent ]
+      declarations: [ UiFeatureHeadingComponent,SvgInlinePipe ],
+      imports: [HttpClientTestingModule, TranslateModule.forRoot()],
+			providers: []
     })
     .compileComponents();
   }));

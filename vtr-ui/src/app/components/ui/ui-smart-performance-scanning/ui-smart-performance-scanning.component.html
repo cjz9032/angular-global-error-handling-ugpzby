@@ -29,9 +29,9 @@
 											<div *ngIf="showProgress"
 												class="col row">
 												<div class="col col-12 row progress-div">
-													<div class="col col-9 progress-title pb-4" id="su-cheking-updates-title"
+													<div class="col col-6 progress-title pb-4" id="su-cheking-updates-title"
 														aria-label="su-cheking-updates-title">{{'smartPerformance.scanningPage.scanningSystem' |translate }} <span *ngIf="isAutoScanRunning" class="progress-sub-title">({{'smartPerformance.auto' |translate }})</span></div>
-													<div class="col col-3 progress-percent-text">
+													<div class="col col-6 progress-percent-text">
 														<div class="row d-flex justify-content-end">
 															<span class="progress-value-text pb-4">{{percent}}</span>
 															<span
@@ -79,7 +79,7 @@
 													<div class="d-flex justify-content-between">
 														<div class="heading">
 															<div class="icomoon icomoon-tune-pc"></div>
-															<h2>{{'smartPerformance.tunePCPerformance.title' |translate }}</h2>
+															<h2 title="{{'smartPerformance.tunePCPerformance.title' |translate }}">{{'smartPerformance.tunePCPerformance.title' |translate }}</h2>
 														</div>
 														<div class="status-text float-right pull-right" >
 															<vtr-widget-speedometer #speedometer *ngIf="activegroup == spCategoryenum.TUNEUPPERFORMANCE"></vtr-widget-speedometer>
@@ -266,7 +266,7 @@
 												</div>
 												<div class="ms-slider">
 													<ul class="junk-list ms-slider__words">
-															<li class="ms-slider__word" *ngFor="let item of subItems.items">{{item.key}}</li>
+															<li class="ms-slider__word" *ngFor="let item of subItems.items" title="{{item.key}}">{{item.key}}</li>
 														<!-- <li class="ms-slider__word">Applying registry and shortcut fixes</li>
 														<li class="ms-slider__word">Scanning and fixing critical services</li>
 														<li class="ms-slider__word">Modifying windows settings</li>

@@ -389,7 +389,14 @@ describe('WidgetLightingDeskComponent', () => {
         component.imgDefaultOff();
         tick(10);
         expect(component.lightingProfileCurrentDetail.panelImage).toMatch("assets/images/gaming/lighting/lighting-ui-new/T750_water.png");
-        
+
+        component.currentProfileId = 0;
+        component.ledlayoutversion = 5;
+        component.lightingCapabilities.LightPanelType = [4];
+        component.imgDefaultOff();
+        tick(10);
+        expect(component.lightingProfileCurrentDetail.panelImage).toMatch("assets/images/gaming/lighting/lighting-ui-new/T750_wind.png");
+
         component.lightingCapabilities.LightPanelType = [3];
         component.imgDefaultOff();
         tick(10);
@@ -463,7 +470,13 @@ describe('WidgetLightingDeskComponent', () => {
         gamingLightingServiceMock.isShellAvailable = false;
         component.getLightingCapabilities();
         expect(component.getLightingCapabilities()).toBeUndefined();
-    }))
+	}))
+
+	it('should replace empty space to underscore from a string', () => {
+		const result = component.replaceString('automation Id');
+		expect(result).toEqual('automation_Id');
+	});
+
 
 });
 

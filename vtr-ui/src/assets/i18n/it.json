@@ -193,7 +193,7 @@
                 "savePromptPopup": {
                     "title": "Salvare la modifica?",
                     "description1": "Impostazioni overclock errate possono causare danni HW irreversibili Eseguire una delle seguenti operazioni se si verifica un problema: ",
-                    "description2": "•  Tenere premuto il pulsante di alim. 8 sec per riavviare il PC e ripristinare i parametri predefiniti.",
+                    "description2": "•  Tenere premuto il pulsante di alim. 8-15 sec per riavviare il PC e ripristinare i parametri predefiniti.",
                     "description3": "•  Per ripristinare overclock predefinito, passare a impostazioni BIOS.",
                     "save": "SALVA",
                     "notSave": "NON SALVARE"
@@ -733,7 +733,7 @@
                 "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
-                "name11": "Legion front Fan Lighting",
+                "name11": "Legion Front Fan Lighting",
                 "name12": "Legion Top Fan Lighting"
             },
             "lightingEffect": {
@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "Per estendere la durata di vita della batteria, ne abbiamo ottimizzato la capacità di carica completa in base all'uso. La capacità completa della batteria potrebbe non essere disponibile finché questa non si scarica al 20% e non viene ricaricata.",
-                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
+                    "moreInfo": "Per ulteriori informazioni, fare clic <a role=\"link\" href=\"#/device/high-density-battery\" tabindex=\"0\">qui</a>."
                 },
                 "condition": {
                     "Illegal": "La batteria installata <b>non è supportata</b> dal sistema e non verrà caricata. Sostituire la batteria con la batteria Lenovo corretta per questo sistema.",
@@ -1101,13 +1101,13 @@
                     "NotDetected": "<b>La batteria principale non è stata rilevata.</b>"
                 },
                 "highDensityBattery": {
-                    "title": "High density battery",
-                    "subtitle": "How your battery works",
-                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "title": "Batteria ad alta densità",
+                    "subtitle": "Funzionamento della batteria",
+                    "para1": "Per aumentare la durata della batteria, la tensione e la capacità di carica vengono regolate automaticamente in base all'utilizzo personale.",
                     "para2": {
-                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
-                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
-                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                        "item1": "- Se si utilizza meno del 65% della capacità della batteria per almeno una settimana, è possibile che la tensione e la capacità di carica della batteria vengano ridotte temporaneamente. La riduzione della capacità è minore e non ha un impatto evidente sul modello di utilizzo.",
+                        "item2": "- La capacità completa viene ripristinata quando la carica residua della batteria è inferiore al 20% e la batteria viene caricata completamente.",
+                        "item3": "- Inoltre, se si utilizza meno del 10% della capacità della batteria per almeno 2 settimane, è possibile che si verifichi un'ulteriore riduzione temporeanea della tensione e della capacità di carica della batteria, finché non viene utilizzato il 50% della sua capacità."
                     }
                 }
             },
@@ -1276,7 +1276,7 @@
                             "description2": "Per abilitare questa funzione, scollegare la presa di alimentazione del computer escaricare completamente la batteria o scendere sotto la soglia di arresto della carica.",
                             "enable": "ABILITA",
                             "cancel": "ANNULLA",
-                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
+                            "description3": "La batteria ottimizza automaticamente la tensione di carica e la capacità in base al modello di utilizzo. Se si utilizza poco la batteria, non è necessario abilitare la funzione Soglia di carica batteria."
                         },
                         "options": {
                             "start": "Avvia carica quando inferiore a",
@@ -1557,7 +1557,7 @@
                     },
                     "optimize": {
                         "title": "Ottimizzazione microfono:",
-                        "tooltip": "Configura l'effetto del microfono per migliorare l'esperienza audio in base a scenari e ambienti differenti.",
+                        "tooltip": "Configurare l'effetto microfono per migliorare l'esperienza audio in scenari e ambienti differenti.",
                         "options": {
                             "VoiceRecognition": "RICONOSCIMENTO VOCALE",
                             "OnlyMyVoice": "SOLO LA MIA VOCE",
@@ -1585,7 +1585,7 @@
                 "display": {
                     "title": "Schermo",
                     "displayColorTemperature": {
-                        "title": "Modalità Eye care",
+                        "title": "Modalità comfort visivo",
                         "description": "Per evitare l'affaticamento della vista, è possibile regolare la temperatura del colore dello schermo per filtrare la luce blu quando si usa il computer per periodi di tempo prolungati. Inoltre, i colori caldi favoriscono il riposo notturno.",
                         "link": {
                             "click": "Fare clic",
@@ -1595,19 +1595,19 @@
                     },
                     "eyeCareMode": {
                         "title": "Modalità Comfort Visivo",
-                        "checkbox": "Pianifica la modalità Comfort visivo dal tramonto all'alba",
+                        "checkbox": "Pianifica la modalità comfort visivo dal tramonto all'alba",
                         "options": {
                             "warm": "Calda (migliore per gli occhi)",
                             "cold": "Fredda"
                         },
                         "reset": "Reimposta",
                         "tooltip": "La modalità Comfort visivo regola la temperatura del colore dello schermo per filtrare la luce blu e ridurre l'affaticamento degli occhi.",
-                        "onSunsetToSunriseScheduleDescription": "Pianifica la modalità Comfort visivo dal tramonto all'alba",
+                        "onSunsetToSunriseScheduleDescription": "Pianifica la modalità comfort visivo dal tramonto all'alba",
                         "note": {
                             "title": "Nota",
                             "description": "Lenovo Vantage deve accedere alle informazioni sulla posizione per calcolare l'ora del tramonto e dell'alba dell'area geografica in cui ti trovi."
                         },
-                        "tips": "Eseguire Windows Update o installare manualmente il driver di grafica per ripristinare la modalità Comfort visivo"
+                        "tips": "Eseguire Windows Update o installare manualmente il driver di grafica per ripristinare la modalità comfort visivo."
                     },
                     "dispColorTemp": {
                         "title": "Temperatura colore schermo",
@@ -1617,7 +1617,7 @@
                         },
                         "reset": "Reimposta",
                         "tooltip": "La modalità Comfort visivo regola la temperatura del colore dello schermo per filtrare la luce blu e ridurre l'affaticamento degli occhi.",
-                        "onSunsetToSunriseScheduleDescription": "Pianifica la modalità Comfort visivo dal tramonto all'alba",
+                        "onSunsetToSunriseScheduleDescription": "Pianifica la modalità comfort visivo dal tramonto all'alba",
                         "note": {
                             "title": "Nota",
                             "description": "Quando la modalità Comfort visivo è abilitata, la temperatura del colore non ha effetto. Tuttavia, puoi trascinare il dispositivo di scorrimento per visualizzarne l'anteprima. Per rendere effettive le modifiche, disattiva la modalità Comfort visivo."
@@ -1673,7 +1673,9 @@
                     "cameraPrivacy": {
                         "title": "Modalità privacy fotocamera",
                         "tooltip": "La fotocamera non invia più immagini dal vivo quando l'impostazione relativa alla privacy è abilitata. Attiva questa impostazione solo se non desideri condividere le tue immagini con altri durante le videochiamate.",
-                        "cameraPrivacyAccessNote": "Accedere alla pagina <b>Impostazioni di Windows → Privacy → Fotocamera</b> e verificare che le seguenti due opzioni siano attivate:<br>&bull; <b>Consenti alle app desktop di accedere alla fotocamera</b><br>&bull; <b>Lenovo Vantage</b> in \"Scegli le app di Microsoft Store che possono accedere alla fotocamera\""
+                        "cameraPrivacyAccessNote": "Accedere alla pagina <b>Impostazioni di Windows → Privacy → Fotocamera</b> e verificare che le seguenti due opzioni siano attivate:<br>&bull; <b>Consenti alle app desktop di accedere alla fotocamera</b><br>&bull; <b>Lenovo Vantage</b> in \"Scegli le app di Microsoft Store che possono accedere alla fotocamera\"",
+                        "noPermissionNote": "Lenovo Vantage non ha accesso alla fotocamera o l'interruttore \"Consenti alle app desktop di accedere alla fotocamera\" non è abilitato.",
+                        "accessUrl": "Accedere alle impostazioni di Windows per consentire l'accesso"
                     },
                     "camera": {
                         "title": "Fotocamera",
@@ -1768,7 +1770,7 @@
                             "description": "La modifica della funzione della riga superiore richiede il riavvio del computer. Riavviare?",
                             "reboot": "RIAVVIA",
                             "cancel": "NON ORA",
-                            "yes": "YES"
+                            "yes": "SÌ"
                         },
                         "note": {
                             "sFunKey": "Per accedere alla funzione F1-F12, premere Fn e i tasti sulla riga superiore.",
@@ -1791,10 +1793,10 @@
                 },
                 "userDefinedKey": {
                     "title": "Tasto definito dall'utente",
-                    "caption": "Il tasto rappresentato dall'icona a forma di stella consente di impostare la funzione definita dall'utente",
+                    "caption": "Il tasto rappresentato dall'icona a forma di stella consente di impostare la funzione definita dall'utente.",
                     "dropDown": {
                         "title": "Azione del tasto definito dall'utente",
-                        "note": "Nota: può essere utilizzato per immettere tasti comuni, come indirizzi e-mail o postali. Lenovo consiglia di non utilizzare questa funzione per la memorizzazione o l'immissione di password o di qualsiasi altra informazione privata.",
+                        "note": "Nota: può essere utilizzato per immettere tasti comuni, come indirizzi e-mail o postali. Non utilizzare questa funzione per memorizzare le password o altre informazioni private.",
                         "options": {
                             "option1": "Selezionare",
                             "option2": "Apri sito Web",
@@ -1832,8 +1834,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "Scambio tasto Fn e Ctrl",
-                    "description": "Se di solito si preme il tasto Fn quando invece si vuole premere il tasto Ctrl, è possibile scambiare le funzioni dei due tasti.",
-                    "restartNote": "Per commutare la funzione di due tasti, è necessario riavviare il computer. Riavviare?",
+                    "description": "Se di solito si usa il tasto Fn per premere il tasto Ctrl, è possibile alternare la funzione dei due tasti.",
+                    "restartNote": "Per alternare la funzione dei due tasti è necessario riavviare il computer. Riavviare?",
                     "title2": "Fn funziona come Ctrl per le combinazioni di tasti più utilizzate",
                     "description2": "Il tasto Fn funziona come il tasto Ctrl per alcune combinazioni di tasti più utilizzate. La funzione del tasto Ctrl non viene modificata.",
                     "featureNote": "Questa funzione e la funzione di Scambio tasto Fn e Ctrl non possono essere attive contemporaneamente. Se una è abilitata, l'altra verrà disabilitata automaticamente.",
@@ -2134,8 +2136,8 @@
                 "tooltip": "<div id='antiTheft-tooltips'>Questa funzione non è disponibile quando il computer è in modalità Ibernazione o è spento. Controllare le impostazioni nelle seguenti azioni:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>azioni del coperchio di chiusura</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>azione livello di carica batteria critico/basso</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>azione pulsante di alimentazione</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>azione pulsante Sospensione</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>impostazioni timeout inattività per la modalità Ibernazione</li></ul></div>In caso contrario, l'allarme non verrà attivato, né sarà possibile scattare foto.</div>",
                 "desc1": "Quando si abilita questa funzione, il dispositivo inizierà a emettere un segnale acustico quando lo schermo è bloccato e vengono rilevati movimenti, soprattutto in un luogo pubblico.",
                 "desc2": "Accedere a Windows e l'avviso verrà disattivato automaticamente. Per utilizzare la funzione è necessario abilitarla nuovamente.",
-				"note": {
-					"descriptionTitle": "Attenzione:",
+                "note": {
+                    "descriptionTitle": "Attenzione:",
                     "description": "Le opzioni di accesso valide, come ad esempio una password o un codice PIN, sono necessarie quando si accede a Windows. In caso contrario, la funzione di avviso Smart Motion potrebbe essere erroneamente disabilitata da un utente non autorizzato che accede al computer."
                 },
                 "alarm": {
@@ -3115,7 +3117,9 @@
                 "yes": "Sì",
                 "no": "No"
             },
-            "waitAvailability": "Il pulsante è disattivato se i dispositivi di archiviazione non supportano questa funzionalità, durante il caricamento delle informazioni hardware o mentre vi è una scansione in corso."
+            "waitAvailability": "Il pulsante è disattivato se i dispositivi di archiviazione non supportano questa funzionalità, durante il caricamento delle informazioni hardware o mentre vi è una scansione in corso.",
+            "executingTitle": "Ripristino in corso ora...",
+            "recoverCompleted": "Ripristino completato"
         },
         "support": {
             "title": "Scarica strumenti di diagnostica professionali",
@@ -3163,7 +3167,19 @@
             "suggestedActionSupport": "Se il computer è coperto da garanzia, fare clic su <b>apri ticket</b> per ricevere una parte sostitutiva. Per ulteriori informazioni, visitare il sito Web del supporto Lenovo.",
             "supportButtonText": "Apri ticket",
             "recoverBadSectorsButtonText": "Ripristina settori danneggiati"
-        }
+        },
+        "scanFinishedHeader": {
+            "titleSuccess": "Scansione completata. Il dispositivo ha superato tutti i test.",
+            "titleErrorPlural": "Scansione completata. Il dispositivo non ha superato {{numberTestsFailed}} test.",
+            "titleErrorSingular": "Scansione completata. Il dispositivo non ha superato 1 test.",
+            "frcSuccessDescription": "Questo codice del risultato finale indica che non sono stati rilevati problemi con questa scansione. Se durante un test viene visualizzato un messaggio di avvertenza o di non applicabilità, ciò non implica che sia stato rilevato un problema. Se un agente del supporto Lenovo richiede di eseguire questo test, utilizzare questo codice come prova; in caso contrario, al momento non è necessaria alcuna azione da parte dell'utente. Se si ritiene che i problemi non siano stati risolti, contattare il supporto Lenovo.",
+            "frcFailureDescription": "Il codice del risultato finale indica che sono stati rilevati problemi con questa scansione.",
+            "lenovoSupportInstruction": "Nel supporto Lenovo è possibile aprire un ticket di verifica utilizzando il codice del risultato finale.",
+            "finalResultCodeLabel": "Codice del risultato finale: ",
+            "scanAgainButtonText": "Esegui di nuovo la scansione",
+            "supportButtonText": "Supporto Lenovo"
+        },
+        "executingScanTitle": "Scansione di {{title}} in corso..."
     },
     "smartPerformance": {
         "title": "Smart Performance",
@@ -3289,7 +3305,7 @@
             "descriptionbeta": "Lenovo sta offrendo il programma pilota per provare la funzione Smart Performance fino a luglio 2020.",
             "descriptionbeta1": "Sei invitato a partecipare e a provare la funzione completa.",
             "descriptionNonSubscriber": "Non sei iscritto al servizio Lenovo Smart Performance. Potrai eseguire solo la scansione del PC. Iscriviti ora per ottenere i vantaggi di un PC sempre veloce e protetto.",
-            "processStatus": "PROCESSING"
+            "processStatus": "ELABORAZIONE IN CORSO..."
         },
         "scanSettings": {
             "title": "Pianifica impostazioni scansione",
@@ -3313,6 +3329,8 @@
             "fri": "Venerdì",
             "sat": "Sabato",
             "sun": "Domenica",
+            "am": "AM",
+            "pm": "PM",
             "tooltipText": "Abilitando questo interruttore, le prestazioni del sistema e la scansione della protezione verranno avviate automaticamente alla data e all'ora impostate."
         },
         "scanningPage": {
@@ -3775,7 +3793,7 @@
                 "txtGo": "Vai",
                 "summaryCaption": "recupero spazio completato",
                 "fixes": "correzioni",
-                "txtClr": "Clear"
+                "txtClr": "Cancella"
             },
             "lastScanResults": {
                 "title": "Risultati delle ultime 5 scansioni:",
@@ -3825,7 +3843,9 @@
         },
         "auto": "Automatico",
         "manual": "Manuale",
-        "noScanResults": "Fai clic sul pulsante AVVIA SCANSIONE E CORREGGI per avviare il processo di scansione."
+        "noScanResults": "Fai clic sul pulsante AVVIA SCANSIONE E CORREGGI per avviare il processo di scansione.",
+        "am": "AM",
+        "pm": "PM"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

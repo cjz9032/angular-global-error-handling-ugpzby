@@ -43,7 +43,7 @@ export class HistoryManager {
 	goBack() {
 		this.backRoute = this.history.pop();
 		if (this.backRoute) {
-			this.router.navigateByUrl(this.backRoute.finalPath);
+			this.router.navigateByUrl(this.backRoute.finalPath.split('?')[0]);
 		} else {
 			this.router.navigateByUrl('/');
 		}

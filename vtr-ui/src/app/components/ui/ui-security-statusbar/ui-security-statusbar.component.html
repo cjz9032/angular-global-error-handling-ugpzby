@@ -14,13 +14,15 @@
 				</div>
 			</div>
 			<div class="align-items-center flex-1">
-				<div class="d-inline-block col-auto text pr-4 text-uppercase">
+				<div class="d-inline-block col-auto text pr-4 text-uppercase" role="text" [id]="textId+'-name'">
 					{{ list.title | translate }}
 				</div>
 				<div class="d-inline-block pr-0">
 					<h3><span class="badge badge-pill text-uppercase"
 									[ngClass]="list.status | textClass"
 									title=""
+									role="text"
+									[id]="textId+'-install-status'"
 									[ngbTooltip]="list.status | statusText | translate | uppercase" tooltipClass="vtr-system-tooltip" container="body"
 									>
 					{{ list.status | statusText | translate }}

@@ -108,7 +108,7 @@
 							<vtr-widget-mcafee-metric [metricsList]="viewModel.metricsList"
 								[showMetricButton]="viewModel.showMetricButton" [common]="common">
 							</vtr-widget-mcafee-metric>
-							<div *ngIf="viewModel.mcafee.subscription === 'trialActive' || viewModel.mcafee.subscription === 'trialInactive'"
+							<div *ngIf="viewModel.mcafee.subscription === 'trialactive' || viewModel.mcafee.subscription === 'trialinactive'"
 								class="d-none d-xl-block">
 								<p class="subtitle sub-font"
 									*vtrTranslate="'security.antivirus.mcafee.trialContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
@@ -117,7 +117,7 @@
 										(click)="common.openMcAfeePurchase()" target="_blank"></a>
 								</p>
 							</div>
-							<div *ngIf="viewModel.mcafee.subscription === 'licenseActive'"
+							<div *ngIf="viewModel.mcafee.subscription === 'licenseactive'"
 								class="d-none d-xl-block">
 								<p class="subtitle sub-font"
 									*vtrTranslate="'security.antivirus.mcafee.subscribeContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
@@ -138,14 +138,14 @@
 								</div>
 								<div class="flex-column two-ellipsis-button button col-6 px-0">
 									<vtr-ui-button
-										*ngIf="viewModel.mcafee.subscription === 'trialActive' || viewModel.mcafee.subscription === 'trialInactive'"
+										*ngIf="viewModel.mcafee.subscription === 'trialactive' || viewModel.mcafee.subscription === 'trialinactive'"
 										linkId="sa-av-btn-subscribe"
 										[upperCaseLabel]=false [btnHeight]=true [isDisabled]="isOnline === false"
 										[label]="'security.antivirus.mcafee.trialSubscribe' | translate:{remainingDays: viewModel.mcafee.expireAt}"
 										[isLoading]="common.purchaseBtnIsLoading"
 										[vtrMetricEnabled]="false"
 										(onClick)="common.openMcAfeePurchase('button')"></vtr-ui-button>
-									<vtr-ui-button *ngIf="viewModel.mcafee.subscription === 'licenseActive'"
+									<vtr-ui-button *ngIf="viewModel.mcafee.subscription === 'licenseactive'"
 										linkId="sa-av-btn-subscribe"
 										[upperCaseLabel]=false [btnHeight]=true [isDisabled]="isOnline === false"
 										[label]="'security.antivirus.mcafee.subscribe' | translate:{remainingDays: viewModel.mcafee.expireAt}"
@@ -159,11 +159,11 @@
 							</div>
 							<div>
 								<div class="divider"></div>
-								<div *ngIf="viewModel.mcafee.subscription === 'trialActive' || viewModel.mcafee.subscription === 'trialInactive'"
+								<div *ngIf="viewModel.mcafee.subscription === 'trialactive' || viewModel.mcafee.subscription === 'trialinactive'"
 									class="content"
 									[innerHTML]="'security.antivirus.mcafee.trialSubtitle' | translate:{remainingDays: viewModel.mcafee.expireAt}">
 								</div>
-								<div *ngIf="viewModel.mcafee.subscription === 'licenseActive'" class="content"
+								<div *ngIf="viewModel.mcafee.subscription === 'licenseactive'" class="content"
 									[innerHTML]="'security.antivirus.mcafee.subtitle' | translate:{remainingDays: viewModel.mcafee.expireAt}">
 								</div>
 								<vtr-widget-mcafee-state [statusList]="viewModel.mcafeestatusList | statusTransform"
@@ -171,7 +171,7 @@
 								</vtr-widget-mcafee-state>
 							</div>
 						</div>
-						<div *ngIf="viewModel.mcafee.subscription === 'trialActive' || viewModel.mcafee.subscription === 'trialInactive'"
+						<div *ngIf="viewModel.mcafee.subscription === 'trialactive' || viewModel.mcafee.subscription === 'trialinactive'"
 							class="d-xl-none d-block">
 							<p class="subtitle sub-font"
 								*vtrTranslate="'security.antivirus.mcafee.trialContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
@@ -180,7 +180,7 @@
 									(click)="common.openMcAfeePurchase()" target="_blank"></a>
 							</p>
 						</div>
-						<div *ngIf="viewModel.mcafee.subscription === 'licenseActive'" class="d-block d-xl-none">
+						<div *ngIf="viewModel.mcafee.subscription === 'licenseactive'" class="d-block d-xl-none">
 							<p class="subtitle sub-font"
 								*vtrTranslate="'security.antivirus.mcafee.subscribeContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
 								<a id="sa-av-link-subscribe"
@@ -284,10 +284,10 @@
 		<div class="footer row d-block d-lg-none">
 			<div class="row px-0 justify-content-center">
 			  <div class="px-0">
-				<img class="mcafee-logo"
+				<img class="mcafee-logo" id="sa-av-powered-by-info-logo"
 				  [src]=" 'assets/images/mcafee_logo.svg' | svgInline | async" />
 			  </div>
-			  <p class="text-regular mt-10"
+			  <p class="text-regular mt-10" id="sa-av-powered-by-info-detail" role="text"
 				*vtrTranslate="'security.antivirus.common.privacyTerms' | translate">
 				<a id="sa-av-link-privacypolicy"
 				  vtrMetrics

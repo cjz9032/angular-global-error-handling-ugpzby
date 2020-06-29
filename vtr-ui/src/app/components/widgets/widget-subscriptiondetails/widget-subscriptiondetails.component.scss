@@ -38,6 +38,11 @@
             font-size: $fontsize_xs;
         }
     }
+    .disabled-link{
+        cursor: not-allowed;
+        color: $grey_dark;
+        border-bottom: 0.2rem solid $grey_dark;
+    }
     .status-list {
         padding-left: 0;
         padding: 1rem 1.4rem;
@@ -66,8 +71,8 @@
                 padding-right: 1.8rem;
             }
             .badge-processing {
-                background-color: $yellow_dark;
-                color: $light;
+                background-color: $grey_light;
+                color: rgba(102,116,129,0.5);
             }
         }
        
@@ -188,4 +193,19 @@
             width: 100%;
         }
     }
+    .start-date-spinner, .end-date-spinner{
+        position: relative;
+        .spinner-border {
+            height: 15px;
+            width: 15px;
+        }
+        .loader {
+            position: absolute;
+            z-index: 999;
+            top: 50%;
+            right: 0;
+            transform: translate(-50%, -50%);
+        }
+    }
+    
 }

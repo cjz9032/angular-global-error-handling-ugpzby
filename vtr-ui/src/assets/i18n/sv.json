@@ -169,7 +169,7 @@
                 "savePromptPopup": {
                     "title": "Spara ändringar?",
                     "description1": "Fel överklockningsinställningar kan ge bestående maskinvaruskador. Gör någon av de följande sakerna om du stöter på problem: ",
-                    "description2": "•  Håll in strömbrytaren i 8 sekunder så att datorn startar om och återställ standardparametrarna.",
+                    "description2": "•  Håll in strömbrytaren i 8-15 sekunder så att datorn startar om och återställ standardparametrarna.",
                     "description3": "•  Återställ standardparametrarna i BIOS med Restore Default Overclocking.",
                     "save": "SPARA",
                     "notSave": "SPARA INTE"
@@ -733,7 +733,7 @@
                 "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
-                "name11": "Legion front Fan Lighting",
+                "name11": "Legion Front Fan Lighting",
                 "name12": "Legion Top Fan Lighting"
             },
             "lightingEffect": {
@@ -925,7 +925,7 @@
         },
         "systemStatus": {
             "title": "Systemstatus",
-            "subtitle": "Se enhetens status på ett ögonblick.",
+            "subtitle": "Se enhetens status på ett ögonblick",
             "memory": {
                 "title": "Minne",
                 "detail": {
@@ -1071,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "För att förlänga batteritiden har vi optimerat kapaciteten för full laddning baserat på din användning. Full batterikapacitet kan kräva att batteriet laddas ur till 20 % och sedan laddas om.",
-                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
+                    "moreInfo": "Klicka <a role=\"link\" href=\"#/device/high-density-battery\" tabindex=\"0\">här</a> för mer information."
                 },
                 "condition": {
                     "Illegal": "Det installerade batteriet <b>stöds inte</b> på enheten och kommer inte att laddas. Byt ut batteriet mot ett Lenovo-batteri.",
@@ -1101,13 +1101,13 @@
                     "NotDetected": "<b>Det primära batteriet kan inte identifieras.</b>"
                 },
                 "highDensityBattery": {
-                    "title": "High density battery",
-                    "subtitle": "How your battery works",
-                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "title": "Batteri med hög densitet",
+                    "subtitle": "Så fungerar batteriet",
+                    "para1": "För att öka batteriets livslängd anpassas laddningens spänning och kapacitet automatiskt till ditt personliga användningsmönster.",
                     "para2": {
-                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
-                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
-                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                        "item1": "- Om du förbrukar mindre än 65 % av batteriets kapacitet under en vecka eller längre kan spänningen och kapaciteten sänkas tillfälligt. Sänkningen är marginell och inte märkbar med ditt normala användningsmönster.",
+                        "item2": "- Full kapacitet återställs när batteriet har laddats ur till under 20 % och därefter laddas helt.",
+                        "item3": "- Om du förbrukar mindre än 10 % av batteriets kapacitet under minst två veckors tid kan spänningen och kapaciteten tillfälligt sänkas ytterligare till 50 % reducerad batterikapacitet."
                     }
                 }
             },
@@ -1195,7 +1195,7 @@
                             "battery&Quite": "BATTERI OCH TYST"
                         }
                     },
-                    "description5": "Intelligent nedkylning anpassar fläkthastighet och maximal prestanda och hanterar batteritiden. Funktionen har tre lägen (tyst läge, balanserat läge och prestandaläge) och kan ställas in via energireglaget i Windows.",
+                    "description5": "Intelligent nedkylning anpassar fläkthastighet och maximal prestanda och hanterar batteritiden. Funktionen har tre lägen (tyst läge, balanserat läge och prestandaläge) och kan ställas in via energireglaget i Windows",
                     "nocqldesc": "Med Intelligent nedkylning kan du justera systemets prestanda och temperatur. I läget ”Prestanda” optimeras systemets prestanda. Datorn blir svalare eller tystare i läget ”Sval och tyst”.",
                     "dytc6": {
                         "desc1": "Intelligent nedkylning anpassar fläkthastighet och maximal prestanda och hanterar batteritiden.",
@@ -1276,7 +1276,7 @@
                             "description2": "Aktivera funktionen genom att koppla från enheten ochladda ur batteriet till stoppunkten eller mer.",
                             "enable": "AKTIVERA",
                             "cancel": "AVBRYT",
-                            "description3": "Your battery automatically optimizes its charge voltage and capacity based on your usage pattern. If you use your battery lightly, there is no need to enable Battery Charge Threshold."
+                            "description3": "Batteriladdningen optimeras automatiskt beroende på ditt användningsmönster. Om din batteriförbrukning är låg behöver du inte aktivera Gränsvärde för batteriladdning."
                         },
                         "options": {
                             "start": "Börja ladda när nivån är under",
@@ -1673,7 +1673,9 @@
                     "cameraPrivacy": {
                         "title": "Kamerasekretessläge",
                         "tooltip": "När sekretessinställningen aktiveras slutar kameran att skicka bilder. Välj endast sekretessinställningen om du inte vill att andra ska se din bild under videosamtal.",
-                        "cameraPrivacyAccessNote": "Gå till sidan <b>Windows-inställningar → Sekretess → Kamera</b> och se till att följande två alternativ har aktiverats:<br>&bull; <b>Låt skrivbordsappar använda din kamera</b><br>&bull; <b>Lenovo Vantage</b> under ”Välj Microsoft Store-appar som får använda din kamera”"
+                        "cameraPrivacyAccessNote": "Gå till sidan <b>Windows-inställningar → Sekretess → Kamera</b> och se till att följande två alternativ har aktiverats:<br>&bull; <b>Låt skrivbordsappar använda din kamera</b><br>&bull; <b>Lenovo Vantage</b> under ”Välj Microsoft Store-appar som får använda din kamera”",
+                        "noPermissionNote": "Lenovo Vantage har inte åtkomst till kameran, eller reglaget ”Låt skrivbordsappar använda din kamera” är inte aktiverat.",
+                        "accessUrl": "Öppna Windows-inställningar för att ge åtkomst"
                     },
                     "camera": {
                         "title": "Kamera",
@@ -1768,7 +1770,7 @@
                             "description": "Om du ändrar standardfunktionen för den översta raden måste du starta om datorn. Vill du starta om?",
                             "reboot": "STARTA OM",
                             "cancel": "INTE NU",
-                            "yes": "YES"
+                            "yes": "JA"
                         },
                         "note": {
                             "sFunKey": "Tryck på Fn och på tangenterna på den översta raden om du vill komma åt funktion F1 till och med F12.",
@@ -1791,10 +1793,10 @@
                 },
                 "userDefinedKey": {
                     "title": "Användardefinierad tangent",
-                    "caption": "Med hjälp av tangenten med stjärnikonen kan du ställa in användardefinierade funktioner",
+                    "caption": "Med hjälp av tangenten med stjärnikonen kan du ställa in användardefinierade funktioner.",
                     "dropDown": {
                         "title": "Funktion användardefinierad tangent",
-                        "note": "Obs! Detta kan användas för att ange tangenter som ofta används, till exempel e-postadresser eller postadresser. Lenovo rekommenderar att du aldrig använder den här funktionen för att lagra och ange lösenord eller annan privat information.",
+                        "note": "Obs! Detta kan användas för att ange tangenter som ofta används, till exempel e-postadresser eller postadresser. Använd aldrig denna funktion för att lagra lösenord eller annan privat information.",
                         "options": {
                             "option1": "Välj",
                             "option2": "Öppna hemsidan",
@@ -1832,8 +1834,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "Växla funktion på Fn- och Ctrl-tangenten",
-                    "description": "Om du ofta trycker på Fn-tangenten när du avser att trycka på Ctrl-tangenten kan du växla de två tangenternas funktion.",
-                    "restartNote": "Du måste starta om datorn om du vill byta två tangenters funktion. Vill du verkligen göra det?",
+                    "description": "Om du ofta av misstag trycker på Fn-tangenten när du avser att trycka på Ctrl-tangenten kan du byta ut funktionen för de två tangenterna.",
+                    "restartNote": "Du måste starta om datorn för att kunna växla funktion för de två tangenterna. Vill du starta om?",
                     "title2": "Fn fungerar som Ctrl för tangentkombinationer som används ofta",
                     "description2": "Fn-tangenten fungerar som Ctrl-tangenten för vissa tangentkombinationer som används ofta. Funktionen för Ctrl-tangenten ändras inte.",
                     "featureNote": "Den här funktionen och Fn-tangenten och att byta funktion på Ctrl-tangenten fungerar inte samtidigt. Om någon av dem är aktiverade kommer den andra stängas av automatiskt.",
@@ -2134,8 +2136,8 @@
                 "tooltip": "<div id='antiTheft-tooltips'>Funktionen fungerar inte om datorn är i viloläge eller avstängd. Kontrollera inställningarna för följande åtgärder:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>stänga locket</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>kritisk/låg batteriladdning</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>strömbrytare</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>knapp för strömsparläge</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>från inaktiv till viloläge</li></ul></div>I annat fall utlöses inte larmet och det går inte heller att ta foton.</div>",
                 "desc1": "Om du aktiverar den här funktionen börjar enheten signalera när bildskärmen är låst och rörelser identifieras, speciellt på en offentlig plats.",
                 "desc2": "Larmet stängs av automatiskt när du loggar in på Windows. För att använda funktionen måste du aktivera den igen.",
-				"note": {
-					"descriptionTitle": "Viktigt!",
+                "note": {
+                    "descriptionTitle": "Viktigt!",
                     "description": "Giltiga inloggningsalternativ, till exempel lösenord eller PIN-kod, krävs vid inloggning på Windows. I annat fall kan larmfunktionen Smart rörelselarm inaktiveras av misstag av obehöriga användare som har åtkomst till datorn."
                 },
                 "alarm": {
@@ -3115,7 +3117,9 @@
                 "yes": "Ja",
                 "no": "Nej"
             },
-            "waitAvailability": "Knappen är inaktiverad om lagringsenheterna inte stöder den här funktionen, om maskinvaruinformationen läses in eller om en genomsökning pågår."
+            "waitAvailability": "Knappen är inaktiverad om lagringsenheterna inte stöder den här funktionen, om maskinvaruinformationen läses in eller om en genomsökning pågår.",
+            "executingTitle": "Återställer nu …",
+            "recoverCompleted": "Återställningen är klar"
         },
         "support": {
             "title": "Hämta professionella diagnostikverktyg",
@@ -3163,7 +3167,19 @@
             "suggestedActionSupport": "Om datorn omfattas av garanti klickar du på <b>Skapa ärende</b> och ber om en ersättningsdel. Mer information finns på Lenovos supportwebbplats.",
             "supportButtonText": "Skapa ärende",
             "recoverBadSectorsButtonText": "Återställa skadade sektorer"
-        }
+        },
+        "scanFinishedHeader": {
+            "titleSuccess": "Genomsökningen är klar. Enheten klarade alla tester.",
+            "titleErrorPlural": "Genomsökningen är klar. Enheten klarade inte {{numberTestsFailed}} tester.",
+            "titleErrorSingular": "Genomsökningen är klar. Enheten klarade inte ett test.",
+            "frcSuccessDescription": "Slutresultatkoden visar att det inte påträffades några problem under genomsökningen. Om ett test visar en varning eller ett meddelande om att testet inte är tillämpligt betyder det inte att det påträffades ett problem. Om en Lenovo-supportansvarig ber dig köra testet kan du uppge denna kod som bevis. I annat fall behövs ingen åtgärd just nu. Kontakta Lenovos support om du fortfarande upplever problem.",
+            "frcFailureDescription": "Slutresultatkoden visar att det påträffades problem under genomsökningen.",
+            "lenovoSupportInstruction": "Du kan skapa ett verifieringsärende hos Lenovos support genom att ange slutresultatkoden.",
+            "finalResultCodeLabel": "Slutresultatkod: ",
+            "scanAgainButtonText": "Genomsök igen",
+            "supportButtonText": "Lenovo Support"
+        },
+        "executingScanTitle": "Genomsöker {{title}} …"
     },
     "smartPerformance": {
         "title": "Smart Performance",
@@ -3289,7 +3305,7 @@
             "descriptionbeta": "Lenovo erbjuder ett pilotprogram för att prova funktionen Smart Performance till juli 2020.",
             "descriptionbeta1": "Du är välkommen att delta och prova alla funktioner.",
             "descriptionNonSubscriber": "Du prenumererar inte på Lenovo Smart Performance. Du kan endast genomsöka datorn. Prenumerera nu för att skydda datorn fullt ut och se till att den körs utan problem.",
-            "processStatus": "PROCESSING"
+            "processStatus": "BEARBETAR"
         },
         "scanSettings": {
             "title": "Inställningar för schemalagd genomsökning",
@@ -3313,6 +3329,8 @@
             "fri": "fredagar",
             "sat": "lördagar",
             "sun": "söndagar",
+            "am": "FM",
+            "pm": "EM",
             "tooltipText": "När funktionen är aktiverad startas systemprestanda- och säkerhetskontrollen automatiskt angivet datum och klockslag."
         },
         "scanningPage": {
@@ -3775,7 +3793,7 @@
                 "txtGo": "Kör",
                 "summaryCaption": "återställt utrymme",
                 "fixes": "korrigering(ar)",
-                "txtClr": "Clear"
+                "txtClr": "Radera"
             },
             "lastScanResults": {
                 "title": "Senaste 5 genomsökningsresultaten:",
@@ -3825,7 +3843,9 @@
         },
         "auto": "Automatiskt",
         "manual": "Manuellt",
-        "noScanResults": "Klicka på Genomsök och åtgärda för att starta genomsökningen."
+        "noScanResults": "Klicka på Genomsök och åtgärda för att starta genomsökningen.",
+        "am": "FM",
+        "pm": "EM"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

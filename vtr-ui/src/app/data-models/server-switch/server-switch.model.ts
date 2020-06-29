@@ -22,6 +22,7 @@ export class ServerSwitch {
 	public countryNames: {} = CountryNames;
 	public languageList: any = LanguageList;
 	public languageNames: {} = LanguageNames;
+	public defaultCountryIndex: any = 0;
 
 	public segmentList: string[] = [
 		'Commercial',
@@ -97,9 +98,12 @@ export class ServerSwitch {
 	//CPT CountryList & CountryName Mapping
 	public getCountryNameList(): any {
 		let cList = []; 
-		this.countryList.forEach((v)=>{
-			let name = this.countryNames[v.Value];
+		this.countryList.forEach((v,i)=>{
+			let name = v.Value+' - '+this.countryNames[v.Value];
 			cList.push({"ItemID": v.ItemID,"Value":v.Value,"Label": name});
+			if(v.Value=='US') {
+				this.defaultCountryIndex = i;
+			}
 		});
 		return cList;
 	}
@@ -108,7 +112,7 @@ export class ServerSwitch {
 	public getLanguageNameList(): any {
 		let lList = []; 
 		this.languageList.forEach((v)=>{
-			let name = this.languageNames[v.Value];
+			let name = v.Value+' - '+this.languageNames[v.Value];
 			lList.push({"ItemID": v.ItemID,"Value": v.Value,"Label": name});
 		});
 		return lList;

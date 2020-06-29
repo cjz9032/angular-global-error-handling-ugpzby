@@ -1,4 +1,5 @@
-<div *ngIf="!deviceService.isSMode && (cameraStatus.available || microphoneStatus.available)"
+<!-- Following condition will make sure at least any 2 feature is available we need to show quicksettings otherwise we need to hide entire quicksetting feature. e.g A, B & C are 3 feature & to check at least 2's availability, condition will be [(A&B)||(B&C)||(A&C)]  -->
+<div *ngIf="((!deviceService.isSMode && cameraStatus.available) || (cameraStatus.available && microphoneStatus.available) || (!deviceService.isSMode && microphoneStatus.available))"
 	class="vtr-widget-quicksettings vtr-widget">
 	<div class="container-fluid">
 		<div class="row">
@@ -11,7 +12,7 @@
 				</div>
 
 				<!-- microphone -->
-				<div [ngClass]="(cameraStatus.available && microphoneStatus.available)? 'widget-icon-3': 'widget-icon-2'">
+				<div [ngClass]="(!deviceService.isSMode && cameraStatus.available && microphoneStatus.available) ? 'widget-icon-3': 'widget-icon-2'">
 					<div *ngIf="microphoneStatus.available">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Microphone2x'"
 							[offIconDefinition]="'icomoon icomoon-FA-Microphone---slash2x'"
@@ -133,7 +134,7 @@
 		<div *ngIf="!microphoneStatus.isLoading || !cameraStatus.isLoading">
 			<!-- <div *ngIf="(!microphoneStatus.permission && cameraStatus.permission) || (!microphoneStatus.permission && !isCameraPrivacyCacheExist && !microPhoneGreyOut && cameraPrivacyGreyOut)" -->
 			<!-- microphone permission -->
-			<div *ngIf="microphoneStatus.available && (!microphoneStatus.permission) && (!(!cameraStatus.permission && cameraStatus.available))"
+			<div *ngIf="microphoneStatus.available && (!microphoneStatus.permission)"
 				class="row permission-note mt-4">
 				<div class="col-12 p-3 d-flex">
 					<div class="col-1 pl-0 text-center">
@@ -161,7 +162,7 @@
 
 			<!-- <div *ngIf="!cameraStatus.permission && !cameraStatus.isLoading && cameraStatus.available && microphoneStatus.permission && cameraNoAccessNoteShow" -->
 			<!-- camera permission -->
-			<div *ngIf="cameraStatus.available && !cameraStatus.permission && (!cameraStatus.isLoading) && (!(!microphoneStatus.permission && microphoneStatus.available)) && cameraNoAccessNoteShow"
+			<!-- <div *ngIf="cameraStatus.available && !cameraStatus.permission && (!cameraStatus.isLoading) && (!(!microphoneStatus.permission && microphoneStatus.available)) && cameraNoAccessNoteShow"
 				class="row permission-note mt-4">
 				<div class="col-12 p-3 d-flex">
 					<div class="col-1 pl-0 text-center">
@@ -184,11 +185,11 @@
 						</button>
 					</div>
 				</div>
-			</div>
+			</div> -->
 
 			<!-- <div *ngIf="!microphoneStatus.permission && !cameraStatus.permission && !cameraStatus.isLoading && cameraNoAccessNoteShow" -->
 			<!-- microphone & camera permission -->
-			<div *ngIf="cameraStatus.available && microphoneStatus.available && (!microphoneStatus.permission) && !cameraStatus.permission && !cameraStatus.isLoading && cameraNoAccessNoteShow"
+			<!-- <div *ngIf="cameraStatus.available && microphoneStatus.available && (!microphoneStatus.permission) && !cameraStatus.permission && !cameraStatus.isLoading && cameraNoAccessNoteShow"
 				class="row permission-note mt-4">
 				<div class="col-12 p-3 d-flex">
 					<div class="col-1 pl-0 text-center">
@@ -229,7 +230,7 @@
 						</button>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 
 		<!-- my device settings link -->

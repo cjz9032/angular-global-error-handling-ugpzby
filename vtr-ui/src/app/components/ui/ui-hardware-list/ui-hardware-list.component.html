@@ -4,8 +4,8 @@
 			<div class="col text button-box">
 				<div class="row item-line">
 					<div class="item-left">
-						<div class="test-status" *ngIf="item.status >= 0">
-							<div [ngSwitch]="item.status">
+						<div class="test-status" *ngIf="item.statusTest >= 0">
+							<div [ngSwitch]="item.statusTest">
 								<!--Defined an aria-label property with description to the icon-->
 								<fa-icon aria-label="status-loading" role="img" class="loading" [icon]="['fas', 'circle-notch']" [spin]="true" *ngSwitchCase="0"></fa-icon>
 
@@ -15,25 +15,27 @@
 
 								<fa-icon aria-label="status-failure" role="img" class="failure" [icon]="['fas', 'times-circle']" *ngSwitchCase="3"></fa-icon>
 
-								<fa-icon aria-label="status-warning" role="img" class="warning" [icon]="['fas', 'exclamation-triangle']" *ngSwitchCase="4"></fa-icon>
+								<fa-icon aria-label="status-attention" role="img" class="warning" [icon]="['fas', 'exclamation-circle']" *ngSwitchCase="4"></fa-icon>
 
 								<fa-icon arialabel="status-not-applicable" role="img" class="not-applicable" [icon]="['fas', 'ban']" *ngSwitchCase="6"></fa-icon>
 
-								<fa-icon aria-label="status-canceled" role="img" class="failure" [icon]="['fas', 'exclamation-circle']" *ngSwitchDefault></fa-icon>
+								<fa-icon aria-label="status-canceled" role="img" class="not-applicable" [icon]="['fas', 'ban']" *ngSwitchDefault></fa-icon>
 							</div>
 						</div>
 
-						<div class="title" [ngClass]="{'not-applicable': item.status === 6}">{{item.name}}</div>
+						<div class="title" [ngClass]="{'not-applicable': item.statusTest === 6}">{{item.name}}</div>
 						<div class="subtitle" *ngIf="item.subname">{{item.subname}}</div>
-						<div class="span-not-applicable" *ngIf="item.status === 6">{{testNotApplicable}}</div>
+						<div class="span-not-applicable" *ngIf="item.statusTest === 6">{{testNotApplicable}}</div>
 					</div>
 					<div class="item-right" *ngIf="item.information">
 						<a href="javascript:void(0)"
 							role="img"
 							[attr.aria-label]="item.name + 'tooltip, which reads: ' + item.information"
-							(click)="getInformation(item.information)"
+							(click)="getInformation(item.information); tooltip.toggle()"
 							class="result-code-icon"
-							triggers="click:blur"
+							triggers="manual"
+							#tooltip="ngbTooltip"
+							(blur)="tooltip.close()"
 							[ngbTooltip]="tooltipRefItem"
 							container="vtr-root"
 							tooltipClass="vtr-tooltip"
@@ -41,27 +43,10 @@
 							<fa-icon [icon]="['far', 'question-circle']"></fa-icon>
 						</a>
 					</div>
-					<div class="item-right" *ngIf="item.result">
-						<div class="module-result-text"
-							[ngClass]="{'success': item.resultIcon === 2, 'failure': item.resultIcon === 3 || item.resultIcon === 4 || item.resultIcon === 5, noScanned: !item.resultIcon}">
-							{{item.statusToken}}</div>
-						<div class="module-result-icon">
-							<div [ngSwitch]="item.resultIcon">
-								<!--Aria-hidden defined as true to ignore faicon selection-->
-								<fa-icon aria-hidden="true" class="success" [icon]="['fas', 'check-circle']" *ngSwitchCase="2"></fa-icon>
-
-								<fa-icon aria-hidden="true" class="failure" [icon]="['fas', 'times-circle']" *ngSwitchCase="3"></fa-icon>
-
-								<fa-icon aria-hidden="true" class="warning" [icon]="['fas', 'exclamation-triangle']" *ngSwitchCase="4"></fa-icon>
-
-								<fa-icon aria-hidden="true" class="not-applicable" [icon]="['fas', 'ban']" *ngSwitchCase="5"></fa-icon>
-
-								<fa-icon aria-hidden="true" class="failure" [icon]="['fas', 'exclamation-circle']" *ngSwitchCase="6"></fa-icon>
-
-								<fa-icon aria-hidden="true" [icon]="['fas', 'question-circle']" *ngSwitchDefault></fa-icon>
-							</div>
-						</div>
-					</div>
+					<vtr-ui-hardware-scan-test-result
+						*ngIf="item.resultModule"
+						[module]="item">
+					</vtr-ui-hardware-scan-test-result>
 				</div>
 			</div>
 		</li>

@@ -44,7 +44,7 @@ describe('ModalGamingPromptComponent', () => {
     it('should click cancle button', () => {
         spyOn(activeModalService, 'close').and.callThrough();
         expect(activeModalService.close).toHaveBeenCalledTimes(0);
-        component.cancleFn();
+        component.cancelFn();
         expect(activeModalService.close).toHaveBeenCalledTimes(1);
     });
 });

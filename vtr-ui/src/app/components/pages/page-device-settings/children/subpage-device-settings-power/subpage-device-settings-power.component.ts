@@ -15,13 +15,13 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { PowerService } from 'src/app/services/power/power.service';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { MetricService } from '../../../../../services/metric/metrics.service';
 import { FlipToBootCurrentModeEnum, FlipToBootErrorCodeEnum, FlipToBootSetStatusEnum, FlipToBootSupportedEnum } from '../../../../../services/power/flipToBoot.enum';
 import { FlipToBootSetStatus } from '../../../../../services/power/flipToBoot.interface';
 import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { ModalBatteryChargeThresholdComponent } from 'src/app/components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
 import { UiCustomSwitchComponent } from 'src/app/components/ui/ui-custom-switch/ui-custom-switch.component';
+import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
 
 
 enum PowerMode {
@@ -109,7 +109,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	gotoLinks = ['other', 'smartSettings', 'smartStandby', 'battery', 'power'];
 
 	headerMenuItems = [];
-	public readonly metricsParent  = CommonMetricsModel.ParentDeviceSettings;
+	public readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
 
 	constructor(
 		private routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
@@ -119,7 +119,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		private logger: LoggerService,
 		public modalService: NgbModal,
 		public shellServices: VantageShellService,
-		private metrics: MetricService,
+		private metrics: CommonMetricsService,
 		private activatedRoute: ActivatedRoute) {
 	}
 
@@ -146,18 +146,18 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 		this.bctInfoSubscription = this.batteryService.getChargeThresholdInfo()
 			.subscribe((value: ChargeThreshold[]) => {
-			this.setChargeThresholdUI(value);
-		});
+				this.setChargeThresholdUI(value);
+			});
 
 		this.airplaneModeSubscription = this.batteryService.getAirplaneMode()
 			.subscribe((value: FeatureStatus) => {
-			this.setAirplaneModeUI(value);
-		});
+				this.setAirplaneModeUI(value);
+			});
 
 		this.expressChargingSubscription = this.batteryService.getExpressCharging()
 			.subscribe((value: FeatureStatus) => {
-			this.setExpressChargingUI(value);
-		});
+				this.setExpressChargingUI(value);
+			});
 
 		this.activatedRouteSubscription = this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
 			setTimeout(() => {
@@ -168,7 +168,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						// Fix for Edge browser
 					}
 					const showThreshold = this.activatedRoute.snapshot.queryParams.threshold;
-					this.onToggleBCTSwitch({ switchValue: showThreshold});
+					this.onToggleBCTSwitch({ switchValue: showThreshold });
 				}
 			}, 1000);
 		});
@@ -181,10 +181,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		if (this.bctInfoSubscription) {
 			this.bctInfoSubscription.unsubscribe();
 		}
-		if(this.airplaneModeSubscription) {
+		if (this.airplaneModeSubscription) {
 			this.airplaneModeSubscription.unsubscribe();
 		}
-		if(this.expressChargingSubscription) {
+		if (this.expressChargingSubscription) {
 			this.expressChargingSubscription.unsubscribe();
 		}
 		if (this.activatedRouteSubscription) {
@@ -213,7 +213,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	initSmartSettingsFromCache() {
 		const capability = this.commonService.getLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, undefined);
-		if(capability && capability.showIC) {
+		if (capability && capability.showIC) {
 			if (capability.showIC === 0) {
 				this.updateSmartSettingsLinkStatus(false);
 			} else {
@@ -1272,12 +1272,12 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					this.toggleFlipToBootStatus = false;
 					return res;
 				}
-				const metricsData = {
-					itemParent: 'Device.MyDeviceSettings',
-					itemName: 'FlipToBoot',
-					value: status
-				};
-				this.metrics.sendMetrics(metricsData);
+
+				this.metrics.sendMetrics(
+					status,
+					'FlipToBoot',
+					this.metricsParent
+				);
 			})
 			.catch(error => {
 				this.logger.info('setFlipToBootSettings.error', error);

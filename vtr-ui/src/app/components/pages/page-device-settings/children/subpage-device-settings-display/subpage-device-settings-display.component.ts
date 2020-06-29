@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, EventEmitter, NgZone, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, NgZone, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ChangeContext } from 'ng5-slider';
 import { EMPTY, Subject, Subscription } from 'rxjs';
@@ -71,7 +71,6 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 	public isOnline: any = true;
 	private cameraAccessChangedHandler: any;
 	private windowsObj: any;
-	public biosVersion: string;
 	public readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
 	isSet = {
 		isSetDaytimeColorTemperatureValue: false,
@@ -156,6 +155,8 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 	cameraSessionId: Subscription;
 	showECMReset = false;
 	removeJumpLink$ = new Subject();
+	cameraAccessTemp = false;
+	@ViewChild('cameraControl') cameraControl: any;
 
 	public readonly displayPriorityRadioGroup = 'displayPriorityRadioGroup';
 	public readonly displayPriorityModal =
@@ -195,6 +196,12 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 				}
 			]
 		};
+
+	// hide camera preview on devices which has
+	// BIOS versions/ID starts with below number
+	private biosVersions = ['05WT', '04WT'];
+	public isCameraPreviewHidden = true;
+
 	constructor(
 		public baseCameraDetail: BaseCameraDetail,
 		private deviceService: DeviceService,
@@ -218,13 +225,11 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 			this.windowsObj = this.Windows.Devices.Enumeration.DeviceAccessInformation
 				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.videoCapture);
 		}
-		this.deviceService.getMachineInfo().then((data) => {
-			this.biosVersion = data.biosVersion;
-		});
 	}
 
 	ngOnInit() {
 		this.logger.debug('subpage-device-setting-display onInit');
+		this.hideCameraPreviewByBiosId();
 		this.commonService.checkPowerPageFlagAndHide();
 		this.initDataFromCache();
 		this.batteryService.getBatterySettings();
@@ -263,6 +268,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 			this.cameraAccessChangedHandler = (args: any) => {
 				if (args && this.isAllInOneMachineFlag) {
 					this.getCameraDetails();
+					this.getCameraPrivacyModeStatus();
 				}
 			}
 			this.windowsObj.addEventListener('accesschanged', this.cameraAccessChangedHandler);
@@ -362,7 +368,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 				this.displayColorTempDataSource.current = this.displayColorTempCache.current;
 				this.displayColorTempDataSource.maximum = this.displayColorTempCache.maximum;
 				this.displayColorTempDataSource.minimum = this.displayColorTempCache.minimum;
-				this.displayColorTempDataSource.eyemodestate = this.displayColorTempCache.eyeCareMode;
+				this.eyeCareDataSource = this.displayColorTempCache;
 			} else {
 				this.displayColorTempCache = new EyeCareModeResponse();
 			}
@@ -420,6 +426,20 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 				&& whitelist.includes(Md5.hashStr(res.biosVersion.substr(0, 5)) as string));
 	}
 
+	hideCameraPreviewByBiosId() {
+		this.isCameraPreviewHidden = this.commonService.getLocalStorageValue(LocalStorageKey.IsCameraPreviewHidden, false);
+		this.deviceService.getMachineInfo()
+			.then(res => {
+				// for yoga book need to check first 4 character
+				const biosVersion = res.biosVersion.substr(0, 4);
+				this.isCameraPreviewHidden = this.biosVersions.includes(biosVersion.toUpperCase());
+				if (!this.isCameraPreviewHidden) {
+					this.initCameraMonitor();
+				}
+				this.commonService.setLocalStorageValue(LocalStorageKey.IsCameraPreviewHidden, this.isCameraPreviewHidden);
+			});
+	}
+
 	async initCameraSection() {
 		this.isDTmachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 		this.isAllInOneMachineFlag = await this.isAllInOneMachine();
@@ -428,9 +448,13 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		} else {
 			this.getCameraPrivacyModeStatus();
 			this.getCameraDetails();
-			this.displayService.startMonitorForCameraPermission();
-			this.startCameraPrivacyMonitor();
+			this.initCameraMonitor();
 		}
+	}
+
+	private initCameraMonitor() {
+		this.displayService.startMonitorForCameraPermission();
+		this.startCameraPrivacyMonitor();
 	}
 
 	async isAllInOneMachine() {
@@ -456,6 +480,9 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 			const { type, payload } = notification;
 			switch (type) {
 				case DeviceMonitorStatus.CameraStatus:
+					if (!this.cameraPrivacyModeStatus.permission) {
+						break;
+					}
 					this.logger.debug('DeviceMonitorStatus.CameraStatus', payload);
 					this.dataSource.permission = payload;
 					this.hideNote = !this.dataSource.permission;
@@ -539,27 +566,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 				.getCameraSettingsInfo()
 				.then((response) => {
 					this.logger.debug('getCameraDetails.then', response);
-					if (response) {
-						this.cameraPrivacyModeStatus.permission = response.permission;
-						this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraPrivacyModeStatus);
-					}
 					this.dataSource = response;
-					if (this.dataSource.permission === true) {
-						this.shouldCameraSectionDisabled = false;
-						this.logger.debug('getCameraDetails.then permission', this.dataSource.permission);
-						this.hideNote = false;
-					} else {
-						// 	response.exposure.autoValue = true;
-						this.dataSource = this.emptyCameraDetails[0];
-						this.shouldCameraSectionDisabled = true;
-						this.hideNote = true;
-						this.cameraFeatureAccess.showAutoExposureSlider = true;
-						this.logger.debug('no camera permission .then', this.emptyCameraDetails[0]);
-						const privacy = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy);
-						// privacy.status = false;
-						// this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, privacy);
-						this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, privacy);
-					}
 					this.cameraFeatureAccess.showAutoExposureSlider = false;
 					if (this.dataSource.exposure.autoValue === true && !this.shouldCameraSectionDisabled) {
 						this.cameraFeatureAccess.exposureAutoValue = true;
@@ -593,7 +600,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 			this.displayColorTempCache.current = this.displayColorTempDataSource.current;
 			this.displayColorTempCache.maximum = this.displayColorTempDataSource.maximum;
 			this.displayColorTempCache.minimum = this.displayColorTempDataSource.minimum;
-			this.displayColorTempCache.eyeCareMode = this.displayColorTempDataSource.eyemodestate;
+			this.eyeCareDataSource = this.displayColorTempDataSource;
 			this.commonService.setLocalStorageValue(LocalStorageKey.DisplayColorTempCapability, this.displayColorTempCache);
 		});
 	}
@@ -1008,8 +1015,13 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 				.then((featureStatus: FeatureStatus) => {
 					this.logger.debug('cameraPrivacyModeStatus.then', featureStatus);
 					this.cameraPrivacyModeStatus = { ...this.cameraPrivacyModeStatus, ...featureStatus };
+					this.cameraAccessTemp = this.cameraPrivacyModeStatus.permission;
 					this.cameraPrivacyModeStatus.isLoading = false;
 					this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraPrivacyModeStatus);
+					if (!this.cameraPrivacyModeStatus.permission) {
+						this.cameraControl.cleanupCameraAsync('desktopAppAccess');
+					}
+					this.cameraChangeFollowAccess(this.cameraPrivacyModeStatus.permission);
 				})
 				.catch(error => {
 					this.cameraPrivacyModeStatus.isLoading = false;
@@ -1023,6 +1035,16 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		this.logger.debug('startMonitorHandlerForCamera', value);
 		this.cameraPrivacyModeStatus.isLoading = false;
 		this.cameraPrivacyModeStatus = { ...this.cameraPrivacyModeStatus, ...value };
+		if (this.cameraAccessTemp === true && this.cameraPrivacyModeStatus.permission === false) {
+			this.cameraChangeFollowAccess(this.cameraPrivacyModeStatus.permission);
+			this.cameraControl.cleanupCameraAsync('desktopAppAccess');
+		}
+		if (this.cameraAccessTemp === false && this.cameraPrivacyModeStatus.permission === true) {
+			this.cameraControl.initializeCameraAsync('desktopAppAccess');
+			this.getCameraDetails();
+			this.cameraChangeFollowAccess(this.cameraPrivacyModeStatus.permission);
+		}
+		this.cameraAccessTemp = this.cameraPrivacyModeStatus.permission;
 		// this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, this.cameraPrivacyModeStatus);
 		this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraPrivacyModeStatus);
 	}
@@ -1449,7 +1471,22 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 			return EMPTY;
 		}
 	}
+	cameraChangeFollowAccess(access) {
+		if (access === true) {
+			this.shouldCameraSectionDisabled = false;
+			this.hideNote = false;
+		} else {
+			this.dataSource = this.emptyCameraDetails[0];
+			this.shouldCameraSectionDisabled = true;
+			this.hideNote = true;
+			this.cameraFeatureAccess.showAutoExposureSlider = true;
+		}
+		if (this.dataSource.exposure.autoValue === true && !this.shouldCameraSectionDisabled) {
+			this.cameraFeatureAccess.exposureAutoValue = true;
 
+		} else {
+			this.cameraFeatureAccess.exposureAutoValue = false;
+		}
+	}
 	//#endregion
-
 }

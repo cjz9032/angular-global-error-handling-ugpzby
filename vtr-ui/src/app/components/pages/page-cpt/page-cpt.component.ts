@@ -90,9 +90,10 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
     this.serverSwitchData = new ServerSwitch();
     this.countryNameList = this.serverSwitchData.getCountryNameList();
     this.languageNameList = this.serverSwitchData.getLanguageNameList();
+    let defaultCountryIndex = this.serverSwitchData.defaultCountryIndex;
 
     this.serverSwitchForm = new FormGroup({
-      country: new FormControl(this.countryNameList[0], Validators.required),
+      country: new FormControl(this.countryNameList[defaultCountryIndex], Validators.required),
       language: new FormControl(this.languageNameList[7], Validators.required),
       segment: new FormControl(this.serverSwitchData.segmentList[1], Validators.required),
       cmsserver: new FormControl(this.serverSwitchData.cmsServerList[3]['cmsserver'], Validators.required),
