@@ -13,6 +13,7 @@ import { StripTagsPipe } from 'src/app/pipe/strip-tags/strip-tags.pipe';
 import { RemoveSpacePipe } from 'src/app/pipe/remove-space/remove-space.pipe';
 import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
 import { HtmlTextPipe } from 'src/app/pipe/html-text/html-text.pipe';
+import { FormatLocaleDateTimePipe } from 'src/app/pipe/format-locale-datetime/format-locale-datetime.pipe';
 
 @NgModule({
 	declarations: [
@@ -29,6 +30,7 @@ import { HtmlTextPipe } from 'src/app/pipe/html-text/html-text.pipe';
 		StripTagsPipe,
 		FormatLocaleDatePipe,
 		RemoveSpacePipe,
+		FormatLocaleDateTimePipe,
 	],
 	exports: [
 		CapitalizeFirstPipe,
@@ -46,6 +48,7 @@ import { HtmlTextPipe } from 'src/app/pipe/html-text/html-text.pipe';
 		SanitizeModule,
 		FormatLocaleDatePipe,
 		RemoveSpacePipe,
+		FormatLocaleDateTimePipe,
 	],
 	imports: [
 		SanitizeModule,

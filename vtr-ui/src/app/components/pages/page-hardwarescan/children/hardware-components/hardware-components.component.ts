@@ -61,7 +61,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	private notificationSubscription: Subscription;
 	private customizeModal = ModalHardwareScanCustomizeComponent;
-	private startDate: any;
 	public itemsNextScan: any = [];
 	private cancelHandler = {
 		cancel: undefined
@@ -395,7 +394,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	* Used to start a scan, 0 is a quick scan, and 1 is a custom scan
 	*/
 	private getDoScan(scanType: number, requests: any) {
-		this.startDate = new Date();
 		this.progress = 0;
 
 		this.hardwareScanService.setCurrentTaskStep(TaskStep.Run);
@@ -501,7 +499,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 			// If there's failure, shows the support pop-up
 			if (failedModules.length > 0) {
-				const supportUrl = await this.lenovoSupportService.getSupportUrl(this.startDate);
+				const scanDate =  this.hardwareScanService.getFinalResultStartDate();
+				const supportUrl = await this.lenovoSupportService.getETicketUrl(scanDate);
 				const rbsDevices = this.hardwareScanService.getDevicesToRecoverBadSectors();
 				const modalRef = this.modalService.open(ModalScanFailureComponent, {
 					backdrop: 'static',
@@ -911,7 +910,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					break;
 				case NetworkStatus.Online:
 					this.isOnline = notification.payload.isOnline;
-					this.lenovoSupportService.startCheckingIfETicketIsAvailable();
 					break;
 				case NetworkStatus.Offline:
 					this.isOnline = notification.payload.isOnline;
