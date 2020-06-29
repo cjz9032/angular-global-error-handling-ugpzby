@@ -193,7 +193,7 @@
                 "savePromptPopup": {
                     "title": "Salvar Alteração?",
                     "description1": "Config. inadequadas de Overclocking podem causar danos ao hardware. Siga um destes procedimentos se encontrar algum problema: ",
-                    "description2": "•  Segure o botão liga/desliga por 8 seg p/ reiniciar e restaurar os parâmetros padrão.",
+                    "description2": "•  Segure o botão liga/desliga por 8-15 seg p/ reiniciar e restaurar os parâmetros padrão.",
                     "description3": "•  Use a opção \"Restaurar Overclocking padrão\" nas configurações BIOS.",
                     "save": "SALVAR",
                     "notSave": "NÃO SALVAR"

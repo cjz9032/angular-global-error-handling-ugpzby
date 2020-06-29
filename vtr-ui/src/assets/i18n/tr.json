@@ -193,7 +193,7 @@
                 "savePromptPopup": {
                     "title": "Değişikliği Kaydet?",
                     "description1": "Yanlış Hız Aşırtma ayarları geri dönüşü olmayan donanım hasarına yol açabilir. Herhangi bir sorunla karşılaşırsanız aşağıdakilerden birini yapın: ",
-                    "description2": "•  Bilgisayarı yeniden başlatıp varsayılan parametreleri geri yüklemek için güç düğmesini 8 saniye basılı tutun.",
+                    "description2": "•  Bilgisayarı yeniden başlatıp varsayılan parametreleri geri yüklemek için güç düğmesini 8-15 saniye basılı tutun.",
                     "description3": "•  Varsayılan parametreleri geri yüklemek için BIOS ayarlarında “Varsayılan Hız Aşırtmayı Geri Yükle” seçeneğini kullanın.",
                     "save": "KAYDET",
                     "notSave": "KAYDETME"

@@ -193,7 +193,7 @@
                 "savePromptPopup": {
                     "title": "Zapisać zmiany?",
                     "description1": "Nieprawidłowe ustawienia taktowania mogą nieodwracalnie uszkodzić sprzęt. W razie problemów wykonaj jedną z poniższych czynności: ",
-                    "description2": "•  Naciśnij i przytrzymaj przycisk zasilania przez 8 sekund, aby ponownie uruchomić komputer i przywrócić domyślne parametry.",
+                    "description2": "•  Naciśnij i przytrzymaj przycisk zasilania przez 8-15 sekund, aby ponownie uruchomić komputer i przywrócić domyślne parametry.",
                     "description3": "•  Użyj przełącznika „Przywróć domyślne taktowanie” w ustawieniach BIOS, aby przywrócić domyślne parametry.",
                     "save": "ZAPISZ",
                     "notSave": "NIE ZAPISUJ"

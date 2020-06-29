@@ -193,7 +193,7 @@
                 "savePromptPopup": {
                     "title": "Salvați modif.?",
                     "description1": "Setările necor. ale caract. Overclocking pot prod. det. hard. irev. Dacă întâmpinați o problemă, efectuați una din următoarele acțiuni: ",
-                    "description2": "•  Mențineți apăsat butonul de alimentare timp de 8 secunde pentru a reporni computerul și pentru a restaura parametrii impliciți.",
+                    "description2": "•  Mențineți apăsat butonul de alimentare timp de 8-15 secunde pentru a reporni computerul și pentru a restaura parametrii impliciți.",
                     "description3": "•  Ut. com. „Rest. overc. impl.” în set. BIOS pentru a rest. par. impl.",
                     "save": "SALVARE",
                     "notSave": "NU SALVAȚI"

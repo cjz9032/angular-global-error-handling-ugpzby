@@ -193,7 +193,7 @@
                 "savePromptPopup": {
                     "title": "Módosítások mentése?",
                     "description1": "A Túlpörgetés helytelen beállítása végleg károsíthatja a hardvert. Probléma esetén tegye a következők valamelyikét: ",
-                    "description2": "•  A főkapcsoló 8 mp-ig való lenyomása után visszaállnak a paraméterek.",
+                    "description2": "•  A főkapcsoló 8-15 mp-ig való lenyomása után visszaállnak a paraméterek.",
                     "description3": "•  A BIOS-ban („Alapért. túlpörgetés visszaáll.”) állítja vissza őket.",
                     "save": "MENTÉS",
                     "notSave": "NE MENTSE"

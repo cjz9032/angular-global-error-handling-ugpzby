@@ -193,7 +193,7 @@
                 "savePromptPopup": {
                     "title": "Sačuvati promenu?",
                     "description1": "Nepravilne postavke Overkloka mogu dovesti do nepovratnog oštećenja hardvera. Postupite na neki od sledećih načina ako naiđete na neki problem: ",
-                    "description2": "•  Pritisnite i držite dugme za napajanje 8 sekundi da biste ponovo pokrenuli računar i vratili podrazumevane parametre.",
+                    "description2": "•  Pritisnite i držite dugme za napajanje 8-15 sekundi da biste ponovo pokrenuli računar i vratili podrazumevane parametre.",
                     "description3": "•  Za vraćanje podrazumevanih parametara koristite funkciju „Restore Default Overclocking“ u postavkama BIOS-a.",
                     "save": "SAČUVAJ",
                     "notSave": "NE ČUVAJ"
