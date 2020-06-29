@@ -193,7 +193,7 @@
                 "savePromptPopup": {
                     "title": "Uložiť zmeny?",
                     "description1": "Zlé nastavenie taktovania môže viesť k trvalému poškodeniu hardvéru. V prípade problému postupujte jedným z týchto spôsobov: ",
-                    "description2": "•  podržaním tl. nap. na 8 s reštartujte PC a obnovte predv. par.,",
+                    "description2": "•  podržaním tl. nap. na 8-15 s reštartujte PC a obnovte predv. par.,",
                     "description3": "•  na obn. pred. par. stl. „Obnoviť predvolené pretaktovanie” v BIOS-e.",
                     "save": "ULOŽIŤ",
                     "notSave": "NEULOŽIŤ"

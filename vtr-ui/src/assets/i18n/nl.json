@@ -193,7 +193,7 @@
                 "savePromptPopup": {
                     "title": "Wijzigingen opslaan?",
                     "description1": "Onjuist instellen van overklokken kan leiden tot hardwareschade. Neem een van de volgende stappen als er een probleem is: ",
-                    "description2": "•  Druk aan/uit-knop 8 sec in voor herstart en herstel parameters.",
+                    "description2": "•  Druk aan/uit-knop 8-15 sec in voor herstart en herstel parameters.",
                     "description3": "•  Optie \"stand. overklok herstel\" in BIOS voor herstel parameters.",
                     "save": "OPSLAAN",
                     "notSave": "NIET OPSLAAN"

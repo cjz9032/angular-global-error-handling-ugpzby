@@ -193,7 +193,7 @@
                 "savePromptPopup": {
                     "title": "Sauver les modif. ?",
                     "description1": "De mauvais paramètres d'overclocking entrainent de sérieux dégâts. Utilisez l'une de ces méthodes si vous rencontrez des problèmes : ",
-                    "description2": "•  Appuyez 8 secondes sur le bouton d'alimentation pour redémarrer l'ordinateur et restaurer les paramètres par défaut.",
+                    "description2": "•  Appuyez 8-15 secondes sur le bouton d'alimentation pour redémarrer l'ordinateur et restaurer les paramètres par défaut.",
                     "description3": "•  Restaurez les paramètres avec \"Restaurer l'overclocking\" du BIOS.",
                     "save": "SAUVEGARDER",
                     "notSave": "NE PAS SAUVER"

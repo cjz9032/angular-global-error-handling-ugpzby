@@ -38,11 +38,7 @@
                     <!-- <strong>{{'smartPerformance.scanCompletePage.Onceaweek' |translate }}</strong> -->
                     <strong title="{{selectedFrequency | translate}}">{{selectedFrequency | translate}}</strong>
                 </div>
-                <div *ngIf="loading" class="loader mr-5">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+                <div *ngIf="loading" class="loader mr-5 mt-1"></div>
                 <div *ngIf="!loading" class="status d-flex justify-content-end w-60">
                     <p class="mr-3 text-uppercase" *ngIf="(frequencyValue === 0 || frequencyValue === 1) && amPmPosition"><strong *ngIf="!sliceDay">{{selectedDay | translate}}</strong> | {{ selectedMeridiem | translate }} {{scanTime.hour+':'+scanTime.min}}</p>
                     <p class="mr-3 text-uppercase" *ngIf="(frequencyValue === 0 || frequencyValue === 1) && !amPmPosition"><strong *ngIf="sliceDay">{{selectedDay | translate | slice:0:3}}</strong><strong *ngIf="!sliceDay">{{selectedDay | translate}}</strong> | {{scanTime.hour+':'+scanTime.min}} {{ selectedMeridiem | translate }}</p>

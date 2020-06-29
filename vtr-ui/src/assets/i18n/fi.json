@@ -193,7 +193,7 @@
                 "savePromptPopup": {
                     "title": "Tallenna muutos?",
                     "description1": "Ylikellotuksen väärät asetukset voivat vaurioittaa laitteistoa. Tee jompikumpi seuraavista toimista, jos ongelmia ilmenee: ",
-                    "description2": "•  Käynnistä tietokone uudelleen ja palauta oletusparametrit painamalla virtapainiketta 8 sekunnin ajan.",
+                    "description2": "•  Käynnistä tietokone uudelleen ja palauta oletusparametrit painamalla virtapainiketta 8-15 sekunnin ajan.",
                     "description3": "•  Palauta oletusparametrit BIOS-asetusten Restore Default Overclocking -vaihtopainikkeella.",
                     "save": "TALLENNA",
                     "notSave": "ÄLÄ TALLENNA"

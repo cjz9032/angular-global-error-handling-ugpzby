@@ -193,7 +193,7 @@
                 "savePromptPopup": {
                     "title": "Žel. shran. sprem.?",
                     "description1": "Nepravilne nastavitve zvišanja takta lahko okvarijo strojno opremo. Če se pojavi napaka, izvedite enega od naslednjih ukrepov: ",
-                    "description2": "•  Pritisnite gumb za vklop in ga držite 8 s, da znova zaženete računalnik in obnovite privzete parametre.",
+                    "description2": "•  Pritisnite gumb za vklop in ga držite 8-15 s, da znova zaženete računalnik in obnovite privzete parametre.",
                     "description3": "•  Obn. priv. param. s stik. za obn. privzet. zviš. takta v nast. BIOS.",
                     "save": "SHRANI",
                     "notSave": "NE SHRANI"

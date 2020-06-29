@@ -193,7 +193,7 @@
                 "savePromptPopup": {
                     "title": "Gem ændring?",
                     "description1": "Forkert overclocking kan medføre uoprettelige hardwareskader. Gør ét af følgende, hvis der opstår et problem: ",
-                    "description2": "•  Hold strømknappen i nede i 8 sekunder for at genstarte computeren, og gendan standardparametrene.",
+                    "description2": "•  Hold strømknappen i nede i 8-15 sekunder for at genstarte computeren, og gendan standardparametrene.",
                     "description3": "•  Brug \"Restore Default Overclock.\" i BIOS-inds., og gend. stan.param.",
                     "save": "GEM",
                     "notSave": "GEM IKKE"

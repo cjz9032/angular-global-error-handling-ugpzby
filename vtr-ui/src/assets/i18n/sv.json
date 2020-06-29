@@ -169,7 +169,7 @@
                 "savePromptPopup": {
                     "title": "Spara ändringar?",
                     "description1": "Fel överklockningsinställningar kan ge bestående maskinvaruskador. Gör någon av de följande sakerna om du stöter på problem: ",
-                    "description2": "•  Håll in strömbrytaren i 8 sekunder så att datorn startar om och återställ standardparametrarna.",
+                    "description2": "•  Håll in strömbrytaren i 8-15 sekunder så att datorn startar om och återställ standardparametrarna.",
                     "description3": "•  Återställ standardparametrarna i BIOS med Restore Default Overclocking.",
                     "save": "SPARA",
                     "notSave": "SPARA INTE"

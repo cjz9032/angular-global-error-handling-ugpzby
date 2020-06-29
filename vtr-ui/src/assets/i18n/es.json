@@ -193,7 +193,7 @@
                 "savePromptPopup": {
                     "title": "¿Guardar cambios?",
                     "description1": "Ajuste incorrecto Acel. puede causar daños de hard. irreversibles. Realice una de las siguientes acciones si encuentra algún problema: ",
-                    "description2": "•  Presione bot. enc. por 8 seg. para rein. sist. y rest. par. omisión.",
+                    "description2": "•  Presione bot. enc. por 8-15 seg. para rein. sist. y rest. par. omisión.",
                     "description3": "•  Use “Rest. val. predet. sinc.” en val. BIOS para rest. los par. omi.",
                     "save": "GUARDAR",
                     "notSave": "NO GUARDAR"

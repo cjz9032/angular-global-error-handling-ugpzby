@@ -861,26 +861,13 @@ vtr-ui-smart-performance-scan-summary {
 			font-size: 1.4rem;
 			height: 6rem;
 			.loader {
-				display: flex;
-				justify-content: flex-start;
-				align-items: center;
-				& > span {
-					display: inline-block;
-					background-color: $shade_extradark;
-					width: 0rem;
-					height: 0rem;
-					border-radius: 50%;
-					margin: 0rem 0.4rem;
-					transform: translate3d(0);
-					animation: bounce 0.6s infinite alternate;
-				}
-				& > span:nth-child(2) {
-					background-color: $shade_darker;
-					animation-delay: 0.2s;
-				}
-				& > span:nth-child(3) {
-					animation-delay: 0.4s;
-				}
+				height: 2.8rem;
+				width: 2.8rem;
+				box-sizing: border-box;
+				border-radius: 50%;
+				border: 0.3rem solid $grey_light;
+				border-top-color: $grey_dark;
+				animation: spinner 0.7s linear infinite;
 			}
 			.item{
 				strong {
@@ -1285,10 +1272,8 @@ vtr-ui-smart-performance-scan-summary {
 	}
 }
 
-@keyframes bounce {
+@keyframes spinner {
 	to {
-	  width: 0.5rem;
-	  height: 0.5rem;
-	  transform: translate3d(0, -0.5rem, 0);
+	  transform: rotate(360deg);
 	}
   }

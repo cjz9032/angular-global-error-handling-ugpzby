@@ -193,7 +193,7 @@
                 "savePromptPopup": {
                     "title": "Lagre endringer?",
                     "description1": "Feile innstillinger for overklokking kan føre til uopprettelig skade på maskinvaren. Gjør ett av følgende hvis det oppstår problemer: ",
-                    "description2": "•  Trykk på og hold inne på/av-knappen i åtte sekunder for å starte datamaskinen på nytt og gjenopprette standardparameterne.",
+                    "description2": "•  Trykk og hold inne på/av-knappen i 8-15 sekunder for å starte datamaskinen på nytt og gjenopprette standardparametrene.",
                     "description3": "•  Bruk Restore Default Overclocking i BIOS-innstillingene for å gjenopprette standardparameterne.",
                     "save": "LAGRE",
                     "notSave": "IKKE LAGRE"

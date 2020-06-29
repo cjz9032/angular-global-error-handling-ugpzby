@@ -193,7 +193,7 @@
                 "savePromptPopup": {
                     "title": "Uložit změnu?",
                     "description1": "Nesprávné přetaktování může vést k nevratným škodám na hardwaru. Pokud narazíte na nějaký problém, proveďte jedno z následujících: ",
-                    "description2": "•  Restartujte PC tl. napájení na 8 s a obnovte výchozí parametry.",
+                    "description2": "•  Restartujte PC tl. napájení na 8-15 s a obnovte výchozí parametry.",
                     "description3": "•  K obn. vých. param. použ. Obnovení vých. přetaktování v nast. BIOS.",
                     "save": "ULOžIT",
                     "notSave": "NEUKLáDAT"
