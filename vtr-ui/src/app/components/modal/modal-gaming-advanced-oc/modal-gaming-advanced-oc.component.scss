@@ -88,18 +88,9 @@
             &.ng5-slider{
                 margin-top: 1.8rem;
             }
-            &.ng5-slider {
-                @media #{$high-contrast} {
-                    background-color: transparent;
-                    -ms-high-contrast-adjust: none;
-                }
-            }
             &.ng5-slider-bar {
                 height: 6px;
                 border-radius: 3px;
-                @media #{$high-contrast} {
-                    background-color: $highContrastGray;
-                }
             }
             &.ng5-slider-pointer {
                 background-image: none!important;
@@ -109,9 +100,6 @@
                 top: -7px!important;
                 &:hover{
                     background-color: #C9CACC!important;
-                }
-                @media #{$high-contrast} {
-                    border: 1px solid #999;
                 }
                 &:focus {
                     outline: none!important;

@@ -186,6 +186,10 @@
 		border-radius: 20px;
 		transition: all 0.2s ease;
 		position: relative;
+		@media #{$high-contrast} {
+			// background-color: buttonFace;
+			border: 2px solid buttonFace;
+		}
 		&:hover {
 			background-color: $blueHover;
 		}
@@ -207,6 +211,10 @@
 		margin-top: -8px;
 		transition: all 0.2s ease;
 		position: relative;
+		// @media #{$high-contrast} {
+		// 	color: highlightText;
+		// 	border-bottom: 2px solid highlightText;
+		// }
 		&:hover {
 		  color: $blueHover;
 		  border-bottom: 2px solid $blueHover;
@@ -2315,7 +2323,7 @@ button {
 					}
 					p {
 						font-size: 1.4rem;
-						color: $gaming_light_05;
+						color: $white60;
 						margin-bottom: 0;
 						padding: 0.5rem 0 2rem 0;
 						line-height: 2rem;

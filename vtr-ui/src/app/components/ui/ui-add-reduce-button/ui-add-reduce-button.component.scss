@@ -6,7 +6,8 @@
     border-radius: .6rem;
     display: flex;
     @media #{$high-contrast} {
-        background-color: $highContrastGray;
+        border: 1px solid buttonText;
+        // background-color: $highContrastGray;
     }
     button {
         font-size: 0;
@@ -35,6 +36,9 @@
         flex: 1;
         font-size: 1.4rem;
         color: $gaming_lightest;
+        @media #{$high-contrast} {
+			color: buttonText;
+		}
     }
     button,
     p {
