@@ -1,6 +1,6 @@
-<div class="modal-body">
-	<div class="title">{{'hardwareScan.warning' | translate}}</div>
-	<div class="description" [innerHtml]="modalDescription"></div>
+<div class="modal-body" aria-labelledby="recover-title" aria-describedby="recover-description">
+	<div id="recover-title" class="title">{{'hardwareScan.warning' | translate}}</div>
+	<div id="recover-description" class="description" [innerHtml]="modalDescription"></div>
 
 	<div class="row">
 		<vtr-ui-button
