@@ -2595,7 +2595,13 @@
                 "subtitleDescribe": "Функція \"Безпека підключеного дому\" надішле вам сповіщення, якщо буде виявлено вразливість пристрою або домашньої мережі, або якщо пристрій буде підключено до потенційно шкідливої мережі. Дізнайтеся більше про Безпеку підключеного дому <tag>тут</tag>.",
                 "tryNow": "Спробувати зараз",
                 "visit": "Visit",
-                "goToChs": "go to connected home security"
+                "goToChs": "go to connected home security",
+                "locationDisabledInfo": {
+					"title": "Location disabled",
+					"subtitle": "Allow Vantage to access your location to use Connected Home Security",
+					"buttonText": "Go To Location Settings",
+					"howToEnableLocation": "1. Go to <b>Setting</b> > <b>Privacy</b> > <b>Location</b>. </br> 2. Under <b>Choose which apps can access your precise location</b>, find <b>Lenovo Vantage</b>. </br> 3. Turn the Location switch to <b>On</b>."
+				}
             },
             "invitationcode": {
                 "button": "Введіть код запрошення",

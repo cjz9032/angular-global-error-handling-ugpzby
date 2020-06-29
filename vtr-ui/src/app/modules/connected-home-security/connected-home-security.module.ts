@@ -26,7 +26,8 @@ import { HomeSecurityAfterSignupComponent } from '../../components/pages/page-co
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { faMapMarkerAltSlash } from '@fortawesome/pro-light-svg-icons/faMapMarkerAltSlash'
+import { WidgetLocationStatusComponent } from '../../components/widgets/widget-location-status/widget-location-status.component';
 
 
 
@@ -37,7 +38,8 @@ import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 		HomeSecurityCardComponent,
 		PageConnectedHomeSecurityComponent,
 		DaysIntervalPipe,
-		HomeSecurityAfterSignupComponent
+		HomeSecurityAfterSignupComponent,
+		WidgetLocationStatusComponent
 	],
 	imports: [
 		CommonModule,
@@ -70,7 +72,8 @@ export class ConnectedHomeSecurityModule {
 			faUserFriends,
 			faHome,
 			faTv,
-			faMapMarkerAlt
+			faMapMarkerAlt,
+			faMapMarkerAltSlash
 		);
 	}
 }
