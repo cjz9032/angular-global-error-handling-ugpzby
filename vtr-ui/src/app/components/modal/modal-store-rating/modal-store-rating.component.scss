@@ -1,5 +1,14 @@
 @import '../../../app.theme.scss';
 .vtr-modal-store-rating{
+    @media #{$high-contrast} {
+		border: 1px solid currentColor !important;
+	}
+    @media #{$black-on-white} {
+		border: 1px solid $dark !important;
+	}
+	@media #{$white-on-black} {
+		border: 1px solid $light !important;
+	}
     .modal-content{
         font-size: 2rem;
         line-height: 0;
