@@ -121,11 +121,11 @@
 				opacity: 1;
 				color: $gaming_lightest;
 				@media #{$black-on-white} {
-					background-color: $gaming_light_blue;
+					background-color: $dark;
 					border: 0.1rem solid $dark;
 				}
 				@media #{$white-on-black} {
-					background-color: $gaming_light_blue;
+					background-color: $light;
 					border: 0.1rem solid $light;
 				}
 				background-color: $gaming_light_blue;
@@ -171,6 +171,16 @@
 						}
 					}
 				}
+			}
+			@media #{$white-on-black} {
+				border: 0.1rem solid $light;
+				background: $dark;
+				background-image: none;
+			}
+			@media #{$black-on-white} {
+				border: 0.1rem solid $dark;
+				background: $light;
+				background-image: none;
 			}
 		}
 	}

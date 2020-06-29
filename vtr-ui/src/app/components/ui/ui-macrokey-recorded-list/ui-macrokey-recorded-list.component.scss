@@ -91,6 +91,15 @@
 		.record-item {
 			cursor: pointer;
 			position: relative;
+			border-radius: 0.3rem;
+			@media #{$black-on-white} {
+				background-color: $light;
+				border: 0.1rem solid $dark;
+			}
+			@media #{$white-on-black} {
+				background-color: $dark;
+				border: 0.1rem solid $light;
+			}
 			svg {
 				vertical-align: text-bottom;
 				path {
@@ -104,29 +113,17 @@
 			}
 			&:nth-child(odd) {
 				background-color: $white5;
-				@media #{$black-on-white} {
-					background-color: $high-contrast-grey;
-				}
-				@media #{$white-on-black} {
-					background-color: $high-contrast-grey;
-				}
-				border-radius: 0.3rem;
-				.key {
-					svg {
-						opacity: 0.8;
-						path {
-							@media #{$black-on-white} {
-								fill: $dark;
-							}
-							@media #{$white-on-black} {
-								fill: $light;
-							}
-						}
-					}
-				}
 			}
 			&:hover {
-				color: $gaming_light_blue;
+				color: $blueHover;
+				@media #{$black-on-white} {
+					background-color: $dark;
+					border: 0.1rem solid $light;
+				}
+				@media #{$white-on-black} {
+					background-color: $light;
+					border: 0.1rem solid $dark;
+				}
 				svg {
 					path {
 						fill: $gaming_light_blue;
@@ -161,9 +158,23 @@
 			}
 			&.paired {
 				color: $gaming_light_blue;
+				@media #{$black-on-white} {
+					background-color: $dark;
+					border: 0.1rem solid $light;
+				}
+				@media #{$white-on-black} {
+					background-color: $light;
+					border: 0.1rem solid $dark;
+				}
 				svg {
 					path {
-						fill: $gaming_light_blue;
+						fill: $blueHover;
+						@media #{$black-on-white} {
+							fill: $dark;
+						}
+						@media #{$white-on-black} {
+							fill: $light;
+						}
 					}
 				}
 				.interval {
@@ -246,13 +257,18 @@
 			-webkit-transition: 0.2s ease;
 			transition: 0.2s ease;
 			fill: $blueFill;
+			@media #{$black-on-white} {
+				fill: $dark;
+			}
+			@media #{$white-on-black} {
+				fill: $light;
+			}
 		}
 		margin: 0.4rem;
 		height: 2rem;
 		width: 2rem;
 	}
 	&:hover {
-		
 		.delete-btn {
 			color: $blueHover;
 			border-bottom: 0.2rem solid $blueHover;
@@ -260,6 +276,12 @@
 		svg {
 			path {
 				fill: $blueHover;
+				@media #{$black-on-white} {
+					fill: $dark;
+				}
+				@media #{$white-on-black} {
+					fill: $light;
+				}
 			}
 		}
 	}
