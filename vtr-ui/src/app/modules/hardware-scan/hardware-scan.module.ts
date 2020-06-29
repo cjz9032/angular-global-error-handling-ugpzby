@@ -2,6 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbModalModule, NgbDropdownModule, NgbDatepickerModule, NgbCollapseModule, NgbTooltipModule, NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { CommonUiModule } from '../common/common-ui.module';
 import { HardwareScanRoutingModule } from './hardware-scan-routing.module';
 import { ModalWaitComponent } from '../../components/modal/modal-wait/modal-wait.component';
 import { ModalCancelComponent } from '../../components/modal/modal-cancel/modal-cancel.component';
@@ -79,6 +80,7 @@ import { UiHardwareScanTestResultComponent } from '../../components/ui/ui-hardwa
 	],
 	imports: [
 		CommonModule,
+		CommonUiModule,
 		HardwareScanRoutingModule,
 		NgbDatepickerModule,
 		NgbDropdownModule,
