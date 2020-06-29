@@ -49,7 +49,7 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 			this.systemMT = machineInfo.mt;
 			this.langCode = this.getSPSubscriptionSupportedLanguageFromCountry(this.countryCode);
 			this.paymenturl =
-				environment.paymentProcessApiRoot +
+				environment.spPaymentProcessApiRoot +
 				//this.countryCode +
 				//this.spPaymentPageenum.SLASH +
 				//this.langCode +
