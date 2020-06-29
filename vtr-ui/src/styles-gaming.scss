@@ -166,6 +166,15 @@
 		margin: 0;
 	}
 
+	.vtr-header-main-inner{
+		@media #{$black-on-white} {
+			border-bottom: 0 !important;
+		}
+		@media #{$white-on-black} {
+			border-bottom: 0 !important;
+		}
+	}
+
 	.border-radius-button {
 		font-size: 14px;
 		line-height: 1.5;
@@ -1519,10 +1528,12 @@
 
 		.vtr-page-right-column {
 			background: $gaming_rightbg;
-			// background-image: url("~/assets/images/gaming/GradientLine@1x.png");
-			//background-repeat: repeat;
-			//background-size: 100% 100%;
-			// padding: 0 8.5rem 4rem 4rem;
+			@media #{$black-on-white} {
+				background: $light;
+			}
+			@media #{$white-on-black} {
+				background: $dark;
+			}
 			&::after {
 				content: "";
 				position: absolute;
