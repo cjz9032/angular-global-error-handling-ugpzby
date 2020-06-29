@@ -959,7 +959,8 @@
         "systemUpdate": {
             "subtitle": "Aktualizace ovladačů, systému BIOS a dalšího softwaru.",
             "checkForSystemUpdates": "Vyhledat aktualizace systému"
-        }
+        },
+        "heroBanner": "Hlavní banner"
     },
     "device": {
         "myDevice": {

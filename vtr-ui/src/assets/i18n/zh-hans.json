@@ -959,7 +959,8 @@
         "systemUpdate": {
             "subtitle": "更新驱动程序、BIOS 和其他软件。",
             "checkForSystemUpdates": "检查系统更新"
-        }
+        },
+        "heroBanner": "首页横幅"
     },
     "device": {
         "myDevice": {

@@ -959,7 +959,8 @@
         "systemUpdate": {
             "subtitle": "ドライバー、BIOS、およびソフトウェアのを更新します。",
             "checkForSystemUpdates": "システム更新を確認"
-        }
+        },
+        "heroBanner": "ヒーローバナー"
     },
     "device": {
         "myDevice": {

@@ -959,7 +959,8 @@
         "systemUpdate": {
             "subtitle": "Обновите драйверы, BIOS и прочее программное обеспечение.",
             "checkForSystemUpdates": "Проверить наличие обновлений системы"
-        }
+        },
+        "heroBanner": "Показательный баннер"
     },
     "device": {
         "myDevice": {

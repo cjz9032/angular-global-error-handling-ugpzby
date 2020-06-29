@@ -959,7 +959,8 @@
         "systemUpdate": {
             "subtitle": "Actualizați-vă driverele, BIOS-ul și alte software-uri.",
             "checkForSystemUpdates": "Căutați actualizări de sistem"
-        }
+        },
+        "heroBanner": "Banner principal"
     },
     "device": {
         "myDevice": {

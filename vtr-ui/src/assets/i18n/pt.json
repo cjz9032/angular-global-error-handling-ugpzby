@@ -959,7 +959,8 @@
         "systemUpdate": {
             "subtitle": "Atualize os seus controladores, BIOS e outro software.",
             "checkForSystemUpdates": "Procurar atualizações do sistema"
-        }
+        },
+        "heroBanner": "Faixa de destaque"
     },
     "device": {
         "myDevice": {

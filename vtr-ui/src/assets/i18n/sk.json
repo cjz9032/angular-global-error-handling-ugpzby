@@ -959,7 +959,8 @@
         "systemUpdate": {
             "subtitle": "Aktualizovať ovládače, systém BIOS a iný softvér.",
             "checkForSystemUpdates": "Vyhľadať aktualizácie systému"
-        }
+        },
+        "heroBanner": "Transparent Hrdina"
     },
     "device": {
         "myDevice": {

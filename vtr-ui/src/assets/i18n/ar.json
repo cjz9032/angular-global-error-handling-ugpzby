@@ -961,7 +961,8 @@
         "systemUpdate": {
             "subtitle": "تحديث برامج التشغيل ونظام BIOS وبرامج أخرى.",
             "checkForSystemUpdates": "التحقق من وجود تحديثات النظام"
-        }
+        },
+        "heroBanner": "بانر Hero"
     },
     "device": {
         "myDevice": {
