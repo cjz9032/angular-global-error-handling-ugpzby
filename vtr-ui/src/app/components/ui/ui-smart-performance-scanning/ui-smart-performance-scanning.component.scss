@@ -668,7 +668,8 @@
 	mask-mode: alpha;
 	position: relative;
 	left: 3rem;
-	width: calc(100% - 2rem);
+	max-width: 26rem;
+	width: calc(90% - 2rem);
 	.ms-slider__words {
 		display: inline-block;
 		margin: 0;
@@ -685,7 +686,7 @@
 		width: 100%;
 		li {
 			white-space: nowrap;
-			max-width: calc(100% - 1rem);
+			max-width: 26rem;
 			overflow: hidden;
 			text-overflow: ellipsis;
 		}
