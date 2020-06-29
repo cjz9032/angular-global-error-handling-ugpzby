@@ -3,6 +3,7 @@
 	(swiperight)="swipe($event.type)">
 	<ngb-carousel tabindex="0"
 		*ngIf="carouselModel"
+		[attr.aria-label]="'dashboard.heroBanner' | translate"
 		(keyup)="onCarouselKeyUp($event)"
 		(slide)="onCarouselSlideChange($event)"
 		[showNavigationArrows]="carouselModel.length>1"

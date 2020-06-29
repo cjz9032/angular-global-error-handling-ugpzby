@@ -30,8 +30,8 @@
             [src]=" item.icon | svgInline | async" />
             <div class="height-line"></div>
             <div class="col-8 align-self-center">
-                <div class="number" [innerHTML]="metricsList[i]"></div>
-                <div class="subtitle" [innerHTML]="item.name | translate"></div>
+                <div class="number" [innerHTML]="metricsList[i]" id="sa-av-widget-report-number-{{i+1}}" role="text"></div>
+                <div class="subtitle" [innerHTML]="item.name | translate" id="sa-av-widget-report-name-{{i+1}}" role="text"></div>
             </div>
         </div>
       </div>

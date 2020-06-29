@@ -54,51 +54,6 @@ export class MetricHelper {
 		return MetricEventName[eventName.toLowerCase()] || eventName
 	}
 
-	public static initializeMetricClient(metricClient, shellService: VantageShellService, commonService: CommonService, hypothesisService: HypothesisService) {
-		const jsBridgeVesion = shellService.getVersion() || '';
-		const shellVersion = shellService.getShellVersion();
-		const webUIVersion = environment.appVersion;
-
-		metricClient.init({
-			appVersion: `Web:${webUIVersion};Bridge:${jsBridgeVesion};Shell:${shellVersion}`,
-			appId: MetricHelper.getAppId('dß'),
-			appName: 'vantage3',
-			channel: '',
-			ludpUrl: 'https://chifsr.lenovomm.com/PCJson'
-		});
-		metricClient.sendAsyncOrignally = metricClient.sendAsync;
-		metricClient.sendAsync = async function sendAsync(data) {
-			const win: any = window;
-
-			try {
-				// automatically fill the OnlineStatus for page view event
-				if (!data.OnlineStatus) {
-					data.OnlineStatus = commonService.isOnline ? 1 : 0;
-				}
-
-				const isBeta = commonService.getLocalStorageValue(LocalStorageKey.BetaTag, false);
-				if (isBeta) {
-					data.IsBetaUser = true;
-				}
-
-				if (win.VantageStub && win.VantageStub.toastMsgName) {
-					data.LaunchByToast = win.VantageStub.toastMsgName;
-				}
-
-				data.ItemType = MetricHelper.normalizeEventName(data.ItemType);
-
-				MetricHelper.setupMetricDbg(hypothesisService, metricClient, data);
-
-				return await this.sendAsyncOrignally(data);
-			} catch (ex) {
-				return Promise.resolve({
-					status: 0,
-					desc: 'ok'
-				});
-			}
-		};
-	}
-
 	public static createSimulateObj() {
 		return {
 			init() {},

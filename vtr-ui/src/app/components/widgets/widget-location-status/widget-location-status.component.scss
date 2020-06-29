@@ -1,0 +1,97 @@
+@import "../../../app.theme";
+
+.vtr-widget-location-status {
+	.location-disable-background {
+		border-radius: 0.7rem 0.7rem 0 0;
+		background: linear-gradient(
+			$gradient_angle,
+			$main_darkest 0%,
+			$main_darker 100%
+		);
+		box-shadow: $drop_shadow;
+		padding: 2.4rem;
+		border-radius: 0.7rem;
+
+		.title {
+			color: $light;
+			font-size: $fontsize_xl2;
+			font-weight: $weight_light;
+			line-height: 4.2rem;
+		}
+
+		.subtitle {
+			opacity: 1;
+			color: $light;
+			font-size: $fontsize_xs;
+			line-height: 2.1rem;
+			padding-top: 1rem;
+		}
+
+		.description {
+			opacity: 1;
+			color: $light;
+			font-size: 1.4rem;
+			line-height: 2.1rem;
+			padding-top: 2.7rem;
+			padding-left: 13rem;
+
+			@media #{$mediaquery_X45} {
+				padding-left: 0;
+			}
+			@media #{$mediaquery_md} {
+				padding-left: 0;
+			}
+		}
+
+		.location-disable-icon {
+			width: 10rem;
+			margin-top: -1rem;
+
+			.icon {
+				color: $light;
+				font-size: 7rem;
+			}
+		}
+
+		.location-disable-content {
+			padding-left: 3rem;
+			width: calc(100% - 10rem);
+		}
+
+		.button-row {
+			padding-top: 1rem;
+			padding-left: 12.5rem;
+
+			@media #{$mediaquery_X45} {
+				padding-left: 0;
+			}
+			@media #{$mediaquery_md} {
+				padding-left: 0;
+			}
+		}
+
+		::ng-deep vtr-ui-button {
+			.button {
+				.text {
+					font-size: 1.6rem;
+				}
+			}
+
+			@media #{$mediaquery_X45} {
+				.button {
+					width: 100%;
+				}
+			}
+
+			@media #{$mediaquery_md} {
+				.button {
+					width: 100%;
+				}
+			}
+		}
+
+		.hidden-if-overflow {
+			overflow: hidden;
+		}
+	}
+}
