@@ -9,4 +9,7 @@ export interface IEnvironment {
 	isLoggingEnabled: boolean;
 	isServerSwitchEnabled: boolean;
 	isCPTEnabled: boolean;
+	paymentProcessApiRoot: string;
+	getOrdersApiRoot: string;
+	spPnListKey: string;
 }

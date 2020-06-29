@@ -8,6 +8,7 @@ import { formatDate } from '@angular/common';
 import { SupportService } from 'src/app/services/support/support.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { PaymentPage } from 'src/app/enums/smart-performance.enum';
+import { environment } from 'src/environments/environment';
 
 @Component({
 	selector: 'vtr-modal-smart-performance-subscribe',
@@ -48,22 +49,18 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 			this.systemMT = machineInfo.mt;
 			this.langCode = this.getSPSubscriptionSupportedLanguageFromCountry(this.countryCode);
 			this.paymenturl =
-				this.spPaymentPageenum.URL +
+				environment.paymentProcessApiRoot +
 				//this.countryCode +
 				//this.spPaymentPageenum.SLASH +
 				//this.langCode +
 				//this.spPaymentPageenum.SLASH +
-				this.spPaymentPageenum.URLSTRING +
 				this.spPaymentPageenum.SERIALQUERYPARAMETER +
 				this.systemSerialNumber +
 				this.spPaymentPageenum.SMARTPERFORMANCE +
 				this.spPaymentPageenum.TRUE +
 				this.spPaymentPageenum.SOURCEQUERYPARAMETER +
 				this.spPaymentPageenum.APPLICATIONNAME;
-				this.loggerService.info(
-				'paymenturl========================================================',
-				this.paymenturl
-			);
+
 		});
 	}
 	closeModal() {
