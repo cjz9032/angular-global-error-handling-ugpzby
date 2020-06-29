@@ -959,7 +959,8 @@
         "systemUpdate": {
             "subtitle": "Posodobite gonilnike, BIOS in drugo programsko opremo.",
             "checkForSystemUpdates": "Preveri, ali so na voljo sistemske posodobitve"
-        }
+        },
+        "heroBanner": "Pasica junaka"
     },
     "device": {
         "myDevice": {

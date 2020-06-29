@@ -959,7 +959,8 @@
         "systemUpdate": {
             "subtitle": "Ažurirajte upravljačke programe, BIOS i drugi softver.",
             "checkForSystemUpdates": "Proveri da li postoje sistemske ispravke"
-        }
+        },
+        "heroBanner": "Baner heroja"
     },
     "device": {
         "myDevice": {

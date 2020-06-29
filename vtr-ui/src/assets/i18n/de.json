@@ -959,7 +959,8 @@
         "systemUpdate": {
             "subtitle": "Aktualisieren Sie Ihre Treiber, das BIOS und weitere Software.",
             "checkForSystemUpdates": "Nach Systemaktualisierungen suchen"
-        }
+        },
+        "heroBanner": "Hero-Banner"
     },
     "device": {
         "myDevice": {

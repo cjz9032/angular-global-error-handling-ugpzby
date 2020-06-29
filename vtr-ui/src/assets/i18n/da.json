@@ -959,7 +959,8 @@
         "systemUpdate": {
             "subtitle": "Opdater dine drivere, BIOS og anden software.",
             "checkForSystemUpdates": "Søg efter systemopdateringer"
-        }
+        },
+        "heroBanner": "Hero-banner"
     },
     "device": {
         "myDevice": {

@@ -959,7 +959,8 @@
         "systemUpdate": {
             "subtitle": "Werk uw stuurprogramma´s, BIOS en andere software bij.",
             "checkForSystemUpdates": "Controleren op systeemupdates"
-        }
+        },
+        "heroBanner": "Held-spandoek"
     },
     "device": {
         "myDevice": {

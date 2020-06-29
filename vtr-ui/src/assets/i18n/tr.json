@@ -959,7 +959,8 @@
         "systemUpdate": {
             "subtitle": "Sürücülerinizi, BIOS'u ve diğer yazılımları güncelleyin.",
             "checkForSystemUpdates": "Sistem güncellemelerini denetle"
-        }
+        },
+        "heroBanner": "Ana manşet"
     },
     "device": {
         "myDevice": {

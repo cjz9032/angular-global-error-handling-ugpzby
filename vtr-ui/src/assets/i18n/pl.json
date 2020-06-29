@@ -959,7 +959,8 @@
         "systemUpdate": {
             "subtitle": "Zaktualizuj sterowniki, system BIOS i inne oprogramowanie.",
             "checkForSystemUpdates": "Sprawdź aktualizacje systemu"
-        }
+        },
+        "heroBanner": "Baner główny"
     },
     "device": {
         "myDevice": {

@@ -959,7 +959,8 @@
         "systemUpdate": {
             "subtitle": "Illesztőprogramok, a BIOS és más szoftverek frissítése.",
             "checkForSystemUpdates": "Rendszerfrissítések keresése"
-        }
+        },
+        "heroBanner": "Termékképet bemutató banner"
     },
     "device": {
         "myDevice": {

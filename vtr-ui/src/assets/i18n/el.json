@@ -959,7 +959,8 @@
         "systemUpdate": {
             "subtitle": "Ενημερώστε τα προγράμματα οδήγησης, το BIOS και άλλα στοιχεία λογισμικού.",
             "checkForSystemUpdates": "Ελέγξτε για ενημερώσεις συστήματος"
-        }
+        },
+        "heroBanner": "Πανό ήρωα"
     },
     "device": {
         "myDevice": {

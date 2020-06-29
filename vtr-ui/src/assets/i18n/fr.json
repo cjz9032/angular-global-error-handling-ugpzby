@@ -959,7 +959,8 @@
         "systemUpdate": {
             "subtitle": "Mettez à jour vos pilotes, BIOS et logiciels.",
             "checkForSystemUpdates": "Rechercher les mises à jour du système"
-        }
+        },
+        "heroBanner": "Bannière héros"
     },
     "device": {
         "myDevice": {

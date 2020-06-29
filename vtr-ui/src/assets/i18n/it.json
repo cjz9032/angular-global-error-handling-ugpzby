@@ -959,7 +959,8 @@
         "systemUpdate": {
             "subtitle": "Aggiornare driver, BIOS e altri software.",
             "checkForSystemUpdates": "Controllare gli aggiornamenti di sistema"
-        }
+        },
+        "heroBanner": "Banner hero"
     },
     "device": {
         "myDevice": {
