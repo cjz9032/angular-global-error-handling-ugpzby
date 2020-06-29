@@ -39,7 +39,7 @@ export class HistoryManager {
 
 						this.currentRoute = newPage;
 					}
-				} else if (event instanceof NavigationCancel && this.backRoute && event.url === this.backRoute.finalPath) {
+				} else if (event instanceof NavigationCancel && this.backRoute && event.url === this.backRoute.finalPath.split('?')[0]) {
 					this.goBack();
 				}
 			});
