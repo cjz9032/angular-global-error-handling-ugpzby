@@ -22,13 +22,18 @@ export class HistoryManager {
 			)
 			.subscribe((event: NavigationEnd | NavigationCancel) => {
 				if (event instanceof NavigationEnd) {
-					if (this.backRoute && this.backRoute.finalPath === event.urlAfterRedirects) {
+					if (this.backRoute && this.backRoute.finalPath.split('?')[0] === event.urlAfterRedirects) {
 						this.currentRoute = this.backRoute;
 						this.backRoute = null;
 					} else {
+						const currentNavigation = this.router.getCurrentNavigation();
+						const previousNavigation = currentNavigation ? currentNavigation.previousNavigation : null;
+						const skipPreviousUrl = previousNavigation && previousNavigation.extras && previousNavigation.extras.skipLocationChange;
+						const replaceUrl = currentNavigation && currentNavigation.extras && currentNavigation.extras.replaceUrl;
+
 						let newPage = new PageRoute(event.url, event.urlAfterRedirects);
 
-						if (this.currentRoute) {
+						if (this.currentRoute && !skipPreviousUrl && !replaceUrl) {
 							this.history.push(this.currentRoute);
 						}
 
