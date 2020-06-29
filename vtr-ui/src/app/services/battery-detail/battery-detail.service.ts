@@ -23,7 +23,9 @@ export class BatteryDetailService {
 	isPowerDriverMissing: boolean;
 	isGaugeResetRunning: boolean;
 	isInvalidBattery: boolean;
-	isTemporaryChargeModes: boolean[];
+	isTemporaryChargeMode: boolean;
+	isDlsPiCapable: boolean;
+	currentOpenModal: string;
 
 	chargeThresholdInfo = new BehaviorSubject([new ChargeThreshold()]);
 	airplaneModeSubject = new BehaviorSubject(new FeatureStatus(false, false));

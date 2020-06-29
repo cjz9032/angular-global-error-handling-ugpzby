@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, Output, EventEmitter } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -23,7 +23,7 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 	countryCode: any;
 	langCode: any;
 	paymenturl: string;
-
+	@Output() cancelPaymentRequest: EventEmitter<any> = new EventEmitter();
 	public subscriptionDetails = [
 		{
 			UUID: uuid(),
@@ -44,15 +44,15 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 		this.supportService.getMachineInfo().then(async (machineInfo) => {
 			this.loggerService.info('MachineInfo ====================================================== ', machineInfo);
 			this.countryCode =  machineInfo.country;
-			this.systemSerialNumber = 'PC0ZEPQ6';// machineInfo.serialnumber;
+			this.systemSerialNumber = machineInfo.serialnumber;//'PC0ZEPQ6';
 			this.systemMT = machineInfo.mt;
 			this.langCode = this.getSPSubscriptionSupportedLanguageFromCountry(this.countryCode);
 			this.paymenturl =
 				this.spPaymentPageenum.URL +
-				this.countryCode +
-				this.spPaymentPageenum.SLASH +
-				this.langCode +
-				this.spPaymentPageenum.SLASH +
+				//this.countryCode +
+				//this.spPaymentPageenum.SLASH +
+				//this.langCode +
+				//this.spPaymentPageenum.SLASH +
 				this.spPaymentPageenum.URLSTRING +
 				this.spPaymentPageenum.SERIALQUERYPARAMETER +
 				this.systemSerialNumber +
@@ -67,11 +67,10 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 		});
 	}
 	closeModal() {
+		this.cancelPaymentRequest.emit();
 		this.activeModal.close('close');
 	}
-	selectBilledMonthly() {
 	
-	}
 
 	@HostListener('window: focus')
 	onFocus(): void {

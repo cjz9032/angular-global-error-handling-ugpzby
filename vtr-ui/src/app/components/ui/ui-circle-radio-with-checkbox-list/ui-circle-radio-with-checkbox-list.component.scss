@@ -141,7 +141,21 @@
 							&::before {
 								color: $shade_blue;
 								opacity: 0.5;
+								@media #{$black-on-white} {
+									@include high-contrast-white-text-color-disabled;
+								}
+								@media #{$white-on-black} {
+									@include high-contrast-black-text-color-disabled;
+								}
 							}
+						}
+						@media #{$black-on-white} {
+							background: transparent;
+							border: 0.2rem solid $high-contrast-white-disabled-maroon;
+						}
+						@media #{$white-on-black} {
+							background: transparent;
+							border: 0.2rem solid $high-contrast-black-disabled-green;
 						}
 					}
 				}
@@ -242,17 +256,43 @@
 						.check-circle {
 							color: $shade_blue;
 							opacity: 0.5;
+							@media #{$black-on-white} {
+								@include high-contrast-white-text-color-disabled;
+							}
+							@media #{$white-on-black} {
+								@include high-contrast-black-text-color-disabled;
+							}
 						}
 
 						.icon-circle {
 							color: $light;
+							@media #{$black-on-white} {
+								color: $light;
+							}
+							@media #{$white-on-black} {
+								color: $dark;
+							}
 						}
 
 						.icomoon {
 							&::before {
 								color: $shade_blue;
 								// opacity: 0.6;
+								@media #{$black-on-white} {
+									@include high-contrast-white-text-color-disabled;
+								}
+								@media #{$white-on-black} {
+									@include high-contrast-black-text-color-disabled;
+								}
 							}
+						}
+						@media #{$black-on-white} {
+							background: transparent;
+							border: 0.2rem solid $high-contrast-white-disabled-maroon;
+						}
+						@media #{$white-on-black} {
+							background: transparent;
+							border: 0.2rem solid $high-contrast-black-disabled-green;
 						}
 					}
 				}

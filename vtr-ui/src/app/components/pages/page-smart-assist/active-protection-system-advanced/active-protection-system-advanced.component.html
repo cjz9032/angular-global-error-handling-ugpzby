@@ -20,15 +20,12 @@
 					[switchId]="'activeProtectionSystem-advanced-pen'">
 					<div class="dropdown col-sm-6 pl-0">
 						<vtr-ui-dropdown [dropDownId]="'penIntervalsDropDown'"
+							[isMetricsEnabled]=true
+							[metricsParent]="metricsParent"
 							*ngIf=" penStatus "
 							[list]="intervals"
 							[value]="penDelay"
-							(change)="setPenDelayTime($event)"
-							vtrMetrics
-							metricsEvent="FeatureClick"
-							metricsParent="Device.SmartAssist"
-							metricsItem="ActiveProtectionSystem.Advanced.PenInput.Dropdown"
-							metricsValue="{{penDelay}}">
+							(selectionChange)="setPenDelayTime($event)">
 						</vtr-ui-dropdown>
 					</div>
 				</vtr-ui-row-switch>

@@ -89,6 +89,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	private backlightCapabilitySubscription: Subscription;
 	@ViewChildren(NgbDropdown) dropDowns: QueryList<NgbDropdown>;
 	// activeDropdown: NgbDropdown;
+	@ViewChild('menuMainNavbarToggler') navbarToggler: ElementRef;
 
 	get appsForYouEnum() { return AppsForYouEnum; }
 
@@ -500,6 +501,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				}
 			}
 		}
+		this.navbarToggler.nativeElement.focus();
 	}
 
 	onClickSearchMask() {

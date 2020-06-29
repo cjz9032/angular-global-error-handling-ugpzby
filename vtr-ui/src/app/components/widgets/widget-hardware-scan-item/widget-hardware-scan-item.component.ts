@@ -31,4 +31,10 @@ export class WidgetHardwareScanItemComponent implements OnInit {
 	public getInformation(text: string) {
 		this.tooltipText = text;
 	}
+
+	// Changes status expanded of the module test list when the user request
+	public toggleTestListVisibility (item: any) {
+		item.expanded = !item.expanded;
+		item.expandedStatusChangedByUser = !item.expandedStatusChangedByUser;
+	}
 }

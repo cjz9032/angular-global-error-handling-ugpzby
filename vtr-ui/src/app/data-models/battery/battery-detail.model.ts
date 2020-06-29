@@ -34,6 +34,7 @@ class BatteryDetail {
 	public batteryHealth: number;
 	public batteryCondition: string[];
 	public isTemporaryChargeMode: boolean;
+	public isDlsPiCapable: boolean;
 	// #end region
 }
 

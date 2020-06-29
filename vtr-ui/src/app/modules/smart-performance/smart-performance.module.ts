@@ -23,7 +23,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
 import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
 import { faCircle } from '@fortawesome/free-solid-svg-icons/faCircle';
 
-import { NgbModule, NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbDatepickerModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { UiSmartTunePcComponent } from '../../components/ui/ui-smart-tune-pc/ui-smart-tune-pc.component';
 import { UiSmartPerformanceScanningComponent } from '../../components/ui/ui-smart-performance-scanning/ui-smart-performance-scanning.component';
 import { ModalSmartPerformanceCancelComponent } from '../../components/modal/modal-smart-performance-cancel/modal-smart-performance-cancel.component';
@@ -67,6 +67,7 @@ import { SharedModule } from 'src/app/modules/shared.module';
 		FormsModule,
 		ReactiveFormsModule,
 		NgbDatepickerModule,
+		NgbTooltipModule,
 		PageLayoutModule,
 		HeaderMainModule,
 		FontAwesomeModule,

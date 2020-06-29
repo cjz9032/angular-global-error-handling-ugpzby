@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Nastavenie tepelného režimu",
                     "thermalMode2SettingDesc": "Vyberte režim, ktorý chcete použiť.",
                     "fnQDesc": "Režim môžete prepínať pomocou klávesovej skratky Fn+Q.",
-                    "perormanceTitle": "Režim vysokého výkonu",
+                    "performanceTitle": "Režim vysokého výkonu",
                     "performanceDesc": "Zvýšte výkon počítača zvýšením otáčok ventilátora a spotreby energie. ",
                     "OCDesc": "Môžete sa rozhodnúť zapnúť funkciu pretaktovania.",
                     "ac_dcDesc": "Režim vysokého výkonu je možné použiť, len ak je pripojený sieťový adaptér.",
@@ -155,6 +155,8 @@
                         "cpuOCName79": "Zmena napätia vyrovnávacej pamäte",
                         "cpuOCName122": "Násobič jadra 7",
                         "cpuOCName123": "Násobič jadra 8",
+                        "cpuOCName124": "Násobič jadra 9",
+                        "cpuOCName125": "Násobič jadra 10",
                         "cpuOCName102": "ICCMAX jadra",
                         "cpuOCName106": "ICCMAX vyrovnávacej pamäte",
                         "cpuOCName114": "Zmena násobiča pre AVX"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Finálna zmena napätia, ktorá sa použije na napätie vyrovnávacej pamäte.",
                         "cpuOCTip122": "Nastavenie maximálneho násobiča jadra. Frekvencia jadra je súčinom tohto násobiča a referenčnej frekvencie.",
                         "cpuOCTip123": "Nastavenie maximálneho násobiča jadra. Frekvencia jadra je súčinom tohto násobiča a referenčnej frekvencie.",
+                        "cpuOCTip124": "Nastavenie maximálneho násobiča jadra. Frekvencia jadra je súčinom tohto násobiča a referenčnej frekvencie.",
+                        "cpuOCTip125": "Nastavenie maximálneho násobiča jadra. Frekvencia jadra je súčinom tohto násobiča a referenčnej frekvencie.",
                         "cpuOCTip102": "Nastavenie hodnoty ICCMAX pre regulátor napätia jadra procesora.",
                         "cpuOCTip106": "Nastavenie hodnoty ICCMAX pre regulátor napätia vyrovnávacej pamäte procesora a kruhovej zbernice.",
                         "cpuOCTip114": "Ak chcete odvodiť limit násobiča aktívneho jadra, keď je aktívny súbor inštrukcií AVX, odpočítajte túto hodnotu od príslušného limitu násobiča aktívneho jadra."
@@ -729,7 +733,7 @@
                 "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
-                "name11": "Legion front Fan Lighting",
+                "name11": "Legion Front Fan Lighting",
                 "name12": "Legion Top Fan Lighting"
             },
             "lightingEffect": {
@@ -1067,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "Aby sme predĺžili životnosť batérie, optimalizovali sme jej plnú kapacitu nabíjania na základe vášho používania. Plná kapacita batérie nemusí byť k dispozícii, kým ju nevybijete na 20% a znova nenabijete.",
-                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
+                    "moreInfo": "Kliknutím <a role=\"link\" href=\"#/device/high-density-battery\" tabindex=\"0\">sem</a> zobrazíte ďalšie informácie."
                 },
                 "condition": {
                     "Illegal": "Tento systém <b>nepodporuje</b> nainštalovanú batériu, ktorá sa preto nebude nabíjať. Vymeňte batériu za správnu batériu Lenovo určenú pre tento systém.",
@@ -1097,13 +1101,13 @@
                     "NotDetected": "<b>Hlavná batéria nebola zistená.</b>"
                 },
                 "highDensityBattery": {
-                    "title": "High density battery",
-                    "subtitle": "How your battey works",
-                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "title": "Batéria s vysokou hustotou",
+                    "subtitle": "Ako vaša batéria funguje",
+                    "para1": "S cieľom predĺžiť svoju životnosť, batéria automaticky upravuje nabíjacie napätie a kapacitu v závislosti od spôsobu, akým zariadenie používate.",
                     "para2": {
-                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
-                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
-                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                        "item1": "– Ak v priebehu týždňa alebo dlhšieho obdobia využijete menej než 65 % kapacity batérie, nabíjacie napätie a kapacita sa môže dočasne znížiť. Zníženie kapacity je malé a pri vašom spôsobe používania ho nespozorujete.",
+                        "item2": "– Plná kapacita sa obnoví, keď vybijete batériu pod úroveň 20 % a potom ju úplne nabijete.",
+                        "item3": "– Okrem toho, ak počas 2 týždňov alebo dlhšieho obdobia využijete menej než 10 % kapacity batérie, dočasne sa môže znížiť nabíjacie napätie a kapacita batérie, až kým sa nevyužije 50 % kapacity batérie."
                     }
                 }
             },
@@ -1271,7 +1275,8 @@
                             "description1": "Zapnutie vlastnej hraničnej úrovne nabitia batérie umožní predĺžiť životnosť batérie pri používaní tohto zariadenia.Ak však batéria nie je plne nabitá, jej výdrž je kratšia.",
                             "description2": "Ak chcete túto funkciu v plnej miere zapnúť, odpojte zariadeniea nechajte batériu, aby sa vybila na alebo pod hraničnú úroveň nabitia.",
                             "enable": "ZAPNÚŤ",
-                            "cancel": "ZRUŠIŤ"
+                            "cancel": "ZRUŠIŤ",
+                            "description3": "Batéria automaticky optimalizuje svoje nabíjacie napätie a kapacitu v závislosti od spôsobu, akým zariadenie používate. Ak batériu zaťažujete len mierne, hraničnú úroveň nabitia batérie nie je potrebné zapnúť."
                         },
                         "options": {
                             "start": "Začať nabíjanie pri hodnote nižšej ako",
@@ -1552,7 +1557,7 @@
                     },
                     "optimize": {
                         "title": "Optimalizovať mikrofón:",
-                        "tooltip": "Nakonfigurujte efekt mikrofónu, aby ste vylepšili svoj zvukový zážitok pomocou rôznych scenárov a prostredí.",
+                        "tooltip": "Nakonfigurujte efekt mikrofónu, aby ste vylepšili svoj zvukový zážitok v rôznych situáciách a prostrediach.",
                         "options": {
                             "VoiceRecognition": "ROZPOZNÁVANIE HLASU",
                             "OnlyMyVoice": "LEN PRE MÔJ HLAS",
@@ -1602,7 +1607,7 @@
                             "title": "Poznámka",
                             "description": "Aplikácia Lenovo Vantage potrebuje prístup k lokálnym informáciám na výpočet času západu a východu slnka vo vašej oblasti."
                         },
-                        "tips": "Ak chcete obnoviť režim na ochranu zraku, spustite službu Windows Update alebo manuálne nainštalujte ovládač grafickej karty"
+                        "tips": "Ak chcete obnoviť režim na ochranu zraku, spustite službu Windows Update alebo manuálne nainštalujte ovládač grafickej karty."
                     },
                     "dispColorTemp": {
                         "title": "Teplota farieb obrazovky",
@@ -1668,7 +1673,9 @@
                     "cameraPrivacy": {
                         "title": "Režim súkromia kamery",
                         "tooltip": "Keď je zapnuté nastavenie Súkromné, kamera neodosiela obraz naživo. Toto nastavenie zapnite, len ak nechcete, aby počas videohovorov ostatní videli váš obraz.",
-                        "cameraPrivacyAccessNote": "Prejdite na stránku <b>Nastavenia systému Windows → Súkromie → Fotoaparát</b> a ubezpečte sa, že sú na stránke povolené nasledujúce dve možnosti:<br>&bull; <b>Povoliť počítačovým aplikáciám prístup k fotoaparátu</b><br>&bull; <b>Lenovo Vantage</b> v časti „Vyberte, ktoré aplikácie (Microsoft Store) majú prístup k vášmu fotoaparátu“"
+                        "cameraPrivacyAccessNote": "Prejdite na stránku <b>Nastavenia systému Windows → Súkromie → Fotoaparát</b> a ubezpečte sa, že sú na stránke povolené nasledujúce dve možnosti:<br>&bull; <b>Povoliť počítačovým aplikáciám prístup k fotoaparátu</b><br>&bull; <b>Lenovo Vantage</b> v časti „Vyberte, ktoré aplikácie (Microsoft Store) majú prístup k vášmu fotoaparátu“",
+                        "noPermissionNote": "Aplikácia Lenovo Vantage nemá prístup k vášmu fotoaparátu alebo funkcia „Povoliť počítačovým aplikáciám prístup k fotoaparátu“ nie je zapnutá.",
+                        "accessUrl": "Prejdite do nastavení systému Windows a povoľte prístup"
                     },
                     "camera": {
                         "title": "Kamera",
@@ -1759,10 +1766,11 @@
                             "note": "Keď stlačíte kláves Fn dvakrát, zaistí sa v stlačenom stave, kým ho znova nestlačíte. Keď je tlačidlo Fn zaistené, rozsvieti sa indikátor funkcie Fn Lock. Ak chcete vykonať inú než predvolenú funkciu, môžete priamo stlačiť požadovaný funkčný kláves."
                         },
                         "popup": {
-                            "title": "Reštartovanie počítača",
+                            "title": "Reštart počítača",
                             "description": "Zmena predvolenej funkcie horného riadka si vyžaduje reštartovanie počítača. Naozaj chcete vykonať reštartovanie?",
                             "reboot": "REŠTARTOVAŤ",
-                            "cancel": "TERAZ NIE"
+                            "cancel": "TERAZ NIE",
+                            "yes": "ÁNO"
                         },
                         "note": {
                             "sFunKey": "Funkcie klávesov F1 – F12 môžete použiť stlačením klávesu Fn a klávesov v hornom riadku.",
@@ -1785,10 +1793,10 @@
                 },
                 "userDefinedKey": {
                     "title": "Kláves definovaný používateľom",
-                    "caption": "Klávesu s ikonou hviezdy môžete priradiť funkciu definovanú používateľom",
+                    "caption": "Klávesu s ikonou hviezdy môžete priradiť funkciu definovanú používateľom.",
                     "dropDown": {
                         "title": "Kláves s akciou definovanou používateľom",
-                        "note": "Poznámka: pomocou tejto funkcie môžete zadávať bežne zadávaný text, napríklad e-mailové alebo poštové adresy. Spoločnosť Lenovo odporúča, aby ste túto funkciu nikdy nepoužívali na ukladanie a zadávanie hesiel ani akýchkoľvek iných súkromných informácií.",
+                        "note": "Poznámka: pomocou tejto funkcie môžete vkladať bežne zadávaný text, napríklad e-mailové alebo poštové adresy. Túto funkciu nikdy nepoužívajte na ukladanie hesiel alebo iných súkromných údajov.",
                         "options": {
                             "option1": "Vyberte",
                             "option2": "Otvorte webovú stránku",
@@ -1826,8 +1834,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "Výmena klávesov Fn a Ctrl",
-                    "description": "Ak zvyčajne stlačíte kláves Fn, keď chce stlačiť kláves Ctrl, môžete vymeniť funkcie týchto dvoch klávesov.",
-                    "restartNote": "Výmena funkcie dvoch klávesov vyžaduje reštart počítača. Naozaj chcete počítač reštartovať?",
+                    "description": "Ak zvyčajne stlačíte kláves Fn, keď chce stlačiť kláves Ctrl, môžete vymeniť funkciu týchto dvoch klávesov.",
+                    "restartNote": "Prehodenie funkcie dvojice klávesov si vyžaduje reštartovanie počítača. Naozaj chcete vykonať reštartovanie?",
                     "title2": "Kláves Fn funguje rovnako ako kláves Ctrl v prípade často používaných kombinácií klávesov",
                     "description2": "Kláves Fn funguje rovnako ako kláves Ctrl v prípade niektorých často používaných kombinácií klávesov. Funkcia klávesu Ctrl sa nezmení.",
                     "featureNote": "Táto funkcia a funkcia prehodenia klávesu Fn a Ctrl nemôžu byť aktivované súčasne. Ak dôjde k aktivácii jednej z nich, druhá sa automaticky vypne.",
@@ -2127,9 +2135,10 @@
                 "title": "Inteligentná signalizácia pohybu",
                 "tooltip": "<div id='antiTheft-tooltips'>Táto funkcia nefunguje, keď je počítač v režime dlhodobého spánku alebo je vypnutý. Skontrolujte nastavenia nasledujúcich akcií:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>akcie pri zatvorení krytu</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>akcia pri kriticky vybitej/takmer vybitej batérii</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>akcia pri stlačení tlačidla napájania</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>funkcia pri stlačení tlačidla spánku</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>nastavenia časového limitu prechodu z režimu nečinnosti do režimu dlhodobého spánku</li></ul></div>V opačnom prípade sa nespustí budík, ani sa nedá fotografovať.</div>",
                 "desc1": "Keď povolíte túto funkciu, zariadenie začne vydávať zvukový signál, keď je obrazovka uzamknutá a zistí sa pohyb, najmä vo verejnom priestore.",
-                "desc2": "Ak chcete toto upozornenie zrušiť, prihláste sa do systému Windows.",
+                "desc2": "Prihláste sa do systému Windows a alarm sa automaticky vypne. Ak chcete funkciu používať, musíte ju znova povoliť.",
                 "note": {
-                    "description": "Po úspešnom prihlásení do systému sa táto funkcia automaticky vypne. Ak ju chcete používať, musíte ju znova povoliť."
+                    "descriptionTitle": "Upozornenie:",
+                    "description": "Pri prihlásení sa do systému Windows sú potrebné platné možnosti prihlásenia, napríklad heslo alebo kód PIN. V opačnom prípade môže inteligentnú signalizáciu pohybu omylom deaktivovať ktorýkoľvek neoprávnený používateľ, ktorý má prístup k vášmu počítaču."
                 },
                 "alarm": {
                     "title": " UPOZORNENIE BUDE TRVAŤ",
@@ -2141,7 +2150,7 @@
                 },
                 "allowCamera": {
                     "title": "SNÍMANIE FOTOGRAFIÍ",
-                    "describe": "Keď povolíte túto funkciu, fotoaparát automaticky sníma fotografie pri zistení pohybu, ak je obrazovka uzamknutá. Tieto údaje sa spracúvajú lokálne vo vašom zariadení. Spoločnosť Lenovo k nim nemá prístup a nepoužíva ich.",
+                    "describe": "Keď povolíte túto funkciu, fotoaparát automaticky sníma fotografie pri zistení pohybu, ak je obrazovka uzamknutá. Tieto údaje sa spracúvajú lokálne vo vašom zariadení. Spoločnosť Lenovo k nim nemá prístup a nepoužíva ich. Nezabudnite, že by ste mali vypnúť funkciu krytu kamery, aby mohla počas alarmu úspešne snímať zábery.",
                     "checkBoxText": "Povolenie tejto funkcie"
                 },
                 "cameraPrivacy": {
@@ -2251,9 +2260,6 @@
         },
         "support": {
             "title": "Webová lokalita podpory spoločnosti Lenovo"
-        },
-        "security": {
-            "title": "For a better protection for your device"
         },
         "banner": {
             "neverChecked": "Vitajte v službe aktualizácie systému.",
@@ -3111,7 +3117,9 @@
                 "yes": "Áno",
                 "no": "Nie"
             },
-            "waitAvailability": "Tlačidlo je vypnuté, ak táto funkcia nie je podporovaná úložnými zariadeniami počas načítavania informácií o hardvéri ako aj počas kontroly."
+            "waitAvailability": "Tlačidlo je vypnuté, ak táto funkcia nie je podporovaná úložnými zariadeniami počas načítavania informácií o hardvéri ako aj počas kontroly.",
+            "executingTitle": "Prebieha obnovovanie...",
+            "recoverCompleted": "Obnovenie dokončené"
         },
         "support": {
             "title": "Stiahnite si profesionálne diagnostické nástroje",
@@ -3159,7 +3167,19 @@
             "suggestedActionSupport": "Ak je počítač v záruke, kliknite na položku <b>Požiadať o poskytnutie služby</b> a požiadajte o náhradný diel. Ďalšie informácie nájdete na webovej lokalite podpory spoločnosti Lenovo.",
             "supportButtonText": "Požiadať o poskytnutie služby",
             "recoverBadSectorsButtonText": "Obnoviť chybné sektory"
-        }
+        },
+        "scanFinishedHeader": {
+            "titleSuccess": "Skenovanie dokončené. Zariadenie prešlo všetkými testami.",
+            "titleErrorPlural": "Skenovanie dokončené. Zariadenie zlyhalo v {{numberTestsFailed}} testoch.",
+            "titleErrorSingular": "Skenovanie dokončené. Zariadenie zlyhalo v 1 teste.",
+            "frcSuccessDescription": "Tento konečný výsledný kód signalizuje, že sa nezistili žiadne problémy s touto kontrolou. Ak sa v prípade ľubovoľného textu zobrazí varovanie alebo hlásenie o nemožnosti použitia, neznamená to, že došlo k zisteniu problému. Ak vás pracovník technickej podpory spoločnosti Lenovo požiadal o vykonanie tohto testu, použite tento kód ako doklad. Inak sa od vás momentálne nevyžaduje žiadny zásah. Ak máte pocit, že stále dochádza k problémom, obráťte sa na technickú podporu spoločnosti Lenovo.",
+            "frcFailureDescription": "Konečný výsledný kód signalizuje, že sa zistili problémy s touto kontrolou.",
+            "lenovoSupportInstruction": "V rámci technickej podpore spoločnosti Lenovo môžete požiadať o overenie pomocou kódu konečného výsledku.",
+            "finalResultCodeLabel": "Kód konečného výsledku: ",
+            "scanAgainButtonText": "Skenovať znova",
+            "supportButtonText": "Technická podpora spoločnosti Lenovo"
+        },
+        "executingScanTitle": "Skenovanie {{title}}..."
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3284,7 +3304,8 @@
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+            "processStatus": "PREBIEHA SPRACOVANIE"
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3308,6 +3329,8 @@
             "fri": "Friday",
             "sat": "Saturday",
             "sun": "Sunday",
+            "am": "dop",
+            "pm": "pop",
             "tooltipText": "Enable this toggle to automatically initiate a system performance scan on your selected date and time."
         },
         "scanningPage": {
@@ -3769,7 +3792,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",
@@ -3819,7 +3843,9 @@
         },
         "auto": "Auto",
         "manual": "Manual",
-        "noScanResults": "Please click SCAN & FIX button to trigger scan process."
+        "noScanResults": "Please click SCAN & FIX button to trigger scan process.",
+        "am": "Dop",
+        "pm": "pop"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

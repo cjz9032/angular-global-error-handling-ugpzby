@@ -1,4 +1,5 @@
 @import '../../../app.theme.scss';
+
 .light-dashline {
 	border-top: 1px solid $screen_light_15;
 }
@@ -22,12 +23,12 @@ vtr-ui-smart-performance-scan-summary {
 				align-items: flex-start;
 			}
 			.title-block {
-				width: 38%;
+				width: 45%;
 				@media #{$breakpoint_xl}{
 					width: 100%;
 				}
 				@media #{$breakpoint_lg}{
-					width: 38%;
+					width: 45%;
 				}
 				@media #{$breakpoint_md}{
 					width: 100%;
@@ -38,12 +39,24 @@ vtr-ui-smart-performance-scan-summary {
 				h3 {
 					font-size: 2.4rem;
 					font-weight: $weight_600;
-					color: #303D49;
+					color: #303D49;	
+					@media #{$breakpoint_lg}{
+						font-size: 2.2rem;
+					}				
+					@media #{$breakpoint_md}{
+						font-size: 2.2rem;
+					}
+					@media #{$breakpoint_sm}{
+						font-size: 1.8rem;
+					}
 				}
 				p{
 					font-size: 1.4rem;
 					color: $shade;
 				}
+			}
+			.full-width{
+				width:100%;
 			}
 			.summary-period {
 				//width: 62%;
@@ -51,19 +64,28 @@ vtr-ui-smart-performance-scan-summary {
 				position: relative;
 				@media #{$breakpoint_xl}{
 					width: 100%;
+					display: flex;
+					flex-direction: row;
 				}
 				@media #{$breakpoint_lg}{
-					width: 62%;
+					width: 55%;
+					display: flex;
+					flex-direction: row-reverse;
 				}
 				@media #{$breakpoint_md}{
 					width: 100%;
+					display: flex;
+					flex-direction: row;
 				}
 				@media #{$breakpoint_sm}{
 					width: 100%;
+					display: flex;
+					flex-direction: row;
 				}
 				.list-group {
-					background: #303D49;
+					background: $main_darker;
 					border-radius: 0.5rem;
+					max-width: 100%;
 					.list-group-item {
 						border-radius: 0.5rem;
 						border: none;
@@ -71,8 +93,8 @@ vtr-ui-smart-performance-scan-summary {
 						color: $light;
 						font-size: 1.2rem;
 						font-weight: $weight_bold;
-						padding: 1rem;
-						margin: 0.5rem;
+						padding: 0.6rem;
+						margin: 0.45rem;
 						cursor: pointer;
 						@media #{$breakpoint_sm}{
 							padding: 0.3rem;
@@ -175,6 +197,7 @@ vtr-ui-smart-performance-scan-summary {
 						display: inline-block;
 						cursor: pointer;
 						padding: 0.4rem 2.5rem;
+						margin: 0 0.2rem;
 					}
 				}
 			}
@@ -202,22 +225,38 @@ vtr-ui-smart-performance-scan-summary {
 					width: calc(33.33% - 0.5rem);
 				}
 				h5 {
-					font-size: 1.8rem;
+					font-size: $fontsize_md;
 					font-weight: $weight_bold;
 					margin-bottom: 0;
+					word-break: break-all;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					height:6rem;
 					@media #{$breakpoint_xl}{
-						font-size: 1.6rem;
+						font-size: $fontsize_sm;
+						height:6rem;
 					}
 					@media #{$breakpoint_md}{
-						font-size: 1.6rem;
+						font-size:$fontsize_xs;						
+						height:5rem;
 					}
 					@media #{$breakpoint_sm}{
-						font-size: 1.4rem;
+						font-size:$fontsize_xs;						
+						height:5rem;
+						display: inline-block;
+						max-width: 85%;
 					}
 				}
 				.value {
 					font-size: 5rem;
 					font-weight: $weight_bold;
+					width: 95%;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					margin: auto;
+					text-align: center;
+					display: block !important;
 					@media #{$breakpoint_xl}{
 						font-size: 3.2rem;
 					}
@@ -257,6 +296,7 @@ vtr-ui-smart-performance-scan-summary {
 					color: $main;
 					font-size: 4rem;
 					line-height: 1;
+					margin-left:0.5rem;
 					@media #{$breakpoint_xl}{
 						font-size: 3.5rem;
 					}
@@ -348,6 +388,12 @@ vtr-ui-smart-performance-scan-summary {
 								color: $main;
 								padding-right: 1rem;
 							}
+							.text{
+								overflow: hidden;
+								text-overflow: ellipsis;
+								max-width: 100%;
+								white-space: nowrap;
+							}
 						}
 						.scan-item-value {
 							font-size: 1.2rem;
@@ -363,6 +409,15 @@ vtr-ui-smart-performance-scan-summary {
 								&.red-icon {
 									color: $stop;
 								}
+							}
+						}
+						.fixes {
+							@media #{$breakpoint_sm}{
+								max-width: 7rem;
+								display: inline-block;
+								text-overflow: ellipsis;
+								overflow-x: hidden;
+								padding: 0;
 							}
 						}
 					}
@@ -441,17 +496,28 @@ vtr-ui-smart-performance-scan-summary {
 								top:5.5rem;
 							}
 						}
-                        .heading {
+                        .heading {	
+							max-width:60%;
+							width:60%;	
+							text-align:left;
+							word-break:break-all;		
                             h3, h2{
-                                font-size: $fontsize_md;
+								text-align: left;
+								font-size: $fontsize_sm;
 								color: $main_shade !important;
 								letter-spacing: 0;
 								font-weight: $weight_bold;
-								@media #{$breakpoint_sm}{
-									font-size: 1.7rem;
-									letter-spacing: -0.02rem;
-									margin-bottom: 0;
+								@media #{$breakpoint_lg}{				
+									font-size: $fontsize_xs!important;;
+								}	
+								@media #{$breakpoint_md}{				
+									font-size: $fontsize_xs2!important;
 								}
+								 @media #{$breakpoint_sm}{
+								 	font-size: 1.1rem!important;;
+								 	letter-spacing: -0.02rem;
+								 	margin-bottom: 0;
+								 }
                             }
                             .icon{
 								color: $menu_hover;
@@ -481,11 +547,11 @@ vtr-ui-smart-performance-scan-summary {
 										height: 5rem;
 										@media #{$breakpoint_xl}{
 											padding: 0.5rem 0.2rem;
-											height: 4.5rem;
+											height: 5rem;
 										}
 										@media #{$breakpoint_sm}{
 											padding: 0.5rem 0.2rem;
-											height: 3.5rem;
+											height: 5rem;
 										}
 										&.active {
                                             background-color: transparent;
@@ -511,11 +577,15 @@ vtr-ui-smart-performance-scan-summary {
                                     max-width: 8.1rem;
                                     margin-top: 0.6rem;
 									line-height: 1.2rem;
+									white-space:nowrap;
+									overflow: hidden;
+									text-overflow: ellipsis;																	
 									@media #{$breakpoint_sm}{
-										font-size: 0.8rem;
-										line-height: 1.2rem;
+										font-size:1rem;
+										line-height: 1rem;
 										max-width: 100%;
-										margin-top: 0;
+										margin-top: 0;								
+																				
 									}
                                 }
                                 .icon {
@@ -535,10 +605,12 @@ vtr-ui-smart-performance-scan-summary {
                             }
                             .scanned-list {
                                 list-style-type: none;
-                                padding: 0;
+								padding: 0;
+								margin-bottom: 0rem;
                                 .list-item {
                                     p{
-                                        font-size: 1.4rem;
+										font-size: 1.4rem;
+										overflow: hidden;
                                     }
 									fa-icon {
 										font-size: 1.4rem;
@@ -550,9 +622,11 @@ vtr-ui-smart-performance-scan-summary {
                         }
                     }
                     .status-text{
-						margin-top: 2.2rem;
+						margin-top: 2rem!important;
+						width:36%;
+						max-width:36%;
 						@media #{$breakpoint_sm}{
-							margin-top: 0rem;
+							margin-top: 1.25rem;
 						}
                         p {
                             text-transform: uppercase;
@@ -561,11 +635,28 @@ vtr-ui-smart-performance-scan-summary {
 							color: $shade_dark;
 							right: 5rem;
 							padding-right:2rem;
-							letter-spacing: 0;
-							@media #{$breakpoint_sm}{
-								margin-top: 1rem;
+							letter-spacing: 0;							
+							word-break:break-all;
+							@media #{$breakpoint_lg}{
+								right: 1.5rem;					
+								font-size: $fontsize_xs;
+								top: 36%;
 							}
-							// top: 40%;
+							@media #{$breakpoint_md}{
+								top: 36%;								
+								right: 1.5rem;								
+								font-size: $fontsize_xs2;
+							}
+							@media #{$breakpoint_xl}{
+								right: 1.5rem;					
+								font-size: $fontsize_xs2;
+								top: 36%;
+							}
+							@media #{$breakpoint_sm}{
+								top: 32.5%;
+								right: 1.5rem;								
+								font-size: 1.1rem;
+							}
 						}
 						vtr-widget-speedometer {
 							position: absolute;
@@ -646,15 +737,18 @@ vtr-ui-smart-performance-scan-summary {
 		@media #{$breakpoint_xl}{
 			padding: 0 2.4rem;
 		}
+		.hero-text{
+			max-width: 80%;
+		}
 		h1 {
 			color: $light;
 			font-size: 3.4rem;
 			font-weight: $weight_light;
 			@media #{$breakpoint_xl}{
-				font-size: 2.4rem;
+				font-size: 2.2rem;
 			}
 			@media #{$breakpoint_sm}{
-				font-size: 2.2rem;
+				font-size: 2rem;
 			}
 		}
 		h3 {
@@ -665,18 +759,20 @@ vtr-ui-smart-performance-scan-summary {
 			font-weight: $weight_regular;
 			@media #{$breakpoint_sm}{
 				font-size: 1.4rem;
+				line-height: auto;
 			}
 		}
 		.icomoon {
 			color: #7D5FEF;
 			font-size: 10rem;
 			margin-bottom: -4.5rem;
+			max-width: 20%;
 			@media #{$breakpoint_xl}{
 				font-size: 9rem;
 			}
 			@media #{$breakpoint_sm}{
-				font-size: 7rem;
-				margin-top: 1rem;
+				font-size: 6rem;
+				margin-top: 2rem;
 			}
 		}
 		.action-button {
@@ -692,6 +788,13 @@ vtr-ui-smart-performance-scan-summary {
 			text-align: center;
 			border: 0rem;
 			cursor: pointer;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			@media #{$breakpoint_sm}{
+				font-size: 1.2rem;
+				padding:0rem 2.5rem;					
+			}
 		}
 		.disabled-button{
 			border-radius: 2.5rem;
@@ -722,6 +825,9 @@ vtr-ui-smart-performance-scan-summary {
 			font-weight: $weight_regular;
 			font-size: 2.2rem !important;
 			opacity: 1 !important;
+			@media #{$breakpoint_sm}{
+				font-size:$fontsize_sm!important;
+			}
 		}
 		.slider {
 			width: calc(100% - 1rem);
@@ -847,7 +953,17 @@ vtr-ui-smart-performance-scan-summary {
 			}
 			.pc-status-info{
 				margin-top: 2rem;
-				.info-text{
+				.needs-tune-up{				
+					span{
+						background:#252a3f!important;					
+					}		
+				}
+				.running-well{				
+					span{
+						background:#2a2f43!important;					
+					}
+				}
+				.info-text{					
 					color: $alt;
 					margin-top: 1.8rem;
 					margin-bottom: 0rem;
@@ -861,6 +977,8 @@ vtr-ui-smart-performance-scan-summary {
 						width: calc(60.5% - 2rem);
 					}
 					span{
+						//background:#2a2f43!important;
+						padding:0rem 0.2rem;
 						position: relative;
 						z-index: 9;
 					}
@@ -929,6 +1047,24 @@ vtr-ui-smart-performance-scan-summary {
 	}
 	.summary-block{
 		padding: 2.4rem 2.4rem 0;
+		.col-auto-1{
+			flex:0 0 auto;
+			width:auto;
+			max-width:48%;	
+			@media #{$breakpoint_md}{				
+				width:auto;
+				max-width:65%!important;
+			}
+			@media #{$mediaquery_X8}{				
+				width:auto;
+				max-width:100%;
+			}
+			@media only screen and (min-width: 1200px){				
+				width:100%;
+				max-width:100%!important;
+			}	
+					
+		}
 		.title-big{
 			font-size: 3.5rem;
 			font-weight: $weight_light;
@@ -951,6 +1087,15 @@ vtr-ui-smart-performance-scan-summary {
 				flex-direction: column;
 			}
 		}
+
+		::ng-deep .tooltip-inner {
+			@include tt-inner()
+		}
+
+		::ng-deep .arrow::before {
+				@include arrow-before()
+		}
+		
 		.action-button {
 			border-radius: 2.5rem;
 			background: $gradient_main;
@@ -1000,26 +1145,35 @@ vtr-ui-smart-performance-scan-summary {
 				font-size: 1.6rem;
 				line-height: 1.8rem;
 				// width: auto;
-				margin: 0.5rem 1rem;
+				padding-left:0.5rem;				
 				// min-width: 11.5rem;
-
+				
 				&.desc1 {
 					border-right: 0.1rem solid $shade_lighter;
 					// width: 30%;
-					// max-width: 13rem;
+					// max-width: 13rem;					
+					margin: 0.5rem 0.5rem 0.5rem 1rem;
 				}
+				
 
-				&.desc2 {
-					margin-left: 0rem;
-					margin-right: 0rem;
-				}
+				&.desc2 {					
+					margin: 0.5rem 0rem 0rem 0.5rem;
+					word-break:break-all!important;
+					}
 
-				b {
+				b {					
 					font-size: $fontsize_xs2;
 					font-weight: $weight_bold;
-
 					@media #{$breakpoint_xl} {
 						font-size: 1.1rem;
+					}
+					@media #{$breakpoint_md} {
+						font-size: 1.1rem;
+						max-width: 13.5rem;
+						white-space: nowrap;
+						text-overflow: ellipsis;
+						overflow-x: hidden;
+						display: inline-block;
 					}
 				}
 			}
@@ -1449,6 +1603,12 @@ vtr-ui-smart-performance-scan-summary {
 			color: $grey_dark;
 			padding-left: 1.6rem;
 			margin-bottom: 0;
+			white-space:no-wrap;
+			overflow:hidden;
+			text-overflow:ellipsis;
+			@media #{$breakpoint_sm}{
+				font-size: 1.1rem;
+			}
 		}
 	}
 	.status{
@@ -1513,6 +1673,14 @@ vtr-ui-smart-performance-scan-summary {
 		font-size: $fontsize_xs;
 		font-weight: $weight_light;
 	}
+
+	::ng-deep .tooltip-inner {
+		@include tt-inner()
+	}
+	::ng-deep .arrow::before {
+		@include arrow-before()
+	}
+	
 	.feedback-btn {
 		padding: 0 2.5rem;
 		position: relative;

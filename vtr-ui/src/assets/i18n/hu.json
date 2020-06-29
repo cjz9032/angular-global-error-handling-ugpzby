@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Termál mód beállítása",
                     "thermalMode2SettingDesc": "Válassza ki a használni kívánt módot.",
                     "fnQDesc": "Másik módra az Fn+Q paranccsal válthat.",
-                    "perormanceTitle": "Teljesítményközpontú mód",
+                    "performanceTitle": "Teljesítményközpontú mód",
                     "performanceDesc": "Számítógépe teljesítményének növelése nagyobb ventilátorsebességgel és energiafogyasztással. ",
                     "OCDesc": "Úgy is dönthet, hogy bekapcsolja a Túlpörgetés funkciót.",
                     "ac_dcDesc": "A Teljesítmény mód csak akkor alkalmazható, ha a hálózati adapter csatlakoztatva van.",
@@ -155,6 +155,8 @@
                         "cpuOCName79": "Gyorsítótár feszültségének eltolása",
                         "cpuOCName122": "7 magos arány",
                         "cpuOCName123": "8 magos arány",
+                        "cpuOCName124": "9 magos arány",
+                        "cpuOCName125": "10 magos arány",
                         "cpuOCName102": "ICCMAX mag",
                         "cpuOCName106": "ICCMAX gyorsítótár",
                         "cpuOCName114": "AVX arány eltolása"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "A végleges feszültségtolás, amelyet a gyorsítótár feszültségére alkalmaznak.",
                         "cpuOCTip122": "Állítsa be a maximális magszorzó értékét, amelyen a magok működőképesek. A magfrekvencia értéke ennek az aránynak és a referencia órajel frekvenciának a szorzata.",
                         "cpuOCTip123": "Állítsa be a maximális magszorzó értékét, amelyen a magok működőképesek. A magfrekvencia értéke ennek az aránynak és a referencia órajel frekvenciának a szorzata.",
+                        "cpuOCTip124": "Állítsa be a maximális magszorzó értékét, amelyen a magok működőképesek. A magfrekvencia értéke ennek az aránynak és a referencia órajel frekvenciának a szorzata.",
+                        "cpuOCTip125": "Állítsa be a maximális magszorzó értékét, amelyen a magok működőképesek. A magfrekvencia értéke ennek az aránynak és a referencia órajel frekvenciának a szorzata.",
                         "cpuOCTip102": "Állítsa be az ICCMAX-ot a processzor magfeszültség-szabályozójához.",
                         "cpuOCTip106": "Állítsa be az ICCMAX-ot a processzor gyorsítótárának és gyűrűs buszának feszültségszabályozójához.",
                         "cpuOCTip114": "Az effektív aktív magarány korlátjának meghatározásához az AVX aktív állapotában vonja le ezt az értéket a megfelelő aktív magarány korlátjából."
@@ -729,7 +733,7 @@
                 "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
-                "name11": "Legion front Fan Lighting",
+                "name11": "Legion Front Fan Lighting",
                 "name12": "Legion Top Fan Lighting"
             },
             "lightingEffect": {
@@ -1067,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "Az akkumulátor élettartamának meghosszabbítása érdekében optimalizáltuk az akkumulátor teljes töltési kapacitását a használati séma alapján. Előfordulhat, hogy a teljes akkumulátorkapacitás csak azután áll rendelkezésre, hogy az akkumulátor 20%-ra lemerült és feltöltődött.",
-                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
+                    "moreInfo": "További információkért kattintson <a role=\"link\" href=\"#/device/high-density-battery\" tabindex=\"0\">ide</a>."
                 },
                 "condition": {
                     "Illegal": "A telepített akkumulátort a rendszer <b>nem támogatja</b> és nem tölti fel. Cserélje ki az akkumulátort egy a rendszerhez megfelelő Lenovo akkumulátorra.",
@@ -1097,13 +1101,13 @@
                     "NotDetected": "<b>Az elsődleges akkumulátor nem észlelhető.</b>"
                 },
                 "highDensityBattery": {
-                    "title": "High density battery",
-                    "subtitle": "How your battey works",
-                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "title": "Nagy sűrűségű akkumulátor",
+                    "subtitle": "Hogyan működik az akkumulátor?",
+                    "para1": "Az akkumulátor élettartamának növelése érdekében a rendszer az Ön használati szokásainak megfelelően automatikusan beállítja a töltési feszültséget és a kapacitást.",
                     "para2": {
-                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
-                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
-                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                        "item1": "- Ha legalább egy hétig az akkumulátor kapacitásának kevesebb mint 65%-át használja fel, akkor az akkumulátor átmenetileg csökkenti a töltési feszültséget és a kapacitást. A kapacitáscsökkenés nem jelentős, és az Ön használati szokásai mellett nem észrevehető.",
+                        "item2": "- Ha az akkumulátort 20% alá meríti, majd teljesen feltölti, a rendszer helyreállítja a teljes kapacitást.",
+                        "item3": "- Ezenfelül ha legalább 2 hétig az akkumulátor kapacitásának kevesebb mint 10%-át használja fel, elképzelhető, hogy az akkumulátor átmenetileg tovább csökkenti a töltési feszültséget és a kapacitást, addig, amíg Ön legalább a csökkentett kapacitás 50%-át el nem használja."
                     }
                 }
             },
@@ -1271,7 +1275,8 @@
                             "description1": "Az egyéni akkumulátortöltés használatával megnövelhető az akkumulátor eszközhasználat közbeni élettartama.Ha azonban nem tölti fel teljesen az akkumulátort, az üzemidő rövidebb lesz.",
                             "description2": "A funkció teljes kihasználásához válassza le a gépet az elektromos hálózatról,és hagyja, hogy az akkumulátor teljesen vagy a töltésleállítási küszöbérték alá merüljön le.",
                             "enable": "ENGEDÉLYEZÉS",
-                            "cancel": "MÉGSE"
+                            "cancel": "MÉGSE",
+                            "description3": "Az akkumulátor az Ön használati szokásainak megfelelően automatikusan beállítja a töltési feszültséget és a kapacitást. Ha nem sokat használja az akkumulátort, nem kell engedélyeznie az Akkumulátortöltési küszöbértéket."
                         },
                         "options": {
                             "start": "Töltés kezdete ilyen érték alatt",
@@ -1297,7 +1302,7 @@
                         "title": "Repülőgépes energiaséma",
                         "description": "Ez a funkció lehetővé teszi a szabványos elektromos csatlakozó használatát az olyan repülőgépeken, ahol bizonyos teljesítménykorlátozások érvényesek. Ebben az üzemmódban a számítógép az akkumulátortöltési sebesség és a rendszerteljesítémény korlátozásával biztonságos szintre csökkenti az energiafogyasztását.",
                         "checkBoxDesc": "Automatikus észlelés",
-                        "note": "Az automatikus észlelés bejelölésekor a számítógép automatikusan bekapcsolja a Repülőgépes energiamódot, amikor egy repülőgép fedélzeti környezetét észleli, és kikapcsolja, amikor Ön távozik onnan."
+                        "note": "Az automatikus észlelés bejelölésekor a számítógép automatikusan bekapcsolja a Repülőgépes energiasémát, amikor egy repülőgép fedélzeti környezetét észleli, és kikapcsolja, amikor Ön távozik onnan."
                     },
                     "gaugeReset": {
                         "title": "Akkumulátormérő nullázása",
@@ -1552,7 +1557,7 @@
                     },
                     "optimize": {
                         "title": "Mikrofon optimalizálása:",
-                        "tooltip": "A mikrofoneffektus konfigurálása úgy, hogy javítsa a hangzást különböző körülmények között, illetve különböző környezetekben.",
+                        "tooltip": "A mikrofoneffektus konfigurálása úgy, hogy javítsa a hangzást különböző körülmények között, valamint különböző környezetekben.",
                         "options": {
                             "VoiceRecognition": "HANGFELISMERÉS",
                             "OnlyMyVoice": "CSAK A SAJÁT HANGOM",
@@ -1590,19 +1595,19 @@
                     },
                     "eyeCareMode": {
                         "title": "Szemvédő mód",
-                        "checkbox": "Ütemezze a naplemente és napkelte közötti időszakra a szemvédő módot",
+                        "checkbox": "Szemvédő mód ütemezése a naplemente és a napkelte közötti időszakra",
                         "options": {
                             "warm": "Meleg (jobb a szemnek)",
                             "cold": "Hideg"
                         },
                         "reset": "Visszaállítás",
                         "tooltip": "A Szemvédő mód úgy módosítja a képernyő színhőmérsékletét, hogy kiszűrje a kék fényt és csökkentse a szem terhelését.",
-                        "onSunsetToSunriseScheduleDescription": "Ütemezze a naplemente és napkelte közötti időszakra a szemvédő módot",
+                        "onSunsetToSunriseScheduleDescription": "Szemvédő mód ütemezése a naplemente és a napkelte közötti időszakra",
                         "note": {
                             "title": "Megjegyzés",
                             "description": "A napnyugta és a napkelte idejének kiszámításához a Lenovo Vantage-nek hozzá kell férnie a helyadatokhoz."
                         },
-                        "tips": "Kérjük, futtassa a Windows Update szolgáltatást, vagy telepítse manuálisan a grafikus illesztőprogramot a Szemvédő mód helyreállításához"
+                        "tips": "Futtassa a Windows Update szolgáltatást, vagy telepítse manuálisan a grafikus illesztőprogramot a Szemvédő mód helyreállításához."
                     },
                     "dispColorTemp": {
                         "title": "A képernyő színhőmérséklete",
@@ -1612,7 +1617,7 @@
                         },
                         "reset": "Visszaállítás",
                         "tooltip": "A Szemvédő mód úgy módosítja a képernyő színhőmérsékletét, hogy kiszűrje a kék fényt és csökkentse a szem terhelését.",
-                        "onSunsetToSunriseScheduleDescription": "Ütemezze a naplemente és napkelte közötti időszakra a szemvédő módot",
+                        "onSunsetToSunriseScheduleDescription": "Szemvédő mód ütemezése a naplemente és a napkelte közötti időszakra",
                         "note": {
                             "title": "Megjegyzés",
                             "description": "Ha a Szemvédő mód engedélyezve van, ez a színhőmérséklet nem lép érvénybe. A csúszkát azonban elhúzhatja az előnézet megtekintéséhez. Ahhoz, hogy ez érvénybe lépjen, kapcsolja ki a Szemvédő módot."
@@ -1668,7 +1673,9 @@
                     "cameraPrivacy": {
                         "title": "Kamera privát üzemmódja",
                         "tooltip": "A Privát beállítás engedélyezése esetén a kamera nem küld élőképeket. Akkor használja a beállítást, ha nem szeretne képeket megosztani másokkal videohívás közben.",
-                        "cameraPrivacyAccessNote": "Lépjen <b>A Windows beállításai → Adatvédelem → Kamera</b> oldalra, és ellenőrizze, hogy a következő két beállítás engedélyezve van-e:<br>&bull; <b>A kamera elérésének engedélyezése az asztali alkalmazások számára</b><br>&bull; <b>Lenovo Vantage</b> a következő menüpontban: „Válassza ki, hogy mely (Microsoft Store) alkalmazások kapnak hozzáférést a kamerához”"
+                        "cameraPrivacyAccessNote": "Lépjen <b>A Windows beállításai → Adatvédelem → Kamera</b> oldalra, és ellenőrizze, hogy a következő két beállítás engedélyezve van-e:<br>&bull; <b>A kamera elérésének engedélyezése az asztali alkalmazások számára</b><br>&bull; <b>Lenovo Vantage</b> a következő menüpontban: „Válassza ki, hogy mely (Microsoft Store) alkalmazások kapnak hozzáférést a kamerához”",
+                        "noPermissionNote": "A Lenovo Vantage nem kapott hozzáférést a kamerához, vagy „A kamera elérésének engedélyezése az asztali alkalmazások számára” váltókapcsoló nincs engedélyezett értékre kapcsolva.",
+                        "accessUrl": "A Windows beállításaiban adhatja meg a hozzáférést"
                     },
                     "camera": {
                         "title": "Kamera",
@@ -1759,10 +1766,11 @@
                             "note": "Ha kétszer nyomja meg az Fn billentyűt, akkor az Fn billentyű lenyomott helyzetben marad, amíg ismét meg nem nyomja. Az Fn billentyű rögzítésekor az Fn zárolás jelzése bekapcsol. A nem alapértelmezett funkció használatához nyomja meg közvetlenül a kívánt funkcióbillentyűt."
                         },
                         "popup": {
-                            "title": "A számítógép újraindítása",
+                            "title": "Számítógép újraindítása",
                             "description": "Az alapértelmezett felső sor funkciója módosításának érvénybe léptetéséhez újra kell indítania a számítógépet. Biztosan újraindítja?",
                             "reboot": "ÚJRAINDÍTÁS",
-                            "cancel": "NE MOST"
+                            "cancel": "NE MOST",
+                            "yes": "IGEN"
                         },
                         "note": {
                             "sFunKey": "Az F1–F12 funkcióbillentyűk funkcióit az Fn és a fenti soron lévő billentyűk megnyomásával érheti el.",
@@ -1785,10 +1793,10 @@
                 },
                 "userDefinedKey": {
                     "title": "Felhasználó által megadott billentyű",
-                    "caption": "A csillag ikonnal rendelkező billentyűhöz tetszőleges funkciót rendelhet a felhasználó",
+                    "caption": "A csillag ikonnal rendelkező billentyűhöz a felhasználó tetszőleges funkciót rendelhet.",
                     "dropDown": {
                         "title": "Felhasználó által megadott billentyűhöz tartozó művelet",
-                        "note": "Megjegyzés: Itt adhat meg általánosan megadott kulcsot, pl. e-mail-címet vagy levelezési címet. A Lenovo azt javasolja, hogy soha ne adjon meg itt jelszavakat vagy bizalmas adatokat.",
+                        "note": "Megjegyzés: Itt adhat meg általánosan megadott kulcsot, pl. e-mail-címet vagy levelezési címet. Ne használja ezt a funkciót jelszavak vagy más személyes adatok tárolására.",
                         "options": {
                             "option1": "Válasszon",
                             "option2": "Nyissa meg a webhelyet",
@@ -1826,8 +1834,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "Az Fn és a Ctrl billentyű felcserélése",
-                    "description": "Ha rendszeresen az Fn billentyűt nyomja le, amikor a Ctrl billentyűt szeretné lenyomni, felcserélheti a két billentyű funkcióját.",
-                    "restartNote": "A két billentyű funkciójának felcseréléséhez újra kell indítania a számítógépet. Biztosan újraindítja?",
+                    "description": "Ha rendszeresen az Fn billentyűt nyomja le, amikor a Ctrl billentyűt szeretné lenyomni, megcserélheti a két billentyű funkcióját.",
+                    "restartNote": "Ahhoz, hogy két billentyű funkciójának kicserélése életbe lépjen, újra kell indítania a számítógépet. Biztosan újraindítja?",
                     "title2": "Az Fn a Ctrl billentyűként működik a gyakori billentyűkombinációk esetében",
                     "description2": "Az Fn a Ctrl billentyűként működik bizonyos gyakran használt billentyűkombinációk esetében. A Ctrl billentyű funkciója nem módosul.",
                     "featureNote": "Ez a funkció, valamint az Fn és a Ctrl billentyű felcserélése funkció nem lehet egyszerre bekapcsolva. Ha az egyik be van kapcsolva, akkor a másik automatikusan kikapcsol.",
@@ -2127,9 +2135,10 @@
                 "title": "Intelligens mozgásérzékeléses riasztás",
                 "tooltip": "<div id='antiTheft-tooltips'>Ez a funkció nem működik, ha a számítógép hibernált módban van, és amikor ki van kapcsolva. Ellenőrizze a következő műveletekhez tartozó beállításokat:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>a képernyő lehajtása</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>kritikus/alacsony akkumulátortöltöttség</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>főkapcsoló használata</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>alvás gomb használata</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>tétlenségi miatti időtúllépés beállításai (hibernálás)</li></ul></div>Ellenkező esetben a gép nem fog riasztást aktiválni, sem fényképeket készíteni.</div>",
                 "desc1": "Ha bekapcsolja ezt a funkciót, az eszköz sípoló riasztást ad ki, amikor a képernyő zárolva van, és mozgást észlel a közelében. Ez különösen nyilvános helyeken lehet hasznos.",
-                "desc2": "A riasztás némításához jelentkezzen be a Windows rendszerbe.",
+                "desc2": "Jelentkezzen be a Windows rendszerbe, és a riasztás automatikusan kikapcsol. A funkció használatához ismét engedélyeznie kell.",
                 "note": {
-                    "description": "Ha sikerült bejelentkeznie a rendszerbe, a funkció automatikusan kikapcsol. Ha szeretné ismét használni, Önnek újra be kell kapcsolnia."
+                    "descriptionTitle": "Figyelem:",
+                    "description": "Állítson be valamilyen érvényes bejelentkezési lehetőséget, például jelszót vagy PIN-kódot a Windows rendszerbe való bejelentkezéshez. Ha ezt nem teszi meg, az Intelligens mozgásérzékeléses riasztás funkciót a számítógéphez hozzáférő bármely jogosulatlan felhasználó kikapcsolhatja."
                 },
                 "alarm": {
                     "title": " A RIASZTÁS ENNYI IDEIG SZÓL:",
@@ -2141,7 +2150,7 @@
                 },
                 "allowCamera": {
                     "title": "FÉNYKÉP KÉSZÍTÉSE",
-                    "describe": "Ha bekapcsolja ezt a funkciót, a fényképezőgép automatikusan fényképeket készít, amikor a rendszer zárolt képernyő mellett mozgást észlel a közelben. Ezeket az adatokat helyben dolgozza fel az eszköz. A Lenovo nem fér hozzájuk, és nem használja fel őket.",
+                    "describe": "Ha bekapcsolja ezt a funkciót, a fényképezőgép automatikusan fényképeket készít, amikor a rendszer zárolt képernyő mellett mozgást észlel a közelben. Ezeket az adatokat helyben dolgozza fel az eszköz. A Lenovo nem fér hozzájuk, és nem használja fel őket. Ne felejtse el kikapcsolni a kamerafedelet, hogy a kamera biztosan el tudja készíteni a fényképeket a riasztás során.",
                     "checkBoxText": "A funkció engedélyezése"
                 },
                 "cameraPrivacy": {
@@ -2251,9 +2260,6 @@
         },
         "support": {
             "title": "A Lenovo támogatási weboldala"
-        },
-        "security": {
-            "title": "For a better protection for your device"
         },
         "banner": {
             "neverChecked": "Üdvözöljük a Rendszerfrissítés szolgáltatásban!",
@@ -3111,7 +3117,9 @@
                 "yes": "Igen",
                 "no": "Nem"
             },
-            "waitAvailability": "A gomb le van tiltva, ha a tárolóeszközök nem támogatják ezt a funkciót a hardverinformáció betöltése közben, vagy ha vizsgálat van folyamatban."
+            "waitAvailability": "A gomb le van tiltva, ha a tárolóeszközök nem támogatják ezt a funkciót a hardverinformáció betöltése közben, vagy ha vizsgálat van folyamatban.",
+            "executingTitle": "Helyreállítás folyamatban...",
+            "recoverCompleted": "Helyreállítás kész"
         },
         "support": {
             "title": "Professzionális diagnosztikai eszközök letöltése",
@@ -3159,7 +3167,19 @@
             "suggestedActionSupport": "Ha a számítógép még garanciás, kattintson a <b>Jegy létrehozása</b> lehetőségre, és igényeljen pótalkatrészt. További információkért látogasson el a Lenovo támogatási webhelyére.",
             "supportButtonText": "Jegy létrehozása",
             "recoverBadSectorsButtonText": "Hibás szektorok helyreállítása"
-        }
+        },
+        "scanFinishedHeader": {
+            "titleSuccess": "A vizsgálat befejeződött. Az Ön készüléke sikeresen teljesítette az összes tesztet.",
+            "titleErrorPlural": "A vizsgálat befejeződött. Az Ön készüléke {{numberTestsFailed}} teszten megbukott.",
+            "titleErrorSingular": "A vizsgálat befejeződött. Az Ön készüléke 1 teszten megbukott.",
+            "frcSuccessDescription": "Ez a végső eredménykód azt jelzi, hogy nincs probléma a vizsgálattal. Nem jelez problémát, ha valamelyik teszt után figyelmeztetés vagy nem megfelelő üzenet jelenik meg. Ha a Lenovo-támogatás szakembere kérte a teszt futtatását, akkor a kódot igazolásként használhatja. Ebben az esetben nincs teendője. Ha továbbra is úgy érzi, hogy valamilyen hiba áll fenn, lépjen kapcsolatba a Lenovo-támogatással.",
+            "frcFailureDescription": "Ez a végső eredménykód azt jelzi, hogy a vizsgálat során probléma merült fel.",
+            "lenovoSupportInstruction": "Nyisson egy ellenőrzési jegyet a végső eredménykód segítségével a Lenovo-támogatásban.",
+            "finalResultCodeLabel": "Végső eredménykód: ",
+            "scanAgainButtonText": "Vizsgálat megismétlése",
+            "supportButtonText": "Lenovo-támogatás"
+        },
+        "executingScanTitle": "{{title}} vizsgálata..."
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3284,7 +3304,8 @@
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+            "processStatus": "FELDOLGOZÁS"
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3308,6 +3329,8 @@
             "fri": "Friday",
             "sat": "Saturday",
             "sun": "Sunday",
+            "am": "de.",
+            "pm": "du.",
             "tooltipText": "Enable this toggle to automatically initiate a system performance scan on your selected date and time."
         },
         "scanningPage": {
@@ -3769,7 +3792,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",
@@ -3819,7 +3843,9 @@
         },
         "auto": "Auto",
         "manual": "Manual",
-        "noScanResults": "Please click SCAN & FIX button to trigger scan process."
+        "noScanResults": "Please click SCAN & FIX button to trigger scan process.",
+        "am": "DÉLE",
+        "pm": "DÉLU"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

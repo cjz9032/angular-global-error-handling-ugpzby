@@ -11,6 +11,22 @@
 		<p id="ds-{{id}}popup-description2"
 			role="heading"
 			[innerHTML]="description2 | translate"></p>
+
+		<div class="row"
+			*ngIf="id==='threshold' && batteryService.isDlsPiCapable">
+			<div class="col">
+				<div class="note-box">
+					<div class="note"
+						id="threshold-dls-pi-mode"
+						role="note">
+						{{'device.deviceSettings.power.batterySettings.batteryThreshold.popup.description3' | translate}}
+						<p id=""
+							role="text"
+							[innerHtml]="'device.deviceSettings.batteryGauge.details.moreInfo' | translate"></p>
+					</div>
+				</div>
+			</div>
+		</div>
 		<hr aria-hidden="true">
 		<div class="row">
 			<button id="battery-{{id}}-popup-{{buttonId | lowercase}}"
@@ -22,7 +38,6 @@
 				<span class="text-ellipsis">{{positiveResponseText | translate}}</span>
 			</button>
 			<a id="battery-{{id}}-popup-cancel"
-				href="javascript:void();"
 				attr.aria-label="battery-threshold-popup-cancel"
 				role="button"
 				tabindex="0"

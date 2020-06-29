@@ -8,22 +8,34 @@
 	letter-spacing: 0;
 	padding: 2.4rem;
 
+	@media #{$white-on-black} {
+		border: 0.1rem solid $light;
+		background: $dark;
+	}
+	@media #{$black-on-white} {
+		border: 0.1rem solid $dark;
+		background: $light;
+	}
+
 	&.in-warranty {
 		background-image: url("~/assets/images/warranty-bg.png"),
 			linear-gradient(to left bottom, #4980fc, #2e62d9);
 		background-size: cover;
+		@include high-contrast-background-image;
 	}
 
 	&.expired {
 		background-image: url("~/assets/images/warranty-bg.png"),
 			linear-gradient(to left top, $stop_light, $stop_dark);
 		background-size: cover;
+		@include high-contrast-background-image;
 	}
 
 	&.not-found {
 		background-image: url("~/assets/images/warranty-bg.png"),
 			linear-gradient(to left bottom, #e2e4e5, #e4e4e1);
 		color: $blue-dark;
+		@include high-contrast-background-image;
 		.sub-description {
 			b {
 				text-transform: lowercase;

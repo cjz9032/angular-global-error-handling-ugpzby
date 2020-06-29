@@ -47,6 +47,11 @@
       opacity: 1;
       visibility: visible;
     }
-  }
+	}
+	.offline-icon-scan-text {
+		position: absolute;
+		line-height: 0;
+		font-size: 0;
+	}
 
 }

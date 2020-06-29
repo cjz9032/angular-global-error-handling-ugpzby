@@ -19,6 +19,7 @@ import { BatteryGaugeReset } from 'src/app/data-models/device/battery-gauge-rese
 import { PowerService } from 'src/app/services/power/power.service';
 import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.model';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
+import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 
 declare var Windows;
 
@@ -61,6 +62,11 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	bctInfoSubscription: Subscription;
 	airplaneModeSubscription: Subscription;
 	expressChargingSubscription: Subscription;
+
+	activatedRouteSubscription: Subscription;
+
+	public readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
+	public readonly metricsType = CommonMetricsModel.ItemType;
 
 	constructor(
 		private modalService: NgbModal,
@@ -162,7 +168,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		// temp
 		this.registerBatteryEvents();
 
-		this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
+		this.activatedRouteSubscription = this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
 			if (params.has('batterydetail')) {
 				const showBatteryDetail = this.activatedRoute.snapshot.queryParams.batterydetail;
 				this.getBatteryDetails(showBatteryDetail);
@@ -202,6 +208,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		}
 		if(this.expressChargingSubscription) {
 			this.expressChargingSubscription.unsubscribe();
+		}
+		if(this.activatedRouteSubscription) {
+			this.activatedRouteSubscription.unsubscribe();
 		}
 		this.batteryService.stopMonitor();
 	}
@@ -338,10 +347,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		if (this.batteryInfo && this.batteryInfo.length > 0) {
 			this.initBatteryInformation();
 			const remainingPercentages = [];
-			const isTemporaryChargeModes = []
 			this.batteryInfo.forEach((info) => {
 				remainingPercentages.push(info.remainingPercent);
-				isTemporaryChargeModes.push(info.isTemporaryChargeMode);
 				if (info.chargeStatus === -1 || info.chargeStatus === -2) {
 					batteryErrorCount = batteryErrorCount + 1;
 				}
@@ -349,7 +356,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			this.batteryHealth = this.batteryInfo[0].batteryHealth;
 			this.batteryService.isAcAttached = this.batteryGauge.isAttached;
 			this.batteryService.remainingPercentages = remainingPercentages;
-			this.batteryService.isTemporaryChargeModes = isTemporaryChargeModes;
+			this.batteryService.isTemporaryChargeMode = this.batteryInfo[0].isTemporaryChargeMode;
+			this.batteryService.isDlsPiCapable = this.batteryInfo[0].isDlsPiCapable;
 		} else {
 			this.batteryIndicator.batteryNotDetected = false;
 		}
@@ -497,6 +505,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	 * @param content: battery Information
 	 */
 	public showDetailModal(content: any): void {
+		this.batteryService.currentOpenModal = 'battery-details';
 		if(!this.batteryService.isBatteryModalShown) {
 			this.batteryService.isBatteryModalShown = true;
 			this.modalService

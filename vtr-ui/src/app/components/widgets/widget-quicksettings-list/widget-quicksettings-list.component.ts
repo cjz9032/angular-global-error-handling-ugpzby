@@ -418,7 +418,6 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 			});
 		} catch (error) {
 			this.logger.error(`Widget-quicksettingslist-getDolbySettings: get fail; Error message: `, error.message);
-			throw new Error(error.message);
 		} finally {
 			this.checkQuickSettingsVisibility();
 		}
@@ -441,7 +440,6 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 			});
 		} catch (error) {
 			this.logger.error(`Widget-quicksettingslist-getDolbySettings: set fail; Error message: `, error.message);
-			throw new Error(error.message);
 		}
 	}
 

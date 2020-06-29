@@ -84,11 +84,11 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		},
 	];
 	allGamingFeatures = [
-		{ id: 'feature1', label: 'welcometutorial.gaming.gamingFeature1' },
-		{ id: 'feature2', label: 'welcometutorial.gaming.gamingFeature2' },
-		{ id: 'feature3', label: 'welcometutorial.gaming.gamingFeature3' },
-		{ id: 'feature4', label: 'welcometutorial.gaming.gamingFeature4' },
-		{ id: 'feature5', label: 'welcometutorial.gaming.gamingFeature5' },
+		{ id: 'feature1', label: 'welcometutorial.gaming.gamingFeature1', autoid:'tutorial_text_list_description_computer' },
+		{ id: 'feature2', label: 'welcometutorial.gaming.gamingFeature2', autoid:'tutorial_text_list_description_performance' },
+		{ id: 'feature3', label: 'welcometutorial.gaming.gamingFeature3', autoid:'tutorial_text_list_description_lighting' },
+		{ id: 'feature4', label: 'welcometutorial.gaming.gamingFeature4', autoid:'tutorial_text_list_description_network_boost' },
+		{ id: 'feature5', label: 'welcometutorial.gaming.gamingFeature5', autoid:'tutorial_text_list_description_auto_close' },
 	];
 	allCoreFeatures = [
 		{ id: 'bullets1', label: 'welcometutorial.bullets1' },

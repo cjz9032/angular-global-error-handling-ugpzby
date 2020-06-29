@@ -1,4 +1,10 @@
 @import '../../../app.theme.scss';
+.w-60{
+	width:60%;
+	}
+.w-40{
+	width:40%;
+}
 .light-dashline {
 	border-top: 1px solid $screen_light_15;
 }
@@ -363,10 +369,22 @@ vtr-ui-smart-performance-scan-summary {
 						}
                         .heading {
                             h3, h2{
-                                font-size: $fontsize_md;
+								text-align: left;
+								font-size: $fontsize_sm;
 								color: $main_shade !important;
 								letter-spacing: 0;
-								font-weight: $weight_bold;
+								font-weight: $weight_bold;									
+								@media #{$breakpoint_lg}{				
+									font-size: $fontsize_xs;
+								}	
+								@media #{$breakpoint_md}{				
+									font-size: $fontsize_xs2;
+								}	
+								@media #{$breakpoint_sm}{				
+									font-size:1.1rem;
+									letter-spacing: -0.02rem;									
+									margin-bottom: 0;
+								}
                             }
                             .icon{
                                 color: $menu_hover;
@@ -388,11 +406,11 @@ vtr-ui-smart-performance-scan-summary {
 										height: 5rem;
 										@media #{$breakpoint_xl}{
 											padding: 0.5rem 0.2rem;
-											height: 4.5rem;
+											height: 5rem;
 										}
 										@media #{$breakpoint_sm}{
 											padding: 0.5rem 0.2rem;
-											height: 3.5rem;
+											height: 5rem;
 										}
 										&.active {
                                             background-color: transparent;
@@ -412,9 +430,12 @@ vtr-ui-smart-performance-scan-summary {
                                     max-width: 8.1rem;
                                     margin-top: 0.6rem;
 									line-height: 1.6rem;
+									overflow: hidden;
+									text-overflow: ellipsis;
 									@media #{$breakpoint_sm} {
 										font-size: 1rem;
-										line-height: 1rem;
+										line-height: 1rem;										
+										white-space: nowrap;
 									}
                                 }
                                 .icon {
@@ -428,7 +449,8 @@ vtr-ui-smart-performance-scan-summary {
                                 padding: 0;
                                 .list-item {
                                     p{
-                                        font-size: 1.4rem;
+										font-size: 1.4rem;
+										overflow:hidden;
                                     }
                                         fa-icon {
                                             font-size: 1.4rem;
@@ -440,7 +462,10 @@ vtr-ui-smart-performance-scan-summary {
                         }
                     }
                     .status-text{
-                        flex-grow: 8;
+						flex-grow: 8;
+						@media #{$breakpoint_sm}{
+							margin-top: 1.25rem;
+						}
                         p {
                             text-transform: uppercase;
                             font-size: 1.6rem;
@@ -449,6 +474,9 @@ vtr-ui-smart-performance-scan-summary {
 							position: absolute;
 							right: 5rem;
 							letter-spacing: 0;
+							@media #{$breakpoint_sm}{
+								font-size: 1.2rem;
+							}
 							// top: 40%;
 						}
 						vtr-widget-speedometer {
@@ -540,7 +568,8 @@ vtr-ui-smart-performance-scan-summary {
 			line-height: 2;
 			font-weight: $weight_regular;
 			@media #{$breakpoint_sm}{
-				font-size: 1.4rem;
+				font-size: $fontsize_sm;
+				line-height: auto;
 			}
 		}
 		.icon {
@@ -568,6 +597,13 @@ vtr-ui-smart-performance-scan-summary {
 			text-align: center;
 			border: 0rem;
 			cursor: pointer;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			@media #{$breakpoint_sm}{
+				font-size: 1.2rem;
+				padding:0rem 2.5rem;					
+			}
 		}
 	}
 	.performance-slider-block {
@@ -582,6 +618,9 @@ vtr-ui-smart-performance-scan-summary {
 			font-weight: $weight_regular;
 			font-size: 2.2rem !important;
 			opacity: 1 !important;
+			@media #{$breakpoint_sm}{
+				font-size:$fontsize_sm!important;
+			}
 		}
 		.slider {
 			width: calc(100% - 1rem);
@@ -678,6 +717,22 @@ vtr-ui-smart-performance-scan-summary {
 				border-left:1px solid $shade_darkest;
 			}
 		}
+		.pc-status-info{
+			.needs-tune-up{				
+				span{
+					background:#252a3f!important;				
+				}			
+
+			}
+		}
+		.pc-status-info{
+			.running-well{				
+				span{
+					background:#2a2f43!important;					
+				}
+			}
+		}
+
 	}
 	.summary-block{
 		padding: 3rem 3rem 0;
@@ -805,12 +860,37 @@ vtr-ui-smart-performance-scan-summary {
 			line-height: 3rem;
 			font-size: 1.4rem;
 			height: 6rem;
+			.loader {
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+				& > span {
+					display: inline-block;
+					background-color: $shade_extradark;
+					width: 0rem;
+					height: 0rem;
+					border-radius: 50%;
+					margin: 0rem 0.4rem;
+					transform: translate3d(0);
+					animation: bounce 0.6s infinite alternate;
+				}
+				& > span:nth-child(2) {
+					background-color: $shade_darker;
+					animation-delay: 0.2s;
+				}
+				& > span:nth-child(3) {
+					animation-delay: 0.4s;
+				}
+			}
 			.item{
 				strong {
 					font-size: $fontsize_xs;
 					font-weight: $weight_bold;
 					line-height: 3rem;
 					color: $shade_blue;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
 				}
 				&:first-child{
 					.icomoon{
@@ -829,6 +909,9 @@ vtr-ui-smart-performance-scan-summary {
 				cursor: pointer;
 				strong{
 					font-weight: $weight_bold;
+				}
+				.ar-time {
+					margin-left: -0.4rem;
 				}
 				// fa-icon {
 				// 	cursor: pointer;
@@ -1201,3 +1284,11 @@ vtr-ui-smart-performance-scan-summary {
 		width: 102%;
 	}
 }
+
+@keyframes bounce {
+	to {
+	  width: 0.5rem;
+	  height: 0.5rem;
+	  transform: translate3d(0, -0.5rem, 0);
+	}
+  }

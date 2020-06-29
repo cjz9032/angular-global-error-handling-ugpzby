@@ -1,7 +1,7 @@
 <div class="vtr-menu-main">
 	<nav class="navbar navbar-expand-xl pr-0">
 		<div *ngIf="!deviceService.isGaming && !isGamingHome"
-			class="navbar-brand p-0">
+			class="navbar-brand p-0" id="vantage_image_L" role="img">
 			<img class="menu-main-logo"
 				*ngIf="dashboardService.isDashboardDisplayed"
 				[src]="VantageLogo | sanitize : 'resourceUrl'"
@@ -24,7 +24,7 @@
 			</a>
 		</div>
 		<div *ngIf="items.length> 0 && (deviceService.isGaming || loadMenuItem?.hideMenus)"
-			class="navbar-brand pt-0 logo-y">
+			class="navbar-brand pt-0 logo-y" id="vantage_image_Y" role="img">
 
 			<div *ngIf="isGamingHome">
 				<img
@@ -69,6 +69,7 @@
 
 		</div>
 		<a id="menu-main-btn-navbar-toggler"
+			#menuMainNavbarToggler
 			aria-label="menu-main-btn-navbar-toggler"
 			[attr.aria-expanded]="showMenu"
 			class="navbar-toggler"

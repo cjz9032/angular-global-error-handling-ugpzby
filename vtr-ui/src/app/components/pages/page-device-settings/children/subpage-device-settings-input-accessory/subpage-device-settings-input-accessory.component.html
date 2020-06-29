@@ -40,6 +40,7 @@
 													id="keyboardMap-background-image"
 													role="img"
 													aria-label="keyboardMap-background"
+													alt="hidden keyboard functions"
 													automationId="keyboardMap.background-image"
 													[src]="image" />
 												<img *ngIf="additionalCapabilitiesObj.privacy"
@@ -47,29 +48,25 @@
 													id="keyboardMap-privacyIcon-image"
 													role="img"
 													[src]="privacyIcon"
-													aria-hidden="true"
-													 />
+													aria-hidden="true" />
 												<img *ngIf="additionalCapabilitiesObj.backLight"
 													class="keyboard-layer img-preview"
 													[src]="kbdBlIcon"
 													id="keyboardMap-kbdBlIcon-image"
 													role="img"
-													aria-hidden="true"
-													 />
+													aria-hidden="true" />
 												<img *ngIf="additionalCapabilitiesObj.performance"
 													class="keyboard-layer img-preview"
 													id="keyboardMap-merlynIcon-image"
 													role="img"
 													[src]="merlynIcon"
-													aria-hidden="true"
-													 />
+													aria-hidden="true" />
 												<img *ngIf="additionalCapabilitiesObj.magnifier"
 													class="keyboard-layer img-preview"
 													id="keyboardMap-zoomIcon-image"
 													role="img"
 													[src]="zoomIcon"
-													aria-hidden="true"
-													 />
+													aria-hidden="true" />
 											</div>
 										</div>
 									</div>
@@ -94,7 +91,7 @@
 								</vtr-ui-row-switch>
 							</li>
 
-							<li *ngIf="machineType === 1">
+							<li *ngIf="machineType === 1 && fnLockCapability">
 								<vtr-top-row-functions></vtr-top-row-functions>
 							</li>
 							<li *ngIf="machineType === 0 && fnLockCapability">
@@ -223,46 +220,55 @@
 								</vtr-ui-row-switch>
 							</li>
 							<!-- fnCtrlSwap & fnAsCtrl features hidden in 3.2.001 -->
-							<li class="common-li-padding" *ngIf="machineType == 1 && fnCtrlSwapCapability">
+							<li class="common-li-padding"
+								*ngIf="machineType == 1 && fnCtrlSwapCapability">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.inputAccessories.fnCtrlKey.title' | translate"
-									componentName="Fn key and Ctrl key swap "
+									componentName="Fn key and Ctrl key swap"
 									[caption]="'device.deviceSettings.inputAccessories.fnCtrlKey.description' | translate"
-									[leftIcon]="['fal','sync']" [showChildContent]="true" [theme]="'white'"
-									[isSwitchVisible]="true" [isSwitchChecked]="fnCtrlSwapStatus"
+									[leftIcon]="['fal','sync']"
+									[showChildContent]="true"
+									[theme]="'white'"
+									[isSwitchVisible]="true"
+									[isSwitchChecked]="fnCtrlSwapStatus"
 									(rebootToggleOnOff)="fnCtrlKey($event)"
 									[switchId]="'inputAccessories-fnCtrlKey'"
-									[isRebootRequired] ="isRestartRequired">
+									[isRebootRequired]="isRestartRequired">
 									<div class="row">
 										<div class="col-auto pt-3 img-block">
-											<img alt="" src="assets/images/Fn-Ctrl-key.PNG">
+											<img alt="Fn and Ctrl key swap"
+												role="img"
+												src="assets/images/Fn-Ctrl-key.PNG">
 										</div>
 									</div>
 								</vtr-ui-row-switch>
 							</li>
 
-							<li class="common-li-padding" *ngIf="machineType == 1 && fnAsCtrlCapability">
-													<vtr-ui-row-switch
-														[title]="'device.deviceSettings.inputAccessories.fnCtrlKey.title2' | translate"
-														componentName="Fn works as Ctrl for frequently used key combinations"
-														[caption]="'device.deviceSettings.inputAccessories.fnCtrlKey.description2' | translate"
-														[leftIcon]="['fal','sync']"
-														[showChildContent]="true"
-														[theme]="'white'"
-														(toggleOnOff)="setFnAsCtrl($event)"
-														[isSwitchVisible]="true"
-														[isSwitchChecked]="fnAsCtrlStatus"
-														[rightIcon]="['far', 'question-circle']"
-														[fnCtrltoolTip]="true"
-														[tooltipContent]="fnCtrlKeyTooltipContent"
-														[switchId]="'inputAccessories-fnCtrlKey1'">
-														<div class="row">
-															<div class="feature-note note p-4">
-																<p id="fnCtrlKey-featureNote">{{'device.deviceSettings.inputAccessories.fnCtrlKey.featureNote' | translate}}</p>
-															</div>
-														</div>
-													</vtr-ui-row-switch>
-												</li>
+							<li class="common-li-padding"
+								*ngIf="machineType == 1 && fnAsCtrlCapability">
+								<vtr-ui-row-switch
+									[title]="'device.deviceSettings.inputAccessories.fnCtrlKey.title2' | translate"
+									componentName="Fn works as Ctrl for frequently used key combinations"
+									[caption]="'device.deviceSettings.inputAccessories.fnCtrlKey.description2' | translate"
+									[leftIcon]="['fal','sync']"
+									[showChildContent]="true"
+									[theme]="'white'"
+									(toggleOnOff)="setFnAsCtrl($event)"
+									[isSwitchVisible]="true"
+									[isSwitchChecked]="fnAsCtrlStatus"
+									[rightIcon]="['far', 'question-circle']"
+									[fnCtrltoolTip]="true"
+									[tooltipContent]="fnCtrlKeyTooltipContent"
+									[switchId]="'inputAccessories-fnCtrlKey1'">
+									<div class="row">
+										<div class="feature-note note p-4">
+											<p id="fnCtrlKey-featureNote">
+												{{'device.deviceSettings.inputAccessories.fnCtrlKey.featureNote' | translate}}
+											</p>
+										</div>
+									</div>
+								</vtr-ui-row-switch>
+							</li>
 
 							<li *ngIf="machineType === 1"
 								class="common-li-padding">

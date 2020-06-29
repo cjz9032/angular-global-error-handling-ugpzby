@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Innstillinger termisk modus",
                     "thermalMode2SettingDesc": "Velg modusen du vil bruke.",
                     "fnQDesc": "Du kan endre modus ved å bruke hurtigtastene Fn+Q.",
-                    "perormanceTitle": "Ytelsesmodus",
+                    "performanceTitle": "Ytelsesmodus",
                     "performanceDesc": "Øk datamaskinens ytelse med høyere viftehastighet og høyere strømforbruk. ",
                     "OCDesc": "Du kan velge å skru på funksjonen for overklokking.",
                     "ac_dcDesc": "Ytelsesmodus er bare tilgjengelig når en strømadapter er koblet til.",
@@ -155,6 +155,8 @@
                         "cpuOCName79": "Bufferspenningsforskyvning",
                         "cpuOCName122": "7 Kjerne-forhold",
                         "cpuOCName123": "8 Kjerne-forhold",
+                        "cpuOCName124": "9 Kjerne-forhold",
+                        "cpuOCName125": "10 Kjerne-forhold",
                         "cpuOCName102": "Kjerne ICCMAX",
                         "cpuOCName106": "Buffer ICCMAX",
                         "cpuOCName114": "AVX-forhold forskyvning"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Endelig spenningsforskyvning som tilføres bufferspenningen.",
                         "cpuOCTip122": "Angi den maksimale kjernemultiplikator som kjernene kan operere ved. Verdien av kjernefrekvensen er produktet av dette forhold og referanseklokkefrekvensen.",
                         "cpuOCTip123": "Angi den maksimale kjernemultiplikator som kjernene kan operere ved. Verdien av kjernefrekvensen er produktet av dette forhold og referanseklokkefrekvensen.",
+                        "cpuOCTip124": "Angi den maksimale kjernemultiplikator som kjernene kan operere ved. Verdien av kjernefrekvensen er produktet av dette forhold og referanseklokkefrekvensen.",
+                        "cpuOCTip125": "Angi den maksimale kjernemultiplikator som kjernene kan operere ved. Verdien av kjernefrekvensen er produktet av dette forhold og referanseklokkefrekvensen.",
                         "cpuOCTip102": "Angi ICCMAX for spenningsregulatoren til prosessorkjernen.",
                         "cpuOCTip106": "Angi ICCMAX for prosessorbuffer og Ring Bus-spenningsregulator.",
                         "cpuOCTip114": "For å utlede den effektive aktive kjerneforholdsgrensen når AVX er aktiv, subtraheres denne verdi fra den tilsvarende aktive kjerneforholdsgrensen."
@@ -729,7 +733,7 @@
                 "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
-                "name11": "Legion front Fan Lighting",
+                "name11": "Legion Front Fan Lighting",
                 "name12": "Legion Top Fan Lighting"
             },
             "lightingEffect": {
@@ -1067,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "For å forlenge batteriets levetid har vi optimalisert full ladekapasitet basert på bruken din. Full batterikapasitet er kanskje ikke tilgjengelig før det er ladet ut til 20 % og ladet opp igjen.",
-                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
+                    "moreInfo": "Klikk <a role=\"link\" href=\"#/device/high-density-battery\" tabindex=\"0\">her</a> hvis du vil ha flere opplysninger."
                 },
                 "condition": {
                     "Illegal": "Det installerte batteriet <b>støttes ikke</b> av dette systemet, og vil ikke kunne lades opp. Batteriet må bare byttes ut med korrekt Lenovo-batteri for dette systemet.",
@@ -1097,13 +1101,13 @@
                     "NotDetected": "<b>Finner ikke hovedbatteriet.</b>"
                 },
                 "highDensityBattery": {
-                    "title": "High density battery",
-                    "subtitle": "How your battey works",
-                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "title": "Høytetthetsbatteri",
+                    "subtitle": "Hvordan batteriet fungerer",
+                    "para1": "For å øke batterilevetiden justerer batteriet automatisk ladespenningen og kapasiteten i henhold til bruksmønsteret ditt.",
                     "para2": {
-                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
-                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
-                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                        "item1": "– Hvis du bruker mindre enn 65 % av batterikapasiteten i løpet av en uke eller lenger, kan batteriet redusere ladespenningen og kapasiteten midlertidig. Reduksjonen i kapasitet er liten og ikke synlig for bruksmønsteret ditt.",
+                        "item2": "– Full kapasitet gjenopprettes når du utlader batteriet under 20 %, og deretter fullader batteriet.",
+                        "item3": "– Hvis du i tillegg bruker mindre enn 10 % av batterikapasiteten i løpet av to uker eller lenger, kan batteriet midlertidig redusere ladespenningen og kapasiteten ytterligere, inntil 50 % av redusert batterikapasitet er brukt."
                     }
                 }
             },
@@ -1191,7 +1195,7 @@
                             "battery&Quite": "BATTERI OG STILLEGÅENDE"
                         }
                     },
-                    "description5": "Intelligent kjøling justerer viftehastighet, maksimal ytelse og håndterer batterilevetiden. Denne funksjonen har tre modi (stille modus, balansert modus og ytelsesmodus) og er nå tilgjengelig på glidebryteren for Windows-ytelse.",
+                    "description5": "Intelligent kjøling justerer viftehastighet, maksimal ytelse og håndterer batterilevetiden. Denne funksjonen har tre moduser (stillemodus, balansert modus og ytelsesmodus) og er nå tilgjengelig på glidebryteren for Windows-ytelse.",
                     "nocqldesc": "Med Intelligent kjøling kan du justere systemets ytelse og termiske temperatur. I modusen «Ytelse» optimaliserer den systemets ytelse. Samtidig bidrar den til å holde systemet kjøligere eller mer stillegående i modusen «Stille og rolig».",
                     "dytc6": {
                         "desc1": "Intelligent kjøling justerer viftehastighet, maksimal ytelse og håndterer batterilevetiden.",
@@ -1271,7 +1275,8 @@
                             "description1": "Hvis du aktiverer en tilpasset batterilading, er det mulig at batteriet varer lenger når du bruker denne enheten.Hvis du ikke har fulladet batteri, får du imidlertid mindre batteritid under kjøretid.",
                             "description2": "For fullstendig aktivering av denne funksjonen må du koble fra maskinen din ogla batterinivået gå ned til eller under terskelen for ladestopp.",
                             "enable": "AKTIVER",
-                            "cancel": "AVBRYT"
+                            "cancel": "AVBRYT",
+                            "description3": "Batteriet optimaliserer automatisk ladespenningen og -kapasiteten basert på bruksmønsteret ditt. Hvis du bruker batteriet ditt lite, trenger du ikke å aktivere batteriladeterskelen."
                         },
                         "options": {
                             "start": "Start lading når under",
@@ -1297,7 +1302,7 @@
                         "title": "Strømmodus for fly",
                         "description": "Denne funksjonen lar deg bruke strømuttaket på et fly der en bestemt strømgrense er gjeldende. I denne modusen reduseres datamaskinens strømforbruk til et sikkert nivå ved å begrense batteriets ladehastighet og datamaskinens ytelse.",
                         "checkBoxDesc": "Automatisk oppdagelse",
-                        "note": "Hvis automatisk oppdaging er sjekket, slår datamaskinen automatisk på strømmodusen for fly når den registrerer at du er om bord i et fly og slå av den når du drar."
+                        "note": "Hvis automatisk oppdaging er avmerket, slår datamaskinen automatisk på strømmodusen for fly når den registrerer at du er om bord i et fly og slår den av når du drar."
                     },
                     "gaugeReset": {
                         "title": "Tilbakestilling av batterimåler",
@@ -1552,7 +1557,7 @@
                     },
                     "optimize": {
                         "title": "Optimaliser mikrofonen for:",
-                        "tooltip": "Konfigurer mikrofoneffekter for å skreddersy lyden etter ulike scenarioer og omgivelser.",
+                        "tooltip": "Konfigurer mikrofoneffekter for å skreddersy lyden i ulike scenarioer og omgivelser.",
                         "options": {
                             "VoiceRecognition": "TALEGJENKJENNING",
                             "OnlyMyVoice": "BARE MIN STEMME",
@@ -1602,7 +1607,7 @@
                             "title": "Merk",
                             "description": "Lenovo Vantage trenger tilgang til informasjon om plasseringen din for å beregne tidspunkter for solnedgang og soloppgang for regionen din."
                         },
-                        "tips": "Kjør Windows Update eller installer grafikkdriver manuelt for å gjenopprette Eye Care-modus"
+                        "tips": "Kjør Windows Update eller installer grafikkdriver manuelt for å gjenopprette øyebeskyttelsesmodus."
                     },
                     "dispColorTemp": {
                         "title": "Skjermens fargetemperatur",
@@ -1668,7 +1673,9 @@
                     "cameraPrivacy": {
                         "title": "Personvernmodus for kamera",
                         "tooltip": "Kameraet slutter å sende direktebilder når personverninnstillingen er aktivert. Slå på denne innstillingen bare når du vil dele bildene dine med andre under videosamtaler.",
-                        "cameraPrivacyAccessNote": "Gå til <b>siden Windows-innstillinger → Personvern → Kamera</b>, og kontroller at disse to alternativene er på:<br>&bull; <b>Gi skrivebordsapper tilgang til kameraet</b><br>&bull; <b>Lenovo Vantage</b> under \"Velg hvilke Microsoft Store-apper som har tilgang til kameraet\""
+                        "cameraPrivacyAccessNote": "Gå til <b>siden Windows-innstillinger → Personvern → Kamera</b>, og kontroller at disse to alternativene er på:<br>&bull; <b>Gi skrivebordsapper tilgang til kameraet</b><br>&bull; <b>Lenovo Vantage</b> under \"Velg hvilke Microsoft Store-apper som har tilgang til kameraet\"",
+                        "noPermissionNote": "Lenovo Vantage har ikke tilgang til kameraet eller veksleknappen \"Tillat at skrivebordsapper får tilgang til kameraet\" er ikke aktivert.",
+                        "accessUrl": "Gå til Windows-innstillingene for å gi tilgang"
                     },
                     "camera": {
                         "title": "Kamera",
@@ -1762,7 +1769,8 @@
                             "title": "Start datamaskinen på nytt",
                             "description": "Du må starte datamaskinen på nytt hvis du endrer standardfunksjonen for den øverste raden. Er du sikker på at du vil starte på nytt?",
                             "reboot": "START PÅ NYTT",
-                            "cancel": "IKKE NÅ"
+                            "cancel": "IKKE NÅ",
+                            "yes": "JA"
                         },
                         "note": {
                             "sFunKey": "Du får tilgang til F1–F12-funksjonen ved å trykke på Fn og tastene på den øverste raden.",
@@ -1785,10 +1793,10 @@
                 },
                 "userDefinedKey": {
                     "title": "Brukerdefinert tast",
-                    "caption": "Tasten som representeres med stjerneikonet, lar deg angi en brukerdefinert funksjon",
+                    "caption": "Tasten som representeres med stjerneikonet, lar deg angi en brukerdefinert funksjon.",
                     "dropDown": {
                         "title": "Handling ved brukerdefinert tast",
-                        "note": "Merk: Dette kan brukes til å angi ofte brukt informasjon, som for eksempel e-postadresser eller postadresser. Lenovo anbefaler å aldri bruke denne funksjonen for lagring og angivelse av passord eller annen privat informasjon.",
+                        "note": "Merk: Dette kan brukes til å angi ofte brukt informasjon, som for eksempel e-postadresser eller postadresser. Du må aldri bruke denne funksjonen til å lagre passord eller privat informasjon.",
                         "options": {
                             "option1": "Vennligst velg",
                             "option2": "Åpen nettside",
@@ -1826,8 +1834,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "Bytte av Fn- og Ctrl-tasten",
-                    "description": "Hvis du av vane trykket på Fn-tasten da du mente å trykke på Ctrl-tasten, kan du bytte funksjonen til de to tastene.",
-                    "restartNote": "Hvis du bytter funksjon for to taster, må du starte datamaskinen på nytt. Er du sikker på at du vil starte på nytt?",
+                    "description": "Hvis du har for vane å trykke på Fn-tasten når du mener å trykke på Ctrl-tasten, kan du bytte funksjonen til de to tastene.",
+                    "restartNote": "Hvis du bytter funksjon for de to tastene, må du starte datamaskinen på nytt. Er du sikker på at du vil starte på nytt?",
                     "title2": "Fn fungerer som Ctrl for ofte brukte tastekombinasjoner",
                     "description2": "Fn-tasten fungerer som Ctrl-tasten for noen ofte brukte tastekombinasjoner. Funksjonen til Ctrl-tasten endres ikke.",
                     "featureNote": "Denne funksjonen og funksjonen for bytte av Fn- og Ctrl-tasten kan ikke være aktivert samtidig. Hvis én er aktivert, deaktiveres den andre automatisk.",
@@ -2127,9 +2135,10 @@
                 "title": "Smartbevegelsesalarm",
                 "tooltip": "<div id='antiTheft-tooltips'>Denne funksjonen fungerer ikke når datamaskinen er i dvalemodus eller er slått av. Kontroller innstillingene i disse handlingene:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>handlinger til lokket</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>handling ved kritisk lavt / svakt batteri</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>handling for strømbryter</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>handling for hvilemodus</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>tidsavbruddinnstillinger for dvalemodus</li></ul></div>Ellers vil det ikke utløses noen alarm eller blir tatt noen bilder.</div>",
                 "desc1": "Når du aktiverer denne funksjonen, avgir enheten et lydsignal når skjermen er låst og det oppdages bevegelse, spesielt på offentlige steder.",
-                "desc2": "Logg på Windows for å slå av alarmen.",
+                "desc2": "Logg deg på Windows og alarmen vil bli slått av automatisk. Du må aktivere funksjonen på nytt for å bruke den.",
                 "note": {
-                    "description": "Når du har logget på systemet, vil denne funksjonen bli slått av automatisk. Du må aktivere den på nytt for å bruke den."
+                    "descriptionTitle": "NB:",
+                    "description": "Det kreves gyldige påloggingsalternativer, for eksempel et passord eller en PIN-kode når du logger deg på Windows. Ellers kan funksjonen Smartbevegelsesalarm bli feilaktig deaktivert av enhver ikke-autorisert bruker som får tilgang til data maskinen din."
                 },
                 "alarm": {
                     "title": " ALARMEN SKAL VARE I",
@@ -2141,7 +2150,7 @@
                 },
                 "allowCamera": {
                     "title": "TA BILDER",
-                    "describe": "Når du aktiverer denne funksjonen, tar kameraet automatisk bilder når det blir oppdaget bevegelse hvis skjermen er låst. Disse dataene behandles lokalt på enheten. Lenovo har verken tilgang til eller bruker dem.",
+                    "describe": "Når du aktiverer denne funksjonen, tar kameraet automatisk bilder når det blir oppdaget bevegelse hvis skjermen er låst. Disse dataene behandles lokalt på enheten. Lenovo har verken tilgang til eller bruker dem. Vær oppmerksom på at du bør slå av kameralukkerfunksjonen for å være sikker på at det kan ta bilder under alarmen.",
                     "checkBoxText": "Aktiver denne funksjonen"
                 },
                 "cameraPrivacy": {
@@ -2251,9 +2260,6 @@
         },
         "support": {
             "title": "Nettsted for Lenovos kundestøtte"
-        },
-        "security": {
-            "title": "For a better protection for your device"
         },
         "banner": {
             "neverChecked": "Velkommen som bruker av Systemoppdateringer.",
@@ -3116,7 +3122,9 @@
                 "no": "Nei",
                 "description": "Å skanne og reparere kan føre til tap av data. Vi anbefaler å sikkerhetskopiere før du gjør dette. Er du sikker på at du vil fortsette?"
             },
-            "waitAvailability": "Knappen er deaktivert hvis lagringsenhetene ikke støtter denne funksjonaliteten, mens maskinvareinformasjonen lastes inn eller hvis det pågår en skanning."
+            "waitAvailability": "Knappen er deaktivert hvis lagringsenhetene ikke støtter denne funksjonaliteten, mens maskinvareinformasjonen lastes inn eller hvis det pågår en skanning.",
+            "executingTitle": "Gjenoppretter nå ...",
+            "recoverCompleted": "Gjenoppretting fullført"
         },
         "support": {
             "title": "Last ned profesjonelle feil søkings verktøy",
@@ -3159,18 +3167,30 @@
             "suggestedActionSupport": "Hvis datamaskinen din dekkes av garantien, klikker du på <b>opprett forespørsel</b> for en erstatningsdel. Hvis du vil ha mer informasjon, kan du gå til Lenovos nettsted for kundestøtte.",
             "supportButtonText": "Opprett forespørsel",
             "recoverBadSectorsButtonText": "Gjenopprett skadde sektorer"
-        }
+        },
+        "scanFinishedHeader": {
+            "titleSuccess": "Skanning fullført. Enheten har bestått alle testene.",
+            "titleErrorPlural": "Skanning fullført. Enheten mislyktes med {{numberTestsFailed}} av testene.",
+            "titleErrorSingular": "Skanning fullført. Enheten mislyktes med 1 av testene.",
+            "frcSuccessDescription": "Denne sluttresultatkoden betyr at det ikke ble funnet problemer under skanningen. Hvis en test viser en advarsel eller en gjelder-ikke-melding, betyr ikke dette at det ble funnet et problem. Hvis du ble bedt om å kjøre denne testen av en kundestøtterepresentant fra Lenovo, bruker du denne koden som bevis. Hvis ikke trenger du ikke gjøre noe nå. Kontakt Lenovos kundestøtte hvis problemene vedvarer.",
+            "frcFailureDescription": "Denne sluttresultatkoden betyr at det ble funnet problemer under skanningen.",
+            "lenovoSupportInstruction": "I Lenovo kundestøtte kan du åpne en verifiseringskvittering ved hjelp av koden for det endelige resultatet.",
+            "finalResultCodeLabel": "Sluttresultatkode: ",
+            "scanAgainButtonText": "Skann på nytt",
+            "supportButtonText": "Lenovo kundestøtte"
+        },
+        "executingScanTitle": "Skanner {{title}}..."
     },
     "smartPerformance": {
-        "title": "Health & Support",
-        "back": "BACK",
-        "performanceandSecurityCheckTitle": "Performance & Security Check",
-        "performanceandSecurityCheckSubTitle": "Let's diagnose and resolve performance and security issues in your computer",
-        "scanButton": "FREE PC SCAN",
-        "section1Heading": "How would you rate your PC Performance?",
-        "section1Description": "PC running slow? Applications taking too long to respond? Windows errors? Malware concerns? Let's diagnose whats's causing the problem and fix it.",
-        "critical": "CRITICAL",
-        "allisWell": "ALL IS WELL",
+        "title": "Smart Performance",
+        "back": "TILBAKE",
+        "performanceandSecurityCheckTitle": "Ytelses- og sikkerhetssjekk",
+        "performanceandSecurityCheckSubTitle": "La oss diagnostisere og løse ytelses- og sikkerhetsproblemene på datamaskinen din",
+        "scanButton": "PC-SKANNING",
+        "section1Heading": "Hvordan vurderer du PC-ytelsen?",
+        "section1Description": "Er PC-en treg? Bruker programmer for lang tid på å svare? Windows-feil? Problemer med skadevare? La oss finne ut hva som forårsaker problemet og deretter løse det.",
+        "critical": "KRITISK",
+        "allisWell": "ALT ER BRA",
         "zero": 0,
         "one": 1,
         "two": 2,
@@ -3182,644 +3202,650 @@
         "eight": 8,
         "nine": 9,
         "ten": 10,
-        "tuneUP": "Your PC needs a tune-up",
-        "section2Heading": "Top-notch PC Performance. Always",
-        "section2Description": "Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+        "tuneUP": "PC-en din trenger en justering",
+        "section2Heading": "Topp PC-ytelse. Alltid",
+        "section2Description": "Programvaren vår kan proaktivt skanne PC-en døgnet rundt for å finne og løse problemer etter hvert som de oppstår, slik at PC-en alltid har topp ytelse.",
         "tunePCPerformance": {
-            "title": "TUNE PC PERFORMANCE",
-            "heading": "Show your computer some extra love",
-            "description": "Even the best computer will benefit from periodic tune-ups. Get a tune-up and get more done with our powerful app.",
+            "title": "JUSTER PC-YTELSEN",
+            "heading": "Vis datamaskinen litt ekstra kjærlighet",
+            "description": "Selv den beste maskinen vil dra nytte av periodisk justering. Få en justering og bli mer effektiv med den kraftige appen vår.",
             "tabSet1": {
-                "tab1": "Accumulated Junk",
-                "tab2": "Usability Issues",
-                "tab3": "Windows Settings",
-                "tab4": "Systems Errors",
-                "tab5": "Registry Errors"
+                "tab1": "Akkumulert søppel",
+                "tab2": "Problemer med brukervennlighet",
+                "tab3": "Windows-innstillinger",
+                "tab4": "Systemfeil",
+                "tab5": "Registerfeil"
             },
             "tabSet2": {
-                "tab1Heading": "IT'S EASY",
-                "tab1Description": "We don't confuse you with tech mumbo jumbp",
-                "tab2Heading": "IT'S FAST",
-                "tab2Description": "Get a 100 point check done in under 5 minutes",
-                "tab3Heading": "IT'S SAFE",
-                "tab3Description": "No scareware, built with best practises"
+                "tab1Heading": "DET ER ENKELT",
+                "tab1Description": "Vi forvirrer deg ikke med teknisk prat",
+                "tab2Heading": "DET ER RASKT",
+                "tab2Description": "Få en 100-punkts sjekk fullført på under fem minutter",
+                "tab3Heading": "DET ER TRYGT",
+                "tab3Description": "Ingen skremmevare, bygd med mønsterpraksiser"
             },
-            "summaryTitle": "Tune PC Performance"
+            "summaryTitle": "Juster PC-ytelsen"
         },
         "boostInternetPerformance": {
-            "title": "BOOST INTERNET PERFORMANCE",
-            "extraTitle": "INTERNET PERFORMANCE",
-            "heading": "Give your internet a boost",
-            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "title": "ØK INTERNETTYTELSEN",
+            "extraTitle": "INTERNETTYTELSE",
+            "heading": "Styrk Internettet ditt",
+            "description": "For mange er tregt eller manglende Wi-Fi ensbetydende med å bo utenfor samfunnets infrastruktur. La oss konfigurere Internett, Wi-Fi og nettleserinnstillinger for optimal ytelse.",
             "tabSet1": {
-                "tab1": "Network Settings",
-                "tab2": "Browser Settings",
-                "tab3": "Browser Security",
-                "tab4": "Wi-Fi Performance",
-                "tab5": "E-junk"
+                "tab1": "E-søppel",
+                "tab2": "Network Settings",
+                "tab3": "Nettleserinnstillinger",
+                "tab4": "Nettlesersikkerhet",
+                "tab5": "Wi-Fi-ytelse"
             },
             "tabSet2": {
-                "tab1Heading": "ZERO DAY VIRUS",
-                "tab1Description": "We remove even the newest malware infections",
-                "tab2Heading": "SPYWARE REMOVAL",
-                "tab2Description": "We remove all potentially unwanted programs",
-                "tab3Heading": "LIGHT AND FAST",
-                "tab3Description": "Scan typically takes 5-10 minutes"
+                "tab1Heading": "NETTLESERPROBLEMER",
+                "tab1Description": "Vi konfigurerer og reparerer alle populære nettlesere.",
+                "tab2Heading": "TILKOBLINGSFEIL",
+                "tab2Description": "Vi kan diagnostisere og reparere tilkoblingsproblemer.",
+                "tab3Heading": "TREGT INTERNETT",
+                "tab3Description": "Vi kan hjelpe deg med å få maksimal ytelse."
             },
-            "summaryTitle": "Internet Performance"
+            "summaryTitle": "Internettytelse"
         },
         "malwareSecurity": {
-            "title": "MALWARE & SECURITY",
-            "heading": "Give your internet a boost",
-            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "title": "SKADEVARE OG SIKKERHET",
+            "heading": "Gi datamaskinen den ekstra pleien den trenger",
+            "description": "Skadevare kan føre til datakrasj, dataangrep og ytelsesreduksjon. Få fjernet skadevare og mye mer.",
             "tabSet1": {
-                "tab1": "Malware scan",
-                "tab2": "Zero-day infections",
-                "tab3": "Security settings",
-                "tab4": "Errant programs",
-                "tab5": "Annoying adware"
+                "tab1": "Skadevare-skanning",
+                "tab2": "Null-dagers infeksjoner",
+                "tab3": "Feilfungerende programmer",
+                "tab4": "Irriterende reklamevare",
+                "tab5": "Sikkerhetsinnstillinger"
             },
             "tabSet2": {
-                "tab1Heading": "SLOW INTERNET",
-                "tab1Description": "We will help you get maximum performance.",
-                "tab2Heading": "CONNECTIVITY ERRORS",
-                "tab2Description": "We can diagnose and repair your connectivity problems.",
-                "tab3Heading": "BROWSER ISSUES",
-                "tab3Description": "We configure and fix all your popular web browsers."
+                "tab1Heading": "NULL-DAGERS VIRUS",
+                "tab1Description": "Vi fjerner også de nyeste skadevareinfeksjonene",
+                "tab2Heading": "FJERNING AV SPIONVARE",
+                "tab2Description": "Vi fjerner alle potensielt uønskede programmer",
+                "tab3Heading": "LETT OG RASKT",
+                "tab3Description": "Skanning tar vanligvis 5–10 minutter"
             },
-            "summaryTitle": "Malware & Security"
+            "summaryTitle": "Skadevare og sikkerhet"
         },
         "proactiveAutomated": {
-            "title": "PROACTIVE & AUTOMATED",
-            "heading": "Get the power to resolve issues, before they impact you!",
-            "description": "Smart Performance constantly looks for hundreads of issues that impact PC performance. We fix them proactively, giving you peace of mind.",
+            "title": "PROAKTIV OG AUTOMATISERT",
+            "heading": "Få muligheten til å løse problemer før de påvirker deg!",
+            "description": "Smart Performance ser kontinuerlig etter hundrevis av problemer som påvirker PC-ytelsen. Vi løser dem proaktivt slik at du kan slippe bekymringer.",
             "tabSet1": {
-                "tab1": "Schedule Scan",
-                "tab2": "On-demand scan",
-                "tab3": "Automated resolution",
-                "tab4": "It's effective",
-                "tab5": "24/7 Protection"
+                "tab1": "Planlegg skanning",
+                "tab2": "Behovsbetinget søk",
+                "tab3": "Automatisert oppløsning",
+                "tab4": "Det er effektivt",
+                "tab5": "Beskyttelse døgnet rundt"
             },
             "tabSet2": {
-                "tab1Heading": "IT'S EASY",
-                "tab1Description": "We don't confuse you with tech mumbo jumbp",
-                "tab2Heading": "IT'S FAST",
-                "tab2Description": "Get a 100 point check done in under 5 minutes",
-                "tab3Heading": "IT'S SAFE",
-                "tab3Description": "No scareware, built with best practises"
+                "tab1Heading": "DET ER ENKELT",
+                "tab1Description": "Vi forvirrer deg ikke med teknisk prat",
+                "tab2Heading": "DET ER RASKT",
+                "tab2Description": "Få en 100-punkts sjekk fullført på under fem minutter",
+                "tab3Heading": "DET ER TRYGT",
+                "tab3Description": "Ingen skremmevare, bygd med mønsterpraksiser"
             }
         },
-        "startScan": "<b>Ready to start the scan?</b> Let's diagnose and resolve performance and security issues in your computer",
+        "startScan": "<b>Er du klar til å starte skanningen?</b> La oss finne ytelses- og sikkerhetsproblemene i maskinen.",
         "subscriptionDetails": {
-            "title": "Subscription details",
-            "description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
-            "learnMore": "Learn more",
-            "startDate": "Start date",
-            "endDate": "End date",
+            "title": "Abonnementsdetaljer",
+            "description": "Du abonnerer på Lenovo Smart Performance Service. I denne perioden er alle funksjonene tilgjengelige for at PC-en er beskyttet og kjører problemfritt.",
+            "learnMore": "Få mer informasjon",
+            "startDate": "Startdato",
+            "endDate": "Sluttdato",
             "status": "Status",
-            "activeStatus": "ACTIVE",
-            "inactiveStatus": "INACTIVE",
-            "manageSubscription": "MANAGE SUBSCRIPTION",
-            "titlebeta": "Lenovo Beta Program",
-            "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
-            "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
-            "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "activeStatus": "AKTIV",
+            "inactiveStatus": "INAKTIV",
+            "manageSubscription": "ADMINISTRER ABONNEMENT",
+            "titlebeta": "Lenovo betaprogram",
+            "manageSubscriptionBeta": "AKTIVER ALLE FUNKSJONER",
+            "descriptionbeta": "Lenovo tilbyr et prøveprogram for å teste ut Smart Performance til juli 2020.",
+            "descriptionbeta1": "Du er velkommen til å bli med og prøve alle funksjonene.",
+            "descriptionNonSubscriber": "Du abonnerer ikke på Lenovo Smart Performance Service. Du vil bare kunne skanne PC-en. Abonner nå for å få alle fordelene for at PC-en blir beskyttet og kjører problemfritt.",
+            "processStatus": "BEHANDLER"
         },
         "scanSettings": {
-            "title": "Scan settings",
-            "description": "Enable or disable the scan and set the scan schedule",
-            "enableScan": "Enable Scan",
-            "changeScanTitle": "Change scan schedule",
-            "changeScanDescription": "Edit the scan schedule to run when you need it.",
-            "frequency": "Frequency",
-            "txtDate": "Date",
-            "txtDay": "Day",
-            "txtTime": "Time",
-            "txtSave": "save",
-            "txtCancel": "cancel",
-            "scanFrequencyWeek": "Once a week",
-            "scanFrequencyEveryWeek": "Every other week",
-            "scanFrequencyMonth": "Every month",
-            "mon": "Monday",
-            "tue": "Tuesday",
-            "wed": "Wednesday",
-            "thu": "Thursday",
-            "fri": "Friday",
-            "sat": "Saturday",
-            "sun": "Sunday",
-            "tooltipText": "Enable this toggle to automatically initiate a system performance scan on your selected date and time."
+            "title": "Innstillinger for skanneplanlegging",
+            "description": "Aktiver eller deaktiver skanningen og definer skannetidsplanen",
+            "enableScan": "Aktiver skanning",
+            "changeScanTitle": "Endre skannetidsplanen",
+            "changeScanDescription": "Rediger skannetidsplanen slik at den kjøres når du trenger den.",
+            "frequency": "Frekvens",
+            "txtDate": "Dato",
+            "txtDay": "Dag",
+            "txtTime": "Tid",
+            "txtSave": "lagre",
+            "txtCancel": "avbryt",
+            "scanFrequencyWeek": "En gang i uken",
+            "scanFrequencyEveryWeek": "Annenhver uke",
+            "scanFrequencyMonth": "Hver måned",
+            "mon": "Mandag",
+            "tue": "Tirsdag",
+            "wed": "Onsdag",
+            "thu": "Torsdag",
+            "fri": "Fredag",
+            "sat": "Lørdag",
+            "sun": "Søndag",
+            "am": "AM",
+            "pm": "PM",
+            "tooltipText": "Hvis denne forblir aktivert, startes systemets ytelses- og sikkerhetsskanning automatisk på planlagt dato og klokkeslett."
         },
         "scanningPage": {
-            "title": "Performance & security check",
-            "description": "Please wait while we scan your system for potential problems and threats.",
-            "scanningSystem": "Scanning system",
-            "complete": "complete",
+            "title": "Ytelses- og sikkerhetssjekk",
+            "description": "Vent litt mens vi skanner gjennom systemet etter potensielle problemer og trusler.",
+            "scanningSystem": "Skanner system",
+            "complete": "fullført",
             "cancelScan": {
-                "button": "CANCEL SCAN",
-                "title": "Cacel the scan?",
-                "description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
-                "yesButton": "YES, CANCEL",
-                "noButton": "NO, RESUME SCAN",
+                "button": "AVBRYT SKANNING",
+                "title": "Avbryt skanningen?",
+                "description": "Hvis du forlater dette bildet, blir søket avbrutt, og du vil bli sendt tilbake til hjem-siden. Du kan imidlertid kjøre skanningen igjen når som helst.",
+                "yesButton": "JA, AVBRYT",
+                "noButton": "NEI, GJENOPPTA SKANNING",
                 "cancelMayTakeSomeTime": "Vent litt. Det kan ta litt tid å avbryte, avhengig av systemet.",
                 "cancelTextPrompt": "Er du sikker på at du vil avbryte?"
             },
-            "waiting": "WAITING TO SCAN",
-            "completed": "COMPLETED",
+            "waiting": "VENTER PÅ SKANNING",
+            "completed": "FULLFØRT",
             "nowScanningDetail": {
-                "cardTitle": "NOW SCANNING DETAIL",
-                "current": "CURRENT: ",
-                "upNext": "UP NEXT",
-                "tunePCDesc": "Let’s help improve your PC performance. We do it safely using industry best practices. Benefits for subscribers include reduced PC start time, improved performance, improved stability and faster launch of applications.",
-                "boostDesc": "Let’s help enhance your browsing experience. Let's fix network and access issues. Benefits for subscribers include betterment in internet connectivity, improvement in upload/download speeds and making internet more secure.",
-                "malwareDesc": "Let’s help quickly secure your PC, on-demand. We do it by removing spyware, malware and adware. We also remove near/zero-day infections. Benefits for subscribers include security of data and optimal system performance.",
-                "proactiveDesc": "Let's tune your computer periodically and fix issues, Proactive and automated to keep your PC tuned and covered. Always",
+                "cardTitle": "SKANNER NÅ DETALJER",
+                "current": "NÅVÆRENDE: ",
+                "upNext": "NESTE",
+                "tunePCDesc": "La oss hjelpe deg med å forbedre ytelsen til PC-en din. Vi gjør det trygt ved hjelp av bransjens beste praksis. Abonnementsfordeler omfatter redusert oppstartstid for PC-en, forbedret ytelse, forbedret stabilitet og raskere oppstart av programmer.",
+                "boostDesc": "La oss hjelpe deg med å forbedre nettleseropplevelsen. La oss løse nettverks- og tilgangsproblemer. Abonnementsfordeler omfatter bedre Internettforbindelse, bedre opplastings- og nedlastingshastighet og sikrere Internett.",
+                "malwareDesc": "La oss hjelpe deg med å raskt sikre PC-en din på forespørsel. Vi gjør det ved å fjerne spionvare, skadevare og reklamevare. Vi fjerner også null-dagers infeksjoner. Abonnementsfordeler omfatter datasikkerhet og optimal systemytelse.",
+                "proactiveDesc": "La oss justere maskinen regelmessig og løse problemer proaktiv og automatisert for å holde PC-en din justert og trygg. Alltid",
                 "tunePCScanningItems": {
                     "accumulatedJunk": {
-                        "itema1": "Look for junk in 85 locations",
-                        "itema2": "System log files that aren’t needed",
-                        "itema3": "Unnecessary application residues",
-                        "itema4": "Temporary files that clog diskspace",
-                        "itema5": "Files that you deleted so long ago",
-                        "itema6": "Outdated errors and alerts"
+                        "itema1": "Se etter søppel på 85 steder",
+                        "itema2": "Systemloggfiler som ikke er nødvendige",
+                        "itema3": "Unødvendige programrester",
+                        "itema4": "Midlertidige filer som fyller opp diskplassen",
+                        "itema5": "Filer du har slettet for lenge siden",
+                        "itema6": "Utdaterte feil og varsler"
                     },
                     "usabilityIssues": {
-                        "itemb1": "Address dozens of usability challenges",
-                        "itemb2": "Check external devices connectivity",
-                        "itemb3": "Keeping Windows updates always current",
-                        "itemb4": "Do apps render and appear at its best",
-                        "itemb5": "Analyzing processing power utilization",
-                        "itemb6": "Help locate files easily"
+                        "itemb1": "Identifiser dusinvis av brukerutfordringer",
+                        "itemb2": "Kontroller tilkoblingen til eksterne enheter",
+                        "itemb3": "Sørger for at Windows alltid er oppdatert",
+                        "itemb4": "Gjengi programmer slik at de vises på sitt beste",
+                        "itemb5": "Analyser utnyttelse av strømbehandling",
+                        "itemb6": "Finn filer enkelt"
                     },
                     "windowsSettings": {
-                        "itemc1": "Diagnose dozens of Windows OS settings",
-                        "itemc2": "Ensure all is well with your Windows",
-                        "itemc3": "Ensure essential services are running",
-                        "itemc4": "Check health of connectivity settings",
-                        "itemc5": "Check ability to share files in network",
-                        "itemc6": "Check biometric and access settings"
+                        "itemc1": "Diagnostiser dusinvis av operativsysteminnstillinger for Windows",
+                        "itemc2": "Pass på at alt er bra med Windows",
+                        "itemc3": "Sikre at de viktige tjenestene kjører",
+                        "itemc4": "Kontroller tilstanden til tilkoblingsinnstillinger",
+                        "itemc5": "Kontroller muligheten til å dele filer i nettverket",
+                        "itemc6": "Kontroller biometriske innstillinger og tilgangsinnstillinger"
                     },
                     "systemErrors": {
-                        "itemd1": "Ensure essential services are running",
-                        "itemd2": "Select services for higher performance",
-                        "itemd3": "Look for software conflict errors",
-                        "itemd4": "Optimize Windows error management",
-                        "itemd5": "Check and fix apps launching errors",
-                        "itemd6": "Configure system error reports"
+                        "itemd1": "Sikre at de viktige tjenestene kjører",
+                        "itemd2": "Velg tjenester for høyere ytelse",
+                        "itemd3": "Se etter feil i programvarekonflikter",
+                        "itemd4": "Optimaliser feilhåndteringen i Windows",
+                        "itemd5": "Kontroller og reparer feil ved programstart",
+                        "itemd6": "Konfigurer systemfeilrapporter"
                     },
                     "registryErrors": {
-                        "iteme1": "Deep check Windows registry,",
-                        "iteme2": "Scanning for invalid Windows services",
-                        "iteme3": "Finding corrupted registry entries",
-                        "iteme4": "Look for useless file extensions",
-                        "iteme5": "Search broken entries of installed apps",
-                        "iteme6": "Look for useless leftover entries"
+                        "iteme1": "Dyp kontroll av Windows-registret,",
+                        "iteme2": "Skanner etter ugyldige Windows-tjenester",
+                        "iteme3": "Finner korrupte registeroppføringer",
+                        "iteme4": "Se etter ubrukelige filutvidelser",
+                        "iteme5": "Søk i avbrutte oppføringer av installerte apper",
+                        "iteme6": "Se etter ubrukelige restoppføringer"
                     }
                 },
                 "boostScanningItems": {
                     "networkSettings": {
-                        "itema1": "Diagnose network and Internet settings",
-                        "itema2": "Verify network configuration settings",
-                        "itema3": "Verify available network settings",
-                        "itema4": "Configure to load websites faster",
-                        "itema5": "Look for page rendering errors",
-                        "itema6": "Are connection service(s) running well"
+                        "itema1": "Diagnostiser nettverks- og Internettinnstillinger",
+                        "itema2": "Verifiser innstillinger for nettverkskonfigurasjon",
+                        "itema3": "Verifiser tilgjengelige nettverksinnstillinger",
+                        "itema4": "Konfigurer for å laste inn nettsider raskere",
+                        "itema5": "Se etter sidegjengivelsesfeil",
+                        "itema6": "Kjører tilkoblingstjeneste bra"
                     },
                     "browserSettings": {
-                        "itemb1": "Enable better browsing experience",
-                        "itemb2": "Configure settings faster websites rendering",
-                        "itemb3": "Ensure browser security services are OK",
-                        "itemb4": "Ensure webpages are rendering properly",
-                        "itemb5": "Check settings for faster downloads",
-                        "itemb6": "Check permissions and access control"
+                        "itemb1": "Aktiver bedre søkeopplevelse",
+                        "itemb2": "Konfigurer innstillinger for raskere gjengivelse av nettsider",
+                        "itemb3": "Kontroller at nettleserens sikkerhetstjenester er OK",
+                        "itemb4": "Kontroller at nettsider gjengis på riktig måte",
+                        "itemb5": "Kontroller innstillingene for raskere nedlasting",
+                        "itemb6": "Kontroller tillatelser og tilgangskontroll"
                     },
                     "browserSecurity": {
-                        "itemc1": "Ensure security services are running",
-                        "itemc2": "Configure browser security features",
-                        "itemc3": "Check network services are running well",
-                        "itemc4": "Configure protocol settings",
-                        "itemc5": "Verify Browser content settings are OK",
-                        "itemc6": "Verify browser plugins & extensions"
+                        "itemc1": "Kontroller at sikkerhetstjenester kjører",
+                        "itemc2": "Konfigurer nettleserens sikkerhetsfunksjoner",
+                        "itemc3": "Kontroller at nettverkstjenester kjører bra",
+                        "itemc4": "Konfigurer protokollinnstillinger",
+                        "itemc5": "Kontroller at innstillinger for nettleserinnhold er OK",
+                        "itemc6": "Kontroller nettlesertillegg og -utvidelser"
                     },
                     "wifiPerformance": {
-                        "itemd1": "Optimize Wi-Fi experience settings",
-                        "itemd2": "Ensure your home network is secure",
-                        "itemd3": "Check Wi-Fi services settings",
-                        "itemd4": "Secure network sharing settings",
-                        "itemd5": "Check Wi-Fi security standards",
-                        "itemd6": "Ensure Wi-Fi channels do not overlap"
+                        "itemd1": "Optimaliser innstillinger for Wi-Fi-opplevelsen",
+                        "itemd2": "Kontroller at hjemmenettverket ditt er sikkert",
+                        "itemd3": "Kontroller innstillingene for Wi-Fi-tjenester",
+                        "itemd4": "Sikre innstillinger for nettverksdeling",
+                        "itemd5": "Kontroller sikkerhetsstandarder for Wi-Fi",
+                        "itemd6": "Kontroller at Wi-Fi-kanaler ikke overlapper"
                     },
                     "eJunk": {
-                        "iteme1": "Eliminate clutter from 4 browsers",
-                        "iteme2": "Look for leftover e-junk",
-                        "iteme3": "Look for outdated internet files",
-                        "iteme4": "Clear unwanted web cache",
-                        "iteme5": "Clear cookies",
-                        "iteme6": "Remove browser residues"
+                        "iteme1": "Fjern rotet fra nettlesere",
+                        "iteme2": "Se etter e-søppelrester",
+                        "iteme3": "Søk etter utdaterte Internettfiler",
+                        "iteme4": "Fjern uønsket netthurtigbuffer",
+                        "iteme5": "Slett informasjonskapsler",
+                        "iteme6": "Fjern nettleserinformasjon"
                     }
                 },
                 "malwareScanningItems": {
                     "malwareScan": {
-                        "itema1": "Scan common loading points",
-                        "itema2": "Check critical locations for threats",
-                        "itema3": "Check for virus, spyware and malware",
-                        "itema4": "Scan for 50+ file types",
-                        "itema5": "Scan for malware remnants",
-                        "itema6": "Leverage from cloud remediation engine"
+                        "itema1": "Skann vanlige innlastingspunkter",
+                        "itema2": "Kontroller kritiske steder for trusler",
+                        "itema3": "Søk etter virus, spionvare og skadevare",
+                        "itema4": "Skann etter mer enn 50 filtyper",
+                        "itema5": "Skann etter rester av skadevare",
+                        "itema6": "Bruk erstatningsmotoren i skyen"
                     },
                     "zerodayInfections": {
-                        "itemb1": "Look for zero-day virus",
-                        "itemb2": "Look for recent, undiagnosed malware",
-                        "itemb3": "Scan with cloud-based remediation",
-                        "itemb4": "Perform behavioral monitoring",
-                        "itemb5": "Scan files with aggregated engine",
-                        "itemb6": "Scan against latest definitions"
+                        "itemb1": "Se etter null-dagers virus",
+                        "itemb2": "Se etter nylig, ikke-diagnostisert skadevare",
+                        "itemb3": "Søk ved hjelp av skybasert erstatning",
+                        "itemb4": "Utfør atferdsovervåking",
+                        "itemb5": "Skann filer med aggregert motor",
+                        "itemb6": "Skann de nyeste definisjonene"
                     },
                     "securitySettings": {
-                        "itemc1": "Keep Windows updates always current",
-                        "itemc2": "Ensure Windows firewall service is OK",
-                        "itemc3": "Keep browser settings secure",
-                        "itemc4": "Check essential security services",
-                        "itemc5": "Configure user access settings",
-                        "itemc6": "Verify authentication services"
+                        "itemc1": "Sørg for at Windows alltid er oppdatert",
+                        "itemc2": "Kontroller at Windows-brannmuren er OK",
+                        "itemc3": "Sørg for at nettleserinnstillingene er sikre",
+                        "itemc4": "Kontroller viktige sikkerhetstjenester",
+                        "itemc5": "Konfigurer innstillinger for brukertilgang",
+                        "itemc6": "Kontroller autentiseringstjenester"
                     },
                     "errantPrograms": {
-                        "itemd1": "Look for errant apps",
-                        "itemd2": "Look for potentially unwanted apps",
-                        "itemd3": "Detect inactive and hidden apps",
-                        "itemd4": "Verify apps for malicious behavior",
-                        "itemd5": "Check apps based on reputation factor",
-                        "itemd6": "Check errant programs in registry"
+                        "itemd1": "Se etter feilfungerende apper",
+                        "itemd2": "Se etter potensielt uønskede apper",
+                        "itemd3": "Gjenkjenn inaktive og skjulte apper",
+                        "itemd4": "Verifiser apper for ondsinnet oppførsel",
+                        "itemd5": "Kontroller apper basert på rykte",
+                        "itemd6": "Kontroller feilfungerende programmer i registret"
                     },
                     "annoyingAdware": {
-                        "iteme1": "Look for browser(s) adware",
-                        "iteme2": "Revise browser(s) pop-up settings",
-                        "iteme3": "Eliminate browser re-direction threats",
-                        "iteme4": "Check for adware leftovers",
-                        "iteme5": "Optimize browser experience settings",
-                        "iteme6": "verify in cloud remediation engine"
+                        "iteme1": "Se etter reklamevare i nettleser(e)",
+                        "iteme2": "Revider popup-innstillinger for nettleser(e)",
+                        "iteme3": "Fjern trusler for flytting av nettleser",
+                        "iteme4": "Se etter reklamevarerester",
+                        "iteme5": "Optimaliser innstillinger for nettleseropplevelsen",
+                        "iteme6": "Kontroller erstatningsmotoren i skyen"
                     }
                 }
             }
         },
         "scanCompletePage": {
-            "title": "System scan is complete",
-            "description": "Here is what we found on your ",
-            "scanRates": "Our scan rates your PC at: ",
-            "summary": "Summary",
-            "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
-            "signupRepairButton": "SIGN UP & REPAIR NOW",
-            "monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
-            "issueCount": "{{individualIssueCount}} ISSUES",
-            "scannedAreas": "SCANNED AREAS",
+            "title": "Systemskanning er fullført",
+            "description": "Her er det vi fant på ",
+            "scanRates": "Vårt skann rangerer PC-en din som: ",
+            "summary": "Sammendrag",
+            "summaryDetails": "Skanningen fant <b>{{issueCount}}problem(er)</b> i områdene nedenfor. Registrer deg nå for å løse disse problemene og sørge for at systemet ditt kjører problemfritt. Programvaren vår kan proaktivt skanne disse områdene i systemet ditt døgnet rundt for å finne og løse problemer etter hvert som de oppstår, slik at PC-en alltid har topp ytelse.",
+            "signupRepairButton": "REGISTRER OG REPARER NÅ",
+            "monthlyPricing": "<b>Mindre enn $2 per måned.</b> Disse problemene vil bli løst automatisk. En gang i dag og deretter hver uke <a  href=\"#\">Finn ut mer</a>",
+            "issueCount": "{{individualIssueCount}} PROBLEMER",
+            "scannedAreas": "SKANNEDE OMRÅDER",
             "recommendedAction": {
-                "title": "RECOMMENDED ACTION",
-                "description": "We will automatically fix these issues. Once today and every week thereafter",
-                "yearlyPricing": "$19.99 / Yr",
-                "monthlyPricing": "LESS THAN $2 PER MONTH.",
-                "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP"
+                "title": "ANBEFALT HANDLING",
+                "description": "Disse problemene vil bli løst automatisk. En gang i dag og deretter hver uke",
+                "yearlyPricing": "$2 / ÅR",
+                "monthlyPricing": "MINDRE ENN $2 PER MÅNED.",
+                "longerTerm": "Lengre termin? Flere kostnadsbesparelser?",
+                "signupButton": "REGISTRER DEG"
             },
             "tunepc": {
                 "accumulatedjunkscannedareas": {
-                    "area1": "Scanned for junk in 85 locations",
-                    "area2": "System log files that aren’t needed",
-                    "area3": "Unnecessary application residues",
-                    "area4": "Temporary files that clog diskspace",
-                    "area5": "Files that you deleted so long ago",
-                    "area6": "Outdated errors and alerts"
+                    "area1": "Skannet etter søppel på 85 steder",
+                    "area2": "Systemloggfiler som ikke er nødvendige",
+                    "area3": "Unødvendige programrester",
+                    "area4": "Midlertidige filer som fyller opp diskplassen",
+                    "area5": "Filer du har slettet for lenge siden",
+                    "area6": "Utdaterte feil og varsler"
                 },
                 "registryerrorsscannedareas": {
-                    "area1": "Completed deep check of Windows registry",
-                    "area2": "Scanned for invalid Windows services",
-                    "area3": "Checked for corrupted registry entries",
-                    "area4": "Scanned for useless file extensions",
-                    "area5": "Searched broken entries of installed apps",
-                    "area6": "Checked for useless leftover entries"
+                    "area1": "Fullført dyp kontroll av Windows-register",
+                    "area2": "Skannet etter ugyldige Windows-tjenester",
+                    "area3": "Kontrollerer korrupte registeroppføringer",
+                    "area4": "Skanner etter ubrukelige filutvidelser",
+                    "area5": "Søkte i avbrutte oppføringer av installerte apper",
+                    "area6": "Så etter ubrukelige restoppføringer"
                 },
                 "windowssettingsscannedareas": {
-                    "area1": "Diagnosed dozens of Windows OS settings",
-                    "area2": "Checked all is well with your Windows",
-                    "area3": "Confirmed essential services are running",
-                    "area4": "Checked health of connectivity settings",
-                    "area5": "Checked ability to share files in network",
-                    "area6": "Checked biometric and access settings"
+                    "area1": "Diagnostiserte dusinvis av operativsysteminnstillinger for Windows",
+                    "area2": "Kontrollerte at alt er bra med Windows",
+                    "area3": "Bekreftet at de viktige tjenestene kjører",
+                    "area4": "Kontrollerte tilstanden til tilkoblingsinnstillinger",
+                    "area5": "Kontrollerte muligheten til å dele filer i nettverket",
+                    "area6": "Kontrollerte biometriske innstillinger og tilgangsinnstillinger"
                 },
                 "usabilityissuesscannedareas": {
-                    "area1": "Checked for usability challenges",
-                    "area2": "Checked external devices connectivity",
-                    "area3": "Checked Windows updates status",
-                    "area4": "Verified apps rendering setting",
-                    "area5": "Analyzed processing power utilization",
-                    "area6": "Help locate files easily"
+                    "area1": "Kontrollerte for utfordringene ved brukervennlighet",
+                    "area2": "Kontrollerte tilkoblingen til eksterne enheter",
+                    "area3": "Status for kontrollerte Windows-oppdateringer",
+                    "area4": "Verifisert innstilling for appgjengivelse",
+                    "area5": "Analyserte utnyttelse av strømbehandling",
+                    "area6": "Finn filer enkelt"
                 },
                 "systemerrorsscannedareas": {
-                    "area1": "Checked if essential services are running",
-                    "area2": "Look services for higher performance",
-                    "area3": "Look for software conflict errors",
-                    "area4": "Analyzed Windows error management",
-                    "area5": "Scanned for apps launching errors",
-                    "area6": "Checked system error reports configuration"
+                    "area1": "Kontrollerte at de viktige tjenestene kjører",
+                    "area2": "Velg tjenester for høyere ytelse",
+                    "area3": "Se etter feil i programvarekonflikter",
+                    "area4": "Analyserte feiladministrering i Windows",
+                    "area5": "Skannet etter oppstartsfeil ved apper",
+                    "area6": "Kontrollerte konfigurasjon for systemfeilrapporter"
                 }
             },
-            "Diskspace": "Disk Space Reclaimed :",
-            "Performanceimprovements": "Performance Improvements :",
-            "Securityimprovements": "Security Improvements:",
-            "Onceaweek": "Once a week",
+            "Diskspace": "Diskplass gjenvunnet:",
+            "Performanceimprovements": "Ytelsesforbedringer:",
+            "Securityimprovements": "Sikkerhetsforbedringer:",
+            "Onceaweek": "En gang i uken",
             "internetperformance": {
                 "ejunkscannedareas": {
-                    "area1": "Identified clutter from 4 browsers",
-                    "area2": "Searched leftover e-junk",
-                    "area3": "Scanned outdated internet files",
-                    "area4": "Searched unwanted web cache",
-                    "area5": "Checked cookies for clearance",
-                    "area6": "Scanned browser residues"
+                    "area1": "Identifiserte rotet fra nettlesere",
+                    "area2": "Søkte etter e-søppelrester",
+                    "area3": "Skannet etter utdaterte Internettfiler",
+                    "area4": "Søkte etter uønsket netthurtigbuffer",
+                    "area5": "Kontrollerte informasjonskapsler for klarering",
+                    "area6": "Skannet nettleserrester"
                 },
                 "browsersecurityscannedareas": {
-                    "area1": "Checked security services are running",
-                    "area2": "Checked browser security features",
-                    "area3": "Verified network services",
-                    "area4": "Configure protocol settings",
-                    "area5": "Checked Browser content settings",
-                    "area6": "Scanned browser plugins & extensions"
+                    "area1": "Kontrollerte at sikkerhetstjenester kjører",
+                    "area2": "Kontrollerte nettleserens sikkerhetsfunksjoner",
+                    "area3": "Kontrollerte nettverkstjenester",
+                    "area4": "Konfigurer protokollinnstillinger",
+                    "area5": "Kontrollerte innstillinger for nettleserinnhold",
+                    "area6": "Skannet nettlesertillegg og -utvidelser"
                 },
                 "networksettingsscannedareas": {
-                    "area1": "Diagnosed network and Internet settings",
-                    "area2": "Diagnosed network configuration settings",
-                    "area3": "Verified connected network settings",
-                    "area4": "Diagnosed settings for faster websites rendering",
-                    "area5": "Scanned for page rendering errors",
-                    "area6": "Scanned all connection service(s)"
+                    "area1": "Diagnostiserte nettverks- og Internettinnstillinger",
+                    "area2": "Diagnostiserte innstillinger for nettverkskonfigurasjon",
+                    "area3": "Kontrollerte nettverksinnstillinger for tilkoblet modus",
+                    "area4": "Diagnostiserte innstillinger for raskere gjengivelse av nettsider",
+                    "area5": "Skannet etter sidegjengivelsesfeil",
+                    "area6": "Skannet alle tilkoblingstjenester"
                 },
                 "browsersettingsscannedareas": {
-                    "area1": "Enable better browsing experience",
-                    "area2": "Diagnosed settings for faster websites rendering",
-                    "area3": "Verified browser security services",
-                    "area4": "Checked if webpages are rendering properly",
-                    "area5": "Scanned settings for faster downloads",
-                    "area6": "Analyzed permissions and access control"
+                    "area1": "Aktiver bedre søkeopplevelse",
+                    "area2": "Diagnostiserte innstillinger for raskere gjengivelse av nettsider",
+                    "area3": "Kontrollerte sikkerhetstjenester for nettlesere",
+                    "area4": "Kontrollerte at nettsider gjengis på riktig måte",
+                    "area5": "Skannet innstillingene for raskere nedlasting",
+                    "area6": "Analyserte tillatelser og tilgangskontroll"
                 },
                 "wifiperformancescannedareas": {
-                    "area1": "Verified Wi-Fi experience settings",
-                    "area2": "Verified secure home network",
-                    "area3": "Scanned Wi-Fi services settings",
-                    "area4": "Verified Secure network sharing settings",
-                    "area5": "Verified Wi-Fi security standards",
-                    "area6": "Analyzed Wi-Fi channels do not overlap"
+                    "area1": "Verifiserte innstillinger for Wi-Fi-opplevelsen",
+                    "area2": "Bekreftet sikkert hjemmenettverk",
+                    "area3": "Skannet innstillingene for Wi-Fi-tjenester",
+                    "area4": "Verifiserte sikre innstillinger for nettverksdeling",
+                    "area5": "Verifiserte sikkerhetsstandarder for Wi-Fi",
+                    "area6": "Analyserte at Wi-Fi-kanaler ikke overlapper"
                 }
             },
             "malwaresecurity": {
                 "malwarescanscannedareas": {
-                    "area1": "Scanned common loading points",
-                    "area2": "Scanned critical locations for threats",
-                    "area3": "Scanned for virus, spyware and malware",
-                    "area4": "Scanned 50+ file types for threats",
-                    "area5": "Checked for malware remnants",
-                    "area6": "Verified in cloud remediation engine"
+                    "area1": "Skannet vanlige innlastingspunkter",
+                    "area2": "Skannet kritiske steder for trusler",
+                    "area3": "Skannet etter virus, spionvare og skadevare",
+                    "area4": "Skannet over 50 filtyper for trusler",
+                    "area5": "Kontrollert rester av skadevare",
+                    "area6": "Verifisert i erstatningsmotoren i skyen"
                 },
                 "errantprogramsscannedareas": {
-                    "area1": "Look for errant apps",
-                    "area2": "Inspected for potentially unwanted apps",
-                    "area3": "Searched for inactive and hidden apps",
-                    "area4": "Scanned for malicious apps",
-                    "area5": "Checked apps based on reputation factor",
-                    "area6": "Checked errant programs in registry"
+                    "area1": "Se etter feilfungerende apper",
+                    "area2": "Så etter potensielt uønskede apper",
+                    "area3": "Søkte etter inaktive og skjulte apper",
+                    "area4": "Skannet for ondsinnede apper",
+                    "area5": "Kontrollerte apper basert på rykte",
+                    "area6": "Kontrollerte feilfungerende programmer i registret"
                 },
                 "zerodayinfectionsscannedareas": {
-                    "area1": "Scanned for zero-day virus",
-                    "area2": "Searched for recent, undiagnosed malware",
-                    "area3": "Verified with cloud-based remediation",
-                    "area4": "Performed behavioral monitoring",
-                    "area5": "Verified files with aggregated engine",
-                    "area6": "Scanned against updated definitions"
+                    "area1": "Skannet etter null-dagers virus",
+                    "area2": "Søkte etter nylig, ikke-diagnostisert skadevare",
+                    "area3": "Verifisert ved hjelp av skybasert erstatning",
+                    "area4": "Utførte atferdsovervåking",
+                    "area5": "Verifiser filer med aggregert motor",
+                    "area6": "Skannet mot oppdaterte definisjoner"
                 },
                 "securitysettingsscannedareas": {
-                    "area1": "Verified Windows updates are current",
-                    "area2": "Verified Windows firewall service",
-                    "area3": "Checked for secure browser settings",
-                    "area4": "Diagnosed essential security services",
-                    "area5": "Verified user access settings",
-                    "area6": "Verified authentication services"
+                    "area1": "Bekreftede Windows-oppdateringer er gjeldende",
+                    "area2": "Windows-brannmur er verifisert",
+                    "area3": "Kontrollert for sikre nettleserinnstillinger",
+                    "area4": "Diagnostiserte viktige sikkerhetstjenester",
+                    "area5": "Verifiserte innstillinger for brukertilgang",
+                    "area6": "Verifiserte autentiseringstjenester"
                 },
                 "annoyingadwarescannedareas": {
-                    "area1": "Scanned for browser(s) adware",
-                    "area2": "Verify browser(s) pop-up settings",
-                    "area3": "Scanned browser re-direction threats",
-                    "area4": "Checked adware leftovers",
-                    "area5": "Verified browser experience settings",
-                    "area6": "Verified with cloud remediation engine"
+                    "area1": "Skannet etter reklamevare i nettleser(e)",
+                    "area2": "Verifiser popup-innstillinger for nettleser(e)",
+                    "area3": "Skannet trusler for flytting av nettleser",
+                    "area4": "Kontrollert etter reklamevarerester",
+                    "area5": "Verifisert innstillinger for nettleseropplevelsen",
+                    "area6": "Verifisert med erstatningsmotoren i skyen"
                 }
             },
             "subscriber": {
                 "tunepc": {
                     "accumulatedjunkscannedareas": {
-                        "area1": "Cleaned of junk in 85 locations",
-                        "area2": "Cleared System log files that aren’t needed",
-                        "area3": "Deleted application residues",
-                        "area4": "Removed Temporary files to free up diskspace",
-                        "area5": "Eliminated files that you deleted so long ago",
-                        "area6": "Cleared errors and alerts"
+                        "area1": "Renset for søppel på 85 steder",
+                        "area2": "Slettet systemloggfiler som ikke er nødvendige",
+                        "area3": "Slettet applikasjonsrester",
+                        "area4": "Fjernet midlertidige filer for å frigjøre diskplass",
+                        "area5": "Eliminerte filer du har slettet for lenge siden",
+                        "area6": "Slettet feil og varsler"
                     },
                     "registryerrorsscannedareas": {
-                        "area1": "Completed deep check of Windows registry",
-                        "area2": "Fixed any invalid Windows services",
-                        "area3": "Removed any corrupted registry entries",
-                        "area4": "Deleted any obsolete file extensions",
-                        "area5": "Cleaned broken entries of installed apps",
-                        "area6": "Cleared unwanted leftover entries"
+                        "area1": "Fullført dyp kontroll av Windows-register",
+                        "area2": "Reparerte ugyldige Windows-tjenester",
+                        "area3": "Fjernet korrupte registeroppføringer",
+                        "area4": "Slett eventuelle utdaterte filtyper",
+                        "area5": "Slettet avbrutte oppføringer av installerte apper",
+                        "area6": "Tømte uønskede restoppføringer"
                     },
                     "windowssettingsscannedareas": {
-                        "area1": "Validated Windows settings",
-                        "area2": "Optimized all Windows services",
-                        "area3": "Modified essential Windows services",
-                        "area4": "Modified essential Windows services",
-                        "area5": "Verified ability to share files in network",
-                        "area6": "Verified biometric and access settings"
+                        "area1": "Validerte Windows-innstillinger",
+                        "area2": "Optimaliserte alle Windows-tjenester",
+                        "area3": "Modifiserte grunnleggende Windows-tjenester",
+                        "area4": "Modifiserte grunnleggende Windows-tjenester",
+                        "area5": "Verifiserte muligheten til å dele filer i nettverket",
+                        "area6": "Verifiserte biometriske innstillinger og tilgangsinnstillinger"
                     },
                     "usabilityissuesscannedareas": {
-                        "area1": "Fixed any usability challenges",
-                        "area2": "Verified external devices connectivity",
-                        "area3": "Made sure Windows updates are always current",
-                        "area4": "Confirmed apps render and appear at its best",
-                        "area5": "Modified settings for processing power utilization",
-                        "area6": "Modified settings to Help locate files easily"
+                        "area1": "Løste utfordringer ved brukervennlighet",
+                        "area2": "Verifiserte tilkoblingen til eksterne enheter",
+                        "area3": "Sørget for at Windows alltid er oppdatert",
+                        "area4": "Bekreftet gengivelse av programmer slik at de vises på sitt beste",
+                        "area5": "Endrede innstillinger for behandling av strømutnyttelse",
+                        "area6": "Endrede innstillinger for å hjelpe deg å finne filer på en enkel måte"
                     },
                     "systemerrorsscannedareas": {
-                        "area1": "Checked if essential services are running",
-                        "area2": "Modified services for higher performance",
-                        "area3": "Fixed any software conflict errors",
-                        "area4": "Optimized Windows error management",
-                        "area5": "Checked and fixed any apps launching errors",
-                        "area6": "Configured system error reports"
+                        "area1": "Kontrollerte at de viktige tjenestene kjører",
+                        "area2": "Endret tjenester for høyere ytelse",
+                        "area3": "Reparerte programvarekonflikter",
+                        "area4": "Optimaliserte feilhåndteringen i Windows",
+                        "area5": "Kontrollerte og reparerte feil ved programstart",
+                        "area6": "Konfigurerte systemfeilrapporter"
                     }
                 },
                 "internetperformance": {
                     "ejunkscannedareas": {
-                        "area1": "Removed clutter from 4 browser(s)",
-                        "area2": "Cleaned leftover e-junk",
-                        "area3": "Deleted outdated internet files",
-                        "area4": "Cleared unwanted web cache",
-                        "area5": "Cleared Cookies",
-                        "area6": "Cleaned any browser residues"
+                        "area1": "Fjerning av rot fra fire nettlesere",
+                        "area2": "Slettet e-søppelrester",
+                        "area3": "Slettet utdaterte Internettfiler",
+                        "area4": "Slettet uønsket netthurtigbuffer",
+                        "area5": "Slettet informasjonskapsler",
+                        "area6": "Fjernet eventuelle nettleserrester"
                     },
                     "browsersecurityscannedareas": {
-                        "area1": "Ensured security services are running",
-                        "area2": "Configured browser security features",
-                        "area3": "Checked and fixed network services",
-                        "area4": "Configured protocol settings",
-                        "area5": "Verified Browser content settings are OK",
-                        "area6": "Scanned browser plugins & extensions"
+                        "area1": "Sikret at sikkerhetstjenester kjører",
+                        "area2": "Konfigurerte nettleserens sikkerhetsfunksjoner",
+                        "area3": "Kontrollerte og reparerte nettverkstjenester",
+                        "area4": "Konfigurerte protokollinnstillinger",
+                        "area5": "Verifiserte at innstillinger for nettleserinnhold er OK",
+                        "area6": "Skannet nettlesertillegg og -utvidelser"
                     },
                     "networksettingsscannedareas": {
-                        "area1": "Fixed network and Internet settings",
-                        "area2": "Checked network configuration settings",
-                        "area3": "Modified connected network settings",
-                        "area4": "Diagnosed settings for faster websites rendering",
-                        "area5": "Fixed any page rendering errors",
-                        "area6": "Scanned all connection service(s)"
+                        "area1": "Reparerte nettverks- og Internettinnstillinger",
+                        "area2": "Kontrollerte innstillinger for nettverkskonfigurasjon",
+                        "area3": "Modifiserte nettverksinnstillinger for tilkoblet modus",
+                        "area4": "Diagnostiserte innstillinger for raskere gjengivelse av nettsider",
+                        "area5": "Reparerte feil ved sidegjengivelse",
+                        "area6": "Skannet alle tilkoblingstjenester"
                     },
                     "browsersettingsscannedareas": {
-                        "area1": "Modified settings for better browsing experience",
-                        "area2": "Verified settings for faster websites rendering",
-                        "area3": "Ensured browser security services are OK",
-                        "area4": "Modified settings to load webpages properly",
-                        "area5": "Fixed settings for faster downloads",
-                        "area6": "Fixed permissions and access control settings"
+                        "area1": "Modifiserte innstillinger for bedre nettleseropplevelser",
+                        "area2": "Verifiserte innstillinger for raskere gjengivelse av nettsider",
+                        "area3": "Sikret at nettleserens sikkerhetstjenester er OK",
+                        "area4": "Modifiserte innstillinger for å laste inn nettsider på riktig måte",
+                        "area5": "Reparerte innstillingene for raskere nedlasting",
+                        "area6": "Reparerte innstillinger for tillatelser og tilgangskontroll"
                     },
                     "wifiperformancescannedareas": {
-                        "area1": "Modified Wi-Fi experience settings",
-                        "area2": "Validated secure home network settings",
-                        "area3": "Fixed Wi-Fi services settings",
-                        "area4": "Modified Secure network sharing settings",
-                        "area5": "Verified Wi-Fi security standards",
-                        "area6": "Validated Wi-Fi channels"
+                        "area1": "Modifiserte innstillinger for Wi-Fi-opplevelsen",
+                        "area2": "Godkjente sikre innstillinger for hjemmenettverket",
+                        "area3": "Reparerte innstillingene for Wi-Fi-tjenester",
+                        "area4": "Modifiserte sikre innstillinger for nettverksdeling",
+                        "area5": "Verifiserte sikkerhetsstandarder for Wi-Fi",
+                        "area6": "Godkjente Wi-Fi-kanaler"
                     }
                 },
                 "malwaresecurity": {
                     "malwarescanscannedareas": {
-                        "area1": "Checked & Removed threats in common loading points",
-                        "area2": "Checked and removed threats in critical locations",
-                        "area3": "Removed any threats from PC",
-                        "area4": "Validated 50+ file types for threats",
-                        "area5": "Cleaned any malware remnants",
-                        "area6": "Verified in cloud remediation engine"
+                        "area1": "Avmerket og fjernet trusler i felles innlastingspunkter",
+                        "area2": "Kontrollerte og fjernet trusler på kritiske steder",
+                        "area3": "Fjernet eventuelle trusler fra PC-en",
+                        "area4": "Validerte over 50 filtyper for trusler",
+                        "area5": "Fjernet eventuelle skadelige programvarerester",
+                        "area6": "Verifisert i erstatningsmotoren i skyen"
                     },
                     "errantprogramsscannedareas": {
-                        "area1": "Validated all installed apps",
-                        "area2": "Validated potentially unwanted apps",
-                        "area3": "Cleaned any inactive and hidden apps",
-                        "area4": "Removed any malicious and errant apps",
-                        "area5": "Validated apps based on reputation factor",
-                        "area6": "Completed registry check for errant programs"
+                        "area1": "Validerte alle installerte apper",
+                        "area2": "Validerte potensielt uønskede apper",
+                        "area3": "Slettet eventuelle inaktive og skjulte apper",
+                        "area4": "Fjernet eventuelle feilfungerende apper",
+                        "area5": "Validerte apper basert på rykte",
+                        "area6": "Fullført register kontroll for feilfungerende programmer"
                     },
                     "zerodayinfectionsscannedareas": {
-                        "area1": "Analyzed for zero-day virus",
-                        "area2": "Removed any malware from PC",
-                        "area3": "Validated in cloud remediation engine",
-                        "area4": "Completed behavioral monitoring of apps",
-                        "area5": "Validated against aggregated engine",
-                        "area6": "Validated against latest definitions"
+                        "area1": "Analyserte etter null-dagers virus",
+                        "area2": "Fjernet eventuelle skadevare fra PC-en",
+                        "area3": "Validerte i erstatningsmotoren i skyen",
+                        "area4": "Fullført atferdsovervåking av apper",
+                        "area5": "Validert mot aggregert motor",
+                        "area6": "Validert mot de nyeste definisjonene"
                     },
                     "securitysettingsscannedareas": {
-                        "area1": "Optimized Windows update settings",
-                        "area2": "Tuned Windows firewall service",
-                        "area3": "Secured browser(s) settings",
-                        "area4": "Diagnosed essential security services",
-                        "area5": "Optimized user access settings",
-                        "area6": "Modified authentication services"
+                        "area1": "Optimalisert Windows Update-innstillinger",
+                        "area2": "Justerte tjenesten for Windows-brannmuren",
+                        "area3": "Sikret nettleserinnstillingene",
+                        "area4": "Diagnostiserte viktige sikkerhetstjenester",
+                        "area5": "Optimaliser innstillinger for brukertilgang",
+                        "area6": "Modifiserte autentiseringstjenester"
                     },
                     "annoyingadwarescannedareas": {
-                        "area1": "Removed browser(s) adware",
-                        "area2": "Tuned browser(s) pop-up settings",
-                        "area3": "Diagnosed browser re-direction threats",
-                        "area4": "Cleared adware leftovers",
-                        "area5": "Optimized browser experience settings",
-                        "area6": "Validated in cloud remediation engine"
+                        "area1": "Fjernet reklamevare i nettleser(e)",
+                        "area2": "Justerte popup-innstillinger for nettleser(e)",
+                        "area3": "Diagnostiserte trusler for flytting av nettleser",
+                        "area4": "Slettet reklamevarerester",
+                        "area5": "Optimaliserte innstillinger for nettleseropplevelsen",
+                        "area6": "Validerte i erstatningsmotoren i skyen"
                     }
                 }
             },
-            "issues": "ISSUES",
+            "issues": "PROBLEM(ER)",
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
-            "backToHome": "Back To Home"
+            "backToHome": "Tilbake til hjem"
         },
         "subscriberScanHomePage": {
-            "title": "All is well with your ",
-            "serialNumber": "Serial number: ",
-            "subTitle": "You are subscribed to Lenovo Smart Performance Service",
-            "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
-            "scanNow": "SCAN NOW",
-            "returnto": "RETURN TO DASHBOARD",
-            "mostRecent": "MOST RECENT SCAN:",
-            "nextScheduled": "NEXT SCHEDULED SCAN:",
+            "title": "Alt er bra med ",
+            "serialNumber": "Serienummer: ",
+            "subTitle": "Du abonnerer på Lenovo Smart Performance Service",
+            "description": "Vi skanner regelmessig etter og reparerer datamaskinen for PC-ytelse, Internettytelse og problemer med skadevare på en proaktiv måte. Du er godt dekket. Du kan også starte ytelseskontroll ved å klikke på skann nå-knappen.",
+            "scanNow": "SKANN OG REPARER",
+            "returnto": "RETURNER TIL DASHBORD",
+            "mostRecent": "NYLIGSTE SKANNING:",
+            "nextScheduled": "NESTE PLANLAGTE SKANNING:",
             "scanSummary": {
-                "title": "Scan summary:",
-                "description": "We are constantly tuning your computer",
-                "tune": "Tune",
-                "tuneSummary": "Disk space reclaimed",
-                "boost": "Boost",
-                "boostSummary": "Fixes to improve performance",
-                "secure": "Secure",
-                "secureSummary": "Fixes to improve security",
-                "annual": "Annual",
-                "quarterly": "Quarterly",
-                "custom": "Custom",
-                "txtFrom": "From",
-                "txtTo": "To",
-                "txtGo": "Go",
-                "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "title": "Skannesammendrag:",
+                "description": "Vi justerer datamaskinen din kontinuerlig",
+                "tune": "Juster",
+                "tuneSummary": "Diskplass gjenvunnet",
+                "boost": "Økning",
+                "boostSummary": "Reparasjoner for å forbedre ytelsen",
+                "secure": "Sikre",
+                "secureSummary": "Reparasjoner for å forbedre sikkerheten",
+                "annual": "Anno",
+                "quarterly": "Hvert kvartal",
+                "custom": "Tilpasset",
+                "txtFrom": "Fra",
+                "txtTo": "Til",
+                "txtGo": "Start",
+                "summaryCaption": "plass gjenvunnet",
+                "fixes": "reparasjon(er)",
+                "txtClr": "Nullstill"
             },
             "lastScanResults": {
-                "title": "Last 5 scan results:",
-                "scanDate": "Scan date:",
-                "results": "Results:",
+                "title": "Siste fem skanneresultater:",
+                "scanDate": "Skannedato",
+                "results": "Resultater",
                 "status": "Status"
             },
-            "backToHome": "Back To Home",
-            "successTitle": "Your Pc is tuned up !",
-            "successDescription": "Smart Performance resolved <b>{{issueCount}} issues</b> to keep your pc running smoothly, you can find scan summary and report below."
+            "backToHome": "Tilbake til hjem",
+            "successTitle": "PC-en din er justert !",
+            "successDescription": "Smart Performance har løst <b>{{issueCount}}problem(er)</b> for å holde PC-en din i gang, du finner sammendrag og rapport nedenfor."
         },
-        "runningWell": "PC is running well",
+        "runningWell": "PC-en fungerer bra",
         "feedbackContainer": {
-            "title": "Leave us some feedback",
-            "subtitle": "Tell us what you think about Vantage",
-            "buttonText": "send feedback",
+            "title": "Gi oss tilbakemeldinger",
+            "subtitle": "Fortell oss hva du synes om Smart Performance",
+            "buttonText": "send tilbakemeldinger",
             "questions": {
-                "q1": "Does the product look and feel good?",
-                "q2": "Do the feature seen comprehensive?",
-                "q3": "Was the scan easy to use?",
-                "q4": "Happy about the fixes we did?",
-                "q5": "Do you see value for money? ",
-                "q6": "Will you refer it to your friends and family?",
-                "q7": "How likely are you to continue paying for the Smart Performance feature?",
-                "q8": "Overall how satisfied are you with the Smart Performance feature?"
+                "q1": "1. Hvor vanskelig eller enkelt var det å bruke skannefunksjonen?",
+                "q2": "2. Hvor vanskelig eller enkelt var det å forstå skanneresultatene?",
+                "q3": "3. Hvor sannsynlig er det at du betaler for et Smart Performance-abonnement for å forbedre systemets ytelse?",
+                "q4": "4. Hvor fornøyd er du generelt sett med Smart Performance-funksjonen?",
+                "q5": "1. Hvor vanskelig eller enkelt var det å forstå reparasjonene i Smart Performance?",
+                "q6": "2. Fant vi skadevare på systemet ditt?",
+                "q7": "3. Hvor sannsynlig er det at du fortsetter å betale for Smart Performance-funksjonen?",
+                "q8": "4. Hvor fornøyd er du generelt sett med Smart Performance-funksjonen?"
             },
             "rating": {
-                "r1": "Hate it",
-                "r2": "Love it",
-                "r3": "Seems lacking",
-                "r4": "Good enough",
-                "r5": "Crazy",
-                "r6": "Cool",
-                "r7": "Not so sure",
-                "r8": "Absolutely yes",
-                "r9": "No way",
-                "r10": "Looks worthy",
-                "r11": "Not so sure",
-                "r12": "Absolutely yes",
-                "r13": "Not at all likely",
-                "r14": "Very Likely",
-                "r15": "Not at all satisfied",
-                "r16": "Very Satisfied"
+                "r1": "Svært vanskelig",
+                "r2": "Svært enkelt",
+                "r3": "Svært vanskelig",
+                "r4": "Svært enkelt",
+                "r5": "Ikke sannsynlig i det hele tatt",
+                "r6": "Svært sannsynlig",
+                "r7": "Ikke fornøyd i det hele tatt",
+                "r8": "Svært fornøyd",
+                "r9": "Svært vanskelig",
+                "r10": "Svært enkelt",
+                "r11": "Ja",
+                "r12": "Nei",
+                "r13": "Ikke sannsynlig i det hele tatt",
+                "r14": "Svært sannsynlig",
+                "r15": "Ikke fornøyd i det hele tatt",
+                "r16": "Svært fornøyd"
             },
-            "commentTip": "Shout what you love and whisper what you hate.",
-            "comments": "Please leave your comments here..."
+            "commentTip": "Skriv inn eventuelle kommentarer eller ytterligere tilbakemeldinger nedenfor:",
+            "comments": "Legg igjen kommentarene dine her …"
         },
         "auto": "Auto",
-        "manual": "Manual",
-        "noScanResults": "Please click SCAN & FIX button to trigger scan process."
+        "manual": "Manuell",
+        "noScanResults": "Klikk på SKANN OG REPARER hvis du vil utløse skanneprosessen.",
+        "am": "AM",
+        "pm": "PM"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

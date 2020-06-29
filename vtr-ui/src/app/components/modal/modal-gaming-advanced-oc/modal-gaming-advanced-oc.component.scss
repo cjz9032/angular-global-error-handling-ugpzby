@@ -45,10 +45,6 @@
                     &:nth-child(even) {
                         margin-left: 6%;
                     }
-                    &:last-child,
-                    &:nth-last-child(2){
-                        margin-bottom: 0;
-                    }
                     @media #{$breakpoint_xl} { 
                         width: 100%;
                         &:nth-child(even) {

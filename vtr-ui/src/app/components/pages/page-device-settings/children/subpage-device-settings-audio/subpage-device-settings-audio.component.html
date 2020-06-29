@@ -62,6 +62,8 @@
 											<div id="audio-dolby-voip-checkbox">
 												<vtr-ui-checkbox [componentId]="'audio-voip'"
 													[isMetricsEnabled]=true
+													[metricsParent]='metricsParent'
+													[metricsItem]="'cb.dolby-audio.audio-voip'"
 													[value]="voipStatus.status"
 													[checked]="voipStatus.status"
 													[disabled]='automaticAudioDisabled'
@@ -103,6 +105,8 @@
 											<div id="audio-dolby-entertainment-checkbox">
 												<vtr-ui-checkbox [componentId]="'entertainmentCheckbox'"
 													[isMetricsEnabled]=true
+													[metricsParent]='metricsParent'
+													[metricsItem]="'cb.dolby-audio.audio-entertainment'"
 													[value]="entertainmentStatus.status"
 													[checked]="entertainmentStatus.status"
 													[disabled]='automaticAudioDisabled'
@@ -225,6 +229,9 @@
 												[max]=100
 												[step]=1
 												[value]="microphoneProperties.volume"
+												[isMetricsEnabled]=true
+												[metricsParent]="metricsParent"
+												[metricsItem]="'slider.microphone.volume'"
 												(valueChange)="onMicrophoneVolumeChange($event)"
 												[isDisabled]="!microphoneProperties.permission"
 												[ariaLabel]="'microphone volume'"

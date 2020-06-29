@@ -2,10 +2,10 @@
 	<div class="row">
 		<div class="row">
 			<div class="col col-12 col-sm-12 mt-40">
-				<p class="title" [innerHTML]="items.featureTitle | translate"></p>
-				<p *ngIf="items.featureTitleDesc && !items.descHasLink" class="text-regular" [innerHTML]="items.featureTitleDesc | translate"></p>
+				<p class="title" id="{{textId}}-introduction-title" role="text" [innerHTML]="items.featureTitle | translate"></p>
+				<p *ngIf="items.featureTitleDesc && !items.descHasLink" id="{{textId}}-introduction-description" role="text" class="text-regular" [innerHTML]="items.featureTitleDesc | translate"></p>
 				<div *ngIf="items.descHasLink">
-					<p *vtrTranslate="items.featureTitleDesc | translate" class="text-regular p-1">
+					<p *vtrTranslate="items.featureTitleDesc | translate" id="{{textId}}-introduction-description" role="text" class="text-regular p-1">
 						<ng-content></ng-content>
 					</p>
 				</div>
@@ -21,10 +21,10 @@
 			<div class="col-12 col-xl-6 order-xl-2 mt-40">
 				<div class="col">
 					<div class="list-heading">
-						<p class="adjust-left" [innerHTML]="items.featureSubtitle | translate"></p>
+						<p class="adjust-left" id="{{textId}}-introduction-list-title" role="text" [innerHTML]="items.featureSubtitle | translate"></p>
 					</div>
 					<ul class="bullet-list" *ngIf="items.featureIntroList">
-						<li class="good" *ngFor="let item of items.featureIntroList">
+						<li class="good" *ngFor="let item of items.featureIntroList, index as i">
 							<div class="container-fluid">
 								<div class="row align-items-center">
 									<div class="col-auto pl-0">
@@ -34,11 +34,11 @@
 											</div>
 										</div>
 										<div *ngIf="item.mark">
-											<span class="serial mr-2" [innerHTML]="item.mark"></span>
+											<span class="serial mr-2" id="{{textId}}-introduction-list-mark-{{i + 1}}" role="text" [innerHTML]="item.mark"></span>
 										</div>
 									</div>
 									<div class="col">
-										<div class="text-regular" [innerHTML]="item.detail | translate"></div>
+										<div class="text-regular" id="{{textId}}-introduction-list-detail-{{i + 1}}" role="text" [innerHTML]="item.detail | translate"></div>
 									</div>
 								</div>
 							</div>

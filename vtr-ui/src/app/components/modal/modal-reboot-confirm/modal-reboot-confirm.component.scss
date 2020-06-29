@@ -11,6 +11,12 @@
 			width: 4rem;
 			height: 4rem;
 			.close {
+				@media #{$white-on-black} {
+					opacity: 1;
+				}
+				@media #{$black-on-white} {
+					opacity: 1;
+				}
 				&:focus {
 					@include outline-blue;
 				}

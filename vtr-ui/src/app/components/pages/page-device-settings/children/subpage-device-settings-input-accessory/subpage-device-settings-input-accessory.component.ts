@@ -107,6 +107,10 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 			map(res => res.find(item => item.key === 'KeyboardBacklightLevel')),
 			map(res => res.value !== BacklightLevelEnum.NO_CAPABILITY)
 		);
+
+		this.keyboardService.getTopRowFnLockCapability().then(res => {
+			this.fnLockCapability = res;
+		});
 	}
 
 	getVoipHotkeysSettings() {

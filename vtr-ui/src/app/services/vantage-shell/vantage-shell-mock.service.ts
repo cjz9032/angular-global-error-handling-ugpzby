@@ -294,6 +294,7 @@ export class VantageShellService {
 
 		device.getMachineInfo = this.getPromise(obj);
 		device.getMachineInfoSync = this.getPromise(obj);
+		device.getDeviceInfo = this.getPromise({ sn: obj.serialnumber });
 		return device;
 	}
 
@@ -366,7 +367,13 @@ export class VantageShellService {
 		};
 		sysInfo.getMachineInfo = this.getPromise(machineInfo);
 		sysInfo.getMachineInfoSync = this.getPromise(machineInfo);
-		sysInfo.getMachineType = this.getPromise(1); // 1 = ThinkPad
+		/**
+		 * 0  = "ideaPad",
+		 * 1  = "thinkPad",
+		 * 2  = "ideaCenter",
+		 * 3  = "thinkCenter"
+		 */
+		sysInfo.getMachineType = this.getPromise(1);
 		sysInfo.getHardwareInfo = this.getPromise(hardwareInfo);
 		return sysInfo;
 	}
@@ -2275,7 +2282,7 @@ export class VantageShellService {
 			cameraAllowed: true,
 			photoAddress: 'c:\\users',
 			alarmDuration: 30,
-			photoNumber: 5,
+			photoNumber: 10,
 			errorCode: 0
 		};
 		return {
@@ -2298,6 +2305,13 @@ export class VantageShellService {
 		const win = window as any;
 		if (win.VantageShellExtension) {
 			return win.VantageShellExtension.Utils.MSStore;
+		}
+		return undefined;
+	}
+
+	public getSysEventFeature(): Phoenix.SystemEventFeature {
+		if (this.phoenix) {
+			return this.phoenix.systemEvent;
 		}
 		return undefined;
 	}

@@ -51,15 +51,22 @@
                     }
                     .heading {
                         h3, h2{
-                            font-size: $fontsize_md;
-                            color: $main_shade !important;
-                            letter-spacing: 0;
-                            font-weight: $weight_bold;
-                            @media #{$breakpoint_sm}{
-                                font-size: 1.7rem;
-                                letter-spacing: -0.02rem;
-                                margin-bottom: 0;
-                            }
+                            text-align: left;
+								font-size: $fontsize_sm;
+								color: $main_shade !important;
+								letter-spacing: 0;
+								font-weight: $weight_bold;									
+								@media #{$breakpoint_lg}{				
+									font-size: $fontsize_xs;
+								}	
+								@media #{$breakpoint_md}{				
+									font-size: $fontsize_xs2;
+								}	
+								@media #{$breakpoint_sm}{				
+									font-size:1.1rem;
+									letter-spacing: -0.02rem;									
+									margin-bottom:-0.25rem;
+								}	
                         }
                         .icon, .icomoon{
                             color: $menu_hover;
@@ -118,10 +125,11 @@
                                 font-size: 1.2rem;
                                 max-width: 8.1rem;
                                 margin-top: 0.6rem;
-                                line-height: 1.2rem;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space:nowrap;
                                 @media #{$breakpoint_sm}{
-                                    font-size: 0.8rem;
-                                    line-height: 1.2rem;
+                                    font-size: 1rem;
                                     max-width: 100%;
                                     margin-top: 0;
                                 }
@@ -147,9 +155,14 @@
                         .scanned-list {
                             list-style-type: none;
                             padding: 0;
+                            margin-bottom: 0;
                             .list-item {
+                                .item-text{
+                                    margin-bottom: 1rem;
+                                }
                                 p{
                                     font-size: 1.4rem;
+                                    overflow: hidden;
                                 }
                                 fa-icon {
                                     font-size: 1.4rem;
@@ -175,18 +188,33 @@
                 .status-text{
                     margin-top: 2.2rem;
                     @media #{$breakpoint_sm}{
-                        margin-top: 0rem;
+                        margin-top: 1.25rem;
                     }
                     p {
                         text-transform: uppercase;
-                        font-size: 1.6rem;
+                        font-size: $fontsize_xs;
                         text-align: right;
                         color: $shade_dark;
                         position: relative;
-                        padding-right:2rem;
+                        padding-right:1.5rem;
                         letter-spacing: 0;
+                        word-break:break-all;						
+                        
+                        @media #{$breakpoint_lg}{					
+                            font-size: $fontsize_xs;
+                           // top: 36%;
+                        }
+                        @media #{$breakpoint_md}{
+                           // top: 36%;					
+                            font-size: $fontsize_xs2;
+                        }
+                        @media #{$breakpoint_xl}{					
+                            font-size: $fontsize_xs2;
+                           // top: 36%;
+                        }
                         @media #{$breakpoint_sm}{
-                            margin-top: 1rem;
+                          //  top: 32.5%;								
+                            font-size: 1.1rem;
                         }
                         // top: 40%;
                     }

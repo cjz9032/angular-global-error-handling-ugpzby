@@ -1,54 +1,54 @@
 <div class="ui-lighting-notebook">
     <div class="lighting-notebook-content">
-        <div class="lighting-describe">
+        <div class="lighting-describe" id="gaming_lighting_profile_description_fn+space" role="text">
             {{'gaming.lightingNewversion.tipText.title1' | translate}}
         </div>
         <div class="lighting-profile-toggle">
-            <vtr-ui-lighting-profile-toggle [currentProfile]="currentProfileId" 
+            <vtr-ui-lighting-profile-toggle [currentProfile]="currentProfileId"
             (setLightingProfileId)="setLightingProfileId($event)"
             [id]="'profile'" [automationId]="'profile'"></vtr-ui-lighting-profile-toggle>
         </div>
         <div class="lighting-detail" *ngIf="!isProfileOff">
             <div class="effect-bright-speed">
                 <div class="lighting-effect">
-                    <h3 class="content-title">{{'gaming.lightingProfile.profile.text3.title' | translate}} </h3>
+                    <h3 class="content-title" id="gaming_lighting_effect_text" role="text">{{'gaming.lightingProfile.profile.text3.title' | translate}} </h3>
                     <vtr-ui-lighting-effect [options]="lightingEffectList" [effectOptionName]="lightingCurrentDetail.lightingEffectName" [showOptions]="showOptions" (isEffectList)="isEffectListFn($event)"
-                    [selectedValue]="lightingCurrentDetail.lightEffectType" (change)="setLightingProfileEffect($event)" [tabindex]="0" [isEffectChange]="isEffectChange">
+                    [selectedValue]="lightingCurrentDetail.lightEffectType" (change)="setLightingProfileEffect($event)" [tabindex]="0" [isEffectChange]="isEffectChange" [automationId]="'gaming_lighting_effect_drop_menu'">
                     </vtr-ui-lighting-effect>
                 </div>
                 <div class="bright-speed">
                     <div  class="lighting-bright">
-                        <h1 class="content-title">{{'device.deviceSettings.displayCamera.camera.brightness' | translate}} </h1>
+                        <h1 class="content-title" id="gaming_lighting_brightness_text" role="text">{{'device.deviceSettings.displayCamera.camera.brightness' | translate}} </h1>
                         <vtr-ui-add-reduce-button [minData]="1" [maxData]="lightingCapabilities.BrightAdjustLevel" [step]="1" [value]="lightingCurrentDetail.lightBrightness"
-                        (setVal) = "setLightingBrightness($event)" [isValChange]="isValChange" [ariaLabelValue]="'Brightness'"></vtr-ui-add-reduce-button>
+                        (setVal) = "setLightingBrightness($event)" [isValChange]="isValChange" [ariaLabelValue]="'Brightness'" [automationId]="'gaming_lighting_brightness'" ></vtr-ui-add-reduce-button>
                     </div>
                     <div  class="lighting-speed" *ngIf="isSupportSpeed">
-                        <h1 class="content-title">{{'gaming.lightingNewversion.lightingSpeed.title' | translate}} </h1>
+                        <h1 class="content-title" id="gaming_lighting_speed_text" role="text">{{'gaming.lightingNewversion.lightingSpeed.title' | translate}} </h1>
                         <vtr-ui-add-reduce-button [minData]="1" [maxData]="lightingCapabilities.SpeedSetLevel" [step]="1" [value]="lightingCurrentDetail.lightSpeed"
-                        (setVal) = "setLightingSpeed($event)" [isValChange]="isValChange" [ariaLabelValue]="'Speed'"></vtr-ui-add-reduce-button>
+                        (setVal) = "setLightingSpeed($event)" [isValChange]="isValChange" [ariaLabelValue]="'Speed'" [automationId]="'gaming_lighting_speed'"></vtr-ui-add-reduce-button>
                     </div>
                 </div>
             </div>
             <div class="lighting-color">
-                <h3 class="content-title">{{'gaming.lightingProfile.colourwheel.text7.title' | translate}} </h3> 
+                <h3  id="gaming_lighting_color_text" role="text" class="content-title">{{'gaming.lightingProfile.colourwheel.text7.title' | translate}} </h3>
                 <div class="lighting-color-inner">
                     <vtr-ui-lighting-keyboard-lnbx50 [listInfo]="lightInfo" [isDisabled]="isDisabled"
                         [isDefault]="isDefault" [profileId]="currentProfileId" [isColorPicker]="isColorPicker"
                         (areaSetting)="selectLightingArea($event)" (changeIsDefault)="changeIsDefaultFn($event)">
                     </vtr-ui-lighting-keyboard-lnbx50>
                     <vtr-ui-color-picker *ngIf="isColorPicker" [color]="color" [isColorPicker]="isColorPicker"
-                    (isToggleColorPicker)="isToggleColorPicker($event)" (setColor)="setLightingColor($event)"></vtr-ui-color-picker>
+                    (isToggleColorPicker)="isToggleColorPicker($event)" (setColor)="setLightingColor($event)" [automationId]="'gaming_lighting_color_picker'"></vtr-ui-color-picker>
                 </div>
             </div>
             <div class="lighting-default-text">
-                <button vtrMetrics [metricsItem]="'lighting_set_to_default'" metricsEvent="featureClick"
+                <button id="gaming_lighting_setdefault_profile_{{currentProfileId}}" vtrMetrics [metricsItem]="'lighting_set_to_default'" metricsEvent="featureClick"
                 class="under-line-button"  (click)="setDefaultProfile(currentProfileId);"
                 [attr.aria-label]="'set to default'" (focus)="isColorPicker=false;isShow=true;">{{'gaming.lightingProfile.button.default.title' | translate}}</button>
             </div>
         </div>
         <div *ngIf="isProfileOff"
-             class="lighting-off d-flex justify-content-center align-items-center">
-        {{'gaming.lightingProfile.profile.text1.title' | translate}}   
+             class="lighting-off d-flex justify-content-center align-items-center" id="gaming_lighting_profile_off_description" role="text">
+        {{'gaming.lightingProfile.profile.text1.title' | translate}}
         </div>
     </div>
 </div>

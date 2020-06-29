@@ -26,7 +26,7 @@ vtr-ui-row-switch {
   label {
     margin-bottom: 0rem;
   }
-  
+
 }
 
 .antiTheft-describe-div {
@@ -55,6 +55,15 @@ vtr-ui-row-switch {
       font-weight: 300;
     }
   }
+
+  .descriptionText {
+    label {
+      color: #d34503 !important;
+      font-size: 14px;
+    }
+    padding: 16px;
+  }
+
   .subTitle {
     font-weight: $weight_bold;
     color: $shade_blue;
@@ -106,7 +115,8 @@ vtr-ui-row-switch {
   .right-icon {
     font-size: $fontsize_sm;
     color: $menu_hover;
-    margin-left: 10px;
+	margin-left: 10px;
+	border: 0.1rem solid transparent;
     &:hover {
       color: $highlight;
     }

@@ -570,39 +570,101 @@ $high-contrast-white-disabled-maroon: #610000;
 	}
 }
 
-@mixin dropdownarrow-yellow-black {
-	@media #{$white-on-black} {
+@mixin dropdown-arrow-yellow-black {
 		background: $high-contrast-black-yellow;
-	}
 }
 
-@mixin dropdownarrow-blue-white {
-	@media #{$black-on-white} {
+@mixin dropdown-arrow-blue-white {
 		background: $high-contrast-white-blue;
-	}
 }
+
 @mixin hyperlink-blue-white {
-@media #{$black-on-white} {
 	color: $high-contrast-white-blue;
-}
 }
 @mixin hyperlink-yellow-black {
-@media #{$white-on-black} {
 	color: $high-contrast-black-yellow;
-}
 }
 
-@mixin privacylink-blue-white {
-@media #{$black-on-white} {
-	color: $high-contrast-white-blue;
-	border:none;
+@mixin high-contrast-black-border {
+	border: 0.1rem solid $high-contrast-black-cyan;
 }
+
+@mixin high-contrast-white-border {
+	border: 0.1rem solid $high-contrast-white-dark-magenta;
 }
-@mixin privacylink-yellow-black {
-@media #{$white-on-black} {
-	color: $high-contrast-black-yellow;
-	border:none;
+
+@mixin high-contrast-black-disabled-border {
+	border: 0.1rem solid $high-contrast-black-disabled-green;
 }
+
+@mixin high-contrast-white-disabled-border {
+	border: 0.1rem solid $high-contrast-white-disabled-maroon;
+}
+
+@mixin high-contrast-black-text-color {
+	color: $high-contrast-black-cyan;
+}
+
+@mixin high-contrast-white-text-color {
+	color: $high-contrast-white-dark-magenta;
+}
+
+@mixin high-contrast-black-text-color-disabled {
+	color: $high-contrast-black-disabled-green;
+}
+
+@mixin high-contrast-white-text-color-disabled {
+	color: $high-contrast-white-disabled-maroon;
+}
+
+@mixin high-contrast-white-background {
+	background: $high-contrast-white-dark-magenta;
+}
+
+@mixin high-contrast-black-background {
+	background: $high-contrast-black-cyan;
+}
+
+@mixin high-contrast-black-background-disabled {
+	background: $high-contrast-black-disabled-green;
+}
+
+@mixin high-contrast-white-background-disabled {
+	background: $high-contrast-white-disabled-maroon;
+}
+@mixin tt-inner {
+	color: $main_dark;
+	background-color: $light;
+	border: 0.1rem solid $grey_dark;
+	font-size: 1.2rem;
+	text-align: left;
+	border-radius: 0rem;
+}
+
+@mixin arrow-before {
+border: none;
+}
+
+
+@mixin high-contrast-background-transparent {
+	background: transparent;
+}
+
+@mixin high-contrast-background-image {
+	@media #{$white-on-black} {
+		background-image: none !important;
+	}
+	@media #{$black-on-white} {
+		background-image: none !important;
+	}
+}
+
+@mixin white-border {
+	border: 0.1rem solid $light;
+}
+
+@mixin black-border {
+	border: 0.1rem solid $dark;
 }
 
 @mixin add-app-icon-gaming {

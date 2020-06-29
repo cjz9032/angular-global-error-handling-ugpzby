@@ -10,12 +10,23 @@
   background-image: linear-gradient(239deg, #B773E4 0%, #7728AC 100%);
   background-size: cover;
 
+	@media #{$white-on-black} {
+		border: 0.1rem solid $light;
+		background: $dark;
+		background-image: none;
+	}
+	@media #{$black-on-white} {
+		border: 0.1rem solid $dark;
+		background: $light;
+		background-image: none;
+	}
+
 	.title {
 		font-size: $fontsize_xl;
 		font-weight: $weight_600;
 		margin-bottom: 0.5rem;
   }
-  
+
 	.description {
 		font-size: $fontsize_xs;
 		font-weight: $weight_regular;

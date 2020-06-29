@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Isı Kipi Ayarı",
                     "thermalMode2SettingDesc": "Kullanmak istediğiniz kipi seçin.",
                     "fnQDesc": "Fn+Q kısayolunu kullanarak kipi değiştirebilirsiniz.",
-                    "perormanceTitle": "Performans Kipi",
+                    "performanceTitle": "Performans Kipi",
                     "performanceDesc": "Daha yüksek fan hızı ve daha fazla güç tüketimi ile bilgisayarınızın performansını artırın. ",
                     "OCDesc": "Hız Aşırtma işlevini açmayı seçebilirsiniz.",
                     "ac_dcDesc": "Performans Kipi yalnızca AC güç bağdaştırıcısı takılıyken geçerlidir.",
@@ -155,6 +155,8 @@
                         "cpuOCName79": "Önbellek Voltajı Sapması",
                         "cpuOCName122": "7 Çekirdek Oranı",
                         "cpuOCName123": "8 Çekirdek Oranı",
+                        "cpuOCName124": "9 Çekirdek Oranı",
+                        "cpuOCName125": "10 Çekirdek Oranı",
                         "cpuOCName102": "Çekirdek ICCMAX",
                         "cpuOCName106": "Önbellek ICCMAX",
                         "cpuOCName114": "AVX Oranı Sapması"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Önbellek Voltajına uygulanan son voltaj sapması.",
                         "cpuOCTip122": "Çekirdeklerin çalışabileceği maksimum çekirdek çarpanını ayarlayın. Çekirdek frekansının değeri, bu oranın ve referans saat frekansının ürünüdür.",
                         "cpuOCTip123": "Çekirdeklerin çalışabileceği maksimum çekirdek çarpanını ayarlayın. Çekirdek frekansının değeri, bu oranın ve referans saat frekansının ürünüdür.",
+                        "cpuOCTip124": "Çekirdeklerin çalışabileceği maksimum çekirdek çarpanını ayarlayın. Çekirdek frekansının değeri, bu oranın ve referans saat frekansının ürünüdür.",
+                        "cpuOCTip125": "Çekirdeklerin çalışabileceği maksimum çekirdek çarpanını ayarlayın. Çekirdek frekansının değeri, bu oranın ve referans saat frekansının ürünüdür.",
                         "cpuOCTip102": "İşlemci Çekirdek Voltaj Regülatörü için ICCMAX'i ayarlayın.",
                         "cpuOCTip106": "İşlemci Önbellek ve Halka Veriyolu Voltaj Regülatörü için ICCMAX'i ayarlayın.",
                         "cpuOCTip114": "AVX etkin durumdayken etkili etkin çekirdek oranı sınırını elde etmek için bu değeri, karşılık gelen etkin çekirdek oranı sınırından çıkarın."
@@ -729,7 +733,7 @@
                 "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
-                "name11": "Legion front Fan Lighting",
+                "name11": "Legion Front Fan Lighting",
                 "name12": "Legion Top Fan Lighting"
             },
             "lightingEffect": {
@@ -1067,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "Pilinizin ömrünü uzatmak için tam dolum kapasitesini kullanımınıza göre iyileştirdik. Pil kapasitesinin tamamını kullanmak için pili %20'ye kadar boşaltıp yeniden doldurmanız gerekmektedir.",
-                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
+                    "moreInfo": "Ek bilgi için <a role=\"link\" href=\"#/device/high-density-battery\" tabindex=\"0\">burayı</a> tıklatın."
                 },
                 "condition": {
                     "Illegal": "Takılı pil, sistem tarafından <b>desteklenmiyor</b> ve doldurulmayacak. Lütfen yerine bu sistem için doğru olan Lenovo pilini takın.",
@@ -1097,13 +1101,13 @@
                     "NotDetected": "<b>Birincil pil algılanmadı.</b>"
                 },
                 "highDensityBattery": {
-                    "title": "High density battery",
-                    "subtitle": "How your battey works",
-                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "title": "Yüksek yoğunluklu pil",
+                    "subtitle": "Piliniz nasıl çalışır?",
+                    "para1": "Pil ömrünü uzatmak için piliniz kişisel kullanım düzeninize göre şarj voltajını ve kapasitesini otomatik olarak ayarlar.",
                     "para2": {
-                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
-                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
-                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                        "item1": "- Pilinizin kapasitesinin %65'inden daha azını bir hafta veya daha uzun süre kullanırsanız pil, şarj voltajını ve kapasitesini geçici olarak düşürebilir. Kapasitedeki azalma küçüktür ve kullanım düzeninizde fark edilmez.",
+                        "item2": "- Pilinizi, pil seviyesi %20'nin altına düşecek kadar boşaltıp ardından pili tamamen şarj ettiğinizde tam kapasite geri yüklenir.",
+                        "item3": "- Ayrıca, 2 hafta veya daha uzun süre pilinizin kapasitesinin %10'undan daha azını kullanırsanız pil, şarj voltajını ve kapasitesini geçici olarak azaltılmış pil kapasitesinin %50'si olana kadar daha da düşürebilir."
                     }
                 }
             },
@@ -1271,7 +1275,8 @@
                             "description1": "Özel bir pil şarjının etkinleştirilmesi, bu cihazı kullanırken genel pil durumunun daha uzun süre dayanmasını sağlar.Ancak, şarjın tam dolu olmaması çalışma zamanı pil ömrünün daha az olmasına neden olur.",
                             "description2": "Bu özelliği tamamen etkinleştirmek için lütfen makinenizi fişten çekin vepilinizin tam olarak boşalmasını veya doldurmayı durdurma eşiğinin altına düşmesini bekleyin.",
                             "enable": "ETKİNLEŞTİR",
-                            "cancel": "İPTAL"
+                            "cancel": "İPTAL",
+                            "description3": "Piliniz, kullanım düzeninize göre şarj voltajını ve kapasitesini otomatik olarak optimize eder. Pilinizi hafif kullanıyorsanız Pil Şarj Eşiği'ni etkinleştirmeniz gerekmez."
                         },
                         "options": {
                             "start": "Şu değerden az olduğunda şarj etmeye başla",
@@ -1297,7 +1302,7 @@
                         "title": "Uçak Güç Kipi",
                         "description": "Bu özellik, belirli bir güç sınırının geçerli olduğu bir uçaktaki AC güç çıkışını kullanabilmenizi sağlar. Bu kipte, pil şarj oranı ve bilgisayar performansı sınırlanarak bilgisayarınızın pil tüketimi güvenli bir düzeye düşürülür.",
                         "checkBoxDesc": "Otomatik algılama",
-                        "note": "Otomatik algılama işaretlenirse bilgisayarınız uçak kabini ortamını algıladığında otomatik olarak Uçak güç kipini açar ve kullanmadığınızda kapanır."
+                        "note": "Otomatik algılama işaretlenirse bilgisayarınız uçak kabini ortamını algıladığında otomatik olarak Uçak Güç Kipi'ni açar ve kullanmadığınızda kapanır."
                     },
                     "gaugeReset": {
                         "title": "Pil göstergesi sıfırlama",
@@ -1552,7 +1557,7 @@
                     },
                     "optimize": {
                         "title": "Mikrofonumu şunun için en iyi konuma getirin:",
-                        "tooltip": "Ses deneyiminizi farklı senaryolar ve ortamlarla geliştirmek için mikrofon efektini yapılandırın.",
+                        "tooltip": "Ses deneyiminizi farklı senaryolar ve ortamlarda geliştirmek için mikrofon efektini yapılandırın.",
                         "options": {
                             "VoiceRecognition": "SES TANIMA",
                             "OnlyMyVoice": "YALNIZCA BENİM SESİM",
@@ -1580,7 +1585,7 @@
                 "display": {
                     "title": "Ekran",
                     "displayColorTemperature": {
-                        "title": "Göz koruması kipi",
+                        "title": "Göz Koruması Kipi",
                         "description": "Göz yorgunluğunu önlemek için bilgisayarınızı uzun süre kullandığınızda ekranınızın renk sıcaklığını mavi ışığı filtreleyecek şekilde ayarlayabilirsiniz. Ayrıca, sıcak renkler özellikle geceleri uyumanız için iyidir.",
                         "link": {
                             "click": "Renk sıcaklığını değiştirmek için",
@@ -1590,19 +1595,19 @@
                     },
                     "eyeCareMode": {
                         "title": "Göz Koruması Kipi",
-                        "checkbox": "Göz koruması kipini gün batımından gün doğumuna kadar sürecek şekilde ayarlayın",
+                        "checkbox": "Göz Koruması Kipi'ni gün batımından gün doğumuna kadar sürecek şekilde ayarla",
                         "options": {
                             "warm": "Sıcak (Gözler için daha iyi)",
                             "cold": "Soğuk"
                         },
                         "reset": "Sıfırla",
                         "tooltip": "Göz Koruması Kipi, mavi ışığı filtreleyip göz yorgunluğunu azaltmak için ekranınızın renk sıcaklığını ayarlar.",
-                        "onSunsetToSunriseScheduleDescription": "Göz koruması kipini gün batımından gün doğumuna kadar sürecek şekilde ayarlayın",
+                        "onSunsetToSunriseScheduleDescription": "Göz Koruması Kipi'ni gün batımından gün doğumuna kadar sürecek şekilde ayarla",
                         "note": {
                             "title": "Not",
                             "description": "Lenovo Vantage'ın, bölgenizdeki gün batımı ve gün doğumu saatlerini hesaplamak için konum bilgilerinize erişmesi gerekir."
                         },
-                        "tips": "Göz Koruması Kipi'ne dönmek için Windows Update'i çalıştırın veya grafik kartı sürücüsünü manuel olarak yükleyin"
+                        "tips": "Göz Koruması Kipi'ne dönmek için Windows Update'i çalıştırın veya grafik kartı sürücüsünü manuel olarak yükleyin."
                     },
                     "dispColorTemp": {
                         "title": "Ekran rengi sıcaklığı",
@@ -1612,7 +1617,7 @@
                         },
                         "reset": "Sıfırla",
                         "tooltip": "Göz Koruması Kipi, mavi ışığı filtreleyip göz yorgunluğunu azaltmak için ekranınızın renk sıcaklığını ayarlar.",
-                        "onSunsetToSunriseScheduleDescription": "Göz koruması kipini gün batımından gün doğumuna kadar sürecek şekilde ayarlayın",
+                        "onSunsetToSunriseScheduleDescription": "Göz Koruması Kipi'ni gün batımından gün doğumuna kadar sürecek şekilde ayarla",
                         "note": {
                             "title": "Not",
                             "description": "Göz Koruması Kipi etkinleştirildiğinde, bu renk sıcaklığı etkili olmaz. Ancak önizlemesini almak için kaydırıcıyı sürükleyebilirsiniz. Etkinleştirmek için Göz Koruması Kipini kapatın."
@@ -1668,7 +1673,9 @@
                     "cameraPrivacy": {
                         "title": "Kamera Gizlilik Kipi",
                         "tooltip": "Gizlilik ayarı etkinleştirildiğinde kamera canlı görüntü göndermeyi durdurur. Yalnızca video görüşmeleri sırasında görüntülerinizin görülmesini istemediğiniz zamanlarda bu seçeneğini kullanın.",
-                        "cameraPrivacyAccessNote": "Lütfen <b>Windows Ayarları → Gizlilik → Kamera</b> sayfasına gidin ve şu iki seçeneğin etkinleştirildiğinden emin olun:<br>&bull; <b>Masaüstü uygulamalarının kameranıza erişmesine izin verin</b><br>&bull; “Hangi (Microsoft Store) uygulamaların fotoğraf makinenize erişebileceğini seçin” bölümünün altında <b>Lenovo Vantage</b>"
+                        "cameraPrivacyAccessNote": "Lütfen <b>Windows Ayarları → Gizlilik → Kamera</b> sayfasına gidin ve şu iki seçeneğin etkinleştirildiğinden emin olun:<br>&bull; <b>Masaüstü uygulamalarının kameranıza erişmesine izin verin</b><br>&bull; “Hangi (Microsoft Store) uygulamaların fotoğraf makinenize erişebileceğini seçin” bölümünün altında <b>Lenovo Vantage</b>",
+                        "noPermissionNote": "Lenovo Vantage'ın Kameranıza erişimi yok veya “Masaüstü uygulamalarının kameranıza erişmesine izin ver” ayarı etkin değil.",
+                        "accessUrl": "Erişim izni vermek için Windows Ayarları bölümüne gidin"
                     },
                     "camera": {
                         "title": "Kamera",
@@ -1759,10 +1766,11 @@
                             "note": "Fn tuşuna iki kez bastığınızda, tekrar basılıncaya kadar Fn tuşu basılı konumda kilitli kalır. Fn tuşu kilitlendiğinde, Fn Kilidi göstergesi yanar. Varsayılan dışındaki işlevi başlatmak için doğrudan istediğiniz işlev tuşuna basabilirsiniz."
                         },
                         "popup": {
-                            "title": "Bilgisayarı yeniden başlatın",
+                            "title": "Bilgisayarınızı yeniden başlatın",
                             "description": "Varsayılan üst sıra işlevlerinde değişiklik yapılması bilgisayarınızın yeniden başlatmanızı gerektirir. Yeniden başlatmak istediğinizden emin misiniz?",
                             "reboot": "YENİDEN YÜKLE",
-                            "cancel": "ŞİMDİ DEĞİL"
+                            "cancel": "ŞİMDİ DEĞİL",
+                            "yes": "EVET"
                         },
                         "note": {
                             "sFunKey": "F1-F12 işlevlerine erişmek için Fn tuşuna ve en üst sıradaki tuşlara basın.",
@@ -1785,10 +1793,10 @@
                 },
                 "userDefinedKey": {
                     "title": "Kullanıcı Tanımlı Tuş",
-                    "caption": "Yıldız simgesiyle temsil edilen tuş, kullanıcı tanımlı işlevi belirlemenize olanak sağlar",
+                    "caption": "Yıldız simgesiyle temsil edilen tuş, kullanıcı tanımlı işlevi belirlemenize olanak sağlar.",
                     "dropDown": {
                         "title": "Kullanıcı Tanımlı Tuş İşlemi",
-                        "note": "Not: E-posta veya normal posta adresi gibi sık kullanılan metinleri girmek için kullanılabilir. Lenovo bu özelliğin parola veya başka bir özel bilgi saklamak ve girmek için kullanılmamasını önerir.",
+                        "note": "Not: E-posta veya normal posta adresi gibi sık kullanılan metinleri girmek için kullanılabilir. Bu özelliği hiçbir zaman parolaları veya diğer özel bilgileri saklamak için kullanmayın.",
                         "options": {
                             "option1": "Lütfen seçin:",
                             "option2": "Web sitesini aç",
@@ -1827,7 +1835,7 @@
                 "fnCtrlKey": {
                     "title": "Fn tuşu ve Ctrl tuşu arasında işlev değiş tokuşu",
                     "description": "Ctrl tuşu yerine alışkanlıkla Fn tuşuna basıyorsanız bu iki tuşun işlevlerini değiştirebilirsiniz.",
-                    "restartNote": "İki tuşun işlevini değiştirmek için bilgisayarınızı yeniden başlatmanız gerekir, yeniden başlatmak istediğinizden emin misiniz?",
+                    "restartNote": "İki tuşun işlevini değiştirmek için bilgisayarınızı yeniden başlatmanız gerekir. Yeniden başlatmak istediğinizden emin misiniz?",
                     "title2": "Fn tuşu sık kullanılan tuş bileşimlerinde Ctrl görevi görür",
                     "description2": "Fn tuşu bazı sık kullanılan tuş bileşimlerinde Ctrl tuşu görevi görür. Ctrl tuşunun işlevi değişmez.",
                     "featureNote": "Bu işlev ve Fn tuşu ile Ctrl tuşunu değiştirme işlevi aynı anda etkin olamaz. Bu işlevlerden biri etkinse diğeri otomatik olarak devre dışı kalır.",
@@ -2127,9 +2135,10 @@
                 "title": "Akıllı hareket alarmı",
                 "tooltip": "<div id='antiTheft-tooltips'>Bu özellik, bilgisayar uyku kipindeyken veya kapalıyken çalışmaz. Aşağıdaki işlemlerin ayarlarını kontrol edin:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>kapağı kapatma işlemleri</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>kritik düzeyde/düşük pil işlemi</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>Açma/kapama düğmesi işlemi</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>uyku düğmesi işlemi</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>uyku kipine geçiş için boşta kalma zaman aşımı ayarları</li></ul></div>Aksi takdirde, alarm tetiklenmez veya fotoğraf çekmez.</div>",
                 "desc1": "Bu özelliği etkin durumdayken, ekranınız kilitlendiğinde ve özellikle halka açık bir yerde hareket algılandığında cihaz bip sesi çıkarmaya başlar.",
-                "desc2": "Alarmı kapatmak için lütfen Windows'da oturum açın.",
+                "desc2": "Windows'da oturum açtığınızda alarm otomatik olarak kapanır. Özelliği kullanmak için yeniden etkinleştirmeniz gerekir.",
                 "note": {
-                    "description": "Sisteme başarıyla giriş yaptıktan sonra, bu özellik otomatik olarak kapanır. Özelliği kullanmak için yeniden etkinleştirmeniz gerekir."
+                    "descriptionTitle": "Dikkat:",
+                    "description": "Windows'da oturum açarken parola veya PIN kodu gibi geçerli oturum açma seçeneklerinin kullanılması gerekir. Aksi takdirde, Akıllı hareket alarmı özelliği, bilgisayarınıza erişen yetkili olmayan bir kullanıcı tarafından yanlışlıkla devre dışı bırakılabilir."
                 },
                 "alarm": {
                     "title": " ALARM SÜRESİ",
@@ -2141,7 +2150,7 @@
                 },
                 "allowCamera": {
                     "title": "FOTOĞRAF ÇEKME",
-                    "describe": "Bu özellik etkin durumdayken, ekranınız kilitliyse herhangi bir hareket algılandığında kamera otomatik olarak fotoğraf çeker. Bu veriler cihazınızda yerel olarak işlenir. Lenovo bu verilere erişmez ya da onları kullanmaz.",
+                    "describe": "Bu özellik etkin durumdayken, ekranınız kilitliyse herhangi bir hareket algılandığında kamera otomatik olarak fotoğraf çeker. Bu veriler cihazınızda yerel olarak işlenir. Lenovo bu verilere erişmez ya da onları kullanmaz. Alarm sırasında fotoğraf çekilebildiğinden emin olmak için kamera deklanşörünü kapatmanız gerektiğini unutmayın.",
                     "checkBoxText": "Bu özelliği etkinleştir"
                 },
                 "cameraPrivacy": {
@@ -2251,9 +2260,6 @@
         },
         "support": {
             "title": "Lenovo Destek web sitesi"
-        },
-        "security": {
-            "title": "For a better protection for your device"
         },
         "banner": {
             "neverChecked": "Sistem Güncellemesi'ne hoş geldiniz.",
@@ -3111,7 +3117,9 @@
                 "yes": "Evet",
                 "no": "Hayır"
             },
-            "waitAvailability": "Depolama aygıtları bu işlevi desteklemiyorsa, donanım bilgileri yüklenirken veya devam eden bir tarama olduğunda düğme devre dışı bırakılır."
+            "waitAvailability": "Depolama aygıtları bu işlevi desteklemiyorsa, donanım bilgileri yüklenirken veya devam eden bir tarama olduğunda düğme devre dışı bırakılır.",
+            "executingTitle": "Şimdi kurtarılıyor...",
+            "recoverCompleted": "Kurtarma tamamlandı"
         },
         "support": {
             "title": "Profesyonel tanılama araçlarını indirin",
@@ -3159,7 +3167,19 @@
             "suggestedActionSupport": "Bilgisayarınız Garanti kapsamındaysa yedek parça için <b>bilet aç</b>'ı tıklatın. Daha fazla bilgi için Lenovo Destek Web sitesine gidin.",
             "supportButtonText": "Bilet Aç",
             "recoverBadSectorsButtonText": "Bozuk Kesimleri Kurtar"
-        }
+        },
+        "scanFinishedHeader": {
+            "titleSuccess": "Tarama tamamlandı. Cihazınız tüm testlerden geçti.",
+            "titleErrorPlural": "Tarama tamamlandı. Cihazınız {{numberTestsFailed}} testte başarısız oldu.",
+            "titleErrorSingular": "Tarama tamamlandı. Cihazınız 1 testte başarısız oldu.",
+            "frcSuccessDescription": "Bu nihai sonuç kodu, bu taramada sorun bulunmadığını belirtmektedir. Herhangi bir teste bir uyarı veya geçersiz ileti görüntülenirse bu bir sorun bulunduğu anlamına gelmez. Bir Lenovo destek aracısı sizden bu testi gerçekleştirmenizi isterse kanıt olarak bu kodu kullanın. Bunun dışında şu anda sizin yapmanız gereken bir eylem bulunmamaktadır. Hala sorun yaşadığınızı düşünüyorsanız Lenovo Destek ile iletişime geçin.",
+            "frcFailureDescription": "Nihai sonuç kodu, bu taramada sorunlar bulunduğunu belirtmektedir.",
+            "lenovoSupportInstruction": "Lenovo Destek'te, nihai sonuç kodunu kullanarak bir doğrulama bileti açabilirsiniz.",
+            "finalResultCodeLabel": "Nihai Sonuç Kodu: ",
+            "scanAgainButtonText": "Tekrar Tara",
+            "supportButtonText": "Lenovo Destek"
+        },
+        "executingScanTitle": "{{title}} taranıyor..."
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3284,7 +3304,8 @@
             "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
             "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
             "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+            "processStatus": "İŞLENİYOR"
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3308,6 +3329,8 @@
             "fri": "Friday",
             "sat": "Saturday",
             "sun": "Sunday",
+            "am": "AM",
+            "pm": "PM",
             "tooltipText": "Enable this toggle to automatically initiate a system performance scan on your selected date and time."
         },
         "scanningPage": {
@@ -3769,7 +3792,8 @@
                 "txtTo": "To",
                 "txtGo": "Go",
                 "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "fixes": "fixes",
+                "txtClr": "Clear"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",
@@ -3819,7 +3843,9 @@
         },
         "auto": "Auto",
         "manual": "Manual",
-        "noScanResults": "Please click SCAN & FIX button to trigger scan process."
+        "noScanResults": "Please click SCAN & FIX button to trigger scan process.",
+        "am": "AM",
+        "pm": "PM"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

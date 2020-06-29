@@ -219,9 +219,9 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 			current: 'checked'
 		};
 		const event = { target: { value: 'checked' } };
-		const spy = spyOn(audioService, 'setMicrophoneOpitimaztion');
+		const spy = spyOn(audioService, 'setMicrophoneOpitimaztion')
 		component.onOptimizeModesRadioChange(event);
-		expect(spy).not.toHaveBeenCalled();
+		expect(spy).toHaveBeenCalled();
 	});
 
 	it('should call onOptimizeModesRadioChange - microOptimizeModeResponse is not equal to newVal', () => {

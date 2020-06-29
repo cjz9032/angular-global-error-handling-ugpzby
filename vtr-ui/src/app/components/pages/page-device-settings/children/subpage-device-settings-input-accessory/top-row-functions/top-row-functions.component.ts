@@ -73,7 +73,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 					this.topRowKeyObj.primaryFunCap = res[2];
 					this.getAllStatuses();
 					this.setTopRowStatusCallback();
-					this.updateFunctionLockUIModel()
+					this.logger.error('TopRowFunctionsComponent.getFunctionCapabilities', this.topRowKeyObj);
 				});
 			}
 		} catch (error) {
@@ -112,17 +112,23 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 	}
 	public getStatusOfFnLock() {
 		this.keyboardService.getFnLockStatus().then(res => {
+			this.logger.info('TopRowFunctionsComponent.getStatusOfFnLock', res);
 			this.topRowKeyObj.fnLockStatus = res;
+			this.updateFunctionLockUIModel()
 		});
 	}
 	public getStatusOfStickyFun() {
 		this.keyboardService.getFnStickKeyStatus().then(res => {
+			this.logger.info('TopRowFunctionsComponent.getStatusOfStickyFun', res);
 			this.topRowKeyObj.stickyFunStatus = res;
+			this.updateTopRowFunctionsKeysUIModel();
 		});
 	}
 	public getStatusOfPrimaryFun() {
 		this.keyboardService.getPrimaryFunctionStatus().then(res => {
+			this.logger.info('TopRowFunctionsComponent.getStatusOfPrimaryFun', res);
 			this.topRowKeyObj.primaryFunStatus = res;
+			this.updateFunctionLockUIModel()
 		});
 	}
 
@@ -167,7 +173,8 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 			processIcon: true,
 			customIcon: 'Special-function',
 			hideIcon: true,
-			processLabel: true,
+			processLabel: false,
+			metricsItem: 'radio.top-row-fn.special-function'
 		});
 		this.functionLockUIModel.push({
 			componentId: this.functionKeyId,
@@ -178,7 +185,8 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 			processIcon: true,
 			customIcon: 'F1-F12-funciton',
 			hideIcon: true,
-			processLabel: true,
+			processLabel: false,
+			metricsItem: 'radio.top-row-fn.function-key'
 		});
 	}
 
@@ -193,23 +201,38 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 		}
 	}
 
-	setUpTopRowFunctionsKeysUIModel() {
-		const uniqueName = 'top-Row-Functions';
-
+	private setUpTopRowFunctionsKeysUIModel() {
 		this.topRowFunctionKeysUIModel = [{
 			componentId: 'nMehod_show',
 			label: 'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.nMehod',
 			value: false,
 			isChecked: this.topRowKeyObj.stickyFunStatus === false,
-			isDisabled: false
+			isDisabled: false,
+			metricsItem: 'radio.top-row-fn.normal-key'
 		},
 		{
 			componentId: 'fnKeyMehod_show',
 			label: 'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.fnKeyMehod',
 			value: true,
 			isChecked: this.topRowKeyObj.stickyFunStatus === true,
-			isDisabled: false
+			isDisabled: false,
+			metricsItem: 'radio.top-row-fn.fn-sticky-Key'
 		}];
+	}
+
+	private updateTopRowFunctionsKeysUIModel() {
+		this.topRowFunctionKeysUIModel.forEach((model) => {
+			switch (model.componentId) {
+				case 'nMehod_show':
+					model.isChecked = this.topRowKeyObj.stickyFunStatus === false;
+					break;
+				case 'fnKeyMehod_show':
+					model.isChecked = this.topRowKeyObj.stickyFunStatus === true;
+					break;
+				default:
+					break;
+			}
+		});
 	}
 
 	switchFocusToShowAdv() {

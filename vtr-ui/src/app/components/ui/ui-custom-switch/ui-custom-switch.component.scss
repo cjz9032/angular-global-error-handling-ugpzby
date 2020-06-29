@@ -22,6 +22,7 @@
 		.custom-control-input {
 			width: 48px;
 			height: 25px;
+			z-index: 0;
 			&:focus {
 				outline: 0;
 			}
@@ -73,25 +74,56 @@
 			&::before {
 				border: 0;
 				background: $input-checked-background;
-				@media #{$high-contrast} {
-					background: $highlight_bright;
-				}
+
 				@media #{$black-on-white} {
-					background: $high-contrast-white-textselected;
+					@include high-contrast-white-background;
 				}
+
 				@media #{$white-on-black} {
-					background: $highlight_bright;
+					@include high-contrast-black-background;
 				}
 			}
 			&::after {
 				background-color: $light;
 				transform: translateX(24px);
-				@media #{$high-contrast} {
-					background: $dark;
+
+			}
+			&:hover::before {
+				@media #{$black-on-white} {
+					background: $light;
+					@include high-contrast-white-border;
 				}
+
+				@media #{$white-on-black} {
+					background: $dark;
+					@include high-contrast-black-border;
+				}
+			}
+			&:hover::after {
+				@media #{$black-on-white} {
+					@include high-contrast-white-background;
+				}
+
+				@media #{$white-on-black} {
+					@include high-contrast-black-background;
+				}
+			}
+			&:active::before {
+				@media #{$black-on-white} {
+					@include high-contrast-white-background;
+					border: none;
+				}
+
+				@media #{$white-on-black} {
+					@include high-contrast-black-background;
+					border: none;
+				}
+			}
+			&:active::after {
 				@media #{$black-on-white} {
 					background: $light;
 				}
+
 				@media #{$white-on-black} {
 					background: $dark;
 				}
@@ -101,24 +133,54 @@
 			&::before {
 				border-color: $grey_darker;
 				background-color: $grey_light;
-				@media #{$high-contrast} {
-					background:$light;
-				}
-				@media #{$black-on-white} {
-					background: $dark;
-				}
-				@media #{$white-on-black} {
-					background:$light;
-				}
+
 			}
 			&::after {
 				background-color: $grey_darker;
-				@media #{$high-contrast} {
+
+				@media #{$black-on-white} {
 					background: $dark;
 				}
+
+				@media #{$white-on-black} {
+					background: $light;
+				}
+			}
+
+			&:hover::before {
+				@media #{$black-on-white} {
+					@include high-contrast-white-border;
+				}
+
+				@media #{$white-on-black} {
+					@include high-contrast-black-border;
+				}
+			}
+			&:hover::after {
+				@media #{$black-on-white} {
+					@include high-contrast-white-background;
+				}
+
+				@media #{$white-on-black} {
+					@include high-contrast-black-background;
+				}
+			}
+			&:active::before {
+				@media #{$black-on-white} {
+					@include high-contrast-white-background;
+					border: none;
+				}
+
+				@media #{$white-on-black} {
+					@include high-contrast-black-background;
+					border: none;
+				}
+			}
+			&:active::after {
 				@media #{$black-on-white} {
 					background: $light;
 				}
+
 				@media #{$white-on-black} {
 					background: $dark;
 				}
@@ -131,10 +193,26 @@
 				background: $grey_light;
 				opacity: 0.8;
 				border: $grey_darker solid 1px;
+
+				@media #{$black-on-white} {
+					@include high-contrast-white-background-disabled;
+					@include high-contrast-white-disabled-border;
+				}
+				@media #{$white-on-black} {
+					@include high-contrast-black-background-disabled;
+					@include high-contrast-black-disabled-border;
+				}
 			}
 			&::after {
 				background-color: $grey_darker;
 				opacity: 0.4;
+				@media #{$black-on-white} {
+					background: $light;
+				}
+				@media #{$white-on-black} {
+					background: $dark;
+				}
+
 			}
 		}
 	}

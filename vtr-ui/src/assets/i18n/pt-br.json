@@ -117,7 +117,7 @@
                     "thermalMode2SettingTitle": "Config. do Modo Térmico",
                     "thermalMode2SettingDesc": "Escolha o modo que deseja usar.",
                     "fnQDesc": "Você pode alternar o modo usando o atalho Fn+Q.",
-                    "perormanceTitle": "Modo de Desempenho",
+                    "performanceTitle": "Modo de Desempenho",
                     "performanceDesc": "Aumente o desempenho do computador com velocidade do ventilador e consumo de energia mais altos. ",
                     "OCDesc": "Você pode escolher ativar a função de Overclocking.",
                     "ac_dcDesc": "O Modo de Desempenho é aplicável apenas quando o adaptador de energia CA está conectado.",
@@ -155,6 +155,8 @@
                         "cpuOCName79": "Deslocamento da Voltagem do Cache",
                         "cpuOCName122": "7 Taxa do Núcleo",
                         "cpuOCName123": "8 Taxa do Núcleo",
+                        "cpuOCName124": "9 Taxa do Núcleo",
+                        "cpuOCName125": "10 Taxa do Núcleo",
                         "cpuOCName102": "ICCMAX do Núcleo",
                         "cpuOCName106": "ICCMAX do Cache",
                         "cpuOCName114": "Deslocamento da Taxa AVX"
@@ -173,6 +175,8 @@
                         "cpuOCTip79": "Deslocamento final de voltagem aplicado à Voltagem do Cache.",
                         "cpuOCTip122": "Defina o multiplicador máximo de núcleos no qual os núcleos podem operar. O valor da frequência do núcleo é o produto dessa taxa e a frequência do relógio de referência.",
                         "cpuOCTip123": "Defina o multiplicador máximo de núcleos no qual os núcleos podem operar. O valor da frequência do núcleo é o produto dessa taxa e a frequência do relógio de referência.",
+                        "cpuOCTip124": "Defina o multiplicador máximo de núcleos no qual os núcleos podem operar. O valor da frequência do núcleo é o produto dessa taxa e a frequência do relógio de referência.",
+                        "cpuOCTip125": "Defina o multiplicador máximo de núcleos no qual os núcleos podem operar. O valor da frequência do núcleo é o produto dessa taxa e a frequência do relógio de referência.",
                         "cpuOCTip102": "Defina ICCMAX para Regulador de Voltagem do Núcleo do Processador.",
                         "cpuOCTip106": "Defina ICCMAX para Regulador de Voltagem do Barramento em Anel e Cache do Processador.",
                         "cpuOCTip114": "Para derivar o limite efetivo da taxa do núcleo ativo quando o AVX estiver ativo, subtraia esse valor ao limite da taxa do núcleo ativo correspondente."
@@ -729,7 +733,7 @@
                 "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
-                "name11": "Legion front Fan Lighting",
+                "name11": "Legion Front Fan Lighting",
                 "name12": "Legion Top Fan Lighting"
             },
             "lightingEffect": {
@@ -921,7 +925,7 @@
         },
         "systemStatus": {
             "title": "Status do sistema",
-            "subtitle": "Atualize o status do dispositivo rapidamente.",
+            "subtitle": "Mantenha o status do dispositivo atualizado rapidamente.",
             "memory": {
                 "title": "Memória",
                 "detail": {
@@ -1067,7 +1071,7 @@
                         "smp": "SMP"
                     },
                     "fccTooltipText": "Para estender a vida útil da bateria, otimizamos sua capacidade de carga máxima com base no seu uso. A capacidade máxima da bateria pode não estar disponível até você descarregar para 20% e recarregar.",
-                    "moreInfo": "Click <a role=\"link\" href=\"#/device/high-density-battery\">here</a> for more information."
+                    "moreInfo": "Clique <a role=\"link\" href=\"#/device/high-density-battery\" tabindex=\"0\">aqui</a> para obter mais informações."
                 },
                 "condition": {
                     "Illegal": "A bateria instalada <b>não é aceita</b> pelo sistema e não será carregada. Substitua a bateria pela bateria correta da Lenovo para esse sistema.",
@@ -1097,13 +1101,13 @@
                     "NotDetected": "<b>A bateria principal não foi detectada.</b>"
                 },
                 "highDensityBattery": {
-                    "title": "High density battery",
-                    "subtitle": "How your battey works",
-                    "para1": "To increase battery lifespan, your battery automatically adjusts charge voltage and capacity in response to your personal usage pattern.",
+                    "title": "Bateria de alta densidade",
+                    "subtitle": "Como sua bateria funciona",
+                    "para1": "Para aumentar a vida útil da bateria, a bateria ajusta automaticamente a tensão e a capacidade da carga em resposta ao seu padrão de uso pessoal.",
                     "para2": {
-                        "item1": "- If you use less than 65% of your battery’s capacity for a week or longer, then the battery may temporarily reduce charge voltage and capacity. The reduction in capacity is minor and not noticeable for your usage pattern.",
-                        "item2": "- Full capacity is restored when you discharge your battery below 20% and then fully charge the battery.",
-                        "item3": "- Additionally, if you use less than 10% of your battery’s capacity for 2 weeks or longer, the battery may temporarily reduce charge voltage and capacity further, until such time as 50% of reduced battery capacity is used."
+                        "item1": "- Se você usar menos de 65% da capacidade da bateria por uma semana ou mais, a bateria poderá reduzir temporariamente a tensão e a capacidade de carga. A redução na capacidade é pequena e não é perceptível para o seu padrão de uso.",
+                        "item2": "- A capacidade total é restaurada quando você descarrega a bateria abaixo de 20% e, em seguida, carrega a bateria completamente.",
+                        "item3": "- Além disso, se você usar menos de 10% da capacidade da bateria por 2 semanas ou mais, ela poderá reduzir temporariamente ainda mais a tensão e a capacidade de carga, até que 50% da capacidade reduzida da bateria seja usada."
                     }
                 }
             },
@@ -1191,7 +1195,7 @@
                             "battery&Quite": "BATERIA E SILÊNCIO"
                         }
                     },
-                    "description5": "O Resfriamento inteligente ajusta a velocidade do ventilador, o desempenho máximo e gerencia a duração da bateria. Este recurso possui 3 modos (modo Silencioso, Equilibrado e de Desempenho) e agora pode ser acessado pelo controle deslizante de energia de desempenho do Windows.",
+                    "description5": "O Resfriamento inteligente ajusta a velocidade do ventilador, o desempenho máximo e gerencia a duração da bateria. Este recurso tem 3 modos (modo Silencioso, Equilibrado e de Desempenho) e agora pode ser acessado pelo controle deslizante de energia de desempenho do Windows.",
                     "nocqldesc": "O Resfriamento Inteligente permite ajustar o desempenho do sistema e a temperatura térmica. No modo \"Desempenho\", ele otimiza o desempenho do sistema. Enquanto ajuda a manter o sistema mais frio ou mais silencioso no modo \"Refrigerado e silencioso\".",
                     "dytc6": {
                         "desc1": "O Resfriamento inteligente ajusta a velocidade do ventilador, o desempenho máximo e gerencia a duração da bateria.",
@@ -1271,7 +1275,8 @@
                             "description1": "Ativar uma carga de bateria personalizada permitirá que a integridade geral da bateria dure mais conforme você usar este dispositivo.No entanto, não ter uma carga máxima permitirá menos tempo de execução da vida útil da bateria.",
                             "description2": "Para ativar completamente esse recurso, desconecte sua máquina epermita que a bateria descarregue até ou abaixo do limite de interrupção de carga.",
                             "enable": "ATIVAR",
-                            "cancel": "CANCELAR"
+                            "cancel": "CANCELAR",
+                            "description3": "A bateria otimiza automaticamente sua tensão e capacidade de carga com base no seu padrão de uso. Se você usar a bateria levemente, não há necessidade de ativar o Limite de carga da bateria."
                         },
                         "options": {
                             "start": "Iniciar carregamento quando abaixo de",
@@ -1552,7 +1557,7 @@
                     },
                     "optimize": {
                         "title": "Otimizar meu microfone para:",
-                        "tooltip": "Configurar o efeito do microfone para melhorar a experiência de áudio em diferentes cenários e ambientes.",
+                        "tooltip": "Configure o efeito do microfone para aprimorar sua experiência de áudio em diferentes cenários e ambientes.",
                         "options": {
                             "VoiceRecognition": "RECONHECIMENTO DE VOZ",
                             "OnlyMyVoice": "SOMENTE MINHA VOZ",
@@ -1580,7 +1585,7 @@
                 "display": {
                     "title": "Monitor",
                     "displayColorTemperature": {
-                        "title": "Modo de proteção ocular",
+                        "title": "Modo Proteção Ocular",
                         "description": "Para evitar cansaço visual, você pode ajustar a temperatura da cor da tela para filtrar a luz azul quando usar o computador por um longo período de tempo. Além disso, cores quentes são boas para dormir, especialmente à noite.",
                         "link": {
                             "click": "Clique",
@@ -1590,19 +1595,19 @@
                     },
                     "eyeCareMode": {
                         "title": "Modo Proteção Ocular",
-                        "checkbox": "Agendar o modo proteção ocular do pôr do sol ao nascer do sol",
+                        "checkbox": "Agendar o Modo Proteção Ocular do pôr do sol ao nascer do sol",
                         "options": {
                             "warm": "Quente (melhor para os olhos)",
                             "cold": "Fria"
                         },
                         "reset": "Redefinir",
                         "tooltip": "O Modo Proteção Ocular ajusta a temperatura das cores do monitor para filtrar a luz azul e reduzir a tensão ocular.",
-                        "onSunsetToSunriseScheduleDescription": "Agendar o modo proteção ocular do pôr do sol ao nascer do sol",
+                        "onSunsetToSunriseScheduleDescription": "Agendar o Modo Proteção Ocular do pôr do sol ao nascer do sol",
                         "note": {
                             "title": "Nota",
                             "description": "O Lenovo Vantage precisa acessar suas informações de localização para calcular o horário do pôr do sol e do nascer do sol de sua região."
                         },
-                        "tips": "Execute o Windows Update ou instale manualmente o driver gráfico para recuperar o modo Proteção Ocular"
+                        "tips": "Execute o Windows Update ou instale manualmente o driver gráfico para recuperar o Modo Proteção Ocular."
                     },
                     "dispColorTemp": {
                         "title": "Temperatura das cores do monitor",
@@ -1612,7 +1617,7 @@
                         },
                         "reset": "Redefinir",
                         "tooltip": "O Modo Proteção Ocular ajusta a temperatura das cores do monitor para filtrar a luz azul e reduzir a tensão ocular.",
-                        "onSunsetToSunriseScheduleDescription": "Agendar o modo proteção ocular do pôr do sol ao nascer do sol",
+                        "onSunsetToSunriseScheduleDescription": "Agendar o Modo Proteção Ocular do pôr do sol ao nascer do sol",
                         "note": {
                             "title": "Nota",
                             "description": "Quando o Modo Proteção Ocular está ativado, a temperatura das cores não é aplicada. No entanto, você pode arrastar o controle deslizante para visualizá-la. Para ativá-la, desative o Modo Proteção Ocular."
@@ -1668,7 +1673,9 @@
                     "cameraPrivacy": {
                         "title": "Modo de privacidade da câmera",
                         "tooltip": "A câmera interrompe o envio de imagens ao vivo quando a configuração de privacidade está ativada. Ative essa configuração somente quando não desejar compartilhar suas imagens durante chamadas com vídeo.",
-                        "cameraPrivacyAccessNote": "Vá para a página <b>Configurações do Windows → Privacidade → Câmera</b> e verifique se as duas opções a seguir estão ativadas:<br>&bull; <b>Permitir que aplicativos de desktop acessem sua câmera</b><br>&bull; <b>Lenovo Vantage</b> em \"Escolha quais aplicativos (Microsoft Store) podem acessar sua câmera\""
+                        "cameraPrivacyAccessNote": "Vá para a página <b>Configurações do Windows → Privacidade → Câmera</b> e verifique se as duas opções a seguir estão ativadas:<br>&bull; <b>Permitir que aplicativos de desktop acessem sua câmera</b><br>&bull; <b>Lenovo Vantage</b> em \"Escolha quais aplicativos (Microsoft Store) podem acessar sua câmera\"",
+                        "noPermissionNote": "O Lenovo Vantage não tem acesso à sua câmera ou a opção \"Permitir que aplicativos de desktop acessem sua câmera\" não está ativada.",
+                        "accessUrl": "Ir para as Configurações do Windows para dar acesso"
                     },
                     "camera": {
                         "title": "Câmera",
@@ -1762,7 +1769,8 @@
                             "title": "Reiniciar o computador",
                             "description": "Alterações à função padrão da fileira superior requerem a reinicialização do computador. Tem certeza de que deseja reiniciar?",
                             "reboot": "REINICIALIZAR",
-                            "cancel": "NÃO AGORA"
+                            "cancel": "NÃO AGORA",
+                            "yes": "SIM"
                         },
                         "note": {
                             "sFunKey": "Para acessar as funções F1-F12, pressione Fn e as teclas da fileira superior.",
@@ -1785,10 +1793,10 @@
                 },
                 "userDefinedKey": {
                     "title": "Tecla definida pelo usuário",
-                    "caption": "A tecla representada pelo ícone de estrela permite configurar a função definida pelo usuário",
+                    "caption": "A tecla representada pelo ícone de estrela permite configurar a função definida pelo usuário.",
                     "dropDown": {
                         "title": "Ação da tecla definida pelo usuário",
-                        "note": "Nota: pode ser usado para inserir tecla comumente usada, como endereços postal ou de e-mail. A Lenovo recomenda nunca usar esse recurso para armazenar e inserir senhas ou outras informações privadas.",
+                        "note": "Nota: pode ser usado para inserir tecla comumente usada, como endereços postal ou de e-mail. Nunca use esse recurso para armazenar senhas ou qualquer outra informação privada.",
                         "options": {
                             "option1": "Selecione",
                             "option2": "Abrir site",
@@ -1826,7 +1834,7 @@
                 },
                 "fnCtrlKey": {
                     "title": "Permuta entre as teclas Fn e Ctrl",
-                    "description": "Se você costuma pressionar a tecla Fn quando deseja pressionar a tecla Ctrl, é possível trocar as funções das duas teclas.",
+                    "description": "Se você costuma pressionar a tecla Fn quando deseja pressionar a tecla Ctrl, é possível trocar a função das duas teclas.",
                     "restartNote": "Trocar a função de duas teclas requer a reinicialização do computador. Tem certeza de que deseja reiniciar?",
                     "title2": "A tecla Fn funciona como a tecla Ctrl para combinações de teclas usadas com frequência",
                     "description2": "A tecla Fn funciona como a tecla Ctrl para algumas combinações de teclas usadas com frequência. A função da tecla Ctrl não muda.",
@@ -2127,9 +2135,10 @@
                 "title": "Alerta de movimento inteligente",
                 "tooltip": "<div id='antiTheft-tooltips'>Este recurso não funciona quando o computador está no modo de hibernação ou desligado. Verifique as configurações nas seguintes ações:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>ações de fechamento da tampa</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>ação de bateria fraca/crítica</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>ação do botão liga/desliga</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>ação do botão de suspensão</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>configurações de tempo limite inativo para hibernação</li></ul></div>Caso contrário, ele não dispara o alarme nem tira fotos.</div>",
                 "desc1": "Ao ativar esse recurso, o dispositivo começará a emitir um sinal sonoro quando a tela estiver bloqueada e movimentos forem detectados, principalmente em um local público.",
-                "desc2": "Para descartar o alarme, faça login no Windows.",
+                "desc2": "Faça login no Windows e o alarme será desativado automaticamente. Para usar o recurso, você precisa habilitá-lo novamente.",
                 "note": {
-                    "description": "Após o login no sistema, esse recurso será desativado automaticamente. Você precisa habilitá-lo novamente para usá-lo."
+                    "descriptionTitle": "Atenção:",
+                    "description": "Opções de entrada válidas, como senha ou código PIN, são necessárias quando você faz login no Windows. Caso contrário, o recurso de alarme por movimento inteligente pode ser desativado por engano por qualquer usuário não autorizado que acesse o seu computador."
                 },
                 "alarm": {
                     "title": " O ALARME PERMANECERÁ ATIVO POR",
@@ -2141,7 +2150,7 @@
                 },
                 "allowCamera": {
                     "title": "TIRAR FOTOS",
-                    "describe": "Ao ativar esse recurso, a câmera tira fotos automaticamente ao detectar movimentos se a tela estiver bloqueada. Esses dados são processados localmente no dispositivo. A Lenovo não acessa nem usa esses dados.",
+                    "describe": "Ao ativar esse recurso, a câmera tira fotos automaticamente ao detectar movimentos se a tela estiver bloqueada. Esses dados são processados localmente no dispositivo. A Lenovo não acessa nem usa esses dados. Lembre-se de desligar o obturador da câmera para garantir que ela possa tirar fotos com sucesso durante o alarme.",
                     "checkBoxText": "Ativar esse recurso"
                 },
                 "cameraPrivacy": {
@@ -2251,9 +2260,6 @@
         },
         "support": {
             "title": "Web site de suporte da Lenovo"
-        },
-        "security": {
-            "title": "For a better protection for your device"
         },
         "banner": {
             "neverChecked": "Boas-vindas à Atualização do sistema.",
@@ -3111,7 +3117,9 @@
                 "yes": "Sim",
                 "no": "Não"
             },
-            "waitAvailability": "O botão será desativado se os dispositivos de armazenamento não forem compatíveis com essa funcionalidade, enquanto as informações de hardware estiverem sendo carregadas ou se houver uma verificação em andamento."
+            "waitAvailability": "O botão será desativado se os dispositivos de armazenamento não forem compatíveis com essa funcionalidade, enquanto as informações de hardware estiverem sendo carregadas ou se houver uma verificação em andamento.",
+            "executingTitle": "Recuperando agora...",
+            "recoverCompleted": "Recuperação concluída"
         },
         "support": {
             "title": "Baixar ferramentas de diagnóstico profissional",
@@ -3159,18 +3167,30 @@
             "suggestedActionRbs": "Você pode tentar recuperar os seus dispositivos de armazenamento clicando em <b>recuperar setores ruins</b>. Se o problema persistir, você pode clicar em <b>abrir tíquete</b> para suporte adicional.",
             "supportButtonText": "Abrir tíquete",
             "recoverBadSectorsButtonText": "Recuperar Setores Ruins"
-        }
+        },
+        "scanFinishedHeader": {
+            "titleSuccess": "Verificação concluída. Seu dispositivo passou em todos os testes.",
+            "titleErrorPlural": "Verificação concluída. Seu dispositivo falhou em {{numberTestsFailed}} testes.",
+            "titleErrorSingular": "Verificação concluída. Seu dispositivo falhou em 1 teste.",
+            "frcSuccessDescription": "Este código de resultado final indica que não foram encontrados problemas com essa verificação. Se qualquer teste exibir uma mensagem de aviso ou não aplicável, não significa que um problema foi encontrado. Se um agente de suporte Lenovo pediu para que você executasse esse teste, use esse código como prova; caso contrário, nenhuma ação da sua parte é necessária neste momento. Se acredita que ainda está com problemas, entre em contato com o Suporte Lenovo.",
+            "frcFailureDescription": "O código de resultado final indica que problemas foram encontrados com essa verificação.",
+            "finalResultCodeLabel": "Código de resultado final: ",
+            "scanAgainButtonText": "Verificar novamente",
+            "supportButtonText": "Suporte Lenovo",
+            "lenovoSupportInstruction": "No Suporte Lenovo, você pode abrir um tíquete de verificação usando o código do seu resultado final."
+        },
+        "executingScanTitle": "Verificando {{title}}..."
     },
     "smartPerformance": {
-        "title": "Health & Support",
-        "back": "BACK",
-        "performanceandSecurityCheckTitle": "Performance & Security Check",
-        "performanceandSecurityCheckSubTitle": "Let's diagnose and resolve performance and security issues in your computer",
-        "scanButton": "FREE PC SCAN",
-        "section1Heading": "How would you rate your PC Performance?",
-        "section1Description": "PC running slow? Applications taking too long to respond? Windows errors? Malware concerns? Let's diagnose whats's causing the problem and fix it.",
-        "critical": "CRITICAL",
-        "allisWell": "ALL IS WELL",
+        "title": "Smart Performance",
+        "back": "VOLTAR",
+        "performanceandSecurityCheckTitle": "Verificação de desempenho e segurança",
+        "performanceandSecurityCheckSubTitle": "Vamos diagnosticar e resolver problemas de desempenho e segurança no seu computador",
+        "scanButton": "VERIFICAÇÃO DO PC GRATUITA",
+        "section1Heading": "Como você avaliaria o desempenho do seu PC?",
+        "section1Description": "PC rodando devagar? Aplicativos demorando muito para responder? Erros do Windows? Preocupações com malware? Vamos diagnosticar o que está causando o problema e corrigi-lo.",
+        "critical": "CRÍTICO",
+        "allisWell": "TUDO BEM",
         "zero": 0,
         "one": 1,
         "two": 2,
@@ -3182,644 +3202,650 @@
         "eight": 8,
         "nine": 9,
         "ten": 10,
-        "tuneUP": "Your PC needs a tune-up",
-        "section2Heading": "Top-notch PC Performance. Always",
-        "section2Description": "Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+        "tuneUP": "Seu PC precisa de ajuste",
+        "section2Heading": "Desempenho do PC de alto nível. Sempre",
+        "section2Description": "Nosso software pode verificar proativamente seu PC 24x7 para encontrar e corrigir problemas à medida que surgem, para que seu PC sempre tenha um desempenho de alto nível.",
         "tunePCPerformance": {
-            "title": "TUNE PC PERFORMANCE",
-            "heading": "Show your computer some extra love",
-            "description": "Even the best computer will benefit from periodic tune-ups. Get a tune-up and get more done with our powerful app.",
+            "title": "AJUSTAR DESEMPENHO DO PC",
+            "heading": "Mostre ao seu computador um pouco de amor extra",
+            "description": "Até o melhor computador se beneficiará de ajustes periódicos. Faça um ajuste e trabalhe mais com nosso aplicativo poderoso.",
             "tabSet1": {
-                "tab1": "Accumulated Junk",
-                "tab2": "Usability Issues",
-                "tab3": "Windows Settings",
-                "tab4": "Systems Errors",
-                "tab5": "Registry Errors"
+                "tab1": "Lixo acumulado",
+                "tab2": "Problemas de usabilidade",
+                "tab3": "Configurações do Windows",
+                "tab4": "Erros de sistema",
+                "tab5": "Erros de registro"
             },
             "tabSet2": {
-                "tab1Heading": "IT'S EASY",
-                "tab1Description": "We don't confuse you with tech mumbo jumbp",
-                "tab2Heading": "IT'S FAST",
-                "tab2Description": "Get a 100 point check done in under 5 minutes",
-                "tab3Heading": "IT'S SAFE",
-                "tab3Description": "No scareware, built with best practises"
+                "tab1Heading": "É FÁCIL",
+                "tab1Description": "Não confundimos você com linguagem técnica",
+                "tab2Heading": "É RÁPIDO",
+                "tab2Description": "Faça uma verificação de 100 pontos em menos de 5 minutos",
+                "tab3Heading": "É SEGURO",
+                "tab3Description": "Sem scareware, construído com as práticas recomendadas"
             },
-            "summaryTitle": "Tune PC Performance"
+            "summaryTitle": "Ajustar desempenho do PC"
         },
         "boostInternetPerformance": {
-            "title": "BOOST INTERNET PERFORMANCE",
-            "extraTitle": "INTERNET PERFORMANCE",
-            "heading": "Give your internet a boost",
-            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "title": "AUMENTAR O DESEMPENHO DA INTERNET",
+            "extraTitle": "DESEMPENHO DA INTERNET",
+            "heading": "Dê um impulso à sua Internet",
+            "description": "Para muitos, ter Wi-Fi lenta ou não ter Wi-Fi é como viver fora da realidade. Vamos definir as configurações de Internet, Wi-Fi e navegador para obter o desempenho ideal.",
             "tabSet1": {
-                "tab1": "Network Settings",
-                "tab2": "Browser Settings",
-                "tab3": "Browser Security",
-                "tab4": "Wi-Fi Performance",
-                "tab5": "E-junk"
+                "tab1": "Lixo eletrônico",
+                "tab2": "Configurações de rede",
+                "tab3": "Configurações do navegador",
+                "tab4": "Segurança do navegador",
+                "tab5": "Desempenho de Wi-Fi"
             },
             "tabSet2": {
-                "tab1Heading": "ZERO DAY VIRUS",
-                "tab1Description": "We remove even the newest malware infections",
-                "tab2Heading": "SPYWARE REMOVAL",
-                "tab2Description": "We remove all potentially unwanted programs",
-                "tab3Heading": "LIGHT AND FAST",
-                "tab3Description": "Scan typically takes 5-10 minutes"
+                "tab1Heading": "PROBLEMAS DO NAVEGADOR",
+                "tab1Description": "Configuramos e corrigimos todos os seus navegadores da Web populares.",
+                "tab2Heading": "ERROS DE CONECTIVIDADE",
+                "tab2Description": "Podemos diagnosticar e reparar seus problemas de conectividade.",
+                "tab3Heading": "INTERNET LENTA",
+                "tab3Description": "Ajudaremos você a obter desempenho máximo."
             },
-            "summaryTitle": "Internet Performance"
+            "summaryTitle": "Desempenho da Internet"
         },
         "malwareSecurity": {
-            "title": "MALWARE & SECURITY",
-            "heading": "Give your internet a boost",
-            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "title": "MALWARE E SEGURANÇA",
+            "heading": "Dê ao seu computador o cuidado extra necessário",
+            "description": "O malware pode levar a uma pane no computador, comprometimento dos dados e degradação do desempenho. Obtenha remoção de malware e muito, muito mais.",
             "tabSet1": {
-                "tab1": "Malware scan",
-                "tab2": "Zero-day infections",
-                "tab3": "Security settings",
-                "tab4": "Errant programs",
-                "tab5": "Annoying adware"
+                "tab1": "Verificação de malware",
+                "tab2": "Infecções de dia zero",
+                "tab3": "Programas com erro",
+                "tab4": "Adware irritante",
+                "tab5": "Configurações de segurança"
             },
             "tabSet2": {
-                "tab1Heading": "SLOW INTERNET",
-                "tab1Description": "We will help you get maximum performance.",
-                "tab2Heading": "CONNECTIVITY ERRORS",
-                "tab2Description": "We can diagnose and repair your connectivity problems.",
-                "tab3Heading": "BROWSER ISSUES",
-                "tab3Description": "We configure and fix all your popular web browsers."
+                "tab1Heading": "VÍRUS DE DIA ZERO",
+                "tab1Description": "Removemos até as mais recentes infecções por malware",
+                "tab2Heading": "REMOÇÃO DE SPYWARE",
+                "tab2Description": "Removemos todos os programas possivelmente indesejados",
+                "tab3Heading": "LEVE E RÁPIDO",
+                "tab3Description": "A verificação geralmente leva de 5 a 10 minutos"
             },
-            "summaryTitle": "Malware & Security"
+            "summaryTitle": "Malware e segurança"
         },
         "proactiveAutomated": {
-            "title": "PROACTIVE & AUTOMATED",
-            "heading": "Get the power to resolve issues, before they impact you!",
-            "description": "Smart Performance constantly looks for hundreads of issues that impact PC performance. We fix them proactively, giving you peace of mind.",
+            "title": "PROATIVO E AUTOMATIZADO",
+            "heading": "Obtenha o poder de resolver problemas antes que eles afetem você.",
+            "description": "O Smart Performance procura constantemente centenas de problemas que afetam o desempenho do PC. Nós os corrigimos proativamente, proporcionando tranquilidade.",
             "tabSet1": {
-                "tab1": "Schedule Scan",
-                "tab2": "On-demand scan",
-                "tab3": "Automated resolution",
-                "tab4": "It's effective",
-                "tab5": "24/7 Protection"
+                "tab1": "Agendar Verificação",
+                "tab2": "Verificação sob demanda",
+                "tab3": "Resolução automatizada",
+                "tab4": "É eficaz",
+                "tab5": "Proteção dia e noite"
             },
             "tabSet2": {
-                "tab1Heading": "IT'S EASY",
-                "tab1Description": "We don't confuse you with tech mumbo jumbp",
-                "tab2Heading": "IT'S FAST",
-                "tab2Description": "Get a 100 point check done in under 5 minutes",
-                "tab3Heading": "IT'S SAFE",
-                "tab3Description": "No scareware, built with best practises"
+                "tab1Heading": "É FÁCIL",
+                "tab1Description": "Não confundimos você com linguagem técnica",
+                "tab2Heading": "É RÁPIDO",
+                "tab2Description": "Faça uma verificação de 100 pontos em menos de 5 minutos",
+                "tab3Heading": "É SEGURO",
+                "tab3Description": "Sem scareware, construído com as práticas recomendadas"
             }
         },
-        "startScan": "<b>Ready to start the scan?</b> Let's diagnose and resolve performance and security issues in your computer",
+        "startScan": "<b>Pronto para iniciar a verificação?</b> Vamos diagnosticar os problemas de desempenho e segurança no seu computador.",
         "subscriptionDetails": {
-            "title": "Subscription details",
-            "description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
-            "learnMore": "Learn more",
-            "startDate": "Start date",
-            "endDate": "End date",
+            "title": "Detalhes da assinatura",
+            "description": "Você está inscrito no serviço Lenovo Smart Performance. Durante esse período, todos os recursos estão totalmente disponíveis para manter seu PC protegido e funcionando sem problemas.",
+            "learnMore": "Saber mais",
+            "startDate": "Data de início",
+            "endDate": "Data final",
             "status": "Status",
-            "activeStatus": "ACTIVE",
-            "inactiveStatus": "INACTIVE",
-            "manageSubscription": "MANAGE SUBSCRIPTION",
-            "titlebeta": "Lenovo Beta Program",
-            "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
-            "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
-            "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely."
+            "activeStatus": "ATIVO",
+            "inactiveStatus": "INATIVO",
+            "manageSubscription": "GERENCIAR ASSINATURA",
+            "titlebeta": "Programa Lenovo Beta",
+            "manageSubscriptionBeta": "ATIVAR RECURSO COMPLETO",
+            "descriptionbeta": "A Lenovo está oferecendo um programa piloto para testar o recurso Smart Performance até julho de 2020.",
+            "descriptionbeta1": "Você é convidado a participar e experimentar o recurso completo.",
+            "descriptionNonSubscriber": "Você não está inscrito no serviço Lenovo Smart Performance. Você só poderá fazer uma varredura no seu PC. Inscreva-se agora para obter todos os benefícios de manter seu PC protegido e funcionando sem problemas.",
+            "processStatus": "PROCESSANDO"
         },
         "scanSettings": {
-            "title": "Scan settings",
-            "description": "Enable or disable the scan and set the scan schedule",
-            "enableScan": "Enable Scan",
-            "changeScanTitle": "Change scan schedule",
-            "changeScanDescription": "Edit the scan schedule to run when you need it.",
-            "frequency": "Frequency",
-            "txtDate": "Date",
-            "txtDay": "Day",
-            "txtTime": "Time",
-            "txtSave": "save",
-            "txtCancel": "cancel",
-            "scanFrequencyWeek": "Once a week",
-            "scanFrequencyEveryWeek": "Every other week",
-            "scanFrequencyMonth": "Every month",
-            "mon": "Monday",
-            "tue": "Tuesday",
-            "wed": "Wednesday",
-            "thu": "Thursday",
-            "fri": "Friday",
-            "sat": "Saturday",
-            "sun": "Sunday",
-            "tooltipText": "Enable this toggle to automatically initiate a system performance scan on your selected date and time."
+            "title": "Configurações de programação de verificação",
+            "description": "Ativar ou desativar a verificação e definir a programação de verificação",
+            "enableScan": "Ativar verificação",
+            "changeScanTitle": "Alterar programação de verificação",
+            "changeScanDescription": "Edite a programação de verificação para execução quando você precisar.",
+            "frequency": "Frequência",
+            "txtDate": "Data",
+            "txtDay": "Dia",
+            "txtTime": "Hora",
+            "txtSave": "salvar",
+            "txtCancel": "cancelar",
+            "scanFrequencyWeek": "Uma vez por semana",
+            "scanFrequencyEveryWeek": "A cada duas semanas",
+            "scanFrequencyMonth": "Mensalmente",
+            "mon": "Segunda",
+            "tue": "Terça",
+            "wed": "Quarta",
+            "thu": "Quinta",
+            "fri": "Sexta",
+            "sat": "Sábado",
+            "sun": "Domingo",
+            "am": "AM",
+            "pm": "PM",
+            "tooltipText": "Mantendo essa opção ativada, o desempenho do sistema e a verificação de segurança serão iniciados automaticamente na data e hora definidas."
         },
         "scanningPage": {
-            "title": "Performance & security check",
-            "description": "Please wait while we scan your system for potential problems and threats.",
-            "scanningSystem": "Scanning system",
-            "complete": "complete",
+            "title": "Verificação de desempenho e segurança",
+            "description": "Aguarde enquanto analisamos seu sistema em busca de possíveis problemas e ameaças.",
+            "scanningSystem": "Verificando o sistema",
+            "complete": "completo",
             "cancelScan": {
-                "button": "CANCEL SCAN",
-                "title": "Cacel the scan?",
-                "description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
-                "yesButton": "YES, CANCEL",
-                "noButton": "NO, RESUME SCAN",
+                "button": "CANCELAR VERIFICAÇÃO",
+                "title": "Cancelar a verificação?",
+                "description": "Se sair da tela atual, a verificação será cancelada e você retornará à Página inicial. No entanto, você pode executar a verificação novamente a qualquer momento.",
+                "yesButton": "SIM, CANCELAR",
+                "noButton": "NÃO, RETOMAR VERIFICAÇÃO",
                 "cancelMayTakeSomeTime": "Por favor, aguarde. Dependendo do seu sistema, o cancelamento poderá levar algum tempo.",
                 "cancelTextPrompt": "Tem certeza de que gostaria de cancelar?"
             },
-            "waiting": "WAITING TO SCAN",
-            "completed": "COMPLETED",
+            "waiting": "AGUARDANDO VERIFICAÇÃO",
+            "completed": "CONCLUÍDO",
             "nowScanningDetail": {
-                "cardTitle": "NOW SCANNING DETAIL",
-                "current": "CURRENT: ",
-                "upNext": "UP NEXT",
-                "tunePCDesc": "Let’s help improve your PC performance. We do it safely using industry best practices. Benefits for subscribers include reduced PC start time, improved performance, improved stability and faster launch of applications.",
-                "boostDesc": "Let’s help enhance your browsing experience. Let's fix network and access issues. Benefits for subscribers include betterment in internet connectivity, improvement in upload/download speeds and making internet more secure.",
-                "malwareDesc": "Let’s help quickly secure your PC, on-demand. We do it by removing spyware, malware and adware. We also remove near/zero-day infections. Benefits for subscribers include security of data and optimal system performance.",
-                "proactiveDesc": "Let's tune your computer periodically and fix issues, Proactive and automated to keep your PC tuned and covered. Always",
+                "cardTitle": "AGORA VERIFICANDO DETALHES",
+                "current": "ATUAL: ",
+                "upNext": "PRÓXIMO",
+                "tunePCDesc": "Vamos ajudar a melhorar o desempenho do seu PC. Fazemos isso com segurança usando as práticas recomendadas do setor. Os benefícios para os assinantes incluem menor tempo de inicialização do PC, desempenho aprimorado, maior estabilidade e execução mais rápida de aplicativos.",
+                "boostDesc": "Vamos ajudar a melhorar sua experiência de navegação. Vamos corrigir problemas de rede e acesso. Os benefícios para os assinantes incluem melhoria na conectividade com a Internet, melhoria nas velocidades de upload/download e tornar a Internet mais segura.",
+                "malwareDesc": "Vamos ajudar a proteger rapidamente seu PC, sob demanda. Fazemos isso removendo spyware, malware e adware. Também removemos infecções próximas ao dia zero. Os benefícios para os assinantes incluem segurança de dados e desempenho ideal do sistema.",
+                "proactiveDesc": "Vamos ajustar seu computador periodicamente e corrigir problemas de modo proativo e automatizado para manter seu PC sintonizado e coberto. Sempre",
                 "tunePCScanningItems": {
                     "accumulatedJunk": {
-                        "itema1": "Look for junk in 85 locations",
-                        "itema2": "System log files that aren’t needed",
-                        "itema3": "Unnecessary application residues",
-                        "itema4": "Temporary files that clog diskspace",
-                        "itema5": "Files that you deleted so long ago",
-                        "itema6": "Outdated errors and alerts"
+                        "itema1": "Procurar lixo em 85 locais",
+                        "itema2": "Arquivos de log do sistema que não são necessários",
+                        "itema3": "Resíduos de aplicativos desnecessários",
+                        "itema4": "Arquivos temporários que obstruem o espaço em disco",
+                        "itema5": "Arquivos que você excluiu há muito tempo",
+                        "itema6": "Erros e alertas desatualizados"
                     },
                     "usabilityIssues": {
-                        "itemb1": "Address dozens of usability challenges",
-                        "itemb2": "Check external devices connectivity",
-                        "itemb3": "Keeping Windows updates always current",
-                        "itemb4": "Do apps render and appear at its best",
-                        "itemb5": "Analyzing processing power utilization",
-                        "itemb6": "Help locate files easily"
+                        "itemb1": "Enfrente dezenas de desafios de usabilidade",
+                        "itemb2": "Verifique a conectividade de dispositivos externos",
+                        "itemb3": "Manter as atualizações do Windows sempre atualizadas",
+                        "itemb4": "Os aplicativos são renderizados e exibidos da melhor forma possível",
+                        "itemb5": "Analisar a utilização da capacidade de processamento",
+                        "itemb6": "Ajude a localizar arquivos facilmente"
                     },
                     "windowsSettings": {
-                        "itemc1": "Diagnose dozens of Windows OS settings",
-                        "itemc2": "Ensure all is well with your Windows",
-                        "itemc3": "Ensure essential services are running",
-                        "itemc4": "Check health of connectivity settings",
-                        "itemc5": "Check ability to share files in network",
-                        "itemc6": "Check biometric and access settings"
+                        "itemc1": "Diagnostique dezenas de configurações do sistema operacional Windows",
+                        "itemc2": "Verifique se está tudo bem com o seu Windows",
+                        "itemc3": "Garanta a execução de serviços essenciais",
+                        "itemc4": "Verifique a integridade das configurações de conectividade",
+                        "itemc5": "Verifique a capacidade de compartilhar arquivos na rede",
+                        "itemc6": "Verifique as configurações biométricas e de acesso"
                     },
                     "systemErrors": {
-                        "itemd1": "Ensure essential services are running",
-                        "itemd2": "Select services for higher performance",
-                        "itemd3": "Look for software conflict errors",
-                        "itemd4": "Optimize Windows error management",
-                        "itemd5": "Check and fix apps launching errors",
-                        "itemd6": "Configure system error reports"
+                        "itemd1": "Garanta a execução de serviços essenciais",
+                        "itemd2": "Selecione serviços para maior desempenho",
+                        "itemd3": "Procure erros de conflito de software",
+                        "itemd4": "Otimize o gerenciamento de erros do Windows",
+                        "itemd5": "Verifique e corrija erros de inicialização de aplicativos",
+                        "itemd6": "Configure relatórios de erro do sistema"
                     },
                     "registryErrors": {
-                        "iteme1": "Deep check Windows registry,",
-                        "iteme2": "Scanning for invalid Windows services",
-                        "iteme3": "Finding corrupted registry entries",
-                        "iteme4": "Look for useless file extensions",
-                        "iteme5": "Search broken entries of installed apps",
-                        "iteme6": "Look for useless leftover entries"
+                        "iteme1": "Verifique profundamente o registro do Windows,",
+                        "iteme2": "Verificar serviços do Windows inválidos",
+                        "iteme3": "Localizar entradas de registro corrompidas",
+                        "iteme4": "Procurar extensões de arquivo inúteis",
+                        "iteme5": "Pesquisar entradas corrompidas de aplicativos instalados",
+                        "iteme6": "Procurar entradas restantes inúteis"
                     }
                 },
                 "boostScanningItems": {
                     "networkSettings": {
-                        "itema1": "Diagnose network and Internet settings",
-                        "itema2": "Verify network configuration settings",
-                        "itema3": "Verify available network settings",
-                        "itema4": "Configure to load websites faster",
-                        "itema5": "Look for page rendering errors",
-                        "itema6": "Are connection service(s) running well"
+                        "itema1": "Diagnosticar configurações de rede e Internet",
+                        "itema2": "Verificar as definições de configuração de rede",
+                        "itema3": "Verificar as configurações de rede disponíveis",
+                        "itema4": "Configure para carregar sites mais rapidamente",
+                        "itema5": "Procurar erros de renderização de página",
+                        "itema6": "Os serviços de conexão estão funcionando bem"
                     },
                     "browserSettings": {
-                        "itemb1": "Enable better browsing experience",
-                        "itemb2": "Configure settings faster websites rendering",
-                        "itemb3": "Ensure browser security services are OK",
-                        "itemb4": "Ensure webpages are rendering properly",
-                        "itemb5": "Check settings for faster downloads",
-                        "itemb6": "Check permissions and access control"
+                        "itemb1": "Permitir uma melhor experiência de navegação",
+                        "itemb2": "Definir configurações de renderização mais rápida de sites",
+                        "itemb3": "Verifique se os serviços de segurança do navegador estão OK",
+                        "itemb4": "Verifique se as páginas da Web estão sendo renderizadas corretamente",
+                        "itemb5": "Verifique as configurações para downloads mais rápidos",
+                        "itemb6": "Verifique permissões e controle de acesso"
                     },
                     "browserSecurity": {
-                        "itemc1": "Ensure security services are running",
-                        "itemc2": "Configure browser security features",
-                        "itemc3": "Check network services are running well",
-                        "itemc4": "Configure protocol settings",
-                        "itemc5": "Verify Browser content settings are OK",
-                        "itemc6": "Verify browser plugins & extensions"
+                        "itemc1": "Garanta a execução de serviços de segurança",
+                        "itemc2": "Configurar recursos de segurança do navegador",
+                        "itemc3": "Verifique se os serviços de rede estão funcionando bem",
+                        "itemc4": "Definir configurações de protocolo",
+                        "itemc5": "Verifique se as configurações de conteúdo do navegador estão OK",
+                        "itemc6": "Verificar plug-ins e extensões do navegador"
                     },
                     "wifiPerformance": {
-                        "itemd1": "Optimize Wi-Fi experience settings",
-                        "itemd2": "Ensure your home network is secure",
-                        "itemd3": "Check Wi-Fi services settings",
-                        "itemd4": "Secure network sharing settings",
-                        "itemd5": "Check Wi-Fi security standards",
-                        "itemd6": "Ensure Wi-Fi channels do not overlap"
+                        "itemd1": "Otimizar as configurações da experiência de Wi-Fi",
+                        "itemd2": "Garanta que sua rede doméstica esteja segura",
+                        "itemd3": "Verificar as configurações dos serviços Wi-Fi",
+                        "itemd4": "Configurações seguras de compartilhamento de rede",
+                        "itemd5": "Verificar os padrões de segurança de Wi-Fi",
+                        "itemd6": "Verifique se os canais Wi-Fi não se sobrepõem"
                     },
                     "eJunk": {
-                        "iteme1": "Eliminate clutter from 4 browsers",
-                        "iteme2": "Look for leftover e-junk",
-                        "iteme3": "Look for outdated internet files",
-                        "iteme4": "Clear unwanted web cache",
-                        "iteme5": "Clear cookies",
-                        "iteme6": "Remove browser residues"
+                        "iteme1": "Eliminar a desorganização dos navegadores",
+                        "iteme2": "Procurar restos de lixo eletrônico",
+                        "iteme3": "Procurar arquivos desatualizados da Internet",
+                        "iteme4": "Limpar cache da Web indesejado",
+                        "iteme5": "Limpar cookies",
+                        "iteme6": "Remover resíduos do navegador"
                     }
                 },
                 "malwareScanningItems": {
                     "malwareScan": {
-                        "itema1": "Scan common loading points",
-                        "itema2": "Check critical locations for threats",
-                        "itema3": "Check for virus, spyware and malware",
-                        "itema4": "Scan for 50+ file types",
-                        "itema5": "Scan for malware remnants",
-                        "itema6": "Leverage from cloud remediation engine"
+                        "itema1": "Verificar pontos de carregamento comuns",
+                        "itema2": "Verificar locais críticos em busca de ameaças",
+                        "itema3": "Verificar se há vírus, spyware e malware",
+                        "itema4": "Verificar mais de 50 tipos de arquivo",
+                        "itema5": "Verificar restos de malware",
+                        "itema6": "Aproveitar o mecanismo de correção na nuvem"
                     },
                     "zerodayInfections": {
-                        "itemb1": "Look for zero-day virus",
-                        "itemb2": "Look for recent, undiagnosed malware",
-                        "itemb3": "Scan with cloud-based remediation",
-                        "itemb4": "Perform behavioral monitoring",
-                        "itemb5": "Scan files with aggregated engine",
-                        "itemb6": "Scan against latest definitions"
+                        "itemb1": "Procurar vírus de dia zero",
+                        "itemb2": "Procurar malware recente não diagnosticado",
+                        "itemb3": "Verificar com correção baseada em nuvem",
+                        "itemb4": "Executar monitoramento comportamental",
+                        "itemb5": "Verificar arquivos com mecanismo agregado",
+                        "itemb6": "Verificar em relação às definições mais recentes"
                     },
                     "securitySettings": {
-                        "itemc1": "Keep Windows updates always current",
-                        "itemc2": "Ensure Windows firewall service is OK",
-                        "itemc3": "Keep browser settings secure",
-                        "itemc4": "Check essential security services",
-                        "itemc5": "Configure user access settings",
-                        "itemc6": "Verify authentication services"
+                        "itemc1": "Manter as atualizações do Windows sempre atualizadas",
+                        "itemc2": "Verifique se o serviço de firewall do Windows está OK",
+                        "itemc3": "Manter as configurações do navegador seguras",
+                        "itemc4": "Verificar serviços essenciais de segurança",
+                        "itemc5": "Definir configurações de acesso do usuário",
+                        "itemc6": "Verificar serviços de autenticação"
                     },
                     "errantPrograms": {
-                        "itemd1": "Look for errant apps",
-                        "itemd2": "Look for potentially unwanted apps",
-                        "itemd3": "Detect inactive and hidden apps",
-                        "itemd4": "Verify apps for malicious behavior",
-                        "itemd5": "Check apps based on reputation factor",
-                        "itemd6": "Check errant programs in registry"
+                        "itemd1": "Procurar aplicativos com erro",
+                        "itemd2": "Procurar aplicativos possivelmente indesejados",
+                        "itemd3": "Detectar aplicativos inativos e ocultos",
+                        "itemd4": "Verificar aplicativos quanto a comportamento malicioso",
+                        "itemd5": "Verificar aplicativos com base no fator de reputação",
+                        "itemd6": "Verificar programas com erro no registro"
                     },
                     "annoyingAdware": {
-                        "iteme1": "Look for browser(s) adware",
-                        "iteme2": "Revise browser(s) pop-up settings",
-                        "iteme3": "Eliminate browser re-direction threats",
-                        "iteme4": "Check for adware leftovers",
-                        "iteme5": "Optimize browser experience settings",
-                        "iteme6": "verify in cloud remediation engine"
+                        "iteme1": "Procurar adware de navegadores",
+                        "iteme2": "Revisar configurações pop-up dos navegadores",
+                        "iteme3": "Eliminar ameaças de redirecionamento do navegador",
+                        "iteme4": "Verificar resíduos de adware",
+                        "iteme5": "Otimizar as configurações da experiência de navegador",
+                        "iteme6": "verificar no mecanismo de correção na nuvem"
                     }
                 }
             }
         },
         "scanCompletePage": {
-            "title": "System scan is complete",
-            "description": "Here is what we found on your ",
-            "scanRates": "Our scan rates your PC at: ",
-            "summary": "Summary",
-            "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
-            "signupRepairButton": "SIGN UP & REPAIR NOW",
-            "monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
-            "issueCount": "{{individualIssueCount}} ISSUES",
-            "scannedAreas": "SCANNED AREAS",
+            "title": "A verificação do sistema está concluída",
+            "description": "Veja o que encontramos no seu ",
+            "scanRates": "Nossa verificação classifica seu PC em: ",
+            "summary": "Resumo",
+            "summaryDetails": "Nossa verificação encontrou <b>{{issueCount}} problemas</b> nas seguintes áreas abaixo. Inscreva-se agora para corrigir esses problemas e manter seu sistema funcionando sem problemas. Nosso software pode verificar proativamente essas áreas do seu sistema 24x7 para encontrar e corrigir problemas à medida que surgem, para que seu PC sempre tenha um desempenho de alto nível.",
+            "signupRepairButton": "INSCREVA-SE E REPARE AGORA",
+            "monthlyPricing": "<b>Menos de US$ 2 por mês.</b> Nós corrigiremos esses problemas automaticamente. Uma vez hoje e toda semana depois <a  href=\"#\">Saiba mais</a>",
+            "issueCount": "{{individualIssueCount}} PROBLEMAS",
+            "scannedAreas": "ÁREAS VERIFICADAS",
             "recommendedAction": {
-                "title": "RECOMMENDED ACTION",
-                "description": "We will automatically fix these issues. Once today and every week thereafter",
-                "yearlyPricing": "$19.99 / Yr",
-                "monthlyPricing": "LESS THAN $2 PER MONTH.",
-                "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP"
+                "title": "AÇÃO RECOMENDADA",
+                "description": "Nós corrigiremos esses problemas automaticamente. Uma vez hoje e toda semana depois",
+                "yearlyPricing": "US$ 19,99/Ano",
+                "monthlyPricing": "MENOS DE US$ 2 POR MÊS.",
+                "longerTerm": "Mais tempo? Ainda mais economia?",
+                "signupButton": "INSCREVA-SE"
             },
             "tunepc": {
                 "accumulatedjunkscannedareas": {
-                    "area1": "Scanned for junk in 85 locations",
-                    "area2": "System log files that aren’t needed",
-                    "area3": "Unnecessary application residues",
-                    "area4": "Temporary files that clog diskspace",
-                    "area5": "Files that you deleted so long ago",
-                    "area6": "Outdated errors and alerts"
+                    "area1": "Verificado quanto a lixo em 85 locais",
+                    "area2": "Arquivos de log do sistema que não são necessários",
+                    "area3": "Resíduos de aplicativos desnecessários",
+                    "area4": "Arquivos temporários que obstruem o espaço em disco",
+                    "area5": "Arquivos que você excluiu há muito tempo",
+                    "area6": "Erros e alertas desatualizados"
                 },
                 "registryerrorsscannedareas": {
-                    "area1": "Completed deep check of Windows registry",
-                    "area2": "Scanned for invalid Windows services",
-                    "area3": "Checked for corrupted registry entries",
-                    "area4": "Scanned for useless file extensions",
-                    "area5": "Searched broken entries of installed apps",
-                    "area6": "Checked for useless leftover entries"
+                    "area1": "Verificação profunda concluída do registro do Windows",
+                    "area2": "Verificado quanto a serviços do Windows inválidos",
+                    "area3": "Verificado quanto a entradas de registro corrompidas",
+                    "area4": "Verificado quanto a extensões de arquivo inúteis",
+                    "area5": "Pesquisa de entradas corrompidas de aplicativos instalados",
+                    "area6": "Verificado quanto a entradas restantes inúteis"
                 },
                 "windowssettingsscannedareas": {
-                    "area1": "Diagnosed dozens of Windows OS settings",
-                    "area2": "Checked all is well with your Windows",
-                    "area3": "Confirmed essential services are running",
-                    "area4": "Checked health of connectivity settings",
-                    "area5": "Checked ability to share files in network",
-                    "area6": "Checked biometric and access settings"
+                    "area1": "Diagnóstico de dezenas de configurações do sistema operacional Windows",
+                    "area2": "Verificado se está tudo bem com o seu Windows",
+                    "area3": "Confirmação da execução de serviços essenciais",
+                    "area4": "Verificado quanto à integridade das configurações de conectividade",
+                    "area5": "Verificado quanto à capacidade de compartilhar arquivos na rede",
+                    "area6": "Verificado quanto a configurações biométricas e de acesso"
                 },
                 "usabilityissuesscannedareas": {
-                    "area1": "Checked for usability challenges",
-                    "area2": "Checked external devices connectivity",
-                    "area3": "Checked Windows updates status",
-                    "area4": "Verified apps rendering setting",
-                    "area5": "Analyzed processing power utilization",
-                    "area6": "Help locate files easily"
+                    "area1": "Verificado quanto a desafios de usabilidade",
+                    "area2": "Verificado quanto à conectividade de dispositivos externos",
+                    "area3": "Verificação do status de atualizações do Windows",
+                    "area4": "Verificação da configuração de renderização de aplicativos",
+                    "area5": "Análise da utilização da capacidade de processamento",
+                    "area6": "Ajude a localizar arquivos facilmente"
                 },
                 "systemerrorsscannedareas": {
-                    "area1": "Checked if essential services are running",
-                    "area2": "Look services for higher performance",
-                    "area3": "Look for software conflict errors",
-                    "area4": "Analyzed Windows error management",
-                    "area5": "Scanned for apps launching errors",
-                    "area6": "Checked system error reports configuration"
+                    "area1": "Verificação da execução de serviços essenciais",
+                    "area2": "Procurar serviços para maior desempenho",
+                    "area3": "Procure erros de conflito de software",
+                    "area4": "Análise do gerenciamento de erros do Windows",
+                    "area5": "Verificação quanto a erros de inicialização de aplicativos",
+                    "area6": "Verificação da configuração de relatórios de erro do sistema"
                 }
             },
-            "Diskspace": "Disk Space Reclaimed :",
-            "Performanceimprovements": "Performance Improvements :",
-            "Securityimprovements": "Security Improvements:",
-            "Onceaweek": "Once a week",
+            "Diskspace": "Espaço em disco solicitado:",
+            "Performanceimprovements": "Melhorias de desempenho:",
+            "Securityimprovements": "Melhorias na segurança:",
+            "Onceaweek": "Uma vez por semana",
             "internetperformance": {
                 "ejunkscannedareas": {
-                    "area1": "Identified clutter from 4 browsers",
-                    "area2": "Searched leftover e-junk",
-                    "area3": "Scanned outdated internet files",
-                    "area4": "Searched unwanted web cache",
-                    "area5": "Checked cookies for clearance",
-                    "area6": "Scanned browser residues"
+                    "area1": "Identificação de desorganização dos navegadores",
+                    "area2": "Procura de restos de lixo eletrônico",
+                    "area3": "Verificação de arquivos desatualizados da Internet",
+                    "area4": "Pesquisa de cache da Web indesejado",
+                    "area5": "Verificação de cookies para liberação",
+                    "area6": "Verificação de resíduos do navegador"
                 },
                 "browsersecurityscannedareas": {
-                    "area1": "Checked security services are running",
-                    "area2": "Checked browser security features",
-                    "area3": "Verified network services",
-                    "area4": "Configure protocol settings",
-                    "area5": "Checked Browser content settings",
-                    "area6": "Scanned browser plugins & extensions"
+                    "area1": "Verificação da execução de serviços de segurança",
+                    "area2": "Verificação de recursos de segurança do navegador",
+                    "area3": "Verificação de serviços de rede",
+                    "area4": "Definir configurações de protocolo",
+                    "area5": "Verificação de configurações de conteúdo do navegador",
+                    "area6": "Verificação de plug-ins e extensões do navegador"
                 },
                 "networksettingsscannedareas": {
-                    "area1": "Diagnosed network and Internet settings",
-                    "area2": "Diagnosed network configuration settings",
-                    "area3": "Verified connected network settings",
-                    "area4": "Diagnosed settings for faster websites rendering",
-                    "area5": "Scanned for page rendering errors",
-                    "area6": "Scanned all connection service(s)"
+                    "area1": "Diagnóstico de configurações de rede e Internet",
+                    "area2": "Diagnóstico de definições de configuração de rede",
+                    "area3": "Verificação de configurações de rede conectada",
+                    "area4": "Diagnóstico de configurações de renderização mais rápida de sites",
+                    "area5": "Verificação de erros de renderização de página",
+                    "area6": "Verificação de todos os serviços de conexão"
                 },
                 "browsersettingsscannedareas": {
-                    "area1": "Enable better browsing experience",
-                    "area2": "Diagnosed settings for faster websites rendering",
-                    "area3": "Verified browser security services",
-                    "area4": "Checked if webpages are rendering properly",
-                    "area5": "Scanned settings for faster downloads",
-                    "area6": "Analyzed permissions and access control"
+                    "area1": "Permitir uma melhor experiência de navegação",
+                    "area2": "Diagnóstico de configurações de renderização mais rápida de sites",
+                    "area3": "Verificação de serviços de segurança do navegador",
+                    "area4": "Verificação de se as páginas da Web estão sendo renderizadas corretamente",
+                    "area5": "Verificação das configurações para downloads mais rápidos",
+                    "area6": "Análise de permissões e controle de acesso"
                 },
                 "wifiperformancescannedareas": {
-                    "area1": "Verified Wi-Fi experience settings",
-                    "area2": "Verified secure home network",
-                    "area3": "Scanned Wi-Fi services settings",
-                    "area4": "Verified Secure network sharing settings",
-                    "area5": "Verified Wi-Fi security standards",
-                    "area6": "Analyzed Wi-Fi channels do not overlap"
+                    "area1": "Verificação das configurações da experiência de Wi-Fi",
+                    "area2": "Verificação da rede doméstica segura",
+                    "area3": "Verificação das configurações dos serviços Wi-Fi",
+                    "area4": "Verificação das configurações seguras de compartilhamento de rede",
+                    "area5": "Verificação dos padrões de segurança de Wi-Fi",
+                    "area6": "Análise de se os canais Wi-Fi não se sobrepõem"
                 }
             },
             "malwaresecurity": {
                 "malwarescanscannedareas": {
-                    "area1": "Scanned common loading points",
-                    "area2": "Scanned critical locations for threats",
-                    "area3": "Scanned for virus, spyware and malware",
-                    "area4": "Scanned 50+ file types for threats",
-                    "area5": "Checked for malware remnants",
-                    "area6": "Verified in cloud remediation engine"
+                    "area1": "Verificação de pontos de carregamento comuns",
+                    "area2": "Verificação de locais críticos em busca de ameaças",
+                    "area3": "Verificação de vírus, spyware e malware",
+                    "area4": "Verificação de mais de 50 tipos de arquivos em busca de ameaças",
+                    "area5": "Verificação de restos de malware",
+                    "area6": "Verificação no mecanismo de correção na nuvem"
                 },
                 "errantprogramsscannedareas": {
-                    "area1": "Look for errant apps",
-                    "area2": "Inspected for potentially unwanted apps",
-                    "area3": "Searched for inactive and hidden apps",
-                    "area4": "Scanned for malicious apps",
-                    "area5": "Checked apps based on reputation factor",
-                    "area6": "Checked errant programs in registry"
+                    "area1": "Procurar aplicativos com erro",
+                    "area2": "Inspeção de aplicativos possivelmente indesejados",
+                    "area3": "Procura de aplicativos inativos e ocultos",
+                    "area4": "Verificação de aplicativos maliciosos",
+                    "area5": "Verificação de aplicativos com base no fator de reputação",
+                    "area6": "Verificação de programas com erro no registro"
                 },
                 "zerodayinfectionsscannedareas": {
-                    "area1": "Scanned for zero-day virus",
-                    "area2": "Searched for recent, undiagnosed malware",
-                    "area3": "Verified with cloud-based remediation",
-                    "area4": "Performed behavioral monitoring",
-                    "area5": "Verified files with aggregated engine",
-                    "area6": "Scanned against updated definitions"
+                    "area1": "Verificação de vírus de dia zero",
+                    "area2": "Procura de malware recente não diagnosticado",
+                    "area3": "Verificação com correção baseada em nuvem",
+                    "area4": "Execução de monitoramento comportamental",
+                    "area5": "Verificação de arquivos com mecanismo agregado",
+                    "area6": "Verificação em relação às definições atualizadas"
                 },
                 "securitysettingsscannedareas": {
-                    "area1": "Verified Windows updates are current",
-                    "area2": "Verified Windows firewall service",
-                    "area3": "Checked for secure browser settings",
-                    "area4": "Diagnosed essential security services",
-                    "area5": "Verified user access settings",
-                    "area6": "Verified authentication services"
+                    "area1": "Verificação de atualização das atualizações do Windows",
+                    "area2": "Verificação de serviço de firewall do Windows",
+                    "area3": "Verificação de configurações seguras do navegador",
+                    "area4": "Diagnóstico de serviços essenciais de segurança",
+                    "area5": "Verificação de configurações de acesso do usuário",
+                    "area6": "Verificação de serviços de autenticação"
                 },
                 "annoyingadwarescannedareas": {
-                    "area1": "Scanned for browser(s) adware",
-                    "area2": "Verify browser(s) pop-up settings",
-                    "area3": "Scanned browser re-direction threats",
-                    "area4": "Checked adware leftovers",
-                    "area5": "Verified browser experience settings",
-                    "area6": "Verified with cloud remediation engine"
+                    "area1": "Verificação de adware de navegadores",
+                    "area2": "Verificar configurações pop-up dos navegadores",
+                    "area3": "Verificação de ameaças de redirecionamento do navegador",
+                    "area4": "Verificação de resíduos de adware",
+                    "area5": "Verificação de configurações da experiência de navegador",
+                    "area6": "Verificação com o mecanismo de correção na nuvem"
                 }
             },
             "subscriber": {
                 "tunepc": {
                     "accumulatedjunkscannedareas": {
-                        "area1": "Cleaned of junk in 85 locations",
-                        "area2": "Cleared System log files that aren’t needed",
-                        "area3": "Deleted application residues",
-                        "area4": "Removed Temporary files to free up diskspace",
-                        "area5": "Eliminated files that you deleted so long ago",
-                        "area6": "Cleared errors and alerts"
+                        "area1": "Limpeza de lixo em 85 locais",
+                        "area2": "Limpeza de arquivos de log do sistema que não são necessários",
+                        "area3": "Resíduos de aplicativos excluídos",
+                        "area4": "Arquivos temporários removidos para liberar espaço em disco",
+                        "area5": "Eliminação de arquivos que você excluiu há muito tempo",
+                        "area6": "Limpeza de erros e alertas"
                     },
                     "registryerrorsscannedareas": {
-                        "area1": "Completed deep check of Windows registry",
-                        "area2": "Fixed any invalid Windows services",
-                        "area3": "Removed any corrupted registry entries",
-                        "area4": "Deleted any obsolete file extensions",
-                        "area5": "Cleaned broken entries of installed apps",
-                        "area6": "Cleared unwanted leftover entries"
+                        "area1": "Verificação profunda concluída do registro do Windows",
+                        "area2": "Correção de serviços do Windows inválidos",
+                        "area3": "Remoção de entradas de registro corrompidas",
+                        "area4": "Exclusão de extensões de arquivo obsoletas",
+                        "area5": "Limpeza de entradas corrompidas de aplicativos instalados",
+                        "area6": "Limpeza de entradas indesejadas restantes"
                     },
                     "windowssettingsscannedareas": {
-                        "area1": "Validated Windows settings",
-                        "area2": "Optimized all Windows services",
-                        "area3": "Modified essential Windows services",
-                        "area4": "Modified essential Windows services",
-                        "area5": "Verified ability to share files in network",
-                        "area6": "Verified biometric and access settings"
+                        "area1": "Validação de configurações do Windows",
+                        "area2": "Otimização de todos os serviços do Windows",
+                        "area3": "Modificação dos serviços essenciais do Windows",
+                        "area4": "Modificação dos serviços essenciais do Windows",
+                        "area5": "Verificação quanto à capacidade de compartilhar arquivos na rede",
+                        "area6": "Verificação quanto a configurações biométricas e de acesso"
                     },
                     "usabilityissuesscannedareas": {
-                        "area1": "Fixed any usability challenges",
-                        "area2": "Verified external devices connectivity",
-                        "area3": "Made sure Windows updates are always current",
-                        "area4": "Confirmed apps render and appear at its best",
-                        "area5": "Modified settings for processing power utilization",
-                        "area6": "Modified settings to Help locate files easily"
+                        "area1": "Correção de desafios de usabilidade",
+                        "area2": "Verificação quanto à conectividade de dispositivos externos",
+                        "area3": "Verificação de se as atualizações do Windows estão sempre atualizadas",
+                        "area4": "Confirmação de renderização e da melhor exibição possível dos aplicativos",
+                        "area5": "Configurações modificadas para utilização da energia de processamento",
+                        "area6": "Configurações modificadas para ajudar a localizar arquivos facilmente"
                     },
                     "systemerrorsscannedareas": {
-                        "area1": "Checked if essential services are running",
-                        "area2": "Modified services for higher performance",
-                        "area3": "Fixed any software conflict errors",
-                        "area4": "Optimized Windows error management",
-                        "area5": "Checked and fixed any apps launching errors",
-                        "area6": "Configured system error reports"
+                        "area1": "Verificação da execução de serviços essenciais",
+                        "area2": "Modificação de serviços para maior desempenho",
+                        "area3": "Correção de erros de conflito de software",
+                        "area4": "Otimização do gerenciamento de erros do Windows",
+                        "area5": "Verificação e correção de erros de inicialização de aplicativos",
+                        "area6": "Configuração de relatórios de erro do sistema"
                     }
                 },
                 "internetperformance": {
                     "ejunkscannedareas": {
-                        "area1": "Removed clutter from 4 browser(s)",
-                        "area2": "Cleaned leftover e-junk",
-                        "area3": "Deleted outdated internet files",
-                        "area4": "Cleared unwanted web cache",
-                        "area5": "Cleared Cookies",
-                        "area6": "Cleaned any browser residues"
+                        "area1": "Remoção da desorganização de 4 navegadores",
+                        "area2": "Limpeza de restos de lixo eletrônico",
+                        "area3": "Exclusão de arquivos desatualizados da Internet",
+                        "area4": "Limpeza de cache da Web indesejado",
+                        "area5": "Limpeza de cookies",
+                        "area6": "Limpeza de resíduos do navegador"
                     },
                     "browsersecurityscannedareas": {
-                        "area1": "Ensured security services are running",
-                        "area2": "Configured browser security features",
-                        "area3": "Checked and fixed network services",
-                        "area4": "Configured protocol settings",
-                        "area5": "Verified Browser content settings are OK",
-                        "area6": "Scanned browser plugins & extensions"
+                        "area1": "Garantia de execução de serviços de segurança",
+                        "area2": "Configuração de recursos de segurança do navegador",
+                        "area3": "Verificação e correção de serviços de rede",
+                        "area4": "Definição de configurações de protocolo",
+                        "area5": "Verificação de se as configurações de conteúdo do navegador estão OK",
+                        "area6": "Verificação de plug-ins e extensões do navegador"
                     },
                     "networksettingsscannedareas": {
-                        "area1": "Fixed network and Internet settings",
-                        "area2": "Checked network configuration settings",
-                        "area3": "Modified connected network settings",
-                        "area4": "Diagnosed settings for faster websites rendering",
-                        "area5": "Fixed any page rendering errors",
-                        "area6": "Scanned all connection service(s)"
+                        "area1": "Correção de configurações de rede e Internet",
+                        "area2": "Verificação de definições de configuração de rede",
+                        "area3": "Modificação de configurações de rede conectada",
+                        "area4": "Diagnóstico de configurações de renderização mais rápida de sites",
+                        "area5": "Correção de erros de renderização de página",
+                        "area6": "Verificação de todos os serviços de conexão"
                     },
                     "browsersettingsscannedareas": {
-                        "area1": "Modified settings for better browsing experience",
-                        "area2": "Verified settings for faster websites rendering",
-                        "area3": "Ensured browser security services are OK",
-                        "area4": "Modified settings to load webpages properly",
-                        "area5": "Fixed settings for faster downloads",
-                        "area6": "Fixed permissions and access control settings"
+                        "area1": "Configurações modificadas para uma melhor experiência de navegação",
+                        "area2": "Verificação de configurações de renderização mais rápida de sites",
+                        "area3": "Verificação de se os serviços de segurança do navegador estão OK",
+                        "area4": "Configurações modificadas para carregar páginas da web corretamente",
+                        "area5": "Correção das configurações para downloads mais rápidos",
+                        "area6": "Correção de configurações de permissões e controle de acesso"
                     },
                     "wifiperformancescannedareas": {
-                        "area1": "Modified Wi-Fi experience settings",
-                        "area2": "Validated secure home network settings",
-                        "area3": "Fixed Wi-Fi services settings",
-                        "area4": "Modified Secure network sharing settings",
-                        "area5": "Verified Wi-Fi security standards",
-                        "area6": "Validated Wi-Fi channels"
+                        "area1": "Modificação das configurações da experiência de Wi-Fi",
+                        "area2": "Validação das configurações de rede doméstica segura",
+                        "area3": "Correção das configurações dos serviços Wi-Fi",
+                        "area4": "Modificação das configurações seguras de compartilhamento de rede",
+                        "area5": "Verificação dos padrões de segurança de Wi-Fi",
+                        "area6": "Canais Wi-Fi validados"
                     }
                 },
                 "malwaresecurity": {
                     "malwarescanscannedareas": {
-                        "area1": "Checked & Removed threats in common loading points",
-                        "area2": "Checked and removed threats in critical locations",
-                        "area3": "Removed any threats from PC",
-                        "area4": "Validated 50+ file types for threats",
-                        "area5": "Cleaned any malware remnants",
-                        "area6": "Verified in cloud remediation engine"
+                        "area1": "Verificação e remoção de ameaças em pontos de carregamento comuns",
+                        "area2": "Verificação e remoção de ameaças em locais críticos",
+                        "area3": "Remoção de ameaças do PC",
+                        "area4": "Validação de mais de 50 tipos de arquivos em busca de ameaças",
+                        "area5": "Limpeza de resíduos de malware",
+                        "area6": "Verificação no mecanismo de correção na nuvem"
                     },
                     "errantprogramsscannedareas": {
-                        "area1": "Validated all installed apps",
-                        "area2": "Validated potentially unwanted apps",
-                        "area3": "Cleaned any inactive and hidden apps",
-                        "area4": "Removed any malicious and errant apps",
-                        "area5": "Validated apps based on reputation factor",
-                        "area6": "Completed registry check for errant programs"
+                        "area1": "Validação de todos os aplicativos instalados",
+                        "area2": "Validação de aplicativos possivelmente indesejados",
+                        "area3": "Limpeza de todos os aplicativos inativos e ocultos",
+                        "area4": "Remoção de todos os aplicativos maliciosos e com erro",
+                        "area5": "Validação de aplicativos com base no fator de reputação",
+                        "area6": "Conclusão da verificação do registro quanto a programas com erro"
                     },
                     "zerodayinfectionsscannedareas": {
-                        "area1": "Analyzed for zero-day virus",
-                        "area2": "Removed any malware from PC",
-                        "area3": "Validated in cloud remediation engine",
-                        "area4": "Completed behavioral monitoring of apps",
-                        "area5": "Validated against aggregated engine",
-                        "area6": "Validated against latest definitions"
+                        "area1": "Análise de vírus de dia zero",
+                        "area2": "Remoção de malware do PC",
+                        "area3": "Validação no mecanismo de correção na nuvem",
+                        "area4": "Conclusão do monitoramento comportamental de aplicativos",
+                        "area5": "Validação com relação ao mecanismo agregado",
+                        "area6": "Validação em relação às definições mais recentes"
                     },
                     "securitysettingsscannedareas": {
-                        "area1": "Optimized Windows update settings",
-                        "area2": "Tuned Windows firewall service",
-                        "area3": "Secured browser(s) settings",
-                        "area4": "Diagnosed essential security services",
-                        "area5": "Optimized user access settings",
-                        "area6": "Modified authentication services"
+                        "area1": "Otimização das configurações de atualização do Windows",
+                        "area2": "Ajuste de serviço de firewall do Windows",
+                        "area3": "Proteção das configurações do navegador",
+                        "area4": "Diagnóstico de serviços essenciais de segurança",
+                        "area5": "Otimização das configurações de acesso do usuário",
+                        "area6": "Modificação de serviços de autenticação"
                     },
                     "annoyingadwarescannedareas": {
-                        "area1": "Removed browser(s) adware",
-                        "area2": "Tuned browser(s) pop-up settings",
-                        "area3": "Diagnosed browser re-direction threats",
-                        "area4": "Cleared adware leftovers",
-                        "area5": "Optimized browser experience settings",
-                        "area6": "Validated in cloud remediation engine"
+                        "area1": "Remoção de adware de navegadores",
+                        "area2": "Ajuste de configurações pop-up dos navegadores",
+                        "area3": "Diagnóstico de ameaças de redirecionamento do navegador",
+                        "area4": "Limpeza de resíduos de adware",
+                        "area5": "Otimização das configurações da experiência de navegador",
+                        "area6": "Validação no mecanismo de correção na nuvem"
                     }
                 }
             },
-            "issues": "ISSUES",
+            "issues": "PROBLEMAS",
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
-            "backToHome": "Back To Home"
+            "backToHome": "Voltar para a tela inicial"
         },
         "subscriberScanHomePage": {
-            "title": "All is well with your ",
-            "serialNumber": "Serial number: ",
-            "subTitle": "You are subscribed to Lenovo Smart Performance Service",
-            "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
-            "scanNow": "SCAN NOW",
-            "returnto": "RETURN TO DASHBOARD",
-            "mostRecent": "MOST RECENT SCAN:",
-            "nextScheduled": "NEXT SCHEDULED SCAN:",
+            "title": "Tudo está bem com seu ",
+            "serialNumber": "Número de série: ",
+            "subTitle": "Você está inscrito no serviço Lenovo Smart Performance",
+            "description": "Frequentemente, examinamos e corrigimos o seu computador para detectar problemas de desempenho do PC, desempenho da Internet e malware de maneira proativa. Você está coberto adequadamente. Você também pode iniciar a verificação de desempenho sob demanda clicando no botão Verificar agora.",
+            "scanNow": "VERIFICAR E CORRIGIR",
+            "returnto": "RETORNAR AO PAINEL",
+            "mostRecent": "VERIFICAÇÃO MAIS RECENTE:",
+            "nextScheduled": "PRÓXIMA VERIFICAÇÃO PROGRAMADA:",
             "scanSummary": {
-                "title": "Scan summary:",
-                "description": "We are constantly tuning your computer",
-                "tune": "Tune",
-                "tuneSummary": "Disk space reclaimed",
-                "boost": "Boost",
-                "boostSummary": "Fixes to improve performance",
-                "secure": "Secure",
-                "secureSummary": "Fixes to improve security",
-                "annual": "Annual",
-                "quarterly": "Quarterly",
-                "custom": "Custom",
-                "txtFrom": "From",
-                "txtTo": "To",
-                "txtGo": "Go",
-                "summaryCaption": "space reclaimed",
-                "fixes": "fixes"
+                "title": "Resumo da verificação:",
+                "description": "Estamos constantemente ajustando seu computador",
+                "tune": "Ajustar",
+                "tuneSummary": "Espaço em disco solicitado",
+                "boost": "Melhorar",
+                "boostSummary": "Correções para melhorar o desempenho",
+                "secure": "Protegido",
+                "secureSummary": "Correções para melhorar a segurança",
+                "annual": "Anual",
+                "quarterly": "Trimestral",
+                "custom": "Customizar",
+                "txtFrom": "De",
+                "txtTo": "Para",
+                "txtGo": "Ir",
+                "summaryCaption": "espaço solicitado",
+                "fixes": "correções",
+                "txtClr": "Limpar"
             },
             "lastScanResults": {
-                "title": "Last 5 scan results:",
-                "scanDate": "Scan date:",
-                "results": "Results:",
+                "title": "Resultados das últimas cinco verificações:",
+                "scanDate": "Data da verificação",
+                "results": "Resultados",
                 "status": "Status"
             },
-            "backToHome": "Back To Home",
-            "successTitle": "Your Pc is tuned up !",
-            "successDescription": "Smart Performance resolved <b>{{issueCount}} issues</b> to keep your pc running smoothly, you can find scan summary and report below."
+            "backToHome": "Voltar para a tela inicial",
+            "successTitle": "Seu PC está ajustado.",
+            "successDescription": "O Smart Performance resolveu <b>{{issueCount}} problemas</b> para manter seu PC funcionando sem problemas. Você pode encontrar o resumo e o relatório da verificação abaixo."
         },
-        "runningWell": "PC is running well",
+        "runningWell": "O PC está funcionando bem",
         "feedbackContainer": {
-            "title": "Leave us some feedback",
-            "subtitle": "Tell us what you think about Vantage",
-            "buttonText": "send feedback",
+            "title": "Deixe-nos um feedback",
+            "subtitle": "Conte-nos sua opinião sobre o Smart Performance",
+            "buttonText": "enviar feedback",
             "questions": {
-                "q1": "Does the product look and feel good?",
-                "q2": "Do the feature seen comprehensive?",
-                "q3": "Was the scan easy to use?",
-                "q4": "Happy about the fixes we did?",
-                "q5": "Do you see value for money? ",
-                "q6": "Will you refer it to your friends and family?",
-                "q7": "How likely are you to continue paying for the Smart Performance feature?",
-                "q8": "Overall how satisfied are you with the Smart Performance feature?"
+                "q1": "1. Foi difícil ou fácil usar o recurso de verificação?",
+                "q2": "2. Foi difícil ou fácil entender os resultados da verificação?",
+                "q3": "3. Qual a probabilidade de você pagar por uma assinatura do Smart Performance para melhorar o desempenho do seu sistema?",
+                "q4": "4. Em geral, qual o seu grau de satisfação com o recurso Smart Performance?",
+                "q5": "1. Foi difícil ou fácil foi entender as correções que o Smart Performance fez no seu sistema?",
+                "q6": "2. Encontramos algum malware no seu sistema?",
+                "q7": "3. Qual a probabilidade de você continuar pagando pelo recurso Smart Performance?",
+                "q8": "4. Em geral, qual o seu grau de satisfação com o recurso Smart Performance?"
             },
             "rating": {
-                "r1": "Hate it",
-                "r2": "Love it",
-                "r3": "Seems lacking",
-                "r4": "Good enough",
-                "r5": "Crazy",
-                "r6": "Cool",
-                "r7": "Not so sure",
-                "r8": "Absolutely yes",
-                "r9": "No way",
-                "r10": "Looks worthy",
-                "r11": "Not so sure",
-                "r12": "Absolutely yes",
-                "r13": "Not at all likely",
-                "r14": "Very Likely",
-                "r15": "Not at all satisfied",
-                "r16": "Very Satisfied"
+                "r1": "Muito difícil",
+                "r2": "Muito fácil",
+                "r3": "Muito difícil",
+                "r4": "Muito fácil",
+                "r5": "Não é provável",
+                "r6": "Muito provável",
+                "r7": "Não fiquei satisfeito",
+                "r8": "Muito satisfeito",
+                "r9": "Muito difícil",
+                "r10": "Muito fácil",
+                "r11": "Sim",
+                "r12": "Não",
+                "r13": "Não é provável",
+                "r14": "Muito provável",
+                "r15": "Não fiquei satisfeito",
+                "r16": "Muito satisfeito"
             },
-            "commentTip": "Shout what you love and whisper what you hate.",
-            "comments": "Please leave your comments here..."
+            "commentTip": "Deixe comentários ou feedback adicional abaixo:",
+            "comments": "Deixe seus comentários aqui..."
         },
-        "auto": "Auto",
+        "auto": "Automático",
         "manual": "Manual",
-        "noScanResults": "Please click SCAN & FIX button to trigger scan process."
+        "noScanResults": "Clique no botão VERIFICAR E CORRIGIR para iniciar o processo de verificação.",
+        "am": "MANHÃ",
+        "pm": "TARDE"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

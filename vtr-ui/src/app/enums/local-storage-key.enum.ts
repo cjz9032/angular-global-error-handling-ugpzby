@@ -224,7 +224,7 @@ export enum LocalStorageKey {
 	AutoCloseList = '[LocalStorageKey] AutoCloseList',
 	NeedToAsk = '[LocalStorageKey] NeedToAsk',
 
-	//Gaming 3.2 advanced OC
+	// Gaming 3.2 advanced OC
 	AdvancedOCInfo = '[LocalStorageKey] AdvancedOCInfo',
 
 	BetaUser = '[LocalStorageKey] BetaUser',
@@ -258,6 +258,7 @@ export enum LocalStorageKey {
 	IsFreeFullFeatureEnabled = '[LocalStorageKey] IsFreeFullFeatureEnabled',
 	IsSmartPerformanceForceClose = '[LocalStorageKey] IsSmartPerformanceForceClose',
 	SmartPerformanceSubscriptionDetails = '[LocalStorageKey] SmartPerformanceSubscriptionDetails',
+	SmartPerformanceSubscriptionModalStatus = '[LocalStorageKey] SmartPerformanceSubscriptionModalStatus',
 	HasSubscribedScanCompleted = '[LocalStorageKey] HasSubscribedScanCompleted',
 	IsPowerPageAvailable = '[LocalStorageKey] isPowerPageAvailable',
 	DashboardWelcomeTexts = '[LocalStorageKey] DashboardWelcomeTexts',
@@ -290,8 +291,11 @@ export enum LocalStorageKey {
 	RatingLastPromptTime = '[LocalStorageKey] RatingLastPromptTime',
 	RatingPromptCount = '[LocalStorageKey] RatingPromptCount',
 
-	//Smart Performance Schedule Scan
+	// Smart Performance Schedule Scan
 	IsSPScheduleScanEnabled = '[LocalStorageKey] IsSPScheduleScanEnabled',
-	IsSmartPerformanceFirstRun = "[LocalStorageKey] IsSmartPerformanceFirstRun",
-	SPScheduleScanFrequency = "[LocalStorageKey] SPScheduleScanFrequency"
+	IsSmartPerformanceFirstRun = '[LocalStorageKey] IsSmartPerformanceFirstRun',
+	SPScheduleScanFrequency = '[LocalStorageKey] SPScheduleScanFrequency',
+
+	// Hide Camera Preview on some models
+	IsCameraPreviewHidden = '[LocalStorageKey] IsCameraPreviewHidden'
 }

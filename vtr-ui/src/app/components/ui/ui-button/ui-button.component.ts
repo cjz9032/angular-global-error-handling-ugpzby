@@ -7,6 +7,7 @@ import { WinRT } from '@lenovo/tan-client-bridge';
 	styleUrls: ['./ui-button.component.scss']
 })
 export class UiButtonComponent implements OnInit, AfterViewInit {
+	@Input() ariaLabel: string = '';
 	@Input() label: string;
 	@Input() isFullWidth: boolean;
 	@Input() isHalfWidth: boolean;

@@ -3,6 +3,14 @@
 @mixin list-items {
 	background-color: $grey_dark;
 	color: $light !important;
+	@media #{$white-on-black} {
+		@include high-contrast-black-border;
+		@include high-contrast-black-text-color;
+	}
+	@media #{$black-on-white} {
+		@include high-contrast-white-border;
+		@include high-contrast-white-text-color;
+	}
 }
 
 .ui-dropdown {
@@ -75,9 +83,21 @@
 			font-size: $fontsize_xs;
 			color: $shade_blue;
 			font-weight: $weight_light;
+			@media #{$white-on-black} {
+				border: 0.1rem solid transparent;
+			}
+			@media #{$black-on-white} {
+				border: 0.1rem solid transparent;
+			}
 
 			&:hover {
 				@include list-items;
+				@media #{$white-on-black} {
+					border: 0.1rem solid transparent;
+				}
+				@media #{$black-on-white} {
+					border: 0.1rem solid transparent;
+				}
 			}
 
 			&:focus {
@@ -109,6 +129,12 @@
 
 .apply-btn-hover {
 	border: 0.1rem solid $grey_dark !important;
+	@media #{$white-on-black} {
+		@include high-contrast-black-border;
+	}
+	@media #{$black-on-white} {
+		@include high-contrast-white-border;
+	}
 }
 
 .apply-btn-focus {
@@ -118,6 +144,12 @@
 
 .apply-btn-list-open {
 	border: 0.1rem solid $menu_hover !important;
+	@media #{$white-on-black} {
+		@include high-contrast-black-border;
+	}
+	@media #{$black-on-white} {
+		@include high-contrast-white-border;
+	}
 }
 
 .apply-chevron-up {

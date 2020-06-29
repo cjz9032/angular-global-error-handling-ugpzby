@@ -31,26 +31,26 @@
 		background:$button_red_start;
 		border-radius: 3rem;
 		color: $light;
-		font-size: $fontsize_xs;
+		font-size: $fontsize_xs2;
 		padding: 0 3rem;
 		font-weight: $weight_bold;
 		text-transform: uppercase;
 		margin: 1.5rem 0;
-		line-height: 5rem;
+		line-height: 5rem;		
 		&:focus {
 			box-shadow: none;
 		}
 
+
 	}
 	.resume-scan {
 		color: $main;
-		font-size: $fontsize_xs;
+		font-size: $fontsize_xs2;
 		padding: 0;
 		font-weight: $weight_bold;
 		border-bottom: 0.1rem solid $main;
 		cursor: pointer;
-		text-transform: uppercase;
-
+		text-transform: uppercase;		
 		&:hover {
 			text-decoration: none;
 		}

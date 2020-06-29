@@ -13,6 +13,8 @@ import { ModalCancelComponent } from '../../../../modal/modal-cancel/modal-cance
 import { ModalScanFailureComponent } from '../../../../modal/modal-scan-failure/modal-scan-failure.component';
 import { ModalScheduleScanCollisionComponent } from '../../../../modal/modal-schedule-scan-collision/modal-schedule-scan-collision.component';
 import { HardwareScanService } from '../../../../../services/hardware-scan/hardware-scan.service';
+import { HardwareScanResultService } from '../../../../../services/hardware-scan/hardware-scan-result.service';
+import { PreviousResultService } from '../../../../../services/hardware-scan/previous-result.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { VantageShellService } from '../../../../../services/vantage-shell/vantage-shell.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
@@ -74,9 +76,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	// "Wrapper" value to be accessed from the HTML
 	public taskTypeEnum = TaskType;
 
-	// This is used to determine the scan overall status when sending metrics information
-	private resultSeverityConversion = {};
-
 	public set modules(value: any) {
 		this.hardwareScanService.setModules(value);
 	}
@@ -93,6 +92,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		public deviceService: DeviceService,
 		private commonService: CommonService,
 		private hardwareScanService: HardwareScanService,
+		private previousResultService: PreviousResultService,
+		private hardwareScanResultService: HardwareScanResultService,
 		private ngZone: NgZone,
 		private modalService: NgbModal,
 		config: NgbModalConfig,
@@ -125,25 +126,12 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		});
 
 		this.initComponent();
-		this.initResultSeverityConversion();
 	}
 
 	ngOnDestroy() {
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
 		}
-	}
-
-	private initResultSeverityConversion() {
-		// the enum HardwareScanTestResult isn't really in the best order to determine the severity of the results
-		// because of that, I'm creating a map with the best order to determine the scan overall status
-		this.resultSeverityConversion[HardwareScanTestResult.NotStarted] = 0;
-		this.resultSeverityConversion[HardwareScanTestResult.InProgress] = 1;
-		this.resultSeverityConversion[HardwareScanTestResult.Na] = 2;
-		this.resultSeverityConversion[HardwareScanTestResult.Pass] = 3;
-		this.resultSeverityConversion[HardwareScanTestResult.Warning] = 4;
-		this.resultSeverityConversion[HardwareScanTestResult.Fail] = 5;
-		this.resultSeverityConversion[HardwareScanTestResult.Cancelled] = 6;
 	}
 
 	public initComponent() {
@@ -439,6 +427,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 				// Defines information about module details
 				this.onViewResults();
+				this.modules.forEach(module => {module.expanded = true;});
 
 				const metricsResult = this.getMetricsTaskResult();
 				this.sendTaskActionMetrics(this.hardwareScanService.getCurrentTaskType(), metricsResult.countSuccesses,
@@ -607,6 +596,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public startScanWaitingModules(taskType: TaskType) {
 		this.startScanClicked = true; // Disable button, preventing multiple clicks by the user
+		this.hardwareScanService.setLastTaskType(taskType);
 
 		if (!this.hardwareScanService.isLoadingDone()) {
 			const modalWait = this.openWaitHardwareComponentsModal();
@@ -631,7 +621,14 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public checkPreScanInfo(taskType: TaskType) {
+	public scanAgain(){
+		this.hardwareScanService.setEnableViewResults(false);
+		this.hardwareScanService.setIsScanDone(false);
+		this.hardwareScanService.setScanExecutionStatus(true);
+		this.checkPreScanInfo(this.hardwareScanService.getLastTaskType(), true);
+	}
+
+	public checkPreScanInfo(taskType: TaskType, scanAgain = false) {
 		this.hardwareScanService.cleanResponses();
 		this.hardwareScanService.setCurrentTaskType(taskType);
 
@@ -641,14 +638,23 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			requests = this.hardwareScanService.getQuickScanRequest();
 
 		} else if (taskType === TaskType.CustomScan) { // custom
-			this.modules = this.hardwareScanService.getFilteredCustomScanResponse();
-			requests = this.hardwareScanService.getFilteredCustomScanRequest();
+			if (scanAgain) {
+				this.modules = this.hardwareScanService.getLastFilteredCustomScanResponse();
+				requests = this.hardwareScanService.getLastFilteredCustomScanRequest();
+			} else {
+				this.modules = this.hardwareScanService.getFilteredCustomScanResponse();
+				requests = this.hardwareScanService.getFilteredCustomScanRequest();
+			}
+			// Saving the selected filter in case the user wants to redo the same scan
+			this.hardwareScanService.setLastFilteredCustomScanResponse(this.modules);
+			this.hardwareScanService.setLastFilteredCustomScanRequest(requests);
 		}
 
-		// Resets the 'collapse' state to the default value (opened)
-		for (const module of this.modules) {
-			module.collapsed = false;
-		}
+		// Resets the 'expanded' state and User visibility to the default value (closed)
+		this.modules.forEach(module => {
+			module.expanded = false;
+			module.expandedStatusChangedByUser = false;
+		});
 
 		// Used for metrics purposes
 		const testMapMetrics = {};
@@ -727,9 +733,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	public onViewResults() {
 		const results = {
 			finalResultCode: this.hardwareScanService.getFinalResultCode(),
-			status: HardwareScanTestResult[HardwareScanTestResult.Pass],
-			statusValue: HardwareScanTestResult.Pass,
-			statusToken: this.statusToken(HardwareScanTestResult.Pass),
 			date: this.hardwareScanService.getFinalResultStartDate(),
 			information: this.hardwareScanService.getFinalResultDescription(),
 			items: []
@@ -749,11 +752,13 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				name: module.name,
 				resultCode: module.resultCode,
 				information: module.description,
-				collapsed: false,
-				detailsCollapsed: true,
+				expanded: false,
+				expandedStatusChangedByUser: false,
+				detailsExpanded: false,
 				icon: module_id,
 				details: [],
-				listTest: []
+				listTest: [],
+				resultModule: HardwareScanTestResult.Pass,
 			};
 
 			for (const metaInfo of module.metaInformation) {
@@ -766,30 +771,17 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				item.listTest.push({
 					id: test.id,
 					name: test.name,
-					status: test.status,
+					statusTest: test.statusTest,
 					information: test.description,
-					statusToken: this.statusToken(test.status)
 				});
-
-				if (test.status === HardwareScanTestResult.Cancelled) {
-					results.status = HardwareScanTestResult[HardwareScanTestResult.Cancelled];
-					results.statusValue = HardwareScanTestResult.Cancelled;
-					results.statusToken = this.statusToken(HardwareScanTestResult.Cancelled);
-				} else if (test.status === HardwareScanTestResult.Fail) {
-					results.status = HardwareScanTestResult[HardwareScanTestResult.Fail];
-					results.statusValue = HardwareScanTestResult.Fail;
-					results.statusToken = this.statusToken(HardwareScanTestResult.Fail);
-				} else if (test.status === HardwareScanTestResult.Warning) {
-					results.status = HardwareScanTestResult[HardwareScanTestResult.Warning];
-					results.statusValue = HardwareScanTestResult.Warning;
-					results.statusToken = this.statusToken(HardwareScanTestResult.Warning);
-				}
 			}
+
+			item.resultModule = this.hardwareScanResultService.consolidateResults(item.listTest.map(item => item.statusTest));
 			results.items.push(item);
 		}
 
 		//Update the ViewResultItem
-		this.hardwareScanService.setViewResultItems(results);
+		this.previousResultService.setViewResultItems(results);
 
 		//If a cancellation was requested, the application will return the HW Scan home page.
 		//So, in this case, the modules list will be updated with the data to be displayed on
@@ -818,12 +810,12 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					module: storageModule.name,
 					icon: storageModule.id,
 					name: device.name,
-					collapsed: false,
-					detailsCollapsed : true,
+					expanded: false,
+					detailsExpanded: false,
 					listTest: [{
 						id: '',
 						name: device.name,
-						status: device.status,
+						statusTest: device.status,
 						percent:device.percent,
 					}],
 				};
@@ -835,7 +827,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	}
 
 	public onViewResultsRecover() {
-
 		const moduleInformation = this.hardwareScanService.getModulesRetrieved();
 		if ( moduleInformation ) {
 			let storageModule = moduleInformation.categoryList.find( category => category.id === 'storage' );
@@ -849,9 +840,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			const dateString = year + '/' + monthString + '/' + day + ' ' + time[0];
 
 			const results = {
-				status: HardwareScanTestResult[HardwareScanTestResult.Pass],
-				statusValue: HardwareScanTestResult.Pass,
-				statusToken: this.statusToken(HardwareScanTestResult.Pass),
+				resultModule: HardwareScanTestResult.Pass,
 				date: dateString,
 				items: []
 			};
@@ -861,8 +850,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					module: storageModule.name,
 					icon: storageModule.id,
 					name: device.name,
-					collapsed: false,
-					detailsCollapsed : true,
+					expanded: false,
+					detailsExpanded: false,
 					details: [
 						{ [this.translate.instant('hardwareScan.recoverBadSectors.numberSectors')]: device.numberOfSectors },
 						{ [this.translate.instant('hardwareScan.recoverBadSectors.numberBadSectors')]: device.numberOfBadSectors },
@@ -873,42 +862,18 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					listTest: [{
 						id: '',
 						name: device.name,
-						status: device.status,
+						statusTest: device.status,
 						percent:device.percent,
 					}],
 				};
 
-				if (device.status === HardwareScanTestResult.Cancelled) {
-					results.status = HardwareScanTestResult[HardwareScanTestResult.Cancelled];
-					results.statusValue = HardwareScanTestResult.Cancelled;
-					results.statusToken = this.statusToken(HardwareScanTestResult.Cancelled);
-				} else if (device.status === HardwareScanTestResult.Fail) {
-					results.status = HardwareScanTestResult[HardwareScanTestResult.Fail];
-					results.statusValue = HardwareScanTestResult.Fail;
-					results.statusToken = this.statusToken(HardwareScanTestResult.Fail);
-				} else if (device.status === HardwareScanTestResult.Warning) {
-					results.status = HardwareScanTestResult[HardwareScanTestResult.Warning];
-					results.statusValue = HardwareScanTestResult.Warning;
-					results.statusToken = this.statusToken(HardwareScanTestResult.Warning);
-				}
 				results.items.push(item);
 			}
 
-			this.hardwareScanService.setViewResultItems(results);
-			this.modules = results.items;
-		}
-	}
+			results.resultModule = this.hardwareScanResultService.consolidateResults(this.devicesRecoverBadSectors.map(item => item.status));
 
-	private statusToken(status) {
-		switch (status) {
-			case HardwareScanTestResult.Cancelled:
-				return this.translate.instant('hardwareScan.cancelled');
-			case HardwareScanTestResult.Fail:
-				return this.translate.instant('hardwareScan.fail');
-			case HardwareScanTestResult.Pass:
-				return this.translate.instant('hardwareScan.pass');
-			case HardwareScanTestResult.Warning:
-				return this.translate.instant('hardwareScan.warning');
+			this.previousResultService.setViewResultItems(results);
+			this.modules = results.items;
 		}
 	}
 
@@ -1030,14 +995,10 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 						countSuccesses = countSuccesses + 1;
 					}
 
-					// Only change result when finds a worse case
-					if (this.resultSeverityConversion[overalTestResult] < this.resultSeverityConversion[test.status]) {
-						overalTestResult = test.status;
-					}
-
 					resultJson.TestsList[testName].push(testObj);
 				}
 			}
+			overalTestResult = this.hardwareScanResultService.consolidateResults(this.modules.listTest.map(test => test.status));
 		}
 
 		resultJson.Result = HardwareScanTestResult[overalTestResult];
@@ -1054,16 +1015,12 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		let result = HardwareScanTestResult.Na;
 
 		for (const device of rbsFinalResponse.devices) {
-			// Only change result when finds a worse case
-			if (this.resultSeverityConversion[result] < this.resultSeverityConversion[device.status]) {
-				result = device.status;
-			}
-
 			// Counting the devices where RBS was successful
 			if (device.status == HardwareScanTestResult.Pass) {
 				numberOfSuccess++;
 			}
 		}
+		result = this.hardwareScanResultService.consolidateResults(rbsFinalResponse.devices.map(item => item.status));
 
 		return {
 			taskCount: numberOfSuccess,
