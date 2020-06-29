@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.27](https://bitbucket.tc.lenovo.com///compare/v1.6.26...v1.6.27) (2020-06-29)
+
+
+### Bug Fixes
+
+* **CHS:** fix CHS display exception ([48a935a](https://bitbucket.tc.lenovo.com///commit/48a935a9a0b3cd69bc5ee9fab2a15388cd1761f1))
+* **CMS article card:** use enter key can't close article modal ([b0c3145](https://bitbucket.tc.lenovo.com///commit/b0c31452326af9eaebadede87b1f821b7d3ec595))
+* **Overall:** history support skiplocationchange and replaceurl ([16b7f3a](https://bitbucket.tc.lenovo.com///commit/16b7f3a630d0c0d47c990cb142f4b66473a734da))
+* **Overall:** sync change ([1db6f74](https://bitbucket.tc.lenovo.com///commit/1db6f7417286244b3757e269fdefe31da78d643c))
+
 ### [1.6.26](https://bitbucket.tc.lenovo.com///compare/v1.6.25...v1.6.26) (2020-06-29)
 
 
