@@ -4,6 +4,12 @@
 	.container-card {
 		box-shadow: $drop_shadow_gaming;
 		background-color: transparent;
+		@media #{$white-on-black} {
+			background-color: $dark;
+		}
+		@media #{$black-on-white} {
+			background-color: $light;
+		}
 		.card-image{
 			background-color: $gaming_lightest;
 		}

@@ -1,6 +1,14 @@
 @import "../../../app.theme";
-.vtr-widget-system-monitor {
+.vtr-widget-auto-close {
 	color: $gaming_lightest;
+	@media #{$white-on-black} {
+		border: 0.1rem solid $light;
+		border-radius: $border_radius;
+	}
+	@media #{$black-on-white} {
+		border: 0.1rem solid $dark;
+		border-radius: $border_radius;
+	}
 	.intro-text {
 		font-size: 1.6rem;
 		padding-top: 2rem;
