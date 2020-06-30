@@ -1,8 +1,7 @@
 <div class="vtr-ui-hardware-list-test">
 	<ul class="list-group modal-scroll">
-		<li class="list-group-item" *ngFor="let item of items; let id = index"
-			[ngClass]="{'isSelected-item' : item.selected || item.indeterminate}">
-			<div class="module">
+		<li class="list-group-item" *ngFor="let item of items; let id = index">
+			<div class="module" [ngClass]="{'isSelected-item' : item.selected || item.indeterminate}">
 				<div class="custom-control">
 					<vtr-ui-checkbox
 						#checkbox
@@ -40,7 +39,8 @@
 			</div>
 			<div id="{{ id }}" class="sub-module" [ngbCollapse]="!item.collapsed" >
 				<ul class="list-group">
-					<li class="list-group-item" *ngFor="let test of item.tests" (change)=onCheckChildren(item)>
+					<li class="list-group-item active" *ngFor="let test of item.tests" (change)=onCheckChildren(item)
+						[ngClass]="{'isSelected-item' : test.selected}">
 						<div class="custom-control custom-checkbox">
 							<vtr-ui-checkbox
 								[id]="test.id + id"

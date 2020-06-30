@@ -1,15 +1,21 @@
 @import "../../../app.theme";
 
+$list-group-item: rgb(245, 247, 248);
+$list-group-item-hover: rgb(236, 240, 241);
+$list-group-item-border: rgb(230, 234, 235);
+$list-group-item-selected: rgba(74, 129, 253, 0.1);
+$list-group-item-selected-hover: rgba(74, 129, 253, 0.15);
+
 .vtr-ui-hardware-list-test {
 	padding-top: 1.5rem;
 
 	.list-group {
 		.list-group-item {
-			border-color: $shade_lightest;
+			border-color: $list-group-item-border !important;
 			border-start-start-radius: 0.5rem 0.5rem 0 0 !important;
 			border-end-end-radius: 0 0 0.5rem 0.5rem !important;
 			padding: 0;
-			background-color: $shade_extralight;
+			background-color: $list-group-item;
 			color: $main_dark;
 
 			.module {
@@ -18,6 +24,10 @@
 				align-items: center;
 				padding: 0 3rem 0 1rem;
 				height: 5.8rem;
+
+				&:hover {
+					background-color: $list-group-item-hover;
+				}
 
 				.rotate {
 					-webkit-transform: rotate(180deg);
@@ -38,6 +48,11 @@
 					border-left: 0 !important;
 					border-right: 0 !important;
 					border-block-end: 0 !important;
+
+					&:hover {
+						background-color: $list-group-item-hover;
+						border: none !important;
+					}
 				}
 			}
 
@@ -62,11 +77,9 @@
 				.custom-control-component ::ng-deep .auto-set-checkbox{
 					margin: 0;
 
-
 					// removing default p margin
 					.custom-control-label {
 						padding-left: 1rem;
-						cursor: pointer;
 
 						.custom-control-label-text {
 							margin-bottom: 0;
@@ -97,7 +110,14 @@
 		}
 
 		.isSelected-item {
-			background-color: $shade_lightest;
+			background: $list-group-item-selected;
+			border: none !important;
+
+			&:hover {
+				background: $list-group-item-selected-hover !important;
+				border: none !important;
+
+			}
 		}
 	}
 
