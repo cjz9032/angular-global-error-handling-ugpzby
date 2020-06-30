@@ -30,7 +30,7 @@ export class MetricService {
 	public readonly isFirstLaunch: boolean;
 	public readonly maxScrollRecorder = {}
 	public pageContainer: ElementRef
-	private pageScollEvent: any = () => {}
+	private pageScollEvent = (htmlElm) => {}
 
 	constructor(
 		private shellService: VantageShellService,
@@ -382,7 +382,7 @@ export class MetricService {
 		this.pageScollEvent = () => {};
 	}
 
-	public notifyPageScollEvent(htmlElm) {
+	public notifyPageScollEvent(htmlElm:any = null) {
 		this.pageScollEvent(htmlElm || this.pageContainer.nativeElement);
 	}
 }

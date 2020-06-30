@@ -83,7 +83,7 @@ export class GuardService extends BasicGuard {
 		const focusDuration = this.focusDurationCounter !== null ? this.focusDurationCounter.getDuration() : 0;
 		const blurDuration = this.blurDurationCounter !== null ? this.blurDurationCounter.getDuration() : 0;
 
-		this.metricsService.notifyPageScollEvent(null); // trigger service to calulate the scroll percentage
+		this.metricsService.notifyPageScollEvent(); // trigger service to calulate the scroll percentage
 		const pageName = this.metricsService.getPageName();
 		const data = {
 			ItemType: 'PageView',
