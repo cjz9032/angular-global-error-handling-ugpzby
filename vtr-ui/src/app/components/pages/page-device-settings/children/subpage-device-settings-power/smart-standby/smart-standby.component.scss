@@ -45,11 +45,25 @@ ul.list-group {
 		&:focus {
 			@include outline-blue;
 		}
+		@media #{$black-on-white} {
+			@include hyperlink-blue-white;
+		}
+
+		@media #{$white-on-black} {
+			@include hyperlink-yellow-black;
+		}
 	}
 	.collapse-header-icon {
 		flex-wrap: nowrap;
 		margin-left: 1rem;
 		cursor: pointer;
+		@media #{$black-on-white} {
+			@include hyperlink-blue-white;
+		}
+
+		@media #{$white-on-black} {
+			@include hyperlink-yellow-black;
+		}
 	}
 
 	.collapse-text {

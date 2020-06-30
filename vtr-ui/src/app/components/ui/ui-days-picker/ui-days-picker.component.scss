@@ -51,20 +51,22 @@
     fa-icon {
       color: #4579f0;
       font-size: 2rem;
-    padding: 0 2.5rem;
+	  padding: 0 2.5rem;
+	  border: 0.1rem solid transparent;
+
 	  &:focus {
-		@include outline-blue;
-    outline-offset: 0;
-  }
+	  	@include outline-blue;
+	  	outline-offset: 0;
+	  }
   &:hover{
-    @media #{$white-on-black} {	
+    @media #{$white-on-black} {
       @include high-contrast-black-border;
       @include high-contrast-black-text-color ;
       }
       @media #{$black-on-white} {
         @include  high-contrast-white-border;
         @include  high-contrast-white-text-color;
-      }	
+      }
     }
   }
     color: #f12e2e;
@@ -216,7 +218,7 @@
       @media #{$white-on-black} {
         @include  high-contrast-black-border;
       }
-         
+
     }
   }
   .toggle-icon {

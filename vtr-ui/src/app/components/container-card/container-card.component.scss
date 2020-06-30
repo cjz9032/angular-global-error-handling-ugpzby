@@ -80,12 +80,10 @@
 					padding: 2rem 2.5rem;
 					height: 100%;
 					@media #{$black-on-white} {
-
 						border-bottom: 1px solid $dark !important;
 						border-radius: 1rem;
 					}
 					@media #{$white-on-black} {
-
 						border-bottom: 1px solid $light !important;
 						border-radius: 1rem;
 					}
@@ -96,6 +94,12 @@
 						cursor: pointer;
 						font-size: $fontsize_xl2;
 						font-weight: $weight_light;
+						@media #{$black-on-white} {
+							@include hyperlink-blue-white;
+						}
+						@media #{$white-on-black} {
+							@include hyperlink-yellow-black;
+						}
 					}
 
 					.description {
@@ -115,6 +119,13 @@
 						font-size: $fontsize_md;
 						font-weight: $weight_light;
 						line-height: 1.4;
+
+						@media #{$black-on-white} {
+							@include hyperlink-blue-white;
+						}
+						@media #{$white-on-black} {
+							@include hyperlink-yellow-black;
+						}
 					}
 
 					.logo {
@@ -251,12 +262,10 @@
 					padding: 2.4rem;
 					height: 100%;
 					@media #{$black-on-white} {
-
 						border-bottom: 1px solid $dark !important;
 						border-radius: 1rem;
 					}
 					@media #{$white-on-black} {
-
 						border-bottom: 1px solid $light !important;
 						border-radius: 1rem;
 					}
@@ -283,6 +292,13 @@
 						cursor: pointer;
 						font-size: $fontsize_xl2;
 						font-weight: $weight_light;
+
+						@media #{$black-on-white} {
+							@include hyperlink-blue-white;
+						}
+						@media #{$white-on-black} {
+							@include hyperlink-yellow-black;
+						}
 					}
 
 					.description {
@@ -301,6 +317,13 @@
 
 						div {
 							cursor: pointer;
+						}
+
+						@media #{$black-on-white} {
+							@include hyperlink-blue-white;
+						}
+						@media #{$white-on-black} {
+							@include hyperlink-yellow-black;
 						}
 					}
 
@@ -365,6 +388,13 @@
 						cursor: pointer;
 						font-size: $fontsize_xl2;
 						// height: calc(#{$fontsize_xl2} * 1.4)
+
+						@media #{$black-on-white} {
+							@include hyperlink-blue-white;
+						}
+						@media #{$white-on-black} {
+							@include hyperlink-yellow-black;
+						}
 					}
 				}
 			}
@@ -445,6 +475,12 @@
 					@media #{$breakpoint_md}{
 						margin-bottom: -1rem;
 					}
+					@media #{$black-on-white} {
+						@include hyperlink-blue-white;
+					}
+					@media #{$white-on-black} {
+						@include hyperlink-yellow-black;
+					}
 				}
 
 				.read-more {
@@ -453,6 +489,28 @@
 					text-transform: uppercase;
 					color: $main;
 					line-height: 2rem !important;
+					// @media #{$mediaquery_xl} {
+					// 	font-size: 1.1rem;
+					// }
+					// @media #{$mediaquery_lg} {
+					// 	font-size: $fontsize_xs2;
+					// }
+					// @media #{$mediaquery_md} {
+					// 	font-size: $fontsize_xs2;
+					// }
+
+					@media #{$black-on-white} {
+						@include hyperlink-blue-white;
+					}
+					@media #{$white-on-black} {
+						@include hyperlink-yellow-black;
+					}
+
+					&:hover {
+						.link-label {
+							border-bottom: none;
+						}
+					}
 
 					.link-label {
 						padding-bottom: 0.2rem;
@@ -517,6 +575,13 @@
 				font-weight: $weight_light;
 				line-height: 1.4;
 				cursor: pointer;
+
+				@media #{$black-on-white} {
+					@include hyperlink-blue-white;
+				}
+				@media #{$white-on-black} {
+					@include hyperlink-yellow-black;
+				}
 			}
 
 			.read-more {
