@@ -1,24 +1,24 @@
 
 <div class="row">
 	<div *ngIf="isRecoverExecuting(); else scanExecuting">
-		<h2 class="col title">
+		<h2 class="col title" aria-live="polite">
 			{{ 'hardwareScan.recoverBadSectors.executingTitle' | translate }}
 		</h2>
 	</div>
 	<ng-template #scanExecuting>
-		<h2 class="col title">
+		<h2 class="col title" aria-live="polite">
 			{{'hardwareScan.executingScanTitle' | translate:{'title': getDeviceTitle()} }}
 		</h2>
 	</ng-template>
 </div>
 <div class="row hwscan-header">
-	<div class="col row1">
+	<div class="col row1" aria-live="polite">
 		<p class="row">{{subTitle}}</p>
 		<p id="warning-message" class="row">{{'hardwareScan.warningMessage' | translate}}</p>
 	</div>
 	<div class="row">
 		<div class="row progress-div">
-			<div class="row progress-percent-text">
+			<div class="row progress-percent-text" aria-live="polite">
 				<p class="progress-value-text">{{percent}}%</p>
 				<p class="progress-complete-text">{{'hardwareScan.complete' | translate}}</p>
 			</div>

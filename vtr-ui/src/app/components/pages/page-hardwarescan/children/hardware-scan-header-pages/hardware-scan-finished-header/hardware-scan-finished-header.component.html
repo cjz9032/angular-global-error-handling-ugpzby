@@ -1,6 +1,6 @@
 <div class="hwscan-header">
 	<div class="row">
-		<div [ngSwitch]="scanHeaderTypeFinished()">
+		<div [ngSwitch]="scanHeaderTypeFinished()" aria-live="polite">
 			<div class="col title" *ngSwitchCase="enumScanHeaderTypeFinished.RecoverBadSectors">
 				{{'hardwareScan.recoverBadSectors.recoverCompleted' | translate }}
 			</div>
