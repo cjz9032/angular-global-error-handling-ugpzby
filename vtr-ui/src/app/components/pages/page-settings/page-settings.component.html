@@ -186,7 +186,10 @@
 												<img src="assets/images/welcome/{{usage.image}}" />
 												<label for="settings-segment-choose-{{usage.id}}"
 													class="centered"
-													aria-hidden="true">
+													aria-hidden="true"
+													[ngbTooltip]="usage.textKey | translate" 
+													tooltipClass="vtr-system-tooltip"
+													container="body">
 													{{ usage.textKey | translate }}
 												</label>
 											</div>

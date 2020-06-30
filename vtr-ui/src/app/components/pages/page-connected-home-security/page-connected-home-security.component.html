@@ -1,6 +1,7 @@
 <vtr-page-layout [title]="'homeSecurity.title' | translate"
 	[textId]="'connected-home-security'"
 	[pageCssClass]="'connected-home-security'"
+	[ngClass]="{'leftPageColumnHeight': account?.state !== 'local'}"
 	[shiftLeftUp]="true"
 	[shiftRightUp]="true"
 	[back]="'common.ui.back' | translate"
@@ -10,7 +11,17 @@
 		<div class="container-fluid">
 			<div class="row"
 				*ngIf="account?.state !== 'local'">
-				<div class="col-12 px-0 pb-20 pt-0">
+				<div class="w-100 location" [hidden]="locationPermission?.isLocationServiceOn">
+					<vtr-widget-location-status linkId="chs-btn-enableLocation"
+						[title]="'security.homeprotection.homesecurity.locationDisabledInfo.title' | translate"
+						(buttonClick)="launchLocationSettings()"
+						[subtitle]="'security.homeprotection.homesecurity.locationDisabledInfo.subtitle' | translate"
+						[buttonText]="'security.homeprotection.homesecurity.locationDisabledInfo.buttonText' | translate"
+						[description]="'security.homeprotection.homesecurity.locationDisabledInfo.howToEnableLocation' | translate"
+						>
+					</vtr-widget-location-status>
+				</div>
+				<div class="col-12 px-0 pb-20 pt-0" [hidden]="!locationPermission?.isLocationServiceOn">
 					<vtr-home-security-after-signup [allDevices]="allDevicesInfo"
 						[account]="account"
 						[common]="common"
@@ -41,8 +52,8 @@
 					</vtr-container-card>
 				</div>
 			</div>
-			<div class="bottom-content" hidden>
-				<div class="d-none d-md-block">
+			<div class="bottom-content w-100 stay-at-botom" [ngClass]="{'stay-at-botom': account?.state !== 'local'}">
+				<div class="d-none d-lg-block">
 					<hr>
 					<vtr-widget-powered-by-info [title]="'homeSecurity.overview.poweredBy'"
 						[detail]="'common.securityAdvisor.privacyPolicyAndTermsOfService'"
@@ -111,7 +122,7 @@
 										<vtr-ui-button [ngClass]="{'disable': locationPermission?.isLoading}"
 											metricsItem="enableLocationSecurityHealth"
 											metricsEvent="featureClick"
-											(onClick)="dialogService?.openCHSPermissionModal(locationPermission)"
+											(onClick)="launchLocationSettings()"
 											[isDisabled]="locationPermission?.isLoading"
 											linkId="chs-btn-enableLocation"
 											[label]="'security.homeprotection.securityhealth.button' | translate">
@@ -157,8 +168,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="bottom-content" hidden>
-			<div class="d-block d-md-none">
+		<div class="bottom-content" >
+			<div class="d-block d-lg-none">
 				<hr>
 				<vtr-widget-powered-by-info [title]="'homeSecurity.overview.poweredBy'"
 					[detail]="'common.securityAdvisor.privacyPolicyAndTermsOfService'"

@@ -193,7 +193,7 @@
                 "savePromptPopup": {
                     "title": "Salvare la modifica?",
                     "description1": "Impostazioni overclock errate possono causare danni HW irreversibili Eseguire una delle seguenti operazioni se si verifica un problema: ",
-                    "description2": "•  Tenere premuto il pulsante di alim. 8 sec per riavviare il PC e ripristinare i parametri predefiniti.",
+                    "description2": "•  Tenere premuto il pulsante di alim. 8-15 sec per riavviare il PC e ripristinare i parametri predefiniti.",
                     "description3": "•  Per ripristinare overclock predefinito, passare a impostazioni BIOS.",
                     "save": "SALVA",
                     "notSave": "NON SALVARE"
@@ -959,7 +959,8 @@
         "systemUpdate": {
             "subtitle": "Aggiornare driver, BIOS e altri software.",
             "checkForSystemUpdates": "Controllare gli aggiornamenti di sistema"
-        }
+        },
+        "heroBanner": "Banner hero"
     },
     "device": {
         "myDevice": {
@@ -2595,7 +2596,13 @@
                 "subtitleDescribe": "Protezione abitazione connessa ti invierà un avviso se rileva una vulnerabilità del dispositivo o della rete domestica in uso o se sei collegato a una rete potenzialmente dannosa. Ulteriori informazioni su Protezione abitazione connessa sono disponibili <tag>qui</tag>.",
                 "tryNow": "Provalo ora",
                 "visit": "Visit",
-                "goToChs": "go to connected home security"
+                "goToChs": "go to connected home security",
+                "locationDisabledInfo": {
+					"title": "Location disabled",
+					"subtitle": "Allow Vantage to access your location to use Connected Home Security",
+					"buttonText": "Go To Location Settings",
+					"howToEnableLocation": "1. Go to <b>Setting</b> > <b>Privacy</b> > <b>Location</b>. </br> 2. Under <b>Choose which apps can access your precise location</b>, find <b>Lenovo Vantage</b>. </br> 3. Turn the Location switch to <b>On</b>."
+				}
             },
             "invitationcode": {
                 "button": "Immettere il codice invito",

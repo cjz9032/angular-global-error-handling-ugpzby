@@ -169,7 +169,7 @@
                 "savePromptPopup": {
                     "title": "儲存變更？",
                     "description1": "超頻的設定不正確可能會導致無法還原的硬體損壞。如果遇到任何問題，請執行下列其中一個動作：",
-                    "description2": "•  按住電源按鈕 8 秒鐘，即可重新啟動電腦並還原預設參數。",
+                    "description2": "•  按住電源按鈕 8-15 秒鐘，即可重新啟動電腦並還原預設參數。",
                     "description3": "•  使用 BIOS 設定中的「還原為預設超頻」開關以還原預設參數。",
                     "save": "儲存",
                     "notSave": "不儲存"
@@ -959,7 +959,8 @@
         "systemUpdate": {
             "subtitle": "更新您的驅動程式、BIOS 及其他軟體。",
             "checkForSystemUpdates": "檢查系統更新"
-        }
+        },
+        "heroBanner": "首頁橫幅"
     },
     "device": {
         "myDevice": {
@@ -2595,7 +2596,13 @@
                 "subtitleDescribe": "如果連線家庭安全性偵測到裝置或家庭網路有漏洞，或是如果您連線至潛在的惡意網路，將會向您傳送警示。<tag>這裡</tag>還可進一步瞭解連線家庭安全性。",
                 "tryNow": "立即試用",
                 "visit": "Visit",
-                "goToChs": "go to connected home security"
+                "goToChs": "go to connected home security",
+                "locationDisabledInfo": {
+					"title": "Location disabled",
+					"subtitle": "Allow Vantage to access your location to use Connected Home Security",
+					"buttonText": "Go To Location Settings",
+					"howToEnableLocation": "1. Go to <b>Setting</b> > <b>Privacy</b> > <b>Location</b>. </br> 2. Under <b>Choose which apps can access your precise location</b>, find <b>Lenovo Vantage</b>. </br> 3. Turn the Location switch to <b>On</b>."
+				}
             },
             "invitationcode": {
                 "button": "輸入邀請代碼",

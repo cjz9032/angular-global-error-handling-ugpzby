@@ -400,7 +400,11 @@
 		a,
 		.offline-a {
 			&:hover {
-				text-decoration: none;
+				.content {
+					.title {
+						text-decoration: underline;
+					}
+				}
 			}
 
 			.image-container {
@@ -437,38 +441,18 @@
 					text-decoration: none;
 					cursor: pointer;
 					height: 4.5rem !important;
-					&:hover {
-						text-decoration: underline;
-					}
+
 					@media #{$breakpoint_md}{
 						margin-bottom: -1rem;
 					}
 				}
 
 				.read-more {
-					// position: absolute;
-					// margin-top: 2rem;
-					// left: 4rem;
 					font-size: $fontsize_xs;
 					cursor: pointer;
 					text-transform: uppercase;
 					color: $main;
 					line-height: 2rem !important;
-					// @media #{$mediaquery_xl} {
-					// 	font-size: 1.1rem;
-					// }
-					// @media #{$mediaquery_lg} {
-					// 	font-size: $fontsize_xs2;
-					// }
-					// @media #{$mediaquery_md} {
-					// 	font-size: $fontsize_xs2;
-					// }
-
-					&:hover {
-						.link-label {
-							border-bottom: none;
-						}
-					}
 
 					.link-label {
 						padding-bottom: 0.2rem;

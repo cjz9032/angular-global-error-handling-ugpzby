@@ -193,7 +193,7 @@
                 "savePromptPopup": {
                     "title": "변경 내용을 저장할까요?",
                     "description1": "오버클럭을 제대로 설정하지 않으면 하드웨어가 영구적으로 손상될 수 있습니다. 문제가 발생하는 경우 다음 중 하나를 수행하십시오. ",
-                    "description2": "•  전원 버튼을 8초 동안 눌러 컴퓨터를 다시 시작하고 기본 매개 변수를 복원하십시오.",
+                    "description2": "•  전원 버튼을 8-15초 동안 눌러 컴퓨터를 다시 시작하고 기본 매개 변수를 복원하십시오.",
                     "description3": "•  \"기본 오버클럭 복원\"을 사용하여 기본 매개 변수를 복원하려면 BIOS 설정에서 전환하십시오.",
                     "save": "저장",
                     "notSave": "저장하지 않음"
@@ -959,7 +959,8 @@
         "systemUpdate": {
             "subtitle": "드라이버, BIOS 및 기타 소프트웨어를 업데이트하십시오.",
             "checkForSystemUpdates": "시스템 업데이트 확인"
-        }
+        },
+        "heroBanner": "히어로 배너"
     },
     "device": {
         "myDevice": {
@@ -2595,7 +2596,13 @@
                 "subtitleDescribe": "장치 또는 홈 네트워크에서 취약한 점이 감지되거나 악성일 가능성이 있는 네트워크에 연결되어 있는 경우, 연결된 홈 보안 장치에서 경고를 보냅니다. 연결된 홈 보안에 대해 자세히 알아보십시오 <tag>여기</tag>.",
                 "tryNow": "지금 사용해 보기",
                 "visit": "Visit",
-                "goToChs": "go to connected home security"
+                "goToChs": "go to connected home security",
+                "locationDisabledInfo": {
+					"title": "Location disabled",
+					"subtitle": "Allow Vantage to access your location to use Connected Home Security",
+					"buttonText": "Go To Location Settings",
+					"howToEnableLocation": "1. Go to <b>Setting</b> > <b>Privacy</b> > <b>Location</b>. </br> 2. Under <b>Choose which apps can access your precise location</b>, find <b>Lenovo Vantage</b>. </br> 3. Turn the Location switch to <b>On</b>."
+				}
             },
             "invitationcode": {
                 "button": "초대 코드 입력",

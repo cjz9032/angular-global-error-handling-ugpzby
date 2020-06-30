@@ -2,6 +2,36 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.28](https://bitbucket.tc.lenovo.com///compare/v1.6.27...v1.6.28) (2020-06-30)
+
+### [1.6.27](https://bitbucket.tc.lenovo.com///compare/v1.6.26...v1.6.27) (2020-06-29)
+
+
+### Bug Fixes
+
+* **CHS:** fix CHS display exception ([48a935a](https://bitbucket.tc.lenovo.com///commit/48a935a9a0b3cd69bc5ee9fab2a15388cd1761f1))
+* **CMS article card:** use enter key can't close article modal ([b0c3145](https://bitbucket.tc.lenovo.com///commit/b0c31452326af9eaebadede87b1f821b7d3ec595))
+* **Overall:** history support skiplocationchange and replaceurl ([16b7f3a](https://bitbucket.tc.lenovo.com///commit/16b7f3a630d0c0d47c990cb142f4b66473a734da))
+* **Overall:** sync change ([1db6f74](https://bitbucket.tc.lenovo.com///commit/1db6f7417286244b3757e269fdefe31da78d643c))
+
+### [1.6.26](https://bitbucket.tc.lenovo.com///compare/v1.6.25...v1.6.26) (2020-06-29)
+
+
+### Features
+
+* **CHS:** add location disabled banner ([eab859d](https://bitbucket.tc.lenovo.com///commit/eab859d43931a624c4aec8bae4f50e5425fc37ce))
+* **CHS:** enable location button to open windows settings ([850fcf8](https://bitbucket.tc.lenovo.com///commit/850fcf844eb90d4093ea96ed4388cb63373cc7af))
+* **CHS:** fix some style issue and add nls for new strings ([8283f3c](https://bitbucket.tc.lenovo.com///commit/8283f3ca7d72a950883377f0bb31924d4f4f249f))
+
+
+### Bug Fixes
+
+* **CHS:** add systemlocation condition before cick enable ([0d1b037](https://bitbucket.tc.lenovo.com///commit/0d1b0370c966a1a1e4728dda3f63548d7d5b0edc))
+* **CHS:** change nls key words for location status banner ([96b7138](https://bitbucket.tc.lenovo.com///commit/96b71381252c7e2f6eb240f355310b4d726d9bde))
+* **CHS:** remove useless input for location status widget ([c55bc45](https://bitbucket.tc.lenovo.com///commit/c55bc4535ae3202e61f1ab945c8f0e88ed56643f))
+
+### [1.6.25](https://bitbucket.tc.lenovo.com///compare/v1.6.24...v1.6.25) (2020-06-26)
+
 ### [1.6.24](https://bitbucket.tc.lenovo.com///compare/v1.6.23...v1.6.24) (2020-06-25)
 
 ### [1.6.23](https://bitbucket.tc.lenovo.com///compare/v1.6.22...v1.6.23) (2020-06-25)

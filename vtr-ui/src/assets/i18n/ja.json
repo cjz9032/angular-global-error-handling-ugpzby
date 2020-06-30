@@ -193,7 +193,7 @@
                 "savePromptPopup": {
                     "title": "変更を保存しますか?",
                     "description1": "この設定が不適切な場合、不可逆的に損傷する可能性があります。問題が発生した場合は、次のいずれかのことを実行してください。",
-                    "description2": "•  電源ボタンを8秒間押して再起動し、パラメーターを復元します。",
+                    "description2": "•  電源ボタンを8-15秒間押して再起動し、パラメーターを復元します。",
                     "description3": "•  BIOS Restore Default Overclockを使用",
                     "save": "保存",
                     "notSave": "保存しない"
@@ -959,7 +959,8 @@
         "systemUpdate": {
             "subtitle": "ドライバー、BIOS、およびソフトウェアのを更新します。",
             "checkForSystemUpdates": "システム更新を確認"
-        }
+        },
+        "heroBanner": "ヒーローバナー"
     },
     "device": {
         "myDevice": {
@@ -2595,7 +2596,13 @@
                 "subtitleDescribe": "接続ホーム・セキュリティーは、デバイスまたはホーム・ネットワークで脆弱性が検出された場合、または悪意がある可能性のネットワークに接続している場合に警告を送信します。接続ホーム・セキュリティーについての詳細は、<tag>ここで</tag>ご確認ください。",
                 "tryNow": "今すぐ試してみる",
                 "visit": "Visit",
-                "goToChs": "go to connected home security"
+                "goToChs": "go to connected home security",
+                "locationDisabledInfo": {
+					"title": "Location disabled",
+					"subtitle": "Allow Vantage to access your location to use Connected Home Security",
+					"buttonText": "Go To Location Settings",
+					"howToEnableLocation": "1. Go to <b>Setting</b> > <b>Privacy</b> > <b>Location</b>. </br> 2. Under <b>Choose which apps can access your precise location</b>, find <b>Lenovo Vantage</b>. </br> 3. Turn the Location switch to <b>On</b>."
+				}
             },
             "invitationcode": {
                 "button": "招待コードの入力",

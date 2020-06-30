@@ -12,8 +12,7 @@ import { HardwareScanFinishedHeaderType } from 'src/app/enums/hardware-scan-fini
 })
 export class HardwareScanFinishedHeaderComponent implements OnInit {
 
-	// Inputs
-	@Input() supportUrl: string;
+	supportUrl: string;
 
 	// Metrics
 	@Input() itemParentCancel: string;
@@ -25,7 +24,7 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 	//Wrapper
 	public enumScanHeaderTypeFinished = HardwareScanFinishedHeaderType;
 	public numberTestsFailed: number;
-	public dateDescription: string;
+	public lastScanResultCompletionInfo: any;
 
 	constructor(private hardwareScanService: HardwareScanService,
 				private previousResultService: PreviousResultService,
@@ -33,15 +32,15 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 				private lenovoSupportService: LenovoSupportService) { }
 
 	ngOnInit() {
+		this.lastScanResultCompletionInfo = this.previousResultService.getLastPreviousResultCompletionInfo();
 		this.configureSupportUrl();
 		this.setupFailedTests();
-		this.dateDescription = this.previousResultService.getLastPreviousResultDate();
 	}
 
 	private async configureSupportUrl() {
-		await this.lenovoSupportService.getPremierUrl()
+		await this.lenovoSupportService.getETicketUrl(this.lastScanResultCompletionInfo.date)
 			.then((response) => {
-					this.supportUrl = response;
+				this.supportUrl = response;
 			});
 	}
 

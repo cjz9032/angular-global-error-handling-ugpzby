@@ -193,7 +193,7 @@
                 "savePromptPopup": {
                     "title": "Änderungen speich.?",
                     "description1": "Falsche Übertaktungseinstellungen führen zu irreparablen Hardwareschäden. Führen Sie bei einem Fehler einen der folgenden Schritte aus: ",
-                    "description2": "•  Halten Sie für einen Neustart und Wiederherstellen der Std.parameter die Einschalttaste 8 Sek. lang gedrückt.",
+                    "description2": "•  Halten Sie für einen Neustart und Wiederherstellen der Std.parameter die Einschalttaste 8-15 Sek. lang gedrückt.",
                     "description3": "•  Stellen Sie die Std.parameter mit \"Standard-Übertaktung wiederherstellen\" in den BIOS-Einstellungen wieder her.",
                     "save": "SPEICHERN",
                     "notSave": "ABBRECHEN"
@@ -959,7 +959,8 @@
         "systemUpdate": {
             "subtitle": "Aktualisieren Sie Ihre Treiber, das BIOS und weitere Software.",
             "checkForSystemUpdates": "Nach Systemaktualisierungen suchen"
-        }
+        },
+        "heroBanner": "Hero-Banner"
     },
     "device": {
         "myDevice": {
@@ -2595,7 +2596,13 @@
                 "subtitleDescribe": "Die Funktion \"Sicherheit für das verbundene Zuhause\" sendet Ihnen eine Warnung, wenn sie eine angreifbare Stelle in Ihrem Gerät oder privaten Netzwerk erkennt oder wenn Sie sich mit einem potenziell zerstörerischen Netzwerk verbinden. Erfahren Sie <tag>hier</tag> noch mehr über Connected Home Security.",
                 "tryNow": "Jetzt testen",
                 "visit": "Visit",
-                "goToChs": "go to connected home security"
+                "goToChs": "go to connected home security",
+                "locationDisabledInfo": {
+					"title": "Location disabled",
+					"subtitle": "Allow Vantage to access your location to use Connected Home Security",
+					"buttonText": "Go To Location Settings",
+					"howToEnableLocation": "1. Go to <b>Setting</b> > <b>Privacy</b> > <b>Location</b>. </br> 2. Under <b>Choose which apps can access your precise location</b>, find <b>Lenovo Vantage</b>. </br> 3. Turn the Location switch to <b>On</b>."
+				}
             },
             "invitationcode": {
                 "button": "Einladungscode eingeben",

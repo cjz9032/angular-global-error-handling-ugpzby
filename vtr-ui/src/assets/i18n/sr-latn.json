@@ -193,7 +193,7 @@
                 "savePromptPopup": {
                     "title": "Sačuvati promenu?",
                     "description1": "Nepravilne postavke Overkloka mogu dovesti do nepovratnog oštećenja hardvera. Postupite na neki od sledećih načina ako naiđete na neki problem: ",
-                    "description2": "•  Pritisnite i držite dugme za napajanje 8 sekundi da biste ponovo pokrenuli računar i vratili podrazumevane parametre.",
+                    "description2": "•  Pritisnite i držite dugme za napajanje 8-15 sekundi da biste ponovo pokrenuli računar i vratili podrazumevane parametre.",
                     "description3": "•  Za vraćanje podrazumevanih parametara koristite funkciju „Restore Default Overclocking“ u postavkama BIOS-a.",
                     "save": "SAČUVAJ",
                     "notSave": "NE ČUVAJ"
@@ -959,7 +959,8 @@
         "systemUpdate": {
             "subtitle": "Ažurirajte upravljačke programe, BIOS i drugi softver.",
             "checkForSystemUpdates": "Proveri da li postoje sistemske ispravke"
-        }
+        },
+        "heroBanner": "Baner heroja"
     },
     "device": {
         "myDevice": {
@@ -2137,7 +2138,7 @@
                 "desc1": "Kada omogućite ovu funkciju, uređaj će početi da emituje zvučne signale kada je ekran zaključan, a detektuju se pokreti, posebno na javnom mestu.",
                 "desc2": "Prijavite se na Windows i alarm će se automatski isključiti. Da biste koristili ovu funkciju, omogućite je ponovo.",
                 "note": {
-                    "descriptionTitle": "Pažnja",
+                    "descriptionTitle": "Pažnja:",
                     "description": "Važeće opcije za prijavljivanje, kao što su lozinka ili PIN kôd, potrebne su prilikom prijavljivanja na Windows. U suprotnom, funkciju Pametno upozorenje o pokretu može greškom da onemogući neki neovlašćeni korisnik koji pristupa vašem računaru."
                 },
                 "alarm": {
@@ -2595,7 +2596,13 @@
                 "subtitleDescribe": "Povezana kućna bezbednost će vam poslati obaveštenje ako otkrije ranjivost u uređaju ili kućnoj mreži ili ako ste povezani sa potencijalno zlonamernom mrežom. Saznajte još više o povezanoj kućnoj bezbednosti <tag>ovde</tag>.",
                 "tryNow": "Isprobajte odmah",
                 "visit": "Visit",
-                "goToChs": "go to connected home security"
+                "goToChs": "go to connected home security",
+                "locationDisabledInfo": {
+					"title": "Location disabled",
+					"subtitle": "Allow Vantage to access your location to use Connected Home Security",
+					"buttonText": "Go To Location Settings",
+					"howToEnableLocation": "1. Go to <b>Setting</b> > <b>Privacy</b> > <b>Location</b>. </br> 2. Under <b>Choose which apps can access your precise location</b>, find <b>Lenovo Vantage</b>. </br> 3. Turn the Location switch to <b>On</b>."
+				}
             },
             "invitationcode": {
                 "button": "Unesite kôd poziva",

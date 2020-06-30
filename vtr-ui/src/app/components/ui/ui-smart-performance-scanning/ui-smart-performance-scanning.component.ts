@@ -62,6 +62,7 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 	public timer: any;
 	@Input() scheduleScanData: any = {};
 	@Input() isScheduleScan: any = false;
+	isLoading: boolean;
 	constructor(
 		private modalService: NgbModal,
 		public shellServices: VantageShellService,
@@ -73,6 +74,8 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 
 	ngOnInit() {
 		this.percent=0;
+		this.isLoading = true;
+
 		this.spCategoryenum = SPCategory;
 		this.spSubCategoryenum = SPSubCategory;
 		this.activegroup = this.spCategoryenum.TUNEUPPERFORMANCE;
@@ -108,6 +111,9 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 		}, 10000);
 	}
 	updateScanResponse(response) {
+		if(this.scanData.percentage){
+			this.isLoading = false;
+		}
 		this.responseData = response;
 		this.scanData = response.payload;
 		this.percent = this.scanData.percentage;

@@ -228,10 +228,9 @@ vtr-ui-smart-performance-scan-summary {
 					font-size: $fontsize_md;
 					font-weight: $weight_bold;
 					margin-bottom: 0;
-					word-break: break-all;
 					overflow: hidden;
 					text-overflow: ellipsis;
-					height:6rem;
+					height:6.5rem;
 					@media #{$breakpoint_xl}{
 						font-size: $fontsize_sm;
 						height:6rem;

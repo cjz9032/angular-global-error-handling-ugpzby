@@ -12,6 +12,13 @@
 		background-position: center;
 	}
 
+	@mixin indeterminate-icon($icon-color: $menu_hover) {
+		background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='3' height='3' viewBox='0 0 4 4'><path stroke='" + $icon-color +"' d='M0 2h4'/%3e%3c/svg>");
+		background-size: 60%;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
 	margin-top: 2rem;
 	position: relative;
 
@@ -223,15 +230,18 @@
 
 		/* end of disabled state */
 
-		// .custom-control-input:indeterminate ~ .custom-control-label {
-		// 	&::before {
-		// 		border-color: $custom-checkbox-indicator-indeterminate-border-color;
-		// 		@include gradient-bg($custom-checkbox-indicator-indeterminate-bg);
-		// 		@include box-shadow($custom-checkbox-indicator-indeterminate-box-shadow);
-		// 	}
-		// 	&::after {
-		// 		background-image: escape-svg($custom-checkbox-indicator-icon-indeterminate);
-		// 	}
-		// }
+		/* indeterminate state */
+
+		.custom-control-input:indeterminate ~ .custom-control-label {
+			&::before {
+				background-color: $light;
+			}
+			&::after {
+				@include indeterminate-icon()
+			}
+		}
+
+		/* end of indeterminate state */
+
 	}
 }

@@ -32,11 +32,18 @@
 													<div class="col col-6 progress-title pb-4" id="su-cheking-updates-title"
 														aria-label="su-cheking-updates-title">{{'smartPerformance.scanningPage.scanningSystem' |translate }} <span *ngIf="isAutoScanRunning" class="progress-sub-title">({{'smartPerformance.auto' |translate }})</span></div>
 													<div class="col col-6 progress-percent-text">
-														<div class="row d-flex justify-content-end">
+														<div class="row d-flex justify-content-end" *ngIf="!isLoading">
 															<span class="progress-value-text pb-4">{{percent}}</span>
 															<span
 																class="progress-complete-text" id="su-progress-complete-text"
 																aria-label="su-progress-complete-text">% {{'smartPerformance.scanningPage.complete' |translate }}</span>
+														</div>
+														<div class="row d-flex justify-content-end progress-spinner w-100 text-right" *ngIf="isLoading">
+															<div class="container" [style.height.px]="30">
+																<div class="loader center-block">
+																	<div class="spinner-border text-secondary progress-spinner" role="status"></div>
+																</div>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -65,7 +72,6 @@
 													</div>
 												</div>
 											</div>
-
 									</div>
 								</div>
 

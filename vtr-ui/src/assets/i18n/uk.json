@@ -193,7 +193,7 @@
                 "savePromptPopup": {
                     "title": "Зберегти зміни?",
                     "description1": "Неправильні настройки розгону можуть остаточно пошкодити обладнання. У разі будь-яких проблем виконайте будь-що з наведеного нижче: ",
-                    "description2": "•  Натисніть і тримайте кнопку живлення 8 с, щоб перезапустити ПК і відновити стандартні параметри.",
+                    "description2": "•  Натисніть і тримайте кнопку живлення 8-15 с, щоб перезапустити ПК і відновити стандартні параметри.",
                     "description3": "•  Перемикач \"Restore Default Overclocking\" у налаштуваннях BIOS відновлює стандартні параметри.",
                     "save": "ЗБЕРЕГТИ",
                     "notSave": "НЕ ЗБЕРІГАТИ"
@@ -959,7 +959,8 @@
         "systemUpdate": {
             "subtitle": "Оновити драйвери, BIOS та інше програмне забезпечення.",
             "checkForSystemUpdates": "Перевірити наявність оновлень системи"
-        }
+        },
+        "heroBanner": "Головний банер"
     },
     "device": {
         "myDevice": {
@@ -2595,7 +2596,13 @@
                 "subtitleDescribe": "Функція \"Безпека підключеного дому\" надішле вам сповіщення, якщо буде виявлено вразливість пристрою або домашньої мережі, або якщо пристрій буде підключено до потенційно шкідливої мережі. Дізнайтеся більше про Безпеку підключеного дому <tag>тут</tag>.",
                 "tryNow": "Спробувати зараз",
                 "visit": "Visit",
-                "goToChs": "go to connected home security"
+                "goToChs": "go to connected home security",
+                "locationDisabledInfo": {
+					"title": "Location disabled",
+					"subtitle": "Allow Vantage to access your location to use Connected Home Security",
+					"buttonText": "Go To Location Settings",
+					"howToEnableLocation": "1. Go to <b>Setting</b> > <b>Privacy</b> > <b>Location</b>. </br> 2. Under <b>Choose which apps can access your precise location</b>, find <b>Lenovo Vantage</b>. </br> 3. Turn the Location switch to <b>On</b>."
+				}
             },
             "invitationcode": {
                 "button": "Введіть код запрошення",

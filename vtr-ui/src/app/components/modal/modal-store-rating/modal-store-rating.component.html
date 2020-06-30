@@ -4,7 +4,7 @@
         <div class="hint-image-border" id="store-rating-background-img">
             <img class="bg-curve" src="assets/images/store-rating/curved_bg.png">
             <div class="bg-chatbox">
-                <img [@scaleTo1]="feedbackIconVisible||likeIconVisible?'origin':'normal'"
+                <img class='img-chatbox' [@scaleTo1]="feedbackIconVisible||likeIconVisible?'origin':'normal'"
                     src="assets/images/store-rating/chat_stroke.png">
                 <fa-icon class="hint-icon" *ngIf="normalIconVisible" [icon]="['fal','ellipsis-h']"></fa-icon>
                 <fa-icon [@hideToShow]="feedbackIconVisible?'show':'hidden'" class="hint-icon hint-icon-close"

@@ -846,7 +846,7 @@
 				border: none;
 				.text-dark {
 					color: $white100 !important;
-				}
+				}				
 			}
 			&.subpage-device-settings-power {
 				.auto-set-checkbox.custom-checkbox-gaming {
@@ -999,10 +999,15 @@
 									color: $gaming_grey_lightest;
 								}
 								.permission-note {
-									background: $gaming-Darkslate-blue;
+									border-radius: $border_radius;
+									background: $gaming_bg!important;
 									border: none;
 									.note-icon {
 										color: $gaming_grey_lightest;
+									}
+									p{
+										color:#fff!important;
+										font-size:$fontsize_xs!important;
 									}
 									#camera-privacy-mode-note,
 									#device-settings-camera-privacy-note {
@@ -1715,8 +1720,8 @@
 	.permission-note {
 		border-radius: $border_radius;
 		p {
-			font-size: 1.5rem;
-			color: $stop !important;
+			font-size: $fontsize_xs;			
+			color: $white100;
 		}
 	}
 	.progress-value-text {

@@ -1,9 +1,9 @@
-<div class="modal-body">
-		<div class="error">{{error}}</div>
+<div class="modal-body" aria-labelledby="title" aria-describedby="description">
+		<div id="title" class="error">{{error}}</div>
 
 		<br />
 
-		<div class="description" [innerHtml]="description"></div>
+		<div id="description" class="description" [innerHtml]="description"></div>
 
 		<!-- <br />
 		<div class="description question">{{question}}</div> -->
