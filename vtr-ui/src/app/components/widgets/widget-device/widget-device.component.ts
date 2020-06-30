@@ -39,8 +39,10 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		this.setDefaultInfo();
-		this.getDeviceInfo();
+		this.deviceService.getMachineInfo().then((machineInfo) => {
+			this.setDefaultInfo();
+			this.getDeviceInfo(machineInfo);
+		});
 	}
 
 	ngOnDestroy() {
@@ -115,15 +117,13 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		systemStatus[index] = warranty;
 	}
 
-	private getDeviceInfo() {
+	private getDeviceInfo(machineInfo) {
 		// machineinfo
-		this.deviceService.getMachineInfo().then((data) => {
-			this.myDevice.family = data.family;
-			this.myDevice.sn = data.serialnumber;
-			this.myDevice.bios = data.biosVersion;
-			this.myDevice.subBrand = data.subBrand;
-			this.myDevice.productNo = data.mtm;
-		});
+		this.myDevice.family = machineInfo.family;
+		this.myDevice.sn = machineInfo.serialnumber;
+		this.myDevice.bios = machineInfo.biosVersion;
+		this.myDevice.subBrand = machineInfo.subBrand;
+		this.myDevice.productNo = machineInfo.mtm;
 
 		// processor memory disk
 		this.deviceService.getHardwareInfo().then(data => {
