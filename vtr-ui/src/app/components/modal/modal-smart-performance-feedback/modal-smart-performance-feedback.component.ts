@@ -127,26 +127,26 @@ export class ModalSmartPerformanceFeedbackComponent implements OnInit {
 		});	
 	}
 
-	setSubmitButtonActive() {
-		let formData = this.feedbackForm.value;
-		if (
-			(isNull(formData.fbQ1) || isUndefined(formData.fbQ1))
-			&& (isNull(formData.fbQ2) || isUndefined(formData.fbQ2))
-			&& (isNull(formData.fbQ3) || isUndefined(formData.fbQ3))
-			&& (isNull(formData.fbQ4) || isUndefined(formData.fbQ4))
-			&& (isNull(formData.fbQ5) || isUndefined(formData.fbQ5))
-			&& (isNull(formData.fbQ6) || isUndefined(formData.fbQ6))
-			&& (isNull(formData.fbQ7) || isUndefined(formData.fbQ7))
-			&& (isNull(formData.fbQ8) || isUndefined(formData.fbQ8))
-			// && (isNull(formData.fbComment) || isUndefined(formData.fbComment) || formData.fbComment=='')
-		) {
-			this.isSubmitButtonActive = false;
-			return false;
-		} 
+	// setSubmitButtonActive() {
+	// 	let formData = this.feedbackForm.value;
+	// 	if (
+	// 		(isNull(formData.fbQ1) || isUndefined(formData.fbQ1))
+	// 		&& (isNull(formData.fbQ2) || isUndefined(formData.fbQ2))
+	// 		&& (isNull(formData.fbQ3) || isUndefined(formData.fbQ3))
+	// 		&& (isNull(formData.fbQ4) || isUndefined(formData.fbQ4))
+	// 		&& (isNull(formData.fbQ5) || isUndefined(formData.fbQ5))
+	// 		&& (isNull(formData.fbQ6) || isUndefined(formData.fbQ6))
+	// 		&& (isNull(formData.fbQ7) || isUndefined(formData.fbQ7))
+	// 		&& (isNull(formData.fbQ8) || isUndefined(formData.fbQ8))
+	// 		// && (isNull(formData.fbComment) || isUndefined(formData.fbComment) || formData.fbComment=='')
+	// 	) {
+	// 		this.isSubmitButtonActive = false;
+	// 		return false;
+	// 	} 
 
-		this.isSubmitButtonActive = true;
-		return true;
-	}
+	// 	this.isSubmitButtonActive = true;
+	// 	return true;
+	// }
 
 	onFeedBackSubmit() {
 		const formData = this.feedbackForm.value;
