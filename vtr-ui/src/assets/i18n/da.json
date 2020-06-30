@@ -2139,7 +2139,7 @@
                 "desc2": "Hvis du logger på Windows, bliver alarmen automatisk slået fra. Du skal aktivere den igen for at bruge denne funktion.",
                 "note": {
                     "descriptionTitle": "Vigtigt:",
-                    "description": "Der kræves gyldige indstillinger for logon, f. eks. en adgangskode eller en PIN-kode, når du logger på Windows. Ellers kan funktionen Smart bevægelsesalarm blive deaktiveret ved en fejl af en ikke-godkendt bruger, der får adgang til din computer."
+                    "description": "Der kræves gyldige indstillinger for logon, f. eks. en adgangskode eller en PIN-kode, når du logger på Windows. Ellers kan funktionen Smart bevægelsesalarm blive deaktiveret ved en fejl af en ikkegodkendt bruger, der får adgang til din computer."
                 },
                 "alarm": {
                     "title": " ALARMEN SKAL VARE I",
