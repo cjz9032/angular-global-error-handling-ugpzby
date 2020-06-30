@@ -8,6 +8,8 @@ import { MetricHelper } from './metrics.helper';
 import { CommonService } from '../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { ActivatedRoute } from '@angular/router';
+import { SelfSelectService } from '../self-select/self-select.service';
+import { environment } from '../../../environments/environment';
 
 declare var Windows;
 
@@ -30,9 +32,10 @@ export class MetricService {
 	constructor(
 		private shellService: VantageShellService,
 		private timerService: DurationCounterService,
-		hypothesisService: HypothesisService,
+		private hypothesisService: HypothesisService,
 		private commonService: CommonService,
-		private activeRouter: ActivatedRoute
+		private activeRouter: ActivatedRoute,
+		private selfSelectService: SelfSelectService
 	) {
 		this.metricsClient = this.shellService.getMetrics();
 		this.isFirstLaunch = !this.commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
@@ -41,7 +44,7 @@ export class MetricService {
 		}
 
 		if (this.metricsClient) {
-			MetricHelper.initializeMetricClient(this.metricsClient, shellService, commonService, hypothesisService);
+			this.initializeMetricClient();
 
 			document.addEventListener('vantageSessionLose', () => {
 				this.onLoseSession();
@@ -59,6 +62,54 @@ export class MetricService {
 				}
 			});
 		}
+	}
+
+	// move the function from metrics.helper.ts to here
+	public initializeMetricClient() {
+		const jsBridgeVesion = this.shellService.getVersion() || '';
+		const shellVersion = this.shellService.getShellVersion();
+		const webUIVersion = environment.appVersion;
+
+		this.metricsClient.init({
+			appVersion: `Web:${webUIVersion};Bridge:${jsBridgeVesion};Shell:${shellVersion}`,
+			appId: MetricHelper.getAppId('dß'),
+			appName: 'vantage3',
+			channel: '',
+			ludpUrl: 'https://chifsr.lenovomm.com/PCJson'
+		});
+
+		this.metricsClient.sendAsyncOrignally = this.metricsClient.sendAsync;
+		this.metricsClient.sendAsync = async (data) => {
+			const win: any = window;
+
+			try {
+				// automatically fill the OnlineStatus for page view event
+				if (!data.OnlineStatus) {
+					data.OnlineStatus = this.commonService.isOnline ? 1 : 0;
+				}
+
+				const isBeta = this.commonService.getLocalStorageValue(LocalStorageKey.BetaTag, false);
+				if (isBeta) {
+					data.IsBetaUser = true;
+				}
+
+				if (win.VantageStub && win.VantageStub.toastMsgName) {
+					data.LaunchByToast = win.VantageStub.toastMsgName;
+				}
+
+				data.Segment = await this.selfSelectService.getSegment();
+				data.ItemType = MetricHelper.normalizeEventName(data.ItemType);
+
+				MetricHelper.setupMetricDbg(this.hypothesisService, this.metricsClient, data);
+
+				return await this.metricsClient.sendAsyncOrignally(data);
+			} catch (ex) {
+				return Promise.resolve({
+					status: 0,
+					desc: 'ok'
+				});
+			}
+		};
 	}
 
 	private onLoseSession() {

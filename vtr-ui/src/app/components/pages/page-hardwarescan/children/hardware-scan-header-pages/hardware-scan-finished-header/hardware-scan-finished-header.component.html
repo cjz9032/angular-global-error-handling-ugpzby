@@ -92,7 +92,7 @@
 			<div *ngSwitchCase="enumScanHeaderTypeFinished.ViewResults">
 
 				<!-- Defines a title -->
-				<div class="col title"  [ngSwitch]="numberTestsFailed"> 
+				<div class="col title"  [ngSwitch]="numberTestsFailed">
 					<h2 *ngSwitchCase="0">
 						{{'hardwareScan.scanFinishedHeader.titleSuccess' | translate }}
 					</h2>
@@ -108,7 +108,11 @@
 				</div>
 
 				<!-- Show the date and result about the last scan -->
-				<p class="result-date-description">{{dateDescription}}</p>
+				<p class="result-date-description">
+					{{ 'hardwareScan.lastScanOn' | translate }} {{ lastScanResultCompletionInfo.date | formatLocaleDateTime }}
+					- {{ 'hardwareScan.result' | translate }}:
+					{{ (lastScanResultCompletionInfo.isCompleted ? 'hardwareScan.complete' : 'hardwareScan.incomplete') | translate }}
+				</p>
 
 				<!-- Show the result code -->
 				<div class="row final-result-code">

@@ -23,7 +23,7 @@
 						attr.aria-label="{{ item.Title | htmlText }}. {{ item.Description | htmlText }}"
 						role="link"
 						tabindex="0"
-						(keyup.enter)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
+						(keydown.enter)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 						(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 						vtrMetrics
 						id="{{containerCardId+'_doc_link'}}"
@@ -90,7 +90,7 @@
 						<a role="link"
 							tabindex="0"
 							attr.aria-label="{{ item.Title | htmlText }}. {{ item.Description | htmlText }}"
-							(keyup.enter)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
+							(keydown.enter)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 							(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 							vtrMetrics
 							id="{{containerCardId+'_link'}}"
@@ -167,7 +167,7 @@
 					<a [attr.tabindex]="deviceService.isGaming ? -1 : 0"
 						role="link"
 						attr.aria-label="{{ item.Title | htmlText }}"
-						(keyup.enter)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
+						(keydown.enter)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 						(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 						metricsItemCategory="highlight"
 						vtrMetrics
@@ -212,7 +212,7 @@
 				attr.aria-label="{{ item.Title | htmlText }}"
 				role="link"
 				tabindex="0"
-				(keyup.enter)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
+				(keydown.enter)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 				(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 				metricsItemCategory="article"
 				vtrMetrics
@@ -278,7 +278,7 @@
 				attr.aria-label="{{ item.Title | htmlText }}"
 				role="link"
 				[tabindex]="isOnline ? 0 : -1"
-				(keyup.enter)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
+				(keydown.enter)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 				(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 				metricsItemCategory="article"
 				vtrMetrics
@@ -346,7 +346,7 @@
 				<div class="col col-12 content">
 					<a [tabindex]="isOnline ? 0 : -1"
 						role="link"
-						(keyup.enter)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
+						(keydown.enter)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 						(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 						target="_blank"
 						rel="noopener"
@@ -409,7 +409,7 @@
 			<div class="row">
 				<a [tabindex]="isOnline ? 0 : -1"
 					role="link"
-					(keyup.enter)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
+					(keydown.enter)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 					(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 					class="col col-12 image"
 					attr.aria-label="{{ item.Title | htmlText }}"

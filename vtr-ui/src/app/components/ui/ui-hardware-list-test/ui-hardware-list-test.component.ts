@@ -20,42 +20,47 @@ export class UiHardwareListTestComponent implements OnInit {
 	}
 
 	public onSelectAll() {
-		this.items.map(item => {
+		this.items.forEach(item => {
 			item.selected = true;
 			item.indeterminate = false;
-			item.tests.map(test => test.selected = true);
+			item.tests.forEach(test => test.selected = true);
 		});
 		this.selectAny.emit();
 	}
 
 	public onDeselectAll() {
-		this.items.map(item => {
+		this.items.forEach(item => {
 			item.selected = false;
 			item.indeterminate = false;
-			item.tests.map(test => test.selected = false);
+			item.tests.forEach(test => test.selected = false);
 		});
 	}
 
-	public onSelectAllChildren(itemId: any) {
-		const isSelected = this.items.find(item => item.id === itemId).selected;
-		this.items.find(item => item.id === itemId).tests.map(test => test.selected = isSelected);
-		this.items.find(item => item.id === itemId).indeterminate = false;
+	public onDeviceSelectionClicked(item, isChecked) {
+
+		// Toggle the item state base on the user click event
+		item.tests.forEach(test => test.selected = isChecked);
+		item.indeterminate = false;
+		item.selected = isChecked;
+
 		this.selectAny.emit();
 	}
 
-	public onCheckChildren(itemId: any) {
-		const children = this.items.find(item => item.id === itemId).tests.length;
-		const childrenSelected = this.items.find(item => item.id === itemId).tests.filter(test => test.selected).length;
+	public onCheckChildren(item) {
 
-		if (childrenSelected === 0) {
-			this.items.find(item => item.id === itemId).selected = false;
-			this.items.find(item => item.id === itemId).indeterminate = false;
-		} else if (children > childrenSelected) {
-			this.items.find(item => item.id === itemId).selected = false;
-			this.items.find(item => item.id === itemId).indeterminate = true;
+		// Change the item state based on the quantity of selected tests
+		const numberOfTests = item.tests.length;
+		const numberOfSelectedTests = item.tests.filter(test => test.selected).length;
+
+		if (numberOfSelectedTests === 0) {
+			item.selected = false;
+			item.indeterminate = false;
+		} else if (numberOfTests > numberOfSelectedTests) {
+			item.selected = false;
+			item.indeterminate = true;
 		} else {
-			this.items.find(item => item.id === itemId).selected = true;
-			this.items.find(item => item.id === itemId).indeterminate = false;
+			item.selected = true;
+			item.indeterminate = false;
 		}
 
 		this.selectAny.emit();

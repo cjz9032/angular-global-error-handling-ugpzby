@@ -43,6 +43,7 @@ xdescribe('DisplayColorTempComponent', () => {
 	it('should call onDisplayColorTemperatureChanged', () => {
 		fixture = TestBed.createComponent(DisplayColorTempComponent);
 		component = fixture.debugElement.componentInstance;
+		component.displayColorTempSettings = { ...displayColorTempSettings };
 		const event = 20;
 		const spy = spyOn(component.displayColorTempChange, 'emit');
 		component.onDisplayColorTemperatureChanged(event);

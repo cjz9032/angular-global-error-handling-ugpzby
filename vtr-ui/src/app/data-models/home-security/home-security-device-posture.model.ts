@@ -22,7 +22,7 @@ export class HomeSecurityDevicePosture {
 		devicePosture?: DevicePosture,
 		cacheDevicePosture?: HomeSecurityDevicePosture,
 		public translate?: TranslateService) {
-		if (devicePosture && devicePosture.value.length > 0) {
+		if (devicePosture && Array.isArray(devicePosture.value) && devicePosture.value.length > 0) {
 			if (cacheDevicePosture) {
 				this.createHomeDevicePosture(devicePosture.value, cacheDevicePosture);
 			} else {
