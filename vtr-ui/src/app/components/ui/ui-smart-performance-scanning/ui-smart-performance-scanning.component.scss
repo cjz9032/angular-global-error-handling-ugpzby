@@ -446,35 +446,31 @@
 			max-width: 8.1rem;
 			line-height: 1.2rem;
 			margin-top: 0.4rem;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
 			@media #{$breakpoint_xl}{
 				font-size: 1rem;
 				line-height: 1.2rem;
 				margin-bottom: 0;
 				margin-top: 0;
-				white-space: nowrap;
-				max-width: 5.5rem;
-				overflow: hidden;
-				text-overflow: ellipsis;
+				max-width: 5.5rem;				
 			}
 			@media #{$breakpoint_md}{
 				font-size: 1rem;
 				line-height: 1.2rem;
 				margin-bottom: 0;
 				margin-top: 0;
-				white-space: nowrap;
 				max-width: 5.5rem;
-				overflow: hidden;
-				text-overflow: ellipsis;
 			}
 			@media #{$breakpoint_sm}{
 				font-size: 1rem;
 				line-height: 1.2rem;
 				margin-bottom: 0;
 				margin-top: 0;
-				white-space: nowrap;
 				max-width: 5.5rem;
-				overflow: hidden;
-				text-overflow: ellipsis;
+				overflow: hidden;				
+				font-weight:$weight_light;
 			}
         }
 	}

@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, OnInit, HostListener, OnDestroy, Inject, AfterViewInit } from '@angular/core';
+import { Component, OnInit, HostListener, OnDestroy, Inject, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { DisplayService } from './services/display/display.service';
 import { NgbModal, NgbModalRef, NgbTooltipConfig } from '@ng-bootstrap/ng-bootstrap';
@@ -56,6 +56,10 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	private shellVersion;
 	private newTutorialVersion = '3.1.2';
 	public notificationType = NotificationType.Banner;
+
+	@ViewChild('pageContainer', { static: true }) pageContainer: ElementRef;
+
+
 
 	constructor(
 		private displayService: DisplayService,
@@ -545,6 +549,11 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	}
 
 	ngAfterViewInit() {
+		this.metricService.pageContainer = this.pageContainer
 		this.metricService.onAppInitDone();
+	}
+
+	onPageScroll($event) {
+		this.metricService.notifyPageScollEvent($event.target);
 	}
 }

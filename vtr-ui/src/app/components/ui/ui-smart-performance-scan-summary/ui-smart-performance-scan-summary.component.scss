@@ -981,6 +981,8 @@ vtr-ui-smart-performance-scan-summary {
 					text-align: center;
 					position: relative;
 					font-weight: $weight_bold;
+					word-break: keep-all;
+					word-wrap: break-word;
 					@media #{$breakpoint_sm}{
 						font-size: 1rem;
 						width: calc(60.5% - 2rem);
