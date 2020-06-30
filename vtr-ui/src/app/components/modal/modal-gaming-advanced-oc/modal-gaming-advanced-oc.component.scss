@@ -23,7 +23,7 @@
             background: $background;
             padding: 2rem;
             @media #{$high-contrast} {
-                border: 1px solid $highContrastGray;
+                border: 1px solid windowText;
             }
             h3 {
                 height: 2.4rem;

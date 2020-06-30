@@ -19,9 +19,6 @@
 			}
 			&.ng5-slider-selection {
 				background: $gaming_lighting_gradient;
-				@media #{$high-contrast} {
-                    background: buttonFace;
-                }
 			}
 
 			&.ng5-slider-pointer {
@@ -33,11 +30,19 @@
 				width: 3.2rem;
 				top: -1.3rem;
 				border-radius: 50%;
-				@media #{$high-contrast} {
-                    background-color: buttonFace;
-                }
 				&::after {
 					background: none;
+				}
+			}
+			@media #{$high-contrast} {
+				&.ng5-slider-bar{
+					background-color: windowText;
+				}
+				&.ng5-slider-selection{
+					background: highlight;
+				}
+				&.ng5-slider-pointer{
+					background-color: highlight;
 				}
 			}
 		}
@@ -48,9 +53,6 @@
 	&.ng5-slider-span {
 		&.ng5-slider-bar {
 			width: 99% !important;
-			@media #{$high-contrast} {
-				border: 1px solid windowText;
-			}
 		}
 	}
 	body.focus-enable{

@@ -7,7 +7,7 @@
     border-radius: .6rem;
     color: $blue-dark;
     @media #{$high-contrast} {
-        border: 1px solid $highContrastGray;
+        border: 1px solid windowText;
     }
     .modal-header {
         display: block;

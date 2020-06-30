@@ -187,8 +187,7 @@
 		transition: all 0.2s ease;
 		position: relative;
 		@media #{$high-contrast} {
-			// background-color: buttonFace;
-			border: 2px solid buttonFace;
+			border: 1px solid windowText;
 		}
 		&:hover {
 			background-color: $blueHover;
@@ -211,10 +210,6 @@
 		margin-top: -8px;
 		transition: all 0.2s ease;
 		position: relative;
-		// @media #{$high-contrast} {
-		// 	color: highlightText;
-		// 	border-bottom: 2px solid highlightText;
-		// }
 		&:hover {
 		  color: $blueHover;
 		  border-bottom: 2px solid $blueHover;
@@ -2295,7 +2290,7 @@ button {
 		.gaming-modal-fun {
 			border-radius: .6rem;
 			@media #{$high-contrast} {
-					border: 1px solid $highContrastGray;
+				border: 1px solid windowText;
 			}
 			.modal-loading {
 				font-size: 10rem;
@@ -2347,6 +2342,9 @@ button {
 						}
 						&:active {
 							transform: scale(0.96);
+						}
+						@media #{$high-contrast} {
+							opacity: 1;
 						}
 					}
 				}
