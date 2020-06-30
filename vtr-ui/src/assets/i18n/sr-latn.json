@@ -2138,7 +2138,7 @@
                 "desc1": "Kada omogućite ovu funkciju, uređaj će početi da emituje zvučne signale kada je ekran zaključan, a detektuju se pokreti, posebno na javnom mestu.",
                 "desc2": "Prijavite se na Windows i alarm će se automatski isključiti. Da biste koristili ovu funkciju, omogućite je ponovo.",
                 "note": {
-                    "descriptionTitle": "Pažnja",
+                    "descriptionTitle": "Pažnja:",
                     "description": "Važeće opcije za prijavljivanje, kao što su lozinka ili PIN kôd, potrebne su prilikom prijavljivanja na Windows. U suprotnom, funkciju Pametno upozorenje o pokretu može greškom da onemogući neki neovlašćeni korisnik koji pristupa vašem računaru."
                 },
                 "alarm": {
