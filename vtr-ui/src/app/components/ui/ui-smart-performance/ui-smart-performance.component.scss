@@ -371,6 +371,7 @@
 					.icon-box {
 						width: 20%;
 						position: relative;
+						padding:0rem 0.25rem 1rem;
 						@media #{$breakpoint_sm}{
 							width: auto;
 							min-width: 7rem;
@@ -423,7 +424,8 @@
 							margin-top: 0.6rem;
 							color: #272A3B;	
 							overflow: hidden;
-							text-overflow: ellipsis;						
+							text-overflow: ellipsis;
+							white-space:nowrap;						
 							@media #{$breakpoint_xl} {
 								font-size: 1rem;
 								padding: 0.2rem;
