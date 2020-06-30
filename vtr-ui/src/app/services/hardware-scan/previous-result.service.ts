@@ -25,27 +25,16 @@ export class PreviousResultService {
 	constructor(shellService: VantageShellService,
 				private translate: TranslateService,
 				private commonService: CommonService,
-				private hardwareScanResultService: HardwareScanResultService) { 
-		this.hardwareScanBridge = shellService.getHardwareScan();	
+				private hardwareScanResultService: HardwareScanResultService) {
+		this.hardwareScanBridge = shellService.getHardwareScan();
 	}
 
-	public getLastPreviousResultDate() {
+	public getLastPreviousResultCompletionInfo() {
 		const item: any = this.getPreviousResultsWidget();
-
-		if (this.hasPreviousResults()) {
-			const lastScan = this.translate.instant('hardwareScan.lastScanOn') + ' ' + item.date;
-
-			let result;
-			const existsNotPass = item.modules.filter(i => i.resultModule !== HardwareScanTestResult.Pass);
-
-			if (existsNotPass && existsNotPass.length === 0) {
-				result = ' - ' + this.translate.instant('hardwareScan.result') + ': ' + this.translate.instant('hardwareScan.complete');
-			} else {
-				result = ' - ' + this.translate.instant('hardwareScan.result') + ': ' + this.translate.instant('hardwareScan.incomplete');
-			}
-
-			return lastScan + result;
-		}
+		return {
+			date: item.date,
+			isCompleted: item.modules.every(i => i.resultModule == HardwareScanTestResult.Pass)
+		};
 	}
 
 	private buildPreviousResultsWidget(previousResults: any) {
@@ -72,8 +61,7 @@ export class PreviousResultService {
 			previousResults.finalResultCode = response.scanSummary.finalResultCode;
 			previousResults.resultTestsTitle = HardwareScanTestResult.Pass;
 
-			const date = response.scanSummary.ScanDate.toString().replace(/-/g, '/').split('T');
-			previousResults.date = date[0] + ' ' + date[1].slice(0, 8);
+			previousResults.date = new Date(response.scanSummary.ScanDate);
 
 			previousResults.information = response.scanSummary.finalResultCodeDescription;
 			previousResults.items = [];
