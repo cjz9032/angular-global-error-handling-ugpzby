@@ -567,14 +567,14 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 				.then((response) => {
 					this.logger.debug('getCameraDetails.then', response);
 					this.dataSource = response;
-					this.cameraFeatureAccess.showAutoExposureSlider = false;
-					if (this.dataSource.exposure.autoValue === true && !this.shouldCameraSectionDisabled) {
+					// this.cameraFeatureAccess.showAutoExposureSlider = false;
+					if (this.dataSource.exposure && this.dataSource.exposure.autoValue === true && !this.shouldCameraSectionDisabled) {
 						this.cameraFeatureAccess.exposureAutoValue = true;
 
 					} else {
 						this.cameraFeatureAccess.exposureAutoValue = false;
 					}
-					if (this.dataSource.exposure.supported === true && this.dataSource.exposure.autoValue === false) {
+					if (this.dataSource.exposure && this.dataSource.exposure.supported === true && this.dataSource.exposure.autoValue === false) {
 						this.cameraFeatureAccess.showAutoExposureSlider = true;
 					}
 					// if (this.dataSource.permission) {
@@ -1015,13 +1015,16 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 				.then((featureStatus: FeatureStatus) => {
 					this.logger.debug('cameraPrivacyModeStatus.then', featureStatus);
 					this.cameraPrivacyModeStatus = { ...this.cameraPrivacyModeStatus, ...featureStatus };
-					this.cameraAccessTemp = this.cameraPrivacyModeStatus.permission;
 					this.cameraPrivacyModeStatus.isLoading = false;
 					this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraPrivacyModeStatus);
 					if (!this.cameraPrivacyModeStatus.permission) {
 						this.cameraControl.cleanupCameraAsync('desktopAppAccess');
 					}
 					this.cameraChangeFollowAccess(this.cameraPrivacyModeStatus.permission);
+					if (this.cameraAccessTemp === false && this.cameraPrivacyModeStatus.permission === true) {
+						this.cameraControl.initializeCameraAsync('desktopAppAccess');
+					}
+					this.cameraAccessTemp = this.cameraPrivacyModeStatus.permission;
 				})
 				.catch(error => {
 					this.cameraPrivacyModeStatus.isLoading = false;
