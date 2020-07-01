@@ -97,6 +97,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	selectedTodate: any;
 	displayFromDate: any;
 	displayToDate: any;
+	oldDisplayFromDate: any;
+	oldDisplayToDate: any;
 	customDate: any;
 	@Output() backToScan = new EventEmitter();
 	@Output() backToNonSubscriber = new EventEmitter();
@@ -357,6 +359,12 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 
 	openDropDown() {
 		this.isDropDownOpen = !this.isDropDownOpen;
+		if(!this.isDropDownOpen) {
+			if(this.oldDisplayFromDate && this.oldDisplayToDate) {
+				this.displayFromDate = this.oldDisplayFromDate;
+				this.displayToDate = this.oldDisplayToDate;
+			}
+		}
 	}
 
 	selectFromDate() {
@@ -411,6 +419,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	}
 
 	ResetCustomDateScanSummary() {
+		this.oldDisplayFromDate = this.displayFromDate;
+	    this.oldDisplayToDate = this.displayToDate;
 		this.displayFromDate = null;
 		this.displayToDate = null;
 		this.selectedfromDate = this.minDate;
