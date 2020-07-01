@@ -164,6 +164,12 @@ button:focus{
 							cursor: pointer;
 							font-size: 1.4rem;
 							line-height: 2rem;
+							color: $white100;
+						}
+						&::ng-deep .oc-advance-button {
+							cursor: pointer;
+							font-size: 1.4rem;
+							line-height: 1.6rem;
 							font-weight: bold;
 							color: $blueFill;
 							border-bottom: .2rem solid $blueFill;
@@ -180,7 +186,7 @@ button:focus{
 						&::ng-deep .oc-driver-link {
 							cursor: pointer;
 							font-size: 1.4rem;
-							line-height: 2rem;
+							line-height: 1.6rem;
 							font-weight: bold;
 							color: $blueFill;
 							border-bottom: .2rem solid $blueFill;
