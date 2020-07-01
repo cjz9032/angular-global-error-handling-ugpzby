@@ -424,8 +424,7 @@
 							margin-top: 0.6rem;
 							color: #272A3B;	
 							overflow: hidden;
-							text-overflow: ellipsis;
-							white-space:nowrap;						
+							text-overflow: ellipsis;					
 							@media #{$breakpoint_xl} {
 								font-size: 1rem;
 								padding: 0.2rem;
