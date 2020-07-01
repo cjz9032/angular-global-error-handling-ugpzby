@@ -16,7 +16,7 @@ const displayColorTempSettings: EyeCareMode = {
 	status: true
 };
 
-xdescribe('DisplayColorTempComponent', () => {
+fdescribe('DisplayColorTempComponent', () => {
 	let component: DisplayColorTempComponent;
 	let fixture: ComponentFixture<DisplayColorTempComponent>;
 	let logger: LoggerService;
