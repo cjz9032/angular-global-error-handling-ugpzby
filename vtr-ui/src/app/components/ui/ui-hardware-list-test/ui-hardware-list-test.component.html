@@ -39,7 +39,7 @@
 			</div>
 			<div id="{{ id }}" class="sub-module" [ngbCollapse]="!item.collapsed" >
 				<ul class="list-group">
-					<li class="list-group-item active" *ngFor="let test of item.tests" (change)=onCheckChildren(item)
+					<li class="list-group-item" *ngFor="let test of item.tests" (change)=onCheckChildren(item)
 						[ngClass]="{'isSelected-item' : test.selected}">
 						<div class="custom-control custom-checkbox">
 							<vtr-ui-checkbox
