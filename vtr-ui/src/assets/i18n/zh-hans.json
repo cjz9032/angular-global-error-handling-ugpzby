@@ -3296,7 +3296,7 @@
                 "tab3Description": "按照最佳实践而构建，杜绝恐吓性软件"
             }
         },
-        "startScan": "<b>准备号开始扫描了吗？</b>让我们来诊断计算机中的性能和安全问题。",
+        "startScan": "<b>准备好开始扫描了吗？</b>让我们来诊断计算机中的性能和安全问题。",
         "subscriptionDetails": {
             "title": "订阅详情",
             "description": "您已订阅 Lenovo Smart Performance 服务。在此期间，可充分使用所有功能保护您的电脑并使其顺利运行。",

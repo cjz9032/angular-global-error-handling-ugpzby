@@ -1,7 +1,6 @@
 <vtr-page-layout [title]="'homeSecurity.title' | translate"
 	[textId]="'connected-home-security'"
 	[pageCssClass]="'connected-home-security'"
-	[ngClass]="{'leftPageColumnHeight': account?.state !== 'local'}"
 	[shiftLeftUp]="true"
 	[shiftRightUp]="true"
 	[back]="'common.ui.back' | translate"
@@ -52,7 +51,7 @@
 					</vtr-container-card>
 				</div>
 			</div>
-			<div class="bottom-content w-100 stay-at-botom" [ngClass]="{'stay-at-botom': account?.state !== 'local'}">
+			<div class="bottom-content w-100 stay-at-botom" hidden [ngClass]="{'stay-at-botom': account?.state !== 'local'}">
 				<div class="d-none d-lg-block">
 					<hr>
 					<vtr-widget-powered-by-info [title]="'homeSecurity.overview.poweredBy'"
@@ -168,7 +167,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="bottom-content" >
+		<div class="bottom-content" hidden>
 			<div class="d-block d-lg-none">
 				<hr>
 				<vtr-widget-powered-by-info [title]="'homeSecurity.overview.poweredBy'"
