@@ -33,15 +33,13 @@
 				}
 				&:focus {
 					@include outline-blue;
-				}	
+				}
 				&:hover {
-					@media #{$white-on-black} {	
-						@include high-contrast-black-border;
-						@include high-contrast-black-text-color ;
+						@media #{$white-on-black} {
+							@include high-contrast-black-text-color;
 						}
 						@media #{$black-on-white} {
-							@include  high-contrast-white-border;
-							@include high-contrast-white-text-color ;
+							@include high-contrast-white-text-color;
 						}
 			}
 		}
@@ -67,7 +65,7 @@
 			}
 			.highlight {
 				color: $shade_blue;
-				@media #{$white-on-black} {	
+				@media #{$white-on-black} {
 					@include high-contrast-black-text-color ;
 					}
 					@media #{$black-on-white} {
@@ -93,7 +91,7 @@
 				@include outline-border-blue;
 			}
 			&:hover {
-				@media #{$white-on-black} {	
+				@media #{$white-on-black} {
 					@include high-contrast-black-border;
 					@include high-contrast-black-text-color ;
 					}
@@ -168,7 +166,7 @@
 		}
 
 		&:hover {
-				@media #{$white-on-black} {	
+				@media #{$white-on-black} {
 					@include high-contrast-black-border;
 					}
 					@media #{$black-on-white} {
@@ -209,14 +207,14 @@
 
 	.dropcheck:checked + .dropbtn {
 		background-color: transparent;
-		@media #{$white-on-black} {	
+		@media #{$white-on-black} {
 			@include high-contrast-black-border;
 			@include high-contrast-black-text-color ;
 			}
 			@media #{$black-on-white} {
 				@include  high-contrast-white-border;
 				@include  high-contrast-white-text-color;
-			}	
+			}
 	}
 
 	.time-headings {
@@ -256,7 +254,7 @@
 	.disabled {
 		opacity: 0.5;
 		pointer-events: none;
-		@media #{$white-on-black} {	
+		@media #{$white-on-black} {
 			@include high-contrast-black-disabled-border;
 			}
 			@media #{$black-on-white} {

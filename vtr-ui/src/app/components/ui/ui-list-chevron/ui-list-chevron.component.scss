@@ -220,12 +220,6 @@
 						font-weight: $weight_light;
 						cursor: pointer;
 					}
-					@media #{$black-on-white} {
-						color: $dark;
-					}
-					@media #{$white-on-black} {
-						color: $light;
-					}
 				}
 
 				.detail {
@@ -312,20 +306,6 @@
 				cursor: pointer;
 				&.blue-arrow {
 					color: $main;
-					@media #{$black-on-white} {
-						color: $dark;
-					}
-					@media #{$white-on-black} {
-						color: $light;
-					}
-				}
-				.ng-fa-icon {
-					@media #{$black-on-white} {
-						color: $dark;
-					}
-					@media #{$white-on-black} {
-						color: $light;
-					}
 				}
 			}
 
