@@ -532,9 +532,6 @@
 						padding:0rem 1rem;					
 					}
 				}
-				:after{
-					content:'...';
-				}
 				.description {
 					max-width: 40rem;
 					@media #{$breakpoint_sm} {
