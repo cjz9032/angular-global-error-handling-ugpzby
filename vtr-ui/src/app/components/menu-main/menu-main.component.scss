@@ -371,6 +371,14 @@
 										@include high-contrast-black-text-color;
 									}
 								}
+								&:focus {
+									@media #{$black-on-white} {
+										@include high-contrast-white-text-color;
+									}
+									@media #{$white-on-black} {
+										@include high-contrast-black-text-color;
+									}
+								}
 							}
 
 							&.link-active {
@@ -458,7 +466,7 @@
 								}
 							}
 
-							&:hover::after, &:hover::before, &.active::after, &.active::before {
+							&:hover::after, &:hover::before, &.active::after, &.active::before, &:focus::after, &:focus::before {
 								@media #{$black-on-white} {
 									@include high-contrast-white-background;
 								}
