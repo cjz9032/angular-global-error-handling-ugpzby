@@ -122,14 +122,6 @@
 		margin-bottom: 2rem;
 	}
 
-	@media #{$mediaquery_X44} {
-		.leftPageColumnHeight {
-			.vtr-page-left-column {
-				height: calc(100vh) !important;
-			}
-		}
-	}
-
 	@media #{$mediaquery_lg} {
 		.location {
 			margin-bottom: 3rem;
