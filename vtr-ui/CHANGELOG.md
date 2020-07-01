@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.30](https://bitbucket.tc.lenovo.com///compare/v1.6.29...v1.6.30) (2020-07-01)
+
+
+### Bug Fixes
+
+* **CHS:** hide powered by info in chs page ([1de0800](https://bitbucket.tc.lenovo.com///commit/1de0800ace99929d1b47243eb12f3cd661ce6b02))
+
 ### [1.6.29](https://bitbucket.tc.lenovo.com///compare/v1.6.28...v1.6.29) (2020-06-30)
 
 ### [1.6.28](https://bitbucket.tc.lenovo.com///compare/v1.6.27...v1.6.28) (2020-06-30)
