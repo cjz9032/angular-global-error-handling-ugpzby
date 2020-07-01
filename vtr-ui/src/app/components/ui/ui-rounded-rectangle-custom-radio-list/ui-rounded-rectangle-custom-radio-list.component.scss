@@ -66,6 +66,8 @@
 	$radio-unselected-box-shadow: 0 0 0 0.1rem $grey_light;
 	$radio-selected-box-shadow: 0 0 0 0.2rem $grey_dark;
 	$radio-focus-box-shadow: 0 0 0 0.2rem $grey_dark, 0 0 0 0.4rem $light, 0 0 0 0.5rem $menu_hover;
+	$high-contrast-black-box-shadow: 0 0 0 0.2rem $dark, 0 0 0 0.4rem $dark, 0 0 0 0.5rem $high-contrast-black-cyan;
+	$high-contrast-white-box-shadow: 0 0 0 0.2rem $light, 0 0 0 0.4rem $light, 0 0 0 0.5rem $high-contrast-white-dark-magenta;
 
 	// margin: $radio-gutter;
 
@@ -189,6 +191,12 @@
 			box-shadow: $radio-selected-box-shadow;
 			&.focus:not(:active) {
 				box-shadow: $radio-focus-box-shadow !important;
+				@media #{$white-on-black} {
+					box-shadow: $high-contrast-black-box-shadow;
+				}
+				@media #{$black-on-white} {
+					box-shadow: $high-contrast-white-box-shadow;
+				}
 			}
 
 			&:active {
