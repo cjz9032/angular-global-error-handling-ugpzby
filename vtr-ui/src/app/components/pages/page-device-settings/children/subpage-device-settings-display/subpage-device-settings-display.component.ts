@@ -200,6 +200,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 	// hide camera preview on devices which has
 	// BIOS versions/ID starts with below number
 	private biosVersions = ['05WT', '04WT'];
+	private receivedBiosVersion = false;
 	public isCameraPreviewHidden = true;
 
 	constructor(
@@ -228,6 +229,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 	}
 
 	ngOnInit() {
+		this.receivedBiosVersion = false;
 		this.logger.debug('subpage-device-setting-display onInit');
 		this.hideCameraPreviewByBiosId();
 		this.commonService.checkPowerPageFlagAndHide();
@@ -433,6 +435,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 				// for yoga book need to check first 4 character
 				const biosVersion = res.biosVersion.substr(0, 4);
 				this.isCameraPreviewHidden = this.biosVersions.includes(biosVersion.toUpperCase());
+				this.receivedBiosVersion = true;
 				if (!this.isCameraPreviewHidden) {
 					this.initCameraMonitor();
 				}
@@ -1015,6 +1018,10 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 				.then((featureStatus: FeatureStatus) => {
 					this.logger.debug('cameraPrivacyModeStatus.then', featureStatus);
 					this.cameraPrivacyModeStatus = { ...this.cameraPrivacyModeStatus, ...featureStatus };
+					if (this.receivedBiosVersion && this.isCameraPreviewHidden && !this.cameraPrivacyModeStatus.available) {
+						this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'camera');
+						this.isAllInOneMachineFlag = false;
+					}
 					this.cameraPrivacyModeStatus.isLoading = false;
 					this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraPrivacyModeStatus);
 					if (!this.cameraPrivacyModeStatus.permission) {
@@ -1038,14 +1045,19 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		this.logger.debug('startMonitorHandlerForCamera', value);
 		this.cameraPrivacyModeStatus.isLoading = false;
 		this.cameraPrivacyModeStatus = { ...this.cameraPrivacyModeStatus, ...value };
-		if (this.cameraAccessTemp === true && this.cameraPrivacyModeStatus.permission === false) {
-			this.cameraChangeFollowAccess(this.cameraPrivacyModeStatus.permission);
-			this.cameraControl.cleanupCameraAsync('desktopAppAccess');
-		}
-		if (this.cameraAccessTemp === false && this.cameraPrivacyModeStatus.permission === true) {
-			this.cameraControl.initializeCameraAsync('desktopAppAccess');
-			this.getCameraDetails();
-			this.cameraChangeFollowAccess(this.cameraPrivacyModeStatus.permission);
+		if (this.receivedBiosVersion && this.isCameraPreviewHidden && !this.cameraPrivacyModeStatus.available) {
+			this.isAllInOneMachineFlag = false;
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'camera');
+		} else {
+			if (this.cameraAccessTemp === true && this.cameraPrivacyModeStatus.permission === false) {
+				this.cameraChangeFollowAccess(this.cameraPrivacyModeStatus.permission);
+				this.cameraControl.cleanupCameraAsync('desktopAppAccess');
+			}
+			if (this.cameraAccessTemp === false && this.cameraPrivacyModeStatus.permission === true) {
+				this.cameraControl.initializeCameraAsync('desktopAppAccess');
+				this.getCameraDetails();
+				this.cameraChangeFollowAccess(this.cameraPrivacyModeStatus.permission);
+			}
 		}
 		this.cameraAccessTemp = this.cameraPrivacyModeStatus.permission;
 		// this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, this.cameraPrivacyModeStatus);
