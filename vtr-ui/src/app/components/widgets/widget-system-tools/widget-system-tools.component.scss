@@ -2,15 +2,14 @@
 
 .vtr-widget-system-tools {
 	.widget-title {
-		color: $gaming_lightest;
+		color: $white100;
 		font-size: 4rem;
 		margin-bottom: 1rem;
 		font-weight: $weight-light;
 	}
 	.widget-container {
 		border-radius: $border_radius;
-		//background: $dark_cell;
-		background:$gaming_darkest;
+		background:$darkCell;
 		box-shadow: $drop_shadow_gaming;
 		padding: 4rem;
 		@media #{$breakpoint_xl} {
@@ -49,7 +48,7 @@
 				}
 				figure {
 					text-align: center;
-					color: $light;
+					color: $white100;
 					margin: auto;
 					padding: 1rem;
 					.system-icon {
@@ -92,7 +91,7 @@
 							bottom: 0;
 							right: 0;
 							margin: 0;
-							background: $gaming_darkest;
+							background: $darkCell;
 							z-index: 0;
 							transition: all .3s ease-in-out;
 						}
