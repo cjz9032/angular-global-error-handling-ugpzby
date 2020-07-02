@@ -15,6 +15,7 @@ import { DevService } from "src/app/services/dev/dev.service";
 import { TranslateModule } from "@ngx-translate/core";
 import { NgbModalModule, NgbModule, NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import moment from "moment";
+import { enumSmartPerformance } from 'src/app/enums/smart-performance.enum';
 
 const res = {
     "Tunecount": 20,
@@ -111,7 +112,7 @@ describe("UiSmartPerformanceScanSummaryComponent", () => {
     });
 
     it('should fetch next scan run time', () => {
-        const scantype = 'Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix';
+        const scantype = enumSmartPerformance.SCHEDULESCANANDFIX;
         const res: any = {nextruntime: '2020-06-17T17:45:00' } 
         smartPerformanceService = TestBed.get(SmartPerformanceService);
         const spy = spyOn(smartPerformanceService, 'getNextScanRunTime').and.returnValue(Promise.resolve(res));
@@ -120,7 +121,7 @@ describe("UiSmartPerformanceScanSummaryComponent", () => {
     });
 
     it('should fetch next scan run time - else case', () => {
-        const scantype = 'Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix';
+        const scantype = enumSmartPerformance.SCHEDULESCANANDFIX;
         const res: any = {} 
         smartPerformanceService = TestBed.get(SmartPerformanceService);
         const spy = spyOn(smartPerformanceService, 'getNextScanRunTime').and.returnValue(Promise.resolve(res));

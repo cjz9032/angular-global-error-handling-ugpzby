@@ -12,7 +12,7 @@ import { SmartPerformanceService } from 'src/app/services/smart-performance/smar
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import moment from 'moment';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import { enumScanFrequency, actualScanFrequency, actualDays, actualMeridiem } from 'src/app/enums/smart-performance.enum';
+import { enumScanFrequency, actualScanFrequency, actualDays, actualMeridiem, enumSmartPerformance } from 'src/app/enums/smart-performance.enum';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -142,7 +142,7 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 		}
 
 		if (this.IsSmartPerformanceFirstRun === true &&	this.isSubscribed == true) {
-			this.unregisterScheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScan');
+			this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCAN);
 		}
 
 		if (this.IsSmartPerformanceFirstRun === true && this.isSubscribed == false) {
@@ -154,9 +154,9 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 		// fetching next schedule date and time from task scheduler
 		if (this.scheduleScanFrequency !== undefined && this.IsScheduleScanEnabled && !this.IsSmartPerformanceFirstRun) {
 			if (this.isSubscribed) {
-				this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
+				this.getNextScanRunTime(enumSmartPerformance.SCHEDULESCANANDFIX);
 			} else {
-				this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScan');
+				this.getNextScanRunTime(enumSmartPerformance.SCHEDULESCAN);
 			}
 		}
 
@@ -235,9 +235,9 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 		this.scheduleScanFrequency = this.commonService.getLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency);
 		this.changeScanFrequency(actualScanFrequency.indexOf(this.scheduleScanFrequency));
 		if (this.isSubscribed) {
-			this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
+			this.getNextScanRunTime(enumSmartPerformance.SCHEDULESCANANDFIX);
 		} else {
-			this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScan');
+			this.getNextScanRunTime(enumSmartPerformance.SCHEDULESCAN);
 		}
 	}
 
@@ -319,12 +319,12 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 
 		if (!event.switchValue) {
 			if (this.isSubscribed) {
-				this.unregisterScheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
+				this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCANANDFIX);
 				this.setDefaultValWhenDisabled()
 				// hiding Next Schedule Scan in SP scan-summary
 				this.scanDatekValueChange.emit({ nextEnable: event.switchValue });
 			} else {
-				this.unregisterScheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScan');
+				this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCAN);
 				this.setDefaultValWhenDisabled()
 			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled, false);
@@ -350,9 +350,9 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 			// when saving schedule scan is successful, fetching next scan runtime from backend and updating respective fields
 			if (res.state) {
 				if (this.isSubscribed) {
-					this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
+					this.getNextScanRunTime(enumSmartPerformance.SCHEDULESCANANDFIX);
 				} else {
-					this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScan');
+					this.getNextScanRunTime(enumSmartPerformance.SCHEDULESCAN);
 				}
 			}
 		} catch (err) {
@@ -472,10 +472,10 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 					date: [],
 				};
 				if (this.isSubscribed) {
-					this.requestScanData = {scantype: 'Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix',	...data,};
+					this.requestScanData = {scantype: enumSmartPerformance.SCHEDULESCANANDFIX,	...data,};
 				}
 				if (!this.isSubscribed) {
-					this.requestScanData = {scantype: 'Lenovo.Vantage.SmartPerformance.ScheduleScan', ...data,};
+					this.requestScanData = {scantype: enumSmartPerformance.SCHEDULESCAN, ...data,};
 				}
 				break;
 
@@ -531,10 +531,10 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 			date: freq === 'onceamonth' ? [+this.selectedNumber] : [],
 		};
 		if (this.isSubscribed) {
-			this.requestScanData = {scantype: 'Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix', ...data,};
+			this.requestScanData = {scantype: enumSmartPerformance.SCHEDULESCANANDFIX, ...data,};
 		}
 		if (!this.isSubscribed) {
-			this.requestScanData = {scantype: 'Lenovo.Vantage.SmartPerformance.ScheduleScan', ...data,};
+			this.requestScanData = {scantype: enumSmartPerformance.SCHEDULESCAN, ...data,};
 		}
 	}
 

@@ -14,6 +14,7 @@ import { DevService } from 'src/app/services/dev/dev.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell-mock.service';
+import { enumSmartPerformance } from 'src/app/enums/smart-performance.enum';
 
 describe('UiSmartPerformanceComponent', () => {
 	let component: UiSmartPerformanceComponent;
@@ -58,7 +59,7 @@ describe('UiSmartPerformanceComponent', () => {
 	}));
 
 	it('should delete record from task-scheduler', async(() => {
-		const scantype = 'Lenovo.Vantage.SmartPerformance.ScheduleScan'
+		const scantype = enumSmartPerformance.SCHEDULESCAN
 		commonService = TestBed.get(CommonService);
 		spyOn(commonService, 'getLocalStorageValue').and.returnValue(true)
 		const spy = spyOn(component, 'unregisterScheduleScan')
@@ -331,7 +332,7 @@ describe('UiSmartPerformanceComponent', () => {
 	}));
 
 	it('should call schedule scan', async(() => {
-		const scantype = 'Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix';
+		const scantype = enumSmartPerformance.SCHEDULESCANANDFIX;
 		const frequency = 'onceaweek';
 		const day = 'Thursday';
 		const time = "2019-03-15T12:00:00";
@@ -343,7 +344,7 @@ describe('UiSmartPerformanceComponent', () => {
 	}));
 
 	it('should call schedule scan throw error', async(() => {
-		const scantype = 'Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix';
+		const scantype = enumSmartPerformance.SCHEDULESCANANDFIX;
 		const frequency = 'onceaweek';
 		const day = 'Thursday';
 		const time = "2019-03-15T12:00:00";
