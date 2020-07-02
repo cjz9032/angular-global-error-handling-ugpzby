@@ -13,6 +13,7 @@ import { HardwareScanFinishedHeaderType } from 'src/app/enums/hardware-scan-fini
 export class HardwareScanFinishedHeaderComponent implements OnInit {
 
 	supportUrl: string;
+	supportUrlSuccess = 'https://support.lenovo.com/br/pt/contactus';
 
 	// Metrics
 	@Input() itemParentCancel: string;
