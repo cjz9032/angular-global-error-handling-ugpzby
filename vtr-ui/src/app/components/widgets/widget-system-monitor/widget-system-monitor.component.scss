@@ -68,7 +68,7 @@
 					transform: scale(-1, 1);
 					margin-left: 0.8rem;
 					font-size: 1.8rem;
-					color: $gaming_info_link;
+					color: $blueFill;
 					font-weight: bold;
 					@media #{$black-on-white} {
 						color: $high-contrast-grey;
@@ -78,11 +78,11 @@
 					}
 				}
 				.info-link {
-					color: $gaming_info_link;
-					border-bottom: 0.2rem solid $gaming_info_link;
+					color: $blueFill;
+					border-bottom: 0.2rem solid $blueFill;
 					&:hover {
-						color: $gaming_info_link_hover;
-						border-color: $gaming_info_link_hover;
+						color: $blueHover;
+						border-color: $blueHover;
 						text-decoration: none;
 						@media #{$black-on-white}{
 							color: $gaming_darkest;
@@ -92,6 +92,9 @@
 							color: $gaming_lightest;
 							border-color: $gaming_lightest;
 						}
+					}
+					&:hover + .icon {
+						color: $blueHover
 					}
 				}
 			}
