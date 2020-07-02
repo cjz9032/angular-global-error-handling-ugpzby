@@ -381,12 +381,12 @@
 							padding: 0 0.5rem;
 							.stack-title {
 								text-transform: uppercase;
-								color: $gaming_lightest;
+								color: $white100;
 								font-size: 1.5rem;
 								line-height: 2.1rem;
 							}
 							.stack-status {
-								color: $shade;
+								color: $white60;
 								font-size: 1.2rem;
 								line-height: 1.9rem;
 							}
@@ -631,7 +631,7 @@
 								}
 								.cpu-title {
 									text-transform: uppercase;
-									color: $gaming_lightest;
+									color: $white100;
 									font-size: 7rem;
 									line-height: 10rem;
 									font-weight: $weight_light;
@@ -645,7 +645,7 @@
 									}
 								}
 								.cpu-status {
-									color: $shade;
+									color: $white60;
 									font-size: 1.2rem;
 									line-height: 1.9rem;
 								}
@@ -845,12 +845,12 @@
 							text-align: left;							
 							
 							.hd-title {
-								color: $gaming_lightest;
+								color: $white100;
 								font-size: 1.5rem;
 								line-height: 2.1rem;
 							}
 							.hd-status {
-								color: $shade;
+								color: $white60;
 								font-size: 1.1rem;
 								line-height: 1.9rem;
 							}
