@@ -199,6 +199,16 @@ vtr-ui-smart-performance-scan-summary {
 						padding: 0.4rem 2.5rem;
 						margin: 0 0.2rem;
 					}
+					::ng-deep .vtr-ui-button {
+						.button-box {
+							.button {
+								min-height: 3.2rem;
+								min-width: 1rem;
+								font-weight: 500;
+								padding: 0 2.2rem;
+							}
+						}
+					}
 				}
 			}
 			.tune, .boost, .secure {

@@ -23,6 +23,8 @@
 						<p class="result-code-complete-text">{{getFinalResultCode()}}</p>
 						<a *ngIf="numberTestsFailed === 0"
 							href="javascript:void(0)"
+							role="img"
+							attr.aria-label="final-result-code-tooltip, which reads: {{('hardwareScan.scanFinishedHeader.frcSuccessDescription' | translate)}}"
 							class="result-code-icon"
 							triggers="click"
 							[placement]="['left','right']"
@@ -120,6 +122,8 @@
 					<p class="result-code-complete-text">{{getLastFinalResultCode()}}</p>
 					<a *ngIf="numberTestsFailed === 0"
 						href="javascript:void(0)"
+						role="img"
+						attr.aria-label="final-result-code-tooltip, which reads: {{('hardwareScan.scanFinishedHeader.frcSuccessDescription' | translate)}}"
 						class="result-code-icon"
 						triggers="click"
 						[placement]="['left','right']"

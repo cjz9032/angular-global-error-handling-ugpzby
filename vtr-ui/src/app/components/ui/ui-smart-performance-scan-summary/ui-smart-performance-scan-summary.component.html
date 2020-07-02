@@ -318,31 +318,20 @@
 																		<div class="col">
 																			<div class="row custom-from-date py-3"
 																				[ngClass]="{'selected-custom-date':isFromDate}">
-																				<div class="col-5">
-																					{{'smartPerformance.subscriberScanHomePage.scanSummary.txtFrom' |translate }}
-																				</div>
-																				<div class="col-auto"><input type='text'
-																						[ngModel]="displayFromDate"
-																						(click)="selectFromDate()"
-																						readonly /></div>
+																				<div class="col-1">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtFrom' |translate }}</div>
+																				<div class="col-auto"><input type='text' [ngModel]="displayFromDate"
+																						(click)="selectFromDate()" readonly/></div>
 																			</div>
 																			<div class="row custom-to-date mt-3 py-3"
 																				[ngClass]="{'selected-custom-date':!isFromDate}">
-																				<div class="col-5">
-																					{{'smartPerformance.subscriberScanHomePage.scanSummary.txtTo' |translate }}
-																				</div>
-																				<div class="col-auto"><input type='text'
-																						[ngModel]="displayToDate"
-																						(click)="selectToDate()"
-																						readonly /></div>
+																				<div class="col-1">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtTo' |translate }}</div>
+																				<div class="col-auto"><input type='text'  [ngModel]="displayToDate"
+																						(click)="selectToDate()" readonly/></div>
 
 																			</div>
-																			<div
-																				class="row d-flex justify-content-center">
-																				<button class="custom-go-btn mt-3"
-																					(click)="customDateScanSummary()">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtGo' |translate }}</button>
-																				<button class="custom-go-btn mt-3"
-																					(click)="customDateScanSummary()">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtClr' |translate }}</button>
+																			<div class="row d-flex justify-content-center">
+																				<vtr-ui-button [isFullWidth]="false" [isDisabled]="!displayFromDate || !displayToDate" (onClick)="customDateScanSummary()" [label]="'smartPerformance.subscriberScanHomePage.scanSummary.txtGo' |translate"></vtr-ui-button>
+																				<vtr-ui-button [isFullWidth]="false" (onClick)="ResetCustomDateScanSummary()" [label]="'smartPerformance.subscriberScanHomePage.scanSummary.txtClr' |translate"></vtr-ui-button>
 																			</div>
 																		</div>
 																		<div class="col date-picker">

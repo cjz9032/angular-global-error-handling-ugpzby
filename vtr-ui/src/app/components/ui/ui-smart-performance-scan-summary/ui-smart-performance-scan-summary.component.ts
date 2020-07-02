@@ -88,7 +88,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	isDropDownOpen: boolean;
 	dropDownToggle: boolean;
 	currentDate: any;
-	// currentDateLocalFormat: any;
+	currentDateLocalFormat: any;
 	fromDate: any;
 	toDate: any;
 	selectedDate: any;
@@ -97,6 +97,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	selectedTodate: any;
 	displayFromDate: any;
 	displayToDate: any;
+	oldDisplayFromDate: any;
+	oldDisplayToDate: any;
 	customDate: any;
 	@Output() backToScan = new EventEmitter();
 	@Output() backToNonSubscriber = new EventEmitter();
@@ -150,7 +152,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		}
 		// this.leftAnimatorCalc = ((this.rating*10) - 1);
 		this.currentDate = new Date();
-		// this.currentDateLocalFormat = this.formatLocaleDate.transform(this.currentDate);
+		this.currentDateLocalFormat = this.formatLocaleDate.transform(this.currentDate);
 		this.selectedDate = this.calendar.getToday();
 		this.toDate = this.selectedDate;
 		this.fromDate = this.selectedDate;
@@ -357,6 +359,12 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 
 	openDropDown() {
 		this.isDropDownOpen = !this.isDropDownOpen;
+		if(!this.isDropDownOpen) {
+			if(this.oldDisplayFromDate && this.oldDisplayToDate) {
+				this.displayFromDate = this.oldDisplayFromDate;
+				this.displayToDate = this.oldDisplayToDate;
+			}
+		}
 	}
 
 	selectFromDate() {
@@ -409,6 +417,16 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 				.format('YYYY-MM-DD HH:mm:ss')
 		);
 	}
+
+	ResetCustomDateScanSummary() {
+		this.oldDisplayFromDate = this.displayFromDate;
+	    this.oldDisplayToDate = this.displayToDate;
+		this.displayFromDate = null;
+		this.displayToDate = null;
+		this.selectedfromDate = this.minDate;
+		this.selectedTodate = this.maxDate;
+	}
+	
 	openSubscribeModal() {
 		this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
 			backdrop: 'static',
