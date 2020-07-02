@@ -100,6 +100,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 			metricsItem: 'Camera'
 		}
 	];
+	tempHeaderMenuItems = this.headerMenuItems;
 	emptyCameraDetails = [
 		{
 			brightness:
@@ -267,7 +268,8 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 			});
 
 		if (this.windowsObj) {
-			this.cameraAccessChangedHandler = (args: any) => {
+			this.cameraAccessChangedHandler = async(args: any) => {
+				this.isAllInOneMachineFlag = await this.isAllInOneMachine();
 				if (args && this.isAllInOneMachineFlag) {
 					this.getCameraDetails();
 					this.getCameraPrivacyModeStatus();
@@ -1021,15 +1023,24 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 					if (this.receivedBiosVersion && this.isCameraPreviewHidden && !this.cameraPrivacyModeStatus.available) {
 						this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'camera');
 						this.isAllInOneMachineFlag = false;
+					} else {
+						if (!this.commonService.isPresent(this.headerMenuItems, 'camera')) {
+							this.headerMenuItems.push(this.tempHeaderMenuItems[1]);
+						}
+						this.isAllInOneMachineFlag = true;
 					}
 					this.cameraPrivacyModeStatus.isLoading = false;
 					this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraPrivacyModeStatus);
 					if (!this.cameraPrivacyModeStatus.permission) {
-						this.cameraControl.cleanupCameraAsync('desktopAppAccess');
+						if (this.cameraControl) {
+							this.cameraControl.cleanupCameraAsync('desktopAppAccess');
+						}
 					}
 					this.cameraChangeFollowAccess(this.cameraPrivacyModeStatus.permission);
 					if (this.cameraAccessTemp === false && this.cameraPrivacyModeStatus.permission === true) {
-						this.cameraControl.initializeCameraAsync('desktopAppAccess');
+						if (this.cameraControl) {
+							this.cameraControl.initializeCameraAsync('desktopAppAccess');
+						}
 					}
 					this.cameraAccessTemp = this.cameraPrivacyModeStatus.permission;
 				})
@@ -1051,10 +1062,14 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		} else {
 			if (this.cameraAccessTemp === true && this.cameraPrivacyModeStatus.permission === false) {
 				this.cameraChangeFollowAccess(this.cameraPrivacyModeStatus.permission);
-				this.cameraControl.cleanupCameraAsync('desktopAppAccess');
+				if (this.cameraControl) {
+					this.cameraControl.cleanupCameraAsync('desktopAppAccess');
+				}
 			}
 			if (this.cameraAccessTemp === false && this.cameraPrivacyModeStatus.permission === true) {
-				this.cameraControl.initializeCameraAsync('desktopAppAccess');
+				if (this.cameraControl) {
+					this.cameraControl.initializeCameraAsync('desktopAppAccess');
+				}
 				this.getCameraDetails();
 				this.cameraChangeFollowAccess(this.cameraPrivacyModeStatus.permission);
 			}
