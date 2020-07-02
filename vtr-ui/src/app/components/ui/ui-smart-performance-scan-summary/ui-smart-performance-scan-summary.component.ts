@@ -419,8 +419,10 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	}
 
 	ResetCustomDateScanSummary() {
-		this.oldDisplayFromDate = this.displayFromDate;
-	    this.oldDisplayToDate = this.displayToDate;
+		if(this.displayFromDate !== null || this.displayToDate !== null ) {
+			this.oldDisplayFromDate = this.displayFromDate;
+	    	this.oldDisplayToDate = this.displayToDate;
+		}
 		this.displayFromDate = null;
 		this.displayToDate = null;
 		this.selectedfromDate = this.minDate;
