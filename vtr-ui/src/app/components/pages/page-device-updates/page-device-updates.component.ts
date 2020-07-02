@@ -62,7 +62,6 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	private isComponentInitialized = false;
 	public updateTitle = '';
 	private isUserCancelledUpdateCheck = false;
-	private timeStartSearch;
 	private protocalAction: string;
 	private shouldCheckingUpdateByProtocal = false;
 	private backButton = 'system-update-back-btn';
@@ -314,7 +313,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		try {
 			if (this.notificationSubscription) {
 				this.notificationSubscription.unsubscribe();
-			}
+				}
 		} catch (error) {
 			this.logger.error('PageDeviceUpdatesComponent.ngOnDestroy: ', error);
 		}
@@ -406,7 +405,6 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			this.systemUpdateService.percentCompleted = 0;
 			this.percentCompleted = this.systemUpdateService.percentCompleted;
 			this.systemUpdateService.checkForUpdates();
-			this.timeStartSearch = new Date();
 		}
 	}
 
@@ -712,7 +710,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 						this.setUpdateTitle(payload.status);
 					}
 					this.focusOnElement(this.backButton);
-					this.metricService.sendSystemUpdateMetric(0, '', messageKey, this.timeStartSearch);
+					this.metricService.sendSystemUpdateMetric(0, '', messageKey, this.systemUpdateService.timeStartSearch);
 					break;
 				case UpdateProgress.UpdatesAvailable:
 					this.isUpdateCheckInProgress = false;
@@ -721,12 +719,12 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
 					this.setUpdateByCategory(payload.updateList);
 					this.systemUpdateService.getIgnoredUpdates();
-					if (payload.updateList && this.timeStartSearch) {
+					if (payload.updateList && this.systemUpdateService.timeStartSearch) {
 						this.metricService.sendSystemUpdateMetric(
 							payload.updateList.length,
 							this.mapPackageListToIdString(payload.updateList),
 							'success',
-							this.timeStartSearch);
+							this.systemUpdateService.timeStartSearch);
 					}
 					this.focusOnElement(this.backButton);
 					break;

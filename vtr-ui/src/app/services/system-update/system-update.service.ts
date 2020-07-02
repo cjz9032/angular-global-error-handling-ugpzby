@@ -53,6 +53,7 @@ export class SystemUpdateService {
 	public isRebootRequiredDialogNeeded = false;
 	public isCheckingCancel = false;
 	public isToastMessageNeeded = false;
+	public timeStartSearch;
 	/**
 	 * gets data about last scan, install & schedule scan date-time for Check for Update section
 	 */
@@ -130,7 +131,7 @@ export class SystemUpdateService {
 
 	public checkForUpdates() {
 		// checkForUpdates requires callback
-		const timeStartSearch = new Date();
+		this.timeStartSearch = new Date();
 		if (this.systemUpdateBridge) {
 			this.isCheckForUpdateComplete = false;
 			this.isInstallationCompleted = false;
@@ -167,7 +168,7 @@ export class SystemUpdateService {
 				}
 			}).catch((error) => {
 				this.percentCompleted = 0;
-				this.metricService.sendSystemUpdateMetric(0, '', error.message, timeStartSearch);
+				this.metricService.sendSystemUpdateMetric(0, '', error.message, this.timeStartSearch);
 				if (error &&
 					((error.description && error.description.includes('errorcode: 606'))
 						|| (error.errorcode && error.errorcode === 606))) {
