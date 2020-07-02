@@ -313,7 +313,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		try {
 			if (this.notificationSubscription) {
 				this.notificationSubscription.unsubscribe();
-				}
+			}
 		} catch (error) {
 			this.logger.error('PageDeviceUpdatesComponent.ngOnDestroy: ', error);
 		}
