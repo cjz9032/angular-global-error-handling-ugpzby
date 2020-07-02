@@ -36,7 +36,7 @@ import { HardwareScanProgress } from './enums/hw-scan-progress.enum';
 import { SecurityAdvisorNotifications } from './enums/security-advisor-notifications.enum';
 import { SessionStorageKey } from './enums/session-storage-key-enum';
 import { HistoryManager } from './services/history-manager/history-manager.service';
-import { SmartPerformanceService } from './services/smart-performance/smart-performance.service';
+
 
 
 declare var Windows;
@@ -80,8 +80,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		private ngbTooltipConfig: NgbTooltipConfig,
 		private storeRating: StoreRatingService,
 		// don't delete historyManager
-		private historyManager: HistoryManager,
-		private smartPerformanceService: SmartPerformanceService,
+		private historyManager: HistoryManager,		
 		@Inject(DOCUMENT) public document: Document
 	) {
 		this.ngbTooltipConfig.triggers = 'hover';
@@ -297,11 +296,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 
 		if (this.metricService.isFirstLaunch) {
 			this.metricService.sendFirstRunEvent(value);
-			this.removeOldSmartPerformanceScheduleScans();
-			// The above method will remove old schedule scans of Smart performance.
-			// It has to be done at first launch of Vantage.
 		}
-
 		// When startup try to login Lenovo ID silently (in background),
 		//  if user has already logged in before, this call will login automatically and update UI
 		if (!this.deviceService.isArm && this.userService.isLenovoIdSupported()) {
@@ -310,19 +305,6 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 
 		if (this.appsForYouService.showLmaMenu()) {
 			this.appsForYouService.getAppStatus(AppsForYouEnum.AppGuidLenovoMigrationAssistant);
-		}
-	}
-	private removeOldSmartPerformanceScheduleScans() {
-		 
-	}
-	async unregisterSmartPerformanceScheduleScan(scanType) {
-		const payload = {scanType};
-		this.logger.info('app.component.unregisterScheduleScan', payload);
-		try {
-			const res: any = await this.smartPerformanceService.unregisterScanSchedule(payload);
-			this.logger.info('app.component.unregisterScheduleScan.then', res);
-		} catch (err) {
-			this.logger.error('app.component.unregisterScheduleScan.then', err);
 		}
 	}
 
