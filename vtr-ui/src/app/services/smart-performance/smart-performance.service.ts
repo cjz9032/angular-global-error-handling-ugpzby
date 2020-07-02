@@ -163,10 +163,10 @@ export class SmartPerformanceService {
 	}
 
 	getPaymentDetails(serialNumber): Promise<any> {
-		const reqUrl = environment.spGetOrdersApiRoot;
+		const reqUrl = environment.spGetOrdersApiRoot + serialNumber;
 		return new Promise(resolve => {
 			const xhr = new XMLHttpRequest();
-			xhr.open('GET', reqUrl + serialNumber, true);
+			xhr.open('GET', reqUrl, true);
 			xhr.onreadystatechange = () => {if (xhr.readyState === 4 && xhr.status === 200) {  resolve(JSON.parse(xhr.responseText)); }};
 			xhr.send();
 		  });

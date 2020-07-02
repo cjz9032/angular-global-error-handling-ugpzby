@@ -2598,11 +2598,11 @@
                 "visit": "Visit",
                 "goToChs": "go to connected home security",
                 "locationDisabledInfo": {
-					"title": "Location disabled",
-					"subtitle": "Allow Vantage to access your location to use Connected Home Security",
-					"buttonText": "Go To Location Settings",
-					"howToEnableLocation": "1. Go to <b>Setting</b> > <b>Privacy</b> > <b>Location</b>. </br> 2. Under <b>Choose which apps can access your precise location</b>, find <b>Lenovo Vantage</b>. </br> 3. Turn the Location switch to <b>On</b>."
-				}
+                    "title": "Location disabled",
+                    "subtitle": "Allow Vantage to access your location to use Connected Home Security",
+                    "buttonText": "Go To Location Settings",
+                    "howToEnableLocation": "1. Go to <b>Setting</b> > <b>Privacy</b> > <b>Location</b>. </br> 2. Under <b>Choose which apps can access your precise location</b>, find <b>Lenovo Vantage</b>. </br> 3. Turn the Location switch to <b>On</b>."
+                }
             },
             "invitationcode": {
                 "button": "Inserir código de convite",
@@ -3505,7 +3505,7 @@
             "recommendedAction": {
                 "title": "AÇÃO RECOMENDADA",
                 "description": "Nós corrigiremos esses problemas automaticamente. Uma vez hoje e toda semana depois",
-                "yearlyPricing": "US$ 19,99/Ano",
+                "yearlyPricing": "US$ 29,99/Ano",
                 "monthlyPricing": "MENOS DE US$ 2 POR MÊS.",
                 "longerTerm": "Mais tempo? Ainda mais economia?",
                 "signupButton": "INSCREVA-SE"

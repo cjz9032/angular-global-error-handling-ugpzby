@@ -32,10 +32,10 @@
 					<div class="response-content">
 						<div class="running-apps" *ngIf="!loadingNoApps">
 							<div class="title-content">
-								<h3>
+								<h3 id="auto_close_add_apps_popup_header_text">
 									{{'gaming.autoClose.modalAddApps.title' | translate }}
 								</h3>
-								<p>{{ 'gaming.autoClose.modalAddApps.body' | translate }}</p>
+								<p role="text" id="auto_close_add_apps_popup_description">{{ 'gaming.autoClose.modalAddApps.body' | translate }}</p>
 							</div>
 							<div class="app-add-container">
 								<ul class="app-list d-flex flex-wrap">
