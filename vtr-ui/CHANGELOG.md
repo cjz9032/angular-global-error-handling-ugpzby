@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.31](https://bitbucket.tc.lenovo.com///compare/v1.6.30...v1.6.31) (2020-07-02)
+
+
+### Bug Fixes
+
+* **Security Health:** click SH item shouldn't have a focus outline ([07195cb](https://bitbucket.tc.lenovo.com///commit/07195cb5080ad1adfd556a8116c2b2f33063d70e))
+
 ### [1.6.30](https://bitbucket.tc.lenovo.com///compare/v1.6.29...v1.6.30) (2020-07-01)
 
 
