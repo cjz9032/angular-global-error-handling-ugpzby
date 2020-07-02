@@ -6,7 +6,7 @@
 	.widget-container {
 		border-radius: $border_radius;
 		//background: $dark_cell;
-		background:$gaming_darkest;
+		background:$darkCell;
 		box-shadow: $drop_shadow_gaming;
 		padding: 2rem 4rem 3.5rem 4rem;
 		height:auto;			
@@ -100,8 +100,8 @@
 			}
 			.monitor-section {
 				border-radius: $border_radius_sm;
-				background-color:$gaming_bg;				
-				border: 1px solid $gaming_bg;
+				background-color:$background;				
+				border: 1px solid $background;
 				height: 24rem;
 				position: relative;
 				@media #{$breakpoint_xl3} {
@@ -366,7 +366,7 @@
 								top: 0;
 								left: 0;
 								width: 100%;
-								background-color: $gaming_darker;
+								background-color: $darkCell;
 								@media #{$black-on-white}{
 									background-color: $high-contrast-grey;
 								}
@@ -399,7 +399,7 @@
 					left: 50%;
 					top: -7rem;
 					margin-left: -19rem;
-					background-color: $gaming_darkest;
+					background-color: $darkCell;
 					width: 38rem;
 					height: 38rem;
 					border-radius: 50%;
@@ -519,7 +519,7 @@
 								position: absolute;
 								left: 0;
 								border-radius: 50%;
-								background-color: $gaming_bg;
+								background-color: $background;
 								@media #{$breakpoint_xl3} {
 									width: 27rem;
 									height: 27rem;
@@ -585,7 +585,7 @@
 						position: absolute;
 						top: 6rem;
 						left: 6rem;
-						background-color: $gaming_darkest;
+						background-color: $darkCell;
 						width: 26rem;
 						height: 26rem;
 						border-radius: 50%;
@@ -607,7 +607,7 @@
 							top: 50%;
 							left: 50%;
 							transform: translateX(-50%) translateY(-50%);
-							background-color: $gaming_bg;
+							background-color: $background;
 							width: 21.5rem;
 							height: 21.5rem;
 							border-radius: 50%;
@@ -859,7 +859,7 @@
 							display: inline-block;
 							vertical-align: middle;
 							position: relative;
-							background-color: $gaming_darkest;
+							background-color: $darkCell;
 							width: $gaming_hd_diameter_sm;
 							height: $gaming_hd_diameter_sm;
 							border-radius: 50%;							
