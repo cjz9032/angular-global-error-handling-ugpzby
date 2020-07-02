@@ -139,4 +139,12 @@ describe("ModalSmartPerformanceSubscribeComponent", () => {
         const res = component.getSPSubscriptionSupportedLanguageFromCountry('ru');
         expect(res).toEqual('ru_RU')
     });
+
+    it('should call onFocus when calling modal focus', (() => {
+        const modal = document.createElement('div');
+        modal.setAttribute('class', 'subscribe-modal');
+        fixture.debugElement.nativeElement.append(modal);
+        component.onFocus();
+        expect(modal).toBeTruthy();
+      }));
 });

@@ -1,4 +1,4 @@
-import { NO_ERRORS_SCHEMA } from "@angular/core";
+import { NO_ERRORS_SCHEMA, SimpleChange } from "@angular/core";
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { UiSmartPerformanceScanningComponent } from "./ui-smart-performance-scanning.component";
@@ -10,7 +10,7 @@ import { SPCategory, SPSubCategory } from 'src/app/enums/smart-performance.enum'
 import { TranslationModule } from "src/app/modules/translation.module";
 import { TranslateStore } from "@ngx-translate/core";
 
-import { NgbModal, NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { NgbModal, NgbModule, NgbModalRef } from "@ng-bootstrap/ng-bootstrap";
 
 const responseData = {
     type: 1,
@@ -33,9 +33,11 @@ describe("UiSmartPerformanceScanningComponent", () => {
 	let smartPerformanceService: SmartPerformanceService;
 	let logger: LoggerService;
     let modalService: NgbModal;
-    var originalTimeout;
+    let originalTimeout;
+    let mockModalRef: NgbModalRef
 
-	beforeEach(() => {
+
+	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			schemas: [NO_ERRORS_SCHEMA],
 			declarations: [UiSmartPerformanceScanningComponent],
@@ -50,7 +52,7 @@ describe("UiSmartPerformanceScanningComponent", () => {
         });
         fixture = TestBed.createComponent(UiSmartPerformanceScanningComponent);
 		component = fixture.componentInstance;
-    });
+    }));
 
 	it("should create", () => {
 		shellService = TestBed.get(VantageShellService);
@@ -261,6 +263,39 @@ describe("UiSmartPerformanceScanningComponent", () => {
         const spyGetCurrentScanninRollingTexts = spyOn(component, "GetCurrentScanninRollingTexts");
         fixture.detectChanges();
         expect(spyGetCurrentScanninRollingTexts).toHaveBeenCalled();
+    });
+
+    it('should open feedback form', () => {
+        modalService = TestBed.get(NgbModal);
+        const spy = spyOn(modalService, 'open');
+        component.onclickFeedback();
+        expect(spy).toHaveBeenCalled()
+    });
+
+    it('should open cancel scan modal', () => {
+        modalService = TestBed.get(NgbModal);
+        const spy = spyOn(modalService, 'open');
+        component.openCancelScanModel();
+        expect(spy).toHaveBeenCalled()
+    });
+
+    it('should call updateResponse in ngOnChanges', () => {
+        component.scheduleScanData = {...responseData};
+        const spy = spyOn(component, 'updateScanResponse');
+        component.ngOnChanges({
+            isScanningStarted: new SimpleChange(null, null, false)
+        });
+        expect(spy).toHaveBeenCalled()
+    });
+
+    it('should check scanData percentage', () => {
+        component.scanData = {...responseData.payload};
+        component.spSubCategoryenum = SPSubCategory;
+        component.spCategoryenum = SPCategory
+        spyOn(component, 'toggle');
+        spyOn(component, 'GetCurrentScanninRollingTexts')
+        component.updateScanResponse(responseData);
+        expect(component.isLoading).toBe(false)
     });
 
 });
