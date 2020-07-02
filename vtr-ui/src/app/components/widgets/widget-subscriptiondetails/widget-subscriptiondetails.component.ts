@@ -173,6 +173,8 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 			subscriptionData = [];
 		}
 		if (subscriptionData && subscriptionData.length > 0) {
+			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.activeStatus';
+			this.strStatus = 'ACTIVE';
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
 			this.isSubscribed = true;
 			this.subScribeEvent.emit(this.isSubscribed);
@@ -187,8 +189,6 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 				productNumber: lastItem.products[0].productCode || ''
 			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.subscriptionDetails);
-			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.activeStatus';
-			this.strStatus = 'ACTIVE';
 		} else {
 			if (this.spFrstRunStatus) {
 				this.isLoading = false;
