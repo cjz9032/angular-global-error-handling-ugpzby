@@ -13,7 +13,7 @@ import { HardwareScanFinishedHeaderType } from 'src/app/enums/hardware-scan-fini
 export class HardwareScanFinishedHeaderComponent implements OnInit {
 
 	supportUrl: string;
-	supportUrlSuccess = 'https://support.lenovo.com/br/pt/contactus';
+	contactusUrl: string;
 
 	// Metrics
 	@Input() itemParentCancel: string;
@@ -35,6 +35,7 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 	ngOnInit() {
 		this.lastScanResultCompletionInfo = this.previousResultService.getLastPreviousResultCompletionInfo();
 		this.configureSupportUrl();
+		this.configureContactusUrl();
 		this.setupFailedTests();
 	}
 
@@ -43,6 +44,12 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 			.then((response) => {
 				this.supportUrl = response;
 			});
+	}
+
+	private async configureContactusUrl() {
+		await this.lenovoSupportService.getContactusUrl().then((response) => {
+			this.contactusUrl = response;
+		});
 	}
 
 	public setupFailedTests() {

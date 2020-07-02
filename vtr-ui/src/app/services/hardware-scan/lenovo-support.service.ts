@@ -13,6 +13,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 export class LenovoSupportService {
 	private static readonly LenovoSupportBaseUrl = 'https://support.lenovo.com';
 	private static readonly ServiceRequestPath = 'servicerequest';
+	private static readonly ContactRequestPath = 'contactus';
 	private static readonly ProblemType = '/hardware/repair/';
 
 	private deviceInfo: Promise<MyDevice>;
@@ -40,6 +41,18 @@ export class LenovoSupportService {
 		url.search = urlParameters.toString();
 
 		this.logger.info('[LenovoSupportService.getETicketUrl] URL:', url.toString());
+		return url.toString();
+	}
+
+	public async getContactusUrl(): Promise<string> {
+		const machineSerialNumber = (await this.deviceInfo).sn;
+
+		const urlParameters = new HttpParams()
+			.set('SerialNumber', machineSerialNumber);
+
+		let url = new URL(LenovoSupportService.ContactRequestPath, LenovoSupportService.LenovoSupportBaseUrl);
+		url.search = urlParameters.toString();
+
 		return url.toString();
 	}
 }
