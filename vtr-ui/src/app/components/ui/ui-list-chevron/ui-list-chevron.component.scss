@@ -278,5 +278,8 @@
 		* {
 			cursor: default !important;
 		}
+		&:focus {
+			outline: none;
+		}
 	}
 }
