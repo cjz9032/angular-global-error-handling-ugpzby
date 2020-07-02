@@ -10,6 +10,7 @@ import { UiScanScheduleComponent } from './ui-scan-schedule.component';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { CommonService } from 'src/app/services/common/common.service';
+import { enumSmartPerformance } from 'src/app/enums/smart-performance.enum';
 
 
 describe('UiScanScheduleComponent', () => {
@@ -57,7 +58,7 @@ describe('UiScanScheduleComponent', () => {
   });
 
   it('scheduleScanFrequency is defined - subscribed user', () => {
-    const payload = "Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix"
+    const payload = enumSmartPerformance.SCHEDULESCANANDFIX
     commonService = TestBed.get(CommonService);
     spyOn(commonService, 'getLocalStorageValue').and.returnValues(true, component.scanFrequency[0], false, true)
     const spy = spyOn(component, 'getNextScanRunTime')
@@ -66,7 +67,7 @@ describe('UiScanScheduleComponent', () => {
   });
 
   it('scheduleScanFrequency is defined - non-subscribed user', () => {
-    const payload = "Lenovo.Vantage.SmartPerformance.ScheduleScan"
+    const payload = enumSmartPerformance.SCHEDULESCAN
     commonService = TestBed.get(CommonService);
     spyOn(commonService, 'getLocalStorageValue').and.returnValues(false, component.scanFrequency[0], false, true)
     const spy = spyOn(component, 'getNextScanRunTime')
@@ -210,7 +211,7 @@ describe('UiScanScheduleComponent', () => {
   });
 
   it('should delete record from task scheduler', () => {
-    const scantype = 'Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix'
+    const scantype = enumSmartPerformance.SCHEDULESCANANDFIX
     const res: any = {state: true}
     component.scanToggleValue = true
     smartPerformanceService = TestBed.get(SmartPerformanceService)
@@ -241,7 +242,7 @@ describe('UiScanScheduleComponent', () => {
     smartPerformanceService = TestBed.get(SmartPerformanceService)
     component.isSubscribed = true
     const payload = {
-      scantype: 'Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix',
+      scantype: enumSmartPerformance.SCHEDULESCANANDFIX,
       frequency: 'onceaweek',
       day: 'Wednesday',
       time: '2020-06-17T17:45:00',
@@ -257,7 +258,7 @@ describe('UiScanScheduleComponent', () => {
     smartPerformanceService = TestBed.get(SmartPerformanceService)
     component.isSubscribed = false
     const payload = {
-      scantype: 'Lenovo.Vantage.SmartPerformance.ScheduleScan',
+      scantype: enumSmartPerformance.SCHEDULESCAN,
       frequency: 'onceaweek',
       day: 'Wednesday',
       time: '2020-06-17T17:45:00',
@@ -270,7 +271,7 @@ describe('UiScanScheduleComponent', () => {
   });
 
   it('should get record from task scheduler - onceaweek', () => {
-    const scantype = 'Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix'
+    const scantype = enumSmartPerformance.SCHEDULESCANANDFIX
     const res: any = {nextruntime: '2020-06-17T17:45:00' } 
     smartPerformanceService = TestBed.get(SmartPerformanceService)
     const spy = spyOn(smartPerformanceService, 'getNextScanRunTime').and.returnValue(res)
@@ -280,7 +281,7 @@ describe('UiScanScheduleComponent', () => {
   });
 
   it('should get record from task scheduler - everyotherweek', () => {
-    const scantype = 'Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix'
+    const scantype = enumSmartPerformance.SCHEDULESCANANDFIX
     const res: any = {nextruntime: '2020-06-17T17:45:00' } 
     smartPerformanceService = TestBed.get(SmartPerformanceService)
     const spy = spyOn(smartPerformanceService, 'getNextScanRunTime').and.returnValue(res)
@@ -290,7 +291,7 @@ describe('UiScanScheduleComponent', () => {
   });
 
   it('should get record from task scheduler - every month', () => {
-    const scantype = 'Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix'
+    const scantype = enumSmartPerformance.SCHEDULESCANANDFIX
     const res: any = {nextruntime: '2020-06-17T17:45:00' } 
     smartPerformanceService = TestBed.get(SmartPerformanceService)
     const spy = spyOn(smartPerformanceService, 'getNextScanRunTime').and.returnValue(res)
@@ -300,7 +301,7 @@ describe('UiScanScheduleComponent', () => {
   });
 
   it('should set record task scheduler', () => {
-    const scantype = 'Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix'
+    const scantype = enumSmartPerformance.SCHEDULESCANANDFIX
     const res: any = {state: false } 
     smartPerformanceService = TestBed.get(SmartPerformanceService)
     const spy = spyOn(smartPerformanceService, 'getNextScanRunTime').and.returnValue(res)
