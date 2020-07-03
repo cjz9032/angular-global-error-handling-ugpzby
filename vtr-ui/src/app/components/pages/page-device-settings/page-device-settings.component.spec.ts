@@ -1,19 +1,19 @@
-import { async, TestBed, ComponentFixture } from "@angular/core/testing";
-import { NO_ERRORS_SCHEMA, Pipe, EventEmitter } from "@angular/core";
-import { HttpClientTestingModule } from "@angular/common/http/testing";
-import { RouterTestingModule } from "@angular/router/testing";
+import { async, TestBed, ComponentFixture } from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA, Pipe, EventEmitter } from '@angular/core';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
-import { PageDeviceSettingsComponent } from "./page-device-settings.component";
+import { PageDeviceSettingsComponent } from './page-device-settings.component';
 
-import { AudioService } from "../../../services/audio/audio.service";
-import { CMSService } from "../../../services/cms/cms.service";
-import { CommonService } from "../../../services/common/common.service";
-import { CommsService } from "../../../services/comms/comms.service";
-import { DevService } from "../../../services/dev/dev.service";
-import { DeviceService } from "../../../services/device/device.service";
-import { InputAccessoriesService } from "../../../services/input-accessories/input-accessories.service";
-import { LoggerService } from "../../../services/logger/logger.service";
-import { QaService } from "../../../services/qa/qa.service";
+import { AudioService } from '../../../services/audio/audio.service';
+import { CMSService } from '../../../services/cms/cms.service';
+import { CommonService } from '../../../services/common/common.service';
+import { CommsService } from '../../../services/comms/comms.service';
+import { DevService } from '../../../services/dev/dev.service';
+import { DeviceService } from '../../../services/device/device.service';
+import { InputAccessoriesService } from '../../../services/input-accessories/input-accessories.service';
+import { LoggerService } from '../../../services/logger/logger.service';
+import { QaService } from '../../../services/qa/qa.service';
 
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 import { AppNotification } from '../../../data-models/common/app-notification.model';
@@ -22,8 +22,8 @@ import {
 	TranslateModule,
 	TranslateService,
 	LangChangeEvent
-} from "@ngx-translate/core";
-import { of } from "rxjs";
+} from '@ngx-translate/core';
+import { of } from 'rxjs';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
 
@@ -31,7 +31,7 @@ const microphone = {
 	available: true,
 	muteDisabled: true,
 	volume: 1,
-	currentMode: "string",
+	currentMode: 'string',
 	keyboardNoiseSuppression: true,
 	autoOptimization: true,
 	AEC: true,
@@ -39,27 +39,27 @@ const microphone = {
 	permission: true
 };
 const queryOptions = {
-	Page: "device-settings"
+	Page: 'device-settings'
 };
 
 class TranslateServiceStub {
 	public onTranslationChange: EventEmitter<any> = new EventEmitter();
 	public onDefaultLangChange: EventEmitter<any> = new EventEmitter();
-	instant(data: string) {}
+	instant(data: string) { }
 	stream(data: string) {
 		return of(data);
 	}
 	get(key: string) {
 		return of(key);
 	}
-	setDefaultLang(lang: string) {}
-	use(lang: string) {}
+	setDefaultLang(lang: string) { }
+	use(lang: string) { }
 	get onLangChange() {
-		return of({ lang: "en" });
+		return of({ lang: 'en' });
 	}
 }
 
-describe("PageDeviceSettingsComponent", () => {
+describe('PageDeviceSettingsComponent', () => {
 	let component: PageDeviceSettingsComponent;
 	let fixture: ComponentFixture<PageDeviceSettingsComponent>;
 	let audioService: AudioService;
@@ -94,16 +94,16 @@ describe("PageDeviceSettingsComponent", () => {
 		});
 	}));
 
-	it("should create", async(() => {
+	it('should create', async(() => {
 		fixture = TestBed.createComponent(PageDeviceSettingsComponent);
 		component = fixture.componentInstance;
 		translate = TestBed.get(TranslateService);
 		commonService = TestBed.get(CommonService);
 		spyOn(component, 'initInputAccessories');
-		const welcomeTut: WelcomeTutorial = {page: 2, tutorialVersion: 'someVersion', isDone: true}
+		const welcomeTut: WelcomeTutorial = { page: 2, tutorialVersion: 'someVersion', isDone: true }
 		spyOn(commonService, 'getLocalStorageValue').and.returnValue(welcomeTut)
-		spyOnProperty(translate, "onLangChange", "get").and.returnValue(
-			of({ lang: "fr" })
+		spyOnProperty(translate, 'onLangChange', 'get').and.returnValue(
+			of({ lang: 'fr' })
 		);
 		fixture.detectChanges();
 		expect(component).toBeTruthy();
@@ -124,7 +124,7 @@ describe("PageDeviceSettingsComponent", () => {
 		const spy = spyOn(component, 'getAudioPageSettings')
 		const notification: AppNotification = {
 			type: LocalStorageKey.WelcomeTutorial,
-			payload: {page: 2}
+			payload: { page: 2 }
 		}
 		component['onNotification'](notification);
 		expect(spy).toHaveBeenCalled()
@@ -147,7 +147,7 @@ describe("PageDeviceSettingsComponent", () => {
 		const spy = spyOn(component, 'hidePowerPage');
 		const notification: AppNotification = {
 			type: LocalStorageKey.IsPowerPageAvailable,
-			payload: {page: 2}
+			payload: { page: 2 }
 		}
 		component['onNotification'](notification);
 		expect(spy).toHaveBeenCalled();
@@ -161,6 +161,55 @@ describe("PageDeviceSettingsComponent", () => {
 		spyOn(commonService, 'getLocalStorageValue').and.returnValue('LenovoTablet10');
 		const spy = spyOn(commonService, 'removeObjFrom')
 		component.initInputAccessories()
+		expect(spy).toHaveBeenCalled();
+	}));
+
+	it('should call initInputAccessories - machineType equal to 1,machine family LenovoTablet10', async(() => {
+		fixture = TestBed.createComponent(PageDeviceSettingsComponent);
+		component = fixture.componentInstance;
+		commonService = TestBed.get(CommonService);
+		component.machineType = 1;
+		const spyGetLocalStorageValue = spyOn(commonService, 'getLocalStorageValue');
+		spyGetLocalStorageValue.withArgs(LocalStorageKey.MachineType).and.returnValue(1);
+		spyGetLocalStorageValue.withArgs(LocalStorageKey.MachineFamilyName, undefined).and.returnValue('LenovoTablet10');
+		const spy = spyOn(commonService, 'removeObjFrom');
+		component.initInputAccessories()
+		expect(spy).toHaveBeenCalled();
+	}));
+
+	it('should call initInputAccessories - machineType  equal to 0.1, no input accessories', async(() => {
+		fixture = TestBed.createComponent(PageDeviceSettingsComponent);
+		const inputAccessoriesCapability = new InputAccessoriesCapability();
+		component = fixture.componentInstance;
+		commonService = TestBed.get(CommonService);
+		keyboardService = TestBed.get(InputAccessoriesService);
+		component.machineType = 1;
+
+		const spyGetLocalStorageValue = spyOn(commonService, 'getLocalStorageValue');
+		spyGetLocalStorageValue.withArgs(LocalStorageKey.MachineType).and.returnValue(1);
+		spyGetLocalStorageValue.withArgs(LocalStorageKey.MachineFamilyName, undefined).and.returnValue('LenovoTablet1011');
+		spyGetLocalStorageValue.withArgs(LocalStorageKey.InputAccessoriesCapability).and.returnValue(inputAccessoriesCapability);
+
+		spyOn(keyboardService, 'GetAllCapability').and.returnValue(Promise.resolve(''));
+
+		spyGetLocalStorageValue.withArgs(LocalStorageKey.VOIPCapability).and.returnValue(false);
+		spyGetLocalStorageValue.withArgs(LocalStorageKey.TopRowFunctionsCapability).and.returnValue(false);
+		spyGetLocalStorageValue.withArgs(LocalStorageKey.BacklightCapability).and.returnValue(false);
+
+		const spy = spyOn(commonService, 'removeObjFrom');
+		component.initInputAccessories();
+		expect(spy).toBeTruthy();
+	}));
+
+
+	it('should call getAudioPageSettings - method call on ngOnInit', async(() => {
+		fixture = TestBed.createComponent(PageDeviceSettingsComponent);
+		component = fixture.componentInstance;
+		commonService = TestBed.get(CommonService);
+		commonService.isOnline = false;
+		component.isOnline = false;
+		const spy = spyOn(component, 'getAudioPageSettings');
+		component.ngOnInit();
 		expect(spy).toHaveBeenCalled();
 	}));
 
