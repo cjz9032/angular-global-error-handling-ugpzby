@@ -30,6 +30,8 @@ export enum enumScanFrequency{
 export enum enumSmartPerformance{
 	SCHEDULESCANENDDATE = '2020/07/27',
 	SUMMARYWAITINGTIME = 5,
+	OLDSCHEDULESCAN = 'Lenovo.Vantage.SmartPerformance.ScheduleScan',
+	OLDSCHEDULESCANANDFIX='Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix',
 	SCHEDULESCAN = 'Lenovo.Vantage.SmartPerformance.SScan',
 	SCHEDULESCANANDFIX = 'Lenovo.Vantage.SmartPerformance.SScanAndFix'
 }

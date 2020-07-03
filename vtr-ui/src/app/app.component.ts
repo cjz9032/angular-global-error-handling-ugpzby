@@ -36,7 +36,8 @@ import { HardwareScanProgress } from './enums/hw-scan-progress.enum';
 import { SecurityAdvisorNotifications } from './enums/security-advisor-notifications.enum';
 import { SessionStorageKey } from './enums/session-storage-key-enum';
 import { HistoryManager } from './services/history-manager/history-manager.service';
-
+import { SmartPerformanceService } from './services/smart-performance/smart-performance.service';
+import { enumSmartPerformance } from './enums/smart-performance.enum';
 
 
 declare var Windows;
@@ -57,7 +58,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	private shellVersion;
 	private newTutorialVersion = '3.1.2';
 	public notificationType = NotificationType.Banner;
-
+	isOldScheduleScanDeleted: any
 	@ViewChild('pageContainer', { static: true }) pageContainer: ElementRef;
 
 
@@ -80,7 +81,8 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		private ngbTooltipConfig: NgbTooltipConfig,
 		private storeRating: StoreRatingService,
 		// don't delete historyManager
-		private historyManager: HistoryManager,		
+		private historyManager: HistoryManager,
+		private smartPerformanceService: SmartPerformanceService,
 		@Inject(DOCUMENT) public document: Document
 	) {
 		this.ngbTooltipConfig.triggers = 'hover';
@@ -153,6 +155,10 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 					document.body.classList.add('focus-enable');
 				}
 			});
+		}
+		this.isOldScheduleScanDeleted = this.commonService.getLocalStorageValue(LocalStorageKey.isOldScheduleScanDeleted);
+		if (this.isOldScheduleScanDeleted === undefined || this.isOldScheduleScanDeleted === false) {
+			this.removeOldSmartPerformanceScheduleScans();
 		}
 	}
 
@@ -554,5 +560,33 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 
 	onPageScroll($event) {
 		this.metricService.notifyPageScollEvent($event.target);
+	}
+
+
+	private removeOldSmartPerformanceScheduleScans() {
+		try {
+			const isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
+			if (isSubscribed !== undefined && isSubscribed === true) {
+				this.unregisterSmartPerformanceScheduleScan(enumSmartPerformance.OLDSCHEDULESCANANDFIX);
+			} else {
+				this.unregisterSmartPerformanceScheduleScan(enumSmartPerformance.OLDSCHEDULESCAN);
+			}
+		} catch (err) {
+			this.logger.error('app.component.removeOldSmartPerformanceScheduleScans.then', err);
+		}
+	}
+
+	async unregisterSmartPerformanceScheduleScan(scantype) {
+		const payload = { scantype };
+		this.logger.info('app.component.unregisterScheduleScan', payload);
+		try {
+			const res: any = await this.smartPerformanceService.unregisterScanSchedule(payload);
+			if (res.state) {
+				this.commonService.setLocalStorageValue(LocalStorageKey.isOldScheduleScanDeleted, true);
+			}
+			this.logger.info('app.component.unregisterScheduleScan.then', res);
+		} catch (err) {
+			this.logger.error('app.component.unregisterScheduleScan.then', err);
+		}
 	}
 }
