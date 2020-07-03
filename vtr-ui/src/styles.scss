@@ -1885,53 +1885,6 @@ ngb-tooltip-window.schedule-scan.tooltip {
 	}
 }
 
-.vtr-autoupdate-settings {
-	.vtr-ui-switch-onoff {
-		.switch {
-			&.switch-xs {
-				height: 1.8rem;
-				top: 0.6rem;
-				width: 4.5rem;
-			}
-		}
-		.switch > small {
-			top: 0.2rem !important;
-		}
-
-		input.checked + .switch > small {
-			top: 0.2rem;
-		}
-		.checkbox.white-theme {
-			&:focus {
-				outline: none;
-				box-shadow: none;
-				border-radius: 0;
-				&::after {
-					@include button-outline-blue;
-					width: 100%;
-					height: 100%;
-					top: 0.4rem;
-					left: -0.1rem;
-				}
-			}
-			@media #{$white-on-black} {
-				&:focus {
-					&::after {
-						display: none;
-					}
-				}
-			}
-			@media #{$black-on-white} {
-				&:focus {
-					&::after {
-						display: none;
-					}
-				}
-			}
-		}
-	}
-}
-
 .antiTheftFeature {
 	.photoDropdown {
 		ngb-tooltip-window.vtr-tooltip.tooltip {
