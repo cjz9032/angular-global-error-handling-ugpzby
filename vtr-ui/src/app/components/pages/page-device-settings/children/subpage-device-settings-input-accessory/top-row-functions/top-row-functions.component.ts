@@ -175,12 +175,14 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 		this.topRowFunctionUIModel = [];
 
 		const { primaryFunStatus, fnLockStatus } = this.topRowKeyObj;
+		const topRowStatus = (primaryFunStatus && fnLockStatus) || (!primaryFunStatus && !fnLockStatus);
+		const stickyKeyEnabled = this.topRowKeyObj.stickyFunStatus;
 
 		this.topRowFunctionUIModel.push({
 			componentId: this.specialKeyId,
 			label: `device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.sFunKey`,
 			value: 'special-key',
-			isChecked: (primaryFunStatus && fnLockStatus) || (!primaryFunStatus && !fnLockStatus) ? true : false,
+			isChecked: stickyKeyEnabled ? false : topRowStatus,
 			isDisabled: false,
 			processIcon: true,
 			customIcon: 'Special-function',
@@ -192,7 +194,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 			componentId: this.functionKeyId,
 			label: `device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.fnKey`,
 			value: 'function-key',
-			isChecked: (primaryFunStatus && fnLockStatus) || (!primaryFunStatus && !fnLockStatus) ? false : true,
+			isChecked: stickyKeyEnabled ? false : !topRowStatus,
 			isDisabled: false,
 			processIcon: true,
 			customIcon: 'F1-F12-funciton',
