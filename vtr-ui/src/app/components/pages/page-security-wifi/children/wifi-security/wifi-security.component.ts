@@ -83,6 +83,9 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		if (this.configService) {
 			this.isShowMore = !this.configService.showCHS;
 		}
+		if (this.data.histories.filter(item => !!item.visible).length > 4) {
+			this.isShowMoreLink = false;
+		}
 	}
 
 	noticeToggleChange() {

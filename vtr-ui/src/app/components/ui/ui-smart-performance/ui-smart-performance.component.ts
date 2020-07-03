@@ -14,6 +14,7 @@ import { JsonPipe } from '@angular/common';
 import { ModalSmartPerformanceFeedbackComponent } from '../../modal/modal-smart-performance-feedback/modal-smart-performance-feedback.component';
 import { MetricsTranslateService } from 'src/app/services/mertics-traslate/metrics-translate.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
+import { enumSmartPerformance } from 'src/app/enums/smart-performance.enum';
 @Component({
 	selector: 'vtr-ui-smart-performance',
 	templateUrl: './ui-smart-performance.component.html',
@@ -84,13 +85,13 @@ export class UiSmartPerformanceComponent implements OnInit, OnChanges {
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled, true);
 			this.IsSmartPerformanceFirstRun = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun);
 			//if (this.IsSmartPerformanceFirstRun === true) {
-			this.unregisterScheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
-			// 	this.scheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScan', 'onceaweek', this.days[new Date().getDay()], new Date(), []);
+			this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCANANDFIX);
+			// 	this.scheduleScan(enumSmartPerformance.SCHEDULESCAN, 'onceaweek', this.days[new Date().getDay()], new Date(), []);
 			// 	//this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, false);
 			// }
 		}
 		if (this.isSubscribed !== undefined && this.isSubscribed === true) {
-			this.unregisterScheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScan');
+			this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCAN);
 		}
 
 		if (this.smartPerformanceService.isShellAvailable) {
@@ -439,7 +440,7 @@ export class UiSmartPerformanceComponent implements OnInit, OnChanges {
 		this.showSubscribersummary = false;
 	}
 	changeManageSubscription(event) {
-		this.unregisterScheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScan');
+		this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCAN);
 		// this.isSubscribed = this.commonService.getLocalStorageValue(
 		// 	LocalStorageKey.IsFreeFullFeatureEnabled
 		// );

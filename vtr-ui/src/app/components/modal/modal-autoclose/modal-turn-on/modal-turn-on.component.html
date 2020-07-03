@@ -1,3 +1,4 @@
+
 <div class="modal-main-wrapper d-flex justify-content-center align-items-center">
 	<ui-popover-turn-on class="gaming-popup-window" id="autoclose_turnon_dialog" tabindex="1"
 		attr.aria-label="{{ 'gaming.autoClose.modalTurnAutoClose.title' | translate }} window">
@@ -10,8 +11,8 @@
 					</button>
 					</div>
 				 <div class="content-body">
-					<h1>{{ 'gaming.autoClose.modalTurnAutoClose.title' | translate }}</h1>
-					<p>{{ 'gaming.autoClose.modalTurnAutoClose.body' | translate }}</p>
+					<h1 id="auto_close_turn_on_popup_header_text">{{ 'gaming.autoClose.modalTurnAutoClose.title' | translate }}</h1>
+					<p role="text" id="auto_close_turn_on_popup_description">{{ 'gaming.autoClose.modalTurnAutoClose.body' | translate }}</p>
 				</div>
 				<div class="check-asked">
 					<label for="askedBox">
