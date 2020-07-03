@@ -107,7 +107,7 @@
 	.link-support {
 		padding-top: 1rem;
 		text-decoration: underline;
-		
+
 		&:hover {
 			text-decoration: none;
 			color: $menu_hover;
@@ -119,6 +119,11 @@
 		display: flex;
 		text-align: right;
 		padding-left: 3.2rem;
+		margin-bottom: 1rem;
+
+		.title, .subtitle{
+			margin-bottom: 0;
+		}
 
 		.result-code-icon {
 			margin-left: 0.5rem;
