@@ -15,7 +15,8 @@
                         [componentId]="'sp.enableScan'"
                         [switchParam]="'sp.enableScan'"
                         [value]="scanToggleValue"
-                        (toggle)="setEnableScanStatus($event)">
+                        (toggle)="setEnableScanStatus($event)"
+                        [isDisabled] = "!isOnline">
                     </vtr-ui-custom-switch>
                     <fa-icon class="question"
                         tabindex="0"
@@ -32,7 +33,7 @@
                     </fa-icon>
                 </div>
             </li>
-            <li class="d-flex justify-content-between calendar-list" [ngClass]="{'disable-list':!scanToggleValue}" (click)="changeScanSchedule()">
+            <li class="d-flex justify-content-between calendar-list" [ngClass]="{'disable-list':!scanToggleValue || !isOnline}" (click)="changeScanSchedule()">
                 <div class="item d-flex w-40">
                     <span class="icomoon icomoon-calendar"></span>
                     <!-- <strong>{{'smartPerformance.scanCompletePage.Onceaweek' |translate }}</strong> -->

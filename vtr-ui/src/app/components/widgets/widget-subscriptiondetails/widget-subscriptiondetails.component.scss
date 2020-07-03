@@ -4,6 +4,9 @@
     background-color: $light;
     box-shadow: 0 0 1.5rem 0 $screen_dark_15;
     padding: 2.2rem;
+    vtr-widget-offline-info{
+        width: 100%;
+    }
     .title {
         font-size: 2.5rem;
         font-weight: 500;

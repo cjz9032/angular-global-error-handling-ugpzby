@@ -1,7 +1,7 @@
 <div class="subscription-details sidebar-widget">
     <div *ngIf="isSubscribed" class="title pb-3">{{'smartPerformance.subscriptionDetails.title' |translate }}</div>
     <div *ngIf="!isSubscribed" class="title pb-3">{{'smartPerformance.subscriptionDetails.title' |translate }}</div>
-    <div class="card-info">      
+    <div class="card-info">         
         <p *ngIf="isSubscribed">{{'smartPerformance.subscriptionDetails.description' |translate }}</p>
         <p *ngIf="!isSubscribed">{{'smartPerformance.subscriptionDetails.descriptionNonSubscriber' |translate }}</p>
         <!-- <a href="#" class="para-link"
@@ -11,7 +11,7 @@
             metricsEvent="FeatureClick"
             >{{'smartPerformance.subscriptionDetails.learnMore' |translate }}</a> -->
     </div>
-    <ul class="status-list">
+    <ul class="status-list" *ngIf="isOnline">
         <li class="d-flex justify-content-between start-date-spinner">
             <div class="item">{{'smartPerformance.subscriptionDetails.startDate' |translate }}</div>
             <div class="status" *ngIf="!isLoading">{{subscriptionDetails.startDate}}</div>
@@ -45,7 +45,7 @@
                 </div>
             </div>
         </li>
-    </ul>
+    </ul>    
     <!-- <a *ngIf="isSubscribed" class="link-text" (click)=openSubscribeModal() 
         vtrMetrics
         metricsItem="btn.manageSub"
@@ -53,11 +53,16 @@
         metricsParent="Page.Support.SmartPerformance">
         {{'smartPerformance.subscriptionDetails.manageSubscription' |translate }}
     </a> -->
-    <a *ngIf="!isSubscribed" [ngClass]="{'disabled-link' : strStatus==='PROCESSING' }" class="link-text"  [class.disabled] = "strStatus==='PROCESSING'" (click)=openSubscribeModal() 
+    <a *ngIf="!isSubscribed && isOnline" [ngClass]="{'disabled-link' : strStatus==='PROCESSING'}" class="link-text"  [class.disabled] = "strStatus==='PROCESSING'" (click)=openSubscribeModal() 
         vtrMetrics
         metricsItem="btn.managesubscription"
         metricsEvent="FeatureClick"
         metricsParent="Page.Support.SmartPerformance">
         {{'smartPerformance.subscriptionDetails.manageSubscription' |translate }}
     </a>
+    <div class="row" *ngIf="!isOnline">
+        <vtr-widget-offline-info [title]="'dashboard.offlineInfo.title' | translate" [isSubtitleVisible]="false"
+        [isButtonVisible]="false">
+    </vtr-widget-offline-info>
+    </div>
 </div>
