@@ -13,7 +13,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 export class LenovoSupportService {
 	private static readonly LenovoSupportBaseUrl = 'https://support.lenovo.com';
 	private static readonly ServiceRequestPath = 'servicerequest';
-	private static readonly ContactRequestPath = 'contactus';
+	private static readonly ContactUsPath = 'contactus';
 	private static readonly ProblemType = '/hardware/repair/';
 
 	private deviceInfo: Promise<MyDevice>;
