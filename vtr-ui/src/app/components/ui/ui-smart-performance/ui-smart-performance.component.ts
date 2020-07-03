@@ -80,7 +80,6 @@ export class UiSmartPerformanceComponent implements OnInit, OnChanges {
 		}
 	}
 	ngOnInit() {
-		console.log(this.isOnline, 'NW Status')
 		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
 		if (this.isSubscribed === undefined) {
 
