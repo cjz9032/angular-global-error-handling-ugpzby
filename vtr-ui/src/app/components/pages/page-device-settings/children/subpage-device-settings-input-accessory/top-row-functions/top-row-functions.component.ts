@@ -29,6 +29,8 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 
 	private readonly functionKeyId = 'thinkpad-function-key-radio-button';
 	private readonly specialKeyId = 'thinkpad-special-key-radio-button';
+	private readonly NORMAL_KEY = 'nMehod_show';
+	private readonly STICKY_KEY = 'fnKeyMehod_show';
 
 	constructor(
 		private keyboardService: InputAccessoriesService,
@@ -148,6 +150,16 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 		const value = $event.value as boolean;
 		this.topRowKeyObj.stickyFunStatus = value;
 		this.keyboardService.setFnStickKeyStatus(value).then(res => {
+			// if normal key selected get latest status of top row
+			if ($event.componentId.toLowerCase() === this.NORMAL_KEY.toLowerCase()) {
+				this.getAllStatuses();
+			}
+			// if sticky key selected then remove checked icon from top row
+			else if ($event.componentId.toLowerCase() === this.STICKY_KEY.toLowerCase()) {
+				this.functionLockUIModel.forEach((model) => {
+					model.isChecked = false;
+				});
+			}
 		});
 	}
 
@@ -201,33 +213,36 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 		}
 	}
 
+
 	private setUpTopRowFunctionsKeysUIModel() {
+		const stickyKeyEnabled = this.topRowKeyObj.stickyFunStatus;
 		this.topRowFunctionKeysUIModel = [{
-			componentId: 'nMehod_show',
+			componentId: this.NORMAL_KEY,
 			label: 'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.nMehod',
 			value: false,
-			isChecked: this.topRowKeyObj.stickyFunStatus === false,
+			isChecked: !stickyKeyEnabled,
 			isDisabled: false,
 			metricsItem: 'radio.top-row-fn.normal-key'
 		},
 		{
-			componentId: 'fnKeyMehod_show',
+			componentId: this.STICKY_KEY,
 			label: 'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.fnKeyMehod',
 			value: true,
-			isChecked: this.topRowKeyObj.stickyFunStatus === true,
+			isChecked: stickyKeyEnabled,
 			isDisabled: false,
 			metricsItem: 'radio.top-row-fn.fn-sticky-Key'
 		}];
 	}
 
 	private updateTopRowFunctionsKeysUIModel() {
+		const stickyKeyEnabled = this.topRowKeyObj.stickyFunStatus;
 		this.topRowFunctionKeysUIModel.forEach((model) => {
 			switch (model.componentId) {
 				case 'nMehod_show':
-					model.isChecked = this.topRowKeyObj.stickyFunStatus === false;
+					model.isChecked = !stickyKeyEnabled;
 					break;
 				case 'fnKeyMehod_show':
-					model.isChecked = this.topRowKeyObj.stickyFunStatus === true;
+					model.isChecked = stickyKeyEnabled;
 					break;
 				default:
 					break;
