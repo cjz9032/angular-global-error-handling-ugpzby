@@ -17,33 +17,9 @@
 }
 input.switch ~.switch {
 	border: 0.1rem solid $grey_dark;
-	@media #{$black-on-white} {
-		@include black-border;
-		@include high-contrast-background-transparent;
-		small {
-			background-color: $dark;
-		}
-	}
-	@media #{$white-on-black} {
-		@include white-border;
-		@include high-contrast-background-transparent;
-		small {
-			background-color: $light;
-		}
-	}
 }
 input.checked ~.switch{
 	border: 0.1rem solid transparent;
-	@media #{$black-on-white} {
-		small {
-			background-color: $light;
-		}
-	}
-	@media #{$white-on-black} {
-		small {
-			background-color: $dark;
-		}
-	}
 }
 input:disabled ~.switch {
 	border: 0.1rem solid $grey_dark;
@@ -51,21 +27,6 @@ input:disabled ~.switch {
 		background-color: $grey_darker !important;
 		opacity: 0.4;
 	}
-	@media #{$black-on-white} {
-		border: 0.1rem solid transparent;
-		small {
-			background: $light;
-			opacity: 1;
-		}
-	}
-	@media #{$white-on-black} {
-		border: 0.1rem solid transparent;
-		small {
-			background: $dark;
-			opacity: 1;
-		}
-	}
-
 }
 
 .switch-disable {
@@ -137,15 +98,6 @@ input.checked + .switch {
 	@media #{$high-contrast} {
 		background: $highlight_bright;
 	}
-	@media #{$white-on-black} {
-		@include high-contrast-black-background;
-		@include high-contrast-black-border;
-	}
-	@media #{$black-on-white} {
-		@include high-contrast-white-background;
-		@include high-contrast-white-border;
-	}
-
 }
 
 .checkbox-double .switch {
