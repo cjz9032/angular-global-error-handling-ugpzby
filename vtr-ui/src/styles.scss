@@ -353,6 +353,19 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			}
 		}
 	}
+
+	&.bs-tooltip-auto[x-placement^=right], &.tooltip.bs-tooltip-right {
+		margin-left: 0.8rem;
+		.arrow {
+			&::before {
+				border-width: 1rem 1rem 1rem 0;
+				border-right-color: $light;
+				top: calc(-1rem + 50%);
+				right: 0.3rem;
+			}
+		}
+	}
+
 	&.show {
 		opacity: 1 !important;
 	}
