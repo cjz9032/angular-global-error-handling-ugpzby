@@ -646,7 +646,7 @@
 					<!-- Start of Intelligent Screen -->
 					<div class="row pt-5 smart-assist-card"
 						id="screen"
-						*ngIf="intelligentScreen?.isIntelligentScreenVisible">
+						*ngIf="intelligentScreen && intelligentScreen.isIntelligentScreenVisible">
 						<div class="col-12 px-0">
 							<vtr-container-collapsible [collapseLinkId]="'intelligentScreen'"
 								[tabIndex]="0"
