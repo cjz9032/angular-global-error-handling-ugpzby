@@ -81,7 +81,7 @@
 			<div *ngIf="isBatterySectionAvailable"
 				class="row pt-5 smart-settings-card"
 				id="battery">
-				<div class="col-12 mx-auto container-card ">
+				<div class="col-12 mx-auto container-card battery-settings-block">
 
 					<vtr-container-collapsible
 						[cardTitle]="'device.deviceSettings.power.batterySettings.title' | translate"
@@ -90,7 +90,7 @@
 						[isCollapsed]="false"
 						[collapseLinkId]="'device-settings-batterySettings'">
 						<ul class="list-group list-group-flush">
-							<li class=""
+							<li class="common-li-padding"
 								*ngIf="machineType === 1 && chargeThresholdCapability && thresholdInfo?.length>0">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.power.batterySettings.batteryThreshold.title' | translate"
