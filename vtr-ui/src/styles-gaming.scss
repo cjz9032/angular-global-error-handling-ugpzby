@@ -997,12 +997,12 @@
 										color: $gaming_grey_lightest;
 									}
 									p{
-										color:#fff!important;
+										color:$gaming_lightest !important;
 										font-size:$fontsize_xs!important;
 									}
 									#camera-privacy-mode-note,
 									#device-settings-camera-privacy-note {
-										color: $gaming_grey_lightest;
+										color: $gaming_lightest;
 									}
 								}
 							}
@@ -1710,7 +1710,10 @@
 		border-radius: $border_radius;
 		p {
 			font-size: $fontsize_xs;			
-			color: $white100;
+			color: $gaming_lightest !important;
+			&.boldColor{
+				color:$gaming_lightest !important;	
+			}
 		}
 	}
 	.progress-value-text {
