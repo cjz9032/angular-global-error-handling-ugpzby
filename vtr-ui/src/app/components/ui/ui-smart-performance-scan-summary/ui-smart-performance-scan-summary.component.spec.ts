@@ -268,6 +268,14 @@ describe("UiSmartPerformanceScanSummaryComponent", () => {
         expect(component.isDropDownOpen).toBe(true)
     });
 
+    it('should call openDropDown - if case', () => {
+        component.isDropDownOpen = true;
+        component.oldDisplayFromDate = '01/10/2020',
+        component.oldDisplayToDate = '03/10/2020'
+        component.openDropDown();
+        expect(component.isDropDownOpen).toBe(false)
+    });
+
     it('should open Feedback form', () => {
         modalService = TestBed.get(NgbModal);
         const spy = spyOn(modalService, 'open');
@@ -296,5 +304,67 @@ describe("UiSmartPerformanceScanSummaryComponent", () => {
     it('should call selectToDate', () => {
         component.selectToDate();
         expect(component.isFromDate).toBe(false)
+    });
+
+    it('should display last scan result', () => {
+        const response = {
+			type: 0,
+			percentage: 0,
+			errorcode: 0,
+			errordesc: "",
+			payload: {
+				scanruntime: "2020-05-08 17:48:30",
+				type: "MS",
+				fixcount: 78,
+				status: "C",
+				Tune: 77,
+				Boost: 1,
+				Secure: 0,
+				rating: 8,
+			},
+        };
+        smartPerformanceService = TestBed.get(SmartPerformanceService);
+        component.isSubscribed = true;
+        spyOn(smartPerformanceService, 'getLastScanResult').and.returnValue(Promise.resolve(response));
+        component.getLastScanResult();
+        expect(component.isScanning).toBe(false)
+    });
+
+    it('should clear date input fields', () => {
+        component.resetCustomDateScanSummary();
+        expect(component.displayFromDate).toBeNull()
+    });
+
+    it('should open schedule dropdown', () => {
+        component.scheduleTab = 1;
+        component.openScanScheduleDropDown(1);
+        expect(component.scheduleTab).toBe('')
+    });
+
+    it('should open schedule dropdown -else case', () => {
+        component.scheduleTab = 1;
+        component.openScanScheduleDropDown(3);
+        expect(component.scheduleTab).toBe(3)
+    });
+
+    it('should save changed scan schedule', () => {
+        component.saveChangedScanSchedule();
+        expect(component.isChangeSchedule).toBe(false);
+    });
+
+    it('should cancel changed scan schedule', () => {
+        component.cancelChangedScanSchedule();
+        expect(component.isChangeSchedule).toBe(false);
+    });
+
+    it('should toggle enable switch', () => {
+        const event = {switchValue: true};
+        component.setEnableScanStatus(event);
+        expect(component.scanToggleValue).toBe(true);
+    });
+
+    it('should call changeScanScheduleDate', () => {
+        component.changeScanScheduleDate();
+        expect(component.scheduleTab).toBe('')
     });
 });

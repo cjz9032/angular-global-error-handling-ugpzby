@@ -232,9 +232,9 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 	ngOnInit() {
 		this.receivedBiosVersion = false;
 		this.logger.debug('subpage-device-setting-display onInit');
-		this.hideCameraPreviewByBiosId();
 		this.commonService.checkPowerPageFlagAndHide();
 		this.initDataFromCache();
+		this.hideCameraPreviewByBiosId();
 		this.batteryService.getBatterySettings();
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
@@ -318,8 +318,23 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 
 	initCameraPrivacyFromCache() {
 		const privacy = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy);
+		const shouldCameraSectionDisabled = this.commonService.getLocalStorageValue(LocalStorageKey.ShouldCameraSectionDisabled, false);
+		this.isCameraPreviewHidden = this.commonService.getLocalStorageValue(LocalStorageKey.IsCameraPreviewHidden, false);
+
 		if (privacy && privacy.available !== undefined) {
+			if(shouldCameraSectionDisabled !== undefined) {
+				this.shouldCameraSectionDisabled = shouldCameraSectionDisabled;
+			}
 			this.cameraPrivacyModeStatus.available = privacy.available;
+			if (this.isCameraPreviewHidden && !this.cameraPrivacyModeStatus.available) {
+				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'camera');
+				this.isAllInOneMachineFlag = false;
+			} else {
+				if (!this.commonService.isPresent(this.headerMenuItems, 'camera')) {
+					this.headerMenuItems.push(this.tempHeaderMenuItems[1]);
+				}
+				this.isAllInOneMachineFlag = true;
+			}
 			if (privacy.status !== undefined) {
 				this.cameraPrivacyModeStatus.status = privacy.status;
 				this.cameraPrivacyModeStatus.isLoading = false;
@@ -431,7 +446,6 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 	}
 
 	hideCameraPreviewByBiosId() {
-		this.isCameraPreviewHidden = this.commonService.getLocalStorageValue(LocalStorageKey.IsCameraPreviewHidden, false);
 		this.deviceService.getMachineInfo()
 			.then(res => {
 				// for yoga book need to check first 4 character
@@ -510,6 +524,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 							this.cameraFeatureAccess.showAutoExposureSlider = true;
 						}
 					}
+					this.commonService.setLocalStorageValue(LocalStorageKey.ShouldCameraSectionDisabled, this.shouldCameraSectionDisabled);
 					break;
 				case LocalStorageKey.WelcomeTutorial:
 					if (payload.page === 2) {
@@ -1377,6 +1392,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 	cameraDisabled(event) {
 		this.logger.debug('disabled all is', event);
 		this.shouldCameraSectionDisabled = event;
+		this.commonService.setLocalStorageValue(LocalStorageKey.ShouldCameraSectionDisabled, this.shouldCameraSectionDisabled);
 		this.dataSource.permission = false;
 		this.hideNote = true;
 		this.cameraFeatureAccess.exposureAutoValue = false;
@@ -1511,6 +1527,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 			this.hideNote = true;
 			this.cameraFeatureAccess.showAutoExposureSlider = true;
 		}
+		this.commonService.setLocalStorageValue(LocalStorageKey.ShouldCameraSectionDisabled, this.shouldCameraSectionDisabled);
 		if (this.dataSource.exposure.autoValue === true && !this.shouldCameraSectionDisabled) {
 			this.cameraFeatureAccess.exposureAutoValue = true;
 

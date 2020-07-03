@@ -418,17 +418,17 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		);
 	}
 
-	ResetCustomDateScanSummary() {
-		if(this.displayFromDate !== null || this.displayToDate !== null ) {
+	resetCustomDateScanSummary() {
+		if (this.displayFromDate !== null || this.displayToDate !== null) {
 			this.oldDisplayFromDate = this.displayFromDate;
-	    	this.oldDisplayToDate = this.displayToDate;
+			this.oldDisplayToDate = this.displayToDate;
 		}
 		this.displayFromDate = null;
 		this.displayToDate = null;
 		this.selectedfromDate = this.minDate;
 		this.selectedTodate = this.maxDate;
 	}
-	
+
 	openSubscribeModal() {
 		this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
 			backdrop: 'static',
@@ -533,7 +533,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			const response = await this.smartPerformanceService.getLastScanResult(lastScanResultRequest);
 			this.logger.info('ui-smart-performance-scan-summary.getLastScanResult', response);
 			const scanRunTime = response.scanruntime;
-			const now = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
+			const now = moment().format('YYYY-MM-DD HH:mm:ss');
 			const fiveMinutesFromRecentScan = moment(scanRunTime).add(enumSmartPerformance.SUMMARYWAITINGTIME, 'm').format('YYYY-MM-DD HH:mm:ss');
 
 			if (now < fiveMinutesFromRecentScan) {
