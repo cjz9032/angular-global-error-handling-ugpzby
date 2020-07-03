@@ -1,40 +1,23 @@
+import { HttpClient } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import {
-	async,
 	ComponentFixture,
 	TestBed
 } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import {
+	TranslateLoader, TranslateModule,
 
-import {
-	ActiveProtectionSystemComponent
-} from './active-protection-system.component';
-import {
-	TranslateModule,
-	TranslateLoader,
 	TranslateService
 } from '@ngx-translate/core';
-import {
-	NO_ERRORS_SCHEMA
-} from '@angular/core';
-import {
-	HttpClientModule,
-	HttpClient
-} from '@angular/common/http';
-import {
-	HttpLoaderFactory,
-	TranslationModule
-} from 'src/app/modules/translation.module';
-import {
-	SmartAssistService
-} from 'src/app/services/smart-assist/smart-assist.service';
-import {
-	DropDownInterval
-} from '../../../../data-models/common/drop-down-interval.model';
-import { CommonService } from 'src/app/services/common/common.service';
+import { HttpLoaderFactory } from 'src/app/modules/translation.module';
 import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
+import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 import { DevService } from '../../../../services/dev/dev.service';
 import { MetricService } from '../../../../services/metric/metrics.service';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { ActiveProtectionSystemComponent } from './active-protection-system.component';
+
 class MockAPS {
 	getAPSMode() {
 		return Promise.resolve(true);
