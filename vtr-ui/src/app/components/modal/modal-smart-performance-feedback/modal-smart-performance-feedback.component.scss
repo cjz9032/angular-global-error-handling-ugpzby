@@ -141,6 +141,9 @@ $normalPadding: 2.4rem;
 			.likely-text {
 				padding: 0 1rem;
 				font-size: $fontsize_xs;
+				&:nth-child(2n){
+					padding-right: 0rem;
+				}
 			}
 
 			.form-check-inline {
