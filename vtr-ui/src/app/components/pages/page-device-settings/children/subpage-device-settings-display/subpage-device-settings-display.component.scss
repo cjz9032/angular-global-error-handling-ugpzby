@@ -262,3 +262,14 @@
 	}
 }
 
+::ng-deep {
+	.is-gaming{
+		.permission-note {
+			background: $gaming_bg!important; 
+			p{
+				color:$gaming_lightest !important;
+			}
+		}
+	}
+}
+
