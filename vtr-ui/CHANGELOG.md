@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.33](https://bitbucket.tc.lenovo.com///compare/v1.6.32...v1.6.33) (2020-07-03)
+
+
+### Bug Fixes
+
+* **accessibility:** fix wifi toggle read incorrect ([2c73a48](https://bitbucket.tc.lenovo.com///commit/2c73a48ed5a2119cee90e9d7e7cc90a185431f12))
+* **LWS:** showless button should display when history > 4 ([865747a](https://bitbucket.tc.lenovo.com///commit/865747aff155c4263696e42896752c52681a7155))
+
 ### [1.6.32](https://bitbucket.tc.lenovo.com///compare/v1.6.31...v1.6.32) (2020-07-02)
 
 ### [1.6.31](https://bitbucket.tc.lenovo.com///compare/v1.6.30...v1.6.31) (2020-07-02)
