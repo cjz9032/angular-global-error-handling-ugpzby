@@ -154,7 +154,7 @@
 													</p>
 													<div class="d-flex justify-content-start my-5 w-75">
 														<button *ngIf="!inputIsScanningCompleted"
-															[ngClass]="isLoading? 'disabled-button': 'action-button'"
+															[ngClass]="(isLoading || !isOnline)? 'disabled-button': 'action-button'"
 															(click)="ScanNowSummary()"
 															vtrMetrics
 															metricsItem="btn.scan&fix"
@@ -659,7 +659,7 @@
 										<div class="col col-12">
 											<!-- --------Scan Schedule------------- -->
 											<vtr-ui-scan-schedule
-												(scanDatekValueChange)='changeNextScanDateValue($event)'>
+												(scanDatekValueChange)='changeNextScanDateValue($event)' [isOnline] = "isOnline">
 											</vtr-ui-scan-schedule>
 											<!-- --------Scan Schedule------------- -->
 										</div>
@@ -701,7 +701,14 @@
 									<div class="row mb-40"
 										*ngIf="isSubscribed">
 										<div class="col col-12">
-											<vtr-widget-subscriptiondetails></vtr-widget-subscriptiondetails>
+											<vtr-widget-offline-info  
+											[isButtonVisible]="false" 
+											[isSubtitleVisible]="false"
+											[title]="'dashboard.offlineInfo.title' | translate"
+											[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
+											[buttonText]="'dashboard.offlineInfo.buttonText' | translate">
+										</vtr-widget-offline-info>
+											<vtr-widget-subscriptiondetails [isOnline] = "isOnline"></vtr-widget-subscriptiondetails>
 										</div>
 									</div>
 

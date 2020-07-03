@@ -43,6 +43,7 @@ import { UiAccordionComponent } from 'src/app/components/ui/ui-accordion/ui-acco
 import { ModalSmartPerformanceFeedbackComponent } from '../../components/modal/modal-smart-performance-feedback/modal-smart-performance-feedback.component';
 import { UiButtonModule } from 'src/app/components/ui/ui-button/ui-button.module';
 import { SharedModule } from 'src/app/modules/shared.module';
+import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-info/widget-offline.module';
 
 @NgModule({
 	declarations: [
@@ -72,10 +73,13 @@ import { SharedModule } from 'src/app/modules/shared.module';
 		HeaderMainModule,
 		FontAwesomeModule,
 		CommonUiModule,
+		WidgetOfflineModule,
 		SanitizeModule,
 		TranslationModule.forChild(),
 		UiButtonModule,
 		SharedModule,
+
+
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 	exports: [

@@ -34,7 +34,9 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		private translate: TranslateService,
 		private router: Router,
 		private formatLocaleDate: FormatLocaleDatePipe
-	) { }
+	) {
+
+	}
 	public sizeExtension: string;
 	public isLoading = false;
 	public machineFamilyName: string;
@@ -61,6 +63,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	@Input() boost = 0;
 	@Input() secure = 0;
 	@Input() rating = 0;
+	@Input() isOnline = true;
 
 	public tabIndex: number;
 	public toggleValue: number;
@@ -458,7 +461,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		// }
 	}
 	ScanNowSummary() {
-		if (!this.isLoading) {
+		if (!this.isLoading && this.isOnline) {
 			this.backToScan.emit();
 		}
 	}

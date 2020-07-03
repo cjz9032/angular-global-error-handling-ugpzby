@@ -5,6 +5,7 @@ import {
 	EventEmitter,
 	HostListener,
 	OnDestroy,
+	Input,
 } from '@angular/core';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
@@ -26,10 +27,11 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 		private logger: LoggerService,
 		public smartPerformanceService: SmartPerformanceService,
 		private translate: TranslateService
-	) {}
+	) {	}
 
 	// scan settings
 	@Output() scanDatekValueChange = new EventEmitter();
+	@Input() isOnline = true;
 	private spTransLangEvent: Subscription;
 	selectedDate: any;
 	isSubscribed: any;
@@ -164,7 +166,7 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 
 	// scan settings
 	changeScanSchedule() {
-		if (this.scanToggleValue) {
+		if (this.scanToggleValue && this.isOnline) {
 			this.isChangeSchedule = true;
 		}
 	}

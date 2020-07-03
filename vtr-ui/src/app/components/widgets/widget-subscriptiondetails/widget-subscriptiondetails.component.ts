@@ -21,6 +21,7 @@ import { environment } from 'src/environments/environment';
 })
 export class WidgetSubscriptiondetailsComponent implements OnInit {
 	@Output() subScribeEvent = new EventEmitter<boolean>();
+	@Input() isOnline = true;
 	isSubscribed: any;
 	subscriptionDetails: any = { startDate: '', endDate: '', status: '' };
 	startDate: any;
@@ -48,6 +49,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		private smartPerformanceService: SmartPerformanceService,
 		private supportService: SupportService,
 		private logger: LoggerService) {
+
 	}
 	public localSubscriptionDetails = {
 		UUID: uuid(),
