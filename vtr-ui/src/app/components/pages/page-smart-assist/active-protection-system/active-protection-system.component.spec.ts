@@ -63,15 +63,18 @@ describe('ActiveProtectionSystemComponent', () => {
 		TestBed.configureTestingModule({
 			declarations: [ActiveProtectionSystemComponent],
 			schemas: [NO_ERRORS_SCHEMA],
-			imports: [TranslateModule.forRoot({
-				loader: {
-					provide: TranslateLoader,
-					useFactory: HttpLoaderFactory,
-					deps: [HttpClient]
-				},
-				isolate: false
-			}),
-			TranslateModule.forChild(), HttpClientTestingModule, RouterTestingModule
+			imports: [
+				TranslateModule.forRoot({
+					loader: {
+						provide: TranslateLoader,
+						useFactory: HttpLoaderFactory,
+						deps: [HttpClient]
+					},
+					isolate: false
+				}),
+				TranslateModule.forChild(),
+				HttpClientTestingModule,
+				RouterTestingModule
 			],
 			providers: [TranslateService, {
 				provide: SmartAssistService,
