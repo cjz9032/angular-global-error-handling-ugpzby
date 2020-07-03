@@ -50,7 +50,7 @@ export class LenovoSupportService {
 		const urlParameters = new HttpParams()
 			.set('SerialNumber', machineSerialNumber);
 
-		let url = new URL(LenovoSupportService.ContactRequestPath, LenovoSupportService.LenovoSupportBaseUrl);
+		let url = new URL(LenovoSupportService.ContactUsPath, LenovoSupportService.LenovoSupportBaseUrl);
 		url.search = urlParameters.toString();
 
 		return url.toString();
