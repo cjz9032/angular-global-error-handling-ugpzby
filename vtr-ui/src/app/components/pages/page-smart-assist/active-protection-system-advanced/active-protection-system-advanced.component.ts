@@ -1,17 +1,13 @@
 import {
 	Component,
-	OnInit,
-	Input
+
+	Input, OnInit
 } from '@angular/core';
-import {
-	DropDownInterval
-} from '../../../../data-models/common/drop-down-interval.model';
-import {
-	SmartAssistService
-} from 'src/app/services/smart-assist/smart-assist.service';
 import { TranslateService } from '@ngx-translate/core';
-import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
 import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
+import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
+import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
+import { DropDownInterval } from '../../../../data-models/common/drop-down-interval.model';
 
 @Component({
 	selector: 'vtr-active-protection-system-advanced',
@@ -27,7 +23,7 @@ export class ActiveProtectionSystemAdvancedComponent implements OnInit {
 	touchStatus: boolean;
 	pSensorStatus: boolean;
 	penDelay: number;
-	public metricsParent  = CommonMetricsModel.ParentDeviceSettings;
+	public metricsParent = CommonMetricsModel.ParentDeviceSettings;
 
 	public intervals: DropDownInterval[];
 	constructor(

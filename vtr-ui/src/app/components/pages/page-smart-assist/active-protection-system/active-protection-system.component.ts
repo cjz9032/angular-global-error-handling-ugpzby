@@ -2,17 +2,13 @@ import {
 	Component,
 	OnInit
 } from '@angular/core';
-
-import {
-	DropDownInterval
-} from '../../../../data-models/common/drop-down-interval.model';
-
-import {
-	SmartAssistService
-} from 'src/app/services/smart-assist/smart-assist.service';
 import { TranslateService } from '@ngx-translate/core';
-import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
 import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
+import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
+import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
+import { DropDownInterval } from '../../../../data-models/common/drop-down-interval.model';
+
+
 
 
 @Component({
@@ -38,7 +34,7 @@ export class ActiveProtectionSystemComponent implements OnInit {
 	advanceSettings = 'activeProtectionSystem_advanced_advanced_settings';
 	advanceSettingsCaption = 'activeProtectionSystem-advanced-settings-desc';
 	timeOut = 100;
-	public metricsParent  = CommonMetricsModel.ParentDeviceSettings;
+	public metricsParent = CommonMetricsModel.ParentDeviceSettings;
 	// public taskBarDimmerValue: number;
 
 	constructor(
@@ -211,7 +207,7 @@ export class ActiveProtectionSystemComponent implements OnInit {
 		this.smartAssist
 			.setAutoDisableSetting(event)
 			.then(res => { });
-			this.commonMetricsService.sendMetrics(event, 'cb.aps-auto-disable', CommonMetricsModel.ParentDeviceSettings);
+		this.commonMetricsService.sendMetrics(event, 'cb.aps-auto-disable', CommonMetricsModel.ParentDeviceSettings);
 	}
 
 	setSnoozeSetting(event) {
