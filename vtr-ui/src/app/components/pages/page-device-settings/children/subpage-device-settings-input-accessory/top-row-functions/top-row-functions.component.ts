@@ -22,10 +22,10 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 	public showAdvancedSection = false;
 	public topRowFunInterval: any;
 	public isCacheFound = false;
-	public functionLockUIModel: Array<UiCircleRadioWithCheckBoxListModel> = [];
+	public topRowFunctionUIModel: Array<UiCircleRadioWithCheckBoxListModel> = [];
 	public readonly TRUE = 'true';
 	public readonly FALSE = 'false';
-	public topRowFunctionKeysUIModel: Array<UiRoundedRectangleRadioModel> = [];
+	public functionKeyTypeUIModel: Array<UiRoundedRectangleRadioModel> = [];
 
 	private readonly functionKeyId = 'thinkpad-function-key-radio-button';
 	private readonly specialKeyId = 'thinkpad-special-key-radio-button';
@@ -96,7 +96,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 		const value = $event.value;
 		const { customeEvent } = $event;
 		if (customeEvent === AppEvent.LEFT || customeEvent === AppEvent.RIGHT) {
-			this.onChangeKeyType(value);
+			this.onFunctionKeyTypeChange(value);
 		}
 	}
 	public getAllStatuses() {
@@ -146,7 +146,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 		}
 	}
 
-	public onChangeKeyType($event: UiRoundedRectangleRadioModel) {
+	public onFunctionKeyTypeChange($event: UiRoundedRectangleRadioModel) {
 		const value = $event.value as boolean;
 		this.topRowKeyObj.stickyFunStatus = value;
 		this.keyboardService.setFnStickKeyStatus(value).then(res => {
@@ -156,7 +156,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 			}
 			// if sticky key selected then remove checked icon from top row
 			else if ($event.componentId.toLowerCase() === this.STICKY_KEY.toLowerCase()) {
-				this.functionLockUIModel.forEach((model) => {
+				this.topRowFunctionUIModel.forEach((model) => {
 					model.isChecked = false;
 				});
 			}
@@ -172,11 +172,11 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 	}
 
 	updateFunctionLockUIModel() {
-		this.functionLockUIModel = [];
+		this.topRowFunctionUIModel = [];
 
 		const { primaryFunStatus, fnLockStatus } = this.topRowKeyObj;
 
-		this.functionLockUIModel.push({
+		this.topRowFunctionUIModel.push({
 			componentId: this.specialKeyId,
 			label: `device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.sFunKey`,
 			value: 'special-key',
@@ -188,7 +188,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 			processLabel: false,
 			metricsItem: 'radio.top-row-fn.special-function'
 		});
-		this.functionLockUIModel.push({
+		this.topRowFunctionUIModel.push({
 			componentId: this.functionKeyId,
 			label: `device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.fnKey`,
 			value: 'function-key',
@@ -202,7 +202,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 		});
 	}
 
-	onFunctionLockRadioChange($event: UiCircleRadioWithCheckBoxListModel) {
+	onTopRowFunctionRadioChange($event: UiCircleRadioWithCheckBoxListModel) {
 		if ($event) {
 			const componentId = $event.componentId.toLowerCase();
 			if (componentId === this.specialKeyId) {
@@ -213,10 +213,9 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 		}
 	}
 
-
 	private setUpTopRowFunctionsKeysUIModel() {
 		const stickyKeyEnabled = this.topRowKeyObj.stickyFunStatus;
-		this.topRowFunctionKeysUIModel = [{
+		this.functionKeyTypeUIModel = [{
 			componentId: this.NORMAL_KEY,
 			label: 'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.nMehod',
 			value: false,
@@ -236,7 +235,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 
 	private updateTopRowFunctionsKeysUIModel() {
 		const stickyKeyEnabled = this.topRowKeyObj.stickyFunStatus;
-		this.topRowFunctionKeysUIModel.forEach((model) => {
+		this.functionKeyTypeUIModel.forEach((model) => {
 			switch (model.componentId) {
 				case 'nMehod_show':
 					model.isChecked = !stickyKeyEnabled;

@@ -29,8 +29,8 @@
 							<vtr-ui-circle-radio-with-checkbox-list [groupName]="'top-row-function-radio-group'"
 								[sendMetrics]=true
 								[isDisabled]="topRowKeyObj.stickyFunStatus"
-								(optionChange)="onFunctionLockRadioChange($event)"
-								[radioDetails]="functionLockUIModel">
+								(optionChange)="onTopRowFunctionRadioChange($event)"
+								[radioDetails]="topRowFunctionUIModel">
 							</vtr-ui-circle-radio-with-checkbox-list>
 						</div>
 						<p class="text mt-4"
@@ -111,8 +111,8 @@
 					<div class="pl-2 pr-0 mt-5 methods-block">
 						<vtr-ui-rounded-rectangle-custom-radio-list [groupName]="'top-row-keys-methods-radio-group'"
 							[sendMetrics]=true
-							[radioDetails]="topRowFunctionKeysUIModel"
-							(selectionChange)="onChangeKeyType($event)">
+							[radioDetails]="functionKeyTypeUIModel"
+							(selectionChange)="onFunctionKeyTypeChange($event)">
 						</vtr-ui-rounded-rectangle-custom-radio-list>
 
 						<div class="caption mt-4 pl-0"
