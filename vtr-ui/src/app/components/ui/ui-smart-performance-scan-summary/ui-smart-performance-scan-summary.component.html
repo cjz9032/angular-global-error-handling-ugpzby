@@ -513,7 +513,7 @@
 																							*ngIf="item.type.toUpperCase() == 'SS'">({{'smartPerformance.auto' |translate }})</span>
 																					</div>
 																					<div class="col-2 fixes" title="{{item.fixcount === 0 ? item.fixcount : (item.fixcount | number:'2.0')}} {{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' | translate}}">
-																						{{item.fixcount === 0 ? item.fixcount : (item.fixcount | number:'2.0')}}
+																						{{item.fixcount === 0 ? item.fixcount : (item.fixcount | number)}}
 																						{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' | translate}}
 																					</div>
 																					<div class="col-2"
