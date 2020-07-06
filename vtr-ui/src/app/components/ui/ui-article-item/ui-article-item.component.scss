@@ -36,7 +36,11 @@
 		position: relative;
 		cursor: pointer;
 		&:hover {
-			text-decoration: none;
+			.content {
+				.title {
+					text-decoration: underline;
+				}
+			}
 		}
 	}
 
@@ -63,21 +67,6 @@
 			cursor: pointer;
 			font-family: $font_family_semilight;
 
-			&:hover {
-				text-decoration: underline;
-			}
-
-			// @media #{$mediaquery_10} {
-			// 	font-size: 2rem;
-			// }
-
-			// @media #{$mediaquery_X6} {
-			// 	font-size: 1.5rem;
-			// }
-
-			// @media #{$mediaquery_X3} {
-			// 	font-size: 1.4rem;
-			// }
 		}
 
 		.logo-text {
@@ -109,12 +98,6 @@
 			fa-icon {
 				color: $main;
 				margin-left: 1rem;
-			}
-
-			&:hover {
-				.link-label {
-					border-bottom: none;
-				}
 			}
 		}
 	}
