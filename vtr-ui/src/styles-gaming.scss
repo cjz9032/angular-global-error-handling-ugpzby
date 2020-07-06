@@ -837,6 +837,9 @@
 				border: none;
 				.text-dark {
 					color: $white100 !important;
+				}
+				.btn-link{
+					color: $blueFill;
 				}				
 			}
 			&.subpage-device-settings-power {
@@ -999,6 +1002,9 @@
 									p{
 										color:$gaming_lightest !important;
 										font-size:$fontsize_xs!important;
+									}
+									.btn-link{
+										color:$blueFill;
 									}
 									#camera-privacy-mode-note,
 									#device-settings-camera-privacy-note {

@@ -109,10 +109,10 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 				autoValue: false,
 				supported: true,
 				min: 0,
-				max: 255,
+				max: 0,
 				step: 1,
-				default: 128,
-				value: 136
+				default: 0,
+				value: 0
 			},
 			contrast:
 			{
@@ -120,21 +120,21 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 				autoValue: false,
 				supported: true,
 				min: 0,
-				max: 255,
+				max: 0,
 				step: 1,
-				default: 32,
-				value: 179
+				default: 0,
+				value: 0
 			},
 			exposure:
 			{
 				autoModeSupported: true,
 				autoValue: true,
 				supported: true,
-				min: -11,
-				max: -3,
+				min: 0,
+				max: 0,
 				step: 1,
-				default: -6,
-				value: -5
+				default: 0,
+				value: 0
 			},
 			focus:
 			{
