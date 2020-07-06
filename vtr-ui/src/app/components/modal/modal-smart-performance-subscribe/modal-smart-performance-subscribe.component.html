@@ -71,9 +71,15 @@
     </div> -->
     <div class="container-fluid">
         <div class="row">
-                <div class="payment-options">
+            <div class="col-12">
+                <h3>{{'smartPerformance.scanningPage.confirmationNote' |translate }}</h3>
+            </div>
+            <div class="col-12 text-center my-3">
+                <button class="btn btn-primary" (click)="confirmProcess()">{{'smartPerformance.scanningPage.confirmationBtn' |translate }}</button>              
+            </div>
+                <!-- <div class="payment-options">
                         <iframe  [src]="paymenturl | sanitize : 'resourceUrl'" sandbox="allow-forms allow-scripts allow-same-origin" frameborder="0" ></iframe>
-                </div>
+                </div> -->
         </div>
         </div>
 </div>

@@ -439,6 +439,13 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			centered: true,
 			windowClass: 'subscribe-modal'
 		});
+		const currentTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
+		const intervalTime = moment(currentTime).add(PaymentPage.ORDERWAITINGTIME, 'm').format('YYYY-MM-DD HH:mm:ss');
+		const modalStatus = {
+			initiatedTime: intervalTime,
+			isOpened: false
+		}
+		this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, modalStatus);
 		// const scanEnabled = this.commonService.getLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled);
 		// this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
 		// this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, 'Once a week')
