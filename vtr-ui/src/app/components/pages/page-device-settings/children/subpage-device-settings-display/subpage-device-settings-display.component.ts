@@ -328,12 +328,12 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 			this.cameraPrivacyModeStatus.available = privacy.available;
 			if (this.isCameraPreviewHidden && !this.cameraPrivacyModeStatus.available) {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'camera');
-				this.isAllInOneMachineFlag = false;
+				// this.isAllInOneMachineFlag = false;
 			} else {
 				if (!this.commonService.isPresent(this.headerMenuItems, 'camera')) {
 					this.headerMenuItems.push(this.tempHeaderMenuItems[1]);
 				}
-				this.isAllInOneMachineFlag = true;
+				// this.isAllInOneMachineFlag = true;
 			}
 			if (privacy.status !== undefined) {
 				this.cameraPrivacyModeStatus.status = privacy.status;
@@ -1037,12 +1037,12 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 					this.cameraPrivacyModeStatus = { ...this.cameraPrivacyModeStatus, ...featureStatus };
 					if (this.receivedBiosVersion && this.isCameraPreviewHidden && !this.cameraPrivacyModeStatus.available) {
 						this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'camera');
-						this.isAllInOneMachineFlag = false;
+						// this.isAllInOneMachineFlag = false;
 					} else {
 						if (!this.commonService.isPresent(this.headerMenuItems, 'camera')) {
 							this.headerMenuItems.push(this.tempHeaderMenuItems[1]);
 						}
-						this.isAllInOneMachineFlag = true;
+						// this.isAllInOneMachineFlag = true;
 					}
 					this.cameraPrivacyModeStatus.isLoading = false;
 					this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraPrivacyModeStatus);
@@ -1072,7 +1072,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		this.cameraPrivacyModeStatus.isLoading = false;
 		this.cameraPrivacyModeStatus = { ...this.cameraPrivacyModeStatus, ...value };
 		if (this.receivedBiosVersion && this.isCameraPreviewHidden && !this.cameraPrivacyModeStatus.available) {
-			this.isAllInOneMachineFlag = false;
+			// this.isAllInOneMachineFlag = false;
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'camera');
 		} else {
 			if (this.cameraAccessTemp === true && this.cameraPrivacyModeStatus.permission === false) {
