@@ -54,20 +54,26 @@ ui-popover {
 			padding: 4rem 4rem;
 			.btn-close {
 				position: absolute;
-				top: .5rem;
-				right: .5rem;
-				padding: .9rem;
+				top: 0px;
+				right: 0px;
+				padding: 0.6rem 1.2rem;
 				width: 4rem;
 				height: 4rem;
-				font-size: 1.2rem;
-				color: $blueFill;
-				&:hover {
-					color: $blueHover
-				}
 			}
 		}
 		.content-body {
 			min-height: 10rem;
+		}
+		fa-icon {
+			font-size: 3rem;
+			color: $blueFill;
+			display: block !important;
+			@media #{$black-on-white} {
+				color: $gaming_darkest;
+			}
+			@media #{$white-on-black} {
+				color: $gaming_darkest;
+			}
 		}
 
 		h1 {
@@ -93,6 +99,9 @@ ui-popover {
 			padding: 1rem 3rem;
 			margin-top: 1rem;
 			font-weight: $weight_bold;
+			&:hover {
+				background: $blueHover;
+			}
 		}
 
 		.cancel-link {

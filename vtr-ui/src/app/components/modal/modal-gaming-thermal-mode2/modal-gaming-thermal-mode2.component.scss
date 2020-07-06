@@ -110,8 +110,8 @@ button:focus{
 						height: 3rem;
 						.oc-checkbox {
 							margin-right: 1rem;
-							width: 1.8rem;
-							height: 1.8rem;
+							width: 2rem;
+							height: 2rem;
 							border: .1rem solid $white20;
 							border-radius: .2rem;
 							background-color: $white5;
@@ -125,8 +125,8 @@ button:focus{
 							&.checked {
 								.checkedIcon {
 									position: absolute;
-									top: .2rem;
-									left: .2rem;
+									top: .3rem;
+									left: .3rem;
 									width: 1.4rem;
 									height: 1.4rem;
 									border: none;
@@ -163,13 +163,18 @@ button:focus{
 						&::ng-deep .oc-advance-button {
 							cursor: pointer;
 							font-size: 1.4rem;
-							line-height: 1.6rem;
+							line-height: 1.8rem;
 							font-weight: bold;
 							color: $blueFill;
 							border-bottom: .2rem solid $blueFill;
 							display: inline-block;
+							&:hover {
+								color: $blueHover;
+								border-color: $blueHover;
+							}
 							@media #{$high-contrast} {
 								color: highlight;
+								border-color: highlight;
 							}
 						}
 						&::ng-deep .oc-driver-link {
