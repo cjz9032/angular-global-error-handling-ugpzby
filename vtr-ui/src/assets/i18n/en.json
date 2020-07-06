@@ -2651,7 +2651,9 @@
 						"iteme6": "verify in cloud remediation engine"
 					}
 				}
-			}
+			},
+			"confirmationNote" : "Are you sure, do you want to continue subscription process?",
+			"confirmationBtn": "Confirm"
 		},
 		"scanCompletePage": {
 			"title": "System scan is complete",

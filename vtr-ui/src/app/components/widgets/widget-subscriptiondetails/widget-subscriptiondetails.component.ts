@@ -40,6 +40,8 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	intervalTime: string;
 	spFrstRunStatus: boolean;
 	public isLoading = false
+	public spPaymentPageenum: any;
+	public paymenturl: string;
 
 	constructor(
 		private translate: TranslateService,
@@ -49,6 +51,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		private smartPerformanceService: SmartPerformanceService,
 		private supportService: SupportService,
 		private logger: LoggerService) {
+			this.spPaymentPageenum = PaymentPage;
 
 	}
 	public localSubscriptionDetails = {
@@ -57,7 +60,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		endDate: formatDate(this.spEnum.SCHEDULESCANENDDATE, 'yyyy/MM/dd', 'en')
 	}
 	ngOnInit() {
-		this.spFrstRunStatus = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun);		
+		this.spFrstRunStatus = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun);
 		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
 		this.decryptPNListData();
 		if (this.spFrstRunStatus) {
@@ -93,11 +96,11 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		}
 		const currentTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
 		this.modalStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus);
-		this.intervalTime = this.modalStatus.initiatedTime || currentTime;
+		this.intervalTime = this.modalStatus.initiatedTime? this.modalStatus.initiatedTime : currentTime;
 		if (this.modalStatus && this.modalStatus.isOpened) {
-			this.getSubscriptionDetails();
 			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.processStatus';
 			this.strStatus = 'PROCESSING';
+			this.getSubscriptionDetails();
 		}
 
 	}
@@ -147,13 +150,26 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, this.modalStatus);
 		const modalCancel = this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
 			backdrop: 'static',
-			size: 'lg',
+			size: 'sm',
 			centered: true,
 			windowClass: 'subscribe-modal',
 
 		});
 		this.spFrstRunStatus = false;
 		modalCancel.componentInstance.cancelPaymentRequest.subscribe(() => {
+			// this.supportService.getMachineInfo().then(async (machineInfo) => {
+			// 	this.systemSerialNumber = machineInfo.serialnumber;
+			// 	this.paymenturl =
+			// 	environment.spPaymentProcessApiRoot +
+			// 	this.spPaymentPageenum.SERIALQUERYPARAMETER +
+			// 	this.systemSerialNumber +
+			// 	this.spPaymentPageenum.SMARTPERFORMANCE +
+			// 	this.spPaymentPageenum.TRUE +
+			// 	this.spPaymentPageenum.SOURCEQUERYPARAMETER +
+			// 	this.spPaymentPageenum.APPLICATIONNAME;
+			// 	window.open(this.paymenturl);
+
+			// });
 			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.processStatus';
 			this.strStatus = 'PROCESSING';
 			this.spFrstRunStatus = false;
@@ -164,11 +180,11 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	async getSubscriptionDetails() {
 		let machineInfo;
 		machineInfo = await this.supportService.getMachineInfo()
-		this.systemSerialNumber = machineInfo.serialnumber;
+		// this.systemSerialNumber = machineInfo.serialnumber;
 		this.isLoading = true;
 		this.modalStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus);
 		let subscriptionData = []
-		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails(this.systemSerialNumber);
+		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails(machineInfo.serialnumber);
 		this.logger.info('Subscription Details', subscriptionDetails);
 		if (subscriptionDetails && subscriptionDetails.data) {
 			subscriptionData = subscriptionDetails.data;
