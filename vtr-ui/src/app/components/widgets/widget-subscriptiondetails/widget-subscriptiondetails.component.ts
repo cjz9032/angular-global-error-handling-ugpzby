@@ -42,6 +42,8 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	public isLoading = false
 	public spPaymentPageenum: any;
 	public paymenturl: string;
+	public isFirstLoad = false;
+	public isRefreshEnabled = false;
 
 	constructor(
 		private translate: TranslateService,
@@ -60,6 +62,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		endDate: formatDate(this.spEnum.SCHEDULESCANENDDATE, 'yyyy/MM/dd', 'en')
 	}
 	ngOnInit() {
+		this.isFirstLoad = true;
 		this.spFrstRunStatus = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun);
 		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
 		this.decryptPNListData();
@@ -93,15 +96,15 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 			this.subscriptionDetails.endDate = '---';
 			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.inactiveStatus';
 			this.strStatus = 'INACTIVE';
+			this.isLoading = false
 		}
 		const currentTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
 		this.modalStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus);
 		this.intervalTime = this.modalStatus.initiatedTime? this.modalStatus.initiatedTime : currentTime;
-		if (this.modalStatus && this.modalStatus.isOpened) {
+
 			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.processStatus';
 			this.strStatus = 'PROCESSING';
 			this.getSubscriptionDetails();
-		}
 
 	}
 
@@ -141,6 +144,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 
 	}
 	openSubscribeModal() {
+		this.isFirstLoad = false;
 		const currentTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
 		this.intervalTime = moment(currentTime).add(PaymentPage.ORDERWAITINGTIME, 'm').format('YYYY-MM-DD HH:mm:ss');
 		this.modalStatus = {
@@ -215,7 +219,15 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.subscriptionDetails);
 		} else {
-			this.setTimeOutCallForSubDetails();
+			if (!this.isFirstLoad) {
+				this.setTimeOutCallForSubDetails();
+			} else {
+				this.subscriptionDetails.startDate = '---';
+				this.subscriptionDetails.endDate = '---';
+				this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.inactiveStatus';
+				this.strStatus = 'INACTIVE';
+				this.isLoading = false;
+			}
 		}
 	}
 	setTimeOutCallForSubDetails() {
@@ -236,6 +248,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 					this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.inactiveStatus';
 					this.strStatus = 'INACTIVE';
 					this.isLoading = false;
+					this.isRefreshEnabled = true;
 					this.modalStatus.isOpened = false;
 					this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, this.modalStatus);
 				}
