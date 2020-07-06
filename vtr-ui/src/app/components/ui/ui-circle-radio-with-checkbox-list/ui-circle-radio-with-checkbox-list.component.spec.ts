@@ -37,7 +37,7 @@ let radioDetailsModel = [
 	}];
 const testValue = 'test';
 
-fdescribe('UiCircleRadioWithCheckBoxListComponent', () => {
+describe('UiCircleRadioWithCheckBoxListComponent', () => {
 	let component: UiCircleRadioWithCheckBoxListComponent;
 	let fixture: ComponentFixture<UiCircleRadioWithCheckBoxListComponent>;
 	let metricService: MetricService;
