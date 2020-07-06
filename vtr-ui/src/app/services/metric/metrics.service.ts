@@ -81,8 +81,8 @@ export class MetricService {
 			ludpUrl: 'https://chifsr.lenovomm.com/PCJson'
 		});
 
-		this.metricsClient.sendAsyncOrignally = this.metricsClient.sendAsync;
-		this.metricsClient.sendAsync = async (data) => {
+		this.metricsClient.sendAsyncExOrignally = this.metricsClient.sendAsyncEx;
+		this.metricsClient.sendAsyncEx = async (data, extendSetting) => {
 			const win: any = window;
 
 			try {
@@ -105,7 +105,7 @@ export class MetricService {
 
 				MetricHelper.setupMetricDbg(this.hypothesisService, this.metricsClient, data);
 
-				return await this.metricsClient.sendAsyncOrignally(data);
+				return await this.metricsClient.sendAsyncExOrignally(data, extendSetting);
 			} catch (ex) {
 				return Promise.resolve({
 					status: 0,
