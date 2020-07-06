@@ -10,7 +10,7 @@ import { MetricService } from 'src/app/services/metric/metrics.service';
 import { UiRoundedRectangleCustomRadioListComponent } from './ui-rounded-rectangle-custom-radio-list.component';
 
 
-fdescribe('UiRoundedRectangleCustomRadioListComponent', () => {
+describe('UiRoundedRectangleCustomRadioListComponent', () => {
 	let component: UiRoundedRectangleCustomRadioListComponent;
 	let fixture: ComponentFixture<UiRoundedRectangleCustomRadioListComponent>;
 
