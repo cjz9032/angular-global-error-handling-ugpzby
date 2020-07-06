@@ -443,28 +443,34 @@
 						}
 						p {
 							font-size: 1.2rem;
-							font-weight: $weight_medium;
-							margin-top: 0.6rem;
-							color: #272A3B;	
-							overflow: hidden;
-							text-overflow: ellipsis;					
-							@media #{$breakpoint_xl} {
+							line-height: 1.2rem;
+							margin-top: 0.4rem;
+							@media #{$breakpoint_xl}{
 								font-size: 1rem;
-								padding: 0.2rem;
-							}
-							@media #{$breakpoint_md} {
-								font-size: 1rem;
-								max-width: 8.1rem;								
-								padding: 0.2rem;
-								font-weight:$weight_light;
-							}
-							@media #{$breakpoint_sm} {
-								font-size: 1rem;
-								max-width: 8.1rem;
+								line-height: 1.2rem;
+								margin-bottom: 0;
+								margin-top: 0;
+								max-width: 5.5rem;	
 								overflow: hidden;
 								text-overflow: ellipsis;
-								min-height: 1.2rem;
-								padding-top: 0.2rem;
+								white-space: nowrap;		
+							}
+							@media #{$breakpoint_md}{
+								font-size: 1rem;
+								line-height: 1.2rem;
+								margin-bottom: 0;
+								margin-top: 0;
+								max-width: 5.5rem;
+							}
+							@media #{$breakpoint_sm}{
+								font-size: 1rem;
+								line-height: 1.2rem;
+								margin-bottom: 0;
+								margin-top: 0;
+								max-width: 5.5rem;
+								overflow: hidden;
+								text-overflow: ellipsis;
+								white-space: nowrap;				
 								font-weight:$weight_light;
 							}
 						}
