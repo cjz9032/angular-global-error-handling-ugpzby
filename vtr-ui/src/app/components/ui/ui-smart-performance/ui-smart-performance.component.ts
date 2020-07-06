@@ -15,6 +15,7 @@ import { ModalSmartPerformanceFeedbackComponent } from '../../modal/modal-smart-
 import { MetricsTranslateService } from 'src/app/services/mertics-traslate/metrics-translate.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { enumSmartPerformance } from 'src/app/enums/smart-performance.enum';
+import { SupportService } from 'src/app/services/support/support.service';
 @Component({
 	selector: 'vtr-ui-smart-performance',
 	templateUrl: './ui-smart-performance.component.html',
@@ -65,6 +66,7 @@ export class UiSmartPerformanceComponent implements OnInit, OnChanges {
 		public shellServices: VantageShellService,
 		public metricsTranslateService: MetricsTranslateService,
 		public metricsService: MetricService,
+		private supportService: SupportService,
 
 	) {
 		this.translateStrings();
@@ -82,7 +84,6 @@ export class UiSmartPerformanceComponent implements OnInit, OnChanges {
 	ngOnInit() {
 		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
 		if (this.isSubscribed === undefined) {
-
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled, true);
@@ -93,10 +94,9 @@ export class UiSmartPerformanceComponent implements OnInit, OnChanges {
 			// 	//this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, false);
 			// }
 		}
-		if (this.isSubscribed !== undefined && this.isSubscribed === true) {
-			this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCAN);
-		}
-
+		this.getSubscriptionDetails();
+		
+		
 		if (this.smartPerformanceService.isShellAvailable) {
 		this.checkReadiness();
 		}
@@ -454,6 +454,25 @@ export class UiSmartPerformanceComponent implements OnInit, OnChanges {
 		this.isScanning = false;
 		this.isScanningCompleted = false;
 		this.showSubscribersummary = false;
+	}
+	async getSubscriptionDetails() {
+		let machineInfo;
+		machineInfo = await this.supportService.getMachineInfo()
+		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails( machineInfo.serialnumber);
+		this.logger.info('ui-smart-performance.component.getSubscriptionDetails', subscriptionDetails);
+		if (subscriptionDetails && subscriptionDetails.data) {
+			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
+		} else {
+			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
+		}
+		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
+		if (this.isSubscribed !== undefined && this.isSubscribed === true) {
+			this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCAN);
+		}
+		else
+		{
+			this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCANANDFIX);
+		}
 	}
 
 }
