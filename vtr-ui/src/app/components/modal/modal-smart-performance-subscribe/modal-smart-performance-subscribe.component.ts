@@ -63,11 +63,23 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 
 		});
 	}
-	closeModal() {
+	confirmProcess() {
+		window.open(this.paymenturl);
 		this.cancelPaymentRequest.emit();
 		this.activeModal.close('close');
+		const modalStatus = {
+			isOpened: true
+		}
+		this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, modalStatus);
 	}
-	
+	closeModal(){
+		const modalStatus = {
+			isOpened: false
+		}
+		this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, modalStatus);
+		this.activeModal.close('close');
+	}
+
 
 	@HostListener('window: focus')
 	onFocus(): void {

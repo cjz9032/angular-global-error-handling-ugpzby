@@ -2651,7 +2651,10 @@
 						"iteme6": "verify in cloud remediation engine"
 					}
 				}
-			}
+			},
+			"confirmationTitle": "Lenovo Payment Process",
+			"confirmationNote" : "You will be directed to Lenovo payment site in a browser. Once payment done, please press Refresh button on this page for status update. ",
+			"confirmationBtn": "Proceed"
 		},
 		"scanCompletePage": {
 			"title": "System scan is complete",

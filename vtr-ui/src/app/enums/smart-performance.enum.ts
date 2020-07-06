@@ -43,7 +43,7 @@ export enum PaymentPage{
 	SOURCEQUERYPARAMETER='&source=',
 	SLASH='/',
 	TRUE='true',
-	ORDERWAITINGTIME = 2, // MINUTES,
+	ORDERWAITINGTIME = 15, // MINUTES,
 }
 
 export const actualScanFrequency: any = [
