@@ -549,11 +549,11 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			if (now < fiveMinutesFromRecentScan) {
                 if (response) {
 					this.isLoading = false;
-					this.historyRes = {
-						tuneCount: response.Tune,
-						boostCount: response.Boost,
-						secure: response.Secure
-					}
+					// this.historyRes = {
+					// 	tuneCount: response.Tune,
+					// 	boostCount: response.Boost,
+					// 	secure: response.Secure
+					// }
 					this.rating = response.rating;
 					this.issueCount = response.Tune + response.Boost + response.Secure
 					this.leftAnimator = (response.rating * 10 - 0).toString() + '%';
