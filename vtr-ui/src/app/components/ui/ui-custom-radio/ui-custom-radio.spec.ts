@@ -7,7 +7,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { DevService } from 'src/app/services/dev/dev.service';
 
-describe('UICustomRadioBase', () => {
+xdescribe('UICustomRadioBase', () => {
 	let component: UICustomRadio;
 	let fixture: ComponentFixture<UICustomRadio>;
 
