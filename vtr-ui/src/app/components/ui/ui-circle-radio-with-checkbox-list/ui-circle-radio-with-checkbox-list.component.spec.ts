@@ -1,15 +1,14 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { UiCircleRadioWithCheckBoxListComponent } from './ui-circle-radio-with-checkbox-list.component';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { LoggerService } from 'src/app/services/logger/logger.service';
-import { MetricService } from 'src/app/services/metric/metrics.service';
-import { DevService } from 'src/app/services/dev/dev.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { CapitalizeFirstPipe } from 'src/app/pipe/capitalize-pipe/capitalize-first.pipe';
-import { KeyCode } from 'src/app/enums/key-code.enum';
+import { DevService } from 'src/app/services/dev/dev.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { MetricService } from 'src/app/services/metric/metrics.service';
+import { UiCircleRadioWithCheckBoxListComponent } from './ui-circle-radio-with-checkbox-list.component';
+
 let radioDetailsModel = [
 	{
 		componentId: 'thinkpad-special-key-radio-button',
