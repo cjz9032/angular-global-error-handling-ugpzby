@@ -36,7 +36,7 @@ export class UiCheckboxComponent implements OnInit {
 		this.checked = value;
 		this.toggle.emit(value);
 		if (this.isMetricsEnabled) {
-			const itemName = this.metricsItem || `${this.componentId}`;
+			const itemName = this.metricsItem || `${this.componentId}_checkbox`;
 			this.metrics.sendMetrics(value, itemName, this.metricsParent);
 		}
 	}
