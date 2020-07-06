@@ -700,14 +700,7 @@
 									</div>
 									<div class="row mb-40"
 										*ngIf="isSubscribed">
-										<div class="col col-12">
-											<vtr-widget-offline-info  
-											[isButtonVisible]="false" 
-											[isSubtitleVisible]="false"
-											[title]="'dashboard.offlineInfo.title' | translate"
-											[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
-											[buttonText]="'dashboard.offlineInfo.buttonText' | translate">
-										</vtr-widget-offline-info>
+										<div class="col col-12">										
 											<vtr-widget-subscriptiondetails [isOnline] = "isOnline"></vtr-widget-subscriptiondetails>
 										</div>
 									</div>
