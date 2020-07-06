@@ -509,7 +509,7 @@ vtr-ui-smart-performance-scan-summary {
 							max-width:60%;
 							width:60%;	
 							text-align:left;
-							word-break:break-all;		
+							//word-break:break-all;		
                             h3, h2{
 								text-align: left;
 								font-size: $fontsize_sm;
@@ -645,7 +645,7 @@ vtr-ui-smart-performance-scan-summary {
 							right: 5rem;
 							padding-right:2rem;
 							letter-spacing: 0;							
-							word-break:break-all;
+							//word-break:break-all;
 							@media #{$breakpoint_lg}{
 								right: 1.5rem;					
 								font-size: $fontsize_xs;
