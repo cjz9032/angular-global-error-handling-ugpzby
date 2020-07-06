@@ -503,7 +503,7 @@ export class ConfigService {
 
 		let smartPerformanceResult = false;
 		smartPerformanceResult = await this.showSmartPerformance();
-		this.updateAvailability(menu, 'smart-performance', true);
+		this.updateAvailability(menu, 'smart-performance', smartPerformanceResult);
 
 		this.updateBetaService(menu);
 	}
