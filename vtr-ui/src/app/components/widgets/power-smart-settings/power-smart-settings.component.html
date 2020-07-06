@@ -60,11 +60,12 @@
 											<vtr-ui-checkbox [componentId]="'IntelligentCooling-5.0-AutoTransition'"
 												[isMetricsEnabled]=true
 												[metricsParent]='metricsParent'
+												[metricsItem]="'cb.ic5-auto-transition'"
 												[value]="isAutoTransitionEnabled"
 												[checked]="isAutoTransitionEnabled"
 												[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.autoTransition.description' | translate"
 												(toggle)="onAutoTransitionToggle($event)"
-												id="IntelligentCooling-5.0-AutoTransition">
+												id="IntelligentCooling-5.0-AutoTransition-checkBox">
 											</vtr-ui-checkbox>
 											<div class="transitionReadMore mt-3 row">
 												<div class="read-more-button mr-2"
