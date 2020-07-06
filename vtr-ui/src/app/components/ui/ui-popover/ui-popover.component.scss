@@ -49,16 +49,11 @@ ui-popover {
 			padding: 4rem 4rem;
 			.btn-close {
 				position: absolute;
-				top: .5rem;
-				right: .5rem;
-				padding: .9rem;
+				top: 0px;
+				right: 0px;
+				padding: 0.6rem 1.2rem;
 				width: 4rem;
 				height: 4rem;
-				font-size: 1.2rem;
-				color: $blueFill;
-				&:hover {
-					color: $blueHover
-				}
 			}
 		}
 		.content-body {
