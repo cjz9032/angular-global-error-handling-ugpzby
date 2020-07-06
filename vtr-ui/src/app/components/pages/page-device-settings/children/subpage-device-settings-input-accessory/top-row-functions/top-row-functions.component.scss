@@ -44,14 +44,24 @@
         cursor: pointer;
 		padding-top: 0.3rem;
 		border: 0.1rem solid transparent;
-		&:focus {
-			@include outline-border-blue;
-		}
 		@media #{$white-on-black} {
+			@include black-border;
 			@include hyperlink-yellow-black;
 		}
 		@media #{$black-on-white} {
+			@include white-border;
 			@include hyperlink-blue-white;
+		}
+		&:focus {
+			@include outline-border-blue;
+			@media #{$white-on-black} {
+				@include hyperlink-yellow-black;
+				border-color: $high-contrast-black-yellow;
+			}
+			@media #{$black-on-white} {
+				@include hyperlink-blue-white;
+				border-color: $high-contrast-white-blue;
+			}
 		}
     }
     .sectn-padding {
@@ -67,7 +77,7 @@
         font-size: $fontsize_md;
         font-weight: $weight_600;
     }
-   
+
     .autofocus{
         outline: none;
         @media #{$white-on-black} {
