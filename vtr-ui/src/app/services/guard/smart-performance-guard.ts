@@ -23,8 +23,8 @@ export class SmartPerformanceGuard extends BasicGuard {
 		route: ActivatedRouteSnapshot,
 		state: RouterStateSnapshot
 	): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-		const SPDeviceInfo = this.commonService.getLocalStorageValue(LocalStorageKey.SubBrand);
-		if (SPDeviceInfo !== 'thinkpad') {
+		const SPDeviceInfo = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
+		if (SPDeviceInfo == 0) {
 			return true;
 		} else {
 			return this.router.parseUrl('/dashboard');
