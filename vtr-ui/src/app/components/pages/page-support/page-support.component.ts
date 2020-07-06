@@ -115,7 +115,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	};
 
 	// cpt
-	private isCPTEnabled = true;
+	private isCPTEnabled = false;
 	listCpt = {
 		iconPath: 'assets/images/support/svg_icon_cpt.svg',
 		title: 'cpt.title',
@@ -167,7 +167,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		this.fetchCMSContents();
 
 		// cpt
-		this.isCPTEnabled = (typeof environment !== 'undefined' ? environment.isCPTEnabled : true);
+		this.isCPTEnabled = (typeof environment !== 'undefined' && typeof environment.isCPTEnabled !== 'undefined' ? environment.isCPTEnabled : false);
 
 		this.setShowList();
 	}
