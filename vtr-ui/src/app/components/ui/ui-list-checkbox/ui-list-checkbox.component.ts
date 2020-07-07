@@ -44,6 +44,7 @@ export class UiListCheckboxComponent implements OnInit {
 	public notInstalledText = 'systemUpdates.notInstalled';
 	public notAvailableText = 'systemUpdates.notAvailable';
 	private currentToolTip;
+	private currentQuestionMarkID;
 
 	constructor(
 		private commonService: CommonService,
@@ -90,6 +91,7 @@ export class UiListCheckboxComponent implements OnInit {
 	}
 
 	onTooltipClick(update: AvailableUpdateDetail, tooltip) {
+		this.currentQuestionMarkID = document.activeElement.id;
 		if (tooltip) {
 			if (tooltip.isOpen()) {
 				tooltip.close();
@@ -110,7 +112,7 @@ export class UiListCheckboxComponent implements OnInit {
 	}
 
 	CloseToolTip(activeId){
-		if(activeId && activeId.indexOf("su_item_question_mark_") < 0 &&
+		if(activeId &&
 			activeId.indexOf("su-package-readme-") < 0 &&
 			activeId.indexOf("su-ignore-update-") < 0 &&
 			activeId.indexOf("su-unignore-update-") < 0 && this.currentToolTip && this.currentToolTip.isOpen()){
@@ -136,7 +138,7 @@ export class UiListCheckboxComponent implements OnInit {
 			});
 		modalRef.componentInstance.url = this.readMeUrl;
 		modalRef.componentInstance.updateModalMetrics = updateModalMetrics;
-		this.focusOnElement('system-update-back-btn');
+		this.focusOnElement(this.currentQuestionMarkID);
 	}
 
 	public onIgnoreUpdateClick(packageName: string, isIgnored: boolean) {
@@ -153,6 +155,8 @@ export class UiListCheckboxComponent implements OnInit {
 	}
 
 	private focusOnElement(element) {
-		document.getElementById(element).focus();
+		if (element) {
+			document.getElementById(element).focus();
+		}
 	}
 }
