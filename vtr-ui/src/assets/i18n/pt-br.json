@@ -3490,7 +3490,11 @@
                         "iteme6": "verificar no mecanismo de correção na nuvem"
                     }
                 }
-            }
+            },
+            "confirmationTitle": "Lenovo Payment Process",
+            "confirmationNote": "You will be directed to Lenovo Payment Website to finish the payment. Once the payment is done, you can press the \"refresh\" button in \"Subscription Detail\" to get the payment result.",
+            "confirmationBtn": "Proceed",
+            "refreshButton": "Refresh Status"
         },
         "scanCompletePage": {
             "title": "A verificação do sistema está concluída",
