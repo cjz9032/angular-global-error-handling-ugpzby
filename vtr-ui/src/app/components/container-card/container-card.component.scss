@@ -79,14 +79,6 @@
 					z-index: 1;
 					padding: 2rem 2.5rem;
 					height: 100%;
-					@media #{$black-on-white} {
-						border-bottom: 1px solid $dark !important;
-						border-radius: 1rem;
-					}
-					@media #{$white-on-black} {
-						border-bottom: 1px solid $light !important;
-						border-radius: 1rem;
-					}
 
 					.title {
 						color: $light;
@@ -261,14 +253,6 @@
 					z-index: 1;
 					padding: 2.4rem;
 					height: 100%;
-					@media #{$black-on-white} {
-						border-bottom: 1px solid $dark !important;
-						border-radius: 1rem;
-					}
-					@media #{$white-on-black} {
-						border-bottom: 1px solid $light !important;
-						border-radius: 1rem;
-					}
 
 					// @media #{$mediaquery_X1} {
 					// 	padding: 2rem;

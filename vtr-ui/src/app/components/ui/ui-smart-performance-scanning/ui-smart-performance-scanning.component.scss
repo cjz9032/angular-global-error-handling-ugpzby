@@ -219,7 +219,7 @@
 								max-width:60%;
 								width:60%;
 								text-align:left;
-								word-break:break-all;
+								word-wrap: break-word;
                             h3, h2{
 								text-align: left;
 								font-size: $fontsize_sm;
@@ -233,7 +233,7 @@
 									font-size: $fontsize_xs2;
 								}	
 								@media #{$breakpoint_sm}{				
-									font-size:1.1rem;
+									font-size:1.2rem;
 									letter-spacing: -0.02rem;									
 									margin-bottom: 0;
 								}					
@@ -274,7 +274,7 @@
 							right: 1.5rem;
 							top: 40%;
 							letter-spacing: 0;
-							word-break:break-all;						
+							word-wrap: break-word;					
 							
 							@media #{$breakpoint_lg}{
 								right: 1.5rem;					
@@ -292,9 +292,9 @@
 								top: 36%;
 							}
 							@media #{$breakpoint_sm}{
-								top: 32.5%;
+								top: 36.5%;
 								right: 1.5rem;								
-								font-size: 1.1rem;
+								font-size: 1.2rem;
 							}
 							
 						}
@@ -443,7 +443,6 @@
         }
         p {
             font-size: 1.2rem;
-			max-width: 8.1rem;
 			line-height: 1.2rem;
 			margin-top: 0.4rem;
 			@media #{$breakpoint_xl}{
@@ -451,30 +450,28 @@
 				line-height: 1.2rem;
 				margin-bottom: 0;
 				margin-top: 0;
-				white-space: nowrap;
-				max-width: 5.5rem;
+				max-width: 5.5rem;	
 				overflow: hidden;
 				text-overflow: ellipsis;
+				white-space: nowrap;		
 			}
 			@media #{$breakpoint_md}{
 				font-size: 1rem;
 				line-height: 1.2rem;
 				margin-bottom: 0;
 				margin-top: 0;
-				white-space: nowrap;
 				max-width: 5.5rem;
-				overflow: hidden;
-				text-overflow: ellipsis;
 			}
 			@media #{$breakpoint_sm}{
 				font-size: 1rem;
 				line-height: 1.2rem;
 				margin-bottom: 0;
 				margin-top: 0;
-				white-space: nowrap;
 				max-width: 5.5rem;
 				overflow: hidden;
 				text-overflow: ellipsis;
+				white-space: nowrap;				
+				font-weight:$weight_light;
 			}
         }
 	}

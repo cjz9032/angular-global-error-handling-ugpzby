@@ -102,7 +102,7 @@
 
 			<!-- Test List with deails test-->
 			<div class="test-list col" *ngIf="isEnableViewResults || item.details || isRecoverExecute">
-				<vtr-ui-hardware-list 
+				<vtr-ui-hardware-list
 					[items]="item.listTest"
 					[template]="2">
 				</vtr-ui-hardware-list>
@@ -112,7 +112,7 @@
 	</div>
 </div>
 <ng-template #tooltipRefModule>
-	<div [innerHTML]="tooltipText"></div>	
+	<div [innerHTML]="tooltipText"></div>
 	<a [attr.href]="'https://support.lenovo.com/contactus'"
 		class="link-support"
 		target="_blank"

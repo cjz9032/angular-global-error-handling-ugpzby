@@ -4,13 +4,13 @@
 	[shiftLeftUp]="true"
 	[shiftRightUp]="true">
 	<left-content>
-		<div class="row vtr-page-content"
+		<div class="row"
 			*ngIf="!isScanning && !isScanningCompleted">
 			<div class="col vtr-col">
-				<div class="container-fluid mb-5">
+				<div class="mb-5">
 					<div class="row">
-						<div class="vtr-page-left-column">
-							<div class="vtr-page-shift-up">
+						<div class="">
+							<div class="">
 								<div class="vtr-device-information">
 									<div class="container-fluid">
 										<div class="system-scan-complete">
@@ -154,7 +154,7 @@
 													</p>
 													<div class="d-flex justify-content-start my-5 w-75">
 														<button *ngIf="!inputIsScanningCompleted"
-															[ngClass]="isLoading? 'disabled-button': 'action-button'"
+															[ngClass]="(isLoading || !isOnline)? 'disabled-button': 'action-button'"
 															(click)="ScanNowSummary()"
 															vtrMetrics
 															metricsItem="btn.scan&fix"
@@ -318,31 +318,20 @@
 																		<div class="col">
 																			<div class="row custom-from-date py-3"
 																				[ngClass]="{'selected-custom-date':isFromDate}">
-																				<div class="col-5">
-																					{{'smartPerformance.subscriberScanHomePage.scanSummary.txtFrom' |translate }}
-																				</div>
-																				<div class="col-auto"><input type='text'
-																						[ngModel]="displayFromDate"
-																						(click)="selectFromDate()"
-																						readonly /></div>
+																				<div class="col-1">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtFrom' |translate }}</div>
+																				<div class="col-auto"><input type='text' [ngModel]="displayFromDate"
+																						(click)="selectFromDate()" readonly/></div>
 																			</div>
 																			<div class="row custom-to-date mt-3 py-3"
 																				[ngClass]="{'selected-custom-date':!isFromDate}">
-																				<div class="col-5">
-																					{{'smartPerformance.subscriberScanHomePage.scanSummary.txtTo' |translate }}
-																				</div>
-																				<div class="col-auto"><input type='text'
-																						[ngModel]="displayToDate"
-																						(click)="selectToDate()"
-																						readonly /></div>
+																				<div class="col-1">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtTo' |translate }}</div>
+																				<div class="col-auto"><input type='text'  [ngModel]="displayToDate"
+																						(click)="selectToDate()" readonly/></div>
 
 																			</div>
-																			<div
-																				class="row d-flex justify-content-center">
-																				<button class="custom-go-btn mt-3"
-																					(click)="customDateScanSummary()">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtGo' |translate }}</button>
-																				<button class="custom-go-btn mt-3"
-																					(click)="customDateScanSummary()">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtClr' |translate }}</button>
+																			<div class="row d-flex justify-content-center">
+																				<vtr-ui-button [isFullWidth]="false" [isDisabled]="!displayFromDate || !displayToDate" (onClick)="customDateScanSummary()" [label]="'smartPerformance.subscriberScanHomePage.scanSummary.txtGo' |translate"></vtr-ui-button>
+																				<vtr-ui-button [isFullWidth]="false" (onClick)="resetCustomDateScanSummary()" [label]="'smartPerformance.subscriberScanHomePage.scanSummary.txtClr' |translate"></vtr-ui-button>
 																			</div>
 																		</div>
 																		<div class="col date-picker">
@@ -524,7 +513,7 @@
 																							*ngIf="item.type.toUpperCase() == 'SS'">({{'smartPerformance.auto' |translate }})</span>
 																					</div>
 																					<div class="col-2 fixes" title="{{item.fixcount === 0 ? item.fixcount : (item.fixcount | number:'2.0')}} {{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' | translate}}">
-																						{{item.fixcount === 0 ? item.fixcount : (item.fixcount | number:'2.0')}}
+																						{{item.fixcount === 0 ? item.fixcount : (item.fixcount | number)}}
 																						{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' | translate}}
 																					</div>
 																					<div class="col-2"
@@ -670,7 +659,7 @@
 										<div class="col col-12">
 											<!-- --------Scan Schedule------------- -->
 											<vtr-ui-scan-schedule
-												(scanDatekValueChange)='changeNextScanDateValue($event)'>
+												(scanDatekValueChange)='changeNextScanDateValue($event)' [isOnline] = "isOnline">
 											</vtr-ui-scan-schedule>
 											<!-- --------Scan Schedule------------- -->
 										</div>
@@ -711,8 +700,8 @@
 									</div>
 									<div class="row mb-40"
 										*ngIf="isSubscribed">
-										<div class="col col-12">
-											<vtr-widget-subscriptiondetails></vtr-widget-subscriptiondetails>
+										<div class="col col-12">										
+											<vtr-widget-subscriptiondetails [isOnline] = "isOnline"></vtr-widget-subscriptiondetails>
 										</div>
 									</div>
 

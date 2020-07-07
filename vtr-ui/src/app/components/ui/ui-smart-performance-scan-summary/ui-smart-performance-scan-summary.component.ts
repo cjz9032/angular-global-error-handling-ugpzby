@@ -34,7 +34,9 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		private translate: TranslateService,
 		private router: Router,
 		private formatLocaleDate: FormatLocaleDatePipe
-	) { }
+	) {
+
+	}
 	public sizeExtension: string;
 	public isLoading = false;
 	public machineFamilyName: string;
@@ -61,6 +63,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	@Input() boost = 0;
 	@Input() secure = 0;
 	@Input() rating = 0;
+	@Input() isOnline = true;
 
 	public tabIndex: number;
 	public toggleValue: number;
@@ -88,7 +91,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	isDropDownOpen: boolean;
 	dropDownToggle: boolean;
 	currentDate: any;
-	// currentDateLocalFormat: any;
+	currentDateLocalFormat: any;
 	fromDate: any;
 	toDate: any;
 	selectedDate: any;
@@ -97,6 +100,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	selectedTodate: any;
 	displayFromDate: any;
 	displayToDate: any;
+	oldDisplayFromDate: any;
+	oldDisplayToDate: any;
 	customDate: any;
 	@Output() backToScan = new EventEmitter();
 	@Output() backToNonSubscriber = new EventEmitter();
@@ -150,7 +155,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		}
 		// this.leftAnimatorCalc = ((this.rating*10) - 1);
 		this.currentDate = new Date();
-		// this.currentDateLocalFormat = this.formatLocaleDate.transform(this.currentDate);
+		this.currentDateLocalFormat = this.formatLocaleDate.transform(this.currentDate);
 		this.selectedDate = this.calendar.getToday();
 		this.toDate = this.selectedDate;
 		this.fromDate = this.selectedDate;
@@ -357,6 +362,12 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 
 	openDropDown() {
 		this.isDropDownOpen = !this.isDropDownOpen;
+		if(!this.isDropDownOpen) {
+			if(this.oldDisplayFromDate && this.oldDisplayToDate) {
+				this.displayFromDate = this.oldDisplayFromDate;
+				this.displayToDate = this.oldDisplayToDate;
+			}
+		}
 	}
 
 	selectFromDate() {
@@ -409,6 +420,18 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 				.format('YYYY-MM-DD HH:mm:ss')
 		);
 	}
+
+	resetCustomDateScanSummary() {
+		if (this.displayFromDate !== null || this.displayToDate !== null) {
+			this.oldDisplayFromDate = this.displayFromDate;
+			this.oldDisplayToDate = this.displayToDate;
+		}
+		this.displayFromDate = null;
+		this.displayToDate = null;
+		this.selectedfromDate = this.minDate;
+		this.selectedTodate = this.maxDate;
+	}
+
 	openSubscribeModal() {
 		this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
 			backdrop: 'static',
@@ -416,6 +439,13 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			centered: true,
 			windowClass: 'subscribe-modal'
 		});
+		const currentTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
+		const intervalTime = moment(currentTime).add(PaymentPage.ORDERWAITINGTIME, 'm').format('YYYY-MM-DD HH:mm:ss');
+		const modalStatus = {
+			initiatedTime: intervalTime,
+			isOpened: false
+		}
+		this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, modalStatus);
 		// const scanEnabled = this.commonService.getLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled);
 		// this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
 		// this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, 'Once a week')
@@ -438,7 +468,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		// }
 	}
 	ScanNowSummary() {
-		if (!this.isLoading) {
+		if (!this.isLoading && this.isOnline) {
 			this.backToScan.emit();
 		}
 	}
@@ -513,17 +543,17 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			const response = await this.smartPerformanceService.getLastScanResult(lastScanResultRequest);
 			this.logger.info('ui-smart-performance-scan-summary.getLastScanResult', response);
 			const scanRunTime = response.scanruntime;
-			const now = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
+			const now = moment().format('YYYY-MM-DD HH:mm:ss');
 			const fiveMinutesFromRecentScan = moment(scanRunTime).add(enumSmartPerformance.SUMMARYWAITINGTIME, 'm').format('YYYY-MM-DD HH:mm:ss');
 
 			if (now < fiveMinutesFromRecentScan) {
                 if (response) {
 					this.isLoading = false;
-					this.historyRes = {
-						tuneCount: response.Tune,
-						boostCount: response.Boost,
-						secure: response.Secure
-					}
+					// this.historyRes = {
+					// 	tuneCount: response.Tune,
+					// 	boostCount: response.Boost,
+					// 	secure: response.Secure
+					// }
 					this.rating = response.rating;
 					this.issueCount = response.Tune + response.Boost + response.Secure
 					this.leftAnimator = (response.rating * 10 - 0).toString() + '%';

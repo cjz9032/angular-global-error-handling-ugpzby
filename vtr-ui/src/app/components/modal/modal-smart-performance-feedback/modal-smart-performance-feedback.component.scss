@@ -52,7 +52,11 @@ $normalPadding: 2.4rem;
 		.form-check-inline {
 			margin-right: 2.5rem;
 			max-width: 3rem;
-
+			&:last-child{
+				label{
+					text-indent: 0.2rem !important;
+				}
+			}
 			.form-check-input {
 				position: absolute;
 			}
@@ -141,6 +145,9 @@ $normalPadding: 2.4rem;
 			.likely-text {
 				padding: 0 1rem;
 				font-size: $fontsize_xs;
+				&:nth-child(2n){
+					padding-right: 0rem;
+				}
 			}
 
 			.form-check-inline {

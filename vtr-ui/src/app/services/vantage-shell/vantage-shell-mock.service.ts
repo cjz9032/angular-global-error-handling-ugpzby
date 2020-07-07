@@ -373,7 +373,7 @@ export class VantageShellService {
 		 * 2  = "ideaCenter",
 		 * 3  = "thinkCenter"
 		 */
-		sysInfo.getMachineType = this.getPromise(1);
+		sysInfo.getMachineType = this.getPromise(0);
 		sysInfo.getHardwareInfo = this.getPromise(hardwareInfo);
 		return sysInfo;
 	}
@@ -1154,7 +1154,7 @@ export class VantageShellService {
 				setConservationModeStatus: this.getPromise(obj)
 			},
 			intelligentCoolingForIdeaPad: {
-				getITSSettings: this.getPromise({ available: true, itsVersion: 4, currentMode: 'MMC_Cool' }),
+				getITSSettings: this.getPromise({ available: true, itsVersion: 5, currentMode: 'MMC_Cool' }),
 				setITSSettings: this.getPromise(true),
 				startMonitor: this.getPromise(true),
 				stopMonitor: this.getPromise(true)
@@ -1256,7 +1256,7 @@ export class VantageShellService {
 			intelligentCooling: {
 				getPMDriverStatus: this.getPromise(true),
 				getITSServiceStatus: this.getPromise(true),
-				getDYTCRevision: this.getPromise(6),
+				getDYTCRevision: this.getPromise(5),
 				getCQLCapability: this.getPromise(true),
 				getTIOCapability: this.getPromise(true),
 				setAutoModeSetting: this.getPromise(true),

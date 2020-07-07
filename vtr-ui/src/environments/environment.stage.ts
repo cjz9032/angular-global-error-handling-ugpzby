@@ -12,9 +12,8 @@ export const environment: IEnvironment = {
 	allowMockService: false,
 	isLoggingEnabled: true,
 	isServerSwitchEnabled: false,
-	isCPTEnabled: false,
-	spPaymentProcessApiRoot: 'https://uatpcsupport.lenovo.com/upgradewarranty?',
-	spGetOrdersApiRoot: 'https://uatpcsupport.lenovo.com/api/v4/upsell/smart/getorders?serialNumber=',
+	spPaymentProcessApiRoot: 'https://pcsupport.lenovo.com/upgradewarranty?cid=ww:apps:pikjhe&',
+	spGetOrdersApiRoot: 'https://pcsupport.lenovo.com/api/v4/upsell/smart/getorders?serialNumber=',
 	spPnListKey: 'U2FsdGVkX1+X2TVVOmuZWob7GGBAX0MqhbFG7Py5rjlN9MWpGuBkRkz23xBRr9xZllutntrWS2FDYJ9/CW0JIK8DaxmmShtyQEe+aqm9jYk='
 
 };

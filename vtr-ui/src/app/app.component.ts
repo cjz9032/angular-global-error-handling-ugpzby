@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, OnInit, HostListener, OnDestroy, Inject, AfterViewInit } from '@angular/core';
+import { Component, OnInit, HostListener, OnDestroy, Inject, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { DisplayService } from './services/display/display.service';
 import { NgbModal, NgbModalRef, NgbTooltipConfig } from '@ng-bootstrap/ng-bootstrap';
@@ -13,7 +13,6 @@ import { NetworkStatus } from './enums/network-status.enum';
 import { KeyPress } from './data-models/common/key-press.model';
 import { VantageShellService } from './services/vantage-shell/vantage-shell.service';
 import { SettingsService } from './services/settings.service';
-import { ModalServerSwitchComponent } from './components/modal/modal-server-switch/modal-server-switch.component'; // VAN-5872, server switch feature
 import { environment } from 'src/environments/environment';
 import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from './services/language/language.service';
@@ -36,6 +35,8 @@ import { HardwareScanProgress } from './enums/hw-scan-progress.enum';
 import { SecurityAdvisorNotifications } from './enums/security-advisor-notifications.enum';
 import { SessionStorageKey } from './enums/session-storage-key-enum';
 import { HistoryManager } from './services/history-manager/history-manager.service';
+import { SmartPerformanceService } from './services/smart-performance/smart-performance.service';
+import { enumSmartPerformance } from './enums/smart-performance.enum';
 
 
 declare var Windows;
@@ -56,6 +57,10 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	private shellVersion;
 	private newTutorialVersion = '3.1.2';
 	public notificationType = NotificationType.Banner;
+	isOldScheduleScanDeleted: any
+	@ViewChild('pageContainer', { static: true }) pageContainer: ElementRef;
+
+
 
 	constructor(
 		private displayService: DisplayService,
@@ -76,6 +81,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		private storeRating: StoreRatingService,
 		// don't delete historyManager
 		private historyManager: HistoryManager,
+		private smartPerformanceService: SmartPerformanceService,
 		@Inject(DOCUMENT) public document: Document
 	) {
 		this.ngbTooltipConfig.triggers = 'hover';
@@ -148,6 +154,10 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 					document.body.classList.add('focus-enable');
 				}
 			});
+		}
+		this.isOldScheduleScanDeleted = this.commonService.getLocalStorageValue(LocalStorageKey.isOldScheduleScanDeleted);
+		if (this.isOldScheduleScanDeleted === undefined || this.isOldScheduleScanDeleted === false) {
+			this.removeOldSmartPerformanceScheduleScans();
 		}
 	}
 
@@ -292,7 +302,6 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		if (this.metricService.isFirstLaunch) {
 			this.metricService.sendFirstRunEvent(value);
 		}
-
 		// When startup try to login Lenovo ID silently (in background),
 		//  if user has already logged in before, this call will login automatically and update UI
 		if (!this.deviceService.isArm && this.userService.isLenovoIdSupported()) {
@@ -303,7 +312,6 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 			this.appsForYouService.getAppStatus(AppsForYouEnum.AppGuidLenovoMigrationAssistant);
 		}
 	}
-
 
 	private checkIsDesktopOrAllInOneMachine() {
 		try {
@@ -377,17 +385,6 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 					event.shiftKey
 				);
 				window.parent.postMessage(response, 'ms-appx-web://e046963f.lenovocompanionbeta/index.html');
-			}
-
-			// // VAN-5872, server switch feature
-			if (this.isServerSwitchEnabled === true && event.ctrlKey && event.shiftKey && event.keyCode === 67) {
-				const serverSwitchModal: NgbModalRef = this.modalService.open(ModalServerSwitchComponent, {
-					backdrop: true,
-					size: 'lg',
-					centered: true,
-					windowClass: 'Server-Switch-Modal',
-					keyboard: false
-				});
 			}
 		} catch (error) { }
 	}
@@ -545,6 +542,39 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	}
 
 	ngAfterViewInit() {
+		this.metricService.pageContainer = this.pageContainer
 		this.metricService.onAppInitDone();
+	}
+
+	onPageScroll($event) {
+		this.metricService.notifyPageScollEvent($event.target);
+	}
+
+
+	private removeOldSmartPerformanceScheduleScans() {
+		try {
+			const isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
+			if (isSubscribed !== undefined && isSubscribed === true) {
+				this.unregisterSmartPerformanceScheduleScan(enumSmartPerformance.OLDSCHEDULESCANANDFIX);
+			} else {
+				this.unregisterSmartPerformanceScheduleScan(enumSmartPerformance.OLDSCHEDULESCAN);
+			}
+		} catch (err) {
+			this.logger.error('app.component.removeOldSmartPerformanceScheduleScans.then', err);
+		}
+	}
+
+	async unregisterSmartPerformanceScheduleScan(scantype) {
+		const payload = { scantype };
+		this.logger.info('app.component.unregisterScheduleScan', payload);
+		try {
+			const res: any = await this.smartPerformanceService.unregisterScanSchedule(payload);
+			if (res.state) {
+				this.commonService.setLocalStorageValue(LocalStorageKey.isOldScheduleScanDeleted, true);
+			}
+			this.logger.info('app.component.unregisterScheduleScan.then', res);
+		} catch (err) {
+			this.logger.error('app.component.unregisterScheduleScan.then', err);
+		}
 	}
 }

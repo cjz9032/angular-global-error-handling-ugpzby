@@ -14,6 +14,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { MenuItemEvent } from 'src/app/enums/menuItemEvent.enum';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
+import { enumSmartPerformance } from 'src/app/enums/smart-performance.enum';
 
 @Component({
 	selector: 'vtr-page-settings',
@@ -438,9 +439,9 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	startUnRegisteringScheduleScan() {
 		this.isSPFullFeatureEnabled = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
 		if (this.isSPFullFeatureEnabled) {
-			this.unregisterScheduleScan("Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix");
+			this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCANANDFIX);
 		} else {
-			this.unregisterScheduleScan("Lenovo.Vantage.SmartPerformance.ScheduleScan");
+			this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCAN);
 		}
 	}
 	// deletes records from task scheduler

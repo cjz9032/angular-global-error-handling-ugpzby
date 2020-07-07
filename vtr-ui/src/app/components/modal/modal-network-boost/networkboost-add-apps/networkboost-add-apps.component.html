@@ -15,10 +15,10 @@
 					<div class="response-content">
 						<div class="running-apps" *ngIf="!noAppsRunning">
 							<div class="title-content">
-								<h3>
+								<h3 id="network_boost_add_apps_popup_header_text">
 									{{'gaming.networkBoost.modalAddApps.title' | translate }}
 								</h3>
-								<p>{{ 'gaming.networkBoost.modalAddApps.body.part1' | translate }} (
+								<p role="text" id="network_boost_add_apps_popup_description">{{ 'gaming.networkBoost.modalAddApps.body.part1' | translate }} (
 									{{addedApps}} {{'gaming.networkBoost.modalAddApps.body.part2' | translate}}
 									{{maxAppsCount}}
 									{{'gaming.networkBoost.modalAddApps.body.part3' | translate}} )

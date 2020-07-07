@@ -295,7 +295,6 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	// z-index: 1;
 	background-color: $light;
 	filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.15));
-	margin-right: 1rem;
 	@media #{$black-on-white} {
 		border: 0.1rem solid;
 	}
@@ -321,14 +320,52 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			max-width: 24.2rem !important;
 		}
 	}
-	.arrow {
-		top: calc(-0.9rem + 50%);
-		&::before {
-			border-left-color: $light;
-			border-width: 1rem 0 1rem 1rem;
-			left: 0.3rem;
+	&.bs-tooltip-auto[x-placement^=top], &.bs-tooltip-top {
+		margin-bottom: 0.5rem;
+		.arrow {
+			&::before {
+				border-width: 1rem 1rem 0;
+				border-top-color: $light;
+				left: calc(-1rem + 50%);
+				top: 0.3rem
+			}
 		}
 	}
+	&.bs-tooltip-auto[x-placement^=bottom], &.tooltip.bs-tooltip-bottom {
+		margin-top: 0.5rem;
+		.arrow {
+			&::before {
+				border-width: 0 1rem 1rem;
+				border-bottom-color: $light;
+				left: calc(-1rem + 50%);
+				bottom: 0.3rem;
+			}
+		}
+	}
+	&.bs-tooltip-auto[x-placement^=left], &.tooltip.bs-tooltip-left {
+		margin-right: 0.8rem;
+		.arrow {
+			&::before {
+				border-width: 1rem 0 1rem 1rem;
+				border-left-color: $light;
+				top: calc(-1rem + 50%);
+				left: 0.3rem;
+			}
+		}
+	}
+
+	&.bs-tooltip-auto[x-placement^=right], &.tooltip.bs-tooltip-right {
+		margin-left: 0.8rem;
+		.arrow {
+			&::before {
+				border-width: 1rem 1rem 1rem 0;
+				border-right-color: $light;
+				top: calc(-1rem + 50%);
+				right: 0.3rem;
+			}
+		}
+	}
+
 	&.show {
 		opacity: 1 !important;
 	}
@@ -1599,7 +1636,7 @@ vtr-ui-smart-performance-scanning {
 }
 .subscribe-modal {
 	.modal-dialog {
-		max-width: 70%;
+		max-width: 45%;
 	}
 }
 
@@ -1812,8 +1849,7 @@ vtr-ui-smart-performance-scanning {
 	.vtr-ui-switch-row.white-theme {
 		padding: 0 0 1.5rem !important;
 	}
-	.intelligent-security-block,
-	.power-settings-block {
+	.intelligent-security-block, .power-settings-block, .battery-settings-block, .intelligent-keyboard-block {
 		.vtr-container-collapsible.white-theme {
 			.card-body {
 				padding-top: 0 !important;
@@ -1882,27 +1918,5 @@ ngb-tooltip-window.schedule-scan.tooltip {
 		font-size: $fontsize_xs;
 		text-align: left;
 		max-width: 24.2rem;
-	}
-}
-
-.antiTheftFeature {
-	.photoDropdown {
-		ngb-tooltip-window.vtr-tooltip.tooltip {
-			margin-bottom: 0.5rem;
-			margin-right: 0;
-
-			.arrow {
-				top: auto;
-				bottom: 1rem;
-				left: calc(-0.8rem + 50%);
-
-				&::before {
-					border-top-color: $light;
-					border-left-color: transparent;
-					left: 0;
-					transform: rotate(135deg);
-				}
-			}
-		}
 	}
 }

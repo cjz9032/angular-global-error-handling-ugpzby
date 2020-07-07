@@ -22,8 +22,16 @@ import { SmartAssistCache } from 'src/app/data-models/smart-assist/smart-assist-
 import { HsaIntelligentSecurityResponse } from 'src/app/data-models/smart-assist/hsa-intelligent-security.model/hsa-intelligent-security.model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
-
-
+import { IntelligentScreen } from 'src/app/data-models/smart-assist/intelligent-screen.model';
+const intelligentScreen: IntelligentScreen = {
+	isIntelligentScreenVisible: false,
+	isAutoScreenOffVisible: false,
+	isAutoScreenOffEnabled: false,
+	isAutoScreenOffNoteVisible: false,
+	isReadingOrBrowsingVisible: false,
+	isReadingOrBrowsingEnabled: false,
+	readingOrBrowsingTime: 0
+};
 describe('Component: PageSmartAssistComponent', () => {
 	let component: PageSmartAssistComponent;
 	let fixture: ComponentFixture<PageSmartAssistComponent>;
@@ -33,6 +41,12 @@ describe('Component: PageSmartAssistComponent', () => {
 	let commonService: CommonService;
 	let vantageShellService: VantageShellService;
 	let navigationExtras: NavigationExtras;
+	function setup() {
+		const fixture = TestBed.createComponent(PageSmartAssistComponent);
+		const component = fixture.componentInstance;
+		smartAssistService = fixture.debugElement.injector.get(SmartAssistService);
+		return { fixture, component, commonService, logger, smartAssistService };
+	}
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			declarations: [PageSmartAssistComponent],
@@ -63,9 +77,13 @@ describe('Component: PageSmartAssistComponent', () => {
 		vantageShellService = TestBed.get(VantageShellService);
 		logger = TestBed.get(LoggerService);
 		smartAssistService = TestBed.get(SmartAssistService);
+
 	});
 
 	it('should create', () => {
+		component.intelligentScreen = new IntelligentScreen();
+		component.intelligentScreen.isIntelligentScreenVisible = true;
+		fixture.detectChanges();
 		component.superResolution = new FeatureStatus(false, true);
 		const isSuperResolutionSupported: FeatureStatus = {
 			available: false,
@@ -75,8 +93,7 @@ describe('Component: PageSmartAssistComponent', () => {
 		};
 		commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, isSuperResolutionSupported);
 		component.superResolution = { ...isSuperResolutionSupported };
-		fixture.detectChanges()
-		expect(component).toBeDefined()
+		expect(component).toBeTruthy();
 	});
 
 	it('getSuperResolutionStatus', () => {
@@ -98,11 +115,13 @@ describe('Component: PageSmartAssistComponent', () => {
 	});
 
 	it("updateSensingHeaderMenu", () => {
+		component.intelligentSecurity = new IntelligentSecurity();
 		commonService = TestBed.get(CommonService);
 		component.updateSensingHeaderMenu(true);
 	});
 
 	it("updateSensingHeaderMenu", () => {
+		component.intelligentSecurity = new IntelligentSecurity();
 		commonService = TestBed.get(CommonService);
 		component.updateSensingHeaderMenu(false);
 	});
@@ -219,35 +238,6 @@ describe('Component: PageSmartAssistComponent', () => {
 		expect(component.hsaIntelligentSecurity.capability).not.toEqual(0);
 	});
 
-	// it('onResetDefaultSettings', () => {
-	// 	smartAssistService = TestBed.get(SmartAssistService);
-	// 	smartAssistService.isShellAvailable = true;
-
-	// 	const spy = spyOn(
-	// 		smartAssistService,
-	// 		'resetHSAHPDSetting'
-	// 	).and.returnValue(Promise.resolve(0));
-
-	// 	const spy2 = spyOn(
-	// 		smartAssistService,
-	// 		'resetHPDSetting'
-	// 	).and.returnValue(Promise.resolve(true));
-
-	// 	component.intelligentSecurity = new IntelligentSecurity();
-	// 	component.intelligentSecurity.isZeroTouchLockFacialRecoVisible = true;
-	// 	const spy3 = spyOn(
-	// 		smartAssistService,
-	// 		'resetFacialRecognitionStatus'
-	// 	).and.returnValue(Promise.resolve(true));
-
-	// 	component.onResetDefaultSettings(0);
-	// 	expect(spy2).toHaveBeenCalled();
-	// 	expect(smartAssistService.resetHSAHPDSetting).toHaveBeenCalled();
-	// 	expect(smartAssistService.resetHPDSetting).toHaveBeenCalled();
-	// 	expect(smartAssistService.resetFacialRecognitionStatus).toHaveBeenCalled();
-
-	// });
-
 	it('should call onZeroTouchLockFacialRecoChange', () => {
 		component.intelligentSecurity = new IntelligentSecurity();
 		// component.smartAssistCache = new SmartAssistCache();
@@ -255,33 +245,10 @@ describe('Component: PageSmartAssistComponent', () => {
 		component.onZeroTouchLockFacialRecoChange(true);
 		expect(spy).toHaveBeenCalled();
 	});
-
-	// it('should call getFacialRecognitionStatus', () => {
-	// 	component.intelligentSecurity = new IntelligentSecurity();
-
-	// 	const spy = spyOn(smartAssistService, 'getZeroTouchLockFacialRecoStatus').and.returnValue(Promise.resolve(true));
-	// 	const spy1 = spyOn(smartAssistService, 'getFacialRecognitionStatus').and.returnValue(Promise.resolve(true));
-	// 	component.getFacialRecognitionStatus();
-	// 	expect(spy).toHaveBeenCalled();
-	// 	expect(spy1).toHaveBeenCalled();
-	// });
-
-	it('should call onVisibilityChanged', () => {
-		const spy = spyOn<any>(component, 'getFacialRecognitionStatus');
-		component.onVisibilityChanged();
-		expect(spy).toHaveBeenCalled();
+	it('#onResetDefaultSettings should call', () => {
+		const { fixture, component, smartAssistService } = setup();
+		const spy = spyOn(smartAssistService, 'resetHSAHPDSetting').and.returnValue(Promise.resolve(1));
+		fixture.detectChanges();
+		component.onResetDefaultSettings(true);
 	});
-
-	it('should call onMouseEnterEvent', () => {
-		const spy = spyOn<any>(component, 'getFacialRecognitionStatus');
-		component.onMouseEnterEvent();
-		expect(spy).toHaveBeenCalled();
-	});
-
-	it('should call permissionChanged', () => {
-		const spy = spyOn<any>(component, 'getFacialRecognitionStatus');
-		component.permissionChanged();
-		expect(spy).toHaveBeenCalled();
-	});
-
 });

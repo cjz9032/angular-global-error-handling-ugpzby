@@ -29,7 +29,11 @@ export enum enumScanFrequency{
 }
 export enum enumSmartPerformance{
 	SCHEDULESCANENDDATE = '2020/07/27',
-	SUMMARYWAITINGTIME = 5
+	SUMMARYWAITINGTIME = 5,
+	OLDSCHEDULESCAN = 'Lenovo.Vantage.SmartPerformance.ScheduleScan',
+	OLDSCHEDULESCANANDFIX='Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix',
+	SCHEDULESCAN = 'Lenovo.Vantage.SmartPerformance.SScan',
+	SCHEDULESCANANDFIX = 'Lenovo.Vantage.SmartPerformance.SScanAndFix'
 }
 export enum PaymentPage{
 	APPLICATIONNAME = 'COMPANION',
@@ -39,7 +43,7 @@ export enum PaymentPage{
 	SOURCEQUERYPARAMETER='&source=',
 	SLASH='/',
 	TRUE='true',
-	ORDERWAITINGTIME = 2, // MINUTES,
+	ORDERWAITINGTIME = 15, // MINUTES,
 }
 
 export const actualScanFrequency: any = [

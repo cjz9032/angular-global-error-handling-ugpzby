@@ -27,6 +27,7 @@ import BatteryGaugeDetail from 'src/app/data-models/battery/battery-gauge-detail
 import { BatteryGaugeReset } from 'src/app/data-models/device/battery-gauge-reset.model';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import BatteryIndicator from 'src/app/data-models/battery/battery-indicator.model';
+import { ChargeThresholdInformation } from 'src/app/enums/battery-information.enum';
 
 // declare var Windows;
 
@@ -42,11 +43,11 @@ const info = {
 			barCode: 'X2XP899J0N0',
 			batteryCondition: [
 				'Normal',
-				'hightemperature',
-				'tricklecharge',
-				'overheatedbattery',
-				'permanenterror',
-				'unsupportedbattery'
+				'HighTemperature',
+				'UnsupportedBattery',
+				'TrickleCharge',
+				'OverheatedBattery',
+				'PermanentError'
 			],
 			batteryHealth: 0,
 			chargeStatus: 2,
@@ -65,7 +66,9 @@ const info = {
 			remainingTime: 204,
 			temperature: 34,
 			voltage: 10.843,
-			wattage: 9
+			wattage: 9,
+			isTemporaryChargeMode: false,
+			isDlsPiCapable: false
 		}
 	],
 	batteryIndicatorInfo: {
@@ -134,6 +137,7 @@ describe('BatteryCardComponent', () => {
 		batteryDetailService = TestBed.get(BatteryDetailService);
 		shellService = TestBed.get(VantageShellService);
 		logger = TestBed.get(LoggerService);
+		component.isLoading = false;
 	}));
 
 	it('should create component', () => {
@@ -198,25 +202,25 @@ describe('BatteryCardComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	});
 
-	// it('should call onPowerBatteryGaugeResetEvent', () => {
-	// 	const info: BatteryGaugeReset[] = [
-	// 		{
-	// 			barCode: 'X2XP899J0N0',
-	// 			batteryNum: 1,
-	// 			FCCAfter: 4,
-	// 			FCCBefore: 1,
-	// 			isResetRunning: false,
-	// 			lastResetTime: '',
-	// 			resetErrorLog: 'ERROR_UNEXPECTED',
-	// 			stage: 0,
-	// 			stageNum: 0,
-	// 			startTime: ''
-	// 		}
-	// 	];
-	// 	let spy = spyOn(commonService, 'cloneObj').and.returnValue(info);
-	// 	component.onPowerBatteryGaugeResetEvent(info);
-	// 	expect(spy).toHaveBeenCalled();
-	// });
+	it('should call onPowerBatteryGaugeResetEvent', () => {
+		const info: BatteryGaugeReset[] = [
+			{
+				barCode: 'X2XP899J0N0',
+				batteryNum: 1,
+				FCCAfter: 4,
+				FCCBefore: 1,
+				isResetRunning: false,
+				lastResetTime: '',
+				resetErrorLog: 'ERROR_UNEXPECTED',
+				stage: 0,
+				stageNum: 0,
+				startTime: ''
+			}
+		];
+		let spy = spyOn(commonService, 'cloneObj').and.returnValue(info);
+		component.onPowerBatteryGaugeResetEvent(info);
+		expect(spy).toHaveBeenCalled();
+	});
 
 	it('should call getBatteryDetailOnCard - else case', () => {
 		let spy = spyOn(component, 'getBatteryDetails');
@@ -229,25 +233,35 @@ describe('BatteryCardComponent', () => {
 		expect(component.getBatteryDetailOnCard).toThrow();
 	});
 
-	// it('should call onNotification - inner first if', () => {
-	// 	const thresholdNotification: AppNotification = {
-	// 		type: ChargeThresholdInformation.ChargeThresholdInfo,
-	// 		payload: true
-	// 	};
-	// 	component.batteryIndicator = new BatteryIndicator();
-	// 	component.onNotification(thresholdNotification);
-	// 	expect(component.batteryIndicator.isChargeThresholdOn).toEqual(true);
-	// });
+	it('should call onNotification - Case ChargeThresholdInformation', () => {
+		const thresholdNotification: AppNotification = {
+			type: ChargeThresholdInformation.ChargeThresholdInfo,
+			payload: true
+		};
+		component.batteryIndicator = new BatteryIndicator();
+		component.onNotification(thresholdNotification);
+		expect(component.batteryIndicator.isChargeThresholdOn).toEqual(true);
+	});
 
-	// it('should call onNotification - inner if', () => {
-	// 	const airplaneModeNotification: AppNotification = {
-	// 		type: 'AirplaneModeStatus',
-	// 		payload: true
-	// 	};
-	// 	component.batteryIndicator = new BatteryIndicator();
-	// 	component.onNotification(airplaneModeNotification);
-	// 	expect(component.batteryIndicator.isAirplaneMode).toEqual(true);
-	// });
+	it('should call onNotification - Case AirplaneModeStatus', () => {
+		const airplaneModeNotification: AppNotification = {
+			type: 'AirplaneModeStatus',
+			payload: {isCapable: true, isEnabled: true}
+		};
+		component.batteryIndicator = new BatteryIndicator();
+		component.onNotification(airplaneModeNotification);
+		expect(component.batteryIndicator.isAirplaneMode).toEqual(true);
+	});
+
+	it('should call onNotification - Case ExpressChargingStatus', () => {
+		const expressChargingNotification: AppNotification = {
+			type: 'ExpressChargingStatus',
+			payload: {available: true, status: true}
+		};
+		component.batteryIndicator = new BatteryIndicator();
+		component.onNotification(expressChargingNotification);
+		expect(component.batteryIndicator.expressCharging).toEqual(true);
+	});
 
 	it('should call getBatteryCondition - isPowerDriverMissing is true', () => {
 		component.batteryGauge = { ...batteryGuage };
@@ -261,14 +275,21 @@ describe('BatteryCardComponent', () => {
 		);
 	});
 
-	// it('should call getBatteryCondition - batterHealth is 1', () => {
-	// 	component.batteryGauge = { ...batteryGuage }
-	// 	// component.batteryInfo = { ...info.batteryInformation }
-	// 	// component.batteryInfo[0].batteryCondition = ['hightemperature']
-	// 	spyOn(commonService, 'getLocalStorageValue').and.returnValue(1)
-	// 	component.getBatteryCondition()
-	// 	// expect(component.batteryConditions).toContain(new BatteryConditionModel(BatteryConditionsEnum.MissingDriver, BatteryStatus.Poor))
-	// });
+	it('should call getBatteryCondition - Adapter connected', () => {
+		component.isThinkPad = true;
+		const tempBatteryGauge = { ...batteryGuage };
+		const tempBatteryInfo = { ...info.batteryInformation };
+		tempBatteryGauge.isAttached = true;
+		tempBatteryGauge.acWattage = 60;
+		tempBatteryGauge.isPowerDriverMissing = false;
+		tempBatteryInfo[0].batteryHealth = 1;
+		tempBatteryInfo[0].batteryCondition.splice(0, 1);
+		component.batteryGauge = { ...tempBatteryGauge };
+		component.batteryInfo = { ...tempBatteryInfo };
+		spyOn(commonService, 'getLocalStorageValue').and.returnValue(0)
+		component.getBatteryCondition();
+		expect(component.batteryConditions).toContain(new BatteryConditionModel(BatteryConditionsEnum.FullACAdapterSupport, BatteryStatus.AcAdapterStatus));
+	});
 
 	it('should call showDetailTip', () => {
 		const index = 1;
