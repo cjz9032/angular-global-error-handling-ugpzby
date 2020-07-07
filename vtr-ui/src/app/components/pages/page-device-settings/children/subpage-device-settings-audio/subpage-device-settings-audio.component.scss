@@ -51,11 +51,23 @@
 					margin-top: 2px;
 					cursor: pointer;
 					border: 0.1rem solid transparent;
+					@media #{$white-on-black} {
+						@include black-border;
+					}
+					@media #{$black-on-white} {
+						@include white-border;
+					}
 					&:hover {
 						color: $highlight;
 					}
 					&:focus {
 						@include outline-border-blue;
+						@media #{$white-on-black} {
+							border-color: $light;
+						}
+						@media #{$black-on-white} {
+							border-color: $dark;
+						}
 					}
 				}
 				::ng-deep .auto-set-checkbox {
