@@ -94,9 +94,6 @@
 		}
 	}
 	.select-wrapper {
-		@media #{$high-contrast} {
-			border: 0.1rem solid windowText;
-		}
 		margin: 1rem 0;
 		@media #{$breakpoint_xl} {
 			width: auto;

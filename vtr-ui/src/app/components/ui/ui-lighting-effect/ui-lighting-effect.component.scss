@@ -3,6 +3,7 @@
 .select-box {
 	position: relative;
 	@media #{$high-contrast} {
+		border-radius: 0.4rem;
 		border: 0.1rem solid windowText;
 		background-color: window;
 		background-image: none;
@@ -58,10 +59,6 @@
 			font-size: $fontsize_xs;
 			line-height: 1.8rem;
 		}
-		@media #{$high-contrast} {
-			background-color: window;
-			background-image: none;
-		}
 		&::after {
 			content: "";
 			position: absolute;
@@ -73,10 +70,6 @@
 			bottom: -1rem;
 			left: calc(50% - 1.5rem);
 			z-index: -1;
-			@media #{$high-contrast} {
-				border-bottom-color: 0.1rem solid windowText;
-				border-bottom-color: none;
-			}
 		}
 	}
 
@@ -106,6 +99,9 @@
 			overflow: hidden;
 			color: $gaming_lightest;
 			font-size: $fontsize_xs;
+			@media #{$high-contrast} {
+				color: buttonText;
+			}
 		}
 		.icon {
 			position: relative;
@@ -114,7 +110,7 @@
 			top: 0px !important;
 			color: $gaming_lightest !important;
 			@media #{$high-contrast} {
-				color: windowText;
+				color: buttonText;
 			}
 		}
 		&::after {
@@ -160,17 +156,20 @@
 					color: $blueFill;
 				}
 				@media #{$high-contrast} {
-					color: windowText;
-					border: 0.1rem solid windowText;
-					background: windowText;
+					a {
+						background: highlight;
+					}
+					color: highlightText;
+					border: 0.1rem solid highlight;
+					background: highlight;
 				}
 			}
 			&:hover {
 				background: $darkCell;
 				@media #{$high-contrast} {
-					color: windowText;
-					border: 0.1rem solid windowText;
-					background: windowText;
+					color: highlightText;
+					border: 0.1rem solid highlight;
+					background: highlight;
 				}
 			}
 			&:focus {
