@@ -115,7 +115,7 @@
 						<div class="image-content"
 							#appsForYouImageContent
 							[style.height.px]="appsForYouImageContent.clientWidth / 5">
-							<div *ngFor="let screenshot of appDetails.screenshots, let i = index"
+							<a *ngFor="let screenshot of appDetails.screenshots, let i = index"
 								[tabindex]="shouldFocusScreenshot(screenshot.position) ? 0 : -1"
 								role="img"
 								class="screenshot-img position-{{screenshot.position}}"
@@ -124,10 +124,10 @@
 								metricsItem="AppsForYouScreenshot"
 								metricsEvent="FeatureClick"
 								[metricsParent]="metricsParent"
-								(keyup.enter)="openScreenshotModal(screenshot.imageUrl)"
+								href="javascript:void(0)"
 								(click)="openScreenshotModal(screenshot.imageUrl)">
 								<img [src]="screenshot.imageUrl" />
-							</div>
+							</a>
 						</div>
 						<div class="arrow-content"
 							*ngIf="showArrows">

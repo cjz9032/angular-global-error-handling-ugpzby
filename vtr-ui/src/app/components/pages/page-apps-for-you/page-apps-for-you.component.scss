@@ -178,6 +178,11 @@
 							transition: left .3s;
 							cursor: pointer;
 							border: 1px solid #ddd;
+
+							&:focus {
+								outline-offset: -0.1rem;
+							}
+
 							&:hover {
 								border: 1px solid #ccc;
 							}
