@@ -71,6 +71,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public isOnline = true;
 	public startScanClicked = false;
+	public isRefreshClicked = false;
 
 	// "Wrapper" value to be accessed from the HTML
 	public taskTypeEnum = TaskType;
@@ -346,6 +347,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public refreshModules() {
 		this.timerService.start();
+		this.isRefreshClicked = true;
 		this.hardwareScanService.setLoadingStatus(false);
 		this.hardwareScanService.reloadItemsToScan(true);
 		this.hardwareScanService.initLoadingModules(this.culture);
@@ -353,6 +355,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		this.hardwareScanService.isHardwareModulesLoaded().subscribe((loaded) => {
 			if (loaded) {
 				this.modules = this.getItemToDisplay();
+				this.isRefreshClicked = false;
 
 				const taskResult = {
 					Result: 'Pass'
