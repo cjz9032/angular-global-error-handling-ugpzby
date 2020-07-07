@@ -68,6 +68,11 @@
 			padding: 1rem !important;
 			font-weight: $weight_bold;
 
+			&:focus {
+				outline: 0.1rem solid $menu_hover;
+				outline-offset: 0.2rem;
+			}
+
 			.support-button-text {
 				cursor: pointer;
 				text-decoration: underline;

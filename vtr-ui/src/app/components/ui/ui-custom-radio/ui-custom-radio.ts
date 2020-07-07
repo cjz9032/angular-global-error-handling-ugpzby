@@ -1,4 +1,4 @@
-import { ElementRef, Input, ViewChild, AfterViewInit, OnInit, OnChanges } from '@angular/core';
+import { ElementRef, Input, ViewChild, AfterViewInit, OnInit, OnChanges, Component } from '@angular/core';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { KeyCode } from 'src/app/enums/key-code.enum';

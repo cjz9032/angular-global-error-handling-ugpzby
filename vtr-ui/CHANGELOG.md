@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.36](https://bitbucket.tc.lenovo.com///compare/v1.6.35...v1.6.36) (2020-07-06)
+
+### [1.6.35](https://bitbucket.tc.lenovo.com///compare/v1.6.34...v1.6.35) (2020-07-06)
+
+### [1.6.34](https://bitbucket.tc.lenovo.com///compare/v1.6.33...v1.6.34) (2020-07-06)
+
+### [1.6.33](https://bitbucket.tc.lenovo.com///compare/v1.6.32...v1.6.33) (2020-07-03)
+
+
+### Bug Fixes
+
+* **accessibility:** fix wifi toggle read incorrect ([2c73a48](https://bitbucket.tc.lenovo.com///commit/2c73a48ed5a2119cee90e9d7e7cc90a185431f12))
+* **LWS:** showless button should display when history > 4 ([865747a](https://bitbucket.tc.lenovo.com///commit/865747aff155c4263696e42896752c52681a7155))
+
+### [1.6.32](https://bitbucket.tc.lenovo.com///compare/v1.6.31...v1.6.32) (2020-07-02)
+
+### [1.6.31](https://bitbucket.tc.lenovo.com///compare/v1.6.30...v1.6.31) (2020-07-02)
+
+
+### Bug Fixes
+
+* **Security Health:** click SH item shouldn't have a focus outline ([07195cb](https://bitbucket.tc.lenovo.com///commit/07195cb5080ad1adfd556a8116c2b2f33063d70e))
+
+### [1.6.30](https://bitbucket.tc.lenovo.com///compare/v1.6.29...v1.6.30) (2020-07-01)
+
+
+### Bug Fixes
+
+* **CHS:** hide powered by info in chs page ([1de0800](https://bitbucket.tc.lenovo.com///commit/1de0800ace99929d1b47243eb12f3cd661ce6b02))
+
+### [1.6.29](https://bitbucket.tc.lenovo.com///compare/v1.6.28...v1.6.29) (2020-06-30)
+
 ### [1.6.28](https://bitbucket.tc.lenovo.com///compare/v1.6.27...v1.6.28) (2020-06-30)
 
 ### [1.6.27](https://bitbucket.tc.lenovo.com///compare/v1.6.26...v1.6.27) (2020-06-29)

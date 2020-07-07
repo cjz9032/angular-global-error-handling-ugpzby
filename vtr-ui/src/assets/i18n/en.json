@@ -2651,7 +2651,11 @@
 						"iteme6": "verify in cloud remediation engine"
 					}
 				}
-			}
+			},
+			"confirmationTitle": "Lenovo Payment Process",
+			"confirmationNote" : "You will be directed to Lenovo payment site in a browser. Once payment done, please press Refresh button on this page for status update. ",
+			"confirmationBtn": "Proceed",
+			"refreshButton": "Refresh Status"
 		},
 		"scanCompletePage": {
 			"title": "System scan is complete",
@@ -4034,9 +4038,6 @@
 			"subtitle2": "All-in-Ones: Streamlined",
 			"body2": "All-in-One PCs with 9th Gen Intel® Core™ processors give you all the power of a desktop packaged in a sleek display — for less clutter, hardware-based security, and a hi-res display."
 		}
-	},
-	"cpt": {
-		"title": "Content Preview Tool"
 	},
 	"storeRating":{
 		"title": "Send us your voice",

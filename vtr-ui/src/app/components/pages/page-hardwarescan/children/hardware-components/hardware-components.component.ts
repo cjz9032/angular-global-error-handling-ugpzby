@@ -984,7 +984,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 					const testObj = {
 						Id: module.groupId,
-						Result: HardwareScanTestResult[test.status],
+						Result: HardwareScanTestResult[test.statusTest],
 						// for now, this field will be "NA". At a later time, more useful information will be sent by the Plugin to fill it.
 						Reason: 'NA',
 					};
@@ -996,7 +996,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					resultJson.TestsList[testName].push(testObj);
 				}
 			}
-			overalTestResult = this.hardwareScanResultService.consolidateResults(this.modules.listTest.map(test => test.status));
+			overalTestResult = this.hardwareScanResultService.consolidateResults(this.modules.map(test => test.resultModule));
 		}
 
 		resultJson.Result = HardwareScanTestResult[overalTestResult];

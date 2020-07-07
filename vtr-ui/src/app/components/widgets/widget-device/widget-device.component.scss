@@ -36,6 +36,11 @@
 			.circleimage {
 				width: 22.5rem;
 			}
+			.lenovo-gaming-logo{
+				@media #{$black-on-white} {
+					filter: invert(100%);
+				}
+			}
 		}
 		.family {
 			color: $main_dark;

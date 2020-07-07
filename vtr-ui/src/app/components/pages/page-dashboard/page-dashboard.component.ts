@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NgbModalConfig} from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
@@ -34,8 +34,9 @@ import map from 'lodash/map';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { WelcomeTextContent } from 'src/app/data-models/welcomeText/welcome-text.model';
 import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
-import { ContentActionType } from 'src/app/enums/content.enum';
-import { ContentSource } from 'src/app/enums/content.enum';
+import { ContentActionType, ContentSource } from 'src/app/enums/content.enum';
+import { MetricService } from 'src/app/services/metric/metrics.service';
+import { PageName } from 'src/app/services/metric/page-name.const';
 
 interface IConfigItem {
 	cardId: string;
@@ -52,7 +53,7 @@ interface IConfigItem {
 	templateUrl: './page-dashboard.component.html',
 	styleUrls: ['./page-dashboard.component.scss']
 })
-export class PageDashboardComponent implements OnInit, OnDestroy {
+export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit {
 
 	offlineConnection = 'offline-connection';
 	public systemStatus: Status[] = [];
@@ -166,6 +167,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy {
 		private selfselectService: SelfSelectService,
 		private feedbackService: FeedbackService,
 		private localInfoService: LocalInfoService,
+		private metricsService: MetricService
 	) {
 	}
 
@@ -254,6 +256,8 @@ export class PageDashboardComponent implements OnInit, OnDestroy {
 
 
 	ngOnDestroy() {
+		this.metricsService.deactivateScrollCounter(PageName.Dashboard);
+
 		this.dashboardService.isDashboardDisplayed = false;
 		this.commonService.setSessionStorageValue(SessionStorageKey.DashboardInDashboardPage, false);
 		if(this.subscription){
@@ -773,5 +777,9 @@ export class PageDashboardComponent implements OnInit, OnDestroy {
 
 	openFeedbackModal() {
 		this.feedbackService.openFeedbackModal();
+	}
+
+	ngAfterViewInit() {
+		this.metricsService.activateScrollCounter(PageName.Dashboard);
 	}
 }

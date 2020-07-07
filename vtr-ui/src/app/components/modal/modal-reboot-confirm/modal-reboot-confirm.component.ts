@@ -8,9 +8,11 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ModalRebootConfirmComponent implements OnInit {
 	public description: string;
-	@ViewChild('btnClose', { static: false }) set btnClose(element: ElementRef) {
+	@ViewChild('btnClose', { static: true }) set btnClose(element: ElementRef) {
 		if (element) {
-			element.nativeElement.focus();
+			if (element.nativeElement) {
+				element.nativeElement.focus();
+			}
 		}
 	}
 

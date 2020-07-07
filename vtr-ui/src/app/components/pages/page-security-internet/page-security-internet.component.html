@@ -45,7 +45,8 @@
 					</div>
 					<div class="mt-20" *ngIf="statusItem.status === 'installed'">
 						<vtr-ui-description-button
-							metricsItem="openSurfEasy"
+                            metricsItem="openSurfEasy"
+                            metricsEvent="FeatureClick"
 							[label]="'security.vpn.openSufEasy' | translate"
 							id="sa-vpn-btn-opensurfeasy"
 							[btnHeight]="true"

@@ -232,8 +232,10 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		let isGaugeResetRunning = false;
 		const gaugeResetInfo: BatteryGaugeReset[] = this.commonService.cloneObj(info);
 		if (gaugeResetInfo) {
-			const formatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter(' shorttime');
-			this.commonService.setSystemTimeFormat(formatter.clock === '12HourClock');
+			if (typeof Windows !== 'undefined') {
+				const formatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter(' shorttime');
+				this.commonService.setSystemTimeFormat(formatter.clock === '12HourClock');
+			}
 			gaugeResetInfo.forEach((battery) => {
 				isGaugeResetRunning = isGaugeResetRunning || battery.isResetRunning;
 				if (battery.FCCBefore && battery.FCCAfter) {

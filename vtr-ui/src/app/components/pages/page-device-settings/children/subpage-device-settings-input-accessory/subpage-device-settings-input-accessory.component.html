@@ -12,7 +12,7 @@
 			<div class="row py-5 smart-settings-card"
 				id="Input & Accessories"
 				aria-label="Input & Accessories">
-				<div class="col-12 px-0">
+				<div class="col-12 px-0 intelligent-keyboard-block">
 					<!-- Input & Accessories -->
 					<vtr-container-collapsible [collapseLinkId]="'inputAccessories'"
 						[vtrAppSearchScroller]="['search-hidden-keyboard-fn', 'search-Keyboard-top-row']"
@@ -23,7 +23,7 @@
 						[theme]="'white'"
 						[tabIndex]="0">
 						<ul class="list-group list-group-flush">
-							<li class=""
+							<li class="common-li-padding"
 								*ngIf="machineType == 1 && keyboardCompatibility">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.inputAccessories.inputAccessory.hiddenKeyboardFunctions.title' | translate"

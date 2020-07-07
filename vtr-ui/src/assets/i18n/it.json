@@ -2598,11 +2598,11 @@
                 "visit": "Visit",
                 "goToChs": "go to connected home security",
                 "locationDisabledInfo": {
-					"title": "Location disabled",
-					"subtitle": "Allow Vantage to access your location to use Connected Home Security",
-					"buttonText": "Go To Location Settings",
-					"howToEnableLocation": "1. Go to <b>Setting</b> > <b>Privacy</b> > <b>Location</b>. </br> 2. Under <b>Choose which apps can access your precise location</b>, find <b>Lenovo Vantage</b>. </br> 3. Turn the Location switch to <b>On</b>."
-				}
+                    "title": "Location disabled",
+                    "subtitle": "Allow Vantage to access your location to use Connected Home Security",
+                    "buttonText": "Go To Location Settings",
+                    "howToEnableLocation": "1. Go to <b>Setting</b> > <b>Privacy</b> > <b>Location</b>. </br> 2. Under <b>Choose which apps can access your precise location</b>, find <b>Lenovo Vantage</b>. </br> 3. Turn the Location switch to <b>On</b>."
+                }
             },
             "invitationcode": {
                 "button": "Immettere il codice invito",
@@ -3505,7 +3505,7 @@
             "recommendedAction": {
                 "title": "AZIONE CONSIGLIATA",
                 "description": "Risolveremo automaticamente questi problemi. Una volta oggi e ogni settimana",
-                "yearlyPricing": "$ 19,99 all'anno",
+                "yearlyPricing": "$ 29,99 all'anno",
                 "monthlyPricing": "MENO DI $ 2 AL MESE.",
                 "longerTerm": "Vuoi un abbonamento per più tempo? Vuoi risparmiare ancora di più?",
                 "signupButton": "REGISTRATI"
@@ -4034,9 +4034,6 @@
             "subtitle2": "All-in-one semplificato",
             "body2": "I PC all-in-one con processori Intel® Core™ di nona generazione offrono tutte le potenzialità di un desktop con uno elegante design, per un minor ingombro, una protezione basata sull'hardware e uno schermo ad alta risoluzione."
         }
-    },
-    "cpt": {
-        "title": "Content Preview Tool"
     },
     "storeRating": {
         "title": "Inviaci la tua opinione",

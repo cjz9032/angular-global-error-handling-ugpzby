@@ -275,7 +275,7 @@
 
 			<!-- Camera -->
 			<div class="row pt-5 smart-settings-card pb-40"
-				*ngIf="this.isAllInOneMachineFlag || (!cameraPrivacyModeStatus.available && isCameraPreviewHidden)"
+				*ngIf="isAllInOneMachineFlag && !(isCameraPreviewHidden && !cameraPrivacyModeStatus?.available)"
 				id="camera"
 				[hidden]="isCameraHidden">
 				<div class="col-12 mx-auto  container-card ">
@@ -306,7 +306,7 @@
 									[isLastChild]="isCameraPreviewHidden">
 								</vtr-ui-row-switch>
 							</li>
-							<li class="camera-block common-li-padding" 
+							<li class="camera-block common-li-padding"
 							*ngIf="!isCameraPreviewHidden">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.displayCamera.camera.camera.title' | translate"
