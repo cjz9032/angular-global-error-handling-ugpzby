@@ -1,7 +1,8 @@
 <div class="vtr-feedback-form"
 	id="feedback-form-dialog">
 	<div class="content">
-		<div class="title" id="feedback-dialog-basic-title">{{ 'dashboard.feedback.title' | translate }}</div>
+		<h2 class="title"
+			id="feedback-dialog-basic-title">{{ 'dashboard.feedback.title' | translate }}</h2>
 		<form name="feedBack"
 			class="feedback-form"
 			[formGroup]="feedbackForm"
@@ -12,7 +13,7 @@
 					[dir]="'dir' | translate"
 					[innerHTML]="qa.question | translate"
 					[id]="qa.name"
-					[attr.aria-label]="qa.name"></div>
+					role="text"></div>
 				<div class="form-check form-check-inline"
 					*ngIf="qa.idYes">
 					<input class="form-check-input"
@@ -25,7 +26,9 @@
 						[checked]="feedbackForm.value[qa.name] === true"
 						[value]="true">
 					<label class="form-check-label-out"></label>
-					<label class="form-check-label" [id]="qa.idYes + '-label'" role="text"
+					<label class="form-check-label"
+						[id]="qa.idYes + '-label'"
+						role="text"
 						[for]="qa.idYes">{{'dashboard.feedback.form.yes' | translate}}</label>
 				</div>
 				<div class="form-check form-check-inline"
@@ -40,7 +43,9 @@
 						[checked]="feedbackForm.value[qa.name] === false"
 						[value]="false">
 					<label class="form-check-label-out"></label>
-					<label class="form-check-label"  [id]="qa.idNo + '-label'" role="text"
+					<label class="form-check-label"
+						[id]="qa.idNo + '-label'"
+						role="text"
 						[for]="qa.idNo">{{'dashboard.feedback.form.no' | translate}}</label>
 				</div>
 				<div class="likely-content"
@@ -57,25 +62,32 @@
 							[checked]="feedbackForm.value[qa.name] === likely"
 							[value]="likely">
 						<label class="form-check-label-out"></label>
-						<label class="form-check-label" [id]="'feedback-form-likely-' + likely" role="text"
+						<label class="form-check-label"
+							[id]="'feedback-form-likely-' + likely"
+							role="text"
 							[for]="'feedback-likely-' + likely">{{ likely }}</label>
 					</div>
 					<div class="w-100 mb-1"></div>
-					<div class="likely-text">{{ 'dashboard.feedback.form.notAtAllLikely' | translate }}</div>
-					<div class="likely-text text-right">{{ 'dashboard.feedback.form.extremelyLikely' | translate }}</div>
+					<div class="likely-text"
+						id="feedback-not-at-all-likely"
+						role="text">{{ 'dashboard.feedback.form.notAtAllLikely' | translate }}</div>
+					<div class="likely-text text-right"
+						id="feedback-extremely-likely"
+						role="text">{{ 'dashboard.feedback.form.extremelyLikely' | translate }}</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col">
 					<div class="comment-tip"
 						id="feedback-form-additional-comments"
-						attr.aria-label="feedback-form-additional-comments">
+						role="text">
 						{{'dashboard.feedback.form.tips2' | translate}}:
 					</div>
-					<textarea #feedbackComment placeholder="{{'dashboard.feedback.form.comments' | translate}}"
+					<textarea #feedbackComment
+						placeholder="{{'dashboard.feedback.form.comments' | translate}}"
 						class="form-control user-comment mb-1"
 						id="feedback-form-comments-input"
-						attr.aria-label="{{'dashboard.feedback.form.comments' | translate}}"
+						[attr.aria-label]="feedbackForm.value.userComment ? feedbackForm.value.userComment : 'dashboard.feedback.form.comments' | translate"
 						cols="30"
 						rows="10"
 						maxlength="1000"
@@ -83,16 +95,30 @@
 						formControlName="userComment"
 						pattern="^(?!\s*$).+"
 						required></textarea>
-					<div class="w-100 text-right comment-count">{{feedbackComment.value.length}}/1000</div>
+					<div class="w-100 text-right comment-count"
+						id="feedback-comment-count"
+						role="text">{{feedbackComment.value.length}}/1000</div>
 				</div>
 			</div>
-			<div class="row qa-item" *ngIf="showEmailField">
-				<div class="question" id="feedback-form-userEmail" attr.aria-label="feedback-form-userEmail">
+			<div class="row qa-item"
+				*ngIf="showEmailField">
+				<div class="question"
+					id="feedback-form-userEmail"
+					role="text">
 					{{'dashboard.feedback.form.emailAddressLabel' | translate}}
 				</div>
-				<input id="feedback-form-email-address-input" attr.aria-label="{{'dashboard.feedback.form.emailAddress' | translate}}" [tabindex]="feedbackSuccess ? -1 : 0" class="user-email w-100" [ngClass]="[(feedbackForm.value.userEmail && feedbackForm.get('userEmail').invalid && isSubmitted) ? 'invalid-email': '']" type="text" formControlName="userEmail"
+				<input id="feedback-form-email-address-input"
+					[attr.aria-label]="feedbackForm.value.userEmail ? feedbackForm.value.userEmail : 'dashboard.feedback.form.emailAddress' | translate"
+					[tabindex]="feedbackSuccess ? -1 : 0"
+					class="user-email w-100"
+					[ngClass]="[(feedbackForm.value.userEmail && feedbackForm.get('userEmail').invalid && isSubmitted) ? 'invalid-email': '']"
+					type="text"
+					formControlName="userEmail"
 					placeholder="{{'dashboard.feedback.form.emailAddress' | translate}}">
-					<p id="feedback-form-email-error-msg" role="text" class="email-error-msg" *ngIf="feedbackForm.value.userEmail && feedbackForm.get('userEmail').invalid && isSubmitted">{{'dashboard.feedback.form.invalidEmailMsg' | translate}}</p>
+				<p id="feedback-form-email-error-msg"
+					role="text"
+					class="email-error-msg"
+					*ngIf="feedbackForm.value.userEmail && feedbackForm.get('userEmail').invalid && isSubmitted">{{'dashboard.feedback.form.invalidEmailMsg' | translate}}</p>
 			</div>
 		</form>
 		<div class="line"></div>
@@ -132,7 +158,7 @@
 			</div>
 			<div class="thank-you"
 				id="feedback-modal-thank-you"
-				attr.aria-label="feedback-modal-thank-you">{{ 'dashboard.feedback.form.messages.feedbackSuccess' | translate }}</div>
+				role="text">{{ 'dashboard.feedback.form.messages.feedbackSuccess' | translate }}</div>
 			<div class="left-time">{{ leftTime }}</div>
 		</div>
 	</div>
