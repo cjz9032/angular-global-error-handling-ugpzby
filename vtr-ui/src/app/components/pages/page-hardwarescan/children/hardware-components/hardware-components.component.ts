@@ -500,7 +500,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			// If there's failure, shows the support pop-up
 			if (failedModules.length > 0) {
 				const scanDate =  this.hardwareScanService.getFinalResultStartDate();
-				const supportUrl = await this.lenovoSupportService.getETicketUrl(scanDate);
+				const finalResultCode = this.hardwareScanService.getFinalResultCode();
+				const supportUrl = await this.lenovoSupportService.getETicketUrl(scanDate, finalResultCode);
 				const rbsDevices = this.hardwareScanService.getDevicesToRecoverBadSectors();
 				const modalRef = this.modalService.open(ModalScanFailureComponent, {
 					backdrop: 'static',

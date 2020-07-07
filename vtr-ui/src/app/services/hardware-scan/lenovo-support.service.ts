@@ -26,7 +26,7 @@ export class LenovoSupportService {
 		this.deviceInfo = deviceService.getDeviceInfo();
 	}
 
-	public async getETicketUrl(scanDate: Date): Promise<string> {
+	public async getETicketUrl(scanDate: Date, finalResultCode: string): Promise<string> {
 		const machineSerialNumber = (await this.deviceInfo).sn;
 
 		// new e-Ticket url is as follows:
@@ -34,7 +34,7 @@ export class LenovoSupportService {
 		const urlParameters = new HttpParams()
 			.set('SerialNumber', machineSerialNumber)
 			.set('ProblemType', LenovoSupportService.ProblemType)
-			.set('DiagnosticsCode', this.hardwareScanService.getFinalResultCode())
+			.set('DiagnosticsCode', finalResultCode)
 			.set('DiagnosticsDate', formatDate(scanDate, "yyyy-MM-dd", 'en-US'))
 
 		let url = new URL(LenovoSupportService.ServiceRequestPath, LenovoSupportService.LenovoSupportBaseUrl);
