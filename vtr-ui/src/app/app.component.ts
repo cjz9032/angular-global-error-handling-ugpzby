@@ -13,7 +13,6 @@ import { NetworkStatus } from './enums/network-status.enum';
 import { KeyPress } from './data-models/common/key-press.model';
 import { VantageShellService } from './services/vantage-shell/vantage-shell.service';
 import { SettingsService } from './services/settings.service';
-import { ModalServerSwitchComponent } from './components/modal/modal-server-switch/modal-server-switch.component'; // VAN-5872, server switch feature
 import { environment } from 'src/environments/environment';
 import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from './services/language/language.service';
@@ -386,17 +385,6 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 					event.shiftKey
 				);
 				window.parent.postMessage(response, 'ms-appx-web://e046963f.lenovocompanionbeta/index.html');
-			}
-
-			// // VAN-5872, server switch feature
-			if (this.isServerSwitchEnabled === true && event.ctrlKey && event.shiftKey && event.keyCode === 67) {
-				const serverSwitchModal: NgbModalRef = this.modalService.open(ModalServerSwitchComponent, {
-					backdrop: true,
-					size: 'lg',
-					centered: true,
-					windowClass: 'Server-Switch-Modal',
-					keyboard: false
-				});
 			}
 		} catch (error) { }
 	}

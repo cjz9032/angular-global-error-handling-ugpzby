@@ -25,7 +25,6 @@ import { faShoePrints } from '@fortawesome/pro-light-svg-icons/faShoePrints';
 import { RouterModule } from '@angular/router';
 import { faFlask } from '@fortawesome/pro-light-svg-icons/faFlask';
 import { ModalArticleDetailComponent } from '../components/modal/modal-article-detail/modal-article-detail.component';
-import { ModalServerSwitchComponent } from 'src/app/components/modal/modal-server-switch/modal-server-switch.component'; // VAN-5872, server switch feature
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { faLaptop } from '@fortawesome/pro-light-svg-icons/faLaptop';
@@ -87,7 +86,6 @@ import {faHeart as fasHeart} from '@fortawesome/free-solid-svg-icons/faHeart';
 		ModalWelcomeComponent,
 		ModalArticleDetailComponent,
 		ModalDccDetailComponent,
-		ModalServerSwitchComponent,
 		ModalAppUpdateAvailableComponent,
 		// PageSettingsComponent,
 		ModalNewFeatureTipComponent,
@@ -168,7 +166,6 @@ import {faHeart as fasHeart} from '@fortawesome/free-solid-svg-icons/faHeart';
 		ModalWelcomeComponent,
 		ModalArticleDetailComponent,
 		ModalDccDetailComponent,
-		ModalServerSwitchComponent,
 		ModalAppUpdateAvailableComponent,
 		ModalNewFeatureTipComponent
 		// ModalErrorMessageComponent
