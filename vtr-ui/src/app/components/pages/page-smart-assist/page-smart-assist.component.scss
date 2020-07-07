@@ -354,8 +354,25 @@ $fontsize_xs: 1.4rem;
 	cursor: pointer;
 	padding-top: 0.3rem;
 	border: 0.1rem solid transparent;
+	@media #{$white-on-black} {
+		@include black-border;
+		@include hyperlink-yellow-black;
+	}
+	@media #{$black-on-white} {
+		@include white-border;
+		@include hyperlink-blue-white;
+	}
 	&:focus {
 		@include outline-border-blue;
+		@media #{$white-on-black} {
+			@include white-border;
+			@include hyperlink-yellow-black;
+		}
+		@media #{$black-on-white} {
+			@include black-border;
+			@include hyperlink-blue-white;
+		}
+
 	}
 }
 

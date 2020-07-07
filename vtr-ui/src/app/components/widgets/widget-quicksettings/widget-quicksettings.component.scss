@@ -85,10 +85,10 @@
 	&:focus {
 		@include outline-border-blue;
 		@media #{$white-on-black} {
-			border-color: $high-contrast-black-yellow;;
+			@include white-border;
 		}
 		@media #{$black-on-white} {
-			border-color: $high-contrast-white-blue;
+			@include black-border;
 		}
 	}
 	&:hover{
