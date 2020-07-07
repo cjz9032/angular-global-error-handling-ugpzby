@@ -17,9 +17,6 @@
 	}
 	&.selected{
 		background: linear-gradient(90deg, #2fcc74, #33dfa6);
-		@media #{$high-contrast} {
-			background: highlight;
-		}
 	}
 	.btnRound{
 		border: none;
@@ -41,9 +38,6 @@
 		&.selected{
 			background: #fbfdff;
 			left: 3.2rem;
-		}
-		@media #{$high-contrast} {
-			background: window;
 		}
 	}
 	.switch-label {
@@ -86,6 +80,18 @@
 			cursor: pointer;
 			-webkit-transition: 0.2s ease;
 			transition: 0.2s ease;
+			@media #{$high-contrast} {
+				border: 0.1rem solid windowText;
+				background: window;
+			}
+
+			&.selected {
+				@media #{$high-contrast} {
+					border: none;
+					background: windowText;
+					background-color: windowText !important;
+				}
+			}
 
 			.btnRound {
 				width: 1.4rem !important;
@@ -99,7 +105,15 @@
 				transition: 0.2s ease !important;
 				&.selected {
 					-webkit-transform: translateX(2.6rem);
-    				transform: translateX(2.6rem);
+					transform: translateX(2.6rem);
+					@media #{$high-contrast} {
+						top: 0.3rem !important;
+					}
+				}
+				@media #{$high-contrast} {
+					background: buttonText !important;
+					background-color: buttonText !important;
+					top: 0.2rem !important;
 				}
 			}
 			
