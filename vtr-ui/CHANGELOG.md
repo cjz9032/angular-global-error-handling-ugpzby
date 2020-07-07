@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://bitbucket.tc.lenovo.com///compare/v1.6.36...v1.7.0) (2020-07-07)
+
+
+### Features
+
+* **CPT:** remove CPT ([bb496a8](https://bitbucket.tc.lenovo.com///commit/bb496a8209fef2dc82655a476a9137ab275ff9e9))
+* **CPT:** remove CPT ([765688d](https://bitbucket.tc.lenovo.com///commit/765688dea28bdebed33499b231a46974d2549e5e))
+* **CPT:** remove CPT page ([74e1627](https://bitbucket.tc.lenovo.com///commit/74e1627b6b8168fba5b8c133dd22082057db31d4))
+
+
+### Bug Fixes
+
+* **SmartPerformance:** fix smart performance disappear in menu ([fc45b61](https://bitbucket.tc.lenovo.com///commit/fc45b6199a70ca5474f89be7407c2efb40a4af6e))
+
 ### [1.6.36](https://bitbucket.tc.lenovo.com///compare/v1.6.35...v1.6.36) (2020-07-06)
 
 ### [1.6.35](https://bitbucket.tc.lenovo.com///compare/v1.6.34...v1.6.35) (2020-07-06)
