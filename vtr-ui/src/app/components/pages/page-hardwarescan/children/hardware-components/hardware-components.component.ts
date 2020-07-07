@@ -292,40 +292,44 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			scanFinished.unsubscribe();
 
 			if (this.hardwareScanService) {
-				let cancelWatcherDelay = 3000;
 				let cancelWatcher;
 				let self = this;
 
-				let checkCliRunning = function() {
-					// Workaround for RTC changing date/time problem!
-					// NOTICE: Remove this code piece as soon as this problem is fixed
-					cancelWatcher = setInterval(function watch() {
-						self.hardwareScanService.getStatus().then((result: any) => {
-							if (!result.isScanInProgress) {
-								clearInterval(cancelWatcher);
-								self.hardwareScanService.setIsScanDone(true);
-								self.hardwareScanService.setScanExecutionStatus(false);
-								self.hardwareScanService.setScanOrRBSFinished(true);
-								self.cleaningUpScan(undefined);
-								self.refreshModules();
-								modalCancel.close();
-								if (self.cancelHandler && self.cancelHandler.cancel) {
-									self.cancelHandler.cancel();
+				if (!isCancelingRBS) {
+					let cancelWatcherDelay = 3000;
+					let checkCliRunning = function() {
+						// Workaround for RTC changing date/time problem!
+						// NOTICE: Remove this code piece as soon as this problem is fixed
+						cancelWatcher = setInterval(function watch() {
+							self.hardwareScanService.getStatus().then((result: any) => {
+								if (!result.isScanInProgress) {
+									clearInterval(cancelWatcher);
+									self.hardwareScanService.setIsScanDone(true);
+									self.hardwareScanService.setScanExecutionStatus(false);
+									self.hardwareScanService.setScanOrRBSFinished(true);
+									self.cleaningUpScan(undefined);
+									self.refreshModules();
+									modalCancel.close();
+									if (self.cancelHandler && self.cancelHandler.cancel) {
+										self.cancelHandler.cancel();
+									}
 								}
-							}
-						});
-					}, cancelWatcherDelay);
-				};
+							});
+						}, cancelWatcherDelay);
+					};
 
-				// Let's start monitoring the CLI during the cancelation process.
-				// If it closes and no response is received (through isWorkDone() subject), the front-end will
-				// be redirected to the HardwareScan home page (forcing an init through a refresh modules call), preventing
-				// that the application gets stuck.
-				checkCliRunning();
+					// Let's start monitoring the CLI during the cancelation process.
+					// If it closes and no response is received (through isWorkDone() subject), the front-end will
+					// be redirected to the HardwareScan home page (forcing an init through a refresh modules call), preventing
+					// that the application gets stuck.
+					checkCliRunning();
+				}
 				this.hardwareScanService.cancelScanExecution();
 
 				this.hardwareScanService.isWorkDone().subscribe((done) => {
-					clearInterval(cancelWatcher);
+					if (!isCancelingRBS) {
+						clearInterval(cancelWatcher);
+					}
 					if (done) {
 						// When the cancelation is done, close the cancelation dialog.
 						// Sets the status of the scan to avoid problems when viewing their results
