@@ -381,7 +381,8 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 
 	@HostListener('window: focus')
 	onFocus(): void {
-		const modal = document.querySelector('.lenovo-id-modal-size') as HTMLElement;
-		modal.focus();
+		setTimeout(() => {
+			this.setFocus('webviewPlaceHolder');
+		}, 0);
 	}
 }
