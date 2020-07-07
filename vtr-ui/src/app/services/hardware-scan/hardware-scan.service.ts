@@ -36,7 +36,7 @@ export class HardwareScanService {
 	private isViewingRecoverLog = false;
 	private hasDevicesToRecover = false;
 	private scanOrRBSFinished = false;
-	private scanHeaderTypeFinished = HardwareScanFinishedHeaderType;
+	private scanHeaderTypeFinished: HardwareScanFinishedHeaderType;
 	private isDesktopMachine: boolean = false;
 
 	private quickScanRequest: any = []; // request modules
