@@ -293,10 +293,10 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 			if (this.hardwareScanService) {
 				let cancelWatcher;
-				let self = this;
 
 				if (!isCancelingRBS) {
 					let cancelWatcherDelay = 3000;
+					let self = this;
 					let checkCliRunning = function() {
 						// Workaround for RTC changing date/time problem!
 						// NOTICE: Remove this code piece as soon as this problem is fixed
