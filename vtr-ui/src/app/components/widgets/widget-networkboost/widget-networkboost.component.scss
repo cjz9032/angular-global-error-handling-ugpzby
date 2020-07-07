@@ -16,17 +16,13 @@
 			}
 			.isdisabled {
 				button.add-icon-button{
-					background-color: $gaming_darker !important;
-					opacity: 0.5;
-					@media #{$black-on-white} {
-						opacity: 0.15;
-					}
-					@media #{$white-on-black} {
-						opacity: 0.15;
-					}
+					background-color: $gaming_square_button20 !important;
 				}	
 			}
-			
+			&.add-disabled{
+				opacity: 0.2;
+				cursor: default;
+			}
 		}
 		li {
 			list-style-type: none;
@@ -71,23 +67,23 @@
 				right: 0;
 				margin: 0.5rem;
 				cursor: pointer;
-				background-image: url("data:image/svg+xml,%3Csvg width='16px' height='16px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E6.20pxIcon/Close%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='6.20pxIcon/Close' stroke='none' stroke-width='1' fill='#ffffff' fill-rule='evenodd'%3E%3Cpath d='M10.9653688,10.3512186 L17.1764486,16.445129 C17.4918286,16.7545595 17.4966516,17.2610686 17.1872211,17.5764486 C16.8777906,17.8918286 16.3712816,17.8966516 16.0559016,17.5872211 L9.84477507,11.4932648 L3.63364858,17.5872211 C3.31826856,17.8966516 2.81175954,17.8918286 2.50232902,17.5764486 C2.1928985,17.2610686 2.19772153,16.7545595 2.51310155,16.445129 L8.71216362,10.3630096 L2.65985124,4.42487144 C2.34447121,4.11544092 2.33964818,3.6089319 2.6490787,3.29355187 C2.95850922,2.97817185 3.46501824,2.97334882 3.78039826,3.28277934 L9.83278004,9.22098556 L15.7731957,3.16635187 C16.0826262,2.85097185 16.5891352,2.84614882 16.9045153,3.15557934 C17.2198953,3.46500986 17.2247183,3.97151888 16.9152878,4.2868989 L10.9653688,10.3512186 Z' id='Combined-Shape-Copy' fill='%23FFFFFF' fill-rule='nonzero' transform='translate(9.844775, 10.371400) scale(1, -1) rotate(-90.000000) translate(-9.844775, -10.371400) '%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+				background-image: url("data:image/svg+xml,%3Csvg width='16px' height='16px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E6.20pxIcon/Close%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='6.20pxIcon/Close' stroke='none' stroke-width='1' fill='#FBFDFF' fill-rule='evenodd'%3E%3Cpath d='M10.9653688,10.3512186 L17.1764486,16.445129 C17.4918286,16.7545595 17.4966516,17.2610686 17.1872211,17.5764486 C16.8777906,17.8918286 16.3712816,17.8966516 16.0559016,17.5872211 L9.84477507,11.4932648 L3.63364858,17.5872211 C3.31826856,17.8966516 2.81175954,17.8918286 2.50232902,17.5764486 C2.1928985,17.2610686 2.19772153,16.7545595 2.51310155,16.445129 L8.71216362,10.3630096 L2.65985124,4.42487144 C2.34447121,4.11544092 2.33964818,3.6089319 2.6490787,3.29355187 C2.95850922,2.97817185 3.46501824,2.97334882 3.78039826,3.28277934 L9.83278004,9.22098556 L15.7731957,3.16635187 C16.0826262,2.85097185 16.5891352,2.84614882 16.9045153,3.15557934 C17.2198953,3.46500986 17.2247183,3.97151888 16.9152878,4.2868989 L10.9653688,10.3512186 Z' id='Combined-Shape-Copy' fill='%23FBFDFF' fill-rule='nonzero' transform='translate(9.844775, 10.371400) scale(1, -1) rotate(-90.000000) translate(-9.844775, -10.371400) '%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
 				background-repeat: no-repeat;
 				background-position: center center;
 				border-radius: 0.3rem;
 				border: none;
 				width:2rem;
 				height: 2rem;
+				@media #{$high-contrast} {
+					color:buttonFace;
+				}
 			}
 			&.runningList:hover {
 				background: $gaming_light_02;
 				border-radius: 0.5rem;
-				@media #{$black-on-white} {
-					background-color: $light;
-					border: 0.1rem solid $dark;
-				}
-				@media #{$white-on-black} {
-					border: 0.1rem solid $light;
+				@media #{$high-contrast} {
+					background-color: window;
+					border: 0.1rem solid windowText;
 				}
 				.remove-app {
 					opacity: 1;
@@ -101,8 +97,8 @@
 				background: $gaming_light_02;
 				border-radius: 0.5rem;
 				@media #{$black-on-white} {
-					background-color: $light;
-					border: 0.1rem solid $dark;
+					background-color: window;
+					border: 0.1rem solid windowText;
 				}
 				.remove-app {
 					opacity: 1;

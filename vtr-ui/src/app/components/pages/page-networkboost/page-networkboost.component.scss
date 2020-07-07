@@ -1,12 +1,8 @@
 @import "../../../app.theme";
 .vtr-widget-networkboost {
 	color: $gaming_lightest;
-	@media #{$white-on-black} {
-		border: 0.1rem solid $light;
-		border-radius: $border_radius;
-	}
-	@media #{$black-on-white} {
-		border: 0.1rem solid $dark;
+	@media #{$high-contrast} {
+		border: 0.1rem solid windowText;
 		border-radius: $border_radius;
 	}
 	.intro-text {
@@ -36,11 +32,8 @@
 							width: 1.8rem;
 							margin-top: 0.1rem;
 							transition: all 0.2s ease-in;
-							@media #{$black-on-white} {
-								background: $gaming_darkest;
-							}
-							@media #{$white-on-black} {
-								background: $gaming_lightest;
+							@media #{$high-contrast} {
+								background:window;
 							}
 						}
 					}
@@ -51,6 +44,9 @@
 							background: $gaming_lightest;
 							transition: all 0.2s ease-in;
 							left: 3.2rem;
+						}
+						@media #{$high-contrast} {
+							background:window;
 						}
 					}
 				}

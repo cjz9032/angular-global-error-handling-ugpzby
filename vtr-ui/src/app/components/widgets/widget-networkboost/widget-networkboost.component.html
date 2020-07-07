@@ -1,6 +1,6 @@
 <div class="network-boost-wrapper">
 	<ul class="d-flex flex-wrap">
-		<li class="add-icon">
+		<li class="add-icon" [ngClass]="{'add-disabled': runningAppsList && runningAppsList.length >=5}">
 			<div (click)="openModal()"
 				role="button"
 				id="{{runningAppsList && runningAppsList.length >=5 ? 'networkboost_addButton_unclickable' : 'networkboost_addButton_clickable'}}"
@@ -8,7 +8,7 @@
 				(keyup.enter)="openModal()"
 				[tabindex]="runningAppsList && runningAppsList.length >=5 ? -1 : 1"
 				attr.aria-label="{{'gaming.narrator.networkBoost.subPage.addApps' | translate}}">
-				<button [ngStyle]="{'background-image': runningAppsList && runningAppsList.length >=5 ? 'url('+imageAddIconDisabled+')': 'url('+imageAddIcon+')'}" class="add-icon-button"></button>
+				<button class="add-icon-button"></button>
 			</div>
 			<div>{{'gaming.autoClose.addAppsButton' | translate}}</div>
 		</li>
