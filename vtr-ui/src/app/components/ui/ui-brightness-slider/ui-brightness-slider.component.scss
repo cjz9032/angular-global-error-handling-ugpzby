@@ -13,11 +13,8 @@
 	.ng5-slider {
 		margin: 0;
 		margin-top: 2.3rem;
-		@media #{$white-on-black} {
-			background: $shade_lightest;
-		}
-		@media #{$black-on-white} {
-			background: $shade_lightest;
+		@media #{$high-contrast} {
+			background: window;
 		}
 		
 		::ng-deep {
@@ -26,13 +23,8 @@
 			}
 			&.ng5-slider-selection {
 				background: $gaming_lighting_gradient;
-				@media #{$white-on-black} {
-					background-color: $highlight_bright;
-					border: none;
-				}
-				@media #{$black-on-white} {
-					background-color: $high-contrast-white-textselected;
-					border: none;
+				@media #{$high-contrast} {
+					background: window;
 				}
 			}
 
@@ -57,14 +49,10 @@
 	&.ng5-slider-span {
 		&.ng5-slider-bar {
 			width: 99% !important;
-				@media #{$white-on-black} {
-					background:none;
-					border: none;
-					}
-				@media #{$black-on-white} {
-					background: none;
-					border: none;
-					}
+			@media #{$high-contrast} {
+				border: windowText;
+				background: windowText;
+			}
 			  
 		}
 	}

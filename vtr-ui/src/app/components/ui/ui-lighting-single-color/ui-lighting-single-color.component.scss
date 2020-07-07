@@ -57,11 +57,8 @@
 					border-radius: 50%;
 					background:$gaming_light_blue;
 					transform: translateX(-50%) translateY(-50%);
-					@media #{$black-on-white} {
-						background:$gaming_darkest;
-					}
-					@media #{$white-on-black} {
-						background:$gaming_lightest;
+					@media #{$high-contrast} {
+						background: window;
 					}
 				}
 			}

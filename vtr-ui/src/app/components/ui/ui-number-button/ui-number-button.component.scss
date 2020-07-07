@@ -120,13 +120,9 @@
 				}
 				opacity: 1;
 				color: $gaming_lightest;
-				@media #{$black-on-white} {
-					background-color: $dark;
-					border: 0.1rem solid $dark;
-				}
-				@media #{$white-on-black} {
-					background-color: $light;
-					border: 0.1rem solid $light;
+				@media #{$high-contrast} {
+					background-color: windowText;
+					border: 0.1rem solid window;
 				}
 				background-color: $gaming_light_blue;
 				box-shadow: 0rem 0.4rem 0rem 0.1rem $gaming_gstart !important;
@@ -135,12 +131,8 @@
 						position: relative;
 						&:after {
 							background-color: $gaming_lightest;
-							@media #{$black-on-white} {
-								background-color: $light;
-								bottom: 0.4rem;
-							}
-							@media #{$white-on-black} {
-								background-color: $dark;
+							@media #{$high-contrast} {
+								background-color: windowText;
 								bottom: 0.4rem;
 							}
 						}
@@ -161,25 +153,16 @@
 						margin: auto;
 						left: 0px;
 						right: 0px;
-						@media #{$black-on-white} {
-							background-color: $dark;
-							bottom: 0.4rem;
-						}
-						@media #{$white-on-black} {
-							background-color: $light;
+						@media #{$high-contrast} {
+							background-color: windowText;
 							bottom: 0.4rem;
 						}
 					}
 				}
 			}
-			@media #{$white-on-black} {
-				border: 0.1rem solid $light;
-				background: $dark;
-				background-image: none;
-			}
-			@media #{$black-on-white} {
-				border: 0.1rem solid $dark;
-				background: $light;
+			@media #{$high-contrast} {
+				border: 0.1rem solid windowText;
+				background: window;
 				background-image: none;
 			}
 		}

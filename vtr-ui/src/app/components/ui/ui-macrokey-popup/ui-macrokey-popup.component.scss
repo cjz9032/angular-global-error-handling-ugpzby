@@ -31,11 +31,8 @@ ui-popover {
 	@media #{$breakpoint_sm} {
 		width: 90%;
 	}
-	@media #{$black-on-white} {
-		border: 0.1rem solid $dark;
-	}
-	@media #{$white-on-black} {
-		border: 0.1rem solid $light;
+	@media #{$high-contrast} {
+		border: 0.1rem solid windowText;
 	}
 }
 
@@ -73,12 +70,9 @@ ui-popover {
 	}
 
 	.btn-close {
-		@media #{$black-on-white}{
-			color: $high-contrast-grey;
-			}
-			@media #{$white-on-black}{
-			color: $high-contrast-grey;
-			}
+		@media #{$high-contrast}{
+			color: windowText;
+		}
 		button.close {
 			&:hover {
 				opacity: 0.75;
@@ -119,6 +113,9 @@ ui-popover {
 			color: $blueHover;
 			border-bottom: 2px solid $blueHover;			
 			cursor: pointer;
+			@media #{$high-contrast}{
+				color: highlight;
+			}
 		}
 		&:focus{
 			outline: none !important;

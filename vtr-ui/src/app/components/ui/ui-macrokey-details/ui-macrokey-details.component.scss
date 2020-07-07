@@ -29,14 +29,9 @@
 			}
 		}
 	}
-	@media #{$white-on-black} {
-		border: 0.1rem solid $light;
-		background: $dark;
-		background-image: none;
-	}
-	@media #{$black-on-white} {
-		border: 0.1rem solid $dark;
-		background: $light;
+	@media #{$high-contrast} {
+		border: 0.1rem solid windowText;
+		background: window;
 		background-image: none;
 	}
 	.section-details {

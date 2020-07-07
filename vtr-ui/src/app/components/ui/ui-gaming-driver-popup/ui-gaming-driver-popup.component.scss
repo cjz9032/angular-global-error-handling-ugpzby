@@ -16,11 +16,8 @@ ui-gaming-driver-popup {
 	@media #{$breakpoint_sm} {
 		min-width: 36rem;
 	}
-	@media #{$black-on-white} {
-		background: $high-contrast-grey;
-	}
-	@media #{$white-on-black} {
-		background: $high-contrast-grey;
+	@media #{$high-contrast} {
+		background: window;
 	}
 	&::after {
 		content: "";
@@ -36,12 +33,8 @@ ui-gaming-driver-popup {
 		}
 		right: -1.4rem;
 		transform: rotate(-45deg);
-		@media #{$black-on-white} {
-			border-bottom: 3rem solid $high-contrast-grey;
-			border-left: 3rem solid transparent;
-		}
-		@media #{$white-on-black} {
-			border-bottom: 3rem solid $high-contrast-grey;
+		@media #{$high-contrast} {
+			border-bottom: 3rem solid windowText;
 			border-left: 3rem solid transparent;
 		}
 	}
@@ -65,11 +58,8 @@ ui-gaming-driver-popup {
 			font-size: 3rem;
 			color: $main;
 			display: block !important;
-			@media #{$black-on-white} {
-				color: $gaming_darkest;
-			}
-			@media #{$white-on-black} {
-				color: $gaming_darkest;
+			@media #{$high-contrast} {
+				color: window;
 			}
 		}
 
@@ -124,18 +114,12 @@ ui-gaming-driver-popup {
 	}
 	#driver_popup{
 		color: $gaming_darkest;
-		@media #{$black-on-white} {
-			display: none;
-		}
-		@media #{$white-on-black} {
+		@media #{$high-contrast} {
 			display: none;
 		}
 	}
 	#driver_popup_close{
-		@media #{$black-on-white} {
-			display: none;
-		}
-		@media #{$white-on-black} {
+		@media #{$high-contrast} {
 			display: none;
 		}
 	}
