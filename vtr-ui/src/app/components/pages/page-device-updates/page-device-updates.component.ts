@@ -82,6 +82,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	public isOnline = true;
 	public offlineSubtitle: string;
 	public supportLink = 'https://support.lenovo.com/';
+	private packIdNeedFocus;
 
 	nextUpdatedDate = '11/12/2018 at 10:00 AM';
 	installationHistory = 'systemUpdates.installationHistory';
@@ -427,12 +428,70 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	public onIgnoredUpdate($event: any) {
 		const packageName = $event.packageName;
 		const isIgnored = $event.isIgnored;
+		let packId = '';
 		if (isIgnored === true) {
+			this.packIdNeedFocus = 'su-col-exp-ignore';
+			packId = this.getNextIgnoreAvailablePackageId(packageName);
 			this.systemUpdateService.ignoreUpdate(packageName);
 		} else {
+			this.packIdNeedFocus = this.backButton;
+			packId = this.getAvailabelPackageId(packageName);
 			this.systemUpdateService.unIgnoreUpdate(packageName);
 		}
-		this.focusOnElement(this.backButton);
+		if (packId !== '' && packId !== 'last') {
+			this.packIdNeedFocus = 'updateCheckbox_' + packId;
+		}
+	}
+
+	private getAvailabelPackageId(packageName) {
+		let packId = this.getPackageId(this.criticalUpdates, packageName);
+		if (packId === '') {
+			packId = this.getPackageId(this.recommendedUpdates, packageName);
+		}
+		if (packId === '') {
+			packId = this.getPackageId(this.optionalUpdates, packageName);
+		}
+		if (packId === '') {
+			packId = this.getPackageId(this.ignoredUpdates, packageName);
+		}
+		return packId;
+	}
+
+	private getPackageId(updateList:AvailableUpdateDetail[], packageName) {
+		if (updateList && updateList.length > 0) {
+			const pack = updateList.find(update => {
+				return update.packageName === packageName;
+			});
+			if (pack && pack.packageID) {
+				return pack.packageID;
+			}
+		}
+		return '';
+	}
+
+	private getNextIgnoreAvailablePackageId(packageName) {
+		let packId = this.getNextPackageId(this.recommendedUpdates, packageName);
+		if (packId === '') {
+			packId = this.getNextPackageId(this.optionalUpdates, packageName);
+		} else if (packId === 'last') {
+			if( this.optionalUpdates && this.optionalUpdates.length > 0) {
+				packId = this.optionalUpdates[0].packageID;
+			}
+		}
+		return packId;
+	}
+
+	private getNextPackageId(updateList:AvailableUpdateDetail[], packageName) {
+		let packId = '';
+		if(updateList && updateList.length > 0) {
+			const index = updateList.findIndex(update => update.packageName === packageName);
+			if (index !== -1 && index + 1 < updateList.length) {
+				packId = updateList[index+1].packageID;
+			} else if (index + 1 === updateList.length) {
+				packId = 'last';
+			}
+		}
+		return packId;
 	}
 
 	private installUpdates(removeDelayedUpdates: boolean, updateList: Array<AvailableUpdateDetail>, isInstallAll: boolean) {
@@ -505,7 +564,9 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	private focusOnElement(element) {
-		document.getElementById(element).focus();
+		if(element) {
+			document.getElementById(element).focus();
+		}
 	}
 
 
@@ -793,6 +854,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					break;
 				case UpdateProgress.IgnoredUpdates:
 					this.setUpdateByCategory(notification.payload);
+					this.focusOnElement(this.packIdNeedFocus);
 					break;
 				case AdPolicyEvent.AdPolicyUpdatedEvent:
 					if (!payload.IsSystemUpdateEnabled) {
