@@ -124,6 +124,7 @@
 		min-width: 100%;
 		max-width: 150%;
 		background-color: $darkPopup;
+		box-shadow: 0 1.6rem 3.2rem $screen_dark_20;
 		@media #{$high-contrast} {
 			background-color: window;
 			border: 0.1rem solid windowText;
