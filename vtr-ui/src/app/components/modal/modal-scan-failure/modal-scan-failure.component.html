@@ -10,17 +10,17 @@
 					<fa-icon aria-hidden="true" aria-labelledby="exclamation-icon" class="warning"
 						[icon]="['fas', 'exclamation-circle']">
 					</fa-icon>
-					<span id="{{ 'module-' + idModule}}" class="module-name">{{ module.moduleName }}</span>
+					<span id="{{ 'module-' + idModule }}" class="module-name">{{ module.moduleName }}</span>
 				</div>
 				<div *ngIf="module.moduleId == 'storage'" aria-live="polite">
 					<div class="list-device" *ngFor="let device of module.devices;">
-						<span class="description">{{ device.deviceName }}</span>	
+						<span class="description">{{ device.deviceName }}</span>
 					</div>
 				</div>
 			</li>
 		</div>
 		<div *ngIf="hasFailedRbsDevice; else withoutRBS">
-			<div class="description description-failure"> 
+			<div class="description description-failure">
 				<p [innerHTML]="'hardwareScan.scanFailureModal.suggestedActionRbs' | translate"></p>
 			</div>
 			<div class="row button-row">
