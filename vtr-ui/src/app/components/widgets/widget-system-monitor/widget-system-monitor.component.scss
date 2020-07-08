@@ -3,6 +3,10 @@
 .vtr-widget-system-monitor {
 	position: relative;
 	z-index: 2;
+	@media #{$high-contrast} {
+		border: 1px solid windowText;
+		border-radius: $border_radius;
+	}
 	.widget-container {
 		border-radius: $border_radius;
 		//background: $dark_cell;
@@ -70,31 +74,24 @@
 					font-size: 1.8rem;
 					color: $blueFill;
 					font-weight: bold;
-					@media #{$black-on-white} {
-						color: $high-contrast-grey;
-					}
-					@media #{$white-on-black} {
-						color: $high-contrast-grey;
+					@media #{$high-contrast} {
+						color: buttonText ;
 					}
 				}
 				.info-link {
 					color: $blueFill;
 					border-bottom: 0.2rem solid $blueFill;
+					@media #{$high-contrast} {
+						color: buttonText ;
+						border-color: buttonText ;
+					}
 					&:hover {
 						color: $blueHover;
 						border-color: $blueHover;
 						text-decoration: none;
-						@media #{$black-on-white}{
-							color: $gaming_darkest;
-							border-color: $gaming_darkest;
-						}
-						@media #{$white-on-black}{
-							color: $gaming_lightest;
-							border-color: $gaming_lightest;
-						}
 					}
 					&:hover + .icon {
-						color: $blueHover
+						color: $blueHover;
 					}
 				}
 			}
@@ -215,11 +212,9 @@
 					white-space: pre-wrap;
 					word-break: keep-all;
 					pointer-events: none;
-					@media #{$black-on-white}{
-						background-color: $high-contrast-grey;
-					}
-					@media #{$white-on-black}{
-						background-color: $high-contrast-grey;
+					@media #{$high-contrast}{
+						background-color: window;
+						border: 1px solid windowText;
 					}
 					&::after {
 						content: "";
@@ -232,12 +227,8 @@
 						bottom: -1rem;
 						left: calc(50% - 1.5rem);
 						z-index: -1;
-						@media #{$black-on-white}{
-							border-bottom-color: $high-contrast-grey;
-							border-left-color: transparent;
-						}
-						@media #{$white-on-black}{
-							border-bottom-color: $high-contrast-grey;
+						@media #{$high-contrast}{
+							border-bottom-color: windowText;
 							border-left-color: transparent;
 						}
 					}
@@ -403,12 +394,9 @@
 					width: 38rem;
 					height: 38rem;
 					border-radius: 50%;
-					@media #{$black-on-white}{
-						border:1px solid $high-contrast-grey;
-						}
-						@media #{$white-on-black}{
-						border:1px solid $high-contrast-grey;
-						}
+					@media #{$high-contrast}{
+						border:1px solid windowText;
+					}
 					@media #{$breakpoint_xl3} {
 						top: -3.5rem;
 						width: 29rem;

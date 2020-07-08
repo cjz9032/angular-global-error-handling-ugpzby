@@ -3,7 +3,7 @@
 ui-gaming-driver-popup {
 	position: absolute;
 	max-width: 56rem;
-	background: $gaming_lightest;
+	background: $white100;
 	z-index: 9;
 	border-radius: 0.75rem;
 	box-shadow: 0 0.8rem 1.5rem $screen_dark_30;
@@ -18,6 +18,7 @@ ui-gaming-driver-popup {
 	}
 	@media #{$high-contrast} {
 		background: window;
+		border: 1px solid windowText;
 	}
 	&::after {
 		content: "";
@@ -59,7 +60,7 @@ ui-gaming-driver-popup {
 			color: $main;
 			display: block !important;
 			@media #{$high-contrast} {
-				color: window;
+				color: buttonText;
 			}
 		}
 
@@ -68,12 +69,24 @@ ui-gaming-driver-popup {
 			font-weight: normal;
 			color: $darkText;
 			padding-right: 2.5rem;
+			@media #{$high-contrast} {
+				color: windowText;
+			}
 		}
 
 		p {
 			font-size: $fontsize_xs;
 			color: $darkText;
 			padding: 0.5rem 0;
+			@media #{$high-contrast} {
+				color: windowText;
+			}
+		}
+
+		hr {
+			@media #{$high-contrast} {
+				color: windowText;
+			}
 		}
 
 		.btn-container{
@@ -95,6 +108,10 @@ ui-gaming-driver-popup {
 			&:hover {
 				background: $blueHover;
 			}
+			@media #{$high-contrast} {
+				color: buttonText;
+				border: 1px solid windowText;
+			}
 		}
 
 		.cancel-link {
@@ -111,6 +128,10 @@ ui-gaming-driver-popup {
 			&:hover{
 				color: $blueHover;
 				border-bottom: 2px solid $blueHover;
+			}
+			@media #{$high-contrast} {
+				color: buttonText;
+				border-bottom: 2px solid buttonText;
 			}
 		}
 	}

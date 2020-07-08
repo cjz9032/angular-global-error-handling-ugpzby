@@ -12,6 +12,10 @@
 		background: $darkCell;
 		box-shadow: $drop_shadow_gaming;
 		padding: 2rem;
+		@media #{$high-contrast} {
+			border: 1px solid windowText;
+			border-radius: $border_radius;
+		}
 	}
 	.quickSettings-list-items {
 		&::ng-deep .vtr-widget-device-update-settings {
@@ -76,16 +80,13 @@
 										transition: all 0.3s ease-in;
 										right: 0;
 										opacity: 0;
-										@media #{$black-on-white} {
-											background: transparent;
-										}
-										@media #{$white-on-black} {
-											background: transparent;
-										}
 									}
 								}
 								&:hover .icon::after {
 									opacity: 1;
+									@media #{$high-contrast} {
+										opacity: 0;
+									}
 								}
 							}
 						}

@@ -17,6 +17,10 @@
 		}
 		// remove once populated
 		// min-height: 20rem;
+		@media #{$high-contrast} {
+			border: 1px solid windowText;
+			border-radius: $border_radius;
+		}
 		.system-tool-icons {
 			list-style: none;
 			padding-left: 0rem;
@@ -40,10 +44,13 @@
 					// 	padding: 2rem 0rem;
 					// }
 					&:hover {
-						background: $gaming_shade;
+						background: $white5;
 						.system-icon::before {
 							background: $gaming_shade;
 						}
+					}
+					@media #{$high-contrast} {
+						color: buttonText;
 					}
 				}
 				figure {
@@ -79,8 +86,11 @@
 							bottom: 0;
 							right: 0;
 							margin: -3px;
-							background-image: $gaming_icon_gradient;
+							background-image: linear-gradient(45deg, $blueFill, $blueFill);
 							z-index: -1;
+							@media #{$high-contrast} {
+								background-image: linear-gradient(45deg, buttonText, buttonText);
+							}
 						}
 						&::before {
 							content: '';
@@ -103,8 +113,11 @@
 							-webkit-background-clip: text;
 							-webkit-text-fill-color: transparent;
 							background-clip: text;
-							color: $gaming_light_blue;
+							color: $blueFill;
 							// padding-top: 0.8rem;
+							@media #{$high-contrast} {
+								color: buttonText;
+							}
 						}
 						.image {
 							z-index: 2;
@@ -131,14 +144,13 @@
 						white-space: normal;
 						overflow: hidden;
 						height: 4.4rem;
+						@media #{$high-contrast} {
+							color: buttonText;
+						}
 					}
 					.system-tool-title{
-						@media #{$black-on-white} {
-							@include hyperlink-blue-white;
-						}
-
-						@media #{$white-on-black} {
-							@include hyperlink-yellow-black;
+						@media #{$high-contrast} {
+							color: buttonText;
 						}
 					}
 				}

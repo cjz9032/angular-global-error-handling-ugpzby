@@ -11,12 +11,15 @@
 	position: relative;
 	vertical-align: middle;
 	transition: all 0.2s ease-in;
-	margin-top: 0.5rem;
 	@media #{$high-contrast} {
-		background: windowText;
+		background: window;
+		border: 1px solid windowText;
 	}
 	&.selected{
 		background: linear-gradient(90deg, #2fcc74, #33dfa6);
+		@media #{$high-contrast} {
+			background: windowText;
+		}
 	}
 	.btnRound{
 		border: none;
@@ -25,14 +28,6 @@
 		border-radius:10rem;
 		cursor: pointer;
 		background: $white100;
-		@media #{$white-on-black} {
-			background: #6d6d6d;
-			box-shadow: 0px 0.1rem 0.3rem rgba(0,0,0,0.4);
-		}
-		@media #{$black-on-white} {
-			background: #6d6d6d;
-			box-shadow: 0px 0.1rem 0.3rem rgba(0,0,0,0.4);
-		}
 		position: absolute;
 		left: 0.3rem;
 		top: 0.3rem;
@@ -40,8 +35,12 @@
 		transition:all 0.2s ease-in;
 		visibility:visible;
 		&.selected{
-			background: #fbfdff;
 			left: 3rem;
+		}
+		@media #{$high-contrast} {
+			background: buttonText;
+			box-shadow: 0px 0.1rem 0.3rem rgba(0,0,0,0.4);
+			top: 0.2rem;
 		}
 	}
 	.switch-label {

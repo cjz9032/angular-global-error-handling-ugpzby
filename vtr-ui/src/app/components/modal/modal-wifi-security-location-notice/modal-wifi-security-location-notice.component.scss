@@ -8,6 +8,9 @@
 	padding: 4rem;
 	position: relative;
 	outline: none;
+	@media #{$high-contrast} {
+		border: 1px solid windowText;
+	}
 	h1 {
 		font-size: 2.6rem;
 		font-weight: $weight_regular;
@@ -61,13 +64,25 @@
 			color: $blueHover;
 			border-bottom: 0.2rem solid $blueHover;
 		}
+		@media #{$high-contrast} {
+			color: buttonText;
+			// remove dependency effect
+			border: none;
+			border-bottom: 0.2rem solid buttonText;
+		}
 	}
 	// Version 3.3: UI reskin
 	.btn-modal-close {
 		&::ng-deep .x {
 			background: $blueFill;
+			@media #{$high-contrast} {
+				background: buttonText;
+			}
 			&::before {
 				background: $blueFill;
+				@media #{$high-contrast} {
+					background: buttonText;
+				}
 			}
 		}
 		&:hover {
@@ -76,6 +91,16 @@
 				&::before {
 					background: $blueHover;
 				}
+			}
+		}
+	}
+
+	&::ng-deep .button-box {
+		button {
+			@media #{$high-contrast} {
+				color: buttonText;
+				background: window !important;
+				border: 1px solid windowText !important;
 			}
 		}
 	}

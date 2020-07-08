@@ -15,7 +15,14 @@
 		background-size: 100% auto;
 		padding-top: 18rem;
 		@media #{$high-contrast} {
-			border: solid 0.2rem windowText !important;
+			border: 1px solid windowText;
+			border-radius: $border_radius;
+		}
+		.container-fluid {
+			@media #{$high-contrast} {
+				border: 1px solid windowText;
+				border-radius: $border_radius;
+			}
 		}
 	}
 	.widget-container-notebook{
@@ -262,6 +269,9 @@
 				color: $white60;
 				line-height: 1.5rem;
 				transition: all .2s ease-in-out;
+				@media #{$high-contrast} {
+					color: buttonText;
+				}
 				&:hover {
 					color: $white100;					
 					.icon{

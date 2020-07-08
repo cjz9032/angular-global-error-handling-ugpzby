@@ -44,9 +44,11 @@
 		fa-icon {
 			color: $main;
 			font-size: 1.8rem;
-
 			&.question {
 				cursor: pointer;
+			}
+			@media #{$high-contrast} {
+				color: buttonText;
 			}
 		}
 
