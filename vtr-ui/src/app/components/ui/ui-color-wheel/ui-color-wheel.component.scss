@@ -113,11 +113,18 @@
 		height: 4rem;
 		padding: 0rem 2rem;
 		letter-spacing: 0.1rem;
+		@media #{$high-contrast} {
+			border: 0.2rem solid windowText;
+		}
 		span {
 			display: inline-block;
 		}
 		&:hover {
 			background: $blueHover;
+			@media #{$high-contrast} {
+				background: highlight;
+				color: highlightText;
+			}
 		}
 		&:focus{
 			outline: 1px solid $blueHover !important;
@@ -130,6 +137,10 @@
 		background: $gaming_shade !important;
 		box-shadow: none!important;
 		pointer-events: none;
+		@media #{$high-contrast} {
+			color: inactiveBorder;
+			border-color: inactiveBorder;
+		}
 	}
 	.backColorDpiv {
 		height: 3rem;
