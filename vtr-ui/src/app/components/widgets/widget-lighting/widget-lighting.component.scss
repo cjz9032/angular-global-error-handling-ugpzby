@@ -14,6 +14,9 @@
 		background: url(~/assets/images/gaming/lightingImage@2x.png) center top no-repeat $gaming_dark;
 		background-size: 100% auto;
 		padding-top: 18rem;
+		@media #{$high-contrast} {
+			border: solid 0.2rem windowText !important;
+		}
 	}
 	.widget-container-notebook{
 		background: url(~/assets/images/gaming/lighting/lighting-ui-new/bg_note.png) center top no-repeat $gaming_dark;
@@ -23,6 +26,9 @@
 		padding: 3rem;
 		background: $gaming_darkest;
 		border-radius: 0.8rem;
+		@media #{$high-contrast} {
+			border: 0.2rem solid windowText;
+		}
 		.card-title {
 			color: $gaming_switch_light;
 			font-size: 1.6rem;
@@ -62,6 +68,9 @@
 				right: 0rem;
 				margin: -0.2rem;
 				background-image: $gaming_lighting_gradient;
+				@media #{$high-contrast} {
+					background: windowText;
+				}
 				z-index: -1;
 			}
 			.inner-toggle{
@@ -103,13 +112,19 @@
 					position: relative;
 					z-index: 1;
 					cursor: pointer;
+					@media #{$high-contrast} {
+						color: buttonText;
+					}
 					span{
 						overflow: hidden;
 						text-overflow: ellipsis;
 						white-space: nowrap;
 						box-sizing: border-box;
 						padding: .25rem;
+						@media #{$high-contrast} {
+							color: buttonText;
 						}
+					}
 				}
 			}
 			.toggle-stable {
@@ -132,23 +147,49 @@
 				transition: all 0.3s ease-in-out;
 				left: 0;
 				color: white !important;
+				@media #{$high-contrast} {
+					background: highlight;
+				}
 			}
 			#off_radio:checked {
+				& + label {
+					span {
+						@media #{$high-contrast} {
+							color: highlightText;
+						}
+						
+					}
+				}
 				& ~ .toggle {
 					left: 0%;
 				}
 			}
 			#first_radio:checked {
+				& + label {
+					@media #{$high-contrast} {
+						color: highlightText;
+					}
+				}
 				& ~ .toggle {
 					left: 25%;
 				}
 			}
 			#second_radio:checked {
+				& + label {
+					@media #{$high-contrast} {
+						color: highlightText;
+					}
+				}
 				& ~ .toggle {
 					left: 50%;
 				}
 			}
 			#third_radio:checked {
+				& + label {
+					@media #{$high-contrast} {
+						color: highlightText;
+					}
+				}
 				& ~ .toggle {
 					left: 75%;
 				}
@@ -227,6 +268,13 @@
 				&.lighting-gear-icon {
 					.gear-icon-gaming {
 						margin-right: 0.5rem;
+						&:hover {
+							&:after { 
+								@media #{$high-contrast} {
+									background: none !important;
+								}
+							}
+						}
 						&:after {
 							left:-0.25rem;
 						}

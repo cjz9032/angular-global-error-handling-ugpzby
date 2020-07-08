@@ -26,6 +26,10 @@
     }
   }
 
+  @media #{$high-contrast} {
+	border: 0.2rem solid windowText;
+  }
+
   .lighting-area {
     min-height: 40rem;
     margin-top: 2.2rem;
@@ -33,7 +37,7 @@
     border-radius: 0.5rem;
     background: url(~/assets/images/gaming/lighting/blueBG.png) left center no-repeat $gaming_bg;
     background-size: contain;
-    padding: 2rem;
+	padding: 2rem;
     @media #{$small-screen}{
       background: url(~/assets/images/gaming/lighting/blueBG-horizontal.png) center top no-repeat $gaming_bg;
       background-size: 100% auto;
@@ -47,7 +51,10 @@
       .d-flex{
         flex-direction: column;
       }
-    }
+	}
+	@media #{$high-contrast} {
+		border: 0.2rem solid windowText;
+	}
     .gaming-device-image {
 	  width: 40%;
 	  min-height: 34rem;//44rem
@@ -102,7 +109,7 @@
         vtr-ui-lighting-effect {
           ::ng-deep {
             &.select-box {
-				height: 7.2rem;
+				margin-bottom: 0.5rem;
 				svg {
 					color: $gaming_lightest !important;
 				}
@@ -133,10 +140,16 @@
       margin-top: 2rem;
       padding-bottom: 0.5rem;
 	  border-bottom: 1px solid $gaming;
+	  @media #{$high-contrast} {
+		color: buttonText;
+	 }
 	  &:hover {
 		color: $gaming_info_link_hover;
 		border-color: $gaming_info_link_hover;
 		text-decoration: none;
+		@media #{$high-contrast} {
+			color: highlight;
+		 }
 	}
     }
   }

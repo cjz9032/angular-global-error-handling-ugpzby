@@ -21,12 +21,13 @@
 	}
 	.brightCondition {
 		color: $gaming_lightest;
-		font-size: 1.8rem;
+		font-size: $fontsize_xs;
 		text-overflow: ellipsis;
 		overflow: hidden;
 		white-space: nowrap;
+		margin-left: 1rem;
 		@media #{$large-screen-1} {
-			font-size: 1.6rem;
+			font-size: $fontsize_xs;
 		}
 		&:hover ~ .gaming-tooltip {
 			opacity: 1;
@@ -55,9 +56,19 @@
 		white-space: pre-wrap;
 		word-break: keep-all;
 		pointer-events: none;
+		@media #{$high-contrast} {
+			border: 0.1rem solid windowText;
+			background-color: windowText;
+			color: windowText;
+		}
 		p {
 			font-size: $fontsize_xs;
 			line-height: 1.8rem;
+			@media #{$high-contrast} {
+				border: 0.1rem solid windowText;
+				background-color: windowText;
+				color: windowText;
+			}
 		}
 		&::after {
 			content: "";
