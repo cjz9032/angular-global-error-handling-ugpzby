@@ -100,6 +100,9 @@
 			a {
 				color: $gaming_dark;
 				text-decoration: none;
+				@media #{$high-contrast} {
+					color: highlight;
+				}
 			}
 			&:nth-child(3) {
 				margin-right: 0;
@@ -117,12 +120,16 @@
 			&.selected {
 				a {
 					color: $gaming_lightest;
+					@media #{$high-contrast} {
+						background-color: highlightText;
+					}
 				}
 				opacity: 1;
 				color: $gaming_lightest;
 				@media #{$high-contrast} {
-					background-color: windowText;
-					border: 0.1rem solid window;
+					background-color: highlight;
+					border: 0.1rem solid windowText;
+					color: highlightText;
 				}
 				background-color: $gaming_light_blue;
 				box-shadow: 0rem 0.4rem 0rem 0.1rem $gaming_gstart !important;
@@ -132,7 +139,7 @@
 						&:after {
 							background-color: $gaming_lightest;
 							@media #{$high-contrast} {
-								background-color: windowText;
+								background-color: highlightText;
 								bottom: 0.4rem;
 							}
 						}
@@ -154,7 +161,7 @@
 						left: 0px;
 						right: 0px;
 						@media #{$high-contrast} {
-							background-color: windowText;
+							background-color: buttonText;
 							bottom: 0.4rem;
 						}
 					}
@@ -164,6 +171,7 @@
 				border: 0.1rem solid windowText;
 				background: window;
 				background-image: none;
+				color: buttonText;
 			}
 		}
 	}

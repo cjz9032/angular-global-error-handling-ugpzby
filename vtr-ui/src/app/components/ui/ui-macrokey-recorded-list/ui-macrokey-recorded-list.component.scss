@@ -110,7 +110,7 @@
 			&:hover {
 				color: $blueHover;
 				@media #{$high-contrast} {
-					background-color: window;
+					background-color: highlight;
 					border: 0.1rem solid windowText;
 				}
 				svg {
@@ -139,6 +139,9 @@
 					color: $gaming_light_blue;
 					&:hover {
 						width: auto;
+						@media #{$high-contrast} {
+							color: highlightText;
+						}
 					}
 				}
 			}
@@ -152,7 +155,7 @@
 					path {
 						fill: $blueHover;
 						@media #{$high-contrast} {
-							fill: windowText;
+							fill: highlightText;
 						}
 					}
 				}
@@ -212,6 +215,9 @@
 		user-select: none;
 		-webkit-transition: 0.2s ease;
 		transition: 0.2s ease;
+		@media #{$high-contrast} {
+			color: buttonText;
+		}
 	}
 
 	svg {
@@ -220,7 +226,7 @@
 			transition: 0.2s ease;
 			fill: $blueFill;
 			@media #{$high-contrast} {
-				fill: windowText;
+				fill: buttonText;
 			}
 		}
 		margin: 0.4rem;
@@ -231,12 +237,15 @@
 		.delete-btn {
 			color: $blueHover;
 			border-bottom: 0.2rem solid $blueHover;
+			@media #{$high-contrast} {
+				color: highlightText;
+			}
 		}
 		svg {
 			path {
 				fill: $blueHover;
 				@media #{$high-contrast} {
-					fill: windowText;
+					fill: highlightText;
 				}
 			}
 		}
