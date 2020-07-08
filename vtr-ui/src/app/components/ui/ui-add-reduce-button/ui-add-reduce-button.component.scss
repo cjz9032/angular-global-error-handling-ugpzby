@@ -6,7 +6,7 @@
     border-radius: .6rem;
     display: flex;
     @media #{$high-contrast} {
-        border: 1px solid buttonText;
+        border: 1px solid windowText;
         // background-color: $highContrastGray;
     }
     button {
