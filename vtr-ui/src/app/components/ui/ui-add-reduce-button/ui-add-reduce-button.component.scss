@@ -25,6 +25,9 @@
             &:active {
                 transform: scale(1);
             }
+            @media #{$high-contrast} {
+                opacity: 0.4;
+            }
         }
         span {
             font-size: 3rem;
