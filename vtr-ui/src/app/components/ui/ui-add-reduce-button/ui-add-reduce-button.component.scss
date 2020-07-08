@@ -7,7 +7,6 @@
     display: flex;
     @media #{$high-contrast} {
         border: 1px solid windowText;
-        // background-color: $highContrastGray;
     }
     button {
         font-size: 0;
