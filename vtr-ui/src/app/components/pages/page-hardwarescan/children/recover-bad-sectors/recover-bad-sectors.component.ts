@@ -3,7 +3,7 @@ import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.
 import { DeviceService } from 'src/app/services/device/device.service';
 import { TranslateService } from '@ngx-translate/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { HardwareScanService } from '../../../../../services/hardware-scan/hardware-scan.service';
 import { ModalRecoverConfirmComponent } from '../../../../modal/modal-recover-confirm/modal-recover-confirm.component';
 import { HistoryManager } from 'src/app/services/history-manager/history-manager.service';
@@ -29,7 +29,6 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 		private hardwareScanService: HardwareScanService,
 		private translate: TranslateService,
 		private modalService: NgbModal,
-		private router: Router,
 		private historyManager: HistoryManager,
 		private activatedRoute: ActivatedRoute
 	) {
