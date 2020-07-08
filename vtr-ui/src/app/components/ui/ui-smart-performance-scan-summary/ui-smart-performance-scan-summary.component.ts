@@ -153,6 +153,9 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		if (cacheMachineFamilyName) {
 			this.machineFamilyName = cacheMachineFamilyName;
 		}
+		this.smartPerformanceService.scanningStopped.subscribe(() => {
+			this.backToNonSubScriberHome()
+		})
 		// this.leftAnimatorCalc = ((this.rating*10) - 1);
 		this.currentDate = new Date();
 		this.currentDateLocalFormat = this.formatLocaleDate.transform(this.currentDate);
@@ -362,8 +365,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 
 	openDropDown() {
 		this.isDropDownOpen = !this.isDropDownOpen;
-		if(!this.isDropDownOpen) {
-			if(this.oldDisplayFromDate && this.oldDisplayToDate) {
+		if (!this.isDropDownOpen) {
+			if (this.oldDisplayFromDate && this.oldDisplayToDate) {
 				this.displayFromDate = this.oldDisplayFromDate;
 				this.displayToDate = this.oldDisplayToDate;
 			}
@@ -432,13 +435,18 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.selectedTodate = this.maxDate;
 	}
 
-	openSubscribeModal() {
-		this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
+	async openSubscribeModal() {
+		const modalRef = this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
 			backdrop: 'static',
 			size: 'lg',
 			centered: true,
 			windowClass: 'subscribe-modal'
 		});
+
+		const res = await modalRef.result;
+		if (res) {
+			this.smartPerformanceService.scanningStopped.next()
+		}
 		const currentTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
 		const intervalTime = moment(currentTime).add(PaymentPage.ORDERWAITINGTIME, 'm').format('YYYY-MM-DD HH:mm:ss');
 		const modalStatus = {
@@ -547,7 +555,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			const fiveMinutesFromRecentScan = moment(scanRunTime).add(enumSmartPerformance.SUMMARYWAITINGTIME, 'm').format('YYYY-MM-DD HH:mm:ss');
 
 			if (now < fiveMinutesFromRecentScan) {
-                if (response) {
+				if (response) {
 					this.isLoading = false;
 					// this.historyRes = {
 					// 	tuneCount: response.Tune,
@@ -560,7 +568,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 					this.isScanning = false;
 					this.inputIsScanningCompleted = true;
 				}
-            }
+			}
 
 		} catch (error) {
 			this.logger.error('Smart-Performance, LastScanResult error:', error)
