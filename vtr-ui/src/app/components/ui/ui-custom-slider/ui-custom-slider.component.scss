@@ -23,6 +23,25 @@
 		background-position: center;
 	}
 
+	@mixin background-image-properties {
+		background-size: 100%;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+	@mixin thumb-icon-black {
+		background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAABHNCSVQICAgIfAhkiAAAAj1JREFUSEvFlt1twjAUhc+VeAcmILwjQSYoTFC6AUzQEcoI7QSkE5QNoBOQSLyTTEB4R3J1Igc5iZ2kBVRLCAUcfz73X9BiKaWmAJ4BTAB4+sM3QwCp/v4UET7XLqn7Vym1APBmAJrOiwGsROTTtdEKVEpRyVoraoLY/qfSFxHhBQqrAtTm+wLQ+wvJeIemJnRnnlMAatj2RlD59ZkJvQK1GQm7VVkZSKV+bl4TSLuP76wuPy4UEZ8PGVBHI4PkkWspIkEOZDQNrOEWhpjNZliv15jP59YLbTYbLJdLbLdbTCYMcOuKRWQodYESaphSCrvdznkY902nU4hIE9Qn8B3Aa8XTaQrf93E6nWphVydpaL/fx36/R69njb0PApknTyYwTdPMjMfjsRWsDB0Oh5lSC/SbwIL//gozobQMfWmBhgQqUx03RlGU3a4cAIfDAZfLpWD9TqeD0WhU+I0+5cX5Ps1bqDQuYLfbvQl4Pp8xHo9BeBlYMSkjjiqZCosFG0b7FQRBliKEMbJLfoycQUNokiRNYV4xJf3ngHFvFjTOtPgNNM/ZwWBgU5ZfLEsLdnNrh6DjPc9rTGizQMRx7MpBQv1WpY1K6Zu60kZf11UjAImIeP9TvHXHeGR7ikQkq+pmP+Q0Rmi3fRK02nnmbFRpwFqlM4BaHW3fxG5/zX7XELW5g1Iqm9cOUfkF9XwT3DByRBrWPCaaVtGjx8o1DVgsmOhBmJe1rtrJu6SYRZWRxs6aD1tUko/6QZtR/wfG5Uirhfu3DgAAAABJRU5ErkJggg==");
+		@include background-image-properties;
+	}
+	@mixin thumb-icon-black-hover {
+		background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAABHNCSVQICAgIfAhkiAAAAmJJREFUSEvFlrtuE0EUhr8TOS1xpMQdxOlAMoqXF8CmpMEu6ZwHAB6BPAKXB/CmoowrSpy8AFkLS6TDhi6JFJvayqCzo413vVcnjtjG1u6c+ebMOf/MLxR5LkwDeAXUMVQRqn6YwUOYAB6GQyri5U0nmQMuTYdr3t8A8mYzjFjjgC05TBuaDDw3daCLoL/LP5r5Om02ZbQYHAfa7TsCysuTIhG61W225Tj8Ngq0sP4dQYvhzTB0DtRtFB9218wWgRNKOMH2hoHacXsrzs5OpzWtiKN/LVC70dC9F1gwqbDPlrgWeGG0m3YSgT88aDfhUxdetpLX9LUHb/fhqA9PUxpbJVORXSGrUQKYMdA7Tp9Mx7UaIJIHdYRL8wHDu9jSpxN44cDkKhsWBAbQ8iZ8O4WNhN4TPmqGqpPnEaDCWk34/asYbBH6aBd6/SToiQKj9bstLAzVnanV41CDp0ATya5Zh+HArk6Dws/PIcxm0XelEjypRd8NPdCFa3z/NPItHfhgIw48SwE+TgD+nUJtD/rRCyRlSxs2S5XC685y8vziWokoTDs73DyGQUbTNODPOLvNF5einerXLwFmx55ky0K1VRQaaPbhTjyz+WnjyyL9htDCP6vmCzp8QHwfJWvQnqlOsaNNM/3sZh9tbzp5mh2zLdX/dHhruufmPq+nARXxRT2/D69MlRkqmo3ldJA7ekqJevwCttfU6i2GwQnbxzQT1VtBplOglW2igt2xNtG9teUwDFinVcwmhktircdBqhuIl2+M+EbYTatstvMOZ7yGwtXql28y10zU6gse17hFrP4/3mII66WOkGIAAAAASUVORK5CYII=");
+		@include background-image-properties;
+	}
+
+	@mixin thumb-icon-black-disabled {
+		background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAABHNCSVQICAgIfAhkiAAAAqdJREFUSEvFlk9vEkEYxp8BQrrJKuhVpTQhwUBbl6N6UI+YGNu7h3qrJz+CfAQ92Vtp4l0TEz22HtTr0LpEEgxQ61UXJdmGsDtmZtmyy/4tSJzLhjAzv3need95H4IYQ/mzeheEPQSIArA8QPLWMkYBollftkflJo3ajoRNUAalLYA8mwCitmNdADUqq3tBM32ByqCkAGTXUjTLYBRJY5NKX/kBXMMDFOEDXoMgOwvqbA2DBmCTXvhy4NzHBbTuCvtzgaYXM9xzQs+AIowssT+3Mi9QQ2pUscPrAJZ5xt34p+om8aVUViv8pwBa2ZjYXQzM3tV8TOVmfQwsdwGy7AfUD3W073eQe3kVmQcXfc/Uf/sbx09OUHi3AmldCjg361JZXSFhiWLDwIDC++DNxLxqR8QrHGpWiDIoPwfI0+ljGZqB1u02+DcMZq+zoclsEsWPBfCvd7AXXOEBCO44/+QQHsZhbxgLNg1NL6eFUg+U4QNX6Lq/WWFOaOvWN0jrSz5QRokyWGVOda2bbehHp0hmE5DW3AmgN0+BkWs6kCKQSkuu6OlHOgzNFNDip4L7aQsEZhKejIsNPNRh9E1Ia0sofvYAfUJa7QiVuZ0ruPzo0rnK8+erXzje/iFgPNnc98gawUlT7WD4fRiR5u6z8EwV9+cL4+3TSprAsuC1FRdq12z6WtpHmX0wqywCOwTP2Ga5FVnQzgeipBYDapBDzUq8p63aQW4n4mnbPomoWdajspr/P4+31TEW2p4aVFaFXZn0Q/16HqMUBUHmXHUQNZmhj9RI8TRgoXIRFgNmxWkfg0zUm7mVcmXARqiJsqMzton12S0HayBpbMSyic4rGRvhWpAb8Ol3PYDVuJUIutpQ5z2leAuMKCAsO1HOGmBEAxFWvx7H6v8F5CRb35GIYWoAAAAASUVORK5CYII=");
+		@include background-image-properties;
+	}
+
 	@mixin thumb-style() {
 		appearance: none;
 		border: none;
@@ -31,9 +50,7 @@
 		border-radius: 50%;
 		@include thumb-icon();
 		@media #{$white-on-black} {
-			@include thumb-icon("black");
-			box-shadow: none;
-			background-color: $light;
+			@include thumb-icon-black;
 		}
 		@media #{$black-on-white} {
 			box-shadow: none;
@@ -46,8 +63,7 @@
 		box-shadow: none;
 		background-color: $grey_light;
 		@media #{$white-on-black} {
-			@include thumb-icon("black");
-			background-color: $high-contrast-black-disabled-green;
+			@include thumb-icon-black-disabled;
 		}
 		@media #{$black-on-white} {
 			@include thumb-icon("white");
@@ -79,9 +95,7 @@
 		box-shadow: none;
 		background-color: $blue-lighter;
 		@media #{$white-on-black} {
-			@include thumb-icon("black");
-			box-shadow: none;
-			background-color: $high-contrast-black-cyan;
+			@include thumb-icon-black-hover;
 		}
 		@media #{$black-on-white} {
 			box-shadow: none;
@@ -98,9 +112,8 @@
 		@include thumb-icon();
 		box-shadow: 0 0 0 1px $light, 0 0 0 2px $menu_hover;
 		@media #{$white-on-black} {
-			@include thumb-icon("black");
+			@include thumb-icon_black_hover;
 			box-shadow: 0 0 0 1px $dark, 0 0 0 2px $high-contrast-black-cyan;
-			background-color: $high-contrast-black-cyan;
 		}
 		@media #{$black-on-white} {
 			box-shadow: 0 0 0 1px $light, 0 0 0 2px $high-contrast-white-dark-magenta;
@@ -264,7 +277,7 @@
 
 			&:hover::-webkit-slider-thumb {
 				@media #{$white-on-black} {
-					@include thumb-hover();
+					@include thumb-icon-black-hover;
 				}
 				@media #{$black-on-white} {
 					@include thumb-hover();
