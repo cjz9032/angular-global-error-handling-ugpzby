@@ -23,10 +23,13 @@
 			color: $shade-darker;
 			font-size: $fontsize_xs2;
 			font-weight: $weight_light;
-    	}
+		}
+
+		.description-failure {
+			padding-top: 1rem;
+		}
 
 		.modules {
-			padding-bottom: 1rem;
 			.warning {
 				color: $orange_light;
 			}
