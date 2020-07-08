@@ -117,7 +117,7 @@
 					path {
 						fill: $gaming_light_blue;
 						@media #{$high-contrast} {
-							fill: windowText;
+							fill: highlightText;
 						}
 					}
 				}
@@ -148,7 +148,8 @@
 			&.paired {
 				color: $gaming_light_blue;
 				@media #{$high-contrast} {
-					background-color: window;
+					color: highlightText;
+					background-color: highlight;
 					border: 0.1rem solid windowText;
 				}
 				svg {
@@ -238,14 +239,14 @@
 			color: $blueHover;
 			border-bottom: 0.2rem solid $blueHover;
 			@media #{$high-contrast} {
-				color: highlightText;
+				color: highlight;
 			}
 		}
 		svg {
 			path {
 				fill: $blueHover;
 				@media #{$high-contrast} {
-					fill: highlightText;
+					fill: highlight;
 				}
 			}
 		}
