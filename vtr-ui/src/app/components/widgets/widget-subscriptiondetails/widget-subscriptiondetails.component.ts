@@ -53,7 +53,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		private smartPerformanceService: SmartPerformanceService,
 		private supportService: SupportService,
 		private logger: LoggerService) {
-			this.spPaymentPageenum = PaymentPage;
+		this.spPaymentPageenum = PaymentPage;
 
 	}
 	public localSubscriptionDetails = {
@@ -62,7 +62,10 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		endDate: formatDate(this.spEnum.SCHEDULESCANENDDATE, 'yyyy/MM/dd', 'en')
 	}
 	ngOnInit() {
+
 		this.isFirstLoad = true;
+
+
 		this.spFrstRunStatus = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun);
 		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
 		this.decryptPNListData();
@@ -100,11 +103,10 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		}
 		const currentTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
 		this.modalStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus);
-		this.intervalTime = this.modalStatus.initiatedTime? this.modalStatus.initiatedTime : currentTime;
-
-			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.processStatus';
-			this.strStatus = 'PROCESSING';
-			this.getSubscriptionDetails();
+		this.intervalTime = this.modalStatus.initiatedTime ? this.modalStatus.initiatedTime : currentTime;
+		this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.processStatus';
+		this.strStatus = 'PROCESSING';
+		this.getSubscriptionDetails();
 
 	}
 
@@ -151,6 +153,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 			initiatedTime: this.intervalTime,
 			isOpened: true
 		}
+
 		this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, this.modalStatus);
 		const modalCancel = this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
 			backdrop: 'static',
@@ -219,7 +222,9 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.subscriptionDetails);
 		} else {
-			if (!this.isFirstLoad) {
+
+			if (this.modalStatus.isOpened) {
+
 				this.setTimeOutCallForSubDetails();
 			} else {
 				this.subscriptionDetails.startDate = '---';
@@ -227,6 +232,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 				this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.inactiveStatus';
 				this.strStatus = 'INACTIVE';
 				this.isLoading = false;
+				this.isRefreshEnabled = false;
 			}
 		}
 	}
@@ -250,6 +256,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 					this.isLoading = false;
 					this.isRefreshEnabled = true;
 					this.modalStatus.isOpened = false;
+
 					this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, this.modalStatus);
 				}
 			}, 30000);

@@ -9,7 +9,7 @@ import { SupportService } from 'src/app/services/support/support.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { PaymentPage } from 'src/app/enums/smart-performance.enum';
 import { environment } from 'src/environments/environment';
-
+import moment from 'moment';
 @Component({
 	selector: 'vtr-modal-smart-performance-subscribe',
 	templateUrl: './modal-smart-performance-subscribe.component.html',
@@ -67,7 +67,10 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 		window.open(this.paymenturl);
 		this.cancelPaymentRequest.emit();
 		this.activeModal.close('close');
+		const currentTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
+		const intervalTime = moment(currentTime).add(PaymentPage.ORDERWAITINGTIME, 'm').format('YYYY-MM-DD HH:mm:ss');
 		const modalStatus = {
+			initiatedTime: intervalTime,
 			isOpened: true
 		}
 		this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, modalStatus);

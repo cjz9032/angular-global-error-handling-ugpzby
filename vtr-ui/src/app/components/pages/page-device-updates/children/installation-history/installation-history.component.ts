@@ -121,7 +121,11 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 		if (this.systemUpdateService.installationHistory) {
 			this.sortInstallationHistory(this.systemUpdateService.installationHistory);
 		}
-		document.getElementById('system-update-back-btn').focus();
+		let focusId = 'su_installation_update_sort_order';
+		if (this.installationHistory && this.installationHistory.length >= 5) {
+			focusId = 'su_installation_update_expand_'+ this.installationHistory[4].packageID;
+		}
+		document.getElementById(focusId).focus();
 	}
 
 	public convertReleaseDate(datestr: string) {

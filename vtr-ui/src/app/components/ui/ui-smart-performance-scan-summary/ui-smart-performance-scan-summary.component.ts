@@ -443,7 +443,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		const intervalTime = moment(currentTime).add(PaymentPage.ORDERWAITINGTIME, 'm').format('YYYY-MM-DD HH:mm:ss');
 		const modalStatus = {
 			initiatedTime: intervalTime,
-			isOpened: false
+			isOpened: true
 		}
 		this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, modalStatus);
 		// const scanEnabled = this.commonService.getLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled);

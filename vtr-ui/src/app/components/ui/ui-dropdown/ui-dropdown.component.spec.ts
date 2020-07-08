@@ -2,10 +2,15 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UiDropDownComponent } from './ui-dropdown.component';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
 import { faChevronUp } from '@fortawesome/pro-light-svg-icons/faChevronUp';
+import { DevService } from 'src/app/services/dev/dev.service';
+import { MetricService } from 'src/app/services/metric/metrics.service';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpLoaderFactory } from 'src/app/modules/translation.module';
+import { HttpClient } from '@angular/common/http';
 
 const interval = [{
 	name: 'Always on',
@@ -50,16 +55,24 @@ const interval = [{
 	metricsValue: {}
 }]
 
-xdescribe('UiDropdownComponent', () => {
+describe('UiDropdownComponent', () => {
 	let component: UiDropDownComponent;
 	let fixture: ComponentFixture<UiDropDownComponent>;
 	let logger: LoggerService;
+	let devService: DevService;
+	let metricService: MetricService
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiDropDownComponent],
-			providers: [LoggerService],
-			imports: [TranslateModule.forRoot(), HttpClientTestingModule]
+			providers: [LoggerService, DevService, MetricService],
+			imports: [RouterTestingModule, TranslateModule.forRoot({
+				loader: {
+					provide: TranslateLoader,
+					useFactory: HttpLoaderFactory,
+					deps: [HttpClient]
+				}
+			}), HttpClientTestingModule],
 		})
 	}));
 
@@ -75,23 +88,13 @@ xdescribe('UiDropdownComponent', () => {
 	}));
 
 	it('should call setDropValue when and list and value available', () => {
-		component.list = [ ...interval ];
+		component.list = [...interval];
 		component.value = 0;
 		component.dropDownId = 'oled-taskbar-dimmer-dropDown';
 		fixture.detectChanges();
 		component.setDropDownValue();
 		expect(component.name).toBe('Always on')
 	});
-
-	it('should call setDropValue when and list and value not available', () => {
-		component.list = [];
-		component.value = 0;
-		component.dropDownId = 'oled-taskbar-dimmer-dropDown';
-		fixture.detectChanges();
-		component.setDropDownValue();
-		expect(component.name).toBeUndefined()
-	});
-
 	it('should call toggleList when disabled is false', () => {
 		component.disabled = false;
 		const event = new Event('click')
@@ -107,16 +110,16 @@ xdescribe('UiDropdownComponent', () => {
 	});
 
 	it('should call closeDropdown - try block', () => {
-		const eventObj = {value: 2, hideList: false};
-		component.list = [ ...interval ];
+		const eventObj = { value: 2, hideList: false };
+		component.list = [...interval];
 		spyOn(component, 'settingDimmerIntervals')
 		component.closeDropdown(eventObj)
 		expect(component.isDropDownOpen).toBe(false)
 	});
 
 	it('should call closeDropdown - try block else condition', () => {
-		const eventObj = {hideList: false};
-		component.list = [ ...interval ];
+		const eventObj = { hideList: false };
+		component.list = [...interval];
 		const spy = spyOn(component, 'settingDimmerIntervals')
 		component.closeDropdown(eventObj)
 		expect(spy).not.toHaveBeenCalled()

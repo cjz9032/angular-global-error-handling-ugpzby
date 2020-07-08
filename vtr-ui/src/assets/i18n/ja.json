@@ -3490,7 +3490,11 @@
                         "iteme6": "クラウド修復エンジンで検証"
                     }
                 }
-            }
+            },
+            "confirmationTitle": "Lenovo Payment Process",
+            "confirmationNote": "You will be directed to Lenovo Payment Website to finish the payment. Once the payment is done, you can press the \"refresh\" button in \"Subscription Detail\" to get the payment result.",
+            "confirmationBtn": "Proceed",
+            "refreshButton": "Refresh Status"
         },
         "scanCompletePage": {
             "title": "システムのスキャンが完了しました",
@@ -3903,6 +3907,7 @@
             "trialExpiredDetail": "Your trial period has expired. Please purchase a subscription to keep your home and family protected!",
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
+            "discountPrice": "For only $29.99 for one year",
             "overviewTitle": "Overview",
             "trialPeriod": "Trial period:",
             "subscriptionPeriod": "Subscription period:",

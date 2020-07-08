@@ -65,6 +65,9 @@
 				</p>
 			</div>
 			<div class="common-btn subscription-btn">
+				<p class="m-0 pl-0" *ngIf="account?.state === 'trial' || account?.state === 'trialExpired'"
+					[innerHTML]="'homeSecurity.overview.discountPrice' | translate">
+				</p>
 				<vtr-ui-button *ngIf="account?.state === 'trial' || account?.state === 'trialExpired'"
 					metricsItem="buyNow"
 					metricsEvent="featureClick"

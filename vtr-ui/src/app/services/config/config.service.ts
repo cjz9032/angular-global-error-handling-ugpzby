@@ -71,6 +71,7 @@ export class ConfigService {
 	public countryCodes = ['us', 'ca', 'gb', 'ie', 'de', 'fr', 'es', 'it', 'au'];
 	subscription: Subscription;
 	private isSmartAssistAvailable = false;
+	public isSmartPerformanceAvailable = false;
 	private isBetaUser: boolean;
 	private country: string;
 	private betaFeature = ['smart-performance', 'app-search'];
@@ -501,9 +502,8 @@ export class ConfigService {
 		const result = await this.canShowSearch();
 		this.updateAvailability(menu, 'app-search', result);
 
-		let smartPerformanceResult = false;
-		smartPerformanceResult = await this.showSmartPerformance();
-		this.updateAvailability(menu, 'smart-performance', smartPerformanceResult);
+		this.isSmartPerformanceAvailable = await this.showSmartPerformance();
+		this.updateAvailability(menu, 'smart-performance', this.isSmartPerformanceAvailable);
 
 		this.updateBetaService(menu);
 	}
