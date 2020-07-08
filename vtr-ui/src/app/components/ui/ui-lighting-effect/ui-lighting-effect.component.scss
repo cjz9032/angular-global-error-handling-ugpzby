@@ -150,6 +150,9 @@
 				position: relative;
 				margin-left: 1rem;
 				padding: 0rem;
+				@media #{$high-contrast} {
+					color: buttonText;
+				}
 			}
 			&.selected {
 				background: $darkCell;
@@ -158,18 +161,16 @@
 				}
 				@media #{$high-contrast} {
 					a {
+						color: highlightText !important;
 						background: highlight;
 					}
-					color: highlightText;
-					border: 0.1rem solid highlight;
+					color: highlightText !important;
 					background: highlight;
 				}
 			}
 			&:hover {
 				background: $darkCell;
 				@media #{$high-contrast} {
-					color: highlightText;
-					border: 0.1rem solid highlight;
 					background: highlight;
 				}
 			}
