@@ -95,7 +95,6 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 				// After control variables is set to execute the recover.
 				// Navigate back to hardwareScan page because is the same component of execution.
 				this.historyManager.goBack();
-				// this.router.navigateByUrl('/hardware-scan', { replaceUrl: true });
 			}, (reason) => {
 				// do nothing
 			});
