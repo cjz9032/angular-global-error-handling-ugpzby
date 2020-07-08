@@ -270,23 +270,19 @@ export class DialogService {
 	}
 
 	openModernPreloadModal() {
-		// const segment: SegmentConst = this.commonService.getLocalStorageValue(LocalStorageKey.LocalInfoSegment);
-		// if (segment && segment !== SegmentConst.Gaming && !this.deviceService.isSMode) {
-			const modernPreloadModal: NgbModalRef = this.modalService.open(ModalModernPreloadComponent, {
-				backdrop: 'static',
-				size: 'lg',
-				centered: true,
-				windowClass: 'modern-preload-modal',
-				keyboard: false,
-				beforeDismiss: () => {
-					if (modernPreloadModal.componentInstance.onBeforeDismiss) {
-						modernPreloadModal.componentInstance.onBeforeDismiss();
-					}
-					return true;
+		if (this.modalService.hasOpenModals()) return;
+		const modernPreloadModal: NgbModalRef = this.modalService.open(ModalModernPreloadComponent, {
+			backdrop: 'static',
+			size: 'lg',
+			centered: true,
+			windowClass: 'modern-preload-modal',
+			keyboard: false,
+			beforeDismiss: () => {
+				if (modernPreloadModal.componentInstance.onBeforeDismiss) {
+					modernPreloadModal.componentInstance.onBeforeDismiss();
 				}
-			});
-		// } else {
-		// 	this.router.parseUrl(this.deviceService.isGaming ? '/gaming/dashboard' : '/dashboard');
-		// }
+				return true;
+			}
+		});
 	}
 }
