@@ -9,9 +9,7 @@
 	</div>
 </div>
 <div class="vtr-battery-card"
-	*ngIf="!isLoading"
-	aria-describedby="heading"
-	ngbAutofocus>
+	*ngIf="!isLoading">
 	<ng-template #batteryDetail
 		let-modal
 		aria-describedby="heading">
@@ -20,6 +18,7 @@
 			aria-describedby="heading">
 			<h4 class="modal-title battery-detail-modal-title pl-5"
 				role="heading"
+				aria-level="3"
 				id="heading">
 				{{'device.deviceSettings.batteryGauge.details.title' | translate }}
 			</h4>
@@ -44,11 +43,10 @@
 		</div>
 	</ng-template>
 	<div class="container p-5 battery-panel-background">
-		<div class="battery-health"
-			role="heading"
+		<h3 class="battery-health"
 			id="myDevice-settings-batteryGauge-subtitle">
 			{{'device.deviceSettings.batteryGauge.subtitle' | translate}}
-		</div>
+		</h3>
 		{{batteryIndicator.percent == 0 && flag ? reInitValue(): ""}}
 		<div class="pt-4 battery-frame pr-3">
 			<vtr-battery-indicator [remainingHour]="batteryIndicator.hours"
@@ -71,23 +69,23 @@
 				*ngIf="batteryConditions[i].condition!= batteryConditionsEnum.FullACAdapterSupport">
 				<span role="img"
 					id="batteryConditionIcon-GoodBattery"
-					attr.aria-label="batteryConditionIcon-GoodBattery"
+					aria-label="battery is in good condition"
 					*ngIf="batteryConditions[i].conditionStatus == batteryStatus.Good"
 					class="icomoon icomoon-ConditionGoodBattery"></span>
 				<span role="img"
 					id="batteryConditionIcon-FairBattery"
-					attr.aria-label="batteryConditionIcon-FairBattery"
+					aria-label="battery is in fair condition"
 					*ngIf="batteryConditions[i].conditionStatus == batteryStatus.Fair"
 					class="icomoon icomoon-ConditionFairBattery"></span>
 				<span role="img"
 					id="batteryConditionIcon-BadBattery"
-					attr.aria-label="batteryConditionIcon-BadBattery"
+					aria-label="battery is in bad condition"
 					*ngIf="batteryConditions[i].conditionStatus == batteryStatus.Poor &&
 				batteryConditions[i].condition!=batteryConditionsEnum.Error"
 					class="icomoon icomoon-ConditionBadBattery"></span>
 				<span role="img"
 					id="batteryConditionIcon-ACAdapter-notSupported"
-					attr.aria-label="batteryConditionIcon-ACAdapter-notSupported"
+					aria-label="AC adapter is not supported"
 					*ngIf="batteryConditions[i].condition==batteryConditionsEnum.NotSupportACAdapter"
 					class="icomoon icomoon-ConditionACAdapterError"></span>
 			</div>
