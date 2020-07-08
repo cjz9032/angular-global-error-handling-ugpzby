@@ -54,7 +54,7 @@
 	.well {
 		padding: 16px;
 		background: #f5f7f8;
-		border-radius: 10px;
+		border: 0.1rem solid $note_border;
 		opacity: 1;
 		font-size: $fontsize_xs;
 		color: #34495e;
@@ -196,8 +196,9 @@
 		}
 	}
 	.selectModeDesc {
-		opacity: 0.8;
+		opacity: 1;
 		font-size: $fontsize_xs;
+		font-weight: $weight_light;
 		color: #34495e;
 		margin-right:0rem;
 		max-width: 100%;
