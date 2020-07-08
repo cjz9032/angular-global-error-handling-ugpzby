@@ -6,6 +6,7 @@ import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { HardwareScanService } from '../../../../../services/hardware-scan/hardware-scan.service';
 import { ModalRecoverConfirmComponent } from '../../../../modal/modal-recover-confirm/modal-recover-confirm.component';
+import { HistoryManager } from 'src/app/services/history-manager/history-manager.service';
 
 @Component({
 	selector: 'vtr-recover-bad-sectors',
@@ -29,6 +30,7 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 		private translate: TranslateService,
 		private modalService: NgbModal,
 		private router: Router,
+		private historyManager: HistoryManager,
 		private activatedRoute: ActivatedRoute
 	) {
 		this.hardwareScanService.setLoadingStatus(true);
@@ -90,7 +92,10 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 				this.hardwareScanService.setRecoverInProgress(true);
 				this.hardwareScanService.setRecoverExecutionStatus(true);
 				this.hardwareScanService.setIsScanDone(false);
-				this.router.navigateByUrl('/hardware-scan');
+				// After control variables is set to execute the recover.
+				// Navigate back to hardwareScan page because is the same component of execution.
+				this.historyManager.goBack();
+				// this.router.navigateByUrl('/hardware-scan', { replaceUrl: true });
 			}, (reason) => {
 				// do nothing
 			});
