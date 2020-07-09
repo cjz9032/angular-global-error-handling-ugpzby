@@ -39,6 +39,12 @@
 			font-size: 1.2rem;
 			line-height: 1.6rem;
 			color: $light;
+			@media #{$black-on-white} {
+				color: $light;
+			}
+			@media #{$white-on-black} {
+				color: $dark;
+			}
 		}
 	}
 
@@ -46,6 +52,14 @@
 		background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
 		background-color: $go_dark;
 		border-color: $go_dark;
+		@media #{$black-on-white} {
+			background: $dark;
+			border-color: $dark;
+		}
+		@media #{$white-on-black} {
+			background: $light;
+			border-color: $light;
+		}
 	}
 
 	.icon-check:before {
@@ -56,12 +70,28 @@
 		background: $gradient_red1;
 		border-color: $button_red_start;
 		background-color: $stop_dark;
+		@media #{$black-on-white} {
+			background: $dark;
+			border-color: $dark;
+		}
+		@media #{$white-on-black} {
+			background: $light;
+			border-color: $light;
+		}
 	}
 
 	.icon-dot {
 		background: linear-gradient($gradient_angle, $main_darker 0%, $main_darkest 100%);
 		background-color: $main_darker;
 		border-color: $main_darker;
+		@media #{$black-on-white} {
+			background: $dark;
+			border-color: $dark;
+		}
+		@media #{$white-on-black} {
+			background: $light;
+			border-color: $light;
+		}
 		fa-icon {
 			font-size: 0.5rem;
 			line-height: 1.6rem;
@@ -73,14 +103,22 @@
 
 .badge {
 	font-size: 1.2rem;
-}
-
-.badge-primary {
-	background-color: $black_light;
-}
-
-.badge-danger {
-	background-color: $button_red_start;
+	&-primary {
+		background-color: $black_light;
+	}
+	&-danger {
+		background-color: $button_red_start;
+	}
+	@media #{$black-on-white} {
+		-ms-high-contrast-adjust: none;
+		background-color: $dark;
+		color: $light;
+	}
+	@media #{$white-on-black} {
+		-ms-high-contrast-adjust: none;
+		background-color: $light;
+		color: $dark;
+	}
 }
 
 .flex-1 {

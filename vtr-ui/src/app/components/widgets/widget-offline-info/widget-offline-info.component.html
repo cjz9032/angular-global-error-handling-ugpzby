@@ -13,11 +13,14 @@
 						<div class="row" *ngIf="isSubtitleVisible">
 							<div class="col subtitle" [innerHTML]="subtitle"></div>
 						</div>
-						<div class="row" *ngIf="isButtonVisible">
+						<div class="row">
 							<div class="col button-row">
-								<button class="action-button" vtrMetrics metricsEvent="FeatureClick"
-									metricsParent="update-to-date" metricsItem="check-for-updates"
-									(click)="onConnectivityClick($event)">{{buttonText}}</button>
+								<vtr-ui-button
+									(onClick)="onConnectivityClick($event)"
+									metricsEvent="featureClick"
+									metricsItem="check-for-updates"
+									linkId="check-for-updates"
+									[label]="buttonText | translate"></vtr-ui-button>
 							</div>
 						</div>
 					</div>

@@ -12,6 +12,19 @@ $largeSideWidth: 3.5rem;
     box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
 	padding: 4.5rem 2.5rem 2.5rem;
 	position: relative;
+	@media #{$high-contrast} {
+		-ms-high-contrast-adjust: none;
+	}
+	@media #{$black-on-white} {
+		background: $light;
+		border: 0.1rem solid $dark;
+		color: $dark;
+	}
+	@media #{$white-on-black} {
+		background: $dark;
+		border: 0.1rem solid $light;
+		color: $light;
+	}
 	// @media #{$mediaquery_X46} {  // $mediaquery_X46 support 1:1 of screen 768px-992px
 	// 	padding-top: 3.5rem;
 	// }
@@ -100,6 +113,14 @@ $largeSideWidth: 3.5rem;
 		margin-left: -1rem;
 		svg {
 			width: $largeSideWidth;
+			.a {
+				@media #{$black-on-white} {
+					fill: $dark;
+				}
+				@media #{$white-on-black} {
+					fill: $light;
+				}
+			}
 		}
 	}
 	// @media #{$mediaquery_X46} {
@@ -123,6 +144,14 @@ $largeSideWidth: 3.5rem;
 		background-color: $main_darker;
 		padding: 2rem;
 		border-radius: 0 0.5rem 0.5rem 0.5rem;
+		@media #{$black-on-white} {
+			background: $dark;
+			color: $light;
+		}
+		@media #{$white-on-black} {
+			background: $light;
+			color: $dark;
+		}
 		.title {
 			font-size: 2rem;
 		}
@@ -137,7 +166,7 @@ $largeSideWidth: 3.5rem;
 	.security101-row {
 		width: 100%;
 	}
-	
+
 	.desc {
 		font-size: 1.4rem;
 	}
