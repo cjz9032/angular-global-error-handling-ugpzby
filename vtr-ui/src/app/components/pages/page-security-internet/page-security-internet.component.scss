@@ -12,6 +12,12 @@
 			border-radius: $border_radius;
 			background-color: $light;
 			padding: 1.5rem;
+			@media #{$black-on-white} {
+				border: 0.1rem solid $dark;
+			}
+			@media #{$white-on-black} {
+				border: 0.1rem solid $light;
+			}
 		}
 
 		.text-regular {
@@ -24,7 +30,6 @@
 
 		.get-app-code-box {
 			background-color: $shade_lightest;
-			border: 0.1rem solid $shade_lighter;
 			border-radius: $border_radius;
 
 			.sub-heading {
