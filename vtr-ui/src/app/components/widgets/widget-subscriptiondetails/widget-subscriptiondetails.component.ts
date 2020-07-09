@@ -157,9 +157,9 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, this.modalStatus);
 		const modalCancel = this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
 			backdrop: 'static',
-			size: 'sm',
+			size: 'md',
 			centered: true,
-			windowClass: 'subscribe-modal',
+			windowClass: 'manage-subscribe-modal',
 
 		});
 		this.spFrstRunStatus = false;
