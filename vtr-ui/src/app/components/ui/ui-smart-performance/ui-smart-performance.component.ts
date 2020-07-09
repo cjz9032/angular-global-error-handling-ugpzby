@@ -45,7 +45,7 @@ export class UiSmartPerformanceComponent implements OnInit, OnChanges {
 	isScheduleScan = false;
 	IsSmartPerformanceFirstRun: any;
 	IsScheduleScanEnabled: any;
-
+	isOldVersion = false ;
 	days: any = [
 		'Sunday',
 		'Monday',
@@ -57,6 +57,7 @@ export class UiSmartPerformanceComponent implements OnInit, OnChanges {
 	];
 	private metrics: any;
 	public isOnline = true;
+
 	constructor(
 		private translate: TranslateService,
 		private modalService: NgbModal,
@@ -474,5 +475,7 @@ export class UiSmartPerformanceComponent implements OnInit, OnChanges {
 			this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCANANDFIX);
 		}
 	}
-
+	hideBasedOnOldAddInVersion($event){
+		this.isOldVersion = $event;
+	}
 }
