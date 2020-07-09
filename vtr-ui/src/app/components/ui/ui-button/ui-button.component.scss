@@ -149,14 +149,16 @@
 		.btn-in-red-bg {
 			color: $stop_dark;
 			box-shadow: 0 0 0 0.1rem $alt;
-			@media #{$black-on-white} {
-				background: $high-contrast-white-textselected;
-				color: $light;
-			}
-			@media #{$white-on-black} {
-				background: $high-contrast-black-textselected;
-				color: $dark;
-			}
+			// @media #{$black-on-white} {
+			// 	background: $high-contrast-white-textselected;
+			// 	color: $light;
+			// }
+			// @media #{$white-on-black} {
+			// 	background: $high-contrast-black-textselected;
+			// 	color: $dark;
+			// }
+			@include ui-button-high-contrast-white;
+			@include ui-button-high-contrast-black;
 			&:focus::after {
 				border: thin solid $orange;
 				@media #{$black-on-white} {
