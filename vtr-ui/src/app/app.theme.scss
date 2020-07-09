@@ -724,3 +724,47 @@ border: none;
 		}
 	}
 }
+
+@mixin high-contrast-status-icon-and-badge {
+	@media #{$black-on-white} {
+		background: $dark;
+		border-color: $dark;
+	}
+	@media #{$white-on-black} {
+		background: $light;
+		border-color: $light;
+	}
+}
+
+@mixin high-contrast-color {
+	@media #{$black-on-white} {
+		color: $light !important;
+	}
+	@media #{$white-on-black} {
+		color: $dark !important;
+	}
+}
+@mixin high-contrast-color-reversal {
+	@media #{$black-on-white} {
+		color: $dark !important;
+	}
+	@media #{$white-on-black} {
+		color: $light !important;
+	}
+}
+@mixin high-contrast-background-color {
+	@media #{$black-on-white} {
+		background-color: $dark !important;
+	}
+	@media #{$white-on-black} {
+		background-color: $light !important;
+	}
+}
+@mixin high-contrast-background-color-reversal {
+	@media #{$black-on-white} {
+		background-color: $light !important;
+	}
+	@media #{$white-on-black} {
+		background-color: $dark !important;
+	}
+}

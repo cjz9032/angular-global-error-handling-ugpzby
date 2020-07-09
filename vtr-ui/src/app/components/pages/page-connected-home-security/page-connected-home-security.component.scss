@@ -7,7 +7,12 @@
 			background-color: $light;
 			box-shadow: $drop_shadow;
 			padding: 2rem;
-
+			@media #{$black-on-white} {
+				@include black-border;
+			}
+			@media #{$white-on-black} {
+				@include white-border;
+			}
 			.subTitle {
 				font-size: $fontsize_xl;
 				font-weight: $weight_medium;

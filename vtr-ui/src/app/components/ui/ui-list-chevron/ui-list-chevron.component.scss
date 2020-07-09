@@ -45,21 +45,9 @@
 							font-size: 1.2rem;
 							line-height: 1.6rem;
 							color: $light;
-							@media #{$black-on-white} {
-								color: $light !important;
-							}
-							@media #{$white-on-black} {
-								color: $dark !important;
-							}
+							@include high-contrast-color;
 						}
-						@media #{$black-on-white} {
-							background: $dark !important;
-							border-color: $dark !important;
-						}
-						@media #{$white-on-black} {
-							background: $light !important;
-							border-color: $light !important;
-						}
+						@include high-contrast-status-icon-and-badge;
 					}
 				}
 
@@ -83,14 +71,7 @@
 						background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
 						background-color: $go_dark;
 						border-color: $go_dark;
-						@media #{$black-on-white} {
-							background: $dark;
-							border-color: $dark;
-						}
-						@media #{$white-on-black} {
-							background: $light;
-							border-color: $light;
-						}
+						@include high-contrast-status-icon-and-badge;
 					}
 				}
 			}
@@ -101,14 +82,7 @@
 						background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
 						background-color: $stop_dark;
 						border-color: $stop_dark;
-						@media #{$black-on-white} {
-							background: $dark;
-							border-color: $dark;
-						}
-						@media #{$white-on-black} {
-							background: $light;
-							border-color: $light;
-						}
+						@include high-contrast-status-icon-and-badge;
 					}
 				}
 			}
@@ -119,14 +93,7 @@
 						background: linear-gradient($gradient_angle, $orange 0%, $orange-light 100%);
 						background-color: $yellow_dark;
 						border-color: $yellow_dark;
-						@media #{$black-on-white} {
-							background: $dark;
-							border-color: $dark;
-						}
-						@media #{$white-on-black} {
-							background: $light;
-							border-color: $light;
-						}
+						@include high-contrast-status-icon-and-badge;
 					}
 				}
 			}
@@ -137,14 +104,7 @@
 						background: linear-gradient($gradient_angle, $main 0%, $main_light 100%);
 						background-color: $main_gstart;
 						border-color: $main_gstart;
-						@media #{$black-on-white} {
-							background: $dark;
-							border-color: $dark;
-						}
-						@media #{$white-on-black} {
-							background: $light;
-							border-color: $light;
-						}
+						@include high-contrast-status-icon-and-badge;
 
 						fa-icon {
 							font-size: 0.5rem;
@@ -162,7 +122,7 @@
 						background: linear-gradient($gradient_angle, $main_darker 0%, $main_darkest 100%);
 						background-color: $main_darker;
 						border-color: $main_darker;
-
+						@include high-contrast-status-icon-and-badge;
 						fa-icon {
 							font-size: 0.5rem;
 							line-height: 1.6rem;
@@ -248,12 +208,7 @@
 					padding-right: 0.5rem;
 					color: $shade_blue;
 					// width: 13rem;
-					@media #{$black-on-white} {
-						color: $dark;
-					}
-					@media #{$white-on-black} {
-						color: $light;
-					}
+					@include high-contrast-color-reversal;
 
 					&.light-title {
 						font-weight: $weight_light;
@@ -270,12 +225,7 @@
 					word-break: normal !important;
 					// font-style: italic; // change back by April Lu, this is a global style.
 					cursor: pointer;
-					@media #{$black-on-white} {
-						color: $dark !important;
-					}
-					@media #{$white-on-black} {
-						color: $light !important;
-					}
+					@include high-contrast-color-reversal;
 					&.good {
 						color: $go_dark;
 					}
@@ -321,12 +271,6 @@
 							text-decoration: none;
 						}
 					}
-					@media #{$black-on-white} {
-						color: $dark;
-					}
-					@media #{$white-on-black} {
-						color: $light;
-					}
 				}
 
 				.sub-text {
@@ -349,12 +293,7 @@
 				line-height: 2.8rem;
 				font-size: 2rem;
 				cursor: pointer;
-				@media #{$black-on-white} {
-					color: $dark;
-				}
-				@media #{$white-on-black} {
-					color: $light;
-				}
+				@include high-contrast-color-reversal;
 				&.blue-arrow {
 					color: $main;
 				}

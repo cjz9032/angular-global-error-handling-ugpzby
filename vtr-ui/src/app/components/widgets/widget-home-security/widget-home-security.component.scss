@@ -33,6 +33,7 @@
 					font-size: 1.4rem;
 					line-height: 1.7rem;
 					color: $light;
+					@include high-contrast-color;
 				}
 			}
 		}
@@ -61,6 +62,7 @@
 						background: $green_gradient;
 						background-color: $go_dark;
 						border-color: $green_dark;
+						@include high-contrast-status-icon-and-badge;
 					}
 				}
 			}
@@ -79,6 +81,7 @@
 						font-size: 1.4rem;
 						line-height: 2.2rem;
 						color: $light;
+						@include high-contrast-color;
 					}
 				}
 			}

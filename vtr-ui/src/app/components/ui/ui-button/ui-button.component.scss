@@ -22,7 +22,9 @@
 			text-decoration: none;
 			display: inline-block;
 			max-width: 100%;
-
+			@media #{$high-contrast} {
+				-ms-high-contrast-adjust: none;
+			}
 			&:hover {
 				background: $blue_gradient;
 			}
