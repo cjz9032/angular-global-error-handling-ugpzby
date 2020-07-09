@@ -134,6 +134,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	public minDate: any;
 	public maxDate: any;
 	spEnum: any = enumSmartPerformance;
+	isOldVersion = false;
 	// tuneindividualIssueCount: any = 0;
 	// boostindividualIssueCount: any = 0;
 	// secureindividualIssueCount: any = 0;
@@ -834,5 +835,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	backToNonSubScriberHome() {
 		this.backToNonSubscriber.emit();
 	}
-
+	hideBasedOnOldAddInVersionInSummaryPage($event){
+		this.isOldVersion = $event;
+		this.enableNextText = !$event;
+	}
 }
