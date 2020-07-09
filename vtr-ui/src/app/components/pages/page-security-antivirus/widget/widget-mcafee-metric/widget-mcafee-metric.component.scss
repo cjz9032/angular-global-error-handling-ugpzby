@@ -49,12 +49,14 @@
 		width: 0.01rem;
 		margin: 0 1.5rem;
 		background-color: $shade_light;
+		@include high-contrast-background-color;
 	}
 
 	.divider {
 		margin: 2rem 0 1rem 0;
 		height: 0.2rem;
 		background-color: $shade_lighter;
+		@include high-contrast-background-color;
 	}
 
 	.inner {
@@ -116,7 +118,7 @@
 			background: $dark;
 			border: none;
 		}
-		
+
 		@media #{$white-on-black} {
 			color: $dark;
 			background: $light;

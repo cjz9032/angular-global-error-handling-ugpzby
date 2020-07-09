@@ -111,9 +111,10 @@ $largeSideWidth: 3.5rem;
 
 	.side {
 		margin-left: -1rem;
+		margin-right: -0.1rem;
 		svg {
 			width: $largeSideWidth;
-			.a {
+			.side-a {
 				@media #{$black-on-white} {
 					fill: $dark;
 				}

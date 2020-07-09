@@ -41,14 +41,7 @@
 						background: $green_gradient;
 						background-color: $go_dark;
 						border-color: $green_dark;
-						@media #{$black-on-white} {
-							background: $dark;
-							border-color: $dark;
-						}
-						@media #{$white-on-black} {
-							background: $light;
-							border-color: $light;
-						}
+						@include high-contrast-status-icon-and-badge;
 					}
 				}
 			}
@@ -67,12 +60,7 @@
 						font-size: 1.6rem;
 						line-height: 2.6rem;
 						color: $light;
-						@media #{$black-on-white} {
-							color: $light;
-						}
-						@media #{$white-on-black} {
-							color: $dark;
-						}
+						@include high-contrast-color;
 					}
 				}
 
