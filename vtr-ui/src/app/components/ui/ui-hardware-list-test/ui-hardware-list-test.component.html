@@ -39,23 +39,24 @@
 			</div>
 			<div id="{{ id }}" class="sub-module" [ngbCollapse]="!item.collapsed" >
 				<ul class="list-group">
-					<li class="list-group-item" *ngFor="let test of item.tests" (change)=onCheckChildren(item)
-						[ngClass]="{'isSelected-item' : test.selected}">
-						<div class="custom-control custom-checkbox">
-							<vtr-ui-checkbox
-								[id]="test.id + id"
-								[componentId]="test.id + id"
-								[ariaLabel]="item.name + test.name"
-								[checked]="test.selected"
-								[hasChild]="true"
-								[value]="test.selected"
-								(toggle)="test.selected = $event"
-								class="custom-control-component"
-							>
-								<p class="custom-control-label-text">
-									<span class="name-test">&nbsp;{{ test.name }}</span>
-								</p>
-							</vtr-ui-checkbox>
+					<li class="list-group-item" *ngFor="let test of item.tests" (change)=onCheckChildren(item) [ngClass]="{'isSelected-item' : test.selected}">
+						<div class="module">
+							<div class="custom-control custom-checkbox">
+								<vtr-ui-checkbox
+									[id]="test.id + id"
+									[componentId]="test.id + id"
+									[ariaLabel]="item.name + test.name"
+									[checked]="test.selected"
+									[hasChild]="true"
+									[value]="test.selected"
+									(toggle)="test.selected = $event"
+									class="custom-control-component"
+								>
+									<p class="custom-control-label-text">
+										<span class="name-test">&nbsp;{{ test.name }}</span>
+									</p>
+								</vtr-ui-checkbox>
+							</div>
 						</div>
 					</li>
 				</ul>
