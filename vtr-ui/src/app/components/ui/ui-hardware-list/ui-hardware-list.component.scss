@@ -11,7 +11,6 @@
 
 			.title {
 				font-size: $fontsize_xs;
-				font-weight: $weight_600;
 				padding-top: 0rem;
 				padding-left: 1.5rem;
 				color: $shade_blue;
@@ -37,7 +36,6 @@
 
 			.title {
 				font-size: $fontsize_xs;
-				font-weight: $weight_600;
 				padding-top: 0rem;
 				color: $shade_blue;
 			}
@@ -92,7 +90,6 @@
 					.title {
 						color: $shade_blue;
 						font-size: $fontsize_xs;
-						font-weight: $weight_600;
 						padding-top: 0rem;
 						padding-left: 1.5rem;
 					}
@@ -126,7 +123,7 @@
 
 		.progress-value-text {
 			font-size: $fontsize_xs !important;
-			font-weight: $weight_bold;
+			font-weight: $weight_600;
 			color:$dark;
 		}
 
@@ -155,6 +152,10 @@
 		display: flex;
 		justify-content: left;
 		align-items: center;
+
+		.item-failed {
+			font-weight: bold;
+		}
 	}
 
 	.item-right {

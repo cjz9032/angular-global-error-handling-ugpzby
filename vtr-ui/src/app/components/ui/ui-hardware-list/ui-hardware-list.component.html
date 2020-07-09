@@ -23,7 +23,7 @@
 							</div>
 						</div>
 
-						<div class="title" [ngClass]="{'not-applicable': item.statusTest === 6}">{{item.name}}</div>
+						<div class="title" [ngClass]="{'not-applicable': item.statusTest === 6, 'item-failed': item.statusTest === 3}">{{item.name}}</div>
 						<div class="subtitle" *ngIf="item.subname">{{item.subname}}</div>
 						<div class="span-not-applicable" *ngIf="item.statusTest === 6">{{testNotApplicable}}</div>
 					</div>
