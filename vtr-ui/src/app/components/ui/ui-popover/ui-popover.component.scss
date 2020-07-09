@@ -41,6 +41,7 @@ ui-popover {
 		@media #{$high-contrast} {
 			border-bottom: 3rem solid windowText;
 			border-left: 3rem solid transparent;
+			right: -1.5rem;
 		} 
 	}
 	.vtr-ui-popover {
