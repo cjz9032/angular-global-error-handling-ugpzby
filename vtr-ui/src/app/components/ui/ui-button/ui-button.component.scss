@@ -22,9 +22,7 @@
 			text-decoration: none;
 			display: inline-block;
 			max-width: 100%;
-			@media #{$high-contrast} {
-				-ms-high-contrast-adjust: none;
-			}
+			@include high-contrast-adjust;
 			&:hover {
 				background: $blue_gradient;
 			}
@@ -57,9 +55,7 @@
 				//font-size: $fontsize_sm !important;
 				letter-spacing: 0;
 				cursor: pointer;
-				@media #{$high-contrast} {
-					-ms-high-contrast-adjust: none;
-				}
+				@include high-contrast-adjust;
 			}
 			@include ui-button-high-contrast-white;
 			@include ui-button-high-contrast-black;
@@ -120,7 +116,10 @@
 		.btn-gradient {
 			background-color: $button_gradient_start;
 			background-image: linear-gradient(to right, $button_gradient_start, $button_gradient_end);
-			@include high-contrast-background-image;
+			// @include high-contrast-background-image;
+			@include high-contrast-adjust;
+			@include ui-button-high-contrast-white;
+			@include ui-button-high-contrast-black;
 		}
 
 		.btn-red {

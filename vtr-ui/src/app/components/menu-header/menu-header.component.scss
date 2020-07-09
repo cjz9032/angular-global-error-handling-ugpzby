@@ -64,6 +64,7 @@
 			}
 			.text {
 				display: inline-block;
+				@include high-contrast-adjust;
 			}
 			@media #{$breakpoint_xl6} {
 				font-size: $fontsize_md;

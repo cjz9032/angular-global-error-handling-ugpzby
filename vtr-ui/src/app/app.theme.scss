@@ -542,8 +542,8 @@ $high-contrast-white-disabled-maroon: #610000;
 
 @mixin ui-button-high-contrast-black-disabled {
 	@media #{$white-on-black} {
-		background: $dark;
-		color: $high-contrast-black-disabled-green;
+		background: $dark !important;
+		color: $high-contrast-black-disabled-green !important;
 		border: 0.1rem solid $high-contrast-black-disabled-green !important;
 		&:hover, &:active {
 			color: $high-contrast-black-disabled-green;
@@ -566,8 +566,8 @@ $high-contrast-white-disabled-maroon: #610000;
 
 @mixin ui-button-high-contrast-white-disabled {
 	@media #{$black-on-white} {
-		background: $light;
-		color: $high-contrast-white-disabled-maroon;
+		background: $light !important;
+		color: $high-contrast-white-disabled-maroon !important;
 		border: 0.1rem solid $high-contrast-white-disabled-maroon !important;
 		&:hover, &:active {
 			color: $high-contrast-white-disabled-maroon;
@@ -767,5 +767,11 @@ border: none;
 	}
 	@media #{$white-on-black} {
 		background-color: $dark !important;
+	}
+}
+
+@mixin high-contrast-adjust {
+	@media #{$high-contrast} {
+		-ms-high-contrast-adjust: none;
 	}
 }
