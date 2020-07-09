@@ -381,10 +381,10 @@
 								</div>
 							</div>
 
-							<div class="row mb-40"  *ngIf="!isScanning && !isScanningCompleted">
+							<div class="row mb-40"  *ngIf="!isScanning && !isScanningCompleted && !isOldVersion">
 								<div class="col col-12">
 								<!----------Scan Schedule--------------->
-								<vtr-ui-scan-schedule [isOnline] = "isOnline"></vtr-ui-scan-schedule>
+								<vtr-ui-scan-schedule [isOnline] = "isOnline" (hideBasedOnOldAddIn)="hideBasedOnOldAddInVersion($event)"></vtr-ui-scan-schedule>
 								<!----------Scan Schedule--------------->
 								</div>
 							</div>
