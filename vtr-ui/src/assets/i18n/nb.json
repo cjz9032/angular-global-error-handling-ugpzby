@@ -3491,10 +3491,10 @@
                     }
                 }
             },
-            "confirmationTitle": "Lenovo Payment Process",
-            "confirmationNote": "You will be directed to Lenovo Payment Website to finish the payment. Once the payment is done, you can press the \"refresh\" button in \"Subscription Detail\" to get the payment result.",
-            "confirmationBtn": "Proceed",
-            "refreshButton": "Refresh Status"
+            "confirmationTitle": "Lenovos betalingsprosess",
+            "confirmationNote": "Du blir dirigert til Lenovos betalingsnettsted for å fullføre betalingen. Når betalingen er utført, kan du trykke på \"Oppdater \"-knappen i \"Abonnementsdetaljer\" for å få betalingsresultatet.",
+            "confirmationBtn": "Fortsett",
+            "refreshButton": "Oppdater status"
         },
         "scanCompletePage": {
             "title": "Systemskanning er fullført",
