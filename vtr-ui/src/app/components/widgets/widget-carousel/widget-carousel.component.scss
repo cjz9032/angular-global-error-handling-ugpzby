@@ -136,14 +136,66 @@
 			}
 			.carousel-control-prev,.carousel-control-next {
 				width: 8.5%;
-				@media #{$white-on-black} {
-					opacity: 1;
-				}
+            }
+            .carousel-control-prev {
+				width: 4rem;
+				height: 4rem;
+				top: calc(50% - 2rem);
+				left: 1rem;
 				@media #{$black-on-white} {
 					opacity: 1;
+					background-color: $light;
+				}
+
+				@media #{$white-on-black} {
+					opacity: 1;
+					background-color: $dark;
+				}
+
+				&:hover {
+					opacity: 1;
+					color: $main;
+
+					@media #{$white-on-black} {
+						color: $high-contrast-black-textselected;
+					}
+
+					@media #{$black-on-white} {
+						color: $high-contrast-white-textselected;
+					}			
+				}
+			}
+			.carousel-control-next{
+				width: 4rem;
+				height: 4rem;
+				top: calc(50% - 2rem);
+				right: 1rem;
+				@media #{$black-on-white} {
+					opacity: 1;
+					background-color: $light;
+				}
+
+				@media #{$white-on-black} {
+					opacity: 1;
+					background-color: $dark;
+				}
+
+				&:hover {
+					opacity: 1;
+					color: $main;
+
+					@media #{$white-on-black} {
+						color: $high-contrast-black-textselected;
+					}
+
+					@media #{$black-on-white} {
+						color: $high-contrast-white-textselected;
+					}			
 				}
 			}
 			.carousel-control-next-icon {
+                position: relative;
+				right: 0.5rem;
 				background-image: none;
 				width: 2rem;
 				height: 2rem;
@@ -162,6 +214,8 @@
 				}
 			}
 			.carousel-control-prev-icon {
+                position: relative;
+				right: 0.5rem;
 				background-image: none;
 				width: 2rem;
 				height: 2rem;
