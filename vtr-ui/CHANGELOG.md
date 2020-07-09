@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.2](https://bitbucket.tc.lenovo.com///compare/v1.6.41...v1.7.2) (2020-07-09)
+
+### [1.7.1](https://bitbucket.tc.lenovo.com///compare/v1.6.39...v1.7.1) (2020-07-08)
+
+
+### Features
+
+* **CHS:** add price tag aside buynow button ([f635551](https://bitbucket.tc.lenovo.com///commit/f63555113c748f4d76640d5006c83d2ee15ff6e2))
+
 ### [1.7.1](https://bitbucket.tc.lenovo.com///compare/v1.6.39...v1.7.1) (2020-07-08)
 ### [1.6.41](https://bitbucket.tc.lenovo.com///compare/v1.6.40...v1.6.41) (2020-07-09)
 
