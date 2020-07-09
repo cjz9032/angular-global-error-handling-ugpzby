@@ -82,6 +82,8 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	isDesktopMachine = true;
 	machineType: number;
 	private notificationSubscription: Subscription;
+	private translateSubscription: Subscription;
+	private cmsSubscription: Subscription;
 	public isOnline: any = true;
 
 
@@ -99,10 +101,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 
 		// translate subheader menus
 		this.menuItems.forEach(m => {
-			// m.label = this.translate.instant(m.label);//VAN-5872, server switch feature
-			this.translate.stream(m.label).subscribe((value) => {
-				m.label = value;
-			});
+			m.label = this.translate.instant(m.label);
 		});
 	}
 
@@ -115,7 +114,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 
 		this.fetchCMSArticles();
 		// VAN-5872, server switch feature on language change
-		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+		this.translateSubscription = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 			this.fetchCMSArticles();
 		});
 		this.qaService.setCurrentLangTranslations();
@@ -265,7 +264,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			Page: 'device-settings'
 		};
 
-		this.cmsService.fetchCMSContent(queryOptions).subscribe(
+		this.cmsSubscription = this.cmsService.fetchCMSContent(queryOptions).subscribe(
 			(response: any) => {
 				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
 				if (cardContentPositionA) {
@@ -311,6 +310,9 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		if (this.routerSubscription) {
 			this.routerSubscription.unsubscribe();
 		}
+		if (this.translateSubscription) this.translateSubscription.unsubscribe();
+		if(this.cmsSubscription) this.cmsSubscription.unsubscribe();
+
 	}
 
 }
