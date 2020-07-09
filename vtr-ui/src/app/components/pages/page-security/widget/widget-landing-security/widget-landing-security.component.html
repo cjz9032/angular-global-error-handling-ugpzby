@@ -35,17 +35,18 @@
 					<vtr-ui-button *ngIf="!item.showOwn && item.buttonLink" [label]="item.buttonLabel"
 						linkId="{{item.id}}"
 						[metricsItem]="item.id"
-						[routerPath]="item.buttonLink" [ngClass]="{'white-button':item.status === 'enabled' || item.status === 'installed'}">
+						[routerPath]="item.buttonLink"
+						[buttonColor]="(item.status === 'enabled' || item.status === 'installed') ? 'gray':''">
 					</vtr-ui-button>
 					<vtr-ui-button *ngIf="item.buttonHref" [label]="item.buttonLabel" [href]="item.buttonHref"
 						linkId="{{item.id}}"
 						[metricsItem]="item.id"
-						[ngClass]="{'white-button':item.status === 'enabled'}">
+						[buttonColor]="item.status === 'enabled'?'gray':''">
 					</vtr-ui-button>
 					<vtr-ui-button *ngIf="item.launch" [label]="item.buttonLabel"
 						linkId="{{item.id}}"
 						[metricsItem]="item.id"
-						[ngClass]="{'white-button':item.status === 'enabled'}"
+						[buttonColor]="item.status === 'enabled'?'gray':''"
 						(onClick)="item.launch()">
 					</vtr-ui-button>
 					<div *ngIf="!item.noneCheck" class="custom-control custom-checkbox">
