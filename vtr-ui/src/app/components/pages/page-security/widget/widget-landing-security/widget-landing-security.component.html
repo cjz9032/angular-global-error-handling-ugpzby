@@ -50,17 +50,17 @@
 						(onClick)="item.launch()">
 					</vtr-ui-button>
 					<div *ngIf="!item.noneCheck" class="custom-control custom-checkbox">
-						<input type="checkbox" class="custom-control-input" id="customCheck-{{item.id}}"
+						<vtr-ui-checkbox [componentId]="'customCheck-'+item.id"
 							vtrMetrics
 							[metricsEvent]="'featureClick'"
 							[metricsParent]="'security'"
 							[metricsItem]="(item.showOwn ? 'haveOwn' :'notHaveOwn') + ':' +item.id"
-							[checked]="item.showOwn" attr.aria-label="defaultUnchecked"
-							(change)="haveOwn(item.showOwn, item.id)"
-							(keyup.enter)="haveOwn(item.showOwn, item.id)">
-						<label class="custom-control-label" for="customCheck-{{item.id}}">
-							{{item.ownTitle}}
-						</label>
+							[value]="item.showOwn"
+							[checked]="item.showOwn"
+							[label]="item.ownTitle"
+							[ariaLabel]="'defaultUnchecked'"
+							(toggle)='haveOwn(item.showOwn, item.id)'>
+						</vtr-ui-checkbox>
 					</div>
 				</section>
 			</div>
