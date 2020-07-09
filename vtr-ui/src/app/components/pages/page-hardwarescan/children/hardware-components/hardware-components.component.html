@@ -3,7 +3,7 @@
 		<div class="col col-12">
 			<vtr-hardware-scan-header-pages
 				[percent]="progress"
-				[disableButtonScan]="startScanClicked"
+				[disableButtonScan]="startScanClicked || isRefreshClicked"
 				(checkCancel)="onCancelScan()"
 				[disableCancel]="isDisableCancel()"
 				(checkAnchor)="startScanWaitingModules(taskTypeEnum.CustomScan)"

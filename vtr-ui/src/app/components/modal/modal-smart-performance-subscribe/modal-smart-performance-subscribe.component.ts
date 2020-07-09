@@ -66,7 +66,7 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 	confirmProcess() {
 		window.open(this.paymenturl);
 		this.cancelPaymentRequest.emit();
-		this.activeModal.close('close');
+		this.activeModal.close(true);
 		const currentTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
 		const intervalTime = moment(currentTime).add(PaymentPage.ORDERWAITINGTIME, 'm').format('YYYY-MM-DD HH:mm:ss');
 		const modalStatus = {

@@ -655,11 +655,11 @@
 							<div class="vtr-page-shift-up">
 								<div class="container-fluid">
 									<div class="row mb-40"
-										*ngIf="isSubscribed">
+										*ngIf="isSubscribed && !isOldVersion">
 										<div class="col col-12">
 											<!-- --------Scan Schedule------------- -->
 											<vtr-ui-scan-schedule
-												(scanDatekValueChange)='changeNextScanDateValue($event)' [isOnline] = "isOnline">
+												(scanDatekValueChange)='changeNextScanDateValue($event)' (hideBasedOnOldAddInSummary)="hideBasedOnOldAddInVersionInSummaryPage($event)" [isOnline] = "isOnline">
 											</vtr-ui-scan-schedule>
 											<!-- --------Scan Schedule------------- -->
 										</div>

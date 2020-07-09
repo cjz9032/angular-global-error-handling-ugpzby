@@ -3491,10 +3491,10 @@
                     }
                 }
             },
-            "confirmationTitle": "Lenovo Payment Process",
-            "confirmationNote": "You will be directed to Lenovo Payment Website to finish the payment. Once the payment is done, you can press the \"refresh\" button in \"Subscription Detail\" to get the payment result.",
-            "confirmationBtn": "Proceed",
-            "refreshButton": "Refresh Status"
+            "confirmationTitle": "Proceso de pago de Lenovo",
+            "confirmationNote": "Se dirigirá al sitio web de Pago de Lenovo para finalizar el pago. Una vez que se haya realizado el pago, puede presionar el botón “actualizar” en “Detalles de la suscripción” para obtener el resultado del pago.",
+            "confirmationBtn": "Proseguir",
+            "refreshButton": "Actualizar estado"
         },
         "scanCompletePage": {
             "title": "Ha finalizado el análisis del sistema",

@@ -10,16 +10,17 @@
 			tabindex="1"
 			>{{'hardwareScan.quickScan' | translate}}</button>
 		<div class="row align-items-center">
-			<button vtrMetrics
-				metricsEvent="FeatureClick"
-				metricsParent="HardwareScan"
-				metricsItem="HardwareScan.CustomizeScan"
-				[ngClass]="{'action-anchor': !disableButtonScan, 'disabled-anchor': disableButtonScan}"
-				[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
-				[disabled]="disableButtonScan"
-				tabindex="1"
-				(click)="onAnchor()">{{'hardwareScan.customize.name' | translate}}
-			</button>
+			<div [title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate">
+				<button vtrMetrics
+					metricsEvent="FeatureClick"
+					metricsParent="HardwareScan"
+					metricsItem="HardwareScan.CustomizeScan"
+					[ngClass]="{'action-anchor': !disableButtonScan, 'disabled-anchor': disableButtonScan}"
+					[disabled]="disableButtonScan"
+					tabindex="1"
+					(click)="onAnchor()">{{'hardwareScan.customize.name' | translate}}
+				</button>
+			</div>
 		</div>
 	</div>
 </div>

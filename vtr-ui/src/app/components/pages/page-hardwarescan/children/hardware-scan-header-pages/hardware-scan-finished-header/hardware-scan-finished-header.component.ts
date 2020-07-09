@@ -14,6 +14,9 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 
 	supportUrl: string;
 	contactusUrl: string;
+	headerType: HardwareScanFinishedHeaderType = HardwareScanFinishedHeaderType.None;
+	numberTestsFailed: number = 0;
+	lastScanResultCompletionInfo: any;
 
 	// Metrics
 	@Input() itemParentCancel: string;
@@ -24,8 +27,6 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 
 	//Wrapper
 	public enumScanHeaderTypeFinished = HardwareScanFinishedHeaderType;
-	public numberTestsFailed: number;
-	public lastScanResultCompletionInfo: any;
 
 	constructor(private hardwareScanService: HardwareScanService,
 				private previousResultService: PreviousResultService,
@@ -33,14 +34,26 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 				private lenovoSupportService: LenovoSupportService) { }
 
 	ngOnInit() {
-		this.lastScanResultCompletionInfo = this.previousResultService.getLastPreviousResultCompletionInfo();
-		this.configureSupportUrl();
+		this.headerType = this.hardwareScanService.getScanFinishedHeaderType();
+		let scanDate: Date;
+		let finalResultCode: string;
+
+		if (this.headerType === HardwareScanFinishedHeaderType.Scan) {
+			scanDate =  this.hardwareScanService.getFinalResultStartDate();
+			finalResultCode = this.getFinalResultCode();
+		} else if (this.headerType === HardwareScanFinishedHeaderType.ViewResults) {
+			this.lastScanResultCompletionInfo = this.previousResultService.getLastPreviousResultCompletionInfo();
+			scanDate = this.lastScanResultCompletionInfo.date;
+			finalResultCode = this.getLastFinalResultCode();
+		}
+
+		this.configureSupportUrl(scanDate, finalResultCode);
 		this.configureContactusUrl();
 		this.setupFailedTests();
 	}
 
-	private async configureSupportUrl() {
-		await this.lenovoSupportService.getETicketUrl(this.lastScanResultCompletionInfo.date)
+	private async configureSupportUrl(scanDate: Date, finalResultCode: string) {
+		await this.lenovoSupportService.getETicketUrl(scanDate, finalResultCode)
 			.then((response) => {
 				this.supportUrl = response;
 			});
@@ -57,13 +70,6 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 		if (this.hardwareScanService) {
 			this.numberTestsFailed = this.hardwareScanResultService.getFailedTests();
 		}
-	}
-
-	public scanHeaderTypeFinished() {
-		if (this.hardwareScanService) {
-			return this.hardwareScanService.getScanFinishedHeaderType();
-		}
-		return HardwareScanFinishedHeaderType.None;
 	}
 
 	public getFinalResultCode() {
