@@ -33,6 +33,12 @@
 			max-width: 12rem;
 		}
 
+		.mcafee-black-invert {
+			@media #{$white-on-black} {
+				filter: invert(1);
+			}
+		}
+
 		.divider {
 			margin: 2rem 0 1rem 0;
 			height: 0.1rem;
@@ -76,6 +82,16 @@
 
 				a {
 					text-decoration: underline;
+				}
+
+				@media #{$black-on-white} {
+					border: 0.1rem solid $dark;
+					box-shadow: none;
+				}
+	
+				@media #{$white-on-black} {
+					border: 0.1rem solid $light;
+					box-shadow: none;
 				}
 			}
 
@@ -213,6 +229,16 @@
 						margin-top: 3rem;
 					}
 				}
+
+				@media #{$black-on-white} {
+					border: 0.1rem solid $dark;
+					box-shadow: none;
+				}
+	
+				@media #{$white-on-black} {
+					border: 0.1rem solid $light;
+					box-shadow: none;
+				}
 			}
 
 			.defender-part {
@@ -306,6 +332,34 @@
 					&:hover {
 						background: $light;
 						color: $main;
+					}
+
+					@media #{$high-contrast} {
+						-ms-high-contrast-adjust: none;
+					}
+
+					@media #{$black-on-white} {
+						border-color: $dark !important;
+						background: $light !important;
+						color: $dark !important;
+
+						&:hover {
+							border-color: $high-contrast-white-textselected !important;
+							background: $high-contrast-white-textselected !important;
+							color: $light !important;
+						}
+					}
+
+					@media #{$white-on-black} {
+						color: $light !important;
+						border-color: $light !important;
+						background: $dark !important;
+
+						&:hover {
+							color: $dark !important;
+							border-color: $high-contrast-black-textselected !important;
+							background: $high-contrast-black-textselected !important;
+						}
 					}
 				}
 			}
