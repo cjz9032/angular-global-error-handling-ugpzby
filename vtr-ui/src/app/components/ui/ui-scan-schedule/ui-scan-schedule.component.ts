@@ -436,6 +436,16 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 					return;
 				}
 			}
+			if (!res.nextruntime) {
+				if (!this.isSubscribed) {
+					this.hideBasedOnOldAddIn.emit(true);
+					return;
+				}
+				else {
+					this.hideBasedOnOldAddInSummary.emit(true);
+					return;
+				}
+			}
 
 		} catch (err) {
 			this.logger.error('ui-smart-performance.getNextScanRunTime.then', err);
