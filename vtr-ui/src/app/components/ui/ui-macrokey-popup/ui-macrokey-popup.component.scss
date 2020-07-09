@@ -71,11 +71,14 @@ ui-popover {
 
 	.btn-close {
 		@media #{$high-contrast}{
-			color: windowText;
+			color: buttonText;
 		}
 		button.close {
 			&:hover {
 				opacity: 0.75;
+				@media #{$high-contrast}{
+					color: highlight;
+				}
 			}
 			&:focus{
 				outline:1px solid $blueFill !important;
@@ -109,6 +112,9 @@ ui-popover {
 		margin-left: 3rem;
 		border-bottom: 2px solid $blueFill;
 		cursor: pointer;
+		@media #{$high-contrast}{
+			color: buttonText;
+		}
 		&:hover {
 			color: $blueHover;
 			border-bottom: 2px solid $blueHover;			
