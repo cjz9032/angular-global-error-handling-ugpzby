@@ -154,7 +154,6 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, false);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, actualScanFrequency[0]);
 		}
-
 		// fetching next schedule date and time from task scheduler
 		if (this.scheduleScanFrequency !== undefined && this.IsScheduleScanEnabled && !this.IsSmartPerformanceFirstRun) {
 			if (this.isSubscribed) {
@@ -359,6 +358,17 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 					this.getNextScanRunTime(enumSmartPerformance.SCHEDULESCAN);
 				}
 			}
+			else
+			{
+				if (!this.isSubscribed) {
+					this.hideBasedOnOldAddIn.emit(true);
+					return;
+				}
+				else {
+					this.hideBasedOnOldAddInSummary.emit(true);
+					return;
+				}
+			}
 		} catch (err) {
 			this.logger.error('ui-smart-performance.scheduleScan.then', err);
 		}
@@ -414,9 +424,9 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 				this.payloadData(this.type);
 				this.scheduleScan(this.requestScanData);
 				this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, actualScanFrequency[0]);
-				return
+				
 			}
-			if (!res.nextruntime) {
+			if (res.nextruntime === null) {
 				if (!this.isSubscribed) {
 					this.hideBasedOnOldAddIn.emit(true);
 					return;
