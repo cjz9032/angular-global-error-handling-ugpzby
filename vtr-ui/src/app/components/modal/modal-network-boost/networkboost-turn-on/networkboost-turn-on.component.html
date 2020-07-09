@@ -27,10 +27,12 @@
         <div class="row">
           <div class="action-container">
             <div>
-            <button class="btn enable-button"
-              (click)="turnOnAction(true)" id="nbTurnOnModal_turnon_button"
-              tabindex="1" attr.aria-label="{{'gaming.narrator.networkBoost.turnOnModal.turnOnButton' | translate}}"
-			        (keyup.enter)="turnOnAction(true)">{{ 'gaming.autoClose.modalTurnAutoClose.btnConfirm' | translate}}</button>
+              <vtr-ui-button [linkId]="'nbTurnOnModal_turnon_button'" [tabIndex]="1"
+							metricsEvent="featureClick" [metricsItem]="'networkboost_turn_on_button'"
+							[ariaLabel]="'gaming.narrator.networkBoost.turnOnModal.turnOnButton' | translate"
+							[label]="'gaming.autoClose.modalTurnAutoClose.btnConfirm' | translate" [btnHeight]=true [isGradient]=true
+							(onClick)="turnOnAction(true)" (keyup.enter)="turnOnAction(true)">
+						</vtr-ui-button>
             </div>
             <div>
             <a (click)="notNowAction(false)"

@@ -37,18 +37,19 @@ ui-popover-apps {
 	.top-header {
 		border: 0;
 		.close {
-			width: 2rem;
-			height: 2rem;
+			font-size: 2.5rem;
 			position: relative;
 			top: 1.5rem;
 			right: 1.5rem;
 			cursor: pointer;
-			background-image: url("data:image/svg+xml,%3Csvg width='16px' height='16px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E6.20pxIcon/Close%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='6.20pxIcon/Close' stroke='none' stroke-width='1' fill='#FBFDFF' fill-rule='evenodd'%3E%3Cpath d='M10.9653688,10.3512186 L17.1764486,16.445129 C17.4918286,16.7545595 17.4966516,17.2610686 17.1872211,17.5764486 C16.8777906,17.8918286 16.3712816,17.8966516 16.0559016,17.5872211 L9.84477507,11.4932648 L3.63364858,17.5872211 C3.31826856,17.8966516 2.81175954,17.8918286 2.50232902,17.5764486 C2.1928985,17.2610686 2.19772153,16.7545595 2.51310155,16.445129 L8.71216362,10.3630096 L2.65985124,4.42487144 C2.34447121,4.11544092 2.33964818,3.6089319 2.6490787,3.29355187 C2.95850922,2.97817185 3.46501824,2.97334882 3.78039826,3.28277934 L9.83278004,9.22098556 L15.7731957,3.16635187 C16.0826262,2.85097185 16.5891352,2.84614882 16.9045153,3.15557934 C17.2198953,3.46500986 17.2247183,3.97151888 16.9152878,4.2868989 L10.9653688,10.3512186 Z' id='Combined-Shape-Copy' fill='%23FBFDFF' fill-rule='nonzero' transform='translate(9.844775, 10.371400) scale(1, -1) rotate(-90.000000) translate(-9.844775, -10.371400) '%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
-			background-repeat: no-repeat;
-			background-position: center center;
-			@media #{$black-on-white}{
-				background-image: url("data:image/svg+xml,%3Csvg width='16px' height='16px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E6.20pxIcon/Close%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='6.20pxIcon/Close' stroke='none' stroke-width='1' fill='#000000' fill-rule='evenodd'%3E%3Cpath d='M10.9653688,10.3512186 L17.1764486,16.445129 C17.4918286,16.7545595 17.4966516,17.2610686 17.1872211,17.5764486 C16.8777906,17.8918286 16.3712816,17.8966516 16.0559016,17.5872211 L9.84477507,11.4932648 L3.63364858,17.5872211 C3.31826856,17.8966516 2.81175954,17.8918286 2.50232902,17.5764486 C2.1928985,17.2610686 2.19772153,16.7545595 2.51310155,16.445129 L8.71216362,10.3630096 L2.65985124,4.42487144 C2.34447121,4.11544092 2.33964818,3.6089319 2.6490787,3.29355187 C2.95850922,2.97817185 3.46501824,2.97334882 3.78039826,3.28277934 L9.83278004,9.22098556 L15.7731957,3.16635187 C16.0826262,2.85097185 16.5891352,2.84614882 16.9045153,3.15557934 C17.2198953,3.46500986 17.2247183,3.97151888 16.9152878,4.2868989 L10.9653688,10.3512186 Z' id='Combined-Shape-Copy' fill='%23000000' fill-rule='nonzero' transform='translate(9.844775, 10.371400) scale(1, -1) rotate(-90.000000) translate(-9.844775, -10.371400) '%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
-				background-color: window;
+			color:$gaming_lightest;
+			@media #{$high-contrast}{
+				color: buttonText;
+			}
+			&:hover {
+				@media #{$high-contrast} {
+					color: highlight;
+				}
 			}
 		}
 	}
@@ -62,7 +63,7 @@ ui-popover-apps {
 		.main-content-body {
 			padding: 2rem;
 			@media #{$high-contrast}{
-				border:1px solid windowText;
+				border:0.1rem solid windowText;
 				border-radius: 1rem;
 			}
 			&.content-padding{
@@ -147,7 +148,7 @@ ui-popover-apps {
 				}
 			}
 			.btn-add-app {
-				position: absolute;
+				position: absolute; 
 				width: 8rem;
 				height: 4rem;
 				bottom: 0px;
@@ -167,15 +168,16 @@ ui-popover-apps {
 					border-radius: 2rem;
 					border: none;
 					@media #{$high-contrast} {
-						background-image: url("data:image/svg+xml,%3Csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E6.20pxIcon/add%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='6.20pxIcon/add' stroke='none' stroke-width='1' fill='rgba(255, 0, 254, 1)' fill-rule='evenodd'%3E%3Cpath d='M9.86634391,2 C9.30897756,2 8.85714286,2.44991629 8.85714286,2.99708744 L8.85714286,8.85714286 L2.99708744,8.85714286 C2.44641125,8.85714286 2,9.29785156 2,9.86634391 L2,10.1336561 C2,10.6910224 2.44991629,11.1428571 2.99708744,11.1428571 L8.85714286,11.1428571 L8.85714286,17.0029126 C8.85714286,17.5535887 9.29785156,18 9.86634391,18 L10.1336561,18 C10.6910224,18 11.1428571,17.5500837 11.1428571,17.0029126 L11.1428571,11.1428571 L17.0029126,11.1428571 C17.5535887,11.1428571 18,10.7021484 18,10.1336561 L18,9.86634391 C18,9.30897756 17.5500837,8.85714286 17.0029126,8.85714286 L11.1428571,8.85714286 L11.1428571,2.99708744 C11.1428571,2.44641125 10.7021484,2 10.1336561,2 L9.86634391,2 Z' id='Shape' fill='#FF00FE' fill-rule='nonzero'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+						border:0.1rem solid windowText;
+						background-image: url("data:image/svg+xml,%3Csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E6.20pxIcon/add%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='6.20pxIcon/add' stroke='none' stroke-width='1' fill='buttonText' fill-rule='evenodd'%3E%3Cpath d='M9.86634391,2 C9.30897756,2 8.85714286,2.44991629 8.85714286,2.99708744 L8.85714286,8.85714286 L2.99708744,8.85714286 C2.44641125,8.85714286 2,9.29785156 2,9.86634391 L2,10.1336561 C2,10.6910224 2.44991629,11.1428571 2.99708744,11.1428571 L8.85714286,11.1428571 L8.85714286,17.0029126 C8.85714286,17.5535887 9.29785156,18 9.86634391,18 L10.1336561,18 C10.6910224,18 11.1428571,17.5500837 11.1428571,17.0029126 L11.1428571,11.1428571 L17.0029126,11.1428571 C17.5535887,11.1428571 18,10.7021484 18,10.1336561 L18,9.86634391 C18,9.30897756 17.5500837,8.85714286 17.0029126,8.85714286 L11.1428571,8.85714286 L11.1428571,2.99708744 C11.1428571,2.44641125 10.7021484,2 10.1336561,2 L9.86634391,2 Z' id='Shape' fill='buttonText' fill-rule='nonzero'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
 					}
 					&.checked {
 						border: none !important;
 						background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3c!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com --%3e%3ctitle%3e6.20pxIcon/checkLine%3c/title%3e%3cdesc%3eCreated with Sketch.%3c/desc%3e%3cg id='6.20pxIcon/checkLine' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3e%3cpath d='M8.1116626,13.630581 L16.0313582,5.35279564 C16.4676981,4.89672665 17.1911384,4.88073301 17.6472074,5.31707287 C18.1032764,5.75341272 18.11927,6.47685303 17.6829301,6.93292202 L8.93558544,16.0757787 C8.48484105,16.5469035 7.73191951,16.546056 7.28223692,16.0739175 L2.31529664,10.8589429 C1.87998466,10.4018927 1.89760695,9.67849027 2.35465713,9.24317828 C2.81170731,8.8078663 3.53510978,8.82548859 3.97042177,9.28253877 L8.1116626,13.630581 Z' id='Path-2' fill='%23FFFFFF' fill-rule='nonzero'%3e%3c/path%3e%3c/g%3e%3c/svg%3e");
 						background-color: $btn_secondary_color !important;
 						@media #{$high-contrast} {
-							background-color: $add-app-active-hc !important;
-							background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3c!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com --%3e%3ctitle%3e6.20pxIcon/checkLine%3c/title%3e%3cdesc%3eCreated with Sketch.%3c/desc%3e%3cg id='6.20pxIcon/checkLine' stroke='none' stroke-width='1' fill='#FF00FE' fill-rule='evenodd'%3e%3cpath d='M8.1116626,13.630581 L16.0313582,5.35279564 C16.4676981,4.89672665 17.1911384,4.88073301 17.6472074,5.31707287 C18.1032764,5.75341272 18.11927,6.47685303 17.6829301,6.93292202 L8.93558544,16.0757787 C8.48484105,16.5469035 7.73191951,16.546056 7.28223692,16.0739175 L2.31529664,10.8589429 C1.87998466,10.4018927 1.89760695,9.67849027 2.35465713,9.24317828 C2.81170731,8.8078663 3.53510978,8.82548859 3.97042177,9.28253877 L8.1116626,13.630581 Z' id='Path-2' fill='%23FF00FE' fill-rule='nonzero'%3e%3c/path%3e%3c/g%3e%3c/svg%3e");
+							background-color: highlight !important;
+							background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3c!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com --%3e%3ctitle%3e6.20pxIcon/checkLine%3c/title%3e%3cdesc%3eCreated with Sketch.%3c/desc%3e%3cg id='6.20pxIcon/checkLine' stroke='none' stroke-width='1' fill='highlightText' fill-rule='evenodd'%3e%3cpath d='M8.1116626,13.630581 L16.0313582,5.35279564 C16.4676981,4.89672665 17.1911384,4.88073301 17.6472074,5.31707287 C18.1032764,5.75341272 18.11927,6.47685303 17.6829301,6.93292202 L8.93558544,16.0757787 C8.48484105,16.5469035 7.73191951,16.546056 7.28223692,16.0739175 L2.31529664,10.8589429 C1.87998466,10.4018927 1.89760695,9.67849027 2.35465713,9.24317828 C2.81170731,8.8078663 3.53510978,8.82548859 3.97042177,9.28253877 L8.1116626,13.630581 Z' id='Path-2' fill='%23highlightText' fill-rule='nonzero'%3e%3c/path%3e%3c/g%3e%3c/svg%3e");
 						}
 					}
 					&:hover {
@@ -187,15 +189,16 @@ ui-popover-apps {
 						background-position: center center;
 						background-image: url("data:image/svg+xml,%3Csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E6.20pxIcon/add%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='6.20pxIcon/add' stroke='none' stroke-width='1' fill='rgba(255,255,255,0.6)' fill-rule='evenodd'%3E%3Cpath d='M9.86634391,2 C9.30897756,2 8.85714286,2.44991629 8.85714286,2.99708744 L8.85714286,8.85714286 L2.99708744,8.85714286 C2.44641125,8.85714286 2,9.29785156 2,9.86634391 L2,10.1336561 C2,10.6910224 2.44991629,11.1428571 2.99708744,11.1428571 L8.85714286,11.1428571 L8.85714286,17.0029126 C8.85714286,17.5535887 9.29785156,18 9.86634391,18 L10.1336561,18 C10.6910224,18 11.1428571,17.5500837 11.1428571,17.0029126 L11.1428571,11.1428571 L17.0029126,11.1428571 C17.5535887,11.1428571 18,10.7021484 18,10.1336561 L18,9.86634391 C18,9.30897756 17.5500837,8.85714286 17.0029126,8.85714286 L11.1428571,8.85714286 L11.1428571,2.99708744 C11.1428571,2.44641125 10.7021484,2 10.1336561,2 L9.86634391,2 Z' id='Shape' fill='#FBFDFF' fill-rule='nonzero'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
 						@media #{$high-contrast} {
-							background-image: url("data:image/svg+xml,%3Csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E6.20pxIcon/add%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='6.20pxIcon/add' stroke='none' stroke-width='1' fill='rgba(255, 0, 254, 1)' fill-rule='evenodd'%3E%3Cpath d='M9.86634391,2 C9.30897756,2 8.85714286,2.44991629 8.85714286,2.99708744 L8.85714286,8.85714286 L2.99708744,8.85714286 C2.44641125,8.85714286 2,9.29785156 2,9.86634391 L2,10.1336561 C2,10.6910224 2.44991629,11.1428571 2.99708744,11.1428571 L8.85714286,11.1428571 L8.85714286,17.0029126 C8.85714286,17.5535887 9.29785156,18 9.86634391,18 L10.1336561,18 C10.6910224,18 11.1428571,17.5500837 11.1428571,17.0029126 L11.1428571,11.1428571 L17.0029126,11.1428571 C17.5535887,11.1428571 18,10.7021484 18,10.1336561 L18,9.86634391 C18,9.30897756 17.5500837,8.85714286 17.0029126,8.85714286 L11.1428571,8.85714286 L11.1428571,2.99708744 C11.1428571,2.44641125 10.7021484,2 10.1336561,2 L9.86634391,2 Z' id='Shape' fill='#FF00FE' fill-rule='nonzero'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+							background-color: highlight;
+							background-image: url("data:image/svg+xml,%3Csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E6.20pxIcon/add%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='6.20pxIcon/add' stroke='none' stroke-width='1' fill='highlightText' fill-rule='evenodd'%3E%3Cpath d='M9.86634391,2 C9.30897756,2 8.85714286,2.44991629 8.85714286,2.99708744 L8.85714286,8.85714286 L2.99708744,8.85714286 C2.44641125,8.85714286 2,9.29785156 2,9.86634391 L2,10.1336561 C2,10.6910224 2.44991629,11.1428571 2.99708744,11.1428571 L8.85714286,11.1428571 L8.85714286,17.0029126 C8.85714286,17.5535887 9.29785156,18 9.86634391,18 L10.1336561,18 C10.6910224,18 11.1428571,17.5500837 11.1428571,17.0029126 L11.1428571,11.1428571 L17.0029126,11.1428571 C17.5535887,11.1428571 18,10.7021484 18,10.1336561 L18,9.86634391 C18,9.30897756 17.5500837,8.85714286 17.0029126,8.85714286 L11.1428571,8.85714286 L11.1428571,2.99708744 C11.1428571,2.44641125 10.7021484,2 10.1336561,2 L9.86634391,2 Z' id='Shape' fill='highlightText' fill-rule='nonzero'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
 						}
 						&.checked {
 							border: none !important;
 							background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3c!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com --%3e%3ctitle%3e6.20pxIcon/checkLine%3c/title%3e%3cdesc%3eCreated with Sketch.%3c/desc%3e%3cg id='6.20pxIcon/checkLine' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3e%3cpath d='M8.1116626,13.630581 L16.0313582,5.35279564 C16.4676981,4.89672665 17.1911384,4.88073301 17.6472074,5.31707287 C18.1032764,5.75341272 18.11927,6.47685303 17.6829301,6.93292202 L8.93558544,16.0757787 C8.48484105,16.5469035 7.73191951,16.546056 7.28223692,16.0739175 L2.31529664,10.8589429 C1.87998466,10.4018927 1.89760695,9.67849027 2.35465713,9.24317828 C2.81170731,8.8078663 3.53510978,8.82548859 3.97042177,9.28253877 L8.1116626,13.630581 Z' id='Path-2' fill='%23FFFFFF' fill-rule='nonzero'%3e%3c/path%3e%3c/g%3e%3c/svg%3e");
 							background-color: $btn_primary_color;
 							@media #{$high-contrast} {
-								background-color: $add-app-active-hc !important;
-								background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3c!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com --%3e%3ctitle%3e6.20pxIcon/checkLine%3c/title%3e%3cdesc%3eCreated with Sketch.%3c/desc%3e%3cg id='6.20pxIcon/checkLine' stroke='none' stroke-width='1' fill='#FF00FE' fill-rule='evenodd'%3e%3cpath d='M8.1116626,13.630581 L16.0313582,5.35279564 C16.4676981,4.89672665 17.1911384,4.88073301 17.6472074,5.31707287 C18.1032764,5.75341272 18.11927,6.47685303 17.6829301,6.93292202 L8.93558544,16.0757787 C8.48484105,16.5469035 7.73191951,16.546056 7.28223692,16.0739175 L2.31529664,10.8589429 C1.87998466,10.4018927 1.89760695,9.67849027 2.35465713,9.24317828 C2.81170731,8.8078663 3.53510978,8.82548859 3.97042177,9.28253877 L8.1116626,13.630581 Z' id='Path-2' fill='%23FF00FE' fill-rule='nonzero'%3e%3c/path%3e%3c/g%3e%3c/svg%3e");
+								background-color: highlight !important;
+								background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3c!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com --%3e%3ctitle%3e6.20pxIcon/checkLine%3c/title%3e%3cdesc%3eCreated with Sketch.%3c/desc%3e%3cg id='6.20pxIcon/checkLine' stroke='none' stroke-width='1' fill='highlightText' fill-rule='evenodd'%3e%3cpath d='M8.1116626,13.630581 L16.0313582,5.35279564 C16.4676981,4.89672665 17.1911384,4.88073301 17.6472074,5.31707287 C18.1032764,5.75341272 18.11927,6.47685303 17.6829301,6.93292202 L8.93558544,16.0757787 C8.48484105,16.5469035 7.73191951,16.546056 7.28223692,16.0739175 L2.31529664,10.8589429 C1.87998466,10.4018927 1.89760695,9.67849027 2.35465713,9.24317828 C2.81170731,8.8078663 3.53510978,8.82548859 3.97042177,9.28253877 L8.1116626,13.630581 Z' id='Path-2' fill='%23highlightText' fill-rule='nonzero'%3e%3c/path%3e%3c/g%3e%3c/svg%3e");
 							}
 						}
 					}
