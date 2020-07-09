@@ -309,6 +309,16 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 				this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, false);
 				this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, actualScanFrequency[0]);
 			}
+			{
+				if (!this.isSubscribed) {
+					this.hideBasedOnOldAddIn.emit(true);
+					return;
+				}
+				else {
+					this.hideBasedOnOldAddInSummary.emit(true);
+					return;
+				}
+			}
 			this.logger.info('ui-smart-performance.unregisterScheduleScan.then', JSON.stringify(res));
 		} catch (err) {
 			this.logger.error('ui-smart-performance.unregisterScheduleScan.then', err);
@@ -427,16 +437,6 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 				
 			}
 			if (res.nextruntime === null) {
-				if (!this.isSubscribed) {
-					this.hideBasedOnOldAddIn.emit(true);
-					return;
-				}
-				else {
-					this.hideBasedOnOldAddInSummary.emit(true);
-					return;
-				}
-			}
-			if (!res.nextruntime) {
 				if (!this.isSubscribed) {
 					this.hideBasedOnOldAddIn.emit(true);
 					return;
