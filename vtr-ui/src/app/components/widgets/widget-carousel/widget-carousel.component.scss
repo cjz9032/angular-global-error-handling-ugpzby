@@ -136,12 +136,6 @@
 			}
 			.carousel-control-prev,.carousel-control-next {
 				width: 8.5%;
-				@media #{$white-on-black} {
-					opacity: 1;
-				}
-				@media #{$black-on-white} {
-					opacity: 1;
-				}
             }
             .carousel-control-prev {
 				width: 4rem;
