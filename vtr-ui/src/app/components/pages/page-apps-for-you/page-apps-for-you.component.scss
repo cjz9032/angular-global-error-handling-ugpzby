@@ -245,6 +245,7 @@
 							}
 
 							@media #{$white-on-black} {
+                                opacity: 1;
 								color: $light;
 								background-color: $dark;
 							}
@@ -273,7 +274,15 @@
 
 								&:hover {
 									opacity: 1;
-									color: $main;
+                                    color: $main;
+                                    
+                                    @media #{$white-on-black} {
+										color: $high-contrast-black-textselected;
+									}
+
+									@media #{$black-on-white} {
+										color: $high-contrast-white-textselected;
+									}	
 								}
 							}
 						}
