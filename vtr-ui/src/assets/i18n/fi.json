@@ -3491,10 +3491,10 @@
                     }
                 }
             },
-            "confirmationTitle": "Lenovo Payment Process",
-            "confirmationNote": "You will be directed to Lenovo Payment Website to finish the payment. Once the payment is done, you can press the \"refresh\" button in \"Subscription Detail\" to get the payment result.",
-            "confirmationBtn": "Proceed",
-            "refreshButton": "Refresh Status"
+            "confirmationTitle": "Lenovon Maksuprosessi",
+            "confirmationNote": "Sinut ohjataan Lenovon Maksusivulle, jossa suoritat maksun loppuun. Kun maksu on valmis, näet maksun tiedot napsauttamalla \"päivitä\"-painiketta kohdassa \"Tilauksen tiedot\".",
+            "confirmationBtn": "Jatka",
+            "refreshButton": "Päivitä tila"
         },
         "scanCompletePage": {
             "title": "Järjestelmän tarkistus on valmis",
