@@ -875,24 +875,25 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				processLabel: true,
 				metricsItem: 'radio.power-smart-settings.performance'
 			});
+
+			this.intelligentCoolingUIModel.push({
+				componentId: this.quiteCoolModeId,
+				label: `device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.quiteCool${(showIC)}`,
+				value: 'intelligentCooling',
+				isChecked: this.radioQuietCool,
+				isDisabled: false,
+				processIcon: true,
+				customIcon: showIC >= 14 ? 'LE-IntelligentCooling2x' : 'LE-CoolingDown2x',
+				hideIcon: true,
+				processLabel: true,
+				metricsItem: 'radio.power-smart-settings.intelligent-cooling'
+			});
 		}
-		this.intelligentCoolingUIModel.push({
-			componentId: this.quiteCoolModeId,
-			label: `device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.quiteCool${(showIC >= 15 ? 14 : showIC)}`,
-			value: 'intelligentCooling',
-			isChecked: this.radioQuietCool,
-			isDisabled: false,
-			processIcon: true,
-			customIcon: showIC >= 14 ? 'LE-IntelligentCooling2x' : 'LE-CoolingDown2x',
-			hideIcon: true,
-			processLabel: true,
-			metricsItem: 'radio.power-smart-settings.intelligent-cooling'
-		});
 
 		if (showIC >= 14) {
 			this.intelligentCoolingUIModel.push({
 				componentId: this.performanceModeId,
-				label: `device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.performance${(showIC >= 15 ? 14 : showIC)}`,
+				label: `device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.performance14`,
 				value: 'performance',
 				isChecked: this.radioPerformance,
 				isDisabled: false,
@@ -901,6 +902,19 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				hideIcon: false,
 				processLabel: true,
 				metricsItem: 'radio.power-smart-settings.performance'
+			});
+
+			this.intelligentCoolingUIModel.push({
+				componentId: this.quiteCoolModeId,
+				label: `device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.quiteCool14`,
+				value: 'intelligentCooling',
+				isChecked: this.radioQuietCool,
+				isDisabled: false,
+				processIcon: true,
+				customIcon: showIC >= 14 ? 'LE-IntelligentCooling2x' : 'LE-CoolingDown2x',
+				hideIcon: true,
+				processLabel: true,
+				metricsItem: 'radio.power-smart-settings.intelligent-cooling'
 			});
 
 			this.intelligentCoolingUIModel.push({

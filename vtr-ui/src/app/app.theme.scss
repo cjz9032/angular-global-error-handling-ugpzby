@@ -423,10 +423,9 @@ $high-contrast: "screen and (-ms-high-contrast)";
 $black-on-white: "screen and (-ms-high-contrast: black-on-white)";
 $white-on-black: "screen and (-ms-high-contrast: white-on-black)";
 $screen_dark_01: rgba(0, 0, 0, 0.01);
-$high-contrast-white-textselected: #37006e;
 $high-contrast-blue: #0007a4;
-$high-contrast-white-disabled: #600000;
-//$high-contrast-grey: #767879;
+$high-contrast-white-textselected: #37006e;
+$high-contrast-white-disabled: #AF7E7E;
 $high-contrast-black-textselected: #1aebff;
 $high-contrast-black-disabled: #3be23b;
 $high-contrast-black-yellow: #FFFF00;
@@ -439,6 +438,12 @@ $high-contrast-white-disabled-maroon: #610000;
 @mixin outline-blue {
 	outline: 0.1rem solid $menu_hover;
 	outline-offset: 0.2rem;
+	@media #{$black-on-white} {
+		outline: 0.1rem solid $dark;
+	}
+	@media #{$white-on-black} {
+		outline: 0.1rem solid $light;
+	}
 }
 @mixin outline-white {
 	outline: 0.1rem solid $light;
@@ -455,7 +460,7 @@ $high-contrast-white-disabled-maroon: #610000;
 	outline: 0;
 	border: 0.1rem solid $menu_hover;
 }
-@mixin button-outline-blue {
+@mixin button-outline-blue ($color : $menu_hover) {
 		content: '';
 		display: block;
 		position: absolute;
@@ -464,7 +469,7 @@ $high-contrast-white-disabled-maroon: #610000;
 		border-radius: 500px;
 		width: calc(100% + 0.8rem);
 		height: calc(100% + 0.8rem);
-		border: thin solid $menu_hover;
+		border: thin solid $color;
 }
 
 @mixin circular-button-outline {

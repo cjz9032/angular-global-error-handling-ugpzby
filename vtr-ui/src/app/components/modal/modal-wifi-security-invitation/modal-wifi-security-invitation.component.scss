@@ -100,12 +100,19 @@
 	.cancel-button {
 		background: $light;
 		color: $blue-lighter;
+		border: 0;
 		border-bottom: 1px solid $blue-light;
 		padding-left: 0;
 		padding-right: 0;
 		border-radius: 0;
 		&:hover {
 			color: $blue-light;
+		}
+		@media #{$black-on-white} {
+			color: $high-contrast-blue;
+		}
+		@media #{$white-on-black} {
+			color: $high-contrast-black-yellow;
 		}
 	}
 

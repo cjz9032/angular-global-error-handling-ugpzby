@@ -35,18 +35,6 @@
 		}
 	}
 
-	.white-button {
-		::ng-deep {
-			.button-box {
-				.button {
-					border: 1px solid $grey_dark !important;
-					color: $grey_darker !important;
-					background: linear-gradient(90deg, $grey_lighter 0%, $light 100%) !important;
-				}
-			}
-		}
-	}
-
 	.badge {
 		height: 1.5rem;
 		line-height: 1.5rem;
@@ -57,14 +45,33 @@
 		padding: 0 1rem;
 		justify-self: end;
 		max-width: 12rem;
+		@media #{$high-contrast} {
+			-ms-high-contrast-adjust: none;
+		}
 	}
 
 	.status-enabled {
 		background: $green_dark;
+		@media #{$black-on-white} {
+			color: $light;
+			background: $dark;
+		}
+		@media #{$white-on-black} {
+			color: $dark;
+			background: $light;
+		}
 	}
 
 	.status-haveOwn {
 		background: $black_light;
+		@media #{$black-on-white} {
+			color: $light;
+			background: $dark;
+		}
+		@media #{$white-on-black} {
+			color: $dark;
+			background: $light;
+		}
 	}
 
 	.status-loading {
@@ -73,6 +80,12 @@
 
 	.status-disabled {
 		color: $grey_dark;
+		@media #{$black-on-white} {
+			color: $dark;
+		}
+		@media #{$white-on-black} {
+			color: $light;
+		}
 	}
 
 	.custom-control-label {

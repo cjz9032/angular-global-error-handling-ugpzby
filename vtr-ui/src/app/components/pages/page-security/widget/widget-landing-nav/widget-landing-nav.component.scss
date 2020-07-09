@@ -2,7 +2,7 @@
 
 .vtr-widget-landing-nav {
 	display: flex;
-	margin: 2rem 0 0 0;
+	margin: 2rem 0 -0.1rem 0;
 	padding: 0rem;
 
 	.nav-item {
@@ -34,8 +34,25 @@
 			padding: 0.5rem 1rem;
 		}
 
+		@media #{$black-on-white} {
+			color: $dark;
+			border: 0.1rem solid $dark;
+		}
+		@media #{$white-on-black} {
+			color: $light;
+			border: 0.1rem solid $light;
+		}
+
 		&:hover {
 			background: linear-gradient($light 80%, transparent);
+			@media #{$black-on-white} {
+				color: $high-contrast-white-textselected;
+				background: $light;
+			}
+			@media #{$white-on-black} {
+				color: $high-contrast-black-textselected;
+				background: $dark;
+			}
 		}
 
 		&.active {
@@ -43,7 +60,15 @@
 			background-color: $light;
 			box-shadow: -2px -2px 2px 0px rgba(0, 0, 0, 0.05), 2px -1px 2px 0px rgba(0, 0, 0, 0.05);
 			position: relative;
-			top: 1px;
+			top: 0.05rem;
+			@media #{$black-on-white} {
+				border-bottom: none;
+				color: $high-contrast-white-textselected;
+			}
+			@media #{$white-on-black} {
+				border-bottom: none;
+				color: $high-contrast-black-textselected;
+			}
 
 			&:hover {
 				color: $grey_darker;
@@ -69,5 +94,12 @@
 
 	@media #{$mediaquery_X46} {
 		padding: 2.5rem 1.5rem;
+	}
+
+	@media #{$black-on-white} {
+		border: 0.1rem solid $dark;
+	}
+	@media #{$white-on-black} {
+		border: 0.1rem solid $light;
 	}
 }

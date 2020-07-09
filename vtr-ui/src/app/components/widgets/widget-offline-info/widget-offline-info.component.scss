@@ -8,12 +8,22 @@
 		background: linear-gradient($gradient_angle, $main_darkest 0%, $main_darker 100%);
 		box-shadow: $drop_shadow;
 		padding: 2.4rem;
+		color: $light;
+		@media #{$black-on-white} {
+			background: $light;
+			border: 0.1rem solid $dark;
+			color: $dark;
+		}
+		@media #{$white-on-black} {
+			background: $dark;
+			border: 0.1rem solid $light;
+			color: $light;
+		}
 		&.offline-connection {
 			border-radius: 0.7rem;
 		}
 
 		.title {
-			color: $light;
 			font-size: 3.5rem;
 			font-weight: $weight_light;
 			line-height: 4.2rem;
@@ -24,7 +34,6 @@
 
 		.subtitle {
 			opacity: 0.5;
-			color: $light;
 			font-size: 1.5rem;
 			line-height: 2.1rem;
 			padding-top: 1rem;
@@ -35,6 +44,12 @@
 			.icon {
 				color: $menu_hover;
 				font-size: 5rem;
+				@media #{$black-on-white} {
+					color: $dark;
+				}
+				@media #{$white-on-black} {
+					color: $light;
+				}
 			}
 		}
 
@@ -64,7 +79,7 @@
 				white-space: nowrap;
 				@media #{$breakpoint_sm}{
 					font-size: 1.2rem;
-					padding:0rem 2.5rem;					
+					padding:0rem 2.5rem;
 				}
 			}
 		}

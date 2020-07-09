@@ -43,6 +43,7 @@ export class WidgetSvgCircleComponent implements OnInit, DoCheck {
 			if (lineTags && lineTags.length > 0) {
 				for (let i = lineTags.length - 1; i >= 0; i--) {
 					lineTags[i].setAttribute('fill', this.fill);
+					lineTags[i].classList.remove('line-tag-fill');
 				}
 			} else {
 				const myLine = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
@@ -51,6 +52,7 @@ export class WidgetSvgCircleComponent implements OnInit, DoCheck {
 				myLine.setAttribute('fill', this.fill);
 				myLine.setAttribute('transform', 'rotate(0,0,113)');
 				myLine.setAttribute('filter', 'url(#f1)');
+				myLine.classList.add('line-tag');
 
 				const els = 100;
 				const step = 360 / els;
@@ -65,6 +67,7 @@ export class WidgetSvgCircleComponent implements OnInit, DoCheck {
 			for (let i = 0; i <= percent; i++) {
 				if (lineTags[i]) {
 					lineTags[i].setAttribute('fill', colorArr[i]);
+					lineTags[i].classList.add('line-tag-fill');
 				}
 			}
 		}
