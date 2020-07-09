@@ -87,6 +87,7 @@
 		.cancel-button {
 			background: $light;
 			color: $blue-lighter;
+			border: 0;
 			border-bottom: 1px solid $blue-light;
 			height: 3rem;
 			padding-left: 0;
@@ -97,6 +98,12 @@
 			margin: 0 1rem 0 2rem;
 			&:hover {
 				color: $blue-light;
+			}
+			@media #{$black-on-white} {
+				color: $high-contrast-blue;
+			}
+			@media #{$white-on-black} {
+				color: $high-contrast-black-yellow;
 			}
 		}
     }
