@@ -9,6 +9,7 @@
 					<button type="button"  id="{{!noAppsRunning? 'nbAddApps_close_btn':'nbAddApps_norunningapps_close_btn'}}"  class="close networkboost_close_add_apps" (click)="closeModal(false)" (keydown)="checkFocus($event)"
 					  tabindex="1"  attr.aria-label="{{'gaming.narrator.networkBoost.common.close' | translate}}"
 						(keyup.enter)="closeModal(false)">
+						<fa-icon [icon]="['fal', 'times']"></fa-icon>
 					</button>
 				</div>
 				<div class="main-content-body" [ngClass]="{'content-padding' : noAppsRunning === true}">
