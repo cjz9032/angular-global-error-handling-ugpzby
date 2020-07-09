@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges, OnDestroy} from '@angular/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalSmartPerformanceSubscribeComponent } from '../../modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
@@ -9,19 +9,21 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import moment from 'moment';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { EMPTY } from 'rxjs';
+import { EMPTY, Subscription } from 'rxjs';
 import { JsonPipe } from '@angular/common';
 import { ModalSmartPerformanceFeedbackComponent } from '../../modal/modal-smart-performance-feedback/modal-smart-performance-feedback.component';
 import { MetricsTranslateService } from 'src/app/services/mertics-traslate/metrics-translate.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { enumSmartPerformance } from 'src/app/enums/smart-performance.enum';
 import { SupportService } from 'src/app/services/support/support.service';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
 @Component({
 	selector: 'vtr-ui-smart-performance',
 	templateUrl: './ui-smart-performance.component.html',
 	styleUrls: ['./ui-smart-performance.component.scss']
 })
-export class UiSmartPerformanceComponent implements OnInit, OnChanges {
+export class UiSmartPerformanceComponent implements OnInit, OnDestroy, OnChanges {
 
 	title = 'smartPerformance.title';
 	back = 'smartPerformance.back';
@@ -46,6 +48,7 @@ export class UiSmartPerformanceComponent implements OnInit, OnChanges {
 	IsSmartPerformanceFirstRun: any;
 	IsScheduleScanEnabled: any;
 	isOldVersion = false ;
+	private subscription: Subscription;
 	days: any = [
 		'Sunday',
 		'Monday',
@@ -57,7 +60,6 @@ export class UiSmartPerformanceComponent implements OnInit, OnChanges {
 	];
 	private metrics: any;
 	public isOnline = true;
-
 	constructor(
 		private translate: TranslateService,
 		private modalService: NgbModal,
@@ -73,7 +75,6 @@ export class UiSmartPerformanceComponent implements OnInit, OnChanges {
 		this.translateStrings();
 		this.shellServices.getMetrics();
 		this.metrics = this.shellServices.getMetrics();
-		this.isOnline = this.commonService.isOnline;
 
 	}
 
@@ -83,6 +84,8 @@ export class UiSmartPerformanceComponent implements OnInit, OnChanges {
 		}
 	}
 	ngOnInit() {
+		this.isOnline = this.commonService.isOnline;
+
 		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
 		if (this.isSubscribed === undefined) {
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
@@ -96,10 +99,24 @@ export class UiSmartPerformanceComponent implements OnInit, OnChanges {
 			// }
 		}
 		this.getSubscriptionDetails();
-		
-		
+
 		if (this.smartPerformanceService.isShellAvailable) {
 		this.checkReadiness();
+		}
+		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
+	}
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case NetworkStatus.Online:
+				case NetworkStatus.Offline:
+					this.isOnline = notification.payload.isOnline;
+					break;
+					default:
+					break;
+			}
 		}
 	}
 	checkReadiness() {
@@ -180,6 +197,13 @@ export class UiSmartPerformanceComponent implements OnInit, OnChanges {
 			this.subItems = [];
 		}
 	}
+
+	ngOnDestroy() {
+		if(this.subscription){
+			this.subscription.unsubscribe();
+		}
+	}
+
 	// Scan Now event from Summary Page
 	changeScanEvent() {
 		this.isScanning = true;
