@@ -155,7 +155,7 @@ export class UiListCheckboxComponent implements OnInit {
 	}
 
 	private focusOnElement(element) {
-		if (element) {
+		if (element && document.getElementById(element)) {
 			document.getElementById(element).focus();
 		}
 	}
