@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.41](https://bitbucket.tc.lenovo.com///compare/v1.6.40...v1.6.41) (2020-07-09)
+
+
+### Features
+
+* **Overall:** upgrade lodash version due to security issue ([e6ef0b8](https://bitbucket.tc.lenovo.com///commit/e6ef0b878494e91978de4999ef11886d158ec565))
+
 ### [1.6.40](https://bitbucket.tc.lenovo.com///compare/v1.6.39...v1.6.40) (2020-07-09)
 
 ### [1.6.39](https://bitbucket.tc.lenovo.com///compare/v1.6.38...v1.6.39) (2020-07-07)
