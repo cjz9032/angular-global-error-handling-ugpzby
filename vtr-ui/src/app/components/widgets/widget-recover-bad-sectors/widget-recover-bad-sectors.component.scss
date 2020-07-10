@@ -10,13 +10,23 @@
 		font-size: $fontsize_xl;
 		font-weight: $weight_light;
 	}
+
 	.title-question-mark {
-		color: $main_dark;
-		font-size: $fontsize_md;
+		font-size: $fontsize_lg;
 		font-weight: $weight_light;
-		padding-top: 0.4rem;
 		padding-left: 1rem;
+
+		.recover-question-icon {
+			margin-left: 0.5rem;
+			color: $menu_hover;
+			cursor: pointer;
+
+			&:hover {
+				color: $highlight;
+			}
+		}
 	}
+
 	.description {
 		color: $grey_dark;
 		font-size: $fontsize_xs;
@@ -82,17 +92,6 @@
 						}
 					}
 				}
-			}
-		}
-
-		.recover-question-icon {
-			margin-left: 0.5rem;
-			font-size: $fontsize_sm;
-			color: $menu_hover;
-			cursor: pointer;
-
-			&:hover {
-				color: $highlight;
 			}
 		}
 	}
