@@ -11,7 +11,7 @@ import {
 	publishReplay,
 	catchError
 } from 'rxjs/operators';
-import _ from 'lodash';
+import isEqual from 'lodash/isEqual';
 
 @Injectable({
 	providedIn: 'root',
@@ -33,25 +33,23 @@ export class NetworkRequestService {
 		const urlStr = url.toString();
 		const observer = timer(0, timeInterval * 1000).pipe(
 			flatMap(() =>
-				this.fetchUrl(urlStr).pipe(
+				this.fetch(urlStr).pipe(
 					catchError(() => of(false)),
 					first(),
 					flatMap((res: any) => {
-						if (res.status >= 200 && res.status < 300)
-							return of(true);
-						else return of(false);
+						return of(res.status >= 200 && res.status < 300);
 					}),
 					toArray()
 				)
 			),
-			distinctUntilChanged(_.isEqual),
+			distinctUntilChanged(isEqual),
 			publishReplay(1),
 			refCount()
 		);
 		return observer;
 	}
 
-	private fetchUrl(url: string) {
+	private fetch(url: string) {
 		return this.http.head(url, {
 			observe: 'response',
 		});
