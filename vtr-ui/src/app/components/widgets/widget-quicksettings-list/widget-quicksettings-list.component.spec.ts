@@ -4,7 +4,7 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { Router } from '@angular/router';
 import { of } from 'rxjs';
 
-import { WidgetQuicksettingsListComponent } from "./widget-quicksettings-list.component";
+import { WidgetQuicksettingsListComponent } from './widget-quicksettings-list.component';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
@@ -16,7 +16,7 @@ import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { GuardService } from 'src/app/services/guard/guardService.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 
-describe("WidgetQuicksettingsListComponent", () => {
+describe('WidgetQuicksettingsListComponent', () => {
 
 	let component: WidgetQuicksettingsListComponent;
 	let fixture: ComponentFixture<WidgetQuicksettingsListComponent>;
@@ -25,57 +25,57 @@ describe("WidgetQuicksettingsListComponent", () => {
 	let thermalModeVersionCache = 1;
 	let prevThermalModeStatusCache = 2;
 	let currentThermalModeStatusCache = 2;
-	let rapidChargeCache = { "available": false, "status": false};
+	let rapidChargeCache = { 'available': false, 'status': false };
 	let wifiSecurityFeatureCache = false;
 	let wifiSecurityStatusCache = 'enable';
-	let dolbyAudioToggleCache = { "available": false, "supportedModes": ["Dynamic", "Movie", "Music", "Games", "Voip"], "isAudioProfileEnabled": false, "currentMode": "Games", "voIPStatus": "True", "entertainmentStatus": "True" }
+	let dolbyAudioToggleCache = { 'available': false, 'supportedModes': ['Dynamic', 'Movie', 'Music', 'Games', 'Voip'], 'isAudioProfileEnabled': false, 'currentMode': 'Games', 'voIPStatus': 'True', 'entertainmentStatus': 'True' }
 	let securityWifiSecurityInGamingDashboardCache = false;
 	let securityWifiSecurityShowPluginMissingDialogCache = false;
 
 
 	let thermalModeStatus = 2;
-	let rapidChargeSettings = { "available": false, "status": false };
-	let dolbyAudioToggle = { "available": false, "supportedModes": ["Dynamic", "Movie", "Music", "Games", "Voip"], "isAudioProfileEnabled": false, "currentMode": "Games", "voIPStatus": "True", "entertainmentStatus": "True" }
+	let rapidChargeSettings = { 'available': false, 'status': false };
+	let dolbyAudioToggle = { 'available': false, 'supportedModes': ['Dynamic', 'Movie', 'Music', 'Games', 'Voip'], 'isAudioProfileEnabled': false, 'currentMode': 'Games', 'voIPStatus': 'True', 'entertainmentStatus': 'True' }
 	let setReturnValue = true;
 
 	let commonServiceMock = {
-        getLocalStorageValue(key: any, defaultValue?: any) {
-            switch (key) {
-                case '[LocalStorageKey] PrevThermalModeStatus':
-                    return prevThermalModeStatusCache;
-                case '[LocalStorageKey] CurrentThermalModeStatus':
-                    return currentThermalModeStatusCache;
-                case '[LocalStorageKey] RapidChargeCache':
-                    return rapidChargeCache;
-                case '[LocalStorageKey] WifiSecurityCache':
-                    return wifiSecurityFeatureCache;
-                case '[LocalStorageKey] SecurityWifiSecurityState':
-                    return wifiSecurityStatusCache;
-                case '[LocalStorageKey] DolbyAudioToggleCache':
-                    return dolbyAudioToggleCache;
-            }
-        },
-        setLocalStorageValue(key: any, value: any) {
-            switch (key) {
-                case '[LocalStorageKey] PrevThermalModeStatus':
-                    prevThermalModeStatusCache = value;
-                    break;
-                case '[LocalStorageKey] CurrentThermalModeStatus':
-                    currentThermalModeStatusCache = value;
-                    break;
-                case '[LocalStorageKey] RapidChargeCache':
-                    rapidChargeCache = value;
-                    break;
-                case '[LocalStorageKey] WifiSecurityCache':
-                    wifiSecurityFeatureCache = value;
-                    break;
-                case '[LocalStorageKey] SecurityWifiSecurityState':
-                    wifiSecurityStatusCache = value;
-                    break;
-                case '[LocalStorageKey] DolbyAudioToggleCache':
-                    dolbyAudioToggleCache = value;
-                    break;
-            }
+		getLocalStorageValue(key: any, defaultValue?: any) {
+			switch (key) {
+				case '[LocalStorageKey] PrevThermalModeStatus':
+					return prevThermalModeStatusCache;
+				case '[LocalStorageKey] CurrentThermalModeStatus':
+					return currentThermalModeStatusCache;
+				case '[LocalStorageKey] RapidChargeCache':
+					return rapidChargeCache;
+				case '[LocalStorageKey] WifiSecurityCache':
+					return wifiSecurityFeatureCache;
+				case '[LocalStorageKey] SecurityWifiSecurityState':
+					return wifiSecurityStatusCache;
+				case '[LocalStorageKey] DolbyAudioToggleCache':
+					return dolbyAudioToggleCache;
+			}
+		},
+		setLocalStorageValue(key: any, value: any) {
+			switch (key) {
+				case '[LocalStorageKey] PrevThermalModeStatus':
+					prevThermalModeStatusCache = value;
+					break;
+				case '[LocalStorageKey] CurrentThermalModeStatus':
+					currentThermalModeStatusCache = value;
+					break;
+				case '[LocalStorageKey] RapidChargeCache':
+					rapidChargeCache = value;
+					break;
+				case '[LocalStorageKey] WifiSecurityCache':
+					wifiSecurityFeatureCache = value;
+					break;
+				case '[LocalStorageKey] SecurityWifiSecurityState':
+					wifiSecurityStatusCache = value;
+					break;
+				case '[LocalStorageKey] DolbyAudioToggleCache':
+					dolbyAudioToggleCache = value;
+					break;
+			}
 		},
 		getCapabalitiesNotification() {
 			let res = {
@@ -88,7 +88,7 @@ describe("WidgetQuicksettingsListComponent", () => {
 			return of(res);
 		},
 		getSessionStorageValue(key: any, defaultValue?: any) {
-			switch(key) {
+			switch (key) {
 				case '[SessionStorageKey] SecurityWifiSecurityInGamingDashboard':
 					return securityWifiSecurityInGamingDashboardCache;
 				case '[SessionStorageKey] SecurityWifiSecurityShowPluginMissingDialog':
@@ -96,17 +96,17 @@ describe("WidgetQuicksettingsListComponent", () => {
 			}
 		},
 		setSessionStorageValue(key: any, value: any) {
-			switch(key) {
+			switch (key) {
 				case '[SessionStorageKey] SecurityWifiSecurityInGamingDashboard':
 					securityWifiSecurityInGamingDashboardCache = value;
 					break;
 				case '[SessionStorageKey] SecurityWifiSecurityShowPluginMissingDialog':
 					securityWifiSecurityShowPluginMissingDialogCache = value;
 					break;
-				}
+			}
 		}
 	};
-	
+
 	let GamingAllCapabilitiesServiceMock = {
 		isShellAvailable: true,
 		getCapabilityFromCache(key: any) {
@@ -119,20 +119,20 @@ describe("WidgetQuicksettingsListComponent", () => {
 		}
 	};
 
-	let shellServiveSpy = jasmine.createSpyObj('VantageService', ['getGamingAllCapabilities', 'registerEvent', 'unRegisterEvent', ,'getSecurityAdvisor', 'getLogger']);
+	let shellServiveSpy = jasmine.createSpyObj('VantageService', ['getGamingAllCapabilities', 'registerEvent', 'unRegisterEvent', , 'getSecurityAdvisor', 'getLogger']);
 	let gamingThermalModeServiceSpy = jasmine.createSpyObj('GamingThermalModeService', ['getThermalModeStatus', 'setThermalModeStatus', 'regThermalModeChangeEvent']);
 	let wifiSecurityServiceSpy = jasmine.createSpyObj('WifiSecurityService', ['isLWSEnabled', 'wifiSecurity']);
 	let audioServiceSpy = jasmine.createSpyObj('AudioService', ['getDolbyMode', 'setDolbyAudioState', 'startMonitorForDolby', 'stopMonitorForDolby']);
-	let powerServiceSpy = jasmine.createSpyObj('PowerService', ['getRapidChargeModeStatusIdeaNoteBook', 'setRapidChargeModeStatusIdeaNoteBook', ]);
+	let powerServiceSpy = jasmine.createSpyObj('PowerService', ['getRapidChargeModeStatusIdeaNoteBook', 'setRapidChargeModeStatusIdeaNoteBook',]);
 	let dialogServiceSpy = jasmine.createSpyObj('DialogService', ['wifiSecurityLocationDialog', '']);
 	let guardSpy = jasmine.createSpyObj('GuardService', ['previousPageName']);
 	let routerSpy = jasmine.createSpyObj('Router', ['routerState']);
 
-	describe("thermalmode", () => {
+	describe('thermalmode', () => {
 		let gamingThermalModeService: any;
 		let gamingThermalModeServiceMock = {
 			getThermalModeSettingStatus() {
-				return new Promise( resolve => {
+				return new Promise(resolve => {
 					resolve(thermalModeStatus)
 				})
 			},
@@ -140,22 +140,22 @@ describe("WidgetQuicksettingsListComponent", () => {
 				if (setReturnValue) {
 					thermalModeStatus = value;
 				}
-				return new Promise( resolve => {
+				return new Promise(resolve => {
 					resolve(setReturnValue);
 				})
 			},
 			regThermalModeChangeEvent() {
-				return new Promise( resolve => {
+				return new Promise(resolve => {
 					resolve(setReturnValue);
 				})
 			}
 		}
 		beforeEach(async(() => {
-			shellServiveSpy.getSecurityAdvisor.and.returnValue(new Promise(resolve => { resolve(true)}));
-			audioServiceSpy.getDolbyMode.and.returnValue(new Promise( resolve => { resolve(dolbyAudioToggle)}));
-			audioServiceSpy.startMonitorForDolby.and.returnValue(new Promise( resolve => { resolve(setReturnValue)}));
-			audioServiceSpy.stopMonitorForDolby.and.returnValue(new Promise( resolve => { resolve(setReturnValue)}));
-			powerServiceSpy.getRapidChargeModeStatusIdeaNoteBook.and.returnValue(new Promise( resolve => {resolve(rapidChargeSettings)}));
+			shellServiveSpy.getSecurityAdvisor.and.returnValue(new Promise(resolve => { resolve(true) }));
+			audioServiceSpy.getDolbyMode.and.returnValue(new Promise(resolve => { resolve(dolbyAudioToggle) }));
+			audioServiceSpy.startMonitorForDolby.and.returnValue(new Promise(resolve => { resolve(setReturnValue) }));
+			audioServiceSpy.stopMonitorForDolby.and.returnValue(new Promise(resolve => { resolve(setReturnValue) }));
+			powerServiceSpy.getRapidChargeModeStatusIdeaNoteBook.and.returnValue(new Promise(resolve => { resolve(rapidChargeSettings) }));
 			TestBed.configureTestingModule({
 				declarations: [
 					WidgetQuicksettingsListComponent
@@ -163,15 +163,15 @@ describe("WidgetQuicksettingsListComponent", () => {
 				imports: [],
 				providers: [
 					{ provide: VantageShellService, useValue: shellServiveSpy },
-					{ provide: CommonService, useValue: commonServiceMock},
-					{ provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock},
-					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceMock},
-					{ provide: WifiSecurityService, useValue: wifiSecurityServiceSpy},
-					{ provide: AudioService, useValue: audioServiceSpy},
-					{ provide: PowerService, useValue: powerServiceSpy},
-					{ provide: DialogService, useValue: dialogServiceSpy},
-					{ provide: GuardService, useValue: guardSpy},
-					{ provide: Router, useValue: routerSpy}
+					{ provide: CommonService, useValue: commonServiceMock },
+					{ provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock },
+					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceMock },
+					{ provide: WifiSecurityService, useValue: wifiSecurityServiceSpy },
+					{ provide: AudioService, useValue: audioServiceSpy },
+					{ provide: PowerService, useValue: powerServiceSpy },
+					{ provide: DialogService, useValue: dialogServiceSpy },
+					{ provide: GuardService, useValue: guardSpy },
+					{ provide: Router, useValue: routerSpy }
 				],
 				schemas: [NO_ERRORS_SCHEMA]
 			}).compileComponents();
@@ -221,15 +221,15 @@ describe("WidgetQuicksettingsListComponent", () => {
 		it('renderThermalModeStatus', fakeAsync(() => {
 			smartFanFeatureCache = true;
 			thermalModeVersionCache = 1;
-			for(let i = 1;i<=3; i++) {
+			for (let i = 1; i <= 3; i++) {
 				thermalModeStatus = i;
 				component.renderThermalModeStatus();
 				tick();
 				expect(component.drop.curSelected).toBe(i, `component.drop.curSelected should be ${i}`);
 				expect(currentThermalModeStatusCache).toBe(i, `currentThermalModeStatusCache should be ${i}`);
-			} 
+			}
 
-			for(let i = 1;i<=3; i++) {
+			for (let i = 1; i <= 3; i++) {
 				thermalModeStatus = undefined;
 				component.drop.curSelected = i;
 				currentThermalModeStatusCache = i;
@@ -237,7 +237,7 @@ describe("WidgetQuicksettingsListComponent", () => {
 				tick();
 				expect(component.drop.curSelected).toBe(i, `component.drop.curSelected should keep ${i}`);
 				expect(currentThermalModeStatusCache).toBe(i, `currentThermalModeStatusCache should keep ${i}`);
-			} 
+			}
 		}));
 
 		it('onOptionSelected', fakeAsync(() => {
@@ -254,11 +254,11 @@ describe("WidgetQuicksettingsListComponent", () => {
 				}
 			}
 
-			for(let i = 1; i<=3; i++) {
+			for (let i = 1; i <= 3; i++) {
 				component.drop.curSelected = i
 				thermalModeStatus = i;
 				currentThermalModeStatusCache = i;
-				for(let j = 1; j<=3; j++) {
+				for (let j = 1; j <= 3; j++) {
 					event.option.value = j;
 					component.onOptionSelected(event);
 					tick();
@@ -269,11 +269,11 @@ describe("WidgetQuicksettingsListComponent", () => {
 			}
 
 			setReturnValue = false;
-			for(let i = 1; i<=3; i++) {
+			for (let i = 1; i <= 3; i++) {
 				component.drop.curSelected = i
 				thermalModeStatus = i;
 				currentThermalModeStatusCache = i;
-				for(let j = 1; j<=3; j++) {
+				for (let j = 1; j <= 3; j++) {
 					event.option.value = j;
 					component.onOptionSelected(event);
 					tick();
@@ -284,12 +284,12 @@ describe("WidgetQuicksettingsListComponent", () => {
 			}
 
 			setReturnValue = true;
-			for(let i = 1; i<=3; i++) {
+			for (let i = 1; i <= 3; i++) {
 				event.target.name = 'gaming.dashboard.device.quickSettings.null';
 				component.drop.curSelected = i;
 				thermalModeStatus = i;
 				currentThermalModeStatusCache = i;
-				for(let j = 1; j<=3; j++) {
+				for (let j = 1; j <= 3; j++) {
 					event.option.value = j;
 					component.onOptionSelected(event);
 					tick();
@@ -300,7 +300,7 @@ describe("WidgetQuicksettingsListComponent", () => {
 			}
 		}));
 
-		it('registerThermalModeEvent' , () => {
+		it('registerThermalModeEvent', () => {
 			spyOn(gamingThermalModeService, 'regThermalModeChangeEvent').and.callThrough();
 			component.gamingCapabilities.smartFanFeature = false
 			component.registerThermalModeEvent();
@@ -311,14 +311,14 @@ describe("WidgetQuicksettingsListComponent", () => {
 		})
 
 		it('onRegThermalModeEvent', fakeAsync(() => {
-			for(let i = 1; i<=3; i++) {
+			for (let i = 1; i <= 3; i++) {
 				component.onRegThermalModeEvent(i);
 				tick();
 				expect(component.drop.curSelected).toBe(i, `input is ${i}, component.drop.curSelected should be ${i}`);
 				expect(currentThermalModeStatusCache).toBe(i, `input is ${i}, component.drop.curSelected should be ${i}`);
 			}
 
-			for(let i = 1; i<=3; i++) {
+			for (let i = 1; i <= 3; i++) {
 				prevThermalModeStatusCache = i;
 				component.onRegThermalModeEvent(undefined);
 				tick();
@@ -327,10 +327,10 @@ describe("WidgetQuicksettingsListComponent", () => {
 		}));
 	});
 
-	describe("rapidCharge", function () {
+	describe('rapidCharge', function () {
 		let powerServiceMock = {
 			getRapidChargeModeStatusIdeaNoteBook() {
-				return new Promise( resolve => {
+				return new Promise(resolve => {
 					resolve(rapidChargeSettings)
 				})
 			},
@@ -338,15 +338,15 @@ describe("WidgetQuicksettingsListComponent", () => {
 				if (setReturnValue) {
 					rapidChargeSettings.status = value;
 				}
-				return new Promise( resolve => {
+				return new Promise(resolve => {
 					resolve(setReturnValue);
 				})
 			}
 		}
 		beforeEach(async(() => {
-			shellServiveSpy.getSecurityAdvisor.and.returnValue(new Promise(resolve => { resolve(true)}));
-			audioServiceSpy.getDolbyMode.and.returnValue(new Promise( resolve => { resolve(dolbyAudioToggle)}));
-			audioServiceSpy.stopMonitorForDolby.and.returnValue(new Promise( resolve => { resolve(setReturnValue)}));
+			shellServiveSpy.getSecurityAdvisor.and.returnValue(new Promise(resolve => { resolve(true) }));
+			audioServiceSpy.getDolbyMode.and.returnValue(new Promise(resolve => { resolve(dolbyAudioToggle) }));
+			audioServiceSpy.stopMonitorForDolby.and.returnValue(new Promise(resolve => { resolve(setReturnValue) }));
 			TestBed.configureTestingModule({
 				declarations: [
 					WidgetQuicksettingsListComponent
@@ -354,15 +354,15 @@ describe("WidgetQuicksettingsListComponent", () => {
 				imports: [],
 				providers: [
 					{ provide: VantageShellService, useValue: shellServiveSpy },
-					{ provide: CommonService, useValue: commonServiceMock},
-					{ provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock},
-					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy},
-					{ provide: WifiSecurityService, useValue: wifiSecurityServiceSpy},
-					{ provide: AudioService, useValue: audioServiceSpy},
-					{ provide: PowerService, useValue: powerServiceMock},
-					{ provide: DialogService, useValue: dialogServiceSpy},
-					{ provide: GuardService, useValue: guardSpy},
-					{ provide: Router, useValue: routerSpy}
+					{ provide: CommonService, useValue: commonServiceMock },
+					{ provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock },
+					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
+					{ provide: WifiSecurityService, useValue: wifiSecurityServiceSpy },
+					{ provide: AudioService, useValue: audioServiceSpy },
+					{ provide: PowerService, useValue: powerServiceMock },
+					{ provide: DialogService, useValue: dialogServiceSpy },
+					{ provide: GuardService, useValue: guardSpy },
+					{ provide: Router, useValue: routerSpy }
 				],
 				schemas: [NO_ERRORS_SCHEMA]
 			}).compileComponents();
@@ -532,13 +532,13 @@ describe("WidgetQuicksettingsListComponent", () => {
 		}));
 	});
 
-	describe("wifisecurity", function () {
+	describe('wifisecurity', function () {
 		let securityAdvisorStub = {
-			wifiSecurity:  {
+			wifiSecurity: {
 				on(event: any, handler: any) {
 				},
 				refresh() {
-					return new Promise( resolve => {
+					return new Promise(resolve => {
 						resolve(true);
 					});
 				},
@@ -563,7 +563,7 @@ describe("WidgetQuicksettingsListComponent", () => {
 					return Promise.resolve(setReturnValue);
 				}
 			}
-		}				
+		}
 
 		let guardMock = {
 			previousPageName: '',
@@ -573,10 +573,10 @@ describe("WidgetQuicksettingsListComponent", () => {
 		}
 		beforeEach(async(() => {
 			shellServiveSpy.getSecurityAdvisor.and.returnValue(securityAdvisorStub);
-			audioServiceSpy.getDolbyMode.and.returnValue(new Promise( resolve => { resolve(dolbyAudioToggle)}));
-			audioServiceSpy.startMonitorForDolby.and.returnValue(new Promise( resolve => { resolve(setReturnValue)}));
-			audioServiceSpy.stopMonitorForDolby.and.returnValue(new Promise( resolve => { resolve(setReturnValue)}));
-			powerServiceSpy.getRapidChargeModeStatusIdeaNoteBook.and.returnValue(new Promise( resolve => {resolve(rapidChargeSettings)}));
+			audioServiceSpy.getDolbyMode.and.returnValue(new Promise(resolve => { resolve(dolbyAudioToggle) }));
+			audioServiceSpy.startMonitorForDolby.and.returnValue(new Promise(resolve => { resolve(setReturnValue) }));
+			audioServiceSpy.stopMonitorForDolby.and.returnValue(new Promise(resolve => { resolve(setReturnValue) }));
+			powerServiceSpy.getRapidChargeModeStatusIdeaNoteBook.and.returnValue(new Promise(resolve => { resolve(rapidChargeSettings) }));
 			TestBed.configureTestingModule({
 				declarations: [
 					WidgetQuicksettingsListComponent
@@ -584,15 +584,15 @@ describe("WidgetQuicksettingsListComponent", () => {
 				imports: [],
 				providers: [
 					{ provide: VantageShellService, useValue: shellServiveSpy },
-					{ provide: CommonService, useValue: commonServiceMock},
-					{ provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock},
-					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy},
-					{ provide: WifiSecurityService, useValue: wifiSecurityServiceMock},
-					{ provide: AudioService, useValue: audioServiceSpy},
-					{ provide: PowerService, useValue: powerServiceSpy},
-					{ provide: DialogService, useValue: dialogServiceSpy},
-					{ provide: GuardService, useValue: guardMock},
-					{ provide: Router, useValue: routerSpy},
+					{ provide: CommonService, useValue: commonServiceMock },
+					{ provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock },
+					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
+					{ provide: WifiSecurityService, useValue: wifiSecurityServiceMock },
+					{ provide: AudioService, useValue: audioServiceSpy },
+					{ provide: PowerService, useValue: powerServiceSpy },
+					{ provide: DialogService, useValue: dialogServiceSpy },
+					{ provide: GuardService, useValue: guardMock },
+					{ provide: Router, useValue: routerSpy },
 				],
 				schemas: [NO_ERRORS_SCHEMA]
 			}).compileComponents();
@@ -608,7 +608,7 @@ describe("WidgetQuicksettingsListComponent", () => {
 
 
 		it('ngOnInit not support wifiSecurity', () => {
-			wifiSecurityFeatureCache =  false;
+			wifiSecurityFeatureCache = false;
 			wifiSecurityStatusCache = 'never-used';
 			component.ngOnInit();
 			expect(component.quickSettings[2].isVisible).toBe(false, `wifi Security visible should be false`);
@@ -616,13 +616,13 @@ describe("WidgetQuicksettingsListComponent", () => {
 		});
 
 		it('initializeWifiSecCache', () => {
-			wifiSecurityFeatureCache =  true;
+			wifiSecurityFeatureCache = true;
 			wifiSecurityStatusCache = 'never-used';
 			component.initializeWifiSecCache();
 			expect(component.quickSettings[2].isVisible).toBe(true, `wifi Security visible should be true`);
 			expect(component.quickSettings[2].isChecked).toBe(false, `wifi Security checked should be false`);
 
-			wifiSecurityFeatureCache =  true;
+			wifiSecurityFeatureCache = true;
 			wifiSecurityStatusCache = 'enabled';
 			component.initializeWifiSecCache();
 			expect(component.quickSettings[2].isVisible).toBe(true, `wifi Security visible should be true`);
@@ -666,7 +666,7 @@ describe("WidgetQuicksettingsListComponent", () => {
 			tick();
 			expect(wifiSecurityServiceMock.isLWSEnabled).toBe(false, `setReturnValue is true, set false, wifiSecurityServiceMock.isLWSEnabled should be false`);
 			expect(component.quickSettings[2].isChecked).toBe(false, `setReturnValue is true, set false, wifiSecurityServiceMock.isChecked should be false`);
-			expect(component.quickSettings[2].readonly ).toBe(true, `setReturnValue is true, set false, wifiSecurityServiceMock.readonly should be true`);
+			expect(component.quickSettings[2].readonly).toBe(true, `setReturnValue is true, set false, wifiSecurityServiceMock.readonly should be true`);
 
 			wifiSecurityServiceMock.isLWSEnabled = true;
 			setReturnValue = false;
@@ -674,7 +674,7 @@ describe("WidgetQuicksettingsListComponent", () => {
 			tick();
 			expect(wifiSecurityServiceMock.isLWSEnabled).toBe(true, `setReturnValue is false, set false, wifiSecurityServiceMock.isLWSEnabled should keep true`);
 			expect(component.quickSettings[2].isChecked).toBe(true, `setReturnValue is false, set false, wifiSecurityServiceMock.isChecked should keep true`);
-			expect(component.quickSettings[2].readonly ).toBe(false, `setReturnValue is false, set false, wifiSecurityServiceMock.readonly should keep false`);
+			expect(component.quickSettings[2].readonly).toBe(false, `setReturnValue is false, set false, wifiSecurityServiceMock.readonly should keep false`);
 
 			wifiSecurityServiceMock.isLWSEnabled = false;
 			setReturnValue = true;
@@ -682,7 +682,7 @@ describe("WidgetQuicksettingsListComponent", () => {
 			tick();
 			expect(wifiSecurityServiceMock.isLWSEnabled).toBe(true, `setReturnValue is true, set true, wifiSecurityServiceMock.isLWSEnabled should be true`);
 			expect(component.quickSettings[2].isChecked).toBe(true, `setReturnValue is true, set true, wifiSecurityServiceMock.isChecked should be true`);
-			expect(component.quickSettings[2].readonly ).toBe(false, `setReturnValue is true, set true, wifiSecurityServiceMock.readonly should be false`);
+			expect(component.quickSettings[2].readonly).toBe(false, `setReturnValue is true, set true, wifiSecurityServiceMock.readonly should be false`);
 
 			wifiSecurityServiceMock.isLWSEnabled = false;
 			setReturnValue = false;
@@ -690,15 +690,15 @@ describe("WidgetQuicksettingsListComponent", () => {
 			tick();
 			expect(wifiSecurityServiceMock.isLWSEnabled).toBe(false, `setReturnValue is false, set true, wifiSecurityServiceMock.isLWSEnabled should be false`);
 			expect(component.quickSettings[2].isChecked).toBe(false, `setReturnValue is false, set true, wifiSecurityServiceMock.isChecked should be false`);
-			expect(component.quickSettings[2].readonly ).toBe(true, `setReturnValue is false, set true, wifiSecurityServiceMock.readonly should be true`);
+			expect(component.quickSettings[2].readonly).toBe(true, `setReturnValue is false, set true, wifiSecurityServiceMock.readonly should be true`);
 		}));
 	});
 
-	describe("dolby", function () {
+	describe('dolby', function () {
 		let audioService: any;
 		let audioServiceMock = {
 			getDolbyMode() {
-				return new Promise( resolve => {
+				return new Promise(resolve => {
 					resolve(dolbyAudioToggle);
 				})
 			},
@@ -706,24 +706,24 @@ describe("WidgetQuicksettingsListComponent", () => {
 				if (setReturnValue) {
 					dolbyAudioToggle.isAudioProfileEnabled = value
 				}
-				return new Promise( resolve => {
+				return new Promise(resolve => {
 					resolve(setReturnValue);
 				})
 			},
 			startMonitorForDolby(value: any) {
-				return new Promise( resolve => {
+				return new Promise(resolve => {
 					resolve(setReturnValue);
 				})
 			},
 			stopMonitorForDolby() {
-				return new Promise( resolve => {
+				return new Promise(resolve => {
 					resolve(setReturnValue);
 				})
 			}
 		}
 		beforeEach(async(() => {
-			shellServiveSpy.getSecurityAdvisor.and.returnValue(new Promise(resolve => { resolve(true)}));
-			powerServiceSpy.getRapidChargeModeStatusIdeaNoteBook.and.returnValue(new Promise( resolve => {resolve(rapidChargeSettings)}));
+			shellServiveSpy.getSecurityAdvisor.and.returnValue(new Promise(resolve => { resolve(true) }));
+			powerServiceSpy.getRapidChargeModeStatusIdeaNoteBook.and.returnValue(new Promise(resolve => { resolve(rapidChargeSettings) }));
 			TestBed.configureTestingModule({
 				declarations: [
 					WidgetQuicksettingsListComponent
@@ -731,15 +731,15 @@ describe("WidgetQuicksettingsListComponent", () => {
 				imports: [],
 				providers: [
 					{ provide: VantageShellService, useValue: shellServiveSpy },
-					{ provide: CommonService, useValue: commonServiceMock},
-					{ provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock},
-					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy},
-					{ provide: WifiSecurityService, useValue: wifiSecurityServiceSpy},
-					{ provide: AudioService, useValue: audioServiceMock},
-					{ provide: PowerService, useValue: powerServiceSpy},
-					{ provide: DialogService, useValue: dialogServiceSpy},
-					{ provide: GuardService, useValue: guardSpy},
-					{ provide: Router, useValue: routerSpy}
+					{ provide: CommonService, useValue: commonServiceMock },
+					{ provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock },
+					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
+					{ provide: WifiSecurityService, useValue: wifiSecurityServiceSpy },
+					{ provide: AudioService, useValue: audioServiceMock },
+					{ provide: PowerService, useValue: powerServiceSpy },
+					{ provide: DialogService, useValue: dialogServiceSpy },
+					{ provide: GuardService, useValue: guardSpy },
+					{ provide: Router, useValue: routerSpy }
 				],
 				schemas: [NO_ERRORS_SCHEMA]
 			}).compileComponents();
@@ -824,7 +824,7 @@ describe("WidgetQuicksettingsListComponent", () => {
 			expect(dolbyAudioToggleCache.available).toBe(true, `dolbyAudio is ${dolbyAudioToggle}, dolbyAudioToggleCache.available should keep true`);
 			expect(dolbyAudioToggleCache.isAudioProfileEnabled).toBe(true, `dolbyAudio is ${dolbyAudioToggle}, dolbyAudioToggleCache.isAudioProfileEnabled should keep true`);
 			tick();
-			dolbyAudioToggle = { "available": false, "supportedModes": ["Dynamic", "Movie", "Music", "Games", "Voip"], "isAudioProfileEnabled": false, "currentMode": "Games", "voIPStatus": "True", "entertainmentStatus": "True" }
+			dolbyAudioToggle = { 'available': false, 'supportedModes': ['Dynamic', 'Movie', 'Music', 'Games', 'Voip'], 'isAudioProfileEnabled': false, 'currentMode': 'Games', 'voIPStatus': 'True', 'entertainmentStatus': 'True' }
 		}));
 
 		it('setDolbySettings', fakeAsync(() => {
@@ -998,11 +998,11 @@ describe("WidgetQuicksettingsListComponent", () => {
 	describe('catch error', () => {
 		let loggerServiceSpy = jasmine.createSpyObj('LoggerService', ['getMessage', 'debug', 'error', 'info', 'exception']);
 		beforeEach(async(() => {
-			shellServiveSpy.getSecurityAdvisor.and.returnValue(new Promise(resolve => { resolve(true)}));
-			audioServiceSpy.getDolbyMode.and.returnValue(new Promise( resolve => { resolve(dolbyAudioToggle)}));
-			audioServiceSpy.startMonitorForDolby.and.returnValue(new Promise( resolve => { resolve(setReturnValue)}));
-			audioServiceSpy.stopMonitorForDolby.and.returnValue(new Promise( resolve => { resolve(setReturnValue)}));
-			powerServiceSpy.getRapidChargeModeStatusIdeaNoteBook.and.returnValue(new Promise( resolve => {resolve(rapidChargeSettings)}));
+			shellServiveSpy.getSecurityAdvisor.and.returnValue(new Promise(resolve => { resolve(true) }));
+			audioServiceSpy.getDolbyMode.and.returnValue(new Promise(resolve => { resolve(dolbyAudioToggle) }));
+			audioServiceSpy.startMonitorForDolby.and.returnValue(new Promise(resolve => { resolve(setReturnValue) }));
+			audioServiceSpy.stopMonitorForDolby.and.returnValue(new Promise(resolve => { resolve(setReturnValue) }));
+			powerServiceSpy.getRapidChargeModeStatusIdeaNoteBook.and.returnValue(new Promise(resolve => { resolve(rapidChargeSettings) }));
 			TestBed.configureTestingModule({
 				declarations: [
 					WidgetQuicksettingsListComponent
@@ -1010,16 +1010,16 @@ describe("WidgetQuicksettingsListComponent", () => {
 				imports: [],
 				providers: [
 					{ provide: VantageShellService, useValue: shellServiveSpy },
-					{ provide: CommonService, useValue: commonServiceMock},
-					{ provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock},
-					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy},
-					{ provide: WifiSecurityService, useValue: wifiSecurityServiceSpy},
-					{ provide: AudioService, useValue: audioServiceSpy},
-					{ provide: PowerService, useValue: powerServiceSpy},
-					{ provide: DialogService, useValue: dialogServiceSpy},
-					{ provide: GuardService, useValue: guardSpy},
-					{ provide: Router, useValue: routerSpy},
-					{ provide: LoggerService, useValue: loggerServiceSpy}
+					{ provide: CommonService, useValue: commonServiceMock },
+					{ provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock },
+					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
+					{ provide: WifiSecurityService, useValue: wifiSecurityServiceSpy },
+					{ provide: AudioService, useValue: audioServiceSpy },
+					{ provide: PowerService, useValue: powerServiceSpy },
+					{ provide: DialogService, useValue: dialogServiceSpy },
+					{ provide: GuardService, useValue: guardSpy },
+					{ provide: Router, useValue: routerSpy },
+					{ provide: LoggerService, useValue: loggerServiceSpy }
 				],
 				schemas: [NO_ERRORS_SCHEMA]
 			}).compileComponents();
