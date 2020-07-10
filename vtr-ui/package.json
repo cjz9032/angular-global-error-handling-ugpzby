@@ -16,7 +16,7 @@
     "serve": "node --max_old_space_size=4048 ./node_modules/@angular/cli/bin/ng serve",
     "test": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng test --watch=false --browsers=ChromeHeadless --codeCoverage=true",
     "lint": "ng lint",
-    "lint:more": "ng lint --tslintConfig=tslint-more.json",
+    "lint:ci": "ng lint --tslintConfig=tslint-ci.json",
     "template-lint": "node prebuild/template-lint.js",
     "fix-no-console": "node prebuild/no-console.js",
     "update-nuspec": "node postbuild/nuget.js",
