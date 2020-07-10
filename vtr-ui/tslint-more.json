@@ -1,0 +1,10 @@
+{
+	"extends": "tslint",
+	"defaultSeverity": "warning",
+	"rules": {
+		"template-interactive-elements-have-id": true
+	},
+	"rulesDirectory": [
+		"@lenovo/codelyzer"
+	]
+}
