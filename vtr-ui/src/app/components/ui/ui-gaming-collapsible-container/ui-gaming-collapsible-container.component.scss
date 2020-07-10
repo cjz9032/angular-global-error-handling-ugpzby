@@ -60,11 +60,8 @@
         }
         &:hover {
           background: $gaming_hover;
-          @media #{$black-on-white}{
-            background: $high-contrast-grey;
-          }
-          @media #{$white-on-black}{
-            background: $high-contrast-grey;
+          @media #{$high-contrast}{
+            background: highlight;
           }
         }
          &:focus {
