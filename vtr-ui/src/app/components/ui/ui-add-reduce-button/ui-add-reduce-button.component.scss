@@ -6,30 +6,47 @@
     border-radius: .6rem;
     display: flex;
     @media #{$high-contrast} {
-        background-color: $highContrastGray;
+        border: 1px solid windowText;
     }
     button {
         font-size: 0;
         outline: none;
+        color: $white60;
+        transition: all 0.2s ease;
+        &:hover {
+            color: $gaming_lightest;
+        }
+        &:active {
+            transform: scale(0.96);
+        }
+        &.disabled{
+            color: $white20;
+            cursor: not-allowed;
+            &:active {
+                transform: scale(1);
+            }
+            @media #{$high-contrast} {
+                opacity: 0.4;
+            }
+        }
         span {
             font-size: 3rem;
-            margin-top: -0.3rem;
+            margin-top: -3px;
         }
     }
     p {
         flex: 1;
         font-size: 1.4rem;
-    }
-    .disabled {
-        color: $screen_light_15;
-        cursor: not-allowed;
+        color: $gaming_lightest;
+        @media #{$high-contrast} {
+			color: buttonText;
+		}
     }
     button,
     p {
         height: 100%;
         line-height: 100%;
         text-align: center;
-        color: $light;
         span {
             height: 100%;
             justify-content: center;
