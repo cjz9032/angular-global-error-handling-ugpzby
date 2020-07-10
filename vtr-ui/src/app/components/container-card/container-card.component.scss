@@ -65,7 +65,7 @@
 				border-radius: $border_radius;
 				overflow: hidden;
 
-				@include high-contrast-background-image;
+				// @include high-contrast-background-image;
 
 				&.overlay-dark {
 					&::after {
@@ -86,12 +86,13 @@
 						cursor: pointer;
 						font-size: $fontsize_xl2;
 						font-weight: $weight_light;
-						@media #{$black-on-white} {
-							@include hyperlink-blue-white;
-						}
-						@media #{$white-on-black} {
-							@include hyperlink-yellow-black;
-						}
+						// @media #{$black-on-white} {
+						// 	@include hyperlink-blue-white;
+						// }
+						// @media #{$white-on-black} {
+						// 	@include hyperlink-yellow-black;
+						// }
+						@include high-contrast-adjust;
 					}
 
 					.description {
@@ -112,12 +113,13 @@
 						font-weight: $weight_light;
 						line-height: 1.4;
 
-						@media #{$black-on-white} {
-							@include hyperlink-blue-white;
-						}
-						@media #{$white-on-black} {
-							@include hyperlink-yellow-black;
-						}
+						// @media #{$black-on-white} {
+						// 	@include hyperlink-blue-white;
+						// }
+						// @media #{$white-on-black} {
+						// 	@include hyperlink-yellow-black;
+						// }
+						@include high-contrast-adjust;
 					}
 
 					.logo {
@@ -239,7 +241,8 @@
 				border-radius: $border_radius;
 				overflow: hidden;
 
-				@include high-contrast-background-image;
+				// @include high-contrast-background-image;
+
 
 				&.overlay-dark {
 					&::after {
@@ -277,12 +280,13 @@
 						font-size: $fontsize_xl2;
 						font-weight: $weight_light;
 
-						@media #{$black-on-white} {
-							@include hyperlink-blue-white;
-						}
-						@media #{$white-on-black} {
-							@include hyperlink-yellow-black;
-						}
+						// @media #{$black-on-white} {
+						// 	@include hyperlink-blue-white;
+						// }
+						// @media #{$white-on-black} {
+						// 	@include hyperlink-yellow-black;
+						// }
+						@include high-contrast-adjust;
 					}
 
 					.description {
@@ -303,12 +307,13 @@
 							cursor: pointer;
 						}
 
-						@media #{$black-on-white} {
-							@include hyperlink-blue-white;
-						}
-						@media #{$white-on-black} {
-							@include hyperlink-yellow-black;
-						}
+						// @media #{$black-on-white} {
+						// 	@include hyperlink-blue-white;
+						// }
+						// @media #{$white-on-black} {
+						// 	@include hyperlink-yellow-black;
+						// }
+						@include high-contrast-adjust;
 					}
 
 					.logo {
@@ -349,7 +354,7 @@
 				border-radius: $border_radius;
 				overflow: hidden;
 
-				@include high-contrast-background-image;
+				// @include high-contrast-background-image;
 
 				&.overlay-dark {
 					&::after {
@@ -373,12 +378,13 @@
 						font-size: $fontsize_xl2;
 						// height: calc(#{$fontsize_xl2} * 1.4)
 
-						@media #{$black-on-white} {
-							@include hyperlink-blue-white;
-						}
-						@media #{$white-on-black} {
-							@include hyperlink-yellow-black;
-						}
+						// @media #{$black-on-white} {
+						// 	@include hyperlink-blue-white;
+						// }
+						// @media #{$white-on-black} {
+						// 	@include hyperlink-yellow-black;
+						// }
+						@include high-contrast-adjust;
 					}
 				}
 			}
@@ -525,7 +531,7 @@
 			background-repeat: no-repeat;
 			border-radius: $border_radius;
 
-			@include high-contrast-background-image;
+			// @include high-contrast-background-image;
 		}
 
 		.default-cursor {
@@ -560,12 +566,13 @@
 				line-height: 1.4;
 				cursor: pointer;
 
-				@media #{$black-on-white} {
-					@include hyperlink-blue-white;
-				}
-				@media #{$white-on-black} {
-					@include hyperlink-yellow-black;
-				}
+				// @media #{$black-on-white} {
+				// 	@include hyperlink-blue-white;
+				// }
+				// @media #{$white-on-black} {
+				// 	@include hyperlink-yellow-black;
+				// }
+				@include high-contrast-adjust;
 			}
 
 			.read-more {
