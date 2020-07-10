@@ -76,9 +76,6 @@ ui-popover {
 		button.close {
 			&:hover {
 				opacity: 0.75;
-				@media #{$high-contrast}{
-					color: highlight;
-				}
 			}
 			&:focus{
 				outline:1px solid $blueFill !important;
@@ -119,9 +116,6 @@ ui-popover {
 			color: $blueHover;
 			border-bottom: 2px solid $blueHover;			
 			cursor: pointer;
-			@media #{$high-contrast}{
-				color: highlight;
-			}
 		}
 		&:focus{
 			outline: none !important;

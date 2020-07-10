@@ -50,15 +50,27 @@
                 padding-left: 0;
             }
             .lighting-arrow{
-                width: 3.2rem;
-                height: 3.2rem;
+                width: 40px;
+                height: 40px;
                 text-align: center;
-                line-height: 3.2rem;
+                line-height: 40px;
                 cursor: pointer;
-                color: $gaming_lightest;
+                color: $gaming_white60;
                 float: left; 
                 font-size: 0;
+                &:hover{
+                    background: $white10;
+                    color: $gaming_lightest;
+                    border-radius: 50%;
+                }
+                &:active{
+                    transform: scale(0.96); 
+                }
                 span{
+                    display: inline-block;
+                    width: 100%;
+                    height: 100%;
+                    text-align: center;
                     font-size: 3.2rem;
                 }
                 &.lighting-arrow-lef{
@@ -67,18 +79,20 @@
                 &.disabled-rig{
                     color: $screen_light_15;
                     cursor: not-allowed !important;
+                    background: none !important;
                  }
                  &.disabled-lef{
                     color: $screen_light_15;
                     cursor: not-allowed !important;
+                    background: none !important;
                  }
             }
             .lighting-panel-name{
                 float: left;
                 color: $gaming_lightest;
                 font-size: 1.8rem;
-                width: calc(100% - 6.4rem);
-                line-height: 3.2rem;
+                width: calc(100% - 80px);
+                line-height: 40px;
                 text-align: center;
                 &.text-center{
                     width: 100%;

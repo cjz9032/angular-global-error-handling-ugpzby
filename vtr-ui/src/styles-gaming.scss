@@ -2033,38 +2033,6 @@
 		}
 	}
 
-	.gear-icon-gaming {
-		height: 4rem;
-		font-family: "iconfont" !important;
-		font-style: normal;
-		vertical-align: -10%;
-		line-height: 4rem;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		color: $white60 !important;
-		svg {
-			height: 2rem;
-			width: 2rem;
-		}
-
-		&:after {
-			content:"";
-			position: absolute;
-			width: 4rem !important;
-			height: 4rem !important;
-			border-radius: 2rem;
-			-webkit-transition: 0.2s ease;
-			transition: 0.2s ease;
-			left:-0.4rem;
-			top:-0.4rem;
-		}
-
-		&:hover {
-			&:after {
-				background: $white5 !important;
-			}
-		}
-	}
 }
 
 body.focus-enable{

@@ -36,6 +36,9 @@
     overflow: hidden;
     z-index: 9;
     top: 3.5rem;
+    @media #{$high-contrast} {
+      border: 1px solid windowText;
+    }
     li {
       list-style: none;
       .dropdown-item {
@@ -57,11 +60,8 @@
         }
         &:hover {
           background: $gaming_hover;
-          @media #{$black-on-white}{
-            background: $high-contrast-grey;
-          }
-          @media #{$white-on-black}{
-            background: $high-contrast-grey;
+          @media #{$high-contrast}{
+            background: highlight;
           }
         }
          &:focus {

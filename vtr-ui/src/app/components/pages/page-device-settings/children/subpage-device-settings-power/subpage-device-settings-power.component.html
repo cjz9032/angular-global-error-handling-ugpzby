@@ -124,7 +124,7 @@
 											(autoChecked)="onAutoCheckChange($event, 1)">
 										</vtr-battery-charge-threshold-settings>
 
-										<vtr-battery-charge-threshold-settings *ngIf="showBCTWarningNote"
+										<vtr-battery-charge-threshold-settings *ngIf="!batteryService.isGaugeResetRunning && showBCTWarningNote"
 											[displayNoteOnly]="true"
 											[showBCTWarningNote]="showBCTWarningNote">
 										</vtr-battery-charge-threshold-settings>

@@ -109,20 +109,22 @@
 			}
 			&:hover {
 				color: $blueHover;
-				@media #{$high-contrast} {
-					background-color: highlight;
-					border: 0.1rem solid windowText;
-				}
 				svg {
 					path {
 						fill: $gaming_light_blue;
-						@media #{$high-contrast} {
-							fill: highlightText;
-						}
 					}
 				}
 				.interval {
 					display: none;
+				}
+				.key {
+					svg {
+						@media #{$high-contrast} {
+							path {
+								fill: windowText;
+							}
+						}
+					}
 				}
 				.delete-button {
 					display: inline-block;
@@ -137,31 +139,59 @@
 					overflow: hidden;
 					font-weight: 500;
 					color: $gaming_light_blue;
+					svg {
+						@media #{$high-contrast} {
+							path {
+								fill: buttonText;
+							}
+						}
+					}
+					@media #{$high-contrast} {
+						color: buttonText;
+					}
 					&:hover {
 						width: auto;
 						@media #{$high-contrast} {
-							color: highlightText;
+							color: buttonText;
 						}
 					}
 				}
 			}
 			&.paired {
 				color: $gaming_light_blue;
-				@media #{$high-contrast} {
-					color: highlightText;
-					background-color: highlight;
-					border: 0.1rem solid windowText;
-				}
 				svg {
 					path {
 						fill: $blueHover;
+					}
+				}
+				.key {
+					svg {
 						@media #{$high-contrast} {
-							fill: highlightText;
+							path {
+								fill: windowText;
+							}
 						}
 					}
 				}
 				.interval {
 					display: none;
+				}
+				.delete-button {
+					svg {
+						@media #{$high-contrast} {
+							path {
+								fill: buttonText;
+							}
+						}
+					}
+					@media #{$high-contrast} {
+						color: buttonText;
+					}
+					&:hover {
+						@media #{$high-contrast} {
+							color: buttonText;
+						}
+					}
 				}
 			}
 			.delete-button {
@@ -238,15 +268,12 @@
 		.delete-btn {
 			color: $blueHover;
 			border-bottom: 0.2rem solid $blueHover;
-			@media #{$high-contrast} {
-				color: highlight;
-			}
 		}
 		svg {
 			path {
 				fill: $blueHover;
 				@media #{$high-contrast} {
-					fill: highlight;
+					fill: buttonText;
 				}
 			}
 		}

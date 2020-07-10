@@ -119,18 +119,12 @@
 					position: relative;
 					z-index: 1;
 					cursor: pointer;
-					@media #{$high-contrast} {
-						color: buttonText;
-					}
 					span{
 						overflow: hidden;
 						text-overflow: ellipsis;
 						white-space: nowrap;
 						box-sizing: border-box;
 						padding: .25rem;
-						@media #{$high-contrast} {
-							color: buttonText;
-						}
 					}
 				}
 			}
@@ -154,49 +148,23 @@
 				transition: all 0.3s ease-in-out;
 				left: 0;
 				color: white !important;
-				@media #{$high-contrast} {
-					background: highlight;
-				}
 			}
 			#off_radio:checked {
-				& + label {
-					span {
-						@media #{$high-contrast} {
-							color: highlightText;
-						}
-						
-					}
-				}
 				& ~ .toggle {
 					left: 0%;
 				}
 			}
 			#first_radio:checked {
-				& + label {
-					@media #{$high-contrast} {
-						color: highlightText;
-					}
-				}
 				& ~ .toggle {
 					left: 25%;
 				}
 			}
 			#second_radio:checked {
-				& + label {
-					@media #{$high-contrast} {
-						color: highlightText;
-					}
-				}
 				& ~ .toggle {
 					left: 50%;
 				}
 			}
 			#third_radio:checked {
-				& + label {
-					@media #{$high-contrast} {
-						color: highlightText;
-					}
-				}
 				& ~ .toggle {
 					left: 75%;
 				}
@@ -275,7 +243,7 @@
 				&:hover {
 					color: $white100;					
 					.icon{
-						background:$white5;
+						background:$white10;
 					}
 				}
 				.icon {
