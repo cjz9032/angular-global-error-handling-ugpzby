@@ -22,7 +22,7 @@ const off = {
 
 const switchId = 'test';
 
-fdescribe('UiRowSwitchComponent', () => {
+describe('UiRowSwitchComponent', () => {
 	let component: UiRowSwitchComponent;
 	let fixture: ComponentFixture<UiRowSwitchComponent>;
 	let modalService: NgbModal;
