@@ -204,6 +204,7 @@
 				justify-content: center;
 				font-weight: $weight_light;
 				z-index: 2;
+				@include high-contrast-adjust;
 			}
 
 			input {
