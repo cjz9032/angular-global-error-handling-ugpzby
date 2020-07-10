@@ -1,15 +1,15 @@
 <ui-popover tabindex="1" attr.aria-label="{{ 'gaming.dashboard.device.legionEdge.popup.text' | translate }} window"
   vtrOutsideClick (clickOutside)="onOutsideClick()" class="gaming-popup-window">
 	<div class="modal-body vtr-ui-popover" tabindex="-1" id="'{{automationId}}_restart_popup'">
-			<div class="btn-close">
-				<a type="button" class="close restart_popup_close_btn"
+		<div class="btn-close">
+			<a type="button" class="close restart_popup_close_btn"
 				tabindex="1"  (click)="close()" (keyup.enter)="close()" vtrMetrics
-					[metricsItem]="'popover_close'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard"
-					id="{{automationId+'_restart_popup_close_btn'}}" attr.aria-label="{{'gaming.dashboard.device.popup.closeBtn' | translate}}"
-					role="button" aria-labelledby="popup_close">
-					<fa-icon [icon]="['fal', 'times']" ></fa-icon>
+				[metricsItem]="'popover_close'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard"
+				id="{{automationId+'_restart_popup_close_btn'}}" attr.aria-label="{{'gaming.dashboard.device.popup.closeBtn' | translate}}"
+				role="button" aria-labelledby="popup_close">
+				<fa-icon [icon]="['fal', 'times']" ></fa-icon>
 			</a>
-			</div>
+		</div>
 		<div class="content-body"  role="dialog" aria-labelledby="restart_popup" tabindex="-1">
 			<h1>{{'gaming.dashboard.device.legionEdge.popup.text' | translate}}</h1>
 			<p></p>
@@ -17,11 +17,13 @@
 		<hr>
 		<div class="row" >
 			<div class="action-container">
-			<vtr-ui-button [linkId]="automationId+'_restart_popup_ok_btn'" [tabIndex]="1" [ariaLabel]="'gaming popup'"
-				metricsEvent="featureClick" [metricsItem]="'popover_ok'" metricsParent="Gaming.Dashboard"
-				[label]="'gaming.dashboard.device.legionEdge.popup.button' | translate" 
-				(keydown)="runappKeyup($event)" [btnHeight]=true [isGradient]=true (keyup.enter)="close()" (click)="close()">
-			</vtr-ui-button>
+				<a id="{{automationId+'_restart_popup_ok_btn'}}" attr.aria-label="gaming popup ok" tabindex="1"
+					class="btn enable-button" vtrMetrics
+					[metricsItem]="'popover_ok'"
+					metricsEvent="featureClick" metricsParent="Gaming.Dashboard"
+					(click)="close()"
+					(keyup.enter)="close()" (keydown)="runappKeyup($event)"
+				 	role="button">{{'gaming.dashboard.device.legionEdge.popup.button' | translate}}</a>
 			</div>
 		</div>
 	</div>

@@ -3,7 +3,7 @@
 ui-gaming-driver-popup {
 	position: absolute;
 	max-width: 56rem;
-	background: $gaming_lightest;
+	background: $white100;
 	z-index: 9;
 	border-radius: 0.75rem;
 	box-shadow: 0 0.8rem 1.5rem $screen_dark_30;
@@ -18,6 +18,7 @@ ui-gaming-driver-popup {
 	}
 	@media #{$high-contrast} {
 		background: window;
+		border: 1px solid windowText;
 	}
 	&::after {
 		content: "";
@@ -36,6 +37,7 @@ ui-gaming-driver-popup {
 		@media #{$high-contrast} {
 			border-bottom: 3rem solid windowText;
 			border-left: 3rem solid transparent;
+			right: -1.5rem;
 		}
 	}
 	.vtr-ui-gaming-driver-popup {
@@ -59,7 +61,7 @@ ui-gaming-driver-popup {
 			color: $main;
 			display: block !important;
 			@media #{$high-contrast} {
-				color: window;
+				color: buttonText;
 			}
 		}
 
@@ -68,12 +70,24 @@ ui-gaming-driver-popup {
 			font-weight: normal;
 			color: $darkText;
 			padding-right: 2.5rem;
+			@media #{$high-contrast} {
+				color: windowText;
+			}
 		}
 
 		p {
 			font-size: $fontsize_xs;
 			color: $darkText;
 			padding: 0.5rem 0;
+			@media #{$high-contrast} {
+				color: windowText;
+			}
+		}
+
+		hr {
+			@media #{$high-contrast} {
+				color: windowText;
+			}
 		}
 
 		.btn-container{
@@ -86,12 +100,19 @@ ui-gaming-driver-popup {
 		.enable-button {
 			background: $blueFill;
 			border-radius: 3rem;
-			color: $light;
+			color: $white100;
 			font-size: $fontsize_sm;
 			padding: 1rem 3rem;
 			margin-top:1rem;
 			font-weight: $weight_bold;
 			text-transform: uppercase;
+			&:hover {
+				background: $blueHover;
+			}
+			@media #{$high-contrast} {
+				color: buttonText;
+				border: 1px solid windowText;
+			}
 		}
 
 		.cancel-link {
@@ -99,7 +120,6 @@ ui-gaming-driver-popup {
 			color: $blueFill;
 			font-size: $fontsize_sm;
 			vertical-align: middle;
-			padding: 0 0.5rem;
 			font-weight: $weight_600;
 			margin-top: 1.8rem;
 			margin-left: 6rem;
@@ -109,6 +129,10 @@ ui-gaming-driver-popup {
 			&:hover{
 				color: $blueHover;
 				border-bottom: 2px solid $blueHover;
+			}
+			@media #{$high-contrast} {
+				color: buttonText;
+				border-bottom: 2px solid buttonText;
 			}
 		}
 	}

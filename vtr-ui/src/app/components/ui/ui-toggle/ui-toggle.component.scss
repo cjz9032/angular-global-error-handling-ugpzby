@@ -2,42 +2,45 @@
 
 .toggle-button{
 	border: none;
-	height: 2.4rem;
-	width: 5.4rem;
-	border-radius:10rem;
+	height: 2rem;
+	width: 4.6rem;
+	border-radius: 10rem;
 	cursor: pointer;
 	display: inline-block;
-	background: #f2f2f2;
+	background: $white20;
 	position: relative;
 	vertical-align: middle;
 	transition: all 0.2s ease-in;
-	margin-top: 0.5rem;
 	@media #{$high-contrast} {
-		background: windowText;
+		background: window;
+		border: 1px solid windowText;
 	}
 	&.selected{
 		background: linear-gradient(90deg, #2fcc74, #33dfa6);
+		@media #{$high-contrast} {
+			background: windowText;
+		}
 	}
 	.btnRound{
 		border: none;
-		height: 1.8rem;
-		width: 1.8rem;
+		height: 1.4rem;
+		width: 1.4rem;
 		border-radius:10rem;
 		cursor: pointer;
-		background: #6d6d6d;
-		@media #{$high-contrast} {
-			background: window;
-			box-shadow: 0px 0.1rem 0.3rem window;
-		}
+		background: $white100;
 		position: absolute;
 		left: 0.3rem;
-		top: 0.25rem;
+		top: 0.3rem;
 		box-shadow: 0px 0.1rem 0.3rem rgba(0,0,0,0.4);
 		transition:all 0.2s ease-in;
 		visibility:visible;
 		&.selected{
-			background: #fbfdff;
-			left: 3.2rem;
+			left: 3rem;
+		}
+		@media #{$high-contrast} {
+			background: buttonText;
+			box-shadow: 0px 0.1rem 0.3rem rgba(0,0,0,0.4);
+			top: 0.2rem;
 		}
 	}
 	.switch-label {

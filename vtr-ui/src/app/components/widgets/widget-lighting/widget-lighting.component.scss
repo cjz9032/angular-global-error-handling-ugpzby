@@ -2,7 +2,7 @@
 
 .vtr-widget-lighting {
 	.widget-title {
-		color: $gaming_lightest;
+		color: $white100;
 		font-size: 5rem;
 		margin-bottom: 1rem;
 		font-weight: $weight-light;
@@ -15,7 +15,14 @@
 		background-size: 100% auto;
 		padding-top: 18rem;
 		@media #{$high-contrast} {
-			border: solid 0.2rem windowText !important;
+			border: 1px solid windowText;
+			border-radius: $border_radius;
+		}
+		.container-fluid {
+			@media #{$high-contrast} {
+				border: 1px solid windowText;
+				border-radius: $border_radius;
+			}
 		}
 	}
 	.widget-container-notebook{
@@ -24,13 +31,13 @@
 	}
 	.lighting-porfile {
 		padding: 3rem;
-		background: $gaming_darkest;
+		background: $darkCell;
 		border-radius: 0.8rem;
 		@media #{$high-contrast} {
 			border: 0.2rem solid windowText;
 		}
 		.card-title {
-			color: $gaming_switch_light;
+			color: $white100;
 			font-size: 1.6rem;
 			margin-bottom: 3rem;
 		}
@@ -55,7 +62,7 @@
 				bottom: 0rem;
 				right: 0rem;
 				margin: 0rem;
-				background: $gaming_darkest;
+				background: $darkCell;
 				z-index: -1;
 			}
 			&::before {
@@ -100,7 +107,7 @@
 					left: 75%;
 				}
 				& ~ label {
-					color: $gaming;
+					color: $blueFill;
 					font-size: 1.8rem;
 					width: 25%;
 					height: 4.2rem;
@@ -253,32 +260,38 @@
 			margin-bottom: -1.8rem;
 			a {
 				font-size: 1.5rem;
-				color: $gaming_switch_light;
 				text-decoration: none;
 				padding-left: 0;
 				white-space: nowrap;
 				text-overflow: ellipsis;
 				overflow: hidden;
 				cursor: pointer;
-				color: $shade_light;
+				color: $white60;
 				line-height: 1.5rem;
-				&:hover {
-					color: $gaming_lightest;
+				transition: all .2s ease-in-out;
+				@media #{$high-contrast} {
+					color: buttonText;
 				}
-				&.lighting-gear-icon {
-					.gear-icon-gaming {
-						margin-right: 0.5rem;
-						&:hover {
-							&:after { 
-								@media #{$high-contrast} {
-									background: none !important;
-								}
-							}
-						}
-						&:after {
-							left:-0.25rem;
-						}
-					}					
+				&:hover {
+					color: $white100;					
+					.icon{
+						background:$white5;
+					}
+				}
+				.icon {
+					margin-right: -0.5rem;
+					font-size: 2rem;
+					transition: all .2s ease-in-out;
+					border-radius: 50%;
+					padding: 1rem;
+					color: $white60;
+					vertical-align: middle;
+					width: 4rem;
+					height: 4rem;
+					widows: 3.3rem;
+					display: inline-block;
+					text-align: center;
+					line-height: 1.2rem;
 				}
 			}
 		}

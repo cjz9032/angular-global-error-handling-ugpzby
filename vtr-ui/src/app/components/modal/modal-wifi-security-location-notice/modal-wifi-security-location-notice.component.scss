@@ -1,23 +1,26 @@
 @import "../../../app.theme.scss";
 .wifi-security-location-modal {
 	border-radius: $border_radius;
-	background: $light;
+	background: $white100;
 	background-size: cover;
-	color: $main_dark;
+	color: $darkText;
 	box-shadow: $drop_shadow;
 	padding: 4rem;
 	position: relative;
 	outline: none;
+	@media #{$high-contrast} {
+		border: 1px solid windowText;
+	}
 	h1 {
 		font-size: 2.6rem;
 		font-weight: $weight_regular;
-		color: $main_dark;
+		color: $darkText;
 		letter-spacing: 0;
 	}
 	.description {
 		font-size: 1.5rem;
 		font-weight: $weight_light;
-		color: $main_dark;
+		color: $darkText;
 		letter-spacing: 0;
 		padding-bottom: 1.5rem;
 		margin-bottom: 2rem;
@@ -49,14 +52,57 @@
 	.modal-button-cancel {
 		cursor: pointer;
 		background: none;
-		color: $main;
+		color: $blueFill;
 		font-size: 1.5rem;
 		font-weight: $weight_bold;
 		margin: 0.5rem;
 		padding: 1.2rem 0 0.5rem;
 		height: 3.8rem;
 		border-radius: 0;
-		border-bottom: 0.2rem solid $main;
+		border-bottom: 0.2rem solid $blueFill;
+		&:hover {
+			color: $blueHover;
+			border-bottom: 0.2rem solid $blueHover;
+		}
+		@media #{$high-contrast} {
+			color: buttonText;
+			// remove dependency effect
+			border: none;
+			border-bottom: 0.2rem solid buttonText;
+		}
+	}
+	// Version 3.3: UI reskin
+	.btn-modal-close {
+		&::ng-deep .x {
+			background: $blueFill;
+			@media #{$high-contrast} {
+				background: buttonText;
+			}
+			&::before {
+				background: $blueFill;
+				@media #{$high-contrast} {
+					background: buttonText;
+				}
+			}
+		}
+		&:hover {
+			&::ng-deep .x {
+				background: $blueHover;
+				&::before {
+					background: $blueHover;
+				}
+			}
+		}
+	}
+
+	&::ng-deep .button-box {
+		button {
+			@media #{$high-contrast} {
+				color: buttonText;
+				background: window !important;
+				border: 1px solid windowText !important;
+			}
+		}
 	}
 }
 ::ng-deep {

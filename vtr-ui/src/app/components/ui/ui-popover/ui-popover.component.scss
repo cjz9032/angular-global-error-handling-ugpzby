@@ -3,7 +3,7 @@
 ui-popover {
 	position: absolute;
 	max-width: 56rem;
-	background: $gaming_lightest;
+	background: $white100;
 	z-index: 9;
 	border-radius: 1rem;
 	box-shadow: 0 0.8rem 1.5rem $screen_dark_30;
@@ -20,11 +20,9 @@ ui-popover {
 	@media #{$breakpoint_sm} {
 		min-width: 36rem;
 	}
-	@media #{$black-on-white} {
-		background: $high-contrast-grey;
-	}
-	@media #{$white-on-black} {
-		background: $high-contrast-grey;
+	@media #{$high-contrast} {
+		background: window;
+		border: 1px solid windowText;
 	}
 	&::after {
 		content: "";
@@ -40,14 +38,11 @@ ui-popover {
 		@media #{$breakpoint_md} {
 			top:11.8rem;
 		}
-		@media #{$black-on-white} {
-			border-bottom: 3rem solid $high-contrast-grey;
+		@media #{$high-contrast} {
+			border-bottom: 3rem solid windowText;
 			border-left: 3rem solid transparent;
+			right: -1.5rem;
 		} 
-		@media #{$white-on-black} {
-			border-bottom: 3rem solid $high-contrast-grey;
-			border-left: 3rem solid transparent;
-		}
 	}
 	.vtr-ui-popover {
 		&.modal-body {
@@ -66,13 +61,10 @@ ui-popover {
 		}
 		fa-icon {
 			font-size: 3rem;
-			color: $main;
+			color: $blueFill;
 			display: block !important;
-			@media #{$black-on-white} {
-				color: $gaming_darkest;
-			}
-			@media #{$white-on-black} {
-				color: $gaming_darkest;
+			@media #{$high-contrast} {
+				color: buttonText;
 			}
 		}
 
@@ -81,6 +73,9 @@ ui-popover {
 			font-weight: normal;
 			color: $darkText;
 			padding-right: 2.5rem;
+			@media #{$high-contrast} {
+				color: windowText;
+			}
 		}
 
 		p {
@@ -91,14 +86,28 @@ ui-popover {
 		.action-container{
 			position: relative;
 		}
+
+		hr {
+			@media #{$high-contrast} {
+				color: windowText;
+			}
+		}
+
 		.enable-button {
 			background: $blueFill;
 			border-radius: 3rem;
-			color: $light;
+			color: $white100;
 			font-size: $fontsize_sm;
 			padding: 1rem 3rem;
 			margin-top: 1rem;
 			font-weight: $weight_bold;
+			&:hover {
+				background: $blueHover;
+			}
+			@media #{$high-contrast} {
+				color: buttonText;
+				border: 1px solid windowText
+			}
 		}
 
 		.cancel-link {

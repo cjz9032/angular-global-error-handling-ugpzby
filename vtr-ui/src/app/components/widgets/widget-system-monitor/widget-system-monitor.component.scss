@@ -3,10 +3,14 @@
 .vtr-widget-system-monitor {
 	position: relative;
 	z-index: 2;
+	@media #{$high-contrast} {
+		border: 1px solid windowText;
+		border-radius: $border_radius;
+	}
 	.widget-container {
 		border-radius: $border_radius;
 		//background: $dark_cell;
-		background:$gaming_darkest;
+		background:$darkCell;
 		box-shadow: $drop_shadow_gaming;
 		padding: 2rem 4rem 3.5rem 4rem;
 		height:auto;			
@@ -68,37 +72,36 @@
 					transform: scale(-1, 1);
 					margin-left: 0.8rem;
 					font-size: 1.8rem;
-					color: $gaming_info_link;
+					color: $blueFill;
 					font-weight: bold;
-					@media #{$black-on-white} {
-						color: $high-contrast-grey;
-					}
-					@media #{$white-on-black} {
-						color: $high-contrast-grey;
+					@media #{$high-contrast} {
+						color: buttonText ;
 					}
 				}
 				.info-link {
-					color: $gaming_info_link;
-					border-bottom: 0.2rem solid $gaming_info_link;
+					color: $blueFill;
+					border-bottom: 0.2rem solid $blueFill;
+					@media #{$high-contrast} {
+						color: buttonText ;
+						border-color: buttonText ;
+					}
 					&:hover {
-						color: $gaming_info_link_hover;
-						border-color: $gaming_info_link_hover;
+						color: $blueHover;
+						border-color: $blueHover;
 						text-decoration: none;
-						@media #{$black-on-white}{
-							color: $gaming_darkest;
-							border-color: $gaming_darkest;
-						}
-						@media #{$white-on-black}{
-							color: $gaming_lightest;
-							border-color: $gaming_lightest;
-						}
+					}
+					&:hover + .icon {
+						color: $blueHover;
+					}
+					&:hover + .icon {
+						color: $blueHover;
 					}
 				}
 			}
 			.monitor-section {
 				border-radius: $border_radius_sm;
-				background-color:$gaming_bg;				
-				border: 1px solid $gaming_bg;
+				background-color:$background;				
+				border: 1px solid $background;
 				height: 24rem;
 				position: relative;
 				@media #{$breakpoint_xl3} {
@@ -212,11 +215,9 @@
 					white-space: pre-wrap;
 					word-break: keep-all;
 					pointer-events: none;
-					@media #{$black-on-white}{
-						background-color: $high-contrast-grey;
-					}
-					@media #{$white-on-black}{
-						background-color: $high-contrast-grey;
+					@media #{$high-contrast}{
+						background-color: window;
+						border: 1px solid windowText;
 					}
 					&::after {
 						content: "";
@@ -229,13 +230,10 @@
 						bottom: -1rem;
 						left: calc(50% - 1.5rem);
 						z-index: -1;
-						@media #{$black-on-white}{
-							border-bottom-color: $high-contrast-grey;
+						@media #{$high-contrast}{
+							border-bottom-color: windowText;
 							border-left-color: transparent;
-						}
-						@media #{$white-on-black}{
-							border-bottom-color: $high-contrast-grey;
-							border-left-color: transparent;
+							bottom: -1.5rem;
 						}
 					}
 					p {
@@ -363,7 +361,7 @@
 								top: 0;
 								left: 0;
 								width: 100%;
-								background-color: $gaming_darker;
+								background-color: $darkCell;
 								@media #{$black-on-white}{
 									background-color: $high-contrast-grey;
 								}
@@ -378,12 +376,12 @@
 							padding: 0 0.5rem;
 							.stack-title {
 								text-transform: uppercase;
-								color: $gaming_lightest;
+								color: $white100;
 								font-size: 1.5rem;
 								line-height: 2.1rem;
 							}
 							.stack-status {
-								color: $shade;
+								color: $white60;
 								font-size: 1.2rem;
 								line-height: 1.9rem;
 							}
@@ -396,16 +394,13 @@
 					left: 50%;
 					top: -7rem;
 					margin-left: -19rem;
-					background-color: $gaming_darkest;
+					background-color: $darkCell;
 					width: 38rem;
 					height: 38rem;
 					border-radius: 50%;
-					@media #{$black-on-white}{
-						border:1px solid $high-contrast-grey;
-						}
-						@media #{$white-on-black}{
-						border:1px solid $high-contrast-grey;
-						}
+					@media #{$high-contrast}{
+						border:1px solid windowText;
+					}
 					@media #{$breakpoint_xl3} {
 						top: -3.5rem;
 						width: 29rem;
@@ -516,7 +511,7 @@
 								position: absolute;
 								left: 0;
 								border-radius: 50%;
-								background-color: $gaming_bg;
+								background-color: $background;
 								@media #{$breakpoint_xl3} {
 									width: 27rem;
 									height: 27rem;
@@ -582,7 +577,7 @@
 						position: absolute;
 						top: 6rem;
 						left: 6rem;
-						background-color: $gaming_darkest;
+						background-color: $darkCell;
 						width: 26rem;
 						height: 26rem;
 						border-radius: 50%;
@@ -604,7 +599,7 @@
 							top: 50%;
 							left: 50%;
 							transform: translateX(-50%) translateY(-50%);
-							background-color: $gaming_bg;
+							background-color: $background;
 							width: 21.5rem;
 							height: 21.5rem;
 							border-radius: 50%;
@@ -628,7 +623,7 @@
 								}
 								.cpu-title {
 									text-transform: uppercase;
-									color: $gaming_lightest;
+									color: $white100;
 									font-size: 7rem;
 									line-height: 10rem;
 									font-weight: $weight_light;
@@ -642,7 +637,7 @@
 									}
 								}
 								.cpu-status {
-									color: $shade;
+									color: $white60;
 									font-size: 1.2rem;
 									line-height: 1.9rem;
 								}
@@ -842,12 +837,12 @@
 							text-align: left;							
 							
 							.hd-title {
-								color: $gaming_lightest;
+								color: $white100;
 								font-size: 1.5rem;
 								line-height: 2.1rem;
 							}
 							.hd-status {
-								color: $shade;
+								color: $white60;
 								font-size: 1.1rem;
 								line-height: 1.9rem;
 							}
@@ -856,7 +851,7 @@
 							display: inline-block;
 							vertical-align: middle;
 							position: relative;
-							background-color: $gaming_darkest;
+							background-color: $darkCell;
 							width: $gaming_hd_diameter_sm;
 							height: $gaming_hd_diameter_sm;
 							border-radius: 50%;							
