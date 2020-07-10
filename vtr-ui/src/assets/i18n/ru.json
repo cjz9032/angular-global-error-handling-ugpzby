@@ -3125,7 +3125,7 @@
                 "no": "Нет"
             },
             "waitAvailability": "Если устройства хранения данных не поддерживают данную функцию, эта кнопка отключена во время загрузки информации об оборудовании или сканирования.",
-            "executingTitle": "Выполняется восстановление...",
+            "executingTitle": "Выполняется восстановление",
             "recoverCompleted": "Восстановление завершено"
         },
         "support": {
@@ -3186,7 +3186,7 @@
             "scanAgainButtonText": "Повторить сканирование",
             "supportButtonText": "Поддержка Lenovo"
         },
-        "executingScanTitle": "Сканирование {{title}}..."
+        "executingScanTitle": "Сканирование {{title}}"
     },
     "smartPerformance": {
         "title": "Health & Support",

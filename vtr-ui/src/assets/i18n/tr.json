@@ -3125,7 +3125,7 @@
                 "no": "Hayır"
             },
             "waitAvailability": "Depolama aygıtları bu işlevi desteklemiyorsa, donanım bilgileri yüklenirken veya devam eden bir tarama olduğunda düğme devre dışı bırakılır.",
-            "executingTitle": "Şimdi kurtarılıyor...",
+            "executingTitle": "Şimdi kurtarılıyor",
             "recoverCompleted": "Kurtarma tamamlandı"
         },
         "support": {
@@ -3186,7 +3186,7 @@
             "scanAgainButtonText": "Tekrar Tara",
             "supportButtonText": "Lenovo Destek"
         },
-        "executingScanTitle": "{{title}} taranıyor..."
+        "executingScanTitle": "{{title}} taranıyor"
     },
     "smartPerformance": {
         "title": "Health & Support",

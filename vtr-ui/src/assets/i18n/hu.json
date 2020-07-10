@@ -3125,7 +3125,7 @@
                 "no": "Nem"
             },
             "waitAvailability": "A gomb le van tiltva, ha a tárolóeszközök nem támogatják ezt a funkciót a hardverinformáció betöltése közben, vagy ha vizsgálat van folyamatban.",
-            "executingTitle": "Helyreállítás folyamatban...",
+            "executingTitle": "Helyreállítás folyamatban",
             "recoverCompleted": "Helyreállítás kész"
         },
         "support": {
@@ -3186,7 +3186,7 @@
             "scanAgainButtonText": "Vizsgálat megismétlése",
             "supportButtonText": "Lenovo-támogatás"
         },
-        "executingScanTitle": "{{title}} vizsgálata..."
+        "executingScanTitle": "{{title}} vizsgálata"
     },
     "smartPerformance": {
         "title": "Health & Support",

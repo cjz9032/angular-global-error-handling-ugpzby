@@ -3125,7 +3125,7 @@
                 "no": "否"
             },
             "waitAvailability": "當儲存裝置不支援這項功能而硬體資訊即將載入，或者其中正在進行掃描時，此按鈕為停用狀態。",
-            "executingTitle": "現在正在回復...",
+            "executingTitle": "現在正在回復",
             "recoverCompleted": "回復已完成"
         },
         "support": {
@@ -3186,7 +3186,7 @@
             "scanAgainButtonText": "再掃描一次",
             "supportButtonText": "Lenovo 支援中心"
         },
-        "executingScanTitle": "正在掃描 {{title}}..."
+        "executingScanTitle": "正在掃描 {{title}}"
     },
     "smartPerformance": {
         "title": "Smart Performance",

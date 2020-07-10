@@ -3125,7 +3125,7 @@
                 "no": "Nej"
             },
             "waitAvailability": "Knappen är inaktiverad om lagringsenheterna inte stöder den här funktionen, om maskinvaruinformationen läses in eller om en genomsökning pågår.",
-            "executingTitle": "Återställer nu …",
+            "executingTitle": "Återställer nu",
             "recoverCompleted": "Återställningen är klar"
         },
         "support": {
@@ -3186,7 +3186,7 @@
             "scanAgainButtonText": "Genomsök igen",
             "supportButtonText": "Lenovo Support"
         },
-        "executingScanTitle": "Genomsöker {{title}} …"
+        "executingScanTitle": "Genomsöker {{title}}"
     },
     "smartPerformance": {
         "title": "Smart Performance",

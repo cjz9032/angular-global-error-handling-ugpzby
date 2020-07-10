@@ -3125,7 +3125,7 @@
                 "no": "Não"
             },
             "waitAvailability": "O botão será desativado se os dispositivos de armazenamento não forem compatíveis com essa funcionalidade, enquanto as informações de hardware estiverem sendo carregadas ou se houver uma verificação em andamento.",
-            "executingTitle": "Recuperando agora...",
+            "executingTitle": "Recuperando agora",
             "recoverCompleted": "Recuperação concluída"
         },
         "support": {
@@ -3186,7 +3186,7 @@
             "supportButtonText": "Suporte Lenovo",
             "lenovoSupportInstruction": "No Suporte Lenovo, você pode abrir um tíquete de verificação usando o código do seu resultado final."
         },
-        "executingScanTitle": "Verificando {{title}}..."
+        "executingScanTitle": "Verificando {{title}}"
     },
     "smartPerformance": {
         "title": "Smart Performance",

@@ -3125,7 +3125,7 @@
                 "no": "Não"
             },
             "waitAvailability": "O botão está desativado se os dispositivos de armazenamento não suportarem esta funcionalidade, enquanto as informações de hardware estiverem a ser carregadas ou se estiver a decorrer uma verificação.",
-            "executingTitle": "A recuperar agora...",
+            "executingTitle": "A recuperar agora",
             "recoverCompleted": "A recuperação está concluída"
         },
         "support": {
@@ -3186,7 +3186,7 @@
             "scanAgainButtonText": "Analisar novamente",
             "supportButtonText": "Suporte Lenovo"
         },
-        "executingScanTitle": "A analisar {{title}}..."
+        "executingScanTitle": "A analisar {{title}}"
     },
     "smartPerformance": {
         "title": "Smart Performance",

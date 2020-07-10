@@ -3127,7 +3127,7 @@
                 "no": "لا"
             },
             "waitAvailability": "يتم تعطيل الزر إذا كانت أجهزة التخزين لا تدعم هذه الوظيفة، أثناء تحميل معلومات الجهاز أو في حالة وجود عملية مسح قيد التقدم.",
-            "executingTitle": "جارٍ الاسترداد الآن...",
+            "executingTitle": "جارٍ الاسترداد الآن",
             "recoverCompleted": "اكتمل الاسترداد"
         },
         "support": {
@@ -3188,7 +3188,7 @@
             "scanAgainButtonText": "فحص مرة أخرى",
             "supportButtonText": "دعم Lenovo"
         },
-        "executingScanTitle": "جارٍ فحص {{title}}..."
+        "executingScanTitle": "جارٍ فحص {{title}}"
     },
     "smartPerformance": {
         "title": "Smart Performance",

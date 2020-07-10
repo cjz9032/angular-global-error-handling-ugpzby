@@ -3125,7 +3125,7 @@
                 "no": "Nie"
             },
             "waitAvailability": "Podczas ładowania informacji o sprzęcie lub w trakcie skanowania, przycisk jest wyłączony, jeśli urządzenia pamięci nie obsługują tej funkcji.",
-            "executingTitle": "Trwa odzyskiwanie...",
+            "executingTitle": "Trwa odzyskiwanie",
             "recoverCompleted": "Odzyskiwanie zakończone"
         },
         "support": {
@@ -3186,7 +3186,7 @@
             "scanAgainButtonText": "Przeprowadź ponowne skanowanie",
             "supportButtonText": "Pomoc techniczna firmy Lenovo"
         },
-        "executingScanTitle": "Skanowanie {{title}}..."
+        "executingScanTitle": "Skanowanie {{title}}"
     },
     "smartPerformance": {
         "title": "Health & Support",

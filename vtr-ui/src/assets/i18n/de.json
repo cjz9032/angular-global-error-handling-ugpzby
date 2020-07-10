@@ -3125,7 +3125,7 @@
                 "no": "Nein"
             },
             "waitAvailability": "Falls die Speichereinheiten diese Funktionalität nicht unterstützen und die Hardwareinformationen abgerufen werden oder ein Scanvorgang durchgeführt wird, ist die Schaltfläche deaktiviert.",
-            "executingTitle": "Wiederherstellung läuft...",
+            "executingTitle": "Wiederherstellung läuft",
             "recoverCompleted": "Wiederherstellung abgeschlossen"
         },
         "support": {
@@ -3186,7 +3186,7 @@
             "scanAgainButtonText": "Scan erneut ausführen",
             "supportButtonText": "Lenovo Unterstützung"
         },
-        "executingScanTitle": "{{title}} wird gescannt..."
+        "executingScanTitle": "{{title}} wird gescannt"
     },
     "smartPerformance": {
         "title": "Smart Performance",

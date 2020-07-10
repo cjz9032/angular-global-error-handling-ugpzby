@@ -3125,7 +3125,7 @@
                 "no": "아니요"
             },
             "waitAvailability": "하드웨어 정보가 로드되고 있거나 스캔 중인 파일이 있을 때 저장 장치가 해당 기능을 지원하지 않는 경우 버튼이 비활성화 됩니다.",
-            "executingTitle": "지금 복구 중...",
+            "executingTitle": "지금 복구 중",
             "recoverCompleted": "복구가 완료됨"
         },
         "support": {
@@ -3186,7 +3186,7 @@
             "scanAgainButtonText": "다시 검사",
             "supportButtonText": "Lenovo 지원"
         },
-        "executingScanTitle": "{{title}} 검사 중..."
+        "executingScanTitle": "{{title}} 검사 중"
     },
     "smartPerformance": {
         "title": "Health & Support",

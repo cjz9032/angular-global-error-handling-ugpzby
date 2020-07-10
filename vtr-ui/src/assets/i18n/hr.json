@@ -3125,7 +3125,7 @@
                 "no": "Ne"
             },
             "waitAvailability": "Gumb je onemogućen ako uređaji za pohranu ne podržavaju ovu funkciju, dok se podaci o hardveru učitavaju ili je u tijeku skeniranje.",
-            "executingTitle": "U tijeku je oporavak...",
+            "executingTitle": "U tijeku je oporavak",
             "recoverCompleted": "Oporavak je završen"
         },
         "support": {
@@ -3186,7 +3186,7 @@
             "scanAgainButtonText": "Skeniraj ponovno",
             "supportButtonText": "Služba za podršku tvrtke Lenovo"
         },
-        "executingScanTitle": "Skeniranje {{title}}..."
+        "executingScanTitle": "Skeniranje {{title}}"
     },
     "smartPerformance": {
         "title": "Health & Support",

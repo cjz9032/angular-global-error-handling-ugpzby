@@ -3125,7 +3125,7 @@
                 "no": "Nu"
             },
             "waitAvailability": "Butonul este dezactivat dacă dispozitivele de stocare nu acceptă această funcționalitate, în timp ce informațiile hardware sunt încărcate sau dacă există o scanare în curs.",
-            "executingTitle": "Se recuperează acum...",
+            "executingTitle": "Se recuperează acum",
             "recoverCompleted": "Recuperare finalizată"
         },
         "support": {
@@ -3186,7 +3186,7 @@
             "scanAgainButtonText": "Scanați din nou",
             "supportButtonText": "Asistență Lenovo"
         },
-        "executingScanTitle": "Se scanează {{title}}..."
+        "executingScanTitle": "Se scanează {{title}}"
     },
     "smartPerformance": {
         "title": "Health & Support",

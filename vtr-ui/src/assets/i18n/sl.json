@@ -3125,7 +3125,7 @@
                 "no": "Ne"
             },
             "waitAvailability": "Gumb je onemogočen, če shranjevalne naprave ne podpirajo te funkcije, če poteka nalaganje informacij o strojni opremi ali če se izvaja pregled strojne opreme.",
-            "executingTitle": "Poteka obnovitev ...",
+            "executingTitle": "Poteka obnovitev",
             "recoverCompleted": "Obnovitev je končana"
         },
         "support": {
@@ -3186,7 +3186,7 @@
             "scanAgainButtonText": "Vnovični pregled",
             "supportButtonText": "Podpora družbe Lenovo"
         },
-        "executingScanTitle": "Pregledovanje {{title}} ..."
+        "executingScanTitle": "Pregledovanje {{title}}"
     },
     "smartPerformance": {
         "title": "Health & Support",

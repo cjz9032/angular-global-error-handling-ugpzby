@@ -3125,7 +3125,7 @@
                 "no": "לא"
             },
             "waitAvailability": "הלחצן מושבת אם התקני האחסון לא תומכים בפונקציונליות זו, בזמן שמידע מהחומרה נטען או אם מתבצעת סריקה.",
-            "executingTitle": "משחזר כעת...",
+            "executingTitle": "משחזר כעת",
             "recoverCompleted": "השחזור הושלם"
         },
         "support": {
@@ -3186,7 +3186,7 @@
             "scanAgainButtonText": "יש לסרוק שוב",
             "supportButtonText": "התמיכה של Lenovo"
         },
-        "executingScanTitle": "סורק את {{title}}..."
+        "executingScanTitle": "סורק את {{title}}"
     },
     "smartPerformance": {
         "title": "Health & Support",
