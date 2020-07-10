@@ -19,10 +19,15 @@ attr.aria-label="{{ 'gaming.dashboard.device.legionEdge.driverPopup.headerText' 
 		<div class="row">
 			<div class="btn-container">
 			<div>
-			<vtr-ui-button [linkId]="automationId+'_driver_popup_install_btn'" [tabIndex]="1"
-				metricsEvent="featureClick" [metricsItem]="'driverPopup_install'"
-				[label]="'gaming.dashboard.device.legionEdge.driverPopup.button' | translate" [ariaLabel]="'gaming driverPopup install'" [btnHeight]=true [isGradient]=true (keyup.enter)="systemUpdatePage()" (click)="systemUpdatePage()">
-			</vtr-ui-button>
+				<a class="btn enable-button" vtrMetrics tabindex="1"
+				  [metricsItem]="'driverPopup_install'"
+				  metricsEvent="featureClick"
+				  role="button"
+				  (click)="systemUpdatePage()"  (keyup.enter)="systemUpdatePage()"
+				  id="{{automationId+'_driver_popup_install_btn'}}" aria-label="gaming driverPopup install"
+				  role="link">
+				  {{'gaming.dashboard.device.legionEdge.driverPopup.button' | translate}}
+			    </a>
 			</div>
 			<div>
 			<a (click)="close()" vtrMetrics tabindex="1" role="button"

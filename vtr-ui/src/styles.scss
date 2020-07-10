@@ -429,14 +429,6 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	color: $button_red_start !important;
 }
 
-.modal-content {
-	@media #{$black-on-white} {
-		border: 0.1rem solid $dark !important;
-	}
-	@media #{$white-on-black} {
-		border: 0.1rem solid $light !important;
-	}
-}
 /*intelligent-cooling-read-more-pop-up-style*/
 
 .read-more {
