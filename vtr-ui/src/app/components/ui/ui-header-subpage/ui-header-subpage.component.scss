@@ -1,9 +1,8 @@
 @import "../../../app.theme";
 
 .vtr-ui-header-subpage {
-	//margin-bottom: 4rem;
-	h2 {
-		&.title {
+	.title {
+		h2 {
 			color: $purple_navy;
 			font-size: $fontsize_xl4;
 			font-weight: $weight_light;
@@ -12,6 +11,7 @@
 			margin-top: 0.8rem;
 		}
 	}
+
 	.caption {
 		color: $shade_blue;
 		font-size: $fontsize_xs;
@@ -34,7 +34,7 @@
 			font-weight: $weight_light;
 			color: $menu_hover;
 			cursor: pointer;
-			padding-bottom: .2rem;
+			padding-bottom: 0.2rem;
 			border-bottom: 1px solid $main;
 			margin: 0 2rem 0 0;
 			&:hover {

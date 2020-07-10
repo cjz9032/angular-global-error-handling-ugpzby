@@ -43,10 +43,10 @@
 		</div>
 	</ng-template>
 	<div class="container p-5 battery-panel-background">
-		<h3 class="battery-health"
+		<h2 class="battery-health"
 			id="myDevice-settings-batteryGauge-subtitle">
 			{{'device.deviceSettings.batteryGauge.subtitle' | translate}}
-		</h3>
+		</h2>
 		{{batteryIndicator.percent == 0 && flag ? reInitValue(): ""}}
 		<div class="pt-4 battery-frame pr-3">
 			<vtr-battery-indicator [remainingHour]="batteryIndicator.hours"

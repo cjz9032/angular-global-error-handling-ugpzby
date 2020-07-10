@@ -38,18 +38,17 @@
 							</div>
 						</div>
 						<div class="col">
-							<div class="title"
-								id="{{switchId}}-title"
-								role="heading">
+							<h4 class="title"
+								id="{{switchId}}-title">
 								{{ title }}
-							</div>
+							</h4>
 							<span *ngIf="caption">
-								<div class="caption"
+								<p class="caption"
 									#captionRef
 									role="heading"
 									id="{{switchId}}-caption"
 									[innerHTML]="caption.length > 70  && !contentExpand  && readMoreText.length > 0 ? (caption | slice: 0:70) : caption">
-								</div>
+								</p>
 							</span>
 							<span id="{{'read_more_'+ switchId}}"
 								*ngIf="readMoreText && !contentExpand"
