@@ -200,6 +200,8 @@
 				font-weight: bold !important;
 				min-width: 4rem !important;
 				@media #{$high-contrast}{
+					border: 0.1rem solid windowText !important;
+					background: window !important;
 					color: buttonText !important;
 				}
 				&.smallBtn {
@@ -213,9 +215,10 @@
 				}
 
 				&:hover {
+					background-color: $blueHover !important;
 					@media #{$high-contrast}{
-						color: highlightText !important;
-						background-color: highlight !important;
+						background: none !important;
+						background-color: none !important;
 					}
 				}
 

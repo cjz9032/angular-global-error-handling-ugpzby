@@ -121,9 +121,9 @@
 		}
 		&:hover {
 			background: $blueHover;
-			@media #{$high-contrast} {
-				background: highlight;
-				color: highlightText;
+			@media #{$high-contrast}{
+				background: none !important;
+				background-color: none !important;
 			}
 		}
 		&:focus{

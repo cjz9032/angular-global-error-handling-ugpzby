@@ -147,10 +147,7 @@
 		color: $gaming_info_link_hover;
 		border-color: $gaming_info_link_hover;
 		text-decoration: none;
-		@media #{$high-contrast} {
-			color: highlight;
-		 }
-	}
+	  }
     }
   }
 }
