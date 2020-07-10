@@ -2,7 +2,8 @@
 	"extends": "tslint",
 	"defaultSeverity": "warning",
 	"rules": {
-		"template-interactive-elements-have-id": true
+		"template-interactive-elements-have-id": true,
+		"template-no-plain-http-url": true
 	},
 	"rulesDirectory": [
 		"@lenovo/codelyzer"
