@@ -18,7 +18,7 @@
 									[tabindex]="tabIndex ? tabIndex : 0"
 									vtrMetrics
 									id="{{collapseLinkId+'-collapse-link'}}"
-									[attr.aria-label]="!isCollapsed ? cardTitle+'collapse':cardTitle+'expand'"
+									[attr.aria-label]="!isCollapsed ? cardTitle+' card':cardTitle+' card'"
 									metricsEvent="itemClick"
 									[metricsValue]="!isCollapsed"
 									[metricsItem]="'btn.collapse'"
@@ -26,8 +26,7 @@
 									(click)="onToggle()"
 									(keyup.enter)="onToggle()"
 									role="button"
-									[attr.aria-expanded]="!isCollapsed"
-									>
+									[attr.aria-expanded]="!isCollapsed">
 									<div *ngIf="isCollapsed"
 										class="collapse-text"
 										id="{{collapseLinkId+'-expand-title'}}">

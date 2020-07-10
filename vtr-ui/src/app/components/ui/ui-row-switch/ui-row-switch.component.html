@@ -45,7 +45,6 @@
 							<span *ngIf="caption">
 								<p class="caption"
 									#captionRef
-									role="heading"
 									id="{{switchId}}-caption"
 									[innerHTML]="caption.length > 70  && !contentExpand  && readMoreText.length > 0 ? (caption | slice: 0:70) : caption">
 								</p>
