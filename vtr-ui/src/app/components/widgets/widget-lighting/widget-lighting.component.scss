@@ -2,7 +2,7 @@
 
 .vtr-widget-lighting {
 	.widget-title {
-		color: $gaming_lightest;
+		color: $white100;
 		font-size: 5rem;
 		margin-bottom: 1rem;
 		font-weight: $weight-light;
@@ -14,6 +14,16 @@
 		background: url(~/assets/images/gaming/lightingImage@2x.png) center top no-repeat $gaming_dark;
 		background-size: 100% auto;
 		padding-top: 18rem;
+		@media #{$high-contrast} {
+			border: 1px solid windowText;
+			border-radius: $border_radius;
+		}
+		.container-fluid {
+			@media #{$high-contrast} {
+				border: 1px solid windowText;
+				border-radius: $border_radius;
+			}
+		}
 	}
 	.widget-container-notebook{
 		background: url(~/assets/images/gaming/lighting/lighting-ui-new/bg_note.png) center top no-repeat $gaming_dark;
@@ -21,10 +31,13 @@
 	}
 	.lighting-porfile {
 		padding: 3rem;
-		background: $gaming_darkest;
+		background: $darkCell;
 		border-radius: 0.8rem;
+		@media #{$high-contrast} {
+			border: 0.2rem solid windowText;
+		}
 		.card-title {
-			color: $gaming_switch_light;
+			color: $white100;
 			font-size: 1.6rem;
 			margin-bottom: 3rem;
 		}
@@ -49,7 +62,7 @@
 				bottom: 0rem;
 				right: 0rem;
 				margin: 0rem;
-				background: $gaming_darkest;
+				background: $darkCell;
 				z-index: -1;
 			}
 			&::before {
@@ -62,6 +75,9 @@
 				right: 0rem;
 				margin: -0.2rem;
 				background-image: $gaming_lighting_gradient;
+				@media #{$high-contrast} {
+					background: windowText;
+				}
 				z-index: -1;
 			}
 			.inner-toggle{
@@ -91,7 +107,7 @@
 					left: 75%;
 				}
 				& ~ label {
-					color: $gaming;
+					color: $blueFill;
 					font-size: 1.8rem;
 					width: 25%;
 					height: 4.2rem;
@@ -103,13 +119,19 @@
 					position: relative;
 					z-index: 1;
 					cursor: pointer;
+					@media #{$high-contrast} {
+						color: buttonText;
+					}
 					span{
 						overflow: hidden;
 						text-overflow: ellipsis;
 						white-space: nowrap;
 						box-sizing: border-box;
 						padding: .25rem;
+						@media #{$high-contrast} {
+							color: buttonText;
 						}
+					}
 				}
 			}
 			.toggle-stable {
@@ -132,23 +154,49 @@
 				transition: all 0.3s ease-in-out;
 				left: 0;
 				color: white !important;
+				@media #{$high-contrast} {
+					background: highlight;
+				}
 			}
 			#off_radio:checked {
+				& + label {
+					span {
+						@media #{$high-contrast} {
+							color: highlightText;
+						}
+						
+					}
+				}
 				& ~ .toggle {
 					left: 0%;
 				}
 			}
 			#first_radio:checked {
+				& + label {
+					@media #{$high-contrast} {
+						color: highlightText;
+					}
+				}
 				& ~ .toggle {
 					left: 25%;
 				}
 			}
 			#second_radio:checked {
+				& + label {
+					@media #{$high-contrast} {
+						color: highlightText;
+					}
+				}
 				& ~ .toggle {
 					left: 50%;
 				}
 			}
 			#third_radio:checked {
+				& + label {
+					@media #{$high-contrast} {
+						color: highlightText;
+					}
+				}
 				& ~ .toggle {
 					left: 75%;
 				}
@@ -212,25 +260,38 @@
 			margin-bottom: -1.8rem;
 			a {
 				font-size: 1.5rem;
-				color: $gaming_switch_light;
 				text-decoration: none;
 				padding-left: 0;
 				white-space: nowrap;
 				text-overflow: ellipsis;
 				overflow: hidden;
 				cursor: pointer;
-				color: $shade_light;
+				color: $white60;
 				line-height: 1.5rem;
-				&:hover {
-					color: $gaming_lightest;
+				transition: all .2s ease-in-out;
+				@media #{$high-contrast} {
+					color: buttonText;
 				}
-				&.lighting-gear-icon {
-					.gear-icon-gaming {
-						margin-right: 0.5rem;
-						&:after {
-							left:-0.25rem;
-						}
-					}					
+				&:hover {
+					color: $white100;					
+					.icon{
+						background:$white5;
+					}
+				}
+				.icon {
+					margin-right: -0.5rem;
+					font-size: 2rem;
+					transition: all .2s ease-in-out;
+					border-radius: 50%;
+					padding: 1rem;
+					color: $white60;
+					vertical-align: middle;
+					width: 4rem;
+					height: 4rem;
+					widows: 3.3rem;
+					display: inline-block;
+					text-align: center;
+					line-height: 1.2rem;
 				}
 			}
 		}

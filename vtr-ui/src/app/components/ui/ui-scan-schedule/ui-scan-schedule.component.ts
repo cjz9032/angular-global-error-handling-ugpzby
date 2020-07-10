@@ -31,6 +31,8 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 
 	// scan settings
 	@Output() scanDatekValueChange = new EventEmitter();
+	@Output() hideBasedOnOldAddIn = new EventEmitter();
+	@Output() hideBasedOnOldAddInSummary = new EventEmitter();
 	@Input() isOnline = true;
 	private spTransLangEvent: Subscription;
 	selectedDate: any;
@@ -413,6 +415,16 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 				this.scheduleScan(this.requestScanData);
 				this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, actualScanFrequency[0]);
 				return
+			}
+			if (!res.nextruntime) {
+				if (!this.isSubscribed) {
+					this.hideBasedOnOldAddIn.emit(true);
+					return;
+				}
+				else {
+					this.hideBasedOnOldAddInSummary.emit(true);
+					return;
+				}
 			}
 
 		} catch (err) {

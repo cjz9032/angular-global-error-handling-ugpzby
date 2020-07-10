@@ -84,6 +84,7 @@
 					font-size: $fontsize_xl2;
 					font-weight: $weight_bold;
 				}
+				@include high-contrast-adjust;
 			}
 		}
 	}

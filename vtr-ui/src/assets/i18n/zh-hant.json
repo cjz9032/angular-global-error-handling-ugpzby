@@ -3491,10 +3491,10 @@
                     }
                 }
             },
-            "confirmationTitle": "Lenovo Payment Process",
-            "confirmationNote": "You will be directed to Lenovo Payment Website to finish the payment. Once the payment is done, you can press the \"refresh\" button in \"Subscription Detail\" to get the payment result.",
-            "confirmationBtn": "Proceed",
-            "refreshButton": "Refresh Status"
+            "confirmationTitle": "Lenovo 付款處理",
+            "confirmationNote": "您即將導向到 Lenovo 付款網站以完成付款。付款完成後，您可以按下「訂閱詳細資訊」中的「更新」以取得付款結果。",
+            "confirmationBtn": "繼續",
+            "refreshButton": "更新狀態"
         },
         "scanCompletePage": {
             "title": "系統掃描完成",

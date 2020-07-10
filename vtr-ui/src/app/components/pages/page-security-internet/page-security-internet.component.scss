@@ -13,10 +13,10 @@
 			background-color: $light;
 			padding: 1.5rem;
 			@media #{$black-on-white} {
-				border: 0.1rem solid $dark;
+				@include black-border;
 			}
 			@media #{$white-on-black} {
-				border: 0.1rem solid $light;
+				@include white-border;
 			}
 		}
 

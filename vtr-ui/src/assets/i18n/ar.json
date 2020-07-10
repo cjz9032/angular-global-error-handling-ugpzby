@@ -3493,10 +3493,10 @@
                     }
                 }
             },
-            "confirmationTitle": "Lenovo Payment Process",
-            "confirmationNote": "You will be directed to Lenovo Payment Website to finish the payment. Once the payment is done, you can press the \"refresh\" button in \"Subscription Detail\" to get the payment result.",
-            "confirmationBtn": "Proceed",
-            "refreshButton": "Refresh Status"
+            "confirmationTitle": "عملية الدفع من Lenovo",
+            "confirmationNote": "سيتم توجيهك إلى موقع ويب دفع Lenovo لإنهاء الدفع. بمجرد إتمام الدفع، يمكنك الضغط على الزر \"تحديث\" في \"تفاصيل الاشتراك\" للحصول على نتيجة الدفع.",
+            "confirmationBtn": "المتابعة",
+            "refreshButton": "تحديث الحالة"
         },
         "scanCompletePage": {
             "title": "اكتمل فحص النظام",

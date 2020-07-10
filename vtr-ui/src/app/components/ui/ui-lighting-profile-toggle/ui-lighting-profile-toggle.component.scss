@@ -37,6 +37,9 @@
 		right: 0rem;
 		margin: -0.2rem;
 		background-image: $gaming_lighting_gradient;
+		@media #{$high-contrast} {
+			background: windowText;
+		}
 		z-index: -1;
 	}
 	.inner-toggle {
@@ -82,6 +85,9 @@
 			position: relative;
 			z-index: 1;
 			cursor: pointer;
+			@media #{$high-contrast} {
+				color: buttonText;
+			}
 			.num {
 				display: none;
 			}
@@ -113,10 +119,16 @@
 		border-radius: 4.2rem;
 		transition: left 0.3s ease-in-out;
 		left: 0;
+		@media #{$high-contrast} {
+			background: highlight;
+		}
 	}
 	#profile_off_radio:checked {
 		& ~ #gaming_profile_RGBlighting_profile_off {
 			color: $gaming_lightest;
+			@media #{$high-contrast} {
+				color: highlightText;
+			}
 		}
 		& ~ .toggle {
 			left: 0%;
@@ -125,6 +137,9 @@
 	#profile_first_radio:checked {
 		& ~ #gaming_profile_RGBlighting_profile1 {
 			color: $gaming_lightest;
+			@media #{$high-contrast} {
+				color: highlightText;
+			}
 		}
 		& ~ .toggle {
 			left: 25%;
@@ -133,6 +148,9 @@
 	#profile_second_radio:checked {
 		& ~ #gaming_profile_RGBlighting_profile2 {
 			color: $gaming_lightest;
+			@media #{$high-contrast} {
+				color: highlightText;
+			}
 		}
 		& ~ .toggle {
 			left: 50%;
@@ -141,6 +159,9 @@
 	#profile_third_radio:checked {
 		& ~ #gaming_profile_RGBlighting_profile3 {
 			color: $gaming_lightest;
+			@media #{$high-contrast} {
+				color: highlightText;
+			}
 		}
 		& ~ .toggle {
 			left: 75%;
@@ -149,6 +170,9 @@
 	#single_off_radio:checked {
 		& ~ #gaming_single_lighting_profile_off {
 			color: $gaming_lightest;
+			@media #{$high-contrast} {
+				color: highlightText;
+			}
 		}
 		& ~ .toggle {
 			left: 0%;
@@ -157,6 +181,9 @@
 	#single_first_radio:checked {
 		& ~ #gaming_single_lighting_profile1 {
 			color: $gaming_lightest;
+			@media #{$high-contrast} {
+				color: highlightText;
+			}
 		}
 		& ~ .toggle {
 			left: 25%;
@@ -165,6 +192,9 @@
 	#single_second_radio:checked {
 		& ~ #gaming_single_lighting_profile2 {
 			color: $gaming_lightest;
+			@media #{$high-contrast} {
+				color: highlightText;
+			}
 		}
 		& ~ .toggle {
 			left: 50%;
@@ -173,6 +203,9 @@
 	#single_third_radio:checked {
 		& ~ #gaming_single_lighting_profile3 {
 			color: $gaming_lightest;
+			@media #{$high-contrast} {
+				color: highlightText;
+			}
 		}
 		& ~ .toggle {
 			left: 75%;

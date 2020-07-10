@@ -22,20 +22,9 @@
 			text-decoration: none;
 			display: inline-block;
 			max-width: 100%;
-
+			@include high-contrast-adjust;
 			&:hover {
 				background: $blue_gradient;
-				@media #{$black-on-white} {
-					background: $light;
-					color: $high-contrast-white-textselected;
-					border: 0.1rem solid $high-contrast-white-textselected;
-				}
-
-				@media #{$white-on-black} {
-					background: $dark;
-					color: $high-contrast-black-textselected;
-					border: 0.1rem solid $high-contrast-black-textselected;
-				}
 			}
 
 			&:focus {
@@ -66,6 +55,7 @@
 				//font-size: $fontsize_sm !important;
 				letter-spacing: 0;
 				cursor: pointer;
+				@include high-contrast-adjust;
 			}
 			@include ui-button-high-contrast-white;
 			@include ui-button-high-contrast-black;
@@ -90,16 +80,6 @@
 			cursor: default;
 			&:hover {
 				background: $grey_light !important;
-				@media #{$black-on-white} {
-					border: 0.1rem solid $high-contrast-white-disabled !important;
-					background: $light !important;
-					color: $high-contrast-white-disabled !important;
-				}
-				@media #{$white-on-black} {
-					border: 0.1rem solid $high-contrast-black-disabled !important;
-					background: $dark !important;
-					color: $high-contrast-black-disabled !important;
-				}
 			}
 			.text {
 				cursor: default;
@@ -136,34 +116,20 @@
 		.btn-gradient {
 			background-color: $button_gradient_start;
 			background-image: linear-gradient(to right, $button_gradient_start, $button_gradient_end);
-			@include high-contrast-background-image;
+			// @include high-contrast-background-image;
+			@include high-contrast-adjust;
+			@include ui-button-high-contrast-white;
+			@include ui-button-high-contrast-black;
 		}
 
 		.btn-red {
 			background: $gradient_red;
 			color: $light;
-			@media #{$black-on-white} {
-				background: $high-contrast-white-textselected;
-				color: $light;
-			}
-			@media #{$white-on-black} {
-				background: $high-contrast-black-textselected;
-				color: $dark;
-			}
 			&:hover {
 				background: linear-gradient(90deg, $button_red_start 0%, $button_red_start 100%);
-				@media #{$black-on-white} {
-					background: $light;
-					color: $high-contrast-white-textselected;
-					border: 0.1rem solid $high-contrast-white-textselected;
-				}
-
-				@media #{$white-on-black} {
-					background: $dark;
-					color: $high-contrast-black-textselected;
-					border: 0.1rem solid $high-contrast-black-textselected;
-				}
 			}
+			@include ui-button-high-contrast-white;
+			@include ui-button-high-contrast-black;
 		}
 
 		.btn-gray {
@@ -173,20 +139,25 @@
 			&:hover {
 				background: linear-gradient(90deg, $grey_lighter 0%, $grey_lighter 100%);
 			}
-			@include ui-button-high-contrast-white;
-			@include ui-button-high-contrast-black;
+			&:focus {
+				box-shadow: 0 0 0 0.1rem $grey_dark;
+			}
+			@include ui-button-secondary-high-contrast-white;
+			@include ui-button-secondary-high-contrast-black;
 		}
 		.btn-in-red-bg {
 			color: $stop_dark;
 			box-shadow: 0 0 0 0.1rem $alt;
-			@media #{$black-on-white} {
-				background: $high-contrast-white-textselected;
-				color: $light;
-			}
-			@media #{$white-on-black} {
-				background: $high-contrast-black-textselected;
-				color: $dark;
-			}
+			// @media #{$black-on-white} {
+			// 	background: $high-contrast-white-textselected;
+			// 	color: $light;
+			// }
+			// @media #{$white-on-black} {
+			// 	background: $high-contrast-black-textselected;
+			// 	color: $dark;
+			// }
+			@include ui-button-high-contrast-white;
+			@include ui-button-high-contrast-black;
 			&:focus::after {
 				border: thin solid $orange;
 				@media #{$black-on-white} {
@@ -228,7 +199,9 @@
 				letter-spacing: 0.1rem !important;
 				font-weight: bold !important;
 				min-width: 4rem !important;
-
+				@media #{$high-contrast}{
+					color: buttonText !important;
+				}
 				&.smallBtn {
 					height: 3rem !important;
 					line-height: 3rem !important;
@@ -240,7 +213,10 @@
 				}
 
 				&:hover {
-					background-color: $blueHover !important;
+					@media #{$high-contrast}{
+						color: highlightText !important;
+						background-color: highlight !important;
+					}
 				}
 
 				&:active {

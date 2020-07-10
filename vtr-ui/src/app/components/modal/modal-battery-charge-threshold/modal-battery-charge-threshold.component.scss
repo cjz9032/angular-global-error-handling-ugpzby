@@ -33,6 +33,7 @@
 		}
 		@include ui-button-high-contrast-black;
 		@include ui-button-high-contrast-white;
+		@include high-contrast-adjust;
 	}
 
 	.cancel-link {

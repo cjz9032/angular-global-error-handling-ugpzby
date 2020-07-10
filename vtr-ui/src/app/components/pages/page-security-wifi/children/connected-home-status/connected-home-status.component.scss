@@ -35,11 +35,17 @@
 					text-overflow: ellipsis;
 					font-size: 1.2rem;
 					max-width: 100%;
+					@media #{$high-contrast} {
+						-ms-high-contrast-adjust: none;
+					}
+					@include high-contrast-color;
 					&.badge-success {
 						background-color: $green_dark;
+						@include high-contrast-status-icon-and-badge;
 					}
 					&.badge-danger {
 						background-color: $button_red_start;
+						@include high-contrast-status-icon-and-badge;
 					}
 				}
 			}
@@ -72,17 +78,20 @@
 				fa-icon {
 					font-size: 1.2rem;
 					color: $light;
+					@include high-contrast-color;
 				}
 				&.green {
 					background-color: $green_darker;
 					background-image: linear-gradient(135deg, $green_darker 25%, $green-light 100%);
 					border: 0.1rem solid $green_darker;
+					@include high-contrast-status-icon-and-badge;
 				}
 
 				&.red {
 					background-color: $button_red_start;
 					background-image: linear-gradient(135deg, $button_red_start 25%, $button_red_end 100%);
 					border: 0.1rem solid $button_red_start;
+					@include high-contrast-status-icon-and-badge;
 				}
 			}
 			.line-height-2 {

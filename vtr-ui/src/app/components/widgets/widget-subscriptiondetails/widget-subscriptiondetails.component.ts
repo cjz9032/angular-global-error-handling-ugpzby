@@ -44,7 +44,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	public paymenturl: string;
 	public isFirstLoad = false;
 	public isRefreshEnabled = false;
-
+	tempHide = false;
 	constructor(
 		private translate: TranslateService,
 		private modalService: NgbModal,
@@ -157,9 +157,9 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, this.modalStatus);
 		const modalCancel = this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
 			backdrop: 'static',
-			size: 'sm',
+			size: 'md',
 			centered: true,
-			windowClass: 'subscribe-modal',
+			windowClass: 'manage-subscribe-modal',
 
 		});
 		this.spFrstRunStatus = false;
@@ -188,8 +188,9 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		let machineInfo;
 		machineInfo = await this.supportService.getMachineInfo()
 		// this.systemSerialNumber = machineInfo.serialnumber;
+		
 		this.isLoading = true;
-		this.modalStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus);
+		this.modalStatus =  this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus) || { initiatedTime: '', isOpened: false };
 		let subscriptionData = []
 		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails(machineInfo.serialnumber);
 		this.logger.info('Subscription Details', subscriptionDetails);
@@ -204,12 +205,21 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 
 	subscriptionDataProcess(subscriptionData) {
 		if (subscriptionData && subscriptionData.length > 0) {
+			this.isLoading = false;
+			const scanEnabled = this.commonService.getLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled);
+			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
+			// this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.localSubscriptionDetails);
+			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
+			this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, 'Once a week')
+			if (!scanEnabled) {
+				this.commonService.setLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled, true);
+			}
 			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.activeStatus';
 			this.strStatus = 'ACTIVE';
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
 			this.isSubscribed = true;
 			this.subScribeEvent.emit(this.isSubscribed);
-			this.isLoading = false;
+			
 			const lastItem = subscriptionData[subscriptionData.length - 1];
 			const releaseDate = new Date(lastItem.releaseDate);
 			releaseDate.setMonth(releaseDate.getMonth() + +lastItem.products[0].unitTerm);
@@ -233,6 +243,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 				this.strStatus = 'INACTIVE';
 				this.isLoading = false;
 				this.isRefreshEnabled = false;
+				this.tempHide = false;
 			}
 		}
 	}
@@ -256,7 +267,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 					this.isLoading = false;
 					this.isRefreshEnabled = true;
 					this.modalStatus.isOpened = false;
-
+					this.tempHide = true;
 					this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, this.modalStatus);
 				}
 			}, 30000);

@@ -20,7 +20,6 @@ $white60:rgba(251,253,255,0.6);
 $dark_cell: linear-gradient(0deg, #2e4255, #293c4f);
 $dark_popup_cell: linear-gradient(0deg, #435064, #3d4c5c);
 
-$add-app-active-hc:#1BEBFF;
 $gaming_darkest: #1f2a42;
 $gaming_darker: #253048;
 $gaming_dark: #293c4f;
@@ -530,10 +529,10 @@ $high-contrast-white-disabled-maroon: #610000;
 
 @mixin ui-button-high-contrast-black {
 	@media #{$white-on-black} {
-		background: $dark;
-		color: $light;
-		border: 0.1rem solid $light;
-		&:hover, &:active {
+		background: $high-contrast-black-cyan;
+		color: $dark;
+		border: 0.1rem solid $high-contrast-black-cyan;
+		&:hover {
 			background: $dark;
 			color: $high-contrast-black-cyan;
 			border: 0.1rem solid $high-contrast-black-cyan;
@@ -543,8 +542,8 @@ $high-contrast-white-disabled-maroon: #610000;
 
 @mixin ui-button-high-contrast-black-disabled {
 	@media #{$white-on-black} {
-		background: $dark;
-		color: $high-contrast-black-disabled-green;
+		background: $dark !important;
+		color: $high-contrast-black-disabled-green !important;
 		border: 0.1rem solid $high-contrast-black-disabled-green !important;
 		&:hover, &:active {
 			color: $high-contrast-black-disabled-green;
@@ -554,10 +553,10 @@ $high-contrast-white-disabled-maroon: #610000;
 
 @mixin ui-button-high-contrast-white {
 	@media #{$black-on-white} {
-		background: $light;
-		color: $dark;
-		border: 0.1rem solid $dark;
-		&:hover, &:active {
+		background: $high-contrast-white-dark-magenta;
+		color: $light;
+		border: 0.1rem solid $high-contrast-white-dark-magenta;
+		&:hover {
 			background: $light;
 			color: $high-contrast-white-dark-magenta;
 			border: 0.1rem solid $high-contrast-white-dark-magenta;
@@ -567,11 +566,37 @@ $high-contrast-white-disabled-maroon: #610000;
 
 @mixin ui-button-high-contrast-white-disabled {
 	@media #{$black-on-white} {
-		background: $light;
-		color: $high-contrast-white-disabled-maroon;
+		background: $light !important;
+		color: $high-contrast-white-disabled-maroon !important;
 		border: 0.1rem solid $high-contrast-white-disabled-maroon !important;
 		&:hover, &:active {
 			color: $high-contrast-white-disabled-maroon;
+		}
+	}
+}
+
+@mixin ui-button-secondary-high-contrast-white {
+	@media #{$black-on-white} {
+		background: $light;
+		color: $dark;
+		border: 0.1rem solid $dark;
+		&:hover {
+			background: $high-contrast-white-dark-magenta;
+			color: $light;
+			border: 0.1rem solid $high-contrast-white-dark-magenta;
+		}
+	}
+}
+
+@mixin ui-button-secondary-high-contrast-black {
+	@media #{$white-on-black} {
+		background: $dark;
+		color: $light;
+		border: 0.1rem solid $light;
+		&:hover {
+			background: $high-contrast-black-cyan;
+			color: $dark;
+			border: 0.1rem solid $high-contrast-black-cyan;
 		}
 	}
 }
@@ -683,9 +708,10 @@ border: none;
 	width:4.5rem;
 	height: 4.5rem;
 	@media #{$high-contrast} {
-		background-image: url("data:image/svg+xml,%3Csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E6.20pxIcon/add%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='6.20pxIcon/add' stroke='none' stroke-width='1' fill='rgba(255, 0, 254, 1)' fill-rule='evenodd'%3E%3Cpath d='M9.86634391,2 C9.30897756,2 8.85714286,2.44991629 8.85714286,2.99708744 L8.85714286,8.85714286 L2.99708744,8.85714286 C2.44641125,8.85714286 2,9.29785156 2,9.86634391 L2,10.1336561 C2,10.6910224 2.44991629,11.1428571 2.99708744,11.1428571 L8.85714286,11.1428571 L8.85714286,17.0029126 C8.85714286,17.5535887 9.29785156,18 9.86634391,18 L10.1336561,18 C10.6910224,18 11.1428571,17.5500837 11.1428571,17.0029126 L11.1428571,11.1428571 L17.0029126,11.1428571 C17.5535887,11.1428571 18,10.7021484 18,10.1336561 L18,9.86634391 C18,9.30897756 17.5500837,8.85714286 17.0029126,8.85714286 L11.1428571,8.85714286 L11.1428571,2.99708744 C11.1428571,2.44641125 10.7021484,2 10.1336561,2 L9.86634391,2 Z' id='Shape' fill='#FF00FE' fill-rule='nonzero'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+		border:0.1rem solid windowText;
+		background-image: url("data:image/svg+xml,%3Csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E6.20pxIcon/add%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='6.20pxIcon/add' stroke='none' stroke-width='1' fill='buttonText' fill-rule='evenodd'%3E%3Cpath d='M9.86634391,2 C9.30897756,2 8.85714286,2.44991629 8.85714286,2.99708744 L8.85714286,8.85714286 L2.99708744,8.85714286 C2.44641125,8.85714286 2,9.29785156 2,9.86634391 L2,10.1336561 C2,10.6910224 2.44991629,11.1428571 2.99708744,11.1428571 L8.85714286,11.1428571 L8.85714286,17.0029126 C8.85714286,17.5535887 9.29785156,18 9.86634391,18 L10.1336561,18 C10.6910224,18 11.1428571,17.5500837 11.1428571,17.0029126 L11.1428571,11.1428571 L17.0029126,11.1428571 C17.5535887,11.1428571 18,10.7021484 18,10.1336561 L18,9.86634391 C18,9.30897756 17.5500837,8.85714286 17.0029126,8.85714286 L11.1428571,8.85714286 L11.1428571,2.99708744 C11.1428571,2.44641125 10.7021484,2 10.1336561,2 L9.86634391,2 Z' id='Shape' fill='buttonText' fill-rule='nonzero'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
 	}
-	&:hover {
+	&:hover{
 		cursor: pointer;
 		border: none !important;
 		background: $gaming_square_button10;
@@ -694,7 +720,58 @@ border: none;
 		border: none !important;
 		background-image: url("data:image/svg+xml,%3Csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E6.20pxIcon/add%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='6.20pxIcon/add' stroke='none' stroke-width='1' fill='rgba(251, 253, 255, 1)' fill-rule='evenodd'%3E%3Cpath d='M9.86634391,2 C9.30897756,2 8.85714286,2.44991629 8.85714286,2.99708744 L8.85714286,8.85714286 L2.99708744,8.85714286 C2.44641125,8.85714286 2,9.29785156 2,9.86634391 L2,10.1336561 C2,10.6910224 2.44991629,11.1428571 2.99708744,11.1428571 L8.85714286,11.1428571 L8.85714286,17.0029126 C8.85714286,17.5535887 9.29785156,18 9.86634391,18 L10.1336561,18 C10.6910224,18 11.1428571,17.5500837 11.1428571,17.0029126 L11.1428571,11.1428571 L17.0029126,11.1428571 C17.5535887,11.1428571 18,10.7021484 18,10.1336561 L18,9.86634391 C18,9.30897756 17.5500837,8.85714286 17.0029126,8.85714286 L11.1428571,8.85714286 L11.1428571,2.99708744 C11.1428571,2.44641125 10.7021484,2 10.1336561,2 L9.86634391,2 Z' id='Shape' fill='#FBFDFF' fill-rule='nonzero'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
 		@media #{$high-contrast} {
-			background-image: url("data:image/svg+xml,%3Csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E6.20pxIcon/add%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='6.20pxIcon/add' stroke='none' stroke-width='1' fill='rgba(255, 0, 254, 1)' fill-rule='evenodd'%3E%3Cpath d='M9.86634391,2 C9.30897756,2 8.85714286,2.44991629 8.85714286,2.99708744 L8.85714286,8.85714286 L2.99708744,8.85714286 C2.44641125,8.85714286 2,9.29785156 2,9.86634391 L2,10.1336561 C2,10.6910224 2.44991629,11.1428571 2.99708744,11.1428571 L8.85714286,11.1428571 L8.85714286,17.0029126 C8.85714286,17.5535887 9.29785156,18 9.86634391,18 L10.1336561,18 C10.6910224,18 11.1428571,17.5500837 11.1428571,17.0029126 L11.1428571,11.1428571 L17.0029126,11.1428571 C17.5535887,11.1428571 18,10.7021484 18,10.1336561 L18,9.86634391 C18,9.30897756 17.5500837,8.85714286 17.0029126,8.85714286 L11.1428571,8.85714286 L11.1428571,2.99708744 C11.1428571,2.44641125 10.7021484,2 10.1336561,2 L9.86634391,2 Z' id='Shape' fill='#FF00FE' fill-rule='nonzero'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+		background-color: highlight;
+		background-image: url("data:image/svg+xml,%3Csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E6.20pxIcon/add%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='6.20pxIcon/add' stroke='none' stroke-width='1' fill='highlightText' fill-rule='evenodd'%3E%3Cpath d='M9.86634391,2 C9.30897756,2 8.85714286,2.44991629 8.85714286,2.99708744 L8.85714286,8.85714286 L2.99708744,8.85714286 C2.44641125,8.85714286 2,9.29785156 2,9.86634391 L2,10.1336561 C2,10.6910224 2.44991629,11.1428571 2.99708744,11.1428571 L8.85714286,11.1428571 L8.85714286,17.0029126 C8.85714286,17.5535887 9.29785156,18 9.86634391,18 L10.1336561,18 C10.6910224,18 11.1428571,17.5500837 11.1428571,17.0029126 L11.1428571,11.1428571 L17.0029126,11.1428571 C17.5535887,11.1428571 18,10.7021484 18,10.1336561 L18,9.86634391 C18,9.30897756 17.5500837,8.85714286 17.0029126,8.85714286 L11.1428571,8.85714286 L11.1428571,2.99708744 C11.1428571,2.44641125 10.7021484,2 10.1336561,2 L9.86634391,2 Z' id='Shape' fill='highlightText' fill-rule='nonzero'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
 		}
+	}
+}
+
+@mixin high-contrast-status-icon-and-badge {
+	@media #{$black-on-white} {
+		background: $dark;
+		border-color: $dark;
+	}
+	@media #{$white-on-black} {
+		background: $light;
+		border-color: $light;
+	}
+}
+
+@mixin high-contrast-color {
+	@media #{$black-on-white} {
+		color: $light !important;
+	}
+	@media #{$white-on-black} {
+		color: $dark !important;
+	}
+}
+@mixin high-contrast-color-reversal {
+	@media #{$black-on-white} {
+		color: $dark !important;
+	}
+	@media #{$white-on-black} {
+		color: $light !important;
+	}
+}
+@mixin high-contrast-background-color {
+	@media #{$black-on-white} {
+		background-color: $dark !important;
+	}
+	@media #{$white-on-black} {
+		background-color: $light !important;
+	}
+}
+@mixin high-contrast-background-color-reversal {
+	@media #{$black-on-white} {
+		background-color: $light !important;
+	}
+	@media #{$white-on-black} {
+		background-color: $dark !important;
+	}
+}
+
+@mixin high-contrast-adjust {
+	@media #{$high-contrast} {
+		-ms-high-contrast-adjust: none;
 	}
 }

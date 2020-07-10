@@ -186,13 +186,15 @@
 		border-radius: 20px;
 		transition: all 0.2s ease;
 		position: relative;
-		// &:hover {
-		// 	background-color: $blueHover;
-		// 	cursor: pointer;
-		// }
-		// &:active {
-		// 	transform: scale(0.96);
-		// }
+		@media #{$high-contrast} {
+			border: 1px solid windowText;
+		}
+		&:hover {
+			background-color: $blueHover;
+		}
+		&:active {
+			transform: scale(0.96);
+		}
 	}
 
 	.under-line-button {
@@ -208,15 +210,13 @@
 		margin-top: -8px;
 		transition: all 0.2s ease;
 		position: relative;
-		// &:hover {
-		//   color: $blueHover;
-		//   border-bottom: 2px solid $blueHover;
-		//   padding: 8px 4px 0px 4px;
-		//   cursor: pointer;
-		// }
-		// &:active {
-		//   transform: scale(0.96);
-		// }
+		&:hover {
+		  color: $blueHover;
+		  border-bottom: 2px solid $blueHover;
+		}
+		&:active {
+		  transform: scale(0.96);
+		}
 	}
 
 	vtr-container-collapsible {
@@ -2290,7 +2290,7 @@ button {
 		.gaming-modal-fun {
 			border-radius: .6rem;
 			@media #{$high-contrast} {
-					border: 1px solid $highContrastGray;
+				border: 1px solid windowText;
 			}
 			.modal-loading {
 				font-size: 10rem;
@@ -2318,7 +2318,7 @@ button {
 					}
 					p {
 						font-size: 1.4rem;
-						color: $gaming_light_05;
+						color: $white60;
 						margin-bottom: 0;
 						padding: 0.5rem 0 2rem 0;
 						line-height: 2rem;
@@ -2326,8 +2326,7 @@ button {
 					.close {
 						width: 3.2rem;
 						height: 3.2rem;
-						color: $gaming_lightest;
-						opacity: 1;
+						color: $white60;
 						font-size: 3rem;
 						position: absolute;
 						top: 0.4rem;
@@ -2338,6 +2337,15 @@ button {
 						letter-spacing: normal;
 						font-family: "SegoeUI";
 						outline: none;
+						&:hover {
+							color: $gaming_lightest;
+						}
+						&:active {
+							transform: scale(0.96);
+						}
+						@media #{$high-contrast} {
+							opacity: 1;
+						}
 					}
 				}
 				.modal-body {

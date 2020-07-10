@@ -43,6 +43,7 @@
 			margin: 2rem 0 1rem 0;
 			height: 0.1rem;
 			background-color: $light-grey;
+			@include high-contrast-background-color;
 		}
 
 		.mt-60 {
@@ -88,7 +89,7 @@
 					border: 0.1rem solid $dark;
 					box-shadow: none;
 				}
-	
+
 				@media #{$white-on-black} {
 					border: 0.1rem solid $light;
 					box-shadow: none;
@@ -192,12 +193,14 @@
 					margin: 0 0.5rem;
 					background-color: $shade_darker;
 					height: 2.8rem;
+					@include high-contrast-background-color;
 				}
 
 				.divider {
 					margin: 1rem 0 2rem 0;
 					height: 0.1rem;
 					background-color: $light-grey;
+					@include high-contrast-background-color;
 
 					@media #{$mediaquery_md} {
 						margin: 2rem 0;
@@ -234,7 +237,7 @@
 					border: 0.1rem solid $dark;
 					box-shadow: none;
 				}
-	
+
 				@media #{$white-on-black} {
 					border: 0.1rem solid $light;
 					box-shadow: none;

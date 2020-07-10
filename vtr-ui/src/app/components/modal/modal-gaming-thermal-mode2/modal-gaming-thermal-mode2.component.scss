@@ -4,23 +4,17 @@ button:focus{
 }
 .gaming-modal-fun{
 	.modal-header {
-		.close{
-			top: 0.4rem;
-			right: 0.4rem;
-			font-size: 3rem;
-		}
 		.header-text {
 			.title {
 				line-height: 2.8rem;
 				opacity: 0.95;
 				font-size: 2.4rem;
-				color: $gaming_lightest;
+				color: $white100;
 				text-align: left;
 			}
 			.description {
-				opacity: 0.6;
 				font-size: 1.4rem;
-				color: $shade_light;
+				color: $white60;
 				text-align: left;
 				padding-bottom: 2rem;
 			}
@@ -49,7 +43,7 @@ button:focus{
 			display: flex;
 			align-items: center;
             @media #{$high-contrast} {
-                border: 1px solid $highContrastGray;
+                border: 1px solid windowText;
             }
 			.item-left {
 				position: relative;
@@ -99,54 +93,95 @@ button:focus{
 					margin-bottom: .5rem;
 					font-size: 1.8rem;
 					line-height: 2.4rem;
-					color: $gaming_lightest;
+					color: $white100;
 				}
 				.description {
-					opacity: 0.6;
 					margin-bottom: 0;
 					font-size: 1.4rem;
 					line-height: 2rem;
-					color: $shade_light;
+					color: $white60;
 					text-align: left;
 				}
 				.item-oc {
 					display: flex;
 					padding-top: 2rem;
 					.item-oc-left {
+						position: relative;
+						height: 3rem;
 						.oc-checkbox {
 							margin-right: 1rem;
 							width: 2rem;
 							height: 2rem;
-							border: 2px solid rgb(1, 96, 214);
-							border-radius: 1px;
-							background-color: rgba(251, 253, 255, 0.2);
-							&.checked{
-								background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='15px' height='15px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3c!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com --%3e%3ctitle%3e6.20pxIcon/checkLine%3c/title%3e%3cdesc%3eCreated with Sketch.%3c/desc%3e%3cg id='6.20pxIcon/checkLine' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3e%3cpath d='M8.1116626,13.630581 L16.0313582,5.35279564 C16.4676981,4.89672665 17.1911384,4.88073301 17.6472074,5.31707287 C18.1032764,5.75341272 18.11927,6.47685303 17.6829301,6.93292202 L8.93558544,16.0757787 C8.48484105,16.5469035 7.73191951,16.546056 7.28223692,16.0739175 L2.31529664,10.8589429 C1.87998466,10.4018927 1.89760695,9.67849027 2.35465713,9.24317828 C2.81170731,8.8078663 3.53510978,8.82548859 3.97042177,9.28253877 L8.1116626,13.630581 Z' id='Path-2' fill='%23FFFFFF' fill-rule='nonzero'%3e%3c/path%3e%3c/g%3e%3c/svg%3e");
-								background-repeat: no-repeat;
-								background-size: 100% auto;
-								background-color: rgb(1, 96, 214);
-								@media #{$black-on-white} {
-									background-color:  rgb(1, 96, 214);
-								}
-								@media #{$white-on-black} {
-									background-color:  rgb(1, 96, 214);
+							border: .1rem solid $white20;
+							border-radius: .2rem;
+							background-color: $white5;
+							&:hover {
+								background-color: $white20;
+							}
+							@media #{$high-contrast} {
+								border: .1rem solid windowText;
+								background-color: window;
+							}
+							&.checked {
+								.checkedIcon {
+									position: absolute;
+									top: .3rem;
+									left: .3rem;
+									width: 1.4rem;
+									height: 1.4rem;
+									border: none;
+									border-radius: .2rem;
+									background-color: $blueFill;
+									background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='15px' height='15px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3c!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com --%3e%3ctitle%3e6.20pxIcon/checkLine%3c/title%3e%3cdesc%3eCreated with Sketch.%3c/desc%3e%3cg id='6.20pxIcon/checkLine' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3e%3cpath d='M8.1116626,13.630581 L16.0313582,5.35279564 C16.4676981,4.89672665 17.1911384,4.88073301 17.6472074,5.31707287 C18.1032764,5.75341272 18.11927,6.47685303 17.6829301,6.93292202 L8.93558544,16.0757787 C8.48484105,16.5469035 7.73191951,16.546056 7.28223692,16.0739175 L2.31529664,10.8589429 C1.87998466,10.4018927 1.89760695,9.67849027 2.35465713,9.24317828 C2.81170731,8.8078663 3.53510978,8.82548859 3.97042177,9.28253877 L8.1116626,13.630581 Z' id='Path-2' fill='%23FFFFFF' fill-rule='nonzero'%3e%3c/path%3e%3c/g%3e%3c/svg%3e");
+									background-size: 100% auto;
+									@media #{$high-contrast} {
+										background-color: buttonText;
+									}
 								}
 							}
 						}
 					}
-					.oc-description {
+					.item-oc-right {
 						margin-right: 1rem;
 						font-size: 1.4rem;
 						line-height: 2rem;
-						color: $gaming_lightest;
+						opacity: 0.95;
+						color: $white100;
+						&::ng-deep .oc-description {
+							&.hover {
+								::ng-deep {
+									.oc-checkbox {
+										background-color: $white20;
+									}
+								}
+							}
+							cursor: pointer;
+							font-size: 1.4rem;
+							line-height: 2rem;
+							color: $white100;
+						}
 						&::ng-deep .oc-advance-button {
 							cursor: pointer;
 							font-size: 1.4rem;
 							line-height: 2rem;
+							color: $white100;
+						}
+						&::ng-deep .oc-advance-button {
+							cursor: pointer;
+							font-size: 1.4rem;
+							line-height: 1.6rem;
 							font-weight: bold;
 							color: $blueFill;
-							text-decoration: underline;
+							border-bottom: .2rem solid $blueFill;
 							display: inline-block;
+							&:hover {
+								color: $blueHover;
+								border-color: $blueHover;
+							}
+							@media #{$high-contrast} {
+								color: buttonText;
+								border-color: buttonText;
+							}
 						}
 						&::ng-deep .oc-driver-link {
 							cursor: pointer;
@@ -154,9 +189,17 @@ button:focus{
 							line-height: 2rem;
 							font-weight: bold;
 							color: $blueFill;
-							text-decoration: underline;
+							border-bottom: .2rem solid $blueFill;
 							white-space: nowrap;
 							display: inline-block;
+							&:hover {
+								color: $blueHover;
+								border-color: $blueHover;
+							}
+							@media #{$high-contrast} {
+								color: buttonText;
+								border-color: buttonText;
+							}
 						}
 					}
 				}
@@ -175,11 +218,11 @@ button:focus{
 			}
 			.auto-switch-right {
 				.description {
-					margin-top: .5rem;
 					margin-bottom: 0;
 					font-size: 1.4rem;
-					line-height: 2.4rem;
-					color: $gaming_lightest;
+					line-height: 2rem;
+					opacity: 0.95;
+					color: $white100;
 				}
 			}
 		}

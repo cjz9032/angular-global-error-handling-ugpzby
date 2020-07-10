@@ -2,16 +2,20 @@
 
 .vtr-widget-quicksettings-list {
 	.widget-title {
-		color: $gaming_lightest;
+		color: $white100;
 		font-size: 4rem;
 		margin-bottom: 1rem;
 		font-weight: $weight-light;
 	}
 	.widget-container {
 		border-radius: $border_radius;
-		background: $gaming_darkest;
+		background: $darkCell;
 		box-shadow: $drop_shadow_gaming;
 		padding: 2rem;
+		@media #{$high-contrast} {
+			border: 1px solid windowText;
+			border-radius: $border_radius;
+		}
 	}
 	.quickSettings-list-items {
 		&::ng-deep .vtr-widget-device-update-settings {
@@ -54,9 +58,9 @@
 								margin-left: 30%;
 								display: inline-block;
 								text-decoration: none;
-								height: 3.2rem;
-								width: 3.2rem;
-								border-radius: 3.2rem;
+								height: 4rem;
+								width: 4rem;
+								border-radius: 4rem;
 								margin-top: 0.3rem;
 								position: absolute;
 								right: 6rem;
@@ -64,34 +68,31 @@
 									text-align: center;
 									font-size: 2.2rem;
 									color: $gaming_grey_lightest;
-									line-height: 3.2rem;
+									line-height: 4rem;
 									position: relative;
 									&::after {
 										content: "";
 										position: absolute;
-										height: 3.2rem;
-										width: 3.2rem;
-										border-radius: 3.2rem;
-										background: $screen_dark_20;
+										height: 4rem;
+										width: 4rem;
+										border-radius: 4rem;
+										background: $white5;
 										transition: all 0.3s ease-in;
 										right: 0;
 										opacity: 0;
-										@media #{$black-on-white} {
-											background: transparent;
-										}
-										@media #{$white-on-black} {
-											background: transparent;
-										}
 									}
 								}
 								&:hover .icon::after {
 									opacity: 1;
+									@media #{$high-contrast} {
+										opacity: 0;
+									}
 								}
 							}
 						}
 					}
 					.update-title {
-						color: white;
+						color: $white100;
 					}
 				}
 				&::ng-deep vtr-ui-switch-onoff {

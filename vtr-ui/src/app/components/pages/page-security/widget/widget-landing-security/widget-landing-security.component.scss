@@ -52,26 +52,14 @@
 
 	.status-enabled {
 		background: $green_dark;
-		@media #{$black-on-white} {
-			color: $light;
-			background: $dark;
-		}
-		@media #{$white-on-black} {
-			color: $dark;
-			background: $light;
-		}
+		@include high-contrast-status-icon-and-badge;
+		@include high-contrast-color;
 	}
 
 	.status-haveOwn {
 		background: $black_light;
-		@media #{$black-on-white} {
-			color: $light;
-			background: $dark;
-		}
-		@media #{$white-on-black} {
-			color: $dark;
-			background: $light;
-		}
+		@include high-contrast-status-icon-and-badge;
+		@include high-contrast-color;
 	}
 
 	.status-loading {
@@ -80,12 +68,7 @@
 
 	.status-disabled {
 		color: $grey_dark;
-		@media #{$black-on-white} {
-			color: $dark;
-		}
-		@media #{$white-on-black} {
-			color: $light;
-		}
+		@include high-contrast-color-reversal;
 	}
 
 	.custom-control-label {
