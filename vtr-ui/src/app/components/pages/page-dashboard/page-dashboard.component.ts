@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { NgbModalConfig} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { QaService } from '../../../services/qa/qa.service';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
@@ -66,6 +66,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	public showQuickSettings = true;
 	public hideTitle = false;
 	private subscription: Subscription;
+	private langChangeSubscription: Subscription;
 
 	supportDatas = {
 		documentation: [
@@ -208,10 +209,12 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 				this.dashboardService.setDefaultCMSContent();
 				this.getOfflineContent();
 				this.fetchContent();
-				this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-					this.fetchContent();
-				});
 			});
+
+		this.langChangeSubscription = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+			this.fetchContent();
+		});
+
 		this.getSelfSelectStatus();
 		this.canShowDccDemo$ = this.dccService.canShowDccDemo();
 		this.launchProtocol();
@@ -260,14 +263,16 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 
 		this.dashboardService.isDashboardDisplayed = false;
 		this.commonService.setSessionStorageValue(SessionStorageKey.DashboardInDashboardPage, false);
-		if(this.subscription){
+		if (this.subscription) {
 			this.subscription.unsubscribe();
 		}
+
+		if(this.langChangeSubscription) this.langChangeSubscription.unsubscribe();
 	}
 
 	private getWelcomeTextFromCache() {
 		if (!this.dashboardService.welcomeText) {
-			const cacheWelcomeTexts: WelcomeTextContent[]  = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardWelcomeTexts)
+			const cacheWelcomeTexts: WelcomeTextContent[] = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardWelcomeTexts)
 			if (cacheWelcomeTexts && cacheWelcomeTexts.length > 0) {
 				this.localInfoService.getLocalInfo().then((localInfo: any) => {
 					const isLangCacheTexts = cacheWelcomeTexts.find(content => content.language === localInfo.Lang);
