@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.3](https://bitbucket.tc.lenovo.com///compare/v1.7.2...v1.7.3) (2020-07-10)
+
+
+### Features
+
+* **LWS:** only import isEqual from lodash and fix code ([f9cc081](https://bitbucket.tc.lenovo.com///commit/f9cc0813ed6a21fd4f9e5d39dd8f2eff60682d7a))
+* request a url every 15s to get network status ([67398fc](https://bitbucket.tc.lenovo.com///commit/67398fc54b159b1f0da78fcf16d73a37105bc4e5))
+
 ### [1.7.2](https://bitbucket.tc.lenovo.com///compare/v1.6.41...v1.7.2) (2020-07-09)
 
 ### [1.7.1](https://bitbucket.tc.lenovo.com///compare/v1.6.39...v1.7.1) (2020-07-08)
