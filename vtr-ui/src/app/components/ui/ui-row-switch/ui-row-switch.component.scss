@@ -191,12 +191,24 @@
 				&::after {
 					@include button-outline-blue;
 				}
+				@media #{$black-on-white} {
+					&::after {
+						@include button-outline-blue($dark);
+					}
+				}
+
+				@media #{$white-on-black} {
+					&::after {
+						@include button-outline-blue($light);
+					}
+				}
 			}
 			&:hover {
 				background: $blue_gradient;
 			}
 			@include ui-button-high-contrast-black;
 			@include ui-button-high-contrast-white;
+			@include high-contrast-adjust;
 		}
 	}
 }
