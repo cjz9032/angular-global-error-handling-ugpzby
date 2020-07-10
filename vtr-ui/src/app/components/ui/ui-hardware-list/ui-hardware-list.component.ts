@@ -12,10 +12,10 @@ export class UiHardwareListComponent implements OnInit {
 	@Input() template = 1;
 
 	public information: string;
-	public testResultList: typeof HardwareScanTestResult;
+	public testResultEnum: typeof HardwareScanTestResult;
 
 	constructor(private translate: TranslateService) {
-		this.testResultList = HardwareScanTestResult;
+		this.testResultEnum = HardwareScanTestResult;
 	 }
 
 	ngOnInit() {

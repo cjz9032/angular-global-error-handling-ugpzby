@@ -4,28 +4,28 @@
 			<div class="col text button-box">
 				<div class="row item-line">
 					<div class="item-left">
-						<div class="test-status" *ngIf="item.statusTest >= testResultList.NotStarted">
+						<div class="test-status" *ngIf="item.statusTest >= testResultEnum.NotStarted">
 							<div [ngSwitch]="item.statusTest">
 								<!--Defined an aria-label property with description to the icon-->
-								<fa-icon aria-label="status-loading" role="img" class="loading" [icon]="['fas', 'circle-notch']" [spin]="true" *ngSwitchCase="testResultList.NotStarted"></fa-icon>
+								<fa-icon aria-label="status-loading" role="img" class="loading" [icon]="['fas', 'circle-notch']" [spin]="true" *ngSwitchCase="testResultEnum.NotStarted"></fa-icon>
 
-								<span class="progress-value-text" *ngSwitchCase="testResultList.InProgress">{{ item.percent }}%</span>
+								<span class="progress-value-text" *ngSwitchCase="testResultEnum.InProgress">{{ item.percent }}%</span>
 
-								<fa-icon aria-label="status-success" role="img" class="success" [icon]="['fas', 'check-circle']" *ngSwitchCase="testResultList.Pass"></fa-icon>
+								<fa-icon aria-label="status-success" role="img" class="success" [icon]="['fas', 'check-circle']" *ngSwitchCase="testResultEnum.Pass"></fa-icon>
 
-								<fa-icon aria-label="status-failure" role="img" class="failure" [icon]="['fas', 'times-circle']" *ngSwitchCase="testResultList.Fail"></fa-icon>
+								<fa-icon aria-label="status-failure" role="img" class="failure" [icon]="['fas', 'times-circle']" *ngSwitchCase="testResultEnum.Fail"></fa-icon>
 
-								<fa-icon aria-label="status-attention" role="img" class="warning" [icon]="['fas', 'exclamation-circle']" *ngSwitchCase="testResultList.Warning"></fa-icon>
+								<fa-icon aria-label="status-attention" role="img" class="warning" [icon]="['fas', 'exclamation-circle']" *ngSwitchCase="testResultEnum.Warning"></fa-icon>
 
-								<fa-icon arialabel="status-not-applicable" role="img" class="not-applicable" [icon]="['fas', 'ban']" *ngSwitchCase="testResultList.Na"></fa-icon>
+								<fa-icon arialabel="status-not-applicable" role="img" class="not-applicable" [icon]="['fas', 'ban']" *ngSwitchCase="testResultEnum.Na"></fa-icon>
 
 								<fa-icon aria-label="status-canceled" role="img" class="not-applicable" [icon]="['fas', 'ban']" *ngSwitchDefault></fa-icon>
 							</div>
 						</div>
 
-						<div class="title" [ngClass]="{'not-applicable': item.statusTest === testResultList.Na, 'item-failed': item.statusTest === testResultList.Fail}">{{ item.name }}</div>
+						<div class="title" [ngClass]="{'not-applicable': item.statusTest === testResultEnum.Na, 'item-failed': item.statusTest === testResultEnum.Fail}">{{ item.name }}</div>
 						<div class="subtitle" *ngIf="item.subname">{{ item.subname }}</div>
-						<div class="span-not-applicable" *ngIf="item.statusTest === testResultList.Na">{{ 'hardwareScan.testNotApplicable' | translate }}</div>
+						<div class="span-not-applicable" *ngIf="item.statusTest === testResultEnum.Na">{{ 'hardwareScan.testNotApplicable' | translate }}</div>
 					</div>
 					<div class="item-right" *ngIf="item.information">
 						<a href="javascript:void(0)"
