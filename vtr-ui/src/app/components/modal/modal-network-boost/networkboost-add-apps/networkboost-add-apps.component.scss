@@ -102,6 +102,9 @@ ui-popover-apps {
 			@media #{$breakpoint_sm} {
 				padding: 2rem 1rem;
 			}
+			@media #{$high-contrast} {
+				border:0.1rem solid windowText;
+			}
 			.app-list {
 				padding: 0;
 				max-height: 100%;
