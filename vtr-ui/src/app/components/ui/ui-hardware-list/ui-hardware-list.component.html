@@ -7,7 +7,7 @@
 						<div class="test-status" *ngIf="item.statusTest >= testResultEnum.NotStarted">
 							<div [ngSwitch]="item.statusTest">
 								<!--Defined an aria-label property with description to the icon-->
-								<fa-icon aria-label="status-loading" role="img" class="loading" [icon]="['fas', 'circle-notch']" [spin]="true" *ngSwitchCase="testResultEnum.NotStarted"></fa-icon>
+								<fa-icon [icon]="['fa', 'fw']" *ngSwitchCase="0"></fa-icon>
 
 								<span class="progress-value-text" *ngSwitchCase="testResultEnum.InProgress">{{ item.percent }}%</span>
 
