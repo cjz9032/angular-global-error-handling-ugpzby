@@ -12,7 +12,7 @@ describe('UiTimePickerComponent', () => {
 	let component: UiTimePickerComponent;
 	let fixture: ComponentFixture<UiTimePickerComponent>;
 	let commonService: CommonService;
-	let time = '12:30';
+	const time = '12:30';
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
@@ -56,12 +56,12 @@ describe('UiTimePickerComponent', () => {
 
 
 
-	/* 	it('#UiTimePickerComponent onToggleDropDown handleKBNavigations', () => {
-			spyOn(component, 'onToggleDropDown');
-			const event = { keyCode: 32 };
-			component.handleKBNavigations(event);
-			expect(component.onToggleDropDown).toHaveBeenCalled();
-		}); */
+	it('#UiTimePickerComponent onToggleDropDown handleKBNavigations', () => {
+		spyOn(component, 'onToggleDropDown');
+		const event = { keyCode: 32 };
+		component.handleKBNavigations(event);
+		expect(component.onToggleDropDown).toHaveBeenCalled();
+	});
 
 
 
