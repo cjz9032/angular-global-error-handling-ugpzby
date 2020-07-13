@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.enum';
 
 @Component({
 	selector: 'vtr-ui-hardware-list',
@@ -10,10 +11,12 @@ export class UiHardwareListComponent implements OnInit {
 	@Input() items: Array<any>;
 	@Input() template = 1;
 
-	public testNotApplicable = this.translate.instant('hardwareScan.testNotApplicable');
 	public information: string;
+	public testResultEnum: typeof HardwareScanTestResult;
 
-	constructor(private translate: TranslateService) { }
+	constructor(private translate: TranslateService) {
+		this.testResultEnum = HardwareScanTestResult;
+	 }
 
 	ngOnInit() {
 	}
