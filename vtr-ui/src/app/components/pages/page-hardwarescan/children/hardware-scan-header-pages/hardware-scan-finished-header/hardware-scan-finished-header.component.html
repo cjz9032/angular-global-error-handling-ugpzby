@@ -1,7 +1,7 @@
 <div class="hwscan-header">
 	<div class="row">
 		<div [ngSwitch]="headerType" aria-live="polite">
-			<div class="col title" *ngSwitchCase="enumScanHeaderTypeFinished.RecoverBadSectors">{{'hardwareScan.recoverBadSectors.recoverCompleted' | translate }}</div>
+			<h2 class="col title" *ngSwitchCase="enumScanHeaderTypeFinished.RecoverBadSectors">{{'hardwareScan.recoverBadSectors.recoverCompleted' | translate }}</h2>
 			<div *ngSwitchCase="enumScanHeaderTypeFinished.Scan">
 				<div class="col title" [ngSwitch]="numberTestsFailed">
 					<h2 *ngSwitchCase="0">{{'hardwareScan.scanFinishedHeader.titleSuccess' | translate }}</h2> <!-- No failures -->
