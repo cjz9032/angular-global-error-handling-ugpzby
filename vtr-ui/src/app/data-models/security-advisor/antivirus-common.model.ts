@@ -157,14 +157,12 @@ export class AntivirusCommon {
 					}
 				}).catch(() => {
 					this.antivirus.launch();
-				}).finally(() => {
-					this.metrics.sendMetrics(metricsData);
 				});
 			}
 			else {
 				this.antivirus.launch();
-				this.metrics.sendMetrics(metricsData);
 			}
+			this.metrics.sendMetrics(metricsData);
 		}
 	}
 
