@@ -73,6 +73,12 @@
 							left: 0.7rem;
 							top: 0.7rem;
 							border-radius: 0.8rem;
+							@media #{$black-on-white} {
+								border-color: $dark;
+							}
+							@media #{$white-on-black} {
+								border-color: $light;
+							}
 						}
 					}
 
@@ -106,11 +112,11 @@
 
 						@media #{$black-on-white} {
 							border: 0.1rem solid $dark;
-							background: $light;
+							@include high-contrast-background-transparent;
 						}
 						@media #{$white-on-black} {
 							border: 0.1rem solid $light;
-							background: $dark;
+							@include high-contrast-background-transparent;
 						}
 
 						.item-icon {
@@ -129,6 +135,14 @@
 								position: relative;
 								top: 0;
 								height: 3.6rem;
+							}
+
+							@media #{$black-on-white} {
+								filter: grayscale(100%) contrast(2000%);
+							}
+							@media #{$white-on-black} {
+								filter: grayscale(100%) invert(100%)
+									contrast(2000%);
 							}
 						}
 
@@ -191,10 +205,10 @@
 							);
 							box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.22);
 							@media #{$black-on-white} {
-								background: $light;
+								@include high-contrast-background-transparent;
 							}
 							@media #{$white-on-black} {
-								background: $dark;
+								@include high-contrast-background-transparent;
 							}
 							fa-icon {
 								color: white;
@@ -222,19 +236,21 @@
 								cursor: pointer;
 								@media #{$black-on-white} {
 									color: $light;
-									background: $high-contrast-white-textselected;
+									@include high-contrast-white-background;
 								}
 								@media #{$white-on-black} {
 									color: $dark;
-									background: $high-contrast-black-textselected;
+									@include high-contrast-black-background;
 								}
 							}
 
 							.item-icon {
-								filter: grayscale(100%) invert(100%)
-									contrast(2000%);
-								@media #{$high-contrast} {
-									filter: none;
+								@media #{$black-on-white} {
+									filter: grayscale(100%) contrast(2000%);
+								}
+								@media #{$white-on-black} {
+									filter: grayscale(100%) invert(100%)
+										contrast(2000%);
 								}
 							}
 						}
@@ -264,6 +280,18 @@
 								@media #{$white-on-black} {
 									color: $light;
 									background: $dark;
+								}
+							}
+
+							.item-icon {
+								@media #{$black-on-white} {
+									img {
+										background: $light;
+										filter: grayscale(100%) contrast(2000%) invert(1);
+									}
+								}
+								@media #{$white-on-black} {
+									filter: grayscale(100%) contrast(2000%);
 								}
 							}
 						}

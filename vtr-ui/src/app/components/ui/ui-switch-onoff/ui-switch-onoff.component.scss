@@ -19,10 +19,10 @@ input:not(:disabled).switch ~ .switch {
 	border: 0.1rem solid $grey_dark;
 	&:hover {
 		@media #{$black-on-white} {
-			border: 0.1rem solid $high-contrast-white-dark-magenta;
+			@include high-contrast-white-border;
 		}
 		@media #{$white-on-black} {
-			border: 0.1rem solid $high-contrast-black-cyan;
+			@include high-contrast-black-border;
 		}
 	}
 }
@@ -113,10 +113,10 @@ input:not(:disabled) + .switch {
 	&:hover {
 		small {
 			@media #{$black-on-white} {
-				@include high-contrast-white-background;
+				background: $high-contrast-white-dark-magenta !important;
 			}
 			@media #{$white-on-black} {
-				@include high-contrast-black-background;
+				background: $high-contrast-black-cyan !important;
 			}
 		}
 	}
@@ -132,14 +132,14 @@ input:not(:disabled).checked + .switch {
 
 	@media #{$black-on-white} {
 		@include high-contrast-white-background;
+		@include high-contrast-white-border;
 	}
 	@media #{$white-on-black} {
 		@include high-contrast-black-background;
+		@include high-contrast-black-border;
 	}
 	&:hover {
-		@include high-contrast-background-color-reversal;
-		@include high-contrast-white-border;
-		@include high-contrast-black-border;
+		@include high-contrast-background-color;
 
 		small {
 			@media #{$black-on-white} {
@@ -169,14 +169,14 @@ input:not(:disabled).checked + .switch {
 	//-webkit-box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.4);
 	//box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.4);
 	transition: background-color 0.4s, left 0.2s;
-	@include high-contrast-background-color;
+	@include high-contrast-background-color-reversal;
 }
 
 input.checked + .switch > small {
 	left: 2.2rem;
 	transition: background-color 0.4s, left 0.2s;
 	background-color: rgb(255, 255, 255);
-	@include high-contrast-background-color-reversal;
+	@include high-contrast-background-color;
 }
 
 /* LARGE - LG */
