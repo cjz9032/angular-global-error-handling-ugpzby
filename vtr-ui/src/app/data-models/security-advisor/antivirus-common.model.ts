@@ -132,10 +132,21 @@ export class AntivirusCommon {
 	}
 
 	launch() {
+		const metricsData = {
+			ItemParent: this.metricsParent,
+			ItemName: 'launchMcAfee',
+			ItemType: 'FeatureClick',
+			ItemParm: 'unregistered'
+		};
 		if (this.antivirus) {
 			if (this.antivirus.mcafee) {
 				this.mcafee = this.antivirus.mcafee;
 			}
+
+			if (this.mcafee && this.mcafee.registered) {
+				metricsData.ItemParm = 'registered';
+			}
+
 			if (this.mcafee
 				&& !this.mcafee.registered
 				&& this.mcafee.additionalCapabilities
@@ -144,12 +155,15 @@ export class AntivirusCommon {
 					if (response && response.result === false) {
 						this.antivirus.launch();
 					}
+					this.metrics.sendMetrics(metricsData);
 				}).catch(() => {
 					this.antivirus.launch();
+					this.metrics.sendMetrics(metricsData);
 				});
 			}
 			else {
 				this.antivirus.launch();
+				this.metrics.sendMetrics(metricsData);
 			}
 		}
 	}
