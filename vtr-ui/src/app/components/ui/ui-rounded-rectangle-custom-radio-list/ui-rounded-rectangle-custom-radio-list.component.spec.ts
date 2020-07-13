@@ -1,6 +1,6 @@
 
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { NO_ERRORS_SCHEMA, DebugElement } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -8,6 +8,7 @@ import { DevService } from 'src/app/services/dev/dev.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { UiRoundedRectangleCustomRadioListComponent } from './ui-rounded-rectangle-custom-radio-list.component';
+import { By } from '@angular/platform-browser';
 
 let radioDetailsModel = [
 	{
@@ -35,6 +36,7 @@ let radioDetailsModel = [
 		metricsItem: 'radio.top-row-fn.function-key'
 	}];
 const testValue = 'test';
+const groupName = 'groupName';
 
 describe('UiRoundedRectangleCustomRadioListComponent', () => {
 	let component: UiRoundedRectangleCustomRadioListComponent;
@@ -64,6 +66,7 @@ describe('UiRoundedRectangleCustomRadioListComponent', () => {
 		fixture = TestBed.createComponent(UiRoundedRectangleCustomRadioListComponent);
 		component = fixture.componentInstance;
 		component.radioDetails = Object.assign([], radioDetailsModel);
+		component.groupName = groupName;
 		fixture.detectChanges();
 	});
 
@@ -71,69 +74,129 @@ describe('UiRoundedRectangleCustomRadioListComponent', () => {
 		expect(component).toBeTruthy();
 	});
 
-	it('UiRoundedRectangleCustomRadioListComponent ::  should call onClick', () => {
+
+	it('UiRoundedRectangleCustomRadioListComponent  :: should  call onClick', () => {
+		fixture = TestBed.createComponent(UiRoundedRectangleCustomRadioListComponent);
+		component = fixture.componentInstance;
 		component.radioDetails = Object.assign([], radioDetailsModel);
-		spyOn(component, 'onClick');
+		component.groupName = groupName;
+		fixture.detectChanges();
+
 		const spyInvokeSelectionChangeEvent = spyOn<any>(component, 'invokeSelectionChangeEvent');
 		const spySetFocusComponentId = spyOn<any>(component, 'setFocusComponentId');
 
-		const element = fixture.debugElement.nativeElement.querySelector('#' + radioDetailsModel[1].componentId);
-		element.click();
+		const options: DebugElement[] = fixture.debugElement.queryAll(By.css('[role=radio][aria-disabled=false]'));
+		const secondOption: HTMLInputElement = options[1].nativeElement;
+		secondOption.click();
 
-		fixture.whenStable().then(() => {
-			expect(component.onClick).toHaveBeenCalled();
-			expect(spyInvokeSelectionChangeEvent).toHaveBeenCalled();
-			expect(spySetFocusComponentId).toHaveBeenCalled();
-			component.radioDetails = Object.assign([], radioDetailsModel);
-		});
+		// expect(component.onClick).toHaveBeenCalled();
+		// expect(spyUpdateSelection).toHaveBeenCalled();
+		expect(spyInvokeSelectionChangeEvent).toHaveBeenCalled();
+		expect(spySetFocusComponentId).toHaveBeenCalled();
 	});
 
 	it('UiRoundedRectangleCustomRadioListComponent ::  should call onKeyDown', () => {
+		fixture = TestBed.createComponent(UiRoundedRectangleCustomRadioListComponent);
+		component = fixture.componentInstance;
 		component.radioDetails = Object.assign([], radioDetailsModel);
+		component.groupName = groupName;
+
 		fixture.detectChanges();
-		spyOn(component, 'onKeyDown');
-		const event = new KeyboardEvent('keydown', {
-			'key': 'Up'
-		});
 
-		const spyHandleKeyPressEvent = spyOn<any>(component, 'handleKeyPressEvent');
-		const element = fixture.debugElement.nativeElement.querySelector('#' + radioDetailsModel[0].componentId);
-		element.focus();
-		element.dispatchEvent(event);
-		// fixture.detectChanges();
-
-		fixture.whenStable().then(() => {
-			expect(component.onKeyDown).toHaveBeenCalled();
-			expect(spyHandleKeyPressEvent).toHaveBeenCalled();
-			component.radioDetails = Object.assign([], radioDetailsModel);
-		});
-	});
-
-	it('UiRoundedRectangleCustomRadioListComponent ::  should call updateSelection,invokeSelectionChangeEvent,setFocusComponentId', () => {
-		// spyOn(component, 'onClick');
-		component.radioDetails = Object.assign([], radioDetailsModel);
-		const spyUpdateSelection = spyOn<any>(component, 'updateSelection');
+		// const spyKeyDown = spyOn(component, 'onKeyDown');
+		// const spyHandleKeyPressEvent = spyOn<any>(component, 'handleKeyPressEvent');
 		const spySetFocusComponentId = spyOn<any>(component, 'setFocusComponentId');
-
-		const element = fixture.debugElement.nativeElement.querySelector('#' + radioDetailsModel[1].componentId);
-		element.click();
-
-		fixture.whenStable().then(() => {
-			// 	expect(component.onClick).toHaveBeenCalled();
-			expect(spyUpdateSelection).toHaveBeenCalled();
-			expect(spySetFocusComponentId).toHaveBeenCalled();
-			component.radioDetails = radioDetailsModel;
+		// const spyInvokeSelectionChangeEvent = spyOn<any>(component, 'invokeSelectionChangeEvent');
+		const options: DebugElement[] = fixture.debugElement.queryAll(By.css('[role=radiogroup]'));
+		const firstOption: HTMLElement = options[0].nativeElement;
+		// fixture.nativeElement.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter' }));
+		// secondOption.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter' }));
+		// firstOption.focus();
+		const event = new KeyboardEvent('keydown', {
+			bubbles: true,
+			cancelable: true,
+			key: 'up',
+			shiftKey: true,
+			code: '38',
 		});
+		firstOption.dispatchEvent(event);
+
+		// expect(component.onKeyDown).toHaveBeenCalled();
+		// expect(spyHandleKeyPressEvent).toHaveBeenCalled();
+		expect(spySetFocusComponentId).toHaveBeenCalled();
+		// expect(spyInvokeSelectionChangeEvent).toHaveBeenCalled();
 	});
+
 
 	it('UiRoundedRectangleCustomRadioListComponent ::  should call invokeSelectionChangeEvent', () => {
+		fixture = TestBed.createComponent(UiRoundedRectangleCustomRadioListComponent);
+		component = fixture.componentInstance;
 		component.radioDetails = Object.assign([], radioDetailsModel);
+		component.groupName = groupName;
 		metricService = TestBed.get(MetricService);
 		component.sendMetrics = true;
+		fixture.detectChanges();
+
 		const spy = spyOn(metricService, 'sendMetrics');
 		const spyInvokeSelectionChangeEvent = spyOn<any>(component, 'invokeSelectionChangeEvent').and.callThrough();
 		const id = spyInvokeSelectionChangeEvent.call(component, radioDetailsModel[1]);
 		expect(spy).toHaveBeenCalled()
 	});
+
+
+
+	/* it('UiRoundedRectangleCustomRadioListComponent ::  should call handleKeyPressEvent down arrow ', () => {
+		fixture = TestBed.createComponent(UiRoundedRectangleCustomRadioListComponent);
+		component = fixture.componentInstance;
+		component.radioDetails = Object.assign([], radioDetailsModel);
+		component.groupName = groupName;
+		fixture.detectChanges();
+
+		// const spyKeyDown = spyOn(component, 'onKeyDown');
+		const spyInvokeSelectionChangeEvent = spyOn<any>(component, 'invokeSelectionChangeEvent');
+
+		// const spySetFocusComponentId = spyOn<any>(component, 'setFocusComponentId');
+
+		const options: DebugElement[] = fixture.debugElement.queryAll(By.css('[role=radiogroup]'));
+		const firstOption: HTMLElement = options[0].nativeElement;
+		// fixture.nativeElement.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter' }));
+		// secondOption.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter' }));
+		firstOption.focus();
+		const event = new KeyboardEvent('keydown', {
+			bubbles: true,
+			cancelable: true,
+			key: 'down',
+			shiftKey: true,
+			code: '40',
+		});
+		const spyHandleKeyPressEvent = spyOn<any>(component, 'handleKeyPressEvent').withArgs(event);
+		spyHandleKeyPressEvent.and.callThrough();
+		// firstOption.dispatchEvent(event);
+
+		expect(spyInvokeSelectionChangeEvent).toHaveBeenCalled();
+		// expect(spyHandleKeyPressEvent).toHaveBeenCalled();
+		// expect(spySetFocusComponentId).toHaveBeenCalled();
+	}); */
+
+	/* it('UiRoundedRectangleCustomRadioListComponent ::  should call onRadioGroupFocus', () => {
+		fixture = TestBed.createComponent(UiRoundedRectangleCustomRadioListComponent);
+		component = fixture.componentInstance;
+		component.radioDetails = Object.assign([], radioDetailsModel);
+		component.groupName = groupName;
+		const spyOnRadioGroupFocus = spyOn(component, 'onRadioGroupFocus');
+
+		fixture.detectChanges();
+		// const spySetFocusComponentId = spyOn<any>(component, 'setFocusComponentId');
+
+		const radioGroup = fixture.debugElement.query(By.css('[role=radiogroup]'));
+
+		// fixture.nativeElement.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter' }));
+		// secondOption.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter' }));
+		radioGroup.nativeElement.focus();
+
+		expect(component.onRadioGroupFocus).toHaveBeenCalled();
+		// expect(spySetFocusComponentId).toHaveBeenCalled();
+
+	}); */
 
 });
