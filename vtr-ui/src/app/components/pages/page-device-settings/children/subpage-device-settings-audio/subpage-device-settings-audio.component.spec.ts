@@ -22,6 +22,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { TranslateModule } from '@ngx-translate/core';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { UiCircleRadioWithCheckBoxListModel } from 'src/app/components/ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
 
 const autoDolbyFeatureStatus = {
 	available: true,
@@ -29,7 +30,7 @@ const autoDolbyFeatureStatus = {
 	permission: true,
 	status: true
 };
-const dolbyModeResponse = {
+let dolbyModeResponse = {
 	available: true,
 	supportedModes: ['Dynamic', 'Movie', 'Music', 'Games', 'Voip'],
 	currentMode: 'Dynamic',
@@ -119,21 +120,42 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	});
 
-	it("onRightIconClick", () => {
+	it('onRightIconClick', () => {
+		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
+		component = fixture.componentInstance;
+		audioService = TestBed.get(AudioService);
+		dolbyModeResponse.isAudioProfileEnabled = true;
+		component.dolbyModeResponse = dolbyModeResponse;
+		component.microphoneProperties = { ...microphoneProperties };
+		fixture.detectChanges();
 		component.onRightIconClick('', '');
 	});
 
-	it("toggleToolTip", () => {
-		let tooltip = { isOpen() { return true; }, close() { } }
+	it('toggleToolTip', () => {
+		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
+		component = fixture.componentInstance;
+		audioService = TestBed.get(AudioService);
+		component.dolbyModeResponse = dolbyModeResponse;
+		dolbyModeResponse.isAudioProfileEnabled = true;
+		component.microphoneProperties = { ...microphoneProperties };
+		fixture.detectChanges();
+		const tooltip = { isOpen() { return true; }, close() { } }
 		component.toggleToolTip(tooltip, false);
 	});
 
-	it("toggleToolTip", () => {
-		let tooltip = { isOpen() { return false; }, open() { } }
+	it('toggleToolTip', () => {
+		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
+		component = fixture.componentInstance;
+		audioService = TestBed.get(AudioService);
+		component.dolbyModeResponse = dolbyModeResponse;
+		dolbyModeResponse.isAudioProfileEnabled = true;
+		component.microphoneProperties = { ...microphoneProperties };
+		fixture.detectChanges();
+		const tooltip = { isOpen() { return false; }, open() { } }
 		component.toggleToolTip(tooltip, true);
 	});
 
-	it("onDolbyAudioToggleOnOff", () => {
+	it('onDolbyAudioToggleOnOff', () => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
 		component = fixture.componentInstance;
 		audioService = TestBed.get(AudioService);
@@ -146,7 +168,7 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		expect(audioService.setDolbyAudioState).toHaveBeenCalled();
 	});
 
-	it("onVoipCheckboxChange", () => {
+	it('onVoipCheckboxChange isNewplugin  true', () => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
 		component = fixture.componentInstance;
 		audioService = TestBed.get(AudioService);
@@ -158,7 +180,37 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		expect(audioService.setDolbyAudioProfileState).toHaveBeenCalled();
 	});
 
-	it("onEntertainmentCheckboxChange", () => {
+	it('onVoipCheckboxChange isNewplugin  false', () => {
+		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
+		component = fixture.componentInstance;
+		audioService = TestBed.get(AudioService);
+		commonService = TestBed.get(CommonService);
+		audioService.isShellAvailable = true;
+
+		component.isNewplugin = false;
+		component.dolbyModeResponse = dolbyModeResponse;
+		component.microphoneProperties = { ...microphoneProperties };
+		fixture.detectChanges();
+
+		// spyOnProperty(audioService, 'isShellAvailable').and.returnValue(true);
+		const spy = spyOn(component, 'updateMicrophoneCache');
+		component.onVoipCheckboxChange(true);
+		expect(component.updateMicrophoneCache).toHaveBeenCalled();
+	});
+
+	it('onVoipCheckboxChange', () => {
+		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
+		component = fixture.componentInstance;
+		audioService = TestBed.get(AudioService);
+		commonService = TestBed.get(CommonService);
+		audioService.isShellAvailable = true;
+		component.dolbyModeResponse = dolbyModeResponse;
+		const spy = spyOn(audioService, 'setDolbyAudioProfileState').and.returnValue(Promise.reject(true));
+		component.onVoipCheckboxChange(true);
+		expect(audioService.setDolbyAudioProfileState).toHaveBeenCalled();
+	});
+
+	it('onEntertainmentCheckboxChange', () => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
 		component = fixture.componentInstance;
 		audioService = TestBed.get(AudioService);
@@ -170,7 +222,20 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		expect(audioService.setDolbyAudioProfileState).toHaveBeenCalled();
 	});
 
-	it("onToggleOfeCourseAutoOptimization", () => {
+	it('onEntertainmentCheckboxChange isNewplugin false ', () => {
+		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
+		component = fixture.componentInstance;
+		audioService = TestBed.get(AudioService);
+		commonService = TestBed.get(CommonService);
+		audioService.isShellAvailable = true;
+		component.dolbyModeResponse = dolbyModeResponse;
+		component.isNewplugin = false;
+		const spy = spyOn(audioService, 'setDolbyOnOff');
+		component.onEntertainmentCheckboxChange(true);
+		expect(audioService.setDolbyOnOff).toHaveBeenCalled();
+	});
+
+	it('onToggleOfeCourseAutoOptimization', () => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
 		component = fixture.componentInstance;
 		audioService = TestBed.get(AudioService);
@@ -385,8 +450,34 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		const spy = spyOn(commonService, 'setLocalStorageValue');
 		component.dolbyAudioToggleCache = new DolbyAudioToggleCapability();
 		component.dolbyModeResponse = dolbyModeResponse;
+		const spyGetDolbyMode = spyOn(audioService, 'getDolbyMode').and.returnValue(
+			Promise.resolve(dolbyModeResponse)
+		);
+		component.updateDolbyModeModel(dolbyModeResponse);
+		component.getDolbyModesStatus();
+		// const spyUpdateDolbyModeSelection = spyOn(component, 'updateDolbyModeSelection');
 		component.startMonitorHandlerForDolby(dolbyModeResponse);
+
 		expect(spy).toHaveBeenCalled();
+		// expect(spyUpdateDolbyModeSelection).toHaveBeenCalled();
+	});
+
+
+	it('should call initVisibility ', () => {
+		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
+		component = fixture.componentInstance;
+		audioService = TestBed.get(AudioService);
+		audioService.isShellAvailable = true;
+		component.dolbyAudioToggleCache = new DolbyAudioToggleCapability();
+		dolbyModeResponse.available = false;
+		const spyInitVisibility = spyOn(component, 'initVisibility');
+		const spy = spyOn(audioService, 'getDolbyMode').and.returnValue(
+			Promise.resolve(dolbyModeResponse)
+		);
+		component.getDolbyModesStatus();
+
+		expect(spy).toHaveBeenCalled();
+		// expect(spyInitVisibility).toHaveBeenCalled();
 	});
 
 	it('should call onDolbySettingRadioChange - promise resolved', () => {
@@ -659,6 +750,36 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 
 	it('should call initMicrophoneFromCache', () => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
+		component = fixture.componentInstance;
+		commonService = TestBed.get(CommonService);
+		const microphoneCache = {
+			data: {
+				autoOptimization: true,
+				keyboardNoiseSuppression: true,
+				AEC: true,
+				currentMode: 'data'
+			},
+			modes: [
+				'VoiceRecognition',
+				'OnlyMyVoice',
+				'Normal',
+				'MultipleVoices'
+			]
+		};
+		component.microphoneProperties = { ...microphoneProperties };
+		component.microOptimizeModeResponse = { ...microOptimizeModeResponse };
+		const spy = spyOn(
+			commonService,
+			'getLocalStorageValue'
+		).and.returnValue(microphoneCache);
+		component.initMicrophoneFromCache();
+		expect(spy).toHaveBeenCalled();
+	});
+
+
+	it('should call initMicrophoneFromCache isNewPlugin false', () => {
+		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
+		component.isNewplugin = false;
 		component = fixture.componentInstance;
 		commonService = TestBed.get(CommonService);
 		const microphoneCache = {
