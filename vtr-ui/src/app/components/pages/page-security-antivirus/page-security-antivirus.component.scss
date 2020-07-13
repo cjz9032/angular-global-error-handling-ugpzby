@@ -43,7 +43,7 @@
 			margin: 2rem 0 1rem 0;
 			height: 0.1rem;
 			background-color: $light-grey;
-			@include high-contrast-background-color;
+			@include high-contrast-background-color-reversal;
 		}
 
 		.mt-60 {
@@ -193,14 +193,14 @@
 					margin: 0 0.5rem;
 					background-color: $shade_darker;
 					height: 2.8rem;
-					@include high-contrast-background-color;
+					@include high-contrast-background-color-reversal;
 				}
 
 				.divider {
 					margin: 1rem 0 2rem 0;
 					height: 0.1rem;
 					background-color: $light-grey;
-					@include high-contrast-background-color;
+					@include high-contrast-background-color-reversal;
 
 					@media #{$mediaquery_md} {
 						margin: 2rem 0;
@@ -337,9 +337,7 @@
 						color: $main;
 					}
 
-					@media #{$high-contrast} {
-						-ms-high-contrast-adjust: none;
-					}
+					@include high-contrast-adjust;
 
 					@media #{$black-on-white} {
 						border-color: $dark !important;

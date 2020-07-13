@@ -83,9 +83,7 @@
 	&-danger {
 		background-color: $button_red_start;
 	}
-	@media #{$high-contrast} {
-		-ms-high-contrast-adjust: none;
-	}
+	@include high-contrast-adjust;
 	@include high-contrast-status-icon-and-badge;
 	@include high-contrast-color;
 }

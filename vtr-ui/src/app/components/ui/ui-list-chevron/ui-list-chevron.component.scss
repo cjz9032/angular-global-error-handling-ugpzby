@@ -10,15 +10,13 @@
 		border: 0.1rem solid $shade_lighter;
 		border-radius: $border_radius;
 		line-height: 1.3;
-		@media #{$high-contrast} {
-			-ms-high-contrast-adjust: none;
-		}
+		@include high-contrast-adjust;
 		@media #{$black-on-white} {
-			background-color: transparent;
+			@include high-contrast-background-transparent;
 			border: 0.1rem solid;
 		}
 		@media #{$white-on-black} {
-			background-color: transparent;
+			@include high-contrast-background-transparent;
 			border: 0.1rem solid;
 		}
 

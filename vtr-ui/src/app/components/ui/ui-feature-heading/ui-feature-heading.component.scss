@@ -10,6 +10,9 @@
 	.feature-logo {
 		max-height: 3rem;
 		max-width: 12rem;
+		@media #{$white-on-black} {
+			filter: brightness(0) invert(1);
+		}
 	}
 
 	.text-regular {

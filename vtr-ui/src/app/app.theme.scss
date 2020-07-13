@@ -580,6 +580,7 @@ $high-contrast-white-disabled-maroon: #610000;
 		background: $light;
 		color: $dark;
 		border: 0.1rem solid $dark;
+		box-shadow: none !important;
 		&:hover {
 			background: $high-contrast-white-dark-magenta;
 			color: $light;
@@ -593,6 +594,7 @@ $high-contrast-white-disabled-maroon: #610000;
 		background: $dark;
 		color: $light;
 		border: 0.1rem solid $light;
+		box-shadow: none !important;
 		&:hover {
 			background: $high-contrast-black-cyan;
 			color: $dark;
@@ -753,7 +755,7 @@ border: none;
 		color: $light !important;
 	}
 }
-@mixin high-contrast-background-color {
+@mixin high-contrast-background-color-reversal {
 	@media #{$black-on-white} {
 		background-color: $dark !important;
 	}
@@ -761,7 +763,7 @@ border: none;
 		background-color: $light !important;
 	}
 }
-@mixin high-contrast-background-color-reversal {
+@mixin high-contrast-background-color {
 	@media #{$black-on-white} {
 		background-color: $light !important;
 	}
