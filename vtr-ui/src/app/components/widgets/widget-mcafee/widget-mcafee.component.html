@@ -1,9 +1,6 @@
 <div class="vtr-widget-mcafee mt-4 row justify-content-between mb-5">
 	<vtr-ui-description-button class="col-12"
-		[vtrMetricEnabled]="install?true:false"
-		metricsEvent="FeatureClick"
-		[metricsItem]="install?'launchMcafee':''"
-		metricsParent="security.antivirus"
+		[vtrMetricEnabled]="false"
 		[id]="install?'sa-av-btn-launchmcafee':'sa-av-btn-getMcafee'"
 		[label]="install?launchMcafeeText:getMcafeeText"
 		[isDisabled]="isOnline === false && !install"
