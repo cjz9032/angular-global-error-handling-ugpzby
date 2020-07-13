@@ -35,9 +35,7 @@
 					text-overflow: ellipsis;
 					font-size: 1.2rem;
 					max-width: 100%;
-					@media #{$high-contrast} {
-						-ms-high-contrast-adjust: none;
-					}
+					@include high-contrast-adjust;
 					@include high-contrast-color;
 					&.badge-success {
 						background-color: $green_dark;

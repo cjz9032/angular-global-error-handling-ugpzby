@@ -17,5 +17,8 @@
 	}
 	.product-logo {
 		width: 10rem;
+		@media #{$white-on-black} {
+			filter: brightness(0) invert(1);
+		}
 	}
 }

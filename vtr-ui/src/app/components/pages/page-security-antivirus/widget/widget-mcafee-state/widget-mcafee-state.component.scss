@@ -110,9 +110,7 @@
 					min-width: 24rem !important;
 					font-weight: $weight_bold;
 
-					@media #{$high-contrast} {
-						-ms-high-contrast-adjust: none;
-					}
+					@include high-contrast-adjust;
 
 					@media #{$black-on-white} {
 						border-color: $dark !important;
@@ -146,9 +144,7 @@
 				.button {
 					color: $light!important;
 					min-width: 20rem;
-					@media #{$high-contrast} {
-						-ms-high-contrast-adjust: none;
-					}
+					@include high-contrast-adjust;
 					@media #{$black-on-white} {
 						border-color: $high-contrast-white-textselected !important;
 						background: $high-contrast-white-textselected !important;

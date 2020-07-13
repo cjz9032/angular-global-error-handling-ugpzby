@@ -12,9 +12,7 @@ $largeSideWidth: 3.5rem;
     box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
 	padding: 4.5rem 2.5rem 2.5rem;
 	position: relative;
-	@media #{$high-contrast} {
-		-ms-high-contrast-adjust: none;
-	}
+	@include high-contrast-adjust;
 	@media #{$black-on-white} {
 		background: $light;
 		border: 0.1rem solid $dark;
