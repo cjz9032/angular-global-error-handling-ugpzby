@@ -146,12 +146,12 @@
 				left: 1rem;
 				@media #{$black-on-white} {
 					opacity: 1;
-					// background-color: $light;
+					background-color: $light;
 				}
 
 				@media #{$white-on-black} {
 					opacity: 1;
-					// background-color: $dark;
+					background-color: $dark;
 				}
 
 				&:hover {
@@ -174,12 +174,12 @@
 				right: 1rem;
 				@media #{$black-on-white} {
 					opacity: 1;
-					// background-color: $light;
+					background-color: $light;
 				}
 
 				@media #{$white-on-black} {
 					opacity: 1;
-					// background-color: $dark;
+					background-color: $dark;
 				}
 
 				&:hover {

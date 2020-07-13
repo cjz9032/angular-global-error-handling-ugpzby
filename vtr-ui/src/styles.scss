@@ -1986,3 +1986,14 @@ ngb-tooltip-window.schedule-scan.tooltip {
 		max-width: 24.2rem;
 	}
 }
+
+.vtr-page-dashboard {
+	.vtr-header-main-inner {
+		@media #{$white-on-black} {
+			border-bottom: none !important;
+		}
+		@media #{$black-on-white} {
+			border-bottom: none !important;
+		}
+	}
+}

@@ -777,3 +777,26 @@ border: none;
 		-ms-high-contrast-adjust: none;
 	}
 }
+
+@mixin high-contrast-triangle {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-left: 1.2rem solid transparent;
+	border-right: 1.2rem solid transparent;
+	border-bottom: 1.2rem solid $dark;
+	transform: rotate(-45deg);
+	left: -0.7rem;
+	top: 0.7rem;
+}
+
+@mixin high-contrast-triangle-bordered {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-left: 1.2rem solid transparent;
+	border-right: 1.2rem solid transparent;
+	border-bottom: 1.2rem solid $light;
+}

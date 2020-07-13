@@ -54,9 +54,13 @@
 		height: 100%;
 		@media #{$black-on-white} {
 			border-bottom: 0.1rem solid rgba(0,0,0,0.3);
+			border-left: 0.1rem solid $dark;
+			border-right: 0.1rem solid $dark;
 		}
 		@media #{$white-on-black} {
 			border-bottom: 0.1rem solid rgba(255,255,255,0.3);
+			border-left: 0.1rem solid $light;
+			border-right: 0.1rem solid $light;
 		}
 		&.show-back-btn {
 			padding-top: 2rem;
