@@ -964,12 +964,24 @@ vtr-ui-smart-performance-scan-summary {
 				margin-top: 2rem;
 				.needs-tune-up{				
 					span{
-						background:#252a3f!important;					
+						background:#252a3f!important;
+						max-width: 70%;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+						display: inline-block;
+						margin-bottom: -0.5rem;				
 					}		
 				}
 				.running-well{				
 					span{
-						background:#2a2f43!important;					
+						background:#2a2f43!important;
+						max-width: 70%;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+						display: inline-block;	
+						margin-bottom: -0.5rem;
 					}
 				}
 				.info-text{					
