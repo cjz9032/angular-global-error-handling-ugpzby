@@ -3,199 +3,203 @@
 	[back]="'common.ui.back' | translate" [backId]="'sa-av-btn-back'">
 
 	<left-content>
-		<div *ngIf="viewModel?.currentPage ==='windows'" class="windows">
-			<div *ngIf="isOnline" class="row justify-content-center">
-				<div class="header w-100 row justify-content-between w-windows">
-					<div class="rounded-card-with-shadow pl-lg-0 col part-position ">
-						<div class="d-flex flex-column flex-lg-row" [vtrAppSearchScroller]="['search-anti-virus']">
-							<div class="align-self-center">
-								<img class="img-fluid" src="assets/images/antivirus/protection.png" />
-							</div>
-							<div class="col align-self-center mb-5 px-lg-0 mb-lg-0">
-								<div class="subtitle p-0"
-									[innerHTML]="'security.antivirus.windowsDefender.optimallyProtected' | translate">
+		<ng-container *ngIf="viewModel?.currentPage ==='windows';else mcafee">
+			<div class="windows">
+				<div *ngIf="isOnline" class="row justify-content-center">
+					<div class="header w-100 row justify-content-between w-windows">
+						<div class="rounded-card-with-shadow pl-lg-0 col part-position ">
+							<div class="d-flex flex-column flex-lg-row" [vtrAppSearchScroller]="['search-anti-virus']">
+								<div class="align-self-center">
+									<img class="img-fluid" src="assets/images/antivirus/protection.png" />
 								</div>
-							</div>
-							<div class="d-lg-none rounded-card-with-shadow bg-white py-4 pl-0 pr-4 col row b-border align-self-center">
-								<img class="align-self-center col-4 mcafee-black-invert mcafee-black-img"
-									[src]=" 'assets/images/antivirus/mcafee_black.png'" />
-								<div class="align-self-center col-8 p-0">
-									<div class="title"
-										[innerHTML]="'security.antivirus.windowsDefender.topTip' | translate">
+								<div class="col align-self-center mb-5 px-lg-0 mb-lg-0">
+									<div class="subtitle p-0"
+										[innerHTML]="'security.antivirus.windowsDefender.optimallyProtected' | translate">
 									</div>
-									<div class="row">
-										<div *vtrTranslate="'security.antivirus.windowsDefender.topContent' | translate"
-											class="subtitle subtitle-color">
-											<a vtrMetrics id="sa-av-link-view" metricsEvent="ArticleClick"
-												metricsItem="ViewTips" metricsItemPosition="1" metricsPageNumber="1"
-												[metricsItemID]="mcafeeArticleId"
-												[metricsItemCategory]="mcafeeArticleCategory" href="javascript:void(0)"
-												target="_blank" (click)="openArticle()"></a>
+								</div>
+								<div class="d-lg-none rounded-card-with-shadow bg-white py-4 pl-0 pr-4 col row b-border align-self-center">
+									<img class="align-self-center col-4 mcafee-black-invert mcafee-black-img"
+										[src]=" 'assets/images/antivirus/mcafee_black.png'" />
+									<div class="align-self-center col-8 p-0">
+										<div class="title"
+											[innerHTML]="'security.antivirus.windowsDefender.topTip' | translate">
+										</div>
+										<div class="row">
+											<div *vtrTranslate="'security.antivirus.windowsDefender.topContent' | translate"
+												class="subtitle subtitle-color">
+												<a vtrMetrics id="sa-av-link-view" metricsEvent="ArticleClick"
+													metricsItem="ViewTips" metricsItemPosition="1" metricsPageNumber="1"
+													[metricsItemID]="mcafeeArticleId"
+													[metricsItemCategory]="mcafeeArticleCategory" href="javascript:void(0)"
+													target="_blank" (click)="openArticle()"></a>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="rounded-card-with-shadow bg-white py-4 pl-0 pr-4 col-5 row b-border d-none d-lg-flex">
-						<img class="align-self-center col-4 mcafee-black-invert"
-							[src]=" 'assets/images/antivirus/mcafee_black.png'" />
-						<div class="align-self-center col-8 p-0">
-							<div class="title" [innerHTML]="'security.antivirus.windowsDefender.topTip' | translate">
+						<div class="rounded-card-with-shadow bg-white py-4 pl-0 pr-4 col-5 row b-border d-none d-lg-flex">
+							<img class="align-self-center col-4 mcafee-black-invert"
+								[src]=" 'assets/images/antivirus/mcafee_black.png'" />
+							<div class="align-self-center col-8 p-0">
+								<div class="title" [innerHTML]="'security.antivirus.windowsDefender.topTip' | translate">
+								</div>
+								<div class="row">
+									<div *vtrTranslate="'security.antivirus.windowsDefender.topContent' | translate"
+										class="subtitle subtitle-color">
+										<a vtrMetrics id="sa-av-link-view" metricsEvent="ArticleClick"
+											metricsItem="ViewTips" metricsItemPosition="1" metricsPageNumber="1"
+											[metricsItemID]="mcafeeArticleId" [metricsItemCategory]="mcafeeArticleCategory"
+											href="javascript:void(0)" target="_blank" (click)="openArticle()"></a>
+									</div>
+								</div>
 							</div>
+						</div>
+					</div>
+				</div>
+				<vtr-widget-offline-info *ngIf="!isOnline" [title]="'dashboard.offlineInfo.title' | translate"
+					[isSubtitleVisible]="false" [isButtonVisible]="false"></vtr-widget-offline-info>
+				<div class="subheader antivirus-block row justify-content-between">
+					<div class="rounded-card-with-shadow bg-white defender-part" [ngClass]="{'offline-part': isOnline}">
+						<div class="row justify-content-between align-items-center">
 							<div class="row">
-								<div *vtrTranslate="'security.antivirus.windowsDefender.topContent' | translate"
-									class="subtitle subtitle-color">
-									<a vtrMetrics id="sa-av-link-view" metricsEvent="ArticleClick"
-										metricsItem="ViewTips" metricsItemPosition="1" metricsPageNumber="1"
-										[metricsItemID]="mcafeeArticleId" [metricsItemCategory]="mcafeeArticleCategory"
-										href="javascript:void(0)" target="_blank" (click)="openArticle()"></a>
+								<img class="mcafee-logo align-self-start"
+									[src]=" 'assets/images/mcafee_logo.svg' | svgInline | async" />
+								<div class="title" [innerHTML]="'security.antivirus.mcafee.title' | translate">
 								</div>
 							</div>
+							<div class="flex-column button white-button">
+								<vtr-ui-button class="white-btn" linkId="sa-av-btn-subscribe"
+									[upperCaseLabel]=false [btnHeight]=true [isDisabled]="isOnline === false"
+									[label]="'security.antivirus.windowsDefender.buyNow' | translate"
+									[isLoading]="common.purchaseBtnIsLoading"
+									[vtrMetricEnabled]="false"
+									(onClick)="common.openMcAfeePurchase('button')"></vtr-ui-button>
+							</div>
 						</div>
+						<div class="divider"></div>
+						<div class="subtitle" [innerHTML]="'security.antivirus.windowsDefender.buy' | translate"></div>
+						<vtr-widget-mcafee-state [windowsDefender]="true" [url]="common.urlGetMcAfee" [common]="common" [isOnline]="isOnline">
+						</vtr-widget-mcafee-state>
+						<div class="subtitle mt-5 text-center"
+							[innerHTML]="'security.antivirus.mcafee.discount' | translate"></div>
+					</div>
+					<div class="rounded-card-with-shadow bg-white defender-part s-border">
+						<div class="title" [innerHTML]="'security.antivirus.windowsDefender.windowsSubtitle' | translate">
+						</div>
+						<div class="divider"></div>
+						<div class="subtitle" [innerHTML]="'security.antivirus.windowsDefender.onlyBasic' | translate">
+						</div>
+						<vtr-widget-mcafee-state [windowsDefender]="true"
+							[common]="common"
+							(retryClick)="retry($event)"
+							[statusList]="viewModel.windowsDefenderstatusList" [isOnline]="isOnline">
+						</vtr-widget-mcafee-state>
 					</div>
 				</div>
+				<vtr-widget-common-antivirus></vtr-widget-common-antivirus>
 			</div>
-			<vtr-widget-offline-info *ngIf="!isOnline" [title]="'dashboard.offlineInfo.title' | translate"
-				[isSubtitleVisible]="false" [isButtonVisible]="false"></vtr-widget-offline-info>
-			<div class="subheader antivirus-block row justify-content-between">
-				<div class="rounded-card-with-shadow bg-white defender-part" [ngClass]="{'offline-part': isOnline}">
-					<div class="row justify-content-between align-items-center">
-						<div class="row">
-							<img class="mcafee-logo align-self-start"
-								[src]=" 'assets/images/mcafee_logo.svg' | svgInline | async" />
-							<div class="title" [innerHTML]="'security.antivirus.mcafee.title' | translate">
-							</div>
-						</div>
-						<div class="flex-column button white-button">
-							<vtr-ui-button class="white-btn" linkId="sa-av-btn-subscribe"
-								[upperCaseLabel]=false [btnHeight]=true [isDisabled]="isOnline === false"
-								[label]="'security.antivirus.windowsDefender.buyNow' | translate"
-								[isLoading]="common.purchaseBtnIsLoading"
-								[vtrMetricEnabled]="false"
-								(onClick)="common.openMcAfeePurchase('button')"></vtr-ui-button>
-						</div>
-					</div>
-					<div class="divider"></div>
-					<div class="subtitle" [innerHTML]="'security.antivirus.windowsDefender.buy' | translate"></div>
-					<vtr-widget-mcafee-state [windowsDefender]="true" [url]="common.urlGetMcAfee" [common]="common" [isOnline]="isOnline">
-					</vtr-widget-mcafee-state>
-					<div class="subtitle mt-5 text-center"
-						[innerHTML]="'security.antivirus.mcafee.discount' | translate"></div>
-				</div>
-				<div class="rounded-card-with-shadow bg-white defender-part s-border">
-					<div class="title" [innerHTML]="'security.antivirus.windowsDefender.windowsSubtitle' | translate">
-					</div>
-					<div class="divider"></div>
-					<div class="subtitle" [innerHTML]="'security.antivirus.windowsDefender.onlyBasic' | translate">
-					</div>
-					<vtr-widget-mcafee-state [windowsDefender]="true"
-						[common]="common"
-						(retryClick)="retry($event)"
-						[statusList]="viewModel.windowsDefenderstatusList" [isOnline]="isOnline">
-					</vtr-widget-mcafee-state>
-				</div>
-			</div>
-			<vtr-widget-common-antivirus></vtr-widget-common-antivirus>
-		</div>
-
-		<div *ngIf="viewModel?.currentPage ==='mcafee'" [ngClass]="{'mcafee': !viewModel.showMetricButton}">
-			<vtr-widget-offline-info *ngIf="!isOnline" [title]="'dashboard.offlineInfo.title' | translate"
-				[isSubtitleVisible]="false" [isButtonVisible]="false"></vtr-widget-offline-info>
-			<div class="subheader mb-5">
-				<div class="rounded-card-with-shadow p-5 bg-white">
-					<div class="row" [ngClass]="{'xl-display': viewModel.showMetricsList}">
-						<div *ngIf="viewModel.showMetricsList" class="col-xl-5 px-0 col-12">
-							<vtr-widget-mcafee-metric [metricsList]="viewModel.metricsList"
-								[showMetricButton]="viewModel.showMetricButton" [common]="common">
-							</vtr-widget-mcafee-metric>
-							<div *ngIf="viewModel.mcafee.subscription === 'trialactive' || viewModel.mcafee.subscription === 'trialinactive'"
-								class="d-none d-xl-block">
-								<p class="subtitle sub-font"
-									*vtrTranslate="'security.antivirus.mcafee.trialContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
-									<a id="sa-av-link-subscribe"
-										href="javascript:void(0)"
-										(click)="common.openMcAfeePurchase()" target="_blank"></a>
-								</p>
-							</div>
-							<div *ngIf="viewModel.mcafee.subscription === 'licenseactive'"
-								class="d-none d-xl-block">
-								<p class="subtitle sub-font"
-									*vtrTranslate="'security.antivirus.mcafee.subscribeContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
-									<a id="sa-av-link-subscribe"
-										href="javascript:void(0)"
-										(click)="common.openMcAfeePurchase()" target="_blank"></a>
-								</p>
-							</div>
-						</div>
-						<div class="col-xl-7 col-12 px-0" [ngClass]="{'col-xl-12': !viewModel.showMetricsList}">
-							<div class="row justify-content-between">
-								<div class="row col-6">
-									<img class="mcafee-logo align-self-start"
-										[src]=" 'assets/images/mcafee_logo.svg' | svgInline | async" />
-									<div class="line-height"></div>
-									<div class="title" [innerHTML]="'security.antivirus.mcafee.title' | translate">
+		</ng-container>
+		<ng-template #mcafee>
+			<ng-container *ngIf="viewModel?.currentPage ==='mcafee';else others">
+				<div [ngClass]="{'mcafee': !viewModel.showMetricButton}">
+					<vtr-widget-offline-info *ngIf="!isOnline" [title]="'dashboard.offlineInfo.title' | translate"
+						[isSubtitleVisible]="false" [isButtonVisible]="false"></vtr-widget-offline-info>
+					<div class="subheader mb-5">
+						<div class="rounded-card-with-shadow p-5 bg-white">
+							<div class="row" [ngClass]="{'xl-display': viewModel.showMetricsList}">
+								<div *ngIf="viewModel.showMetricsList" class="col-xl-5 px-0 col-12">
+									<vtr-widget-mcafee-metric [metricsList]="viewModel.metricsList"
+										[showMetricButton]="viewModel.showMetricButton" [common]="common">
+									</vtr-widget-mcafee-metric>
+									<div *ngIf="viewModel.mcafee.subscription === 'trialactive' || viewModel.mcafee.subscription === 'trialinactive'"
+										class="d-none d-xl-block">
+										<p class="subtitle sub-font"
+											*vtrTranslate="'security.antivirus.mcafee.trialContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
+											<a id="sa-av-link-subscribe"
+												href="javascript:void(0)"
+												(click)="common.openMcAfeePurchase()" target="_blank"></a>
+										</p>
+									</div>
+									<div *ngIf="viewModel.mcafee.subscription === 'licenseactive'"
+										class="d-none d-xl-block">
+										<p class="subtitle sub-font"
+											*vtrTranslate="'security.antivirus.mcafee.subscribeContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
+											<a id="sa-av-link-subscribe"
+												href="javascript:void(0)"
+												(click)="common.openMcAfeePurchase()" target="_blank"></a>
+										</p>
 									</div>
 								</div>
-								<div class="flex-column two-ellipsis-button button col-6 px-0">
-									<vtr-ui-button
-										*ngIf="viewModel.mcafee.subscription === 'trialactive' || viewModel.mcafee.subscription === 'trialinactive'"
-										linkId="sa-av-btn-subscribe"
-										[upperCaseLabel]=false [btnHeight]=true [isDisabled]="isOnline === false"
-										[label]="'security.antivirus.mcafee.trialSubscribe' | translate:{remainingDays: viewModel.mcafee.expireAt}"
-										[isLoading]="common.purchaseBtnIsLoading"
-										[vtrMetricEnabled]="false"
-										(onClick)="common.openMcAfeePurchase('button')"></vtr-ui-button>
-									<vtr-ui-button *ngIf="viewModel.mcafee.subscription === 'licenseactive'"
-										linkId="sa-av-btn-subscribe"
-										[upperCaseLabel]=false [btnHeight]=true [isDisabled]="isOnline === false"
-										[label]="'security.antivirus.mcafee.subscribe' | translate:{remainingDays: viewModel.mcafee.expireAt}"
-										[isLoading]="common.purchaseBtnIsLoading"
-										[vtrMetricEnabled]="false"
-										(onClick)="common.openMcAfeePurchase('button')"></vtr-ui-button>
-									<div class="subtitle text-center"
-										[innerHTML]="'security.antivirus.mcafee.discount' | translate">
+								<div class="col-xl-7 col-12 px-0" [ngClass]="{'col-xl-12': !viewModel.showMetricsList}">
+									<div class="row justify-content-between">
+										<div class="row col-6">
+											<img class="mcafee-logo align-self-start"
+												[src]=" 'assets/images/mcafee_logo.svg' | svgInline | async" />
+											<div class="line-height"></div>
+											<div class="title" [innerHTML]="'security.antivirus.mcafee.title' | translate">
+											</div>
+										</div>
+										<div class="flex-column two-ellipsis-button button col-6 px-0">
+											<vtr-ui-button
+												*ngIf="viewModel.mcafee.subscription === 'trialactive' || viewModel.mcafee.subscription === 'trialinactive'"
+												linkId="sa-av-btn-subscribe"
+												[upperCaseLabel]=false [btnHeight]=true [isDisabled]="isOnline === false"
+												[label]="'security.antivirus.mcafee.trialSubscribe' | translate:{remainingDays: viewModel.mcafee.expireAt}"
+												[isLoading]="common.purchaseBtnIsLoading"
+												[vtrMetricEnabled]="false"
+												(onClick)="common.openMcAfeePurchase('button')"></vtr-ui-button>
+											<vtr-ui-button *ngIf="viewModel.mcafee.subscription === 'licenseactive'"
+												linkId="sa-av-btn-subscribe"
+												[upperCaseLabel]=false [btnHeight]=true [isDisabled]="isOnline === false"
+												[label]="'security.antivirus.mcafee.subscribe' | translate:{remainingDays: viewModel.mcafee.expireAt}"
+												[isLoading]="common.purchaseBtnIsLoading"
+												[vtrMetricEnabled]="false"
+												(onClick)="common.openMcAfeePurchase('button')"></vtr-ui-button>
+											<div class="subtitle text-center"
+												[innerHTML]="'security.antivirus.mcafee.discount' | translate">
+											</div>
+										</div>
+									</div>
+									<div>
+										<div class="divider"></div>
+										<div *ngIf="viewModel.mcafee.subscription === 'trialactive' || viewModel.mcafee.subscription === 'trialinactive'"
+											class="content"
+											[innerHTML]="'security.antivirus.mcafee.trialSubtitle' | translate:{remainingDays: viewModel.mcafee.expireAt}">
+										</div>
+										<div *ngIf="viewModel.mcafee.subscription === 'licenseactive'" class="content"
+											[innerHTML]="'security.antivirus.mcafee.subtitle' | translate:{remainingDays: viewModel.mcafee.expireAt}">
+										</div>
+										<vtr-widget-mcafee-state [statusList]="viewModel.mcafeestatusList | statusTransform"
+											[common]="common" [isOnline]="isOnline">
+										</vtr-widget-mcafee-state>
 									</div>
 								</div>
-							</div>
-							<div>
-								<div class="divider"></div>
 								<div *ngIf="viewModel.mcafee.subscription === 'trialactive' || viewModel.mcafee.subscription === 'trialinactive'"
-									class="content"
-									[innerHTML]="'security.antivirus.mcafee.trialSubtitle' | translate:{remainingDays: viewModel.mcafee.expireAt}">
+									class="d-xl-none d-block">
+									<p class="subtitle sub-font"
+										*vtrTranslate="'security.antivirus.mcafee.trialContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
+										<a id="sa-av-link-subscribe"
+											href="javascript:void(0)"
+											(click)="common.openMcAfeePurchase()" target="_blank"></a>
+									</p>
 								</div>
-								<div *ngIf="viewModel.mcafee.subscription === 'licenseactive'" class="content"
-									[innerHTML]="'security.antivirus.mcafee.subtitle' | translate:{remainingDays: viewModel.mcafee.expireAt}">
+								<div *ngIf="viewModel.mcafee.subscription === 'licenseactive'" class="d-block d-xl-none">
+									<p class="subtitle sub-font"
+										*vtrTranslate="'security.antivirus.mcafee.subscribeContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
+										<a id="sa-av-link-subscribe"
+											href="javascript:void(0)"
+											(click)="common.openMcAfeePurchase()" target="_blank"></a>
+									</p>
 								</div>
-								<vtr-widget-mcafee-state [statusList]="viewModel.mcafeestatusList | statusTransform"
-									[common]="common" [isOnline]="isOnline">
-								</vtr-widget-mcafee-state>
 							</div>
 						</div>
-						<div *ngIf="viewModel.mcafee.subscription === 'trialactive' || viewModel.mcafee.subscription === 'trialinactive'"
-							class="d-xl-none d-block">
-							<p class="subtitle sub-font"
-								*vtrTranslate="'security.antivirus.mcafee.trialContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
-								<a id="sa-av-link-subscribe"
-									href="javascript:void(0)"
-									(click)="common.openMcAfeePurchase()" target="_blank"></a>
-							</p>
-						</div>
-						<div *ngIf="viewModel.mcafee.subscription === 'licenseactive'" class="d-block d-xl-none">
-							<p class="subtitle sub-font"
-								*vtrTranslate="'security.antivirus.mcafee.subscribeContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
-								<a id="sa-av-link-subscribe"
-									href="javascript:void(0)"
-									(click)="common.openMcAfeePurchase()" target="_blank"></a>
-							</p>
-						</div>
 					</div>
+					<vtr-widget-antivirus></vtr-widget-antivirus>
 				</div>
-			</div>
-			<vtr-widget-antivirus></vtr-widget-antivirus>
-		</div>
-
-		<div *ngIf="viewModel?.currentPage ==='others'">
+			</ng-container>
+		</ng-template>
+		<ng-template #others>
 			<vtr-widget-offline-info *ngIf="!isOnline" [title]="'dashboard.offlineInfo.title' | translate"
 				[isSubtitleVisible]="false" [isButtonVisible]="false"></vtr-widget-offline-info>
 			<div class="subheader">
@@ -253,7 +257,7 @@
 					</vtr-container-collapsible>
 				</div>
 			</div>
-		</div>
+		</ng-template>
 	</left-content>
 
 	<right-content>
