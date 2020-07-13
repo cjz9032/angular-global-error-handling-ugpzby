@@ -155,9 +155,9 @@ export class AntivirusCommon {
 					if (response && response.result === false) {
 						this.antivirus.launch();
 					}
-					this.metrics.sendMetrics(metricsData);
 				}).catch(() => {
 					this.antivirus.launch();
+				}).finally(() => {
 					this.metrics.sendMetrics(metricsData);
 				});
 			}
