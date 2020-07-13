@@ -70,12 +70,28 @@
 					box-shadow: $high-contrast-white-focus-indicator;
 				}
 			}
+			&::after {
+				@media #{$black-on-white} {
+					background-image: none !important;
+				}
+				@media #{$white-on-black} {
+					background-image: none !important;
+				}
+			}
 		}
 
 		.custom-control-input:checked:hover ~ .custom-control-label {
 			&::before {
 				border-color: $green_darker;
 				background: $green_darker;
+			}
+			&::after {
+				@media #{$black-on-white} {
+					background-image: none !important;
+				}
+				@media #{$white-on-black} {
+					background-image: none !important;
+				}
 			}
 		}
 		.custom-control-input:checked ~ .custom-control-label {
@@ -109,10 +125,12 @@
 			}
 			&:hover::after {
 				@media #{$black-on-white} {
+					background-image: none !important;
 					@include high-contrast-white-background;
 				}
 
 				@media #{$white-on-black} {
+					background-image: none !important;
 					@include high-contrast-black-background;
 				}
 			}
@@ -130,10 +148,12 @@
 			&:active::after {
 				@media #{$black-on-white} {
 					background: $light;
+					background-image: none !important;
 				}
 
 				@media #{$white-on-black} {
 					background: $dark;
+					background-image: none !important;
 				}
 			}
 		}
@@ -203,10 +223,12 @@
 				border: $grey_darker solid 1px;
 
 				@media #{$black-on-white} {
+					opacity: 1;
 					@include high-contrast-white-background-disabled;
 					@include high-contrast-white-disabled-border;
 				}
 				@media #{$white-on-black} {
+					opacity: 1;
 					@include high-contrast-black-background-disabled;
 					@include high-contrast-black-disabled-border;
 				}
@@ -215,10 +237,14 @@
 				background-color: $grey_darker;
 				opacity: 0.4;
 				@media #{$black-on-white} {
+					opacity: 1;
 					background: $light;
+					background-image: none !important;
 				}
 				@media #{$white-on-black} {
+					opacity: 1;
 					background: $dark;
+					background-image: none !important;
 				}
 
 			}
