@@ -135,10 +135,10 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		this.checkIsDesktopOrAllInOneMachine();
 		this.settingsService.getPreferenceSettingsValue();
 		// VAN-5872, server switch feature
-		this.isServerSwitchEnabled = (typeof environment !== 'undefined' ? environment.isServerSwitchEnabled : true);
+		/*this.isServerSwitchEnabled = (typeof environment !== 'undefined' ? environment.isServerSwitchEnabled : true);
 		if (this.isServerSwitchEnabled) {
 			this.serverSwitchThis();
-		}
+		}*/
 
 		this.setRunVersionToRegistry();
 
@@ -333,7 +333,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	}
 
 	// VAN-5872, server switch feature
-	private serverSwitchThis() {
+	/*private serverSwitchThis() {
 		this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
 			if (params.has('serverswitch')) {
 				// retrive from localStorage
@@ -370,7 +370,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 				}
 			}
 		});
-	}
+	}*/
 
 	@HostListener('window:keyup', ['$event'])
 	onKeyUp(event: KeyboardEvent) {
@@ -396,7 +396,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		document.querySelector('meta[name="viewport"]').setAttribute('content', content);
 		// VAN-5872, server switch feature
 		// when app loads for the 1st time then remove ServerSwitch values
-		window.localStorage.removeItem(LocalStorageKey.ServerSwitchKey);
+		//window.localStorage.removeItem(LocalStorageKey.ServerSwitchKey);
 	}
 
 	@HostListener('window:keydown', ['$event'])

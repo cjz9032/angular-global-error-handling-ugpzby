@@ -32,7 +32,7 @@ export class PageNetworkboostComponent implements OnInit, OnDestroy {
 	cardContentPositionF: any = {};
 	dynamic_metricsItem: any = 'networkboost_cms_inner_content';
 	backId = 'vtr-gaming-networkboost-btn-back';
-	translateSubscrition: Subscription;
+	//translateSubscrition: Subscription;
 	notificationSubscrition: Subscription;
 	fetchSubscrition: Subscription;
 	fetchCacheSubscrition: Subscription;
@@ -49,9 +49,9 @@ export class PageNetworkboostComponent implements OnInit, OnDestroy {
 	) {
 		this.fetchCMSArticles();
 		// VAN-5872, server switch feature on language change
-		this.translateSubscrition = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+		/*this.translateSubscrition = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 			this.fetchCMSArticles();
-		});
+		});*/
 		this.isOnline = this.commonService.isOnline;
 	}
 
@@ -91,9 +91,9 @@ export class PageNetworkboostComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		if(this.translateSubscrition) {
+		/*if(this.translateSubscrition) {
 			this.translateSubscrition.unsubscribe();
-		}
+		}*/
 		
 		if(this.notificationSubscrition) {
 			this.notificationSubscrition.unsubscribe();

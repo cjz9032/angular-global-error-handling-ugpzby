@@ -10,6 +10,7 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { DeviceService } from 'src/app/services/device/device.service';
+import { Subscription } from 'rxjs/internal/Subscription';
 
 @Component({
 	selector: 'vtr-page-autoclose',
@@ -20,6 +21,8 @@ export class PageAutocloseComponent implements OnInit {
 	public showTurnOnModal = false;
 	public showAppsModal = false;
 	public autoCloseAppList: any;
+	private cmsSubscription: Subscription;
+
 	// Toggle status
 	isOnline = true;
 	toggleStatus: boolean = this.gamingAutoCloseService.getAutoCloseStatusCache() || false;
@@ -44,9 +47,9 @@ export class PageAutocloseComponent implements OnInit {
 	) {
 		this.fetchCMSArticles();
 		// VAN-5872, server switch feature on language change
-		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+		/*this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 			this.fetchCMSArticles();
-		});
+		});*/
 		this.isOnline = this.commonService.isOnline;
 	}
 
@@ -200,7 +203,7 @@ export class PageAutocloseComponent implements OnInit {
 		const queryOptions = {
 			Page: 'auto-close'
 		};
-		this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
+		this.cmsSubscription = this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
 			const cardContentPositionC = this.cmsService.getOneCMSContent(
 				response,
 				'half-width-title-description-link-image',
@@ -241,5 +244,9 @@ export class PageAutocloseComponent implements OnInit {
 		} catch (err) {
 			this.loggerService.error('page-autoclose.component.getAutoCloseStatus', 'ERROR in getAutoCloseStatus()-->' + err);
 		}
+	}
+
+	ngOnDestroy() {
+		if(this.cmsSubscription) this.cmsSubscription.unsubscribe();
 	}
 }

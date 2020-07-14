@@ -27,8 +27,10 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	metrics: any;
 	dynamic_metricsItem: any = 'lighting_profile_cms_inner_content';
 	public ledlayoutversion: any;
-	langSubscription: Subscription;
+	//langSubscription: Subscription;
 	notificationSubscription: Subscription;
+
+	private cmsSubscription: Subscription;
 
 	constructor(
 		private titleService: Title,
@@ -49,9 +51,9 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 
 		this.fetchCMSArticles();
 		// VAN-5872, server switch feature on language change
-		this.langSubscription = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+		/*this.langSubscription = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 			this.fetchCMSArticles();
-		});
+		});*/
 		this.isOnline = this.commonService.isOnline;
 	}
 
@@ -71,9 +73,10 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
 		}
-		if (this.langSubscription) {
+		/*if (this.langSubscription) {
 			this.langSubscription.unsubscribe();
-		}
+		}*/
+		if(this.cmsSubscription) this.cmsSubscription.unsubscribe();
 	}
 
 	onNotification(notification: AppNotification) {
@@ -95,7 +98,7 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 		const queryOptions = {
 			Page: 'lighting'
 		};
-		this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
+		this.cmsSubscription = this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
 			const cardContentPositionC = this.cmsService.getOneCMSContent(
 				response,
 				'half-width-title-description-link-image',

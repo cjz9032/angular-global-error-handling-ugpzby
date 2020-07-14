@@ -82,7 +82,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	isDesktopMachine = true;
 	machineType: number;
 	private notificationSubscription: Subscription;
-	private translateSubscription: Subscription;
+	//private translateSubscription: Subscription;
 	private cmsSubscription: Subscription;
 	public isOnline: any = true;
 
@@ -114,9 +114,9 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 
 		this.fetchCMSArticles();
 		// VAN-5872, server switch feature on language change
-		this.translateSubscription = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+		/*this.translateSubscription = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 			this.fetchCMSArticles();
-		});
+		});*/
 		this.qaService.setCurrentLangTranslations();
 		this.initInputAccessories();
 
@@ -310,7 +310,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		if (this.routerSubscription) {
 			this.routerSubscription.unsubscribe();
 		}
-		if (this.translateSubscription) this.translateSubscription.unsubscribe();
+		//if (this.translateSubscription) this.translateSubscription.unsubscribe();
 		if(this.cmsSubscription) this.cmsSubscription.unsubscribe();
 
 	}
