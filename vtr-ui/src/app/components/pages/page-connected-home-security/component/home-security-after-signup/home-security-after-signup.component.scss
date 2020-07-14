@@ -2,18 +2,35 @@
 .vtr-home-security-after-signup {
 	color: $shade_blue;
 	font-size: 1.4rem;
+
 	.content-container {
 		box-shadow: $drop_shadow;
 		border-radius: $border_radius;
 		background-color: $light;
 		padding: 1.5rem;
 		width: 100%;
+
+		@media #{$black-on-white} {
+			@include black-border;
+		}
+
+		@media #{$white-on-black} {
+			@include white-border;
+		}
+
 		.subscription-title {
-			font-size:$fontsize_xl;
+			font-size: $fontsize_xl;
 			font-weight: $weight_600;
 		}
 		.coronet-logo {
 			width: 10rem;
+
+			@media #{$black-on-white} {
+				filter: grayscale(100%) contrast(1000%);
+			}
+			@media #{$white-on-black} {
+				filter: grayscale(100%) invert(1) contrast(1000%);
+			}
 		}
 		.detail-container {
 			color: $shade_blue;

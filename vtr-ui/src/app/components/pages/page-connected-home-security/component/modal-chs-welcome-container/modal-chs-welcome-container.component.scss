@@ -1,17 +1,24 @@
-@import '../../../../../app.theme.scss';
+@import "../../../../../app.theme.scss";
 
 .vtr-modal-chs-welcome-container {
-    .page {
-        margin: 0 4rem;
-        .page-img {
-            img {
+	@media #{$black-on-white} {
+		@include black-border;
+	}
+	@media #{$white-on-black} {
+		@include white-border;
+	}
+
+	.page {
+		margin: 0 4rem;
+		.page-img {
+			img {
 				width: 100%;
-            }
-        }
-        .page-title {
+			}
+		}
+		.page-title {
 			font-size: $fontsize_lg;
 			font-weight: bold;
-            color: $dark;
+			color: $dark;
 			margin-bottom: 2rem;
 		}
 		.page-subtitle {
@@ -19,18 +26,17 @@
 			font-weight: bold;
 			color: $dark;
 		}
-        .page-desc {
-            font-size: $fontsize_xs;
+		.page-desc {
+			font-size: $fontsize_xs;
 			color: $shade_blue;
 			font-weight: $weight_light;
-        }
-        .chs-logo {
-            border-bottom: 0.1rem solid $shade_extralight;
-            img {
-                height: 7rem;
-            }
 		}
-
+		.chs-logo {
+			border-bottom: 0.1rem solid $shade_extralight;
+			img {
+				height: 7rem;
+			}
+		}
 	}
 	.page-one {
 		margin: 0;
@@ -40,40 +46,62 @@
 			}
 		}
 	}
-    .page-two {
+	.page-two {
 		border-bottom: none;
 		margin: 2rem;
-        color: $dark;
-        .description {
+		color: $dark;
+		.description {
 			font-size: $fontsize_lg;
 			font-weight: $weight_regular;
-            letter-spacing: 0;
+			letter-spacing: 0;
 		}
 		.sub-desc {
 			font-size: 1.5rem;
 			font-weight: $weight_regular;
 			margin-bottom: 4rem;
 		}
-        .modal-button {
+		.modal-button {
 			width: 20rem;
-            font-size: $fontsize_xs;
+			font-size: $fontsize_xs;
 			padding: 1rem;
 			text-align: center;
 			border: none;
 			letter-spacing: 0;
+			@include ui-button-high-contrast-white;
+			@include ui-button-high-contrast-black;
+			@include high-contrast-adjust;
+			&:focus {
+				@include outline-blue;
+			}
 		}
 		.allow-btn {
 			background-color: $blue_lightest;
 			color: $light;
 			margin-right: 2rem;
+
+			@media #{$black-on-white} {
+				background-color: $high-contrast-white-dark-magenta;
+			}
+			@media #{$white-on-black} {
+				background-color: $high-contrast-black-cyan;
+			}
 		}
 		.cancel-btn {
 			background-color: $gray;
+
+			@media #{$black-on-white} {
+				background-color: $light;
+				color: $dark;
+			}
+			@media #{$white-on-black} {
+				background-color: $light;
+				color: $dark;
+			}
 		}
-    }
-    .page-indicator {
-        margin-bottom: 4rem;
-        margin-top: 3rem;
+	}
+	.page-indicator {
+		margin-bottom: 4rem;
+		margin-top: 3rem;
 		::ng-deep {
 			.button-box {
 				.button {

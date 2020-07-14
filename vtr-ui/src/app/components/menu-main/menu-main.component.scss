@@ -220,12 +220,14 @@
 							border-bottom: $menu_hover solid 0.5rem;
 
 							@media #{$black-on-white} {
-								border-bottom: $high-contrast-white-dark-magenta solid 0.5rem;
+								border-bottom: $high-contrast-white-dark-magenta
+									solid 0.5rem;
 								@include high-contrast-white-text-color;
 							}
 
 							@media #{$white-on-black} {
-								border-bottom: $high-contrast-black-cyan solid 0.5rem;
+								border-bottom: $high-contrast-black-cyan solid
+									0.5rem;
 								@include high-contrast-black-text-color;
 							}
 
@@ -278,7 +280,8 @@
 						&:focus {
 							outline: 0;
 						}
-						&:hover, &:focus {
+						&:hover,
+						&:focus {
 							@media #{$black-on-white} {
 								@include high-contrast-white-text-color;
 							}
@@ -299,18 +302,31 @@
 
 						@media #{$black-on-white} {
 							background: $light;
-							box-shadow: none;
-							filter: drop-shadow(0 0 0.1rem $dark);
+							@include black-border;
 						}
 
 						@media #{$white-on-black} {
 							background: $dark;
-							box-shadow: none;
-							filter: drop-shadow(0 0 0.1rem $light);
+							@include white-border;
 						}
 
 						//left: 50%;
 						// min-width: 22.5rem;
+
+						&::before {
+							position: absolute;
+							top: -0.9rem;
+							left: calc(50% - 0.9rem);
+							display: inline-block;
+							width: 1.8rem;
+							height: 1.8rem;
+							background: $light;
+							border-radius: 0.2rem;
+							border-left: 0.1rem solid transparent;
+							border-top: 0.1rem solid transparent;
+							transform: rotate(45deg);
+							content: "";
+						}
 
 						&.user {
 							margin-left: -1.5rem;
@@ -323,6 +339,10 @@
 							right: 0rem;
 							padding-right: 16px;
 							transform: translateX(0px);
+
+							&::before {
+								display: none;
+							}
 						}
 
 						fa-icon {
@@ -407,8 +427,14 @@
 									margin-top: -0.3rem;
 									width: 0.8rem;
 									height: 0.8rem;
-									background: #db221f;
+									background: #db221f;	
 									border-radius: 50%;
+									@media #{$black-on-white} {
+										@include high-contrast-white-background;
+									}
+									@media #{$white-on-black} {
+										@include high-contrast-black-background;
+									}
 								}
 							}
 						}
@@ -436,7 +462,7 @@
 								transform: rotate(45deg);
 								right: 1.2rem;
 								top: 3.8rem;
-
+								// @include high-contrast-color-reversal;
 								@media #{$black-on-white} {
 									@include dropdown-arrow-blue-white;
 								}
@@ -466,7 +492,12 @@
 								}
 							}
 
-							&:hover::after, &:hover::before, &.active::after, &.active::before, &:focus::after, &:focus::before {
+							&:hover::after,
+							&:hover::before,
+							&.active::after,
+							&.active::before,
+							&:focus::after,
+							&:focus::before {
 								@media #{$black-on-white} {
 									@include high-contrast-white-background;
 								}
@@ -475,7 +506,6 @@
 									@include high-contrast-black-background;
 								}
 							}
-
 
 							&.user {
 								padding-right: 5.2rem;
@@ -526,7 +556,13 @@
 				.navbar-nav {
 					max-height: calc(100vh - #{$menu_height});
 					overflow-y: auto;
+					@media #{$black-on-white} {
+						@include black-border;
+					}
 
+					@media #{$white-on-black} {
+						@include white-border;
+					}
 					.nav-item {
 						padding: 0 0 0.5rem 0;
 
@@ -551,24 +587,26 @@
 								border-left: $menu_hover solid 0.5rem;
 
 								@media #{$black-on-white} {
-									border-left: 0.5rem solid $high-contrast-white-dark-magenta;
+									border-left: 0.5rem solid
+										$high-contrast-white-dark-magenta;
 								}
 
 								@media #{$white-on-black} {
-									border-left: 0.5rem solid $high-contrast-black-cyan;
+									border-left: 0.5rem solid
+										$high-contrast-black-cyan;
 								}
 
 								.fa-icon {
 									color: $main;
 								}
 							}
-							&:focus{
+							&:focus {
 								outline: 0;
 								~ .outline {
 									height: 3rem;
 									border: 0.1rem solid $light;
 									top: 0.5rem;
-									z-index: 0;
+									z-index: 1;
 								}
 							}
 						}
@@ -612,26 +650,24 @@
 								}
 							}
 
-							fa-icon {
-								&.menu-pointer {
-									display: none;
-								}
+							&::before {
+								display: none;
 							}
+
 							@media #{$black-on-white} {
-								background: transparent;
-								filter: none;
+								@include high-contrast-background-transparent;
+								border: none;
 							}
 
 							@media #{$white-on-black} {
-								background: transparent;
-								filter: none;
+								@include high-contrast-background-transparent;
+								border: none;
 							}
 						}
 						&:nth-last-child(5) {
 							.nav-link {
 								max-width: none;
 							}
-
 						}
 					}
 				}
@@ -742,7 +778,6 @@
 }
 */
 
-
 .nav-link:focus ~ .outline {
 	position: absolute;
 	width: 100%;
@@ -764,6 +799,6 @@
 	}
 }
 
-.nav-link.active ~ .outline  {
+.nav-link.active ~ .outline {
 	display: none;
 }
