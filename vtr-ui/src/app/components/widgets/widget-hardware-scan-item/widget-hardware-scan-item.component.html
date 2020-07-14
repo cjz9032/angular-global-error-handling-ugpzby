@@ -75,22 +75,6 @@
 		</div>
 
 		<div class="row col">
-			<!-- Result code information -->
-			<div class="result-code" *ngIf="item.resultCode && (item.expanded || item.details)">
-				<p class="title">{{resultCodeText}}:</p>
-				<p class="subtitle">{{item.resultCode}}</p>
-				<a *ngIf="item.information" href="javascript:void(0)" (click)="getInformation(item.information)"
-					[attr.aria-label]="item.module + 'result-code-tooltip, which reads:' + item.information"
-					class="result-code-icon"
-					triggers="click"
-					[ngbTooltip]="tooltipRefModule"
-					container="vtr-root"
-					tooltipClass="vtr-tooltip"
-					placement="auto">
-					<fa-icon [icon]="['far', 'question-circle']"></fa-icon>
-				</a>
-			</div>
-
 			<!-- Test List with collapsed running test-->
 			<div class="test-list col" *ngIf="isScanExecute && !isEnableViewResults">
 				<vtr-ui-hardware-list
@@ -106,6 +90,22 @@
 					[items]="item.listTest"
 					[template]="2">
 				</vtr-ui-hardware-list>
+			</div>
+
+			<!-- Result code information -->
+			<div class="result-code" *ngIf="item.resultCode && (item.expanded || item.details)">
+				<p class="title">{{resultCodeText}}:</p>
+				<p class="subtitle">{{item.resultCode}}</p>
+				<a *ngIf="item.information" href="javascript:void(0)" (click)="getInformation(item.information)"
+					[attr.aria-label]="item.module + 'result-code-tooltip, which reads:' + item.information"
+					class="result-code-icon"
+					triggers="click"
+					[ngbTooltip]="tooltipRefModule"
+					container="vtr-root"
+					tooltipClass="vtr-tooltip"
+					placement="auto">
+					<fa-icon [icon]="['far', 'question-circle']"></fa-icon>
+				</a>
 			</div>
 		</div>
 		<hr>
