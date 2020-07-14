@@ -170,8 +170,6 @@
 							id="menu-main-nav-lnk-dropdown-toggle-{{item.id}}"
 							class="dropdown-menu"
 							attr.aria-labelledby="menu-main-nav-lnk-dropdown-toggle-{{item.id}}">
-							<fa-icon [icon]="['fas', 'square']"
-								class="menu-pointer"></fa-icon>
 							<span *ngFor="let subitem of item.subitems; let ii=index">
 								<a ngbDropdownItem
 									*ngIf="subitem.externallink && showItem(subitem)"

@@ -1,6 +1,14 @@
 @import "../../../app.theme";
 
 .vtr-home-security {
+	@media #{$black-on-white} {
+		@include black-border;
+	}
+
+	@media #{$white-on-black} {
+		@include white-border;
+	}
+
 	.header {
 		.heading {
 			color: $shade_blue;
@@ -14,7 +22,7 @@
 		font-size: 1.4rem;
 		font-weight: $weight_regular;
 		padding: 1rem 1rem 1rem 0rem;
-		a{
+		a {
 			text-decoration: underline;
 		}
 	}
@@ -92,15 +100,18 @@
 		height: auto;
 		width: 50%;
 		float: right;
-		@media #{$mediaquery_X4} { // 768~0
+		@media #{$mediaquery_X4} {
+			// 768~0
 			float: none;
 			width: 100%;
 		}
-		@media #{$mediaquery_X46} { // 992-768
+		@media #{$mediaquery_X46} {
+			// 992-768
 			float: right;
 			width: 50%;
 		}
-		@media #{$mediaquery_X45} { // 1200-992
+		@media #{$mediaquery_X45} {
+			// 1200-992
 			float: none;
 			width: 100%;
 		}
