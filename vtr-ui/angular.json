@@ -17,6 +17,14 @@
 				"build": {
 					"builder": "@angular-builders/custom-webpack:browser",
 					"options": {
+						"allowedCommonJsDependencies": [
+							"rxjs",
+							"lodash",
+							"inversify",
+							"uuid",
+							"crypto-js",
+							"hammerjs"
+						 ],
 						"customWebpackConfig": {
 							"path": "./custom-webpack.config.js"
 						},
