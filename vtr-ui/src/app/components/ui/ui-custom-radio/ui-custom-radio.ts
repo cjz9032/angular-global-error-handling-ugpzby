@@ -1,8 +1,9 @@
-import { ElementRef, Input, ViewChild, AfterViewInit, OnInit, OnChanges, Component } from '@angular/core';
+import { ElementRef, Input, ViewChild, AfterViewInit, OnInit, OnChanges, Component, Directive } from '@angular/core';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { KeyCode } from 'src/app/enums/key-code.enum';
 
+@Directive()
 export class UICustomRadio implements OnInit, AfterViewInit, OnChanges {
 	static readonly ROLE_RADIO_GROUP = 'radiogroup';
 	static readonly ROLE = 'role';

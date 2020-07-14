@@ -29,7 +29,7 @@ import { WebpackTranslateLoader } from '../i18n/loader/webpack-translate-loader.
 	]
 })
 export class TranslationModule {
-	static forChild(): ModuleWithProviders {
+	static forChild(): ModuleWithProviders<TranslationModule> {
 		return {
 			ngModule: TranslationModule
 		};
