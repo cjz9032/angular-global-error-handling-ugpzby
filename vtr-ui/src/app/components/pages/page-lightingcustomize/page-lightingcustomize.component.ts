@@ -27,7 +27,6 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	metrics: any;
 	dynamic_metricsItem: any = 'lighting_profile_cms_inner_content';
 	public ledlayoutversion: any;
-	//langSubscription: Subscription;
 	notificationSubscription: Subscription;
 
 	private cmsSubscription: Subscription;
@@ -50,10 +49,6 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 		this.titleService.setTitle('gaming.common.narrator.pageTitle.lighting');
 
 		this.fetchCMSArticles();
-		// VAN-5872, server switch feature on language change
-		/*this.langSubscription = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-			this.fetchCMSArticles();
-		});*/
 		this.isOnline = this.commonService.isOnline;
 	}
 
@@ -73,9 +68,7 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
 		}
-		/*if (this.langSubscription) {
-			this.langSubscription.unsubscribe();
-		}*/
+
 		if(this.cmsSubscription) this.cmsSubscription.unsubscribe();
 	}
 

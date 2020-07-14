@@ -133,10 +133,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		private metrics: CommonMetricsService
 	) {
 		this.jumpToSettingsTitle = this.translate.instant('device.smartAssist.jumpTo.title');
-		// VAN-5872, server switch feature on language change
-		/*this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-			this.fetchCMSArticles();
-		});*/
 
 		this.fetchCMSArticles();
 

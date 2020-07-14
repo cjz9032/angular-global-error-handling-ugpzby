@@ -134,11 +134,6 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 
 		this.checkIsDesktopOrAllInOneMachine();
 		this.settingsService.getPreferenceSettingsValue();
-		// VAN-5872, server switch feature
-		/*this.isServerSwitchEnabled = (typeof environment !== 'undefined' ? environment.isServerSwitchEnabled : true);
-		if (this.isServerSwitchEnabled) {
-			this.serverSwitchThis();
-		}*/
 
 		this.setRunVersionToRegistry();
 
@@ -332,46 +327,6 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		this.commonService.sendNotification(isOnline ? NetworkStatus.Online : NetworkStatus.Offline, { isOnline });
 	}
 
-	// VAN-5872, server switch feature
-	/*private serverSwitchThis() {
-		this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
-			if (params.has('serverswitch')) {
-				// retrive from localStorage
-				const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
-				if (serverSwitchLocalData) {
-					// force cms service to use this server parms
-					serverSwitchLocalData.forceit = true;
-					this.commonService.setLocalStorageValue(LocalStorageKey.ServerSwitchKey, serverSwitchLocalData);
-
-					const langCode = serverSwitchLocalData.language.Value.toLowerCase();
-					const allLangs = this.translate.getLangs();
-					const currentLang = this.translate.currentLang
-						? this.translate.currentLang.toLowerCase()
-						: this.translate.defaultLang.toLowerCase();
-
-					// change language only when countrycode or language code changes
-					if (allLangs.indexOf(langCode) >= 0 && currentLang !== langCode.toLowerCase()) {
-						// this.translate.resetLang('ar');
-						// this.languageService.useLanguage(langCode);
-						if (langCode.toLowerCase() !== this.translate.defaultLang.toLowerCase()) {
-							this.translate.reloadLang(langCode);
-						}
-
-						this.translate.use(langCode).subscribe(
-							(data) => {
-								this.setFontFamilyByLocale(langCode);
-								this.logger.info('@sahinul trans use NEXT');
-							},
-							(error) => this.logger.info('@sahinul server switch error ', error),
-							() => {
-							}
-						);
-					}
-				}
-			}
-		});
-	}*/
-
 	@HostListener('window:keyup', ['$event'])
 	onKeyUp(event: KeyboardEvent) {
 		try {
@@ -394,9 +349,6 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		const scale = 1 / (window.devicePixelRatio || 1);
 		const content = `shrink-to-fit=no, width=device-width, initial-scale=${scale}, minimum-scale=${scale}`;
 		document.querySelector('meta[name="viewport"]').setAttribute('content', content);
-		// VAN-5872, server switch feature
-		// when app loads for the 1st time then remove ServerSwitch values
-		//window.localStorage.removeItem(LocalStorageKey.ServerSwitchKey);
 	}
 
 	@HostListener('window:keydown', ['$event'])
