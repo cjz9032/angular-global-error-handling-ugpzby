@@ -1,6 +1,6 @@
 import { Component, OnInit, NgZone, OnDestroy, HostListener } from '@angular/core';
 import { CommonService } from 'src/app/services/common/common.service';
-import { Subscription, EMPTY } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { HardwareScanProgress } from 'src/app/enums/hw-scan-progress.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NgbModal, NgbModalRef, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
@@ -15,7 +15,6 @@ import { ModalScheduleScanCollisionComponent } from '../../../../modal/modal-sch
 import { HardwareScanService } from '../../../../../services/hardware-scan/hardware-scan.service';
 import { HardwareScanResultService } from '../../../../../services/hardware-scan/hardware-scan-result.service';
 import { PreviousResultService } from '../../../../../services/hardware-scan/previous-result.service';
-import { LoggerService } from 'src/app/services/logger/logger.service';
 import { VantageShellService } from '../../../../../services/vantage-shell/vantage-shell.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { ModalWaitComponent } from '../../../../modal/modal-wait/modal-wait.component';
@@ -98,7 +97,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		private modalService: NgbModal,
 		config: NgbModalConfig,
 		private translate: TranslateService,
-		private logger: LoggerService,
 		private shellService: VantageShellService,
 		private timerService: TimerService,
 		private lenovoSupportService: LenovoSupportService
@@ -260,14 +258,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private getFinalResultCode() {
-		if (this.hardwareScanService) {
-			this.hardwareScanService.getFinalResultCode();
-		}
-	}
-
 	public onCancelScan() {
-		let isCancelingRBS = this.isRecoverExecuting();
+		const isCancelingRBS = this.isRecoverExecuting();
 
 		this.hardwareScanService.setCurrentTaskStep(TaskStep.Cancel);
 
@@ -284,7 +276,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 		// If the scan/rbs process has finished and the cancelation modal is still opened,
 		// alert the user that the process cannot be canceled anymore.
-		let scanFinished = this.hardwareScanService.isWorkDone().subscribe((done) => {
+		const scanFinished = this.hardwareScanService.isWorkDone().subscribe((done) => {
 			modalCancel.componentInstance.showProcessFinishedMessage();
 		});
 
@@ -296,9 +288,9 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				let cancelWatcher;
 
 				if (!isCancelingRBS) {
-					let cancelWatcherDelay = 3000;
-					let self = this;
-					let checkCliRunning = function() {
+					const cancelWatcherDelay = 3000;
+					const self = this;
+					const checkCliRunning = function() {
 						// Workaround for RTC changing date/time problem!
 						// NOTICE: Remove this code piece as soon as this problem is fixed
 						cancelWatcher = setInterval(function watch() {

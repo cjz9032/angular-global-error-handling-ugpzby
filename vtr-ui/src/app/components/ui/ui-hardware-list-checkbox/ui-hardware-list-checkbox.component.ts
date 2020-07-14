@@ -6,7 +6,7 @@ import { HardwareScanService } from '../../../services/hardware-scan/hardware-sc
 	templateUrl: './ui-hardware-list-checkbox.component.html',
 	styleUrls: ['./ui-hardware-list-checkbox.component.scss']
 })
-export class UiHardwareListCheckboxComponent implements OnInit {
+export class UiHardwareListCheckboxComponent implements OnInit, OnDestroy {
 
 	public select = this.translate.instant('hardwareScan.select');
 	public deselect = this.translate.instant('hardwareScan.deselect');

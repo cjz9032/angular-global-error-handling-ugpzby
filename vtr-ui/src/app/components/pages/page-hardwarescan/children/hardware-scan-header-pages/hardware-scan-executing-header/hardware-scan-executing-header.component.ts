@@ -1,6 +1,5 @@
-import { Component, OnInit, Input, NgZone, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
-import { HardwareScanService } from '../../../../../../services/hardware-scan/hardware-scan.service';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+	import { HardwareScanService } from '../../../../../../services/hardware-scan/hardware-scan.service';
 
 @Component({
   selector: 'vtr-hardware-scan-executing-header',

@@ -7,7 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 
 export class HardwareScanWaitSelectHeaderComponent implements OnInit {
-	//Input
+	// Input
 	@Input() disableButtonScan: boolean;
 
 	// Emitters

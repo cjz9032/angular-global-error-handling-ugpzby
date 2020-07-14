@@ -1,7 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HardwareScanService } from '../../../services/hardware-scan/hardware-scan.service';
 import { PreviousResultService } from '../../../services/hardware-scan/previous-result.service';
-import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.enum';
 
 @Component({
 	selector: 'vtr-widget-hardware-scan-status',

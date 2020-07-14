@@ -33,7 +33,7 @@ export class HardwareViewResultsComponent implements OnInit, OnDestroy {
 		// Get the view result information
 		this.item = this.previousResultService.getViewResultItems();
 
-		// Validates if the view result information has failured tests and update this value 
+		// Validates if the view result information has failured tests and update this value
 		this.previousResultService.updateLastFailuredTest(this.item.items);
 
 		// Sets the Header with the type "View Results"

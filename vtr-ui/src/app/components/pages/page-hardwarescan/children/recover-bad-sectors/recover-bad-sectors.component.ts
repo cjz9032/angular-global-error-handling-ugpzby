@@ -80,9 +80,9 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 				windowClass: 'hardware-scan-modal-size'
 			});
 
-			modal.componentInstance.ItemParent = "HardwareScan.ConfirmRecoverBadSectors";
-			modal.componentInstance.CancelItemName = "ConfirmRecoverBadSectors.Close";
-			modal.componentInstance.ConfirmItemName = "ConfirmRecoverBadSectors.Confirm";
+			modal.componentInstance.ItemParent = 'HardwareScan.ConfirmRecoverBadSectors';
+			modal.componentInstance.CancelItemName = 'ConfirmRecoverBadSectors.Close';
+			modal.componentInstance.ConfirmItemName = 'ConfirmRecoverBadSectors.Confirm';
 
 			modal.result.then((result) => {
 				const devicesSelected = this.devices.filter(device => device.isSelected);
@@ -100,7 +100,7 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 			// This fix avoids the invisible popup when the screen is set to 500x500 size and the time to render the modal is not enough.
 			// The translate(0px, 0px) was needed to rebuild the modal and problem doesn't occur anymore.
 			setTimeout(() => {
-				(document.querySelector('.modal.show .modal-dialog') as HTMLElement).style.transform = "translate(0px, 0px)";
+				(document.querySelector('.modal.show .modal-dialog') as HTMLElement).style.transform = 'translate(0px, 0px)';
 			}, 1);
 		} else {
 			this.errorMessage = this.translate.instant('hardwareScan.errorDeviceChoose');
@@ -108,9 +108,9 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 	}
 
 	public getItemsToRecoverBadSectors() {
-        const devices = this.hardwareScanService.getDevicesToRecoverBadSectors();
-        this.buildDevicesRecoverList(devices.groupList);
-    }
+		const devices = this.hardwareScanService.getDevicesToRecoverBadSectors();
+		this.buildDevicesRecoverList(devices.groupList);
+	}
 
 	private buildDevicesRecoverList(groupList: any) {
 		const devices = [];

@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonService } from 'src/app/services/common/common.service';
-import { CMSService } from 'src/app/services/cms/cms.service';
 import { Subscription } from 'rxjs';
 import { HardwareScanProgress } from 'src/app/enums/hw-scan-progress.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
@@ -34,7 +33,6 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 	constructor(
 		public deviceService: DeviceService,
 		private commonService: CommonService,
-		private cmsService: CMSService,
 		private hardwareScanService: HardwareScanService,
 		config: NgbModalConfig,
 		private translate: TranslateService,
@@ -176,7 +174,7 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 
 	private onNotification(notification: AppNotification) {
 		if (notification) {
-			const { type, payload } = notification;
+			const { type } = notification;
 			switch (type) {
 				case NetworkStatus.Online:
 					this.hardwareScanSupportCard.Title = this.translate.instant('hardwareScan.support.title');
