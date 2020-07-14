@@ -216,25 +216,11 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 					font-size: 4.5rem;
 					color: $shade_blue;
 					top: 1.5rem;
-					@media #{$black-on-white} {
-						@include high-contrast-white-text-color;
-					}
-					@media #{$white-on-black} {
-						@include high-contrast-black-text-color;
-					}
-					@include high-contrast-adjust;
 
 					.percentage-symbol {
 						position: relative;
 						font-size: $fontsize_xs2;
 						left: -1.2rem;
-						@media #{$black-on-white} {
-							@include high-contrast-white-text-color;
-						}
-						@media #{$white-on-black} {
-							@include high-contrast-black-text-color;
-						}
-						@include high-contrast-adjust;
 					}
 				}
 			}
@@ -253,13 +239,6 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 				@extend .base-remaining-text;
 				bottom: 19%;
 				color: $shade_blue;
-				@media #{$black-on-white} {
-					@include high-contrast-white-text-color;
-				}
-				@media #{$white-on-black} {
-					@include high-contrast-black-text-color;
-				}
-				@include high-contrast-adjust;
 			}
 
 			.remaining-text {
@@ -274,13 +253,6 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 				// @media #{$mediaquery_23} {
 				// 	font-size: 1.5rem;
 				// }
-				@media #{$black-on-white} {
-					@include high-contrast-white-text-color;
-				}
-				@media #{$white-on-black} {
-					@include high-contrast-black-text-color;
-				}
-				@include high-contrast-adjust;
 			}
 		}
 		.detail-battery {
