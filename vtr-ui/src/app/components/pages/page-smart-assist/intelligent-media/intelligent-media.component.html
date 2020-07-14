@@ -29,12 +29,16 @@
 				</li>
 			</ul>
 
-			<ul class="list-group list-group-flush superResolution-group" role="list" id="intelligent-media-superResolution" *ngIf="superResolutionAvailable">
-				<li role="listitem">
-					<div class="border-top common-li-padding" id="splitLine"
+			<ul class="list-group list-group-flush superResolution-group"
+				role="list"
+				id="intelligent-media-superResolution"
+				*ngIf="superResolutionAvailable">
+				<li role="listitem"
+					id="intelligent-media-available">
+					<div class="border-top common-li-padding"
+						id="splitLine"
 						*ngIf="intelligentMediaAvailable"></div>
-					<vtr-ui-row-switch
-						[switchId]="'video-resolution-upscaling.toggle-button'"
+					<vtr-ui-row-switch [switchId]="'video-resolution-upscaling.toggle-button'"
 						[title]="'device.smartAssist.superResolution.title' | translate"
 						componentName="superResolutionSwitch"
 						[isLastChild]="true"
@@ -49,23 +53,29 @@
 						[showLoaderState]="isSRLoading">
 					</vtr-ui-row-switch>
 
-					<div id = "sr-describe-div" class="sr-describe-div">
-						<p id="sr-describe-one" role="text">{{'device.smartAssist.superResolution.desc1' | translate}}</p>
-						<p id="sr-describe-two" role="text">{{'device.smartAssist.superResolution.desc2' | translate}}</p>
+					<div id="sr-describe-div"
+						class="sr-describe-div">
+						<p id="sr-describe-one"
+							role="text">{{'device.smartAssist.superResolution.desc1' | translate}}</p>
+						<p id="sr-describe-two"
+							role="text">{{'device.smartAssist.superResolution.desc2' | translate}}</p>
 					</div>
 
-					<div class="superResolution-image" id="intelligent-media-superResolution-image">
+					<div class="superResolution-image"
+						id="intelligent-media-superResolution-image">
 						<img [src]="image"
 							class="image"
 							role="img"
 							attr.aria-label="{{'device.smartAssist.superResolution.title' | translate}}"
 							id="superResolution-image" />
-						<div class="superResolution-image-word" id="image-text-region">
+						<div class="superResolution-image-word"
+							id="image-text-region">
 							<div class="superResolution-image-before imageText"
 								role="text"
 								id="superResolution-image-before">
 								{{'device.smartAssist.superResolution.imageBefore' | translate}}</div>
-							<div class="superResolution-image-Arrow imageText" id="superResolution-image-arrow"> </div>
+							<div class="superResolution-image-Arrow imageText"
+								id="superResolution-image-arrow"> </div>
 							<div class="intelligent-security-image-after imageText"
 								role="text"
 								id="superResolution-image-after">
@@ -74,19 +84,25 @@
 						</div>
 					</div>
 
-					<div class="row" id="superResolution-description-region-row">
-						<div class="feature-note p-4" id="superResolution-description-region">
+					<div class="row"
+						id="superResolution-description-region-row">
+						<div class="feature-note p-4"
+							id="superResolution-description-region">
 							<label id="superResolution-note-description"
 								role="text">
 								{{'device.smartAssist.superResolution.note.description' | translate}}</label>
-							<div class="description-div" id="superResolution-description-region-ui-li">
-								<ul role="list" id="superResolution-description-ui">
-									<li role="listitem" id="superResolution-description-li-one">
+							<div class="description-div"
+								id="superResolution-description-region-ui-li">
+								<ul role="list"
+									id="superResolution-description-ui">
+									<li role="listitem"
+										id="superResolution-description-li-one">
 										<span id="superResolution-note-description-one"
 											role="text">
 											{{'device.smartAssist.superResolution.note.description1' | translate}}</span>
 									</li>
-									<li role="listitem" id="superResolution-description-li-two">
+									<li role="listitem"
+										id="superResolution-description-li-two">
 										<span id="superResolution-note-description-two"
 											role="text">
 											{{'device.smartAssist.superResolution.note.description2' | translate}}</span>

@@ -16,6 +16,7 @@
 						(click)="onToggleDropDown()"
 						(keydown.enter)="onToggleDropDown()">
 					<label [for]="id"
+						id="ui-time-picker-label"
 						attr.aria-label="{{label}}, {{hours[hour]}}, 'hours', {{minutes[minute]}}, 'minutes', {{amPms[amPm] | translate}}"
 						[attr.aria-expanded]="showDropDown"
 						#combo
@@ -137,6 +138,7 @@
 									</div>
 
 									<div class="am-pm highlight"
+										id="am-pm-highlight"
 										role="radiogroup"
 										aria-label="time list, select using arrow keys"
 										tabindex="0">
