@@ -11,7 +11,7 @@
 		border-radius: $border_radius;
 		box-shadow: $drop_shadow_gaming;
 		padding: 4rem;
-		background: url(~/assets/images/gaming/lightingImage@2x.png) center top no-repeat $gaming_dark;
+		background: url(/assets/images/gaming/lightingImage@2x.png) center top no-repeat $gaming_dark;
 		background-size: 100% auto;
 		padding-top: 18rem;
 		@media #{$high-contrast} {
@@ -26,7 +26,7 @@
 		}
 	}
 	.widget-container-notebook{
-		background: url(~/assets/images/gaming/lighting/lighting-ui-new/bg_note.png) center top no-repeat $gaming_dark;
+		background: url(/assets/images/gaming/lighting/lighting-ui-new/bg_note.png) center top no-repeat $gaming_dark;
 		background-size: 100% auto;
 	}
 	.lighting-porfile {
@@ -241,7 +241,7 @@
 					color: buttonText;
 				}
 				&:hover {
-					color: $white100;					
+					color: $white100;
 					.icon{
 						background:$white10;
 					}
@@ -270,11 +270,11 @@
 }
 ::ng-deep body.focus-enable{
 	.is-gaming {
-		.multi-state-toggle{		
+		.multi-state-toggle{
 			.inner-toggle{
 					input:checked:focus+label.gamingTextColor{
 							@include outline-blue-gaming;
-					}	
+					}
 				}
 		}
 	}

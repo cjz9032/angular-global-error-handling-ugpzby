@@ -77,7 +77,7 @@
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@angular-builders/custom-webpack": "9.0.0",
+    "@angular-builders/custom-webpack": "next",
     "@angular-devkit/build-angular": "~0.1000.2",
     "@angular-devkit/build-ng-packagr": "~0.1000.2",
     "@angular/cli": "~10.0.2",

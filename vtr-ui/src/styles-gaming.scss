@@ -2,12 +2,12 @@
 
 @font-face {
 	font-family: "gaming-icon";
-	src: url("~/assets/gaming-icons/gaming-icons.eot");
-	src: url("~/assets/gaming-icons/gaming-icons.eot?#iefix")
+	src: url("/assets/gaming-icons/gaming-icons.eot");
+	src: url("/assets/gaming-icons/gaming-icons.eot?#iefix")
 			format("embedded-opentype"),
-		url("~/assets/gaming-icons/gaming-icons.woff") format("woff"),
-		url("~/assets/gaming-icons/gaming-icons.ttf") format("truetype"),
-		url("~/assets/gaming-icons/gaming-icons.svg#gaming-icons") format("svg");
+		url("/assets/gaming-icons/gaming-icons.woff") format("woff"),
+		url("/assets/gaming-icons/gaming-icons.ttf") format("truetype"),
+		url("/assets/gaming-icons/gaming-icons.svg#gaming-icons") format("svg");
 	font-weight: normal;
 	font-style: normal;
 }
@@ -849,7 +849,7 @@
 				}
 				.btn-link{
 					color: $blueFill;
-				}				
+				}
 			}
 			&.subpage-device-settings-power {
 				.auto-set-checkbox.custom-checkbox-gaming {
@@ -1553,7 +1553,7 @@
 				width: calc((100vw - 160rem) / 2);
 				right: calc(((100vw - 160rem) / 2) * -1);
 				background: $gaming_rightbg;
-				//background-image: url("~/assets/images/gaming/GradientLine@1x.png");
+				//background-image: url("/assets/images/gaming/GradientLine@1x.png");
 				//background-repeat: repeat;
 				//background-size: 100% 100%;
 				z-index: 1;
@@ -1726,10 +1726,10 @@
 	.permission-note {
 		border-radius: $border_radius;
 		p {
-			font-size: $fontsize_xs;			
+			font-size: $fontsize_xs;
 			color: $gaming_lightest !important;
 			&.boldColor{
-				color:$gaming_lightest !important;	
+				color:$gaming_lightest !important;
 			}
 		}
 	}
@@ -2092,7 +2092,7 @@ body.focus-enable{
 					@include outline-blue-gaming;
 				}
 			}
-		}	
+		}
 		vtr-ui-header-warranty{
 			.dropdown-content{
 				.dropdown-btn {

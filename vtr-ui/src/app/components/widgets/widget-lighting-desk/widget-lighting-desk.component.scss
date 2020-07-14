@@ -6,9 +6,9 @@
     height: auto;
     .lighting-desk-content{
         background: $gaming_lighting_profile_bg;
-        background: url(~/assets/images/gaming/lighting/blueBG.png) left center no-repeat $gaming_lighting_profile_bg;
+        background: url(/assets/images/gaming/lighting/blueBG.png) left center no-repeat $gaming_lighting_profile_bg;
         background-size: contain;
-        border-radius: .4rem;   
+        border-radius: .4rem;
         padding: 2.4rem;
         box-shadow: 0 .8rem 1.6rem 0;
         @media #{$black-on-white} {
@@ -18,14 +18,14 @@
             border: 1px solid $highContrastGray;
         }
         @media #{$small-screen}{
-            background: url(~/assets/images/gaming/lighting/blueBG-horizontal.png) center top no-repeat $gaming_lighting_profile_bg;
+            background: url(/assets/images/gaming/lighting/blueBG-horizontal.png) center top no-repeat $gaming_lighting_profile_bg;
             background-size: 100% auto;
             .d-flex{
                 flex-direction: column;
             }
         }
         @media #{$below-large-screen}{
-            background: url(~/assets/images/gaming/lighting/blueBG-horizontal.png) center top no-repeat $gaming_lighting_profile_bg;
+            background: url(/assets/images/gaming/lighting/blueBG-horizontal.png) center top no-repeat $gaming_lighting_profile_bg;
             background-size: 100% auto;
             .d-flex{
                 flex-direction: column;
@@ -56,7 +56,7 @@
                 line-height: 40px;
                 cursor: pointer;
                 color: $gaming_white60;
-                float: left; 
+                float: left;
                 font-size: 0;
                 &:hover{
                     background: $white10;
@@ -64,7 +64,7 @@
                     border-radius: 50%;
                 }
                 &:active{
-                    transform: scale(0.96); 
+                    transform: scale(0.96);
                 }
                 span{
                     display: inline-block;
@@ -140,13 +140,13 @@
                          width: 100%;
                      }
                     svg{
-                        position: absolute; 
+                        position: absolute;
                         width: 100%;
                         top: 0;
                         left: 0;
                     }
                 }
-            
+
             }
             .lighting-desk-panel-rig{
                 width: 53%;
@@ -191,7 +191,7 @@
                                         font-size: 1.4rem !important;
                                     }
                                 }
-                            } 
+                            }
                         }
                         .lighting-panel-brightness{
                             width: 45%;
@@ -257,7 +257,7 @@
                 font-size: 1.4rem;
             }
         }
-    }  
+    }
 }
 ::ng-deep vtr-ui-lighting-profile-toggle{
     .multi-state-toggle{
@@ -286,13 +286,13 @@
 	.vtr-page-left-column {
 		.vtr-page-column-shift-up {
             overflow: visible !important;
-		}	
+		}
 	}
 }
 
 ::ng-deep body.focus-enable{
 	.is-gaming {
-		.ui-lighting-desk{		
+		.ui-lighting-desk{
 			.lighting-panel-select{
                 button:focus{
                     @include default-button-border;

@@ -32,8 +32,8 @@
 	// }
 
 	.battery-panel-background {
-		background-image: url(~/assets/images/battery/TOP.png),
-			url(~/assets/images/battery/BOTTOM.png);
+		background-image: url(/assets/images/battery/TOP.png),
+			url(/assets/images/battery/BOTTOM.png);
 	}
 
 	.container {
@@ -90,7 +90,7 @@
 				}
 			}
 			@media #{$black-on-white} {
-				border: 0.1rem $high-contrast-white-disabled;  
+				border: 0.1rem $high-contrast-white-disabled;
 				border-radius: 5rem;
 				padding-top: 25px;
 			}
@@ -100,7 +100,7 @@
 				padding-top: 25px;
 			}
 		}
-		
+
 
 		.feature-note {
 			background-color: $grey_lighter;
