@@ -32,6 +32,12 @@
 				@media #{$breakpoint_md} {
 					padding-bottom: 0rem;
 				}
+				@media #{$white-on-black} {
+					border-left: 0.1rem solid $light;
+				}
+				@media #{$black-on-white} {
+					border-left: 0.1rem solid $dark;
+				}
 			}
 			&.vtr-page-right-column {
 				padding-right: $padding_side;
@@ -68,6 +74,12 @@
 					@media #{$breakpoint_lg} {
 						margin-top:-4rem;
 					}
+				}
+				@media #{$white-on-black} {
+					border-right: 0.1rem solid $light;
+				}
+				@media #{$black-on-white} {
+					border-right: 0.1rem solid $dark;
 				}
 			}
 			.vtr-page-column-shift-up {

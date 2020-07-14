@@ -9,11 +9,9 @@
 		margin: 0 2rem 0.1rem;
 
 		@media #{$white-on-black} {
-			filter: drop-shadow(0 0 0.1rem $light);
 			border: 0.1rem solid transparent;
 		}
 		@media #{$black-on-white} {
-			filter: drop-shadow(0 0 0.1rem $dark);
 			border: 0.1rem solid transparent;
 		}
 
@@ -173,6 +171,24 @@
 				}
 				@media #{$white-on-black} {
 					color: $dark;
+				}
+				&::before, &::after {
+					@media #{$white-on-black} {
+						@include high-contrast-triangle;
+					}
+					@media #{$black-on-white} {
+						@include high-contrast-triangle;
+						border-bottom: 1.2rem solid $light;
+					}
+				}
+				&::before {
+					@media #{$white-on-black} {
+						@include high-contrast-triangle-bordered;
+					}
+					@media #{$black-on-white} {
+						@include high-contrast-triangle-bordered;
+						border-bottom: 1.2rem solid $dark;
+					}
 				}
 			}
 		}
