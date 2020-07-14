@@ -1,5 +1,12 @@
 @import "../../../app.theme.scss";
 .wifi-security-invitation-modal {
+	@media #{$black-on-white} {
+		@include black-border;
+	}
+	@media #{$white-on-black} {
+		@include white-border;
+	}
+
 	border-radius: $border_radius;
 	background: $light;
 	background-size: cover;
@@ -125,6 +132,14 @@
 			height: 20rem;
 			justify-content: center;
 			align-items: center;
+		}
+		.successIcon {
+			@media #{$black-on-white} {
+				filter: grayscale(100%) contrast(8000%);
+			}
+			@media #{$white-on-black} {
+				filter: grayscale(100%) invert(1) contrast(8000%);
+			}
 		}
 		.success{
 			font-weight: $weight_medium;
