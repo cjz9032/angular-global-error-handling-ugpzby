@@ -1,6 +1,8 @@
 @import "../../../app.theme";
 
 .vtr-widget-location-status {
+	@include high-contrast-adjust;
+
 	.location-disable-background {
 		border-radius: 0.7rem 0.7rem 0 0;
 		background: linear-gradient(
@@ -12,11 +14,21 @@
 		padding: 2.4rem;
 		border-radius: 0.7rem;
 
+		@media #{$black-on-white} {
+			background: $light !important;
+			@include black-border;
+		}
+		@media #{$white-on-black} {
+			background: $dark !important;
+			@include white-border;
+		}
+
 		.title {
 			color: $light;
 			font-size: $fontsize_xl2;
 			font-weight: $weight_light;
 			line-height: 4.2rem;
+			@include high-contrast-color-reversal;
 		}
 
 		.subtitle {
@@ -25,6 +37,7 @@
 			font-size: $fontsize_xs;
 			line-height: 2.1rem;
 			padding-top: 1rem;
+			@include high-contrast-color-reversal;
 		}
 
 		.description {
@@ -34,6 +47,7 @@
 			line-height: 2.1rem;
 			padding-top: 2.7rem;
 			padding-left: 13rem;
+			@include high-contrast-color-reversal;
 
 			@media #{$mediaquery_X45} {
 				padding-left: 0;
@@ -50,6 +64,13 @@
 			.icon {
 				color: $light;
 				font-size: 7rem;
+
+				@media #{$black-on-white} {
+					color: $dark;
+				}
+				@media #{$white-on-black} {
+					color: $light;
+				}
 			}
 		}
 

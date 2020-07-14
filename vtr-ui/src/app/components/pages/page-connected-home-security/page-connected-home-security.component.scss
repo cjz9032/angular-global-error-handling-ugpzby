@@ -49,6 +49,8 @@
 			}
 
 			.security-health-disabled {
+				@include high-contrast-adjust;
+
 				.security-health-disabled-list {
 					background-color: $shade;
 					border-radius: $border_radius;
@@ -69,6 +71,10 @@
 						font-size: 3rem;
 						font-weight: $weight_light;
 						text-align: center;
+
+						@media #{$high-contrast} {
+							color: $dark;
+						}
 					}
 
 					vtr-ui-button {
@@ -108,6 +114,12 @@
 						width: 10rem;
 						padding: 0rem 0.5rem 0rem 0rem;
 						margin-top: 0rem;
+						@media #{$black-on-white} {
+							filter: grayscale(100%) contrast(1000%);
+						}
+						@media #{$white-on-black} {
+							filter: grayscale(100%) invert(1) contrast(1000%);
+						}
 					}
 				}
 
