@@ -1,12 +1,14 @@
 <div class="hwscan-header">
 	<div class="row">
 		<div [ngSwitch]="headerType" aria-live="polite">
-			<h2 class="col title" *ngSwitchCase="enumScanHeaderTypeFinished.RecoverBadSectors">{{'hardwareScan.recoverBadSectors.recoverCompleted' | translate }}</h2>
+			<div id="rbs-header-height-filler" *ngSwitchCase="enumScanHeaderTypeFinished.RecoverBadSectors">
+				<h2 class="col title">{{'hardwareScan.recoverBadSectors.recoverCompleted' | translate }}</h2>
+			</div>
 			<div *ngSwitchCase="enumScanHeaderTypeFinished.Scan">
-				<div class="col title" [ngSwitch]="numberTestsFailed">
-					<h2 *ngSwitchCase="0">{{'hardwareScan.scanFinishedHeader.titleSuccess' | translate }}</h2> <!-- No failures -->
-					<h2 *ngSwitchCase="1">{{'hardwareScan.scanFinishedHeader.titleErrorSingular' | translate }}</h2> <!-- Just one failure -->
-					<h2 *ngSwitchDefault>{{'hardwareScan.scanFinishedHeader.titleErrorPlural' | translate:{'numberTestsFailed':numberTestsFailed} }}</h2>  <!-- More than one failure -->
+				<div class="col" [ngSwitch]="numberTestsFailed">
+					<h2 class="title" *ngSwitchCase="0">{{'hardwareScan.scanFinishedHeader.titleSuccess' | translate }}</h2> <!-- No failures -->
+					<h2 class="title" *ngSwitchCase="1">{{'hardwareScan.scanFinishedHeader.titleErrorSingular' | translate }}</h2> <!-- Just one failure -->
+					<h2 class="title" *ngSwitchDefault>{{'hardwareScan.scanFinishedHeader.titleErrorPlural' | translate:{'numberTestsFailed':numberTestsFailed} }}</h2>  <!-- More than one failure -->
 				</div>
 
 				<div class="description-row">
@@ -84,19 +86,10 @@
 			<div *ngSwitchCase="enumScanHeaderTypeFinished.ViewResults">
 
 				<!-- Defines a title -->
-				<div class="col title"  [ngSwitch]="numberTestsFailed">
-					<h2 *ngSwitchCase="0">
-						{{'hardwareScan.scanFinishedHeader.titleSuccess' | translate }}
-					</h2>
-
-					<h2 *ngSwitchCase="1">
-						{{'hardwareScan.scanFinishedHeader.titleErrorSingular' | translate }}
-					</h2>
-
-					<!-- More than one failure -->
-					<h2 *ngSwitchDefault>
-						{{'hardwareScan.scanFinishedHeader.titleErrorPlural' | translate:{'numberTestsFailed':numberTestsFailed} }}
-					</h2>
+				<div class="col" [ngSwitch]="numberTestsFailed">
+					<h2 class="title" *ngSwitchCase="0">{{'hardwareScan.scanFinishedHeader.titleSuccess' | translate }}</h2> <!-- No failures -->
+					<h2 class="title" *ngSwitchCase="1">{{'hardwareScan.scanFinishedHeader.titleErrorSingular' | translate }}</h2> <!-- Just one failure -->
+					<h2 class="title" *ngSwitchDefault>{{'hardwareScan.scanFinishedHeader.titleErrorPlural' | translate:{'numberTestsFailed':numberTestsFailed} }}</h2>  <!-- More than one failure -->
 				</div>
 
 				<!-- Show the date and result about the last scan -->
