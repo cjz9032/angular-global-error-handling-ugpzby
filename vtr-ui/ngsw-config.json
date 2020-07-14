@@ -20,7 +20,12 @@
 			"resources": {
 				"files": [
 					"/assets/**",
-					"!/assets/i18n/**"
+					"!/assets/i18n/**",
+					"/*.jpg",
+					"/*.png",
+					"/*.svg",
+					"/*.eot",
+					"/*.ttf"
 				],
 				"urls": [
 					"https://vantage*.csw.lenovo.com/**/*.jpg",
