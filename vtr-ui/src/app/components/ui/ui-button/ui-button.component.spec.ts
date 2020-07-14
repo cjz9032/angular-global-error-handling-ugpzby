@@ -33,7 +33,7 @@ describe('UiButtonComponent', () => {
 		fixture.detectChanges();
 		spyOn(component, 'onClickButton');
 
-		let button = fixture.debugElement.nativeElement.querySelector('button');
+		const button = fixture.debugElement.nativeElement.querySelector('button');
 		button.click();
 
 		fixture.whenStable().then(() => {

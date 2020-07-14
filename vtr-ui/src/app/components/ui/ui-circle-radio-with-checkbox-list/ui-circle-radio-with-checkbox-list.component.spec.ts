@@ -1,5 +1,5 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { NO_ERRORS_SCHEMA, DebugElement } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -8,6 +8,7 @@ import { DevService } from 'src/app/services/dev/dev.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { UiCircleRadioWithCheckBoxListComponent } from './ui-circle-radio-with-checkbox-list.component';
+import { By } from '@angular/platform-browser';
 
 let radioDetailsModel = [
 	{
@@ -35,7 +36,7 @@ let radioDetailsModel = [
 		metricsItem: 'radio.top-row-fn.function-key'
 	}];
 const testValue = 'test';
-
+const groupName = 'groupName';
 describe('UiCircleRadioWithCheckBoxListComponent', () => {
 	let component: UiCircleRadioWithCheckBoxListComponent;
 	let fixture: ComponentFixture<UiCircleRadioWithCheckBoxListComponent>;
@@ -64,79 +65,74 @@ describe('UiCircleRadioWithCheckBoxListComponent', () => {
 		fixture = TestBed.createComponent(UiCircleRadioWithCheckBoxListComponent);
 		component = fixture.componentInstance;
 		component.radioDetails = Object.assign([], radioDetailsModel);
+		component.groupName = groupName;
 		fixture.detectChanges();
 	});
 
-	it('should create', () => {
+	it('UiCircleRadioWithCheckBoxListComponent  :: should  create', () => {
 		expect(component).toBeTruthy();
 	});
 
-	it('should call onClick', () => {
+	it('UiCircleRadioWithCheckBoxListComponent  :: should  call onClick', () => {
+		fixture = TestBed.createComponent(UiCircleRadioWithCheckBoxListComponent);
+		component = fixture.componentInstance;
 		component.radioDetails = Object.assign([], radioDetailsModel);
-		spyOn(component, 'onClick');
+		component.groupName = groupName;
+		fixture.detectChanges();
+
 		const spyInvokeSelectionChangeEvent = spyOn<any>(component, 'invokeSelectionChangeEvent');
+		const spySetFocusComponentId = spyOn<any>(component, 'setFocusComponentId');
 
-		const element = fixture.debugElement.nativeElement.querySelector('#' + radioDetailsModel[1].componentId);
-		element.click();
+		const options: DebugElement[] = fixture.debugElement.queryAll(By.css('[role=radio][aria-disabled=false]'));
+		const secondOption: HTMLInputElement = options[1].nativeElement;
+		secondOption.click();
 
-		fixture.whenStable().then(() => {
-			expect(component.onClick).toHaveBeenCalled();
-			expect(spyInvokeSelectionChangeEvent).toHaveBeenCalled();
-			component.radioDetails = Object.assign([], radioDetailsModel);
-		});
+		// expect(component.onClick).toHaveBeenCalled();
+		// expect(spyUpdateSelection).toHaveBeenCalled();
+		expect(spyInvokeSelectionChangeEvent).toHaveBeenCalled();
+		expect(spySetFocusComponentId).toHaveBeenCalled();
 	});
 
-	it('should call onKeyDown', () => {
+	it('UiCircleRadioWithCheckBoxListComponent ::  UiCircleRadioWithCheckBoxListComponent  :: should  call onKeyDown', () => {
+		fixture = TestBed.createComponent(UiCircleRadioWithCheckBoxListComponent);
+		component = fixture.componentInstance;
 		component.radioDetails = Object.assign([], radioDetailsModel);
+		component.groupName = groupName;
 		fixture.detectChanges();
-		spyOn(component, 'onKeyDown');
-		const event = new KeyboardEvent('keydown', {
-			'code': 'Up'
-		});
 
+		// const spyKeyDown = spyOn(component, 'onKeyDown');
 		const spyHandleKeyPressEvent = spyOn<any>(component, 'handleKeyPressEvent');
-		const element = fixture.debugElement.nativeElement.querySelector('#' + radioDetailsModel[0].componentId);
-		element.focus();
-		element.dispatchEvent(event);
-		fixture.detectChanges();
+		const spySetFocusComponentId = spyOn<any>(component, 'setFocusComponentId');
 
-		fixture.whenStable().then(() => {
-			expect(component.onKeyDown).toHaveBeenCalled();
-			// expect(spyHandleKeyPressEvent).toHaveBeenCalled();
-			component.radioDetails = Object.assign([], radioDetailsModel);
+		const options: DebugElement[] = fixture.debugElement.queryAll(By.css('[role=radiogroup]'));
+		const firstOption: HTMLElement = options[0].nativeElement;
+		// fixture.nativeElement.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter' }));
+		// secondOption.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter' }));
+		// firstOption.focus();
+		const event = new KeyboardEvent('keydown', {
+			bubbles: true,
+			cancelable: true,
+			key: 'up',
+			shiftKey: true,
+			code: '38',
 		});
+		firstOption.dispatchEvent(event);
+
+		// expect(component.onKeyDown).toHaveBeenCalled();
+		// expect(spyHandleKeyPressEvent).toHaveBeenCalled();
+		expect(spySetFocusComponentId).toHaveBeenCalled();
 	});
 
-	it('should call updateSelection,invokeSelectionChangeEvent,setFocusComponentId', () => {
-		// spyOn(component, 'onClick');
+
+	it('UiCircleRadioWithCheckBoxListComponent  :: should  call invokeSelectionChangeEvent', () => {
+		fixture = TestBed.createComponent(UiCircleRadioWithCheckBoxListComponent);
+		component = fixture.componentInstance;
 		component.radioDetails = Object.assign([], radioDetailsModel);
-		const spyUpdateSelection = spyOn<any>(component, 'updateSelection').and.callThrough();
-		//const spySetFocusComponentId = spyOn<any>(component, 'setFocusComponentId')
-
-		const element = fixture.debugElement.nativeElement.querySelector('#' + radioDetailsModel[1].componentId);
-		element.click();
-
-		fixture.whenStable().then(() => {
-			// 	expect(component.onClick).toHaveBeenCalled();
-			expect(spyUpdateSelection).toHaveBeenCalled();
-			//expect(spySetFocusComponentId).toHaveBeenCalled();
-			component.radioDetails = radioDetailsModel;
-		});
-	});
-
-	/* 	 it('should call getSelectedRadioId with SPY', () => {
-			component.radioDetails = Object.assign([], radioDetailsModel);
-			fixture.detectChanges();
-			const spyGetSelectedRadioId = spyOn<any>(component, 'getSelectedRadioId').and.callThrough();
-			const id = spyGetSelectedRadioId.call(component);
-			expect(id).toBe(radioDetailsModel[0].componentId);
-		});  */
-
-
-	it('should call invokeSelectionChangeEvent', () => {
-		component.radioDetails = Object.assign([], radioDetailsModel);
+		component.groupName = groupName;
 		metricService = TestBed.get(MetricService);
 		component.sendMetrics = true;
+		fixture.detectChanges();
+
 		const spy = spyOn(metricService, 'sendMetrics');
 		const spyInvokeSelectionChangeEvent = spyOn<any>(component, 'invokeSelectionChangeEvent').and.callThrough();
 		const id = spyInvokeSelectionChangeEvent.call(component, radioDetailsModel[1]);
@@ -144,13 +140,13 @@ describe('UiCircleRadioWithCheckBoxListComponent', () => {
 	});
 
 
-	it('should call getIconName method process Icon true', () => {
+	it('UiCircleRadioWithCheckBoxListComponent  :: should  call getIconName method process Icon true', () => {
 		component.radioDetails = Object.assign([], radioDetailsModel);
 		const icon = component.getIconName(radioDetailsModel[1]);
 		expect(icon).toBe(radioDetailsModel[1].value);
 	});
 
-	it('should call getIconName method process Icon true , value having spaces', () => {
+	it('UiCircleRadioWithCheckBoxListComponent  :: should  call getIconName method process Icon true , value having spaces', () => {
 		component.radioDetails = Object.assign([], radioDetailsModel);
 		let value = radioDetailsModel[1].value;
 		radioDetailsModel[1].processIcon = true;
@@ -160,7 +156,7 @@ describe('UiCircleRadioWithCheckBoxListComponent', () => {
 		radioDetailsModel[1].value = value;
 	});
 
-	it('should call getIconName method process Icon true , value having & ', () => {
+	it('UiCircleRadioWithCheckBoxListComponent  :: should  call getIconName method process Icon true , value having & ', () => {
 		component.radioDetails = Object.assign([], radioDetailsModel);
 		component.radioDetails = radioDetailsModel;
 		const value = radioDetailsModel[1].value;
@@ -171,7 +167,7 @@ describe('UiCircleRadioWithCheckBoxListComponent', () => {
 		radioDetailsModel[1].value = value;
 	});
 
-	it('should call getIconName method process Icon true , empty value ', () => {
+	it('UiCircleRadioWithCheckBoxListComponent  :: should  call getIconName method process Icon true , empty value ', () => {
 		component.radioDetails = Object.assign([], radioDetailsModel);
 		const value = radioDetailsModel[1].value;
 		radioDetailsModel[1].processIcon = true;
@@ -180,7 +176,7 @@ describe('UiCircleRadioWithCheckBoxListComponent', () => {
 		expect(icon).toBe('');
 		radioDetailsModel[1].value = value;
 	});
-	it('should call getIconName method process Icon false', () => {
+	it('UiCircleRadioWithCheckBoxListComponent  :: should  call getIconName method process Icon false', () => {
 		component.radioDetails = Object.assign([], radioDetailsModel);
 		radioDetailsModel[1].processIcon = false;
 		const icon = component.getIconName(radioDetailsModel[1]);
@@ -188,7 +184,7 @@ describe('UiCircleRadioWithCheckBoxListComponent', () => {
 		radioDetailsModel[1].processIcon = true;
 	});
 
-	it('should call getSelectedRadioId', () => {
+	it('UiCircleRadioWithCheckBoxListComponent  :: should  call getSelectedRadioId', () => {
 		component.radioDetails = Object.assign([], radioDetailsModel);
 		radioDetailsModel[1].processIcon = false;
 		const icon = component.getIconName(radioDetailsModel[1]);
