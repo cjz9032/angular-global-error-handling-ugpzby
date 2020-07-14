@@ -296,11 +296,11 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	background-color: $light;
 	filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.15));
 	@media #{$black-on-white} {
-		filter: drop-shadow(0 0 0.1rem $dark);
-
+		border: 0.1rem solid;
+		filter: drop-shadow(0 0 0 $light);
 	}
 	@media #{$white-on-black} {
-		filter: drop-shadow(0 0 0.1rem $light);
+		border: 0.1rem solid;
 	}
 
 	.tooltip-inner {
@@ -324,17 +324,31 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	&.bs-tooltip-auto[x-placement^=top], &.bs-tooltip-top {
 		margin-bottom: 0.5rem;
 		.arrow {
-			@include high-contrast-adjust;
 			&::before {
 				border-width: 1rem 1rem 0;
 				border-top-color: $light;
 				left: calc(-1rem + 50%);
 				top: 0.3rem;
 				@media #{$white-on-black} {
-					border-top-color: $dark;
+					display: none;
 				}
 				@media #{$black-on-white} {
-					border-top-color: $light;
+					display: none;
+				}
+			}
+			&::after {
+				@media #{$white-on-black} {
+					@include high-contrast-tooltip-arrow;
+					top: -0.2rem;
+					transform: rotate(-45deg);
+				}
+				@media #{$black-on-white} {
+					@include high-contrast-tooltip-arrow;
+					background: $light;
+					border-left-color: $dark;
+					border-bottom-color: $dark;
+					top: -0.2rem;
+					transform: rotate(-45deg);
 				}
 			}
 		}
@@ -342,17 +356,31 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	&.bs-tooltip-auto[x-placement^=bottom], &.tooltip.bs-tooltip-bottom {
 		margin-top: 0.5rem;
 		.arrow {
-			@include high-contrast-adjust;
 			&::before {
 				border-width: 0 1rem 1rem;
 				border-bottom-color: $light;
 				left: calc(-1rem + 50%);
 				bottom: 0.3rem;
 				@media #{$white-on-black} {
-					border-bottom-color: $dark;
+					display: none;
 				}
 				@media #{$black-on-white} {
-					border-bottom-color: $light;
+					display: none;
+				}
+			}
+			&::after {
+				@media #{$white-on-black} {
+					@include high-contrast-tooltip-arrow;
+					top: -0.8rem;
+					transform: rotate(135deg);
+				}
+				@media #{$black-on-white} {
+					@include high-contrast-tooltip-arrow;
+					background: $light;
+					border-left-color: $dark;
+					border-bottom-color: $dark;
+					top: -0.8rem;
+					transform: rotate(135deg);
 				}
 			}
 		}
@@ -360,17 +388,27 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	&.bs-tooltip-auto[x-placement^=left], &.tooltip.bs-tooltip-left {
 		margin-right: 0.8rem;
 		.arrow {
-			@include high-contrast-adjust;
 			&::before {
 				border-width: 1rem 0 1rem 1rem;
 				border-left-color: $light;
 				top: calc(-1rem + 50%);
 				left: 0.3rem;
 				@media #{$white-on-black} {
-					border-left-color: $dark;
+					display: none;
 				}
 				@media #{$black-on-white} {
-					border-left-color: $light;
+					display: none;
+				}
+			}
+			&::after {
+				@media #{$white-on-black} {
+					@include high-contrast-tooltip-arrow;
+				}
+				@media #{$black-on-white} {
+					@include high-contrast-tooltip-arrow;
+					background: $light;
+					border-left-color: $dark;
+					border-bottom-color: $dark;
 				}
 			}
 		}
@@ -379,17 +417,33 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	&.bs-tooltip-auto[x-placement^=right], &.tooltip.bs-tooltip-right {
 		margin-left: 0.8rem;
 		.arrow {
-			@include high-contrast-adjust;
 			&::before {
 				border-width: 1rem 1rem 1rem 0;
 				border-right-color: $light;
 				top: calc(-1rem + 50%);
 				right: 0.3rem;
 				@media #{$white-on-black} {
-					border-right-color: $dark;
+					display: none;
 				}
 				@media #{$black-on-white} {
-					border-right-color: $light;
+					display: none;
+				}
+			}
+			&::after {
+				@media #{$white-on-black} {
+					@include high-contrast-tooltip-arrow;
+					left: -0.8rem;
+					top: -0.2rem;
+					transform: rotate(45deg);
+				}
+				@media #{$black-on-white} {
+					@include high-contrast-tooltip-arrow;
+					background: $light;
+					border-left-color: $dark;
+					border-bottom-color: $dark;
+					left: -0.8rem;
+					top: -0.2rem;
+					transform: rotate(45deg);
 				}
 			}
 		}
@@ -1081,10 +1135,10 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.15));
 	margin-right: 1rem;
 	@media #{$white-on-black} {
-		filter: drop-shadow(0 0 0.1rem $light);
+		@include white-border;
 	}
 	@media #{$black-on-white} {
-		filter: drop-shadow(0 0 0.1rem $dark);
+		@include black-border;
 	}
 	&.show {
 		opacity: 1;
@@ -1192,10 +1246,23 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 			border-width: 1rem 0 1rem 1rem;
 			left: 0.3rem;
 			@media #{$white-on-black} {
-				border-left-color: $dark;
+				display: none;
 			}
 			@media #{$black-on-white} {
-				border-left-color: $light;
+				display: none;
+			}
+		}
+		&::after {
+			@media #{$white-on-black} {
+				@include high-contrast-tooltip-arrow;
+				top: 0.2rem;
+			}
+			@media #{$black-on-white} {
+				@include high-contrast-tooltip-arrow;
+				background: $light;
+				border-left-color: $dark;
+				border-bottom-color: $dark;
+				top: 0.2rem;
 			}
 		}
 	}
