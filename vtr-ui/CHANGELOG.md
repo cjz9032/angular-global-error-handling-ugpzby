@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.4](https://bitbucket.tc.lenovo.com///compare/v1.7.3...v1.7.4) (2020-07-14)
+
+
+### Features
+
+* **tslint:** use customized codelyzer rules to check code ([dbb2eb8](https://bitbucket.tc.lenovo.com///commit/dbb2eb8bbdfc6d90975a87638579b968f4511b9b))
+
+
+### Bug Fixes
+
+* **tslint:** add no-plain-http-url rule ([3e1475c](https://bitbucket.tc.lenovo.com///commit/3e1475cf780bdbeeca38b6d91d5be50e10291bd0))
+* **tslint:** change file name and command name properly ([e5e2036](https://bitbucket.tc.lenovo.com///commit/e5e20369d51aadb331e10e05af65974d30b11708))
+
 ### [1.7.3](https://bitbucket.tc.lenovo.com///compare/v1.7.2...v1.7.3) (2020-07-10)
 
 
