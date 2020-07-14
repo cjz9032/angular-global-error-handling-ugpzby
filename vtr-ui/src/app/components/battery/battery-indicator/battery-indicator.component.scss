@@ -293,13 +293,6 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 			.transparent {
 				color: transparent;
 			}
-			@media #{$black-on-white} {
-				@include high-contrast-white-text-color;
-			}
-			@media #{$white-on-black} {
-				@include high-contrast-black-text-color;
-			}
-			@include high-contrast-adjust;
 		}
 		.icomoon:before {
 			font-size: 28px;
