@@ -123,13 +123,13 @@
 							z-index: 2;
 							height: 4rem;
 							width: 4rem;
-							background-image: url(/assets/images/gaming/gaming-accessory.png);
+							background-image: url(../../../../assets/images/gaming/gaming-accessory.png);
 							background-size: cover;
 							@media #{$black-on-white} {
-								background-image: url(/assets/images/gaming/gaming-accessory-black.png);
+								background-image: url(../../../../assets/images/gaming/gaming-accessory-black.png);
 							}
 							@media #{$white-on-black} {
-								background-image: url(/assets/images/gaming/gaming-accessory-white.png);
+								background-image: url(../../../../assets/images/gaming/gaming-accessory-white.png);
 							}
 						}
 					}
