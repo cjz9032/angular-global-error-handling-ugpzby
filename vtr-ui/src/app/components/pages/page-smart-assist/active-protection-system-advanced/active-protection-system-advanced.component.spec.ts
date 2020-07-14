@@ -11,7 +11,7 @@ import { CommonMetricsService } from 'src/app/services/common-metrics/common-met
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { DevService } from 'src/app/services/dev/dev.service';
 
-fdescribe('ActiveProtectionSystemAdvancedComponent', () => {
+describe('ActiveProtectionSystemAdvancedComponent', () => {
 	let component: ActiveProtectionSystemAdvancedComponent;
 	let fixture: ComponentFixture<ActiveProtectionSystemAdvancedComponent>;
 	let smartAssist;
