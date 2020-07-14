@@ -3125,7 +3125,7 @@
                 "no": "Όχι"
             },
             "waitAvailability": "Το κουμπί είναι απενεργοποιημένο, εάν οι συσκευές αποθήκευσης δεν υποστηρίζουν αυτή τη λειτουργία, ενώ οι πληροφορίες υλικού φορτώνονται ή εάν υπάρχει σάρωση σε εξέλιξη.",
-            "executingTitle": "Εκτελείται αποκατάσταση τώρα...",
+            "executingTitle": "Εκτελείται αποκατάσταση τώρα",
             "recoverCompleted": "Η αποκατάσταση ολοκληρώθηκε"
         },
         "support": {
@@ -3186,7 +3186,7 @@
             "scanAgainButtonText": "Σάρωση ξανά",
             "supportButtonText": "Υποστήριξη Lenovo"
         },
-        "executingScanTitle": "Εκτελείται σάρωση {{title}}..."
+        "executingScanTitle": "Εκτελείται σάρωση {{title}}"
     },
     "smartPerformance": {
         "title": "Health & Support",

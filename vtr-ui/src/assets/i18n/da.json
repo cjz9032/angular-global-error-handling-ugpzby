@@ -3125,7 +3125,7 @@
                 "no": "Nej"
             },
             "waitAvailability": "Knappen deaktiveres, hvis lagerenhederne ikke understøtter denne funktion, mens hardwareoplysningerne indlæses, eller hvis der er en scanning i gang.",
-            "executingTitle": "Retablerer nu...",
+            "executingTitle": "Retablerer nu",
             "recoverCompleted": "Retableringen er fuldført"
         },
         "support": {
@@ -3186,7 +3186,7 @@
             "scanAgainButtonText": "Søg igen",
             "supportButtonText": "Lenovo Support"
         },
-        "executingScanTitle": "Søger i {{title}}..."
+        "executingScanTitle": "Søger i {{title}}"
     },
     "smartPerformance": {
         "title": "Smart Performance",

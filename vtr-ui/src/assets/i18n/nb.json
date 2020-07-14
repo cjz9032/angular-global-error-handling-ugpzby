@@ -3130,7 +3130,7 @@
                 "description": "Å skanne og reparere kan føre til tap av data. Vi anbefaler å sikkerhetskopiere før du gjør dette. Er du sikker på at du vil fortsette?"
             },
             "waitAvailability": "Knappen er deaktivert hvis lagringsenhetene ikke støtter denne funksjonaliteten, mens maskinvareinformasjonen lastes inn eller hvis det pågår en skanning.",
-            "executingTitle": "Gjenoppretter nå ...",
+            "executingTitle": "Gjenoppretter nå",
             "recoverCompleted": "Gjenoppretting fullført"
         },
         "support": {
@@ -3186,7 +3186,7 @@
             "scanAgainButtonText": "Skann på nytt",
             "supportButtonText": "Lenovo kundestøtte"
         },
-        "executingScanTitle": "Skanner {{title}}..."
+        "executingScanTitle": "Skanner {{title}}"
     },
     "smartPerformance": {
         "title": "Smart Performance",

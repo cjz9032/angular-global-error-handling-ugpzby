@@ -3125,7 +3125,7 @@
                 "no": "No"
             },
             "waitAvailability": "Il pulsante è disattivato se i dispositivi di archiviazione non supportano questa funzionalità, durante il caricamento delle informazioni hardware o mentre vi è una scansione in corso.",
-            "executingTitle": "Ripristino in corso ora...",
+            "executingTitle": "Ripristino in corso ora",
             "recoverCompleted": "Ripristino completato"
         },
         "support": {
@@ -3186,7 +3186,7 @@
             "scanAgainButtonText": "Esegui di nuovo la scansione",
             "supportButtonText": "Supporto Lenovo"
         },
-        "executingScanTitle": "Scansione di {{title}} in corso..."
+        "executingScanTitle": "Scansione di {{title}} in corso"
     },
     "smartPerformance": {
         "title": "Smart Performance",

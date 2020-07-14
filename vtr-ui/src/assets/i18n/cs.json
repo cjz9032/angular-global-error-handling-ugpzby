@@ -3125,7 +3125,7 @@
                 "no": "Ne"
             },
             "waitAvailability": "Tlačítko je vypnuto, pokud úložná zařízení nepodporují tuto funkci v průběhu načítaní informací o hardwaru nebo pokud probíhá kontrola.",
-            "executingTitle": "Probíhá obnova...",
+            "executingTitle": "Probíhá obnova",
             "recoverCompleted": "Obnovení dokončeno"
         },
         "support": {
@@ -3186,7 +3186,7 @@
             "scanAgainButtonText": "Nové snímání",
             "supportButtonText": "Technická podpora Lenovo"
         },
-        "executingScanTitle": "Snímání {{title}}..."
+        "executingScanTitle": "Snímání {{title}}"
     },
     "smartPerformance": {
         "title": "Health & Support",

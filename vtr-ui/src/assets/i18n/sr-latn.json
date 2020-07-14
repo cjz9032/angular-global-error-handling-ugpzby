@@ -3125,7 +3125,7 @@
                 "no": "Ne"
             },
             "waitAvailability": "Dugme je onemogućeno ukoliko uređaji za skladištenje ne podržavaju ovu funkcionalnost, tokom učitavanja informacija o hardveru ili ako je u toku skeniranje.",
-            "executingTitle": "Oporavlja se sada...",
+            "executingTitle": "Oporavlja se sada",
             "recoverCompleted": "Oporavak je dovršen"
         },
         "support": {
@@ -3186,7 +3186,7 @@
             "scanAgainButtonText": "Skeniraj ponovo",
             "supportButtonText": "Lenovo podrška"
         },
-        "executingScanTitle": "Skenira se {{title}}..."
+        "executingScanTitle": "Skenira se {{title}}"
     },
     "smartPerformance": {
         "title": "Health & Support",

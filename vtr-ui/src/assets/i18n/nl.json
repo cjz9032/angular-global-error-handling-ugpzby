@@ -3125,7 +3125,7 @@
                 "no": "Nee"
             },
             "waitAvailability": "De knop wordt uitgeschakeld als de opslagapparaten deze functionaliteit niet ondersteunen, terwijl de hardwaregegevens worden geladen of als er een scan wordt uitgevoerd.",
-            "executingTitle": "Herstellen...",
+            "executingTitle": "Herstellen",
             "recoverCompleted": "Herstelactie voltooid"
         },
         "support": {
@@ -3186,7 +3186,7 @@
             "scanAgainButtonText": "Opnieuw scannen",
             "supportButtonText": "Ondersteuning van Lenovo"
         },
-        "executingScanTitle": "{{title}} scannen..."
+        "executingScanTitle": "{{title}} scannen"
     },
     "smartPerformance": {
         "title": "Smart Performance",

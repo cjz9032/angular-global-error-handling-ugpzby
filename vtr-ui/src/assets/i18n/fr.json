@@ -3125,7 +3125,7 @@
                 "no": "Non"
             },
             "waitAvailability": "Le bouton est désactivé si les unités de stockage ne prennent pas en charge cette fonctionnalité alors que les informations matérielles sont chargées ou qu'une analyse est en cours.",
-            "executingTitle": "Récupération…",
+            "executingTitle": "Récupération",
             "recoverCompleted": "Récupération terminée"
         },
         "support": {
@@ -3186,7 +3186,7 @@
             "scanAgainButtonText": "Recommencer l'analyse",
             "supportButtonText": "Support de Lenovo"
         },
-        "executingScanTitle": "Analyse de {{title}}…"
+        "executingScanTitle": "Analyse de {{title}}"
     },
     "smartPerformance": {
         "title": "Smart Performance",

@@ -3125,7 +3125,7 @@
                 "no": "Ні"
             },
             "waitAvailability": "Кнопка неактивна, якщо накопичувачі не підтримують цю функцію, доки інформація про обладнання завантажується або триває сканування.",
-            "executingTitle": "Триває відновлення...",
+            "executingTitle": "Триває відновлення",
             "recoverCompleted": "Відновлення завершено"
         },
         "support": {
@@ -3186,7 +3186,7 @@
             "scanAgainButtonText": "Сканувати ще раз",
             "supportButtonText": "Служба підтримки Lenovo"
         },
-        "executingScanTitle": "Сканування {{title}}..."
+        "executingScanTitle": "Сканування {{title}}"
     },
     "smartPerformance": {
         "title": "Health & Support",

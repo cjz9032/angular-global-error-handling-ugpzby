@@ -3932,7 +3932,7 @@
 				"no": "No"
 			},
 			"waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded.",
-			"executingTitle": "Recovering now...",
+			"executingTitle": "Recovering now",
 			"recoverCompleted": "Recovery completed"
 		},
 		"support": {
@@ -3975,7 +3975,7 @@
 		"warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates",
 		"refreshMessage": "Refresh may take some time as it needs to load all the components again",
 		"processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed.",
-		"executingScanTitle": "Scanning {{title}}..."
+		"executingScanTitle": "Scanning {{title}}"
 	},
 	"notification": {
 		"menu": {

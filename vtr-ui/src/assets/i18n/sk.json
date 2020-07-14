@@ -3125,7 +3125,7 @@
                 "no": "Nie"
             },
             "waitAvailability": "Tlačidlo je vypnuté, ak táto funkcia nie je podporovaná úložnými zariadeniami počas načítavania informácií o hardvéri ako aj počas kontroly.",
-            "executingTitle": "Prebieha obnovovanie...",
+            "executingTitle": "Prebieha obnovovanie",
             "recoverCompleted": "Obnovenie dokončené"
         },
         "support": {
@@ -3186,7 +3186,7 @@
             "scanAgainButtonText": "Skenovať znova",
             "supportButtonText": "Technická podpora spoločnosti Lenovo"
         },
-        "executingScanTitle": "Skenovanie {{title}}..."
+        "executingScanTitle": "Skenovanie {{title}}"
     },
     "smartPerformance": {
         "title": "Health & Support",
