@@ -5,30 +5,13 @@
 				<h2 class="col title">{{'hardwareScan.recoverBadSectors.recoverCompleted' | translate }}</h2>
 			</div>
 			<div *ngSwitchCase="enumScanHeaderTypeFinished.Scan">
-				<div class="col" [ngSwitch]="numberTestsFailed">
-					<h2 class="title" *ngSwitchCase="0">{{'hardwareScan.scanFinishedHeader.titleSuccess' | translate }}</h2> <!-- No failures -->
-					<h2 class="title" *ngSwitchCase="1">{{'hardwareScan.scanFinishedHeader.titleErrorSingular' | translate }}</h2> <!-- Just one failure -->
-					<h2 class="title" *ngSwitchDefault>{{'hardwareScan.scanFinishedHeader.titleErrorPlural' | translate:{'numberTestsFailed':numberTestsFailed} }}</h2>  <!-- More than one failure -->
-				</div>
+				<ng-container *ngTemplateOutlet="scanFinishedHeaderTitle"></ng-container>
 
 				<div class="description-row">
-					<div class="row final-result-code">
-						<p class="result-code-value-text">{{'hardwareScan.scanFinishedHeader.finalResultCodeLabel' | translate }} </p>
-						<p class="result-code-complete-text">{{getFinalResultCode()}}</p>
-						<a *ngIf="numberTestsFailed === 0"
-							href="javascript:void(0)"
-							role="img"
-							attr.aria-label="final-result-code-tooltip, which reads: {{('hardwareScan.scanFinishedHeader.frcSuccessDescription' | translate)}}"
-							class="result-code-icon"
-							triggers="click"
-							[placement]="['left','right']"
-							[ngbTooltip]="tooltipFinalResultCode"
-							container="vtr-root"
-							tabindex="1"
-							tooltipClass="vtr-tooltip">
-							<fa-icon [icon]="['far', 'question-circle']"></fa-icon>
-						</a>
-					</div>
+					<ng-container
+						[ngTemplateOutlet]="scanFinishedFinalResultCode"
+						[ngTemplateOutletContext]="{ finalResultCodeTitle: 'hardwareScan.scanFinishedHeader.finalResultCodeLabel' | translate, finalResultCodeValue: getFinalResultCode() }">
+					</ng-container>
 				</div>
 
 				<div class="description-row">
@@ -86,11 +69,7 @@
 			<div *ngSwitchCase="enumScanHeaderTypeFinished.ViewResults">
 
 				<!-- Defines a title -->
-				<div class="col" [ngSwitch]="numberTestsFailed">
-					<h2 class="title" *ngSwitchCase="0">{{'hardwareScan.scanFinishedHeader.titleSuccess' | translate }}</h2> <!-- No failures -->
-					<h2 class="title" *ngSwitchCase="1">{{'hardwareScan.scanFinishedHeader.titleErrorSingular' | translate }}</h2> <!-- Just one failure -->
-					<h2 class="title" *ngSwitchDefault>{{'hardwareScan.scanFinishedHeader.titleErrorPlural' | translate:{'numberTestsFailed':numberTestsFailed} }}</h2>  <!-- More than one failure -->
-				</div>
+				<ng-container *ngTemplateOutlet="scanFinishedHeaderTitle"></ng-container>
 
 				<!-- Show the date and result about the last scan -->
 				<p class="result-date-description">
@@ -100,23 +79,10 @@
 				</p>
 
 				<!-- Show the result code -->
-				<div class="row final-result-code">
-					<p class="result-code-value-text">{{'hardwareScan.finalResultCode' | translate }} </p>
-					<p class="result-code-complete-text">{{getLastFinalResultCode()}}</p>
-					<a *ngIf="numberTestsFailed === 0"
-						href="javascript:void(0)"
-						role="img"
-						attr.aria-label="final-result-code-tooltip, which reads: {{('hardwareScan.scanFinishedHeader.frcSuccessDescription' | translate)}}"
-						class="result-code-icon"
-						triggers="click"
-						[placement]="['left','right']"
-						[ngbTooltip]="tooltipFinalResultCode"
-						container="vtr-root"
-						tabindex="1"
-						tooltipClass="vtr-tooltip">
-						<fa-icon [icon]="['far', 'question-circle']"></fa-icon>
-					</a>
-				</div>
+				<ng-container
+					[ngTemplateOutlet]="scanFinishedFinalResultCode"
+					[ngTemplateOutletContext]="{ finalResultCodeTitle: 'hardwareScan.finalResultCode' | translate, finalResultCodeValue: getLastFinalResultCode() }">
+				</ng-container>
 
 				<!-- Defines a message about lenovo support -->
 				<div class="description-row" *ngIf="numberTestsFailed > 0">
@@ -158,5 +124,33 @@
 				tabindex="1">
 				{{ 'hardwareScan.scanFinishedHeader.supportButtonText' | translate }}
 			</a>
+	</ng-template>
+
+	<!-- Commom templtes used in both Scan and Previous Results headers -->
+	<ng-template #scanFinishedHeaderTitle>
+		<div class="col" [ngSwitch]="numberTestsFailed">
+			<h2 class="title" *ngSwitchCase="0">{{'hardwareScan.scanFinishedHeader.titleSuccess' | translate }}</h2> <!-- No failures -->
+			<h2 class="title" *ngSwitchCase="1">{{'hardwareScan.scanFinishedHeader.titleErrorSingular' | translate }}</h2> <!-- Just one failure -->
+			<h2 class="title" *ngSwitchDefault>{{'hardwareScan.scanFinishedHeader.titleErrorPlural' | translate:{'numberTestsFailed':numberTestsFailed} }}</h2>  <!-- More than one failure -->
+		</div>
+	</ng-template>
+	<ng-template #scanFinishedFinalResultCode let-finalResultCodeTitle="finalResultCodeTitle" let-finalResultCodeValue="finalResultCodeValue">
+		<div class="row final-result-code">
+			<p class="result-code-value-text">{{ finalResultCodeTitle }} </p>
+			<p class="result-code-complete-text">{{ finalResultCodeValue }}</p>
+			<a *ngIf="numberTestsFailed === 0"
+				href="javascript:void(0)"
+				role="img"
+				attr.aria-label="final-result-code-tooltip, which reads: {{('hardwareScan.scanFinishedHeader.frcSuccessDescription' | translate)}}"
+				class="result-code-icon"
+				triggers="click"
+				[placement]="['left','right']"
+				[ngbTooltip]="tooltipFinalResultCode"
+				container="vtr-root"
+				tabindex="1"
+				tooltipClass="vtr-tooltip">
+				<fa-icon [icon]="['far', 'question-circle']"></fa-icon>
+			</a>
+		</div>
 	</ng-template>
 </div>
