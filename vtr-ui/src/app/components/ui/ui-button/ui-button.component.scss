@@ -80,6 +80,12 @@
 			cursor: default;
 			&:hover {
 				background: $grey_light !important;
+				@media #{$white-on-black} {
+					background: transparent !important;
+				}
+				@media #{$black-on-white} {
+					background: transparent !important;
+				}
 			}
 			.text {
 				cursor: default;
@@ -161,15 +167,11 @@
 			&:focus::after {
 				border: thin solid $orange;
 				@media #{$black-on-white} {
-					&::after {
 						@include button-outline-blue($dark);
-					}
 				}
 
 				@media #{$white-on-black} {
-					&::after {
 						@include button-outline-blue($light);
-					}
 				}
 			}
 		}

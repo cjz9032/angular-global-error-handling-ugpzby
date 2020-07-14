@@ -316,13 +316,14 @@
 						position: absolute;
 						left: 2.6rem;
 						top: -0.1rem;
+						@include high-contrast-adjust;
 						&::before {
 							color: $background !important;
 							@media #{$black-on-white} {
-								display: none;
+								color: $high-contrast-white-dark-magenta !important;
 							}
 							@media #{$white-on-black} {
-								display: none;
+								color: $high-contrast-black-cyan !important;
 							}
 						}
 					}

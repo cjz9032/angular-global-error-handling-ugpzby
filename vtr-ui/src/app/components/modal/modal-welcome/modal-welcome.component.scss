@@ -716,9 +716,10 @@
 		}
 
 		.content-page-2 .interests input[type="checkbox"]:checked + label {
-			border: 0.1rem solid $dark;
-			color: $dark;
-			background: $dark;
+			@include high-contrast-white-border;
+			color: $light;
+			@include high-contrast-white-background;
+			@include high-contrast-adjust;
 		}
 
 		.custom-control-label {
@@ -734,9 +735,10 @@
 		}
 
 		.content-page-2 .interests input[type="checkbox"]:checked + label {
-			border: 0.1rem solid $light;
-			color: $light;
-			background: $light;
+			@include high-contrast-black-border;
+			color: $dark;
+			@include high-contrast-black-background;
+			@include high-contrast-adjust;
 		}
 
 		.custom-control-label {
