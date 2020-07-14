@@ -11,9 +11,12 @@ import { CommonMetricsService } from 'src/app/services/common-metrics/common-met
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { DevService } from 'src/app/services/dev/dev.service';
 
-describe('ActiveProtectionSystemAdvancedComponent', () => {
+fdescribe('ActiveProtectionSystemAdvancedComponent', () => {
 	let component: ActiveProtectionSystemAdvancedComponent;
 	let fixture: ComponentFixture<ActiveProtectionSystemAdvancedComponent>;
+	let smartAssist;
+	let translate;
+	let commonMetricsService;
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
@@ -45,10 +48,45 @@ describe('ActiveProtectionSystemAdvancedComponent', () => {
 	beforeEach(() => {
 		fixture = TestBed.createComponent(ActiveProtectionSystemAdvancedComponent);
 		component = fixture.componentInstance;
+		smartAssist = TestBed.get(SmartAssistService);
+		translate = TestBed.get(TranslateService);
+		commonMetricsService = TestBed.get(CommonMetricsService);
 		fixture.detectChanges();
 	});
 
 	it('should create', () => {
 		expect(component).toBeTruthy();
 	});
+
+
+	it('should set Pen Setting', () => {
+		const spyOnObject = spyOn(commonMetricsService, 'sendMetrics');
+		component.setPenSetting(new Event('click'));
+		expect(spyOnObject).toHaveBeenCalled();
+	});
+
+	it('should set Pen Delay Time', () => {
+		const spySetPenDelayTime = spyOn(smartAssist, 'setPenDelayTime').and.returnValue(Promise.resolve(true));
+		const spyGetPenDelayTime = spyOn(smartAssist, 'getPenDelayTime').and.returnValue(Promise.resolve(10));
+
+		// const spyOnObject = spyOn(commonMetricsService, 'sendMetrics');
+		component.setPenDelayTime({ value: 10 });
+		// expect(spyOnObject).toHaveBeenCalled();
+		expect(spySetPenDelayTime).toHaveBeenCalled();
+	});
+
+	it('should set Touch Input Setting', () => {
+		component.touchStatus = false;
+		const spyOnObject = spyOn(commonMetricsService, 'sendMetrics');
+		component.setTouchInputSetting({ value: 10 });
+		expect(spyOnObject).toHaveBeenCalled();
+	});
+
+	it('should set P Sensor ', () => {
+		component.pSensorStatus = false;
+		const spyOnObject = spyOn(commonMetricsService, 'sendMetrics');
+		component.setPSensorSetting({ value: 10 });
+		expect(spyOnObject).toHaveBeenCalled();
+	});
+
 });
