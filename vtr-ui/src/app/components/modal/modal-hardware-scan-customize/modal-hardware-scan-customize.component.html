@@ -15,15 +15,11 @@
 		</div>
 	</div>
 
-	<a role="button"
-		aria-label="Close"
-		href="javascript:;"
+	<vtr-ui-close-button
 		class="close-btn"
-		vtrMetrics
 		metricsEvent="FeatureClick"
 		metricsParent="HardwareScan.CustomizeScan"
 		metricsItem="CustomizeScan.Close"
-		(click)="closeModal()">
-		<img [src]=" 'assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
-	</a>
+		(clickClose)="closeModal()">
+	</vtr-ui-close-button>
 </div>
