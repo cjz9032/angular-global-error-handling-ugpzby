@@ -38,7 +38,13 @@ export class ModalAboutComponent implements OnInit {
 			this.shellVersion = `${packageVersion.major}.${packageVersion.minor}.${packageVersion.build}.${packageVersion.revision}`;
 		}
 		const jsBridgeVersion = this.shellService.getVersion();
-		this.bridgeVersion = (jsBridgeVersion) ? jsBridgeVersion : '';
+		if (document.location.href.indexOf('stage') >= 0
+		|| document.location.href.indexOf('vantage.csw.') >= 0
+		&& (jsBridgeVersion && jsBridgeVersion.indexOf('-') >= 0)) {
+			this.bridgeVersion = jsBridgeVersion.split('-')[0];
+		} else {
+			this.bridgeVersion = jsBridgeVersion ? jsBridgeVersion : '';
+		}
 	}
 
 	agreementClicked() {
