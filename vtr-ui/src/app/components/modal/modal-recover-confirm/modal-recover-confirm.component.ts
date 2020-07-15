@@ -26,6 +26,6 @@ export class ModalRecoverConfirmComponent implements OnInit, OnDestroy {
 	}
 
 	public onClosing() {
-        this.activeModal.close();
-    }
+		this.activeModal.close();
+	}
 }
