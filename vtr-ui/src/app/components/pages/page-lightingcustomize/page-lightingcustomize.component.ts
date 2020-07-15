@@ -28,7 +28,6 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	dynamic_metricsItem: any = 'lighting_profile_cms_inner_content';
 	public ledlayoutversion: any;
 	notificationSubscription: Subscription;
-	cmsSubscription: Subscription;
 	capabilitySubscription: Subscription
 
 	private cmsSubscription: Subscription;
@@ -69,10 +68,6 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	ngOnDestroy() {
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
-		}
-
-		if (this.langSubscription) {
-			this.langSubscription.unsubscribe();
 		}
 
 		if(this.cmsSubscription) {
