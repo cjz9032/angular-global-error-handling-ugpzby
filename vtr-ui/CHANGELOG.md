@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.7](https://bitbucket.tc.lenovo.com///compare/v1.7.6...v1.7.7) (2020-07-15)
+
+
+### Features
+
+* **notification:** display a banner,optimized bridge version display ([10b14d0](https://bitbucket.tc.lenovo.com///commit/10b14d0c5b356176cc50e3fbdcb23b15e9b1acb8))
+* **Optimize:** delete NLS and Optimize code ([6f43dad](https://bitbucket.tc.lenovo.com///commit/6f43dad22a7d3da985630d81180cdfe8a29f11f5))
+
+### [1.6.44](https://bitbucket.tc.lenovo.com///compare/v1.6.43...v1.6.44) (2020-07-10)
+
+### [1.6.43](https://bitbucket.tc.lenovo.com///compare/v1.6.42...v1.6.43) (2020-07-09)
+
+### [1.6.42](https://bitbucket.tc.lenovo.com///compare/v1.7.2...v1.6.42) (2020-07-09)
+
 ### [1.7.6](https://bitbucket.tc.lenovo.com///compare/v1.7.5...v1.7.6) (2020-07-15)
 
 ### [1.7.5](https://bitbucket.tc.lenovo.com///compare/v1.7.4...v1.7.5) (2020-07-14)
