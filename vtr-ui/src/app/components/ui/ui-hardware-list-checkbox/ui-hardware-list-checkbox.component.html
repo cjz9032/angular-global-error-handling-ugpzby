@@ -1,12 +1,17 @@
 <div class="vtr-ui-list-checkbox-hardware">
 	<ul class="list-group">
 		<div class="col-12 px-0">
-			<li class="list-group-item" *ngFor="let device of devices; let i = index">
+			<li class="list-group-item"
+				*ngFor="let device of devices; let i = index">
 				<div class="row align-items-center">
 					<div class="custom-control form-control-lg custom-checkbox">
-						<input id="{{ i }}" type="checkbox" class="custom-control-input"
-							[(ngModel)]="device.isSelected" (change)="onSelectDevice()" />
-						<label class="custom-control-label name" for="{{ i }}">
+						<input id="{{ i }}"
+							type="checkbox"
+							class="custom-control-input"
+							[(ngModel)]="device.isSelected"
+							(change)="onSelectDevice()" />
+						<label class="custom-control-label name"
+							for="{{ i }}">
 							<span class="title">{{ device.title }}</span>
 						</label>
 					</div>
@@ -15,9 +20,13 @@
 		</div>
 		<div class="col-12 px-0">
 			<div class="options">
-				<a class="select-item" href="javascript:void(0)" (click)="onSelectAllDevices()">{{select}}</a>
+				<a class="select-item"
+					href="javascript:void(0)"
+					(click)="onSelectAllDevices()">{{select}}</a>
 				<span class="select-item-subtitle">/</span>
-				<a class="select-item" href="javascript:void(0)" (click)="onDeselectAllDevices()">{{deselect}}</a>
+				<a class="select-item"
+					href="javascript:void(0)"
+					(click)="onDeselectAllDevices()">{{deselect}}</a>
 			</div>
 		</div>
 	</ul>

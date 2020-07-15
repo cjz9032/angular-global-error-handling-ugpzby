@@ -10,10 +10,11 @@ import {
 import { By } from "@angular/platform-browser";
 
 @Component({
-    selector: 'test-comp',
+	selector: 'test-comp',
 	template: `
 		<div
 			uiDropdownNavigate
+			id="ui-dropdown-navigate-directive"
 			[isDropdownOpen]="isDropDownOpen"
 			[selectedChild]="selectedDuration"
 			class="ui-menu-dropdown"
@@ -44,13 +45,13 @@ xdescribe("UiDropdownNavigate", () => {
 		fixture = TestBed.configureTestingModule({
 			declarations: [MockComponent, UiDropdownNavigate],
 			// providers: [Renderer2],
-        }).createComponent(MockComponent)
-        
-        fixture.detectChanges();
-        dummyElement = fixture.debugElement.query(By.directive(UiDropdownNavigate))
+		}).createComponent(MockComponent)
+
+		fixture.detectChanges();
+		dummyElement = fixture.debugElement.query(By.directive(UiDropdownNavigate))
 	});
 	it("should create an instance", () => {
-        const divEl = dummyElement.nativeElement.focus();
-        expect(divEl).toHaveBeenCalled()
-    });
+		const divEl = dummyElement.nativeElement.focus();
+		expect(divEl).toHaveBeenCalled()
+	});
 });

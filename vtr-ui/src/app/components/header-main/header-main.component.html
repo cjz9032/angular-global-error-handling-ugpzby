@@ -33,7 +33,8 @@
 		<ng-content></ng-content>
 		<div *ngIf="forwardLink"
 			class="forward-link">
-			<a routerLink="/{{forwardLink.path}}"><span role="text"
+			<a routerLink="/{{forwardLink.path}}"
+				id="header-main-forward-link-path"><span role="text"
 					class="forward-link-label">{{forwardLink.label}}</span>
 				<fa-icon [icon]="['fas', 'arrow-right']"
 					class="forward-link-icon"></fa-icon>

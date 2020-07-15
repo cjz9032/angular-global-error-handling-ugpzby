@@ -13,6 +13,7 @@
 				</div>
 				<div class="button-box">
 					<a role="button"
+						id="widget-reboot-now"
 						vtrMetrics
 						metricsItem="reboot now"
 						metricsParent="reboot-pending"
@@ -22,10 +23,11 @@
 						(click)="onRebootClick($event)">Reboot Now</a>
 				</div>
 				<a role="link"
-				   vtrMetrics
-				   metricsEvent="featureclick"
-				   metricsItem="DoneButton"
-				   metricsParent="SystemUpdate.Results"
+					id="widget-reboot-dismiss-click"
+					vtrMetrics
+					metricsEvent="featureclick"
+					metricsItem="DoneButton"
+					metricsParent="SystemUpdate.Results"
 					href="javascript:void(0);"
 					class="link"
 					(click)="onDismissClick($event)">Dismiss</a>
