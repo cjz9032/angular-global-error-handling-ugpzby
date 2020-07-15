@@ -18,8 +18,7 @@ export class ModalScanFailureComponent {
 	private failedRbsDevices: Array<string>;
 	public testResultEnum = HardwareScanTestResult;
 
-	constructor(public activeModal: NgbActiveModal,
-		private router: Router) {
+	constructor(public activeModal: NgbActiveModal, private router: Router) {
 		this.failedRbsDevices = [];
 	}
 
@@ -45,7 +44,7 @@ export class ModalScanFailureComponent {
 	// Checks the any storage device from failedModules has support for RBS (according to rbsDevices list)
 	private createListFailedRbsDevices() {
 		// First, getting a list of Ids of storage devices with failure
-		let failedStorageIds = this.failedModules.find(m => m.moduleId == 'storage')
+		const failedStorageIds = this.failedModules.find(m => m.moduleId === 'storage')
 			.devices.reduce(
 				(result, device) => {
 					result.push(device.deviceId);
@@ -53,7 +52,7 @@ export class ModalScanFailureComponent {
 				}, []);
 
 		// Second, getting a list of Ids of storage devices that support RBS
-		let rbsDeviceIds = this.rbsDevices.groupList.reduce(
+		const rbsDeviceIds = this.rbsDevices.groupList.reduce(
 			(result, device) => {
 				result.push(device.id);
 				return result;
@@ -62,7 +61,7 @@ export class ModalScanFailureComponent {
 		// Finally, getting the list of Ids contained in both lists
 		// If any value is returned, it means that a storage device that supports RBS failed, meaning that
 		// a RBS test will be suggested to the user
-		return failedStorageIds.filter(storageId => rbsDeviceIds.includes(storageId))
+		return failedStorageIds.filter(storageId => rbsDeviceIds.includes(storageId));
 	}
 
 	// Goes to RBS page, passing defective device list to be selected when RBS page loads

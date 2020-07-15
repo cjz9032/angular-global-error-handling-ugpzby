@@ -12,7 +12,7 @@ export class ModalWaitComponent implements OnInit, OnDestroy {
 
 	@Input() modalTitle: string;
 	@Input() modalDescription: string;
-	@Input() shouldCloseModal: Observable<boolean>
+	@Input() shouldCloseModal: Observable<boolean>;
 
 	@Input() ItemParent: string;
 	@Input() CancelItemName: string;
