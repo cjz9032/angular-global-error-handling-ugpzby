@@ -296,7 +296,7 @@ export enum LocalStorageKey {
 	IsSmartPerformanceFirstRun = '[LocalStorageKey] IsSmartPerformanceFirstRun',
 	SPScheduleScanFrequency = '[LocalStorageKey] SPScheduleScanFrequency',
 	isOldScheduleScanDeleted= '[LocalStorageKey] isOldScheduleScanDeleted',
-
+	SPProcessStatus= '[LocalStorageKey] SPProcessStatus',
 	// Hide Camera Preview on some models
 	IsCameraPreviewHidden = '[LocalStorageKey] IsCameraPreviewHidden',
 	ShouldCameraSectionDisabled = '[LocalStorageKey] ShouldCameraSectionDisabled'

@@ -27,7 +27,7 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 		private logger: LoggerService,
 		public smartPerformanceService: SmartPerformanceService,
 		private translate: TranslateService
-	) {	}
+	) { }
 
 	// scan settings
 	@Output() scanDatekValueChange = new EventEmitter();
@@ -96,8 +96,8 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 	type: string;
 	isFirstVisit: boolean;
 	loading: boolean;
-	sliceDay:boolean = true;
-	amPmPosition:boolean = false;
+	sliceDay: boolean = true;
+	amPmPosition: boolean = false;
 	selectedMeridiem: string;
 
 	ngOnInit() {
@@ -145,7 +145,7 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 			this.setDefaultValWhenDisabled();
 		}
 
-		if (this.IsSmartPerformanceFirstRun === true &&	this.isSubscribed == true) {
+		if (this.IsSmartPerformanceFirstRun === true && this.isSubscribed == true) {
 			this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCAN);
 		}
 
@@ -154,7 +154,6 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, false);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, actualScanFrequency[0]);
 		}
-
 		// fetching next schedule date and time from task scheduler
 		if (this.scheduleScanFrequency !== undefined && this.IsScheduleScanEnabled && !this.IsSmartPerformanceFirstRun) {
 			if (this.isSubscribed) {
@@ -209,15 +208,15 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 		this.frequencyValue = value;
 		this.selectedFrequency = this.scanFrequency[value];
 		this.isDaySelectionEnable = true;
-		if(this.selectedFrequency === this.scanFrequency[0]) {
+		if (this.selectedFrequency === this.scanFrequency[0]) {
 			this.selectedDay = this.days[value];
 			this.dayValue = value;
 		}
-		if(this.selectedFrequency === this.scanFrequency[1]) {
+		if (this.selectedFrequency === this.scanFrequency[1]) {
 			this.selectedDay = this.days[0];
 			this.dayValue = this.days.indexOf(this.selectedDay)
 		}
-		if(this.selectedFrequency === this.scanFrequency[2]) {
+		if (this.selectedFrequency === this.scanFrequency[2]) {
 			this.selectedNumber = this.dates[0]
 			this.dateValue = this.dates.indexOf(this.selectedNumber)
 		}
@@ -247,11 +246,11 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 
 	saveChangeScanTime() {
 		this.scheduleTab = '';
-		this.scanTime = {...this.copyScanTime}
+		this.scanTime = { ...this.copyScanTime }
 	}
 	cancelChangeScanTime() {
 		this.scheduleTab = '';
-		this.copyScanTime = {...this.scanTime}
+		this.copyScanTime = { ...this.scanTime }
 	}
 	changeHoursTime(value) {
 		this.copyScanTime.hour = this.hours[value];
@@ -300,17 +299,28 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 
 	// deletes records from task scheduler
 	async unregisterScheduleScan(scantype) {
-		const payload = {scantype};
+		const payload = { scantype };
 		this.logger.info('ui-smart-performance.unregisterScheduleScan', JSON.stringify(payload));
+		
 		try {
 			const res: any = await this.smartPerformanceService.unregisterScanSchedule(payload);
 			// when unregisterScheduleScan is successful and scheduledScan is enabled, sending request to set schedule scan
-			if(res.state && this.scanToggleValue) {
+			if (res.state && this.scanToggleValue) {
 				this.scheduleScan(this.requestScanData);
-				this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, false);
-				this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, actualScanFrequency[0]);
+				
 			}
-			this.logger.info('ui-smart-performance.unregisterScheduleScan.then', JSON.stringify(res));
+			else {
+				this.logger.info('ui-smart-performance.unregisterScheduleScan', JSON.stringify(res));
+				if (!this.isSubscribed) {
+					this.hideBasedOnOldAddIn.emit(true);
+					return;
+				}
+				else {
+					this.hideBasedOnOldAddInSummary.emit(true);
+					return;
+				}
+			}
+
 		} catch (err) {
 			this.logger.error('ui-smart-performance.unregisterScheduleScan.then', err);
 		}
@@ -353,10 +363,28 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 			const res: any = await this.smartPerformanceService.setScanSchedule(payload);
 			// when saving schedule scan is successful, fetching next scan runtime from backend and updating respective fields
 			if (res.state) {
+			
+				if(this.IsSmartPerformanceFirstRun)
+				{
+					this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, false);
+					this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, actualScanFrequency[0]);
+				}
+
 				if (this.isSubscribed) {
 					this.getNextScanRunTime(enumSmartPerformance.SCHEDULESCANANDFIX);
 				} else {
 					this.getNextScanRunTime(enumSmartPerformance.SCHEDULESCAN);
+				}
+			}
+			else {
+				this.logger.info('ui-smart-performance.scheduleScan', JSON.stringify(res));
+				if (!this.isSubscribed) {
+					this.hideBasedOnOldAddIn.emit(true);
+					return;
+				}
+				else {
+					this.hideBasedOnOldAddInSummary.emit(true);
+					return;
 				}
 			}
 		} catch (err) {
@@ -368,7 +396,7 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 		this.loading = true;
 		const payload = { scantype };
 		let nextScanEvent = {};
-		this.logger.info('ui-smart-performance.getNextScanRunTime',	JSON.stringify(payload)	);
+		this.logger.info('ui-smart-performance.getNextScanRunTime', JSON.stringify(payload));
 		try {
 			const res: any = await this.smartPerformanceService.getNextScanRunTime(payload);
 			this.logger.info('ui-smart-performance.getNextScanRunTime.then', JSON.stringify(res));
@@ -392,21 +420,21 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 				this.copyScanTime.minId = this.mins.indexOf(this.copyScanTime.min);
 				this.copyScanTime.amPmId = actualMeridiem.indexOf(this.copyScanTime.amPm);
 				this.selectedMeridiem = this.amPm[this.copyScanTime.amPmId];
-				this.scanTime = {...this.copyScanTime}
+				this.scanTime = { ...this.copyScanTime }
 				nextScanEvent = {
 					nextEnable: true,
-					nextScanDate: dt.split(',')[1]+'/'+dt.split(',')[2].trim(),
+					nextScanDate: dt.split(',')[1] + '/' + dt.split(',')[2].trim(),
 					nextScanHour: this.scanTime.hour,
 					nextScanMin: this.scanTime.min,
 					nextScanAMPM: this.selectedMeridiem,
-					nextScanDateWithYear: dt.split(',')[1]+'/'+dt.split(',')[2].trim()+'/'+dt.split(',')[3]
+					nextScanDateWithYear: dt.split(',')[1] + '/' + dt.split(',')[2].trim() + '/' + dt.split(',')[3]
 				};
 				this.scanDatekValueChange.emit(nextScanEvent);
 				return;
 			}
 
 			// when vantage service is uninstalled and reinstalled this conditions executes
-			if(!res.state) {
+			if (!res.state) {
 				this.selectedFrequency = this.scanFrequency[0]
 				this.frequencyValue = this.scanFrequency.indexOf(this.selectedFrequency)
 				this.isFirstVisit = false;
@@ -414,9 +442,10 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 				this.payloadData(this.type);
 				this.scheduleScan(this.requestScanData);
 				this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, actualScanFrequency[0]);
-				return
+
 			}
-			if (!res.nextruntime) {
+			if (res.nextruntime === null) {
+				this.logger.info('ui-smart-performance.getNextScanRunTime.else', JSON.stringify(res));
 				if (!this.isSubscribed) {
 					this.hideBasedOnOldAddIn.emit(true);
 					return;
@@ -453,8 +482,8 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 			case 'firstRun':
 				let roundOffMin;
 				const roundOffSecToZero = '00';
-				if(this.isFirstVisit) {
-					if(moment().minute() > 55) {
+				if (this.isFirstVisit) {
+					if (moment().minute() > 55) {
 						currentMom = moment().add(2, 'hours').format('dddd, YYYY, MM, D, HH, mm, ss');
 						roundOffMin = '00'
 					} else {
@@ -462,9 +491,9 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 						roundOffMin = (Math.ceil(+currentMom.split(',')[5] / 5) * 5).toString()
 					}
 				}
-				if(!this.isFirstVisit) {
+				if (!this.isFirstVisit) {
 					// roundingoff minutes to hour when minutes greater than 55 else to multiples of 5 when minutes less than 55 - intermittent issue fix
-					if(moment().minute() > 55) {
+					if (moment().minute() > 55) {
 						currentMom = moment().add(1, 'hours').format('dddd, YYYY, MM, D, HH, mm, ss');
 						roundOffMin = '00'
 					} else {
@@ -477,7 +506,7 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 					day: currentMom.split(',')[0],
 					time: moment([
 						currentMom.split(',')[1],
-						(+currentMom.split(',')[2]-1).toString(),
+						(+currentMom.split(',')[2] - 1).toString(),
 						currentMom.split(',')[3],
 						currentMom.split(',')[4],
 						roundOffMin,
@@ -486,10 +515,10 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 					date: [],
 				};
 				if (this.isSubscribed) {
-					this.requestScanData = {scantype: enumSmartPerformance.SCHEDULESCANANDFIX,	...data,};
+					this.requestScanData = { scantype: enumSmartPerformance.SCHEDULESCANANDFIX, ...data, };
 				}
 				if (!this.isSubscribed) {
-					this.requestScanData = {scantype: enumSmartPerformance.SCHEDULESCAN, ...data,};
+					this.requestScanData = { scantype: enumSmartPerformance.SCHEDULESCAN, ...data, };
 				}
 				break;
 
@@ -536,7 +565,7 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 			day: freq !== 'onceamonth' ? actualDays[this.dayValue] : '',
 			time: moment([
 				currentMoment.split(',')[0],
-				(+currentMoment.split(',')[1]-1).toString(),
+				(+currentMoment.split(',')[1] - 1).toString(),
 				currentMoment.split(',')[2],
 				roundedhours,
 				this.scanTime.min,
@@ -545,17 +574,17 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 			date: freq === 'onceamonth' ? [+this.selectedNumber] : [],
 		};
 		if (this.isSubscribed) {
-			this.requestScanData = {scantype: enumSmartPerformance.SCHEDULESCANANDFIX, ...data,};
+			this.requestScanData = { scantype: enumSmartPerformance.SCHEDULESCANANDFIX, ...data, };
 		}
 		if (!this.isSubscribed) {
-			this.requestScanData = {scantype: enumSmartPerformance.SCHEDULESCAN, ...data,};
+			this.requestScanData = { scantype: enumSmartPerformance.SCHEDULESCAN, ...data, };
 		}
 	}
 
 	translationCheck() {
 		if (this.translate.currentLang !== 'en') {
 			this.sliceDay = false;
-			if(this.translate.currentLang === 'ar') {
+			if (this.translate.currentLang === 'ar') {
 				this.amPmPosition = true;
 			}
 		} else {

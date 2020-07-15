@@ -60,6 +60,7 @@ export class UiSmartPerformanceComponent implements OnInit, OnDestroy, OnChanges
 	];
 	private metrics: any;
 	public isOnline = true;
+
 	constructor(
 		private translate: TranslateService,
 		private modalService: NgbModal,

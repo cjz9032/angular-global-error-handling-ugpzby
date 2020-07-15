@@ -45,6 +45,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	public isFirstLoad = false;
 	public isRefreshEnabled = false;
 	tempHide = false;
+	spProcessStatus : any;
 	constructor(
 		private translate: TranslateService,
 		private modalService: NgbModal,
@@ -65,7 +66,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 
 		this.isFirstLoad = true;
 
-
+		this.spProcessStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SPProcessStatus);
 		this.spFrstRunStatus = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun);
 		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
 		this.decryptPNListData();
@@ -206,13 +207,18 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	subscriptionDataProcess(subscriptionData) {
 		if (subscriptionData && subscriptionData.length > 0) {
 			this.isLoading = false;
-			const scanEnabled = this.commonService.getLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled);
-			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
-			// this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.localSubscriptionDetails);
-			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
-			this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, 'Once a week')
-			if (!scanEnabled) {
-				this.commonService.setLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled, true);
+			if(this.spProcessStatus === undefined || this.spProcessStatus === true)
+			{
+				const scanEnabled = this.commonService.getLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled);
+				this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
+				// this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.localSubscriptionDetails);
+				this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
+				 
+				this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, 'Once a week')
+				if (!scanEnabled) {
+					this.commonService.setLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled, true);
+				}
+				this.commonService.setLocalStorageValue(LocalStorageKey.SPProcessStatus, false)
 			}
 			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.activeStatus';
 			this.strStatus = 'ACTIVE';
