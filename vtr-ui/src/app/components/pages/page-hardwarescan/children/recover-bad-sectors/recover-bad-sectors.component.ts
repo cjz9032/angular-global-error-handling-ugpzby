@@ -39,8 +39,8 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 
 		this.failedDevicesList = [];
 		this.activatedRoute.queryParams.subscribe(params => {
-			if (params['failedDevices']) {
-				this.failedDevicesList = params['failedDevices'];
+			if (params.failedDevices) {
+				this.failedDevicesList = params.failedDevices;
 			}
 		});
 	}

@@ -22,12 +22,12 @@ export class HardwareScanGuard extends BasicGuard {
 		route: ActivatedRouteSnapshot,
 		state: RouterStateSnapshot
 	): Promise<boolean | UrlTree> {
-		return this.hardwareScanService.isAvailable().then((available)=>{
+		return this.hardwareScanService.isAvailable().then((available) => {
 			if (available){
 				return true;
 			}
 			return super.canActivate(route, state);
-		})
+		});
 	}
 
 	canActivateChild(

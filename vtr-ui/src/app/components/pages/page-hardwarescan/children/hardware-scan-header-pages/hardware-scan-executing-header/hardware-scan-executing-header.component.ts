@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-	import { HardwareScanService } from '../../../../../../services/hardware-scan/hardware-scan.service';
+import { HardwareScanService } from '../../../../../../services/hardware-scan/hardware-scan.service';
 
 @Component({
   selector: 'vtr-hardware-scan-executing-header',
@@ -24,7 +24,7 @@ export class HardwareScanExecutingHeaderComponent implements OnInit {
 	@Output() startQuickScan = new EventEmitter();
 	@Output() checkAnchor = new EventEmitter();
 
-	public lastExecutedModule: string = '';
+	public lastExecutedModule = '';
 
 	constructor(private hardwareScanService: HardwareScanService) { }
 

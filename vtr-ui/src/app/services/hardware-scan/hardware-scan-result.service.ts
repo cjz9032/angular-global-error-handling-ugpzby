@@ -8,12 +8,12 @@ import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.
 })
 export class HardwareScanResultService {
 
-	private failedTests: number = 0;
+	private failedTests = 0;
 
 	// This is used to determine the scan overall status when sending metrics information
 	private resultSeverityConversion = {};
 
-	constructor() { 
+	constructor() {
 		this.initResultSeverityConversion();
 	}
 

@@ -14,8 +14,7 @@ export class UiHardwareListCheckboxComponent implements OnInit, OnDestroy {
 
 	@Input() devices: any[];
 
-	constructor(private translate: TranslateService,
-		private hardwareScanService: HardwareScanService) { }
+	constructor(private translate: TranslateService, private hardwareScanService: HardwareScanService) { }
 
 	ngOnInit() {
 		this.hardwareScanService.setHasDevicesToRecover(this.devices.find(x => x.isSelected));
