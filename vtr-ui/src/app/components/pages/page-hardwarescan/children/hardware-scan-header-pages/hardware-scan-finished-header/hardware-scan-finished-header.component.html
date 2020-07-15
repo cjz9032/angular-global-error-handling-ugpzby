@@ -2,7 +2,7 @@
 	<div class="row">
 		<div [ngSwitch]="headerType" aria-live="polite">
 			<div id="rbs-header-height-filler" *ngSwitchCase="enumScanHeaderTypeFinished.RecoverBadSectors">
-				<h2 class="col title">{{'hardwareScan.recoverBadSectors.recoverCompleted' | translate }}</h2>
+				<h2 class="col title">{{ 'hardwareScan.recoverBadSectors.recoverCompleted' | translate }}</h2>
 			</div>
 			<div *ngSwitchCase="enumScanHeaderTypeFinished.Scan">
 				<ng-container *ngTemplateOutlet="scanFinishedHeaderTitle"></ng-container>
@@ -43,7 +43,7 @@
 								metricsItem="HardwareScan.ScanAgain"
 								class="scan-again-button"
 								[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
-								(click)="onScanAgain()">{{'hardwareScan.scanFinishedHeader.scanAgainButtonText' | translate}}
+								(click)="onScanAgain()">{{ 'hardwareScan.scanFinishedHeader.scanAgainButtonText' | translate }}
 							</button>
 						</div>
 					</div>
@@ -126,12 +126,12 @@
 			</a>
 	</ng-template>
 
-	<!-- Commom templtes used in both Scan and Previous Results headers -->
+	<!-- Common templtes used in both Scan and Previous Results headers -->
 	<ng-template #scanFinishedHeaderTitle>
 		<div class="col" [ngSwitch]="numberTestsFailed">
-			<h2 class="title" *ngSwitchCase="0">{{'hardwareScan.scanFinishedHeader.titleSuccess' | translate }}</h2> <!-- No failures -->
-			<h2 class="title" *ngSwitchCase="1">{{'hardwareScan.scanFinishedHeader.titleErrorSingular' | translate }}</h2> <!-- Just one failure -->
-			<h2 class="title" *ngSwitchDefault>{{'hardwareScan.scanFinishedHeader.titleErrorPlural' | translate:{'numberTestsFailed':numberTestsFailed} }}</h2>  <!-- More than one failure -->
+			<h2 class="title" *ngSwitchCase="0">{{ 'hardwareScan.scanFinishedHeader.titleSuccess' | translate }}</h2> <!-- No failures -->
+			<h2 class="title" *ngSwitchCase="1">{{ 'hardwareScan.scanFinishedHeader.titleErrorSingular' | translate }}</h2> <!-- Just one failure -->
+			<h2 class="title" *ngSwitchDefault>{{ 'hardwareScan.scanFinishedHeader.titleErrorPlural' | translate:{'numberTestsFailed':numberTestsFailed} }}</h2>  <!-- More than one failure -->
 		</div>
 	</ng-template>
 	<ng-template #scanFinishedFinalResultCode let-finalResultCodeTitle="finalResultCodeTitle" let-finalResultCodeValue="finalResultCodeValue">
