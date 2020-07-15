@@ -500,8 +500,26 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 		margin-top: 8rem;
 
 		.modal-content {
-			border-radius: $border_radius;
+            border-radius: $border_radius;
+            @media #{$black-on-white} {
+                @include black-border;
+            }
+            @media #{$white-on-black} {
+                @include white-border;
+            }
 		}
+	}
+}
+
+.home-security-offline-modal {
+    .modal-content {
+        border-radius: $border_radius;
+        @media #{$black-on-white} {
+            @include black-border;
+        }
+        @media #{$white-on-black} {
+            @include white-border;
+        }
 	}
 }
 
@@ -701,7 +719,13 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 		border-radius: 1rem;
 		background: $light;
 		padding: 3rem 0 0 4rem;
-		overflow: hidden;
+        overflow: hidden;
+        @media #{$black-on-white} {
+            @include black-border;
+        }
+        @media #{$white-on-black} {
+            @include white-border;
+        }
 	}
 }
 
@@ -876,7 +900,13 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	.modal-content {
 		border-radius: 1rem;
 		background: $light;
-		overflow: hidden;
+        overflow: hidden;
+        @media #{$black-on-white} {
+            @include black-border;
+        }
+        @media #{$white-on-black} {
+            @include white-border;
+        }
 	}
 }
 
