@@ -104,19 +104,9 @@
 							color: $light;
 						}
 
-                        @media #{$black-on-white} {
-							background-color: $dark !important;
-							background-image: none !important;
-							border: 0.1rem solid $dark !important;
-							color: $light;
-						}
-
-						@media #{$white-on-black} {
-							background-color: $light !important;
-							background-image: none !important;
-							border: 0.1rem solid $light !important;
-							color: $dark;
-                        }
+                        @include high-contrast-status-icon-and-badge;
+                        @include high-contrast-color;
+                        @include high-contrast-background-image;
 
 						&.red {
 							background-color: $button_red_start;
@@ -328,19 +318,9 @@
 									top: 0.2rem;
 								}
 
-                                @media #{$black-on-white} {
-									background-color: $dark !important;
-									background-image: none !important;
-									border: 0.1rem solid $dark !important;
-									color: $light;
-								}
-		
-								@media #{$white-on-black} {
-									background-color: $light !important;
-									background-image: none !important;
-									border: 0.1rem solid $light !important;
-									color: $dark;
-                                }
+                                @include high-contrast-status-icon-and-badge;
+                                @include high-contrast-color;
+                                @include high-contrast-background-image;
 
 								&.red {
 									background-color: $button_red_start;
