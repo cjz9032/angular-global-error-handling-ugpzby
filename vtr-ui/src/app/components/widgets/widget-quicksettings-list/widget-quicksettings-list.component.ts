@@ -1,3 +1,4 @@
+import { Subscription } from 'rxjs/internal/Subscription';
 import { Router } from '@angular/router';
 import { DialogService } from './../../../services/dialog/dialog.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
@@ -32,6 +33,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 	public thermalModeStatusObj = new ThermalModeStatus();
 	public setThermalModeStatus: any;
 	public gamingCapabilities: any = new GamingAllCapabilities();
+	private notificationService: Subscription;
 
 
 	public quickSettings = [
@@ -249,7 +251,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 		if(this.quickSettings[3].isVisible) {
 			this.registerDolbyChangeEvent();
 		}
-		this.commonService.getCapabalitiesNotification().subscribe((response) => {
+		this.notificationService = this.commonService.getCapabalitiesNotification().subscribe((response) => {
 			if (response.type === Gaming.GamingCapabilities) {
 				this.gamingCapabilities = response.payload;
 				if (this.gamingCapabilities.smartFanFeature && this.gamingCapabilities.thermalModeVersion === 1) {
@@ -593,6 +595,10 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 			this.securityAdvisor.wifiSecurity.off(EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHandler);
 			this.securityAdvisor.wifiSecurity.off(EventTypes.wsPluginMissingEvent, this.wsPluginMissingEventHandler);
 			this.securityAdvisor.wifiSecurity.off(EventTypes.wsIsSupportWifiEvent, this.wsIsSupportWifiEventHandler);
+		}
+
+		if(this.notificationService) {
+			this.notificationService.unsubscribe();
 		}
 	}
 

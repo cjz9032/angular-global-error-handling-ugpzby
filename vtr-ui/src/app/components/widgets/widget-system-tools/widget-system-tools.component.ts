@@ -1,5 +1,6 @@
+import { Subscription } from 'rxjs/internal/Subscription';
 import { GamingAllCapabilities } from './../../../data-models/gaming/gaming-all-capabilities';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { isUndefined } from 'util';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -16,13 +17,16 @@ import { GamingAccessoryService } from 'src/app/services/gaming/gaming-accessory
 	templateUrl: './widget-system-tools.component.html',
 	styleUrls: ['./widget-system-tools.component.scss']
 })
-export class WidgetSystemToolsComponent implements OnInit {
+export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 	@Input() title = '';
 	public showHWScanMenu: boolean = false;
 	public gamingProperties: any = new GamingAllCapabilities();
 	// version 3.3 for accessory entrance
 	public showLegionAccessory: boolean = false;
 	public toolLength: number = 3;
+	private notificationSubscription: Subscription;
+	private eventEmitSubscription: Subscription;
+
 	modalAutomationId: any = {
 		section: 'legion_accessory_central_install_popup',
 		closeButton : 'legion_accessory_close_button',
@@ -41,7 +45,7 @@ export class WidgetSystemToolsComponent implements OnInit {
 	) { }
 
 	ngOnInit() {
-		this.commonService.getCapabalitiesNotification().subscribe((response) => {
+		this.notificationSubscription = this.commonService.getCapabalitiesNotification().subscribe((response) => {
 			if (response.type === Gaming.GamingCapabilities) {
 				this.gamingProperties = response.payload;
 			}
@@ -77,6 +81,15 @@ export class WidgetSystemToolsComponent implements OnInit {
 				this.calcToolLength();
 			} 
 		});
+	}
+
+	ngOnDestroy() {
+		if(this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
+		if(this.eventEmitSubscription) {
+			this.eventEmitSubscription.unsubscribe();
+		}
 	}
 
 	calcToolLength() {
@@ -117,7 +130,7 @@ export class WidgetSystemToolsComponent implements OnInit {
 			cancelButton: "gaming.dashboard.device.legionEdge.driverPopup.link",
 			id : this.modalAutomationId
 		}
-		waringModalRef.componentInstance.emitService.subscribe((emmitedValue) => {
+		this.eventEmitSubscription = waringModalRef.componentInstance.emitService.subscribe((emmitedValue) => {
 			if(emmitedValue === 1) {
 				window.open('https://pcsupport.lenovo.com/downloads/legionaccessorycentral');
 			}

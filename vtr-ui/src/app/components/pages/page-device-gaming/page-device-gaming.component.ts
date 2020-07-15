@@ -1,4 +1,4 @@
-import { Component, OnInit, DoCheck } from '@angular/core';
+import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MockService } from '../../../services/mock/mock.service';
 import { QaService } from '../../../services/qa/qa.service';
@@ -20,14 +20,15 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { Title } from '@angular/platform-browser';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
+import { Subscription } from 'rxjs';
 
 @Component({
 	selector: 'vtr-page-device-gaming',
 	templateUrl: './page-device-gaming.component.html',
-	styleUrls: [ './page-device-gaming.component.scss' ],
-	providers: [ NgbModalConfig, NgbModal ]
+	styleUrls: ['./page-device-gaming.component.scss'],
+	providers: [NgbModalConfig, NgbModal]
 })
-export class PageDeviceGamingComponent implements OnInit, DoCheck {
+export class PageDeviceGamingComponent implements OnInit, DoCheck, OnDestroy {
 	public static allCapablitiyFlag = false;
 	submit = 'Submit';
 	feedbackButtonText = this.submit;
@@ -38,6 +39,9 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck {
 	// TODO Lite Gaming
 	public liteGaming = false;
 	public desktopType = false;
+	private translateSubscription: Subscription;
+	private notificationSubscription: Subscription;
+	private cmsSubscription: Subscription;
 
 	constructor(
 		private router: Router,
@@ -68,6 +72,7 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck {
 		this.liteGaming = this.gamingAllCapabilitiesService.getCapabilityFromCache(LocalStorageKey.liteGaming);
 	}
 
+
 	ngOnInit() {
 		this.isOnline = this.commonService.isOnline;
 
@@ -83,9 +88,9 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck {
 					// this.desktopType = this.gamingAllCapabilitiesService.getCapabilityFromCache(LocalStorageKey.desktopType);
 					// this.liteGaming = this.gamingAllCapabilitiesService.getCapabilityFromCache(LocalStorageKey.liteGaming);
 				})
-				.catch((err) => {});
+				.catch((err) => { });
 		}
-		this.translate
+		this.translateSubscription = this.translate
 			.stream([
 				'dashboard.offlineInfo.welcomeToVantage',
 				'common.menu.support',
@@ -94,17 +99,28 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck {
 				'common.securityAdvisor.wifi',
 				'systemUpdates.title',
 				'systemUpdates.readMore'
-			])
-			.subscribe((result) => {
+			]).subscribe((result) => {
 				this.dashboardService.translateString = result;
 				this.dashboardService.setDefaultCMSContent();
 				this.getPreviousContent();
 				this.fetchCmsContents();
 			});
 
-		this.commonService.notification.subscribe((notification: AppNotification) => {
+		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
+	}
+
+	ngOnDestroy() {
+		if (this.translateSubscription) {
+			this.translateSubscription.unsubscribe();
+		}
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
+		if (this.cmsSubscription) {
+			this.cmsSubscription.unsubscribe();
+		}
 	}
 
 	ngDoCheck(): void {
@@ -129,7 +145,7 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck {
 				this.cardContentPositionD = this.dashboardService.onlineCardContent.positionD;
 			}
 		}
-		this.cmsService.fetchCMSContent(queryOptions).subscribe(
+		this.cmsSubscription = this.cmsService.fetchCMSContent(queryOptions).subscribe(
 			(response: any) => {
 				const callCmsEndTime: any = new Date();
 				const callCmsUsedTime = callCmsEndTime - callCmsStartTime;
@@ -153,11 +169,11 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck {
 					this.fetchCmsContents('en');
 				}
 			},
-			(error) => {}
+			(error) => { }
 		);
 	}
 
-	public onConnectivityClick($event: any) {}
+	public onConnectivityClick($event: any) { }
 
 	private getPreviousContent() {
 		this.cardContentPositionD = this.dashboardService.offlineCardContent.positionD;

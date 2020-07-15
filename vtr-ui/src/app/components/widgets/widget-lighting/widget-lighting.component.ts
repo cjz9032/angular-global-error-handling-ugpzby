@@ -1,3 +1,4 @@
+import { Subscription } from 'rxjs/internal/Subscription';
 import { DeviceService } from './../../../services/device/device.service';
 import { Gaming } from './../../../enums/gaming.enum';
 import { LocalStorageKey } from './../../../enums/local-storage-key.enum';
@@ -30,6 +31,7 @@ export class WidgetLightingComponent implements OnInit {
 	public ledlayoutversion: any;
 	public ledSwitchButtonFeature: boolean;
 	profileChangeEvent: any;
+	private notificationSubscribe: Subscription;
 
 	constructor(
 		private ngZone: NgZone,
@@ -45,7 +47,7 @@ export class WidgetLightingComponent implements OnInit {
 	ngOnInit() {
 		this.setprofId = 0;
 		this.getCapabilities();
-		this.commonService.getCapabalitiesNotification().subscribe((response) => {
+		this.notificationSubscribe = this.commonService.getCapabalitiesNotification().subscribe((response) => {
 			if (response.type === Gaming.GamingCapabilities) {
 				this.getCapabilities();
 			}
@@ -56,6 +58,9 @@ export class WidgetLightingComponent implements OnInit {
 	}
 
 	ngOnDestroy() {
+		if(this.notificationSubscribe) {
+			this.notificationSubscribe.unsubscribe();
+		}
 		this.shellServices.unRegisterEvent(
 			EventTypes.gamingLightingProfileIdChangeEvent,
 			this.profileChangeEvent
