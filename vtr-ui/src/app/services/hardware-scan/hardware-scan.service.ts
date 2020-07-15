@@ -343,7 +343,6 @@ export class HardwareScanService {
 		if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.deleteScan(payload)
 				.then((response) => {
-					if (response) { } else { }
 					return response;
 				});
 		}
@@ -354,7 +353,6 @@ export class HardwareScanService {
 		if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.editScan(payload)
 				.then((response) => {
-					if (response) { } else { }
 					return response;
 				});
 		}
@@ -365,7 +363,6 @@ export class HardwareScanService {
 		if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.getNextScans()
 				.then((response) => {
-					if (response) { } else { }
 					return response;
 				});
 		}
@@ -377,8 +374,6 @@ export class HardwareScanService {
 		if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.getScheduleScan(payload)
 				.then((response) => {
-					if (response) { } else { }
-
 					return response;
 				});
 		}
