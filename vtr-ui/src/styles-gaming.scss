@@ -2050,7 +2050,7 @@ body.focus-enable{
 			@include outline-blue-gaming;
 			}
 	  }
-		.btn,.enable-button{
+		.btn{
 			&:focus{
 			outline: none;
 				&::before{

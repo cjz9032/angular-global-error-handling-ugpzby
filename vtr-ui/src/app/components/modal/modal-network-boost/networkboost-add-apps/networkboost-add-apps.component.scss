@@ -46,11 +46,6 @@ ui-popover-apps {
 			@media #{$high-contrast}{
 				color: buttonText;
 			}
-			&:hover {
-				@media #{$high-contrast} {
-					color: highlight;
-				}
-			}
 		}
 	}
 	.modal-content {
