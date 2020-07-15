@@ -390,6 +390,7 @@ $fontsize_xs: 1.4rem;
 		top: 50%;
 		color: #34495e;
 		transform: translateY(-45%);
+		@include high-contrast-adjust;
 		.intelligent-security-image-word-title {
 			font-size: 2.4rem;
 			line-height: 2.4rem;

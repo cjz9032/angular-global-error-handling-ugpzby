@@ -85,13 +85,13 @@
 			@media #{$white-on-black} {
 				background: $dark;
 				box-shadow: none;
-				filter: drop-shadow(0 0 0.1rem $light);
+				border: 0.1rem solid $light;
 			}
 
 			@media #{$black-on-white} {
 				background: $light;
 				box-shadow: none;
-				filter: drop-shadow(0 0 0.1rem $dark);
+				border: 0.1rem solid $dark;
 			}
 
 			.menu-pointer {
@@ -104,13 +104,13 @@
 			@media #{$white-on-black} {
 				background: $dark;
 				box-shadow: none;
-				filter: drop-shadow(0 0 0.1rem $light);
+				border: 0.1rem solid $light;
 			}
 
 			@media #{$black-on-white} {
 				background: $light;
 				box-shadow: none;
-				filter: drop-shadow(0 0 0.1rem $dark);
+				border: 0.1rem solid $dark;
 			}
 
 			.menu-pointer {
@@ -145,10 +145,23 @@
 			border-bottom: 0px;
 			cursor: pointer;
 			@media #{$white-on-black} {
-				border: none;
+				@include high-contrast-triangle;
+				top: -1rem;
+				left: 7rem;
+				border-top: 0.1rem solid transparent;
+				transform: rotate(135deg);
+				border-radius: 0.2rem;
+
 			}
 			@media #{$black-on-white} {
-				border: none;
+				@include high-contrast-triangle;
+				top: -1rem;
+				left: 7rem;
+				border-top: 0.1rem solid transparent;
+				transform: rotate(135deg);
+				border-radius: 0.2rem;
+				border-left-color: $dark;
+				border-bottom-color: $dark;
 			}
 		}
 

@@ -172,22 +172,15 @@
 				@media #{$white-on-black} {
 					color: $dark;
 				}
-				&::before, &::after {
-					@media #{$white-on-black} {
-						@include high-contrast-triangle;
-					}
-					@media #{$black-on-white} {
-						@include high-contrast-triangle;
-						border-bottom: 1.2rem solid $light;
-					}
-				}
+
 				&::before {
 					@media #{$white-on-black} {
-						@include high-contrast-triangle-bordered;
+						@include high-contrast-triangle;
 					}
 					@media #{$black-on-white} {
-						@include high-contrast-triangle-bordered;
-						border-bottom: 1.2rem solid $dark;
+						@include high-contrast-triangle;
+						border-left-color: $dark;
+						border-bottom-color: $dark;
 					}
 				}
 			}

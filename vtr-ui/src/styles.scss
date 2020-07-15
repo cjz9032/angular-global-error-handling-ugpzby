@@ -297,6 +297,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.15));
 	@media #{$black-on-white} {
 		border: 0.1rem solid;
+		filter: drop-shadow(0 0 0 $light);
 	}
 	@media #{$white-on-black} {
 		border: 0.1rem solid;
@@ -327,7 +328,28 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 				border-width: 1rem 1rem 0;
 				border-top-color: $light;
 				left: calc(-1rem + 50%);
-				top: 0.3rem
+				top: 0.3rem;
+				@media #{$white-on-black} {
+					display: none;
+				}
+				@media #{$black-on-white} {
+					display: none;
+				}
+			}
+			&::after {
+				@media #{$white-on-black} {
+					@include high-contrast-tooltip-arrow;
+					top: -0.2rem;
+					transform: rotate(-45deg);
+				}
+				@media #{$black-on-white} {
+					@include high-contrast-tooltip-arrow;
+					background: $light;
+					border-left-color: $dark;
+					border-bottom-color: $dark;
+					top: -0.2rem;
+					transform: rotate(-45deg);
+				}
 			}
 		}
 	}
@@ -339,6 +361,27 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 				border-bottom-color: $light;
 				left: calc(-1rem + 50%);
 				bottom: 0.3rem;
+				@media #{$white-on-black} {
+					display: none;
+				}
+				@media #{$black-on-white} {
+					display: none;
+				}
+			}
+			&::after {
+				@media #{$white-on-black} {
+					@include high-contrast-tooltip-arrow;
+					top: -0.8rem;
+					transform: rotate(135deg);
+				}
+				@media #{$black-on-white} {
+					@include high-contrast-tooltip-arrow;
+					background: $light;
+					border-left-color: $dark;
+					border-bottom-color: $dark;
+					top: -0.8rem;
+					transform: rotate(135deg);
+				}
 			}
 		}
 	}
@@ -350,6 +393,23 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 				border-left-color: $light;
 				top: calc(-1rem + 50%);
 				left: 0.3rem;
+				@media #{$white-on-black} {
+					display: none;
+				}
+				@media #{$black-on-white} {
+					display: none;
+				}
+			}
+			&::after {
+				@media #{$white-on-black} {
+					@include high-contrast-tooltip-arrow;
+				}
+				@media #{$black-on-white} {
+					@include high-contrast-tooltip-arrow;
+					background: $light;
+					border-left-color: $dark;
+					border-bottom-color: $dark;
+				}
 			}
 		}
 	}
@@ -362,6 +422,29 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 				border-right-color: $light;
 				top: calc(-1rem + 50%);
 				right: 0.3rem;
+				@media #{$white-on-black} {
+					display: none;
+				}
+				@media #{$black-on-white} {
+					display: none;
+				}
+			}
+			&::after {
+				@media #{$white-on-black} {
+					@include high-contrast-tooltip-arrow;
+					left: -0.8rem;
+					top: -0.2rem;
+					transform: rotate(45deg);
+				}
+				@media #{$black-on-white} {
+					@include high-contrast-tooltip-arrow;
+					background: $light;
+					border-left-color: $dark;
+					border-bottom-color: $dark;
+					left: -0.8rem;
+					top: -0.2rem;
+					transform: rotate(45deg);
+				}
 			}
 		}
 	}
@@ -1113,6 +1196,18 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 				@media #{$high-contrast} {
 					border: 0.1rem solid $high-contrast-black-textselected !important;
 				}
+				@media #{$white-on-black} {
+					border: 0.1rem solid $light !important;
+				}
+				@media #{$black-on-white} {
+					border: 0.1rem solid $dark !important;
+				}
+			}
+			@media #{$white-on-black} {
+				@include black-border;
+			}
+			@media #{$black-on-white} {
+				@include white-border;
 			}
 		}
 
@@ -1127,16 +1222,48 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 				@media #{$high-contrast} {
 					border: 0.1rem solid $high-contrast-black-textselected !important;
 				}
+				@media #{$white-on-black} {
+					border: 0.1rem solid $light !important;
+				}
+				@media #{$black-on-white} {
+					border: 0.1rem solid $dark !important;
+				}
+			}
+			@media #{$white-on-black} {
+				@include black-border;
+			}
+			@media #{$black-on-white} {
+				@include white-border;
 			}
 		}
 	}
 
 	.arrow {
 		top: calc(-0.9rem + 50%) !important;
+		@include high-contrast-adjust;
 		&::before {
 			border-left-color: $light;
 			border-width: 1rem 0 1rem 1rem;
 			left: 0.3rem;
+			@media #{$white-on-black} {
+				display: none;
+			}
+			@media #{$black-on-white} {
+				display: none;
+			}
+		}
+		&::after {
+			@media #{$white-on-black} {
+				@include high-contrast-tooltip-arrow;
+				top: 0.2rem;
+			}
+			@media #{$black-on-white} {
+				@include high-contrast-tooltip-arrow;
+				background: $light;
+				border-left-color: $dark;
+				border-bottom-color: $dark;
+				top: 0.2rem;
+			}
 		}
 	}
 }
