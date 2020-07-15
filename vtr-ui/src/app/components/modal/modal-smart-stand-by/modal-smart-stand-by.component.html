@@ -29,7 +29,7 @@
 			<div #chartContainer1
 				tabindex="-1"
 				aria-hidden="true"
-				[id]="'chartContainer-1'"
+				[id]="'usageComputer-chartContainer'"
 				class="activity-chart"></div>
 			<div *ngIf="items && items[0].legends"
 				aria-hidden="true"
@@ -75,13 +75,14 @@
 			<div #chartContainer2
 				tabindex="-1"
 				aria-hidden="true"
-				[id]="'chartContainer-2'"
+				[id]="'appliedActiveTime-chartContainer'"
 				class="activity-chart"></div>
 		</div>
 		<div class="col-12 mt-3"
 			*ngIf="isAutomatic && isSufficient === false">
 			<div class="note pl-4">
-				<h4> {{'device.deviceSettings.power.smartStandby.graph.graphNote' | translate}} </h4>
+				<h4 id="smartStandby-graphNote">
+					{{'device.deviceSettings.power.smartStandby.graph.graphNote' | translate}} </h4>
 			</div>
 		</div>
 		<div>
