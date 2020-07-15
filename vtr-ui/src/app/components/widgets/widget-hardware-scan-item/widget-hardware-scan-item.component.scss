@@ -120,7 +120,7 @@
 		text-align: right;
 		padding-top: 1rem;
 		padding-left: 3.2rem;
-		margin-bottom: 1rem;
+		align-items: center;
 
 		.title, .subtitle{
 			margin-bottom: 0;
@@ -129,7 +129,7 @@
 		.result-code-icon {
 			margin-left: 0.5rem;
 			margin-right: 0.4rem;
-			font-size: $fontsize_sm;
+			font-size: $fontsize_lg;
 			color: $menu_hover;
 			cursor: pointer;
 
