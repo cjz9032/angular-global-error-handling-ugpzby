@@ -240,8 +240,7 @@
 							}
 						}
 
-                        .wifi:nth-child(3),
-						.wifi:nth-child(7) {
+                        .wifi:nth-child(4n-1) {
 							@media #{$mediaquery_md, $mediaquery_X45} {
 								border-bottom: 0.1rem solid $shade_lighter;
 							}
