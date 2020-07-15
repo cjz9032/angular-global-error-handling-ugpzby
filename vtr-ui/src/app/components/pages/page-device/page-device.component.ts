@@ -5,6 +5,7 @@ import { CMSService } from 'src/app/services/cms/cms.service';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { Subscription } from 'rxjs/internal/Subscription';
 
 @Component({
 	selector: 'vtr-page-device',
@@ -17,6 +18,7 @@ export class PageDeviceComponent implements OnInit {
 	// back = 'BACK';
 	backarrow = '< ';
 	cardContentPositionA: any = {};
+	private cmsSubscription: Subscription;
 
 	constructor(
 		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
@@ -30,10 +32,6 @@ export class PageDeviceComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		// VAN-5872, server switch feature on language change
-		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-			this.fetchCMSArticles();
-		});
 		this.qaService.setCurrentLangTranslations();
 	}
 
@@ -42,7 +40,7 @@ export class PageDeviceComponent implements OnInit {
 			Page: 'device'
 		};
 
-		this.cmsService.fetchCMSContent(queryOptions).subscribe(
+		this.cmsSubscription = this.cmsService.fetchCMSContent(queryOptions).subscribe(
 			(response: any) => {
 				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
 				if (cardContentPositionA) {
@@ -70,6 +68,10 @@ export class PageDeviceComponent implements OnInit {
 				this.logger.error('fetchCMSContent error', error);
 			}
 		);
+	}
+
+	ngOnDestroy() {
+		if(this.cmsSubscription) this.cmsSubscription.unsubscribe();
 	}
 
 }

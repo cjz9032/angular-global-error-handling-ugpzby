@@ -15,7 +15,7 @@ import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router, NavigationExtras } from '@angular/router';
 import { throttleTime } from 'rxjs/operators';
-import { EMPTY, fromEvent } from 'rxjs';
+import { EMPTY, fromEvent, Subscription } from 'rxjs';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { SmartAssistCache } from 'src/app/data-models/smart-assist/smart-assist-cache.model';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
@@ -115,6 +115,8 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		metricsItem: 'radio.screen-lock-timer.slow'
 	}];
 
+	private cmsSubscription: Subscription;
+
 
 	constructor(
 		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
@@ -131,10 +133,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		private metrics: CommonMetricsService
 	) {
 		this.jumpToSettingsTitle = this.translate.instant('device.smartAssist.jumpTo.title');
-		// VAN-5872, server switch feature on language change
-		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-			this.fetchCMSArticles();
-		});
 
 		this.fetchCMSArticles();
 
@@ -196,6 +194,8 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		if (this.windowsObj) {
 			this.windowsObj.removeEventListener('accesschanged', this.cameraAccessChangedHandler);
 		}
+
+		if(this.cmsSubscription) this.cmsSubscription.unsubscribe();
 	}
 
 	initDataFromCache() {
@@ -723,7 +723,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			Page: 'device-settings'
 		};
 
-		this.cmsService.fetchCMSContent(queryOptions).subscribe(
+		this.cmsSubscription = this.cmsService.fetchCMSContent(queryOptions).subscribe(
 			(response: any) => {
 				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
 				if (cardContentPositionA) {
@@ -992,4 +992,5 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			});
 		}
 	}
+	
 }

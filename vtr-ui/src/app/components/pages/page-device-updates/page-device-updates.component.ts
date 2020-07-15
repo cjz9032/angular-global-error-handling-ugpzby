@@ -162,6 +162,8 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		diskSpaceNeeded: '30.5 MB'
 	};
 
+	private cmsSubscription: Subscription;
+
 	constructor(
 		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
 		public systemUpdateService: SystemUpdateService,
@@ -180,11 +182,6 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		this.isOnline = this.commonService.isOnline;
 		this.metrics = shellService.getMetrics();
 		this.fetchCMSArticles();
-
-		// VAN-5872, server switch feature on language change
-		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-			this.fetchCMSArticles();
-		});
 
 		this.getSpecificSupportLink();
 		this.translateStrings();
@@ -293,7 +290,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			Page: 'system-updates'
 		};
 
-		this.cmsService.fetchCMSContent(queryOptions).subscribe(
+		this.cmsSubscription = this.cmsService.fetchCMSContent(queryOptions).subscribe(
 			(response: any) => {
 				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
 				if (cardContentPositionA) {
@@ -314,6 +311,9 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			if (this.notificationSubscription) {
 				this.notificationSubscription.unsubscribe();
 			}
+			
+			if(this.cmsSubscription) this.cmsSubscription.unsubscribe();
+
 		} catch (error) {
 			this.logger.error('PageDeviceUpdatesComponent.ngOnDestroy: ', error);
 		}

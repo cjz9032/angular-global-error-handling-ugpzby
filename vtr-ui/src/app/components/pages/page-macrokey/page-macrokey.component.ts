@@ -27,7 +27,6 @@ export class PageMacrokeyComponent implements OnInit, OnDestroy {
 	cardContentPositionC: any = {};
 	cardContentPositionF: any = {};
 	dynamic_metricsItem: any = 'macrokey_cms_inner_content';
-	translateSubscrition: Subscription;
 	notificationSubscrition: Subscription;
 	fetchSubscrition: Subscription;
 
@@ -46,10 +45,7 @@ export class PageMacrokeyComponent implements OnInit, OnDestroy {
 	) {
 		this.metrics = this.shellService.getMetrics();
 		this.fetchCMSArticles();
-		// VAN-5872, server switch feature on language change
-		this.translateSubscrition = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-			this.fetchCMSArticles();
-		});
+
 		this.isOnline = this.commonService.isOnline;
 	}
 
@@ -60,9 +56,6 @@ export class PageMacrokeyComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		if(this.translateSubscrition) {
-			this.translateSubscrition.unsubscribe();
-		}
 		
 		if(this.notificationSubscrition) {
 			this.notificationSubscrition.unsubscribe();

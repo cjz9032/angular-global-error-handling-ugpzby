@@ -92,10 +92,6 @@ export class PageDashboardAndroidComponent implements OnInit {
 
 		this.setDefaultCMSContent();
 
-		// VAN-5872, server switch feature on language change
-		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-			this.fetchCmsContents();
-		});
 
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
