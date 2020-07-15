@@ -85,6 +85,7 @@ ui-popover {
 		}
 		.action-container{
 			position: relative;
+			margin-top: 1rem;
 		}
 
 		hr {
@@ -99,7 +100,6 @@ ui-popover {
 			color: $white100;
 			font-size: $fontsize_sm;
 			padding: .7rem 3rem;
-			margin-top: 1rem;
 			font-weight: $weight_bold;
 			&:hover {
 				background: $blueHover;
