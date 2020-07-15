@@ -1,11 +1,4 @@
 {
-    "betaTips": "You're now visiting the beta version of Lenovo Vantage!",
-	"devTips": "You're now visiting the dev version of Lenovo Vantage!",
-	"dev2Tips": "You're now visiting the dev2 version of Lenovo Vantage!",
-	"qaTips": "You're now visiting the qa version of Lenovo Vantage!",
-	"qa2Tips": "You're now visiting the qa2 version of Lenovo Vantage!",
-	"stageTips": "You're now visiting the stage version of Lenovo Vantage!",
-	"nonProduction": "You're now visiting the non-production version of Lenovo Vantage!",
     "gaming": {
         "dashboard": {
             "device": {

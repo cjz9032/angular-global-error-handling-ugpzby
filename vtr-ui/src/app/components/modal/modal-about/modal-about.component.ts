@@ -39,9 +39,8 @@ export class ModalAboutComponent implements OnInit {
 		}
 		const jsBridgeVersion = this.shellService.getVersion();
 		if (document.location.href.indexOf('stage') >= 0
-		|| document.location.href.indexOf('vantage.csw.') >= 0
-		&& (jsBridgeVersion && jsBridgeVersion.indexOf('-') >= 0)) {
-			this.bridgeVersion = jsBridgeVersion.split('-')[0];
+		|| document.location.href.indexOf('vantage.csw.') >= 0) {
+			this.bridgeVersion = jsBridgeVersion ? jsBridgeVersion.split('-')[0] : '';
 		} else {
 			this.bridgeVersion = jsBridgeVersion ? jsBridgeVersion : '';
 		}

@@ -17,18 +17,14 @@ export class UiBannerComponent implements OnInit  {
 	) {}
 
 	ngOnInit() {
-		this.tips = document.location.href.indexOf('stage') >= 0 ? 'stageTips'
-			: document.location.href.indexOf('beta') >= 0 ? 'betaTips'
+		this.tips = document.location.href.indexOf('stage') >= 0 ? 'stage'
+			: document.location.href.indexOf('beta') >= 0 ? 'beta'
 			: document.location.href.indexOf('dev') >= 0
-			? (document.location.href.indexOf('2') >= 0 ? 'dev2Tips' : 'devTips')
+			? (document.location.href.indexOf('2') >= 0 ? 'DEV2' : 'DEV')
 			: document.location.href.indexOf('qa') >= 0
-			? (document.location.href.indexOf('2') >= 0 ? 'qa2Tips' : 'qaTips') : 'nonProduction'
+			? (document.location.href.indexOf('2') >= 0 ? 'QA2' : 'QA') : 'non-production'
 
-		this.translate.stream(this.tips).subscribe((res: any) => {
-			if (res) {
-				this.nonProductionTips = res;
-			}
-		});
+		this.nonProductionTips = `You're now visiting the ${this.tips} version of Lenovo Vantage!`
 	}
 
 
