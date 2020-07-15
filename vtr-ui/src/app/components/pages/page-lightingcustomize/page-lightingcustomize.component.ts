@@ -28,6 +28,7 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	dynamic_metricsItem: any = 'lighting_profile_cms_inner_content';
 	public ledlayoutversion: any;
 	notificationSubscription: Subscription;
+	capabilitySubscription: Subscription
 
 	private cmsSubscription: Subscription;
 
@@ -54,7 +55,7 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.getLayOutversion();
-		this.commonService.getCapabalitiesNotification().subscribe((response) => {
+		this.capabilitySubscription = this.commonService.getCapabalitiesNotification().subscribe((response) => {
 			if (response.type === Gaming.GamingCapabilities) {
 				this.getLayOutversion();
 			}
@@ -69,7 +70,13 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 			this.notificationSubscription.unsubscribe();
 		}
 
-		if(this.cmsSubscription) this.cmsSubscription.unsubscribe();
+		if(this.cmsSubscription) {
+			this.cmsSubscription.unsubscribe();
+		}
+
+		if(this.capabilitySubscription) {
+			this.capabilitySubscription.unsubscribe();
+		}
 	}
 
 	onNotification(notification: AppNotification) {
