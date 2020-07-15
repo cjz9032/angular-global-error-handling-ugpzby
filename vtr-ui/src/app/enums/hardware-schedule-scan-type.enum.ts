@@ -1,4 +1,4 @@
 export enum HardwareScheduleScanType {
-    Quick,
-    Full
+	Quick,
+	Full
 }
