@@ -307,18 +307,6 @@ export class UiScanScheduleComponent implements OnInit, OnDestroy {
 			// when unregisterScheduleScan is successful and scheduledScan is enabled, sending request to set schedule scan
 			if (res.state && this.scanToggleValue) {
 				this.scheduleScan(this.requestScanData);
-				
-			}
-			else {
-				this.logger.info('ui-smart-performance.unregisterScheduleScan', JSON.stringify(res));
-				if (!this.isSubscribed) {
-					this.hideBasedOnOldAddIn.emit(true);
-					return;
-				}
-				else {
-					this.hideBasedOnOldAddInSummary.emit(true);
-					return;
-				}
 			}
 
 		} catch (err) {
