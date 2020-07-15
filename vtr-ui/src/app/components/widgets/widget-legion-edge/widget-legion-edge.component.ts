@@ -1,3 +1,4 @@
+import { Subscription } from 'rxjs/internal/Subscription';
 import { ModalGamingLegionedgeComponent } from './../../modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
 import { Component, OnInit, NgZone, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
@@ -39,6 +40,8 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 	public thermalModeRealStatus = this.thermalMode2Enum.balance;
 	public thermalModeEvent: any;
 	public performanceOCSettings = false;
+	private notifcationSubscription: Subscription;
+	private OCSettingsSubscription: Subscription;
 
 	// use enum instead of hard code on 200319 by Guo Jing
 	public legionItemIndex = {
@@ -366,7 +369,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 		// Initialize Legion Edge component                                 //
 		//////////////////////////////////////////////////////////////////////
 		this.legionEdgeInit();
-		this.commonService.getCapabalitiesNotification().subscribe((response) => {
+		this.notifcationSubscription = this.commonService.getCapabalitiesNotification().subscribe((response) => {
 			if (response.type === Gaming.GamingCapabilities) {
 				this.gamingCapabilities = response.payload;
 				this.unRegisterThermalModeRealStatusChangeEvent();
@@ -376,6 +379,12 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy(): void {
+		if(this.notifcationSubscription) {
+			this.notifcationSubscription.unsubscribe();
+		}
+		if(this.OCSettingsSubscription) {
+			this.OCSettingsSubscription.unsubscribe();
+		}
 		this.unRegisterThermalModeRealStatusChangeEvent();
 	}
 
@@ -564,7 +573,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 	}
 	openThermalMode2Modal() {
 		const modalRef = this.modalService.open(ModalGamingThermalMode2Component, { backdrop: 'static', windowClass: 'modal-fun' });
-		modalRef.componentInstance.OCSettingsMsg.subscribe(res => {
+		this.OCSettingsSubscription = modalRef.componentInstance.OCSettingsMsg.subscribe(res => {
 			this.performanceOCSettings = res;
 		});
 	}
