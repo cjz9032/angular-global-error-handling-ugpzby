@@ -10,15 +10,14 @@ describe('PreviousResultService', () => {
   let service: PreviousResultService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [HttpClientModule,TranslateModule.forRoot(),RouterTestingModule],
-      providers: [VantageShellService]
-     
-    });
-    service = TestBed.inject(PreviousResultService);
+	TestBed.configureTestingModule({
+	  imports: [HttpClientModule, TranslateModule.forRoot(), RouterTestingModule],
+	  providers: [VantageShellService]
+	});
+	service = TestBed.inject(PreviousResultService);
   });
 
   it('should be created', () => {
-    expect(service).toBeTruthy();
+	expect(service).toBeTruthy();
   });
 });
