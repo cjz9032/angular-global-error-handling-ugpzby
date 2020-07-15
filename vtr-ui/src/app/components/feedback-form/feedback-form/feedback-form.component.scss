@@ -155,18 +155,10 @@ $normalPadding: 2.4rem;
 					padding: 0 1rem;
 					width: 49%;
 					font-size: $body;
-					&:nth-child(2n){
-						padding-right: 0rem;
-					}
 				}
 
 				.form-check-inline {
 					margin-right: 0;
-					&:last-child{
-						.form-check-label{
-							text-indent: 0.2rem !important;
-						}
-					}
 					.form-check-input {
 						width: 4rem;
 						height: 5rem;
