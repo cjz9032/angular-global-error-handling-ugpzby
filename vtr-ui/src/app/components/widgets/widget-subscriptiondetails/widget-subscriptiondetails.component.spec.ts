@@ -90,53 +90,27 @@ describe("WidgetSubscriptiondetailsComponent", () => {
 		expect(component).toBeTruthy();
 	});
 
-	it("should create Widget Subscriptiondetails Component - data is empty array  spFirstRunStatus is false", () => {
-		const res = {...response, data: []}
+	it('should call initSubscripionDetails when spFirstRunStatus is false', () => {
 		commonService = TestBed.get(CommonService);
-		smartPerformanceService = TestBed.get(SmartPerformanceService);
-		spyOn(commonService, "getLocalStorageValue").and.returnValues(true, true);
-		const spy = spyOn(smartPerformanceService, 'getPaymentDetails').and.returnValue(Promise.resolve(res));
-		fixture.detectChanges();
-		expect(spy).toHaveBeenCalled()
-	});
-
-	it("should create Widget Subscriptiondetails Component - spFirstRunStatus is false", () => {
-		const res = {...response, data: []}
-		commonService = TestBed.get(CommonService);
-		smartPerformanceService = TestBed.get(SmartPerformanceService);
-		spyOn(commonService, "getLocalStorageValue").and.returnValues(false, true, {startDate: '2019/06/20', endDate: '2020/06/19'}, {
+		spyOn(commonService, "getLocalStorageValue").and.returnValues(true, false, {startDate: '2019/06/20', endDate: '2020/06/19'}, {
 			initiatedTime: "08:30",
 			isOpened: true,
 		});
-		const spy = spyOn(smartPerformanceService, 'getPaymentDetails').and.returnValue(Promise.resolve(res));
+		component.isSubscribed = true;
+		component.initSubscripionDetails();
 		fixture.detectChanges();
-		expect(spy).toHaveBeenCalled()
+		expect(component.strStatus).toEqual('PROCESSING');
 	});
 
 	it("should create Widget Subscriptiondetails Component - settimeout", fakeAsync(() => {
 		const res = {}
 		commonService = TestBed.get(CommonService);
 		smartPerformanceService = TestBed.get(SmartPerformanceService);
-		// spyOn(commonService, "getLocalStorageValue").and.returnValues(false, true, {startDate: '2019/06/20', endDate: '2020/06/19'}, {
-		// 	initiatedTime: "08:30",
-		// 	isOpened: true,
-		// });
 		const spy = spyOn(smartPerformanceService, 'getPaymentDetails').and.returnValue(Promise.resolve(res));
 		fixture.detectChanges();
 		tick(30000)
 		expect(spy).toHaveBeenCalled()
 	}));
-
-	it("should create Widget Subscriptiondetails Component - spFirstRunStatus is false, non-subscriber", () => {
-		commonService = TestBed.get(CommonService);
-		smartPerformanceService = TestBed.get(SmartPerformanceService);
-		spyOn(commonService, "getLocalStorageValue").and.returnValues(false, false, {startDate: '2019/06/20', endDate: '2020/06/19'}, {
-			initiatedTime: "10:30",
-			isOpened: false,
-		});
-		fixture.detectChanges();
-		expect(component.strStatus).toBe('INACTIVE')
-	});
 
 	it("should open subcription modal", () => {
 		modalService = TestBed.get(NgbModal);
@@ -163,81 +137,35 @@ describe("WidgetSubscriptiondetailsComponent", () => {
 		fixture.detectChanges();
 		expect(spy).toHaveBeenCalled();
     });
-    
-    it("should enable full feature - when LS is true", () => {
-		commonService = TestBed.get(CommonService);
-		// component.isSubscribed = false;
-		// 	component.modalStatus = {
-		// 	initiatedTime: moment().add(1, 'hour').format('YYYY-MM-DD HH:mm:ss'),
-		// 	isOpened: true,
-		// }
-		const spy = spyOn(commonService, "getLocalStorageValue").and.returnValues(false, false, {startDate: '2019/06/20', endDate: '2020/06/19'}, {
-			initiatedTime: "10:30",
-			isOpened: false,
-		});
-		const event = {};
-		component.enableFullFeature(event);
-		fixture.detectChanges();
-		expect(spy).toHaveBeenCalled();
-	});
 
-	// it("should get subscription details", () => {
-    //     commonService = TestBed.get(CommonService);
-    //     smartPerformanceService = TestBed.get(SmartPerformanceService)
-	// 	spyOn(commonService, "getLocalStorageValue").and.returnValue({
-	// 		initiatedTime: "08:30",
-	// 		isOpened: true,
-    //     });
-    //     const spy = spyOn(smartPerformanceService, 'getPaymentDetails').and.returnValue(Promise.resolve(response));
-    //     component.getSubscriptionDetails();
-    //     fixture.detectChanges();
-    //     expect(spy).toHaveBeenCalled();
-	// });
+	it("should get subscription details", () => {
+        commonService = TestBed.get(CommonService);
+        smartPerformanceService = TestBed.get(SmartPerformanceService)
+		const spy = spyOn(commonService, "getLocalStorageValue").and.returnValue({
+			initiatedTime: "08:30",
+			isOpened: true,
+        });
+        // const spy = spyOn(smartPerformanceService, 'getPaymentDetails').and.returnValue(Promise.resolve(response));
+        component.getSubscriptionDetails();
+        fixture.detectChanges();
+        expect(spy).toHaveBeenCalled();
+	});
 	
-	// it("should get subscription details - when no response", () => {
-	// 	component.spFrstRunStatus = true
-	// 	commonService = TestBed.get(CommonService);
-    //     smartPerformanceService = TestBed.get(SmartPerformanceService)
-	// 	spyOn(commonService, "getLocalStorageValue").and.returnValue({
-	// 		initiatedTime: "08:30",
-	// 		isOpened: true,
-    //     });
-    //     const spy = spyOn(smartPerformanceService, 'getPaymentDetails').and.returnValue(Promise.resolve({}));
-    //     component.getSubscriptionDetails();
-    //     fixture.detectChanges();
-    //     expect(spy).toHaveBeenCalled();
-    // });
-	
-	
-	// it("should get subscription details - when no response and spFirstRunStatus is false", () => {
-	// 	component.spFrstRunStatus = false
-	// 	commonService = TestBed.get(CommonService);
-    //     smartPerformanceService = TestBed.get(SmartPerformanceService)
-	// 	// spyOn(commonService, "getLocalStorageValue").and.returnValue({
-	// 	// 	initiatedTime: "08:30",
-	// 	// 	isOpened: true,
-    //     // });
-    //     const spy = spyOn(smartPerformanceService, 'getPaymentDetails').and.returnValue(Promise.resolve());
-    //     component.getSubscriptionDetails();
-    //     fixture.detectChanges();
-    //     expect(spy).toHaveBeenCalled();
-	// });
-	
-    // it("should get subscription details - settimeout else case", fakeAsync(() => {
-    // 	// component.intervalTime = moment().add(1, 'hour').format('YYYY-MM-DD HH:mm:ss')
-	// 	const res = {...response, data: []};
-	// 	component.modalStatus = {
-	// 		initiatedTime: moment().add(1, 'hour').format('YYYY-MM-DD HH:mm:ss'),
-	// 		isOpened: true,
-	// 	}
-    //     commonService = TestBed.get(CommonService);
-	// 	smartPerformanceService = TestBed.get(SmartPerformanceService);
-	// 	spyOn(commonService, "getLocalStorageValue").and.returnValues(false, true, {startDate: '2019/06/20', endDate: '2020/06/19'});
-		
-    //     spyOn(smartPerformanceService, 'getPaymentDetails').and.returnValue(Promise.resolve(res));
-    //     // component.getSubscriptionDetails();
-    //     fixture.detectChanges();
-    //     tick(30000);
-    //     expect(spy).toHaveBeenCalled();
-	// }));
+    it("should get subscription details - settimeout else case", ((done) => {
+		component.spFrstRunStatus = true;
+        component.setTimeOutCallForSubDetails();
+        fixture.detectChanges();
+        expect(component.isLoading).toBe(false);
+		done();
+	}));
+
+	it('should call subscriptionDataProcess', () => {
+		commonService = TestBed.get(CommonService);
+		smartPerformanceService = TestBed.get(SmartPerformanceService);
+		component.spProcessStatus = true;
+		const subscriptionData = [...response.data];
+		component.subscriptionDataProcess(subscriptionData);
+		fixture.detectChanges();
+		expect(component.strStatus).toEqual('ACTIVE');
+	});
 });
