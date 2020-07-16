@@ -134,3 +134,17 @@
 		}
 	}
 }
+
+::ng-deep body.focus-enable{
+	.is-gaming {
+		.Article-Detail-Modal{
+			button.close-button{
+				&:focus{
+					@media #{$high-contrast} {
+						border-color: highlight !important;
+					}
+				}
+			}
+		}
+	}
+}

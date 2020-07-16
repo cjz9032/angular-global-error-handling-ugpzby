@@ -8,7 +8,7 @@
 				(keyup.enter)="openModal()"
 				[tabindex]="runningAppsList && runningAppsList.length >=5 ? -1 : 1"
 				attr.aria-label="{{'gaming.narrator.networkBoost.subPage.addApps' | translate}}">
-				<button class="add-icon-button"></button>
+				<button tabindex="-1" class="add-icon-button"></button>
 			</div>
 			<div>{{'gaming.autoClose.addAppsButton' | translate}}</div>
 		</li>

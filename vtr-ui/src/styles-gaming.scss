@@ -2039,7 +2039,10 @@ body.focus-enable{
 	.is-gaming {
 		.navbar-brand.logo-y a{
 			&:focus{
-				border: 0.1rem solid $light !important;
+			border: 0.1rem solid $light !important;
+			@media #{$high-contrast} {
+				border-color: highlight !important;
+			}
 			}
 		}
 		vtr-page-lightingcustomize,vtr-page-macrokey,
@@ -2086,10 +2089,10 @@ body.focus-enable{
 				outline: 0;
 				outline-offset: 0.2rem;
 				a{
-					border: 0.1rem solid $blueFill;
-					@media #{$high-contrast} {
-						border-color: highlight;
-					}
+				@include solid-button-outline;
+				@media #{$high-contrast} {
+					@include solid-button-outline(highlight);
+				}
 				}
 			}
 		}
@@ -2102,6 +2105,9 @@ body.focus-enable{
 			&:focus {
 				fa-icon{
 					@include outline-blue-gaming;
+					@media #{$high-contrast} {
+						outline-color: highlight !important;
+					}
 				}
 			}
 		}
@@ -2110,6 +2116,9 @@ body.focus-enable{
 				.dropdown-btn {
 					&:focus{
 						@include outline-white;
+						@media #{$high-contrast} {
+							outline-color: highlight !important;
+						}
 					}
 				}
 			}
@@ -2119,7 +2128,10 @@ body.focus-enable{
 			.article-content:focus{
 			@include outline-white;
 			outline-color:$menu_hover !important;
-		}
+			@media #{$high-contrast} {
+				outline-color: highlight !important;
+			}
+			}
 		}
 	}
 	}

@@ -128,6 +128,9 @@ ui-popover {
 				right: 0rem;
 				bottom: -0.3rem;
 				border: 1px solid $blueFill !important;
+				@media #{$high-contrast} {
+					border-color: highlight !important;
+				}
 			}	
 		}	
 	}

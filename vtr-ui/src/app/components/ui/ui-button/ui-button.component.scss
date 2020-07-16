@@ -231,6 +231,13 @@
 				.text {
 					letter-spacing: inherit !important;
 				}
+				&:focus {
+					@media #{$high-contrast} {
+						&::after {
+							border-color: highlight !important;
+						}
+					}
+				}
 			}
 
 			.underlineBtn {
