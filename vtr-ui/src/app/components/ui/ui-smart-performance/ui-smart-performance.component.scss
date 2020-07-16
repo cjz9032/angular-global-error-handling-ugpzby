@@ -259,6 +259,12 @@
 							padding:0rem 0.2rem;
 							position: relative;
 							z-index: 9;
+							max-width: 70%;
+							overflow: hidden;
+							text-overflow: ellipsis;
+							white-space: nowrap;
+							display: inline-block;
+							margin-bottom: -0.5rem;
 						}
 						&::after{
 							content: "";
