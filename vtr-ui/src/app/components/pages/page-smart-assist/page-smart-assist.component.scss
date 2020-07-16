@@ -100,17 +100,6 @@ $fontsize_xs: 1.4rem;
 		}
 		.card-body {
 			padding: 1.25rem 1.8rem;
-			@media #{$black-on-white} {
-				border:0.1rem solid;
-				border-bottom-left-radius: 1rem;
-				border-bottom-right-radius: 1rem;
-			}
-			@media #{$white-on-black} {
-				border:0.1rem solid;
-				border-bottom-left-radius: 1rem;
-				border-bottom-right-radius: 1rem;
-
-			}
 		}
 		.blur-1 {
 			opacity: 0.65;
@@ -207,10 +196,28 @@ $fontsize_xs: 1.4rem;
 				color: $menu_hover;
 				font-family: "Segoe UI", sans-serif;
 				font-weight: $weight_light;
+				@media #{$white-on-black} {
+					@include black-border;
+					@include hyperlink-yellow-black;
+				}
+				@media #{$black-on-white} {
+					@include white-border;
+					@include hyperlink-blue-white;
+				}
 				&:hover {
 					text-decoration: underline;
 					color: $menu_hover;
 				}
+				&:focus {
+					@include outline-border-blue;
+					@media #{$white-on-black} {
+						@include white-border;
+					}
+					@media #{$black-on-white} {
+						@include black-border;
+					}
+				}
+
 			}
 		}
 		.facial-recognition {

@@ -40,9 +40,21 @@
 			&:hover {
 				$color: $highlight;
 				border-bottom: none;
+				@media #{$white-on-black} {
+					border-bottom: 1px solid $high-contrast-black-yellow;
+				}
+				@media #{$black-on-white} {
+					border-bottom: 1px solid $high-contrast-white-blue;
+				}
 			}
 			&:focus {
 				@include outline-blue;
+			}
+			@media #{$white-on-black} {
+				@include hyperlink-yellow-black;
+			}
+			@media #{$black-on-white} {
+				@include hyperlink-blue-white;
 			}
 		}
 	}
