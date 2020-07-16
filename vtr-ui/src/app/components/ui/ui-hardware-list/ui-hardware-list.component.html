@@ -5,10 +5,12 @@
 				<div class="row item-line">
 					<div class="item-left">
 						<div class="test-status" *ngIf="item.statusTest >= testResultEnum.NotStarted">
-							<vtr-ui-test-result-icon
-								[testResultResponse]="item.statusTest"
-								[percent]="item.percent">
-							</vtr-ui-test-result-icon>
+							<span class="progress-value-text" *ngIf="item.statusTest === testResultEnum.InProgress; else testFinished">{{ item.percent }}%</span>
+							<ng-template #testFinished>
+								<vtr-ui-test-result-icon #testFinished
+									[testResultResponse]="item.statusTest">
+								</vtr-ui-test-result-icon>
+							</ng-template>
 						</div>
 
 						<div class="title" [ngClass]="{'not-applicable': item.statusTest === testResultEnum.Na, 'item-failed': item.statusTest === testResultEnum.Fail}">{{ item.name }}</div>

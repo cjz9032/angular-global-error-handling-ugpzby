@@ -3,8 +3,6 @@
 	<!-- Necessary to have a blank space while test doesn't start -->
 	<div *ngSwitchCase="0"></div>
 
-	<span class="progress-value-text" *ngSwitchCase="testResultEnum.InProgress">{{ percent }}%</span>
-
 	<!--Aria-hidden defined as true to ignore faicon selection-->
 	<div class="test-status-icon success" *ngSwitchCase="testResultEnum.Pass">
 		<fa-icon aria-hidden="true" role="img" class="success" [icon]="['fas', 'check']"></fa-icon>
