@@ -17,10 +17,13 @@
 			&.ng5-slider-bubble {
 				display: none;
 			}
-			&.ng5-slider-selection {
-				background: $gaming_lighting_gradient;
+			&.ng5-slider-bar{
+				background-color: $gaming_square_button20;
 			}
-
+			&.ng5-slider-selection {
+				background-color: $btn_secondary_color;
+			}
+			
 			&.ng5-slider-pointer {
 				background-image: url('../../../../assets/gaming-icons/Brightness@2x.png');
 				background-position: center center;
