@@ -3,7 +3,15 @@
 .vtr-connected-home-status {
 	box-shadow: $drop_shadow;
 	border-radius: $border_radius;
-	background-color: $light;
+    background-color: $light;
+    
+    @media #{$black-on-white} {
+        @include black-border;
+    }
+    @media #{$white-on-black} {
+        @include white-border;
+    }
+
 	.container-fluid {
 		padding: 2rem;
 	}

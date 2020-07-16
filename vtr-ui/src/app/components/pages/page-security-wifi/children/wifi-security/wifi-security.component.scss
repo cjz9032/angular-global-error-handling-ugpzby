@@ -7,6 +7,13 @@
 		background-color: $light;
 		padding: 2rem;
 
+        @media #{$black-on-white} {
+            @include black-border;
+        }
+        @media #{$white-on-black} {
+            @include white-border;
+        }
+
 		@media #{$breakpoint_sm} {
 			padding: $fontsize_xl;
 		}
@@ -97,6 +104,10 @@
 							color: $light;
 						}
 
+                        @include high-contrast-status-icon-and-badge;
+                        @include high-contrast-color;
+                        @include high-contrast-background-image;
+
 						&.red {
 							background-color: $button_red_start;
 							background-image: linear-gradient(135deg, $button_red_start 25%, $button_red_end 100%);
@@ -143,10 +154,12 @@
 				border: 0.1rem solid $shade_lighter;
 				border-bottom-left-radius: $border_radius;
 				border-bottom-right-radius: $border_radius;
+                border-top: none;
 
 				::ng-deep .vtr-container-collapsible.white-theme {
 					box-shadow: none !important;
 					background: none !important;
+                    border: 0 !important;
 
 					.card-header {
 						border: none !important;
@@ -191,39 +204,53 @@
 							}
 						}
 
-						div.wifi:nth-child(odd) {
+						.wifi:nth-child(odd) {
 							border-bottom: 0.1rem solid $shade_lighter;
 							border-right: 0.1rem solid $shade_lighter;
 						}
 
-						div.wifi:nth-child(even) {
+						.wifi:nth-child(even) {
 							border-bottom: 0.1rem solid $shade_lighter;
 						}
 
-						div.wifi:nth-last-child(1):nth-child(odd),
-						div.wifi:nth-last-child(2):nth-child(odd) {
-							border-bottom-left-radius: $border_radius;
+                        .wifi:nth-child(4n-1),
+						.wifi:nth-child(4n) {
 							border-bottom: 0;
 						}
 
-						div.wifi:nth-last-child(1):nth-child(even) {
-							border-bottom-right-radius: $border_radius;
+                        .wifi:nth-child(odd):nth-last-child(2) {
 							border-bottom: 0;
-							border-bottom-left-radius: $border_radius;
+							@media #{$mediaquery_md, $mediaquery_X45} {
+								border-bottom: 0.1rem solid $shade_lighter !important;
+							}
 						}
 
-						div.wifi:nth-child(odd) {
+                        .wifi:nth-last-child(1){
+                            border-bottom: 0;
+                        }
+
+                        .hasShowMore:nth-child(3),
+						.hasShowMore:nth-child(4) {
+							border-bottom: 0.1rem solid $shade_lighter;
+						}
+
+						.wifi:nth-child(odd) {
 							@media #{$mediaquery_md, $mediaquery_X45} {
 								border-right: 0;
 							}
 						}
 
-						div.wifi:nth-last-child(2):nth-child(odd) {
+                        .wifi:nth-child(4n-1) {
 							@media #{$mediaquery_md, $mediaquery_X45} {
-								border-bottom-left-radius: 0;
 								border-bottom: 0.1rem solid $shade_lighter;
 							}
 						}
+
+                        .wifi:nth-last-child(1) {
+							@media #{$mediaquery_md, $mediaquery_X45} {
+								border-bottom: 0 !important;
+							}
+                        }
 
 						.connection-name {
 							overflow: hidden;
@@ -289,6 +316,10 @@
 									left: 0.2rem;
 									top: 0.2rem;
 								}
+
+                                @include high-contrast-status-icon-and-badge;
+                                @include high-contrast-color;
+                                @include high-contrast-background-image;
 
 								&.red {
 									background-color: $button_red_start;
