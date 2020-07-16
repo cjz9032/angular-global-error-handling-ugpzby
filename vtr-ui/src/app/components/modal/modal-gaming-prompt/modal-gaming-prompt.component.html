@@ -1,7 +1,7 @@
 <div class="gaming-advanced-prompt gaming-modal-prompt"  role="text" [id]="info.id.section">
     <div class="modal-header">
         <h2 role="text" [id]="info.id.headerText ? info.id.headerText : ''">{{info.title | translate }}</h2>
-        <button type="button" role="button" [id]="info.id.closeButton" tabindex="1" class="close" aria-label="close" (click)="closeModal()">
+        <button type="button" role="button" [id]="info.id.closeButton" tabindex="1" class="close gaming-advanced-prompt-close" aria-label="close" (click)="closeModal()">
             ×
         </button>
     </div>

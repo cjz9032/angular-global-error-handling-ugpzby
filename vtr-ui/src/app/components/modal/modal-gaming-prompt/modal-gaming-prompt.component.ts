@@ -24,7 +24,7 @@ export class ModalGamingPromptComponent implements OnInit {
   ) { }
 
 	ngOnInit() {
-		const elem = document.getElementById('gaming-advanced-prompt-close');	
+		const elem = document.querySelector('.gaming-advanced-prompt-close');
 		if (elem) {
 			setTimeout(() => {
 				elem.focus();

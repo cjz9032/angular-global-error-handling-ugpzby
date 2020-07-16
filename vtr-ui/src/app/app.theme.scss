@@ -492,6 +492,9 @@ $high-contrast-white-disabled-maroon: #610000;
 @mixin default-button-border ($color : $blueFill) {
 	outline: 0;
 	border: 0.1rem solid $color;
+	@media #{$high-contrast} {
+		border: 0.1rem solid highlight;
+	}
 }
 @mixin circular-button-border ($color : $blueFill) {
 	content: '';
@@ -503,6 +506,9 @@ $high-contrast-white-disabled-maroon: #610000;
 	width: calc(100% + 0.8rem);
 	height: calc(100% + 0.8rem);
 	border: thin solid $color;
+	@media #{$high-contrast} {
+		border: thin solid highlight;
+	}
 }
 @mixin under-line-button-border ($color : $blueFill) {
 	content: '';
@@ -513,6 +519,9 @@ $high-contrast-white-disabled-maroon: #610000;
 	width: calc(100% + 0.8rem);
 	height: calc(100% + 0.6rem);
 	border: thin solid $color;
+	@media #{$high-contrast} {
+		border: thin solid highlight;
+	}
 }
 @mixin solid-button-outline ($color : $blueFill) {
 	outline-offset: .1rem;
