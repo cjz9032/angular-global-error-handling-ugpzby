@@ -7,15 +7,9 @@
 			<p class="not-applicable text-status" *ngSwitchCase="testResultEnum.Cancelled">{{ 'hardwareScan.cancelled' | translate }}</p>
 		</div>
 		<div class="module-result-icon">
-			<div [ngSwitch]="module.resultModule">
-				<!--Aria-hidden defined as true to ignore faicon selection-->
-				<div class="test-status-icon" *ngSwitchCase="testResultEnum.Pass">
-					<fa-icon aria-label="status-success" role="img" class="success" [icon]="['fas', 'check']"></fa-icon>
-				</div>
-				<img aria-hidden="true" class="failure" [src]="'assets/icons/test-failed-icon.svg' | svgInline | async" *ngSwitchCase="testResultEnum.Fail"/>
-				<img aria-hidden="true" class="warning" [src]="'assets/icons/test-attention-icon.svg' | svgInline | async" *ngSwitchCase="testResultEnum.Warning"/>
-				<fa-icon aria-hidden="true" class="not-applicable na-icon" [icon]="['fas', 'ban']" *ngSwitchCase="testResultEnum.Cancelled"></fa-icon>
-			</div>
+			<vtr-ui-test-result-icon
+				[testResultResponse]="module.resultModule">
+			</vtr-ui-test-result-icon>
 		</div>
 	</div>
 </div>

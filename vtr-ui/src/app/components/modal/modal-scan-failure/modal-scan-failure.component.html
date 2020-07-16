@@ -7,7 +7,7 @@
 		<div class="modules" aria-live="polite" *ngFor="let module of failedModules; let idModule = index">
 			<li class="list-module" [attr.aria-describedby]="'module-' + idModule">
 				<div class="module-row">
-					<img aria-hidden="true" class="warning" [src]="'assets/icons/test-attention-icon.svg' | svgInline | async"/>
+					<vtr-ui-test-result-icon [testResultResponse]="testResultEnum.Warning"></vtr-ui-test-result-icon>
 					<span id="{{ 'module-' + idModule }}" class="module-name">{{ module.moduleName }}</span>
 				</div>
 				<div *ngIf="module.moduleId == 'storage'" aria-live="polite">

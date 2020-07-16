@@ -5,25 +5,10 @@
 				<div class="row item-line">
 					<div class="item-left">
 						<div class="test-status" *ngIf="item.statusTest >= testResultEnum.NotStarted">
-							<div [ngSwitch]="item.statusTest">
-								<!--Defined an aria-label property with description to the icon-->
-								<!-- Necessary to have a blank space while test doesn't start -->
-								<div *ngSwitchCase="0"></div>
-
-								<span class="progress-value-text" *ngSwitchCase="testResultEnum.InProgress">{{ item.percent }}%</span>
-
-								<div class="test-status-icon" *ngSwitchCase="testResultEnum.Pass">
-									<fa-icon aria-label="status-success" role="img" class="success" [icon]="['fas', 'check']"></fa-icon>
-								</div>
-
-								<img aria-hidden="true" class="failure-icon" [src]="'assets/icons/test-failed-icon.svg' | svgInline | async" *ngSwitchCase="testResultEnum.Fail"/>
-
-								<img aria-hidden="true" class="warning-icon" [src]="'assets/icons/test-attention-icon.svg' | svgInline | async" *ngSwitchCase="testResultEnum.Warning"/>
-
-								<fa-icon arialabel="status-not-applicable" role="img" class="not-applicable" [icon]="['fas', 'ban']" *ngSwitchCase="testResultEnum.Na"></fa-icon>
-
-								<fa-icon aria-label="status-canceled" role="img" class="not-applicable" [icon]="['fas', 'ban']" *ngSwitchDefault></fa-icon>
-							</div>
+							<vtr-ui-test-result-icon
+								[testResultResponse]="item.statusTest"
+								[percent]="item.percent">
+							</vtr-ui-test-result-icon>
 						</div>
 
 						<div class="title" [ngClass]="{'not-applicable': item.statusTest === testResultEnum.Na, 'item-failed': item.statusTest === testResultEnum.Fail}">{{ item.name }}</div>

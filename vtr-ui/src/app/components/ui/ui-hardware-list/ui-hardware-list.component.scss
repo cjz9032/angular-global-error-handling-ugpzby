@@ -122,16 +122,6 @@
 		min-width: 5.5rem;
 		text-align: center;
 
-		.progress-value-text {
-			font-size: $fontsize_xs !important;
-			font-weight: $weight_600;
-			color:$dark;
-		}
-
-		.loading {
-			color: $main;
-		}
-
 		fa-icon {
 			@media #{$breakpoint_sm}{
 				font-size: $fontsize_sm;
@@ -177,47 +167,5 @@
 				height: 20px;
 			}
 		}
-
-		.module-result-text {
-			padding-right: 1rem;
-			font-size: $fontsize_xs2;
-			font-weight: $weight_bold;
-			text-transform: uppercase;
-		}
-
-		.module-result-icon {
-			font-size: $fontsize_lg;
-		}
-
-		.noScanned {
-			color: $main_dark;
-		}
-	}
-
-	.warning {
-		color: $warning_dark;
-	}
-
-	.test-status-icon {
-		display: inline-block;
-		border-radius: 50%;
-		height: 2rem;
-		width: 2rem;
-		text-align: center;
-		opacity: 1;
-		background: $green_gradient;
-		background-color: $green-darker;
-		border: 2px solid $green-dark;
-
-		fa-icon {
-			font-size: $fontsize_xs2;
-			line-height: 1.6rem;
-			color: $light;
-		}
-	}
-
-	.qr-img {
-		width: 2.4rem;
-		height: 2.4rem;
 	}
 }
