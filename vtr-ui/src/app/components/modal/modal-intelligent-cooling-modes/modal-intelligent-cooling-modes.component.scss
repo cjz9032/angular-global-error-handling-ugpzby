@@ -63,10 +63,18 @@
 			box-shadow: none;
 			&::after {
 				@include button-outline-blue;
+				@media #{$black-on-white} {
+					@include button-outline-blue($dark);
+			}
+
+				@media #{$white-on-black} {
+						@include button-outline-blue($light);
+				}
 			}
 		}
 		@include ui-button-high-contrast-black;
 		@include ui-button-high-contrast-white;
+		@include high-contrast-adjust;
 	}
 
 
@@ -86,6 +94,7 @@
 				border-radius: 50%;
 				width: 5rem;
 				height: 5rem;
+				@include high-contrast-adjust;
 			.serial{
 				font-size: $fontsize_xl;
 				color: $light;
