@@ -129,7 +129,7 @@
 				@media #{$high-contrast} {
 					background-color: highlight;
 					border: 0.1rem solid windowText;
-					color: highlightText;
+					color: windowText;
 				}
 				background-color: $gaming_light_blue;
 				box-shadow: 0rem 0.4rem 0rem 0.1rem $gaming_gstart !important;
