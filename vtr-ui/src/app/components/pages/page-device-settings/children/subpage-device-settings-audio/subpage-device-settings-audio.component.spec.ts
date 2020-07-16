@@ -447,6 +447,8 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
 		component = fixture.componentInstance;
 		commonService = TestBed.get(CommonService);
+		audioService = TestBed.get(AudioService);
+
 		const spy = spyOn(commonService, 'setLocalStorageValue');
 		component.dolbyAudioToggleCache = new DolbyAudioToggleCapability();
 		component.dolbyModeResponse = dolbyModeResponse;
