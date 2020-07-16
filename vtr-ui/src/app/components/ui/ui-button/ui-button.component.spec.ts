@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UiButtonComponent } from './ui-button.component';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
+import { MetricService } from 'src/app/services/metric/metrics.service';
 
 describe('UiButtonComponent', () => {
 	let component: UiButtonComponent;
@@ -8,7 +10,9 @@ describe('UiButtonComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [UiButtonComponent]
+			declarations: [UiButtonComponent],
+			schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
+			providers: [MetricService]
 		})
 			.compileComponents();
 	}));

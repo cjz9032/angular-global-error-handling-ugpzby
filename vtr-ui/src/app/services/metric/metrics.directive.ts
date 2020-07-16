@@ -1,13 +1,13 @@
 import { Directive, HostListener, Input } from '@angular/core';
-import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { ActivatedRoute } from '@angular/router';
-import { VieworderService } from '../view-order/vieworder.service';
-import { DevService } from '../dev/dev.service';
-import { MetricsTranslateService } from '../mertics-traslate/metrics-translate.service';
-import * as MetricEvents from 'src/app/services/metric/metrics.model';
+import { MetricConst, MetricEventName as EventName } from 'src/app/enums/metrics.enum';
 import { MetricHelper } from 'src/app/services/metric/metrics.helper';
 import { metricsMap } from 'src/app/services/metric/metrics.map';
-import { MetricEventName as EventName, MetricConst } from 'src/app/enums/metrics.enum';
+import * as MetricEvents from 'src/app/services/metric/metrics.model';
+import { DevService } from '../dev/dev.service';
+import { MetricsTranslateService } from '../mertics-traslate/metrics-translate.service';
+import { VantageShellService } from '../vantage-shell/vantage-shell.service';
+import { VieworderService } from '../view-order/vieworder.service';
 
 
 /**
@@ -160,7 +160,7 @@ export class MetricsDirective {
 		// automatically fill the item parent
 		const tmpData: any = data;
 		if (!data.SettingParent) {
-			if (tmpData.ItemType === EventName.settingupdate ) {
+			if (tmpData.ItemType === EventName.settingupdate) {
 				tmpData.SettingParent = this.getItemParent();
 			} else if ([EventName.featureclick, EventName.articleclick].indexOf(tmpData.ItemType) !== -1) {
 				tmpData.ItemParent = this.getItemParent();
