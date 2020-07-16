@@ -245,6 +245,9 @@
 							}
 
 							.item-icon {
+								filter: grayscale(100%) invert(100%)
+									contrast(2000%);
+									
 								@media #{$black-on-white} {
 									filter: grayscale(100%) contrast(2000%);
 								}
