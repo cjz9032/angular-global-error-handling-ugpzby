@@ -18,18 +18,24 @@
 			vtr-container-card {
 				&:focus {
 					.content {
-						@include outline-blue-gaming;
+						@include solid-button-outline;
+						@media #{$high-contrast} {
+							@include solid-button-outline(highlight);
+						}
 					}
 				}
 				a.card-image,a.action-link-a{
 					outline: none !important;
 				}
 			}
-      .vtr-widget-quicksettings-list,.vtr-widget-lighting{
-        &:focus{
-          @include outline-blue-gaming;
-        }
-      }
+			.vtr-widget-quicksettings-list,.vtr-widget-lighting{
+				&:focus{
+					@include solid-button-outline;
+					@media #{$high-contrast} {
+						@include solid-button-outline(highlight);
+					}
+				}
+			}
 		}
 	}
 }

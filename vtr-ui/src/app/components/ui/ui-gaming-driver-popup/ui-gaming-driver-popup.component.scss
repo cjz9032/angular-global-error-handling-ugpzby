@@ -68,7 +68,7 @@ ui-gaming-driver-popup {
 		h1 {
 			font-size: $fontsize_xl;
 			font-weight: normal;
-			color: $darkText;
+			color: $lightText;
 			padding-right: 2.5rem;
 			@media #{$high-contrast} {
 				color: windowText;
@@ -77,7 +77,7 @@ ui-gaming-driver-popup {
 
 		p {
 			font-size: $fontsize_xs;
-			color: $darkText;
+			color: $lightText;
 			padding: 0.5rem 0;
 			@media #{$high-contrast} {
 				color: windowText;

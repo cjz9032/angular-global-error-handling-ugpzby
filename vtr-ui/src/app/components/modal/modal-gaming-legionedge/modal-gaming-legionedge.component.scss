@@ -1,50 +1,44 @@
 @import '../../../app.theme.scss';
 .gaming-help-popup{
 	position: relative;
-	background: $gaming_darkest;
+	background: $darkCell;
 	color: $gaming_lightest;
+	@media #{$high-contrast} {
+		border: 1px solid windowText;
+	}
 	.modal-header{
 		height: 7rem;
 		padding: 3rem 4rem;
 		border-bottom:none;
-		@media #{$black-on-white} {
-			background: $gaming_darkest;
-		}
-		@media #{$white-on-black} {
-			background: $gaming_darkest;
-		}
 		.modal-title {
 			img {
 				height: 3rem;
 			}
 		}
 		.close {
-			color: $gaming_lightest;
+			color: $white60;
 			opacity: 1;
 			font-size: 1.8rem;
 			position: relative;
 			top: -2rem;
 			right: -3rem;
-			@media #{$black-on-white} {
-				color: $gaming_lightest;
+			&:hover {
+				color: $white100;
 			}
-			@media #{$white-on-black} {
-				color: $gaming_lightest;
+			@media #{$high-contrast} {
+				color: buttonText;
 			}
 		}
 	}
 	.modal-body {
 		padding: 0 4rem 3rem 4rem;
 		width: 100%;
-		@media #{$black-on-white} {
-			border: 0.1rem solid $gaming_darkest;
-		}
-		@media #{$white-on-black} {
-			border: 0.1rem solid $gaming_darkest;
+		@media #{$high-contrast} {
+			border: 1px solid windowText;
 		}
 		.innerContent{
 			width: 100%;
-			background: $gaming_bg;
+			background: $background;
 			padding: 2rem;
 			max-height: 48.5vh;
 			overflow-y: auto;
@@ -60,11 +54,17 @@
 		.is-gaming{
 			.gaming-help-popup{
 				&:focus{
-					@include outline-blue-gaming;
+					@include solid-button-outline;
+					@media #{$high-contrast} {
+						@include solid-button-outline(highlight);
+					}
 				}
 				button.close,.innerContent{
 					&:focus{
-					@include outline-blue-gaming;
+						@include solid-button-outline;
+						@media #{$high-contrast} {
+							@include solid-button-outline(highlight);
+						}
 					}
 				}
 			}

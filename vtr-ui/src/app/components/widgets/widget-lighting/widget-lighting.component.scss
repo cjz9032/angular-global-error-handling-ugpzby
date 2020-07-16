@@ -273,7 +273,10 @@
 		.multi-state-toggle{
 			.inner-toggle{
 					input:checked:focus+label.gamingTextColor{
-							@include outline-blue-gaming;
+						@include solid-button-outline;
+						@media #{$high-contrast} {
+							@include solid-button-outline(highlight);
+						}
 					}
 				}
 		}

@@ -71,7 +71,7 @@ ui-popover {
 		h1 {
 			font-size: $fontsize_xl;
 			font-weight: normal;
-			color: $darkText;
+			color: $lightText;
 			padding-right: 2.5rem;
 			@media #{$high-contrast} {
 				color: windowText;
