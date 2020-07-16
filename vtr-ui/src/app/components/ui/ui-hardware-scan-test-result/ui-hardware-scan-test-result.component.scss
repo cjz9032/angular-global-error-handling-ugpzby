@@ -15,10 +15,6 @@
 			text-transform: uppercase;
 			white-space: nowrap;
 		}
-
-		.module-result-icon {
-			font-size: $fontsize_lg;
-		}
 	}
 
 	.text-status {
@@ -31,5 +27,28 @@
 
 	.warning {
 		color: $warning_light;
+	}
+
+	.test-status-icon {
+		display: inline-block;
+		border-radius: 50%;
+		height: 2rem;
+		width: 2rem;
+		text-align: center;
+		background: $green-gradient;
+		background-color: $green-darker;
+		border: 2px solid $green-dark;
+		opacity: 1;
+
+		fa-icon {
+			font-size: $fontsize_xs2;
+			line-height: 1.6rem;
+			margin-bottom: 1rem;
+			color: $light;
+		}
+	}
+
+	.na-icon {
+		font-size: $fontsize_lg;
 	}
 }

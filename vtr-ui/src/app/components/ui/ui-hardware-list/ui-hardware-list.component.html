@@ -12,11 +12,13 @@
 
 								<span class="progress-value-text" *ngSwitchCase="testResultEnum.InProgress">{{ item.percent }}%</span>
 
-								<fa-icon aria-label="status-success" role="img" class="success" [icon]="['fas', 'check-circle']" *ngSwitchCase="testResultEnum.Pass"></fa-icon>
+								<div class="test-status-icon" *ngSwitchCase="testResultEnum.Pass">
+									<fa-icon aria-label="status-success" role="img" class="success" [icon]="['fas', 'check']"></fa-icon>
+								</div>
 
-								<fa-icon aria-label="status-failure" role="img" class="failure" [icon]="['fas', 'times-circle']" *ngSwitchCase="testResultEnum.Fail"></fa-icon>
+								<img aria-hidden="true" class="failure-icon" [src]="'assets/icons/test-failed-icon.svg' | svgInline | async" *ngSwitchCase="testResultEnum.Fail"/>
 
-								<fa-icon aria-label="status-attention" role="img" class="warning" [icon]="['fas', 'exclamation-circle']" *ngSwitchCase="testResultEnum.Warning"></fa-icon>
+								<img aria-hidden="true" class="warning-icon" [src]="'assets/icons/test-attention-icon.svg' | svgInline | async" *ngSwitchCase="testResultEnum.Warning"/>
 
 								<fa-icon arialabel="status-not-applicable" role="img" class="not-applicable" [icon]="['fas', 'ban']" *ngSwitchCase="testResultEnum.Na"></fa-icon>
 

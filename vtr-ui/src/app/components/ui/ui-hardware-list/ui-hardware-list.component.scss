@@ -114,6 +114,7 @@
 	}
 
 	.not-applicable {
+		font-size: $fontsize_lg;
 		color: $light-grey;
 	}
 
@@ -195,6 +196,24 @@
 
 	.warning {
 		color: $warning_dark;
+	}
+
+	.test-status-icon {
+		display: inline-block;
+		border-radius: 50%;
+		height: 2rem;
+		width: 2rem;
+		text-align: center;
+		opacity: 1;
+		background: $green_gradient;
+		background-color: $green-darker;
+		border: 2px solid $green-dark;
+
+		fa-icon {
+			font-size: $fontsize_xs2;
+			line-height: 1.6rem;
+			color: $light;
+		}
 	}
 
 	.qr-img {

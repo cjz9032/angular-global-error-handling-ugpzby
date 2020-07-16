@@ -9,10 +9,12 @@
 		<div class="module-result-icon">
 			<div [ngSwitch]="module.resultModule">
 				<!--Aria-hidden defined as true to ignore faicon selection-->
-				<fa-icon aria-hidden="true" class="success" [icon]="['fas', 'check-circle']" *ngSwitchCase="testResultEnum.Pass"></fa-icon>
-				<fa-icon aria-hidden="true" class="failure" [icon]="['fas', 'times-circle']" *ngSwitchCase="testResultEnum.Fail"></fa-icon>
-				<fa-icon aria-hidden="true" class="warning" [icon]="['fas', 'exclamation-circle']" *ngSwitchCase="testResultEnum.Warning"></fa-icon>
-				<fa-icon aria-hidden="true" class="not-applicable" [icon]="['fas', 'ban']" *ngSwitchCase="testResultEnum.Cancelled"></fa-icon>
+				<div class="test-status-icon" *ngSwitchCase="testResultEnum.Pass">
+					<fa-icon aria-label="status-success" role="img" class="success" [icon]="['fas', 'check']"></fa-icon>
+				</div>
+				<img aria-hidden="true" class="failure" [src]="'assets/icons/test-failed-icon.svg' | svgInline | async" *ngSwitchCase="testResultEnum.Fail"/>
+				<img aria-hidden="true" class="warning" [src]="'assets/icons/test-attention-icon.svg' | svgInline | async" *ngSwitchCase="testResultEnum.Warning"/>
+				<fa-icon aria-hidden="true" class="not-applicable na-icon" [icon]="['fas', 'ban']" *ngSwitchCase="testResultEnum.Cancelled"></fa-icon>
 			</div>
 		</div>
 	</div>
