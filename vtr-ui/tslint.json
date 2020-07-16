@@ -154,6 +154,6 @@
     }
 },
 	"rulesDirectory": [
-		"codelyzer"
+		"@lenovo/codelyzer"
 	]
 }
