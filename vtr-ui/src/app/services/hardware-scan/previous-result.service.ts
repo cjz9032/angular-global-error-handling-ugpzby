@@ -97,9 +97,8 @@ export class PreviousResultService {
 					item.details = [];
 
 					for (const groupResultMetaItem of groupResultMeta.metaInformation) {
-						const meta = groupResultMetaItem.metaInformation;
 						const detail = {};
-						detail[meta.name] = meta.value;
+						detail[groupResultMetaItem.name] = groupResultMetaItem.value;
 						item.details.push(detail);
 					}
 
