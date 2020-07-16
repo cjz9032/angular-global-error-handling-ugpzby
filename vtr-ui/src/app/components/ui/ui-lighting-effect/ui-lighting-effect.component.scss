@@ -172,10 +172,10 @@
 				}
 				@media #{$high-contrast} {
 					a {
-						color: highlightText !important;
+						color: windowText !important;
 						background: highlight;
 					}
-					color: highlightText !important;
+					color: windowText !important;
 					background: highlight;
 				}
 			}
