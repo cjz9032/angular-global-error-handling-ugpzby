@@ -1,8 +1,7 @@
 <div class="vtr-ui-hardware-list-test">
 	<ul class="list-group modal-scroll">
-		<li class="list-group-item" *ngFor="let item of items; let id = index"
-			[ngClass]="{'isSelected-item' : item.selected || item.indeterminate}">
-			<div class="module">
+		<li class="list-group-item" *ngFor="let item of items; let id = index">
+			<div class="module" [ngClass]="{'isSelected-item' : item.selected || item.indeterminate}">
 				<div class="custom-control">
 					<vtr-ui-checkbox
 						#checkbox
@@ -40,22 +39,24 @@
 			</div>
 			<div id="{{ id }}" class="sub-module" [ngbCollapse]="!item.collapsed" >
 				<ul class="list-group">
-					<li class="list-group-item" *ngFor="let test of item.tests" (change)=onCheckChildren(item)>
-						<div class="custom-control custom-checkbox">
-							<vtr-ui-checkbox
-								[id]="test.id + id"
-								[componentId]="test.id + id"
-								[ariaLabel]="item.name + test.name"
-								[checked]="test.selected"
-								[hasChild]="true"
-								[value]="test.selected"
-								(toggle)="test.selected = $event"
-								class="custom-control-component"
-							>
-								<p class="custom-control-label-text">
-									<span class="name-test">&nbsp;{{ test.name }}</span>
-								</p>
-							</vtr-ui-checkbox>
+					<li class="list-group-item" *ngFor="let test of item.tests" (change)=onCheckChildren(item) [ngClass]="{'isSelected-item' : test.selected}">
+						<div class="module">
+							<div class="custom-control custom-checkbox">
+								<vtr-ui-checkbox
+									[id]="test.id + id"
+									[componentId]="test.id + id"
+									[ariaLabel]="item.name + test.name"
+									[checked]="test.selected"
+									[hasChild]="true"
+									[value]="test.selected"
+									(toggle)="test.selected = $event"
+									class="custom-control-component"
+								>
+									<p class="custom-control-label-text">
+										<span class="name-test">&nbsp;{{ test.name }}</span>
+									</p>
+								</vtr-ui-checkbox>
+							</div>
 						</div>
 					</li>
 				</ul>
