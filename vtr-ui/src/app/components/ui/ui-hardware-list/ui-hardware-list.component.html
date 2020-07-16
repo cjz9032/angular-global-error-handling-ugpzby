@@ -7,7 +7,7 @@
 						<div class="test-status" *ngIf="item.statusTest >= testResultEnum.NotStarted">
 							<span class="progress-value-text" *ngIf="item.statusTest === testResultEnum.InProgress; else testFinished">{{ item.percent }}%</span>
 							<ng-template #testFinished>
-								<vtr-ui-test-result-icon #testFinished
+								<vtr-ui-test-result-icon
 									[testResultResponse]="item.statusTest">
 								</vtr-ui-test-result-icon>
 							</ng-template>
