@@ -2039,7 +2039,7 @@ body.focus-enable{
 	.is-gaming {
 		.navbar-brand.logo-y a{
 			&:focus{
-			border: 0.1rem solid $light !important;
+				border: 0.1rem solid $light !important;
 			}
 		}
 		vtr-page-lightingcustomize,vtr-page-macrokey,
@@ -2047,7 +2047,10 @@ body.focus-enable{
 		.remove-app,li.add-icon div,.delete-btn,
 		.help-box button,vtr-ui-toggle button,.gaming-popup-window{
 			&:focus{
-			@include outline-blue-gaming;
+				@include solid-button-outline;
+				@media #{$high-contrast} {
+					@include solid-button-outline(highlight);
+				}
 			}
 	  }
 		a.btn,a.enable-button{
@@ -2063,21 +2066,30 @@ body.focus-enable{
 					bottom: -0.3rem;
 					border-radius: 3rem;
 					border: 1px solid $blueFill;
+					@media #{$high-contrast} {
+						border-color: highlight;
+					}
 				}
 		}
 		}
 	a:not(.btn), input, label,.btn-add-app button,
 	button.close,button.ask-again,.btn-close button{
 		&:focus{
-		@include outline-blue-gaming;
+			@include solid-button-outline;
+			@media #{$high-contrast} {
+				@include solid-button-outline(highlight);
+			}
 		}
 	}
 	.gaming-dropdown-menu li{
 			&:focus{
-				outline: 0!important;
+				outline: 0;
 				outline-offset: 0.2rem;
 				a{
-					border: 0.1rem solid $blueFill !important;
+					border: 0.1rem solid $blueFill;
+					@media #{$high-contrast} {
+						border-color: highlight;
+					}
 				}
 			}
 		}

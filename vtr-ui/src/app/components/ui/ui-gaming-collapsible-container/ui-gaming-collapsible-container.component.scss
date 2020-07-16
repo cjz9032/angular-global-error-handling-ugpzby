@@ -102,7 +102,10 @@
       .vtr-page-device-gaming {
       .dropdown-toggle{
         &:focus{
-          @include outline-blue-gaming;
+          @include solid-button-outline;
+          @media #{$high-contrast} {
+            @include solid-button-outline(highlight);
+          }
         }
       }
     }
