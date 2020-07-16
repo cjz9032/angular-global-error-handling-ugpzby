@@ -54,6 +54,14 @@ ui-popover {
 				padding: 0.6rem 1.2rem;
 				width: 4rem;
 				height: 4rem;
+				.close {
+					opacity: 1;
+					&:hover {
+						fa-icon {
+							color: $blueHover;
+						}
+					}
+				}
 			}
 		}
 		.content-body {

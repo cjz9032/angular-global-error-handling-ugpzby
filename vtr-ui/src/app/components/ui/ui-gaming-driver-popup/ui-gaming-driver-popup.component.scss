@@ -43,13 +43,21 @@ ui-gaming-driver-popup {
 	.vtr-ui-gaming-driver-popup {
 		&.modal-body {
 			padding: 4rem 4rem;
-				.btn-close {
+			.btn-close {
 				position: absolute;
 				top: 0px;
 				right: 0px;
 				padding: 0.6rem 1.2rem;
 				width: 4rem;
 				height: 4rem;
+				.close {
+					opacity: 1;
+					&:hover {
+						fa-icon {
+							color: $blueHover;
+						}
+					}
+				}
 			}
 		}
 		.content-body {
