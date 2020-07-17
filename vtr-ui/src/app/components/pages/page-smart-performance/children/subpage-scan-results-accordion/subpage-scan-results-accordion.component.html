@@ -27,24 +27,26 @@
                             <ngb-tabset class="scan-result-tabs w-100">
                                 <ngb-tab>
                                     <ng-template ngbTabTitle>
-                                        <div class="icon-box d-flex justify-content-center align-items-center align-items-center">
+                                        <div
+                                            class="icon-box d-flex justify-content-center align-items-center align-items-center">
                                             <div class="icomoon icomoon-e-junk"></div>
-                                            <p title="{{'smartPerformance.tunePCPerformance.tabSet1.tab1' |translate }}">{{'smartPerformance.tunePCPerformance.tabSet1.tab1' |translate }}</p>
+                                            <p
+                                                title="{{'smartPerformance.tunePCPerformance.tabSet1.tab1' |translate }}">
+                                                {{'smartPerformance.tunePCPerformance.tabSet1.tab1' |translate }}</p>
                                         </div>
                                     </ng-template>
                                     <ng-template ngbTabContent>
                                         <p class="py-4 scanned-area">
                                             {{'smartPerformance.scanCompletePage.scannedAreas' |translate }}
                                         </p>
-                                        <ul class="scanned-list" *ngFor="let item of scannigResultObj?.tunePc?.firstSection">
+                                        <ul class="scanned-list"
+                                            *ngFor="let item of scannigResultObj?.tunePc?.firstSection">
                                             <li class=" list-item list-heading">
                                                 <div class="container-fluid">
                                                     <div class="row align-items-center">
                                                         <div class="col-12 col-sm-6 px-0 item-text">
                                                             <div class="row">
-                                                                <fa-icon
-                                                                    class="col-1"
-                                                                    [icon]="['fal', 'check']">
+                                                                <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
                                                                 <p class="col">
                                                                     {{item.firstText}}
@@ -65,29 +67,31 @@
                                                     </div>
                                                 </div>
                                             </li>
-                                        </ul>                                       
+                                        </ul>
                                     </ng-template>
                                 </ngb-tab>
                                 <ngb-tab>
                                     <ng-template ngbTabTitle>
-                                        <div class="icon-box d-flex justify-content-center align-items-center align-items-center">
+                                        <div
+                                            class="icon-box d-flex justify-content-center align-items-center align-items-center">
                                             <div class="icomoon icomoon-usibilityIssue"></div>
-                                            <p title="{{'smartPerformance.tunePCPerformance.tabSet1.tab2' |translate }}">{{'smartPerformance.tunePCPerformance.tabSet1.tab2' |translate }}</p>
+                                            <p
+                                                title="{{'smartPerformance.tunePCPerformance.tabSet1.tab2' |translate }}">
+                                                {{'smartPerformance.tunePCPerformance.tabSet1.tab2' |translate }}</p>
                                         </div>
                                     </ng-template>
                                     <ng-template ngbTabContent>
                                         <p class="py-4 scanned-area">
                                             {{'smartPerformance.scanCompletePage.scannedAreas' |translate }}
                                         </p>
-                                        <ul class="scanned-list" *ngFor="let item of scannigResultObj?.tunePc?.secondSection">
+                                        <ul class="scanned-list"
+                                            *ngFor="let item of scannigResultObj?.tunePc?.secondSection">
                                             <li class=" list-item list-heading">
                                                 <div class="container-fluid">
                                                     <div class="row align-items-center">
                                                         <div class="col-12 col-sm-6 px-0 item-text">
                                                             <div class="row ">
-                                                                <fa-icon
-                                                                    class="col-1"
-                                                                    [icon]="['fal', 'check']">
+                                                                <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
                                                                 <p class="col">
                                                                     {{item.firstText}}
@@ -97,9 +101,7 @@
                                                         </div>
                                                         <div class="col-12 col-sm-6 px-0 item-text">
                                                             <div class="row">
-                                                                <fa-icon
-                                                                    class="col-1"
-                                                                    [icon]="['fal', 'check']">
+                                                                <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
                                                                 <p class="col">
                                                                     {{item.secondText}}
@@ -110,32 +112,31 @@
                                                     </div>
                                                 </div>
                                             </li>
-                                        </ul>                                       
+                                        </ul>
                                     </ng-template>
                                 </ngb-tab>
                                 <ngb-tab>
                                     <ng-template ngbTabTitle>
-                                        <div
-                                            class="icon-box d-flex justify-content-center align-items-center">
-                                            <div
-                                                class="icomoon icomoon-windows">
+                                        <div class="icon-box d-flex justify-content-center align-items-center">
+                                            <div class="icomoon icomoon-windows">
                                             </div>
-                                            <p title="{{'smartPerformance.tunePCPerformance.tabSet1.tab3' |translate }}">{{'smartPerformance.tunePCPerformance.tabSet1.tab3' |translate }}</p>
+                                            <p
+                                                title="{{'smartPerformance.tunePCPerformance.tabSet1.tab3' |translate }}">
+                                                {{'smartPerformance.tunePCPerformance.tabSet1.tab3' |translate }}</p>
                                         </div>
                                     </ng-template>
                                     <ng-template ngbTabContent>
                                         <p class="py-4 scanned-area">
                                             {{'smartPerformance.scanCompletePage.scannedAreas' |translate }}
                                         </p>
-                                        <ul class="scanned-list" *ngFor="let item of scannigResultObj?.tunePc?.thirdSection">
+                                        <ul class="scanned-list"
+                                            *ngFor="let item of scannigResultObj?.tunePc?.thirdSection">
                                             <li class=" list-item list-heading">
                                                 <div class="container-fluid">
                                                     <div class="row align-items-center">
                                                         <div class="col-12 col-sm-6 px-0 item-text">
                                                             <div class="row ">
-                                                                <fa-icon
-                                                                    class="col-1"
-                                                                    [icon]="['fal', 'check']">
+                                                                <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
                                                                 <p class="col">
                                                                     {{item.firstText}}
@@ -145,9 +146,7 @@
                                                         </div>
                                                         <div class="col-12 col-sm-6 px-0 item-text">
                                                             <div class="row">
-                                                                <fa-icon
-                                                                    class="col-1"
-                                                                    [icon]="['fal', 'check']">
+                                                                <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
                                                                 <p class="col">
                                                                     {{item.secondText}}
@@ -158,7 +157,7 @@
                                                     </div>
                                                 </div>
                                             </li>
-                                        </ul>                                      
+                                        </ul>
                                     </ng-template>
                                 </ngb-tab>
                                 <ngb-tab>
@@ -166,21 +165,23 @@
                                         <div class="icon-box d-flex justify-content-center align-items-center">
                                             <div class="icomoon icomoon-annoying-adware">
                                             </div>
-                                            <p title="{{'smartPerformance.tunePCPerformance.tabSet1.tab4' |translate }}">{{'smartPerformance.tunePCPerformance.tabSet1.tab4' |translate }}</p>
+                                            <p
+                                                title="{{'smartPerformance.tunePCPerformance.tabSet1.tab4' |translate }}">
+                                                {{'smartPerformance.tunePCPerformance.tabSet1.tab4' |translate }}</p>
                                         </div>
                                     </ng-template>
                                     <ng-template ngbTabContent>
                                         <p class="py-4 scanned-area">
                                             {{'smartPerformance.scanCompletePage.scannedAreas' |translate }}
                                         </p>
-                                        <ul class="scanned-list" *ngFor="let item of scannigResultObj?.tunePc?.fourthSection">
+                                        <ul class="scanned-list"
+                                            *ngFor="let item of scannigResultObj?.tunePc?.fourthSection">
                                             <li class=" list-item list-heading">
                                                 <div class="container-fluid">
                                                     <div class="row align-items-center">
                                                         <div class="col-12 col-sm-6 px-0 item-text">
                                                             <div class="row ">
-                                                                <fa-icon class="col-1"
-                                                                    [icon]="['fal', 'check']">
+                                                                <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
                                                                 <p class="col">
                                                                     {{item.firstText}}
@@ -190,11 +191,9 @@
                                                         </div>
                                                         <div class="col-12 col-sm-6 px-0 item-text">
                                                             <div class="row">
-                                                                <fa-icon
-                                                                    class="col-1"
-                                                                    [icon]="['fal', 'check']">
+                                                                <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
-                                                                <p  class="col">
+                                                                <p class="col">
                                                                     {{item.secondText}}
                                                                     <!-- {{'smartPerformance.scanCompletePage.tunepc.systemerrorsscannedareas.area2' |translate}} -->
                                                                 </p>
@@ -203,32 +202,31 @@
                                                     </div>
                                                 </div>
                                             </li>
-                                        </ul>                    
-                                 </ng-template>
+                                        </ul>
+                                    </ng-template>
                                 </ngb-tab>
                                 <ngb-tab>
                                     <ng-template ngbTabTitle>
-                                        <div
-                                            class="icon-box d-flex justify-content-center align-items-center">
-                                            <div
-                                                class="icomoon icomoon-registery-errors">
+                                        <div class="icon-box d-flex justify-content-center align-items-center">
+                                            <div class="icomoon icomoon-registery-errors">
                                             </div>
-                                            <p title="{{'smartPerformance.tunePCPerformance.tabSet1.tab5' |translate }}">{{'smartPerformance.tunePCPerformance.tabSet1.tab5' |translate }}</p>
+                                            <p
+                                                title="{{'smartPerformance.tunePCPerformance.tabSet1.tab5' |translate }}">
+                                                {{'smartPerformance.tunePCPerformance.tabSet1.tab5' |translate }}</p>
                                         </div>
                                     </ng-template>
                                     <ng-template ngbTabContent>
                                         <p class="py-4 scanned-area">
                                             {{'smartPerformance.scanCompletePage.scannedAreas' |translate }}
                                         </p>
-                                        <ul class="scanned-list" *ngFor="let item of scannigResultObj?.tunePc?.fifthSection">
+                                        <ul class="scanned-list"
+                                            *ngFor="let item of scannigResultObj?.tunePc?.fifthSection">
                                             <li class=" list-item list-heading">
                                                 <div class="container-fluid">
                                                     <div class="row align-items-center">
                                                         <div class="col-12 col-sm-6 px-0 item-text">
                                                             <div class="row ">
-                                                                <fa-icon
-                                                                    class="col-1"
-                                                                    [icon]="['fal', 'check']">
+                                                                <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
                                                                 <p class="col">
                                                                     {{item.firstText}}
@@ -236,12 +234,9 @@
                                                                 </p>
                                                             </div>
                                                         </div>
-                                                        <div
-                                                            class="col-12 col-sm-6 px-0 item-text">
+                                                        <div class="col-12 col-sm-6 px-0 item-text">
                                                             <div class="row">
-                                                                <fa-icon
-                                                                    class="col-1"
-                                                                    [icon]="['fal', 'check']">
+                                                                <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
                                                                 <p class="col">
                                                                     {{item.secondText}}
@@ -252,8 +247,8 @@
                                                     </div>
                                                 </div>
                                             </li>
-                                        </ul>                                    
-                                       </ng-template>
+                                        </ul>
+                                    </ng-template>
                                 </ngb-tab>
                             </ngb-tabset>
                         </div>
@@ -261,8 +256,7 @@
                 </ngb-panel>
                 <ngb-panel id="Internet performance">
                     <ng-template ngbPanelTitle>
-                        <div class="d-flex justify-content-between"
-                            accordion-heading>
+                        <div class="d-flex justify-content-between" accordion-heading>
                             <div class="heading">
                                 <div class="icomoon icomoon-boost-internet">
                                 </div>
@@ -289,22 +283,24 @@
                                     <ng-template ngbTabTitle>
                                         <div class="icon-box d-flex justify-content-center align-items-center">
                                             <div class="icomoon icomoon-e-junk"></div>
-                                            <p title="{{'smartPerformance.boostInternetPerformance.tabSet1.tab1' |translate }}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab1' |translate }}</p>
+                                            <p
+                                                title="{{'smartPerformance.boostInternetPerformance.tabSet1.tab1' |translate }}">
+                                                {{'smartPerformance.boostInternetPerformance.tabSet1.tab1' |translate }}
+                                            </p>
                                         </div>
                                     </ng-template>
                                     <ng-template ngbTabContent>
                                         <p class="py-4 scanned-area">
                                             {{'smartPerformance.scanCompletePage.scannedAreas' |translate }}
                                         </p>
-                                        <ul class="scanned-list" *ngFor="let item of scannigResultObj?.internetPerformance?.firstSection">
+                                        <ul class="scanned-list"
+                                            *ngFor="let item of scannigResultObj?.internetPerformance?.firstSection">
                                             <li class=" list-item list-heading">
                                                 <div class="container-fluid">
                                                     <div class="row align-items-center">
                                                         <div class="col-12 col-sm-6 px-0 item-text">
                                                             <div class="row">
-                                                                <fa-icon
-                                                                    class="col-1"
-                                                                    [icon]="['fal', 'check']">
+                                                                <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
                                                                 <p class="col">
                                                                     {{item.firstText}}
@@ -314,9 +310,7 @@
                                                         </div>
                                                         <div class="col-12 col-sm-6 px-0 item-text">
                                                             <div class="row">
-                                                                <fa-icon
-                                                                    class="col-1"
-                                                                    [icon]="['fal', 'check']">
+                                                                <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
                                                                 <p class="col">
                                                                     {{item.secondText}}
@@ -327,29 +321,31 @@
                                                     </div>
                                                 </div>
                                             </li>
-                                        </ul>                               
-                                   </ng-template>
+                                        </ul>
+                                    </ng-template>
                                 </ngb-tab>
                                 <ngb-tab>
                                     <ng-template ngbTabTitle>
                                         <div class="icon-box d-flex justify-content-center align-items-center">
                                             <div class="icomoon icomoon-network-settings"></div>
-                                            <p title="{{'smartPerformance.boostInternetPerformance.tabSet1.tab2' |translate }}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab2' |translate }}</p>
+                                            <p
+                                                title="{{'smartPerformance.boostInternetPerformance.tabSet1.tab2' |translate }}">
+                                                {{'smartPerformance.boostInternetPerformance.tabSet1.tab2' |translate }}
+                                            </p>
                                         </div>
                                     </ng-template>
                                     <ng-template ngbTabContent>
                                         <p class="py-4 scanned-area">
                                             {{'smartPerformance.scanCompletePage.scannedAreas' |translate }}
                                         </p>
-                                        <ul class="scanned-list" *ngFor="let item of scannigResultObj?.internetPerformance?.secondSection">
+                                        <ul class="scanned-list"
+                                            *ngFor="let item of scannigResultObj?.internetPerformance?.secondSection">
                                             <li class=" list-item list-heading">
                                                 <div class="container-fluid">
                                                     <div class="row align-items-center">
                                                         <div class="col-12 col-sm-6 px-0 item-text">
                                                             <div class="row ">
-                                                                <fa-icon
-                                                                    class="col-1"
-                                                                    [icon]="['fal', 'check']">
+                                                                <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
                                                                 <p class="col">
                                                                     {{item.firstText}}
@@ -359,9 +355,7 @@
                                                         </div>
                                                         <div class="col-12 col-sm-6 px-0 item-text">
                                                             <div class="row">
-                                                                <fa-icon
-                                                                    class="col-1"
-                                                                    [icon]="['fal', 'check']">
+                                                                <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
                                                                 <p class="col">
                                                                     {{item.secondText}}
@@ -372,29 +366,31 @@
                                                     </div>
                                                 </div>
                                             </li>
-                                        </ul>                                     
+                                        </ul>
                                     </ng-template>
                                 </ngb-tab>
                                 <ngb-tab>
                                     <ng-template ngbTabTitle>
                                         <div class="icon-box d-flex justify-content-center align-items-center">
                                             <div class="icomoon icomoon-browser-settings"></div>
-                                            <p title="{{'smartPerformance.boostInternetPerformance.tabSet1.tab3' |translate }}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab3' |translate }}</p>
+                                            <p
+                                                title="{{'smartPerformance.boostInternetPerformance.tabSet1.tab3' |translate }}">
+                                                {{'smartPerformance.boostInternetPerformance.tabSet1.tab3' |translate }}
+                                            </p>
                                         </div>
                                     </ng-template>
                                     <ng-template ngbTabContent>
                                         <p class="py-4 scanned-area">
                                             {{'smartPerformance.scanCompletePage.scannedAreas' |translate }}
                                         </p>
-                                        <ul class="scanned-list" *ngFor="let item of scannigResultObj?.internetPerformance?.thirdSection">
+                                        <ul class="scanned-list"
+                                            *ngFor="let item of scannigResultObj?.internetPerformance?.thirdSection">
                                             <li class=" list-item list-heading">
                                                 <div class="container-fluid">
                                                     <div class="row align-items-center">
                                                         <div class="col-12 col-sm-6 px-0 item-text">
                                                             <div class="row">
-                                                                <fa-icon
-                                                                    class="col-1"
-                                                                    [icon]="['fal', 'check']">
+                                                                <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
                                                                 <p class="col">
                                                                     {{item.firstText}}
@@ -404,9 +400,7 @@
                                                         </div>
                                                         <div class="col-12 col-sm-6 px-0 item-text">
                                                             <div class="row">
-                                                                <fa-icon
-                                                                    class="col-1"
-                                                                    [icon]="['fal', 'check']">
+                                                                <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
                                                                 <p class="col">
                                                                     {{item.secondText}}
@@ -417,32 +411,33 @@
                                                     </div>
                                                 </div>
                                             </li>
-                                        </ul>                            
+                                        </ul>
                                     </ng-template>
                                 </ngb-tab>
                                 <ngb-tab>
                                     <ng-template ngbTabTitle>
-                                        <div
-                                            class="icon-box d-flex justify-content-center align-items-center">
+                                        <div class="icon-box d-flex justify-content-center align-items-center">
                                             <div class="icomoon icomoon-browser-security"></div>
-                                            <p title="{{'smartPerformance.boostInternetPerformance.tabSet1.tab4' |translate }}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab4' |translate }}</p>
+                                            <p
+                                                title="{{'smartPerformance.boostInternetPerformance.tabSet1.tab4' |translate }}">
+                                                {{'smartPerformance.boostInternetPerformance.tabSet1.tab4' |translate }}
+                                            </p>
                                         </div>
                                     </ng-template>
                                     <ng-template ngbTabContent>
                                         <p class="py-4 scanned-area">
                                             {{'smartPerformance.scanCompletePage.scannedAreas' |translate }}
                                         </p>
-                                        <ul class="scanned-list" *ngFor="let item of scannigResultObj?.internetPerformance?.fourthSection">
+                                        <ul class="scanned-list"
+                                            *ngFor="let item of scannigResultObj?.internetPerformance?.fourthSection">
                                             <li class=" list-item list-heading">
                                                 <div class="container-fluid">
                                                     <div class="row align-items-center">
                                                         <div class="col-12 col-sm-6 px-0 item-text">
                                                             <div class="row ">
-                                                                <fa-icon
-                                                                    class="col-1"
-                                                                    [icon]="['fal', 'check']">
+                                                                <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
-                                                                <p  class="col">
+                                                                <p class="col">
                                                                     {{item.firstText}}
                                                                     <!-- {{'smartPerformance.scanCompletePage.internetperformance.wifiperformancescannedareas.area1' |translate}} -->
                                                                 </p>
@@ -450,9 +445,7 @@
                                                         </div>
                                                         <div class="col-12 col-sm-6 px-0 item-text">
                                                             <div class="row">
-                                                                <fa-icon
-                                                                    class="col-1"
-                                                                    [icon]="['fal', 'check']">
+                                                                <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
                                                                 <p class="col">
                                                                     {{item.secondText}}
@@ -463,29 +456,31 @@
                                                     </div>
                                                 </div>
                                             </li>
-                                        </ul>                                      
+                                        </ul>
                                     </ng-template>
                                 </ngb-tab>
                                 <ngb-tab>
                                     <ng-template ngbTabTitle>
                                         <div class="icon-box d-flex justify-content-center align-items-center">
                                             <div class="icomoon icomoon-wifi"></div>
-                                            <p title="{{'smartPerformance.boostInternetPerformance.tabSet1.tab5' |translate }}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab5' |translate }}</p>
+                                            <p
+                                                title="{{'smartPerformance.boostInternetPerformance.tabSet1.tab5' |translate }}">
+                                                {{'smartPerformance.boostInternetPerformance.tabSet1.tab5' |translate }}
+                                            </p>
                                         </div>
                                     </ng-template>
                                     <ng-template ngbTabContent>
                                         <p class="py-4 scanned-area">
                                             {{'smartPerformance.scanCompletePage.scannedAreas' |translate }}
                                         </p>
-                                        <ul class="scanned-list" *ngFor="let item of scannigResultObj?.internetPerformance?.fifthSection">
+                                        <ul class="scanned-list"
+                                            *ngFor="let item of scannigResultObj?.internetPerformance?.fifthSection">
                                             <li class=" list-item list-heading">
                                                 <div class="container-fluid">
                                                     <div class="row align-items-center">
                                                         <div class="col-12 col-sm-6 px-0 item-text">
                                                             <div class="row">
-                                                                <fa-icon
-                                                                    class="col-1"
-                                                                    [icon]="['fal', 'check']">
+                                                                <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
                                                                 <p class="col">
                                                                     {{item.firstText}}
@@ -495,9 +490,7 @@
                                                         </div>
                                                         <div class="col-12 col-sm-6 px-0 item-text">
                                                             <div class="row">
-                                                                <fa-icon
-                                                                    class="col-1"
-                                                                    [icon]="['fal', 'check']">
+                                                                <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
                                                                 <p class="col">
                                                                     {{item.secondText}}
@@ -508,7 +501,7 @@
                                                     </div>
                                                 </div>
                                             </li>
-                                        </ul>                                      
+                                        </ul>
                                     </ng-template>
                                 </ngb-tab>
                             </ngb-tabset>
@@ -517,8 +510,7 @@
                 </ngb-panel>
                 <ngb-panel id="Malware & Security">
                     <ng-template ngbPanelTitle>
-                        <div class="d-flex justify-content-between"
-                            accordion-heading>
+                        <div class="d-flex justify-content-between" accordion-heading>
                             <div class="heading">
                                 <div class="icomoon icomoon-malware">
                                 </div>
@@ -539,28 +531,27 @@
                     </ng-template>
                     <ng-template ngbPanelContent>
                         <div class="mt-5 mb-3 d-flex justify-content-between align-items-center">
-                            <ngb-tabset
-                                class="scan-result-tabs w-100">
+                            <ngb-tabset class="scan-result-tabs w-100">
                                 <ngb-tab>
                                     <ng-template ngbTabTitle>
                                         <div class="icon-box d-flex justify-content-center align-items-center">
                                             <div class="icomoon icomoon-malware-scan"></div>
-                                            <p title="{{'smartPerformance.malwareSecurity.tabSet1.tab1' |translate }}">{{'smartPerformance.malwareSecurity.tabSet1.tab1' |translate }}</p>
+                                            <p title="{{'smartPerformance.malwareSecurity.tabSet1.tab1' |translate }}">
+                                                {{'smartPerformance.malwareSecurity.tabSet1.tab1' |translate }}</p>
                                         </div>
                                     </ng-template>
                                     <ng-template ngbTabContent>
                                         <p class="py-4 scanned-area">
                                             {{'smartPerformance.scanCompletePage.scannedAreas' |translate }}
                                         </p>
-                                        <ul class="scanned-list" *ngFor="let item of scannigResultObj?.malwareSecurity?.firstSection">
+                                        <ul class="scanned-list"
+                                            *ngFor="let item of scannigResultObj?.malwareSecurity?.firstSection">
                                             <li class=" list-item list-heading">
                                                 <div class="container-fluid">
                                                     <div class="row align-items-center">
                                                         <div class="col-12 col-sm-6 px-0 item-text">
                                                             <div class="row ">
-                                                                <fa-icon
-                                                                    class="col-1"
-                                                                    [icon]="['fal', 'check']">
+                                                                <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
                                                                 <p class="col">
                                                                     {{item.firstText}}
@@ -570,9 +561,7 @@
                                                         </div>
                                                         <div class="col-12 col-sm-6 px-0 item-text">
                                                             <div class="row">
-                                                                <fa-icon
-                                                                    class="col-1"
-                                                                    [icon]="['fal', 'check']">
+                                                                <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
                                                                 <p class="col">
                                                                     {{item.secondText}}
@@ -583,29 +572,29 @@
                                                     </div>
                                                 </div>
                                             </li>
-                                        </ul>                               
+                                        </ul>
                                     </ng-template>
                                 </ngb-tab>
                                 <ngb-tab>
                                     <ng-template ngbTabTitle>
                                         <div class="icon-box d-flex justify-content-center align-items-center">
                                             <div class="icomoon icomoon-zero-day"></div>
-                                            <p title="{{'smartPerformance.malwareSecurity.tabSet1.tab2' |translate }}">{{'smartPerformance.malwareSecurity.tabSet1.tab2' |translate }}</p>
+                                            <p title="{{'smartPerformance.malwareSecurity.tabSet1.tab2' |translate }}">
+                                                {{'smartPerformance.malwareSecurity.tabSet1.tab2' |translate }}</p>
                                         </div>
                                     </ng-template>
                                     <ng-template ngbTabContent>
                                         <p class="py-4 scanned-area">
                                             {{'smartPerformance.scanCompletePage.scannedAreas' |translate }}
                                         </p>
-                                        <ul class="scanned-list" *ngFor="let item of scannigResultObj?.malwareSecurity?.secondSection">
+                                        <ul class="scanned-list"
+                                            *ngFor="let item of scannigResultObj?.malwareSecurity?.secondSection">
                                             <li class=" list-item list-heading">
                                                 <div class="container-fluid">
                                                     <div class="row align-items-center">
                                                         <div class="col-12 col-sm-6 px-0 item-text">
                                                             <div class="row ">
-                                                                <fa-icon
-                                                                    class="col-1"
-                                                                    [icon]="['fal', 'check']">
+                                                                <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
                                                                 <p class="col">
                                                                     {{item.firstText}}
@@ -615,9 +604,7 @@
                                                         </div>
                                                         <div class="col-12 col-sm-6 px-0 item-text">
                                                             <div class="row">
-                                                                <fa-icon
-                                                                    class="col-1"
-                                                                    [icon]="['fal', 'check']">
+                                                                <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
                                                                 <p class="col">
                                                                     {{item.secondText}}
@@ -628,29 +615,29 @@
                                                     </div>
                                                 </div>
                                             </li>
-                                        </ul>                                     
+                                        </ul>
                                     </ng-template>
                                 </ngb-tab>
                                 <ngb-tab>
                                     <ng-template ngbTabTitle>
                                         <div class="icon-box d-flex justify-content-center align-items-center">
                                             <div class="icomoon icomoon-errant-program"></div>
-                                            <p title="{{'smartPerformance.malwareSecurity.tabSet1.tab3' |translate }}">{{'smartPerformance.malwareSecurity.tabSet1.tab3' |translate }}</p>
+                                            <p title="{{'smartPerformance.malwareSecurity.tabSet1.tab3' |translate }}">
+                                                {{'smartPerformance.malwareSecurity.tabSet1.tab3' |translate }}</p>
                                         </div>
                                     </ng-template>
                                     <ng-template ngbTabContent>
                                         <p class="py-4 scanned-area">
                                             {{'smartPerformance.scanCompletePage.scannedAreas' |translate }}
                                         </p>
-                                        <ul class="scanned-list"  *ngFor="let item of scannigResultObj?.malwareSecurity?.thirdSection">
+                                        <ul class="scanned-list"
+                                            *ngFor="let item of scannigResultObj?.malwareSecurity?.thirdSection">
                                             <li class=" list-item list-heading">
                                                 <div class="container-fluid">
                                                     <div class="row align-items-center">
                                                         <div class="col-12 col-sm-6 px-0 item-text">
                                                             <div class="row">
-                                                                <fa-icon
-                                                                    class="col-1"
-                                                                    [icon]="['fal', 'check']">
+                                                                <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
                                                                 <p class="col">
                                                                     {{item.firstText}}
@@ -660,9 +647,7 @@
                                                         </div>
                                                         <div class="col-12 col-sm-6 px-0 item-text">
                                                             <div class="row">
-                                                                <fa-icon
-                                                                    class="col-1"
-                                                                    [icon]="['fal', 'check']">
+                                                                <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
                                                                 <p class="col">
                                                                     {{item.secondText}}
@@ -673,29 +658,29 @@
                                                     </div>
                                                 </div>
                                             </li>
-                                        </ul>                                      
+                                        </ul>
                                     </ng-template>
                                 </ngb-tab>
                                 <ngb-tab>
                                     <ng-template ngbTabTitle>
                                         <div class="icon-box d-flex justify-content-center align-items-center">
                                             <div class="icon icon-uninstall-375971"></div>
-                                            <p title="{{'smartPerformance.malwareSecurity.tabSet1.tab4' |translate }}">{{'smartPerformance.malwareSecurity.tabSet1.tab4' |translate }}</p>
+                                            <p title="{{'smartPerformance.malwareSecurity.tabSet1.tab4' |translate }}">
+                                                {{'smartPerformance.malwareSecurity.tabSet1.tab4' |translate }}</p>
                                         </div>
                                     </ng-template>
                                     <ng-template ngbTabContent>
                                         <p class="py-4 scanned-area">
                                             {{'smartPerformance.scanCompletePage.scannedAreas' |translate }}
                                         </p>
-                                        <ul class="scanned-list" *ngFor="let item of scannigResultObj?.malwareSecurity?.fourthSection">
+                                        <ul class="scanned-list"
+                                            *ngFor="let item of scannigResultObj?.malwareSecurity?.fourthSection">
                                             <li class=" list-item list-heading">
                                                 <div class="container-fluid">
                                                     <div class="row align-items-center">
                                                         <div class="col-12 col-sm-6 px-0 item-text">
                                                             <div class="row">
-                                                                <fa-icon
-                                                                    class="col-1"
-                                                                    [icon]="['fal', 'check']">
+                                                                <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
                                                                 <p class="col">
                                                                     {{item.firstText}}
@@ -705,9 +690,7 @@
                                                         </div>
                                                         <div class="col-12 col-sm-6 px-0 item-text">
                                                             <div class="row">
-                                                                <fa-icon
-                                                                    class="col-1"
-                                                                    [icon]="['fal', 'check']">
+                                                                <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
                                                                 <p class="col">
                                                                     {{item.secondText}}
@@ -718,30 +701,30 @@
                                                     </div>
                                                 </div>
                                             </li>
-                                        </ul>                                    
-                                     
+                                        </ul>
+
                                     </ng-template>
                                 </ngb-tab>
                                 <ngb-tab>
                                     <ng-template ngbTabTitle>
                                         <div class="icon-box d-flex justify-content-center align-items-center">
                                             <div class="icomoon icomoon-security-settings"></div>
-                                            <p title="{{'smartPerformance.malwareSecurity.tabSet1.tab5' |translate }}">{{'smartPerformance.malwareSecurity.tabSet1.tab5' |translate }}</p>
+                                            <p title="{{'smartPerformance.malwareSecurity.tabSet1.tab5' |translate }}">
+                                                {{'smartPerformance.malwareSecurity.tabSet1.tab5' |translate }}</p>
                                         </div>
                                     </ng-template>
                                     <ng-template ngbTabContent>
                                         <p class="py-4 scanned-area">
                                             {{'smartPerformance.scanCompletePage.scannedAreas' |translate }}
                                         </p>
-                                        <ul class="scanned-list" *ngFor="let item of scannigResultObj?.malwareSecurity?.fifthSection">
+                                        <ul class="scanned-list"
+                                            *ngFor="let item of scannigResultObj?.malwareSecurity?.fifthSection">
                                             <li class="list-item list-heading">
                                                 <div class="container-fluid">
                                                     <div class="row align-items-center">
                                                         <div class="col-12 col-sm-6 px-0 item-text">
                                                             <div class="row">
-                                                                <fa-icon
-                                                                    class="col-1"
-                                                                    [icon]="['fal', 'check']">
+                                                                <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
                                                                 <p class="col">
                                                                     {{item.firstText}}
@@ -751,9 +734,7 @@
                                                         </div>
                                                         <div class="col-12 col-sm-6 px-0 item-text">
                                                             <div class="row">
-                                                                <fa-icon
-                                                                    class="col-1"
-                                                                    [icon]="['fal', 'check']">
+                                                                <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
                                                                 <p class="col">
                                                                     {{item.secondText}}
@@ -764,7 +745,7 @@
                                                     </div>
                                                 </div>
                                             </li>
-                                        </ul>                                       
+                                        </ul>
                                     </ng-template>
                                 </ngb-tab>
                             </ngb-tabset>

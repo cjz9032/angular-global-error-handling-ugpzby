@@ -1,6 +1,11 @@
-@import '../../../app.theme.scss';
+@import '../../../../../app.theme.scss';
 .light-dashline {
 	border-top: 1px solid $screen_light_15;
+}
+vtr-subpage-smart-performance-scan-summary {
+	.vtr-page-header {
+		display: none;
+	}
 }
 .vtr-ui-smart-performance-scanning{
 	background: $light;

@@ -3,7 +3,7 @@ import { NO_ERRORS_SCHEMA, SimpleChanges, SimpleChange } from '@angular/core';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { UiSmartPerformanceComponent } from './ui-smart-performance.component';
+import { SubpageSmartPerformanceDashboardComponent } from './subpage-smart-performance-dashboard.component';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
@@ -16,9 +16,9 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell-mock.service';
 import { enumSmartPerformance } from 'src/app/enums/smart-performance.enum';
 
-describe('UiSmartPerformanceComponent', () => {
-	let component: UiSmartPerformanceComponent;
-	let fixture: ComponentFixture<UiSmartPerformanceComponent>;
+describe('SubpageSmartPerformanceDashboardComponent', () => {
+	let component: SubpageSmartPerformanceDashboardComponent;
+	let fixture: ComponentFixture<SubpageSmartPerformanceDashboardComponent>;
 	let smartPerformanceService: SmartPerformanceService;
 	let commonService: CommonService;
 	let modalService: NgbModal;
@@ -30,7 +30,7 @@ describe('UiSmartPerformanceComponent', () => {
 
 	beforeEach(() => {
 		TestBed.configureTestingModule({
-			declarations: [UiSmartPerformanceComponent],
+			declarations: [SubpageSmartPerformanceDashboardComponent],
 			schemas: [NO_ERRORS_SCHEMA],
 			imports: [TranslateModule.forRoot(), HttpClientTestingModule, RouterTestingModule],
 			providers: [
@@ -43,11 +43,11 @@ describe('UiSmartPerformanceComponent', () => {
 				VantageShellService
 			]
 		});
-		fixture = TestBed.createComponent(UiSmartPerformanceComponent);
+		fixture = TestBed.createComponent(SubpageSmartPerformanceDashboardComponent);
 		component = fixture.componentInstance;
 	});
 
-	it('should create UiSmartPerformanceComponent', async(() => {
+	it('should create SubpageSmartPerformanceDashboardComponent', async(() => {
 		commonService = TestBed.get(CommonService);
 		smartPerformanceService = TestBed.get(SmartPerformanceService)
 		shellServices = TestBed.get(VantageShellService)

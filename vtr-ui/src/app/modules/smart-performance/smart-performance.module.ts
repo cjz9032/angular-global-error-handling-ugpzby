@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { SmartPerformanceRoutingModule } from './smart-performance-routing.module';
 import { PageSmartPerformanceComponent } from '../../components/pages/page-smart-performance/page-smart-performance.component';
-import { UiSmartPerformanceComponent } from 'src/app/components/ui/ui-smart-performance/ui-smart-performance.component';
 import { HeaderMainModule } from 'src/app/components/header-main/header-main.module';
 
 import {
@@ -25,11 +24,9 @@ import { faCircle } from '@fortawesome/free-solid-svg-icons/faCircle';
 
 import { NgbModule, NgbDatepickerModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { UiSmartTunePcComponent } from '../../components/ui/ui-smart-tune-pc/ui-smart-tune-pc.component';
-import { UiSmartPerformanceScanningComponent } from '../../components/ui/ui-smart-performance-scanning/ui-smart-performance-scanning.component';
 import { ModalSmartPerformanceCancelComponent } from '../../components/modal/modal-smart-performance-cancel/modal-smart-performance-cancel.component';
 import { ModalSmartPerformanceSubscribeComponent } from '../../components/modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
 import { WidgetSpeedometerComponent } from '../../components/widgets/widget-speedometer/widget-speedometer.component';
-import { UiSmartPerformanceScanSummaryComponent } from '../../components/ui/ui-smart-performance-scan-summary/ui-smart-performance-scan-summary.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonUiModule } from '../common/common-ui.module';
 import { TranslationModule } from '../translation.module';
@@ -38,8 +35,11 @@ import { WidgetScansettingsComponent } from '../../components/widgets/widget-sca
 import { PageLayoutComponent } from 'src/app/components/page-layout/page-layout.component';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 import { SanitizeModule } from '../sanitize.module';
-import { UiScanScheduleComponent } from '../../components/ui/ui-scan-schedule/ui-scan-schedule.component';
-import { UiAccordionComponent } from 'src/app/components/ui/ui-accordion/ui-accordion.component';
+import { SubpageScanResultsAccordionComponent } from 'src/app/components/pages/page-smart-performance/children/subpage-scan-results-accordion/subpage-scan-results-accordion.component';
+import { SubpageScanningComponent } from 'src/app/components/pages/page-smart-performance/children/subpage-scanning/subpage-scanning.component';
+import { SubpageScheduleScanComponent } from 'src/app/components/pages/page-smart-performance/children/subpage-schedule-scan/subpage-schedule-scan.component';
+import { SubpageSmartPerformanceDashboardComponent } from 'src/app/components/pages/page-smart-performance/children/subpage-smart-performance-dashboard/subpage-smart-performance-dashboard.component';
+import { SubpageSmartPerformanceScanSummaryComponent } from 'src/app/components/pages/page-smart-performance/children/subpage-smart-performance-scan-summary/subpage-smart-performance-scan-summary.component';
 import { ModalSmartPerformanceFeedbackComponent } from '../../components/modal/modal-smart-performance-feedback/modal-smart-performance-feedback.component';
 import { UiButtonModule } from 'src/app/components/ui/ui-button/ui-button.module';
 import { SharedModule } from 'src/app/modules/shared.module';
@@ -48,18 +48,18 @@ import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-i
 @NgModule({
 	declarations: [
 		PageSmartPerformanceComponent,
-		UiSmartPerformanceComponent,
 		UiSmartTunePcComponent,
-		UiSmartPerformanceScanningComponent,
 		ModalSmartPerformanceCancelComponent,
 		ModalSmartPerformanceSubscribeComponent,
 		WidgetSpeedometerComponent,
-		UiSmartPerformanceScanSummaryComponent,
 		WidgetSubscriptiondetailsComponent,
 		WidgetScansettingsComponent,
-		UiScanScheduleComponent,
-		UiAccordionComponent,
-		ModalSmartPerformanceFeedbackComponent
+		ModalSmartPerformanceFeedbackComponent,
+		SubpageScanResultsAccordionComponent,
+		SubpageScanningComponent,
+		SubpageScheduleScanComponent,
+		SubpageSmartPerformanceDashboardComponent,
+		SubpageSmartPerformanceScanSummaryComponent
 	],
 	imports: [
 		CommonModule,
@@ -83,21 +83,22 @@ import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-i
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 	exports: [
-		UiSmartPerformanceComponent,
-		UiSmartPerformanceScanningComponent,
+		SubpageSmartPerformanceDashboardComponent,
+		SubpageSmartPerformanceScanSummaryComponent,
+		SubpageScanningComponent,
 		ModalSmartPerformanceCancelComponent,
 		ModalSmartPerformanceSubscribeComponent,
 		WidgetSpeedometerComponent,
-		UiSmartPerformanceScanSummaryComponent,
 		CommonUiModule
+		
 	],
 	bootstrap: [
-		UiSmartPerformanceComponent,
-		UiSmartPerformanceScanningComponent,
+		SubpageSmartPerformanceDashboardComponent,
+		SubpageSmartPerformanceScanSummaryComponent,
+		SubpageScanningComponent,
 		ModalSmartPerformanceCancelComponent,
 		ModalSmartPerformanceSubscribeComponent,
-		WidgetSpeedometerComponent,
-		UiSmartPerformanceScanSummaryComponent
+		WidgetSpeedometerComponent
 	]
 })
 export class SmartPerformanceModule {

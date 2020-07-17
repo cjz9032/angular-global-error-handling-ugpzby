@@ -384,7 +384,7 @@
 							<div class="row mb-40"  *ngIf="!isScanning && !isScanningCompleted && !isOldVersion">
 								<div class="col col-12">
 								<!----------Scan Schedule--------------->
-								<vtr-ui-scan-schedule [isOnline] = "isOnline" (hideBasedOnOldAddIn)="hideBasedOnOldAddInVersion($event)"></vtr-ui-scan-schedule>
+								<vtr-subpage-schedule-scan [isOnline] = "isOnline" (hideBasedOnOldAddIn)="hideBasedOnOldAddInVersion($event)"></vtr-subpage-schedule-scan>
 								<!----------Scan Schedule--------------->
 								</div>
 							</div>
@@ -424,10 +424,10 @@
 	</div></div>
 </right-content>
 </vtr-page-layout>
-<vtr-ui-smart-performance-scanning *ngIf="isScanning" (sendModelStatus)="cancelScanfromScanning()"
+<vtr-subpage-scanning *ngIf="isScanning" (sendModelStatus)="cancelScanfromScanning()"
 	[scheduleScanData]="scheduleScanObj" [isScheduleScan]="isScheduleScan" [isAutoScanRunning]="isScheduleScanRunning">
-</vtr-ui-smart-performance-scanning>
-<vtr-ui-smart-performance-scan-summary *ngIf="(isScanningCompleted || isSubscribed) && !isScanning "
+</vtr-subpage-scanning>
+<vtr-subpage-smart-performance-scan-summary *ngIf="(isScanningCompleted || isSubscribed) && !isScanning "
 	[hasSubscribedScanCompleted]="hasSubscribedScanCompleted" [inputIsScanningCompleted]="showSubscribersummary"
 	(backToScan)="changeScanEvent()" (backToNonSubscriber)="changeSummaryToHome()" [rating]="rating" [tune]="tune" [boost]="boost" [secure]="secure" [isOnline] = "isOnline">
-</vtr-ui-smart-performance-scan-summary>
+</vtr-subpage-smart-performance-scan-summary>

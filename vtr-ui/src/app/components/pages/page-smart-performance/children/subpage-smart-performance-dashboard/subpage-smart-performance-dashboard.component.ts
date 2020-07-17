@@ -1,29 +1,28 @@
-import {Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges, OnDestroy} from '@angular/core';
-import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { Component, OnInit, OnDestroy, OnChanges, Input, SimpleChanges } from '@angular/core';
+import { Subscription, EMPTY } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalSmartPerformanceSubscribeComponent } from '../../modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import moment from 'moment';
-import { EventTypes } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { EMPTY, Subscription } from 'rxjs';
-import { JsonPipe } from '@angular/common';
-import { ModalSmartPerformanceFeedbackComponent } from '../../modal/modal-smart-performance-feedback/modal-smart-performance-feedback.component';
 import { MetricsTranslateService } from 'src/app/services/mertics-traslate/metrics-translate.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
-import { enumSmartPerformance } from 'src/app/enums/smart-performance.enum';
 import { SupportService } from 'src/app/services/support/support.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { enumSmartPerformance } from 'src/app/enums/smart-performance.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { EventTypes } from '@lenovo/tan-client-bridge';
+import { ModalSmartPerformanceSubscribeComponent } from 'src/app/components/modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
+import { ModalSmartPerformanceFeedbackComponent } from 'src/app/components/modal/modal-smart-performance-feedback/modal-smart-performance-feedback.component';
+
 @Component({
-	selector: 'vtr-ui-smart-performance',
-	templateUrl: './ui-smart-performance.component.html',
-	styleUrls: ['./ui-smart-performance.component.scss']
+  selector: 'vtr-subpage-smart-performance-dashboard',
+  templateUrl: './subpage-smart-performance-dashboard.component.html',
+  styleUrls: ['./subpage-smart-performance-dashboard.component.scss']
 })
-export class UiSmartPerformanceComponent implements OnInit, OnDestroy, OnChanges {
+export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDestroy, OnChanges {
 
 	title = 'smartPerformance.title';
 	back = 'smartPerformance.back';

@@ -1,4 +1,6 @@
-@import '../../../app.theme.scss';
+@import '../../../../../app.theme.scss';
+
+
 .light-dashline {
 	border-top: 1px solid $screen_light_15;
 }
@@ -630,7 +632,7 @@
 		padding: 4rem;
 		letter-spacing: 0;
 		&.expired {
-			background: url("../../../../assets/images/warranty-bg.png") no-repeat, linear-gradient(to left top, #F17F14, #ED4E04);
+			background: url("../../../../../../assets/images/warranty-bg.png") no-repeat, linear-gradient(to left top, #F17F14, #ED4E04);
 		}
 
 		.title {
