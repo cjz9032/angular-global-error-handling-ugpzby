@@ -158,10 +158,7 @@ ui-popover-turn-on {
 					left: 2.7rem;
 					right: 0rem;
 					bottom: -0.3rem;
-					@include solid-button-outline;
-					@media #{$high-contrast} {
-						@include solid-button-outline(highlight);
-					}
+					border: 1px solid $blueFill;
 			}	
 			}
 
