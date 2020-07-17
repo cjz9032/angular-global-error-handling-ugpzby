@@ -110,7 +110,7 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges{
 	}
 
 	runappKeyup(event, i) {
-		if (event.which === 9) {
+		if (event.which === 9 && !event.shiftKey) {
 			if (i > this.currentLength) {
 				this.currentLength = i;
 			}
