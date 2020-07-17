@@ -2269,7 +2269,7 @@
             "next": "次回の更新スケジュール:",
             "checkButton": "更新の確認",
             "checking": "更新を確認しています",
-            "downloading": "更新のダウンロードが完了しました",
+            "downloading": "更新のダウンロード中",
             "installing": "更新をインストールしています",
             "percent": "% 完了",
             "cancelCheck": "チェックをキャンセル",
