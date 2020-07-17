@@ -98,6 +98,7 @@ describe('Component: PageSmartAssistComponent', () => {
 
 	it('getSuperResolutionStatus', () => {
 		smartAssistService = TestBed.get(SmartAssistService);
+		component.intelligentSecurity = new IntelligentSecurity();
 		smartAssistService.isShellAvailable = true;
 		component.smartAssistCache = new SmartAssistCache();
 		const res: FeatureStatus = {
