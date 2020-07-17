@@ -3186,7 +3186,9 @@
             "scanAgainButtonText": "Vnovični pregled",
             "supportButtonText": "Podpora družbe Lenovo"
         },
-        "executingScanTitle": "Pregledovanje {{title}}"
+        "executingScanTitle": "Pregledovanje {{title}}",
+        "showDetails": "Ogled podrobnosti",
+        "hideDetails": "Skrij podrobnosti"
     },
     "smartPerformance": {
         "title": "Health & Support",

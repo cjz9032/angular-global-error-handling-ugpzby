@@ -3186,7 +3186,9 @@
             "scanAgainButtonText": "Vizsgálat megismétlése",
             "supportButtonText": "Lenovo-támogatás"
         },
-        "executingScanTitle": "{{title}} vizsgálata"
+        "executingScanTitle": "{{title}} vizsgálata",
+        "showDetails": "Részletek megtekintése",
+        "hideDetails": "Részletek elrejtése"
     },
     "smartPerformance": {
         "title": "Health & Support",

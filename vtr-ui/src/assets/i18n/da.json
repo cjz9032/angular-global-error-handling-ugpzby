@@ -3186,7 +3186,9 @@
             "scanAgainButtonText": "Søg igen",
             "supportButtonText": "Lenovo Support"
         },
-        "executingScanTitle": "Søger i {{title}}"
+        "executingScanTitle": "Søger i {{title}}",
+        "showDetails": "Vis detaljer ",
+        "hideDetails": "Skjul detaljer"
     },
     "smartPerformance": {
         "title": "Smart Performance",

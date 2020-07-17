@@ -3186,7 +3186,9 @@
             "scanAgainButtonText": "Tekrar Tara",
             "supportButtonText": "Lenovo Destek"
         },
-        "executingScanTitle": "{{title}} taranıyor"
+        "executingScanTitle": "{{title}} taranıyor",
+        "showDetails": "Ayrıntıları Görüntüle",
+        "hideDetails": "Ayrıntıları Gizle"
     },
     "smartPerformance": {
         "title": "Health & Support",

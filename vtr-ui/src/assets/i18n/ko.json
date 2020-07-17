@@ -3186,7 +3186,9 @@
             "scanAgainButtonText": "다시 검사",
             "supportButtonText": "Lenovo 지원"
         },
-        "executingScanTitle": "{{title}} 검사 중"
+        "executingScanTitle": "{{title}} 검사 중",
+        "showDetails": "세부 사항 보기",
+        "hideDetails": "세부 사항 숨김"
     },
     "smartPerformance": {
         "title": "Health & Support",

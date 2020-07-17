@@ -3186,7 +3186,9 @@
             "scanAgainButtonText": "Scan erneut ausführen",
             "supportButtonText": "Lenovo Unterstützung"
         },
-        "executingScanTitle": "{{title}} wird gescannt"
+        "executingScanTitle": "{{title}} wird gescannt",
+        "showDetails": "Details anzeigen",
+        "hideDetails": "Details ausblenden"
     },
     "smartPerformance": {
         "title": "Smart Performance",

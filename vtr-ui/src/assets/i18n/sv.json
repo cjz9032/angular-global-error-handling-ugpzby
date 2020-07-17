@@ -3186,7 +3186,9 @@
             "scanAgainButtonText": "Genomsök igen",
             "supportButtonText": "Lenovo Support"
         },
-        "executingScanTitle": "Genomsöker {{title}}"
+        "executingScanTitle": "Genomsöker {{title}}",
+        "showDetails": "Visa information",
+        "hideDetails": "Dölj information"
     },
     "smartPerformance": {
         "title": "Smart Performance",
