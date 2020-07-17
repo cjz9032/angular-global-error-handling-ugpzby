@@ -41,7 +41,7 @@ const antiTheftResponse: AntiTheftResponse = {
 	photoNumber: 5
 };
 
-fdescribe('Component: PageSmartAssistComponent', () => {
+describe('Component: PageSmartAssistComponent', () => {
 	/* let component: PageSmartAssistComponent;
 	let fixture: ComponentFixture<PageSmartAssistComponent>;
 	let deviceService: DeviceService;
@@ -585,7 +585,7 @@ fdescribe('Component: PageSmartAssistComponent', () => {
 			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
 			const spy = spyOn(smartAssistService, 'resetHSAHPDSetting').and.returnValue(Promise.resolve(1));
 			fixture.detectChanges();
-			component.onJumpClick();
+			component.onVisibilityChanged();
 		});
 
 		it('PageSmartAssistComponent :: onMouseEnterEvent should call', () => {
