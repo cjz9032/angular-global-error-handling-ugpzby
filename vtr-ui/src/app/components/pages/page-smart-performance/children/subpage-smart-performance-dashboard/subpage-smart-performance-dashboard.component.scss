@@ -921,3 +921,19 @@
 		}
 	}
 }
+::ng-deep {
+	vtr-subpage-scanning, vtr-subpage-smart-performance-scan-summary {
+		vtr-page-layout{
+			::ng-deep{
+				vtr-header-main{
+					display: none;
+				}
+				.vtr-page-columns {
+					@media #{$mediaquery_lg}{
+						margin-top: calc(-5% - 4rem) !important;
+					}
+				}
+			}
+		}
+	}
+}
