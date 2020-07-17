@@ -127,13 +127,24 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 	public setRangeValue(event, idx, type, tuneId, isAddReduceBtn) {
 		this.logger.info(`setRangeValue event: ${event} ; isAddReduceBtn: ${isAddReduceBtn}`);
 		const arr1 = [2, 77, 34, 79, 102, 106];
+      	const arr2 = [29,30,31,32,42,43,96,97,107,108];
+      	let btnType = 0;
 		this.isChange = true;
 		if (isAddReduceBtn) {
+        	btnType = event[1];
 			event = event[0];
 		}
 		if (type === 'cpuParameterList') {
 			if (arr1.includes(tuneId)) {
 				this.pairwiseAssociation(tuneId, event);
+			}else if(arr2.includes(tuneId)) {
+				let isPlusSlider = 0;
+				if(this.advancedOCInfo[type][idx].OCValue > event){
+					isPlusSlider = 1;
+				}else if(this.advancedOCInfo[type][idx].OCValue < event){
+					isPlusSlider = 2;
+				}
+				this.multipleAssociations(arr2,tuneId,event,btnType,isPlusSlider);
 			} else {
 				this.advancedOCInfo[type][idx].OCValue = event;
 			}
@@ -142,6 +153,31 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 		}
 	}
 
+	public multipleAssociations (arr, tuneId, event, btnType,isPlusSlider) {
+		let index = arr.indexOf(tuneId);
+		if(btnType === 2 || isPlusSlider === 2) {
+			for (let i = 0; i<=index; i++) {
+				this.advancedOCInfo.cpuParameterList.filter(x => {
+					if(x.tuneId === arr[i]){
+						if(Number(event) > Number(x.OCValue)){
+							x.OCValue = event;
+						}
+					}
+				});
+			}
+		}
+		if (btnType === 1 || isPlusSlider === 1) {
+			for (let j = index; j<arr.length; j++) {
+				this.advancedOCInfo.cpuParameterList.filter(x => {
+					if(x.tuneId === arr[j]){
+						if(Number(event) < Number(x.OCValue)){
+							x.OCValue = event;
+						}
+					}
+				});
+			}
+		}
+	}
 	public pairwiseAssociation(tuneId, event) {
 		if (tuneId === 2 || tuneId === 77) {
 			this.advancedOCInfo.cpuParameterList.filter(x => {
