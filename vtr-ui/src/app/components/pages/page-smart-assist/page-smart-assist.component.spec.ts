@@ -1,13 +1,14 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { NavigationExtras } from '@angular/router';
+import { async, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule } from '@ngx-translate/core';
+import { AntiTheftResponse } from 'src/app/data-models/antiTheft/antiTheft.model';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { HsaIntelligentSecurityResponse } from 'src/app/data-models/smart-assist/hsa-intelligent-security.model/hsa-intelligent-security.model';
 import { IntelligentScreen } from 'src/app/data-models/smart-assist/intelligent-screen.model';
 import { IntelligentSecurity } from 'src/app/data-models/smart-assist/intelligent-security.model';
 import { SmartAssistCache } from 'src/app/data-models/smart-assist/smart-assist-cache.model';
+import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { CommsService } from 'src/app/services/comms/comms.service';
@@ -19,7 +20,6 @@ import { RouteHandlerService } from 'src/app/services/route-handler/route-handle
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { PageSmartAssistComponent } from './page-smart-assist.component';
-import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
 const intelligentScreen: IntelligentScreen = {
 	isIntelligentScreenVisible: false,
 	isAutoScreenOffVisible: false,
@@ -28,6 +28,17 @@ const intelligentScreen: IntelligentScreen = {
 	isReadingOrBrowsingVisible: false,
 	isReadingOrBrowsingEnabled: false,
 	readingOrBrowsingTime: 0
+};
+
+const antiTheftResponse: AntiTheftResponse = {
+	available: true,
+	status: true,
+	isSupportPhoto: true,
+	cameraPrivacyState: true,
+	authorizedAccessState: true,
+	photoAddress: '',
+	alarmOften: 10,
+	photoNumber: 5
 };
 
 fdescribe('Component: PageSmartAssistComponent', () => {
@@ -124,6 +135,80 @@ fdescribe('Component: PageSmartAssistComponent', () => {
 			expect(spyObject).toHaveBeenCalled();
 		});
 
+
+		it('PageSmartAssistComponent :: should create SmartAssistCapability isLenovoVoiceSupported ', () => {
+			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+
+			component.intelligentSecurity = new IntelligentSecurity();
+			component.intelligentSecurity.isIntelligentSecuritySupported = true;
+			const smartAssistCapability = new SmartAssistCapability();
+			smartAssistCapability.isLenovoVoiceSupported = true;
+			commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
+			fixture.detectChanges();
+			// const spyObject = spyOn(component, 'initZeroTouchLogin');
+			const spyObject = spyOn<any>(component, 'checkHeaderMenuItems');
+			component.ngOnInit();
+			expect(spyObject).toHaveBeenCalled();
+		});
+
+		it('PageSmartAssistComponent :: should create SmartAssistCapability isIntelligentMediaSupported.available  ', () => {
+			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+
+			component.intelligentSecurity = new IntelligentSecurity();
+			component.intelligentSecurity.isIntelligentSecuritySupported = true;
+			const smartAssistCapability = new SmartAssistCapability();
+			const isIntelligentMediaSupported = new FeatureStatus(true, true);
+			smartAssistCapability.isIntelligentMediaSupported = isIntelligentMediaSupported;
+			commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
+			fixture.detectChanges();
+			// const spyObject = spyOn(component, 'initZeroTouchLogin');
+			const spyObject = spyOn<any>(component, 'checkHeaderMenuItems');
+			component.ngOnInit();
+			expect(spyObject).toHaveBeenCalled();
+		});
+
+		it('PageSmartAssistComponent :: should create SmartAssistCapability isIntelligentScreenSupported  ', () => {
+			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+
+			const smartAssistCapability = new SmartAssistCapability();
+			// const isIntelligentScreenSupported = new FeatureStatus(true, true);
+			smartAssistCapability.isIntelligentScreenSupported = true;
+			commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
+			fixture.detectChanges();
+			// const spyObject = spyOn(component, 'initZeroTouchLogin');
+			const spyObject = spyOn<any>(component, 'checkHeaderMenuItems');
+			component.ngOnInit();
+			expect(spyObject).toHaveBeenCalled();
+		});
+
+
+		it('PageSmartAssistComponent :: should create SmartAssistCapability isAPSSupported  ', () => {
+			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const smartAssistCapability = new SmartAssistCapability();
+
+			smartAssistCapability.isAPSSupported = true;
+			commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
+			fixture.detectChanges();
+			// const spyObject = spyOn(component, 'initZeroTouchLogin');
+			const spyObject = spyOn<any>(component, 'checkHeaderMenuItems');
+			component.ngOnInit();
+			expect(spyObject).toHaveBeenCalled();
+		});
+
+		it('PageSmartAssistComponent :: should create SmartAssistCapability isAntiTheftSupported  ', () => {
+			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+
+			const smartAssistCapability = new SmartAssistCapability();
+			// const isIntelligentScreenSupported = new FeatureStatus(true, true);
+
+			smartAssistCapability.isAntiTheftSupported = antiTheftResponse;
+			commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
+			fixture.detectChanges();
+			// const spyObject = spyOn(component, 'initZeroTouchLogin');
+			const spyObject = spyOn<any>(component, 'checkHeaderMenuItems');
+			component.ngOnInit();
+			expect(spyObject).toHaveBeenCalled();
+		});
 
 		it('PageSmartAssistComponent :: should create with no cache SmartAssistCache', () => {
 			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
@@ -455,20 +540,90 @@ fdescribe('Component: PageSmartAssistComponent', () => {
 			expect(spyLogger).toHaveBeenCalled(); */
 		});
 
-		it('PageSmartAssistComponent :: onResetDefaultSettings should call', () => {
+		it('PageSmartAssistComponent :: oonResetDefaultSettings should call', () => {
 			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
-			/* component.smartAssistCache=new SmartAssistCache();
-			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
-			 */
-			const spyIsHPDAvailable = spyOnProperty(smartAssistService, 'isHPDShellAvailable').and.returnValue(true);
-			component.intelligentSecurity = new IntelligentSecurity();
-			component.intelligentSecurity.isIntelligentSecuritySupported = true;
-			fixture.detectChanges();
 			const spy = spyOn(smartAssistService, 'resetHSAHPDSetting').and.returnValue(Promise.resolve(1));
 			fixture.detectChanges();
 			component.onResetDefaultSettings(true);
+		});
+
+		it('PageSmartAssistComponent :: onClick should call', () => {
+			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const location = 'ms-settings:privacy-webcam';
+			/* let win = window.open(location);
+			let windowOpenSpy = spyOn(window, 'open');
+			// let returnValue = { foo: 'bar' };
+			let urlCreateObjectSpy = spyOn(URL, 'createObjectURL').and.returnValue(location); */
+			const spyLaunchURI = spyOn(deviceService, 'launchUri').and.callFake(() => { });
+
+			fixture.detectChanges();
+			component.onClick(location);
+			// expect(urlCreateObjectSpy).toHaveBeenCalledWith('foo');
+			// expect(windowOpenSpy).toHaveBeenCalledWith(location);
+
+		});
+
+		it('PageSmartAssistComponent :: launchFaceEnrollment should call', () => {
+			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const location = 'ms-settings:privacy-webcam';
+			const spyLaunchURI = spyOn(deviceService, 'launchUri').and.callFake(() => { });
+
+			fixture.detectChanges();
+			component.launchFaceEnrollment();
+
+		});
+
+		it('PageSmartAssistComponent :: onJumpClick should call', () => {
+			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const spy = spyOn(smartAssistService, 'resetHSAHPDSetting').and.returnValue(Promise.resolve(1));
+			fixture.detectChanges();
+			component.onJumpClick();
+		});
+
+
+		it('PageSmartAssistComponent :: onVisibilityChanged should call', () => {
+			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const spy = spyOn(smartAssistService, 'resetHSAHPDSetting').and.returnValue(Promise.resolve(1));
+			fixture.detectChanges();
+			component.onJumpClick();
+		});
+
+		it('PageSmartAssistComponent :: onMouseEnterEvent should call', () => {
+			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const spy = spyOn(component, 'getFacialRecognitionStatus');
+			fixture.detectChanges();
+			component.onMouseEnterEvent();
 			expect(spy).toHaveBeenCalled();
 		});
+
+		it('PageSmartAssistComponent :: permissionChanged should call', () => {
+			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const spy = spyOn(component, 'getFacialRecognitionStatus');
+			fixture.detectChanges();
+			component.permissionChanged();
+			expect(spy).toHaveBeenCalled();
+		});
+
+		/* it('PageSmartAssistComponent :: onResetDefaultSettings should call', () => {
+			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			// component.smartAssistCache=new SmartAssistCache();
+			// this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+
+			component.hsaIntelligentSecurity = new HsaIntelligentSecurityResponse(false, false);
+
+
+			smartAssistService.isHPDShellAvailable = true;
+			smartAssistService.isShellAvailable = true;
+			// const spyIsHPDAvailable = spyOnProperty(smartAssistService, 'isHPDShellAvailable', 'set').and.returnValue(true);
+			component.intelligentSecurity = new IntelligentSecurity();
+			component.intelligentSecurity.isZeroTouchLockFacialRecoVisible = true;
+			fixture.detectChanges();
+			// const spy = spyOn(smartAssistService, 'resetHSAHPDSetting').and.returnValue(Promise.resolve(0));
+			const spy = spyOn(component, 'getFacialRecognitionStatus');
+			//fixture.detectChanges();
+			component.onResetDefaultSettings(true);
+			expect(spy).toHaveBeenCalled();
+		}); */
 
 	});
 
