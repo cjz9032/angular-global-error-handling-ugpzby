@@ -2241,7 +2241,7 @@ export class VantageShellService {
 	}
 
 	// returns DPM AllPowerPlans object from VantageShellService of JS Bridge
-	public getPowerDPM() {
+	public getPowerDPM(): any {
 		const allPowerPlansResponse = {
 			activePowerPlan: 'Balanced',
                 powerButtonAction: 0,
@@ -2284,8 +2284,32 @@ export class VantageShellService {
                   }, {
                     key: 'Brightness',
                     value: '100'
-                  }]
-                }]
+				  }], 
+				},
+				{
+					settingList: [{
+						key: 'PowerPlan',
+						value: 'Extreme Performance'
+					  }],
+				},
+				{
+					settingList: [{
+						key: 'PowerPlan',
+						value: 'Better Saver'
+					  }],
+				},
+				{
+					settingList: [{
+						key: 'PowerPlan',
+						value: 'Better Performance'
+					  }],
+				},
+				{
+					settingList: [{
+						key: 'PowerPlan',
+						value: 'Lower Temperature'
+					  }],
+				}]
 		};
 		const allPowerPlans: any = {
 			getAllPowerPlans: this.getPromise(allPowerPlansResponse),
