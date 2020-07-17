@@ -2566,7 +2566,7 @@
                 "describe": "Če želite ugotoviti, kako varna so omrežja okrog vas, uporabite detektor groženj.",
                 "button": "Preverite, da",
                 "connectionError": "Napaka povezave",
-                "tryAgain": "Grožnje ne moremo poiskati, ker omrežje ni na voljo. Vzpostavite internetno povezavo in poskusite znova."
+                "tryAgain": "Omrežje ni na voljo. Poskusite znova pozneje."
             },
             "locationmodal": {
                 "title": "Omogoči lokacijske storitve",

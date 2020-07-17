@@ -2566,7 +2566,7 @@
                 "describe": "Koristite detektor pretnji za utvrđivanje bezbednosti mreža oko vas.",
                 "button": "Proveri pretnju",
                 "connectionError": "Greška veze",
-                "tryAgain": "Ne možemo da lociramo pretnju po vas zato što mreža nije dostupna, povežite se sa internetom i pokušajte ponovo."
+                "tryAgain": "Mreža nije dostupna. Pokušajte ponovo kasnije."
             },
             "locationmodal": {
                 "title": "Omogućite usluge određivanja lokacije",

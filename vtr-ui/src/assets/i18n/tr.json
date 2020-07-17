@@ -2566,7 +2566,7 @@
                 "describe": "Çevrenizdeki ağların güvenliğini belirlemek için tehdit algılayıcıyı kullanın.",
                 "button": "Tehdidi denetle",
                 "connectionError": "Bağlantı Hatası",
-                "tryAgain": "Ağ kullanılamadığından size yönelik tehdidi bulamıyoruz, lütfen İnternet’e bağlanın ve yeniden deneyin."
+                "tryAgain": "Ağ kullanılamaz. Lütfen daha sonra yeniden deneyin."
             },
             "locationmodal": {
                 "title": "Konum hizmetlerini etkinleştir",

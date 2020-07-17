@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalThreatLocatorComponent } from 'src/app/components/modal/modal-threat-locator/modal-threat-locator.component';
 
@@ -8,19 +8,19 @@ import { ModalThreatLocatorComponent } from 'src/app/components/modal/modal-thre
 	styleUrls: ['./threat-locator.component.scss']
 })
 export class ThreatLocatorComponent implements OnInit {
-	locatorButtonDisable = false;
+	@Input() locatorButtonDisable = false;
+
 	constructor(
 		public modalService: NgbModal
-	) {}
+	) { }
 
-	ngOnInit() {	}
+	ngOnInit() { }
 
 	openThreatLocator() {
 		if (this.modalService.hasOpenModals()) {
 			return;
 		}
-		this.locatorButtonDisable = true;
-		const threatLocatorModal: NgbModalRef = this.modalService.open(ModalThreatLocatorComponent, {
+		this.modalService.open(ModalThreatLocatorComponent, {
 			backdrop: true,
 			size: 'lg',
 			centered: true,
@@ -29,10 +29,5 @@ export class ThreatLocatorComponent implements OnInit {
 		setTimeout(() => {
 			document.getElementById('modal-threat-locator').parentElement.parentElement.parentElement.parentElement.focus();
 		}, 0);
-		threatLocatorModal.result.then(() => {
-			this.locatorButtonDisable = false;
-		}).catch(() => {
-			this.locatorButtonDisable = false;
-		});
 	}
 }

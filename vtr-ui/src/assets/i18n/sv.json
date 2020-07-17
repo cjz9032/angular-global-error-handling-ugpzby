@@ -2566,7 +2566,7 @@
                 "describe": "Använd hotidentifieraren för att utvärdera säkerheten i nätverken.",
                 "button": "Kontrollera hot",
                 "connectionError": "Anslutningsfel",
-                "tryAgain": "Det gick inte att hitta något hot på grund av att nätverket inte är tillgängligt. Anslut till internet och försök igen."
+                "tryAgain": "Nätverket är inte tillgängligt. Försök igen litet senare."
             },
             "locationmodal": {
                 "title": "Aktivera platstjänster",

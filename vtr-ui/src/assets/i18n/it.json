@@ -2566,7 +2566,7 @@
                 "describe": "Utilizza il rilevatore delle minacce per determinare la sicurezza delle reti vicine.",
                 "button": "Verifica minaccia",
                 "connectionError": "Errore di connessione",
-                "tryAgain": "Impossibile individuare la minaccia poiché la rete non è disponibile; collegarsi a Internet e riprovare."
+                "tryAgain": "Rete non disponibile. Riprovare più tardi."
             },
             "locationmodal": {
                 "title": "Abilita servizi di localizzazione",

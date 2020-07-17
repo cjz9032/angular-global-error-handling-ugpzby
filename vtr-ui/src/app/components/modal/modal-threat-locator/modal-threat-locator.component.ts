@@ -11,28 +11,35 @@ import {
 import {
 	VantageShellService
 } from '../../../services/vantage-shell/vantage-shell.service';
+import { NetworkRequestService } from 'src/app/services/network-request/network-request.service';
+import { Subscription } from 'rxjs';
 
 @Component({
 	selector: 'vtr-modal-threat-locator',
 	templateUrl: './modal-threat-locator.component.html',
-	styleUrls: ['./modal-threat-locator.component.scss']
+	styleUrls: ['./modal-threat-locator.component.scss'],
 })
 export class ModalThreatLocatorComponent implements OnInit {
 	threatLocatorUrl: string;
-	online: boolean;
+	online = true;
 	private metrics: any;
+	networkSubscriber: Subscription;
 
 	@ViewChild('domModalDiv') domModalDiv: ElementRef;
 
 	constructor(
 		public activeModal: NgbActiveModal,
-		private shellService: VantageShellService
+		private shellService: VantageShellService,
+		private networkService: NetworkRequestService
 	) {
 		this.metrics = shellService.getMetrics();
 	}
 	@HostListener('window: focus')
 	onFocus(): void {
-		this.online = navigator.onLine;
+		this.networkSubscriber.unsubscribe();
+		this.networkSubscriber = this.networkService.networkStatus().subscribe(res => {
+			this.online = res[res.length - 1];
+		});
 		const modal = document.querySelector('.Threat-Locator-Modal') as HTMLElement;
 		modal.focus();
 	}
@@ -90,13 +97,16 @@ export class ModalThreatLocatorComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.online = navigator.onLine;
+		this.networkSubscriber = this.networkService.networkStatus().subscribe(res => {
+			this.online = res[res.length - 1];
+		});
 		this.buildThreatLocatorUrl(
 			this.getThreatLocatorLanguageId(navigator.language)
 		);
 	}
 
 	closeModal() {
+		this.networkSubscriber.unsubscribe();
 		this.activeModal.close('close');
 	}
 

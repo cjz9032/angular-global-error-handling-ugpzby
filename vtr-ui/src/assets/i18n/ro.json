@@ -2566,7 +2566,7 @@
                 "describe": "Utilizați detectorul de amenințări pentru a determina siguranța rețelelor din jurul dvs.",
                 "button": "Verificați amenințarea",
                 "connectionError": "Eroare de conexiune",
-                "tryAgain": "Nu putem localiza amenințarea din cauză că rețeaua nu este disponibilă. Conectați-vă la internet și încercați din nou."
+                "tryAgain": "Rețeaua nu este disponibilă. Încercați din nou mai târziu."
             },
             "locationmodal": {
                 "title": "Activare servicii de localizare",

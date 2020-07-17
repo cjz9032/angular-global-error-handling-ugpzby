@@ -2566,7 +2566,7 @@
                 "describe": "Vyhledávač hrozeb vám pomůže zjistit, jak bezpečné jsou sítě kolem vás.",
                 "button": "Zkontrolovat hrozby",
                 "connectionError": "Chyba spojení",
-                "tryAgain": "Z důvodu nedostupné sítě nemůžeme najít hrozbu. Připojte se k internetu a zkuste to znovu."
+                "tryAgain": "Žádná síť není v dosahu. Zkuste to prosím později."
             },
             "locationmodal": {
                 "title": "Povolit zjišťování polohy",

@@ -3355,7 +3355,7 @@
 				"describe": "Use the threat detector to determine the safety of the networks around you.",
 				"button": "Check threat",
 				"connectionError": "Connection Error",
-				"tryAgain": "We are unable to locate threat for you due to network unavailable, please get connected to Internet and try again."
+				"tryAgain": "Network not available. Please try again later."
 			},
 			"locationmodal": {
 				"title": "Enable location services",

@@ -2566,7 +2566,7 @@
                 "describe": "Pomocou funkcie Detektor hrozieb určte bezpečnosť okolitých sietí.",
                 "button": "Preveriť hrozbu",
                 "connectionError": "Chyba pripojenia",
-                "tryAgain": "Hrozbu nemôžeme nájsť, pretože sieť nie je k dispozícii. Pripojte sa na Internet a skúste to znova."
+                "tryAgain": "Sieť nie je k dispozícii. Skúste to znova neskôr."
             },
             "locationmodal": {
                 "title": "Zapnúť služby na základe polohy",
