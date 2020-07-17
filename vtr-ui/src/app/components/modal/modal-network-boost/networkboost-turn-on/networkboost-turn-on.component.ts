@@ -52,7 +52,7 @@ export class NetworkboostTurnOnComponent implements OnInit, AfterViewInit {
   }
 
   keydownFn(event) {
-    if (event.which === 9) {
+    if (event.which === 9 && !event.shiftKey) {
       setTimeout(() => {
         document.getElementById("nbTurnOnModal").focus();
       }, 2);

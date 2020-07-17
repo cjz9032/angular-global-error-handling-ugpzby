@@ -76,7 +76,7 @@ export class ModalAddAppsComponent implements OnInit, AfterViewInit {
 	}
 
 	runappKeyup(event, index) {
-		if (event.which === 9) {
+		if (event.which === 9 && !event.shiftKey) {
 			if (index === this.runningList.length - 1) {
 				this.focusElement();
 			}

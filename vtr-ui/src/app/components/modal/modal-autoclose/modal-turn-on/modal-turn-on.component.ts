@@ -42,7 +42,7 @@ export class ModalTurnOnComponent implements OnInit, AfterViewInit {
 	}
 
 	keydownFn(event) {
-		if (event.which === 9) {
+		if (event.which === 9 && !event.shiftKey) {
 			setTimeout(() => {
 				document.getElementById('autoclose_turnon_dialog').focus();
 			},2);
