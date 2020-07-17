@@ -296,11 +296,17 @@
 			.lighting-panel-select{
                 button:focus{
                     @include default-button-border;
+                    @media #{$high-contrast} {
+                        @include solid-button-outline(highlight);
+                    }
                 }
             }
             .lighting-default-text,.lighting-color .d-flex{
                 button:focus{
                     @include outline-blue-gaming;
+                    @media #{$high-contrast} {
+                        outline: 0.1rem solid highlight !important;
+                    }
                 }
                 .under-line-button{
                     outline-offset: 0.2rem;

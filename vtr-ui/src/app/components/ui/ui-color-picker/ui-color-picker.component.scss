@@ -195,6 +195,9 @@
 		.ui-color-picker,.preset-color ul li{		
 			&:focus{
                 @include outline-blue-gaming;
+                @media #{$high-contrast} {
+                    outline: 0.1rem solid highlight !important;
+                }
             }
 		}
 	}
