@@ -1,0 +1,35 @@
+<section class="vtr-widget-mcafee-graphic-introduction mt-5 mb-60">
+	<div class="row position-relative hero-background-container justify-content-between overflow-hidden" #viewContainer>
+		<div class="col-12 col-md-5 col-lg-12 col-xl-5 row flex-column left-view" #leftView>
+			<div class="introduction" id="introduction" #introduction>
+				<div class="icon-desc d-flex justify-content-between">
+					<div class="col mb-3">
+						<div class="bullet-icon d-inline-block px-3">
+							<div class="icon-bkg">
+								<fa-icon [icon]="['fas', 'check']"></fa-icon>
+							</div>
+						</div>
+						<span class="mcafee-title" [innerHTML]="'security.antivirus.others.graphicTitle' | translate"></span>
+					</div>
+					<img class="w-100 logo mr-4 d-none d-sm-block d-md-none" src="assets/images/antivirus/OEM_Logo.svg" alt="" srcset="">
+				</div>
+				<div class="desc text-break">
+					<p class="mcafee-subtitle font-weight-600" [innerHTML]="'security.antivirus.others.graphicSubtitle' | translate"></p>
+					<p [innerHTML]="'security.antivirus.others.graphicDesc1' | translate"></p>
+					<p [innerHTML]="'security.antivirus.others.graphicDesc2' | translate"></p>
+				</div>
+			</div>
+			<div class="bottom-side">
+				<object class="w-100" data="assets/images/antivirus/hero_bottom_blob.svg" type="image/svg+xml"></object>
+			</div>
+		</div>
+		<div class="right-side d-none d-md-block d-lg-none d-xl-block">
+			<img id="activeImag" [style.height.px]="introduction.clientHeight" src="assets/images/antivirus/hero_side.png" alt="" srcset="">
+		</div>
+		<div class="col-0 col col-lg-0 col p-0 hero-background d-none d-md-block d-lg-none d-xl-block"
+			>
+			<!-- <object class="w-100" data="assets/images/antivirus/hero_background.svg" type="image/svg+xml"></object> -->
+			<img class="logo position-absolute" src="assets/images/antivirus/McAfee_Lenovo_Logo.svg" alt="" srcset="">
+		</div>
+	</div>
+</section>

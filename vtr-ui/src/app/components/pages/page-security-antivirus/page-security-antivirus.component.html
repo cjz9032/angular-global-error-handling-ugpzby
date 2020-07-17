@@ -240,30 +240,20 @@
 						</vtr-ui-security-statusbar>
 
 					</div>
-				</div>
-				<div class="mb-5">
-					<vtr-container-collapsible
-						*ngIf="viewModel.showMcafee"
-						[collapseLinkId]="'othersBetterOffer'"
-						[cardTitle]="'security.antivirus.others.betterOffer' | translate"
-						componentName="othersBetterOfferCollapsible"
-						[allowCollapse]="true"
-						[isCollapsed]="false">
-						<vtr-widget-mcafee [install]="viewModel.mcafeeInstall"
-							[isOnline]="isOnline"
-							[name]="viewModel.otherAntiVirus.name" [common]="common">
-						</vtr-widget-mcafee>
-						<vtr-widget-common-antivirus></vtr-widget-common-antivirus>
-					</vtr-container-collapsible>
+					<vtr-widget-mcafee-graphic-introduction></vtr-widget-mcafee-graphic-introduction>
+					<vtr-widget-mcafee-features [install]="viewModel.mcafeeInstall"
+						[isOnline]="isOnline"
+						[name]="viewModel.otherAntiVirus.name" [common]="common"></vtr-widget-mcafee-features>
+					<vtr-widget-mcafee-peace-of-mind></vtr-widget-mcafee-peace-of-mind>
 				</div>
 			</div>
 		</ng-template>
 	</left-content>
 
 	<right-content>
-		<div class="container-fluid">
+		<div class="container-fluid row justify-content-between">
 			<!--Start of Security Card Advisor-->
-			<div class="row mb-40">
+			<div class="row mb-40 col-12 col-md-6 col-lg-12 pr-0 pr-md-3 pr-lg-0">
 				<div class="col col-12">
 					<vtr-widget-security-status
 					[securityAdvisor]="securityAdvisor"
@@ -273,18 +263,25 @@
 			</div>
 			<!--End of Security Card Advisor-->
 
-			<div class="row">
+			<div class="row mb-40 col-12 col-md-6 col-lg-12 pl-0 pl-md-3 pl-lg-0">
 				<div class="col col-12">
-					<vtr-container-card [item]="cardContentPositionA"
-						[ratio]="2"
-						type="subpage-corner"
-						cornerShift="large"
-						order="2"
-						sideFlag="r"
-						[containerCardId]="'sa-av-modal'">
-					</vtr-container-card>
+					<vtr-widget-mcafee-content-card *ngIf="viewModel?.currentPage ==='others';else otherCard"
+						[articleId]="mcafeeArticleId"></vtr-widget-mcafee-content-card>
+					<ng-template #otherCard>
+						<vtr-container-card #otherCard
+							[item]="cardContentPositionA"
+							[ratio]="2"
+							type="subpage-corner"
+							cornerShift="large"
+							order="2"
+							sideFlag="r"
+							[containerCardId]="'sa-av-modal'">
+						</vtr-container-card>
+					</ng-template>
+
 				</div>
 			</div>
+
 		</div>
 		<div class="footer row d-block d-lg-none">
 			<div class="row px-0 justify-content-center">

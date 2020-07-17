@@ -1,0 +1,12 @@
+@import "../../../../../app.theme.scss";
+
+.icon {
+	width: 5rem;
+	max-width: 8rem;
+	@include high-contrast-image-invert;
+}
+.mcafee-title, .mcafee-desc {
+	font-size: 1.6rem;
+	color: $shade_blue;
+	@include high-contrast-color-reversal;
+}

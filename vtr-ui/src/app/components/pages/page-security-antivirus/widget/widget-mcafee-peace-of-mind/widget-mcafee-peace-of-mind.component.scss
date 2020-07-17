@@ -1,0 +1,24 @@
+@import "../../../../../app.theme.scss";
+@import "../widget-mcafee-features/widget-mcafee-features.component.scss";
+
+.vtr-widget-mcafee-peace-of-mind {
+	background: linear-gradient(180deg, #ECF7FF 0%, rgba(236, 247, 255, 0) 156.94%);
+	border-radius: $border_radius;
+	color: $shade_blue;
+	@include high-contrast-adjust;
+	@include high-contrast-background-image;
+	@include high-contrast-background-color;
+	@include high-contrast-color-reversal;
+	@media #{$black-on-white} {
+		@include black-border;
+	}
+	@media #{$white-on-black} {
+		@include white-border;
+	}
+	.font-weight-600 {
+		font-weight: $weight_600;
+	}
+	img {
+		@include high-contrast-image-invert;
+	}
+}

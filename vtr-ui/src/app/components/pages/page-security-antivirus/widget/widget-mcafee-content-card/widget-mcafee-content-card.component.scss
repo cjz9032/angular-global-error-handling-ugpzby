@@ -1,0 +1,45 @@
+@import "../../../../../app.theme.scss";
+.vtr-widget-mcafee-content-card {
+	border-radius: $border_radius;
+	// background-color: $light;
+	box-shadow: $drop_shadow;
+	color: $shade_blue;
+	overflow: hidden;
+
+	@media #{$black-on-white} {
+		@include black-border;
+	}
+	@media #{$white-on-black} {
+		@include white-border;
+	}
+
+	.background-container {
+		padding: 2.4rem;
+		background: linear-gradient(to right, $azure_light 0%, $azure_lighter 52.61%);
+		@include high-contrast-background-image;
+		@include high-contrast-background-color;
+		@include high-contrast-adjust;
+		.description {
+			max-width: 30rem;
+			a {
+				font-size: 1.8rem;
+			}
+		}
+		.title {
+			font-size: 2rem;
+			font-weight: $weight_600;
+		}
+		.desc {
+			font-size: 1.8rem;
+		}
+	}
+	.image {
+		margin-top: -0.1rem;
+		@media #{$black-on-white} {
+			filter: grayscale(1) contrast(110%);
+		}
+		@media #{$white-on-black} {
+			filter: grayscale(1) invert(1) contrast(110%);
+		}
+	}
+}
