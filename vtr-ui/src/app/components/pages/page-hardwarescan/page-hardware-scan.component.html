@@ -21,7 +21,7 @@
 		<div class="container-fluid">
 			<!-- Schedule Scan feature will be implemented and fixed on Release 3.2 -->
 			<!-- <div class="row">
-						<div class="col col-12 cont mb-40" *ngIf="((isLoadingDone() || isScanDoneExecuting()) && !isRecoverInProgress() && !isRecoverExecuting()) && !getIsViewingRecoverLog()">
+						<div class="col col-12 cont mb-40" *ngIf="((isLoadingDone() || isScanDoneExecuting()) && !isRecoverExecuting()) && !getIsViewingRecoverLog()">
 							<vtr-widget-schedule-scan>
 							</vtr-widget-schedule-scan>
 						</div>
@@ -41,7 +41,7 @@
 
 			<div class="row">
 				<div class="col col-12 cont mb-40"
-					*ngIf="!isRecoverInProgress() && !getIsViewingRecoverLog()">
+					*ngIf="true">
 					<vtr-widget-recover-bad-sectors
 						[title]="'hardwareScan.recoverBadSectors.title' | translate"
 						[description]="'hardwareScan.recoverBadSectors.description' | translate"
@@ -55,7 +55,7 @@
 			<div class="row">
 				<div class="col col-12 mb-40">
 					<vtr-widget-hardware-scan-status
-						*ngIf="!isScanExecuting() && !isRecoverExecuting() && !hidePreviousResult && !isRecoverInProgress()">
+						*ngIf="!isScanExecuting() && !isRecoverExecuting() && !hidePreviousResult">
 					</vtr-widget-hardware-scan-status>
 				</div>
 			</div>

@@ -43,10 +43,8 @@ export class HardwareScanService {
 	private modules: any; // modules displayed on screen
 	private devices: any[];
 	private recoverExecution = false;
-	private recoverInProgress = false;
 	private recoverInit = false;
 	private deviceInRecover: string;
-	private isViewingRecoverLog = false;
 	private hasDevicesToRecover = false;
 	private scanOrRBSFinished = false;
 	private scanHeaderTypeFinished: HardwareScanFinishedHeaderType;
@@ -252,22 +250,6 @@ export class HardwareScanService {
 
 	public setRecoverExecutionStatus(status: boolean) {
 		this.recoverExecution = status;
-	}
-
-	public isRecoverInProgress() {
-		return this.recoverInProgress;
-	}
-
-	public setRecoverInProgress(status: boolean) {
-		this.recoverInProgress = status;
-	}
-
-	public getIsViewingRecoverLog() {
-		return this.isViewingRecoverLog;
-	}
-
-	public setIsViewingRecoverLog(status: boolean) {
-		this.isViewingRecoverLog = status;
 	}
 
 	public isRecoverInit() {

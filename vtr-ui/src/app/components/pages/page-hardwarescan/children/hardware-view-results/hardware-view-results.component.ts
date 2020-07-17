@@ -41,8 +41,6 @@ export class HardwareViewResultsComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		this.hardwareScanService.setIsViewingRecoverLog(false);
-
 		// Ensure that the homepage will be shown,
 		// in case of reaching here from the results page
 		this.hardwareScanService.setScanOrRBSFinished(false);

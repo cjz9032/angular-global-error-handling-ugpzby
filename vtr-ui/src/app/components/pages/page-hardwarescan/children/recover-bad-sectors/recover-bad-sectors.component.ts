@@ -22,8 +22,6 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 	public errorMessage: string;
 	private failedDevicesList: Array<string>;
 
-	recoverInProgress = false;
-
 	constructor(
 		public deviceService: DeviceService,
 		private hardwareScanService: HardwareScanService,
@@ -51,7 +49,6 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 	}
 
 	ngOnDestroy() {
-		this.hardwareScanService.setRecoverInProgress(false);
 		// Ensure that the homepage will be shown,
 		// in case of reaching here from the results page
 		this.hardwareScanService.setScanOrRBSFinished(false);
@@ -88,7 +85,6 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 				const devicesSelected = this.devices.filter(device => device.isSelected);
 				this.hardwareScanService.setDevicesRecover(devicesSelected);
 				this.hardwareScanService.setRecoverInit(true);
-				this.hardwareScanService.setRecoverInProgress(true);
 				this.hardwareScanService.setRecoverExecutionStatus(true);
 				this.hardwareScanService.setIsScanDone(false);
 				// After control variables is set to execute the recover.

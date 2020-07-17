@@ -116,21 +116,9 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public getIsViewingRecoverLog() {
-		if (this.hardwareScanService) {
-			return this.hardwareScanService.getIsViewingRecoverLog();
-		}
-	}
-
 	public isRecoverExecuting() {
 		if (this.hardwareScanService) {
 			return this.hardwareScanService.isRecoverExecuting();
-		}
-	}
-
-	public isRecoverInProgress() {
-		if (this.hardwareScanService) {
-			return this.hardwareScanService.isRecoverInProgress();
 		}
 	}
 
@@ -142,7 +130,7 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 
 	public setTitle() {
 		if (this.hardwareScanService) {
-			if (this.hideRecover || this.isRecoverExecuting() || this.isRecoverInProgress() || this.getIsViewingRecoverLog()) {
+			if (this.hideRecover || this.isRecoverExecuting()) {
 				return this.translate.instant('hardwareScan.recoverBadSectors.title');
 			} else {
 				return this.translate.instant('hardwareScan.name');
