@@ -2566,7 +2566,7 @@
                 "describe": "Upotrijebite alat za lociranje prijetnji da biste utvrdili sigurnost mreža koje su vam dostupne.",
                 "button": "Provjeri prijetnju",
                 "connectionError": "Pogreška prilikom povezivanja",
-                "tryAgain": "Nismo u mogućnosti locirati prijetnju uslijed nedostupnosti mreže, povežite se na Internet i pokušajte iznova."
+                "tryAgain": "Mreža nije dostupna. Pokušajte ponovno kasnije."
             },
             "locationmodal": {
                 "title": "Omogući lokacijske usluge",

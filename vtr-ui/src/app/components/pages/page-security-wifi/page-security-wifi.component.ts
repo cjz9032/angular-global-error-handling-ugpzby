@@ -19,7 +19,7 @@ import { ConfigService } from 'src/app/services/config/config.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { SegmentConst } from 'src/app/services/self-select/self-select.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
-import { SecurityAdvisorNotifications } from 'src/app/enums/security-advisor-notifications.enum';
+import { NetworkRequestService } from 'src/app/services/network-request/network-request.service';
 
 interface WifiSecurityState {
 	state: string; // enabled,disabled,never-used
@@ -49,6 +49,8 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	intervalId: number;
 	interval = 15000;
 	segmentConst = SegmentConst;
+	networkSubscriber: Subscription;
+
 	wsPluginMissingEventHandler = () => {
 		this.handleError(new PluginMissingError());
 	};
@@ -80,7 +82,8 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		public configService: ConfigService,
 		public deviceService: DeviceService,
 		private localInfoService: LocalInfoService,
-		public wifiSecurityService: WifiSecurityService
+		public wifiSecurityService: WifiSecurityService,
+		private networkService: NetworkRequestService
 	) { }
 
 	ngOnInit() {
@@ -95,12 +98,16 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		}).catch(e => {
 			this.region = 'us';
 		});
+
+		this.networkSubscriber = this.networkService.networkStatus().subscribe(res => {
+			this.isOnline = res[res.length - 1];
+		});
+
 		this.fetchCMSArticles();
 
 		this.wifiSecurity.on(EventTypes.wsPluginMissingEvent, this.wsPluginMissingEventHandler)
 			.on(EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHandler);
 
-		this.isOnline = this.commonService.isOnline;
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
@@ -133,6 +140,10 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		if (!this.intervalId) {
 			this.pullCHS();
 		}
+		this.networkSubscriber.unsubscribe();
+		this.networkSubscriber = this.networkService.networkStatus().subscribe(res => {
+			this.isOnline = res[res.length - 1];
+		});
 	}
 
 	ngOnDestroy() {
@@ -148,6 +159,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			this.notificationSubscription.unsubscribe();
 		}
 		window.clearInterval(this.intervalId);
+		this.networkSubscriber.unsubscribe();
 	}
 
 	getActivateDeviceStateHandler(value: WifiSecurityState) {

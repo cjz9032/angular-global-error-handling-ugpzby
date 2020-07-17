@@ -2566,7 +2566,7 @@
                 "describe": "使用威胁检测程序来确定您周围网络的安全性。",
                 "button": "检查威胁",
                 "connectionError": "连接错误",
-                "tryAgain": "由于网络不可用，我们无法找到针对您的威胁，请连接到因特网并重试。"
+                "tryAgain": "网络不可用。请稍后重试。"
             },
             "locationmodal": {
                 "title": "启用位置服务",

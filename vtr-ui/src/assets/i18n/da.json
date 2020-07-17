@@ -2566,7 +2566,7 @@
                 "describe": "Brug trusselssensoren til at bestemme sikkerheden i dine nærliggende netværk.",
                 "button": "Kontrollér trussel",
                 "connectionError": "Forbindelsesfejl",
-                "tryAgain": "Vi kan ikke finde truslen for dig, fordi netværket ikke er tilgængeligt. Opret forbindelse til internettet, og prøv igen."
+                "tryAgain": "Netværket er ikke tilgængeligt. Prøv igen senere."
             },
             "locationmodal": {
                 "title": "Aktivér placeringstjenester",

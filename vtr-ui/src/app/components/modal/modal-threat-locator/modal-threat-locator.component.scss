@@ -1,4 +1,4 @@
-@import '../../../app.theme.scss';
+@import "../../../app.theme.scss";
 
 .vtr-modal-threat-locator {
 	position: relative;
@@ -7,25 +7,37 @@
 		padding: 0;
 	}
 
+	&.connection-error-modal {
+		margin-bottom: 0rem;
+	}
+
 	h1 {
 		font-size: 3.1rem;
 		font-weight: normal;
 		color: $blue-dark;
 	}
+
 	.disabled-network {
 		font-weight: normal;
-		color: $blue-dark;
-		border: 00.1rem solid $shade_lighter;
-		.title {
-			font-size: 2.8rem;
+		color: $shade_blue;
+		background-color: $grey_lighter;
+		border: 0.1rem solid $shade_lighter;
+
+		.offline-info {
+			margin-top: calc(25vh - 10rem);
+		}
+		.wifi-slash {
+			font-size: 6rem;
 		}
 		.subscribe {
 			font-size: 2rem;
+			width: 20rem;
+			margin: 0 auto;
 		}
 	}
 
 	.iframe-container {
-		height: 50vh;
+		height: 50vh !important;
 	}
 
 	.close-btn {

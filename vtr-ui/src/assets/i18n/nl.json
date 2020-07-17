@@ -2566,7 +2566,7 @@
                 "describe": "Gebruik de dreigingsdetector om de veiligheid van de netwerken om u heen te bepalen.",
                 "button": "Bedreiging controleren",
                 "connectionError": "Verbindingsfout",
-                "tryAgain": "We kunnen de bedreiging niet voor u vinden omdat er geen netwerk beschikbaar is. Maak verbinding met internet en probeer het nog eens."
+                "tryAgain": "Netwerk niet beschikbaar. Probeer het later opnieuw."
             },
             "locationmodal": {
                 "title": "Locatieservices inschakelen",

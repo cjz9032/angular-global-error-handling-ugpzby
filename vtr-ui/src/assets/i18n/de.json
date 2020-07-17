@@ -2566,7 +2566,7 @@
                 "describe": "Verwenden Sie die Bedrohungssuche, um die Sicherheit der Netzwerke um Sie herum zu ermitteln.",
                 "button": "Bedrohung überprüfen",
                 "connectionError": "Verbindungsfehler",
-                "tryAgain": "Wir konnten die Bedrohung aufgrund fehlender Netzwerkverbindung nicht orten. Stellen Sie eine Internetverbindung her und versuchen Sie es erneut."
+                "tryAgain": "Netzwerk nicht verfügbar. Versuchen Sie es später erneut."
             },
             "locationmodal": {
                 "title": "Standortdienste aktivieren",

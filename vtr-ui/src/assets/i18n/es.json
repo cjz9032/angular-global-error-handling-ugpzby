@@ -2566,7 +2566,7 @@
                 "describe": "Utilice el detector de amenazas para determinar la seguridad de las redes a su alrededor.",
                 "button": "Comprobar amenaza",
                 "connectionError": "Error de conexión",
-                "tryAgain": "No encontramos una amenaza para usted debido a que la red no está disponible, conéctese a Internet y vuelva a intentarlo."
+                "tryAgain": "La red no está disponible. Vuelva a intentarlo más tarde."
             },
             "locationmodal": {
                 "title": "Habilitar servicios de ubicación",
