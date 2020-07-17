@@ -3,10 +3,11 @@ import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.
 import { DeviceService } from 'src/app/services/device/device.service';
 import { TranslateService } from '@ngx-translate/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HardwareScanService } from '../../../../../services/hardware-scan/hardware-scan.service';
 import { ModalRecoverConfirmComponent } from '../../../../modal/modal-recover-confirm/modal-recover-confirm.component';
 import { HistoryManager } from 'src/app/services/history-manager/history-manager.service';
+import { PageRoute } from 'src/app/data-models/history-manager/page-route-model';
 
 @Component({
 	selector: 'vtr-recover-bad-sectors',
@@ -28,7 +29,8 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 		private translate: TranslateService,
 		private modalService: NgbModal,
 		private historyManager: HistoryManager,
-		private activatedRoute: ActivatedRoute
+		private activatedRoute: ActivatedRoute,
+		private router: Router
 	) {
 		this.hardwareScanService.setLoadingStatus(true);
 		this.hardwareScanService.setScanExecutionStatus(false);
@@ -87,9 +89,20 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 				this.hardwareScanService.setRecoverInit(true);
 				this.hardwareScanService.setRecoverExecutionStatus(true);
 				this.hardwareScanService.setIsScanDone(false);
-				// After control variables is set to execute the recover.
-				// Navigate back to hardwareScan page because is the same component of execution.
-				this.historyManager.goBack();
+
+				// To avoid an odd navigation behavior, we remove all HardwareScan related pages from the
+				// recent history, once the user could have reached here from either HardwareScan homepage or
+				// previous results.
+				const hardwareScanHomePagePath = '/hardware-scan';
+				let lastPageOnHistory: PageRoute;
+				do {
+					this.historyManager.history.pop();
+					lastPageOnHistory = this.historyManager.history.slice(-1)[0];
+				} while (lastPageOnHistory && lastPageOnHistory.path === hardwareScanHomePagePath);
+
+				// Navigate back to Hardware Scan homepage, since it's there the RBS execution is actually performed,
+				// but without putting this page on the history, avoiding the user could get back here using the back button.
+				this.router.navigateByUrl(hardwareScanHomePagePath, { replaceUrl: true });
 			}, (reason) => {
 				// do nothing
 			});
