@@ -250,7 +250,10 @@
       .vtr-page-lightingcustomize,.vtr-page-gaming-macrokey {
       .dropdown-toggle{
         &:focus{
-          @include outline-blue-gaming;
+		  @include outline-blue-gaming;
+		  @media #{$high-contrast} {
+			@include solid-button-outline(highlight);
+		}
         }
       }
     }
