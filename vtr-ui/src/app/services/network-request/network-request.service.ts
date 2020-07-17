@@ -1,6 +1,6 @@
 import { Injectable, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { timer, of } from 'rxjs';
+import { timer, of, interval, range } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import {
 	flatMap,
@@ -10,7 +10,8 @@ import {
 	distinctUntilChanged,
 	publishReplay,
 	catchError,
-	concatMap
+	concatMap,
+	map
 } from 'rxjs/operators';
 import isEqual from 'lodash/isEqual';
 
@@ -31,10 +32,11 @@ export class NetworkRequestService {
 	) {
 		const urlStr = url.toString();
 
-		const observer = of(0, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30).pipe(
+		const observer = range(0, 6).pipe(
+			map(val => val === 0 ? val : val * 5 + 5),
 			concatMap((val: number) => {
 				if (val === 30) {
-					return timer(0, 30 * 1000).pipe(
+					return interval(30 * 1000).pipe(
 						flatMap(() =>
 							this.fetch(urlStr)
 						),
