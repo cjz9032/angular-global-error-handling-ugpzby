@@ -35,7 +35,8 @@
                 <h3 role="text" id="cpu_overclock_section_item">{{ 'gaming.dashboard.device.legionEdge.title' | translate }}</h3>
                 <ul class="clearfix">
                     <li *ngFor="let item of advancedOCInfo.cpuParameterList; let idx = index">
-                        <p class="overclock-name" role="text" [id]="removeSpaces(itemUnit.cpuOCNames['cpuOCName'+item.tuneId]) + '_item'" [title]="'gaming.dashboard.device.advancedOC.cpuOCTips.cpuOCTip'+item.tuneId | translate">
+                        <p class="overclock-name" role="text" [id]="removeSpaces(itemUnit.cpuOCNames['cpuOCName'+item.tuneId]) + '_item'" [title]="((item.tuneId>=116 && item.tuneId<=125) || (item.tuneId>=29 && item.tuneId<=32) || 
+                            item.tuneId==42 || item.tuneId==43 || item.tuneId==96 || item.tuneId==97 || item.tuneId==107 || item.tuneId==108) ? ('gaming.dashboard.device.advancedOC.cpuOCTips.cpuOCTip' | translate) : ('gaming.dashboard.device.advancedOC.cpuOCTips.cpuOCTip'+item.tuneId | translate)">
                             {{ 'gaming.dashboard.device.advancedOC.cpuOCNames.cpuOCName'+item.tuneId | translate }}
                         </p>
                         <div class="overclock-range" tooltipClass="vtr-tool-tip" container="body">
