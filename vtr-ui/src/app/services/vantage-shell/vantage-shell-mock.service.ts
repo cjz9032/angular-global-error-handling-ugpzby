@@ -2240,8 +2240,64 @@ export class VantageShellService {
 		return undefined;
 	}
 
+	// returns DPM AllPowerPlans object from VantageShellService of JS Bridge
 	public getPowerDPM() {
-		return undefined;
+		const allPowerPlansResponse = {
+			activePowerPlan: 'Balanced',
+                powerButtonAction: 0,
+                passwordOnStandby: 1,
+                dbcOnLockEvent: 0,
+                powerMeter: 37,
+                alsAdaptiveBrightness: 1,
+                adjustOffset: '50',
+                powerPlanList: [{
+                  settingList: [{
+                    key: 'PowerPlan',
+                    value: 'Balanced'
+                  }, {
+                    key: 'PreDefined',
+                    value: 'SystemDefined'
+                  }, {
+                    key: 'HDDTimeoutAC',
+                    value: '0'
+                  }, {
+                    key: 'HiberTimeoutAC',
+                    value: '15'
+                  }, {
+                    key: 'SuspendTimeoutAC',
+                    value: '0'
+                  }, {
+                    key: 'VideoTimeoutAC',
+                    value: '45'
+                  }, {
+                    key: 'Performance',
+                    value: '5'
+                  }, {
+                    key: 'Temperature',
+                    value: '4'
+                  }, {
+                    key: 'PowerUsage',
+                    value: '7'
+                  }, {
+                    key: 'CPUSpeed',
+                    value: 'cpuSpeedAdaptive'
+                  }, {
+                    key: 'Brightness',
+                    value: '100'
+                  }]
+                }]
+		};
+		const allPowerPlans: any = {
+			getAllPowerPlans: this.getPromise(allPowerPlansResponse),
+			setPowerButton: this.getPromise(allPowerPlansResponse),
+			setSignInOption: this.getPromise(allPowerPlansResponse),
+			setTurnoffHDD: this.getPromise(allPowerPlansResponse),
+			setTurnoffDisplay: this.getPromise(allPowerPlansResponse),
+			setSleepAfter: this.getPromise(allPowerPlansResponse),
+			setHibernateAfter: this.getPromise(allPowerPlansResponse),
+			setCurrentPowerPlan: this.getPromise(allPowerPlansResponse),
+		};
+		return allPowerPlans;
 	}
 
 	public getInstalledApplicationList() {
