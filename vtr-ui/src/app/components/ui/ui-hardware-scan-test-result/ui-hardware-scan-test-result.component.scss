@@ -15,10 +15,6 @@
 			text-transform: uppercase;
 			white-space: nowrap;
 		}
-
-		.module-result-icon {
-			font-size: $fontsize_lg;
-		}
 	}
 
 	.text-status {
@@ -29,7 +25,15 @@
 		color: $light-grey;
 	}
 
+	.failure {
+		color: $button_red_start;
+	}
+
 	.warning {
 		color: $warning_light;
+	}
+
+	.success {
+		color: $green-dark;
 	}
 }

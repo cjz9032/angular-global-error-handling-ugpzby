@@ -48,6 +48,7 @@ import { HardwareScanExecutingHeaderComponent } from '../../components/pages/pag
 import { HardwareScanWaitSelectHeaderComponent } from '../../components/pages/page-hardwarescan/children/hardware-scan-header-pages/hardware-scan-wait-select-header/hardware-scan-wait-select-header.component';
 import { HardwareScanFinishedHeaderComponent } from '../../components/pages/page-hardwarescan/children/hardware-scan-header-pages/hardware-scan-finished-header/hardware-scan-finished-header.component';
 import { UiHardwareScanTestResultComponent } from '../../components/ui/ui-hardware-scan-test-result/ui-hardware-scan-test-result.component';
+import { UiTestResultIconComponent } from '../../components/ui/ui-test-result-icon/ui-test-result-icon.component';
 
 @NgModule({
 	declarations: [
@@ -76,7 +77,8 @@ import { UiHardwareScanTestResultComponent } from '../../components/ui/ui-hardwa
 		HardwareScanExecutingHeaderComponent,
 		HardwareScanWaitSelectHeaderComponent,
 		HardwareScanFinishedHeaderComponent,
-		UiHardwareScanTestResultComponent
+		UiHardwareScanTestResultComponent,
+		UiTestResultIconComponent
 	],
 	imports: [
 		CommonModule,

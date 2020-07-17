@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
+import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.enum';
 
 @Component({
 	selector: 'vtr-modal-scan-failure',
@@ -15,6 +16,7 @@ export class ModalScanFailureComponent {
 	failedModules: any;
 	rbsDevices: any;
 	private failedRbsDevices: Array<string>;
+	public testResultEnum = HardwareScanTestResult;
 
 	constructor(public activeModal: NgbActiveModal,
 		private router: Router) {
