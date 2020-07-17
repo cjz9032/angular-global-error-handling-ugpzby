@@ -3186,7 +3186,9 @@
             "scanAgainButtonText": "再次扫描",
             "supportButtonText": "Lenovo 支持"
         },
-        "executingScanTitle": "正在扫描 {{title}}"
+        "executingScanTitle": "正在扫描 {{title}}",
+        "showDetails": "查看详细信息",
+        "hideDetails": "隐藏详细信息"
     },
     "smartPerformance": {
         "title": "Smart Performance",

@@ -3186,7 +3186,9 @@
             "scanAgainButtonText": "Nové snímání",
             "supportButtonText": "Technická podpora Lenovo"
         },
-        "executingScanTitle": "Snímání {{title}}"
+        "executingScanTitle": "Snímání {{title}}",
+        "showDetails": "Zobrazit podrobnosti",
+        "hideDetails": "Skrýt podrobnosti"
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -3186,7 +3186,9 @@
             "scanAgainButtonText": "Skeniraj ponovo",
             "supportButtonText": "Lenovo podrška"
         },
-        "executingScanTitle": "Skenira se {{title}}"
+        "executingScanTitle": "Skenira se {{title}}",
+        "showDetails": "Prikaži detalje",
+        "hideDetails": "Sakrij detalje"
     },
     "smartPerformance": {
         "title": "Health & Support",

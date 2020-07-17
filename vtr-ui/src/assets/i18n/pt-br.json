@@ -3186,7 +3186,9 @@
             "supportButtonText": "Suporte Lenovo",
             "lenovoSupportInstruction": "No Suporte Lenovo, você pode abrir um tíquete de verificação usando o código do seu resultado final."
         },
-        "executingScanTitle": "Verificando {{title}}"
+        "executingScanTitle": "Verificando {{title}}",
+        "showDetails": "Visualizar Detalhes ",
+        "hideDetails": "Ocultar Detalhes"
     },
     "smartPerformance": {
         "title": "Smart Performance",

@@ -3186,7 +3186,9 @@
             "scanAgainButtonText": "Volver a escanear",
             "supportButtonText": "Soporte de Lenovo"
         },
-        "executingScanTitle": "Explorando {{title}}"
+        "executingScanTitle": "Explorando {{title}}",
+        "showDetails": "Ver detalles ",
+        "hideDetails": "Ocultar detalles"
     },
     "smartPerformance": {
         "title": "Smart Performance",

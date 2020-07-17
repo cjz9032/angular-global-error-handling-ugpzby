@@ -3186,7 +3186,9 @@
             "scanAgainButtonText": "Przeprowadź ponowne skanowanie",
             "supportButtonText": "Pomoc techniczna firmy Lenovo"
         },
-        "executingScanTitle": "Skanowanie {{title}}"
+        "executingScanTitle": "Skanowanie {{title}}",
+        "showDetails": "Wyświetl szczegóły",
+        "hideDetails": "Ukryj szczegóły"
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -3186,7 +3186,9 @@
             "scanAgainButtonText": "יש לסרוק שוב",
             "supportButtonText": "התמיכה של Lenovo"
         },
-        "executingScanTitle": "סורק את {{title}}"
+        "executingScanTitle": "סורק את {{title}}",
+        "showDetails": "הצגת פרטים",
+        "hideDetails": "הסתרת פרטים"
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -19,20 +19,22 @@
 					<div class="row">
 						<p class="title">{{item.module}}</p>
 						<p class="subtitle">{{item.name}}</p>
-					</div>
 
-					<!-- Icon to expand and collapse details list -->
-					<div *ngIf="isEnableViewResults || item.details"
-						class="details-link"
-						tabindex="0"
-						[attr.aria-label]="!item.detailsExpanded ? item.module + 'expand-module-details': item.module + 'collapse-module-details'"
-						(click)="item.detailsExpanded = !item.detailsExpanded"
-						(keyup.enter)="item.detailsExpanded = !item.detailsExpanded"
-						role="button"
-						[attr.aria-expanded]="item.detailsExpanded">
-						<fa-icon *ngIf="!item.detailsExpanded; else expandIcon" [icon]="['fas', 'caret-right']"></fa-icon>
-						<ng-template #expandIcon><fa-icon [icon]="['fas', 'caret-up']"></fa-icon></ng-template>
-						{{ 'hardwareScan.details' | translate }}
+						<!-- Icon to expand and collapse details list -->
+						<div *ngIf="isEnableViewResults || item.details"
+							class="details-link"
+							tabindex="0"
+							[attr.aria-label]="!item.detailsExpanded ? item.module + 'expand-module-details': item.module + 'collapse-module-details'"
+							(click)="item.detailsExpanded = !item.detailsExpanded"
+							(keyup.enter)="item.detailsExpanded = !item.detailsExpanded"
+							role="button"
+							[attr.aria-expanded]="item.detailsExpanded">
+							<fa-icon *ngIf="!item.detailsExpanded; else expandIcon" [icon]="['fas', 'caret-right']"></fa-icon>
+							<ng-template #expandIcon><fa-icon [icon]="['fas', 'caret-up']"></fa-icon></ng-template>
+							<div *ngIf="!item.detailsExpanded; then showDetails else hideDetails"></div>
+							<ng-template #showDetails>{{ 'hardwareScan.showDetails' | translate }}</ng-template>
+							<ng-template #hideDetails>{{ 'hardwareScan.hideDetails' | translate }}</ng-template>
+						</div>
 					</div>
 				</div>
 

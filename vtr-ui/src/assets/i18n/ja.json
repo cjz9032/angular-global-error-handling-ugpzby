@@ -3186,7 +3186,9 @@
             "scanAgainButtonText": "再スキャン",
             "supportButtonText": "Lenovo サポート"
         },
-        "executingScanTitle": "{{title}} をスキャン中"
+        "executingScanTitle": "{{title}} をスキャン中",
+        "showDetails": "詳細の表示",
+        "hideDetails": "詳細の非表示"
     },
     "smartPerformance": {
         "title": "Smart Performance",

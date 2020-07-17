@@ -3186,7 +3186,9 @@
             "scanAgainButtonText": "Σάρωση ξανά",
             "supportButtonText": "Υποστήριξη Lenovo"
         },
-        "executingScanTitle": "Εκτελείται σάρωση {{title}}"
+        "executingScanTitle": "Εκτελείται σάρωση {{title}}",
+        "showDetails": "Προβολή λεπτομερειών",
+        "hideDetails": "Απόκρυψη λεπτομερειών"
     },
     "smartPerformance": {
         "title": "Health & Support",

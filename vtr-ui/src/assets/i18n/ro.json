@@ -3186,7 +3186,9 @@
             "scanAgainButtonText": "Scanați din nou",
             "supportButtonText": "Asistență Lenovo"
         },
-        "executingScanTitle": "Se scanează {{title}}"
+        "executingScanTitle": "Se scanează {{title}}",
+        "showDetails": "Vizualizare detalii",
+        "hideDetails": "Ascundere detalii"
     },
     "smartPerformance": {
         "title": "Health & Support",

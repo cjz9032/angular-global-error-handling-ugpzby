@@ -3188,7 +3188,9 @@
             "scanAgainButtonText": "فحص مرة أخرى",
             "supportButtonText": "دعم Lenovo"
         },
-        "executingScanTitle": "جارٍ فحص {{title}}"
+        "executingScanTitle": "جارٍ فحص {{title}}",
+        "showDetails": "عرض التفاصيل",
+        "hideDetails": "إخفاء التفاصيل"
     },
     "smartPerformance": {
         "title": "Smart Performance",
