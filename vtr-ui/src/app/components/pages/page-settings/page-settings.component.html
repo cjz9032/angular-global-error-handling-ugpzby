@@ -12,242 +12,258 @@
 			<div class="col-12 settings-main-column">
 				<div class="subpage-settings vtr-subpage">
 					<vtr-ui-header-subpage [title]="'settings.settings' | translate"
+						textId="preference-settings"
 						[caption]="'settings.settingsDescription' | translate"
 						*ngIf="!deviceService.isArm && !deviceService.isSMode">
 					</vtr-ui-header-subpage>
 					<vtr-ui-header-subpage [title]="'settings.settings' | translate"
+						textId="preference-settings"
 						*ngIf="deviceService.isArm || deviceService.isSMode">
 					</vtr-ui-header-subpage>
 
-					<div class="card-pt" *ngIf="!deviceService.isArm && !deviceService.isSMode && isMessageSettings"
-						id="settings-messages">
-						<vtr-container-collapsible name="SettingsMessage"
-							[tabIndex]="0"
-							collapseLinkId="settings-message"
-							[cardTitle]="'settings.messagesInLenovoVantage' | translate"
-							[isCollapsed]="false">
-							<ul class="list-group list-group-flush">
-								<li>
-									<vtr-ui-row-switch [title]="'settings.appFeatures' | translate"
-										[switchId]="'settingsAppFeaturesToggle_checkbox'"
-										id="settings-appFeaturesToggle"
-										aria-label="settings-appFeatures"
-										[caption]="'settings.appFeaturesDescription' | translate"
-										[isSwitchVisible]=true
-										[leftIcon]="messageSettings[0].leftImageSource"
-										[tooltipText]=""
-										[isSwitchChecked]="toggleAppFeature"
-										(toggleOnOff)="onToggleOfAppFeature($event)">
-									</vtr-ui-row-switch>
-								</li>
-								<li>
-									<vtr-ui-row-switch [title]="'settings.marketing' | translate"
-										[vtrAppSearchScroller]="['search-preference-marketing']"
-										[switchId]="'settingsMarketingToggle_checkbox'"
-										id="settings-marketingToggle"
-										aria-label="settings-marketingToggle"
-										[caption]="'settings.marketingDescription' | translate"
-										[isSwitchVisible]=true
-										[leftIcon]="messageSettings[1].leftImageSource"
-										[tooltipText]=""
-										[isSwitchChecked]="toggleMarketing"
-										(toggleOnOff)="onToggleOfMarketing($event)">
-									</vtr-ui-row-switch>
-								</li>
-								<li>
-									<vtr-ui-row-switch [title]="'settings.actionTriggered' | translate"
-										[vtrAppSearchScroller]="['search-preference-action-trigger']"
-										[switchId]="'settingsActionTriggeredToggle_checkbox'"
-										id="settings-actionTriggeredToggle"
-										aria-label="settings-actionTriggeredToggle"
-										[caption]="'settings.actionTriggeredDescription' | translate"
-										[isLastChild]=true
-										[isSwitchVisible]=true
-										[leftIcon]="messageSettings[2].leftImageSource"
-										[tooltipText]=""
-										[isSwitchChecked]="toggleActionTriggered"
-										(toggleOnOff)="onToggleOfActionTriggered($event)">
-									</vtr-ui-row-switch>
-								</li>
+					<div class="row no-gutters pb-24">
+						<div class="col-12 col-xl-6 card-col"
+							*ngIf="(!deviceService.isArm && !deviceService.isSMode && isMessageSettings) || (segmentTag !== segmentConst.Commercial && betaService.betaFeatureAvailable)">
+							<div class="card-pt"
+								*ngIf="!deviceService.isArm && !deviceService.isSMode && isMessageSettings"
+								id="settings-messages">
+								<vtr-container-collapsible name="SettingsMessage"
+									[tabIndex]="0"
+									collapseLinkId="settings-message"
+									[cardTitle]="'settings.messagesInLenovoVantage' | translate"
+									[isCollapsed]="false">
+									<ul class="list-group list-group-flush">
+										<li>
+											<vtr-ui-row-switch [title]="'settings.appFeatures' | translate"
+												[switchId]="'settingsAppFeaturesToggle_checkbox'"
+												id="settings-appFeaturesToggle"
+												aria-label="settings-appFeatures"
+												[caption]="'settings.appFeaturesDescription' | translate"
+												[isSwitchVisible]=true
+												[leftIcon]="messageSettings[0].leftImageSource"
+												[tooltipText]=""
+												[isSwitchChecked]="toggleAppFeature"
+												(toggleOnOff)="onToggleOfAppFeature($event)">
+											</vtr-ui-row-switch>
+										</li>
 
-							</ul>
-						</vtr-container-collapsible>
-					</div>
+										<li>
+											<vtr-ui-row-switch [title]="'settings.marketing' | translate"
+												[vtrAppSearchScroller]="['search-preference-marketing']"
+												[switchId]="'settingsMarketingToggle_checkbox'"
+												id="settings-marketingToggle"
+												aria-label="settings-marketingToggle"
+												[caption]="'settings.marketingDescription' | translate"
+												[isSwitchVisible]=true
+												[leftIcon]="messageSettings[1].leftImageSource"
+												[tooltipText]=""
+												[isSwitchChecked]="toggleMarketing"
+												(toggleOnOff)="onToggleOfMarketing($event)">
+											</vtr-ui-row-switch>
+										</li>
 
-					<div class="card-pt beta-setting"
-						*ngIf="segmentTag !== segmentConst.Commercial && betaService.betaFeatureAvailable">
-						<vtr-container-collapsible [tabIndex]="0"
-							name="SettingsBeta"
-							collapseLinkId="settings-beta"
-							[cardTitle]="'settings.betaSettingTitle' | translate "
-							[isCollapsed]="false">
-							<ul class="list-group list-group-flush">
-								<li>
-									<vtr-ui-row-switch [title]="'settings.betaProgram' | translate"
-										[switchId]="'settingsBetaProgramToggle_checkbox'"
-										[vtrAppSearchScroller]="['search-preference-beta']"
-										id="settings-betaProgramToggle"
-										aria-label="settings-betaProgramToggle"
-										[caption]="'settings.betaSettingNewDescription' | translate"
-										[isSwitchVisible]=true
-										[isLastChild]=true
-										[leftIcon]="betaSettings[0].leftImageSource"
-										[isSwitchChecked]="toggleBetaProgram"
-										(toggleOnOff)="onToggleOfBetaProgram($event)">
-									</vtr-ui-row-switch>
-								</li>
-							</ul>
-						</vtr-container-collapsible>
-					</div>
+										<li>
+											<vtr-ui-row-switch [title]="'settings.actionTriggered' | translate"
+												[vtrAppSearchScroller]="['search-preference-action-trigger']"
+												[switchId]="'settingsActionTriggeredToggle_checkbox'"
+												id="settings-actionTriggeredToggle"
+												aria-label="settings-actionTriggeredToggle"
+												[caption]="'settings.actionTriggeredDescription' | translate"
+												[isLastChild]=true
+												[isSwitchVisible]=true
+												[leftIcon]="messageSettings[2].leftImageSource"
+												[tooltipText]=""
+												[isSwitchChecked]="toggleActionTriggered"
+												(toggleOnOff)="onToggleOfActionTriggered($event)">
+											</vtr-ui-row-switch>
+										</li>
+									</ul>
+								</vtr-container-collapsible>
+							</div>
 
-					<div class="card-pt"
-						id="settings-other-settings">
-						<vtr-container-collapsible [tabIndex]="0"
-							name="SettingsOther"
-							collapseLinkId="settings-other"
-							[cardTitle]="'settings.OtherSettings' | translate "
-							[isCollapsed]="false">
-							<ul class="list-group list-group-flush">
-								<li *ngIf="isToggleUsageStatistics">
-									<vtr-ui-row-switch [title]="'settings.usageStatistics' | translate"
-										[switchId]="'settingsUsageStatisticsToggle_checkbox'"
-										[vtrAppSearchScroller]="['search-preference-statistics']"
-										id="settings-usageStatisticsToggle"
-										aria-label="settings-usageStatisticsToggle"
-										[caption]="'settings.usageStatisticsDescription' | translate"
-										[isLastChild]="!isToggleDeviceStatistics"
-										[isSwitchVisible]=true
-										[leftIcon]="otherSettings[0].leftImageSource"
-										[tooltipText]=""
-										[isSwitchChecked]="toggleUsageStatistics"
-										(toggleOnOff)="onToggleOfUsageStatistics($event)">
-									</vtr-ui-row-switch>
-								</li>
-								<li *ngIf="isToggleDeviceStatistics">
-									<vtr-ui-row-switch [title]="'settings.deviceStatistics' | translate"
-										[switchId]="'settingsDeviceStatisticsToggle_checkbox'"
-										[vtrAppSearchScroller]="['search-preference-device-statistics']"
-										id="settings-deviceStatisticsToggle"
-										aria-label="settings-deviceStatisticsToggle"
-										[caption]="'settings.deviceStatisticsDescription' | translate"
-										[isLastChild]=true
-										[isSwitchVisible]=true
-										[leftIcon]="otherSettings[1].leftImageSource"
-										[tooltipText]=""
-										[isAdminRequired]=true
-										[isSwitchChecked]="toggleDeviceStatistics"
-										(toggleOnOff)="onToggleOfDeviceMetricStatistics($event)">
-									</vtr-ui-row-switch>
-								</li>
-							</ul>
-						</vtr-container-collapsible>
-					</div>
+							<div class="card-pt beta-setting"
+								*ngIf="segmentTag !== segmentConst.Commercial && betaService.betaFeatureAvailable">
+								<vtr-container-collapsible [tabIndex]="0"
+									name="SettingsBeta"
+									collapseLinkId="settings-beta"
+									[cardTitle]="'settings.betaSettingTitle' | translate "
+									[isCollapsed]="false">
+									<ul class="list-group list-group-flush">
+										<li>
+											<vtr-ui-row-switch [title]="'settings.betaProgram' | translate"
+												[switchId]="'settingsBetaProgramToggle_checkbox'"
+												[vtrAppSearchScroller]="['search-preference-beta']"
+												id="settings-betaProgramToggle"
+												aria-label="settings-betaProgramToggle"
+												[caption]="'settings.betaSettingNewDescription' | translate"
+												[isSwitchVisible]=true
+												[isLastChild]=true
+												[leftIcon]="betaSettings[0].leftImageSource"
+												[isSwitchChecked]="toggleBetaProgram"
+												(toggleOnOff)="onToggleOfBetaProgram($event)">
+											</vtr-ui-row-switch>
+										</li>
+									</ul>
+								</vtr-container-collapsible>
+							</div>
+						</div>
 
-					<div class="card-pt card-pb user-profile-section"
-						*ngIf="selfSelectService.userProfileEnabled"
-						id="user-profile-setting"
-						[ngClass]="{
-								'white-theme': !deviceService.isGaming,
-								'blue-theme': deviceService.isGaming
-							}">
-						<vtr-container-collapsible [tabIndex]="0"
-							name="SettingsUserProfile"
-							collapseLinkId="settings-user-profile"
-							[cardTitle]=" 'settings.userProfile' | translate "
-							[isCollapsed]="true">
-							<div class="row m-0 vtr-col-pad" [hidden]="deviceService.isGaming">
-								<div class="col-auto left-icon-column">
-									<div class="left-icon-block">
-										<fa-icon class="left-icon"
-											[icon]="['fal','laptop']"></fa-icon>
-									</div>
-								</div>
-								<div class="col">
-									<div class="row mb-3">
-										<div class="user-profile-title"
-											role="heading"
-											id="settings-segment-choose-title">
-											{{ "welcometutorial.subtitle1" | translate }}
+						<div class="col-12 col-xl-6 card-col"
+							*ngIf="isToggleUsageStatistics || isToggleDeviceStatistics || selfSelectService.userProfileEnabled">
+							<div class="card-pt"
+								id="settings-other-settings"
+								*ngIf="isToggleUsageStatistics || isToggleDeviceStatistics">
+								<vtr-container-collapsible [tabIndex]="0"
+									name="SettingsOther"
+									collapseLinkId="settings-other"
+									[cardTitle]="'settings.OtherSettings' | translate "
+									[isCollapsed]="false">
+									<ul class="list-group list-group-flush">
+										<li *ngIf="isToggleUsageStatistics">
+											<vtr-ui-row-switch [title]="'settings.usageStatistics' | translate"
+												[switchId]="'settingsUsageStatisticsToggle_checkbox'"
+												[vtrAppSearchScroller]="['search-preference-statistics']"
+												id="settings-usageStatisticsToggle"
+												aria-label="settings-usageStatisticsToggle"
+												[caption]="'settings.usageStatisticsDescription' | translate"
+												[isLastChild]="!isToggleDeviceStatistics"
+												[isSwitchVisible]=true
+												[leftIcon]="otherSettings[0].leftImageSource"
+												[tooltipText]=""
+												[isSwitchChecked]="toggleUsageStatistics"
+												(toggleOnOff)="onToggleOfUsageStatistics($event)">
+											</vtr-ui-row-switch>
+										</li>
+
+										<li *ngIf="isToggleDeviceStatistics">
+											<vtr-ui-row-switch [title]="'settings.deviceStatistics' | translate"
+												[switchId]="'settingsDeviceStatisticsToggle_checkbox'"
+												[vtrAppSearchScroller]="['search-preference-device-statistics']"
+												id="settings-deviceStatisticsToggle"
+												aria-label="settings-deviceStatisticsToggle"
+												[caption]="'settings.deviceStatisticsDescription' | translate"
+												[isLastChild]=true
+												[isSwitchVisible]=true
+												[leftIcon]="otherSettings[1].leftImageSource"
+												[tooltipText]=""
+												[isAdminRequired]=true
+												[isSwitchChecked]="toggleDeviceStatistics"
+												(toggleOnOff)="onToggleOfDeviceMetricStatistics($event)">
+											</vtr-ui-row-switch>
+										</li>
+									</ul>
+								</vtr-container-collapsible>
+							</div>
+
+							<div class="card-pt user-profile-section"
+								*ngIf="selfSelectService.userProfileEnabled"
+								id="user-profile-setting"
+								[ngClass]="{
+										'white-theme': !deviceService.isGaming,
+										'blue-theme': deviceService.isGaming
+									}">
+								<vtr-container-collapsible [tabIndex]="0"
+									name="SettingsUserProfile"
+									collapseLinkId="settings-user-profile"
+									[cardTitle]=" 'settings.userProfile' | translate "
+									[isCollapsed]="false">
+									<div class="row m-0 vtr-col-pad"
+										[hidden]="deviceService.isGaming">
+										<div class="col-auto left-icon-column">
+											<div class="left-icon-block">
+												<fa-icon class="left-icon"
+													[icon]="['fal','laptop']"></fa-icon>
+											</div>
 										</div>
-									</div>
-									<div class="row mb-2 d-flex"
-										[ngClass]="{'radio-is-selected' : usageType !== null && usageType !== segmentConst.Gaming }">
-										<div class="mb-3 mr-5"
-											*ngFor="let usage of allUsageTypes">
-											<div class="device-image mx-auto">
-												<input type="radio"
-													tabindex="0"
-													[attr.aria-label]="usage.textKey | translate"
-													id="settings-segment-choose-{{usage.id}}"
-													[checked]="usageType && usageType === usage.value"
-													[value]="usage.value"
-													(click)="saveUsageType(usage.value)"
-													name="settings-segment-choose" />
-												<img src="assets/images/welcome/{{usage.image}}" />
-												<label for="settings-segment-choose-{{usage.id}}"
-													class="centered"
-													aria-hidden="true"
-													[ngbTooltip]="usage.textKey | translate" 
-													tooltipClass="vtr-system-tooltip"
-													container="body">
-													{{ usage.textKey | translate }}
-												</label>
+										<div class="col">
+											<div class="row mb-3">
+												<div class="user-profile-title"
+													role="heading"
+													id="settings-segment-choose-title">
+													{{ "welcometutorial.subtitle1" | translate }}
+												</div>
+											</div>
+											<div class="row mb-2 d-flex"
+												[ngClass]="{'radio-is-selected' : usageType !== null && usageType !== segmentConst.Gaming }">
+												<div class="mb-3 mr-5"
+													*ngFor="let usage of allUsageTypes">
+													<div class="device-image mx-auto">
+														<input type="radio"
+															tabindex="0"
+															[attr.aria-label]="usage.textKey | translate"
+															id="settings-segment-choose-{{usage.id}}"
+															[checked]="usageType && usageType === usage.value"
+															[value]="usage.value"
+															(click)="saveUsageType(usage.value)"
+															name="settings-segment-choose" />
+														<img src="assets/images/welcome/{{usage.image}}" />
+														<label for="settings-segment-choose-{{usage.id}}"
+															class="centered"
+															aria-hidden="true"
+															[ngbTooltip]="usage.textKey | translate"
+															tooltipClass="vtr-system-tooltip"
+															container="body">
+															{{ usage.textKey | translate }}
+														</label>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
-								</div>
-							</div>
-							<hr [hidden]="deviceService.isGaming">
-							<div class="row m-0 vtr-col-pad">
-								<div class="col-auto left-icon-column">
-									<div class="left-icon-block">
-										<fa-icon class="left-icon"
-											[icon]="['fal','heart']"></fa-icon>
-									</div>
-								</div>
-								<div class="col">
-									<div class="row mb-3">
-										<div class="user-profile-title"
-											role="heading"
-											id="settings-interests-choose-title">
-											{{ "welcometutorial.subtitle2" | translate}}
+									<hr [hidden]="deviceService.isGaming">
+									<div class="row m-0 vtr-col-pad">
+										<div class="col-auto left-icon-column">
+											<div class="left-icon-block">
+												<fa-icon class="left-icon"
+													[icon]="['fal','heart']"></fa-icon>
+											</div>
+										</div>
+										<div class="col">
+											<div class="row mb-3">
+												<div class="user-profile-title"
+													role="heading"
+													id="settings-interests-choose-title">
+													{{ "welcometutorial.subtitle2" | translate}}
+												</div>
+											</div>
+											<div class="row d-flex interests">
+												<div class="inline-block interest-item"
+													*ngFor="let interest of interests">
+													<input type="checkbox"
+														[attr.aria-label]="'welcometutorial.interests.' + interest.label | translate"
+														[id]="interest.label + 'checkbox'"
+														#checkbox1
+														[checked]="interest.checked"
+														(keypress)="onKeyPress($event)"
+														(click)="onInterestToggle($event, interest.label)" />
+													<label [for]="interest.label + 'checkbox'"
+														aria-hidden="true">
+														{{ "welcometutorial.interests." + interest.label | translate }}
+													</label>
+												</div>
+											</div>
 										</div>
 									</div>
-									<div class="row d-flex interests">
-										<div class="inline-block interest-item"
-											*ngFor="let interest of interests">
-											<input type="checkbox"
-												[attr.aria-label]="'welcometutorial.interests.' + interest.label | translate"
-												[id]="interest.label + 'checkbox'"
-												#checkbox1
-												[checked]="interest.checked"
-												(keypress)="onKeyPress($event)"
-												(click)="onInterestToggle($event, interest.label)" />
-											<label [for]="interest.label + 'checkbox'"
-												aria-hidden="true">
-												{{ "welcometutorial.interests." + interest.label | translate }}
-											</label>
-										</div>
+									<hr>
+									<div class="row save-button">
+										<vtr-ui-button id="settings-profile-save-button"
+											linkId="settings-profile-save-button"
+											metricsEvent="featureClick"
+											[metricsItem]="'SAVE'"
+											[label]="'hardwareScan.save' | translate"
+											[isDisabled]="!userSelectionChanged"
+											(onClick)="saveUserProfile()">
+										</vtr-ui-button>
 									</div>
-								</div>
+								</vtr-container-collapsible>
 							</div>
-							<hr>
-							<div class="row save-button">
-								<vtr-ui-button id="settings-profile-save-button"
-									linkId="settings-profile-save-button"
-									metricsEvent="featureClick"
-									[metricsItem]="'SAVE'"
-									[label]="'hardwareScan.save' | translate"
-									[isDisabled]="!userSelectionChanged"
-									(onClick)="saveUserProfile()">
-								</vtr-ui-button>
-							</div>
-
-						</vtr-container-collapsible>
+						</div>
 					</div>
 
-					<div id="settings-note" class="mt-5">
-						<div class="settings-note">
+					<div class="card-pt">
+						<div class="settings-note"
+							id="preference-settings-note"
+							role="text">
 							<b>{{ 'settings.Note' | translate }}</b>{{ 'settings.settingsNotes' | translate }}
 						</div>
 					</div>
