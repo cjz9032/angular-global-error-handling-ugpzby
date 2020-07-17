@@ -79,7 +79,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		superResolution: false,
 		aps: false,
 		voice: true
-	}
+	};
 
 	headerMenuItems: PageAnchorLink[] = [];
 
@@ -174,7 +174,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				if (args && this.intelligentSecurity.isZeroTouchLockFacialRecoVisible) {
 					this.permissionChanged();
 				}
-			}
+			};
 			this.windowsObj.addEventListener('accesschanged', this.cameraAccessChangedHandler);
 		}
 	}
@@ -188,14 +188,16 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 					if (response === 0) {// response is the count of the registered callback_event
 						this.logger.info('UnRegister HPD RPC Callback done.');
 					}
-				})
+				});
 		}
 
 		if (this.windowsObj) {
 			this.windowsObj.removeEventListener('accesschanged', this.cameraAccessChangedHandler);
 		}
 
-		if(this.cmsSubscription) this.cmsSubscription.unsubscribe();
+		if (this.cmsSubscription) {
+			this.cmsSubscription.unsubscribe();
+		}
 	}
 
 	initDataFromCache() {
@@ -572,7 +574,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 					this.smartAssist.getZeroTouchLoginDistance().then((response) => {
 						this.intelligentSecurity.zeroTouchLoginDistance = response;
 						this.smartAssistCache.intelligentSecurity.zeroTouchLoginDistance = this.intelligentSecurity.zeroTouchLoginDistance;
-					})
+					});
 				}
 				this.logger.info(`onDistanceSensitivityAdjustToggle.setZeroTouchLoginAdjustStatus ${isSuccess}`, this.intelligentSecurity.isZeroTouchLoginAdjustEnabled);
 			});
@@ -614,7 +616,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 											this.isRegisterHPDRpcCallback = true;
 											this.logger.info('Register HPD RPC Callback done.');
 										}
-									})
+									});
 							}
 						}
 					});
@@ -744,7 +746,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			this.smartAssist.resetHSAHPDSetting()
 				.then((response) => {
 					if (response === 0) {
-						this.logger.info('resetHSAHPDSetting done.')
+						this.logger.info('resetHSAHPDSetting done.');
 					}
 				});
 		}
@@ -949,7 +951,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 					path: 'voice',
 					sortOrder: 6,
 					metricsItem: 'Voice'
-				}
+				};
 			}
 			if (featureHeaderMenu !== undefined) {
 				this.headerMenuItems = this.commonService.addToObjectsList(this.headerMenuItems, featureHeaderMenu);
@@ -980,7 +982,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		}
 
 		if (this.headerMenuItems.length >= 2) {
-			this.headerMenuItems = this.headerMenuItems.sort((a, b) => { return a.sortOrder - b.sortOrder; })
+			this.headerMenuItems = this.headerMenuItems.sort((a, b) => { return a.sortOrder - b.sortOrder; });
 		}
 	}
 
@@ -988,9 +990,9 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		if (this.zeroTouchLockTimersUIModel && this.zeroTouchLockTimersUIModel.length > 0) {
 			this.zeroTouchLockTimersUIModel.forEach(model => {
 				model.isChecked = (this.intelligentSecurity.autoScreenLockTimer === model.value);
-				model.isDisabled= !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled)
+				model.isDisabled = !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled);
 			});
 		}
 	}
-	
+
 }
