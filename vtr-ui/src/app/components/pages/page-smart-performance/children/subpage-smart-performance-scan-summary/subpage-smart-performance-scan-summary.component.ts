@@ -171,7 +171,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		this.scanScheduleDate = this.selectedDate;
 		this.leftAnimator = '0%';
 		if (this.isSubscribed) {
-			//	this.getLastScanResult();
+			// 	this.getLastScanResult();
 			this.scanSummaryTime(0);
 		}
 
@@ -194,22 +194,22 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 	}
 
 	getScanHistoryWithTime() {
-		//Object historyScanResults Copy to object historyScanResultsDateTime
+		// Object historyScanResults Copy to object historyScanResultsDateTime
 		this.historyScanResultsDateTime = JSON.parse(JSON.stringify(this.historyScanResults));
 
-		//Deleting unnecessary keys & manupulating date time.
+		// Deleting unnecessary keys & manupulating date time.
 		for (let i = 0; i < 5; i++) {
-			//Adding new key scanrunDate with formating
+			// Adding new key scanrunDate with formating
 			this.historyScanResultsDateTime[i].scanrunDate = this.formatLocaleDate.transform(new Date(this.historyScanResultsDateTime[i].scanruntime));
 
-			//Adding new key scanrunTime
+			// Adding new key scanrunTime
 			this.historyScanResultsDateTime[i].scanrunTime = new Intl.DateTimeFormat('default', {
 				hour12: true,
 				hour: '2-digit',
 				minute: '2-digit'
 			}).format(new Date(this.historyScanResultsDateTime[i].scanruntime));
 
-			//Removing sapace between time stamp and AM/PM
+			// Removing sapace between time stamp and AM/PM
 			this.historyScanResultsDateTime[i].scanrunTime = this.historyScanResultsDateTime[i].scanrunTime.replace(/ /g, "");
 		}
 
