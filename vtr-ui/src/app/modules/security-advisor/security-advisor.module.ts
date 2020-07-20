@@ -65,6 +65,10 @@ import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { UiFeatureHeadingComponent } from 'src/app/components/ui/ui-feature-heading/ui-feature-heading.component';
 import { UiFeatureIntroductionComponent } from 'src/app/components/ui/ui-feature-introduction/ui-feature-introduction.component';
 import { UiDescriptionButtonComponent } from 'src/app/components/ui/ui-description-button/ui-description-button.component';
+import { WidgetMcafeeFeaturesComponent } from '../../components/pages/page-security-antivirus/widget/widget-mcafee-features/widget-mcafee-features.component';
+import { WidgetMcafeeGraphicIntroductionComponent } from '../../components/pages/page-security-antivirus/widget/widget-mcafee-graphic-introduction/widget-mcafee-graphic-introduction.component';
+import { WidgetMcafeePeaceOfMindComponent } from '../../components/pages/page-security-antivirus/widget/widget-mcafee-peace-of-mind/widget-mcafee-peace-of-mind.component';
+import { WidgetMcafeeContentCardComponent } from '../../components/pages/page-security-antivirus/widget/widget-mcafee-content-card/widget-mcafee-content-card.component';
 
 
 @NgModule({
@@ -102,6 +106,10 @@ import { UiDescriptionButtonComponent } from 'src/app/components/ui/ui-descripti
 		WidgetLandingNavComponent,
 		WidgetSvgCircleComponent,
 		ThreatLocatorComponent,
+		WidgetMcafeeFeaturesComponent,
+		WidgetMcafeeGraphicIntroductionComponent,
+		WidgetMcafeePeaceOfMindComponent,
+		WidgetMcafeeContentCardComponent,
 	],
 	imports: [
 		CommonModule,

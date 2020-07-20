@@ -200,8 +200,12 @@
 			</ng-container>
 		</ng-template>
 		<ng-template #others>
-			<vtr-widget-offline-info *ngIf="!isOnline" [title]="'dashboard.offlineInfo.title' | translate"
-				[isSubtitleVisible]="false" [isButtonVisible]="false"></vtr-widget-offline-info>
+			<div class="col-12 p-0 mb-4 mt-20" *ngIf="!isOnline">
+				<vtr-widget-offline-info
+				[title]="'dashboard.offlineInfo.title' | translate"
+				[isSubtitleVisible]="false"
+				[isButtonVisible]="false"></vtr-widget-offline-info>
+			</div>
 			<div class="subheader">
 				<div class="rounded-card-with-shadow p-20 bg-white mb-5">
 					<div *ngIf="viewModel.otherAntiVirus && viewModel.otherAntiVirus.name">
@@ -240,30 +244,26 @@
 						</vtr-ui-security-statusbar>
 
 					</div>
-				</div>
-				<div class="mb-5">
-					<vtr-container-collapsible
-						*ngIf="viewModel.showMcafee"
-						[collapseLinkId]="'othersBetterOffer'"
-						[cardTitle]="'security.antivirus.others.betterOffer' | translate"
-						componentName="othersBetterOfferCollapsible"
-						[allowCollapse]="true"
-						[isCollapsed]="false">
-						<vtr-widget-mcafee [install]="viewModel.mcafeeInstall"
-							[isOnline]="isOnline"
-							[name]="viewModel.otherAntiVirus.name" [common]="common">
-						</vtr-widget-mcafee>
-						<vtr-widget-common-antivirus></vtr-widget-common-antivirus>
-					</vtr-container-collapsible>
+					<vtr-widget-mcafee-graphic-introduction></vtr-widget-mcafee-graphic-introduction>
+					<vtr-widget-mcafee-features [install]="viewModel.mcafeeInstall"
+						[isOnline]="isOnline"
+						[name]="viewModel.otherAntiVirus.name" [common]="common"></vtr-widget-mcafee-features>
+					<vtr-widget-mcafee-peace-of-mind></vtr-widget-mcafee-peace-of-mind>
+					<div class="footer row d-none d-lg-block">
+						<vtr-widget-powered-by-info
+							[detail]="'security.antivirus.common.privacyTerms'"
+							[imgUrl]="'assets/images/mcafee_logo.svg'"
+							linkId="av"></vtr-widget-powered-by-info>
+					</div>
 				</div>
 			</div>
 		</ng-template>
 	</left-content>
 
 	<right-content>
-		<div class="container-fluid">
+		<div class="container-fluid row justify-content-between">
 			<!--Start of Security Card Advisor-->
-			<div class="row mb-40">
+			<div class="row mb-40 col-12 col-md-6 col-lg-12 pr-0 pr-md-3 pr-lg-0">
 				<div class="col col-12">
 					<vtr-widget-security-status
 					[securityAdvisor]="securityAdvisor"
@@ -273,43 +273,34 @@
 			</div>
 			<!--End of Security Card Advisor-->
 
-			<div class="row">
+			<div class="row mb-40 col-12 col-md-6 col-lg-12 pl-0 pl-md-3 pl-lg-0">
 				<div class="col col-12">
-					<vtr-container-card [item]="cardContentPositionA"
-						[ratio]="2"
-						type="subpage-corner"
-						cornerShift="large"
-						order="2"
-						sideFlag="r"
-						[containerCardId]="'sa-av-modal'">
-					</vtr-container-card>
+					<vtr-widget-mcafee-content-card *ngIf="viewModel?.currentPage ==='others';else otherCard"
+						[articleId]="mcafeeArticleId"
+						[isOnline]="isOnline"></vtr-widget-mcafee-content-card>
+					<ng-template #otherCard>
+						<vtr-container-card #otherCard
+							[item]="cardContentPositionA"
+							[ratio]="2"
+							type="subpage-corner"
+							cornerShift="large"
+							order="2"
+							sideFlag="r"
+							[containerCardId]="'sa-av-modal'">
+						</vtr-container-card>
+					</ng-template>
+
 				</div>
 			</div>
+
 		</div>
 		<div class="footer row d-block d-lg-none">
-			<div class="row px-0 justify-content-center">
-			  <div class="px-0">
-				<img class="mcafee-logo" id="sa-av-powered-by-info-logo"
-				  [src]=" 'assets/images/mcafee_logo.svg' | svgInline | async" />
-			  </div>
-			  <p class="text-regular mt-10" id="sa-av-powered-by-info-detail" role="text"
-				*vtrTranslate="'security.antivirus.common.privacyTerms' | translate">
-				<a id="sa-av-link-privacypolicy"
-				  vtrMetrics
-				  metricsEvent="itemClick"
-				  metricsItem="privacyPolicy"
-				  metricsParent="security.antivirus"
-				  href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
-				  target="_blank"></a>
-				<a id="sa-av-link-termsofservices"
-				  vtrMetrics
-				  metricsEvent="itemClick"
-				  metricsItem="termsOfServices"
-				  metricsParent="security.antivirus"
-				  href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
-				  target="_blank"></a>
-			  </p>
-			</div>
+			<vtr-widget-powered-by-info
+				[detail]="'security.antivirus.common.privacyTerms'"
+				[imgUrl]="'assets/images/mcafee_logo.svg'"
+				linkId="sa-av"
+				privacyUrl="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
+				termsUrl="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"></vtr-widget-powered-by-info>
 		</div>
 	</right-content>
 

@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.11](https://bitbucket.tc.lenovo.com///compare/v1.7.10...v1.7.11) (2020-07-20)
+
+
+### Features
+
+* **UI Antivirus:** VAN-20311 implement av page new UI ([9dbc5f0](https://bitbucket.tc.lenovo.com///commit/9dbc5f0b5016bf055d613db4cae4e78743cd4e83))
+
+
+### Bug Fixes
+
+* **antivirus metrics:** update metrics ([b83783c](https://bitbucket.tc.lenovo.com///commit/b83783c8b1354c9bbdf63c7e56096c3d20d48693))
+* **antivirus metrics:** VAN-20311 VAN-19954 commit metrics for av ([f6168a9](https://bitbucket.tc.lenovo.com///commit/f6168a9a0ded8b6696c035ee1ec7e55ce4aa96c8))
+
 ### [1.7.10](https://bitbucket.tc.lenovo.com///compare/v1.7.9...v1.7.10) (2020-07-20)
 
 

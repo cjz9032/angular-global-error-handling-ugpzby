@@ -8,7 +8,6 @@ import { NgbModal, NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { RouterTestingModule } from '@angular/router/testing';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { DevService } from 'src/app/services/dev/dev.service';
-import { EventEmitter } from 'protractor';
 import { ModalRebootConfirmComponent } from '../../modal/modal-reboot-confirm/modal-reboot-confirm.component';
 import { ModalVoiceComponent } from '../../modal/modal-voice/modal-voice.component';
 import { By } from '@angular/platform-browser';
@@ -80,7 +79,7 @@ describe('UiRowSwitchComponent', () => {
 
 		// const button = fixture.debugElement.nativeElement.querySelector('#' + elemID);
 		const button = fixture.debugElement.query(By.css('#' + elemID));
-		button.nativeElement.click()
+		button.nativeElement.click();
 		fixture.detectChanges();
 		/* fixture.whenStable().then(() => {
 			expect(component.onLinkClick).toHaveBeenCalled();
