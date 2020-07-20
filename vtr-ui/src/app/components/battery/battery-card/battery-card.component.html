@@ -65,6 +65,7 @@
 		<div class="row px-3"
 			*ngFor="let batteryConditionNote of batteryConditionNotes; let i = index">
 			<div class="p-0 pr-2 col-auto"
+				aria-hidden="true"
 				id="batteryConditionNote{{i}}"
 				*ngIf="batteryConditions[i].condition!= batteryConditionsEnum.FullACAdapterSupport">
 				<span role="img"
@@ -97,18 +98,15 @@
 					attr.aria-label="icon-FullACAdapterSupport"></span>
 			</div>
 			<div class='col battery-conditions-tips'>
-				<span role="heading"
-					*ngIf="batteryConditions[i].condition==batteryConditionsEnum.StoreLimitation"
+				<h4 *ngIf="batteryConditions[i].condition==batteryConditionsEnum.StoreLimitation"
 					[innerHTML]="batteryConditionNote | translate:param"
-					[id]="'battery-condition-tip-'+ batteryConditionsEnum[batteryConditions[i].condition]"></span>
-				<span role="heading"
-					*ngIf="batteryConditions[i].condition==batteryConditionsEnum.FullACAdapterSupport && acAdapterInfoParams && acAdapterInfoParams.acWattage!=0"
+					[id]="'battery-condition-tip-'+ batteryConditionsEnum[batteryConditions[i].condition]"></h4>
+				<h4 *ngIf="batteryConditions[i].condition==batteryConditionsEnum.FullACAdapterSupport && acAdapterInfoParams && acAdapterInfoParams.acWattage!=0"
 					[innerHTML]="batteryConditionNote | translate:acAdapterInfoParams"
-					[id]="'battery-condition-tip-'+ batteryConditionsEnum[batteryConditions[i].condition]"></span>
-				<span role="heading"
-					*ngIf="batteryConditions[i].condition!=batteryConditionsEnum.StoreLimitation && batteryConditions[i].condition!=batteryConditionsEnum.Error && batteryConditions[i].condition!=batteryConditionsEnum.FullACAdapterSupport"
+					[id]="'battery-condition-tip-'+ batteryConditionsEnum[batteryConditions[i].condition]"></h4>
+				<h4 *ngIf="batteryConditions[i].condition!=batteryConditionsEnum.StoreLimitation && batteryConditions[i].condition!=batteryConditionsEnum.Error && batteryConditions[i].condition!=batteryConditionsEnum.FullACAdapterSupport"
 					[innerHTML]="batteryConditionNote | translate"
-					[id]="'battery-condition-tip-'+ batteryConditionsEnum[batteryConditions[i].condition]"></span>
+					[id]="'battery-condition-tip-'+ batteryConditionsEnum[batteryConditions[i].condition]"></h4>
 				<a *ngIf="batteryConditions[i].conditionStatus===batteryStatus.AcAdapterStatus && batteryConditions[i].condition!=batteryConditionsEnum.FullACAdapterSupport && shortAcErrNote"
 					class="link-label"
 					(click)="showDetailTip(i)"
@@ -116,7 +114,6 @@
 					id="battery-condition-tip-ACAdapterError-seeDetails-link"
 					role="link">{{'device.deviceSettings.batteryGauge.seeDetailsLink' | translate}}</a>
 			</div>
-
 		</div>
 		<div class="feature-note p-3 mt-2"
 			*ngIf="!batteryService.isInvalidBattery && (batteryIndicator.isChargeThresholdOn || batteryService.isGaugeResetRunning) ">

@@ -126,6 +126,10 @@
 			padding: 0.5rem 0;
 			align-self: center;
 			color: $shade_blue;
+			
+			h4{
+				font-size: $fontsize_xs;
+			}
 		}
 		.icomoon {
 			font-size: 3.5rem;
