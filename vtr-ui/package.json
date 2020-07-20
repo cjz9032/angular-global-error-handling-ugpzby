@@ -71,6 +71,7 @@
     "ngx-cookie-service": "^3.0.4",
     "reinvented-color-wheel": "^0.2.9",
     "rxjs": "^6.6.0",
+    "safe-pipe": "^1.0.3",
     "ts-md5": "^1.2.7",
     "tslib": "^2.0.0",
     "x2js": "^3.4.0",

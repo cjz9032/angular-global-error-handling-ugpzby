@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, ViewChild, ElementRef } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { BaseComponent } from '../base/base.component';
 
 @Component({
@@ -18,8 +18,6 @@ export class ContainerCollapsibleComponent extends BaseComponent {
 	@Input() tabIndex = 0;
 	@Input() headerLevel: number = 1;
 
-    @ViewChild('collapseHeader') collapseHeader: ElementRef;
-
 	constructor() {
 		super();
 	}
@@ -29,8 +27,4 @@ export class ContainerCollapsibleComponent extends BaseComponent {
 		this.toggle.emit(this.isCollapsed);
 	}
 
-    ngAfterViewInit(): void {
-        this.collapseHeader.nativeElement.querySelector('h'+this.headerLevel).setAttribute('id', this.collapseLinkId+'-collapse-card-title');
-        this.collapseHeader.nativeElement.querySelector('h'+this.headerLevel).style.outline='none';
-    }
 }

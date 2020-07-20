@@ -7,8 +7,9 @@
 					[class.hide-border-bottom]="isCollapsed">
 					<div class="container-fluid">
 						<div class="row flex-nowrap align-items-center py-2">
-                            <div class="col-auto text-left mr-auto mb-0" #collapseHeader 
-                            innerHTML="<h{{headerLevel}} class='header' tabindex='-1'>{{cardTitle}}</h{{headerLevel}}>">
+                            <div class="col-auto text-left mr-auto mb-0 header"
+                                [innerHTML]="'&lt;h'+headerLevel + ' class=&quot;collapse-header&quot; ' + 'tabindex=&quot;-1&quot; ' + 
+                                'id=&quot;'+collapseLinkId+'-collapse-card-title&quot;' + '&gt;' + cardTitle + '&lt;/h'+headerLevel + '&gt;' | safe: 'html'">
                             </div>
 							<div class="col-auto"
 								*ngIf="allowCollapse">

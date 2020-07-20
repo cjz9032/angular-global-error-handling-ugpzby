@@ -41,7 +41,7 @@ import { UiCustomSwitchModule } from 'src/app/components/ui/ui-custom-switch/ui-
 import { SpinnerModule } from 'src/app/components/common/spinner/spinner.module';
 import { UiRoundedRectangleCustomRadioListModule } from 'src/app/components/ui/ui-rounded-rectangle-custom-radio-list/ui-rounded-rectangle-custom-radio-list.module';
 import { UiCircleRadioWithCheckBoxListModule } from 'src/app/components/ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.module';
-
+import { SafePipeModule } from 'safe-pipe';
 
 @NgModule({
 	declarations: [
@@ -57,9 +57,7 @@ import { UiCircleRadioWithCheckBoxListModule } from 'src/app/components/ui/ui-ci
 		UiRowSwitchComponent,
 		UiSwitchOnoffComponent,
 		UiSwitchTristateComponent,
-		UiSwitchTristateComponent,
 		UiTimePickerComponent,
-		ContainerCollapsibleComponent,
 		UiGamingCollapsibleContainerComponent,
 		UiGamingDriverPopupComponent,
 		UiPopoverComponent,
@@ -84,9 +82,7 @@ import { UiCircleRadioWithCheckBoxListModule } from 'src/app/components/ui/ui-ci
 		UiRowSwitchComponent,
 		UiSwitchOnoffComponent,
 		UiSwitchTristateComponent,
-		UiSwitchTristateComponent,
 		UiTimePickerComponent,
-		ContainerCollapsibleComponent,
 		UiGamingCollapsibleContainerComponent,
 		UiGamingDriverPopupComponent,
 		UiPopoverComponent,
@@ -113,7 +109,8 @@ import { UiCircleRadioWithCheckBoxListModule } from 'src/app/components/ui/ui-ci
 		UiCustomSwitchModule,
 		SpinnerModule,
 		UiRoundedRectangleCustomRadioListModule,
-		UiCircleRadioWithCheckBoxListModule,
+        UiCircleRadioWithCheckBoxListModule,
+        SafePipeModule 
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
