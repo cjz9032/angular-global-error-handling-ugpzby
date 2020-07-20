@@ -1,6 +1,7 @@
 <div class="vtr-ui-hardware-scan-test-result">
 	<div class="item-right">
 		<div class="module-result-text" [ngSwitch]="module.resultModule">
+			<p class="not-applicable text-status" *ngSwitchCase="testResultEnum.Na">{{ 'hardwareScan.NA' | translate }}</p>
 			<p class="success text-status" *ngSwitchCase="testResultEnum.Pass">{{ 'hardwareScan.pass' | translate }}</p>
 			<p class="failure text-status" *ngSwitchCase="testResultEnum.Fail">{{ 'hardwareScan.fail' | translate }}</p>
 			<p class="warning text-status" *ngSwitchCase="testResultEnum.Warning">{{ 'hardwareScan.attention' | translate }}</p>

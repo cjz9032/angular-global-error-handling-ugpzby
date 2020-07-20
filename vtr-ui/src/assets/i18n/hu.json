@@ -3158,7 +3158,8 @@
         },
         "executingScanTitle": "{{title}} vizsgálata",
         "showDetails": "Részletek megtekintése",
-        "hideDetails": "Részletek elrejtése"
+        "hideDetails": "Részletek elrejtése",
+        "NA": "N/A"
     },
     "smartPerformance": {
         "title": "Health & Support",

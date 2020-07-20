@@ -3158,7 +3158,8 @@
         },
         "executingScanTitle": "Skenovanie {{title}}",
         "showDetails": "Zobraziť podrobnosti",
-        "hideDetails": "Skryť podrobnosti"
+        "hideDetails": "Skryť podrobnosti",
+        "NA": "N/A"
     },
     "smartPerformance": {
         "title": "Health & Support",

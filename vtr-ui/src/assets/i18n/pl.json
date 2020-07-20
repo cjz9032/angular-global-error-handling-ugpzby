@@ -3158,7 +3158,8 @@
         },
         "executingScanTitle": "Skanowanie {{title}}",
         "showDetails": "Wyświetl szczegóły",
-        "hideDetails": "Ukryj szczegóły"
+        "hideDetails": "Ukryj szczegóły",
+        "NA": "N/A"
     },
     "smartPerformance": {
         "title": "Health & Support",

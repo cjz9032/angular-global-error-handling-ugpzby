@@ -3158,7 +3158,8 @@
         },
         "executingScanTitle": "Сканування {{title}}",
         "showDetails": "Переглянути відомості",
-        "hideDetails": "Приховати відомості"
+        "hideDetails": "Приховати відомості",
+        "NA": "N/A"
     },
     "smartPerformance": {
         "title": "Health & Support",

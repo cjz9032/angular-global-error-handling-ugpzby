@@ -3158,7 +3158,8 @@
         },
         "executingScanTitle": "Explorando {{title}}",
         "showDetails": "Ver detalles ",
-        "hideDetails": "Ocultar detalles"
+        "hideDetails": "Ocultar detalles",
+        "NA": "N/A"
     },
     "smartPerformance": {
         "title": "Smart Performance",

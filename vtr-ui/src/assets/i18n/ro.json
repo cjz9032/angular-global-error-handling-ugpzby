@@ -3158,7 +3158,8 @@
         },
         "executingScanTitle": "Se scanează {{title}}",
         "showDetails": "Vizualizare detalii",
-        "hideDetails": "Ascundere detalii"
+        "hideDetails": "Ascundere detalii",
+        "NA": "N/A"
     },
     "smartPerformance": {
         "title": "Health & Support",

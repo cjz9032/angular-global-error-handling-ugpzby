@@ -3158,7 +3158,8 @@
         },
         "executingScanTitle": "Tarkistetaan {{title}}",
         "showDetails": "Näytä tiedot",
-        "hideDetails": "Piilota tiedot"
+        "hideDetails": "Piilota tiedot",
+        "NA": "N/A"
     },
     "smartPerformance": {
         "title": "Smart Performance",

@@ -3158,7 +3158,8 @@
         },
         "executingScanTitle": "{{title}} taranıyor",
         "showDetails": "Ayrıntıları Görüntüle",
-        "hideDetails": "Ayrıntıları Gizle"
+        "hideDetails": "Ayrıntıları Gizle",
+        "NA": "N/A"
     },
     "smartPerformance": {
         "title": "Health & Support",

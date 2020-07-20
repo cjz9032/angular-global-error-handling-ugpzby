@@ -3158,7 +3158,8 @@
         },
         "executingScanTitle": "Εκτελείται σάρωση {{title}}",
         "showDetails": "Προβολή λεπτομερειών",
-        "hideDetails": "Απόκρυψη λεπτομερειών"
+        "hideDetails": "Απόκρυψη λεπτομερειών",
+        "NA": "N/A"
     },
     "smartPerformance": {
         "title": "Health & Support",
