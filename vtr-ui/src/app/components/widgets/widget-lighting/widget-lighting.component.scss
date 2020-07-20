@@ -15,14 +15,8 @@
 		background-size: 100% auto;
 		padding-top: 18rem;
 		@media #{$high-contrast} {
-			border: 1px solid windowText;
+			border: 0.1rem solid windowText;
 			border-radius: $border_radius;
-		}
-		.container-fluid {
-			@media #{$high-contrast} {
-				border: 1px solid windowText;
-				border-radius: $border_radius;
-			}
 		}
 	}
 	.widget-container-notebook{
@@ -34,7 +28,8 @@
 		background: $darkCell;
 		border-radius: 0.8rem;
 		@media #{$high-contrast} {
-			border: 0.2rem solid windowText;
+			border: 0.1rem solid windowText;
+			border-radius: $border_radius;
 		}
 		.card-title {
 			color: $white100;
