@@ -1,27 +1,27 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { PageDashboardAndroidComponent } from './page-dashboard-android.component';
-import { NO_ERRORS_SCHEMA, EventEmitter } from '@angular/core';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { EventEmitter, NO_ERRORS_SCHEMA } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { DomSanitizer } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
+import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { of } from 'rxjs';
+import { AndroidService } from 'src/app/services/android/android.service';
+import { CMSService } from 'src/app/services/cms/cms.service';
+import { CommonService } from 'src/app/services/common/common.service';
+import { CommsService } from 'src/app/services/comms/comms.service';
+import { ConfigService } from 'src/app/services/config/config.service';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
+import { DevService } from 'src/app/services/dev/dev.service';
+import { DeviceService } from 'src/app/services/device/device.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MockService } from 'src/app/services/mock/mock.service';
 import { QaService } from 'src/app/services/qa/qa.service';
-import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
-import { CommonService } from 'src/app/services/common/common.service';
-import { ConfigService } from 'src/app/services/config/config.service';
-import { DeviceService } from 'src/app/services/device/device.service';
-import { CMSService } from 'src/app/services/cms/cms.service';
 import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
 import { UserService } from 'src/app/services/user/user.service';
-import { of } from 'rxjs';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { AndroidService } from 'src/app/services/android/android.service';
-import { DomSanitizer } from '@angular/platform-browser';
-import { LoggerService } from 'src/app/services/logger/logger.service';
-import { DevService } from 'src/app/services/dev/dev.service';
-import { CommsService } from 'src/app/services/comms/comms.service';
+import { PageDashboardAndroidComponent } from './page-dashboard-android.component';
+
 
 class TranslateServiceStub {
 	public onTranslationChange: EventEmitter<any> = new EventEmitter();
