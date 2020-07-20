@@ -15,14 +15,13 @@ import { PowerService } from 'src/app/services/power/power.service';
 import { DevService } from 'src/app/services/dev/dev.service';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-import { promise } from 'protractor';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 const featureStatus: FeatureStatus = {
 	available: true,
 	status: true,
 	permission: true,
 	isLoading: true
-}
+};
 
 describe('WidgetQuicksettingsComponent', () => {
 	let component: WidgetQuicksettingsComponent;
@@ -68,7 +67,7 @@ describe('WidgetQuicksettingsComponent', () => {
 		let logger: LoggerService;
 		let dashboardService: DashboardService;
 		function setup() {
-			const fixture = TestBed.createComponent(WidgetQuicksettingsComponent);
+			const s = TestBed.createComponent(WidgetQuicksettingsComponent);
 			const component = fixture.componentInstance;
 			displayService = fixture.debugElement.injector.get(DisplayService);
 			dashboardService = fixture.debugElement.injector.get(DashboardService);
@@ -129,7 +128,7 @@ describe('WidgetQuicksettingsComponent', () => {
 			const { fixture, component, dashboardService } = setup();
 			spyOn(dashboardService, 'getMicrophoneStatus').and.returnValue(Promise.resolve(featureStatus));
 			const myPrivateSpy = spyOn<any>(component, 'updateMicrophoneStatus').and.callThrough();
-			//fixture.detectChanges();
+			// fixture.detectChanges();
 			myPrivateSpy.call(component);
 			expect(dashboardService.getMicrophoneStatus).toHaveBeenCalled();
 
@@ -138,7 +137,7 @@ describe('WidgetQuicksettingsComponent', () => {
 			const { fixture, component, dashboardService } = setup();
 			spyOn(dashboardService, 'getMicrophoneStatus').and.returnValue(Promise.resolve(featureStatus));
 			const myPrivateSpy = spyOn<any>(component, 'getMicrophoneStatus').and.callThrough();
-			//fixture.detectChanges();
+			// fixture.detectChanges();
 			myPrivateSpy.call(component);
 			expect(dashboardService.getMicrophoneStatus).toHaveBeenCalled();
 
@@ -147,7 +146,7 @@ describe('WidgetQuicksettingsComponent', () => {
 			const { fixture, component, dashboardService } = setup();
 			spyOn(dashboardService, 'getCameraStatus').and.returnValue(Promise.resolve(featureStatus));
 			const myPrivateSpy = spyOn<any>(component, 'getCameraPrivacyStatus').and.callThrough();
-			//fixture.detectChanges();
+			// fixture.detectChanges();
 			myPrivateSpy.call(component);
 			expect(dashboardService.getCameraStatus).toHaveBeenCalled();
 
