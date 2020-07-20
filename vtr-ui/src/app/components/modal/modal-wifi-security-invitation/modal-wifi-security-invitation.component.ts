@@ -8,6 +8,7 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { CommonService } from 'src/app/services/common/common.service';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+
 @Component({
 	selector: 'vtr-modal-wifi-security-invitation',
 	templateUrl: './modal-wifi-security-invitation.component.html',
