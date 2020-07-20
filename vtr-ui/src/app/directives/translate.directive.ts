@@ -19,7 +19,7 @@ export class TranslateDirective {
 		const textList: Array<string> = translatedString.split(/<\/?tag>/);
 		const contentTextList: Array<string> = translatedString.split(/<tag>.*?<\/tag>/);
 		const tagTextList = textList.filter(text => !contentTextList.includes(text));
-		
+
 		this.containerRef.createEmbeddedView(this.template);
 		let element: HTMLElement;
 		const nativeElement = this.template.elementRef.nativeElement;
@@ -31,7 +31,7 @@ export class TranslateDirective {
 		} else {
 			return; // nothing found, exit...
 		}
-		
+
 		const childNodes = Array.from(element.getElementsByTagName('a'));
 		if (element.innerText) {
 			element.childNodes.forEach(childNode => {
@@ -56,7 +56,10 @@ export class TranslateDirective {
 					childNode.tabIndex = -1;
 					if (index < tagTextList.length) {
 						childElement.innerText = '';
+						const classAtr = document.createAttribute('class');
+						classAtr.nodeValue = 'offline-a';
 						childElement.nextElementSibling.className = childElement.className;
+						childElement.nextElementSibling.setAttributeNode(classAtr);
 						childElement.nextElementSibling.innerHTML = tagTextList[index];
 					}
 				}

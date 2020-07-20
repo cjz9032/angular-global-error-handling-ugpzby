@@ -46,6 +46,33 @@ a.disabled {
 	pointer-events: none;
 }
 
+
+a, .a {
+	@media #{$black-on-white} {
+		@include hyperlink-blue-white;
+		&:hover {
+			@include hyperlink-blue-white;
+		}
+	}
+	@media #{$white-on-black} {
+		@include hyperlink-yellow-black;
+		&:hover {
+			@include hyperlink-yellow-black;
+		}
+	}
+
+}
+a.disabled, .offline-a {
+	@media #{$black-on-white} {
+		@include high-contrast-white-text-color-disabled;
+	}
+	@media #{$white-on-black} {
+		@include high-contrast-black-text-color-disabled;
+	}
+
+}
+
+
 // @media #{$dpiquery_0} {
 // }
 
@@ -1643,7 +1670,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 }
 
 // smart-performance-scan-summary-calendar-styles
-vtr-ui-smart-performance-scan-summary {
+vtr-subpage-smart-performance-scan-summary {
 	.vtr-page-header {
 		display: none;
 	}

@@ -185,6 +185,12 @@
 
 		.custom-control-input:disabled:not(:checked) ~ .custom-control-label {
 			pointer-events: none;
+			@media #{$black-on-white} {
+				opacity: $disabled-opacity;
+			}
+			@media #{$white-on-black} {
+				opacity: $disabled-opacity;
+			}
 
 			&::before {
 				border-color: $shade_blue;
@@ -202,6 +208,12 @@
 		}
 		.custom-control-input:disabled:checked ~ .custom-control-label {
 			pointer-events: none;
+			@media #{$black-on-white} {
+				opacity: $disabled-opacity;
+			}
+			@media #{$white-on-black} {
+				opacity: $disabled-opacity;
+			}
 
 			&::before {
 				border-color: $shade_blue;

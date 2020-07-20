@@ -1,5 +1,10 @@
 @import "../../../app.theme.scss";
 
+$radio-box-shadow: 0 0 0 0.1rem $grey_dark;
+$radio-box-shadow-hover: 0 0 0 0.1rem $menu_hover;
+$high-contrast-black-box-shadow: 0 0 0 0.2rem $high-contrast-black-cyan;
+$high-contrast-white-box-shadow: 0 0 0 0.2rem $high-contrast-white-dark-magenta;
+
 .vtr-ui-time-picker {
 	.sub-heading {
 		font-size: 1.2rem;
@@ -62,6 +67,76 @@
 					width: 2rem;
 					height: 2rem;
 				}
+
+				/*custom radio code*/
+                .label-radio[type="radio"] {
+                    display: none;
+                }
+
+                .label-radio[type="radio"] + p.label-text::before {
+                    content: "";
+                    display: inline-block;
+                    width: 1.6rem;
+                    height: 1.6rem;
+                    padding: 0.2rem;
+                    margin-right: 0.8rem;
+					box-shadow: $radio-box-shadow;
+					border-radius: 50%;
+					@media #{$white-on-black} {
+						box-shadow: 0 0 0 0.2rem $light;
+					}
+					@media #{$black-on-white} {
+						box-shadow: 0 0 0 0.2rem $dark;
+					}
+				}
+
+				.label-radio[type="radio"] + p.label-text:hover, .label-radio[type="radio"] + p.label-text:active {
+					&::before {
+						box-shadow: $radio-box-shadow-hover;
+						@media #{$white-on-black} {
+							box-shadow: $high-contrast-black-box-shadow;
+						}
+						@media #{$black-on-white} {
+							box-shadow: $high-contrast-white-box-shadow;
+						}
+					}
+				}
+
+                /* appearance for checked radiobutton */
+                .label-radio[type="radio"]:checked + p.label-text::before {
+					background-color: $menu_hover;
+					border: 0.2rem solid $light;
+					box-shadow: $radio-box-shadow;
+					@media #{$white-on-black} {
+						background-color: $high-contrast-black-cyan;
+						@include black-border;
+						box-shadow: $high-contrast-black-box-shadow;
+					}
+					@media #{$black-on-white} {
+						background-color: $high-contrast-white-dark-magenta;
+						@include white-border;
+						box-shadow: $high-contrast-white-box-shadow;
+					}
+				}
+
+				.label-radio[type="radio"]:checked + p.label-text:hover {
+					&::before {
+						box-shadow: $radio-box-shadow-hover;
+					}
+				}
+
+				.label-radio[type="radio"]:checked + p.label-text:active {
+					&::before {
+						box-shadow: 0 0 0 0.1rem $grey_darker;
+						background-color: $grey_darker;
+					}
+				}
+
+				.label-radio + p.label-text {
+                    display: flex;
+                    align-items: center;
+                }
+                /* custom radio code*/
 			}
 			.highlight {
 				color: $shade_blue;

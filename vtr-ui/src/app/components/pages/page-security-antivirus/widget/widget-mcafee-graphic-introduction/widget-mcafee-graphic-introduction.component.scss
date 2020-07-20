@@ -1,0 +1,115 @@
+@import "../../../../../app.theme.scss";
+.vtr-widget-mcafee-graphic-introduction{
+	.hero-background-container {
+		border-top: 0.1rem solid $gray_dark;
+		@media #{$black-on-white} {
+			border-top: 0.1rem solid $dark;
+		}
+		@media #{$white-on-black} {
+			border-top: 0.1rem solid $light;
+		}
+		.left-view {
+			@media #{$medium-screen, $large-screen} {
+				flex-basis: 35rem;
+				max-width: 35rem;
+			}
+			z-index: 2;
+			.bottom-side {
+				@media #{$small-screen, $below-large-screen} {
+
+					@media #{$high-contrast} {
+						display: none;
+					}
+				}
+				object {
+					@include high-contrast-image-invert;
+				}
+			}
+		}
+		.introduction {
+			background-color: $azure_lighter;
+			padding-top: 2.5rem;
+			padding-left: 1.5rem;
+			color: $shade_blue;
+			flex-grow: 10;
+			.icon-desc {
+				.bullet-icon {
+					.icon-bkg {
+						display: inline-block;
+						border-radius: 50%;
+						height: 2.3rem;
+						width: 2.3rem;
+						border-width: 0.3rem;
+						border-style: solid;
+						text-align: center;
+						background: $green_gradient;
+						background-color: $go_dark;
+						border-color: $green_dark;
+						@include high-contrast-status-icon-and-badge;
+						fa-icon {
+							font-size: 1.4rem;
+							line-height: 1.7rem;
+							color: $light;
+							@include high-contrast-color;
+						}
+					}
+				}
+				img, object {
+					@include high-contrast-image-invert;
+				}
+			}
+			.mcafee-title {
+				font-size: 2rem;
+				font-weight: $weight_bold;
+			}
+			.mcafee-subtitle {
+				font-size: 2rem;
+			}
+			.font-weight-600 {
+				font-weight: $weight_600;
+			}
+			.desc {
+				font-size: 1.5rem;
+				padding-left: 1rem;
+				@media #{$mediaquery_lg} {
+					padding-left: 4.3rem;
+				}
+			}
+		}
+
+		.right-side {
+			flex-grow: 1;
+			position: absolute;
+			left: calc(41.66% - 1px);
+			@media #{$medium-screen, $large-screen} {
+				left: 35rem;
+			}
+			z-index: 2;
+			img, object {
+				max-width: 5rem;
+				@include high-contrast-image-invert;
+			}
+		}
+
+		.hero-background {
+			max-height: 36rem;
+			background-image: url("../../../../../../assets/images/antivirus/hero_blob.png");
+			background-repeat: no-repeat;
+			background-position: 65% 0%;
+			background-size: cover;
+			.cover {
+				position: absolute;
+				left: 0;
+				bottom: -2px;
+			}
+			.logo {
+				right: 5%;
+				bottom: 2rem;
+			}
+		}
+
+		.logo {
+			max-width: 16rem;
+		}
+	}
+}

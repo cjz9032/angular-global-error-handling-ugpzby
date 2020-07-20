@@ -402,28 +402,13 @@
 			}
 		}
 
-		right-content{
-			.footer {
-				margin-top: 2rem;
-				@media #{$mediaquery_lg} {
-				}
-				.text-regular {
-				  font-size: 1.6rem;
-				  color: $main_shade;
-				  padding: 0.3rem 0.3rem;
-				}
-
-				.mcafee-logo {
-				  width: 14rem;
-				  padding-top: 1rem;
-				  margin-right: 2rem;
-				}
-
-				a {
-				  font-weight: $weight_medium;
-				  text-decoration: underline;
+		.footer {
+			::ng-deep {
+				.vtr-widget-powered-by-info {
+					flex-direction: row-reverse;
+					justify-content: center !important;
 				}
 			}
-		};
+		}
 	}
 }

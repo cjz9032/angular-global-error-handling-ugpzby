@@ -279,7 +279,14 @@
 					"routerLinkActiveOptions": {
 						"exact": true
 					},
-					"subitems": []
+					"subitems": [],
+					"pre": [
+						"assets/images/antivirus/side_bar_bottom.svg",
+						"assets/images/antivirus/hero_side.png",
+						"assets/images/antivirus/hero_blob.png",
+						"assets/images/antivirus/hero_side_blob_white.svg",
+						"assets/images/antivirus/hero_bottom_blob.svg"
+					]
 				},
 				{
 					"id": "password-protection",
