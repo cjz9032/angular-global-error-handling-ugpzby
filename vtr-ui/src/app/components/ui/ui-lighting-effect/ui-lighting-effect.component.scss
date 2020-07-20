@@ -33,8 +33,7 @@
 			opacity: 1;
 		}
 	}
-	
-	
+
 	.gaming-tooltip {
 		padding: 2rem;
 		background: $gaming_lightest;
@@ -117,7 +116,7 @@
 		.icon {
 			position: relative;
 			font-size: 1.8rem;
-   			margin-right: 1rem;
+			margin-right: 1rem;
 			top: 0px !important;
 			color: $gaming_lightest !important;
 			@media #{$high-contrast} {
@@ -159,8 +158,8 @@
 				height: 4rem;
 				line-height: 4rem;
 				position: relative;
-				margin-left: 1rem;
 				padding: 0rem;
+				padding-left: 1rem;
 				@media #{$high-contrast} {
 					color: buttonText;
 				}
@@ -193,7 +192,7 @@
 			}
 			&:active {
 				background: $darkCell;
-				.dropdown-item { 
+				.dropdown-item {
 					background-color: inherit;
 				}
 			}
@@ -239,24 +238,25 @@
 
 ::ng-deep {
 	.record-list-wrapper {
-		.select-box { 
+		.select-box {
 			.gaming-tooltip {
 				left: -500px !important;
 			}
 		}
 	}
-  body.focus-enable{
-	.is-gaming {
-      .vtr-page-lightingcustomize,.vtr-page-gaming-macrokey {
-      .dropdown-toggle{
-        &:focus{
-		  @include outline-blue-gaming;
-		  @media #{$high-contrast} {
-			@include solid-button-outline(highlight);
+	body.focus-enable {
+		.is-gaming {
+			.vtr-page-lightingcustomize,
+			.vtr-page-gaming-macrokey {
+				.dropdown-toggle {
+					&:focus {
+						@include outline-blue-gaming;
+						@media #{$high-contrast} {
+							@include solid-button-outline(highlight);
+						}
+					}
+				}
+			}
 		}
-        }
-      }
-    }
-  }
-}
+	}
 }

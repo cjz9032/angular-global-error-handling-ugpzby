@@ -80,20 +80,13 @@
 				&#rgb-rgb {
 					margin-left: 1.2rem;
 				}
-				@media #{$black-on-white} {
-					border: 0.1rem solid $gaming_darkest;
-				}
-				@media #{$white-on-black} {
-					border: 0.1rem solid $gaming_lightest;
+				@media #{$high-contrast} {
+					border: 0.1rem solid windowText;
+					color: buttonText;
 				}
 				&#rgb-rgb {
-					@media #{$black-on-white} {
-						border: $high-contrast-grey;
-						border: 0.1rem solid $dark;
-					}
-					@media #{$white-on-black} {
-						background: $high-contrast-grey;
-						border: 0.1rem solid $light;
+					@media #{$high-contrast} {
+						border: 0.1rem solid windowText;
 					}
 				}
 			}
