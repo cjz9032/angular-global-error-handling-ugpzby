@@ -1,5 +1,5 @@
 @import "../../../app.theme.scss";
-.btn-container{
+.btn-container {
 	position: relative;
 }
 .picker-container {
@@ -55,7 +55,7 @@
 		margin-left: 0.9rem;
 		.form-group {
 			margin-left: 0.5rem;
-			&:nth-last-child(1){
+			&:nth-last-child(1) {
 				margin-bottom: 0 !important;
 			}
 			label {
@@ -75,25 +75,25 @@
 				box-sizing: border-box;
 				padding: 0.6rem;
 			}
-				.input-color {
+			.input-color {
 				border-radius: 0.5rem;
 				&#rgb-rgb {
 					margin-left: 1.2rem;
 				}
-				@media #{$black-on-white}{
-					border:0.1rem solid $gaming_darkest;
+				@media #{$black-on-white} {
+					border: 0.1rem solid $gaming_darkest;
 				}
-				@media #{$white-on-black}{
-					border:0.1rem solid $gaming_lightest;
+				@media #{$white-on-black} {
+					border: 0.1rem solid $gaming_lightest;
 				}
-				&#rgb-rgb{
-					@media #{$black-on-white}{
+				&#rgb-rgb {
+					@media #{$black-on-white} {
 						border: $high-contrast-grey;
-						border:0.1rem solid $dark;
+						border: 0.1rem solid $dark;
 					}
-					@media #{$white-on-black}{
+					@media #{$white-on-black} {
 						background: $high-contrast-grey;
-						border:0.1rem solid $light;
+						border: 0.1rem solid $light;
 					}
 				}
 			}
@@ -114,28 +114,39 @@
 		padding: 0rem 2rem;
 		letter-spacing: 0.1rem;
 		@media #{$high-contrast} {
-			border: 0.2rem solid windowText;
+			border: 0.1rem solid windowText;
 		}
 		span {
 			display: inline-block;
 		}
 		&:hover {
 			background: $blueHover;
-			@media #{$high-contrast}{
+			@media #{$high-contrast} {
 				background: none !important;
 				background-color: none !important;
 			}
 		}
-		&:focus{
-			outline: 1px solid $blueHover !important;
-		}
-		&::before{
-			display: none !important;
+		&:focus {
+			outline: none;
+			&:before {
+				content: "";
+				position: absolute;
+				top: -0.4rem;
+				left: -0.4rem;
+				right: -0.4rem;
+				bottom: -0.4rem;
+				border: 0.1rem solid $blueHover !important;
+				width: calc(0.8rem + 100%);
+				border-radius: 4rem;
+				@media #{$high-contrast} {
+					border-color: highlight !important;
+				}
+			}
 		}
 	}
 	.disable-button {
 		background: $gaming_shade !important;
-		box-shadow: none!important;
+		box-shadow: none !important;
 		pointer-events: none;
 		@media #{$high-contrast} {
 			color: inactiveBorder;
@@ -170,11 +181,11 @@
 				display: inline-block;
 				line-height: 0;
 				border-radius: 50%;
-				@media screen and (max-width: 993px) and (min-width: 992px)	{			
+				@media screen and (max-width: 993px) and (min-width: 992px) {
 					transform: scale(0.7);
 					transform-origin: 0% 100%;
 				}
-				@media screen and (max-width: 1200px) and (min-width: 1199px)	{			
+				@media screen and (max-width: 1200px) and (min-width: 1199px) {
 					transform: scale(0.9);
 					transform-origin: 0% 100%;
 				}
