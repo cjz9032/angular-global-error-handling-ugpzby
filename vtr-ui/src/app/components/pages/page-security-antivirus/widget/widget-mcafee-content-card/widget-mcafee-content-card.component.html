@@ -4,6 +4,8 @@
 			<p class="title" [innerHTML]="'security.antivirus.others.contentCardTitle' | translate"></p>
 			<p class="desc" [innerHTML]="'security.antivirus.others.contentCardDesc' | translate"></p>
 			<a href="javascript:void(0)"
+				[ngClass]="{'disabled': !isOnline}"
+				tabindex="isOnline?0:-1"
 				(click)="openArticle()"
 				target="_blank"
 				[innerHTML]="'security.antivirus.others.contentCardLearnMore' | translate"></a>

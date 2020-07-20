@@ -8,10 +8,6 @@
 		@media #{$white-on-black} {
 			border-top: 0.1rem solid $light;
 		}
-		// background-image: url("../../../../../../assets/images/antivirus/hero_side_blob-2.png");
-		// background-repeat: no-repeat;
-		// background-position: 65% 90%;
-		// background-size: cover;
 		.left-view {
 			@media #{$medium-screen, $large-screen} {
 				flex-basis: 35rem;
@@ -19,6 +15,12 @@
 			}
 			z-index: 2;
 			.bottom-side {
+				@media #{$small-screen, $below-large-screen} {
+
+					@media #{$high-contrast} {
+						display: none;
+					}
+				}
 				object {
 					@include high-contrast-image-invert;
 				}
@@ -90,19 +92,16 @@
 		}
 
 		.hero-background {
-			flex-grow: 1;
-			max-height: 40rem;
-			background-image: url("../../../../../../assets/images/antivirus/hero_side_blob-2.png");
+			max-height: 36rem;
+			background-image: url("../../../../../../assets/images/antivirus/hero_blob.png");
 			background-repeat: no-repeat;
-			background-position: 65% 90%;
+			background-position: 65% 0%;
 			background-size: cover;
-
-			// position: absolute;
-			// right: 0;
-			// top: 0;
-			// width: 100%;
-			// height: 80rem;
-			// background-size: 100%;
+			.cover {
+				position: absolute;
+				left: 0;
+				bottom: -2px;
+			}
 			.logo {
 				right: 5%;
 				bottom: 2rem;

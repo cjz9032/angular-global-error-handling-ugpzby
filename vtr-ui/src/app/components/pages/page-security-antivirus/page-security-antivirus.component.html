@@ -103,8 +103,12 @@
 		<ng-template #mcafee>
 			<ng-container *ngIf="viewModel?.currentPage ==='mcafee';else others">
 				<div [ngClass]="{'mcafee': !viewModel.showMetricButton}">
-					<vtr-widget-offline-info *ngIf="!isOnline" [title]="'dashboard.offlineInfo.title' | translate"
-						[isSubtitleVisible]="false" [isButtonVisible]="false"></vtr-widget-offline-info>
+					<div class="col-12 p-0 mb-4" *ngIf="!isOnline">
+						<vtr-widget-offline-info
+						[title]="'dashboard.offlineInfo.title' | translate"
+						[isSubtitleVisible]="false"
+						[isButtonVisible]="false"></vtr-widget-offline-info>
+					</div>
 					<div class="subheader mb-5">
 						<div class="rounded-card-with-shadow p-5 bg-white">
 							<div class="row" [ngClass]="{'xl-display': viewModel.showMetricsList}">
@@ -200,8 +204,12 @@
 			</ng-container>
 		</ng-template>
 		<ng-template #others>
-			<vtr-widget-offline-info *ngIf="!isOnline" [title]="'dashboard.offlineInfo.title' | translate"
-				[isSubtitleVisible]="false" [isButtonVisible]="false"></vtr-widget-offline-info>
+			<div class="col-12 p-0 mb-4 mt-20" *ngIf="!isOnline">
+				<vtr-widget-offline-info
+				[title]="'dashboard.offlineInfo.title' | translate"
+				[isSubtitleVisible]="false"
+				[isButtonVisible]="false"></vtr-widget-offline-info>
+			</div>
 			<div class="subheader">
 				<div class="rounded-card-with-shadow p-20 bg-white mb-5">
 					<div *ngIf="viewModel.otherAntiVirus && viewModel.otherAntiVirus.name">
@@ -266,7 +274,8 @@
 			<div class="row mb-40 col-12 col-md-6 col-lg-12 pl-0 pl-md-3 pl-lg-0">
 				<div class="col col-12">
 					<vtr-widget-mcafee-content-card *ngIf="viewModel?.currentPage ==='others';else otherCard"
-						[articleId]="mcafeeArticleId"></vtr-widget-mcafee-content-card>
+						[articleId]="mcafeeArticleId"
+						[isOnline]="isOnline"></vtr-widget-mcafee-content-card>
 					<ng-template #otherCard>
 						<vtr-container-card #otherCard
 							[item]="cardContentPositionA"

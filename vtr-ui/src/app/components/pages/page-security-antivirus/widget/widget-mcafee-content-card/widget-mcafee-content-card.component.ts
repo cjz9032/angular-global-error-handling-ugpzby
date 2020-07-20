@@ -9,26 +9,30 @@ import { ModalArticleDetailComponent } from '../../../../modal/modal-article-det
 })
 export class WidgetMcafeeContentCardComponent implements OnInit {
 	@Input() articleId: string;
-  constructor(public modalService: NgbModal) { }
+	@Input() isOnline: boolean;
+	constructor(public modalService: NgbModal) { }
 
-  ngOnInit(): void {
-  }
+	ngOnInit(): void {
+	}
 
-  openArticle() {
-	const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
-		backdrop: true,
-		size: 'lg',
-		centered: true,
-		windowClass: 'Article-Detail-Modal',
-		keyboard: false,
-		beforeDismiss: () => {
-			if (articleDetailModal.componentInstance.onBeforeDismiss) {
-				articleDetailModal.componentInstance.onBeforeDismiss();
-			}
-			return true;
+	openArticle() {
+		if (!this.isOnline) {
+			return;
 		}
-	});
+		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
+			backdrop: true,
+			size: 'lg',
+			centered: true,
+			windowClass: 'Article-Detail-Modal',
+			keyboard: false,
+			beforeDismiss: () => {
+				if (articleDetailModal.componentInstance.onBeforeDismiss) {
+					articleDetailModal.componentInstance.onBeforeDismiss();
+				}
+				return true;
+			}
+		});
 
-	articleDetailModal.componentInstance.articleId = this.articleId;
-}
+		articleDetailModal.componentInstance.articleId = this.articleId;
+	}
 }
