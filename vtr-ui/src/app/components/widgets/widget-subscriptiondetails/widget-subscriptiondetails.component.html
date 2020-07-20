@@ -56,7 +56,10 @@
         vtrMetrics
         metricsItem="btn.managesubscription"
         metricsEvent="FeatureClick"
-        metricsParent="Page.Support.SmartPerformance">
+        metricsParent="Page.Support.SmartPerformance"
+        tabindex="0"
+        (keydown.enter)="openSubscribeModal()"
+        >
         {{'smartPerformance.subscriptionDetails.manageSubscription' |translate }}
     </a>
     <div class="row" *ngIf="!isOnline">
