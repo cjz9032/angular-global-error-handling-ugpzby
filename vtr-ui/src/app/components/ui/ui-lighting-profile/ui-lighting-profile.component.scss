@@ -115,6 +115,13 @@
 						svg {
 							color: $gaming_lightest !important;
 						}
+						border: none;
+
+						.dropdown-toggle {
+							@media #{$high-contrast} {
+								border: 0.1rem solid windowText;
+							}
+						}
 					}
 				}
 			}
