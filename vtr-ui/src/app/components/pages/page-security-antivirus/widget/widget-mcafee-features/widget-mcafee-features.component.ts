@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { AntivirusCommon } from '../../../../../data-models/security-advisor/antivirus-common.model';
 
@@ -31,7 +31,7 @@ export class WidgetMcafeeFeaturesComponent implements OnInit {
 	}];
 
 	getMcafeeText = this.translate.instant('security.antivirus.others.exploreButton');
-	launchMcafeeText = this.translate.instant('security.antivirus.mcafee.launch')
+	launchMcafeeText = this.translate.instant('security.antivirus.mcafee.launch');
 	constructor(private translate: TranslateService) { }
 
 	ngOnInit(): void {
