@@ -127,6 +127,10 @@ $dim_gray: #707070;
 $solitude: #fbfcfc;
 $gray_out: #99A4AE;
 $QA_dark: #194A65;
+$azure_light: #E2FAF7;
+$azure_lighter: #ECF7FF;
+$gray_dark: #AFAFAF;
+$gray_white : #FEFEFE;
 
 // updated button color, hover & active effect
 $btn_primary_color: #0160D6;
@@ -814,3 +818,11 @@ border: none;
 	border-bottom: 0.1rem solid $light;
 }
 
+@mixin high-contrast-image-invert {
+	@media #{$black-on-white} {
+		filter: grayscale(100%) contrast(1000%);
+	}
+	@media #{$white-on-black} {
+		filter: grayscale(100%) invert(1) contrast(1000%);
+	}
+}
