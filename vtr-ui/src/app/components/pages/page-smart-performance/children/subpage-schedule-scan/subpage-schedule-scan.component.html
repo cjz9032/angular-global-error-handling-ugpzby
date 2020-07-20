@@ -148,8 +148,8 @@
                         </div>
                     </div>
                     <div class="row select-close py-2">
-                        <div class="col text-center"><fa-icon [icon]="['fal', 'check']"	tabindex="0" (click)="saveChangeScanTime()"></fa-icon></div>
-                        <div class="col text-center"><fa-icon [icon]="['fal', 'times']" tabindex="0" (click)="cancelChangeScanTime()"></fa-icon></div>
+                        <div class="col text-center" (keydown.enter)="saveChangeScanTime()"><fa-icon [icon]="['fal', 'check']"	tabindex="0" (click)="saveChangeScanTime()"></fa-icon></div>
+                        <div class="col text-center" (keydown.enter)="cancelChangeScanTime()"><fa-icon [icon]="['fal', 'times']" tabindex="0" (click)="cancelChangeScanTime()"></fa-icon></div>
                     </div>
                 </div>
             </li>
