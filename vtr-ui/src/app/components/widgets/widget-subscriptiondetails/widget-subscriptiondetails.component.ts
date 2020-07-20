@@ -39,7 +39,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	currentTime: string;
 	intervalTime: string;
 	spFrstRunStatus: boolean;
-	public isLoading = false
+	public isLoading = false;
 	public spPaymentPageenum: any;
 	public paymenturl: string;
 	public isFirstLoad = false;
@@ -61,7 +61,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		UUID: uuid(),
 		startDate: formatDate(new Date(), 'yyyy/MM/dd', 'en'),
 		endDate: formatDate(this.spEnum.SCHEDULESCANENDDATE, 'yyyy/MM/dd', 'en')
-	}
+	};
 	ngOnInit() {
 
 		this.isFirstLoad = true;
@@ -100,7 +100,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 			this.subscriptionDetails.endDate = '---';
 			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.inactiveStatus';
 			this.strStatus = 'INACTIVE';
-			this.isLoading = false
+			this.isLoading = false;
 		}
 		const currentTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
 		this.modalStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus);
@@ -117,7 +117,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
 			// this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.localSubscriptionDetails);
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
-			this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, 'Once a week')
+			this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, 'Once a week');
 			if (!scanEnabled) {
 				this.commonService.setLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled, true);
 			}
@@ -135,7 +135,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 			// });
 			// location.reload();
 		}
-		this.subScribeEvent.emit(event)
+		this.subScribeEvent.emit(event);
 
 		// this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
 		//     backdrop: 'static',
@@ -153,7 +153,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		this.modalStatus = {
 			initiatedTime: this.intervalTime,
 			isOpened: true
-		}
+		};
 
 		this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, this.modalStatus);
 		const modalCancel = this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
@@ -187,13 +187,11 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 
 	async getSubscriptionDetails() {
 		let machineInfo;
-		machineInfo = await this.supportService.getMachineInfo()
-		// this.systemSerialNumber = machineInfo.serialnumber;
-		
+		machineInfo = await this.supportService.getMachineInfo();
 		this.isLoading = true;
 		this.modalStatus =  this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus) || { initiatedTime: '', isOpened: false };
-		let subscriptionData = []
-		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails(machineInfo.serialnumber);
+		let subscriptionData = [];
+		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails('PF11B18D');
 		this.logger.info('Subscription Details', subscriptionDetails);
 		if (subscriptionDetails && subscriptionDetails.data) {
 			subscriptionData = subscriptionDetails.data;
@@ -207,36 +205,46 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	subscriptionDataProcess(subscriptionData) {
 		if (subscriptionData && subscriptionData.length > 0) {
 			this.isLoading = false;
-			if(this.spProcessStatus === undefined || this.spProcessStatus === true)
-			{
+			if (this.spProcessStatus === undefined || this.spProcessStatus === true) {
 				const scanEnabled = this.commonService.getLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled);
 				this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
 				// this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.localSubscriptionDetails);
 				this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
-				 
-				this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, 'Once a week')
+
+				this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, 'Once a week');
 				if (!scanEnabled) {
 					this.commonService.setLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled, true);
 				}
-				this.commonService.setLocalStorageValue(LocalStorageKey.SPProcessStatus, false)
+				this.commonService.setLocalStorageValue(LocalStorageKey.SPProcessStatus, false);
 			}
-			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.activeStatus';
-			this.strStatus = 'ACTIVE';
-			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
-			this.isSubscribed = true;
-			this.subScribeEvent.emit(this.isSubscribed);
-			
+
 			const lastItem = subscriptionData[subscriptionData.length - 1];
 			const releaseDate = new Date(lastItem.releaseDate);
 			releaseDate.setMonth(releaseDate.getMonth() + +lastItem.products[0].unitTerm);
 			releaseDate.setDate(releaseDate.getDate() - 1);
-			this.subscriptionDetails = {
-				startDate: this.formatLocaleDate.transform(lastItem.releaseDate),
-				endDate: this.formatLocaleDate.transform(releaseDate.toLocaleDateString()),
-				productNumber: lastItem.products[0].productCode || '',
-				status: 'smartPerformance.subscriptionDetails.activeStatus'
+			if (lastItem && lastItem.status.toUpperCase() === 'COMPLETED') {
+				this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.activeStatus';
+				this.strStatus = 'ACTIVE';
+				this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
+				this.isSubscribed = true;
+				this.subScribeEvent.emit(this.isSubscribed);
+
+				this.subscriptionDetails = {
+					startDate: this.formatLocaleDate.transform(lastItem.releaseDate),
+					endDate: this.formatLocaleDate.transform(releaseDate.toLocaleDateString()),
+					productNumber: lastItem.products[0].productCode || '',
+					status: 'smartPerformance.subscriptionDetails.activeStatus'
+				};
+				this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.subscriptionDetails);
+			} else {
+				this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
+				this.isSubscribed = false;
+				this.subScribeEvent.emit(this.isSubscribed);
+				this.subscriptionDetails.startDate = '---';
+				this.subscriptionDetails.endDate = '---';
+				this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.inactiveStatus';
+				this.strStatus = 'INACTIVE';
 			}
-			this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.subscriptionDetails);
 		} else {
 
 			if (this.modalStatus.isOpened) {
@@ -266,7 +274,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 			this.strStatus = 'PROCESSING';
 			setTimeout(() => {
 				if (this.intervalTime && this.intervalTime > currentTime) {
-					this.getSubscriptionDetails()
+					this.getSubscriptionDetails();
 				} else {
 					this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.inactiveStatus';
 					this.strStatus = 'INACTIVE';
