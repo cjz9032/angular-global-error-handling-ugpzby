@@ -103,12 +103,8 @@
 		<ng-template #mcafee>
 			<ng-container *ngIf="viewModel?.currentPage ==='mcafee';else others">
 				<div [ngClass]="{'mcafee': !viewModel.showMetricButton}">
-					<div class="col-12 p-0 mb-4" *ngIf="!isOnline">
-						<vtr-widget-offline-info
-						[title]="'dashboard.offlineInfo.title' | translate"
-						[isSubtitleVisible]="false"
-						[isButtonVisible]="false"></vtr-widget-offline-info>
-					</div>
+					<vtr-widget-offline-info *ngIf="!isOnline" [title]="'dashboard.offlineInfo.title' | translate"
+						[isSubtitleVisible]="false" [isButtonVisible]="false"></vtr-widget-offline-info>
 					<div class="subheader mb-5">
 						<div class="rounded-card-with-shadow p-5 bg-white">
 							<div class="row" [ngClass]="{'xl-display': viewModel.showMetricsList}">
@@ -253,6 +249,12 @@
 						[isOnline]="isOnline"
 						[name]="viewModel.otherAntiVirus.name" [common]="common"></vtr-widget-mcafee-features>
 					<vtr-widget-mcafee-peace-of-mind></vtr-widget-mcafee-peace-of-mind>
+					<div class="footer row d-none d-lg-block">
+						<vtr-widget-powered-by-info
+							[detail]="'security.antivirus.common.privacyTerms'"
+							[imgUrl]="'assets/images/mcafee_logo.svg'"
+							linkId="av"></vtr-widget-powered-by-info>
+					</div>
 				</div>
 			</div>
 		</ng-template>
@@ -293,29 +295,12 @@
 
 		</div>
 		<div class="footer row d-block d-lg-none">
-			<div class="row px-0 justify-content-center">
-			  <div class="px-0">
-				<img class="mcafee-logo" id="sa-av-powered-by-info-logo"
-				  [src]=" 'assets/images/mcafee_logo.svg' | svgInline | async" />
-			  </div>
-			  <p class="text-regular mt-10" id="sa-av-powered-by-info-detail" role="text"
-				*vtrTranslate="'security.antivirus.common.privacyTerms' | translate">
-				<a id="sa-av-link-privacypolicy"
-				  vtrMetrics
-				  metricsEvent="itemClick"
-				  metricsItem="privacyPolicy"
-				  metricsParent="security.antivirus"
-				  href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
-				  target="_blank"></a>
-				<a id="sa-av-link-termsofservices"
-				  vtrMetrics
-				  metricsEvent="itemClick"
-				  metricsItem="termsOfServices"
-				  metricsParent="security.antivirus"
-				  href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
-				  target="_blank"></a>
-			  </p>
-			</div>
+			<vtr-widget-powered-by-info
+				[detail]="'security.antivirus.common.privacyTerms'"
+				[imgUrl]="'assets/images/mcafee_logo.svg'"
+				linkId="sa-av"
+				privacyUrl="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
+				termsUrl="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"></vtr-widget-powered-by-info>
 		</div>
 	</right-content>
 

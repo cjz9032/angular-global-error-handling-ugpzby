@@ -4,6 +4,7 @@
 			<p class="title" [innerHTML]="'security.antivirus.others.contentCardTitle' | translate"></p>
 			<p class="desc" [innerHTML]="'security.antivirus.others.contentCardDesc' | translate"></p>
 			<a href="javascript:void(0)"
+				id="sa-av-modal-article_link"
 				[ngClass]="{'disabled': !isOnline}"
 				tabindex="isOnline?0:-1"
 				(click)="openArticle()"
@@ -11,5 +12,5 @@
 				[innerHTML]="'security.antivirus.others.contentCardLearnMore' | translate"></a>
 		</div>
 	</div>
- 	<object class="col-12 p-0 image" data="./../../../../../assets/images/antivirus/side_bar_bottom.svg" type="image/svg+xml"></object>
+ 	<object class="col-12 p-0 image" data="../../../../../../assets/images/antivirus/side_bar_bottom.svg" type="image/svg+xml"></object>
 </div>
