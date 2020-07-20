@@ -224,7 +224,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	private hideTitleInCommercial() {
 		this.selfselectService.getConfig().then((re) => {
 			this.hideTitle = re.usageType === SegmentConst.Commercial;
-		})
+		});
 	}
 
 	private getProtocalAction() {
@@ -267,19 +267,21 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			this.subscription.unsubscribe();
 		}
 
-		if(this.langChangeSubscription) this.langChangeSubscription.unsubscribe();
+		if (this.langChangeSubscription) {
+			this.langChangeSubscription.unsubscribe();
+		}
 	}
 
 	private getWelcomeTextFromCache() {
 		if (!this.dashboardService.welcomeText) {
-			const cacheWelcomeTexts: WelcomeTextContent[] = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardWelcomeTexts)
+			const cacheWelcomeTexts: WelcomeTextContent[] = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardWelcomeTexts);
 			if (cacheWelcomeTexts && cacheWelcomeTexts.length > 0) {
 				this.localInfoService.getLocalInfo().then((localInfo: any) => {
 					const isLangCacheTexts = cacheWelcomeTexts.find(content => content.language === localInfo.Lang);
 					if (isLangCacheTexts && [SegmentConst.Consumer, SegmentConst.SMB].includes(localInfo.Segment)) {
 						this.dashboardService.welcomeText = sample(isLangCacheTexts.titles);
 					}
-				})
+				});
 			}
 		}
 	}
@@ -307,7 +309,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 					}
 					this.commonService.setLocalStorageValue(LocalStorageKey.DashboardWelcomeTexts, dashboardWelcomeTexts);
 				}
-			})
+			});
 		}
 	}
 
@@ -355,7 +357,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 				if (response && response.length > 0) {
 					this.logger.info(`Performance: Dashboard page get cms content, ${callCmsUsedTime}ms`);
 					this.populateCMSContent(response);
-					this.getWelcomeTextFromCms(response)
+					this.getWelcomeTextFromCms(response);
 
 				} else {
 					const msg = `Performance: Dashboard page not have this language contents, ${callCmsUsedTime}ms`;
