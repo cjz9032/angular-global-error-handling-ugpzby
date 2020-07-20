@@ -13,7 +13,16 @@ import { RouteHandlerService } from 'src/app/services/route-handler/route-handle
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { AntiTheftComponent } from './anti-theft.component';
-
+const antiTheftResponse: AntiTheftResponse = {
+	available: false,
+	status: true,
+	isSupportPhoto: true,
+	cameraPrivacyState: true,
+	authorizedAccessState: true,
+	photoAddress: '',
+	alarmOften: 10,
+	photoNumber: 5
+};
 describe('component: AntiTheftComponent', () => {
 	let component: AntiTheftComponent;
 	let fixture: ComponentFixture<AntiTheftComponent>;
@@ -21,10 +30,10 @@ describe('component: AntiTheftComponent', () => {
 	let logger: LoggerService;
 	let router: Router;
 	let deviceService: DeviceService;
-	let displayService: DisplayService;
-	let translate: TranslateService;
+	// let displayService: DisplayService;
+	// let translate: TranslateService;
 	let metrics: MetricService;
-	let navigationExtras: NavigationExtras;
+	// let navigationExtras: NavigationExtras;
 	let vantageShellService: VantageShellService;
 	let cameraAccessChangedHandler: any;
 	beforeEach(async(() => {
@@ -62,6 +71,7 @@ describe('component: AntiTheftComponent', () => {
 
 	it('should create', () => {
 		fixture.detectChanges();
+		component.antiTheft = antiTheftResponse;
 		expect(component).toBeTruthy();
 	});
 
@@ -77,7 +87,7 @@ describe('component: AntiTheftComponent', () => {
 		smartAssist = TestBed.get(SmartAssistService);
 		logger = TestBed.get(LoggerService);
 		smartAssist.isShellAvailable = true;
-		const antiTheftResponse: AntiTheftResponse = {
+		/* const antiTheftResponse: AntiTheftResponse = {
 			available: false,
 			status: true,
 			isSupportPhoto: true,
@@ -86,7 +96,7 @@ describe('component: AntiTheftComponent', () => {
 			photoAddress: '',
 			alarmOften: 10,
 			photoNumber: 5
-		};
+		}; */
 		const spy = spyOn<any>(
 			component,
 			'getAntiTheftStatus'
@@ -193,12 +203,12 @@ describe('component: AntiTheftComponent', () => {
 	});
 
 	it('toggleToolTip', () => {
-		let tooltip = { isOpen() { return true; }, close() { } }
+		const tooltip = { isOpen() { return true; }, close() { } };
 		component.toggleToolTip(tooltip, false);
 	});
 
 	it('toggleToolTip', () => {
-		let tooltip = { isOpen() { return false; }, open() { } }
+		const tooltip = { isOpen() { return false; }, open() { } };
 		component.toggleToolTip(tooltip, true);
 	});
 
