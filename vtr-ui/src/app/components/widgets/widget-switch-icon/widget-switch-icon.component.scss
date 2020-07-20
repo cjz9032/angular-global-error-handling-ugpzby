@@ -26,7 +26,7 @@
 			outline: 0;
 			box-shadow: none;
 			&:after {
-				content: '';
+				content: "";
 				display: block;
 				position: absolute;
 				left: -0.4rem;
@@ -66,11 +66,7 @@
 
 		&.checked {
 			box-shadow: 0px 0px 0.1rem 0.1rem $go;
-			background: linear-gradient(
-				$gradient_angle,
-				$go 0%,
-				$go_light 100%
-			);
+			background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
 			// outline: none;
 
 			@media #{$white-on-black} {
@@ -93,11 +89,7 @@
 			}
 
 			.icon-container {
-				background: linear-gradient(
-					$gradient_angle_reverse,
-					$go 0%,
-					$go_lighter 100%
-				);
+				background: linear-gradient($gradient_angle_reverse, $go 0%, $go_lighter 100%);
 				color: $light;
 				@media #{$white-on-black} {
 					color: $dark;
@@ -144,11 +136,7 @@
 
 		&.unchecked {
 			box-shadow: 0px 0px 0.1rem 0.1rem $shade_lighter;
-			background: linear-gradient(
-				$gradient_angle,
-				$shade_lighter 0%,
-				$light 100%
-			);
+			background: linear-gradient($gradient_angle, $shade_lighter 0%, $light 100%);
 			// outline: none;
 			@media #{$white-on-black} {
 				border: 0.1rem solid $light;
@@ -175,11 +163,7 @@
 			}
 
 			.icon-container {
-				background: linear-gradient(
-					$gradient_angle_reverse,
-					$shade_lighter 0%,
-					$light 100%
-				);
+				background: linear-gradient($gradient_angle_reverse, $shade_lighter 0%, $light 100%);
 				color: $shade_darker;
 				@media #{$white-on-black} {
 					@include high-contrast-background-transparent;
@@ -339,6 +323,14 @@
 
 		.is-visible {
 			visibility: hidden;
+		}
+	}
+	.text-secondary {
+		@media #{$white-on-black} {
+			color: $light !important;
+		}
+		@media #{$black-on-white} {
+			color: $dark !important;
 		}
 	}
 }
