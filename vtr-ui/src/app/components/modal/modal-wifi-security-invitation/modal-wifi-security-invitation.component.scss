@@ -175,6 +175,9 @@
 		input{
 			color: $alt;
 			background-color: $text_light;
+        }
+        input:disabled{
+			background-color: transparent !important;
 		}
 	}
 

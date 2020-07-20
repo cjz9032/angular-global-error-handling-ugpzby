@@ -36,7 +36,6 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 	@ViewChild('domInput') domInput: ElementRef;
 	@ViewChild('connectingMsg') connectingMsg: ElementRef;
 	@ViewChild('successMsg') successMsg: ElementRef;
-	@ViewChild('offlineMsg') offlineMsg: ElementRef;
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -54,9 +53,6 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 				this.domInput.nativeElement.value = '';
 				this.disabledInput = true;
 				this.focusOut();
-				setTimeout(()=>{
-					this.offlineMsg.nativeElement.focus();
-				}, 0)
 			}
 		});
 	}
