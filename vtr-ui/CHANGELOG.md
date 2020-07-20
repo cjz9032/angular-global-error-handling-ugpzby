@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.10](https://bitbucket.tc.lenovo.com///compare/v1.7.9...v1.7.10) (2020-07-20)
+
+
+### Features
+
+* **CHS join dialog:** Add the judgement and warn whether user is offline ([8e5a438](https://bitbucket.tc.lenovo.com///commit/8e5a43895e91e7b1e0a6ac6e8153148d2802bf5d))
+
 ### [1.7.9](https://bitbucket.tc.lenovo.com///compare/v1.7.8...v1.7.9) (2020-07-17)
 
 ### [1.7.8](https://bitbucket.tc.lenovo.com///compare/v1.7.7...v1.7.8) (2020-07-16)
