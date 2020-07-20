@@ -361,7 +361,7 @@
 						id="{{containerCardId+'-article_link'}}">
 						<div class="inner-content"
 							title="">
-							<div *ngIf="item.Title"
+							<h2 *ngIf="item.Title"
 								class="title text-two-ellipsis"
 								[title]=""
 								[innerHtml]="item.Title"
@@ -369,12 +369,11 @@
 								[ngbTooltip]="item.Title | htmlText"
 								tooltipClass="vtr-system-tooltip"
 								container="body"
-								role="text"
 								[attr.aria-hidden]="!isOnline"
-								></div>
+								></h2>
 							<div *ngIf="item.Description"
 								class="caption text-two-ellipsis">
-								<div [title]=""
+								<p [title]=""
 									[innerHtml]="item.Description"
 									id="{{containerCardId+'-caption'}}"
 									[ngbTooltip]="item.Description | htmlText"
@@ -382,7 +381,7 @@
 									container="body"
 									role="text"
 									[attr.aria-hidden]="!isOnline"
-									></div>
+									></p>
 							</div>
 							<div *ngIf="item.BrandImage || item.BrandName"
 								class="logo">
