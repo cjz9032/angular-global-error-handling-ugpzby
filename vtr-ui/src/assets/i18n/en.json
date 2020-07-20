@@ -3417,7 +3417,8 @@
 				"tryAgain": "Incorrect code, please try again!",
 				"fail": "Incorrect code entered!",
 				"activationCode": "ACTIVATION CODE",
-				"connecting": "Connecting..."
+				"connecting": "Connecting...",
+				"offlinePrompt": "You are currently off-line. Please try again when you are connected to the Internet"
 			},
 			"securityhealth": {
 				"title": "Security Health",
