@@ -9,6 +9,12 @@
 				tabindex="isOnline?0:-1"
 				(click)="openArticle()"
 				target="_blank"
+				vtrMetrics
+				metricsParent="security.antivirus"
+				metricsEvent="ArticleClick"
+				metricsItem="antivirus.learnMore"
+				metricsItemCategory="corner-article"
+				metricsItemID="articleId"
 				[innerHTML]="'security.antivirus.others.contentCardLearnMore' | translate"></a>
 		</div>
 	</div>
