@@ -33,7 +33,7 @@ export class PreviousResultService {
 		const item: any = this.getPreviousResultsWidget();
 		return {
 			date: item.date,
-			isCompleted: item.modules.every(i => i.resultModule === HardwareScanTestResult.Pass)
+			isCompleted: item.modules.every(i => i.resultModule !== HardwareScanTestResult.Cancelled)
 		};
 	}
 
