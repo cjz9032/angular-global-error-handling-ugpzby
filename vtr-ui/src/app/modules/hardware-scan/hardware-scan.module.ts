@@ -19,7 +19,6 @@ import { WidgetHardwareScanItemComponent } from '../../components/widgets/widget
 import { WidgetHardwareScanStatusComponent } from '../../components/widgets/widget-hardware-scan-status/widget-hardware-scan-status.component';
 import { WidgetRecoverBadSectorsComponent } from '../../components/widgets/widget-recover-bad-sectors/widget-recover-bad-sectors.component';
 import { WidgetScheduleScanComponent } from '../../components/widgets/widget-schedule-scan/widget-schedule-scan.component';
-import { WidgetHardwareScanComponent } from '../../components/widgets/widget-hardware-scan/widget-hardware-scan.component';
 import { UiHardwareListTestComponent } from '../../components/ui/ui-hardware-list-test/ui-hardware-list-test.component';
 import { UiHardwareListCheckboxComponent } from '../../components/ui/ui-hardware-list-checkbox/ui-hardware-list-checkbox.component';
 import { UiDropdownHwscanComponent } from '../../components/ui/ui-dropdown-hwscan/ui-dropdown-hwscan.component';
@@ -65,7 +64,6 @@ import { UiTestResultIconComponent } from '../../components/ui/ui-test-result-ic
 		UiHardwareListCheckboxComponent,
 		UiHardwareListTestComponent,
 		UiListScheduledScanComponent,
-		WidgetHardwareScanComponent,
 		WidgetHardwareScanItemComponent,
 		WidgetHardwareScanStatusComponent,
 		WidgetRecoverBadSectorsComponent,

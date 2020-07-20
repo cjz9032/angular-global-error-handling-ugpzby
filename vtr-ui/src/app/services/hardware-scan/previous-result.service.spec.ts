@@ -7,18 +7,17 @@ import { TranslateModule } from '@ngx-translate/core';
 import { RouterTestingModule } from '@angular/router/testing';
 
 describe('PreviousResultService', () => {
-  let service: PreviousResultService;
+	let service: PreviousResultService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [HttpClientModule,TranslateModule.forRoot(),RouterTestingModule],
-      providers: [VantageShellService]
-     
-    });
-    service = TestBed.inject(PreviousResultService);
-  });
+	beforeEach(() => {
+		TestBed.configureTestingModule({
+			imports: [HttpClientModule, TranslateModule.forRoot(), RouterTestingModule],
+			providers: [VantageShellService]
+		});
+		service = TestBed.inject(PreviousResultService);
+	});
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
+	it('should be created', () => {
+		expect(service).toBeTruthy();
+	});
 });

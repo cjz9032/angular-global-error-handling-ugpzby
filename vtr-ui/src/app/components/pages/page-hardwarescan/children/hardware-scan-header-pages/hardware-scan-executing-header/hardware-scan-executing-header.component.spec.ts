@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+// import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HardwareScanExecutingHeaderComponent } from './hardware-scan-executing-header.component';
+// import { HardwareScanExecutingHeaderComponent } from './hardware-scan-executing-header.component';
 // import { TranslateService } from '@ngx-translate/core';
 // import { By } from '@angular/platform-browser';
 // import { DebugElement } from '@angular/core';

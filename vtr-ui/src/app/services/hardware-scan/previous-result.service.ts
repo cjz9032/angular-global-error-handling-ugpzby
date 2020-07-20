@@ -10,7 +10,7 @@ import { HardwareScanResultService } from 'src/app/services/hardware-scan/hardwa
 
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class PreviousResultService {
 
@@ -22,10 +22,10 @@ export class PreviousResultService {
 	private previousItemsWidget = {};
 	private previousResultsResponse: any = undefined;
 
-	constructor(shellService: VantageShellService,
-				private translate: TranslateService,
-				private commonService: CommonService,
-				private hardwareScanResultService: HardwareScanResultService) {
+	constructor(
+		shellService: VantageShellService,
+		private commonService: CommonService,
+		private hardwareScanResultService: HardwareScanResultService) {
 		this.hardwareScanBridge = shellService.getHardwareScan();
 	}
 
@@ -33,7 +33,7 @@ export class PreviousResultService {
 		const item: any = this.getPreviousResultsWidget();
 		return {
 			date: item.date,
-			isCompleted: item.modules.every(i => i.resultModule == HardwareScanTestResult.Pass)
+			isCompleted: item.modules.every(i => i.resultModule === HardwareScanTestResult.Pass)
 		};
 	}
 
@@ -45,7 +45,7 @@ export class PreviousResultService {
 			const module: any = {};
 			module.name = item.module;
 			module.subname = item.name;
-			module.resultModule = this.hardwareScanResultService.consolidateResults(item.listTest.map(item => item.statusTest));
+			module.resultModule = this.hardwareScanResultService.consolidateResults(item.listTest.map(itemTest => itemTest.statusTest));
 
 			previousItems.modules.push(module);
 		}
@@ -88,18 +88,17 @@ export class PreviousResultService {
 
 					// Use this validation prevent cyclical dependency with hardwareScanService
 					// [NOTICE] When remove the isDesktopMachine from hardware-scan.service to another service
-					//			change this line to use the newest function
+					// change this line to use the newest function
 					if (!this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine)) {
 						if (item.icon === 'pci_express') {
-							item.icon += "_laptop";
+							item.icon += '_laptop';
 						}
 					}
 					item.details = [];
 
-					for (let j = 0; j < groupResultMeta.metaInformation.length; j++) {
-						const meta = groupResultMeta.metaInformation[j];
+					for (const groupResultMetaItem of groupResultMeta.metaInformation) {
 						const detail = {};
-						detail[meta.name] = meta.value;
+						detail[groupResultMetaItem.name] = groupResultMetaItem.value;
 						item.details.push(detail);
 					}
 
@@ -120,7 +119,7 @@ export class PreviousResultService {
 						}
 						item.listTest.push(testInfo);
 					}
-					item.resultModule = this.hardwareScanResultService.consolidateResults(test.map(item => item.result));
+					item.resultModule = this.hardwareScanResultService.consolidateResults(test.map(itemTest => itemTest.result));
 					previousResults.items.push(item);
 				}
 
@@ -137,8 +136,8 @@ export class PreviousResultService {
 		if (this.hardwareScanBridge) {
 			return this.previousResultsResponse
 				.then((response) => {
-				this.buildPreviousResults(response);
-			});
+					this.buildPreviousResults(response);
+				});
 		}
 		return undefined;
 	}

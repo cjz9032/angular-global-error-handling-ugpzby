@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HardwareScanWaitSelectHeaderComponent } from './hardware-scan-wait-select-header.component';
 
 describe('HardwareScanWaitSelectHeaderComponent', () => {
-  let component: HardwareScanWaitSelectHeaderComponent;
-  let fixture: ComponentFixture<HardwareScanWaitSelectHeaderComponent>;
+	let component: HardwareScanWaitSelectHeaderComponent;
+	let fixture: ComponentFixture<HardwareScanWaitSelectHeaderComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ HardwareScanWaitSelectHeaderComponent ]
-    })
-    .compileComponents();
-  }));
+	beforeEach(async(() => {
+	TestBed.configureTestingModule({
+		declarations: [ HardwareScanWaitSelectHeaderComponent ]
+	})
+	.compileComponents();
+	}));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(HardwareScanWaitSelectHeaderComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+	beforeEach(() => {
+		fixture = TestBed.createComponent(HardwareScanWaitSelectHeaderComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
 
 //   it('should create', () => {
 //     expect(component).toBeTruthy();

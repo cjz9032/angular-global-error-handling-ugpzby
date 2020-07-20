@@ -35,9 +35,9 @@ export class LenovoSupportService {
 			.set('SerialNumber', machineSerialNumber)
 			.set('ProblemType', LenovoSupportService.ProblemType)
 			.set('DiagnosticsCode', finalResultCode)
-			.set('DiagnosticsDate', formatDate(scanDate, "yyyy-MM-dd", 'en-US'))
+			.set('DiagnosticsDate', formatDate(scanDate, 'yyyy-MM-dd', 'en-US'));
 
-		let url = new URL(LenovoSupportService.ServiceRequestPath, LenovoSupportService.LenovoSupportBaseUrl);
+		const url = new URL(LenovoSupportService.ServiceRequestPath, LenovoSupportService.LenovoSupportBaseUrl);
 		url.search = urlParameters.toString();
 
 		this.logger.info('[LenovoSupportService.getETicketUrl] URL:', url.toString());
@@ -50,7 +50,7 @@ export class LenovoSupportService {
 		const urlParameters = new HttpParams()
 			.set('SerialNumber', machineSerialNumber);
 
-		let url = new URL(LenovoSupportService.ContactUsPath, LenovoSupportService.LenovoSupportBaseUrl);
+		const url = new URL(LenovoSupportService.ContactUsPath, LenovoSupportService.LenovoSupportBaseUrl);
 		url.search = urlParameters.toString();
 
 		return url.toString();

@@ -19,6 +19,19 @@ import { HardwareScanFinishedHeaderType } from 'src/app/enums/hardware-scan-fini
 })
 export class HardwareScanService {
 
+	constructor(
+		shellService: VantageShellService, private commonService: CommonService, private ngZone: NgZone,
+		private translate: TranslateService, private hypSettings: HypothesisService,
+		private hardwareScanResultService: HardwareScanResultService, private previousResultService: PreviousResultService) {
+		this.hardwareScanBridge = shellService.getHardwareScan();
+
+		// Starts all priority requests as soon as possible when this service starts.
+		this.doPriorityRequests();
+	}
+
+	// This name must be the same used in the Hyphothesis config file (HyphotesisGroup.xml).
+	private static readonly HARDWARE_SCAN_HYPHOTESIS_CONFIG_NAME: string = 'HardwareScan';
+
 	private hardwareScanBridge: any;
 	private modulesRetrieved: any; // modules retrieve from get items [object from ItemToScanResponse]
 	private isLoadingModulesDone = false;
@@ -37,7 +50,7 @@ export class HardwareScanService {
 	private hasDevicesToRecover = false;
 	private scanOrRBSFinished = false;
 	private scanHeaderTypeFinished: HardwareScanFinishedHeaderType;
-	private isDesktopMachine: boolean = false;
+	private isDesktopMachine = false;
 
 	private quickScanRequest: any = []; // request modules
 	private quickScanResponse: any = []; // response modules
@@ -56,8 +69,8 @@ export class HardwareScanService {
 	private culture: any;
 	private itemsToScanResponse: any = undefined;
 	private ALL_MODULES = 2;
-	private refreshingModules: boolean = false;
-	private showComponentList: boolean = false;
+	private refreshingModules = false;
+	private showComponentList = false;
 	private hardwareModulesLoaded = new Subject<boolean>();
 	private hypSettingsPromise: any = undefined;
 	private pluginVersion: string;
@@ -75,25 +88,13 @@ export class HardwareScanService {
 	private completedStatus: boolean | undefined = undefined;
 
 	private iconByModule = {
-		'cpu': 'icon_hardware_processor.svg',
-		'memory': 'icon_hardware_memory.svg',
-		'motherboard': 'icon_hardware_motherboard.svg',
-		'pci_express': 'icon_hardware_pci-desktop.svg',
-		'wireless': 'icon_hardware_wireless.svg',
-		'storage': 'icon_hardware_hdd.svg'
+		cpu: 'icon_hardware_processor.svg',
+		memory: 'icon_hardware_memory.svg',
+		motherboard: 'icon_hardware_motherboard.svg',
+		pci_express: 'icon_hardware_pci-desktop.svg',
+		wireless: 'icon_hardware_wireless.svg',
+		storage: 'icon_hardware_hdd.svg'
 	};
-
-	// This name must be the same used in the Hyphothesis config file (HyphotesisGroup.xml).
-	private static readonly HARDWARE_SCAN_HYPHOTESIS_CONFIG_NAME: string = 'HardwareScan';
-
-	constructor(shellService: VantageShellService, private commonService: CommonService, private ngZone: NgZone,
-				private translate: TranslateService, private hypSettings: HypothesisService,
-				private hardwareScanResultService: HardwareScanResultService, private previousResultService: PreviousResultService) {
-		this.hardwareScanBridge = shellService.getHardwareScan();
-
-		// Starts all priority requests as soon as possible when this service starts.
-		this.doPriorityRequests();
-	}
 
 	/**
 	 * This method sends the requests of all information which should be available
@@ -103,7 +104,7 @@ export class HardwareScanService {
 	 */
 	private doPriorityRequests() {
 		// Check whether HardwareScan is available in Hypothesis Service or not
-		if (this.hypSettingsPromise == undefined) {
+		if (this.hypSettingsPromise === undefined) {
 			this.hypSettingsPromise = this.hypSettings.getFeatureSetting(HardwareScanService.HARDWARE_SCAN_HYPHOTESIS_CONFIG_NAME);
 
 			// If HardwareScan is available, dispatch the priority requests
@@ -342,7 +343,6 @@ export class HardwareScanService {
 		if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.deleteScan(payload)
 				.then((response) => {
-					if (response) {} else {}
 					return response;
 				});
 		}
@@ -353,7 +353,6 @@ export class HardwareScanService {
 		if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.editScan(payload)
 				.then((response) => {
-					if (response) {} else {}
 					return response;
 				});
 		}
@@ -364,7 +363,6 @@ export class HardwareScanService {
 		if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.getNextScans()
 				.then((response) => {
-					if (response) {} else {}
 					return response;
 				});
 		}
@@ -376,8 +374,6 @@ export class HardwareScanService {
 		if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.getScheduleScan(payload)
 				.then((response) => {
-					if (response) {} else {}
-
 					return response;
 				});
 		}
@@ -388,8 +384,8 @@ export class HardwareScanService {
 		if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.getPluginInformation()
 				.then((response) => {
-				return response;
-			});
+					return response;
+				});
 		}
 		return undefined;
 	}
@@ -397,11 +393,11 @@ export class HardwareScanService {
 	public isAvailable() {
 		return this.hypSettingsPromise
 			.then((result: any) => {
-			return (((result || '' ).toString() === 'true') && this.isMachineAvailable());
-		})
+				return (((result || '').toString() === 'true') && this.isMachineAvailable());
+			})
 			.catch((error) => {
-			return false;
-		});
+				return false;
+			});
 	}
 
 	/**
@@ -410,15 +406,15 @@ export class HardwareScanService {
 	 */
 	public isMachineAvailable() {
 
-		//Variable containing machine names without HWScan enabled
-		const blackList = ["thinkstationp520", "thinkstationp520c", "thinkstationp720", "thinkstationp920"]
+		// Variable containing machine names without HWScan enabled
+		const blackList = ['thinkstationp520', 'thinkstationp520c', 'thinkstationp720', 'thinkstationp920'];
 
-		//Variable containing machine family name in the specific format
+		// Variable containing machine family name in the specific format
 		const machineFamily = this.commonService
-								.getLocalStorageValue(LocalStorageKey.MachineFamilyName)
-								.replace(/ /g, "")
-								.toString()
-								.toLowerCase();
+			.getLocalStorageValue(LocalStorageKey.MachineFamilyName)
+			.replace(/ /g, '')
+			.toString()
+			.toLowerCase();
 
 		return blackList.find(element => machineFamily.includes(element)) === undefined;
 	}
@@ -450,8 +446,8 @@ export class HardwareScanService {
 		if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.getItemsToScan(scanType, culture)
 				.then((response) => {
-				return response;
-			});
+					return response;
+				});
 		}
 		return undefined;
 	}
@@ -460,8 +456,8 @@ export class HardwareScanService {
 		if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.getPreScanInformation(payload)
 				.then((response) => {
-				return response;
-			});
+					return response;
+				});
 		}
 		return undefined;
 	}
@@ -493,43 +489,43 @@ export class HardwareScanService {
 				this.updateScanResponse(response);
 				this.disableCancel = false;
 			}, cancelHandler)
-			.then((response) => {
-				if (response !== null && response.finalResultCode !== null) {
-					this.executingModule = undefined;
-					this.lastResponse = response;
-					return response;
-				} else {
-					throw new Error('Scan incompleted!');
-				}
-			}).catch((ex: any) => {
-				if (ex !== null) {
-					this.cancelRequested = true;
-				}
-				throw ex;
-			}).finally(() => {
-				this.setIsScanDone(true);
-				this.cleanUp();
+				.then((response) => {
+					if (response !== null && response.finalResultCode !== null) {
+						this.executingModule = undefined;
+						this.lastResponse = response;
+						return response;
+					} else {
+						throw new Error('Scan incompleted!');
+					}
+				}).catch((ex: any) => {
+					if (ex !== null) {
+						this.cancelRequested = true;
+					}
+					throw ex;
+				}).finally(() => {
+					this.setIsScanDone(true);
+					this.cleanUp();
 
-				if (this.cancelRequested === true) {
-					this.scanExecution = false;
-				}
+					if (this.cancelRequested === true) {
+						this.scanExecution = false;
+					}
 
-				this.workDone.next(true);
-				this.setScanOrRBSFinished(true);
-				this.setScanFinishedHeaderType(HardwareScanFinishedHeaderType.Scan);
+					this.workDone.next(true);
+					this.setScanOrRBSFinished(true);
+					this.setScanFinishedHeaderType(HardwareScanFinishedHeaderType.Scan);
 
-				// Retrieve an updated version of Scan's last results
-				this.previousResultService.updatePreviousResultsResponse();
+					// Retrieve an updated version of Scan's last results
+					this.previousResultService.updatePreviousResultsResponse();
 
-				// Scan is finished, so we'll show its result instead of the running state
-				this.clearLastResponse();
-			});
+					// Scan is finished, so we'll show its result instead of the running state
+					this.clearLastResponse();
+				});
 		}
 		return undefined;
 	}
 
 	public hasLastResponse() {
-		return this.lastResponse != undefined;
+		return this.lastResponse !== undefined;
 	}
 
 	public clearLastResponse() {
@@ -546,7 +542,7 @@ export class HardwareScanService {
 		// Scan responses doesn't.
 		const isRBSResponse = this.lastResponse.devices &&
 			this.lastResponse.devices.length &&
-			this.lastResponse.devices[0].numberOfSectors != undefined;
+			this.lastResponse.devices[0].numberOfSectors !== undefined;
 
 		if (isRBSResponse) {
 			this.updateRecover(this.lastResponse);
@@ -566,14 +562,14 @@ export class HardwareScanService {
 
 	public cancelScanExecution() {
 		if (this.hardwareScanBridge) {
-			return this.hardwareScanBridge.cancelScan((response: any) => {})
-			.then((response) => {
-				this.cancelRequested = true;
-				this.clearLastResponse();
-			})
-			.finally(() => {
-				this.cleanUp();
-			});
+			return this.hardwareScanBridge.cancelScan((response: any) => { })
+				.then((response) => {
+					this.cancelRequested = true;
+					this.clearLastResponse();
+				})
+				.finally(() => {
+					this.cleanUp();
+				});
 		}
 		return undefined;
 	}
@@ -687,7 +683,7 @@ export class HardwareScanService {
 				.then((response) => {
 					if (response) {
 						return response;
-					} else {}
+					} else { }
 				});
 		}
 	}
@@ -696,38 +692,38 @@ export class HardwareScanService {
 		this.hasItemsToRecoverBadSectors = false;
 
 		this.getAllItems(culture)
-		.then(() => {
-			this.isLoadingModulesDone = true;
-			this.loadCustomModal();
-			return this.getItemsToRecoverBadSectors();
-		})
-		.then((response) => {
-			if (response && response.categoryList && response.categoryList.length > 0) {
-				this.devicesToRecoverBadSectors = response.categoryList[0];
-				if (this.devicesToRecoverBadSectors.groupList.length !== 0) {
-					this.hasItemsToRecoverBadSectors = true;
+			.then(() => {
+				this.isLoadingModulesDone = true;
+				this.loadCustomModal();
+				return this.getItemsToRecoverBadSectors();
+			})
+			.then((response) => {
+				if (response && response.categoryList && response.categoryList.length > 0) {
+					this.devicesToRecoverBadSectors = response.categoryList[0];
+					if (this.devicesToRecoverBadSectors.groupList.length !== 0) {
+						this.hasItemsToRecoverBadSectors = true;
+					}
 				}
-			}
-		}).finally(() => {
-			// Signalizes that the hardware list has been retrieved
-			this.hardwareModulesLoaded.next(true);
-			this.refreshingModules = false;
-		});
+			}).finally(() => {
+				// Signalizes that the hardware list has been retrieved
+				this.hardwareModulesLoaded.next(true);
+				this.refreshingModules = false;
+			});
 	}
 
 	private async getAllItems(culture) {
 		if (this.hardwareScanBridge) {
 			await this.itemsToScanResponse
-			.then((response) => {
-				this.modulesRetrieved = response;
-				this.categoryInformationList = this.modulesRetrieved.categoryList;
+				.then((response) => {
+					this.modulesRetrieved = response;
+					this.categoryInformationList = this.modulesRetrieved.categoryList;
 
-				this.customScanRequest = this.buildScanRequest(this.modulesRetrieved, culture);
-				this.quickScanRequest = this.filterQuickRequest(this.customScanRequest);
+					this.customScanRequest = this.buildScanRequest(this.modulesRetrieved, culture);
+					this.quickScanRequest = this.filterQuickRequest(this.customScanRequest);
 
-				this.customScanResponse = this.buildScanResponse(this.modulesRetrieved);
-				this.quickScanResponse = this.filterQuickResponse(this.customScanResponse);
-			});
+					this.customScanResponse = this.buildScanResponse(this.modulesRetrieved);
+					this.quickScanResponse = this.filterQuickResponse(this.customScanResponse);
+				});
 		}
 	}
 
@@ -756,18 +752,18 @@ export class HardwareScanService {
 		if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.checkItemsForRecoverBadSectors()
 				.then((response) => {
-				return response;
-			});
+					return response;
+				});
 		}
 	}
 
 	private cleanSelectedCustomTests() {
-		for (let i = 0; i < this.customScanModules.length; i++) {
-			this.customScanModules[i].selected = false;
-			this.customScanModules[i].indeterminate = false;
-			this.customScanModules[i].collapsed = false;
-			for (let j = 0; j < this.customScanModules[i].tests.length; j++) {
-				this.customScanModules[i].tests[j].selected = false;
+		for (const customScanModulesItem of this.customScanModules) {
+			customScanModulesItem.selected = false;
+			customScanModulesItem.indeterminate = false;
+			customScanModulesItem.collapsed = false;
+			for (const customScanModulesTestItem of customScanModulesItem.tests) {
+				customScanModulesTestItem.selected = false;
 			}
 		}
 	}
@@ -777,30 +773,31 @@ export class HardwareScanService {
 		// console.log('[loadCustomModal] this.customScanRequest: ', this.customScanRequest);
 		// console.log('[loadCustomModal] this.customScanResponse: ', this.customScanResponse);
 		let modalModuleId = 0;
-		for (let i = 0; i < this.customScanResponse.length; i++) {
+
+		for (const customScanResponseItem of this.customScanResponse) {
 			const module = {
 				id: modalModuleId,
-				moduleId: this.customScanResponse[i].id,
-				name: this.customScanResponse[i].module,
-				subname: this.customScanResponse[i].name,
+				moduleId: customScanResponseItem.id,
+				name: customScanResponseItem.module,
+				subname: customScanResponseItem.name,
 				selected: false,
 				collapsed: false,
 				indeterminate: false,
 				tests: []
 			};
 
-			for (let j = 0; j < this.customScanResponse[i].listTest.length; j++) {
+			for (const customScanResponseTestItem of customScanResponseItem.listTest) {
 				const test = {
-					id: this.customScanResponse[i].listTest[j].id,
+					id: customScanResponseTestItem.id,
 					test: undefined,
-					name: this.customScanResponse[i].listTest[j].name,
+					name: customScanResponseTestItem.name,
 					selected: false,
 				};
 
 				const currentModule = this.customScanRequest.find(x => x.moduleId === module.moduleId);
 				// console.log('[loadCustomModel]: currentModule', currentModule);
 
-				const groupId = this.customScanResponse[i].groupId;
+				const groupId = customScanResponseItem.groupId;
 				// console.log('[loadCustomModel]: groupId', groupId);
 				test.test = currentModule.testRequestList.find(x => x.id === test.id && x.groupId === groupId);
 
@@ -833,7 +830,7 @@ export class HardwareScanService {
 					lang: culture,
 					loopCount: 0,
 					loopRepeatMinutes: 0,
-					testRequestList: testRequestList,
+					testRequestList,
 					metaData: undefined,
 					moduleId: categoryInfo.id,
 				});
@@ -873,7 +870,7 @@ export class HardwareScanService {
 					item.icon = item.id;
 					if (!this.isDesktopMachine) {
 						if (item.icon === 'pci_express') {
-							item.icon += "_laptop";
+							item.icon += '_laptop';
 						}
 					}
 					item.metaInformation = group.metaInformation;
@@ -935,7 +932,7 @@ export class HardwareScanService {
 					}
 				}
 
-				//Calcute Failed Tests
+				// Calcute Failed Tests
 				this.hardwareScanResultService.countFailedTests(group.testResultList);
 			}
 		}
@@ -964,11 +961,11 @@ export class HardwareScanService {
 		this.executingModule = this.getCurrentModule();
 		// Finds the first model without result code
 		const currentModuleToExpand =
-			this.modules.find(module => !module.resultCode)
+			this.modules.find(module => !module.resultCode);
 
 		// Validates if currentModuleToExpand returns a value doesn't modify by user
 		// and expand it to show the current test in execution
-		if(!currentModuleToExpand.expandedStatusChangedByUser) {
+		if (!currentModuleToExpand.expandedStatusChangedByUser) {
 			currentModuleToExpand.expanded = true;
 		}
 
@@ -978,7 +975,7 @@ export class HardwareScanService {
 
 		// Validates if currentModuleToCollapse returns a valid value and
 		// collapse the test list of this module
-		if(currentModuleToCollapse){
+		if (currentModuleToCollapse) {
 			currentModuleToCollapse.expanded = false;
 		}
 
@@ -1138,17 +1135,17 @@ export class HardwareScanService {
 	public getInitialHardwareComponentList() {
 		const result = [];
 
-		for (const module in this.iconByModule) {
-			let module_type = module;
+		for (const module of Object.keys(this.iconByModule)) {
+			let moduleType = module;
 			if (!this.isDesktopMachine) {
 				if (module === 'pci_express') {
-					module_type = module + "_laptop";
+					moduleType = module + '_laptop';
 				}
 			}
 			result.push({
 				module: this.translate.instant('hardwareScan.pluginTokens.' + module),
 				name: '',
-				icon: module_type
+				icon: moduleType
 			});
 		}
 
@@ -1167,7 +1164,7 @@ export class HardwareScanService {
 	 * This can be observed to know when the hardware component list is retrived
 	 */
 	public isHardwareModulesLoaded(): Observable<boolean> {
-		return this.hardwareModulesLoaded.pipe(first())
+		return this.hardwareModulesLoaded.pipe(first());
 	}
 
 	public getCurrentTaskType() {

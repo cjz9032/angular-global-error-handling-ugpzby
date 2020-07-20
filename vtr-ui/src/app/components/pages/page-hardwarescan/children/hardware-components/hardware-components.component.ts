@@ -1,6 +1,6 @@
 import { Component, OnInit, NgZone, OnDestroy, HostListener } from '@angular/core';
 import { CommonService } from 'src/app/services/common/common.service';
-import { Subscription, EMPTY } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { HardwareScanProgress } from 'src/app/enums/hw-scan-progress.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NgbModal, NgbModalRef, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
@@ -15,7 +15,6 @@ import { ModalScheduleScanCollisionComponent } from '../../../../modal/modal-sch
 import { HardwareScanService } from '../../../../../services/hardware-scan/hardware-scan.service';
 import { HardwareScanResultService } from '../../../../../services/hardware-scan/hardware-scan-result.service';
 import { PreviousResultService } from '../../../../../services/hardware-scan/previous-result.service';
-import { LoggerService } from 'src/app/services/logger/logger.service';
 import { VantageShellService } from '../../../../../services/vantage-shell/vantage-shell.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { ModalWaitComponent } from '../../../../modal/modal-wait/modal-wait.component';
@@ -26,7 +25,7 @@ const RootParent = 'HardwareScan';
 const ConfirmButton = 'Confirm';
 const CloseButton = 'Close';
 const CancelButton = 'Cancel';
-const ViewResultsButton = 'ViewResults'
+const ViewResultsButton = 'ViewResults';
 
 
 @Component({
@@ -98,7 +97,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		private modalService: NgbModal,
 		config: NgbModalConfig,
 		private translate: TranslateService,
-		private logger: LoggerService,
 		private shellService: VantageShellService,
 		private timerService: TimerService,
 		private lenovoSupportService: LenovoSupportService
@@ -260,14 +258,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private getFinalResultCode() {
-		if (this.hardwareScanService) {
-			this.hardwareScanService.getFinalResultCode();
-		}
-	}
-
 	public onCancelScan() {
-		let isCancelingRBS = this.isRecoverExecuting();
+		const isCancelingRBS = this.isRecoverExecuting();
 
 		this.hardwareScanService.setCurrentTaskStep(TaskStep.Cancel);
 
@@ -284,7 +276,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 		// If the scan/rbs process has finished and the cancelation modal is still opened,
 		// alert the user that the process cannot be canceled anymore.
-		let scanFinished = this.hardwareScanService.isWorkDone().subscribe((done) => {
+		const scanFinished = this.hardwareScanService.isWorkDone().subscribe((done) => {
 			modalCancel.componentInstance.showProcessFinishedMessage();
 		});
 
@@ -296,9 +288,9 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				let cancelWatcher;
 
 				if (!isCancelingRBS) {
-					let cancelWatcherDelay = 3000;
-					let self = this;
-					let checkCliRunning = function() {
+					const cancelWatcherDelay = 3000;
+					const self = this;
+					const checkCliRunning = () => {
 						// Workaround for RTC changing date/time problem!
 						// NOTICE: Remove this code piece as soon as this problem is fixed
 						cancelWatcher = setInterval(function watch() {
@@ -377,8 +369,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		const modules = this.hardwareScanService.getModulesRetrieved();
 		if (modules !== undefined) {
 			for (const categoryInfo of modules.categoryList) {
-				for (let i = 0; i < categoryInfo.groupList.length; i++) {
-					const group = categoryInfo.groupList[i];
+				for (const groupList of categoryInfo.groupList) {
+					const group = groupList;
 					const info = categoryInfo.name;
 					let icon = categoryInfo.id;
 					if (!this.hardwareScanService.getIsDesktopMachine()) {
@@ -389,7 +381,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					devices.push({
 						module: info,
 						name: group.name,
-						icon: icon,
+						icon,
 					});
 				}
 			}
@@ -406,7 +398,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		this.hardwareScanService.setCurrentTaskStep(TaskStep.Run);
 
 		const payload = {
-			requests: requests,
+			requests,
 			categories: [],
 			localizedItems: []
 		};
@@ -432,7 +424,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 				// Defines information about module details
 				this.onViewResults();
-				this.modules.forEach(module => {module.expanded = true;});
+				this.modules.forEach(module => { module.expanded = true; });
 
 				const metricsResult = this.getMetricsTaskResult();
 				this.sendTaskActionMetrics(this.hardwareScanService.getCurrentTaskType(), metricsResult.countSuccesses,
@@ -462,11 +454,11 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			const failedModules = finalResponse.responses.map(response => {
 				// Extracting the module list of responses having at least one test failed
 				const modulesContainingTestsFailed = response.groupResults.filter(device =>
-					device.testResultList.some(test => test.result == HardwareScanTestResult.Fail));
+					device.testResultList.some(test => test.result === HardwareScanTestResult.Fail));
 
 				// Returning undefined here once this response there's no failures.
 				// It'll be removed by the 'filter' ahead.
-				if (modulesContainingTestsFailed.length == 0) {
+				if (modulesContainingTestsFailed.length === 0) {
 					return undefined;
 				}
 
@@ -474,18 +466,18 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				// At the beginning result is an object containing no data and it's updated with the information of each device
 				return modulesContainingTestsFailed.reduce((result, device) => {
 					// Retriving device information (id, name, etc ...)
-					const category = categoryInfoList.find(category => category.id == device.moduleName);
-					const deviceInfo = category.groupList.find(groupDevice => groupDevice.id == device.id);
+					const category = categoryInfoList.find(categoryItem => categoryItem.id === device.moduleName);
+					const deviceInfo = category.groupList.find(groupDevice => groupDevice.id === device.id);
 
 					// Updates result with the device information grouped by module (cpu, storage, etc ...)
 					// Resulting in something like:
 					// {
 					// 		moduleId: "storage",
-					//		moduleName: "Storage",
-					//		devices: [
-					//			{ deviceId: "0", deviceName: "WDC PC SN720 SDAPNTW-256G-1101 - 238.47 GBs" },
-					//			{ deviceId: "1", deviceName: "SAMSUNG HM160HX - 149.05 GBs" }
-					//		]
+					// 		moduleName: "Storage",
+					// 		devices: [
+					// 			{ deviceId: "0", deviceName: "WDC PC SN720 SDAPNTW-256G-1101 - 238.47 GBs" },
+					// 			{ deviceId: "1", deviceName: "SAMSUNG HM160HX - 149.05 GBs" }
+					// 		]
 					// }
 					result.moduleId = category.id;
 					result.moduleName = category.name;
@@ -746,10 +738,10 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		};
 
 		for (const module of this.modules) {
-			let module_id = module.id;
+			let moduleId = module.id;
 			if (!this.hardwareScanService.getIsDesktopMachine()) {
-				if (module_id === 'pci_express') {
-					module_id += '_laptop';
+				if (moduleId === 'pci_express') {
+					moduleId += '_laptop';
 				}
 			}
 
@@ -762,7 +754,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				expanded: false,
 				expandedStatusChangedByUser: false,
 				detailsExpanded: false,
-				icon: module_id,
+				icon: moduleId,
 				details: [],
 				listTest: [],
 				resultModule: HardwareScanTestResult.Pass,
@@ -783,18 +775,18 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				});
 			}
 
-			item.resultModule = this.hardwareScanResultService.consolidateResults(item.listTest.map(item => item.statusTest));
+			item.resultModule = this.hardwareScanResultService.consolidateResults(item.listTest.map(itemTest => itemTest.statusTest));
 			results.items.push(item);
 		}
 
-		//Update the ViewResultItem
+		// Update the ViewResultItem
 		this.previousResultService.setViewResultItems(results);
 
-		//If a cancellation was requested, the application will return the HW Scan home page.
-		//So, in this case, the modules list will be updated with the data to be displayed on
-		//the home screen (this.getItemToDisplay()) the modules name and description
-		//If the scan finished without cancellation, then the scan result will be display.
-		//In this case, the module list is updated with the scan results and modules details (results.items)
+		// If a cancellation was requested, the application will return the HW Scan home page.
+		// So, in this case, the modules list will be updated with the data to be displayed on
+		// the home screen (this.getItemToDisplay()) the modules name and description
+		// If the scan finished without cancellation, then the scan result will be display.
+		// In this case, the module list is updated with the scan results and modules details (results.items)
 		if (!this.hardwareScanService.isCancelRequested()){
 			this.modules = results.items;
 		} else {
@@ -806,7 +798,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	public standardizeRbsResponse(){
 		const moduleInformation = this.hardwareScanService.getModulesRetrieved();
 		if ( moduleInformation ) {
-			let storageModule =
+			const storageModule =
 				moduleInformation.categoryList.find( category => category.id === 'storage' );
 
 			const results = { items: [] };
@@ -823,7 +815,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 						id: '',
 						name: device.name,
 						statusTest: device.status,
-						percent:device.percent,
+						percent: device.percent,
 					}],
 				};
 
@@ -836,7 +828,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	public onViewResultsRecover() {
 		const moduleInformation = this.hardwareScanService.getModulesRetrieved();
 		if ( moduleInformation ) {
-			let storageModule = moduleInformation.categoryList.find( category => category.id === 'storage' );
+			const storageModule = moduleInformation.categoryList.find( category => category.id === 'storage' );
 
 			const date = new Date();
 			const day = date.getDate().toString();
@@ -870,7 +862,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 						id: '',
 						name: device.name,
 						statusTest: device.status,
-						percent:device.percent,
+						percent: device.percent,
 					}],
 				};
 
@@ -1022,7 +1014,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 		for (const device of rbsFinalResponse.devices) {
 			// Counting the devices where RBS was successful
-			if (device.status == HardwareScanTestResult.Pass) {
+			if (device.status === HardwareScanTestResult.Pass) {
 				numberOfSuccess++;
 			}
 		}
@@ -1049,8 +1041,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private sendTaskActionMetrics(taskName: TaskType , taskCount: number, taskParam: string,
-									 taskResult: any, taskDuration: number) {
+	private sendTaskActionMetrics(taskName: TaskType, taskCount: number, taskParam: string, taskResult: any, taskDuration: number) {
 		const data = {
 			ItemType: 'TaskAction',
 			TaskName: TaskType[taskName],

@@ -3,14 +3,14 @@ import { TestBed } from '@angular/core/testing';
 import { HardwareScanResultService } from './hardware-scan-result.service';
 
 describe('HardwareScanUtilsService', () => {
-  let service: HardwareScanResultService;
+	let service: HardwareScanResultService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(HardwareScanResultService);
-  });
+	beforeEach(() => {
+		TestBed.configureTestingModule({});
+		service = TestBed.inject(HardwareScanResultService);
+	});
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
+	it('should be created', () => {
+		expect(service).toBeTruthy();
+	});
 });
