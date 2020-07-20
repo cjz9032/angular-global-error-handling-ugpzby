@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 import { HttpClientTestingModule } from "@angular/common/http/testing";
 import { RouterTestingModule } from "@angular/router/testing";
 
-import { UiSmartPerformanceScanSummaryComponent } from "./ui-smart-performance-scan-summary.component";
+import { SubpageSmartPerformanceScanSummaryComponent } from "./subpage-smart-performance-scan-summary.component";
 import { CommonService } from "src/app/services/common/common.service";
 import { SmartPerformanceService } from "src/app/services/smart-performance/smart-performance.service";
 import { SupportService } from "src/app/services/support/support.service";
@@ -32,9 +32,9 @@ const res = {
   ]
   }
 
-describe("UiSmartPerformanceScanSummaryComponent", () => {
-	let component: UiSmartPerformanceScanSummaryComponent;
-	let fixture: ComponentFixture<UiSmartPerformanceScanSummaryComponent>;
+describe("SubpageSmartPerformanceScanSummaryComponent", () => {
+	let component: SubpageSmartPerformanceScanSummaryComponent;
+	let fixture: ComponentFixture<SubpageSmartPerformanceScanSummaryComponent>;
 	let commonService: CommonService;
 	let smartPerformanceService: SmartPerformanceService;
 	let supportService: SupportService;
@@ -47,7 +47,7 @@ describe("UiSmartPerformanceScanSummaryComponent", () => {
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			schemas: [NO_ERRORS_SCHEMA],
-			declarations: [UiSmartPerformanceScanSummaryComponent],
+			declarations: [SubpageSmartPerformanceScanSummaryComponent],
 			imports: [
 				HttpClientTestingModule,
 				RouterTestingModule,
@@ -67,12 +67,12 @@ describe("UiSmartPerformanceScanSummaryComponent", () => {
 			],
 		});
 		fixture = TestBed.createComponent(
-			UiSmartPerformanceScanSummaryComponent
+			SubpageSmartPerformanceScanSummaryComponent
 		);
 		component = fixture.componentInstance;
 	}));
 
-	it("should create UiSmartPerformanceScanSummaryComponent", () => {
+	it("should create SubpageSmartPerformanceScanSummaryComponent", () => {
 		commonService = TestBed.get(CommonService);
 		spyOn(commonService, "getLocalStorageValue").and.returnValues(
 			"ThinkPad E470",
@@ -82,7 +82,7 @@ describe("UiSmartPerformanceScanSummaryComponent", () => {
 		expect(component).toBeTruthy();
     });
 
-    it("should create UiSmartPerformanceScanSummaryComponent - else case in ngInit", () => {
+    it("should create SubpageSmartPerformanceScanSummaryComponent - else case in ngInit", () => {
 		commonService = TestBed.get(CommonService);
 		spyOn(commonService, "getLocalStorageValue").and.returnValues(
 			undefined,

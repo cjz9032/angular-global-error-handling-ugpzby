@@ -132,10 +132,11 @@
 															</p>
 														</div> -->
 													</div>
-													<vtr-ui-accordion [tune]="tune"
+													<vtr-subpage-scan-results-accordion [tune]="tune"
 														[boost]="boost"
 														[secure]="secure"
-														[scannigResultObj]="scannigResultObj"></vtr-ui-accordion>
+														[scannigResultObj]="scannigResultObj">
+													</vtr-subpage-scan-results-accordion>
 												</div>
 												<div class="summary-block"
 													*ngIf="isSubscribed">
@@ -658,9 +659,9 @@
 										*ngIf="isSubscribed && !isOldVersion">
 										<div class="col col-12">
 											<!-- --------Scan Schedule------------- -->
-											<vtr-ui-scan-schedule
+											<vtr-subpage-schedule-scan
 												(scanDatekValueChange)='changeNextScanDateValue($event)' (hideBasedOnOldAddInSummary)="hideBasedOnOldAddInVersionInSummaryPage($event)" [isOnline] = "isOnline">
-											</vtr-ui-scan-schedule>
+											</vtr-subpage-schedule-scan>
 											<!-- --------Scan Schedule------------- -->
 										</div>
 									</div>

@@ -1,27 +1,19 @@
-import {
-	Component,
-	OnInit,
-	Output,
-	EventEmitter,
-	HostListener,
-	OnDestroy,
-	Input,
-} from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter, Input, HostListener } from '@angular/core';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
+import { actualMeridiem, enumScanFrequency, actualScanFrequency, enumSmartPerformance, actualDays } from 'src/app/enums/smart-performance.enum';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import moment from 'moment';
-import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import { enumScanFrequency, actualScanFrequency, actualDays, actualMeridiem, enumSmartPerformance } from 'src/app/enums/smart-performance.enum';
-import { Subscription } from 'rxjs';
 
 @Component({
-	selector: 'vtr-ui-scan-schedule',
-	templateUrl: './ui-scan-schedule.component.html',
-	styleUrls: ['./ui-scan-schedule.component.scss'],
+  selector: 'vtr-subpage-schedule-scan',
+  templateUrl: './subpage-schedule-scan.component.html',
+  styleUrls: ['./subpage-schedule-scan.component.scss']
 })
-export class UiScanScheduleComponent implements OnInit, OnDestroy {
+export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 	constructor(
 		private commonService: CommonService,
 		private logger: LoggerService,

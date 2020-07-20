@@ -1,35 +1,22 @@
-import {
-	Component,
-	OnInit,
-	Input,
-	Output,
-	EventEmitter,
-	ViewChild,
-	OnChanges
-} from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalSmartPerformanceCancelComponent } from '../../modal/modal-smart-performance-cancel/modal-smart-performance-cancel.component';
-import { WidgetSpeedometerComponent } from '../../widgets/widget-speedometer/widget-speedometer.component';
-import { NgbAccordion } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit, OnChanges, ViewChild, Input, Output, EventEmitter } from '@angular/core';
+import { WidgetSpeedometerComponent } from 'src/app/components/widgets/widget-speedometer/widget-speedometer.component';
+import { NgbAccordion, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
-import { EventTypes, SecureMath } from '@lenovo/tan-client-bridge';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { EMPTY } from 'rxjs';
-import {
-	SPCategory,
-	SPSubCategory
-} from 'src/app/enums/smart-performance.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { CommonService } from 'src/app/services/common/common.service';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { ModalSmartPerformanceFeedbackComponent } from '../../modal/modal-smart-performance-feedback/modal-smart-performance-feedback.component';
+import { SPCategory, SPSubCategory } from 'src/app/enums/smart-performance.enum';
+import { SecureMath } from '@lenovo/tan-client-bridge';
+import { ModalSmartPerformanceCancelComponent } from 'src/app/components/modal/modal-smart-performance-cancel/modal-smart-performance-cancel.component';
+import { ModalSmartPerformanceFeedbackComponent } from 'src/app/components/modal/modal-smart-performance-feedback/modal-smart-performance-feedback.component';
+
 @Component({
-	selector: 'vtr-ui-smart-performance-scanning',
-	templateUrl: './ui-smart-performance-scanning.component.html',
-	styleUrls: ['./ui-smart-performance-scanning.component.scss']
+  selector: 'vtr-subpage-scanning',
+  templateUrl: './subpage-scanning.component.html',
+  styleUrls: ['./subpage-scanning.component.scss']
 })
-export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
+export class SubpageScanningComponent implements OnInit, OnChanges {
 	// @ViewChild('speedometer') speedometer: WidgetSpeedometerComponent;
 	@ViewChild('speedometer', { static: false })
 	speedometer: WidgetSpeedometerComponent;
@@ -360,3 +347,4 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 
 
 }
+

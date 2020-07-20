@@ -1,7 +1,7 @@
 import { NO_ERRORS_SCHEMA, SimpleChange } from "@angular/core";
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { UiSmartPerformanceScanningComponent } from "./ui-smart-performance-scanning.component";
+import { SubpageScanningComponent } from "./subpage-scanning.component";
 import { VantageShellService } from "src/app/services/vantage-shell/vantage-shell.service";
 import { SmartPerformanceService } from "src/app/services/smart-performance/smart-performance.service";
 import { LoggerService } from "src/app/services/logger/logger.service";
@@ -26,9 +26,9 @@ const responseData = {
     state:true
 }
 
-describe("UiSmartPerformanceScanningComponent", () => {
-	let component: UiSmartPerformanceScanningComponent;
-	let fixture: ComponentFixture<UiSmartPerformanceScanningComponent>;
+describe("SubpageScanningComponent", () => {
+	let component: SubpageScanningComponent;
+	let fixture: ComponentFixture<SubpageScanningComponent>;
 	let shellService: VantageShellService;
 	let smartPerformanceService: SmartPerformanceService;
 	let logger: LoggerService;
@@ -40,7 +40,7 @@ describe("UiSmartPerformanceScanningComponent", () => {
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			schemas: [NO_ERRORS_SCHEMA],
-			declarations: [UiSmartPerformanceScanningComponent],
+			declarations: [SubpageScanningComponent],
 			providers: [
 				TranslateStore,
 				SmartPerformanceService,
@@ -50,7 +50,7 @@ describe("UiSmartPerformanceScanningComponent", () => {
 			],
 			imports: [TranslationModule, NgbModule]
         });
-        fixture = TestBed.createComponent(UiSmartPerformanceScanningComponent);
+        fixture = TestBed.createComponent(SubpageScanningComponent);
 		component = fixture.componentInstance;
     }));
 

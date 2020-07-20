@@ -6,23 +6,23 @@ import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule } from '@ngx-translate/core';
 import moment from "moment";
 
-import { UiScanScheduleComponent } from './ui-scan-schedule.component';
+import { SubpageScheduleScanComponent } from './subpage-schedule-scan.component';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { enumSmartPerformance } from 'src/app/enums/smart-performance.enum';
 
 
-describe('UiScanScheduleComponent', () => {
-  let component: UiScanScheduleComponent;
-  let fixture: ComponentFixture<UiScanScheduleComponent>;
+describe('SubpageScheduleScanComponent', () => {
+  let component: SubpageScheduleScanComponent;
+  let fixture: ComponentFixture<SubpageScheduleScanComponent>;
   let commonService: CommonService
   let smartPerformanceService: SmartPerformanceService
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       schemas: [NO_ERRORS_SCHEMA],
-      declarations: [ UiScanScheduleComponent ],
+      declarations: [ SubpageScheduleScanComponent ],
       imports: [
         HttpClientTestingModule,
         TranslateModule.forRoot(),
@@ -34,7 +34,7 @@ describe('UiScanScheduleComponent', () => {
         CommonService
       ]
     });
-    fixture = TestBed.createComponent(UiScanScheduleComponent);
+    fixture = TestBed.createComponent(SubpageScheduleScanComponent);
     component = fixture.componentInstance
   }));
 

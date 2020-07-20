@@ -1,28 +1,28 @@
-import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
-import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
-import { ModalSmartPerformanceSubscribeComponent } from '../../modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NgbModal, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 import { CommonService } from 'src/app/services/common/common.service';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import moment from 'moment';
-import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { EMPTY } from 'rxjs';
 import { SupportService } from 'src/app/services/support/support.service';
-import { v4 as uuid } from 'uuid';
-import { formatDate } from '@angular/common';
+import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { TranslateService } from '@ngx-translate/core';
-import { ModalSmartPerformanceFeedbackComponent } from '../../modal/modal-smart-performance-feedback/modal-smart-performance-feedback.component';
 import { Router } from '@angular/router';
-import { enumSmartPerformance, PaymentPage } from 'src/app/enums/smart-performance.enum';
 import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
+import { enumSmartPerformance, PaymentPage } from 'src/app/enums/smart-performance.enum';
+import { formatDate } from '@angular/common';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import moment from 'moment';
+import { v4 as uuid } from 'uuid';
+
+import { ModalSmartPerformanceSubscribeComponent } from 'src/app/components/modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
+import { ModalSmartPerformanceFeedbackComponent } from 'src/app/components/modal/modal-smart-performance-feedback/modal-smart-performance-feedback.component';
 
 @Component({
-	selector: 'vtr-ui-smart-performance-scan-summary',
-	templateUrl: './ui-smart-performance-scan-summary.component.html',
-	styleUrls: ['./ui-smart-performance-scan-summary.component.scss']
+  selector: 'vtr-subpage-smart-performance-scan-summary',
+  templateUrl: './subpage-smart-performance-scan-summary.component.html',
+  styleUrls: ['./subpage-smart-performance-scan-summary.component.scss']
 })
-export class UiSmartPerformanceScanSummaryComponent implements OnInit {
+export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 	constructor(
 		private modalService: NgbModal,
 		private commonService: CommonService,
@@ -171,7 +171,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.scanScheduleDate = this.selectedDate;
 		this.leftAnimator = '0%';
 		if (this.isSubscribed) {
-			//	this.getLastScanResult();
+			// 	this.getLastScanResult();
 			this.scanSummaryTime(0);
 		}
 
@@ -194,22 +194,22 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	}
 
 	getScanHistoryWithTime() {
-		//Object historyScanResults Copy to object historyScanResultsDateTime
+		// Object historyScanResults Copy to object historyScanResultsDateTime
 		this.historyScanResultsDateTime = JSON.parse(JSON.stringify(this.historyScanResults));
 
-		//Deleting unnecessary keys & manupulating date time.
+		// Deleting unnecessary keys & manupulating date time.
 		for (let i = 0; i < 5; i++) {
-			//Adding new key scanrunDate with formating
+			// Adding new key scanrunDate with formating
 			this.historyScanResultsDateTime[i].scanrunDate = this.formatLocaleDate.transform(new Date(this.historyScanResultsDateTime[i].scanruntime));
 
-			//Adding new key scanrunTime
+			// Adding new key scanrunTime
 			this.historyScanResultsDateTime[i].scanrunTime = new Intl.DateTimeFormat('default', {
 				hour12: true,
 				hour: '2-digit',
 				minute: '2-digit'
 			}).format(new Date(this.historyScanResultsDateTime[i].scanruntime));
 
-			//Removing sapace between time stamp and AM/PM
+			// Removing sapace between time stamp and AM/PM
 			this.historyScanResultsDateTime[i].scanrunTime = this.historyScanResultsDateTime[i].scanrunTime.replace(/ /g, "");
 		}
 
