@@ -3,10 +3,11 @@ import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.
 import { DeviceService } from 'src/app/services/device/device.service';
 import { TranslateService } from '@ngx-translate/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HardwareScanService } from '../../../../../services/hardware-scan/hardware-scan.service';
 import { ModalRecoverConfirmComponent } from '../../../../modal/modal-recover-confirm/modal-recover-confirm.component';
 import { HistoryManager } from 'src/app/services/history-manager/history-manager.service';
+import { PageRoute } from 'src/app/data-models/history-manager/page-route-model';
 
 @Component({
 	selector: 'vtr-recover-bad-sectors',
@@ -22,15 +23,14 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 	public errorMessage: string;
 	private failedDevicesList: Array<string>;
 
-	recoverInProgress = false;
-
 	constructor(
 		public deviceService: DeviceService,
 		private hardwareScanService: HardwareScanService,
 		private translate: TranslateService,
 		private modalService: NgbModal,
 		private historyManager: HistoryManager,
-		private activatedRoute: ActivatedRoute
+		private activatedRoute: ActivatedRoute,
+		private router: Router
 	) {
 		this.hardwareScanService.setLoadingStatus(true);
 		this.hardwareScanService.setScanExecutionStatus(false);
@@ -39,8 +39,8 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 
 		this.failedDevicesList = [];
 		this.activatedRoute.queryParams.subscribe(params => {
-			if (params['failedDevices']) {
-				this.failedDevicesList = params['failedDevices'];
+			if (params.failedDevices) {
+				this.failedDevicesList = params.failedDevices;
 			}
 		});
 	}
@@ -51,7 +51,6 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 	}
 
 	ngOnDestroy() {
-		this.hardwareScanService.setRecoverInProgress(false);
 		// Ensure that the homepage will be shown,
 		// in case of reaching here from the results page
 		this.hardwareScanService.setScanOrRBSFinished(false);
@@ -80,27 +79,37 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 				windowClass: 'hardware-scan-modal-size'
 			});
 
-			modal.componentInstance.ItemParent = "HardwareScan.ConfirmRecoverBadSectors";
-			modal.componentInstance.CancelItemName = "ConfirmRecoverBadSectors.Close";
-			modal.componentInstance.ConfirmItemName = "ConfirmRecoverBadSectors.Confirm";
+			modal.componentInstance.ItemParent = 'HardwareScan.ConfirmRecoverBadSectors';
+			modal.componentInstance.CancelItemName = 'ConfirmRecoverBadSectors.Close';
+			modal.componentInstance.ConfirmItemName = 'ConfirmRecoverBadSectors.Confirm';
 
 			modal.result.then((result) => {
 				const devicesSelected = this.devices.filter(device => device.isSelected);
 				this.hardwareScanService.setDevicesRecover(devicesSelected);
 				this.hardwareScanService.setRecoverInit(true);
-				this.hardwareScanService.setRecoverInProgress(true);
 				this.hardwareScanService.setRecoverExecutionStatus(true);
 				this.hardwareScanService.setIsScanDone(false);
-				// After control variables is set to execute the recover.
-				// Navigate back to hardwareScan page because is the same component of execution.
-				this.historyManager.goBack();
+
+				// To avoid an odd navigation behavior, we remove all HardwareScan related pages from the
+				// recent history, once the user could have reached here from either HardwareScan homepage or
+				// previous results.
+				const hardwareScanHomePagePath = '/hardware-scan';
+				let lastPageOnHistory: PageRoute;
+				do {
+					this.historyManager.history.pop();
+					lastPageOnHistory = this.historyManager.history.slice(-1)[0];
+				} while (lastPageOnHistory && lastPageOnHistory.path === hardwareScanHomePagePath);
+
+				// Navigate back to Hardware Scan homepage, since it's there the RBS execution is actually performed,
+				// but without putting this page on the history, avoiding the user could get back here using the back button.
+				this.router.navigateByUrl(hardwareScanHomePagePath, { replaceUrl: true });
 			}, (reason) => {
 				// do nothing
 			});
 			// This fix avoids the invisible popup when the screen is set to 500x500 size and the time to render the modal is not enough.
 			// The translate(0px, 0px) was needed to rebuild the modal and problem doesn't occur anymore.
 			setTimeout(() => {
-				(document.querySelector('.modal.show .modal-dialog') as HTMLElement).style.transform = "translate(0px, 0px)";
+				(document.querySelector('.modal.show .modal-dialog') as HTMLElement).style.transform = 'translate(0px, 0px)';
 			}, 1);
 		} else {
 			this.errorMessage = this.translate.instant('hardwareScan.errorDeviceChoose');
@@ -108,9 +117,9 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 	}
 
 	public getItemsToRecoverBadSectors() {
-        const devices = this.hardwareScanService.getDevicesToRecoverBadSectors();
-        this.buildDevicesRecoverList(devices.groupList);
-    }
+		const devices = this.hardwareScanService.getDevicesToRecoverBadSectors();
+		this.buildDevicesRecoverList(devices.groupList);
+	}
 
 	private buildDevicesRecoverList(groupList: any) {
 		const devices = [];

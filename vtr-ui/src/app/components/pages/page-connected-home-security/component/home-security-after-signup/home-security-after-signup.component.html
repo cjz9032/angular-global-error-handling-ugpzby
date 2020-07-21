@@ -1,12 +1,12 @@
 <div class="vtr-home-security-after-signup">
 	<div *ngIf="account?.role === 'admin'" class="content-container p-20 mb-5">
 		<div class="d-flex justify-content-between mb-4">
-			<p class="subscription-title" *ngIf="account?.state === 'trial' || account?.state === 'trialExpired'"
+			<h2 class="subscription-title" *ngIf="account?.state === 'trial' || account?.state === 'trialExpired'"
 				[innerHTML]="'homeSecurity.overview.trialTitle' | translate">
-			</p>
-			<p class="subscription-title" *ngIf="account?.state === 'standard' || account?.state === 'standardExpired'"
+            </h2>
+			<h2 class="subscription-title" *ngIf="account?.state === 'standard' || account?.state === 'standardExpired'"
 				[innerHTML]="'homeSecurity.overview.subscriptionTitle' | translate">
-			</p>
+            </h2>
 			<div>
 				<img class="coronet-logo"
 					[src]=" 'assets/images/coronet-logo.svg' | svgInline | async"
@@ -99,7 +99,7 @@
 		</div>
 	</div>
 	<div class="content-container p-20">
-		<div class="row heading mb-4" [innerHTML]="'homeSecurity.overview.overviewTitle' | translate"></div>
+		<h2 class="row heading mb-4" [innerHTML]="'homeSecurity.overview.overviewTitle' | translate"></h2>
 		<div class="row content-body mb-4">
 			<div class="container-fluid sub-container p-4">
 				<div class="row container-fluid home-card">

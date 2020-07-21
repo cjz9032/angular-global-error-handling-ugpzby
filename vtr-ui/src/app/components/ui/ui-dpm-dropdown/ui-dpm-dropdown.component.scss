@@ -27,7 +27,20 @@
 	justify-content: space-between;
 	position: absolute;
 	top:0;
-    z-index: 940;
+	z-index: 940;
+	&:hover, &:focus {
+		@media #{$white-on-black} {
+			outline: 0;
+			@include high-contrast-black-border;
+			@include high-contrast-black-text-color;
+		}
+		@media #{$black-on-white} {
+			outline: 0;
+			@include high-contrast-white-border;
+			@include high-contrast-white-text-color;
+		}
+	}
+
     .time {
       display: inline-block;
       font-size: 1.4rem;
@@ -79,20 +92,41 @@
         text-overflow: ellipsis;
         display: block;
         overflow: hidden;
-        cursor: pointer;
+		cursor: pointer;
+		@media #{$black-on-white} {
+			border: 0.1rem solid transparent;
+          }
+          @media #{$white-on-black} {
+			border: 0.1rem solid transparent;
+          }
         span {
           padding: 0 2.4rem;
         }
         &:hover {
           text-decoration: none;
 		  background-color: #eaf2fd;
-		//   @media #{$black-on-white} {
-        //     background-color: #000;
-        //   }
-        //   @media #{$white-on-black} {
-        //     background: #fff;
-        //   }
-        }
+		  @media #{$black-on-white} {
+			@include high-contrast-white-text-color;
+          }
+          @media #{$white-on-black} {
+			@include high-contrast-black-text-color;
+
+          }
+		}
+		&:focus {
+			@media #{$black-on-white} {
+				outline: 0;
+				@include high-contrast-white-border;
+				@include high-contrast-white-text-color;
+			}
+
+			@media #{$white-on-black} {
+				outline: 0;
+				@include high-contrast-black-border;
+				@include high-contrast-black-text-color;
+
+			}
+		}
       }
     }
   }

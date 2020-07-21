@@ -55,6 +55,7 @@ $normalPadding: 2.4rem;
 			&:last-child{
 				label{
 					text-indent: 0.2rem !important;
+					white-space: nowrap;
 				}
 			}
 			.form-check-input {
@@ -174,7 +175,6 @@ $normalPadding: 2.4rem;
 				text-align: center;
 				width: 4rem;
 				padding: 0 1rem;
-
 				&::before {
 					top: 2.4rem;
 					margin-left: 1rem;

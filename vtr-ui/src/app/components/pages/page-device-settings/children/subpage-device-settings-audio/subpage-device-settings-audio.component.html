@@ -15,7 +15,8 @@
 				*ngIf="dolbyModeResponse.available"
 				id="audio">
 				<div class="col-12 mx-auto">
-					<vtr-container-collapsible componentName="Audio SmartSettings"
+                    <vtr-container-collapsible componentName="Audio SmartSettings"
+                        [headerLevel]="3"
 						[tabIndex]="0"
 						[vtrAppSearchScroller]="['search-audio-smart']"
 						[cardTitle]="'device.deviceSettings.audio.audioSmartsettings.title' | translate"
@@ -173,7 +174,8 @@
 				id="microphone">
 				<div class="col-12 mx-auto container-card"
 					*ngIf="microphoneProperties.available">
-					<vtr-container-collapsible componentName="Microphone"
+                    <vtr-container-collapsible componentName="Microphone"
+                        [headerLevel]="3"
 						[tabIndex]="0"
 						[vtrAppSearchScroller]="['search-microphone']"
 						[cardTitle]="'device.deviceSettings.audio.microphone.title' | translate"

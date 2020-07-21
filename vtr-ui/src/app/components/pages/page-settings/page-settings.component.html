@@ -27,7 +27,8 @@
 							<div class="card-pt"
 								*ngIf="!deviceService.isArm && !deviceService.isSMode && isMessageSettings"
 								id="settings-messages">
-								<vtr-container-collapsible name="SettingsMessage"
+                                <vtr-container-collapsible name="SettingsMessage"
+                                    [headerLevel]="3"
 									[tabIndex]="0"
 									collapseLinkId="settings-message"
 									[cardTitle]="'settings.messagesInLenovoVantage' | translate"
@@ -83,7 +84,8 @@
 
 							<div class="card-pt beta-setting"
 								*ngIf="segmentTag !== segmentConst.Commercial && betaService.betaFeatureAvailable">
-								<vtr-container-collapsible [tabIndex]="0"
+                                <vtr-container-collapsible [tabIndex]="0"
+                                    [headerLevel]="3"
 									name="SettingsBeta"
 									collapseLinkId="settings-beta"
 									[cardTitle]="'settings.betaSettingTitle' | translate "
@@ -113,7 +115,8 @@
 							<div class="card-pt"
 								id="settings-other-settings"
 								*ngIf="isToggleUsageStatistics || isToggleDeviceStatistics">
-								<vtr-container-collapsible [tabIndex]="0"
+                                <vtr-container-collapsible [tabIndex]="0"
+                                    [headerLevel]="3"
 									name="SettingsOther"
 									collapseLinkId="settings-other"
 									[cardTitle]="'settings.OtherSettings' | translate "
@@ -162,7 +165,8 @@
 										'white-theme': !deviceService.isGaming,
 										'blue-theme': deviceService.isGaming
 									}">
-								<vtr-container-collapsible [tabIndex]="0"
+                                <vtr-container-collapsible [tabIndex]="0"
+                                    [headerLevel]="3"
 									name="SettingsUserProfile"
 									collapseLinkId="settings-user-profile"
 									[cardTitle]=" 'settings.userProfile' | translate "

@@ -15,7 +15,7 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 	supportUrl: string;
 	contactusUrl: string;
 	headerType: HardwareScanFinishedHeaderType = HardwareScanFinishedHeaderType.None;
-	numberTestsFailed: number = 0;
+	numberTestsFailed = 0;
 	lastScanResultCompletionInfo: any;
 
 	// Metrics
@@ -25,13 +25,15 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 	// Emitters
 	@Output() scanAgain = new EventEmitter();
 
-	//Wrapper
+	// Wrapper
 	public enumScanHeaderTypeFinished = HardwareScanFinishedHeaderType;
 
-	constructor(private hardwareScanService: HardwareScanService,
-				private previousResultService: PreviousResultService,
-				private hardwareScanResultService: HardwareScanResultService,
-				private lenovoSupportService: LenovoSupportService) { }
+	constructor(
+		private hardwareScanService: HardwareScanService,
+		private previousResultService: PreviousResultService,
+		private hardwareScanResultService: HardwareScanResultService,
+		private lenovoSupportService: LenovoSupportService
+	) { }
 
 	ngOnInit() {
 		this.headerType = this.hardwareScanService.getScanFinishedHeaderType();

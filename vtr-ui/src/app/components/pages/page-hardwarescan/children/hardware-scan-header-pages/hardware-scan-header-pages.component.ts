@@ -1,9 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { TaskType, TaskStep } from 'src/app/enums/hardware-scan-metrics.enum';
-import { ModalWaitComponent } from '../../../../modal/modal-wait/modal-wait.component';
-import { NgbModal, NgbModalRef, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
-import { VantageShellService } from '../../../../../services/vantage-shell/vantage-shell.service';
 import { HardwareScanService } from '../../../../../services/hardware-scan/hardware-scan.service';
 import { HardwareScanState } from 'src/app/enums/hardware-scan-state';
 

@@ -24,11 +24,11 @@
     }
     .energy.filled{
         background-color: #2ECC7A;
-        // @media #{$black-on-white} {
-        //     background-color: black;
-        // }
-        // @media #{$white-on-black} {
-        //     background-color: white;
-        // }
+        @media #{$black-on-white} {
+            @include high-contrast-white-background;
+        }
+        @media #{$white-on-black} {
+            @include high-contrast-black-background;
+        }
     }
 }

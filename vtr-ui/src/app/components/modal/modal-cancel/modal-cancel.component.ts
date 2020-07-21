@@ -11,7 +11,7 @@ export class ModalCancelComponent implements OnInit, AfterViewInit {
 
 	description: string = this.translate.instant('hardwareScan.cancelMayTakeSomeTime');
 	buttonText: string = this.translate.instant('hardwareScan.yes');
-	isInCountdown: boolean = true;
+	isInCountdown = true;
 
 	loading: boolean;
 
@@ -21,11 +21,11 @@ export class ModalCancelComponent implements OnInit, AfterViewInit {
 	@Input() ItemParent: string;
 	@Input() CancelItemName: string;
 	@Input() ConfirmItemName: string;
-	@Input() secondsCountdown: number = 9;
+	@Input() secondsCountdown = 9;
 
 	@Output() cancelRequested: EventEmitter<any> = new EventEmitter();
 
-	@ViewChildren("cancel_modal_ok") cancelModalOkListener: QueryList<ElementRef>;
+	@ViewChildren('cancel_modal_ok') cancelModalOkListener: QueryList<ElementRef>;
 
 	constructor(private translate: TranslateService, public activeModal: NgbActiveModal) { }
 
@@ -33,13 +33,13 @@ export class ModalCancelComponent implements OnInit, AfterViewInit {
 		this.loading = false;
 
 		this.timerRef = setInterval(() => {
-			if (this.secondsCountdown-- == 0) {
+			if (this.secondsCountdown-- === 0) {
 				this.onAgree();
 			}
 		}, this.MS_INTERVAL);
 	}
 
-	ngAfterViewInit () {
+	ngAfterViewInit() {
 		// Keep looking for the button
 		this.cancelModalOkListener.changes.subscribe(() => {
 			// When it appears, focus it using its id.
@@ -64,7 +64,7 @@ export class ModalCancelComponent implements OnInit, AfterViewInit {
 		this.cancelRequested.emit();
 
 		if (this.timerRef) {
-			this.stopCountdown()
+			this.stopCountdown();
 		}
 	}
 

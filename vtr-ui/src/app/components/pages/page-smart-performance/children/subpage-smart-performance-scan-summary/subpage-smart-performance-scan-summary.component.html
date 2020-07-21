@@ -257,8 +257,10 @@
 														<div class="summary-period">
 															<ul class="list-group list-group-horizontal">
 																<li class="list-group-item"
+																	tabindex="0"
 																	*ngFor="let item of menuItems;let ind=index"
 																	(click)="scanSummaryTime(ind)"
+																	(keydown.enter)="scanSummaryTime(ind)"
 																	[ngClass]="{'selected-list-item': tabIndex === ind}">
 																	{{item.itemName | translate}}
 																	<!-- <div class="list-item" >
@@ -272,22 +274,26 @@
 																		<!-- <span
 																			*ngIf="!dropDownToggle">{{currentDateLocalFormat}}</span> -->
 																		<span
-																			*ngIf="!dropDownToggle">{{annualYear}}</span>
-																		<span
-																			*ngIf="tabIndex === 0">{{annualYear}}</span>
+																			*ngIf="!dropDownToggle || tabIndex === 0">{{annualYear}}</span>
+																		<!-- <span
+																			*ngIf="tabIndex === 0">{{annualYear}}</span> -->
 																		<!-- <span
 																			*ngIf="tabIndex === 1">{{quarterlyMonth?.displayName}}</span> -->
 																		<span
 																			*ngIf="tabIndex === 1">{{customDate}}</span>
 																		<fa-icon class="drop-down-icon"
-																			*ngIf="dropDownToggle && !isDropDownOpen && tabIndex === 1"
+																			*ngIf="dropDownToggle && tabIndex === 1"
+																			tabindex="0"
 																			(click)="openDropDown()"
-																			[icon]="['fas', 'chevron-down']"></fa-icon>
-																		<fa-icon class="drop-down-icon"
+																			(keydown.enter)="openDropDown()"
+																			[icon]="!isDropDownOpen ? ['fas', 'chevron-down'] : ['fas', 'chevron-up']"></fa-icon>
+																		<!-- <fa-icon class="drop-down-icon"
 																			*ngIf="dropDownToggle && isDropDownOpen && tabIndex === 1"
+																			tabindex="0"
 																			(click)="openDropDown()"
+																			(keydown.enter)="openDropDown()"
 																			[icon]="['fas', 'chevron-up']">
-																		</fa-icon>
+																		</fa-icon> -->
 																	</li>
 																</div>
 															</ul>
@@ -313,6 +319,7 @@
 
 															<!-- </div> -->
 															<div *ngIf="isDropDownOpen && tabIndex === 1"
+																tabindex="0"
 																class="calender-dropDown">
 																<div *ngIf="tabIndex === 1">
 																	<div class="row mt-1">

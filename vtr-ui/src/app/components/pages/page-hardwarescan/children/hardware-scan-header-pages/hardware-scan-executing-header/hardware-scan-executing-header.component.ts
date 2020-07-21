@@ -1,5 +1,4 @@
-import { Component, OnInit, Input, NgZone, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { HardwareScanService } from '../../../../../../services/hardware-scan/hardware-scan.service';
 
 @Component({
@@ -25,7 +24,7 @@ export class HardwareScanExecutingHeaderComponent implements OnInit {
 	@Output() startQuickScan = new EventEmitter();
 	@Output() checkAnchor = new EventEmitter();
 
-	public lastExecutedModule: string = '';
+	public lastExecutedModule = '';
 
 	constructor(private hardwareScanService: HardwareScanService) { }
 

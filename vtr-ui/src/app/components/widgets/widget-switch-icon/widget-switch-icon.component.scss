@@ -172,7 +172,7 @@
 				@media #{$black-on-white} {
 					@include high-contrast-background-transparent;
 					color: $dark;
-					box-shadow: 0px 0px 0.1rem 0.1rem $dark;
+					// box-shadow: 0px 0px 0.1rem 0.1rem $dark;
 				}
 			}
 
@@ -203,7 +203,7 @@
 					}
 					.icon-container {
 						@include high-contrast-white-text-color-disabled;
-						box-shadow: 0px 0px 0.1rem 0.1rem $dark;
+						// box-shadow: 0px 0px 0.1rem 0.1rem $dark;
 					}
 				}
 			}
@@ -340,4 +340,24 @@
 .disable-container {
 	cursor: default !important;
 	color: lightgray;
+	@media #{$white-on-black} {
+		background: transparent;
+		box-shadow: none;
+		.icomoon {
+			@include high-contrast-black-text-color-disabled;
+		}
+		&.title {
+			color: $high-contrast-black-disabled-green !important;
+		}
+	}
+	@media #{$black-on-white} {
+		background: transparent;
+		box-shadow: none;
+		.icomoon {
+			@include high-contrast-white-text-color-disabled;
+		}
+		&.title {
+			color: $high-contrast-white-disabled-maroon !important;
+		}
+	}
 }

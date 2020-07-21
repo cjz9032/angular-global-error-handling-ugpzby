@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonService } from 'src/app/services/common/common.service';
-import { CMSService } from 'src/app/services/cms/cms.service';
 import { Subscription } from 'rxjs';
 import { HardwareScanProgress } from 'src/app/enums/hw-scan-progress.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
@@ -29,12 +28,11 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 	routeSubscription: Subscription;
 	currentRouter: any;
 	hidePreviousResult = false;
-	hideRecover = false;
+	isRBSDeviceSelectionPage = false;
 
 	constructor(
 		public deviceService: DeviceService,
 		private commonService: CommonService,
-		private cmsService: CMSService,
 		private hardwareScanService: HardwareScanService,
 		config: NgbModalConfig,
 		private translate: TranslateService,
@@ -82,15 +80,15 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 		switch (page) {
 			case 'recover-bad-sectors':
 				this.hidePreviousResult = false;
-				this.hideRecover = true;
+				this.isRBSDeviceSelectionPage = true;
 				break;
 			case 'view-results':
 				this.hidePreviousResult = true;
-				this.hideRecover = false;
+				this.isRBSDeviceSelectionPage = false;
 				break;
 			default:
 				this.hidePreviousResult = false;
-				this.hideRecover = false;
+				this.isRBSDeviceSelectionPage = false;
 				break;
 		}
 	}
@@ -118,21 +116,9 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public getIsViewingRecoverLog() {
-		if (this.hardwareScanService) {
-			return this.hardwareScanService.getIsViewingRecoverLog();
-		}
-	}
-
 	public isRecoverExecuting() {
 		if (this.hardwareScanService) {
 			return this.hardwareScanService.isRecoverExecuting();
-		}
-	}
-
-	public isRecoverInProgress() {
-		if (this.hardwareScanService) {
-			return this.hardwareScanService.isRecoverInProgress();
 		}
 	}
 
@@ -144,7 +130,7 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 
 	public setTitle() {
 		if (this.hardwareScanService) {
-			if (this.hideRecover || this.isRecoverExecuting() || this.isRecoverInProgress() || this.getIsViewingRecoverLog()) {
+			if (this.isRBSDeviceSelectionPage || this.isRecoverExecuting()) {
 				return this.translate.instant('hardwareScan.recoverBadSectors.title');
 			} else {
 				return this.translate.instant('hardwareScan.name');
@@ -176,7 +162,7 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 
 	private onNotification(notification: AppNotification) {
 		if (notification) {
-			const { type, payload } = notification;
+			const { type } = notification;
 			switch (type) {
 				case NetworkStatus.Online:
 					this.hardwareScanSupportCard.Title = this.translate.instant('hardwareScan.support.title');
