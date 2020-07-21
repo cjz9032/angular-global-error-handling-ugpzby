@@ -817,8 +817,7 @@
             "question2": "Kako vratiti računalo na zadane postavke",
             "question3": "Kako znati kojim se CPU-om vaš uređaj koristi",
             "question4": "Provjerite korištenje baterije uređaja",
-            "question5": "Upotrebljavajte računalo kao tablet",
-            "question6": "Upoznajte Cortanu, svoju osobnu pomoćnicu"
+            "question5": "Upotrebljavajte računalo kao tablet"
         },
         "ui": {
             "back": "NATRAG",
@@ -2896,35 +2895,6 @@
             "para8": "Upotrebljavati zajednički rub između dviju aplikacija prikazanih na dijelu zaslona da biste istodobno promijenili veličinu obiju aplikacija.",
             "para9": "Otvorite novu aplikaciju u prikazu zadatka, odaberite <strong>Task view</strong> (Prikaz zadatka) na programskoj traci, odaberite aplikaciju, a zatim je povucite na jednu stranu da biste je poravnali u podijeljeni zaslon.",
             "para10": "S pomoću gumba Natrag na programskoj traci možete se vratiti u aplikaciju ili otvoriti aplikaciju koju ste upotrebljavali prije toga."
-        },
-        "question6": {
-            "title": "Upoznajte Cortanu, svoju osobnu pomoćnicu",
-            "heading1": "Što je Cortana?",
-            "para1": "Cortana je vaš digitalni agent. Pomoći će vam da obavite posao.",
-            "para2": "Što se više koristite Cortanom, to će vaše iskustvo biti personaliziranije.",
-            "para3": "Da biste započeli, upišite pitanje u okvir za pretraživanje ili odaberite mikrofon i razgovarajte s Cortanom. (Tipkanje funkcionira za sve vrste računala, ali za razgovor trebate mikrofon.)",
-            "para4": "Ako niste sigurni što reći, vidjet ćete prijedloge na zaključanom zaslonu i na početnoj stranici Cortane kada odaberete okvir za pretraživanje u programskoj traci.",
-            "para5": "1. Početna stranica 2. Bilježnica 3. Postavke 4. Povratne informacije",
-            "para6": "Evo nekih stvari koje Cortana može učiniti za vas:",
-            "unorderedList1": {
-                "listItem1": "Dati vam podsjetnike na temelju vremena, mjesta ili osoba.",
-                "listItem2": "Pratite pakete, timove, interese i letove.",
-                "listItem3": "Slati e-poštu i tekstove.",
-                "listItem4": "Upravljati vašim kalendarom i obavještavati vas o svemu.",
-                "listItem5": "Izrađivati popise i upravljati njima.",
-                "listItem6": "Razgovarati i igrati igre.",
-                "listItem7": "Pronaći činjenice, datoteke, mjesta i informacije.",
-                "listItem8": "Otvoriti bilo koju aplikaciju u vašem sustavu."
-            },
-            "heading2": "Pokušajte sljedeće: postavite podsjetnik",
-            "para7": "Jedna od stvari koje Cortana može učiniti jest da vas podsjeti na nešto. Može vas podsjetiti da radite stvari na temelju vremena, mjesta ili čak osoba.",
-            "para8": "Primjerice, utipkajte ili recite: „Podsjeti me da čestitam Tanyi sljedeći put kad nazove”.",
-            "para9": "Podsjetnik će se pojaviti kada dobijete poziv od Tanye.",
-            "para10": "Dodatni bonus — ako imate Windows Phone ili Cortanu za iPhone ili Android, možete postaviti Cortanu da sinkronizira obavijesti između računala i telefona.",
-            "heading3": "Hej Cortana?",
-            "para11": "Postavite Cortanu da vas čuje kad god kažete: \"Hej Cortana\". Odaberite okvir za pretraživanje na programskoj traci da biste otvorili početnu stranicu Cortane. Zatim odaberite <strong>Settings</strong> (Postavke) i uključite <strong>Let Cortana respond to \"Hey Cortana.\"</strong> (Neka Cortana odgovara na „Hej Cortana”.)",
-            "heading4": "Napomena",
-            "para12": "Cortana je dostupna samo u određenim zemljama/regijama, a neke značajke Cortane možda nisu dostupne svugdje."
         }
     },
     "welcometutorial": {

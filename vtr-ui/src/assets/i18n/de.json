@@ -817,8 +817,7 @@
             "question2": "So setzen Sie Ihren PC auf Originaleinstellungen zurück",
             "question3": "So finden Sie heraus, welche CPU Ihr Computer hat",
             "question4": "Den Akkuverbrauch Ihres Computers überprüfen",
-            "question5": "Verwenden Sie Ihren PC wie ein Tablet",
-            "question6": "Lernen Sie Cortana, Ihre persönliche Assistentin, kennen"
+            "question5": "Verwenden Sie Ihren PC wie ein Tablet"
         },
         "ui": {
             "back": "ZURÜCK",
@@ -2896,35 +2895,6 @@
             "para8": "Die gemeinsame Kante zwischen zwei angedockten Apps verwenden, um die Größe beider Apps zur selben Zeit anzupassen.",
             "para9": "Öffnen Sie eine neue App über Aufgabenansicht, wählen Sie in der Taskleiste <strong>Aufgabenansicht</strong> aus, wählen Sie eine App aus und ziehen Sie diese App zu einer Seite, um sie in Ihrem geteilten Bildschirm anzudocken.",
             "para10": "Verwenden Sie die Schaltfläche \"Zurück\" in der Taskleiste, um zu einer App zurückzukehren oder eine App zu öffnen, die Sie zuvor verwendet haben."
-        },
-        "question6": {
-            "title": "Lernen Sie Cortana, Ihre persönliche Assistentin, kennen",
-            "heading1": "Was ist Cortana?",
-            "para1": "Cortana ist Ihre digitale Agentin. Sie wird Ihnen helfen, Dinge zu erledigen.",
-            "para2": "Je mehr Sie Cortana verwenden, desto personalisierter wird Ihre Erfahrung sein.",
-            "para3": "Geben Sie zunächst eine Frage in das Suchfeld ein oder wählen Sie das Mikrofon aus, um mit Cortana zu sprechen. (Tastatureingaben funktionieren bei allen Arten von PCs, aber zum Sprechen benötigen Sie ein Mikrofon.)",
-            "para4": "Wenn Sie nicht wissen, was Sie sagen sollen, werden Ihnen Vorschläge auf Ihrem Sperrbildschirm und auf dem Startbildschirm von Cortana angezeigt, wenn Sie das Suchfeld in der Taskleiste auswählen.",
-            "para5": "1. Startbildschirm 2. Notebook 3. Einstellungen 4. Feedback",
-            "para6": "Hier einige Dinge, die Cortana für Sie tun kann:",
-            "unorderedList1": {
-                "listItem1": "Ihnen Erinnerungen basierend auf Zeit, Ort und Personen geben.",
-                "listItem2": "Pakete, Teams, Interessen und Flüge nachverfolgen.",
-                "listItem3": "E-Mails oder SMS senden.",
-                "listItem4": "Ihren Kalender verwalten und Sie auf dem neuesten Stand halten.",
-                "listItem5": "Listen erstellen und verwalten.",
-                "listItem6": "Plaudern und Spiele spielen.",
-                "listItem7": "Fakten, Dateien, Orte und Informationen finden.",
-                "listItem8": "Jede App auf Ihrem System öffnen."
-            },
-            "heading2": "Versuchen Sie Folgendes: Eine Erinnerung einrichten",
-            "para7": "Eines der Dinge, die Cortana erledigen kann, ist, Ihnen Erinnerungen zu geben. Sie kann Sie basierend auf Zeit, Orten und sogar Personen daran erinnern, Dinge zu erledigen.",
-            "para8": "Tippen oder sagen Sie beispielsweise \"Erinnere mich daran, Tanya zu gratulieren, wenn Sie das nächste Mal anruft\".",
-            "para9": "Die Erinnerung wird angezeigt, wenn Sie einen Anruf von Tanya erhalten.",
-            "para10": "Zusätzlicher Bonus: Wenn Sie ein Windows Phone oder Cortana für iPhone oder Android besitzen, können Sie Cortana so einstellen, dass Benachrichtigungen zwischen Ihrem PC und Telefon synchronisiert werden.",
-            "heading3": "Hey Cortana?",
-            "para11": "Cortana so einrichten, dass sie Sie immer hört, wenn Sie \"Hey Cortana\" sagen. Wählen Sie das Suchfeld in der Taskleiste aus, um den Startbildschirm von Cortana zu öffnen. Wählen Sie anschließend <strong>Einstellungen</strong> aus und aktivieren Sie <strong>Cortana auf \"Hey Cortana\" antworten lassen.</strong>",
-            "heading4": "Anmerkung",
-            "para12": "Cortana ist nur in bestimmten Ländern/Regionen verfügbar und einige Funktionen von Cortana sind möglicherweise nicht überall verfügbar."
         }
     },
     "welcometutorial": {

@@ -819,8 +819,7 @@
 			"question2": "How to reset your PC",
 			"question3": "How to know your machine's CPU",
 			"question4": "Check your machine's battery use",
-			"question5": "Use your PC like a tablet",
-			"question6": "Get to know Cortana, your personal assistant"
+			"question5": "Use your PC like a tablet"
 		},
 		"ui": {
 			"back": "BACK",
@@ -3709,35 +3708,6 @@
 			"para8": "Use the shared edge between two snapped apps to resize both apps at the same time.",
 			"para9": "Open a new app from task view—select <strong>Task view</strong> on the taskbar, select an app, then drag it to one side to snap it into your divided screen.",
 			"para10": "Use the back button on the taskbar to go back in an app, or to open an app that you were using before."
-		},
-		"question6": {
-			"title": "Get to know Cortana, your personal assistant",
-			"heading1": "What is Cortana?",
-			"para1": "Cortana is your digital agent. She'll help you get things done.",
-			"para2": "The more you use Cortana, the more personalized your experience will be.",
-			"para3": "To get started, type a question in the search box, or select the microphone and talk to Cortana. (Typing works for all types of PCs, but you need a mic to talk.)",
-			"para4": "If you're not sure what to say, you'll see suggestions on your lock screen, and in Cortana home when you select the search box on the taskbar.",
-			"para5": "1. Home 2. Notebook 3. Settings 4. Feedback",
-			"para6": "Here are some things Cortana can do for you:",
-			"unorderedList1": {
-				"listItem1": "Give you reminders based on time, places, or people.",
-				"listItem2": "Track packages, teams, interests, and flights.",
-				"listItem3": "Send emails and texts.",
-				"listItem4": "Manage your calendar and keep you up to date.",
-				"listItem5": "Create and manage lists.",
-				"listItem6": "Chit chat and play games.",
-				"listItem7": "Find facts, files, places, and info.",
-				"listItem8": "Open any app on your system."
-			},
-			"heading2": "Try this: Set a reminder",
-			"para7": "One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or even people.",
-			"para8": "For example, type or say, \"Remind me to congratulate Tanya the next time she calls\".",
-			"para9": "The reminder will appear when you get a call from Tanya.",
-			"para10": "Extra bonus—if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync notifications between your PC and phone.",
-			"heading3": "Hey Cortana?",
-			"para11": "Set Cortana to hear you anytime you say \"Hey Cortana\". Select the search box on the taskbar to open Cortana home. Then select <strong>Settings</strong> and turn on <strong>Let Cortana respond to \"Hey Cortana\"</strong>.",
-			"heading4": "Note",
-			"para12": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
 		}
 	},
 	"welcometutorial": {
