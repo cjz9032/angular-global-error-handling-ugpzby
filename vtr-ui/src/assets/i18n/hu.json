@@ -817,8 +817,7 @@
             "question2": "A számítógép visszaállítása alapállapotba",
             "question3": "A számítógép CPU-típusának megtekintése",
             "question4": "A gép akkumulátorhasználatának ellenőrzése",
-            "question5": "A számítógép táblagépként történő használata",
-            "question6": "Ismerje meg Cortanát, a személyi asszisztensét"
+            "question5": "A számítógép táblagépként történő használata"
         },
         "ui": {
             "back": "VISSZA",
@@ -2896,35 +2895,6 @@
             "para8": "Használhatja a dokkolt alkalmazások közös szélét a két alkalmazás egyidejű átméretezéséhez.",
             "para9": "Megnyithat egy új alkalmazást a feladatnézetből — válassza a <strong>Feladatnézetet</strong> a tálcán, és húzza valamelyik oldalra megosztott képernyőn történő dokkoláshoz.",
             "para10": "Használja a tálcán található Vissza gombot az alkalmazásokban való visszalépéshez vagy egy korábban használt alkalmazás megnyitásához."
-        },
-        "question6": {
-            "title": "Ismerje meg Cortanát, a személyi asszisztensét",
-            "heading1": "Ki az a Cortana?",
-            "para1": "A Cortana a digitális asszisztens. Segít elintézni a teendőit.",
-            "para2": "Minél többet használja Cortanát, annál személyre szabottabb élményben lesz része.",
-            "para3": "A kezdéshez írjon be egy kérdést a keresőmezőbe, vagy válassza ki a mikrofont, és beszéljen Cortanához. (A gépelési minden számítógépen működik, a beszédhez azonban mikrofonra van szükség.)",
-            "para4": "Ha nem tudja, pontosan mit is mondjon, a zárolási képernyőn, valamint a tálcán lévő keresőmező kiválasztásakor a Cortana kezdőlapján is javaslatok jelennek meg.",
-            "para5": "1. Kezdőlap 2. Jegyzetfüzet 3. Beállítások 4. Visszajelzés",
-            "para6": "Íme néhány dolog, amit Cortana el tud végezni:",
-            "unorderedList1": {
-                "listItem1": "Emlékeztetheti dolgokra az időpont, a helyek és az emberek alapján.",
-                "listItem2": "Nyomon követheti a csomagokat, a kedvenc csapatait, az érdeklődési köreit és a repülőjáratokat.",
-                "listItem3": "E-maileket és üzeneteket küldhet.",
-                "listItem4": "Kezelheti a naptárat és tájékoztathatja Önt.",
-                "listItem5": "Listákat hozhat létre és kezelhet.",
-                "listItem6": "Cseveghet és játékokat játszhat.",
-                "listItem7": "Adatokat, fájlokat, helyeket és információkat kereshet.",
-                "listItem8": "Megnyithatja a rendszeren lévő bármely alkalmazást."
-            },
-            "heading2": "Próbálja ki: állítson be egy emlékeztetőt",
-            "para7": "A Cortana egyik képessége, hogy emlékeztetni tudja Önt a dolgokra. Idő-, hely- vagy akár személyalapú emlékeztetők is beállíthatók.",
-            "para8": "Például írj be vagy diktálja le az „Emlékeztess rá, hogy gratuláljak Andreának, amikor legközelebb telefonál” mondatot.",
-            "para9": "Az emlékeztető meg fog jelenni, amikor Andrea legközelebb telefonál.",
-            "para10": "Extra bónuszfunkció — ha rendelkezik Windows Phone telefonnal, vagy a Cortana iPhone-ra vagy Androidra készült változatát használja, akkor beállíthatja, hogy a Cortana szinkronizálja az értesítéseket a számítógép és a telefon között.",
-            "heading3": "Hey Cortana?",
-            "para11": "Állítsa be Cortanát úgy, hogy mindig figyeljen, amikor meghallja a „Hey Cortana” parancsot. A Cortana kezdőképernyőjének megnyitásához válassza ki a tálcán található keresőmezőt. Ezután válassza a <strong>Beállítások</strong> lehetőséget, és kapcsolja be a <strong>Cortana válaszolhat a Hey Cortana parancsra</strong> beállítást.",
-            "heading4": "Megjegyzés",
-            "para12": "A Cortana csak bizonyos országokban/régiókban érhető el, és néhány szolgáltatása nem mindenhol használható."
         }
     },
     "welcometutorial": {

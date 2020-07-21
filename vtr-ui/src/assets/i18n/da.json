@@ -817,8 +817,7 @@
             "question2": "Sådan nulstiller du din pc",
             "question3": "Sådan får du mere at vide om computerens CPU",
             "question4": "Kontrollér computerens batteriforbrug",
-            "question5": "Brug din pc som en tablet",
-            "question6": "Lær Cortana, din personlige assistent, at kende"
+            "question5": "Brug din pc som en tablet"
         },
         "ui": {
             "back": "TILBAGE",
@@ -2896,35 +2895,6 @@
             "para8": "Bruge den fælles kant mellem to fastgjorte apps til at tilpasse størrelsen på begge apps samtidigt.",
             "para9": "Åbn en ny app fra opgavevisningen. Vælg <strong>Opgavevisning</strong> på proceslinjen, vælg en app, og træk den derefter til den ene side for at fastgøre den på den delte skærm.",
             "para10": "Brug knappen Tilbage på proceslinjen til at gå tilbage i en app eller åbne en app, du har brugt før."
-        },
-        "question6": {
-            "title": "Lær Cortana, din personlige assistent, at kende",
-            "heading1": "Hvad er Cortana?",
-            "para1": "Cortana er din digitale agent. Hun hjælper dig med at få tingene udført.",
-            "para2": "Jo mere du bruger Cortana, jo mere personlig bliver din oplevelse.",
-            "para3": "For at komme i gang skal du skrive et spørgsmål i søgefeltet eller vælge mikrofonen for at tale med Cortana. (Du kan også skrive på alle typer af computere, men du skal have en mikrofon for at kunne tale sammen.)",
-            "para4": "Hvis du ikke er sikker på, hvad du skal sige, får du vist forslag på låseskærmen og på startsiden for Cortana, når du har valgt søgefeltet på proceslinjen.",
-            "para5": "1. Startside 2. Notebook 3. Indstillinger 4. Feedback",
-            "para6": "Her er nogle af de ting, som Cortana kan gøre for dig:",
-            "unorderedList1": {
-                "listItem1": "Give dig påmindelser baseret på tidspunkter, steder eller personer.",
-                "listItem2": "Spore pakker, teams, interesser og flyvninger.",
-                "listItem3": "Sende e-mails og beskeder.",
-                "listItem4": "Administrere din kalender og holde dig opdateret.",
-                "listItem5": "Oprette og administrere lister.",
-                "listItem6": "Snakke og spille spil.",
-                "listItem7": "Finde fakta, filer, steder og oplysninger.",
-                "listItem8": "Åbne alle apps på systemet."
-            },
-            "heading2": "Prøv følgende: Angiv en påmindelse",
-            "para7": "En af de ting, Cortana kan gøre, er at give dig påmindelser. Hun kan minde dig om ting baseret på tidspunkter, steder eller endda personer.",
-            "para8": "Du kan f.eks. skrive eller sige \"Mind mig om at ønske Tanya tillykke, næste gang hun ringer\".",
-            "para9": "Påmindelsen vises, når du får et opkald fra Tanya.",
-            "para10": "Ekstra bonus: Hvis du har en Windows Phone eller Cortana til iPhone eller Android, kan du indstille Cortana til at synkronisere påmindelser mellem computeren og telefonen.",
-            "heading3": "Hej Cortana?",
-            "para11": "Indstil Cortana til at høre dig, hver gang du siger \"Hej Cortana\". Vælg søgefeltet på proceslinjen for at åbne startsiden for Cortana. Vælg derefter<strong>Indstillinger</strong>, og aktivér <strong>Lad Cortana reagere på \"Hej Cortana\"</strong>.",
-            "heading4": "Bemærk",
-            "para12": "Cortana er kun tilgængelig i visse lande/områder, og nogle Cortana-funktioner er måske ikke tilgængelige alle steder."
         }
     },
     "welcometutorial": {
