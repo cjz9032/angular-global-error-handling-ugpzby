@@ -3158,7 +3158,8 @@
         },
         "executingScanTitle": "Genomsöker {{title}}",
         "showDetails": "Visa information",
-        "hideDetails": "Dölj information"
+        "hideDetails": "Dölj information",
+        "NA": "N/A"
     },
     "smartPerformance": {
         "title": "Smart Performance",

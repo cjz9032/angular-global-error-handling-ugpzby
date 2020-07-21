@@ -3158,7 +3158,8 @@
         },
         "executingScanTitle": "{{title}} をスキャン中",
         "showDetails": "詳細の表示",
-        "hideDetails": "詳細の非表示"
+        "hideDetails": "詳細の非表示",
+        "NA": "N/A"
     },
     "smartPerformance": {
         "title": "Smart Performance",

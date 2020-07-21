@@ -3160,7 +3160,8 @@
         },
         "executingScanTitle": "جارٍ فحص {{title}}",
         "showDetails": "عرض التفاصيل",
-        "hideDetails": "إخفاء التفاصيل"
+        "hideDetails": "إخفاء التفاصيل",
+        "NA": "N/A"
     },
     "smartPerformance": {
         "title": "Smart Performance",

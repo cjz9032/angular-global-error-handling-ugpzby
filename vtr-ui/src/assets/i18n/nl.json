@@ -3158,7 +3158,8 @@
         },
         "executingScanTitle": "{{title}} scannen",
         "showDetails": "Gegevens weergeven",
-        "hideDetails": "Gegevens verbergen"
+        "hideDetails": "Gegevens verbergen",
+        "NA": "N/A"
     },
     "smartPerformance": {
         "title": "Smart Performance",

@@ -3158,7 +3158,8 @@
         },
         "executingScanTitle": "סורק את {{title}}",
         "showDetails": "הצגת פרטים",
-        "hideDetails": "הסתרת פרטים"
+        "hideDetails": "הסתרת פרטים",
+        "NA": "N/A"
     },
     "smartPerformance": {
         "title": "Health & Support",

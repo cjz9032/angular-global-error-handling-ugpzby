@@ -3158,7 +3158,8 @@
         },
         "executingScanTitle": "Сканирование {{title}}",
         "showDetails": "Просмотреть сведения",
-        "hideDetails": "Скрыть сведения"
+        "hideDetails": "Скрыть сведения",
+        "NA": "N/A"
     },
     "smartPerformance": {
         "title": "Health & Support",
