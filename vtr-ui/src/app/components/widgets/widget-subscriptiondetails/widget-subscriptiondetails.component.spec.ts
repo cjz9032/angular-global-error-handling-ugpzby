@@ -1,44 +1,44 @@
-import { NO_ERRORS_SCHEMA } from "@angular/core";
-import { async, ComponentFixture, TestBed, fakeAsync, tick } from "@angular/core/testing";
-import { HttpClientTestingModule } from "@angular/common/http/testing";
-import { RouterTestingModule } from "@angular/router/testing";
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
-import { WidgetSubscriptiondetailsComponent } from "./widget-subscriptiondetails.component";
-import { LoggerService } from "src/app/services/logger/logger.service";
-import { SupportService } from "src/app/services/support/support.service";
-import { SmartPerformanceService } from "src/app/services/smart-performance/smart-performance.service";
-import { CommonService } from "src/app/services/common/common.service";
-import { FormatLocaleDatePipe } from "src/app/pipe/format-locale-date/format-locale-date.pipe";
-import { DevService } from "src/app/services/dev/dev.service";
+import { WidgetSubscriptiondetailsComponent } from './widget-subscriptiondetails.component';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { SupportService } from 'src/app/services/support/support.service';
+import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
+import { CommonService } from 'src/app/services/common/common.service';
+import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
+import { DevService } from 'src/app/services/dev/dev.service';
 
-import { TranslateModule } from "@ngx-translate/core";
-import { NgbModule, NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import { Observable } from "rxjs";
+import { TranslateModule } from '@ngx-translate/core';
+import { NgbModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Observable } from 'rxjs';
 import moment from 'moment';
 
 const response = {
 	code: 0,
 	costMillis: 49,
 	msg: {
-		desc: "Success",
+		desc: 'Success',
 		value: null,
 	},
 	data: [
 		{
-			cartId: "0144989263",
-			orderNumber: "COMPUS20200625100024831180836",
-			serialNumber: "PF11B18D",
-			paymentMethod: "CARD",
-			payPrice: "64.49",
-			currency: "USD",
-			releaseDate: "2020-06-25T10:07:33.068+0000",
-			createTime: "2020-06-25T10:00:26.275+0000",
-			status: "COMPLETED",
+			cartId: '0144989263',
+			orderNumber: 'COMPUS20200625100024831180836',
+			serialNumber: 'PF11B18D',
+			paymentMethod: 'CARD',
+			payPrice: '64.49',
+			currency: 'USD',
+			releaseDate: '2020-06-25T10:07:33.068+0000',
+			createTime: '2020-06-25T10:00:26.275+0000',
+			status: 'COMPLETED',
 			products: [
 				{
-					productCode: "5WS0X58672",
-					productName: "3Y Lenovo Smart Performance SW",
-					productType: "SmartPerformance",
+					productCode: '5WS0X58672',
+					productName: '3Y Lenovo Smart Performance SW',
+					productType: 'SmartPerformance',
 					unitTerm: 36,
 				},
 			],
@@ -46,7 +46,7 @@ const response = {
 	],
 };
 
-describe("WidgetSubscriptiondetailsComponent", () => {
+describe('WidgetSubscriptiondetailsComponent', () => {
 	let component: WidgetSubscriptiondetailsComponent;
 	let fixture: ComponentFixture<WidgetSubscriptiondetailsComponent>;
 	let modalService: NgbModal;
@@ -80,11 +80,11 @@ describe("WidgetSubscriptiondetailsComponent", () => {
 		component = fixture.componentInstance;
 	}));
 
-	it("should create Widget Subscriptiondetails Component", () => {
-		const res = {...response}
+	it('should create Widget Subscriptiondetails Component', () => {
+		const res = { ...response };
 		commonService = TestBed.get(CommonService);
 		smartPerformanceService = TestBed.get(SmartPerformanceService);
-		spyOn(commonService, "getLocalStorageValue").and.returnValues(true, true);
+		spyOn(commonService, 'getLocalStorageValue').and.returnValues(true, true);
 		spyOn(smartPerformanceService, 'getPaymentDetails').and.returnValue(Promise.resolve(res));
 		fixture.detectChanges();
 		expect(component).toBeTruthy();
@@ -92,8 +92,8 @@ describe("WidgetSubscriptiondetailsComponent", () => {
 
 	it('should call initSubscripionDetails when spFirstRunStatus is false', () => {
 		commonService = TestBed.get(CommonService);
-		spyOn(commonService, "getLocalStorageValue").and.returnValues(true, false, {startDate: '2019/06/20', endDate: '2020/06/19'}, {
-			initiatedTime: "08:30",
+		spyOn(commonService, 'getLocalStorageValue').and.returnValues(true, false, { startDate: '2019/06/20', endDate: '2020/06/19' }, {
+			initiatedTime: '08:30',
 			isOpened: true,
 		});
 		component.isSubscribed = true;
@@ -102,60 +102,60 @@ describe("WidgetSubscriptiondetailsComponent", () => {
 		expect(component.strStatus).toEqual('PROCESSING');
 	});
 
-	it("should create Widget Subscriptiondetails Component - settimeout", fakeAsync(() => {
-		const res = {}
+	it('should create Widget Subscriptiondetails Component - settimeout', fakeAsync(() => {
+		const res = {};
 		commonService = TestBed.get(CommonService);
 		smartPerformanceService = TestBed.get(SmartPerformanceService);
 		const spy = spyOn(smartPerformanceService, 'getPaymentDetails').and.returnValue(Promise.resolve(res));
 		fixture.detectChanges();
-		tick(30000)
-		expect(spy).toHaveBeenCalled()
+		tick(30000);
+		expect(spy).toHaveBeenCalled();
 	}));
 
-	it("should open subcription modal", () => {
+	it('should open subcription modal', () => {
 		modalService = TestBed.get(NgbModal);
 		const modalCancel: any = {
 			componentInstance: {
 				cancelPaymentRequest: new Observable<any>(),
 			},
 		};
-		const spy = spyOn(modalService, "open").and.returnValue(modalCancel);
+		const spy = spyOn(modalService, 'open').and.returnValue(modalCancel);
 		component.openSubscribeModal();
 		fixture.detectChanges();
 		expect(spy).toHaveBeenCalled();
 	});
 
-	it("should enable full feature", () => {
+	it('should enable full feature', () => {
 		commonService = TestBed.get(CommonService);
 		component.isSubscribed = false;
 		const spy = spyOn(
 			commonService,
-			"getLocalStorageValue"
+			'getLocalStorageValue'
 		).and.returnValue(false);
 		const event = {};
 		component.enableFullFeature(event);
 		fixture.detectChanges();
 		expect(spy).toHaveBeenCalled();
-    });
-
-	it("should get subscription details", () => {
-        commonService = TestBed.get(CommonService);
-        smartPerformanceService = TestBed.get(SmartPerformanceService)
-		const spy = spyOn(commonService, "getLocalStorageValue").and.returnValue({
-			initiatedTime: "08:30",
-			isOpened: true,
-        });
-        // const spy = spyOn(smartPerformanceService, 'getPaymentDetails').and.returnValue(Promise.resolve(response));
-        component.getSubscriptionDetails();
-        fixture.detectChanges();
-        expect(spy).toHaveBeenCalled();
 	});
-	
-    it("should get subscription details - settimeout else case", ((done) => {
+
+	it('should get subscription details', () => {
+		commonService = TestBed.get(CommonService);
+		smartPerformanceService = TestBed.get(SmartPerformanceService);
+		const spy = spyOn(commonService, 'getLocalStorageValue').and.returnValue({
+			initiatedTime: '08:30',
+			isOpened: true,
+		});
+		// const spy = spyOn(smartPerformanceService, 'getPaymentDetails').and.returnValue(Promise.resolve(response));
+		component.getSubscriptionDetails();
+		fixture.detectChanges();
+		expect(spy).toHaveBeenCalled();
+	});
+
+	it('should get subscription details - settimeout else case', ((done) => {
 		component.spFrstRunStatus = true;
-        component.setTimeOutCallForSubDetails();
-        fixture.detectChanges();
-        expect(component.isLoading).toBe(false);
+		component.setTimeOutCallForSubDetails();
+		fixture.detectChanges();
+		expect(component.isLoading).toBe(false);
 		done();
 	}));
 
