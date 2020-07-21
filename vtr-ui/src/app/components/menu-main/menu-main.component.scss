@@ -428,7 +428,7 @@
 									margin-top: -0.3rem;
 									width: 0.8rem;
 									height: 0.8rem;
-									background: #db221f;	
+									background: $button_red_start;
 									border-radius: 50%;
 									@media #{$black-on-white} {
 										@include high-contrast-white-background;
@@ -687,7 +687,7 @@
 			@media #{$breakpoint_xl} {
 				display: block;
 			}
-
+			@include high-contrast-color-reversal;
 			&:hover {
 				color: $shade_extralight;
 			}
