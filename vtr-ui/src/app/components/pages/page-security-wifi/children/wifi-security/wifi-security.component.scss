@@ -67,15 +67,19 @@
 							white-space: nowrap;
 							text-overflow: ellipsis;
 							font-size: 1.2rem;
-							max-width: 100%;
-
+                            max-width: 100%;
+                            @include high-contrast-adjust;
+                            @include high-contrast-color;
+                            
 							&.badge-success {
-								background-color: $green_dark;
+                                background-color: $green_dark;
+                                @include high-contrast-status-icon-and-badge;
 							}
 
 							&.badge-danger {
-								background-color: $button_red_start;
-							}
+                                background-color: $button_red_start;
+                                @include high-contrast-status-icon-and-badge;
+                            }
 						}
 					}
 				}
