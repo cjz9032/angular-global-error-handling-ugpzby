@@ -65,12 +65,12 @@
 			border-bottom: 0.2rem solid $blueHover;
 		}        
         @media #{$black-on-white} {
-            color: $high-contrast-blue;
+            @include hyperlink-blue-white;
             border: none;
 			border-bottom: 0.2rem solid $high-contrast-blue;
 		}
 		@media #{$white-on-black} {
-            color: $high-contrast-black-yellow;
+            @include hyperlink-yellow-black;
             border: none;
 			border-bottom: 0.2rem solid $high-contrast-black-yellow;
 		}
