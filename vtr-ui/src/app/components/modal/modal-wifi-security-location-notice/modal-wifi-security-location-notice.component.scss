@@ -63,12 +63,16 @@
 		&:hover {
 			color: $blueHover;
 			border-bottom: 0.2rem solid $blueHover;
+		}        
+        @media #{$black-on-white} {
+            color: $high-contrast-blue;
+            border: none;
+			border-bottom: 0.2rem solid $high-contrast-blue;
 		}
-		@media #{$high-contrast} {
-			color: buttonText;
-			// remove dependency effect
-			border: none;
-			border-bottom: 0.2rem solid buttonText;
+		@media #{$white-on-black} {
+            color: $high-contrast-black-yellow;
+            border: none;
+			border-bottom: 0.2rem solid $high-contrast-black-yellow;
 		}
 	}
 	// Version 3.3: UI reskin
@@ -91,16 +95,6 @@
 				&::before {
 					background: $blueHover;
 				}
-			}
-		}
-	}
-
-	&::ng-deep .button-box {
-		button {
-			@media #{$high-contrast} {
-				color: buttonText;
-				background: window !important;
-				border: 1px solid windowText !important;
 			}
 		}
 	}
