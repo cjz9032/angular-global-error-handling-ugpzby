@@ -114,6 +114,31 @@
 		border-radius: 0;
 		&:hover {
 			color: $blue-light;
+			@media #{$black-on-white} {
+				border-bottom: 1px solid $blue-light;
+			}
+			@media #{$white-on-black} {
+				border-bottom: 1px solid $blue-light;
+			}
+		}
+		&:disabled {
+			@media #{$black-on-white} {
+				color: $high-contrast-white-disabled;
+				border-bottom: 1px solid $high-contrast-white-disabled;
+			}
+			@media #{$white-on-black} {
+				color: $high-contrast-black-disabled;
+				border-bottom: 1px solid $high-contrast-black-disabled;
+			}
+		}
+		&:active {
+			color: $blue-light;
+			@media #{$black-on-white} {
+				border-bottom: 1px solid $high-contrast-blue;
+			}
+			@media #{$white-on-black} {
+				border-bottom: 1px solid $high-contrast-black-yellow;
+			}
 		}
 		@media #{$black-on-white} {
 			color: $high-contrast-blue;
