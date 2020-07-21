@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="row">
 			<div class="col col-12 col-sm-12 mt-40">
-				<p class="title" id="{{textId}}-introduction-title" role="text" [innerHTML]="items.featureTitle | translate"></p>
+				<h2 class="title" id="{{textId}}-introduction-title" [innerHTML]="items.featureTitle | translate"></h2>
 				<p *ngIf="items.featureTitleDesc && !items.descHasLink" id="{{textId}}-introduction-description" role="text" class="text-regular" [innerHTML]="items.featureTitleDesc | translate"></p>
 				<div *ngIf="items.descHasLink">
 					<p *vtrTranslate="items.featureTitleDesc | translate" id="{{textId}}-introduction-description" role="text" class="text-regular p-1">
@@ -21,7 +21,7 @@
 			<div class="col-12 col-xl-6 order-xl-2 mt-40">
 				<div class="col">
 					<div class="list-heading">
-						<p class="adjust-left" id="{{textId}}-introduction-list-title" role="text" [innerHTML]="items.featureSubtitle | translate"></p>
+						<h3 class="adjust-left" id="{{textId}}-introduction-list-title" role="text" [innerHTML]="items.featureSubtitle | translate"></h3>
 					</div>
 					<ul class="bullet-list" *ngIf="items.featureIntroList">
 						<li class="good" *ngFor="let item of items.featureIntroList, index as i">

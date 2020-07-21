@@ -2,7 +2,8 @@
 	*ngIf="smartStandby?.isCapable">
 	<div class="col-12 px-0 container-border">
 		<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.smartStandby.sectionTitle' | translate"
-			[isCollapsed]="false"
+            [headerLevel]="3"    
+            [isCollapsed]="false"
 			[collapseLinkId]="'smart-standby-collapse'"
 			[tabIndex]="0">
 			<ul class="list-group list-group-flush">

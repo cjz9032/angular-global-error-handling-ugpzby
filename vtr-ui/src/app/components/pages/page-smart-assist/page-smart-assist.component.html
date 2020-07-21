@@ -26,7 +26,8 @@
 						id="security"
 						*ngIf="intelligentSecurity.isIntelligentSecuritySupported">
 						<div class="col-12 px-0 intelligent-security-block">
-							<vtr-container-collapsible [collapseLinkId]="'intelligentSecurity'"
+                            <vtr-container-collapsible [collapseLinkId]="'intelligentSecurity'"
+                                [headerLevel]="3"
 								[tabIndex]="0"
 								[cardTitle]="'device.smartAssist.intelligentSecurity.title' | translate"
 								componentName="intelligent security"
@@ -647,7 +648,8 @@
 						id="screen"
 						*ngIf="intelligentScreen && intelligentScreen.isIntelligentScreenVisible">
 						<div class="col-12 px-0">
-							<vtr-container-collapsible [collapseLinkId]="'intelligentScreen'"
+                            <vtr-container-collapsible [collapseLinkId]="'intelligentScreen'"
+                                [headerLevel]="3"
 								[tabIndex]="0"
 								[cardTitle]="'device.smartAssist.intelligentScreen.title' | translate"
 								componentName="intelligent screen"
@@ -752,7 +754,8 @@
 						id="aps"
 						*ngIf='isAPSAvailable'>
 						<div class="col-12 px-0">
-							<vtr-container-collapsible [collapseLinkId]="'activeProtection'"
+                            <vtr-container-collapsible [collapseLinkId]="'activeProtection'"
+                                [headerLevel]="3"
 								[tabIndex]="0"
 								[cardTitle]="'device.smartAssist.activeProtectionSystem.title' | translate"
 								componentName=""
@@ -770,7 +773,8 @@
 						id="voice"
 						*ngIf="lenovoVoice.available">
 						<div class="col-12 px-0">
-							<vtr-container-collapsible [collapseLinkId]="'intelligentVoice'"
+                            <vtr-container-collapsible [collapseLinkId]="'intelligentVoice'"
+                                [headerLevel]="3"
 								[tabIndex]="0"
 								[cardTitle]="'device.smartAssist.voice.title' | translate"
 								[isCollapsed]="false"

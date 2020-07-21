@@ -15,7 +15,8 @@
 				id="display">
 				<div class="col-12 mx-auto  container-card">
 					<!-- Display -->
-					<vtr-container-collapsible [tabIndex]="0"
+                    <vtr-container-collapsible [tabIndex]="0"
+                        [headerLevel]="3"
 						[cardTitle]="'device.deviceSettings.displayCamera.display.title' | translate"
 						[vtrAppSearchScroller]="['search-display']"
 						componentName="display"
@@ -279,7 +280,8 @@
 				id="camera"
 				[hidden]="isCameraHidden">
 				<div class="col-12 mx-auto  container-card ">
-					<vtr-container-collapsible
+                    <vtr-container-collapsible
+                        [headerLevel]="3"
 						[cardTitle]="'device.deviceSettings.displayCamera.camera.title' | translate"
 						[tabIndex]="0"
 						[vtrAppSearchScroller]="['search-camera']"

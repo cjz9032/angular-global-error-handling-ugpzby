@@ -164,9 +164,11 @@
 					.card-header {
 						border: none !important;
 						.header {
-							font-size: 2rem;
-							font-weight: $weight_light;
-							color: inherit !important;
+                            color: inherit !important;
+                            .collapse-header{
+                                font-size: 2rem;
+                                font-weight: $weight_light;
+                            }
 						}
 
 						.collapse-control {
