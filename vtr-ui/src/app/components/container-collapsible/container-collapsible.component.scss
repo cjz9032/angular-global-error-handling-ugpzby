@@ -23,7 +23,8 @@
 					line-height: 3rem;
 					font-weight: $weight_light;
 					text-transform: none;
-					max-width: calc(100% - 15rem);
+                    max-width: calc(100% - 15rem);
+                    outline: none;
 				}
 
 				.collapse-control {
