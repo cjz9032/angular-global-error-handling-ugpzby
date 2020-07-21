@@ -346,7 +346,13 @@
 					&:focus {
 						outline: 0.1rem solid $menu_hover;
 						outline-offset: 0.1rem;
-					}
+                    }
+                    @media #{$black-on-white} {
+                        @include hyperlink-blue-white;
+                    }
+                    @media #{$white-on-black} {
+                        @include hyperlink-yellow-black;
+                    }
 				}
 			}
 
