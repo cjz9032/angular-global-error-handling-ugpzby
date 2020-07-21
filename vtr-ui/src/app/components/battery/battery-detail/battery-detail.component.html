@@ -25,7 +25,7 @@
 				<div class="row mb-3">
 					<div class="col">
 						<!-- Section Title like Primary Battery -->
-						<h2 class="battery-header"
+						<h2 class="battery-header" *ngIf="dataSource[0].heading.length>0"
 							id="{{automationId[0]}}">
 							{{ dataSource[0].heading | translate }}
 						</h2>
@@ -38,7 +38,6 @@
 							<div class="col-6 battery-label-text">
 								{{'device.deviceSettings.batteryGauge.details.status' | translate }}</div>
 							<div class="battery-value-text"
-								role="heading"
 								id="charge-status-string">
 								{{ dataSource[0].chargeStatusString | translate }}</div>
 						</div>
@@ -246,7 +245,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="line-height-2-5 mb-3" *ngIf="dataSource.length>1">
+			<div class="line-height-2-5 mb-3"
+				*ngIf="dataSource.length>1">
 				<div class="row mb-3">
 					<div class="col">
 						<!-- Section Title like Primary Battery -->
@@ -263,7 +263,6 @@
 							<div class="col-6 battery-label-text">
 								{{'device.deviceSettings.batteryGauge.details.status' | translate }}</div>
 							<div class="battery-value-text"
-								role="heading"
 								id="charge-status-string">
 								{{ dataSource[1].chargeStatusString | translate }}</div>
 						</div>
