@@ -56,10 +56,8 @@ export class TranslateDirective {
 					childNode.tabIndex = -1;
 					if (index < tagTextList.length) {
 						childElement.innerText = '';
-						const classAtr = document.createAttribute('class');
-						classAtr.nodeValue = 'offline-a';
 						childElement.nextElementSibling.className = childElement.className;
-						childElement.nextElementSibling.setAttributeNode(classAtr);
+						childElement.nextElementSibling.classList.add('offline-a');
 						childElement.nextElementSibling.innerHTML = tagTextList[index];
 					}
 				}
