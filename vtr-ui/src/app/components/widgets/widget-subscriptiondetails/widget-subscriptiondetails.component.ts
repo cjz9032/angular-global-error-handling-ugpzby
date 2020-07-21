@@ -1,19 +1,19 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { CommonService } from 'src/app/services/common/common.service';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalSmartPerformanceSubscribeComponent } from '../../modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
-import { v4 as uuid } from 'uuid';
 import { formatDate } from '@angular/common';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { TranslateService } from '@ngx-translate/core';
+import * as CryptoJS from 'crypto-js';
+import moment from 'moment';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { enumSmartPerformance, PaymentPage } from 'src/app/enums/smart-performance.enum';
 import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
-import moment from 'moment';
+import { CommonService } from 'src/app/services/common/common.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { SupportService } from 'src/app/services/support/support.service';
-import * as CryptoJS from 'crypto-js';
-import { LoggerService } from 'src/app/services/logger/logger.service';
 import { environment } from 'src/environments/environment';
+import { v4 as uuid } from 'uuid';
+import { ModalSmartPerformanceSubscribeComponent } from '../../modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
 @Component({
 	selector: 'vtr-widget-subscriptiondetails',
 	templateUrl: './widget-subscriptiondetails.component.html',

@@ -1,20 +1,19 @@
-import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-
-import { WidgetSubscriptiondetailsComponent } from './widget-subscriptiondetails.component';
-import { LoggerService } from 'src/app/services/logger/logger.service';
-import { SupportService } from 'src/app/services/support/support.service';
-import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
-import { CommonService } from 'src/app/services/common/common.service';
-import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
-import { DevService } from 'src/app/services/dev/dev.service';
-
+import { NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule } from '@ngx-translate/core';
-import { NgbModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs';
-import moment from 'moment';
+import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
+import { CommonService } from 'src/app/services/common/common.service';
+import { DevService } from 'src/app/services/dev/dev.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
+import { SupportService } from 'src/app/services/support/support.service';
+import { WidgetSubscriptiondetailsComponent } from './widget-subscriptiondetails.component';
+
+
 
 const response = {
 	code: 0,
