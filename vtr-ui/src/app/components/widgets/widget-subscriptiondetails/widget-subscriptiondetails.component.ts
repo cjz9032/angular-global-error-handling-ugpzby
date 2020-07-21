@@ -188,8 +188,6 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	async getSubscriptionDetails() {
 		let machineInfo;
 		machineInfo = await this.supportService.getMachineInfo();
-		// this.systemSerialNumber = machineInfo.serialnumber;
-
 		this.isLoading = true;
 		this.modalStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus) || { initiatedTime: '', isOpened: false };
 		let subscriptionData = [];
@@ -219,23 +217,34 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 				}
 				this.commonService.setLocalStorageValue(LocalStorageKey.SPProcessStatus, false);
 			}
-			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.activeStatus';
-			this.strStatus = 'ACTIVE';
-			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
-			this.isSubscribed = true;
-			this.subScribeEvent.emit(this.isSubscribed);
 
 			const lastItem = subscriptionData[subscriptionData.length - 1];
 			const releaseDate = new Date(lastItem.releaseDate);
 			releaseDate.setMonth(releaseDate.getMonth() + +lastItem.products[0].unitTerm);
 			releaseDate.setDate(releaseDate.getDate() - 1);
-			this.subscriptionDetails = {
-				startDate: this.formatLocaleDate.transform(lastItem.releaseDate),
-				endDate: this.formatLocaleDate.transform(releaseDate.toLocaleDateString()),
-				productNumber: lastItem.products[0].productCode || '',
-				status: 'smartPerformance.subscriptionDetails.activeStatus'
-			};
-			this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.subscriptionDetails);
+			if (lastItem && lastItem.status.toUpperCase() === 'COMPLETED') {
+				this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.activeStatus';
+				this.strStatus = 'ACTIVE';
+				this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
+				this.isSubscribed = true;
+				this.subScribeEvent.emit(this.isSubscribed);
+
+				this.subscriptionDetails = {
+					startDate: this.formatLocaleDate.transform(lastItem.releaseDate),
+					endDate: this.formatLocaleDate.transform(releaseDate.toLocaleDateString()),
+					productNumber: lastItem.products[0].productCode || '',
+					status: 'smartPerformance.subscriptionDetails.activeStatus'
+				};
+				this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.subscriptionDetails);
+			} else {
+				this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
+				this.isSubscribed = false;
+				this.subScribeEvent.emit(this.isSubscribed);
+				this.subscriptionDetails.startDate = '---';
+				this.subscriptionDetails.endDate = '---';
+				this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.inactiveStatus';
+				this.strStatus = 'INACTIVE';
+			}
 		} else {
 
 			if (this.modalStatus.isOpened) {
@@ -280,4 +289,3 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	}
 
 }
-
