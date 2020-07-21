@@ -274,6 +274,9 @@
         }
         &::after {
             background: $screen_dark_0 !important;
+            @media #{$high-contrast} {
+                background: window;
+            }
         }
         &::before {
             background: $screen_dark_0 !important;
