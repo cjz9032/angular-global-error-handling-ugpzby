@@ -1,280 +1,279 @@
-import { ProtocolGuardService } from './protocol-guard.service';
-import { Injector } from '@angular/core';
-import { UrlSegment, ActivatedRouteSnapshot, RouterStateSnapshot, Router, RouterModule } from '@angular/router';
-import { GuardConstants } from './guard-constants';
 import { TestBed } from '@angular/core/testing';
 import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from '@angular/platform-browser-dynamic/testing';
-import { DeviceService } from '../device/device.service';
+import { Router, RouterStateSnapshot } from '@angular/router';
 import { CommonService } from '../common/common.service';
+import { DeviceService } from '../device/device.service';
+import { GuardConstants } from './guard-constants';
+import { ProtocolGuardService } from './protocol-guard.service';
 
 describe('service', () => {
-  class MockRouterStateSnapshot {
-    url: string;
-    constructor() {
-    }
-  }
-  class MockRouter {
-    parseUrl(url) {
-      return url;
-    }
-  }
-
-  class MockDeviceService {
-	isGaming: boolean;
-  }
-
-  class MockCommonService {
-	isFirstPageLoaded () : boolean {
-		return true;
+	class MockRouterStateSnapshot {
+		url: string;
+		constructor() {
+		}
 	}
-  }
+	class MockRouter {
+		parseUrl(url) {
+			return url;
+		}
+	}
 
-  let service: ProtocolGuardService;
-  beforeEach(() => {
-    const spy = jasmine.createSpyObj('GuardConstants', ['test']);
-    const routeSpy = jasmine.createSpyObj('Router', ['parseUrl']);
-    TestBed.resetTestEnvironment();
-    TestBed.initTestEnvironment(BrowserDynamicTestingModule, platformBrowserDynamicTesting());
-    TestBed.configureTestingModule({
-      providers: [
-        {
-          provide: Router,
-          useClass: MockRouter
-        },
-        {
-          provide: GuardConstants,
-          useValue: spy
-        },
-        {
-          provide: RouterStateSnapshot,
-          useClass: MockRouterStateSnapshot
-        },
-        {
-          provide: DeviceService,
-          useClass: MockDeviceService
-        },
-        {
-          provide: CommonService,
-          useClass: MockCommonService
-        },
-        ProtocolGuardService
-      ]
-    })
-    service = TestBed.get(ProtocolGuardService);
-  });
+	class MockDeviceService {
+		isGaming: boolean;
+	}
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
+	class MockCommonService {
+		isFirstPageLoaded(): boolean {
+			return true;
+		}
+	}
 
-  it('constructURL with valid url string', () => {
-    const urlStr = 'https://vantage.csw.lenovo.com/#/dashboard';
-    const url = new URL(urlStr);
-    expect(service['constructURL'](urlStr)).toEqual(url);
-  });
+	let service: ProtocolGuardService;
+	beforeEach(() => {
+		const spy = jasmine.createSpyObj('GuardConstants', ['test']);
+		const routeSpy = jasmine.createSpyObj('Router', ['parseUrl']);
+		TestBed.resetTestEnvironment();
+		TestBed.initTestEnvironment(BrowserDynamicTestingModule, platformBrowserDynamicTesting());
+		TestBed.configureTestingModule({
+			providers: [
+				{
+					provide: Router,
+					useClass: MockRouter
+				},
+				{
+					provide: GuardConstants,
+					useValue: spy
+				},
+				{
+					provide: RouterStateSnapshot,
+					useClass: MockRouterStateSnapshot
+				},
+				{
+					provide: DeviceService,
+					useClass: MockDeviceService
+				},
+				{
+					provide: CommonService,
+					useClass: MockCommonService
+				},
+				ProtocolGuardService
+			]
+		});
+		service = TestBed.get(ProtocolGuardService);
+	});
 
-  it('constructURL with invalid url string', () => {
-    const url = 'this-is-a-invalid-url';
-    expect(service['constructURL'](url)).toEqual(undefined);
-  });
+	it('should be created', () => {
+		expect(service).toBeTruthy();
+	});
 
-  it('processPath with non-protocol path', () => {
-    const path = 'this-is-a-invalid-url';
-    expect(service['processPath'](path)).toEqual([false, '']);
-  });
+	it('constructURL with valid url string', () => {
+		const urlStr = 'https://vantage.csw.lenovo.com/#/dashboard';
+		const url = new URL(urlStr);
+		expect(service['constructURL'](urlStr)).toEqual(url);
+	});
 
-  it('processPath with non-protocol url', () => {
-    const path = '/security/wifi-security';
-    expect(service['processPath'](path)).toEqual([ false, '' ]);
-  });
+	it('constructURL with invalid url string', () => {
+		const url = 'this-is-a-invalid-url';
+		expect(service['constructURL'](url)).toEqual(undefined);
+	});
 
-  it('processPath with invalid base64', () => {
-    const path = '/?protocol=1';
-    expect(service['processPath'](path)[0]).toEqual(false);
-  });
+	it('processPath with non-protocol path', () => {
+		const path = 'this-is-a-invalid-url';
+		expect(service['processPath'](path)).toEqual([false, '']);
+	});
 
-  it('processPath with old protocol', () => {
-    const path = '/?protocol=bGVub3ZvLWNvbXBhbmlvbjo/ZmVhdHVyZUlkPTZGNDg2Q0Y1LTVENTEtNEFFOC1BQkE5LTA4OUI1Q0I5NjQyMA==';
-    const spy3x = spyOn<any>(service, 'convertToUrlAssumeProtocolIs3x').and.returnValue([false, '']);
-    const spy2x = spyOn<any>(service, 'convertToUrlAssumeProtocolIs2x').and.returnValue([true, '/security/wifi-security']);
-    expect(service['processPath'](path)[1]).toEqual('/security/wifi-security');
-  });
+	it('processPath with non-protocol url', () => {
+		const path = '/security/wifi-security';
+		expect(service['processPath'](path)).toEqual([false, '']);
+	});
 
-  it('processPath with old invalid protocol', () => {
-    const url = '/?protocol=bGVub3ZvLWNvbXBhbmlvbjo/ZmVhdHVyZUlkPTZGNDg2Q0Y1LTVENTEtNEFFOC1BQkE5LTA4OUI1Q0I5NjQyMA==';
-    const spy3x = spyOn<any>(service, 'convertToUrlAssumeProtocolIs3x').and.returnValue([false, '']);
-    const spy2x = spyOn<any>(service, 'convertToUrlAssumeProtocolIs2x').and.returnValue([false, '']);
-    expect(service['processPath'](url)).toEqual([false, '']);
-  });
+	it('processPath with invalid base64', () => {
+		const path = '/?protocol=1';
+		expect(service['processPath'](path)[0]).toEqual(false);
+	});
 
-  it('processPath with new protocol', () => {
-    const url = '/?protocol=bGVub3ZvLXZhbnRhZ2UzOmRldmljZS1zZXR0aW5ncw==';
-    const spy = spyOn<any>(service, 'convertToUrlAssumeProtocolIs3x').and.returnValue([ true, '/device/device-settings/power' ]);
-    expect(service['processPath'](url)).toEqual([ true, '/device/device-settings/power' ]);
-  });
+	it('processPath with old protocol', () => {
+		const path = '/?protocol=bGVub3ZvLWNvbXBhbmlvbjo/ZmVhdHVyZUlkPTZGNDg2Q0Y1LTVENTEtNEFFOC1BQkE5LTA4OUI1Q0I5NjQyMA==';
+		const spy3x = spyOn<any>(service, 'convertToUrlAssumeProtocolIs3x').and.returnValue([false, '']);
+		const spy2x = spyOn<any>(service, 'convertToUrlAssumeProtocolIs2x').and.returnValue([true, '/security/wifi-security']);
+		expect(service['processPath'](path)[1]).toEqual('/security/wifi-security');
+	});
 
-  it('decode base64 string short', () => {
-	  const base64str = 'bGVub3ZvLXZhbnRhZ2UzOnBhc3N3b3JkLXByb3RlY3Rpb24=';
-    expect(service['decodeBase64String'](base64str)).toEqual('lenovo-vantage3:password-protection');
-  });
+	it('processPath with old invalid protocol', () => {
+		const url = '/?protocol=bGVub3ZvLWNvbXBhbmlvbjo/ZmVhdHVyZUlkPTZGNDg2Q0Y1LTVENTEtNEFFOC1BQkE5LTA4OUI1Q0I5NjQyMA==';
+		const spy3x = spyOn<any>(service, 'convertToUrlAssumeProtocolIs3x').and.returnValue([false, '']);
+		const spy2x = spyOn<any>(service, 'convertToUrlAssumeProtocolIs2x').and.returnValue([false, '']);
+		expect(service['processPath'](url)).toEqual([false, '']);
+	});
 
-  it('decode base64 string long', () => {
-	  const base64str = 'bGVub3ZvLWNvbXBhbmlvbjpQQVJBTT9mZWF0dXJlSWQ9NkY0ODZDRjUtNUQ1MS00QUU4LUFCQTktMDg5QjVDQjk2NDIwJmFtcDtub3RpZmljYXRpb25JZD1DNzAyQjJFMS0zNEJBLTQ2MDQtOTJGNy04OERDMEQxOTU0QTcmYW1wO2J1dHRvbkNsaWNrZWQ9TGVhcm5Nb3JlJmFtcDtwbHVnaW49TGVub3ZvV2lGaVNlY3VyaXR5UGx1Z2luJmFtcDtjaG9pY2U9b3BlbiZhbXA7bXNnTmFtZT1Db21wYW5pb24uV2lGaVNlY3VyaXR5LlByb21vdGVUb0VuYWJsZTI=';
-    expect(service['decodeBase64String'](base64str)).toEqual('lenovo-companion:PARAM?featureId=6F486CF5-5D51-4AE8-ABA9-089B5CB96420&amp;notificationId=C702B2E1-34BA-4604-92F7-88DC0D1954A7&amp;buttonClicked=LearnMore&amp;plugin=LenovoWiFiSecurityPlugin&amp;choice=open&amp;msgName=Companion.WiFiSecurity.PromoteToEnable2');
-  });
+	it('processPath with new protocol', () => {
+		const url = '/?protocol=bGVub3ZvLXZhbnRhZ2UzOmRldmljZS1zZXR0aW5ncw==';
+		const spy = spyOn<any>(service, 'convertToUrlAssumeProtocolIs3x').and.returnValue([true, '/device/device-settings/power']);
+		expect(service['processPath'](url)).toEqual([true, '/device/device-settings/power']);
+	});
 
-  it('decode base64 invalid string', () => {
-	  const base64str = '1';
-    expect(service['decodeBase64String'](base64str)).toEqual('');
-  });
+	it('decode base64 string short', () => {
+		const base64str = 'bGVub3ZvLXZhbnRhZ2UzOnBhc3N3b3JkLXByb3RlY3Rpb24=';
+		expect(service['decodeBase64String'](base64str)).toEqual('lenovo-vantage3:password-protection');
+	});
 
-  it('convertToUrlAssumeProtocolIs3x valid 3.x protocol', () => {
-	  const protocol = 'lenovo-vantage3:password-protection';
-    expect(service['convertToUrlAssumeProtocolIs3x'](protocol)).toEqual([ true, '/security/password-protection' ]);
-  });
+	it('decode base64 string long', () => {
+		const base64str = 'bGVub3ZvLWNvbXBhbmlvbjpQQVJBTT9mZWF0dXJlSWQ9NkY0ODZDRjUtNUQ1MS00QUU4LUFCQTktMDg5QjVDQjk2NDIwJmFtcDtub3RpZmljYXRpb25JZD1DNzAyQjJFMS0zNEJBLTQ2MDQtOTJGNy04OERDMEQxOTU0QTcmYW1wO2J1dHRvbkNsaWNrZWQ9TGVhcm5Nb3JlJmFtcDtwbHVnaW49TGVub3ZvV2lGaVNlY3VyaXR5UGx1Z2luJmFtcDtjaG9pY2U9b3BlbiZhbXA7bXNnTmFtZT1Db21wYW5pb24uV2lGaVNlY3VyaXR5LlByb21vdGVUb0VuYWJsZTI=';
+		expect(service['decodeBase64String'](base64str)).toEqual('lenovo-companion:PARAM?featureId=6F486CF5-5D51-4AE8-ABA9-089B5CB96420&amp;notificationId=C702B2E1-34BA-4604-92F7-88DC0D1954A7&amp;buttonClicked=LearnMore&amp;plugin=LenovoWiFiSecurityPlugin&amp;choice=open&amp;msgName=Companion.WiFiSecurity.PromoteToEnable2');
+	});
 
-  it('convertToUrlAssumeProtocolIs3x 3.x protocol without path', () => {
-	  const protocol = 'lenovo-vantage3:';
-    expect(service['convertToUrlAssumeProtocolIs3x'](protocol)).toEqual([true, '/']);
-  });
+	it('decode base64 invalid string', () => {
+		const base64str = '1';
+		expect(service['decodeBase64String'](base64str)).toEqual('');
+	});
 
-  it('convertToUrlAssumeProtocolIs3x new not exist protocol', () => {
-	  const protocol = 'lenovo-vantage3:not-exist-protocol';
-    expect(service['convertToUrlAssumeProtocolIs3x'](protocol)).toEqual([ false, '' ]);
-  });
+	it('convertToUrlAssumeProtocolIs3x valid 3.x protocol', () => {
+		const protocol = 'lenovo-vantage3:password-protection';
+		expect(service['convertToUrlAssumeProtocolIs3x'](protocol)).toEqual([true, '/security/password-protection']);
+	});
 
-  it('convertToUrlAssumeProtocolIs3x empty args', () => {
-	  const protocol = '';
-    expect(service['convertToUrlAssumeProtocolIs3x'](protocol)).toEqual([ false, '' ]);
-  });
+	it('convertToUrlAssumeProtocolIs3x 3.x protocol without path', () => {
+		const protocol = 'lenovo-vantage3:';
+		expect(service['convertToUrlAssumeProtocolIs3x'](protocol)).toEqual([true, '/']);
+	});
 
-  it('convertToUrlAssumeProtocolIs3x valid 2.x protocol', () => {
-	  const protocol = 'lenovo-companion:PARAM?section=input';
-    expect(service['convertToUrlAssumeProtocolIs3x'](protocol)).toEqual([ false, '' ]);
-  });
+	it('convertToUrlAssumeProtocolIs3x new not exist protocol', () => {
+		const protocol = 'lenovo-vantage3:not-exist-protocol';
+		expect(service['convertToUrlAssumeProtocolIs3x'](protocol)).toEqual([false, '']);
+	});
 
-  it('convertToUrlAssumeProtocolIs3x non-url string', () => {
-	  const protocol = 'general-string';
-    expect(service['convertToUrlAssumeProtocolIs3x'](protocol)).toEqual([ false, '' ]);
-  });
+	it('convertToUrlAssumeProtocolIs3x empty args', () => {
+		const protocol = '';
+		expect(service['convertToUrlAssumeProtocolIs3x'](protocol)).toEqual([false, '']);
+	});
 
-  it('convertToUrlAssumeProtocolIs2x valid 3.x protocol', () => {
-	  const protocol = 'lenovo-vantage3:password-protection';
-    expect(service['convertToUrlAssumeProtocolIs2x'](protocol)).toEqual( [ false, '' ]);
-  });
+	it('convertToUrlAssumeProtocolIs3x valid 2.x protocol', () => {
+		const protocol = 'lenovo-companion:PARAM?section=input';
+		expect(service['convertToUrlAssumeProtocolIs3x'](protocol)).toEqual([false, '']);
+	});
 
-  it('convertToUrlAssumeProtocolIs2x valid 2x protocol without path', () => {
-    const protocol = 'lenovo-companion:?section=input';
-    const result = service['convertToUrlAssumeProtocolIs2x'](protocol);
-    expect(result[0]).toEqual(true);
-    expect(result[1].startsWith('/device/device-settings/input-accessories')).toEqual(true);
-  });
+	it('convertToUrlAssumeProtocolIs3x non-url string', () => {
+		const protocol = 'general-string';
+		expect(service['convertToUrlAssumeProtocolIs3x'](protocol)).toEqual([false, '']);
+	});
 
-  it('convertToUrlAssumeProtocolIs2x valid 2x protocol with existed feature-id', () => {
-    const protocol = 'lenovo-companion:PARAM?featureId=5fbdca5f-02ca-4159-8f1c-725703e31473';
-    const result = service['convertToUrlAssumeProtocolIs2x'](protocol);
-    expect(result[0]).toEqual(true);
-    expect(result[1].startsWith('/device/device-settings/power?featureid=5fbdca5f-02ca-4159-8f1c-725703e31473')).toEqual(true);
-  });
+	it('convertToUrlAssumeProtocolIs2x valid 3.x protocol', () => {
+		const protocol = 'lenovo-vantage3:password-protection';
+		expect(service['convertToUrlAssumeProtocolIs2x'](protocol)).toEqual([false, '']);
+	});
 
-  it('convertToUrlAssumeProtocolIs2x valid 2x protocol with not existed feature-id', () => {
-	  const protocol = 'lenovo-companion:PARAM?featureId=xxxxxx-02ca-4159-8f1c-725703e31473';
-    expect(service['convertToUrlAssumeProtocolIs2x'](protocol)).toEqual([ false, '' ]);
-  });
+	it('convertToUrlAssumeProtocolIs2x valid 2x protocol without path', () => {
+		const protocol = 'lenovo-companion:?section=input';
+		const result = service['convertToUrlAssumeProtocolIs2x'](protocol);
+		expect(result[0]).toEqual(true);
+		expect(result[1].startsWith('/device/device-settings/input-accessories')).toEqual(true);
+	});
 
-  it('convertToUrlAssumeProtocolIs2x valid 2x protocol with existed feature-id but feature-id is useless', () => {
-	  const getSpy = jasmine.createSpy().and.returnValue({
-		  '6f486cf5-5d51-4ae8-aba9-xxxxxxxxxxxx': 'xxxxxxxx'
-	  })
-	  Object.defineProperty(service, 'featureIdToSemantic', { get: getSpy });
-	  const protocol = 'lenovo-companion:PARAM?featureId=6f486cf5-5d51-4ae8-aba9-xxxxxxxxxxxx';
-    expect(service['convertToUrlAssumeProtocolIs2x'](protocol)).toEqual([ false, '' ]);
-  });
+	it('convertToUrlAssumeProtocolIs2x valid 2x protocol with existed feature-id', () => {
+		const protocol = 'lenovo-companion:PARAM?featureId=5fbdca5f-02ca-4159-8f1c-725703e31473';
+		const result = service['convertToUrlAssumeProtocolIs2x'](protocol);
+		expect(result[0]).toEqual(true);
+		expect(result[1].startsWith('/device/device-settings/power?featureid=5fbdca5f-02ca-4159-8f1c-725703e31473')).toEqual(true);
+	});
 
-  it('convertToUrlAssumeProtocolIs2x invalid 3.x like protocol', () => {
-	  const protocol = 'lenovo-vantage3:not-exist';
-    expect(service['convertToUrlAssumeProtocolIs2x'](protocol)).toEqual([ false, '' ]);
-  });
+	it('convertToUrlAssumeProtocolIs2x valid 2x protocol with not existed feature-id', () => {
+		const protocol = 'lenovo-companion:PARAM?featureId=xxxxxx-02ca-4159-8f1c-725703e31473';
+		expect(service['convertToUrlAssumeProtocolIs2x'](protocol)).toEqual([false, '']);
+	});
 
-  it('convertToUrlAssumeProtocolIs2x empty args', () => {
-	  const protocol = '';
-    expect(service['convertToUrlAssumeProtocolIs2x'](protocol)).toEqual([false, '']);
-  });
+	it('convertToUrlAssumeProtocolIs2x valid 2x protocol with existed feature-id but feature-id is useless', () => {
+		const getSpy = jasmine.createSpy().and.returnValue({
+			'6f486cf5-5d51-4ae8-aba9-xxxxxxxxxxxx': 'xxxxxxxx'
+		});
+		Object.defineProperty(service, 'featureIdToSemantic', { get: getSpy });
+		const protocol = 'lenovo-companion:PARAM?featureId=6f486cf5-5d51-4ae8-aba9-xxxxxxxxxxxx';
+		expect(service['convertToUrlAssumeProtocolIs2x'](protocol)).toEqual([false, '']);
+	});
 
-  it('convertToUrlAssumeProtocolIs2x valid 2.x protocol', () => {
-	  const protocol = 'lenovo-companion:PARAM?section=input';
-    const result = service['convertToUrlAssumeProtocolIs2x'](protocol);
-    expect(result[0]).toEqual(true);
-    expect(result[1].startsWith('/device/device-settings/input-accessories?section=input')).toEqual(true);
-  });
+	it('convertToUrlAssumeProtocolIs2x invalid 3.x like protocol', () => {
+		const protocol = 'lenovo-vantage3:not-exist';
+		expect(service['convertToUrlAssumeProtocolIs2x'](protocol)).toEqual([false, '']);
+	});
 
-  it('convertToUrlAssumeProtocolIs2x valid 2.x protocol, exist section, but no semantic', () => {
-    const getSpy = jasmine.createSpy().and.returnValue({
-      'input': 'xxxxx',
-    })
-    Object.defineProperty(service, 'sectionToSemantic', { get: getSpy });
+	it('convertToUrlAssumeProtocolIs2x empty args', () => {
+		const protocol = '';
+		expect(service['convertToUrlAssumeProtocolIs2x'](protocol)).toEqual([false, '']);
+	});
 
-    const protocol = 'lenovo-companion:PARAM?section=input';
-    expect(service['convertToUrlAssumeProtocolIs2x'](protocol)).toEqual([ false, '' ]);
-  });
+	it('convertToUrlAssumeProtocolIs2x valid 2.x protocol', () => {
+		const protocol = 'lenovo-companion:PARAM?section=input';
+		const result = service['convertToUrlAssumeProtocolIs2x'](protocol);
+		expect(result[0]).toEqual(true);
+		expect(result[1].startsWith('/device/device-settings/input-accessories?section=input')).toEqual(true);
+	});
 
-  it('convertToUrlAssumeProtocolIs2x invalid 2.x protocol', () => {
-	  const protocol = 'lenovo-companion:PARAM?section=not-exist';
-    expect(service['convertToUrlAssumeProtocolIs2x'](protocol)).toEqual([ false, '' ]);
-  });
+	it('convertToUrlAssumeProtocolIs2x valid 2.x protocol, exist section, but no semantic', () => {
+		const getSpy = jasmine.createSpy().and.returnValue({
+			'input': 'xxxxx',
+		});
+		Object.defineProperty(service, 'sectionToSemantic', { get: getSpy });
 
-  it('convertToUrlAssumeProtocolIs2x non-url string', () => {
-	  const protocol = 'general-string';
-    expect(service['convertToUrlAssumeProtocolIs2x'](protocol)).toEqual([ false, '' ]);
-  });
+		const protocol = 'lenovo-companion:PARAM?section=input';
+		expect(service['convertToUrlAssumeProtocolIs2x'](protocol)).toEqual([false, '']);
+	});
 
-  it('isRedirectUrlNeeded needed', () => {
-    const path = '/?protocol=bGVub3ZvLXZhbnRhZ2UzOmRldmljZS1zZXR0aW5ncw==';
-    const spy = spyOn<any>(service, 'processPath').and.returnValue([true, '/device/device-settings/power']);
-    expect(service['isRedirectUrlNeeded'](path)).toEqual([true, '/device/device-settings/power']);
-  });
+	it('convertToUrlAssumeProtocolIs2x invalid 2.x protocol', () => {
+		const protocol = 'lenovo-companion:PARAM?section=not-exist';
+		expect(service['convertToUrlAssumeProtocolIs2x'](protocol)).toEqual([false, '']);
+	});
 
-  it('isRedirectUrlNeeded is not needed', () => {
-    const path = '/device/device-settings/power';
-    const spy = spyOn<any>(service, 'processPath').and.returnValue([false, '']);
-    expect(service['isRedirectUrlNeeded'](path)).toEqual([false, '']);
-  });
+	it('convertToUrlAssumeProtocolIs2x non-url string', () => {
+		const protocol = 'general-string';
+		expect(service['convertToUrlAssumeProtocolIs2x'](protocol)).toEqual([false, '']);
+	});
 
-  it('canActivate return true', () => {
-  	const state = TestBed.get(RouterStateSnapshot);
- 	  state.url = '#/security';
-  	spyOn<any>(service['commonService'], 'isFirstPageLoaded').and.returnValue(false);
-	  expect(service['canActivate'](null, state)).toEqual(true);
-  })
+	it('isRedirectUrlNeeded needed', () => {
+		const path = '/?protocol=bGVub3ZvLXZhbnRhZ2UzOmRldmljZS1zZXR0aW5ncw==';
+		const spy = spyOn<any>(service, 'processPath').and.returnValue([true, '/device/device-settings/power']);
+		expect(service['isRedirectUrlNeeded'](path)).toEqual([true, '/device/device-settings/power']);
+	});
 
-  it('canActivate with valid protocol', () => {
-    const state = TestBed.get(RouterStateSnapshot);
-    const router = TestBed.get(Router);
-    state.url = '#/?protocol=bGVub3ZvLXZhbnRhZ2UzOmRldmljZS1zZXR0aW5ncw==';
-    expect(service['canActivate'](null, state)).toEqual(router.parseUrl('/device/device-settings/power'));
-  })
+	it('isRedirectUrlNeeded is not needed', () => {
+		const path = '/device/device-settings/power';
+		const spy = spyOn<any>(service, 'processPath').and.returnValue([false, '']);
+		expect(service['isRedirectUrlNeeded'](path)).toEqual([false, '']);
+	});
 
-  it('canActivate invalid protocol', () => {
-    const state = TestBed.get(RouterStateSnapshot);
-    state.url = '#/?protocol=xxxxxxx';
-    spyOn<any>(service['commonService'], 'isFirstPageLoaded').and.returnValue(true);
-    expect(service['canActivate'](null, state)).toEqual(false);
-  })
+	it('canActivate return true', () => {
+		const state = TestBed.get(RouterStateSnapshot);
+		state.url = '#/security';
+		spyOn<any>(service['commonService'], 'isFirstPageLoaded').and.returnValue(false);
+		expect(service['canActivate'](null, state)).toEqual(true);
+	});
 
-  it('addTimestampQueryParam undefined params', () => {
-    const query = undefined;
-    expect(service['addTimestampQueryParam'](query)).toEqual(undefined);
-  })
+	it('canActivate with valid protocol', () => {
+		const state = TestBed.get(RouterStateSnapshot);
+		const router = TestBed.get(Router);
+		state.url = '#/?protocol=bGVub3ZvLXZhbnRhZ2UzOmRldmljZS1zZXR0aW5ncw==';
+		expect(service['canActivate'](null, state)).toEqual(router.parseUrl('/device/device-settings/power'));
+	});
 
-  it('addTimestampQueryParam not query string params', () => {
-    const query = 'not-query-string';
-    expect(service['addTimestampQueryParam'](query)).toEqual('not-query-string');
-  })
+	it('canActivate invalid protocol', () => {
+		const state = TestBed.get(RouterStateSnapshot);
+		state.url = '#/?protocol=xxxxxxx';
+		spyOn<any>(service['commonService'], 'isFirstPageLoaded').and.returnValue(true);
+		expect(service['canActivate'](null, state)).toEqual(false);
+	});
 
-  it('addTimestampQueryParam not query string params', () => {
-    const query = '?query-string';
-    const result = service['addTimestampQueryParam'](query);
-    expect(result.startsWith('?query-string&timestamp=')).toEqual(true);
-  })
+	it('addTimestampQueryParam undefined params', () => {
+		const query = undefined;
+		expect(service['addTimestampQueryParam'](query)).toEqual(undefined);
+	});
+
+	it('addTimestampQueryParam not query string params', () => {
+		const query = 'not-query-string';
+		expect(service['addTimestampQueryParam'](query)).toEqual('not-query-string');
+	});
+
+	it('addTimestampQueryParam not query string params', () => {
+		const query = '?query-string';
+		const result = service['addTimestampQueryParam'](query);
+		expect(result.startsWith('?query-string&timestamp=')).toEqual(true);
+	});
 });
 
