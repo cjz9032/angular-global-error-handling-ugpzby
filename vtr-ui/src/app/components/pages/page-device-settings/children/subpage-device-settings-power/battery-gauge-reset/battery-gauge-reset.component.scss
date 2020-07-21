@@ -49,6 +49,23 @@
 					.button {
 						background: linear-gradient(102deg, #e74c3c 0%, #ff7d70 100%);
 						color: $light;
+						@media #{$white-on-black} {
+							@include high-contrast-black-background;
+							color: $dark;
+						}
+						@media #{$black-on-white} {
+							@include high-contrast-white-background;
+						}
+						&:hover {
+							@media #{$white-on-black} {
+								@include high-contrast-background-transparent;
+								@include high-contrast-black-text-color;
+							}
+							@media #{$black-on-white} {
+								@include high-contrast-background-transparent;
+								@include high-contrast-white-text-color;
+							}
+						}
 					}
 				}
 			}

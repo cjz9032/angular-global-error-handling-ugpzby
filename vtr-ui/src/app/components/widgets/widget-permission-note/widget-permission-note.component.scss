@@ -6,14 +6,14 @@
 	color: $alt;
 	border: 1px solid $shade_lighter;
 	@media #{$black-on-white} {
-		color: $alt;
-		background-color: $light-grey;
-		border:none;
+		color: $dark;
+		@include high-contrast-background-transparent;
+		@include black-border;
 	}
 	@media #{$white-on-black} {
-		color: $alt;
-		background-color: $light-grey;
-		border:none;
+		color: $light;
+		@include high-contrast-background-transparent;
+		@include white-border;
 	}
 
 
