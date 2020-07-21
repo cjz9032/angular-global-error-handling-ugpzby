@@ -8,6 +8,9 @@
 		.vtr-page-header {
 			.gaming-header-image {
 				height: 5rem;
+				@media #{$high-contrast} {
+					background-color: $darkCell;
+				}
 			}
 		}
 	}
