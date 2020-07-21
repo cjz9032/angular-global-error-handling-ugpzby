@@ -3,19 +3,21 @@
 	<div class="modal-information">
 		<h1 id="scan-failure-title" class="title">{{ 'hardwareScan.scanFailureModal.title' | translate }}</h1>
 		<p id="scan-failure-description" class="description">{{ 'hardwareScan.scanFailureModal.problemDetected' | translate }}</p>
+		<div class="modules-container">
+			<div class="modules" aria-live="polite" *ngFor="let module of failedModules; let idModule = index;">
+				<div class="list-module" *ngFor="let device of module.devices;">
+					<li class="list-device" [attr.aria-describedby]="'module-' + idModule">
+						<div class="module-row">
+							<p class="module-name-container" id="{{ 'module-' + idModule }}" >
+								<span class="module-name">{{ module.moduleName }}</span>
+								<span class="description">{{ device.deviceName }}</span>
+							</p>
+							<vtr-ui-hardware-scan-test-result [module]="module"></vtr-ui-hardware-scan-test-result>
+						</div>
+					</li>
+				</div>
 
-		<div class="modules" aria-live="polite" *ngFor="let module of failedModules; let idModule = index">
-			<li class="list-module" [attr.aria-describedby]="'module-' + idModule">
-				<div class="module-row">
-					<vtr-ui-test-result-icon [testResultResponse]="testResultEnum.Warning"></vtr-ui-test-result-icon>
-					<span id="{{ 'module-' + idModule }}" class="module-name">{{ module.moduleName }}</span>
-				</div>
-				<div *ngIf="module.moduleId == 'storage'" aria-live="polite">
-					<div class="list-device" *ngFor="let device of module.devices;">
-						<span class="description">{{ device.deviceName }}</span>
-					</div>
-				</div>
-			</li>
+			</div>
 		</div>
 		<div *ngIf="hasFailedRbsDevice; else withoutRBS">
 			<div class="description description-failure">
@@ -27,7 +29,7 @@
 					[tooltipText]="'hardwareScan.scanFailureModal.recoverBadSectorsButtonText' | translate"
 					[label]="'hardwareScan.scanFailureModal.recoverBadSectorsButtonText' | translate">
 				</vtr-ui-button>
-				<button class="btn btn-link support-button" type="button" id="supportButtonWithRBS"
+				<button class="support-button" type="button" id="supportButtonWithRBS"
 					vtrMetrics metricsEvent="FeatureClick" metricsParent="HardwareScan.ScanFailureActions" metricsItem="ScanFailureActions.LenovoSupport"
 					[title]="'hardwareScan.scanFailureModal.supportButtonText' | translate"
 					(click)="openSupportPage()">{{'hardwareScan.scanFailureModal.supportButtonText' | translate }}</button>
@@ -49,11 +51,21 @@
 				</div>
 			</div>
 		</ng-template>
+		<div class="btn-modal-close">
+			<vtr-ui-close-button
+				metricsItem="ScanFailureActions.Close"
+				metricsEvent="FeatureClick"
+				metricsParent="HardwareScan.ScanFailureActions"
+				aria-label="Close"
+				(clickClose)="closeModal()">
+			</vtr-ui-close-button>
+		</div>
 
-		<a vtrMetrics metricsEvent="FeatureClick" metricsParent="HardwareScan.ScanFailureActions" aria-label="Close"
-			metricsItem="ScanFailureActions.Close" role="button" href="javascript:;" class="close-btn"
-			(click)="closeModal()">
-			<img [src]=" 'assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
-		</a>
+
+<!--		<a vtrMetrics metricsEvent="FeatureClick" metricsParent="HardwareScan.ScanFailureActions" aria-label="Close"-->
+<!--			metricsItem="ScanFailureActions.Close" role="button" href="javascript:;" class="close-btn"-->
+<!--			(click)="closeModal()">		-->
+<!--			<img [src]=" 'assets/icons/Close.svg' | svgInline | async" alt="" srcset="">-->
+<!--		</a>-->
 	</div>
 </div>

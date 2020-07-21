@@ -1,58 +1,108 @@
 @import "../../../app.theme";
 
 .vtr-modal-scan-failure{
-	fa-icon {
-		font-size: 2rem;
-		color: $main;
-	}
+	padding: 1.8rem 2.4rem 2.4rem;
+
+	//fa-icon {
+	//	font-size: 2rem;
+	//	color: $main;
+	//}
 
 	.modal-information {
-		padding: 0 2rem 0 2rem;
+		//padding: 0 2rem 0 2rem;
 
 		.title {
 			width: 100%;
 			font-size: $fontsize_xl;
 			font-weight: $weight_light;
 			color: $shade_blue;
-			padding-bottom: 1rem;
-			padding-right: 2.4rem; // to avoid title overlapping X button
+			margin-bottom: 2.4rem;
+			height: 3.2rem;
+			padding: 0 2.4rem 0 0; // to avoid title overlapping X button
+
 		}
 
 		.description {
 			width: 100%;
-			color: $shade-darker;
-			font-size: $fontsize_xs2;
+			color: $shade_blue;
+			font-size: $fontsize_xs;
 			font-weight: $weight_light;
+			//margin-bottom: 2rem;
+			padding: 0 2.4rem 0 0;
 		}
 
-		.description-failure {
-			padding-top: 1rem;
+		.description-failure ::ng-deep {
+			b {
+				font-weight: $weight_600;
+			}
+
+			padding: 1rem 0 0 0;
+		}
+
+		.modules-container {
+			display: flex;
+			flex-direction: column;
+			border-top: solid 1px $grey_light;
+			border-bottom: solid 1px $grey_light;
 		}
 
 		.modules {
-			.warning {
-				color: $orange_light;
-			}
+			//.warning {
+			//	color: $orange_light;
+			//}
+
 			.list-module {
+				margin-top: 2.5rem;
 				list-style-type: none;
+				//
+				//&:last-child {
+				//}
 
 				.module-row {
 					display: flex;
 					justify-content: space-between;
 					align-items: center;
-					padding: 0 1.5rem 0 0rem;
+					//padding: 0 1.5rem 0 0rem;
+					padding: 0 0 0 0;
+					.module-name-container {
+						display: flex;
+						flex-wrap: wrap;
+						width: 100%;
+						margin: 0 0 0 0;
+
+						.module-name {
+							color: $shade_blue;
+							font-size: $fontsize_xs;
+							//padding-left: 1rem;
+							margin-bottom: 0;
+							font-weight: $weight_600;
+							flex-shrink: 1;
+
+							&:after {
+								content: ' ';
+								margin-right: 1.2rem;
+								//white-space: pre;
+							}
+						}
+
+						.description {
+							width: auto;
+							flex-grow: 1;
+						}
+					}
+
 				}
 
-				.module-name {
-					width: 100%;
-					color: $shade-darker;
-					font-size: $fontsize_xs2;
-					padding-left: 1rem;
-					font-weight: $weight_bold;
-				}
+				//.list-device {
+				//	//padding: 0 0 0 3.4rem; // icon size (2.4rem) + module-name spacing (1rem)
+				//}
+			}
 
-				.list-device {
-					padding: 0 0 0 3.4rem; // icon size (2.4rem) + module-name spacing (1rem)
+			&:last-child {
+				.list-module {
+					&:last-child {
+						margin-bottom: 2.5rem;
+					}
 				}
 			}
 		}
@@ -62,35 +112,64 @@
 			padding: 1rem 0 0 0;
 		}
 
+		//.support-button {
+		//	font-size: $fontsize_xs;
+		//	//font-weight: $weight_medium;
+		//	line-height: 1.5rem;
+		//	text-align: center;
+		//	text-transform: uppercase;
+		//	padding: 1rem !important;
+		//	font-weight: $weight_bold;
+		//
+		//	//&:hover {
+		//	//	border-bottom: none;
+		//	//
+		//	//}
+		//
+		//	&:focus {
+		//		outline: 0.1rem solid $menu_hover;
+		//		outline-offset: 0.2rem;
+		//	}
+		//
+		//	.support-button-text {
+		//		cursor: pointer;
+		//		//text-decoration: underline;
+		//		border-bottom: 0.2rem solid black;
+		//
+		//
+		//		&:hover {
+		//			border-bottom: none;
+		//			color: $light;
+		//			text-decoration: none;
+		//		}
+		//	}
+		//
+		//
+		//}
+
 		.support-button {
 			font-size: $fontsize_xs;
-			font-weight: $weight_medium;
-			line-height: 1.5rem;
-			text-align: center;
-			text-transform: uppercase;
-			padding: 1rem !important;
 			font-weight: $weight_bold;
-
-			&:focus {
-				outline: 0.1rem solid $menu_hover;
-				outline-offset: 0.2rem;
+			color: $menu_hover;
+			border-bottom: 0.2rem solid $menu_hover;
+			padding-bottom: 0.2rem;
+			margin-left: 2.5rem;
+			text-transform: uppercase;
+			cursor: pointer;
+			&:hover {
+				border: none;
+				padding-bottom: 0.5rem; // Centering the text after removing its text-decoration
+				text-decoration: none; //Remove underline on customize scan when the cursor is under the link
 			}
-
-			.support-button-text {
-				cursor: pointer;
-				text-decoration: underline;
-
-				&:hover {
-					color: $light;
-					text-decoration: none;
-				}
+			&:focus {
+				@include outline_blue;
 			}
 		}
 
 		.close-btn {
 			position: absolute;
-			right: 2.3rem;
-			top: 2.4rem;
+			right: 2.2rem;
+			top: 1.8rem;
 			width: 2rem;
 			height: 2rem;
 			cursor: pointer;
@@ -108,5 +187,4 @@
 }
 
 .modal-body {
-	padding: 2.4rem;
 }
