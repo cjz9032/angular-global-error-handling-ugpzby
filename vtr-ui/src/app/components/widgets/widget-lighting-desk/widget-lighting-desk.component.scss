@@ -77,14 +77,16 @@
                    transform: rotate(180deg);
                 }
                 &.disabled-rig{
-                    color: $screen_light_15;
+                    color: $gaming_white60;
                     cursor: not-allowed !important;
                     background: none !important;
+                    opacity: 0.4;
                  }
                  &.disabled-lef{
-                    color: $screen_light_15;
+                    color: $gaming_white60;
                     cursor: not-allowed !important;
                     background: none !important;
+                    opacity: 0.4;
                  }
             }
             .lighting-panel-name{
