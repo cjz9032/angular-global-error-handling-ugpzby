@@ -13,6 +13,9 @@
 		.modal-title {
 			img {
 				height: 3rem;
+				@media #{$high-contrast}{
+					background-color: $darkCell;
+				}
 			}
 		}
 		.close {
@@ -33,15 +36,15 @@
 	.modal-body {
 		padding: 0 4rem 3rem 4rem;
 		width: 100%;
-		@media #{$high-contrast} {
-			border: 1px solid windowText;
-		}
 		.innerContent{
 			width: 100%;
 			background: $background;
 			padding: 2rem;
 			max-height: 48.5vh;
 			overflow-y: auto;
+			@media #{$high-contrast} {
+				border: 1px solid windowText;
+			}
 			p {
 				font-size: 1.6rem;
 			}

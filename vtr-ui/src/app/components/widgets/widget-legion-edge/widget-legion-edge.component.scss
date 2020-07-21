@@ -12,9 +12,9 @@
 	.gaming-header-image {
 		height: 4rem;
 		margin-top: 0.8rem;
-		@media #{$black-on-white}{
-			background-color: $high-contrast-grey;
-			}
+		@media #{$high-contrast}{
+			background-color: $darkCell;
+		}
 	}
 	.help-box {
 		height: 4rem;
@@ -96,30 +96,22 @@
 						width: 100%;
 						height: 100%;
 						opacity: 0.5;
+						@media #{$high-contrast}{
+							background-color: $darkCell;
+							opacity: 1;
+						}
 					}
 					.performance {
 						background-image: url(../../../../assets/images/gaming/thermalMode2/performance.png);
 						background-size: cover;
-						@media #{$high-contrast} {
-							background-image: url(../../../../assets/images/gaming/thermalMode2/performance-hc@2x.png);
-							opacity: 1;
-						}
 					}
 					.balance {
 						background-image: url(../../../../assets/images/gaming/thermalMode2/balance.png);
 						background-size: cover;
-						@media #{$high-contrast} {
-							background-image: url(../../../../assets/images/gaming/thermalMode2/balance-hc@2x.png);
-							opacity: 1;
-						}
 					}
 					.quiet {
 						background-image: url(../../../../assets/images/gaming/thermalMode2/quiet.png);
 						background-size: cover;
-						@media #{$high-contrast} {
-							background-image: url(../../../../assets/images/gaming/thermalMode2/quiet-hc@2x.png);
-							opacity: 1;
-						}
 					}
 				}
 			}
