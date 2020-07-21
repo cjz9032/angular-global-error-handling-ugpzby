@@ -19,7 +19,7 @@ export class OledPowerSettingsComponent implements OnInit, OnChanges {
 	public taskBarDimmerValue: number;
 	public backgroundDimmerValue: number;
 	public displayDimmerValue: number;
-	public metricsParent  = CommonMetricsModel.ParentDeviceSettings;
+	public metricsParent = CommonMetricsModel.ParentDeviceSettings;
 
 	constructor(
 		public displayService: DisplayService,
@@ -59,7 +59,7 @@ export class OledPowerSettingsComponent implements OnInit, OnChanges {
 			value: 1,
 			placeholder: seconds,
 			text: `30 ${seconds}`,
-			metricsValue:'30 seconds'
+			metricsValue: '30 seconds'
 		},
 		{
 			name: '1',
