@@ -827,7 +827,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		this.modalService.open(ModalSmartPerformanceFeedbackComponent, {
 			backdrop: true,
 			size: 'lg',
-			keyboard: false,
+			keyboard: true,
 			centered: true,
 			windowClass: 'smart-performance-feedback-Modal'
 		});
