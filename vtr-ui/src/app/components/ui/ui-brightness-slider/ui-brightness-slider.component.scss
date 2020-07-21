@@ -39,10 +39,11 @@
 			}
 			@media #{$high-contrast} {
 				&.ng5-slider-bar {
-					background-color: windowText;
+					border: 0.1rem solid windowText;
 				}
 				&.ng5-slider-selection {
 					background: highlight;
+					border: 0.1rem solid highlight;
 				}
 				&.ng5-slider-pointer {
 					background-color: highlight;
