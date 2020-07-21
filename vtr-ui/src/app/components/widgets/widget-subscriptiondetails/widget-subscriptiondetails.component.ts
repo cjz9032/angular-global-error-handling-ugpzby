@@ -274,7 +274,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 			this.strStatus = 'PROCESSING';
 			setTimeout(() => {
 				if (this.intervalTime && this.intervalTime > currentTime) {
-					this.getSubscriptionDetails();
+					this.();
 				} else {
 					this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.inactiveStatus';
 					this.strStatus = 'INACTIVE';
