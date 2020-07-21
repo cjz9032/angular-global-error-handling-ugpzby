@@ -1,10 +1,10 @@
-import { Component, OnInit, Input, SimpleChanges, OnChanges } from '@angular/core';
-import { DropDownInterval } from '../../../data-models/common/drop-down-interval.model';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { DisplayService } from 'src/app/services/display/display.service';
-import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
 import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
+import { DisplayService } from 'src/app/services/display/display.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { DropDownInterval } from '../../../data-models/common/drop-down-interval.model';
 
 @Component({
 	selector: 'vtr-oled-power-settings',
