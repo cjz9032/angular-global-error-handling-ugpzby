@@ -151,39 +151,42 @@
 }
 
 ::ng-deep {
-	vtr-page-macrokey{
-	.start-button,
-	.stop-button {
-		.button {
-			display: inline-block !important;
-			max-width: calc(100% - 2rem);
-			@media #{$mediaquery_13} {
-				padding: 1.2rem 3rem !important;
-			}
-			@media #{$mediaquery_X3} {
-				padding: 1.2rem 4rem !important;
-			}
-			&:hover {
-				background-color: $blueHover;
-			}
-			&:focus {
-				&::before{
-					position: absolute;
-					display: block;
-					content: "";
-					top: -0.2rem !important;
-					left: -0.2rem;
-					right: -0.2rem;
-					bottom: -0.2rem;
-					border-radius: 3rem;
-					border: 1px solid #257eff;
-					width: calc(0.4rem + 100%);
+	vtr-page-macrokey {
+		.start-button,
+		.stop-button {
+			.button {
+				display: inline-block !important;
+				max-width: calc(100% - 2rem);
+				@media #{$mediaquery_13} {
+					padding: 1.2rem 3rem !important;
 				}
-				&::after{
-					display: none !important;
+				@media #{$mediaquery_X3} {
+					padding: 1.2rem 4rem !important;
+				}
+				&:hover {
+					background-color: $blueHover;
+				}
+				&:focus {
+					&::before {
+						position: absolute;
+						display: block;
+						content: "";
+						top: -0.4rem !important;
+						left: -0.4rem;
+						right: -0.4rem;
+						bottom: -0.4rem;
+						border-radius: 3rem;
+						border: 1px solid #257eff;
+						width: calc(0.8rem + 100%);
+						@media #{$high-contrast} {
+							border-color: highlight;
+						}
+					}
+					&::after {
+						display: none !important;
+					}
 				}
 			}
 		}
-	}
 	}
 }
