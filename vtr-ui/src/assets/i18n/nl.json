@@ -817,8 +817,7 @@
             "question2": "Uw pc opnieuw instellen",
             "question3": "Weten welke CPU u hebt",
             "question4": "Uw batterijgebruik controleren",
-            "question5": "Uw pc als tablet gebruiken",
-            "question6": "Kennismaken met Cortana, uw persoonlijke assistent"
+            "question5": "Uw pc als tablet gebruiken"
         },
         "ui": {
             "back": "TERUG",
@@ -2896,35 +2895,6 @@
             "para8": "Gebruik de gedeelde rand tussen twee vastgemaakte apps om het formaat van beide apps tegelijk te wijzigen.",
             "para9": "Open een nieuwe app vanuit de taakweergave: selecteer <strong>Taakweergave</strong> op de taakbalk, selecteer een app en sleep deze vervolgens naar één kant om deze in uw gesplitste venster vast te maken.",
             "para10": "Gebruik de knop Vorige op de taakbalk om in een app terug te gaan of om een app te openen die u eerder hebt gebruikt."
-        },
-        "question6": {
-            "title": "Kennismaken met Cortana, uw persoonlijke assistent",
-            "heading1": "Wat is Cortana?",
-            "para1": "Cortana is uw digitale helper. Ze helpt u om dingen voor elkaar te krijgen.",
-            "para2": "Hoe meer u Cortana gebruikt, hoe persoonlijker uw ervaring is.",
-            "para3": "Als u aan de slag wilt gaan, typt u een vraag in het zoekvak of selecteert u de microfoon en praat u met Cortana. (Typen werkt voor alle typen pc's, maar u hebt een microfoon nodig om te praten.)",
-            "para4": "Als u niet zeker weet wat u moet zeggen, ziet u suggesties op uw vergrendelingsscherm en in het beginscherm van Cortana wanneer u het zoekvak op de taakbalk selecteert.",
-            "para5": "1. Beginscherm 2. Notitieblok 3. Instellingen 4. Feedback",
-            "para6": "Hier volgen enkele dingen die Cortana voor u kan doen:",
-            "unorderedList1": {
-                "listItem1": "U ergens aan herinneren op basis van tijd, plaatsen of mensen.",
-                "listItem2": "Pakjes traceren en teams, interesses en vluchten volgen.",
-                "listItem3": "E-mails en tekstberichten verzenden.",
-                "listItem4": "Uw agenda beheren en u op de hoogte houden.",
-                "listItem5": "Lijsten maken en beheren.",
-                "listItem6": "Babbelen en spelletjes spelen.",
-                "listItem7": "Feiten, bestanden, plaatsen en info opzoeken.",
-                "listItem8": "Elke willekeurige app op uw systeem openen."
-            },
-            "heading2": "Probeer dit: een herinnering instellen",
-            "para7": "Een van de dingen die Cortana kan doen, is u ergens aan herinneren. Ze kan u eraan herinneren om dingen te doen op basis van tijd, plaatsen of zelfs mensen.",
-            "para8": "Typ of zeg bijvoorbeeld \"Herinner mij eraan Tanya te feliciteren de volgende keer dat ze belt\".",
-            "para9": "De herinnering verschijnt wanneer u een oproep van Tanya ontvangt.",
-            "para10": "Extra bonus: als u een Windows Phone-telefoon of Cortana voor iPhone of Android hebt, kunt u Cortana instellen om meldingen tussen uw pc en telefoon te synchroniseren.",
-            "heading3": "Hey Cortana?",
-            "para11": "Stel in dat Cortana u hoort telkens als u \"Hey Cortana\" zegt. Selecteer het zoekvak op de taakbalk om het beginscherm van Cortana te openen. Selecteer vervolgens <strong>Instellingen</strong> en schakel <strong>Laat Cortana reageren op \"Hey Cortana\"</strong> in.",
-            "heading4": "Opmerking",
-            "para12": "Cortana is alleen beschikbaar in bepaalde landen/regio's en sommige Cortana-functies zijn mogelijk niet overal beschikbaar."
         }
     },
     "welcometutorial": {

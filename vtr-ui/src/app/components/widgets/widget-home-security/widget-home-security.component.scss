@@ -1,14 +1,6 @@
 @import "../../../app.theme";
 
 .vtr-home-security {
-	@media #{$black-on-white} {
-		@include black-border;
-	}
-
-	@media #{$white-on-black} {
-		@include white-border;
-	}
-
 	.header {
 		.heading {
 			color: $shade_blue;

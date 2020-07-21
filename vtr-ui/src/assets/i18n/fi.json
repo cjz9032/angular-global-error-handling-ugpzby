@@ -817,8 +817,7 @@
             "question2": "Tietokoneen oletusasetusten palauttaminen",
             "question3": "Koneen suorittimen tunnistaminen",
             "question4": "Tarkista koneen akun käyttö",
-            "question5": "Tietokoneen käyttö taulutietokoneen tavoin",
-            "question6": "Tutustu Cortanaan, henkilökohtaiseen avustajaasi"
+            "question5": "Tietokoneen käyttö taulutietokoneen tavoin"
         },
         "ui": {
             "back": "EDELLINEN",
@@ -2896,35 +2895,6 @@
             "para8": "Muuttaa molempien sovellusten kokoa samanaikaisesti käyttämällä kahden näytöllä olevan sovelluksen välistä jaettua reunaa.",
             "para9": "Avaa uusi sovellus tehtävänäkymästä, valitse tehtäväpalkissa <strong>Tehtävänäkymä</strong>, valitse sovellus ja vedä se sitten toiseen laitaan, kun haluat sijoittaa sen jaetulle näytölle.",
             "para10": "Voit siirtyä takaisin sovellukseen tai avata aiemmin käyttämäsi sovelluksen napsauttamalla tehtäväpalkin Edellinen-painiketta."
-        },
-        "question6": {
-            "title": "Tutustu Cortanaan, henkilökohtaiseen avustajaasi",
-            "heading1": "Mikä Cortana on?",
-            "para1": "Cortana on digitaalinen agenttisi. Hän auttaa sinua saamaan asioita aikaan.",
-            "para2": "Mitä enemmän käytät Cortanaa, sitä räätälöidympi kokemuksesi tulee olemaan.",
-            "para3": "Aloita kirjoittamalla kysymys hakukenttään, tai valitse mikrofoni ja puhu Cortanalle. (Kirjoitus toimii kaikentyyppisissä tietokoneissa, mutta sinulla on oltava mikrofoni, jotta voit ohjata sovellusta puheella.)",
-            "para4": "Jos et ole varma siitä, mitä haluat sanoa, näet ehdotukset lukitusnäytössä ja Cortanan aloitusnäytöllä, kun olet valinnut tehtäväpalkin hakuruudun.",
-            "para5": "1. Koti 2. Kannettava tietokone 3. Asetukset 4. Palaute",
-            "para6": "Seuraavassa on joitakin tapoja, joilla Cortana voi auttaa sinua:",
-            "unorderedList1": {
-                "listItem1": "Saat aikaan, paikkoihin tai henkilöihin perustuvia muistutuksia.",
-                "listItem2": "Seuraa paketteja, tiimejä, kiinnostuksen kohteita ja lentoja.",
-                "listItem3": "Lähetä sähköposteja ja tekstiviestejä.",
-                "listItem4": "Hallitse kalenteriasi ja pidä itsesi ajan tasalla.",
-                "listItem5": "Luo ja hallinnoi luetteloja.",
-                "listItem6": "Jutustele ja pelata pelejä.",
-                "listItem7": "Hae faktoja, tiedostoja, paikkoja ja tietoja.",
-                "listItem8": "Avaa mikä tahansa järjestelmän sovellus."
-            },
-            "heading2": "Kokeile tätä: muistutuksen asetus",
-            "para7": "Yksi asioista, jotka Cortana voi tehdä, on antaa sinulle muistutuksia. Hän voi muistuttaa sinua tekemään asioita perustuen aikaan, paikkoihin tai jopa ihmisiin.",
-            "para8": "Voit esimerkiksi kirjoittaa tai sanoa: \"Muistuta minua onnittelemaan Tarjaa, kun hän soittaa seuraavan kerran\".",
-            "para9": "Muistutus tulee näkyviin, kun Tarja soittaa sinulle.",
-            "para10": "Lisäbonus: Jos sinulla on Windows-puhelin tai Cortana for iPhone tai Android -sovellus, voit määrittää Cortanan synkronoimaan ilmoitukset tietokoneen ja puhelimen välillä.",
-            "heading3": "Hei Cortana?",
-            "para11": "Voit asettaa Cortanan kuuntelemaan aina, kun sanot: \"Hei Cortana\". Avaa Cortanan aloitusnäyttö valitsemalla tehtäväpalkista hakuruutu. Valitse sitten <strong>Asetukset</strong> ja ota käyttöön <strong>Anna Cortanan vastata \"Hei Cortana\" -komentoon.</strong>",
-            "heading4": "Huomautus",
-            "para12": "Cortana on käytettävissä vain tietyissä maissa tai joillakin alueilla, ja jotkin Cortanan ominaisuudet eivät ehkä ole käytettävissä kaikkialla."
         }
     },
     "welcometutorial": {

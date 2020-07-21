@@ -817,8 +817,7 @@
             "question2": "Återställa datorn",
             "question3": "Se din dators processor",
             "question4": "Kontrollera datorns batteriförbrukning",
-            "question5": "Använda datorn som pekplatta",
-            "question6": "Lära känna Cortana, din personliga assistent"
+            "question5": "Använda datorn som pekplatta"
         },
         "ui": {
             "back": "TILLBAKA",
@@ -2896,35 +2895,6 @@
             "para8": "Ta tag i kanten mellan de två fästa apparna för att ändra storlek på båda två på samma gång.",
             "para9": "Öppna en ny app från aktivitetsvyn. Klicka på <strong>Aktivitetsvy</strong> i aktivitetsfältet, välj en app och dra den åt sidan för att fästa den på din delade skärm.",
             "para10": "Använd tillbakaknappen på aktivitetsfältet för att gå tillbaka i appen eller för att öppna en app du använde tidigare."
-        },
-        "question6": {
-            "title": "Lära känna Cortana, din personliga assistent",
-            "heading1": "Vad är Cortana?",
-            "para1": "Cortana är din digitala assistent. Hon hjälper dig att göra saker.",
-            "para2": "Ju mer du använder Cortana, desto mer anpassad blir din användarupplevelse.",
-            "para3": "Börja med att skriva en fråga i sökrutan eller klicka på mikrofonen och prata med Cortana. (Det går att skriva på alla datorer, men du måste ha en mikrofon för att kunna prata.)",
-            "para4": "Om du inte vet vad du ska säga visas några förslag på låsskärmen och på startsidan för Cortana när du klickar på sökfältet i aktivitetsfältet.",
-            "para5": "1. Hem 2. Bärbar dator 3. Inställningar 4. Feedback",
-            "para6": "Här är några saker Cortana kan göra:",
-            "unorderedList1": {
-                "listItem1": "Ge dig påminnelser baserade på tid, plats eller personer.",
-                "listItem2": "Spåra försändelser, idrottslag, intressen och flyg.",
-                "listItem3": "Skicka e-postmeddelanden och SMS.",
-                "listItem4": "Hantera din kalender och ge dig uppdateringar.",
-                "listItem5": "Skapa och hantera listor.",
-                "listItem6": "Småprata och spela spel.",
-                "listItem7": "Hitta fakta, filer, platser och information.",
-                "listItem8": "Öppna alla appar i systemet."
-            },
-            "heading2": "Prova det här: Skapa en påminnelse",
-            "para7": "En av sakerna Cortana kan göra är att påminna dig om saker. Hon kan påminna dig om att göra saker baserat på tid, platser eller till och med personer.",
-            "para8": "Skriv eller säg till exempel ”Påminn mig att gratulera Tanya nästa gång hon ringer”.",
-            "para9": "Påminnelsen kommer att visas när du får ett samtal från Tanya.",
-            "para10": "Extra bonus: Om du har en Windows Phone eller Cortana för iPhone eller Android kan Cortana synkronisera aviseringar mellan datorn och mobilen.",
-            "heading3": "Hej Cortana?",
-            "para11": "Gör så att Cortana hör varje gång du säger ”Hej Cortana”. Öppna sökfältet i aktivitetsfältet för att komma till startsidan för Cortana. Klicka på <strong>Inställningar</strong> och markera <strong>Let Cortana respond to ”Hey Cortana”</strong>.",
-            "heading4": "Anmärkning",
-            "para12": "Cortana kan endast användas i vissa länder och regioner, och inte alla Cortana-funktioner är tillgängliga överallt."
         }
     },
     "welcometutorial": {

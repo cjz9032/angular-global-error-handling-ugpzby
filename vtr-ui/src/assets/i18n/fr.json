@@ -817,8 +817,7 @@
             "question2": "Procédure pour la réinitialisation de votre ordinateur",
             "question3": "Procédure pour connaître l'unité centrale de votre ordinateur",
             "question4": "Vérifiez l'utilisation de la batterie de votre ordinateur",
-            "question5": "Utilisez votre ordinateur comme une tablette",
-            "question6": "Faites la connaissance de Cortana, votre assistante personnelle"
+            "question5": "Utilisez votre ordinateur comme une tablette"
         },
         "ui": {
             "back": "RETOUR",
@@ -2896,35 +2895,6 @@
             "para8": "Utilisez l'arête partagée entre deux applications aimantées pour redimensionner les deux applications simultanément.",
             "para9": "Ouvrir une nouvelle application à partir de l'affichage des tâches - sélectionnez <strong>Affichage des tâches</strong> dans la barre des tâches, sélectionnez une application, puis faites-la glisser sur un côté pour l'aligner sur l'écran divisé.",
             "para10": "Utilisez le bouton précédent de la barre des tâches pour revenir en arrière dans une application ou pour ouvrir une application que vous utilisiez auparavant."
-        },
-        "question6": {
-            "title": "Faites la connaissance de Cortana, votre assistante personnelle",
-            "heading1": "Qu'est-ce que Cortana ?",
-            "para1": "Cortana est votre agent numérique. Elle va vous aider à accomplir vos tâches.",
-            "para2": "Plus vous utilisez Cortana, plus votre expérience sera personnalisée.",
-            "para3": "Pour commencer, tapez une question dans la zone de recherche ou sélectionnez le micro et parlez à Cortana. (La frappe s'applique à tous les types de PC, mais vous avez besoin d'un micro pour parler.)",
-            "para4": "Si vous ne savez pas quoi faire, vous verrez des suggestions sur l'écran de verrouillage, ainsi que dans la page d'accueil de Cortana lorsque vous sélectionnez la zone de recherche dans la barre des tâches.",
-            "para5": "1. Accueil 2. Bloc-notes 3. Paramètres 4. Informations",
-            "para6": "Voici quelques tâches que Cortana peut effectuer pour vous :",
-            "unorderedList1": {
-                "listItem1": "Faites des rappels en fonction de l'heure, du lieu ou de la personne.",
-                "listItem2": "Suivre les colis, les équipes, les centres d'intérêt et les vols.",
-                "listItem3": "Envoyez des e-mails et des textes.",
-                "listItem4": "Gérer votre calendrier et vous tenir à jour.",
-                "listItem5": "Créer et gérer des listes.",
-                "listItem6": "Papoter et jouer à des jeux.",
-                "listItem7": "Recherchez des faits, des fichiers, des lieux et des informations.",
-                "listItem8": "Ouvrez une application quelconque sur votre système."
-            },
-            "heading2": "Essayez ceci : définition d'un rappel",
-            "para7": "L'un des avantages de Cortana est de vous envoyer des rappels. Elle peut vous rappeler d'effectuer des opérations en fonction de l'heure, du lieu ou même des personnes.",
-            "para8": "Par exemple, tapez ou dites \"me rappeler de féliciter Tanya lors du prochain appel\".",
-            "para9": "Le rappel s'affiche lorsque vous recevez un appel de Tanya.",
-            "para10": "Bonus — si vous possédez un Windows Phone ou Cortana pour iPhone ou Android, vous pouvez définir Cortana pour synchroniser les notifications entre votre PC et votre téléphone.",
-            "heading3": "Hey Cortana ?",
-            "para11": "Configurez Cortana pour qu'elle vous entende chaque fois que vous dites \"Hey Cortana\". Sélectionnez la zone de recherche dans la barre des tâches pour ouvrir la page d'accueil de Cortana. Sélectionnez ensuite <strong>Paramètres</strong>  et activez <strong>l'option laisser Cortana réagir à \"Hey Cortana\".</strong>",
-            "heading4": "Important",
-            "para12": "Cortana est uniquement disponible dans certains pays/certaines régions et certaines fonctions de Cortana ne sont pas disponibles partout."
         }
     },
     "welcometutorial": {

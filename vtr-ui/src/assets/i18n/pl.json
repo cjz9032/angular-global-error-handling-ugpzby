@@ -817,8 +817,7 @@
             "question2": "Jak zresetować komputer",
             "question3": "Jak sprawdzić procesor komputera",
             "question4": "Jak sprawdzić poziom wykorzystania akumulatora urządzenia",
-            "question5": "Używanie komputera jak tabletu",
-            "question6": "Poznaj Cortanę, swoją osobistą asystentkę"
+            "question5": "Używanie komputera jak tabletu"
         },
         "ui": {
             "back": "WSTECZ",
@@ -2896,35 +2895,6 @@
             "para8": "Użyć wspólnej krawędzi dwóch przyciągniętych aplikacji, aby zmienić rozmiar obu aplikacji równocześnie.",
             "para9": "Otworzyć nową aplikację z widoku zadań: na pasku zadań kliknij opcję <strong>Widok zadań</strong>, zaznacz aplikację, a następnie przeciągnij ją w jedną stronę, a zostanie przyciągnięta do podzielonego ekranu.",
             "para10": "Użyć przycisku Wstecz na pasku zadań, aby wrócić do poprzedniego okna w obecnej aplikacji lub otworzyć wcześniej używaną aplikację."
-        },
-        "question6": {
-            "title": "Poznaj Cortanę, swoją osobistą asystentkę",
-            "heading1": "Czym jest Cortana?",
-            "para1": "Cortana to Twoja cyfrowa asystentka. Pomoże Ci wykonać różne zadania.",
-            "para2": "Im częściej używasz Cortany, tym bardziej zostanie spersonalizowana konkretnie dla Ciebie.",
-            "para3": "Aby rozpocząć, wpisz pytanie w polu wyszukiwania lub kliknij ikonę mikrofonu i porozmawiaj z Cortaną. (Wpisywanie działa na wszystkich typach komputerów, ale do mówienia jest potrzebny mikrofon).",
-            "para4": "Jeśli nie masz pewności, co powiedzieć, zobaczysz sugestie na ekranie blokady oraz na ekranie głównym Cortany, gdy klikniesz pole wyszukiwania na pasku zadań.",
-            "para5": "1. Ekran główny 2. Notes 3. Ustawienia 4. Opinia",
-            "para6": "Oto kilka rzeczy, w których może pomagać Cortana:",
-            "unorderedList1": {
-                "listItem1": "Przypominanie na podstawie kryterium czasu, miejsc lub ludzi.",
-                "listItem2": "Śledzenie paczek, zespołów, zainteresowań i lotów.",
-                "listItem3": "Wysyłanie wiadomości e-mail i tekstowych.",
-                "listItem4": "Zarządzanie Twoim kalendarzem i bieżące informowanie Cię o istotnych wydarzeniach.",
-                "listItem5": "Tworzenie list i zarządzanie nimi.",
-                "listItem6": "Prowadzenie towarzyskich rozmów i granie w gry.",
-                "listItem7": "Znajdowanie faktów, plików, miejsc i informacji.",
-                "listItem8": "Otwieranie dowolnych aplikacji na Twoim urządzeniu."
-            },
-            "heading2": "Spróbuj tego: ustawianie przypomnienia",
-            "para7": "Jedną z funkcji, jaką może wykonywać Cortana, jest przypominanie. Może przypominać Ci o konieczności zrobienia różnych rzeczy w związku z konkretnym czasem, miejscami lub osobami.",
-            "para8": "Na przykład wpisz lub powiedz „Przypomnij mi, aby pogratulować Tanyi następnym razem, gdy zadzwoni”.",
-            "para9": "Przypomnienie pojawi się, gdy otrzymasz telefon od Tanyi.",
-            "para10": "Dodatkowa premia: jeśli masz telefon z systemem Windows lub Cortanę dla telefonów iPhone lub systemu Android, możesz ustawić w Cortanie synchronizowanie powiadomień między komputerem a telefonem.",
-            "heading3": "Hej, Cortana?",
-            "para11": "Ustaw Cortanę tak, aby cię słyszała za każdym razem, gdy mówisz „Hej, Cortana”. Kliknij pole wyszukiwania na pasku zadań, aby otworzyć ekran główny Cortany. Następnie kliknij pozycję <strong>Ustawienia</strong> i włącz opcję <strong>Zezwalaj Cortanie na odpowiadanie na polecenie „Hej, Cortana”</strong>.",
-            "heading4": "Uwaga",
-            "para12": "Cortana jest dostępna tylko w niektórych krajach / regionach. Istnieją również ograniczenia w działaniu funkcji Cortany."
         }
     },
     "welcometutorial": {

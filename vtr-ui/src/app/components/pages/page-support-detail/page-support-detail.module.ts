@@ -18,7 +18,6 @@ import { SupportDetailArticleBComponent } from './children/support-detail-articl
 import { SupportDetailArticleCComponent } from './children/support-detail-article-c/support-detail-article-c.component';
 import { SupportDetailArticleDComponent } from './children/support-detail-article-d/support-detail-article-d.component';
 import { SupportDetailArticleEComponent } from './children/support-detail-article-e/support-detail-article-e.component';
-import { SupportDetailArticleFComponent } from './children/support-detail-article-f/support-detail-article-f.component';
 @NgModule({
 	declarations: [
 		PageSupportDetailComponent,
@@ -26,8 +25,7 @@ import { SupportDetailArticleFComponent } from './children/support-detail-articl
 		SupportDetailArticleBComponent,
 		SupportDetailArticleCComponent,
 		SupportDetailArticleDComponent,
-		SupportDetailArticleEComponent,
-		SupportDetailArticleFComponent
+		SupportDetailArticleEComponent
 	],
 	exports: [
 		PageSupportDetailComponent,
@@ -35,8 +33,7 @@ import { SupportDetailArticleFComponent } from './children/support-detail-articl
 		SupportDetailArticleBComponent,
 		SupportDetailArticleCComponent,
 		SupportDetailArticleDComponent,
-		SupportDetailArticleEComponent,
-		SupportDetailArticleFComponent
+		SupportDetailArticleEComponent
 	],
 	imports: [
 		CommonModule,

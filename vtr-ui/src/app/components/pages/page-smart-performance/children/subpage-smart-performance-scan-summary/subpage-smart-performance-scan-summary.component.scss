@@ -185,6 +185,11 @@ vtr-subpage-smart-performance-scan-summary {
 					.selected-custom-date{
 						background-color:#F5F7F8;
 					}
+					.custom-to-date, .custom-from-date{
+						.col-1{
+							white-space: nowrap;
+						}
+					}
 					.date-picker{
 						background-color:#F5F7F8;
 					}
@@ -205,7 +210,7 @@ vtr-subpage-smart-performance-scan-summary {
 								min-height: 3.2rem;
 								min-width: 1rem;
 								font-weight: 500;
-								padding: 0 2.2rem;
+								padding: 0 1.2rem;
 							}
 						}
 					}

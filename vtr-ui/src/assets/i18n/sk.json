@@ -817,8 +817,7 @@
             "question2": "Vynulovanie nastavenia počítača",
             "question3": "Zistenie informácií o procesore počítača",
             "question4": "Kontrola využívania batérie počítača",
-            "question5": "Používanie počítača ako tabletu",
-            "question6": "Zoznámenie sa s osobnou asistentkou Cortana"
+            "question5": "Používanie počítača ako tabletu"
         },
         "ui": {
             "back": "SPÄŤ",
@@ -2777,6 +2776,7 @@
         "ssoErrorAccountPluginNotExist": "Chýbajúci doplnok. Ak ste pripojení na internet, obnoví sa doplnok na pozadí automaticky. Môže to nejaký čas trvať. Skúste to znova neskôr."
     },
     "faq": {
+        "pageTitle": "Support Detail",
         "footer": {
             "title": "Nenašli ste to, čo hľadáte?",
             "description": "Potrebujete ďalšiu podporu? Neváhajte nás kontaktovať prostredníctvom:",
@@ -2895,37 +2895,7 @@
             "para8": "zmeniť veľkosť oboch aplikácií naraz pomocou spoločného okraja medzi dvoma prichytenými aplikáciami;",
             "para9": "otvoriť novú aplikáciu zo zobrazenia úloh — vyberte položku <strong>Zobrazenie úloh</strong> na paneli úloh, vyberte aplikáciu a potiahnite ju do strany, aby ste ju prichytili na rozdelenú obrazovku;",
             "para10": "vrátiť sa späť v aplikácii alebo otvoriť predtým používanú aplikáciu pomocou tlačidla Späť na paneli úloh."
-        },
-        "question6": {
-            "title": "Zoznámenie sa s osobnou asistentkou Cortana",
-            "heading1": "Čo je Cortana?",
-            "para1": "Cortana je vaša digitálna asistentka. Pomôže vám pri práci.",
-            "para2": "Čím viac budete Cortanu používať, tým viac budú vaše zážitky prispôsobené.",
-            "para3": "Ak chcete začať, do vyhľadávacieho poľa zadajte otáznik alebo vyberte mikrofón a rozprávajte sa s Cortanou. (Zadávanie textu funguje pri všetkých typoch počítačov, ale na rozprávanie potrebujete mikrofón.)",
-            "para4": "Ak si nie ste istí, čo máte povedať, pozrite si návrhy na obrazovke uzamknutia a na domovskej obrazovke Cortany, keď vyberiete vyhľadávacie pole na paneli úloh.",
-            "para5": "1. Domovská obrazovka 2. Poznámkový blok 3. Nastavenia 4. Spätná väzba",
-            "para6": "Tu sú niektoré z vecí, ktoré pre vás Cortana môže urobiť:",
-            "unorderedList1": {
-                "listItem1": "zobraziť pripomenutia na základe času, miest alebo ľudí;",
-                "listItem2": "sledovať balíky, tímy, záujmy a lety;",
-                "listItem3": "odosielať e-maily a textové správy;",
-                "listItem4": "spravovať váš kalendár a poskytovať vám aktuálne informácie;",
-                "listItem5": "vytvárať a spravovať zoznamy;",
-                "listItem6": "rozprávať sa a hrať hry;",
-                "listItem7": "vyhľadávať fakty, súbory, miesta a informácie;",
-                "listItem8": "otvoriť ktorúkoľvek aplikáciu v systéme."
-            },
-            "heading2": "Skúste toto: nastavenie pripomenutia",
-            "para7": "Jednou z vecí, ktoré Cortana dokáže, je zobrazovanie pripomenutí. Môže vám pripomenúť veci, ktoré treba urobiť, na základe času, miest alebo dokonca ľudí.",
-            "para8": "Napríklad zadajte alebo povedzte: „Pripomeň mi, aby som Táni zablahoželal(a), keď bude volať“.",
-            "para9": "Keď vám Táňa zavolá, zobrazí sa pripomenutie.",
-            "para10": "Bonus navyše — ak máte telefón so systémom Windows alebo Cortanu pre iPhone či Android, Cortanu môžete nastaviť tak, aby synchronizovala oznámenia medzi počítačom a telefónom.",
-            "heading3": "Ahoj, Cortana",
-            "para11": "Nastavte Cortanu tak, aby vás počúvala vždy, keď poviete „Ahoj, Cortana“. Výberom vyhľadávacieho poľa na paneli úloh otvorte domovskú obrazovku Cortany. Potom vyberte položku <strong>Nastavenia</strong> a zapnite funkciu <strong>Povoliť Cortane reagovať na slovné spojenie „Hey Cortana“ (Ahoj, Cortana)</strong>.",
-            "heading4": "Poznámka",
-            "para12": "Cortana je k dispozícii len v určitých krajinách alebo regiónoch a niektoré funkcie Cortany nemusia byť dostupné všade."
-        },
-        "pageTitle": "Support Detail"
+        }
     },
     "welcometutorial": {
         "description": "Aplikácia Vantage zjednodušuje aktualizáciu ovládačov, spúšťanie diagnostiky, žiadosť o technickú podporu a získanie informácií o zariadení.Rýchlo prispôsobte svoje nastavenie a nájdite užitočné informácie prispôsobené vaším potrebám",

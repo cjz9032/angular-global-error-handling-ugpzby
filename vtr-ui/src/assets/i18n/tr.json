@@ -817,8 +817,7 @@
             "question2": "Bilgisayarınızın sıfırlanması",
             "question3": "Cihazınızın işlemcisini öğrenme",
             "question4": "Makinenizin pil kullanımının denetlenmesi",
-            "question5": "Bilgisayarınızın tablet gibi kullanılması",
-            "question6": "Kişisel yardımcınız Cortana'yı tanıyın"
+            "question5": "Bilgisayarınızın tablet gibi kullanılması"
         },
         "ui": {
             "back": "GERİ",
@@ -2896,35 +2895,6 @@
             "para8": "Her iki uygulamayı aynı anda yeniden boyutlandırmak için iki tutturulmuş uygulama arasındaki paylaşılan kenarı kullanın.",
             "para9": "Görev görünümünden yeni bir uygulama açın. Görev çubuğunda <strong>Task view</strong> (Görev görünümü) öğesini seçin, bir uygulama belirleyin, ardından bölünmüş ekranınıza tutturmak için bir tarafa sürükleyin.",
             "para10": "Bir uygulamaya geri dönmek veya daha önce kullandığınız bir uygulamayı açmak için görev çubuğundaki geri düğmesini kullanın."
-        },
-        "question6": {
-            "title": "Kişisel yardımcınız Cortana'yı tanıyın",
-            "heading1": "Cortana nedir?",
-            "para1": "Cortana, dijital yardımcınızdır. İşleri halletmenize yardımcı olur.",
-            "para2": "Cortana'yı ne kadar çok kullanırsanız deneyiminiz o kadar kişiselleşir.",
-            "para3": "Başlamak için arama kutusuna bir soru yazın veya mikrofonu seçip Cortana ile konuşun. (Yazma işlevini tüm bilgisayarlarda kullanabilirsiniz ancak konuşmak için bir mikrofona ihtiyacınız vardır.)",
-            "para4": "Ne söyleyeceğinizden emin değilseniz kilit ekranınızda ve görev çubuğundaki arama kutusunu seçtiğinizde Cortana giriş sayfasında öneriler görürsünüz.",
-            "para5": "1. Giriş 2. Dizüstü Bilgisayar 3. Ayarlar 4. Geri Bildirim",
-            "para6": "Burada, Cortana'nın sizin için yapabileceği bazı şeyler bulunmaktadır:",
-            "unorderedList1": {
-                "listItem1": "Size zamana, yerlere veya insanlara göre anımsatıcılar sağlar.",
-                "listItem2": "Kargoları, takımları, ilgi alanlarını ve uçuşları takip eder.",
-                "listItem3": "E-posta ve kısa mesaj gönderir.",
-                "listItem4": "Takviminizi yönetir ve güncel kalmanızı sağlar.",
-                "listItem5": "Listeler oluşturur ve onları yönetir.",
-                "listItem6": "Sohbet eder ve oyun oynar.",
-                "listItem7": "Bulguları, dosyaları, yerleri ve bilgileri bulur.",
-                "listItem8": "Sisteminizdeki herhangi bir uygulamayı açar."
-            },
-            "heading2": "Bunu deneyin: Bir anımsatıcı ayarlanması",
-            "para7": "Cortana'nın yapabileceklerinden biri de sizin için anımsatıcılar ayarlamaktır. Size zamana, yerlere ve hatta insanlara göre bir şeyler yapmanızı anımsatabilir.",
-            "para8": "Örneğin, “Remind me to congratulate Tanya the next time she calls.” (Tanya bir daha aradığında onu tebrik etmemi anımsat) yazın.",
-            "para9": "Tanya'nın bir sonraki aramasında anımsatıcı görünür.",
-            "para10": "Ekstra bonus: Windows Phone, iPhone veya Android için Cortana'nız varsa Cortana'yı bilgisayarınız ile telefonunuz arasında bildirimleri eşitleyecek şekilde ayarlayabilirsiniz.",
-            "heading3": "Hey Cortana?",
-            "para11": "Cortana'yı “Hey Cortana” (Selam Cortana) dediğinizde sizi duyacak şekilde ayarlayın. Cortana giriş sayfasını açmak için görev çubuğundaki arama kutusunu seçin. Ardından, <strong>Settings</strong> (Ayarlar) öğesini seçin ve <strong>Let Cortana respond to “Hey Cortana”</strong> (Cortana'nın “Hey Cortana” denildiğinde yanıt vermesine izin ver) seçeneğini açın.",
-            "heading4": "Not",
-            "para12": "Cortana yalnızca belirli ülkelerde/bölgelerde sunulmaktadır ve bazı Cortana özellikleri her yerde kullanılamayabilir."
         }
     },
     "welcometutorial": {

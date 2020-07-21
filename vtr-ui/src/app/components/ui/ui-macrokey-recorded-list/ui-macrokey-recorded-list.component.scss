@@ -232,6 +232,7 @@
 }
 
 .delete-wrapper {
+	display: inline-block;
 	.delete-btn {
 		font-size: 1.4rem;
 		color: $blueFill;
@@ -276,6 +277,11 @@
 					fill: buttonText;
 				}
 			}
+		}
+	}
+	&:focus {
+		@media #{$high-contrast} {
+			outline: 0.1rem solid highlight;
 		}
 	}
 }
