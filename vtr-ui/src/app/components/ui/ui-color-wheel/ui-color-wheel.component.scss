@@ -60,7 +60,7 @@
 			}
 			label {
 				width: 2.4rem;
-				font-size: 1.6rem;
+				font-size: 1.4rem;
 				color: $gaming_lightest;
 				padding-right: 1rem;
 				padding-top: 0.5rem;
@@ -69,7 +69,7 @@
 				height: 3rem;
 				width: 6rem;
 				background: $white5;
-				font-size: 1.6rem;
+				font-size: 1.4rem;
 				color: $gaming_lightest;
 				border: none;
 				box-sizing: border-box;
@@ -99,13 +99,14 @@
 	.enable-button {
 		background: $blueFill;
 		border-radius: 2rem;
-		color: $light;
-		font-size: $fontsize_sm;
+		color: $gaming_lightest;
+		font-size: 1.4rem;
 		text-align: center;
-		font-weight: $weight_bold;
+		font-weight: normal;
 		height: 4rem;
 		padding: 0rem 2rem;
-		letter-spacing: 0.1rem;
+		line-height: 2.86rem;
+		text-transform: capitalize;
 		@media #{$high-contrast} {
 			border: 0.1rem solid windowText;
 		}
