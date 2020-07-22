@@ -10,12 +10,12 @@ $main_lighter: #b5d0f4;
 $main_lightest: #eaf2fd;
 $menu_hover: #4a81fd;
 //new added styles
-$gaming_bg: #11192c;// as per VAN-11517
+$gaming_bg: #11192c; // as per VAN-11517
 $gaming-Darkslate-blue: #233043;
 $darkPopup: #293757;
-$white5:rgba(251,253,255,0.05);
-$white100:rgba(251,253,255,1);
-$white60:rgba(251,253,255,0.6);
+$white5: rgba(251, 253, 255, 0.05);
+$white100: rgba(251, 253, 255, 1);
+$white60: rgba(251, 253, 255, 0.6);
 //
 $dark_cell: linear-gradient(0deg, #2e4255, #293c4f);
 $dark_popup_cell: linear-gradient(0deg, #435064, #3d4c5c);
@@ -23,7 +23,7 @@ $dark_popup_cell: linear-gradient(0deg, #435064, #3d4c5c);
 $gaming_darkest: #1f2a42;
 $gaming_darker: #253048;
 $gaming_dark: #293c4f;
-$gaming_shade: #293757;// updated as per VAN-11517
+$gaming_shade: #293757; // updated as per VAN-11517
 $gaming_gstart: #2d5dcf;
 $gaming: #4579f0;
 $gaming_light: #5086cb;
@@ -50,7 +50,7 @@ $gaming_light_blue: #047aff;
 $gaming_hdd_border_clr: rgba(35, 38, 53, 0.8);
 $gaming_hdd_ring: #6a7080;
 $gaming_orange_grad: linear-gradient(90deg, #ff5900, #ff7b00);
-$gaming_rightbg: linear-gradient(180deg, #151F36,50%, #11192c);
+$gaming_rightbg: linear-gradient(180deg, #151f36, 50%, #11192c);
 $highlight: #2ec5eb;
 $highlight_bright: #53f9ff;
 
@@ -114,8 +114,8 @@ $black_dark: #101424;
 $black_light: #424b6c;
 $hover_gray: #c2c8ce;
 $hover_dark: #191c28;
-$active_blue : #5671ff;
-$circle_checkbox_disabled: #B1B8BF;
+$active_blue: #5671ff;
+$circle_checkbox_disabled: #b1b8bf;
 
 $light: #ffffff;
 $dark: #000;
@@ -125,20 +125,20 @@ $purple_navy: #444f78;
 $note_border: #ecf0f1;
 $dim_gray: #707070;
 $solitude: #fbfcfc;
-$gray_out: #99A4AE;
-$QA_dark: #194A65;
-$azure_light: #E2FAF7;
-$azure_lighter: #ECF7FF;
-$gray_dark: #AFAFAF;
-$gray_white : #FEFEFE;
+$gray_out: #99a4ae;
+$QA_dark: #194a65;
+$azure_light: #e2faf7;
+$azure_lighter: #ecf7ff;
+$gray_dark: #afafaf;
+$gray_white: #fefefe;
 
 // updated button color, hover & active effect
-$btn_primary_color: #0160D6;
-$btn_secondary_color: #257EFF;
-$gaming_white60: rgba(251, 253, 255, 0.6);//as per VAN-11517
-$gaming_white80: rgba(251, 253, 255, 0.8);// as per VAN-11517
-$gaming_square_button20: rgba(251,253,255,0.20);// as per VAN-19064
-$gaming_square_button10:  rgba(251,253,255,0.10);// as per VAN-19064
+$btn_primary_color: #0160d6;
+$btn_secondary_color: #257eff;
+$gaming_white60: rgba(251, 253, 255, 0.6); //as per VAN-11517
+$gaming_white80: rgba(251, 253, 255, 0.8); // as per VAN-11517
+$gaming_square_button20: rgba(251, 253, 255, 0.2); // as per VAN-19064
+$gaming_square_button10: rgba(251, 253, 255, 0.1); // as per VAN-19064
 $screen_dark_0: rgba(0, 0, 0, 0);
 $screen_dark_05: rgba(0, 0, 0, 0.05);
 $screen_dark_10: rgba(0, 0, 0, 0.1);
@@ -185,7 +185,7 @@ $white10: rgba(251, 253, 255, 0.1);
 $white5: rgba(251, 253, 255, 0.05);
 
 //usually in Gaming we do not need dark text but there are white dialogs, therefore some dark colors are needed
-$darkText: #1A638B;
+$darkText: #135579;
 $lightText: #135579;
 $dark40: rgba(17, 25, 44, 0.4);
 $dark20: rgba(17, 25, 44, 0.2);
@@ -206,7 +206,7 @@ $weight_bold: 700;
 $weight_black: 900;
 $weight_600: 600;
 
-$font_family_semilight: 'Segoe UI Semilight';
+$font_family_semilight: "Segoe UI Semilight";
 
 $shift_up_small: -6rem;
 $shift_up_medium: -14rem;
@@ -421,20 +421,20 @@ $mediaquery_XXL350X: "only screen and (min-width: 1601px) and (max-width: 4000px
 
 /*media query for high contrast mode*/
 $high-contrast-grey: #c0c0c0;
-$high-contrast-magenta: #FF00FE;
+$high-contrast-magenta: #ff00fe;
 $high-contrast: "screen and (-ms-high-contrast)";
 $black-on-white: "screen and (-ms-high-contrast: black-on-white)";
 $white-on-black: "screen and (-ms-high-contrast: white-on-black)";
 $screen_dark_01: rgba(0, 0, 0, 0.01);
 $high-contrast-blue: #0007a4;
 $high-contrast-white-textselected: #37006e;
-$high-contrast-white-disabled: #AF7E7E;
+$high-contrast-white-disabled: #af7e7e;
 $high-contrast-black-textselected: #1aebff;
 $high-contrast-black-disabled: #3be23b;
-$high-contrast-black-yellow: #FFFF00;
-$high-contrast-white-blue: #0000A2;
-$high-contrast-black-cyan: #00EBFF;
-$high-contrast-black-disabled-green: #30F42C;
+$high-contrast-black-yellow: #ffff00;
+$high-contrast-white-blue: #0000a2;
+$high-contrast-black-cyan: #00ebff;
+$high-contrast-black-disabled-green: #30f42c;
 $high-contrast-white-dark-magenta: #370070;
 $high-contrast-white-disabled-maroon: #610000;
 
@@ -463,16 +463,16 @@ $high-contrast-white-disabled-maroon: #610000;
 	outline: 0;
 	border: 0.1rem solid $menu_hover;
 }
-@mixin button-outline-blue ($color : $menu_hover) {
-		content: '';
-		display: block;
-		position: absolute;
-		left: -0.4rem;
-		top: -0.4rem;
-		border-radius: 500px;
-		width: calc(100% + 0.8rem);
-		height: calc(100% + 0.8rem);
-		border: thin solid $color;
+@mixin button-outline-blue($color: $menu_hover) {
+	content: "";
+	display: block;
+	position: absolute;
+	left: -0.4rem;
+	top: -0.4rem;
+	border-radius: 500px;
+	width: calc(100% + 0.8rem);
+	height: calc(100% + 0.8rem);
+	border: thin solid $color;
 }
 
 @mixin circular-button-outline {
@@ -493,15 +493,15 @@ $high-contrast-white-disabled-maroon: #610000;
 }
 
 //gaming version 3.3
-@mixin default-button-border ($color : $blueFill) {
+@mixin default-button-border($color: $blueFill) {
 	outline: 0;
 	border: 0.1rem solid $color;
 	@media #{$high-contrast} {
 		border: 0.1rem solid highlight;
 	}
 }
-@mixin circular-button-border ($color : $blueFill) {
-	content: '';
+@mixin circular-button-border($color: $blueFill) {
+	content: "";
 	display: block;
 	position: absolute;
 	left: -0.4rem;
@@ -514,12 +514,12 @@ $high-contrast-white-disabled-maroon: #610000;
 		border: thin solid highlight;
 	}
 }
-@mixin under-line-button-border ($color : $blueFill) {
-	content: '';
+@mixin under-line-button-border($color: $blueFill) {
+	content: "";
 	display: block;
 	position: absolute;
 	left: -0.4rem;
-	top:0;
+	top: 0;
 	width: calc(100% + 0.8rem);
 	height: calc(100% + 0.6rem);
 	border: thin solid $color;
@@ -527,16 +527,16 @@ $high-contrast-white-disabled-maroon: #610000;
 		border: thin solid highlight;
 	}
 }
-@mixin solid-button-outline ($color : $blueFill) {
-	outline-offset: .1rem;
+@mixin solid-button-outline($color: $blueFill) {
+	outline-offset: 0.1rem;
 	outline: 0.1rem solid $color;
 }
 
-@mixin link-button-outline ($color : $blueFill) {
-	outline-offset: .2rem;
+@mixin link-button-outline($color: $blueFill) {
+	outline-offset: 0.2rem;
 	outline: 0.1rem solid $color;
 }
-@mixin toggle-button-outline ($color : $blueFill) {
+@mixin toggle-button-outline($color: $blueFill) {
 	outline: 0.1rem solid $color;
 }
 
@@ -558,7 +558,8 @@ $high-contrast-white-disabled-maroon: #610000;
 		background: $dark !important;
 		color: $high-contrast-black-disabled-green !important;
 		border: 0.1rem solid $high-contrast-black-disabled-green !important;
-		&:hover, &:active {
+		&:hover,
+		&:active {
 			color: $high-contrast-black-disabled-green;
 		}
 	}
@@ -582,7 +583,8 @@ $high-contrast-white-disabled-maroon: #610000;
 		background: $light !important;
 		color: $high-contrast-white-disabled-maroon !important;
 		border: 0.1rem solid $high-contrast-white-disabled-maroon !important;
-		&:hover, &:active {
+		&:hover,
+		&:active {
 			color: $high-contrast-white-disabled-maroon;
 		}
 	}
@@ -617,11 +619,11 @@ $high-contrast-white-disabled-maroon: #610000;
 }
 
 @mixin dropdown-arrow-yellow-black {
-		background: $high-contrast-black-yellow;
+	background: $high-contrast-black-yellow;
 }
 
 @mixin dropdown-arrow-blue-white {
-		background: $high-contrast-white-blue;
+	background: $high-contrast-white-blue;
 }
 
 @mixin hyperlink-blue-white {
@@ -683,14 +685,13 @@ $high-contrast-white-disabled-maroon: #610000;
 	background-color: $light;
 	border: 0.1rem solid $grey_dark;
 	font-size: 1.2rem;
-	text-align: left;
+	text-align: left;
 	border-radius: 0rem;
 }
 
 @mixin arrow-before {
-border: none;
+	border: none;
 }
-
 
 @mixin high-contrast-background-transparent {
 	background: transparent;
@@ -719,14 +720,14 @@ border: none;
 	background-repeat: no-repeat;
 	background-position: center center;
 	border-radius: 0.3rem;
-	border:0.1rem solid transparent;
-	width:4.5rem;
+	border: 0.1rem solid transparent;
+	width: 4.5rem;
 	height: 4.5rem;
 	@media #{$high-contrast} {
-		border:0.1rem solid windowText;
+		border: 0.1rem solid windowText;
 		background-image: url("data:image/svg+xml,%3Csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E6.20pxIcon/add%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='6.20pxIcon/add' stroke='none' stroke-width='1' fill='buttonText' fill-rule='evenodd'%3E%3Cpath d='M9.86634391,2 C9.30897756,2 8.85714286,2.44991629 8.85714286,2.99708744 L8.85714286,8.85714286 L2.99708744,8.85714286 C2.44641125,8.85714286 2,9.29785156 2,9.86634391 L2,10.1336561 C2,10.6910224 2.44991629,11.1428571 2.99708744,11.1428571 L8.85714286,11.1428571 L8.85714286,17.0029126 C8.85714286,17.5535887 9.29785156,18 9.86634391,18 L10.1336561,18 C10.6910224,18 11.1428571,17.5500837 11.1428571,17.0029126 L11.1428571,11.1428571 L17.0029126,11.1428571 C17.5535887,11.1428571 18,10.7021484 18,10.1336561 L18,9.86634391 C18,9.30897756 17.5500837,8.85714286 17.0029126,8.85714286 L11.1428571,8.85714286 L11.1428571,2.99708744 C11.1428571,2.44641125 10.7021484,2 10.1336561,2 L9.86634391,2 Z' id='Shape' fill='buttonText' fill-rule='nonzero'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
 	}
-	&:hover{
+	&:hover {
 		cursor: pointer;
 		border: none !important;
 		background: $gaming_square_button10;
@@ -735,7 +736,7 @@ border: none;
 		border: none !important;
 		background-image: url("data:image/svg+xml,%3Csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E6.20pxIcon/add%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='6.20pxIcon/add' stroke='none' stroke-width='1' fill='rgba(251, 253, 255, 1)' fill-rule='evenodd'%3E%3Cpath d='M9.86634391,2 C9.30897756,2 8.85714286,2.44991629 8.85714286,2.99708744 L8.85714286,8.85714286 L2.99708744,8.85714286 C2.44641125,8.85714286 2,9.29785156 2,9.86634391 L2,10.1336561 C2,10.6910224 2.44991629,11.1428571 2.99708744,11.1428571 L8.85714286,11.1428571 L8.85714286,17.0029126 C8.85714286,17.5535887 9.29785156,18 9.86634391,18 L10.1336561,18 C10.6910224,18 11.1428571,17.5500837 11.1428571,17.0029126 L11.1428571,11.1428571 L17.0029126,11.1428571 C17.5535887,11.1428571 18,10.7021484 18,10.1336561 L18,9.86634391 C18,9.30897756 17.5500837,8.85714286 17.0029126,8.85714286 L11.1428571,8.85714286 L11.1428571,2.99708744 C11.1428571,2.44641125 10.7021484,2 10.1336561,2 L9.86634391,2 Z' id='Shape' fill='#FBFDFF' fill-rule='nonzero'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
 		@media #{$high-contrast} {
-			border:0.1rem solid windowText !important;
+			border: 0.1rem solid windowText !important;
 			background-image: url("data:image/svg+xml,%3Csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E6.20pxIcon/add%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='6.20pxIcon/add' stroke='none' stroke-width='1' fill='buttonText' fill-rule='evenodd'%3E%3Cpath d='M9.86634391,2 C9.30897756,2 8.85714286,2.44991629 8.85714286,2.99708744 L8.85714286,8.85714286 L2.99708744,8.85714286 C2.44641125,8.85714286 2,9.29785156 2,9.86634391 L2,10.1336561 C2,10.6910224 2.44991629,11.1428571 2.99708744,11.1428571 L8.85714286,11.1428571 L8.85714286,17.0029126 C8.85714286,17.5535887 9.29785156,18 9.86634391,18 L10.1336561,18 C10.6910224,18 11.1428571,17.5500837 11.1428571,17.0029126 L11.1428571,11.1428571 L17.0029126,11.1428571 C17.5535887,11.1428571 18,10.7021484 18,10.1336561 L18,9.86634391 C18,9.30897756 17.5500837,8.85714286 17.0029126,8.85714286 L11.1428571,8.85714286 L11.1428571,2.99708744 C11.1428571,2.44641125 10.7021484,2 10.1336561,2 L9.86634391,2 Z' id='Shape' fill='buttonText' fill-rule='nonzero'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
 		}
 	}
@@ -792,7 +793,7 @@ border: none;
 }
 
 @mixin high-contrast-triangle {
-	content: '';
+	content: "";
 	position: absolute;
 	top: 0.8rem;
 	left: 0;
@@ -805,7 +806,7 @@ border: none;
 }
 
 @mixin high-contrast-tooltip-arrow {
-	content: '';
+	content: "";
 	position: absolute;
 	display: inline-block;
 	width: 1.4rem;
