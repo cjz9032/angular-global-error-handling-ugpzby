@@ -1,12 +1,12 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-
-import { DisplayColorTempComponent } from './display-color-temp.component';
-import { EyeCareMode } from 'src/app/data-models/camera/eyeCareMode.model';
-import { LoggerService } from 'src/app/services/logger/logger.service';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { TranslateStore } from '@ngx-translate/core';
-
+import { EyeCareMode } from 'src/app/data-models/camera/eyeCareMode.model';
 import { TranslationModule } from 'src/app/modules/translation.module';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { DisplayColorTempComponent } from './display-color-temp.component';
+
+
 
 const displayColorTempSettings: EyeCareMode = {
 	available: true,

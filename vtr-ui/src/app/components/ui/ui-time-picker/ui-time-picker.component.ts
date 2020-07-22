@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
-import { CommonService } from 'src/app/services/common/common.service';
 import { KeyCode } from 'src/app/enums/key-code.enum';
+import { CommonService } from 'src/app/services/common/common.service';
 
 @Component({
 	selector: 'vtr-ui-time-picker',

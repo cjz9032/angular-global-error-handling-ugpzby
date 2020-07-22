@@ -28,8 +28,8 @@ describe('UiDaysPickerComponent', () => {
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(UiDaysPickerComponent);
-		ssbService = TestBed.get(SmartStandbyService);
-		commonService = TestBed.get(CommonService);
+		ssbService = TestBed.inject(SmartStandbyService);
+		commonService = TestBed.inject(CommonService);
 		ssbService.days = 'mon,tue';
 		component = fixture.componentInstance;
 		fixture.detectChanges();

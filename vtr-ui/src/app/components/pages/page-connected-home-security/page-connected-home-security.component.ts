@@ -41,6 +41,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 import { isEqual, pick, cloneDeep, findIndex } from 'lodash';
 import { DeviceService } from 'src/app/services/device/device.service';
+import { NetworkRequestService } from '../../../services/network-request/network-request.service';
 
 @Component({
 	selector: 'vtr-page-connected-home-security',
@@ -168,7 +169,8 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		private commonService: CommonService,
 		private cmsService: CMSService,
 		private windowsVersionService: WindowsVersionService,
-		private deviceService: DeviceService
+        private deviceService: DeviceService,
+        private networkService: NetworkRequestService
 	) { }
 
 	ngOnInit() {
@@ -187,8 +189,8 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'unknow');
 		this.isOnline = this.commonService.isOnline;
 		let cacheIsOnline = true;
-		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
-			this.onNotification(notification);
+		this.notificationSubscription = this.networkService.networkStatus().subscribe((hasNetwork: []) => {
+			this.isOnline = hasNetwork[hasNetwork.length -1];
 			if (this.common) {
 				this.common.isOnline = this.isOnline;
 			}
@@ -402,19 +404,6 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		});
 
 		articleDetailModal.componentInstance.articleId = this.devicePostureArticleId;
-	}
-
-	private onNotification(notification: AppNotification) {
-		if (notification) {
-			switch (notification.type) {
-				case NetworkStatus.Online:
-				case NetworkStatus.Offline:
-					this.isOnline = notification.payload.isOnline;
-					break;
-				default:
-					break;
-			}
-		}
 	}
 
 	private handleResponseError(err: Error) {
