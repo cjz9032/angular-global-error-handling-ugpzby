@@ -1,16 +1,16 @@
-import { async, ComponentFixture, TestBed, tick } from '@angular/core/testing';
-
-import { UiRowSwitchComponent } from './ui-row-switch.component';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { NgbModal, NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
-import { DeviceService } from 'src/app/services/device/device.service';
+import { NgbModal, NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { DevService } from 'src/app/services/dev/dev.service';
+import { DeviceService } from 'src/app/services/device/device.service';
 import { ModalRebootConfirmComponent } from '../../modal/modal-reboot-confirm/modal-reboot-confirm.component';
 import { ModalVoiceComponent } from '../../modal/modal-voice/modal-voice.component';
-import { By } from '@angular/platform-browser';
+import { UiRowSwitchComponent } from './ui-row-switch.component';
+
 
 const on = {
 	value: true,
@@ -157,7 +157,7 @@ describe('UiRowSwitchComponent', () => {
 
 	it('should test on rebootConfirm method with isRebootRequired true', () => {
 		// component = fixture.componentInstance;
-		// const modalService = TestBed.get(NgbModal);
+		// const modalService = TestBed.inject(NgbModal);
 		component.title = 'Reversing the default primary function';
 		// component.isSwitchChecked = false;
 		const prevValue = component.isRebootRequired;
@@ -172,7 +172,7 @@ describe('UiRowSwitchComponent', () => {
 
 	/* it('should test on ngAfterViewInit modern-standby-link modern-standby', () => {
 		const component = fixture.componentInstance;
-		// const modalService = TestBed.get(NgbModal);
+		// const modalService = TestBed.inject(NgbModal);
 		component.title = 'Reversing the default primary function';
 		component.caption='Test <a href=\'www.test.com\'>Test</a>';
 		// component.isSwitchChecked = false;
@@ -189,7 +189,7 @@ describe('UiRowSwitchComponent', () => {
 
 	/* it('should test on ngAfterViewInit modern-standby-link modern-standby', () => {
 		// component = fixture.componentInstance;
-		// const modalService = TestBed.get(NgbModal);
+		// const modalService = TestBed.inject(NgbModal);
 		component.title = 'Reversing the default primary function';
 		component.caption = 'Test <a href=\'www.test.com\'>Test</a>';
 		component.readMoreText = 'test';

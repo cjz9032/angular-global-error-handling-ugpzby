@@ -1,16 +1,14 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { UiDropDownComponent } from './ui-dropdown.component';
-import { LoggerService } from 'src/app/services/logger/logger.service';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
-import { faChevronUp } from '@fortawesome/pro-light-svg-icons/faChevronUp';
-import { DevService } from 'src/app/services/dev/dev.service';
-import { MetricService } from 'src/app/services/metric/metrics.service';
-import { RouterTestingModule } from '@angular/router/testing';
-import { HttpLoaderFactory } from 'src/app/modules/translation.module';
 import { HttpClient } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpLoaderFactory } from 'src/app/modules/translation.module';
+import { DevService } from 'src/app/services/dev/dev.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { MetricService } from 'src/app/services/metric/metrics.service';
+import { UiDropDownComponent } from './ui-dropdown.component';
+
 
 const interval = [{
 	name: 'Always on',
@@ -53,14 +51,14 @@ const interval = [{
 	placeholder: '',
 	text: 'Half time of display off timer',
 	metricsValue: {}
-}]
+}];
 
 describe('UiDropdownComponent', () => {
 	let component: UiDropDownComponent;
 	let fixture: ComponentFixture<UiDropDownComponent>;
 	let logger: LoggerService;
-	let devService: DevService;
-	let metricService: MetricService
+	/* let devService: DevService;
+	let metricService: MetricService */
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
@@ -73,13 +71,13 @@ describe('UiDropdownComponent', () => {
 					deps: [HttpClient]
 				}
 			}), HttpClientTestingModule],
-		})
+		});
 	}));
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(UiDropDownComponent);
 		component = fixture.componentInstance;
-	})
+	});
 
 	it('should create', async(() => {
 		component.dropDownId = 'oled-taskbar-dimmer-dropDown';
@@ -93,44 +91,45 @@ describe('UiDropdownComponent', () => {
 		component.dropDownId = 'oled-taskbar-dimmer-dropDown';
 		fixture.detectChanges();
 		component.setDropDownValue();
-		expect(component.name).toBe('Always on')
+		expect(component.name).toBe('Always on');
 	});
+
 	it('should call toggleList when disabled is false', () => {
 		component.disabled = false;
-		const event = new Event('click')
-		component.toggleList(event)
-		expect(component.applyFocusClass).toEqual(false)
+		const event = new Event('click');
+		component.toggleList(event);
+		expect(component.applyFocusClass).toEqual(false);
 	});
 
 	it('should call toggleList when disabled is true', () => {
 		component.disabled = true;
-		const event = new Event('click')
-		component.toggleList(event)
-		expect(component.applyFocusClass).toEqual(undefined)
+		const event = new Event('click');
+		component.toggleList(event);
+		expect(component.applyFocusClass).toEqual(undefined);
 	});
 
 	it('should call closeDropdown - try block', () => {
 		const eventObj = { value: 2, hideList: false };
 		component.list = [...interval];
-		spyOn(component, 'settingDimmerIntervals')
-		component.closeDropdown(eventObj)
-		expect(component.isDropDownOpen).toBe(false)
+		spyOn(component, 'settingDimmerIntervals');
+		component.closeDropdown(eventObj);
+		expect(component.isDropDownOpen).toBe(false);
 	});
 
 	it('should call closeDropdown - try block else condition', () => {
 		const eventObj = { hideList: false };
 		component.list = [...interval];
-		const spy = spyOn(component, 'settingDimmerIntervals')
-		component.closeDropdown(eventObj)
-		expect(spy).not.toHaveBeenCalled()
+		const spy = spyOn(component, 'settingDimmerIntervals');
+		component.closeDropdown(eventObj);
+		expect(spy).not.toHaveBeenCalled();
 	});
 
 	it('should call closeDropdown - catch block', () => {
 		const eventObj = undefined;
-		logger = TestBed.get(LoggerService)
-		const spy = spyOn(logger, 'error')
-		component.closeDropdown(eventObj)
-		expect(spy).toHaveBeenCalled()
+		logger = TestBed.inject(LoggerService);
+		const spy = spyOn(logger, 'error');
+		component.closeDropdown(eventObj);
+		expect(spy).toHaveBeenCalled();
 	});
 
 	// it('should call customCamelCase - when value null', () => {
