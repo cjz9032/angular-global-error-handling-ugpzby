@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, EventEmitter, Output, Input, OnChanges } from '@angular/core';
 import ReinventedColorWheel from 'reinvented-color-wheel';
 import 'reinvented-color-wheel/css/reinvented-color-wheel.css';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { isUndefined } from 'util';
 import { ColorWheelStatus } from './../../../enums/color-wheel-status.enum';
 
