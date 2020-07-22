@@ -25,11 +25,8 @@
 		.coronet-logo {
 			width: 10rem;
 
-			@media #{$black-on-white} {
-				filter: grayscale(100%) contrast(1000%);
-			}
 			@media #{$white-on-black} {
-				filter: grayscale(100%) invert(1) contrast(1000%);
+				filter: brightness(0) invert(1);
 			}
 		}
 		.detail-container {
