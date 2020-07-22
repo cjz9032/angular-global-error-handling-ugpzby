@@ -1,20 +1,20 @@
-import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core/testing';
-
-import { ModalBatteryChargeThresholdComponent } from './modal-battery-charge-threshold.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { async, TestBed } from '@angular/core/testing';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { SvgInlinePipe } from 'src/app/pipe/svg-inline/svg-inline.pipe';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { SvgInlinePipe } from 'src/app/pipe/svg-inline/svg-inline.pipe';
 import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
+import { ModalBatteryChargeThresholdComponent } from './modal-battery-charge-threshold.component';
+
 
 describe('ModalBatteryChargeThresholdComponent', () => {
 
-	let title: string;
-	let description1: string;
-	let description2: string;
-	let positiveResponseText: string;
-	let negativeResponseText: string;
+	/* 	let title: string;
+		let description1: string;
+		let description2: string;
+		let positiveResponseText: string;
+		let negativeResponseText: string; */
 	let batteryDetailService: BatteryDetailService;
 	let activeModal;
 
@@ -36,9 +36,9 @@ describe('ModalBatteryChargeThresholdComponent', () => {
 
 		it('should create the app', (() => {
 			const { fixture, component } = setup();
-			const translate = TestBed.get(TranslateService);
+			const translate = TestBed.inject(TranslateService);
 			const spy = spyOn(translate, 'instant');
-			batteryDetailService = TestBed.get(BatteryDetailService);
+			batteryDetailService = TestBed.inject(BatteryDetailService);
 			batteryDetailService.currentOpenModal = '1';
 			fixture.detectChanges();
 			expect(component).toBeTruthy();
@@ -46,7 +46,7 @@ describe('ModalBatteryChargeThresholdComponent', () => {
 
 		it('enableBatteryChargeThreshold calling activeModal close', async(() => {
 			const { fixture, component } = setup();
-			activeModal = TestBed.get(NgbActiveModal);
+			activeModal = TestBed.inject(NgbActiveModal);
 			const spy = spyOn(activeModal, 'close');
 			component.enableBatteryChargeThreshold();
 			expect(spy).toHaveBeenCalled();
