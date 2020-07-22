@@ -2,13 +2,13 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
 import { ModalBatteryChargeThresholdComponent } from 'src/app/components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
+import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 import { BatteryGaugeReset } from 'src/app/data-models/device/battery-gauge-reset.model';
+import { KeyCode } from 'src/app/enums/key-code.enum';
 import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { PowerService } from 'src/app/services/power/power.service';
-import { KeyCode } from 'src/app/enums/key-code.enum';
-import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 
 @Component({
 	selector: 'vtr-battery-gauge-reset',
@@ -58,8 +58,12 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		if (this.systemTimeFormatSubscription) this.systemTimeFormatSubscription.unsubscribe();
-		if (this.gaugeResetSubscription) this.gaugeResetSubscription.unsubscribe();
+		if (this.systemTimeFormatSubscription) {
+			this.systemTimeFormatSubscription.unsubscribe();
+		}
+		if (this.gaugeResetSubscription) {
+			this.gaugeResetSubscription.unsubscribe();
+		}
 	}
 
 	initBatteryGaugeResetInfo() {
@@ -95,7 +99,7 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 			centered: true,
 			windowClass: 'Battery-Charge-Threshold-Modal'
 		});
-		modalRef.componentInstance.id = 'guageReset'
+		modalRef.componentInstance.id = 'guageReset';
 		modalRef.componentInstance.title = 'device.deviceSettings.power.batterySettings.gaugeReset.title';
 		modalRef.componentInstance.negativeResponseText = 'device.deviceSettings.power.batterySettings.gaugeReset.popup.cancel';
 

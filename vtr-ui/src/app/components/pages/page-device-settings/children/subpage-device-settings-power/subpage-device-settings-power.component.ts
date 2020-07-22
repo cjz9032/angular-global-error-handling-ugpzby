@@ -1,15 +1,20 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { BehaviorSubject, combineLatest, EMPTY, from, of, pipe, range, timer, zip } from 'rxjs';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { debounce, finalize, map, mergeMap, retryWhen, switchMap, tap } from 'rxjs/operators';
+import { ModalBatteryChargeThresholdComponent } from 'src/app/components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
+import { UiCustomSwitchComponent } from 'src/app/components/ui/ui-custom-switch/ui-custom-switch.component';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { AlwaysOnUSBCapability } from 'src/app/data-models/device/always-on-usb.model';
 import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.model';
 import { ChargeThresholdInformation } from 'src/app/enums/battery-information.enum';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
+import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { PowerService } from 'src/app/services/power/power.service';
@@ -17,11 +22,6 @@ import { RouteHandlerService } from 'src/app/services/route-handler/route-handle
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { FlipToBootCurrentModeEnum, FlipToBootErrorCodeEnum, FlipToBootSetStatusEnum, FlipToBootSupportedEnum } from '../../../../../services/power/flipToBoot.enum';
 import { FlipToBootSetStatus } from '../../../../../services/power/flipToBoot.interface';
-import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-import { ModalBatteryChargeThresholdComponent } from 'src/app/components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
-import { UiCustomSwitchComponent } from 'src/app/components/ui/ui-custom-switch/ui-custom-switch.component';
-import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
 
 
 enum PowerMode {
@@ -857,7 +857,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.expressChargingStatus.status = expressCharging.status;
 		this.updateBatteryLinkStatus(this.expressChargingStatus.available);
 
-		this.expressChargingCache = this.expressChargingStatus
+		this.expressChargingCache = this.expressChargingStatus;
 		this.expressChargingCache.isLoading = this.expressChargingLock;
 		this.commonService.setLocalStorageValue(LocalStorageKey.ExpressChargingCapability, this.expressChargingCache);
 	}
@@ -1137,7 +1137,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				centered: true,
 				windowClass: 'Battery-Charge-Threshold-Modal'
 			});
-			modalRef.componentInstance.id = 'threshold'
+			modalRef.componentInstance.id = 'threshold';
 			modalRef.componentInstance.title = 'device.deviceSettings.power.batterySettings.batteryThreshold.popup.title';
 			modalRef.componentInstance.description1 = 'device.deviceSettings.power.batterySettings.batteryThreshold.popup.description1';
 			modalRef.componentInstance.description2 = 'device.deviceSettings.power.batterySettings.batteryThreshold.popup.description2';
