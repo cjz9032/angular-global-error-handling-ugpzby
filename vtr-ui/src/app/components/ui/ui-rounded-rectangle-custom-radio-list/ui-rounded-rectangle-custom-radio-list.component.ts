@@ -1,9 +1,9 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewChildren, QueryList, SimpleChanges, OnChanges, ViewChild, ElementRef } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, QueryList, SimpleChanges, ViewChild, ViewChildren } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { KeyCode as KEYCODE } from 'src/app/enums/key-code.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { UiRoundedRectangleRadioModel } from './ui-rounded-rectangle-radio-list.model';
-import { ActivatedRoute } from '@angular/router';
 
 /**
  * this radio group implementation is based on W3C KB navigation example
