@@ -2,11 +2,11 @@ import { Component, EventEmitter, Input, OnInit, Output, QueryList, ViewChildren
 import { SecureMath } from '@lenovo/tan-client-bridge';
 import { NgbDropdown } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
-import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.model';
-import { CommonService } from 'src/app/services/common/common.service';
-import { KeyCode } from 'src/app/enums/key-code.enum';
 import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
+import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.model';
+import { KeyCode } from 'src/app/enums/key-code.enum';
 import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
+import { CommonService } from 'src/app/services/common/common.service';
 
 @Component({
 	selector: 'vtr-battery-charge-threshold-settings',
@@ -26,12 +26,12 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	chargeOptions: number[] = [40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100];
 	startAtChargeOptions: number[] = this.chargeOptions.slice(0, this.chargeOptions.length - 1);
 	stopAtChargeOptions: number[] = this.chargeOptions.slice(1, this.chargeOptions.length);
-	hyphen = '-'
+	hyphen = '-';
 	startAtChargeOption = 'startAtChargeOption';
 	stopAtChargeOption = 'stopAtChargeOption';
 	option = 'option';
 	selected = 'selected';
-	off = 'off'
+	off = 'off';
 	ddStartAtChargeDescription = this.translate.instant('device.deviceSettings.power.batterySettings.batteryThreshold.options.start');
 	ddStopAtChargeDescription = this.translate.instant('device.deviceSettings.power.batterySettings.batteryThreshold.options.stop');
 
@@ -72,7 +72,7 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 			this.changeBCTInfo.emit(bctInfo);
 		}
 		this.delayButtonFocus(activeDropdown, button);
-		this.metrics.sendMetrics(`${startVal}%`, `${this.textId}-start-option`, CommonMetricsModel.ParentDeviceSettings)
+		this.metrics.sendMetrics(`${startVal}%`, `${this.textId}-start-option`, CommonMetricsModel.ParentDeviceSettings);
 	}
 	// this added to introduce the delay between option selection , and focus back on button to fix issue with narrator reading collapsed twice.
 	delayButtonFocus(activeDropdown: NgbDropdown, button: HTMLElement) {
@@ -95,7 +95,7 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 			this.changeBCTInfo.emit(bctInfo);
 		}
 		this.delayButtonFocus(activeDropdown, button);
-		this.metrics.sendMetrics(`${stopVal}%`, `${this.textId}-stop-option`, CommonMetricsModel.ParentDeviceSettings)
+		this.metrics.sendMetrics(`${stopVal}%`, `${this.textId}-stop-option`, CommonMetricsModel.ParentDeviceSettings);
 	}
 
 	public toggleAutoChargeSettings($event: boolean) {
@@ -133,7 +133,7 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 			const menuElement = sourceElement.parentElement.parentElement;
 			const anchors = Array.from(menuElement.querySelectorAll('[class*=dropdown-item][aria-disabled=false][tabindex]:not([tabindex="-1"])'));
 			const currentIndex = anchors.indexOf(sourceElement);
-			let nextIndex
+			let nextIndex;
 
 			if ($event.shiftKey && $event.keyCode === 9) {
 				nextIndex = currentIndex - 1;
@@ -158,9 +158,9 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	ddItemKeyEscHandler($event, activeDropdown: NgbDropdown, toggle: HTMLElement) {
 		$event.preventDefault();
 		if (activeDropdown.isOpen()) {
-			toggle.click()
+			toggle.click();
 		}
-		toggle.focus()
+		toggle.focus();
 	}
 
 	ddToggleKBNavigator($event, activeDropdown: NgbDropdown, type, value) {
