@@ -79,16 +79,13 @@
 			color: $light;
 			margin-right: 2rem;
 
-			@media #{$black-on-white} {
-				background-color: $high-contrast-white-dark-magenta;
-			}
-			@media #{$white-on-black} {
-				background-color: $high-contrast-black-cyan;
-			}
+			@include ui-button-high-contrast-white;
+			@include ui-button-high-contrast-black;
 		}
 		.cancel-btn {
-			background-color: $gray;
-
+			background: $gray;
+			@include ui-button-secondary-high-contrast-white;
+			@include ui-button-secondary-high-contrast-black;
 			@media #{$black-on-white} {
 				background-color: $light;
 				color: $dark;
