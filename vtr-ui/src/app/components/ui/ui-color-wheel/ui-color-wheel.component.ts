@@ -3,6 +3,7 @@ import ReinventedColorWheel from 'reinvented-color-wheel';
 import 'reinvented-color-wheel/css/reinvented-color-wheel.css';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { isUndefined } from 'util';
+import { ColorWheelStatus } from './../../../enums/color-wheel-status.enum';
 
 @Component({
 	selector: 'vtr-ui-color-wheel',
@@ -10,6 +11,7 @@ import { isUndefined } from 'util';
 	styleUrls: ['./ui-color-wheel.component.scss']
 })
 export class UiColorWheelComponent implements OnInit, OnChanges {
+	colorWheelStatus = ColorWheelStatus;
 	@ViewChild('colorWheel', { static: true }) canvasElement: ElementRef;
 	color: any = [255, 0, 0];
 	backColor: String = '#ff0000';
@@ -17,7 +19,7 @@ export class UiColorWheelComponent implements OnInit, OnChanges {
 	@Output() colorEffectChanged = new EventEmitter<any>();
 	@Input() inRGB: any;
 	@Input() inHEX: any;
-	@Input() btnStatus: String = 'apply';
+	@Input() btnStatus: string = this.colorWheelStatus.apply;
 	@Input() showOverlay: Boolean;
 	@Input() defaultLang: any;
 	@Input() automationId: string;
