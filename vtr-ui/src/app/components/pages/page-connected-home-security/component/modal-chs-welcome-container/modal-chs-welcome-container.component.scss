@@ -86,14 +86,6 @@
 			background: $gray;
 			@include ui-button-secondary-high-contrast-white;
 			@include ui-button-secondary-high-contrast-black;
-			@media #{$black-on-white} {
-				background-color: $light;
-				color: $dark;
-			}
-			@media #{$white-on-black} {
-				background-color: $light;
-				color: $dark;
-			}
 		}
 	}
 	.page-indicator {
