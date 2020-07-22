@@ -36,11 +36,35 @@
 				button {
 					&.btn-outline-shadow {
 						background-color: #f5f7f8 !important;
+						@media #{$white-on-black} {
+							@include high-contrast-black-disabled-border;
+						}
+						@media #{$black-on-white} {
+							@include high-contrast-white-disabled-border;
+						}
 
 					}
 					.dropdown-icon {
 						fa-icon {
 							color: #667481 !important;
+							@media #{$white-on-black} {
+								@include high-contrast-black-text-color-disabled;
+								opacity: 0.5;
+							}
+							@media #{$black-on-white} {
+								@include high-contrast-white-text-color-disabled;
+								opacity: 0.5;
+							}
+						}
+					}
+					.select-title, .select-text {
+						@media #{$white-on-black} {
+							@include high-contrast-black-text-color-disabled;
+							opacity: 0.5;
+						}
+						@media #{$black-on-white} {
+							@include high-contrast-white-text-color-disabled;
+							opacity: 0.5;
 						}
 					}
 				}
