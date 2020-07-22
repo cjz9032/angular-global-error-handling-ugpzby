@@ -3,13 +3,7 @@
 .vtr-modal-scan-failure{
 	padding: 1.8rem 2.4rem 2.4rem;
 
-	//fa-icon {
-	//	font-size: 2rem;
-	//	color: $main;
-	//}
-
 	.modal-information {
-		//padding: 0 2rem 0 2rem;
 
 		.title {
 			width: 100%;
@@ -32,6 +26,7 @@
 		}
 
 		.description-failure ::ng-deep {
+			// Changing description-failure bold font-weight
 			b {
 				font-weight: $weight_600;
 			}
@@ -47,23 +42,17 @@
 		}
 
 		.modules {
-			//.warning {
-			//	color: $orange_light;
-			//}
 
 			.list-module {
 				margin-top: 2.5rem;
 				list-style-type: none;
-				//
-				//&:last-child {
-				//}
 
 				.module-row {
 					display: flex;
 					justify-content: space-between;
 					align-items: center;
-					//padding: 0 1.5rem 0 0rem;
 					padding: 0 0 0 0;
+
 					.module-name-container {
 						display: flex;
 						flex-wrap: wrap;
@@ -81,7 +70,6 @@
 							&:after {
 								content: ' ';
 								margin-right: 1.2rem;
-								//white-space: pre;
 							}
 						}
 
@@ -90,12 +78,7 @@
 							flex-grow: 1;
 						}
 					}
-
 				}
-
-				//.list-device {
-				//	//padding: 0 0 0 3.4rem; // icon size (2.4rem) + module-name spacing (1rem)
-				//}
 			}
 
 			&:last-child {
@@ -110,60 +93,6 @@
 		.button-row {
 			align-items: center;
 			padding: 1rem 0 0 0;
-		}
-
-		//.support-button {
-		//	font-size: $fontsize_xs;
-		//	//font-weight: $weight_medium;
-		//	line-height: 1.5rem;
-		//	text-align: center;
-		//	text-transform: uppercase;
-		//	padding: 1rem !important;
-		//	font-weight: $weight_bold;
-		//
-		//	//&:hover {
-		//	//	border-bottom: none;
-		//	//
-		//	//}
-		//
-		//	&:focus {
-		//		outline: 0.1rem solid $menu_hover;
-		//		outline-offset: 0.2rem;
-		//	}
-		//
-		//	.support-button-text {
-		//		cursor: pointer;
-		//		//text-decoration: underline;
-		//		border-bottom: 0.2rem solid black;
-		//
-		//
-		//		&:hover {
-		//			border-bottom: none;
-		//			color: $light;
-		//			text-decoration: none;
-		//		}
-		//	}
-		//
-		//
-		//}
-
-		.support-button {
-			font-size: $fontsize_xs;
-			font-weight: $weight_bold;
-			color: $menu_hover;
-			border-bottom: 0.2rem solid $menu_hover;
-			padding-bottom: 0.2rem;
-			margin-left: 2.5rem;
-			text-transform: uppercase;
-			cursor: pointer;
-			&:hover {
-				border: none;
-				padding-bottom: 0.5rem; // Centering the text after removing its text-decoration
-				text-decoration: none; //Remove underline on customize scan when the cursor is under the link
-			}
-			&:focus {
-				@include outline_blue;
-			}
 		}
 
 		.close-btn {
@@ -184,7 +113,4 @@
 		}
     }
 
-}
-
-.modal-body {
 }
