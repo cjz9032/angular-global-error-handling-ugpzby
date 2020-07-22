@@ -43,7 +43,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	securityHealthArticleCategory: string;
 	cancelClick = false;
 	isOnline = true;
-	notificationSubscription: Subscription;
 	region = 'us';
 	segment: string;
 	intervalId: number;
@@ -151,9 +150,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			this.wifiSecurity.cancelGetWifiSecurityState();
 			this.wifiSecurity.off(EventTypes.wsPluginMissingEvent, this.wsPluginMissingEventHandler);
 			this.wifiSecurity.off(EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHandler);
-		}
-		if (this.notificationSubscription) {
-			this.notificationSubscription.unsubscribe();
 		}
 		window.clearInterval(this.intervalId);
 		this.networkSubscriber.unsubscribe();
