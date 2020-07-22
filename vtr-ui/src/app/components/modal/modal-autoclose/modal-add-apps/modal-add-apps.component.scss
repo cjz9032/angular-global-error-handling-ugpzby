@@ -212,7 +212,6 @@ ui-popover-apps {
 			}
 		}
 		.no-running-app {
-			color: $light;
 			overflow-x: none;
 			touch-action: none;
 			height:auto;
@@ -248,11 +247,13 @@ ui-popover-apps {
 						font-weight: $weight_light;
 						margin:0 auto 1rem;
 						padding: 2rem 0rem;
+						color:$gaming_lightest;
 					}
 					p {
 						font-size: 1.5rem;
 						margin:0 auto;
 						padding-bottom:2rem;
+						color:$gaming_white60;
 					}
 				}
 			}
