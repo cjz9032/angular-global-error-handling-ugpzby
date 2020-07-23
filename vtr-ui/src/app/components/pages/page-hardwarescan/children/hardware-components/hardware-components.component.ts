@@ -417,6 +417,11 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				this.showSupportPopupIfNeeded();
 			})
 			.catch((ex: any) => {
+				// Clean up the scan variables when occurs a power event (CLI stopped brusquely)
+				this.hardwareScanService.setIsScanDone(false);
+				this.hardwareScanService.setScanExecutionStatus(false);
+				this.hardwareScanService.setRecoverExecutionStatus(false);
+
 				this.initComponent();
 			})
 			.finally(() => {
