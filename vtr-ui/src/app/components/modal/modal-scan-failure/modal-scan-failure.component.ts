@@ -33,6 +33,8 @@ export class ModalScanFailureComponent {
 		this.closeModal();
 	}
 
+
+
 	// Sets the lists of failed modules and RBS devices, and then creates the list of RBS devices that failed
 	configureDevicesLists(failedModules, rbsDevices) {
 		this.failedModules = failedModules;
