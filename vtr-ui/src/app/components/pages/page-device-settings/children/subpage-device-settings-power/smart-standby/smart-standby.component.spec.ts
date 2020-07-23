@@ -6,12 +6,12 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ModalSmartStandByComponent } from 'src/app/components/modal/modal-smart-stand-by/modal-smart-stand-by.component';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { SmartStandby } from 'src/app/data-models/device/smart-standby.model';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { PowerService } from 'src/app/services/power/power.service';
 import { SmartStandbyService } from 'src/app/services/smart-standby/smart-standby.service';
 import { SmartStandbyComponent } from './smart-standby.component';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 
 describe('Component: SmartStandby', () => {
