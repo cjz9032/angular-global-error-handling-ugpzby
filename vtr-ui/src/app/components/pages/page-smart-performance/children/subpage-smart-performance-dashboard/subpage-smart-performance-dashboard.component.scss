@@ -193,6 +193,16 @@
 					background: linear-gradient(to right, #d02928, #d73f26, #dd5124, #e26222, #e77222, #de7d15, #d48708, #c99000, #ad9500, #909700, #729816, #51982c);
 					border-radius: 2rem;
 					position: relative;
+					@media #{$white-on-black} {
+						background: $light;
+						box-shadow: none;
+						@include white-border;
+					}
+					@media #{$black-on-white} {
+						background: $dark;
+						box-shadow: none;
+						@include black-border;
+					}
 					.condition {
 						padding: 0 1.5rem;
 						font-size: 1rem;
@@ -220,6 +230,14 @@
 							height: 2rem;
 							margin-top: 0.5rem;
 							border-left: 0.2rem dotted $main_lightest;
+							@media #{$white-on-black} {
+								border-left: 0.4rem dotted $dark;
+								@include high-contrast-adjust;
+							}
+							@media #{$black-on-white} {
+								border-left: 0.4rem dotted $light;
+								@include high-contrast-adjust;
+							}
 							&::after {
 								counter-increment: lines;
 								content: counter(lines);
