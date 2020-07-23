@@ -2,9 +2,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 
 @Pipe({
-	name: 'hardwareScanTranslate'
+	name: 'translateDefault'
 })
-export class HardwareScanTranslatePipe implements PipeTransform {
+export class TranslateDefaultValueIfNotFoundPipe implements PipeTransform {
 
 	constructor(private translatePipe: TranslatePipe) {	}
 

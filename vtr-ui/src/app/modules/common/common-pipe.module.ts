@@ -14,7 +14,7 @@ import { RemoveSpacePipe } from 'src/app/pipe/remove-space/remove-space.pipe';
 import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
 import { HtmlTextPipe } from 'src/app/pipe/html-text/html-text.pipe';
 import { FormatLocaleDateTimePipe } from 'src/app/pipe/format-locale-datetime/format-locale-datetime.pipe';
-import { HardwareScanTranslatePipe } from 'src/app/pipe/hardware-scan-translate/hardware-scan-translate.pipe';
+import { TranslateDefaultValueIfNotFoundPipe } from 'src/app/pipe/translate-default-value-if-not-found/translate-default-value-if-not-found.pipe'
 
 @NgModule({
 	declarations: [
@@ -32,7 +32,7 @@ import { HardwareScanTranslatePipe } from 'src/app/pipe/hardware-scan-translate/
 		FormatLocaleDatePipe,
 		RemoveSpacePipe,
 		FormatLocaleDateTimePipe,
-		HardwareScanTranslatePipe,
+		TranslateDefaultValueIfNotFoundPipe,
 	],
 	exports: [
 		CapitalizeFirstPipe,
@@ -51,7 +51,7 @@ import { HardwareScanTranslatePipe } from 'src/app/pipe/hardware-scan-translate/
 		FormatLocaleDatePipe,
 		RemoveSpacePipe,
 		FormatLocaleDateTimePipe,
-		HardwareScanTranslatePipe,
+		TranslateDefaultValueIfNotFoundPipe,
 	],
 	imports: [
 		SanitizeModule,
