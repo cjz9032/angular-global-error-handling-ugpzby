@@ -1,35 +1,33 @@
-import { async, TestBed, fakeAsync, tick } from '@angular/core/testing';
-import { NO_ERRORS_SCHEMA, Pipe, Component } from '@angular/core';
-import { TranslateStore } from '@ngx-translate/core';
-import { TranslationModule } from 'src/app/modules/translation.module';
 import { HttpClientModule } from '@angular/common/http';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { async, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { SubpageDeviceSettingsPowerComponent } from './subpage-device-settings-power.component';
-import { PowerService } from 'src/app/services/power/power.service';
-import { CommonService } from 'src/app/services/common/common.service';
-import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { LoggerService } from 'src/app/services/logger/logger.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { TranslateStore } from '@ngx-translate/core';
 import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.model';
-import { BatteryChargeThresholdCapability } from 'src/app/data-models/device/battery-charge-threshold-capability.model';
-import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
+import { TranslationModule } from 'src/app/modules/translation.module';
 import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
-import { MetricService } from 'src/app/services/metric/metrics.service';
+import { CommonService } from 'src/app/services/common/common.service';
 import { DevService } from 'src/app/services/dev/dev.service';
+import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { MetricService } from 'src/app/services/metric/metrics.service';
+import { PowerService } from 'src/app/services/power/power.service';
+import { SubpageDeviceSettingsPowerComponent } from './subpage-device-settings-power.component';
 const featureStatus = {
 	available: true,
 	status: true,
 	permission: true,
 	isLoading: true
 };
-const ChargeThresholdData= {
-	batteryNum :1,
-	isCapable : false,
-	isEnabled : false,
-	startValue : 40,
-	stopValue : 45,
-	checkboxValue : false
-}
+const ChargeThresholdData = {
+	batteryNum: 1,
+	isCapable: false,
+	isEnabled: false,
+	startValue: 40,
+	stopValue: 45,
+	checkboxValue: false
+};
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
 
 describe('SubpageDeviceSettingsPowerComponent', () => {
@@ -56,7 +54,7 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 			declarations: [SubpageDeviceSettingsPowerComponent],
 			schemas: [NO_ERRORS_SCHEMA],
 			imports: [TranslationModule, HttpClientModule, RouterTestingModule],
-			providers: [DevService,MetricService,CommonMetricsService, HypothesisService ,TranslateStore]
+			providers: [DevService, MetricService, CommonMetricsService, HypothesisService, TranslateStore]
 		})
 			.compileComponents();
 	}));
@@ -299,7 +297,7 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 
 		it('#onNotification should call', async () => {
 			const { fixture, component, powerService } = setup();
-			const notification = {type: 'IsPowerDriverMissing', payload: true};
+			const notification = { type: 'IsPowerDriverMissing', payload: true };
 			spyOn(component, 'getBatteryAndPowerSettings');
 			const myPrivateSpy = spyOn<any>(component, 'onNotification').and.callThrough();
 			fixture.detectChanges();
@@ -314,50 +312,50 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 			const myPrivateSpy = spyOn<any>(component, 'getAlwaysOnUSBStatusThinkPad').and.callThrough();
 			fixture.detectChanges();
 			myPrivateSpy.call(component);
-            expect(powerService.getAlwaysOnUSBStatusThinkPad).toHaveBeenCalled();  
-        });
-        it('#getAlwaysOnUSBStatusThinkPad should call catch block', async () => {
-            const { component } = setup();
-            expect(component['getAlwaysOnUSBStatusThinkPad']).toThrow();
-        });
-        it('#getEasyResumeStatusThinkPad should call catch block', async () => {
-            const { component} = setup();
-            expect(component['getEasyResumeStatusThinkPad']).toThrow();
-        });
-        it('#initEnergyStarFromCache should call catch block', async () => {
-            const { component} = setup();
-            expect(component['initEnergyStarFromCache']).toThrow();
-        });
-        it('#initOtherSettingsFromCache should call catch block', async () => {
-            const { component} = setup();
-            expect(component['initOtherSettingsFromCache']).toThrow();
-        });
-        it('#initPowerSettingsFromCache should call catch block', async () => {
-            const { component} = setup();
-            expect(component['initPowerSettingsFromCache']).toThrow();
-        });
-        it('#initConservationModeFromCache should call catch block', async () => {
-            const { component} = setup();
-            expect(component['initConservationModeFromCache']).toThrow();
-        });
-       
-        it('#initExpressChargingFromCache should call catch block', async () => {
-            const { component} = setup();
-            expect(component['initExpressChargingFromCache']).toThrow();
-        });
-        it('#initBatteryChargeThresholdFromCache should call catch block', async () => {
-            const { component} = setup();
-            expect(component['initBatteryChargeThresholdFromCache']).toThrow();
-        });
-        it('#initAirplanePowerFromCache should call catch block', async () => {
-            const { component} = setup();
-            expect(component['initAirplanePowerFromCache']).toThrow();
-        });
-        
-        it('#initGaugeResetInfoFromCache should call catch block', async () => {
-            const { component} = setup();
-            expect(component['initGaugeResetInfoFromCache']).toThrow();
-        });
+			expect(powerService.getAlwaysOnUSBStatusThinkPad).toHaveBeenCalled();
+		});
+		it('#getAlwaysOnUSBStatusThinkPad should call catch block', async () => {
+			const { component } = setup();
+			expect(component['getAlwaysOnUSBStatusThinkPad']).toThrow();
+		});
+		it('#getEasyResumeStatusThinkPad should call catch block', async () => {
+			const { component } = setup();
+			expect(component['getEasyResumeStatusThinkPad']).toThrow();
+		});
+		it('#initEnergyStarFromCache should call catch block', async () => {
+			const { component } = setup();
+			expect(component['initEnergyStarFromCache']).toThrow();
+		});
+		it('#initOtherSettingsFromCache should call catch block', async () => {
+			const { component } = setup();
+			expect(component['initOtherSettingsFromCache']).toThrow();
+		});
+		it('#initPowerSettingsFromCache should call catch block', async () => {
+			const { component } = setup();
+			expect(component['initPowerSettingsFromCache']).toThrow();
+		});
+		it('#initConservationModeFromCache should call catch block', async () => {
+			const { component } = setup();
+			expect(component['initConservationModeFromCache']).toThrow();
+		});
+
+		it('#initExpressChargingFromCache should call catch block', async () => {
+			const { component } = setup();
+			expect(component['initExpressChargingFromCache']).toThrow();
+		});
+		it('#initBatteryChargeThresholdFromCache should call catch block', async () => {
+			const { component } = setup();
+			expect(component['initBatteryChargeThresholdFromCache']).toThrow();
+		});
+		it('#initAirplanePowerFromCache should call catch block', async () => {
+			const { component } = setup();
+			expect(component['initAirplanePowerFromCache']).toThrow();
+		});
+
+		it('#initGaugeResetInfoFromCache should call catch block', async () => {
+			const { component } = setup();
+			expect(component['initGaugeResetInfoFromCache']).toThrow();
+		});
 		it('#getEasyResumeStatusThinkPad should call', async () => {
 			const { fixture, component, powerService } = setup();
 			spyOn(powerService, 'startMonitor').and.returnValue(Promise.resolve(true));
@@ -448,41 +446,41 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 			const spy = spyOn(commonService, 'isPresent').and.returnValue(false);
 			component.onSetSmartStandbyCapability(booleanEvent);
 			expect(spy).toHaveBeenCalledWith(component.headerMenuItems, 'smartStandby');
-        });
-        
-        it('onSetSmartSettingsCapability ', () => {
+		});
+
+		it('onSetSmartSettingsCapability ', () => {
 			const { component } = setup();
 			const booleanEvent = false;
 			const spy = spyOn(component, 'onSetSmartSettingsCapability').and.callThrough();
 			component.onSetSmartSettingsCapability(booleanEvent);
-            expect(spy).toHaveBeenCalled();
+			expect(spy).toHaveBeenCalled();
 		});
 
 		it('isThresholdWarningMsgShown', () => {
 			const { component } = setup();
-            component.thresholdInfo=thresholdInfo;
-            component.isThresholdWarningMsgShown();
-            expect(component.thresholdInfo.length).toEqual(1);
-    
-        });
-        it('onAutoCheckChange', () => {
-			const { component } = setup();
-            component.thresholdInfo=thresholdInfo;
-            component.onAutoCheckChange(ChargeThresholdData,0);
-        });
-        it('onToggleOfFlipToBoot', () => {
-			const { component,powerService } = setup();
-            const spy = spyOn(component, 'onToggleOfFlipToBoot').and.callThrough();
-			component.onToggleOfFlipToBoot(true);
-            expect(spy).toHaveBeenCalled();
-        });
-        it('#onToggleOfFlipToBoot catch block should call', () => {
-			const { fixture, component, powerService } = setup();
-            let spy =spyOn(powerService, 'setFlipToBootSettings').and.returnValue(Promise.reject());
-			 component.onToggleOfFlipToBoot(true);
-			 expect(spy).toHaveBeenCalled();
+			component.thresholdInfo = thresholdInfo;
+			component.isThresholdWarningMsgShown();
+			expect(component.thresholdInfo.length).toEqual(1);
 
-        });
+		});
+		it('onAutoCheckChange', () => {
+			const { component } = setup();
+			component.thresholdInfo = thresholdInfo;
+			component.onAutoCheckChange(ChargeThresholdData, 0);
+		});
+		it('onToggleOfFlipToBoot', () => {
+			const { component, powerService } = setup();
+			const spy = spyOn(component, 'onToggleOfFlipToBoot').and.callThrough();
+			component.onToggleOfFlipToBoot(true);
+			expect(spy).toHaveBeenCalled();
+		});
+		it('#onToggleOfFlipToBoot catch block should call', () => {
+			const { fixture, component, powerService } = setup();
+			const spy = spyOn(powerService, 'setFlipToBootSettings').and.returnValue(Promise.reject());
+			component.onToggleOfFlipToBoot(true);
+			expect(spy).toHaveBeenCalled();
+
+		});
 		it('should call setChargeThresholdUI', () => {
 			const { component } = setup();
 			const bctInfo = thresholdInfo;
@@ -492,166 +490,166 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 			component.setChargeThresholdUI(bctInfo);
 			expect(spy).toHaveBeenCalled();
 		});
-        it('#startMonitor catch block should call', () => {
+		it('#startMonitor catch block should call', () => {
 			const { fixture, component, powerService } = setup();
-            let spy =spyOn(powerService, 'startMonitor').and.returnValue(Promise.reject());
-			 component.startMonitor();
-			 expect(spy).toHaveBeenCalled();
-        });
-        it('#getGaugeResetCapability catch block should call', () => {
+			const spy = spyOn(powerService, 'startMonitor').and.returnValue(Promise.reject());
+			component.startMonitor();
+			expect(spy).toHaveBeenCalled();
+		});
+		it('#getGaugeResetCapability catch block should call', () => {
 			const { fixture, component, powerService } = setup();
-            let spy =spyOn(powerService, 'getGaugeResetCapability').and.returnValue(Promise.reject());
-			 component.getGaugeResetCapability();
-			 expect(spy).toHaveBeenCalled();
-        });
-        // it('#initPowerSmartSettingFromCache catch block should call', () => {
+			const spy = spyOn(powerService, 'getGaugeResetCapability').and.returnValue(Promise.reject());
+			component.getGaugeResetCapability();
+			expect(spy).toHaveBeenCalled();
+		});
+		// it('#initPowerSmartSettingFromCache catch block should call', () => {
 		// 	const { fixture, component, powerService } = setup();
-        //     let spy =spyOn(commonService, 'getLocalStorageValue').and.returnValue(Promise.reject());
+		//     const spy =spyOn(commonService, 'getLocalStorageValue').and.returnValue(Promise.reject());
 		// 	 component.initPowerSmartSettingFromCache();
 		// 	 expect(spy).toHaveBeenCalled();
-        // });
-        it('#getVantageToolBarStatus catch block should call', () => {
+		// });
+		it('#getVantageToolBarStatus catch block should call', () => {
 			const { fixture, component, powerService } = setup();
-            let spy =spyOn(powerService, 'getVantageToolBarStatus').and.returnValue(Promise.reject());
-			 component.getVantageToolBarStatus();
-			 expect(spy).toHaveBeenCalled();
-        });
-        it('#getEnergyStarCapability catch block should call', () => {
+			const spy = spyOn(powerService, 'getVantageToolBarStatus').and.returnValue(Promise.reject());
+			component.getVantageToolBarStatus();
+			expect(spy).toHaveBeenCalled();
+		});
+		it('#getEnergyStarCapability catch block should call', () => {
 			const { fixture, component, powerService } = setup();
-            let spy =spyOn(powerService, 'getEnergyStarCapability').and.returnValue(Promise.reject());
-			 component.getEnergyStarCapability();
-			 expect(spy).toHaveBeenCalled();
-        });
-        it('#setEasyResumeThinkPad catch block should call', () => {
+			const spy = spyOn(powerService, 'getEnergyStarCapability').and.returnValue(Promise.reject());
+			component.getEnergyStarCapability();
+			expect(spy).toHaveBeenCalled();
+		});
+		it('#setEasyResumeThinkPad catch block should call', () => {
 			const { fixture, component, powerService } = setup();
-            let spy =spyOn(powerService, 'setEasyResumeThinkPad').and.returnValue(Promise.reject());
-            const myPrivateSpy = spyOn<any>(component, 'setEasyResumeThinkPad').and.callThrough();
+			const spy = spyOn(powerService, 'setEasyResumeThinkPad').and.returnValue(Promise.reject());
+			const myPrivateSpy = spyOn<any>(component, 'setEasyResumeThinkPad').and.callThrough();
 			myPrivateSpy.call(component);
-			 expect(spy).toHaveBeenCalled();
-        });
-        it('#setRapidChargeModeStatusIdeaNoteBook catch block should call', () => {
+			expect(spy).toHaveBeenCalled();
+		});
+		it('#setRapidChargeModeStatusIdeaNoteBook catch block should call', () => {
 			const { fixture, component, powerService } = setup();
-            let spy =spyOn(powerService, 'setRapidChargeModeStatusIdeaNoteBook').and.returnValue(Promise.reject());
-            const myPrivateSpy = spyOn<any>(component, 'setRapidChargeModeStatusIdeaNoteBook').and.callThrough();
+			const spy = spyOn(powerService, 'setRapidChargeModeStatusIdeaNoteBook').and.returnValue(Promise.reject());
+			const myPrivateSpy = spyOn<any>(component, 'setRapidChargeModeStatusIdeaNoteBook').and.callThrough();
 			myPrivateSpy.call(component);
-			 expect(spy).toHaveBeenCalled();
-        });
-        it('#setAlwaysOnUSBStatusThinkPad catch block should call', () => {
+			expect(spy).toHaveBeenCalled();
+		});
+		it('#setAlwaysOnUSBStatusThinkPad catch block should call', () => {
 			const { fixture, component, powerService } = setup();
-            let spy =spyOn(powerService, 'setAlwaysOnUSBStatusThinkPad').and.returnValue(Promise.reject());
-            const myPrivateSpy = spyOn<any>(component, 'setAlwaysOnUSBStatusThinkPad').and.callThrough();
+			const spy = spyOn(powerService, 'setAlwaysOnUSBStatusThinkPad').and.returnValue(Promise.reject());
+			const myPrivateSpy = spyOn<any>(component, 'setAlwaysOnUSBStatusThinkPad').and.callThrough();
 			myPrivateSpy.call(component);
-			 expect(spy).toHaveBeenCalled();
-        });
-        it('#onBCTInfoChange catch block should call', () => {
+			expect(spy).toHaveBeenCalled();
+		});
+		it('#onBCTInfoChange catch block should call', () => {
 			const { fixture, component, powerService } = setup();
-            let spy =spyOn(powerService, 'setChargeThresholdValue').and.returnValue(Promise.reject());
+			const spy = spyOn(powerService, 'setChargeThresholdValue').and.returnValue(Promise.reject());
 			component.onBCTInfoChange(thresholdInfo[0], batteryNum);
 			expect(spy).toHaveBeenCalled();
 
-        });
-        it('#onBCTInfoChange should call', () => {
+		});
+		it('#onBCTInfoChange should call', () => {
 			const { fixture, component, powerService } = setup();
-            let spy =spyOn(powerService, 'setChargeThresholdValue').and.returnValue(Promise.resolve(0));
-            component.chargeThresholdStatus=true;
+			const spy = spyOn(powerService, 'setChargeThresholdValue').and.returnValue(Promise.resolve(0));
+			component.chargeThresholdStatus = true;
 			component.onBCTInfoChange(thresholdInfo[0], batteryNum);
 			expect(spy).toHaveBeenCalled();
 
-        });
-        it('#getAlwaysOnUSBCapabilityThinkPad catch block should call', () => {
+		});
+		it('#getAlwaysOnUSBCapabilityThinkPad catch block should call', () => {
 			const { fixture, component, powerService } = setup();
-            let spy =spyOn(powerService, 'getAlwaysOnUSBCapabilityThinkPad').and.returnValue(Promise.reject());
+			const spy = spyOn(powerService, 'getAlwaysOnUSBCapabilityThinkPad').and.returnValue(Promise.reject());
 			const myPrivateSpy = spyOn<any>(component, 'getAlwaysOnUSBCapabilityThinkPad').and.callThrough();
 			fixture.detectChanges();
 			myPrivateSpy.call(component);
 			expect(spy).toHaveBeenCalled();
 
-        });
-        it('#setAirplaneModeAutoDetectionOnThinkPad catch block should call', () => {
+		});
+		it('#setAirplaneModeAutoDetectionOnThinkPad catch block should call', () => {
 			const { fixture, component, powerService } = setup();
-            let spy =spyOn(powerService, 'setAirplaneModeAutoDetectionOnThinkPad').and.returnValue(Promise.reject());
+			const spy = spyOn(powerService, 'setAirplaneModeAutoDetectionOnThinkPad').and.returnValue(Promise.reject());
 			const myPrivateSpy = spyOn<any>(component, 'setAirplaneModeAutoDetectionOnThinkPad').and.callThrough();
 			myPrivateSpy.call(component);
 			expect(spy).toHaveBeenCalled();
 
-        });
-        // it('#getBatteryThresholdInformation catch block should call', () => {
+		});
+		// it('#getBatteryThresholdInformation catch block should call', () => {
 		// 	const { fixture, component, powerService } = setup();
-        //     let spy =spyOn(powerService, 'getChargeThresholdInfo').and.returnValue(Promise.reject());
+		//     const spy =spyOn(powerService, 'getChargeThresholdInfo').and.returnValue(Promise.reject());
 		// 	component.getBatteryThresholdInformation();
 		// 	expect(spy).toHaveBeenCalled();
 		// });
-		
-        it('#setUSBChargingInBatteryModeStatusIdeaNoteBook catch block should call', () => {
+
+		it('#setUSBChargingInBatteryModeStatusIdeaNoteBook catch block should call', () => {
 			const { fixture, component, powerService } = setup();
-            let spy =spyOn(powerService, 'setUSBChargingInBatteryModeStatusIdeaNoteBook').and.returnValue(Promise.reject());
+			const spy = spyOn(powerService, 'setUSBChargingInBatteryModeStatusIdeaNoteBook').and.returnValue(Promise.reject());
 			const myPrivateSpy = spyOn<any>(component, 'setUSBChargingInBatteryModeStatusIdeaNoteBook').and.callThrough();
 			fixture.detectChanges();
 			myPrivateSpy.call(component);
 			expect(spy).toHaveBeenCalled();
-        });
-        it('#setAlwaysOnUSBStatusIdeaPad catch block should call', () => {
+		});
+		it('#setAlwaysOnUSBStatusIdeaPad catch block should call', () => {
 			const { fixture, component, powerService } = setup();
-            let spy =spyOn(powerService, 'setAlwaysOnUSBStatusIdeaNoteBook').and.returnValue(Promise.reject());
+			const spy = spyOn(powerService, 'setAlwaysOnUSBStatusIdeaNoteBook').and.returnValue(Promise.reject());
 			const myPrivateSpy = spyOn<any>(component, 'setAlwaysOnUSBStatusIdeaPad').and.callThrough();
 			fixture.detectChanges();
 			myPrivateSpy.call(component);
 			expect(spy).toHaveBeenCalled();
-        });
-        // it('#getRapidChargeModeStatusIdeaPad catch block should call', () => {
+		});
+		// it('#getRapidChargeModeStatusIdeaPad catch block should call', () => {
 		// 	const { fixture, component, powerService } = setup();
-        //     let spy =spyOn(powerService, 'getRapidChargeModeStatusIdeaNoteBook').and.returnValue(Promise.reject());
+		//     const spy =spyOn(powerService, 'getRapidChargeModeStatusIdeaNoteBook').and.returnValue(Promise.reject());
 		// 	const myPrivateSpy = spyOn<any>(component, 'getRapidChargeModeStatusIdeaPad').and.callThrough();
 		// 	myPrivateSpy.call(component);
 		// 	expect(spy).toHaveBeenCalled();
 
-        // });
-        it('#setAirplaneModeThinkPad catch block should call', () => {
+		// });
+		it('#setAirplaneModeThinkPad catch block should call', () => {
 			const { fixture, component, powerService } = setup();
-            let spy =spyOn(powerService, 'setAirplaneModeThinkPad').and.returnValue(Promise.reject());
+			const spy = spyOn(powerService, 'setAirplaneModeThinkPad').and.returnValue(Promise.reject());
 			const myPrivateSpy = spyOn<any>(component, 'setAirplaneModeThinkPad').and.callThrough();
 			myPrivateSpy.call(component);
 			expect(spy).toHaveBeenCalled();
 
-        });
-        it('#setConservationModeStatusIdeaNoteBook catch block should call', () => {
+		});
+		it('#setConservationModeStatusIdeaNoteBook catch block should call', () => {
 			const { fixture, component, powerService } = setup();
-            let spy =spyOn(powerService, 'setConservationModeStatusIdeaNoteBook').and.returnValue(Promise.reject());
+			const spy = spyOn(powerService, 'setConservationModeStatusIdeaNoteBook').and.returnValue(Promise.reject());
 			const myPrivateSpy = spyOn<any>(component, 'setConservationModeStatusIdeaNoteBook').and.callThrough();
 			myPrivateSpy.call(component);
 			expect(spy).toHaveBeenCalled();
 
-        });
-        it('#getConservationModeStatusIdeaPad catch block should call', () => {
+		});
+		it('#getConservationModeStatusIdeaPad catch block should call', () => {
 			const { fixture, component, powerService } = setup();
-            let spy =spyOn(powerService, 'getConservationModeStatusIdeaNoteBook').and.returnValue(Promise.reject());
+			const spy = spyOn(powerService, 'getConservationModeStatusIdeaNoteBook').and.returnValue(Promise.reject());
 			const myPrivateSpy = spyOn<any>(component, 'getConservationModeStatusIdeaPad').and.callThrough();
 			myPrivateSpy.call(component);
 			expect(spy).toHaveBeenCalled();
-        });
-        it('#getFlipToBootCapability catch block should call', () => {
+		});
+		it('#getFlipToBootCapability catch block should call', () => {
 			const { fixture, component, powerService } = setup();
-            let spy =spyOn(powerService, 'getFlipToBootCapability').and.returnValue(Promise.reject());
+			const spy = spyOn(powerService, 'getFlipToBootCapability').and.returnValue(Promise.reject());
 			const myPrivateSpy = spyOn<any>(component, 'getFlipToBootCapability').and.callThrough();
 			myPrivateSpy.call(component);
 			expect(spy).toHaveBeenCalled();
-        });
-        it('#setBCTToggleOff catch block should call', () => {
+		});
+		it('#setBCTToggleOff catch block should call', () => {
 			const { fixture, component, powerService } = setup();
-            let spy =spyOn(powerService, 'setToggleOff').and.returnValue(Promise.reject());
-            component.thresholdInfo=[];
+			const spy = spyOn(powerService, 'setToggleOff').and.returnValue(Promise.reject());
+			component.thresholdInfo = [];
 			component.setBCTToggleOff(true);
 			expect(spy).toHaveBeenCalled();
 
-        });
-        it('#setBCTToggleOff  should call', () => {
+		});
+		it('#setBCTToggleOff  should call', () => {
 			const { fixture, component, powerService } = setup();
-            let spy =spyOn(powerService, 'setToggleOff').and.returnValue(Promise.resolve(0));
-            spyOn(commonService, 'sendNotification').and.returnValue();
-            component.thresholdInfo=[];
+			const spy = spyOn(powerService, 'setToggleOff').and.returnValue(Promise.resolve(0));
+			spyOn(commonService, 'sendNotification').and.returnValue();
+			component.thresholdInfo = [];
 			component.setBCTToggleOff(true);
-            expect(spy).toHaveBeenCalled();
-        });
+			expect(spy).toHaveBeenCalled();
+		});
 
 	});
 });

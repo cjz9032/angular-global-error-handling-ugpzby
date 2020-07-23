@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DeviceService } from 'src/app/services/device/device.service';
-import lowerCase from 'lodash/lowerCase';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-power-container',

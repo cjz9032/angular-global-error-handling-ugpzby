@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { BacklightComponent } from './backlight.component';
-import { BacklightService } from './backlight.service';
-import { MetricService } from '../../../../../../services/metric/metrics.service';
-import { EMPTY, NEVER, Observable, of } from 'rxjs';
-import { TranslateModule } from '@ngx-translate/core';
-import { RemoveSpacePipe } from '../../../../../../pipe/remove-space/remove-space.pipe';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { VantageShellService } from '../../../../../../services/vantage-shell/vantage-shell.service';
 import { HttpClientModule } from '@angular/common/http';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TranslateModule } from '@ngx-translate/core';
+import { Observable, of } from 'rxjs';
+import { RemoveSpacePipe } from '../../../../../../pipe/remove-space/remove-space.pipe';
+import { MetricService } from '../../../../../../services/metric/metrics.service';
+import { VantageShellService } from '../../../../../../services/vantage-shell/vantage-shell.service';
+import { BacklightComponent } from './backlight.component';
 import { BacklightLevelEnum, BacklightStatusEnum } from './backlight.enum';
-import { BacklightMode, GetBacklightResponse } from './backlight.interface';
-import { delay } from 'rxjs/operators';
+import { GetBacklightResponse } from './backlight.interface';
+import { BacklightService } from './backlight.service';
 
 class MockMetricService {
 	sendMetrics() {
@@ -142,7 +141,7 @@ describe('Backlight', () => {
 		fixture = TestBed.createComponent(BacklightComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
-		expect(component.modes[3].checked).toBe(true)
+		expect(component.modes[3].checked).toBe(true);
 		fixture.destroy();
 	}));
 
@@ -166,7 +165,7 @@ describe('Backlight', () => {
 		fixture = TestBed.createComponent(BacklightComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
-		expect(component.modes[2].checked).toBe(true)
+		expect(component.modes[2].checked).toBe(true);
 		fixture.destroy();
 	}));
 
@@ -207,14 +206,14 @@ describe('Backlight', () => {
 			if (count > 2) {
 				return new Observable(observer => {
 					observer.error('stop');
-				})
+				});
 			}
 			count++;
 			return of({
 				settingList: {
 					setting: stubOnChangeValue
 				}
-			} as GetBacklightResponse)
+			} as GetBacklightResponse);
 		});
 		fixture = TestBed.createComponent(BacklightComponent);
 		component = fixture.componentInstance;
@@ -270,8 +269,8 @@ describe('Backlight', () => {
 		setSpy.and.callFake(() => {
 			return new Observable(observer => {
 				observer.error('fail');
-			})
-		})
+			});
+		});
 		fixture = TestBed.createComponent(BacklightComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
