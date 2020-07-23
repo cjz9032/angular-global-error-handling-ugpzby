@@ -1,11 +1,10 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { TranslateStore } from '@ngx-translate/core';
-
-import { BatteryGaugeResetComponent } from './battery-gauge-reset.component';
-import { TranslationModule } from 'src/app/modules/translation.module';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { PowerService } from 'src/app/services/power/power.service';
+import { TranslateStore } from '@ngx-translate/core';
+import { TranslationModule } from 'src/app/modules/translation.module';
+import { BatteryGaugeResetComponent } from './battery-gauge-reset.component';
+
 
 describe('BatteryGaugeResetComponent', () => {
 	let component: BatteryGaugeResetComponent;
@@ -64,7 +63,7 @@ describe('BatteryGaugeResetComponent', () => {
 
 	it('should call onBatteryGaugeReset', () => {
 		component.batteryService.gaugeResetInfo = gaugeResetInfo;
-		spyOn(modalService, 'open').and.returnValue({ result: Promise.resolve('positive'), componentInstance: {title: '', negativeResponseText: '', positiveResponseText: '', description1: '', description2: ''} });
+		spyOn(modalService, 'open').and.returnValue({ result: Promise.resolve('positive'), componentInstance: { title: '', negativeResponseText: '', positiveResponseText: '', description1: '', description2: '' } });
 
 		const event = new MouseEvent('click');
 		// spyOn(component, 'stopBatteryGaugeReset');

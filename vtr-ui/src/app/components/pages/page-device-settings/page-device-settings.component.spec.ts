@@ -2,10 +2,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { EventEmitter, NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import {
-	TranslateModule,
-	TranslateService
-} from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { of } from 'rxjs';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
@@ -61,12 +58,12 @@ class TranslateServiceStub {
 describe('PageDeviceSettingsComponent', () => {
 	let component: PageDeviceSettingsComponent;
 	let fixture: ComponentFixture<PageDeviceSettingsComponent>;
-	let audioService: AudioService;
+	// let audioService: AudioService;
 	let commonService: CommonService;
-	let logger: LoggerService;
-	let deviceService: DeviceService;
-	let cmsService: CMSService;
-	let qaService: QaService;
+	/* 	let logger: LoggerService;
+		let deviceService: DeviceService;
+		let cmsService: CMSService;
+		let qaService: QaService; */
 	let keyboardService: InputAccessoriesService;
 	let translate: TranslateService;
 
@@ -96,8 +93,8 @@ describe('PageDeviceSettingsComponent', () => {
 	it('should create', async(() => {
 		fixture = TestBed.createComponent(PageDeviceSettingsComponent);
 		component = fixture.componentInstance;
-		translate = TestBed.get(TranslateService);
-		commonService = TestBed.get(CommonService);
+		translate = TestBed.inject(TranslateService);
+		commonService = TestBed.inject(CommonService);
 		spyOn(component, 'initInputAccessories');
 		const welcomeTut: WelcomeTutorial = { page: 2, tutorialVersion: 'someVersion', isDone: true };
 		spyOn(commonService, 'getLocalStorageValue').and.returnValue(welcomeTut);
@@ -155,7 +152,7 @@ describe('PageDeviceSettingsComponent', () => {
 	it('should call initInputAccessories - machineType equal to 1', async(() => {
 		fixture = TestBed.createComponent(PageDeviceSettingsComponent);
 		component = fixture.componentInstance;
-		commonService = TestBed.get(CommonService);
+		commonService = TestBed.inject(CommonService);
 		component.machineType = 1;
 		spyOn(commonService, 'getLocalStorageValue').and.returnValue('LenovoTablet10');
 		const spy = spyOn(commonService, 'removeObjFrom');
@@ -166,7 +163,7 @@ describe('PageDeviceSettingsComponent', () => {
 	it('should call initInputAccessories - machineType equal to 1,machine family LenovoTablet10', async(() => {
 		fixture = TestBed.createComponent(PageDeviceSettingsComponent);
 		component = fixture.componentInstance;
-		commonService = TestBed.get(CommonService);
+		commonService = TestBed.inject(CommonService);
 		component.machineType = 1;
 		const spyGetLocalStorageValue = spyOn(commonService, 'getLocalStorageValue');
 		spyGetLocalStorageValue.withArgs(LocalStorageKey.MachineType).and.returnValue(1);
@@ -180,8 +177,8 @@ describe('PageDeviceSettingsComponent', () => {
 		fixture = TestBed.createComponent(PageDeviceSettingsComponent);
 		const inputAccessoriesCapability = new InputAccessoriesCapability();
 		component = fixture.componentInstance;
-		commonService = TestBed.get(CommonService);
-		keyboardService = TestBed.get(InputAccessoriesService);
+		commonService = TestBed.inject(CommonService);
+		keyboardService = TestBed.inject(InputAccessoriesService);
 		component.machineType = 1;
 
 		const spyGetLocalStorageValue = spyOn(commonService, 'getLocalStorageValue');
@@ -204,7 +201,7 @@ describe('PageDeviceSettingsComponent', () => {
 	it('should call getAudioPageSettings - method call on ngOnInit', async(() => {
 		fixture = TestBed.createComponent(PageDeviceSettingsComponent);
 		component = fixture.componentInstance;
-		commonService = TestBed.get(CommonService);
+		commonService = TestBed.inject(CommonService);
 		commonService.isOnline = false;
 		component.isOnline = false;
 		const spy = spyOn(component, 'getAudioPageSettings');
@@ -215,7 +212,7 @@ describe('PageDeviceSettingsComponent', () => {
 	// it('should call initInputAccessories - machineType not equal to 1 or 0', async(() => {
 	// 	fixture = TestBed.createComponent(PageDeviceSettingsComponent);
 	// 	component = fixture.componentInstance;
-	// 	commonService = TestBed.get(CommonService);
+	// 	commonService = TestBed.inject(CommonService);
 	// 	component.machineType = 2;
 	// 	const spy = spyOn(commonService, 'removeObjFrom')
 	// 	component.initInputAccessories()
@@ -225,7 +222,7 @@ describe('PageDeviceSettingsComponent', () => {
 	// it('should call initInputAccessories - machineType equal to 1 or 0', async(() => {
 	// 	fixture = TestBed.createComponent(PageDeviceSettingsComponent);
 	// 	component = fixture.componentInstance;
-	// 	commonService = TestBed.get(CommonService);
+	// 	commonService = TestBed.inject(CommonService);
 	// 	component.machineType = 1;
 	// 	component.machineType = 0;
 	// 	const inputAccessoriesCapability: InputAccessoriesCapability = {
