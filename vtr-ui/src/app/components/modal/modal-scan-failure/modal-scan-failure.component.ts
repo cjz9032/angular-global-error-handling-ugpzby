@@ -33,8 +33,6 @@ export class ModalScanFailureComponent {
 		this.closeModal();
 	}
 
-
-
 	// Sets the lists of failed modules and RBS devices, and then creates the list of RBS devices that failed
 	configureDevicesLists(failedModules, rbsDevices) {
 		this.failedModules = failedModules;
@@ -71,7 +69,6 @@ export class ModalScanFailureComponent {
 		// If any value is returned, it means that a storage device that supports RBS failed, meaning that
 		// a RBS test will be suggested to the user
 		return failedStorageIds.filter(storageId => rbsDeviceIds.includes(storageId));
-
 	}
 
 	// Goes to RBS page, passing defective device list to be selected when RBS page loads

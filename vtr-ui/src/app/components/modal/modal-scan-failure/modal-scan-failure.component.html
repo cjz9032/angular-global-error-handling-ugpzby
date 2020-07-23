@@ -4,18 +4,19 @@
 		<h1 id="scan-failure-title" class="title">{{ 'hardwareScan.scanFailureModal.title' | translate }}</h1>
 		<p id="scan-failure-description" class="description">{{ 'hardwareScan.scanFailureModal.problemDetected' | translate }}</p>
 		<div class="modules-container">
-			<ul role="list" class="modules" aria-live="polite" *ngFor="let module of failedModules; let idModule = index;" [attr.id]="'module-' + idModule">
-				<div class="list-module"  [attr.id]="'module-' + idModule + '-device-' + idDevice" *ngFor="let device of module.devices; let idDevice = index">
-					<li role="listitem" class="list-device" [attr.aria-describedby]="'module-' + idModule + '-device-' + idDevice">
-						<div class="module-row" [attr.id]="'module-' + idModule + '-device-' + idDevice" role="region">
-							<div class="module-device-name-container">
-								<p class="module-name">{{ module.moduleName }}</p>
-								<p class="description device-name">{{ device.deviceName }}</p>
-							</div>
-							<vtr-ui-hardware-scan-test-result [module]="module"></vtr-ui-hardware-scan-test-result>
+			<ul role="list" class="list-modules" aria-live="polite" *ngFor="let module of failedModules; let idModule = index;" [attr.id]="'module-' + idModule">
+				<li role="listitem"
+					class="item-module-device"
+					*ngFor="let device of module.devices; let idDevice = index"
+					[attr.aria-describedby]="'module-' + idModule + '-device-' + idDevice">
+					<div class="module-device-row" [attr.id]="'module-' + idModule + '-device-' + idDevice" role="region">
+						<div class="module-device-name-container">
+							<p class="module-name">{{ module.moduleName }}</p>
+							<p class="description device-name">{{ device.deviceName }}</p>
 						</div>
-					</li>
-				</div>
+						<vtr-ui-hardware-scan-test-result [module]="module"></vtr-ui-hardware-scan-test-result>
+					</div>
+				</li>
 			</ul>
 		</div>
 
