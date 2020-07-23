@@ -107,6 +107,9 @@
 				overflow: hidden;
 				text-overflow: ellipsis;
 				white-space: nowrap;
+				&:focus {
+					@include outline-blue
+				}
 				@media #{$breakpoint_sm}{
 					font-size: 1.2rem;
 					padding:0rem 2.5rem;
@@ -560,6 +563,9 @@
 					overflow: hidden;
 					text-overflow: ellipsis;
 					white-space: nowrap;
+					&:focus {
+						@include outline-blue
+					}
 					@media #{$breakpoint_md}{
 						margin-right: 2rem;
 					}
@@ -857,6 +863,9 @@
 				border: 0rem;
 				cursor: pointer;
 				width: 100%;
+				&:focus {
+					@include outline-blue
+				}
 			}
 		}
 	}

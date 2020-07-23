@@ -96,6 +96,9 @@ vtr-subpage-smart-performance-scan-summary {
 						padding: 0.6rem;
 						margin: 0.45rem;
 						cursor: pointer;
+						&:focus {
+							@include outline-blue
+						}
 						@media #{$breakpoint_sm}{
 							padding: 0.3rem;
 						}
@@ -105,6 +108,9 @@ vtr-subpage-smart-performance-scan-summary {
 						.drop-down-icon{
 							margin-left: 1rem;
 							cursor: pointer;
+							&:focus {
+								@include outline-blue
+							}
 						}
 						&:first-child {
 							border-top-left-radius: 0.5rem !important;
@@ -391,9 +397,12 @@ vtr-subpage-smart-performance-scan-summary {
 								content: '';
 							}
 						}
-						.chevron-down, .chevron-up {
+						.chevron-up {
 							color: $main;
 							cursor: pointer;
+							&:focus {
+								outline: 0.1rem solid $menu_hover;
+							}
 						}
 						.scan-items {
 							font-size: 1.2rem;
@@ -805,6 +814,9 @@ vtr-subpage-smart-performance-scan-summary {
 			overflow: hidden;
 			text-overflow: ellipsis;
 			white-space: nowrap;
+			&:focus {
+				@include outline-blue
+			}
 			@media #{$breakpoint_sm}{
 				font-size: 1.2rem;
 				padding:0rem 2.5rem;					
@@ -1137,6 +1149,9 @@ vtr-subpage-smart-performance-scan-summary {
 			border: 0rem;
 			cursor: pointer;
 			min-width: 11.5rem;
+			&:focus {
+				@include outline-blue
+			}
 			@media #{$breakpoint_xl}{
 				min-width: 11.5rem;
 				padding: 0 2.4rem;
@@ -1386,6 +1401,9 @@ vtr-subpage-smart-performance-scan-summary {
 			border: 0rem;
 			cursor: pointer;
 			width: 100%;
+			&:focus {
+				@include outline-blue
+			}
 		}
 		.disabled-button{
 			border-radius: 2.5rem;
