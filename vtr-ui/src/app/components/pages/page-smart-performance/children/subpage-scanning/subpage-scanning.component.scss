@@ -150,13 +150,15 @@ vtr-subpage-smart-performance-scan-summary {
 			border-bottom: 0.2rem solid $light;
 			padding: 0 0 0.1rem;
 
-			&:hover, &:focus {
+			&:hover {
 				color: $light;
 				text-decoration: none;
 			}
 
 			&:focus{
-				@include outline-blue;
+				color: $light;
+				text-decoration: none;
+				@include outline-white;
 			}
 
 			button {
