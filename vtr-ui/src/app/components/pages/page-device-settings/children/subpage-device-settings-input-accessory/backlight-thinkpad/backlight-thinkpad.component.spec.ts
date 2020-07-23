@@ -1,13 +1,13 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { BacklightThinkpadComponent } from './backlight-thinkpad.component';
-import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
-import { TranslationModule } from 'src/app/modules/translation.module';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateStore } from '@ngx-translate/core';
+import { TranslationModule } from 'src/app/modules/translation.module';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
-import { BacklightStatusEnum, BacklightLevelEnum } from '../backlight/backlight.enum';
+import { BacklightLevelEnum, BacklightStatusEnum } from '../backlight/backlight.enum';
+import { BacklightThinkpadComponent } from './backlight-thinkpad.component';
+
 
 describe('BacklightThinkpadComponent', () => {
 	let component: BacklightThinkpadComponent;
@@ -132,7 +132,7 @@ describe('BacklightThinkpadComponent', () => {
 	});
 
 	it('#getKBDBacklightLevel status: NoCapability -catch', async () => {
-		const error = {message: 'There is an error'}
+		const error = { message: 'There is an error' };
 		spyOn(keyboardService, 'getKBDBacklightLevel').and.returnValue(Promise.reject(error));
 		fixture.detectChanges();
 		component.getKBDBacklightLevel();
@@ -161,9 +161,9 @@ describe('BacklightThinkpadComponent', () => {
 	});
 
 	it('#setKBDBacklightStatus called -else', async () => {
-		const spy = spyOn(keyboardService, 'setKBDBacklightStatus')
+		const spy = spyOn(keyboardService, 'setKBDBacklightStatus');
 		// fixture.detectChanges();
-		keyboardService.isShellAvailable = false
+		keyboardService.isShellAvailable = false;
 		component.setKBDBacklightStatus(BacklightLevelEnum.ONE_LEVEL);
 		expect(spy).not.toHaveBeenCalled();
 	});
@@ -185,7 +185,7 @@ describe('BacklightThinkpadComponent', () => {
 	it('#setAutomaticKBDBacklight called -else', async () => {
 		const spy = spyOn(keyboardService, 'setAutomaticKBDBacklight');
 		// fixture.detectChanges();
-		keyboardService.isShellAvailable = false
+		keyboardService.isShellAvailable = false;
 		component.setAutomaticKBDBacklight(true);
 		expect(spy).not.toHaveBeenCalled();
 	});
@@ -198,15 +198,15 @@ describe('BacklightThinkpadComponent', () => {
 	// });
 
 	it('should call compare - Auto', () => {
-		const value = 'Auto'
-		component.compare(value)
-		expect(BacklightStatusEnum.AUTO).toEqual(value)
+		const value = 'Auto';
+		component.compare(value);
+		expect(BacklightStatusEnum.AUTO).toEqual(value);
 	});
 
 	it('should call compare - Level_1', () => {
-		const value = 'Level_1'
-		component.compare(value)
-		expect(BacklightStatusEnum.LEVEL_1).toEqual(value)
+		const value = 'Level_1';
+		component.compare(value);
+		expect(BacklightStatusEnum.LEVEL_1).toEqual(value);
 	});
 });
 

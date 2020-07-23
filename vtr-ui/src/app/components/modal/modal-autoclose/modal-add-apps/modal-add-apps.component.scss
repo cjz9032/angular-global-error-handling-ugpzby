@@ -19,10 +19,10 @@ ui-popover-apps {
 	position: absolute;
 	width: 66.6%;
 	max-width: 106.56rem;
-	background: $gaming_darkest;
 	z-index: 9;
-	border-radius: 1rem;
-	box-shadow: 0 0.8rem 1.5rem $screen_dark_30;
+	border-radius: 0.8rem;
+  	box-shadow: 0 1.6rem 3.2rem 0 $screen_dark_20;
+  	background-color:$darkCell;
 	touch-action: none;
 	@media #{$breakpoint_xl} {
 		min-width: 46rem;
@@ -38,13 +38,21 @@ ui-popover-apps {
 		border: 0;
 		.close {
 			font-size: 2.5rem;
-			position: relative;
-			top: 1.5rem;
-			right: 1.5rem;
+			top: 0px;
+			right: 0px;
 			cursor: pointer;
-			color:$gaming_lightest;
+			color: $gaming_white60;
+			width: 3rem;
+			height: 3rem;
+			margin: 0.5rem;
+			position: absolute;
+			opacity: 1;
 			@media #{$high-contrast}{
 				color: buttonText;
+			}
+			&:hover{
+				color:$gaming_lightest;
+				transform:scale(0.96);
 			}
 		}
 	}
@@ -77,12 +85,12 @@ ui-popover-apps {
 				font-size: 3rem;
 				font-weight: $weight_light;
 				margin-bottom: 1rem;
-				color: $light;
+				color: $gaming_lightest;
 				padding-right: 3rem;
 			}
 			p {
 				font-size: 1.25rem;
-				color: $gaming_light_05;
+				color: $gaming_white60;
 				line-height: auto;
 			}
 		}
@@ -141,14 +149,14 @@ ui-popover-apps {
 						text-align: center;
 						padding: 1rem 0.5rem 1.5rem 0.5rem;
 						font-size: $fontsize_xs;
-						color: rgba(255, 255, 255, 0.8);
+						color:$gaming_white60;
 					}
 				}
 			}
 			.btn-add-app {
 				position: absolute; 
-				width: 8rem;
-				height: 4rem;
+				width: 6rem;
+				height: 3rem;
 				bottom: 0px;
 				left: 0px;
 				right: 0px;
@@ -157,8 +165,8 @@ ui-popover-apps {
 					cursor: pointer;
 				}
 				button {
-					width: 8rem;
-					height: 4rem;
+					width: 6rem;
+					height: 3rem;
 					background: $gaming_square_button20;
 					background-image: url("data:image/svg+xml,%3Csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E6.20pxIcon/add%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='6.20pxIcon/add' stroke='none' stroke-width='1' fill='rgba(255,255,255,0.6)' fill-rule='evenodd'%3E%3Cpath d='M9.86634391,2 C9.30897756,2 8.85714286,2.44991629 8.85714286,2.99708744 L8.85714286,8.85714286 L2.99708744,8.85714286 C2.44641125,8.85714286 2,9.29785156 2,9.86634391 L2,10.1336561 C2,10.6910224 2.44991629,11.1428571 2.99708744,11.1428571 L8.85714286,11.1428571 L8.85714286,17.0029126 C8.85714286,17.5535887 9.29785156,18 9.86634391,18 L10.1336561,18 C10.6910224,18 11.1428571,17.5500837 11.1428571,17.0029126 L11.1428571,11.1428571 L17.0029126,11.1428571 C17.5535887,11.1428571 18,10.7021484 18,10.1336561 L18,9.86634391 C18,9.30897756 17.5500837,8.85714286 17.0029126,8.85714286 L11.1428571,8.85714286 L11.1428571,2.99708744 C11.1428571,2.44641125 10.7021484,2 10.1336561,2 L9.86634391,2 Z' id='Shape' fill='#FBFDFF' fill-rule='nonzero'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
 					background-repeat: no-repeat;
@@ -204,7 +212,6 @@ ui-popover-apps {
 			}
 		}
 		.no-running-app {
-			color: $light;
 			overflow-x: none;
 			touch-action: none;
 			height:auto;
@@ -240,17 +247,16 @@ ui-popover-apps {
 						font-weight: $weight_light;
 						margin:0 auto 1rem;
 						padding: 2rem 0rem;
+						color:$gaming_lightest;
 					}
 					p {
 						font-size: 1.5rem;
 						margin:0 auto;
 						padding-bottom:2rem;
+						color:$gaming_white60;
 					}
 				}
 			}
-			// .mtn-2{
-			// 	margin-top:2rem;
-			// }
 		}
 	}
 }

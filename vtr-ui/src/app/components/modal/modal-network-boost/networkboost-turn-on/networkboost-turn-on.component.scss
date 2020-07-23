@@ -35,12 +35,15 @@ ui-popover-turn-on {
 	.modal-body {
 		padding: 4rem;
 		.btn-close {
-		position: absolute;
-		top: 0px;
-		right: 0px;
-		padding: 0.6rem 1.2rem;
-		width: 4rem;
-		height: 4rem;
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			width: 3rem;
+			height: 3rem;
+			margin: .5rem;
+			button.close {
+				@include gaming-fa-icon-popup-close-button;
+			}
 		}
 	}
 	.content-body {
@@ -56,7 +59,7 @@ ui-popover-turn-on {
 			font-size: $fontsize_xs;
 			padding-left: 3rem;
 			line-height: 1.5rem;
-			color: $darkText;
+			color: $lightText;
 		}
 		.ask-again{
 			position: absolute;
@@ -79,33 +82,18 @@ ui-popover-turn-on {
 		}
 	}
 
-	fa-icon {
-		font-size: 3rem;
-		color: $main;
-	}
-
+	
 	h1 {
 		font-size: $fontsize_xl;
 		font-weight: normal;
-		color: $darkText;
+		color: $lightText;
 		padding-right: 2.5rem;
 	}
 
 	p {
 		font-size: $fontsize_xs;
-		color: $darkText;
+		color: $lightText;
 		padding: 0.5rem 0;
-	}
-
-	.btn-close {
-		@media #{$high-contrast}{
-			color: buttonText;
-		}
-		button.close {
-			&:hover {
-				opacity: 0.75;
-			}
-		}
 	}
 	.action-container{
 		div {
@@ -131,7 +119,7 @@ ui-popover-turn-on {
 	.cancel-link {
 		height: 2.5rem;
 		color: $blueFill;
-		font-size: $fontsize_sm;
+		font-size: $fontsize_xs;
 		vertical-align: middle;
 		padding: 0 0.5rem;
 		font-weight: $weight_600;
