@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'vtr-widget-mcafee-peace-of-mind',
-  templateUrl: './widget-mcafee-peace-of-mind.component.html',
-  styleUrls: ['./widget-mcafee-peace-of-mind.component.scss']
+	selector: 'vtr-widget-mcafee-peace-of-mind',
+	templateUrl: './widget-mcafee-peace-of-mind.component.html',
+	styleUrls: ['./widget-mcafee-peace-of-mind.component.scss']
 })
 export class WidgetMcafeePeaceOfMindComponent implements OnInit {
-	items= [{
+	items = [{
 		image: '../../../../../../assets/images/antivirus/million_device_icon.svg',
 		title: 'security.antivirus.others.peaceOfMindTitle1',
 		desc: 'security.antivirus.others.peaceOfMindTitle1'
@@ -18,10 +18,10 @@ export class WidgetMcafeePeaceOfMindComponent implements OnInit {
 		image: '../../../../../../assets/images/antivirus/threat_icon.svg',
 		title: 'security.antivirus.others.peaceOfMindTitle3',
 		desc: 'security.antivirus.others.peaceOfMindTitle3'
-	}]
-  constructor() { }
+	}];
+	constructor() { }
 
-  ngOnInit(): void {
-  }
+	ngOnInit(): void {
+	}
 
 }

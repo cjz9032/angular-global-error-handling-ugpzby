@@ -1,33 +1,28 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { RouterTestingModule } from '@angular/router/testing';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { HttpClient } from '@angular/common/http';
-
-import { BatteryCardComponent } from './battery-card.component';
-
-import { CommonService } from 'src/app/services/common/common.service';
-import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
-import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { LoggerService } from 'src/app/services/logger/logger.service';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {
-	TranslateModule,
-	TranslateService,
-	TranslateLoader
+	TranslateLoader, TranslateModule,
+	TranslateService
 } from '@ngx-translate/core';
-import { HttpLoaderFactory } from 'src/app/modules/translation.module';
-import {
-	BatteryStatus,
-	BatteryConditionsEnum
-} from 'src/app/enums/battery-conditions.enum';
 import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
-import BatteryGaugeDetail from 'src/app/data-models/battery/battery-gauge-detail-model';
-import { BatteryGaugeReset } from 'src/app/data-models/device/battery-gauge-reset.model';
-import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import BatteryIndicator from 'src/app/data-models/battery/battery-indicator.model';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { BatteryGaugeReset } from 'src/app/data-models/device/battery-gauge-reset.model';
+import { BatteryConditionsEnum, BatteryStatus } from 'src/app/enums/battery-conditions.enum';
 import { ChargeThresholdInformation } from 'src/app/enums/battery-information.enum';
+import { HttpLoaderFactory } from 'src/app/modules/translation.module';
+import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
+import { CommonService } from 'src/app/services/common/common.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { BatteryCardComponent } from './battery-card.component';
+
+
+
 
 // declare var Windows;
 
@@ -105,7 +100,7 @@ describe('BatteryCardComponent', () => {
 	let batteryDetailService: BatteryDetailService;
 	let shellService: VantageShellService;
 	let logger: LoggerService;
-	let translate: TranslateService;
+	// let translate: TranslateService;
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
@@ -133,10 +128,10 @@ describe('BatteryCardComponent', () => {
 
 		fixture = TestBed.createComponent(BatteryCardComponent);
 		component = fixture.componentInstance;
-		commonService = TestBed.get(CommonService);
-		batteryDetailService = TestBed.get(BatteryDetailService);
-		shellService = TestBed.get(VantageShellService);
-		logger = TestBed.get(LoggerService);
+		commonService = TestBed.inject(CommonService);
+		batteryDetailService = TestBed.inject(BatteryDetailService);
+		shellService = TestBed.inject(VantageShellService);
+		logger = TestBed.inject(LoggerService);
 		component.isLoading = false;
 	}));
 
@@ -151,7 +146,7 @@ describe('BatteryCardComponent', () => {
 			remainingTime: 204,
 			status: 1
 		};
-		let spy = spyOn(component, 'getMainBatteryInfo').and.returnValue(
+		const spy = spyOn(component, 'getMainBatteryInfo').and.returnValue(
 			batteryInfo
 		);
 		component.updateMainBatteryTime();
@@ -164,7 +159,7 @@ describe('BatteryCardComponent', () => {
 			remainingTime: 530000,
 			status: 1
 		};
-		let spy = spyOn(component, 'getMainBatteryInfo').and.returnValue(
+		const spy = spyOn(component, 'getMainBatteryInfo').and.returnValue(
 			batteryInfo
 		);
 		component.updateMainBatteryTime();
@@ -177,7 +172,7 @@ describe('BatteryCardComponent', () => {
 			remainingTime: 204,
 			status: 0
 		};
-		let spy = spyOn(component, 'getMainBatteryInfo').and.returnValue(
+		const spy = spyOn(component, 'getMainBatteryInfo').and.returnValue(
 			batteryInfo
 		);
 		component.updateMainBatteryTime();
@@ -185,19 +180,19 @@ describe('BatteryCardComponent', () => {
 	});
 
 	it('should call onPowerSupplyStatusEvent', () => {
-		let spy = spyOn(component, 'setBatteryCard');
+		const spy = spyOn(component, 'setBatteryCard');
 		component.onPowerSupplyStatusEvent(info);
 		expect(spy).toHaveBeenCalled();
 	});
 
 	it('should call onRemainingPercentageEvent', () => {
-		let spy = spyOn(component, 'setBatteryCard');
+		const spy = spyOn(component, 'setBatteryCard');
 		component.onRemainingPercentageEvent(info);
 		expect(spy).toHaveBeenCalled();
 	});
 
 	it('should call onRemainingTimeEvent', () => {
-		let spy = spyOn(component, 'setBatteryCard');
+		const spy = spyOn(component, 'setBatteryCard');
 		component.onRemainingTimeEvent(info);
 		expect(spy).toHaveBeenCalled();
 	});
@@ -217,13 +212,13 @@ describe('BatteryCardComponent', () => {
 				startTime: ''
 			}
 		];
-		let spy = spyOn(commonService, 'cloneObj').and.returnValue(info);
+		const spy = spyOn(commonService, 'cloneObj').and.returnValue(info);
 		component.onPowerBatteryGaugeResetEvent(info);
 		expect(spy).toHaveBeenCalled();
 	});
 
 	it('should call getBatteryDetailOnCard - else case', () => {
-		let spy = spyOn(component, 'getBatteryDetails');
+		const spy = spyOn(component, 'getBatteryDetails');
 		component.batteryService.isShellAvailable = false;
 		component.getBatteryDetailOnCard();
 		expect(spy).not.toHaveBeenCalled();
@@ -246,7 +241,7 @@ describe('BatteryCardComponent', () => {
 	it('should call onNotification - Case AirplaneModeStatus', () => {
 		const airplaneModeNotification: AppNotification = {
 			type: 'AirplaneModeStatus',
-			payload: {isCapable: true, isEnabled: true}
+			payload: { isCapable: true, isEnabled: true }
 		};
 		component.batteryIndicator = new BatteryIndicator();
 		component.onNotification(airplaneModeNotification);
@@ -256,7 +251,7 @@ describe('BatteryCardComponent', () => {
 	it('should call onNotification - Case ExpressChargingStatus', () => {
 		const expressChargingNotification: AppNotification = {
 			type: 'ExpressChargingStatus',
-			payload: {available: true, status: true}
+			payload: { available: true, status: true }
 		};
 		component.batteryIndicator = new BatteryIndicator();
 		component.onNotification(expressChargingNotification);
@@ -286,7 +281,7 @@ describe('BatteryCardComponent', () => {
 		tempBatteryInfo[0].batteryCondition.splice(0, 1);
 		component.batteryGauge = { ...tempBatteryGauge };
 		component.batteryInfo = { ...tempBatteryInfo };
-		spyOn(commonService, 'getLocalStorageValue').and.returnValue(0)
+		spyOn(commonService, 'getLocalStorageValue').and.returnValue(0);
 		component.getBatteryCondition();
 		expect(component.batteryConditions).toContain(new BatteryConditionModel(BatteryConditionsEnum.FullACAdapterSupport, BatteryStatus.AcAdapterStatus));
 	});

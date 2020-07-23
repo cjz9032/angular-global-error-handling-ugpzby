@@ -1,12 +1,13 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 import { EMPTY } from 'rxjs';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { DolbyModeResponse } from 'src/app/data-models/audio/dolby-mode-response';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
+import { ContentActionType } from 'src/app/enums/content.enum';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { AudioService } from 'src/app/services/audio/audio.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
@@ -17,7 +18,6 @@ import { NonArmGuard } from 'src/app/services/guard/non-arm-guard';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { QaService } from '../../../services/qa/qa.service';
-import { ContentActionType } from 'src/app/enums/content.enum';
 
 declare const Windows: any;
 
@@ -34,7 +34,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	back = 'BACK';
 	backarrow = '< ';
 	parentPath = 'device';
-	params = { fromTab: true }
+	params = { fromTab: true };
 	public menuItems = [
 		{
 			id: 'power',
@@ -219,7 +219,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 								// check if audio device exist or not
 								const defaultRole = Windows.Media.Devices.MediaDevice.getDefaultAudioCaptureId(0);
 								const commuRole = Windows.Media.Devices.MediaDevice.getDefaultAudioCaptureId(1);
-								return resolve(defaultRole !== '' && commuRole !== '')
+								return resolve(defaultRole !== '' && commuRole !== '');
 							}
 							// if (error.number === -1072845856) {
 							// 	// microphone device was disabled
@@ -228,7 +228,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 							return resolve(false);
 						}
 					);
-				})
+				});
 				Promise.all([
 					this.audioService.getDolbyMode(),
 					microphonePromise
@@ -306,7 +306,9 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		if (this.routerSubscription) {
 			this.routerSubscription.unsubscribe();
 		}
-		if(this.cmsSubscription) this.cmsSubscription.unsubscribe();
+		if (this.cmsSubscription) {
+			this.cmsSubscription.unsubscribe();
+		}
 
 	}
 

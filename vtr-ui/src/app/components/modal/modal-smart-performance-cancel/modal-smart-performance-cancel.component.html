@@ -1,7 +1,7 @@
 <div class="modal-smart-performance-cancel">
 	<div class="row justify-content-end">
 		<div class="btn-close" *ngIf="!isLoading">
-			<button type="button" class="close" vtrMetrics metricsEvent="FeatureClick" 
+			<button type="button" class="close" vtrMetrics metricsEvent="FeatureClick"  tabindex="0" (click)="closeModal()"
 				metricsParent="Page.Support.SmartPerformance" metricsItem="btn.cancelscan.closepopup" (click)="closeModal()">
 				<fa-icon [icon]="['fal', 'times']"></fa-icon>
 			</button>
@@ -21,12 +21,12 @@
 			</div>
 		</div>
 		<div class="row" *ngIf="!isLoading">
-			<vtr-button class="btn cancel-button" (click)="cancelScan()" vtrMetrics metricsEvent="ItemClick"
+			<vtr-button class="btn cancel-button" tabindex="0" (keydown.enter)="cancelScan()" (click)="cancelScan()" vtrMetrics metricsEvent="ItemClick"
 				metricsParent="Page.Support.SmartPerformance" metricsItem="btn.yes,cancel"
 				class="btn btn-link cancel-button">{{'smartPerformance.scanningPage.cancelScan.yesButton' |translate }}
 				({{secondsCountdown}})</vtr-button>
 			<div class="py-5 ml-5">
-				<a (click)="closeModal()" class="resume-scan" vtrMetrics metricsEvent="ItemClick"
+				<a tabindex="0" (keydown.enter)="closeModal()" (click)="closeModal()" class="resume-scan" vtrMetrics metricsEvent="ItemClick"
 					metricsParent="Page.Support.SmartPerformance"
 					metricsItem="btn.no,resumescan">{{'smartPerformance.scanningPage.cancelScan.noButton' |translate }}
 					</a>

@@ -2223,3 +2223,19 @@ ngb-tooltip-window.schedule-scan.tooltip {
 		}
 	}
 }
+
+.vtr-modal-smart-stand-by {
+	.activity-chart {
+		@media #{$black-on-white} {
+			text {
+				fill: $dark !important;
+			}
+		}
+
+		@media #{$white-on-black} {
+			text {
+				fill: $light !important;
+			}
+		}
+	}
+}

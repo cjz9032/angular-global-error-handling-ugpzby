@@ -99,7 +99,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	metricsPreference: any;
 	notificationSubscription: any;
 	activeElement: HTMLElement;
-	isSPFullFeatureEnabled:any;
+	isSPFullFeatureEnabled: any;
 	constructor(
 		private shellService: VantageShellService,
 		public configService: ConfigService,
@@ -362,8 +362,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		this.sendSettingMetrics('SettingBetaProgram', event.switchValue);
 		this.betaService.setBetaStatus(this.toggleBetaProgram ? BetaStatus.On : BetaStatus.Off);
 		this.commonService.sendReplayNotification(MenuItemEvent.MenuBetaItemChange, this.toggleBetaProgram);
-		if(!event.switchValue)
-		{
+		if (!event.switchValue) {
 			this.startUnRegisteringScheduleScan();
 		}
 	}
@@ -431,9 +430,8 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		} else {
 			(document.querySelector('#menu-main-lnk-l-logo') as HTMLElement).focus();
 		}
-		if(this.selfSelectService.usageType !== SegmentConst.Consumer)
-		{
-			 this.startUnRegisteringScheduleScan();
+		if (this.selfSelectService.usageType !== SegmentConst.Consumer) {
+			this.startUnRegisteringScheduleScan();
 		}
 	}
 	startUnRegisteringScheduleScan() {
@@ -446,22 +444,21 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	}
 	// deletes records from task scheduler
 	async unregisterScheduleScan(scantype) {
-		const payload = {scantype};
+		const payload = { scantype };
 		try {
 			const res: any = await this.smartPerformanceService.unregisterScanSchedule(payload);
-			this.loggerService.info("page-settings.unregisterScheduleScan.then", res);
-			if(res && res.state)
-			{
+			this.loggerService.info('page-settings.unregisterScheduleScan.then', res);
+			if (res && res.state) {
 				this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
 			}
 		} catch (err) {
-			this.loggerService.error("page-settings.unregisterScheduleScan.then", err);
+			this.loggerService.error('page-settings.unregisterScheduleScan.then', err);
 		}
 	}
 
 	@HostListener('window: focus')
 	onFocus(): void {
-		if(this.activeElement) {
+		if (this.activeElement) {
 			this.activeElement.focus();
 		}
 	}

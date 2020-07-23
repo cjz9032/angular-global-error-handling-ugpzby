@@ -1,20 +1,20 @@
 
-import { ComponentFixture, async, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { of } from 'rxjs';
-
-import { WidgetQuicksettingsListComponent } from './widget-quicksettings-list.component';
-import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { AudioService } from 'src/app/services/audio/audio.service';
 import { CommonService } from 'src/app/services/common/common.service';
+import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { GamingThermalModeService } from 'src/app/services/gaming/gaming-thermal-mode/gaming-thermal-mode.service';
-import { WifiSecurityService } from 'src/app/services/security/wifi-security.service';
-import { AudioService } from 'src/app/services/audio/audio.service';
-import { PowerService } from 'src/app/services/power/power.service';
-import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { GuardService } from 'src/app/services/guard/guardService.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { PowerService } from 'src/app/services/power/power.service';
+import { WifiSecurityService } from 'src/app/services/security/wifi-security.service';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { WidgetQuicksettingsListComponent } from './widget-quicksettings-list.component';
+
 
 describe('WidgetQuicksettingsListComponent', () => {
 
@@ -25,20 +25,20 @@ describe('WidgetQuicksettingsListComponent', () => {
 	let thermalModeVersionCache = 1;
 	let prevThermalModeStatusCache = 2;
 	let currentThermalModeStatusCache = 2;
-	let rapidChargeCache = { 'available': false, 'status': false };
+	let rapidChargeCache = { available: false, status: false };
 	let wifiSecurityFeatureCache = false;
 	let wifiSecurityStatusCache = 'enable';
-	let dolbyAudioToggleCache = { 'available': false, 'supportedModes': ['Dynamic', 'Movie', 'Music', 'Games', 'Voip'], 'isAudioProfileEnabled': false, 'currentMode': 'Games', 'voIPStatus': 'True', 'entertainmentStatus': 'True' }
+	let dolbyAudioToggleCache = { available: false, supportedModes: ['Dynamic', 'Movie', 'Music', 'Games', 'Voip'], isAudioProfileEnabled: false, currentMode: 'Games', voIPStatus: 'True', entertainmentStatus: 'True' };
 	let securityWifiSecurityInGamingDashboardCache = false;
 	let securityWifiSecurityShowPluginMissingDialogCache = false;
 
 
 	let thermalModeStatus = 2;
-	let rapidChargeSettings = { 'available': false, 'status': false };
-	let dolbyAudioToggle = { 'available': false, 'supportedModes': ['Dynamic', 'Movie', 'Music', 'Games', 'Voip'], 'isAudioProfileEnabled': false, 'currentMode': 'Games', 'voIPStatus': 'True', 'entertainmentStatus': 'True' }
+	const rapidChargeSettings = { available: false, status: false };
+	let dolbyAudioToggle = { available: false, supportedModes: ['Dynamic', 'Movie', 'Music', 'Games', 'Voip'], isAudioProfileEnabled: false, currentMode: 'Games', voIPStatus: 'True', entertainmentStatus: 'True' };
 	let setReturnValue = true;
 
-	let commonServiceMock = {
+	const commonServiceMock = {
 		getLocalStorageValue(key: any, defaultValue?: any) {
 			switch (key) {
 				case '[LocalStorageKey] PrevThermalModeStatus':
@@ -78,13 +78,13 @@ describe('WidgetQuicksettingsListComponent', () => {
 			}
 		},
 		getCapabalitiesNotification() {
-			let res = {
+			const res = {
 				type: '[Gaming] GamingCapabilities',
 				payload: {
 					smartFanFeature: smartFanFeatureCache,
 					thermalModeVersion: thermalModeVersionCache
 				}
-			}
+			};
 			return of(res);
 		},
 		getSessionStorageValue(key: any, defaultValue?: any) {
@@ -107,7 +107,7 @@ describe('WidgetQuicksettingsListComponent', () => {
 		}
 	};
 
-	let GamingAllCapabilitiesServiceMock = {
+	const GamingAllCapabilitiesServiceMock = {
 		isShellAvailable: true,
 		getCapabilityFromCache(key: any) {
 			switch (key) {
@@ -119,22 +119,22 @@ describe('WidgetQuicksettingsListComponent', () => {
 		}
 	};
 
-	let shellServiveSpy = jasmine.createSpyObj('VantageService', ['getGamingAllCapabilities', 'registerEvent', 'unRegisterEvent', , 'getSecurityAdvisor', 'getLogger']);
-	let gamingThermalModeServiceSpy = jasmine.createSpyObj('GamingThermalModeService', ['getThermalModeStatus', 'setThermalModeStatus', 'regThermalModeChangeEvent']);
-	let wifiSecurityServiceSpy = jasmine.createSpyObj('WifiSecurityService', ['isLWSEnabled', 'wifiSecurity']);
-	let audioServiceSpy = jasmine.createSpyObj('AudioService', ['getDolbyMode', 'setDolbyAudioState', 'startMonitorForDolby', 'stopMonitorForDolby']);
-	let powerServiceSpy = jasmine.createSpyObj('PowerService', ['getRapidChargeModeStatusIdeaNoteBook', 'setRapidChargeModeStatusIdeaNoteBook',]);
-	let dialogServiceSpy = jasmine.createSpyObj('DialogService', ['wifiSecurityLocationDialog', '']);
-	let guardSpy = jasmine.createSpyObj('GuardService', ['previousPageName']);
-	let routerSpy = jasmine.createSpyObj('Router', ['routerState']);
+	const shellServiveSpy = jasmine.createSpyObj('VantageService', ['getGamingAllCapabilities', 'registerEvent', 'unRegisterEvent', , 'getSecurityAdvisor', 'getLogger']);
+	const gamingThermalModeServiceSpy = jasmine.createSpyObj('GamingThermalModeService', ['getThermalModeStatus', 'setThermalModeStatus', 'regThermalModeChangeEvent']);
+	const wifiSecurityServiceSpy = jasmine.createSpyObj('WifiSecurityService', ['isLWSEnabled', 'wifiSecurity']);
+	const audioServiceSpy = jasmine.createSpyObj('AudioService', ['getDolbyMode', 'setDolbyAudioState', 'startMonitorForDolby', 'stopMonitorForDolby']);
+	const powerServiceSpy = jasmine.createSpyObj('PowerService', ['getRapidChargeModeStatusIdeaNoteBook', 'setRapidChargeModeStatusIdeaNoteBook', '']);
+	const dialogServiceSpy = jasmine.createSpyObj('DialogService', ['wifiSecurityLocationDialog', '']);
+	const guardSpy = jasmine.createSpyObj('GuardService', ['previousPageName']);
+	const routerSpy = jasmine.createSpyObj('Router', ['routerState']);
 
 	describe('thermalmode', () => {
 		let gamingThermalModeService: any;
-		let gamingThermalModeServiceMock = {
+		const gamingThermalModeServiceMock = {
 			getThermalModeSettingStatus() {
 				return new Promise(resolve => {
-					resolve(thermalModeStatus)
-				})
+					resolve(thermalModeStatus);
+				});
 			},
 			setThermalModeSettingStatus(value: number) {
 				if (setReturnValue) {
@@ -142,20 +142,20 @@ describe('WidgetQuicksettingsListComponent', () => {
 				}
 				return new Promise(resolve => {
 					resolve(setReturnValue);
-				})
+				});
 			},
 			regThermalModeChangeEvent() {
 				return new Promise(resolve => {
 					resolve(setReturnValue);
-				})
+				});
 			}
-		}
+		};
 		beforeEach(async(() => {
-			shellServiveSpy.getSecurityAdvisor.and.returnValue(new Promise(resolve => { resolve(true) }));
-			audioServiceSpy.getDolbyMode.and.returnValue(new Promise(resolve => { resolve(dolbyAudioToggle) }));
-			audioServiceSpy.startMonitorForDolby.and.returnValue(new Promise(resolve => { resolve(setReturnValue) }));
-			audioServiceSpy.stopMonitorForDolby.and.returnValue(new Promise(resolve => { resolve(setReturnValue) }));
-			powerServiceSpy.getRapidChargeModeStatusIdeaNoteBook.and.returnValue(new Promise(resolve => { resolve(rapidChargeSettings) }));
+			shellServiveSpy.getSecurityAdvisor.and.returnValue(new Promise(resolve => { resolve(true); }));
+			audioServiceSpy.getDolbyMode.and.returnValue(new Promise(resolve => { resolve(dolbyAudioToggle); }));
+			audioServiceSpy.startMonitorForDolby.and.returnValue(new Promise(resolve => { resolve(setReturnValue); }));
+			audioServiceSpy.stopMonitorForDolby.and.returnValue(new Promise(resolve => { resolve(setReturnValue); }));
+			powerServiceSpy.getRapidChargeModeStatusIdeaNoteBook.and.returnValue(new Promise(resolve => { resolve(rapidChargeSettings); }));
 			TestBed.configureTestingModule({
 				declarations: [
 					WidgetQuicksettingsListComponent
@@ -245,17 +245,17 @@ describe('WidgetQuicksettingsListComponent', () => {
 			thermalModeVersionCache = 1;
 			setReturnValue = true;
 
-			let event = {
+			const event = {
 				target: {
 					name: 'gaming.dashboard.device.quickSettings.title'
 				},
 				option: {
 					value: 2
 				}
-			}
+			};
 
 			for (let i = 1; i <= 3; i++) {
-				component.drop.curSelected = i
+				component.drop.curSelected = i;
 				thermalModeStatus = i;
 				currentThermalModeStatusCache = i;
 				for (let j = 1; j <= 3; j++) {
@@ -270,7 +270,7 @@ describe('WidgetQuicksettingsListComponent', () => {
 
 			setReturnValue = false;
 			for (let i = 1; i <= 3; i++) {
-				component.drop.curSelected = i
+				component.drop.curSelected = i;
 				thermalModeStatus = i;
 				currentThermalModeStatusCache = i;
 				for (let j = 1; j <= 3; j++) {
@@ -302,13 +302,13 @@ describe('WidgetQuicksettingsListComponent', () => {
 
 		it('registerThermalModeEvent', () => {
 			spyOn(gamingThermalModeService, 'regThermalModeChangeEvent').and.callThrough();
-			component.gamingCapabilities.smartFanFeature = false
+			component.gamingCapabilities.smartFanFeature = false;
 			component.registerThermalModeEvent();
 			expect(gamingThermalModeService.regThermalModeChangeEvent).toHaveBeenCalledTimes(0);
 			component.gamingCapabilities.smartFanFeature = true;
 			component.registerThermalModeEvent();
 			expect(gamingThermalModeService.regThermalModeChangeEvent).toHaveBeenCalledTimes(1);
-		})
+		});
 
 		it('onRegThermalModeEvent', fakeAsync(() => {
 			for (let i = 1; i <= 3; i++) {
@@ -327,12 +327,12 @@ describe('WidgetQuicksettingsListComponent', () => {
 		}));
 	});
 
-	describe('rapidCharge', function () {
-		let powerServiceMock = {
+	describe('rapidCharge', () => {
+		const powerServiceMock = {
 			getRapidChargeModeStatusIdeaNoteBook() {
 				return new Promise(resolve => {
-					resolve(rapidChargeSettings)
-				})
+					resolve(rapidChargeSettings);
+				});
 			},
 			setRapidChargeModeStatusIdeaNoteBook(value: boolean) {
 				if (setReturnValue) {
@@ -340,13 +340,13 @@ describe('WidgetQuicksettingsListComponent', () => {
 				}
 				return new Promise(resolve => {
 					resolve(setReturnValue);
-				})
+				});
 			}
-		}
+		};
 		beforeEach(async(() => {
-			shellServiveSpy.getSecurityAdvisor.and.returnValue(new Promise(resolve => { resolve(true) }));
-			audioServiceSpy.getDolbyMode.and.returnValue(new Promise(resolve => { resolve(dolbyAudioToggle) }));
-			audioServiceSpy.stopMonitorForDolby.and.returnValue(new Promise(resolve => { resolve(setReturnValue) }));
+			shellServiveSpy.getSecurityAdvisor.and.returnValue(new Promise(resolve => { resolve(true); }));
+			audioServiceSpy.getDolbyMode.and.returnValue(new Promise(resolve => { resolve(dolbyAudioToggle); }));
+			audioServiceSpy.stopMonitorForDolby.and.returnValue(new Promise(resolve => { resolve(setReturnValue); }));
 			TestBed.configureTestingModule({
 				declarations: [
 					WidgetQuicksettingsListComponent
@@ -369,7 +369,7 @@ describe('WidgetQuicksettingsListComponent', () => {
 			fixture = TestBed.createComponent(WidgetQuicksettingsListComponent);
 			component = fixture.debugElement.componentInstance;
 			fixture.detectChanges();
-		}))
+		}));
 
 		it('should create', () => {
 			expect(component).toBeDefined();
@@ -480,12 +480,12 @@ describe('WidgetQuicksettingsListComponent', () => {
 		}));
 
 		it('onToggleStateChanged', fakeAsync(() => {
-			let event = {
+			const event = {
 				target: {
 					name: 'gaming.dashboard.device.quickSettings.rapidCharge',
 					value: 'false'
 				}
-			}
+			};
 			rapidChargeCache.available = true;
 			setReturnValue = true;
 			component.quickSettings[1].isVisible = true;
@@ -532,8 +532,8 @@ describe('WidgetQuicksettingsListComponent', () => {
 		}));
 	});
 
-	describe('wifisecurity', function () {
-		let securityAdvisorStub = {
+	describe('wifisecurity', () => {
+		const securityAdvisorStub = {
 			wifiSecurity: {
 				on(event: any, handler: any) {
 				},
@@ -551,9 +551,9 @@ describe('WidgetQuicksettingsListComponent', () => {
 					return true;
 				}
 			}
-		}
+		};
 
-		let wifiSecurityServiceMock = {
+		const wifiSecurityServiceMock = {
 			isLWSEnabled: false,
 			wifiSecurity: {
 				disableWifiSecurity() {
@@ -563,20 +563,20 @@ describe('WidgetQuicksettingsListComponent', () => {
 					return Promise.resolve(setReturnValue);
 				}
 			}
-		}
+		};
 
-		let guardMock = {
+		const guardMock = {
 			previousPageName: '',
 			getWifiSecurityState() {
 				return true;
 			}
-		}
+		};
 		beforeEach(async(() => {
 			shellServiveSpy.getSecurityAdvisor.and.returnValue(securityAdvisorStub);
-			audioServiceSpy.getDolbyMode.and.returnValue(new Promise(resolve => { resolve(dolbyAudioToggle) }));
-			audioServiceSpy.startMonitorForDolby.and.returnValue(new Promise(resolve => { resolve(setReturnValue) }));
-			audioServiceSpy.stopMonitorForDolby.and.returnValue(new Promise(resolve => { resolve(setReturnValue) }));
-			powerServiceSpy.getRapidChargeModeStatusIdeaNoteBook.and.returnValue(new Promise(resolve => { resolve(rapidChargeSettings) }));
+			audioServiceSpy.getDolbyMode.and.returnValue(new Promise(resolve => { resolve(dolbyAudioToggle); }));
+			audioServiceSpy.startMonitorForDolby.and.returnValue(new Promise(resolve => { resolve(setReturnValue); }));
+			audioServiceSpy.stopMonitorForDolby.and.returnValue(new Promise(resolve => { resolve(setReturnValue); }));
+			powerServiceSpy.getRapidChargeModeStatusIdeaNoteBook.and.returnValue(new Promise(resolve => { resolve(rapidChargeSettings); }));
 			TestBed.configureTestingModule({
 				declarations: [
 					WidgetQuicksettingsListComponent
@@ -604,7 +604,7 @@ describe('WidgetQuicksettingsListComponent', () => {
 
 		afterEach(() => {
 			wifiSecurityServiceMock.isLWSEnabled = false;
-		})
+		});
 
 
 		it('ngOnInit not support wifiSecurity', () => {
@@ -635,7 +635,7 @@ describe('WidgetQuicksettingsListComponent', () => {
 			component.getWifiSecuritySettings();
 			expect(securityWifiSecurityInGamingDashboardCache).toBe(true, `isLWSEnabled is flase, securityWifiSecurityInGamingDashboardCache shoulde be true`);
 			expect(securityWifiSecurityShowPluginMissingDialogCache).toBe(true, `isLWSEnabled is flase, securityWifiSecurityShowPluginMissingDialogCache shoulde be true`);
-			expect(component.quickSettings[2].isChecked).toBe(false, `isLWSEnabled is flase, wifi Security checked shoulde be false`)
+			expect(component.quickSettings[2].isChecked).toBe(false, `isLWSEnabled is flase, wifi Security checked shoulde be false`);
 
 			securityWifiSecurityInGamingDashboardCache = false;
 			securityWifiSecurityShowPluginMissingDialogCache = false;
@@ -643,7 +643,7 @@ describe('WidgetQuicksettingsListComponent', () => {
 			component.getWifiSecuritySettings();
 			expect(securityWifiSecurityInGamingDashboardCache).toBe(true, `isLWSEnabled is true, securityWifiSecurityInGamingDashboardCache shoulde be true`);
 			expect(securityWifiSecurityShowPluginMissingDialogCache).toBe(true, `isLWSEnabled is true, securityWifiSecurityShowPluginMissingDialogCache shoulde be true`);
-			expect(component.quickSettings[2].isChecked).toBe(true, `isLWSEnabled is true, wifi Security checked shoulde be true`)
+			expect(component.quickSettings[2].isChecked).toBe(true, `isLWSEnabled is true, wifi Security checked shoulde be true`);
 		});
 
 		it('updateWifiSecurityState', () => {
@@ -694,36 +694,36 @@ describe('WidgetQuicksettingsListComponent', () => {
 		}));
 	});
 
-	describe('dolby', function () {
+	describe('dolby', () => {
 		let audioService: any;
-		let audioServiceMock = {
+		const audioServiceMock = {
 			getDolbyMode() {
 				return new Promise(resolve => {
 					resolve(dolbyAudioToggle);
-				})
+				});
 			},
 			setDolbyAudioState(value: any) {
 				if (setReturnValue) {
-					dolbyAudioToggle.isAudioProfileEnabled = value
+					dolbyAudioToggle.isAudioProfileEnabled = value;
 				}
 				return new Promise(resolve => {
 					resolve(setReturnValue);
-				})
+				});
 			},
 			startMonitorForDolby(value: any) {
 				return new Promise(resolve => {
 					resolve(setReturnValue);
-				})
+				});
 			},
 			stopMonitorForDolby() {
 				return new Promise(resolve => {
 					resolve(setReturnValue);
-				})
+				});
 			}
-		}
+		};
 		beforeEach(async(() => {
-			shellServiveSpy.getSecurityAdvisor.and.returnValue(new Promise(resolve => { resolve(true) }));
-			powerServiceSpy.getRapidChargeModeStatusIdeaNoteBook.and.returnValue(new Promise(resolve => { resolve(rapidChargeSettings) }));
+			shellServiveSpy.getSecurityAdvisor.and.returnValue(new Promise(resolve => { resolve(true); }));
+			powerServiceSpy.getRapidChargeModeStatusIdeaNoteBook.and.returnValue(new Promise(resolve => { resolve(rapidChargeSettings); }));
 			TestBed.configureTestingModule({
 				declarations: [
 					WidgetQuicksettingsListComponent
@@ -747,7 +747,7 @@ describe('WidgetQuicksettingsListComponent', () => {
 			fixture = TestBed.createComponent(WidgetQuicksettingsListComponent);
 			component = fixture.debugElement.componentInstance;
 			fixture.detectChanges();
-		}))
+		}));
 
 		it('should create', () => {
 			expect(component).toBeDefined();
@@ -783,7 +783,7 @@ describe('WidgetQuicksettingsListComponent', () => {
 		it('getDolbySettings', fakeAsync(() => {
 			dolbyAudioToggleCache.available = false;
 			dolbyAudioToggleCache.isAudioProfileEnabled = false;
-			dolbyAudioToggle.available = false
+			dolbyAudioToggle.available = false;
 			dolbyAudioToggle.isAudioProfileEnabled = false;
 			component.quickSettings[3].isVisible = false;
 			component.quickSettings[3].isChecked = false;
@@ -824,7 +824,7 @@ describe('WidgetQuicksettingsListComponent', () => {
 			expect(dolbyAudioToggleCache.available).toBe(true, `dolbyAudio is ${dolbyAudioToggle}, dolbyAudioToggleCache.available should keep true`);
 			expect(dolbyAudioToggleCache.isAudioProfileEnabled).toBe(true, `dolbyAudio is ${dolbyAudioToggle}, dolbyAudioToggleCache.isAudioProfileEnabled should keep true`);
 			tick();
-			dolbyAudioToggle = { 'available': false, 'supportedModes': ['Dynamic', 'Movie', 'Music', 'Games', 'Voip'], 'isAudioProfileEnabled': false, 'currentMode': 'Games', 'voIPStatus': 'True', 'entertainmentStatus': 'True' }
+			dolbyAudioToggle = { available: false, supportedModes: ['Dynamic', 'Movie', 'Music', 'Games', 'Voip'], isAudioProfileEnabled: false, currentMode: 'Games', voIPStatus: 'True', entertainmentStatus: 'True' };
 		}));
 
 		it('setDolbySettings', fakeAsync(() => {
@@ -882,12 +882,12 @@ describe('WidgetQuicksettingsListComponent', () => {
 		}));
 
 		it('onToggleStateChanged', fakeAsync(() => {
-			let event = {
+			const event = {
 				target: {
 					name: 'gaming.dashboard.device.quickSettings.dolby',
 					value: 'false'
 				}
-			}
+			};
 			dolbyAudioToggleCache.available = true;
 			dolbyAudioToggle.available = true;
 			component.quickSettings[3].isVisible = true;
@@ -996,13 +996,13 @@ describe('WidgetQuicksettingsListComponent', () => {
 	});
 
 	describe('catch error', () => {
-		let loggerServiceSpy = jasmine.createSpyObj('LoggerService', ['getMessage', 'debug', 'error', 'info', 'exception']);
+		const loggerServiceSpy = jasmine.createSpyObj('LoggerService', ['getMessage', 'debug', 'error', 'info', 'exception']);
 		beforeEach(async(() => {
-			shellServiveSpy.getSecurityAdvisor.and.returnValue(new Promise(resolve => { resolve(true) }));
-			audioServiceSpy.getDolbyMode.and.returnValue(new Promise(resolve => { resolve(dolbyAudioToggle) }));
-			audioServiceSpy.startMonitorForDolby.and.returnValue(new Promise(resolve => { resolve(setReturnValue) }));
-			audioServiceSpy.stopMonitorForDolby.and.returnValue(new Promise(resolve => { resolve(setReturnValue) }));
-			powerServiceSpy.getRapidChargeModeStatusIdeaNoteBook.and.returnValue(new Promise(resolve => { resolve(rapidChargeSettings) }));
+			shellServiveSpy.getSecurityAdvisor.and.returnValue(new Promise(resolve => { resolve(true); }));
+			audioServiceSpy.getDolbyMode.and.returnValue(new Promise(resolve => { resolve(dolbyAudioToggle); }));
+			audioServiceSpy.startMonitorForDolby.and.returnValue(new Promise(resolve => { resolve(setReturnValue); }));
+			audioServiceSpy.stopMonitorForDolby.and.returnValue(new Promise(resolve => { resolve(setReturnValue); }));
+			powerServiceSpy.getRapidChargeModeStatusIdeaNoteBook.and.returnValue(new Promise(resolve => { resolve(rapidChargeSettings); }));
 			TestBed.configureTestingModule({
 				declarations: [
 					WidgetQuicksettingsListComponent
@@ -1032,7 +1032,7 @@ describe('WidgetQuicksettingsListComponent', () => {
 		it('getDolbySettings error', fakeAsync(() => {
 			audioServiceSpy.getDolbyMode.and.throwError('getDolbySettings error');
 			let calledTimes = loggerServiceSpy.error.calls.count();
-			component.getDolbySettings()
+			component.getDolbySettings();
 			tick();
 			expect(loggerServiceSpy.error).toHaveBeenCalledTimes(++calledTimes);
 		}));
@@ -1040,9 +1040,9 @@ describe('WidgetQuicksettingsListComponent', () => {
 		it('getDolbySettings error', fakeAsync(() => {
 			audioServiceSpy.setDolbyAudioState.and.throwError('getDolbySettings error');
 			let calledTimes = loggerServiceSpy.error.calls.count();
-			component.setDolbySettings(true)
+			component.setDolbySettings(true);
 			tick();
 			expect(loggerServiceSpy.error).toHaveBeenCalledTimes(++calledTimes);
 		}));
-	})
-})
+	});
+});
