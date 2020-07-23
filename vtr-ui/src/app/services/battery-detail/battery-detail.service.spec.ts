@@ -5,8 +5,6 @@ import { BatteryDetailComponent } from 'src/app/components/battery/battery-detai
 import { VantageShellService } from '../vantage-shell/vantage-shell-mock.service';
 import { BatteryDetailService } from './battery-detail.service';
 
-
-
 describe('Shared service:', () => {
 	let shellService: VantageShellService;
 	let service: BatteryDetailService;
@@ -28,7 +26,7 @@ describe('Shared service:', () => {
 		}
 
 
-		it('should call getBatteryDetail', () => {
+		/* it('should call getBatteryDetail', () => {
 			const { service } = setup();
 			const mockBatteryDetailData = {
 				barCode: 'X2XP888JB1S',
@@ -83,9 +81,7 @@ describe('Shared service:', () => {
 			service.stopMonitor();
 			expect(service.battery.stopBatteryMonitor).toHaveBeenCalled();
 
-		});
-
-
+		}); */
 
 	});
 
