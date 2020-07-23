@@ -49,8 +49,8 @@ describe('TranslateDefaultValueIfNotFoundPipe', () => {
 	});
 
 	it('translates a not found token should return the default value', () => {
-		const defualtValue = 'This is a default value for a token not found';
-		const result = pipe.transform('hardwareScan.NotFoundToken', defualtValue);
-		expect(result).toEqual(defualtValue);
+		const defaultValue = 'This is a default value for a token not found';
+		const result = pipe.transform('hardwareScan.NotFoundToken', defaultValue);
+		expect(result).toEqual(defaultValue);
 	});
 });
