@@ -817,8 +817,7 @@
             "question2": "Como repor o PC",
             "question3": "Como saber qual a CPU da sua máquina",
             "question4": "Verificar a utilização de bateria da sua máquina",
-            "question5": "Utilizar o PC como tablet",
-            "question6": "Conheça a Cortana, a sua assistente pessoal"
+            "question5": "Utilizar o PC como tablet"
         },
         "ui": {
             "back": "RETROCEDER",
@@ -2540,7 +2539,30 @@
             "others": {
                 "othersProtection": "{{protectedName}} fornece proteção básica para o dispositivo",
                 "unknown": "Desconhecido",
-                "betterOffer": "Aproveite uma oferta melhor aqui!"
+                "betterOffer": "Aproveite uma oferta melhor aqui!",
+                "graphicTitle": "Your safety",
+                "graphicSubtitle": "But do you have the best protection for your PC?",
+                "graphicDesc1": "McAfee and Lenovo work together to give you protection that doesn’t get in the way of the premium experience you expect on your PC.",
+                "graphicDesc2": "That’s why McAfee includes:",
+                "featuresTitle1": "Optimized Performance",
+                "featuresDesc1": "Boosted system performance and better app speeds on your computer.",
+                "featuresTitle2": "More Secure Passwords",
+                "featuresDesc2": "Encrypt, organize, and access all your log-in info. Best of all, you only have to remember one password.",
+                "featuresTitle3": "Effective Antivirus",
+                "featuresDesc3": "Proven security against malware, viruses, and more with the most up-to-date protection.",
+                "featuresTitle4": "Safer Web Browsing",
+                "featuresDesc4": "Avoids suspicious websites and blocks risky downloads.",
+                "exploreButton": "Explore McAfee Features",
+                "peaceOfMindHeading": "McAfee is bringing the world peace of mind",
+                "peaceOfMindTitle1": "500 million+",
+                "peaceOfMindDesc1": "protected devices",
+                "peaceOfMindTitle2": "49 billion",
+                "peaceOfMindDesc2": "daily real-time threat queries",
+                "peaceOfMindTitle3": "480 threats",
+                "peaceOfMindDesc3": "discovered every minute",
+                "contentCardTitle": "Staying safer at home",
+                "contentCardDesc": "We’re all spending more of our lives online from home. McAfee has pulled together some useful safety tips for you.",
+                "contentCardLearnMore": "Learn more"
             }
         },
         "wifisecurity": {
@@ -2624,7 +2646,8 @@
                 "connect": "CONNECTED",
                 "fail": "Incorrect code entered!",
                 "joinFamilyAccount": "Join family account",
-                "connecting": "Connecting..."
+                "connecting": "Connecting...",
+                "offlinePrompt": "You are currently off-line. Please try again when you are connected to the Internet"
             },
             "securityhealth": {
                 "title": "Estado da segurança",
@@ -2896,35 +2919,6 @@
             "para8": "Usar a borda partilhada entre duas aplicações para redimensionar as duas aplicações ao mesmo tempo.",
             "para9": "Abrir uma nova aplicação na vista de tarefas—selecione <strong>Vista de tarefas</strong> na barra de tarefas, selecione uma aplicação e arraste-a para um lado para a encaixar no ecrã dividido.",
             "para10": "Use o botão voltar na barra de tarefas para voltar a uma aplicação ou para abrir uma aplicação que estava a usar antes."
-        },
-        "question6": {
-            "title": "Conheça a Cortana, a sua assistente pessoal",
-            "heading1": "O que é a Cortana?",
-            "para1": "A Cortana é a sua agente digital. Irá ajudá-lo a fazer coisas.",
-            "para2": "Quanto mais utilizar a Cortana, mais personalizada será a sua experiência.",
-            "para3": "Para começar, insira uma pergunta na caixa de pesquisa ou selecione o microfone e fale com a Cortana. (Escrever funciona para todos os tipos de PCs, mas precisa de um microfone para falar.)",
-            "para4": "Se não souber o que dizer, verá sugestões no ecrã de bloqueio e na página inicial da Cortana ao selecionar a caixa de pesquisa na barra de tarefas.",
-            "para5": "1. Início 2. Bloco de Notas 3. Definições 4. Feedback",
-            "para6": "Aqui estão algumas coisas que a Cortana pode fazer por si:",
-            "unorderedList1": {
-                "listItem1": "Dar-lhe lembretes com base no tempo, lugares ou pessoas.",
-                "listItem2": "Seguir encomendas, equipas, interesses e voos.",
-                "listItem3": "Enviar emails e mensagens.",
-                "listItem4": "Gerir a sua agenda e mantê-lo atualizado.",
-                "listItem5": "Criar e gerir listas.",
-                "listItem6": "Conversar e jogar.",
-                "listItem7": "Encontrar fatos, ficheiros, lugares e informações.",
-                "listItem8": "Abrir qualquer aplicações no sistema."
-            },
-            "heading2": "Experimente isto: definir um lembrete",
-            "para7": "Uma das coisas que Cortana pode fazer é mostrar-lhe lembretes. Pode lembrá-lo para fazer coisas, considerando o tempo, lugar, ou mesmo pessoas.",
-            "para8": "Por exemplo, escreva ou diga: “Lembra-me de felicitar a Tânia da próxima vez que ela telefonar”.",
-            "para9": "O lembrete aparecerá quando receber um telefonema da Tânia.",
-            "para10": "Bónus extra - se tiver um telemóvel Windows ou Cortana para iPhone ou Android, pode definir a Cortana para sincronizar notificações entre o seu PC e o telemóvel.",
-            "heading3": "Olá Cortana?",
-            "para11": "Configure a Cortana para ouvir sempre que disser “Olá, Cortana”. Selecione a caixa de pesquisa na barra de tarefas para abrir a página inicial da Cortana. Em seguida, selecione <strong>Definições</strong> e ligue <strong>Responder quando eu disser “Olá Cortana”</strong>.",
-            "heading4": "Nota",
-            "para12": "A Cortana só está disponível em certos países/regiões, e algumas funcionalidades da Cortana podem não estar disponíveis em todo o lado."
         }
     },
     "welcometutorial": {
@@ -3188,7 +3182,8 @@
         },
         "executingScanTitle": "A analisar {{title}}",
         "showDetails": "Ver Detalhes",
-        "hideDetails": "Ocultar Detalhes"
+        "hideDetails": "Ocultar Detalhes",
+        "NA": "N/A"
     },
     "smartPerformance": {
         "title": "Smart Performance",

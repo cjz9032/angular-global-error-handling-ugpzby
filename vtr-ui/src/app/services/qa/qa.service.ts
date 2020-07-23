@@ -52,15 +52,6 @@ export class QaService {
 			like: false,
 			dislike: false,
 			itemId: 'widget-support-detail-5',
-		},
-		{
-			id: 6,
-			category: 'q&a',
-			path: '/device/support-detail/6',
-			iconPath: `${this.imagePath}/svg_icon_qa_cortana.svg`,
-			like: false,
-			dislike: false,
-			itemId: 'widget-support-detail-6',
 		}
 	];
 
@@ -75,8 +66,7 @@ export class QaService {
 			'faq.question2.title',
 			'faq.question3.title',
 			'faq.question4.title',
-			'faq.question5.title',
-			'faq.question6.title'
+			'faq.question5.title'
 		])
 		.subscribe((result) => {
 			for (let i = 0; i < this.qas.length; i++) {

@@ -1,42 +1,42 @@
-import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
-import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import { QaService } from '../../../services/qa/qa.service';
-import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
-import { Status } from 'src/app/data-models/widgets/status.model';
-import { CommonService } from 'src/app/services/common/common.service';
-import { DeviceService } from 'src/app/services/device/device.service';
-import { CMSService } from 'src/app/services/cms/cms.service';
-import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
-import { UserService } from 'src/app/services/user/user.service';
-import { AndroidService } from 'src/app/services/android/android.service';
-import { UPEService } from 'src/app/services/upe/upe.service';
-import { LoggerService } from 'src/app/services/logger/logger.service';
-import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
-import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
-import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { DialogService } from 'src/app/services/dialog/dialog.service';
-import { WarrantyService } from 'src/app/services/warranty/warranty.service';
-import { DccService } from 'src/app/services/dcc/dcc.service';
-import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
-import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
-import { SelfSelectService, SegmentConst } from 'src/app/services/self-select/self-select.service';
-import { Subscription } from 'rxjs/internal/Subscription';
-import { FeedbackService } from 'src/app/services/feedback/feedback.service';
-import trim from 'lodash/trim';
-import sample from 'lodash/sample';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import map from 'lodash/map';
-import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
+import sample from 'lodash/sample';
+import trim from 'lodash/trim';
+import { Subscription } from 'rxjs/internal/Subscription';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 import { WelcomeTextContent } from 'src/app/data-models/welcomeText/welcome-text.model';
-import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
+import { Status } from 'src/app/data-models/widgets/status.model';
 import { ContentActionType, ContentSource } from 'src/app/enums/content.enum';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
+import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
+import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
+import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
+import { AndroidService } from 'src/app/services/android/android.service';
+import { CMSService } from 'src/app/services/cms/cms.service';
+import { CommonService } from 'src/app/services/common/common.service';
+import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
+import { DccService } from 'src/app/services/dcc/dcc.service';
+import { DeviceService } from 'src/app/services/device/device.service';
+import { DialogService } from 'src/app/services/dialog/dialog.service';
+import { FeedbackService } from 'src/app/services/feedback/feedback.service';
+import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
+import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { PageName } from 'src/app/services/metric/page-name.const';
+import { SegmentConst, SelfSelectService } from 'src/app/services/self-select/self-select.service';
+import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
+import { UPEService } from 'src/app/services/upe/upe.service';
+import { UserService } from 'src/app/services/user/user.service';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { WarrantyService } from 'src/app/services/warranty/warranty.service';
+import { QaService } from '../../../services/qa/qa.service';
 
 interface IConfigItem {
 	cardId: string;
@@ -224,7 +224,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	private hideTitleInCommercial() {
 		this.selfselectService.getConfig().then((re) => {
 			this.hideTitle = re.usageType === SegmentConst.Commercial;
-		})
+		});
 	}
 
 	private getProtocalAction() {
@@ -267,19 +267,21 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			this.subscription.unsubscribe();
 		}
 
-		if(this.langChangeSubscription) this.langChangeSubscription.unsubscribe();
+		if (this.langChangeSubscription) {
+			this.langChangeSubscription.unsubscribe();
+		}
 	}
 
 	private getWelcomeTextFromCache() {
 		if (!this.dashboardService.welcomeText) {
-			const cacheWelcomeTexts: WelcomeTextContent[] = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardWelcomeTexts)
+			const cacheWelcomeTexts: WelcomeTextContent[] = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardWelcomeTexts);
 			if (cacheWelcomeTexts && cacheWelcomeTexts.length > 0) {
 				this.localInfoService.getLocalInfo().then((localInfo: any) => {
 					const isLangCacheTexts = cacheWelcomeTexts.find(content => content.language === localInfo.Lang);
 					if (isLangCacheTexts && [SegmentConst.Consumer, SegmentConst.SMB].includes(localInfo.Segment)) {
 						this.dashboardService.welcomeText = sample(isLangCacheTexts.titles);
 					}
-				})
+				});
 			}
 		}
 	}
@@ -307,7 +309,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 					}
 					this.commonService.setLocalStorageValue(LocalStorageKey.DashboardWelcomeTexts, dashboardWelcomeTexts);
 				}
-			})
+			});
 		}
 	}
 
@@ -355,7 +357,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 				if (response && response.length > 0) {
 					this.logger.info(`Performance: Dashboard page get cms content, ${callCmsUsedTime}ms`);
 					this.populateCMSContent(response);
-					this.getWelcomeTextFromCms(response)
+					this.getWelcomeTextFromCms(response);
 
 				} else {
 					const msg = `Performance: Dashboard page not have this language contents, ${callCmsUsedTime}ms`;

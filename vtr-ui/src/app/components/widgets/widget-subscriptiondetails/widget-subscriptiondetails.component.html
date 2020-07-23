@@ -52,11 +52,10 @@
         metricsParent="Page.Support.SmartPerformance">
         {{'smartPerformance.subscriptionDetails.manageSubscription' |translate }}
     </a> -->
-    <a *ngIf="!isSubscribed && isOnline" [ngClass]="{'disabled-link' : strStatus==='PROCESSING' || tempHide === true}" class="link-text"  [class.disabled] = "strStatus==='PROCESSING' || tempHide" (click)=openSubscribeModal() 
-        vtrMetrics
-        metricsItem="btn.managesubscription"
-        metricsEvent="FeatureClick"
-        metricsParent="Page.Support.SmartPerformance">
+    <a *ngIf="!isSubscribed && isOnline" [ngClass]="{'disabled-link' : strStatus==='PROCESSING' || tempHide === true}"
+        class="link-text" [class.disabled]="strStatus==='PROCESSING' || tempHide" tabindex="0"
+        (keyup.enter)="openSubscribeModal()" (click)=openSubscribeModal() vtrMetrics metricsItem="btn.managesubscription"
+        metricsEvent="FeatureClick" metricsParent="Page.Support.SmartPerformance">
         {{'smartPerformance.subscriptionDetails.manageSubscription' |translate }}
     </a>
     <div class="row" *ngIf="!isOnline">

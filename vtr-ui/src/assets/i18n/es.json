@@ -817,8 +817,7 @@
             "question2": "Cómo restablecer su equipo",
             "question3": "Cómo conocer la CPU de su equipo",
             "question4": "Compruebe el uso de la batería de su equipo",
-            "question5": "Use su equipo como una tableta",
-            "question6": "Conozca Cortana, su asistente personal"
+            "question5": "Use su equipo como una tableta"
         },
         "ui": {
             "back": "ATRÁS",
@@ -2540,7 +2539,30 @@
             "others": {
                 "othersProtection": "{{protectedName}} le ofrece protección básica para su dispositivo",
                 "unknown": "Desconocido",
-                "betterOffer": "Disfrute de una mejor oferta aquí."
+                "betterOffer": "Disfrute de una mejor oferta aquí.",
+                "graphicTitle": "Your safety",
+                "graphicSubtitle": "But do you have the best protection for your PC?",
+                "graphicDesc1": "McAfee and Lenovo work together to give you protection that doesn’t get in the way of the premium experience you expect on your PC.",
+                "graphicDesc2": "That’s why McAfee includes:",
+                "featuresTitle1": "Optimized Performance",
+                "featuresDesc1": "Boosted system performance and better app speeds on your computer.",
+                "featuresTitle2": "More Secure Passwords",
+                "featuresDesc2": "Encrypt, organize, and access all your log-in info. Best of all, you only have to remember one password.",
+                "featuresTitle3": "Effective Antivirus",
+                "featuresDesc3": "Proven security against malware, viruses, and more with the most up-to-date protection.",
+                "featuresTitle4": "Safer Web Browsing",
+                "featuresDesc4": "Avoids suspicious websites and blocks risky downloads.",
+                "exploreButton": "Explore McAfee Features",
+                "peaceOfMindHeading": "McAfee is bringing the world peace of mind",
+                "peaceOfMindTitle1": "500 million+",
+                "peaceOfMindDesc1": "protected devices",
+                "peaceOfMindTitle2": "49 billion",
+                "peaceOfMindDesc2": "daily real-time threat queries",
+                "peaceOfMindTitle3": "480 threats",
+                "peaceOfMindDesc3": "discovered every minute",
+                "contentCardTitle": "Staying safer at home",
+                "contentCardDesc": "We’re all spending more of our lives online from home. McAfee has pulled together some useful safety tips for you.",
+                "contentCardLearnMore": "Learn more"
             }
         },
         "wifisecurity": {
@@ -2624,7 +2646,8 @@
                 "connect": "CONNECTED",
                 "fail": "Incorrect code entered!",
                 "joinFamilyAccount": "Join family account",
-                "connecting": "Connecting..."
+                "connecting": "Connecting...",
+                "offlinePrompt": "You are currently off-line. Please try again when you are connected to the Internet"
             },
             "securityhealth": {
                 "title": "Estado de seguridad",
@@ -2896,35 +2919,6 @@
             "para8": "Utilice el borde compartido entre dos aplicaciones ajustadas para cambiar el tamaño de ambas aplicaciones al mismo tiempo.",
             "para9": "Abra una nueva aplicación desde la vista de tarea: seleccione <strong>Vista de tareas</strong> en la barra de tareas, seleccione una aplicación y luego arrástrela a un lado para ajustarla a la pantalla dividida.",
             "para10": "Utilice el botón atrás de la barra de tareas para volver a una aplicación o para abrir una aplicación que estaba usando antes."
-        },
-        "question6": {
-            "title": "Conozca Cortana, su asistente personal",
-            "heading1": "¿Qué es Cortana?",
-            "para1": "Cortana es su agente digital. Ella le ayudará a realizar las tareas.",
-            "para2": "Cuanto más utilice Cortana, más personalizada será su experiencia.",
-            "para3": "Para empezar, escriba una pregunta en el recuadro de búsqueda o seleccione el micrófono y hable con Cortana. (El tecleo funciona para todos los tipos de equipos, pero necesita un micrófono para la conversación.)",
-            "para4": "Si no está seguro de lo que debe decir, verá sugerencias en la pantalla de bloqueo y en la Página principal de Cortana cuando seleccione el recuadro de búsqueda en la barra de tareas.",
-            "para5": "1. Inicio 2. Equipo portátil 3. Valores 4. Informar",
-            "para6": "Estas son algunas de las cosas que Cortana puede hacer por usted:",
-            "unorderedList1": {
-                "listItem1": "Proporcionar avisos basados en la hora, lugares o personas.",
-                "listItem2": "Realizar un seguimiento de paquetes, equipos, intereses y vuelos.",
-                "listItem3": "Enviar mensajes de correo electrónico y textos.",
-                "listItem4": "Administrar su calendario y mantenerlo al día.",
-                "listItem5": "Crear y gestionar listas.",
-                "listItem6": "Charlar y jugar.",
-                "listItem7": "Buscar hechos, archivos, lugares e información.",
-                "listItem8": "Abrir cualquier aplicación en el sistema."
-            },
-            "heading2": "Intente lo siguiente: establecer un aviso",
-            "para7": "Una de las cosas que puede hacer Cortana es proporcionarle recordatorios. Ella puede recordarle que haga las cosas según la hora, los lugares o incluso para personas.",
-            "para8": "Por ejemplo, escriba o diga “Recordarme felicitar a Tanya la próxima vez que me llame”.",
-            "para9": "El aviso aparecerá cuando reciba una llamada de Tanya.",
-            "para10": "Extra: si tiene un teléfono Windows o Cortana para iPhone o Android, puede configurar Cortana para sincronizar notificaciones entre su equipo y el teléfono.",
-            "heading3": "¿Hola Cortana?",
-            "para11": "Establece Cortana para escucharle cada vez que diga “Hola Cortana”. Seleccione el recuadro de búsqueda en la barra de tareas para abrir la página inicial de Cortana. A continuación, seleccione <strong>Configuración</strong> y active <strong>Permitir que Cortana responda a “Hola Cortana”.</strong>",
-            "heading4": "Nota",
-            "para12": "Cortana solo está disponible en ciertos países/regiones y es posible que algunas características de Cortana no estén disponibles en todos los lugares."
         }
     },
     "welcometutorial": {
@@ -3188,7 +3182,8 @@
         },
         "executingScanTitle": "Explorando {{title}}",
         "showDetails": "Ver detalles ",
-        "hideDetails": "Ocultar detalles"
+        "hideDetails": "Ocultar detalles",
+        "NA": "N/A"
     },
     "smartPerformance": {
         "title": "Smart Performance",

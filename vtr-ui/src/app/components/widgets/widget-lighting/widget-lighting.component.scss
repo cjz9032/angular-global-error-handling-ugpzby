@@ -19,8 +19,9 @@
 			border-radius: $border_radius;
 		}
 	}
-	.widget-container-notebook{
-		background: url(../../../../assets/images/gaming/lighting/lighting-ui-new/bg_note.png) center top no-repeat $gaming_dark;
+	.widget-container-notebook {
+		background: url(../../../../assets/images/gaming/lighting/lighting-ui-new/bg_note.png) center top no-repeat
+			$gaming_dark;
 		background-size: 100% auto;
 	}
 	.lighting-porfile {
@@ -29,7 +30,6 @@
 		border-radius: 0.8rem;
 		@media #{$high-contrast} {
 			border: 0.1rem solid windowText;
-			border-radius: $border_radius;
 		}
 		.card-title {
 			color: $white100;
@@ -75,7 +75,7 @@
 				}
 				z-index: -1;
 			}
-			.inner-toggle{
+			.inner-toggle {
 				display: flex;
 				align-items: center;
 				justify-content: space-between;
@@ -92,13 +92,13 @@
 				left: 0;
 				margin: 0;
 				padding: 0;
-				&:nth-child(3){
+				&:nth-child(3) {
 					left: 25%;
 				}
-				&:nth-child(5){
+				&:nth-child(5) {
 					left: 50%;
 				}
-				&:nth-child(7){
+				&:nth-child(7) {
 					left: 75%;
 				}
 				& ~ label {
@@ -114,19 +114,19 @@
 					position: relative;
 					z-index: 1;
 					cursor: pointer;
-					span{
+					span {
 						overflow: hidden;
 						text-overflow: ellipsis;
 						white-space: nowrap;
 						box-sizing: border-box;
-						padding: .25rem;
+						padding: 0.25rem;
 					}
 				}
 			}
 			.toggle-stable {
-				position: absolute ;
+				position: absolute;
 				background: $gaming_lighting_gradient;
-				width: 25% ;
+				width: 25%;
 				height: 4.2rem;
 				border-radius: 4.2rem;
 				margin: 0.4rem 0.2rem;
@@ -166,14 +166,14 @@
 			}
 		}
 		vtr-ui-gaming-driver-popup {
-			::ng-deep{
+			::ng-deep {
 				ui-gaming-driver-popup {
 					right: calc(100% - 1rem);
 					top: -2.5rem;
 					&::after {
-					 top: 11.5rem;
+						top: 11.5rem;
 					}
-					@media #{$medium-screen}{
+					@media #{$medium-screen} {
 						min-width: 45rem;
 						right: auto;
 						left: 50%;
@@ -185,7 +185,7 @@
 							transform: rotate(45deg);
 						}
 					}
-					@media #{$small-screen}{
+					@media #{$small-screen} {
 						right: auto;
 						left: 50%;
 						transform: translateX(-50%);
@@ -197,18 +197,18 @@
 					}
 					@media #{$breakpoint_md} {
 						min-width: 45rem;
-						top:-25.1rem;
+						top: -25.1rem;
 					}
 					.content-body {
-							@media #{$medium-screen}{
+						@media #{$medium-screen} {
 							min-height: 14.7rem;
-							}
-							@media #{$breakpoint_md}{
+						}
+						@media #{$breakpoint_md} {
 							min-height: 14.7rem;
-							}
-							p {
-								min-height: 5.8rem;
-							}
+						}
+						p {
+							min-height: 5.8rem;
+						}
 					}
 				}
 			}
@@ -231,20 +231,20 @@
 				cursor: pointer;
 				color: $white60;
 				line-height: 1.5rem;
-				transition: all .2s ease-in-out;
+				transition: all 0.2s ease-in-out;
 				@media #{$high-contrast} {
 					color: buttonText;
 				}
 				&:hover {
 					color: $white100;
-					.icon{
-						background:$white10;
+					.icon {
+						background: $white10;
 					}
 				}
 				.icon {
 					margin-right: -0.5rem;
 					font-size: 2rem;
-					transition: all .2s ease-in-out;
+					transition: all 0.2s ease-in-out;
 					border-radius: 50%;
 					padding: 1rem;
 					color: $white60;
@@ -263,17 +263,17 @@
 		color: $gaming_lightest !important;
 	}
 }
-::ng-deep body.focus-enable{
+::ng-deep body.focus-enable {
 	.is-gaming {
-		.multi-state-toggle{
-			.inner-toggle{
-					input:checked:focus+label.gamingTextColor{
-						@include solid-button-outline;
-						@media #{$high-contrast} {
-							@include solid-button-outline(highlight);
-						}
+		.multi-state-toggle {
+			.inner-toggle {
+				input:checked:focus + label.gamingTextColor {
+					@include solid-button-outline;
+					@media #{$high-contrast} {
+						@include solid-button-outline(highlight);
 					}
 				}
+			}
 		}
 	}
 }

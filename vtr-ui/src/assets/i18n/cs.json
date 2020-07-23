@@ -817,8 +817,7 @@
             "question2": "Jak obnovit počítač do továrního nastavení",
             "question3": "Jako poznat typ procesoru v počítači",
             "question4": "Kontrola využití baterie počítače",
-            "question5": "Použití počítače jako tabletu",
-            "question6": "Seznamte se s Cortanou, svým osobním asistentem"
+            "question5": "Použití počítače jako tabletu"
         },
         "ui": {
             "back": "ZPĚT",
@@ -2540,7 +2539,30 @@
             "others": {
                 "othersProtection": "{{protectedName}} nabízí základní ochranu zařízení",
                 "unknown": "Neznámé",
-                "betterOffer": "Užijte si lepší nabídku zde!"
+                "betterOffer": "Užijte si lepší nabídku zde!",
+                "graphicTitle": "Your safety",
+                "graphicSubtitle": "But do you have the best protection for your PC?",
+                "graphicDesc1": "McAfee and Lenovo work together to give you protection that doesn’t get in the way of the premium experience you expect on your PC.",
+                "graphicDesc2": "That’s why McAfee includes:",
+                "featuresTitle1": "Optimized Performance",
+                "featuresDesc1": "Boosted system performance and better app speeds on your computer.",
+                "featuresTitle2": "More Secure Passwords",
+                "featuresDesc2": "Encrypt, organize, and access all your log-in info. Best of all, you only have to remember one password.",
+                "featuresTitle3": "Effective Antivirus",
+                "featuresDesc3": "Proven security against malware, viruses, and more with the most up-to-date protection.",
+                "featuresTitle4": "Safer Web Browsing",
+                "featuresDesc4": "Avoids suspicious websites and blocks risky downloads.",
+                "exploreButton": "Explore McAfee Features",
+                "peaceOfMindHeading": "McAfee is bringing the world peace of mind",
+                "peaceOfMindTitle1": "500 million+",
+                "peaceOfMindDesc1": "protected devices",
+                "peaceOfMindTitle2": "49 billion",
+                "peaceOfMindDesc2": "daily real-time threat queries",
+                "peaceOfMindTitle3": "480 threats",
+                "peaceOfMindDesc3": "discovered every minute",
+                "contentCardTitle": "Staying safer at home",
+                "contentCardDesc": "We’re all spending more of our lives online from home. McAfee has pulled together some useful safety tips for you.",
+                "contentCardLearnMore": "Learn more"
             }
         },
         "wifisecurity": {
@@ -2624,7 +2646,8 @@
                 "connect": "CONNECTED",
                 "fail": "Incorrect code entered!",
                 "joinFamilyAccount": "Join family account",
-                "connecting": "Connecting..."
+                "connecting": "Connecting...",
+                "offlinePrompt": "You are currently off-line. Please try again when you are connected to the Internet"
             },
             "securityhealth": {
                 "title": "Stav zabezpečení",
@@ -2896,35 +2919,6 @@
             "para8": "Pomocí sdílené hrany mezi dvěma přichycenými aplikacemi změnit velikost obou aplikací najednou.",
             "para9": "V zobrazení úloh otevřít novou aplikaci: Na hlavním panelu vyberte <strong>zobrazení úloh</strong>, vyberte aplikaci a přetáhněte ji na jednu stranu rozdělené obrazovky.",
             "para10": "Pomocí tlačítka Zpět na hlavním panelu přejít zpět do aplikace nebo otevřít aplikaci, kterou jste používali dříve."
-        },
-        "question6": {
-            "title": "Seznamte se s Cortanou, svým osobním asistentem",
-            "heading1": "Co je Cortana?",
-            "para1": "Cortana je vaše digitální sekretářka. Pomůže vám zařídit, co potřebujete.",
-            "para2": "Čím více budete Cortanu používat, tím osobnější bude váš vztah.",
-            "para3": "Chcete-li s Cortanou začít pracovat, do vyhledávacího pole zadejte otázku nebo vyberte mikrofon a otázku položte přímo Cortaně. (Psát lze na všech typech počítačů, ale pro mluvení potřebujete mikrofon.)",
-            "para4": "Pokud nevíte, co říci, výběrem vyhledávacího okna na hlavním panelu se na zamykací obrazovce a domovské stránce Cortany zobrazí návrhy.",
-            "para5": "1. Domů 2. Notebook 3. Nastavení 4. Zpětná vazba",
-            "para6": "Co pro vás může Cortana udělat:",
-            "unorderedList1": {
-                "listItem1": "Připomenout vám naplánované události na základě času, míst nebo osob.",
-                "listItem2": "Sledovat zásilky, týmy, zájmy nebo odlety.",
-                "listItem3": "Odesílat e-maily a textové zprávy.",
-                "listItem4": "Spravovat kalendář a průběžně vás informovat.",
-                "listItem5": "Vytvářet a spravovat seznamy.",
-                "listItem6": "Povídat si a hrát hry.",
-                "listItem7": "Hledat faktické údaje, soubory, místa a informace.",
-                "listItem8": "Otevřít libovolnou aplikaci v systému."
-            },
-            "heading2": "Zkuste tohle: Nastavte upomínku",
-            "para7": "Jednou z věcí, které Cortana dokáže, je upozornit vás na plánované události. Může vás upomenout na základě času, místa nebo dokonce i osob.",
-            "para8": "Například napište nebo řekněte: „Připomeň mi, abych popřál Lucce, jak mi bude příště volat“.",
-            "para9": "Jak bude Lucka volat, upomínka se zobrazí.",
-            "para10": "Speciální bonus — Pokud používáte telefon Windows nebo iPhone či Android s Cortanou, můžete pro Cortanu nastavit synchronizaci oznámení mezi vaším počítačem a telefonem.",
-            "heading3": "Ahoj, Cortano",
-            "para11": "Nastavte Cortanu, aby vás slyšela, když řeknete „ahoj, Cortano“. Výběrem vyhledávacího pole na hlavním panelu otevřete domovskou stránku Cortany. Poté vyberte položku <strong>Nastavení</strong> a zapněte volbu <strong>Ať Cortana odpovídá na Ahoj, Cortano</strong>.",
-            "heading4": "Poznámka",
-            "para12": "Cortana je k dispozici pouze v některých zemích/oblastech a některé její funkce nemusí být dostupné všude."
         }
     },
     "welcometutorial": {
@@ -3188,7 +3182,8 @@
         },
         "executingScanTitle": "Snímání {{title}}",
         "showDetails": "Zobrazit podrobnosti",
-        "hideDetails": "Skrýt podrobnosti"
+        "hideDetails": "Skrýt podrobnosti",
+        "NA": "N/A"
     },
     "smartPerformance": {
         "title": "Health & Support",

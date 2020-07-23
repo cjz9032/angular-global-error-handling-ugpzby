@@ -339,7 +339,7 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 		this.modalService.open(ModalSmartPerformanceFeedbackComponent, {
 			backdrop: true,
 			size: 'lg',
-			keyboard: false,
+			keyboard: true,
 			centered: true,
 			windowClass: 'smart-performance-feedback-Modal'
 		});

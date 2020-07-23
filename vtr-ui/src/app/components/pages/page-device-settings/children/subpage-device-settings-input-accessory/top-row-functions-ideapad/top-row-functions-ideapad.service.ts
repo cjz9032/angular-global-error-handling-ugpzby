@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+import { from, Observable } from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
+import { StringBoolean } from '../../../../../../data-models/common/common.interface';
 import { VantageShellService } from '../../../../../../services/vantage-shell/vantage-shell.service';
 import {
 	CapabilityTemp,
@@ -6,9 +9,6 @@ import {
 	PrimaryKeySetting,
 	TopRowFunctionsIdeapad
 } from './top-row-functions-ideapad.interface';
-import { from, Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
-import { StringBoolean } from '../../../../../../data-models/common/common.interface';
 
 const CACHE_SIZE = 1;
 

@@ -15,31 +15,29 @@
 							<div class="battery-text">
 								<span *ngIf="batteryService.gaugeResetInfo?.length==1"
 									id="deviceSettings-batteryGauge-subtitle"
-									role="heading">
+									role="text">
 									{{'device.deviceSettings.batteryGauge.subtitle'| translate}}
 								</span>
 								<span *ngIf="batteryService.gaugeResetInfo?.length>1"
 									id="Battery-{{i+1}}-details"
-									role="heading">
+									role="text">
 									{{ headings[i] | translate }}
 								</span>
 							</div>
 							<div class="battery-gauge-info py-3">
-
 								<!-- Initial State Battery Gauge Reset -->
 								<div>
 									<div class="row">
 										<div class="col-4 label-text"
-											role="heading"
+											role="text"
 											id="battery-barcode-title-{{i+1}}">
 											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.barCode' | translate}}
 										</div>
 										<div class="col-8 label-value"
-											role="heading"
+											role="text"
 											id="battery-barcode-value-{{i+1}}">{{battery.barCode}}</div>
 									</div>
 								</div>
-
 								<!-- Battery Gauge Reset Progress -->
 								<div *ngIf="battery.isResetRunning">
 									<div class="row"

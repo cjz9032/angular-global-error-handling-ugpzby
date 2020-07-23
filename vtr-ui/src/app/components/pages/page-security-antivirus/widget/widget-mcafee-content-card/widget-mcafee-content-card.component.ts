@@ -1,11 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Component, Input, OnInit } from '@angular/core';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalArticleDetailComponent } from '../../../../modal/modal-article-detail/modal-article-detail.component';
 
 @Component({
-  selector: 'vtr-widget-mcafee-content-card',
-  templateUrl: './widget-mcafee-content-card.component.html',
-  styleUrls: ['./widget-mcafee-content-card.component.scss']
+	selector: 'vtr-widget-mcafee-content-card',
+	templateUrl: './widget-mcafee-content-card.component.html',
+	styleUrls: ['./widget-mcafee-content-card.component.scss']
 })
 export class WidgetMcafeeContentCardComponent implements OnInit {
 	@Input() articleId: string;

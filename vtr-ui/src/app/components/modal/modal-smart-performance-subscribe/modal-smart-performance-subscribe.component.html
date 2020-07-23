@@ -3,6 +3,8 @@
         <div class="btn-close">
             <button type="button"
                 class="close p-2"
+                tabindex="0" 
+                (keydown.enter)="closeModal()" 
                 (click)="closeModal()">
                 <fa-icon [icon]="['fal', 'times']"></fa-icon>
             </button>
@@ -81,7 +83,7 @@
                 <h4>{{'smartPerformance.scanningPage.confirmationNote' |translate }}</h4>
             </div>
             <div class="col-12 text-center my-3">
-                <button class="btn btn-primary" (click)="confirmProcess()"><h4>{{'smartPerformance.scanningPage.confirmationBtn' |translate }}</h4></button>              
+                <button tabindex="0" (keydown.enter)="confirmProcess()" class="btn btn-primary" (click)="confirmProcess()"><h4>{{'smartPerformance.scanningPage.confirmationBtn' |translate }}</h4></button>              
             </div>
                 <!-- <div class="payment-options">
                         <iframe  [src]="paymenturl | sanitize : 'resourceUrl'" sandbox="allow-forms allow-scripts allow-same-origin" frameborder="0" ></iframe>

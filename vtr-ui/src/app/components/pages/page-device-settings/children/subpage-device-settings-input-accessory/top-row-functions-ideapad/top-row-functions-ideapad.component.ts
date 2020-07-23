@@ -1,14 +1,14 @@
-import { Component, OnDestroy, OnInit, NgZone } from '@angular/core';
-import { TopRowFunctionsIdeapadService } from './top-row-functions-ideapad.service';
-import { FnLockStatus, KeyType, PrimaryKeySetting } from './top-row-functions-ideapad.interface';
+import { Component, NgZone, OnDestroy, OnInit } from '@angular/core';
 import { merge, Observable, of, Subject, Subscription } from 'rxjs';
 import { concatMap, map, mergeMap, switchMap, takeWhile, tap, throttleTime } from 'rxjs/operators';
-import { CommonService } from '../../../../../../services/common/common.service';
-import { LocalStorageKey } from '../../../../../../enums/local-storage-key.enum';
-import { StringBooleanEnum } from '../../../../../../data-models/common/common.interface';
 import { UiCircleRadioWithCheckBoxListModel } from 'src/app/components/ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
-import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
 import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
+import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
+import { StringBooleanEnum } from '../../../../../../data-models/common/common.interface';
+import { LocalStorageKey } from '../../../../../../enums/local-storage-key.enum';
+import { CommonService } from '../../../../../../services/common/common.service';
+import { FnLockStatus, KeyType, PrimaryKeySetting } from './top-row-functions-ideapad.interface';
+import { TopRowFunctionsIdeapadService } from './top-row-functions-ideapad.service';
 
 @Component({
 	selector: 'vtr-top-row-functions-ideapad',

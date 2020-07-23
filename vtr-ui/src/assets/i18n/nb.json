@@ -817,8 +817,7 @@
             "question2": "Slik tilbakestiller du datamaskinen din",
             "question3": "Bli kjent med datamaskinens prosessor",
             "question4": "Kontrollere datamaskinens batteriforbruk",
-            "question5": "Bruke datamaskinen som et nettbrett",
-            "question6": "Bli kjent med Cortana, din personlige assistent"
+            "question5": "Bruke datamaskinen som et nettbrett"
         },
         "ui": {
             "back": "TILBAKE",
@@ -2540,7 +2539,30 @@
             "others": {
                 "othersProtection": "{{protectedName}} gir deg grunnleggende beskyttelse av enheten din",
                 "unknown": "Ukjent",
-                "betterOffer": "Få et bedre tilbud her!"
+                "betterOffer": "Få et bedre tilbud her!",
+                "graphicTitle": "Your safety",
+                "graphicSubtitle": "But do you have the best protection for your PC?",
+                "graphicDesc1": "McAfee and Lenovo work together to give you protection that doesn’t get in the way of the premium experience you expect on your PC.",
+                "graphicDesc2": "That’s why McAfee includes:",
+                "featuresTitle1": "Optimized Performance",
+                "featuresDesc1": "Boosted system performance and better app speeds on your computer.",
+                "featuresTitle2": "More Secure Passwords",
+                "featuresDesc2": "Encrypt, organize, and access all your log-in info. Best of all, you only have to remember one password.",
+                "featuresTitle3": "Effective Antivirus",
+                "featuresDesc3": "Proven security against malware, viruses, and more with the most up-to-date protection.",
+                "featuresTitle4": "Safer Web Browsing",
+                "featuresDesc4": "Avoids suspicious websites and blocks risky downloads.",
+                "exploreButton": "Explore McAfee Features",
+                "peaceOfMindHeading": "McAfee is bringing the world peace of mind",
+                "peaceOfMindTitle1": "500 million+",
+                "peaceOfMindDesc1": "protected devices",
+                "peaceOfMindTitle2": "49 billion",
+                "peaceOfMindDesc2": "daily real-time threat queries",
+                "peaceOfMindTitle3": "480 threats",
+                "peaceOfMindDesc3": "discovered every minute",
+                "contentCardTitle": "Staying safer at home",
+                "contentCardDesc": "We’re all spending more of our lives online from home. McAfee has pulled together some useful safety tips for you.",
+                "contentCardLearnMore": "Learn more"
             }
         },
         "wifisecurity": {
@@ -2624,7 +2646,8 @@
                 "connect": "CONNECTED",
                 "fail": "Incorrect code entered!",
                 "joinFamilyAccount": "Join family account",
-                "connecting": "Connecting..."
+                "connecting": "Connecting...",
+                "offlinePrompt": "You are currently off-line. Please try again when you are connected to the Internet"
             },
             "securityhealth": {
                 "title": "Sikkerhetstilstand",
@@ -2896,35 +2919,6 @@
             "para8": "Bruk den delte kanten mellom to festede applikasjoner til å endre størrelse på begge appene samtidig.",
             "para9": "Åpne en ny app fra oppgave visning-Velg <strong>oppgave visning</strong> på oppgave linjen, Velg en app, og dra den til den ene siden for å feste den på den delte skjermen.",
             "para10": "Bruk tilbake-knappen på oppgave linjen for å gå tilbake i en app eller åpne en app som du brukte tidligere."
-        },
-        "question6": {
-            "title": "Bli kjent med Cortana, din personlige assistent",
-            "heading1": "Hva er Cortana?",
-            "para1": "Cortana er den digitale agenten. Hun hjelper deg med å få ting gjort.",
-            "para2": "Jo mer du bruker Cortana, jo mer personlig blir opplevelse.",
-            "para3": "Skriv et spørsmål i søke boksen eller velg mikrofonen og snakk med Cortana for å komme i gang. (Innskriving fungerer for alle typer PCer, men du trenger en mikrofon for å snakke.)",
-            "para4": "Hvis du ikke er sikker på hva du skal si, vil du se forslag på låse skjermen din og på Cortana-hjemmesiden når du velger søk-boksen på oppgave linjen.",
-            "para5": "1. Hjem 2. Notat blokk 3. Settings 4. Spillkontroller",
-            "para6": "Her er noen ting Cortana kan gjøre for deg:",
-            "unorderedList1": {
-                "listItem1": "Gi deg påminnelser basert på tid, steder eller personer.",
-                "listItem2": "Spore pakker, grupper, interesser og flights.",
-                "listItem3": "Sende e-postmeldinger og-tekster.",
-                "listItem4": "Administrer kalenderen din og hold deg oppdatert.",
-                "listItem5": "Opprett og administrer lister.",
-                "listItem6": "Chit chat og spill spill.",
-                "listItem7": "Finn opplysninger, filer, steder og info.",
-                "listItem8": "Åpne en hvilken som helst app på systemet."
-            },
-            "heading2": "Prøv dette: Sett en påminnelse",
-            "para7": "En av tingene Cortana kan gjøre er å gi deg påminnelser. Hun kan minne deg på å gjøre ting basert på tid, steder eller til og med personer.",
-            "para8": "Du kan for eksempel skrive eller si ' Påminn meg til congratulate Tanya neste gang hun ringer'.",
-            "para9": "Påminnelsen blir vist når du mottar en oppringing fra Tanya.",
-            "para10": "Ekstra bonus — hvis du har en Windows Phone eller Cortana for iPhone eller Android, kan du definere at Cortana skal synkronisere meldinger mellom PCen og telefonen.",
-            "heading3": "Hei Cortana?",
-            "para11": "Oppgi at Cortana skal høre deg når du sier \" Hei Cortana.\" Velg søke boksen på oppgave linjen for å åpne Cortana-hjemmesiden. Velg <strong>deretter innstillinger</strong> og slå på <strong>la Cortana svare på Hey Cortana.</strong>",
-            "heading4": "Merk",
-            "para12": "Cortana er bare tilgjengelig i visse land/regioner, og noen Cortana-funksjoner er kanskje ikke tilgjengelige overalt."
         }
     },
     "welcometutorial": {
@@ -3188,7 +3182,8 @@
         },
         "executingScanTitle": "Skanner {{title}}",
         "showDetails": "Vis detaljer",
-        "hideDetails": "Skjul detaljer"
+        "hideDetails": "Skjul detaljer",
+        "NA": "N/A"
     },
     "smartPerformance": {
         "title": "Smart Performance",

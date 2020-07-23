@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { QA } from 'src/app/data-models/qa/qa.model';
-import { TranslateService } from '@ngx-translate/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { TranslateService } from '@ngx-translate/core';
+import { QA } from 'src/app/data-models/qa/qa.model';
 import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class PageHighDensityBatteryComponent implements OnInit {
 			title: this.translate.instant('device.deviceSettings.batteryGauge.highDensityBattery.subtitle'),
 			category: 'q&a',
 			path: '/device/high-density-battery',
-			icon: ['fal','gem'],
+			icon: ['fal', 'gem'],
 			isIconBackground: false,
 			like: false,
 			dislike: false,
@@ -34,11 +34,11 @@ export class PageHighDensityBatteryComponent implements OnInit {
 	}
 
 	gotoBatteryDetails() {
-		if(this.batteryService.currentOpenModal === 'battery-details') {
-			this.router.navigate(['device/device-settings'], {queryParams: {batterydetail: true}});
+		if (this.batteryService.currentOpenModal === 'battery-details') {
+			this.router.navigate(['device/device-settings'], { queryParams: { batterydetail: true } });
 		}
-		if(this.batteryService.currentOpenModal === 'threshold') {
-			this.router.navigate(['device/device-settings'], {queryParams: {threshold: true}});
+		if (this.batteryService.currentOpenModal === 'threshold') {
+			this.router.navigate(['device/device-settings'], { queryParams: { threshold: true } });
 		}
 
 	}

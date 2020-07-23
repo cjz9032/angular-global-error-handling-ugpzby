@@ -17,15 +17,15 @@
 			&.ng5-slider-bubble {
 				display: none;
 			}
-			&.ng5-slider-bar{
+			&.ng5-slider-bar {
 				background-color: $gaming_square_button20;
 			}
 			&.ng5-slider-selection {
 				background-color: $btn_secondary_color;
 			}
-			
+
 			&.ng5-slider-pointer {
-				background-image: url('../../../../assets/gaming-icons/Brightness@2x.png');
+				background-image: url("../../../../assets/gaming-icons/Brightness@2x.png");
 				background-position: center center;
 				background-repeat: no-repeat;
 				background-size: 100%;
@@ -38,14 +38,16 @@
 				}
 			}
 			@media #{$high-contrast} {
-				&.ng5-slider-bar{
-					background-color: windowText;
+				&.ng5-slider-bar {
+					border: 0.1rem solid windowText;
 				}
-				&.ng5-slider-selection{
+				&.ng5-slider-selection {
 					background: highlight;
+					border: 0.1rem solid highlight;
 				}
-				&.ng5-slider-pointer{
+				&.ng5-slider-pointer {
 					background-color: highlight;
+					outline-color: highlight !important;
 				}
 			}
 		}
@@ -58,10 +60,10 @@
 			width: 99% !important;
 		}
 	}
-	body.focus-enable{
-	.is-gaming {
-		.ng5-slider-pointer-min{
-				&:focus{
+	body.focus-enable {
+		.is-gaming {
+			.ng5-slider-pointer-min {
+				&:focus {
 					@include outline-blue-gaming;
 				}
 			}

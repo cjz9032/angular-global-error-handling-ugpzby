@@ -1,25 +1,25 @@
-import { Subscription } from 'rxjs/internal/Subscription';
+import { Component, HostListener, Input, NgZone, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DialogService } from './../../../services/dialog/dialog.service';
-import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
-import { PowerService } from './../../../services/power/power.service';
-import { AudioService } from 'src/app/services/audio/audio.service';
-import { Component, OnInit, Input, OnDestroy, NgZone, HostListener } from '@angular/core';
-import { ThermalModeStatus } from 'src/app/data-models/gaming/thermal-mode-status.model';
-import { GamingThermalModeService } from 'src/app/services/gaming/gaming-thermal-mode/gaming-thermal-mode.service';
-import { CommonService } from 'src/app/services/common/common.service';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
-import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-capabilities';
-import { Gaming } from 'src/app/enums/gaming.enum';
 // It is better to import the bridge in service, but there is no service belong to wifi security to integrate all dependency
-import { EventTypes, WifiSecurity, PluginMissingError, SecurityAdvisor } from '@lenovo/tan-client-bridge';
-import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { WifiSecurityService } from 'src/app/services/security/wifi-security.service';
-import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
-import { GuardService } from 'src/app/services/guard/guardService.service';
+import { EventTypes, PluginMissingError, SecurityAdvisor, WifiSecurity } from '@lenovo/tan-client-bridge';
+import { Subscription } from 'rxjs/internal/Subscription';
 import { DolbyModeResponse } from 'src/app/data-models/audio/dolby-mode-response';
+import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
+import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-capabilities';
+import { ThermalModeStatus } from 'src/app/data-models/gaming/thermal-mode-status.model';
+import { Gaming } from 'src/app/enums/gaming.enum';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
+import { AudioService } from 'src/app/services/audio/audio.service';
+import { CommonService } from 'src/app/services/common/common.service';
+import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
+import { GamingThermalModeService } from 'src/app/services/gaming/gaming-thermal-mode/gaming-thermal-mode.service';
+import { GuardService } from 'src/app/services/guard/guardService.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { WifiSecurityService } from 'src/app/services/security/wifi-security.service';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { DialogService } from './../../../services/dialog/dialog.service';
+import { PowerService } from './../../../services/power/power.service';
 
 @Component({
 	selector: 'vtr-widget-quicksettings-list',
@@ -162,10 +162,10 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 	wsPluginMissingEventHandler = () => {
 		this.updateWifiSecurityState(false);
 		this.handleError(new PluginMissingError());
-	};
+	}
 	wsIsSupportWifiEventHandler = (res) => {
 		this.updateWifiSecurityState(res);
-	};
+	}
 	wsStateEventHandler = (value) => {
 		if (value) {
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, value);
@@ -177,7 +177,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 				}
 			}
 		}
-	};
+	}
 	wsIsLocationServiceOnEventHandler = (value) => {
 		this.ngZone.run(() => {
 			if (value !== undefined) {
@@ -197,7 +197,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 				}
 			}
 		});
-	};
+	}
 
 	thermalModeEvent: any;
 
@@ -248,7 +248,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 			this.registerThermalModeEvent();
 		}
 		// Version3.3 Binding regDolby event
-		if(this.quickSettings[3].isVisible) {
+		if (this.quickSettings[3].isVisible) {
 			this.registerDolbyChangeEvent();
 		}
 		this.notificationService = this.commonService.getCapabalitiesNotification().subscribe((response) => {
@@ -366,10 +366,10 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 			this.gamingThermalModeService
 				.setThermalModeSettingStatus(this.setThermalModeStatus.thermalModeStatus)
 				.then((statusValue: boolean) => {
-				if (!statusValue) {
-					this.drop.curSelected = this.GetThermalModeCacheStatus();
-				}
-				if (statusValue) {
+					if (!statusValue) {
+						this.drop.curSelected = this.GetThermalModeCacheStatus();
+					}
+					if (statusValue) {
 						// binding to UI
 						this.drop.curSelected = this.setThermalModeStatus.thermalModeStatus;
 						// updating the previous local cache value with last value of current local cache value
@@ -385,9 +385,9 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 							// fail update loading previous cache value
 							this.drop.curSelected = this.GetThermalModePrevCacheStatus();
 						}
-				}
+					}
 				})
-				.catch((error) => {throw new Error(error.message) });
+				.catch((error) => { throw new Error(error.message); });
 		}
 	}
 
@@ -407,9 +407,9 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 		try {
 			// version 3.3  update due to dolby API modification
 			this.audioService.getDolbyMode().then((res: DolbyModeResponse) => {
-				if(res !== undefined ){
+				if (res !== undefined) {
 					this.logger.info(`Widget-quicksettingslist-getDolbySettings: return value: ${res}, dolby.checked from ${this.quickSettings[3].isChecked} to: ${res.isAudioProfileEnabled}`);
-					if(this.quickSettings[3].isVisible !== res.available || this.quickSettings[3].isChecked !== res.isAudioProfileEnabled) {
+					if (this.quickSettings[3].isVisible !== res.available || this.quickSettings[3].isChecked !== res.isAudioProfileEnabled) {
 						this.quickSettings[3].isVisible = res.available;
 						this.quickSettings[3].isChecked = res.isAudioProfileEnabled;
 						this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, res);
@@ -429,7 +429,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 		try {
 			// version 3.3 update due to dolby API modification
 			this.audioService.setDolbyAudioState(value).then(res => {
-				if(res) {
+				if (res) {
 					this.logger.info(`Widget-quicksettingslist-setDolbySettings: return value: ${res}, dolbyMode from ${this.quickSettings[3].isChecked} to: ${value}`);
 					this.quickSettings[3].isChecked = value;
 					const dolbyAudioCache: DolbyModeResponse = this.commonService.getLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache);
@@ -454,10 +454,10 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 			this.wifiSecurity.on(EventTypes.wsPluginMissingEvent, this.wsPluginMissingEventHandler);
 			this.wifiSecurity.on(EventTypes.wsIsSupportWifiEvent, this.wsIsSupportWifiEventHandler);
 			this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInGamingDashboard, true);
-			this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog,true);
-			this.wifiSecurity.getWifiState().then((res) => { },(error) => {
-					this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
-				});
+			this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog, true);
+			this.wifiSecurity.getWifiState().then((res) => { }, (error) => {
+				this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
+			});
 			if (this.wifiSecurityService.isLWSEnabled) {
 				this.quickSettings[2].isChecked = true;
 			} else {
@@ -524,13 +524,13 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 		try {
 			// version 3.3 update due to dolby api modification
 			const dolbyAudioCache: DolbyModeResponse = this.commonService.getLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache);
-			if(dolbyAudioCache){
-			this.quickSettings[3].isVisible = dolbyAudioCache.available;
-			this.quickSettings[3].isChecked = dolbyAudioCache.isAudioProfileEnabled;
+			if (dolbyAudioCache) {
+				this.quickSettings[3].isVisible = dolbyAudioCache.available;
+				this.quickSettings[3].isChecked = dolbyAudioCache.isAudioProfileEnabled;
 			}
 		} catch (error) {
 			throw new Error(error.message);
-		 }
+		}
 	}
 
 	public initializeWifiSecCache() {
@@ -597,7 +597,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 			this.securityAdvisor.wifiSecurity.off(EventTypes.wsIsSupportWifiEvent, this.wsIsSupportWifiEventHandler);
 		}
 
-		if(this.notificationService) {
+		if (this.notificationService) {
 			this.notificationService.unsubscribe();
 		}
 	}
@@ -606,12 +606,12 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 	public registerDolbyChangeEvent() {
 		try {
 			this.audioService.startMonitorForDolby(this.handleDolbyChangeEvent.bind(this)).then(res => {
-				if(res) {
+				if (res) {
 					this.logger.info(`Widget-quicksettingslist-registerDolbyChangeEvent: return value: ${res}`);
 				} else {
 					this.logger.error(`Widget-quicksettingslist-registerDolbyChangeEvent: return value: ${res}`);
 				}
-			})
+			});
 		} catch (error) {
 			this.logger.error(`Widget-quicksettingslist-registerDolbyChangeEvent: register fail; Error message: `, error.message);
 			throw new Error(error.message);
@@ -635,12 +635,12 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 	public unRegisterDolbyEvent() {
 		try {
 			this.audioService.stopMonitorForDolby().then(res => {
-				if(res) {
+				if (res) {
 					this.logger.info(`Widget-quicksettingslist-unRegisterDolbyEvent: return value: ${res}`);
 				} else {
 					this.logger.error(`Widget-quicksettingslist-unRegisterDolbyEvent: return value: ${res}`);
 				}
-			})
+			});
 		} catch (error) {
 			this.logger.error(`Widget-quicksettingslist-unRegisterDolbyEvent: unRegisterDolbyEvent fail; Error message: `, error.message);
 			throw new Error(error.message);

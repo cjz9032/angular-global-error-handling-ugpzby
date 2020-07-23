@@ -1,27 +1,25 @@
 import { Component, OnInit, SecurityContext } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
-import { MockService } from 'src/app/services/mock/mock.service';
-import { QaService } from 'src/app/services/qa/qa.service';
+import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
+import { TranslateService } from '@ngx-translate/core';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { ContentActionType } from 'src/app/enums/content.enum';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { AndroidService } from 'src/app/services/android/android.service';
+import { CMSService } from 'src/app/services/cms/cms.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { ConfigService } from 'src/app/services/config/config.service';
+import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { DeviceService } from 'src/app/services/device/device.service';
-import { CMSService } from 'src/app/services/cms/cms.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { MockService } from 'src/app/services/mock/mock.service';
+import { QaService } from 'src/app/services/qa/qa.service';
 import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
 import { UserService } from 'src/app/services/user/user.service';
-import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { AndroidService } from 'src/app/services/android/android.service';
-import { DomSanitizer } from '@angular/platform-browser';
-import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { FeedbackFormComponent } from '../../feedback-form/feedback-form/feedback-form.component';
-import { Status } from 'src/app/data-models/widgets/status.model';
-import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
-import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
-import { LoggerService } from 'src/app/services/logger/logger.service';
-import { ContentActionType } from 'src/app/enums/content.enum';
 
 @Component({
 	selector: 'vtr-page-dashboard-android',

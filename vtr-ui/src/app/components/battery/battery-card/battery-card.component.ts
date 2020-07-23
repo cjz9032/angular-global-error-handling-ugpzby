@@ -1,25 +1,24 @@
 import { ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild, ViewRef } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
-import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
-import BatteryIndicator from 'src/app/data-models/battery/battery-indicator.model';
-import { CommonService } from 'src/app/services/common/common.service';
-import { BatteryInformation, ChargeThresholdInformation } from 'src/app/enums/battery-information.enum';
-import { EventTypes } from '@lenovo/tan-client-bridge';
-import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import BatteryGaugeDetail from 'src/app/data-models/battery/battery-gauge-detail-model';
-import { BatteryConditionsEnum, BatteryStatus } from 'src/app/enums/battery-conditions.enum';
-import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { EMPTY, Subscription } from 'rxjs';
-import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { LoggerService } from 'src/app/services/logger/logger.service';
-import { BatteryGaugeReset } from 'src/app/data-models/device/battery-gauge-reset.model';
-import { PowerService } from 'src/app/services/power/power.service';
-import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.model';
-import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
+import { EventTypes } from '@lenovo/tan-client-bridge';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { EMPTY, Subscription } from 'rxjs';
+import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
+import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
+import BatteryGaugeDetail from 'src/app/data-models/battery/battery-gauge-detail-model';
+import BatteryIndicator from 'src/app/data-models/battery/battery-indicator.model';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
+import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
+import { BatteryGaugeReset } from 'src/app/data-models/device/battery-gauge-reset.model';
+import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.model';
+import { BatteryConditionsEnum, BatteryStatus } from 'src/app/enums/battery-conditions.enum';
+import { BatteryInformation, ChargeThresholdInformation } from 'src/app/enums/battery-information.enum';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
+import { CommonService } from 'src/app/services/common/common.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
 declare var Windows;
 
@@ -182,17 +181,17 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.bctInfoSubscription = this.batteryService.getChargeThresholdInfo()
 			.subscribe((value: ChargeThreshold[]) => {
 				this.onPowerBatteryStatusEvent(value);
-		});
+			});
 
 		this.airplaneModeSubscription = this.batteryService.getAirplaneMode()
 			.subscribe((value: FeatureStatus) => {
-			this.batteryIndicator.isAirplaneMode = value.available && value.status;
-		});
+				this.batteryIndicator.isAirplaneMode = value.available && value.status;
+			});
 
 		this.expressChargingSubscription = this.batteryService.getExpressCharging()
 			.subscribe((value: FeatureStatus) => {
-			this.batteryIndicator.expressCharging = value.available && value.status;
-		});
+				this.batteryIndicator.expressCharging = value.available && value.status;
+			});
 	}
 
 	ngOnDestroy() {
@@ -203,13 +202,13 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		if (this.bctInfoSubscription) {
 			this.bctInfoSubscription.unsubscribe();
 		}
-		if(this.airplaneModeSubscription) {
+		if (this.airplaneModeSubscription) {
 			this.airplaneModeSubscription.unsubscribe();
 		}
-		if(this.expressChargingSubscription) {
+		if (this.expressChargingSubscription) {
 			this.expressChargingSubscription.unsubscribe();
 		}
-		if(this.activatedRouteSubscription) {
+		if (this.activatedRouteSubscription) {
 			this.activatedRouteSubscription.unsubscribe();
 		}
 		this.batteryService.stopMonitor();
@@ -318,7 +317,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	 */
 	onNotification(notification: AppNotification) {
 		if (notification) {
-			switch(notification.type) {
+			switch (notification.type) {
 				case ChargeThresholdInformation.ChargeThresholdInfo:
 					this.batteryIndicator.isChargeThresholdOn = notification.payload;
 					break;
@@ -508,22 +507,22 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	 */
 	public showDetailModal(content: any): void {
 		this.batteryService.currentOpenModal = 'battery-details';
-		if(!this.batteryService.isBatteryModalShown) {
+		if (!this.batteryService.isBatteryModalShown) {
 			this.batteryService.isBatteryModalShown = true;
 			this.modalService
-			.open(content, {
-				backdrop: 'static',
-				size: 'lg',
-				windowClass: 'battery-modal-size'
-			})
-			.result.then(
-				result => {
-					// on open
-				},
-				reason => {
-					this.batteryService.isBatteryModalShown = false;
-				}
-			);
+				.open(content, {
+					backdrop: 'static',
+					size: 'lg',
+					windowClass: 'battery-modal-size'
+				})
+				.result.then(
+					result => {
+						// on open
+					},
+					reason => {
+						this.batteryService.isBatteryModalShown = false;
+					}
+				);
 		}
 	}
 

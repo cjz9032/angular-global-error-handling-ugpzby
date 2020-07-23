@@ -2209,7 +2209,7 @@ export class VantageShellService {
 								}
 							]
 						}
-					})
+					});
 				}, 30000);
 			})
 		};
@@ -2244,47 +2244,47 @@ export class VantageShellService {
 	public getPowerDPM(): any {
 		const allPowerPlansResponse = {
 			activePowerPlan: 'Balanced',
-                powerButtonAction: 0,
-                passwordOnStandby: 1,
-                dbcOnLockEvent: 0,
-                powerMeter: 37,
-                alsAdaptiveBrightness: 1,
-                adjustOffset: '50',
-                powerPlanList: [{
-                  settingList: [{
-                    key: 'PowerPlan',
-                    value: 'Balanced'
-                  }, {
-                    key: 'PreDefined',
-                    value: 'SystemDefined'
-                  }, {
-                    key: 'HDDTimeoutAC',
-                    value: '0'
-                  }, {
-                    key: 'HiberTimeoutAC',
-                    value: '15'
-                  }, {
-                    key: 'SuspendTimeoutAC',
-                    value: '0'
-                  }, {
-                    key: 'VideoTimeoutAC',
-                    value: '45'
-                  }, {
-                    key: 'Performance',
-                    value: '5'
-                  }, {
-                    key: 'Temperature',
-                    value: '4'
-                  }, {
-                    key: 'PowerUsage',
-                    value: '7'
-                  }, {
-                    key: 'CPUSpeed',
-                    value: 'cpuSpeedAdaptive'
-                  }, {
-                    key: 'Brightness',
-                    value: '100'
-				  }], 
+				powerButtonAction: 0,
+				passwordOnStandby: 1,
+				dbcOnLockEvent: 0,
+				powerMeter: 37,
+				alsAdaptiveBrightness: 1,
+				adjustOffset: '50',
+				powerPlanList: [{
+					settingList: [{
+					key: 'PowerPlan',
+					value: 'Balanced'
+					}, {
+					key: 'PreDefined',
+					value: 'SystemDefined'
+					}, {
+					key: 'HDDTimeoutAC',
+					value: '0'
+					}, {
+					key: 'HiberTimeoutAC',
+					value: '15'
+					}, {
+					key: 'SuspendTimeoutAC',
+					value: '0'
+					}, {
+					key: 'VideoTimeoutAC',
+					value: '45'
+					}, {
+					key: 'Performance',
+					value: '5'
+					}, {
+					key: 'Temperature',
+					value: '4'
+					}, {
+					key: 'PowerUsage',
+					value: '7'
+					}, {
+					key: 'CPUSpeed',
+					value: 'cpuSpeedAdaptive'
+					}, {
+					key: 'Brightness',
+					value: '100'
+				  }],
 				},
 				{
 					settingList: [{
@@ -2367,7 +2367,7 @@ export class VantageShellService {
 		};
 		return {
 			getMotionAlertSetting: () => JSON.stringify(response)
-		}
+		};
 	}
 
 	public getHsaIntelligentSecurity(): any {

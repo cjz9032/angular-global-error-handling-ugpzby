@@ -633,7 +633,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				if (mode === IntelligentCoolingModes.Cool) {
 					this.powerService.getITSModeForICIdeapad().then((response) => {
 						this.initPowerSmartSettingsUIForIdeaPad(response, true);
-					})
+					});
 				}
 			} else if (this.intelligentCoolingModes === IntelligentCoolingHardware.Legacy) {
 				this.setPerformanceAndCool(mode);
@@ -843,7 +843,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 					this.cache.isAutoTransitionEnabled = this.isAutoTransitionEnabled;
 					this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
 					this.logger.info(`onAutoTransitionToggle.setAutoTransitionForICIdeapad after API ${isSuccess} ; $event: ${$event}`);
-				})
+				});
 		}
 	}
 
@@ -857,7 +857,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 			};
 			this.metricService.sendMetrics(metricsData);
 		}
-		this.autoTransitionIsReadMore = !this.autoTransitionIsReadMore
+		this.autoTransitionIsReadMore = !this.autoTransitionIsReadMore;
 	}
 
 	updateIntelligentCoolingUIModel(showIC: number) {
@@ -886,7 +886,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				customIcon: showIC >= 14 ? 'LE-IntelligentCooling2x' : 'LE-CoolingDown2x',
 				hideIcon: true,
 				processLabel: true,
-				metricsItem: 'radio.power-smart-settings.intelligent-cooling'
+				metricsItem: 'radio.power-smart-settings.cool-and-quite'
 			});
 		}
 
@@ -952,7 +952,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		this.logger.info('PowerSmartSettingsComponent.onIntelligentCoolingModeChange', $event);
 		if ($event) {
 			if ($event.componentId.toLowerCase() === this.performanceModeId.toLowerCase()) {
-				this.changePerformance()
+				this.changePerformance();
 			} else if ($event.componentId.toLowerCase() === this.quiteCoolModeId.toLowerCase()) {
 				this.changeQuietCool();
 			} else if ($event.componentId.toLowerCase() === this.batterySavingModeId.toLowerCase()) {

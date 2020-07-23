@@ -17,7 +17,7 @@ export class BatteryDetailService {
 	isBatteryModalShown = false;
 	private battery: any;
 	isAcAttached: boolean;
-	gaugePercent:number;
+	gaugePercent: number;
 	remainingPercentages: number[] = [];
 	gaugeResetInfo: BatteryGaugeReset[];
 	isPowerDriverMissing: boolean;
@@ -33,7 +33,8 @@ export class BatteryDetailService {
 	setGaugeResetSectionSubject = new BehaviorSubject(false);
 
 	public isShellAvailable = false;
-	constructor(shellService: VantageShellService,
+	constructor(
+		shellService: VantageShellService,
 		private logger: LoggerService,
 		private powerService: PowerService,
 		private commonService: CommonService) {
@@ -100,7 +101,7 @@ export class BatteryDetailService {
 				this.logger.info('getBatteryThresholdInformation.then', response);
 				this.chargeThresholdInfo.next(response);
 				this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, response);
-			}).catch ((error) => {
+			}).catch((error) => {
 				this.logger.error('getBatteryThresholdInformation :: error', error.message);
 				return EMPTY;
 			});
@@ -113,7 +114,7 @@ export class BatteryDetailService {
 			this.powerService.getAirplaneModeCapabilityThinkPad().then((value) => {
 				this.logger.info('getAirplaneModeCapabilityThinkPad.then ==>', value);
 				if (value) {
-					this.getAirplaneModeThinkPad()
+					this.getAirplaneModeThinkPad();
 				} else {
 					const airplaneMode = new FeatureStatus(false, false);
 					this.airplaneModeSubject.next(airplaneMode);
