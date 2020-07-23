@@ -14,14 +14,14 @@ describe('Shared service:', () => {
 			imports: [HttpClientModule],
 			providers: [VantageShellService, BatteryDetailComponent]
 		});
-		service = TestBed.inject(BatteryDetailService);
-		shellService = TestBed.inject(VantageShellService);
+		service = TestBed.get(BatteryDetailService);
+		shellService = TestBed.get(VantageShellService);
 	});
 	describe(':', () => {
 
 		function setup() {
-			const service = TestBed.inject(BatteryDetailService);
-			// const batteryDetailComponent = TestBed.inject(BatteryDetailComponent);
+			const service = TestBed.get(BatteryDetailService);
+			// const batteryDetailComponent = TestBed.get(BatteryDetailComponent);
 			return { service };
 		}
 
