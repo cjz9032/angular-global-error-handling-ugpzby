@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Output, EventEmitter, Input, HostListener } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter, Input, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
@@ -26,6 +26,8 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 	@Output() hideBasedOnOldAddIn = new EventEmitter();
 	@Output() hideBasedOnOldAddInSummary = new EventEmitter();
 	@Input() isOnline = true;
+	@ViewChild('selectedFrequencyList') selectedFrequencyList: ElementRef; 
+	@ViewChild('scheduledScanFrequency') scheduledScanFrequency: ElementRef;
 	private spTransLangEvent: Subscription;
 	selectedDate: any;
 	isSubscribed: any;
@@ -161,6 +163,9 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 	changeScanSchedule() {
 		if (this.scanToggleValue && this.isOnline) {
 			this.isChangeSchedule = true;
+			setTimeout(() => {
+				this.selectedFrequencyList.nativeElement.focus()
+			}, 10);
 		}
 	}
 	openScanScheduleDropDown(value) {
@@ -227,6 +232,9 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 	cancelChangedScanSchedule() {
 		this.scheduleTab = '';
 		this.isChangeSchedule = false;
+		setTimeout(() => {
+			this.scheduledScanFrequency.nativeElement.focus()
+		}, 10);
 		this.scheduleScanFrequency = this.commonService.getLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency);
 		this.changeScanFrequency(actualScanFrequency.indexOf(this.scheduleScanFrequency));
 		if (this.isSubscribed) {
@@ -572,6 +580,17 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 			this.amPmPosition = false;
 		}
 	}
+
+	toggleTooltip(tooltip: any) {
+			if (tooltip.isOpen()) {
+				tooltip.close();
+				return;
+			} 
+			if (!tooltip.isOpen()) {
+				tooltip.open();
+				return;
+			}
+		}
 
 	ngOnDestroy() {
 		if (this.spTransLangEvent) {
