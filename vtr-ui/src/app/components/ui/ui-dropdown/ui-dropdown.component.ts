@@ -1,10 +1,10 @@
-import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges, OnChanges } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons/faChevronUp';
-import { LoggerService } from 'src/app/services/logger/logger.service';
-import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
+import { TranslateService } from '@ngx-translate/core';
 import { DropDownInterval } from 'src/app/data-models/common/drop-down-interval.model';
+import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-ui-dropdown',

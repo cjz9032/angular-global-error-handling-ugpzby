@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { KeyCode } from 'src/app/enums/key-code.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { SmartStandbyService } from 'src/app/services/smart-standby/smart-standby.service';
-import { KeyCode } from 'src/app/enums/key-code.enum';
 
 @Component({
 	selector: 'vtr-ui-days-picker',

@@ -1,9 +1,5 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import {
-	NO_ERRORS_SCHEMA,
-
-	SimpleChanges
-} from '@angular/core';
+import { NO_ERRORS_SCHEMA, SimpleChanges } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { TranslateModule } from '@ngx-translate/core';
 import { DropDownInterval } from 'src/app/data-models/common/drop-down-interval.model';
@@ -21,7 +17,7 @@ import { OledPowerSettingsComponent } from './oled-power-settings.component';
 describe('OledPowerSettingsComponent', () => {
 	let component: OledPowerSettingsComponent;
 	let fixture: ComponentFixture<OledPowerSettingsComponent>;
-	let devService: DevService;
+	// let devService: DevService;
 	let displayService: DisplayService;
 
 	beforeEach(async(() => {
@@ -37,7 +33,7 @@ describe('OledPowerSettingsComponent', () => {
 			'Your computer\'s OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.',
 			'It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display.'
 		];
-		displayService = TestBed.get(DisplayService);
+		displayService = TestBed.inject(DisplayService);
 	}));
 	it('should create', () => {
 		expect(component).toBeTruthy();
