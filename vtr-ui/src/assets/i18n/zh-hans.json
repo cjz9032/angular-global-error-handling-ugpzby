@@ -3183,7 +3183,7 @@
         "executingScanTitle": "正在扫描 {{title}}",
         "showDetails": "查看详细信息",
         "hideDetails": "隐藏详细信息",
-        "NA": "N/A"
+        "NA": "不适用"
     },
     "smartPerformance": {
         "title": "Smart Performance",

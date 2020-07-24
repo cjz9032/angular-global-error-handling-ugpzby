@@ -3183,7 +3183,7 @@
         "executingScanTitle": "{{title}} taranıyor",
         "showDetails": "Ayrıntıları Görüntüle",
         "hideDetails": "Ayrıntıları Gizle",
-        "NA": "N/A"
+        "NA": "Yok"
     },
     "smartPerformance": {
         "title": "Health & Support",

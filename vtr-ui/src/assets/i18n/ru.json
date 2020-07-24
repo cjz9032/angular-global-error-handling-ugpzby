@@ -3183,7 +3183,7 @@
         "executingScanTitle": "Сканирование {{title}}",
         "showDetails": "Просмотреть сведения",
         "hideDetails": "Скрыть сведения",
-        "NA": "N/A"
+        "NA": "Нет"
     },
     "smartPerformance": {
         "title": "Health & Support",

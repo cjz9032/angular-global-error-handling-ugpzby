@@ -3183,7 +3183,7 @@
         "executingScanTitle": "Søger i {{title}}",
         "showDetails": "Vis detaljer ",
         "hideDetails": "Skjul detaljer",
-        "NA": "N/A"
+        "NA": "Ikke tilgængelig"
     },
     "smartPerformance": {
         "title": "Smart Performance",

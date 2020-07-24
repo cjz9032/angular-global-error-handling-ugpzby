@@ -3183,7 +3183,7 @@
         "executingScanTitle": "Explorando {{title}}",
         "showDetails": "Ver detalles ",
         "hideDetails": "Ocultar detalles",
-        "NA": "N/A"
+        "NA": "N/D"
     },
     "smartPerformance": {
         "title": "Smart Performance",
