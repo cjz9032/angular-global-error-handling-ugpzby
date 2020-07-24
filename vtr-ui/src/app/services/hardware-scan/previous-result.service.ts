@@ -94,14 +94,7 @@ export class PreviousResultService {
 							item.icon += '_laptop';
 						}
 					}
-					item.details = [];
-
-					for (const groupResultMetaItem of groupResultMeta.metaInformation) {
-						const detail = {};
-						detail[groupResultMetaItem.name] = groupResultMetaItem.value;
-						item.details.push(detail);
-					}
-
+					item.details = this.buildDetails(groupResultMeta);
 					item.listTest = [];
 					const test = groupResult[i].testResultList;
 					const testMeta = groupResultMeta.testList;
@@ -130,6 +123,19 @@ export class PreviousResultService {
 			this.previousResults = previousResults;
 			this.buildPreviousResultsWidget(this.previousResults);
 		}
+	}
+
+	public buildDetails(module: any) {
+		const result = [];
+
+		for (const item of module.metaInformation) {
+			const detail = { key: '', value: '' };
+			detail.key = item.name;
+			detail.value = item.value;
+			result.push(detail);
+		}
+
+		return result;
 	}
 
 	public getLastResults() {

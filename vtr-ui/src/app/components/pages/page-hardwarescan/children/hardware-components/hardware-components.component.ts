@@ -761,16 +761,10 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				expandedStatusChangedByUser: false,
 				detailsExpanded: false,
 				icon: moduleId,
-				details: [],
+				details: this.previousResultService.buildDetails(module),
 				listTest: [],
 				resultModule: HardwareScanTestResult.Pass,
 			};
-
-			for (const metaInfo of module.metaInformation) {
-				const info = {};
-				info[metaInfo.name] = metaInfo.value;
-				item.details.push(info);
-			}
 
 			for (const test of module.listTest) {
 				item.listTest.push({

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { HardwareScanService } from '../../../../../../services/hardware-scan/hardware-scan.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'vtr-hardware-scan-executing-header',
@@ -26,7 +27,10 @@ export class HardwareScanExecutingHeaderComponent implements OnInit {
 
 	public lastExecutedModule = '';
 
-	constructor(private hardwareScanService: HardwareScanService) { }
+	constructor(
+		private hardwareScanService: HardwareScanService,
+		private translate: TranslateService
+	) { }
 
 	ngOnInit() { }
 
@@ -36,17 +40,17 @@ export class HardwareScanExecutingHeaderComponent implements OnInit {
 
 	public getDeviceTitle() {
 		if (this.hardwareScanService) {
-			if (this.hardwareScanService.isRecoverExecuting()) {
-				return this.hardwareScanService.getDeviceInRecover();
-			}
-
 			const module = this.hardwareScanService.getExecutingModule();
 			if (module !== undefined) {
-				this.lastExecutedModule = module;
-				return module;
-			} else {
-				return this.lastExecutedModule;
+				// Gets the translation using the get() method as it's safer than instant(), as it's asynchronous and
+				// does not depend on the translation files are already been loaded as the latter.
+				// Besides, if the translation is not found (e.g. an old plugin is being used), returns the module,
+				// mimicking the 'TranslateDefaultValueIfNotFoundPipe' behavior, as it could not be used here, once it neither
+				// supports translation on .ts files nor translation with parameters.
+				this.translate.get('hardwareScan.pluginTokens.' + module)
+					.subscribe(translatedValue => this.lastExecutedModule = translatedValue ? translatedValue : module);
 			}
+			return this.lastExecutedModule;
 		}
 	}
 

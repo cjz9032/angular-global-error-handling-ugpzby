@@ -1125,7 +1125,7 @@ export class HardwareScanService {
 				}
 			}
 			result.push({
-				module: this.translate.instant('hardwareScan.pluginTokens.' + module),
+				module: module.toUpperCase(),
 				name: '',
 				icon: moduleType
 			});
