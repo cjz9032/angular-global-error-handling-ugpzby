@@ -85,9 +85,11 @@
 			font-weight: $weight_light;
 			@media #{$white-on-black} {
 				border: 0.1rem solid transparent;
+				color: $light;
 			}
 			@media #{$black-on-white} {
 				border: 0.1rem solid transparent;
+				color: $dark;
 			}
 
 			&:hover {
