@@ -9,15 +9,15 @@ export class WidgetMcafeePeaceOfMindComponent implements OnInit {
 	items = [{
 		image: '../../../../../../assets/images/antivirus/million_device_icon.svg',
 		title: 'security.antivirus.others.peaceOfMindTitle1',
-		desc: 'security.antivirus.others.peaceOfMindTitle1'
+		desc: 'security.antivirus.others.peaceOfMindDesc1'
 	}, {
 		image: '../../../../../../assets/images/antivirus/billion_real_threat_icon.svg',
 		title: 'security.antivirus.others.peaceOfMindTitle2',
-		desc: 'security.antivirus.others.peaceOfMindTitle2'
+		desc: 'security.antivirus.others.peaceOfMindDesc2'
 	}, {
 		image: '../../../../../../assets/images/antivirus/threat_icon.svg',
 		title: 'security.antivirus.others.peaceOfMindTitle3',
-		desc: 'security.antivirus.others.peaceOfMindTitle3'
+		desc: 'security.antivirus.others.peaceOfMindDesc3'
 	}];
 	constructor() { }
 

@@ -111,6 +111,7 @@
 			vtr-ui-lighting-effect {
 				::ng-deep {
 					&.select-box {
+						height: 6.2rem;
 						margin-bottom: 0.5rem;
 						svg {
 							color: $gaming_lightest !important;
@@ -140,21 +141,21 @@
 
 	.footer-part {
 		.link {
-			color: $gaming_info_link;
+			color: $blueFill;
 			text-decoration: none;
 			//text-transform: uppercase;
 			font-weight: $weight_bold;
-			font-size: 1.6rem;
+			font-size: 1.4rem;
 			display: inline-block;
 			margin-top: 2rem;
 			padding-bottom: 0.5rem;
-			border-bottom: 1px solid $gaming;
+			border-bottom: 1px solid $blueFill;
 			@media #{$high-contrast} {
 				color: buttonText;
 			}
 			&:hover {
-				color: $gaming_info_link_hover;
-				border-color: $gaming_info_link_hover;
+				color: $blueHover;
+				border-color: $blueHover;
 				text-decoration: none;
 			}
 		}

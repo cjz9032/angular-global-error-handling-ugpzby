@@ -1,16 +1,22 @@
 @import "../../../app.theme.scss";
 
-.card{
-    border-radius: $border_radius;
+.card {
+	border-radius: $border_radius;
 	box-shadow: $drop_shadow_gaming;
 	background: $gaming_lightest;
 	border: none;
 }
 
 ::ng-deep .vtr-page-lightingcustomize {
+	#lightingcustomize-back-btn {
+		color: $gaming_lightest;
+	}
+	#lightingcustomize-header-title {
+		color: $gaming_lightest;
+	}
 	.vtr-page-left-column {
 		.vtr-page-column-shift-up {
 			overflow: hidden;
-		}	
+		}
 	}
 }

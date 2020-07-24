@@ -94,12 +94,14 @@
 				@media #{$white-on-black} {
 					color: $dark;
 					@include high-contrast-background-transparent;
-					box-shadow: 0px 0px 0.1rem 0.1rem $dark;
+					// box-shadow: 0px 0px 0.1rem 0.1rem $dark;
+					@include black-border;
 				}
 				@media #{$black-on-white} {
 					color: $light;
 					@include high-contrast-background-transparent;
-					box-shadow: 0px 0px 0.1rem 0.1rem $light;
+					// box-shadow: 0px 0px 0.1rem 0.1rem $light;
+					@include white-border;
 				}
 			}
 			&:focus {
@@ -142,13 +144,11 @@
 				border: 0.1rem solid $light;
 				box-shadow: none;
 				@include high-contrast-background-transparent;
-				box-shadow: none;
 			}
 			@media #{$black-on-white} {
 				border: 0.1rem solid $dark;
 				box-shadow: none;
 				@include high-contrast-background-transparent;
-				box-shadow: none;
 			}
 
 			.title {
@@ -168,11 +168,13 @@
 				@media #{$white-on-black} {
 					@include high-contrast-background-transparent;
 					color: $light;
+					@include white-border;
 				}
 				@media #{$black-on-white} {
 					@include high-contrast-background-transparent;
 					color: $dark;
 					// box-shadow: 0px 0px 0.1rem 0.1rem $dark;
+					@include black-border;
 				}
 			}
 
@@ -203,7 +205,7 @@
 					}
 					.icon-container {
 						@include high-contrast-white-text-color-disabled;
-						// box-shadow: 0px 0px 0.1rem 0.1rem $dark;
+						box-shadow: 0px 0px 0.1rem 0.1rem $dark;
 					}
 				}
 			}

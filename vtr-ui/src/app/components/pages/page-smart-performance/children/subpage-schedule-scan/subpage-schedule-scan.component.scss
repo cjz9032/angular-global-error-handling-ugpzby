@@ -816,6 +816,14 @@ vtr-subpage-scanning {
 	background-color: $light;
 	box-shadow: 0 0 1.5rem 0 $screen_dark_15;
 	padding: 2.2rem;
+	@media #{$white-on-black} {
+		box-shadow: none;
+		@include white-border;
+	}
+	@media #{$black-on-white} {
+		box-shadow: none;
+		@include black-border;
+	}
 	.title {
 		font-size: 2.5rem;
 		font-weight: 500;

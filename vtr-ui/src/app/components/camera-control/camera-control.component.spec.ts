@@ -1,15 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { CameraControlComponent } from './camera-control.component';
-import { TranslationModule } from 'src/app/modules/translation.module';
-import { TranslateStore } from '@ngx-translate/core';
-import { NO_ERRORS_SCHEMA, NgZone } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { UiSwitchOnoffComponent } from '../ui/ui-switch-onoff/ui-switch-onoff.component';
-import { CameraFeedService } from 'src/app/services/camera/camera-feed/camera-feed.service';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { TranslateStore } from '@ngx-translate/core';
+import { TranslationModule } from 'src/app/modules/translation.module';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
-import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell-mock.service';
+import { CameraFeedService } from 'src/app/services/camera/camera-feed/camera-feed.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell-mock.service';
+import { UiSwitchOnoffComponent } from '../ui/ui-switch-onoff/ui-switch-onoff.component';
+import { CameraControlComponent } from './camera-control.component';
+
 
 xdescribe('CameraControlComponent', () => {
 	let component: CameraControlComponent;

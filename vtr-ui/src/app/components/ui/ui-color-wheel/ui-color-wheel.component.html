@@ -13,24 +13,27 @@
 		<div class="d-flex rgb-header">
 			<h3 class="content-title">{{'gaming.lightingProfile.colourwheel.text7.title' | translate}}</h3>
 			<div class="btn-container">
-			<button vtrMetrics [metricsItem]="'lighting_color_apply'" metricsEvent="featureClick" class="btn enable-button"
-				[ngClass]="{'disable-button': btnStatus !== 'apply'}" (click)="onApplyColorEffect(backColor)"
-				id="{{ automationId+'_color_'}}{{ ( btnStatus == 'apply' )? ('gaming.lightingProfile.colourwheel.text2.title' | translate) : ('gaming.lightingProfile.colourwheel.text3.title' | translate)}}"
-				attr.aria-label="{{ ('gaming.lightingProfile.lightingeffectnarrator.color.title' | translate) }}{{ ( btnStatus == 'apply' )? ('gaming.lightingProfile.colourwheel.text2.title' | translate) : ('gaming.lightingProfile.colourwheel.text3.title' | translate)}}"
-				[tabindex]="showOverlay?'-1':'0'">
-				<span *ngIf="btnStatus === 'apply'">{{'gaming.lightingProfile.colourwheel.text2.title' | translate}}</span>
-				<span *ngIf="btnStatus === 'applied'">{{'gaming.lightingProfile.colourwheel.text3.title' | translate}}</span>
-				<span *ngIf="btnStatus === 'loading'">
-					<fa-icon [icon]="['fal', 'circle-notch']" [spin]="true"></fa-icon>
-				</span>
-				<!-- <vtr-spinner *ngIf="btnStatus === 'loading'"></vtr-spinner> -->
-			</button>
+				<button vtrMetrics [metricsItem]="'lighting_color_apply'" metricsEvent="featureClick"
+					class="btn enable-button" [ngClass]="{'disable-button': btnStatus !== colorWheelStatus.apply}"
+					(click)="onApplyColorEffect(backColor)"
+					id="{{ automationId+'_color_'}}{{ ( btnStatus == colorWheelStatus.apply )? ('gaming.lightingProfile.colourwheel.text2.title' | translate) : ('gaming.lightingProfile.colourwheel.text3.title' | translate)}}"
+					attr.aria-label="{{ ('gaming.lightingProfile.lightingeffectnarrator.color.title' | translate) }}{{ ( btnStatus == colorWheelStatus.apply )? ('gaming.lightingProfile.colourwheel.text2.title' | translate) : ('gaming.lightingProfile.colourwheel.text3.title' | translate)}}"
+					[tabindex]="showOverlay?'-1':'0'">
+					<span
+						*ngIf="btnStatus === colorWheelStatus.apply">{{'gaming.lightingProfile.colourwheel.text2.title' | translate}}</span>
+					<span
+						*ngIf="btnStatus === colorWheelStatus.applied">{{'gaming.lightingProfile.colourwheel.text3.title' | translate}}</span>
+					<span *ngIf="btnStatus === colorWheelStatus.loading">
+						<fa-icon [icon]="['fal', 'circle-notch']" [spin]="true"></fa-icon>
+					</span>
+					<!-- <vtr-spinner *ngIf="btnStatus === 'loading'"></vtr-spinner> -->
+				</button>
 			</div>
 		</div>
 	</div>
 
 	<div class="row no-gutters">
-		<div class="col-8 wheel-container" id="{{automationId+'_color_pallet'}}" role="scrollbar" >
+		<div class="col-8 wheel-container" id="{{automationId+'_color_pallet'}}" role="scrollbar">
 			<div id="color-wheel" attr.aria-label="color-wheel" #colorWheel></div>
 		</div>
 		<div class="col-4 mt-5 pt-3 value-container">
@@ -44,23 +47,26 @@
 					<div class="form-group d-flex justify-content-end">
 						<label>{{'gaming.lightingProfile.colourwheel.text4.title' | translate}} </label>
 						<input id="{{automationId+'_rgb-r'}}" role="textbox"
-							[attr.aria-label]="'gaming.lightingProfile.rgbValueNarrator.red' | translate" type="number" maxlength="3"
-							min="0" max="255" class="input-color" [(ngModel)]="color[0]" (ngModelChange)='rgbChanged()'
-							(keypress)="validateInput($event)" (blur)="checkEmpty($event)" [tabindex]="showOverlay?'-1':'0'">
+							[attr.aria-label]="'gaming.lightingProfile.rgbValueNarrator.red' | translate" type="number"
+							maxlength="3" min="0" max="255" class="input-color" [(ngModel)]="color[0]"
+							(ngModelChange)='rgbChanged()' (keypress)="validateInput($event)"
+							(blur)="checkEmpty($event)" [tabindex]="showOverlay?'-1':'0'">
 					</div>
 					<div class="form-group d-flex justify-content-end">
 						<label>{{'gaming.lightingProfile.colourwheel.text5.title' | translate}} </label>
 						<input id="{{automationId+'_rgb-g'}}" role="textbox"
-							[attr.aria-label]="'gaming.lightingProfile.rgbValueNarrator.green' | translate" type="number"
-							maxlength="3" min="0" max="255" class="input-color" [(ngModel)]="color[1]" (ngModelChange)='rgbChanged()'
-							(keypress)="validateInput($event)" (blur)="checkEmpty($event)" [tabindex]="showOverlay?'-1':'0'">
+							[attr.aria-label]="'gaming.lightingProfile.rgbValueNarrator.green' | translate"
+							type="number" maxlength="3" min="0" max="255" class="input-color" [(ngModel)]="color[1]"
+							(ngModelChange)='rgbChanged()' (keypress)="validateInput($event)"
+							(blur)="checkEmpty($event)" [tabindex]="showOverlay?'-1':'0'">
 					</div>
 					<div class="form-group d-flex justify-content-end">
 						<label>{{'gaming.lightingProfile.colourwheel.text6.title' | translate}} </label>
 						<input id="{{automationId+'_rgb-b'}}" role="textbox"
-							[attr.aria-label]="'gaming.lightingProfile.rgbValueNarrator.blue' | translate" type="number" maxlength="3"
-							min="0" max="255" class="input-color" [(ngModel)]="color[2]" (ngModelChange)='rgbChanged()'
-							(keypress)="validateInput($event)" (blur)="checkEmpty($event)" [tabindex]="showOverlay?'-1':'0'">
+							[attr.aria-label]="'gaming.lightingProfile.rgbValueNarrator.blue' | translate" type="number"
+							maxlength="3" min="0" max="255" class="input-color" [(ngModel)]="color[2]"
+							(ngModelChange)='rgbChanged()' (keypress)="validateInput($event)"
+							(blur)="checkEmpty($event)" [tabindex]="showOverlay?'-1':'0'">
 					</div>
 				</div>
 			</div>

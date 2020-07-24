@@ -58,10 +58,10 @@ describe('Component: PowerSmartSetting', () => {
 	beforeEach(() => {
 		fixture = TestBed.createComponent(PowerSmartSettingsComponent);
 		component = fixture.componentInstance;
-		commonService = TestBed.get(CommonService);
-		translate = TestBed.get(TranslateService);
-		powerService = TestBed.get(PowerService);
-		metricService = TestBed.get(MetricService);
+		commonService = TestBed.inject(CommonService);
+		translate = TestBed.inject(TranslateService);
+		powerService = TestBed.inject(PowerService);
+		metricService = TestBed.inject(MetricService);
 	});
 
 	// it("should create", function (done) {
@@ -584,7 +584,7 @@ describe('Component: PowerSmartSetting', () => {
 
 		const spy = spyOn(metricService, 'sendMetrics').and.returnValue();
 		component.autoTransitionReadMoreClick();
-		expect(component.autoTransitionIsReadMore).toBeTruthy;
+		expect(component.autoTransitionIsReadMore).toBeTruthy();
 		expect(spy).toHaveBeenCalled();
 	});
 

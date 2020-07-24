@@ -11,9 +11,6 @@
 	ul {
 		padding: 2rem;
 		li.add-icon {
-			div:nth-child(1) {
-				border-radius: 0.3rem;
-			}
 			div:last-child{
 				@media #{$high_contrast} {
 					color: windowText;
@@ -68,14 +65,14 @@
 				width: 50%;
 			}
 			div:nth-child(1) {
-				width: 4.5rem;
-				height: 4.5rem;
+				width: 5rem;
+				height: 5rem;
 				text-align: center;
 				margin: auto;
 			}
 			div:nth-child(2) {
 				font-size: $fontsize_xs;
-				margin-top: 0.5rem;
+				margin-top: 1rem;
 				text-align: center;
 				overflow: hidden;
 				text-overflow: ellipsis;

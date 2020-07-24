@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { EMPTY } from 'rxjs';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { ModalSmartStandByComponent } from 'src/app/components/modal/modal-smart-stand-by/modal-smart-stand-by.component';
+import { UiRoundedRectangleRadioModel } from 'src/app/components/ui/ui-rounded-rectangle-custom-radio-list/ui-rounded-rectangle-radio-list.model';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { SmartStandby } from 'src/app/data-models/device/smart-standby.model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -11,7 +12,6 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { PowerService } from 'src/app/services/power/power.service';
 import { SmartStandbyService } from 'src/app/services/smart-standby/smart-standby.service';
-import { UiRoundedRectangleRadioModel } from 'src/app/components/ui/ui-rounded-rectangle-custom-radio-list/ui-rounded-rectangle-radio-list.model';
 
 @Component({
 	selector: 'vtr-smart-standby',
@@ -33,8 +33,8 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	public smartStandByInterval: any;
 	public caption = this.translate.instant('device.deviceSettings.power.smartStandby.description');
 	public tooltipText = this.translate.instant('device.deviceSettings.power.smartStandby.tooltip');
-	clicktoChangeId = 'smartstandby-click-to-change'
-	collapseId = 'smartstandby-click-to-change-collapse'
+	clicktoChangeId = 'smartstandby-click-to-change';
+	collapseId = 'smartstandby-click-to-change-collapse';
 	firstTimeLoad: boolean;
 	timeOut = 100;
 	@Output() smartStandbyCapability = new EventEmitter<boolean>();
@@ -63,7 +63,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		private logger: LoggerService,
 		public commonService: CommonService,
 		public smartStandbyService: SmartStandbyService,
-		private translate: TranslateService, ) {
+		private translate: TranslateService) {
 		this.smartStandbyService.days = this.smartStandby.daysOfWeekOff;
 	}
 
@@ -370,7 +370,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		this.showDropDown = [false, false, false];
 		this.checkbox = $event.value === this.AUTOMATIC_MODE ? true : false;
 		this.setSmartStandbyIsAutonomic(this.checkbox);
-		this.isCollapsed = true
+		this.isCollapsed = true;
 	}
 
 
@@ -379,7 +379,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		setTimeout(() => {
 			const focusElement = document.getElementById(`${elementId}`) as HTMLElement;
 			if (focusElement) {
-				focusElement.focus()
+				focusElement.focus();
 			}
 		}, this.timeOut);
 	}

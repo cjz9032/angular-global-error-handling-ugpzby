@@ -1,12 +1,12 @@
-import { fakeAsync, TestBed, tick } from '@angular/core/testing';
-
-import { BacklightService } from './backlight.service';
-import { VantageShellService } from '../../../../../../services/vantage-shell/vantage-shell.service';
-import { BacklightLevel, BacklightStatus } from './backlight.interface';
-import { BacklightLevelEnum, BacklightStatusEnum } from './backlight.enum';
 import { HttpClientModule } from '@angular/common/http';
-import { CommonService } from '../../../../../../services/common/common.service';
+import { fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { Observable } from 'rxjs';
+import { CommonService } from '../../../../../../services/common/common.service';
+import { VantageShellService } from '../../../../../../services/vantage-shell/vantage-shell.service';
+import { BacklightLevelEnum, BacklightStatusEnum } from './backlight.enum';
+import { BacklightLevel, BacklightStatus } from './backlight.interface';
+import { BacklightService } from './backlight.service';
+
 
 describe('BacklightService', () => {
 	let backlightService: BacklightService;
@@ -18,7 +18,7 @@ describe('BacklightService', () => {
 		TestBed.configureTestingModule({
 			providers: [
 				BacklightService,
-				{provide: VantageShellService, useValue: shellServiceSpy},
+				{ provide: VantageShellService, useValue: shellServiceSpy },
 				CommonService
 			],
 			imports: [HttpClientModule]
@@ -86,7 +86,7 @@ describe('BacklightService', () => {
 			}
 		});
 		backlightService = new BacklightService(shellServiceSpy);
-		const cacheStub$ = new Observable<Array<BacklightStatus|BacklightLevel>>();
+		const cacheStub$ = new Observable<Array<BacklightStatus | BacklightLevel>>();
 		backlightService.cache$ = cacheStub$;
 		// const spy = spyOnProperty(backlightService, 'backlight');
 		const result = backlightService.backlight;
@@ -110,7 +110,7 @@ describe('BacklightService', () => {
 			setBacklight() {
 				return Promise.resolve({
 					errorCode: 0
-				})
+				});
 			}
 		});
 		backlightService = new BacklightService(shellServiceSpy);
@@ -125,7 +125,7 @@ describe('BacklightService', () => {
 
 	it('should call backlightFeature.getBacklightOnSystemChange', () => {
 		shellServiceSpy.getBacklight.and.returnValue({
-			getBacklightOnSystemChange() {}
+			getBacklightOnSystemChange() { }
 		});
 		backlightService = new BacklightService(shellServiceSpy);
 		backlightService.getBacklightOnSystemChange();
@@ -184,7 +184,7 @@ describe('BacklightService', () => {
 
 	it('#backlightFeature.getBacklightOnSystemChange should reject this request', fakeAsync(() => {
 		shellServiceSpy.getBacklight.and.returnValue({
-			getBacklightOnSystemChange() {}
+			getBacklightOnSystemChange() { }
 		});
 		const svc = new BacklightService(shellServiceSpy);
 		const getBacklightOnSystemChangeSpy = spyOn(svc.backlightFeature, 'getBacklightOnSystemChange');
@@ -192,7 +192,7 @@ describe('BacklightService', () => {
 			errorcode: 1
 		}));
 		svc.getBacklightOnSystemChange().subscribe(
-			() => {},
+			() => { },
 			err => {
 				expect(err.errorcode).toBe(1);
 			}
@@ -202,7 +202,7 @@ describe('BacklightService', () => {
 
 	it('#backlightFeature.getBacklightOnSystemChange should complete this call when errorcode is 606', fakeAsync(() => {
 		shellServiceSpy.getBacklight.and.returnValue({
-			getBacklightOnSystemChange() {}
+			getBacklightOnSystemChange() { }
 		});
 		const svc = new BacklightService(shellServiceSpy);
 		const getBacklightOnSystemChangeSpy = spyOn(svc.backlightFeature, 'getBacklightOnSystemChange');
@@ -220,7 +220,7 @@ describe('BacklightService', () => {
 
 	it('#backlightFeature.getBacklightOnSystemChange should receive callback\'s data', fakeAsync(() => {
 		shellServiceSpy.getBacklight.and.returnValue({
-			getBacklightOnSystemChange() {}
+			getBacklightOnSystemChange() { }
 		});
 		const svc = new BacklightService(shellServiceSpy);
 		const getBacklightOnSystemChangeSpy = spyOn(svc.backlightFeature, 'getBacklightOnSystemChange');
@@ -228,7 +228,7 @@ describe('BacklightService', () => {
 			second.call(svc, {
 				errorcode: 0,
 				payload: 'test'
-			})
+			});
 			return Promise.resolve({
 				settingList: {
 					setting: [
@@ -247,7 +247,7 @@ describe('BacklightService', () => {
 					]
 				}
 			});
-		})
+		});
 		svc.getBacklightOnSystemChange().subscribe(
 			response => {
 				expect(response).not.toBeNull();
