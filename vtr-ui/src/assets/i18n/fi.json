@@ -3183,7 +3183,7 @@
         "executingScanTitle": "Tarkistetaan {{title}}",
         "showDetails": "Näytä tiedot",
         "hideDetails": "Piilota tiedot",
-        "NA": "N/A"
+        "NA": "Ei käytössä"
     },
     "smartPerformance": {
         "title": "Smart Performance",

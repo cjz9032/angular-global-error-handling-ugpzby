@@ -3183,7 +3183,7 @@
         "executingScanTitle": "Skenovanie {{title}}",
         "showDetails": "Zobraziť podrobnosti",
         "hideDetails": "Skryť podrobnosti",
-        "NA": "N/A"
+        "NA": "–"
     },
     "smartPerformance": {
         "title": "Health & Support",
