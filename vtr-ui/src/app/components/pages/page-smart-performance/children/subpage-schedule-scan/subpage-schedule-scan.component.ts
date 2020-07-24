@@ -28,6 +28,9 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 	@Input() isOnline = true;
 	@ViewChild('selectedFrequencyList') selectedFrequencyList: ElementRef; 
 	@ViewChild('scheduledScanFrequency') scheduledScanFrequency: ElementRef;
+	@ViewChild('selectedNumberList') selectedNumberList: ElementRef;
+	@ViewChild('selectedDayList') selectedDayList: ElementRef;
+	@ViewChild('timeBlock') timeBlock: ElementRef;
 	private spTransLangEvent: Subscription;
 	selectedDate: any;
 	isSubscribed: any;
@@ -217,16 +220,25 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 			this.selectedNumber = this.dates[0]
 			this.dateValue = this.dates.indexOf(this.selectedNumber)
 		}
+		setTimeout(() => {
+			this.selectedFrequencyList.nativeElement.focus()
+		}, 10);
 	}
 	changeScanDay(value) {
 		this.dayValue = value;
 		this.scheduleTab = '';
 		this.selectedDay = this.days[value];
+		setTimeout(() => {
+			this.selectedDayList.nativeElement.focus()
+		}, 10);
 	}
 	changeScanDate(value) {
 		this.dateValue = value;
 		this.scheduleTab = '';
 		this.selectedNumber = this.dates[value];
+		setTimeout(() => {
+			this.selectedNumberList.nativeElement.focus()
+		}, 10);
 	}
 
 	cancelChangedScanSchedule() {
@@ -246,11 +258,17 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 
 	saveChangeScanTime() {
 		this.scheduleTab = '';
-		this.scanTime = { ...this.copyScanTime }
+		this.scanTime = { ...this.copyScanTime };
+		setTimeout(() => {
+			this.timeBlock.nativeElement.focus()
+		}, 10);
 	}
 	cancelChangeScanTime() {
 		this.scheduleTab = '';
-		this.copyScanTime = { ...this.scanTime }
+		this.copyScanTime = { ...this.scanTime };
+		setTimeout(() => {
+			this.timeBlock.nativeElement.focus()
+		}, 10);
 	}
 	changeHoursTime(value) {
 		this.copyScanTime.hour = this.hours[value];
@@ -418,6 +436,9 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 					nextScanDateWithYear: dt.split(',')[1] + '/' + dt.split(',')[2].trim() + '/' + dt.split(',')[3]
 				};
 				this.scanDatekValueChange.emit(nextScanEvent);
+				setTimeout(() => {
+					this.scheduledScanFrequency.nativeElement.focus()
+				}, 10);
 				return;
 			}
 

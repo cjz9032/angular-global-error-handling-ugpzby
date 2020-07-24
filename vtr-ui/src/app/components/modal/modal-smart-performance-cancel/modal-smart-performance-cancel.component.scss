@@ -39,6 +39,7 @@
 		line-height: 5rem;		
 		&:focus {
 			box-shadow: none;
+			@include outline-blue;
 		}
 
 
@@ -53,6 +54,9 @@
 		text-transform: uppercase;		
 		&:hover {
 			text-decoration: none;
+		}
+		&:focus {
+			@include outline-border-blue;
 		}
 	}
 	.spinner-border {

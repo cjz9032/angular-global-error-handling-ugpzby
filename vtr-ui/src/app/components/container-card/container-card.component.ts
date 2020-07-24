@@ -31,6 +31,7 @@ export class ContainerCardComponent implements OnInit, OnDestroy {
 	isLoading = true;
 	isOnline = true;
 	notificationSubscription: Subscription;
+	closeTipTimer = null; 
 
 	private _item: FeatureContent;
 
@@ -61,7 +62,7 @@ export class ContainerCardComponent implements OnInit, OnDestroy {
 		public deviceService: DeviceService,
 		private metricsService: MetricService
 	) { }
-	
+
 	ngOnInit() {
 		this.isOnline = this.commonService.isOnline;
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
@@ -70,7 +71,7 @@ export class ContainerCardComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		if(this.notificationSubscription) {
+		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
 		}
 	}
@@ -105,6 +106,26 @@ export class ContainerCardComponent implements OnInit, OnDestroy {
 					break;
 			}
 		}
+	}
+
+	/**
+	 * Close tooltip manually
+	 */
+	public closeTip(tooltip: any) {
+		if (!tooltip.isOpen()) {
+			return true;
+		}
+
+		tooltip.close();
+		if(this.closeTipTimer){
+			clearTimeout(this.closeTipTimer);
+		}
+	}
+	/**
+	 * Close tooltip after 3sec
+	 */
+	public closeTipTimeout(tooltip:any){
+		this.closeTipTimer = setTimeout(this.closeTip, 3000, tooltip);
 	}
 
 }
