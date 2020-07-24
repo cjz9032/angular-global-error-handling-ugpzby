@@ -22,6 +22,12 @@
 		padding: 4rem;
 		padding-top: 16rem;
 		box-sizing: border-box;
+		@media #{$high-contrast} {
+			background-color: $screen_dark_50;
+		}
+		@media #{$black-on-white} {
+			background-color: $gaming_light_05;
+		}
 	}
 
 	.rgb-header {
