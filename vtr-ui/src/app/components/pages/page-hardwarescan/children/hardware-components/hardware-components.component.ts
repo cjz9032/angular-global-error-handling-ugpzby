@@ -486,6 +486,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					// }
 					result.moduleId = category.id;
 					result.moduleName = category.name;
+					result.resultModule = HardwareScanTestResult.Fail;
 					result.devices.push({
 						deviceId: deviceInfo.id,
 						deviceName: deviceInfo.name
