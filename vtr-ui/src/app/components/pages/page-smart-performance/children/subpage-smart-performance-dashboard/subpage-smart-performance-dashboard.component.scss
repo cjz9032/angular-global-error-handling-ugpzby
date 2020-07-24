@@ -930,6 +930,12 @@
 		&.recommended-action{
 			background-color: #526fff;
 			background-image: linear-gradient(45deg, #526fff 25%, #f175fd 100%);
+			@media #{$white-on-black} {
+				background-image: none;
+			}
+			@media #{$black-on-white} {
+				background-image: none;
+			}
 			.title{
 				color: $light;
 				text-transform: uppercase;

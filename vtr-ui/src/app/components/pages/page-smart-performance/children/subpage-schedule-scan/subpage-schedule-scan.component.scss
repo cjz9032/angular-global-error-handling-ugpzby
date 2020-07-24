@@ -350,6 +350,25 @@ vtr-subpage-scanning {
 	border-radius: 0.8rem;
 	background: $light;
 	.pc-info-card{
+		@media #{$white-on-black} {
+			box-shadow: none;
+			@include white-border;
+			border-bottom: none;
+			background: none;
+			margin-top: 0 !important;
+			margin-bottom: 0 !important;
+			padding-top: 3rem;
+			padding-bottom: 3rem;
+		}
+		@media #{$black-on-white} {
+			box-shadow: none;
+			@include black-border;
+			border-bottom: none;
+			background: none;
+			margin-bottom: 0 !important;
+			padding-top: 3rem;
+			padding-bottom: 3rem;
+		}
         &::ng-deep {
             ngb-accordion{
                 .card {
@@ -363,6 +382,12 @@ vtr-subpage-scanning {
                         background-color: transparent;
 						border-bottom: none;
 						.btn-link{
+							@media #{$white-on-black} {
+								border: none;
+							}
+							@media #{$black-on-white} {
+								border: none;
+							}
 							&:hover, &:focus{
 								text-decoration: none;
 							}
@@ -551,6 +576,18 @@ vtr-subpage-scanning {
 		@media #{$breakpoint_xl}{
 			padding: 0 2.4rem;
 		}
+		@media #{$white-on-black} {
+			box-shadow: none;
+			@include white-border;
+			border-bottom: none;
+			background: none;
+		}
+		@media #{$black-on-white} {
+			box-shadow: none;
+			@include black-border;
+			border-bottom: none;
+			background: none;
+		}
 		h1 {
 			color: $light;
 			font-size: 3.4rem;
@@ -605,6 +642,9 @@ vtr-subpage-scanning {
 				font-size: 1.2rem;
 				padding:0rem 2.5rem;					
 			}
+			@include ui-button-high-contrast-black;
+			@include ui-button-high-contrast-white;
+			@include high-contrast-adjust;
 		}
 	}
 	.performance-slider-block {
@@ -632,6 +672,18 @@ vtr-subpage-scanning {
 			z-index: 0;
 			background-color: #52ffeb;
 			background-image: linear-gradient(90deg, #52ffeb 25%, #04ff5d 100%);
+			@media #{$white-on-black} {
+				background-image: none;
+				background: $light;
+				box-shadow: none;
+				@include white-border;
+			}
+			@media #{$black-on-white} {
+				background-image: none;
+				background: $dark;
+				box-shadow: none;
+				@include black-border;
+			}
 			&::after{
 				position: absolute;
 				content: '';
@@ -696,11 +748,9 @@ vtr-subpage-scanning {
 					text-shadow: 0 0 1rem $dark;
 					transition: all 1s ease-in-out;
 					@media #{$white-on-black} {
-						border-left: 0.4rem dotted $dark;
 						@include high-contrast-adjust;
 					}
 					@media #{$black-on-white} {
-						border-left: 0.4rem dotted $light;
 						@include high-contrast-adjust;
 					}
 				}
@@ -753,6 +803,16 @@ vtr-subpage-scanning {
 	}
 	.summary-block{
 		padding: 3rem 3rem 0;
+		@media #{$white-on-black} {
+			box-shadow: none;
+			@include white-border;
+			background: none;
+		}
+		@media #{$black-on-white} {
+			box-shadow: none;
+			@include black-border;
+			background: none;
+		}
 		.title-big{
 			font-size: 3.5rem;
 			font-weight: $weight_light;
@@ -790,6 +850,9 @@ vtr-subpage-scanning {
 				padding: 0 2.4rem;
 				font-size: 1.2rem;
 			}
+			@include ui-button-high-contrast-black;
+			@include ui-button-high-contrast-white;
+			@include high-contrast-adjust;
 		}
 		.desc {
 			font-size: 1.6rem;
@@ -1006,6 +1069,12 @@ vtr-subpage-scanning {
 	&.recommended-action{
 		background-color: #526fff;
 		background-image: linear-gradient(45deg, #526fff 25%, #f175fd 100%);
+		@media #{$white-on-black} {
+			background-image: none;
+		}
+		@media #{$black-on-white} {
+			background-image: none;
+		}
 		.title{
 			color: $light;
 			text-transform: uppercase;
@@ -1050,6 +1119,9 @@ vtr-subpage-scanning {
 			border: 0rem;
 			cursor: pointer;
 			width: 100%;
+			@include ui-button-high-contrast-black;
+			@include ui-button-high-contrast-white;
+			@include high-contrast-adjust;
 		}
 	}
 	.save-button{

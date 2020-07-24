@@ -445,6 +445,26 @@ vtr-subpage-smart-performance-scan-summary {
 	border-radius: 0.8rem;
 	background: $light;
 	.pc-info-card{
+		@media #{$white-on-black} {
+			box-shadow: none;
+			@include white-border;
+			border-bottom: none;
+			background: none;
+			margin-top: 0 !important;
+			margin-bottom: 0 !important;
+			padding-top: 3rem;
+			padding-bottom: 3rem;
+		}
+		@media #{$black-on-white} {
+			box-shadow: none;
+			@include black-border;
+			border-bottom: none;
+			background: none;
+			margin-top: 0 !important;
+			margin-bottom: 0 !important;
+			padding-top: 3rem;
+			padding-bottom: 3rem;
+		}
         &::ng-deep {
             ngb-accordion{
                 .card {
@@ -459,6 +479,12 @@ vtr-subpage-smart-performance-scan-summary {
 						border-bottom: none;
 						.btn-link{
 							width: 100%;
+							@media #{$white-on-black} {
+								border: none;
+							}
+							@media #{$black-on-white} {
+								border: none;
+							}
 							&:before{
 								content: "\276F";
 								transform-origin: 0 0;
@@ -751,6 +777,18 @@ vtr-subpage-smart-performance-scan-summary {
 		@media #{$breakpoint_xl}{
 			padding: 0 2.4rem;
 		}
+		@media #{$white-on-black} {
+			box-shadow: none;
+			@include white-border;
+			border-bottom: none;
+			background: none;
+		}
+		@media #{$black-on-white} {
+			box-shadow: none;
+			@include black-border;
+			border-bottom: none;
+			background: none;
+		}
 		.hero-text{
 			max-width: 80%;
 		}
@@ -809,6 +847,9 @@ vtr-subpage-smart-performance-scan-summary {
 				font-size: 1.2rem;
 				padding:0rem 2.5rem;					
 			}
+			@include ui-button-high-contrast-black;
+			@include ui-button-high-contrast-white;
+			@include high-contrast-adjust;
 		}
 		.disabled-button{
 			border-radius: 2.5rem;
@@ -853,11 +894,13 @@ vtr-subpage-smart-performance-scan-summary {
 			background-color: #52ffeb;
 			background-image: linear-gradient(90deg, #52ffeb 25%, #04ff5d 100%);
 			@media #{$white-on-black} {
+				background-image: none;
 				background: $light;
 				box-shadow: none;
 				@include white-border;
 			}
 			@media #{$black-on-white} {
+				background-image: none;
 				background: $dark;
 				box-shadow: none;
 				@include black-border;
@@ -927,11 +970,9 @@ vtr-subpage-smart-performance-scan-summary {
 					transition: all 1s ease-in-out;
 					transform: translateX(-1.25rem);
 					@media #{$white-on-black} {
-						border-left: 0.4rem dotted $dark;
 						@include high-contrast-adjust;
 					}
 					@media #{$black-on-white} {
-						border-left: 0.4rem dotted $light;
 						@include high-contrast-adjust;
 					}
 				}
@@ -972,6 +1013,16 @@ vtr-subpage-smart-performance-scan-summary {
 		&.before-result{
 			padding: 3.5rem 2rem 2rem 2rem;
 			.slider {
+				@media #{$white-on-black} {
+					background: $light;
+					box-shadow: none;
+					@include white-border;
+				}
+				@media #{$black-on-white} {
+					background: $dark;
+					box-shadow: none;
+					@include black-border;
+				}
 				.condition {
 					padding: 0 1.5rem;
 					font-size: 1rem;
@@ -1101,6 +1152,16 @@ vtr-subpage-smart-performance-scan-summary {
 	}
 	.summary-block{
 		padding: 2.4rem 2.4rem 0;
+		@media #{$white-on-black} {
+			box-shadow: none;
+			@include white-border;
+			background: none;
+		}
+		@media #{$black-on-white} {
+			box-shadow: none;
+			@include black-border;
+			background: none;
+		}
 		.col-auto-1{
 			flex:0 0 auto;
 			width:auto;
@@ -1172,6 +1233,9 @@ vtr-subpage-smart-performance-scan-summary {
 				width: 65%;
 				margin: 0 auto 1rem;
 			}
+			@include ui-button-high-contrast-black;
+			@include ui-button-high-contrast-white;
+			@include high-contrast-adjust;
 		}
 		.disabled-button{
 			border-radius: 2.5rem;
@@ -1376,6 +1440,12 @@ vtr-subpage-smart-performance-scan-summary {
 	&.recommended-action{
 		background-color: #526fff;
 		background-image: linear-gradient(45deg, #526fff 25%, #f175fd 100%);
+		@media #{$white-on-black} {
+			background-image: none;
+		}
+		@media #{$black-on-white} {
+			background-image: none;
+		}
 		.title{
 			color: $light;
 			text-transform: uppercase;
@@ -1420,6 +1490,9 @@ vtr-subpage-smart-performance-scan-summary {
 			border: 0rem;
 			cursor: pointer;
 			width: 100%;
+			@include ui-button-high-contrast-black;
+			@include ui-button-high-contrast-white;
+			@include high-contrast-adjust;
 		}
 		.disabled-button{
 			border-radius: 2.5rem;
@@ -1725,6 +1798,16 @@ vtr-subpage-smart-performance-scan-summary {
 	background-color: $light;
 	box-shadow: $drop_shadow;
 	padding: $fontsize_xl;
+	@media #{$white-on-black} {
+        box-shadow: none;
+        @include white-border;
+        background: none;
+    }
+    @media #{$black-on-white} {
+        box-shadow: none;
+        @include black-border;
+        background: none;
+    }
 	.title {
 		color: $main_darker;
 		font-size: $fontsize_xl;
