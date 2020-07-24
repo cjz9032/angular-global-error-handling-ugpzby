@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.15](https://bitbucket.tc.lenovo.com///compare/v1.7.14...v1.7.15) (2020-07-24)
+
+
+### Bug Fixes
+
+* **Antivirus UI:** van-20713 fix launch btn can't work and update UI ([d271f5f](https://bitbucket.tc.lenovo.com///commit/d271f5f79fdf86c0703ac418a120e54a09fc6109))
+* **high contrast:** link button shouldn't change when hover on it ([ba078b3](https://bitbucket.tc.lenovo.com///commit/ba078b3a0057e477bd69ace6449c984985987976))
+
 ### [1.7.14](https://bitbucket.tc.lenovo.com///compare/v1.7.13...v1.7.14) (2020-07-23)
 
 ### [1.7.13](https://bitbucket.tc.lenovo.com///compare/v1.7.12...v1.7.13) (2020-07-22)
