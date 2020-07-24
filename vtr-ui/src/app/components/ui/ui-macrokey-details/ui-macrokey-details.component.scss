@@ -146,6 +146,9 @@
 			//text-transform: capitalize;
 			border-top-right-radius: 0.8rem;
 			border-top-left-radius: 0.8rem;
+			@media #{$high-contrast} {
+				border-bottom: 0.1rem solid windowText;
+			}
 		}
 	}
 }
