@@ -5,19 +5,21 @@
 	</div>
 
 
-	<h2 class="header2">{{ 'hardwareScan.hardwareComponents' | translate }}</h2>
-	<hr>
+	<div class="body-content">
+		<h2 class="header2">{{ 'hardwareScan.hardwareComponents' | translate }}</h2>
+		<hr>
 
-	<!-- Defines the last test list executed -->
-	<div class="row">
-		<div class="col">
-			<div class="hardware-lists-container">
-				<vtr-widget-hardware-scan-item
-					[items]="item.items"
-					[resultCodeText]="resultCodeText"
-					[detailsText]="detailsText"
-					[isLoadingDone]="true">
-				</vtr-widget-hardware-scan-item>
+		<!-- Defines the last test list executed -->
+		<div class="row">
+			<div class="col">
+				<div class="hardware-lists-container">
+					<vtr-widget-hardware-scan-item
+						[items]="item.items"
+						[resultCodeText]="resultCodeText"
+						[detailsText]="detailsText"
+						[isLoadingDone]="true">
+					</vtr-widget-hardware-scan-item>
+				</div>
 			</div>
 		</div>
 	</div>

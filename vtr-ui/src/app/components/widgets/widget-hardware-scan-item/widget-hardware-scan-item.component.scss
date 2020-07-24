@@ -77,6 +77,9 @@
 	.details-list {
 		margin-left: 4.2rem;
 		border-radius: $border_radius;
+		overflow: hidden;
+		@include high-contrast-border;
+
 		.table-details {
 			font-size:$fontsize_xs;
 			font-weight:$weight_regular;
