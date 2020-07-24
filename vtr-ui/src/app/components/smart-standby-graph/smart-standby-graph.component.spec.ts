@@ -55,7 +55,7 @@ describe('SmartStandbyGraphComponent', () => {
 		it('should call getActivities, renderChart', fakeAsync(() => {
 			const { fixture, component } = setup();
 			spyOn(component, 'renderChart');
-			let mockActivities = activities;
+			const mockActivities = activities;
 
 			spyOn(component, 'getActivities').and.returnValue(
 				Observable.create((observer: Observer<SmartStandbyActivityModel[]>) => {
@@ -65,7 +65,7 @@ describe('SmartStandbyGraphComponent', () => {
 			);
 
 			tick();
-			fixture.detectChanges();// ngOnInit
+			fixture.detectChanges(); // ngOnInit
 			expect(component.renderChart).toHaveBeenCalled();
 			expect(component.getActivities).toHaveBeenCalled();
 		}));
@@ -78,7 +78,7 @@ describe('SmartStandbyGraphComponent', () => {
 			fixture.detectChanges();
 			component.renderChart(activities);
 
-			let dom = fixture.debugElement.nativeElement.querySelector('div[class^="app-smart-standby-activity"]');
+			const dom = fixture.debugElement.nativeElement.querySelector('div[class^="app-smart-standby-activity"]');
 			// console.log(dom);
 			expect(dom).toBeTruthy();
 
@@ -87,7 +87,7 @@ describe('SmartStandbyGraphComponent', () => {
 		// testing http.get
 		it('should call http get', (() => {
 			const { fixture, component, httpTestingController } = setup();
-			let mockActivities = activities;
+			const mockActivities = activities;
 
 			component.getActivities().subscribe(data => {
 				expect(data).toEqual(mockActivities);

@@ -48,9 +48,9 @@ describe('ActiveProtectionSystemAdvancedComponent', () => {
 	beforeEach(() => {
 		fixture = TestBed.createComponent(ActiveProtectionSystemAdvancedComponent);
 		component = fixture.componentInstance;
-		smartAssist = TestBed.get(SmartAssistService);
-		translate = TestBed.get(TranslateService);
-		commonMetricsService = TestBed.get(CommonMetricsService);
+		smartAssist = TestBed.inject(SmartAssistService);
+		translate = TestBed.inject(TranslateService);
+		commonMetricsService = TestBed.inject(CommonMetricsService);
 		fixture.detectChanges();
 	});
 

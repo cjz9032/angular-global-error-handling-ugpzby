@@ -560,7 +560,7 @@ describe('Component: PowerSmartSetting', () => {
 	});
 
 	// it('should call coolingModesPopUp', () => {
-	// 	modalService = TestBed.get(NgbModal)
+	// 	modalService = TestBed.inject(NgbModal)
 	// 	modalRef = modalService.open(ModalIntelligentCoolingModesComponent)
 	// 	let spy = spyOn(modalService, 'open').and.returnValue(modalRef)
 	// 	component.coolingModesPopUp()
