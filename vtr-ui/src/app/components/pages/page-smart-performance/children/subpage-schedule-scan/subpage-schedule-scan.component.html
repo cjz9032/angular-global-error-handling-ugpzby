@@ -101,7 +101,7 @@
                 <a class="status d-flex justify-content-end" 
                     tabindex="0" 
                     (keydown.enter)="openScanScheduleDropDown(3)" 
-                    (click)="openScanScheduleDropDown(3)">
+                    (click)="openScanScheduleDropDown(3)" #selectedNumberList>
                     {{selectedNumber}}
                     <span class="ml-3">
                     <!-- <fa-icon *ngIf="scheduleTab != 3"
@@ -128,7 +128,7 @@
                 <a class="status d-flex justify-content-end" 
                     tabindex="0" 
                     (keydown.enter)="openScanScheduleDropDown(3)" 
-                    (click)="openScanScheduleDropDown(3)">
+                    (click)="openScanScheduleDropDown(3)" #selectedDayList>
                     {{selectedDay | translate}}
                     <span class="ml-3">
                         <!-- <fa-icon *ngIf="scheduleTab != 3" [icon]="['fas', 'chevron-down']"
@@ -154,7 +154,7 @@
                 <a class="status d-flex justify-content-end" 
                     tabindex="0"  
                     (keydown.enter)="openScanScheduleDropDown(2)" 
-                    (click)="openScanScheduleDropDown(2)">
+                    (click)="openScanScheduleDropDown(2)" #timeBlock>
                     {{scanTime.hour}}:{{scanTime.min}} {{selectedMeridiem | translate}}
                     <span class="ml-3">
                     <fa-icon [icon]="scheduleTab === 2 ? ['fas', 'chevron-up'] : ['fas', 'chevron-down']"></fa-icon>

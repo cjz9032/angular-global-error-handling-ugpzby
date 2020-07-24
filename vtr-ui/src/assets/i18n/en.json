@@ -263,8 +263,8 @@
 					"line3": "stop recording when finishing typing"
 				},
 				"buttons": {
-					"start": "START RECORDING",
-					"stop": "STOP RECORDING",
+					"start": "Start Recording",
+					"stop": "Stop Recording",
 					"numberPrefix": "NUM"
 				},
 				"recording": {
@@ -356,7 +356,7 @@
 					"body": "Recording will time out if the input stopped for more than 10 seconds."
 				},
 				"confirmButton": {
-					"btnClear": "CLEAR",
+					"btnClear": "Clear",
 					"btnCancel": "CANCEL"
 				},
 				"btnOk": "OK"

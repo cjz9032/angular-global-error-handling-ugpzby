@@ -30,6 +30,9 @@
 			-moz-user-select: none;
 			-ms-user-select: none;
 			user-select: none;
+			@media #{$high-contrast} {
+				color: buttonText;
+			}
 			@media #{$small-screen} {
 				line-height: 3.5rem;
 				margin-bottom: 0.8rem;
@@ -50,6 +53,9 @@
 				}
 			}
 			.checkmark {
+				@media #{$high-contrast} {
+					color: windowText;
+				}
 				&:after {
 					top: 50%;
 					left: 50%;
