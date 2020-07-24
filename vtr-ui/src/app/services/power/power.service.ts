@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
-import { FlipToBootErrorStatusInterface, FlipToBootInterface, FlipToBootSetStatus } from './flipToBoot.interface';
 import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.model';
+import { VantageShellService } from '../vantage-shell/vantage-shell.service';
+import { FlipToBootErrorStatusInterface, FlipToBootInterface, FlipToBootSetStatus } from './flipToBoot.interface';
 @Injectable({
 	providedIn: 'root'
 })
@@ -547,7 +547,7 @@ export class PowerService {
 	}
 
 	public setChargeThresholdValue(value: ChargeThreshold): Promise<any> {
-        try {
+		try {
 			if (this.devicePowerThinkPad) {
 				return this.devicePowerThinkPad.sectionChargeThreshold.setChargeThresholdValue(
 					value.batteryNum, value.startValue, value.stopValue, value.checkboxValue
@@ -557,7 +557,7 @@ export class PowerService {
 		} catch (error) {
 			throw new Error(error.message);
 		}
-    }
+	}
 
 	public setCtAutoCheckbox(value: ChargeThreshold): Promise<any> {
 		// console.log('auto check value here ----->', value);
@@ -574,7 +574,7 @@ export class PowerService {
 	}
 
 	public setToggleOff(value: any): Promise<any> {
-        try {
+		try {
 			if (this.devicePowerThinkPad) {
 				return this.devicePowerThinkPad.sectionChargeThreshold.setToggleOff(value);
 			}
@@ -582,7 +582,7 @@ export class PowerService {
 		} catch (error) {
 			throw new Error(error.message);
 		}
-    }
+	}
 
 
 
@@ -623,7 +623,7 @@ export class PowerService {
 	}
 
 	public setSmartStandbyEnabled(value: boolean): Promise<any> {
-        try {
+		try {
 			if (this.devicePowerThinkPad) {
 				return this.devicePowerThinkPad.sectionSmartStandby.setSmartStandbyEnabled(value);
 			}
@@ -631,10 +631,10 @@ export class PowerService {
 		} catch (error) {
 			throw new Error(error.message);
 		}
-    }
+	}
 
 	public setSmartStandbyActiveStartEnd(value: string): Promise<any> {
-        try {
+		try {
 			if (this.devicePowerThinkPad) {
 				return this.devicePowerThinkPad.sectionSmartStandby.setSmartStandbyActiveStartEnd(value);
 			}
@@ -642,10 +642,10 @@ export class PowerService {
 		} catch (error) {
 			throw new Error(error.message);
 		}
-    }
+	}
 
 	public setSmartStandbyDaysOfWeekOff(value: string): Promise<any> {
-        try {
+		try {
 			if (this.devicePowerThinkPad) {
 				return this.devicePowerThinkPad.sectionSmartStandby.setSmartStandbyDaysOfWeekOff(value);
 			}
@@ -653,7 +653,7 @@ export class PowerService {
 		} catch (error) {
 			throw new Error(error.message);
 		}
-    }
+	}
 	public getIsAutonomicCapability(): Promise<boolean> {
 		try {
 			if (this.devicePowerThinkPad) {
@@ -665,7 +665,7 @@ export class PowerService {
 		}
 	}
 	public setSmartStandbyIsAutonomic(value: boolean): Promise<number> {
-        try {
+		try {
 			if (this.devicePowerThinkPad) {
 				return this.devicePowerThinkPad.sectionSmartStandby.setSmartStandbyIsAutonomic(value);
 			}
@@ -673,7 +673,7 @@ export class PowerService {
 		} catch (error) {
 			throw new Error(error.message);
 		}
-    }
+	}
 
 	public getSmartStandbyIsAutonomic(): Promise<boolean> {
 		if (this.devicePowerThinkPad) {
@@ -702,15 +702,15 @@ export class PowerService {
 	}
 
 	public getGaugeResetCapability(): Promise<boolean> {
-        try {
+		try {
 			if (this.devicePowerThinkPad) {
 				return this.devicePowerThinkPad.sectionBatteryGaugeReset.getGaugeResetCapability();
 			}
-		} catch (error) {}
-    }
+		} catch (error) { }
+	}
 
 	public startBatteryGaugeReset(handler, barCode: string, batteryNumber: number): Promise<any> {
-        try {
+		try {
 			if (this.devicePowerThinkPad) {
 				return this.devicePowerThinkPad.sectionBatteryGaugeReset.startBatteryGaugeReset(handler, barCode, batteryNumber);
 			}
@@ -718,10 +718,10 @@ export class PowerService {
 		} catch (error) {
 			throw new Error(error.message);
 		}
-    }
+	}
 
 	public stopBatteryGaugeReset(handler, barCode: string, batteryNumber: number): Promise<any> {
-        try {
+		try {
 			if (this.devicePowerThinkPad) {
 				return this.devicePowerThinkPad.sectionBatteryGaugeReset.stopBatteryGaugeReset(handler, barCode, batteryNumber);
 			}
@@ -729,5 +729,5 @@ export class PowerService {
 		} catch (error) {
 			throw new Error(error.message);
 		}
-    }
+	}
 }
