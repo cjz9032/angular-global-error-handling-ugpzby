@@ -35,16 +35,17 @@
 						</vtr-ui-button>
 
 						<div class="row align-items-center">
-							<button type="button"
+							<vtr-ui-button 
+								type="button"
 								id="hwscan-scan-again-btn"
-								vtrMetrics
 								metricsEvent="FeatureClick"
 								metricsParent="HardwareScan"
 								metricsItem="HardwareScan.ScanAgain"
-								class="scan-again-button"
+								[label]="'hardwareScan.scanFinishedHeader.scanAgainButtonText' | translate"
 								[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
-								(click)="onScanAgain()">{{ 'hardwareScan.scanFinishedHeader.scanAgainButtonText' | translate }}
-							</button>
+								[tooltipText]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
+								(click)="onScanAgain()">
+							</vtr-ui-button>
 						</div>
 					</div>
 
