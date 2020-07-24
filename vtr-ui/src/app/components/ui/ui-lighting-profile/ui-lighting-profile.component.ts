@@ -11,6 +11,7 @@ import { Options } from 'src/app/data-models/gaming/lighting-options';
 import { LightEffectComplexType } from 'src/app/enums/light-effect-complex-type';
 import { LightEffectRGBFeature, LightEffectSingleOrComplex } from 'src/app/enums/light-effect-rgbfeature';
 import { DeviceService } from 'src/app/services/device/device.service';
+import { ColorWheelStatus } from 'src/app/enums/color-wheel-status.enum';
 
 @Component({
 	selector: 'vtr-ui-lighting-profile',
@@ -46,8 +47,8 @@ export class UiLightingProfileComponent implements OnInit {
 	public enumLightEffectSingleOrComplex = LightEffectSingleOrComplex;
 	public inHex1: any;
 	public inHex2: any;
-	public applyBtnStatus1: String = 'apply';
-	public applyBtnStatus2: String = 'apply';
+	public applyBtnStatus1: string = ColorWheelStatus.apply;
+	public applyBtnStatus2: string = ColorWheelStatus.apply;
 	public showBrightnessSlider = false;
 	public showHideOverlay = false;
 	public showHideOverlaySide = false;
@@ -1531,7 +1532,7 @@ export class UiLightingProfileComponent implements OnInit {
 		} catch (error) { }
 	}
 	colorEffectChangedFront($event) {
-		this.applyBtnStatus1 = 'loading';
+		this.applyBtnStatus1 = ColorWheelStatus.loading;
 		$event = $event.substring(1);
 		if (this.lightingProfileEffectColorString === undefined) {
 			this.lightingProfileEffectColorString = new LightingProfileEffectColorString();
@@ -1549,13 +1550,13 @@ export class UiLightingProfileComponent implements OnInit {
 							this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileById, response);
 						}
 						this.inHex1 = $event;
-						this.applyBtnStatus1 = 'applied';
+						this.applyBtnStatus1 = ColorWheelStatus.applied;
 					}
 				});
 		}
 	}
 	colorEffectChangedSide($event) {
-		this.applyBtnStatus2 = 'loading';
+		this.applyBtnStatus2 = ColorWheelStatus.loading;
 		$event = $event.substring(1);
 		if (this.lightingProfileEffectColorString === undefined) {
 			this.lightingProfileEffectColorString = new LightingProfileEffectColorString();
@@ -1573,7 +1574,7 @@ export class UiLightingProfileComponent implements OnInit {
 							this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileById, response);
 						}
 						this.inHex2 = $event;
-						this.applyBtnStatus2 = 'applied';
+						this.applyBtnStatus2 = ColorWheelStatus.applied;
 					}
 				});
 		}
