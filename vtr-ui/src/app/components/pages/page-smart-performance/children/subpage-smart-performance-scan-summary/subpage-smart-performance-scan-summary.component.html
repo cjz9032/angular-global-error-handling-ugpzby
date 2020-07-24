@@ -153,7 +153,7 @@
 													<p *ngIf="inputIsScanningCompleted"
 														[innerHTML]="'smartPerformance.subscriberScanHomePage.successDescription' |translate:{issueCount: issueCount }">
 													</p>
-													<div class="d-flex justify-content-start my-5 w-75">
+													<div class="d-flex justify-content-start my-5 w-75">														
 														<button *ngIf="!inputIsScanningCompleted"
 															[ngClass]="(isLoading || !isOnline)? 'disabled-button': 'action-button'"
 															(click)="ScanNowSummary()"
@@ -242,7 +242,7 @@
 								</div>
 								<div class="vtr-device-information">
 									<div class="vtr-ui-smart-performance-scan-summary"
-										*ngIf="isSubscribed">
+										*ngIf="isSubscribed || isExpired">
 										<div class="vtr-scan-information mt-5">
 											<div class="scan-summary-block">
 												<div class="row px-0">
@@ -462,7 +462,7 @@
 								</div>
 
 								<div class="vtr-device-information"
-									*ngIf="isSubscribed">
+									*ngIf="isSubscribed || isExpired">
 									<div class="vtr-ui-smart-performance-scan-summary"
 										*ngIf="historyScanResultsDateTime && historyScanResultsDateTime.length > 0">
 										<div class="vtr-scan-information mt-5">
@@ -667,7 +667,7 @@
 										<div class="col col-12">
 											<!-- --------Scan Schedule------------- -->
 											<vtr-subpage-schedule-scan
-												(scanDatekValueChange)='changeNextScanDateValue($event)' (hideBasedOnOldAddInSummary)="hideBasedOnOldAddInVersionInSummaryPage($event)" [isOnline] = "isOnline">
+												(scanDatekValueChange)='changeNextScanDateValue($event)' (hideBasedOnOldAddInSummary)="hideBasedOnOldAddInVersionInSummaryPage($event)" [isOnline] = "isOnline" [isExpired] = "isExpired">
 											</vtr-subpage-schedule-scan>
 											<!-- --------Scan Schedule------------- -->
 										</div>

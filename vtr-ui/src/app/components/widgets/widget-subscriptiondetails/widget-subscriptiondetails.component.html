@@ -33,7 +33,7 @@
         <li class="d-flex justify-content-between status-spinner">
             <div class="item">{{'smartPerformance.subscriptionDetails.status' |translate }}</div>
             <div class="status" *ngIf="strStatus">
-                <div [ngClass]="{'badge-danger': strStatus==='INACTIVE', 'badge-success': strStatus==='ACTIVE', 'badge-processing' : strStatus==='PROCESSING' }" class="badge badge-pill mr-2">{{subscriptionDetails.status |translate}}</div>
+                <div [ngClass]="{'badge-danger': strStatus==='INACTIVE', 'badge-success': strStatus==='ACTIVE', 'badge-processing' : strStatus==='PROCESSING', 'bage-expired': strStatus==='EXPIRED' }" class="badge badge-pill mr-2">{{subscriptionDetails.status |translate}}</div>
                 <img *ngIf="isRefreshEnabled" title="{{'smartPerformance.scanningPage.refreshButton' | translate}}" src="assets/icons/refresh.svg" alt="" class="refresh-icon" (click) = "isFirstLoad = true; getSubscriptionDetails()">
         </div>
             <div *ngIf="isLoading && !strStatus">

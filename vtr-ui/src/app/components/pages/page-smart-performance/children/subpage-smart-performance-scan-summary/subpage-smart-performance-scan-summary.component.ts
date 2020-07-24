@@ -64,6 +64,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 	@Input() secure = 0;
 	@Input() rating = 0;
 	@Input() isOnline = true;
+	@Input() isExpired;
 
 	public tabIndex: number;
 	public toggleValue: number;

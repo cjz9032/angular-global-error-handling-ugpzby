@@ -377,7 +377,7 @@
 
 							<div class="row mb-40" *ngIf="!isScanning && !isScanningCompleted">
 								<div class="col col-12">
-									<vtr-widget-subscriptiondetails (subScribeEvent)="changeManageSubscription($event)" [isOnline] = "isOnline"></vtr-widget-subscriptiondetails>
+									<vtr-widget-subscriptiondetails (subScribeEvent)="changeManageSubscription($event)" (expiredStatusEvent) = "subscriptionInfo($event)" [isOnline] = "isOnline"></vtr-widget-subscriptiondetails>
 								</div>
 							</div>
 
@@ -428,6 +428,6 @@
 	[scheduleScanData]="scheduleScanObj" [isScheduleScan]="isScheduleScan" [isAutoScanRunning]="isScheduleScanRunning">
 </vtr-subpage-scanning>
 <vtr-subpage-smart-performance-scan-summary *ngIf="(isScanningCompleted || isSubscribed) && !isScanning "
-	[hasSubscribedScanCompleted]="hasSubscribedScanCompleted" [inputIsScanningCompleted]="showSubscribersummary"
+	[hasSubscribedScanCompleted]="hasSubscribedScanCompleted" [inputIsScanningCompleted]="showSubscribersummary" [isExpired] = "subscriptionInfoStatus"
 	(backToScan)="changeScanEvent()" (backToNonSubscriber)="changeSummaryToHome()" [rating]="rating" [tune]="tune" [boost]="boost" [secure]="secure" [isOnline] = "isOnline">
 </vtr-subpage-smart-performance-scan-summary>

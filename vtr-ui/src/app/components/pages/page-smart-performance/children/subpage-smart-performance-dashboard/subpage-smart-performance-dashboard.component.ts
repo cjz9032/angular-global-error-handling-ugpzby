@@ -59,6 +59,7 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 	];
 	private metrics: any;
 	public isOnline = true;
+	public subscriptionInfoStatus = false;
 
 	constructor(
 		private translate: TranslateService,
@@ -501,5 +502,8 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 	}
 	hideBasedOnOldAddInVersion($event){
 		this.isOldVersion = $event;
+	}
+	subscriptionInfo(event){
+		this.subscriptionInfoStatus = event || false;
 	}
 }

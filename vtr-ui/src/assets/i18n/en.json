@@ -2469,6 +2469,7 @@
 			"activeStatus": "ACTIVE",
 			"inactiveStatus": "INACTIVE",
 			"processStatus": "PROCESSING",
+			"expiredStatus": "EXPIRED",
 			"manageSubscription": "MANAGE SUBSCRIPTION",
 			"manageSubscriptionBeta":"ENABLE FULL FEATURE",
 			"descriptionbeta": "Lenovo is offering pilot program to try Smart Performance feature till July 2020.",
