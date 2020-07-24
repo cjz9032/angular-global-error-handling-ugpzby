@@ -16,6 +16,12 @@
 			text-decoration: none;
 		}
 	}
+	@media #{$high-contrast} {
+		background-color: $screen_dark_50;
+	}
+	@media #{$black-on-white} {
+		background-color: $gaming_light_05;
+	}
 }
 ui-popover {
 	position: absolute;
