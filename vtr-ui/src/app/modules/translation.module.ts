@@ -1,6 +1,6 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
-import { TranslateLoader, TranslateModule, TranslatePipe, MissingTranslationHandler } from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule, TranslatePipe, MissingTranslationHandler, TranslateStore } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { httpInterceptorProviders } from 'src/app/providers/net/http-interceptors';
@@ -25,7 +25,8 @@ import { WebpackTranslateLoader } from '../i18n/loader/webpack-translate-loader.
 	],
 	exports: [TranslateModule, TranslatePipe],
 	providers: [
-		httpInterceptorProviders
+		httpInterceptorProviders,
+		TranslatePipe
 	]
 })
 export class TranslationModule {

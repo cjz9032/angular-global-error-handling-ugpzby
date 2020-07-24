@@ -150,13 +150,15 @@ vtr-subpage-smart-performance-scan-summary {
 			border-bottom: 0.2rem solid $light;
 			padding: 0 0 0.1rem;
 
-			&:hover, &:focus {
+			&:hover {
 				color: $light;
 				text-decoration: none;
 			}
 
 			&:focus{
-				@include outline-blue;
+				color: $light;
+				text-decoration: none;
+				@include outline-white;
 			}
 
 			button {
@@ -491,6 +493,14 @@ vtr-subpage-smart-performance-scan-summary {
 	background-color: $light;
 	box-shadow: 0 0 1.5rem 0 $screen_dark_15;
 	padding: 2.4rem;
+	@media #{$white-on-black} {
+		box-shadow: none;
+		@include white-border;
+	}
+	@media #{$black-on-white} {
+		box-shadow: none;
+		@include black-border;
+	}
 	.title {
 		font-size: 2.5rem;
 		font-weight: $weight_semibold;
@@ -785,6 +795,7 @@ vtr-subpage-smart-performance-scan-summary {
 		@media #{$mediaquery_X4} {
 			min-width: 10rem;
 		}
+		@include high-contrast-adjust;
 	}
 	.progress-spinner{
 		position: relative;

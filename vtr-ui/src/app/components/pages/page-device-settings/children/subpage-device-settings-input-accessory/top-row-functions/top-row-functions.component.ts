@@ -1,13 +1,13 @@
-import { AppEvent } from './../../../../../../enums/app-event.enum';
-import { Component, OnInit, OnDestroy, ViewChild, ElementRef, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, ElementRef, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { EMPTY } from 'rxjs';
+import { UiCircleRadioWithCheckBoxListModel } from 'src/app/components/ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
+import { UiRoundedRectangleRadioModel } from 'src/app/components/ui/ui-rounded-rectangle-custom-radio-list/ui-rounded-rectangle-radio-list.model';
+import { TopRowFunctionsCapability } from 'src/app/data-models/device/top-row-functions-capability';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { CommonService } from 'src/app/services/common/common.service';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { EMPTY } from 'rxjs';
-import { TopRowFunctionsCapability } from 'src/app/data-models/device/top-row-functions-capability';
-import { CommonService } from 'src/app/services/common/common.service';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { UiRoundedRectangleRadioModel } from 'src/app/components/ui/ui-rounded-rectangle-custom-radio-list/ui-rounded-rectangle-radio-list.model';
-import { UiCircleRadioWithCheckBoxListModel } from 'src/app/components/ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
+import { AppEvent } from './../../../../../../enums/app-event.enum';
 
 @Component({
 	selector: 'vtr-top-row-functions',
@@ -16,7 +16,7 @@ import { UiCircleRadioWithCheckBoxListModel } from 'src/app/components/ui/ui-cir
 })
 export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 
-	@ViewChild('adv') adv: ElementRef
+	@ViewChild('adv') adv: ElementRef;
 
 	public topRowKeyObj: TopRowFunctionsCapability;
 	public showAdvancedSection = false;
@@ -116,7 +116,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 		this.keyboardService.getFnLockStatus().then(res => {
 			this.logger.info('TopRowFunctionsComponent.getStatusOfFnLock', res);
 			this.topRowKeyObj.fnLockStatus = res;
-			this.updateFunctionLockUIModel()
+			this.updateFunctionLockUIModel();
 		});
 	}
 	public getStatusOfStickyFun() {
@@ -130,7 +130,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 		this.keyboardService.getPrimaryFunctionStatus().then(res => {
 			this.logger.info('TopRowFunctionsComponent.getStatusOfPrimaryFun', res);
 			this.topRowKeyObj.primaryFunStatus = res;
-			this.updateFunctionLockUIModel()
+			this.updateFunctionLockUIModel();
 		});
 	}
 
@@ -253,8 +253,8 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 
 	switchFocusToShowAdv() {
 		setTimeout(() => {
-			this.adv.nativeElement.focus()
-		}, 0)
+			this.adv.nativeElement.focus();
+		}, 0);
 	}
 
 }

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, EventEmitter, Input, NgZone, OnDestroy, OnInit, Output, QueryList, ViewChild, ViewChildren, OnChanges, SimpleChanges, ChangeDetectionStrategy } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, Input, NgZone, OnDestroy, OnInit, Output, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { NgbModal, NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
 import { Subject } from 'rxjs';
@@ -72,7 +72,7 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, After
 		private deviceService: DeviceService,
 		private translate: TranslateService,
 		private ngZone: NgZone
-	) {	super(); }
+	) { super(); }
 
 	ngAfterViewInit(): void {
 		try {

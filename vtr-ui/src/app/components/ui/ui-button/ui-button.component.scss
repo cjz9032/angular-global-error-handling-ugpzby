@@ -175,6 +175,40 @@
 				}
 			}
 		}
+
+		@mixin secondary-button($background-color, $color) {
+			background: $background-color;
+			color: $color;
+			border-radius: 0;
+
+			&:hover {
+				background: $background-color;
+			}
+
+			&:focus::after {
+				border-radius: 0;
+			}
+
+			.text {
+				border-bottom: 2px solid $color;
+
+				&:hover {
+					border-bottom-color: rgba($color,0);
+				}
+			}
+
+			@include ui-button-high-contrast-white;
+			@include ui-button-high-contrast-black;
+		}
+
+		.btn-secondary-blue-lighter-bg-transparent {
+			@include secondary-button(transparent, $blue-lighter)
+		}
+
+		.btn-secondary-light-bg-transparent {
+			@include secondary-button(transparent, $light)
+		}
+
 	}
 }
 

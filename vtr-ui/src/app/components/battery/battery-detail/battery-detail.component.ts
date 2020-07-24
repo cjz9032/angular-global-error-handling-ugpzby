@@ -1,15 +1,15 @@
-import { Component, OnInit, OnDestroy, Input, ChangeDetectorRef, ViewRef } from '@angular/core';
-import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
-import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { BatteryChargeStatus } from 'src/app/enums/battery-charge-status.enum';
-import BatteryIndicator from 'src/app/data-models/battery/battery-indicator.model';
-import { BatteryInformation } from 'src/app/enums/battery-information.enum';
-import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { CommonService } from 'src/app/services/common/common.service';
-import { Subscription } from 'rxjs/internal/Subscription';
+import { ChangeDetectorRef, Component, Input, OnDestroy, OnInit, ViewRef } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { Subscription } from 'rxjs/internal/Subscription';
 import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
+import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
+import BatteryIndicator from 'src/app/data-models/battery/battery-indicator.model';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { BatteryChargeStatus } from 'src/app/enums/battery-charge-status.enum';
+import { BatteryInformation } from 'src/app/enums/battery-information.enum';
+import { CommonService } from 'src/app/services/common/common.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 @Component({
 	selector: 'vtr-battery-detail',
 	templateUrl: './battery-detail.component.html',

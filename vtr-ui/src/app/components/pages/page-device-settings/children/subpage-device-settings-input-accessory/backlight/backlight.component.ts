@@ -1,5 +1,4 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { BacklightService } from './backlight.service';
 import { Observable, Subject, Subscription } from 'rxjs';
 import {
 	catchError,
@@ -14,12 +13,13 @@ import {
 	tap,
 	throttleTime
 } from 'rxjs/operators';
-import { BacklightLevelEnum, BacklightStatusEnum } from './backlight.enum';
-import { BacklightLevel, BacklightMode, BacklightStatus } from './backlight.interface';
-import { LocalStorageKey } from '../../../../../../enums/local-storage-key.enum';
-import { CommonService } from '../../../../../../services/common/common.service';
 import { UiCircleRadioWithCheckBoxListModel } from 'src/app/components/ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
 import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
+import { LocalStorageKey } from '../../../../../../enums/local-storage-key.enum';
+import { CommonService } from '../../../../../../services/common/common.service';
+import { BacklightLevelEnum, BacklightStatusEnum } from './backlight.enum';
+import { BacklightLevel, BacklightMode, BacklightStatus } from './backlight.interface';
+import { BacklightService } from './backlight.service';
 
 @Component({
 	selector: 'vtr-backlight',
@@ -177,7 +177,7 @@ export class BacklightComponent implements OnInit, OnDestroy {
 						modeItem.checked = true;
 					}
 				}
-			})
+			});
 	}
 
 	ngOnDestroy(): void {
