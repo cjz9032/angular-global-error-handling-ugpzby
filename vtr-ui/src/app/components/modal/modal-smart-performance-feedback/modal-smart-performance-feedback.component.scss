@@ -24,6 +24,9 @@ $normalPadding: 2.4rem;
 			color: $grey_dark;
 			cursor: pointer;
 		}
+		&:focus {
+			@include outline-blue;
+		}
 	}
 
 	.title {

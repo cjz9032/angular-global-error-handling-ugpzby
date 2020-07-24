@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { BatteryIndicatorComponent } from './battery-indicator.component';
-import { TranslationModule } from 'src/app/modules/translation.module';
 import { TranslateStore } from '@ngx-translate/core';
+import { TranslationModule } from 'src/app/modules/translation.module';
+import { BatteryIndicatorComponent } from './battery-indicator.component';
+
 
 describe('BatteryIndicatorComponent', () => {
 	let component: BatteryIndicatorComponent;
@@ -121,7 +121,7 @@ describe('BatteryIndicatorComponent', () => {
 	// 	const hoursText = ' device.deviceSettings.batteryGauge.hours ';
 	// 	const minuteText = ' device.deviceSettings.batteryGauge.minutes';
 	// 	const a = component.getTimeRemaining();
-		
+
 	// 	expect(component.checkRemainingTimeIsZero).toHaveBeenCalled();
 	// 	expect(component.getTimeRemaining()).toEqual(component.remainingHour + hoursText + component.remainingMinutes + minuteText);
 	// });

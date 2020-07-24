@@ -261,7 +261,7 @@
 																	*ngFor="let item of menuItems;let ind=index"
 																	(click)="scanSummaryTime(ind)"
 																	(keydown.enter)="scanSummaryTime(ind)"
-																	[ngClass]="{'selected-list-item': tabIndex === ind}">
+																	[ngClass]="{'selected-list-item': tabIndex === ind}" #menuTab>
 																	{{item.itemName | translate}}
 																	<!-- <div class="list-item" >
 																	</div> -->
@@ -269,18 +269,15 @@
 																<div class="dropdown">
 																	<li id="dropdownMenu1"
 																		class="list-group-item cl list-selected-item">
-																		<fa-icon class="calender-icon"
-																			[icon]="['fal', 'calendar-alt']"></fa-icon>
+																		<fa-icon class="calender-icon" [icon]="['fal', 'calendar-alt']"></fa-icon>
 																		<!-- <span
 																			*ngIf="!dropDownToggle">{{currentDateLocalFormat}}</span> -->
-																		<span
-																			*ngIf="!dropDownToggle || tabIndex === 0">{{annualYear}}</span>
+																		<span *ngIf="!dropDownToggle || tabIndex === 0">{{annualYear}}</span>
 																		<!-- <span
 																			*ngIf="tabIndex === 0">{{annualYear}}</span> -->
 																		<!-- <span
 																			*ngIf="tabIndex === 1">{{quarterlyMonth?.displayName}}</span> -->
-																		<span
-																			*ngIf="tabIndex === 1">{{customDate}}</span>
+																		<span *ngIf="tabIndex === 1">{{customDate}}</span>
 																		<fa-icon class="drop-down-icon"
 																			*ngIf="dropDownToggle && tabIndex === 1"
 																			tabindex="0"
@@ -328,13 +325,13 @@
 																				[ngClass]="{'selected-custom-date':isFromDate}">
 																				<div class="col-1">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtFrom' |translate }}</div>
 																				<div class="col-auto"><input type='text' [ngModel]="displayFromDate"
-																						(click)="selectFromDate()" readonly/></div>
+																						(click)="selectFromDate()" (keydown.enter)="selectFromDate()" readonly/></div>
 																			</div>
 																			<div class="row custom-to-date mt-3 py-3"
 																				[ngClass]="{'selected-custom-date':!isFromDate}">
 																				<div class="col-1">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtTo' |translate }}</div>
 																				<div class="col-auto"><input type='text'  [ngModel]="displayToDate"
-																						(click)="selectToDate()" readonly/></div>
+																						(click)="selectToDate()" (keydown.enter)="selectToDate()" readonly/></div>
 
 																			</div>
 																			<div class="row d-flex justify-content-center">
@@ -500,17 +497,18 @@
 																				<div class="row align-items-center">
 																					<div class="col-1 text-center">
 																						<fa-icon
-																							*ngIf="toggleValue === ind"
+																							tabindex="0"
 																							class="chevron-up"
-																							[icon]="['fal', 'chevron-up']"
-																							(click)="expandRow(ind)">
+																							[icon]="toggleValue === ind ? ['fal', 'chevron-up'] : ['fal', 'chevron-down']"
+																							(click)="expandRow(ind)"
+																							(keydown.enter)="expandRow(ind)">
 																						</fa-icon>
-																						<fa-icon
+																						<!-- <fa-icon
 																							*ngIf="toggleValue != ind"
 																							class="chevron-down"
 																							[icon]="['fal', 'chevron-down']"
 																							(click)="expandRow(ind)">
-																						</fa-icon>
+																						</fa-icon> -->
 																					</div>
 																					<div class="col-7">
 																						<b>{{item.scanrunDate}}</b> - 

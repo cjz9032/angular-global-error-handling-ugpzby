@@ -165,13 +165,13 @@
 		list-style: none;
 		margin: 0;
 	}
-
-	.vtr-header-main-inner{
-		@media #{$black-on-white} {
-			border-bottom: 0 !important;
-		}
-		@media #{$white-on-black} {
-			border-bottom: 0 !important;
+	vtr-page-lightingcustomize,vtr-page-macrokey,
+	vtr-page-networkboost,vtr-page-autoclose,
+	vtr-page-device-gaming {
+		.vtr-header-main-inner{
+			@media #{$high-contrast} {
+				border: 0 !important;
+			}
 		}
 	}
 

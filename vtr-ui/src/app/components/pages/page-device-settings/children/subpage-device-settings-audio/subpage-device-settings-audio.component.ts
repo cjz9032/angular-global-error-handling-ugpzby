@@ -1,25 +1,25 @@
-import { Component, EventEmitter, OnDestroy, OnInit, Output, Input } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { EMPTY, Subscription } from 'rxjs';
+import { UiCircleRadioWithCheckBoxListModel } from 'src/app/components/ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
 import { DolbyModeResponse } from 'src/app/data-models/audio/dolby-mode-response';
 import { MicrophoneOptimizeModes } from 'src/app/data-models/audio/microphone-optimize-modes';
 import { Microphone } from 'src/app/data-models/audio/microphone.model';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
+import { PageAnchorLink } from 'src/app/data-models/common/page-achor-link.model';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 import { DolbyAudioToggleCapability } from 'src/app/data-models/device/dolby-audio-toggle-capability';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { AudioService } from 'src/app/services/audio/audio.service';
+import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { PageAnchorLink } from 'src/app/data-models/common/page-achor-link.model';
-import { TranslateService } from '@ngx-translate/core';
-import { UiCircleRadioWithCheckBoxListModel } from 'src/app/components/ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
-import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
-import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-audio',
@@ -82,7 +82,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	cacheFlag = { autoOptimization: true, keyboardNoiseSuppression: true, AEC: true, currentMode: true };
 
 	public dolbyAudioToggleCache: DolbyAudioToggleCapability;
-	public readonly metricsParent  = CommonMetricsModel.ParentDeviceSettings;
+	public readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
 
 	constructor(
 		private routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
@@ -374,7 +374,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 					isChecked: micMode === response.current,
 					isDisabled: this.microphoneProperties.disableEffect,
 					processIcon: true,
-					customIcon: micMode.toLowerCase() === 'normal' ? 'LE-VoiceRecognition2x': '',
+					customIcon: micMode.toLowerCase() === 'normal' ? 'LE-VoiceRecognition2x' : '',
 					hideIcon: micMode.toLowerCase() === 'normal',
 					processLabel: true,
 					metricsItem: `radio.optimize-mic.${micMode}`

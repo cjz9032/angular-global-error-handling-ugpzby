@@ -1,10 +1,10 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewChildren, QueryList, OnChanges, SimpleChanges, ViewChild, ElementRef } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, QueryList, SimpleChanges, ViewChild, ViewChildren } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+import { KeyCode as KEYCODE } from 'src/app/enums/key-code.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { UiCircleRadioWithCheckBoxListModel } from './ui-circle-radio-with-checkbox-list.model';
-import { KeyCode as KEYCODE } from 'src/app/enums/key-code.enum';
-import { ActivatedRoute } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-ui-circle-radio-with-checkbox-list',
@@ -210,7 +210,7 @@ export class UiCircleRadioWithCheckBoxListComponent implements OnInit, OnChanges
 		this.focusedComponentId = '';
 	}
 
-	private setFocusComponentId(){
+	private setFocusComponentId() {
 		this.focusedComponentId = this.getSelectedRadioId();
 	}
 }

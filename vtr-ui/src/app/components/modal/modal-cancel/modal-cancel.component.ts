@@ -10,7 +10,6 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 export class ModalCancelComponent implements OnInit, AfterViewInit {
 
 	description: string = this.translate.instant('hardwareScan.cancelMayTakeSomeTime');
-	buttonText: string = this.translate.instant('hardwareScan.yes');
 	isInCountdown = true;
 
 	loading: boolean;

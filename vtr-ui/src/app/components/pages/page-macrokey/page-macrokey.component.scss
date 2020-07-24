@@ -1,6 +1,12 @@
 @import "../../../app.theme";
 
 ::ng-deep {
+	#vtr-gaming-macrokey-btn-back {
+		color: $gaming_lightest;
+	}
+	#gaming-macrokey-header-title {
+		color: $gaming_lightest;
+	}
 	.vtr-page-device-gaming {
 		.vtr-page-header {
 			.gaming-header-image {
@@ -14,11 +20,11 @@
 	.vtr-page-left-column {
 		.vtr-page-column-shift-up {
 			overflow: hidden;
-		}	
+		}
 	}
 
 	.vtr-page-right-column {
 		.vtr-page-column-shift-up {
-		}	
+		}
 	}
 }

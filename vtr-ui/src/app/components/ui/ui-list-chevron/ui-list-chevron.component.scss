@@ -130,6 +130,20 @@
 				}
 			}
 
+			a[role="document"] {
+				&:hover {
+					text-decoration: none;
+					.title, .detail {
+						@include high-contrast-color-reversal;
+					}
+				}
+				&:focus {
+					.title, .detail {
+						@include high-contrast-color-reversal;
+					}
+				}
+			}
+
 			a {
 				color: $main_darker;
 				display: block;
@@ -148,6 +162,7 @@
 					}
 				}
 				&:focus {
+					top: 100%;
 					@media #{$black-on-white} {
 						.title, .detail {
 							color: $high-contrast-white-textselected !important;
@@ -158,11 +173,6 @@
 							color: $high-contrast-black-textselected !important;
 						}
 					}
-				}
-				&:focus + [role="link"] {
-					// display: block;
-					// position: absolute;
-					top: 100%;
 				}
 			}
 

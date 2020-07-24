@@ -23,14 +23,14 @@ export class HardwareScanResultService {
 		this.resultSeverityConversion[HardwareScanTestResult.NotStarted] = 0;
 		this.resultSeverityConversion[HardwareScanTestResult.InProgress] = 1;
 		this.resultSeverityConversion[HardwareScanTestResult.Na] = 2;
-		this.resultSeverityConversion[HardwareScanTestResult.Pass] = 3;
-		this.resultSeverityConversion[HardwareScanTestResult.Warning] = 4;
-		this.resultSeverityConversion[HardwareScanTestResult.Fail] = 5;
-		this.resultSeverityConversion[HardwareScanTestResult.Cancelled] = 6;
+		this.resultSeverityConversion[HardwareScanTestResult.Warning] = 3;
+		this.resultSeverityConversion[HardwareScanTestResult.Pass] = 4;
+		this.resultSeverityConversion[HardwareScanTestResult.Cancelled] = 5;
+		this.resultSeverityConversion[HardwareScanTestResult.Fail] = 6;
 	}
 
 	public consolidateResults(partialResults: any): HardwareScanTestResult {
-		let consolidatedResult = HardwareScanTestResult.Pass;
+		let consolidatedResult = HardwareScanTestResult.Na;
 
 		partialResults.forEach(partialResult => {
 			// Only change result when finds a worse case

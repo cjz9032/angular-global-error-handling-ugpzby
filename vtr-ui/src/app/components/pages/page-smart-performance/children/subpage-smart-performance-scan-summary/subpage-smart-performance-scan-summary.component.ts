@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { NgbModal, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
@@ -65,6 +65,8 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 	@Input() rating = 0;
 	@Input() isOnline = true;
 	@Input() isExpired;
+
+	@ViewChild('menuTab') menuTab: ElementRef;
 
 	public tabIndex: number;
 	public toggleValue: number;
@@ -424,6 +426,9 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 				.endOf('day')
 				.format('YYYY-MM-DD HH:mm:ss')
 		);
+		setTimeout(() => {
+			this.menuTab.nativeElement.focus()
+		}, 10);
 	}
 
 	resetCustomDateScanSummary() {

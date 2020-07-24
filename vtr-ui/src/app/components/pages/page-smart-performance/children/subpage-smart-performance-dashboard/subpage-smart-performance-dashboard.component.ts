@@ -456,9 +456,8 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 
 	onclickFeedback() {
 		this.modalService.open(ModalSmartPerformanceFeedbackComponent, {
-			backdrop: true,
+			backdrop: 'static',
 			size: 'lg',
-			keyboard: true,
 			centered: true,
 			windowClass: 'smart-performance-feedback-Modal'
 		})

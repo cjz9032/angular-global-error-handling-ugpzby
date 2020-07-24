@@ -18,18 +18,18 @@ const bctInfo: any = {
 	startValue: 40,
 	stopValue: 45,
 	checkboxValue: false
-}
+};
 
 describe('BatteryChargeThresholdSettingsComponent', () => {
 	let component: BatteryChargeThresholdSettingsComponent;
 	let fixture: ComponentFixture<BatteryChargeThresholdSettingsComponent>;
 	let commonService: CommonService;
-	let commonMetricsService: CommonMetricsService;
+	/* let commonMetricsService: CommonMetricsService;
 	let metricService: MetricService;
-	let devService: DevService;
-	let dropdown: any = {
-		isOpen: () => { return false },
-		close: () => { return null }
+	let devService: DevService; */
+	const dropdown: any = {
+		isOpen: () => false,
+		close: () => null
 	};
 
 	beforeEach(async(() => {
@@ -42,98 +42,98 @@ describe('BatteryChargeThresholdSettingsComponent', () => {
 	}));
 
 	it('should create Battery Charge Threshold component', (() => {
-		fixture = TestBed.createComponent(BatteryChargeThresholdSettingsComponent)
-		component = fixture.componentInstance
-		component.bctInfo = { ...bctInfo }
-		fixture.detectChanges()
-		expect(component).toBeTruthy()
+		fixture = TestBed.createComponent(BatteryChargeThresholdSettingsComponent);
+		component = fixture.componentInstance;
+		component.bctInfo = { ...bctInfo };
+		fixture.detectChanges();
+		expect(component).toBeTruthy();
 	}));
 
 	it('should call onStartValueChange', (() => {
-		fixture = TestBed.createComponent(BatteryChargeThresholdSettingsComponent)
-		component = fixture.componentInstance
-		commonService = TestBed.inject(CommonService)
-		const startVal = 35
-		const button = document.createElement('button')
+		fixture = TestBed.createComponent(BatteryChargeThresholdSettingsComponent);
+		component = fixture.componentInstance;
+		commonService = TestBed.inject(CommonService);
+		const startVal = 35;
+		const button = document.createElement('button');
 
-		const spy = spyOn(commonService, 'cloneObj').and.returnValue(bctInfo)
-		component.onStartValueChange(startVal, dropdown, button)
-		expect(spy).toHaveBeenCalled()
+		const spy = spyOn(commonService, 'cloneObj').and.returnValue(bctInfo);
+		component.onStartValueChange(startVal, dropdown, button);
+		expect(spy).toHaveBeenCalled();
 	}));
 
 	it('should call onStartValueChange - else case', (() => {
-		fixture = TestBed.createComponent(BatteryChargeThresholdSettingsComponent)
-		component = fixture.componentInstance
-		commonService = TestBed.get(CommonService)
-		const startVal = 35
-		const button = document.createElement('button')
-		const bctInfoo: any = { ...bctInfo, startVal: 35 }
-		const spy = spyOn(commonService, 'cloneObj').and.returnValue(bctInfoo)
-		component.onStartValueChange(startVal, dropdown, button)
-		expect(spy).toHaveBeenCalled()
+		fixture = TestBed.createComponent(BatteryChargeThresholdSettingsComponent);
+		component = fixture.componentInstance;
+		commonService = TestBed.inject(CommonService);
+		const startVal = 35;
+		const button = document.createElement('button');
+		const bctInfoo: any = { ...bctInfo, startVal: 35 };
+		const spy = spyOn(commonService, 'cloneObj').and.returnValue(bctInfoo);
+		component.onStartValueChange(startVal, dropdown, button);
+		expect(spy).toHaveBeenCalled();
 	}));
 
 	it('should call onStopValueChange', (() => {
-		fixture = TestBed.createComponent(BatteryChargeThresholdSettingsComponent)
-		component = fixture.componentInstance
-		commonService = TestBed.get(CommonService)
-		const stopVal = 35
-		const button = document.createElement('button')
-		const bctInfoo: any = { ...bctInfo, checkboxValue: true }
-		const spy = spyOn(commonService, 'cloneObj').and.returnValue(bctInfoo)
-		component.onStopValueChange(stopVal, dropdown, button)
-		expect(spy).toHaveBeenCalled()
+		fixture = TestBed.createComponent(BatteryChargeThresholdSettingsComponent);
+		component = fixture.componentInstance;
+		commonService = TestBed.inject(CommonService);
+		const stopVal = 35;
+		const button = document.createElement('button');
+		const bctInfoo: any = { ...bctInfo, checkboxValue: true };
+		const spy = spyOn(commonService, 'cloneObj').and.returnValue(bctInfoo);
+		component.onStopValueChange(stopVal, dropdown, button);
+		expect(spy).toHaveBeenCalled();
 	}));
 
 	it('should call onStopValueChange - inner else case', (() => {
-		fixture = TestBed.createComponent(BatteryChargeThresholdSettingsComponent)
-		component = fixture.componentInstance
-		commonService = TestBed.inject(CommonService)
-		const stopVal = 35
-		const button = document.createElement('button')
-		const bctInfoo: any = { ...bctInfo, checkboxValue: false }
-		const spy = spyOn(commonService, 'cloneObj').and.returnValue(bctInfoo)
-		component.onStopValueChange(stopVal, dropdown, button)
-		expect(spy).toHaveBeenCalled()
+		fixture = TestBed.createComponent(BatteryChargeThresholdSettingsComponent);
+		component = fixture.componentInstance;
+		commonService = TestBed.inject(CommonService);
+		const stopVal = 35;
+		const button = document.createElement('button');
+		const bctInfoo: any = { ...bctInfo, checkboxValue: false };
+		const spy = spyOn(commonService, 'cloneObj').and.returnValue(bctInfoo);
+		component.onStopValueChange(stopVal, dropdown, button);
+		expect(spy).toHaveBeenCalled();
 	}));
 
 	it('should call onStopValueChange - outer else case', (() => {
-		fixture = TestBed.createComponent(BatteryChargeThresholdSettingsComponent)
-		component = fixture.componentInstance
-		commonService = TestBed.get(CommonService)
-		const stopVal = 35
-		const button = document.createElement('button')
-		const bctInfoo: any = { ...bctInfo, stopValue: 35 }
-		const spy = spyOn(commonService, 'cloneObj').and.returnValue(bctInfoo)
-		component.onStopValueChange(stopVal, dropdown, button)
-		expect(spy).toHaveBeenCalled()
+		fixture = TestBed.createComponent(BatteryChargeThresholdSettingsComponent);
+		component = fixture.componentInstance;
+		commonService = TestBed.inject(CommonService);
+		const stopVal = 35;
+		const button = document.createElement('button');
+		const bctInfoo: any = { ...bctInfo, stopValue: 35 };
+		const spy = spyOn(commonService, 'cloneObj').and.returnValue(bctInfoo);
+		component.onStopValueChange(stopVal, dropdown, button);
+		expect(spy).toHaveBeenCalled();
 	}));
 
 	it('should call toggleAutoChargeSettings', (() => {
-		fixture = TestBed.createComponent(BatteryChargeThresholdSettingsComponent)
-		component = fixture.componentInstance
-		commonService = TestBed.get(CommonService)
-		const event = true
-		component.bctInfo = { ...bctInfo }
-		const spy = spyOn(commonService, 'cloneObj').and.returnValue(bctInfo)
-		component.toggleAutoChargeSettings(event)
-		expect(spy).toHaveBeenCalled()
+		fixture = TestBed.createComponent(BatteryChargeThresholdSettingsComponent);
+		component = fixture.componentInstance;
+		commonService = TestBed.inject(CommonService);
+		const event = true;
+		component.bctInfo = { ...bctInfo };
+		const spy = spyOn(commonService, 'cloneObj').and.returnValue(bctInfo);
+		component.toggleAutoChargeSettings(event);
+		expect(spy).toHaveBeenCalled();
 	}));
 	it('should call showHideMenuOfItem', (() => {
-		fixture = TestBed.createComponent(BatteryChargeThresholdSettingsComponent)
-		component = fixture.componentInstance
-		commonService = TestBed.get(CommonService)
-		const event = true
-		component.showHideMenuOfItem(event, dropdown)
+		fixture = TestBed.createComponent(BatteryChargeThresholdSettingsComponent);
+		component = fixture.componentInstance;
+		commonService = TestBed.inject(CommonService);
+		const event = true;
+		component.showHideMenuOfItem(event, dropdown);
 	}));
 
 	it('should call toggleAutoChargeSettings - else case', (() => {
-		fixture = TestBed.createComponent(BatteryChargeThresholdSettingsComponent)
-		component = fixture.componentInstance
-		commonService = TestBed.get(CommonService)
-		const event = undefined
-		const spy = spyOn(commonService, 'cloneObj').and.returnValue(bctInfo)
-		component.toggleAutoChargeSettings(event)
-		expect(spy).toHaveBeenCalled()
+		fixture = TestBed.createComponent(BatteryChargeThresholdSettingsComponent);
+		component = fixture.componentInstance;
+		commonService = TestBed.inject(CommonService);
+		const event = undefined;
+		const spy = spyOn(commonService, 'cloneObj').and.returnValue(bctInfo);
+		component.toggleAutoChargeSettings(event);
+		expect(spy).toHaveBeenCalled();
 	}));
 });

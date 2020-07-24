@@ -98,9 +98,15 @@
 			.vtr-page-column {
 				&.vtr-page-left-column {
 					background-color: $gaming_bg;
+					@media #{$high_contrast} {
+						border-left: 0;
+					}
 				}
 				&.vtr-page-right-column {
 					background-color: $gaming_dark;
+					@media #{$high_contrast} {
+						border-right: 0;
+					}
 				}
 			}
 		}

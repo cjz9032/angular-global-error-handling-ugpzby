@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { LenovoSupportService } from 'src/app/services/hardware-scan/lenovo-support.service';
 
 @Component({
 	selector: 'vtr-widget-hardware-scan-item',
@@ -13,11 +14,13 @@ export class WidgetHardwareScanItemComponent implements OnInit {
 	@Input() isEnableViewResults = false;
 
 	public tooltipText: string;
+	contactusUrl: string;
 
-	constructor() {
+	constructor(private lenovoSupportService: LenovoSupportService) {
 	}
 
 	ngOnInit() {
+		this.configureContactusUrl();
 	}
 
 	public getKey(obj: any) {
@@ -36,5 +39,11 @@ export class WidgetHardwareScanItemComponent implements OnInit {
 	public toggleTestListVisibility(item: any) {
 		item.expanded = !item.expanded;
 		item.expandedStatusChangedByUser = !item.expandedStatusChangedByUser;
+	}
+
+	private async configureContactusUrl() {
+		await this.lenovoSupportService.getContactusUrl().then((response) => {
+			this.contactusUrl = response;
+		});
 	}
 }

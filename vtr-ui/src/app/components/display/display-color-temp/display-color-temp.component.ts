@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { EyeCareMode } from 'src/app/data-models/camera/eyeCareMode.model';
-import { LoggerService } from 'src/app/services/logger/logger.service';
 import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-display-color-temp',

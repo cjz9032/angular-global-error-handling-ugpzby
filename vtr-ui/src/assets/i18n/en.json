@@ -4,8 +4,8 @@
 	"gaming": {
 		"dashboard": {
 			"device": {
-				"popup":{
-				"closeBtn":"close"
+				"popup": {
+					"closeBtn": "close"
 				},
 				"quickSettings": {
 					"title": "Thermal Mode",
@@ -263,8 +263,8 @@
 					"line3": "stop recording when finishing typing"
 				},
 				"buttons": {
-					"start": "START RECORDING",
-					"stop": "STOP RECORDING",
+					"start": "Start Recording",
+					"stop": "Stop Recording",
 					"numberPrefix": "NUM"
 				},
 				"recording": {
@@ -356,7 +356,7 @@
 					"body": "Recording will time out if the input stopped for more than 10 seconds."
 				},
 				"confirmButton": {
-					"btnClear": "CLEAR",
+					"btnClear": "Clear",
 					"btnCancel": "CANCEL"
 				},
 				"btnOk": "OK"
@@ -591,10 +591,10 @@
 					"title": "Selecting colour not available to this effect."
 				},
 				"text2": {
-					"title": "APPLY"
+					"title": "Apply"
 				},
 				"text3": {
-					"title": "APPLIED"
+					"title": "Applied"
 				},
 				"text4": {
 					"title": "R:"
@@ -1504,33 +1504,33 @@
 				"subtitle": "Audio Settings",
 				"description": "This section enables you to automatically optimize or fully configure your audio settings manually, such as Dolby settings, microphone, etc.",
 				"audioSmartsettings": {
-                    "title": "Audio smart settings",
-                    "dolby": {
-                        "title": "Dolby audio",
-                        "description": "Select the mode as you desired from the following. You also can check the \"Automatically optimize audio for ...\" checkbox. When selected, Dolby audio automatically picks up the best audio effect for you according to the modes you are in.",
-                        "options": {
-                            "dynamic": "Dynamic",
+					"title": "Audio smart settings",
+					"dolby": {
+						"title": "Dolby audio",
+						"description": "Select the mode as you desired from the following. You also can check the \"Automatically optimize audio for ...\" checkbox. When selected, Dolby audio automatically picks up the best audio effect for you according to the modes you are in.",
+						"options": {
+							"dynamic": "Dynamic",
 							"movie": "Movie",
 							"music": "Music",
 							"games": "Game",
 							"voip": "Voice"
-                        },
-                        "automaticAudioMode": {
-                            "voIPMode": {
-                                "checkboxText": "Automatically optimize audio for VoIP",
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.). When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
-                            },
-                            "entertainmentMode": {
-                                "checkboxText": "Automatically optimize audio for entertainment",
-                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are using:<br>• If you are using apps such as iTunes, it changes to the Music mode.<br>• If you are using apps such as Youtube, it changes to the Movie mode.<br>• If you are using gaming apps, it changes to the Gaming mode accordingly."
-                            }
-                        }
-                    },
-                    "eCourse": {
-                        "title": "Interactive E-course mode",
-                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teachers and students. When enabled, Dolby audio automatically changes to Voice mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
-                    }
-                },
+						},
+						"automaticAudioMode": {
+							"voIPMode": {
+								"checkboxText": "Automatically optimize audio for VoIP",
+								"tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.). When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+							},
+							"entertainmentMode": {
+								"checkboxText": "Automatically optimize audio for entertainment",
+								"tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are using:<br>• If you are using apps such as iTunes, it changes to the Music mode.<br>• If you are using apps such as Youtube, it changes to the Movie mode.<br>• If you are using gaming apps, it changes to the Gaming mode accordingly."
+							}
+						}
+					},
+					"eCourse": {
+						"title": "Interactive E-course mode",
+						"tooltip": "This function is useful for on-line courses when there are voice interactions between teachers and students. When enabled, Dolby audio automatically changes to Voice mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
+					}
+				},
 				"microphone": {
 					"title": "Microphone",
 					"note": {
@@ -2126,62 +2126,62 @@
 				"tooltip": "<p id='sr-tip-one' role='text'>This feature only works for below video players:<br>Windows Media Player<br>Chrome-based player<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>For instructions on how to enable this function on PotPlayer, refer to the User Guide that comes with your computer.</p>",
 				"note": {
 					"description": "This feature does not work when:",
-                    "description1": "The CPU temperature is too high.",
-                    "description2": "The device is set to Battery saving mode in \"Intelligent cooling\"."
+					"description1": "The CPU temperature is too high.",
+					"description2": "The device is set to Battery saving mode in \"Intelligent cooling\"."
 				},
-				"imageBefore":"Before",
-                "imageAfter":"After"
+				"imageBefore": "Before",
+				"imageAfter": "After"
 			},
 			"antiTheft": {
-                "heading": "Intelligent sensing",
+				"heading": "Intelligent sensing",
 				"title": "Smart motion alarm",
-				"tooltip":"<div id='antiTheft-tooltips'>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>actions of the closing lid</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>critical/low battery action</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>power button action</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>sleep button action</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>",
-                "desc1": "When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.",
+				"tooltip": "<div id='antiTheft-tooltips'>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul role='list' id='antiTheft-tooltip-list'><li role='listItem' id='antiTheft-tooltip-listItem-one'>actions of the closing lid</li><li role='listItem' id='antiTheft-tooltip-listItem-two'>critical/low battery action</li><li role='listItem' id='antiTheft-tooltip-listItem-three'>power button action</li><li role='listItem' id='antiTheft-tooltip-listItem-four'>sleep button action</li><li role='listItem' id='antiTheft-tooltip-listItem-five'>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>",
+				"desc1": "When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.",
 				"desc2": "Log into Windows and the alarm will be automatically turned off. To use the feature, you need to enable it again.",
 				"note": {
 					"descriptionTitle": "Attention:",
-                    "description": "Valid sign-in options such as a password or PIN code are needed when you log into Windows. Otherwise, the Smart motion alarm feature might be mistakenly disabled by any unauthorized user who accesses your computer."
-                },
-                "alarm": {
-                    "title":" THE ALARM WILL LAST FOR",
-                    "option1":"10 seconds",
-                    "option2":"20 seconds",
-                    "option3":"30 seconds",
-                    "option4":"1 minute",
-                    "option5":"Never stop"
-                },
-                "allowCamera": {
-                    "title":"TAKING PHOTOS",
-                    "describe":"When enabling this feature, the camera takes photos automatically when movements are detected if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it. Be aware that you should turn off the camera shutter to ensure it can successfully take photos during alarm.",
-                    "checkBoxText":"Enable this feature"
-                },
-                "cameraPrivacy": {
-                     "describe":"Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
-                     "linkText":"Go to Camera privacy mode to turn it off"
-                },
-                "authorizedAccess": {
-                    "describe":"Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
-                    "linkText":"Go to Windows Settings to give access"
-                },
-                "photo": {
-                    "title":"THE NUMBER OF PHOTOS TAKEN",
-                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
-                    "option1":"5",
-                    "option2":"10",
-                    "option3":"15",
-                    "option4":"20",
-                    "option5":"25",
-                    "option6":"30"
-                },
-                "showPhoto": {
-                    "title":"PHOTOS HAVE BEEN SAVED TO LOCAL:",
-                    "link":"View photos"
+					"description": "Valid sign-in options such as a password or PIN code are needed when you log into Windows. Otherwise, the Smart motion alarm feature might be mistakenly disabled by any unauthorized user who accesses your computer."
+				},
+				"alarm": {
+					"title": " THE ALARM WILL LAST FOR",
+					"option1": "10 seconds",
+					"option2": "20 seconds",
+					"option3": "30 seconds",
+					"option4": "1 minute",
+					"option5": "Never stop"
+				},
+				"allowCamera": {
+					"title": "TAKING PHOTOS",
+					"describe": "When enabling this feature, the camera takes photos automatically when movements are detected if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it. Be aware that you should turn off the camera shutter to ensure it can successfully take photos during alarm.",
+					"checkBoxText": "Enable this feature"
+				},
+				"cameraPrivacy": {
+					"describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
+					"linkText": "Go to Camera privacy mode to turn it off"
+				},
+				"authorizedAccess": {
+					"describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
+					"linkText": "Go to Windows Settings to give access"
+				},
+				"photo": {
+					"title": "THE NUMBER OF PHOTOS TAKEN",
+					"tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
+					"option1": "5",
+					"option2": "10",
+					"option3": "15",
+					"option4": "20",
+					"option5": "25",
+					"option6": "30"
+				},
+				"showPhoto": {
+					"title": "PHOTOS HAVE BEEN SAVED TO LOCAL:",
+					"link": "View photos"
 				},
 				"fileAuthorizationTips": {
-					"content":"Lenovo Vantage doesn't have access to the file system.",
-					"link":"Go to Windows Settings to give access"
+					"content": "Lenovo Vantage doesn't have access to the file system.",
+					"link": "Go to Windows Settings to give access"
 				}
-            },
+			},
 			"voice": {
 				"title": "Voice",
 				"description": "Lenovo Voice converts your voice into text with the Voice to Text and provides assistance of real-time speech translation with the Translation Assistant.",
@@ -2346,7 +2346,7 @@
 		"title": "Smart Performance",
 		"back": "BACK",
 		"auto": "Auto",
-		"manual":"Manual",
+		"manual": "Manual",
 		"performanceandSecurityCheckTitle": "Performance & Security Check",
 		"performanceandSecurityCheckSubTitle": "Let's diagnose and resolve performance and security issues in your computer",
 		"scanButton": "FREE PC SCAN",
@@ -2370,10 +2370,10 @@
 		"section2Heading": "Top-notch PC Performance. Always",
 		"section2Description": "Our software can proactively scan your PC 24x7 to find and fix issues as they arise, so that your PC always has top-notch performance.",
 		"am": "AM",
-        "pm": "PM",
+		"pm": "PM",
 		"tunePCPerformance": {
 			"title": "TUNE PC PERFORMANCE",
-			"summaryTitle":"Tune PC Performance",
+			"summaryTitle": "Tune PC Performance",
 			"heading": "Show your computer some extra love",
 			"description": "Even the best computer will benefit from periodic tune-ups. Get a tune-up and get more done with our powerful app.",
 			"tabSet1": {
@@ -2395,7 +2395,7 @@
 		"boostInternetPerformance": {
 			"title": "BOOST INTERNET PERFORMANCE",
 			"extraTitle": "INTERNET PERFORMANCE",
-			"summaryTitle":"Internet Performance",
+			"summaryTitle": "Internet Performance",
 			"heading": "Give your internet a boost",
 			"description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
 			"tabSet1": {
@@ -2416,7 +2416,7 @@
 		},
 		"malwareSecurity": {
 			"title": "MALWARE & SECURITY",
-			"summaryTitle":"Malware & Security",
+			"summaryTitle": "Malware & Security",
 			"heading": "Give your computer the extra care it needs",
 			"description": "Malware can lead to a computer crash, data compromise and performance degradation. Get Malware removal and much, much more done.",
 			"tabSet1": {
@@ -2455,12 +2455,12 @@
 				"tab3Description": "No scareware, built with best practices"
 			}
 		},
-		"noScanResults":"Please click SCAN & FIX button to trigger scan process.",
+		"noScanResults": "Please click SCAN & FIX button to trigger scan process.",
 		"startScan": "<b>Ready to start the scan?</b> Let’s diagnose the performance and security issues in your computer.",
 		"subscriptionDetails": {
 			"title": "Subscription Details",
-			"titlebeta":"Lenovo Beta Program",
-			"descriptionNonSubscriber":"You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothly.",
+			"titlebeta": "Lenovo Beta Program",
+			"descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothly.",
 			"description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
 			"learnMore": "Learn more",
 			"startDate": "Start date",
@@ -2471,7 +2471,7 @@
 			"processStatus": "PROCESSING",
 			"expiredStatus": "EXPIRED",
 			"manageSubscription": "MANAGE SUBSCRIPTION",
-			"manageSubscriptionBeta":"ENABLE FULL FEATURE",
+			"manageSubscriptionBeta": "ENABLE FULL FEATURE",
 			"descriptionbeta": "Lenovo is offering pilot program to try Smart Performance feature till July 2020.",
 			"descriptionbeta1": "You are welcomed to join and try the full feature."
 		},
@@ -2653,7 +2653,7 @@
 				}
 			},
 			"confirmationTitle": "Lenovo Payment Process",
-			"confirmationNote" : "You will be directed to Lenovo Payment Website to finish the payment. Once the payment is done, you can press the \"refresh\" button in \"Subscription Detail\" to get the payment result.",
+			"confirmationNote": "You will be directed to Lenovo Payment Website to finish the payment. Once the payment is done, you can press the \"refresh\" button in \"Subscription Detail\" to get the payment result.",
 			"confirmationBtn": "Proceed",
 			"refreshButton": "Refresh Status"
 		},
@@ -3867,13 +3867,13 @@
 		"testNotApplicable": "Not applicable on custom scan",
 		"cancelMayTakeSomeTime": "Please wait, it may take some time to cancel depending on your system.",
 		"scanFailureModal": {
-            "title": "Hardware Problem Detected",
-            "problemDetected": "There were detected problems on the following components on your computer:",
-            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
-            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
-            "supportButtonText": "Open Ticket",
-            "recoverBadSectorsButtonText": "Recover Bad Sectors"
-        },
+			"title": "Hardware Problem Detected",
+			"problemDetected": "There were detected problems on the following components on your computer:",
+			"suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
+			"suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
+			"supportButtonText": "Open Ticket",
+			"recoverBadSectorsButtonText": "Recover Bad Sectors"
+		},
 		"customize": {
 			"name": "Customize",
 			"test": "Customize Test",
@@ -3957,22 +3957,23 @@
 			"wireless": "Wireless"
 		},
 		"scanFinishedHeader": {
-            "titleSuccess": "Scan completed. Your device passed all the tests.",
-            "titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
-            "titleErrorSingular": "Scan completed. Your device failed 1 test.",
+			"titleSuccess": "Scan completed. Your device passed all the tests.",
+			"titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
+			"titleErrorSingular": "Scan completed. Your device failed 1 test.",
 			"frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays an attention or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
 			"frcFailureDescription": "The final result code indicates that problems were found with this scan.",
 			"lenovoSupportInstruction": "In Lenovo Support you can open a verification ticket using the code of your final result.",
 			"finalResultCodeLabel": "Final Result Code: ",
 			"scanAgainButtonText": "Scan Again",
 			"supportButtonText": "Lenovo Support"
-        },
+		},
 		"warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates",
 		"refreshMessage": "Refresh may take some time as it needs to load all the components again",
 		"processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed.",
 		"executingScanTitle": "Scanning {{title}}",
 		"showDetails": "View Details",
-		"hideDetails": "Hide Details"
+		"hideDetails": "Hide Details",
+		"NA": "N/A"
 	},
 	"notification": {
 		"menu": {
@@ -4037,7 +4038,7 @@
 			"body2": "All-in-One PCs with 9th Gen Intel® Core™ processors give you all the power of a desktop packaged in a sleek display — for less clutter, hardware-based security, and a hi-res display."
 		}
 	},
-	"storeRating":{
+	"storeRating": {
 		"title": "Send us your voice",
 		"likeUs": "Like us",
 		"feedback": "Leave feedback"

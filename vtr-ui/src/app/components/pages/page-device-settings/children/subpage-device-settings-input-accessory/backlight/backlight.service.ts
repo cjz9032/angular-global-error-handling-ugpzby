@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { from, Observable, Subject } from 'rxjs';
-import { Backlight, BacklightLevel, BacklightMode, BacklightStatus, GetBacklightResponse } from './backlight.interface';
-import { VantageShellService } from '../../../../../../services/vantage-shell/vantage-shell.service';
 import { map, shareReplay, takeUntil } from 'rxjs/operators';
+import { VantageShellService } from '../../../../../../services/vantage-shell/vantage-shell.service';
+import { Backlight, BacklightLevel, BacklightMode, BacklightStatus, GetBacklightResponse } from './backlight.interface';
 
 const CACHE_SIZE = 1;
 
@@ -84,17 +84,17 @@ export class BacklightService {
 					observer.complete();
 				},
 				result => {
-					if (result.errorcode && result.errorcode === 606){
+					if (result.errorcode && result.errorcode === 606) {
 						observer.complete();
 					}
-					else{
+					else {
 						observer.error(result);
 					}
 				}
-			)
+			);
 
 			return () => {
-			}
+			};
 		});
 	}
 }

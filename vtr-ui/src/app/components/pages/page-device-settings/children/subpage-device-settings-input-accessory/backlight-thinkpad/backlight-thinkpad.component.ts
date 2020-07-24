@@ -1,11 +1,11 @@
-import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
-import { BacklightStatusEnum, BacklightLevelEnum } from '../backlight/backlight.enum';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
+import { EMPTY } from 'rxjs';
+import { UiCircleRadioWithCheckBoxListModel } from 'src/app/components/ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { CommonService } from 'src/app/services/common/common.service';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { CommonService } from 'src/app/services/common/common.service';
-import { EMPTY } from 'rxjs';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { UiCircleRadioWithCheckBoxListModel } from 'src/app/components/ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
+import { BacklightLevelEnum, BacklightStatusEnum } from '../backlight/backlight.enum';
 
 @Component({
 	selector: 'vtr-backlight-thinkpad',
@@ -90,7 +90,7 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 						if (autoCapability) {
 							this.modes = [];
 							this.cacheData.modes = this.modes;
-							this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData)
+							this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData);
 							this.showHide.emit(false);
 							this.updateBacklightModel(this.modes);
 							return;
@@ -120,7 +120,7 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 	public removeObjByValue(value: string) {
 		this.modes = this.modes.filter(e => e.value !== value);
 		this.cacheData.modes = this.modes;
-		this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData)
+		this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData);
 	}
 
 	public isBaseAuto(array: any[], value: string) {
@@ -139,13 +139,13 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 			this.modes = this.commonService.sortMenuItems(this.modes);
 		}
 		this.cacheData.modes = this.modes;
-		this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData)
+		this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData);
 	}
 
 	public getAutoKBDBacklightCapability() {
 		try {
 			if (this.keyboardService.isShellAvailable) {
-				return this.keyboardService.getAutoKBDBacklightCapability()
+				return this.keyboardService.getAutoKBDBacklightCapability();
 				// .then(res => {
 				// 	this.logger.info('BacklightThinkpadComponent:getAutoKBDBacklightCapability', res);
 				// 	if (res) {
@@ -175,7 +175,7 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 						if (res) {
 							this.currentMode = BacklightStatusEnum.AUTO;
 							this.cacheData.currentMode = this.currentMode;
-							this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData)
+							this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData);
 						}
 					}).catch(error => {
 						this.logger.error('BacklightThinkpadComponent:GetAutoKBDStatus', error.message);
@@ -197,7 +197,7 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 						if (res !== BacklightStatusEnum.AUTO && this.currentMode !== BacklightStatusEnum.AUTO) {
 							this.currentMode = this.compare(res);
 							this.cacheData.currentMode = this.currentMode;
-							this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData)
+							this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData);
 							this.updateBacklightSelection();
 						}
 					}).catch(error => {
@@ -328,7 +328,7 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 	onBacklightRadioChange($event: UiCircleRadioWithCheckBoxListModel) {
 		this.currentMode = $event.value as BacklightStatusEnum;
 		this.cacheData.currentMode = this.currentMode;
-		this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData)
+		this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData);
 		if (this.currentMode === BacklightStatusEnum.AUTO) {
 			this.setKBDBacklightStatus(BacklightStatusEnum.OFF);
 			this.setAutomaticKBDBacklight(false);

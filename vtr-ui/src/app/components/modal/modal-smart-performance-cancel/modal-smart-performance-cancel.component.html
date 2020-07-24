@@ -21,14 +21,14 @@
 			</div>
 		</div>
 		<div class="row" *ngIf="!isLoading">
-			<vtr-button class="btn cancel-button" tabindex="0" (keydown.enter)="cancelScan()" (click)="cancelScan()" vtrMetrics metricsEvent="ItemClick"
-				metricsParent="Page.Support.SmartPerformance" metricsItem="btn.yes,cancel"
-				class="btn btn-link cancel-button">{{'smartPerformance.scanningPage.cancelScan.yesButton' |translate }}
-				({{secondsCountdown}})</vtr-button>
+			<button class="btn btn-link cancel-button" (keydown.enter)="cancelScan()" (click)="cancelScan()" vtrMetrics metricsEvent="ItemClick"
+				metricsParent="Page.Support.SmartPerformance" metricsItem="btn.yes,cancel">
+				{{'smartPerformance.scanningPage.cancelScan.yesButton' |translate }}
+				({{secondsCountdown}})</button>
 			<div class="py-5 ml-5">
 				<a tabindex="0" (keydown.enter)="closeModal()" (click)="closeModal()" class="resume-scan" vtrMetrics metricsEvent="ItemClick"
 					metricsParent="Page.Support.SmartPerformance"
-					metricsItem="btn.no,resumescan">{{'smartPerformance.scanningPage.cancelScan.noButton' |translate }}
+					metricsItem="btn.no,resumescan" ngbAutofocus>{{'smartPerformance.scanningPage.cancelScan.noButton' |translate }}
 					</a>
 			</div>
 		</div>
