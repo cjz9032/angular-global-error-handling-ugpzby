@@ -886,7 +886,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				customIcon: showIC >= 14 ? 'LE-IntelligentCooling2x' : 'LE-CoolingDown2x',
 				hideIcon: true,
 				processLabel: true,
-				metricsItem: 'radio.power-smart-settings.cool-and-quite'
+				metricsItem: 'radio.power-smart-settings.cool-and-quiet'
 			});
 		}
 

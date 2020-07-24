@@ -167,11 +167,11 @@
 			&:focus::after {
 				border: thin solid $orange;
 				@media #{$black-on-white} {
-						@include button-outline-blue($dark);
+					@include button-outline-blue($dark);
 				}
 
 				@media #{$white-on-black} {
-						@include button-outline-blue($light);
+					@include button-outline-blue($light);
 				}
 			}
 		}
@@ -215,27 +215,29 @@
 ::ng-deep {
 	.is-gaming {
 		.button-box {
-			.btn, .button {
+			.btn,
+			.button {
 				height: 4rem !important;
 				min-height: 4rem !important;
 				padding: 0 2rem !important;
 				background: none !important;
 				background-image: none !important;
 				background-color: $blueFill !important;
-				line-height: 4rem !important;
+				line-height: 2.86rem !important;
 				border-radius: 2rem !important;
 				-webkit-transition: 0.2s ease !important;
 				transition: 0.2s ease !important;
 				display: inline-block !important;
+				color: $gaming_lightest !important;
+				text-transform: capitalize !important;
+				font-weight: normal !important;
+				min-width: 4rem !important;
 				cursor: pointer !important;
 				-webkit-user-select: none !important;
 				-moz-user-select: none !important;
 				-ms-user-select: none !important;
 				user-select: none !important;
-				letter-spacing: 0.1rem !important;
-				font-weight: bold !important;
-				min-width: 4rem !important;
-				@media #{$high-contrast}{
+				@media #{$high-contrast} {
 					border: 0.1rem solid windowText !important;
 					background: window !important;
 					color: buttonText !important;
@@ -252,7 +254,7 @@
 
 				&:hover {
 					background-color: $blueHover !important;
-					@media #{$high-contrast}{
+					@media #{$high-contrast} {
 						background: none !important;
 						background-color: none !important;
 					}
@@ -262,9 +264,6 @@
 					transform: scale(0.96);
 				}
 
-				.text {
-					letter-spacing: inherit !important;
-				}
 				&:focus {
 					@media #{$high-contrast} {
 						&::after {

@@ -35,13 +35,19 @@
 						id="{{carouselId}}-{{cIndex}}-source"
 						[ngbTooltip]="model.source | htmlText"
 						tooltipClass="vtr-system-tooltip"
-						container="body"></h3>
+						container="body"
+						#tipCarouselSource = "ngbTooltip"
+						(mouseenter)="closeTipTimeout(tipCarouselSource)"
+						></h3>
 					<h2 class="title"
 						[innerHTML]="model.cardTitle"
 						id="{{carouselId}}-{{cIndex}}-title"
 						[ngbTooltip]="model.cardTitle | htmlText"
 						tooltipClass="vtr-system-tooltip"
-						container="body"></h2>
+						container="body"
+						#tipCarouselTitle = "ngbTooltip"
+						(mouseenter)="closeTipTimeout(tipCarouselTitle)"
+						></h2>
 				</div>
 			</a>
 		</ng-template>

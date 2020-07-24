@@ -919,6 +919,9 @@ vtr-subpage-scanning {
 						}
 					}
 				}
+				&:focus {
+					@include outline-blue;
+				}
 				.tooltip-btn {
 					box-shadow: none;
 					border: none;
@@ -940,6 +943,9 @@ vtr-subpage-scanning {
 				margin-top: 0.5rem;
 				&:hover {
 					color: $main;
+				}
+				&:focus {
+					@include outline-blue;
 				}
 			}
 		}
@@ -1049,6 +1055,9 @@ vtr-subpage-scanning {
 			text-align: center;
 			border: 0rem;
 			cursor: pointer;
+		&:focus {
+			@include outline-blue;
+		}
 
 	}
 	.cancel-link {
@@ -1063,7 +1072,7 @@ vtr-subpage-scanning {
 		padding: 0.3rem 0rem;
 		border-bottom: 0.2rem solid $menu_hover;
 		&:focus {
-			@include outline-border-blue;
+			@include outline-blue;
 		}
 	}
 	.change-scan-schedule {
@@ -1086,6 +1095,9 @@ vtr-subpage-scanning {
 			}
 			.frequency-text{
 				cursor: pointer;
+				&:focus {
+					@include outline-blue
+				}
 			}
 			&:before {
 				content: "";
@@ -1122,22 +1134,26 @@ vtr-subpage-scanning {
 				float:left;
 				border-right:1px solid #c8cbcb;
 				border-bottom:1px solid #c8cbcb;
+				&:focus {
+					@include outline-blue;
+				}
+				&:nth-child(4n+4) { 
+					border-right: none;
+				}
+				&:nth-child(25) { 
+					border-bottom: none;
+				}
+				&:nth-child(26) { 
+					border-bottom: none;
+				}
+				&:nth-child(27) { 
+					border-bottom: none;
+				}
+				&:nth-child(28) { 
+					border-bottom: none;
+				}
 			}
-			.date-text:nth-child(4n+4) { 
-				border-right: none;
-			}
-			.date-text:nth-child(25) { 
-				border-bottom: none;
-			}
-			.date-text:nth-child(26) { 
-				border-bottom: none;
-			}
-			.date-text:nth-child(27) { 
-				border-bottom: none;
-			}
-			.date-text:nth-child(28) { 
-				border-bottom: none;
-			}
+			
 			&:before {
 				content: "";
 				position: absolute;
@@ -1169,6 +1185,9 @@ vtr-subpage-scanning {
 			}
 			.days-text{
 				cursor: pointer;
+				&:focus {
+					@include outline-blue;
+				}
 			}
 			&:before {
 				content: "";
@@ -1208,6 +1227,9 @@ vtr-subpage-scanning {
 				padding-left: 2rem;
 				.hour-text{
 					cursor: pointer;
+					&:focus {
+						@include outline-blue;
+					}
 				}
 				.selected-text{
 					color: #11b85b;
@@ -1221,6 +1243,9 @@ vtr-subpage-scanning {
 				padding-left: 2rem;
 				.min-text{
 					cursor: pointer;
+					&:focus {
+						@include outline-blue;
+					}
 				}
 				.selected-text{
 					color: #11b85b;
@@ -1233,6 +1258,9 @@ vtr-subpage-scanning {
 				padding-left: 2rem;
 				.amPm-text{
 					cursor: pointer;
+					&:focus {
+						@include outline-blue;
+					}
 				}
 				.selected-text{
 					color: #11b85b;
@@ -1260,6 +1288,9 @@ vtr-subpage-scanning {
 					display: block;
 					height: 100%;
 					width: 100%;
+					&:focus {
+						@include outline-blue;
+					}
 				}
 			}
 		}
