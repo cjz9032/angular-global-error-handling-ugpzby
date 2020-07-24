@@ -36,6 +36,7 @@ export class WidgetCarouselComponent implements OnInit, OnChanges {
 
 	currentSlideId = `${this.slideIdFormat}0`;
 	isOnline = true;
+	closeTipTimer = null; 
 
 	constructor(
 		private config: NgbCarouselConfig,
@@ -159,6 +160,26 @@ export class WidgetCarouselComponent implements OnInit, OnChanges {
 			return parseInt(index, 10);
 		}
 		return -1;
+	}
+
+	/**
+	 * Close tooltip manually
+	 */
+	public closeTip(tooltip: any) {
+		if (!tooltip.isOpen()) {
+			return true;
+		}
+
+		tooltip.close();
+		if(this.closeTipTimer){
+			clearTimeout(this.closeTipTimer);
+		}
+	}
+	/**
+	 * Close tooltip after 3sec
+	 */
+	public closeTipTimeout(tooltip:any){
+		this.closeTipTimer = setTimeout(this.closeTip, 3000, tooltip);
 	}
 
 }

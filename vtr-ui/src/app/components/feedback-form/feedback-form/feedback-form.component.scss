@@ -100,6 +100,16 @@ $normalPadding: 2.4rem;
 					background-color: #fff;
 					border: 1px solid $shade_blue;
 				}
+				&:hover, &:active {
+					&::before {
+						@media #{$white-on-black} {
+							@include high-contrast-black-border;
+						}
+						@media #{$black-on-white} {
+							@include high-contrast-white-border;
+						}
+					}
+				}
 
 				&::after {
 					background: no-repeat 50%/50% 50%;

@@ -1153,6 +1153,14 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 		border-radius: 1rem;
 		background: $light;
 		padding: 1.5rem;
+		@media #{$white-on-black} {
+			box-shadow: none;
+			@include white-border;
+		}
+		@media #{$black-on-white} {
+			box-shadow: none;
+			@include black-border;
+		}
 	}
 }
 /*----- onclick-tooltip-style------*/
@@ -1429,6 +1437,14 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 			border-radius: 0.8rem;
 			background: $main_darkest;
 			margin-bottom: 5rem;
+			@media #{$white-on-black} {
+				box-shadow: none;
+				@include white-border;
+			}
+			@media #{$black-on-white} {
+				box-shadow: none;
+				@include black-border;
+			}
 			.nav-item {
 				width: calc(25% - 1rem);
 				.nav-link {
@@ -1497,6 +1513,32 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 						border-left: 20px solid transparent;
 						border-right: 20px solid transparent;
 						border-top: 20px solid $main_darkest;
+						@media #{$white-on-black} {
+							content: "";
+							width: 2rem;
+							height: 2rem;
+							bottom: -2.6rem;
+							background: $dark;
+							border: none;
+							left: calc(50% - 1rem);
+							transform: rotate(-45deg);
+							border-left: 0.1rem solid $light;
+							border-bottom: 0.1rem solid $light;
+							z-index: -1;
+						}
+						@media #{$black-on-white} {
+							content: "";
+							width: 2rem;
+							height: 2rem;
+							bottom: -2.6rem;
+							background: $light;
+							border: none;
+							left: calc(50% - 1rem);
+							transform: rotate(-45deg);
+							border-left: 0.1rem solid $dark;
+							border-bottom: 0.1rem solid $dark;
+							z-index: -1;
+						}
 					}
 					&.active {
 						background: $main_lightest !important;
@@ -1720,6 +1762,14 @@ vtr-ui-smart-performance-scanning {
 }
 
 .sidebar-widget {
+	@media #{$white-on-black} {
+		box-shadow: none;
+		@include white-border;
+	}
+	@media #{$black-on-white} {
+		box-shadow: none;
+		@include black-border;
+	}
 	.change-scan-schedule {
 		.day-dropdown {
 			&.date-picker {
@@ -2178,6 +2228,22 @@ ngb-tooltip-window.schedule-scan.tooltip {
 		}
 		@media #{$black-on-white} {
 			border-bottom: none !important;
+		}
+	}
+}
+
+.vtr-modal-smart-stand-by {
+	.activity-chart {
+		@media #{$black-on-white} {
+			text {
+				fill: $dark !important;
+			}
+		}
+
+		@media #{$white-on-black} {
+			text {
+				fill: $light !important;
+			}
 		}
 	}
 }

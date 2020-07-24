@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { NO_ERRORS_SCHEMA, Pipe, SimpleChange } from '@angular/core';
-import { EyeCareModeComponent } from './eye-care-mode.component';
-import { TranslateModule } from '@ngx-translate/core';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { NO_ERRORS_SCHEMA, SimpleChange } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { TranslateModule } from '@ngx-translate/core';
+import { EyeCareModeComponent } from './eye-care-mode.component';
 const eyeCareModeSettings = {
 	available: true,
 	current: 1,

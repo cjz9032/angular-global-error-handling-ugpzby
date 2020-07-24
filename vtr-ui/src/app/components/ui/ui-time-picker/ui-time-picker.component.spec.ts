@@ -26,7 +26,7 @@ describe('UiTimePickerComponent', () => {
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(UiTimePickerComponent);
-		commonService = TestBed.get(CommonService);
+		commonService = TestBed.inject(CommonService);
 		component = fixture.componentInstance;
 		component.time = time;
 		fixture.detectChanges();
@@ -129,7 +129,7 @@ describe('UiTimePickerComponent', () => {
 		const event = { keyCode: 32 };
 		component.handleKBNavigations(event);
 		expect(component.handleKBNavigations).toHaveBeenCalled();
-		//expect(component.onToggleDropDown).toHaveBeenCalled();
+		// expect(component.onToggleDropDown).toHaveBeenCalled();
 	});
 
 	it('#UiTimePickerComponent handleKBNavigations keycode 13 RETURN ', () => {

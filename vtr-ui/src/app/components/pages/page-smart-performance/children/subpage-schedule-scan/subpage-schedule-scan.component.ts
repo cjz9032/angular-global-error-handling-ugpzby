@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Output, EventEmitter, Input, HostListener } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter, Input, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
@@ -26,6 +26,11 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 	@Output() hideBasedOnOldAddIn = new EventEmitter();
 	@Output() hideBasedOnOldAddInSummary = new EventEmitter();
 	@Input() isOnline = true;
+	@ViewChild('selectedFrequencyList') selectedFrequencyList: ElementRef; 
+	@ViewChild('scheduledScanFrequency') scheduledScanFrequency: ElementRef;
+	@ViewChild('selectedNumberList') selectedNumberList: ElementRef;
+	@ViewChild('selectedDayList') selectedDayList: ElementRef;
+	@ViewChild('timeBlock') timeBlock: ElementRef;
 	private spTransLangEvent: Subscription;
 	selectedDate: any;
 	isSubscribed: any;
@@ -161,6 +166,9 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 	changeScanSchedule() {
 		if (this.scanToggleValue && this.isOnline) {
 			this.isChangeSchedule = true;
+			setTimeout(() => {
+				this.selectedFrequencyList.nativeElement.focus()
+			}, 10);
 		}
 	}
 	openScanScheduleDropDown(value) {
@@ -212,21 +220,33 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 			this.selectedNumber = this.dates[0]
 			this.dateValue = this.dates.indexOf(this.selectedNumber)
 		}
+		setTimeout(() => {
+			this.selectedFrequencyList.nativeElement.focus()
+		}, 10);
 	}
 	changeScanDay(value) {
 		this.dayValue = value;
 		this.scheduleTab = '';
 		this.selectedDay = this.days[value];
+		setTimeout(() => {
+			this.selectedDayList.nativeElement.focus()
+		}, 10);
 	}
 	changeScanDate(value) {
 		this.dateValue = value;
 		this.scheduleTab = '';
 		this.selectedNumber = this.dates[value];
+		setTimeout(() => {
+			this.selectedNumberList.nativeElement.focus()
+		}, 10);
 	}
 
 	cancelChangedScanSchedule() {
 		this.scheduleTab = '';
 		this.isChangeSchedule = false;
+		setTimeout(() => {
+			this.scheduledScanFrequency.nativeElement.focus()
+		}, 10);
 		this.scheduleScanFrequency = this.commonService.getLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency);
 		this.changeScanFrequency(actualScanFrequency.indexOf(this.scheduleScanFrequency));
 		if (this.isSubscribed) {
@@ -238,11 +258,17 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 
 	saveChangeScanTime() {
 		this.scheduleTab = '';
-		this.scanTime = { ...this.copyScanTime }
+		this.scanTime = { ...this.copyScanTime };
+		setTimeout(() => {
+			this.timeBlock.nativeElement.focus()
+		}, 10);
 	}
 	cancelChangeScanTime() {
 		this.scheduleTab = '';
-		this.copyScanTime = { ...this.scanTime }
+		this.copyScanTime = { ...this.scanTime };
+		setTimeout(() => {
+			this.timeBlock.nativeElement.focus()
+		}, 10);
 	}
 	changeHoursTime(value) {
 		this.copyScanTime.hour = this.hours[value];
@@ -410,6 +436,9 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 					nextScanDateWithYear: dt.split(',')[1] + '/' + dt.split(',')[2].trim() + '/' + dt.split(',')[3]
 				};
 				this.scanDatekValueChange.emit(nextScanEvent);
+				setTimeout(() => {
+					this.scheduledScanFrequency.nativeElement.focus()
+				}, 10);
 				return;
 			}
 
@@ -572,6 +601,17 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 			this.amPmPosition = false;
 		}
 	}
+
+	toggleTooltip(tooltip: any) {
+			if (tooltip.isOpen()) {
+				tooltip.close();
+				return;
+			} 
+			if (!tooltip.isOpen()) {
+				tooltip.open();
+				return;
+			}
+		}
 
 	ngOnDestroy() {
 		if (this.spTransLangEvent) {

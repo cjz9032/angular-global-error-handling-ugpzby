@@ -29,6 +29,7 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
   public lightingProfileById:any;
   public lightingPanelImage:any = new LightingDataList().lightingPanelImage;
   public lightingPanelImageT750:any = new LightingDataList().lightingPanelImageT750;
+  public lightingPanelImageT550AMD:any = new LightingDataList().lightingPanelImageT550AMD;
   public lightingEffectRgbData:any = new LightingDataList().lightingEffectRgbData;
   public lightingEffectSingleData:any = new LightingDataList().lightingEffectSingleData;
   public isEffectChange:boolean;
@@ -385,6 +386,8 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
             currentNameImg = this.getCurrentName(this.lightingPanelImage,this.lightingProfileCurrentDetail.lightPanelType);
           }else if(this.ledlayoutversion === 5){ // x750
             currentNameImg = this.getCurrentName(this.lightingPanelImageT750,this.lightingProfileCurrentDetail.lightPanelType);
+          }else if(this.ledlayoutversion === 4){ //T550AMD
+            currentNameImg = this.getCurrentName(this.lightingPanelImageT550AMD,this.lightingProfileCurrentDetail.lightPanelType);
           }
           if(currentNameImg.length > 0){
             this.lightingProfileCurrentDetail.panelName = currentNameImg[0].panelName;
@@ -396,6 +399,14 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
               this.lightingProfileCurrentDetail.panelImage = 'assets/images/gaming/lighting/lighting-ui-new/T550_water_cold.png';
             }else if(this.ledlayoutversion === 5 && lightingCapabilitiesRes.LightPanelType.indexOf(16)>-1){
               this.lightingProfileCurrentDetail.panelImage = 'assets/images/gaming/lighting/lighting-ui-new/T750_water.png';
+            }else if(this.ledlayoutversion === 4 && lightingCapabilitiesRes.LightPanelType.indexOf(16)>-1){
+              this.lightingProfileCurrentDetail.panelImage = 'assets/images/gaming/lighting/lighting-ui-new/T550AMD_water.png';
+              if(this.lightingProfileCurrentDetail.lightPanelType === 128){
+                this.lightingProfileCurrentDetail.pathUrl = "M112,74.863197 L112.916507,74.8674839 C126.299053,74.9928726 137,77.8531206 137,81.363197 C137,84.9131607 126.054468,87.7984431 112.459257,87.8621223 L112,87.863197 C98.1928813,87.863197 87,84.9530479 87,81.363197 C87,77.7733462 98.1928813,74.863197 112,74.863197 Z M142.080665,63 L142.080665,76.8631566 L141.194164,76.8083655 C130.186845,76.0682405 122,73.2702241 122,69.9315783 C122,66.5039019 130.629298,63.646073 142.080665,63 Z";
+                this.lightingProfileCurrentDetail.panelName = "gaming.lightingNewversion.machineName.name6";
+              }else if(this.lightingProfileCurrentDetail.lightPanelType === 32){
+                this.lightingProfileCurrentDetail.panelName = "gaming.lightingNewversion.machineName.name3";
+              }
             }else{
               this.lightingProfileCurrentDetail.panelImage = currentNameImg[0].panelImage;
             }
@@ -520,25 +531,27 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
   public imgDefaultOff(){
      if(this.currentProfileId === 0){
        if(this.ledlayoutversion === 3){
-          if(this.lightingCapabilities.LightPanelType.indexOf(4)>-1){
-            this.lightingProfileCurrentDetail.panelImage = "assets/images/gaming/lighting/lighting-ui-new/T550_wind_cold.png";
-          }else if(this.lightingCapabilities.LightPanelType.indexOf(16)>-1){
-            this.lightingProfileCurrentDetail.panelImage = "assets/images/gaming/lighting/lighting-ui-new/T550_water_cold.png";
-          }else if(this.lightingCapabilities.LightPanelType.indexOf(64)>-1){
-            this.lightingProfileCurrentDetail.panelImage = "assets/images/gaming/lighting/lighting-ui-new/T550_big_y.png";
-          }else if(this.lightingCapabilities.LightPanelType.indexOf(128)>-1){
-            this.lightingProfileCurrentDetail.panelImage = "assets/images/gaming/lighting/lighting-ui-new/T550G_front_line.png";
-          }else if(this.lightingCapabilities.LightPanelType.indexOf(256)>-1){
-            this.lightingProfileCurrentDetail.panelImage = "assets/images/gaming/lighting/lighting-ui-new/T550_front.png";
-          }
+          this.getCurrentPanelImg(4,'assets/images/gaming/lighting/lighting-ui-new/T550_wind_cold.png');
+          this.getCurrentPanelImg(16,'assets/images/gaming/lighting/lighting-ui-new/T550_water_cold.png');
+          this.getCurrentPanelImg(64,'assets/images/gaming/lighting/lighting-ui-new/T550_big_y.png');
+          this.getCurrentPanelImg(128,'assets/images/gaming/lighting/lighting-ui-new/T550G_front_line.png');
+          this.getCurrentPanelImg(256,'assets/images/gaming/lighting/lighting-ui-new/T550_front.png');
        }else if(this.ledlayoutversion === 5){
-        if(this.lightingCapabilities.LightPanelType.indexOf(16)>-1){
-          this.lightingProfileCurrentDetail.panelImage = 'assets/images/gaming/lighting/lighting-ui-new/T750_water.png';
-        }else if(this.lightingCapabilities.LightPanelType.indexOf(4)>-1){
-          this.lightingProfileCurrentDetail.panelImage = 'assets/images/gaming/lighting/lighting-ui-new/T750_wind.png';
-        }
+         this.getCurrentPanelImg(4,'assets/images/gaming/lighting/lighting-ui-new/T750_wind.png');
+         this.getCurrentPanelImg(16,'assets/images/gaming/lighting/lighting-ui-new/T750_water.png');
+         this.getCurrentPanelImg(256,'assets/images/gaming/lighting/lighting-ui-new/T750_fct.png');
+       }else if(this.ledlayoutversion === 4){
+         this.getCurrentPanelImg(4,'assets/images/gaming/lighting/lighting-ui-new/T550AMD_wind.png');
+         this.getCurrentPanelImg(16,'assets/images/gaming/lighting/lighting-ui-new/T550AMD_water.png');
+         this.getCurrentPanelImg(256,'assets/images/gaming/lighting/lighting-ui-new/T550AMD_fct.png');
        }
      }
+  }
+
+  public getCurrentPanelImg(panelId,imgUrl) {
+    if(this.lightingCapabilities.LightPanelType.indexOf(panelId) > -1){
+      this.lightingProfileCurrentDetail.panelImage = imgUrl;
+    }
   }
 
   public publicPageInfo(response,key){

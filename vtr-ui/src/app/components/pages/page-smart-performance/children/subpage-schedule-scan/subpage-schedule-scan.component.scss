@@ -350,6 +350,25 @@ vtr-subpage-scanning {
 	border-radius: 0.8rem;
 	background: $light;
 	.pc-info-card{
+		@media #{$white-on-black} {
+			box-shadow: none;
+			@include white-border;
+			border-bottom: none;
+			background: none;
+			margin-top: 0 !important;
+			margin-bottom: 0 !important;
+			padding-top: 3rem;
+			padding-bottom: 3rem;
+		}
+		@media #{$black-on-white} {
+			box-shadow: none;
+			@include black-border;
+			border-bottom: none;
+			background: none;
+			margin-bottom: 0 !important;
+			padding-top: 3rem;
+			padding-bottom: 3rem;
+		}
         &::ng-deep {
             ngb-accordion{
                 .card {
@@ -363,6 +382,12 @@ vtr-subpage-scanning {
                         background-color: transparent;
 						border-bottom: none;
 						.btn-link{
+							@media #{$white-on-black} {
+								border: none;
+							}
+							@media #{$black-on-white} {
+								border: none;
+							}
 							&:hover, &:focus{
 								text-decoration: none;
 							}
@@ -551,6 +576,18 @@ vtr-subpage-scanning {
 		@media #{$breakpoint_xl}{
 			padding: 0 2.4rem;
 		}
+		@media #{$white-on-black} {
+			box-shadow: none;
+			@include white-border;
+			border-bottom: none;
+			background: none;
+		}
+		@media #{$black-on-white} {
+			box-shadow: none;
+			@include black-border;
+			border-bottom: none;
+			background: none;
+		}
 		h1 {
 			color: $light;
 			font-size: 3.4rem;
@@ -605,6 +642,9 @@ vtr-subpage-scanning {
 				font-size: 1.2rem;
 				padding:0rem 2.5rem;					
 			}
+			@include ui-button-high-contrast-black;
+			@include ui-button-high-contrast-white;
+			@include high-contrast-adjust;
 		}
 	}
 	.performance-slider-block {
@@ -632,6 +672,18 @@ vtr-subpage-scanning {
 			z-index: 0;
 			background-color: #52ffeb;
 			background-image: linear-gradient(90deg, #52ffeb 25%, #04ff5d 100%);
+			@media #{$white-on-black} {
+				background-image: none;
+				background: $light;
+				box-shadow: none;
+				@include white-border;
+			}
+			@media #{$black-on-white} {
+				background-image: none;
+				background: $dark;
+				box-shadow: none;
+				@include black-border;
+			}
 			&::after{
 				position: absolute;
 				content: '';
@@ -695,12 +747,26 @@ vtr-subpage-scanning {
 					left: 0%;
 					text-shadow: 0 0 1rem $dark;
 					transition: all 1s ease-in-out;
+					@media #{$white-on-black} {
+						@include high-contrast-adjust;
+					}
+					@media #{$black-on-white} {
+						@include high-contrast-adjust;
+					}
 				}
 				.line{
 					width: 0.1rem;
 					height: 2rem;
 					margin-top: 0.5rem;
 					border-left: 0.2rem dotted $main_lightest;
+					@media #{$white-on-black} {
+						border-left: 0.4rem dotted $dark;
+						@include high-contrast-adjust;
+					}
+					@media #{$black-on-white} {
+						border-left: 0.4rem dotted $light;
+						@include high-contrast-adjust;
+					}
 					&::after {
 						counter-increment: lines;
 						content: counter(lines);
@@ -737,6 +803,16 @@ vtr-subpage-scanning {
 	}
 	.summary-block{
 		padding: 3rem 3rem 0;
+		@media #{$white-on-black} {
+			box-shadow: none;
+			@include white-border;
+			background: none;
+		}
+		@media #{$black-on-white} {
+			box-shadow: none;
+			@include black-border;
+			background: none;
+		}
 		.title-big{
 			font-size: 3.5rem;
 			font-weight: $weight_light;
@@ -774,6 +850,9 @@ vtr-subpage-scanning {
 				padding: 0 2.4rem;
 				font-size: 1.2rem;
 			}
+			@include ui-button-high-contrast-black;
+			@include ui-button-high-contrast-white;
+			@include high-contrast-adjust;
 		}
 		.desc {
 			font-size: 1.6rem;
@@ -800,6 +879,14 @@ vtr-subpage-scanning {
 	background-color: $light;
 	box-shadow: 0 0 1.5rem 0 $screen_dark_15;
 	padding: 2.2rem;
+	@media #{$white-on-black} {
+		box-shadow: none;
+		@include white-border;
+	}
+	@media #{$black-on-white} {
+		box-shadow: none;
+		@include black-border;
+	}
 	.title {
 		font-size: 2.5rem;
 		font-weight: 500;
@@ -911,6 +998,9 @@ vtr-subpage-scanning {
 						}
 					}
 				}
+				&:focus {
+					@include outline-blue;
+				}
 				.tooltip-btn {
 					box-shadow: none;
 					border: none;
@@ -932,6 +1022,9 @@ vtr-subpage-scanning {
 				margin-top: 0.5rem;
 				&:hover {
 					color: $main;
+				}
+				&:focus {
+					@include outline-blue;
 				}
 			}
 		}
@@ -982,6 +1075,12 @@ vtr-subpage-scanning {
 	&.recommended-action{
 		background-color: #526fff;
 		background-image: linear-gradient(45deg, #526fff 25%, #f175fd 100%);
+		@media #{$white-on-black} {
+			background-image: none;
+		}
+		@media #{$black-on-white} {
+			background-image: none;
+		}
 		.title{
 			color: $light;
 			text-transform: uppercase;
@@ -1026,6 +1125,9 @@ vtr-subpage-scanning {
 			border: 0rem;
 			cursor: pointer;
 			width: 100%;
+			@include ui-button-high-contrast-black;
+			@include ui-button-high-contrast-white;
+			@include high-contrast-adjust;
 		}
 	}
 	.save-button{
@@ -1041,6 +1143,9 @@ vtr-subpage-scanning {
 			text-align: center;
 			border: 0rem;
 			cursor: pointer;
+		&:focus {
+			@include outline-blue;
+		}
 
 	}
 	.cancel-link {
@@ -1055,7 +1160,7 @@ vtr-subpage-scanning {
 		padding: 0.3rem 0rem;
 		border-bottom: 0.2rem solid $menu_hover;
 		&:focus {
-			@include outline-border-blue;
+			@include outline-blue;
 		}
 	}
 	.change-scan-schedule {
@@ -1078,6 +1183,9 @@ vtr-subpage-scanning {
 			}
 			.frequency-text{
 				cursor: pointer;
+				&:focus {
+					@include outline-blue
+				}
 			}
 			&:before {
 				content: "";
@@ -1114,22 +1222,26 @@ vtr-subpage-scanning {
 				float:left;
 				border-right:1px solid #c8cbcb;
 				border-bottom:1px solid #c8cbcb;
+				&:focus {
+					@include outline-blue;
+				}
+				&:nth-child(4n+4) { 
+					border-right: none;
+				}
+				&:nth-child(25) { 
+					border-bottom: none;
+				}
+				&:nth-child(26) { 
+					border-bottom: none;
+				}
+				&:nth-child(27) { 
+					border-bottom: none;
+				}
+				&:nth-child(28) { 
+					border-bottom: none;
+				}
 			}
-			.date-text:nth-child(4n+4) { 
-				border-right: none;
-			}
-			.date-text:nth-child(25) { 
-				border-bottom: none;
-			}
-			.date-text:nth-child(26) { 
-				border-bottom: none;
-			}
-			.date-text:nth-child(27) { 
-				border-bottom: none;
-			}
-			.date-text:nth-child(28) { 
-				border-bottom: none;
-			}
+			
 			&:before {
 				content: "";
 				position: absolute;
@@ -1161,6 +1273,9 @@ vtr-subpage-scanning {
 			}
 			.days-text{
 				cursor: pointer;
+				&:focus {
+					@include outline-blue;
+				}
 			}
 			&:before {
 				content: "";
@@ -1200,6 +1315,9 @@ vtr-subpage-scanning {
 				padding-left: 2rem;
 				.hour-text{
 					cursor: pointer;
+					&:focus {
+						@include outline-blue;
+					}
 				}
 				.selected-text{
 					color: #11b85b;
@@ -1213,6 +1331,9 @@ vtr-subpage-scanning {
 				padding-left: 2rem;
 				.min-text{
 					cursor: pointer;
+					&:focus {
+						@include outline-blue;
+					}
 				}
 				.selected-text{
 					color: #11b85b;
@@ -1225,6 +1346,9 @@ vtr-subpage-scanning {
 				padding-left: 2rem;
 				.amPm-text{
 					cursor: pointer;
+					&:focus {
+						@include outline-blue;
+					}
 				}
 				.selected-text{
 					color: #11b85b;
@@ -1252,6 +1376,9 @@ vtr-subpage-scanning {
 					display: block;
 					height: 100%;
 					width: 100%;
+					&:focus {
+						@include outline-blue;
+					}
 				}
 			}
 		}

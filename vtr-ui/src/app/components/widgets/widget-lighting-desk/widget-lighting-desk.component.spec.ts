@@ -344,6 +344,15 @@ describe('WidgetLightingDeskComponent', () => {
         component.ledlayoutversion = 5;
         component.lightingProfileDetail(lightingProfileByIdRes,count,lightingCapabilitiesRes);
         expect(component.lightingProfileDetail(lightingProfileByIdRes,count,lightingCapabilitiesRes)).toBeUndefined();
+        component.ledlayoutversion = 4;
+        component.lightingProfileDetail(lightingProfileByIdRes,count,lightingCapabilitiesRes);
+        expect(component.lightingProfileDetail(lightingProfileByIdRes,count,lightingCapabilitiesRes)).toBeUndefined();
+        lightingProfileByIdRes.lightInfo[0].lightPanelType = 128;
+        component.lightingProfileDetail(lightingProfileByIdRes,count,lightingCapabilitiesRes);
+        expect(component.lightingProfileCurrentDetail.panelName).toMatch("gaming.lightingNewversion.machineName.name6");
+        lightingProfileByIdRes.lightInfo[0].lightPanelType = 32;
+        component.lightingProfileDetail(lightingProfileByIdRes,count,lightingCapabilitiesRes);
+        expect(component.lightingProfileCurrentDetail.panelName).toMatch("gaming.lightingNewversion.machineName.name3");
         lightingCapabilitiesRes.LightPanelType = [0];
         component.lightingProfileDetail(lightingProfileByIdRes,count,lightingCapabilitiesRes);
         expect(component.lightingProfileDetail(lightingProfileByIdRes,count,lightingCapabilitiesRes)).toBeUndefined();
@@ -396,6 +405,27 @@ describe('WidgetLightingDeskComponent', () => {
         component.imgDefaultOff();
         tick(10);
         expect(component.lightingProfileCurrentDetail.panelImage).toMatch("assets/images/gaming/lighting/lighting-ui-new/T750_wind.png");
+
+        component.currentProfileId = 0;
+        component.ledlayoutversion = 4;
+        component.lightingCapabilities.LightPanelType = [4];
+        component.imgDefaultOff();
+        tick(10);
+        expect(component.lightingProfileCurrentDetail.panelImage).toMatch("assets/images/gaming/lighting/lighting-ui-new/T550AMD_wind.png");
+
+        component.currentProfileId = 0;
+        component.ledlayoutversion = 4;
+        component.lightingCapabilities.LightPanelType = [16];
+        component.imgDefaultOff();
+        tick(10);
+        expect(component.lightingProfileCurrentDetail.panelImage).toMatch("assets/images/gaming/lighting/lighting-ui-new/T550AMD_water.png");
+
+        component.currentProfileId = 0;
+        component.ledlayoutversion = 4;
+        component.lightingCapabilities.LightPanelType = [256];
+        component.imgDefaultOff();
+        tick(10);
+        expect(component.lightingProfileCurrentDetail.panelImage).toMatch("assets/images/gaming/lighting/lighting-ui-new/T550AMD_fct.png");
 
         component.lightingCapabilities.LightPanelType = [3];
         component.imgDefaultOff();

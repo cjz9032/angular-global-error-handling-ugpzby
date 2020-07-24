@@ -33,6 +33,18 @@
 				padding-left: 2.4rem;
 				padding-right: 2.4rem;
 			}
+			@media #{$white-on-black} {
+				box-shadow: none;
+				@include white-border;
+				border-bottom: none;
+				background: none;
+			}
+			@media #{$black-on-white} {
+				box-shadow: none;
+				@include black-border;
+				border-bottom: none;
+				background: none;
+			}
 			.hero-content {
 				max-width: 60rem;
 				margin: auto;
@@ -107,11 +119,17 @@
 				overflow: hidden;
 				text-overflow: ellipsis;
 				white-space: nowrap;
+				&:focus {
+					@include outline-blue
+				}
 				@media #{$breakpoint_sm}{
 					font-size: 1.2rem;
 					padding:0rem 2.5rem;
 					margin-bottom:-1rem;
 				}
+				@include ui-button-high-contrast-black;
+				@include ui-button-high-contrast-white;
+				@include high-contrast-adjust;
 			}
 			.disabled-button{
 				background: $main_shade;
@@ -139,6 +157,16 @@
 		}
 		.pc-performance-block {
 			padding: 2.5rem 2.5rem 0 2.5rem;
+			@media #{$white-on-black} {
+				box-shadow: none;
+				@include white-border;
+				border-bottom: none;
+			}
+			@media #{$black-on-white} {
+				box-shadow: none;
+				@include black-border;
+				border-bottom: none;
+			}
 			h1 {
 				font-size: 3rem;
 				font-weight: $weight_light;
@@ -193,6 +221,16 @@
 					background: linear-gradient(to right, #d02928, #d73f26, #dd5124, #e26222, #e77222, #de7d15, #d48708, #c99000, #ad9500, #909700, #729816, #51982c);
 					border-radius: 2rem;
 					position: relative;
+					@media #{$white-on-black} {
+						background: $light;
+						box-shadow: none;
+						@include white-border;
+					}
+					@media #{$black-on-white} {
+						background: $dark;
+						box-shadow: none;
+						@include black-border;
+					}
 					.condition {
 						padding: 0 1.5rem;
 						font-size: 1rem;
@@ -220,6 +258,14 @@
 							height: 2rem;
 							margin-top: 0.5rem;
 							border-left: 0.2rem dotted $main_lightest;
+							@media #{$white-on-black} {
+								border-left: 0.4rem dotted $dark;
+								@include high-contrast-adjust;
+							}
+							@media #{$black-on-white} {
+								border-left: 0.4rem dotted $light;
+								@include high-contrast-adjust;
+							}
 							&::after {
 								counter-increment: lines;
 								content: counter(lines);
@@ -489,6 +535,16 @@
 				.tabset-main{
 					.nav-tabs {
 						.nav-item {
+							@media #{$white-on-black} {
+								box-shadow: none;
+								@include white-border;
+								background: none;
+							}
+							@media #{$black-on-white} {
+								box-shadow: none;
+								@include black-border;
+								background: none;
+							}
 							&:last-child {
 								position: relative;
 								&:before {
@@ -496,9 +552,23 @@
 									content: '\2605';
 									top: -0.1rem;
 									left: 0.5rem;
-									color: #fff;
+									color: $light;
 									font-size: 2rem;
 									z-index: 9;
+									@media #{$white-on-black} {
+										color: $dark;
+										z-index: 10;
+										@include high-contrast-adjust;
+										top: -0.4rem;
+										left: 0.2rem;
+									}
+									@media #{$black-on-white} {
+										color: $light;
+										z-index: 10;
+										@include high-contrast-adjust;
+										top: -0.4rem;
+										left: 0.2rem;
+									}
 								}
 								&:after {
 									position: absolute;
@@ -512,11 +582,39 @@
 									left: -1.8rem;
 									transform: rotate(-45deg);
 									z-index: 5;
+									@media #{$white-on-black} {
+										content: "▼";
+										font-size: 7rem;
+										border: none;
+										background: none;
+										transform: rotateZ(135deg) rotateX(56deg) translateX(-40px) translateY(-105px);
+										bottom: -1.6rem;
+										@include high-contrast-adjust;
+										color: $light;
+										z-index: 9;
+									}
+									@media #{$black-on-white} {
+										content: "▼";
+										font-size: 7rem;
+										border: none;
+										background: none;
+										transform: rotateZ(135deg) rotateX(56deg) translateX(-40px) translateY(-105px);
+										bottom: -1.6rem;
+										@include high-contrast-adjust;
+										color: $dark;
+										z-index: 9;
+									}
 								}
 								.nav-link{
 									box-sizing: border-box;
 									border: 0.2rem solid $main !important;
 									position: relative;
+									@media #{$white-on-black} {
+										border: none !important;
+									}
+									@media #{$black-on-white} {
+										border: none !important;
+									}
 								}
 							}
 						}
@@ -531,6 +629,14 @@
 			border-bottom-right-radius: 1rem;
 			@media #{$breakpoint_sm}{
 				padding: 2.4rem;
+			}
+			@media #{$white-on-black} {
+				box-shadow: none;
+				@include white-border;
+			}
+			@media #{$black-on-white} {
+				box-shadow: none;
+				@include black-border;
 			}
 			.contents {
 				display: flex;
@@ -560,6 +666,9 @@
 					overflow: hidden;
 					text-overflow: ellipsis;
 					white-space: nowrap;
+					&:focus {
+						@include outline-blue
+					}
 					@media #{$breakpoint_md}{
 						margin-right: 2rem;
 					}
@@ -568,6 +677,9 @@
 						max-width: 15.2rem;
 						padding:0rem 1rem;
 					}
+					@include ui-button-high-contrast-black;
+					@include ui-button-high-contrast-white;
+					@include high-contrast-adjust;
 				}
 				.disabled-button {
 					border-radius: 2.5rem;
@@ -692,6 +804,14 @@
 		background-color: $light;
 		box-shadow: 0 0 1.5rem 0 $screen_dark_15;
 		padding: 2.4rem;
+		@media #{$white-on-black} {
+			box-shadow: none;
+			@include white-border;
+		}
+		@media #{$black-on-white} {
+			box-shadow: none;
+			@include black-border;
+		}
 		.title {
 			font-size: 2.5rem;
 			font-weight: 500;
@@ -816,6 +936,12 @@
 		&.recommended-action{
 			background-color: #526fff;
 			background-image: linear-gradient(45deg, #526fff 25%, #f175fd 100%);
+			@media #{$white-on-black} {
+				background-image: none;
+			}
+			@media #{$black-on-white} {
+				background-image: none;
+			}
 			.title{
 				color: $light;
 				text-transform: uppercase;
@@ -857,6 +983,12 @@
 				border: 0rem;
 				cursor: pointer;
 				width: 100%;
+				&:focus {
+					@include outline-blue
+				}
+				@include ui-button-high-contrast-black;
+				@include ui-button-high-contrast-white;
+				@include high-contrast-adjust;
 			}
 		}
 	}
@@ -918,6 +1050,7 @@
 			@media #{$mediaquery_X4} {
 				min-width: 10rem;
 			}
+			@include high-contrast-adjust;
 		}
 	}
 }

@@ -15,6 +15,12 @@
                     border-bottom: none;
                     .btn-link{
                         width: 100%;
+                        @media #{$white-on-black} {
+                            border: none;
+                        }
+                        @media #{$black-on-white} {
+                            border: none;
+                        }
                         &:before{								
                             content: "\e9b9";
                             font-family: "icomoon";

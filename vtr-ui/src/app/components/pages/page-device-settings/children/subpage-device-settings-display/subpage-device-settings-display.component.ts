@@ -1,12 +1,12 @@
 import { AfterViewInit, Component, EventEmitter, NgZone, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ChangeContext } from 'ng5-slider';
 import { EMPTY, Subject, Subscription } from 'rxjs';
 import { takeWhile } from 'rxjs/operators';
 import { CameraBlur } from 'src/app/data-models/camera/camera-blur-model';
 import { CameraDetail, CameraFeatureAccess, CameraSettingsResponse, EyeCareModeResponse } from 'src/app/data-models/camera/camera-detail.model';
 import { EyeCareMode, SunsetToSunriseStatus } from 'src/app/data-models/camera/eyeCareMode.model';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 import { EyeCareModeCapability } from 'src/app/data-models/device/eye-care-mode-capability.model';
@@ -23,7 +23,6 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { Md5 } from 'ts-md5';
 import { WhiteListCapability } from '../../../../../data-models/eye-care-mode/white-list-capability.interface';
-import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-display',
@@ -268,13 +267,13 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 			});
 
 		if (this.windowsObj) {
-			this.cameraAccessChangedHandler = async(args: any) => {
+			this.cameraAccessChangedHandler = async (args: any) => {
 				this.isAllInOneMachineFlag = await this.isAllInOneMachine();
 				if (args && this.isAllInOneMachineFlag) {
 					this.getCameraDetails();
 					this.getCameraPrivacyModeStatus();
 				}
-			}
+			};
 			this.windowsObj.addEventListener('accesschanged', this.cameraAccessChangedHandler);
 		}
 	}
@@ -322,7 +321,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		this.isCameraPreviewHidden = this.commonService.getLocalStorageValue(LocalStorageKey.IsCameraPreviewHidden, false);
 
 		if (privacy && privacy.available !== undefined) {
-			if(shouldCameraSectionDisabled !== undefined) {
+			if (shouldCameraSectionDisabled !== undefined) {
 				this.shouldCameraSectionDisabled = shouldCameraSectionDisabled;
 			}
 			this.cameraPrivacyModeStatus.available = privacy.available;
@@ -769,7 +768,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 					this.onSetChangeDisplayColorTemp({ value: 3400 });
 				}
 			}
-		})
+		});
 	}
 
 	setEyeCareModeStatus(value: boolean) {
@@ -860,7 +859,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		}
 	}
 	public onSunsetToSunrise($featureStatus: any) {
-		this.sunsetToSunriseModeStatus.status = $featureStatus.status
+		this.sunsetToSunriseModeStatus.status = $featureStatus.status;
 		try {
 			this.logger.debug('sunset to sunrise event', $featureStatus);
 			if (this.displayService.isShellAvailable) {

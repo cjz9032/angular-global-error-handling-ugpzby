@@ -10,7 +10,7 @@ import { MetricService } from 'src/app/services/metric/metrics.service';
 import { UiRoundedRectangleCustomRadioListComponent } from './ui-rounded-rectangle-custom-radio-list.component';
 import { By } from '@angular/platform-browser';
 
-let radioDetailsModel = [
+const radioDetailsModel = [
 	{
 		componentId: 'thinkpad-special-key-radio-button',
 		label: `device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.sFunKey`,
@@ -133,14 +133,14 @@ describe('UiRoundedRectangleCustomRadioListComponent', () => {
 		component = fixture.componentInstance;
 		component.radioDetails = Object.assign([], radioDetailsModel);
 		component.groupName = groupName;
-		metricService = TestBed.get(MetricService);
+		metricService = TestBed.inject(MetricService);
 		component.sendMetrics = true;
 		fixture.detectChanges();
 
 		const spy = spyOn(metricService, 'sendMetrics');
 		const spyInvokeSelectionChangeEvent = spyOn<any>(component, 'invokeSelectionChangeEvent').and.callThrough();
 		const id = spyInvokeSelectionChangeEvent.call(component, radioDetailsModel[1]);
-		expect(spy).toHaveBeenCalled()
+		expect(spy).toHaveBeenCalled();
 	});
 
 
