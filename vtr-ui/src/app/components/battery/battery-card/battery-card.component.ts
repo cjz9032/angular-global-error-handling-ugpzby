@@ -126,9 +126,16 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	}
 
 	private registerBatteryEvents() {
+		// triggers when power supply i.e. Adapter connected/disconnected
 		this.powerSupplyStatusEventRef = this.onPowerSupplyStatusEvent.bind(this);
+
+		// triggers when updated percentage value is sent
 		this.remainingPercentageEventRef = this.onRemainingPercentageEvent.bind(this);
+
+		// triggers when updated time value is sent
 		this.remainingTimeEventRef = this.onRemainingTimeEvent.bind(this);
+
+		// triggers when change in gauge reset info
 		this.powerBatteryGaugeResetEventRef = this.onPowerBatteryGaugeResetEvent.bind(this);
 		this.powerBatteryStatusEventRef = this.onPowerBatteryStatusEvent.bind(this);
 
@@ -167,6 +174,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		// temp
 		this.registerBatteryEvents();
 
+		// to open battery details modal from toolbar
 		this.activatedRouteSubscription = this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
 			if (params.has('batterydetail')) {
 				const showBatteryDetail = this.activatedRoute.snapshot.queryParams.batterydetail;
@@ -181,17 +189,17 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.bctInfoSubscription = this.batteryService.getChargeThresholdInfo()
 			.subscribe((value: ChargeThreshold[]) => {
 				this.onPowerBatteryStatusEvent(value);
-			});
+		});
 
 		this.airplaneModeSubscription = this.batteryService.getAirplaneMode()
 			.subscribe((value: FeatureStatus) => {
-				this.batteryIndicator.isAirplaneMode = value.available && value.status;
-			});
+			this.batteryIndicator.isAirplaneMode = value.available && value.status;
+		});
 
 		this.expressChargingSubscription = this.batteryService.getExpressCharging()
 			.subscribe((value: FeatureStatus) => {
-				this.batteryIndicator.expressCharging = value.available && value.status;
-			});
+			this.batteryIndicator.expressCharging = value.available && value.status;
+		});
 	}
 
 	ngOnDestroy() {
@@ -214,27 +222,45 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.batteryService.stopMonitor();
 	}
 
+	/**
+	 * Called when power supply status changes
+	 * @param info: Updated battery information
+	 */
 	onPowerSupplyStatusEvent(info: any) {
 		this.setBatteryCard(info, 'onPowerSupplyStatusEvent');
 	}
 
+	/**
+	 * Called when battery percentage changes
+	 * @param info: Updated battery information
+	 */
 	onRemainingPercentageEvent(info: any) {
 		this.setBatteryCard(info, 'onRemainingPercentageEvent');
 	}
 
+	/**
+	 * Called battery remaining time changes
+	 * @param info: Updated battery information
+	 */
 	onRemainingTimeEvent(info: any) {
 		this.setBatteryCard(info, 'onRemainingTimeEvent');
 	}
 
+	/**
+	 * Called when battery gauge  reset info is updated
+	 * @param info: Updated battery information
+	 */
 	onPowerBatteryGaugeResetEvent(info: BatteryGaugeReset[]) {
 		this.logger.info('onPowerBatteryGaugeResetEvent: Information', info);
 		let isGaugeResetRunning = false;
 		const gaugeResetInfo: BatteryGaugeReset[] = this.commonService.cloneObj(info);
 		if (gaugeResetInfo) {
+			// Set Global time format of machine
 			if (typeof Windows !== 'undefined') {
 				const formatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter(' shorttime');
 				this.commonService.setSystemTimeFormat(formatter.clock === '12HourClock');
 			}
+
 			gaugeResetInfo.forEach((battery) => {
 				isGaugeResetRunning = isGaugeResetRunning || battery.isResetRunning;
 				if (battery.FCCBefore && battery.FCCAfter) {
@@ -265,6 +291,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	/**
+	 * Get battery details to show battery card on first time load
+	 */
 	public getBatteryDetailOnCard() {
 		try {
 			if (this.batteryService.isShellAvailable) {
@@ -277,6 +306,11 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	/**
+	 * Gets called every 30s or on some event triggers to set ba
+	 * @param response battery information
+	 * @param methodName name of method it has been called from
+	 */
 	setBatteryCard(response, methodName = 'Battery Info') {
 		if (response) {
 			this.logger.info(methodName + ' : ', response);
@@ -357,15 +391,22 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			this.batteryHealth = this.batteryInfo[0].batteryHealth;
 			this.batteryService.isAcAttached = this.batteryGauge.isAttached;
 			this.batteryService.remainingPercentages = remainingPercentages;
+			// if true, then machine supports temporary charge mode, used to show tooltip at
+			// full charge capacity in Battery Details Popup
 			this.batteryService.isTemporaryChargeMode = this.batteryInfo[0].isTemporaryChargeMode;
+			// if True, then High Density Battery is supported, and used to show note in
+			// BCT confirmation window
 			this.batteryService.isDlsPiCapable = this.batteryInfo[0].isDlsPiCapable;
 		} else {
 			this.batteryIndicator.batteryNotDetected = false;
 		}
 
 		const powerDriverStatus = this.batteryGauge.isPowerDriverMissing;
+		// boolean indicator to disable/enable battery details button
 		this.disableBatteryDetails = powerDriverStatus ||
 			this.batteryIndicator.batteryNotDetected || batteryErrorCount === this.batteryInfo.length;
+
+		// Send value of isPowerDriverMissing if it's updated to Power SubPage
 		if (powerDriverStatus !== this.batteryService.isPowerDriverMissing) {
 			this.batteryService.isPowerDriverMissing = powerDriverStatus;
 			this.commonService.sendNotification('IsPowerDriverMissing', this.batteryService.isPowerDriverMissing);
@@ -401,14 +442,17 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			this.batteryConditionStatus = this.getConditionState(this.batteryHealth);
 
 			if (this.isThinkPad) {
+				// Store limitation tip for fair & bad condition
 				if (this.batteryHealth === 1 || this.batteryHealth === 2) {
 					healthCondition = BatteryConditionsEnum.StoreLimitation;
 					const percentLimit = (this.batteryInfo[0].fullChargeCapacity / this.batteryInfo[0].designCapacity) * 100;
 					this.param = { value: parseFloat(percentLimit.toFixed(1)) };
 				}
 
+				// Start Battery not detected or Primary Battery not detected logic
 				if (this.batteryHealth === 4) {
 					if (this.batteryInfo.length > 1) {
+						// In case of dual battery
 						if (this.batteryInfo[1].batteryHealth === 4) {
 							this.batteryIndicator.batteryNotDetected = true;
 							healthCondition = 4;
@@ -422,8 +466,13 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				} else {
 					this.batteryIndicator.batteryNotDetected = false;
 				}
+				// End Battery not detected or Primary Battery not detected logic
 			}
+
+			// Used so that UnsupportedBattery tip will not show more than once
 			this.isUnsupportedBattery = false;
+
+			// batteryCondition will always have  batteryCondition = ['normal'] for now, and will only use first case with different value for healthCondition(ie. batteryHealth)
 			this.batteryInfo[0].batteryCondition.forEach((condition) => {
 				switch (condition.toLocaleLowerCase()) {
 					case 'normal':
@@ -451,7 +500,10 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				}
 			});
 		}
+		// if isInvalidBattery is true, battery charge threshold is disabled.
 		this.batteryService.isInvalidBattery = this.isUnsupportedBattery || this.batteryHealth === 3;
+
+		// Added after batteryCondition code so that tip related to adapter will always be shown at end
 		if (!(this.batteryIndicator.batteryNotDetected || this.batteryService.isPowerDriverMissing)) {
 
 			// AcAdapter conditions hidden for IdeaPad & IdeaCenter machines
@@ -470,32 +522,44 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 						break;
 				}
 			}
+			// End adapter conditions code
 		}
 
 		this.batteryConditions = batteryConditions;
 		this.logger.info('Battery Conditions ====>', this.batteryConditions);
+
+		// Updated battery information is sent to BatteryDetailsComponent
 		this.commonService.sendNotification(BatteryInformation.BatteryInfo, { detail: this.batteryInfo, indicator: this.batteryIndicator, conditions: this.batteryConditions });
 
 		this.setConditionTips();
 
+		// Below code is used to manually trigger the changes in child component (BatteryIndicatorComponent)
 		if (this.cd !== null && this.cd !== undefined &&
 			!(this.cd as ViewRef).destroyed) {
 			this.cd.detectChanges();
 		}
+		// End code
 
 		// temp cache battery condition
 		this.commonService.setLocalStorageValue(LocalStorageKey.BatteryCondition, this.batteryConditions);
 	}
 
+	/**
+	 * creates an array of condition notes(i.e. path to translation strings)
+	 */
 	setConditionTips() {
 		this.batteryConditionNotes = [];
 
 		this.batteryConditions.forEach((batteryCondition) => {
+			// get the full path of the condition tip in nls translation json file
 			let translation = batteryCondition.getBatteryConditionTip(batteryCondition.condition);
+
+			// to display short tips of adapter conditions
 			if (batteryCondition.conditionStatus === this.batteryStatus.AcAdapterStatus && batteryCondition.condition !== this.batteryConditionsEnum.FullACAdapterSupport
 				&& !this.shortAcErrNote) {
 				translation += 'Detail';
 			}
+			// End short tips
 			this.batteryConditionNotes.push(translation);
 		});
 	}
@@ -526,6 +590,10 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	/**
+	 * Shows detailed tip instead of short tip for a battery condition of given index
+	 * @param index: index of a condition in batteryConditionNotes array
+	 */
 	showDetailTip(index: number) {
 		this.shortAcErrNote = false;
 		this.batteryConditionNotes[index] = this.batteryConditionNotes[index] + 'Detail';
