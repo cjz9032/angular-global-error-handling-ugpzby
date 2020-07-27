@@ -3186,15 +3186,15 @@
         "NA": "Nem alk."
     },
     "smartPerformance": {
-        "title": "Health & Support",
-        "back": "BACK",
-        "performanceandSecurityCheckTitle": "Performance & Security Check",
-        "performanceandSecurityCheckSubTitle": "Let's diagnose and resolve performance and security issues in your computer",
-        "scanButton": "FREE PC SCAN",
-        "section1Heading": "How would you rate your PC Performance?",
-        "section1Description": "PC running slow? Applications taking too long to respond? Windows errors? Malware concerns? Let's diagnose whats's causing the problem and fix it.",
-        "critical": "CRITICAL",
-        "allisWell": "ALL IS WELL",
+        "title": "Smart Performance",
+        "back": "VISSZA",
+        "performanceandSecurityCheckTitle": "Teljesítmény és biztonsági ellenőrzés",
+        "performanceandSecurityCheckSubTitle": "Diagnosztizáljuk és oldjuk meg a számítógépe teljesítménnyel és biztonsággal kapcsolatos problémáit",
+        "scanButton": "INGYENES SZÁMÍTÓGÉP-ELLENŐRZÉS",
+        "section1Heading": "Hogyan értékelné a számítógépe teljesítményét?",
+        "section1Description": "Lassú a számítógép? Túl lassan reagálnak az alkalmazások? Windows-hibákat tapasztal? Aggódik a kártevők miatt? Keressük meg a probléma okát, és orvosoljuk a helyzetet!",
+        "critical": "FONTOS",
+        "allisWell": "MINDEN MEGFELELŐ",
         "zero": 0,
         "one": 1,
         "two": 2,
@@ -3206,654 +3206,654 @@
         "eight": 8,
         "nine": 9,
         "ten": 10,
-        "tuneUP": "Your PC needs a tune-up",
-        "section2Heading": "Top-notch PC Performance. Always",
-        "section2Description": "Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+        "tuneUP": "A számítógépre ráférne egy kis finomhangolás",
+        "section2Heading": "Tökéletes teljesítmény. Mindig",
+        "section2Description": "Szoftverünk képes bármikor proaktívan ellenőrizni a számítógépét, és megkeresni, majd kijavítani a felmerülő problémákat, így gépe mindig kiemelkedő teljesítményt tud nyújtani.",
         "tunePCPerformance": {
-            "title": "TUNE PC PERFORMANCE",
-            "heading": "Show your computer some extra love",
-            "description": "Even the best computer will benefit from periodic tune-ups. Get a tune-up and get more done with our powerful app.",
+            "title": "A SZÁMÍTÓGÉP TELJESÍTMÉNYÉNEK NÖVELÉSE",
+            "heading": "Szenteljen egy kis figyelmet a számítógépének",
+            "description": "Időnként még a legjobb számítógépre is ráfér egy kis finomhangolás. Frissítse fel a gépét, és dolgozzon hatékonyabban e nagyszerű alkalmazás segítségével!",
             "tabSet1": {
-                "tab1": "Accumulated Junk",
-                "tab2": "Usability Issues",
-                "tab3": "Windows Settings",
-                "tab4": "Systems Errors",
-                "tab5": "Registry Errors"
+                "tab1": "Felgyűlt szemét",
+                "tab2": "Használhatósággal kapcsolatos problémák",
+                "tab3": "A Windows beállításai",
+                "tab4": "Rendszerhibák",
+                "tab5": "Beállításjegyzék-hibák"
             },
             "tabSet2": {
-                "tab1Heading": "IT'S EASY",
-                "tab1Description": "We don't confuse you with tech mumbo jumbp",
-                "tab2Heading": "IT'S FAST",
-                "tab2Description": "Get a 100 point check done in under 5 minutes",
-                "tab3Heading": "IT'S SAFE",
-                "tab3Description": "No scareware, built with best practises"
+                "tab1Heading": "KÖNNYŰ",
+                "tab1Description": "Nem fárasztjuk érthetetlen szakzsargonnal",
+                "tab2Heading": "GYORS",
+                "tab2Description": "A 100 pontos ellenőrzés kevesebb mint 5 perc alatt lefut",
+                "tab3Heading": "BIZTONSÁGOS",
+                "tab3Description": "Bevált gyakorlatok alapján dolgoztuk ki, nem riogatjuk feleslegesen"
             },
-            "summaryTitle": "Tune PC Performance"
+            "summaryTitle": "A számítógép teljesítményének növelése"
         },
         "boostInternetPerformance": {
-            "title": "BOOST INTERNET PERFORMANCE",
-            "extraTitle": "INTERNET PERFORMANCE",
-            "heading": "Give your internet a boost",
-            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "title": "AZ INTERNETEZÉSI TELJESÍTMÉNY NÖVELÉSE",
+            "extraTitle": "INTERNETEZÉSI TELJESÍTMÉNY",
+            "heading": "Gyorsítsa fel az internetet",
+            "description": "Sokak számára a lassú Wi-Fi vagy a Wi-Fi hiánya olyan, mintha elvágnák őket a civilizációtól. Konfiguráljuk az internet, a Wi-Fi-hálózat és a böngésző beállításait, hogy optimális teljesítményt érhessen el.",
             "tabSet1": {
-                "tab1": "Network Settings",
-                "tab2": "Browser Settings",
-                "tab3": "Browser Security",
-                "tab4": "Wi-Fi Performance",
-                "tab5": "E-junk"
+                "tab1": "Elektronikus szemét",
+                "tab2": "Hálózati beállítások",
+                "tab3": "Böngészőbeállítások",
+                "tab4": "A böngésző biztonsága",
+                "tab5": "Wi-Fi-teljesítmény"
             },
             "tabSet2": {
-                "tab1Heading": "ZERO DAY VIRUS",
-                "tab1Description": "We remove even the newest malware infections",
-                "tab2Heading": "SPYWARE REMOVAL",
-                "tab2Description": "We remove all potentially unwanted programs",
-                "tab3Heading": "LIGHT AND FAST",
-                "tab3Description": "Scan typically takes 5-10 minutes"
+                "tab1Heading": "BÖNGÉSZŐVEL KAPCSOLATOS PROBLÉMÁK",
+                "tab1Description": "Minden népszerű internetes böngészőt beállítunk és megjavítunk.",
+                "tab2Heading": "KAPCSOLÓDÁSI HIBÁK",
+                "tab2Description": "Alkalmazásunk képes diagnosztizálni és helyrehozni a kapcsolódási problémákat.",
+                "tab3Heading": "LASSÚ INTERNET",
+                "tab3Description": "Segítünk a lehető legjobb teljesítményt kihozni az internetből."
             },
-            "summaryTitle": "Internet Performance"
+            "summaryTitle": "Internetezési teljesítmény"
         },
         "malwareSecurity": {
-            "title": "MALWARE & SECURITY",
-            "heading": "Give your internet a boost",
-            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "title": "KÁRTEVŐK ÉS BIZTONSÁG",
+            "heading": "Szenteljen egy kevés figyelmet a gépének",
+            "description": "A kártevők hatására a számítógépe összeomolhat, az adatok megsérülhetnek, a teljesítmény pedig lecsökkenhet. Szabaduljon meg a kártevőktől, és élvezze szolgáltatásunk további előnyeit!",
             "tabSet1": {
-                "tab1": "Malware scan",
-                "tab2": "Zero-day infections",
-                "tab3": "Security settings",
-                "tab4": "Errant programs",
-                "tab5": "Annoying adware"
+                "tab1": "Kártevők keresése",
+                "tab2": "Ismeretlen fertőzések",
+                "tab3": "Hibásan működő programok",
+                "tab4": "Bosszantó hirdetések",
+                "tab5": "Biztonsági beállítások"
             },
             "tabSet2": {
-                "tab1Heading": "SLOW INTERNET",
-                "tab1Description": "We will help you get maximum performance.",
-                "tab2Heading": "CONNECTIVITY ERRORS",
-                "tab2Description": "We can diagnose and repair your connectivity problems.",
-                "tab3Heading": "BROWSER ISSUES",
-                "tab3Description": "We configure and fix all your popular web browsers."
+                "tab1Heading": "ISMERETLEN VÍRUS",
+                "tab1Description": "Még a legújabb kártevőket is sikeresen eltávolítjuk",
+                "tab2Heading": "KÉMPROGRAMOK ELTÁVOLÍTÁSA",
+                "tab2Description": "Minden potenciálisan nemkívánatos programot eltávolítunk",
+                "tab3Heading": "KÖNNYŰ ÉS GYORS",
+                "tab3Description": "A keresés jellemzően 5-10 percet vesz igénybe"
             },
-            "summaryTitle": "Malware & Security"
+            "summaryTitle": "Kártevők és biztonság"
         },
         "proactiveAutomated": {
-            "title": "PROACTIVE & AUTOMATED",
-            "heading": "Get the power to resolve issues, before they impact you!",
-            "description": "Smart Performance constantly looks for hundreads of issues that impact PC performance. We fix them proactively, giving you peace of mind.",
+            "title": "PROAKTÍV ÉS AUTOMATIZÁLT",
+            "heading": "Vegye elejét a problémáknak, mielőtt gondot okoznának!",
+            "description": "A Smart Performance folyamatosan figyeli azt a több száz problémás esetet, amelyek befolyásolhatják a számítógépek teljesítményét. Proaktívan orvosoljuk a problémákat, így Ön nyugodtan alhat.",
             "tabSet1": {
-                "tab1": "Schedule Scan",
-                "tab2": "On-demand scan",
-                "tab3": "Automated resolution",
-                "tab4": "It's effective",
-                "tab5": "24/7 Protection"
+                "tab1": "Ellenőrzés ütemezése",
+                "tab2": "Igény szerint indítható ellenőrzés",
+                "tab3": "Automatizált megoldások",
+                "tab4": "Hatásos",
+                "tab5": "Védelem éjjel-nappal"
             },
             "tabSet2": {
-                "tab1Heading": "IT'S EASY",
-                "tab1Description": "We don't confuse you with tech mumbo jumbp",
-                "tab2Heading": "IT'S FAST",
-                "tab2Description": "Get a 100 point check done in under 5 minutes",
-                "tab3Heading": "IT'S SAFE",
-                "tab3Description": "No scareware, built with best practises"
+                "tab1Heading": "KÖNNYŰ",
+                "tab1Description": "Nem fárasztjuk érthetetlen szakzsargonnal",
+                "tab2Heading": "GYORS",
+                "tab2Description": "A 100 pontos ellenőrzés kevesebb mint 5 perc alatt lefut",
+                "tab3Heading": "BIZTONSÁGOS",
+                "tab3Description": "Bevált gyakorlatok alapján dolgoztuk ki, nem riogatjuk feleslegesen"
             }
         },
-        "startScan": "<b>Ready to start the scan?</b> Let's diagnose and resolve performance and security issues in your computer",
+        "startScan": "<b>Készen áll az ellenőrzés elindítására?</b> Diagnosztizáljuk a számítógépe teljesítménnyel és biztonsággal kapcsolatos problémáit!",
         "subscriptionDetails": {
-            "title": "Subscription details",
-            "description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
-            "learnMore": "Learn more",
-            "startDate": "Start date",
-            "endDate": "End date",
-            "status": "Status",
-            "activeStatus": "ACTIVE",
-            "inactiveStatus": "INACTIVE",
-            "manageSubscription": "MANAGE SUBSCRIPTION",
-            "titlebeta": "Lenovo Beta Program",
-            "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
-            "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
-            "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+            "title": "Előfizetési adatok",
+            "description": "Ön előfizetett a Lenovo Smart Performance szolgáltatásra. Az előfizetés időtartama alatt az összes szolgáltatás teljes körűen a rendelkezésére áll a számítógépe védelme és zökkenőmentes működésének biztosítása érdekében.",
+            "learnMore": "További tudnivalók",
+            "startDate": "Kezdő dátum",
+            "endDate": "Záró dátum",
+            "status": "Állapot",
+            "activeStatus": "AKTÍV",
+            "inactiveStatus": "INAKTÍV",
+            "manageSubscription": "ELŐFIZETÉS KEZELÉSE",
+            "titlebeta": "Lenovo bétaprogram",
+            "manageSubscriptionBeta": "TELJES FUNKCIÓKÉSZLET ENGEDÉLYEZÉSE",
+            "descriptionbeta": "A Lenovo 2020 júliusáig lehetővé teszi a Smart Performance funkció kipróbálását.",
+            "descriptionbeta1": "Ön a próbaprogram ideje alatt korlátlanul használhatja a teljes funkciókészletet.",
+            "descriptionNonSubscriber": "Ön nem fizetett elő a Lenovo Smart Performance szolgáltatásra. Csak a számítógép ellenőrzésére van lehetősége. Fizessen elő most, és élvezze a számítógép védelmével és zökkenőmentes működésének biztosításával járó előnyöket.",
             "processStatus": "FELDOLGOZÁS"
         },
         "scanSettings": {
-            "title": "Scan settings",
-            "description": "Enable or disable the scan and set the scan schedule",
-            "enableScan": "Enable Scan",
-            "changeScanTitle": "Change scan schedule",
-            "changeScanDescription": "Edit the scan schedule to run when you need it.",
-            "frequency": "Frequency",
-            "txtDate": "Date",
-            "txtDay": "Day",
-            "txtTime": "Time",
-            "txtSave": "save",
-            "txtCancel": "cancel",
-            "scanFrequencyWeek": "Once a week",
-            "scanFrequencyEveryWeek": "Every other week",
-            "scanFrequencyMonth": "Every month",
-            "mon": "Monday",
-            "tue": "Tuesday",
-            "wed": "Wednesday",
-            "thu": "Thursday",
-            "fri": "Friday",
-            "sat": "Saturday",
-            "sun": "Sunday",
+            "title": "Ellenőrzés ütemezésével kapcsolatos beállítások",
+            "description": "Engedélyezze vagy tiltsa le az ellenőrzést, és állítsa be az ellenőrzés ütemezését",
+            "enableScan": "Ellenőrzés engedélyezése",
+            "changeScanTitle": "Ellenőrzés ütemezésének módosítása",
+            "changeScanDescription": "Az ütemterv módosításával beállíthatja, hogy mikor szeretné lefuttatni az ellenőrzést.",
+            "frequency": "Gyakoriság",
+            "txtDate": "Dátum",
+            "txtDay": "nap",
+            "txtTime": "Idő",
+            "txtSave": "mentés",
+            "txtCancel": "mégse",
+            "scanFrequencyWeek": "Hetente egyszer",
+            "scanFrequencyEveryWeek": "Kéthetente",
+            "scanFrequencyMonth": "Havonta",
+            "mon": "Hétfő",
+            "tue": "Kedd",
+            "wed": "Szerda",
+            "thu": "Csütörtök",
+            "fri": "Péntek",
+            "sat": "Szombat",
+            "sun": "Vasárnap",
             "am": "de.",
             "pm": "du.",
-            "tooltipText": "Enable this toggle to automatically initiate a system performance scan on your selected date and time."
+            "tooltipText": "A váltógomb bekapcsolásával a rendszerteljesítmény és biztonság ellenőrzése automatikusan elindul a megadott dátumon és időpontban."
         },
         "scanningPage": {
-            "title": "Performance & security check",
-            "description": "Please wait while we scan your system for potential problems and threats.",
-            "scanningSystem": "Scanning system",
-            "complete": "complete",
+            "title": "Teljesítmény- és biztonsági ellenőrzés",
+            "description": "Várjon, amíg megkeressük a rendszeren a potenciális problémákat és fenyegetéseket.",
+            "scanningSystem": "Rendszer ellenőrzése",
+            "complete": "kész",
             "cancelScan": {
-                "button": "CANCEL SCAN",
-                "title": "Cacel the scan?",
-                "description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
-                "yesButton": "YES, CANCEL",
-                "noButton": "NO, RESUME SCAN",
+                "button": "ELLENŐRZÉS MEGSZAKÍTÁSA",
+                "title": "Megszakítja az ellenőrzést?",
+                "description": "Ha elhagyja ezt a képernyőt, az ellenőrzés megszakad, Önt pedig átirányítjuk a kezdőoldalra. Az ellenőrzést azonban bármikor ismét elindíthatja.",
+                "yesButton": "IGEN, MEGSZAKÍTOM",
+                "noButton": "NEM, FOLYTATOM AZ ELLENŐRZÉST",
                 "cancelMayTakeSomeTime": "Kérjük, várjon, a megszakítás a rendszertől függően hosszabb időt vehet igénybe.",
                 "cancelTextPrompt": "Biztosan megszakítja a műveletet?"
             },
-            "waiting": "WAITING TO SCAN",
-            "completed": "COMPLETED",
+            "waiting": "VÁRAKOZÁS AZ ELLENŐRZÉSRE",
+            "completed": "KÉSZ",
             "nowScanningDetail": {
-                "cardTitle": "NOW SCANNING DETAIL",
-                "current": "CURRENT: ",
-                "upNext": "UP NEXT",
-                "tunePCDesc": "Let’s help improve your PC performance. We do it safely using industry best practices. Benefits for subscribers include reduced PC start time, improved performance, improved stability and faster launch of applications.",
-                "boostDesc": "Let’s help enhance your browsing experience. Let's fix network and access issues. Benefits for subscribers include betterment in internet connectivity, improvement in upload/download speeds and making internet more secure.",
-                "malwareDesc": "Let’s help quickly secure your PC, on-demand. We do it by removing spyware, malware and adware. We also remove near/zero-day infections. Benefits for subscribers include security of data and optimal system performance.",
-                "proactiveDesc": "Let's tune your computer periodically and fix issues, Proactive and automated to keep your PC tuned and covered. Always",
+                "cardTitle": "AKTUÁLISAN ELLENŐRZÖTT ELEMEK",
+                "current": "AKTUÁLIS: ",
+                "upNext": "KÖVETKEZŐ:",
+                "tunePCDesc": "Segítünk, hogy számítógépe jobb teljesítményt nyújtson. Az ellenőrzést az iparágban bevált gyakorlatok alapján dolgoztuk ki, így teljesen biztonságos. Az előfizetők többek között a számítógép és az alkalmazások gyorsabb elindulására, a számítógép jobb teljesítményére, valamint nagyobb stabilitásra számíthatnak.",
+                "boostDesc": "Segítünk a böngészési élmény javításában. Javítsuk ki a hálózati és a hozzáférési problémákat! Az előfizetők az internetkapcsolat minőségének javulására, jobb feltöltési/letöltési sebességre, valamint biztonságosabb internethasználatra számíthatnak.",
+                "malwareDesc": "Bármikor segítünk biztonságosabbá tenni a számítógépét. Ennek érdekében eltávolítjuk a kémprogramokat, a kártevőket és a hirdetőprogramokat. Az ismeretlen fertőzésektől is megszabadítjuk. Az előfizetők nagyobb biztonságban tudhatják az adataikat, és optimális rendszerteljesítményre számíthatnak.",
+                "proactiveDesc": "Időnként érdemes átvizsgálni a számítógépet, és megoldani a problémákat. Proaktív és automatizált megoldásunk jó karban tartja az Ön számítógépét, amely így mindig tettre készen fogja várni Önt! Mindig",
                 "tunePCScanningItems": {
                     "accumulatedJunk": {
-                        "itema1": "Look for junk in 85 locations",
-                        "itema2": "System log files that aren’t needed",
-                        "itema3": "Unnecessary application residues",
-                        "itema4": "Temporary files that clog diskspace",
-                        "itema5": "Files that you deleted so long ago",
-                        "itema6": "Outdated errors and alerts"
+                        "itema1": "Felesleges fájlok keresése 85 helyen",
+                        "itema2": "Szükségtelen rendszernaplófájlok",
+                        "itema3": "Szükségtelen alkalmazásmaradványok",
+                        "itema4": "Merevlemezt terhelő ideiglenes fájlok",
+                        "itema5": "Régóta törölt fájlok",
+                        "itema6": "Már nem releváns hibák és riasztások"
                     },
                     "usabilityIssues": {
-                        "itemb1": "Address dozens of usability challenges",
-                        "itemb2": "Check external devices connectivity",
-                        "itemb3": "Keeping Windows updates always current",
-                        "itemb4": "Do apps render and appear at its best",
-                        "itemb5": "Analyzing processing power utilization",
-                        "itemb6": "Help locate files easily"
+                        "itemb1": "Megoldás több tucat használhatósággal kapcsolatos problémára",
+                        "itemb2": "A külső eszközökkel való kapcsolat ellenőrzése",
+                        "itemb3": "A Windows folyamatos frissítése",
+                        "itemb4": "Alkalmazások megfelelő renderelésének és megjelenítésének ellenőrzése",
+                        "itemb5": "A feldolgozási teljesítmény kihasználtságának elemzése",
+                        "itemb6": "A fájlok egyszerű megkeresése"
                     },
                     "windowsSettings": {
-                        "itemc1": "Diagnose dozens of Windows OS settings",
-                        "itemc2": "Ensure all is well with your Windows",
-                        "itemc3": "Ensure essential services are running",
-                        "itemc4": "Check health of connectivity settings",
-                        "itemc5": "Check ability to share files in network",
-                        "itemc6": "Check biometric and access settings"
+                        "itemc1": "A Windows operációs rendszer több tucat beállításának diagnosztizálása",
+                        "itemc2": "A Windows megfelelő állapotának biztosítása",
+                        "itemc3": "Az alapvető szolgáltatások működésének biztosítása",
+                        "itemc4": "Az állapot- és csatlakoztathatósági beállítások ellenőrzése",
+                        "itemc5": "A fájlok hálózaton belüli sikeres megosztásának ellenőrzése",
+                        "itemc6": "A biometrikus és hozzáférési beállítások ellenőrzése"
                     },
                     "systemErrors": {
-                        "itemd1": "Ensure essential services are running",
-                        "itemd2": "Select services for higher performance",
-                        "itemd3": "Look for software conflict errors",
-                        "itemd4": "Optimize Windows error management",
-                        "itemd5": "Check and fix apps launching errors",
-                        "itemd6": "Configure system error reports"
+                        "itemd1": "Az alapvető szolgáltatások működésének biztosítása",
+                        "itemd2": "Nagyobb teljesítményt nyújtó szolgáltatások kiválasztása",
+                        "itemd3": "Szoftverütközésekkel kapcsolatos hibák megkeresése",
+                        "itemd4": "A Windows-hibakezelés optimalizálása",
+                        "itemd5": "Az alkalmazások indításával kapcsolatos problémák ellenőrzése és javítása",
+                        "itemd6": "A rendszer hibajelentéseinek konfigurálása"
                     },
                     "registryErrors": {
-                        "iteme1": "Deep check Windows registry,",
-                        "iteme2": "Scanning for invalid Windows services",
-                        "iteme3": "Finding corrupted registry entries",
-                        "iteme4": "Look for useless file extensions",
-                        "iteme5": "Search broken entries of installed apps",
-                        "iteme6": "Look for useless leftover entries"
+                        "iteme1": "A Windows-beállításjegyzék mélyreható ellenőrzése",
+                        "iteme2": "Érvénytelen Windows-szolgáltatások keresése",
+                        "iteme3": "Sérült beállításjegyzék-bejegyzések keresése",
+                        "iteme4": "Nem hasznos fájlkiterjesztések keresése",
+                        "iteme5": "A telepített alkalmazások hibás bejegyzéseinek keresése",
+                        "iteme6": "Nem hasznos maradékbejegyzések keresése"
                     }
                 },
                 "boostScanningItems": {
                     "networkSettings": {
-                        "itema1": "Diagnose network and Internet settings",
-                        "itema2": "Verify network configuration settings",
-                        "itema3": "Verify available network settings",
-                        "itema4": "Configure to load websites faster",
-                        "itema5": "Look for page rendering errors",
-                        "itema6": "Are connection service(s) running well"
+                        "itema1": "A hálózati és internetes beállítások diagnosztizálása",
+                        "itema2": "Hálózati konfigurációs beállítások ellenőrzése",
+                        "itema3": "Rendelkezésre álló hálózati beállítások ellenőrzése",
+                        "itema4": "A webhelyek gyorsabb betöltésére szolgáló konfigurációk",
+                        "itema5": "Oldalmegjelenítési hibák megkeresése",
+                        "itema6": "Jól működnek-e a csatlakozási szolgáltatások?"
                     },
                     "browserSettings": {
-                        "itemb1": "Enable better browsing experience",
-                        "itemb2": "Configure settings faster websites rendering",
-                        "itemb3": "Ensure browser security services are OK",
-                        "itemb4": "Ensure webpages are rendering properly",
-                        "itemb5": "Check settings for faster downloads",
-                        "itemb6": "Check permissions and access control"
+                        "itemb1": "Jobb böngészési élmény lehetővé tétele",
+                        "itemb2": "Beállítások konfigurálása a webhelyek gyorsabb megjelenítéséhez",
+                        "itemb3": "A böngészőn belüli biztonsági szolgáltatások megfelelőségének biztosítása",
+                        "itemb4": "A weboldalak megfelelő megjelenítésének biztosítása",
+                        "itemb5": "Gyorsabb letöltéseket lehetővé tévő beállítások ellenőrzése",
+                        "itemb6": "Engedélyek és hozzáférés-szabályozás ellenőrzése"
                     },
                     "browserSecurity": {
-                        "itemc1": "Ensure security services are running",
-                        "itemc2": "Configure browser security features",
-                        "itemc3": "Check network services are running well",
-                        "itemc4": "Configure protocol settings",
-                        "itemc5": "Verify Browser content settings are OK",
-                        "itemc6": "Verify browser plugins & extensions"
+                        "itemc1": "A biztonsági szolgáltatások működésének biztosítása",
+                        "itemc2": "A böngésző biztonsági funkcióinak beállítása",
+                        "itemc3": "A hálózati szolgáltatások megfelelő működésének ellenőrzése",
+                        "itemc4": "Protokollbeállítások konfigurálása",
+                        "itemc5": "Böngészőtartalmakra vonatkozó beállítások megfelelőségének ellenőrzése",
+                        "itemc6": "A böngésző beépülő moduljainak és kiterjesztéseinek ellenőrzése"
                     },
                     "wifiPerformance": {
-                        "itemd1": "Optimize Wi-Fi experience settings",
-                        "itemd2": "Ensure your home network is secure",
-                        "itemd3": "Check Wi-Fi services settings",
-                        "itemd4": "Secure network sharing settings",
-                        "itemd5": "Check Wi-Fi security standards",
-                        "itemd6": "Ensure Wi-Fi channels do not overlap"
+                        "itemd1": "A Wi-Fi-élmény beállításainak optimalizálása",
+                        "itemd2": "Az otthoni hálózat biztonságának garantálása",
+                        "itemd3": "A Wi-Fi-szolgáltatások beállításainak ellenőrzése",
+                        "itemd4": "Hálózatmegosztási beállítások biztonságossá tétele",
+                        "itemd5": "A Wi-Fi biztonsági előírásainak ellenőrzése",
+                        "itemd6": "A Wi-Fi-csatornák átfedésének kiküszöbölése"
                     },
                     "eJunk": {
-                        "iteme1": "Eliminate clutter from 4 browsers",
-                        "iteme2": "Look for leftover e-junk",
-                        "iteme3": "Look for outdated internet files",
-                        "iteme4": "Clear unwanted web cache",
-                        "iteme5": "Clear cookies",
-                        "iteme6": "Remove browser residues"
+                        "iteme1": "A rendetlenség felszámolása a böngészőkben",
+                        "iteme2": "Megmaradt elektronikus szemét keresése",
+                        "iteme3": "Elavult internetes fájlok keresése",
+                        "iteme4": "Nemkívánatos internetes gyorsítótár törlése",
+                        "iteme5": "Cookie-k törlése",
+                        "iteme6": "A böngészőmaradványok eltávolítása"
                     }
                 },
                 "malwareScanningItems": {
                     "malwareScan": {
-                        "itema1": "Scan common loading points",
-                        "itema2": "Check critical locations for threats",
-                        "itema3": "Check for virus, spyware and malware",
-                        "itema4": "Scan for 50+ file types",
-                        "itema5": "Scan for malware remnants",
-                        "itema6": "Leverage from cloud remediation engine"
+                        "itema1": "A közös betöltési pontok ellenőrzése",
+                        "itema2": "A veszélyek szempontjából kritikus helyek ellenőrzése",
+                        "itema3": "Vírusok, kémprogramok és kártevők ellenőrzése",
+                        "itema4": "Több mint 50 fájltípus ellenőrzése",
+                        "itema5": "A kártevők maradványainak ellenőrzése",
+                        "itema6": "Felhőalapú szervizelési motor"
                     },
                     "zerodayInfections": {
-                        "itemb1": "Look for zero-day virus",
-                        "itemb2": "Look for recent, undiagnosed malware",
-                        "itemb3": "Scan with cloud-based remediation",
-                        "itemb4": "Perform behavioral monitoring",
-                        "itemb5": "Scan files with aggregated engine",
-                        "itemb6": "Scan against latest definitions"
+                        "itemb1": "Ismeretlen vírusok keresése",
+                        "itemb2": "Közelmúltbeli, nem diagnosztizált kártevők keresése",
+                        "itemb3": "Felhőalapú szervizelés és elemzések",
+                        "itemb4": "Viselkedésmegfigyelés",
+                        "itemb5": "Fájlok ellenőrzése aggreagált motorokkal",
+                        "itemb6": "Legújabb definíciók szerinti ellenőrzés"
                     },
                     "securitySettings": {
-                        "itemc1": "Keep Windows updates always current",
-                        "itemc2": "Ensure Windows firewall service is OK",
-                        "itemc3": "Keep browser settings secure",
-                        "itemc4": "Check essential security services",
-                        "itemc5": "Configure user access settings",
-                        "itemc6": "Verify authentication services"
+                        "itemc1": "A Windows folyamatos frissítése",
+                        "itemc2": "A Windows-tűzfalszolgáltatás megfelelőségének biztosítása",
+                        "itemc3": "A böngészőbeállítások biztonságának megőrzése",
+                        "itemc4": "Alapvető biztonsági szolgáltatások ellenőrzése",
+                        "itemc5": "Felhasználói hozzáférési beállítások konfigurálása",
+                        "itemc6": "Hitelesítési szolgáltatások ellenőrzése"
                     },
                     "errantPrograms": {
-                        "itemd1": "Look for errant apps",
-                        "itemd2": "Look for potentially unwanted apps",
-                        "itemd3": "Detect inactive and hidden apps",
-                        "itemd4": "Verify apps for malicious behavior",
-                        "itemd5": "Check apps based on reputation factor",
-                        "itemd6": "Check errant programs in registry"
+                        "itemd1": "Hibásan működő alkalmazások keresése",
+                        "itemd2": "Potenciálisan nemkívánatos alkalmazások keresése",
+                        "itemd3": "Inaktív és rejtett alkalmazások észlelése",
+                        "itemd4": "Rosszindulatú viselkedés ellenőrzése az alkalmazásoknál",
+                        "itemd5": "Alkalmazások ellenőrzése megítélés alapján",
+                        "itemd6": "Hibásan működő programok keresése a beállításjegyzékben"
                     },
                     "annoyingAdware": {
-                        "iteme1": "Look for browser(s) adware",
-                        "iteme2": "Revise browser(s) pop-up settings",
-                        "iteme3": "Eliminate browser re-direction threats",
-                        "iteme4": "Check for adware leftovers",
-                        "iteme5": "Optimize browser experience settings",
-                        "iteme6": "verify in cloud remediation engine"
+                        "iteme1": "A böngésző(k) hirdetési programjainak keresése",
+                        "iteme2": "A böngésző(k) felugró beállításainak felülvizsgálata",
+                        "iteme3": "A böngésző átirányításával járó veszélyek kiküszöbölése",
+                        "iteme4": "Hirdetőprogram-maradványok ellenőrzése",
+                        "iteme5": "A böngészési élmény beállításainak optimalizálása",
+                        "iteme6": "Elenőrzés a felhőbeli szervizelési motor segítségével"
                     }
                 }
             },
-            "confirmationTitle": "Lenovo Payment Process",
-            "confirmationNote": "You will be directed to Lenovo Payment Website to finish the payment. Once the payment is done, you can press the \"refresh\" button in \"Subscription Detail\" to get the payment result.",
-            "confirmationBtn": "Proceed",
-            "refreshButton": "Refresh Status"
+            "confirmationTitle": "A Lenovo fizetési folyamata",
+            "confirmationNote": "A kifizetés befejezéséhez a rendszer átirányítja a Lenovo kifizetési weboldalára. A kifizetést követően megnyomhatja a „Frissítés” gombot az „Előfizetés adatai” lehetőségnél, ahol megtekintheti a kifizetés eredményét.",
+            "confirmationBtn": "Folytatás",
+            "refreshButton": "Állapot frissítése"
         },
         "scanCompletePage": {
-            "title": "System scan is complete",
-            "description": "Here is what we found on your ",
-            "scanRates": "Our scan rates your PC at: ",
-            "summary": "Summary",
-            "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
-            "signupRepairButton": "SIGN UP & REPAIR NOW",
-            "monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
-            "issueCount": "{{individualIssueCount}} ISSUES",
-            "scannedAreas": "SCANNED AREAS",
+            "title": "A rendszer ellenőrzése befejeződött",
+            "description": "A következőket találtuk ",
+            "scanRates": "Ellenőrzésünk során számítógépe a következő értékelést kapta: ",
+            "summary": "Összegzés",
+            "summaryDetails": "Ellenőrzésünk az alábbi területeken fedett fel <b>{{issueCount}} problémá(ka)t</b>. Fizessen elő, hogy orvosolhassuk a problémákat, és rendszere zökkenőmentesen működhessen. Szoftverünkkel bármikor proaktívan ellenőrizhetjük a rendszer érintett területeit a felmerülő problémák azonosításához és javításához, így gépe mindig kiemelkedő teljesítményt nyújt majd.",
+            "signupRepairButton": "ELŐFIZETÉS ÉS JAVÍTÁS",
+            "monthlyPricing": "<b>Kevesebb mint havi $2.</b> Ezeket a problémákat automatikusan orvosoljuk. Először ma, aztán minden soron következő héten <a  href=\"#\">További tudnivalók</a>",
+            "issueCount": "{{individualIssueCount}} PROBLÉMÁK",
+            "scannedAreas": "ELLENŐRZÖTT TERÜLETEK",
             "recommendedAction": {
-                "title": "RECOMMENDED ACTION",
-                "description": "We will automatically fix these issues. Once today and every week thereafter",
-                "yearlyPricing": "$29.99 / Yr",
-                "monthlyPricing": "LESS THAN $2 PER MONTH.",
-                "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP"
+                "title": "AJÁNLOTT LÉPÉSEK",
+                "description": "Ezeket a problémákat automatikusan orvosoljuk. Először ma, aztán minden soron következő héten",
+                "yearlyPricing": "$29,99/év",
+                "monthlyPricing": "KEVESEBB MINT HAVI $2,5",
+                "longerTerm": "Hosszabb távban gondolkodik? Még több megtakarításra vágyik?",
+                "signupButton": "REGISZTRÁLÁS"
             },
             "tunepc": {
                 "accumulatedjunkscannedareas": {
-                    "area1": "Scanned for junk in 85 locations",
-                    "area2": "System log files that aren’t needed",
-                    "area3": "Unnecessary application residues",
-                    "area4": "Temporary files that clog diskspace",
-                    "area5": "Files that you deleted so long ago",
-                    "area6": "Outdated errors and alerts"
+                    "area1": "Szemét ellenőrizve 85 helyen",
+                    "area2": "Szükségtelen rendszernaplófájlok",
+                    "area3": "Szükségtelen alkalmazásmaradványok",
+                    "area4": "Merevlemezt terhelő ideiglenes fájlok",
+                    "area5": "Régóta törölt fájlok",
+                    "area6": "Már nem releváns hibák és riasztások"
                 },
                 "registryerrorsscannedareas": {
-                    "area1": "Completed deep check of Windows registry",
-                    "area2": "Scanned for invalid Windows services",
-                    "area3": "Checked for corrupted registry entries",
-                    "area4": "Scanned for useless file extensions",
-                    "area5": "Searched broken entries of installed apps",
-                    "area6": "Checked for useless leftover entries"
+                    "area1": "A Windows beállításjegyzékének mélyreható ellenőrzése megtörtént",
+                    "area2": "Érvénytelen Windows-szolgáltatások ellenőrizve",
+                    "area3": "Sérült beállításjegyzék-bejegyzések ellenőrizve",
+                    "area4": "Nem hasznos fájlkiterjesztések ellenőrizve",
+                    "area5": "A telepített alkalmazások hibás bejegyzéseinek keresése megtörtént",
+                    "area6": "Nem hasznos maradékbejegyzések ellenőrizve"
                 },
                 "windowssettingsscannedareas": {
-                    "area1": "Diagnosed dozens of Windows OS settings",
-                    "area2": "Checked all is well with your Windows",
-                    "area3": "Confirmed essential services are running",
-                    "area4": "Checked health of connectivity settings",
-                    "area5": "Checked ability to share files in network",
-                    "area6": "Checked biometric and access settings"
+                    "area1": "A Windows-operációs rendszer több tucat beállításának diagnosztizálása megtörtént",
+                    "area2": "Windows megfelelő állapota ellenőrizve",
+                    "area3": "A nagyobb teljesítményt nyújtó szolgáltatások keresése megtörtént",
+                    "area4": "Állapot- és csatlakoztathatósági beállítások ellenőrizve",
+                    "area5": "Fájlok hálózaton belüli sikeres megosztása ellenőrizve",
+                    "area6": "Biometrikus és hozzáférési beállítások ellenőrizve"
                 },
                 "usabilityissuesscannedareas": {
-                    "area1": "Checked for usability challenges",
-                    "area2": "Checked external devices connectivity",
-                    "area3": "Checked Windows updates status",
-                    "area4": "Verified apps rendering setting",
-                    "area5": "Analyzed processing power utilization",
-                    "area6": "Help locate files easily"
+                    "area1": "Használhatóság terén tapasztalt nehézségek ellenőrizve",
+                    "area2": "Külső eszközökkel való kapcsolat ellenőrizve",
+                    "area3": "A Windows-frissítéseinek állapotellenőrzése megtörtént",
+                    "area4": "Alkalmazások megjelenítési beállításai ellenőrizve",
+                    "area5": "A feldolgozási teljesítmény kihasználtságának elemzése megtörtént",
+                    "area6": "A fájlok egyszerű megkeresése"
                 },
                 "systemerrorsscannedareas": {
-                    "area1": "Checked if essential services are running",
-                    "area2": "Look services for higher performance",
-                    "area3": "Look for software conflict errors",
-                    "area4": "Analyzed Windows error management",
-                    "area5": "Scanned for apps launching errors",
-                    "area6": "Checked system error reports configuration"
+                    "area1": "Alapvető szolgáltatások működése ellenőrizve",
+                    "area2": "Legjobb teljesítményt nyújtó szolgáltatások megkeresése",
+                    "area3": "Szoftverütközésekkel kapcsolatos hibák megkeresése",
+                    "area4": "A Windows-hibakezelés elemzése megtörtént",
+                    "area5": "Alkalmazások indításakor felmerülő hibák ellenőrizve",
+                    "area6": "Rendszerhiba-jelentések konfigurációja ellenőrizve"
                 }
             },
-            "Diskspace": "Disk Space Reclaimed :",
-            "Performanceimprovements": "Performance Improvements :",
-            "Securityimprovements": "Security Improvements:",
-            "Onceaweek": "Once a week",
+            "Diskspace": "Visszanyert lemezterület:",
+            "Performanceimprovements": "Teljesítményjavítások:",
+            "Securityimprovements": "Biztonsági fejlesztések:",
+            "Onceaweek": "Hetente egyszer",
             "internetperformance": {
                 "ejunkscannedareas": {
-                    "area1": "Identified clutter from 4 browsers",
-                    "area2": "Searched leftover e-junk",
-                    "area3": "Scanned outdated internet files",
-                    "area4": "Searched unwanted web cache",
-                    "area5": "Checked cookies for clearance",
-                    "area6": "Scanned browser residues"
+                    "area1": "Böngészők rendezetlen elemei azonosítva",
+                    "area2": "A megmaradt elektronikus szemét keresése megtörtént",
+                    "area3": "Az elavult internetes fájlok keresése megtörtént",
+                    "area4": "Nemkívánatos internetes gyorsítótár megkeresve",
+                    "area5": "Törölhető cookie-k ellenőrizve",
+                    "area6": "Böngészőmaradványok ellenőrizve"
                 },
                 "browsersecurityscannedareas": {
-                    "area1": "Checked security services are running",
-                    "area2": "Checked browser security features",
-                    "area3": "Verified network services",
-                    "area4": "Configure protocol settings",
-                    "area5": "Checked Browser content settings",
-                    "area6": "Scanned browser plugins & extensions"
+                    "area1": "Biztonsági szolgáltatások működése ellenőrizve",
+                    "area2": "Böngésző biztonsági funkciói ellenőrizve",
+                    "area3": "Ellenőrzött hálózati szolgáltatások",
+                    "area4": "Protokollbeállítások konfigurálása",
+                    "area5": "Böngészőtartalmak beállításai ellenőrizve",
+                    "area6": "Böngésző beépülő moduljai és kiterjesztései ellenőrizve"
                 },
                 "networksettingsscannedareas": {
-                    "area1": "Diagnosed network and Internet settings",
-                    "area2": "Diagnosed network configuration settings",
-                    "area3": "Verified connected network settings",
-                    "area4": "Diagnosed settings for faster websites rendering",
-                    "area5": "Scanned for page rendering errors",
-                    "area6": "Scanned all connection service(s)"
+                    "area1": "A hálózati és internetes beállítások diagnosztizálása megtörtént",
+                    "area2": "A hálózati konfigurációs beállítások diagnosztizálása megtörtént",
+                    "area3": "Csatlakoztatott hálózati beállítások ellenőrizve",
+                    "area4": "A webhelyek gyorsabb megjelenítésére szolgáló beállítások diagnosztizálása megtörtént",
+                    "area5": "Oldalmegjelenítési hibák ellenőrizve",
+                    "area6": "Összes kapcsolatszolgáltatás ellenőrizve"
                 },
                 "browsersettingsscannedareas": {
-                    "area1": "Enable better browsing experience",
-                    "area2": "Diagnosed settings for faster websites rendering",
-                    "area3": "Verified browser security services",
-                    "area4": "Checked if webpages are rendering properly",
-                    "area5": "Scanned settings for faster downloads",
-                    "area6": "Analyzed permissions and access control"
+                    "area1": "Jobb böngészési élmény lehetővé tétele",
+                    "area2": "A webhelyek gyorsabb megjelenítésére szolgáló beállítások diagnosztizálása megtörtént",
+                    "area3": "Böngésző biztonsági szolgáltatásai ellenőrizve",
+                    "area4": "Weboldalak megfelelő megjelenítése ellenőrizve",
+                    "area5": "Gyorsabb letöltéseket lehetővé tévő beállítások ellenőrizve",
+                    "area6": "Az engedélyek és hozzáférés-szabályozás elemzése megtörtént"
                 },
                 "wifiperformancescannedareas": {
-                    "area1": "Verified Wi-Fi experience settings",
-                    "area2": "Verified secure home network",
-                    "area3": "Scanned Wi-Fi services settings",
-                    "area4": "Verified Secure network sharing settings",
-                    "area5": "Verified Wi-Fi security standards",
-                    "area6": "Analyzed Wi-Fi channels do not overlap"
+                    "area1": "Wi-Fi-élmény beállításai ellenőrizve",
+                    "area2": "Biztonságos otthoni hálózat ellenőrizve",
+                    "area3": "Wi-Fi-szolgáltatások beállításai ellenőrizve",
+                    "area4": "Wi-Fi biztonsági előírásai ellenőrizve",
+                    "area5": "A Wi-Fi biztonsági előírásai megerősítve",
+                    "area6": "Wi-Fi-csatornák esetleges átfedései ellenőrizve"
                 }
             },
             "malwaresecurity": {
                 "malwarescanscannedareas": {
-                    "area1": "Scanned common loading points",
-                    "area2": "Scanned critical locations for threats",
-                    "area3": "Scanned for virus, spyware and malware",
-                    "area4": "Scanned 50+ file types for threats",
-                    "area5": "Checked for malware remnants",
-                    "area6": "Verified in cloud remediation engine"
+                    "area1": "Közös betöltési pontok ellenőrizve",
+                    "area2": "Veszélyek szempontjából kritikus helyek ellenőrizve",
+                    "area3": "Vírusok, kémprogramok és kártevők ellenőrizve",
+                    "area4": "Több mint 50 fájltípus veszélyessége ellenőrizve",
+                    "area5": "Kártevők maradványai ellenőrizve",
+                    "area6": "Ellenőrizve a felhőbeli szervizelési motor segítségével"
                 },
                 "errantprogramsscannedareas": {
-                    "area1": "Look for errant apps",
-                    "area2": "Inspected for potentially unwanted apps",
-                    "area3": "Searched for inactive and hidden apps",
-                    "area4": "Scanned for malicious apps",
-                    "area5": "Checked apps based on reputation factor",
-                    "area6": "Checked errant programs in registry"
+                    "area1": "Hibásan működő alkalmazások keresése",
+                    "area2": "Potenciálisan nemkívánatos alkalmazások ellenőrizve",
+                    "area3": "Az inaktív és rejtett alkalmazások keresése megtörtént",
+                    "area4": "Rosszindulatú alkalmazások ellenőrizve",
+                    "area5": "Alkalmazások megítélése ellenőrizve",
+                    "area6": "Hibásan működő programok megkeresve a beállításjegyzékben"
                 },
                 "zerodayinfectionsscannedareas": {
-                    "area1": "Scanned for zero-day virus",
-                    "area2": "Searched for recent, undiagnosed malware",
-                    "area3": "Verified with cloud-based remediation",
-                    "area4": "Performed behavioral monitoring",
-                    "area5": "Verified files with aggregated engine",
-                    "area6": "Scanned against updated definitions"
+                    "area1": "Ismeretlen vírusok ellenőrizve",
+                    "area2": "A közelmúltbeli, nem diagnosztizált kártevők keresése megtörtént",
+                    "area3": "Felhőalapú szervizelés elvégezve",
+                    "area4": "A viselkedésmegfigyelés megtörtént",
+                    "area5": "A fájlok aggreagált motorokkal történő ellenőrzése megtörtént",
+                    "area6": "Beolvasott frissített meghatározások alapján"
                 },
                 "securitysettingsscannedareas": {
-                    "area1": "Verified Windows updates are current",
-                    "area2": "Verified Windows firewall service",
-                    "area3": "Checked for secure browser settings",
-                    "area4": "Diagnosed essential security services",
-                    "area5": "Verified user access settings",
-                    "area6": "Verified authentication services"
+                    "area1": "A Windows-frissítések naprakészségének ellenőrzése lezajlott",
+                    "area2": "Windows-tűzfalszolgáltatás ellenőrizve",
+                    "area3": "Biztonságos böngészőbeállítások ellenőrizve",
+                    "area4": "Az alapvető biztonsági szolgáltatások diagnosztizálása megtörtént",
+                    "area5": "Felhasználói hozzáférési beállítások ellenőrizve",
+                    "area6": "Hitelesítési szolgáltatások ellenőrizve"
                 },
                 "annoyingadwarescannedareas": {
-                    "area1": "Scanned for browser(s) adware",
-                    "area2": "Verify browser(s) pop-up settings",
-                    "area3": "Scanned browser re-direction threats",
-                    "area4": "Checked adware leftovers",
-                    "area5": "Verified browser experience settings",
-                    "area6": "Verified with cloud remediation engine"
+                    "area1": "Böngésző(k) hirdetési programjai ellenőrizve",
+                    "area2": "Böngésző(k) felugró beállításai ellenőrizve",
+                    "area3": "Böngésző átirányításával járó veszélyek ellenőrizve",
+                    "area4": "Hirdetőprogram-maradványok ellenőrizve",
+                    "area5": "Böngészési élmény beállításai ellenőrizve",
+                    "area6": "Ellenőrizve a felhőbeli szervizelési motor segítségével"
                 }
             },
             "subscriber": {
                 "tunepc": {
                     "accumulatedjunkscannedareas": {
-                        "area1": "Cleaned of junk in 85 locations",
-                        "area2": "Cleared System log files that aren’t needed",
-                        "area3": "Deleted application residues",
-                        "area4": "Removed Temporary files to free up diskspace",
-                        "area5": "Eliminated files that you deleted so long ago",
-                        "area6": "Cleared errors and alerts"
+                        "area1": "Szemét eltávolítva 85 helyről",
+                        "area2": "Szükségtelen rendszernaplófájlok törölve",
+                        "area3": "Réges-rég törölt fájlok eltávolítva",
+                        "area4": "Ideiglenes fájlok törölve, hogy felszabaduljon a hely a merevlemezen",
+                        "area5": "Régóta törölt fájlok eltávolítva",
+                        "area6": "Hibák és riasztások törölve"
                     },
                     "registryerrorsscannedareas": {
-                        "area1": "Completed deep check of Windows registry",
-                        "area2": "Fixed any invalid Windows services",
-                        "area3": "Removed any corrupted registry entries",
-                        "area4": "Deleted any obsolete file extensions",
-                        "area5": "Cleaned broken entries of installed apps",
-                        "area6": "Cleared unwanted leftover entries"
+                        "area1": "A Windows beállításjegyzékének mélyreható ellenőrzése megtörtént",
+                        "area2": "Érvénytelen Windows-szolgáltatások orvosolva",
+                        "area3": "Sérült beállításjegyzék-bejegyzések törölve",
+                        "area4": "Elavult fájlkiterjesztések törölve",
+                        "area5": "Telepített alkalmazások hibás bejegyzései törölve",
+                        "area6": "Nemkívánatos bejegyzések törölve"
                     },
                     "windowssettingsscannedareas": {
-                        "area1": "Validated Windows settings",
-                        "area2": "Optimized all Windows services",
-                        "area3": "Modified essential Windows services",
-                        "area4": "Modified essential Windows services",
-                        "area5": "Verified ability to share files in network",
-                        "area6": "Verified biometric and access settings"
+                        "area1": "Windows-beállítások érvényesítve",
+                        "area2": "Az összes Windows-szolgáltatás optimalizálva",
+                        "area3": "Alapvető Windows-szolgáltatások módosítva",
+                        "area4": "Alapvető Windows-szolgáltatások módosítva",
+                        "area5": "A fájlok hálózaton belüli sikeres megosztása ellenőrizve",
+                        "area6": "Biometrikus és hozzáférési beállítások megerősítve"
                     },
                     "usabilityissuesscannedareas": {
-                        "area1": "Fixed any usability challenges",
-                        "area2": "Verified external devices connectivity",
-                        "area3": "Made sure Windows updates are always current",
-                        "area4": "Confirmed apps render and appear at its best",
-                        "area5": "Modified settings for processing power utilization",
-                        "area6": "Modified settings to Help locate files easily"
+                        "area1": "Használhatósággal kapcsolatos nehézségek orvosolva",
+                        "area2": "Külső eszközökkel való kapcsolat megerősítve",
+                        "area3": "A Windows-frissítések naprakészsége ellenőrizve",
+                        "area4": "Alkalmazások megfelelő renderelése és megjelenítése megerősítve",
+                        "area5": "Az energiafelhasználás feldolgozásához szükséges beállítások módosítva",
+                        "area6": "A fájlok könnyű megtalálását segítő beállítások módosítva"
                     },
                     "systemerrorsscannedareas": {
-                        "area1": "Checked if essential services are running",
-                        "area2": "Modified services for higher performance",
-                        "area3": "Fixed any software conflict errors",
-                        "area4": "Optimized Windows error management",
-                        "area5": "Checked and fixed any apps launching errors",
-                        "area6": "Configured system error reports"
+                        "area1": "Alapvető szolgáltatások működése ellenőrizve",
+                        "area2": "Szolgáltatások módosítva a nagyobb teljesítmény érdekében",
+                        "area3": "Szoftverütközésekkel kapcsolatos hibák orvosolva",
+                        "area4": "Windows-hibakezelés optimalizálva",
+                        "area5": "Alkalmazások indításával kapcsolatos problémák ellenőrizve és javítva",
+                        "area6": "A rendszer hibajelentései konfigurálva"
                     }
                 },
                 "internetperformance": {
                     "ejunkscannedareas": {
-                        "area1": "Removed clutter from 4 browser(s)",
-                        "area2": "Cleaned leftover e-junk",
-                        "area3": "Deleted outdated internet files",
-                        "area4": "Cleared unwanted web cache",
-                        "area5": "Cleared Cookies",
-                        "area6": "Cleaned any browser residues"
+                        "area1": "4 böngésző rendezetlen elemei eltávolítva",
+                        "area2": "Megmaradt elektronikus szemét törölve",
+                        "area3": "Elavult internetes fájlok törölve",
+                        "area4": "Nemkívánatos internetes gyorsítótár törölve",
+                        "area5": "Cookie-k törölve",
+                        "area6": "Esetleges böngészőmaradványok törölve"
                     },
                     "browsersecurityscannedareas": {
-                        "area1": "Ensured security services are running",
-                        "area2": "Configured browser security features",
-                        "area3": "Checked and fixed network services",
-                        "area4": "Configured protocol settings",
-                        "area5": "Verified Browser content settings are OK",
-                        "area6": "Scanned browser plugins & extensions"
+                        "area1": "Biztonsági szolgáltatások működése biztosítva",
+                        "area2": "Böngésző biztonsági funkciói beállítva",
+                        "area3": "Hálózati szolgáltatások ellenőrizve és javítva",
+                        "area4": "Protokollbeállítások konfigurálva",
+                        "area5": "Böngészőtartalmakra vonatkozó beállítások megfelelősége ellenőrizve",
+                        "area6": "Böngésző beépülő moduljai és kiterjesztései ellenőrizve"
                     },
                     "networksettingsscannedareas": {
-                        "area1": "Fixed network and Internet settings",
-                        "area2": "Checked network configuration settings",
-                        "area3": "Modified connected network settings",
-                        "area4": "Diagnosed settings for faster websites rendering",
-                        "area5": "Fixed any page rendering errors",
-                        "area6": "Scanned all connection service(s)"
+                        "area1": "Hálózati és internetes beállítások javítva",
+                        "area2": "Hálózati konfigurációs beállítások ellenőrizve",
+                        "area3": "Csatlakoztatott hálózati beállítások módosítva",
+                        "area4": "A webhelyek gyorsabb megjelenítésére szolgáló beállítások diagnosztizálása megtörtént",
+                        "area5": "Minden oldalmegjelenítési hiba orvosolva",
+                        "area6": "Összes kapcsolatszolgáltatás ellenőrizve"
                     },
                     "browsersettingsscannedareas": {
-                        "area1": "Modified settings for better browsing experience",
-                        "area2": "Verified settings for faster websites rendering",
-                        "area3": "Ensured browser security services are OK",
-                        "area4": "Modified settings to load webpages properly",
-                        "area5": "Fixed settings for faster downloads",
-                        "area6": "Fixed permissions and access control settings"
+                        "area1": "Beállítások módosítva a jobb böngészési élmény érdekében",
+                        "area2": "A webhelyek gyorsabb megjelenítésére szolgáló beállítások ellenőrizve",
+                        "area3": "A böngészőn belüli biztonsági szolgáltatások megfelelősége biztosítva",
+                        "area4": "Beállítások módosítva a weboldalak megfelelő betöltése érdekében",
+                        "area5": "A gyorsabb letöltéseket lehetővé tévő beállítások javítva",
+                        "area6": "Az engedélyek és hozzáférés-szabályozás javítva"
                     },
                     "wifiperformancescannedareas": {
-                        "area1": "Modified Wi-Fi experience settings",
-                        "area2": "Validated secure home network settings",
-                        "area3": "Fixed Wi-Fi services settings",
-                        "area4": "Modified Secure network sharing settings",
-                        "area5": "Verified Wi-Fi security standards",
-                        "area6": "Validated Wi-Fi channels"
+                        "area1": "Wi-Fi-élmény beállításai módosítva",
+                        "area2": "A biztonságos otthoni hálózat beállításai ellenőrizve",
+                        "area3": "Wi-Fi-szolgáltatások beállításai javítva",
+                        "area4": "Biztonságos hálózatmegosztási beállítások módosítva",
+                        "area5": "A Wi-Fi biztonsági előírásai megerősítve",
+                        "area6": "Wi-Fi-csatornák ellenőrizve"
                     }
                 },
                 "malwaresecurity": {
                     "malwarescanscannedareas": {
-                        "area1": "Checked & Removed threats in common loading points",
-                        "area2": "Checked and removed threats in critical locations",
-                        "area3": "Removed any threats from PC",
-                        "area4": "Validated 50+ file types for threats",
-                        "area5": "Cleaned any malware remnants",
-                        "area6": "Verified in cloud remediation engine"
+                        "area1": "Közös betöltési pontokat érintő fenyegetések ellenőrizve és eltávolítva",
+                        "area2": "Kritikus helyeket érintő veszélyek ellenőrizve és eltávolítva",
+                        "area3": "Számítógépet érintő veszélyek eltávolítva",
+                        "area4": "Több mint 50 fájltípus veszélyessége validálva",
+                        "area5": "Rosszindulatú programok maradványai törölve",
+                        "area6": "Ellenőrizve a felhőbeli szervizelési motor segítségével"
                     },
                     "errantprogramsscannedareas": {
-                        "area1": "Validated all installed apps",
-                        "area2": "Validated potentially unwanted apps",
-                        "area3": "Cleaned any inactive and hidden apps",
-                        "area4": "Removed any malicious and errant apps",
-                        "area5": "Validated apps based on reputation factor",
-                        "area6": "Completed registry check for errant programs"
+                        "area1": "Az összes telepített alkalmazás érvényesítve",
+                        "area2": "Potenciálisan nemkívánatos alkalmazások validálva",
+                        "area3": "Inaktív és rejtett alkalmazások törölve",
+                        "area4": "Rosszindulatú és hibás alkalmazások eltávolítva",
+                        "area5": "Alkalmazások megítélés alapján validálva",
+                        "area6": "Hibás programok ellenőrizve a beállításjegyzékben"
                     },
                     "zerodayinfectionsscannedareas": {
-                        "area1": "Analyzed for zero-day virus",
-                        "area2": "Removed any malware from PC",
-                        "area3": "Validated in cloud remediation engine",
-                        "area4": "Completed behavioral monitoring of apps",
-                        "area5": "Validated against aggregated engine",
-                        "area6": "Validated against latest definitions"
+                        "area1": "Ismeretlen vírusok elemezve",
+                        "area2": "Számítógépet érintő kártevők eltávolítva",
+                        "area3": "Validálva a felhőbeli szervizelési motor segítségével",
+                        "area4": "Az alkalmazások viselkedésfigyelése végrehajtva",
+                        "area5": "Validálva az aggregációs motorral",
+                        "area6": "Legújabb definíciók szerint ellenőrizve"
                     },
                     "securitysettingsscannedareas": {
-                        "area1": "Optimized Windows update settings",
-                        "area2": "Tuned Windows firewall service",
-                        "area3": "Secured browser(s) settings",
-                        "area4": "Diagnosed essential security services",
-                        "area5": "Optimized user access settings",
-                        "area6": "Modified authentication services"
+                        "area1": "Windows frissítési beállításai optimalizálva",
+                        "area2": "Windows-tűzfalszolgáltatás beállítva",
+                        "area3": "Böngészőbeállítások biztonságossá téve",
+                        "area4": "Az alapvető biztonsági szolgáltatások diagnosztizálása megtörtént",
+                        "area5": "Felhasználói hozzáférési beállítások optimalizálva",
+                        "area6": "Hitelesítési szolgáltatások módosítva"
                     },
                     "annoyingadwarescannedareas": {
-                        "area1": "Removed browser(s) adware",
-                        "area2": "Tuned browser(s) pop-up settings",
-                        "area3": "Diagnosed browser re-direction threats",
-                        "area4": "Cleared adware leftovers",
-                        "area5": "Optimized browser experience settings",
-                        "area6": "Validated in cloud remediation engine"
+                        "area1": "Böngésző(k) hirdetőprogramjai eltávolítva",
+                        "area2": "Böngészők felugróablak-beállításai konfigurálva",
+                        "area3": "A böngésző átirányításával járó veszélyek diagnosztizálva",
+                        "area4": "Hirdetőprogram-maradványok törölve",
+                        "area5": "Böngészési élmény beállításai optimalizálva",
+                        "area6": "Validálva a felhőbeli szervizelési motor segítségével"
                     }
                 }
             },
-            "issues": "ISSUES",
+            "issues": "PROBLÉMÁK",
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
-            "backToHome": "Back To Home"
+            "backToHome": "Vissza a kezdőlapra"
         },
         "subscriberScanHomePage": {
-            "title": "All is well with your ",
-            "serialNumber": "Serial number: ",
-            "subTitle": "You are subscribed to Lenovo Smart Performance Service",
-            "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
-            "scanNow": "SCAN NOW",
-            "returnto": "RETURN TO DASHBOARD",
-            "mostRecent": "MOST RECENT SCAN:",
-            "nextScheduled": "NEXT SCHEDULED SCAN:",
+            "title": "Minden rendben van az Ön ",
+            "serialNumber": "Gyári szám: ",
+            "subTitle": "Ön előfizetett a Lenovo Smart Performance szolgáltatásra.",
+            "description": "Gyakori proaktív ellenőrzéseket végzünk a számítógépén a megfelelő teljesítmény, internetteljesítmény és a kártevők kiküszöbölése érdekében, illetve szükség esetén orvosoljuk a problémákat. Ön megfelelő védelmet élvez. Az „ellenőrzés most” gombra kattintva igény szerinti teljesítmény-ellenőrzést is végezhet.",
+            "scanNow": "ELLENŐRZÉS ÉS JAVÍTÁS",
+            "returnto": "VISSZA AZ IRÁNYÍTÓPULTRA",
+            "mostRecent": "LEGFRISSEBB ELLENŐRZÉS:",
+            "nextScheduled": "KÖVETKEZŐ BEÜTEMEZETT ELLENŐRZÉS:",
             "scanSummary": {
-                "title": "Scan summary:",
-                "description": "We are constantly tuning your computer",
-                "tune": "Tune",
-                "tuneSummary": "Disk space reclaimed",
-                "boost": "Boost",
-                "boostSummary": "Fixes to improve performance",
-                "secure": "Secure",
-                "secureSummary": "Fixes to improve security",
-                "annual": "Annual",
-                "quarterly": "Quarterly",
-                "custom": "Custom",
-                "txtFrom": "From",
-                "txtTo": "To",
-                "txtGo": "Go",
-                "summaryCaption": "space reclaimed",
-                "fixes": "fixes",
-                "txtClr": "Clear"
+                "title": "Ellenőrzés összefoglalása:",
+                "description": "Folyamatosan rendbe tesszük a számítógépet",
+                "tune": "Rendrakás",
+                "tuneSummary": "Visszanyert lemezterület",
+                "boost": "Teljesítménynövelés",
+                "boostSummary": "Javítások a teljesítmény javítása érdekében",
+                "secure": "Védelem",
+                "secureSummary": "Biztonság fokozására szolgáló javítások",
+                "annual": "Éves",
+                "quarterly": "Negyedéves",
+                "custom": "Egyéni",
+                "txtFrom": "Ettől",
+                "txtTo": "Eddig",
+                "txtGo": "Ugrás",
+                "summaryCaption": "lemezterület visszanyerve",
+                "fixes": "Javítás(ok)",
+                "txtClr": "Törlés"
             },
             "lastScanResults": {
-                "title": "Last 5 scan results:",
-                "scanDate": "Scan date:",
-                "results": "Results:",
-                "status": "Status"
+                "title": "A legutóbbi 5 vizsgálat eredménye:",
+                "scanDate": "Ellenőrzés dátuma",
+                "results": "Eredmények",
+                "status": "Állapot"
             },
-            "backToHome": "Back To Home",
-            "successTitle": "Your Pc is tuned up !",
-            "successDescription": "Smart Performance resolved <b>{{issueCount}} issues</b> to keep your pc running smoothly, you can find scan summary and report below."
+            "backToHome": "Vissza a kezdőlapra",
+            "successTitle": "Számítógépe fel van frissítve!",
+            "successDescription": "A Smart Performance <b>{{issueCount}} problémát</b> oldott meg számítógépe zökkenőmentes működése érdekében. Az ellenőrzés összefoglalását és az arról készült jelentést lent tekintheti meg."
         },
-        "runningWell": "PC is running well",
+        "runningWell": "A számítógép jól működik",
         "feedbackContainer": {
-            "title": "Leave us some feedback",
-            "subtitle": "Tell us what you think about Vantage",
-            "buttonText": "send feedback",
+            "title": "Adjon visszajelzést",
+            "subtitle": "Mondja el, mit gondol a Smart Performance-ről",
+            "buttonText": "visszajelzés küldése",
             "questions": {
-                "q1": "Does the product look and feel good?",
-                "q2": "Do the feature seen comprehensive?",
-                "q3": "Was the scan easy to use?",
-                "q4": "Happy about the fixes we did?",
-                "q5": "Do you see value for money? ",
-                "q6": "Will you refer it to your friends and family?",
-                "q7": "How likely are you to continue paying for the Smart Performance feature?",
-                "q8": "Overall how satisfied are you with the Smart Performance feature?"
+                "q1": "1. Mennyire volt nehéz vagy könnyű az ellenőrzési funkció használata?",
+                "q2": "2. Mennyire volt nehéz vagy könnyű az ellenőrzés eredményeinek értelmezése?",
+                "q3": "3. Mennyire valószínű, hogy rendszere teljesítményének növelése érdekében előfizet a Smart Performance szolgáltatásra?",
+                "q4": "4. Összességében mennyire elégedett a Smart Performance funkcióval?",
+                "q5": "1. Mennyire volt nehéz vagy könnyű megérteni a Smart Performance által végrehajtott javításokat?",
+                "q6": "2. Találtunk kártevőket a rendszerében?",
+                "q7": "3. Mennyire valószínű, hogy továbbra is fizet a Smart Performance funkcióért?",
+                "q8": "4. Összességében mennyire elégedett a Smart Performance funkcióval?"
             },
             "rating": {
-                "r1": "Hate it",
-                "r2": "Love it",
-                "r3": "Seems lacking",
-                "r4": "Good enough",
-                "r5": "Crazy",
-                "r6": "Cool",
-                "r7": "Not so sure",
-                "r8": "Absolutely yes",
-                "r9": "No way",
-                "r10": "Looks worthy",
-                "r11": "Not so sure",
-                "r12": "Absolutely yes",
-                "r13": "Not at all likely",
-                "r14": "Very Likely",
-                "r15": "Not at all satisfied",
-                "r16": "Very Satisfied"
+                "r1": "Nagyon nehéz",
+                "r2": "Nagyon könnyű",
+                "r3": "Nagyon nehéz",
+                "r4": "Nagyon könnyű",
+                "r5": "Egyáltalán nem valószínű",
+                "r6": "Nagyon valószínű",
+                "r7": "Egyáltalán nem vagyok elégedett",
+                "r8": "Nagyon elégedett vagyok",
+                "r9": "Nagyon nehéz",
+                "r10": "Nagyon könnyű",
+                "r11": "Igen",
+                "r12": "Nem",
+                "r13": "Egyáltalán nem valószínű",
+                "r14": "Nagyon valószínű",
+                "r15": "Egyáltalán nem vagyok elégedett",
+                "r16": "Nagyon elégedett vagyok"
             },
-            "commentTip": "Shout what you love and whisper what you hate.",
-            "comments": "Please leave your comments here..."
+            "commentTip": "Ha van további megjegyzése vagy visszajelzése, írja meg nekünk alább:",
+            "comments": "Írja be ide észrevételeit…"
         },
-        "auto": "Auto",
-        "manual": "Manual",
-        "noScanResults": "Please click SCAN & FIX button to trigger scan process.",
-        "am": "DÉLE",
-        "pm": "DÉLU"
+        "auto": "Automata",
+        "manual": "Kézi",
+        "noScanResults": "Az ellenőrzési folyamat elindításához kattintson az ELLENŐRZÉS ÉS JAVÍTÁS gombra.",
+        "am": "de.",
+        "pm": "du."
     },
     "homeSecurity": {
         "title": "Connected Home Security",
