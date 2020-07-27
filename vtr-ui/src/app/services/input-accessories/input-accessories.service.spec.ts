@@ -665,7 +665,7 @@ describe('InputAccessoriesService', () => {
 		it('should call getMouseCapability', () => {
 			const { inputAccessoriesService } = setup();
 
-			let mouseAndTouchPadMock = new MouseAndTouchPadMock();
+			const mouseAndTouchPadMock = new MouseAndTouchPadMock();
 			// spyOnProperty<any>(inputAccessoriesService, 'mouseAndTouchPad', 'get').and.returnValue(mouseAndTouchPadMock);
 			(inputAccessoriesService as any).mouseAndTouchPad = mouseAndTouchPadMock;
 

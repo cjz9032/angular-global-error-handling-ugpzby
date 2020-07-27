@@ -30,8 +30,8 @@ describe('PowerService', () => {
 	}));
 	describe(':', () => {
 		function setup() {
-			const powerService = TestBed.get(PowerService);
-			const shellService = TestBed.get(VantageShellService);
+			const powerService: any = TestBed.inject(PowerService);
+			const shellService = TestBed.inject(VantageShellService);
 			return { powerService, shellService };
 		}
 		it('should be created', () => {
