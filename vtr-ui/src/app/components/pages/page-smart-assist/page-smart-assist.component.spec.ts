@@ -77,11 +77,11 @@ describe('Component: PageSmartAssistComponent', () => {
 			PageSmartAssistComponent
 		);
 		component = fixture.componentInstance;
-		deviceService = TestBed.get(DeviceService);
-		commonService = TestBed.get(CommonService);
-		vantageShellService = TestBed.get(VantageShellService);
-		logger = TestBed.get(LoggerService);
-		smartAssistService = TestBed.get(SmartAssistService);
+		deviceService = TestBed.inject(DeviceService);
+		commonService = TestBed.inject(CommonService);
+		vantageShellService = TestBed.inject(VantageShellService);
+		logger = TestBed.inject(LoggerService);
+		smartAssistService = TestBed.inject(SmartAssistService);
 		component.intelligentSecurity = new IntelligentSecurity();
 		component.intelligentSecurity.isIntelligentSecuritySupported = true;
 		fixture.detectChanges();
@@ -239,7 +239,7 @@ describe('Component: PageSmartAssistComponent', () => {
 			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
 			component.intelligentSecurity = new IntelligentSecurity();
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
-			// commonService = TestBed.get(CommonService);
+			// commonService = TestBed.inject(CommonService);
 			fixture.detectChanges();
 			component.updateSensingHeaderMenu(true);
 		});
@@ -248,14 +248,14 @@ describe('Component: PageSmartAssistComponent', () => {
 			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
 			component.intelligentSecurity = new IntelligentSecurity();
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
-			// commonService = TestBed.get(CommonService);
+			// commonService = TestBed.inject(CommonService);
 			fixture.detectChanges();
 			component.updateSensingHeaderMenu(false);
 		});
 
 		it('PageSmartAssistComponent :: getSuperResolutionStatus', () => {
 			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
-			// smartAssistService = TestBed.get(SmartAssistService);
+			// smartAssistService = TestBed.inject(SmartAssistService);
 			component.intelligentSecurity = new IntelligentSecurity();
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
 			smartAssistService.isShellAvailable = true;
@@ -278,7 +278,7 @@ describe('Component: PageSmartAssistComponent', () => {
 		it('PageSmartAssistComponent :: setHPDAdvancedSetting', () => {
 			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
 			fixture.detectChanges();
-			// smartAssistService = TestBed.get(SmartAssistService);
+			// smartAssistService = TestBed.inject(SmartAssistService);
 			smartAssistService.isHPDShellAvailable = true;
 			component.intelligentSecurity = new IntelligentSecurity();
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
@@ -295,7 +295,7 @@ describe('Component: PageSmartAssistComponent', () => {
 		it('PageSmartAssistComponent :: getHsaIntelligentSecurityStatus', () => {
 			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
 			fixture.detectChanges();
-			// smartAssistService = TestBed.get(SmartAssistService);
+			// smartAssistService = TestBed.inject(SmartAssistService);
 			smartAssistService.isHPDShellAvailable = true;
 			component.isRegisterHPDRpcCallback = false;
 			component.intelligentSecurity = new IntelligentSecurity();
@@ -324,7 +324,7 @@ describe('Component: PageSmartAssistComponent', () => {
 
 		it('PageSmartAssistComponent :: onZeroTouchLockDistanceSensitivityAdjustToggle', () => {
 			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
-			// smartAssistService = TestBed.get(SmartAssistService);
+			// smartAssistService = TestBed.inject(SmartAssistService);
 			fixture.detectChanges();
 			smartAssistService.isHPDShellAvailable = true;
 
@@ -349,7 +349,7 @@ describe('Component: PageSmartAssistComponent', () => {
 
 		it('PageSmartAssistComponent :: SetZeroTouchLockDistanceSensitivity', () => {
 			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
-			// smartAssistService = TestBed.get(SmartAssistService);
+			// smartAssistService = TestBed.inject(SmartAssistService);
 			fixture.detectChanges();
 			smartAssistService.isHPDShellAvailable = true;
 			component.intelligentSecurity = new IntelligentSecurity();
@@ -365,7 +365,7 @@ describe('Component: PageSmartAssistComponent', () => {
 
 		it('PageSmartAssistComponent :: startMonitorHsaIntelligentSecurityStatus', () => {
 			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
-			// smartAssistService = TestBed.get(SmartAssistService);
+			// smartAssistService = TestBed.inject(SmartAssistService);
 			component.intelligentSecurity = new IntelligentSecurity();
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
 			fixture.detectChanges();

@@ -83,7 +83,7 @@ export class ActiveProtectionSystemComponent implements OnInit {
 		setTimeout(() => {
 			const focusElement = document.getElementById(`${elementId}`) as HTMLElement;
 			if (focusElement) {
-				focusElement.focus()
+				focusElement.focus();
 			}
 		}, this.timeOut);
 	}
@@ -181,7 +181,7 @@ export class ActiveProtectionSystemComponent implements OnInit {
 	}
 
 	setAPSSensitivityLevel($event: number) {
-		this.apsSensitivity = $event
+		this.apsSensitivity = $event;
 		let value: number;
 		switch ($event) {
 			case 0: {
@@ -203,7 +203,7 @@ export class ActiveProtectionSystemComponent implements OnInit {
 	}
 
 	setAutoDisableSetting(event) {
-		this.repeatShock = event
+		this.repeatShock = event;
 		this.smartAssist
 			.setAutoDisableSetting(event)
 			.then(res => { });
