@@ -1153,6 +1153,14 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 		border-radius: 1rem;
 		background: $light;
 		padding: 1.5rem;
+		@media #{$white-on-black} {
+			box-shadow: none;
+			@include white-border;
+		}
+		@media #{$black-on-white} {
+			box-shadow: none;
+			@include black-border;
+		}
 	}
 }
 /*----- onclick-tooltip-style------*/
@@ -2135,6 +2143,11 @@ vtr-ui-smart-performance-scanning {
 			padding-left: 0.9rem !important;
 			padding-right: 2.4rem !important;
 			padding-top: 2rem !important;
+		}
+		.collapse-header {
+			&:focus {
+				outline: none;
+			}
 		}
 	}
 	.vtr-ui-switch-row.blue-theme,

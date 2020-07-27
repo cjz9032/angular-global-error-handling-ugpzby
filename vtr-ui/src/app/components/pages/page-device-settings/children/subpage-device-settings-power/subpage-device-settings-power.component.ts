@@ -43,12 +43,13 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	@Output() toggle = new EventEmitter();
 
-	public machineType: any;
+	public machineType: any; // number indicating machineType
 	public isDesktopMachine = true;
 
 	public vantageToolbarStatus = new FeatureStatus(false, true);
 	vantageToolbarCache: FeatureStatus;
 
+	// battery and power features related to Ideapads
 	public alwaysOnUSBStatus = new FeatureStatus(false, true);
 	public usbChargingStatus = new FeatureStatus(false, true);
 	public easyResumeStatus = new FeatureStatus(false, true);
@@ -61,6 +62,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	public isEnergyStarProduct = false;
 	public energyStarCache: boolean;
 
+	// battery charge threshold
 	public thresholdInfo: ChargeThreshold[];
 	public chargeThresholdCapability = false;
 	public chargeThresholdStatus = false;
@@ -80,13 +82,15 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	airplaneAutoDetection = false;
 
 	usbChargingInBatteryModeStatus = true;
-	value = 1;
+
+	// for caching of battery and power settings
 	alwaysOnUSBCache: AlwaysOnUSBCapability = undefined;
 	airplanePowerCache: AlwaysOnUSBCapability = undefined;
 	easyResumeCache: FeatureStatus;
 	chargeThresholdCache: ChargeThreshold[] = undefined;
 	expressChargingCache: FeatureStatus = undefined;
 	conservationModeCache: FeatureStatus = undefined;
+
 	smartStandbyCapability: boolean;
 	showPowerSmartSettings = true;
 	gaugeResetCapability = false;
@@ -95,14 +99,17 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	isPowerDriverMissing = false;
 
+	// Flip to boot
 	toggleFlipToBootStatus = true;
 	showFlipToBootSection$: BehaviorSubject<boolean> = new BehaviorSubject(false);
+
 	bctInfoSubscription: Subscription;
 	airplaneModeSubscription: Subscription;
 	expressChargingSubscription: Subscription;
 
 	activatedRouteSubscription: Subscription;
 
+	// Go to links
 	isBatterySectionAvailable = false;
 	isPowerSectionAvailable = false;
 	isPowerPageAvailable = false;
@@ -127,6 +134,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.logger.info('Init Subpage Power');
 		this.initDataFromCache();
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
+
+		// PowerSmartSettings, SmartStandby & Battery features are not supported in Desktop type machines, links at the top removed by code below
 		if (this.isDesktopMachine) {
 			this.checkIsPowerPageAvailable(false, 'smartSettings');
 			this.checkIsPowerPageAvailable(false, 'smartStandby');
@@ -144,29 +153,36 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.onNotification(notification);
 		});
 
+		// Subscription in battery service to share info below in multiple components
 		this.bctInfoSubscription = this.batteryService.getChargeThresholdInfo()
 			.subscribe((value: ChargeThreshold[]) => {
 				this.setChargeThresholdUI(value);
-			});
+		});
 
 		this.airplaneModeSubscription = this.batteryService.getAirplaneMode()
 			.subscribe((value: FeatureStatus) => {
 				this.setAirplaneModeUI(value);
-			});
+		});
 
 		this.expressChargingSubscription = this.batteryService.getExpressCharging()
 			.subscribe((value: FeatureStatus) => {
 				this.setExpressChargingUI(value);
-			});
+		});
+		// End subscriptions in battery service
 
+		// When clicked on Back at High Density Battery page,
+		// it should redirect to power subPage and open Charge threshold confirmation popup
 		this.activatedRouteSubscription = this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
 			setTimeout(() => {
 				if (params.has('threshold')) {
+					// scroll automatically to battery charge threshold section
 					const element = document.querySelector('#battery') as HTMLElement;
 					if (element) {
 						element.scrollIntoView({ behavior: 'smooth', block: 'center' });
 						// Fix for Edge browser
 					}
+
+					// Open Charge threshold confirmation popup
 					const showThreshold = this.activatedRoute.snapshot.queryParams.threshold;
 					this.onToggleBCTSwitch({ switchValue: showThreshold });
 				}
@@ -208,7 +224,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.initPowerSettingsFromCache();
 		this.initOtherSettingsFromCache();
 		this.initEnergyStarFromCache();
-
 	}
 
 	initSmartSettingsFromCache() {
@@ -271,8 +286,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		try {
 			this.expressChargingCache = this.commonService.getLocalStorageValue(LocalStorageKey.ExpressChargingCapability, undefined);
 			if (this.expressChargingCache !== undefined) {
-				this.expressChargingStatus.available = this.expressChargingCache.available;
-				this.expressChargingStatus.status = this.expressChargingCache.status;
+				this.expressChargingStatus = this.expressChargingCache;
 				this.expressChargingLock = this.expressChargingCache.isLoading;
 			} else {
 				this.expressChargingCache = new FeatureStatus(false, true, true, false);
@@ -286,8 +300,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		try {
 			this.conservationModeCache = this.commonService.getLocalStorageValue(LocalStorageKey.ConservationModeCapability, undefined);
 			if (this.conservationModeCache !== undefined) {
-				this.conservationModeStatus.available = this.conservationModeCache.available;
-				this.conservationModeStatus.status = this.conservationModeCache.status;
+				this.conservationModeStatus = this.conservationModeCache;
 				this.conservationModeLock = this.conservationModeCache.isLoading;
 			} else {
 				this.conservationModeCache = new FeatureStatus(false, true, true, false);
@@ -349,17 +362,29 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	// ************************** End Getting Cached Data ****************************
 
-	// ************ Start power page Capability Checks *******************
+	// ************ Start power page Capability Checks ******************************
+
+	/**
+	 * Set boolean indicating show/hide PowerSmartSettings
+	 * @param value boolean (true/false)
+	 */
 	onSetSmartSettingsCapability(value: boolean) {
 		this.showPowerSmartSettings = value;
 		this.updateSmartSettingsLinkStatus(this.showPowerSmartSettings);
 	}
 
+	/**
+	 * Set boolean indicating show/hide SmartStandby settings
+	 * @param value boolean(true/false)
+	 */
 	onSetSmartStandbyCapability(value: boolean) {
 		this.smartStandbyCapability = value;
 		this.updateSmartStandbyLinkStatus(this.smartStandbyCapability);
 	}
 
+	/**
+	 * calls for fetching battery and power related features settings info
+	 */
 	getBatteryAndPowerSettings() {
 		this.logger.info('Inside getBatteryAndPowerSettings', this.machineType);
 
@@ -370,12 +395,14 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.batteryService.getBatterySettings();
 		switch (this.machineType) {
 			case 1:
+				// ThinkPad
 				this.getAirplaneModeAutoDetectionOnThinkPad();
 				this.getGaugeResetCapability();
 				this.getAlwaysOnUSBCapabilityThinkPad();
 				this.getEasyResumeCapabilityThinkPad();
 				break;
 			case 0:
+				// IdeaPad
 				this.getConservationModeStatusIdeaPad();
 				this.getAlwaysOnUSBStatusIdeaPad();
 				this.getUSBChargingInBatteryModeStatusIdeaNoteBook();
@@ -383,6 +410,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	/**
+	 * get toolbar feature values, availability & status
+	 */
 	getVantageToolBarStatus() {
 		this.logger.info('Before getVantageToolBarStatus');
 		if (this.powerService.isShellAvailable) {
@@ -397,6 +427,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	/**
+	 * get energy star feature capability
+	 */
 	public getEnergyStarCapability() {
 		this.logger.info('Before getEnergyStarCapability');
 		this.powerService.getEnergyStarCapability()
@@ -413,6 +446,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	// ******************** Start Goto Links of diff sections Updates *******************
 
+	/**
+	 * Add or remove smart settings link based on value of addLink
+	 * @param addLink boolean (true: adds link, false: removes link if exists)
+	 */
 	updateSmartSettingsLinkStatus(addLink: boolean) {
 		this.checkIsPowerPageAvailable(addLink, 'smartSettings');
 		if (addLink) {
@@ -428,6 +465,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	/**
+	 * Add or remove smart standby link based on value of addLink
+	 * @param addLink boolean (true: adds link, false: removes link if exists)
+	 */
 	updateSmartStandbyLinkStatus(addLink: boolean) {
 		this.checkIsPowerPageAvailable(addLink, 'smartStandby');
 		if (addLink) {
@@ -437,12 +478,17 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				metricsItem: 'SmartStandby',
 				order: 3
 			};
-			this.commonService.addToObjectsList(this.headerMenuItems, smartStandByObj);
+			this.headerMenuItems = this.commonService.addToObjectsList(this.headerMenuItems, smartStandByObj);
 		} else {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'smartStandby');
 		}
 	}
 
+	/**
+	 * Add or remove battery settings link based on value of addLink
+	 * Called from capability check method of each feature in battery section
+	 * @param addLink boolean (true: adds link, false: removes link if exists)
+	 */
 	updateBatteryLinkStatus(addLink: boolean) {
 		this.isBatterySectionAvailable = this.isBatterySectionAvailable || addLink;
 		this.checkIsPowerPageAvailable(this.isBatterySectionAvailable, 'battery');
@@ -459,6 +505,11 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	/**
+	 * Add or remove power settings link based on value of addLink
+	 * Called from capability check method of each feature in power section
+	 * @param addLink boolean (true: adds link, false: removes link if exists)
+	 */
 	updatePowerLinkStatus(addLink: boolean) {
 		this.isPowerSectionAvailable = this.isPowerSectionAvailable || addLink;
 		this.checkIsPowerPageAvailable(this.isPowerSectionAvailable, 'power');
@@ -475,6 +526,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	/**
+	 * Add or remove other settings link based on value of addLink
+	 * @param addLink boolean (true: adds link, false: removes link if exists)
+	 */
 	updateOtherSettingsStatus(addLink: boolean) {
 		this.checkIsPowerPageAvailable(addLink, 'other');
 		if (addLink) {
@@ -490,13 +545,21 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	/**
+	 * adds/removes a link in gotoLinks array,
+	 * checks length of gotoLinks and if 0, removes Power page and redirects to Audio Page
+	 * @param value boolean, if a feature is supported in machine
+	 * @param id string, unique id of feature (an entry from gotoLinks array)
+	 */
 	checkIsPowerPageAvailable(value: boolean, id: string) {
 		const index: number = this.gotoLinks.indexOf(id);
 		if (value) {
+			// push to array if doesn't exist
 			if (index === -1) {
 				this.gotoLinks.push(id);
 			}
 		} else {
+			// remove from array if exists
 			if (index !== -1) {
 				this.gotoLinks = this.gotoLinks.filter((link) => {
 					return link !== id;
@@ -511,13 +574,22 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 	// ******************** End Goto Links of diff sections Updates *******************
 
-
+	/**
+	 * called on changing USB charging status(checkbox),
+	 * it updates Power Mode
+	 * @param $event boolean, checkbox events value
+	 */
 	onUsbChargingStatusChange($event: boolean) {
 		this.usbChargingCheckboxFlag = $event;
 		this.logger.info('usb charge state entered');
 		this.updatePowerMode();
 	}
 
+	/**
+	 * Called on changing Always on USB toggle event,
+	 * calls setAlwaysOnUSBStatus to set value at plugin
+	 * @param event toggle event value
+	 */
 	onToggleOfAlwaysOnUsb(event: any) {
 		const value = event.switchValue;
 		this.toggleAlwaysOnUsbFlag = value;
@@ -545,32 +617,33 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}, 100);
 	}
 
+	/**
+	 * Called on changing Easy Resume toggle event,
+	 * calls setEasyResume to set value at plugin
+	 * @param event toggle event value
+	 */
 	onToggleOfEasyResume(event: any) {
 		const value = event.switchValue;
-		switch (this.machineType) {
-			case 1:
-				this.setEasyResumeThinkPad(value);
-				this.logger.info('Easy Resume: ThinkPad');
-				break;
-			case 0:
-				this.logger.info('easy resume: ideapad');
-				break;
-		}
+		this.logger.info('Easy Resume: ThinkPad');
+		this.setEasyResumeThinkPad(value);
 	}
 
+	/**
+	 * Called on changing Airplane Power Mode toggle event,
+	 * calls setAirplaneMode to set value at plugin
+	 * @param event toggle event value
+	 */
 	onToggleOfAirplanePowerMode(event) {
 		const value = event.switchValue;
-		switch (this.machineType) {
-			case 1:
-				this.setAirplaneModeThinkPad(value);
-				this.logger.info('Airplane Power mOde Set: ThinkPad', value);
-				break;
-			case 0:
-				this.logger.info('Airplane Power mOde Set: ideapad');
-				break;
-		}
+		this.logger.info('Airplane Power mode Set: ThinkPad', value);
+		this.setAirplaneModeThinkPad(value);
 	}
 
+	/**
+	 * Updates Power Mode (Shutdown/Sleep/Disabled),
+	 * calls setAlwaysOnUSBStatusThinkPad in ThinkPad,
+	 * setUSBChargingInBatteryModeStatusIdeaNoteBook in IdeaPad
+	 */
 	updatePowerMode() {
 		if (this.toggleAlwaysOnUsbFlag && this.usbChargingCheckboxFlag) {
 			this.powerMode = PowerMode.Shutdown;
@@ -641,11 +714,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.powerService.getEasyResumeCapabilityThinkPad().then((value) => {
 				this.logger.info('getEasyResumeCapabilityThinkPad.then', value);
 				this.updatePowerLinkStatus(value);
+				this.showEasyResumeSection = value;
 				if (value === true) {
-					this.showEasyResumeSection = true;
 					this.getEasyResumeStatusThinkPad();
-				} else {
-					this.showEasyResumeSection = false;
 				}
 				this.easyResumeCache.available = this.showEasyResumeSection;
 				this.commonService.setLocalStorageValue(LocalStorageKey.EasyResumeCapability, this.easyResumeCache);
@@ -718,6 +789,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.powerService.setAirplaneModeThinkPad(value).then((response: boolean) => {
 				this.logger.info('setAirplaneModeThinkPad.then', response);
 				this.toggleAirplanePowerModeFlag = value;
+				// send Airplane Mode Status to update icon inside battery to immediately on toggle change
 				this.commonService.sendNotification('AirplaneModeStatus',
 					{ isCapable: true, isEnabled: value });
 				this.airplanePowerCache.toggleState.status = this.toggleAirplanePowerModeFlag;
@@ -949,6 +1021,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 		this.expressChargingCache.status = this.expressChargingStatus.status;
 
+		// Send express charging status to battery-card
 		this.commonService.sendNotification('ExpressChargingStatus', this.expressChargingStatus);
 
 		this.expressChargingCache.isLoading = this.expressChargingLock;
@@ -956,6 +1029,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 		this.conservationModeCache.status = this.conservationModeStatus.status;
 
+		// Send conservation mode status to battery-card
+		// commented out as it is not yet used in battery-card, uncomment in future if needed
 		// this.commonService.sendNotification('ConservationModeStatus', this.conservationModeStatus);
 
 		this.conservationModeCache.isLoading = this.conservationModeLock;
@@ -1192,6 +1267,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						this.thresholdInfo[index] = bctInfo;
 						if (!this.chargeThresholdStatus) {
 							this.chargeThresholdStatus = true;
+							// send Charge threshold status to update icon, Note immediately on toggle change
 							this.commonService.sendNotification(ChargeThresholdInformation.ChargeThresholdInfo, this.chargeThresholdStatus);
 						}
 						this.isThresholdWarningMsgShown();
@@ -1218,6 +1294,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			.then((response: number) => {
 				if (response === 0) {
 					this.chargeThresholdStatus = false;
+					// send Charge threshold status to update icon, Note immediately on toggle change
 					this.commonService.sendNotification(ChargeThresholdInformation.ChargeThresholdInfo, this.chargeThresholdStatus);
 					this.thresholdInfo.forEach(battery => {
 						battery.isEnabled = value;
@@ -1236,6 +1313,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		if (notification) {
 			switch (notification.type) {
 				case 'IsPowerDriverMissing':
+					// notification for missing power driver is sent on update of isPowerDriverMissing from battery-card,
+					// refresh UI of battery & power section on this
 					this.isPowerDriverMissing = notification.payload;
 					this.getBatteryAndPowerSettings();
 					break;

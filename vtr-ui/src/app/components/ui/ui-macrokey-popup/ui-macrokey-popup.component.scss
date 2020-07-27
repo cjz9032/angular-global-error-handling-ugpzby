@@ -16,6 +16,12 @@
 			text-decoration: none;
 		}
 	}
+	@media #{$high-contrast} {
+		background-color: $screen_dark_50;
+	}
+	@media #{$black-on-white} {
+		background-color: $gaming_light_05;
+	}
 }
 ui-popover {
 	position: absolute;
@@ -40,12 +46,19 @@ ui-popover {
 	&.modal-body {
 		padding: 4rem;
 		.btn-close {
-		position: absolute;
-		top: 0px;
-		right: 0px;
-		padding: 0.6rem 1.2rem;
-		width: 4rem;
-		height: 4rem;
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			padding: 0.6rem 1.2rem;
+			width: 4rem;
+			height: 4rem;
+		}
+		::ng-deep {
+			.macro-key-btn-content {
+				.btn {
+					text-transform: uppercase !important;
+				}
+			}
 		}
 	}
 	.content-body {
@@ -70,15 +83,15 @@ ui-popover {
 	}
 
 	.btn-close {
-		@media #{$high-contrast}{
+		@media #{$high-contrast} {
 			color: buttonText;
 		}
 		button.close {
 			&:hover {
 				opacity: 0.75;
 			}
-			&:focus{
-				outline:1px solid $blueFill !important;
+			&:focus {
+				outline: 1px solid $blueFill !important;
 			}
 		}
 	}
@@ -109,17 +122,17 @@ ui-popover {
 		margin-left: 3rem;
 		border-bottom: 2px solid $blueFill;
 		cursor: pointer;
-		@media #{$high-contrast}{
+		@media #{$high-contrast} {
 			color: buttonText;
 		}
 		&:hover {
 			color: $blueHover;
-			border-bottom: 2px solid $blueHover;			
+			border-bottom: 2px solid $blueHover;
 			cursor: pointer;
 		}
-		&:focus{
+		&:focus {
 			outline: none !important;
-			&::before{
+			&::before {
 				position: absolute;
 				display: block;
 				content: "";
@@ -131,13 +144,13 @@ ui-popover {
 				@media #{$high-contrast} {
 					border-color: highlight !important;
 				}
-			}	
-		}	
+			}
+		}
 	}
-	.macro-key-btn-content{
-		div{
-		position: relative;
-		display: inline-block;
+	.macro-key-btn-content {
+		div {
+			position: relative;
+			display: inline-block;
 		}
 	}
 }

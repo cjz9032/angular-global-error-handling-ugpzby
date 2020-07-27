@@ -3,34 +3,45 @@
 	<div class="modal-information">
 		<h1 id="scan-failure-title" class="title">{{ 'hardwareScan.scanFailureModal.title' | translate }}</h1>
 		<p id="scan-failure-description" class="description">{{ 'hardwareScan.scanFailureModal.problemDetected' | translate }}</p>
-
-		<div class="modules" aria-live="polite" *ngFor="let module of failedModules; let idModule = index">
-			<li class="list-module" [attr.aria-describedby]="'module-' + idModule">
-				<div class="module-row">
-					<vtr-ui-test-result-icon [testResultResponse]="testResultEnum.Warning"></vtr-ui-test-result-icon>
-					<span id="{{ 'module-' + idModule }}" class="module-name">{{ module.moduleName }}</span>
-				</div>
-				<div *ngIf="module.moduleId == 'storage'" aria-live="polite">
-					<div class="list-device" *ngFor="let device of module.devices;">
-						<span class="description">{{ device.deviceName }}</span>
+		<div class="modules-container">
+			<ul role="list" class="list-modules" aria-live="polite" *ngFor="let module of failedModules; let idModule = index;" [attr.id]="'module-' + idModule">
+				<li role="listitem"
+					class="item-module-device"
+					*ngFor="let device of module.devices; let idDevice = index"
+					[attr.aria-describedby]="'module-' + idModule + '-device-' + idDevice">
+					<div class="module-device-row" [attr.id]="'module-' + idModule + '-device-' + idDevice" role="region">
+						<div class="module-device-name-container">
+							<p class="module-name">{{ module.moduleName }}</p>
+							<p class="description device-name">{{ device.deviceName }}</p>
+						</div>
+						<vtr-ui-hardware-scan-test-result [module]="module"></vtr-ui-hardware-scan-test-result>
 					</div>
-				</div>
-			</li>
+				</li>
+			</ul>
 		</div>
+
 		<div *ngIf="hasFailedRbsDevice; else withoutRBS">
 			<div class="description description-failure">
 				<p [innerHTML]="'hardwareScan.scanFailureModal.suggestedActionRbs' | translate"></p>
 			</div>
 			<div class="row button-row">
-				<vtr-ui-button metricsEvent="FeatureClick" metricsParent="HardwareScan.ScanFailureActions"
-					metricsItem="ScanFailureActions.RecoverBadSectors" id="rbsButton" (click)="goToRBSPage()"
+				<vtr-ui-button
+					metricsEvent="FeatureClick"
+					metricsParent="HardwareScan.ScanFailureActions"
+					metricsItem="ScanFailureActions.RecoverBadSectors"
+					id="rbsButton" (click)="goToRBSPage()"
 					[tooltipText]="'hardwareScan.scanFailureModal.recoverBadSectorsButtonText' | translate"
 					[label]="'hardwareScan.scanFailureModal.recoverBadSectorsButtonText' | translate">
 				</vtr-ui-button>
-				<button class="btn btn-link support-button" type="button" id="supportButtonWithRBS"
-					vtrMetrics metricsEvent="FeatureClick" metricsParent="HardwareScan.ScanFailureActions" metricsItem="ScanFailureActions.LenovoSupport"
-					[title]="'hardwareScan.scanFailureModal.supportButtonText' | translate"
-					(click)="openSupportPage()">{{'hardwareScan.scanFailureModal.supportButtonText' | translate }}</button>
+				<vtr-ui-button
+					buttonColor="secondary-blue-lighter-bg-transparent"
+					metricsEvent="FeatureClick"
+					metricsParent="HardwareScan.ScanFailureActions"
+					metricsItem="ScanFailureActions.LenovoSupport"
+					id="supportButtonWithRBS" (click)="openSupportPage()"
+				   [tooltipText]="'hardwareScan.scanFailureModal.supportButtonText' | translate"
+				   [label]="'hardwareScan.scanFailureModal.supportButtonText' | translate">
+				</vtr-ui-button>
 			</div>
 		</div>
 
@@ -50,10 +61,14 @@
 			</div>
 		</ng-template>
 
-		<a vtrMetrics metricsEvent="FeatureClick" metricsParent="HardwareScan.ScanFailureActions" aria-label="Close"
-			metricsItem="ScanFailureActions.Close" role="button" href="javascript:;" class="close-btn"
-			(click)="closeModal()">
-			<img [src]=" 'assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
-		</a>
+		<div class="btn-modal-close">
+			<vtr-ui-close-button
+				metricsItem="ScanFailureActions.Close"
+				metricsEvent="FeatureClick"
+				metricsParent="HardwareScan.ScanFailureActions"
+				aria-label="Close"
+				(clickClose)="closeModal()">
+			</vtr-ui-close-button>
+		</div>
 	</div>
 </div>

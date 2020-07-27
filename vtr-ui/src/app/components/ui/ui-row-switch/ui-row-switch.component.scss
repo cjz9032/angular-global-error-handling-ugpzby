@@ -4,12 +4,6 @@
 	.vtr-ui-switch-row.#{$name} {
 		.col-auto {
 			height: 100%;
-			@media #{$black-on-white} {
-				margin: 0.2rem;
-			}
-			@media #{$white-on-black} {
-				margin: 0.2rem;
-			}
 		}
 		.vtr-col-pad {
 			padding: 0 1.5rem;

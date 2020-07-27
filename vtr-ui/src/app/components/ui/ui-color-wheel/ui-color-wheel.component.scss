@@ -5,6 +5,11 @@
 .picker-container {
 	position: relative;
 	border-top: 0.2rem solid $gaming_darkest;
+	.picker-wrapper {
+		@media #{$high-contrast} {
+			-ms-high-contrast-adjust: none;
+		}
+	}
 	.overlay {
 		position: absolute;
 		width: 100%;
@@ -22,6 +27,12 @@
 		padding: 4rem;
 		padding-top: 16rem;
 		box-sizing: border-box;
+		@media #{$high-contrast} {
+			background-color: $screen_dark_50;
+		}
+		@media #{$black-on-white} {
+			background-color: $gaming_light_05;
+		}
 	}
 
 	.rgb-header {
@@ -102,7 +113,7 @@
 		color: $gaming_lightest;
 		font-size: 1.4rem;
 		text-align: center;
-		font-weight: normal;
+		font-weight: bold;
 		height: 4rem;
 		padding: 0rem 2rem;
 		line-height: 2.86rem;
@@ -143,8 +154,7 @@
 		box-shadow: none !important;
 		pointer-events: none;
 		@media #{$high-contrast} {
-			color: inactiveBorder;
-			border-color: inactiveBorder;
+			opacity: 0.4;
 		}
 	}
 	.backColorDpiv {

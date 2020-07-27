@@ -280,6 +280,20 @@
 							border: 0.1rem solid $menu_hover;
 						}
 					}
+					@media #{$white-on-black} {
+							&:focus ~ label {
+								&::before {
+									@include white-border;
+								}
+							}
+					}
+					@media #{$black-on-white} {
+						&:focus ~ label {
+							&::before {
+								@include black-border;
+							}
+						}
+				}
 				}
 
 				label {
@@ -714,8 +728,7 @@
 		.content-page-2 .interests input[type="checkbox"] + label {
 			border: 0.1rem solid rgba($color: $dark, $alpha: 0.5);
 		}
-
-		.content-page-2 .interests input[type="checkbox"]:checked + label {
+		.content-page-2 .interests input[type="checkbox"]:checked + label, .content-page-2 .interests input[type="checkbox"]:hover + label {
 			@include high-contrast-white-border;
 			color: $light;
 			@include high-contrast-white-background;
@@ -734,7 +747,7 @@
 			border: 0.1rem solid rgba($color: $light, $alpha: 0.5);
 		}
 
-		.content-page-2 .interests input[type="checkbox"]:checked + label {
+		.content-page-2 .interests input[type="checkbox"]:checked + label, .content-page-2 .interests input[type="checkbox"]:hover + label {
 			@include high-contrast-black-border;
 			color: $dark;
 			@include high-contrast-black-background;

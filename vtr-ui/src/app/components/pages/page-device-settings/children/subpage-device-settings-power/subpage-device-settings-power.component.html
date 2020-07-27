@@ -192,6 +192,7 @@
 						[isCollapsed]="false"
 						[collapseLinkId]="'device-settings-powerSettings'">
 						<ul class="list-group list-group-flush">
+							<!-- Airplane Power Mode Section -->
 							<li class="common-li-padding"
 								*ngIf="showAirplanePowerModeSection">
 								<vtr-ui-row-switch
@@ -240,6 +241,7 @@
 									(toggleOnOff)="onToggleOfFlipToBoot($event)">
 								</vtr-ui-row-switch>
 							</li>
+							<!-- always On USB Section -->
 							<li class="common-li-padding"
 								*ngIf="!isDesktopMachine && alwaysOnUSBStatus.available">
 								<vtr-ui-row-switch

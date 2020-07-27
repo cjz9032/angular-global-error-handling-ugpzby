@@ -12,7 +12,14 @@ $normalPadding: 2.4rem;
 	position: relative;
 	width: 100%;
 	line-height: 1.4;
- 
+	@media #{$white-on-black} {
+		box-shadow: none;
+		@include white-border;
+	}
+	@media #{$black-on-white} {
+		box-shadow: none;
+		@include black-border;
+	}
 	.icon {
 		position: absolute;
 		width: 3rem;

@@ -167,11 +167,11 @@
 			&:focus::after {
 				border: thin solid $orange;
 				@media #{$black-on-white} {
-						@include button-outline-blue($dark);
+					@include button-outline-blue($dark);
 				}
 
 				@media #{$white-on-black} {
-						@include button-outline-blue($light);
+					@include button-outline-blue($light);
 				}
 			}
 		}
@@ -193,7 +193,7 @@
 				border-bottom: 2px solid $color;
 
 				&:hover {
-					border-bottom-color: rgba($color,0);
+					border-bottom-color: rgba($color, 0);
 				}
 			}
 
@@ -202,20 +202,20 @@
 		}
 
 		.btn-secondary-blue-lighter-bg-transparent {
-			@include secondary-button(transparent, $blue-lighter)
+			@include secondary-button(transparent, $blue-lighter);
 		}
 
 		.btn-secondary-light-bg-transparent {
-			@include secondary-button(transparent, $light)
+			@include secondary-button(transparent, $light);
 		}
-
 	}
 }
 
 ::ng-deep {
 	.is-gaming {
 		.button-box {
-			.btn, .button {
+			.btn,
+			.button {
 				height: 4rem !important;
 				min-height: 4rem !important;
 				padding: 0 2rem !important;
@@ -227,6 +227,7 @@
 				-webkit-transition: 0.2s ease !important;
 				transition: 0.2s ease !important;
 				display: inline-block !important;
+				color: $gaming_lightest !important;
 				cursor: pointer !important;
 				-webkit-user-select: none !important;
 				-moz-user-select: none !important;
@@ -235,7 +236,7 @@
 				letter-spacing: 0.1rem !important;
 				font-weight: bold !important;
 				min-width: 4rem !important;
-				@media #{$high-contrast}{
+				@media #{$high-contrast} {
 					border: 0.1rem solid windowText !important;
 					background: window !important;
 					color: buttonText !important;
@@ -252,7 +253,7 @@
 
 				&:hover {
 					background-color: $blueHover !important;
-					@media #{$high-contrast}{
+					@media #{$high-contrast} {
 						background: none !important;
 						background-color: none !important;
 					}
@@ -265,6 +266,7 @@
 				.text {
 					letter-spacing: inherit !important;
 				}
+
 				&:focus {
 					@media #{$high-contrast} {
 						&::after {

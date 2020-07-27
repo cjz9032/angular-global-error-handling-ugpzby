@@ -3183,18 +3183,18 @@
         "executingScanTitle": "{{title}} taranıyor",
         "showDetails": "Ayrıntıları Görüntüle",
         "hideDetails": "Ayrıntıları Gizle",
-        "NA": "N/A"
+        "NA": "Yok"
     },
     "smartPerformance": {
-        "title": "Health & Support",
-        "back": "BACK",
-        "performanceandSecurityCheckTitle": "Performance & Security Check",
-        "performanceandSecurityCheckSubTitle": "Let's diagnose and resolve performance and security issues in your computer",
-        "scanButton": "FREE PC SCAN",
-        "section1Heading": "How would you rate your PC Performance?",
-        "section1Description": "PC running slow? Applications taking too long to respond? Windows errors? Malware concerns? Let's diagnose whats's causing the problem and fix it.",
-        "critical": "CRITICAL",
-        "allisWell": "ALL IS WELL",
+        "title": "Smart Performance",
+        "back": "GERİ",
+        "performanceandSecurityCheckTitle": "Performans ve Güvenlik Kontrolü",
+        "performanceandSecurityCheckSubTitle": "Bilgisayarınızdaki performans ve güvenlik sorunlarını teşhis edip çözelim",
+        "scanButton": "ÜCRETSİZ BİLGİSAYAR TARAMASI",
+        "section1Heading": "Bilgisayar performansınızı nasıl değerlendirirsiniz?",
+        "section1Description": "Bilgisayarınız yavaş mı çalışıyor? Uygulamaların yanıt vermesi çok mu uzun sürüyor? Windows hataları mı var? Kötü amaçlı yazılımdan mı endişeleniyorsunuz? Soruna neyin neden olduğunu teşhis edelim ve düzeltelim.",
+        "critical": "KRİTİK",
+        "allisWell": "HER ŞEY YOLUNDA",
         "zero": 0,
         "one": 1,
         "two": 2,
@@ -3206,652 +3206,652 @@
         "eight": 8,
         "nine": 9,
         "ten": 10,
-        "tuneUP": "Your PC needs a tune-up",
-        "section2Heading": "Top-notch PC Performance. Always",
-        "section2Description": "Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+        "tuneUP": "Bilgisayarınıza ayarlama yapılması gerekiyor",
+        "section2Heading": "Birinci Sınıf Bilgisayar Performansı. Her zaman",
+        "section2Description": "Yazılımımız sorunları ortaya çıktıkça bulmak ve düzeltmek için proaktif olarak bilgisayarınızı 7/24 tarayabilir, böylece bilgisayarınız her zaman birinci sınıf performansa sahip olur.",
         "tunePCPerformance": {
-            "title": "TUNE PC PERFORMANCE",
-            "heading": "Show your computer some extra love",
-            "description": "Even the best computer will benefit from periodic tune-ups. Get a tune-up and get more done with our powerful app.",
+            "title": "BİLGİSAYAR PERFORMANSINI AYARLAYIN",
+            "heading": "Bilgisayarınıza biraz daha ilgi gösterin",
+            "description": "En iyi bilgisayara bile düzenli aralıklarla ayarlama yapılması gerekir. Güçlü uygulamamızla bir ayar yapılmasını sağlayın ve daha fazlasını yapın.",
             "tabSet1": {
-                "tab1": "Accumulated Junk",
-                "tab2": "Usability Issues",
-                "tab3": "Windows Settings",
-                "tab4": "Systems Errors",
-                "tab5": "Registry Errors"
+                "tab1": "Birikmiş İstenmeyen Dosyalar",
+                "tab2": "Kullanılabilirlik Sorunları",
+                "tab3": "Windows Ayarları",
+                "tab4": "Sistem Hataları",
+                "tab5": "Kayıt Defteri Hataları"
             },
             "tabSet2": {
-                "tab1Heading": "IT'S EASY",
-                "tab1Description": "We don't confuse you with tech mumbo jumbp",
-                "tab2Heading": "IT'S FAST",
-                "tab2Description": "Get a 100 point check done in under 5 minutes",
-                "tab3Heading": "IT'S SAFE",
-                "tab3Description": "No scareware, built with best practises"
+                "tab1Heading": "KOLAY",
+                "tab1Description": "Teknolojiyle ilgili gereksiz bilgilerle kafanızı karıştırmıyoruz",
+                "tab2Heading": "HIZLI",
+                "tab2Description": "5 dakikadan kısa bir sürede 100 puanlık bir kontrol yapın",
+                "tab3Heading": "GÜVENLİ",
+                "tab3Description": "Scareware yazılımı olmadan, en iyi uygulamalar oluşturulmuştur"
             },
-            "summaryTitle": "Tune PC Performance"
+            "summaryTitle": "Bilgisayar Performansını Ayarlayın"
         },
         "boostInternetPerformance": {
-            "title": "BOOST INTERNET PERFORMANCE",
-            "extraTitle": "INTERNET PERFORMANCE",
-            "heading": "Give your internet a boost",
-            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "title": "İNTERNET PERFORMANSINI ARTIRIN",
+            "extraTitle": "İNTERNET PERFORMANSI",
+            "heading": "İnternetinizi hızlandırın",
+            "description": "Birçok kişi için yavaş Wi-Fi veya Wi-Fi olmaması şebekenin dışında yaşamak gibidir. En iyi performans için internet, Wi-Fi ve tarayıcı ayarlarınızı yapılandıralım.",
             "tabSet1": {
-                "tab1": "Network Settings",
-                "tab2": "Browser Settings",
-                "tab3": "Browser Security",
-                "tab4": "Wi-Fi Performance",
-                "tab5": "E-junk"
+                "tab1": "İstenmeyen elektronik dosyalar",
+                "tab2": "Ağ Ayarları",
+                "tab3": "Tarayıcı Ayarları",
+                "tab4": "Tarayıcı Güvenliği",
+                "tab5": "Wi-Fi Performansı"
             },
             "tabSet2": {
-                "tab1Heading": "ZERO DAY VIRUS",
-                "tab1Description": "We remove even the newest malware infections",
-                "tab2Heading": "SPYWARE REMOVAL",
-                "tab2Description": "We remove all potentially unwanted programs",
-                "tab3Heading": "LIGHT AND FAST",
-                "tab3Description": "Scan typically takes 5-10 minutes"
+                "tab1Heading": "TARAYICI SORUNLARI",
+                "tab1Description": "Tüm popüler web tarayıcılarınızı yapılandırır ve düzeltiriz.",
+                "tab2Heading": "BAĞLANTI HATALARI",
+                "tab2Description": "Bağlantı sorunlarınızı teşhis edebilir ve onarabiliriz.",
+                "tab3Heading": "YAVAŞ İNTERNET",
+                "tab3Description": "Maksimum performans elde etmenize yardımcı olacağız."
             },
-            "summaryTitle": "Internet Performance"
+            "summaryTitle": "İnternet Performansı"
         },
         "malwareSecurity": {
-            "title": "MALWARE & SECURITY",
-            "heading": "Give your internet a boost",
-            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "title": "KÖTÜ AMAÇLI YAZILIM VE GÜVENLİK",
+            "heading": "Bilgisayarınıza ihtiyaç duyduğu ekstra bakımı sağlayın",
+            "description": "Kötü amaçlı yazılımlar bilgisayarın çökmesine, verilerin bozulmasına ve performansın düşmesine neden olabilir. Kötü amaçlı yazılımları kaldırın ve daha fazlasını yapın.",
             "tabSet1": {
-                "tab1": "Malware scan",
-                "tab2": "Zero-day infections",
-                "tab3": "Security settings",
-                "tab4": "Errant programs",
-                "tab5": "Annoying adware"
+                "tab1": "Kötü amaçlı yazılım taraması",
+                "tab2": "Sıfır gün bulaşmaları",
+                "tab3": "Hatalı programlar",
+                "tab4": "Can sıkıcı reklam yazılımı",
+                "tab5": "Güvenlik ayarları"
             },
             "tabSet2": {
-                "tab1Heading": "SLOW INTERNET",
-                "tab1Description": "We will help you get maximum performance.",
-                "tab2Heading": "CONNECTIVITY ERRORS",
-                "tab2Description": "We can diagnose and repair your connectivity problems.",
-                "tab3Heading": "BROWSER ISSUES",
-                "tab3Description": "We configure and fix all your popular web browsers."
+                "tab1Heading": "SIFIR GÜN VİRÜSÜ",
+                "tab1Description": "En yeni kötü amaçlı yazılım bulaşmalarını bile kaldırıyoruz",
+                "tab2Heading": "CASUS YAZILIMI KALDIRMA",
+                "tab2Description": "İstenmeyen türden olabilecek tüm programları kaldırıyoruz",
+                "tab3Heading": "HAFİF VE HIZLI",
+                "tab3Description": "Tarama genellikle 5-10 dakika sürer"
             },
-            "summaryTitle": "Malware & Security"
+            "summaryTitle": "Kötü Amaçlı Yazılım ve Güvenlik"
         },
         "proactiveAutomated": {
-            "title": "PROACTIVE & AUTOMATED",
-            "heading": "Get the power to resolve issues, before they impact you!",
-            "description": "Smart Performance constantly looks for hundreads of issues that impact PC performance. We fix them proactively, giving you peace of mind.",
+            "title": "PROAKTİF VE OTOMATİK",
+            "heading": "Sorunları, sizi etkilemeden önce çözme gücüne sahip olun!",
+            "description": "Smart Performance, sürekli olarak bilgisayar performansını etkileyen yüzlerce sorunu arar. Sorunları proaktif şekilde düzelterek size gönül rahatlığı sağlarız.",
             "tabSet1": {
-                "tab1": "Schedule Scan",
-                "tab2": "On-demand scan",
-                "tab3": "Automated resolution",
-                "tab4": "It's effective",
-                "tab5": "24/7 Protection"
+                "tab1": "Tarama Planla",
+                "tab2": "İsteğe bağlı tarama",
+                "tab3": "Otomatik çözünürlük",
+                "tab4": "Etkili",
+                "tab5": "7/24 Koruma"
             },
             "tabSet2": {
-                "tab1Heading": "IT'S EASY",
-                "tab1Description": "We don't confuse you with tech mumbo jumbp",
-                "tab2Heading": "IT'S FAST",
-                "tab2Description": "Get a 100 point check done in under 5 minutes",
-                "tab3Heading": "IT'S SAFE",
-                "tab3Description": "No scareware, built with best practises"
+                "tab1Heading": "KOLAY",
+                "tab1Description": "Teknolojiyle ilgili gereksiz bilgilerle kafanızı karıştırmıyoruz",
+                "tab2Heading": "HIZLI",
+                "tab2Description": "5 dakikadan kısa bir sürede 100 puanlık bir kontrol yapın",
+                "tab3Heading": "GÜVENLİ",
+                "tab3Description": "Scareware yazılımı olmadan, en iyi uygulamalar oluşturulmuştur"
             }
         },
-        "startScan": "<b>Ready to start the scan?</b> Let's diagnose and resolve performance and security issues in your computer",
+        "startScan": "<b>Taramayı başlatmaya hazır mısınız?</b> Bilgisayarınızdaki performans ve güvenlik sorunlarını teşhis edelim.",
         "subscriptionDetails": {
-            "title": "Subscription details",
-            "description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
-            "learnMore": "Learn more",
-            "startDate": "Start date",
-            "endDate": "End date",
-            "status": "Status",
-            "activeStatus": "ACTIVE",
-            "inactiveStatus": "INACTIVE",
-            "manageSubscription": "MANAGE SUBSCRIPTION",
-            "titlebeta": "Lenovo Beta Program",
-            "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
-            "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
-            "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+            "title": "Abonelik Ayrıntıları",
+            "description": "Lenovo Smart Performance Hizmetine abonesiniz. Bu süre boyunca, bilgisayarınızın korunmasını ve sorunsuz çalışmasını sağlamak için tüm özellikler tamamen kullanılabilir.",
+            "learnMore": "Ek bilgi",
+            "startDate": "Başlangıç tarihi",
+            "endDate": "Bitiş tarihi",
+            "status": "Durum",
+            "activeStatus": "ETKİN",
+            "inactiveStatus": "ETKİN DEĞİL",
+            "manageSubscription": "ABONELİĞİ YÖNET",
+            "titlebeta": "Lenovo Beta Programı",
+            "manageSubscriptionBeta": "TAM ÖZELLİĞİ ETKİNLEŞTİR",
+            "descriptionbeta": "Lenovo, Temmuz 2020'ye kadar Smart Performance özelliğini denemek için pilot program sunuyor.",
+            "descriptionbeta1": "İsterseniz katılıp tam özelliği deneyebilirsiniz.",
+            "descriptionNonSubscriber": "Lenovo Smart Performance Hizmetine abone değilsiniz. Yalnızca bilgisayarınızı tarayabilirsiniz. Bilgisayarınızı korumanın ve sorunsuz çalışmanın tüm avantajlarından yararlanmak için şimdi abone olun.",
             "processStatus": "İŞLENİYOR"
         },
         "scanSettings": {
-            "title": "Scan settings",
-            "description": "Enable or disable the scan and set the scan schedule",
-            "enableScan": "Enable Scan",
-            "changeScanTitle": "Change scan schedule",
-            "changeScanDescription": "Edit the scan schedule to run when you need it.",
-            "frequency": "Frequency",
-            "txtDate": "Date",
-            "txtDay": "Day",
-            "txtTime": "Time",
-            "txtSave": "save",
-            "txtCancel": "cancel",
-            "scanFrequencyWeek": "Once a week",
-            "scanFrequencyEveryWeek": "Every other week",
-            "scanFrequencyMonth": "Every month",
-            "mon": "Monday",
-            "tue": "Tuesday",
-            "wed": "Wednesday",
-            "thu": "Thursday",
-            "fri": "Friday",
-            "sat": "Saturday",
-            "sun": "Sunday",
+            "title": "Tarama ayarları planlayın",
+            "description": "Taramayı etkinleştirin veya devre dışı bırakın ve tarama planlamasını ayarlayın",
+            "enableScan": "Taramayı Etkinleştir",
+            "changeScanTitle": "Tarama planını değiştirin",
+            "changeScanDescription": "İhtiyacınız olduğunda çalıştırmak için tarama planlamasını düzenleyin.",
+            "frequency": "Hız",
+            "txtDate": "Tarih",
+            "txtDay": "Gün",
+            "txtTime": "Saat",
+            "txtSave": "kaydet",
+            "txtCancel": "iptal",
+            "scanFrequencyWeek": "Haftada bir",
+            "scanFrequencyEveryWeek": "Her iki haftada bir",
+            "scanFrequencyMonth": "Her ay",
+            "mon": "Pazartesi",
+            "tue": "Salı",
+            "wed": "Çarşamba",
+            "thu": "Perşembe",
+            "fri": "Cuma",
+            "sat": "Cumartesi",
+            "sun": "Pazar",
             "am": "AM",
             "pm": "PM",
-            "tooltipText": "Enable this toggle to automatically initiate a system performance scan on your selected date and time."
+            "tooltipText": "Bu geçiş etkinleştirildiğinde, sistem performansı ve güvenlik taraması ayarlanan tarih ve saatte otomatik olarak başlatılır."
         },
         "scanningPage": {
-            "title": "Performance & security check",
-            "description": "Please wait while we scan your system for potential problems and threats.",
-            "scanningSystem": "Scanning system",
-            "complete": "complete",
+            "title": "Performans ve güvenlik kontrolü",
+            "description": "Sisteminizi olası sorunlar ve tehditler için tararken lütfen bekleyin.",
+            "scanningSystem": "Tarama sistemi",
+            "complete": "tamamla",
             "cancelScan": {
-                "button": "CANCEL SCAN",
-                "title": "Cacel the scan?",
-                "description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
-                "yesButton": "YES, CANCEL",
-                "noButton": "NO, RESUME SCAN",
+                "button": "TARAMAYI İPTAL ET",
+                "title": "Tarama iptal edilsin mi?",
+                "description": "Geçerli ekrandan çıkarsanız tarama iptal edilir ve Ana Sayfaya geri dönersiniz. Ancak, taramayı istediğiniz zaman tekrar çalıştırabilirsiniz.",
+                "yesButton": "EVET, İPTAL EDİN",
+                "noButton": "HAYIR, TARAMAYA DEVAM ET",
                 "cancelMayTakeSomeTime": "Lütfen bekleyin, sisteminize bağlı olarak iptal işlemi biraz zaman alabilir.",
                 "cancelTextPrompt": "İptal etmek istediğinizden emin misiniz?"
             },
-            "waiting": "WAITING TO SCAN",
-            "completed": "COMPLETED",
+            "waiting": "TARAMA BEKLENİYOR",
+            "completed": "TAMAMLANDI",
             "nowScanningDetail": {
-                "cardTitle": "NOW SCANNING DETAIL",
-                "current": "CURRENT: ",
-                "upNext": "UP NEXT",
-                "tunePCDesc": "Let’s help improve your PC performance. We do it safely using industry best practices. Benefits for subscribers include reduced PC start time, improved performance, improved stability and faster launch of applications.",
-                "boostDesc": "Let’s help enhance your browsing experience. Let's fix network and access issues. Benefits for subscribers include betterment in internet connectivity, improvement in upload/download speeds and making internet more secure.",
-                "malwareDesc": "Let’s help quickly secure your PC, on-demand. We do it by removing spyware, malware and adware. We also remove near/zero-day infections. Benefits for subscribers include security of data and optimal system performance.",
-                "proactiveDesc": "Let's tune your computer periodically and fix issues, Proactive and automated to keep your PC tuned and covered. Always",
+                "cardTitle": "ŞİMDİ AYRINTILI OLARAK TARANIYOR",
+                "current": "MEVCUT: ",
+                "upNext": "SONRAKİ",
+                "tunePCDesc": "Bilgisayar performansınızı artıralım. Sektördeki en iyi uygulamaları kullanarak güvenle yapıyoruz. Aboneler için avantajlar arasında daha düşük bilgisayar başlatma süresi, gelişmiş performans, gelişmiş kararlılık ve uygulamaların daha hızlı başlatılması yer alır.",
+                "boostDesc": "Tarama deneyiminizi geliştirmeye yardımcı olalım. Ağ ve erişim sorunlarını düzeltelim. Aboneler için avantajlar arasında internet bağlantısını iyileştirme, yükleme / indirme hızlarında artış ve interneti daha güvenli hale getirme sayılabilir.",
+                "malwareDesc": "Bilgisayarınızı, isteğe bağlı olarak hızlı bir şekilde güven altına almaya yardımcı olalım. Bunu casus yazılım, kötü amaçlı yazılım ve reklam yazılımlarını kaldırarak yaparız. Ayrıca sıfır güne yakın bulaşmaları da gideririz. Aboneler için avantajlar arasında veri güvenliği ve optimum sistem performansı yer alır.",
+                "proactiveDesc": "Periyodik olarak bilgisayarınızın ayarlarını yapalım ve sorunlarını giderelim. Bilgisayarınızı ayarlı ve kapsam dahilinde tutmak için proaktif ve otomatik koruma sağlarız. Her zaman",
                 "tunePCScanningItems": {
                     "accumulatedJunk": {
-                        "itema1": "Look for junk in 85 locations",
-                        "itema2": "System log files that aren’t needed",
-                        "itema3": "Unnecessary application residues",
-                        "itema4": "Temporary files that clog diskspace",
-                        "itema5": "Files that you deleted so long ago",
-                        "itema6": "Outdated errors and alerts"
+                        "itema1": "85 konumda istenmeyen dosyaları arayın",
+                        "itema2": "Gerekli olmayan sistem günlük dosyaları",
+                        "itema3": "Gereksiz uygulama kalıntıları",
+                        "itema4": "Disk alanını tıkayan geçici dosyalar",
+                        "itema5": "Çok uzun zaman önce sildiğiniz dosyalar",
+                        "itema6": "Eski hatalar ve uyarılar"
                     },
                     "usabilityIssues": {
-                        "itemb1": "Address dozens of usability challenges",
-                        "itemb2": "Check external devices connectivity",
-                        "itemb3": "Keeping Windows updates always current",
-                        "itemb4": "Do apps render and appear at its best",
-                        "itemb5": "Analyzing processing power utilization",
-                        "itemb6": "Help locate files easily"
+                        "itemb1": "Düzinelerce kullanılabilirlik sorununu ele alın",
+                        "itemb2": "Harici cihazların bağlantısını kontrol edin",
+                        "itemb3": "Windows güncellemelerini her zaman güncel tutma",
+                        "itemb4": "Uygulamalar en iyi şekilde oluşturuluyor ve görünüyor mu?",
+                        "itemb5": "İşlem gücü kullanımını analiz etme",
+                        "itemb6": "Dosyaların kolayca bulunmasına yardımcı olun"
                     },
                     "windowsSettings": {
-                        "itemc1": "Diagnose dozens of Windows OS settings",
-                        "itemc2": "Ensure all is well with your Windows",
-                        "itemc3": "Ensure essential services are running",
-                        "itemc4": "Check health of connectivity settings",
-                        "itemc5": "Check ability to share files in network",
-                        "itemc6": "Check biometric and access settings"
+                        "itemc1": "Düzinelerce Windows işletim sistemi ayarını teşhis edin",
+                        "itemc2": "Windows'unuzda her şeyin yolunda olduğundan emin olun",
+                        "itemc3": "Temel hizmetlerin çalıştığından emin olun",
+                        "itemc4": "Bağlantı ayarlarının durumunu kontrol edin",
+                        "itemc5": "Ağda dosya paylaşma yeteneğini kontrol etme",
+                        "itemc6": "Biyometrik ve erişim ayarlarını kontrol edin"
                     },
                     "systemErrors": {
-                        "itemd1": "Ensure essential services are running",
-                        "itemd2": "Select services for higher performance",
-                        "itemd3": "Look for software conflict errors",
-                        "itemd4": "Optimize Windows error management",
-                        "itemd5": "Check and fix apps launching errors",
-                        "itemd6": "Configure system error reports"
+                        "itemd1": "Temel hizmetlerin çalıştığından emin olun",
+                        "itemd2": "Daha yüksek performans için hizmetler seçin",
+                        "itemd3": "Yazılım çakışması hatalarını arayın",
+                        "itemd4": "Windows hata yönetimini optimize edin",
+                        "itemd5": "Uygulama başlatma hatalarını kontrol edin ve düzeltin",
+                        "itemd6": "Sistem hata raporlarını yapılandırın"
                     },
                     "registryErrors": {
-                        "iteme1": "Deep check Windows registry,",
-                        "iteme2": "Scanning for invalid Windows services",
-                        "iteme3": "Finding corrupted registry entries",
-                        "iteme4": "Look for useless file extensions",
-                        "iteme5": "Search broken entries of installed apps",
-                        "iteme6": "Look for useless leftover entries"
+                        "iteme1": "Windows kayıt defterini derinlemesine kontrol edin,",
+                        "iteme2": "Geçersiz Windows hizmetlerini tarama",
+                        "iteme3": "Bozuk kayıt defteri girdilerini bulma",
+                        "iteme4": "Yararsız dosya uzantılarını arayın",
+                        "iteme5": "Yüklü uygulamaların bozuk girişlerini arayın",
+                        "iteme6": "Gereksiz, kalan girişleri arayın"
                     }
                 },
                 "boostScanningItems": {
                     "networkSettings": {
-                        "itema1": "Diagnose network and Internet settings",
-                        "itema2": "Verify network configuration settings",
-                        "itema3": "Verify available network settings",
-                        "itema4": "Configure to load websites faster",
-                        "itema5": "Look for page rendering errors",
-                        "itema6": "Are connection service(s) running well"
+                        "itema1": "Ağ ve internet ayarlarını teşhis edin",
+                        "itema2": "Ağ yapılandırma ayarlarını doğrulayın",
+                        "itema3": "Kullanılabilir ağ ayarlarını doğrulayın",
+                        "itema4": "Web sitelerini daha hızlı yüklenecek şekilde yapılandırın",
+                        "itema5": "Sayfa oluşturma hatalarını arayın",
+                        "itema6": "Bağlantı hizmetleri iyi çalışıyor mu?"
                     },
                     "browserSettings": {
-                        "itemb1": "Enable better browsing experience",
-                        "itemb2": "Configure settings faster websites rendering",
-                        "itemb3": "Ensure browser security services are OK",
-                        "itemb4": "Ensure webpages are rendering properly",
-                        "itemb5": "Check settings for faster downloads",
-                        "itemb6": "Check permissions and access control"
+                        "itemb1": "Daha iyi tarama deneyimini etkinleştirin",
+                        "itemb2": "Daha hızlı web sitesi oluşturmak için ayarları yapılandırın",
+                        "itemb3": "Tarayıcı güvenlik hizmetlerinin iyi olduğundan emin olun",
+                        "itemb4": "Web sayfalarının düzgün bir şekilde oluşturulduğundan emin olun",
+                        "itemb5": "Daha hızlı indirme işlemleri için ayarları kontrol edin",
+                        "itemb6": "İzinleri ve erişim kontrolünü kontrol edin"
                     },
                     "browserSecurity": {
-                        "itemc1": "Ensure security services are running",
-                        "itemc2": "Configure browser security features",
-                        "itemc3": "Check network services are running well",
-                        "itemc4": "Configure protocol settings",
-                        "itemc5": "Verify Browser content settings are OK",
-                        "itemc6": "Verify browser plugins & extensions"
+                        "itemc1": "Güvenlik hizmetlerinin çalıştığından emin olun",
+                        "itemc2": "Tarayıcı güvenlik özelliklerini yapılandırın",
+                        "itemc3": "Ağ hizmetlerinin iyi çalışıp çalışmadığını kontrol edin",
+                        "itemc4": "Protokol ayarlarını yapılandırın",
+                        "itemc5": "Tarayıcı içerik ayarlarının doğru olduğunu onaylayın",
+                        "itemc6": "Tarayıcı eklentilerini ve uzantılarını doğrulayın"
                     },
                     "wifiPerformance": {
-                        "itemd1": "Optimize Wi-Fi experience settings",
-                        "itemd2": "Ensure your home network is secure",
-                        "itemd3": "Check Wi-Fi services settings",
-                        "itemd4": "Secure network sharing settings",
-                        "itemd5": "Check Wi-Fi security standards",
-                        "itemd6": "Ensure Wi-Fi channels do not overlap"
+                        "itemd1": "Wi-Fi deneyimi ayarlarını optimize edin",
+                        "itemd2": "Ev ağınızın güvenli olduğundan emin olun",
+                        "itemd3": "Wi-Fi hizmet ayarlarını kontrol edin",
+                        "itemd4": "Güvenli ağ paylaşım ayarları",
+                        "itemd5": "Wi-Fi güvenlik standartlarını kontrol edin",
+                        "itemd6": "Wi-Fi kanallarının çakışmamasını sağlayın"
                     },
                     "eJunk": {
-                        "iteme1": "Eliminate clutter from 4 browsers",
-                        "iteme2": "Look for leftover e-junk",
-                        "iteme3": "Look for outdated internet files",
-                        "iteme4": "Clear unwanted web cache",
-                        "iteme5": "Clear cookies",
-                        "iteme6": "Remove browser residues"
+                        "iteme1": "Tarayıcılardan gelen dağınıklığı ortadan kaldırın",
+                        "iteme2": "Kalan istenmeyen elektronik dosyaları arayın",
+                        "iteme3": "Eski internet dosyalarını arayın",
+                        "iteme4": "İstenmeyen web önbelleğini temizleyin",
+                        "iteme5": "Tanımlama bilgilerini temizleyin",
+                        "iteme6": "Tarayıcı kalıntılarını kaldırın"
                     }
                 },
                 "malwareScanningItems": {
                     "malwareScan": {
-                        "itema1": "Scan common loading points",
-                        "itema2": "Check critical locations for threats",
-                        "itema3": "Check for virus, spyware and malware",
-                        "itema4": "Scan for 50+ file types",
-                        "itema5": "Scan for malware remnants",
-                        "itema6": "Leverage from cloud remediation engine"
+                        "itema1": "Ortak yükleme noktalarını tarayın",
+                        "itema2": "Kritik konumlarda tehdit olup olmadığını kontrol edin",
+                        "itema3": "Virüs, casus yazılım ve kötü amaçlı yazılım olup olmadığını kontrol edin",
+                        "itema4": "50'den fazla dosya türünü tarayın",
+                        "itema5": "Kötü amaçlı yazılım kalıntılarını tarayın",
+                        "itema6": "Bulut iyileştirme motorundan yararlanın"
                     },
                     "zerodayInfections": {
-                        "itemb1": "Look for zero-day virus",
-                        "itemb2": "Look for recent, undiagnosed malware",
-                        "itemb3": "Scan with cloud-based remediation",
-                        "itemb4": "Perform behavioral monitoring",
-                        "itemb5": "Scan files with aggregated engine",
-                        "itemb6": "Scan against latest definitions"
+                        "itemb1": "Sıfır gün virüsü arayın",
+                        "itemb2": "En yeni, teşhis edilmemiş kötü amaçlı yazılımları arayın",
+                        "itemb3": "Bulut tabanlı iyileştirme ile tarama",
+                        "itemb4": "Davranışsal izleme yapın",
+                        "itemb5": "Birleştirilmiş motorla dosya tarayın",
+                        "itemb6": "En son tanımlara karşı tarayın"
                     },
                     "securitySettings": {
-                        "itemc1": "Keep Windows updates always current",
-                        "itemc2": "Ensure Windows firewall service is OK",
-                        "itemc3": "Keep browser settings secure",
-                        "itemc4": "Check essential security services",
-                        "itemc5": "Configure user access settings",
-                        "itemc6": "Verify authentication services"
+                        "itemc1": "Windows güncellemelerini her zaman güncel tutun",
+                        "itemc2": "Windows güvenlik duvarı hizmetinin iyi olduğundan emin olun",
+                        "itemc3": "Tarayıcı ayarlarını güvende tutun",
+                        "itemc4": "Temel güvenlik hizmetlerini kontrol edin",
+                        "itemc5": "Kullanıcı erişim ayarlarını yapılandırın",
+                        "itemc6": "Kimlik doğrulama hizmetlerini doğrulayın"
                     },
                     "errantPrograms": {
-                        "itemd1": "Look for errant apps",
-                        "itemd2": "Look for potentially unwanted apps",
-                        "itemd3": "Detect inactive and hidden apps",
-                        "itemd4": "Verify apps for malicious behavior",
-                        "itemd5": "Check apps based on reputation factor",
-                        "itemd6": "Check errant programs in registry"
+                        "itemd1": "Hatalı uygulamaları arayın",
+                        "itemd2": "İstenmeyen türden olabilecek uygulamaları arayın",
+                        "itemd3": "Etkin olmayan ve gizli uygulamaları algılayın",
+                        "itemd4": "Uygulamaları kötü niyetli davranışlar açısından doğrulayın",
+                        "itemd5": "Saygınlık faktörüne göre uygulamaları kontrol edin",
+                        "itemd6": "Kayıt defterindeki hatalı programları kontrol edin"
                     },
                     "annoyingAdware": {
-                        "iteme1": "Look for browser(s) adware",
-                        "iteme2": "Revise browser(s) pop-up settings",
-                        "iteme3": "Eliminate browser re-direction threats",
-                        "iteme4": "Check for adware leftovers",
-                        "iteme5": "Optimize browser experience settings",
-                        "iteme6": "verify in cloud remediation engine"
+                        "iteme1": "Tarayıcı reklam yazılımlarını arayın",
+                        "iteme2": "Tarayıcı açılır ayarlarını gözden geçirin",
+                        "iteme3": "Tarayıcı yeniden yönlendirme tehditlerini ortadan kaldırın",
+                        "iteme4": "Reklam yazılımı kalıntılarını kontrol edin",
+                        "iteme5": "Tarayıcı deneyimi ayarlarını optimize edin",
+                        "iteme6": "bulut iyileştirme motorunda doğrulama"
                     }
                 }
             },
-            "confirmationTitle": "Lenovo Payment Process",
-            "confirmationNote": "You will be directed to Lenovo Payment Website to finish the payment. Once the payment is done, you can press the \"refresh\" button in \"Subscription Detail\" to get the payment result.",
-            "confirmationBtn": "Proceed",
-            "refreshButton": "Refresh Status"
+            "confirmationTitle": "Lenovo Ödeme İşleme",
+            "confirmationNote": "Ödemeyi tamamlamak için Lenovo Ödeme Web Sitesine yönlendirileceksiniz. Ödeme yapıldıktan sonra, ödeme sonucunu almak için “Abonelik Ayrıntısı” altındaki “yenile” düğmesine basabilirsiniz.",
+            "confirmationBtn": "İlerle",
+            "refreshButton": "Durumu Yenile"
         },
         "scanCompletePage": {
-            "title": "System scan is complete",
-            "description": "Here is what we found on your ",
-            "scanRates": "Our scan rates your PC at: ",
-            "summary": "Summary",
-            "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
-            "signupRepairButton": "SIGN UP & REPAIR NOW",
-            "monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
-            "issueCount": "{{individualIssueCount}} ISSUES",
-            "scannedAreas": "SCANNED AREAS",
+            "title": "Sistem taraması tamamlandı",
+            "description": "İşte bulduklarımız: ",
+            "scanRates": "Taramamıza göre bilgisayarınızın değerlendirmesi: ",
+            "summary": "Özet",
+            "summaryDetails": "Taramamız aşağıdaki alanlarda <b>{{issueCount}} sorun</b> buldu. Bu sorunları gidermek ve sisteminizin sorunsuz çalışmasını sağlamak için şimdi kaydolun. Yazılımımız sorunları ortaya çıktıkça bulmak ve düzeltmek için proaktif olarak sisteminizin bu alanlarını 7/24 tarayabilir, böylece bilgisayarınız her zaman birinci sınıf performansa sahip olur.",
+            "signupRepairButton": "KAYDOLUN ve HEMEN ONARIN",
+            "monthlyPricing": "<b>Ayda $2'dan az.</b> Bu sorunları otomatik olarak çözeceğiz. Bugün ve bundan sonra her hafta bir kez <a  href=\"#\">Daha fazla bilgi edinin</a>",
+            "issueCount": "{{individualIssueCount}} SORUNLAR",
+            "scannedAreas": "TARANAN ALANLAR",
             "recommendedAction": {
-                "title": "RECOMMENDED ACTION",
-                "description": "We will automatically fix these issues. Once today and every week thereafter",
-                "yearlyPricing": "$29.99 / Yr",
-                "monthlyPricing": "LESS THAN $2 PER MONTH.",
-                "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP"
+                "title": "ÖNERİLEN EYLEM",
+                "description": "Bu sorunları otomatik olarak çözeceğiz. Bugün ve bundan sonra her hafta bir kez",
+                "yearlyPricing": "$29,99 / Yıl",
+                "monthlyPricing": "AYDA $2,5'DAN AZ.",
+                "longerTerm": "Daha uzun vadede mi? Daha fazla tasarruf mu?",
+                "signupButton": "KAYDOL"
             },
             "tunepc": {
                 "accumulatedjunkscannedareas": {
-                    "area1": "Scanned for junk in 85 locations",
-                    "area2": "System log files that aren’t needed",
-                    "area3": "Unnecessary application residues",
-                    "area4": "Temporary files that clog diskspace",
-                    "area5": "Files that you deleted so long ago",
-                    "area6": "Outdated errors and alerts"
+                    "area1": "85 konumda istenmeyen dosyalar tarandı",
+                    "area2": "Gerekli olmayan sistem günlük dosyaları",
+                    "area3": "Gereksiz uygulama kalıntıları",
+                    "area4": "Disk alanını tıkayan geçici dosyalar",
+                    "area5": "Çok uzun zaman önce sildiğiniz dosyalar",
+                    "area6": "Eski hatalar ve uyarılar"
                 },
                 "registryerrorsscannedareas": {
-                    "area1": "Completed deep check of Windows registry",
-                    "area2": "Scanned for invalid Windows services",
-                    "area3": "Checked for corrupted registry entries",
-                    "area4": "Scanned for useless file extensions",
-                    "area5": "Searched broken entries of installed apps",
-                    "area6": "Checked for useless leftover entries"
+                    "area1": "Windows kayıt defterinin derinlemesine denetimi tamamlandı",
+                    "area2": "Geçersiz Windows hizmetleri tarandı",
+                    "area3": "Bozuk kayıt defteri girdileri denetlendi",
+                    "area4": "Yararsız dosya uzantıları tarandı",
+                    "area5": "Yüklü uygulamaların bozuk girişleri arandı",
+                    "area6": "Gereksiz, kalan girişler denetlendi"
                 },
                 "windowssettingsscannedareas": {
-                    "area1": "Diagnosed dozens of Windows OS settings",
-                    "area2": "Checked all is well with your Windows",
-                    "area3": "Confirmed essential services are running",
-                    "area4": "Checked health of connectivity settings",
-                    "area5": "Checked ability to share files in network",
-                    "area6": "Checked biometric and access settings"
+                    "area1": "Düzinelerce Windows işletim sistemi ayarı teşhis edildi",
+                    "area2": "Windows'unuzda her şeyin yolunda olduğu denetlendi",
+                    "area3": "Temel hizmetlerin çalıştığı onaylandı",
+                    "area4": "Bağlantı ayarlarının durumu kontrol edildi",
+                    "area5": "Ağda dosya paylaşma yeteneği kontrol edildi",
+                    "area6": "Biyometrik ve erişim ayarları kontrol edildi"
                 },
                 "usabilityissuesscannedareas": {
-                    "area1": "Checked for usability challenges",
-                    "area2": "Checked external devices connectivity",
-                    "area3": "Checked Windows updates status",
-                    "area4": "Verified apps rendering setting",
-                    "area5": "Analyzed processing power utilization",
-                    "area6": "Help locate files easily"
+                    "area1": "Kullanılabilirlik sorunları kontrol edildi",
+                    "area2": "Harici cihazların bağlantısı kontrol edildi",
+                    "area3": "Windows güncellemeleri durumu kontrol edildi",
+                    "area4": "Uygulama oluşturma ayarı doğrulandı",
+                    "area5": "İşlem gücü kullanımı analiz edildi",
+                    "area6": "Dosyaların kolayca bulunmasına yardımcı olun"
                 },
                 "systemerrorsscannedareas": {
-                    "area1": "Checked if essential services are running",
-                    "area2": "Look services for higher performance",
-                    "area3": "Look for software conflict errors",
-                    "area4": "Analyzed Windows error management",
-                    "area5": "Scanned for apps launching errors",
-                    "area6": "Checked system error reports configuration"
+                    "area1": "Temel hizmetlerin çalıştığı denetlendi",
+                    "area2": "Daha yüksek performans için hizmetleri arayın",
+                    "area3": "Yazılım çakışması hatalarını arayın",
+                    "area4": "Windows hata yönetimi analiz edildi",
+                    "area5": "Uygulama başlatma hataları tarandı",
+                    "area6": "Sistem hata raporları yapılandırması denetlendi"
                 }
             },
-            "Diskspace": "Disk Space Reclaimed :",
-            "Performanceimprovements": "Performance Improvements :",
-            "Securityimprovements": "Security Improvements:",
-            "Onceaweek": "Once a week",
+            "Diskspace": "Kurtarılan Disk Alanı:",
+            "Performanceimprovements": "Performans İyileştirmeleri:",
+            "Securityimprovements": "Güvenlik İyileştirmeleri:",
+            "Onceaweek": "Haftada bir",
             "internetperformance": {
                 "ejunkscannedareas": {
-                    "area1": "Identified clutter from 4 browsers",
-                    "area2": "Searched leftover e-junk",
-                    "area3": "Scanned outdated internet files",
-                    "area4": "Searched unwanted web cache",
-                    "area5": "Checked cookies for clearance",
-                    "area6": "Scanned browser residues"
+                    "area1": "Tarayıcılardan gelen dağınıklık belirlendi",
+                    "area2": "Kalan istenmeyen elektronik dosyalar arandı",
+                    "area3": "Eski internet dosyaları tarandı",
+                    "area4": "İstenmeyen web önbelleği arandı",
+                    "area5": "Temizleme için tanımlama bilgileri denetlendi",
+                    "area6": "Tarayıcı kalıntıları tarandı"
                 },
                 "browsersecurityscannedareas": {
-                    "area1": "Checked security services are running",
-                    "area2": "Checked browser security features",
-                    "area3": "Verified network services",
-                    "area4": "Configure protocol settings",
-                    "area5": "Checked Browser content settings",
-                    "area6": "Scanned browser plugins & extensions"
+                    "area1": "Güvenlik hizmetlerinin çalıştığı denetlendi",
+                    "area2": "Tarayıcı güvenlik özellikleri denetlendi",
+                    "area3": "Ağ hizmetleri doğrulandı",
+                    "area4": "Protokol ayarlarını yapılandırın",
+                    "area5": "Tarayıcı içerik ayarları denetlendi",
+                    "area6": "Tarayıcı eklentileri ve uzantıları tarandı"
                 },
                 "networksettingsscannedareas": {
-                    "area1": "Diagnosed network and Internet settings",
-                    "area2": "Diagnosed network configuration settings",
-                    "area3": "Verified connected network settings",
-                    "area4": "Diagnosed settings for faster websites rendering",
-                    "area5": "Scanned for page rendering errors",
-                    "area6": "Scanned all connection service(s)"
+                    "area1": "Ağ ve internet ayarlarını teşhis edildi",
+                    "area2": "Ağ yapılandırma ayarları teşhis edildi",
+                    "area3": "Bağlı ağ ayarları doğrulandı",
+                    "area4": "Daha hızlı web sitesi oluşturma ayarları teşhis edildi",
+                    "area5": "Sayfa oluşturma hataları tarandı",
+                    "area6": "Tüm bağlantı hizmetleri tarandı"
                 },
                 "browsersettingsscannedareas": {
-                    "area1": "Enable better browsing experience",
-                    "area2": "Diagnosed settings for faster websites rendering",
-                    "area3": "Verified browser security services",
-                    "area4": "Checked if webpages are rendering properly",
-                    "area5": "Scanned settings for faster downloads",
-                    "area6": "Analyzed permissions and access control"
+                    "area1": "Daha iyi tarama deneyimini etkinleştirin",
+                    "area2": "Daha hızlı web sitesi oluşturma ayarları teşhis edildi",
+                    "area3": "Tarayıcı güvenlik hizmetleri doğrulandı",
+                    "area4": "Web sayfalarının düzgün bir şekilde oluşturulduğu denetlendi",
+                    "area5": "Daha hızlı indirme işlemleri için ayarlar tarandı",
+                    "area6": "İzinler ve erişim kontrolü analiz edildi"
                 },
                 "wifiperformancescannedareas": {
-                    "area1": "Verified Wi-Fi experience settings",
-                    "area2": "Verified secure home network",
-                    "area3": "Scanned Wi-Fi services settings",
-                    "area4": "Verified Secure network sharing settings",
-                    "area5": "Verified Wi-Fi security standards",
-                    "area6": "Analyzed Wi-Fi channels do not overlap"
+                    "area1": "Wi-Fi deneyimi ayarları doğrulandı",
+                    "area2": "Güvenli ev ağı doğrulandı",
+                    "area3": "Wi-Fi hizmet ayarları tarandı",
+                    "area4": "Güvenli ağ paylaşım ayarları doğrulandı",
+                    "area5": "Wi-Fi güvenlik standartları doğrulandı",
+                    "area6": "Wi-Fi kanallarının çakışmadığı analiz edildi"
                 }
             },
             "malwaresecurity": {
                 "malwarescanscannedareas": {
-                    "area1": "Scanned common loading points",
-                    "area2": "Scanned critical locations for threats",
-                    "area3": "Scanned for virus, spyware and malware",
-                    "area4": "Scanned 50+ file types for threats",
-                    "area5": "Checked for malware remnants",
-                    "area6": "Verified in cloud remediation engine"
+                    "area1": "Ortak yükleme noktaları tarandı",
+                    "area2": "Kritik konumlarda tehdit olup olmadığı tarandı",
+                    "area3": "Virüs, casus yazılım ve kötü amaçlı yazılım olup olmadığı tarandı",
+                    "area4": "Tehditler için 50'den fazla dosya türü tarandı",
+                    "area5": "Kötü amaçlı yazılım kalıntıları denetlendi",
+                    "area6": "Bulut iyileştirme motoru doğrulandı"
                 },
                 "errantprogramsscannedareas": {
-                    "area1": "Look for errant apps",
-                    "area2": "Inspected for potentially unwanted apps",
-                    "area3": "Searched for inactive and hidden apps",
-                    "area4": "Scanned for malicious apps",
-                    "area5": "Checked apps based on reputation factor",
-                    "area6": "Checked errant programs in registry"
+                    "area1": "Hatalı uygulamaları arayın",
+                    "area2": "İstenmeyen türden olabilecek uygulamalar incelendi",
+                    "area3": "Etkin olmayan ve gizli uygulamalar arandı",
+                    "area4": "Kötü amaçlı uygulamalar için tarandı",
+                    "area5": "Saygınlık faktörüne göre uygulamalar kontrol edildi",
+                    "area6": "Kayıt defterindeki hatalı programlar kontrol edildi"
                 },
                 "zerodayinfectionsscannedareas": {
-                    "area1": "Scanned for zero-day virus",
-                    "area2": "Searched for recent, undiagnosed malware",
-                    "area3": "Verified with cloud-based remediation",
-                    "area4": "Performed behavioral monitoring",
-                    "area5": "Verified files with aggregated engine",
-                    "area6": "Scanned against updated definitions"
+                    "area1": "Sıfır gün virüsü için tarandı",
+                    "area2": "En yeni, teşhis edilmemiş kötü amaçlı yazılımlar arandı",
+                    "area3": "Bulut tabanlı iyileştirme ile doğrulandı",
+                    "area4": "Davranışsal izleme gerçekleştirildi",
+                    "area5": "Birleştirilmiş motorla dosyalar doğrulandı",
+                    "area6": "Güncellenen tanımlar tarandı"
                 },
                 "securitysettingsscannedareas": {
-                    "area1": "Verified Windows updates are current",
-                    "area2": "Verified Windows firewall service",
-                    "area3": "Checked for secure browser settings",
-                    "area4": "Diagnosed essential security services",
-                    "area5": "Verified user access settings",
-                    "area6": "Verified authentication services"
+                    "area1": "Windows güncellemelerinin güncel olduğu doğrulandı",
+                    "area2": "Windows güvenlik duvarı hizmeti doğrulandı",
+                    "area3": "Güvenli tarayıcı ayarları kontrol edildi",
+                    "area4": "Temel güvenlik hizmetleri teşhis edildi",
+                    "area5": "Kullanıcı erişim ayarları doğrulandı",
+                    "area6": "Kimlik doğrulama hizmetleri doğrulandı"
                 },
                 "annoyingadwarescannedareas": {
-                    "area1": "Scanned for browser(s) adware",
-                    "area2": "Verify browser(s) pop-up settings",
-                    "area3": "Scanned browser re-direction threats",
-                    "area4": "Checked adware leftovers",
-                    "area5": "Verified browser experience settings",
-                    "area6": "Verified with cloud remediation engine"
+                    "area1": "Tarayıcı reklam yazılımları tarandı",
+                    "area2": "Tarayıcı açılır ayarlarını doğrulayın",
+                    "area3": "Tarayıcı yeniden yönlendirme tehditleri tarandı",
+                    "area4": "Reklam yazılımı kalıntıları kontrol edildi",
+                    "area5": "Tarayıcı deneyimi ayarları doğrulandı",
+                    "area6": "Bulut iyileştirme motoruyla doğrulandı"
                 }
             },
             "subscriber": {
                 "tunepc": {
                     "accumulatedjunkscannedareas": {
-                        "area1": "Cleaned of junk in 85 locations",
-                        "area2": "Cleared System log files that aren’t needed",
-                        "area3": "Deleted application residues",
-                        "area4": "Removed Temporary files to free up diskspace",
-                        "area5": "Eliminated files that you deleted so long ago",
-                        "area6": "Cleared errors and alerts"
+                        "area1": "85 konumda istenmeyen dosyalar temizlendi",
+                        "area2": "Gerekli olmayan sistem günlük dosyaları temizlendi",
+                        "area3": "Uygulama kalıntıları silindi",
+                        "area4": "Disk alanını boşaltmak için geçici dosyalar kaldırıldı",
+                        "area5": "Çok uzun zaman önce sildiğiniz dosyalar kaldırıldı",
+                        "area6": "Hatalar ve uyarılar silindi"
                     },
                     "registryerrorsscannedareas": {
-                        "area1": "Completed deep check of Windows registry",
-                        "area2": "Fixed any invalid Windows services",
-                        "area3": "Removed any corrupted registry entries",
-                        "area4": "Deleted any obsolete file extensions",
-                        "area5": "Cleaned broken entries of installed apps",
-                        "area6": "Cleared unwanted leftover entries"
+                        "area1": "Windows kayıt defterinin derinlemesine denetimi tamamlandı",
+                        "area2": "Geçersiz Windows hizmetleri düzeltildi",
+                        "area3": "Bozuk kayıt defteri girdileri kaldırıldı",
+                        "area4": "Eski dosya uzantılarını silindi",
+                        "area5": "Yüklü uygulamaların bozuk girişleri temizlendi",
+                        "area6": "İstenmeyen kalan girişler temizlendi"
                     },
                     "windowssettingsscannedareas": {
-                        "area1": "Validated Windows settings",
-                        "area2": "Optimized all Windows services",
-                        "area3": "Modified essential Windows services",
-                        "area4": "Modified essential Windows services",
-                        "area5": "Verified ability to share files in network",
-                        "area6": "Verified biometric and access settings"
+                        "area1": "Windows ayarları doğrulandı",
+                        "area2": "Tüm Windows hizmetleri optimize edildi",
+                        "area3": "Temel Windows hizmetleri değiştirildi",
+                        "area4": "Temel Windows hizmetleri değiştirildi",
+                        "area5": "Ağda dosya paylaşma yeteneği doğrulandı",
+                        "area6": "Biyometrik ve erişim ayarları doğrulandı"
                     },
                     "usabilityissuesscannedareas": {
-                        "area1": "Fixed any usability challenges",
-                        "area2": "Verified external devices connectivity",
-                        "area3": "Made sure Windows updates are always current",
-                        "area4": "Confirmed apps render and appear at its best",
-                        "area5": "Modified settings for processing power utilization",
-                        "area6": "Modified settings to Help locate files easily"
+                        "area1": "Kullanılabilirlik sorunları düzeltildi",
+                        "area2": "Harici cihazların bağlantısı doğrulandı",
+                        "area3": "Windows güncellemelerinin her zaman güncel olduğu doğrulandı",
+                        "area4": "Uygulamaların en iyi şekilde oluşturulduğu ve göründüğü onaylandı",
+                        "area5": "Güç kullanımını işlemek için ayarlar değiştirildi",
+                        "area6": "Dosyaları kolayca bulmaya yardımcı olmak için ayarlar değiştirildi"
                     },
                     "systemerrorsscannedareas": {
-                        "area1": "Checked if essential services are running",
-                        "area2": "Modified services for higher performance",
-                        "area3": "Fixed any software conflict errors",
-                        "area4": "Optimized Windows error management",
-                        "area5": "Checked and fixed any apps launching errors",
-                        "area6": "Configured system error reports"
+                        "area1": "Temel hizmetlerin çalıştığı denetlendi",
+                        "area2": "Daha yüksek performans için hizmetler değiştirildi",
+                        "area3": "Yazılım çakışması hataları düzeltildi",
+                        "area4": "Windows hata yönetimini optimize edildi",
+                        "area5": "Uygulama başlatma hatalarını kontrol edildi ve düzeltildi",
+                        "area6": "Sistem hata raporları yapılandırıldı"
                     }
                 },
                 "internetperformance": {
                     "ejunkscannedareas": {
-                        "area1": "Removed clutter from 4 browser(s)",
-                        "area2": "Cleaned leftover e-junk",
-                        "area3": "Deleted outdated internet files",
-                        "area4": "Cleared unwanted web cache",
-                        "area5": "Cleared Cookies",
-                        "area6": "Cleaned any browser residues"
+                        "area1": "4 tarayıcıdan karmaşa kaldırıldı",
+                        "area2": "Kalan istenmeyen elektronik dosyalar temizlendi",
+                        "area3": "Eski internet dosyaları silindi",
+                        "area4": "İstenmeyen web önbelleğini temizlendi",
+                        "area5": "Tanımlama Bilgileri Temizlendi",
+                        "area6": "Tüm tarayıcı kalıntıları temizlendi"
                     },
                     "browsersecurityscannedareas": {
-                        "area1": "Ensured security services are running",
-                        "area2": "Configured browser security features",
-                        "area3": "Checked and fixed network services",
-                        "area4": "Configured protocol settings",
-                        "area5": "Verified Browser content settings are OK",
-                        "area6": "Scanned browser plugins & extensions"
+                        "area1": "Güvenlik hizmetlerinin çalıştığından emin olundu",
+                        "area2": "Tarayıcı güvenlik özellikleri yapılandırıldı",
+                        "area3": "Ağ hizmetleri kontrol edildi ve sabitlendi",
+                        "area4": "Protokol ayarları yapılandırıldı",
+                        "area5": "Tarayıcı içerik ayarlarının doğru olduğu onaylandı",
+                        "area6": "Tarayıcı eklentileri ve uzantıları tarandı"
                     },
                     "networksettingsscannedareas": {
-                        "area1": "Fixed network and Internet settings",
-                        "area2": "Checked network configuration settings",
-                        "area3": "Modified connected network settings",
-                        "area4": "Diagnosed settings for faster websites rendering",
-                        "area5": "Fixed any page rendering errors",
-                        "area6": "Scanned all connection service(s)"
+                        "area1": "Ağ ve internet ayarları düzeltildi",
+                        "area2": "Ağ yapılandırma ayarları kontrol edildi",
+                        "area3": "Bağlı ağ ayarları değiştirildi",
+                        "area4": "Daha hızlı web sitesi oluşturma ayarları teşhis edildi",
+                        "area5": "Sayfa oluşturma hataları düzeltildi",
+                        "area6": "Tüm bağlantı hizmetleri tarandı"
                     },
                     "browsersettingsscannedareas": {
-                        "area1": "Modified settings for better browsing experience",
-                        "area2": "Verified settings for faster websites rendering",
-                        "area3": "Ensured browser security services are OK",
-                        "area4": "Modified settings to load webpages properly",
-                        "area5": "Fixed settings for faster downloads",
-                        "area6": "Fixed permissions and access control settings"
+                        "area1": "Daha iyi tarama deneyimi için ayarlar değiştirildi",
+                        "area2": "Daha hızlı web sitesi oluşturma ayarları doğrulandı",
+                        "area3": "Tarayıcı güvenlik hizmetlerinin iyi olduğundan emin olundu",
+                        "area4": "Web sayfalarının düzgün yüklenmesi için ayarlar değiştirildi",
+                        "area5": "Daha hızlı indirme işlemleri için ayarlar düzeltildi",
+                        "area6": "İzinler ve erişim kontrolü ayarları düzeltildi"
                     },
                     "wifiperformancescannedareas": {
-                        "area1": "Modified Wi-Fi experience settings",
-                        "area2": "Validated secure home network settings",
-                        "area3": "Fixed Wi-Fi services settings",
-                        "area4": "Modified Secure network sharing settings",
-                        "area5": "Verified Wi-Fi security standards",
-                        "area6": "Validated Wi-Fi channels"
+                        "area1": "Wi-Fi deneyimi ayarları değiştirildi",
+                        "area2": "Güvenli ev ağı ayarları doğrulandı",
+                        "area3": "Wi-Fi hizmet ayarları düzeltildi",
+                        "area4": "Güvenli ağ paylaşım ayarları değiştirildi",
+                        "area5": "Wi-Fi güvenlik standartları doğrulandı",
+                        "area6": "Wi-Fi kanalları doğrulandı"
                     }
                 },
                 "malwaresecurity": {
                     "malwarescanscannedareas": {
-                        "area1": "Checked & Removed threats in common loading points",
-                        "area2": "Checked and removed threats in critical locations",
-                        "area3": "Removed any threats from PC",
-                        "area4": "Validated 50+ file types for threats",
-                        "area5": "Cleaned any malware remnants",
-                        "area6": "Verified in cloud remediation engine"
+                        "area1": "Yaygın yükleme noktalarında tehditler kontrol edildi ve ortadan kaldırıldı",
+                        "area2": "Kritik konumlardaki tehditler kontrol edildi ve ortadan kaldırıldı",
+                        "area3": "Bilgisayardaki tehditler kaldırıldı",
+                        "area4": "Tehditler için 50'den fazla dosya türü doğrulandı",
+                        "area5": "Kötü amaçlı yazılım kalıntıları temizlendi",
+                        "area6": "Bulut iyileştirme motoru doğrulandı"
                     },
                     "errantprogramsscannedareas": {
-                        "area1": "Validated all installed apps",
-                        "area2": "Validated potentially unwanted apps",
-                        "area3": "Cleaned any inactive and hidden apps",
-                        "area4": "Removed any malicious and errant apps",
-                        "area5": "Validated apps based on reputation factor",
-                        "area6": "Completed registry check for errant programs"
+                        "area1": "Yüklü tüm uygulamalar doğrulandı",
+                        "area2": "İstenmeyen türden olabilecek uygulamalar doğrulandı",
+                        "area3": "Etkin olmayan ve gizli uygulamalar temizlendi",
+                        "area4": "Kötü amaçlı ve hatalı uygulamalar kaldırıldı",
+                        "area5": "Saygınlık faktörüne göre uygulamalar doğrulandı",
+                        "area6": "Hatalı programlar için kayıt defteri denetimi tamamlandı"
                     },
                     "zerodayinfectionsscannedareas": {
-                        "area1": "Analyzed for zero-day virus",
-                        "area2": "Removed any malware from PC",
-                        "area3": "Validated in cloud remediation engine",
-                        "area4": "Completed behavioral monitoring of apps",
-                        "area5": "Validated against aggregated engine",
-                        "area6": "Validated against latest definitions"
+                        "area1": "Sıfır gün virüsü için analiz edildi",
+                        "area2": "Bilgisayardaki kötü amaçlı yazılımlar kaldırıldı",
+                        "area3": "Bulut iyileştirme motoru doğrulandı",
+                        "area4": "Uygulamaların davranışsal izlemesi tamamlandı",
+                        "area5": "Birleştirilmiş motora göre onaylandı",
+                        "area6": "En son tanımlara göre doğrulandı"
                     },
                     "securitysettingsscannedareas": {
-                        "area1": "Optimized Windows update settings",
-                        "area2": "Tuned Windows firewall service",
-                        "area3": "Secured browser(s) settings",
-                        "area4": "Diagnosed essential security services",
-                        "area5": "Optimized user access settings",
-                        "area6": "Modified authentication services"
+                        "area1": "Windows güncelleme ayarları optimize edildi",
+                        "area2": "Windows güvenlik duvarı hizmeti ayarlandı",
+                        "area3": "Tarayıcı ayarlarının güvenliği sağlandı",
+                        "area4": "Temel güvenlik hizmetleri teşhis edildi",
+                        "area5": "Kullanıcı erişim ayarları optimize edildi",
+                        "area6": "Kimlik doğrulama hizmetleri değiştirildi"
                     },
                     "annoyingadwarescannedareas": {
-                        "area1": "Removed browser(s) adware",
-                        "area2": "Tuned browser(s) pop-up settings",
-                        "area3": "Diagnosed browser re-direction threats",
-                        "area4": "Cleared adware leftovers",
-                        "area5": "Optimized browser experience settings",
-                        "area6": "Validated in cloud remediation engine"
+                        "area1": "Tarayıcı reklam yazılımı kaldırıldı",
+                        "area2": "Tarayıcı açılır ayarları yapıldı",
+                        "area3": "Tarayıcı yeniden yönlendirme tehditleri teşhis edildi",
+                        "area4": "Reklam yazılımı kalıntıları temizlendi",
+                        "area5": "Tarayıcı deneyimi ayarlarını optimize edildi",
+                        "area6": "Bulut iyileştirme motoru doğrulandı"
                     }
                 }
             },
-            "issues": "ISSUES",
+            "issues": "SORUNLAR",
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
-            "backToHome": "Back To Home"
+            "backToHome": "Ana Sayfaya Dön"
         },
         "subscriberScanHomePage": {
-            "title": "All is well with your ",
-            "serialNumber": "Serial number: ",
-            "subTitle": "You are subscribed to Lenovo Smart Performance Service",
-            "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
-            "scanNow": "SCAN NOW",
-            "returnto": "RETURN TO DASHBOARD",
-            "mostRecent": "MOST RECENT SCAN:",
-            "nextScheduled": "NEXT SCHEDULED SCAN:",
+            "title": "Her şey yolunda: ",
+            "serialNumber": "Seri numarası: ",
+            "subTitle": "Lenovo Smart Performance Hizmetine abonesiniz",
+            "description": "Bilgisayarınızı sık sık bilgisayar performansı, internet performansı ve kötü amaçlı yazılım sorunları için proaktif olarak tarayıp sorunları düzeltiriz. Yeterince koruma altındasınız. Şimdi tara düğmesine tıklayarak istek üzerine performans kontrolü de başlatabilirsiniz.",
+            "scanNow": "TARA VE DÜZELT",
+            "returnto": "PANOYA GERİ DÖN",
+            "mostRecent": "EN SON TARAMA:",
+            "nextScheduled": "SONRAKİ PLANLANMIŞ TARAMA:",
             "scanSummary": {
-                "title": "Scan summary:",
-                "description": "We are constantly tuning your computer",
-                "tune": "Tune",
-                "tuneSummary": "Disk space reclaimed",
-                "boost": "Boost",
-                "boostSummary": "Fixes to improve performance",
-                "secure": "Secure",
-                "secureSummary": "Fixes to improve security",
-                "annual": "Annual",
-                "quarterly": "Quarterly",
-                "custom": "Custom",
-                "txtFrom": "From",
-                "txtTo": "To",
-                "txtGo": "Go",
-                "summaryCaption": "space reclaimed",
-                "fixes": "fixes",
-                "txtClr": "Clear"
+                "title": "Tarama özeti:",
+                "description": "Bilgisayarınızı sürekli olarak ayarlıyoruz",
+                "tune": "Ayarla",
+                "tuneSummary": "Kurtarılan disk alanı",
+                "boost": "Artır",
+                "boostSummary": "Performansı iyileştirmek için düzeltmeler",
+                "secure": "Güvenli",
+                "secureSummary": "Güvenliği iyileştirmek için düzeltmeler",
+                "annual": "Yıllık",
+                "quarterly": "Üç aylık",
+                "custom": "Özel",
+                "txtFrom": "Gönderen",
+                "txtTo": "Kime",
+                "txtGo": "Git",
+                "summaryCaption": "kurtarılan alan",
+                "fixes": "Düzeltmeler",
+                "txtClr": "Temizle"
             },
             "lastScanResults": {
-                "title": "Last 5 scan results:",
-                "scanDate": "Scan date:",
-                "results": "Results:",
-                "status": "Status"
+                "title": "Son 5 tarama sonucu:",
+                "scanDate": "Tarama tarihi",
+                "results": "Sonuçlar",
+                "status": "Durum"
             },
-            "backToHome": "Back To Home",
-            "successTitle": "Your Pc is tuned up !",
-            "successDescription": "Smart Performance resolved <b>{{issueCount}} issues</b> to keep your pc running smoothly, you can find scan summary and report below."
+            "backToHome": "Ana Sayfaya Dön",
+            "successTitle": "Bilgisayarınız ayarlandı!",
+            "successDescription": "Smart Performance, bilgisayarınızın sorunsuz çalışması için <b>{{issueCount}} sorun</b> çözdü. Tarama özetine ve raporuna aşağıdan ulaşabilirsiniz."
         },
-        "runningWell": "PC is running well",
+        "runningWell": "Bilgisayar iyi çalışıyor",
         "feedbackContainer": {
-            "title": "Leave us some feedback",
-            "subtitle": "Tell us what you think about Vantage",
-            "buttonText": "send feedback",
+            "title": "Bize geri bildirimde bulunun",
+            "subtitle": "Smart Performance hakkındaki düşüncelerinizi bizimle paylaşın",
+            "buttonText": "geri bildirim gönder",
             "questions": {
-                "q1": "Does the product look and feel good?",
-                "q2": "Do the feature seen comprehensive?",
-                "q3": "Was the scan easy to use?",
-                "q4": "Happy about the fixes we did?",
-                "q5": "Do you see value for money? ",
-                "q6": "Will you refer it to your friends and family?",
-                "q7": "How likely are you to continue paying for the Smart Performance feature?",
-                "q8": "Overall how satisfied are you with the Smart Performance feature?"
+                "q1": "1. Tarama özelliğini kullanmak ne kadar zor veya kolaydı?",
+                "q2": "2. Tarama sonuçlarını anlamak ne kadar zor veya kolaydı?",
+                "q3": "3. Sisteminizin performansını artırmak amacıyla Smart Performance aboneliği için ödeme yapma olasılığınız nedir?",
+                "q4": "4. Genel olarak Smart Performance özelliğinden ne kadar memnunsunuz?",
+                "q5": "1. Smart Performance'ın sisteminize yaptığı düzeltmeleri anlamak ne kadar zor veya kolaydı?",
+                "q6": "2. Sisteminizde herhangi bir kötü amaçlı yazılım buldunuz mu?",
+                "q7": "3. Smart Performance özelliği için ödeme yapmaya devam etme olasılığınız nedir?",
+                "q8": "4. Genel olarak Smart Performance özelliğinden ne kadar memnunsunuz?"
             },
             "rating": {
-                "r1": "Hate it",
-                "r2": "Love it",
-                "r3": "Seems lacking",
-                "r4": "Good enough",
-                "r5": "Crazy",
-                "r6": "Cool",
-                "r7": "Not so sure",
-                "r8": "Absolutely yes",
-                "r9": "No way",
-                "r10": "Looks worthy",
-                "r11": "Not so sure",
-                "r12": "Absolutely yes",
-                "r13": "Not at all likely",
-                "r14": "Very Likely",
-                "r15": "Not at all satisfied",
-                "r16": "Very Satisfied"
+                "r1": "Çok zor",
+                "r2": "Çok kolay",
+                "r3": "Çok zor",
+                "r4": "Çok kolay",
+                "r5": "Hiç olası değil",
+                "r6": "Büyük ihtimalle",
+                "r7": "Hiç memnun değilim",
+                "r8": "Oldukça memnunum",
+                "r9": "Çok zor",
+                "r10": "Çok kolay",
+                "r11": "Evt",
+                "r12": "Hayır",
+                "r13": "Hiç olası değil",
+                "r14": "Büyük ihtimalle",
+                "r15": "Hiç memnun değilim",
+                "r16": "Oldukça memnunum"
             },
-            "commentTip": "Shout what you love and whisper what you hate.",
-            "comments": "Please leave your comments here..."
+            "commentTip": "Lütfen yorumlarınızı veya ek geri bildiriminizi aşağıya bırakın:",
+            "comments": "Lütfen yorumlarınızı buraya bırakın..."
         },
-        "auto": "Auto",
-        "manual": "Manual",
-        "noScanResults": "Please click SCAN & FIX button to trigger scan process.",
+        "auto": "Otomatik",
+        "manual": "El ile",
+        "noScanResults": "Tarama işlemini başlatmak için lütfen TARA VE DÜZELT düğmesine tıklayın.",
         "am": "AM",
         "pm": "PM"
     },

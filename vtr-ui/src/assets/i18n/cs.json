@@ -3183,18 +3183,18 @@
         "executingScanTitle": "Snímání {{title}}",
         "showDetails": "Zobrazit podrobnosti",
         "hideDetails": "Skrýt podrobnosti",
-        "NA": "N/A"
+        "NA": "není k dispozici"
     },
     "smartPerformance": {
-        "title": "Health & Support",
-        "back": "BACK",
-        "performanceandSecurityCheckTitle": "Performance & Security Check",
-        "performanceandSecurityCheckSubTitle": "Let's diagnose and resolve performance and security issues in your computer",
-        "scanButton": "FREE PC SCAN",
-        "section1Heading": "How would you rate your PC Performance?",
-        "section1Description": "PC running slow? Applications taking too long to respond? Windows errors? Malware concerns? Let's diagnose whats's causing the problem and fix it.",
-        "critical": "CRITICAL",
-        "allisWell": "ALL IS WELL",
+        "title": "Smart Performance",
+        "back": "ZPĚT",
+        "performanceandSecurityCheckTitle": "Kontrola výkonu a zabezpečení",
+        "performanceandSecurityCheckSubTitle": "Pojďme diagnostikovat a vyřešit problémy s výkonem a zabezpečením ve vašem počítači",
+        "scanButton": "BEZPLATNÁ KONTROLA POČÍTAČE",
+        "section1Heading": "Jak byste hodnotili výkon svého počítače?",
+        "section1Description": "Počítač vám běží pomalu? Reakce aplikací trvá příliš dlouho? Problémy se systémem Windows? Obavy z malwaru? Pojďme diagnostikovat a odstranit příčinu vašich problémů.",
+        "critical": "KRITICKÝ STAV",
+        "allisWell": "VŠE BĚŽÍ V POŘÁDKU",
         "zero": 0,
         "one": 1,
         "two": 2,
@@ -3206,654 +3206,654 @@
         "eight": 8,
         "nine": 9,
         "ten": 10,
-        "tuneUP": "Your PC needs a tune-up",
-        "section2Heading": "Top-notch PC Performance. Always",
-        "section2Description": "Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+        "tuneUP": "Váš počítač potřebuje vyladit",
+        "section2Heading": "Počítač ve špičkovém stavu. Vždy",
+        "section2Description": "Náš software dokáže aktivně a nepřetržitě kontrolovat váš počítač, vyhledávat a odstraňovat případné problémy a zajistit, že váš počítač bude mít vždy špičkový výkon.",
         "tunePCPerformance": {
-            "title": "TUNE PC PERFORMANCE",
-            "heading": "Show your computer some extra love",
-            "description": "Even the best computer will benefit from periodic tune-ups. Get a tune-up and get more done with our powerful app.",
+            "title": "VYLADIT VÝKON POČÍTAČE",
+            "heading": "Zajistěte péči pro svůj počítač",
+            "description": "I ty nejlepší počítače ocení pravidelné vyladění. Vylaďte svůj počítač a zvyšte svoji efektivitu s naší špičkovou aplikací.",
             "tabSet1": {
-                "tab1": "Accumulated Junk",
-                "tab2": "Usability Issues",
-                "tab3": "Windows Settings",
-                "tab4": "Systems Errors",
-                "tab5": "Registry Errors"
+                "tab1": "Nahromaděné zbytečné soubory",
+                "tab2": "Problémy s použitelností",
+                "tab3": "Nastavení operačního systému Windows",
+                "tab4": "Systémové chyby",
+                "tab5": "Chyby v registru"
             },
             "tabSet2": {
-                "tab1Heading": "IT'S EASY",
-                "tab1Description": "We don't confuse you with tech mumbo jumbp",
-                "tab2Heading": "IT'S FAST",
-                "tab2Description": "Get a 100 point check done in under 5 minutes",
-                "tab3Heading": "IT'S SAFE",
-                "tab3Description": "No scareware, built with best practises"
+                "tab1Heading": "JE TO SNADNÉ",
+                "tab1Description": "Nepokoušíme se vás mást technickou hantýrkou",
+                "tab2Heading": "JE TO RYCHLÉ",
+                "tab2Description": "100bodová kontrola za méně než 5 minut",
+                "tab3Heading": "JE TO BEZPEČNÉ",
+                "tab3Description": "Žádné strašení, jen osvědčené postupy"
             },
-            "summaryTitle": "Tune PC Performance"
+            "summaryTitle": "Vyladit výkon počítače"
         },
         "boostInternetPerformance": {
-            "title": "BOOST INTERNET PERFORMANCE",
-            "extraTitle": "INTERNET PERFORMANCE",
-            "heading": "Give your internet a boost",
-            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "title": "ZVYŠTE VÝKON PŘI PRÁCI NA INTERNETU",
+            "extraTitle": "VÝKON PŘI PRÁCI NA INTERNETU",
+            "heading": "Druhý dech pro váš internet",
+            "description": "Pro mnoho lidí je pomalé nebo dokonce žádné připojení Wi-Fi, jako by je odstřihli od života. Upravte své nastavení internetu, připojení Wi-Fi a prohlížeče pro dosažení optimálního výkonu.",
             "tabSet1": {
-                "tab1": "Network Settings",
-                "tab2": "Browser Settings",
-                "tab3": "Browser Security",
-                "tab4": "Wi-Fi Performance",
-                "tab5": "E-junk"
+                "tab1": "Elektronické zbytečné soubory",
+                "tab2": "Nastavení sítě",
+                "tab3": "Nastavení prohlížeče",
+                "tab4": "Zabezpečení prohlížeče",
+                "tab5": "Výkon Wi-Fi"
             },
             "tabSet2": {
-                "tab1Heading": "ZERO DAY VIRUS",
-                "tab1Description": "We remove even the newest malware infections",
-                "tab2Heading": "SPYWARE REMOVAL",
-                "tab2Description": "We remove all potentially unwanted programs",
-                "tab3Heading": "LIGHT AND FAST",
-                "tab3Description": "Scan typically takes 5-10 minutes"
+                "tab1Heading": "PROBLÉMY S PROHLÍŽEČEM",
+                "tab1Description": "Nakonfigurujeme a opravíme všechny problémy v oblíbených webových prohlížečích.",
+                "tab2Heading": "PROBLÉMY S PŘIPOJENÍM",
+                "tab2Description": "Dokážeme diagnostikovat a opravit problémy s připojením.",
+                "tab3Heading": "POMALÝ INTERNET",
+                "tab3Description": "Pomůžeme vám dosáhnout maximálního výkonu."
             },
-            "summaryTitle": "Internet Performance"
+            "summaryTitle": "Výkon při práci na internetu"
         },
         "malwareSecurity": {
-            "title": "MALWARE & SECURITY",
-            "heading": "Give your internet a boost",
-            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "title": "MALWARE A ZABEZPEČENÍ",
+            "heading": "Dejte svému počítači péči, kterou si zaslouží",
+            "description": "Malware může způsobit vést ke zhroucení počítače, kompromitaci dat a snížení výkonu. Dosáhněte odstranění malwaru a mnohem, mnohem více.",
             "tabSet1": {
-                "tab1": "Malware scan",
-                "tab2": "Zero-day infections",
-                "tab3": "Security settings",
-                "tab4": "Errant programs",
-                "tab5": "Annoying adware"
+                "tab1": "Kontrola malwaru",
+                "tab2": "Infekce „zero day“",
+                "tab3": "Zapomenuté programy",
+                "tab4": "Obtížný adware",
+                "tab5": "Nastavení zabezpečení"
             },
             "tabSet2": {
-                "tab1Heading": "SLOW INTERNET",
-                "tab1Description": "We will help you get maximum performance.",
-                "tab2Heading": "CONNECTIVITY ERRORS",
-                "tab2Description": "We can diagnose and repair your connectivity problems.",
-                "tab3Heading": "BROWSER ISSUES",
-                "tab3Description": "We configure and fix all your popular web browsers."
+                "tab1Heading": "VIRY „ZERO DAY“",
+                "tab1Description": "Odstraníme i ty nejnovější malware infekce",
+                "tab2Heading": "ODSTRANĚNÍ SPYWARU",
+                "tab2Description": "Odstraníme všechny potenciálně nežádoucí programy",
+                "tab3Heading": "NENÁROČNÉ A RYCHLÉ",
+                "tab3Description": "Kontrola obvykle trvá 5-10 minut"
             },
-            "summaryTitle": "Malware & Security"
+            "summaryTitle": "Malware a zabezpečení"
         },
         "proactiveAutomated": {
-            "title": "PROACTIVE & AUTOMATED",
-            "heading": "Get the power to resolve issues, before they impact you!",
-            "description": "Smart Performance constantly looks for hundreads of issues that impact PC performance. We fix them proactively, giving you peace of mind.",
+            "title": "PROAKTIVNÍ A AUTOMATIZOVANÉ",
+            "heading": "Získejte možnost řešit problémy dříve, než ucítíte jejich následky!",
+            "description": "Nástroj Smart Performance neustále hledá stovky potenciálních problémů, které by mohly ovlivnit výkon vašeho počítače. Pro váš klid vše řešíme proaktivně.",
             "tabSet1": {
-                "tab1": "Schedule Scan",
-                "tab2": "On-demand scan",
-                "tab3": "Automated resolution",
-                "tab4": "It's effective",
-                "tab5": "24/7 Protection"
+                "tab1": "Naplánovat kontrolu",
+                "tab2": "Kontroly na vyžádání",
+                "tab3": "Automatické řešení",
+                "tab4": "Efektivní přístup",
+                "tab5": "Neustálá ochrana"
             },
             "tabSet2": {
-                "tab1Heading": "IT'S EASY",
-                "tab1Description": "We don't confuse you with tech mumbo jumbp",
-                "tab2Heading": "IT'S FAST",
-                "tab2Description": "Get a 100 point check done in under 5 minutes",
-                "tab3Heading": "IT'S SAFE",
-                "tab3Description": "No scareware, built with best practises"
+                "tab1Heading": "JE TO SNADNÉ",
+                "tab1Description": "Nepokoušíme se vás mást technickou hantýrkou",
+                "tab2Heading": "JE TO RYCHLÉ",
+                "tab2Description": "100bodová kontrola za méně než 5 minut",
+                "tab3Heading": "JE TO BEZPEČNÉ",
+                "tab3Description": "Žádné strašení, jen osvědčené postupy"
             }
         },
-        "startScan": "<b>Ready to start the scan?</b> Let's diagnose and resolve performance and security issues in your computer",
+        "startScan": "<b>Připraveni spustit kontrolu?</b> Pojďme diagnostikovat problémy s výkonem a zabezpečením ve vašem počítači.",
         "subscriptionDetails": {
-            "title": "Subscription details",
-            "description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
-            "learnMore": "Learn more",
-            "startDate": "Start date",
-            "endDate": "End date",
-            "status": "Status",
-            "activeStatus": "ACTIVE",
-            "inactiveStatus": "INACTIVE",
-            "manageSubscription": "MANAGE SUBSCRIPTION",
-            "titlebeta": "Lenovo Beta Program",
-            "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
-            "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
-            "descriptionbeta1": "You are welcomed to join and try the full feature.",
-            "descriptionNonSubscriber": "You are not subscribed to Lenovo Smart Performance Service. You will only be able to scan your PC. Subscribe now to get full benefits of keeping your PC protected and running smoothely.",
+            "title": "Podrobnosti o předplatném",
+            "description": "Jste přihlášeni k odběru služby Lenovo Smart Performance Service. V současné době jsou vám plně k dispozici všechny funkce, díky kterým bude váš počítač chráněn a optimálně fungovat.",
+            "learnMore": "Dozvědět se více",
+            "startDate": "Datum zahájení",
+            "endDate": "Datum ukončení",
+            "status": "Stav",
+            "activeStatus": "AKTIVNÍ",
+            "inactiveStatus": "NEAKTIVNÍ",
+            "manageSubscription": "SPRAVOVAT PŘEDPLATNÉ",
+            "titlebeta": "Beta program Lenovo",
+            "manageSubscriptionBeta": "AKTIVOVAT VŠECHNY FUNKCE",
+            "descriptionbeta": "Společnost Lenovo nabízí nový program, v jehož rámci můžete nástroj Smart Performance vyzkoušet až do července 2020.",
+            "descriptionbeta1": "Rádi vás tu přivítáme a zajistíme přístup ke všem funkcím.",
+            "descriptionNonSubscriber": "Nejste přihlášeni k odběru služby Lenovo Smart Performance Service. Budete moci skenovat pouze svůj počítač. Přihlaste se k odběru a získejte všechny výhody, díky kterým bude váš počítač chráněn a optimálně fungovat.",
             "processStatus": "ZPRACOVÁNÍ"
         },
         "scanSettings": {
-            "title": "Scan settings",
-            "description": "Enable or disable the scan and set the scan schedule",
-            "enableScan": "Enable Scan",
-            "changeScanTitle": "Change scan schedule",
-            "changeScanDescription": "Edit the scan schedule to run when you need it.",
-            "frequency": "Frequency",
-            "txtDate": "Date",
-            "txtDay": "Day",
-            "txtTime": "Time",
-            "txtSave": "save",
-            "txtCancel": "cancel",
-            "scanFrequencyWeek": "Once a week",
-            "scanFrequencyEveryWeek": "Every other week",
-            "scanFrequencyMonth": "Every month",
-            "mon": "Monday",
-            "tue": "Tuesday",
-            "wed": "Wednesday",
-            "thu": "Thursday",
-            "fri": "Friday",
-            "sat": "Saturday",
-            "sun": "Sunday",
-            "am": "dop",
-            "pm": "odp",
-            "tooltipText": "Enable this toggle to automatically initiate a system performance scan on your selected date and time."
+            "title": "Nastavení plánované kontroly",
+            "description": "Povolení nebo zákaz kontroly a nastavení plánu kontroly",
+            "enableScan": "Povolit kontrolu",
+            "changeScanTitle": "Změnit plán kontroly",
+            "changeScanDescription": "Naplánujte si spuštění kontroly podle vašich požadavků.",
+            "frequency": "Frekvence",
+            "txtDate": "Datum",
+            "txtDay": "Den",
+            "txtTime": "Čas",
+            "txtSave": "uložit",
+            "txtCancel": "storno",
+            "scanFrequencyWeek": "Jednou týdně",
+            "scanFrequencyEveryWeek": "Ob týden",
+            "scanFrequencyMonth": "Každý měsíc",
+            "mon": "Pondělí",
+            "tue": "Úterý",
+            "wed": "Středa",
+            "thu": "Čtvrtek",
+            "fri": "Pátek",
+            "sat": "Sobota",
+            "sun": "Neděle",
+            "am": "dop.",
+            "pm": "odp.",
+            "tooltipText": "Po aktivaci tohoto přepínače se kontrola výkonu a zabezpečení systému spustí automaticky ve stanovený den a čas."
         },
         "scanningPage": {
-            "title": "Performance & security check",
-            "description": "Please wait while we scan your system for potential problems and threats.",
-            "scanningSystem": "Scanning system",
-            "complete": "complete",
+            "title": "Kontrola výkonu a zabezpečení",
+            "description": "Počkejte, než se ujistíme, že se ve vašem systému nenachází žádné hrozby nebo potenciální problémy.",
+            "scanningSystem": "Kontrola systému",
+            "complete": "dokončeno",
             "cancelScan": {
-                "button": "CANCEL SCAN",
-                "title": "Cacel the scan?",
-                "description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
-                "yesButton": "YES, CANCEL",
-                "noButton": "NO, RESUME SCAN",
+                "button": "ZRUŠIT KONTROLU",
+                "title": "Chcete zrušit kontrolu?",
+                "description": "Pokud aktuální obrazovku opustíte, kontrola bude přerušena a budete přesměrováni na domovskou stránku. Kontrolu můžete kdykoli spustit znovu.",
+                "yesButton": "ANO, ZRUŠIT",
+                "noButton": "NE, POKRAČOVAT V KONTROLE",
                 "cancelMayTakeSomeTime": "Počkejte prosím, v závislosti na vašem systému může zrušení chvilku trvat.",
                 "cancelTextPrompt": "Skutečně chcete tuto operaci zrušit?"
             },
-            "waiting": "WAITING TO SCAN",
-            "completed": "COMPLETED",
+            "waiting": "ČEKÁ SE NA DOKONČENÍ KONTROLY",
+            "completed": "DOKONČENO",
             "nowScanningDetail": {
-                "cardTitle": "NOW SCANNING DETAIL",
-                "current": "CURRENT: ",
-                "upNext": "UP NEXT",
-                "tunePCDesc": "Let’s help improve your PC performance. We do it safely using industry best practices. Benefits for subscribers include reduced PC start time, improved performance, improved stability and faster launch of applications.",
-                "boostDesc": "Let’s help enhance your browsing experience. Let's fix network and access issues. Benefits for subscribers include betterment in internet connectivity, improvement in upload/download speeds and making internet more secure.",
-                "malwareDesc": "Let’s help quickly secure your PC, on-demand. We do it by removing spyware, malware and adware. We also remove near/zero-day infections. Benefits for subscribers include security of data and optimal system performance.",
-                "proactiveDesc": "Let's tune your computer periodically and fix issues, Proactive and automated to keep your PC tuned and covered. Always",
+                "cardTitle": "PODROBNOSTI AKTUÁLNÍ KONTROLY",
+                "current": "AKTUÁLNÍ: ",
+                "upNext": "NÁSLEDUJÍCÍ",
+                "tunePCDesc": "Pojďme zlepšit výkon vašeho počítače. Vše probíhá bezpečně s dodržováním nejlépe osvědčených postupů v oboru. Mezi výhody pro předplatitele patří rychlejší spouštění počítače, zvýšení výkonu, lepší stabilita a rychlejší spouštění aplikací.",
+                "boostDesc": "Pojďme vám zpříjemnit procházení internetu. Opravíme problémy se sítí a přístupem. Mezi výhody pro předplatitele patří lepší připojení k internetu, vyšší rychlost stahování/odesílání dat a zvýšení zabezpečení při práci na internetu.",
+                "malwareDesc": "Pojďme rychle a na vyžádání zabezpečit váš počítač. Odstraníme spyware, malware a adware. Odstraňujeme také nové infekce a infekce „zero-day“. Mezi výhody pro předplatitele patří zabezpečení dat a optimalizace výkonu systému.",
+                "proactiveDesc": "Pravidelně vyladíme váš počítač a opravíme případné problémy. Proaktivní a automatizovaná kontrola a ladění počítače. Vždy",
                 "tunePCScanningItems": {
                     "accumulatedJunk": {
-                        "itema1": "Look for junk in 85 locations",
-                        "itema2": "System log files that aren’t needed",
-                        "itema3": "Unnecessary application residues",
-                        "itema4": "Temporary files that clog diskspace",
-                        "itema5": "Files that you deleted so long ago",
-                        "itema6": "Outdated errors and alerts"
+                        "itema1": "Vyhledávání zbytečných souborů v 85 umístěních",
+                        "itema2": "Soubory systémového protokolu, které již nejsou zapotřebí",
+                        "itema3": "Zbytečné zbytkové soubory aplikací",
+                        "itema4": "Dočasné soubory, které zabírají místo na disku",
+                        "itema5": "Soubory, které jste dávno smazali",
+                        "itema6": "Zastaralé chyby a upozornění"
                     },
                     "usabilityIssues": {
-                        "itemb1": "Address dozens of usability challenges",
-                        "itemb2": "Check external devices connectivity",
-                        "itemb3": "Keeping Windows updates always current",
-                        "itemb4": "Do apps render and appear at its best",
-                        "itemb5": "Analyzing processing power utilization",
-                        "itemb6": "Help locate files easily"
+                        "itemb1": "Řešení desítek problémů s použitelností",
+                        "itemb2": "Kontrola připojení externích zařízení",
+                        "itemb3": "Udržování aktuálního systému Windows",
+                        "itemb4": "Zajištění nejlepšího vzhledu a výkonu aplikací",
+                        "itemb5": "Analýza využití výpočetního výkonu",
+                        "itemb6": "Snadné vyhledávání souborů nápovědy"
                     },
                     "windowsSettings": {
-                        "itemc1": "Diagnose dozens of Windows OS settings",
-                        "itemc2": "Ensure all is well with your Windows",
-                        "itemc3": "Ensure essential services are running",
-                        "itemc4": "Check health of connectivity settings",
-                        "itemc5": "Check ability to share files in network",
-                        "itemc6": "Check biometric and access settings"
+                        "itemc1": "Diagnostika desítek nastavení operačního systému Windows",
+                        "itemc2": "Zajištění správného chodu systému Windows",
+                        "itemc3": "Kontrola spuštění důležitých služeb",
+                        "itemc4": "Kontrola stavu nastavení připojení",
+                        "itemc5": "Kontrola možnosti sdílet soubory v síti",
+                        "itemc6": "Kontrola nastavení biometrie a přístupu"
                     },
                     "systemErrors": {
-                        "itemd1": "Ensure essential services are running",
-                        "itemd2": "Select services for higher performance",
-                        "itemd3": "Look for software conflict errors",
-                        "itemd4": "Optimize Windows error management",
-                        "itemd5": "Check and fix apps launching errors",
-                        "itemd6": "Configure system error reports"
+                        "itemd1": "Kontrola spuštění důležitých služeb",
+                        "itemd2": "Výběr služeb pro zajištění vyššího výkonu",
+                        "itemd3": "Hledání chyb z oblasti konfliktu softwaru",
+                        "itemd4": "Optimalizace správy chyb systému Windows",
+                        "itemd5": "Kontrola a odstranění chyb při spouštění aplikací",
+                        "itemd6": "Konfigurace zpráv o systémových chybách"
                     },
                     "registryErrors": {
-                        "iteme1": "Deep check Windows registry,",
-                        "iteme2": "Scanning for invalid Windows services",
-                        "iteme3": "Finding corrupted registry entries",
-                        "iteme4": "Look for useless file extensions",
-                        "iteme5": "Search broken entries of installed apps",
-                        "iteme6": "Look for useless leftover entries"
+                        "iteme1": "Důkladná kontrola registru systému Windows",
+                        "iteme2": "Kontrola neplatných služeb systému Windows",
+                        "iteme3": "Vyhledání poškozených položek registru",
+                        "iteme4": "Hledání zbytečných přípon souborů",
+                        "iteme5": "Hledání poškozených záznamů o nainstalovaných aplikacích",
+                        "iteme6": "Vyhledání zbytečných zbytkových záznamů"
                     }
                 },
                 "boostScanningItems": {
                     "networkSettings": {
-                        "itema1": "Diagnose network and Internet settings",
-                        "itema2": "Verify network configuration settings",
-                        "itema3": "Verify available network settings",
-                        "itema4": "Configure to load websites faster",
-                        "itema5": "Look for page rendering errors",
-                        "itema6": "Are connection service(s) running well"
+                        "itema1": "Diagnostika nastavení sítě a internetu",
+                        "itema2": "Kontrola konfigurace sítě",
+                        "itema3": "Ověření dostupného nastavení sítě",
+                        "itema4": "Zrychlení načítání webových stránek",
+                        "itema5": "Vyhledání chyb z oblasti vykreslování stránky",
+                        "itema6": "Všechny služby pro připojení běží dle očekávání"
                     },
                     "browserSettings": {
-                        "itemb1": "Enable better browsing experience",
-                        "itemb2": "Configure settings faster websites rendering",
-                        "itemb3": "Ensure browser security services are OK",
-                        "itemb4": "Ensure webpages are rendering properly",
-                        "itemb5": "Check settings for faster downloads",
-                        "itemb6": "Check permissions and access control"
+                        "itemb1": "Zajištění příjemnějšího procházení internetu",
+                        "itemb2": "Konfigurace nastavení pro rychlejší vykreslování webových stránek",
+                        "itemb3": "Ujištění řádného chodu služeb zabezpečení prohlížeče",
+                        "itemb4": "Zajištění řádného vykreslení webových stránek",
+                        "itemb5": "Kontrola nastavení pro zajištění rychlejšího stahování",
+                        "itemb6": "Kontrola oprávnění a řízení přístupu"
                     },
                     "browserSecurity": {
-                        "itemc1": "Ensure security services are running",
-                        "itemc2": "Configure browser security features",
-                        "itemc3": "Check network services are running well",
-                        "itemc4": "Configure protocol settings",
-                        "itemc5": "Verify Browser content settings are OK",
-                        "itemc6": "Verify browser plugins & extensions"
+                        "itemc1": "Kontrola spuštění služeb zabezpečení",
+                        "itemc2": "Konfigurace funkcí pro zabezpečení prohlížeče",
+                        "itemc3": "Kontrola řádného spuštění síťových služeb",
+                        "itemc4": "Konfigurace nastavení protokolu",
+                        "itemc5": "Ujištění řádného nastavení obsahu prohlížeče",
+                        "itemc6": "Kontrola doplňků a rozšíření prohlížeče"
                     },
                     "wifiPerformance": {
-                        "itemd1": "Optimize Wi-Fi experience settings",
-                        "itemd2": "Ensure your home network is secure",
-                        "itemd3": "Check Wi-Fi services settings",
-                        "itemd4": "Secure network sharing settings",
-                        "itemd5": "Check Wi-Fi security standards",
-                        "itemd6": "Ensure Wi-Fi channels do not overlap"
+                        "itemd1": "Optimalizace nastavení sítě Wi-Fi",
+                        "itemd2": "Kontrola zabezpečení vaší domácí sítě",
+                        "itemd3": "Kontrola nastavení služeb Wi-Fi",
+                        "itemd4": "Nastavení bezpečného sdílení v síti",
+                        "itemd5": "Kontrola standardů zabezpečení sítě Wi-Fi",
+                        "itemd6": "Ujištění se, že se kanály Wi-Fi nepřekrývají"
                     },
                     "eJunk": {
-                        "iteme1": "Eliminate clutter from 4 browsers",
-                        "iteme2": "Look for leftover e-junk",
-                        "iteme3": "Look for outdated internet files",
-                        "iteme4": "Clear unwanted web cache",
-                        "iteme5": "Clear cookies",
-                        "iteme6": "Remove browser residues"
+                        "iteme1": "Odstranění zbytečných prvků v prohlížeči",
+                        "iteme2": "Vyhledání zbytkových elektronických zbytečných souborů",
+                        "iteme3": "Vyhledání zastaralých souborů internetu",
+                        "iteme4": "Vymazání nepotřebné webové mezipaměti",
+                        "iteme5": "Odstranění souborů cookies",
+                        "iteme6": "Odstranění zbytkových souborů prohlížeče"
                     }
                 },
                 "malwareScanningItems": {
                     "malwareScan": {
-                        "itema1": "Scan common loading points",
-                        "itema2": "Check critical locations for threats",
-                        "itema3": "Check for virus, spyware and malware",
-                        "itema4": "Scan for 50+ file types",
-                        "itema5": "Scan for malware remnants",
-                        "itema6": "Leverage from cloud remediation engine"
+                        "itema1": "Kontrola běžných vstupních bodů",
+                        "itema2": "Kontrola hrozeb na kritických místech",
+                        "itema3": "Kontrola výskytu virů, spywaru a malwaru",
+                        "itema4": "Kontrola více než 50 typů souborů",
+                        "itema5": "Kontrola zbytků malwaru",
+                        "itema6": "Využití cloudového modulu pro zajištění nápravy"
                     },
                     "zerodayInfections": {
-                        "itemb1": "Look for zero-day virus",
-                        "itemb2": "Look for recent, undiagnosed malware",
-                        "itemb3": "Scan with cloud-based remediation",
-                        "itemb4": "Perform behavioral monitoring",
-                        "itemb5": "Scan files with aggregated engine",
-                        "itemb6": "Scan against latest definitions"
+                        "itemb1": "Hledání virů „zero-day“",
+                        "itemb2": "Hledání nového a nediagnostikovaného malwaru",
+                        "itemb3": "Kontrola s pomocí cloudového modulu pro zajištění nápravy",
+                        "itemb4": "Monitorování chování",
+                        "itemb5": "Kontrola souborů pomocí agregovaného modulu",
+                        "itemb6": "Kontrola s využitím nejnovějších definic"
                     },
                     "securitySettings": {
-                        "itemc1": "Keep Windows updates always current",
-                        "itemc2": "Ensure Windows firewall service is OK",
-                        "itemc3": "Keep browser settings secure",
-                        "itemc4": "Check essential security services",
-                        "itemc5": "Configure user access settings",
-                        "itemc6": "Verify authentication services"
+                        "itemc1": "Udržování aktuálního systému Windows",
+                        "itemc2": "Ujištění řádného chodu brány Windows Firewall",
+                        "itemc3": "Zajištění bezpečného nastavení prohlížeče",
+                        "itemc4": "Kontrola základních služeb zabezpečení",
+                        "itemc5": "Konfigurace nastavení přístupu uživatelů",
+                        "itemc6": "Ověření ověřovacích služeb"
                     },
                     "errantPrograms": {
-                        "itemd1": "Look for errant apps",
-                        "itemd2": "Look for potentially unwanted apps",
-                        "itemd3": "Detect inactive and hidden apps",
-                        "itemd4": "Verify apps for malicious behavior",
-                        "itemd5": "Check apps based on reputation factor",
-                        "itemd6": "Check errant programs in registry"
+                        "itemd1": "Vyhledání zapomenutých aplikací",
+                        "itemd2": "Vyhledání potenciálně nežádoucích aplikací",
+                        "itemd3": "Rozpoznání neaktivních a skrytých aplikací",
+                        "itemd4": "Kontrola škodlivého chování aplikací",
+                        "itemd5": "Kontrola aplikací na základě jejich reputace",
+                        "itemd6": "Vyhledání zapomenutých programů v registru"
                     },
                     "annoyingAdware": {
-                        "iteme1": "Look for browser(s) adware",
-                        "iteme2": "Revise browser(s) pop-up settings",
-                        "iteme3": "Eliminate browser re-direction threats",
-                        "iteme4": "Check for adware leftovers",
-                        "iteme5": "Optimize browser experience settings",
-                        "iteme6": "verify in cloud remediation engine"
+                        "iteme1": "Kontrola adwaru v prohlížeči",
+                        "iteme2": "Revize nastavení místních oken v prohlížeči",
+                        "iteme3": "Odstranění hrozeb využívajících přesměrování v prohlížeči",
+                        "iteme4": "Vyhledání zbytkových prvků adwaru",
+                        "iteme5": "Zajištění příjemnějšího používání prohlížeče",
+                        "iteme6": "Ověření pomocí cloudového modulu"
                     }
                 }
             },
-            "confirmationTitle": "Lenovo Payment Process",
-            "confirmationNote": "You will be directed to Lenovo Payment Website to finish the payment. Once the payment is done, you can press the \"refresh\" button in \"Subscription Detail\" to get the payment result.",
-            "confirmationBtn": "Proceed",
-            "refreshButton": "Refresh Status"
+            "confirmationTitle": "Postup platby pro Lenovo",
+            "confirmationNote": "Budete přesměrováni na web pro platby společnosti Lenovo, kde platbu můžete dokončit. Po dokončení platby můžete stisknutím tlačítka „Obnovit“ v části „Podrobnosti o předplatném“ zobrazit výsledek platby.",
+            "confirmationBtn": "Pokračovat",
+            "refreshButton": "Obnovit stav"
         },
         "scanCompletePage": {
-            "title": "System scan is complete",
-            "description": "Here is what we found on your ",
-            "scanRates": "Our scan rates your PC at: ",
-            "summary": "Summary",
-            "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
-            "signupRepairButton": "SIGN UP & REPAIR NOW",
-            "monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
-            "issueCount": "{{individualIssueCount}} ISSUES",
-            "scannedAreas": "SCANNED AREAS",
+            "title": "Kontrola systému byla dokončena",
+            "description": "Následuje seznam všeho, co jsme našli ve vašem ",
+            "scanRates": "Naše kontrola váš počítač vyhodnotila takto: ",
+            "summary": "Souhrn",
+            "summaryDetails": "Během naší kontroly jsme v následujících oblastech našli následující počet problémů: <b>{{issueCount}}</b>. Pokud budete chtít tyto problémy odstranit a zajistit tak hladký chod systému, můžete se zaregistrovat. Náš software dokáže aktivně a nepřetržitě kontrolovat tyto oblasti ve vašem systému, vyhledávat a odstraňovat případné problémy a zajistit, že váš počítač bude mít vždy špičkový výkon.",
+            "signupRepairButton": "ZAREGISTROVAT A OPRAVIT",
+            "monthlyPricing": "<b>Méně než $2 měsíčně.</b> Tyto problémy automaticky vyřešíme. Jednou dnes a poté každý týden <a  href=\"#\">Další informace</a>",
+            "issueCount": "POČET PROBLÉMŮ: {{individualIssueCount}}",
+            "scannedAreas": "KONTROLOVANÉ OBLASTI",
             "recommendedAction": {
-                "title": "RECOMMENDED ACTION",
-                "description": "We will automatically fix these issues. Once today and every week thereafter",
-                "yearlyPricing": "$29.99 / Yr",
-                "monthlyPricing": "LESS THAN $2 PER MONTH.",
-                "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP"
+                "title": "DOPORUČENÁ AKCE",
+                "description": "Tyto problémy automaticky vyřešíme. Jednou dnes a poté každý týden",
+                "yearlyPricing": "$29,99 ročně",
+                "monthlyPricing": "MÉNĚ NEŽ $2,5 MĚSÍČNĚ.",
+                "longerTerm": "Chcete využít dlouhodobějšího plánu? Chcete ještě více ušetřit?",
+                "signupButton": "ZAREGISTROVAT SE"
             },
             "tunepc": {
                 "accumulatedjunkscannedareas": {
-                    "area1": "Scanned for junk in 85 locations",
-                    "area2": "System log files that aren’t needed",
-                    "area3": "Unnecessary application residues",
-                    "area4": "Temporary files that clog diskspace",
-                    "area5": "Files that you deleted so long ago",
-                    "area6": "Outdated errors and alerts"
+                    "area1": "Vyhledávání zbytečných souborů v 85 umístěních",
+                    "area2": "Soubory systémového protokolu, které již nejsou zapotřebí",
+                    "area3": "Zbytečné zbytkové soubory aplikací",
+                    "area4": "Dočasné soubory, které zabírají místo na disku",
+                    "area5": "Soubory, které jste dávno smazali",
+                    "area6": "Zastaralé chyby a upozornění"
                 },
                 "registryerrorsscannedareas": {
-                    "area1": "Completed deep check of Windows registry",
-                    "area2": "Scanned for invalid Windows services",
-                    "area3": "Checked for corrupted registry entries",
-                    "area4": "Scanned for useless file extensions",
-                    "area5": "Searched broken entries of installed apps",
-                    "area6": "Checked for useless leftover entries"
+                    "area1": "Dokončena hloubková kontrola registru systému Windows",
+                    "area2": "Kontrola neplatných služeb systému Windows",
+                    "area3": "Vyhledání poškozených položek registru",
+                    "area4": "Hledání zbytečných přípon souborů",
+                    "area5": "Hledání poškozených záznamů o nainstalovaných aplikacích",
+                    "area6": "Vyhledání zbytečných zbytkových záznamů"
                 },
                 "windowssettingsscannedareas": {
-                    "area1": "Diagnosed dozens of Windows OS settings",
-                    "area2": "Checked all is well with your Windows",
-                    "area3": "Confirmed essential services are running",
-                    "area4": "Checked health of connectivity settings",
-                    "area5": "Checked ability to share files in network",
-                    "area6": "Checked biometric and access settings"
+                    "area1": "Diagnostika desítek nastavení operačního systému Windows",
+                    "area2": "Zajištění správného chodu systému Windows",
+                    "area3": "Kontrola spuštění důležitých služeb",
+                    "area4": "Kontrola stavu nastavení připojení",
+                    "area5": "Kontrola možnosti sdílet soubory v síti",
+                    "area6": "Kontrola nastavení biometrie a přístupu"
                 },
                 "usabilityissuesscannedareas": {
-                    "area1": "Checked for usability challenges",
-                    "area2": "Checked external devices connectivity",
-                    "area3": "Checked Windows updates status",
-                    "area4": "Verified apps rendering setting",
-                    "area5": "Analyzed processing power utilization",
-                    "area6": "Help locate files easily"
+                    "area1": "Kontrola problémů s použitelností",
+                    "area2": "Kontrola připojení externích zařízení",
+                    "area3": "Kontrola stavu aktualizací systému Windows",
+                    "area4": "Ověření nastavení vykreslování aplikací",
+                    "area5": "Analýza využití výpočetního výkonu",
+                    "area6": "Snadné vyhledávání souborů nápovědy"
                 },
                 "systemerrorsscannedareas": {
-                    "area1": "Checked if essential services are running",
-                    "area2": "Look services for higher performance",
-                    "area3": "Look for software conflict errors",
-                    "area4": "Analyzed Windows error management",
-                    "area5": "Scanned for apps launching errors",
-                    "area6": "Checked system error reports configuration"
+                    "area1": "Kontrola spuštění důležitých služeb",
+                    "area2": "Vyhledání služeb pro zajištění vyššího výkonu",
+                    "area3": "Hledání chyb z oblasti konfliktu softwaru",
+                    "area4": "Analýza správy chyb systému Windows",
+                    "area5": "Kontrola chyb při spouštění aplikací",
+                    "area6": "Kontrola konfigurace zpráv o systémových chybách"
                 }
             },
-            "Diskspace": "Disk Space Reclaimed :",
-            "Performanceimprovements": "Performance Improvements :",
-            "Securityimprovements": "Security Improvements:",
-            "Onceaweek": "Once a week",
+            "Diskspace": "Obnovené místo na disku:",
+            "Performanceimprovements": "Vylepšení výkonu:",
+            "Securityimprovements": "Vylepšení zabezpečení:",
+            "Onceaweek": "Jednou týdně",
             "internetperformance": {
                 "ejunkscannedareas": {
-                    "area1": "Identified clutter from 4 browsers",
-                    "area2": "Searched leftover e-junk",
-                    "area3": "Scanned outdated internet files",
-                    "area4": "Searched unwanted web cache",
-                    "area5": "Checked cookies for clearance",
-                    "area6": "Scanned browser residues"
+                    "area1": "Zjištění zbytečných prvků v prohlížeči",
+                    "area2": "Vyhledání zbytkových elektronických zbytečných souborů",
+                    "area3": "Vyhledání zastaralých souborů internetu",
+                    "area4": "Vyhledání nepotřebných souborů ve webové mezipaměti",
+                    "area5": "Kontrola a vymazání souborů cookies",
+                    "area6": "Kontrola zbytkových souborů prohlížeče"
                 },
                 "browsersecurityscannedareas": {
-                    "area1": "Checked security services are running",
-                    "area2": "Checked browser security features",
-                    "area3": "Verified network services",
-                    "area4": "Configure protocol settings",
-                    "area5": "Checked Browser content settings",
-                    "area6": "Scanned browser plugins & extensions"
+                    "area1": "Kontrola spuštění služeb zabezpečení",
+                    "area2": "Kontrola funkcí pro zabezpečení prohlížeče",
+                    "area3": "Ověření síťových služeb",
+                    "area4": "Konfigurace nastavení protokolu",
+                    "area5": "Kontrola nastavení obsahu prohlížeče",
+                    "area6": "Kontrola doplňků a rozšíření prohlížeče"
                 },
                 "networksettingsscannedareas": {
-                    "area1": "Diagnosed network and Internet settings",
-                    "area2": "Diagnosed network configuration settings",
-                    "area3": "Verified connected network settings",
-                    "area4": "Diagnosed settings for faster websites rendering",
-                    "area5": "Scanned for page rendering errors",
-                    "area6": "Scanned all connection service(s)"
+                    "area1": "Diagnostika nastavení sítě a internetu",
+                    "area2": "Diagnostika konfigurace nastavení sítě",
+                    "area3": "Ověření nastavení připojené sítě",
+                    "area4": "Diagnostika nastavení pro rychlejší vykreslování webových stránek",
+                    "area5": "Kontrola chyb z oblasti vykreslování stránky",
+                    "area6": "Kontrola všech služeb pro připojení"
                 },
                 "browsersettingsscannedareas": {
-                    "area1": "Enable better browsing experience",
-                    "area2": "Diagnosed settings for faster websites rendering",
-                    "area3": "Verified browser security services",
-                    "area4": "Checked if webpages are rendering properly",
-                    "area5": "Scanned settings for faster downloads",
-                    "area6": "Analyzed permissions and access control"
+                    "area1": "Zajištění příjemnějšího procházení internetu",
+                    "area2": "Diagnostika nastavení pro rychlejší vykreslování webových stránek",
+                    "area3": "Ověření služeb zabezpečení prohlížeče",
+                    "area4": "Kontrola řádného vykreslení webových stránek",
+                    "area5": "Kontrola nastavení pro zajištění rychlejšího stahování",
+                    "area6": "Analýza oprávnění a řízení přístupu"
                 },
                 "wifiperformancescannedareas": {
-                    "area1": "Verified Wi-Fi experience settings",
-                    "area2": "Verified secure home network",
-                    "area3": "Scanned Wi-Fi services settings",
-                    "area4": "Verified Secure network sharing settings",
-                    "area5": "Verified Wi-Fi security standards",
-                    "area6": "Analyzed Wi-Fi channels do not overlap"
+                    "area1": "Ověření nastavení sítě Wi-Fi",
+                    "area2": "Kontrola zabezpečení domácí sítě",
+                    "area3": "Kontrola nastavení služeb Wi-Fi",
+                    "area4": "Kontrola nastavení bezpečného sdílení v síti",
+                    "area5": "Ověření standardů zabezpečení sítě Wi-Fi",
+                    "area6": "Ujištění se, že se kanály Wi-Fi nepřekrývají"
                 }
             },
             "malwaresecurity": {
                 "malwarescanscannedareas": {
-                    "area1": "Scanned common loading points",
-                    "area2": "Scanned critical locations for threats",
-                    "area3": "Scanned for virus, spyware and malware",
-                    "area4": "Scanned 50+ file types for threats",
-                    "area5": "Checked for malware remnants",
-                    "area6": "Verified in cloud remediation engine"
+                    "area1": "Kontrola běžných vstupních bodů",
+                    "area2": "Kontrola hrozeb na kritických místech",
+                    "area3": "Kontrola výskytu virů, spywaru a malwaru",
+                    "area4": "Kontrola případných hrozeb ve více než 50 typech souborů",
+                    "area5": "Kontrola zbytků malwaru",
+                    "area6": "Ověření pomocí cloudového modulu"
                 },
                 "errantprogramsscannedareas": {
-                    "area1": "Look for errant apps",
-                    "area2": "Inspected for potentially unwanted apps",
-                    "area3": "Searched for inactive and hidden apps",
-                    "area4": "Scanned for malicious apps",
-                    "area5": "Checked apps based on reputation factor",
-                    "area6": "Checked errant programs in registry"
+                    "area1": "Vyhledání zapomenutých aplikací",
+                    "area2": "Kontrola potenciálně nežádoucích aplikací",
+                    "area3": "Vyhledání neaktivních a skrytých aplikací",
+                    "area4": "Kontrola škodlivých aplikací",
+                    "area5": "Kontrola aplikací na základě jejich reputace",
+                    "area6": "Kontrola zapomenutých programů v registru"
                 },
                 "zerodayinfectionsscannedareas": {
-                    "area1": "Scanned for zero-day virus",
-                    "area2": "Searched for recent, undiagnosed malware",
-                    "area3": "Verified with cloud-based remediation",
-                    "area4": "Performed behavioral monitoring",
-                    "area5": "Verified files with aggregated engine",
-                    "area6": "Scanned against updated definitions"
+                    "area1": "Kontrola virů „zero-day“",
+                    "area2": "Vyhledání nového a nediagnostikovaného malwaru",
+                    "area3": "Kontrola s pomocí cloudového modulu pro zajištění nápravy",
+                    "area4": "Monitorování chování",
+                    "area5": "Kontrola souborů pomocí agregovaného modulu",
+                    "area6": "Kontrola s využitím nejnovějších definic"
                 },
                 "securitysettingsscannedareas": {
-                    "area1": "Verified Windows updates are current",
-                    "area2": "Verified Windows firewall service",
-                    "area3": "Checked for secure browser settings",
-                    "area4": "Diagnosed essential security services",
-                    "area5": "Verified user access settings",
-                    "area6": "Verified authentication services"
+                    "area1": "Kontrola aktualizací systému Windows",
+                    "area2": "Kontrola služby brány Windows Firewall",
+                    "area3": "Kontrola nastavení zabezpečení prohlížeče",
+                    "area4": "Diagnostika základních služeb zabezpečení",
+                    "area5": "Kontrola nastavení přístupu uživatelů",
+                    "area6": "Ověření ověřovacích služeb"
                 },
                 "annoyingadwarescannedareas": {
-                    "area1": "Scanned for browser(s) adware",
-                    "area2": "Verify browser(s) pop-up settings",
-                    "area3": "Scanned browser re-direction threats",
-                    "area4": "Checked adware leftovers",
-                    "area5": "Verified browser experience settings",
-                    "area6": "Verified with cloud remediation engine"
+                    "area1": "Kontrola adwaru v prohlížeči",
+                    "area2": "Kontrola nastavení místních oken v prohlížeči",
+                    "area3": "Kontrola hrozeb využívajících přesměrování v prohlížeči",
+                    "area4": "Vyhledání zbytkových prvků adwaru",
+                    "area5": "Zajištění příjemnějšího používání prohlížeče",
+                    "area6": "Ověření pomocí cloudového modulu"
                 }
             },
             "subscriber": {
                 "tunepc": {
                     "accumulatedjunkscannedareas": {
-                        "area1": "Cleaned of junk in 85 locations",
-                        "area2": "Cleared System log files that aren’t needed",
-                        "area3": "Deleted application residues",
-                        "area4": "Removed Temporary files to free up diskspace",
-                        "area5": "Eliminated files that you deleted so long ago",
-                        "area6": "Cleared errors and alerts"
+                        "area1": "Vyčištěny zbytečné soubory v 85 umístěních",
+                        "area2": "Vymazány soubory systémového protokolu, které již nejsou zapotřebí",
+                        "area3": "Odstraněny zbytkové soubory aplikací",
+                        "area4": "Odebrány dočasné soubory kvůli uvolnění místa na disku",
+                        "area5": "Odstraněny soubory, které jste dávno smazali",
+                        "area6": "Odstraněny chyby a upozornění"
                     },
                     "registryerrorsscannedareas": {
-                        "area1": "Completed deep check of Windows registry",
-                        "area2": "Fixed any invalid Windows services",
-                        "area3": "Removed any corrupted registry entries",
-                        "area4": "Deleted any obsolete file extensions",
-                        "area5": "Cleaned broken entries of installed apps",
-                        "area6": "Cleared unwanted leftover entries"
+                        "area1": "Dokončena hloubková kontrola registru systému Windows",
+                        "area2": "Kontrola neplatných služeb systému Windows",
+                        "area3": "Odstranění poškozených položek registru",
+                        "area4": "Odstranění všech zastaralých přípon souborů",
+                        "area5": "Odstranění poškozených záznamů o nainstalovaných aplikacích",
+                        "area6": "Odstranění nežádoucích zbytkových záznamů"
                     },
                     "windowssettingsscannedareas": {
-                        "area1": "Validated Windows settings",
-                        "area2": "Optimized all Windows services",
-                        "area3": "Modified essential Windows services",
-                        "area4": "Modified essential Windows services",
-                        "area5": "Verified ability to share files in network",
-                        "area6": "Verified biometric and access settings"
+                        "area1": "Ověření nastavení systému Windows",
+                        "area2": "Optimalizace všech služeb Windows",
+                        "area3": "Úprava základních služeb systému Windows",
+                        "area4": "Úprava základních služeb systému Windows",
+                        "area5": "Kontrola možnosti sdílet soubory v síti",
+                        "area6": "Kontrola nastavení biometrie a přístupu"
                     },
                     "usabilityissuesscannedareas": {
-                        "area1": "Fixed any usability challenges",
-                        "area2": "Verified external devices connectivity",
-                        "area3": "Made sure Windows updates are always current",
-                        "area4": "Confirmed apps render and appear at its best",
-                        "area5": "Modified settings for processing power utilization",
-                        "area6": "Modified settings to Help locate files easily"
+                        "area1": "Odstranění problémů s použitelností",
+                        "area2": "Ověření připojení externích zařízení",
+                        "area3": "Udržování aktuálního systému Windows",
+                        "area4": "Zajištění nejlepšího vzhledu a výkonu aplikací",
+                        "area5": "Úprava nastavení pro lepší využití výpočetního výkonu",
+                        "area6": "Úprava nastavení pro snadné vyhledávání souborů nápovědy"
                     },
                     "systemerrorsscannedareas": {
-                        "area1": "Checked if essential services are running",
-                        "area2": "Modified services for higher performance",
-                        "area3": "Fixed any software conflict errors",
-                        "area4": "Optimized Windows error management",
-                        "area5": "Checked and fixed any apps launching errors",
-                        "area6": "Configured system error reports"
+                        "area1": "Kontrola spuštění důležitých služeb",
+                        "area2": "Úprava služeb pro zajištění vyššího výkonu",
+                        "area3": "Odstranění chyb z oblasti konfliktu softwaru",
+                        "area4": "Optimalizace správy chyb systému Windows",
+                        "area5": "Kontrola a odstranění chyb při spouštění aplikací",
+                        "area6": "Konfigurace zpráv o systémových chybách"
                     }
                 },
                 "internetperformance": {
                     "ejunkscannedareas": {
-                        "area1": "Removed clutter from 4 browser(s)",
-                        "area2": "Cleaned leftover e-junk",
-                        "area3": "Deleted outdated internet files",
-                        "area4": "Cleared unwanted web cache",
-                        "area5": "Cleared Cookies",
-                        "area6": "Cleaned any browser residues"
+                        "area1": "Odstranění zbytečných prvků ve 4 prohlížečích",
+                        "area2": "Odstranění zbytkových elektronických zbytečných souborů",
+                        "area3": "Odstranění zastaralých souborů internetu",
+                        "area4": "Vymazání nepotřebné webové mezipaměti",
+                        "area5": "Odstranění souborů cookies",
+                        "area6": "Odstranění všech zbytkových souborů prohlížeče"
                     },
                     "browsersecurityscannedareas": {
-                        "area1": "Ensured security services are running",
-                        "area2": "Configured browser security features",
-                        "area3": "Checked and fixed network services",
-                        "area4": "Configured protocol settings",
-                        "area5": "Verified Browser content settings are OK",
-                        "area6": "Scanned browser plugins & extensions"
+                        "area1": "Kontrola spuštění služeb zabezpečení",
+                        "area2": "Konfigurace funkcí pro zabezpečení prohlížeče",
+                        "area3": "Kontrola a zajištění řádného spuštění síťových služeb",
+                        "area4": "Konfigurace nastavení protokolu",
+                        "area5": "Ujištění řádného nastavení obsahu prohlížeče",
+                        "area6": "Kontrola doplňků a rozšíření prohlížeče"
                     },
                     "networksettingsscannedareas": {
-                        "area1": "Fixed network and Internet settings",
-                        "area2": "Checked network configuration settings",
-                        "area3": "Modified connected network settings",
-                        "area4": "Diagnosed settings for faster websites rendering",
-                        "area5": "Fixed any page rendering errors",
-                        "area6": "Scanned all connection service(s)"
+                        "area1": "Oprava nastavení sítě a internetu",
+                        "area2": "Kontrola konfigurace nastavení sítě",
+                        "area3": "Úprava nastavení připojené sítě",
+                        "area4": "Diagnostika nastavení pro rychlejší vykreslování webových stránek",
+                        "area5": "Odstranění chyb z oblasti vykreslování stránky",
+                        "area6": "Kontrola všech služeb pro připojení"
                     },
                     "browsersettingsscannedareas": {
-                        "area1": "Modified settings for better browsing experience",
-                        "area2": "Verified settings for faster websites rendering",
-                        "area3": "Ensured browser security services are OK",
-                        "area4": "Modified settings to load webpages properly",
-                        "area5": "Fixed settings for faster downloads",
-                        "area6": "Fixed permissions and access control settings"
+                        "area1": "Úprava nastavení pro příjemnější procházení internetu",
+                        "area2": "Kontrola nastavení pro rychlejší vykreslování webových stránek",
+                        "area3": "Ujištění řádného chodu služeb zabezpečení prohlížeče",
+                        "area4": "Úprava nastavení pro řádné načtení webových stránek",
+                        "area5": "Oprava nastavení pro zajištění rychlejšího stahování",
+                        "area6": "Oprava nastavení analýzy oprávnění a řízení přístupu"
                     },
                     "wifiperformancescannedareas": {
-                        "area1": "Modified Wi-Fi experience settings",
-                        "area2": "Validated secure home network settings",
-                        "area3": "Fixed Wi-Fi services settings",
-                        "area4": "Modified Secure network sharing settings",
-                        "area5": "Verified Wi-Fi security standards",
-                        "area6": "Validated Wi-Fi channels"
+                        "area1": "Úprava nastavení sítě Wi-Fi",
+                        "area2": "Kontrola nastavení bezpečného sdílení v domácí síti",
+                        "area3": "Oprava nastavení služeb Wi-Fi",
+                        "area4": "Úprava nastavení bezpečného sdílení v síti",
+                        "area5": "Ověření standardů zabezpečení sítě Wi-Fi",
+                        "area6": "Ověření kanálů Wi-Fi"
                     }
                 },
                 "malwaresecurity": {
                     "malwarescanscannedareas": {
-                        "area1": "Checked & Removed threats in common loading points",
-                        "area2": "Checked and removed threats in critical locations",
-                        "area3": "Removed any threats from PC",
-                        "area4": "Validated 50+ file types for threats",
-                        "area5": "Cleaned any malware remnants",
-                        "area6": "Verified in cloud remediation engine"
+                        "area1": "Kontrola a odstranění hrozeb z běžných vstupních bodů",
+                        "area2": "Kontrola a odstranění hrozeb na kritických místech",
+                        "area3": "Odstranění všech hrozeb z počítače",
+                        "area4": "Kontrola případných hrozeb ve více než 50 typech souborů",
+                        "area5": "Vyčištění zbytků malwaru",
+                        "area6": "Ověření pomocí cloudového modulu"
                     },
                     "errantprogramsscannedareas": {
-                        "area1": "Validated all installed apps",
-                        "area2": "Validated potentially unwanted apps",
-                        "area3": "Cleaned any inactive and hidden apps",
-                        "area4": "Removed any malicious and errant apps",
-                        "area5": "Validated apps based on reputation factor",
-                        "area6": "Completed registry check for errant programs"
+                        "area1": "Ověření všech nainstalovaných aplikací",
+                        "area2": "Ověření potenciálně nežádoucích aplikací",
+                        "area3": "Odstranění neaktivních a skrytých aplikací",
+                        "area4": "Odstranění škodlivých a zapomenutých aplikací",
+                        "area5": "Kontrola aplikací na základě jejich reputace",
+                        "area6": "Dokončení kontroly zapomenutých programů v registru"
                     },
                     "zerodayinfectionsscannedareas": {
-                        "area1": "Analyzed for zero-day virus",
-                        "area2": "Removed any malware from PC",
-                        "area3": "Validated in cloud remediation engine",
-                        "area4": "Completed behavioral monitoring of apps",
-                        "area5": "Validated against aggregated engine",
-                        "area6": "Validated against latest definitions"
+                        "area1": "Analýza virů „zero-day“",
+                        "area2": "Odstranění veškerého malwaru z počítače",
+                        "area3": "Ověření pomocí cloudového modulu",
+                        "area4": "Dokončení monitorování chování aplikací",
+                        "area5": "Kontrola pomocí agregovaného modulu",
+                        "area6": "Kontrola s využitím nejnovějších definic"
                     },
                     "securitysettingsscannedareas": {
-                        "area1": "Optimized Windows update settings",
-                        "area2": "Tuned Windows firewall service",
-                        "area3": "Secured browser(s) settings",
-                        "area4": "Diagnosed essential security services",
-                        "area5": "Optimized user access settings",
-                        "area6": "Modified authentication services"
+                        "area1": "Optimalizace nastavení aktualizací systému Windows",
+                        "area2": "Vyladění služby brány Windows Firewall",
+                        "area3": "Kontrola nastavení prohlížeče",
+                        "area4": "Diagnostika základních služeb zabezpečení",
+                        "area5": "Optimalizace nastavení přístupu uživatelů",
+                        "area6": "Úprava ověřovacích služeb"
                     },
                     "annoyingadwarescannedareas": {
-                        "area1": "Removed browser(s) adware",
-                        "area2": "Tuned browser(s) pop-up settings",
-                        "area3": "Diagnosed browser re-direction threats",
-                        "area4": "Cleared adware leftovers",
-                        "area5": "Optimized browser experience settings",
-                        "area6": "Validated in cloud remediation engine"
+                        "area1": "Odstranění adwaru z prohlížeče",
+                        "area2": "Vyladění nastavení místních oken v prohlížeči",
+                        "area3": "Diagnostika hrozeb využívajících přesměrování v prohlížeči",
+                        "area4": "Vyčištění zbytkových prvků adwaru",
+                        "area5": "Zajištění příjemnějšího používání prohlížeče",
+                        "area6": "Ověření pomocí cloudového modulu"
                     }
                 }
             },
-            "issues": "ISSUES",
+            "issues": "PROBLÉM(Y/Ů)",
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
-            "backToHome": "Back To Home"
+            "backToHome": "Zpět domů"
         },
         "subscriberScanHomePage": {
-            "title": "All is well with your ",
-            "serialNumber": "Serial number: ",
-            "subTitle": "You are subscribed to Lenovo Smart Performance Service",
-            "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
-            "scanNow": "SCAN NOW",
-            "returnto": "RETURN TO DASHBOARD",
-            "mostRecent": "MOST RECENT SCAN:",
-            "nextScheduled": "NEXT SCHEDULED SCAN:",
+            "title": "Vše je v pořádku ve vašem ",
+            "serialNumber": "Sériové číslo: ",
+            "subTitle": "Jste přihlášeni k odběru služby Lenovo Smart Performance Service",
+            "description": "Často a proaktivně kontrolujeme a opravujeme váš počítač, jeho výkon, optimalizujeme internet a hledáme malware. Jste dostatečně chráněni. Kontrolu výkonu můžete spustit také na vyžádání klepnutím na tlačítko Spustit kontrolu.",
+            "scanNow": "VYHLEDAT A OPRAVIT",
+            "returnto": "NÁVRAT NA OVLÁDACÍ PANEL",
+            "mostRecent": "NEDÁVNÁ KONTROLA:",
+            "nextScheduled": "DALŠÍ PLÁNOVANÁ KONTROLA:",
             "scanSummary": {
-                "title": "Scan summary:",
-                "description": "We are constantly tuning your computer",
-                "tune": "Tune",
-                "tuneSummary": "Disk space reclaimed",
-                "boost": "Boost",
-                "boostSummary": "Fixes to improve performance",
-                "secure": "Secure",
-                "secureSummary": "Fixes to improve security",
-                "annual": "Annual",
-                "quarterly": "Quarterly",
-                "custom": "Custom",
-                "txtFrom": "From",
-                "txtTo": "To",
-                "txtGo": "Go",
-                "summaryCaption": "space reclaimed",
-                "fixes": "fixes",
-                "txtClr": "Clear"
+                "title": "Souhrn kontroly:",
+                "description": "Neustále ladíme váš počítač",
+                "tune": "Vyladit",
+                "tuneSummary": "Obnovené místo na disku",
+                "boost": "Vylepšit",
+                "boostSummary": "Opravy pro zvýšení výkonu",
+                "secure": "Zabezpečit",
+                "secureSummary": "Opravy pro zvýšení zabezpečení",
+                "annual": "Roční",
+                "quarterly": "Čtvrtletní",
+                "custom": "Uživatelský",
+                "txtFrom": "Od",
+                "txtTo": "Do",
+                "txtGo": "Přejít",
+                "summaryCaption": "obnovené místo",
+                "fixes": "Opravy",
+                "txtClr": "Vymazat"
             },
             "lastScanResults": {
-                "title": "Last 5 scan results:",
-                "scanDate": "Scan date:",
-                "results": "Results:",
-                "status": "Status"
+                "title": "Výsledky posledních 5 kontrol:",
+                "scanDate": "Datum kontroly",
+                "results": "Výsledky",
+                "status": "Stav"
             },
-            "backToHome": "Back To Home",
-            "successTitle": "Your Pc is tuned up !",
-            "successDescription": "Smart Performance resolved <b>{{issueCount}} issues</b> to keep your pc running smoothly, you can find scan summary and report below."
+            "backToHome": "Zpět domů",
+            "successTitle": "Váš počítač je vyladěn!",
+            "successDescription": "Nástroj Smart Performance zajistil plynulejší používání vašeho počítače odstraněním následujícího počtu chyb: <b>{{issueCount}}</b>. V následující části najdete souhrn kontroly a odpovídající zprávu."
         },
-        "runningWell": "PC is running well",
+        "runningWell": "Váš počítač funguje dobře",
         "feedbackContainer": {
-            "title": "Leave us some feedback",
-            "subtitle": "Tell us what you think about Vantage",
-            "buttonText": "send feedback",
+            "title": "Dejte nám vědět, co si myslíte",
+            "subtitle": "Řekněte nám, co si myslíte o nástroji Smart Performance",
+            "buttonText": "odeslat názor",
             "questions": {
-                "q1": "Does the product look and feel good?",
-                "q2": "Do the feature seen comprehensive?",
-                "q3": "Was the scan easy to use?",
-                "q4": "Happy about the fixes we did?",
-                "q5": "Do you see value for money? ",
-                "q6": "Will you refer it to your friends and family?",
-                "q7": "How likely are you to continue paying for the Smart Performance feature?",
-                "q8": "Overall how satisfied are you with the Smart Performance feature?"
+                "q1": "1. Nakolik obtížné nebo snadné bylo používání funkce kontroly?",
+                "q2": "2. Nakolik obtížné nebo snadné bylo vyznat se ve výsledcích kontroly?",
+                "q3": "3. Jaká je šance, že byste chtěli zaplatit za předplatné nástroje Smart Performance a tím i zvýšení výkonu vašeho systému?",
+                "q4": "4. Jak jste celkově spokojeni s funkcemi nástroje Smart Performance?",
+                "q5": "1. Nakolik obtížné nebo snadné bylo pochopit opravy, které nástroj Smart Performance ve vašem systému provedl?",
+                "q6": "2. Našli jsme ve vašem systému nějaký malware?",
+                "q7": "3. Nakolik je pravděpodobné, že budete za přístup k funkcím nástroje Smart Performance dále ochotni platit?",
+                "q8": "4. Jak jste celkově spokojeni s funkcemi nástroje Smart Performance?"
             },
             "rating": {
-                "r1": "Hate it",
-                "r2": "Love it",
-                "r3": "Seems lacking",
-                "r4": "Good enough",
-                "r5": "Crazy",
-                "r6": "Cool",
-                "r7": "Not so sure",
-                "r8": "Absolutely yes",
-                "r9": "No way",
-                "r10": "Looks worthy",
-                "r11": "Not so sure",
-                "r12": "Absolutely yes",
-                "r13": "Not at all likely",
-                "r14": "Very Likely",
-                "r15": "Not at all satisfied",
-                "r16": "Very Satisfied"
+                "r1": "Velmi obtížné",
+                "r2": "Velmi snadné",
+                "r3": "Velmi obtížné",
+                "r4": "Velmi snadné",
+                "r5": "Vůbec ne",
+                "r6": "Pravděpodobně ano",
+                "r7": "Zcela nespokojen(a)",
+                "r8": "Velmi spokojen(a)",
+                "r9": "Velmi obtížné",
+                "r10": "Velmi snadné",
+                "r11": "Ano",
+                "r12": "Ne",
+                "r13": "Vůbec ne",
+                "r14": "Pravděpodobně ano",
+                "r15": "Zcela nespokojen(a)",
+                "r16": "Velmi spokojen(a)"
             },
-            "commentTip": "Shout what you love and whisper what you hate.",
-            "comments": "Please leave your comments here..."
+            "commentTip": "Do následujícího pole můžete uvést případné komentáře nebo názory:",
+            "comments": "Komentář můžete napsat sem..."
         },
-        "auto": "Auto",
-        "manual": "Manual",
-        "noScanResults": "Please click SCAN & FIX button to trigger scan process.",
-        "am": "dop",
-        "pm": "odp"
+        "auto": "Automatické",
+        "manual": "Ruční",
+        "noScanResults": "Klepnutím na tlačítko VYHLEDAT A OPRAVIT spusťte kontrolu.",
+        "am": "dop.",
+        "pm": "odp."
     },
     "homeSecurity": {
         "title": "Connected Home Security",

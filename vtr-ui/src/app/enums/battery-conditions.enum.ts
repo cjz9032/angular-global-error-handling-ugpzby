@@ -6,6 +6,8 @@ export enum BatteryConditionsEnum {
 	NotDetected,
 	Error,
 
+	StoreLimitation,
+
 	HighTemperature,
 	TrickleCharge,
 	OverheatedBattery,
@@ -14,11 +16,9 @@ export enum BatteryConditionsEnum {
 
 	MissingDriver,
 
-	NonLenovoUsbPowerAdapter,
-	NotSupportACAdapter,
-	LimitedACAdapterSupport,
 	FullACAdapterSupport,
-	StoreLimitation,
+	LimitedACAdapterSupport,
+	NotSupportACAdapter,
 
 	PrimaryNotDetected
 }

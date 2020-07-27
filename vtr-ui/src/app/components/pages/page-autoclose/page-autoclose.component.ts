@@ -1,5 +1,5 @@
 import { GamingAutoCloseService } from './../../../services/gaming/gaming-autoclose/gaming-autoclose.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { isUndefined } from 'util';
 import { AutoCloseStatus } from 'src/app/data-models/gaming/autoclose/autoclose-status.model';
@@ -17,11 +17,12 @@ import { Subscription } from 'rxjs/internal/Subscription';
 	templateUrl: './page-autoclose.component.html',
 	styleUrls: [ './page-autoclose.component.scss' ]
 })
-export class PageAutocloseComponent implements OnInit {
+export class PageAutocloseComponent implements OnInit, OnDestroy {
 	public showTurnOnModal = false;
 	public showAppsModal = false;
 	public autoCloseAppList: any;
 	private cmsSubscription: Subscription;
+	notificationSubscription: Subscription;
 
 	// Toggle status
 	isOnline = true;
@@ -53,7 +54,7 @@ export class PageAutocloseComponent implements OnInit {
 		// AutoClose Init
 		this.getAutoCloseStatus();
 		this.refreshAutoCloseList();
-		this.commonService.notification.subscribe((notification: AppNotification) => {
+		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
 	}
@@ -243,6 +244,12 @@ export class PageAutocloseComponent implements OnInit {
 	}
 
 	ngOnDestroy() {
-		if(this.cmsSubscription) this.cmsSubscription.unsubscribe();
+		if (this.cmsSubscription) {
+			this.cmsSubscription.unsubscribe();
+		}
+
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
 	}
 }
