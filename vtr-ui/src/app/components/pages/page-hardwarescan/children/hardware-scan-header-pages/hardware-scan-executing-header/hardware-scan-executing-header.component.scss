@@ -102,7 +102,6 @@
 .hwscan-header {
 	padding-bottom: 2.5rem;
 }
-$aoba: $dark;
 
 .animated-dots:after {
 	content: '. ';
@@ -149,19 +148,19 @@ $aoba: $dark;
 			.5em 0 0 rgba(0,0,0,0);
 	}
 	40% {
-		color: $aoba;
+		color: $dark;
 		text-shadow:
 			.25em 0 0 rgba(0,0,0,0),
 			.5em 0 0 rgba(0,0,0,0);
 	}
 	60% {
 		text-shadow:
-			.25em 0 0 $aoba,
+			.25em 0 0 $dark,
 			.5em 0 0 rgba(0,0,0,0);
 	}
 	80%, 100% {
 		text-shadow:
-			.25em 0 0 $aoba,
-			.5em 0 0 $aoba;
+			.25em 0 0 $dark,
+			.5em 0 0 $dark;
 	}
 }
