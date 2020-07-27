@@ -61,9 +61,11 @@
 					&:hover::before {
 						@media #{$white-on-black} {
 							@include high-contrast-black-border;
+							border-radius: 0.25rem !important;
 						}
 						@media #{$black-on-white} {
 							@include high-contrast-white-border;
+							border-radius: 0.25rem !important;
 						}
 					}
 				}
@@ -93,10 +95,14 @@
 							@media #{$white-on-black} {
 								@include high-contrast-black-background;
 								@include high-contrast-black-border;
+								box-shadow: none;
+								border-radius: 0.25rem !important;
 							}
 							@media #{$black-on-white} {
 								@include high-contrast-white-background;
 								@include high-contrast-white-border;
+								box-shadow: none;
+								border-radius: 0.25rem !important;
 							}
 						}
 						&::after {
