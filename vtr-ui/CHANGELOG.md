@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.16](https://bitbucket.tc.lenovo.com///compare/v1.7.15...v1.7.16) (2020-07-27)
+
+
+### Bug Fixes
+
+* **wifi-security:** add missing type import ([582e820](https://bitbucket.tc.lenovo.com///commit/582e8205a044ae9b831da84553e2042a5a06ba7c))
+
 ### [1.7.15](https://bitbucket.tc.lenovo.com///compare/v1.7.14...v1.7.15) (2020-07-24)
 
 
