@@ -1,20 +1,20 @@
-import { Injectable, SecurityContext } from '@angular/core';
 import { HttpHeaders } from '@angular/common/http';
-
-import { CommsService } from '../comms/comms.service';
-import { CommonService } from '../common/common.service'; // VAN-5872, server switch feature
-import { LocalStorageKey } from '../../enums/local-storage-key.enum'; // VAN-5872, server switch feature
+import { Injectable, SecurityContext } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+import { throwError } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
+import { ContentSource } from 'src/app/enums/content.enum';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import { LocalInfoService } from '../local-info/local-info.service';
+import { LocalStorageKey } from '../../enums/local-storage-key.enum'; // VAN-5872, server switch feature
+import { CommonService } from '../common/common.service'; // VAN-5872, server switch feature
+import { CommsService } from '../comms/comms.service';
 import { DevService } from '../dev/dev.service';
+import { LocalInfoService } from '../local-info/local-info.service';
 import { LoggerService } from '../logger/logger.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { throwError } from 'rxjs';
-import { DomSanitizer } from '@angular/platform-browser';
-import { ContentSource } from 'src/app/enums/content.enum';
+
 
 const httpOptions = {
 	headers: new HttpHeaders({
@@ -145,7 +145,7 @@ export class CMSService {
 			this.fetchRequestMap[requestKey] = this.commsService.endpointGetCall(
 				'/api/v1/features', CMSOption, httpOptions// VAN-5872, server switch feature
 			).toPromise();
-		};
+		}
 
 		try {
 			const response = await this.fetchRequestMap[requestKey];
@@ -193,13 +193,13 @@ export class CMSService {
 							},
 							(reason) => {
 								// reject('fetchCMSContent error');
-								throwError(new Error('fetchCMSContent error'))
+								throwError(new Error('fetchCMSContent error'));
 							}
 						);
 					},
 					error => {
 						// reject('fetchCMSContent error');
-						throwError(new Error('fetchCMSContent error'))
+						throwError(new Error('fetchCMSContent error'));
 					}
 				);
 		});
@@ -243,13 +243,13 @@ export class CMSService {
 							},
 							(reason) => {
 								// reject('fetchCMSContent error');
-								throwError(new Error('fetchCMSContent error'))
+								throwError(new Error('fetchCMSContent error'));
 							}
 						);
 					},
 					error => {
 						// reject('fetchCMSArticles error');
-						throwError(new Error('fetchCMSContent error'))
+						throwError(new Error('fetchCMSContent error'));
 					}
 				);
 		});
@@ -393,7 +393,7 @@ export class CMSService {
 					},
 					error => {
 						// reject('fetchCMSEntitledAppList error');
-						throwError(new Error('fetchCMSEntitledAppList error'))
+						throwError(new Error('fetchCMSEntitledAppList error'));
 					}
 				);
 		});
@@ -415,7 +415,7 @@ export class CMSService {
 					},
 					error => {
 						// reject('fetchCMSAppDetails error');
-						throwError(new Error('fetchCMSAppDetails error'))
+						throwError(new Error('fetchCMSAppDetails error'));
 					}
 				);
 		});

@@ -9,7 +9,6 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
-import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { IntelligentMediaComponent } from './intelligent-media.component';
 
 
@@ -17,7 +16,7 @@ describe('component: IntelligentMediaComponent', () => {
 	let component: IntelligentMediaComponent;
 	let fixture: ComponentFixture<IntelligentMediaComponent>;
 	let smartAssist: SmartAssistService;
-	let vantageShellService: VantageShellService;
+	// let vantageShellService: VantageShellService;
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			declarations: [IntelligentMediaComponent],
@@ -51,7 +50,7 @@ describe('component: IntelligentMediaComponent', () => {
 	});
 
 	it('setVideoPauseResumeStatus', () => {
-		smartAssist = TestBed.get(SmartAssistService);
+		smartAssist = TestBed.inject(SmartAssistService);
 		smartAssist.isShellAvailable = true;
 		const spy = spyOn(
 			smartAssist,
@@ -63,7 +62,7 @@ describe('component: IntelligentMediaComponent', () => {
 	});
 
 	it('setSuperResolutionStatus', () => {
-		smartAssist = TestBed.get(SmartAssistService);
+		smartAssist = TestBed.inject(SmartAssistService);
 		smartAssist.isShellAvailable = true;
 		const spy = spyOn(
 			smartAssist,

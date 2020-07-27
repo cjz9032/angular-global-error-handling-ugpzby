@@ -1,10 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { NO_ERRORS_SCHEMA, DebugElement } from '@angular/core';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import {
 	ComponentFixture,
-	TestBed,
-	tick
+	TestBed
 } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import {
@@ -18,7 +17,6 @@ import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.s
 import { DevService } from '../../../../services/dev/dev.service';
 import { MetricService } from '../../../../services/metric/metrics.service';
 import { ActiveProtectionSystemComponent } from './active-protection-system.component';
-import { By } from '@angular/platform-browser';
 
 class MockAPS {
 	getAPSMode() {
@@ -49,7 +47,7 @@ class MockAPS {
 		return Promise.resolve(true);
 	}
 	setAPSSensitivityLevel(value) {
-		let promise = new Promise((resolve, reject) => {
+		const promise = new Promise((resolve, reject) => {
 			resolve(true);
 			reject(false);
 		});
@@ -79,8 +77,8 @@ describe('ActiveProtectionSystemComponent', () => {
 	let debugElement;
 	let smartAssist;
 	let commonMetricsService: CommonMetricsService;
-	let metricService: MetricService;
-	let devService: DevService;
+	/* let metricService: MetricService;
+	let devService: DevService; */
 
 	beforeEach((() => {
 		TestBed.configureTestingModule({

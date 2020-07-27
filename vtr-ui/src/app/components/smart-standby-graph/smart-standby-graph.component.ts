@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/internal/Observable';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import * as d3 from 'd3-selection';
+import { Observable } from 'rxjs/internal/Observable';
 import SmartStandbyActivityModel from 'src/app/data-models/smart-standby-graph/smart-standby-activity.model';
 
 @Component({
@@ -20,9 +20,9 @@ export class SmartStandbyGraphComponent implements OnInit {
 	ngOnInit() {
 		this.getActivities().subscribe(
 			(data: SmartStandbyActivityModel[]) => {
-                this.activities = data;
-                this.renderChart(data);
-            }
+				this.activities = data;
+				this.renderChart(data);
+			}
 		);
 	}
 
