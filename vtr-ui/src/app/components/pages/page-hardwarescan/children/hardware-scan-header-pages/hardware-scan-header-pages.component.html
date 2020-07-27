@@ -1,7 +1,7 @@
 <div class="vtr-hardware-scan-header-pages">
 	<div class="container-fluid">
 		<div class="row" [ngSwitch]="getCurrentScanState()">
-			<div class="col col-sm-12" *ngSwitchCase="scanStateEnum.StateHome">
+			<div class="col col-12" *ngSwitchCase="scanStateEnum.StateHome">
 				<vtr-hardware-scan-wait-select-header
 					[disableButtonScan]="disableButtonScan"
 					(startQuickScan)="onQuickScan()"

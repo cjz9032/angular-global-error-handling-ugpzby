@@ -102,18 +102,25 @@
 .hwscan-header {
 	padding-bottom: 2.5rem;
 }
+$aoba: $dark;
 
 .animated-dots:after {
 	content: '. ';
+	// animation: dots 2s steps(5, end) infinite;
+	// Used when high contrast is not active or is white-on-black
 	animation: dots 2s steps(5, end) infinite;
+
+	@media #{$black-on-white} {
+		animation: black-on-white-dots 2s steps(5, end) infinite;
+	}
 }
 
 @keyframes dots {
 	0%, 20% {
 		color: rgba(0,0,0,0);
 		text-shadow:
-		  .25em 0 0 rgba(0,0,0,0),
-		  .5em 0 0 rgba(0,0,0,0);
+			.25em 0 0 rgba(0,0,0,0),
+			.5em 0 0 rgba(0,0,0,0);
 	}
 	40% {
 		color: $light;
@@ -130,5 +137,31 @@
 		text-shadow:
 			.25em 0 0 $light,
 			.5em 0 0 $light;
+
+	}
+}
+
+@keyframes black-on-white-dots {
+	0%, 20% {
+		color: rgba(0,0,0,0);
+		text-shadow:
+			.25em 0 0 rgba(0,0,0,0),
+			.5em 0 0 rgba(0,0,0,0);
+	}
+	40% {
+		color: $aoba;
+		text-shadow:
+			.25em 0 0 rgba(0,0,0,0),
+			.5em 0 0 rgba(0,0,0,0);
+	}
+	60% {
+		text-shadow:
+			.25em 0 0 $aoba,
+			.5em 0 0 rgba(0,0,0,0);
+	}
+	80%, 100% {
+		text-shadow:
+			.25em 0 0 $aoba,
+			.5em 0 0 $aoba;
 	}
 }
