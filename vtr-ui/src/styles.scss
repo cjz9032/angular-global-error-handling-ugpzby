@@ -2144,6 +2144,11 @@ vtr-ui-smart-performance-scanning {
 			padding-right: 2.4rem !important;
 			padding-top: 2rem !important;
 		}
+		.collapse-header {
+			&:focus {
+				outline: none;
+			}
+		}
 	}
 	.vtr-ui-switch-row.blue-theme,
 	.vtr-ui-switch-row.white-theme {
