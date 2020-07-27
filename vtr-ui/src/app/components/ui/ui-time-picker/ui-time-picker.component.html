@@ -157,7 +157,9 @@
 													tabindex="-1"
 													[checked]="copyAmPm==0"
 													(click)="setAmPm(0)" />
-												<p class="label-text">{{ amPms[0] | translate }}</p>
+												<p class="label-text"
+													id="{{linkId}}-am-radio"
+													role="heading">{{ amPms[0] | translate }}</p>
 											</label>
 										</span><br>
 										<span>
@@ -175,7 +177,9 @@
 													value="1"
 													[checked]="copyAmPm==1"
 													(click)="setAmPm(1)" />
-												<p class="label-text">{{ amPms[1] | translate }}</p>
+												<p class="label-text"
+													id="{{linkId}}-pm-radio"
+													role="heading">{{ amPms[1] | translate }}</p>
 											</label>
 										</span>
 									</div>

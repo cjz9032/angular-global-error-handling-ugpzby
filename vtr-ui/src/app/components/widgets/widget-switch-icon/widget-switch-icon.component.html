@@ -1,12 +1,11 @@
-<div
-	class="vtr-widget-switch-icon"
+<div class="vtr-widget-switch-icon"
 	[ngClass]="{ 'disable-state': disable || isLoading }"
 	[title]=""
 	id="qs-{{ switchId }}-switch-icon"
-	[ngbTooltip]="tooltipText" tooltipClass="vtr-system-tooltip" container="body"
->
-	<button
-		class="switch-container"
+	[ngbTooltip]="tooltipText"
+	tooltipClass="vtr-system-tooltip"
+	container="body">
+	<button class="switch-container"
 		vtrMetrics
 		metricsEvent="featureClick"
 		[metricsValue]="!value"
@@ -25,72 +24,56 @@
 				? switchId + '-on'
 				: switchId
 		"
-		[attr.role]="buttonRole"
-	>
-		<div
-			class="title"
-			[ngClass]="{ 'disable-container': disable }"
+		[attr.role]="buttonRole">
+		<div class="title"
+			[ngClass]="{ 'disable-container': disable,
+		                 'disable-state-loading':isLoading }"
 			id="qs-{{ switchId }}-switch-title"
-			aria-hidden="true"
-		>
+			aria-hidden="true">
 			{{ title }}
 		</div>
-		<div
-			*ngIf="!isLoading"
+		<div *ngIf="!isLoading"
 			class="icon-container d-block"
-			[ngClass]="{ 'disable-container': disable }"
-		>
-			<i
-				[class]="iconDefinition"
+			[ngClass]="{ 'disable-container': disable }">
+			<i [class]="iconDefinition"
 				[ngClass]="{ enabled: !isBlocked }"
-				*ngIf="!isBlocked"
-			></i>
-			<i
-				[class]="offIconDefinition"
+				*ngIf="!isBlocked"></i>
+			<i [class]="offIconDefinition"
 				[ngClass]="{ disabled: isBlocked }"
-				*ngIf="isBlocked && !disable"
-			></i>
-			<i
-				[class]="iconDefinition"
+				*ngIf="isBlocked && !disable"></i>
+			<i [class]="iconDefinition"
 				[ngClass]="{ 'disable-container': disable }"
-				*ngIf="isBlocked && disable"
-			></i>
+				*ngIf="isBlocked && disable"></i>
 		</div>
-		<div *ngIf="isLoading" class="icon-container d-block position-relative">
+		<div *ngIf="isLoading"
+			class="icon-container d-block position-relative">
 			<div class="loader center-block">
-				<div
-					class="spinner-border text-secondary progress-spinner"
-				></div>
+				<div class="spinner-border text-secondary progress-spinner"></div>
 			</div>
 		</div>
-		<div class="row" [ngClass]="{ 'is-visible': hideOnOffLabel }">
+		<div class="row"
+			[ngClass]="{ 'is-visible': hideOnOffLabel }">
 			<div class="col">
 				<div class="switch-on-off">
-					<div
-						*ngIf="!value && !isLoading"
+					<div *ngIf="!value && !isLoading"
 						class="switch-label off-label"
 						id="qs-{{ switchId }}-switch-off"
-						aria-hidden="true"
-					>
+						aria-hidden="true">
 						<span *ngIf="!disable">{{
 							"common.ui.off" | translate
 						}}</span>
 						<span *ngIf="disable">&nbsp;</span>
 					</div>
-					<div
-						*ngIf="value && !isLoading"
+					<div *ngIf="value && !isLoading"
 						class="switch-label on-label"
 						id="qs-{{ switchId }}-switch-on"
-						aria-hidden="true"
-					>
+						aria-hidden="true">
 						{{ "common.ui.on" | translate }}
 					</div>
-					<div
-						*ngIf="isLoading"
+					<div *ngIf="isLoading"
 						class="switch-label off-label"
 						id="qs-{{ switchId }}-switch-loading"
-						aria-hidden="true"
-					>
+						aria-hidden="true">
 						<!-- avoid title shifting to downward effect by adding space -->
 						&nbsp;
 						<!-- {{'common.ui.loading' | translate}} -->
