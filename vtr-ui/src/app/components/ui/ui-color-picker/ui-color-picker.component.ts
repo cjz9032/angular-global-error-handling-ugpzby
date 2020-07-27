@@ -38,6 +38,7 @@ export class UiColorPickerComponent implements OnInit , OnChanges {
   }
 
   ngOnInit() {
+	this.color = this.colorToUpperCase(this.color);
 	this.presetColorList.forEach((element,index) => {
 		if(this.color === element.color){
 		this.presetColorList[index].isChecked = true;
@@ -113,6 +114,14 @@ export class UiColorPickerComponent implements OnInit , OnChanges {
 		}
 		}
 	}
+  }
+
+  public colorToUpperCase(color){
+	  let newColor = "";
+	  color.split("").forEach(element => {
+          newColor += element.toUpperCase();    
+	  });
+	  return newColor;
   }
 
   public generalClick(event: Event) {
