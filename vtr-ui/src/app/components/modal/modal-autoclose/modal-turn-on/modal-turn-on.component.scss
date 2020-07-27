@@ -37,12 +37,12 @@ ui-popover-turn-on {
 		border-radius: 1rem;
 	}
 }
-.vtr-modal-turn-on { 
+.vtr-modal-turn-on-auto-close { 
 	.modal-body {
 		 padding: 4rem;
 			.btn-close {
 				position: absolute;
-				top: 0px;
+				top: 0px; 
 				right: 0px;
 				width: 3rem;
 				height: 3rem;
