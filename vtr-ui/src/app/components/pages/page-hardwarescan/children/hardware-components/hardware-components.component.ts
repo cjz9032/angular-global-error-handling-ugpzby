@@ -59,6 +59,11 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	}
 
 	private notificationSubscription: Subscription;
+	modalCancelSubscription: Subscription;
+	workDoneSubscription: Subscription;
+	hardwareModulesLoadedSubscription: Subscription;
+	passEntrySubscription: Subscription;
+	modalClosedSubscription: Subscription;
 	private customizeModal = ModalHardwareScanCustomizeComponent;
 	public itemsNextScan: any = [];
 	private cancelHandler = {
@@ -129,6 +134,21 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	ngOnDestroy() {
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
+		}
+		if (this.modalCancelSubscription) {
+			this.modalCancelSubscription.unsubscribe();
+		}
+		if (this.workDoneSubscription) {
+			this.workDoneSubscription.unsubscribe();
+		}
+		if (this.hardwareModulesLoadedSubscription) {
+			this.hardwareModulesLoadedSubscription.unsubscribe();
+		}
+		if (this.passEntrySubscription) {
+			this.passEntrySubscription.unsubscribe();
+		}
+		if (this.modalClosedSubscription) {
+			this.modalClosedSubscription.unsubscribe();
 		}
 	}
 
@@ -280,7 +300,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			modalCancel.componentInstance.showProcessFinishedMessage();
 		});
 
-		modalCancel.componentInstance.cancelRequested.subscribe(() => {
+		this.modalCancelSubscription = modalCancel.componentInstance.cancelRequested.subscribe(() => {
 			// If the cancelation process has started, unsubscribe from the other subject to avoid any odd behavior
 			scanFinished.unsubscribe();
 
@@ -319,7 +339,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				}
 				this.hardwareScanService.cancelScanExecution();
 
-				this.hardwareScanService.isWorkDone().subscribe((done) => {
+				this.workDoneSubscription = this.hardwareScanService.isWorkDone().subscribe((done) => {
 					if (!isCancelingRBS) {
 						clearInterval(cancelWatcher);
 					}
@@ -344,7 +364,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		this.hardwareScanService.reloadItemsToScan(true);
 		this.hardwareScanService.initLoadingModules(this.culture);
 
-		this.hardwareScanService.isHardwareModulesLoaded().subscribe((loaded) => {
+		this.hardwareModulesLoadedSubscription = this.hardwareScanService.isHardwareModulesLoaded().subscribe((loaded) => {
 			this.isRefreshClicked = false;
 			if (loaded) {
 				this.modules = this.getItemToDisplay();
@@ -569,12 +589,12 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			windowClass: 'custom-modal-size'
 		});
 		modalRef.componentInstance.items = this.hardwareScanService.getCustomScanModules();
-		modalRef.componentInstance.passEntry.subscribe(() => {
+		this.passEntrySubscription = modalRef.componentInstance.passEntry.subscribe(() => {
 			this.hardwareScanService.filterCustomTests(this.culture);
 			this.checkPreScanInfo(TaskType.CustomScan); // custom scan
 		});
 
-		modalRef.componentInstance.modalClosing.subscribe(success => {
+		this.modalClosedSubscription = modalRef.componentInstance.modalClosing.subscribe(success => {
 			// Re-enabling the button, once the modal has been closed in a way
 			// the user didn't started the Scan proccess.
 			if (!success) {

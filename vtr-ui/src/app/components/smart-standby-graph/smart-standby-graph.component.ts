@@ -1,29 +1,37 @@
+import { Component, OnInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import * as d3 from 'd3-selection';
 import { Observable } from 'rxjs/internal/Observable';
 import SmartStandbyActivityModel from 'src/app/data-models/smart-standby-graph/smart-standby-activity.model';
+import { Subscription } from 'rxjs';
 
 @Component({
 	selector: 'vtr-smart-standby-graph',
 	templateUrl: './smart-standby-graph.component.html',
 	styleUrls: ['./smart-standby-graph.component.scss']
 })
-export class SmartStandbyGraphComponent implements OnInit {
+export class SmartStandbyGraphComponent implements OnInit, OnDestroy {
 	@ViewChild('activityChart', { static: false }) private chartContainer: ElementRef;
 	public activities: SmartStandbyActivityModel[];
 	private colors = ['#FFFFFF', '#70B5F1', '#3489DF', '#2B77CC', '#14499C'];
 	private days = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
 	private hours = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
+	activitySubscription: Subscription;
 	constructor(private http: HttpClient) { }
 
 	ngOnInit() {
-		this.getActivities().subscribe(
+		this.activitySubscription = this.getActivities().subscribe(
 			(data: SmartStandbyActivityModel[]) => {
 				this.activities = data;
 				this.renderChart(data);
 			}
 		);
+	}
+
+	ngOnDestroy() {
+		if (this.activitySubscription) {
+			this.activitySubscription.unsubscribe();
+		}
 	}
 
 	private getActivities(): Observable<SmartStandbyActivityModel[]> {

@@ -1,4 +1,4 @@
-import { Component, OnInit, SecurityContext } from '@angular/core';
+import { Component, OnInit, SecurityContext, OnDestroy } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
@@ -20,13 +20,14 @@ import { SystemUpdateService } from 'src/app/services/system-update/system-updat
 import { UserService } from 'src/app/services/user/user.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { FeedbackFormComponent } from '../../feedback-form/feedback-form/feedback-form.component';
+import { Subscription } from 'rxjs';
 
 @Component({
 	selector: 'vtr-page-dashboard-android',
 	templateUrl: './page-dashboard-android.component.html',
 	styleUrls: ['./page-dashboard-android.component.scss']
 })
-export class PageDashboardAndroidComponent implements OnInit {
+export class PageDashboardAndroidComponent implements OnInit, OnDestroy {
 	/* submit = this.translate.instant('dashboard.feedback.form.button');
 	feedbackButtonText = this.submit; */
 	securityAdvisor: SecurityAdvisor;
@@ -40,6 +41,8 @@ export class PageDashboardAndroidComponent implements OnInit {
 	cardContentPositionD: any = {};
 	cardContentPositionE: any = {};
 	cardContentPositionF: any = {};
+	commonServiceSubscription: Subscription;
+	cmsServiceSubscription: Subscription;
 
 	/*forwardLink = {
 		path: 'dashboard-customize',
@@ -91,7 +94,7 @@ export class PageDashboardAndroidComponent implements OnInit {
 		this.setDefaultCMSContent();
 
 
-		this.commonService.notification.subscribe((notification: AppNotification) => {
+		this.commonServiceSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
 
@@ -103,7 +106,7 @@ export class PageDashboardAndroidComponent implements OnInit {
 			Page: 'dashboard'
 		};
 
-		this.cmsService.fetchCMSContent(queryOptions).subscribe(
+		this.cmsServiceSubscription = this.cmsService.fetchCMSContent(queryOptions).subscribe(
 			(response: any) => {
 				const heroBannerItems = this.cmsService.getOneCMSContent(response, 'home-page-hero-banner', 'position-A').map((record, index) => {
 					return {
@@ -437,4 +440,12 @@ export class PageDashboardAndroidComponent implements OnInit {
 		}
 	}
 
+	ngOnDestroy() {
+		if (this.cmsServiceSubscription) {
+			this.cmsServiceSubscription.unsubscribe();
+		}
+		if (this.commonServiceSubscription) {
+			this.commonServiceSubscription.unsubscribe();
+		}
+	}
 }
