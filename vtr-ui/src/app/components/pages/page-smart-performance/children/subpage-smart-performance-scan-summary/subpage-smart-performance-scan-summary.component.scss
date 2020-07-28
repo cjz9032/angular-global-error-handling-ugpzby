@@ -97,7 +97,7 @@ vtr-subpage-smart-performance-scan-summary {
 						margin: 0.45rem;
 						cursor: pointer;
 						&:focus {
-							@include outline-blue
+							@include outline-white
 						}
 						@media #{$breakpoint_sm}{
 							padding: 0.3rem;
@@ -109,7 +109,7 @@ vtr-subpage-smart-performance-scan-summary {
 							margin-left: 1rem;
 							cursor: pointer;
 							&:focus {
-								@include outline-blue
+								@include outline-white
 							}
 						}
 						&:first-child {
@@ -1509,7 +1509,7 @@ vtr-subpage-smart-performance-scan-summary {
 			@include ui-button-high-contrast-white;
 			@include high-contrast-adjust;
 			&:focus {
-				@include outline-blue
+				@include outline-white;
 			}
 		}
 		.disabled-button{

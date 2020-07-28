@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -14,7 +14,7 @@ import { isNull, isUndefined } from 'util';
 export class ModalSmartPerformanceFeedbackComponent implements OnInit {
 	selected: number;
 	radioSelected: any;
-
+	@ViewChild('cross') cross: ElementRef;
 	isSubscribed: any;
 	isSubmitButtonActive = false;
 
@@ -124,7 +124,11 @@ export class ModalSmartPerformanceFeedbackComponent implements OnInit {
 			fbQ7: new FormControl(null),
 			fbQ8: new FormControl(null),
 			fbComment: new FormControl(null),
-		});	
+		});
+
+		setTimeout(() => {
+			this.cross.nativeElement.focus();
+		}, 500);
 	}
 
 	onFeedBackSubmit() {

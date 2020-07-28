@@ -174,3 +174,15 @@ textarea:focus {
 		}
 	}
 }
+
+.confirm {
+	&:focus {
+		@include outline-blue;
+	}
+}
+
+.close {
+	&:focus {
+		@include outline-blue;
+	}
+}

@@ -56,7 +56,7 @@
 			text-decoration: none;
 		}
 		&:focus {
-			@include outline-border-blue;
+			@include outline-blue;
 		}
 	}
 	.spinner-border {

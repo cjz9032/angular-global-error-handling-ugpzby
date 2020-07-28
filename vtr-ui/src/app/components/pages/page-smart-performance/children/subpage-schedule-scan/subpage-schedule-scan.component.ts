@@ -305,6 +305,9 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 		try {
 			this.scheduleTab = '';
 			this.isChangeSchedule = false;
+			setTimeout(() => {
+				this.scheduledScanFrequency.nativeElement.focus()
+			}, 1200);
 			this.setTypeOfFrequency()
 			this.payloadData(this.type);
 			this.scheduleScan(this.requestScanData);
@@ -436,9 +439,6 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 					nextScanDateWithYear: dt.split(',')[1] + '/' + dt.split(',')[2].trim() + '/' + dt.split(',')[3]
 				};
 				this.scanDatekValueChange.emit(nextScanEvent);
-				setTimeout(() => {
-					this.scheduledScanFrequency.nativeElement.focus()
-				}, 10);
 				return;
 			}
 

@@ -24,6 +24,9 @@
         color: $menu_hover;
         cursor: pointer;
         font-weight: 600;
+        &:focus {
+            @include outline-blue;
+        }
         @media #{$breakpoint_sm}{
             font-size: $fontsize_xs;
         }
