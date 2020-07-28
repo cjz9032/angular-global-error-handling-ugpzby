@@ -3,6 +3,8 @@
 .vtr-recover-bad-sectors {
 	background-color: $light;
 	border-radius: $border_radius;
+	@include high-contrast-border;
+
 	.container {
 		padding: 2.4rem;
 		margin: 0;

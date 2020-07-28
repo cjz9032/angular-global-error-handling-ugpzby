@@ -796,6 +796,16 @@ $high-contrast-white-disabled-maroon: #610000;
 		background-color: $light !important;
 	}
 }
+
+@mixin high-contrast-background {
+	@media #{$black-on-white} {
+		background: $light;
+	}
+	@media #{$white-on-black} {
+		background: $dark;
+	}
+}
+
 @mixin high-contrast-background-color {
 	@media #{$black-on-white} {
 		background-color: $light !important;
@@ -845,4 +855,16 @@ $high-contrast-white-disabled-maroon: #610000;
 	@media #{$white-on-black} {
 		filter: grayscale(100%) invert(1) contrast(1000%);
 	}
+}
+
+@mixin high-contrast-border {
+	@media #{$black-on-white} {
+		@include black-border;
+	}
+	@media #{$white-on-black} {
+		@include white-border;
+	}
+
+	@include high-contrast-color-reversal;
+	@include high-contrast-background;
 }
