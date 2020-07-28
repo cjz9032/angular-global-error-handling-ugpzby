@@ -298,7 +298,7 @@ export class SystemUpdateService {
 			} else {
 				this.commonService.sendNotification(UpdateProgress.ScheduleUpdateIdle, response);
 			}
-		} else if (status === '' && Number(response.statusCode) === SystemUpdateStatus.CONNECT_EXCEPTION && this.commonService.isOnline) {
+		} else if (!status && Number(response.statusCode) === SystemUpdateStatus.CONNECT_EXCEPTION && this.commonService.isOnline) {
 			this.loggerService.info('response return error network status, try again.');
 			setTimeout(() => {
 				this.getScheduleUpdateStatus(canReportProgress);
