@@ -23,6 +23,7 @@ import { GamingHybridModeService } from 'src/app/services/gaming/gaming-hybrid-m
 import { GamingOverDriveService } from 'src/app/services/gaming/gaming-over-drive/gaming-over-drive.service';
 import { GamingKeyLockService } from 'src/app/services/gaming/gaming-keylock/gaming-key-lock.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { GamingQuickSettingToolbarService } from 'src/app/services/gaming/gaming-quick-setting-toolbar/gaming-quick-setting-toolbar.service';
 // component
 import { ModalGamingThermalMode2Component } from '../../modal/modal-gaming-thermal-mode2/modal-gaming-thermal-mode2.component';
 
@@ -39,6 +40,8 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 	public thermalMode2Enum = GamingThermal2;
 	public thermalModeRealStatus = this.thermalMode2Enum.balance;
 	public thermalModeEvent: any;
+	public networkBoostEvent:any;
+	public autoCloseEvent:any;
 	public performanceOCSettings = false;
 	private notifcationSubscription: Subscription;
 	private OCSettingsSubscription: Subscription;
@@ -266,6 +269,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 		private gamingThermalModeService: GamingThermalModeService,
 		private gamingOCService: GamingOCService,
 		private gamingOverDriveService: GamingOverDriveService,
+		private gamingQuickSettingToolbarService: GamingQuickSettingToolbarService,
 		private router: Router,
 		private logger: LoggerService
 	) { }
@@ -373,6 +377,8 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 			if (response.type === Gaming.GamingCapabilities) {
 				this.gamingCapabilities = response.payload;
 				this.unRegisterThermalModeRealStatusChangeEvent();
+				this.unGamingQuickSettingsStatusChangedEvent('NetworkBoost',EventTypes.gamingQuickSettingsNetworkBoostStatusChangedEvent,this.networkBoostEvent);
+				this.unGamingQuickSettingsStatusChangedEvent('AutoClose',EventTypes.gamingQuickSettingsAutoCloseStatusChangedEvent,this.autoCloseEvent);
 				this.legionEdgeInit();
 			}
 		});
@@ -386,6 +392,8 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 			this.OCSettingsSubscription.unsubscribe();
 		}
 		this.unRegisterThermalModeRealStatusChangeEvent();
+		this.unGamingQuickSettingsStatusChangedEvent('NetworkBoost',EventTypes.gamingQuickSettingsNetworkBoostStatusChangedEvent,this.networkBoostEvent);
+		this.unGamingQuickSettingsStatusChangedEvent('AutoClose',EventTypes.gamingQuickSettingsAutoCloseStatusChangedEvent,this.autoCloseEvent);
 	}
 
 	legionEdgeInit() {
@@ -457,10 +465,22 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 
 		if (this.gamingCapabilities.networkBoostFeature) {
 			this.renderNetworkBoostStatus();
+			this.networkBoostEvent = this.onGamingQuickSettingsNetworkBoostStatusChangedEvent.bind(this);
+			this.gamingQuickSettingToolbarService.registerEvent('NetworkBoost');
+			this.shellServices.registerEvent(
+				EventTypes.gamingQuickSettingsNetworkBoostStatusChangedEvent,
+				this.networkBoostEvent
+			);
 		}
 
 		if (this.gamingCapabilities.optimizationFeature) {
 			this.renderAutoCloseStatus();
+			this.autoCloseEvent = this.onGamingQuickSettingsAutoCloseStatusChangedEvent.bind(this);
+			this.gamingQuickSettingToolbarService.registerEvent('AutoClose');
+			this.shellServices.registerEvent(
+				EventTypes.gamingQuickSettingsAutoCloseStatusChangedEvent,
+				this.autoCloseEvent
+			);
 		}
 
 		if (this.gamingCapabilities.hybridModeFeature) {
@@ -535,6 +555,28 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 				this.commonService.setLocalStorageValue(LocalStorageKey.RealThermalModeStatus, this.thermalModeRealStatus);
 			}
 		});
+	}
+	quickSettingToolbarevent (status,type,localStorage) {
+		status = status ===1 ? true : false;
+		this.logger.info(`Widget-LegionEdge-onGamingQuickSettingsChangedEvent--${type}: call back from ${this.legionUpdate[this.legionItemIndex[type]].isChecked} to ${status}`);
+		if (status !== undefined && this.legionUpdate[this.legionItemIndex[type]].isChecked !== status) {
+			this.legionUpdate[this.legionItemIndex[type]].isChecked = status;
+			this.commonService.setLocalStorageValue(localStorage, status);
+		}
+	}
+	onGamingQuickSettingsNetworkBoostStatusChangedEvent(status:any) {
+		this.ngZone.run(() => {
+			this.quickSettingToolbarevent(status,'networkBoost',LocalStorageKey.NetworkBoostStatus);
+		});
+	}
+	onGamingQuickSettingsAutoCloseStatusChangedEvent(status:any) {
+		this.ngZone.run(() => {
+			this.quickSettingToolbarevent(status,'autoClose',LocalStorageKey.AutoCloseStatus);
+		});
+	}
+	unGamingQuickSettingsStatusChangedEvent(type,eventType,eventBind) {
+		this.gamingQuickSettingToolbarService.unregisterEvent(type);
+		this.shellServices.unRegisterEvent(eventType, eventBind);
 	}
 	renderThermalMode2OCSettings() {
 		try {

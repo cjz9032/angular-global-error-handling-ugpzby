@@ -2395,4 +2395,14 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
+	public getQuickSettingToolbar() {
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+			}
+			return this.phoenix.gaming.gamingQuickSettings;
+		}
+		return undefined;
+	}
 }
