@@ -55,6 +55,14 @@
 			z-index: 2;
 			cursor: pointer;
 			transition: all 200ms ease-in;
+
+			@media #{$black-on-white} {
+				@include high-contrast-white-border;
+			}
+
+			@media #{$white-on-black} {
+				@include high-contrast-black-border;
+			}
 		}
 
 		&:after {

@@ -69,10 +69,12 @@
 				@media #{$white-on-black} {
 					background-color: $high-contrast-black-cyan;
 					border: none;
+					border-radius: 0.25rem !important;
 				}
 				@media #{$black-on-white} {
 					background-color: $high-contrast-white-dark-magenta;
 					border: none;
+					border-radius: 0.25rem !important;
 				}
 			}
 			&::after {
@@ -128,10 +130,12 @@
 				@media #{$black-on-white} {
 					@include high-contrast-white-border;
 					background-color: $light;
+					border-radius: 0.25rem !important;
 				}
 				@media #{$white-on-black} {
 					@include high-contrast-black-border;
 					background-color: $dark;
+					border-radius: 0.25rem !important;
 				}
 
 
@@ -187,9 +191,11 @@
 			pointer-events: none;
 			@media #{$black-on-white} {
 				opacity: $disabled-opacity;
+				@include high-contrast-white-text-color-disabled
 			}
 			@media #{$white-on-black} {
 				opacity: $disabled-opacity;
+				@include high-contrast-black-text-color-disabled
 			}
 
 			&::before {
@@ -210,9 +216,11 @@
 			pointer-events: none;
 			@media #{$black-on-white} {
 				opacity: $disabled-opacity;
+				@include high-contrast-white-text-color-disabled;
 			}
 			@media #{$white-on-black} {
 				opacity: $disabled-opacity;
+				@include high-contrast-black-text-color-disabled
 			}
 
 			&::before {
