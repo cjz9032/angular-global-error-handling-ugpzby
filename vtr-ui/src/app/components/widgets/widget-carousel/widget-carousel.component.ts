@@ -179,7 +179,7 @@ export class WidgetCarouselComponent implements OnInit, OnChanges {
 	 * Close tooltip after 3sec
 	 */
 	public closeTipTimeout(tooltip:any){
-		this.closeTipTimer = setTimeout(this.closeTip, 3000, tooltip);
+		this.closeTipTimer = setTimeout(this.closeTip, 5000, tooltip);
 	}
 
 }
