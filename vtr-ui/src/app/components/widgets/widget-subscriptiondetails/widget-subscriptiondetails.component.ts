@@ -88,10 +88,9 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 			this.subscriptionDetails.startDate = this.formatLocaleDate.transform(subScriptionDates.startDate);
 			this.subscriptionDetails.endDate = this.formatLocaleDate.transform(subScriptionDates.endDate);
 			this.subscriptionDetails.status = subScriptionDates.status;
-			// if (this.subscriptionDetails.endDate < this.today) {
-			// 	this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.inactiveStatus';
-			// 	this.strStatus = 'INACTIVE';
-			// }
+			if (!this.subscriptionDetails.startDate && !this.subscriptionDetails.endDate){
+				this.getSubscriptionDetails();
+			}
 			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.activeStatus';
 			this.strStatus = 'ACTIVE';
 		}
