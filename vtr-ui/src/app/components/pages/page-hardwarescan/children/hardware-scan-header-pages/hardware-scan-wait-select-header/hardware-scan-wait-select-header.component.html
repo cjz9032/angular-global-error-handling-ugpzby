@@ -11,17 +11,20 @@
 			[title] =" 'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate "
 			(onClick)="onQuickScan()">
 		</vtr-ui-button>
-		<div class="row align-items-center">
-			<div [title]=" 'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate ">
-				<button id="hwscan-custom-scan-btn" vtrMetrics
-					metricsEvent="FeatureClick"
-					metricsParent="HardwareScan"
-					metricsItem="HardwareScan.CustomizeScan"
-					[ngClass]="{'action-anchor': !disableButtonScan, 'disabled-anchor': disableButtonScan}"
-					[disabled]="disableButtonScan"
-					(click)="onAnchor()">{{ 'hardwareScan.customize.name' | translate }}
-				</button>
-			</div>
-		</div>
+		<vtr-ui-hyperlink-button
+			id="hwscan-custom-scan-btn"
+			role="button"
+			class="hyperlink-container"
+			hyperlinkStyle="xs-white"
+			metricsEvent="FeatureClick"
+			metricsParent="HardwareScan"
+			metricsItem="HardwareScan.CustomizeScan"
+			[isDisabled]="disableButtonScan"
+			[label]="'hardwareScan.customize.name' | translate"
+			[tooltipText]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
+			[tabIndex]="1"
+			[upperCaseLabel]="true"
+			(hyperlinkClick)="onAnchor()">
+		</vtr-ui-hyperlink-button>
 	</div>
 </div>

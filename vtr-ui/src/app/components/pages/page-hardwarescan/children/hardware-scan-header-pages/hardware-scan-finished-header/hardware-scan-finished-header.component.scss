@@ -4,10 +4,7 @@
 	color: $light;
 	font-size: $fontsize_xl;
 	font-weight: $weight_600;
-	padding-left: 2.4rem;
-	padding-top: 2.4rem;
-	padding-bottom: 0.5rem;
-	padding-right: 2.4rem;
+	padding: 2.4rem 2.4rem 0.5rem;
 }
 
 .result-date-description {
@@ -56,6 +53,10 @@
 	}
 	.align-items-center {
 		align-content: center;
+	}
+
+	.hyperlink-container {
+		margin: 0 0 0 1.9rem;
 	}
 }
 

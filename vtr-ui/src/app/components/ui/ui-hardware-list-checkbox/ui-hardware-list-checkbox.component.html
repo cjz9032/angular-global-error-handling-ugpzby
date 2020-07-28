@@ -21,13 +21,24 @@
 		</div>
 		<div class="col-12 px-0">
 			<div class="options">
-				<a id="{{ componentId }}-select-all-link" class="select-item"
-					href="javascript:void(0)"
-					(click)="onSelectAllDevices()">{{ 'hardwareScan.select' | translate }}</a>
+				<vtr-ui-hyperlink-button
+					id="{{ componentId }}-select-all-link"
+					role="link"
+					hyperlinkStyle="xs-300-blue-lighter"
+					class="hyperlink-select"
+					(hyperlinkClick)="onSelectAllDevices()"
+					[label]=" 'hardwareScan.select' | translate "
+					[disableTooltip]="true"
+				></vtr-ui-hyperlink-button>
 				<span class="select-item-subtitle">/</span>
-				<a  id="{{ componentId }}-deselect-all-link" class="select-item"
-					href="javascript:void(0)"
-					(click)="onDeselectAllDevices()">{{ 'hardwareScan.deselect' | translate }}</a>
+				<vtr-ui-hyperlink-button
+					id="{{ componentId }}-deselect-all-link"
+					role="link"
+					hyperlinkStyle="xs-300-blue-lighter"
+					(hyperlinkClick)="onDeselectAllDevices()"
+					[label]=" 'hardwareScan.deselect' | translate "
+					[disableTooltip]="true">
+				</vtr-ui-hyperlink-button>
 			</div>
 		</div>
 	</ul>

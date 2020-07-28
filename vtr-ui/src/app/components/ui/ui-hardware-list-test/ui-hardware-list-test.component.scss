@@ -114,41 +114,12 @@
 	.options {
 		padding: 1.1rem 0;
 		font-size: $fontsize_xs;
-
-		.select-item {
-			color: $menu_hover;
-			font-weight: $weight_light;
-			border-bottom: 0.1rem solid $main;
-			cursor: pointer;
-
-			&:hover {
-				border: none;
-				text-decoration: none;
-			}
-		}
+		display: flex;
 
 		.select-item-subtitle {
 			padding: 0.5rem;
 			font-weight: $shade_lighter;
 			color: $shade_darker;
-		}
-
-		.collapse-control {
-			cursor: pointer;
-
-			fa-icon {
-				font-size: $fontsize_lg;
-				color: $blue_lightest;
-				vertical-align: middle;
-			}
-
-			&:hover {
-				opacity: 1;
-			}
-
-			&:focus {
-				@include outline-blue;
-			}
 		}
 	}
 }

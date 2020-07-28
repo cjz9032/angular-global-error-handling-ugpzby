@@ -123,17 +123,17 @@
 </div>
 <ng-template #tooltipRefModule>
 	<div id="hwscan-item-{{ tooltipIndex }}-result-code-tooltip-text">{{ ('hardwareScan.pluginTokens.' + tooltipText) | translateDefault:tooltipText }}</div>
-	<a id="hwscan-item-{{ tooltipIndex }}-result-code-tooltip-support-link"
-		[attr.href]="contactusUrl"
+	<vtr-ui-hyperlink-button 
+		id="hwscan-item-{{ tooltipIndex }}-result-code-tooltip-support-link"
 		class="link-support"
-		target="_blank"
-		vtrMetrics
+		hyperlinkStyle="xs-300-blue-lighter"
 		metricsItemID="HardwareScan.ResultSupport"
 		metricsItemPosition="r1"
 		metricsItemCategory="partnerarticle"
 		metricsEvent="articleclick"
 		metricsPageNumber="1"
-		tabindex="0">
-		{{ 'hardwareScan.support.subtitle' | translate }}
-	</a>
+		(hyperlinkClick)="openContactusPage()"
+		[label]="'hardwareScan.support.subtitle' | translate"
+		[tabIndex]="0">
+	</vtr-ui-hyperlink-button>
 </ng-template>

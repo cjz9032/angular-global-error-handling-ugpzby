@@ -33,20 +33,20 @@
 							[tooltipText]="'hardwareScan.scanFinishedHeader.supportButtonText' | translate"
 							[label]="'hardwareScan.scanFinishedHeader.supportButtonText' | translate">
 						</vtr-ui-button>
-
-						<div class="row align-items-center">
-							<vtr-ui-button 
-								type="button"
-								id="hwscan-scan-again-btn"
-								metricsEvent="FeatureClick"
-								metricsParent="HardwareScan"
-								metricsItem="HardwareScan.ScanAgain"
-								[label]="'hardwareScan.scanFinishedHeader.scanAgainButtonText' | translate"
-								[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
-								[tooltipText]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
-								(click)="onScanAgain()">
-							</vtr-ui-button>
-						</div>
+						<vtr-ui-hyperlink-button
+							class="hyperlink-container"
+							hyperlinkStyle="xs-white"
+							id="hwscan-scan-again-btn"
+							role="button"
+							metricsEvent="FeatureClick"
+							metricsParent="HardwareScan"
+							metricsItem="HardwareScan.ScanAgain"
+							[upperCaseLabel]="true"
+							[label]="'hardwareScan.scanFinishedHeader.scanAgainButtonText' | translate"
+							[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
+							[tooltipText]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
+							(hyperlinkClick)="onScanAgain()">
+						</vtr-ui-hyperlink-button>
 					</div>
 
 					<ng-template #successfulScan>

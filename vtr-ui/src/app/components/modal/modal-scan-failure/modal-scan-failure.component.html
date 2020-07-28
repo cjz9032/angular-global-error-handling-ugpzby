@@ -33,15 +33,16 @@
 					[tooltipText]="'hardwareScan.scanFailureModal.recoverBadSectorsButtonText' | translate"
 					[label]="'hardwareScan.scanFailureModal.recoverBadSectorsButtonText' | translate">
 				</vtr-ui-button>
-				<vtr-ui-button
-					buttonColor="secondary-blue-lighter-bg-transparent"
+				<vtr-ui-hyperlink-button
+					hyperlinkStyle="xs-blue-lighter"
 					metricsEvent="FeatureClick"
 					metricsParent="HardwareScan.ScanFailureActions"
 					metricsItem="ScanFailureActions.LenovoSupport"
-					id="supportButtonWithRBS" (click)="openSupportPage()"
-				   [tooltipText]="'hardwareScan.scanFailureModal.supportButtonText' | translate"
-				   [label]="'hardwareScan.scanFailureModal.supportButtonText' | translate">
-				</vtr-ui-button>
+					id="supportButtonWithRBS" (hyperlinkClick)="openSupportPage()"
+				 	[tooltipText]="'hardwareScan.scanFailureModal.supportButtonText' | translate"
+				   	[label]="'hardwareScan.scanFailureModal.supportButtonText' | translate"
+					[upperCaseLabel]="true">
+				</vtr-ui-hyperlink-button>
 			</div>
 		</div>
 
