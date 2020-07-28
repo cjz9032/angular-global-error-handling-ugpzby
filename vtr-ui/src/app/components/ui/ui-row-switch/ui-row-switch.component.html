@@ -44,6 +44,7 @@
 							</h4>
 							<span *ngIf="caption">
 								<p class="caption"
+									role="text"
 									#captionRef
 									id="{{switchId}}-caption"
 									[innerHTML]="caption.length > 70  && !contentExpand  && readMoreText.length > 0 ? (caption | slice: 0:70) : caption">
