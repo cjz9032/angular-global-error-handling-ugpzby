@@ -67,6 +67,22 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	public hideTitle = false;
 	private subscription: Subscription;
 	private langChangeSubscription: Subscription;
+	private translateSubscription: Subscription;
+	translate1Subscription: Subscription;
+	translate2Subscription: Subscription;
+	translate3Subscription: Subscription;
+	translate4Subscription: Subscription;
+	translate5Subscription: Subscription;
+	translate6Subscription: Subscription;
+	translate7Subscription: Subscription;
+	translate8Subscription: Subscription;
+	translate9Subscription: Subscription;
+	translate10Subscription: Subscription;
+	translate11Subscription: Subscription;
+	translate12Subscription: Subscription;
+	translate13Subscription: Subscription;
+	translate14Subscription: Subscription;
+	cmsSubscription: Subscription;
 
 	supportDatas = {
 		documentation: [
@@ -194,7 +210,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			this.onNotification(notification);
 		});
 
-		this.translate
+		this.translateSubscription = this.translate
 			.stream([
 				'dashboard.offlineInfo.welcomeToVantage',
 				'common.menu.support',
@@ -269,6 +285,54 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 
 		if (this.langChangeSubscription) {
 			this.langChangeSubscription.unsubscribe();
+		}
+		if (this.translateSubscription) {
+			this.translateSubscription.unsubscribe();
+		}
+		if (this.translate1Subscription) {
+			this.translate1Subscription.unsubscribe();
+		}
+		if (this.translate2Subscription) {
+			this.translate2Subscription.unsubscribe();
+		}
+		if (this.translate3Subscription) {
+			this.translate3Subscription.unsubscribe();
+		}
+		if (this.translate4Subscription) {
+			this.translate4Subscription.unsubscribe();
+		}
+		if (this.translate5Subscription) {
+			this.translate5Subscription.unsubscribe();
+		}
+		if (this.translate6Subscription) {
+			this.translate6Subscription.unsubscribe();
+		}
+		if (this.translate7Subscription) {
+			this.translate7Subscription.unsubscribe();
+		}
+		if (this.translate8Subscription) {
+			this.translate8Subscription.unsubscribe();
+		}
+		if (this.translate9Subscription) {
+			this.translate9Subscription.unsubscribe();
+		}
+		if (this.translate10Subscription) {
+			this.translate10Subscription.unsubscribe();
+		}
+		if (this.translate11Subscription) {
+			this.translate11Subscription.unsubscribe();
+		}
+		if (this.translate12Subscription) {
+			this.translate12Subscription.unsubscribe();
+		}
+		if (this.translate13Subscription) {
+			this.translate13Subscription.unsubscribe();
+		}
+		if (this.translate14Subscription) {
+			this.translate14Subscription.unsubscribe();
+		}
+		if (this.cmsSubscription) {
+			this.cmsSubscription.unsubscribe();
 		}
 	}
 
@@ -350,7 +414,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			};
 		}
 
-		this.cmsService.fetchCMSContent(queryOptions).subscribe(
+		this.cmsSubscription = this.cmsService.fetchCMSContent(queryOptions).subscribe(
 			(response: any) => {
 				const callCmsEndTime: any = new Date();
 				const callCmsUsedTime = callCmsEndTime - callCmsStartTime;
@@ -562,11 +626,11 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		memory.id = 'memory';
 		memory.metricsItemName = 'Memory';
 
-		this.translate.stream('dashboard.systemStatus.memory.title').subscribe((value) => {
+		this.translate1Subscription = this.translate.stream('dashboard.systemStatus.memory.title').subscribe((value) => {
 			memory.title = value;
 		});
 
-		this.translate.stream('dashboard.systemStatus.memory.detail.notFound').subscribe((value) => {
+		this.translate2Subscription = this.translate.stream('dashboard.systemStatus.memory.detail.notFound').subscribe((value) => {
 			memory.detail = value;
 		});
 
@@ -581,11 +645,11 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		disk.id = 'disk';
 		disk.metricsItemName = 'Disk Space';
 
-		this.translate.stream('dashboard.systemStatus.diskSpace.title').subscribe((value) => {
+		this.translate3Subscription = this.translate.stream('dashboard.systemStatus.diskSpace.title').subscribe((value) => {
 			disk.title = value;
 		});
 
-		this.translate.stream('dashboard.systemStatus.diskSpace.detail.notFound').subscribe((value) => {
+		this.translate4Subscription = this.translate.stream('dashboard.systemStatus.diskSpace.detail.notFound').subscribe((value) => {
 			disk.detail = value;
 		});
 
@@ -600,11 +664,11 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		warranty.id = 'warranty';
 		warranty.metricsItemName = 'Warranty';
 
-		this.translate.stream('dashboard.systemStatus.warranty.title').subscribe((value) => {
+		this.translate5Subscription = this.translate.stream('dashboard.systemStatus.warranty.title').subscribe((value) => {
 			warranty.title = value;
 		});
 
-		this.translate.stream('dashboard.systemStatus.warranty.detail.notFound').subscribe((value) => {
+		this.translate6Subscription = this.translate.stream('dashboard.systemStatus.warranty.detail.notFound').subscribe((value) => {
 			warranty.detail = value;
 		});
 
@@ -626,11 +690,11 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			systemUpdate.id = 'systemupdate';
 			systemUpdate.metricsItemName = 'System Update';
 
-			this.translate.stream('dashboard.systemStatus.systemUpdate.title').subscribe((value) => {
+			this.translate7Subscription = this.translate.stream('dashboard.systemStatus.systemUpdate.title').subscribe((value) => {
 				systemUpdate.title = value;
 			});
 
-			this.translate.stream('dashboard.systemStatus.systemUpdate.detail.update').subscribe((value) => {
+			this.translate8Subscription = this.translate.stream('dashboard.systemStatus.systemUpdate.detail.update').subscribe((value) => {
 				systemUpdate.detail = value;
 			});
 
@@ -657,7 +721,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 				const disk = this.systemStatus[1];
 				const totalDisk = value.disk.total;
 				const usedDisk = value.disk.used;
-				this.translate.stream('dashboard.systemStatus.memory.detail.of').subscribe((re) => {
+				this.translate9Subscription = this.translate.stream('dashboard.systemStatus.memory.detail.of').subscribe((re) => {
 					memory.detail = `${this.commonService.formatBytes(
 						usedRam,
 						1
@@ -685,7 +749,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			this.adPolicyService &&
 			this.adPolicyService.IsSystemUpdateEnabled
 		) {
-			this.dashboardService.getRecentUpdateInfo().subscribe((value) => {
+			this.translate10Subscription = this.dashboardService.getRecentUpdateInfo().subscribe((value) => {
 				if (value) {
 					const systemUpdate = this.systemStatus[3];
 					const diffInDays = this.systemUpdateService.dateDiffInDays(value.lastupdate);
@@ -705,7 +769,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	}
 
 	getWarrantyInfo() {
-		this.warrantyService.getWarrantyInfo().subscribe((value) => {
+		this.translate11Subscription = this.warrantyService.getWarrantyInfo().subscribe((value) => {
 			if (value) {
 				this.setWarrantyInfo(value);
 			}
@@ -726,17 +790,17 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		const warrantyDate = this.formatLocaleDate.transform(value.endDate);
 		// in warranty
 		if (value.status === 0) {
-			this.translate.stream('dashboard.systemStatus.warranty.detail.until').subscribe((re) => {
+			this.translate12Subscription = this.translate.stream('dashboard.systemStatus.warranty.detail.until').subscribe((re) => {
 				warranty.detail = `${re} ${warrantyDate}`; // `Until ${warrantyDate}`;
 			});
 			warranty.status = 0;
 		} else if (value.status === 1) {
-			this.translate.stream('dashboard.systemStatus.warranty.detail.expiredOn').subscribe((re) => {
+			this.translate13Subscription = this.translate.stream('dashboard.systemStatus.warranty.detail.expiredOn').subscribe((re) => {
 				warranty.detail = `${re} ${warrantyDate}`; // `Warranty expired on ${warrantyDate}`;
 			});
 			warranty.status = 1;
 		} else {
-			this.translate.stream('dashboard.systemStatus.warranty.detail.notAvailable').subscribe((re) => {
+			this.translate14Subscription = this.translate.stream('dashboard.systemStatus.warranty.detail.notAvailable').subscribe((re) => {
 				warranty.detail = `${re}`; //  'Warranty not available';
 			});
 			warranty.status = 1;
