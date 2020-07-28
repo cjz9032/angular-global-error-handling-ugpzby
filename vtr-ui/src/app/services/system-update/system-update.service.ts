@@ -75,7 +75,7 @@ export class SystemUpdateService {
 					criticalAutoUpdates: (response.criticalAutoUpdates === 'ON') ? true : false,
 					recommendedAutoUpdates: (response.recommendedAutoUpdates === 'ON') ? true : false
 				};
-				if(!this.autoUpdateStatus.criticalAutoUpdates && this.autoUpdateStatus.recommendedAutoUpdates) {
+				if (!this.autoUpdateStatus.criticalAutoUpdates && this.autoUpdateStatus.recommendedAutoUpdates) {
 					this.autoUpdateStatus.recommendedAutoUpdates = false;
 					this.setUpdateSchedule(false, false);
 				}
@@ -149,8 +149,8 @@ export class SystemUpdateService {
 					this.updateInfo = { status, updateList: this.mapAvailableUpdateResponse(response.updateList) };
 					this.commonService.sendNotification(UpdateProgress.UpdatesAvailable, this.updateInfo);
 				} else {
-					const interval = setInterval(()=>{
-						if(this.percentCompleted < 100 && !this.isCheckingCancel) {
+					const interval = setInterval(() => {
+						if (this.percentCompleted < 100 && !this.isCheckingCancel) {
 							this.percentCompleted += 10;
 							if (this.percentCompleted > 100) {
 								this.percentCompleted = 100;
@@ -197,10 +197,10 @@ export class SystemUpdateService {
 	public getScheduleUpdateStatus(canReportProgress: boolean) {
 		if (this.systemUpdateBridge) {
 			this.systemUpdateBridge.getStatus(canReportProgress, (response: any) => {
-				this.processScheduleUpdate(response.payload, true);
+				this.processScheduleUpdate(response.payload, true, canReportProgress);
 			}).then((response: ScheduleUpdateStatus) => {
 				this.isImcErrorOrEmptyResponse = false;
-				this.processScheduleUpdate(response, false);
+				this.processScheduleUpdate(response, false, canReportProgress);
 			}).catch((error) => {
 				if (error && error.errorcode === 606) {
 					setTimeout(() => {
@@ -211,7 +211,7 @@ export class SystemUpdateService {
 		}
 	}
 
-	private processScheduleUpdate(response: any, isInProgress: boolean) {
+	private processScheduleUpdate(response: any, isInProgress: boolean, canReportProgress: boolean) {
 		const status = response.status.toLowerCase();
 		if (status === 'installing' || status === 'checking' || status === 'downloading') {
 			if (status === 'installing') {
@@ -298,6 +298,11 @@ export class SystemUpdateService {
 			} else {
 				this.commonService.sendNotification(UpdateProgress.ScheduleUpdateIdle, response);
 			}
+		} else if (status === '' && Number(response.statusCode) === SystemUpdateStatus.CONNECT_EXCEPTION && this.commonService.isOnline) {
+			this.loggerService.info('response return error network status, try again.');
+			setTimeout(() => {
+				this.getScheduleUpdateStatus(canReportProgress);
+			}, 200);
 		}
 	}
 
