@@ -169,6 +169,9 @@
 	vtr-page-networkboost,vtr-page-autoclose,
 	vtr-page-device-gaming {
 		.vtr-header-main-inner{
+			.back, .title{
+				color: $gaming_lightest !important;
+			}
 			@media #{$high-contrast} {
 				border: 0 !important;
 			}
