@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit, OnDestroy } from '@angular/core';
 import { DccService } from 'src/app/services/dcc/dcc.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { HistoryManager } from 'src/app/services/history-manager/history-manager.service';
@@ -10,7 +10,7 @@ import { HistoryManager } from 'src/app/services/history-manager/history-manager
 		'./header-main.component.scss'
 	]
 })
-export class HeaderMainComponent implements OnInit, AfterViewInit {
+export class HeaderMainComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	@Input() title: string;
 	@Input() back: string;
@@ -25,6 +25,7 @@ export class HeaderMainComponent implements OnInit, AfterViewInit {
 	@Input() hideBack = false;
 	@Output() innerBack = new EventEmitter();
 	@Input() hideTitle = false;
+	backElement: HTMLElement;
 
 	constructor(
 		public deviceService: DeviceService,
@@ -45,12 +46,14 @@ export class HeaderMainComponent implements OnInit, AfterViewInit {
 	}
 
 	ngAfterViewInit() {
-		const back = document.getElementById(this.backId);
-		if (back) {
-			back.addEventListener('focus', () => {
-				window.scrollTo(0, 0);
-			});
+		this.backElement = document.getElementById(this.backId);
+		if (this.backElement) {
+			this.backElement.addEventListener('focus', this.scrollTo);
 		}
+	}
+
+	scrollTo() {
+		window.scrollTo(0, 0);
 	}
 
 	onInnerBack() {
@@ -62,6 +65,12 @@ export class HeaderMainComponent implements OnInit, AfterViewInit {
 			this.onInnerBack();
 		} else {
 			return this.historyManager.goBack();
+		}
+	}
+
+	ngOnDestroy() {
+		if (this.backElement) {
+			this.backElement.removeEventListener('focus', this.scrollTo);
 		}
 	}
 }
