@@ -556,28 +556,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 			}
 		});
 	}
-	quickSettingToolbarevent (status,type,localStorage) {
-		status = status ===1 ? true : false;
-		this.logger.info(`Widget-LegionEdge-onGamingQuickSettingsChangedEvent--${type}: call back from ${this.legionUpdate[this.legionItemIndex[type]].isChecked} to ${status}`);
-		if (status !== undefined && this.legionUpdate[this.legionItemIndex[type]].isChecked !== status) {
-			this.legionUpdate[this.legionItemIndex[type]].isChecked = status;
-			this.commonService.setLocalStorageValue(localStorage, status);
-		}
-	}
-	onGamingQuickSettingsNetworkBoostStatusChangedEvent(status:any) {
-		this.ngZone.run(() => {
-			this.quickSettingToolbarevent(status,'networkBoost',LocalStorageKey.NetworkBoostStatus);
-		});
-	}
-	onGamingQuickSettingsAutoCloseStatusChangedEvent(status:any) {
-		this.ngZone.run(() => {
-			this.quickSettingToolbarevent(status,'autoClose',LocalStorageKey.AutoCloseStatus);
-		});
-	}
-	unGamingQuickSettingsStatusChangedEvent(type,eventType,eventBind) {
-		this.gamingQuickSettingToolbarService.unregisterEvent(type);
-		this.shellServices.unRegisterEvent(eventType, eventBind);
-	}
+	
 	renderThermalMode2OCSettings() {
 		try {
 			this.gamingOCService.getPerformanceOCSetting().then(res => {
@@ -996,4 +975,29 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 			this.setTouchpadLockStatus(status);
 		}
 	}
+
+	// version:3.3.3 quick setting toolbar& toast -- start
+	quickSettingToolbarevent (status,type,localStorage) {
+		status = status ===1 ? true : false;
+		this.logger.info(`Widget-LegionEdge-onGamingQuickSettingsChangedEvent--${type}: call back from ${this.legionUpdate[this.legionItemIndex[type]].isChecked} to ${status}`);
+		if (status !== undefined && this.legionUpdate[this.legionItemIndex[type]].isChecked !== status) {
+			this.legionUpdate[this.legionItemIndex[type]].isChecked = status;
+			this.commonService.setLocalStorageValue(localStorage, status);
+		}
+	}
+	onGamingQuickSettingsNetworkBoostStatusChangedEvent(status:any) {
+		this.ngZone.run(() => {
+			this.quickSettingToolbarevent(status,'networkBoost',LocalStorageKey.NetworkBoostStatus);
+		});
+	}
+	onGamingQuickSettingsAutoCloseStatusChangedEvent(status:any) {
+		this.ngZone.run(() => {
+			this.quickSettingToolbarevent(status,'autoClose',LocalStorageKey.AutoCloseStatus);
+		});
+	}
+	unGamingQuickSettingsStatusChangedEvent(type,eventType,eventBind) {
+		this.gamingQuickSettingToolbarService.unregisterEvent(type);
+		this.shellServices.unRegisterEvent(eventType, eventBind);
+	}
+	// version:3.3.3 quick setting toolbar& toast -- end
 }
