@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.17](https://bitbucket.tc.lenovo.com///compare/v1.7.15...v1.7.17) (2020-07-28)
+
+
+### Features
+
+* **NLS Antivirus:** VAN-19954 update AV others page NLS ([00772c0](https://bitbucket.tc.lenovo.com///commit/00772c05acbf88cb977e14703526f0720c3f361a))
+
+
+### Bug Fixes
+
+* **wifi-security:** add missing type import ([582e820](https://bitbucket.tc.lenovo.com///commit/582e8205a044ae9b831da84553e2042a5a06ba7c))
+
 ### [1.7.16](https://bitbucket.tc.lenovo.com///compare/v1.7.15...v1.7.16) (2020-07-27)
 
 
