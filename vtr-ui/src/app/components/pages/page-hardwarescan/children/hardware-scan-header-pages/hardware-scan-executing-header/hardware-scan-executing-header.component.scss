@@ -103,63 +103,43 @@
 	padding-bottom: 2.5rem;
 }
 
-.animated-dots:after {
-	content: '. ';
-	// animation: dots 2s steps(5, end) infinite;
-	// Used when high contrast is not active or is white-on-black
+@mixin dots($color) {
 	animation: dots 2s steps(5, end) infinite;
 
+	@keyframes dots {
+		0%, 20% {
+			color: rgba(0,0,0,0);
+			text-shadow:
+				.25em 0 0 rgba(0,0,0,0),
+				.5em 0 0 rgba(0,0,0,0);
+		}
+		40% {
+			color: $color;
+			text-shadow:
+				.25em 0 0 rgba(0,0,0,0),
+				.5em 0 0 rgba(0,0,0,0);
+		}
+		60% {
+			text-shadow:
+				.25em 0 0 $color,
+				.5em 0 0 rgba(0,0,0,0);
+		}
+		80%, 100% {
+			text-shadow:
+				.25em 0 0 $color,
+				.5em 0 0 $color;
+		}
+	}
+}
+
+.animated-dots:after {
+	content: '. ';
+
+	// Used when high contrast is not active or is white-on-black
+	@include dots($light);
+
 	@media #{$black-on-white} {
-		animation: black-on-white-dots 2s steps(5, end) infinite;
+		@include dots($dark);
 	}
 }
 
-@keyframes dots {
-	0%, 20% {
-		color: rgba(0,0,0,0);
-		text-shadow:
-			.25em 0 0 rgba(0,0,0,0),
-			.5em 0 0 rgba(0,0,0,0);
-	}
-	40% {
-		color: $light;
-		text-shadow:
-			.25em 0 0 rgba(0,0,0,0),
-			.5em 0 0 rgba(0,0,0,0);
-	}
-	60% {
-		text-shadow:
-			.25em 0 0 $light,
-			.5em 0 0 rgba(0,0,0,0);
-	}
-	80%, 100% {
-		text-shadow:
-			.25em 0 0 $light,
-			.5em 0 0 $light;
-	}
-}
-
-@keyframes black-on-white-dots {
-	0%, 20% {
-		color: rgba(0,0,0,0);
-		text-shadow:
-			.25em 0 0 rgba(0,0,0,0),
-			.5em 0 0 rgba(0,0,0,0);
-	}
-	40% {
-		color: $dark;
-		text-shadow:
-			.25em 0 0 rgba(0,0,0,0),
-			.5em 0 0 rgba(0,0,0,0);
-	}
-	60% {
-		text-shadow:
-			.25em 0 0 $dark,
-			.5em 0 0 rgba(0,0,0,0);
-	}
-	80%, 100% {
-		text-shadow:
-			.25em 0 0 $dark,
-			.5em 0 0 $dark;
-	}
-}
