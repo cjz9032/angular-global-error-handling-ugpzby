@@ -383,7 +383,7 @@
 					"routerLinkActiveOptions": {
 						"exact": true
 					},
-					"forArm": false,
+					"forArm": true,
 					"subitems": []
 				}
 			]
