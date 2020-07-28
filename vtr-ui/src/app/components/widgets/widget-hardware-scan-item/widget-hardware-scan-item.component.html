@@ -69,7 +69,7 @@
 			<table class="table table-details table-active table-borderless">
 				<tbody>
 					<tr *ngFor="let detail of item.details">
-						<th>{{ ('hardwareScan.pluginTokens.' + detail.key) | translateDefault:detail.key }}</th>
+						<th>{{ ('hardwareScan.' + (isRecoverExecute ? 'recoverBadSectors.' : 'pluginTokens.') + detail.key) | translateDefault:detail.key }}</th>
 						<td>{{ detail.value }}</td>
 					</tr>
 				</tbody>
