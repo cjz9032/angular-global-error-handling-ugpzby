@@ -79,8 +79,18 @@ describe('component: AntiTheftComponent', () => {
 		smartAssist = TestBed.inject(SmartAssistService);
 		logger = TestBed.inject(LoggerService);
 		smartAssist.isShellAvailable = true;
-		const date = { available: true, enabled: true, cameraAllowed: true, alarmDuration: 10, photoNumber: 5, photoAddress: ' ', errorCode: 0 };
-		component.antiTheftStatusChange(date);
+		const data = '{ "available": true, "enabled": true, "cameraAllowed": true, "alarmDuration": 10, "photoNumber": "5", "photoAddress": "", "errorCode": 0 }';
+		component.antiTheftStatusChange(data);
+		expect(component.antiTheftStatusChange).toThrow();
+	});
+
+
+	it('should call getAntiTheftStatus throws exception', () => {
+		smartAssist = TestBed.inject(SmartAssistService);
+		logger = TestBed.inject(LoggerService);
+		smartAssist.isShellAvailable = true;
+		component.getAntiTheftStatus();
+		expect(component.getAntiTheftStatus).toThrow();
 	});
 
 	it('getAntiTheftStatus', () => {
@@ -98,12 +108,31 @@ describe('component: AntiTheftComponent', () => {
 			photoNumber: 5
 		}; */
 		const spy = spyOn<any>(
-			component,
+			smartAssist,
 			'getAntiTheftStatus'
 		).and.returnValue(Promise.resolve(antiTheftResponse));
 		component.antiTheft = { ...antiTheftResponse };
 		component.getAntiTheftStatus();
 		expect(spy).toHaveBeenCalled();
+
+		// expect(component.getAntiTheftStatus).toThrow();
+	});
+
+
+	it('getAntiTheftStatus without shell', () => {
+		smartAssist = TestBed.inject(SmartAssistService);
+		logger = TestBed.inject(LoggerService);
+		smartAssist.isShellAvailable = true;
+		component.antiTheft.available = false;
+		const spy = spyOn<any>(
+			smartAssist,
+			'getAntiTheftStatus'
+		).and.returnValue(Promise.resolve(antiTheftResponse));
+		component.antiTheft = { ...antiTheftResponse };
+		component.getAntiTheftStatus();
+		expect(spy).toHaveBeenCalled();
+
+		// expect(component.getAntiTheftStatus).toThrow();
 	});
 
 	it('setAntiTheftStatus', () => {
@@ -115,8 +144,18 @@ describe('component: AntiTheftComponent', () => {
 			'setAntiTheftStatus'
 		).and.returnValue(Promise.resolve(true));
 
-		component.setAntiTheftStatus(true);
+		component.setAntiTheftStatus({ switchValue: true });
 		expect(smartAssist.setAntiTheftStatus).toHaveBeenCalled();
+
+		expect(component.setAntiTheftStatus).toThrow();
+	});
+
+	it('should call setAntiTheftStatus throws exception', () => {
+		smartAssist = TestBed.inject(SmartAssistService);
+		logger = TestBed.inject(LoggerService);
+		smartAssist.isShellAvailable = true;
+		component.setAntiTheftStatus({ switchValue: true });
+		expect(component.setAntiTheftStatus).toThrow();
 	});
 
 	it('setAlarmOften', () => {
@@ -130,6 +169,17 @@ describe('component: AntiTheftComponent', () => {
 
 		component.setAlarmOften(1);
 		expect(smartAssist.setAlarmOften).toHaveBeenCalled();
+
+		component.setAlarmOften(1);
+		expect(component.setAlarmOften).toThrow();
+	});
+
+	it('should call setAlarmOften throws exception', () => {
+		smartAssist = TestBed.inject(SmartAssistService);
+		logger = TestBed.inject(LoggerService);
+		smartAssist.isShellAvailable = true;
+		component.setAlarmOften(1);
+		expect(component.setAlarmOften).toThrow();
 	});
 
 	it('setPhotoNumber', () => {
@@ -143,6 +193,18 @@ describe('component: AntiTheftComponent', () => {
 
 		component.setPhotoNumber(1);
 		expect(smartAssist.setPhotoNumber).toHaveBeenCalled();
+
+		component.setPhotoNumber(1);
+		expect(component.setPhotoNumber).toThrow();
+	});
+
+
+	it('should call setPhotoNumber throws exception', () => {
+		smartAssist = TestBed.inject(SmartAssistService);
+		logger = TestBed.inject(LoggerService);
+		smartAssist.isShellAvailable = true;
+		component.setPhotoNumber(1);
+		expect(component.setPhotoNumber).toThrow();
 	});
 
 	it('setAllowCamera', () => {
@@ -156,18 +218,32 @@ describe('component: AntiTheftComponent', () => {
 
 		component.setAllowCamera(true);
 		expect(smartAssist.setAllowCamera).toHaveBeenCalled();
+
+		component.setAllowCamera(true);
+		expect(component.setAllowCamera).toThrow();
+	});
+
+	it('should call setAllowCamera throws exception', () => {
+		smartAssist = TestBed.inject(SmartAssistService);
+		logger = TestBed.inject(LoggerService);
+		smartAssist.isShellAvailable = true;
+		component.setAllowCamera(true);
+		expect(component.setAllowCamera).toThrow();
 	});
 
 	it('showCameraPrivacyPage', () => {
 		router = TestBed.inject(Router);
 		logger = TestBed.inject(LoggerService);
 		component.showCameraPrivacyPage();
+
+		expect(component.showCameraPrivacyPage).toThrow();
 	});
 
 	it('showCameraAuthorizedAccess', () => {
 		deviceService = TestBed.inject(DeviceService);
 		logger = TestBed.inject(LoggerService);
 		component.showCameraAuthorizedAccess();
+		expect(component.showCameraAuthorizedAccess).toThrow();
 	});
 
 	it('showPhotoFolder', () => {
@@ -175,6 +251,48 @@ describe('component: AntiTheftComponent', () => {
 		logger = TestBed.inject(LoggerService);
 		smartAssist.isShellAvailable = true;
 		component.showPhotoFolder('C://');
+
+		// expect(component.showPhotoFolder).toThrow();
+	});
+
+	it('should call stopMonitorCameraAuthorized throws exception', () => {
+		smartAssist = TestBed.inject(SmartAssistService);
+		logger = TestBed.inject(LoggerService);
+		smartAssist.isShellAvailable = true;
+		component.stopMonitorCameraAuthorized();
+		expect(component.stopMonitorCameraAuthorized).toThrow();
+	});
+
+	it('should call startMonitorForCameraPrivacy throws exception', () => {
+		smartAssist = TestBed.inject(SmartAssistService);
+		logger = TestBed.inject(LoggerService);
+		smartAssist.isShellAvailable = true;
+		component.startMonitorForCameraPrivacy();
+		expect(component.startMonitorForCameraPrivacy).toThrow();
+	});
+
+	it('should call stopMonitorForCameraPrivacy throws exception', () => {
+		smartAssist = TestBed.inject(SmartAssistService);
+		logger = TestBed.inject(LoggerService);
+		smartAssist.isShellAvailable = true;
+		component.stopMonitorForCameraPrivacy();
+		expect(component.stopMonitorForCameraPrivacy).toThrow();
+	});
+
+	it('should call getCameraPrivacyState throws exception', () => {
+		smartAssist = TestBed.inject(SmartAssistService);
+		logger = TestBed.inject(LoggerService);
+		smartAssist.isShellAvailable = true;
+		component.getCameraPrivacyState();
+		expect(component.getCameraPrivacyState).toThrow();
+	});
+
+	it('should call startMonitorCameraAuthorized throws exception', () => {
+		smartAssist = TestBed.inject(SmartAssistService);
+		logger = TestBed.inject(LoggerService);
+		smartAssist.isShellAvailable = true;
+		component.startMonitorCameraAuthorized(component.cameraAuthorizedChange);
+		expect(component.startMonitorCameraAuthorized).toThrow();
 	});
 
 	it('startMonitorAntiTheftStatus()', () => {
@@ -182,16 +300,19 @@ describe('component: AntiTheftComponent', () => {
 		logger = TestBed.inject(LoggerService);
 		smartAssist.isShellAvailable = true;
 		component.startMonitorAntiTheftStatus();
+		expect(component.startMonitorAntiTheftStatus).toThrow();
 	});
 
 	it('showAccessingFileSystem', () => {
 		deviceService = TestBed.inject(DeviceService);
 		logger = TestBed.inject(LoggerService);
 		component.showAccessingFileSystem();
+		expect(component.showAccessingFileSystem).toThrow();
 	});
 
 	it('cameraAuthorizedChange', () => {
 		component.cameraAuthorizedChange({ status: true });
+
 	});
 
 	it('cameraPrivacyChange', () => {
@@ -212,4 +333,13 @@ describe('component: AntiTheftComponent', () => {
 		component.toggleToolTip(tooltip, true);
 	});
 
+	it('should call getCameraAuthorizedAccessState throws exception', () => {
+		smartAssist = TestBed.inject(SmartAssistService);
+		logger = TestBed.inject(LoggerService);
+		smartAssist.isShellAvailable = true;
+		component.antiTheft = { ...antiTheftResponse };
+		const spy = spyOn(component, 'getWinCameraAuthorizedAccessState').and.returnValue(Promise.resolve(true));
+		component.getCameraAuthorizedAccessState();
+		expect(component.getCameraAuthorizedAccessState).toThrow();
+	});
 });
