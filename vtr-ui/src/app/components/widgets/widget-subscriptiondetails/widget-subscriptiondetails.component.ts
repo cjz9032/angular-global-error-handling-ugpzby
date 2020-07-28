@@ -85,14 +85,15 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		let subScriptionDates: any = { startDate: '', endDate: '', status: '' };
 		if (this.isSubscribed) {
 			subScriptionDates = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails);
-			this.subscriptionDetails.startDate = this.formatLocaleDate.transform(subScriptionDates.startDate);
-			this.subscriptionDetails.endDate = this.formatLocaleDate.transform(subScriptionDates.endDate);
-			this.subscriptionDetails.status = subScriptionDates.status;
-			if (!this.subscriptionDetails.startDate && !this.subscriptionDetails.endDate){
+			if (subScriptionDates && subScriptionDates.startDate && subScriptionDates.endDate){
+				this.subscriptionDetails.startDate = this.formatLocaleDate.transform(subScriptionDates.startDate);
+				this.subscriptionDetails.endDate = this.formatLocaleDate.transform(subScriptionDates.endDate);
+				this.subscriptionDetails.status = subScriptionDates.status;
+				this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.activeStatus';
+				this.strStatus = 'ACTIVE';
+			} else {
 				this.getSubscriptionDetails();
 			}
-			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.activeStatus';
-			this.strStatus = 'ACTIVE';
 		}
 		else {
 			this.subscriptionDetails.startDate = '---';
