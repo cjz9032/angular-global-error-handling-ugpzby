@@ -120,7 +120,7 @@
 				text-overflow: ellipsis;
 				white-space: nowrap;
 				&:focus {
-					@include outline-blue
+					@include outline-white;
 				}
 				@media #{$breakpoint_sm}{
 					font-size: 1.2rem;
@@ -545,6 +545,11 @@
 								@include black-border;
 								background: none;
 							}
+							.nav-link {
+								&:focus {
+									@include outline-white;
+								}
+							}
 							&:last-child {
 								position: relative;
 								&:before {
@@ -667,7 +672,7 @@
 					text-overflow: ellipsis;
 					white-space: nowrap;
 					&:focus {
-						@include outline-blue
+						@include outline-white;
 					}
 					@media #{$breakpoint_md}{
 						margin-right: 2rem;
@@ -984,7 +989,7 @@
 				cursor: pointer;
 				width: 100%;
 				&:focus {
-					@include outline-blue
+					@include outline-white;
 				}
 				@include ui-button-high-contrast-black;
 				@include ui-button-high-contrast-white;

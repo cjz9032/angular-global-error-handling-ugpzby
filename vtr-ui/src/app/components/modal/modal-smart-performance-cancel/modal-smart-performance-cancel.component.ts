@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, EventEmitter, Output, Input } from '@angular/core';
+import { Component, OnInit, HostListener, EventEmitter, Output, Input, ViewChild, ElementRef } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { Router } from '@angular/router';
@@ -14,6 +14,8 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 export class ModalSmartPerformanceCancelComponent implements OnInit {
 	@Input() promptMsg: boolean = false;
 	@Output() cancelRequested: EventEmitter<any> = new EventEmitter();
+	@ViewChild('resume') resume: ElementRef;
+	
 	constructor(
 		public activeModal: NgbActiveModal,
 		public smartPerformanceService: SmartPerformanceService,
@@ -33,6 +35,10 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
 				this.cancelScan();
 			}
 		}, 1000);
+
+		setTimeout(() => {
+			this.resume.nativeElement.focus();
+		}, 500);
 	}
 	public closeModal() {
 		if (this.timerRef) {
