@@ -5,7 +5,8 @@
 .picker-container {
 	position: relative;
 	border-top: 0.2rem solid $gaming_darkest;
-	.picker-wrapper {
+	.wheel-container,
+	.input-color {
 		@media #{$high-contrast} {
 			-ms-high-contrast-adjust: none;
 		}
