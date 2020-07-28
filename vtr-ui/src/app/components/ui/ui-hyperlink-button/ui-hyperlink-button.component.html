@@ -1,0 +1,26 @@
+<div class="vtr-ui-hyperlink-button">
+	<div class="hyperlink-box" (click)="onClick()" (keydown.enter)="onClick()" role="link"
+	 	[tabindex]="tabIndex ? tabIndex : 0"
+		[ngClass]="{'disabled': isDisabled === true}">
+		<a
+			class="hyperlink {{hyperlinkStyle}}"
+			[vtrMetrics]="vtrMetricEnabled"
+			[metricsEvent]="metricsEvent"
+			[metricsParent]="metricsParent"
+			[metricsItem]="metricsItem"
+			[metricsItemID]="metricsItemID"
+			[metricsItemPosition]="metricsItemPosition"
+			[metricsItemCategory]="metricsItemCategory"
+			[metricsPageNumber]="metricsPageNumber"
+			[attr.aria-label]="ariaLabel"
+			[ngbTooltip]="tooltipText" tooltipClass="vtr-system-tooltip" container="body"
+			[disableTooltip]="disableTooltip"
+			[ngClass]="{
+				'text-upper-case': upperCaseLabel === true,
+				'text-capitalize': capitalizeLabel === true
+			}"
+			[innerText]="label">
+		</a>
+		<fa-icon [icon]="faIcon" *ngIf="faIcon" class="icon {{faIconStyle}}"></fa-icon>
+	</div>
+</div>
