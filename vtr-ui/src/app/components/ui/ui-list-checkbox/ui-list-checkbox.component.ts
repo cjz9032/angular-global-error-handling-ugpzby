@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, HostListener, OnDestroy } from '@angular/core';
 import { NgbTooltip, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
 import { SecureMath } from '@lenovo/tan-client-bridge';
@@ -8,6 +8,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { ModalUpdateChangeLogComponent } from '../../modal/modal-update-change-log.component/modal-update-change-log.component';
 import { UpdateInstallSeverity } from 'src/app/enums/update-install-severity.enum';
 import { LanguageService} from 'src/app/services/language/language.service';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -16,7 +17,7 @@ import { LanguageService} from 'src/app/services/language/language.service';
 	styleUrls: ['./ui-list-checkbox.component.scss']
 })
 
-export class UiListCheckboxComponent implements OnInit {
+export class UiListCheckboxComponent implements OnInit, OnDestroy {
 
 	@Input() items: Array<AvailableUpdateDetail>;
 	@Input() isInstallationSuccess = false;
@@ -45,6 +46,8 @@ export class UiListCheckboxComponent implements OnInit {
 	public notAvailableText = 'systemUpdates.notAvailable';
 	private currentToolTip;
 	private currentQuestionMarkID;
+	translate1Subscription: Subscription;
+	translate2Subscription: Subscription;
 
 	constructor(
 		private commonService: CommonService,
@@ -146,10 +149,10 @@ export class UiListCheckboxComponent implements OnInit {
 	}
 
 	private translateString() {
-		this.translate.stream(this.notAvailableText).subscribe((res) => {
+		this.translate1Subscription = this.translate.stream(this.notAvailableText).subscribe((res) => {
 			this.notAvailableText = res;
 		});
-		this.translate.stream(this.notInstalledText).subscribe((res) => {
+		this.translate2Subscription = this.translate.stream(this.notInstalledText).subscribe((res) => {
 			this.notInstalledText = res;
 		});
 	}
@@ -157,6 +160,15 @@ export class UiListCheckboxComponent implements OnInit {
 	private focusOnElement(element) {
 		if (element && document.getElementById(element)) {
 			document.getElementById(element).focus();
+		}
+	}
+
+	ngOnDestroy() {
+		if (this.translate1Subscription) {
+			this.translate1Subscription.unsubscribe();
+		}
+		if (this.translate2Subscription) {
+			this.translate2Subscription.unsubscribe();
 		}
 	}
 }

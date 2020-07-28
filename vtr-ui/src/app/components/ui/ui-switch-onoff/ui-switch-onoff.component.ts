@@ -34,7 +34,7 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.readonly = this.readonly || false;
-		this.commonService.notification.subscribe((response) => {
+		this.uiSubscription = this.commonService.notification.subscribe((response) => {
 			if (response.type === this.onOffSwitchId) {
 				this.value = response.payload;
 			}

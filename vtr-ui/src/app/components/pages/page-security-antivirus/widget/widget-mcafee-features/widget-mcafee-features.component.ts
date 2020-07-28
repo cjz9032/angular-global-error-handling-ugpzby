@@ -17,13 +17,13 @@ export class WidgetMcafeeFeaturesComponent implements OnInit {
 		title: 'security.antivirus.others.featuresTitle1',
 		desc: 'security.antivirus.others.featuresDesc1'
 	}, {
-		image: '../../../../../../assets/images/antivirus/password_icon.svg',
-		title: 'security.antivirus.others.featuresTitle3',
-		desc: 'security.antivirus.others.featuresDesc3'
-	}, {
 		image: '../../../../../../assets/images/antivirus/effective_antivirus_icon.svg',
 		title: 'security.antivirus.others.featuresTitle2',
 		desc: 'security.antivirus.others.featuresDesc2'
+	}, {
+		image: '../../../../../../assets/images/antivirus/password_icon.svg',
+		title: 'security.antivirus.others.featuresTitle3',
+		desc: 'security.antivirus.others.featuresDesc3'
 	}, {
 		image: '../../../../../../assets/images/antivirus/safe_browsing_icon.svg',
 		title: 'security.antivirus.others.featuresTitle4',
