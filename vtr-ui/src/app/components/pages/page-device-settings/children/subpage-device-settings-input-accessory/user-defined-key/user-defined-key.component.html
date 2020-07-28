@@ -114,21 +114,19 @@
 												tabindex="0"></textarea>
 										</div>
 										<div class="col-12">
-											<div *ngIf="isUDFSetSuccessVisible"
+											<h5 *ngIf="isUDFSetSuccessVisible"
 												class="select-text pt-3 udf-set-success"
-												role="heading"
 												id="userDefinedKey.website.successMessage"
 												attr.aria-label="userDefinedKey.website.successMessage">
 												{{'device.deviceSettings.inputAccessories.userDefinedKey.website.successMessage'| translate}}
-											</div>
-											<div *ngIf="isUDFSetFailedVisible"
+											</h5>
+											<h5 *ngIf="isUDFSetFailedVisible"
 												id="userDefinedKey-website-invalidURLMessage"
-												role="heading"
 												attr.aria-label="userDefinedKey.website.invalidURLMessage"
 												class="select-text pt-3 udf-set-failed">
 												{{'device.deviceSettings.inputAccessories.userDefinedKey.website.invalidURLMessage'
 										| translate}}
-											</div>
+											</h5>
 											<button type="submit"
 												class="button"
 												title=""
@@ -149,12 +147,11 @@
 
 							<div class="col"
 								*ngIf="selectedValue.value == 3">
-								<div class="note align-items-center"
-									role="heading"
+								<h6 class="note align-items-center"
 									id="inputAccessories.userDefinedKey.dropDown.note"
 									attr.aria-label="inputAccessories.userDefinedKey.dropDown.note">
 									{{'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.note' | translate}}
-								</div>
+								</h6>
 							</div>
 
 							<div class="col"
@@ -180,13 +177,12 @@
 												required></textarea>
 										</div>
 										<div class="col-12">
-											<div *ngIf="isUDFSetSuccessVisible"
+											<h5 *ngIf="isUDFSetSuccessVisible"
 												class="select-text pt-3 udf-set-success"
-												role="heading"
 												id="userDefinedKey.website.successMessage"
 												attr.aria-label="userDefinedKey.website.successMessage">
 												{{'device.deviceSettings.inputAccessories.userDefinedKey.website.successMessage' | translate}}
-											</div>
+											</h5>
 											<button id="ip-userdefined-key-applybtn"
 												attr.aria-label="ip-userdefined-key-applybtn"
 												type="submit"
@@ -210,11 +206,10 @@
 								<form #form1="ngForm"
 									novalidate>
 									<div class="row">
-										<div class="col title"
-											role="heading"
+										<h5 class="col title"
 											id="applications-toOpen">
 											{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.applicationsToOpen' | translate}}
-										</div>
+										</h5>
 										<div class="col-auto px-0">
 											<button *ngIf="applicationList.length<6 && applicationList.length"
 												id="add-application"
@@ -254,11 +249,10 @@
 												*ngFor="let application of applicationList; index as i">
 												<div
 													class="d-flex justify-content-between align-items-center p-4 apps-list">
-													<div class="app-name"
-														role="heading"
+													<h5 class="app-name"
 														id="{{application.value}}">
 														{{application.value}}
-													</div>
+													</h5>
 													<div class="app-name delete-app"
 														role="button"
 														id="delete-app-{{i+1}}"
@@ -317,15 +311,14 @@
 												*ngFor="let file of fileList; index as i">
 												<div
 													class="d-flex justify-content-between align-items-center p-4 apps-list">
-													<div class="app-name text-ellipsis"
+													<h5 class="app-name text-ellipsis"
 														id="{{file.value}}"
-														role="heading"
 														[ngbTooltip]=file.value
 														tooltipClass="vtr-system-tooltip"
 														container="body"
 														data-toggle="tooltip">
 														{{file.value}}
-													</div>
+													</h5>
 													<div class="app-name delete-app"
 														id="delete-file-{{i+1}}"
 														role="button"
@@ -339,23 +332,21 @@
 									</div>
 								</form>
 								<div class="col-12">
-									<div *ngIf="isUDFSetSuccessVisible"
+									<h5 *ngIf="isUDFSetSuccessVisible"
 										class="select-text pt-3 udf-set-success"
-										role="heading"
 										id="userDefinedKey.website.successMessage"
 										attr.aria-label="userDefinedKey.website.successMessage">
 										{{'device.deviceSettings.inputAccessories.userDefinedKey.website.successMessage'| translate}}
-									</div>
+									</h5>
 								</div>
 							</div>
 							<div class="col"
 								*ngIf="selectedValue.value == 5">
-								<div class="note align-items-center"
+								<h5 class="note align-items-center"
 									id="invoke-key-sequence-note"
-									role="heading"
 									attr.aria-label="ip-accesories-note">
 									{{'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.invokeKeySequenceNote' | translate}}
-								</div>
+								</h5>
 							</div>
 							<div class="col"
 								*ngIf="selectedValue.value == 5">
@@ -395,12 +386,11 @@
 											</div>
 										</div>
 										<div class="col-12">
-											<div *ngIf="isUDFSetSuccessVisible"
+											<h5 *ngIf="isUDFSetSuccessVisible"
 												id="userDefinedKey.website.successMessage"
-												role="heading"
 												class="select-text pt-3 udf-set-success">
 												{{'device.deviceSettings.inputAccessories.userDefinedKey.website.successMessage' | translate}}
-											</div>
+											</h5>
 											<button id="ip-userdefined-key-applybtn"
 												attr.aria-label="ip-userdefined-key-applybtn"
 												type="submit"
