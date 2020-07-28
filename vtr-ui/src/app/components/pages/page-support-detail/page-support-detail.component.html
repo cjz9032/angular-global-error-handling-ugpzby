@@ -8,99 +8,72 @@
 
 	<left-content>
 		<div class="container-fluid">
-				<div class="row card mb-5" [dir]="'dir' | translate">
-					<div class="col left-container">
-						<div class="row description-container">
-							<div class="col" [ngSwitch]="qa.id">
-								<vtr-support-detail-article-a *ngSwitchCase="'1'" [langCode]="langCode"></vtr-support-detail-article-a>
-								<vtr-support-detail-article-b *ngSwitchCase="'2'" [langCode]="langCode"></vtr-support-detail-article-b>
-								<vtr-support-detail-article-c *ngSwitchCase="'3'"></vtr-support-detail-article-c>
-								<vtr-support-detail-article-d *ngSwitchCase="'4'" [langCode]="langCode"></vtr-support-detail-article-d>
-								<vtr-support-detail-article-e *ngSwitchCase="'5'" [langCode]="langCode"></vtr-support-detail-article-e>
-								<vtr-support-detail-article-a *ngSwitchDefault [langCode]="langCode"></vtr-support-detail-article-a>
+			<div class="row card mb-5" [dir]="'dir' | translate">
+				<div class="col left-container">
+					<div class="row description-container">
+						<div class="col" [ngSwitch]="qa.id">
+							<vtr-support-detail-article-a *ngSwitchCase="'1'" [langCode]="langCode"></vtr-support-detail-article-a>
+							<vtr-support-detail-article-b *ngSwitchCase="'2'" [langCode]="langCode"></vtr-support-detail-article-b>
+							<vtr-support-detail-article-c *ngSwitchCase="'3'"></vtr-support-detail-article-c>
+							<vtr-support-detail-article-d *ngSwitchCase="'4'" [langCode]="langCode"></vtr-support-detail-article-d>
+							<vtr-support-detail-article-e *ngSwitchCase="'5'" [langCode]="langCode"></vtr-support-detail-article-e>
+							<vtr-support-detail-article-a *ngSwitchDefault [langCode]="langCode"></vtr-support-detail-article-a>
+						</div>
+					</div>
+					<div class="row inset-content align-items-center justify-content-center py-3 invisible"
+						style="display: none">
+
+						<div class="col-auto ml-auto px-0">
+							<div class="icon-bkg text-center cursor-pointer"
+								(click)="qa.like=!qa.like">
+								<fa-icon [icon]="['fal','thumbs-up']"></fa-icon>
 							</div>
 						</div>
-						<div class="row inset-content align-items-center justify-content-center py-3 invisible"
-							style="display: none">
-
-							<div class="col-auto ml-auto px-0">
-								<div class="icon-bkg text-center cursor-pointer"
-									(click)="qa.like=!qa.like">
-									<fa-icon [icon]="['fal','thumbs-up']"></fa-icon>
-								</div>
+						<div class="col-auto px-2 ">
+							<div class="icon-bkg text-center cursor-pointer"
+								(click)="qa.dislike=!qa.dislike">
+								<fa-icon [icon]="['fal','thumbs-down']"></fa-icon>
 							</div>
-							<div class="col-auto px-2 ">
-								<div class="icon-bkg text-center cursor-pointer"
-									(click)="qa.dislike=!qa.dislike">
-									<fa-icon [icon]="['fal','thumbs-down']"></fa-icon>
-								</div>
+						</div>
+						<div class="col-auto mr-auto px-0 text">
+							Was this Helpful??
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row card mb-5">
+				<div class="col">
+					<div class="row left-container">
+						<div class="row title smaller">
+							{{'faq.footer.title' | translate}}
+						</div>
+						<div class="row subtitle">
+							{{'faq.footer.description' | translate}}
+						</div>
+						<div class="row px-0 mt-5 inset-content align-items-center w-100">
+							<div class="col-auto">
+								<fa-icon [icon]="['fal','briefcase']"></fa-icon>
 							</div>
-							<div class="col-auto mr-auto px-0 text">
-								Was this Helpful??
+							<div class="col-auto px-2 mr-auto sub-title">
+								{{'faq.footer.body' | translate}}
+							</div>
+							<div class="col-auto ">
+								<div class="pr-0">
+									<vtr-ui-button 
+										metricsItem="supportDetail.goToForum"
+										[isFullWidth]="true"
+										[btnHeight]="true"
+										(onClick)="onNavigate()"
+										[linkId]="'support-detail-go-to-forum-btn'"
+										[label]="'faq.footer.button' | translate">
+									</vtr-ui-button>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="row card mb-5">
-					<div class="col">
-						<div class="row left-container">
-							<div class="col title smaller">
-								<!-- Not finding what you are looking for?  -->
-								{{'faq.footer.title' | translate}}
-							</div>
-							<div class="w-100"></div>
-							<div class="col subtitle">
-								<!-- Need additional support? Don’t hesitate to contact us via: -->
-								{{'faq.footer.description' | translate}}
-							</div>
-							<div class="w-100"></div>
-							<div class="col px-0 mt-5">
-								<div class="row">
-									<!-- <div class="col inset-content invisible">
-										<div class="row align-items-center">
-											<div class="col-auto">
-												<fa-icon [icon]="['fal','briefcase']"></fa-icon>
-											</div>
-											<div class="col-auto px-2 mr-auto sub-title">
-												24X7 - Live Chat
-											</div>
-											<div class="col-auto ">
-												<button class="btn btn-label">CHAT NOW</button>
-											</div>
-										</div>
-									</div>
-									<div class="col-auto px-4"></div> -->
-									<div class="col inset-content">
-										<div class="row align-items-center">
-											<div class="col-auto">
-												<fa-icon [icon]="['fal','briefcase']"></fa-icon>
-											</div>
-											<div class="col-auto px-2 mr-auto sub-title">
-												<!-- Lenovo Community -->
-												{{'faq.footer.body' | translate}}
-											</div>
-											<div class="col-auto ">
-												<div class="pr-0">
-													<vtr-ui-button 
-														metricsItem="supportDetail.goToForum"
-														[isFullWidth]="true"
-														[btnHeight]="true"
-														(onClick)="onNavigate()"
-														[linkId]="'support-detail-go-to-forum-btn'"
-														[label]="'faq.footer.button' | translate">
-													</vtr-ui-button>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-					</div>
-				</div>
+			</div>
 		</div>
-
 	</left-content>
 
 	<right-content>
