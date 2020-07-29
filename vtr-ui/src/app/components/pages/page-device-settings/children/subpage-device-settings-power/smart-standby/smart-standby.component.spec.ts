@@ -194,8 +194,7 @@ describe('Component: SmartStandby', () => {
 		});
 
 		it('should call initDataFromCache - inner if', () => {
-			/* const fixture = TestBed.createComponent(SmartStandbyComponent);
-			const smartStandbyComponent = fixture.debugElement.componentInstance; */
+
 			const { fixture, smartStandbyComponent, powerService, commonService } = setup();
 			const smartStandby = new SmartStandby();
 			smartStandby.isCapable = false;
@@ -211,14 +210,25 @@ describe('Component: SmartStandby', () => {
 
 
 		it('should call onSmartStandbyToggle', () => {
-			/* const fixture = TestBed.createComponent(SmartStandbyComponent);
-			const smartStandbyComponent = fixture.debugElement.componentInstance; */
+
 			const { fixture, smartStandbyComponent, powerService, commonService } = setup();
 			const smartStandby = new SmartStandby();
 			smartStandbyComponent.smartStandby = smartStandby;
 			const event = { switchValue: true };
 			smartStandbyComponent.onSmartStandbyToggle(event);
 			expect(smartStandbyComponent.showDropDown).toEqual([false, false, false]);
+
+
+		});
+
+		it('should call onSmartStandbyToggle throws exception', () => {
+
+			const { fixture, smartStandbyComponent, powerService, commonService } = setup();
+			const smartStandby = new SmartStandby();
+			smartStandbyComponent.smartStandby = smartStandby;
+			const event = { switchValue: true };
+			smartStandbyComponent.onSmartStandbyToggle(event);
+			expect(smartStandbyComponent.onSmartStandbyToggle).toThrow();
 		});
 
 		it('should call onSmartStandbyToggle - inner if', () => {
@@ -254,8 +264,7 @@ describe('Component: SmartStandby', () => {
 
 
 		it('should call onSmartStandbyToggle isAutonomicCapability is true', () => {
-			/* const fixture = TestBed.createComponent(SmartStandbyComponent);
-			const smartStandbyComponent = fixture.debugElement.componentInstance; */
+
 			const { fixture, smartStandbyComponent, powerService, commonService } = setup();
 			const event = { switchValue: true };
 			smartStandbyComponent.isAutonomicCapability = true;
@@ -263,9 +272,7 @@ describe('Component: SmartStandby', () => {
 		});
 
 		it('should call onSetActiveStartEnd', () => {
-			/* const fixture = TestBed.createComponent(SmartStandbyComponent);
-			const smartStandbyComponent = fixture.debugElement.componentInstance;
-			const powerService = fixture.debugElement.injector.get(PowerService); */
+
 			const { fixture, smartStandbyComponent, powerService, commonService } = setup();
 			spyOn(powerService, 'setSmartStandbyActiveStartEnd').and.returnValue(Promise.resolve(0));
 			const isStart = true;
@@ -273,6 +280,21 @@ describe('Component: SmartStandby', () => {
 			const spy = spyOn(smartStandbyComponent, 'splitStartEndTime');
 			smartStandbyComponent.onSetActiveStartEnd(event, isStart);
 			expect(spy).toHaveBeenCalled();
+
+			smartStandbyComponent.onSetActiveStartEnd(event, isStart);
+			expect(smartStandbyComponent.onSetActiveStartEnd).toThrow();
+		});
+
+		it('should call onSetActiveStartEnd throws exception', () => {
+
+			const { fixture, smartStandbyComponent, powerService, commonService } = setup();
+			spyOn(powerService, 'setSmartStandbyActiveStartEnd').and.returnValue(Promise.resolve(0));
+			const isStart = true;
+			const event = new Event('click');
+			const spy = spyOn(smartStandbyComponent, 'splitStartEndTime');
+
+			smartStandbyComponent.onSetActiveStartEnd(event, isStart);
+			expect(smartStandbyComponent.onSetActiveStartEnd).toThrow();
 		});
 
 		it('should call onSetActiveStartEnd - isStart is false', () => {
@@ -299,6 +321,9 @@ describe('Component: SmartStandby', () => {
 			const spy = spyOn(powerService, 'setSmartStandbyDaysOfWeekOff').and.returnValue(Promise.resolve(0));
 			smartStandbyComponent.onSetDaysOfWeekOff(event);
 			expect(spy).toHaveBeenCalled();
+
+			smartStandbyComponent.onSetDaysOfWeekOff(event);
+			expect(smartStandbyComponent.onSetDaysOfWeekOff).toThrow();
 		});
 
 		it('should call onSetDaysOfWeekOff - outer else case', () => {
@@ -329,8 +354,7 @@ describe('Component: SmartStandby', () => {
 		});
 
 		it('should call onSmartStandbyNotification', () => {
-			/* const fixture = TestBed.createComponent(SmartStandbyComponent);
-			const smartStandbyComponent = fixture.debugElement.componentInstance; */
+
 			const { fixture, smartStandbyComponent, powerService, commonService, smartStandbyService } = setup();
 			const notitfiaction: AppNotification = {
 				type: 'smartStandbyToggles',
@@ -339,6 +363,19 @@ describe('Component: SmartStandby', () => {
 			smartStandbyComponent.showDropDown = [];
 			smartStandbyComponent.onSmartStandbyNotification(notitfiaction);
 			expect(smartStandbyComponent.showDropDown).not.toEqual([]);
+		});
+
+
+		it('should call onSmartStandbyNotification iterate through all showDropDown', () => {
+
+			const { fixture, smartStandbyComponent, powerService, commonService, smartStandbyService } = setup();
+			const notitfiaction: AppNotification = {
+				type: 'smartStandbyToggles',
+				payload: { id: 1, value: true }
+			};
+			smartStandbyComponent.showDropDown = [false, false, false];
+			smartStandbyComponent.onSmartStandbyNotification(notitfiaction);
+			// expect(smartStandbyComponent.showDropDown).not.toEqual([]);
 		});
 
 		it('should call getIsAutonomicCapability - inner if ', () => {
@@ -374,6 +411,9 @@ describe('Component: SmartStandby', () => {
 			smartStandbyComponent.isAutonomicCapability = false;
 			smartStandbyComponent.getIsAutonomicCapability();
 			expect(spy).toHaveBeenCalled();
+
+			smartStandbyComponent.getIsAutonomicCapability();
+			expect(smartStandbyComponent.getIsAutonomicCapability).toThrow();
 		});
 
 		it('should call getSmartStandbyIsAutonomic when reject', () => {
@@ -399,8 +439,7 @@ describe('Component: SmartStandby', () => {
 		});
 
 		it('should call onCheckboxClicked', () => {
-			/* const fixture = TestBed.createComponent(SmartStandbyComponent);
-			const smartStandbyComponent = fixture.debugElement.componentInstance; */
+
 			const { fixture, smartStandbyComponent, powerService, commonService, smartStandbyService } = setup();
 			const AUTOMATIC_MODE = 'Automatic mode';
 			// const event = new Event('click');
@@ -410,8 +449,7 @@ describe('Component: SmartStandby', () => {
 		});
 
 		it('should toggle html element', () => {
-			/* const fixture = TestBed.createComponent(SmartStandbyComponent);
-			const smartStandbyComponent = fixture.debugElement.componentInstance; */
+
 			const { fixture, smartStandbyComponent, powerService, commonService, smartStandbyService } = setup();
 			const element: HTMLElement = document.createElement('input');
 			smartStandbyComponent.onToggle(element);
@@ -419,9 +457,10 @@ describe('Component: SmartStandby', () => {
 		});
 
 		it('should call showUsageGraph', () => {
-			/* const fixture = TestBed.createComponent(SmartStandbyComponent);
-			const smartStandbyComponent = fixture.debugElement.componentInstance; */
+
 			const { fixture, smartStandbyComponent, powerService, commonService, smartStandbyService } = setup();
+			smartStandbyComponent.cache = new SmartStandby();
+			smartStandbyComponent.smartStandby = smartStandbyComponent.cache;
 			smartStandbyComponent.smartStandby.isEnabled = true;
 			smartStandbyComponent.showUsageGraph();
 		});
