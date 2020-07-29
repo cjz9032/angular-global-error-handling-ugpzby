@@ -209,11 +209,21 @@
 					@include high-contrast-black-disabled-border;
 					@include high-contrast-background-transparent;
 					@include high-contrast-black-text-color-disabled;
+					border-width: 0.2rem;
 				}
 				@media #{$black-on-white} {
 					@include high-contrast-white-disabled-border;
 					@include high-contrast-background-transparent;
 					@include high-contrast-white-text-color-disabled;
+					border-width: 0.2rem;
+				}
+				span {
+					@media #{$white-on-black} {
+						opacity: 0.5;
+					}
+					@media #{$black-on-white} {
+						opacity: 0.5;
+					}
 				}
 			}
 		}

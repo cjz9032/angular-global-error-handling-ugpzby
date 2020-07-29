@@ -60,6 +60,14 @@
 			cursor: default;
 			@include ui-button-high-contrast-black-disabled;
 			@include ui-button-high-contrast-white-disabled;
+			span {
+				@media #{$white-on-black} {
+					opacity: 0.5;
+				}
+				@media #{$black-on-white} {
+					opacity: 0.5;
+				}
+			}
 		}
 		&:focus {
 			outline: 0;
@@ -186,6 +194,14 @@
 		flex-direction: column;
 		padding: 1.6rem;
 		border: 0.1rem solid $screen_dark_10;
+		&.label-disable {
+			@media #{$white-on-black} {
+				@include  high-contrast-black-text-color-disabled;
+			}
+			@media #{$black-on-white} {
+				@include  high-contrast-white-text-color-disabled;
+			}
+		}
 	}
 	.form-control {
 		padding: 0px;
@@ -212,6 +228,14 @@
 		width: 100%;
 		color: $shade_blue;
 
+		@media #{$white-on-black} {
+			color: $high-contrast-sky-blue;
+		}
+
+		@media #{$black-on-white} {
+			color: $shade_blue;
+		}
+
 		&:hover {
 			outline: $dark;
 		}
@@ -220,6 +244,17 @@
 			color: $grey_dark;
 			font-size: $caption;
 			font-weight: $weight_medium;
+		}
+		&:focus {
+			&::placeholder {
+				@media #{$white-on-black} {
+					color: $shade_btn_light;
+				}
+
+				@media #{$black-on-white} {
+					color: $shade_blue;
+				}
+			}
 		}
 	}
 
