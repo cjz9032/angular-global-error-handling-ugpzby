@@ -15,64 +15,32 @@ export class CommsService {
 	token = '';
 	userAgent = `VantageWeb/${environment.appVersion}`;
 	private serverSwitchLocalData: any;
-	private cmsHost: string;
 	constructor(
 		private http: HttpClient,
-		private devService: DevService,
-		private shellService: VantageShellService
+		private devService: DevService
 	) {
-	}
-
-	async getCmsHostFromReg() {
-		const registryUtil = this.shellService.getRegistryUtil();
-		if (!registryUtil) {
-			return null;
-		}
-
-		const val = await registryUtil.queryValue('HKEY_LOCAL_MACHINE\\SOFTWARE\\WOW6432Node\\Lenovo\\VantageService\\CloudLinks');
-		if (!val || (val.keyList || []).length === 0) {
-			return null;
-		}
-
-		for (const key of val.keyList) {
-			const child = key.keyChildren.find(item => item.name === 'CmsUrlBase');
-			if (child) {
-				return child.value;
-			}
-		}
-
-		return null;
-	}
-
-	async getCmsHost() {
-		if (!this.cmsHost) {
-			this.cmsHost = await this.getCmsHostFromReg();
-		}
-
-		return this.cmsHost || this.env.cmsApiRoot;
 	}
 
 	handleAPIError(method, err) {
 		this.devService.writeLog('API ERROR', method, err);
 	}
 
-	endpointGetCall(endpoint, queryParams: any = {}, httpOptions: any = {}) {
-		return new Observable(subscriber => {
-			this.getCmsHost().then(cmsApiRoot => {
-				const url = (this.serverSwitchLocalData && this.serverSwitchLocalData.forceit && this.serverSwitchLocalData.forceit === true ?
-					this.serverSwitchLocalData.cmsserver : cmsApiRoot) + endpoint;
+	public getCmsHost() {
+		if (this.serverSwitchLocalData && this.serverSwitchLocalData.forceit === true) {
+			return this.serverSwitchLocalData.cmsserver;
+		} else {
+			return this.env.cmsApiRoot;
+		}
+	}
 
-				const httpQueryParams = new HttpParams({
-					fromObject: queryParams
-				});
-
-				httpOptions.params = httpQueryParams;
-				this.devService.writeLog('API GET ENDPOINT complete: ', url + '?' + httpOptions.params);
-				return this.http.get(url, httpOptions);
-			}).then(httpResponse => {
-				httpResponse.subscribe(subscriber);
-			});
+	public endpointGetCall(endpoint, queryParams: any = {}, httpOptions: any = {}) {
+		const url = this.getCmsHost() + endpoint;
+		httpOptions.params = new HttpParams({
+			fromObject: queryParams
 		});
+
+		this.devService.writeLog('API GET ENDPOINT complete: ', url + '?' + httpOptions.params);
+		return this.http.get(url, httpOptions);
 	}
 
 	public async callUpeApi(url, queryParams: any = {}) {

@@ -28,9 +28,12 @@ export class MetricService {
 	private appInitDuration: number;
 	private firstPageActiveDuration: number;
 	public readonly isFirstLaunch: boolean;
-	public readonly maxScrollRecorder = {}
-	public pageContainer: ElementRef
-	private pageScollEvent = (htmlElm) => {}
+	public readonly maxScrollRecorder = {};
+	public pageContainer: ElementRef;
+	public readonly serviceStartup = Date.now();
+	private pageScollEvent = (htmlElm) => {};
+
+
 
 	constructor(
 		private shellService: VantageShellService,
@@ -280,7 +283,7 @@ export class MetricService {
 		return this.activeRouter.snapshot.data.pageName
 			|| this.activeRouter.snapshot.root.firstChild.data.pageName
 			|| this.activeRouter.snapshot.root.firstChild.firstChild.data.pageName
-			|| MetricConst.Unknown
+			|| MetricConst.Unknown;
 	}
 
 	public sendContentDisplay(itemID: string, dataSource: string, position: string) {
@@ -369,7 +372,7 @@ export class MetricService {
 
 	public activateScrollCounter(pageName: any) {
 		this.maxScrollRecorder[pageName] = 0;
-		this.pageScollEvent = (htmlElm)=>{
+		this.pageScollEvent = (htmlElm) => {
 			const curRecord = this.getScrollPercentage(htmlElm);
 			const preRecord = this.maxScrollRecorder[pageName];
 			if (!preRecord || preRecord < curRecord) {
@@ -379,10 +382,10 @@ export class MetricService {
 	}
 
 	public deactivateScrollCounter(pageName: any = null) {
-		this.pageScollEvent = () => {};
+		this.pageScollEvent = () => { };
 	}
 
-	public notifyPageScollEvent(htmlElm:any = null) {
+	public notifyPageScollEvent(htmlElm: any = null) {
 		this.pageScollEvent(htmlElm || this.pageContainer.nativeElement);
 	}
 }

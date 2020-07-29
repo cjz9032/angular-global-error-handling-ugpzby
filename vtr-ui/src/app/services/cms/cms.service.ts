@@ -14,12 +14,23 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { throwError, Subscription } from 'rxjs';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ContentSource } from 'src/app/enums/content.enum';
+import { MetricService } from '../metric/metrics.service';
+import { MetricEventName as EventName, PerformanceCategory as PCategory } from 'src/app/enums/metrics.enum';
+import { MetricPerformance } from '../metric/metrics.model';
 
 const httpOptions = {
 	headers: new HttpHeaders({
 		'Content-Type': 'application/json',
 	})
 };
+
+interface RequestParam {
+	cmsOption: string;
+	api: string;
+	apiParam: string;
+	observableMsg: string;
+	applyDeviceFilter: boolean;
+}
 
 @Injectable({
 	providedIn: 'root'
@@ -44,261 +55,103 @@ export class CMSService implements OnDestroy {
 		private vantageShellService: VantageShellService,
 		private localInfoService: LocalInfoService,
 		private commonService: CommonService, // VAN-5872, server switch feature,
-		private devService: DevService,
 		private logger: LoggerService,
-		private sanitizer: DomSanitizer
+		private sanitizer: DomSanitizer,
+		private metricsService: MetricService
 	) {
 		localInfoService.getLocalInfo().then(result => {
 			this.localInfo = result;
 		}).catch(e => { });
 	}
 
-	deviceFilter(filters) {
-		return new Promise((resolve, reject) => {
-			if (!filters) {
-				// console.log('vantageShellService.deviceFilter skipped filter call due to empty filter.');
-				// this.devService.writeLog('vantageShellService.deviceFilter skipped filter call due to empty filter.');
-				return resolve(true);
-			}
-
-			return this.vantageShellService.deviceFilter(filters).then(
-				(result) => {
-					// this.devService.writeLog('vantageShellService.deviceFilter filters', JSON.stringify(filters));
-					// this.devService.writeLog('vantageShellService.deviceFilter result', JSON.stringify(result));
-					resolve(result);
-
-				},
-				(reason) => {
-					// console.log('vantageShellService.deviceFilter error', reason);
-					// this.devService.writeLog('vantageShellService.deviceFilter error', reason);
-					resolve(false);
-				}
-			);
-		});
-	}
-
-	private filterCMSContent(results) {
-		return new Promise((resolve, reject) => {
-			const promises = [];
-
-			// this.devService.writeLog('filterCMSContent results :: ', JSON.stringify(results));
-			results.forEach((result) => {
-				promises.push(this.deviceFilter(result.Filters));
-				/* this.devService.writeLog('filterCMSContent result', JSON.stringify(result)); */
-			});
-
-			Promise.all(promises).then((deviceFilterValues) => {
-				const filteredResults = results.filter((result, index) => {
-					// this.devService.writeLog('filterCMSContent deviceFilterValues :: result ', JSON.stringify(result));
-					return deviceFilterValues[index];
-				});
-				// this.devService.writeLog('filterCMSContent filteredResults :: filteredResults ', JSON.stringify(filteredResults));
-				resolve(filteredResults);
-			});
-		});
-	}
-
-	fetchCMSContent(queryParams) {
-		if (!this.localInfo) {
-			return new Observable(subscriber => {
-				this.localInfoService.getLocalInfo().then(result => {
-					this.localInfo = result;
-				}).finally(() => {
-					this.requestCMSContentSubscription = this.requestCMSContent(queryParams, this.localInfo || this.defaultInfo).subscribe(subscriber);
-				});
-			});
-		} else {
-			return this.requestCMSContent(queryParams, this.localInfo);
-		}
-	}
-
-	requestCMSContent(queryParams, locInfo) {
-		const defaults = {
-			Lang: locInfo.Lang,
-			GEO: locInfo.GEO,
-			OEM: locInfo.OEM,
-			OS: locInfo.OS,
-			Segment: locInfo.Segment,
-			Brand: locInfo.Brand
-		};
-
-		const CMSOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
-		// console.log('@sahinul cms service',CMSOption);
-
-		return new Observable(subscriber => {
-			if (this.commonService.isOnline) {
-				this.getCMSContent(CMSOption).then(response => {
-					subscriber.next(response);
-				}).catch(ex => {
-					subscriber.error(ex);
-				});
-			} else {
-				this.commonNotificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
-					if (notification && notification.type === NetworkStatus.Online) {
-						this.getCMSContent(CMSOption).then(response => {
-							subscriber.next(response);
-						}).catch(ex => {
-							subscriber.error(ex);
-						});
-					}
-				});
-			}
-		});
-	}
-
-	async getCMSContent(CMSOption: any) {
-		const requestKey = CMSOption ? JSON.stringify(CMSOption) : 'default_request_key';
-		if (!this.fetchRequestMap[requestKey]) {
-			this.fetchRequestMap[requestKey] = this.commsService.endpointGetCall(
-				'/api/v1/features', CMSOption, httpOptions// VAN-5872, server switch feature
-			).toPromise();
+	private async deviceFilter(filters) {
+		if (!filters) {
+			return true;
 		}
 
 		try {
-			const response = await this.fetchRequestMap[requestKey];
-			return await this.filterCMSContent(response.Results);
-		} finally {
-			this.fetchRequestMap[requestKey] = null;
+			return await this.vantageShellService.deviceFilter(filters);
+		} catch  {
+			return false;
 		}
 	}
 
-	fetchCMSArticleCategories(queryParams) {
-		if (!this.localInfo) {
-			return this.localInfoService.getLocalInfo().then(result => {
-				this.localInfo = result;
-				return this.requestCMSArticleCategories(queryParams, this.localInfo);
-			}).catch(e => {
-				return this.requestCMSArticleCategories(queryParams, this.defaultInfo);
+	private getDateTime(date: any): number {
+		try {
+			if (date && typeof date === 'string') {
+				return new Date(date.replace(/\./g, '\/')).getTime();
+			}
+		} catch (e) { }
+		return -1;
+	}
+
+	// VAN-5872, server switch feature
+	// retrive from localStorage
+	private updateServerSwitchCMSOptions(defaults, queryParams) {
+		const cmsOption = Object.assign(defaults, queryParams);
+		try {
+			const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
+			if (serverSwitchLocalData) {
+
+				const langMap = {
+					'sr-latn': 'sr'
+				};
+				if (langMap[serverSwitchLocalData.language.Value]) {
+					serverSwitchLocalData.language.Value = langMap[serverSwitchLocalData.language.Value];
+				}
+
+				this.commsService.setServerSwitchLocalData(serverSwitchLocalData);
+				if (serverSwitchLocalData.forceit) {
+					Object.assign(cmsOption, {
+						Lang: (serverSwitchLocalData.language.Value).toLowerCase(),
+						GEO: (serverSwitchLocalData.country.Value).toLowerCase(),
+						Segment: serverSwitchLocalData.segment,
+						OEM: serverSwitchLocalData.oem,
+						Brand: serverSwitchLocalData.brand
+					});
+				}
+			}
+		} catch (error) {
+			this.logger.error('CMSService.updateServerSwitchCMSOptions', error.message);
+			return undefined;
+		}
+		return cmsOption;
+
+	}
+
+	private async filterCMSContent(contents) {
+		const promises = [];
+		contents.forEach((content) => {
+			promises.push(this.deviceFilter(content.Filters));
+		});
+
+		return Promise.all(promises).then((deviceFilterValues) => {
+			return contents.filter((content, index) => {
+				return deviceFilterValues[index];
 			});
-		} else {
-			return this.requestCMSArticleCategories(queryParams, this.localInfo);
-		}
-	}
-
-	requestCMSArticleCategories(queryParams, locInfo) {
-		// VAN-5872, server switch feature
-		// retrive from localStorage
-		const defaults = {
-			Lang: locInfo.Lang,
-			GEO: locInfo.GEO,
-			OEM: locInfo.OEM,
-			OS: locInfo.OS,
-			Segment: locInfo.Segment,
-			Brand: locInfo.Brand
-		};
-		const CMSOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
-
-		return new Promise((resolve, reject) => {
-			this.endpointGetCall1Subscription = this.commsService.endpointGetCall('/api/v1/articlecategories',
-				/*queryParams*/
-				CMSOption, // VAN-5872, server switch feature
-				{}).subscribe(
-					(response: any) => {
-						this.filterCMSContent(response.Results).then(
-							(result) => {
-								resolve(result);
-							},
-							(reason) => {
-								// reject('fetchCMSContent error');
-								throwError(new Error('fetchCMSContent error'));
-							}
-						);
-					},
-					error => {
-						// reject('fetchCMSContent error');
-						throwError(new Error('fetchCMSContent error'));
-					}
-				);
 		});
 	}
 
-
-	async fetchCMSArticles(queryParams, returnAll = false) {
+	private async getLocalinfo(): Promise<any> {
 		if (!this.localInfo) {
 			try {
 				this.localInfo = await this.localInfoService.getLocalInfo();
-			} catch (ex) { }
+			} catch (error) {
+				this.logger.error('CMSService.getLocalinfo', error.message);
+			}
 		}
 
-		const localInfo = this.localInfo || this.defaultInfo;
-		return this.requestCMSArticles(queryParams, localInfo);
+		return this.localInfo || this.defaultInfo;
 	}
 
-
-	requestCMSArticles(queryParams, locInfo) {
-		// VAN-5872, server switch feature
-		// retrive from localStorage
-		const defaults = {
-			Lang: locInfo.Lang,
-			GEO: locInfo.GEO,
-			OEM: locInfo.OEM,
-			OS: locInfo.OS,
-			Segment: locInfo.Segment,
-			Brand: locInfo.Brand
-		};
-		const CMSOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
-
-		return new Promise((resolve, reject) => {
-			this.endpointGetCall2Subscription = this.commsService.endpointGetCall('/api/v1/articles',
-				/*queryParams*/
-				CMSOption, // VAN-5872, server switch feature
-				{}).subscribe(
-					(response: any) => {
-						this.filterCMSContent(response.Results).then(
-							(result) => {
-								resolve(result);
-							},
-							(reason) => {
-								// reject('fetchCMSContent error');
-								throwError(new Error('fetchCMSContent error'));
-							}
-						);
-					},
-					error => {
-						// reject('fetchCMSArticles error');
-						throwError(new Error('fetchCMSContent error'));
-					}
-				);
-		});
-	}
-
-
-	async fetchCMSArticle(articleId, queryParams?) {
-		if (!this.localInfo) {
-			try {
-				this.localInfo = await this.localInfoService.getLocalInfo();
-			} catch (ex) { }
+	public sortCmsContent(a, b): number {
+		if (a.Priority === b.Priority) {
+			return this.getDateTime(b.DisplayStartDate) - this.getDateTime(a.DisplayStartDate);
 		}
-
-		const localInfo = this.localInfo || this.defaultInfo;
-		return this.requestCMSArticle(articleId, localInfo, queryParams);
+		return a.Priority.localeCompare(b.Priority);
 	}
 
-	requestCMSArticle(articleId, locInfo, queryParams?) {
-		const defaults = {
-			Lang: locInfo.Lang
-		};
-
-		const CMSOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
-
-		return new Promise((resolve, reject) => {
-			this.endpointGetCall3Subscription = this.commsService.endpointGetCall(
-				'/api/v1/articles/' + articleId,
-				/*Object.assign({ Lang: that.language }, queryParams)*/
-				CMSOption // VAN-5872, server switch feature
-			)
-				.subscribe(
-					(response: any) => {
-						resolve(response);
-					},
-					error => {
-						reject('fetchCMSArticle error');
-					}
-				);
-		});
-	}
-
-	getOneCMSContent(results, template, position, dataSource = ContentSource.CMS): FeatureContent[] {
+	public getOneCMSContent(results, template, position, dataSource = ContentSource.CMS): FeatureContent[] {
 		return results.filter((record) => {
 			return (
 				record.Template === template &&
@@ -321,134 +174,208 @@ export class CMSService implements OnDestroy {
 		}).sort(this.sortCmsContent.bind(this));
 	}
 
-	sortCmsContent(a, b): number {
-		if (a.Priority === b.Priority) {
-			return this.getDateTime(b.DisplayStartDate) - this.getDateTime(a.DisplayStartDate);
-		}
-		return a.Priority.localeCompare(b.Priority);
-	}
-
-	getDateTime(date: any): number {
-		try {
-			if (date && typeof date === 'string') {
-				return new Date(date.replace(/\./g, '\/')).getTime();
-			}
-		} catch (e) { }
-		return -1;
-	}
-
-	/* const CMSOption = Object.assign(defaults, queryParams);
-		const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
-		if (serverSwitchLocalData) {
-			if (serverSwitchLocalData.forceit) {
-				Object.assign(CMSOption, {
-					Lang: (serverSwitchLocalData.language.Value).toUpperCase(),
-					GEO: (serverSwitchLocalData.country.Value).toUpperCase(),
-					Segment: serverSwitchLocalData.segment.Value
+	public fetchCMSContent(queryParams) {
+		return new Observable(subscriber => {
+			if (this.commonService.isOnline) {
+				this.getCMSContent(queryParams).then(response => {
+					subscriber.next(response);
+				}).catch(ex => {
+					subscriber.error(ex);
 				});
-			}
-		} */
-	// Object.assign(defaults, queryParams);
-	// VAN-5872, server switch feature
-	// retrive from localStorage
-	private updateServerSwitchCMSOptions(defaults, queryParams) {
-		const CMSOption = Object.assign(defaults, queryParams);
-		try {
-			const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
-			if (serverSwitchLocalData) {
-
-				const langMap = {
-					'sr-latn': 'sr'
-				};
-				if (langMap[serverSwitchLocalData.language.Value]) {
-					serverSwitchLocalData.language.Value = langMap[serverSwitchLocalData.language.Value];
-				}
-
-				this.commsService.setServerSwitchLocalData(serverSwitchLocalData);
-				if (serverSwitchLocalData.forceit) {
-					Object.assign(CMSOption, {
-						Lang: (serverSwitchLocalData.language.Value).toLowerCase(),
-						GEO: (serverSwitchLocalData.country.Value).toLowerCase(),
-						Segment: serverSwitchLocalData.segment,
-						OEM: serverSwitchLocalData.oem,
-						Brand: serverSwitchLocalData.brand
+			} else {
+				if (!this.commonNotificationSubscription) {
+					this.commonNotificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
+						if (notification && notification.type === NetworkStatus.Online) {
+							this.getCMSContent(queryParams).then(response => {
+								subscriber.next(response);
+							}).catch(ex => {
+								subscriber.error(ex);
+							});
+						}
 					});
 				}
 			}
-		} catch (error) {
-			this.logger.error('CMSService.updateServerSwitchCMSOptions', error.message);
-			return undefined;
+		});
+	}
+
+	private async getCMSContent(queryParams: any) {
+		const locInfo = await this.getLocalinfo();
+		const defaults = {
+			Lang: locInfo.Lang,
+			GEO: locInfo.GEO,
+			OEM: locInfo.OEM,
+			OS: locInfo.OS,
+			Segment: locInfo.Segment,
+			Brand: locInfo.Brand
+		};
+		const cmsOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
+
+		const requestKey = JSON.stringify(cmsOption);
+		if (!this.fetchRequestMap[requestKey]) {
+			this.fetchRequestMap[requestKey] = this.postRequest({
+				cmsOption,
+				api: '/api/v1/features',
+				apiParam: null,
+				observableMsg: null,
+				applyDeviceFilter: true
+			});
 		}
-		return CMSOption;
 
+		try {
+			return await this.fetchRequestMap[requestKey];	// intercept duplicate request
+		} finally {
+			this.fetchRequestMap[requestKey] = null;
+		}
 	}
 
-	fetchCMSEntitledAppList(queryParams) {
+	public async fetchCMSArticleCategories(queryParams) {
+		const locInfo = await this.getLocalinfo();
 		const defaults = {
-			Lang: this.localInfo.Lang,
-			GEO: this.localInfo.GEO
+			Lang: locInfo.Lang,
+			GEO: locInfo.GEO,
+			OEM: locInfo.OEM,
+			OS: locInfo.OS,
+			Segment: locInfo.Segment,
+			Brand: locInfo.Brand
 		};
-
-		const CMSOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
-
-		return new Promise((resolve, reject) => {
-			this.endpointGetCall4Subscription = this.commsService.endpointGetCall('/api/v1/entitledapps',
-				CMSOption,
-				{}).subscribe(
-					(response: any) => {
-						resolve(response.Results);
-					},
-					error => {
-						// reject('fetchCMSEntitledAppList error');
-						throwError(new Error('fetchCMSEntitledAppList error'));
-					}
-				);
+		const cmsOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
+		return this.postRequest({
+			cmsOption,
+			api: '/api/v1/articlecategories',
+			apiParam: null,
+			observableMsg: 'fetchCMSArticleCategories error',
+			applyDeviceFilter: true
 		});
 	}
 
-	fetchCMSAppDetails(appId, queryParams) {
+	public async fetchCMSArticles(queryParams, returnAll = false) {
+		const locInfo = await this.getLocalinfo();
 		const defaults = {
-			Lang: this.localInfo.Lang
+			Lang: locInfo.Lang,
+			GEO: locInfo.GEO,
+			OEM: locInfo.OEM,
+			OS: locInfo.OS,
+			Segment: locInfo.Segment,
+			Brand: locInfo.Brand
 		};
-
-		const CMSOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
-
-		return new Promise((resolve, reject) => {
-			this.endpointGetCall5Subscription = this.commsService.endpointGetCall('/api/v1/apps/' + appId,
-				CMSOption,
-				{}).subscribe(
-					(response: any) => {
-						resolve(response.Results);
-					},
-					error => {
-						// reject('fetchCMSAppDetails error');
-						throwError(new Error('fetchCMSAppDetails error'));
-					}
-				);
+		const cmsOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
+		return this.postRequest({
+			cmsOption,
+			api: '/api/v1/articles',
+			apiParam: null,
+			observableMsg: 'fetchCMSArticles error',
+			applyDeviceFilter: true
 		});
+	}
+
+	public async fetchCMSArticle(articleId, queryParams?) {
+		const locInfo = await this.getLocalinfo();
+		const defaults = {
+			Lang: locInfo.Lang
+		};
+		const cmsOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
+		return this.postRequest({
+			cmsOption,
+			api: '/api/v1/articles/',
+			apiParam: articleId,
+			observableMsg: null,
+			applyDeviceFilter: false
+		});
+
+	}
+
+	public async fetchCMSEntitledAppList(queryParams) {
+		const locInfo = await this.getLocalinfo();
+		const defaults = {
+			Lang: locInfo.Lang
+		};
+		const cmsOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
+		return this.postRequest({
+			cmsOption,
+			api: '/api/v1/entitledapps',
+			apiParam: null,
+			observableMsg: 'fetchCMSEntitledAppList error',
+			applyDeviceFilter: false
+		});
+	}
+
+	public async fetchCMSAppDetails(appId, queryParams) {
+		const locInfo = await this.getLocalinfo();
+		const defaults = {
+			Lang: locInfo.Lang
+		};
+		const cmsOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
+		return this.postRequest({
+			cmsOption,
+			api: '/api/v1/apps/',
+			apiParam: appId,
+			observableMsg: 'fetchCMSAppDetails error',
+			applyDeviceFilter: false
+		});
+	}
+
+	public async postRequest(param: RequestParam) {
+		const {
+			cmsOption,
+			api,
+			apiParam,
+			observableMsg,
+			applyDeviceFilter } = param;
+
+		let performanceData: MetricPerformance;
+		let httpStart = 0;
+		let httpEnd = 0;
+
+		let filterStart = 0;
+		let filterEnd = 0;
+		let success = false;
+		const elipsedFromStart = Date.now() - this.metricsService.serviceStartup;
+		let results;
+		try {
+
+			httpStart = Date.now();
+			const composeApi = apiParam ? api + apiParam : api;
+			const response: any = await this.commsService.endpointGetCall(composeApi, cmsOption, {}).toPromise();
+			httpEnd = Date.now();
+
+			if (applyDeviceFilter) {
+				filterStart = httpEnd;
+				results = await this.filterCMSContent(response.Results);
+				filterEnd = Date.now();
+
+			} else {
+				results = response.Results;
+			}
+			success = true;
+
+			return results;
+		} catch (ex) {
+			if (observableMsg) {
+				throwError(new Error(observableMsg));
+			} else {
+				throw (ex);
+			}
+		} finally {
+			const httpDuration = httpEnd - httpStart;
+			const filterDuration = filterEnd - filterStart;
+			performanceData = {
+				ItemType: EventName.performance,
+				Category: PCategory.CMS,
+				Host: this.commsService.getCmsHost(),
+				Api: api,
+				Param: apiParam,
+				Success: success,
+				HttpDuration: httpDuration,
+				FilterDuration: filterDuration,
+				ElipsedFromStart: elipsedFromStart
+			};
+			this.metricsService.sendMetrics(performanceData);
+		}
 	}
 
 	ngOnDestroy() {
-		if (this.requestCMSContentSubscription) {
-			this.requestCMSContentSubscription.unsubscribe();
-		}
 		if (this.commonNotificationSubscription) {
 			this.commonNotificationSubscription.unsubscribe();
-		}
-		if (this.endpointGetCall1Subscription) {
-			this.endpointGetCall1Subscription.unsubscribe();
-		}
-		if (this.endpointGetCall2Subscription) {
-			this.endpointGetCall2Subscription.unsubscribe();
-		}
-		if (this.endpointGetCall3Subscription) {
-			this.endpointGetCall3Subscription.unsubscribe();
-		}
-		if (this.endpointGetCall4Subscription) {
-			this.endpointGetCall4Subscription.unsubscribe();
-		}
-		if (this.endpointGetCall5Subscription) {
-			this.endpointGetCall5Subscription.unsubscribe();
 		}
 	}
 }
