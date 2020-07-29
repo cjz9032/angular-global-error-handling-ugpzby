@@ -15,6 +15,7 @@
 
 .modal-body {
 	padding: 2.4rem;
+	@include high-contrast-border;
 }
 
 .close-button {

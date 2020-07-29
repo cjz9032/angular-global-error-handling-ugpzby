@@ -2,6 +2,7 @@
 
 .vtr-modal-scan-failure{
 	padding: 1.8rem 2.4rem 2.4rem;
+	@include high-contrast-border;
 
 	.modal-information {
 
