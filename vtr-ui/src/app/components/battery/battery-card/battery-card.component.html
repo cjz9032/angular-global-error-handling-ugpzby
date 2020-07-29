@@ -18,8 +18,6 @@
 			role="modal"
 			aria-describedby="heading">
 			<h4 class="modal-title battery-detail-modal-title pl-5"
-				role="heading"
-				aria-level="3"
 				id="heading">
 				{{'device.deviceSettings.batteryGauge.details.title' | translate }}
 			</h4>
@@ -44,10 +42,10 @@
 	<!-- End Battery Details Modal -->
 
 	<div class="container p-5 battery-panel-background">
-		<h2 class="battery-health"
+		<h3 class="battery-health"
 			id="myDevice-settings-batteryGauge-subtitle">
 			{{'device.deviceSettings.batteryGauge.subtitle' | translate}}
-		</h2>
+		</h3>
 		{{batteryIndicator.percent == 0 && flag ? reInitValue(): ""}}
 		<div class="pt-4 battery-frame pr-3">
 			<vtr-battery-indicator [remainingHour]="batteryIndicator.hours"
@@ -109,17 +107,17 @@
 			<!-- Battery Condition tip Text -->
 			<div class='col battery-conditions-tips'>
 				<!-- For storage limitation conditions(Only in ThinkPads) -->
-				<h4 [innerHTML]="batteryConditionNote | translate:param"
+				<h6 [innerHTML]="batteryConditionNote | translate:param"
 					*ngIf="batteryConditions[i].condition==batteryConditionsEnum.StoreLimitation"
-					[id]="'battery-condition-tip-'+ batteryConditionsEnum[batteryConditions[i].condition]"></h4>
+					[id]="'battery-condition-tip-'+ batteryConditionsEnum[batteryConditions[i].condition]"></h6>
 				<!-- For full support adapter with wattage > 0  -->
-				<h4 [innerHTML]="batteryConditionNote | translate:acAdapterInfoParams"
+				<h6 [innerHTML]="batteryConditionNote | translate:acAdapterInfoParams"
 					*ngIf="batteryConditions[i].condition==batteryConditionsEnum.FullACAdapterSupport && acAdapterInfoParams && acAdapterInfoParams.acWattage!=0"
-					[id]="'battery-condition-tip-'+ batteryConditionsEnum[batteryConditions[i].condition]"></h4>
+					[id]="'battery-condition-tip-'+ batteryConditionsEnum[batteryConditions[i].condition]"></h6>
 				<!-- for  all tips which does not contain any value to be added in translate string -->
-				<h4 [innerHTML]="batteryConditionNote | translate"
+				<h6 [innerHTML]="batteryConditionNote | translate"
 					*ngIf="batteryConditions[i].condition!=batteryConditionsEnum.StoreLimitation && batteryConditions[i].condition!=batteryConditionsEnum.Error && batteryConditions[i].condition!=batteryConditionsEnum.FullACAdapterSupport"
-					[id]="'battery-condition-tip-'+ batteryConditionsEnum[batteryConditions[i].condition]"></h4>
+					[id]="'battery-condition-tip-'+ batteryConditionsEnum[batteryConditions[i].condition]"></h6>
 				<!-- see details link in case of short adapter note -->
 				<a *ngIf="batteryConditions[i].conditionStatus===batteryStatus.AcAdapterStatus && batteryConditions[i].condition!=batteryConditionsEnum.FullACAdapterSupport && shortAcErrNote"
 					class="link-label"
