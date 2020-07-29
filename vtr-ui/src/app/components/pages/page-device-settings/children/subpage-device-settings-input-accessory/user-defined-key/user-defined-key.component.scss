@@ -380,3 +380,11 @@ div {
 		}
 	}
 }
+.f12-img {
+	@media #{$white-on-black} {
+		@include white-border;
+	}
+	@media #{$black-on-white} {
+		@include black-border;
+	}
+}

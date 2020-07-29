@@ -52,7 +52,13 @@
         padding-right: 4.5rem;
         position: relative;
         .image {
-            width: 100%;
+			width: 100%;
+			@media #{$white-on-black} {
+				@include white-border;
+			}
+			@media #{$black-on-white} {
+				@include black-border;
+			}
         }
         .superResolution-image-word {
             padding-right: 4.5rem;

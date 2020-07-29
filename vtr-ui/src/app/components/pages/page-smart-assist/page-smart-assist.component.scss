@@ -389,6 +389,12 @@ $fontsize_xs: 1.4rem;
 	position: relative;
 	& > img {
 		width: 100%;
+		@media #{$white-on-black} {
+			border-bottom: 0.1rem solid $light;
+		}
+		@media #{$black-on-white} {
+			border-bottom: 0.1rem solid $dark;
+		}
 	}
 	.intelligent-security-image-word {
 		position:absolute;
