@@ -64,19 +64,19 @@
 					</vtr-container-collapsible>
 				</div>
 			</div>
-			<!-- ****************** End of Lenovo Vantage toolbar ******************************** -->
+			<!-- ************** End of Lenovo Vantage toolbar **************************** -->
 
-			<!-- ****************** Power Smart Settings Section ******************************** -->
+			<!-- ************** Power Smart Settings Section *************************** -->
 			<vtr-power-smart-settings *ngIf="!isDesktopMachine"
 				(isPowerSmartSettingVisible)="onSetSmartSettingsCapability($event)">
 			</vtr-power-smart-settings>
-			<!-- ****************** Power Smart Settings Section ******************************** -->
+			<!-- **************** Power Smart Settings Section *********************** -->
 
 			<!-- ****************** Smart Standby Section ******************************** -->
 			<vtr-smart-standby *ngIf="!isDesktopMachine"
 				(smartStandbyCapability)="onSetSmartStandbyCapability($event)">
 			</vtr-smart-standby>
-			<!-- ****************** Smart Standby Section ******************************** -->
+			<!-- ****************** Smart Standby Section ***************************** -->
 
 			<!-- ****************** Battery Section ******************************** -->
 			<div *ngIf="isBatterySectionAvailable"
@@ -94,6 +94,7 @@
 						<ul class="list-group list-group-flush">
 							<li class="common-li-padding"
 								*ngIf="machineType === 1 && chargeThresholdCapability && thresholdInfo?.length>0">
+								<!-- Start Battery Charge Threshold -->
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.power.batterySettings.batteryThreshold.title' | translate"
 									[caption]="'device.deviceSettings.power.batterySettings.batteryThreshold.description' | translate "
@@ -133,12 +134,16 @@
 									</div>
 								</vtr-ui-row-switch>
 							</li>
+							<!-- End Battery Charge Threshold -->
 
+							<!-- Start Gauge Reset -->
 							<li class="common-li-padding"
 								*ngIf="gaugeResetCapability && batteryService.gaugeResetInfo?.length>0">
 								<vtr-battery-gauge-reset></vtr-battery-gauge-reset>
 							</li>
+							<!-- End Gauge  Reset -->
 
+							<!-- Start Express Charging -->
 							<li class="common-li-padding"
 								*ngIf="expressChargingStatus?.available">
 								<vtr-ui-row-switch
@@ -156,6 +161,9 @@
 									(toggleOnOff)="changeBatteryMode('expressCharging')">
 								</vtr-ui-row-switch>
 							</li>
+							<!-- End Express Charging -->
+
+							<!-- Start Conservation Status -->
 							<li class="common-li-padding"
 								*ngIf="conservationModeStatus?.available">
 								<vtr-ui-row-switch
@@ -172,6 +180,7 @@
 									(toggleOnOff)="changeBatteryMode('conservationMode')">
 								</vtr-ui-row-switch>
 							</li>
+							<!-- End Conservation Status -->
 
 						</ul>
 					</vtr-container-collapsible>
@@ -192,7 +201,7 @@
 						[isCollapsed]="false"
 						[collapseLinkId]="'device-settings-powerSettings'">
 						<ul class="list-group list-group-flush">
-							<!-- Airplane Power Mode Section -->
+							<!-- Start Airplane Power Mode -->
 							<li class="common-li-padding"
 								*ngIf="showAirplanePowerModeSection">
 								<vtr-ui-row-switch
@@ -226,6 +235,9 @@
 									</div>
 								</vtr-ui-row-switch>
 							</li>
+							<!-- End Airplane Power Mode -->
+
+							<!-- Start Flip to boot -->
 							<li *ngIf="showFlipToBootSection$ | async"
 								class="common-li-padding">
 								<vtr-ui-row-switch
@@ -241,7 +253,9 @@
 									(toggleOnOff)="onToggleOfFlipToBoot($event)">
 								</vtr-ui-row-switch>
 							</li>
-							<!-- always On USB Section -->
+							<!-- End Flip to boot -->
+
+							<!-- Start Always on USB -->
 							<li class="common-li-padding"
 								*ngIf="!isDesktopMachine && alwaysOnUSBStatus.available">
 								<vtr-ui-row-switch
@@ -286,6 +300,9 @@
 									</div>
 								</vtr-ui-row-switch>
 							</li>
+							<!-- End Always on USB -->
+
+							<!-- Start Easy Resume -->
 							<li class="common-li-padding"
 								*ngIf="!isDesktopMachine && showEasyResumeSection">
 								<vtr-ui-row-switch
@@ -301,12 +318,14 @@
 									(toggleOnOff)="onToggleOfEasyResume($event)">
 								</vtr-ui-row-switch>
 							</li>
+							<!-- End Easy Resume -->
 						</ul>
 					</vtr-container-collapsible>
 				</div>
 			</div>
 			<!-- ****************** End Power Section ******************************** -->
 
+			<!-- ****************** Start Energy Star Section ************************ -->
 			<div class="row pt-5 smart-settings-card"
 				*ngIf="isEnergyStarProduct">
 				<div class="col-12 mx-auto container-card">
@@ -338,6 +357,7 @@
 					</vtr-container-collapsible>
 				</div>
 			</div>
+			<!-- ****************** End Energy Star Section ************************ -->
 		</div>
 	</div>
 </div>

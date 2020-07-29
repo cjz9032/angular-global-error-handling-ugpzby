@@ -52,6 +52,7 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 		this.systemTimeFormatSubscription = this.commonService.getSystemTimeFormat().subscribe((value: boolean) => {
 			this.is12HrsFormat = value;
 		});
+		// receives updated gauge reset info, set in battery-card through batteryService
 		this.gaugeResetSubscription = this.batteryService.setGaugeResetSectionSubject.asObservable().subscribe((resp: boolean) => {
 			this.setGaugeResetSection();
 		});
@@ -89,26 +90,34 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 
 	}
 
+	/**
+	 * Callled on click of Reset/Stop Button
+	 * @param index number, index of gauge reset info section on UI (0/1)
+	 * @param $event event object
+	 */
 	onBatteryGaugeReset(index, $event) {
 		if ($event.type === 'click') {
 			this.autoFocusButton = false; // flag to hide focus outline when clicked.
 		}
 		let modalRef;
+		// Open gauge reset popup
 		modalRef = this.modalService.open(ModalBatteryChargeThresholdComponent, {
 			backdrop: 'static',
 			centered: true,
 			windowClass: 'Battery-Charge-Threshold-Modal'
 		});
+		// initialize input properties of modal component
 		modalRef.componentInstance.id = 'guageReset';
 		modalRef.componentInstance.title = 'device.deviceSettings.power.batterySettings.gaugeReset.title';
 		modalRef.componentInstance.negativeResponseText = 'device.deviceSettings.power.batterySettings.gaugeReset.popup.cancel';
 
 		if (this.batteryService.gaugeResetInfo[index].isResetRunning) {
-
+			// description props, positive click button text in in case of Popup for STOP click
 			modalRef.componentInstance.description1 = 'device.deviceSettings.power.batterySettings.gaugeReset.popup.description3';
 			modalRef.componentInstance.description2 = '';
 			modalRef.componentInstance.positiveResponseText = 'device.deviceSettings.power.batterySettings.gaugeReset.popup.yes';
 		} else {
+			// description props, positive click button text in in case of Popup for RESET click
 			modalRef.componentInstance.description1 = 'device.deviceSettings.power.batterySettings.gaugeReset.popup.description1';
 			modalRef.componentInstance.description2 = 'device.deviceSettings.power.batterySettings.gaugeReset.popup.description2';
 			modalRef.componentInstance.positiveResponseText = 'device.deviceSettings.power.batterySettings.gaugeReset.popup.continue';
@@ -136,6 +145,10 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 		);
 	}
 
+	/**
+	 * Starts Battery Gauge Reset of given index
+	 * @param index number, index of gauge reset info section on UI (0/1)
+	 */
 	async startBatteryGaugeReset(index) {
 		const gaugeResetInfo = this.batteryService.gaugeResetInfo[index];
 		try {
@@ -146,6 +159,10 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	/**
+	 * Stops Battery Gauge Reset, of given index
+	 * @param index number, index of gauge reset info section on UI (0/1)
+	 */
 	async stopBatteryGaugeReset(index) {
 		const gaugeResetInfo = this.batteryService.gaugeResetInfo[index];
 		try {
@@ -156,12 +173,13 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 		}
 	}
 
-
+	/**
+	 * sets gauge reset UI, ui props
+	 */
 	public setGaugeResetSection() {
 		let isResetRunning = false;
 		const startTimeAbbreviated = [];
 		const lastResetTimeAbbreviated = [];
-		// const gaugeResetBtnStatus = [];
 		if (this.batteryService.gaugeResetInfo) {
 			this.batteryService.gaugeResetInfo.forEach((battery) => {
 				startTimeAbbreviated.push(new Date(battery.startTime).getHours() < 12 ?
@@ -171,26 +189,15 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 			});
 		}
 
-		// gauge reset btn status in case of dual battery
-		// if (this.batteryService.gaugeResetInfo && this.batteryService.gaugeResetInfo.length > 1) {
-		// 	if (isResetRunning) {
-		// 		this.batteryService.gaugeResetInfo.forEach((battery) => {
-		// 			gaugeResetBtnStatus.push(!battery.isResetRunning);
-		// 		});
-		// 	} else {
-		// 		gaugeResetBtnStatus.push(false);
-		// 		gaugeResetBtnStatus.push(false);
-		// 	}
-		// }
-
-		// this.gaugeResetBtnStatus = gaugeResetBtnStatus;
-
-
 		this.startTimeAbbreviated = startTimeAbbreviated;
 		this.lastResetTimeAbbreviated = lastResetTimeAbbreviated;
 		this.batteryService.isGaugeResetRunning = isResetRunning;
 	}
 
+	/**
+	 * Updates gauge reset info, based on response received
+	 * @param value gauge reset info for a single battery
+	 */
 	updateGaugeResetInfo(value: BatteryGaugeReset) {
 		let index = value.batteryNum - 1;
 		if (this.batteryService.gaugeResetInfo.length < 2) {
@@ -199,18 +206,5 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 		this.batteryService.gaugeResetInfo[index] = value;
 		this.setGaugeResetSection();
 	}
-
-	// isValid(val: any) {
-	// 	if (!val || val === null) {
-	// 		return false;
-	// 	}
-	// 	if (typeof val === 'number' && val === 0) {
-	// 		return false;
-	// 	}
-	// 	if (typeof val === 'string' && val === '') {
-	// 		return false;
-	// 	}
-	// 	return true;
-	// }
 
 }

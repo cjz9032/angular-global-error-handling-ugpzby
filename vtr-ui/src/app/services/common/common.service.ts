@@ -283,18 +283,18 @@ export class CommonService {
 	}
 
 	public scrollElementByDistance(element: HTMLElement, scrollDistance: number, isScrollUp?: boolean) {
-		const intervalScrollTime = 25
-		let scrollIndex = 10
-		let scrollHeight = Math.floor(scrollDistance / scrollIndex)
-		if (isScrollUp) { scrollHeight *= -1 }
+		const intervalScrollTime = 25;
+		let scrollIndex = 10;
+		let scrollHeight = Math.floor(scrollDistance / scrollIndex);
+		if (isScrollUp) { scrollHeight *= -1; }
 		const scrollTimer = setInterval(() => {
 			if (scrollIndex > 0) {
-				scrollIndex--
+				scrollIndex--;
 				element.scrollTop += scrollHeight;
 			} else {
-				clearInterval(scrollTimer)
+				clearInterval(scrollTimer);
 			}
-		}, intervalScrollTime)
+		}, intervalScrollTime);
 	}
 
 	// This is version compare function which takes version numbers of any length and any number size per segment.
