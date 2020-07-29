@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.18](https://bitbucket.tc.lenovo.com///compare/v1.7.17...v1.7.18) (2020-07-29)
+
+
+### Bug Fixes
+
+* **Antivirus style:** VAN-20840 VAN-20843 modify fontsize of mcafee ([2454f46](https://bitbucket.tc.lenovo.com///commit/2454f4633ace2ca34d10626e21a8d69aacbf5435))
+
 ### [1.7.17](https://bitbucket.tc.lenovo.com///compare/v1.7.15...v1.7.17) (2020-07-28)
 
 
