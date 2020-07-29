@@ -761,16 +761,10 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				expandedStatusChangedByUser: false,
 				detailsExpanded: false,
 				icon: moduleId,
-				details: [],
+				details: this.previousResultService.buildDetails(module),
 				listTest: [],
 				resultModule: HardwareScanTestResult.Pass,
 			};
-
-			for (const metaInfo of module.metaInformation) {
-				const info = {};
-				info[metaInfo.name] = metaInfo.value;
-				item.details.push(info);
-			}
 
 			for (const test of module.listTest) {
 				item.listTest.push({
@@ -858,11 +852,11 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					expanded: false,
 					detailsExpanded: false,
 					details: [
-						{ [this.translate.instant('hardwareScan.recoverBadSectors.numberSectors')]: device.numberOfSectors },
-						{ [this.translate.instant('hardwareScan.recoverBadSectors.numberBadSectors')]: device.numberOfBadSectors },
-						{ [this.translate.instant('hardwareScan.recoverBadSectors.numberFixedSectors')]: device.numberOfFixedSectors },
-						{ [this.translate.instant('hardwareScan.recoverBadSectors.numberNonFixedSectors')]: device.numberOfNonFixedSectors },
-						{ [this.translate.instant('hardwareScan.recoverBadSectors.elapsedTime')]: device.elapsedTime }
+						{ key: 'numberSectors', value: device.numberOfSectors },
+						{ key: 'numberBadSectors', value: device.numberOfBadSectors },
+						{ key: 'numberFixedSectors', value: device.numberOfFixedSectors },
+						{ key: 'numberNonFixedSectors', value: device.numberOfNonFixedSectors },
+						{ key: 'elapsedTime', value: device.elapsedTime }
 					],
 					listTest: [{
 						id: '',
