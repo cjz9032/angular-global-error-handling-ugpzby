@@ -176,10 +176,12 @@
 
 				@media #{$white-on-black} {
 					@include high-contrast-black-text-color-disabled;
+					@include high-contrast-black-disabled-border;
 				}
 
 				@media #{$black-on-white} {
 					@include high-contrast-white-text-color-disabled;
+					@include high-contrast-white-disabled-border;
 				}
 
 				&:hover {
@@ -240,10 +242,12 @@
 
 				@media #{$white-on-black} {
 					@include high-contrast-black-text-color-disabled;
+					@include high-contrast-black-disabled-border;
 				}
 
 				@media #{$black-on-white} {
 					@include high-contrast-white-text-color-disabled;
+					@include high-contrast-white-disabled-border;
 				}
 
 				&::after {

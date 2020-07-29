@@ -558,7 +558,7 @@ $high-contrast-sky-blue: #81BBF5;
 	@media #{$white-on-black} {
 		background: $dark !important;
 		color: $high-contrast-black-disabled-green !important;
-		border: 0.1rem solid $high-contrast-black-disabled-green !important;
+		border: 0.2rem solid $high-contrast-black-disabled-green !important;
 		&:hover,
 		&:active {
 			color: $high-contrast-black-disabled-green;
@@ -583,7 +583,7 @@ $high-contrast-sky-blue: #81BBF5;
 	@media #{$black-on-white} {
 		background: $light !important;
 		color: $high-contrast-white-disabled-maroon !important;
-		border: 0.1rem solid $high-contrast-white-disabled-maroon !important;
+		border: 0.2rem solid $high-contrast-white-disabled-maroon !important;
 		&:hover,
 		&:active {
 			color: $high-contrast-white-disabled-maroon;
