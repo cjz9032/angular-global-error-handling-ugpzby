@@ -191,11 +191,11 @@
 			pointer-events: none;
 			@media #{$black-on-white} {
 				opacity: $disabled-opacity;
-				@include high-contrast-white-text-color-disabled
+				@include high-contrast-white-text-color-disabled;
 			}
 			@media #{$white-on-black} {
 				opacity: $disabled-opacity;
-				@include high-contrast-black-text-color-disabled
+				@include high-contrast-black-text-color-disabled;
 			}
 
 			&::before {
@@ -220,7 +220,7 @@
 			}
 			@media #{$white-on-black} {
 				opacity: $disabled-opacity;
-				@include high-contrast-black-text-color-disabled
+				@include high-contrast-black-text-color-disabled;
 			}
 
 			&::before {
