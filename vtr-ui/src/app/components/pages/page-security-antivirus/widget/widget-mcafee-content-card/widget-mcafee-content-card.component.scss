@@ -22,7 +22,8 @@
 		.description {
 			max-width: 30rem;
 			a {
-				font-size: 1.8rem;
+				font-size: 1.6rem;
+				text-decoration: underline;
 			}
 		}
 		.title {
@@ -30,7 +31,7 @@
 			font-weight: $weight_600;
 		}
 		.desc {
-			font-size: 1.8rem;
+			font-size: 1.6rem;
 		}
 	}
 	.image {

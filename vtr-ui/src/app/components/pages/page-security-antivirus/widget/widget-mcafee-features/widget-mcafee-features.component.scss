@@ -6,7 +6,10 @@
 	@include high-contrast-image-invert;
 }
 .mcafee-title, .mcafee-desc {
-	font-size: 1.6rem;
+	font-size: 1.4rem;
 	color: $shade_blue;
+	@media #{$breakpoint_lg} {
+		font-size: 1.6rem;
+	}
 	@include high-contrast-color-reversal;
 }
