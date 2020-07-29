@@ -3192,7 +3192,7 @@
         "performanceandSecurityCheckSubTitle": "让我们来诊断并解决计算机中的性能和安全问题",
         "scanButton": "免费扫描电脑",
         "section1Heading": "您如何评价自己的电脑性能？",
-        "section1Description": "电脑的运行速度是否很慢？应用程序是否需要很长时间才会响应？是否存在 Windows 错误？有恶意软件问题？让我们来诊断问题的原因并将其解决。",
+        "section1Description": "电脑的运行速度是否很慢？应用程序是否需要很长时间才会响应？是否存在 Windows 错误？是否有恶意软件问题？让我们来为你诊断这些问题的原因并帮你解决。",
         "critical": "关键",
         "allisWell": "一切正常",
         "zero": 0,
@@ -3207,7 +3207,7 @@
         "nine": 9,
         "ten": 10,
         "tuneUP": "您的电脑需要优化",
-        "section2Heading": "电脑性能卓越。始终",
+        "section2Heading": "为您的电脑性能保驾护航",
         "section2Description": "我们的软件可以全天候主动扫描您的电脑以查找问题，并在发现时解决，所以您的电脑性能始终非常出色。",
         "tunePCPerformance": {
             "title": "优化电脑性能",
@@ -3231,7 +3231,7 @@
             "summaryTitle": "优化电脑性能"
         },
         "boostInternetPerformance": {
-            "title": "提升因特网性能",
+            "title": "提升网络性能",
             "extraTitle": "因特网性能",
             "heading": "助您的因特网一臂之力",
             "description": "对于许多人来说，Wi-Fi 速度慢或没有 Wi-Fi 意味着与世隔绝。下面我们来配置您的因特网、Wi-Fi 和浏览器设置以达到最佳性能。",
@@ -3253,7 +3253,7 @@
             "summaryTitle": "因特网性能"
         },
         "malwareSecurity": {
-            "title": "恶意软件和安全",
+            "title": "防止恶意软件侵入",
             "heading": "为您的电脑提供所需的额外悉心照顾",
             "description": "恶意软件可能导致计算机崩溃，数据泄露和性能下降。清除恶意软件，并完成大量工作。",
             "tabSet1": {
@@ -3271,10 +3271,10 @@
                 "tab3Heading": "轻巧且快捷",
                 "tab3Description": "扫描通常需要 5-10 分钟"
             },
-            "summaryTitle": "恶意软件和安全"
+            "summaryTitle": "防止恶意软件侵入"
         },
         "proactiveAutomated": {
-            "title": "主动且自动",
+            "title": "主动防御，自动保护",
             "heading": "提前获得解决问题的力量，以免受到影响！",
             "description": "Smart Performance 持续不断地查找会影响电脑性能的成千上万个问题。我们会主动修复它们，让您高枕无忧。",
             "tabSet1": {
@@ -3302,18 +3302,18 @@
             "endDate": "结束日期",
             "status": "状态",
             "activeStatus": "活动",
-            "inactiveStatus": "非活动",
+            "inactiveStatus": "未激活",
             "manageSubscription": "管理订阅",
             "titlebeta": "Lenovo Beta 程序",
             "manageSubscriptionBeta": "启用完整功能",
             "descriptionbeta": "Lenovo 现在提供 Smart Performance 试用计划，截止时间为 2020 年 7 月。",
             "descriptionbeta1": "欢迎您加入并尝试完整功能。",
-            "descriptionNonSubscriber": "您尚未订阅 Lenovo Smart Performance 服务。您将只能扫描您的电脑。立即订阅，充分享受电脑受到保护并顺利运行的所有优点。",
+            "descriptionNonSubscriber": "您尚未订阅Smart Performance服务，所以您现阶段将只能扫描您的电脑，立即订阅，则可一键修复计算机的所有性能和安全问题。",
             "processStatus": "处理中"
         },
         "scanSettings": {
-            "title": "计划扫描设置",
-            "description": "启用或禁用扫描和设置扫描计划",
+            "title": "设置自动扫描时间",
+            "description": "启用或禁用自动扫描功能",
             "enableScan": "启用扫描",
             "changeScanTitle": "更改扫描计划",
             "changeScanDescription": "编辑扫描计划以在需要时运行。",
