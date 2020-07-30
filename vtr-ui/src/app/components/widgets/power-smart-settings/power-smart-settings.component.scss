@@ -236,5 +236,13 @@
 		@media #{$black-on-white} {
 			@include black-border;
 		}
+		&.toolbar-img {
+			@media #{$white-on-black} {
+				padding: 0.1rem;
+			}
+			@media #{$black-on-white} {
+				padding: 0.1rem;
+			}
+		}
 	}
 }
