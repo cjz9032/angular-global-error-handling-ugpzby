@@ -1,12 +1,7 @@
 @import "../../../app.theme";
 
 .vtr-modal-hardware-scan-customize {
-    @media #{$black-on-white} {
-		@include black-border;
-	}
-	@media #{$white-on-black} {
-		@include white-border;
-    }
+	@include high-contrast-border;
 
 	fa-icon {
 		font-size: $fontsize_xl;
