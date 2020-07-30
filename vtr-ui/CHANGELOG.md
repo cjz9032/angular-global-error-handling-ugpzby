@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.20](https://bitbucket.tc.lenovo.com///compare/v1.7.19...v1.7.20) (2020-07-30)
+
+
+### Bug Fixes
+
+* **Style:** VAN-20895 fix footer display in 500px ([dfe2719](https://bitbucket.tc.lenovo.com///commit/dfe271970df62f343b54cb81ed1a0ba6a68cfa12))
+
 ### [1.7.19](https://bitbucket.tc.lenovo.com///compare/v1.7.18...v1.7.19) (2020-07-29)
 
 ### [1.7.18](https://bitbucket.tc.lenovo.com///compare/v1.7.17...v1.7.18) (2020-07-29)
