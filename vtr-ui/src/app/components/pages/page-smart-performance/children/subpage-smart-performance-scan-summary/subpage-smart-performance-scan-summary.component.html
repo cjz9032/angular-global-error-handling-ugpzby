@@ -671,7 +671,7 @@
 										</div>
 									</div>
 									<div class="row mb-40"
-										*ngIf="!isSubscribed">
+										*ngIf="!isSubscribed && !isExpired">
 										<div class="col col-12">
 											<div class="recommended-action sidebar-widget">
 												<div class="title pb-3">
@@ -705,7 +705,7 @@
 										</div>
 									</div>
 									<div class="row mb-40"
-										*ngIf="isSubscribed">
+										*ngIf="isSubscribed || isExpired">
 										<div class="col col-12">										
 											<vtr-widget-subscriptiondetails [isOnline] = "isOnline"></vtr-widget-subscriptiondetails>
 										</div>

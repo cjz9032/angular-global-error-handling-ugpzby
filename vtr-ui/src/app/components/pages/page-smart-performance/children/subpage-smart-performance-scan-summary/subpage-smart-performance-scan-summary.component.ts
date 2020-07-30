@@ -173,7 +173,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		this.isDaySelectionEnable = false;
 		this.scanScheduleDate = this.selectedDate;
 		this.leftAnimator = '0%';
-		if (this.isSubscribed) {
+		if (this.isSubscribed || this.isExpired) {
 			// 	this.getLastScanResult();
 			this.scanSummaryTime(0);
 		}

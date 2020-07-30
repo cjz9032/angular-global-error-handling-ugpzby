@@ -268,7 +268,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 
 	getExpiredStatus(releaseDate) {
 		let expiredDate;
-		let extendedPeriod;
+		// let extendedPeriod;
 		const currentDate = new Date();
 		expiredDate = new Date(releaseDate);
 		// expiredDate = this.formatLocaleDate.transform(expiredDate.toLocaleDateString());
@@ -280,12 +280,12 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
 			this.isSubscribed = false;
 			this.subScribeEvent.emit(this.isSubscribed);
-			expiredDate.setDate(expiredDate.getDate() + 30);
-			extendedPeriod = new Date(expiredDate);
+			// expiredDate.setDate(expiredDate.getDate() + 30);
+			// extendedPeriod = new Date(expiredDate);
 			// console.log(extendedPeriod, currentDate);
-			if (extendedPeriod < currentDate) {
-				this.resetSubscriptionDetails();
-			}
+			// if (extendedPeriod < currentDate) {
+			// 	this.resetSubscriptionDetails();
+			// }
 		}
 	}
 	resetSubscriptionDetails(){

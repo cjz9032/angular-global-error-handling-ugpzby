@@ -502,7 +502,7 @@ export class ConfigService {
 		const result = await this.canShowSearch();
 		this.updateAvailability(menu, 'app-search', result);
 
-		this.isSmartPerformanceAvailable = await this.showSmartPerformance();
+		this.isSmartPerformanceAvailable = true;
 		this.updateAvailability(menu, 'smart-performance', this.isSmartPerformanceAvailable);
 
 		this.updateBetaService(menu);
