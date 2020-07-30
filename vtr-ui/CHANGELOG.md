@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.22](https://bitbucket.tc.lenovo.com///compare/v1.7.21...v1.7.22) (2020-07-30)
+
+
+### Bug Fixes
+
+* **High contrast:** fix notification HCM ([60e9ba4](https://bitbucket.tc.lenovo.com///commit/60e9ba439d8874188737291ba4c06161637440bb))
+* **High contrast:** fixed notification hcm issue ([d543741](https://bitbucket.tc.lenovo.com///commit/d543741e4b28f1bb46cff45af207fafa3d3f8047))
+* **High contrast:** VAN-20908 VAN-20910 VAN-20905 fix hc issue ([851506c](https://bitbucket.tc.lenovo.com///commit/851506c075045c0bee7ea375c695922468d1e7d5))
+* **High contrast overall:** VAN-20904 fixed page columns hcm issue ([d15372d](https://bitbucket.tc.lenovo.com///commit/d15372d377c809cf53da01e2502a6a481902e927))
+
 ### [1.7.21](https://bitbucket.tc.lenovo.com///compare/v1.7.20...v1.7.21) (2020-07-30)
 
 ### [1.7.20](https://bitbucket.tc.lenovo.com///compare/v1.7.19...v1.7.20) (2020-07-30)
