@@ -1176,6 +1176,14 @@ vtr-subpage-scanning {
 			box-shadow: $drop_shadow;
 			border-radius: 0.5rem;
 			float: right;
+			@media #{$white-on-black} {
+				box-shadow: none;
+				@include white-border;
+			}
+			@media #{$black-on-white} {
+				box-shadow: none;
+				@include black-border;
+			}
 			.selected-frequency{
 				color: #11b85b;
 				font-weight: $weight_bold;
