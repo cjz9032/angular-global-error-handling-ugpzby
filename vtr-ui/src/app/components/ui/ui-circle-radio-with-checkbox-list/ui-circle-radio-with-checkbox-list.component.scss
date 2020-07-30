@@ -172,6 +172,15 @@
 					}
 				}
 
+				[role="radio"]:hover ~ .text, [role="radio"]:active ~ .text {
+					@media #{$black-on-white} {
+						color: $high-contrast-white-dark-magenta;
+					}
+					@media #{$white-on-black} {
+						color: $high-contrast-black-cyan;
+					}
+				}
+
 				[role="radio"][aria-checked="true"] {
 					background: $background;
 					@media #{$black-on-white} {
@@ -308,6 +317,16 @@
 						}
 					}
 				}
+
+				[role="radio"][aria-checked="true"] ~ .text, [role="radio"][aria-checked="true"] ~ .text {
+					@media #{$black-on-white} {
+						color: $high-contrast-white-dark-magenta;
+					}
+					@media #{$white-on-black} {
+						color: $high-contrast-black-cyan;
+					}
+				}
+
 
 				.text {
 					font-weight: $weight_light;
