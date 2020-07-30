@@ -40,6 +40,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	batteryStatus = BatteryStatus;
 	batteryHealth = 0;
 	batteryConditionStatus: string;
+	airplanePowerMode = new FeatureStatus(false, false);
 
 	private powerSupplyStatusEventRef: any;
 	private remainingPercentageEventRef: any;
@@ -137,13 +138,15 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 		// triggers when change in gauge reset info
 		this.powerBatteryGaugeResetEventRef = this.onPowerBatteryGaugeResetEvent.bind(this);
-		this.powerBatteryStatusEventRef = this.onPowerBatteryStatusEvent.bind(this);
+
+		// triggers when change in battery count, every 30s
+		// this.powerBatteryStatusEventRef = this.onPowerBatteryStatusEvent.bind(this);
 
 		this.shellServices.registerEvent(EventTypes.pwrPowerSupplyStatusEvent, this.powerSupplyStatusEventRef);
 		this.shellServices.registerEvent(EventTypes.pwrRemainingPercentageEvent, this.remainingPercentageEventRef);
 		this.shellServices.registerEvent(EventTypes.pwrRemainingTimeEvent, this.remainingTimeEventRef);
 		this.shellServices.registerEvent(EventTypes.pwrBatteryGaugeResetEvent, this.powerBatteryGaugeResetEventRef);
-		this.shellServices.registerEvent(EventTypes.pwrBatteryStatusEvent, this.powerBatteryStatusEventRef);
+		// this.shellServices.registerEvent(EventTypes.pwrBatteryStatusEvent, this.powerBatteryStatusEventRef);
 	}
 
 	private unRegisterBatteryEvents() {
@@ -151,7 +154,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingPercentageEvent, this.remainingPercentageEventRef);
 		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingTimeEvent, this.remainingTimeEventRef);
 		this.shellServices.unRegisterEvent(EventTypes.pwrBatteryGaugeResetEvent, this.powerBatteryGaugeResetEventRef);
-		this.shellServices.unRegisterEvent(EventTypes.pwrBatteryStatusEvent, this.powerBatteryStatusEventRef);
+		// this.shellServices.unRegisterEvent(EventTypes.pwrBatteryStatusEvent, this.powerBatteryStatusEventRef);
 	}
 
 	ngOnInit() {
@@ -188,11 +191,16 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 		this.bctInfoSubscription = this.batteryService.getChargeThresholdInfo()
 			.subscribe((value: ChargeThreshold[]) => {
-				this.onPowerBatteryStatusEvent(value);
+				if (value && value.length > 0) {
+					this.batteryIndicator.isChargeThresholdOn = value[0].isCapable && value[0].isEnabled;
+				} else {
+					this.batteryIndicator.isChargeThresholdOn = false;
+				}
 		});
 
 		this.airplaneModeSubscription = this.batteryService.getAirplaneMode()
 			.subscribe((value: FeatureStatus) => {
+			this.airplanePowerMode = value;
 			this.batteryIndicator.isAirplaneMode = value.available && value.status;
 		});
 
@@ -276,21 +284,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	onPowerBatteryStatusEvent(thresholdInfo: ChargeThreshold[]) {
-		let bctCapability = false;
-		let bctStatus = false;
-
-		if (thresholdInfo && thresholdInfo.length > 0) {
-			thresholdInfo.forEach((battery) => {
-				bctCapability = bctCapability || battery.isCapable;
-				bctStatus = bctStatus || battery.isEnabled;
-			});
-			this.batteryIndicator.isChargeThresholdOn = bctCapability && bctStatus;
-		} else {
-			this.batteryIndicator.isChargeThresholdOn = false;
-		}
-	}
-
 	/**
 	 * Get battery details to show battery card on first time load
 	 */
@@ -298,6 +291,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		try {
 			if (this.batteryService.isShellAvailable) {
 				this.getBatteryDetails(false);
+				// Monitor for 30s battery information update
 				this.batteryService.startMonitor(this.setBatteryCard.bind(this));
 			}
 		} catch (error) {
@@ -356,6 +350,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 					this.batteryIndicator.isChargeThresholdOn = notification.payload;
 					break;
 				case 'AirplaneModeStatus':
+					this.airplanePowerMode.available = notification.payload.isCapable;
 					this.batteryIndicator.isAirplaneMode = notification.payload.isCapable && notification.payload.isEnabled;
 					break;
 				case 'ExpressChargingStatus':
@@ -419,6 +414,11 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.batteryIndicator.convertMin(this.batteryGauge.time);
 		this.batteryIndicator.timeText = this.batteryGauge.timeType;
 		this.batteryIndicator.expressCharging = this.batteryGauge.isExpressCharging;
+		// Airplane Power Mode status update through batteryService
+		if (this.airplanePowerMode.status !== this.batteryGauge.isAirplaneModeEnabled) {
+			this.airplanePowerMode.status = this.batteryGauge.isAirplaneModeEnabled;
+			this.batteryService.airplaneModeSubject.next(this.airplanePowerMode);
+		}
 
 		this.getBatteryCondition();
 	}
