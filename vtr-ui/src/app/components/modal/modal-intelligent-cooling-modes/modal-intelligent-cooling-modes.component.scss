@@ -95,12 +95,13 @@
 				width: 5rem;
 				height: 5rem;
 				@include high-contrast-adjust;
-				@include high-contrast-background-transparent;
 				@media #{$white-on-black} {
 					@include white-border;
+					@include high-contrast-background-transparent;
 				}
 				@media #{$black-on-white} {
 					@include black-border;
+					@include high-contrast-background-transparent;
 				}
 			.serial{
 				font-size: $fontsize_xl;
