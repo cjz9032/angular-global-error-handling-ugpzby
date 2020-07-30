@@ -178,6 +178,16 @@
 					background: highlight;
 				}
 			}
+			&:first-child{
+				a.dropdown-item{
+				border-radius: 0.4rem 0.4rem 0 0;
+				}
+			}
+			&:last-child{
+				a.dropdown-item{
+				border-radius: 0 0 0.4rem 0.4rem;
+				}
+			}
 			&:hover {
 				background: $darkCell;
 				@media #{$high-contrast} {
@@ -259,12 +269,12 @@
 				.gaming-dropdown-menu {
 					li{
 						&:focus{
-							border: 1px solid $blueFill;
-							@media #{$high-contrast} {
-								border-color: windowText;
-							}
 							a{
 								outline: none !important;
+								border: 1px solid $blueFill;
+								@media #{$high-contrast} {
+								border-color: windowText;
+								}
 							}
 						}
 					}
