@@ -197,9 +197,21 @@
 		&.label-disable {
 			@media #{$white-on-black} {
 				@include  high-contrast-black-text-color-disabled;
+				.form-control{
+					opacity: 0.5;
+				}
+				label {
+					opacity: 0.3;
+				}
 			}
 			@media #{$black-on-white} {
 				@include  high-contrast-white-text-color-disabled;
+				.form-control {
+					opacity: 0.5;
+				}
+				label {
+					opacity: 0.3;
+				}
 			}
 		}
 	}
