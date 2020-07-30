@@ -12,18 +12,14 @@
 					<div class="row pt-1"
 						*ngFor="let battery of batteryService.gaugeResetInfo; let i=index;">
 						<div class="col px-5">
-							<div class="battery-text">
-								<span *ngIf="batteryService.gaugeResetInfo?.length==1"
-									id="deviceSettings-batteryGauge-subtitle"
-									role="text">
-									{{'device.deviceSettings.batteryGauge.subtitle'| translate}}
-								</span>
-								<span *ngIf="batteryService.gaugeResetInfo?.length>1"
-									id="Battery-{{i+1}}-details"
-									role="text">
-									{{ headings[i] | translate }}
-								</span>
-							</div>
+							<h5 *ngIf="batteryService.gaugeResetInfo?.length==1"
+								id="deviceSettings-batteryGauge-subtitle">
+								{{'device.deviceSettings.batteryGauge.subtitle'| translate}}
+							</h5>
+							<h5 *ngIf="batteryService.gaugeResetInfo?.length>1"
+								id="Battery-{{i+1}}-details">
+								{{ headings[i] | translate }}
+							</h5>
 							<div class="battery-gauge-info py-3">
 								<!-- Initial State Battery Gauge Reset -->
 								<div>

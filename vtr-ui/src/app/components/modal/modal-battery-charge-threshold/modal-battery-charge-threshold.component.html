@@ -3,14 +3,11 @@
 	role="dialog"
 	aria-modal="true">
 	<div class="content">
-		<h1 id="ds-{{id}}-popup"
-			attr.aria-label="ds-threshold-popup"
-			[innerHTML]="title | translate"></h1>
+		<h4 id="ds-{{id}}-popup"
+			[innerHTML]="title | translate"></h4>
 		<p id="ds-{{id}}popup-description1"
-			role="heading"
 			[innerHTML]="description1 | translate"></p>
 		<p id="ds-{{id}}popup-description2"
-			role="heading"
 			[innerHTML]="description2 | translate"></p>
 
 		<!-- Note if machine is DLS/PI capable -->
