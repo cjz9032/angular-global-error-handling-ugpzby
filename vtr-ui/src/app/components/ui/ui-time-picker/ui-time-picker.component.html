@@ -1,20 +1,19 @@
 <div class="vtr-ui-time-picker">
-	<p role="heading"
-		id="{{linkId}}"
-		class="sub-heading">
+	<div class="row">
+		<p class="sub-heading"
+		id="{{linkId}}">
 		{{ subHeadingText | translate | uppercase }}</p>
+	</div>
 	<div class="row">
 		<div class="col-md-12 col-sm-12 pl-0">
 			<div class="row">
 				<div class="dropdown">
-					<input [id]="id"
-						class="dropcheck"
-						type="checkbox"
+					<vtr-ui-checkbox componentId="{{id}}"
 						tabindex="-1"
-						[attr.aria-checked]="showDropDown"
+						class="dropcheck d-none"
 						[checked]="showDropDown"
-						(click)="onToggleDropDown()"
-						(keydown.enter)="onToggleDropDown()">
+						[label]="id">
+					</vtr-ui-checkbox>
 					<label [for]="id"
 						id="ui-time-picker-label"
 						attr.aria-label="{{label}}, {{hours[hour]}}, 'hours', {{minutes[minute]}}, 'minutes', {{amPms[amPm] | translate}}"

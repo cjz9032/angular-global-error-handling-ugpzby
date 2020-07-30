@@ -22,6 +22,7 @@ import { RouteHandlerService } from 'src/app/services/route-handler/route-handle
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { FlipToBootCurrentModeEnum, FlipToBootErrorCodeEnum, FlipToBootSetStatusEnum, FlipToBootSupportedEnum } from '../../../../../services/power/flipToBoot.enum';
 import { FlipToBootSetStatus } from '../../../../../services/power/flipToBoot.interface';
+import { EventTypes } from '@lenovo/tan-client-bridge';
 
 
 enum PowerMode {
@@ -63,6 +64,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	public energyStarCache: boolean;
 
 	// battery charge threshold
+	private powerBatteryStatusEventRef: any;
 	public thresholdInfo: ChargeThreshold[];
 	public chargeThresholdCapability = false;
 	public chargeThresholdStatus = false;
@@ -142,6 +144,11 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.checkIsPowerPageAvailable(false, 'battery');
 		}
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
+		if (this.machineType === 1) {
+			// it is triggered if battery count changes (i.e. if battery is inserted/removed)
+			this.powerBatteryStatusEventRef = this.onPowerBatteryStatusEvent.bind(this);
+			this.shellServices.registerEvent(EventTypes.pwrBatteryStatusEvent, this.powerBatteryStatusEventRef);
+		}
 		this.getBatteryAndPowerSettings();
 		this.getVantageToolBarStatus();
 		this.getEnergyStarCapability();
@@ -210,6 +217,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		if (this.toolBarSubscription) {
 			this.toolBarSubscription.unsubscribe();
 		}
+		this.shellServices.unRegisterEvent(EventTypes.pwrBatteryStatusEvent, this.powerBatteryStatusEventRef);
 	}
 
 	// ************************** Start Getting Cached Data ****************************
@@ -666,6 +674,16 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	// Start ThinkPad
+
+	/**
+	 * Called when battery status event is triggered
+	 * now, every 30s to keep threshold in sync with toolbar
+	 * @param thresholdInfo charge threshold information
+	 */
+	onPowerBatteryStatusEvent(thresholdInfo: ChargeThreshold[]) {
+		this.setChargeThresholdUI(thresholdInfo);
+	}
+
 	private getAlwaysOnUSBCapabilityThinkPad() {
 		this.logger.info('Before getAlwaysOnUSBCapabilityThinkPad ');
 		if (this.powerService.isShellAvailable) {
