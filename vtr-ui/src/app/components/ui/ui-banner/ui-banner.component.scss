@@ -14,17 +14,17 @@
 	top: 9rem;
 	margin: 0 auto;
 
-	@media #{$high-contrast-black-on-white} {
+	@media #{$black-on-white} {
 		@include black-border;
 	}
-	@media #{$high-contrast-white-on-black} {
+	@media #{$white-on-black} {
 		@include white-border;
 	}
 
 	.close-btn {
 		float: right;
 		svg {
-			@media #{$high-contrast-black-on-white} {
+			@media #{$black-on-white} {
 				filter: invert(1);
 			}
 		}
