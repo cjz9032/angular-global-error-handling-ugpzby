@@ -11,6 +11,12 @@
 	.vtr-page-columns {
 		max-width: $max_page_width;
 		margin: 0 auto;
+		@media #{$white-on-black} {
+			border-bottom: 0.1rem solid $light;
+		}
+		@media #{$black-on-white} {
+			border-bottom: 0.1rem solid $dark;
+		}
 		.vtr-page-column {
 			padding-top: 0;
 			padding-bottom: 0;
