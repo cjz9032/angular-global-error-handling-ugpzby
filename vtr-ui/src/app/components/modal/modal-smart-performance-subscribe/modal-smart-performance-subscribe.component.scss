@@ -13,6 +13,16 @@ textarea:focus {
 		height: 70rem;
 	}
 }
+.modal-smart-performace-subcribe {
+	@media #{$white-on-black} {
+		box-shadow: none;
+		@include white-border;
+	}
+	@media #{$black-on-white} {
+		box-shadow: none;
+		@include black-border;
+	}
+}
 .pricing-table-container {
 	padding: 2rem 4rem;
 	.back {
