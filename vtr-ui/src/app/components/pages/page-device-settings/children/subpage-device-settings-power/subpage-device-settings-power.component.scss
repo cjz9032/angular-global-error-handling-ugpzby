@@ -10,6 +10,12 @@
 
 	.toolbar-img img {
 		width: 352px;
+		@media #{$white-on-black} {
+			@include white-border;
+		}
+		@media #{$black-on-white} {
+			@include black-border;
+		}
 	}
 
 	.icomoon{
@@ -198,5 +204,13 @@
 		// 		text-align: center;
 		// 	}
 		// }
+		img {
+			@media #{$white-on-black} {
+				@include white-border;
+			}
+			@media #{$black-on-white} {
+				@include black-border;
+			}
+		}
 	}
 }

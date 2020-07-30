@@ -95,6 +95,13 @@
 				width: 5rem;
 				height: 5rem;
 				@include high-contrast-adjust;
+				@include high-contrast-background-transparent;
+				@media #{$white-on-black} {
+					@include white-border;
+				}
+				@media #{$black-on-white} {
+					@include black-border;
+				}
 			.serial{
 				font-size: $fontsize_xl;
 				color: $light;
@@ -105,6 +112,9 @@
 				padding: 0;
 				margin: 0 auto;
 				line-height: 1.8;
+				@media #{$black-on-white} {
+					color: $dark;
+				}
 				&.serial2 {
 					width: 5rem;
 				}
@@ -120,5 +130,17 @@
 .toolbar-block  {
 	width: 75%;
 }
+.battery-guage-block, .toolbar-block {
+	img {
+		@media #{$black-on-white} {
+			@include black-border;
+		}
+
+		@media #{$white-on-black} {
+			@include white-border;
+		}
+	}
+}
+
 
 }
