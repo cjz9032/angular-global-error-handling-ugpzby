@@ -326,6 +326,12 @@
 	width: 5rem;
 	height: 5rem;
 	vertical-align: middle;
+	@media #{$white-on-black} {
+		@include white-border;
+	}
+	@media #{$black-on-white} {
+		@include black-border;
+	}
 
 	&.icon-s4b {
 		background: url("../../../../../../assets/images/S4B_2016.png") center/cover;

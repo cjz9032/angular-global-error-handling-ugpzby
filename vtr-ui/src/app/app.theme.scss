@@ -869,3 +869,14 @@ $high-contrast-sky-blue: #81BBF5;
 	@include high-contrast-color-reversal;
 	@include high-contrast-background;
 }
+
+@mixin always-on-usb-img-border {
+	content: '';
+	width: 3.5rem;
+	height: 4.5rem;
+	border: thin solid $light;
+	position: absolute;
+	left: 3.8rem;
+	top: 1.2rem;
+}
+

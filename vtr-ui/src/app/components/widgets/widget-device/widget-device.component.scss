@@ -35,6 +35,14 @@
 			}
 			.circleimage {
 				width: 22.5rem;
+				img {
+					@media #{$white-on-black} {
+						@include white-border;
+					}
+					@media #{$black-on-white} {
+						@include black-border;
+					}
+				}
 			}
 			.lenovo-gaming-logo{
 				@media #{$black-on-white} {
@@ -175,7 +183,7 @@
 						}
 
 					}
-				
+
 				}
 			}
 			.status-content {
@@ -271,7 +279,7 @@
 		@media #{$black-on-white} {
 		border: 0.1rem solid;
 		}
-		@media #{$white-on-black} {  
+		@media #{$white-on-black} {
 			border: 0.1rem solid;
 		}
 

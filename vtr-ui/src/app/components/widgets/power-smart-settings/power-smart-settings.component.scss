@@ -229,4 +229,12 @@
 		max-width: 100%;
 		min-height: 2.8rem;
 	}
+	.img-fluid {
+		@media #{$white-on-black} {
+			@include white-border;
+		}
+		@media #{$black-on-white} {
+			@include black-border;
+		}
+	}
 }

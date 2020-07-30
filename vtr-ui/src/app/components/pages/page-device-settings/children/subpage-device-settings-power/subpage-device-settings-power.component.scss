@@ -20,6 +20,37 @@
 
 	.icomoon{
 		margin-left:1.8rem;
+		@media #{$white-on-black} {
+			&.icomoon-LE-Charging-USB2x {
+				&::after {
+					@include always-on-usb-img-border;
+				}
+			}
+			&.icomoon-LE-Charging-USB---SS2x {
+				&::after {
+					@include always-on-usb-img-border;
+					left: 2.3rem;
+					width: 4.5rem;
+				}
+			}
+		}
+		@media #{$black-on-white} {
+			&.icomoon-LE-Charging-USB2x {
+				&::after {
+					@include always-on-usb-img-border;
+					border-color: $dark;
+				}
+			}
+			&.icomoon-LE-Charging-USB---SS2x {
+				&::after {
+					@include always-on-usb-img-border;
+					border-color: $dark;
+					left: 2.3rem;
+					width: 4.5rem;
+				}
+			}
+		}
+
 	}
 	.left-border {
 		border-left: 0.7rem solid $main;
