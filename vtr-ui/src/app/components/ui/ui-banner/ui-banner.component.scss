@@ -14,7 +14,19 @@
 	top: 9rem;
 	margin: 0 auto;
 
+	@media #{$black-on-white} {
+		@include black-border;
+	}
+	@media #{$white-on-black} {
+		@include white-border;
+	}
+
 	.close-btn {
 		float: right;
+		svg {
+			@media #{$black-on-white} {
+				filter: invert(1);
+			}
+		}
 	}
 }

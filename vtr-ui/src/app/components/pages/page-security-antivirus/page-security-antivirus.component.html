@@ -261,7 +261,8 @@
 	<right-content>
 		<div class="container-fluid row justify-content-between">
 			<!--Start of Security Card Advisor-->
-			<div class="row mb-40 col-12 col-md-6 col-lg-12 pr-0 pr-md-3 pr-lg-0">
+			<div class="row mb-40 col-12 col-lg-12 pr-0 pr-md-3 pr-lg-0"
+				[ngClass]="{'col-md-6': viewModel?.currentPage === 'others'}">
 				<div class="col col-12">
 					<vtr-widget-security-status
 					[securityAdvisor]="securityAdvisor"
@@ -271,7 +272,8 @@
 			</div>
 			<!--End of Security Card Advisor-->
 
-			<div class="row mb-40 col-12 col-md-6 col-lg-12 pl-0 pl-md-3 pl-lg-0">
+			<div class="row mb-40 col-12 col-lg-12 pl-0 pl-md-3 pl-lg-0"
+				[ngClass]="{'col-md-6': viewModel?.currentPage === 'others'}">
 				<div class="col col-12">
 					<vtr-widget-mcafee-content-card *ngIf="viewModel?.currentPage ==='others';else otherCard"
 						[articleId]="mcafeeArticleId"
