@@ -406,6 +406,7 @@
 			::ng-deep {
 				.vtr-widget-powered-by-info {
 					flex-direction: row-reverse;
+					flex-wrap: wrap-reverse !important;
 					justify-content: center !important;
 				}
 			}
