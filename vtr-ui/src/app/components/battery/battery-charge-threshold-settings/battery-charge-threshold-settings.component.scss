@@ -115,6 +115,12 @@
 		}
 		.dropdown-item {
 			font-size: 1.3rem;
+			@media #{$white-on-black} {
+				color: $light;
+			}
+			@media #{$black-on-white} {
+				color: $dark;
+			}
 			&:hover {
 				background: $main_lightest;
 				@media #{$white-on-black} {
