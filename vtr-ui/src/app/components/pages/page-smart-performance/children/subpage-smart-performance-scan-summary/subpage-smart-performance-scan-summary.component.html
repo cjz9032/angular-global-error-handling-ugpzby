@@ -119,8 +119,8 @@
 													<p
 														[innerHTML]="'smartPerformance.scanCompletePage.summaryDetails' |translate:{issueCount: issueCount }">
 													</p>
-													<div class="d-flex justify-content-start my-5" *ngIf="isExpired">
-														<button class="action-button mr-3"
+													<div class="d-flex justify-content-start my-5">
+														<button *ngIf="isExpired" class="action-button mr-3"
 															vtrMetrics
 															metricsItem="btn.backtohome"
 															metricsEvent="ItemClick"
