@@ -112,6 +112,12 @@
 
 					&:active {
 						border-color: $shade_blue;
+						@media #{$black-on-white} {
+							border-color: $high-contrast-white-dark-magenta;
+						}
+						@media #{$white-on-black} {
+							border-color: $high-contrast-black-cyan;
+						}
 
 						.check-circle {
 							color: $shade_blue;
@@ -124,6 +130,12 @@
 						.icomoon {
 							&::before {
 								color: $shade_blue;
+								@media #{$black-on-white} {
+									color: $high-contrast-white-dark-magenta;
+								}
+								@media #{$white-on-black} {
+									color: $high-contrast-black-cyan;
+								}
 							}
 						}
 					}
@@ -326,10 +338,10 @@
 						&::before {
 							color: $background !important;
 							@media #{$black-on-white} {
-								color: $high-contrast-white-dark-magenta !important;
+								color: $dark !important;
 							}
 							@media #{$white-on-black} {
-								color: $high-contrast-black-cyan !important;
+								color: $light !important;
 							}
 						}
 					}
