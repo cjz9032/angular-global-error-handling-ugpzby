@@ -7,7 +7,6 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { LocalStorageKey } from '../../enums/local-storage-key.enum'; // VAN-5872, server switch feature
 import { CommonService } from '../common/common.service'; // VAN-5872, server switch feature
 import { CommsService } from '../comms/comms.service';
-import { DevService } from '../dev/dev.service';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { LoggerService } from '../logger/logger.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
@@ -15,8 +14,6 @@ import { throwError, Subscription } from 'rxjs';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ContentSource } from 'src/app/enums/content.enum';
 import { MetricService } from '../metric/metrics.service';
-import { MetricEventName as EventName, PerformanceCategory as PCategory } from 'src/app/enums/metrics.enum';
-import { MetricPerformance } from '../metric/metrics.model';
 
 const httpOptions = {
 	headers: new HttpHeaders({
@@ -42,13 +39,7 @@ export class CMSService implements OnDestroy {
 	localInfo: any;
 	defaultInfo = { Lang: 'en', GEO: 'us', OEM: 'Lenovo', OS: 'Windows', Segment: 'Consumer', Brand: 'Lenovo' };
 	fetchRequestMap = {};
-	requestCMSContentSubscription: Subscription;
 	commonNotificationSubscription: Subscription;
-	endpointGetCall1Subscription: Subscription;
-	endpointGetCall2Subscription: Subscription;
-	endpointGetCall3Subscription: Subscription;
-	endpointGetCall4Subscription: Subscription;
-	endpointGetCall5Subscription: Subscription;
 
 	constructor(
 		private commsService: CommsService,
@@ -322,32 +313,18 @@ export class CMSService implements OnDestroy {
 			observableMsg,
 			applyDeviceFilter } = param;
 
-		let performanceData: MetricPerformance;
-		let httpStart = 0;
-		let httpEnd = 0;
-
-		let filterStart = 0;
-		let filterEnd = 0;
-		let success = false;
-		const elipsedFromStart = Date.now() - this.metricsService.serviceStartup;
 		let results;
 		try {
 
-			httpStart = Date.now();
 			const composeApi = apiParam ? api + apiParam : api;
 			const response: any = await this.commsService.endpointGetCall(composeApi, cmsOption, {}).toPromise();
-			httpEnd = Date.now();
 
 			if (applyDeviceFilter) {
-				filterStart = httpEnd;
 				results = await this.filterCMSContent(response.Results);
-				filterEnd = Date.now();
 
 			} else {
 				results = response.Results;
 			}
-			success = true;
-
 			return results;
 		} catch (ex) {
 			if (observableMsg) {
@@ -356,20 +333,7 @@ export class CMSService implements OnDestroy {
 				throw (ex);
 			}
 		} finally {
-			const httpDuration = httpEnd - httpStart;
-			const filterDuration = filterEnd - filterStart;
-			performanceData = {
-				ItemType: EventName.performance,
-				Category: PCategory.CMS,
-				Host: this.commsService.getCmsHost(),
-				Api: api,
-				Param: apiParam,
-				Success: success,
-				HttpDuration: httpDuration,
-				FilterDuration: filterDuration,
-				ElipsedFromStart: elipsedFromStart
-			};
-			this.metricsService.sendMetrics(performanceData);
+			this.metricsService.performanceMeasurement.handleHttpsCompleteEvent();
 		}
 	}
 
