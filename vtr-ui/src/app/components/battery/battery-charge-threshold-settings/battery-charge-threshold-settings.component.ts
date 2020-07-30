@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, QueryList, ViewChildren } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, QueryList, ViewChildren, OnDestroy } from '@angular/core';
 import { SecureMath } from '@lenovo/tan-client-bridge';
 import { NgbDropdown } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
@@ -7,13 +7,14 @@ import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.mod
 import { KeyCode } from 'src/app/enums/key-code.enum';
 import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
 import { CommonService } from 'src/app/services/common/common.service';
+import { Subscription } from 'rxjs';
 
 @Component({
 	selector: 'vtr-battery-charge-threshold-settings',
 	templateUrl: './battery-charge-threshold-settings.component.html',
 	styleUrls: ['./battery-charge-threshold-settings.component.scss']
 })
-export class BatteryChargeThresholdSettingsComponent implements OnInit {
+export class BatteryChargeThresholdSettingsComponent implements OnInit, OnDestroy {
 
 	@Input() title = '';
 	@Input() displayNoteOnly = false;
@@ -46,6 +47,8 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	@ViewChildren(NgbDropdown) dropDowns: QueryList<NgbDropdown>;
 	timeOut = 100;
 	public readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
+	translateSubscriptionStart: Subscription;
+	translateSubscriptionStop: Subscription;
 	constructor(
 		private commonService: CommonService
 		, private translate: TranslateService
@@ -54,15 +57,13 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 
 
 	ngOnInit() {
-		this.translate.stream('device.deviceSettings.power.batterySettings.batteryThreshold.options.start').subscribe((value) => {
+		this.translateSubscriptionStart = this.translate.stream('device.deviceSettings.power.batterySettings.batteryThreshold.options.start').subscribe((value) => {
 			this.ddStartAtChargeDescription = value;
 		});
 
-		this.translate.stream('device.deviceSettings.power.batterySettings.batteryThreshold.options.start').subscribe((value) => {
-			this.ddStartAtChargeDescription = value;
+		this.translateSubscriptionStop = this.translate.stream('device.deviceSettings.power.batterySettings.batteryThreshold.options.stop').subscribe((value) => {
+			this.ddStopAtChargeDescription = value;
 		});
-
-
 	}
 
 	onStartValueChange(startVal: number, activeDropdown: NgbDropdown, button: HTMLElement) {
@@ -186,6 +187,15 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 			}
 		}
 
+	}
+
+	ngOnDestroy() {
+		if (this.translateSubscriptionStart) {
+			this.translateSubscriptionStart.unsubscribe();
+		}
+		if (this.translateSubscriptionStop) {
+			this.translateSubscriptionStop.unsubscribe();
+		}
 	}
 
 }

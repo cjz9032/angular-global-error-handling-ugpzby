@@ -1,10 +1,10 @@
-import { Injectable, Output, EventEmitter } from '@angular/core';
-import { DevService } from '../dev/dev.service';
-import { VantageShellService } from '../vantage-shell/vantage-shell.service';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
-import { CommonService } from '../common/common.service';
 import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
 import { WhiteListCapability } from '../../data-models/eye-care-mode/white-list-capability.interface';
+import { CommonService } from '../common/common.service';
+import { DevService } from '../dev/dev.service';
+import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 @Injectable()
 export class DisplayService {
 	displayEyeCareMode: any;
@@ -326,7 +326,7 @@ export class DisplayService {
 	public stopMonitorForCameraPermission() {
 		try {
 			if (this.isShellAvailable) {
-				return this.cameraSettings.stopMonitor((response: boolean) => {});
+				return this.cameraSettings.stopMonitor((response: boolean) => { });
 			}
 			return undefined;
 		} catch (error) {

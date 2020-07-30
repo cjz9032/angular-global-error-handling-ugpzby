@@ -4,12 +4,6 @@
 	.vtr-ui-switch-row.#{$name} {
 		.col-auto {
 			height: 100%;
-			@media #{$black-on-white} {
-				margin: 0.2rem;
-			}
-			@media #{$white-on-black} {
-				margin: 0.2rem;
-			}
 		}
 		.vtr-col-pad {
 			padding: 0 1.5rem;
@@ -209,6 +203,29 @@
 			@include ui-button-high-contrast-black;
 			@include ui-button-high-contrast-white;
 			@include high-contrast-adjust;
+
+			&:disabled {
+				@media #{$white-on-black} {
+					@include high-contrast-black-disabled-border;
+					@include high-contrast-background-transparent;
+					@include high-contrast-black-text-color-disabled;
+					border-width: 0.2rem;
+				}
+				@media #{$black-on-white} {
+					@include high-contrast-white-disabled-border;
+					@include high-contrast-background-transparent;
+					@include high-contrast-white-text-color-disabled;
+					border-width: 0.2rem;
+				}
+				span {
+					@media #{$white-on-black} {
+						opacity: 0.5;
+					}
+					@media #{$black-on-white} {
+						opacity: 0.5;
+					}
+				}
+			}
 		}
 	}
 }

@@ -5,6 +5,8 @@
 	background-color: $light;
 	box-shadow: $drop_shadow;
 	padding: 2.4rem;
+	@include high-contrast-border;
+
 	@media #{$mediaquery_X7} {
 		padding: 2rem;
 	}

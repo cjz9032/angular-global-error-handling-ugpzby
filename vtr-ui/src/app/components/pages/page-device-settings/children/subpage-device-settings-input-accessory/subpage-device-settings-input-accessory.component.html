@@ -24,6 +24,7 @@
 						[theme]="'white'"
 						[tabIndex]="0">
 						<ul class="list-group list-group-flush">
+							<!-- Keyboard map & Hidden Functions -->
 							<li class="common-li-padding"
 								*ngIf="machineType == 1 && keyboardCompatibility">
 								<vtr-ui-row-switch
@@ -276,6 +277,7 @@
 								<vtr-user-defined-key></vtr-user-defined-key>
 							</li>
 						</ul>
+						<!-- TouchPad & TrackPad Settings link -->
 						<div class="control-options-block"
 							*ngIf="isTouchPadVisible || isMouseVisible">
 							<div class="row">

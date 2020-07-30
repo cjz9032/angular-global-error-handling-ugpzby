@@ -112,6 +112,12 @@
 
 					&:active {
 						border-color: $shade_blue;
+						@media #{$black-on-white} {
+							border-color: $high-contrast-white-dark-magenta;
+						}
+						@media #{$white-on-black} {
+							border-color: $high-contrast-black-cyan;
+						}
 
 						.check-circle {
 							color: $shade_blue;
@@ -124,6 +130,12 @@
 						.icomoon {
 							&::before {
 								color: $shade_blue;
+								@media #{$black-on-white} {
+									color: $high-contrast-white-dark-magenta;
+								}
+								@media #{$white-on-black} {
+									color: $high-contrast-black-cyan;
+								}
 							}
 						}
 					}
@@ -157,6 +169,15 @@
 							background: transparent;
 							border: 0.2rem solid $high-contrast-black-disabled-green;
 						}
+					}
+				}
+
+				[role="radio"]:hover ~ .text, [role="radio"]:active ~ .text {
+					@media #{$black-on-white} {
+						color: $high-contrast-white-dark-magenta;
+					}
+					@media #{$white-on-black} {
+						color: $high-contrast-black-cyan;
 					}
 				}
 
@@ -297,6 +318,16 @@
 					}
 				}
 
+				[role="radio"][aria-checked="true"] ~ .text, [role="radio"][aria-checked="true"] ~ .text {
+					@media #{$black-on-white} {
+						color: $high-contrast-white-dark-magenta;
+					}
+					@media #{$white-on-black} {
+						color: $high-contrast-black-cyan;
+					}
+				}
+
+
 				.text {
 					font-weight: $weight_light;
 					font-size: $fontsize_xs;
@@ -307,6 +338,12 @@
 				.text-disabled {
 					color: $shade_blue;
 					opacity: 0.6;
+					@media #{$white-on-black} {
+						@include high-contrast-black-text-color-disabled;
+					}
+					@media #{$black-on-white} {
+						@include high-contrast-white-text-color-disabled;
+					}
 				}
 				// icon file css class name
 				span {
@@ -320,10 +357,10 @@
 						&::before {
 							color: $background !important;
 							@media #{$black-on-white} {
-								color: $high-contrast-white-dark-magenta !important;
+								color: $dark !important;
 							}
 							@media #{$white-on-black} {
-								color: $high-contrast-black-cyan !important;
+								color: $light !important;
 							}
 						}
 					}

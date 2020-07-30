@@ -338,6 +338,19 @@
 }
 .disable-state {
 	opacity: 0.65;
+	/* disabled + loading */
+	@media #{$white-on-black} {
+		opacity: 1;
+		.disable-state-loading.title {
+			color: $light !important;
+		}
+	}
+	@media #{$black-on-white} {
+		opacity: 1;
+		.disable-state-loading.title {
+			color: $dark !important;
+		}
+	}
 }
 .disable-container {
 	cursor: default !important;

@@ -17,8 +17,8 @@
 
 					<!-- Defines a style title based on the response received -->
 					<div class="row">
-						<p class="title">{{item.module}}</p>
-						<p class="subtitle">{{item.name}}</p>
+						<p class="title">{{ ('hardwareScan.pluginTokens.' + item.module) | translateDefault:item.module }}</p>
+						<p class="subtitle" *ngIf="item.name">{{ ('hardwareScan.pluginTokens.' + item.name) | translateDefault:item.name }}</p>
 
 						<!-- Icon to expand and collapse details list -->
 						<div *ngIf="isEnableViewResults || item.details"
@@ -69,8 +69,8 @@
 			<table class="table table-details table-active table-borderless">
 				<tbody>
 					<tr *ngFor="let detail of item.details">
-						<th>{{getKey(detail)}}</th>
-						<td>{{getValue(detail)}}</td>
+						<th>{{ ('hardwareScan.' + (isRecoverExecute ? 'recoverBadSectors.' : 'pluginTokens.') + detail.key) | translateDefault:detail.key }}</th>
+						<td>{{ detail.value }}</td>
 					</tr>
 				</tbody>
 			</table>
@@ -114,7 +114,7 @@
 	</div>
 </div>
 <ng-template #tooltipRefModule>
-	<div [innerHTML]="tooltipText"></div>
+	<div>{{ ('hardwareScan.pluginTokens.' + tooltipText) | translateDefault:tooltipText }}</div>
 	<a [attr.href]="contactusUrl"
 		class="link-support"
 		target="_blank"

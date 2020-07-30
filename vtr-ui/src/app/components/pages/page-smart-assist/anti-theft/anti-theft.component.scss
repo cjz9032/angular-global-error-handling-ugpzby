@@ -102,8 +102,25 @@ vtr-ui-row-switch {
   }
 
   .btn-link {
+	  border:0.1rem solid transparent;
+	  @media #{$white-on-black} {
+		@include hyperlink-yellow-black;
+		border: 0.1rem solid transparent;
+	  }
+	  @media #{$black-on-white} {
+		@include hyperlink-blue-white;
+		border: 0.1rem solid transparent;
+	  }
     &:focus {
-      @include outline-border-blue;
+    	@include outline-border-blue;
+
+    	@media #{$white-on-black} {
+    		@include white-border;
+    	}
+
+    	@media #{$black-on-white} {
+    		@include black-border;
+    	}
     }
   }
 

@@ -85,6 +85,14 @@
 							@media #{$white-on-black} {
 								@include ui-button-high-contrast-black-disabled;
 							}
+							.text {
+								@media #{$white-on-black} {
+									opacity: 0.5;
+								}
+								@media #{$black-on-white} {
+									opacity: 0.5;
+								}
+							}
 
 					}
 				}

@@ -7,7 +7,7 @@
 						#checkbox
 						[id]="item.id"
 						[componentId]="item.id"
-						[ariaLabel]="item.name + '-checkbox'"
+						[ariaLabel]="('hardwareScan.pluginTokens.' + item.name | translateDefault:item.name) + '-checkbox'"
 					 	[indeterminate]="item.indeterminate"
 						(click)="onDeviceSelectionClicked(item,checkbox.checked)"
 						[hasChild]="true"
@@ -16,8 +16,8 @@
 						class="custom-control-component"
 					>
 						<p class="custom-control-label-text name">
-							{{ item.name }}
-							<span class="subname">{{ item.subname }}</span>
+							{{ 'hardwareScan.pluginTokens.' + item.name | translateDefault:item.name }}
+							<span class="subname">{{ 'hardwareScan.pluginTokens.' + item.subname | translateDefault:item.subname }}</span>
 						</p>
 					</vtr-ui-checkbox>
 				</div>
@@ -25,7 +25,7 @@
 				<div class="col-auto">
 					<div class="collapse-control select-item"
 						tabindex="0"
-						[attr.aria-label]="item.collapsed ? item.name + '-collapse-submodules-list': item.name + '-expand-submodules-list'"
+						[attr.aria-label]="('hardwareScan.pluginTokens.' + item.name | translateDefault:item.name) + (item.collapsed ? '-collapse-submodules-list': '-expand-submodules-list')"
 						(click)="item.collapsed = !item.collapsed"
 						(keyup.enter)="item.collapsed = !item.collapsed"
 						role="button"
@@ -45,7 +45,7 @@
 								<vtr-ui-checkbox
 									[id]="test.id + id"
 									[componentId]="test.id + id"
-									[ariaLabel]="item.name + test.name"
+									[ariaLabel]="('hardwareScan.pluginTokens.' + item.name | translateDefault:item.name) + ('hardwareScan.pluginTokens.' + test.name | translateDefault:test.name)"
 									[checked]="test.selected"
 									[hasChild]="true"
 									[value]="test.selected"
@@ -53,7 +53,7 @@
 									class="custom-control-component"
 								>
 									<p class="custom-control-label-text">
-										<span class="name-test">&nbsp;{{ test.name }}</span>
+										<span class="name-test">&nbsp;{{ 'hardwareScan.pluginTokens.' + test.name | translateDefault:test.name }}</span>
 									</p>
 								</vtr-ui-checkbox>
 							</div>

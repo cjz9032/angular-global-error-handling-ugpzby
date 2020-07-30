@@ -85,7 +85,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		let subScriptionDates: any = { startDate: '', endDate: '', status: '' };
 		if (this.isSubscribed) {
 			subScriptionDates = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails);
-			if (subScriptionDates && subScriptionDates.startDate && subScriptionDates.endDate) {
+			if (subScriptionDates && subScriptionDates.startDate && subScriptionDates.endDate){
 				this.subscriptionDetails.startDate = this.formatLocaleDate.transform(subScriptionDates.startDate);
 				this.subscriptionDetails.endDate = this.formatLocaleDate.transform(subScriptionDates.endDate);
 				this.subscriptionDetails.status = subScriptionDates.status;
@@ -179,7 +179,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		this.isLoading = true;
 		this.modalStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus) || { initiatedTime: '', isOpened: false };
 		let subscriptionData = [];
-		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails('R90TM0A3');
+		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails(machineInfo.serialnumber);
 		this.logger.info('Subscription Details', subscriptionDetails);
 		if (subscriptionDetails && subscriptionDetails.data) {
 			subscriptionData = subscriptionDetails.data;

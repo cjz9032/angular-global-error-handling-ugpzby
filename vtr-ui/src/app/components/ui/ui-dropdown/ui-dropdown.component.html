@@ -73,7 +73,7 @@
 			<a *ngFor="let item of list; let i = index"
 				role="option"
 				[ngClass]="{ 'selected-list-item': selectedValue === i }"
-				id="userdefinedkey-{{ i }}"
+				id="userdefinedkey-{{ item.metricsValue }}"
 				tabindex="-1"
 				(click)="closeDropdown({ value: i, hideList: false })"
 				[attr.aria-selected]="selectedValue === i ? true : false">{{ item.text | translate }}</a>

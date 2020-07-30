@@ -121,16 +121,25 @@
 		@media #{$black-on-white} {
 			@include hyperlink-blue-white;
 			padding: 0 0.5rem;
-			border: none;
+			border: 0.1rem solid transparent;
 		}
 
 		@media #{$white-on-black} {
 			@include hyperlink-yellow-black;
 			padding: 0 0.5rem;
-			border: none;
+			border: 0.1rem solid transparent;
 		}
 		&:focus {
 			@include outline-border-blue;
+			@media #{$black-on-white} {
+				@include hyperlink-blue-white;
+				@include black-border;
+			}
+
+			@media #{$white-on-black} {
+				@include hyperlink-yellow-black;
+				@include white-border;
+			}
 		}
 	}
 	.optimize {
@@ -177,17 +186,32 @@
 			cursor: pointer;
 			font-size: $body;
 			font-weight: $weight_bold;
+			border: 0.1rem solid transparent;
 			@media #{$black-on-white} {
 				@include hyperlink-blue-white;
+				border: 0.1rem solid transparent;
 			}
 
 			@media #{$white-on-black} {
 				@include hyperlink-yellow-black;
+				border: 0.1rem solid transparent;
 			}
 			&:hover {
 				list-style: none;
 				color: #4a81fd;
 				text-decoration: underline;
+			}
+			&:focus {
+				@include outline-border-blue;
+				@media #{$black-on-white} {
+					@include hyperlink-blue-white;
+					@include black-border;
+				}
+
+				@media #{$white-on-black} {
+					@include hyperlink-yellow-black;
+					@include white-border;
+				}
 			}
 		}
 		fa-icon {

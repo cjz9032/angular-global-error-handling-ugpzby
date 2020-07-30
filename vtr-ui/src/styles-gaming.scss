@@ -169,6 +169,9 @@
 	vtr-page-networkboost,vtr-page-autoclose,
 	vtr-page-device-gaming {
 		.vtr-header-main-inner{
+			.back, .title{
+				color: $gaming_lightest !important;
+			}
 			@media #{$high-contrast} {
 				border: 0 !important;
 			}
@@ -1539,11 +1542,8 @@
 
 		.vtr-page-right-column {
 			background: $gaming_rightbg;
-			@media #{$black-on-white} {
-				background: $light;
-			}
-			@media #{$white-on-black} {
-				background: $dark;
+			@media #{$high_contrast} {
+				background: window;
 			}
 			&::after {
 				content: "";
@@ -1553,10 +1553,10 @@
 				width: calc((100vw - 160rem) / 2);
 				right: calc(((100vw - 160rem) / 2) * -1);
 				background: $gaming_rightbg;
-				//background-image: url("/assets/images/gaming/GradientLine@1x.png");
-				//background-repeat: repeat;
-				//background-size: 100% 100%;
 				z-index: 1;
+				@media #{$high_contrast} {
+					background: window;
+				}
 			}
 
 			@media #{$breakpoint_xl3} {
@@ -2047,7 +2047,7 @@ body.focus-enable{
 		}
 		vtr-page-lightingcustomize,vtr-page-macrokey,
 		vtr-page-networkboost,vtr-page-autoclose,vtr-page-device-gaming{
-		.remove-app,li.add-icon div,.delete-btn,
+		.remove-app,li.add-icon div,.delete-btn,.delete-wrapper,
 		.help-box button,vtr-ui-toggle button,.gaming-popup-window{
 			&:focus{
 				@include solid-button-outline;

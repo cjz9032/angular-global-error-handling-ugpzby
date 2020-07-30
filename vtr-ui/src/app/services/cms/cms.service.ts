@@ -1,18 +1,17 @@
-import { Injectable, SecurityContext } from '@angular/core';
+import { Injectable, SecurityContext, OnDestroy } from '@angular/core';
 import { HttpHeaders } from '@angular/common/http';
-
-import { CommsService } from '../comms/comms.service';
-import { CommonService } from '../common/common.service'; // VAN-5872, server switch feature
-import { LocalStorageKey } from '../../enums/local-storage-key.enum'; // VAN-5872, server switch feature
 import { Observable } from 'rxjs/internal/Observable';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import { LocalInfoService } from '../local-info/local-info.service';
+import { LocalStorageKey } from '../../enums/local-storage-key.enum'; // VAN-5872, server switch feature
+import { CommonService } from '../common/common.service'; // VAN-5872, server switch feature
+import { CommsService } from '../comms/comms.service';
 import { DevService } from '../dev/dev.service';
+import { LocalInfoService } from '../local-info/local-info.service';
 import { LoggerService } from '../logger/logger.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { throwError } from 'rxjs';
+import { throwError, Subscription } from 'rxjs';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ContentSource } from 'src/app/enums/content.enum';
 
@@ -25,13 +24,21 @@ const httpOptions = {
 @Injectable({
 	providedIn: 'root'
 })
-export class CMSService {
+export class CMSService implements OnDestroy {
 	language: string;
 	region: string;
 	segment: string; // VAN-5872, server switch feature
 	localInfo: any;
 	defaultInfo = { Lang: 'en', GEO: 'us', OEM: 'Lenovo', OS: 'Windows', Segment: 'Consumer', Brand: 'Lenovo' };
 	fetchRequestMap = {};
+	requestCMSContentSubscription: Subscription;
+	commonNotificationSubscription: Subscription;
+	endpointGetCall1Subscription: Subscription;
+	endpointGetCall2Subscription: Subscription;
+	endpointGetCall3Subscription: Subscription;
+	endpointGetCall4Subscription: Subscription;
+	endpointGetCall5Subscription: Subscription;
+
 	constructor(
 		private commsService: CommsService,
 		private vantageShellService: VantageShellService,
@@ -97,7 +104,7 @@ export class CMSService {
 				this.localInfoService.getLocalInfo().then(result => {
 					this.localInfo = result;
 				}).finally(() => {
-					this.requestCMSContent(queryParams, this.localInfo || this.defaultInfo).subscribe(subscriber);
+					this.requestCMSContentSubscription = this.requestCMSContent(queryParams, this.localInfo || this.defaultInfo).subscribe(subscriber);
 				});
 			});
 		} else {
@@ -126,7 +133,7 @@ export class CMSService {
 					subscriber.error(ex);
 				});
 			} else {
-				this.commonService.notification.subscribe((notification: AppNotification) => {
+				this.commonNotificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 					if (notification && notification.type === NetworkStatus.Online) {
 						this.getCMSContent(CMSOption).then(response => {
 							subscriber.next(response);
@@ -145,7 +152,7 @@ export class CMSService {
 			this.fetchRequestMap[requestKey] = this.commsService.endpointGetCall(
 				'/api/v1/features', CMSOption, httpOptions// VAN-5872, server switch feature
 			).toPromise();
-		};
+		}
 
 		try {
 			const response = await this.fetchRequestMap[requestKey];
@@ -182,7 +189,7 @@ export class CMSService {
 		const CMSOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
 
 		return new Promise((resolve, reject) => {
-			this.commsService.endpointGetCall('/api/v1/articlecategories',
+			this.endpointGetCall1Subscription = this.commsService.endpointGetCall('/api/v1/articlecategories',
 				/*queryParams*/
 				CMSOption, // VAN-5872, server switch feature
 				{}).subscribe(
@@ -193,13 +200,13 @@ export class CMSService {
 							},
 							(reason) => {
 								// reject('fetchCMSContent error');
-								throwError(new Error('fetchCMSContent error'))
+								throwError(new Error('fetchCMSContent error'));
 							}
 						);
 					},
 					error => {
 						// reject('fetchCMSContent error');
-						throwError(new Error('fetchCMSContent error'))
+						throwError(new Error('fetchCMSContent error'));
 					}
 				);
 		});
@@ -232,7 +239,7 @@ export class CMSService {
 		const CMSOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
 
 		return new Promise((resolve, reject) => {
-			this.commsService.endpointGetCall('/api/v1/articles',
+			this.endpointGetCall2Subscription = this.commsService.endpointGetCall('/api/v1/articles',
 				/*queryParams*/
 				CMSOption, // VAN-5872, server switch feature
 				{}).subscribe(
@@ -243,13 +250,13 @@ export class CMSService {
 							},
 							(reason) => {
 								// reject('fetchCMSContent error');
-								throwError(new Error('fetchCMSContent error'))
+								throwError(new Error('fetchCMSContent error'));
 							}
 						);
 					},
 					error => {
 						// reject('fetchCMSArticles error');
-						throwError(new Error('fetchCMSContent error'))
+						throwError(new Error('fetchCMSContent error'));
 					}
 				);
 		});
@@ -275,7 +282,7 @@ export class CMSService {
 		const CMSOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
 
 		return new Promise((resolve, reject) => {
-			this.commsService.endpointGetCall(
+			this.endpointGetCall3Subscription = this.commsService.endpointGetCall(
 				'/api/v1/articles/' + articleId,
 				/*Object.assign({ Lang: that.language }, queryParams)*/
 				CMSOption // VAN-5872, server switch feature
@@ -385,7 +392,7 @@ export class CMSService {
 		const CMSOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
 
 		return new Promise((resolve, reject) => {
-			this.commsService.endpointGetCall('/api/v1/entitledapps',
+			this.endpointGetCall4Subscription = this.commsService.endpointGetCall('/api/v1/entitledapps',
 				CMSOption,
 				{}).subscribe(
 					(response: any) => {
@@ -393,7 +400,7 @@ export class CMSService {
 					},
 					error => {
 						// reject('fetchCMSEntitledAppList error');
-						throwError(new Error('fetchCMSEntitledAppList error'))
+						throwError(new Error('fetchCMSEntitledAppList error'));
 					}
 				);
 		});
@@ -407,7 +414,7 @@ export class CMSService {
 		const CMSOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
 
 		return new Promise((resolve, reject) => {
-			this.commsService.endpointGetCall('/api/v1/apps/' + appId,
+			this.endpointGetCall5Subscription = this.commsService.endpointGetCall('/api/v1/apps/' + appId,
 				CMSOption,
 				{}).subscribe(
 					(response: any) => {
@@ -415,9 +422,33 @@ export class CMSService {
 					},
 					error => {
 						// reject('fetchCMSAppDetails error');
-						throwError(new Error('fetchCMSAppDetails error'))
+						throwError(new Error('fetchCMSAppDetails error'));
 					}
 				);
 		});
+	}
+
+	ngOnDestroy() {
+		if (this.requestCMSContentSubscription) {
+			this.requestCMSContentSubscription.unsubscribe();
+		}
+		if (this.commonNotificationSubscription) {
+			this.commonNotificationSubscription.unsubscribe();
+		}
+		if (this.endpointGetCall1Subscription) {
+			this.endpointGetCall1Subscription.unsubscribe();
+		}
+		if (this.endpointGetCall2Subscription) {
+			this.endpointGetCall2Subscription.unsubscribe();
+		}
+		if (this.endpointGetCall3Subscription) {
+			this.endpointGetCall3Subscription.unsubscribe();
+		}
+		if (this.endpointGetCall4Subscription) {
+			this.endpointGetCall4Subscription.unsubscribe();
+		}
+		if (this.endpointGetCall5Subscription) {
+			this.endpointGetCall5Subscription.unsubscribe();
+		}
 	}
 }

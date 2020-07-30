@@ -115,6 +115,18 @@
 			color: $main;
 		}
 
+		&:hover {
+			&::before {
+				@media #{$black-on-white} {
+					@include high-contrast-white-border;
+				}
+
+				@media #{$white-on-black} {
+					@include high-contrast-black-border;
+				}
+			}
+		}
+
 	}
 
 	input[type="radio"]:not(:checked) + label::after {
@@ -123,6 +135,15 @@
 	}
 	input:checked + label::after {
 		opacity: 1;
+	}
+
+	input:checked + label::before {
+		@media #{$white-on-black} {
+			@include high-contrast-black-border;
+		}
+		@media #{$black-on-white} {
+			@include high-contrast-white-border;
+		}
 	}
 
 	input {
@@ -137,11 +158,47 @@
 			opacity: 1 !important;
 			background-color: $menu_hover !important;
 		}
+		&:hover, &:active {
+			@media #{$white-on-black} {
+				border-color: $high-contrast-sky-blue;
+			}
+			@media #{$black-on-white} {
+				border-color: $shade_blue;
+			}
+		}
 	}
 	&.disabled-grey{
 		label::after {
 			opacity: 1 !important;
 			background-color: $light-grey !important;
+			@media #{$white-on-black} {
+				background-color: $high-contrast-black-disabled-green !important;
+			}
+			@media #{$black-on-white} {
+				background-color: $high-contrast-white-disabled-maroon !important;
+			}
+		}
+		label::before {
+			@media #{$white-on-black} {
+				border-color: $high-contrast-black-disabled-green !important;
+			}
+			@media #{$black-on-white} {
+				border-color: $high-contrast-white-disabled-maroon !important;
+			}
+		}
+		.label {
+			@media #{$white-on-black} {
+				@include high-contrast-black-text-color-disabled;
+			}
+			@media #{$black-on-white} {
+				@include high-contrast-white-text-color-disabled;
+			}
+		}
+		@media #{$white-on-black} {
+			border: 0.2rem solid $high-contrast-black-disabled-green;
+		}
+		@media #{$black-on-white} {
+			border: 0.2rem solid $high-contrast-white-disabled-maroon;
 		}
 	}
 	&.border-grey {
@@ -155,13 +212,31 @@
 	label {
 		&:after, &:before {
 			border-color: $light-grey;
+			@media #{$white-on-black} {
+				border-color: $high-contrast-black-disabled-green;
+			}
+			@media #{$black-on-white} {
+				border-color: $high-contrast-white-disabled-maroon;
+			}
 		}
 		&:after {
 			background-color: $light-grey !important;
+			@media #{$white-on-black} {
+				background-color: $high-contrast-black-disabled-green !important;
+			}
+			@media #{$black-on-white} {
+				background-color: $high-contrast-white-disabled-maroon !important;
+			}
 		}
 		&:hover {
 			cursor: not-allowed;
 		}
+	}
+	@media #{$white-on-black} {
+		border-color: $high-contrast-black-disabled-green;
+	}
+	@media #{$black-on-white} {
+		border-color: $high-contrast-white-disabled-maroon;
 	}
 }
 .icomoon-Special-function, .icomoon-F1-F12-funciton {

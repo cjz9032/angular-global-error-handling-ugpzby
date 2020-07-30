@@ -53,25 +53,32 @@
 		padding: 1rem;
 		border-radius: 1.5rem;
 		background: linear-gradient($gradient_angle_reverse, $main_darkest 0%, $main_darker 100%);
-			::ng-deep .mat-progress-bar-fill::after {
+
+		::ng-deep .mat-progress-bar-fill::after {
 			background: linear-gradient(90deg, $go 0%, $go 100%);
 		}
-			::ng-deep .mat-progress-bar-buffer {
+		::ng-deep .mat-progress-bar-buffer {
 			background: $light;
 		}
-			::ng-deep .mat-progress-bar {
+		::ng-deep .mat-progress-bar {
 			border-radius: 0.4rem;
 		}
-		.progress {
+
+		@include high-contrast-border;
+		::ng-deep .progress {
 			height: 0.2rem;
+
 			.progress-bar {
-				height: 0.8rem;
 				border-radius: 0.8rem;
-				margin-top: -0.3rem;
+				margin-top: 0;
+
+				@include high-contrast-background-color-reversal;
 				&.bg-info {
 					background: linear-gradient(90deg, $go_light 0%, $go_dark 100%) !important;
 				}
 			}
+
+			@include high-contrast-border;
 		}
 	}
 }
@@ -103,32 +110,43 @@
 	padding-bottom: 2.5rem;
 }
 
-.animated-dots:after {
-	content: '. ';
+@mixin dots($color) {
 	animation: dots 2s steps(5, end) infinite;
+
+	@keyframes dots {
+		0%, 20% {
+			color: rgba(0,0,0,0);
+			text-shadow:
+				.25em 0 0 rgba(0,0,0,0),
+				.5em 0 0 rgba(0,0,0,0);
+		}
+		40% {
+			color: $color;
+			text-shadow:
+				.25em 0 0 rgba(0,0,0,0),
+				.5em 0 0 rgba(0,0,0,0);
+		}
+		60% {
+			text-shadow:
+				.25em 0 0 $color,
+				.5em 0 0 rgba(0,0,0,0);
+		}
+		80%, 100% {
+			text-shadow:
+				.25em 0 0 $color,
+				.5em 0 0 $color;
+		}
+	}
 }
 
-@keyframes dots {
-	0%, 20% {
-		color: rgba(0,0,0,0);
-		text-shadow:
-		  .25em 0 0 rgba(0,0,0,0),
-		  .5em 0 0 rgba(0,0,0,0);
-	}
-	40% {
-		color: $light;
-		text-shadow:
-			.25em 0 0 rgba(0,0,0,0),
-			.5em 0 0 rgba(0,0,0,0);
-	}
-	60% {
-		text-shadow:
-			.25em 0 0 $light,
-			.5em 0 0 rgba(0,0,0,0);
-	}
-	80%, 100% {
-		text-shadow:
-			.25em 0 0 $light,
-			.5em 0 0 $light;
+.animated-dots:after {
+	content: '. ';
+
+	// Used when high contrast is not active or is white-on-black
+	@include dots($light);
+
+	@media #{$black-on-white} {
+		@include dots($dark);
 	}
 }
+

@@ -1,9 +1,11 @@
 // this is for extending the wifisecurity feature of Phoenix
 // Not support injectable
-import { SecurityAdvisorNotifications } from 'src/app/enums/security-advisor-notifications.enum';
-import { CommonService } from '../common/common.service';
+import { Emitter } from 'mitt';
 import * as phoenix from '@lenovo/tan-client-bridge';
 import { Emitable } from '@lenovo/tan-client-bridge/type/base';
+
+import { SecurityAdvisorNotifications } from 'src/app/enums/security-advisor-notifications.enum';
+import { CommonService } from '../common/common.service';
 
 export class WifisecurityProxy implements phoenix.WifiSecurity {
 
@@ -14,35 +16,35 @@ export class WifisecurityProxy implements phoenix.WifiSecurity {
 		this.wifisecurity = originWifiSecurity;
 		this.commonService = commonService;
 	}
-	get mitt(): mitt.Emitter { return this.wifisecurity.mitt };
-	set mitt(value: mitt.Emitter) { this.wifisecurity.mitt = value };
+	get mitt(): Emitter { return this.wifisecurity.mitt; }
+	set mitt(value: Emitter) { this.wifisecurity.mitt = value; }
 
-	get state(): string { return this.wifisecurity.state };
-	set state(value: string) { this.wifisecurity.state = value };
+	get state(): string { return this.wifisecurity.state; }
+	set state(value: string) { this.wifisecurity.state = value; }
 
-	get wifiHistory(): phoenix.WifiDetail[] { return this.wifisecurity.wifiHistory };
-	set wifiHistory(value: phoenix.WifiDetail[]) { this.wifisecurity.wifiHistory = value };
+	get wifiHistory(): phoenix.WifiDetail[] { return this.wifisecurity.wifiHistory; }
+	set wifiHistory(value: phoenix.WifiDetail[]) { this.wifisecurity.wifiHistory = value; }
 
-	get isLocationServiceOn(): boolean { return this.wifisecurity.isLocationServiceOn };
-	set isLocationServiceOn(value: boolean) { this.wifisecurity.isLocationServiceOn = value };
+	get isLocationServiceOn(): boolean { return this.wifisecurity.isLocationServiceOn; }
+	set isLocationServiceOn(value: boolean) { this.wifisecurity.isLocationServiceOn = value; }
 
-	get isLWSPluginInstalled(): boolean { return this.wifisecurity.isLWSPluginInstalled };
+	get isLWSPluginInstalled(): boolean { return this.wifisecurity.isLWSPluginInstalled; }
 	set isLWSPluginInstalled(value: boolean) { this.wifisecurity.isLWSPluginInstalled = value; }
 
-	get hasSystemPermissionShowed(): boolean { return this.wifisecurity.hasSystemPermissionShowed };
-	set hasSystemPermissionShowed(value: boolean) { this.wifisecurity.hasSystemPermissionShowed = value };
+	get hasSystemPermissionShowed(): boolean { return this.wifisecurity.hasSystemPermissionShowed; }
+	set hasSystemPermissionShowed(value: boolean) { this.wifisecurity.hasSystemPermissionShowed = value; }
 
-	get isDevicePermissionOn(): boolean { return this.wifisecurity.isDevicePermissionOn };
+	get isDevicePermissionOn(): boolean { return this.wifisecurity.isDevicePermissionOn; }
 	set isDevicePermissionOn(value: boolean) { this.wifisecurity.isDevicePermissionOn = value; }
 
-	get isAllAppsPermissionOn(): boolean { return this.wifisecurity.isAllAppsPermissionOn };
-	set isAllAppsPermissionOn(value: boolean) { this.wifisecurity.isAllAppsPermissionOn = value };
+	get isAllAppsPermissionOn(): boolean { return this.wifisecurity.isAllAppsPermissionOn; }
+	set isAllAppsPermissionOn(value: boolean) { this.wifisecurity.isAllAppsPermissionOn = value; }
 
-	get isSupported(): boolean { return this.wifisecurity.isSupported };
-	set isSupported(value: boolean) { this.wifisecurity.isSupported = value };
+	get isSupported(): boolean { return this.wifisecurity.isSupported; }
+	set isSupported(value: boolean) { this.wifisecurity.isSupported = value; }
 
-	get changeWifiSecurity(): boolean { return this.wifisecurity.changeWifiSecurity };
-	set changeWifiSecurity(value: boolean) { this.wifisecurity.changeWifiSecurity = value };
+	get changeWifiSecurity(): boolean { return this.wifisecurity.changeWifiSecurity; }
+	set changeWifiSecurity(value: boolean) { this.wifisecurity.changeWifiSecurity = value; }
 
 	launchLocationPrivacy(): Promise<boolean> {
 		return this.wifisecurity.launchLocationPrivacy();

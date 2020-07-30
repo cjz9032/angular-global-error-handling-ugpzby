@@ -2,6 +2,42 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.19](https://bitbucket.tc.lenovo.com///compare/v1.7.18...v1.7.19) (2020-07-29)
+
+### [1.7.18](https://bitbucket.tc.lenovo.com///compare/v1.7.17...v1.7.18) (2020-07-29)
+
+
+### Bug Fixes
+
+* **Antivirus style:** VAN-20840 VAN-20843 modify fontsize of mcafee ([2454f46](https://bitbucket.tc.lenovo.com///commit/2454f4633ace2ca34d10626e21a8d69aacbf5435))
+
+### [1.7.17](https://bitbucket.tc.lenovo.com///compare/v1.7.15...v1.7.17) (2020-07-28)
+
+
+### Features
+
+* **NLS Antivirus:** VAN-19954 update AV others page NLS ([00772c0](https://bitbucket.tc.lenovo.com///commit/00772c05acbf88cb977e14703526f0720c3f361a))
+
+
+### Bug Fixes
+
+* **wifi-security:** add missing type import ([582e820](https://bitbucket.tc.lenovo.com///commit/582e8205a044ae9b831da84553e2042a5a06ba7c))
+
+### [1.7.16](https://bitbucket.tc.lenovo.com///compare/v1.7.15...v1.7.16) (2020-07-27)
+
+
+### Bug Fixes
+
+* **wifi-security:** add missing type import ([582e820](https://bitbucket.tc.lenovo.com///commit/582e8205a044ae9b831da84553e2042a5a06ba7c))
+
+### [1.7.15](https://bitbucket.tc.lenovo.com///compare/v1.7.14...v1.7.15) (2020-07-24)
+
+
+### Bug Fixes
+
+* **Antivirus UI:** van-20713 fix launch btn can't work and update UI ([d271f5f](https://bitbucket.tc.lenovo.com///commit/d271f5f79fdf86c0703ac418a120e54a09fc6109))
+* **high contrast:** link button shouldn't change when hover on it ([ba078b3](https://bitbucket.tc.lenovo.com///commit/ba078b3a0057e477bd69ace6449c984985987976))
+
 ### [1.7.14](https://bitbucket.tc.lenovo.com///compare/v1.7.13...v1.7.14) (2020-07-23)
 
 ### [1.7.13](https://bitbucket.tc.lenovo.com///compare/v1.7.12...v1.7.13) (2020-07-22)

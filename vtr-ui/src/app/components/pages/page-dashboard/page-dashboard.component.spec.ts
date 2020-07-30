@@ -29,6 +29,7 @@ import { UserService } from 'src/app/services/user/user.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { WarrantyService } from 'src/app/services/warranty/warranty.service';
 import { PageDashboardComponent } from './page-dashboard.component';
+import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 
 
 class TranslateServiceStub {
@@ -55,7 +56,15 @@ class TranslateServiceStub {
 describe('PageDashboardComponent', () => {
 	let component: PageDashboardComponent;
 	let fixture: ComponentFixture<PageDashboardComponent>;
+	// let audioService: AudioService;
+	let commonService: CommonService;
+	/* 	let logger: LoggerService;
+		let deviceService: DeviceService;
+		let cmsService: CMSService;
+		let qaService: QaService; */
 
+	let translate: TranslateService;
+	let originalTimeout;
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			declarations: [PageDashboardComponent, FormatLocaleDatePipe],
@@ -101,9 +110,39 @@ describe('PageDashboardComponent', () => {
 		fixture = TestBed.createComponent(PageDashboardComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
+		originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
+		jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
 	});
 
 	it('should create', () => {
+		fixture = TestBed.createComponent(PageDashboardComponent);
+		component = fixture.componentInstance;
+		translate = TestBed.inject(TranslateService);
+		commonService = TestBed.inject(CommonService);
+		spyOn(component, 'ngOnInit');
+		// const welcomeTut: WelcomeTutorial = { page: 2, tutorialVersion: 'someVersion', isDone: true };
+		// spyOn(commonService, 'getLocalStorageValue').and.returnValue(welcomeTut);
+		spyOnProperty(translate, 'onLangChange', 'get').and.returnValue(
+			of({ lang: 'fr' })
+		);
+		// fixture.detectChanges();
 		expect(component).toBeTruthy();
+	});
+
+	it('should call ngOnDestroy', () => {
+		fixture = TestBed.createComponent(PageDashboardComponent);
+		component = fixture.componentInstance;
+		translate = TestBed.inject(TranslateService);
+		commonService = TestBed.inject(CommonService);
+		const spy = spyOn(component, 'ngOnDestroy');
+
+		// fixture.detectChanges();
+		component.ngOnDestroy();
+		expect(spy).toHaveBeenCalled();
+	});
+
+
+	afterEach(() => {
+		jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
 	});
 });

@@ -72,6 +72,10 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	hideDropDown = false;
 	segment: string;
 	headerLogo: string;
+	routerEventSubscription: Subscription;
+	translateSubscription: Subscription;
+	unsupportedFeatureSubscription: Subscription;
+	topRowFnSubscription: Subscription;
 
 	VantageLogo = `
 		data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c
@@ -171,7 +175,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	}
 
 	private initComponent() {
-		this.router.events.subscribe((ev) => {
+		this.routerEventSubscription = this.router.events.subscribe((ev) => {
 			if (ev instanceof NavigationEnd) {
 				this.currentUrl = ev.url;
 				if (this.currentUrl === '/device-gaming' || this.currentUrl === '/gaming') {
@@ -182,13 +186,13 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			}
 		});
 
-		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+		this.translateSubscription = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 			if (this.translate.currentLang === 'en') {
 				this.showSearchMenu = true;
 			}
 		});
 		this.unsupportFeatureEvt = this.searchService.getUnsupportFeatureEvt();
-		this.unsupportFeatureEvt.subscribe(featureDesc => {
+		this.unsupportedFeatureSubscription = this.unsupportFeatureEvt.subscribe(featureDesc => {
 			if (this.searchTipsTimeout) {
 				clearTimeout(this.searchTipsTimeout);
 			}
@@ -355,7 +359,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		if (machineType === 0) {
 			// todo: in case unexpected showing up in edge case when u remove drivers. should be a safety way to check capability.
 			this.commonService.setLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability, false);
-			this.topRowFunctionsIdeapadService.capability
+			this.topRowFnSubscription = this.topRowFunctionsIdeapadService.capability
 				.pipe(
 					catchError(() => {
 						window.localStorage.removeItem(LocalStorageKey.TopRowFunctionsCapability);
@@ -397,6 +401,18 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		}
 		if (this.backlightCapabilitySubscription) {
 			this.backlightCapabilitySubscription.unsubscribe();
+		}
+		if (this.routerEventSubscription) {
+			this.routerEventSubscription.unsubscribe();
+		}
+		if (this.translateSubscription) {
+			this.translateSubscription.unsubscribe();
+		}
+		if (this.unsupportedFeatureSubscription) {
+			this.unsupportedFeatureSubscription.unsubscribe();
+		}
+		if (this.topRowFnSubscription) {
+			this.topRowFnSubscription.unsubscribe();
 		}
 	}
 

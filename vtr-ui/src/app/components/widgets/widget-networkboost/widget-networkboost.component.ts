@@ -46,8 +46,9 @@ export class WidgetNetworkboostComponent implements OnInit, OnChanges {
 				this.sendAddedApps();
 				this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoostList, appList);
 			}
-			if (doFocus) {
-				document.getElementById('networkboost_addButton').focus();
+			const focusElement = document.getElementById('networkboost_addButton_clickable');
+			if (doFocus && focusElement) {
+				focusElement.focus();
 			}
 		} catch (error) {
 		}

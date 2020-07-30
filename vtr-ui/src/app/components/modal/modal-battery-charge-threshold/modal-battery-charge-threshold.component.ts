@@ -17,7 +17,8 @@ export class ModalBatteryChargeThresholdComponent implements OnInit {
 	negativeResponseText: string;
 	buttonId: string;
 
-	constructor(public activeModal: NgbActiveModal,
+	constructor(
+		public activeModal: NgbActiveModal,
 		public translate: TranslateService,
 		public batteryService: BatteryDetailService) { }
 
@@ -28,7 +29,7 @@ export class ModalBatteryChargeThresholdComponent implements OnInit {
 		modal.focus();
 	}
 
-	enableBatteryChargeThreshold() {
+	onPositiveButtonClick() {
 		this.activeModal.close('positive');
 	}
 

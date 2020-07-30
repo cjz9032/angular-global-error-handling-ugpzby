@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, HostListener, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -24,6 +24,7 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 	countryCode: any;
 	langCode: any;
 	paymenturl: string;
+	@ViewChild('btn') btn: ElementRef;
 	@Output() cancelPaymentRequest: EventEmitter<any> = new EventEmitter();
 	public subscriptionDetails = [
 		{
@@ -62,6 +63,9 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 				this.spPaymentPageenum.APPLICATIONNAME;
 
 		});
+		setTimeout(() => {
+			this.btn.nativeElement.focus();
+		}, 500);
 	}
 	confirmProcess() {
 		window.open(this.paymenturl);

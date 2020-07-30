@@ -1,14 +1,13 @@
 <div class="vtr-battery-indicator"
 	#batteryIndicator>
 	<div class="cell">
-		<div class="battery-shadow"
-			></div>
+		<div class="battery-shadow"></div>
 		<div #battery
 			*ngIf="!isWinRTLoading"
 			[class]="isInDetailsModal?'battery detail-battery': 'battery'">
 			<div class="acid-container">
-				<div class="fill"
-					></div>
+				<div class="fill"></div>
+				<!-- Battery Percentage -->
 				<div class="percentage"
 					*ngIf="!batteryNotDetected"
 					id="batteryPercentage"
@@ -18,6 +17,7 @@
 						%
 					</span>
 				</div>
+				<!-- Battery Not Detected case -->
 				<div class="battery-error d-flex justify-content-center align-items-center"
 					*ngIf="batteryNotDetected">
 					<span class="icomoon icomoon-NoBatteryError error-icon"
@@ -36,6 +36,7 @@
 					</span>
 				</div>
 			</div>
+			<!-- time text inside battery -->
 			<div *ngIf="!batteryNotDetected && !hideRemainingTimeTxt">
 				<div class="remaining-time"
 					role="text"
@@ -55,28 +56,35 @@
 					{{'device.deviceSettings.batteryGauge.charge' | translate}}
 				</div>
 			</div>
+
+			<!-- Icons inside battery -->
 			<div class="battery-charging"
 				*ngIf="!batteryNotDetected">
+				<!-- Only Charging -->
 				<span *ngIf="(isCharging && !(isExpressCharging || isAirplaneMode || isChargeThresholdOn))"
 					class="icomoon icomoon-FA-Plug2x"
 					role="img"
 					aria-label="battery is charging"
 					id="batteryIcon-Charging"></span>
+				<!-- Charging with rapid charging ON -->
 				<span *ngIf="(isCharging && isExpressCharging)"
 					class="icomoon icomoon-LE-expressCharging2x"
 					role="img"
 					aria-label="battery is charging rapidly"
 					id="batteryIcon-ExpressCharging"></span>
+				<!-- airplane mode ON without charging (overrides over threshold) -->
 				<span *ngIf="(!isCharging && isAirplaneMode)"
 					class="icomoon icomoon-LE-Airplanemode2x"
 					role="img"
 					aria-label="battery is discharging in airplane power mode"
 					id="batteryIcon-AirplaneMode"></span>
+				<!-- Charging with airplane mode ON -->
 				<span *ngIf="(isCharging && isAirplaneMode)"
 					class="icomoon icomoon-LE-AirplanemodeCharging2x"
 					role="img"
 					aria-label="battery is charging in airplane power mode"
 					id="batteryIcon-Charging-AirplaneMode"></span>
+				<!-- Charging with Threshold ON and airplane mode OFF -->
 				<span *ngIf="(isCharging && isChargeThresholdOn && !isAirplaneMode)"
 					class="icomoon icomoon-LE-ConservationCharging2x"
 					role="img"

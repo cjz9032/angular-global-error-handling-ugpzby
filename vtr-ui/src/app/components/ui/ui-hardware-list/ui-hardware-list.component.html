@@ -13,14 +13,14 @@
 							</ng-template>
 						</div>
 
-						<div class="title" [ngClass]="{'not-applicable': item.statusTest === testResultEnum.Na, 'item-failed': item.statusTest === testResultEnum.Fail}">{{ item.name }}</div>
-						<div class="subtitle" *ngIf="item.subname">{{ item.subname }}</div>
+						<div class="title" [ngClass]="{'not-applicable': item.statusTest === testResultEnum.Na, 'item-failed': item.statusTest === testResultEnum.Fail}">{{ ('hardwareScan.pluginTokens.' + item.name) | translateDefault:item.name }}</div>
+						<div class="subtitle" *ngIf="item.subname">{{ ('hardwareScan.pluginTokens.' + item.subname) | translateDefault:item.subname }}</div>
 						<div class="span-not-applicable" *ngIf="item.statusTest === testResultEnum.Na">{{ 'hardwareScan.testNotApplicable' | translate }}</div>
 					</div>
 					<div class="item-right" *ngIf="item.information">
 						<a href="javascript:void(0)"
 							role="img"
-							[attr.aria-label]="item.name + 'tooltip, which reads: ' + item.information"
+							[attr.aria-label]="item.name + 'tooltip, which reads: ' + ('hardwareScan.pluginTokens.' + information | translate)"
 							(click)="getInformation(item.information); tooltip.toggle()"
 							class="result-code-icon"
 							triggers="manual"
@@ -44,5 +44,5 @@
 </div>
 
 <ng-template #tooltipRefItem>
-	<div [innerHTML]="information"></div>
+	<div>{{ ('hardwareScan.pluginTokens.' + information) | translateDefault:information }}</div>
 </ng-template>

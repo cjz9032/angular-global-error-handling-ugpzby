@@ -23,9 +23,10 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	@Input() percentage = 50; // number without % symbol
 	@Input() remainingHour = 0; // number of hours remaining
 	@Input() remainingMinutes = 0; // number of minutes remaining
-	@Input() timeText = '';
-	@Input() batteryNotDetected = false;
-	@Input() isAirplaneMode = false;
+	@Input() timeText = '';	// time text inside battery
+	@Input() batteryNotDetected = false;	// boolean indicator if battery is detected or not
+	@Input() isAirplaneMode = false;		// boolean indicator if airplane power mode is on/off
+	// boolean indicator if charge threshold is on/off(Thinkpad) or conservation mode on/off(Ideapad)
 	@Input() isChargeThresholdOn = false;
 	@Input() isInDetailsModal = false;
 
@@ -39,10 +40,11 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
+		// refresh battery Icon if there is change in value of input properties of component
 		if ((changes.percentage && !changes.percentage.firstChange) || changes.batteryNotDetected) {
-			this.refreshLevel();
+			this.refreshLevel(); // update background & border colors based on percent value
 		}
-		this.checkRemainingTimeIsZero();
+		this.checkRemainingTimeIsZero();	// update timeText inside battery
 	}
 
 	// Note : when page is resized, battery fill is not showing correctly.

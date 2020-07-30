@@ -12,7 +12,7 @@
 							(change)="onSelectDevice()" />
 						<label class="custom-control-label name"
 							for="{{ i }}">
-							<span class="title">{{ device.title }}</span>
+							<span class="title">{{ 'hardwareScan.pluginTokens.' + device.title | translateDefault:device.title }}</span>
 						</label>
 					</div>
 				</div>

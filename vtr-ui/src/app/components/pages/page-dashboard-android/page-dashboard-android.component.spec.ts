@@ -39,9 +39,13 @@ class TranslateServiceStub {
 		return of({ lang: 'en' });
 	}
 }
+
 describe('PageDashboardAndroidComponent', () => {
 	let component: PageDashboardAndroidComponent;
 	let fixture: ComponentFixture<PageDashboardAndroidComponent>;
+	let deviceService: DeviceService;
+	let cmsService: CMSService;
+	let configService: ConfigService;
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
@@ -78,11 +82,27 @@ describe('PageDashboardAndroidComponent', () => {
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(PageDashboardAndroidComponent);
+		deviceService = TestBed.inject(DeviceService);
+		cmsService = TestBed.inject(CMSService);
+		configService = TestBed.inject(ConfigService);
 		component = fixture.componentInstance;
+		(deviceService as any).isGaming = false;
+		(configService as any).isGaming = false;
 		fixture.detectChanges();
 	});
 
 	it('should create', () => {
 		expect(component).toBeTruthy();
 	});
+
+	/* it('should call fetchCmsContents', () => {
+
+		const comp = (component as any);
+		// const spy = spyOn(comp, 'fetchCmsContents').and.callThrough();
+		const spyGetOneCMSContent = spyOn(cmsService, 'fetchCMSContent');
+		comp.fetchCmsContents();
+		// expect(spy).toHaveBeenCalled();
+
+		expect(spyGetOneCMSContent).toHaveBeenCalled();
+	}); */
 });

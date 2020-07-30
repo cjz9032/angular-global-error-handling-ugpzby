@@ -40,7 +40,7 @@
 			position: absolute;
 			bottom: 19rem;
 			width: 100%;
-			font-size: 1.6rem;
+			font-size: 1.4rem;
 			color: #545f76;
 			left: 0px;
 		}
@@ -59,7 +59,7 @@
 }
 
 .record-table {
-	font-size: 1.6rem;
+	font-size: 1.4rem;
 	text-align: left;
 	.record-header {
 		margin: 0.4rem 0rem;
@@ -111,7 +111,7 @@
 				color: $blueHover;
 				svg {
 					path {
-						fill: $gaming_light_blue;
+						fill: $blueFill;
 					}
 				}
 				.interval {
@@ -138,7 +138,7 @@
 					transition: all 0.4s ease-in-out;
 					overflow: hidden;
 					font-weight: 500;
-					color: $gaming_light_blue;
+					color: $blueFill;
 					svg {
 						@media #{$high-contrast} {
 							path {
@@ -158,7 +158,7 @@
 				}
 			}
 			&.paired {
-				color: $gaming_light_blue;
+				color: $blueFill;
 				svg {
 					path {
 						fill: $blueHover;

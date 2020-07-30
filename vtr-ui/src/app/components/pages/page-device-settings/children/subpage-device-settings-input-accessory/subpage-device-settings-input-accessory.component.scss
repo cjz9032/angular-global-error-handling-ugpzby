@@ -37,6 +37,13 @@
 			background-repeat: no-repeat;
 		}
 
+		@media #{$white-on-black} {
+			@include white-border;
+		}
+		@media #{$black-on-white} {
+			@include black-border;
+		}
+
 		img {
 			width: 100%;
 			height: 100%;
@@ -274,6 +281,14 @@
 
 	.img-block {
 		padding-left: 3rem;
+		img {
+			@media #{$white-on-black} {
+				@include white-border;
+			}
+			@media #{$black-on-white} {
+				@include black-border;
+			}
+		}
 	}
 }
 

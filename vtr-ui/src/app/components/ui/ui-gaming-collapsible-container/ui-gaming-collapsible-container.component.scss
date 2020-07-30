@@ -108,6 +108,19 @@
           }
         }
       }
+      .gaming-dropdown-menu {
+        li{
+          &:focus{
+            border: 1px solid $blueFill;
+            @media #{$high-contrast} {
+              border-color: windowText;
+            }
+            a{
+              outline: none !important;
+            }
+          }
+        }
+      } 
     }
   }
 }

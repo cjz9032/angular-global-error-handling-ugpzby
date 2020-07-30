@@ -23,14 +23,6 @@ export class WidgetHardwareScanItemComponent implements OnInit {
 		this.configureContactusUrl();
 	}
 
-	public getKey(obj: any) {
-		return Object.keys(obj);
-	}
-
-	public getValue(obj: any) {
-		return Object.values(obj);
-	}
-
 	public getInformation(text: string) {
 		this.tooltipText = text;
 	}

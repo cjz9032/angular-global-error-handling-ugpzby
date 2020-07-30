@@ -5,6 +5,8 @@
 	background-color: $light;
 	box-shadow: $drop_shadow;
 	padding: 2.4rem;
+	@include high-contrast-border;
+
 	.title {
 		color: $main_dark;
 		font-size: $fontsize_xl;

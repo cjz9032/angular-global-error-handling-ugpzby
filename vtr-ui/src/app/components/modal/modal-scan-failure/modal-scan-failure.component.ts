@@ -43,15 +43,22 @@ export class ModalScanFailureComponent {
 
 	// Checks the any storage device from failedModules has support for RBS (according to rbsDevices list)
 	private createListFailedRbsDevices() {
-		// First, getting a list of Ids of storage devices with failure
-		const failedStorageIds = this.failedModules.find(m => m.moduleId === 'storage')
-			.devices.reduce(
+		// First, getting a list of Ids of storage devices
+		const hasFailedStorage = this.failedModules.find(m => m.moduleId === 'storage');
+
+		// Second, Return empty if no storage has failed
+		if (hasFailedStorage === undefined) {
+			return [];
+		}
+
+		// Third, if it has failed storage, get a list of Ids of storage devices with failure
+		const failedStorageIds = hasFailedStorage.devices.reduce(
 				(result, device) => {
 					result.push(device.deviceId);
 					return result;
 				}, []);
 
-		// Second, getting a list of Ids of storage devices that support RBS
+		// Fourth, getting a list of Ids of storage devices that support RBS
 		const rbsDeviceIds = this.rbsDevices.groupList.reduce(
 			(result, device) => {
 				result.push(device.id);
