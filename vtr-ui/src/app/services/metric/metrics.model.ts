@@ -267,5 +267,5 @@ export class NetworkPerformance extends IMetricEvent {
 
 	public Host: string;
 	public Api: string;
-	public HttpDuration: number;
+	public Duration: number;
 }
