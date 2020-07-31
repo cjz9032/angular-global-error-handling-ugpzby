@@ -1338,6 +1338,9 @@
 			/////////////////////////////////////
 			.vtr-hardware-components {
 				background: $gaming_darkest;
+				.refresh-button{
+					color: $gaming_lightest!important;
+				}
 				.vtr-device-information {
 					background: $gaming_bg;
 					.header {
@@ -1467,6 +1470,11 @@
 					background: $gaming_darkest;
 					.header {
 						.heading1 {
+							color: $gaming_lightest;
+						}
+					}
+					vtr-hardware-scan-finished-header{
+						.result-date-description{
 							color: $gaming_lightest;
 						}
 					}
