@@ -1,0 +1,146 @@
+@import "../../../app.theme";
+
+@mixin font-and-underline-color($font-color, $underline-color: $font-color) {
+	color: $font-color;
+	border-bottom-color: $underline-color;
+}
+
+@mixin hyperlink-underline ($border-color: $light, $underline-style: solid 0.2rem) {
+	border-bottom: $border-color $underline-style;
+	text-decoration: none;
+
+	&:hover {
+		border-bottom-color: rgba($border-color, 0);
+	}
+
+	&:focus {
+		border-bottom-color: $border-color;
+	}
+}
+
+@mixin hyperlink-text ($font-size: $fontsize_xs, $font-weight: $weight_bold, $font-color: $light, $underline-style: solid 0.2rem) {
+	color: $font-color;
+	font-size: $font-size;
+	font-weight: $font-weight;
+	outline: 0;
+
+	&:hover {
+		color: $font-color;
+	}
+
+	&:focus {
+		color: $font-color;
+	}
+}
+
+@mixin icon-style ($icon-size: $fontsize_xs, $icon-weight: $weight_bold, $icon-color: $light, $icon-padding: 0 0 0 1rem) {
+	color: $icon-color;
+	font-size: $icon-size;
+	font-weight: $icon-weight;
+	padding: $icon-padding;
+
+	@media #{$white-on-black} {
+		@include hyperlink-yellow-black;
+
+		&.disabled {
+			color: rgba($high-contrast-black-disabled-green, 0.5) !important;
+		}
+	}
+
+	@media #{$black-on-white} {
+		@include hyperlink-blue-white;
+
+		&.disabled {
+			color: rgba($high-contrast-white-disabled-maroon, 0.5) !important;
+		}
+	}
+}
+
+.text-upper-case {
+	text-transform: uppercase;
+}
+
+.text-capitalize {
+	text-transform: capitalize;
+}
+
+.vtr-ui-hyperlink-button {
+	text-decoration: none;
+	padding: 0 0.5rem;
+	display: flex;
+	align-items: center;
+	height: 100%;
+
+	.hyperlink-box {
+		cursor: pointer;
+		user-select: none; // preventing user text selection
+
+		&:focus {
+			outline: 0.1rem solid $menu_hover;
+			outline-offset: 0.4rem;
+		}
+
+		&.disabled {
+			cursor: default;
+			pointer-events: none !important;
+
+			.hyperlink, .icon{
+				cursor: default;
+				pointer-events: none !important;
+
+				@include font-and-underline-color($shade_light !important);
+				@media #{$white-on-black} {
+					@include font-and-underline-color(rgba($high-contrast-black-disabled-green, 0.5) !important);
+				}
+
+				@media #{$black-on-white} {
+					@include font-and-underline-color(rgba($high-contrast-white-disabled-maroon, 0.5) !important);
+				}
+			}
+		}
+
+		.hyperlink {
+
+			@media #{$white-on-black}, #{$black-on-white} {
+				&:hover, &:focus {
+					border-bottom-color: $blue-light;
+				}
+			}
+
+			@media #{$white-on-black} {
+				@include font-and-underline-color($high-contrast-black-yellow)
+			}
+
+			@media #{$black-on-white} {
+				@include font-and-underline-color($high-contrast-white-blue);
+			}
+		}
+	}
+}
+
+
+.xs-white {
+	&.hyperlink {
+		@include hyperlink-text;
+		@include hyperlink-underline;
+	}
+}
+
+.xs-blue-lighter {
+	&.hyperlink {
+		@include hyperlink-text ($fontsize_xs, $weight_bold, $blue-lighter, solid 0.2rem);
+		@include hyperlink-underline($blue-lighter, solid 0.2rem);
+	}
+}
+
+
+.xs-300-blue-lighter {
+	&.hyperlink {
+		@include hyperlink-text ($fontsize_xs, $weight_light, $blue-lighter, solid 0.1rem);
+		@include hyperlink-underline($blue-lighter, solid 0.1rem);
+	}
+
+	&.icon {
+		@include icon-style($fontsize_sm, $weight_light, $blue-lighter, 0 0 0 0.5rem);
+	}
+}
