@@ -1,0 +1,129 @@
+{
+    "positionA": [
+        {
+            "Title": "Build-in article A1",
+            "Description": "",
+            "FeatureImage": "assets/build-in-contents/images/Default-SMB-Device-Settings.jpg",
+            "Action": "",
+            "ActionType": "Build-in",
+            "ActionLink": "13cada49d4274587a80e26b00dff59a5",
+            "BrandName": "",
+            "BrandImage": "",
+            "Priority": "P1",
+            "OverlayTheme": "dark",
+            "DisplayStartDate": null,
+            "ExpirationDate": null
+        },
+        {
+            "Title": "Build-in article A2",
+            "Description": "",
+            "FeatureImage": "assets/build-in-contents/images/Default-SMB-Device-Settings.jpg",
+            "Action": "",
+            "ActionType": "Build-in",
+            "ActionLink": "13cada49d4274587a80e26b00dff59a5",
+            "BrandName": "",
+            "BrandImage": "",
+            "Priority": "P1",
+            "OverlayTheme": "dark",
+            "DisplayStartDate": null,
+            "ExpirationDate": null
+        }
+    ],
+    "positionB": [
+        {
+            "Title": "Build-in article B",
+            "Description": "",
+            "FeatureImage": "assets/build-in-contents/images/Default-SMB-Device-Settings.jpg",
+            "Action": "",
+            "ActionType": "Build-in",
+            "ActionLink": "13cada49d4274587a80e26b00dff59a5",
+            "BrandName": "",
+            "BrandImage": "",
+            "Priority": "P1",
+            "OverlayTheme": "dark",
+            "DisplayStartDate": null,
+            "ExpirationDate": null
+        }
+    ],
+    "positionC": [
+        {
+            "Title": "Build-in article C",
+            "Description": "",
+            "FeatureImage": "assets/build-in-contents/images/Default-SMB-Device-Settings.jpg",
+            "Action": "",
+            "ActionType": "Build-in",
+            "ActionLink": "13cada49d4274587a80e26b00dff59a5",
+            "BrandName": "",
+            "BrandImage": "",
+            "Priority": "P1",
+            "OverlayTheme": "dark",
+            "DisplayStartDate": null,
+            "ExpirationDate": null
+        }
+    ],
+    "positionD": [
+        {
+            "Title": "Build-in article D",
+            "Description": "",
+            "FeatureImage": "assets/build-in-contents/images/Default-SMB-Device-Settings.jpg",
+            "Action": "",
+            "ActionType": "Build-in",
+            "ActionLink": "13cada49d4274587a80e26b00dff59a5",
+            "BrandName": "",
+            "BrandImage": "",
+            "Priority": "P1",
+            "OverlayTheme": "dark",
+            "DisplayStartDate": null,
+            "ExpirationDate": null
+        }
+    ],
+    "positionE": [
+        {
+            "Title": "Build-in article E",
+            "Description": "",
+            "FeatureImage": "assets/build-in-contents/images/Default-SMB-Device-Settings.jpg",
+            "Action": "Read more",
+            "ActionType": "Build-in",
+            "ActionLink": "13cada49d4274587a80e26b00dff59a5",
+            "BrandName": "",
+            "BrandImage": "",
+            "Priority": "P1",
+            "OverlayTheme": "dark",
+            "DisplayStartDate": null,
+            "ExpirationDate": null
+        }
+    ],
+    "positionF": [
+        {
+            "Title": "Build-in article F",
+            "Description": "Read more",
+            "FeatureImage": "assets/build-in-contents/images/Default-SMB-Device-Settings.jpg",
+            "Action": "",
+            "ActionType": "Build-in",
+            "ActionLink": "13cada49d4274587a80e26b00dff59a5",
+            "BrandName": "",
+            "BrandImage": "",
+            "Priority": "P1",
+            "OverlayTheme": "dark",
+            "DisplayStartDate": null,
+            "ExpirationDate": null
+        }
+    ],
+    "welcome-text": [
+        {
+            "Id": "6cb73ba2f3914d3295467c41e7330922",
+            "Title": "Looking energized today! ||| What a pleasant surprise ||| Knock, knock ||| You're off to great places! ||| Today is your day! ||| Who likes happy little trees? ||| Party on! ||| Keep calm and Vantage on ||| A bigger Vantage for your buck ||| Bring home the Vantage ||| Eat, sleep, Vantage, repeat ||| Every moment is a fresh Vantage ||| Vantage to the fullest",
+            "Description": "",
+            "FeatureImage": "",
+            "Action": "",
+            "ActionType": null,
+            "ActionLink": null,
+            "BrandName": "",
+            "BrandImage": "",
+            "Priority": null,
+            "OverlayTheme": "",
+            "DisplayStartDate": null,
+            "ExpirationDate": null
+        }
+    ]
+}

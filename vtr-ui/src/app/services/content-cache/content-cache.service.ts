@@ -9,6 +9,8 @@ import { UPEService } from '../upe/upe.service';
 import { CMSService } from '../cms/cms.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
+import { ContentActionType } from 'src/app/enums/content.enum';
+import { BuildInContentService } from '../build-in-content/build-in-content.service';
 
 @Injectable({
   providedIn: 'root'
@@ -24,17 +26,18 @@ export class ContentCacheService {
     private http: HttpClient,
     private cmsService: CMSService,
     private upeService: UPEService,
+    private buildInContentService: BuildInContentService,
     private logger: LoggerService) {
 
   }
 
-  getCachedContents() {
+  getCachedContents(contentCards: any) {
     return new Observable(subscriber => {
-      
+
     });
   }
 
-  getArticleById(articleId: any) {
+  getArticleById(actionType: ContentActionType, articleId: any) {
     return new Observable(subscriber => {
 
     });
