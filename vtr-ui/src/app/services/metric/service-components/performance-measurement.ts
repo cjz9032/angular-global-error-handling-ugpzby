@@ -86,7 +86,7 @@ export class PerformanceMeasurement {
 				ItemType: EventName.performance,
 				Host: url.host,
 				Api: url.pathname,
-				HttpDuration: entry.duration.toFixed(2)
+				Duration: entry.duration.toFixed(2)
 			};
 			this.metricsService.sendMetrics(performanceData);
 		});
