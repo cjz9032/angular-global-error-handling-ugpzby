@@ -258,3 +258,14 @@ export class ContentDisplay extends IMetricEvent {
 	public Position: string;
 	public DataSource: string;
 }
+
+export class NetworkPerformance extends IMetricEvent {
+	constructor() {
+		super();
+		this.ItemType = EventName.performance;
+	}
+
+	public Host: string;
+	public Api: string;
+	public HttpDuration: number;
+}

@@ -10,6 +10,8 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { ActivatedRoute } from '@angular/router';
 import { SelfSelectService } from '../self-select/self-select.service';
 import { environment } from '../../../environments/environment';
+import { PerformanceMeasurement} from './service-components/performance-measurement';
+import { DevService } from '../dev/dev.service';
 
 declare var Windows;
 
@@ -28,9 +30,10 @@ export class MetricService {
 	private appInitDuration: number;
 	private firstPageActiveDuration: number;
 	public readonly isFirstLaunch: boolean;
-	public readonly maxScrollRecorder = {}
-	public pageContainer: ElementRef
-	private pageScollEvent = (htmlElm) => {}
+	public readonly maxScrollRecorder = {};
+	public pageContainer: ElementRef;
+	public readonly performanceMeasurement: PerformanceMeasurement;
+	private pageScollEvent = (htmlElm) => { };
 
 	constructor(
 		private shellService: VantageShellService,
@@ -38,9 +41,11 @@ export class MetricService {
 		private hypothesisService: HypothesisService,
 		private commonService: CommonService,
 		private activeRouter: ActivatedRoute,
-		private selfSelectService: SelfSelectService
+		private selfSelectService: SelfSelectService,
+		private devService: DevService
 	) {
 		this.metricsClient = this.shellService.getMetrics();
+		this.performanceMeasurement = new PerformanceMeasurement(devService, this);
 		this.isFirstLaunch = !this.commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
 		if (this.isFirstLaunch) {
 			this.commonService.setLocalStorageValue(LocalStorageKey.HadRunApp, true);
@@ -280,7 +285,7 @@ export class MetricService {
 		return this.activeRouter.snapshot.data.pageName
 			|| this.activeRouter.snapshot.root.firstChild.data.pageName
 			|| this.activeRouter.snapshot.root.firstChild.firstChild.data.pageName
-			|| MetricConst.Unknown
+			|| MetricConst.Unknown;
 	}
 
 	public sendContentDisplay(itemID: string, dataSource: string, position: string) {
@@ -321,7 +326,7 @@ export class MetricService {
 		}
 
 		if (this.welcomeNeeded === false) { // default is undefined
-			this.sendInstallationMetric(this.metricsClient.metricsEnabled)
+			this.sendInstallationMetric(this.metricsClient.metricsEnabled);
 		}
 	}
 
@@ -344,7 +349,7 @@ export class MetricService {
 		this.welcomeNeeded = welcomeNeeded;
 		if (this.welcomeNeeded === false) {	 // default is undefined
 			await this.metricReady();
-			this.sendInstallationMetric(this.metricsClient.metricsEnabled)
+			this.sendInstallationMetric(this.metricsClient.metricsEnabled);
 		}
 	}
 
@@ -353,7 +358,7 @@ export class MetricService {
 			this.sendAppLoadedMetrics();
 		}
 
-		this.sendInstallationMetric(this.metricsClient.metricsEnabled)
+		this.sendInstallationMetric(this.metricsClient.metricsEnabled);
 	}
 
 	private toLower(content: string) {
@@ -369,7 +374,7 @@ export class MetricService {
 
 	public activateScrollCounter(pageName: any) {
 		this.maxScrollRecorder[pageName] = 0;
-		this.pageScollEvent = (htmlElm)=>{
+		this.pageScollEvent = (htmlElm) => {
 			const curRecord = this.getScrollPercentage(htmlElm);
 			const preRecord = this.maxScrollRecorder[pageName];
 			if (!preRecord || preRecord < curRecord) {
@@ -379,10 +384,10 @@ export class MetricService {
 	}
 
 	public deactivateScrollCounter(pageName: any = null) {
-		this.pageScollEvent = () => {};
+		this.pageScollEvent = () => { };
 	}
 
-	public notifyPageScollEvent(htmlElm:any = null) {
+	public notifyPageScollEvent(htmlElm: any = null) {
 		this.pageScollEvent(htmlElm || this.pageContainer.nativeElement);
 	}
 }

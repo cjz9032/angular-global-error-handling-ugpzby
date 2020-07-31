@@ -11,6 +11,7 @@ import { SelfSelectService, SegmentConst } from '../self-select/self-select.serv
 import { TranslateService } from '@ngx-translate/core';
 import { UPEHelper } from './helper/upe.helper';
 import { LocalInfoService } from '../local-info/local-info.service';
+import { MetricService } from '../metric/metrics.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -30,7 +31,8 @@ export class UPEService {
 		private localInfoService: LocalInfoService,
 		vantageShellService: VantageShellService,
 		devService: DevService,
-		translate: TranslateService
+		translate: TranslateService,
+		private metricsService: MetricService
 	) {
 		this.essentialHelper = new EssentialHelper(commsService, deviceService, vantageShellService, devService);
 		this.upeHelper = new UPEHelper(vantageShellService, devService, translate);
@@ -42,12 +44,15 @@ export class UPEService {
 			throw new Error('invaild positions for fetching upe content');
 		}
 
+		let content;
 		const result = await this.sendAndRetry(params);
 		if (result.success) {
-			return await this.upeHelper.filterUPEContent(result.content);
+			content = await this.upeHelper.filterUPEContent(result.content);
 		} else {
 			throw new Error(result.content);
 		}
+
+		return content;
 	}
 
 	private async sendAndRetry(params: IGetContentParam): Promise<IActionResult> {
@@ -70,7 +75,7 @@ export class UPEService {
 	}
 
 	private async requestUpeContent(params: IGetContentParam): Promise<IActionResult> {
-		let essential = this.upeEssential ? this.upeEssential : await this.essentialHelper.getUpeEssential();
+		const essential = this.upeEssential ? this.upeEssential : await this.essentialHelper.getUpeEssential();
 		if (!essential) {
 			return {
 				success: false,
@@ -79,14 +84,10 @@ export class UPEService {
 		}
 
 		if (!essential.anonUserId || !essential.apiKey) {
-			essential = await this.essentialHelper.registerDevice(essential);
-		}
-
-		this.upeEssential = essential;
-		if (!essential) {
 			return {
 				success: false,
-				content: 'registry upe device failed'
+				errorCode: 401, // need registor device
+				content: 'upe not support in current version'
 			};
 		}
 
@@ -97,6 +98,7 @@ export class UPEService {
 		const queryParam = await this.makeQueryParam(upeEssential, params);
 		let content = '';
 		let errorCode = '';
+
 		try {
 			const httpResponse = await this.commsService.callUpeApi(
 				`${upeEssential.upeUrlBase}/upe/recommendation/v2/recommends`, queryParam
@@ -114,6 +116,8 @@ export class UPEService {
 		} catch (ex) {
 			content = ex.message;
 			errorCode = ex.status;
+		} finally {
+			this.metricsService.performanceMeasurement.handleHttpsCompleteEvent();
 		}
 
 		return {
@@ -146,6 +150,7 @@ export class UPEService {
 		const header = { anonUserId, clientAgentId, apiKey, anonDeviceId: deviceId };
 		let content = '';
 		let errorCode = '';
+
 		try {
 			const httpResponse = await this.commsService.makeTagRequest(
 				`${upeEssential.upeUrlBase}/upe/tag/api/row/tag/user_tags/sn/${upeEssential.deviceId}?type=c_tag`, header
@@ -159,6 +164,8 @@ export class UPEService {
 		} catch (ex) {
 			content = `get  upe tags  failed upon http request`;
 			errorCode = ex.status;
+		} finally {
+			this.metricsService.performanceMeasurement.handleHttpsCompleteEvent();
 		}
 
 		return {

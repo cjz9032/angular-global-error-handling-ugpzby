@@ -17,6 +17,7 @@ export const MetricEventName = {
 	settingupdate : 'SettingUpdate',
 	userfeedback : 'UserFeedback',
 	contentdisplay : 'ContentDisplay',
+	performance: 'NetworkPerformance',
 	unknown : 'Unknown'
 };
 Object.freeze(MetricEventName);
@@ -31,4 +32,3 @@ export enum MetricConst {
 	ActionClose = 'close',	// no notification for this action type
 	Unknown = 'Unknown'
 }
-
