@@ -945,8 +945,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			'6e41b06311f0751644ca2df15c71c18d',
 			'5e8cc0beb8e543618b3780afd9ba709d',
 			'0f38f24ed08f636f1086bc30230f0e09',
-			'04ad3a21117deb126472d1a3eb55efb6',
-			'30f806cc49e4e2e4fd3159c167c35994'
+			'04ad3a21117deb126472d1a3eb55efb6'
 		];
 		return this.deviceService.getMachineInfo()
 			.then(res => res.hasOwnProperty('mt')

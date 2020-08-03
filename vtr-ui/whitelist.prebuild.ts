@@ -48,8 +48,7 @@ const blockList = [
 	'82FA',
 	'82FD',
 	'20WE',
-	'20YC',
-	'81RS'
+	'20YC'
 ];
 
 console.log((blockList.reduce((acc, current) => {
