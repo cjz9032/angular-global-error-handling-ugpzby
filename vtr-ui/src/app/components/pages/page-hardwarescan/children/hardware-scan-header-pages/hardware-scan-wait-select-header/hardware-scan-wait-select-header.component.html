@@ -3,12 +3,13 @@
 </div>
 <div class="row">
  	<div class="col button-row">
-		<button [ngClass]="{'action-button': !disableButtonScan, 'action-button-disable': disableButtonScan}"
-			[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
-			[disabled]="disableButtonScan"
-			(click)="onQuickScan()"
-			tabindex="1"
-			>{{'hardwareScan.quickScan' | translate}}</button>
+		<vtr-ui-button
+			metricsEvent="FeatureClick"
+			metricsParent="HardwareScan"
+			metricsItem="HardwareScan.CustomizeScan"
+			[label]= " 'hardwareScan.quickScan' | translate "
+			(onClick)="onQuickScan()">
+		</vtr-ui-button>
 		<div class="row align-items-center">
 			<div [title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate">
 				<button vtrMetrics

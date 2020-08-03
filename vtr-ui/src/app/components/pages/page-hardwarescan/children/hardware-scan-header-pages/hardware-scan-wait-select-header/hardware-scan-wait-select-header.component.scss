@@ -17,34 +17,12 @@
 	padding-right: 2.4rem;
 	display: flex;
 
-	.action-button {
-		border-radius: 2.5rem;
-		background: $gradient_main;
-		text-transform: uppercase;
-		padding: 0 3rem;
-		color: $light;
-		font-size: $fontsize_xs;
-		height: 5rem;
-		font-weight: $weight_bold;
-		line-height: 5rem;
-		text-align: center;
-		border: 0rem;
-		cursor: pointer;
+	::ng-deep .vtr-ui-button {
+		.button-box {
+			padding-left: 0;
+		}
 	}
-	.action-button-disable {
-		border-radius: 2.5rem;
-		background: $light-grey;
-		text-transform: uppercase;
-		padding: 0 3rem;
-		color: $light;
-		font-size: $fontsize_xs;
-		height: 5rem;
-		font-weight: $weight_bold;
-		line-height: 5rem;
-		text-align: center;
-		border: 0rem;
-		cursor: default;
-	}
+
 	.action-anchor {
 		font-size: $fontsize_xs2;
 		font-weight: $weight_bold;
