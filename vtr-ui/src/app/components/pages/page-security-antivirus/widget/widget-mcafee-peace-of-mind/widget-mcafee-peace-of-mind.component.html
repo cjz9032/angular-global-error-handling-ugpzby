@@ -2,11 +2,11 @@
 	<h3 class="mb-5 font-weight-600 text-center" [innerHTML]="'security.antivirus.others.peaceOfMindHeading' | translate"></h3>
 	<div class="row text-center justify-content-center">
 		<div *ngFor="let item of items"
-			class="col-7 col-md-4 row flex-row flex-md-column align-items-center justify-content-center text-center mb-5 mb-md-0">
+			class="col-7 col-sm-4 row flex-row flex-sm-column align-items-center justify-content-center text-center mb-5 mb-md-0">
 			<div class="col-auto">
-				<img class="icon pb-md-3" src="{{item.image}}" alt="">
+				<img class="icon pb-sm-3" src="{{item.image}}" alt="">
 			</div>
-			<div class="col pl-4 text-left text-md-center">
+			<div class="col pl-4 text-left text-sm-center">
 				<p [innerHTML]="item.title | translate" class="mcafee-title font-weight-bold mb-0 text-break"></p>
 				<p [innerHTML]="item.desc | translate" class="mcafee-desc mb-0 text-break"></p>
 			</div>
