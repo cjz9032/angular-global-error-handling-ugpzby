@@ -67,9 +67,55 @@
 			// height: 1.2rem;
 			// margin-top: 0.2rem;
 			border-width: thin;
+			&.legend1 {
+				@media #{$white-on-black} {
+					background: $light;
+				}
+				@media #{$black-on-white} {
+					background: $light;
+				}
+			}
+			&.legend2 {
+				@media #{$white-on-black} {
+					background-color: rgb(197, 202, 233);
+				}
+				@media #{$black-on-white} {
+					background-color: rgb(197, 202, 233);
+				}
+			}
+			&.legend3 {
+				@media #{$white-on-black} {
+					background-color: rgb(121, 134, 203);
+				}
+				@media #{$black-on-white} {
+					background-color: rgb(121, 134, 203);
+				}
+			}
+			&.legend4 {
+				@media #{$white-on-black} {
+					background-color: rgb(48, 63, 159);
+				}
+				@media #{$black-on-white} {
+					background-color: rgb(48, 63, 159);
+				}
+			}
+			&.legend5 {
+				@media #{$white-on-black} {
+					background-color: rgb(26, 35, 126);
+				}
+				@media #{$black-on-white} {
+					background-color: rgb(26, 35, 126);
+				}
+			}
 		}
 		.legends-box{
 			border: 0.1rem solid $dark;
+			@media #{$white-on-black} {
+				@include white-border;
+			}
+			@media #{$black-on-white} {
+				@include black-border;
+			}
 		}
 	}
 
