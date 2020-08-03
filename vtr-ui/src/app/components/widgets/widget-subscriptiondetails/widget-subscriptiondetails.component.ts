@@ -5,7 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import * as CryptoJS from 'crypto-js';
 import moment from 'moment';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { enumSmartPerformance, PaymentPage } from 'src/app/enums/smart-performance.enum';
+import { enumSmartPerformance, PaymentPage, SpSubscriptionDetails } from 'src/app/enums/smart-performance.enum';
 import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
@@ -48,6 +48,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	tempHide = false;
 	spProcessStatus: any;
 	public isExpired = false;
+	public expiredDaysCount: any;
 	constructor(
 		private translate: TranslateService,
 		private modalService: NgbModal,
@@ -179,7 +180,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		this.isLoading = true;
 		this.modalStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus) || { initiatedTime: '', isOpened: false };
 		let subscriptionData = [];
-		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails(machineInfo.serialnumber);
+		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails('PF11B18D');
 		this.logger.info('Subscription Details', subscriptionDetails);
 		if (subscriptionDetails && subscriptionDetails.data) {
 			subscriptionData = subscriptionDetails.data;
@@ -268,8 +269,11 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 
 	getExpiredStatus(releaseDate) {
 		let expiredDate;
-		const currentDate = new Date();
+		let expiryRemainDays: number;
+		const nextText = this.translate.instant('smartPerformance.subscriptionDetails.next');
+		const currentDate: any = new Date();
 		expiredDate = new Date(releaseDate);
+
 		if (expiredDate < currentDate) {
 			this.isExpired = true;
 			this.expiredStatusEvent.emit(this.isExpired);
@@ -278,6 +282,45 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
 			this.isSubscribed = false;
 			this.subScribeEvent.emit(this.isSubscribed);
+		}
+		const oneDay = 24 * 60 * 60 * 1000;
+		expiryRemainDays = Math.round(Math.abs((currentDate - expiredDate) / oneDay));
+		if (expiryRemainDays === SpSubscriptionDetails.MONTH || expiryRemainDays < SpSubscriptionDetails.MONTH && !this.isExpired){
+			switch (true){
+				case (expiryRemainDays === 28): {
+					this.expiredDaysCount = nextText + ' ' + Math.ceil(expiryRemainDays / 7) + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.weeks');
+					break;
+				 }
+				 case (expiryRemainDays === 21): {
+					this.expiredDaysCount = nextText + ' ' + Math.ceil(expiryRemainDays / 7) + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.weeks');
+					break;
+				 }
+				 case (expiryRemainDays === 14): {
+					this.expiredDaysCount = nextText + ' ' + Math.ceil(expiryRemainDays / 7) + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.weeks');
+					break;
+				 }
+				 case (expiryRemainDays === 7): {
+					this.expiredDaysCount = this.translate.instant('smartPerformance.subscriptionDetails.week');
+					break;
+				 }
+				 case (expiryRemainDays === 1): {
+					this.expiredDaysCount = Math.ceil(expiryRemainDays) + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.day');
+					break;
+				 }
+				 case (expiryRemainDays === 0): {
+					this.expiredDaysCount = this.translate.instant('smartPerformance.subscriptionDetails.today');
+					break;
+				 }
+				 default: {
+					this.expiredDaysCount = expiryRemainDays  + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.days');
+					break;
+				 }
+			}
+		} else {
+			if (expiryRemainDays === SpSubscriptionDetails.TWOMONTHS || (expiryRemainDays < SpSubscriptionDetails.TWOMONTHS && expiryRemainDays > SpSubscriptionDetails.MONTH) && !this.isExpired){
+				this.expiredDaysCount = nextText + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.month');
+
+			}
 		}
 	}
 	resetSubscriptionDetails(){

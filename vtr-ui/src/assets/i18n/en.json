@@ -2473,7 +2473,15 @@
 			"manageSubscription": "MANAGE SUBSCRIPTION",
 			"manageSubscriptionBeta": "ENABLE FULL FEATURE",
 			"descriptionbeta": "Lenovo is offering pilot program to try Smart Performance feature till July 2020.",
-			"descriptionbeta1": "You are welcomed to join and try the full feature."
+			"descriptionbeta1": "You are welcomed to join and try the full feature.",
+			"expiredNote": "Your subscription will expire in",
+			"day":"day",
+			"days":"days",
+			"weeks":"weeks",
+			"week":"a week",
+			"month": "month",
+			"today": "today",
+			"next": "next"
 		},
 		"scanSettings": {
 			"title": "Schedule scan settings",
@@ -2664,7 +2672,7 @@
 			"summary": "Summary",
 			"summaryDetails": "Our scan found <b>{{issueCount}} issue(s)</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
 			"signupRepairButton": "SIGN UP & REPAIR NOW",
-			"renewAndFix": "Renew and Fix",
+			"renewAndFix": "Renew & Fix",
 			"backToHome": "Back To Home",
 			"monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
 			"issueCount": "{{individualIssueCount}} ISSUES",

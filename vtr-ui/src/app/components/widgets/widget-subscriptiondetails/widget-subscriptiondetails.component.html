@@ -52,7 +52,8 @@
         metricsParent="Page.Support.SmartPerformance">
         {{'smartPerformance.subscriptionDetails.manageSubscription' |translate }}
     </a> -->
-    <button *ngIf="!isSubscribed && isOnline" [ngClass]="{'disabled-link' : strStatus==='PROCESSING' || tempHide === true}"
+    <h4 *ngIf="expiredDaysCount" class="text-danger"><fa-icon [icon]="['fas', 'exclamation-circle']" class="mr-2"></fa-icon>{{'smartPerformance.subscriptionDetails.expiredNote' |translate }} {{expiredDaysCount}}</h4>
+    <button *ngIf="!isSubscribed && isOnline || expiredDaysCount" [ngClass]="{'disabled-link' : strStatus==='PROCESSING' || tempHide === true}"
         class="link-text" [class.disabled]="strStatus==='PROCESSING' || tempHide"
         (click)=openSubscribeModal() vtrMetrics metricsItem="btn.managesubscription"
         metricsEvent="FeatureClick" metricsParent="Page.Support.SmartPerformance">
