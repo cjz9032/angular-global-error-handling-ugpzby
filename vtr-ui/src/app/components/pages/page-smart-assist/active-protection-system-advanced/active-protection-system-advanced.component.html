@@ -1,6 +1,6 @@
 <p class="caption"
 	id="activeProtectionSystem-advanced-settings-desc"
-	role="heading">
+	role="text">
 	{{'device.smartAssist.activeProtectionSystem.advanced.description' | translate}}
 </p>
 <div class="row">
@@ -10,6 +10,7 @@
 			class="input-item">
 			<div>
 				<vtr-ui-row-switch [title]="'device.smartAssist.activeProtectionSystem.advanced.pen.title' | translate"
+					[headingLevel]="-1"
 					[caption]="'device.smartAssist.activeProtectionSystem.advanced.pen.description' | translate"
 					[theme]="'white'"
 					[isSwitchVisible]="true"
@@ -38,6 +39,7 @@
 			<div>
 				<vtr-ui-row-switch
 					[title]="'device.smartAssist.activeProtectionSystem.advanced.touch.title' | translate"
+					[headingLevel]="5"
 					[theme]="'white'"
 					[isSwitchVisible]="true"
 					[showChildContent]="true"
@@ -53,6 +55,7 @@
 			class="input-item">
 			<div>
 				<vtr-ui-row-switch [title]="'device.smartAssist.activeProtectionSystem.advanced.hand.title' | translate"
+					[headingLevel]="5"
 					[theme]="'white'"
 					[isSwitchVisible]="true"
 					[showChildContent]="true"
