@@ -47,29 +47,33 @@ a.disabled {
 }
 
 
-a, .a {
-	@media #{$black-on-white} {
-		@include hyperlink-blue-white;
-		&:hover {
-			@include hyperlink-blue-white;
+.default-theme {
+	&:not(.is-gaming) {
+		a, .a {
+			@media #{$black-on-white} {
+				@include hyperlink-blue-white;
+				&:hover {
+					@include hyperlink-blue-white;
+				}
+			}
+			@media #{$white-on-black} {
+				@include hyperlink-yellow-black;
+				&:hover {
+					@include hyperlink-yellow-black;
+				}
+			}
+
+		}
+		a.disabled, .offline-a {
+			@media #{$black-on-white} {
+				@include high-contrast-white-text-color-disabled;
+			}
+			@media #{$white-on-black} {
+				@include high-contrast-black-text-color-disabled;
+			}
+
 		}
 	}
-	@media #{$white-on-black} {
-		@include hyperlink-yellow-black;
-		&:hover {
-			@include hyperlink-yellow-black;
-		}
-	}
-
-}
-a.disabled, .offline-a {
-	@media #{$black-on-white} {
-		@include high-contrast-white-text-color-disabled;
-	}
-	@media #{$white-on-black} {
-		@include high-contrast-black-text-color-disabled;
-	}
-
 }
 
 
