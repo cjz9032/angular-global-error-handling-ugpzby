@@ -20,6 +20,8 @@ import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { Md5 } from 'ts-md5';
+import { DeviceService } from '../../../../../services/device/device.service';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-audio',
@@ -84,6 +86,9 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	public dolbyAudioToggleCache: DolbyAudioToggleCapability;
 	public readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
 
+	canShowMicrophoneOptimization = false;
+
+
 	constructor(
 		private routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
 		private audioService: AudioService,
@@ -92,7 +97,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		private commonService: CommonService,
 		private translate: TranslateService,
 		private vantageShellService: VantageShellService,
-		private batteryService: BatteryDetailService) {
+		private batteryService: BatteryDetailService,
+		private deviceService: DeviceService) {
 		this.Windows = vantageShellService.getWindows();
 		if (this.Windows) {
 			this.microphoneDevice = this.Windows.Devices.Enumeration.DeviceAccessInformation
@@ -141,6 +147,9 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			this.microphoneDevice.addEventListener('accesschanged', this.microphnePermissionHandler, false);
 		}
 		// this.Windows.Media.Devices.MediaDevice.addEventListener("defaultaudiocapturedevicechanged", this.defaultAudioCaptureDeviceChanged.bind(this));
+		this._isInMicrophoneOptimizationBlockList().then(blocked => {
+			this.canShowMicrophoneOptimization = !blocked;
+		});
 	}
 
 	private initFeatures() {
@@ -906,5 +915,43 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		if (this.headerMenuItems.length === 1) {
 			this.headerMenuItems = [];
 		}
+	}
+
+	private _isInMicrophoneOptimizationBlockList() {
+		const microphoneOptimizationBlockList = [
+			'e0af66b09697cc5c2a142c4fdc36f908',
+			'955bc274df7db1a241277c0cd0979bad',
+			'7c82257a5ed474a951da4cb6768fd8de',
+			'eeaf993697b07544e24aa684a3c2c44b',
+			'088fccd5bef55488e8f3ebd2c4254178',
+			'6fa610505a6e37cbd00c246e1c6c8a3d',
+			'37b77e8ba14c8a98a93f6679405e9175',
+			'fb8192a1a0af15e27717b822251b5585',
+			'76d9bf7b407d2145bf7207ddcf1afa9f',
+			'3fef9896f428cf7b9e1f3e477b1a537e',
+			'9ed7958e4fca7919efc99a3fb90680a8',
+			'85132dd4352621a0522e5ae2f517f93d',
+			'7f6ef826fdb183a60398b4d211e403b2',
+			'940e7810ca5f6389387e38b796b2e2c9',
+			'ebc123bd97e434a5954454cc02f87f8d',
+			'1aa1b46a9da765431af481dfe18354ef',
+			'3cb0360267866dd06bbabdcae4347a64',
+			'a4f9701b8b8de7a947795185ceb5c2a3',
+			'c4dd28e008703d9daaf996786c224662',
+			'916c8b91bab09a45a598f34a0bfbf061',
+			'07ba7e022102d7c976b51f845551e186',
+			'3b10c53e4ed6f8ecc8021a2a0a931a09',
+			'c7b018e5a5263e24b2b5167abda00875',
+			'6e41b06311f0751644ca2df15c71c18d',
+			'5e8cc0beb8e543618b3780afd9ba709d',
+			'0f38f24ed08f636f1086bc30230f0e09',
+			'04ad3a21117deb126472d1a3eb55efb6',
+			'30f806cc49e4e2e4fd3159c167c35994'
+		];
+		return this.deviceService.getMachineInfo()
+			.then(res => res.hasOwnProperty('mt')
+				&& typeof res.mt === 'string'
+				&& res.mt.length >= 4
+				&& microphoneOptimizationBlockList.includes(Md5.hashStr(res.mt.substr(0, 4)) as string));
 	}
 }
