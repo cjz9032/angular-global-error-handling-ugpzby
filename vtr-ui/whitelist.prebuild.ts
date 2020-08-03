@@ -21,7 +21,37 @@ const whitelist = [
 	'M38KT'
 ];
 
-console.log((whitelist.reduce((acc, current) => {
+const blockList = [
+	'20V9',
+	'20WC',
+	'82E3',
+	'20VA',
+	'20WD',
+	'82E4',
+	'20V3',
+	'82GX',
+	'82KB',
+	'82KD',
+	'82KA',
+	'82KC',
+	'20VD',
+	'20VE',
+	'82F3',
+	'82F1',
+	'82F2',
+	'82F6',
+	'82F7',
+	'82F8',
+	'20VF',
+	'20VG',
+	'82F9',
+	'82FA',
+	'82FD',
+	'20WE',
+	'20YC'
+];
+
+console.log((blockList.reduce((acc, current) => {
 	acc.push(Md5.Md5.hashStr(current));
 	return acc;
 }, [])));
