@@ -112,9 +112,9 @@
 								<input type="radio"
 									tabindex="0"
 									id="segment-choose-{{usage.id}}"
-									role="radiogroup"
 									[attr.aria-label]="usage.textKey | translate"
 									[checked]="usageType && usageType === usage.value"
+									[attr.aria-checked]="usageType && usageType === usage.value"
 									[value]="usage.value"
 									(click)="saveUsageType(usage.value)"
 									name="tutorial-segment-choose" />
