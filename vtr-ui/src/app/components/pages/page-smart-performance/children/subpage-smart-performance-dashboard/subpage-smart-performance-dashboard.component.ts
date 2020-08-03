@@ -85,6 +85,7 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 		}
 	}
 	ngOnInit() {
+	
 		this.isOnline = this.commonService.isOnline;
 
 		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
@@ -93,6 +94,7 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled, true);
 			this.IsSmartPerformanceFirstRun = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun);
+			this.writeSmartPerformanceActivity( 'True', 'False', 'InActive');
 			// if (this.IsSmartPerformanceFirstRun === true) {
 			this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCANANDFIX);
 			// 	this.scheduleScan(enumSmartPerformance.SCHEDULESCAN, 'onceaweek', this.days[new Date().getDay()], new Date(), []);
@@ -383,6 +385,7 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 	}
 	scanNow() {
 		if (this.isOnline) {
+			this.writeSmartPerformanceActivity( 'True', 'True', 'InActive');
 			this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
 			if (this.smartPerformanceService.isShellAvailable) {
 				this.smartPerformanceService
@@ -492,6 +495,7 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 		}
 		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
 		if (this.isSubscribed !== undefined && this.isSubscribed === true) {
+			this.writeSmartPerformanceActivity( 'True', 'True', 'Active');
 			this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCAN);
 		}
 		else
@@ -504,5 +508,20 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 	}
 	subscriptionInfo(event){
 		this.subscriptionInfoStatus = event || false;
+	}
+	async writeSmartPerformanceActivity(issmartperformanceopened, hasuserrunfreepcscan, issubscribed) {
+		const payload = {
+			issmartperformanceopened,
+			hasuserrunfreepcscan,
+			issubscribed
+		};
+		this.logger.info('subpage-smart-performance-dashboard.writeSmartPerformanceActivity.payload', payload);
+		try {
+			const res: any = await this.smartPerformanceService.writeSmartPerformanceActivity(
+				payload
+			);
+		} catch (err) {
+			this.logger.error('subpage-smart-performance-dashboard.writeSmartPerformanceActivity.then', err);
+		}
 	}
 }
