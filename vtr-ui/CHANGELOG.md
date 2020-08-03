@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.24](https://bitbucket.tc.lenovo.com///compare/v1.7.21...v1.7.24) (2020-08-03)
+
+
+### Features
+
+* **VAN-17042:** microphone optimization remove in block list smb models. ([e7daa81](https://bitbucket.tc.lenovo.com///commit/e7daa81ccf9bd0ce26ad1187f55200b94bf63de0))
+* **VAN-17042:** microphone optimization remove in block list smb models. ([9b51de3](https://bitbucket.tc.lenovo.com///commit/9b51de3f275512c5f4e09acf86ba61e755461e64))
+
+
+### Bug Fixes
+
+* **antivirus style:** VAN-20993 fixed av responsive ui ([e6f4473](https://bitbucket.tc.lenovo.com///commit/e6f4473e743cb7d34e4580b5b2aeb6855d77006f))
+* **High contrast:** fix notification HCM ([60e9ba4](https://bitbucket.tc.lenovo.com///commit/60e9ba439d8874188737291ba4c06161637440bb))
+* **High contrast:** fixed notification hcm issue ([d543741](https://bitbucket.tc.lenovo.com///commit/d543741e4b28f1bb46cff45af207fafa3d3f8047))
+* **High contrast:** VAN-20908 VAN-20910 VAN-20905 fix hc issue ([851506c](https://bitbucket.tc.lenovo.com///commit/851506c075045c0bee7ea375c695922468d1e7d5))
+* **High contrast overall:** VAN-20904 fixed page columns hcm issue ([d15372d](https://bitbucket.tc.lenovo.com///commit/d15372d377c809cf53da01e2502a6a481902e927))
+
 ### [1.7.23](https://bitbucket.tc.lenovo.com///compare/v1.7.21...v1.7.23) (2020-07-30)
 
 
