@@ -17,6 +17,7 @@ import { DevService } from 'src/app/services/dev/dev.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { SubpageDeviceSettingsAudioComponent } from './subpage-device-settings-audio.component';
+import { DeviceService } from '../../../../../services/device/device.service';
 
 
 
@@ -887,4 +888,64 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		component.updateMicrophoneHandler(msg);
 		expect(component.cacheFlag.AEC).toEqual(true);
 	});
+});
+describe('Microphone Optimization Section\'s block status', () => {
+	let fixture: ComponentFixture<SubpageDeviceSettingsAudioComponent>;
+	let component: SubpageDeviceSettingsAudioComponent;
+	let deviceService: DeviceService;
+
+	beforeEach(async(() => {
+		TestBed.configureTestingModule({
+			declarations: [
+				SubpageDeviceSettingsAudioComponent
+			],
+			schemas: [NO_ERRORS_SCHEMA],
+			imports: [
+				TranslateModule.forRoot(),
+				HttpClientTestingModule,
+				RouterTestingModule
+			],
+			providers: [
+				DevService,
+				DashboardService,
+				LoggerService,
+				AudioService,
+				CommonService,
+				VantageShellService,
+				DeviceService
+			]
+		});
+		deviceService = TestBed.inject(DeviceService);
+	}));
+
+	it('should be false as default', () => {
+		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
+		component = fixture.componentInstance;
+		expect(component.canShowMicrophoneOptimization).toBeFalsy();
+	});
+
+	it('should be blocked when machine\'s mt code is in block list', async () => {
+		const machineMtCodeInBlockList = '20YC';
+		const deviceServiceSpy = spyOn(deviceService, 'getMachineInfo');
+		deviceServiceSpy.and.returnValue(Promise.resolve({
+			mt: machineMtCodeInBlockList
+		}));
+		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+		expect(component.canShowMicrophoneOptimization).toBeTruthy('Filter logic has gone wrong');
+	});
+
+	it('should NOT be blocked when machine\'s mt code is in block list', async () => {
+		const machineMtCodeNotInBlockList = '81RS';
+		const deviceServiceSpy = spyOn(deviceService, 'getMachineInfo');
+		deviceServiceSpy.and.returnValue(Promise.resolve({
+			mt: machineMtCodeNotInBlockList
+		}));
+		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+		expect(component.canShowMicrophoneOptimization).toBeFalsy('Filter logic has gone wrong');
+	});
+
 });

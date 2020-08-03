@@ -195,12 +195,14 @@
 														<input type="radio"
 															tabindex="0"
 															[attr.aria-label]="usage.textKey | translate"
+															[attr.aria-checked]="usageType && usageType === usage.value"
 															id="settings-segment-choose-{{usage.id}}"
 															[checked]="usageType && usageType === usage.value"
 															[value]="usage.value"
 															(click)="saveUsageType(usage.value)"
 															name="settings-segment-choose" />
-														<img src="assets/images/welcome/{{usage.image}}" />
+														<img src="assets/images/welcome/{{usage.image}}"
+															alt="" />
 														<label for="settings-segment-choose-{{usage.id}}"
 															class="centered"
 															aria-hidden="true"

@@ -27,6 +27,12 @@
 		.vtr-disabled {
 			opacity: 0.65;
 			pointer-events: none !important;
+			@media #{$white-on-black} {
+				@include high-contrast-black-text-color-disabled;
+			}
+			@media #{$black-on-white} {
+				@include high-contrast-white-text-color-disabled;
+			}
 		}
 
 		padding: 1.5rem 0.7rem 1.5rem;

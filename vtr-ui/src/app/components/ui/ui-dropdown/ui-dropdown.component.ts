@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
-import { faChevronUp } from '@fortawesome/free-solid-svg-icons/faChevronUp';
+import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
+import { faChevronUp } from '@fortawesome/pro-light-svg-icons/faChevronUp';
 import { TranslateService } from '@ngx-translate/core';
 import { DropDownInterval } from 'src/app/data-models/common/drop-down-interval.model';
 import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';

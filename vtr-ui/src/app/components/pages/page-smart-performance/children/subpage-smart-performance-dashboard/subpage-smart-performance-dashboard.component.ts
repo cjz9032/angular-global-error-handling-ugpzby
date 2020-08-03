@@ -509,6 +509,13 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 	subscriptionInfo(event){
 		this.subscriptionInfoStatus = event || false;
 	}
+	
+	forPATest() {
+		this.isSubscribed = !this.isSubscribed;
+		this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, this.isSubscribed);
+		const localSubscriptionDetails = {data: true};
+		this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, localSubscriptionDetails);
+	}
 	async writeSmartPerformanceActivity(issmartperformanceopened, hasuserrunfreepcscan, issubscribed) {
 		const payload = {
 			issmartperformanceopened,
