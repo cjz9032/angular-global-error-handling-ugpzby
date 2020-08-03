@@ -3,19 +3,21 @@
 		<div class="row">
 			<div class="col-12 px-0">
 				<div class="header">
-					<div class="heading1">{{title}}</div>
+					<div id="hwscan-rbs-title" role="heading" class="heading1">{{title}}</div>
 				</div>
 			</div>
 		</div>
 
 		<div class="row loading-components" *ngIf="!devices">
-			<fa-icon placement="auto" [spin]="true" [icon]="['fal', 'circle-notch']" container="body"></fa-icon>
+			<fa-icon id="hwscan-loading-rbs-devices-spinner" role="img" placement="auto" [spin]="true" [icon]="['fal', 'circle-notch']" container="body"></fa-icon>
 		</div>
 
 		<div class="row" *ngIf="devices">
-			<div class="errorMessage">{{ errorMessage }}</div>
+			<div id="hwscan-rbs-error-message" role="text" class="errorMessage">{{ errorMessage }}</div>
 			<div class="col-12 px-0">
-				<vtr-ui-hardware-list-checkbox [devices]="devices">
+				<vtr-ui-hardware-list-checkbox
+					[componentId]="'hwscan-rbs-devices'"
+					[devices]="devices">
 				</vtr-ui-hardware-list-checkbox>
 			</div>
 		</div>
@@ -23,6 +25,7 @@
 		<div class="row" *ngIf="devices">
 			<div class="button-row">
 				<vtr-ui-button
+					id="hwscan-start-rbs-btn"
 					[isDisabled]="!isSelectedItem()"
 					metricsEvent="ItemClick"
 					metricsParent="HardwareScan.RecoverBadSectors"
