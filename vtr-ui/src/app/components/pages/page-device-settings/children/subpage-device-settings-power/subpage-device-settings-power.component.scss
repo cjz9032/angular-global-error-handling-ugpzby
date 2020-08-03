@@ -238,9 +238,11 @@
 		img {
 			@media #{$white-on-black} {
 				@include white-border;
+				padding: 0.1rem;
 			}
 			@media #{$black-on-white} {
 				@include black-border;
+				padding: 0.1rem;
 			}
 		}
 	}
