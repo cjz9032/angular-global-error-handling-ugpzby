@@ -30,6 +30,14 @@
 		background: $light 0% 0% no-repeat padding-box;
 		border: 0.1rem solid $screen_dark_10;
 		border-radius: 0.5rem;
+		&:active {
+			@media #{$white-on-black} {
+				@include high-contrast-black-text-color;
+			}
+			@media #{$black-on-white} {
+				@include high-contrast-white-text-color;
+			}
+		}
 
 		&-s-label {
 			padding-left: 1.4rem;
@@ -148,9 +156,11 @@
 	border: 0.1rem solid $menu_hover !important;
 	@media #{$white-on-black} {
 		@include high-contrast-black-border;
+		@include high-contrast-black-text-color;
 	}
 	@media #{$black-on-white} {
 		@include high-contrast-white-border;
+		@include high-contrast-white-text-color;
 	}
 }
 
