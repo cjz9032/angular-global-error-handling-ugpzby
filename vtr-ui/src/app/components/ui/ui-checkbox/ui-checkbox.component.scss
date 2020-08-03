@@ -137,8 +137,6 @@
 					background-color: $dark;
 					border-radius: 0.25rem !important;
 				}
-
-
 			}
 		}
 
@@ -251,16 +249,76 @@
 		/* end of disabled state */
 
 		/* indeterminate state */
-
 		.custom-control-input:indeterminate ~ .custom-control-label {
 			&::before {
 				background-color: $light;
+
+				@media #{$white-on-black} {
+					background-color: $high-contrast-black-cyan;
+					border: none;
+					border-radius: 0.25rem !important;
+				}
+				@media #{$black-on-white} {
+					background-color: $high-contrast-white-dark-magenta;
+					border: none;
+					border-radius: 0.25rem !important;
+				}
+
 			}
 			&::after {
-				@include indeterminate-icon()
+				@include indeterminate-icon();
+				@media #{$white-on-black} {
+					@include indeterminate-icon($dark);
+				}
+				@media #{$black-on-white} {
+					@include indeterminate-icon($light);
+				}
+
+			}
+
+			&:hover {
+				&::after {
+					@media #{$white-on-black} {
+						@include indeterminate-icon($light);
+					}
+					@media #{$black-on-white} {
+						@include indeterminate-icon($dark);
+					}
+				}
+				&::before {
+					@media #{$white-on-black} {
+						background-color: $dark;
+						@include high-contrast-black-border;
+					}
+					@media #{$black-on-white} {
+						background-color: $light;
+						@include high-contrast-white-border;
+					}
+				}
 			}
 		}
 
+		// pressed state
+		.custom-control-input:active:indeterminate ~ .custom-control-label {
+			&::before {
+				@media #{$black-on-white} {
+					background-color: $high-contrast-white-dark-magenta;
+				}
+				@media #{$white-on-black} {
+					background-color: $high-contrast-black-cyan;
+				}
+			}
+
+			&::after {
+				@include indeterminate-icon($light);
+				@media #{$white-on-black} {
+					@include indeterminate-icon($light);
+				}
+				@media #{$black-on-white} {
+					@include indeterminate-icon($dark);
+				}
+			}
+		}
 		/* end of indeterminate state */
 
 	}
