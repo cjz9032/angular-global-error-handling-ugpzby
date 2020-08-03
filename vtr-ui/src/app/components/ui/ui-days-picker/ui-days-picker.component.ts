@@ -35,7 +35,6 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 		if (listbox) {
 			listbox.focus();
 		}
-
 	}
 
 	onToggleDropDown() {
@@ -54,7 +53,6 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 		if (listbox) {
 			listbox.focus();
 		}
-
 	}
 
 	selectDay($event: boolean, shortName: string) {
@@ -89,7 +87,5 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 			default:
 				break;
 		}
-
 	}
-
 }

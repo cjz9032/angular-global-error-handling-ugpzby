@@ -1,9 +1,10 @@
-<div class="row pt-5 smart-settings-card" id="smartStandby"
+<div class="row pt-5 smart-settings-card"
+	id="smartStandby"
 	*ngIf="smartStandby?.isCapable">
 	<div class="col-12 px-0 container-border">
 		<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.smartStandby.sectionTitle' | translate"
-            [headerLevel]="3"    
-            [isCollapsed]="false"
+			[headerLevel]="3"
+			[isCollapsed]="false"
 			[collapseLinkId]="'smart-standby-collapse'"
 			[tabIndex]="0">
 			<ul class="list-group list-group-flush">
@@ -112,7 +113,7 @@
 												[showDropDown]="showDropDown[0]"
 												(setTime)="onSetActiveStartEnd($event, true)"
 												[label]="'smart standby , start time dropdown'"
-												[linkId]="'start'">
+												[linkId]="'smart-standby-start-dd-label'">
 											</vtr-ui-time-picker>
 											<vtr-ui-time-picker [time]="smartStandbyEndTime"
 												[subHeadingText]="'device.deviceSettings.power.smartStandby.timer.subHeading2'"
@@ -120,7 +121,7 @@
 												[showDropDown]="showDropDown[1]"
 												(setTime)="onSetActiveStartEnd($event, false)"
 												[label]="'smart standby , end time dropdown'"
-												[linkId]="'end'">
+												[linkId]="'smart-standby-end-dd-label'">
 											</vtr-ui-time-picker>
 											<div *ngIf="showDiffNote"
 												class="row">
@@ -136,7 +137,7 @@
 											<vtr-ui-days-picker
 												[subHeadingText]="'device.deviceSettings.power.smartStandby.timer.subHeading3'"
 												[daysId]="'dropcheck3'"
-												[linkId]="'use-schedule-for'"
+												[linkId]="'smart-standby-use-schedule-dd-label'"
 												[showDropDown]="showDropDown[2]"
 												(setDays)="onSetDaysOfWeekOff($event)"></vtr-ui-days-picker>
 										</div>

@@ -1,6 +1,7 @@
 <div class="vtr-ui-time-picker">
 	<div class="row">
 		<p class="sub-heading"
+		role="text"
 		id="{{linkId}}">
 		{{ subHeadingText | translate | uppercase }}</p>
 	</div>
@@ -17,7 +18,6 @@
 						(click)="onToggleDropDown()">
 					<label [for]="id"
 						id="ui-time-picker-label"
-						attr.aria-label="{{label}}, {{hours[hour]}}, 'hours', {{minutes[minute]}}, 'minutes', {{amPms[amPm] | translate}}"
 						[attr.aria-expanded]="showDropDown"
 						#combo
 						tabindex="0"
