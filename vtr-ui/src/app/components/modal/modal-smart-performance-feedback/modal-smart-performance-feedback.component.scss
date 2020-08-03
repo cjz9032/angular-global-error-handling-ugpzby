@@ -207,6 +207,9 @@ $normalPadding: 2.4rem;
 			display: flex;
 			justify-content: space-between;
 			width: 15rem;
+			.form-check-label {
+				white-space: nowrap;
+			}
 		}
 	}
 	.comment-tip {
