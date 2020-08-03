@@ -10,9 +10,7 @@
 
 	<div class="row button-row">
 		<vtr-ui-button
-			metricsEvent="FeatureClick"
-			metricsParent="HardwareScan"
-			metricsItem="HardwareScan.CustomizeScan"
+			[vtrMetrics]=false
 			[label]= " 'hardwareScan.customize.runTests' | translate "
 			(onClick)="onClickRun()">
 		</vtr-ui-button>
