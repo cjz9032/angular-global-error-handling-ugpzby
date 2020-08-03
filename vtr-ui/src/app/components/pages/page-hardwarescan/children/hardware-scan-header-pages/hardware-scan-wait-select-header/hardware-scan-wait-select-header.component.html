@@ -6,6 +6,7 @@
 		<vtr-ui-button
 			[vtrMetrics]=false
 			[label]= " 'hardwareScan.quickScan' | translate "
+			[isDisabled]="disableButtonScan"
 			[title] =" 'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate "
 			(onClick)="onQuickScan()">
 		</vtr-ui-button>
