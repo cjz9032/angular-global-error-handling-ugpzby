@@ -126,25 +126,25 @@
 									[switchId]="'inputAccessories-VoipHotkeys'"
 									automationId="[VoipHotkeys.title, VoipHotkeys.description.main, VoipHotkeys.tooltip]">
 									<div class="row adjust-indent pt-2 caption">
-										<div class="col-12 adjust-margin"
-											role="heading"
+										<p class="col-12 adjust-margin"
+											role="text"
 											id="VoipHotkeys-description-f10">
 											{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.description.f10' | translate}}
-										</div>
-										<div class="col-12 adjust-margin"
-											role="heading"
+										</p>
+										<p class="col-12 adjust-margin"
+											role="text"
 											id="VoipHotkeys-description-f11">
 											{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.description.f11' | translate}}
-										</div>
+										</p>
 									</div>
 									<div class="row pt-2 pl-4"
 										*ngIf="installedApps.length > 0; else noAppInstalled">
 										<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-											<div class="pt-3 pb-4 prompting"
-												role="heading"
+											<p class="pt-3 pb-4 prompting"
+												role="text"
 												id="VoipHotkeys-hasInstalledAppsDescription">
 												{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.hasInstalledAppsDescription' | translate}}
-											</div>
+											</p>
 											<div role="radiogroup"
 												id="voip-installedApps-block"
 												aria-label="installedApps selection list, select using arrow keys"
@@ -165,10 +165,9 @@
 											</div>
 
 											<div class="row pt-5">
-												<div class="feature-note col-12 p-4"
-													id="hasInstalledApps-note"
-													role="heading">
+												<div class="feature-note col-12 p-4">
 													<p class="mb-0"
+														role="text"
 														id="VoipHotkeys-hasInstalledAppsNote">
 														{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.hasInstalledAppsNote' | translate}}
 													</p>
@@ -179,11 +178,11 @@
 									<ng-template #noAppInstalled>
 										<div class="row adjust-indent">
 											<div class="col-12 adjust-margin">
-												<div class="pt-3 pb-4 prompting"
+												<p class="pt-3 pb-4 prompting"
 													id="VoipHotkeys-noInstalledAppsDescription"
-													role="heading">
+													role="text">
 													{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.noInstalledAppsDescription' | translate}}
-												</div>
+												</p>
 											</div>
 										</div>
 										<div class="row adjust-indent mt-2">
@@ -192,7 +191,7 @@
 													id="app-icon-skype"
 													class="app-icon icon-s4b mr-4"></span>
 												<span id="skype-for-business"
-													role="heading"
+													role="text"
 													class="app-text">Skype for Business 2016</span>
 											</div>
 										</div>
@@ -202,7 +201,7 @@
 													role="img"
 													class="app-icon icon-teams mr-4"></span>
 												<span id="microsoft-teams-1.0"
-													role="heading"
+													role="text"
 													class="app-text">Microsoft Teams 1.0</span>
 											</div>
 										</div>
@@ -212,7 +211,7 @@
 												aria-label="noInstalledApps-note">
 												<p class="mb-0"
 													id="VoipHotkeys-noInstalledAppsNote"
-													role="heading">
+													role="text">
 													{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.noInstalledAppsNote' | translate}}
 												</p>
 											</div>
@@ -263,7 +262,8 @@
 									[switchId]="'inputAccessories-fnCtrlKey1'">
 									<div class="row">
 										<div class="feature-note note p-4">
-											<p id="fnCtrlKey-featureNote">
+											<p id="fnCtrlKey-featureNote"
+												role="text">
 												{{'device.deviceSettings.inputAccessories.fnCtrlKey.featureNote' | translate}}
 											</p>
 										</div>
