@@ -29,6 +29,7 @@
 		.progress-value-text {
 			color: $light;
 			font-weight: $weight_light;
+			margin-bottom: 0.5rem;
 			line-height: 2.9rem;
 			padding-right: 0rem;
 			padding-left: 0rem;
@@ -36,6 +37,9 @@
 			font-size: 3rem;
 		}
 		.progress-complete-text {
+			overflow: hidden; // Use to fix high contrast background
+			margin-bottom: 0rem;
+			align-self: flex-end;
 			color: $light;
 			font-size: $fontsize_xs;
 			font-weight: $weight_light;
