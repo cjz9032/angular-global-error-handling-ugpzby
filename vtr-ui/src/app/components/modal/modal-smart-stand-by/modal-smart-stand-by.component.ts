@@ -61,24 +61,24 @@ export class ModalSmartStandByComponent implements OnInit, AfterViewInit {
 	}
 
 	private renderActivityChart(chartContainer: ElementRef, data: SmartStandbyActivityModel[], colors: string[]) {
-        const hours = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
-        const margin: any = { top: 40, bottom: 30, left: 30, right: 30 };
-        const boxWidth = 20;
-        const boxHeight = 14;
-        const cellWidth = boxWidth / 4;
-        const cellBorder = 'stroke: #E0E0E0; stroke-width: 1; fill-opacity: 0;';
-        const fontStroke = 'fill: #34495e;';
+		const hours = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
+		const margin: any = { top: 40, bottom: 30, left: 30, right: 30 };
+		const boxWidth = 20;
+		const boxHeight = 14;
+		const cellWidth = boxWidth / 4;
+		const cellBorder = 'stroke: #E0E0E0; stroke-width: 1; fill-opacity: 0;';
+		const fontStroke = 'fill: #34495e;';
 
-        const element = chartContainer.nativeElement;
+		const element = chartContainer.nativeElement;
 
-        const svg = d3.select(element).append('svg')
+		const svg = d3.select(element).append('svg')
 			.attr('preserveAspectRatio', 'xMinYMin meet')
 			.attr('viewBox', '0 0 570 140');
 
-        // chart plot area
-        const chart = svg.append('g')
+		// chart plot area
+		const chart = svg.append('g')
 			.attr('transform', `translate(45 20)`);
-        chart.selectAll('g')
+		chart.selectAll('g')
 			.data(hours)
 			.enter()
 			.append('text')
@@ -88,8 +88,8 @@ export class ModalSmartStandByComponent implements OnInit, AfterViewInit {
 			.attr('text-anchor', 'center')
 			.attr('style', fontStroke);
 
-        // y-axis labels
-        chart.selectAll('g')
+		// y-axis labels
+		chart.selectAll('g')
 			.data(this.days)
 			.enter()
 			.append('text')
@@ -99,13 +99,13 @@ export class ModalSmartStandByComponent implements OnInit, AfterViewInit {
 			.attr('text-anchor', 'end')
 			.attr('style', fontStroke);
 
-        const table = chart.selectAll('g')
+		const table = chart.selectAll('g')
 			.append('g')
 			.data(data)
 			.join('g')
 			.attr('transform', (d, i) => `translate(${margin.left}, ${((i) * boxHeight) + 10})`);
 
-        const cells = table
+		const cells = table
 			.selectAll('g')
 			.data(d => d.activities)
 			.join('g')
@@ -114,8 +114,8 @@ export class ModalSmartStandByComponent implements OnInit, AfterViewInit {
 			.attr('class', 'cell-container')
 			.attr('transform', (d, i) => `translate(${(i * boxWidth)}, 0)`);
 
-        // draw activity cell for each hour, each hour has 4 cells
-        cells
+		// draw activity cell for each hour, each hour has 4 cells
+		cells
 			.selectAll('g')
 			.data(d => d.usage)
 			.join('rect')
@@ -125,8 +125,8 @@ export class ModalSmartStandByComponent implements OnInit, AfterViewInit {
 			.attr('fill', (d, i) => colors[d])
 			.attr('x', (d, i) => (i * cellWidth));
 
-        // add rect with border, repeat once
-        cells
+		// add rect with border, repeat once
+		cells
 			.selectAll('g')
 			.data([1])
 			.join('rect')
@@ -135,7 +135,7 @@ export class ModalSmartStandByComponent implements OnInit, AfterViewInit {
 			.attr('height', boxHeight)
 			.attr('style', cellBorder)
 			.attr('x', (d, i) => (i * cellWidth));
-    }
+	}
 
 	private getActivitiesData() {
 		// this.renderActivityChart(this.chartContainer1, this.activities, this.colors.first);
@@ -143,6 +143,7 @@ export class ModalSmartStandByComponent implements OnInit, AfterViewInit {
 		this.powerService.getSmartStandbyPresenceData().then((data: SmartStandbyActivityModel[]) => {
 			if (data && data.length > 0) {
 				this.renderActivityChart(this.chartContainer1, data, this.colors.first);
+				this.loggerService.info('ModalSmartStandByComponent.getSmartStandbyPresenceData', data);
 			} else {
 				this.renderActivityChart(this.chartContainer1, this.activities, this.colors.first);
 			}
@@ -158,6 +159,7 @@ export class ModalSmartStandByComponent implements OnInit, AfterViewInit {
 			if (data && data.length > 0) {
 				this.renderActivityChart(this.chartContainer2, data, this.colors.second);
 				this.getIsPresenceDataSufficientStatus();
+				this.loggerService.info('ModalSmartStandByComponent.getSmartStandbyActiveHours', data);
 			} else {
 				this.renderActivityChart(this.chartContainer2, this.activities, this.colors.second);
 			}
