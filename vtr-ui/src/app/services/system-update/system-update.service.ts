@@ -196,16 +196,25 @@ export class SystemUpdateService {
 
 	public getScheduleUpdateStatus(canReportProgress: boolean) {
 		if (this.systemUpdateBridge) {
+			const timeOut = setTimeout(() => {
+				this.loggerService.info('get status time out, it should be imc error');
+				this.metricService.sendSystemUpdateStatusMetric('Time out, fail to enable check for update');
+			}, 2 * 60000);
 			this.systemUpdateBridge.getStatus(canReportProgress, (response: any) => {
 				this.processScheduleUpdate(response.payload, true, canReportProgress);
 			}).then((response: ScheduleUpdateStatus) => {
 				this.isImcErrorOrEmptyResponse = false;
+				clearTimeout(timeOut);
 				this.processScheduleUpdate(response, false, canReportProgress);
 			}).catch((error) => {
+				clearTimeout(timeOut);
 				if (error && error.errorcode === 606) {
 					setTimeout(() => {
 						this.getScheduleUpdateStatus(canReportProgress);
 					}, 200);
+				} else {
+					this.loggerService.info('get status exception.');
+					this.metricService.sendSystemUpdateStatusMetric('Exception, fail to enable check for update');
 				}
 			});
 		}
@@ -303,6 +312,9 @@ export class SystemUpdateService {
 			setTimeout(() => {
 				this.getScheduleUpdateStatus(canReportProgress);
 			}, 200);
+		} else {
+			this.loggerService.info('get Status return unexpected response.', response);
+			this.metricService.sendSystemUpdateStatusMetric('Unexpected response, fail to enable check for update');
 		}
 	}
 

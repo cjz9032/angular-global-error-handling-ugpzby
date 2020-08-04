@@ -247,6 +247,15 @@ export class MetricService {
 		this.metricsClient.sendAsync(new AppAction(MetricConst.ActionSuspend, stub.launchParms, stub.launchType, focusDuration, blurDuration));
 	}
 
+	public sendSystemUpdateStatusMetric(metricsName: string) {
+		const metricsData = {
+			ItemParent: 'SystemUpdate',
+			ItemName: metricsName,
+			ItemType: 'FeatureStatus'
+		};
+		this.sendMetrics(metricsData);
+	}
+
 	public sendSystemUpdateMetric(avilablePackage: number, packageIdArray: string, message: string, searchStart: Date) {
 		this.metricsClient.sendAsync(new TaskAction(
 			MetricConst.TaskCheckSystemUpdate,
