@@ -1,5 +1,5 @@
 import { GamingAutoCloseService } from './../../../services/gaming/gaming-autoclose/gaming-autoclose.service';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, NgZone } from '@angular/core';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { isUndefined } from 'util';
 import { AutoCloseStatus } from 'src/app/data-models/gaming/autoclose/autoclose-status.model';
@@ -11,6 +11,9 @@ import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { Subscription } from 'rxjs/internal/Subscription';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { GamingQuickSettingToolbarService } from 'src/app/services/gaming/gaming-quick-setting-toolbar/gaming-quick-setting-toolbar.service';
+import { EventTypes } from '@lenovo/tan-client-bridge';
 
 @Component({
 	selector: 'vtr-page-autoclose',
@@ -21,6 +24,7 @@ export class PageAutocloseComponent implements OnInit, OnDestroy {
 	public showTurnOnModal = false;
 	public showAppsModal = false;
 	public autoCloseAppList: any;
+	public autoCloseEvent:any;
 	private cmsSubscription: Subscription;
 	notificationSubscription: Subscription;
 
@@ -45,6 +49,9 @@ export class PageAutocloseComponent implements OnInit, OnDestroy {
 		private loggerService: LoggerService,
 		private translate: TranslateService,
 		public deviceService: DeviceService,
+		private shellServices: VantageShellService,
+		private gamingQuickSettingToolbarService: GamingQuickSettingToolbarService,
+		private ngZone: NgZone,
 	) {
 		this.fetchCMSArticles();
 		this.isOnline = this.commonService.isOnline;
@@ -53,6 +60,7 @@ export class PageAutocloseComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		// AutoClose Init
 		this.getAutoCloseStatus();
+		this.autoCloseRegisterEvent();
 		this.refreshAutoCloseList();
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
@@ -243,6 +251,27 @@ export class PageAutocloseComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	// version:3.3.3 quick setting toolbar& toast
+	autoCloseRegisterEvent () {
+		this.autoCloseEvent = this.onGamingQuickSettingsAutoCloseStatusChangedEvent.bind(this);
+		this.gamingQuickSettingToolbarService.registerEvent('AutoClose');
+		this.shellServices.registerEvent(
+			EventTypes.gamingQuickSettingsAutoCloseStatusChangedEvent,
+			this.autoCloseEvent
+		);
+	}
+
+	onGamingQuickSettingsAutoCloseStatusChangedEvent(status:any) {
+		this.ngZone.run(() => {
+			status = status ===1 ? true : false;
+			this.loggerService.info(`Widget-LegionEdge-onGamingQuickSettingsAutoCloseStatusChangedEvent: call back from ${this.toggleStatus} to ${status}`);
+			if (status !== undefined && this.toggleStatus !== status) {
+				this.toggleStatus = status;
+				this.gamingAutoCloseService.setAutoCloseStatusCache(status);
+			}
+		});
+	}
+
 	ngOnDestroy() {
 		if (this.cmsSubscription) {
 			this.cmsSubscription.unsubscribe();
@@ -251,5 +280,8 @@ export class PageAutocloseComponent implements OnInit, OnDestroy {
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
 		}
+
+		this.gamingQuickSettingToolbarService.unregisterEvent('AutoClose');
+		this.shellServices.unRegisterEvent(EventTypes.gamingQuickSettingsAutoCloseStatusChangedEvent, this.autoCloseEvent);
 	}
 }
