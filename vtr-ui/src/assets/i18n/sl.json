@@ -2138,7 +2138,8 @@
                 "desc2": "Prijavite se v sistem Windows in alarm se bo samodejno izklopil. Če želite uporabljati to funkcijo, jo boste morali znova omogočiti.",
                 "note": {
                     "descriptionTitle": "Pozor:",
-                    "description": "Ob prijavi v sistem Windows so potrebne veljavne možnosti vpisa, kot je geslo ali koda PIN. V nasprotnem primeru lahko funkcijo pametnega opozarjanja na premikanje pomotoma onemogoči nepooblaščen uporabnik, ki dostopa do vašega računalnika."
+                    "description1": "Ob prijavi v sistem Windows so potrebne veljavne možnosti vpisa, kot je geslo ali koda PIN. V nasprotnem primeru lahko funkcijo pametnega opozarjanja na premikanje pomotoma onemogoči nepooblaščen uporabnik, ki dostopa do vašega računalnika.",
+                    "description2": "Preden zapustite računalnik ga ne pozabite zakleniti s pritiskom na tipko z logotipom Windows in tipko L. V nasprotnem primeru funkcija pametnega opozarjanja na premikanje ne bo delovala kot običajno."
                 },
                 "alarm": {
                     "title": " OPOZARJANJE BO TRAJALO",

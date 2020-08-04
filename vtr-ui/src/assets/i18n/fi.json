@@ -2138,7 +2138,8 @@
                 "desc2": "Kirjaudu sisään Windowsiin, niin hälytys katkaistaan automaattisesti. Sinun täytyy ottaa tämä ominaisuus uudelleen käyttöön käyttääksesi sitä.",
                 "note": {
                     "descriptionTitle": "Huomio:",
-                    "description": "Windowsiin sisäänkirjautuminen edellyttää voimassa olevaa kirjautumisvaihtoehtoa, kuten salasanaa tai PIN-koodia. Muussa tapauksessa valtuuttamaton käyttäjä, joka pääsee tietokoneellesi, voisi poistaa älykkään liikkeentunnistusominaisuuden vahingossa käytöstä."
+                    "description1": "Windowsiin sisäänkirjautuminen edellyttää voimassa olevaa kirjautumisvaihtoehtoa, kuten salasanaa tai PIN-koodia. Muussa tapauksessa valtuuttamaton käyttäjä, joka pääsee tietokoneellesi, voisi poistaa älykkään liikkeentunnistusominaisuuden vahingossa käytöstä.",
+                    "description2": "Ennen kuin poistut tietokoneelta, lukitse tietokone painamalla Windows-näppäintä ja L-näppäintä. Muuten älykäs liikkeentunnistus ei toimi normaalisti."
                 },
                 "alarm": {
                     "title": " HÄLYTYS KESTÄÄ",

@@ -2138,7 +2138,8 @@
                 "desc2": "Inicie sesión en Windows y la alerta se apagará automáticamente. Para utilizar la característica, debe activarla de nuevo.",
                 "note": {
                     "descriptionTitle": "Atención:",
-                    "description": "Se necesitan opciones de inicio de sesión válidas, como una contraseña o un código PIN, para iniciar sesión en Windows. De lo contrario, es posible que algún usuario no autorizado con acceso a su sistema deshabilite por error la característica Alerta de movimiento inteligente."
+                    "description1": "Se necesitan opciones de inicio de sesión válidas, como una contraseña o un código PIN, para iniciar sesión en Windows. De lo contrario, es posible que algún usuario no autorizado con acceso a su sistema deshabilite por error la característica Alerta de movimiento inteligente.",
+                    "description2":"Antes de alejarse del equipo, asegúrese de bloquearlo presionando las teclas de logotipo de Windows y L. De lo contrario, la función de alarma de movimiento inteligente no funcionará con normalidad."
                 },
                 "alarm": {
                     "title": " LA ALARMA DURARÁ",

@@ -2138,7 +2138,8 @@
                 "desc2": "Melden Sie sich bei Windows an und der Alarm wird automatisch ausgeschaltet. Sie müssen die Funktion erneut aktivieren, um sie verwenden zu können.",
                 "note": {
                     "descriptionTitle": "Achtung:",
-                    "description": "Für die Anmeldung bei Windows sind gültige Anmeldeoptionen erforderlich, z. B. ein Kennwort oder PIN-Code. Andernfalls kann die Funktion für den intelligenten Bewegungsalarm versehentlich von einem nicht autorisierten Benutzer deaktiviert werden, der auf Ihren Computer zugreift."
+                    "description1": "Für die Anmeldung bei Windows sind gültige Anmeldeoptionen erforderlich, z. B. ein Kennwort oder PIN-Code. Andernfalls kann die Funktion für den intelligenten Bewegungsalarm versehentlich von einem nicht autorisierten Benutzer deaktiviert werden, der auf Ihren Computer zugreift.",
+                    "description2":"Bevor Sie sich von Ihrem Computer entfernen, sperren Sie ihn mit der Tastenkombination Windows + L. Andernfalls funktioniert die Funktion für den intelligenten Bewegungsalarm nicht ordnungsgemäß."
                 },
                 "alarm": {
                     "title": " ALARM ENDET NACH",

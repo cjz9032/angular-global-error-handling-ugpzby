@@ -133,20 +133,29 @@ export class ModernPreloadService {
 
 	private mergeAppDetails(appList: any, cmsAppList: any) {
 		appList.forEach(app => {
+			app.size = this.calAppSize(app.size);
+			app.originalStatus = app.status;
+			app.isChecked = app.status !== ModernPreloadEnum.StatusInstalled; // set default checked for not installed app
 			const detailFromCMS = cmsAppList.find((detail) => detail.UDCId.includes(app.partNum));
 			if (detailFromCMS) {
 				app.company = detailFromCMS.Company;
 				app.filters = detailFromCMS.Filters;
-				app.size = detailFromCMS.Size;
 				app.thumbnail = detailFromCMS.Thumbnail;
 				app.title = detailFromCMS.Title;
 				app.udcId = app.partNum;
-				app.version = detailFromCMS.Version;
+				app.size = app.size ? app.size : detailFromCMS.Size;
+				app.version = app.version ? app.version : detailFromCMS.Version;
 			}
-			app.originalStatus = app.status;
-			app.isChecked = app.status !== ModernPreloadEnum.StatusInstalled; // set default checked for not installed app
 		});
 		return appList;
+	}
+
+	private calAppSize(size: any): any {
+		if (size && size !== '0') {
+			return this.commonService.formatBytes(parseInt(size, 10));
+		} else {
+			return undefined;
+		}
 	}
 
 	installEntitledApp(sendAppList: AppItem[], responseHandler) {
@@ -231,7 +240,7 @@ export class AppItem {
 	thumbnail?: string;
 	company?: string;
 	version?: string;
-	size?: string;
+	size?: string; // in response from IMC, it is uint decimal value, the unit of size value is bytes.
 	udcId?: string; // in response from IMC, it is partNum
 	filters?: string;
 	name?: string;

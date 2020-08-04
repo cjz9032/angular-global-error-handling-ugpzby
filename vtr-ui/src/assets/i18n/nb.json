@@ -2138,7 +2138,8 @@
                 "desc2": "Logg deg på Windows og alarmen vil bli slått av automatisk. Du må aktivere funksjonen på nytt for å bruke den.",
                 "note": {
                     "descriptionTitle": "NB:",
-                    "description": "Det kreves gyldige påloggingsalternativer, for eksempel et passord eller en PIN-kode når du logger deg på Windows. Ellers kan funksjonen Smartbevegelsesalarm bli feilaktig deaktivert av enhver uautorisert bruker som får tilgang til data maskinen din."
+                    "description1": "Det kreves gyldige påloggingsalternativer, for eksempel et passord eller en PIN-kode når du logger deg på Windows. Ellers kan funksjonen Smartbevegelsesalarm bli feilaktig deaktivert av enhver uautorisert bruker som får tilgang til data maskinen din.",
+                    "description2": "Før du forlater maskinen din må du låse den ved å trykke på Windows-logoen og L-tasten. Ellers vil ikke Smartbevegelsesalarmen fungere normalt."
                 },
                 "alarm": {
                     "title": " ALARMEN SKAL VARE I",

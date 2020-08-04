@@ -2138,7 +2138,8 @@
                 "desc2": "Conectați-vă la Windows și alarma se va opri în mod automat. Pentru a utiliza această caracteristică, trebuie să o activați din nou.",
                 "note": {
                     "descriptionTitle": "Atenție:",
-                    "description": "Atunci când vă conectați la Windows sunt necesare opțiuni de conectare valide, precum o parolă sau un cod PIN. În caz contrar, caracteristica Alertă Smart Motion poate fi dezactivată din greșeală de către orice utilizator neautorizat care vă accesează computerul."
+                    "description1": "Atunci când vă conectați la Windows sunt necesare opțiuni de conectare valide, precum o parolă sau un cod PIN. În caz contrar, caracteristica Alertă Smart Motion poate fi dezactivată din greșeală de către orice utilizator neautorizat care vă accesează computerul.",
+                    "description2": "Înainte de a părăsi computerul, asigurați-vă că îl blocați apăsând tasta cu sigla Windows și tasta L. În caz contrar, funcția Alertă Smart Motion nu va funcționa normal."
                 },
                 "alarm": {
                     "title": " ALARMA VA DURA TIMP DE",
