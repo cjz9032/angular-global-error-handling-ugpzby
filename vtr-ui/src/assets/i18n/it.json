@@ -2138,7 +2138,8 @@
                 "desc2": "Accedere a Windows e l'avviso verrà disattivato automaticamente. Per utilizzare la funzione è necessario abilitarla nuovamente.",
                 "note": {
                     "descriptionTitle": "Attenzione:",
-                    "description": "Le opzioni di accesso valide, come ad esempio una password o un codice PIN, sono necessarie quando si accede a Windows. In caso contrario, la funzione di avviso Smart Motion potrebbe essere erroneamente disabilitata da un utente non autorizzato che accede al computer."
+                    "description1": "Le opzioni di accesso valide, come ad esempio una password o un codice PIN, sono necessarie quando si accede a Windows. In caso contrario, la funzione di avviso Smart Motion potrebbe essere erroneamente disabilitata da un utente non autorizzato che accede al computer.",
+                    "description2": "Prima di allontanarsi dal computer, assicurarsi di bloccare il computer premendo il logo Windows e il tasto L. In caso contrario, la funzione di avviso Smart Motion non funzionerà correttamente."
                 },
                 "alarm": {
                     "title": " L'ALLARME DURERÀ PER",

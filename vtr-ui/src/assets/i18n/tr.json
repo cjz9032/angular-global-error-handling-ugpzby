@@ -2138,7 +2138,8 @@
                 "desc2": "Windows'da oturum açtığınızda alarm otomatik olarak kapanır. Özelliği kullanmak için yeniden etkinleştirmeniz gerekir.",
                 "note": {
                     "descriptionTitle": "Dikkat:",
-                    "description": "Windows'da oturum açarken parola veya PIN kodu gibi geçerli oturum açma seçeneklerinin kullanılması gerekir. Aksi takdirde, Akıllı hareket alarmı özelliği, bilgisayarınıza erişen yetkili olmayan bir kullanıcı tarafından yanlışlıkla devre dışı bırakılabilir."
+                    "description1": "Windows'da oturum açarken parola veya PIN kodu gibi geçerli oturum açma seçeneklerinin kullanılması gerekir. Aksi takdirde, Akıllı hareket alarmı özelliği, bilgisayarınıza erişen yetkili olmayan bir kullanıcı tarafından yanlışlıkla devre dışı bırakılabilir.",
+                    "description2": "Bilgisayarınızın başından ayrılmadan önce, Windows logosuna ve L tuşuna basarak bilgisayarı kilitlediğinizden emin olun. Aksi takdirde, Akıllı hareket alarmı işlevi normal şekilde çalışmaz."
                 },
                 "alarm": {
                     "title": " ALARM SÜRESİ",

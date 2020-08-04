@@ -2138,7 +2138,8 @@
                 "desc2": "Jelentkezzen be a Windows rendszerbe, és a riasztás automatikusan kikapcsol. A funkció használatához ismét engedélyeznie kell.",
                 "note": {
                     "descriptionTitle": "Figyelem:",
-                    "description": "Állítson be valamilyen érvényes bejelentkezési lehetőséget, például jelszót vagy PIN-kódot a Windows rendszerbe való bejelentkezéshez. Ha ezt nem teszi meg, az Intelligens mozgásérzékeléses riasztás funkciót a számítógéphez hozzáférő bármely jogosulatlan felhasználó kikapcsolhatja."
+                    "description1": "Állítson be valamilyen érvényes bejelentkezési lehetőséget, például jelszót vagy PIN-kódot a Windows rendszerbe való bejelentkezéshez. Ha ezt nem teszi meg, az Intelligens mozgásérzékeléses riasztás funkciót a számítógéphez hozzáférő bármely jogosulatlan felhasználó kikapcsolhatja.",
+                    "description2": "Mielőtt magára hagyja a számítógépet, ügyeljen arra, hogy lezárja a Windows billentyű és az L billentyű lenyomásával. Ellenkező esetben az Intelligens mozgásérzékeléses riasztás funkció nem működik megfelelően."
                 },
                 "alarm": {
                     "title": " A RIASZTÁS ENNYI IDEIG SZÓL:",

@@ -2140,7 +2140,8 @@
 				"desc2": "Log into Windows and the alarm will be automatically turned off. To use the feature, you need to enable it again.",
 				"note": {
 					"descriptionTitle": "Attention:",
-					"description": "Valid sign-in options such as a password or PIN code are needed when you log into Windows. Otherwise, the Smart motion alarm feature might be mistakenly disabled by any unauthorized user who accesses your computer."
+					"description1": "Valid sign-in options such as a password or PIN code are needed when you log into Windows. Otherwise, the Smart motion alarm feature might be mistakenly disabled by any unauthorized user who accesses your computer.",
+					"description2": "Before leaving your computer, be sure to lock the computer by pressing the Windows logo and the L key. Otherwise, the Smart motion alarm function will not work normally."
 				},
 				"alarm": {
 					"title": " THE ALARM WILL LAST FOR",

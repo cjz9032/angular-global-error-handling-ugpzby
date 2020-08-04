@@ -2138,7 +2138,8 @@
                 "desc2": "Prijavite se na Windows i alarm će se automatski isključiti. Da biste koristili ovu funkciju, omogućite je ponovo.",
                 "note": {
                     "descriptionTitle": "Pažnja:",
-                    "description": "Važeće opcije za prijavljivanje, kao što su lozinka ili PIN kôd, potrebne su prilikom prijavljivanja na Windows. U suprotnom, funkciju Pametno upozorenje o pokretu može greškom da onemogući neki neovlašćeni korisnik koji pristupa vašem računaru."
+                    "description1": "Važeće opcije za prijavljivanje, kao što su lozinka ili PIN kôd, potrebne su prilikom prijavljivanja na Windows. U suprotnom, funkciju Pametno upozorenje o pokretu može greškom da onemogući neki neovlašćeni korisnik koji pristupa vašem računaru.",
+                    "description2": "Pre nego što se udaljite od računara, obavezno ga zaključajte pritiskom na taster sa Windows logotipom i taster L. U suprotnom, funkcija alarma za pametno kretanje neće funkcionisati kako treba."
                 },
                 "alarm": {
                     "title": " ALARM ĆE TRAJATI",
