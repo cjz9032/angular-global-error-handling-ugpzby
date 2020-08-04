@@ -4,6 +4,7 @@
 <div class="row">
  	<div class="col button-row">
 		<vtr-ui-button
+			id="hwscan-quick-scan-btn"
 			[vtrMetrics]=false
 			[label]= " 'hardwareScan.quickScan' | translate "
 			[isDisabled]="disableButtonScan"
@@ -12,7 +13,7 @@
 		</vtr-ui-button>
 		<div class="row align-items-center">
 			<div [title]=" 'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate ">
-				<button vtrMetrics
+				<button id="hwscan-custom-scan-btn" vtrMetrics
 					metricsEvent="FeatureClick"
 					metricsParent="HardwareScan"
 					metricsItem="HardwareScan.CustomizeScan"

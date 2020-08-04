@@ -8,6 +8,7 @@ import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.
 })
 export class UiTestResultIconComponent implements OnInit {
 	// Inputs
+	@Input() componentId: string;
 	@Input() testResultResponse: any;
 
 	// "Wrapper" value to be accessed from the HTML

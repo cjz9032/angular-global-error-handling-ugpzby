@@ -1,11 +1,11 @@
 <vtr-page-layout [title]="setTitle()"
-	[textId]="'hardware-scan'"
+	[textId]="'hwscan'"
 	[pageCssClass]="'hardware-scan'"
 	[shiftLeftUp]="true"
 	[shiftRightUp]="true"
 	[hideBack]="!isScanDoneExecuting() && (isScanExecuting() || isRecoverExecuting())"
 	[back]="'common.ui.back' | translate"
-	[backId]="'myDevice-back-btn'"
+	[backId]="'hwscan-back-btn'"
 	[isInnerBack]="isScanDoneExecuting()"
 	(innerBack)="redirectBack()">
 
@@ -32,6 +32,7 @@
 					<vtr-container-card
 						order="1"
 						sideFlag='r'
+						[containerCardId]="'hwscan-support-card'"
 						[item]="hardwareScanSupportCard"
 						[type]="'subpage-partner-corner'"
 						[ratio]="2">
@@ -43,6 +44,7 @@
 				<div class="col col-12 cont mb-40"
 					*ngIf="!isRBSDeviceSelectionPage && !isRecoverExecuting()">
 					<vtr-widget-recover-bad-sectors
+						[widgetId]="'hwscan-rbs-widget'"
 						[title]="'hardwareScan.recoverBadSectors.title' | translate"
 						[description]="'hardwareScan.recoverBadSectors.description' | translate"
 						[recoverPath]="'recover-bad-sectors'"
@@ -55,6 +57,7 @@
 			<div class="row">
 				<div class="col col-12 mb-40">
 					<vtr-widget-hardware-scan-status
+						[widgetId]="'hwscan-previous-results-widget'"
 						*ngIf="!isScanExecuting() && !isRecoverExecuting() && !hidePreviousResult">
 					</vtr-widget-hardware-scan-status>
 				</div>
