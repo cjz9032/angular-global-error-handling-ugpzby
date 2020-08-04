@@ -278,7 +278,8 @@ export class CMSService implements OnDestroy {
 	public async fetchCMSEntitledAppList(queryParams) {
 		const locInfo = await this.getLocalinfo();
 		const defaults = {
-			Lang: locInfo.Lang
+			Lang: locInfo.Lang,
+			GEO: locInfo.GEO
 		};
 		const cmsOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
 		return this.postRequest({

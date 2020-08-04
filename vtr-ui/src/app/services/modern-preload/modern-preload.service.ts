@@ -74,7 +74,7 @@ export class ModernPreloadService {
 			const entitledAppList = this.checkInstallingApps();
 			this.sendResponseNotification(ModernPreloadEnum.GetEntitledAppListRespond, entitledAppList, responseHandler);
 		} else if (this.isInitialized && (!this.cmsAppList || this.cmsAppList.length < 1)) {
-			Promise.all([this.cmsService.fetchCMSEntitledAppList({ Lang: 'EN' }),
+			Promise.all([this.cmsService.fetchCMSEntitledAppList({}),
 			this.modernPreloadBridge.getEntitledAppList()])
 				.then((responses) => {
 					this.cmsAppList = responses[0];
@@ -137,11 +137,11 @@ export class ModernPreloadService {
 			if (detailFromCMS) {
 				app.company = detailFromCMS.Company;
 				app.filters = detailFromCMS.Filters;
-				app.size = detailFromCMS.Size;
+				app.size = app.size ? app.size : detailFromCMS.Size;
 				app.thumbnail = detailFromCMS.Thumbnail;
 				app.title = detailFromCMS.Title;
 				app.udcId = app.partNum;
-				app.version = detailFromCMS.Version;
+				app.version = app.version ? app.version : detailFromCMS.Version;
 			}
 			app.originalStatus = app.status;
 			app.isChecked = app.status !== ModernPreloadEnum.StatusInstalled; // set default checked for not installed app
