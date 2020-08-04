@@ -65,32 +65,27 @@
 			*ngFor="let batteryConditionNote of batteryConditionNotes; let i = index">
 			<!-- Battery Condition tip icon -->
 			<div class="p-0 pr-2 col-auto"
-				aria-hidden="true"
 				id="batteryConditionNote{{i}}"
 				*ngIf="batteryConditions[i].condition!= batteryConditionsEnum.FullACAdapterSupport">
 				<!-- Good -->
 				<span role="img"
 					id="batteryConditionIcon-GoodBattery"
-					aria-label="battery is in good condition"
 					*ngIf="batteryConditions[i].conditionStatus == batteryStatus.Good"
 					class="icomoon icomoon-ConditionGoodBattery"></span>
 				<!-- Fair -->
 				<span role="img"
 					id="batteryConditionIcon-FairBattery"
-					aria-label="battery is in fair condition"
 					*ngIf="batteryConditions[i].conditionStatus == batteryStatus.Fair"
 					class="icomoon icomoon-ConditionFairBattery"></span>
 				<!-- Poor -->
 				<span role="img"
 					id="batteryConditionIcon-BadBattery"
-					aria-label="battery is in bad condition"
 					*ngIf="batteryConditions[i].conditionStatus == batteryStatus.Poor &&
 				batteryConditions[i].condition!=batteryConditionsEnum.Error"
 					class="icomoon icomoon-ConditionBadBattery"></span>
 				<!-- Adapter error conditions -->
 				<span role="img"
 					id="batteryConditionIcon-ACAdapter-notSupported"
-					aria-label="AC adapter is not supported"
 					*ngIf="batteryConditions[i].condition==batteryConditionsEnum.NotSupportACAdapter"
 					class="icomoon icomoon-ConditionACAdapterError"></span>
 			</div>
@@ -99,8 +94,7 @@
 				class="p-0 pr-2 col-auto adapter-support">
 				<span class="icomoon icomoon-ConditionACAdapterError"
 					role="img"
-					id="icon-FullACAdapterSupport"
-					attr.aria-label="icon-FullACAdapterSupport"></span>
+					id="icon-FullACAdapterSupport"></span>
 			</div>
 			<!-- End Icons -->
 
