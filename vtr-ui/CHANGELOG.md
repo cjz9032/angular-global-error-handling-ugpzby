@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.26](https://bitbucket.tc.lenovo.com///compare/v1.7.25...v1.7.26) (2020-08-04)
+
+
+### Features
+
+* **Modern Preload:** VAN-20240 use size and version from IMC ([ef6fb81](https://bitbucket.tc.lenovo.com///commit/ef6fb81ea58bc80b705f2424515f98af03f478da))
+
 ### [1.7.25](https://bitbucket.tc.lenovo.com///compare/v1.7.21...v1.7.25) (2020-08-04)
 
 
