@@ -137,11 +137,11 @@ export class ModernPreloadService {
 			if (detailFromCMS) {
 				app.company = detailFromCMS.Company;
 				app.filters = detailFromCMS.Filters;
-				app.size = app.size ? app.size : detailFromCMS.Size;
+				app.size = detailFromCMS.Size;
 				app.thumbnail = detailFromCMS.Thumbnail;
 				app.title = detailFromCMS.Title;
 				app.udcId = app.partNum;
-				app.version = app.version ? app.version : detailFromCMS.Version;
+				app.version = detailFromCMS.Version;
 			}
 			app.originalStatus = app.status;
 			app.isChecked = app.status !== ModernPreloadEnum.StatusInstalled; // set default checked for not installed app
