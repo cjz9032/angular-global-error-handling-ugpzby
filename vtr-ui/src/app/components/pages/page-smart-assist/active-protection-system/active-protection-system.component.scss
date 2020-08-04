@@ -53,7 +53,7 @@
 	}
 	.advanced {
 		// padding-bottom: 3rem;
-		h4 {
+		h5 {
 			color: $main_darkest;
 			font-weight: 700;
 			letter-spacing: 0.1rem;
@@ -67,7 +67,7 @@
 				text-decoration: underline;
 				cursor: pointer;
 			}
-			@media #{$white-on-black} {	
+			@media #{$white-on-black} {
 				@include hyperlink-yellow-black;
 				}
 				@media #{$black-on-white} {
@@ -79,7 +79,6 @@
 			display: inline-block;
 		}
 		.advanced-settings-title {
-			
 			&:focus {
 				outline: none;
 			}
