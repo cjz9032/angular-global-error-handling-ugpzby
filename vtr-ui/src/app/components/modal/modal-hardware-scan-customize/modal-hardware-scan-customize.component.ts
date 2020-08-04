@@ -8,9 +8,6 @@ import { TranslateService } from '@ngx-translate/core';
 	styleUrls: ['./modal-hardware-scan-customize.component.scss']
 })
 export class ModalHardwareScanCustomizeComponent implements OnDestroy {
-	@Input() title = this.translate.instant('hardwareScan.customize.test');
-	@Input() description = this.translate.instant('hardwareScan.customize.description');
-	@Input() buttonText = this.translate.instant('hardwareScan.customize.runTests');
 	@Input() items: any[];
 	public errorMessage: string;
 	private isSuccessful = false;

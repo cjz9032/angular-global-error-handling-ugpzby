@@ -22,14 +22,14 @@
 
 		<div class="row" *ngIf="devices">
 			<div class="button-row">
-				<button class="col btn action-button"
-					vtrMetrics
+				<vtr-ui-button
+					[isDisabled]="!isSelectedItem()"
 					metricsEvent="ItemClick"
 					metricsParent="HardwareScan.RecoverBadSectors"
 					metricsItem="RecoverBadSectors.RunRecoverBadSectors"
-					(click)="startRecover()" [disabled]="!isSelectedItem()">
-					{{ 'hardwareScan.recoverBadSectors.title' | translate }}
-				</button>
+					[label]= " 'hardwareScan.recoverBadSectors.title' | translate "
+					(onClick)="startRecover()">
+				</vtr-ui-button>
 			</div>
 		</div>
 	</div>

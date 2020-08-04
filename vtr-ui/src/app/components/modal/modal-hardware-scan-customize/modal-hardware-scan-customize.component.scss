@@ -34,22 +34,9 @@
 	}
 
 	.button-row {
-		padding: 2rem;
-
-		.action-button {
-			border-radius: 2.5rem;
-			background: $gradient_main;
-			text-transform: uppercase;
-			padding: 0 3rem;
-			color: $light;
-			font-size: $fontsize_xs;
-			height: 5rem;
-			font-weight: $weight_bold;
-			line-height: 5rem;
-
-			text-align: center;
-			border: 0rem;
-			cursor: pointer;
+		padding-top: 1rem;
+		::ng-deep .vtr-ui-button .button-box{
+			padding-left: 0;
 		}
 	}
 

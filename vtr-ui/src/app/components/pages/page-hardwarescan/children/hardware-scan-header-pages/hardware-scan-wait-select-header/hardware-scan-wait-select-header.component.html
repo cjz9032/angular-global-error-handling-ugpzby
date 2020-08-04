@@ -1,24 +1,24 @@
 <div class="row">
-	<h2 class="col title">{{'hardwareScan.title' | translate}}</h2>
+	<h2 class="col title">{{ 'hardwareScan.title' | translate }}</h2>
 </div>
 <div class="row">
  	<div class="col button-row">
-		<button [ngClass]="{'action-button': !disableButtonScan, 'action-button-disable': disableButtonScan}"
-			[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
-			[disabled]="disableButtonScan"
-			(click)="onQuickScan()"
-			tabindex="1"
-			>{{'hardwareScan.quickScan' | translate}}</button>
+		<vtr-ui-button
+			[vtrMetrics]=false
+			[label]= " 'hardwareScan.quickScan' | translate "
+			[isDisabled]="disableButtonScan"
+			[title] =" 'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate "
+			(onClick)="onQuickScan()">
+		</vtr-ui-button>
 		<div class="row align-items-center">
-			<div [title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate">
+			<div [title]=" 'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate ">
 				<button vtrMetrics
 					metricsEvent="FeatureClick"
 					metricsParent="HardwareScan"
 					metricsItem="HardwareScan.CustomizeScan"
 					[ngClass]="{'action-anchor': !disableButtonScan, 'disabled-anchor': disableButtonScan}"
 					[disabled]="disableButtonScan"
-					tabindex="1"
-					(click)="onAnchor()">{{'hardwareScan.customize.name' | translate}}
+					(click)="onAnchor()">{{ 'hardwareScan.customize.name' | translate }}
 				</button>
 			</div>
 		</div>
