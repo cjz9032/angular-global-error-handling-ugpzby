@@ -2138,7 +2138,8 @@
                 "desc2": "Larmet stängs av automatiskt när du loggar in på Windows. För att använda funktionen måste du aktivera den igen.",
                 "note": {
                     "descriptionTitle": "Viktigt!",
-                    "description": "Giltiga inloggningsalternativ, till exempel lösenord eller PIN-kod, krävs vid inloggning på Windows. I annat fall kan larmfunktionen Smart rörelselarm inaktiveras av misstag av obehöriga användare som har åtkomst till datorn."
+                    "description1": "Giltiga inloggningsalternativ, till exempel lösenord eller PIN-kod, krävs vid inloggning på Windows. I annat fall kan larmfunktionen Smart rörelselarm inaktiveras av misstag av obehöriga användare som har åtkomst till datorn.",
+                    "description2": "Innan du lämnar datorn måste du låsa den genom att trycka på Windows-knappen och i L-tangenten. I annat fall fungerar inte larmfunktionen Smart rörelselarm som den ska."
                 },
                 "alarm": {
                     "title": " LARMET SKA PÅGÅ I",

@@ -2138,7 +2138,8 @@
                 "desc2": "En vous connectant à Windows, l'alarme sera automatiquement désactivée. Vous devez l'activer à nouveau pour l'utiliser.",
                 "note": {
                     "descriptionTitle": "Attention :",
-                    "description": "Des options de connexion valides telles qu'un mot de passe ou un code PIN sont nécessaires lorsque vous vous connectez à Windows. Sinon, il est possible que la fonction d'alarme de mouvement intelligente soit désactivée par un utilisateur non autorisé à accéder à votre ordinateur."
+                    "description1": "Des options de connexion valides telles qu'un mot de passe ou un code PIN sont nécessaires lorsque vous vous connectez à Windows. Sinon, il est possible que la fonction d'alarme de mouvement intelligente soit désactivée par un utilisateur non autorisé à accéder à votre ordinateur.",
+                    "description2": "Avant de quitter votre ordinateur, veillez à le verrouiller en appuyant sur le logo Windows et sur la touche L. Sinon, la fonction Alerte de mouvement intelligente ne fonctionnera pas normalement."
                 },
                 "alarm": {
                     "title": " L'ALARME DURERA",

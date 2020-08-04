@@ -2138,7 +2138,8 @@
                 "desc2": "Faça login no Windows e o alarme será desativado automaticamente. Para usar o recurso, você precisa habilitá-lo novamente.",
                 "note": {
                     "descriptionTitle": "Atenção:",
-                    "description": "Opções de entrada válidas, como senha ou código PIN, são necessárias quando você faz login no Windows. Caso contrário, o recurso de alarme por movimento inteligente pode ser desativado por engano por qualquer usuário não autorizado que acesse o seu computador."
+                    "description1": "Opções de entrada válidas, como senha ou código PIN, são necessárias quando você faz login no Windows. Caso contrário, o recurso de alarme por movimento inteligente pode ser desativado por engano por qualquer usuário não autorizado que acesse o seu computador.",
+                    "description2": "Antes de sair do computador, bloqueie-o pressionando o logotipo do Windows e a tecla L. Caso contrário, a função de alarme por movimento inteligente não funcionará normalmente."
                 },
                 "alarm": {
                     "title": " O ALARME PERMANECERÁ ATIVO POR",

@@ -2138,7 +2138,8 @@
                 "desc2": "Inicie sessão no Windows para o alarme ser desativado automaticamente. Para utilizar a funcionalidade, terá de voltar a ativá-la.",
                 "note": {
                     "descriptionTitle": "Atenção:",
-                    "description": "São necessárias opções de início de sessão válidas, como uma palavra-passe ou um código PIN, quando inicia sessão no Windows. Caso contrário, a funcionalidade Alarme de movimento inteligente poderá ser desativada por erro por qualquer utilizador não autorizado que aceda ao seu computador."
+                    "description1": "São necessárias opções de início de sessão válidas, como uma palavra-passe ou um código PIN, quando inicia sessão no Windows. Caso contrário, a funcionalidade Alarme de movimento inteligente poderá ser desativada por erro por qualquer utilizador não autorizado que aceda ao seu computador.",
+                    "description2": "Antes de abandonar o computador, certifique-se de que bloqueia o computador ao premir o logótipo do Windows e a tecla L. Caso contrário, a função de alarme de movimentos Inteligente não funcionará normalmente."
                 },
                 "alarm": {
                     "title": " O ALARME É EMITIDO",

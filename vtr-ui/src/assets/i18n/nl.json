@@ -2138,7 +2138,8 @@
                 "desc2": "Meld u aan bij Windows om het alarm automatisch uit te schakelen. U moet de functie opnieuw inschakelen om deze weer te gebruiken.",
                 "note": {
                     "descriptionTitle": "Let op:",
-                    "description": "Als u zich aanmeldt bij Windows, zijn geldige aanmeldingsopties vereist, zoals een wachtwoord of PIN-code. Anders wordt het slimme bewegingsalarm mogelijk per ongeluk uitgeschakeld door onbevoegde gebruikers die toegang hebben tot uw computer."
+                    "description1": "Als u zich aanmeldt bij Windows, zijn geldige aanmeldingsopties vereist, zoals een wachtwoord of PIN-code. Anders wordt het slimme bewegingsalarm mogelijk per ongeluk uitgeschakeld door onbevoegde gebruikers die toegang hebben tot uw computer.",
+                    "description2": "Voordat u weggaat bij de computer, moet u de computer vergrendelen door op het Windows-logo en de L-toets te drukken. Als u dat niet doet, werkt het slimme bewegingsalarm niet op de normale manier."
                 },
                 "alarm": {
                     "title": " HET ALARM DUURT",
