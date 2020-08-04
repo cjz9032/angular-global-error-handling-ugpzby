@@ -39,9 +39,21 @@
 						</div>
 						<div class="col">
 							<h4 class="title"
+								*ngIf="headingLevel!==5 && headingLevel!==-1"
 								id="{{switchId}}-title">
 								{{ title }}
 							</h4>
+							<h5 class="title"
+								*ngIf="headingLevel===5"
+								id="{{switchId}}-title">
+								{{ title }}
+							</h5>
+							<p class="title"
+								role="text"
+								*ngIf="headingLevel===-1"
+								id="{{switchId}}-title">
+								{{ title }}
+							</p>
 							<span *ngIf="caption">
 								<p class="caption"
 									role="text"

@@ -74,7 +74,7 @@ export class ModernPreloadService {
 			const entitledAppList = this.checkInstallingApps();
 			this.sendResponseNotification(ModernPreloadEnum.GetEntitledAppListRespond, entitledAppList, responseHandler);
 		} else if (this.isInitialized && (!this.cmsAppList || this.cmsAppList.length < 1)) {
-			Promise.all([this.cmsService.fetchCMSEntitledAppList({ Lang: 'EN' }),
+			Promise.all([this.cmsService.fetchCMSEntitledAppList({}),
 			this.modernPreloadBridge.getEntitledAppList()])
 				.then((responses) => {
 					this.cmsAppList = responses[0];

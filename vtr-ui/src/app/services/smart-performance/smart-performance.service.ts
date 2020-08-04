@@ -171,4 +171,14 @@ export class SmartPerformanceService {
 			xhr.send();
 		  });
 	}
+	writeSmartPerformanceActivity(payload: any): Promise<any> {
+		try {
+			if (this.isShellAvailable) {
+				return this.getSmartPerformance.writeSmartPerformanceActivity(payload);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
 }

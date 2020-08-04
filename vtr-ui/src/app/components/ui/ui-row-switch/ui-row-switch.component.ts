@@ -55,6 +55,8 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, After
 	@Input() label = '';
 	@Input() fnCtrltoolTip = false;
 	@Input() tooltipContent = [];
+	@Input() headingLevel: number;
+
 	public contentExpand = false;
 	@Input() isMetricsEnabled = true;
 

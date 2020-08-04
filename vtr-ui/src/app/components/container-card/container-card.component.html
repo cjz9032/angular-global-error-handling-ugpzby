@@ -162,9 +162,7 @@
 	</div>
 
 	<div class="container-card card-highlight"
-		*ngIf="type === 'highlight'"
-		#containerCardHighlight
-		[style.height.px]="containerCardHighlight.clientWidth / ratio">
+		*ngIf="type === 'highlight'">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col col-12 content">
@@ -185,7 +183,6 @@
 						[class.overlay-dark]="!overlayThemeDefaultIsLight"
 						[class.default-cursor]="isOfflineArm"
 						[style.background-image]="'url(' + item.FeatureImage + ')'"
-						[style.height.px]="containerCardHighlight.clientWidth / ratio"
 						style="background-color: #2f3447;">
 						<div class="inner-content"
 							title="">
