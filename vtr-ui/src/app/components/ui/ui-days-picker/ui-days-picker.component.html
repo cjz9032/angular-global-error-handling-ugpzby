@@ -25,13 +25,16 @@
 					(click)="onToggleDropDown()"
 					(keydown.enter)="onToggleDropDown()"
 					class="dropbtn"
-					#dayslistbox>
+					#dayslistbox
+					[ngClass]="{ 'label-text': showDropDown }">
 					<div class="row align-items-center d-flex justify-content-between pl-5">
 						<h5 id="smartStandby-shedule"
-							attr.aria-label="smartStandby-shedule">{{smartStandbyService.schedule}}</h5>
+							attr.aria-label="smartStandby-shedule"
+							>{{smartStandbyService.schedule}}</h5>
 						<div class="toggle-icon"
 							id="smartStandby-days-picker-dropDown">
-							<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
+							<fa-icon [icon]="['fal', 'chevron-down']" *ngIf="!showDropDown"></fa-icon>
+							<fa-icon [icon]="['fal', 'chevron-up']" *ngIf="showDropDown"></fa-icon>
 						</div>
 					</div>
 				</label>
