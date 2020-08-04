@@ -22,7 +22,7 @@
 						<a href="javascript:void(0)"
 							id="{{ componentId }}-list-item-{{ i }}-tooltip"
 							role="img"
-							[attr.aria-label]="item.name + 'tooltip, which reads: ' + ('hardwareScan.pluginTokens.' + information | translate)"
+							[attr.aria-label]="('hardwareScan.pluginTokens.' + item.name | translateDefault:item.name) + 'tooltip, which reads: ' + ('hardwareScan.pluginTokens.' + item.information | translateDefault:item.information)"
 							(click)="setTooltipInfo(item.information, i); tooltip.toggle()"
 							class="result-code-icon"
 							triggers="manual"

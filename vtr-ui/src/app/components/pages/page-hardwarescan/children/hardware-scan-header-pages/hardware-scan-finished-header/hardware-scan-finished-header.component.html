@@ -72,11 +72,11 @@
 				<ng-container *ngTemplateOutlet="scanFinishedHeaderTitle"></ng-container>
 
 				<!-- Show the date and result about the last scan -->
-				<p class="result-date-description">
-					<span>{{ 'hardwareScan.lastScanOn' | translate }} </span>
-					<span id="hwscan-previous-results-last-scan-value" role="text">{{ lastScanResultCompletionInfo.date | formatLocaleDateTime }}</span>
-					<span> - {{ 'hardwareScan.result' | translate }}: </span>
-					<span id="hwscan-previous-results-result-value" role="text">{{ (lastScanResultCompletionInfo.isCompleted ? 'hardwareScan.complete' : 'hardwareScan.incomplete') | translate }}</span>
+				<p class="result-date-description" aria-labelledby="hwscan-previous-results-last-scan-text hwscan-previous-results-last-scan-value hwscan-previous-results-result-text hwscan-previous-results-result-value">
+					<span aria-hidden="true" id="hwscan-previous-results-last-scan-text" role="text">{{ 'hardwareScan.lastScanOn' | translate }} </span>
+					<span aria-hidden="true" id="hwscan-previous-results-last-scan-value" role="text">{{ lastScanResultCompletionInfo.date | formatLocaleDateTime }}</span>
+					<span aria-hidden="true" id="hwscan-previous-results-result-text" role="text"> - {{ 'hardwareScan.result' | translate }}: </span>
+					<span aria-hidden="true" id="hwscan-previous-results-result-value" role="text">{{ (lastScanResultCompletionInfo.isCompleted ? 'hardwareScan.complete' : 'hardwareScan.incomplete') | translate }}</span>
 				</p>
 
 				<!-- Show the result code -->
