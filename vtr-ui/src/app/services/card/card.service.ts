@@ -33,13 +33,13 @@ export class CardService {
 			this.appsForYouService.updateUnreadMessageCount('menu-main-lnk-open-dcc');
 			this.openDccDetailModal();
 		} else {
-			this.openArticleModal(actionLink, articleTitle);
+			this.openArticleModal(actionType, actionLink, articleTitle);
 		}
 
 		return false;
 	}
 
-	openArticleModal(articleId: string, articleTitle: string = '') {
+	openArticleModal(actionType: string, articleId: string, articleTitle: string = '') {
 		const articleClass = this.deviceService.isGaming ? 'Article-Detail-Modal content-gaming' : 'Article-Detail-Modal';
 		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
 			backdrop: true, /*'static',*/
@@ -60,6 +60,7 @@ export class CardService {
 		if (articleTitle !== '') {
 			articleDetailModal.componentInstance.articleLinkTitle = articleTitle;
 		}
+		articleDetailModal.componentInstance.actionType = actionType;
 	}
 
 	openDccDetailModal() {

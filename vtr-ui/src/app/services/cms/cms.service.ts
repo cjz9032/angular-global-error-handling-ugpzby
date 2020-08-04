@@ -124,7 +124,7 @@ export class CMSService implements OnDestroy {
 		});
 	}
 
-	private async getLocalinfo(): Promise<any> {
+	public async getLocalinfo(): Promise<any> {
 		if (!this.localInfo) {
 			try {
 				this.localInfo = await this.localInfoService.getLocalInfo();
@@ -335,6 +335,38 @@ export class CMSService implements OnDestroy {
 			} else {
 				throw (ex);
 			}
+		}
+	}
+
+	public async generateContentQueryParams(queryParams) {		
+		const locInfo = await this.getLocalinfo();
+		const defaults = {
+			Lang: locInfo.Lang,
+			GEO: locInfo.GEO,
+			OEM: locInfo.OEM,
+			OS: locInfo.OS,
+			Segment: locInfo.Segment,
+			Brand: locInfo.Brand
+		};
+		return this.updateServerSwitchCMSOptions(defaults, queryParams);
+	}
+
+	public async fetchContents(cmsOption: any) {
+		const requestKey = JSON.stringify(cmsOption);
+		if (!this.fetchRequestMap[requestKey]) {
+			this.fetchRequestMap[requestKey] = this.postRequest({
+				cmsOption,
+				api: '/api/v1/features',
+				apiParam: null,
+				observableMsg: null,
+				applyDeviceFilter: true
+			});
+		}
+
+		try {
+			return await this.fetchRequestMap[requestKey];
+		} finally {
+			this.fetchRequestMap[requestKey] = null;
 		}
 	}
 

@@ -1,6 +1,5 @@
 import { Component, OnInit, ElementRef, HostListener, SecurityContext, ViewChild } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { CMSService } from 'src/app/services/cms/cms.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { DurationCounterService } from 'src/app/services/timer/timer-service-ex.service';
@@ -9,6 +8,8 @@ import { MetricService } from 'src/app/services/metric/metrics.service';
 import { WinRT } from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { MetricEventName } from 'src/app/enums/metrics.enum';
+import { ContentCacheService } from 'src/app/services/content-cache/content-cache.service';
+import { ContentActionType } from 'src/app/enums/content.enum';
 
 @Component({
 	selector: 'vtr-modal-article-detail',
@@ -34,13 +35,14 @@ export class ModalArticleDetailComponent implements OnInit {
 		Content: 3,
 	};
 	contentStatus = this.AllContentStatus.Loading;
+	actionType: ContentActionType;
 
 	@ViewChild('articleDetailModal') articleDetailModal: ElementRef;
 	@ViewChild('articleDialogContent') articleDialogContent: ElementRef;
 
 	constructor(
 		public activeModal: NgbActiveModal,
-		private cmsService: CMSService,
+		private contentCacheService: ContentCacheService,
 		private commonService: CommonService,
 		private activatedRoute: ActivatedRoute,
 		private sanitizer: DomSanitizer,
@@ -57,7 +59,7 @@ export class ModalArticleDetailComponent implements OnInit {
 		this.articleTitle = '';
 		this.articleImage = '';
 
-		this.cmsService.fetchCMSArticle(this.articleId).then(
+		this.contentCacheService.getArticleById(this.actionType, this.articleId).then(
 			(response: any) => {
 				if ('Results' in response) {
 					this.articleTitle = response.Results.Title;

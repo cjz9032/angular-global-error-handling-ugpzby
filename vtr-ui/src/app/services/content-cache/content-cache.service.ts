@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/internal/Observable';
+import {Md5} from "ts-md5";
 import { CommsService } from '../comms/comms.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { LocalInfoService } from '../local-info/local-info.service';
@@ -7,8 +10,6 @@ import { DevService } from '../dev/dev.service';
 import { LoggerService } from '../logger/logger.service';
 import { UPEService } from '../upe/upe.service';
 import { CMSService } from '../cms/cms.service';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/internal/Observable';
 import { ContentActionType, ContentSource } from 'src/app/enums/content.enum';
 import { BuildInContentService } from '../build-in-content/build-in-content.service';
 
@@ -34,13 +35,24 @@ export class ContentCacheService {
   }
 
   public async getCachedContents(page: string, contentCards: any) {
-    return this.loadBuildInContents({Page: page, Lang:'en'});
+    const cmsOptions = await this.cmsService.generateContentQueryParams({Page: page});    
+    const cacheKey = Md5.hashStr(JSON.stringify(cmsOptions));
+    
+    var cachedContents = await this.loadCachedContents(cacheKey) || await this.loadBuildInContents(cmsOptions);
+    
+    this.cacheContents(cacheKey, cmsOptions, contentCards);
+    
+    return cachedContents;
   }
 
-  getArticleById(actionType: ContentActionType, articleId: any) {
-    return new Observable(subscriber => {
-
-    });
+  public async getArticleById(actionType: ContentActionType, articleId: any) {
+    const locInfo = await this.cmsService.getLocalinfo();
+    if(actionType == ContentActionType.BuildIn) {
+      return this.buildInContentService.getArticle(articleId, locInfo.Lang);
+    }
+    else {
+      return this.cmsService.fetchCMSArticle(articleId);
+    }
   }
 
   private async loadBuildInContents(queryParams: any) {
@@ -58,11 +70,11 @@ export class ContentCacheService {
     return contents;
   }
 
-  private async loadCachedContents() {
-
+  private async loadCachedContents(cacheKey) {
+    return null;
   }
 
-  private async cacheContents() {
+  private async cacheContents(cacheKey, cmsOptions: any, contentCards: any) {
 
   }
   

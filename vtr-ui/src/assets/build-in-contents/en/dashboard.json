@@ -98,7 +98,7 @@
             "Title": "Build-in article F",
             "Description": "Read more",
             "FeatureImage": "assets/build-in-contents/images/Default-SMB-Device-Settings.jpg",
-            "Action": "",
+            "Action": "Read more",
             "ActionType": "Build-in",
             "ActionLink": "13cada49d4274587a80e26b00dff59a5",
             "BrandName": "",
