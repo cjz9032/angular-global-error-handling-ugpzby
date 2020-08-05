@@ -1,19 +1,19 @@
 <div id="{{ componentId }}" class="vtr-ui-list-checkbox-hardware">
 	<ul id="{{ componentId }}-list" class="list-group">
 		<div class="col-12 px-0">
-			<li id="{{ componentId }}-list-item-{{ i }}" class="list-group-item" *ngFor="let device of devices; let id = index">
+			<li id="{{ componentId }}-list-item-{{ id }}" class="list-group-item" *ngFor="let device of devices; let id = index">
 				<div class="row">
 					<vtr-ui-checkbox
 						#checkbox
-						[id]="{{ componentId }}-list-item-{{ i }}-checkbox"
-						[componentId]="{{ componentId }}-list-item-{{ i }}"
+						[id]="componentId + '-list-item-' + id + '-checkbox'"
+						[componentId]="componentId + '-list-item-' + id"
 						[ariaLabel]="'hardwareScan.pluginTokens.' + device.title | translateDefault:device.title"
 						[checked]="device.isSelected"
 						[value]="device.isSelected"
 						[hasChild]="true"
 						(toggle)="onSelectDevice(device, $event)"
 						class="custom-control-component">
-						<p id="{{ componentId }}-list-item-{{ i }}-title" role="text" class="custom-control-label-text title">
+						<p id="{{ componentId }}-list-item-{{ id }}-title" role="text" class="custom-control-label-text title">
 							{{ 'hardwareScan.pluginTokens.' + device.title | translateDefault:device.title }}
 						</p>
 					</vtr-ui-checkbox>
