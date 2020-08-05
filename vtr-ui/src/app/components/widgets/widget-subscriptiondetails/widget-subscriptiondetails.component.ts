@@ -86,7 +86,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		let subScriptionDates: any = { startDate: '', endDate: '', status: '' };
 		if (this.isSubscribed) {
 			subScriptionDates = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails);
-			if (subScriptionDates && subScriptionDates.startDate && subScriptionDates.endDate){
+			if (subScriptionDates && subScriptionDates.startDate && subScriptionDates.endDate) {
 				this.subscriptionDetails.startDate = this.formatLocaleDate.transform(subScriptionDates.startDate);
 				this.subscriptionDetails.endDate = this.formatLocaleDate.transform(subScriptionDates.endDate);
 				this.subscriptionDetails.status = subScriptionDates.status;
@@ -208,6 +208,8 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 			}
 
 			const lastItem = subscriptionData[subscriptionData.length - 1];
+			const prevItem = subscriptionData[subscriptionData.length - 2];
+			let subscriptionStartDate: any;
 			const releaseDate = new Date(lastItem.releaseDate);
 			releaseDate.setMonth(releaseDate.getMonth() + +lastItem.products[0].unitTerm);
 			releaseDate.setDate(releaseDate.getDate() - 1);
@@ -217,8 +219,13 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 				this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
 				this.isSubscribed = true;
 				this.subScribeEvent.emit(this.isSubscribed);
+				if (prevItem && prevItem.status.toUpperCase() === 'COMPLETED') {
+					subscriptionStartDate = this.formatLocaleDate.transform(prevItem.releaseDate);
+				} else {
+					subscriptionStartDate = this.formatLocaleDate.transform(lastItem.releaseDate);
+				}
 				this.subscriptionDetails = {
-					startDate: this.formatLocaleDate.transform(lastItem.releaseDate),
+					startDate: subscriptionStartDate,
 					endDate: this.formatLocaleDate.transform(releaseDate.toLocaleDateString()),
 					productNumber: lastItem.products[0].productCode || '',
 					status: 'smartPerformance.subscriptionDetails.activeStatus'
@@ -271,6 +278,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		let expiredDate;
 		let expiryRemainDays: number;
 		const nextText = this.translate.instant('smartPerformance.subscriptionDetails.next');
+		const rDate = '2022-06-15T11:25:46.212+0000';
 		const currentDate: any = new Date();
 		expiredDate = new Date(releaseDate);
 
@@ -279,51 +287,56 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 			this.expiredStatusEvent.emit(this.isExpired);
 			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.expiredStatus';
 			this.strStatus = 'EXPIRED';
+			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
 			this.isSubscribed = false;
 			this.subScribeEvent.emit(this.isSubscribed);
+
 		}
 		const oneDay = 24 * 60 * 60 * 1000;
 		expiryRemainDays = Math.round(Math.abs((currentDate - expiredDate) / oneDay));
-		if (expiryRemainDays === SpSubscriptionDetails.MONTH || expiryRemainDays < SpSubscriptionDetails.MONTH && !this.isExpired){
-			switch (true){
-				case (expiryRemainDays === 28): {
+		if (expiryRemainDays === SpSubscriptionDetails.MONTH || expiryRemainDays < SpSubscriptionDetails.MONTH && !this.isExpired) {
+			switch (true) {
+				// case (expiryRemainDays === 28): {
+				// 	this.expiredDaysCount = nextText + ' ' + Math.ceil(expiryRemainDays / 7) + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.weeks');
+				// 	break;
+				//  }
+				//  case (expiryRemainDays === 21): {
+				// 	this.expiredDaysCount = nextText + ' ' + Math.ceil(expiryRemainDays / 7) + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.weeks');
+				// 	break;
+				//  }
+				case (expiryRemainDays === 14): {
 					this.expiredDaysCount = nextText + ' ' + Math.ceil(expiryRemainDays / 7) + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.weeks');
 					break;
-				 }
-				 case (expiryRemainDays === 21): {
-					this.expiredDaysCount = nextText + ' ' + Math.ceil(expiryRemainDays / 7) + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.weeks');
-					break;
-				 }
-				 case (expiryRemainDays === 14): {
-					this.expiredDaysCount = nextText + ' ' + Math.ceil(expiryRemainDays / 7) + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.weeks');
-					break;
-				 }
-				 case (expiryRemainDays === 7): {
+				}
+				case (expiryRemainDays === 7): {
 					this.expiredDaysCount = this.translate.instant('smartPerformance.subscriptionDetails.week');
 					break;
-				 }
-				 case (expiryRemainDays === 1): {
-					this.expiredDaysCount = Math.ceil(expiryRemainDays) + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.day');
+				}
+				//  case (expiryRemainDays === 1): {
+				// 	this.expiredDaysCount = Math.ceil(expiryRemainDays) + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.day');
+				// 	break;
+				//  }
+				case (expiryRemainDays === 3): {
+					this.expiredDaysCount = expiryRemainDays + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.days');
 					break;
-				 }
-				 case (expiryRemainDays === 0): {
+				}
+				case (expiryRemainDays === 0): {
 					this.expiredDaysCount = this.translate.instant('smartPerformance.subscriptionDetails.today');
 					break;
-				 }
-				 default: {
-					this.expiredDaysCount = expiryRemainDays  + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.days');
+				}
+				default: {
+					this.expiredDaysCount = '';
 					break;
-				 }
+				}
 			}
 		} else {
-			if (expiryRemainDays === SpSubscriptionDetails.TWOMONTHS || (expiryRemainDays < SpSubscriptionDetails.TWOMONTHS && expiryRemainDays > SpSubscriptionDetails.MONTH) && !this.isExpired){
+			if (expiryRemainDays === SpSubscriptionDetails.TWOMONTHS || (expiryRemainDays < SpSubscriptionDetails.TWOMONTHS && expiryRemainDays > SpSubscriptionDetails.MONTH) && !this.isExpired) {
 				this.expiredDaysCount = nextText + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.month');
-
 			}
 		}
 	}
-	resetSubscriptionDetails(){
+	resetSubscriptionDetails() {
 		this.subscriptionDetails.startDate = '---';
 		this.subscriptionDetails.endDate = '---';
 		this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.inactiveStatus';
