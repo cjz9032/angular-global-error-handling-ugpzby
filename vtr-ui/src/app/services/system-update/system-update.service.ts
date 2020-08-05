@@ -200,7 +200,7 @@ export class SystemUpdateService {
 	public getScheduleUpdateStatus(canReportProgress: boolean) {
 		if (this.systemUpdateBridge) {
 			const timeOut = setTimeout(() => {
-				this.loggerService.info('get status time out with in 10 seconds');
+				this.loggerService.info('get su plugin status time out with in 10 seconds');
 				this.metricService.sendSystemUpdateStatusMetric('Time out', 'FeatureStatus - Not enabled within 10 seconds');
 			}, 10000);
 			this.systemUpdateBridge.getStatus(canReportProgress, (response: any) => {
@@ -219,11 +219,12 @@ export class SystemUpdateService {
 						}, 200);
 						this.retryTimes++;
 					} else {
-						this.metricService.sendSystemUpdateStatusMetric('Get plugin status exception with 606', 'FeatureStatus - Not enabled within 10 seconds');
+						this.loggerService.info('Get su plugin status exception with errorcode 606');
+						this.metricService.sendSystemUpdateStatusMetric('Get system update plugin status exception with 606', 'FeatureStatus - Not enabled within 10 seconds');
 					}
 				} else {
-					this.loggerService.info('get status exception.');
-					this.metricService.sendSystemUpdateStatusMetric('Get plugin status exception', 'FeatureStatus - Not enabled within 10 seconds');
+					this.loggerService.info('get su plugin status exception.', error);
+					this.metricService.sendSystemUpdateStatusMetric('Get system update plugin status exception', 'FeatureStatus - Not enabled within 10 seconds');
 				}
 			});
 		}
@@ -319,17 +320,17 @@ export class SystemUpdateService {
 			}
 			this.metricService.sendSystemUpdateStatusMetric('Enable check for update ', 'FeatureStatus - Enabled');
 		} else if (!status && Number(response.statusCode) === SystemUpdateStatus.CONNECT_EXCEPTION && this.commonService.isOnline) {
-			this.loggerService.info('response return error network status, try again.');
+			this.loggerService.info('Get su plugin status response connect exception, try again.');
 			if (this.retryTimes < 3) {
 				setTimeout(() => {
 					this.getScheduleUpdateStatus(canReportProgress);
 				}, 200);
 			} else {
-				this.metricService.sendSystemUpdateStatusMetric('Plugin connect exception ', 'FeatureStatus - Not enabled within 10 seconds');
+				this.metricService.sendSystemUpdateStatusMetric('System update plugin connect exception ', 'FeatureStatus - Not enabled within 10 seconds');
 			}
 		} else {
-			this.loggerService.info('get Status return unexpected response.', response);
-			this.metricService.sendSystemUpdateStatusMetric('Unexpected response', 'FeatureStatus - Not enabled within 10 seconds');
+			this.loggerService.info('get su plugin status return unexpected response, status is null.', response);
+			this.metricService.sendSystemUpdateStatusMetric('System update plugin get unexpected response', 'FeatureStatus - Not enabled within 10 seconds');
 		}
 	}
 
