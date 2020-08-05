@@ -2257,3 +2257,67 @@ ngb-tooltip-window.schedule-scan.tooltip {
 		}
 	}
 }
+
+/* circular radio button disabled mode ui in audio page */
+
+.vtr-ui-switch-row.white-theme {
+	.vtr-disabled {
+		.vtr-ui-circle-radio-with-checkbox-list.white-theme {
+			.radio-container {
+				[role="radio"][aria-checked="true"] {
+
+					@media #{$white-on-black} {
+						border: 0.2rem solid $high-contrast-black-disabled-green !important;
+					}
+
+					@media #{$black-on-white} {
+						border: 0.2rem solid $high-contrast-white-disabled-maroon !important;
+					}
+
+					.check-circle {
+						@media #{$black-on-white} {
+							color: $high-contrast-white-disabled-maroon !important;
+						}
+
+						@media #{$white-on-black} {
+							color: $high-contrast-black-disabled-green !important;
+						}
+					}
+
+					.icon-circle {
+						@media #{$black-on-white} {
+							color: $light !important;
+						}
+
+						@media #{$white-on-black} {
+							color: $dark !important;
+						}
+					}
+
+					.icomoon {
+						&::before {
+							@media #{$black-on-white} {
+								color: $high-contrast-white-disabled-maroon !important;
+							}
+
+							@media #{$white-on-black} {
+								color: $high-contrast-black-disabled-green !important;
+							}
+						}
+					}
+
+				}
+
+				.text {
+					@media #{$black-on-white} {
+						color: $high-contrast-white-disabled-maroon !important;
+					}
+
+					@media #{$white-on-black} {
+						color: $high-contrast-black-disabled-green !important;
+					}
+				}
+			}
+		}
+	}
+}
