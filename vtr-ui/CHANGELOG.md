@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.27](https://bitbucket.tc.lenovo.com///compare/v1.7.26...v1.7.27) (2020-08-05)
+
+
+### Features
+
+* **Add LocalCache for IndexDB:** VAN-20665 implement common api to save data in indexdb ([6407e80](https://bitbucket.tc.lenovo.com///commit/6407e808269c1df17b7815d5b7afe3d5a06435bf))
+* **Add metric:** VAN-21031 update metrics for enable check for update in getstatus ([2b30eb5](https://bitbucket.tc.lenovo.com///commit/2b30eb5da82d0d47e8dec1413e3b42bb6510b666))
+* **Metrics for SU:** VAN-21031 add metrics for some unexpected result from getStatus ([e48e83e](https://bitbucket.tc.lenovo.com///commit/e48e83e866f32df56046ea46df6f9f255cc40967))
+
 ### [1.7.26](https://bitbucket.tc.lenovo.com///compare/v1.7.25...v1.7.26) (2020-08-04)
 
 
