@@ -148,3 +148,18 @@
 		}
 	}
 }
+
+::ng-deep vtr-page-autoclose {
+	&::ng-deep .vtr-header-main-inner {
+		.back {
+			@media #{$high-contrast} {
+				color: buttonText;
+				&:hover {
+					span {
+						text-decoration: underline !important;
+					}
+				}
+			}
+		}
+	}
+}
