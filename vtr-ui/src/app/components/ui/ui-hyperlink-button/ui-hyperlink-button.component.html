@@ -1,5 +1,5 @@
 <div class="vtr-ui-hyperlink-button">
-	<div class="hyperlink-box" (click)="onClick()" (keydown.enter)="onClick()" role="link"
+	<div class="hyperlink-box" (click)="onClick()" (keyup.enter)="onClick()" role="link"
 	 	[tabindex]="tabIndex ? tabIndex : 0"
 		[ngClass]="{'disabled': isDisabled === true}">
 		<a
