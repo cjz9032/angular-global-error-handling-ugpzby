@@ -18,7 +18,6 @@ import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
 import { AndroidService } from 'src/app/services/android/android.service';
-import { CMSService } from 'src/app/services/cms/cms.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { DccService } from 'src/app/services/dcc/dcc.service';
@@ -32,12 +31,12 @@ import { MetricService } from 'src/app/services/metric/metrics.service';
 import { PageName } from 'src/app/services/metric/page-name.const';
 import { SegmentConst, SelfSelectService } from 'src/app/services/self-select/self-select.service';
 import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
-import { UPEService } from 'src/app/services/upe/upe.service';
 import { UserService } from 'src/app/services/user/user.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { WarrantyService } from 'src/app/services/warranty/warranty.service';
 import { QaService } from '../../../services/qa/qa.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { ContentCacheService } from 'src/app/services/content-cache/content-cache.service';
 
 interface IConfigItem {
 	cardId: string;
@@ -102,6 +101,9 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 
 	heroBannerDemoItems = [];
 	canShowDccDemo$: Promise<boolean>;
+
+	private pageTypeOfdashboard = 'dashboard';
+	private positionOfWelcomeText = 'welcome-text';
 
 	contentCards = {
 		positionA: {
@@ -168,8 +170,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		public commonService: CommonService,
 		private formatLocaleDate: FormatLocaleDatePipe,
 		public deviceService: DeviceService,
-		private cmsService: CMSService,
-		private upeService: UPEService,
 		private systemUpdateService: SystemUpdateService,
 		public userService: UserService,
 		private translate: TranslateService,
@@ -186,7 +186,8 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		private feedbackService: FeedbackService,
 		private localInfoService: LocalInfoService,
 		private localCacheService: LocalCacheService,
-		private metricsService: MetricService
+		private metricsService: MetricService,
+		private contentLocalCache: ContentCacheService
 	) {
 	}
 
@@ -206,7 +207,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		this.qaService.setCurrentLangTranslations();
 		this.isWarrantyVisible = this.deviceService.showWarranty;
 		this.dashboardService.isDashboardDisplayed = true;
-		this.getWelcomeTextFromCache();
 		this.commonService.setSessionStorageValue(SessionStorageKey.DashboardInDashboardPage, true);
 		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
@@ -226,11 +226,11 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 				this.dashboardService.translateString = result;
 				this.dashboardService.setDefaultCMSContent();
 				this.getOfflineContent();
-				this.fetchContent();
+				this.getCachedContent();
 			});
 
 		this.langChangeSubscription = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-			this.fetchContent();
+			this.getCachedContent();
 		});
 
 		this.getSelfSelectStatus();
@@ -338,62 +338,16 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		}
 	}
 
-	private getWelcomeTextFromCache() {
-		if (!this.dashboardService.welcomeText) {
-			const cacheWelcomeTexts: WelcomeTextContent[] = this.localCacheService.getLocalCacheValue(LocalStorageKey.DashboardWelcomeTexts);
-			if (cacheWelcomeTexts && cacheWelcomeTexts.length > 0) {
-				this.localInfoService.getLocalInfo().then((localInfo: any) => {
-					const isLangCacheTexts = cacheWelcomeTexts.find(content => content.language === localInfo.Lang);
-					if (isLangCacheTexts && [SegmentConst.Consumer, SegmentConst.SMB].includes(localInfo.Segment)) {
-						this.dashboardService.welcomeText = sample(isLangCacheTexts.titles);
-					}
-				});
-			}
-		}
-	}
-
-	private getWelcomeTextFromCms(response: any) {
-		const welcomeTextContent: any = this.cmsService.getOneCMSContent(response, 'top-title-welcome-text', 'welcome-text')[0];
-		if (welcomeTextContent && welcomeTextContent.Title) {
-			this.localInfoService.getLocalInfo().then((localInfo: any) => {
-				if ([SegmentConst.Consumer, SegmentConst.SMB].includes(localInfo.Segment)) {
-					let dashboardWelcomeTexts: WelcomeTextContent[] = [];
-					const titles = map(welcomeTextContent.Title.split('|||'), trim);
-					if (!this.dashboardService.welcomeText) {
-						this.dashboardService.welcomeText = sample(titles);
-					}
-					const cacheWelcomeTexts: WelcomeTextContent[] = this.localCacheService.getLocalCacheValue(LocalStorageKey.DashboardWelcomeTexts);
-					if (cacheWelcomeTexts && cacheWelcomeTexts.length > 0) {
-						dashboardWelcomeTexts = cacheWelcomeTexts;
-					}
-					const language = localInfo.Lang;
-					const isLangCacheTexts = dashboardWelcomeTexts.find(content => content.language === language);
-					if (isLangCacheTexts) {
-						isLangCacheTexts.titles = titles;
-					} else {
-						dashboardWelcomeTexts.push({ language, titles });
-					}
-					this.localCacheService.setLocalCacheValue(LocalStorageKey.DashboardWelcomeTexts, dashboardWelcomeTexts);
-				}
-			});
-		}
-	}
-
-	private fetchContent(lang?: string) {
-
-		// apply online cache
-		if (this.isOnline) {
-			Object.keys(this.contentCards).forEach(cardId => {
-				if (this.dashboardService.onlineCardContent[cardId]) {
-					this.contentCards[cardId].displayContent = this.dashboardService.onlineCardContent[cardId];
-				}
-			});
-		}
-
-		// fetch new online content
+	private getCachedContent(lang?: string) {
 		this.getTileSource().then(() => {
-			this.fetchCMSContent(lang);
-			this.fetchUPEContent();
+			this.contentLocalCache.getCachedContents(this.pageTypeOfdashboard, this.contentCards).then((result) => {
+				if (this.isOnline) {
+					Object.keys(this.contentCards).forEach(cardId => {
+						this.contentCards[cardId].displayContent = result[cardId];
+					});
+				}
+				this.setWelcomeTextTitle(result[this.positionOfWelcomeText]);
+			})
 		});
 
 		this.dccService.canShowDccDemo().then((show) => {
@@ -403,143 +357,17 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		});
 	}
 
-	private fetchCMSContent(lang?: string) {
-		const callCmsStartTime: any = new Date();
-		let queryOptions: any = {
-			Page: 'dashboard'
-		};
-		if (lang) {
-			queryOptions = {
-				Page: 'dashboard',
-				Lang: lang,
-				GEO: 'US'
-			};
-		}
-
-		this.cmsSubscription = this.cmsService.fetchCMSContent(queryOptions).subscribe(
-			(response: any) => {
-				const callCmsEndTime: any = new Date();
-				const callCmsUsedTime = callCmsEndTime - callCmsStartTime;
-				if (response && response.length > 0) {
-					this.logger.info(`Performance: Dashboard page get cms content, ${callCmsUsedTime}ms`);
-					this.populateCMSContent(response);
-					this.getWelcomeTextFromCms(response);
-
-				} else {
-					const msg = `Performance: Dashboard page not have this language contents, ${callCmsUsedTime}ms`;
-					this.logger.info(msg);
-					// this.fetchContent('en'); if cms server return nothing, it would retry infinitely
-				}
-			},
-			(error) => {
-				this.logger.info('fetchCMSContent error', error);
-			}
-		);
-	}
-
-	async fetchUPEContent() {
-		const upeContentCards = Object.values(this.contentCards).filter(contentCard => contentCard.tileSource === 'UPE');
-		if (upeContentCards.length === 0) {
-			return;
-		}
-
-		const upePositions = upeContentCards.map(contentCard => contentCard.positionParam);
-		const startCallUPE: any = new Date();
-		try {
-			const response = await this.upeService.fetchUPEContent({ positions: upePositions });
-			const endCallUPE: any = new Date();
-			this.logger.info(`Performance: Dashboard page get upe content, ${endCallUPE - startCallUPE}ms`);
-			this.populateUPEContent(response, upeContentCards);
-		} catch (ex) {
-			upeContentCards.forEach(contentCard => {
-				contentCard.upeContent = null;
-
-				if (contentCard.cmsContent) {
-					this.dashboardService.onlineCardContent[contentCard.cardId] = contentCard.cmsContent;
-				} // else do nothing
-
-				if (this.isOnline && this.dashboardService.onlineCardContent[contentCard.cardId]) {
-					contentCard.displayContent = this.dashboardService.onlineCardContent[contentCard.cardId];
-				}
-			});
-		}
-	}
-
-
-	private formalizeContent(contents, position, dataSource) {
-		contents.forEach(content => {
-			if (content.BrandName) {
-				content.BrandName = content.BrandName.split('|')[0]; // formalize BrandName
-			}
-			content.DataSource = dataSource;
-		});
-
-		if (position === 'position-A') {
-			return contents.map((record) => {
-				return {
-					albumId: 1,
-					id: record.Id,
-					source: record.Title,
-					title: record.Description,
-					url: record.FeatureImage,
-					ActionLink: record.ActionLink,
-					ActionType: record.ActionType,
-					OverlayTheme: record.OverlayTheme ? record.OverlayTheme : '',
-					DataSource: record.DataSource
-				};
-			});
-
-		} else {
-			return contents[0];
-		}
-	}
-
-	private populateCMSContent(response: any) {
-		const dataSource = 'cms';
-		const contentCards: IConfigItem[] = Object.values(this.contentCards);
-
-		contentCards.forEach(contentCard => {
-			let contents: any = this.cmsService.getOneCMSContent(response, contentCard.template, contentCard.positionParam);
-			if (contents && contents.length > 0) {
-				contents = this.formalizeContent(contents, contentCard.positionParam, dataSource);
-				contentCard.cmsContent = contents;
-				if ((contentCard.tileSource === 'CMS' || contentCard.upeContent === null) && contentCard.cmsContent) {	// contentCard.upeContent === null means no upe content
-					this.dashboardService.onlineCardContent[contentCard.cardId] = contentCard.cmsContent;
-
-					if (contentCard.cardId === 'positionA'
-						&& !this.cmsHeroBannerChanged(contentCard.displayContent, this.dashboardService.onlineCardContent[contentCard.cardId])) {
-						return;	// don't need to update, developer said this could present the refresh of positionA
+	private setWelcomeTextTitle(welcomeTextContent: any) {
+		if (welcomeTextContent && welcomeTextContent.Title) {
+			this.localInfoService.getLocalInfo().then(async (localInfo: any) => {
+				if ([SegmentConst.Consumer, SegmentConst.SMB].includes(localInfo.Segment)) {
+					const titles = map(welcomeTextContent.Title.split('|||'), trim);
+					if (!this.dashboardService.welcomeText) {
+						this.dashboardService.welcomeText = sample(titles);
 					}
-					contentCard.displayContent = this.dashboardService.onlineCardContent[contentCard.cardId];
-				} // else do nothing
-			} // else do nothing
-		});
-	}
-
-
-	private populateUPEContent(response: any, contentCards: IConfigItem[]) {
-		const dataSource = 'upe';
-
-		contentCards.forEach(contentCard => {
-			let contents: any = this.cmsService.getOneCMSContent(response, contentCard.template, contentCard.positionParam, ContentSource.UPE);
-			contentCard.upeContent = null;
-			if (contents && contents.length > 0) {
-				contents = this.formalizeContent(contents, contentCard.positionParam, dataSource);
-				contentCard.upeContent = contents;
-				this.dashboardService.onlineCardContent[contentCard.cardId] = contentCard.upeContent;
-			} else if (contentCard.cmsContent) {
-				this.dashboardService.onlineCardContent[contentCard.cardId] = contentCard.cmsContent;
-			} // else do nothing
-
-			if (contentCard.cardId === 'positionA'
-				&& !this.cmsHeroBannerChanged(contentCard.displayContent, this.dashboardService.onlineCardContent[contentCard.cardId])) {
-				return;	// don't need to update, developer said this could present the refresh of positionA
-			}
-
-			if (this.dashboardService.onlineCardContent[contentCard.cardId]) {
-				contentCard.displayContent = this.dashboardService.onlineCardContent[contentCard.cardId];
-			}
-		});
+				}
+			});
+		}
 	}
 
 	getHeroBannerDemoItems() {
@@ -821,7 +649,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 					if (!this.isOnline) {
 						this.getOfflineContent();
 					} else {
-						this.fetchContent();
+						this.getCachedContent();
 						this.getWarrantyInfo();
 					}
 					break;
@@ -832,7 +660,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 					break;
 				case SelfSelectEvent.SegmentChange:
 					if (this.isOnline) {
-						this.fetchContent();
+						this.getCachedContent();
 					}
 					this.hideTitleInCommercialAndSMB();
 					break;
