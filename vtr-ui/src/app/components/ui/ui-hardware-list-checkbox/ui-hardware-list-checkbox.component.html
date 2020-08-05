@@ -11,7 +11,7 @@
 						[checked]="device.isSelected"
 						[value]="device.isSelected"
 						[hasChild]="true"
-						(toggle)="onSelectDevice(device, checkbox.checked)"
+						(toggle)="onSelectDevice(device, $event)"
 						class="custom-control-component">
 						<p id="{{ componentId }}-list-item-{{ i }}-title" role="text" class="custom-control-label-text title">
 							{{ 'hardwareScan.pluginTokens.' + device.title | translateDefault:device.title }}
