@@ -8,10 +8,12 @@ import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.
 	styleUrls: ['./ui-hardware-list.component.scss']
 })
 export class UiHardwareListComponent implements OnInit {
+	@Input() componentId: string;
 	@Input() items: Array<any>;
 	@Input() template = 1;
 
 	public information: string;
+	public tooltipIndex: number;
 	public testResultEnum: typeof HardwareScanTestResult;
 
 	constructor(private translate: TranslateService) {
@@ -21,7 +23,8 @@ export class UiHardwareListComponent implements OnInit {
 	ngOnInit() {
 	}
 
-	public getInformation(text: string) {
+	public setTooltipInfo(text: string, index: number) {
 		this.information = text;
+		this.tooltipIndex = index;
 	}
 }

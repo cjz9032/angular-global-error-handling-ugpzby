@@ -8,10 +8,7 @@ import { HardwareScanService } from '../../../services/hardware-scan/hardware-sc
 })
 export class UiHardwareListCheckboxComponent implements OnInit, OnDestroy {
 
-	public select = this.translate.instant('hardwareScan.select');
-	public deselect = this.translate.instant('hardwareScan.deselect');
-	public allOptions = this.translate.instant('hardwareScan.allOptions');
-
+	@Input() componentId: string;
 	@Input() devices: any[];
 
 	constructor(private translate: TranslateService, private hardwareScanService: HardwareScanService) { }

@@ -36,7 +36,7 @@ describe('HardwareScanExecutingHeaderComponent', () => {
 
 //   it('should have a warning message', () => {
 //     //Accessing warning message id
-//     const warningMessage = fixture.debugElement.query(By.css('#warning-message')).nativeElement;
+//     const warningMessage = fixture.debugElement.query(By.css('#hwscan-executing-warning-message')).nativeElement;
 //     expect(warningMessage.innerHTML).toBe('Keep in mind that the tests will be cancelled if the system sleeps or hibernates');
 //   });
 
@@ -52,7 +52,7 @@ describe('HardwareScanExecutingHeaderComponent', () => {
 //   });
 
 //   it('should cancel the scan if button is clicked', () => {
-//     const btn = fixture.debugElement.nativeElement.querySelector('#hw_cancel_scan');
+//     const btn = fixture.debugElement.nativeElement.querySelector('#hwscan-cancel-btn');
 //     btn.click();
 //     expect(component.onCancel()).toHaveBeenCalled();
 //   });

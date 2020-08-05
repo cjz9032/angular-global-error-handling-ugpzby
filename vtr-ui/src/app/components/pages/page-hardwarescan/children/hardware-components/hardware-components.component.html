@@ -20,8 +20,8 @@
 	<div class="mb-5 body-content">
 		<div class="row px-0">
 			<div class="col-12 header">
-				<h2 class="heading2">{{getComponentsTitle()}}</h2>
-				<a class="refresh-button"
+				<h2 id="hwscan-components-title" role="heading" class="heading2">{{getComponentsTitle()}}</h2>
+				<a id="hwscan-refresh-modules-btn" role="button" class="refresh-button"
 					*ngIf="!isRefreshingModules() && !isScanExecuting() && !isRecoverExecuting()"
 					vtrMetrics
 					metricsEvent="FeatureClick"
@@ -52,11 +52,11 @@
 					</vtr-widget-hardware-scan-item>
 
 					<div class="loading-components" *ngIf="isRefreshingModules() && !isRecoverExecuting()">
-						<fa-icon placement="auto" [spin]="true" [icon]="['fal', 'circle-notch']" container="vtr-root">
+						<fa-icon id="hwscan-refresh-modules-spinner" role="img" placement="auto" [spin]="true" [icon]="['fal', 'circle-notch']" container="vtr-root">
 						</fa-icon>
 					</div>
 
-					<div class="refresh-message" *ngIf="isRefreshingModules() && !isRecoverExecuting()" aria-live="polite">
+					<div id="hwscan-refresh-modules-message" role="text" class="refresh-message" *ngIf="isRefreshingModules() && !isRecoverExecuting()" aria-live="polite">
 						{{ 'hardwareScan.refreshMessage' | translate }}
 					</div>
 				</div>

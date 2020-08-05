@@ -1,21 +1,21 @@
 
 <div class="row">
 	<div *ngIf="isRecoverExecuting(); else scanExecuting">
-		<h2 class="col title animated-dots" aria-live="polite">{{ 'hardwareScan.recoverBadSectors.executingTitle' | translate }}</h2>
+		<h2 id="hwscan-executing-rbs-title" role="heading" class="col title animated-dots" aria-live="polite">{{ 'hardwareScan.recoverBadSectors.executingTitle' | translate }}</h2>
 	</div>
 	<ng-template #scanExecuting>
-		<h2 class="col title animated-dots" aria-live="polite">{{ 'hardwareScan.executingScanTitle' | translate:{'title':getDeviceTitle()} }}</h2>
+		<h2 id="hwscan-executing-scan-title" role="heading" class="col title animated-dots" aria-live="polite">{{ 'hardwareScan.executingScanTitle' | translate:{'title':getDeviceTitle()} }}</h2>
 	</ng-template>
 </div>
 <div class="row hwscan-header">
 	<div class="col row1" aria-live="polite">
-		<p class="row">{{subTitle}}</p>
-		<p id="warning-message" class="row">{{'hardwareScan.warningMessage' | translate}}</p>
+		<p id="hwscan-executing-subtitle" role="text" class="row">{{subTitle}}</p>
+		<p id="hwscan-executing-warning-message" role="text" class="row">{{ 'hardwareScan.warningMessage' | translate }}</p>
 	</div>
 	<div class="row">
 		<div class="row progress-div">
 			<div class="row progress-percent-text" aria-live="polite">
-				<p class="progress-value-text">{{percent}}</p>
+				<p id="hwscan-executing-percent-value" role="text" class="progress-value-text">{{percent}}</p>
 				<p class="progress-complete-text">% {{'hardwareScan.complete' | translate}}</p>
 			</div>
 		</div>
@@ -33,8 +33,8 @@
 			<div class="col col-12 cancel-check"
 					title="{{ disableCancel ? ('hardwareScan.waitScanStarts' | translate) : ''}}">
 				<button type="button"
-					id="hw_cancel_scan"
-					attr.aria-label="hw_cancel_scan"
+					id="hwscan-cancel-btn"
+					attr.aria-label="hwscan-cancel-btn"
 					vtrMetrics
 					metricsEvent="FeatureClick"
 					metricsParent="{{itemParentCancel}}"

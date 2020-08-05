@@ -1,23 +1,16 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-ui-hardware-list-test',
 	templateUrl: './ui-hardware-list-test.component.html',
 	styleUrls: ['./ui-hardware-list-test.component.scss']
 })
-export class UiHardwareListTestComponent implements OnInit {
+export class UiHardwareListTestComponent {
+	@Input() componentId: string;
 	@Input() items: any[];
 	@Output() selectAny: EventEmitter<any> = new EventEmitter();
 
-	constructor(private translate: TranslateService) { }
-
-	select = this.translate.instant('hardwareScan.select');
-	deselect = this.translate.instant('hardwareScan.deselect');
-	allOptions = this.translate.instant('hardwareScan.allOptions');
-
-	ngOnInit() {
-	}
+	constructor() { }
 
 	public onSelectAll() {
 		this.items.forEach(item => {

@@ -6,10 +6,15 @@
 		<p class="errorMessage">{{ errorMessage }}</p>
 	</div>
 
-	<vtr-ui-hardware-list-test [items]="items" (selectAny)="receiveSelect()"></vtr-ui-hardware-list-test>
+	<vtr-ui-hardware-list-test
+		[componentId]="'hwscan-customize-scan-list'"
+		[items]="items"
+		(selectAny)="receiveSelect()">
+	</vtr-ui-hardware-list-test>
 
 	<div class="row button-row">
 		<vtr-ui-button
+			id="hwscan-run-selected-tests-btn"
 			[vtrMetrics]=false
 			[label]= " 'hardwareScan.customize.runTests' | translate "
 			(onClick)="onClickRun()">
@@ -17,6 +22,7 @@
 	</div>
 
 	<vtr-ui-close-button
+		[linkId]="'hwscan-customize-scan-modal-close-btn'"
 		class="close-btn"
 		metricsEvent="FeatureClick"
 		metricsParent="HardwareScan.CustomizeScan"
