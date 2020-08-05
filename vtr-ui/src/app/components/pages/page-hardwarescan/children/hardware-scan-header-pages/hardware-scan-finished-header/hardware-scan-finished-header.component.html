@@ -112,23 +112,24 @@
 	</div>
 
 	<ng-template #tooltipFinalResultCode>
-		<div
-			id="hwscan-final-result-code-success-tooltip" role="text"
-			[innerHTML]="'hardwareScan.scanFinishedHeader.frcSuccessDescription' | translate">
-		</div>
-		<a [attr.href]="contactusUrl"
-			class="link-support"
-			id="hwscan-final-result-code-support-link"
-			target="_blank"
-			vtrMetrics
-			metricsItemID="HardwareScan.ResultSupport"
-			metricsItemPosition="r1"
-			metricsItemCategory="partnerarticle"
-			metricsEvent="articleclick"
-			metricsPageNumber="1"
-			tabindex="1">
-			{{ 'hardwareScan.scanFinishedHeader.supportButtonText' | translate }}
-		</a>
+			<div
+				id="hwscan-final-result-code-success-tooltip" role="text"
+				[innerHTML]="'hardwareScan.scanFinishedHeader.frcSuccessDescription' | translate">
+			</div>
+			<vtr-ui-hyperlink-button
+				hyperlinkStyle="xs-300-blue-lighter"
+				class="hyperlink-container"
+				id="hwscan-final-result-code-support-link"
+				role="link"
+				metricsItemID="HardwareScan.ResultSupport"
+				metricsItemPosition="r1"
+				metricsItemCategory="partnerarticle"
+				metricsEvent="articleclick"
+				metricsPageNumber="1"
+				[tabIndex]="1"
+				[label]=" 'hardwareScan.scanFinishedHeader.supportButtonText' | translate "
+				(hyperlinkClick)="openContactusPage()">
+			</vtr-ui-hyperlink-button>
 	</ng-template>
 
 	<!-- Common templates used in both Scan and Previous Results headers -->
