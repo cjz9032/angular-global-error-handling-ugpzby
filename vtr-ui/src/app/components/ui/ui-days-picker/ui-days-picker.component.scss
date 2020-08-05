@@ -211,7 +211,7 @@
     @media #{$white-on-black} {
       border: 0.1rem solid $light;
     }
-    &:hover{
+    &:hover, &:focus{
       @media #{$black-on-white} {
         @include high-contrast-white-border;
       }
