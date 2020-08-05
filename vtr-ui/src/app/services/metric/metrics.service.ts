@@ -247,11 +247,11 @@ export class MetricService {
 		this.metricsClient.sendAsync(new AppAction(MetricConst.ActionSuspend, stub.launchParms, stub.launchType, focusDuration, blurDuration));
 	}
 
-	public sendSystemUpdateStatusMetric(metricsName: string) {
+	public sendSystemUpdateStatusMetric(metricsName: string, status: string) {
 		const metricsData = {
 			ItemParent: 'SystemUpdate',
 			ItemName: metricsName,
-			ItemType: 'FeatureStatus'
+			ItemType: status
 		};
 		this.sendMetrics(metricsData);
 	}

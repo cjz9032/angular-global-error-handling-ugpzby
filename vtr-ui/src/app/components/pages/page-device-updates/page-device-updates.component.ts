@@ -230,6 +230,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			this.setUpdateByCategory(this.systemUpdateService.ignoredRebootDelayUpdates);
 		}
 
+		this.systemUpdateService.retryTimes = 0;
 		this.getScheduleUpdateStatus(false);
 		this.isUpdateDownloading = this.systemUpdateService.isUpdateDownloading;
 		this.installationPercent = this.systemUpdateService.installationPercent;
@@ -311,7 +312,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			if (this.notificationSubscription) {
 				this.notificationSubscription.unsubscribe();
 			}
-			
+
 			if(this.cmsSubscription) this.cmsSubscription.unsubscribe();
 
 		} catch (error) {
