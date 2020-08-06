@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.28](https://bitbucket.tc.lenovo.com///compare/v1.7.27...v1.7.28) (2020-08-06)
+
+
+### Bug Fixes
+
+* **<a> tag hcm style:** VAN-21136 fixed hyperlink at hover status in hcm ([37fd516](https://bitbucket.tc.lenovo.com///commit/37fd516ecf1a9d9b29145baf7bf203064c5bf368))
+* **overall hc style:** VAN-20978 fix sideline in hcm ([2179aee](https://bitbucket.tc.lenovo.com///commit/2179aeeda78c8d34571cc98475a3aefd58209eb3))
+
 ### [1.7.27](https://bitbucket.tc.lenovo.com///compare/v1.7.26...v1.7.27) (2020-08-05)
 
 
