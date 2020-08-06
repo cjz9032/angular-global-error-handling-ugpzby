@@ -232,9 +232,12 @@
   }
   .toggle-icon {
 		fa-icon {
-			color: #4579f0;
+			color: $grey_dark;
 			font-size: 2rem;
 			cursor: pointer;
+			&.chevron-up {
+				color: $main;
+			}
 		}
   }
   input[type="checkbox"]{

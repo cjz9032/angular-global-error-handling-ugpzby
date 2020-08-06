@@ -18,7 +18,6 @@
 			font-size: 1.2rem;
 			font-weight: $weight_medium;
 			text-transform: uppercase;
-			color: $shade;
 			letter-spacing: 0;
 			overflow: hidden;
 			text-overflow: ellipsis;
@@ -26,10 +25,30 @@
 			text-align: left;
 		}
 		.select-text {
-			color: $shade_darker;
 			font-size: 1.8rem;
 			font-weight: $weight_light;
 		}
+
+		.toggle-close {
+			.select-title {
+				color: $shade;
+			}
+			.select-text {
+				color: $shade_darker;
+			}
+		}
+
+		.toggle-open {
+			.select-title, .select-text {
+				@media #{$white-on-black} {
+					@include high-contrast-black-text-color;
+				}
+				@media #{$black-on-white} {
+					@include high-contrast-white-text-color;
+				}
+			}
+		}
+
 		.disabled {
 			.btn-block {
 				pointer-events: none;
@@ -116,7 +135,16 @@
 				.dropdown-icon {
 					fa-icon {
 						font-size: 2rem;
-						color: $main;
+						color: $gray_dark;
+						&.chevron-up {
+							color: $main;
+							@media #{$white-on-black} {
+								@include high-contrast-black-text-color;
+							}
+							@media #{$black-on-white} {
+								@include high-contrast-white-text-color;
+							}
+						}
 					}
 				}
 			}
