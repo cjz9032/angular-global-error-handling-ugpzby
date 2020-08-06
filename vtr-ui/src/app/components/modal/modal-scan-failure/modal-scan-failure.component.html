@@ -29,7 +29,7 @@
 					metricsEvent="FeatureClick"
 					metricsParent="HardwareScan.ScanFailureActions"
 					metricsItem="ScanFailureActions.RecoverBadSectors"
-					linkId="hwscan-start-rbs-btn" (click)="goToRBSPage()"
+					linkId="hwscan-go-to-rbs-btn" (click)="goToRBSPage()"
 					[tooltipText]="'hardwareScan.scanFailureModal.recoverBadSectorsButtonText' | translate"
 					[label]="'hardwareScan.scanFailureModal.recoverBadSectorsButtonText' | translate">
 				</vtr-ui-button>
@@ -39,7 +39,7 @@
 					metricsEvent="FeatureClick"
 					metricsParent="HardwareScan.ScanFailureActions"
 					metricsItem="ScanFailureActions.LenovoSupport"
-					linkId="supportButtonWithRBS" (hyperlinkClick)="openSupportPage()"
+					linkId="hwscan-open-support-page-link" (hyperlinkClick)="openSupportPage()"
 				 	[tooltipText]="'hardwareScan.scanFailureModal.supportButtonText' | translate"
 				   	[label]="'hardwareScan.scanFailureModal.supportButtonText' | translate"
 					[upperCaseLabel]="true">
