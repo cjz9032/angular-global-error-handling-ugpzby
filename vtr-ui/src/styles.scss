@@ -67,9 +67,11 @@ a.disabled {
 		a.disabled, .offline-a {
 			@media #{$black-on-white} {
 				@include high-contrast-white-text-color-disabled;
+				text-decoration: none;
 			}
 			@media #{$white-on-black} {
 				@include high-contrast-black-text-color-disabled;
+				text-decoration: none;
 			}
 
 		}
