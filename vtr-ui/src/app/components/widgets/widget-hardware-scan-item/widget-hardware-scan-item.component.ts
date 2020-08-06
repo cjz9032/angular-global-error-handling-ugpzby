@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { LenovoSupportService } from 'src/app/services/hardware-scan/lenovo-support.service';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
 	selector: 'vtr-widget-hardware-scan-item',

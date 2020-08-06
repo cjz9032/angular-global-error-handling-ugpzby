@@ -124,8 +124,7 @@
 <ng-template #tooltipRefModule>
 	<div id="hwscan-item-{{ tooltipIndex }}-result-code-tooltip-text">{{ ('hardwareScan.pluginTokens.' + tooltipText) | translateDefault:tooltipText }}</div>
 	<vtr-ui-hyperlink-button
-		id="hwscan-item-{{ tooltipIndex }}-result-code-tooltip-support-link"
-		role="link"
+		linkId="hwscan-item-{{ tooltipIndex }}-result-code-tooltip-support-link"
 		class="hyperlink-container"
 		hyperlinkStyle="xs-300-blue-lighter"
 		metricsItemID="HardwareScan.ResultSupport"

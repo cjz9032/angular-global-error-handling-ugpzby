@@ -1,9 +1,11 @@
 <div class="vtr-ui-hyperlink-button">
-	<div class="hyperlink-box" (click)="onClick()" (keyup.enter)="onClick()" role="link"
+	<div class="hyperlink-box" (click)="onClick()" (keyup.enter)="onClick()"
 	 	[tabindex]="tabIndex ? tabIndex : 0"
 		[ngClass]="{'disabled': isDisabled === true}">
 		<a
 			class="hyperlink {{hyperlinkStyle}}"
+			[attr.role]="linkRole"
+			[attr.id]="linkId"
 			[vtrMetrics]="vtrMetricEnabled"
 			[metricsEvent]="metricsEvent"
 			[metricsParent]="metricsParent"

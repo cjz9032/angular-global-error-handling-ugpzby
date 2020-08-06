@@ -68,8 +68,7 @@
 	</ul>
 	<div class="options">
 		<vtr-ui-hyperlink-button
-			id="hwscan-select-all-tests-link"
-			role="link"
+			linkId="hwscan-select-all-tests-link"
 			hyperlinkStyle="xs-300-blue-lighter"
 			class="hyperlink-select"
 			(hyperlinkClick)="onSelectAll()"
@@ -78,13 +77,11 @@
 			></vtr-ui-hyperlink-button>
 		<span class="select-item-subtitle">/</span>
 		<vtr-ui-hyperlink-button
-			id="hwscan-deselect-all-tests-link"
-			role="link"
+			linkId="hwscan-deselect-all-tests-link"
 			hyperlinkStyle="xs-300-blue-lighter"
 			(hyperlinkClick)="onDeselectAll()"
 			[label]=" 'hardwareScan.deselect' | translate "
 			[disableTooltip]="true"
 		></vtr-ui-hyperlink-button>
 	</div>
-
 </div>

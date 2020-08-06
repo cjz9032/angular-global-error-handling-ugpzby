@@ -22,8 +22,7 @@
 		<div class="col-12 px-0">
 			<div class="options">
 				<vtr-ui-hyperlink-button
-					id="{{ componentId }}-select-all-link"
-					role="link"
+					linkId="{{ componentId }}-select-all-link"
 					hyperlinkStyle="xs-300-blue-lighter"
 					class="hyperlink-select"
 					(hyperlinkClick)="onSelectAllDevices()"
@@ -32,8 +31,7 @@
 				></vtr-ui-hyperlink-button>
 				<span class="select-item-subtitle">/</span>
 				<vtr-ui-hyperlink-button
-					id="{{ componentId }}-deselect-all-link"
-					role="link"
+					linkId="{{ componentId }}-deselect-all-link"
 					hyperlinkStyle="xs-300-blue-lighter"
 					(hyperlinkClick)="onDeselectAllDevices()"
 					[label]=" 'hardwareScan.deselect' | translate "

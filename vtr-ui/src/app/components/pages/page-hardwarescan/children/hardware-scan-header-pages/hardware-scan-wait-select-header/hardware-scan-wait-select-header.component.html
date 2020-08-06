@@ -4,7 +4,7 @@
 <div class="row">
  	<div class="col button-row">
 		<vtr-ui-button
-			id="hwscan-quick-scan-btn"
+			linkId="hwscan-quick-scan-btn"
 			[vtrMetrics]=false
 			[label]= " 'hardwareScan.quickScan' | translate "
 			[isDisabled]="disableButtonScan"
@@ -12,8 +12,8 @@
 			(onClick)="onQuickScan()">
 		</vtr-ui-button>
 		<vtr-ui-hyperlink-button
-			id="hwscan-custom-scan-btn"
-			role="button"
+			linkId="hwscan-custom-scan-btn"
+			linkRole="button"
 			class="hyperlink-container"
 			hyperlinkStyle="xs-white"
 			metricsEvent="FeatureClick"
