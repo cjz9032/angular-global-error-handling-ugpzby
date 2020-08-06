@@ -76,7 +76,7 @@
     "ngforage": "^5.0.1"
   },
   "devDependencies": {
-    "@angular-builders/custom-webpack": "next",
+    "@angular-builders/custom-webpack": "^10.0.0",
     "@angular-devkit/build-angular": "~0.1000.4",
     "@angular-devkit/build-ng-packagr": "~0.1000.4",
     "@angular/cli": "~10.0.4",
