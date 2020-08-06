@@ -39,7 +39,9 @@
 									(keyup.esc)="[$event.preventDefault(),startAtDropDown.isOpen()?startToggle.click():'',startToggle.focus()]"
 									(keyup)="ddToggleKBNavigator($event,startAtDropDown,startAtChargeOption,bctInfo.startValue)">
 
-									<div class="row d-flex justify-content-between">
+									<div class="row d-flex justify-content-between"
+										[class.toggle-open]="dropDowns?.first?.isOpen()"
+										[class.toggle-close]="!dropDowns?.first?.isOpen()">
 										<div class="col-11 pl-1 pr-1">
 											<div class="select-title"
 												id="{{textId}}-start-charge"
@@ -58,6 +60,7 @@
 										<div class="col-1 pl-1 pr-1">
 											<div class="dropdown-icon">
 												<fa-icon
+													[class.chevron-up]="dropDowns?.first?.isOpen()"
 													[icon]="dropDowns?.first?.isOpen()? iconUp: iconDown">
 												</fa-icon>
 											</div>
@@ -107,7 +110,9 @@
 									attr.aria-label="{{title}}-{{ddStopAtChargeDescription}}-{{bctInfo.stopValue}}%-{{option}}-{{stopAtChargeOptions.indexOf(bctInfo.stopValue)+1}}-{{off}}-{{stopAtChargeOptions.length}}-{{selected}}"
 									(keyup.esc)="ddItemKeyEscHandler($event,stopAtDropDown,endToggle)"
 									(keyup)="ddToggleKBNavigator($event,stopAtDropDown,stopAtChargeOption,bctInfo.stopValue)">
-									<div class="row d-flex justify-content-between">
+									<div class="row d-flex justify-content-between"
+										[class.toggle-open]="dropDowns?.last?.isOpen()"
+										[class.toggle-close]="!dropDowns?.last?.isOpen()">
 										<div class="col-11 pl-1 pr-1">
 											<div class="select-title"
 												id="{{textId}}-stop-charge"
@@ -125,6 +130,7 @@
 										<div class="col-1 pl-0 pr-1">
 											<div class="dropdown-icon">
 												<fa-icon
+													[class.chevron-up]="dropDowns?.last?.isOpen()"
 													[icon]="dropDowns?.last?.isOpen()? iconUp: iconDown">
 												</fa-icon>
 											</div>
