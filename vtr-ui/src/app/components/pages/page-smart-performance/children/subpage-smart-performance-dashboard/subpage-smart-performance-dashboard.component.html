@@ -23,13 +23,6 @@
 										</div>
 									</div>
 									<div class="d-flex justify-content-center mb-4 scan-button-content">
-										<!-- <button [ngClass]="!isOnline? 'disabled-button': 'action-button'" (click)="scanNow()"
-														vtrMetrics
-														metricsItem="btn.freepcscan"
-														metricsEvent="FeatureClick"
-														metricsParent="Page.Support.SmartPerformance"
-														[ngbTooltip]="'smartPerformance.scanButton' | translate"
-														placement="top">{{'smartPerformance.scanButton' |translate }} </button> -->
 										<vtr-ui-button (onClick)="scanNow()"
 											linkId="btn.smart-performance-free-scan"
 											metricsItem="btn.freepcscan"
