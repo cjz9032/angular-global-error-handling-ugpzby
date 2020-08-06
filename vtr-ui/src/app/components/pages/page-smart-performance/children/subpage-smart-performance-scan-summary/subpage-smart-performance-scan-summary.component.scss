@@ -905,18 +905,7 @@ vtr-subpage-smart-performance-scan-summary {
 			z-index: 0;
 			background-color: #52ffeb;
 			background-image: linear-gradient(90deg, #52ffeb 25%, #04ff5d 100%);
-			@media #{$white-on-black} {
-				background-image: none;
-				background: $light;
-				box-shadow: none;
-				@include white-border;
-			}
-			@media #{$black-on-white} {
-				background-image: none;
-				background: $dark;
-				box-shadow: none;
-				@include black-border;
-			}
+			
 			&::after{
 				position: absolute;
 				content: '';
@@ -931,6 +920,24 @@ vtr-subpage-smart-performance-scan-summary {
 				animation-timing-function: ease-in-out;
 				animation-iteration-count: 1;
 				animation-duration: 1s;
+			}
+			@media #{$white-on-black} {
+				background-image: none;
+				background: $light;
+				box-shadow: none;
+				@include white-border;
+				&::after{
+					background: $light;
+				}
+			}
+			@media #{$black-on-white} {
+				background-image: none;
+				background: $dark;
+				box-shadow: none;
+				@include black-border;
+				&::after{
+					background: $dark;
+				}
 			}
 			&::before{
 				position: absolute;
