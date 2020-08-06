@@ -40,9 +40,15 @@
 				}
 				@media #{$white-on-black} {
 					border-left: 0.1rem solid $light;
+					@media #{$breakpoint_lg} {
+						border-right: 0.1rem solid $light;
+					}
 				}
 				@media #{$black-on-white} {
 					border-left: 0.1rem solid $dark;
+					@media #{$breakpoint_lg} {
+						border-right: 0.1rem solid $dark;
+					}
 				}
 			}
 			&.vtr-page-right-column {
@@ -83,9 +89,15 @@
 				}
 				@media #{$white-on-black} {
 					border-right: 0.1rem solid $light;
+					@media #{$breakpoint_lg} {
+						border-left: 0.1rem solid $light;
+					}
 				}
 				@media #{$black-on-white} {
 					border-right: 0.1rem solid $dark;
+					@media #{$breakpoint_lg} {
+						border-left: 0.1rem solid $dark;
+					}
 				}
 			}
 			.vtr-page-column-shift-up {
