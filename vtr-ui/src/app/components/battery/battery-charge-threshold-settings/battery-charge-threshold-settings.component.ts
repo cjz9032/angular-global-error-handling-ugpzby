@@ -8,6 +8,8 @@ import { KeyCode } from 'src/app/enums/key-code.enum';
 import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { Subscription } from 'rxjs';
+import { faChevronUp } from '@fortawesome/pro-light-svg-icons/faChevronUp';
+import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
 
 @Component({
 	selector: 'vtr-battery-charge-threshold-settings',
@@ -43,6 +45,10 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit, OnDestro
 	startChargeInput = 'startAtCharge';
 	stopAtChargeInput = 'stopAtCharge';
 	isCheckedAutoInput = 'is-auto-battery-threshold-settings';
+
+	iconUp = faChevronUp;
+	iconDown = faChevronDown;
+
 	public selectedOptionsData: any = {};
 	@ViewChildren(NgbDropdown) dropDowns: QueryList<NgbDropdown>;
 	timeOut = 100;
@@ -50,9 +56,9 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit, OnDestro
 	translateSubscriptionStart: Subscription;
 	translateSubscriptionStop: Subscription;
 	constructor(
-		private commonService: CommonService
-		, private translate: TranslateService
-		, private metrics: CommonMetricsService
+		private commonService: CommonService,
+		private translate: TranslateService,
+		private metrics: CommonMetricsService
 	) { }
 
 
