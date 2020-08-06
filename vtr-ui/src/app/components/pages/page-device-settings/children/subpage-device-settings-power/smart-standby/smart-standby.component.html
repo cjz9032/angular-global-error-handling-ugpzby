@@ -113,7 +113,7 @@
 												[showDropDown]="showDropDown[0]"
 												(setTime)="onSetActiveStartEnd($event, true)"
 												[label]="'smart standby , start time dropdown'"
-												[linkId]="'smart-standby-start-dd-label'">
+												[linkId]="'start'">
 											</vtr-ui-time-picker>
 											<vtr-ui-time-picker [time]="smartStandbyEndTime"
 												[subHeadingText]="'device.deviceSettings.power.smartStandby.timer.subHeading2'"
@@ -121,7 +121,7 @@
 												[showDropDown]="showDropDown[1]"
 												(setTime)="onSetActiveStartEnd($event, false)"
 												[label]="'smart standby , end time dropdown'"
-												[linkId]="'smart-standby-end-dd-label'">
+												[linkId]="'end'">
 											</vtr-ui-time-picker>
 											<div *ngIf="showDiffNote"
 												class="row">
@@ -137,7 +137,7 @@
 											<vtr-ui-days-picker
 												[subHeadingText]="'device.deviceSettings.power.smartStandby.timer.subHeading3'"
 												[daysId]="'dropcheck3'"
-												[linkId]="'smart-standby-use-schedule-dd-label'"
+												[linkId]="'use-schedule-for'"
 												[showDropDown]="showDropDown[2]"
 												(setDays)="onSetDaysOfWeekOff($event)"></vtr-ui-days-picker>
 										</div>
