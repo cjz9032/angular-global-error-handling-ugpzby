@@ -221,11 +221,11 @@
 		color: $shade_blue;
 
 		@media #{$white-on-black} {
-			color: $high-contrast-sky-blue;
+			color: $light;
 		}
 
 		@media #{$black-on-white} {
-			color: $shade_blue;
+			color: $dark;
 		}
 
 		&:hover {
@@ -375,6 +375,12 @@ div {
 			color: #4a81fd;
 			font-size: 1.4rem;
 			text-decoration: underline;
+			@media #{$white-on-black} {
+				@include high-contrast-black-text-color;
+			}
+			@media #{$black-on-white} {
+				@include high-contrast-white-text-color;
+			}
 		}
 	}
 }
