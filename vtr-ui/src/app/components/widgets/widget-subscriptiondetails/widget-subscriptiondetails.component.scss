@@ -24,8 +24,27 @@
         color: $menu_hover;
         cursor: pointer;
         font-weight: 600;
+        &:hover {
+            color: $blue-light;
+        }
         &:focus {
             @include outline-blue;
+        }
+        &:disabled{
+            cursor: not-allowed;
+            color: $grey_dark;
+            border-bottom: 0.2rem solid $grey_dark;
+            opacity: .4;
+            @media #{$black-on-white} {
+                opacity: .5;
+                color: $high-contrast-white-disabled-maroon;
+                border-bottom: 0.2rem solid $high-contrast-white-disabled-maroon;
+            }
+            @media #{$white-on-black} {
+                opacity: .5;
+                color: $high-contrast-black-disabled-green;
+                border-bottom: 0.2rem solid $high-contrast-black-disabled-green;
+            }
         }
         @media #{$breakpoint_sm}{
             font-size: $fontsize_xs;
@@ -43,11 +62,6 @@
         @media #{$breakpoint_sm}{
             font-size: $fontsize_xs;
         }
-    }
-    .disabled-link{
-        cursor: not-allowed;
-        color: $grey_dark;
-        border-bottom: 0.2rem solid $grey_dark;
     }
     .status-list {
         padding-left: 0;
