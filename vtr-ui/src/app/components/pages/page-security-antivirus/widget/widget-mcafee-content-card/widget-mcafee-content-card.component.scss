@@ -24,6 +24,10 @@
 			a {
 				font-size: 1.6rem;
 				text-decoration: underline;
+				&.disabled {
+					text-decoration: none;
+					color: $shade_blue;
+				}
 			}
 		}
 		.title {
