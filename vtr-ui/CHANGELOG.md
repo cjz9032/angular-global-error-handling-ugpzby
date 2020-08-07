@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.29](https://bitbucket.tc.lenovo.com///compare/v1.7.28...v1.7.29) (2020-08-07)
+
+
+### Bug Fixes
+
+* **AV style:** VAN-21142 fixed offline link color ([5888c57](https://bitbucket.tc.lenovo.com///commit/5888c5745de7523106ac998b468abb421f6f3ebd))
+* **Overall:** VAN-21179 fix some pages will not show the scrollbar. ([5a693c8](https://bitbucket.tc.lenovo.com///commit/5a693c8ac40a9fc5789c5c21e8ba0181965513cc))
+* **Smart Performance:** VAN-21051 modify sp cancel dialog button and close button ([fd083a9](https://bitbucket.tc.lenovo.com///commit/fd083a9105c5352fec3c499548bd8bc76cb08b78))
+* **Smart Performance:** VAN-21086 modify date change dialog input box ([b7e3865](https://bitbucket.tc.lenovo.com///commit/b7e38650e4260f276f705a3ea2f876fb19760816))
+* **Smart Performance:** VAN-21086 remove date change dialog focus and modify dialog position. ([291b7df](https://bitbucket.tc.lenovo.com///commit/291b7df9266255b9fa9185d70cd6371da89cd951))
+
 ### [1.7.28](https://bitbucket.tc.lenovo.com///compare/v1.7.27...v1.7.28) (2020-08-06)
 
 
