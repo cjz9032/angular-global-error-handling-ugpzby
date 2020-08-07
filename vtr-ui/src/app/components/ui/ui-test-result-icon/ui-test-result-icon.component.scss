@@ -12,23 +12,27 @@
 		background: $green-gradient;
 		background-color: $green-darker;
 		border: 2px solid $green-dark;
+		@include high-contrast-status-icon-and-badge;
 	}
 
 	&.failure {
 		background: $gradient_red1;
 		background-color: $button_red_start;
 		border: 2px solid $button_red_start;
+		@include high-contrast-status-icon-and-badge;
 	}
 
 	&.warning {
 		background: linear-gradient($gradient_angle, $warning_dark 0%, $warning_light 100%);
 		background-color: $warning_dark;
 		border: 2px solid $warning_dark;
+		@include high-contrast-status-icon-and-badge;
 	}
 
 	.not-applicable {
 		color: $light_grey !important;
 		font-size: $fontsize_lg;
+		@include high-contrast-color-reversal;
 	}
 
 	&.rotate-icon {
@@ -40,5 +44,6 @@
 		line-height: 1.6rem;
 		margin-bottom: 1rem;
 		color: $light;
+		@include high-contrast-color;
 	}
 }
