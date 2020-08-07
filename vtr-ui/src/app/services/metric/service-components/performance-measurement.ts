@@ -35,7 +35,7 @@ export class PerformanceMeasurement {
 	private filterEntries(entries) {
 		const validEntries = [];
 
-		for (let idx = entries.length - 1; idx > -1; idx--) {
+		for (let idx = entries.length - 1; idx > -1; idx--) {	// Fetch record from end to begin
 			const entry = entries[idx];
 
 			if (entry.startTime <= this.lastRecord) {
@@ -51,7 +51,7 @@ export class PerformanceMeasurement {
 			}
 		}
 
-		return validEntries;
+		return validEntries.reverse();
 	}
 
 	private onHttpsCompleteEventWrapper() {

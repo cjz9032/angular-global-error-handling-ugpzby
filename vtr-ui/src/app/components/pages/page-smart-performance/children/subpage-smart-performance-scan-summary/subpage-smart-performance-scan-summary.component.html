@@ -321,21 +321,21 @@
 
 												<!-- </div> -->
 												<div *ngIf="isDropDownOpen && tabIndex === 1"
-													tabindex="0"
+													tabindex="-1"
 													class="calender-dropDown">
 													<div *ngIf="tabIndex === 1">
 														<div class="row mt-1">
 															<div class="col">
-																<div class="row custom-from-date py-3"
+																<div class="custom-from-date py-3 px-3 mb-2"
 																	[ngClass]="{'selected-custom-date':isFromDate}">
-																	<div class="col-1">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtFrom' |translate }}</div>
-																	<div class="col-auto"><input type='text' [ngModel]="displayFromDate"
+																	<div class="w-100">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtFrom' |translate }}</div>
+																	<div class="w-100"><input type='text' class="date-input" [ngModel]="displayFromDate"
 																			(click)="selectFromDate()" (keydown.enter)="selectFromDate()" readonly/></div>
 																</div>
-																<div class="row custom-to-date mt-3 py-3"
+																<div class="custom-to-date py-3 px-3"
 																	[ngClass]="{'selected-custom-date':!isFromDate}">
-																	<div class="col-1">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtTo' |translate }}</div>
-																	<div class="col-auto"><input type='text'  [ngModel]="displayToDate"
+																	<div class="w-100">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtTo' |translate }}</div>
+																	<div class="w-100"><input type='text' class="date-input" [ngModel]="displayToDate"
 																			(click)="selectToDate()" (keydown.enter)="selectToDate()" readonly/></div>
 
 																</div>
@@ -397,7 +397,7 @@
 													</div>
 													<div class="value d-flex justify-content-center"
 														title="{{historyRes.tuneCount || 0}} {{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}">
-														{{historyRes.tuneCount || 0}}
+														<div class="value-box">{{historyRes.tuneCount || 0}}</div>
 														<span>{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}</span>
 													</div>
 													<p class="w-100 text-center">
@@ -422,7 +422,7 @@
 													</div>
 													<div class="value d-flex justify-content-center"
 														title="{{historyRes.boostCount || 0}} {{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}">
-														{{historyRes.boostCount || 0}}
+														<div class="value-box">{{historyRes.boostCount || 0}}</div>
 														<span>{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}</span>
 													</div>
 													<p class="w-100 text-center">
@@ -448,7 +448,7 @@
 
 													<div class="value d-flex justify-content-center"
 														title="{{historyRes.secure || 0}} {{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}">
-														{{historyRes.secure || 0}}
+														<div class="value-box">{{historyRes.secure || 0}}</div>
 														<span>{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}</span>
 													</div>
 													<!-- <p>{{'smartPerformance.subscriberScanHomePage.scanSummary.secureSummary' |translate }}</p> -->
