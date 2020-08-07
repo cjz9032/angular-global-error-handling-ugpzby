@@ -183,7 +183,7 @@ vtr-subpage-smart-performance-scan-summary {
 					top: 4rem;
 					right: 0;
 					width: 100%;
-					min-width: 42rem;
+					min-width: 44rem;
 					max-width: 48rem;
 					background: $light;
 					box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
@@ -194,8 +194,14 @@ vtr-subpage-smart-performance-scan-summary {
 					@media #{$breakpoint_xl}{
 						right: auto;
 					}
+					@media #{$breakpoint_md}{
+						right: 0;
+					}
+					@media #{$breakpoint_sm}{
+						right: auto;
+					}
 					.date-input {
-						width: 13rem;
+						width: 100%;
 					}
 					.selected-custom-date{
 						background-color:#F5F7F8;
