@@ -321,21 +321,21 @@
 
 												<!-- </div> -->
 												<div *ngIf="isDropDownOpen && tabIndex === 1"
-													tabindex="0"
+													tabindex="-1"
 													class="calender-dropDown">
 													<div *ngIf="tabIndex === 1">
 														<div class="row mt-1">
 															<div class="col">
-																<div class="row custom-from-date py-3"
+																<div class="custom-from-date py-3 px-3 mb-2"
 																	[ngClass]="{'selected-custom-date':isFromDate}">
-																	<div class="col-1">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtFrom' |translate }}</div>
-																	<div class="col-auto"><input type='text' [ngModel]="displayFromDate"
+																	<div class="w-100">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtFrom' |translate }}</div>
+																	<div class="w-100"><input type='text' class="date-input" [ngModel]="displayFromDate"
 																			(click)="selectFromDate()" (keydown.enter)="selectFromDate()" readonly/></div>
 																</div>
-																<div class="row custom-to-date mt-3 py-3"
+																<div class="custom-to-date py-3 px-3"
 																	[ngClass]="{'selected-custom-date':!isFromDate}">
-																	<div class="col-1">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtTo' |translate }}</div>
-																	<div class="col-auto"><input type='text'  [ngModel]="displayToDate"
+																	<div class="w-100">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtTo' |translate }}</div>
+																	<div class="w-100"><input type='text' class="date-input" [ngModel]="displayToDate"
 																			(click)="selectToDate()" (keydown.enter)="selectToDate()" readonly/></div>
 
 																</div>
