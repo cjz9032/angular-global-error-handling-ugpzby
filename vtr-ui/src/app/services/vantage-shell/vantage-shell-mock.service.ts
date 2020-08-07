@@ -1486,6 +1486,12 @@ export class VantageShellService {
 	}
 
 	public getIntelligentSensing(): any {
+		const facialRecognitionSettings = {
+			available: true,
+			status: true,
+			cameraPermission: true,
+			privacyModeStatus: true
+		};
 		const intelligentSensing = {
 			GetHPDCapability: this.getPromise(true),
 			GetHPDGlobalSetting: this.getPromise(true),
@@ -1519,7 +1525,7 @@ export class VantageShellService {
 			GetHPDLeaveSensitivityVisibility: this.getPromise(true),
 			GetHPDLeaveSensitivity: this.getPromise(true),
 			SetHPDLeaveSensitivitySetting: this.getPromise(true),
-			getLockFacialRecognitionSettings: this.getPromise(true),
+			getLockFacialRecognitionSettings: this.getPromise(facialRecognitionSettings),
 			setLockFacialRecognitionSettings: this.getPromise(true)
 		};
 		return intelligentSensing;
