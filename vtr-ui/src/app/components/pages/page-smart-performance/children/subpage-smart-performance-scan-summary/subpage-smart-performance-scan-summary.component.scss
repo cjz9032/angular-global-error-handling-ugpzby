@@ -180,14 +180,23 @@ vtr-subpage-smart-performance-scan-summary {
 				}
 				.calender-dropDown{
 					position: absolute;
+					top: 4rem;
+					right: 0;
 					width: 100%;
-					max-width: 49rem;
+					min-width: 42rem;
+					max-width: 48rem;
 					background: $light;
 					box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
 					border-radius: 0.9rem;
 					padding: 1rem;
 					z-index: 1;
 					font-size: 1.2rem;
+					@media #{$breakpoint_xl}{
+						right: auto;
+					}
+					.date-input {
+						width: 13rem;
+					}
 					.selected-custom-date{
 						background-color:#F5F7F8;
 					}
