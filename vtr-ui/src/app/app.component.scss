@@ -11,6 +11,7 @@
 	overflow-y: auto;
 	overflow-x: hidden;
 	outline: none !important;
+	z-index: 0;
 	.vtr-widget {
 		background: $screen_dark_70;
 		max-width: 33%;
