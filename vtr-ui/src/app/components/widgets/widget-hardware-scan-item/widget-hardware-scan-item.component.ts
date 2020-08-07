@@ -40,4 +40,8 @@ export class WidgetHardwareScanItemComponent implements OnInit {
 			this.contactusUrl = response;
 		});
 	}
+
+	openContactusPage() {
+		window.open(this.contactusUrl);
+	}
 }

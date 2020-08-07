@@ -21,20 +21,20 @@
 		<div class="row px-0">
 			<div class="col-12 header">
 				<h2 id="hwscan-components-title" role="heading" class="heading2">{{getComponentsTitle()}}</h2>
-				<a id="hwscan-refresh-modules-btn" role="button" class="refresh-button"
+				<vtr-ui-hyperlink-button class="refresh-button"
+					linkId="hwscan-refresh-modules-btn"
+					linkRole="button"
 					*ngIf="!isRefreshingModules() && !isScanExecuting() && !isRecoverExecuting()"
-					vtrMetrics
+					hyperlinkStyle="xs-300-blue-lighter"
 					metricsEvent="FeatureClick"
 					metricsParent="HardwareScan"
 					metricsItem="HardwareScan.RefreshModules"
-					href="javascript:void();"
-					[ngClass]="{'action-anchor': !disableRefreshAnchor() , 'disabled-anchor': disableRefreshAnchor()}"
-					(click)="refreshModules()">{{'hardwareScan.refreshModule' | translate}}<fa-icon class="refresh-icon"
-						placement="auto"
-						[icon]="['fal', 'redo']"
-						container="vtr-root">
-					</fa-icon>
-				</a>
+				 	[disableTooltip]="true"
+				 	[isDisabled]="disableRefreshAnchor()"
+				 	[faIcon]="['fal', 'redo']"
+					[label]="'hardwareScan.refreshModule' | translate"
+					(hyperlinkClick)="refreshModules()">
+				</vtr-ui-hyperlink-button>
 			</div>
 		</div>
 		<hr>

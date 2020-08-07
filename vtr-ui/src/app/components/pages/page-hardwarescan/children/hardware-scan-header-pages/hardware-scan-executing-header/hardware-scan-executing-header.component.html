@@ -30,19 +30,21 @@
 
 	<div class="col col-12 row">
 		<div class="col col-12 row">
-			<div class="col col-12 cancel-check"
-					title="{{ disableCancel ? ('hardwareScan.waitScanStarts' | translate) : ''}}">
-				<button type="button"
-					id="hwscan-cancel-btn"
-					attr.aria-label="hwscan-cancel-btn"
-					vtrMetrics
-					metricsEvent="FeatureClick"
+			<div class="col col-12 cancel-check">
+				<vtr-ui-hyperlink-button
+					[ngbTooltip]="disableCancel ? ('hardwareScan.waitScanStarts' | translate) : ''" tooltipClass="vtr-system-tooltip" container="body"
+					hyperlinkStyle="xs-white"
+					linkId="hwscan-cancel-btn"
+					linkRole="button"
+					ariaLabel="hwscan-cancel-btn"
 					metricsParent="{{itemParentCancel}}"
 					metricsItem="{{itemNameCancel}}"
-					class="cancel-check cancel-check-button"
-					[disabled]="disableCancel"
-					tabindex="1"
-					(click)="onCancel()">{{'hardwareScan.cancel' | translate}}</button>
+					[isDisabled]="disableCancel"
+					[upperCaseLabel]="true"
+					[label]="'hardwareScan.cancel' | translate"
+					[tabIndex]="1"
+					(hyperlinkClick)="onCancel()">
+				</vtr-ui-hyperlink-button>
 			</div>
 		</div>
 	</div>

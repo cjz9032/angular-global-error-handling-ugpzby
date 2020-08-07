@@ -67,9 +67,21 @@
 		</li>
 	</ul>
 	<div class="options">
-		<a id="hwscan-select-all-tests-link" class="select-item" href="javascript:void(0);" (click)="onSelectAll()">{{ 'hardwareScan.select' | translate }}</a>
+		<vtr-ui-hyperlink-button
+			linkId="hwscan-select-all-tests-link"
+			hyperlinkStyle="xs-300-blue-lighter"
+			class="hyperlink-select"
+			(hyperlinkClick)="onSelectAll()"
+			[label]=" 'hardwareScan.select' | translate "
+			[disableTooltip]="true"
+			></vtr-ui-hyperlink-button>
 		<span class="select-item-subtitle">/</span>
-		<a id="hwscan-deselect-all-tests-link" class="select-item" href="javascript:void(0);" (click)="onDeselectAll()">{{ 'hardwareScan.deselect' | translate }}</a>
+		<vtr-ui-hyperlink-button
+			linkId="hwscan-deselect-all-tests-link"
+			hyperlinkStyle="xs-300-blue-lighter"
+			(hyperlinkClick)="onDeselectAll()"
+			[label]=" 'hardwareScan.deselect' | translate "
+			[disableTooltip]="true"
+		></vtr-ui-hyperlink-button>
 	</div>
-
 </div>

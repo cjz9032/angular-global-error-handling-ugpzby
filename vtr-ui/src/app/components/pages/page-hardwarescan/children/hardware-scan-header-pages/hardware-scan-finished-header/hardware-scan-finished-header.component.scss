@@ -4,10 +4,7 @@
 	color: $light;
 	font-size: $fontsize_xl;
 	font-weight: $weight_600;
-	padding-left: 2.4rem;
-	padding-top: 2.4rem;
-	padding-bottom: 0.5rem;
-	padding-right: 2.4rem;
+	padding: 2.4rem 2.4rem 0.5rem;
 }
 
 .result-date-description {
@@ -36,36 +33,19 @@
 	padding-right: 2.4rem;
 	display: flex;
 
-	.scan-again-button {
-		font-size: $fontsize_xs2;
-		font-weight: $weight_bold;
-		color: $light;
-		border-bottom: 0.2rem solid $light;
-		padding-bottom: 0.2rem;
-		margin-left: 2.5rem;
-		text-transform: uppercase;
-		cursor: pointer;
-		&:hover {
-			border: none;
-			padding-bottom: 0.5rem; // Centering the text after removing its text-decoration
-			text-decoration: none; //Remove underline on customize scan when the cursor is under the link
-		}
-		&:focus {
-			@include outline_blue;
-		}
-	}
-	.align-items-center {
-		align-content: center;
+	.hyperlink-container {
+		margin: 0 0 0 1.9rem;
 	}
 }
 
-.link-support {
-	padding-top: 1rem;
-	text-decoration: underline;
-	&:hover {
-		color: $menu_hover;
-		text-decoration: none;
+// Removing padding left from hyperlink button
+:host::ng-deep.tooltip-inner {
+	.hyperlink-container {
+		.vtr-ui-hyperlink-button {
+			padding-left: 0;
+		}
 	}
+
 }
 
 .final-result-code {

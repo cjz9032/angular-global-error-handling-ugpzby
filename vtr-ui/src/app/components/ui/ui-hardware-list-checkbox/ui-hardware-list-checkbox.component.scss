@@ -59,18 +59,7 @@
 		.options {
 			padding: 0.8rem 0;
 			font-size: $fontsize_xs2;
-
-			.select-item {
-				color: $main;
-				font-weight: $weight_light;
-				border-bottom: 0.1rem solid $main;
-				cursor: pointer;
-
-				&:hover {
-					border: none;
-					text-decoration: none;
-				}
-			}
+			display: flex;
 
 			.select-item-subtitle {
 				padding: 0.5rem;

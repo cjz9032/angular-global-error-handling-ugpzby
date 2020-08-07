@@ -108,13 +108,9 @@
 		}
 	}
 
-	.link-support {
-		padding-top: 1rem;
-		text-decoration: underline;
-
-		&:hover {
-			text-decoration: none;
-			color: $menu_hover;
+	.hyperlink-container {
+		::ng-deep.vtr-ui-hyperlink-button {
+			padding-left: 0;
 		}
 	}
 

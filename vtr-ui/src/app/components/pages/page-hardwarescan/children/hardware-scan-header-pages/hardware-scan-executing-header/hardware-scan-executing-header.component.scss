@@ -4,10 +4,7 @@
 	color: $light;
 	font-size: $fontsize_xl;
 	font-weight: $weight_600;
-	padding-left: 2.4rem;
-	padding-top: 2.4rem;
-	padding-bottom: 0.5rem;
-	padding-right: 2.4rem;
+	padding: 2.4rem 2.4rem 0.5rem;
 }
 .row1 {
 	color: $light;
@@ -88,26 +85,9 @@
 }
 
 .cancel-check {
-	color: $light;
-	font-size: $fontsize_xs;
-	font-weight: $weight_medium;
-	text-align: center;
-	text-transform: uppercase;
+	display: flex;
+	justify-content: center;
 	padding-top: 0.5rem;
-
-	.cancel-check-button {
-		border-bottom: 0.2rem solid $light;
-
-		&:hover:enabled {
-			border: none;
-			padding-bottom: 0.2rem;
-			text-decoration: none;
-		}
-	}
-
-	&:focus {
-		@include outline-blue;
-	}
 }
 
 .hwscan-header {
