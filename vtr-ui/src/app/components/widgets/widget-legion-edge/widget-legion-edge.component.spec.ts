@@ -18,6 +18,7 @@ import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose
 import { GamingHybridModeService } from 'src/app/services/gaming/gaming-hybrid-mode/gaming-hybrid-mode.service';
 import { GamingOverDriveService } from 'src/app/services/gaming/gaming-over-drive/gaming-over-drive.service';
 import { GamingKeyLockService } from 'src/app/services/gaming/gaming-keylock/gaming-key-lock.service';
+import { GamingQuickSettingToolbarService } from 'src/app/services/gaming/gaming-quick-setting-toolbar/gaming-quick-setting-toolbar.service';
 
 import { SvgInlinePipe } from 'src/app/pipe/svg-inline/svg-inline.pipe';
 import { LoggerService } from 'src/app/services/logger/logger.service';
@@ -194,6 +195,7 @@ describe('WidgetLegionEdgeComponent', () => {
 	const gamingOverDriveServiceSpy = jasmine.createSpyObj('GamingOverDriveService', ['getOverDriveStatus', 'setOverDriveStatus']);
 	const gamingKeyLockServiceSpy = jasmine.createSpyObj('GamingKeyLockService', ['getKeyLockStatus', 'setKeyLockStatus']);
 	const loggerServiceSpy = jasmine.createSpyObj('LoggerService', ['getMessage', 'debug', 'error', 'info', 'exception']);
+	const gamingQuickSettingToolbarServiceSpy = jasmine.createSpyObj('GamingQuickSettingToolbarService', ['registerEvent', 'unregisterEvent']);
 
 	gamingThermalModeServiceSpy.getThermalModeRealStatus.and.returnValue(Promise.resolve(2));
 	gamingOCServiceSpy.getPerformanceOCSetting.and.returnValue(Promise.resolve(false));
@@ -247,6 +249,7 @@ describe('WidgetLegionEdgeComponent', () => {
 					{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
 					{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
 					{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
+					{ provide: GamingQuickSettingToolbarService, useValue: gamingQuickSettingToolbarServiceSpy },
 					{ provide: NgbModal, useValue: { open: () => 0 } },
 					{ provide: LoggerService, useValue: loggerServiceSpy }
 				]
@@ -633,6 +636,7 @@ describe('WidgetLegionEdgeComponent', () => {
 					{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
 					{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
 					{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
+					{ provide: GamingQuickSettingToolbarService, useValue: gamingQuickSettingToolbarServiceSpy },
 					{ provide: NgbModal, useValue: { open: () => 0 } },
 					{ provide: LoggerService, useValue: loggerServiceSpy }
 				]
@@ -789,6 +793,7 @@ describe('WidgetLegionEdgeComponent', () => {
 					{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
 					{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
 					{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
+					{ provide: GamingQuickSettingToolbarService, useValue: gamingQuickSettingToolbarServiceSpy },
 					{ provide: NgbModal, useValue: { open: () => 0 } },
 					{ provide: LoggerService, useValue: loggerServiceSpy }
 				]
@@ -952,6 +957,7 @@ describe('WidgetLegionEdgeComponent', () => {
 					{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
 					{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
 					{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
+					{ provide: GamingQuickSettingToolbarService, useValue: gamingQuickSettingToolbarServiceSpy },
 					{ provide: NgbModal, useValue: { open: () => 0 } },
 					{ provide: LoggerService, useValue: loggerServiceSpy }
 				]
@@ -1111,6 +1117,7 @@ describe('WidgetLegionEdgeComponent', () => {
 					{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
 					{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
 					{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
+					{ provide: GamingQuickSettingToolbarService, useValue: gamingQuickSettingToolbarServiceSpy },
 					{ provide: NgbModal, useValue: { open: () => 0 } },
 					{ provide: LoggerService, useValue: loggerServiceSpy }
 				]
@@ -1250,6 +1257,7 @@ describe('WidgetLegionEdgeComponent', () => {
 					{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceMock },
 					{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
 					{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
+					{ provide: GamingQuickSettingToolbarService, useValue: gamingQuickSettingToolbarServiceSpy },
 					{ provide: NgbModal, useValue: { open: () => 0 } },
 					{ provide: LoggerService, useValue: loggerServiceSpy }
 				]
@@ -1388,6 +1396,7 @@ describe('WidgetLegionEdgeComponent', () => {
 					{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
 					{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceMock },
 					{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
+					{ provide: GamingQuickSettingToolbarService, useValue: gamingQuickSettingToolbarServiceSpy },
 					{ provide: NgbModal, useValue: { open: () => 0 } },
 					{ provide: LoggerService, useValue: loggerServiceSpy }
 				]
@@ -1657,6 +1666,7 @@ describe('WidgetLegionEdgeComponent', () => {
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
 					{ provide: GamingOCService, useValue: gamingOCServiceSpy },
 					{ provide: LoggerService, useValue: loggerServiceSpy },
+					{ provide: GamingQuickSettingToolbarService, useValue: gamingQuickSettingToolbarServiceSpy },
 					{ provide: NgbModal, useValue: { open: () => 0 } },
 				]
 			}).compileComponents();
@@ -1935,6 +1945,108 @@ describe('WidgetLegionEdgeComponent', () => {
 			const result = component.onPopupClosed({ target: { value: true }, name: 'gaming.dashboard.device.legionEdge.networkBoost' });
 			expect(component.legionUpdate[2].isDriverPopup).toBe(false);
 		}));
+	})
+
+	describe('quick setting toolbar & toast event', () => {
+		let gamingQuickSettingToolbarServiceMock = {
+			registerEvent() {
+				return new Promise(resolve => {
+					resolve(true)
+				})
+			},
+			unregisterEvent() {
+				return new Promise(resolve => {
+					resolve(true)
+				})
+			}
+		}
+		beforeEach(async(() => {
+			TestBed.configureTestingModule({
+				declarations: [WidgetLegionEdgeComponent, SvgInlinePipe,
+					mockPipe({ name: 'translate' })],
+				schemas: [NO_ERRORS_SCHEMA],
+				providers: [
+					{ provide: HttpClient },
+					{ provide: HttpHandler },
+					{ provide: Router, useClass: class { navigate = jasmine.createSpy('navigate'); } },
+					{ provide: CommonService, useValue: commonServiceMock },
+					{ provide: VantageShellService },
+					{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesServiceMock },
+					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
+					{ provide: GamingOCService, useValue: gamingOCServiceSpy },
+					{ provide: GamingSystemUpdateService, useValue: gamingSystemUpdateServiceSpy },
+					{ provide: NetworkBoostService, useValue: networkBoostServiceSpy },
+					{ provide: GamingAutoCloseService, useValue: gamingAutoCloseServiceSpy },
+					{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
+					{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
+					{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
+					{ provide: GamingQuickSettingToolbarService, useValue: gamingQuickSettingToolbarServiceMock },
+					{ provide: NgbModal, useValue: { open: () => 0 } },
+					{ provide: LoggerService, useValue: loggerServiceSpy }
+				]
+			}).compileComponents();
+			fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
+			component = fixture.debugElement.componentInstance;
+			fixture.detectChanges();
+		}));
+
+		afterEach(() => {
+			liteGamingCache = false;
+			desktopTypeCahce = false;
+			smartFanFeatureCache = false;
+			thermalModeVersionCache = 1;
+			cpuOCFeatureCache = false;
+			gpuOCFeatureCache = false;
+			xtuServiceCache = false;
+			nvDriverCache = false;
+			memOCFeatureCache = false;
+			networkBoostFeatureCache = false;
+			networkBoosNeedToAskPopup = 1;
+			fbnetFilterCache = false;
+			optimizationFeatureCache = false;
+			hybridModeFeatureCache = false;
+			overDriveFeatureCache = false;
+			touchpadLockFeatureCache = false;
+			winKeyLockFeatureCache = false;
+		});
+
+		it('quickSettingToolbarevent networkBoost', () => {
+			component.quickSettingToolbarevent(1, 'networkBoost', '[LocalStorageKey] NetworkBoostStatus');
+			expect(component.legionUpdate[component.legionItemIndex.networkBoost].isChecked).toBe(true);
+
+			component.quickSettingToolbarevent(0, 'networkBoost', '[LocalStorageKey] NetworkBoostStatus');
+			expect(component.legionUpdate[component.legionItemIndex.networkBoost].isChecked).toBe(false);
+
+			component.quickSettingToolbarevent(undefined, 'networkBoost', '[LocalStorageKey] NetworkBoostStatus');
+			expect(component.legionUpdate[component.legionItemIndex.networkBoost].isChecked).toBe(false);
+		});
+
+		it('quickSettingToolbarevent autoClose', () => {
+			component.quickSettingToolbarevent(1, 'autoClose', '[LocalStorageKey] AutoCloseStatus');
+			expect(component.legionUpdate[component.legionItemIndex.autoClose].isChecked).toBe(true);
+
+			component.quickSettingToolbarevent(0, 'autoClose', '[LocalStorageKey] AutoCloseStatus');
+			expect(component.legionUpdate[component.legionItemIndex.autoClose].isChecked).toBe(false);
+
+			component.quickSettingToolbarevent(undefined, 'autoClose', '[LocalStorageKey] AutoCloseStatus');
+			expect(component.legionUpdate[component.legionItemIndex.autoClose].isChecked).toBe(false);
+		});
+
+		it('onGamingQuickSettingsNetworkBoostStatusChangedEvent', () => {
+			component.onGamingQuickSettingsNetworkBoostStatusChangedEvent(1);
+			expect(component.legionUpdate[component.legionItemIndex.networkBoost].isChecked).toBe(true);
+
+			component.onGamingQuickSettingsNetworkBoostStatusChangedEvent(0);
+			expect(component.legionUpdate[component.legionItemIndex.networkBoost].isChecked).toBe(false);
+		});
+
+		it('onGamingQuickSettingsAutoCloseStatusChangedEvent', () => {
+			component.onGamingQuickSettingsAutoCloseStatusChangedEvent(1);
+			expect(component.legionUpdate[component.legionItemIndex.autoClose].isChecked).toBe(true);
+
+			component.onGamingQuickSettingsAutoCloseStatusChangedEvent(0);
+			expect(component.legionUpdate[component.legionItemIndex.autoClose].isChecked).toBe(false);
+		});
 	})
 });
 
