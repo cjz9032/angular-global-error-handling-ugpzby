@@ -453,13 +453,20 @@ vtr-subpage-smart-performance-scan-summary {
 							}
 						}
 						.fixes {
+							text-overflow: ellipsis;
+							overflow-x: hidden;
 							@media #{$breakpoint_sm}{
-								max-width: 7rem;
-								display: inline-block;
-								text-overflow: ellipsis;
-								overflow-x: hidden;
-								padding: 0;
+								max-width: 9rem;
+								display: inline-block;								
+								padding: 0;								
+								padding-left: 1.5rem;
 							}
+						}
+						.icon-check-box{										
+								justify-content: center;
+								text-align: center;		
+								text-overflow: ellipsis;
+								overflow-x: hidden;					
 						}
 					}
 				}

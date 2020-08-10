@@ -395,7 +395,7 @@
 														</h5>
 														<div class="icon icon-performance"></div>
 													</div>
-													<div class="value d-flex justify-content-center"
+													<div class="value justify-content-center"
 														title="{{historyRes.tuneCount || 0}} {{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}">
 														<div class="value-box">{{historyRes.tuneCount || 0}}</div>
 														<span>{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}</span>
@@ -420,7 +420,7 @@
 														</h5>
 														<div class="icon icon-internet-performance"></div>
 													</div>
-													<div class="value d-flex justify-content-center"
+													<div class="value justify-content-center"
 														title="{{historyRes.boostCount || 0}} {{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}">
 														<div class="value-box">{{historyRes.boostCount || 0}}</div>
 														<span>{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}</span>
@@ -446,7 +446,7 @@
 														<span class="icomoon icomoon-malware"></span>
 													</div>
 
-													<div class="value d-flex justify-content-center"
+													<div class="value justify-content-center"
 														title="{{historyRes.secure || 0}} {{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}">
 														<div class="value-box">{{historyRes.secure || 0}}</div>
 														<span>{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}</span>
@@ -484,13 +484,13 @@
 															<li class=" list-item list-heading">
 																<div class="container-fluid">
 																	<div class="row align-items-center">
-																		<div class="offset-1 col-7">
+																		<div class="offset-1 col-6" title="{{'smartPerformance.subscriberScanHomePage.lastScanResults.scanDate' |translate }}">
 																			{{'smartPerformance.subscriberScanHomePage.lastScanResults.scanDate' |translate }}
 																		</div>
-																		<div class="col-2">
+																		<div class="col-3 fixes" title="{{'smartPerformance.subscriberScanHomePage.lastScanResults.results' |translate }}">
 																			{{'smartPerformance.subscriberScanHomePage.lastScanResults.results' |translate }}
 																		</div>
-																		<div class="col-2">
+																		<div class="col-2 icon-check-box" title="{{'smartPerformance.subscriberScanHomePage.lastScanResults.status' |translate }}">
 																			{{'smartPerformance.subscriberScanHomePage.lastScanResults.status' |translate }}
 																		</div>
 																	</div>
@@ -515,7 +515,7 @@
 																				(click)="expandRow(ind)">
 																			</fa-icon> -->
 																		</div>
-																		<div class="col-7">
+																		<div class="col-6">
 																			<b>{{item.scanrunDate}}</b> - 
 																			<span>{{item.scanrunTime | uppercase}}</span>
 																			<span class="ml-1"
@@ -523,11 +523,11 @@
 																			<span class="ml-1"
 																				*ngIf="item.type.toUpperCase() == 'SS'">({{'smartPerformance.auto' |translate }})</span>
 																		</div>
-																		<div class="col-2 fixes" title="{{item.fixcount === 0 ? item.fixcount : (item.fixcount | number:'2.0')}} {{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' | translate}}">
+																		<div class="col-3 fixes" title="{{item.fixcount === 0 ? item.fixcount : (item.fixcount | number:'2.0')}} {{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' | translate}}">
 																			{{item.fixcount === 0 ? item.fixcount : (item.fixcount | number)}}
 																			{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' | translate}}
 																		</div>
-																		<div class="col-2"
+																		<div class="col-2 d-flex icon-check-box"
 																			*ngIf="item.status === 'C'">
 																			<div class="icon-check">
 																				<div class="icon-bkg">
@@ -537,7 +537,7 @@
 																				</div>
 																			</div>
 																		</div>
-																		<div class="col-2"
+																		<div class="col-2 d-flex icon-check-box"
 																			*ngIf="item.status === 'S'">
 																			<div class="icon-times">
 																				<div class="icon-bkg">
