@@ -5,7 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import * as CryptoJS from 'crypto-js';
 import moment from 'moment';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { enumSmartPerformance, PaymentPage } from 'src/app/enums/smart-performance.enum';
+import { enumSmartPerformance, PaymentPage, SpSubscriptionDetails } from 'src/app/enums/smart-performance.enum';
 import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
@@ -48,6 +48,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	tempHide = false;
 	spProcessStatus: any;
 	public isExpired = false;
+	public expiredDaysCount: any;
 	constructor(
 		private translate: TranslateService,
 		private modalService: NgbModal,
@@ -211,19 +212,8 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 			releaseDate.setMonth(releaseDate.getMonth() + +lastItem.products[0].unitTerm);
 			releaseDate.setDate(releaseDate.getDate() - 1);
 			if (lastItem && lastItem.status.toUpperCase() === 'COMPLETED') {
-				this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.activeStatus';
-				this.strStatus = 'ACTIVE';
-				this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
-				this.isSubscribed = true;
-				this.subScribeEvent.emit(this.isSubscribed);
-				this.subscriptionDetails = {
-					startDate: this.formatLocaleDate.transform(lastItem.releaseDate),
-					endDate: this.formatLocaleDate.transform(releaseDate.toLocaleDateString()),
-					productNumber: lastItem.products[0].productCode || '',
-					status: 'smartPerformance.subscriptionDetails.activeStatus'
-				};
-				this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.subscriptionDetails);
-				this.getExpiredStatus(releaseDate);
+
+				this.getExpiredStatus(releaseDate, lastItem);
 			} else {
 				this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
 				this.isSubscribed = false;
@@ -266,19 +256,81 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		}
 	}
 
-	getExpiredStatus(releaseDate) {
+	getExpiredStatus(releaseDate, lastItem) {
 		let expiredDate;
-		const currentDate = new Date();
+		let expiryRemainDays: number;
+		const nextText = this.translate.instant('smartPerformance.subscriptionDetails.next');
+		const rDate = '2022-06-15T11:25:46.212+0000';
+		const currentDate: any = new Date();
 		expiredDate = new Date(releaseDate);
+		this.subscriptionDetails = {
+			startDate: this.formatLocaleDate.transform(lastItem.releaseDate),
+			endDate: this.formatLocaleDate.transform(releaseDate.toLocaleDateString()),
+			productNumber: lastItem.products[0].productCode || '',
+			status: 'smartPerformance.subscriptionDetails.activeStatus'
+		};
 		if (expiredDate < currentDate) {
 			this.isExpired = true;
-			this.expiredStatusEvent.emit(this.isExpired);
 			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.expiredStatus';
 			this.strStatus = 'EXPIRED';
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
+			// this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
 			this.isSubscribed = false;
 			this.subScribeEvent.emit(this.isSubscribed);
+			this.expiredStatusEvent.emit(this.isExpired);
 		}
+		else
+		{
+			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.activeStatus';
+			this.strStatus = 'ACTIVE';
+			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
+			this.isSubscribed = true;
+			this.subScribeEvent.emit(this.isSubscribed);
+		}
+		this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.subscriptionDetails);
+		const oneDay = 24 * 60 * 60 * 1000;
+		expiryRemainDays = Math.round(Math.abs((currentDate - expiredDate) / oneDay));
+		if (expiryRemainDays === SpSubscriptionDetails.MONTH || expiryRemainDays < SpSubscriptionDetails.MONTH && !this.isExpired) {
+			switch (true) {
+				// case (expiryRemainDays === 28): {
+				// 	this.expiredDaysCount = nextText + ' ' + Math.ceil(expiryRemainDays / 7) + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.weeks');
+				// 	break;
+				//  }
+				//  case (expiryRemainDays === 21): {
+				// 	this.expiredDaysCount = nextText + ' ' + Math.ceil(expiryRemainDays / 7) + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.weeks');
+				// 	break;
+				//  }
+				case (expiryRemainDays === 14): {
+					this.expiredDaysCount = nextText + ' ' + Math.ceil(expiryRemainDays / 7) + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.weeks');
+					break;
+				}
+				case (expiryRemainDays === 7): {
+					this.expiredDaysCount = this.translate.instant('smartPerformance.subscriptionDetails.week');
+					break;
+				}
+				//  case (expiryRemainDays === 1): {
+				// 	this.expiredDaysCount = Math.ceil(expiryRemainDays) + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.day');
+				// 	break;
+				//  }
+				case (expiryRemainDays === 3): {
+					this.expiredDaysCount = expiryRemainDays + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.days');
+					break;
+				}
+				case (expiryRemainDays === 0): {
+					this.expiredDaysCount = this.translate.instant('smartPerformance.subscriptionDetails.today');
+					break;
+				}
+				default: {
+					this.expiredDaysCount = '';
+					break;
+				}
+			}
+		} else {
+			if (expiryRemainDays === SpSubscriptionDetails.TWOMONTHS || (expiryRemainDays < SpSubscriptionDetails.TWOMONTHS && expiryRemainDays > SpSubscriptionDetails.MONTH) && !this.isExpired) {
+				this.expiredDaysCount = nextText + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.month');
+			}
+		}
+
 	}
 	resetSubscriptionDetails(){
 		this.subscriptionDetails.startDate = '---';

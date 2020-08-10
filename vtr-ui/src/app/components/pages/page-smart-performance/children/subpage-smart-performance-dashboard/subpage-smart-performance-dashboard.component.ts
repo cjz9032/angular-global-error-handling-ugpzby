@@ -100,7 +100,7 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 			// 	//this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, false);
 			// }
 		}
-		this.getSubscriptionDetails();
+		// this.getSubscriptionDetails();
 
 		if (this.smartPerformanceService.isShellAvailable) {
 			this.checkReadiness();
@@ -471,11 +471,13 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 		this.showSubscribersummary = false;
 	}
 	changeManageSubscription(event) {
-		this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCAN);
-		// this.isSubscribed = this.commonService.getLocalStorageValue(
-		// 	LocalStorageKey.IsFreeFullFeatureEnabled
-		// );
 		this.isSubscribed = event;
+		if (event === true) {
+			this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCAN);
+		}
+		if (event === false) {
+			this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCANANDFIX);
+		}
 	}
 	changeSummaryToHome() {
 		this.isScanning = false;

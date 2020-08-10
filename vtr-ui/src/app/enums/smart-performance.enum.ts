@@ -45,6 +45,10 @@ export enum PaymentPage{
 	TRUE='true',
 	ORDERWAITINGTIME = 15, // MINUTES,
 }
+export enum SpSubscriptionDetails {
+	MONTH = 31,
+	TWOMONTHS = 60
+}
 
 export const actualScanFrequency: any = [
 	'Once a week',

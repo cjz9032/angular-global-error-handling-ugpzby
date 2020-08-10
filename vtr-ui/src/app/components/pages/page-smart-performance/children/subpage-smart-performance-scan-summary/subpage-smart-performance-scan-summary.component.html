@@ -113,9 +113,11 @@
 										*ngIf="!isSubscribed">
 										<h1 class="title-big mb-3">
 											{{'smartPerformance.scanCompletePage.summary' |translate }}</h1>
-										<p
+										<p *ngIf="!isSubscribed && !isExpired"
 											[innerHTML]="'smartPerformance.scanCompletePage.summaryDetails' |translate:{issueCount: issueCount }">
 										</p>
+										<p *ngIf="!isSubscribed && isExpired" [innerHTML]="'smartPerformance.scanCompletePage.expiredSummaryDetails' |translate"></p>
+
 										<div class="d-flex justify-content-start my-5">
 											<button *ngIf="isExpired" class="action-button mr-3"
 												vtrMetrics
