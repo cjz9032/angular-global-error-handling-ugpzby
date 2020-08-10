@@ -21,12 +21,13 @@
 		</vtr-ui-button>
 	</div>
 
-	<vtr-ui-close-button
-		[linkId]="'hwscan-customize-scan-modal-close-btn'"
-		class="close-btn"
-		metricsEvent="FeatureClick"
-		metricsParent="HardwareScan.CustomizeScan"
-		metricsItem="CustomizeScan.Close"
-		(clickClose)="closeModal()">
-	</vtr-ui-close-button>
+	<div class="btn-modal-close">
+		<vtr-ui-close-button
+			linkId="hwscan-customize-scan-modal-close-btn"
+			metricsParent="HardwareScan.CustomizeScan"
+			metricsItem="CustomizeScan.Close"
+			(clickClose)="closeModal()">
+		</vtr-ui-close-button>
+	</div>
+
 </div>
