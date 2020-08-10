@@ -984,7 +984,7 @@ export class VantageShellService {
 
 	public getContentLocalCache(): any {
 		if (this.phoenix) {
-			return this.phoenix.ContentLocalCache;
+			return this.phoenix.contentLocalCache;
 		}
 		return undefined;
 	}
