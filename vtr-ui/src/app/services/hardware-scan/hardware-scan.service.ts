@@ -350,6 +350,7 @@ export class HardwareScanService {
 					return response;
 				});
 		}
+
 		return undefined;
 	}
 
@@ -759,7 +760,7 @@ export class HardwareScanService {
 		if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.checkItemsForRecoverBadSectors()
 				.then((response) => {
-						return response;
+					return response;
 				});
 		}
 	}
