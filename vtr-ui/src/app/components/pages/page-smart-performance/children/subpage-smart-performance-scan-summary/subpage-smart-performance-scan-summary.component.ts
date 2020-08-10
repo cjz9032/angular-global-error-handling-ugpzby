@@ -51,8 +51,8 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 	// 	{ itemName: 'Custom', itemKey: 'CUSTOM' }
 	// ];
 	public menuItems: any = [
-		{ itemName: "smartPerformance.subscriberScanHomePage.scanSummary.annual", itemKey: "ANNUAL" },
-		{ itemName: "smartPerformance.subscriberScanHomePage.scanSummary.custom", itemKey: "CUSTOM" }
+		{ itemName: 'smartPerformance.subscriberScanHomePage.scanSummary.annual', itemKey: 'ANNUAL' },
+		{ itemName: 'smartPerformance.subscriberScanHomePage.scanSummary.custom', itemKey: 'CUSTOM' }
 	];
 	leftAnimator: any;
 	@Input() isScanning = false;
@@ -72,7 +72,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 	public toggleValue: number;
 	public currentYear: any;
 	public lastYear: any;
-	Data = [1, 2, 3]
+	Data = [1, 2, 3];
 	historyRes: any = {};
 	historyScanResults = [];
 	historyScanResultsDateTime = [];
@@ -116,7 +116,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 	selectedFrequency: any;
 	selectedDay: any;
 	selectedNumber: any;
-	yearsList: any[] = [];// removed last year, "this.getYearObj(-1)" to fix van-17574
+	yearsList: any[] = []; // removed last year, "this.getYearObj(-1)" to fix van-17574
 
 	isDaySelectionEnable = true;
 	scanToggleValue = true;
@@ -125,15 +125,15 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 	dateValue = 0;
 	enableNextText: boolean;
 	scanScheduleDate: any;
-	issueCount: number = 0;
+	issueCount = 0;
 	nextScheduleScan: any;
 	mostRecentScan: any;
 	IsSmartPerformanceFirstRun: any;
 	IsScheduleScanEnabled: any;
 	public scanData: any = {};
 	systemSerialNumber: any;
-	displayMonths: number = 1;
-	navigation: string = 'arrows';
+	displayMonths = 1;
+	navigation = 'arrows';
 	public minDate: any;
 	public maxDate: any;
 	spEnum: any = enumSmartPerformance;
@@ -141,7 +141,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 	// tuneindividualIssueCount: any = 0;
 	// boostindividualIssueCount: any = 0;
 	// secureindividualIssueCount: any = 0;
-	public data = [{ name: 'D', value: 4 }]
+	public data = [{ name: 'D', value: 4 }];
 	public subscriptionDetails = [
 		{
 			UUID: uuid(),
@@ -158,8 +158,8 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 			this.machineFamilyName = cacheMachineFamilyName;
 		}
 		this.smartPerformanceService.scanningStopped.subscribe(() => {
-			this.backToNonSubScriberHome()
-		})
+			this.backToNonSubScriberHome();
+		});
 		// this.leftAnimatorCalc = ((this.rating*10) - 1);
 		this.currentDate = new Date();
 		this.currentDateLocalFormat = this.formatLocaleDate.transform(this.currentDate);
@@ -169,7 +169,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		this.isSubscribed = this.commonService.getLocalStorageValue(
 			LocalStorageKey.IsFreeFullFeatureEnabled
 		);
-		this.enableNextText = this.commonService.getLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled)
+		this.enableNextText = this.commonService.getLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled);
 		this.isDaySelectionEnable = false;
 		this.scanScheduleDate = this.selectedDate;
 		this.leftAnimator = '0%';
@@ -213,7 +213,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 			}).format(new Date(this.historyScanResultsDateTime[i].scanruntime));
 
 			// Removing sapace between time stamp and AM/PM
-			this.historyScanResultsDateTime[i].scanrunTime = this.historyScanResultsDateTime[i].scanrunTime.replace(/ /g, "");
+			this.historyScanResultsDateTime[i].scanrunTime = this.historyScanResultsDateTime[i].scanrunTime.replace(/ /g, '');
 		}
 
 		return this.historyScanResultsDateTime;
@@ -427,7 +427,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 				.format('YYYY-MM-DD HH:mm:ss')
 		);
 		setTimeout(() => {
-			this.menuTab.nativeElement.focus()
+			this.menuTab.nativeElement.focus();
 		}, 10);
 	}
 
@@ -452,14 +452,14 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 
 		const res = await modalRef.result;
 		if (res) {
-			this.smartPerformanceService.scanningStopped.next()
+			this.smartPerformanceService.scanningStopped.next();
 		}
 		const currentTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
 		const intervalTime = moment(currentTime).add(PaymentPage.ORDERWAITINGTIME, 'm').format('YYYY-MM-DD HH:mm:ss');
 		const modalStatus = {
 			initiatedTime: intervalTime,
 			isOpened: true
-		}
+		};
 		this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, modalStatus);
 		// const scanEnabled = this.commonService.getLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled);
 		// this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
@@ -546,15 +546,15 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 			displayName: moment(prevDate).format('YYYY') + '-' + moment(currentDate).format('YYYY'),
 			startDate: moment(prevDate).format('YYYY-MM-DD HH:mm:ss'),
 			endDate: moment(currentDate).format('YYYY-MM-DD HH:mm:ss')
-		}
+		};
 	}
 
 	// Last scan result method.
 	async getLastScanResult() {
 		try {
 			const lastScanResultRequest = {
-				scanType: this.isSubscribed ? "ScanAndFix" : "Scan"
-			}
+				scanType: this.isSubscribed ? 'ScanAndFix' : 'Scan'
+			};
 			const response = await this.smartPerformanceService.getLastScanResult(lastScanResultRequest);
 			this.logger.info('ui-smart-performance-scan-summary.getLastScanResult', response);
 			const scanRunTime = response.scanruntime;
@@ -570,7 +570,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 					// 	secure: response.Secure
 					// }
 					this.rating = response.rating;
-					this.issueCount = response.Tune + response.Boost + response.Secure
+					this.issueCount = response.Tune + response.Boost + response.Secure;
 					this.leftAnimator = (response.rating * 10 - 0).toString() + '%';
 					this.isScanning = false;
 					this.inputIsScanningCompleted = true;
@@ -578,7 +578,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 			}
 
 		} catch (error) {
-			this.logger.error('Smart-Performance, LastScanResult error:', error)
+			this.logger.error('Smart-Performance, LastScanResult error:', error);
 		}
 	}
 
@@ -628,18 +628,18 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 			return parseFloat((mb / Math.pow(k, i)).toFixed(1));
 		} else {
 			this.sizeExtension = '';
-			return 0 + ' ' + 'MB'
+			return 0 + ' ' + 'MB';
 		}
 	}
 	changeNextScanDateValue(nextScheduleScanEvent) {
 		// retrieved this event from ui-scan-schedule component.
-		if (!nextScheduleScanEvent['nextEnable']) {
-			this.enableNextText = nextScheduleScanEvent['nextEnable'];
+		if (!nextScheduleScanEvent.nextEnable) {
+			this.enableNextText = nextScheduleScanEvent.nextEnable;
 			return;
 		}
-		this.enableNextText = nextScheduleScanEvent['nextEnable']
-		const nextScheduleScanDayMonth = this.formatLocaleDate.transformWithoutYear(nextScheduleScanEvent['nextScanDateWithYear']);
-		this.nextScheduleScan = nextScheduleScanDayMonth + ' at ' + nextScheduleScanEvent['nextScanHour'] + ':' + nextScheduleScanEvent['nextScanMin'] + ' ' + this.translate.instant(nextScheduleScanEvent['nextScanAMPM']);
+		this.enableNextText = nextScheduleScanEvent.nextEnable;
+		const nextScheduleScanDayMonth = this.formatLocaleDate.transformWithoutYear(nextScheduleScanEvent.nextScanDateWithYear);
+		this.nextScheduleScan = nextScheduleScanDayMonth + ' at ' + nextScheduleScanEvent.nextScanHour + ':' + nextScheduleScanEvent.nextScanMin + ' ' + this.translate.instant(nextScheduleScanEvent.nextScanAMPM);
 	}
 
 	public initContentLoad() {
@@ -702,7 +702,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 				firstText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.registryerrorsscannedareas.area5'),
 				secondText: this.translate.instant('smartPerformance.scanCompletePage.tunepc.registryerrorsscannedareas.area6')
 			}],
-		}
+		};
 		this.scannigResultObj.internetPerformance = {
 			firstSection: [{
 				firstText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.ejunkscannedareas.area1'),
@@ -763,7 +763,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 				secondText: this.translate.instant('smartPerformance.scanCompletePage.internetperformance.wifiperformancescannedareas.area6')
 			}],
 
-		}
+		};
 		this.scannigResultObj.malwareSecurity = {
 			firstSection: [{
 				firstText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.malwarescanscannedareas.area1'),
@@ -823,7 +823,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 				firstText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.annoyingadwarescannedareas.area5'),
 				secondText: this.translate.instant('smartPerformance.scanCompletePage.malwaresecurity.annoyingadwarescannedareas.area6')
 			}],
-		}
+		};
 	}
 
 	/**
