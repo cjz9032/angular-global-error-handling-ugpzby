@@ -9,13 +9,13 @@ import { DPMDropDownInterval } from 'src/app/data-models/common/dpm-drop-down-in
 	templateUrl: './power-settings.component.html',
 	styleUrls: ['./power-settings.component.scss']
 })
-export class PowerSettingsComponent implements OnInit,OnDestroy {
+export class PowerSettingsComponent implements OnInit, OnDestroy {
 
 	constructor(
 		public dpmService: PowerDpmService,
 		private translate: TranslateService) { }
 
-	powerbutton_actions: DPMDropDownInterval[];
+	powerButtonActions: DPMDropDownInterval[];
 	signInOptions: DPMDropDownInterval[];
 	selectAction: number;
 	selectedSignInOptionVal: number;
@@ -39,27 +39,27 @@ export class PowerSettingsComponent implements OnInit,OnDestroy {
 	}
 
 	private initPowerActions() {
-		this.powerbutton_actions = [
+		this.powerButtonActions = [
 			{
 				name: 'DoNothing',
 				value: 0,
-				text: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.doNothing'),//'Do nothing'
+				text: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.doNothing'), // 'Do nothing'
 			}, {
 				name: 'Sleep',
 				value: 1,
-				text: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.sleep'),//'Sleep'
+				text: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.sleep'), // 'Sleep'
 			}, {
 				name: 'Hibernate',
 				value: 2,
-				text: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.hibernate'),//'Hibernate'
+				text: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.hibernate'), // 'Hibernate'
 			}, {
 				name: 'Shutdown',
 				value: 3,
-				text: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.shutDown'),//'Shutdown'
+				text: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.shutDown'), // 'Shutdown'
 			}, {
 				name: 'PowerOffDisplay',
 				value: 4,
-				text: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.turnOffTheDisplay'),//'Turn off the display'
+				text: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.turnOffTheDisplay'), // 'Turn off the display'
 			},
 		];
 		this.selectAction = 0;
@@ -67,13 +67,13 @@ export class PowerSettingsComponent implements OnInit,OnDestroy {
 	private initSignInOptions() {
 		this.signInOptions = [
 			{
-				name: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.items.never'),//'Never',
+				name: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.items.never'), // 'Never',
 				value: 0,
-				text: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.items.never'),//'Never'
+				text: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.items.never'), // 'Never'
 			}, {
-				name: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.items.fromSleep'),//'When PC wakes up from sleep',
+				name: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.items.fromSleep'), // 'When PC wakes up from sleep',
 				value: 1,
-				text: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.items.fromSleep'),//'When PC wakes up from sleep'
+				text: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.items.fromSleep'), // 'When PC wakes up from sleep'
 			}
 		];
 		this.selectedSignInOptionVal = 0;
@@ -81,13 +81,13 @@ export class PowerSettingsComponent implements OnInit,OnDestroy {
 
 	public onActionChange($event: DPMDropDownInterval) {
 		if ($event) {
-			this.selectAction=$event.value;
+			this.selectAction = $event.value;
 			this.dpmService.setPowerButton($event.name);
 		}
 	}
 	public onSignInOptionChanged($event: DPMDropDownInterval) {
 		if ($event) {
-			this.selectedSignInOptionVal=$event.value;
+			this.selectedSignInOptionVal = $event.value;
 			this.dpmService.setSignInOption($event.value === 1 ? 'Yes' : 'No');
 		}
 	}

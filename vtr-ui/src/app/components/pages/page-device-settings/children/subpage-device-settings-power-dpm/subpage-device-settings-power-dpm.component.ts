@@ -9,23 +9,23 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 	templateUrl: './subpage-device-settings-power-dpm.component.html',
 	styleUrls: ['./subpage-device-settings-power-dpm.component.scss']
 })
-export class SubpageDeviceSettingsPowerDpmComponent implements OnInit,OnDestroy {
+export class SubpageDeviceSettingsPowerDpmComponent implements OnInit, OnDestroy {
 
 	allPowerPlansSubscription: Subscription;
 	public isLoading: boolean;
 
 	constructor(
 		public dpmService: PowerDpmService,
-		public commonService:CommonService
+		public commonService: CommonService
 		) { }
 
 	ngOnInit() {
-		this.isLoading=true;
+		this.isLoading = true;
 		this.commonService.setLocalStorageValue(LocalStorageKey.IsPowerPageAvailable, true);
 		this.allPowerPlansSubscription = this.dpmService.getAllPowerPlansObs().subscribe(
 			v => {
 				if (v) {
-					this.isLoading=false;
+					this.isLoading = false;
 					this.allPowerPlansSubscription.unsubscribe();
 				}
 			}

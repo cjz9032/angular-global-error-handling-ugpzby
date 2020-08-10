@@ -10,6 +10,21 @@
 			font-size: 1.4rem;
 			font-weight: bold;
 		}
+		.vtr-power-use, .vtr-power-plan {
+			p {
+				color: #34495E;
+				font-size: 1.2rem;
+				margin: 1.4rem 0rem;
+				font-weight: bold;
+				opacity: 0.5;
+				@media #{$white-on-black} {
+					opacity: 1;
+				}
+				@media #{$black-on-white} {
+					opacity: 1;
+				}
+			}
+		}
 		h5{
 			color: #34495E;
 			font-size: 1.2rem;
