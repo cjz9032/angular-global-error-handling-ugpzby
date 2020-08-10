@@ -18,8 +18,8 @@
 									<div class="d-flex justify-content-center w-100 hero-content">
 										<span class="icomoon icomoon-pcScan"></span>
 										<div class="pl-5 main-title">
-											<h1>{{'smartPerformance.performanceandSecurityCheckTitle' |translate }}</h1>
-											<h3>{{'smartPerformance.performanceandSecurityCheckSubTitle' |translate }}</h3>
+											<h1 id="smart-performance-check-title">{{'smartPerformance.performanceandSecurityCheckTitle' |translate }}</h1>
+											<h3 id="smart-performance-check-sub-title">{{'smartPerformance.performanceandSecurityCheckSubTitle' |translate }}</h3>
 										</div>
 									</div>
 									<div class="d-flex justify-content-center mb-4 scan-button-content">
@@ -36,8 +36,8 @@
 							</div>
 							<div class="row">
 								<div class="col col-12 pc-performance-block">
-									<h1>{{'smartPerformance.section1Heading' |translate }}</h1>
-									<h5>{{'smartPerformance.section1Description' |translate }}</h5>
+									<h1 id="smart-performance-section1-head">{{'smartPerformance.section1Heading' |translate }}</h1>
+									<h5 id="smart-performance-section1-desc">{{'smartPerformance.section1Description' |translate }}</h5>
 									<div class="performance-slider-block">
 										<div class="slider">
 											<div class="condition">
@@ -67,8 +67,8 @@
 							</div>
 							<div class="row">
 								<div class="col col-12 pc-performance-block">
-									<h2>{{'smartPerformance.section2Heading' |translate }}</h2>
-									<h5>{{'smartPerformance.section2Description' |translate }}</h5>
+									<h2 id="smart-performance-section2-head">{{'smartPerformance.section2Heading' |translate }}</h2>
+									<h5 id="smart-performance-section2-desc">{{'smartPerformance.section2Description' |translate }}</h5>
 								</div>
 							</div>
 							<div class="row">
@@ -77,153 +77,153 @@
 										<ngb-tabset class="tabset-main">
 											<ngb-tab id="main-1">
 												<ng-template ngbTabTitle>
-													<div class="icomoon icomoon-tune-pc"></div>{{'smartPerformance.tunePCPerformance.title' |translate }}
+													<div class="icomoon icomoon-tune-pc"></div><p role="title" id="smart-performance-tune-pc-title">{{'smartPerformance.tunePCPerformance.title' |translate }}</p>
 												</ng-template>
 												<ng-template ngbTabContent>
-													<h2>{{'smartPerformance.tunePCPerformance.heading' |translate }}</h2>
-													<h5>{{'smartPerformance.tunePCPerformance.description' |translate }}</h5>
+													<h2 id="smart-performance-tune-pc-head">{{'smartPerformance.tunePCPerformance.heading' |translate }}</h2>
+													<h5 id="smart-performance-tune-pc-desc">{{'smartPerformance.tunePCPerformance.description' |translate }}</h5>
 													<div class="icon-bar my-5">
 														<ul class="listed-task-icons d-flex justify-content-between align-items-center py-3">
 															<li class="icon-box d-flex justify-content-center align-items-center py-3">
 																<span class="icomoon icomoon-junk"></span>
-																<p title="{{'smartPerformance.tunePCPerformance.tabSet1.tab1' |translate }}">{{'smartPerformance.tunePCPerformance.tabSet1.tab1' |translate }}</p>
+																<p id="smart-performance-tune-pc-accumulated-junk" role="title" title="{{'smartPerformance.tunePCPerformance.tabSet1.tab1' |translate }}">{{'smartPerformance.tunePCPerformance.tabSet1.tab1' |translate }}</p>
 															</li>
 															<li class="icon-box d-flex justify-content-center align-items-center py-3">
 																<div class="icomoon icomoon-usibilityIssue"></div>
-																<p title="{{'smartPerformance.tunePCPerformance.tabSet1.tab2' |translate }}">{{'smartPerformance.tunePCPerformance.tabSet1.tab2' |translate }}</p>
+																<p id="smart-performance-tune-pc-usability-issue" role="title" title="{{'smartPerformance.tunePCPerformance.tabSet1.tab2' |translate }}">{{'smartPerformance.tunePCPerformance.tabSet1.tab2' |translate }}</p>
 															</li>
 															<li class="icon-box d-flex justify-content-center align-items-center py-3">
 																<div class="icomoon icomoon-windows"></div>
-																<p title="{{'smartPerformance.tunePCPerformance.tabSet1.tab3' |translate }}">{{'smartPerformance.tunePCPerformance.tabSet1.tab3' |translate }}</p>
+																<p id="smart-performance-tune-pc-windows" role="title" title="{{'smartPerformance.tunePCPerformance.tabSet1.tab3' |translate }}">{{'smartPerformance.tunePCPerformance.tabSet1.tab3' |translate }}</p>
 															</li>
 															<li class="icon-box d-flex justify-content-center align-items-center py-3">
 																<div class="icomoon icomoon-systemError"></div>
-																<p title="{{'smartPerformance.tunePCPerformance.tabSet1.tab4' |translate }}">{{'smartPerformance.tunePCPerformance.tabSet1.tab4' |translate }}</p>
+																<p id="smart-performance-tune-pc-system-error" role="title" title="{{'smartPerformance.tunePCPerformance.tabSet1.tab4' |translate }}">{{'smartPerformance.tunePCPerformance.tabSet1.tab4' |translate }}</p>
 															</li>
 															<li class="icon-box d-flex justify-content-center align-items-center py-3">
 																<div class="icomoon icomoon-registryError"></div>
-																<p title="{{'smartPerformance.tunePCPerformance.tabSet1.tab5' |translate }}">{{'smartPerformance.tunePCPerformance.tabSet1.tab5' |translate }}</p>
+																<p id="smart-performance-tune-pc-registry-error" role="title" title="{{'smartPerformance.tunePCPerformance.tabSet1.tab5' |translate }}">{{'smartPerformance.tunePCPerformance.tabSet1.tab5' |translate }}</p>
 															</li>
 														</ul>
 													</div>
 													<!-- <vtr-ui-smart-tune-pc></vtr-ui-smart-tune-pc> -->
 													<div class="row my-5 smart-features">
 														<div class="col-4">
-															<h3 class="title"
+															<h3 class="title" id="smart-performance-tune-pc-tab1-head"
 																title="{{'smartPerformance.tunePCPerformance.tabSet2.tab1Heading' |translate }}">{{'smartPerformance.tunePCPerformance.tabSet2.tab1Heading' |translate }}</h3>
-															<p>{{'smartPerformance.tunePCPerformance.tabSet2.tab1Description' |translate }}</p>
+															<p id="smart-performance-tune-pc-tab1-desc" role="text">{{'smartPerformance.tunePCPerformance.tabSet2.tab1Description' |translate }}</p>
 														</div>
 														<div class="col-4">
-															<h3 class="title"
+															<h3 class="title" id="smart-performance-tune-pc-tab2-head"
 																title="{{'smartPerformance.tunePCPerformance.tabSet2.tab2Heading' |translate }}">{{'smartPerformance.tunePCPerformance.tabSet2.tab2Heading' |translate }}</h3>
-															<p>{{'smartPerformance.tunePCPerformance.tabSet2.tab2Description' |translate }}</p>
+															<p id="smart-performance-tune-p-tab2-desc" role="text">{{'smartPerformance.tunePCPerformance.tabSet2.tab2Description' |translate }}</p>
 														</div>
 														<div class="col-4">
-															<h3 class="title"
+															<h3 class="title" id="smart-performance-tune-pc-tab3-head"
 																title="{{'smartPerformance.tunePCPerformance.tabSet2.tab3Heading' |translate }}">{{'smartPerformance.tunePCPerformance.tabSet2.tab3Heading' |translate }}</h3>
-															<p>{{'smartPerformance.tunePCPerformance.tabSet2.tab3Description' |translate }}</p>
+															<p id="smart-performance-tune-pc-tab3-desc" role="text">{{'smartPerformance.tunePCPerformance.tabSet2.tab3Description' |translate }}</p>
 														</div>
 													</div>
 												</ng-template>
 											</ngb-tab>
 											<ngb-tab id="main-2">
 												<ng-template ngbTabTitle>
-													<div class="icomoon icomoon-boost-internet"></div>{{'smartPerformance.boostInternetPerformance.title' |translate }}
+													<div class="icomoon icomoon-boost-internet"></div><p id="smart-performance-boost-title" role="title">{{'smartPerformance.boostInternetPerformance.title' |translate }}</p>>
 												</ng-template>
 												<ng-template ngbTabContent>
-													<h2>{{'smartPerformance.boostInternetPerformance.heading' |translate }}</h2>
-													<h5>{{'smartPerformance.boostInternetPerformance.description' |translate }}</h5>
+													<h2 id="smart-performance-boost-head">{{'smartPerformance.boostInternetPerformance.heading' |translate }}</h2>
+													<h5 id="smart-performance-boost-desc">{{'smartPerformance.boostInternetPerformance.description' |translate }}</h5>
 													<div class="icon-bar my-5">
 														<ul class="listed-task-icons d-flex justify-content-between align-items-center py-3">
 															<li class="icon-box d-flex justify-content-center align-items-center py-3">
 																<div class="icomoon icomoon-e-junk"></div>
-																<p title="{{'smartPerformance.boostInternetPerformance.tabSet1.tab1' |translate }}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab1' |translate }}</p>
+																<p id="smart-performance-boost-e-junk" role="title" title="{{'smartPerformance.boostInternetPerformance.tabSet1.tab1' |translate }}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab1' |translate }}</p>
 															</li>
 															<li class="icon-box d-flex justify-content-center align-items-center py-3">
 																<div class="icomoon icomoon-network-settings"></div>
-																<p title="{{'smartPerformance.boostInternetPerformance.tabSet1.tab2' |translate }}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab2' |translate }}</p>
+																<p id="smart-performance-boost-network" role="title" title="{{'smartPerformance.boostInternetPerformance.tabSet1.tab2' |translate }}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab2' |translate }}</p>
 															</li>
 															<li class="icon-box d-flex justify-content-center align-items-center py-3">
 																<div class="icomoon icomoon-browser-settings"></div>
-																<p title="{{'smartPerformance.boostInternetPerformance.tabSet1.tab3' |translate }}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab3' |translate }}</p>
+																<p id="smart-performance-boost-e-browser-setting" role="title" title="{{'smartPerformance.boostInternetPerformance.tabSet1.tab3' |translate }}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab3' |translate }}</p>
 															</li>
 															<li class="icon-box d-flex justify-content-center align-items-center py-3">
 																<div class="icomoon icomoon-browser-security"></div>
-																<p title="{{'smartPerformance.boostInternetPerformance.tabSet1.tab4' |translate }}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab4' |translate }}</p>
+																<p id="smart-performance-boost-e-browser-security" role="title" title="{{'smartPerformance.boostInternetPerformance.tabSet1.tab4' |translate }}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab4' |translate }}</p>
 															</li>
 															<li class="icon-box d-flex justify-content-center align-items-center py-3">
 																<div class="icomoon icomoon-wifi"></div>
-																<p title="{{'smartPerformance.boostInternetPerformance.tabSet1.tab5' |translate }}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab5' |translate }}</p>
+																<p id="smart-performance-boost-wifi" role="title" title="{{'smartPerformance.boostInternetPerformance.tabSet1.tab5' |translate }}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab5' |translate }}</p>
 															</li>
 														</ul>
 													</div>
 													<!-- <vtr-ui-smart-tune-pc></vtr-ui-smart-tune-pc> -->
 													<div class="row my-5 smart-features">
 														<div class="col-4">
-															<h3 class="title"
+															<h3 class="title" id="smart-performance-boost-tab1-head"
 																title="{{'smartPerformance.boostInternetPerformance.tabSet2.tab1Heading' |translate }}">{{'smartPerformance.boostInternetPerformance.tabSet2.tab1Heading' |translate }}</h3>
-															<p>{{'smartPerformance.boostInternetPerformance.tabSet2.tab1Description' |translate }}</p>
+															<p id="smart-performance-boost-tab1-desc" role="text">{{'smartPerformance.boostInternetPerformance.tabSet2.tab1Description' |translate }}</p>
 														</div>
 														<div class="col-4">
-															<h3 class="title"
+															<h3 class="title" id="smart-performance-boost-tab2-head"
 																title="{{'smartPerformance.boostInternetPerformance.tabSet2.tab2Heading' |translate }}">{{'smartPerformance.boostInternetPerformance.tabSet2.tab2Heading' |translate }}</h3>
-															<p>{{'smartPerformance.boostInternetPerformance.tabSet2.tab2Description' |translate }}</p>
+															<p id="smart-performance-boost-tab2-desc" role="text">{{'smartPerformance.boostInternetPerformance.tabSet2.tab2Description' |translate }}</p>
 														</div>
 														<div class="col-4">
-															<h3 class="title"
+															<h3 class="title" id="smart-performance-boost-tab3-head"
 																title="{{'smartPerformance.boostInternetPerformance.tabSet2.tab3Heading' |translate }}">{{'smartPerformance.boostInternetPerformance.tabSet2.tab3Heading' |translate }}</h3>
-															<p>{{'smartPerformance.boostInternetPerformance.tabSet2.tab3Description' |translate }}</p>
+															<p id="smart-performance-boost-tab3-desc" role="text">{{'smartPerformance.boostInternetPerformance.tabSet2.tab3Description' |translate }}</p>
 														</div>
 													</div>
 												</ng-template>
 											</ngb-tab>
 											<ngb-tab id="main-3">
 												<ng-template ngbTabTitle>
-													<span class="icomoon icomoon-malware-security"></span>{{'smartPerformance.malwareSecurity.title' |translate }}
+													<span class="icomoon icomoon-malware-security"></span><p id="smart-performance-malware-title" role="title">{{'smartPerformance.malwareSecurity.title' |translate }}</p>>
 												</ng-template>
 												<ng-template ngbTabContent>
-													<h2>{{'smartPerformance.malwareSecurity.heading' |translate }}</h2>
-													<h5>{{'smartPerformance.malwareSecurity.description' |translate }}</h5>
+													<h2 id="smart-performance-malware-head">{{'smartPerformance.malwareSecurity.heading' |translate }}</h2>
+													<h5 id="smart-performance-malware-desc">{{'smartPerformance.malwareSecurity.description' |translate }}</h5>
 													<div class="icon-bar my-5">
 														<ul class="listed-task-icons d-flex justify-content-between align-items-center py-3">
 															<li class="icon-box d-flex justify-content-center align-items-center py-3">
 																<div class="icomoon icomoon-malware-scan"></div>
-																<p title="{{'smartPerformance.malwareSecurity.tabSet1.tab1' |translate }}">{{'smartPerformance.malwareSecurity.tabSet1.tab1' |translate }}</p>
+																<p id="smart-performance-malware-scan" role="title" title="{{'smartPerformance.malwareSecurity.tabSet1.tab1' |translate }}">{{'smartPerformance.malwareSecurity.tabSet1.tab1' |translate }}</p>
 															</li>
 															<li class="icon-box d-flex justify-content-center align-items-center py-3">
 																<div class="icomoon icomoon-zero-day"></div>
-																<p title="{{'smartPerformance.malwareSecurity.tabSet1.tab2' |translate }}">{{'smartPerformance.malwareSecurity.tabSet1.tab2' |translate }}</p>
+																<p id="smart-performance-malware-zero-day" role="title" title="{{'smartPerformance.malwareSecurity.tabSet1.tab2' |translate }}">{{'smartPerformance.malwareSecurity.tabSet1.tab2' |translate }}</p>
 															</li>
 															<li class="icon-box d-flex justify-content-center align-items-center py-3">
 																<div class="icomoon icomoon-errant-program"></div>
-																<p title="{{'smartPerformance.malwareSecurity.tabSet1.tab3' |translate }}">{{'smartPerformance.malwareSecurity.tabSet1.tab3' |translate }}</p>
+																<p id="smart-performance-malware-errant" role="title" title="{{'smartPerformance.malwareSecurity.tabSet1.tab3' |translate }}">{{'smartPerformance.malwareSecurity.tabSet1.tab3' |translate }}</p>
 															</li>
 															<li class="icon-box d-flex justify-content-center align-items-center py-3">
 																<div class="icomoon icomoon-annoying-adware"></div>
-																<p title="{{'smartPerformance.malwareSecurity.tabSet1.tab4' |translate }}">{{'smartPerformance.malwareSecurity.tabSet1.tab4' |translate }}</p>
+																<p id="smart-performance-malware-annoy" role="title" title="{{'smartPerformance.malwareSecurity.tabSet1.tab4' |translate }}">{{'smartPerformance.malwareSecurity.tabSet1.tab4' |translate }}</p>
 															</li>
 															<li class="icon-box d-flex justify-content-center align-items-center py-3">
 																<div class="icomoon icomoon-security-settings"></div>
-																<p title="{{'smartPerformance.malwareSecurity.tabSet1.tab5' |translate }}">{{'smartPerformance.malwareSecurity.tabSet1.tab5' |translate }}</p>
+																<p id="smart-performance-malware-security" role="title" title="{{'smartPerformance.malwareSecurity.tabSet1.tab5' |translate }}">{{'smartPerformance.malwareSecurity.tabSet1.tab5' |translate }}</p>
 															</li>
 														</ul>
 													</div>
 													<!-- <vtr-ui-smart-tune-pc></vtr-ui-smart-tune-pc> -->
 													<div class="row my-5 smart-features">
 														<div class="col-4">
-															<h3 class="title"
+															<h3 class="title" id="smart-performance-malware-tab1-head"
 																title="{{'smartPerformance.malwareSecurity.tabSet2.tab1Heading' |translate }}">{{'smartPerformance.malwareSecurity.tabSet2.tab1Heading' |translate }}</h3>
-															<p>{{'smartPerformance.malwareSecurity.tabSet2.tab1Description' |translate }}</p>
+															<p id="smart-performance-malware-tab1-desc" role="text">{{'smartPerformance.malwareSecurity.tabSet2.tab1Description' |translate }}</p>
 														</div>
 														<div class="col-4">
-															<h3 class="title"
+															<h3 class="title" id="smart-performance-malware-tab2-head"
 																title="{{'smartPerformance.malwareSecurity.tabSet2.tab2Heading' |translate }}">{{'smartPerformance.malwareSecurity.tabSet2.tab2Heading' |translate }}</h3>
-															<p>{{'smartPerformance.malwareSecurity.tabSet2.tab2Description' |translate }}</p>
+															<p id="smart-performance-malware-tab2-desc" role="text">{{'smartPerformance.malwareSecurity.tabSet2.tab2Description' |translate }}</p>
 														</div>
 														<div class="col-4">
-															<h3 class="title"
+															<h3 class="title" id="smart-performance-malware-tab3-head"
 																title="{{'smartPerformance.malwareSecurity.tabSet2.tab3Heading' |translate }}">{{'smartPerformance.malwareSecurity.tabSet2.tab3Heading' |translate }}</h3>
-															<p>{{'smartPerformance.malwareSecurity.tabSet2.tab3Description' |translate }}</p>
+															<p id="smart-performance-malware-tab3-desc" role="text">{{'smartPerformance.malwareSecurity.tabSet2.tab3Description' |translate }}</p>
 														</div>
 													</div>
 												</ng-template>
@@ -231,48 +231,48 @@
 
 											<ngb-tab id="main-4">
 												<ng-template ngbTabTitle>
-													<span class="icomoon icomoon-proactive"></span>{{'smartPerformance.proactiveAutomated.title' |translate }}
+													<span class="icomoon icomoon-proactive"></span><p id="smart-performance-proactive-title" role="title">{{'smartPerformance.proactiveAutomated.title' |translate }}</p>
 												</ng-template>
 												<ng-template ngbTabContent>
-													<h2>{{'smartPerformance.proactiveAutomated.heading' |translate }}</h2>
-													<h5>{{'smartPerformance.proactiveAutomated.description' |translate }}</h5>
+													<h2 id="smart-performance-proactive-head">{{'smartPerformance.proactiveAutomated.heading' |translate }}</h2>
+													<h5 id="smart-performance-proactive-desc">{{'smartPerformance.proactiveAutomated.description' |translate }}</h5>
 													<div class="icon-bar my-5">
 														<ul class="listed-task-icons d-flex justify-content-between align-items-center py-3">
 															<li class="icon-box d-flex justify-content-center align-items-center py-3">
 																<div class="icomoon icomoon-schedule-scan"></div>
-																<p title="{{'smartPerformance.proactiveAutomated.tabSet1.tab1' |translate }}">{{'smartPerformance.proactiveAutomated.tabSet1.tab1' |translate }}</p>
+																<p id="smart-performance-proactive-schedule" role="title" title="{{'smartPerformance.proactiveAutomated.tabSet1.tab1' |translate }}">{{'smartPerformance.proactiveAutomated.tabSet1.tab1' |translate }}</p>
 															</li>
 															<li class="icon-box d-flex justify-content-center align-items-center py-3">
 																<div class="icomoon icomoon-on-demand"></div>
-																<p title="{{'smartPerformance.proactiveAutomated.tabSet1.tab2' |translate }}">{{'smartPerformance.proactiveAutomated.tabSet1.tab2' |translate }}</p>
+																<p id="smart-performance-proactive-on-demand" role="title" title="{{'smartPerformance.proactiveAutomated.tabSet1.tab2' |translate }}">{{'smartPerformance.proactiveAutomated.tabSet1.tab2' |translate }}</p>
 															</li>
 															<li class="icon-box d-flex justify-content-center align-items-center py-3">
 																<div class="icomoon icomoon-automated"></div>
-																<p title="{{'smartPerformance.proactiveAutomated.tabSet1.tab3' |translate }}">{{'smartPerformance.proactiveAutomated.tabSet1.tab3' |translate }}</p>
+																<p id="smart-performance-proactive-automated" role="title" title="{{'smartPerformance.proactiveAutomated.tabSet1.tab3' |translate }}">{{'smartPerformance.proactiveAutomated.tabSet1.tab3' |translate }}</p>
 															</li>
 															<li class="icon-box d-flex justify-content-center align-items-center py-3">
 																<div class="icomoon icomoon-effective"></div>
-																<p title="{{'smartPerformance.proactiveAutomated.tabSet1.tab4' |translate }}">{{'smartPerformance.proactiveAutomated.tabSet1.tab4' |translate }}</p>
+																<p id="smart-performance-proactive-effective" role="title" title="{{'smartPerformance.proactiveAutomated.tabSet1.tab4' |translate }}">{{'smartPerformance.proactiveAutomated.tabSet1.tab4' |translate }}</p>
 															</li>
 															<li class="icon-box d-flex justify-content-center align-items-center py-3">
 																<div class="icomoon icomoon-7-protection"></div>
-																<p title="{{'smartPerformance.proactiveAutomated.tabSet1.tab5' |translate }}">{{'smartPerformance.proactiveAutomated.tabSet1.tab5' |translate }}</p>
+																<p id="smart-performance-proactive-protection" role="title" title="{{'smartPerformance.proactiveAutomated.tabSet1.tab5' |translate }}">{{'smartPerformance.proactiveAutomated.tabSet1.tab5' |translate }}</p>
 															</li>
 														</ul>
 													</div>
 													<!-- <vtr-ui-smart-tune-pc></vtr-ui-smart-tune-pc> -->
 													<div class="row my-5 smart-features">
 														<div class="col-4">
-															<h3 class="title">{{'smartPerformance.proactiveAutomated.tabSet2.tab1Heading' |translate }}</h3>
-															<p>{{'smartPerformance.proactiveAutomated.tabSet2.tab1Description' |translate }}</p>
+															<h3 class="title" id="smart-performance-proactive-tab1-head">{{'smartPerformance.proactiveAutomated.tabSet2.tab1Heading' |translate }}</h3>
+															<p id="smart-performance-proactive-tab1-desc" role="text">{{'smartPerformance.proactiveAutomated.tabSet2.tab1Description' |translate }}</p>
 														</div>
 														<div class="col-4">
-															<h3 class="title">{{'smartPerformance.proactiveAutomated.tabSet2.tab2Heading' |translate }}</h3>
-															<p>{{'smartPerformance.proactiveAutomated.tabSet2.tab2Description' |translate }}</p>
+															<h3 class="title" id="smart-performance-proactive-tab2-desc">{{'smartPerformance.proactiveAutomated.tabSet2.tab2Heading' |translate }}</h3>
+															<p id="smart-performance-proactive-tab2-desc" role="text">{{'smartPerformance.proactiveAutomated.tabSet2.tab2Description' |translate }}</p>
 														</div>
 														<div class="col-4">
-															<h3 class="title">{{'smartPerformance.proactiveAutomated.tabSet2.tab3Heading' |translate }}</h3>
-															<p>{{'smartPerformance.proactiveAutomated.tabSet2.tab3Description' |translate }}</p>
+															<h3 class="title" id="smart-performance-proactive-tab3-desc">{{'smartPerformance.proactiveAutomated.tabSet2.tab3Heading' |translate }}</h3>
+															<p id="smart-performance-proactive-tab3-desc" role="text">{{'smartPerformance.proactiveAutomated.tabSet2.tab3Description' |translate }}</p>
 														</div>
 													</div>
 												</ng-template>
@@ -285,7 +285,7 @@
 								<div class="col col-12 free-scan">
 									<div class="row">
 										<div class="contents">
-											<button [ngClass]="!isOnline? 'disabled-button': 'action-button'"
+											<button id="smart-performance-freepc-scan" [ngClass]="!isOnline? 'disabled-button': 'action-button'"
 												class="btn-block"
 												(click)="scanNow()"
 												vtrMetrics
@@ -294,7 +294,7 @@
 												metricsParent="Page.Support.SmartPerformance"
 												[ngbTooltip]="'smartPerformance.scanButton' | translate"
 												placement="top">{{'smartPerformance.scanButton' |translate}}</button>
-											<div class="description">
+											<div class="description" id="smart-performance-startScan" role="text">
 												<p [innerHTML]="'smartPerformance.startScan' |translate"></p>
 											</div>
 										</div>
