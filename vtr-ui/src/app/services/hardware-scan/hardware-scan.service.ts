@@ -449,17 +449,8 @@ export class HardwareScanService {
 		if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.getPreScanInformation(payload)
 				.then((response) => {
-					if (response) {
-						return response;
-					} else {
-						this.logger.error('[GET PRE SCAN INFO] Incorrect response received');
-					}
-				})
-				.catch((error) => {
-					this.logger.error('[GET PRE SCAN INFO] ' + error);
+					return response;
 				});
-		} else {
-			this.logger.error('[GET PRE SCAN INFO] Hardware Scan Bridge not available');
 		}
 		return undefined;
 	}
@@ -723,6 +714,7 @@ export class HardwareScanService {
 		if (this.hardwareScanBridge) {
 			await this.itemsToScanResponse
 				.then((response) => {
+					if (response) {
 					this.modulesRetrieved = response;
 					this.categoryInformationList = this.modulesRetrieved.categoryList;
 
@@ -731,6 +723,12 @@ export class HardwareScanService {
 
 					this.customScanResponse = this.buildScanResponse(this.modulesRetrieved);
 					this.quickScanResponse = this.filterQuickResponse(this.customScanResponse);
+					} else {
+						this.logger.error('[GET ALL ITEMS] Incorrect response received');
+					}
+				})
+				.catch((error) => {
+					this.logger.error('[GET ALL ITEMS] ' + error);
 				});
 		}
 	}
