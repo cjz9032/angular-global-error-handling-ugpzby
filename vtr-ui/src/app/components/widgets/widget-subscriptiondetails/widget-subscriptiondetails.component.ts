@@ -86,7 +86,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		let subScriptionDates: any = { startDate: '', endDate: '', status: '' };
 		if (this.isSubscribed) {
 			subScriptionDates = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails);
-			if (subScriptionDates && subScriptionDates.startDate && subScriptionDates.endDate) {
+			if (subScriptionDates && subScriptionDates.startDate && subScriptionDates.endDate){
 				this.subscriptionDetails.startDate = this.formatLocaleDate.transform(subScriptionDates.startDate);
 				this.subscriptionDetails.endDate = this.formatLocaleDate.transform(subScriptionDates.endDate);
 				this.subscriptionDetails.status = subScriptionDates.status;
@@ -180,7 +180,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		this.isLoading = true;
 		this.modalStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus) || { initiatedTime: '', isOpened: false };
 		let subscriptionData = [];
-		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails('PF11B18D');
+		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails(machineInfo.serialnumber);
 		this.logger.info('Subscription Details', subscriptionDetails);
 		if (subscriptionDetails && subscriptionDetails.data) {
 			subscriptionData = subscriptionDetails.data;
@@ -208,30 +208,12 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 			}
 
 			const lastItem = subscriptionData[subscriptionData.length - 1];
-			const prevItem = subscriptionData[subscriptionData.length - 2];
-			let subscriptionStartDate: any;
 			const releaseDate = new Date(lastItem.releaseDate);
 			releaseDate.setMonth(releaseDate.getMonth() + +lastItem.products[0].unitTerm);
 			releaseDate.setDate(releaseDate.getDate() - 1);
 			if (lastItem && lastItem.status.toUpperCase() === 'COMPLETED') {
-				this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.activeStatus';
-				this.strStatus = 'ACTIVE';
-				this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
-				this.isSubscribed = true;
-				this.subScribeEvent.emit(this.isSubscribed);
-				if (prevItem && prevItem.status.toUpperCase() === 'COMPLETED') {
-					subscriptionStartDate = this.formatLocaleDate.transform(prevItem.releaseDate);
-				} else {
-					subscriptionStartDate = this.formatLocaleDate.transform(lastItem.releaseDate);
-				}
-				this.subscriptionDetails = {
-					startDate: subscriptionStartDate,
-					endDate: this.formatLocaleDate.transform(releaseDate.toLocaleDateString()),
-					productNumber: lastItem.products[0].productCode || '',
-					status: 'smartPerformance.subscriptionDetails.activeStatus'
-				};
-				this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.subscriptionDetails);
-				this.getExpiredStatus(releaseDate);
+
+				this.getExpiredStatus(releaseDate, lastItem);
 			} else {
 				this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
 				this.isSubscribed = false;
@@ -274,25 +256,38 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		}
 	}
 
-	getExpiredStatus(releaseDate) {
+	getExpiredStatus(releaseDate, lastItem) {
 		let expiredDate;
 		let expiryRemainDays: number;
 		const nextText = this.translate.instant('smartPerformance.subscriptionDetails.next');
 		const rDate = '2022-06-15T11:25:46.212+0000';
 		const currentDate: any = new Date();
 		expiredDate = new Date(releaseDate);
-
+		this.subscriptionDetails = {
+			startDate: this.formatLocaleDate.transform(lastItem.releaseDate),
+			endDate: this.formatLocaleDate.transform(releaseDate.toLocaleDateString()),
+			productNumber: lastItem.products[0].productCode || '',
+			status: 'smartPerformance.subscriptionDetails.activeStatus'
+		};
 		if (expiredDate < currentDate) {
 			this.isExpired = true;
-			this.expiredStatusEvent.emit(this.isExpired);
 			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.expiredStatus';
 			this.strStatus = 'EXPIRED';
-			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
+			// this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
 			this.isSubscribed = false;
 			this.subScribeEvent.emit(this.isSubscribed);
-
+			this.expiredStatusEvent.emit(this.isExpired);
 		}
+		else
+		{
+			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.activeStatus';
+			this.strStatus = 'ACTIVE';
+			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
+			this.isSubscribed = true;
+			this.subScribeEvent.emit(this.isSubscribed);
+		}
+		this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.subscriptionDetails);
 		const oneDay = 24 * 60 * 60 * 1000;
 		expiryRemainDays = Math.round(Math.abs((currentDate - expiredDate) / oneDay));
 		if (expiryRemainDays === SpSubscriptionDetails.MONTH || expiryRemainDays < SpSubscriptionDetails.MONTH && !this.isExpired) {
@@ -335,8 +330,9 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 				this.expiredDaysCount = nextText + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.month');
 			}
 		}
+
 	}
-	resetSubscriptionDetails() {
+	resetSubscriptionDetails(){
 		this.subscriptionDetails.startDate = '---';
 		this.subscriptionDetails.endDate = '---';
 		this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.inactiveStatus';

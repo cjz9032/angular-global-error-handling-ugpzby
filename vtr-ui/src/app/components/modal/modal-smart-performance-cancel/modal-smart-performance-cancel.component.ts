@@ -12,10 +12,9 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 	styleUrls: ['./modal-smart-performance-cancel.component.scss'],
 })
 export class ModalSmartPerformanceCancelComponent implements OnInit {
-	@Input() promptMsg: boolean = false;
+	@Input() promptMsg = false;
 	@Output() cancelRequested: EventEmitter<any> = new EventEmitter();
-	@ViewChild('resume') resume: ElementRef;
-	
+
 	constructor(
 		public activeModal: NgbActiveModal,
 		public smartPerformanceService: SmartPerformanceService,
@@ -35,10 +34,6 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
 				this.cancelScan();
 			}
 		}, 1000);
-
-		setTimeout(() => {
-			this.resume.nativeElement.focus();
-		}, 500);
 	}
 	public closeModal() {
 		if (this.timerRef) {

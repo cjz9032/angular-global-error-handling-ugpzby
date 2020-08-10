@@ -14,36 +14,36 @@ export class LanguageService {
 	public currentLanguage: string;
 	private readonly defaultLanguage = 'en';
 	private readonly supportedLanguages: Array<string> = [
-		'ar',
-		'cs',
-		'da',
-		'de',
-		'el',
-		'en',
-		'es',
-		'fi',
-		'fr',
-		'he',
-		'hr',
-		'hu',
-		'it',
-		'ja',
-		'ko',
-		'nb',
-		'nl',
-		'pl',
-		'pt',
-		'pt-br',
-		'ro',
-		'ru',
-		'sk',
-		'sl',
-		'sr-latn',
-		'sv',
-		'tr',
-		'uk',
-		'zh-hans',
-		'zh-hant'
+		'ar', // Arabic
+		'cs', // Czech
+		'da', // Danish
+		'de', // German
+		'el', // Greek
+		'en', // English
+		'es', // Spanish
+		'fi', // Finnish
+		'fr', // French
+		'he', // Hebrew
+		'hr', // Croatian
+		'hu', // Hungarian
+		'it', // Italian
+		'ja', // Japanese
+		'ko', // Korean
+		'nb', // Norwegian
+		'nl', // Dutch
+		'pl', // Polish
+		'pt', // Portuguese
+		'pt-br', // Brazilian Portuguese
+		'ro', // Romanian
+		'ru', // Russian
+		'sk', // Slovak
+		'sl', // Slovenian
+		'sr-latn', // Bosnian
+		'sv', // Swedish
+		'tr', // Turkish
+		'uk', // Ukrainian
+		'zh-hans', // Chinese (Simplified)
+		'zh-hant' // Chinese (Traditional)
 	];
 
 	constructor(

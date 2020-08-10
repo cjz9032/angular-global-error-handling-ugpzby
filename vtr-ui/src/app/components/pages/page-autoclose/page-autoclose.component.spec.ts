@@ -364,3 +364,132 @@
 // 		}
 // 	);
 // }
+
+
+
+
+
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, NO_ERRORS_SCHEMA, Input } from '@angular/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateStore } from '@ngx-translate/core';
+import { of } from 'rxjs';
+
+import { CMSService } from 'src/app/services/cms/cms.service';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { GamingQuickSettingToolbarService } from 'src/app/services/gaming/gaming-quick-setting-toolbar/gaming-quick-setting-toolbar.service';
+import { NetworkBoostService } from 'src/app/services/gaming/gaming-networkboost/networkboost.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { PageAutocloseComponent } from './page-autoclose.component';
+import { TranslationModule } from 'src/app/modules/translation.module';
+
+@Component({ selector: 'vtr-ui-toggle', template: '' })
+export class UiToggleStubComponent {
+    @Input() onOffSwitchId: string;
+}
+
+describe('PageAutocloseComponent', () => {
+	let component: PageAutocloseComponent;
+    let fixture: ComponentFixture<PageAutocloseComponent>;
+    let shellServices:any;
+    let gamingQuickSettingToolbarService:any;
+
+    describe('quick setting toolbar & toast event', () => {
+       
+        const cmsMock = {
+            Results: [{
+                Id: 'e64d43892d8448d088f3e6037e385122', Title: 'Header Image DCC',
+                ShortTitle: '', Description: '',
+                FeatureImage: 'https://qa.csw.lenovo.com/-/media/Lenovo/Vantage/Features/DCC_top_image.jpg?v=5cf8a0151ea84c4ca43e906339c3c3b2',
+                Action: '', ActionType: null, ActionLink: null, BrandName: 'brandname', BrandImage: '',
+                Priority: 'P1', Page: null, Template: 'header', Position: null, ExpirationDate: null,
+                Filters: { 'DeviceTag.Value': { key: 'System.DccGroup', operator: '==', value: 'true' } }
+            },
+            {
+                Id: '8516ba14dba5412ca954c3ccfdcbff90', Title: 'Default Header Image', ShortTitle: '', Description: '',
+                FeatureImage: 'https://qa.csw.lenovo.com/-/media/Lenovo/Vantage/Features/Header-Image-Default.jpg?v=5d0bf7fd0065478c977ed284fecac45d', Action: '',
+                ActionType: null, ActionLink: null, BrandName: '', BrandImage: '', Priority: 'P2', Page: null,
+                Template: 'header', Position: null, ExpirationDate: null, Filters: null
+            }], Metadata: { Count: 2 }
+        };
+
+        const cmsServiceMock = {
+            fetchCMSContent: (params) => of(cmsMock),
+            getOneCMSContent: (res, template, position) => res = cmsMock.Results
+        };
+        const loggerServiceSpy = jasmine.createSpyObj('LoggerService', ['error', 'info']);
+        const vantageShellServiceSpy = jasmine.createSpyObj('VantageShellService', ['unRegisterEvent', 'registerEvent', 'getGamingAutoClose']);
+        const gamingQuickSettingToolbarServiceSpy = jasmine.createSpyObj('GamingQuickSettingToolbarService', ['registerEvent', 'unregisterEvent']);
+        const gamingAutoCloseServiceSpy = jasmine.createSpyObj('GamingAutoCloseService', [
+        	'isShellAvailable',
+        	'gamingAutoClose',
+        	'getAutoCloseStatusCache',
+        	'setAutoCloseStatus',
+        	'setAutoCloseStatusCache',
+        	'getNeedToAskStatusCache',
+        	'getNeedToAsk',
+        	'setNeedToAskStatusCache',
+        	'delAppsAutoCloseList',
+        	'getAppsAutoCloseList',
+        	'getAutoCloseListCache',
+        	'setAutoCloseListCache',
+        	'delAppsAutoCloseList',
+        	'getAppsAutoCloseRunningList'
+        ]);
+
+        beforeEach(async(() => {
+            TestBed.configureTestingModule({
+                declarations: [PageAutocloseComponent, UiToggleStubComponent],
+                imports: [ TranslationModule, HttpClientModule ],
+                schemas: [NO_ERRORS_SCHEMA],
+                providers: [
+                    { provide: HttpClient },
+                    { provide: TranslateStore },
+                    // { provide: CommonService, useValue: commonServiceSpy },
+                    { provide: LoggerService, useValue: loggerServiceSpy },
+                    { provide: CMSService, useValue: cmsServiceMock },
+                    { provide: VantageShellService, useValue: vantageShellServiceSpy },
+                    { provide: NetworkBoostService, useValue: gamingAutoCloseServiceSpy },
+                    { provide: GamingQuickSettingToolbarService, useValue: gamingQuickSettingToolbarServiceSpy }
+                ]
+            }).compileComponents();
+            shellServices = TestBed.inject(VantageShellService);
+            gamingQuickSettingToolbarService = TestBed.inject(GamingQuickSettingToolbarService);
+            fixture = TestBed.createComponent(PageAutocloseComponent);
+            component = fixture.componentInstance;
+            fixture.detectChanges();
+        }));
+
+        it('ngOnInit', () => {
+            spyOn(component, 'autoCloseRegisterEvent').and.callThrough();
+            expect(component.autoCloseRegisterEvent).toHaveBeenCalledTimes(0);
+
+            component.ngOnInit();
+            expect(component.autoCloseRegisterEvent).toHaveBeenCalledTimes(1); 
+            
+            component.autoCloseRegisterEvent();
+            expect(gamingQuickSettingToolbarService.registerEvent).toHaveBeenCalled();
+            expect(shellServices.registerEvent).toHaveBeenCalled();
+        })
+    
+        it('onGamingQuickSettingsAutoCloseStatusChangedEvent', () => {
+            component.onGamingQuickSettingsAutoCloseStatusChangedEvent(1);
+            expect(component.toggleStatus).toBe(true);
+    
+            component.onGamingQuickSettingsAutoCloseStatusChangedEvent(0);
+            expect(component.toggleStatus).toBe(false);
+        });
+    
+        it('ngOnDestroy', () => {
+            spyOn(component, 'autoCloseUnRegisterEvent').and.callThrough();
+            expect(component.autoCloseUnRegisterEvent).toHaveBeenCalledTimes(0);
+
+            component.ngOnDestroy();
+            expect(component.autoCloseUnRegisterEvent).toHaveBeenCalledTimes(1); 
+
+            component.autoCloseUnRegisterEvent();
+            expect(gamingQuickSettingToolbarService.unregisterEvent).toHaveBeenCalled();
+            expect(shellServices.unRegisterEvent).toHaveBeenCalled();
+        })
+    });
+});

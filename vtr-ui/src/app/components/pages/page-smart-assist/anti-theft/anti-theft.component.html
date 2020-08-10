@@ -2,8 +2,8 @@
 	*ngIf="antiTheft.available">
 	<div class="col-12 px-0"
 		id="smartAssist-intelligentSensing-smartMotionAlert-div">
-        <vtr-container-collapsible [tabIndex]="0"
-            [headerLevel]="3"
+		<vtr-container-collapsible [tabIndex]="0"
+			[headerLevel]="3"
 			[cardTitle]="'device.smartAssist.antiTheft.heading' | translate"
 			[isCollapsed]="false"
 			[allowCollapse]="true"
@@ -41,8 +41,13 @@
 							id="smartMotionAlertSubFunctions-description-row">
 							<div class="feature-note descriptionText"
 								id="smartMotionAlertSubFunctions-description">
-								<label id="smartMotionAlertDescription-title" role="text">{{'device.smartAssist.antiTheft.note.descriptionTitle' | translate}}</label><br>
-								<label id="smartMotionAlertDescription" role="text">{{'device.smartAssist.antiTheft.note.description' | translate}}</label>
+								<label id="smartMotionAlertDescription-title"
+									role="text">{{'device.smartAssist.antiTheft.note.descriptionTitle' | translate}}</label><br>
+								<label id="smartMotionAlertDescription1"
+									role="text">{{'device.smartAssist.antiTheft.note.description1' | translate}}</label>
+								<label class="descriptionLabel"
+									id="smartMotionAlertDescription2"
+									role="text">{{'device.smartAssist.antiTheft.note.description2' | translate}}</label>
 							</div>
 						</div>
 						<p id="smartMotionAlertAlarmTitle"
@@ -62,9 +67,9 @@
 								[dropDownName]="'smartMotionAlert-alarmTime-dropDown'">
 							</vtr-ui-dropdown>
 						</div>
-						<p id="smartMotionAlertSupportPhotoTitle"
-							class="subTitle"
-							role="text">
+						<p role="text"
+							id="smartMotionAlertSupportPhotoTitle"
+							class="subTitle">
 							{{'device.smartAssist.antiTheft.allowCamera.title' | translate}}</p>
 						<div id="smartMotionAlertSupportPhotoDescribe-div">
 							<p class="allowCameraDescribe"
@@ -132,10 +137,10 @@
 							*ngIf="antiTheft.cameraPrivacyState && antiTheft.authorizedAccessState && antiTheft.isSupportPhoto">
 							<div class="photoDropdown"
 								id='smartMotionAlertPhotoTitle-div'>
-								<label id="smartMotionAlertPhotoTitle"
-									class="subTitle dropdownTitle"
-									role="text">{{'device.smartAssist.antiTheft.photo.title' | translate}}
-								</label>
+								<h5 id="smartMotionAlertPhotoTitle"
+									class="subTitle dropdownTitle">
+									{{'device.smartAssist.antiTheft.photo.title' | translate}}
+								</h5>
 								<fa-icon id="smartMotionAlertPhotoIcon"
 									class="right-icon"
 									triggers="manual"
@@ -177,10 +182,10 @@
 
 						<div class="showPhoto"
 							id="smartMotionAlertShowPhotoLink">
-							<label id="smartMotionAlertShowPhotoTitle"
+							<h5 id="smartMotionAlertShowPhotoTitle"
 								class="subTitle"
 								role="text">{{'device.smartAssist.antiTheft.showPhoto.title' | translate}}
-							</label>
+							</h5>
 							<button id="smartMotionAlertShowPhotoLinkButton"
 								tabindex="0"
 								role="link"

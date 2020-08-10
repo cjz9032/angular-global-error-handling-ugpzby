@@ -3,12 +3,12 @@
 		<div class="col">
 			<p class="caption mb-0"
 				id="oled-power-settings-caption1"
-				attr.aria-label="{{ description[0] }}">
+				role="text">
 				{{ description[0] }}
 			</p>
 			<p class="caption"
 				id="oled-power-settings-caption2"
-				attr.aria-label="{{ description[1] }}">
+				role="text">
 				{{ description[1] }}
 			</p>
 		</div>
@@ -17,10 +17,10 @@
 	<div class="dropdown row">
 		<section class="col-sm-12 col-md-12 col-xl-4">
 			<div class="oled-dimming-portions">
-				<h5 id="oled-power-settings-tb-dimmer"
-					attr.aria-label="{{'device.deviceSettings.displayCamera.display.oledPowerSettings.taskBarDimmer' | translate}}">
+				<p id="oled-power-settings-tb-dimmer"
+					role="text">
 					{{'device.deviceSettings.displayCamera.display.oledPowerSettings.taskBarDimmer' | translate}}
-				</h5>
+				</p>
 			</div>
 			<vtr-ui-dropdown [list]="intervals"
 				[metricsParent]="metricsParent"
@@ -34,10 +34,10 @@
 		</section>
 		<section class="col-sm-12 col-md-12 col-xl-4">
 			<div class="oled-dimming-portions">
-				<h5 id="oled-power-settings-bg-dimmer"
-					attr.aria-label="{{'device.deviceSettings.displayCamera.display.oledPowerSettings.backgroundDimmer' | translate}}">
+				<p id="oled-power-settings-bg-dimmer"
+					role="text">
 					{{'device.deviceSettings.displayCamera.display.oledPowerSettings.backgroundDimmer' | translate}}
-				</h5>
+				</p>
 			</div>
 			<vtr-ui-dropdown [list]="intervals"
 				[isMetricsEnabled]=true
@@ -51,10 +51,10 @@
 		</section>
 		<section class="col-sm-12 col-md-12 col-xl-4">
 			<div class="oled-dimming-portions">
-				<h5 id="oled-power-settings-dp-dimmer"
-					attr.aria-label="{{'device.deviceSettings.displayCamera.display.oledPowerSettings.displayDimmer' | translate}}">
+				<p id="oled-power-settings-dp-dimmer"
+					role="text">
 					{{'device.deviceSettings.displayCamera.display.oledPowerSettings.displayDimmer' | translate}}
-				</h5>
+				</p>
 			</div>
 			<vtr-ui-dropdown [list]="intervals"
 				[isMetricsEnabled]=true

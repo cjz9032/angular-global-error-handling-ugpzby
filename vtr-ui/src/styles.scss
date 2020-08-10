@@ -67,9 +67,11 @@ a.disabled {
 		a.disabled, .offline-a {
 			@media #{$black-on-white} {
 				@include high-contrast-white-text-color-disabled;
+				text-decoration: none;
 			}
 			@media #{$white-on-black} {
 				@include high-contrast-black-text-color-disabled;
+				text-decoration: none;
 			}
 
 		}
@@ -164,6 +166,7 @@ body {
 	height: 100%;
 	font-family: "Segoe UI", sans-serif;
 	cursor: default;
+	-ms-content-zooming: none;
 	// font-weight: 300;
 }
 
@@ -1841,7 +1844,7 @@ vtr-ui-smart-performance-scanning {
 }
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
 	@media #{$white-on-black} {
-		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' style='-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);' preserveAspectRatio='xMidYMid meet' viewBox='0 0 512 512'><path fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='32' d='M416 128L192 384l-96-96'/></svg>") !important;
+		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' style='-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);' preserveAspectRatio='xMidYMid meet' viewBox='0 0 512 512'><path fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='32' d='M416 128L192 384l-96-96'/></svg>");
 	}
 }
 // disabled
@@ -2252,6 +2255,70 @@ ngb-tooltip-window.schedule-scan.tooltip {
 		@media #{$white-on-black} {
 			text {
 				fill: $light !important;
+			}
+		}
+	}
+}
+
+/* circular radio button disabled mode ui in audio page */
+
+.vtr-ui-switch-row.white-theme {
+	.vtr-disabled {
+		.vtr-ui-circle-radio-with-checkbox-list.white-theme {
+			.radio-container {
+				[role="radio"][aria-checked="true"] {
+
+					@media #{$white-on-black} {
+						border: 0.2rem solid $high-contrast-black-disabled-green !important;
+					}
+
+					@media #{$black-on-white} {
+						border: 0.2rem solid $high-contrast-white-disabled-maroon !important;
+					}
+
+					.check-circle {
+						@media #{$black-on-white} {
+							color: $high-contrast-white-disabled-maroon !important;
+						}
+
+						@media #{$white-on-black} {
+							color: $high-contrast-black-disabled-green !important;
+						}
+					}
+
+					.icon-circle {
+						@media #{$black-on-white} {
+							color: $light !important;
+						}
+
+						@media #{$white-on-black} {
+							color: $dark !important;
+						}
+					}
+
+					.icomoon {
+						&::before {
+							@media #{$black-on-white} {
+								color: $high-contrast-white-disabled-maroon !important;
+							}
+
+							@media #{$white-on-black} {
+								color: $high-contrast-black-disabled-green !important;
+							}
+						}
+					}
+
+				}
+
+				.text {
+					@media #{$black-on-white} {
+						color: $high-contrast-white-disabled-maroon !important;
+					}
+
+					@media #{$white-on-black} {
+						color: $high-contrast-black-disabled-green !important;
+					}
+				}
 			}
 		}
 	}

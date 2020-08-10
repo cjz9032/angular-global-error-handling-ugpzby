@@ -7,6 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class WidgetRecoverBadSectorsComponent implements OnInit {
 
+	@Input() widgetId: string;
 	@Input() title: string;
 	@Input() description: string;
 	@Input() recoverPath: string;

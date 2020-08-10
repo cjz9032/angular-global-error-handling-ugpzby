@@ -194,26 +194,6 @@
 		flex-direction: column;
 		padding: 1.6rem;
 		border: 0.1rem solid $screen_dark_10;
-		&.label-disable {
-			@media #{$white-on-black} {
-				@include  high-contrast-black-text-color-disabled;
-				.form-control{
-					opacity: 0.5;
-				}
-				label {
-					opacity: 0.3;
-				}
-			}
-			@media #{$black-on-white} {
-				@include  high-contrast-white-text-color-disabled;
-				.form-control {
-					opacity: 0.5;
-				}
-				label {
-					opacity: 0.3;
-				}
-			}
-		}
 	}
 	.form-control {
 		padding: 0px;
@@ -241,11 +221,11 @@
 		color: $shade_blue;
 
 		@media #{$white-on-black} {
-			color: $high-contrast-sky-blue;
+			color: $light;
 		}
 
 		@media #{$black-on-white} {
-			color: $shade_blue;
+			color: $dark;
 		}
 
 		&:hover {
@@ -256,6 +236,12 @@
 			color: $grey_dark;
 			font-size: $caption;
 			font-weight: $weight_medium;
+			@media #{$white-on-black} {
+				color: $light;
+			}
+			@media #{$black-on-white} {
+				color: $dark;
+			}
 		}
 		&:focus {
 			&::placeholder {
@@ -389,6 +375,12 @@ div {
 			color: #4a81fd;
 			font-size: 1.4rem;
 			text-decoration: underline;
+			@media #{$white-on-black} {
+				@include high-contrast-black-text-color;
+			}
+			@media #{$black-on-white} {
+				@include high-contrast-white-text-color;
+			}
 		}
 	}
 }

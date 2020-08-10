@@ -64,7 +64,8 @@
 									id="smartStandby-{{linkId}}-dropDown-btn"
 									role="button"
 									attr.aria-label="{{linkId}}-dropDown">
-									<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
+									<fa-icon [icon]="['fal', 'chevron-down']" *ngIf="!showDropDown"></fa-icon>
+									<fa-icon class="chevron-up" [icon]="['fal', 'chevron-up']" *ngIf="showDropDown"></fa-icon>
 								</div>
 							</div>
 						</div>

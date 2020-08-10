@@ -1,7 +1,7 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {SystemEventService} from '../../../services/system-event/system-event.service';
-import {CommonService} from '../../../services/common/common.service';
-import {Subscription} from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { SystemEventService } from '../../../services/system-event/system-event.service';
+import { CommonService } from '../../../services/common/common.service';
+import { Subscription } from 'rxjs';
 
 @Component({
 	selector: 'vtr-page-smart-performance',
@@ -10,12 +10,14 @@ import {Subscription} from 'rxjs';
 })
 export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 	private notificationSub: Subscription;
-	eventName = 'SmartPerformance.ScheduleEventStarted'
+	eventName = 'SmartPerformance.ScheduleEventStarted';
 	isScanningStarted = 0;
 	retryCount = 0;
 
-	constructor(private systemEventService: SystemEventService,
-				private commonService: CommonService) {
+	constructor(
+		private systemEventService: SystemEventService,
+		private commonService: CommonService
+	) {
 	}
 
 	ngOnInit() {
@@ -29,7 +31,7 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 				if (notification && notification.type && notification.type.toString() === this.eventName) {
 					this.isScanningStarted += 1;
 				}
-			})
+			});
 		} else {
 			await this.unregisterScanEvent();
 			if (this.retryCount < 1) {
@@ -40,7 +42,7 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 	}
 
 	async unregisterScanEvent() {
-		await this.systemEventService.unRegisterCustomEvent(this.eventName)
+		await this.systemEventService.unRegisterCustomEvent(this.eventName);
 	}
 
 	ngOnDestroy(): void {

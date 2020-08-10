@@ -2,6 +2,60 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.29](https://bitbucket.tc.lenovo.com///compare/v1.7.28...v1.7.29) (2020-08-07)
+
+
+### Bug Fixes
+
+* **AV style:** VAN-21142 fixed offline link color ([5888c57](https://bitbucket.tc.lenovo.com///commit/5888c5745de7523106ac998b468abb421f6f3ebd))
+* **Overall:** VAN-21179 fix some pages will not show the scrollbar. ([5a693c8](https://bitbucket.tc.lenovo.com///commit/5a693c8ac40a9fc5789c5c21e8ba0181965513cc))
+* **Smart Performance:** VAN-21051 modify sp cancel dialog button and close button ([fd083a9](https://bitbucket.tc.lenovo.com///commit/fd083a9105c5352fec3c499548bd8bc76cb08b78))
+* **Smart Performance:** VAN-21086 modify date change dialog input box ([b7e3865](https://bitbucket.tc.lenovo.com///commit/b7e38650e4260f276f705a3ea2f876fb19760816))
+* **Smart Performance:** VAN-21086 remove date change dialog focus and modify dialog position. ([291b7df](https://bitbucket.tc.lenovo.com///commit/291b7df9266255b9fa9185d70cd6371da89cd951))
+
+### [1.7.28](https://bitbucket.tc.lenovo.com///compare/v1.7.27...v1.7.28) (2020-08-06)
+
+
+### Bug Fixes
+
+* **<a> tag hcm style:** VAN-21136 fixed hyperlink at hover status in hcm ([37fd516](https://bitbucket.tc.lenovo.com///commit/37fd516ecf1a9d9b29145baf7bf203064c5bf368))
+* **overall hc style:** VAN-20978 fix sideline in hcm ([2179aee](https://bitbucket.tc.lenovo.com///commit/2179aeeda78c8d34571cc98475a3aefd58209eb3))
+
+### [1.7.27](https://bitbucket.tc.lenovo.com///compare/v1.7.26...v1.7.27) (2020-08-05)
+
+
+### Features
+
+* **Add LocalCache for IndexDB:** VAN-20665 implement common api to save data in indexdb ([6407e80](https://bitbucket.tc.lenovo.com///commit/6407e808269c1df17b7815d5b7afe3d5a06435bf))
+* **Add metric:** VAN-21031 update metrics for enable check for update in getstatus ([2b30eb5](https://bitbucket.tc.lenovo.com///commit/2b30eb5da82d0d47e8dec1413e3b42bb6510b666))
+* **Metrics for SU:** VAN-21031 add metrics for some unexpected result from getStatus ([e48e83e](https://bitbucket.tc.lenovo.com///commit/e48e83e866f32df56046ea46df6f9f255cc40967))
+
+### [1.7.26](https://bitbucket.tc.lenovo.com///compare/v1.7.25...v1.7.26) (2020-08-04)
+
+
+### Features
+
+* **Modern Preload:** VAN-20240 use size and version from IMC ([ef6fb81](https://bitbucket.tc.lenovo.com///commit/ef6fb81ea58bc80b705f2424515f98af03f478da))
+
+### [1.7.25](https://bitbucket.tc.lenovo.com///compare/v1.7.21...v1.7.25) (2020-08-04)
+
+
+### Features
+
+* **Modern Preload:** VAN-20231 no hardcode lang for entitledapps request ([a6b4996](https://bitbucket.tc.lenovo.com///commit/a6b499604a1a0c1716d4c02c987c27f89573b344))
+* **Modern Preload:** VAN-20231 revert version and size changes ([94e1085](https://bitbucket.tc.lenovo.com///commit/94e108521977477e15631eaae838136ebfb3ab7e))
+* **VAN-17042:** microphone optimization remove in block list smb models. ([e7daa81](https://bitbucket.tc.lenovo.com///commit/e7daa81ccf9bd0ce26ad1187f55200b94bf63de0))
+* **VAN-17042:** microphone optimization remove in block list smb models. ([9b51de3](https://bitbucket.tc.lenovo.com///commit/9b51de3f275512c5f4e09acf86ba61e755461e64))
+
+
+### Bug Fixes
+
+* **antivirus style:** VAN-20993 fixed av responsive ui ([e6f4473](https://bitbucket.tc.lenovo.com///commit/e6f4473e743cb7d34e4580b5b2aeb6855d77006f))
+* **High contrast:** fix notification HCM ([60e9ba4](https://bitbucket.tc.lenovo.com///commit/60e9ba439d8874188737291ba4c06161637440bb))
+* **High contrast:** fixed notification hcm issue ([d543741](https://bitbucket.tc.lenovo.com///commit/d543741e4b28f1bb46cff45af207fafa3d3f8047))
+* **High contrast:** VAN-20908 VAN-20910 VAN-20905 fix hc issue ([851506c](https://bitbucket.tc.lenovo.com///commit/851506c075045c0bee7ea375c695922468d1e7d5))
+* **High contrast overall:** VAN-20904 fixed page columns hcm issue ([d15372d](https://bitbucket.tc.lenovo.com///commit/d15372d377c809cf53da01e2502a6a481902e927))
+
 ### [1.7.24](https://bitbucket.tc.lenovo.com///compare/v1.7.21...v1.7.24) (2020-08-03)
 
 

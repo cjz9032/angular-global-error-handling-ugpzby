@@ -211,7 +211,7 @@
     @media #{$white-on-black} {
       border: 0.1rem solid $light;
     }
-    &:hover{
+    &:hover, &:focus{
       @media #{$black-on-white} {
         @include high-contrast-white-border;
       }
@@ -219,17 +219,41 @@
         @include  high-contrast-black-border;
       }
 
-    }
+	}
+	&:active {
+		@media #{$white-on-black} {
+			@include high-contrast-black-text-color;
+		}
+
+		@media #{$black-on-white} {
+			@include high-contrast-white-text-color;
+		}
+	}
   }
   .toggle-icon {
 		fa-icon {
-			color: #4579f0;
+			color: $grey_dark;
 			font-size: 2rem;
 			cursor: pointer;
+			&.chevron-up {
+				color: $main;
+			}
 		}
   }
   input[type="checkbox"]{
     display: none;
+  }
+
+  .label-text {
+	@media #{$white-on-black} {
+		@include high-contrast-black-text-color;
+		@include  high-contrast-black-border;
+	}
+
+	@media #{$black-on-white} {
+		@include high-contrast-white-text-color;
+		@include  high-contrast-white-border;
+	}
   }
 
 }

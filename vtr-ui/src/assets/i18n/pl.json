@@ -2138,7 +2138,8 @@
                 "desc2": "Zaloguj się do systemu Windows, a alarm zostanie automatycznie wyłączony. Aby użyć tej funkcji, musisz ponownie ją włączyć.",
                 "note": {
                     "descriptionTitle": "Uwaga:",
-                    "description": "Podczas logowania do systemu Windows należy skorzystać z jednej z prawidłowych opcji logowania, takich jak hasło lub kod PIN. W przeciwnym razie funkcja inteligentnego alertu wykrycia ruchu może zostać omyłkowo wyłączona przez dowolnego nieautoryzowanego użytkownika uzyskującego dostęp do komputera."
+                    "description1": "Podczas logowania do systemu Windows należy skorzystać z jednej z prawidłowych opcji logowania, takich jak hasło lub kod PIN. W przeciwnym razie funkcja inteligentnego alertu wykrycia ruchu może zostać omyłkowo wyłączona przez dowolnego nieautoryzowanego użytkownika uzyskującego dostęp do komputera.",
+                    "description2": "Przed odejściem od komputera należy go zablokować, naciskając jednocześnie klawisz z logo systemu Windows oraz klawisz L. W przeciwnym razie funkcja inteligentnego alertu wykrycia ruchu nie będzie działać prawidłowo."
                 },
                 "alarm": {
                     "title": " CZAS TRWANIA ALARMU",

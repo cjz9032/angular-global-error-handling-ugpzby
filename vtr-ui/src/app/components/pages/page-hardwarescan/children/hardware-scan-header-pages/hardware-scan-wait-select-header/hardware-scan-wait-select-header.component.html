@@ -1,26 +1,29 @@
 <div class="row">
-	<h2 class="col title">{{'hardwareScan.title' | translate}}</h2>
+	<h2 class="col title">{{ 'hardwareScan.title' | translate }}</h2>
 </div>
 <div class="row">
  	<div class="col button-row">
-		<button [ngClass]="{'action-button': !disableButtonScan, 'action-button-disable': disableButtonScan}"
-			[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
-			[disabled]="disableButtonScan"
-			(click)="onQuickScan()"
-			tabindex="1"
-			>{{'hardwareScan.quickScan' | translate}}</button>
-		<div class="row align-items-center">
-			<div [title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate">
-				<button vtrMetrics
-					metricsEvent="FeatureClick"
-					metricsParent="HardwareScan"
-					metricsItem="HardwareScan.CustomizeScan"
-					[ngClass]="{'action-anchor': !disableButtonScan, 'disabled-anchor': disableButtonScan}"
-					[disabled]="disableButtonScan"
-					tabindex="1"
-					(click)="onAnchor()">{{'hardwareScan.customize.name' | translate}}
-				</button>
-			</div>
-		</div>
+		<vtr-ui-button
+			linkId="hwscan-quick-scan-btn"
+			[vtrMetrics]=false
+			[label]= " 'hardwareScan.quickScan' | translate "
+			[isDisabled]="disableButtonScan"
+			[title] =" 'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate "
+			(onClick)="onQuickScan()">
+		</vtr-ui-button>
+		<vtr-ui-hyperlink-button
+			linkId="hwscan-custom-scan-btn"
+			linkRole="button"
+			class="hyperlink-container"
+			hyperlinkStyle="xs-white"
+			metricsEvent="FeatureClick"
+			metricsParent="HardwareScan"
+			metricsItem="HardwareScan.CustomizeScan"
+			[isDisabled]="disableButtonScan"
+			[label]="'hardwareScan.customize.name' | translate"
+			[tooltipText]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
+			[upperCaseLabel]="true"
+			(hyperlinkClick)="onAnchor()">
+		</vtr-ui-hyperlink-button>
 	</div>
 </div>

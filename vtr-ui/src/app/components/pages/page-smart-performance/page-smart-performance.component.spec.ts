@@ -31,11 +31,11 @@ describe('PageSmartPerformanceComponent', () => {
 	}));
 
 	it('should call registerScanEvent', async(() => {
-		component.eventName = 'SmartPerformance.ScheduleEventStarted'
-		systemEventService = TestBed.get(SystemEventService);
-		commonService = TestBed.get(CommonService);
+		component.eventName = 'SmartPerformance.ScheduleEventStarted';
+		systemEventService = TestBed.inject(SystemEventService);
+		commonService = TestBed.inject(CommonService);
 		const spy = spyOn(systemEventService, 'registerCustomEvent').and.returnValue(Promise.resolve(true));
-		component.registerScanEvent()
+		component.registerScanEvent();
 		fixture.detectChanges();
 		expect(spy).toHaveBeenCalled();
 	}));

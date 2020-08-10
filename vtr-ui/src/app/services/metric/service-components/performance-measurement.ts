@@ -4,18 +4,19 @@ import { MetricEventName as EventName } from 'src/app/enums/metrics.enum';
 
 export class PerformanceMeasurement {
 	private lastRecord = 0;
+	private retry = 0;
 	private eventSignal = false;
 	private moniterApis = [
 		'/api/v1/features',
 		'/api/v1/articlecategories',
-		//'/api/v1/articles/',
+		'/api/v1/articles/',
 		'/api/v1/entitledapps',
 		'/api/v1/apps/',
 		'/upe/recommendation/v2/recommends',
 		'/upe/tag/api/row/tag/user_tags/sn/'
 	];
 
-	public readonly handleHttpsCompleteEvent = () => {};
+	public readonly handleHttpsCompleteEvent = () => { };
 
 	constructor(
 		private devService: DevService,
@@ -34,7 +35,7 @@ export class PerformanceMeasurement {
 	private filterEntries(entries) {
 		const validEntries = [];
 
-		for (let idx = entries.length - 1; idx > -1; idx--) {
+		for (let idx = entries.length - 1; idx > -1; idx--) {	// Fetch record from end to begin
 			const entry = entries[idx];
 
 			if (entry.startTime <= this.lastRecord) {
@@ -50,7 +51,7 @@ export class PerformanceMeasurement {
 			}
 		}
 
-		return validEntries;
+		return validEntries.reverse();
 	}
 
 	private onHttpsCompleteEventWrapper() {
@@ -62,7 +63,7 @@ export class PerformanceMeasurement {
 			this.eventSignal = false;
 
 			this.onHttpsCompleteEvent();
-		}, 1000);
+		}, 2000);
 	}
 
 	private onHttpsCompleteEvent() {
@@ -80,7 +81,7 @@ export class PerformanceMeasurement {
 		const validEntries = this.filterEntries(entries);
 
 		// 3. send metrics for the record
-		validEntries.forEach(entry => {
+		for (const entry of validEntries) {
 			const url = new URL(entry.name);
 			const performanceData: NetworkPerformance = {
 				ItemType: EventName.performance,
@@ -88,11 +89,26 @@ export class PerformanceMeasurement {
 				Api: url.pathname,
 				Duration: entry.duration.toFixed(2)
 			};
-			this.metricsService.sendMetrics(performanceData);
-		});
 
-		// 4. record the last record's timestamp
-		this.lastRecord = entries[entries.length - 1].startTime;
+			if (entry.duration === 0) {	// duration is 0 before webview could fill up the value.
+				if (this.lastRecord === entry.startTime) {
+					this.retry += 1;
+				} else {
+					this.retry = 0;
+				}
+
+				if (this.retry < 3) {
+					this.onHttpsCompleteEventWrapper();
+					return;
+				}
+			}
+
+			this.metricsService.sendMetrics(performanceData);
+
+			// 4. record the last record's timestamp
+			this.lastRecord = entry.startTime;
+		}
+
 	}
 
 	private onBufferFull(event) {

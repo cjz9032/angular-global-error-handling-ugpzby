@@ -1,14 +1,15 @@
-<div class="vtr-widget-device-recover-bad-sectors">
+<div id="{{ widgetId }}" class="vtr-widget-device-recover-bad-sectors">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col">
 				<div class="row">
-					<h2 class="title">{{title}}</h2>
+					<h2 id="{{ widgetId }}-title" role="heading" class="title">{{title}}</h2>
 					<div class="title-question-mark">
 
 						<!-- Ignoring the href property from narrator by using the role="img" atribute
 							and passing the tooltip information with the [attr.aria-label] -->
 						<a href="javascript:void();"
+							id="{{ widgetId }}-tooltip"
 							[attr.aria-label]="'recover-bad-sectors-tooltip, which reads: ' + description"
 							role="img"
 							tabindex="0"
@@ -25,13 +26,14 @@
 						</a>
 					</div>
 				</div>
-				<p class="description">{{'hardwareScan.recoverBadSectors.waitAvailability' | translate}}</p>
+				<p id="{{ widgetId }}-description" role="text" class="description">{{'hardwareScan.recoverBadSectors.waitAvailability' | translate}}</p>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col">
 				<div class="button-row">
 					<vtr-ui-button
+						linkId="{{ widgetId }}-btn"
 						metricsEvent="FeatureClick"
 						metricsParent="HardwareScan"
 						metricsItem="HardwareScan.RecoverBadSectors"
@@ -49,5 +51,5 @@
 </div>
 
 <ng-template #tooltipRef>
-	<div>{{description}}</div>
+	<div id="{{ widgetId }}-tooltip-text">{{description}}</div>
 </ng-template>

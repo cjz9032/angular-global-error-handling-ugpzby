@@ -4,78 +4,20 @@
 	color: $light;
 	font-size: $fontsize_xl;
 	font-weight: $weight_600;
-	padding-left: 2.4rem;
-	padding-top: 2.4rem;
-	padding-bottom: 0.5rem;
-	padding-right: 2.4rem;
+	padding: 2.4rem 2.4rem 0.5rem;
 }
 
 .button-row {
-	padding-left: 2.4rem;
-	padding-bottom: 2.4rem;
-	padding-top: 2.4rem;
-	padding-right: 2.4rem;
+	padding: 2.4rem;
 	display: flex;
 
-	.action-button {
-		border-radius: 2.5rem;
-		background: $gradient_main;
-		text-transform: uppercase;
-		padding: 0 3rem;
-		color: $light;
-		font-size: $fontsize_xs;
-		height: 5rem;
-		font-weight: $weight_bold;
-		line-height: 5rem;
-		text-align: center;
-		border: 0rem;
-		cursor: pointer;
-	}
-	.action-button-disable {
-		border-radius: 2.5rem;
-		background: $light-grey;
-		text-transform: uppercase;
-		padding: 0 3rem;
-		color: $light;
-		font-size: $fontsize_xs;
-		height: 5rem;
-		font-weight: $weight_bold;
-		line-height: 5rem;
-		text-align: center;
-		border: 0rem;
-		cursor: default;
-	}
-	.action-anchor {
-		font-size: $fontsize_xs2;
-		font-weight: $weight_bold;
-		color: $light;
-		border-bottom: 0.2rem solid $light;
-		padding-bottom: 0.2rem;
-		margin-left: 2.5rem;
-		text-transform: uppercase;
-		cursor: pointer;
-		&:hover {
-			border: none;
-			padding-bottom: 0.5rem; // Centering the text after removing its text-decoration
-			text-decoration: none; //Remove underline on customize scan when the cursor is under the link
+	::ng-deep .vtr-ui-button {
+		.button-box {
+			padding-left: 0;
 		}
-		&:focus {
-			@include outline_blue;
-		}
-	}
-	.disabled-anchor {
-		font-size: $fontsize_xs2;
-		font-weight: $weight_bold;
-		color: $shade_light;
-		border-bottom: 0.2rem solid $shade_light;
-		padding-bottom: 0.2rem;
-		margin-left: 2.5rem;
-		text-transform: uppercase;
-		cursor: default;
-		pointer-events: none !important;
 	}
 
-	.align-items-center{
-		align-content: center;
+	.hyperlink-container {
+		margin: 0 0 0 1.9rem;
 	}
 }

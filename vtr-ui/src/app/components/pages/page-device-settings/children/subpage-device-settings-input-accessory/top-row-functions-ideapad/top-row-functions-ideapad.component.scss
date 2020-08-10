@@ -1,39 +1,10 @@
 @import "../../../../../../app.theme.scss";
 
 .top-row-key-block{
-	.title-blck{
-		.left-icon-column {
-			padding: 0 1rem 0 0;
-		}
-		.left-icon-block {
-			width: 2rem;
-			position: relative;
-			line-height: 2.5rem;
-		}
-		.left-icon {
-			font-size: $fontsize_lg;
-			height: 2em;
-			width: 2em;
-			color:$menu_hover;
-			overflow: visible;
-			vertical-align: -0.12em;
-		}
-		.title {
-			font-size: $fontsize_md;
-			color: $purple_navy;
-			font-weight: $weight_light;
-			letter-spacing: 0.05rem;
-			text-transform: none;
-		}
-	}
-	.caption {
-		.text{
-			font-size: $fontsize_xs;
-			font-weight: $weight_light;
-			color:$grey_dark;
-		}
-		// max-width: 60rem;
-		padding-left: 3rem;
+	.text {
+		font-size: $fontsize_xs;
+		font-weight: $weight_light;
+		color:$grey_dark;
 	}
 	.link-text {
 		font-size: $fontsize_xs2;

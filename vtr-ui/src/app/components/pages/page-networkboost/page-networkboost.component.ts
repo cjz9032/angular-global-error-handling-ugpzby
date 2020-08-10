@@ -3,7 +3,7 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { AppNotification } from './../../../data-models/common/app-notification.model';
 import { CommonService } from './../../../services/common/common.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, NgZone } from '@angular/core';
 import { NetworkBoostService } from 'src/app/services/gaming/gaming-networkboost/networkboost.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { UPEService } from 'src/app/services/upe/upe.service';
@@ -11,6 +11,9 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { DeviceService } from 'src/app/services/device/device.service';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { GamingQuickSettingToolbarService } from 'src/app/services/gaming/gaming-quick-setting-toolbar/gaming-quick-setting-toolbar.service';
+import { EventTypes } from '@lenovo/tan-client-bridge';
 
 @Component({
 	selector: 'vtr-page-networkboost',
@@ -20,6 +23,7 @@ import { DeviceService } from 'src/app/services/device/device.service';
 export class PageNetworkboostComponent implements OnInit, OnDestroy {
 	public showTurnOnModal = false;
 	public showAppsModal = false;
+	public networkBoostEvent:any;
 	changeListNum = 0;
 	appsCount = 0;
 	toggleStatus: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.NetworkBoostStatus) || false;
@@ -40,11 +44,14 @@ export class PageNetworkboostComponent implements OnInit, OnDestroy {
 		private cmsService: CMSService,
 		private networkBoostService: NetworkBoostService,
 		private commonService: CommonService,
-		private upeService: UPEService,
+		// private upeService: UPEService,
 		private loggerService: LoggerService,
-		private hypService: HypothesisService,
-		private translate: TranslateService,
-		public deviceService: DeviceService,
+		// private hypService: HypothesisService,
+		// private translate: TranslateService,
+		// public deviceService: DeviceService,
+		private shellServices: VantageShellService,
+		private gamingQuickSettingToolbarService: GamingQuickSettingToolbarService,
+		private ngZone: NgZone,
 	) {
 		this.fetchCMSArticles();
 		this.isOnline = this.commonService.isOnline;
@@ -57,6 +64,7 @@ export class PageNetworkboostComponent implements OnInit, OnDestroy {
 		// AutoClose Init
 		// this.toggleStatus = this.commonService.getLocalStorageValue();
 		this.getNetworkBoostStatus();
+		this.networkBoostRegisterEvent();
 		const queryOptions = {
 			Page: 'network-boost'
 		};
@@ -98,6 +106,8 @@ export class PageNetworkboostComponent implements OnInit, OnDestroy {
 		if(this.fetchSubscrition) {
 			this.fetchSubscrition.unsubscribe();
 		}
+
+		this.networkBoostUnRegisterEvent();
 	}
 
 	async openTargetModal() {
@@ -244,5 +254,31 @@ export class PageNetworkboostComponent implements OnInit, OnDestroy {
 				FeatureImage: 'assets/cms-cache/network_boost_offline.jpg'
 			};
 		}
+	}
+
+	// version:3.3.3 quick setting toolbar& toast
+	networkBoostRegisterEvent () {
+		this.networkBoostEvent = this.onGamingQuickSettingsNetworkBoostStatusChangedEvent.bind(this);
+		this.gamingQuickSettingToolbarService.registerEvent('NetworkBoost');
+		this.shellServices.registerEvent(
+			EventTypes.gamingQuickSettingsNetworkBoostStatusChangedEvent,
+			this.networkBoostEvent
+		);
+	}
+
+	onGamingQuickSettingsNetworkBoostStatusChangedEvent(status:any) {
+		this.ngZone.run(() => {
+			status = status ===1 ? true : false;
+			this.loggerService.info(`Widget-LegionEdge-onGamingQuickSettingsNetworkBoostStatusChangedEvent: call back from ${this.toggleStatus} to ${status}`);
+			if (status !== undefined && this.toggleStatus !== status) {
+				this.toggleStatus = status;
+				this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoostStatus, status);
+			}
+		});
+	}
+
+	networkBoostUnRegisterEvent () {
+		this.gamingQuickSettingToolbarService.unregisterEvent('NetworkBoost');
+		this.shellServices.unRegisterEvent(EventTypes.gamingQuickSettingsNetworkBoostStatusChangedEvent, this.networkBoostEvent);
 	}
 }

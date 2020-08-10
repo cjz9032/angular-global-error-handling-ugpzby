@@ -69,6 +69,12 @@
 		}
 		&:focus {
 			@include outline-blue;
+			@media #{$white-on-black} {
+				@include high-contrast-black-border;
+			}
+			@media #{$black-on-white} {
+				@include high-contrast-white-border;
+			}
 		}
 	}
 

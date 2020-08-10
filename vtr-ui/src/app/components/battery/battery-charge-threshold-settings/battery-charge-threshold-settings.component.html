@@ -39,25 +39,30 @@
 									(keyup.esc)="[$event.preventDefault(),startAtDropDown.isOpen()?startToggle.click():'',startToggle.focus()]"
 									(keyup)="ddToggleKBNavigator($event,startAtDropDown,startAtChargeOption,bctInfo.startValue)">
 
-									<div class="row d-flex justify-content-between">
+									<div class="row d-flex justify-content-between"
+										[class.toggle-open]="dropDowns?.first?.isOpen()"
+										[class.toggle-close]="!dropDowns?.first?.isOpen()">
 										<div class="col-11 pl-1 pr-1">
 											<div class="select-title"
 												id="{{textId}}-start-charge"
-												role="heading"
+												role="text"
 												aria-label="{{title}}-start-charge">
 												{{ddStartAtChargeDescription}}
 											</div>
 
 											<div class="select-text text-left"
 												id="{{textId}}-selected-start-charge"
-												role="heading"
+												role="text"
 												aria-label="{{title}}-selected-start-charge">
 												{{bctInfo.startValue}}%
 											</div>
 										</div>
 										<div class="col-1 pl-1 pr-1">
 											<div class="dropdown-icon">
-												<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
+												<fa-icon
+													[class.chevron-up]="dropDowns?.first?.isOpen()"
+													[icon]="dropDowns?.first?.isOpen()? iconUp: iconDown">
+												</fa-icon>
 											</div>
 										</div>
 									</div>
@@ -105,24 +110,29 @@
 									attr.aria-label="{{title}}-{{ddStopAtChargeDescription}}-{{bctInfo.stopValue}}%-{{option}}-{{stopAtChargeOptions.indexOf(bctInfo.stopValue)+1}}-{{off}}-{{stopAtChargeOptions.length}}-{{selected}}"
 									(keyup.esc)="ddItemKeyEscHandler($event,stopAtDropDown,endToggle)"
 									(keyup)="ddToggleKBNavigator($event,stopAtDropDown,stopAtChargeOption,bctInfo.stopValue)">
-									<div class="row d-flex justify-content-between">
+									<div class="row d-flex justify-content-between"
+										[class.toggle-open]="dropDowns?.last?.isOpen()"
+										[class.toggle-close]="!dropDowns?.last?.isOpen()">
 										<div class="col-11 pl-1 pr-1">
 											<div class="select-title"
 												id="{{textId}}-stop-charge"
-												role="heading"
+												role="text"
 												aria-label="{{title}}-stop-charge">
 												{{ddStopAtChargeDescription}}
 											</div>
 											<div class="select-text text-left"
 												id="{{textId}}-selected-stop-at-charge"
-												role="heading"
+												role="text"
 												aria-label="{{title}}-selected-stop-at-charge">
 												{{bctInfo.stopValue}}%
 											</div>
 										</div>
 										<div class="col-1 pl-0 pr-1">
 											<div class="dropdown-icon">
-												<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
+												<fa-icon
+													[class.chevron-up]="dropDowns?.last?.isOpen()"
+													[icon]="dropDowns?.last?.isOpen()? iconUp: iconDown">
+												</fa-icon>
 											</div>
 										</div>
 									</div>
@@ -188,7 +198,7 @@
 				<div class="note-box">
 					<div class="note"
 						id="battery-threshold-note"
-						role="heading">
+						role="text">
 						<b>{{'device.deviceSettings.power.batterySettings.batteryThreshold.note' | translate}}
 							:</b>
 						{{'device.deviceSettings.power.batterySettings.batteryThreshold.noteInfo' | translate}}

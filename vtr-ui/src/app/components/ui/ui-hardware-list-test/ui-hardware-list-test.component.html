@@ -1,12 +1,11 @@
-<div class="vtr-ui-hardware-list-test">
+<div id="{{ componentId }}" class="vtr-ui-hardware-list-test">
 	<ul class="list-group modal-scroll">
-		<li class="list-group-item" *ngFor="let item of items; let id = index">
+		<li id="{{ componentId }}-item-{{ i }}" class="list-group-item" *ngFor="let item of items; let i = index">
 			<div class="module" [ngClass]="{'isSelected-item' : item.selected || item.indeterminate}">
 				<div class="custom-control">
 					<vtr-ui-checkbox
 						#checkbox
-						[id]="item.id"
-						[componentId]="item.id"
+						[componentId]="componentId + '-item-' + i"
 						[ariaLabel]="('hardwareScan.pluginTokens.' + item.name | translateDefault:item.name) + '-checkbox'"
 					 	[indeterminate]="item.indeterminate"
 						(click)="onDeviceSelectionClicked(item,checkbox.checked)"
@@ -15,15 +14,17 @@
 						[value]="item.selected"
 						class="custom-control-component"
 					>
-						<p class="custom-control-label-text name">
+						<p id="{{ componentId }}-item-{{ i }}-name" role="text" class="custom-control-label-text name">
 							{{ 'hardwareScan.pluginTokens.' + item.name | translateDefault:item.name }}
-							<span class="subname">{{ 'hardwareScan.pluginTokens.' + item.subname | translateDefault:item.subname }}</span>
+							<span id="{{ componentId }}-item-{{ i }}-subname" role="text"
+								class="subname">{{ 'hardwareScan.pluginTokens.' + item.subname | translateDefault:item.subname }}</span>
 						</p>
 					</vtr-ui-checkbox>
 				</div>
 
 				<div class="col-auto">
-					<div class="collapse-control select-item"
+					<div id="{{ componentId }}-item-{{ i }}-collapse-btn"
+						class="collapse-control select-item"
 						tabindex="0"
 						[attr.aria-label]="('hardwareScan.pluginTokens.' + item.name | translateDefault:item.name) + (item.collapsed ? '-collapse-submodules-list': '-expand-submodules-list')"
 						(click)="item.collapsed = !item.collapsed"
@@ -37,14 +38,15 @@
 					</div>
 				</div>
 			</div>
-			<div id="{{ id }}" class="sub-module" [ngbCollapse]="!item.collapsed" >
+			<div id="{{ componentId }}-item-{{ i }}-subitems" class="sub-module" [ngbCollapse]="!item.collapsed" >
 				<ul class="list-group">
-					<li class="list-group-item" *ngFor="let test of item.tests" (change)=onCheckChildren(item) [ngClass]="{'isSelected-item' : test.selected}">
+					<li id="{{ componentId }}-item-{{ i }}-subitem-{{ j }}" class="list-group-item" *ngFor="let test of item.tests; let j = index"
+						(change)=onCheckChildren(item)
+						[ngClass]="{'isSelected-item' : test.selected}">
 						<div class="module">
 							<div class="custom-control custom-checkbox">
 								<vtr-ui-checkbox
-									[id]="test.id + id"
-									[componentId]="test.id + id"
+									[componentId]="componentId + '-item-' + i + '-subitem-' + j"
 									[ariaLabel]="('hardwareScan.pluginTokens.' + item.name | translateDefault:item.name) + ('hardwareScan.pluginTokens.' + test.name | translateDefault:test.name)"
 									[checked]="test.selected"
 									[hasChild]="true"
@@ -53,7 +55,8 @@
 									class="custom-control-component"
 								>
 									<p class="custom-control-label-text">
-										<span class="name-test">&nbsp;{{ 'hardwareScan.pluginTokens.' + test.name | translateDefault:test.name }}</span>
+										<span id="{{ componentId }}-item-{{ i }}-subitem-{{ j }}-name"
+											class="name-test">&nbsp;{{ 'hardwareScan.pluginTokens.' + test.name | translateDefault:test.name }}</span>
 									</p>
 								</vtr-ui-checkbox>
 							</div>
@@ -64,9 +67,21 @@
 		</li>
 	</ul>
 	<div class="options">
-		<a class="select-item" href="javascript:void(0);" (click)="onSelectAll()">{{select}}</a>
+		<vtr-ui-hyperlink-button
+			linkId="hwscan-select-all-tests-link"
+			hyperlinkStyle="xs-300-blue-lighter"
+			class="hyperlink-select"
+			(hyperlinkClick)="onSelectAll()"
+			[label]=" 'hardwareScan.select' | translate "
+			[disableTooltip]="true"
+			></vtr-ui-hyperlink-button>
 		<span class="select-item-subtitle">/</span>
-		<a class="select-item" href="javascript:void(0);" (click)="onDeselectAll()">{{deselect}}</a>
+		<vtr-ui-hyperlink-button
+			linkId="hwscan-deselect-all-tests-link"
+			hyperlinkStyle="xs-300-blue-lighter"
+			(hyperlinkClick)="onDeselectAll()"
+			[label]=" 'hardwareScan.deselect' | translate "
+			[disableTooltip]="true"
+		></vtr-ui-hyperlink-button>
 	</div>
-
 </div>

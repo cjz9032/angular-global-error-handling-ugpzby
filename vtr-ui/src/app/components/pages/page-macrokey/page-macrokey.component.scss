@@ -28,3 +28,18 @@
 		}
 	}
 }
+
+::ng-deep vtr-page-macrokey {
+	&::ng-deep .vtr-header-main-inner {
+		.back {
+			@media #{$high-contrast} {
+				color: buttonText;
+				&:hover {
+					span {
+						text-decoration: underline !important;
+					}
+				}
+			}
+		}
+	}
+}

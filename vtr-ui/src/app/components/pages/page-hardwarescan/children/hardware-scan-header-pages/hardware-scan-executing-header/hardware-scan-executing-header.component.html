@@ -1,22 +1,22 @@
 
 <div class="row">
 	<div *ngIf="isRecoverExecuting(); else scanExecuting">
-		<h2 class="col title animated-dots" aria-live="polite">{{ 'hardwareScan.recoverBadSectors.executingTitle' | translate }}</h2>
+		<h2 id="hwscan-executing-rbs-title" role="heading" class="col title animated-dots" aria-live="polite">{{ 'hardwareScan.recoverBadSectors.executingTitle' | translate }}</h2>
 	</div>
 	<ng-template #scanExecuting>
-		<h2 class="col title animated-dots" aria-live="polite">{{ 'hardwareScan.executingScanTitle' | translate:{'title':getDeviceTitle()} }}</h2>
+		<h2 id="hwscan-executing-scan-title" role="heading" class="col title animated-dots" aria-live="polite">{{ 'hardwareScan.executingScanTitle' | translate:{'title':getDeviceTitle()} }}</h2>
 	</ng-template>
 </div>
 <div class="row hwscan-header">
 	<div class="col row1" aria-live="polite">
-		<p class="row">{{subTitle}}</p>
-		<p id="warning-message" class="row">{{'hardwareScan.warningMessage' | translate}}</p>
+		<p id="hwscan-executing-subtitle" role="text" class="row">{{subTitle}}</p>
+		<p id="hwscan-executing-warning-message" role="text" class="row">{{ 'hardwareScan.warningMessage' | translate }}</p>
 	</div>
 	<div class="row">
 		<div class="row progress-div">
 			<div class="row progress-percent-text" aria-live="polite">
-				<p class="progress-value-text">{{percent}}%</p>
-				<p class="progress-complete-text">{{'hardwareScan.complete' | translate}}</p>
+				<p id="hwscan-executing-percent-value" role="text" class="progress-value-text">{{percent}}</p>
+				<p class="progress-complete-text">% {{'hardwareScan.complete' | translate}}</p>
 			</div>
 		</div>
 	</div>
@@ -30,19 +30,21 @@
 
 	<div class="col col-12 row">
 		<div class="col col-12 row">
-			<div class="col col-12 cancel-check"
-					title="{{ disableCancel ? ('hardwareScan.waitScanStarts' | translate) : ''}}">
-				<button type="button"
-					id="hw_cancel_scan"
-					attr.aria-label="hw_cancel_scan"
-					vtrMetrics
-					metricsEvent="FeatureClick"
+			<div class="col col-12 cancel-check">
+				<vtr-ui-hyperlink-button
+					[ngbTooltip]="disableCancel ? ('hardwareScan.waitScanStarts' | translate) : ''" tooltipClass="vtr-system-tooltip" container="body"
+					hyperlinkStyle="xs-white"
+					linkId="hwscan-cancel-btn"
+					linkRole="button"
+					ariaLabel="hwscan-cancel-btn"
 					metricsParent="{{itemParentCancel}}"
 					metricsItem="{{itemNameCancel}}"
-					class="cancel-check cancel-check-button"
-					[disabled]="disableCancel"
-					tabindex="1"
-					(click)="onCancel()">{{'hardwareScan.cancel' | translate}}</button>
+					[isDisabled]="disableCancel"
+					[upperCaseLabel]="true"
+					[label]="'hardwareScan.cancel' | translate"
+					[tabIndex]="1"
+					(hyperlinkClick)="onCancel()">
+				</vtr-ui-hyperlink-button>
 			</div>
 		</div>
 	</div>

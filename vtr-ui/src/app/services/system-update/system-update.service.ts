@@ -54,6 +54,7 @@ export class SystemUpdateService {
 	public isCheckingCancel = false;
 	public isToastMessageNeeded = false;
 	public timeStartSearch;
+	public retryTimes = 0;
 	/**
 	 * gets data about last scan, install & schedule scan date-time for Check for Update section
 	 */
@@ -161,6 +162,7 @@ export class SystemUpdateService {
 							const payload = { ...response, status };
 							this.isInstallationSuccess = this.getInstallationSuccess(payload);
 							this.commonService.sendNotification(UpdateProgress.UpdateCheckCompleted, payload);
+							this.retryTimes = 0;
 							this.getScheduleUpdateStatus(false);
 							clearInterval(interval);
 						}
@@ -172,6 +174,7 @@ export class SystemUpdateService {
 				if (error &&
 					((error.description && error.description.includes('errorcode: 606'))
 						|| (error.errorcode && error.errorcode === 606))) {
+					this.retryTimes = 0;
 					this.getScheduleUpdateStatus(true);
 					this.isImcErrorOrEmptyResponse = true;
 				} else {
@@ -196,16 +199,32 @@ export class SystemUpdateService {
 
 	public getScheduleUpdateStatus(canReportProgress: boolean) {
 		if (this.systemUpdateBridge) {
+			const timeOut = setTimeout(() => {
+				this.loggerService.info('get su plugin status time out with in 10 seconds');
+				this.metricService.sendSystemUpdateStatusMetric('Time out', 'FeatureStatus - Not enabled within 10 seconds');
+			}, 10000);
 			this.systemUpdateBridge.getStatus(canReportProgress, (response: any) => {
+				clearTimeout(timeOut);
 				this.processScheduleUpdate(response.payload, true, canReportProgress);
 			}).then((response: ScheduleUpdateStatus) => {
 				this.isImcErrorOrEmptyResponse = false;
+				clearTimeout(timeOut);
 				this.processScheduleUpdate(response, false, canReportProgress);
 			}).catch((error) => {
+				clearTimeout(timeOut);
 				if (error && error.errorcode === 606) {
-					setTimeout(() => {
-						this.getScheduleUpdateStatus(canReportProgress);
-					}, 200);
+					if (this.retryTimes < 3) {
+						setTimeout(() => {
+							this.getScheduleUpdateStatus(canReportProgress);
+						}, 200);
+						this.retryTimes++;
+					} else {
+						this.loggerService.info('Get su plugin status exception with errorcode 606');
+						this.metricService.sendSystemUpdateStatusMetric('Get system update plugin status exception with 606', 'FeatureStatus - Not enabled within 10 seconds');
+					}
+				} else {
+					this.loggerService.info('get su plugin status exception.', error);
+					this.metricService.sendSystemUpdateStatusMetric('Get system update plugin status exception', 'FeatureStatus - Not enabled within 10 seconds');
 				}
 			});
 		}
@@ -249,6 +268,7 @@ export class SystemUpdateService {
 				}
 			}
 			if (!isInProgress) {
+				this.retryTimes = 0;
 				this.getScheduleUpdateStatus(true);
 			}
 		} else if (status === 'idle' && isInProgress) {
@@ -298,11 +318,19 @@ export class SystemUpdateService {
 			} else {
 				this.commonService.sendNotification(UpdateProgress.ScheduleUpdateIdle, response);
 			}
+			this.metricService.sendSystemUpdateStatusMetric('Enable check for update ', 'FeatureStatus - Enabled');
 		} else if (!status && Number(response.statusCode) === SystemUpdateStatus.CONNECT_EXCEPTION && this.commonService.isOnline) {
-			this.loggerService.info('response return error network status, try again.');
-			setTimeout(() => {
-				this.getScheduleUpdateStatus(canReportProgress);
-			}, 200);
+			this.loggerService.info('Get su plugin status response connect exception, try again.');
+			if (this.retryTimes < 3) {
+				setTimeout(() => {
+					this.getScheduleUpdateStatus(canReportProgress);
+				}, 200);
+			} else {
+				this.metricService.sendSystemUpdateStatusMetric('System update plugin connect exception ', 'FeatureStatus - Not enabled within 10 seconds');
+			}
+		} else {
+			this.loggerService.info('get su plugin status return unexpected response, status is null.', response);
+			this.metricService.sendSystemUpdateStatusMetric('System update plugin get unexpected response', 'FeatureStatus - Not enabled within 10 seconds');
 		}
 	}
 
@@ -584,6 +612,7 @@ export class SystemUpdateService {
 				}
 			} else if (!this.isDownloadingCancel) { // cancel download will also cause empty UpdateTaskList, no need to get status
 				// VAN-3314, sometimes, the install complete response will contains empty UpdateTaskList
+				this.retryTimes = 0;
 				setTimeout(() => {
 					this.getScheduleUpdateStatus(true);
 				}, 2500);
@@ -593,6 +622,7 @@ export class SystemUpdateService {
 			if (error &&
 				((error.description && error.description.includes('errorcode: 606'))
 					|| (error.errorcode && error.errorcode === 606))) {
+				this.retryTimes = 0;
 				setTimeout(() => {
 					this.getScheduleUpdateStatus(true);
 				}, 200);

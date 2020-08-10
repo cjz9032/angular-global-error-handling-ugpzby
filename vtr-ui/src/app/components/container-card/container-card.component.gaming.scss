@@ -3,7 +3,7 @@
 :host-context(.is-gaming) {
 	.container-card {
 		box-shadow: $drop_shadow_gaming;
-		background-color: transparent;
+		background-color: $gaming_darkest;
 		@media #{$high-contrast} {
 			background-color: window;
 		}

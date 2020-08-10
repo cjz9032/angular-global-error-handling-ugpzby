@@ -22,6 +22,8 @@ export class UiHyperlinkButtonComponent implements OnInit {
 	@Input() hyperlinkStyle: string;
 	@Input() label: string;
 	@Input() title: string;
+	@Input() linkId: string;
+	@Input() linkRole: string;
 	@Input() tabIndex: number;
 	@Input() upperCaseLabel: boolean;
 	@Input() capitalizeLabel: boolean;
@@ -39,6 +41,7 @@ export class UiHyperlinkButtonComponent implements OnInit {
 	constructor() { }
 
 	ngOnInit(): void {
+		this.linkRole = this.linkRole ?? 'link';
 		this.ariaLabel = this.ariaLabel ?? this.label;
 		this.tooltipText = this.tooltipText ?? this.label;
 		this.faIconStyle = this.faIconStyle ?? this.hyperlinkStyle;

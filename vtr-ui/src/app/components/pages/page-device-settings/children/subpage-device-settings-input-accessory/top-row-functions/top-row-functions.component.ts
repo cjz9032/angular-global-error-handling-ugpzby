@@ -44,8 +44,9 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 	}
 
 	ngOnInit() {
-		this.topRowKeyObj = this.commonService.getLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability, undefined);
-		if (this.topRowKeyObj) {
+		const topRowKeyObj = this.commonService.getLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability, undefined);
+		if (topRowKeyObj) {
+			this.topRowKeyObj = topRowKeyObj;
 			this.isCacheFound = true;
 			this.getAllStatuses();
 		} else {
@@ -58,8 +59,6 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 
 	ngOnDestroy() {
 		clearTimeout(this.topRowFunInterval);
-		// store in cache
-		this.commonService.setLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability, this.topRowKeyObj);
 	}
 
 	public async getFunctionCapabilities() {
@@ -75,7 +74,8 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 					this.topRowKeyObj.primaryFunCap = res[2];
 					this.getAllStatuses();
 					this.setTopRowStatusCallback();
-					this.logger.error('TopRowFunctionsComponent.getFunctionCapabilities', this.topRowKeyObj);
+					this.commonService.setLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability, this.topRowKeyObj);
+					this.logger.info('TopRowFunctionsComponent.getFunctionCapabilities', this.topRowKeyObj);
 				});
 			}
 		} catch (error) {
@@ -116,6 +116,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 		this.keyboardService.getFnLockStatus().then(res => {
 			this.logger.info('TopRowFunctionsComponent.getStatusOfFnLock', res);
 			this.topRowKeyObj.fnLockStatus = res;
+			this.commonService.setLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability, this.topRowKeyObj);
 			this.updateFunctionLockUIModel();
 		});
 	}
@@ -123,6 +124,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 		this.keyboardService.getFnStickKeyStatus().then(res => {
 			this.logger.info('TopRowFunctionsComponent.getStatusOfStickyFun', res);
 			this.topRowKeyObj.stickyFunStatus = res;
+			this.commonService.setLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability, this.topRowKeyObj);
 			this.updateTopRowFunctionsKeysUIModel();
 		});
 	}
@@ -130,6 +132,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 		this.keyboardService.getPrimaryFunctionStatus().then(res => {
 			this.logger.info('TopRowFunctionsComponent.getStatusOfPrimaryFun', res);
 			this.topRowKeyObj.primaryFunStatus = res;
+			this.commonService.setLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability, this.topRowKeyObj);
 			this.updateFunctionLockUIModel();
 		});
 	}

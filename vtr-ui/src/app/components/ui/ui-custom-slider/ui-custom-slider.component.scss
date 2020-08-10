@@ -155,6 +155,12 @@
 		}
 		.legends-disabled {
 			opacity: 0.4;
+			@media #{$white-on-black} {
+				opacity: 1;
+			}
+			@media #{$black-on-white} {
+				opacity: 1;
+			}
 		}
 
 		//And now the ticks

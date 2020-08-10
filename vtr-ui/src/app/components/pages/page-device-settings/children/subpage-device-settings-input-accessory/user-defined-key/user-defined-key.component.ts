@@ -209,7 +209,7 @@ export class UserDefinedKeyComponent implements OnInit, OnDestroy {
 			if (this.keyboardService.isShellAvailable) {
 				this.keyboardService.Initialize()
 					.then((value: any) => {
-						this.logger.info('keyboard initialize here -------------.>', value);
+						this.logger.info('keyboard initialize here -------------.>');
 					}).catch(error => {
 						this.logger.error('keyboard initialize error here', error.message);
 						return EMPTY;
@@ -225,8 +225,7 @@ export class UserDefinedKeyComponent implements OnInit, OnDestroy {
 			if (this.keyboardService.isShellAvailable) {
 				this.keyboardService.GetUDKTypeList()
 					.then((value: any) => {
-						this.logger.info('keyboard getUDKTypeList here -------------.>', value);
-						this.logger.info(value);
+						this.logger.info('keyboard getUDKTypeList here -------------.>');
 						this.udkActionInfo = new UDKActionInfo(value);
 						this.initValues(this.udkActionInfo);
 					}).catch(error => {
@@ -249,7 +248,7 @@ export class UserDefinedKeyComponent implements OnInit, OnDestroy {
 							this.showUDFSetSuccessMessage(settingKey);
 							this.udkFormSubmitted = false;
 							this.userDefinedKeyOptions = this.commonService.removeObjFromUserDefined(this.userDefinedKeyOptions, 1);
-							this.logger.info('keyboard setUDKTypeList here -------------.>', value);
+							this.logger.info('keyboard setUDKTypeList here -------------.>');
 						}
 					}).catch(error => {
 						this.logger.error('keyboard setUDKTypeList error here', error.message);
@@ -322,7 +321,7 @@ export class UserDefinedKeyComponent implements OnInit, OnDestroy {
 		}
 	}
 	udkSubmit(value: number) {
-		this.logger.debug('UserDefinedKeyComponent.udkSubmit function called', value);
+		this.logger.debug('UserDefinedKeyComponent.udkSubmit function called');
 		this.udkFormSubmitted = true;
 		switch (value) {
 			case 2:

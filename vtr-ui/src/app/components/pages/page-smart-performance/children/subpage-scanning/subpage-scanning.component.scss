@@ -643,6 +643,16 @@ vtr-subpage-smart-performance-scan-summary {
 				border-bottom: 9px solid transparent;
 				border-left: 9px solid $menu_hover;
 			}
+			@media #{$white-on-black} {
+				&::after {
+					display: none;
+				}
+			}
+			@media #{$black-on-white} {
+				&::after {
+					display: none;
+				}
+			}
 		}
 		.badge-light {
 			background: transparent;

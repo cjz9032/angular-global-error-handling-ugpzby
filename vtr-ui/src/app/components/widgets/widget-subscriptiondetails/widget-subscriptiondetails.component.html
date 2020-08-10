@@ -1,9 +1,11 @@
 <div class="subscription-details sidebar-widget">
     <div *ngIf="isSubscribed" class="title pb-3">{{'smartPerformance.subscriptionDetails.title' |translate }}</div>
     <div *ngIf="!isSubscribed" class="title pb-3">{{'smartPerformance.subscriptionDetails.title' |translate }}</div>
+
     <div class="card-info">         
         <p *ngIf="isSubscribed">{{'smartPerformance.subscriptionDetails.description' |translate }}</p>
-        <p *ngIf="!isSubscribed">{{'smartPerformance.subscriptionDetails.descriptionNonSubscriber' |translate }}</p>
+        <p *ngIf="!isSubscribed && !isExpired">{{'smartPerformance.subscriptionDetails.descriptionNonSubscriber' |translate }}</p>
+        <p *ngIf="!isSubscribed && isExpired"> {{'smartPerformance.subscriptionDetails.descriptionExpired' |translate }}</p>
         <!-- <a href="#" class="para-link"
             vtrMetrics
             metricsItem="btn.sp.subscriptionDetails"

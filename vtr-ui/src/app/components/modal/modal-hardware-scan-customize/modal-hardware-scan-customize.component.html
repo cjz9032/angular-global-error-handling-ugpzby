@@ -1,21 +1,28 @@
 <div class="modal-body vtr-modal-hardware-scan-customize">
 
 	<div class="row modal-information">
-		<h1 class="title">{{ title }}</h1>
-		<p class="description">{{ description }}</p>
+		<h1 class="title">{{ 'hardwareScan.customize.test' | translate }}</h1>
+		<p class="description">{{ 'hardwareScan.customize.description' | translate }}</p>
 		<p class="errorMessage">{{ errorMessage }}</p>
 	</div>
 
-	<vtr-ui-hardware-list-test [items]="items" (selectAny)="receiveSelect()"></vtr-ui-hardware-list-test>
+	<vtr-ui-hardware-list-test
+		[componentId]="'hwscan-customize-scan-list'"
+		[items]="items"
+		(selectAny)="receiveSelect()">
+	</vtr-ui-hardware-list-test>
 
-	<div class="row">
-		<div class="col button-row np-l">
-			<button class="btn-primary action-button"
-				(click)="onClickRun()">{{ buttonText }}</button>
-		</div>
+	<div class="row button-row">
+		<vtr-ui-button
+			id="hwscan-run-selected-tests-btn"
+			[vtrMetrics]=false
+			[label]= " 'hardwareScan.customize.runTests' | translate "
+			(onClick)="onClickRun()">
+		</vtr-ui-button>
 	</div>
 
 	<vtr-ui-close-button
+		[linkId]="'hwscan-customize-scan-modal-close-btn'"
 		class="close-btn"
 		metricsEvent="FeatureClick"
 		metricsParent="HardwareScan.CustomizeScan"

@@ -29,19 +29,21 @@
 					metricsEvent="FeatureClick"
 					metricsParent="HardwareScan.ScanFailureActions"
 					metricsItem="ScanFailureActions.RecoverBadSectors"
-					id="rbsButton" (click)="goToRBSPage()"
+					linkId="hwscan-go-to-rbs-btn" (click)="goToRBSPage()"
 					[tooltipText]="'hardwareScan.scanFailureModal.recoverBadSectorsButtonText' | translate"
 					[label]="'hardwareScan.scanFailureModal.recoverBadSectorsButtonText' | translate">
 				</vtr-ui-button>
-				<vtr-ui-button
-					buttonColor="secondary-blue-lighter-bg-transparent"
+				<vtr-ui-hyperlink-button
+					class="hyperlink-container"
+					hyperlinkStyle="xs-blue-lighter"
 					metricsEvent="FeatureClick"
 					metricsParent="HardwareScan.ScanFailureActions"
 					metricsItem="ScanFailureActions.LenovoSupport"
-					id="supportButtonWithRBS" (click)="openSupportPage()"
-				   [tooltipText]="'hardwareScan.scanFailureModal.supportButtonText' | translate"
-				   [label]="'hardwareScan.scanFailureModal.supportButtonText' | translate">
-				</vtr-ui-button>
+					linkId="hwscan-open-support-page-link" (hyperlinkClick)="openSupportPage()"
+				 	[tooltipText]="'hardwareScan.scanFailureModal.supportButtonText' | translate"
+				   	[label]="'hardwareScan.scanFailureModal.supportButtonText' | translate"
+					[upperCaseLabel]="true">
+				</vtr-ui-hyperlink-button>
 			</div>
 		</div>
 

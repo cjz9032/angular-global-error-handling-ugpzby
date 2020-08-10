@@ -88,4 +88,8 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 	public onScanAgain() {
 		this.scanAgain.emit();
 	}
+
+	openContactusPage() {
+		window.open(this.contactusUrl);
+	}
 }

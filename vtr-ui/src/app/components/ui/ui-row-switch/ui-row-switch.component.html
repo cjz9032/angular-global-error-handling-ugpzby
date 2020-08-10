@@ -15,7 +15,7 @@
 				<div class="container-fluid p-0">
 					<div class="row m-0">
 						<div class="col-auto left-icon-column"
-							*ngIf="leftIcon.length > 0">
+							*ngIf="leftIcon && leftIcon.length > 0; else elseNoIconCol">
 							<div class="left-icon-block"
 								role="img"
 								attr.aria-label="{{title}}">
@@ -37,11 +37,29 @@
 									class="adminLogo" />
 							</div>
 						</div>
+						<ng-template #elseNoIconCol>
+							<!-- Just add empty column to maintain styling -->
+							<div class="col-auto left-icon-column">
+								<div class="left-icon"></div>
+							</div>
+						</ng-template>
 						<div class="col">
 							<h4 class="title"
+								*ngIf="headingLevel!==5 && headingLevel!==-1"
 								id="{{switchId}}-title">
 								{{ title }}
 							</h4>
+							<h5 class="title"
+								*ngIf="headingLevel===5"
+								id="{{switchId}}-title">
+								{{ title }}
+							</h5>
+							<p class="title"
+								role="text"
+								*ngIf="headingLevel===-1"
+								id="{{switchId}}-title">
+								{{ title }}
+							</p>
 							<span *ngIf="caption">
 								<p class="caption"
 									role="text"

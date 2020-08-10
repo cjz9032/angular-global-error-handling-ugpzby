@@ -27,6 +27,7 @@ interface RequestParam {
 	apiParam: string;
 	observableMsg: string;
 	applyDeviceFilter: boolean;
+	responseOrigin?: boolean;
 }
 
 @Injectable({
@@ -270,7 +271,8 @@ export class CMSService implements OnDestroy {
 			api: '/api/v1/articles/',
 			apiParam: articleId,
 			observableMsg: null,
-			applyDeviceFilter: false
+			applyDeviceFilter: false,
+			responseOrigin: true
 		});
 
 	}
@@ -278,7 +280,8 @@ export class CMSService implements OnDestroy {
 	public async fetchCMSEntitledAppList(queryParams) {
 		const locInfo = await this.getLocalinfo();
 		const defaults = {
-			Lang: locInfo.Lang
+			Lang: locInfo.Lang,
+			GEO: locInfo.GEO
 		};
 		const cmsOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
 		return this.postRequest({
@@ -311,7 +314,7 @@ export class CMSService implements OnDestroy {
 			api,
 			apiParam,
 			observableMsg,
-			applyDeviceFilter } = param;
+			applyDeviceFilter, responseOrigin } = param;
 
 		let results;
 		try {
@@ -323,7 +326,7 @@ export class CMSService implements OnDestroy {
 				results = await this.filterCMSContent(response.Results);
 
 			} else {
-				results = response.Results;
+				results = responseOrigin ? response : response.Results;
 			}
 			return results;
 		} catch (ex) {

@@ -14,6 +14,7 @@ export class WidgetHardwareScanItemComponent implements OnInit {
 	@Input() isEnableViewResults = false;
 
 	public tooltipText: string;
+	public tooltipIndex: number;
 	contactusUrl: string;
 
 	constructor(private lenovoSupportService: LenovoSupportService) {
@@ -23,8 +24,9 @@ export class WidgetHardwareScanItemComponent implements OnInit {
 		this.configureContactusUrl();
 	}
 
-	public getInformation(text: string) {
+	public setTooltipInfo(text: string, index: number) {
 		this.tooltipText = text;
+		this.tooltipIndex = index;
 	}
 
 	// Changes status expanded of the module test list when the user request
@@ -37,5 +39,9 @@ export class WidgetHardwareScanItemComponent implements OnInit {
 		await this.lenovoSupportService.getContactusUrl().then((response) => {
 			this.contactusUrl = response;
 		});
+	}
+
+	openContactusPage() {
+		window.open(this.contactusUrl);
 	}
 }

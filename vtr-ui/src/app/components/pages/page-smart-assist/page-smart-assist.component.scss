@@ -346,6 +346,14 @@ $fontsize_xs: 1.4rem;
 	text-transform: uppercase;
 }
 
+.facial-recognition-title {
+	font-size: $fontsize_xs;
+	color: $shade_blue;
+	font-weight: $weight_bold;
+	letter-spacing: 0.05rem;
+	text-transform: uppercase;
+}
+
 .help-heading {
 	font-size: $fontsize_xl2;
 	font-weight: $weight_light;

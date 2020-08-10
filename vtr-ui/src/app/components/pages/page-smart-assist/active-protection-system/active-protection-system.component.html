@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="col-12 px-0">
 			<p class="caption"
-				role="heading"
+				role="text"
 				id="smart-assist-active-protection-system-desc">
 				{{'device.smartAssist.activeProtectionSystem.description' | translate}}
 			</p>
@@ -76,7 +76,7 @@
 							class="dropdown row">
 							<section class="col-sm-6">
 								<p class="text-uppercase"
-									role="heading"
+									role="text"
 									id="smart-assist-manual-active-protection-system-desc">
 									{{ 'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.dropdown-title' | translate }}
 								</p>
@@ -109,9 +109,9 @@
 				<!-- Advanced section -->
 				<li *ngIf="advanceAvailable && apsStatus"
 					class="advanced pt-3 pl-5 ml-4 keep-my-display-block auto-screen-off-block">
-					<h4 [style.display]="!advancedToggle?'block':'none'"
+					<h5 [style.display]="!advancedToggle?'block':'none'"
 						id="activeProtectionSystem-more">
-						{{ 'device.smartAssist.activeProtectionSystem.advanced.more' | translate }}</h4>
+						{{ 'device.smartAssist.activeProtectionSystem.advanced.more' | translate }}</h5>
 					<a [style.display]="!advancedToggle?'inline-block':'none'"
 						id="{{advanceSettingsShowId}}"
 						role="link"
@@ -124,12 +124,11 @@
 
 					<section [style.display]="advancedToggle?'block':'none'"
 						id="activeProtectionSystem_advanced_settings">
-						<h4 id="{{advanceSettings}}"
+						<h5 id="{{advanceSettings}}"
 							tabindex="-1"
-							attr.aria-label="{{advanceSettings}}"
 							class="advanced-settings-title">
 							{{ 'device.smartAssist.activeProtectionSystem.advanced.advanced-settings' | translate }}
-						</h4>
+						</h5>
 						<ng-container *ngIf="advancedToggle">
 							<vtr-active-protection-system-advanced [penCapability]="penCapability"
 								[touchCapability]="touchCapability"

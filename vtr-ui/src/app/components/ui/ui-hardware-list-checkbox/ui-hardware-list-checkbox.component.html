@@ -1,18 +1,19 @@
-<div class="vtr-ui-list-checkbox-hardware">
-	<ul class="list-group">
+<div id="{{ componentId }}" class="vtr-ui-list-checkbox-hardware">
+	<ul id="{{ componentId }}-list" class="list-group">
 		<div class="col-12 px-0">
-			<li class="list-group-item"
+			<li id="{{ componentId }}-list-item-{{ i }}" class="list-group-item"
 				*ngFor="let device of devices; let i = index">
 				<div class="row align-items-center">
 					<div class="custom-control form-control-lg custom-checkbox">
-						<input id="{{ i }}"
+						<input id="{{ componentId }}-list-item-{{ i }}-checkbox"
 							type="checkbox"
 							class="custom-control-input"
 							[(ngModel)]="device.isSelected"
 							(change)="onSelectDevice()" />
-						<label class="custom-control-label name"
-							for="{{ i }}">
-							<span class="title">{{ 'hardwareScan.pluginTokens.' + device.title | translateDefault:device.title }}</span>
+						<label id="{{ componentId }}-list-item-{{ i }}-label" class="custom-control-label name"
+							for="{{ componentId }}-list-item-{{ i }}-checkbox">
+							<span id="{{ componentId }}-list-item-{{ i }}-title" role="text"
+								class="title">{{ 'hardwareScan.pluginTokens.' + device.title | translateDefault:device.title }}</span>
 						</label>
 					</div>
 				</div>
@@ -20,13 +21,22 @@
 		</div>
 		<div class="col-12 px-0">
 			<div class="options">
-				<a class="select-item"
-					href="javascript:void(0)"
-					(click)="onSelectAllDevices()">{{select}}</a>
+				<vtr-ui-hyperlink-button
+					linkId="{{ componentId }}-select-all-link"
+					hyperlinkStyle="xs-300-blue-lighter"
+					class="hyperlink-select"
+					(hyperlinkClick)="onSelectAllDevices()"
+					[label]=" 'hardwareScan.select' | translate "
+					[disableTooltip]="true"
+				></vtr-ui-hyperlink-button>
 				<span class="select-item-subtitle">/</span>
-				<a class="select-item"
-					href="javascript:void(0)"
-					(click)="onDeselectAllDevices()">{{deselect}}</a>
+				<vtr-ui-hyperlink-button
+					linkId="{{ componentId }}-deselect-all-link"
+					hyperlinkStyle="xs-300-blue-lighter"
+					(hyperlinkClick)="onDeselectAllDevices()"
+					[label]=" 'hardwareScan.deselect' | translate "
+					[disableTooltip]="true">
+				</vtr-ui-hyperlink-button>
 			</div>
 		</div>
 	</ul>

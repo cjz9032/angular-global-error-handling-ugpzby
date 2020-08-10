@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HardwareScanService } from '../../../services/hardware-scan/hardware-scan.service';
 import { PreviousResultService } from '../../../services/hardware-scan/previous-result.service';
 
@@ -8,6 +8,8 @@ import { PreviousResultService } from '../../../services/hardware-scan/previous-
 	styleUrls: ['./widget-hardware-scan-status.component.scss']
 })
 export class WidgetHardwareScanStatusComponent implements OnInit {
+	@Input() widgetId: string;
+
 	public previousResultsModules: any = undefined;
 	public lastScanResultCompletionInfo: any = undefined;
 	public viewResultsPath = '/hardware-scan/view-results';

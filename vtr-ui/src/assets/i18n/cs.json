@@ -2138,7 +2138,8 @@
                 "desc2": "Přihlaste se do systému Windows a varování se automaticky vypne. Chcete-li tuto funkci použít, musíte ji znovu povolit.",
                 "note": {
                     "descriptionTitle": "Upozornění:",
-                    "description": "Při přihlášení do systému Windows jsou třeba platné možnosti přihlášení, například heslo nebo kód PIN. Jinak může funkci inteligentního varování při pohybu omylem deaktivovat kterýkoli neautorizovaný uživatel, který přistupuje k vašemu počítači."
+                    "description1": "Při přihlášení do systému Windows jsou třeba platné možnosti přihlášení, například heslo nebo kód PIN. Jinak může funkci inteligentního varování při pohybu omylem deaktivovat kterýkoli neautorizovaný uživatel, který přistupuje k vašemu počítači.",
+                    "description2":"Než se od počítače vzdálíte, nezapomeňte jej uzamknout stisknutím kombinace kláves Windows a L. V opačném případě nebude funkce inteligentního varování při pohybu pracovat normálně."
                 },
                 "alarm": {
                     "title": " VAROVÁNÍ BUDE TRVAT",

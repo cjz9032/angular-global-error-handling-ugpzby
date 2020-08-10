@@ -1,4 +1,4 @@
-<div class="vtr-widget-hardware-scan-item" *ngFor="let item of items">
+<div id="hwscan-item-{{ i }}" class="vtr-widget-hardware-scan-item" *ngFor="let item of items; let i = index">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="module-information">
@@ -6,22 +6,23 @@
 
 					<!-- Defines an icon according to the hardware component -->
 					<div class="test-status" [ngSwitch]="item.icon">
-						<img alt="processor" class="img-icon" *ngSwitchCase="'cpu'" [src]="'assets/icons/hardware-scan/icon_hardware_processor.svg' | svgInline | async" />
-						<img alt="memory" class="img-icon" *ngSwitchCase="'memory'" [src]=" 'assets/icons/hardware-scan/icon_hardware_memory.svg' | svgInline | async" />
-						<img alt="motherboard" class="img-icon" *ngSwitchCase="'motherboard'" [src]=" 'assets/icons/hardware-scan/icon_hardware_motherboard.svg' | svgInline | async" />
-						<img alt="pci_express" class="img-icon" *ngSwitchCase="'pci_express'" [src]=" 'assets/icons/hardware-scan/icon_hardware_pci-desktop.svg' | svgInline | async" />
-						<img alt="pci_express" class="img-icon" *ngSwitchCase="'pci_express_laptop'" [src]=" 'assets/icons/hardware-scan/icon_hardware_pci-laptop.svg' | svgInline | async" />
-						<img alt="wireless" class="img-icon" *ngSwitchCase="'wireless'" [src]=" 'assets/icons/hardware-scan/icon_hardware_wireless.svg' | svgInline | async" />
-						<img alt="storage" class="img-icon" *ngSwitchCase="'storage'" [src]=" 'assets/icons/hardware-scan/icon_hardware_hdd.svg' | svgInline | async" />
+						<img id="hwscan-item-{{ i }}-icon" alt="processor" class="img-icon" *ngSwitchCase="'cpu'" [src]="'assets/icons/hardware-scan/icon_hardware_processor.svg' | svgInline | async" />
+						<img id="hwscan-item-{{ i }}-icon" alt="memory" class="img-icon" *ngSwitchCase="'memory'" [src]=" 'assets/icons/hardware-scan/icon_hardware_memory.svg' | svgInline | async" />
+						<img id="hwscan-item-{{ i }}-icon" alt="motherboard" class="img-icon" *ngSwitchCase="'motherboard'" [src]=" 'assets/icons/hardware-scan/icon_hardware_motherboard.svg' | svgInline | async" />
+						<img id="hwscan-item-{{ i }}-icon" alt="pci_express" class="img-icon" *ngSwitchCase="'pci_express'" [src]=" 'assets/icons/hardware-scan/icon_hardware_pci-desktop.svg' | svgInline | async" />
+						<img id="hwscan-item-{{ i }}-icon" alt="pci_express" class="img-icon" *ngSwitchCase="'pci_express_laptop'" [src]=" 'assets/icons/hardware-scan/icon_hardware_pci-laptop.svg' | svgInline | async" />
+						<img id="hwscan-item-{{ i }}-icon" alt="wireless" class="img-icon" *ngSwitchCase="'wireless'" [src]=" 'assets/icons/hardware-scan/icon_hardware_wireless.svg' | svgInline | async" />
+						<img id="hwscan-item-{{ i }}-icon" alt="storage" class="img-icon" *ngSwitchCase="'storage'" [src]=" 'assets/icons/hardware-scan/icon_hardware_hdd.svg' | svgInline | async" />
 					</div>
 
 					<!-- Defines a style title based on the response received -->
 					<div class="row">
-						<p class="title">{{ ('hardwareScan.pluginTokens.' + item.module) | translateDefault:item.module }}</p>
-						<p class="subtitle" *ngIf="item.name">{{ ('hardwareScan.pluginTokens.' + item.name) | translateDefault:item.name }}</p>
+						<p id="hwscan-item-{{ i }}-module" role="text" class="title">{{ ('hardwareScan.pluginTokens.' + item.module) | translateDefault:item.module }}</p>
+						<p id="hwscan-item-{{ i }}-device" role="text" class="subtitle" *ngIf="item.name">{{ ('hardwareScan.pluginTokens.' + item.name) | translateDefault:item.name }}</p>
 
 						<!-- Icon to expand and collapse details list -->
 						<div *ngIf="isEnableViewResults || item.details"
+							id="hwscan-item-{{ i }}-details-btn"
 							class="details-link"
 							tabindex="0"
 							[attr.aria-label]="!item.detailsExpanded ? item.module + 'expand-module-details': item.module + 'collapse-module-details'"
@@ -42,12 +43,13 @@
 					<!-- Defines a status to module list when finish all subtests -->
 					<vtr-ui-hardware-scan-test-result
 						*ngIf="item.resultCode"
+						[componentId]="'hwscan-item-' + i + '-test-result'"
 						[module]="item">
 					</vtr-ui-hardware-scan-test-result>
 
 					<!-- Icon to expand and collapse test list -->
 					<div class="col-auto" *ngIf="isScanExecute && !isEnableViewResults">
-						<div class="collapse-control"
+						<div id="hwscan-item-{{ i }}-collapse-btn" class="collapse-control"
 							tabindex="0"
 							[attr.aria-label]="!item.expanded ? item.module + 'expand-test-list': item.module + 'collapse-test-list'"
 							(click)="toggleTestListVisibility(item)"
@@ -66,11 +68,11 @@
 
 		<!-- Details List with information about the module -->
 		<div class="row details-list" *ngIf="(isEnableViewResults || item.details) && item.detailsExpanded">
-			<table class="table table-details table-active table-borderless">
+			<table id="hwscan-item-{{ i }}-details" class="table table-details table-active table-borderless">
 				<tbody>
-					<tr *ngFor="let detail of item.details">
-						<th>{{ ('hardwareScan.' + (isRecoverExecute ? 'recoverBadSectors.' : 'pluginTokens.') + detail.key) | translateDefault:detail.key }}</th>
-						<td>{{ detail.value }}</td>
+					<tr *ngFor="let detail of item.details; let j = index">
+						<th id="hwscan-item-{{ i }}-detail-{{ j }}-name">{{ ('hardwareScan.' + (isRecoverExecute ? 'recoverBadSectors.' : 'pluginTokens.') + detail.key) | translateDefault:detail.key }}</th>
+						<td id="hwscan-item-{{ i }}-detail-{{ j }}-value">{{ detail.value }}</td>
 					</tr>
 				</tbody>
 			</table>
@@ -80,6 +82,7 @@
 			<!-- Test List with collapsed running test-->
 			<div class="test-list col" *ngIf="isScanExecute && !isEnableViewResults">
 				<vtr-ui-hardware-list
+					[componentId]="'hwscan-item-' + i + '-test'"
 					[ngbCollapse]="!item.expanded"
 					[items]="item.listTest"
 					[template]="2">
@@ -89,6 +92,7 @@
 			<!-- Test List with deails test-->
 			<div class="test-list col" *ngIf="isEnableViewResults || item.details || isRecoverExecute">
 				<vtr-ui-hardware-list
+					[componentId]="'hwscan-item-' + i + '-test'"
 					[items]="item.listTest"
 					[template]="2">
 				</vtr-ui-hardware-list>
@@ -97,8 +101,12 @@
 			<!-- Result code information -->
 			<div class="result-code" *ngIf="item.resultCode && (item.expanded || item.details)">
 				<p class="title">{{resultCodeText}}:</p>
-				<p class="subtitle">{{item.resultCode}}</p>
-				<a *ngIf="item.information" href="javascript:void(0)" (click)="getInformation(item.information)"
+				<p id="hwscan-item-{{ i }}-result-code-value" role="text" class="subtitle">{{item.resultCode}}</p>
+				<a *ngIf="item.information"
+					id="hwscan-item-{{ i }}-result-code-tooltip"
+					role="img"
+					href="javascript:void(0)"
+					(click)="setTooltipInfo(item.information, i)"
 					[attr.aria-label]="item.module + 'result-code-tooltip, which reads:' + item.information"
 					class="result-code-icon"
 					triggers="click"
@@ -114,17 +122,17 @@
 	</div>
 </div>
 <ng-template #tooltipRefModule>
-	<div>{{ ('hardwareScan.pluginTokens.' + tooltipText) | translateDefault:tooltipText }}</div>
-	<a [attr.href]="contactusUrl"
-		class="link-support"
-		target="_blank"
-		vtrMetrics
+	<div id="hwscan-item-{{ tooltipIndex }}-result-code-tooltip-text">{{ ('hardwareScan.pluginTokens.' + tooltipText) | translateDefault:tooltipText }}</div>
+	<vtr-ui-hyperlink-button
+		linkId="hwscan-item-{{ tooltipIndex }}-result-code-tooltip-support-link"
+		class="hyperlink-container"
+		hyperlinkStyle="xs-300-blue-lighter"
 		metricsItemID="HardwareScan.ResultSupport"
 		metricsItemPosition="r1"
 		metricsItemCategory="partnerarticle"
 		metricsEvent="articleclick"
 		metricsPageNumber="1"
-		tabindex="0">
-		{{ 'hardwareScan.support.subtitle' | translate }}
-	</a>
+		(hyperlinkClick)="openContactusPage()"
+		[label]="'hardwareScan.support.subtitle' | translate">
+	</vtr-ui-hyperlink-button>
 </ng-template>

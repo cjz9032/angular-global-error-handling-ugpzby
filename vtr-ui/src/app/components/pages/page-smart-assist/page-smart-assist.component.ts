@@ -693,7 +693,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	}
 
 	public launchFaceEnrollment() {
-		this.deviceService.launchUri('ms-settings:signinoptions-launchfaceenrollment');
+		this.deviceService.launchUri('ms-settings:signinoptions');
 	}
 
 	public onAutoScreenOffToggle(event) {
@@ -982,7 +982,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		}
 
 		if (this.headerMenuItems.length >= 2) {
-			this.headerMenuItems = this.headerMenuItems.sort((a, b) => { return a.sortOrder - b.sortOrder; });
+			this.headerMenuItems = this.headerMenuItems.sort((a, b) => a.sortOrder - b.sortOrder);
 		}
 	}
 

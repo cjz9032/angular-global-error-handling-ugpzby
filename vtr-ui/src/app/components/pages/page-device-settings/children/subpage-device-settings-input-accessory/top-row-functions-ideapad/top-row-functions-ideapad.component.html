@@ -1,88 +1,29 @@
 <div class="top-row-key-block common-li-padding">
-	<div class="row m-0">
-		<div class="row pl-4">
-			<div class="col-12 title-blck px-0 d-flex">
-				<div class="col-auto left-icon-column">
-					<div class="left-icon-block">
-						<fa-icon class="left-icon"
-							[icon]="['fal', 'keyboard']"></fa-icon>
-					</div>
-				</div>
-				<div class="title"
-					role="heading"
-					id="topRowFunctionsIdeapad-title">
-					{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.title' | translate}}
-				</div>
-			</div>
-			<div class="col-12 pr-0 caption">
-				<div class="text"
-					role="heading"
-					id="topRowFunctionsIdeapad-description">
-					{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.description' | translate}}
-				</div>
-				<div class="my-3">
-					<div class="col-12 pl-0 d-flex methods-block"
-						aria-label=" Function key selection list, select using arrow keys">
-						<!-- <div class="mr-5"> -->
-						<!-- <vtr-ui-rectangle-radio [radioId]="'radio1'"
-								[checked]="hotkey$ | async"
-								[group]="'top-row-functions-ideapad-radio'"
-								[label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.sFunKey' | translate"
-								[iconName]="'icomoon icomoon-Special-function'"
-								(change)="update$.next(keyType.HOTKEY)"
-								[value]="keyType.HOTKEY">
-							</vtr-ui-rectangle-radio> -->
-						<!-- <vtr-ui-circle-radio-with-checkbox [theme]="'white'"
-								[radioId]="'radio1'"
-								[group]="'top-row-functions-ideapad-radio'"
-								[checked]="hotkey$ | async"
-								[label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.sFunKey' | translate"
-								(optionChange)="update$.next(keyType.HOTKEY)"
-								[textId]="'myDevice-settings-inputAccessories-top-row-functions-ideapad'"
-								[value]="'icomoon icomoon-Special-function'">
-							</vtr-ui-circle-radio-with-checkbox>
-						</div>
-						<div> -->
-						<!-- <vtr-ui-rectangle-radio [radioId]="'radio2'"
-								[group]="'top-row-functions-ideapad-radio'"
-								[checked]="fnkey$ | async"
-								[label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.fnKey' | translate"
-								[iconName]="'icomoon icomoon-F1-F12-funciton'"
-								(change)="update$.next(keyType.FNKEY)"
-								[value]="keyType.FNKEY">
-							</vtr-ui-rectangle-radio> -->
-
-						<!-- <vtr-ui-circle-radio-with-checkbox [theme]="'white'"
-								[radioId]="'radio2'"
-								[group]="'top-row-functions-ideapad-radio'"
-								[checked]="fnkey$ | async"
-								[label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.fnKey' | translate"
-								(optionChange)="update$.next(keyType.FNKEY)"
-								[textId]="'myDevice-settings-inputAccessories-top-row-functions-ideapad'"
-								[value]="'icomoon icomoon-F1-F12-funciton'"
-								[processLabel]="false">
-							</vtr-ui-circle-radio-with-checkbox> -->
-						<!-- </div> -->
-						<vtr-ui-circle-radio-with-checkbox-list [groupName]="'top-row-function-radio-group'"
-							(optionChange)="onFunctionLockRadioChange($event)"
-							[radioDetails]="functionLockUIModel">
-						</vtr-ui-circle-radio-with-checkbox-list>
-					</div>
-					<p class="text mt-3"
-						*ngIf="hotkey$ | async"
-						role="heading"
-						id="topRowFunctionsIdeapad-note-sFunKey">
-						{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.note.sFunKey' | translate}}
-					</p>
-					<p class="text mt-3"
-						role="heading"
-						*ngIf="fnkey$ | async"
-						id="topRowFunctionsIdeapad-note-fnKey">
-						{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.note.fnKey' | translate}}
-					</p>
-				</div>
-			</div>
+	<vtr-ui-row-switch
+		[title]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.title' | translate"
+		componentName="Input Accessories"
+		[caption]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.description' | translate"
+		[leftIcon]="['fal', 'keyboard']"
+		[theme]="'white'"
+		[showChildContent]="true"
+		[switchId]="'inputAccessory.topRowFunctions'">
+		<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+			<vtr-ui-circle-radio-with-checkbox-list [groupName]="'top-row-function-radio-group'"
+				(optionChange)="onFunctionLockRadioChange($event)"
+				[radioDetails]="functionLockUIModel">
+			</vtr-ui-circle-radio-with-checkbox-list>
+			<p class="text mt-3"
+				*ngIf="hotkey$ | async"
+				role="text"
+				id="topRowFunctionsIdeapad-note-sFunKey">
+				{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.note.sFunKey' | translate}}
+			</p>
+			<p class="text mt-3"
+				*ngIf="fnkey$ | async"
+				role="text"
+				id="topRowFunctionsIdeapad-note-fnKey">
+				{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.note.fnKey' | translate}}
+			</p>
 		</div>
-	</div>
-	<!--<vtr-ui-row-switch></vtr-ui-row-switch>-->
+	</vtr-ui-row-switch>
 </div>

@@ -20,22 +20,21 @@
 	<div class="mb-5 body-content">
 		<div class="row px-0">
 			<div class="col-12 header">
-				<h2 class="heading2">{{getComponentsTitle()}}</h2>
-				<a class="refresh-button"
+				<h2 id="hwscan-components-title" role="heading" class="heading2">{{getComponentsTitle()}}</h2>
+				<vtr-ui-hyperlink-button class="refresh-button"
+					linkId="hwscan-refresh-modules-btn"
+					linkRole="button"
 					*ngIf="!isRefreshingModules() && !isScanExecuting() && !isRecoverExecuting()"
-					vtrMetrics
+					hyperlinkStyle="xs-300-blue-lighter"
 					metricsEvent="FeatureClick"
 					metricsParent="HardwareScan"
 					metricsItem="HardwareScan.RefreshModules"
-					href="javascript:void();"
-					tabindex="1"
-					[ngClass]="{'action-anchor': !disableRefreshAnchor() , 'disabled-anchor': disableRefreshAnchor()}"
-					(click)="refreshModules()">{{'hardwareScan.refreshModule' | translate}}<fa-icon class="refresh-icon"
-						placement="auto"
-						[icon]="['fal', 'redo']"
-						container="vtr-root">
-					</fa-icon>
-				</a>
+				 	[disableTooltip]="true"
+				 	[isDisabled]="disableRefreshAnchor()"
+				 	[faIcon]="['fal', 'redo']"
+					[label]="'hardwareScan.refreshModule' | translate"
+					(hyperlinkClick)="refreshModules()">
+				</vtr-ui-hyperlink-button>
 			</div>
 		</div>
 		<hr>
@@ -53,11 +52,11 @@
 					</vtr-widget-hardware-scan-item>
 
 					<div class="loading-components" *ngIf="isRefreshingModules() && !isRecoverExecuting()">
-						<fa-icon placement="auto" [spin]="true" [icon]="['fal', 'circle-notch']" container="vtr-root">
+						<fa-icon id="hwscan-refresh-modules-spinner" role="img" placement="auto" [spin]="true" [icon]="['fal', 'circle-notch']" container="vtr-root">
 						</fa-icon>
 					</div>
 
-					<div class="refresh-message" *ngIf="isRefreshingModules() && !isRecoverExecuting()" aria-live="polite">
+					<div id="hwscan-refresh-modules-message" role="text" class="refresh-message" *ngIf="isRefreshingModules() && !isRecoverExecuting()" aria-live="polite">
 						{{ 'hardwareScan.refreshMessage' | translate }}
 					</div>
 				</div>

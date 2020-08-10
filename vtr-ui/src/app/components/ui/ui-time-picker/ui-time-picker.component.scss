@@ -240,7 +240,7 @@ $high-contrast-white-box-shadow: 0 0 0 0.2rem $high-contrast-white-dark-magenta;
 			border: 0.1rem solid $light;
 		}
 
-		&:hover {
+		&:hover, &:focus {
 				@media #{$white-on-black} {
 					@include high-contrast-black-border;
 					}
@@ -326,9 +326,12 @@ $high-contrast-white-box-shadow: 0 0 0 0.2rem $high-contrast-white-dark-magenta;
 
 	.toggle-icon {
 		fa-icon {
-			color: #4579f0;
+			color: $gray_dark;
 			font-size: 2rem;
 			cursor: pointer;
+			&.chevron-up {
+				color: $main;
+			}
 		}
 		&:focus {
 			@include outline-blue;
