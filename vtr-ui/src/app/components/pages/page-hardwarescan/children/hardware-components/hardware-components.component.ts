@@ -310,7 +310,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 									}
 								}
 							}).catch((error) => {
-								this.logger.error('ON CANCEL SCAN ' + error);
+								this.logger.error('[ON CANCEL SCAN] ' + error);
 							});
 						}, cancelWatcherDelay);
 					};
@@ -560,7 +560,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					'', rbsTaskActionResult.taskResult, this.timerService.stop());
 			})
 			.catch((error) => {
-				this.logger.error('DO RECOVER BAD SECTORS ' + error);
+				this.logger.error('[DO RECOVER BAD SECTORS] ' + error);
 			})
 			.finally(() => {
 				// Defines information about module details
@@ -736,13 +736,13 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					// User has clicked in the 'X' button, so we also need to re-enable the Quick/Custom scan button here.
 					this.startScanClicked = false;
 				}).catch((error) => {
-					this.logger.error('CHECK PRE SCAN INFO ' + error);
+					this.logger.error('[CHECK PRE SCAN INFO] ' + error);
 				});
 			} else {
 				this.getDoScan(taskType, requests);
 			}
 		}).catch((error) => {
-			this.logger.error('CHECK PRE SCAN INFO ' + error);
+			this.logger.error('[CHECK PRE SCAN INFO] ' + error);
 		});
 	}
 

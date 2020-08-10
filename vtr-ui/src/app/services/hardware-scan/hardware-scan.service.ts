@@ -121,10 +121,10 @@ export class HardwareScanService {
 						if (hwscanPluginInfo) {
 							this.pluginVersion = hwscanPluginInfo.PluginVersion;
 						} else {
-							this.logger.error(this.invalidResponse);
+							this.logger.error('[DO PRIORITY REQUESTS] ' + this.invalidResponse);
 						}
 					}).catch((error) => {
-						this.logger.error(error);
+						this.logger.error('[DO PRIORITY REQUESTS] ' + error);
 					});
 
 					// Retrieve an updated the last Scan's results (it does not use the CLI)
@@ -134,7 +134,7 @@ export class HardwareScanService {
 					this.culture = window.navigator.languages[0];
 					this.reloadItemsToScan(false);
 				} else {
-					this.logger.error('HardwareScan is not available');
+					this.logger.error('[DO PRIORITY REQUESTS] HardwareScan is not available');
 				}
 			});
 		}
