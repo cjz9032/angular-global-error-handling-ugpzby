@@ -107,8 +107,7 @@ export class PageNetworkboostComponent implements OnInit, OnDestroy {
 			this.fetchSubscrition.unsubscribe();
 		}
 
-		this.gamingQuickSettingToolbarService.unregisterEvent('NetworkBoost');
-		this.shellServices.unRegisterEvent(EventTypes.gamingQuickSettingsNetworkBoostStatusChangedEvent, this.networkBoostEvent);
+		this.networkBoostUnRegisterEvent();
 	}
 
 	async openTargetModal() {
@@ -276,5 +275,10 @@ export class PageNetworkboostComponent implements OnInit, OnDestroy {
 				this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoostStatus, status);
 			}
 		});
+	}
+
+	networkBoostUnRegisterEvent () {
+		this.gamingQuickSettingToolbarService.unregisterEvent('NetworkBoost');
+		this.shellServices.unRegisterEvent(EventTypes.gamingQuickSettingsNetworkBoostStatusChangedEvent, this.networkBoostEvent);
 	}
 }

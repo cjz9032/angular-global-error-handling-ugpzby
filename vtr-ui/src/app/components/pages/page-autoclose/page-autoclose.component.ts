@@ -48,7 +48,6 @@ export class PageAutocloseComponent implements OnInit, OnDestroy {
 		private commonService: CommonService,
 		private loggerService: LoggerService,
 		private translate: TranslateService,
-		public deviceService: DeviceService,
 		private shellServices: VantageShellService,
 		private gamingQuickSettingToolbarService: GamingQuickSettingToolbarService,
 		private ngZone: NgZone,
@@ -272,6 +271,11 @@ export class PageAutocloseComponent implements OnInit, OnDestroy {
 		});
 	}
 
+	autoCloseUnRegisterEvent () {
+		this.gamingQuickSettingToolbarService.unregisterEvent('AutoClose');
+		this.shellServices.unRegisterEvent(EventTypes.gamingQuickSettingsAutoCloseStatusChangedEvent, this.autoCloseEvent);
+	}
+
 	ngOnDestroy() {
 		if (this.cmsSubscription) {
 			this.cmsSubscription.unsubscribe();
@@ -281,7 +285,6 @@ export class PageAutocloseComponent implements OnInit, OnDestroy {
 			this.notificationSubscription.unsubscribe();
 		}
 
-		this.gamingQuickSettingToolbarService.unregisterEvent('AutoClose');
-		this.shellServices.unRegisterEvent(EventTypes.gamingQuickSettingsAutoCloseStatusChangedEvent, this.autoCloseEvent);
+		this.autoCloseUnRegisterEvent();
 	}
 }

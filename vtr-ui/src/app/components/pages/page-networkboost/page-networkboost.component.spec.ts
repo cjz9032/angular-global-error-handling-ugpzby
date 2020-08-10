@@ -303,3 +303,117 @@
 // // }
 
 // });
+
+
+
+
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, NO_ERRORS_SCHEMA, Input } from '@angular/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateStore } from '@ngx-translate/core';
+import { of } from 'rxjs';
+
+import { CMSService } from 'src/app/services/cms/cms.service';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { GamingQuickSettingToolbarService } from 'src/app/services/gaming/gaming-quick-setting-toolbar/gaming-quick-setting-toolbar.service';
+import { NetworkBoostService } from 'src/app/services/gaming/gaming-networkboost/networkboost.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { PageNetworkboostComponent } from './page-networkboost.component';
+import { TranslationModule } from 'src/app/modules/translation.module';
+
+@Component({ selector: 'vtr-ui-toggle', template: '' })
+export class UiToggleStubComponent {
+    @Input() onOffSwitchId: string;
+}
+
+describe('PageNetworkboostComponent', () => {
+	let component: PageNetworkboostComponent;
+    let fixture: ComponentFixture<PageNetworkboostComponent>;
+    let shellServices:any;
+    let gamingQuickSettingToolbarService:any;
+
+    describe('quick setting toolbar & toast event', () => {
+        
+        const cmsMock = {
+            Results: [{
+                Id: 'e64d43892d8448d088f3e6037e385122', Title: 'Header Image DCC',
+                ShortTitle: '', Description: '',
+                FeatureImage: 'https://qa.csw.lenovo.com/-/media/Lenovo/Vantage/Features/DCC_top_image.jpg?v=5cf8a0151ea84c4ca43e906339c3c3b2',
+                Action: '', ActionType: null, ActionLink: null, BrandName: 'brandname', BrandImage: '',
+                Priority: 'P1', Page: null, Template: 'header', Position: null, ExpirationDate: null,
+                Filters: { 'DeviceTag.Value': { key: 'System.DccGroup', operator: '==', value: 'true' } }
+            },
+            {
+                Id: '8516ba14dba5412ca954c3ccfdcbff90', Title: 'Default Header Image', ShortTitle: '', Description: '',
+                FeatureImage: 'https://qa.csw.lenovo.com/-/media/Lenovo/Vantage/Features/Header-Image-Default.jpg?v=5d0bf7fd0065478c977ed284fecac45d', Action: '',
+                ActionType: null, ActionLink: null, BrandName: '', BrandImage: '', Priority: 'P2', Page: null,
+                Template: 'header', Position: null, ExpirationDate: null, Filters: null
+            }], Metadata: { Count: 2 }
+        };
+
+        const cmsServiceMock = {
+            fetchCMSContent: (params) => of(cmsMock),
+            getOneCMSContent: (res, template, position) => res = cmsMock.Results
+        };
+        const loggerServiceSpy = jasmine.createSpyObj('LoggerService', ['error', 'info']);
+        const vantageShellServiceSpy = jasmine.createSpyObj('VantageShellService', ['unRegisterEvent', 'registerEvent']);
+        const networkBoostServiceSpy = jasmine.createSpyObj('NetworkBoostService', ['isShellAvailable', 'getNeedToAsk', 'getNetworkBoostStatus', 'setNetworkBoostStatus']);
+        const gamingQuickSettingToolbarServiceSpy = jasmine.createSpyObj('GamingQuickSettingToolbarService', ['registerEvent', 'unregisterEvent']);
+
+
+        beforeEach(async(() => {
+            TestBed.configureTestingModule({
+                declarations: [PageNetworkboostComponent, UiToggleStubComponent],
+                imports: [ TranslationModule, HttpClientModule ],
+                schemas: [NO_ERRORS_SCHEMA],
+                providers: [
+                    { provide: HttpClient },
+                    { provide: TranslateStore },
+                    // { provide: CommonService, useValue: commonServiceSpy },
+                    { provide: LoggerService, useValue: loggerServiceSpy },
+                    { provide: CMSService, useValue: cmsServiceMock },
+                    { provide: VantageShellService, useValue: vantageShellServiceSpy },
+                    { provide: NetworkBoostService, useValue: networkBoostServiceSpy },
+                    { provide: GamingQuickSettingToolbarService, useValue: gamingQuickSettingToolbarServiceSpy }
+                ]
+            }).compileComponents();
+            shellServices = TestBed.inject(VantageShellService);
+            gamingQuickSettingToolbarService = TestBed.inject(GamingQuickSettingToolbarService);
+            fixture = TestBed.createComponent(PageNetworkboostComponent);
+            component = fixture.componentInstance;
+            fixture.detectChanges();
+        }));
+
+        it('ngOnInit', () => {
+            spyOn(component, 'networkBoostRegisterEvent').and.callThrough();
+            expect(component.networkBoostRegisterEvent).toHaveBeenCalledTimes(0);
+
+            component.ngOnInit();
+            expect(component.networkBoostRegisterEvent).toHaveBeenCalledTimes(1); 
+            
+            component.networkBoostRegisterEvent();
+            expect(gamingQuickSettingToolbarService.registerEvent).toHaveBeenCalled();
+            expect(shellServices.registerEvent).toHaveBeenCalled();
+        })
+    
+        it('onGamingQuickSettingsNetworkBoostStatusChangedEvent', () => {
+            component.onGamingQuickSettingsNetworkBoostStatusChangedEvent(1);
+            expect(component.toggleStatus).toBe(true);
+    
+            component.onGamingQuickSettingsNetworkBoostStatusChangedEvent(0);
+            expect(component.toggleStatus).toBe(false);
+        });
+    
+        it('ngOnDestroy', () => {
+            spyOn(component, 'networkBoostUnRegisterEvent').and.callThrough();
+            expect(component.networkBoostUnRegisterEvent).toHaveBeenCalledTimes(0);
+
+            component.ngOnDestroy();
+            expect(component.networkBoostUnRegisterEvent).toHaveBeenCalledTimes(1); 
+
+            component.networkBoostUnRegisterEvent();
+            expect(gamingQuickSettingToolbarService.unregisterEvent).toHaveBeenCalled();
+            expect(shellServices.unRegisterEvent).toHaveBeenCalled();
+        })
+    });
+});
