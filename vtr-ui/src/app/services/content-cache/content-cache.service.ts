@@ -29,7 +29,7 @@ interface IConfigItem {
 }
 
 interface ICacheSettings {
-  Key: string, 
+  Key: string,
   Value: string,
   Component: string,
   UserName: string
@@ -42,16 +42,6 @@ export class ContentCacheService {
   private buildInContents = {};
   private buildInArticls = {};
   private contentLocalCacheContract: any;
-
-  private cacheValueOfContents = {
-    "positionA": [],
-    "positionB": [],
-    "positionC": [],
-    "positionD": [],
-    "positionE": [],
-    "positionF": [],
-    "welcome-text": []
-  }
 
   constructor(
     private commsService: CommsService,
@@ -67,7 +57,7 @@ export class ContentCacheService {
     private selfselectService: SelfSelectService,
     private hypService: HypothesisService,
     private dashboardService: DashboardService) {
-      this.contentLocalCacheContract = this.vantageShellService.getContentLocalCache();
+    this.contentLocalCacheContract = this.vantageShellService.getContentLocalCache();
   }
 
   public async getCachedContents(page: string, contentCards: any) {
@@ -111,15 +101,48 @@ export class ContentCacheService {
   }
 
   private async cacheContents(cacheKey, cmsOptions: any, contentCards: any) {
-      await this.fetchCMSContent(cmsOptions, contentCards);
-      await this.fetchUPEContent(contentCards);
-      this.doStore(cacheKey);
+    Promise.all([this.fetchCMSContent(cmsOptions, contentCards), this.fetchUPEContent(contentCards)])
+      .then(async response => {
+        let cacheValueOfContents = {
+          "positionA": [],
+          "positionB": [],
+          "positionC": [],
+          "positionD": [],
+          "positionE": [],
+          "positionF": [],
+          "welcome-text": []
+        }
+        await this.fillCacheValue(response, contentCards, cacheValueOfContents);
+        this.saveContents(cacheKey, cacheValueOfContents);
+      }).catch(error => {
+        this.logger.error('cacheContents error ', error);
+      });
   }
 
-  private doStore(cacheKey) {
+  private async fillCacheValue(response: any, contentCards: any, cacheValueOfContents: any) {
+    const cmsContents = response[0];
+    if (cmsContents && cmsContents.length > 0) {
+      this.populateContent(cmsContents, contentCards, ContentSource.CMS, cacheValueOfContents);
+      const welcomeTextContent = this.cmsService.getOneCMSContent(response, 'top-title-welcome-text', 'welcome-text')[0];
+      if (welcomeTextContent && welcomeTextContent.Title) {
+        const localInfo = await this.getLocalInfo();
+        if ([SegmentConst.Consumer, SegmentConst.SMB].includes(localInfo.Segment)) {
+          cacheValueOfContents['welcome-text'] = new Array(welcomeTextContent);
+        } else {
+          cacheValueOfContents['welcome-text'] = [];
+        }
+      }
+    }
+    const upeContents = response[1];
+    if (upeContents && upeContents.length > 0) {
+      this.populateContent(upeContents, contentCards, ContentSource.UPE, cacheValueOfContents);
+    }
+  }
+
+  private saveContents(cacheKey: string, cacheValueOfContents: any) {
     let iCacheSettings: ICacheSettings = {
       Key: cacheKey,
-      Value: JSON.stringify(this.cacheValueOfContents),
+      Value: JSON.stringify(cacheValueOfContents),
       Component: "VantageShell",
       UserName: "ContentCache_Contents"
     }
@@ -127,51 +150,37 @@ export class ContentCacheService {
   }
 
   private async fetchCMSContent(cmsOptions: any, contentCards: any) {
-    const cmsContents = await this.cmsService.fetchContents(cmsOptions);
-    if (cmsContents && cmsContents.length > 0) {
-      this.populateContent(cmsContents, contentCards, ContentSource.CMS);
-      this.getWelcomeTextContent(cmsContents);
-    }
+    return await this.cmsService.fetchContents(cmsOptions);
   }
 
   private async fetchUPEContent(contentCards: any) {
     const contentCardList: IConfigItem[] = Object.values(contentCards);
-    const upeContentCards = contentCardList.filter(contentCard =>  contentCard.tileSource === 'UPE');
+    const upeContentCards = contentCardList.filter(contentCard => contentCard.tileSource === 'UPE');
     if (upeContentCards.length == 0) {
       return;
-    }   
+    }
     try {
-      const upePositions = upeContentCards.map(contentCard => contentCard.positionParam); 
-      const response = await this.upeService.fetchUPEContent({ positions: upePositions });
-      this.populateContent(response, upeContentCards, ContentSource.UPE);
+      const upePositions = upeContentCards.map(contentCard => contentCard.positionParam);
+      return await this.upeService.fetchUPEContent({ positions: upePositions });
     } catch (ex) {
-      this.logger.error('fetchUPEContent error', ex);
+      throw ex;
     }
   }
 
-  private getWelcomeTextContent(response: any) {
-    const welcomeTextContent = this.cmsService.getOneCMSContent(response, 'top-title-welcome-text', 'welcome-text')[0];
-    if (welcomeTextContent && welcomeTextContent.Title) {
-      this.localInfoService.getLocalInfo().then((localInfo: any) => {
-        if ([SegmentConst.Consumer, SegmentConst.SMB].includes(localInfo.Segment)) {
-          this.cacheValueOfContents["welcome-text"] = new Array(welcomeTextContent);
-        } else {
-          this.cacheValueOfContents["welcome-text"] = [];
-         }
-      })
-    }
+  private async getLocalInfo() {
+    return await this.localInfoService.getLocalInfo();
   }
 
-  private populateContent(response: any, contentCards: any, dataSource: ContentSource) {
+  private populateContent(response: any, contentCards: any, dataSource: ContentSource, cacheValueOfContents: any) {
     const contentCardList: IConfigItem[] = Object.values(contentCards);
     contentCardList.filter(contentCard => contentCard.cardId != 'welcome-text').forEach(contentCard => {
       let contents: any = this.cmsService.getOneCMSContent(response, contentCard.template, contentCard.positionParam, dataSource);
       if (contents && contents.length > 0) {
-        this.cacheValueOfContents[contentCard.cardId] = contents;
-      } 
-    }); 
+        cacheValueOfContents[contentCard.cardId] = contents;
+      }
+    });
   }
-  
+
   private formalizeContent(contents, cardId, dataSource?) {
     contents.forEach(content => {
       if (content.BrandName) {
