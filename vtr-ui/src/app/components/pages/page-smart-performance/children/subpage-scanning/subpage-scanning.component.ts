@@ -12,9 +12,9 @@ import { ModalSmartPerformanceCancelComponent } from 'src/app/components/modal/m
 import { ModalSmartPerformanceFeedbackComponent } from 'src/app/components/modal/modal-smart-performance-feedback/modal-smart-performance-feedback.component';
 
 @Component({
-  selector: 'vtr-subpage-scanning',
-  templateUrl: './subpage-scanning.component.html',
-  styleUrls: ['./subpage-scanning.component.scss']
+	selector: 'vtr-subpage-scanning',
+	templateUrl: './subpage-scanning.component.html',
+	styleUrls: ['./subpage-scanning.component.scss']
 })
 export class SubpageScanningComponent implements OnInit, OnChanges {
 	// @ViewChild('speedometer') speedometer: WidgetSpeedometerComponent;
@@ -60,7 +60,7 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 	) { }
 
 	ngOnInit() {
-		this.percent=0;
+		this.percent = 0;
 		this.isLoading = true;
 
 		this.spCategoryenum = SPCategory;
@@ -88,17 +88,17 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 	}
 	initSpeed() {
 		const self = this;
-		self.loop = setInterval(function () {
+		self.loop = setInterval(() => {
 			self.speedometer.speedCurrent = Math.floor(SecureMath.random() * (self.speedometer.speedMax / 2)) + 1;
 		}, 1000);
 
-		self.delay = setTimeout(function () {
+		self.delay = setTimeout(() => {
 			clearInterval(self.loop);
 			self.speedometer.speedCurrent = self.speedometer.speedMax * .9;
 		}, 10000);
 	}
 	updateScanResponse(response) {
-		if(this.scanData.percentage){
+		if (this.scanData.percentage) {
 			this.isLoading = false;
 		}
 		this.responseData = response;
@@ -174,13 +174,13 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 				this.twohundreadFlag = false;
 			}
 			if (catVal) {
-                if (subCatVal === this.spSubCategoryenum.TWOHUNDEREADANDONE) {
-                    this.GetCurrentScanninRollingTexts(
+				if (subCatVal === this.spSubCategoryenum.TWOHUNDEREADANDONE) {
+					this.GetCurrentScanninRollingTexts(
 						this.translate.instant(
 							'smartPerformance.scanningPage.nowScanningDetail.boostScanningItems.eJunk'
 						)
 					);
-                } else if (subCatVal === this.spSubCategoryenum.TWOHUNDEREADANDTWO) {
+				} else if (subCatVal === this.spSubCategoryenum.TWOHUNDEREADANDTWO) {
 					this.GetCurrentScanninRollingTexts(
 						this.translate.instant(
 							'smartPerformance.scanningPage.nowScanningDetail.boostScanningItems.networkSettings'
@@ -205,7 +205,7 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 						)
 					);
 				}
-            }
+			}
 			this.updateTitleAndSubItems(
 				this.translate.instant(
 					'smartPerformance.boostInternetPerformance.extraTitle'
@@ -261,18 +261,16 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 		}
 	}
 
- 
-
 	async openCancelScanModel() {
 		const modalCancel = this.modalService.open(ModalSmartPerformanceCancelComponent, {
 			backdrop: 'static',
 			centered: true,
 			windowClass: 'cancel-modal'
 		});
-		
-		const response = await modalCancel.result
-		if(response) {
-			this.sendModelStatus.emit()
+
+		const response = await modalCancel.result;
+		if (response) {
+			this.sendModelStatus.emit();
 		}
 		// modalCancel.componentInstance.cancelRequested.subscribe(() => {
 		// 	this.sendModelStatus.emit();
@@ -302,7 +300,8 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 	// }
 
 	updateTitleAndSubItems(nameVal, descVal) {
-		this.subItems = { name: nameVal,	desc: descVal,
+		this.subItems = {
+			name: nameVal, desc: descVal,
 			items: this.currentScanningItems
 		};
 		nameVal = '';
@@ -321,21 +320,23 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 
 	GetCurrentScanninRollingTexts(scanitems: any) {
 
-		
+
 		this.currentScanningItems = [];
 		for (const val in scanitems) {
-			//console.log(scanitems[val]); // prints values: 10, 20, 30, 40
-			this.currentScanningItems.push({ key: scanitems[val] });
+			if (Object.prototype.hasOwnProperty.call(scanitems, val)) {
+				// console.log(scanitems[val]); // prints values: 10, 20, 30, 40
+				this.currentScanningItems.push({ key: scanitems[val] });
+			}
 		}
-		//console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++",this.currentScanningItems);
-		this.currentScanningItems[0]['isCurrent'] = true;
-		
+		// console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++",this.currentScanningItems);
+		this.currentScanningItems[0].isCurrent = true;
+
 	}
 
 	/**
-	   * SP Feedback form
-	   */
-	  onclickFeedback() {
+	 * SP Feedback form
+	 */
+	onclickFeedback() {
 		this.modalService.open(ModalSmartPerformanceFeedbackComponent, {
 			backdrop: true,
 			size: 'lg',
