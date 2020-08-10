@@ -6,6 +6,7 @@ import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.
 import { HardwareScanOverallResult } from 'src/app/enums/hardware-scan-overall-result.enum';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { HardwareScanResultService } from 'src/app/services/hardware-scan/hardware-scan-result.service';
+import { LoggerService } from '../logger/logger.service';
 
 
 
@@ -25,7 +26,8 @@ export class PreviousResultService {
 	constructor(
 		shellService: VantageShellService,
 		private commonService: CommonService,
-		private hardwareScanResultService: HardwareScanResultService) {
+		private hardwareScanResultService: HardwareScanResultService,
+		private logger: LoggerService) {
 		this.hardwareScanBridge = shellService.getHardwareScan();
 	}
 
@@ -142,8 +144,16 @@ export class PreviousResultService {
 		if (this.hardwareScanBridge) {
 			return this.previousResultsResponse
 				.then((response) => {
-					this.buildPreviousResults(response);
+					if (response) {
+						this.buildPreviousResults(response);
+					} else {
+						this.logger.error('[GET LAST RESULTS] Incorrect response received');
+					}
+				}).catch((error) => {
+					this.logger.error('[GET LAST RESULTS] Previous results response not available');
 				});
+		} else {
+			this.logger.error('[GET LAST RESULTS] Hardware Scan Bridge not available');
 		}
 		return undefined;
 	}
