@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/internal/Observable';
-import {Md5} from "ts-md5";
+import { Md5 } from "ts-md5";
 import { CommsService } from '../comms/comms.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { LocalInfoService } from '../local-info/local-info.service';
@@ -12,6 +11,29 @@ import { UPEService } from '../upe/upe.service';
 import { CMSService } from '../cms/cms.service';
 import { ContentActionType, ContentSource } from 'src/app/enums/content.enum';
 import { BuildInContentService } from '../build-in-content/build-in-content.service';
+import { Subscription } from 'rxjs';
+import { SelfSelectService, SegmentConst } from '../self-select/self-select.service';
+import { HypothesisService } from '../hypothesis/hypothesis.service';
+import { DashboardService } from '../dashboard/dashboard.service';
+import { icon } from '@fortawesome/fontawesome-svg-core';
+
+
+interface IConfigItem {
+  cardId: string;
+  displayContent: any;
+  template: string;
+  positionParam: string;
+  tileSource: string;
+  cmsContent: any;
+  upeContent: any;
+}
+
+interface ICacheSettings {
+  Key: string, 
+  Value: string,
+  Component: string,
+  UserName: string
+}
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +41,17 @@ import { BuildInContentService } from '../build-in-content/build-in-content.serv
 export class ContentCacheService {
   private buildInContents = {};
   private buildInArticls = {};
+  private contentLocalCacheContract: any;
+
+  private cacheValueOfContents = {
+    "positionA": [],
+    "positionB": [],
+    "positionC": [],
+    "positionD": [],
+    "positionE": [],
+    "positionF": [],
+    "welcome-text": []
+  }
 
   constructor(
     private commsService: CommsService,
@@ -30,24 +63,27 @@ export class ContentCacheService {
     private cmsService: CMSService,
     private upeService: UPEService,
     private buildInContentService: BuildInContentService,
-    private logger: LoggerService) {
-
+    private logger: LoggerService,
+    private selfselectService: SelfSelectService,
+    private hypService: HypothesisService,
+    private dashboardService: DashboardService) {
+      this.contentLocalCacheContract = this.vantageShellService.getContentLocalCache();
   }
 
   public async getCachedContents(page: string, contentCards: any) {
-    const cmsOptions = await this.cmsService.generateContentQueryParams({Page: page});    
+    const cmsOptions = await this.cmsService.generateContentQueryParams({ Page: page });
     const cacheKey = Md5.hashStr(JSON.stringify(cmsOptions));
-    
+
     var cachedContents = await this.loadCachedContents(cacheKey) || await this.loadBuildInContents(cmsOptions);
-    
+
     this.cacheContents(cacheKey, cmsOptions, contentCards);
-    
+
     return cachedContents;
   }
 
   public async getArticleById(actionType: ContentActionType, articleId: any) {
     const locInfo = await this.cmsService.getLocalinfo();
-    if(actionType == ContentActionType.BuildIn) {
+    if (actionType == ContentActionType.BuildIn) {
       return this.buildInContentService.getArticle(articleId, locInfo.Lang);
     }
     else {
@@ -57,13 +93,13 @@ export class ContentCacheService {
 
   private async loadBuildInContents(queryParams: any) {
     const key = `${queryParams.Page}_${queryParams.Lang}`;
-    if(this.buildInContents[key]) {
+    if (this.buildInContents[key]) {
       return this.buildInContents[key];
     }
-    
+
     const contents = await this.buildInContentService.getContents(queryParams);
     const contentIds = Object.keys(contents);
-    contentIds.forEach(id=>{
+    contentIds.forEach(id => {
       contents[id] = this.formalizeContent(contents[id], id, ContentSource.Local);
     })
     this.buildInContents[key] = contents;
@@ -75,35 +111,93 @@ export class ContentCacheService {
   }
 
   private async cacheContents(cacheKey, cmsOptions: any, contentCards: any) {
+      await this.fetchCMSContent(cmsOptions, contentCards);
+      await this.fetchUPEContent(contentCards);
+      this.doStore(cacheKey);
+  }
 
+  private doStore(cacheKey) {
+    let iCacheSettings: ICacheSettings = {
+      Key: cacheKey,
+      Value: JSON.stringify(this.cacheValueOfContents),
+      Component: "VantageShell",
+      UserName: "ContentCache_Contents"
+    }
+    this.contentLocalCacheContract.set(iCacheSettings);
+  }
+
+  private async fetchCMSContent(cmsOptions: any, contentCards: any) {
+    const cmsContents = await this.cmsService.fetchContents(cmsOptions);
+    if (cmsContents && cmsContents.length > 0) {
+      this.populateContent(cmsContents, contentCards, ContentSource.CMS);
+      this.getWelcomeTextContent(cmsContents);
+    }
+  }
+
+  private async fetchUPEContent(contentCards: any) {
+    const contentCardList: IConfigItem[] = Object.values(contentCards);
+    const upeContentCards = contentCardList.filter(contentCard =>  contentCard.tileSource === 'UPE');
+    if (upeContentCards.length == 0) {
+      return;
+    }   
+    try {
+      const upePositions = upeContentCards.map(contentCard => contentCard.positionParam); 
+      const response = await this.upeService.fetchUPEContent({ positions: upePositions });
+      this.populateContent(response, upeContentCards, ContentSource.UPE);
+    } catch (ex) {
+      this.logger.error('fetchUPEContent error', ex);
+    }
+  }
+
+  private getWelcomeTextContent(response: any) {
+    const welcomeTextContent = this.cmsService.getOneCMSContent(response, 'top-title-welcome-text', 'welcome-text')[0];
+    if (welcomeTextContent && welcomeTextContent.Title) {
+      this.localInfoService.getLocalInfo().then((localInfo: any) => {
+        if ([SegmentConst.Consumer, SegmentConst.SMB].includes(localInfo.Segment)) {
+          this.cacheValueOfContents["welcome-text"] = new Array(welcomeTextContent);
+        } else {
+          this.cacheValueOfContents["welcome-text"] = [];
+         }
+      })
+    }
+  }
+
+  private populateContent(response: any, contentCards: any, dataSource: ContentSource) {
+    const contentCardList: IConfigItem[] = Object.values(contentCards);
+    contentCardList.filter(contentCard => contentCard.cardId != 'welcome-text').forEach(contentCard => {
+      let contents: any = this.cmsService.getOneCMSContent(response, contentCard.template, contentCard.positionParam, dataSource);
+      if (contents && contents.length > 0) {
+        this.cacheValueOfContents[contentCard.cardId] = contents;
+      } 
+    }); 
   }
   
-  private formalizeContent(contents, cardId, dataSource) {
-		contents.forEach(content => {
-			if (content.BrandName) {
-				content.BrandName = content.BrandName.split('|')[0]; 
-			}
-			content.DataSource = dataSource;
-		});
+  private formalizeContent(contents, cardId, dataSource?) {
+    contents.forEach(content => {
+      if (content.BrandName) {
+        content.BrandName = content.BrandName.split('|')[0];
+      }
+      content.DataSource = dataSource;
+    });
 
-		if (cardId === 'positionA') {
-			return contents.map((record) => {
-				return {
-					albumId: 1,
-					id: record.Id,
-					source: record.Title,
-					title: record.Description,
-					url: record.FeatureImage,
-					ActionLink: record.ActionLink,
-					ActionType: record.ActionType,
-					OverlayTheme: record.OverlayTheme ? record.OverlayTheme : '',
-					DataSource: record.DataSource
-				};
-			});
+    if (cardId === 'positionA') {
+      return contents.map((record) => {
+        return {
+          albumId: 1,
+          id: record.Id,
+          source: record.Title,
+          title: record.Description,
+          url: record.FeatureImage,
+          ActionLink: record.ActionLink,
+          ActionType: record.ActionType,
+          OverlayTheme: record.OverlayTheme ? record.OverlayTheme : '',
+          DataSource: record.DataSource
+        };
+      });
 
-		} else {
-			return contents[0];
-		}
+    } else {
+      return contents[0];
+    }
   }
-  
+
 }

@@ -347,9 +347,9 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 					});
 				}
 				this.setWelcomeTextTitle(result[this.positionOfWelcomeText]);
-			})
+			})	
 		});
-
+	
 		this.dccService.canShowDccDemo().then((show) => {
 			if (show) {
 				this.getHeroBannerDemoItems();
