@@ -79,9 +79,6 @@ export class HardwareScanService {
 	private lastFilteredCustomScanRequest = [];
 	private lastFilteredCustomScanResponse = [];
 
-	private bridgeErrorMessage = 'Hardware Scan Bridge not available';
-	private invalidResponse = 'Incorrect response received';
-
 	// Used to store information related to metrics
 	private currentTaskType: TaskType;
 	private currentTaskStep: TaskStep;
@@ -120,11 +117,7 @@ export class HardwareScanService {
 					this.getPluginInfo().then((hwscanPluginInfo: any) => {
 						if (hwscanPluginInfo) {
 							this.pluginVersion = hwscanPluginInfo.PluginVersion;
-						} else {
-							this.logger.error('[DO PRIORITY REQUESTS] ' + this.invalidResponse);
 						}
-					}).catch((error) => {
-						this.logger.error('[DO PRIORITY REQUESTS] ' + error);
 					});
 
 					// Retrieve an updated the last Scan's results (it does not use the CLI)
@@ -133,8 +126,6 @@ export class HardwareScanService {
 					// Retrive the hardware component list (it does use the CLI)
 					this.culture = window.navigator.languages[0];
 					this.reloadItemsToScan(false);
-				} else {
-					this.logger.error('[DO PRIORITY REQUESTS] HardwareScan is not available');
 				}
 			});
 		}
@@ -336,16 +327,8 @@ export class HardwareScanService {
 		if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.deleteScan(payload)
 				.then((response) => {
-					if (response) {
-						return response;
-					} else {
-						this.logger.error('[DELETE SCAN] ' + this.invalidResponse);
-					}
-				}).catch((error) => {
-					this.logger.error('[DELETE SCAN] ' + error);
+					return response;
 				});
-		} else {
-			this.logger.error('[DELETE SCAN] ' + this.bridgeErrorMessage);
 		}
 		return undefined;
 	}
@@ -354,16 +337,8 @@ export class HardwareScanService {
 		if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.editScan(payload)
 				.then((response) => {
-					if (response) {
-						return response;
-					} else {
-						this.logger.error('[EDIT SCHEDULED SCAN] ' + this.invalidResponse);
-					}
-				}).catch((error) => {
-					this.logger.error('[EDIT SCHEDULED SCAN] ' + error);
+					return response;
 				});
-		} else {
-			this.logger.error('[EDIT SCHEDULED SCAN] ' + this.bridgeErrorMessage);
 		}
 		return undefined;
 	}
@@ -372,16 +347,8 @@ export class HardwareScanService {
 		if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.getNextScans()
 				.then((response) => {
-					if (response) {
-						return response;
-					} else {
-						this.logger.error('[GET NEXT SCANS] ' + this.invalidResponse);
-					}
-				}).catch((error) => {
-					this.logger.error('[GET NEXT SCANS] ' + error);
+					return response;
 				});
-		} else {
-			this.logger.error('[GET NEXT SCANS] ' + this.bridgeErrorMessage);
 		}
 		return undefined;
 	}
@@ -390,16 +357,8 @@ export class HardwareScanService {
 		if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.getScheduleScan(payload)
 				.then((response) => {
-					if (response) {
-						return response;
-					} else {
-						this.logger.error('[GET SCHEDULE SCAN] ' + this.invalidResponse);
-					}
-				}).catch((error) => {
-					this.logger.error('[GET SCHEDULE SCAN] ' + error);
+					return response;
 				});
-		} else {
-			this.logger.error('[GET SCHEDULE SCAN] ' + this.bridgeErrorMessage);
 		}
 		return undefined;
 	}
@@ -408,16 +367,8 @@ export class HardwareScanService {
 		if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.getPluginInformation()
 				.then((response) => {
-					if (response) {
 					return response;
-					} else {
-						this.logger.error('[GET PLUGIN INFO] ' + this.invalidResponse);
-					}
-				}).catch((error) => {
-					this.logger.error('[GET PLUGIN INFO] ' + error);
 				});
-		} else {
-			this.logger.error('[GET PLUGIN INFO] ' + this.bridgeErrorMessage);
 		}
 		return undefined;
 	}
@@ -481,13 +432,14 @@ export class HardwareScanService {
 					if (response) {
 						return response;
 					} else {
-						this.logger.error('[GET ITEMS TO SCAN] ' + this.invalidResponse);
+						this.logger.error('[GET ITEMS TO SCAN] Incorrect response received');
 					}
-				}).catch((error) => {
+				})
+				.catch((error) => {
 					this.logger.error('[GET ITEMS TO SCAN] ' + error);
 				});
 		} else {
-			this.logger.error('[GET ITEMS TO SCAN] ' + this.bridgeErrorMessage);
+			this.logger.error('[GET ITEMS TO SCAN] Hardware Scan Bridge not available');
 		}
 		return undefined;
 	}
@@ -499,13 +451,14 @@ export class HardwareScanService {
 					if (response) {
 						return response;
 					} else {
-						this.logger.error('[GET PRE SCAN INFO] ' + this.invalidResponse);
+						this.logger.error('[GET PRE SCAN INFO] Incorrect response received');
 					}
-				}).catch((error) => {
+				})
+				.catch((error) => {
 					this.logger.error('[GET PRE SCAN INFO] ' + error);
 				});
 		} else {
-			this.logger.error('[GET PRE SCAN INFO] ' + this.bridgeErrorMessage);
+			this.logger.error('[GET PRE SCAN INFO] Hardware Scan Bridge not available');
 		}
 		return undefined;
 	}
@@ -568,8 +521,6 @@ export class HardwareScanService {
 					// Scan is finished, so we'll show its result instead of the running state
 					this.clearLastResponse();
 				});
-		} else {
-			this.logger.error('[GET DO SCAN] ' + this.bridgeErrorMessage);
 		}
 		return undefined;
 	}
@@ -619,11 +570,7 @@ export class HardwareScanService {
 				})
 				.finally(() => {
 					this.cleanUp();
-				}).catch((error: string) => {
-					this.logger.error('[CANCEL SCAN EXECUTION] ' + error);
 				});
-		} else {
-			this.logger.error('[CANCEL SCAN EXECUTION] ' + this.bridgeErrorMessage);
 		}
 		return undefined;
 	}
@@ -680,11 +627,7 @@ export class HardwareScanService {
 
 				// RBS is finished, so we'll show its result instead of the running state
 				this.clearLastResponse();
-			}).catch((error: string) => {
-				this.logger.error('[GET RECOVER BAD SECTOR] ' + error);
 			});
-		} else {
-			this.logger.error('[GET RECOVER BAD SECTOR] ' + this.bridgeErrorMessage);
 		}
 	}
 
@@ -741,14 +684,8 @@ export class HardwareScanService {
 				.then((response) => {
 					if (response) {
 						return response;
-					} else {
-						this.logger.error('[GET ITEMS TO RECOVER BAD SECTOR] ' + this.invalidResponse);
-					}
-				}).catch((error: string) => {
-					this.logger.error('[GET ITEMS TO RECOVER BAD SECTOR] ' + error);
+					} else { }
 				});
-		} else {
-			this.logger.error('[GET ITEMS TO RECOVER BAD SECTOR] ' + this.bridgeErrorMessage);
 		}
 	}
 
@@ -768,14 +705,16 @@ export class HardwareScanService {
 						this.hasItemsToRecoverBadSectors = true;
 					}
 				} else {
-					this.logger.error('[INIT LOADING MODULES] ' + this.invalidResponse);
+					this.logger.error('[INIT LOADING MODULES] Incorrect response received');
 				}
-			}).finally(() => {
+			})
+			.catch((error) => {
+				this.logger.error('[INIT LOADING MODULES] ' + error);
+			})
+			.finally(() => {
 				// Signalizes that the hardware list has been retrieved
 				this.hardwareModulesLoaded.next(true);
 				this.refreshingModules = false;
-			}).catch((error) => {
-				this.logger.error('[INIT LOADING MODULES] ' + error);
 			});
 	}
 
@@ -791,11 +730,7 @@ export class HardwareScanService {
 
 					this.customScanResponse = this.buildScanResponse(this.modulesRetrieved);
 					this.quickScanResponse = this.filterQuickResponse(this.customScanResponse);
-				}).catch((error) => {
-					this.logger.error('[GET ALL ITEMS] ' + error);
 				});
-		} else {
-			this.logger.error('[GET ALL ITEMS] ' + this.bridgeErrorMessage);
 		}
 	}
 
@@ -824,16 +759,8 @@ export class HardwareScanService {
 		if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.checkItemsForRecoverBadSectors()
 				.then((response) => {
-					if (response) {
 						return response;
-					} else {
-						this.logger.error('[CHECK ITEMS FOR RECOVER BAD SECTOR] ' + this.invalidResponse);
-					}
-				}).catch((error) => {
-					this.logger.error('[CHECK ITEMS FOR RECOVER BAD SECTOR] ' + error);
 				});
-		} else {
-			this.logger.error('[CHECK ITEMS FOR RECOVER BAD SECTOR] ' + this.bridgeErrorMessage);
 		}
 	}
 
@@ -916,8 +843,6 @@ export class HardwareScanService {
 				});
 				testRequestList = [];
 			}
-		} else {
-			this.logger.info('[BUILD SCAN REQUEST] Modules not retrieved');
 		}
 		return scanRequests;
 	}
@@ -971,8 +896,6 @@ export class HardwareScanService {
 					moduleList.push(item);
 				}
 			}
-		} else {
-			this.logger.info('[BUILD SCAN RESPONSE] Modules not retrieved');
 		}
 
 		return moduleList;
@@ -986,8 +909,6 @@ export class HardwareScanService {
 					this.customScanRequest[i].testRequestList.unshift(test);
 				}
 			}
-		} else {
-			this.logger.info('[UPDATE CUSTOM SCAN REQUEST] Scan request undefined');
 		}
 	}
 

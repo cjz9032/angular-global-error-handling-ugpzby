@@ -20,7 +20,6 @@ import { TimerService } from 'src/app/services/timer/timer.service';
 import { ModalWaitComponent } from '../../../../modal/modal-wait/modal-wait.component';
 import { TaskType, TaskStep } from 'src/app/enums/hardware-scan-metrics.enum';
 import { LenovoSupportService } from 'src/app/services/hardware-scan/lenovo-support.service';
-import { LoggerService } from 'src/app/services/logger/logger.service';
 
 const RootParent = 'HardwareScan';
 const ConfirmButton = 'Confirm';
@@ -100,8 +99,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		private translate: TranslateService,
 		private shellService: VantageShellService,
 		private timerService: TimerService,
-		private lenovoSupportService: LenovoSupportService,
-		private logger: LoggerService
+		private lenovoSupportService: LenovoSupportService
 	) {
 		this.viewResultsPath = '/hardware-scan/view-results';
 		this.isOnline = this.commonService.isOnline;
@@ -309,8 +307,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 										self.cancelHandler.cancel();
 									}
 								}
-							}).catch((error) => {
-								this.logger.error('[ON CANCEL SCAN] ' + error);
 							});
 						}, cancelWatcherDelay);
 					};
@@ -559,9 +555,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				this.sendTaskActionMetrics(TaskType.RecoverBadSectors, rbsTaskActionResult.taskCount,
 					'', rbsTaskActionResult.taskResult, this.timerService.stop());
 			})
-			.catch((error) => {
-				this.logger.error('[DO RECOVER BAD SECTORS] ' + error);
-			})
 			.finally(() => {
 				// Defines information about module details
 				this.onViewResultsRecover();
@@ -735,14 +728,10 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 					// User has clicked in the 'X' button, so we also need to re-enable the Quick/Custom scan button here.
 					this.startScanClicked = false;
-				}).catch((error) => {
-					this.logger.error('[CHECK PRE SCAN INFO] ' + error);
 				});
 			} else {
 				this.getDoScan(taskType, requests);
 			}
-		}).catch((error) => {
-			this.logger.error('[CHECK PRE SCAN INFO] ' + error);
 		});
 	}
 
