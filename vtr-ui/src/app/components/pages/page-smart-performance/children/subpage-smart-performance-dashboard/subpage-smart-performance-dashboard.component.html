@@ -128,7 +128,7 @@
 											</ngb-tab>
 											<ngb-tab id="main-2">
 												<ng-template ngbTabTitle>
-													<div class="icomoon icomoon-boost-internet"></div><p id="smart-performance-boost-title" role="title">{{'smartPerformance.boostInternetPerformance.title' |translate }}</p>>
+													<div class="icomoon icomoon-boost-internet"></div><p id="smart-performance-boost-title" role="title">{{'smartPerformance.boostInternetPerformance.title' |translate }}</p>
 												</ng-template>
 												<ng-template ngbTabContent>
 													<h2 id="smart-performance-boost-head">{{'smartPerformance.boostInternetPerformance.heading' |translate }}</h2>
@@ -179,7 +179,7 @@
 											</ngb-tab>
 											<ngb-tab id="main-3">
 												<ng-template ngbTabTitle>
-													<span class="icomoon icomoon-malware-security"></span><p id="smart-performance-malware-title" role="title">{{'smartPerformance.malwareSecurity.title' |translate }}</p>>
+													<span class="icomoon icomoon-malware-security"></span><p id="smart-performance-malware-title" role="title">{{'smartPerformance.malwareSecurity.title' |translate }}</p>
 												</ng-template>
 												<ng-template ngbTabContent>
 													<h2 id="smart-performance-malware-head">{{'smartPerformance.malwareSecurity.heading' |translate }}</h2>
@@ -285,15 +285,15 @@
 								<div class="col col-12 free-scan">
 									<div class="row">
 										<div class="contents">
-											<button id="smart-performance-freepc-scan" [ngClass]="!isOnline? 'disabled-button': 'action-button'"
-												class="btn-block"
-												(click)="scanNow()"
-												vtrMetrics
+											<vtr-ui-button (onClick)="scanNow()"
+												class="mr-4 btn-scan"
+												linkId="btn.smart-performance-start-scan"
 												metricsItem="btn.freepcscan"
 												metricsEvent="FeatureClick"
 												metricsParent="Page.Support.SmartPerformance"
-												[ngbTooltip]="'smartPerformance.scanButton' | translate"
-												placement="top">{{'smartPerformance.scanButton' |translate}}</button>
+												[isDisabled]="!isOnline"
+												[isFullWidth]="true"
+												[label]="'smartPerformance.scanButton' | translate"></vtr-ui-button>
 											<div class="description" id="smart-performance-startScan" role="text">
 												<p [innerHTML]="'smartPerformance.startScan' |translate"></p>
 											</div>

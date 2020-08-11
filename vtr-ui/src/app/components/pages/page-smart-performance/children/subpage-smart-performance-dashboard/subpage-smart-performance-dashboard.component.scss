@@ -594,6 +594,7 @@
 			.contents {
 				display: flex;
 				justify-content: center;
+				align-items: center;
 				width: 100%;
 				::ng-deep .tooltip-inner {
 					@include tt-inner()
@@ -601,65 +602,14 @@
 				::ng-deep .arrow::before {
 					@include arrow-before()
 				}
-				.action-button {
-					border-radius: 2.5rem;
-					background: $gradient_main;
-					text-transform: uppercase;
-					padding: 0 2.5rem;
-					color: $light;
-					font-size: 1.5rem;
-					height: 5rem;
-					font-weight: $weight_medium;
-					line-height: 5rem;
-					text-align: center;
-					border: 0rem;
-					cursor: pointer;
-					margin-right: 3rem;
-					max-width: 25rem;
-					overflow: hidden;
-					text-overflow: ellipsis;
-					white-space: nowrap;
-					&:focus {
-						@include outline-white;
-					}
-					@media #{$breakpoint_md}{
-						margin-right: 2rem;
-					}
-					@media #{$breakpoint_sm}{
-						font-size: 1.2rem;
-						max-width: 15.2rem;
-						padding:0rem 1rem;
-					}
-					@include ui-button-high-contrast-black;
-					@include ui-button-high-contrast-white;
-					@include high-contrast-adjust;
-				}
-				.disabled-button {
-					border-radius: 2.5rem;
-					background: $main_shade;
-					text-transform: uppercase;
-					padding: 0 2.5rem;
-					color: $light;
-					font-size: 1.5rem;
-					height: 5rem;
-					font-weight: $weight_medium;
-					line-height: 5rem;
-					text-align: center;
-					border: 0rem;
-					cursor: not-allowed;
-					margin-right: 3rem;
-					max-width: 25rem;
-					overflow: hidden;
-					text-overflow: ellipsis;
-					white-space: nowrap;
-					@media #{$breakpoint_md}{
-						margin-right: 2rem;
-					}
-					@media #{$breakpoint_sm}{
-						font-size: 1.2rem;
-						max-width: 15.2rem;
-						padding:0rem 1rem;
-					}
+				.btn-scan {
+						max-width: 25rem;
+						@media #{$breakpoint_md}{
+							max-width: 20rem;
+						}
+						@media #{$breakpoint_sm} {
+							max-width: 16rem;
+						}
 				}
 				.description {
 					max-width: 40rem;
@@ -667,6 +617,7 @@
 						margin-top: 0.5rem;
 					}
 					p {
+						margin-bottom: 0;
 						strong {
 							font-weight: $weight_bold;
 						}

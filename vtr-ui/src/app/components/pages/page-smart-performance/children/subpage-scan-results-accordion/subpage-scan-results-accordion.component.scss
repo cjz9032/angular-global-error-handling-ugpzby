@@ -1,291 +1,379 @@
 @import '../../../../../app.theme.scss';
 
-.pc-info-card{
-    &::ng-deep {
-        ngb-accordion{
-            .card {
-                border-radius: 0.6rem;
-                border: 1px solid  $screen_dark_01;
-                background: $grey_lighter;
-                //padding: 1rem;
-                margin: 1.5rem auto;
-                width: 100%;
-                .card-header {
-                    background-color: transparent;
-                    border-bottom: none;
-                    .btn-link{
-                        width: 100%;
-                        @media #{$white-on-black} {
-                            border: none;
-                        }
-                        @media #{$black-on-white} {
-                            border: none;
-                        }
-                        &:before{								
-                            content: "\e9b9";
-                            font-family: "icomoon";
-                            color:$main_light;
-                            font-size:1.4rem;																
-                            width:1.75rem;
-                            height:1.75rem;
-                            position:absolute;
-                            top:3.5rem;
-                            right: 1rem;
-                            @media #{$breakpoint_sm}{
-                                top: 2.5rem;
-                            }
-                        }
-                        &:hover, &:focus{
-                            text-decoration: none;
-                        }
-                    }
-                    .collapsed{
-                        &:before{								
-                            content: "\e9b8";
-                            font-family: "icomoon";
-                            color:$main_light;
-                            font-size:1.4rem;																
-                            width:1.75rem;
-                            height:1.75rem;
-                            position:absolute;
-                            top:3.5rem;
-                            right: 1rem;
-                            @media #{$breakpoint_sm}{
-                                top: 2.5rem;
-                            }
-                        }														
-                    }
-                    .heading {
-                        h3, h2{
-                            text-align: left;
-								font-size: $fontsize_sm;
-								color: $main_shade !important;
-								letter-spacing: 0;
-								font-weight: $weight_bold;									
-								@media #{$breakpoint_lg}{				
-									font-size: $fontsize_xs;
-								}	
-								@media #{$breakpoint_md}{				
-									font-size: $fontsize_xs2;
-								}	
-								@media #{$breakpoint_sm}{				
-									font-size:1.1rem;
-									letter-spacing: -0.02rem;									
-									margin-bottom:-0.25rem;
-								}	
-                        }
-                        .icon, .icomoon{
-                            color: $menu_hover;
-                            @media #{$breakpoint_sm}{
-                                margin-right: 0.4rem;
-                                margin-bottom: 1rem;
-                            }
-                        }
-                    }
-                }
-                .card-body {
-                    padding: 0 1.25rem;
-                    .scan-result-tabs {
-                        .nav-tabs {
-                            border-bottom: none;
-                            .nav-item {
-                                width: 20%;
-                                @media #{$breakpoint_sm}{
-                                    max-width: 20%;
-                                    width: auto;
-                                }
-                                .nav-link {
-                                    border: none;
-                                    border-left: 1px solid $grey_light;
-                                    border-bottom: 1px solid $grey_light;
-                                    color: $dark;
-                                    height: 5rem;
-                                    @media #{$breakpoint_xl}{
-                                        padding: 0.5rem 0.2rem;
-                                        height: 4.5rem;
-                                    }
-                                    @media #{$breakpoint_sm}{
-                                        padding: 0.5rem 0.2rem;
-                                        height: 3.5rem;
-                                    }                                     
-                                    &.active {
-                                        background-color: transparent;
-                                        border-bottom-color: transparent;
-                                    }                                    
-                                }
-                                &:first-child{
-                                    .nav-link{
-                                        border-left: none;
-                                    }
-                                }
-                            }
-                        }
-                        .icon-box {
-                            @media #{$breakpoint_sm}{
-                                width: auto;
-                                height: 3rem;
-                                align-items: center;
-                                min-width: 7rem;
-                            }
-                             p{
-                                font-size: 1.2rem;
-                                max-width: 8.1rem;
-                                margin-top: 0.6rem;
-                                overflow: hidden;
-                                text-overflow: ellipsis;
-                                white-space:nowrap;
-                                @media #{$breakpoint_sm}{
-                                    font-size: 1rem;
-                                    max-width: 100%;
-                                    margin-top: 0;
-                                }
-                            }
-                            .icon, .icomoon {
-                                font-size: 2.2rem;
-                                margin-right: 0.2rem;
-                                color: $main;
-                                // @media #{$breakpoint_xl} {
-                                // 	font-size: 2.2rem;
-                                // 	margin-right: 0.5rem;
-                                // }
-                                @media #{$breakpoint_sm}{
-                                    font-size: $fontsize_xs;
-                                    margin-right: 0.2rem;
-                                    margin-top: -0.6rem;
-                                }
-                            }
-                        }
-                        .scanned-area{
-                            font-weight: $weight_bold;
-                        }
-                        .scanned-list {
-                            list-style-type: none;
-                            padding: 0;
-                            margin-bottom: 0;
-                            .list-item {
-                                .item-text{
-                                    margin-bottom: 1rem;
-                                }
-                                p{
-                                    font-size: 1.4rem;
-                                    overflow: hidden;
-                                }
-                                fa-icon {
-                                    font-size: 1.4rem;
-                                    margin-right: 0.8rem;
-                                    color: $go_dark;
-                                    position: relative;
-                                    text-indent: -100rem;
-                                    &::after {
-                                        position: absolute;
-                                        height: 0.6rem;
-                                        width: 0.6rem;
-                                        content: '';
-                                        border-radius: 1rem;
-                                        background-color: $main_shade;
-                                        left: 1.5rem;
-                                        top: 0.8rem;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                .status-text{
-                    margin-top: 2.2rem;
-                    @media #{$breakpoint_sm}{
-                        margin-top: 1.25rem;
-                    }
-                    p {
-                        text-transform: uppercase;
-                        font-size: $fontsize_xs;
-                        text-align: right;
-                        color: $shade_dark;
-                        position: relative;
-                        padding-right:1.5rem;
-                        letter-spacing: 0;
-                        word-break:break-all;						
-                        
-                        @media #{$breakpoint_lg}{					
-                            font-size: $fontsize_xs;
-                           // top: 36%;
-                        }
-                        @media #{$breakpoint_md}{
-                           // top: 36%;					
-                            font-size: $fontsize_xs2;
-                        }
-                        @media #{$breakpoint_xl}{					
-                            font-size: $fontsize_xs2;
-                           // top: 36%;
-                        }
-                        @media #{$breakpoint_sm}{
-                          //  top: 32.5%;								
-                            font-size: 1.1rem;
-                        }
-                        // top: 40%;
-                    }
-                    vtr-widget-speedometer {
-                        position: absolute;
-                        right: -54%;
-                        top: 2.2rem;
-                    }
-                }
-            }
-            &.panel-open{
-                .card-header {
-                    .heading {
-                        h3, h2{
-                            font-size: 2.5rem;
-                            color: $dark !important;
-                        }
-                        .icon, .icomoon{
-                            color: $menu_hover;
-                        }
-                    }
-                }
-            }
-        }
-    }
+.pc-info-card {
+	&::ng-deep {
+		ngb-accordion {
+			.card {
+				border-radius: 0.6rem;
+				border: 1px solid $screen_dark_01;
+				background: $grey_lighter;
+				//padding: 1rem;
+				margin: 1.5rem auto;
+				width: 100%;
 
-    &.card-small{
-        margin: 2rem auto 0rem auto;
-        .heading {
-            .icon{
-                font-size: 4rem;
-                margin-right: 1.5rem;
-                color: $main_shade;
-            }
-        }
-    }
-    .heading {
-        display: flex;
-        align-items: center;
-        .icon, .icomoon{
-            font-size: 4.6rem;
-            margin-right: 1.5rem;
-            color: $main_gstart;
-            @media #{$breakpoint_sm}{
-                font-size: 3rem;
-                height: 3rem;
-                width: 3rem;
-            }
-        }
-        h2 {
-            font-size: 2.5rem;
-            padding: 0;
-            font-weight: $weight_medium;
-            color: $main_darkest;
-            text-transform: uppercase;
-            @media #{$breakpoint_sm}{
-                font-size: $fontsize_sm;
-            }
-        }
-        h3 {
-            font-size: 2rem;
-            padding: 0;
-            font-weight: $weight_medium;
-            color: $main_shade;
-            text-transform: uppercase;
-        }
-    }
+				.card-header {
+					background-color: transparent;
+					border-bottom: none;
+
+					.btn-link {
+						width: 100%;
+
+						@media #{$white-on-black} {
+							border: none;
+						}
+
+						@media #{$black-on-white} {
+							border: none;
+						}
+
+						&:before {
+							content: "\e9b9";
+							font-family: "icomoon";
+							color: $main_light;
+							font-size: 1.4rem;
+							width: 1.75rem;
+							height: 1.75rem;
+							position: absolute;
+							top: 3.5rem;
+							right: 1rem;
+
+							@media #{$breakpoint_sm} {
+								top: 2.5rem;
+							}
+						}
+
+						&:hover,
+						&:focus {
+							text-decoration: none;
+						}
+						&:focus {
+							outline: 0;
+							box-shadow: none;
+							&::after {
+								@include button-outline-blue;
+								border-radius: 0.6rem;
+								left: 0;
+								top: 0;
+								width: 100%;
+								height: 100%;
+								left: 0.4rem;
+								top: 0.4rem;
+								width: calc(100% - 0.8rem);
+								height: calc(100% - 0.8rem);
+							}
+							@media #{$black-on-white} {
+								&::after {
+									border: thin solid $dark;
+								}
+							}
+				
+							@media #{$white-on-black} {
+								&::after {
+									border: thin solid $light;
+								}
+							}
+						}
+					}
+
+					.collapsed {
+						&:before {
+							content: "\e9b8";
+							font-family: "icomoon";
+							color: $main_light;
+							font-size: 1.4rem;
+							width: 1.75rem;
+							height: 1.75rem;
+							position: absolute;
+							top: 3.5rem;
+							right: 1rem;
+
+							@media #{$breakpoint_sm} {
+								top: 2.5rem;
+							}
+						}
+					}
+
+					.heading {
+
+						h3,
+						h2 {
+							text-align: left;
+							font-size: $fontsize_sm;
+							color: $main_shade !important;
+							letter-spacing: 0;
+							font-weight: $weight_bold;
+
+							@media #{$breakpoint_lg} {
+								font-size: $fontsize_xs;
+							}
+
+							@media #{$breakpoint_md} {
+								font-size: $fontsize_xs2;
+							}
+
+							@media #{$breakpoint_sm} {
+								font-size: 1.1rem;
+								letter-spacing: -0.02rem;
+								margin-bottom: -0.25rem;
+							}
+						}
+
+						.icon,
+						.icomoon {
+							color: $menu_hover;
+
+							@media #{$breakpoint_sm} {
+								margin-right: 0.4rem;
+								margin-bottom: 1rem;
+							}
+						}
+					}
+				}
+
+				.card-body {
+					padding: 0 1.25rem;
+
+					.scan-result-tabs {
+						.nav-tabs {
+							border-bottom: none;
+
+							.nav-item {
+								width: 20%;
+
+								@media #{$breakpoint_sm} {
+									max-width: 20%;
+									width: auto;
+								}
+
+								.nav-link {
+									border: none;
+									border-left: 1px solid $grey_light;
+									border-bottom: 1px solid $grey_light;
+									color: $dark;
+									height: 5rem;
+
+									@media #{$breakpoint_xl} {
+										padding: 0.5rem 0.2rem;
+										height: 4.5rem;
+									}
+
+									@media #{$breakpoint_sm} {
+										padding: 0.5rem 0.2rem;
+										height: 3.5rem;
+									}
+
+									&.active {
+										background-color: transparent;
+										border-bottom-color: transparent;
+									}
+								}
+
+								&:first-child {
+									.nav-link {
+										border-left: none;
+									}
+								}
+							}
+						}
+
+						.icon-box {
+							@media #{$breakpoint_sm} {
+								width: auto;
+								height: 3rem;
+								align-items: center;
+								min-width: 7rem;
+							}
+
+							p {
+								font-size: 1.2rem;
+								max-width: 8.1rem;
+								margin-top: 0.6rem;
+								overflow: hidden;
+								text-overflow: ellipsis;
+								white-space: nowrap;
+
+								@media #{$breakpoint_sm} {
+									font-size: 1rem;
+									max-width: 100%;
+									margin-top: 0;
+								}
+							}
+
+							.icon,
+							.icomoon {
+								font-size: 2.2rem;
+								margin-right: 0.2rem;
+								color: $main;
+
+								// @media #{$breakpoint_xl} {
+								// 	font-size: 2.2rem;
+								// 	margin-right: 0.5rem;
+								// }
+								@media #{$breakpoint_sm} {
+									font-size: $fontsize_xs;
+									margin-right: 0.2rem;
+									margin-top: -0.6rem;
+								}
+							}
+						}
+
+						.scanned-area {
+							font-weight: $weight_bold;
+						}
+
+						.scanned-list {
+							list-style-type: none;
+							padding: 0;
+							margin-bottom: 0;
+
+							.list-item {
+								.item-text {
+									margin-bottom: 1rem;
+								}
+
+								p {
+									font-size: 1.4rem;
+									overflow: hidden;
+								}
+
+								fa-icon {
+									font-size: 1.4rem;
+									margin-right: 0.8rem;
+									color: $go_dark;
+									position: relative;
+									text-indent: -100rem;
+
+									&::after {
+										position: absolute;
+										height: 0.6rem;
+										width: 0.6rem;
+										content: '';
+										border-radius: 1rem;
+										background-color: $main_shade;
+										left: 1.5rem;
+										top: 0.8rem;
+									}
+								}
+							}
+						}
+					}
+				}
+
+				.status-text {
+					margin-top: 2.2rem;
+
+					@media #{$breakpoint_sm} {
+						margin-top: 1.25rem;
+					}
+
+					p {
+						text-transform: uppercase;
+						font-size: $fontsize_xs;
+						text-align: right;
+						color: $shade_dark;
+						position: relative;
+						padding-right: 1.5rem;
+						letter-spacing: 0;
+						word-break: break-all;
+
+						@media #{$breakpoint_lg} {
+							font-size: $fontsize_xs;
+							// top: 36%;
+						}
+
+						@media #{$breakpoint_md} {
+							// top: 36%;					
+							font-size: $fontsize_xs2;
+						}
+
+						@media #{$breakpoint_xl} {
+							font-size: $fontsize_xs2;
+							// top: 36%;
+						}
+
+						@media #{$breakpoint_sm} {
+							//  top: 32.5%;								
+							font-size: 1.1rem;
+						}
+
+						// top: 40%;
+					}
+
+					vtr-widget-speedometer {
+						position: absolute;
+						right: -54%;
+						top: 2.2rem;
+					}
+				}
+			}
+
+			&.panel-open {
+				.card-header {
+					.heading {
+
+						h3,
+						h2 {
+							font-size: 2.5rem;
+							color: $dark !important;
+						}
+
+						.icon,
+						.icomoon {
+							color: $menu_hover;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&.card-small {
+		margin: 2rem auto 0rem auto;
+
+		.heading {
+			.icon {
+				font-size: 4rem;
+				margin-right: 1.5rem;
+				color: $main_shade;
+			}
+		}
+	}
+
+	.heading {
+		display: flex;
+		align-items: center;
+
+		.icon,
+		.icomoon {
+			font-size: 4.6rem;
+			margin-right: 1.5rem;
+			color: $main_gstart;
+
+			@media #{$breakpoint_sm} {
+				font-size: 3rem;
+				height: 3rem;
+				width: 3rem;
+			}
+		}
+
+		h2 {
+			font-size: 2.5rem;
+			padding: 0;
+			font-weight: $weight_medium;
+			color: $main_darkest;
+			text-transform: uppercase;
+
+			@media #{$breakpoint_sm} {
+				font-size: $fontsize_sm;
+			}
+		}
+
+		h3 {
+			font-size: 2rem;
+			padding: 0;
+			font-weight: $weight_medium;
+			color: $main_shade;
+			text-transform: uppercase;
+		}
+	}
 }
