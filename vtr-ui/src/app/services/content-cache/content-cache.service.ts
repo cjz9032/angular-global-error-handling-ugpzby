@@ -123,7 +123,7 @@ export class ContentCacheService {
     const cmsContents = response[0];
     if (cmsContents && cmsContents.length > 0) {
       this.populateContent(cmsContents, contentCards, ContentSource.CMS, cacheValueOfContents);
-      const welcomeTextContent = this.cmsService.getOneCMSContent(response, 'top-title-welcome-text', 'welcome-text')[0];
+      const welcomeTextContent = this.cmsService.getOneCMSContent(cmsContents, 'top-title-welcome-text', 'welcome-text')[0];
       if (welcomeTextContent && welcomeTextContent.Title) {
         const localInfo = await this.getLocalInfo();
         if ([SegmentConst.Consumer, SegmentConst.SMB].includes(localInfo.Segment)) {
@@ -143,7 +143,7 @@ export class ContentCacheService {
     let iCacheSettings: ICacheSettings = {
       Key: cacheKey,
       Value: JSON.stringify(cacheValueOfContents),
-      Component: "VantageShell",
+      Component: "ContentCache",
       UserName: "ContentCache_Contents"
     }
     this.contentLocalCacheContract.set(iCacheSettings);
@@ -176,9 +176,34 @@ export class ContentCacheService {
     contentCardList.filter(contentCard => contentCard.cardId != 'welcome-text').forEach(contentCard => {
       let contents: any = this.cmsService.getOneCMSContent(response, contentCard.template, contentCard.positionParam, dataSource);
       if (contents && contents.length > 0) {
+        if (contentCard.positionParam != 'position-A') {
+          contents = this.filterContentsByCondition(contents);
+        }
         cacheValueOfContents[contentCard.cardId] = contents;
       }
     });
+  }
+
+  private filterContentsByCondition(contents: any) {
+    const result = [];
+    for (let i = 0; i < contents.length; i++) {
+      const content = contents[i];
+      if (i == 0 && content.ExpirationDate == null) {
+        return new Array(content);
+      }
+      if (content.ExpirationDate != null) {
+        if (result.length == 1) {
+           continue;
+        }
+        result.push(content);
+      } else {
+        result.push(content);
+        if (result.length == 2) {
+           break;
+        }
+      }
+    }
+    return result;
   }
 
   private formalizeContent(contents, cardId, dataSource?) {
