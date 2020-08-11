@@ -97,8 +97,14 @@ export class ContentCacheService {
   }
 
   private async loadCachedContents(cacheKey) {
-	  const cachedObject = await this.contentLocalCacheContract.get(cacheKey);
-	  if (cachedObject !== undefined) {
+	  let iCacheSettings: ICacheSettings = {
+		  Key: cacheKey,
+		  Value: null,
+		  Component: "ContentCache",
+		  UserName: "ContentCache_Contents"
+	  };
+	  const cachedObject = await this.contentLocalCacheContract.get(iCacheSettings);
+	  if (cachedObject && cachedObject.Value) {
 		  const contents = JSON.parse(cachedObject.Value);
 		  const contentIds = Object.keys(contents);
 		  contentIds.forEach(id => {

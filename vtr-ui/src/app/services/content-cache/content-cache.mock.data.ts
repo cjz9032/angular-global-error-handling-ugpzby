@@ -1,26 +1,20 @@
 import {Md5} from "ts-md5";
 export class MockContentLocalCacheTest {
-	public get(key) : any{
-		const ret = {
-			Key: key,
-			Value: null,
-			Component: "VantageShell",
-			UserName: "CMSCache_Contents"
-		};
+	public get(par) : any{
 
-		if(key === Md5.hashStr(JSON.stringify({PAGE:'normalContents'}))) {
-			ret.Value = JSON.stringify(NORMAL_CONTENTS);
+		if(par.Key === Md5.hashStr(JSON.stringify({PAGE:'normalContents'}))) {
+			par.Value = JSON.stringify(NORMAL_CONTENTS);
 		}
-		else if (key === Md5.hashStr(JSON.stringify({PAGE:'expiredDateWithPoistionB'}))){
-			ret.Value = JSON.stringify(EXPIRED_DATE_INPOISTIONB);
+		else if (par.Key === Md5.hashStr(JSON.stringify({PAGE:'expiredDateWithPoistionB'}))){
+			par.Value = JSON.stringify(EXPIRED_DATE_INPOISTIONB);
 		}
-		else if (key === Md5.hashStr(JSON.stringify({PAGE:'NotReachDisplayDateWithPoistionB'}))){
-			ret.Value = JSON.stringify(DISPALY_DATE_INPOISTIONB);
+		else if (par.Key === Md5.hashStr(JSON.stringify({PAGE:'NotReachDisplayDateWithPoistionB'}))){
+			par.Value = JSON.stringify(DISPALY_DATE_INPOISTIONB);
 		}
-		else if (key === Md5.hashStr(JSON.stringify({PAGE:'multi-ItemsInPoistionB'}))){
-			ret.Value = JSON.stringify(MULITI_ITEM_INPOISTIONB);
+		else if (par.Key === Md5.hashStr(JSON.stringify({PAGE:'multi-ItemsInPoistionB'}))){
+			par.Value = JSON.stringify(MULITI_ITEM_INPOISTIONB);
 		}
-		return ret;
+		return par;
 	}
 }
 

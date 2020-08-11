@@ -47,7 +47,7 @@ describe('ContentCacheService', () => {
 		commonService = jasmine.createSpyObj('CommonService',
 			['']);
 		logger = jasmine.createSpyObj('LoggerService',
-			['']);
+			['error']);
 		devService = jasmine.createSpyObj('DevService',
 			['']);
 		commsService = jasmine.createSpyObj('CommsService',
