@@ -1,10 +1,9 @@
-import { Component, OnInit, HostListener, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { FormGroup, FormControl } from '@angular/forms';
-import { isNull, isUndefined } from 'util';
 
 @Component({
 	selector: 'vtr-modal-smart-performance-feedback',
@@ -30,7 +29,7 @@ export class ModalSmartPerformanceFeedbackComponent implements OnInit {
 			]
 		},
 		{
-			likelyValues: [1, 2, 3, 4, 5], 
+			likelyValues: [1, 2, 3, 4, 5],
 			name: 'fbQ2',
 			question: 'smartPerformance.feedbackContainer.questions.q2',
 			ratingValue: [
@@ -67,7 +66,7 @@ export class ModalSmartPerformanceFeedbackComponent implements OnInit {
 			]
 		},
 		{
-			ynValues: ['Yes','No'],
+			ynValues: ['Yes', 'No'],
 			name: 'fbQ6',
 			question: 'smartPerformance.feedbackContainer.questions.q6',
 			ratingValue: [
@@ -101,10 +100,11 @@ export class ModalSmartPerformanceFeedbackComponent implements OnInit {
 	feedbackSuccess = false;
 	leftTime = 3;
 
-	constructor(public activeModal: NgbActiveModal,
+	constructor(
+		public activeModal: NgbActiveModal,
 		private commonService: CommonService,
 		private shellService: VantageShellService
-	) { 
+	) {
 		this.metrics = this.shellService.getMetrics();
 	}
 
@@ -113,7 +113,7 @@ export class ModalSmartPerformanceFeedbackComponent implements OnInit {
 			LocalStorageKey.IsFreeFullFeatureEnabled
 		);
 
-		//generating the form
+		// generating the form
 		this.feedbackForm = new FormGroup({
 			fbQ1: new FormControl(null),
 			fbQ2: new FormControl(null),
@@ -125,16 +125,12 @@ export class ModalSmartPerformanceFeedbackComponent implements OnInit {
 			fbQ8: new FormControl(null),
 			fbComment: new FormControl(null),
 		});
-
-		setTimeout(() => {
-			this.cross.nativeElement.focus();
-		}, 500);
 	}
 
 	onFeedBackSubmit() {
 		const formData = this.feedbackForm.value;
 		let qa = {};
-		if(!this.isSubscribed){
+		if (!this.isSubscribed){
 			qa = {
 				easeOfScanFeature: formData.fbQ1,
 				easeOfScanResult: formData.fbQ2,
@@ -174,6 +170,19 @@ export class ModalSmartPerformanceFeedbackComponent implements OnInit {
 
 	closeModal() {
 		this.activeModal.close('close');
+	}
+
+	@HostListener('keydown', ['$event'])
+	onKeyDown(event: KeyboardEvent) {
+		if (event.shiftKey &&
+			event.key === 'Tab' &&
+			document.activeElement &&
+			(document.activeElement.id.includes('feedback-likely-1') ||
+				document.activeElement.id.includes('feedback-likely-5'))
+		) {
+			document.getElementById('smart-performance-feedback-modal-btn-close').focus();
+			event.preventDefault();
+		}
 	}
 
 	/*isSelected(value: number, secondValue: number, thirdValue: number) {

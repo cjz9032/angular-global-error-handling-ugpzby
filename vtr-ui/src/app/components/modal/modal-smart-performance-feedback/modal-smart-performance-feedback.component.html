@@ -1,80 +1,120 @@
 <div class="vtr-modal-smart-performance-feedback">
 	<div class="content">
-		<button class="icon" (click)="closeModal()" #cross>
-			<fa-icon [icon]="['fal', 'times']"></fa-icon>
-		</button>
 		<div class="title">{{ 'dashboard.feedback.title' | translate }}</div>
-		<form class="feedback-form" [formGroup]="feedbackForm" (ngSubmit)="onFeedBackSubmit()">
+		<form class="feedback-form"
+			[formGroup]="feedbackForm"
+			(ngSubmit)="onFeedBackSubmit()">
 			<!-- UnSubscribed -->
-			<div class="non-subscribers" *ngIf="!isSubscribed">
+			<div class="non-subscribers"
+				*ngIf="!isSubscribed">
 				<div class="qa-item">
-					<div class="question" [dir]="'dir' | translate" [innerHTML]="questions[0].question | translate">
+					<div class="question"
+						[dir]="'dir' | translate"
+						[innerHTML]="questions[0].question | translate">
 					</div>
 					<div class="likely-content">
 						<div class="form-check form-check-inline"
 							*ngFor="let likely of questions[0].likelyValues; let i=index">
-							<input class="form-check-input" type="radio" [id]="'feedback-likely-1' + likely" name="fbQ1"
-								formControlName="fbQ1" [value]="likely">
+							<input class="form-check-input"
+								type="radio"
+								[id]="'feedback-likely-1' + likely"
+								[tabindex]="feedbackSuccess ? -1 : 0"
+								name="fbQ1"
+								formControlName="fbQ1"
+								[value]="likely">
 							<label class="form-check-label-out"></label>
-							<label class="form-check-label" [id]="'feedback-form-likely-1' + likely" role="text"
+							<label class="form-check-label"
+								[id]="'feedback-form-likely-1' + likely"
+								role="text"
 								[for]="'feedback-likely-1' + likely">{{ likely }}</label>
 						</div>
 						<div class="w-100 mb-1"></div>
-						<div class="likely-text" *ngFor="let rating of questions[0].ratingValue">
+						<div class="likely-text"
+							*ngFor="let rating of questions[0].ratingValue">
 							{{ rating | translate }}
 						</div>
 					</div>
 				</div>
 				<div class="qa-item">
-					<div class="question" [dir]="'dir' | translate" [innerHTML]="questions[1].question | translate">
+					<div class="question"
+						[dir]="'dir' | translate"
+						[innerHTML]="questions[1].question | translate">
 					</div>
 					<div class="likely-content">
 						<div class="form-check form-check-inline"
 							*ngFor="let likely of questions[1].likelyValues; let i=index">
-							<input class="form-check-input" type="radio" [id]="'feedback-likely-2' + likely" name="fbQ2"
-								formControlName="fbQ2" [value]="likely" >
+							<input class="form-check-input"
+								type="radio"
+								[id]="'feedback-likely-2' + likely"
+								[tabindex]="feedbackSuccess ? -1 : 0"
+								name="fbQ2"
+								formControlName="fbQ2"
+								[value]="likely">
 							<label class="form-check-label-out"></label>
-							<label class="form-check-label" [id]="'feedback-form-likely-2' + likely" role="text"
+							<label class="form-check-label"
+								[id]="'feedback-form-likely-2' + likely"
+								role="text"
 								[for]="'feedback-likely-2' + likely">{{ likely }}</label>
 						</div>
 						<div class="w-100 mb-1"></div>
-						<div class="likely-text" *ngFor="let rating of questions[1].ratingValue">
+						<div class="likely-text"
+							*ngFor="let rating of questions[1].ratingValue">
 							{{ rating | translate }}
 						</div>
 					</div>
 				</div>
 				<div class="qa-item">
-					<div class="question" [dir]="'dir' | translate" [innerHTML]="questions[2].question | translate">
+					<div class="question"
+						[dir]="'dir' | translate"
+						[innerHTML]="questions[2].question | translate">
 					</div>
 					<div class="likely-content">
 						<div class="form-check form-check-inline"
 							*ngFor="let likely of questions[2].likelyValues; let i=index">
-							<input class="form-check-input" type="radio" [id]="'feedback-likely-3' + likely" name="fbQ3"
-								formControlName="fbQ3" [value]="likely" >
+							<input class="form-check-input"
+								type="radio"
+								[id]="'feedback-likely-3' + likely"
+								[tabindex]="feedbackSuccess ? -1 : 0"
+								name="fbQ3"
+								formControlName="fbQ3"
+								[value]="likely">
 							<label class="form-check-label-out"></label>
-							<label class="form-check-label" [id]="'feedback-form-likely-3' + likely" role="text"
+							<label class="form-check-label"
+								[id]="'feedback-form-likely-3' + likely"
+								role="text"
 								[for]="'feedback-likely-3' + likely">{{ likely }}</label>
 						</div>
 						<div class="w-100 mb-1"></div>
-						<div class="likely-text" *ngFor="let rating of questions[2].ratingValue">
+						<div class="likely-text"
+							*ngFor="let rating of questions[2].ratingValue">
 							{{ rating | translate }}
 						</div>
 					</div>
 				</div>
 				<div class="qa-item">
-					<div class="question" [dir]="'dir' | translate" [innerHTML]="questions[3].question | translate">
+					<div class="question"
+						[dir]="'dir' | translate"
+						[innerHTML]="questions[3].question | translate">
 					</div>
 					<div class="likely-content">
 						<div class="form-check form-check-inline"
 							*ngFor="let likely of questions[3].likelyValues; let i=index">
-							<input class="form-check-input" type="radio" [id]="'feedback-likely-4' + likely" name="fbQ4"
-								formControlName="fbQ4" [value]="likely" >
+							<input class="form-check-input"
+								type="radio"
+								[id]="'feedback-likely-4' + likely"
+								[tabindex]="feedbackSuccess ? -1 : 0"
+								name="fbQ4"
+								formControlName="fbQ4"
+								[value]="likely">
 							<label class="form-check-label-out"></label>
-							<label class="form-check-label" [id]="'feedback-form-likely-4' + likely" role="text"
+							<label class="form-check-label"
+								[id]="'feedback-form-likely-4' + likely"
+								role="text"
 								[for]="'feedback-likely-4' + likely">{{ likely }}</label>
 						</div>
 						<div class="w-100 mb-1"></div>
-						<div class="likely-text" *ngFor="let rating of questions[3].ratingValue">
+						<div class="likely-text"
+							*ngFor="let rating of questions[3].ratingValue">
 							{{ rating | translate }}
 						</div>
 					</div>
@@ -82,71 +122,111 @@
 			</div>
 
 			<!-- Subscribed -->
-			<div class="non-subscribers" *ngIf="isSubscribed">
+			<div class="non-subscribers"
+				*ngIf="isSubscribed">
 				<div class="qa-item">
-					<div class="question" [dir]="'dir' | translate" [innerHTML]="questions[4].question | translate">
+					<div class="question"
+						[dir]="'dir' | translate"
+						[innerHTML]="questions[4].question | translate">
 					</div>
 					<div class="likely-content">
 						<div class="form-check form-check-inline"
 							*ngFor="let likely of questions[4].likelyValues; let i=index">
-							<input class="form-check-input" type="radio" [id]="'feedback-likely-5' + likely" name="fbQ5"
-								formControlName="fbQ5" [value]="likely">
+							<input class="form-check-input"
+								type="radio"
+								[id]="'feedback-likely-5' + likely"
+								[tabindex]="feedbackSuccess ? -1 : 0"
+								name="fbQ5"
+								formControlName="fbQ5"
+								[value]="likely">
 							<label class="form-check-label-out"></label>
-							<label class="form-check-label" [id]="'feedback-form-likely-5' + likely" role="text"
+							<label class="form-check-label"
+								[id]="'feedback-form-likely-5' + likely"
+								role="text"
 								[for]="'feedback-likely-5' + likely">{{ likely }}</label>
 						</div>
 						<div class="w-100 mb-1"></div>
-						<div class="likely-text" *ngFor="let rating of questions[4].ratingValue">
+						<div class="likely-text"
+							*ngFor="let rating of questions[4].ratingValue">
 							{{ rating | translate }}
 						</div>
 					</div>
 				</div>
 				<div class="qa-item">
-					<div class="question" [dir]="'dir' | translate" [innerHTML]="questions[5].question | translate">
+					<div class="question"
+						[dir]="'dir' | translate"
+						[innerHTML]="questions[5].question | translate">
 					</div>
 					<div class="yesno-content">
 						<div class="form-check form-check-inline"
 							*ngFor="let likely of questions[5].ynValues; let i=index">
-							<input class="form-check-input" type="radio" [id]="'feedback-likely-6' + likely" name="fbQ6"
-								formControlName="fbQ6" [value]="likely" >
+							<input class="form-check-input"
+								type="radio"
+								[id]="'feedback-likely-6' + likely"
+								[tabindex]="feedbackSuccess ? -1 : 0"
+								name="fbQ6"
+								formControlName="fbQ6"
+								[value]="likely">
 							<label class="form-check-label-out"></label>
-							<label class="form-check-label" [id]="'feedback-form-likely-6' + likely" role="text"
+							<label class="form-check-label"
+								[id]="'feedback-form-likely-6' + likely"
+								role="text"
 								[for]="'feedback-likely-6' + likely">{{ questions[5].ratingValue[i] | translate }}</label>
 						</div>
 					</div>
 				</div>
 				<div class="qa-item">
-					<div class="question" [dir]="'dir' | translate" [innerHTML]="questions[6].question | translate">
+					<div class="question"
+						[dir]="'dir' | translate"
+						[innerHTML]="questions[6].question | translate">
 					</div>
 					<div class="likely-content">
 						<div class="form-check form-check-inline"
 							*ngFor="let likely of questions[6].likelyValues; let i=index">
-							<input class="form-check-input" type="radio" [id]="'feedback-likely-7' + likely" name="fbQ7"
-								formControlName="fbQ7" [value]="likely" >
+							<input class="form-check-input"
+								type="radio"
+								[id]="'feedback-likely-7' + likely"
+								[tabindex]="feedbackSuccess ? -1 : 0"
+								name="fbQ7"
+								formControlName="fbQ7"
+								[value]="likely">
 							<label class="form-check-label-out"></label>
-							<label class="form-check-label" [id]="'feedback-form-likely-7' + likely" role="text"
+							<label class="form-check-label"
+								[id]="'feedback-form-likely-7' + likely"
+								role="text"
 								[for]="'feedback-likely-7' + likely">{{ likely }}</label>
 						</div>
 						<div class="w-100 mb-1"></div>
-						<div class="likely-text" *ngFor="let rating of questions[6].ratingValue">
+						<div class="likely-text"
+							*ngFor="let rating of questions[6].ratingValue">
 							{{ rating | translate }}
 						</div>
 					</div>
 				</div>
 				<div class="qa-item">
-					<div class="question" [dir]="'dir' | translate" [innerHTML]="questions[7].question | translate">
+					<div class="question"
+						[dir]="'dir' | translate"
+						[innerHTML]="questions[7].question | translate">
 					</div>
 					<div class="likely-content">
 						<div class="form-check form-check-inline"
 							*ngFor="let likely of questions[7].likelyValues; let i=index">
-							<input class="form-check-input" type="radio" [id]="'feedback-likely-8' + likely" name="fbQ8"
-								formControlName="fbQ8" [value]="likely" >
+							<input class="form-check-input"
+								type="radio"
+								[id]="'feedback-likely-8' + likely"
+								[tabindex]="feedbackSuccess ? -1 : 0"
+								name="fbQ8"
+								formControlName="fbQ8"
+								[value]="likely">
 							<label class="form-check-label-out"></label>
-							<label class="form-check-label" [id]="'feedback-form-likely-8' + likely" role="text"
+							<label class="form-check-label"
+								[id]="'feedback-form-likely-8' + likely"
+								role="text"
 								[for]="'feedback-likely-8' + likely">{{ likely }}</label>
 						</div>
 						<div class="w-100 mb-1"></div>
-						<div class="likely-text" *ngFor="let rating of questions[7].ratingValue">
+						<div class="likely-text"
+							*ngFor="let rating of questions[7].ratingValue">
 							{{ rating | translate }}
 						</div>
 					</div>
@@ -157,16 +237,24 @@
 
 			<div class="row">
 				<div class="col">
-					<div class="comment-tip" id="feedback-form-additional-comments"
+					<div class="comment-tip"
+						id="feedback-form-additional-comments"
 						attr.aria-label="feedback-form-additional-comments">
 						{{'smartPerformance.feedbackContainer.commentTip' | translate}}
 					</div>
 					<textarea #feedbackComment
 						placeholder="{{'smartPerformance.feedbackContainer.comments' | translate}}"
-						class="form-control user-comment mb-1" id="feedback-form-comments-input" name="fbComment"
+						class="form-control user-comment mb-1"
+						id="feedback-form-comments-input"
+						[tabindex]="feedbackSuccess ? -1 : 0"
+						name="fbComment"
 						formControlName="fbComment"
-						attr.aria-label="{{'dashboard.feedback.form.comments' | translate}}" cols="30" rows="10"
-						maxlength="1000" pattern="^(?!\s*$).+" required></textarea>
+						attr.aria-label="{{'dashboard.feedback.form.comments' | translate}}"
+						cols="30"
+						rows="10"
+						maxlength="1000"
+						pattern="^(?!\s*$).+"
+						required></textarea>
 					<div class="w-100 text-right comment-count">{{feedbackComment.value.length}}/1000</div>
 				</div>
 			</div>
@@ -175,26 +263,36 @@
 		<hr class="line">
 		<div class="d-flex justify-content-start align-items-center">
 			<div class="btn-submit">
-				<vtr-ui-button linkId="modal-btn-sendfeedback" metricsEvent="FeatureClick"
-					metricsItem="btn.sp.submitfeedback" metricsParent="SmartPerformance.Dialog.Feedback"
-					[tabIndex]="feedbackSuccess ? -1 : 0" [btnHeight]="true" [isFullWidth]="true"
+				<vtr-ui-button linkId="modal-btn-sendfeedback"
+					metricsEvent="FeatureClick"
+					metricsItem="btn.sp.submitfeedback"
+					metricsParent="SmartPerformance.Dialog.Feedback"
+					[tabIndex]="feedbackSuccess ? -1 : 0"
+					[btnHeight]="true"
+					[isFullWidth]="true"
 					[isDisabled]="!feedbackForm.dirty"
 					[label]="'smartPerformance.feedbackContainer.buttonText' | translate"
 					(onClick)="onFeedBackSubmit()"></vtr-ui-button>
 			</div>
 		</div>
 	</div>
-	<div class="feedback-success d-flex align-items-center justify-content-center" *ngIf="feedbackSuccess">
+	<div class="feedback-success d-flex align-items-center justify-content-center"
+		*ngIf="feedbackSuccess">
 		<div>
-			<div class="icon">
-				<fa-icon [icon]="['fal', 'times']" (click)="closeModal()"></fa-icon>
-			</div>
 			<div class="success-icon">
 				<fa-icon [icon]="['fal', 'check-circle']"></fa-icon>
 			</div>
-			<div class="thank-you" id="feedback-modal-thank-you" attr.aria-label="feedback-modal-thank-you">
+			<div class="thank-you"
+				id="feedback-modal-thank-you"
+				attr.aria-label="feedback-modal-thank-you">
 				{{ 'dashboard.feedback.form.messages.feedbackSuccess' | translate }}</div>
 			<div class="left-time">{{ leftTime }}</div>
 		</div>
+	</div>
+	<div class="btn-modal-close">
+		<vtr-ui-close-button linkId="smart-performance-feedback-modal-btn-close"
+			metricsItem="btn.close"
+			metricsParent="SmartPerformance.Dialog.Feedback"
+			(clickClose)="closeModal()"></vtr-ui-close-button>
 	</div>
 </div>
