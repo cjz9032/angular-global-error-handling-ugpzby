@@ -97,8 +97,46 @@ export class ContentCacheService {
   }
 
   private async loadCachedContents(cacheKey) {
-    return null;
+	  const cachedObject = await this.contentLocalCacheContract.get(cacheKey);
+	  if (cachedObject !== undefined) {
+		  const contents = JSON.parse(cachedObject.Value);
+		  const contentIds = Object.keys(contents);
+		  contentIds.forEach(id => {
+			  contents[id] = this.removeInvalidContents(contents[id], id);
+			  contents[id] = this.formalizeContent(contents[id], id, ContentSource.Local);
+		  });
+		  return contents;
+	  }
+	  return undefined;
   }
+
+	private removeInvalidContents(contents, cardId) {
+		const array = [];
+		contents.forEach(content => {
+			if (cardId !== 'positionA' && array.length > 0) {
+				return;
+			}
+			if (this.canDisplay(content.DisplayStartDate) && !this.hasExpirated(content.ExpirationDate)) {
+				array.push(content);
+			}
+		});
+
+		return array;
+	}
+
+	private canDisplay(displayStartDate) {
+		if (displayStartDate == null) {
+			return true;
+		}
+		return new Date(displayStartDate) < new Date();
+	}
+
+	private hasExpirated(expirationDate) {
+		if (expirationDate == null) {
+			return false;
+		}
+		return new Date(expirationDate) < new Date();
+	}
 
   private async cacheContents(cacheKey, cmsOptions: any, contentCards: any) {
     Promise.all([this.fetchCMSContent(cmsOptions, contentCards), this.fetchUPEContent(contentCards)])
