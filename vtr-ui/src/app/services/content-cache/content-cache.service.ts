@@ -1,21 +1,13 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Md5 } from "ts-md5";
-import { CommsService } from '../comms/comms.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { LocalInfoService } from '../local-info/local-info.service';
-import { CommonService } from '../common/common.service';
-import { DevService } from '../dev/dev.service';
 import { LoggerService } from '../logger/logger.service';
 import { UPEService } from '../upe/upe.service';
 import { CMSService } from '../cms/cms.service';
 import { ContentActionType, ContentSource } from 'src/app/enums/content.enum';
 import { BuildInContentService } from '../build-in-content/build-in-content.service';
-import { Subscription } from 'rxjs';
-import { SelfSelectService, SegmentConst } from '../self-select/self-select.service';
-import { HypothesisService } from '../hypothesis/hypothesis.service';
-import { DashboardService } from '../dashboard/dashboard.service';
-import { icon } from '@fortawesome/fontawesome-svg-core';
+import { SegmentConst } from '../self-select/self-select.service';
 
 
 interface IConfigItem {
@@ -44,19 +36,12 @@ export class ContentCacheService {
   private contentLocalCacheContract: any;
 
   constructor(
-    private commsService: CommsService,
     private vantageShellService: VantageShellService,
     private localInfoService: LocalInfoService,
-    private commonService: CommonService,
-    private devService: DevService,
-    private http: HttpClient,
     private cmsService: CMSService,
     private upeService: UPEService,
     private buildInContentService: BuildInContentService,
-    private logger: LoggerService,
-    private selfselectService: SelfSelectService,
-    private hypService: HypothesisService,
-    private dashboardService: DashboardService) {
+    private logger: LoggerService) {
     this.contentLocalCacheContract = this.vantageShellService.getContentLocalCache();
   }
 
@@ -97,52 +82,52 @@ export class ContentCacheService {
   }
 
   private async loadCachedContents(cacheKey) {
-	  let iCacheSettings: ICacheSettings = {
-		  Key: cacheKey,
-		  Value: null,
-		  Component: "ContentCache",
-		  UserName: "ContentCache_Contents"
-	  };
-	  const cachedObject = await this.contentLocalCacheContract.get(iCacheSettings);
-	  if (cachedObject && cachedObject.Value) {
-		  const contents = JSON.parse(cachedObject.Value);
-		  const contentIds = Object.keys(contents);
-		  contentIds.forEach(id => {
-			  contents[id] = this.removeInvalidContents(contents[id], id);
-			  contents[id] = this.formalizeContent(contents[id], id, ContentSource.Local);
-		  });
-		  return contents;
-	  }
-	  return undefined;
+    let iCacheSettings: ICacheSettings = {
+      Key: cacheKey,
+      Value: null,
+      Component: "ContentCache",
+      UserName: "ContentCache_Contents"
+    };
+    const cachedObject = await this.contentLocalCacheContract.get(iCacheSettings);
+    if (cachedObject && cachedObject.Value) {
+      const contents = JSON.parse(cachedObject.Value);
+      const contentIds = Object.keys(contents);
+      contentIds.forEach(id => {
+        contents[id] = this.removeInvalidContents(contents[id], id);
+        contents[id] = this.formalizeContent(contents[id], id, ContentSource.Local);
+      });
+      return contents;
+    }
+    return undefined;
   }
 
-	private removeInvalidContents(contents, cardId) {
-		const array = [];
-		contents.forEach(content => {
-			if (cardId !== 'positionA' && array.length > 0) {
-				return;
-			}
-			if (this.canDisplay(content.DisplayStartDate) && !this.hasExpirated(content.ExpirationDate)) {
-				array.push(content);
-			}
-		});
+  private removeInvalidContents(contents, cardId) {
+    const array = [];
+    contents.forEach(content => {
+      if (cardId !== 'positionA' && array.length > 0) {
+        return;
+      }
+      if (this.canDisplay(content.DisplayStartDate) && !this.hasExpirated(content.ExpirationDate)) {
+        array.push(content);
+      }
+    });
 
-		return array;
-	}
+    return array;
+  }
 
-	private canDisplay(displayStartDate) {
-		if (displayStartDate == null) {
-			return true;
-		}
-		return new Date(displayStartDate) < new Date();
-	}
+  private canDisplay(displayStartDate) {
+    if (displayStartDate == null) {
+      return true;
+    }
+    return new Date(displayStartDate) < new Date();
+  }
 
-	private hasExpirated(expirationDate) {
-		if (expirationDate == null) {
-			return false;
-		}
-		return new Date(expirationDate) < new Date();
-	}
+  private hasExpirated(expirationDate) {
+    if (expirationDate == null) {
+      return false;
+    }
+    return new Date(expirationDate) < new Date();
+  }
 
   private async cacheContents(cacheKey, cmsOptions: any, contentCards: any) {
     Promise.all([this.fetchCMSContent(cmsOptions, contentCards), this.fetchUPEContent(contentCards)])
