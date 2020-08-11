@@ -188,22 +188,17 @@ export class ContentCacheService {
     const result = [];
     for (let i = 0; i < contents.length; i++) {
       const content = contents[i];
-      if (i == 0 && content.ExpirationDate == null) {
-        return new Array(content);
+      if (i == 0) {
+        result.push(content);
+        if (content.ExpirationDate == null) {
+          return result;
+        }
       }
-      if (content.ExpirationDate != null) {
-        if (result.length == 1) {
-           continue;
-        }
+      if (content.ExpirationDate == null) {
         result.push(content);
-      } else {
-        result.push(content);
-        if (result.length == 2) {
-           break;
-        }
+        return result;
       }
     }
-    return result;
   }
 
   private formalizeContent(contents, cardId, dataSource?) {
