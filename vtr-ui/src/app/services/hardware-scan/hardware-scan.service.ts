@@ -430,11 +430,7 @@ export class HardwareScanService {
 		if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.getItemsToScan(scanType, culture)
 				.then((response) => {
-					if (response) {
-						return response;
-					} else {
-						this.logger.error('[GET ITEMS TO SCAN] Incorrect response received');
-					}
+					return response;
 				})
 				.catch((error) => {
 					this.logger.error('[GET ITEMS TO SCAN] ' + error);
