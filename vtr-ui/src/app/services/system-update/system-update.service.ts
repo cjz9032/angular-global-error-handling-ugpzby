@@ -55,6 +55,7 @@ export class SystemUpdateService {
 	public isToastMessageNeeded = false;
 	public timeStartSearch;
 	public retryTimes = 0;
+	private timeStartGetStatus: Date;
 	/**
 	 * gets data about last scan, install & schedule scan date-time for Check for Update section
 	 */
@@ -199,6 +200,7 @@ export class SystemUpdateService {
 
 	public getScheduleUpdateStatus(canReportProgress: boolean) {
 		if (this.systemUpdateBridge) {
+			this.timeStartGetStatus = new Date();
 			const timeOut = setTimeout(() => {
 				this.loggerService.info('get su plugin status time out with in 10 seconds');
 				this.metricService.sendSystemUpdateStatusMetric('Time out', 'FeatureStatus - Not enabled within 10 seconds');
@@ -318,7 +320,9 @@ export class SystemUpdateService {
 			} else {
 				this.commonService.sendNotification(UpdateProgress.ScheduleUpdateIdle, response);
 			}
-			this.metricService.sendSystemUpdateStatusMetric('Enable check for update ', 'FeatureStatus - Enabled');
+			const costSeconds = ((new Date().getTime() - this.timeStartGetStatus.getTime()) / 1000).toFixed(2);
+			const metricStatus = 'FeatureStatus - Enabled with ' + costSeconds + ' seconds';
+			this.metricService.sendSystemUpdateStatusMetric('Enable check for update ', metricStatus);
 		} else if (!status && Number(response.statusCode) === SystemUpdateStatus.CONNECT_EXCEPTION && this.commonService.isOnline) {
 			this.loggerService.info('Get su plugin status response connect exception, try again.');
 			if (this.retryTimes < 3) {
