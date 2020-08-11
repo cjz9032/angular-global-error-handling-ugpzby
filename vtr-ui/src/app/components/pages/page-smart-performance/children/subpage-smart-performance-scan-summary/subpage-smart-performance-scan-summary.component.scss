@@ -1302,6 +1302,7 @@ vtr-subpage-smart-performance-scan-summary {
 		}
 		.desc-block {
 			display: flex;
+			align-items: center;
 			flex-direction: row;
 			@media #{$breakpoint_sm}{
 				justify-content: center;

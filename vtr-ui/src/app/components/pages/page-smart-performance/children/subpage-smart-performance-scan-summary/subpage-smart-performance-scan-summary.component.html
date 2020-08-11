@@ -119,20 +119,22 @@
 										<p *ngIf="!isSubscribed && isExpired" [innerHTML]="'smartPerformance.scanCompletePage.expiredSummaryDetails' |translate"></p>
 
 										<div class="d-flex justify-content-start my-5">
-											<button *ngIf="isExpired" class="action-button mr-3"
-												vtrMetrics
+											<vtr-ui-button (onClick)="openSubscribeModal()"
+												*ngIf="isExpired" 
+												class="mr-3"
+												linkId="btn.smart-performance-renew-and-fix"
+												metricsItem="btn.renewAndFix"
+												metricsEvent="ItemClick"
+												metricsParent="Page.Support.SmartPerformance"
+												[isFullWidth]="true"
+												[label]="'smartPerformance.scanCompletePage.renewAndFix' | translate"></vtr-ui-button>
+											<vtr-ui-button (onClick)="backToNonSubScriberHome()"
+												linkId="btn.smart-performance-back-to-home"
 												metricsItem="btn.backtohome"
 												metricsEvent="ItemClick"
 												metricsParent="Page.Support.SmartPerformance"
-												(click)=openSubscribeModal()>{{'smartPerformance.scanCompletePage.renewAndFix' |translate }}
-											</button>
-											<button class="action-button"
-												vtrMetrics
-												metricsItem="btn.backtohome"
-												metricsEvent="ItemClick"
-												metricsParent="Page.Support.SmartPerformance"
-												(click)=backToNonSubScriberHome()>{{'smartPerformance.scanCompletePage.backToHome' |translate }}
-											</button>
+												[isFullWidth]="true"
+												[label]="'smartPerformance.scanCompletePage.backToHome' | translate"></vtr-ui-button>
 											<!-- <div class="desc col pl-5">
 												<p
 													[innerHTML]="'smartPerformance.scanCompletePage.monthlyPricing' |translate">
@@ -160,26 +162,24 @@
 										<p *ngIf="inputIsScanningCompleted"
 											[innerHTML]="'smartPerformance.subscriberScanHomePage.successDescription' |translate:{issueCount: issueCount }">
 										</p>
-										<div class="d-flex justify-content-start my-5 w-75">														
-											<button *ngIf="!inputIsScanningCompleted"
-												[ngClass]="(isLoading || !isOnline)? 'disabled-button': 'action-button'"
-												(click)="ScanNowSummary()"
-												vtrMetrics
+										<div class="d-flex justify-content-start my-5 w-75">
+											<vtr-ui-button (onClick)="ScanNowSummary()"
+												*ngIf="!inputIsScanningCompleted"
+												linkId="btn.smart-performance-scan-and-fix"
 												metricsItem="btn.scan&fix"
 												metricsEvent="FeatureClick"
 												metricsParent="Page.Support.SmartPerformance"
-												[ngbTooltip]="'smartPerformance.subscriberScanHomePage.scanNow' | translate"
-												placement="top">{{'smartPerformance.subscriberScanHomePage.scanNow' |translate }}</button>
-
-											<button *ngIf="inputIsScanningCompleted"
-												class="action-button"
-												(click)="BackToSummary()"
-												vtrMetrics
+												[isDisabled]="isLoading || !isOnline"
+												[isFullWidth]="true"
+												[label]="'smartPerformance.subscriberScanHomePage.scanNow' | translate"></vtr-ui-button>
+											<vtr-ui-button (onClick)="BackToSummary()"
+												*ngIf="inputIsScanningCompleted"
+												linkId="btn.smart-performance-scan-and-fix"
 												metricsItem="btn.backtohome"
 												metricsEvent="FeatureClick"
 												metricsParent="Page.Support.SmartPerformance"
-												[ngbTooltip]="'smartPerformance.subscriberScanHomePage.backToHome' | translate"
-												placement="top">{{'smartPerformance.subscriberScanHomePage.backToHome' |translate }}</button>
+												[isFullWidth]="true"
+												[label]="'smartPerformance.subscriberScanHomePage.backToHome' | translate"></vtr-ui-button>
 											<div class="desc-block">
 												<div class="desc desc1 col-auto"
 													*ngIf="historyScanResultsDateTime && historyScanResultsDateTime.length > 0">
@@ -699,12 +699,14 @@
 												<p>{{'smartPerformance.scanCompletePage.recommendedAction.longerTerm' |translate }}
 												</p>
 												<!-- These are commented as per new requirment please dont delete -->
-												<button class="action-button mt-2"
-													vtrMetrics
+												<vtr-ui-button (onClick)="openSubscribeModal()"
+													class="mt-2"
+													linkId="btn.smart-performance-back-to-home"
 													metricsItem="btn.enablefullfeature"
 													metricsEvent="FeatureClick"
 													metricsParent="Page.Support.SmartPerformance"
-													(click)=openSubscribeModal()>{{'smartPerformance.scanCompletePage.recommendedAction.signupButton' |translate }}</button>
+													[isFullWidth]="true"
+													[label]="'smartPerformance.scanCompletePage.recommendedAction.signupButton' | translate"></vtr-ui-button>
 											</div>
 										</div>
 									</div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, ViewChild, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, OnChanges, ViewChild, Input, Output, EventEmitter, ElementRef } from '@angular/core';
 import { WidgetSpeedometerComponent } from 'src/app/components/widgets/widget-speedometer/widget-speedometer.component';
 import { NgbAccordion, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
@@ -21,6 +21,7 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 	@ViewChild('speedometer', { static: false })
 	speedometer: WidgetSpeedometerComponent;
 	@ViewChild('acc', { static: false }) accordionComponent: NgbAccordion;
+	@ViewChild('spScanningAccordion', { static: false }) spScanningAccordion: ElementRef;
 	loop;
 	delay;
 	title = 'smartPerformance.title';
@@ -80,6 +81,12 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 			this.translate.instant('smartPerformance.tunePCPerformance.title'),
 			this.sampleDesc
 		);
+		setTimeout(() => {
+			const accordionCards: HTMLButtonElement[] = this.spScanningAccordion.nativeElement.getElementsByTagName('button');
+			for (const card of accordionCards) {
+				card.setAttribute('tabindex', '-1');
+			}
+		}, 0);
 	}
 	ngOnChanges(changes) {
 		if (this.scheduleScanData) {
