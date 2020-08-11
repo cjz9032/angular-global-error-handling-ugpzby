@@ -693,7 +693,7 @@ export class HardwareScanService {
 						this.hasItemsToRecoverBadSectors = true;
 					}
 				} else {
-					this.logger.error('[INIT LOADING MODULES] Incorrect response received');
+					this.logger.error('[INIT LOADING MODULES] Incorrect response received', response);
 				}
 			})
 			.catch((error) => {
@@ -711,14 +711,14 @@ export class HardwareScanService {
 			await this.itemsToScanResponse
 				.then((response) => {
 					if (response) {
-					this.modulesRetrieved = response;
-					this.categoryInformationList = this.modulesRetrieved.categoryList;
+						this.modulesRetrieved = response;
+						this.categoryInformationList = this.modulesRetrieved.categoryList;
 
-					this.customScanRequest = this.buildScanRequest(this.modulesRetrieved, culture);
-					this.quickScanRequest = this.filterQuickRequest(this.customScanRequest);
+						this.customScanRequest = this.buildScanRequest(this.modulesRetrieved, culture);
+						this.quickScanRequest = this.filterQuickRequest(this.customScanRequest);
 
-					this.customScanResponse = this.buildScanResponse(this.modulesRetrieved);
-					this.quickScanResponse = this.filterQuickResponse(this.customScanResponse);
+						this.customScanResponse = this.buildScanResponse(this.modulesRetrieved);
+						this.quickScanResponse = this.filterQuickResponse(this.customScanResponse);
 					} else {
 						this.logger.error('[GET ALL ITEMS] Incorrect response received');
 					}
