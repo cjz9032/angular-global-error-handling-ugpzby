@@ -21,7 +21,8 @@ export class UiHardwareListCheckboxComponent implements OnInit, OnDestroy {
 		this.onDeselectAllDevices();
 	}
 
-	onSelectDevice() {
+	onSelectDevice(device, isChecked) {
+		device.isSelected = isChecked;
 		this.hardwareScanService.setHasDevicesToRecover(this.devices.find(x => x.isSelected));
 	}
 
