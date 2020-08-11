@@ -411,16 +411,14 @@
 															<div class="title">{{'smartPerformance.feedbackContainer.title' | translate}}</div>
 															<div class="description">{{'smartPerformance.feedbackContainer.subtitle' | translate}}</div>
 															<div class="pt-5 text-center">
-																<button class="feedback-btn"
-																	vtrMetrics
+																<vtr-ui-button (onClick)="onclickFeedback()"
+																	class="mt-2"
+																	linkId="btn.smart-performance-open-feedback"
+																	metricsItem="btn.sp.sendfeedback"
 																	metricsEvent="FeatureClick"
 																	metricsParent="Page.Support.SmartPerformance"
-																	metricsItem="btn.sp.sendfeedback"
-																	type="button"
-																	(click)="onclickFeedback()"
-																	[ngbTooltip]="'smartPerformance.feedbackContainer.buttonText' | translate"
-																	placement="top">{{'smartPerformance.feedbackContainer.buttonText' | translate}}
-																</button>
+																	[isFullWidth]="true"
+																	[label]="'smartPerformance.feedbackContainer.buttonText' | translate"></vtr-ui-button>
 															</div>
 														</div>
 													</div>
