@@ -373,7 +373,7 @@ export class VantageShellService {
 		 * 2  = "ideaCenter",
 		 * 3  = "thinkCenter"
 		 */
-		sysInfo.getMachineType = this.getPromise(0);
+		sysInfo.getMachineType = this.getPromise(1);
 		sysInfo.getHardwareInfo = this.getPromise(hardwareInfo);
 		return sysInfo;
 	}
@@ -1256,7 +1256,7 @@ export class VantageShellService {
 			intelligentCooling: {
 				getPMDriverStatus: this.getPromise(true),
 				getITSServiceStatus: this.getPromise(true),
-				getDYTCRevision: this.getPromise(5),
+				getDYTCRevision: this.getPromise(6),
 				getCQLCapability: this.getPromise(true),
 				getTIOCapability: this.getPromise(true),
 				setAutoModeSetting: this.getPromise(true),

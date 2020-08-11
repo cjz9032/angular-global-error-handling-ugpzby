@@ -74,7 +74,6 @@
 												role="link"
 												tabindex="0"
 												id="smartAssist-intelligentSecurity-zeroTouchLogin-advSettings"
-												attr-aria-label="smartAssist.intelligentSecurity.zeroTouchLogin.advSettings"
 												(click)="setHPDAdvancedSetting('zeroTouchLogin')"
 												(keydown.enter)="setHPDAdvancedSetting('zeroTouchLogin')">
 												{{
@@ -105,8 +104,7 @@
 															role="text">
 															{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.captionOn' | translate}}
 														</p>
-														<div *ngIf="!intelligentSecurity.isZeroTouchLoginAdjustEnabled"
-															role="text">
+														<div *ngIf="!intelligentSecurity.isZeroTouchLoginAdjustEnabled">
 															<p id="zeroTouchLogin-DistanceAdjust-statusOff"
 																role="text">
 																{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.captionOff' | translate}}
@@ -305,7 +303,6 @@
 												role="link"
 												tabindex="0"
 												id="smartAssist-intelligentSecurity-zeroTouchLock-advSettings"
-												attr-aria-label="smartAssist.intelligentSecurity.zeroTouchLock.advSettings"
 												(click)="setHPDAdvancedSetting('zeroTouchLock')"
 												(keydown.enter)="setHPDAdvancedSetting('zeroTouchLock')">
 												{{
@@ -318,16 +315,13 @@
 										<!-- facial recognition -->
 										<div class="row fac-control">
 											<div class="col mt-8 ml-4 facial-recognition pb-3"
-												role="text"
 												*ngIf="intelligentSecurity.isZeroTouchLockFacialRecoVisible && zeroTouchLockShowAdvancedSection">
 												<h5 class="facial-recognition-title"
-													id="smart-assist-zero-touch-lock-faical-recognition-title"
-													role="text">
+													id="smart-assist-zero-touch-lock-faical-recognition-title">
 													{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.title' | translate}}
 												</h5>
 												<p id="smart-assist-zero-touch-lock-faical-recognition-desc"
-													role="text"
-													attr-aria-label="smart-assist-zero-touch-lock-faical-recognition-desc">
+													role="text">
 													{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.caption' | translate}}
 												</p>
 												<div class="smart-assist-checkbox">
@@ -348,8 +342,7 @@
 													class="permission-note p-4">
 													<div class="row">
 														<div *ngIf="!intelligentSecurity.facilRecognitionCameraAccess"
-															class="col pr-3"
-															role="text">
+															class="col pr-3">
 															<span class="mb-0 mt-auto"
 																id="ztl-facial-recognition-permission-note"
 																role="text">
@@ -368,7 +361,6 @@
 															</button>
 														</div>
 														<div class="col pl-3"
-															role="text"
 															*ngIf="intelligentSecurity.facilRecognitionCameraAccess && intelligentSecurity.facialRecognitionCameraPrivacyMode">
 															<span class="mb-0 mt-auto"
 																id="ztl-facial-recognition-privacy-note"
