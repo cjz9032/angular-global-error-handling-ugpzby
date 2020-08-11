@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.31](https://bitbucket.tc.lenovo.com///compare/v1.7.30...v1.7.31) (2020-08-11)
+
+
+### Bug Fixes
+
+* **Smart Performance:** VAN-21062 smart performance feedback button use vtr-ui-button ([2e6dc08](https://bitbucket.tc.lenovo.com///commit/2e6dc081ce88c0d34b916dc501a65a6d5a86f2ac))
+* **Smart Performance:** VAN-21062 VAN-21181 fix some focus display, button use component. ([af0739a](https://bitbucket.tc.lenovo.com///commit/af0739add293f86ccb74fdb70eab0ea387f91ca7))
+
 ### [1.7.30](https://bitbucket.tc.lenovo.com///compare/v1.7.29...v1.7.30) (2020-08-10)
 
 ### [1.7.29](https://bitbucket.tc.lenovo.com///compare/v1.7.28...v1.7.29) (2020-08-07)
