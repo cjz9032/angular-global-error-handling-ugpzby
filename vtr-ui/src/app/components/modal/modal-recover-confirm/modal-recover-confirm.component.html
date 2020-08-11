@@ -4,26 +4,20 @@
 
 	<div class="row">
 		<vtr-ui-button
-			vtrMetrics
-			metricsEvent="FeatureClick"
+			linkId="hwscan-rbs-confirm-btn"
 			metricsParent="{{ItemParent}}"
 			metricsItem="{{ConfirmItemName}}"
 			[label]="buttonText"
-			[tooltipText]="buttonText"
 			(onClick)="onClosing()">
 		</vtr-ui-button>
 	</div>
 
-	<a role="button"
-		aria-label="Close"
-		href="javascript:;"
-		class="close-btn"
-		vtrMetrics
-		metricsEvent="FeatureClick"
-		metricsParent="{{ItemParent}}"
-		metricsItem="{{CancelItemName}}"
-		tabindex="0"
-		(click)="activeModal.dismiss('Cross click')">
-		<img [src]=" 'assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
-	</a>
+	<div class="btn-modal-close">
+		<vtr-ui-close-button
+			linkId="hwscan-rbs-confirm-close-btn"
+			metricsParent="{{ItemParent}}"
+			metricsItem="{{CancelItemName}}"
+			(clickClose)="activeModal.dismiss('Cross click')">
+		</vtr-ui-close-button>
+	</div>
 </div>
