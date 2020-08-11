@@ -116,6 +116,15 @@
 		font-size: $fontsize_xs;
 		display: flex;
 
+		// Remove default padding-left from Select hyperlink-button
+		:first-child {
+			&.hyperlink-container {
+				::ng-deep.vtr-ui-hyperlink-button {
+					padding-left: 0;
+				}
+			}
+		}
+
 		.select-item-subtitle {
 			padding: 0.5rem;
 			font-weight: $shade_lighter;
