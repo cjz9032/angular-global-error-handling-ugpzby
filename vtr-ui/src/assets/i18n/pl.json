@@ -4229,7 +4229,7 @@
             "summaryTitle": "Zoptymalizuj wydajność komputera"
         },
         "boostInternetPerformance": {
-            "title": "ZWIĘKSZ WYDAJNOŚĆ POŁĄCZENIA INTERNETOWEGO",
+            "title": "WYDAJNIEJSZE POŁĄCZENIE",
             "extraTitle": "WYDAJNOŚĆ POŁĄCZENIA INTERNETOWEGO",
             "heading": "Przyśpiesz swoje połączenie internetowe",
             "description": "Dla wielu osób powolne połączenie Wi-Fi lub jego brak oznacza prawdziwy dramat w postaci braku łączności ze światem. Skonfigurujmy ustawienia połączenia internetowego, sieci Wi-Fi i przeglądarki w celu uzyskania optymalnej wydajności.",
@@ -4251,7 +4251,7 @@
             "summaryTitle": "Wydajność połączenia internetowego"
         },
         "malwareSecurity": {
-            "title": "ZŁOŚLIWE OPROGRAMOWANIE A BEZPIECZEŃSTWO",
+            "title": "MALWARE I OCHRONA",
             "heading": "Poświęć nieco czasu na poprawę kondycji swojego komputera",
             "description": "Złośliwe oprogramowanie może powodować awarie komputera, naruszenia zabezpieczeń danych oraz obniżenie wydajności. Pozbądź się złośliwego oprogramowania oraz wielu innych zagrożeń.",
             "tabSet1": {
@@ -4272,7 +4272,7 @@
             "summaryTitle": "Złośliwe oprogramowanie a bezpieczeństwo"
         },
         "proactiveAutomated": {
-            "title": "AKTYWNE, ZAUTOMATYZOWANE DZIAŁANIE",
+            "title": "AKTYWNE I AUTOMATYCZNE",
             "heading": "Zapewnij sobie możliwość rozwiązywania problemów, zanim jeszcze poczujesz ich efekty na własnej skórze!",
             "description": "Funkcja Smart Performance wykrywa w sposób ciągły setki problemów, które wpływają na wydajność komputera. Problemy są następnie proaktywnie rozwiązywane, dzięki czemu Ty nie musisz się o nic martwić.",
             "tabSet1": {
