@@ -3452,8 +3452,7 @@
 				"tryAgain": "Incorrect code, please try again!",
 				"fail": "Incorrect code entered!",
 				"activationCode": "ACTIVATION CODE",
-				"connecting": "Connecting...",
-				"offlinePrompt": "You are currently off-line. Please try again when you are connected to the Internet"
+				"connecting": "Connecting..."
 			},
 			"securityhealth": {
 				"title": "Security Health",
