@@ -3391,7 +3391,7 @@
 				"describe": "Use the threat detector to determine the safety of the networks around you.",
 				"button": "Check threat",
 				"connectionError": "Connection Error",
-				"tryAgain": "Network not available. Please try again later."
+				"tryAgain": "We are unable to locate threat for you due to network unavailable, please get connected to Internet and try again."
 			},
 			"locationmodal": {
 				"title": "Enable location services",
@@ -3452,8 +3452,7 @@
 				"tryAgain": "Incorrect code, please try again!",
 				"fail": "Incorrect code entered!",
 				"activationCode": "ACTIVATION CODE",
-				"connecting": "Connecting...",
-				"offlinePrompt": "You are currently off-line. Please try again when you are connected to the Internet"
+				"connecting": "Connecting..."
 			},
 			"securityhealth": {
 				"title": "Security Health",

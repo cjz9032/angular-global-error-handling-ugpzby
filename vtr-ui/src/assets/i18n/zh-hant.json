@@ -2590,7 +2590,7 @@
                 "describe": "使用威脅偵測器判斷您周圍網路的安全性。",
                 "button": "檢查威脅",
                 "connectionError": "連線錯誤",
-                "tryAgain": "網路無法使用。請稍後重試。"
+                "tryAgain": "網路無法使用，因此我們找不到對您的威脅，請連接到網際網路，然後重試。"
             },
             "locationmodal": {
                 "title": "啟用位置服務",

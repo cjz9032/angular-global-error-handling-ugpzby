@@ -2590,7 +2590,7 @@
                 "describe": "Use o detector de ameaças para determinar a segurança das redes ao seu redor.",
                 "button": "Verificar ameaças",
                 "connectionError": "Erro de conexão",
-                "tryAgain": "Rede não disponível. Tente novamente mais tarde."
+                "tryAgain": "Não foi possível localizar ameaças devido à rede não estar disponível, conecte-se à Internet e tente novamente."
             },
             "locationmodal": {
                 "title": "Ativar serviços de localização",

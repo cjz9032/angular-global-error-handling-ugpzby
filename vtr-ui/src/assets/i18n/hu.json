@@ -2590,7 +2590,7 @@
                 "describe": "A veszélyészlelővel megállapíthatja, mennyire biztonságosak a közeli hálózatok.",
                 "button": "Veszélyforrások ellenőrzése",
                 "connectionError": "Kapcsolódási hiba",
-                "tryAgain": "A hálózat nem érhető el. Kérjük, később próbálja meg újra."
+                "tryAgain": "A hálózat nem érhető el, ezért nem tudjuk megkeresni a veszélyforrást. Csatlakozzon az internethez, és próbálkozzon újra."
             },
             "locationmodal": {
                 "title": "Helyszolgáltatások engedélyezése",
