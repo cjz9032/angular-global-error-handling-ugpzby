@@ -21,10 +21,10 @@ export const NORMAL_CONTENTS = {
             "Action": "",
             "ActionType": "Build-in",
             "ActionLink": "13cada49d4274587a80e26b00dff59a5",
-            "BrandName": "",
+            "BrandName": "Brand1",
             "BrandImage": "",
             "Priority": "P1",
-            "OverlayTheme": "dark",
+            "OverlayTheme": null,
             "DisplayStartDate": null,
             "ExpirationDate": null
         }

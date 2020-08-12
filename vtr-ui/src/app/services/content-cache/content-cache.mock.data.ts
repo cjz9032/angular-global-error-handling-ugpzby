@@ -3,17 +3,23 @@ import { NORMAL_CONTENTS, EXPIRED_DATE_INPOISTIONB, DISPALY_DATE_INPOISTIONB, MU
 export class MockContentLocalCacheTest {
 	public get(par): any {
 
-		if (par.Key === Md5.hashStr(JSON.stringify({ PAGE: 'normalContents' }))) {
+		if (par.Key === Md5.hashStr(JSON.stringify({ Page: 'normalContents' }))) {
 			par.Value = JSON.stringify(NORMAL_CONTENTS);
 		}
-		else if (par.Key === Md5.hashStr(JSON.stringify({ PAGE: 'expiredDateWithPoistionB' }))) {
+		else if (par.Key === Md5.hashStr(JSON.stringify({ Page: 'expiredDateWithPoistionB' }))) {
 			par.Value = JSON.stringify(EXPIRED_DATE_INPOISTIONB);
 		}
-		else if (par.Key === Md5.hashStr(JSON.stringify({ PAGE: 'NotReachDisplayDateWithPoistionB' }))) {
+		else if (par.Key === Md5.hashStr(JSON.stringify({ Page: 'NotReachDisplayDateWithPoistionB' }))) {
 			par.Value = JSON.stringify(DISPALY_DATE_INPOISTIONB);
 		}
-		else if (par.Key === Md5.hashStr(JSON.stringify({ PAGE: 'multi-ItemsInPoistionB' }))) {
+		else if (par.Key === Md5.hashStr(JSON.stringify({ Page: 'multi-ItemsInPoistionB' }))) {
 			par.Value = JSON.stringify(MULITI_ITEM_INPOISTIONB);
+		}
+		else if (par.Key === Md5.hashStr(JSON.stringify({ Page: 'noOnlineContent', Lang: 'en' }))) {
+			par.Value = null;
+		}
+		else if (par.Key === Md5.hashStr(JSON.stringify({ Page: 'noResponse' }))) {
+			par = null;
 		}
 		return par;
 	}
