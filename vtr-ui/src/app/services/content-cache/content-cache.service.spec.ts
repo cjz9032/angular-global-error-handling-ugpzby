@@ -3,8 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { ContentCacheService } from './content-cache.service';
 import { MockContentLocalCacheTest } from '../../services/content-cache/content-cache.mock.data';
 
-import { asyncData, asyncError } from 'src/testing/async-observable-helpers'
-import { NORMAL_CONTENTS, EXPIRED_DATE_INPOISTIONB, DISPALY_DATE_INPOISTIONB, MULITI_ITEM_INPOISTIONB } from 'src/testing/content-data';
+import { NORMAL_CONTENTS } from 'src/testing/content-data';
 
 describe('ContentCacheService', () => {
 	let service: ContentCacheService;
@@ -127,4 +126,26 @@ describe('ContentCacheService', () => {
 		expect(ret['positionA'].length).toEqual(2);
 		expect(ret['positionB'].Title).toEqual('Build-in article B');
 	});
+
+	it('should not change the field DataSource.', async () => {
+		cmsService.generateContentQueryParams.and.returnValue({ Page: 'testDataResource' });
+		const ret = await service.getCachedContents('testDataResource', null);
+
+		expect(ret).toBeTruthy();
+		const keys = Object.keys(ret);
+		expect(keys).toBeTruthy();
+		expect(keys.length).toEqual(2);
+		expect(keys.includes('positionA')).toBeTruthy();
+		expect(keys.includes('positionB')).toBeTruthy();
+		ret['positionA'].forEach(content => {
+			if (content.Title === 'Build-in article A1'){
+				expect(content.DataSource).toEqual('cms');
+			}
+			if (content.Title === 'Build-in article A2'){
+				expect(content.DataSource).toEqual('upe');
+			}
+		});
+		expect(ret['positionB'].DataSource).toEqual('upe');
+	});
+
 });

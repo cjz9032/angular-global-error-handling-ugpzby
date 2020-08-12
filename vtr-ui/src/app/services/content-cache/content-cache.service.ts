@@ -94,7 +94,7 @@ export class ContentCacheService {
       const contentIds = Object.keys(contents);
       contentIds.forEach(id => {
         contents[id] = this.removeInvalidContents(contents[id], id);
-        contents[id] = this.formalizeContent(contents[id], id, ContentSource.Local);
+        contents[id] = this.formalizeContent(contents[id], id);
       });
       return contents;
     }
@@ -235,7 +235,9 @@ export class ContentCacheService {
       if (content.BrandName) {
         content.BrandName = content.BrandName.split('|')[0];
       }
-      content.DataSource = dataSource;
+      if(dataSource) {
+		  content.DataSource = dataSource;
+	  }
     });
 
     if (cardId === 'positionA') {

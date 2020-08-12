@@ -114,6 +114,58 @@ export const EXPIRED_DATE_INPOISTIONB = {
 };
 
 
+export const TEST_DATASOURCE = {
+	"positionA": [
+		{
+			"Title": "Build-in article A1",
+			"Description": "",
+			"FeatureImage": "assets/build-in-contents/images/Default-SMB-Device-Settings.jpg",
+			"Action": "",
+			"ActionType": "Build-in",
+			"ActionLink": "13cada49d4274587a80e26b00dff59a5",
+			"BrandName": "",
+			"BrandImage": "",
+			"Priority": "P1",
+			"OverlayTheme": "dark",
+			"DisplayStartDate": null,
+			"ExpirationDate": null,
+			"DataSource":"cms"
+		},
+		{
+			"Title": "Build-in article A2",
+			"Description": "",
+			"FeatureImage": "assets/build-in-contents/images/Default-SMB-Device-Settings.jpg",
+			"Action": "",
+			"ActionType": "Build-in",
+			"ActionLink": "13cada49d4274587a80e26b00dff59a5",
+			"BrandName": "",
+			"BrandImage": "",
+			"Priority": "P1",
+			"OverlayTheme": "dark",
+			"DisplayStartDate": null,
+			"ExpirationDate": null,
+			"DataSource":"upe"
+		}
+	],
+	"positionB": [
+		{
+			"Title": "Build-in article B",
+			"Description": "",
+			"FeatureImage": "assets/build-in-contents/images/Default-SMB-Device-Settings.jpg",
+			"Action": "",
+			"ActionType": "Build-in",
+			"ActionLink": "13cada49d4274587a80e26b00dff59a5",
+			"BrandName": "",
+			"BrandImage": "",
+			"Priority": "P1",
+			"OverlayTheme": "dark",
+			"DisplayStartDate": null,
+			"ExpirationDate": null,
+			"DataSource":"upe"
+		}
+	]
+};
+
 export const DISPALY_DATE_INPOISTIONB = {
     "positionA": [
         {
