@@ -1,13 +1,13 @@
 <div class="modal-body" aria-labelledby="recover-title" aria-describedby="recover-description">
-	<div id="recover-title" class="title">{{'hardwareScan.warning' | translate}}</div>
-	<div id="recover-description" class="description" [innerHtml]="modalDescription"></div>
+	<h1 id="hwscan-recover-title" class="title" role="heading">{{ 'hardwareScan.warning' | translate }}</h1>
+	<p id="hwscan-recover-description" class="description" role="text">{{ 'hardwareScan.recoverBadSectors.popup.description' | translate }}</p>
 
 	<div class="row">
 		<vtr-ui-button
 			linkId="hwscan-rbs-confirm-btn"
-			metricsParent="{{ItemParent}}"
-			metricsItem="{{ConfirmItemName}}"
-			[label]="buttonText"
+			metricsParent="{{ ItemParent }}"
+			metricsItem="{{ ConfirmItemName }}"
+			[label]="'hardwareScan.ok' | translate"
 			(onClick)="onClosing()">
 		</vtr-ui-button>
 	</div>
@@ -15,8 +15,8 @@
 	<div class="btn-modal-close">
 		<vtr-ui-close-button
 			linkId="hwscan-rbs-confirm-close-btn"
-			metricsParent="{{ItemParent}}"
-			metricsItem="{{CancelItemName}}"
+			metricsParent="{{ ItemParent }}"
+			metricsItem="{{ CancelItemName }}"
 			(clickClose)="activeModal.dismiss('Cross click')">
 		</vtr-ui-close-button>
 	</div>

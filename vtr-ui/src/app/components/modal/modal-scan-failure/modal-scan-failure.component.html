@@ -1,8 +1,8 @@
-<div class="modal-body vtr-modal-scan-failure" aria-labelledby="scan-failure-title" aria-describedby="scan-failure-description">
+<div class="modal-body vtr-modal-scan-failure" aria-labelledby="hwscan-scan-failure-title" aria-describedby="hwscan-scan-failure-description">
 
 	<div class="modal-information">
-		<h1 id="scan-failure-title" class="title">{{ 'hardwareScan.scanFailureModal.title' | translate }}</h1>
-		<p id="scan-failure-description" class="description">{{ 'hardwareScan.scanFailureModal.problemDetected' | translate }}</p>
+		<h1 id="hwscan-scan-failure-title" class="title" role="heading">{{ 'hardwareScan.scanFailureModal.title' | translate }}</h1>
+		<p id="hwscan-scan-failure-description" class="description" role="text">{{ 'hardwareScan.scanFailureModal.problemDetected' | translate }}</p>
 		<div class="modules-container">
 			<ul role="list" class="list-modules" aria-live="polite" *ngFor="let module of failedModules; let idModule = index;" [attr.id]="'module-' + idModule">
 				<li role="listitem"
@@ -11,8 +11,8 @@
 					[attr.aria-describedby]="'module-' + idModule + '-device-' + idDevice">
 					<div class="module-device-row" [attr.id]="'module-' + idModule + '-device-' + idDevice" role="region">
 						<div class="module-device-name-container">
-							<p class="module-name">{{ module.moduleName }}</p>
-							<p class="description device-name">{{ device.deviceName }}</p>
+							<p class="module-name" id="hwscan-failure-modal-module-name" role="text">{{ module.moduleName }}</p>
+							<p class="description device-name" id="hwscan-failure-modal-device-name" role="text">{{ device.deviceName }}</p>
 						</div>
 						<vtr-ui-hardware-scan-test-result [module]="module"></vtr-ui-hardware-scan-test-result>
 					</div>
@@ -29,17 +29,18 @@
 					metricsEvent="FeatureClick"
 					metricsParent="HardwareScan.ScanFailureActions"
 					metricsItem="ScanFailureActions.RecoverBadSectors"
-					linkId="hwscan-go-to-rbs-btn" (click)="goToRBSPage()"
+					linkId="hwscan-go-to-rbs-btn"
+					(click)="goToRBSPage()"
 					[tooltipText]="'hardwareScan.scanFailureModal.recoverBadSectorsButtonText' | translate"
 					[label]="'hardwareScan.scanFailureModal.recoverBadSectorsButtonText' | translate">
 				</vtr-ui-button>
 				<vtr-ui-hyperlink-button
 					class="hyperlink-container"
 					hyperlinkStyle="xs-blue-lighter"
-					metricsEvent="FeatureClick"
 					metricsParent="HardwareScan.ScanFailureActions"
 					metricsItem="ScanFailureActions.LenovoSupport"
-					linkId="hwscan-open-support-page-link" (hyperlinkClick)="openSupportPage()"
+					linkId="hwscan-open-support-page-link"
+					(hyperlinkClick)="openSupportPage()"
 				 	[tooltipText]="'hardwareScan.scanFailureModal.supportButtonText' | translate"
 				   	[label]="'hardwareScan.scanFailureModal.supportButtonText' | translate"
 					[upperCaseLabel]="true">
@@ -53,8 +54,10 @@
 			</div>
 			<div class="row">
 				<div class="col button-row">
-					<vtr-ui-button metricsEvent="FeatureClick" metricsParent="HardwareScan.ScanFailureActions"
-						metricsItem="ScanFailureActions.LenovoSupport" id="supportButtonWithoutRBS"
+					<vtr-ui-button
+						metricsParent="HardwareScan.ScanFailureActions"
+						metricsItem="ScanFailureActions.LenovoSupport"
+						linkId="hwscan-open-ticket-btn"
 						(click)="openSupportPage()"
 						[tooltipText]="'hardwareScan.scanFailureModal.supportButtonText' | translate"
 						[label]="'hardwareScan.scanFailureModal.supportButtonText' | translate">
@@ -65,10 +68,9 @@
 
 		<div class="btn-modal-close">
 			<vtr-ui-close-button
+				linkId="hwscan-scan-failure-modal-close-btn"
 				metricsItem="ScanFailureActions.Close"
-				metricsEvent="FeatureClick"
 				metricsParent="HardwareScan.ScanFailureActions"
-				aria-label="Close"
 				(clickClose)="closeModal()">
 			</vtr-ui-close-button>
 		</div>
