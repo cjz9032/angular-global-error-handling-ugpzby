@@ -19,21 +19,17 @@ import { Router } from '@angular/router';
 import { DeviceService } from '../device/device.service';
 import { DeviceLocationPermission } from 'src/app/data-models/home-security/device-location-permission.model';
 import { UserService } from '../user/user.service';
-import { Subscription } from 'rxjs/internal/Subscription';
-import { NetworkRequestService } from '../network-request/network-request.service';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class DialogService {
-    networkRequestSubscription: Subscription;
 	constructor(
 		private commonService: CommonService,
 		public modalService: NgbModal,
 		private router: Router,
 		private userService: UserService,
-        private deviceService: DeviceService,
-        private networkRequestService : NetworkRequestService,
+		private deviceService: DeviceService
 	)  { }
 
 	openInvitationCodeDialog() {
@@ -160,15 +156,7 @@ export class DialogService {
 			errorMessageModal.componentInstance.header = 'security.wifisecurity.errorMessage.headerText';
 			errorMessageModal.componentInstance.description = 'security.wifisecurity.errorMessage.offlineText';
 			errorMessageModal.componentInstance.closeButtonId = 'chs-btn-offlineDialogClose';
-            errorMessageModal.componentInstance.cancelButtonId = 'chs-btn-offlineDialogcancle';
-            this.networkRequestSubscription = this.networkRequestService.networkStatus().subscribe((hasNetwork: []) => {
-                if (hasNetwork[hasNetwork.length -1]) {
-					errorMessageModal.close();	
-				}
-			});
-			errorMessageModal.result.finally(() => {
-                this.networkRequestSubscription.unsubscribe();	
-			});
+			errorMessageModal.componentInstance.cancelButtonId = 'chs-btn-offlineDialogcancle';
 		}
 	}
 
