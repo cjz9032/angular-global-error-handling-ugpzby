@@ -22,7 +22,7 @@
 
 		<div *ngIf="hasFailedRbsDevice; else withoutRBS">
 			<div class="description description-failure">
-				<p [innerHTML]="'hardwareScan.scanFailureModal.suggestedActionRbs' | translate"></p>
+				<p [innerHTML]="'hardwareScan.scanFailureModal.suggestedActionRbs' | translate" id="hwscan-recover-failure-description" role="text"></p>
 			</div>
 			<div class="row button-row">
 				<vtr-ui-button
