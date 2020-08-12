@@ -444,7 +444,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 
 	async openSubscribeModal() {
 		const modalRef = this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
-			backdrop: 'static',
+			backdrop: true,
 			size: 'lg',
 			centered: true,
 			windowClass: 'subscribe-modal'
