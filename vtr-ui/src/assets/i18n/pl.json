@@ -2590,7 +2590,7 @@
                 "describe": "Funkcja Detektor zagrożeń sprawdza bezpieczeństwo sieci wokół Ciebie.",
                 "button": "Sprawdź zagrożenie",
                 "connectionError": "Błąd połączenia",
-                "tryAgain": "Sieć jest niedostępna. Spróbuj ponownie później."
+                "tryAgain": "Nie możemy zlokalizować zagrożenia z powodu braku dostępu do sieci, połącz się z Internetem i spróbuj ponownie."
             },
             "locationmodal": {
                 "title": "Włącz usługi lokalizacyjne",

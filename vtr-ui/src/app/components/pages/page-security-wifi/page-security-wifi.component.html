@@ -18,7 +18,7 @@
 			(toggleChange) = "onToggleChange()"
 			></wifi-security>
 
-		<vtr-threat-locator *ngIf="region !== 'cn'" [locatorButtonDisable]="!isOnline"></vtr-threat-locator>
+		<vtr-threat-locator *ngIf="region !== 'cn'"></vtr-threat-locator>
 		<div class="connected-home-status"
 			*ngIf="configService?.showCHS">
 			<vtr-connected-home-status [homeSecurity]="homeSecurity"></vtr-connected-home-status>

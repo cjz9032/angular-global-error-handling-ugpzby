@@ -2590,7 +2590,7 @@
                 "describe": "Määritä uhkien paikantimen avulla ympärilläsi olevien verkkojen turvallisuus.",
                 "button": "Tarkista uhat",
                 "connectionError": "Yhteysvirhe",
-                "tryAgain": "Verkko ei ole käytettävissä. Yritä myöhemmin uudelleen."
+                "tryAgain": "Uhan paikantaminen ei onnistu, koska verkko ei ole käytettävissä. Muodosta yhteys Internetiin ja yritä uudelleen."
             },
             "locationmodal": {
                 "title": "Ota sijaintipalvelut käyttöön",
