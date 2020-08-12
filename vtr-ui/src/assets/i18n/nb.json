@@ -2590,7 +2590,7 @@
                 "describe": "Bruk trusseldetektoren til å finne ut hvor sikre nettverkene rundt deg er.",
                 "button": "Kontroller trussel",
                 "connectionError": "Tilkoblingsfeil",
-                "tryAgain": "Nettverket er ikke tilgjengelig. Prøv igjen senere."
+                "tryAgain": "Vi kan ikke finne noen trusler på grunn av manglende nettverkstilgang. Koble deg til Internett, og prøv på nytt."
             },
             "locationmodal": {
                 "title": "Aktiver posisjonstjenester",

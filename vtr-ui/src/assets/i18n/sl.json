@@ -2590,7 +2590,7 @@
                 "describe": "Če želite ugotoviti, kako varna so omrežja okrog vas, uporabite detektor groženj.",
                 "button": "Preverite, da",
                 "connectionError": "Napaka povezave",
-                "tryAgain": "Omrežje ni na voljo. Poskusite znova pozneje."
+                "tryAgain": "Grožnje ne moremo poiskati, ker omrežje ni na voljo. Vzpostavite internetno povezavo in poskusite znova."
             },
             "locationmodal": {
                 "title": "Omogoči lokacijske storitve",
