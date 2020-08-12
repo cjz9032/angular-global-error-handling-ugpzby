@@ -24,7 +24,6 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 	countryCode: any;
 	langCode: any;
 	paymenturl: string;
-	@ViewChild('btn') btn: ElementRef;
 	@Output() cancelPaymentRequest: EventEmitter<any> = new EventEmitter();
 	public subscriptionDetails = [
 		{
@@ -46,15 +45,15 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 		this.supportService.getMachineInfo().then(async (machineInfo) => {
 			this.loggerService.info('MachineInfo ====================================================== ', machineInfo);
 			this.countryCode =  machineInfo.country;
-			this.systemSerialNumber = machineInfo.serialnumber;//'PC0ZEPQ6';
+			this.systemSerialNumber = machineInfo.serialnumber; // 'PC0ZEPQ6';
 			this.systemMT = machineInfo.mt;
 			this.langCode = this.getSPSubscriptionSupportedLanguageFromCountry(this.countryCode);
 			this.paymenturl =
 				environment.spPaymentProcessApiRoot +
-				//this.countryCode +
-				//this.spPaymentPageenum.SLASH +
-				//this.langCode +
-				//this.spPaymentPageenum.SLASH +
+				// this.countryCode +
+				// this.spPaymentPageenum.SLASH +
+				// this.langCode +
+				// this.spPaymentPageenum.SLASH +
 				this.spPaymentPageenum.SERIALQUERYPARAMETER +
 				this.systemSerialNumber +
 				this.spPaymentPageenum.SMARTPERFORMANCE +
@@ -63,9 +62,6 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 				this.spPaymentPageenum.APPLICATIONNAME;
 
 		});
-		setTimeout(() => {
-			this.btn.nativeElement.focus();
-		}, 500);
 	}
 	confirmProcess() {
 		window.open(this.paymenturl);
@@ -76,13 +72,13 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 		const modalStatus = {
 			initiatedTime: intervalTime,
 			isOpened: true
-		}
+		};
 		this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, modalStatus);
 	}
 	closeModal(){
 		const modalStatus = {
 			isOpened: false
-		}
+		};
 		this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, modalStatus);
 		this.activeModal.close('close');
 	}

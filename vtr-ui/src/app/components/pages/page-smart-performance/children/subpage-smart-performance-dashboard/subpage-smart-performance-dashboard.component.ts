@@ -185,7 +185,7 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 	}
 	openSubscribeModal() {
 		this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
-			backdrop: 'static',
+			backdrop: true,
 			size: 'lg',
 			centered: true,
 			windowClass: 'subscribe-modal',

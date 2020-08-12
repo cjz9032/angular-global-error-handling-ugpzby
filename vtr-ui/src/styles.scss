@@ -1943,7 +1943,11 @@ vtr-ui-smart-performance-scanning {
 }
 .subscribe-modal {
 	.modal-dialog {
-		max-width: 45%;
+		max-width: 45rem;
+		margin: 0 auto;
+	}
+	.modal-content {
+		border-radius: 1rem;
 	}
 }
 
