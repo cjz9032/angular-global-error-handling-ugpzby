@@ -394,11 +394,12 @@
 						padding-bottom: 0;
 					}
 					.icon-box {
+						display: flex;
 						width: 20%;
 						position: relative;
-						padding:0rem 0.25rem 1rem;
+						align-items: center;						
+						padding:1rem 0.5rem;
 						@media #{$breakpoint_sm}{
-							width: auto;
 							min-width: 7rem;
 							position:static;
 						}
@@ -446,33 +447,14 @@
 						p {
 							font-size: 1.2rem;
 							line-height: 1.2rem;
-							margin-top: 0.4rem;
+							margin: 0;
+							overflow: hidden;
+							text-overflow: ellipsis;
 							@media #{$breakpoint_xl}{
-								font-size: 1rem;
-								line-height: 1.2rem;
-								margin-bottom: 0;
-								margin-top: 0;
-								max-width: 5.5rem;
-								overflow: hidden;
-								text-overflow: ellipsis;
 								white-space: nowrap;
-							}
-							@media #{$breakpoint_md}{
+							}						
+							@media #{$breakpoint_sm}{	
 								font-size: 1rem;
-								line-height: 1.2rem;
-								margin-bottom: 0;
-								margin-top: 0;
-								max-width: 5.5rem;
-							}
-							@media #{$breakpoint_sm}{
-								font-size: 1rem;
-								line-height: 1.2rem;
-								margin-bottom: 0;
-								margin-top: 0;
-								max-width: 5.5rem;
-								overflow: hidden;
-								text-overflow: ellipsis;
-								white-space: nowrap;
 								font-weight:$weight_light;
 							}
 						}
