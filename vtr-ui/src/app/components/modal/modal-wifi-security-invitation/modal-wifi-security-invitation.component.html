@@ -7,7 +7,7 @@
 		<p *ngIf="!joinSuccess" class="description mt-5 mb-3"
 			[innerHTML]="description | translate" role="text">
 		</p>
-		<div class="form-group code-input-group p-3" [ngClass]="{'d-none': joinSuccess, 'joinfailed': joinFailed || disabledInput, 'input-focus': isFocusIn}">
+		<div class="form-group code-input-group p-3" [ngClass]="{'d-none': joinSuccess, 'joinfailed': joinFailed, 'input-focus': isFocusIn}">
 			<input type="text" id="chs-btn-inviatation-input" class="form-control"
 				placeholder="{{'security.homeprotection.invitationcode.invitationCode' | translate}}" #code
 				(keyup)="KeyPress($event)"
@@ -16,18 +16,16 @@
 				(focusout)="focusOut()" maxlength="6"
 				aria-label="Input box, enter a maximum of six letters"
 				aria-labelledby="ws-invitation-modal-errorMsg"
-				[disabled]="disabledInput"
 				#domInput>
 		</div>
-		<div class="join-info" aria-live="polite">
+		<div class="join-info">
 			<div class="d-flex flex-column" [ngClass]="{'joinGroupSuccess':joinSuccess}">
 				<div *ngIf="joinSuccess" class="successIcon pb-5">
 					<img [src]=" 'assets/images/connected-home-security/success-join.svg' | svgInline | async">
 				</div>
 				<div class="success pl-3" *ngIf="joinSuccess" role="text" tabindex="-1" #successMsg [innerHTML]="'security.homeprotection.invitationcode.success' | translate"></div>
 			</div>
-			<div id="ws-invitation-modal-errorMsg" class="failed" *ngIf="joinFailed && !disabledInput" [innerHTML]="'security.homeprotection.invitationcode.fail' | translate"></div>
-			<div id="ws-invitation-modal-offlineMsg" class="failed" *ngIf="disabledInput" [innerHTML]="'security.homeprotection.invitationcode.offlinePrompt' | translate" role="text"></div>
+			<div id="ws-invitation-modal-errorMsg" class="failed" *ngIf="joinFailed" [innerHTML]="'security.homeprotection.invitationcode.fail' | translate"></div>
 		</div>
 		<div class="divider mt-5" *ngIf="!joinSuccess"></div>
 		<div class="d-flex flex-row">
