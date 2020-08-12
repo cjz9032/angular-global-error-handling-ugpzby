@@ -1,48 +1,64 @@
-<div>
-    <vtr-ui-row-switch [title]="'device.deviceSettings.power.dpm.powerPlan.title' | translate"
-        componentName="dpm-powerplan" [caption]="'device.deviceSettings.power.dpm.powerPlan.description' | translate"
-        [leftIcon]="['icomoon', 'icomoon-dpm-power-plan']" [showChildContent]="true" [isLastChild]="true"
-        [theme]="'white'" [switchId]="'dpm-powerplan'">
-        <div class="content">
-            <section>
-                <h5 id="dpm-powerplan-currentpowerplan-label">
-                    {{'device.deviceSettings.power.dpm.powerPlan.currentPowerPlan.label' | translate}}
-                </h5>
-                <div>
-                    <vtr-ui-dpm-dropdown [label]="'device.deviceSettings.power.dpm.powerPlan.currentPowerPlan.label' | translate"  [list]="powerPlanIntervals" [value]="selectedPowerPlanVal"
-                        (change)="onPowerPlanChange($event)" [dropDownId]="'dpm-powerplan-action-dropdown'">
-                    </vtr-ui-dpm-dropdown>
-                </div>
-                <div>
-                    <h3 class="boldtitle profile" id="dpm-powerplan-profile-label">
-                        {{'device.deviceSettings.power.dpm.powerPlan.profile.title' | translate}}
-					</h3>
-                    <div>
-                        <h3 class="lefttitle" id="dpm-powerplan-profile-performance-label">
-                            {{'device.deviceSettings.power.dpm.powerPlan.profile.performance' | translate}}
-                        </h3>
-                        <vtr-ui-dpm-energy *ngIf="selectedPowerPlanVal" [value]="selectedPowerPlanVal.performance">
-                        </vtr-ui-dpm-energy>
-                        <vtr-ui-dpm-energy *ngIf="!selectedPowerPlanVal"></vtr-ui-dpm-energy>
-                    </div>
-                    <div>
-                        <h3 class="lefttitle" id="dpm-powerplan-profile-temperature-label">
-                            {{'device.deviceSettings.power.dpm.powerPlan.profile.temperature' | translate}}
-                        </h3>
-                        <vtr-ui-dpm-energy *ngIf="selectedPowerPlanVal" [value]="selectedPowerPlanVal.temperature">
-                        </vtr-ui-dpm-energy>
-                        <vtr-ui-dpm-energy *ngIf="!selectedPowerPlanVal"></vtr-ui-dpm-energy>
-                    </div>
-                    <div>
-                        <h3 class="lefttitle" id="dpm-powerplan-profile-usage-label">
-                            {{'device.deviceSettings.power.dpm.powerPlan.profile.usage' | translate}}
-                        </h3>
-                        <vtr-ui-dpm-energy *ngIf="selectedPowerPlanVal" [value]="selectedPowerPlanVal.powerUsage">
-                        </vtr-ui-dpm-energy>
-                        <vtr-ui-dpm-energy *ngIf="!selectedPowerPlanVal"></vtr-ui-dpm-energy>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </vtr-ui-row-switch>
+<div class="vtr-power-plan">
+	<vtr-ui-row-switch [title]="'device.deviceSettings.power.dpm.powerPlan.title' | translate"
+		componentName="dpm-powerplan"
+		[caption]="'device.deviceSettings.power.dpm.powerPlan.description' | translate"
+		[leftIcon]="['icomoon', 'icomoon-dpm-power-plan']"
+		[showChildContent]="true"
+		[isLastChild]="true"
+		[theme]="'white'"
+		[switchId]="'dpm-powerplan'">
+		<div class="content">
+			<section>
+				<p id="dpm-powerplan-currentpowerplan-label"
+					role="text">
+					{{'device.deviceSettings.power.dpm.powerPlan.currentPowerPlan.label' | translate}}
+				</p>
+				<div>
+					<vtr-ui-dpm-dropdown
+						[label]="'device.deviceSettings.power.dpm.powerPlan.currentPowerPlan.label' | translate"
+						[list]="powerPlanIntervals"
+						[value]="selectedPowerPlanVal"
+						(change)="onPowerPlanChange($event)"
+						[dropDownId]="'dpm-powerplan-action-dropdown'">
+					</vtr-ui-dpm-dropdown>
+				</div>
+				<div>
+					<h5 class="boldtitle profile"
+						id="dpm-powerplan-profile-label">
+						{{'device.deviceSettings.power.dpm.powerPlan.profile.title' | translate}}
+					</h5>
+					<div>
+						<h6 class="lefttitle"
+							id="dpm-powerplan-profile-performance-label">
+							{{'device.deviceSettings.power.dpm.powerPlan.profile.performance' | translate}}
+						</h6>
+						<vtr-ui-dpm-energy *ngIf="selectedPowerPlanVal"
+							[value]="selectedPowerPlanVal.performance">
+						</vtr-ui-dpm-energy>
+						<vtr-ui-dpm-energy *ngIf="!selectedPowerPlanVal"></vtr-ui-dpm-energy>
+					</div>
+					<div>
+						<h6 class="lefttitle"
+							id="dpm-powerplan-profile-temperature-label">
+							{{'device.deviceSettings.power.dpm.powerPlan.profile.temperature' | translate}}
+						</h6>
+						<vtr-ui-dpm-energy *ngIf="selectedPowerPlanVal"
+							[value]="selectedPowerPlanVal.temperature">
+						</vtr-ui-dpm-energy>
+						<vtr-ui-dpm-energy *ngIf="!selectedPowerPlanVal"></vtr-ui-dpm-energy>
+					</div>
+					<div>
+						<h6 class="lefttitle"
+							id="dpm-powerplan-profile-usage-label">
+							{{'device.deviceSettings.power.dpm.powerPlan.profile.usage' | translate}}
+						</h6>
+						<vtr-ui-dpm-energy *ngIf="selectedPowerPlanVal"
+							[value]="selectedPowerPlanVal.powerUsage">
+						</vtr-ui-dpm-energy>
+						<vtr-ui-dpm-energy *ngIf="!selectedPowerPlanVal"></vtr-ui-dpm-energy>
+					</div>
+				</div>
+			</section>
+		</div>
+	</vtr-ui-row-switch>
 </div>

@@ -9,7 +9,7 @@ import { DPMDropDownInterval } from 'src/app/data-models/common/dpm-drop-down-in
 	templateUrl: './power-use.component.html',
 	styleUrls: ['./power-use.component.scss']
 })
-export class PowerUseComponent implements OnInit {
+export class PowerUseComponent implements OnInit, OnDestroy {
 
 	@Input() powerplan: any;
 	constructor(
@@ -42,11 +42,11 @@ export class PowerUseComponent implements OnInit {
 	}
 
 	private initIntervals() {
-		let minute = this.translate.instant('device.deviceSettings.power.dpm.powerUse.items.minute');
-		let minutes = this.translate.instant('device.deviceSettings.power.dpm.powerUse.items.minutes');
-		let hour = this.translate.instant('device.deviceSettings.power.dpm.powerUse.items.hour');
-		let hours = this.translate.instant('device.deviceSettings.power.dpm.powerUse.items.hours');
-		let never = this.translate.instant('device.deviceSettings.power.dpm.powerUse.items.never');
+		const minute = this.translate.instant('device.deviceSettings.power.dpm.powerUse.items.minute');
+		const minutes = this.translate.instant('device.deviceSettings.power.dpm.powerUse.items.minutes');
+		const hour = this.translate.instant('device.deviceSettings.power.dpm.powerUse.items.hour');
+		const hours = this.translate.instant('device.deviceSettings.power.dpm.powerUse.items.hours');
+		const never = this.translate.instant('device.deviceSettings.power.dpm.powerUse.items.never');
 
 		this.timeItems = [
 			{
