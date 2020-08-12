@@ -620,6 +620,7 @@ vtr-subpage-smart-performance-scan-summary {
 		}
 	}
 	.labels {
+		width: 10rem;
 		.badge {
 			font-size: 1rem;
 			line-height: 1.2rem;
@@ -735,8 +736,7 @@ vtr-subpage-smart-performance-scan-summary {
 	mask-mode: alpha;
 	position: relative;
 	left: 3rem;
-	max-width: 26rem;
-	width: calc(90% - 2rem);
+	width: calc(100% - 13rem);
 	.ms-slider__words {
 		display: inline-block;
 		margin: 0;
@@ -752,8 +752,7 @@ vtr-subpage-smart-performance-scan-summary {
 		animation-duration: 20s;
 		width: 100%;
 		li {
-			white-space: nowrap;
-			max-width: 26rem;
+			white-space: nowrap;			
 			overflow: hidden;
 			text-overflow: ellipsis;
 		}
