@@ -964,14 +964,12 @@ vtr-subpage-scanning {
 				animation: spinner 0.7s linear infinite;
 			}
 			.item{
+				align-items: center;
 				strong {
 					font-size: $fontsize_xs;
 					font-weight: $weight_bold;
-					line-height: 3rem;
-					color: $shade_blue;
-					overflow: hidden;
-					text-overflow: ellipsis;
-					white-space: nowrap;
+					line-height: 2rem;
+					color: $shade_blue;					
 				}
 				&:first-child{
 					.icomoon{
@@ -988,9 +986,14 @@ vtr-subpage-scanning {
 			}
 			.status {
 				cursor: pointer;
-				strong{
-					font-weight: $weight_bold;
-				}
+				p {
+					text-align: right;
+					line-height: 2rem;
+					margin: 0;
+					strong{
+						font-weight: $weight_bold;
+					}
+				}				
 				.ar-time {
 					margin-left: -0.4rem;
 				}
