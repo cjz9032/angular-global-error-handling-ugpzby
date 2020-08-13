@@ -1,5 +1,6 @@
 import { Md5 } from "ts-md5";
-import { NORMAL_CONTENTS, EXPIRED_DATE_INPOISTIONB, DISPALY_DATE_INPOISTIONB, MULITI_ITEM_INPOISTIONB, TEST_DATASOURCE } from 'src/testing/content-data';
+import { NORMAL_CONTENTS, EXPIRED_DATE_INPOISTIONB, DISPALY_DATE_INPOISTIONB, MULITI_ITEM_INPOISTIONB, DASHBOARD, DASHBOARD_ONLY_UPE,  DASHBOARD_ONLY_CMS, TEST_DATASOURCE} from 'src/testing/content-data';
+
 export class MockContentLocalCacheTest {
 	public get(par): any {
 
@@ -20,6 +21,12 @@ export class MockContentLocalCacheTest {
 		}
 		else if (par.Key === Md5.hashStr(JSON.stringify({ Page: 'noResponse' }))) {
 			par = null;
+		} else if (par.Key === Md5.hashStr(JSON.stringify({ Page: 'dashboard_only_upe' }))) {
+			par.Value = JSON.stringify(DASHBOARD_ONLY_UPE);
+		} else if (par.Key === Md5.hashStr(JSON.stringify({ Page: 'dashboard_only_cms' }))) {
+			par.Value = JSON.stringify(DASHBOARD_ONLY_CMS);
+		} else if (par.Key === Md5.hashStr(JSON.stringify({ Page: 'dashboard' }))) {
+			par.Value = JSON.stringify(DASHBOARD);
 		}
 		else if (par.Key === Md5.hashStr(JSON.stringify({Page: 'testDataResource' }))){
 			par.Value = JSON.stringify(TEST_DATASOURCE);

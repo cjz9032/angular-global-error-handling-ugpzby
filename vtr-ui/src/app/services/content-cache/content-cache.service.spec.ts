@@ -1,19 +1,29 @@
 import { TestBed } from '@angular/core/testing';
 
 import { ContentCacheService } from './content-cache.service';
-import { MockContentLocalCacheTest } from '../../services/content-cache/content-cache.mock.data';
+import { MockContentLocalCacheTest } from '../../services/content-cache/mock/content-cache.mock.data';
 
-import { NORMAL_CONTENTS } from 'src/testing/content-data';
+import { asyncData, asyncError } from 'src/testing/async-observable-helpers'
+import { CMS_CONTENTS, UPE_CONTENTS, NORMAL_CONTENTS, EXPIRED_DATE_INPOISTIONB, DISPALY_DATE_INPOISTIONB, MULITI_ITEM_INPOISTIONB, WELCOME_TEXT_CONTENTS } from 'src/testing/content-data';
+import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 
 describe('ContentCacheService', () => {
 	let service: ContentCacheService;
 	let vantageShellService: { getContentLocalCache: jasmine.Spy };
 	let localInfoService: { getLocalInfo: jasmine.Spy };
-	let cmsService: { generateContentQueryParams: jasmine.Spy };
+	let cmsService: { generateContentQueryParams: jasmine.Spy, fetchContents: jasmine.Spy, getOneCMSContent: jasmine.Spy};
 	let upeService: { fetchUPEContent: jasmine.Spy };
 	let buildInContentService: { getArticle: jasmine.Spy, getContents: jasmine.Spy };
 	let logger: { error: jasmine.Spy };
 	let mockTestObject: MockContentLocalCacheTest;
+	let localInfo = {
+		Brand: 'think',
+		GEO: 'en',
+		Lang: 'en',
+		OEM: 'LENOVO',
+		OS: 'Windows',
+		Segment: 'Consumer'
+	}
 
 	beforeEach(() => {
 		logger = jasmine.createSpyObj('LoggerService',
@@ -23,7 +33,7 @@ describe('ContentCacheService', () => {
 			['getLocalInfo']);
 
 		cmsService = jasmine.createSpyObj('CMSService',
-			['generateContentQueryParams', 'getLocalinfo', 'fetchCMSArticle']);
+			['generateContentQueryParams', 'getLocalinfo', 'fetchCMSArticle', 'fetchContents', 'getOneCMSContent']);
 
 		upeService = jasmine.createSpyObj('UPEService',
 			['fetchUPEContent']);
@@ -46,6 +56,7 @@ describe('ContentCacheService', () => {
 			<any>upeService,
 			<any>buildInContentService,
 			<any>logger);
+
 	});
 
 	it('should be created', () => {
@@ -133,7 +144,6 @@ describe('ContentCacheService', () => {
 
 		expect(ret).toBeTruthy();
 		const keys = Object.keys(ret);
-		expect(keys).toBeTruthy();
 		expect(keys.length).toEqual(2);
 		expect(keys.includes('positionA')).toBeTruthy();
 		expect(keys.includes('positionB')).toBeTruthy();
@@ -146,6 +156,317 @@ describe('ContentCacheService', () => {
 			}
 		});
 		expect(ret['positionB'].DataSource).toEqual('upe');
+	});
+
+	it('save contentList only from cms', async () => {
+		let	contentCards = {
+			positionA: {
+				displayContent: [],
+				template: 'home-page-hero-banner',
+				cardId: 'positionA',
+				positionParam: 'position-A',
+				tileSource: 'CMS',
+				cmsContent: undefined,
+				upeContent: undefined
+			},
+			positionB: {
+				displayContent: new FeatureContent(),
+				template: 'half-width-title-description-link-image',
+				cardId: 'positionB',
+				positionParam: 'position-B',
+				tileSource: 'CMS',
+				cmsContent: undefined,
+				upeContent: undefined
+			},
+			positionC: {
+				displayContent: new FeatureContent(),
+				template: 'half-width-title-description-link-image',
+				cardId: 'positionC',
+				positionParam: 'position-C',
+				tileSource: 'CMS',
+				cmsContent: undefined,
+				upeContent: undefined
+			},
+			positionD: {
+				displayContent: new FeatureContent(),
+				template: 'full-width-title-image-background',
+				cardId: 'positionD',
+				positionParam: 'position-D',
+				tileSource: 'CMS',
+				cmsContent: undefined,
+				upeContent: undefined
+			},
+			positionE: {
+				displayContent: new FeatureContent(),
+				template: 'half-width-top-image-title-link',
+				cardId: 'positionE',
+				positionParam: 'position-E',
+				tileSource: 'CMS',
+				cmsContent: undefined,
+				upeContent: undefined
+			},
+			positionF: {
+				displayContent: new FeatureContent(),
+				template: 'half-width-top-image-title-link',
+				cardId: 'positionF',
+				positionParam: 'position-F',
+				tileSource: 'CMS',
+				cmsContent: undefined,
+				upeContent: undefined
+			}
+		};
+		cmsService.generateContentQueryParams.and.returnValue({ Page: 'dashboard_only_cms'});
+		cmsService.fetchContents.and.returnValue(CMS_CONTENTS);
+		cmsService.getOneCMSContent.and.returnValue(CMS_CONTENTS);
+		localInfoService.getLocalInfo.and.returnValue(localInfo);
+		const ret = await service.getCachedContents('dashboard_only_upe', contentCards);
+
+		expect(ret).toBeTruthy();
+		const keys = Object.keys(ret);
+		expect(keys).toBeTruthy();
+		expect(keys.length).toEqual(3);
+		expect(keys.includes('positionA')).toBeTruthy();
+		expect(keys.includes('positionB')).toBeTruthy();
+		expect(keys.includes('positionC')).toBeTruthy();
+		expect(ret['positionA'].length).toEqual(2);
+		expect(ret['positionB'].Title).toEqual('CMS Content');
+		expect(ret['positionC'].Title).toEqual('Smarter Data Helps Farmers Rapidly Adapt to Climate Change');
+
+	});
+
+	it('save contentList only from upe', async () => {
+		let	contentCards = {
+			positionA: {
+				displayContent: [],
+				template: 'home-page-hero-banner',
+				cardId: 'positionA',
+				positionParam: 'position-A',
+				tileSource: 'UPE',
+				cmsContent: undefined,
+				upeContent: undefined
+			},
+			positionB: {
+				displayContent: new FeatureContent(),
+				template: 'half-width-title-description-link-image',
+				cardId: 'positionB',
+				positionParam: 'position-B',
+				tileSource: 'UPE',
+				cmsContent: undefined,
+				upeContent: undefined
+			},
+			positionC: {
+				displayContent: new FeatureContent(),
+				template: 'half-width-title-description-link-image',
+				cardId: 'positionC',
+				positionParam: 'position-C',
+				tileSource: 'UPE',
+				cmsContent: undefined,
+				upeContent: undefined
+			},
+			positionD: {
+				displayContent: new FeatureContent(),
+				template: 'full-width-title-image-background',
+				cardId: 'positionD',
+				positionParam: 'position-D',
+				tileSource: 'UPE',
+				cmsContent: undefined,
+				upeContent: undefined
+			},
+			positionE: {
+				displayContent: new FeatureContent(),
+				template: 'half-width-top-image-title-link',
+				cardId: 'positionE',
+				positionParam: 'position-E',
+				tileSource: 'UPE',
+				cmsContent: undefined,
+				upeContent: undefined
+			},
+			positionF: {
+				displayContent: new FeatureContent(),
+				template: 'half-width-top-image-title-link',
+				cardId: 'positionF',
+				positionParam: 'position-F',
+				tileSource: 'UPE',
+				cmsContent: undefined,
+				upeContent: undefined
+			}
+		};
+		cmsService.getOneCMSContent.and.returnValue(CMS_CONTENTS);
+		upeService.fetchUPEContent.and.returnValue(UPE_CONTENTS);
+		cmsService.fetchContents.and.returnValue(CMS_CONTENTS);
+		localInfoService.getLocalInfo.and.returnValue(localInfo);
+		cmsService.generateContentQueryParams.and.returnValue({ Page: 'dashboard_only_upe'});
+		const ret = await service.getCachedContents('dashboard_only_cms', contentCards);
+
+		expect(ret).toBeTruthy();
+		const keys = Object.keys(ret);
+		expect(keys).toBeTruthy();
+		expect(keys.length).toEqual(3);
+		expect(keys.includes('positionA')).toBeTruthy();
+		expect(keys.includes('positionB')).toBeTruthy();
+		expect(keys.includes('positionC')).toBeTruthy();
+		expect(ret['positionA'].length).toEqual(2);
+		expect(ret['positionB'].Title).toEqual('UPE Content');
+		expect(ret['positionC'].Title).toEqual('Smarter Data Helps Farmers Rapidly Adapt to Climate Change');
+	});
+
+	it('save contentList from upe and cms', async () => {
+		let	contentCards = {
+			positionA: {
+				displayContent: [],
+				template: 'home-page-hero-banner',
+				cardId: 'positionA',
+				positionParam: 'position-A',
+				tileSource: 'CMS',
+				cmsContent: undefined,
+				upeContent: undefined
+			},
+			positionB: {
+				displayContent: new FeatureContent(),
+				template: 'half-width-title-description-link-image',
+				cardId: 'positionB',
+				positionParam: 'position-B',
+				tileSource: 'UPE',
+				cmsContent: undefined,
+				upeContent: undefined
+			},
+			positionC: {
+				displayContent: new FeatureContent(),
+				template: 'half-width-title-description-link-image',
+				cardId: 'positionC',
+				positionParam: 'position-C',
+				tileSource: 'CMS',
+				cmsContent: undefined,
+				upeContent: undefined
+			},
+			positionD: {
+				displayContent: new FeatureContent(),
+				template: 'full-width-title-image-background',
+				cardId: 'positionD',
+				positionParam: 'position-D',
+				tileSource: 'CMS',
+				cmsContent: undefined,
+				upeContent: undefined
+			},
+			positionE: {
+				displayContent: new FeatureContent(),
+				template: 'half-width-top-image-title-link',
+				cardId: 'positionE',
+				positionParam: 'position-E',
+				tileSource: 'CMS',
+				cmsContent: undefined,
+				upeContent: undefined
+			},
+			positionF: {
+				displayContent: new FeatureContent(),
+				template: 'half-width-top-image-title-link',
+				cardId: 'positionF',
+				positionParam: 'position-F',
+				tileSource: 'CMS',
+				cmsContent: undefined,
+				upeContent: undefined
+			}
+		};
+		cmsService.getOneCMSContent.and.returnValue(CMS_CONTENTS);
+		upeService.fetchUPEContent.and.returnValue(UPE_CONTENTS);
+		cmsService.fetchContents.and.returnValue(CMS_CONTENTS);
+		localInfoService.getLocalInfo.and.returnValue(localInfo);
+		cmsService.generateContentQueryParams.and.returnValue({ Page: 'dashboard'});
+		const ret = await service.getCachedContents('dashboard', contentCards);
+
+		expect(ret).toBeTruthy();
+		const keys = Object.keys(ret);
+		expect(keys).toBeTruthy();
+		expect(keys.length).toEqual(3);
+		expect(keys.includes('positionA')).toBeTruthy();
+		expect(keys.includes('positionB')).toBeTruthy();
+		expect(keys.includes('positionC')).toBeTruthy();
+		expect(ret['positionA'].length).toEqual(2);
+		expect(ret['positionB'].Title).toEqual('Lenovo Tech World &#8211; The New Era of Data Intelligence Decoded');
+		expect(ret['positionC'].Title).toEqual('Smarter Data Helps Farmers Rapidly Adapt to Climate Change');
+	});
+
+	it('save contentList that segment is commercial', async () => {
+		let	contentCards = {
+			positionA: {
+				displayContent: [],
+				template: 'home-page-hero-banner',
+				cardId: 'positionA',
+				positionParam: 'position-A',
+				tileSource: 'CMS',
+				cmsContent: undefined,
+				upeContent: undefined
+			},
+			positionB: {
+				displayContent: new FeatureContent(),
+				template: 'half-width-title-description-link-image',
+				cardId: 'positionB',
+				positionParam: 'position-B',
+				tileSource: 'CMS',
+				cmsContent: undefined,
+				upeContent: undefined
+			},
+			positionC: {
+				displayContent: new FeatureContent(),
+				template: 'half-width-title-description-link-image',
+				cardId: 'positionC',
+				positionParam: 'position-C',
+				tileSource: 'CMS',
+				cmsContent: undefined,
+				upeContent: undefined
+			},
+			positionD: {
+				displayContent: new FeatureContent(),
+				template: 'full-width-title-image-background',
+				cardId: 'positionD',
+				positionParam: 'position-D',
+				tileSource: 'CMS',
+				cmsContent: undefined,
+				upeContent: undefined
+			},
+			positionE: {
+				displayContent: new FeatureContent(),
+				template: 'half-width-top-image-title-link',
+				cardId: 'positionE',
+				positionParam: 'position-E',
+				tileSource: 'CMS',
+				cmsContent: undefined,
+				upeContent: undefined
+			},
+			positionF: {
+				displayContent: new FeatureContent(),
+				template: 'half-width-top-image-title-link',
+				cardId: 'positionF',
+				positionParam: 'position-F',
+				tileSource: 'CMS',
+				cmsContent: undefined,
+				upeContent: undefined
+			}
+		};
+		cmsService.generateContentQueryParams.and.returnValue({ Page: 'dashboard_only_cms'});
+		cmsService.fetchContents.and.returnValue(CMS_CONTENTS);
+		cmsService.getOneCMSContent.and.returnValue(CMS_CONTENTS);
+		let currentLocalInfo = {
+			Brand: 'think',
+			GEO: 'en',
+			Lang: 'en',
+			OEM: 'LENOVO',
+			OS: 'Windows',
+			Segment: 'Commercial'
+		}
+		localInfoService.getLocalInfo.and.returnValue(currentLocalInfo);
+		const ret = await service.getCachedContents('dashboard_only_upe', contentCards);
+
+		expect(ret).toBeTruthy();
+		const keys = Object.keys(ret);
+		expect(keys).toBeTruthy();
+		expect(keys.length).toEqual(3);
+		expect(keys.includes('positionA')).toBeTruthy();
+		expect(keys.includes('positionB')).toBeTruthy();
+		expect(keys.includes('positionC')).toBeTruthy();
+		expect(ret['positionA'].length).toEqual(2);
+		expect(ret['positionB'].Title).toEqual('CMS Content');
+		expect(ret['positionC'].Title).toEqual('Smarter Data Helps Farmers Rapidly Adapt to Climate Change');
 	});
 
 });
