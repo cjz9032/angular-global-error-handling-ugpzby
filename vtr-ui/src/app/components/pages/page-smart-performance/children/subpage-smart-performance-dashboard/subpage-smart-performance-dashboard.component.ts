@@ -100,7 +100,7 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 			// 	//this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, false);
 			// }
 		}
-		// this.getSubscriptionDetails();
+		 this.getSubscriptionDetails();
 
 		if (this.smartPerformanceService.isShellAvailable) {
 			this.checkReadiness();
@@ -486,21 +486,41 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 	}
 	async getSubscriptionDetails() {
 		let machineInfo;
+		let subscriptionData = [];		
 		machineInfo = await this.supportService.getMachineInfo();
-		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails(machineInfo.serialnumber);
-		this.logger.info('ui-smart-performance.component.getSubscriptionDetails', subscriptionDetails);
+		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails( machineInfo.serialnumber);
+		this.logger.info('ui-smart-performance.component.getSubscriptionDetails', subscriptionDetails);		
 		if (subscriptionDetails && subscriptionDetails.data) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
+			subscriptionData = subscriptionDetails.data;
+			const lastItem = subscriptionData[subscriptionData.length - 1];
+			const releaseDate = new Date(lastItem.releaseDate);
+			releaseDate.setMonth(releaseDate.getMonth() + +lastItem.products[0].unitTerm);
+			releaseDate.setDate(releaseDate.getDate() - 1);		
+			if (lastItem && lastItem.status.toUpperCase() === 'COMPLETED') {
+				this.getExpiredStatus(releaseDate);
+			}
 		} else {
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
+			this.isSubscribed = false;
+		}		
+	}
+	getExpiredStatus(releaseDate) {
+		let expiredDate;
+		let expiryRemainDays: number;
+		const nextText = this.translate.instant('smartPerformance.subscriptionDetails.next');
+		const rDate = '2022-06-15T11:25:46.212+0000';
+		const currentDate: any = new Date();
+		expiredDate = new Date(releaseDate);		 
+		if (expiredDate < currentDate) {			 
+			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
+			this.isSubscribed = false;
+			//this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);			 
 		}
-		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
-		if (this.isSubscribed !== undefined && this.isSubscribed === true) {
+		else
+		{
 			this.writeSmartPerformanceActivity('True', 'True', 'Active');
-			this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCAN);
-		}
-		else {
-			this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCANANDFIX);
+			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
+			this.isSubscribed = true;
 		}
 	}
 	hideBasedOnOldAddInVersion($event) {
