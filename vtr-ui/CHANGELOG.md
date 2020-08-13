@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.32](https://bitbucket.tc.lenovo.com///compare/v1.7.31...v1.7.32) (2020-08-12)
+
+
+### Features
+
+* **revert:** revert story VAN-11408 and subtask VAN-20649 ([b3e58f1](https://bitbucket.tc.lenovo.com///commit/b3e58f1136cef59f5c31bab57a99842059cf2e44))
+* **revert:** revert story VAN-12943 ([d7bac70](https://bitbucket.tc.lenovo.com///commit/d7bac705c54f7c5d9036cf91ae70d1a8f0f2eea6))
+* **revert:** revert story VAN-9429 and subtask VAN-17422 ([e3c841a](https://bitbucket.tc.lenovo.com///commit/e3c841a00dc2653d636529020ee15cd451b721dc))
+
+
+### Bug Fixes
+
+* **Smart Performance:** VAN-21135 VAN-21125 modify sp proceed dialog. ([dac137e](https://bitbucket.tc.lenovo.com///commit/dac137e8b9622868506c8f3d29a1635953edaf1e))
+
 ### [1.7.31](https://bitbucket.tc.lenovo.com///compare/v1.7.30...v1.7.31) (2020-08-11)
 
 

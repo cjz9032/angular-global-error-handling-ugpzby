@@ -90,7 +90,8 @@
 					}
 
 					.heading {
-
+						overflow: hidden;						
+						width: 64%;						
 						h3,
 						h2 {
 							text-align: left;
@@ -255,12 +256,7 @@
 					}
 				}
 
-				.status-text {
-					margin-top: 2.2rem;
-
-					@media #{$breakpoint_sm} {
-						margin-top: 1.25rem;
-					}
+				.status-text {			
 
 					p {
 						text-transform: uppercase;
@@ -269,8 +265,8 @@
 						color: $shade_dark;
 						position: relative;
 						padding-right: 1.5rem;
-						letter-spacing: 0;
-						word-break: break-all;
+						letter-spacing: 0;	
+						margin:0;
 
 						@media #{$breakpoint_lg} {
 							font-size: $fontsize_xs;
