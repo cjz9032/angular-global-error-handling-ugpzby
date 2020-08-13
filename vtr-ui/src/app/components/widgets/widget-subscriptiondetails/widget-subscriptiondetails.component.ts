@@ -69,13 +69,14 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		this.isFirstLoad = true;
 		this.spProcessStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SPProcessStatus);
 		this.spFrstRunStatus = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun);
-		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
+		
 		this.decryptPNListData();
 		if (this.spFrstRunStatus) {
 			this.getSubscriptionDetails();
 		} else {
 			this.initSubscripionDetails();
 		}
+		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
 	}
 	decryptPNListData() {
 		const bytes = CryptoJS.AES.decrypt(environment.spPnListKey, 'secret key 123');

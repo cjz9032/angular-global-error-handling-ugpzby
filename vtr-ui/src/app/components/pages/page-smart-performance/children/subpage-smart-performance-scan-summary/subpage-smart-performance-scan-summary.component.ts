@@ -150,6 +150,13 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		}
 	];
 	ngOnInit() {
+		this.isSubscribed = this.commonService.getLocalStorageValue(
+			LocalStorageKey.IsFreeFullFeatureEnabled
+		);
+		if(!this.isSubscribed)
+		{
+			this.getSubscriptionDetails();
+		}
 		const cacheMachineFamilyName = this.commonService.getLocalStorageValue(
 			LocalStorageKey.MachineFamilyName,
 			undefined
@@ -195,7 +202,46 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 			day: this.currentDate.getDate()
 		};
 	}
-
+	async getSubscriptionDetails() {
+		let machineInfo;
+		let subscriptionData = [];		
+		machineInfo = await this.supportService.getMachineInfo()
+		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails( machineInfo.serialnumber);
+		this.logger.info('subpage-smart-performance-scan-summary.component.getSubscriptionDetails', subscriptionDetails);		
+		if (subscriptionDetails && subscriptionDetails.data) {
+			subscriptionData = subscriptionDetails.data;
+			const lastItem = subscriptionData[subscriptionData.length - 1];
+			const releaseDate = new Date(lastItem.releaseDate);
+			releaseDate.setMonth(releaseDate.getMonth() + +lastItem.products[0].unitTerm);
+			releaseDate.setDate(releaseDate.getDate() - 1);		
+			if (lastItem && lastItem.status.toUpperCase() === 'COMPLETED') {
+				this.getExpiredStatus(releaseDate);
+			}
+		} else {
+			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
+			this.isSubscribed = false;
+		}		
+	}
+	getExpiredStatus(releaseDate) {
+		let expiredDate;
+		let expiryRemainDays: number;
+		const nextText = this.translate.instant('smartPerformance.subscriptionDetails.next');
+		const rDate = '2022-06-15T11:25:46.212+0000';
+		const currentDate: any = new Date();
+		expiredDate = new Date(releaseDate);
+		 
+		if (expiredDate < currentDate) {			 
+			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
+			this.isSubscribed = false;
+			//this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);			 
+		}
+		else
+		{
+			//this.writeSmartPerformanceActivity('True', 'True', 'Active');
+			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
+			this.isSubscribed = true;
+		}
+	}
 	getScanHistoryWithTime() {
 		// Object historyScanResults Copy to object historyScanResultsDateTime
 		this.historyScanResultsDateTime = JSON.parse(JSON.stringify(this.historyScanResults));
