@@ -237,6 +237,10 @@ $normalPadding: 2.4rem;
 
 		.user-email {
 			height: 6rem;
+
+			&::-ms-clear{
+				display: none;
+			}
 		}
 
 		.invalid-email {
