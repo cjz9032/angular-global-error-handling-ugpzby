@@ -317,7 +317,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 					this.expiredDaysCount = expiryRemainDays + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.days');
 					break;
 				}
-				case (expiryRemainDays === 0): {
+				case (expiryRemainDays === 0 && expiryRemainDays < 1): {
 					this.expiredDaysCount = this.translate.instant('smartPerformance.subscriptionDetails.today');
 					break;
 				}
