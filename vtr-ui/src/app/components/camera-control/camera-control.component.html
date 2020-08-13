@@ -34,12 +34,11 @@
 			<ul class="list-group list-group-flush">
 				<li class="list-group-item"
 					*ngIf="cameraSettings.brightness && cameraSettings.brightness.supported">
-					<div class="slider-item-text text-uppercase"
-						id="camera-brightness"
-						attr.aria-label="camera-brightness">
+					<h5 class="slider-item-text text-uppercase"
+						id="camera-brightness">
 						<!-- Brightness -->
 						{{'device.deviceSettings.displayCamera.camera.brightness' | translate}}
-					</div>
+					</h5>
 					<vtr-ui-custom-slider [step]="cameraSettings.brightness.step"
 						[min]="cameraSettings.brightness.min"
 						[max]="cameraSettings.brightness.max"
@@ -55,12 +54,11 @@
 				</li>
 				<li class="list-group-item"
 					*ngIf="cameraSettings.contrast && cameraSettings.contrast.supported">
-					<div class="slider-item-text text-uppercase"
-						id="camera-contrast"
-						attr.aria-label="camera-contrast">
+					<h5 class="slider-item-text text-uppercase"
+						id="camera-contrast">
 						<!-- Contrast -->
 						{{'device.deviceSettings.displayCamera.camera.contrast' | translate}}
-					</div>
+					</h5>
 					<vtr-ui-custom-slider [step]="cameraSettings.contrast.step"
 						[min]="cameraSettings.contrast.min"
 						[max]="cameraSettings.contrast.max"
@@ -77,12 +75,11 @@
 				<li class="list-group-item"
 					*ngIf="cameraSettings.exposure && cameraSettings.exposure.autoModeSupported">
 					<div class="d-flex justify-content-between">
-						<div class="slider-item-text text-uppercase"
-							id="camera-auto-exposure"
-							attr.aria-label="camera-auto-exposure">
+						<h5 class="slider-item-text text-uppercase"
+							id="camera-auto-exposure">
 							<!-- Auto Exposure -->
 							{{'device.deviceSettings.displayCamera.camera.autoExposure' | translate}}
-						</div>
+						</h5>
 						<div class="float-right">
 							<vtr-ui-custom-switch [value]="cameraFeatureAccess.exposureAutoValue"
 								[isDisabled]="disabledAll"
