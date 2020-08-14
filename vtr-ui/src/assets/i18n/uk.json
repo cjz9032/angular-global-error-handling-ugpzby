@@ -2647,8 +2647,7 @@
                 "connect": "CONNECTED",
                 "fail": "Incorrect code entered!",
                 "joinFamilyAccount": "Join family account",
-                "connecting": "Connecting...",
-                "offlinePrompt": "You are currently off-line. Please try again when you are connected to the Internet"
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Стан безпеки",
@@ -4147,7 +4146,31 @@
             "LINEAR_READ_TEST": "Перевірка з лінійним зчитуванням",
             "LINEAR_READ_TEST_DESCRIPTION": "Перевіряє, чи накопичувач працює належним чином, лінійно зчитуючи його сектори",
             "FINAL_RESULT_CODE_FAIL": "Код кінцевого результату вказує, що виявлено проблеми зі скануванням. Виконайте інструкції на екрані, наведені під списком результатів сканування устаткування, щоб зв'язатися зі службою підтримки Lenovo. Надайте код кінцевого результату, коли вас про це попросять.",
-            "FINAL_RESULT_CODE_SUCCESS": "Код кінцевого результату вказує, що проблем зі скануванням не виявлено. Якщо будь-яка перевірка завершується попередженням або повідомленням про незастосовність, це не обов'язково означає наявність проблеми. Якщо представник служби підтримки Lenovo попросив вас виконати цю перевірку, надайте йому код результату як підтвердження. Якщо ні, дії з вашого боку не потребуються. Якщо проблеми не усунуто, зверніться до служби підтримки Lenovo."
+            "FINAL_RESULT_CODE_SUCCESS": "Код кінцевого результату вказує, що проблем зі скануванням не виявлено. Якщо будь-яка перевірка завершується попередженням або повідомленням про незастосовність, це не обов'язково означає наявність проблеми. Якщо представник служби підтримки Lenovo попросив вас виконати цю перевірку, надайте йому код результату як підтвердження. Якщо ні, дії з вашого боку не потребуються. Якщо проблеми не усунуто, зверніться до служби підтримки Lenovo.",
+            "HIGH_DEFINITION_AUDIO_SPECIFICATION": "High Definition Audio specification:",
+            "NUMBER_OF_BIDIRECTIONAL_STREAMS": "Number of bidirectional streams",
+            "NUMBER_OF_INPUT_STREAMS": "Number of input streams",
+            "NUMBER_OF_OUTPUT_STREAMS": "Number of output streams",
+            "AUDIO": "Audio",
+            "AUDIO_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "AUDIO_QUICK_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "BLUETOOTH": "Bluetooth",
+            "BLUETOOTH_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "BLUETOOTH_QUICK_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "FINGERPRINT": "Fingerprint",
+            "FINGERPRINT_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "FINGERPRINT_QUICK_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "KEYBOARD_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "KEYBOARD_QUICK_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "OPTICAL_DRIVE_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Extended tests for optical drive devices",
+            "POINTING_DEVICES": "Pointing Devices",
+            "POINTING_DEVICES_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "POINTING_DEVICES_QUICK_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "TOUCHSCREEN": "Touchscreen",
+            "TOUCHSCREEN_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
+            "TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
+            "CONVEYANCE_SELF_TEST": "SMART Conveyance Self Test",
+            "CONVEYANCE_SELF_TEST_DESCRIPTION": "Checks the device's integrity through the status returned by SMART Conveyance test"
         },
         "warningMessage": "Зауважте: тести буде скасовано, якщо система перейде до режиму сну або глибокого сну",
         "refreshMessage": "Оновлення може зайняти деякий час – потрібно знову завантажити всі компоненти",
@@ -4301,7 +4324,17 @@
             "descriptionbeta": "Lenovo пропонує можливість спробувати Smart Performance до липня 2020 року.",
             "descriptionbeta1": "Ви можете приєднатися та спробувати всі можливості функції.",
             "descriptionNonSubscriber": "Ви не передплатили службу Lenovo Smart Performance. Ви можете лише сканувати свій комп'ютер. Передплатіть зараз, щоб отримати всі переваги безпечної та ефективної роботи.",
-            "processStatus": "ОБРОБКА"
+            "processStatus": "ОБРОБКА",
+            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance,you can renew the subscription by clicking the \"Manage Subscription \" link to resume full protection for your device.",
+            "expiredStatus": "EXPIRED",
+            "expiredNote": "Your subscription will expire in",
+            "day": "day",
+            "days": "days",
+            "weeks": "weeks",
+            "week": "a week",
+            "month": "month",
+            "today": "today",
+            "next": "next"
         },
         "scanSettings": {
             "title": "Заплануйте розклад сканування",
@@ -4765,7 +4798,9 @@
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
-            "backToHome": "Назад на головну"
+            "backToHome": "Назад на головну",
+            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance,if you would like to resume the \"Scan and Fix\" feature,please press the \"renew and fix\" button down below to renew your subscription.",
+            "renewAndFix": "Renew & Fix"
         },
         "subscriberScanHomePage": {
             "title": "Усе працює правильно на вашому ",

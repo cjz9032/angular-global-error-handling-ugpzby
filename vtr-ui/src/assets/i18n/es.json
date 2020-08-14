@@ -2139,7 +2139,7 @@
                 "note": {
                     "descriptionTitle": "Atención:",
                     "description1": "Se necesitan opciones de inicio de sesión válidas, como una contraseña o un código PIN, para iniciar sesión en Windows. De lo contrario, es posible que algún usuario no autorizado con acceso a su sistema deshabilite por error la característica Alerta de movimiento inteligente.",
-                    "description2":"Antes de alejarse del equipo, asegúrese de bloquearlo presionando las teclas de logotipo de Windows y L. De lo contrario, la función de alarma de movimiento inteligente no funcionará con normalidad."
+                    "description2": "Antes de alejarse del equipo, asegúrese de bloquearlo presionando las teclas de logotipo de Windows y L. De lo contrario, la función de alarma de movimiento inteligente no funcionará con normalidad."
                 },
                 "alarm": {
                     "title": " LA ALARMA DURARÁ",
@@ -2647,8 +2647,7 @@
                 "connect": "CONNECTED",
                 "fail": "Incorrect code entered!",
                 "joinFamilyAccount": "Join family account",
-                "connecting": "Connecting...",
-                "offlinePrompt": "You are currently off-line. Please try again when you are connected to the Internet"
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Estado de seguridad",
@@ -4153,7 +4152,25 @@
             "LINEAR_READ_TEST": "Prueba lineal de lectura",
             "LINEAR_READ_TEST_DESCRIPTION": "Comprueba la integridad del dispositivo de almacenamiento leyendo sus sectores siguiendo un patrón lineal",
             "FINAL_RESULT_CODE_FAIL": "Este código de resultado final indica que se encontraron problemas con esta exploración. Siga las instrucciones en pantalla, que se encuentran en la parte inferior de los resultados de exploración de hardware, para ponerse en contacto con soporte de Lenovo. Esté preparado para proporcionar este código de este resultado final cuando se le solicite.",
-            "FINAL_RESULT_CODE_SUCCESS": "Este código de resultado final indica que no se encontraron problemas con esta exploración. Si cualquier prueba muestra un mensaje de advertencia o no aplicable, no significa que se encontró un problema. Si un agente de soporte de Lenovo le pidió ejecutar esta prueba, utilice el código de este como prueba; de lo contrario, no necesita realizar ninguna acción en este momento. Si cree que sigue experimentando problemas, póngase en contacto con soporte de Lenovo."
+            "FINAL_RESULT_CODE_SUCCESS": "Este código de resultado final indica que no se encontraron problemas con esta exploración. Si cualquier prueba muestra un mensaje de advertencia o no aplicable, no significa que se encontró un problema. Si un agente de soporte de Lenovo le pidió ejecutar esta prueba, utilice el código de este como prueba; de lo contrario, no necesita realizar ninguna acción en este momento. Si cree que sigue experimentando problemas, póngase en contacto con soporte de Lenovo.",
+            "AUDIO": "Audio",
+            "AUDIO_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "AUDIO_QUICK_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "BLUETOOTH": "Bluetooth",
+            "BLUETOOTH_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "BLUETOOTH_QUICK_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "FINGERPRINT": "Fingerprint",
+            "FINGERPRINT_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "FINGERPRINT_QUICK_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "KEYBOARD_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "KEYBOARD_QUICK_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "OPTICAL_DRIVE_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Extended tests for optical drive devices",
+            "POINTING_DEVICES": "Pointing Devices",
+            "POINTING_DEVICES_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "POINTING_DEVICES_QUICK_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "TOUCHSCREEN": "Touchscreen",
+            "TOUCHSCREEN_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
+            "TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen"
         },
         "warningMessage": "Tenga en cuenta que las pruebas se cancelarán si el sistema entra en suspensión o hibernación",
         "refreshMessage": "La actualización puede tomar algo de tiempo, ya que necesita volver a cargar todos los componentes",
@@ -4307,7 +4324,17 @@
             "descriptionbeta": "Lenovo ofrece un programa piloto para probar la característica Smart Performance hasta julio de 2020.",
             "descriptionbeta1": "Lo invitamos a unirse y probar la característica completa.",
             "descriptionNonSubscriber": "No está suscrito al servicio Smart Performance de Lenovo. Solo podrá analizar su PC. Suscríbase ahora para obtener todos los beneficios de mantener su PC protegido y funcionando sin problemas.",
-            "processStatus": "PROCESANDO"
+            "processStatus": "PROCESANDO",
+            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance,you can renew the subscription by clicking the \"Manage Subscription \" link to resume full protection for your device.",
+            "expiredStatus": "EXPIRED",
+            "expiredNote": "Your subscription will expire in",
+            "day": "day",
+            "days": "days",
+            "weeks": "weeks",
+            "week": "a week",
+            "month": "month",
+            "today": "today",
+            "next": "next"
         },
         "scanSettings": {
             "title": "Configuración de planificación del análisis",
@@ -4771,7 +4798,9 @@
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
-            "backToHome": "Volver al Inicio"
+            "backToHome": "Volver al Inicio",
+            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance,if you would like to resume the \"Scan and Fix\" feature,please press the \"renew and fix\" button down below to renew your subscription.",
+            "renewAndFix": "Renew & Fix"
         },
         "subscriberScanHomePage": {
             "title": "Todo funciona bien con su ",

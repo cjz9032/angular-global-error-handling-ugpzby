@@ -557,6 +557,7 @@
 				.navbar-nav {
 					max-height: calc(100vh - #{$menu_height});
 					overflow-y: auto;
+					z-index: 1;
 					@media #{$black-on-white} {
 						@include black-border;
 					}
@@ -566,13 +567,13 @@
 					}
 					.nav-item {
 						padding: 0 0 0.5rem 0;
+						z-index: 1;
 
 						.nav-link {
 							line-height: 4rem;
 							border-bottom: none;
 							border-left: transparent solid 0.5rem;
 							position: relative;
-							z-index: 1;
 							height: auto;
 
 							@media #{$black-on-white} {
@@ -607,7 +608,7 @@
 									height: 3rem;
 									border: 0.1rem solid $light;
 									top: 0.5rem;
-									z-index: 1;
+									z-index: -1;
 								}
 							}
 						}

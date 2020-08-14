@@ -2647,8 +2647,7 @@
                 "connect": "CONNECTED",
                 "fail": "Incorrect code entered!",
                 "joinFamilyAccount": "Join family account",
-                "connecting": "Connecting...",
-                "offlinePrompt": "You are currently off-line. Please try again when you are connected to the Internet"
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Beveiligingsstatus",
@@ -4153,7 +4152,25 @@
             "LINEAR_READ_TEST": "Lineaire leestest",
             "LINEAR_READ_TEST_DESCRIPTION": "Controleert de integriteit van het opslagapparaat door de sectoren ervan uit te lezen in een lineair patroon",
             "FINAL_RESULT_CODE_FAIL": "Deze laatste resultaatcode geeft aan dat er problemen met deze scan zijn gevonden. Volg de aanwijzingen op het scherm, die u vindt onder aan de resultaten van de hardwarescan, om contact op te nemen met ondersteuning van Lenovo. Zorg dat u kunt deze resultaatcode bij de hand hebt.",
-            "FINAL_RESULT_CODE_SUCCESS": "Deze laatste resultaatcode geeft aan dat er geen problemen met deze scan zijn gevonden. Als er test een waarschuwingsbericht weergeeft of een bericht dat niet van toepassing is, betekent het niet dat er een probleem is aangetroffen. Als een medewerker van ondersteuning van Lenovo u heeft gevraagd deze test uit te voeren, gebruikt u deze code als bewijs; anders is op dit moment geen actie van uw kant nodig. Als u denkt dat u nog steeds problemen hebt, neem dan contact op met ondersteuning van Lenovo."
+            "FINAL_RESULT_CODE_SUCCESS": "Deze laatste resultaatcode geeft aan dat er geen problemen met deze scan zijn gevonden. Als er test een waarschuwingsbericht weergeeft of een bericht dat niet van toepassing is, betekent het niet dat er een probleem is aangetroffen. Als een medewerker van ondersteuning van Lenovo u heeft gevraagd deze test uit te voeren, gebruikt u deze code als bewijs; anders is op dit moment geen actie van uw kant nodig. Als u denkt dat u nog steeds problemen hebt, neem dan contact op met ondersteuning van Lenovo.",
+            "AUDIO": "Audio",
+            "AUDIO_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "AUDIO_QUICK_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "BLUETOOTH": "Bluetooth",
+            "BLUETOOTH_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "BLUETOOTH_QUICK_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "FINGERPRINT": "Fingerprint",
+            "FINGERPRINT_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "FINGERPRINT_QUICK_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "KEYBOARD_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "KEYBOARD_QUICK_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "OPTICAL_DRIVE_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Extended tests for optical drive devices",
+            "POINTING_DEVICES": "Pointing Devices",
+            "POINTING_DEVICES_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "POINTING_DEVICES_QUICK_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "TOUCHSCREEN": "Touchscreen",
+            "TOUCHSCREEN_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
+            "TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen"
         },
         "warningMessage": "Houd er rekening mee dat de testen worden geannuleerd als het systeem in de slaap- of sluimerstand staat",
         "refreshMessage": "Het vernieuwen kan even duren omdat alle onderdelen opnieuw moeten worden geladen",
@@ -4307,7 +4324,17 @@
             "descriptionbeta": "Lenovo biedt een pilotprogramma aan om de Smart Performance-functie tot en met juli 2020 uit te proberen.",
             "descriptionbeta1": "U wordt uitgenodigd om de volledige functie uit te proberen.",
             "descriptionNonSubscriber": "U bent niet geabonneerd op Lenovo Smart Performance Service. U kunt alleen uw pc scannen. Abonneer u nu en profiteer optimaal van de voordelen om uw pc te beschermen en goed te laten werken.",
-            "processStatus": "BEZIG"
+            "processStatus": "BEZIG",
+            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance,you can renew the subscription by clicking the \"Manage Subscription \" link to resume full protection for your device.",
+            "expiredStatus": "EXPIRED",
+            "expiredNote": "Your subscription will expire in",
+            "day": "day",
+            "days": "days",
+            "weeks": "weeks",
+            "week": "a week",
+            "month": "month",
+            "today": "today",
+            "next": "next"
         },
         "scanSettings": {
             "title": "Scaninstellingen plannen",
@@ -4771,7 +4798,9 @@
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
-            "backToHome": "Terug naar startpagina"
+            "backToHome": "Terug naar startpagina",
+            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance,if you would like to resume the \"Scan and Fix\" feature,please press the \"renew and fix\" button down below to renew your subscription.",
+            "renewAndFix": "Renew & Fix"
         },
         "subscriberScanHomePage": {
             "title": "Alles werkt goed met uw ",

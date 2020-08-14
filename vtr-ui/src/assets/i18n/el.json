@@ -2139,7 +2139,7 @@
                 "note": {
                     "descriptionTitle": "Προσοχή:",
                     "description1": "Όταν συνδέεστε στα Windows, απαιτούνται έγκυρες επιλογές εισόδου, όπως κωδικός πρόσβασης ή κωδικός PIN. Διαφορετικά, η δυνατότητα έξυπνου συναγερμού κίνησης ενδέχεται να απενεργοποιηθεί κατά λάθος από οποιονδήποτε μη εξουσιοδοτημένο χρήστη που έχει πρόσβαση στον υπολογιστή σας.",
-                    "description2":"Πριν απομακρυνθείτε από τον υπολογιστή σας, φροντίστε να τον κλειδώσετε πατώντας το πλήκτρο με το λογότυπο των Windows και το πλήκτρο L. Διαφορικά, η λειτουργία Έξυπνου συναγερμού κίνησης δεν θα λειτουργεί κανονικά."
+                    "description2": "Πριν απομακρυνθείτε από τον υπολογιστή σας, φροντίστε να τον κλειδώσετε πατώντας το πλήκτρο με το λογότυπο των Windows και το πλήκτρο L. Διαφορικά, η λειτουργία Έξυπνου συναγερμού κίνησης δεν θα λειτουργεί κανονικά."
                 },
                 "alarm": {
                     "title": " Ο ΣΥΝΑΓΕΡΜΟΣ ΘΑ ΔΙΑΡΚΕΣΕΙ",
@@ -2647,8 +2647,7 @@
                 "connect": "CONNECTED",
                 "fail": "Incorrect code entered!",
                 "joinFamilyAccount": "Join family account",
-                "connecting": "Connecting...",
-                "offlinePrompt": "You are currently off-line. Please try again when you are connected to the Internet"
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Εύρυθμη λειτουργία ασφαλείας",
@@ -4149,7 +4148,29 @@
             "LINEAR_READ_TEST": "Γραμμική δοκιμή ανάγνωσης",
             "LINEAR_READ_TEST_DESCRIPTION": "Ελέγχει την ακεραιότητα της συσκευής αποθήκευσης διαβάζοντας τους τομείς της ακολουθώντας ένα γραμμικό μοτίβο",
             "FINAL_RESULT_CODE_FAIL": "Αυτός ο κωδικός τελικού αποτελέσματος υποδεικνύει ότι εντοπίστηκαν προβλήματα με αυτήν τη σάρωση. Ακολουθήστε τις οδηγίες στην οθόνη, που βρίσκονται στο κάτω μέρος των αποτελεσμάτων σάρωσης υλικού, για να επικοινωνήσετε με την υποστήριξη Lenovo. Να είστε προετοιμασμένοι να παράσχετε αυτόν τον κωδικό τελικού αποτελέσματος, όταν σας ζητηθεί.",
-            "FINAL_RESULT_CODE_SUCCESS": "Αυτός ο κωδικός τελικού αποτελέσματος υποδεικνύει ότι δεν εντοπίστηκαν προβλήματα με αυτήν τη σάρωση. Εάν οποιαδήποτε δοκιμή εμφανίσει ένα προειδοποιητικό ή μη εφαρμόσιμο μήνυμα, αυτό δεν σημαίνει ότι εντοπίστηκε κάποιο πρόβλημα. Εάν κάποιος εκπρόσωπος υποστήριξης της Lenovo σας ζήτησε να εκτελέσετε αυτήν τη δοκιμή, χρησιμοποιήστε αυτόν τον κωδικό ως αποδεικτικό στοιχείο, διαφορετικά, δεν απαιτείται καμία ενέργεια από την πλευρά σας αυτήν τη στιγμή. Εάν αισθάνεστε ότι συνεχίζετε να αντιμετωπίζετε προβλήματα, απευθυνθείτε στην υποστήριξη Lenovo."
+            "FINAL_RESULT_CODE_SUCCESS": "Αυτός ο κωδικός τελικού αποτελέσματος υποδεικνύει ότι δεν εντοπίστηκαν προβλήματα με αυτήν τη σάρωση. Εάν οποιαδήποτε δοκιμή εμφανίσει ένα προειδοποιητικό ή μη εφαρμόσιμο μήνυμα, αυτό δεν σημαίνει ότι εντοπίστηκε κάποιο πρόβλημα. Εάν κάποιος εκπρόσωπος υποστήριξης της Lenovo σας ζήτησε να εκτελέσετε αυτήν τη δοκιμή, χρησιμοποιήστε αυτόν τον κωδικό ως αποδεικτικό στοιχείο, διαφορετικά, δεν απαιτείται καμία ενέργεια από την πλευρά σας αυτήν τη στιγμή. Εάν αισθάνεστε ότι συνεχίζετε να αντιμετωπίζετε προβλήματα, απευθυνθείτε στην υποστήριξη Lenovo.",
+            "HIGH_DEFINITION_AUDIO_SPECIFICATION": "High Definition Audio specification:",
+            "NUMBER_OF_BIDIRECTIONAL_STREAMS": "Number of bidirectional streams",
+            "NUMBER_OF_INPUT_STREAMS": "Number of input streams",
+            "NUMBER_OF_OUTPUT_STREAMS": "Number of output streams",
+            "AUDIO": "Audio",
+            "AUDIO_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "AUDIO_QUICK_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "BLUETOOTH": "Bluetooth",
+            "BLUETOOTH_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "BLUETOOTH_QUICK_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "FINGERPRINT": "Fingerprint",
+            "FINGERPRINT_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "FINGERPRINT_QUICK_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "KEYBOARD_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "KEYBOARD_QUICK_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "OPTICAL_DRIVE_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Extended tests for optical drive devices",
+            "POINTING_DEVICES": "Pointing Devices",
+            "POINTING_DEVICES_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "POINTING_DEVICES_QUICK_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "TOUCHSCREEN": "Touchscreen",
+            "TOUCHSCREEN_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
+            "TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen"
         },
         "warningMessage": "Λάβετε υπόψη ότι οι δοκιμές θα ακυρωθούν εάν το σύστημα είναι σε κατάσταση αναστολής λειτουργίας ή αδρανοποίησης",
         "refreshMessage": "Η ανανέωση ενδέχεται να διαρκέσει αρκετή ώρα, επειδή απαιτείται επαναφόρτωση όλων των στοιχείων",
@@ -4303,7 +4324,17 @@
             "descriptionbeta": "Η Lenovo προσφέρει ένα πιλοτικό πρόγραμμα για τη δοκιμή της λειτουργίας Smart Performance μέχρι τον Ιούλιο του 2020.",
             "descriptionbeta1": "Είστε ευπρόσδεκτοι να συμμετάσχετε και να δοκιμάσετε τις πλήρεις δυνατότητες.",
             "descriptionNonSubscriber": "Δεν έχετε πραγματοποιήσει εγγραφή στην υπηρεσία Lenovo Smart Performance. Θα μπορέσετε μόνο να κάνετε σάρωση του υπολογιστή σας. Εγγραφείτε τώρα για να εξασφαλίσετε τα πλήρη οφέλη από την προστασία και τη διαρκή ομαλή λειτουργία του υπολογιστή σας.",
-            "processStatus": "ΕΠΕΞΕΡΓΑΣΙΑ"
+            "processStatus": "ΕΠΕΞΕΡΓΑΣΙΑ",
+            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance,you can renew the subscription by clicking the \"Manage Subscription \" link to resume full protection for your device.",
+            "expiredStatus": "EXPIRED",
+            "expiredNote": "Your subscription will expire in",
+            "day": "day",
+            "days": "days",
+            "weeks": "weeks",
+            "week": "a week",
+            "month": "month",
+            "today": "today",
+            "next": "next"
         },
         "scanSettings": {
             "title": "Ρυθμίσεις προγραμματισμού σάρωσης",
@@ -4767,7 +4798,9 @@
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
-            "backToHome": "Επιστροφή στην Αρχική"
+            "backToHome": "Επιστροφή στην Αρχική",
+            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance,if you would like to resume the \"Scan and Fix\" feature,please press the \"renew and fix\" button down below to renew your subscription.",
+            "renewAndFix": "Renew & Fix"
         },
         "subscriberScanHomePage": {
             "title": "Όλα πάνε καλά στον ",
