@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.34](https://bitbucket.tc.lenovo.com///compare/v1.7.33...v1.7.34) (2020-08-14)
+
+
+### Bug Fixes
+
+* **Smart Performance:** VAN-21123 fix schedule card overflow issue ([1e60d86](https://bitbucket.tc.lenovo.com///commit/1e60d86c4163de83490e1e404bb8f5cf0e38ff5c))
+
 ### [1.7.33](https://bitbucket.tc.lenovo.com///compare/v1.7.32...v1.7.33) (2020-08-13)
 
 
