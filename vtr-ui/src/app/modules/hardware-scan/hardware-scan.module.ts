@@ -1,6 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgbModalModule, NgbDropdownModule, NgbDatepickerModule, NgbCollapseModule, NgbTooltipModule, NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModalModule, NgbDropdownModule, NgbDatepickerModule, NgbCollapseModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { CommonUiModule } from '../common/common-ui.module';
 import { HardwareScanRoutingModule } from './hardware-scan-routing.module';
@@ -91,14 +91,13 @@ import { UiHyperlinkButtonComponent } from '../../components/ui/ui-hyperlink-but
 		SharedModule,
 		NgbCollapseModule,
 		NgbTooltipModule,
-		NgbProgressbarModule,
 		ContainerCardModule,
 		MetricsModule,
 		PageLayoutModule,
 		FontAwesomeModule
 	],
 	exports: [
-		NgbCollapseModule
+		NgbCollapseModule,
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA

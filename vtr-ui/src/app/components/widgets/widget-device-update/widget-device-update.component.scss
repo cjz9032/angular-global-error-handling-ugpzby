@@ -126,63 +126,6 @@
 			}
 		}
 
-		.progress-bar-div-container {
-			padding-left: 2.5rem;
-			padding-right: 2.5rem;
-
-			.progress-bar-div {
-				padding: 1rem;
-				border-radius: 1.5rem;
-				background: linear-gradient($gradient_angle_reverse, $main_darkest 0%, $main_darker 100%);
-				@media #{$high-contrast} {
-					border:0.1rem solid $light;
-					background:none;
-				}
-				@media #{$black-on-white} {
-					border:0.1rem solid $dark;
-					background:none;
-				}
-
-				::ng-deep .mat-progress-bar-fill::after {
-					background: linear-gradient(90deg, $go 0%, $go 100%);
-				}
-
-				::ng-deep .mat-progress-bar-buffer {
-					background: $light;
-				}
-
-				::ng-deep .mat-progress-bar {
-					border-radius: 0.4rem;
-				}
-
-				::ng-deep .progress {
-					height: 0.2rem;
-
-					.progress-bar {
-						border-radius: 0.8rem;
-						margin-top: 0;
-
-						@media #{$high-contrast} {
-							background: $light;
-						}
-						@media #{$black-on-white} {
-							background: $dark;
-						}
-						&.bg-info {
-							background: linear-gradient(90deg, $go_light 0%, $go_dark 100%) !important;
-						}
-					}
-					@media #{$high-contrast} {
-						border: 0.1rem solid $light;
-					}
-					@media #{$black-on-white} {
-						border: 0.1rem solid $dark;
-					}
-					
-				}
-			}
-		}
-
 		.cancel-check {
 			color: $light;
 			font-size: 1.3rem;

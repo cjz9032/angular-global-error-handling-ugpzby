@@ -22,12 +22,8 @@
 	</div>
 </div>
 <div class="col row hwscan-header">
-	<div class="col col-12 row progress-bar-div-container">
-		<div class="col col-12 progress-bar-div">
-			<ngb-progressbar type="success" [value]="percent" [height]="'0.6rem'"></ngb-progressbar>
-		</div>
-	</div>
-
+	<vtr-ui-progress-bar progressId="hwscan-progress-bar"
+		[value]="percent"></vtr-ui-progress-bar>
 	<div class="col col-12 row">
 		<div class="col col-12 row">
 			<div class="col col-12 cancel-check">
