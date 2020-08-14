@@ -8,6 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class UiProgressBarComponent implements OnInit {
 
 	@Input() value = 0;
+	@Input() progressId = 'progress-bar';
 	@Input() noPadding = false;
 
 	constructor() { }
