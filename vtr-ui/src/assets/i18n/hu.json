@@ -2647,8 +2647,7 @@
                 "connect": "CONNECTED",
                 "fail": "Incorrect code entered!",
                 "joinFamilyAccount": "Join family account",
-                "connecting": "Connecting...",
-                "offlinePrompt": "You are currently off-line. Please try again when you are connected to the Internet"
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Biztonsági állapot",
@@ -4149,7 +4148,29 @@
             "LINEAR_READ_TEST": "Lineáris olvasási teszt",
             "LINEAR_READ_TEST_DESCRIPTION": "Az eszköz szektorainak lineáris mintát követő olvasásával ellenőrzi a tárolóeszköz integritását",
             "FINAL_RESULT_CODE_FAIL": "Ez a végső eredménykód azt jelzi, hogy probléma van a vizsgálattal. A hardvervizsgálat eredményeit tartalmazó képernyő alján lévő útmutatókat követve lépjen kapcsolatba a Lenovo ügyfélszolgálatával. Előfordulhat, hogy meg kell adnia a végső eredménykódot.",
-            "FINAL_RESULT_CODE_SUCCESS": "Ez a végső eredménykód azt jelzi, hogy nincs probléma a vizsgálattal. Nem jelez problémát, ha valamelyik teszt után figyelmeztetés vagy nem megfelelő üzenet jelenik meg. Ha a Lenovo támogatási szakembere kérte a teszt futtatását, akkor a kódot igazolásként használhatja. Ebben az esetben nincs teendője. Ha továbbra is úgy érzi, hogy valamilyen hiba áll fenn, lépjen kapcsolatba a Lenovo ügyfélszolgálatával."
+            "FINAL_RESULT_CODE_SUCCESS": "Ez a végső eredménykód azt jelzi, hogy nincs probléma a vizsgálattal. Nem jelez problémát, ha valamelyik teszt után figyelmeztetés vagy nem megfelelő üzenet jelenik meg. Ha a Lenovo támogatási szakembere kérte a teszt futtatását, akkor a kódot igazolásként használhatja. Ebben az esetben nincs teendője. Ha továbbra is úgy érzi, hogy valamilyen hiba áll fenn, lépjen kapcsolatba a Lenovo ügyfélszolgálatával.",
+            "HIGH_DEFINITION_AUDIO_SPECIFICATION": "High Definition Audio specification:",
+            "NUMBER_OF_BIDIRECTIONAL_STREAMS": "Number of bidirectional streams",
+            "NUMBER_OF_INPUT_STREAMS": "Number of input streams",
+            "NUMBER_OF_OUTPUT_STREAMS": "Number of output streams",
+            "AUDIO": "Audio",
+            "AUDIO_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "AUDIO_QUICK_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "BLUETOOTH": "Bluetooth",
+            "BLUETOOTH_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "BLUETOOTH_QUICK_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "FINGERPRINT": "Fingerprint",
+            "FINGERPRINT_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "FINGERPRINT_QUICK_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "KEYBOARD_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "KEYBOARD_QUICK_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "OPTICAL_DRIVE_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Extended tests for optical drive devices",
+            "POINTING_DEVICES": "Pointing Devices",
+            "POINTING_DEVICES_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "POINTING_DEVICES_QUICK_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "TOUCHSCREEN": "Touchscreen",
+            "TOUCHSCREEN_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
+            "TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen"
         },
         "warningMessage": "Ne feledje, hogy a tesztek megszakadnak, ha a rendszer alvó vagy hibernált állapotba kerül",
         "refreshMessage": "A frissítés eltarthat egy ideig, mivel minden összetevőt újra be kell töltenie",
@@ -4303,7 +4324,17 @@
             "descriptionbeta": "A Lenovo 2020 júliusáig lehetővé teszi a Smart Performance funkció kipróbálását.",
             "descriptionbeta1": "Ön a próbaprogram ideje alatt korlátlanul használhatja a teljes funkciókészletet.",
             "descriptionNonSubscriber": "Ön nem fizetett elő a Lenovo Smart Performance szolgáltatásra. Csak a számítógép ellenőrzésére van lehetősége. Fizessen elő most, és élvezze a számítógép védelmével és zökkenőmentes működésének biztosításával járó előnyöket.",
-            "processStatus": "FELDOLGOZÁS"
+            "processStatus": "FELDOLGOZÁS",
+            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance,you can renew the subscription by clicking the \"Manage Subscription \" link to resume full protection for your device.",
+            "expiredStatus": "EXPIRED",
+            "expiredNote": "Your subscription will expire in",
+            "day": "day",
+            "days": "days",
+            "weeks": "weeks",
+            "week": "a week",
+            "month": "month",
+            "today": "today",
+            "next": "next"
         },
         "scanSettings": {
             "title": "Ellenőrzés ütemezésével kapcsolatos beállítások",
@@ -4767,7 +4798,9 @@
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
-            "backToHome": "Vissza a kezdőlapra"
+            "backToHome": "Vissza a kezdőlapra",
+            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance,if you would like to resume the \"Scan and Fix\" feature,please press the \"renew and fix\" button down below to renew your subscription.",
+            "renewAndFix": "Renew & Fix"
         },
         "subscriberScanHomePage": {
             "title": "Minden rendben van az Ön ",

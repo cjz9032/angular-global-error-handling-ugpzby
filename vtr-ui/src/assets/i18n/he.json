@@ -2647,8 +2647,7 @@
                 "connect": "CONNECTED",
                 "fail": "Incorrect code entered!",
                 "joinFamilyAccount": "Join family account",
-                "connecting": "Connecting...",
-                "offlinePrompt": "You are currently off-line. Please try again when you are connected to the Internet"
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "תקינות האבטחה",
@@ -4109,9 +4108,7 @@
             "SMART_WEAROUT_TEST": "בדיקת ההתיישנות SMART",
             "SMART_WEAROUT_TEST_DESCRIPTION": "בדיקת ההתיישנות SMART בודקת את רמת ההתיישנות של התקן ה-SSD המחובר על ידי קריאת מאפייני SMART, ומציינת אם ההתקן במצב טוב או שהגיע למגבלת ההתיישנות שלו.",
             "AUDIO_CONTROLLER": "בקר שמע",
-            "AUDIO_CONTROLLER1": "בקר שמע",
             "BATTERY": "סוללה",
-            "BATTERY1": "סוללה",
             "ACCELEROMETER_NOISE_TEST": "בדיקת רעש מד תאוצה",
             "ACCELEROMETER_NOISE_TEST_DESCRIPTION": "בדיקת רעש מד התאוצה תאמת את השינויים בקריאות ממד התאוצה לאורך זמן ותבדוק אם הרעש שאותר מקובל.",
             "BATTERY_CHARGE_TEST": "בדיקת טעינת סוללה",
@@ -4151,7 +4148,29 @@
             "LINEAR_READ_TEST": "בדיקת קריאה לינארית",
             "LINEAR_READ_TEST_DESCRIPTION": "בודקת את תקינות התקן האחסון על-ידי קריאת הסקטורים שלו במעקב אחר תבנית לינארית",
             "FINAL_RESULT_CODE_FAIL": "קוד התוצאה הסופי הזה מצביע על כך שנמצאו בעיות בסריקה. פעלו על פי ההוראות שעל המסך, הממוקמות בתחתית תוצאות סריקת החומרה כדי ליצור קשר עם התמיכה של Lenovo. התכוננו לספק את קוד התוצאה הסופי לפי בקשה.",
-            "FINAL_RESULT_CODE_SUCCESS": "קוד התוצאה הסופי הזה מצביע על כך שלא נמצאו בעיות בסריקה. אם בדיקה כלשהי מציגה אזהרה או הודעה, אין פירוש הדבר שנמצאה בעיה. אם נציג תמיכה של Lenovo ביקש מכם להפעיל בדיקה זו, השתמשו בקוד זה כהוכחה; אחרת, שום פעולה מצדכם איננה נדרשת בשלב זה. אם עדיין יש לכם בעיות, צרו קשר עם התמיכה של Lenovo."
+            "FINAL_RESULT_CODE_SUCCESS": "קוד התוצאה הסופי הזה מצביע על כך שלא נמצאו בעיות בסריקה. אם בדיקה כלשהי מציגה אזהרה או הודעה, אין פירוש הדבר שנמצאה בעיה. אם נציג תמיכה של Lenovo ביקש מכם להפעיל בדיקה זו, השתמשו בקוד זה כהוכחה; אחרת, שום פעולה מצדכם איננה נדרשת בשלב זה. אם עדיין יש לכם בעיות, צרו קשר עם התמיכה של Lenovo.",
+            "HIGH_DEFINITION_AUDIO_SPECIFICATION": "High Definition Audio specification:",
+            "NUMBER_OF_BIDIRECTIONAL_STREAMS": "Number of bidirectional streams",
+            "NUMBER_OF_INPUT_STREAMS": "Number of input streams",
+            "NUMBER_OF_OUTPUT_STREAMS": "Number of output streams",
+            "AUDIO": "Audio",
+            "AUDIO_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "AUDIO_QUICK_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "BLUETOOTH": "Bluetooth",
+            "BLUETOOTH_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "BLUETOOTH_QUICK_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "FINGERPRINT": "Fingerprint",
+            "FINGERPRINT_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "FINGERPRINT_QUICK_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "KEYBOARD_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "KEYBOARD_QUICK_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "OPTICAL_DRIVE_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Extended tests for optical drive devices",
+            "POINTING_DEVICES": "Pointing Devices",
+            "POINTING_DEVICES_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "POINTING_DEVICES_QUICK_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "TOUCHSCREEN": "Touchscreen",
+            "TOUCHSCREEN_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
+            "TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen"
         },
         "warningMessage": "קחו בחשבון שהבדיקות יבוטלו אם המערכת במצב שינה או המתנה",
         "refreshMessage": "הרענון עשוי לארוך זמן מה מכיוון שהמחשב צריך לטעון את כל הרכיבים מחדש",
@@ -4305,7 +4324,17 @@
             "descriptionbeta": "Lenovo מציעה תוכנית פיילוט להתנסות בתכונה Smart Performance עד יולי 2020.",
             "descriptionbeta1": "אתם מוזמנים להצטרף ולנסות את התכונה המלאה.",
             "descriptionNonSubscriber": "אינכם מנויים לשירות Lenovo Smart Performance. תוכלו לבצע סריקה של המחשב בלבד. רכשו מנוי עכשיו כדי לקבל את כל היתרונות שמספקות הגנה למחשבכם ומבטיחות את פעולתו החלקה.",
-            "processStatus": "מעבד"
+            "processStatus": "מעבד",
+            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance,you can renew the subscription by clicking the \"Manage Subscription \" link to resume full protection for your device.",
+            "expiredStatus": "EXPIRED",
+            "expiredNote": "Your subscription will expire in",
+            "day": "day",
+            "days": "days",
+            "weeks": "weeks",
+            "week": "a week",
+            "month": "month",
+            "today": "today",
+            "next": "next"
         },
         "scanSettings": {
             "title": "הגדרות של תזמון סריקה",
@@ -4769,7 +4798,9 @@
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
-            "backToHome": "חזרה למסך הבית"
+            "backToHome": "חזרה למסך הבית",
+            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance,if you would like to resume the \"Scan and Fix\" feature,please press the \"renew and fix\" button down below to renew your subscription.",
+            "renewAndFix": "Renew & Fix"
         },
         "subscriberScanHomePage": {
             "title": "הכל טוב עם המחשב ",

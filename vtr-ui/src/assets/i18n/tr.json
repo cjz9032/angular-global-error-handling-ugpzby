@@ -2647,8 +2647,7 @@
                 "connect": "CONNECTED",
                 "fail": "Incorrect code entered!",
                 "joinFamilyAccount": "Join family account",
-                "connecting": "Connecting...",
-                "offlinePrompt": "You are currently off-line. Please try again when you are connected to the Internet"
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Güvenlik Durumu",
@@ -4149,7 +4148,29 @@
             "LINEAR_READ_TEST": "Doğrusal Okuma Testi",
             "LINEAR_READ_TEST_DESCRIPTION": "Doğrusal bir deseni takip edip kesimleri okuyarak depolama cihazının bütünlüğünü denetler",
             "FINAL_RESULT_CODE_FAIL": "Bu nihai sonuç kodu, bu taramada sorunlar bulunduğunu belirtmektedir. Lenovo Destek ile iletişime geçmek için donanım tarama sonuçlarınızın altında bulunan yönergelerini izleyin. İstendiğinde bu nihai sonuç kodunu sağlamak için hazırlıklı olun.",
-            "FINAL_RESULT_CODE_SUCCESS": "Bu nihai sonuç kodu, bu taramada sorun bulunmadığını belirtmektedir. Herhangi bir teste bir uyarı veya geçersiz ileti görüntülenirse bu bir sorun bulunduğu anlamına gelmez. Bir Lenovo destek aracısı sizden bu testi gerçekleştirmenizi isterse kanıt olarak bu kodu kullanın. Bunun dışında şu anda sizin yapmanız gereken bir eylem bulunmamaktadır. Hala sorun yaşadığınızı düşünüyorsanız Lenovo Destek ile iletişime geçin."
+            "FINAL_RESULT_CODE_SUCCESS": "Bu nihai sonuç kodu, bu taramada sorun bulunmadığını belirtmektedir. Herhangi bir teste bir uyarı veya geçersiz ileti görüntülenirse bu bir sorun bulunduğu anlamına gelmez. Bir Lenovo destek aracısı sizden bu testi gerçekleştirmenizi isterse kanıt olarak bu kodu kullanın. Bunun dışında şu anda sizin yapmanız gereken bir eylem bulunmamaktadır. Hala sorun yaşadığınızı düşünüyorsanız Lenovo Destek ile iletişime geçin.",
+            "HIGH_DEFINITION_AUDIO_SPECIFICATION": "High Definition Audio specification:",
+            "NUMBER_OF_BIDIRECTIONAL_STREAMS": "Number of bidirectional streams",
+            "NUMBER_OF_INPUT_STREAMS": "Number of input streams",
+            "NUMBER_OF_OUTPUT_STREAMS": "Number of output streams",
+            "AUDIO": "Audio",
+            "AUDIO_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "AUDIO_QUICK_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "BLUETOOTH": "Bluetooth",
+            "BLUETOOTH_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "BLUETOOTH_QUICK_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "FINGERPRINT": "Fingerprint",
+            "FINGERPRINT_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "FINGERPRINT_QUICK_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "KEYBOARD_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "KEYBOARD_QUICK_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "OPTICAL_DRIVE_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Extended tests for optical drive devices",
+            "POINTING_DEVICES": "Pointing Devices",
+            "POINTING_DEVICES_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "POINTING_DEVICES_QUICK_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "TOUCHSCREEN": "Touchscreen",
+            "TOUCHSCREEN_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
+            "TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen"
         },
         "warningMessage": "Sistem uyku veya hazırda bekleme kipine geçerse testlerin iptal edileceğini unutmayın",
         "refreshMessage": "Tüm bileşenlerin tekrar yüklenmesi gerektiğinden yenileme işlemi biraz zaman alabilir",
@@ -4303,7 +4324,17 @@
             "descriptionbeta": "Lenovo, Temmuz 2020'ye kadar Smart Performance özelliğini denemek için pilot program sunuyor.",
             "descriptionbeta1": "İsterseniz katılıp tam özelliği deneyebilirsiniz.",
             "descriptionNonSubscriber": "Lenovo Smart Performance Hizmetine abone değilsiniz. Yalnızca bilgisayarınızı tarayabilirsiniz. Bilgisayarınızı korumanın ve sorunsuz çalışmanın tüm avantajlarından yararlanmak için şimdi abone olun.",
-            "processStatus": "İŞLENİYOR"
+            "processStatus": "İŞLENİYOR",
+            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance,you can renew the subscription by clicking the \"Manage Subscription \" link to resume full protection for your device.",
+            "expiredStatus": "EXPIRED",
+            "expiredNote": "Your subscription will expire in",
+            "day": "day",
+            "days": "days",
+            "weeks": "weeks",
+            "week": "a week",
+            "month": "month",
+            "today": "today",
+            "next": "next"
         },
         "scanSettings": {
             "title": "Tarama ayarları planlayın",
@@ -4767,7 +4798,9 @@
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
-            "backToHome": "Ana Sayfaya Dön"
+            "backToHome": "Ana Sayfaya Dön",
+            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance,if you would like to resume the \"Scan and Fix\" feature,please press the \"renew and fix\" button down below to renew your subscription.",
+            "renewAndFix": "Renew & Fix"
         },
         "subscriberScanHomePage": {
             "title": "Her şey yolunda: ",

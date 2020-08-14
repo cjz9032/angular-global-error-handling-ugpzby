@@ -2647,8 +2647,7 @@
                 "connect": "CONNECTED",
                 "fail": "Incorrect code entered!",
                 "joinFamilyAccount": "Join family account",
-                "connecting": "Connecting...",
-                "offlinePrompt": "You are currently off-line. Please try again when you are connected to the Internet"
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Sikkerhetstilstand",
@@ -4153,7 +4152,25 @@
             "LINEAR_READ_TEST": "Lineær lesetest",
             "LINEAR_READ_TEST_DESCRIPTION": "Sjekker integriteten til lagringsenheten ved å lese enhetens sektorer i et lineært mønster",
             "FINAL_RESULT_CODE_FAIL": "Denne sluttresultatkoden betyr at det ble funnet problemer under skanningen. Følg instruksjonene på skjermen, som du finner nederst i resultatene fra maskinvareskanningen, for å kontakte Lenovos kundestøtte. Vær forberedt på å oppgi denne sluttresultatkoden når du blir bedt om det.",
-            "FINAL_RESULT_CODE_SUCCESS": "Denne sluttresultatkoden betyr at det ikke ble funnet problemer under skanningen. Hvis en test viser en advarsel eller en gjelder-ikke-melding, betyr ikke dette at det ble funnet et problem. Hvis du ble bedt om å kjøre denne testen av en kundestøtterepresentant fra Lenovo, bruker du denne koden som bevis. Hvis ikke trenger du ikke gjøre noe nå. Kontakt Lenovos kundestøtte hvis problemene vedvarer."
+            "FINAL_RESULT_CODE_SUCCESS": "Denne sluttresultatkoden betyr at det ikke ble funnet problemer under skanningen. Hvis en test viser en advarsel eller en gjelder-ikke-melding, betyr ikke dette at det ble funnet et problem. Hvis du ble bedt om å kjøre denne testen av en kundestøtterepresentant fra Lenovo, bruker du denne koden som bevis. Hvis ikke trenger du ikke gjøre noe nå. Kontakt Lenovos kundestøtte hvis problemene vedvarer.",
+            "AUDIO": "Audio",
+            "AUDIO_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "AUDIO_QUICK_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "BLUETOOTH": "Bluetooth",
+            "BLUETOOTH_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "BLUETOOTH_QUICK_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "FINGERPRINT": "Fingerprint",
+            "FINGERPRINT_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "FINGERPRINT_QUICK_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "KEYBOARD_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "KEYBOARD_QUICK_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "OPTICAL_DRIVE_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Extended tests for optical drive devices",
+            "POINTING_DEVICES": "Pointing Devices",
+            "POINTING_DEVICES_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "POINTING_DEVICES_QUICK_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "TOUCHSCREEN": "Touchscreen",
+            "TOUCHSCREEN_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
+            "TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen"
         },
         "warningMessage": "Husk at testene vil bli kansellert hvis systemet er i hvile- eller dvalemodus",
         "refreshMessage": "Oppdatering kan ta litt tid siden alle komponentene må lastes inn på nytt",
@@ -4307,7 +4324,17 @@
             "descriptionbeta": "Lenovo tilbyr et prøveprogram for å teste ut Smart Performance til juli 2020.",
             "descriptionbeta1": "Du er velkommen til å bli med og prøve alle funksjonene.",
             "descriptionNonSubscriber": "Du abonnerer ikke på Lenovo Smart Performance Service. Du vil bare kunne skanne PC-en. Abonner nå for å få alle fordelene for at PC-en blir beskyttet og kjører problemfritt.",
-            "processStatus": "BEHANDLER"
+            "processStatus": "BEHANDLER",
+            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance,you can renew the subscription by clicking the \"Manage Subscription \" link to resume full protection for your device.",
+            "expiredStatus": "EXPIRED",
+            "expiredNote": "Your subscription will expire in",
+            "day": "day",
+            "days": "days",
+            "weeks": "weeks",
+            "week": "a week",
+            "month": "month",
+            "today": "today",
+            "next": "next"
         },
         "scanSettings": {
             "title": "Innstillinger for skanneplanlegging",
@@ -4771,7 +4798,9 @@
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
-            "backToHome": "Tilbake til hjem"
+            "backToHome": "Tilbake til hjem",
+            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance,if you would like to resume the \"Scan and Fix\" feature,please press the \"renew and fix\" button down below to renew your subscription.",
+            "renewAndFix": "Renew & Fix"
         },
         "subscriberScanHomePage": {
             "title": "Alt er bra med ",
