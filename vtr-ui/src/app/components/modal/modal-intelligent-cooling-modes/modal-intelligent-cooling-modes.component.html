@@ -9,7 +9,7 @@
 		role="button"
 		id="intelligentCoolingModesModal-close-icon"
 		tabindex="1"
-		aria-label="close"
+		aria-label="intelligent cooling modes top close"
 		(click)="closeModal()"
 		(keydown.enter)="closeModal()">
 		<fa-icon [icon]="['fal', 'times']"></fa-icon>
@@ -75,10 +75,11 @@
 	<hr aria-hidden="true">
 	<div class="row">
 		<button class="btn close-button"
+			role="button"
 			tabindex="1"
 			(click)="closeModal()"
 			(keydown.enter)="closeModal()"
-			attr.aria-label="intelligentCoolingModesModal-close-button"
+			aria-label="intelligent cooling modes bottom close"
 			id="intelligentCoolingModesModal-close-button">
 			{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.close' | translate}}</button>
 	</div>
