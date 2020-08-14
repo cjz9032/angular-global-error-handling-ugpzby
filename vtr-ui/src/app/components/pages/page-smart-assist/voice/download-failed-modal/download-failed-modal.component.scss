@@ -66,6 +66,9 @@
 		font-weight: $weight_bold;
 		text-transform: uppercase;
 		position: relative;
+		&:hover {
+			background: $blue_gradient;
+		}
 		&:focus {
 			outline: 0;
 			box-shadow: none;
