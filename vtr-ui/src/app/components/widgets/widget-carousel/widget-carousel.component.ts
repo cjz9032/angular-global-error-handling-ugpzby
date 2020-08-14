@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, SimpleChanges, OnChanges, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges, OnChanges, ViewChild, ElementRef, OnDestroy } from '@angular/core';
 import { NgbCarouselConfig, NgbCarousel, NgbSlideEvent } from '@ng-bootstrap/ng-bootstrap';
 import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
@@ -14,7 +14,7 @@ import { ContentSource } from 'src/app/enums/content.enum';
 	providers: [NgbCarouselConfig]
 })
 
-export class WidgetCarouselComponent implements OnInit, OnChanges {
+export class WidgetCarouselComponent implements OnInit, OnChanges, OnDestroy {
 	@ViewChild(NgbCarousel) carouselContainer;
 	// images = [1, 2, 3].map(() => `https://picsum.photos/900/500?random&t=${Math.random()}`);
 	carouselModel: CarouselModel[] = [];
@@ -31,12 +31,14 @@ export class WidgetCarouselComponent implements OnInit, OnChanges {
 	@Input() wrap: boolean;
 	@Input() order: number;
 	@Input() carouselId: string;
+	@ViewChild('containerSarousel', { static: false }) containerSarousel: ElementRef;
 
 	public readonly slideIdFormat = 'ngb-slide-';
 
 	currentSlideId = `${this.slideIdFormat}0`;
 	isOnline = true;
-	closeTipTimer = null; 
+	closeTipTimer = null;
+	private displayDetectionTaskId;
 
 	constructor(
 		private config: NgbCarouselConfig,
@@ -87,6 +89,8 @@ export class WidgetCarouselComponent implements OnInit, OnChanges {
 
 	parseToCarouselModel() {
 		this.carouselModel = [];
+		this.metricsService.contentDisplayDetection.removeTask(this.displayDetectionTaskId);
+		this.displayDetectionTaskId = null;
 		for (const carousel of this.data) {
 			this.carouselModel.push({
 				id: carousel.id,
@@ -99,8 +103,10 @@ export class WidgetCarouselComponent implements OnInit, OnChanges {
 				overlayThemeDark: !carousel.OverlayTheme || carousel.OverlayTheme !== CardOverlayTheme.Light,
 			});
 
-			if (carousel.DataSource && carousel.DataSource !== ContentSource.Local) {
-				this.metricsService.sendContentDisplay(carousel.id, carousel.DataSource, '1');
+			if (!this.displayDetectionTaskId && carousel.DataSource && carousel.DataSource !== ContentSource.Local) {
+				setTimeout(() => {
+					this.displayDetectionTaskId = this.metricsService.contentDisplayDetection.addTask(this.data, this.containerSarousel, 1);
+				}, 0);
 			}
 		}
 	}
@@ -180,6 +186,10 @@ export class WidgetCarouselComponent implements OnInit, OnChanges {
 	 */
 	public closeTipTimeout(tooltip:any){
 		this.closeTipTimer = setTimeout(this.closeTip, 5000, tooltip);
+	}
+
+	public ngOnDestroy() {
+		this.metricsService.contentDisplayDetection.removeTask(this.displayDetectionTaskId);
 	}
 
 }

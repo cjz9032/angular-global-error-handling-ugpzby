@@ -1,5 +1,5 @@
 import { Subscription } from 'rxjs/internal/Subscription';
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy, ElementRef, ViewChild } from '@angular/core';
 import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
@@ -25,14 +25,23 @@ export class ContainerCardComponent implements OnInit, OnDestroy {
 	@Input() dynamicmetricsItem = '';
 	@Input() isOfflineArm = false;
 
+	@ViewChild('containerCardLoading', { static: false }) containerCardLoading: ElementRef;
+	@ViewChild('containerCardCorner', { static: false }) containerCardCorner: ElementRef;
+	// @ViewChild('containerCardAndroid', {static: false}) containerCardAndroid: ElementRef;
+	@ViewChild('containerCardWideArticle', { static: false }) containerCardWideArticle: ElementRef;
+	@ViewChild('containerCardArticle', { static: false }) containerCardArticle: ElementRef;
+	@ViewChild('containerCardCornerArticle', { static: false }) containerCardCornerArticle: ElementRef;
+	@ViewChild('containerCardSidebarPartnerCorner', { static: false }) containerCardSidebarPartnerCorner: ElementRef;
+
 	overlayThemeDefaultIsDark = true;
 	overlayThemeDefaultIsLight = true;
 
 	isLoading = true;
 	isOnline = true;
 	notificationSubscription: Subscription;
-	closeTipTimer = null; 
+	closeTipTimer = null;
 
+	private displayDetectionTaskId;
 	private _item: FeatureContent;
 
 	@Input() set item(itemValue: any) {
@@ -43,8 +52,19 @@ export class ContainerCardComponent implements OnInit, OnDestroy {
 			if (itemValue.DataSource
 				&& itemValue.DataSource !== ContentSource.Local
 				&& (!this._item || this._item.Id !== itemValue.Id)) {
-				// The Page would feed the content cards with the cache first and then feed them again when the online content return, and they would probably the same
-				this.metricsService.sendContentDisplay(itemValue.Id, itemValue.DataSource, this.sideFlag + this.order);
+
+				// handle content display metrics event
+				this.metricsService.contentDisplayDetection.removeTask(this.displayDetectionTaskId);
+				setTimeout(() => {
+					const container = this.containerCardLoading
+						|| this.containerCardCorner
+						|| this.containerCardWideArticle
+						|| this.containerCardArticle
+						|| this.containerCardCornerArticle
+						|| this.containerCardSidebarPartnerCorner;
+
+					this.displayDetectionTaskId = this.metricsService.contentDisplayDetection.addTask(this._item, container, this.sideFlag + this.order);
+				}, 0);
 			}
 			this._item = itemValue;
 		} else {
@@ -74,6 +94,8 @@ export class ContainerCardComponent implements OnInit, OnDestroy {
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
 		}
+
+		this.metricsService.contentDisplayDetection.removeTask(this.displayDetectionTaskId);
 	}
 
 
@@ -117,15 +139,14 @@ export class ContainerCardComponent implements OnInit, OnDestroy {
 		}
 
 		tooltip.close();
-		if(this.closeTipTimer){
+		if (this.closeTipTimer) {
 			clearTimeout(this.closeTipTimer);
 		}
 	}
 	/**
 	 * Close tooltip after 3sec
 	 */
-	public closeTipTimeout(tooltip:any){
+	public closeTipTimeout(tooltip: any) {
 		this.closeTipTimer = setTimeout(this.closeTip, 5000, tooltip);
 	}
-
 }

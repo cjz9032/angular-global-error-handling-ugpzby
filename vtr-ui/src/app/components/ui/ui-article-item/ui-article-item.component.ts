@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Input, ViewChild, OnDestroy } from '@angular/core';
 import { SupportService } from '../../../services/support/support.service';
 import { CardService } from 'src/app/services/card/card.service';
 import { SupportContentStatus } from 'src/app/enums/support-content-status.enum';
@@ -11,7 +11,7 @@ import { ContentSource } from 'src/app/enums/content.enum';
 	templateUrl: './ui-article-item.component.html',
 	styleUrls: ['./ui-article-item.component.scss']
 })
-export class UIArticleItemComponent implements OnInit, AfterViewInit {
+export class UIArticleItemComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	SupportContentStatus = SupportContentStatus;
 	@Input() index: any;
@@ -19,9 +19,10 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit {
 	@Input() articleType: string;
 	@Input() disableContentDisplay: boolean;
 
-	@ViewChild('articleItemDiv', { static: true }) articleItemDiv: any;
+	@ViewChild('articleItemDiv', { static: false }) articleItemDiv: any;
 
 	private _item: FeatureContent;
+	private displayDetectionTaskId;
 
 	itemCategory = '';
 	ratio = 420 / 430;
@@ -41,18 +42,19 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit {
 	}
 
 	@Input() set item(itemValue: any) {
-		if (itemValue) {
-			const preItem = this.item;
-			setTimeout(()=> {	// use settimeout to defer the code running to make sure that disableContentDisplay was initialized when it was run
-				if (!this.disableContentDisplay
-					&& itemValue.DataSource
-					&& itemValue.DataSource !== ContentSource.Local
-					&& (!preItem || preItem !== itemValue.Id)) {
-					this.metricsService.sendContentDisplay(itemValue.Id, itemValue.DataSource, this.index as string);
-				}
-			}, 0);
-		}
+		const preItem = this.item;
 		this._item = itemValue;
+		if (itemValue) {
+			if (!this.disableContentDisplay
+				&& itemValue.DataSource
+				&& itemValue.DataSource !== ContentSource.Local
+				&& (!preItem || preItem !== itemValue.Id)) {
+				setTimeout(() => {	// use settimeout to defer the code running to make sure that disableContentDisplay was initialized when it was run
+					this.metricsService.contentDisplayDetection.removeTask(this.displayDetectionTaskId);
+					this.displayDetectionTaskId = this.metricsService.contentDisplayDetection.addTask(itemValue, this.articleItemDiv, this.index as string);
+				}, 0);
+			}
+		}
 	}
 
 	get item() {
@@ -87,11 +89,14 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit {
 	clickContent() {
 		this.metricsDatas.viewOrder++;
 		if (this.articleType === SupportContentStatus.Content) {
-			return this.cardService.linkClicked(this.item.ActionType, this.item.ActionLink, false , this.item.Title);
+			return this.cardService.linkClicked(this.item.ActionType, this.item.ActionLink, false, this.item.Title);
 		} else {
 			this.cardService.openArticleModal(this.item.Id, this.item.Title);
 			return false;
 		}
 	}
 
+	ngOnDestroy() {
+		this.metricsService.contentDisplayDetection.removeTask(this.displayDetectionTaskId);
+	}
 }
