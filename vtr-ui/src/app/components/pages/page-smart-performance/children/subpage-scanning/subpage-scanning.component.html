@@ -48,13 +48,7 @@
 													</div>
 												</div>
 											</div>
-											<div class="col col-12 row progress-bar-div-container">
-												<div class="col col-12 progress-bar-div" id="su_check_progress"
-													aria-label="su_check_progress">
-													<ngb-progressbar type="success" [value]="percent"
-														[height]="'0.6rem'"></ngb-progressbar>
-												</div>
-											</div>
+											<vtr-ui-progress-bar [value]="percent" [noPadding]="true"></vtr-ui-progress-bar>
 											<div class="col col-12 row scan-cancel-btn">
 												<div class="col col-12 p-5 d-flex justify-content-center">
 													<button type="button" id="su_cancel_updates"

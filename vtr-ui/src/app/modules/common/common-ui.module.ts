@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { MetricsModule } from 'src/app/services/metric/metrics.module';
-import { NgbTooltipModule, NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbTooltipModule, NgbCollapseModule, NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared.module';
 import { UiCheckboxComponent } from 'src/app/components/ui/ui-checkbox/ui-checkbox.component';
@@ -14,6 +14,7 @@ import { UiGamingDriverPopupComponent } from './../../components/ui/ui-gaming-dr
 import { UiListCheckboxComponent } from 'src/app/components/ui/ui-list-checkbox/ui-list-checkbox.component';
 import { UiNumberButtonComponent } from 'src/app/components/ui/ui-number-button/ui-number-button.component';
 import { UiPopoverComponent } from 'src/app/components/ui/ui-popover/ui-popover.component';
+import { UiProgressBarComponent } from 'src/app/components/ui/ui-progress-bar/ui-progress-bar.component';
 import { UiRectangleRadioComponent } from 'src/app/components/ui/ui-rectangle-radio/ui-rectangle-radio.component';
 import { UiRoundedRectangleRadioComponent } from 'src/app/components/ui/ui-rounded-rectangle-radio/ui-rounded-rectangle-radio.component';
 import { UiRowSwitchComponent } from 'src/app/components/ui/ui-row-switch/ui-row-switch.component';
@@ -61,6 +62,7 @@ import { SafePipeModule } from 'safe-pipe';
 		UiGamingCollapsibleContainerComponent,
 		UiGamingDriverPopupComponent,
 		UiPopoverComponent,
+		UiProgressBarComponent,
 		UiTooltipsComponent,
 		UiToggleComponent,
 		ContainerCollapsibleComponent,
@@ -86,6 +88,8 @@ import { SafePipeModule } from 'safe-pipe';
 		UiGamingCollapsibleContainerComponent,
 		UiGamingDriverPopupComponent,
 		UiPopoverComponent,
+		NgbProgressbarModule,
+		UiProgressBarComponent,
 		MetricsModule,
 		UiTooltipsComponent,
 		UiToggleComponent,
@@ -105,12 +109,13 @@ import { SafePipeModule } from 'safe-pipe';
 		MetricsModule,
 		NgbTooltipModule,
 		NgbCollapseModule,
+		NgbProgressbarModule,
 		FontAwesomeModule,
 		UiCustomSwitchModule,
 		SpinnerModule,
 		UiRoundedRectangleCustomRadioListModule,
-        UiCircleRadioWithCheckBoxListModule,
-        SafePipeModule 
+		UiCircleRadioWithCheckBoxListModule,
+		SafePipeModule
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

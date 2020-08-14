@@ -35,6 +35,7 @@
 							(onClick)="onCheckForUpdates()"></vtr-ui-button>
 					</div>
 				</div>
+				<vtr-ui-progress-bar class="pb-5" [value]="50"></vtr-ui-progress-bar>
 				<div *ngIf="showProgress"
 					class="col row">
 					<div class="col col-12 row progress-div">
@@ -48,15 +49,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col col-12 row progress-bar-div-container">
-						<div class="col col-12 progress-bar-div"
-							id="su_check_progress"
-							role="progressbar">
-							<ngb-progressbar type="success"
-								[value]="percent"
-								[height]="'0.6rem'"></ngb-progressbar>
-						</div>
-					</div>
+					<vtr-ui-progress-bar [value]="percent"></vtr-ui-progress-bar>
 					<div class="col col-12 row">
 						<div class="col col-12 cancel-check p-5">
 							<button type="button"
@@ -93,15 +86,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col col-12 row progress-bar-div-container">
-						<div class="col col-12 progress-bar-div"
-							id="su_download_progress"
-							role="progressbar">
-							<ngb-progressbar type="success"
-								[value]="downloadingPercent"
-								[height]="'0.6rem'"></ngb-progressbar>
-						</div>
-					</div>
+					<vtr-ui-progress-bar [value]="downloadingPercent"></vtr-ui-progress-bar>
 
 					<div class="col col-12 row progress-div install-progress">
 						<div class="col col-9 progress-title">
@@ -118,15 +103,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col col-12 row progress-bar-div-container">
-						<div class="col col-12 progress-bar-div"
-							id="su_install_progress"
-							role="progressbar">
-							<ngb-progressbar type="success"
-								[value]="installingPercent"
-								[height]="'0.6rem'"></ngb-progressbar>
-						</div>
-					</div>
+					<vtr-ui-progress-bar [value]="installingPercent"></vtr-ui-progress-bar>
 					<div class="col col-12 row">
 						<div class="col col-12 cancel-check p-5">
 							<button type="button"

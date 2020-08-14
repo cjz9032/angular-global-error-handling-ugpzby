@@ -13,7 +13,7 @@ import { WidgetSupportComponent } from 'src/app/components/widgets/widget-suppor
 import { WidgetWarrantyComponent } from 'src/app/components/widgets/widget-warranty/widget-warranty.component';
 import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-security-status/widget-security-status.module';
 import { WidgetPoweredByInfoComponent } from 'src/app/components/widgets/widget-powered-by-info/widget-powered-by-info.component';
-import { NgbProgressbarModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { WidgetHomeSecurityComponent } from 'src/app/components/widgets/widget-home-security/widget-home-security.component';
 import { WidgetSupportModule } from 'src/app/components/widgets/widget-support/widget-support.module';
 
@@ -36,7 +36,6 @@ import { WidgetSupportModule } from 'src/app/components/widgets/widget-support/w
 		WidgetRebootComponent,
 		WidgetSupportComponent,
 		WidgetWarrantyComponent,
-		NgbProgressbarModule,
 		WidgetPoweredByInfoComponent,
 		WidgetHomeSecurityComponent
 	],
@@ -47,7 +46,6 @@ import { WidgetSupportModule } from 'src/app/components/widgets/widget-support/w
 		RouterModule,
 		WidgetSecurityStatusModule,
 		WidgetSupportModule,
-		NgbProgressbarModule,
 		NgbTooltipModule
 	],
 	schemas: [
