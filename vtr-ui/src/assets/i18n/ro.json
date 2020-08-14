@@ -2647,8 +2647,7 @@
                 "connect": "CONNECTED",
                 "fail": "Incorrect code entered!",
                 "joinFamilyAccount": "Join family account",
-                "connecting": "Connecting...",
-                "offlinePrompt": "You are currently off-line. Please try again when you are connected to the Internet"
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Sănătatea securității",
@@ -4149,7 +4148,29 @@
             "LINEAR_READ_TEST": "Test liniar de citire",
             "LINEAR_READ_TEST_DESCRIPTION": "Verifică integritatea dispozitivului de stocare prin citirea sectoarelor după un tipar liniar",
             "FINAL_RESULT_CODE_SUCCESS": "Acest cod al rezultatului final indică faptul că nu s-au descoperit probleme în urma scanării. Dacă un test afișează o avertizare sau mesajul „neaplicabil”, nu înseamnă că s-a descoperit o problemă. Dacă un agent de asistență Lenovo v-a solicitat să rulați acest test, utilizați acest cod ca dovadă; în caz contrar, momentan nu este necesară nicio acțiune din partea dumneavoastră. În cazul în care considerați că încă întâmpinați probleme, contactați Asistența Lenovo.",
-            "FINAL_RESULT_CODE_FAIL": "Acest cod al rezultatului final indică faptul că s-au descoperit probleme în urma scanării. Urmați indicațiile de pe ecran, situate în partea de jos a rezultatelor scanării hardware, pentru a contacta Asistența Lenovo. Fiți pregătit să furnizați acest cod al rezultatului final când vi se solicită."
+            "FINAL_RESULT_CODE_FAIL": "Acest cod al rezultatului final indică faptul că s-au descoperit probleme în urma scanării. Urmați indicațiile de pe ecran, situate în partea de jos a rezultatelor scanării hardware, pentru a contacta Asistența Lenovo. Fiți pregătit să furnizați acest cod al rezultatului final când vi se solicită.",
+            "HIGH_DEFINITION_AUDIO_SPECIFICATION": "High Definition Audio specification:",
+            "NUMBER_OF_BIDIRECTIONAL_STREAMS": "Number of bidirectional streams",
+            "NUMBER_OF_INPUT_STREAMS": "Number of input streams",
+            "NUMBER_OF_OUTPUT_STREAMS": "Number of output streams",
+            "AUDIO": "Audio",
+            "AUDIO_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "AUDIO_QUICK_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "BLUETOOTH": "Bluetooth",
+            "BLUETOOTH_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "BLUETOOTH_QUICK_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "FINGERPRINT": "Fingerprint",
+            "FINGERPRINT_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "FINGERPRINT_QUICK_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "KEYBOARD_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "KEYBOARD_QUICK_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "OPTICAL_DRIVE_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Extended tests for optical drive devices",
+            "POINTING_DEVICES": "Pointing Devices",
+            "POINTING_DEVICES_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "POINTING_DEVICES_QUICK_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "TOUCHSCREEN": "Touchscreen",
+            "TOUCHSCREEN_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
+            "TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen"
         },
         "warningMessage": "Rețineți că testele vor fi anulate dacă sistemul intră în repaus sau hibernează",
         "refreshMessage": "Actualizarea poate dura un timp, deoarece este necesar să se încarce din nou toate componentele",
@@ -4303,7 +4324,17 @@
             "descriptionbeta": "Lenovo vă oferă un program pilot, pentru a încerca gratuit caracteristica Smart Performance până în iulie 2020.",
             "descriptionbeta1": "Sunteți binevenit să vă alăturați nouă și să încercați gratuit caracteristica completă.",
             "descriptionNonSubscriber": "Nu sunteți abonat la serviciul Lenovo Smart Performance. Veți putea scana doar PC-ul dumneavoastră. Abonați-vă acum pentru a beneficia de avantajele complete oferite de un computer protejat, care funcționează fără probleme.",
-            "processStatus": "SE PROCESEAZĂ"
+            "processStatus": "SE PROCESEAZĂ",
+            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance,you can renew the subscription by clicking the \"Manage Subscription \" link to resume full protection for your device.",
+            "expiredStatus": "EXPIRED",
+            "expiredNote": "Your subscription will expire in",
+            "day": "day",
+            "days": "days",
+            "weeks": "weeks",
+            "week": "a week",
+            "month": "month",
+            "today": "today",
+            "next": "next"
         },
         "scanSettings": {
             "title": "Setări pentru programarea scanării",
@@ -4767,7 +4798,9 @@
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
-            "backToHome": "Înapoi la pagina de pornire"
+            "backToHome": "Înapoi la pagina de pornire",
+            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance,if you would like to resume the \"Scan and Fix\" feature,please press the \"renew and fix\" button down below to renew your subscription.",
+            "renewAndFix": "Renew & Fix"
         },
         "subscriberScanHomePage": {
             "title": "Totul funcționează corect privind ",

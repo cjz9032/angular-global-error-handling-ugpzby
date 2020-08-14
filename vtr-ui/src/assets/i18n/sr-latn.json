@@ -2647,8 +2647,7 @@
                 "connect": "CONNECTED",
                 "fail": "Incorrect code entered!",
                 "joinFamilyAccount": "Join family account",
-                "connecting": "Connecting...",
-                "offlinePrompt": "You are currently off-line. Please try again when you are connected to the Internet"
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Stanje bezbednosti",
@@ -4149,7 +4148,29 @@
             "LINEAR_READ_TEST": "Test linearnog čitanja",
             "LINEAR_READ_TEST_DESCRIPTION": "Proverava integritet uređaja za skladištenje čitanjem njegovih sektora prateći linearni šablon",
             "FINAL_RESULT_CODE_FAIL": "Ovaj konačni povratni kôd ukazuje da su pronađeni problemi u ovom skeniranju. Pratite uputstva na ekranu, koja se nalaze na dnu rezultata skeniranja hardvera, da biste kontaktirali Lenovo podršku. Budite spremni da priložite ovaj konačni povratni kôd kada se to zatraži od vas.",
-            "FINAL_RESULT_CODE_SUCCESS": "Ovaj konačni povratni kôd ukazuje da nisu pronađeni problemi u ovom skeniranju. Ukoliko neki test prikazuje upozorenje ili poruku da nešto nije primenljivo, to ne znači da je pronađen problem. Ukoliko agent Lenovo podrške zatraži od vas da pokrenete ovaj test, koristite ovaj kôd kao dokaz; u suprotnom nije potrebno ništa da uradite u ovom trenutku. Ako smatrate da i dalje imate problema, kontaktirajte Lenovo podršku."
+            "FINAL_RESULT_CODE_SUCCESS": "Ovaj konačni povratni kôd ukazuje da nisu pronađeni problemi u ovom skeniranju. Ukoliko neki test prikazuje upozorenje ili poruku da nešto nije primenljivo, to ne znači da je pronađen problem. Ukoliko agent Lenovo podrške zatraži od vas da pokrenete ovaj test, koristite ovaj kôd kao dokaz; u suprotnom nije potrebno ništa da uradite u ovom trenutku. Ako smatrate da i dalje imate problema, kontaktirajte Lenovo podršku.",
+            "HIGH_DEFINITION_AUDIO_SPECIFICATION": "High Definition Audio specification:",
+            "NUMBER_OF_BIDIRECTIONAL_STREAMS": "Number of bidirectional streams",
+            "NUMBER_OF_INPUT_STREAMS": "Number of input streams",
+            "NUMBER_OF_OUTPUT_STREAMS": "Number of output streams",
+            "AUDIO": "Audio",
+            "AUDIO_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "AUDIO_QUICK_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "BLUETOOTH": "Bluetooth",
+            "BLUETOOTH_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "BLUETOOTH_QUICK_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "FINGERPRINT": "Fingerprint",
+            "FINGERPRINT_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "FINGERPRINT_QUICK_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "KEYBOARD_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "KEYBOARD_QUICK_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "OPTICAL_DRIVE_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Extended tests for optical drive devices",
+            "POINTING_DEVICES": "Pointing Devices",
+            "POINTING_DEVICES_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "POINTING_DEVICES_QUICK_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "TOUCHSCREEN": "Touchscreen",
+            "TOUCHSCREEN_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
+            "TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen"
         },
         "warningMessage": "Imajte na umu da će testovi biti otkazani ako sistem bude u stanju spavanja ili hibernacije",
         "refreshMessage": "Osvežavanje može da potraje jer treba da se ponovo učitaju sve komponente",
@@ -4303,7 +4324,17 @@
             "descriptionbeta": "Do jula 2020. god. Lenovo nudi pilot program za probu funkcije Smart Performance.",
             "descriptionbeta1": "Možete da se pridružite i isprobate celokupnu funkciju.",
             "descriptionNonSubscriber": "Niste pretplaćeni na Lenovo uslugu Smart Performance. Moći ćete samo da skenirate svoj računar. Pretplatite se odmah kako biste iskoristili sve prednosti zaštite i neometanog rada računara.",
-            "processStatus": "OBRADA"
+            "processStatus": "OBRADA",
+            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance,you can renew the subscription by clicking the \"Manage Subscription \" link to resume full protection for your device.",
+            "expiredStatus": "EXPIRED",
+            "expiredNote": "Your subscription will expire in",
+            "day": "day",
+            "days": "days",
+            "weeks": "weeks",
+            "week": "a week",
+            "month": "month",
+            "today": "today",
+            "next": "next"
         },
         "scanSettings": {
             "title": "Postavke rasporeda skeniranja",
@@ -4767,7 +4798,9 @@
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
-            "backToHome": "Nazad na početnu stranicu"
+            "backToHome": "Nazad na početnu stranicu",
+            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance,if you would like to resume the \"Scan and Fix\" feature,please press the \"renew and fix\" button down below to renew your subscription.",
+            "renewAndFix": "Renew & Fix"
         },
         "subscriberScanHomePage": {
             "title": "Sve je u redu sa vašim ",

@@ -2647,8 +2647,7 @@
                 "connect": "CONNECTED",
                 "fail": "Incorrect code entered!",
                 "joinFamilyAccount": "Join family account",
-                "connecting": "Connecting...",
-                "offlinePrompt": "You are currently off-line. Please try again when you are connected to the Internet"
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "安全性状况",
@@ -4153,7 +4152,25 @@
             "LINEAR_READ_TEST": "线性读取测试",
             "LINEAR_READ_TEST_DESCRIPTION": "按照线性模式读取存储设备的扇区以检查完整性",
             "FINAL_RESULT_CODE_FAIL": "此最终结果代码表示此次扫描发现了问题。按照屏幕上的指示（位于硬件扫描结果的底部）联系 Lenovo 支持人员。当要求提供此最终结果代码时，请做好准备。",
-            "FINAL_RESULT_CODE_SUCCESS": "此最终结果代码表示此次扫描未发现问题。如果任何测试显示警告或“不适用”消息，其并不表示发现了问题。如果 Lenovo 支持代理人员让您运行此测试，请使用此代码作为凭据；否则，此时您无需执行任何操作。如果您仍然有问题，请联系 Lenovo 支持人员。"
+            "FINAL_RESULT_CODE_SUCCESS": "此最终结果代码表示此次扫描未发现问题。如果任何测试显示警告或“不适用”消息，其并不表示发现了问题。如果 Lenovo 支持代理人员让您运行此测试，请使用此代码作为凭据；否则，此时您无需执行任何操作。如果您仍然有问题，请联系 Lenovo 支持人员。",
+            "AUDIO": "Audio",
+            "AUDIO_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "AUDIO_QUICK_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "BLUETOOTH": "Bluetooth",
+            "BLUETOOTH_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "BLUETOOTH_QUICK_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "FINGERPRINT": "Fingerprint",
+            "FINGERPRINT_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "FINGERPRINT_QUICK_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "KEYBOARD_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "KEYBOARD_QUICK_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "OPTICAL_DRIVE_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Extended tests for optical drive devices",
+            "POINTING_DEVICES": "Pointing Devices",
+            "POINTING_DEVICES_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "POINTING_DEVICES_QUICK_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "TOUCHSCREEN": "Touchscreen",
+            "TOUCHSCREEN_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
+            "TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen"
         },
         "warningMessage": "请记住，如果系统进入睡眠或休眠状态，则测试将被取消",
         "refreshMessage": "刷新可能需要一些时间，因为它需要再次加载所有组件",
@@ -4307,7 +4324,17 @@
             "descriptionbeta": "Lenovo 现在提供 Smart Performance 试用计划，截止时间为 2020 年 7 月。",
             "descriptionbeta1": "欢迎您加入并尝试完整功能。",
             "descriptionNonSubscriber": "您尚未订阅Smart Performance服务，所以您现阶段将只能扫描您的电脑，立即订阅，则可一键修复计算机的所有性能和安全问题。",
-            "processStatus": "处理中"
+            "processStatus": "处理中",
+            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance,you can renew the subscription by clicking the \"Manage Subscription \" link to resume full protection for your device.",
+            "expiredStatus": "EXPIRED",
+            "expiredNote": "Your subscription will expire in",
+            "day": "day",
+            "days": "days",
+            "weeks": "weeks",
+            "week": "a week",
+            "month": "month",
+            "today": "today",
+            "next": "next"
         },
         "scanSettings": {
             "title": "设置自动扫描时间",
@@ -4771,7 +4798,9 @@
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
-            "backToHome": "返回主屏幕"
+            "backToHome": "返回主屏幕",
+            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance,if you would like to resume the \"Scan and Fix\" feature,please press the \"renew and fix\" button down below to renew your subscription.",
+            "renewAndFix": "Renew & Fix"
         },
         "subscriberScanHomePage": {
             "title": "一切正常",

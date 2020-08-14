@@ -2647,8 +2647,7 @@
                 "connect": "CONNECTED",
                 "fail": "Incorrect code entered!",
                 "joinFamilyAccount": "Join family account",
-                "connecting": "Connecting...",
-                "offlinePrompt": "You are currently off-line. Please try again when you are connected to the Internet"
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Säkerhetstillstånd",
@@ -4153,7 +4152,25 @@
             "LINEAR_READ_TEST": "Linjärt lästest",
             "LINEAR_READ_TEST_DESCRIPTION": "Lagringsenhetens integritet kontrollerar genom att dess sektorer läses enligt ett linjärt mönster",
             "FINAL_RESULT_CODE_FAIL": "Den slutliga resultatkoden visar att det påträffades problem under genomsökningen. Kontakta Lenovos support enligt anvisningarna på skärmen. Du hittar dem sist i resultatet av maskinvarugenomsökningen. Uppge denna slutliga resultatkod om du blir ombedd att göra det.",
-            "FINAL_RESULT_CODE_SUCCESS": "Den slutliga resultatkoden visar att det inte påträffades några problem med genomsökningen. Om ett test visar en varning eller ett meddelande om att testet inte är tillämpligt betyder det inte att det påträffades ett problem. Om en Lenovo-supportansvarig ber dig köra testet kan du uppge denna kod som bevis. I annat fall behövs ingen åtgärd just nu. Kontakta Lenovos support om du fortfarande upplever problem."
+            "FINAL_RESULT_CODE_SUCCESS": "Den slutliga resultatkoden visar att det inte påträffades några problem med genomsökningen. Om ett test visar en varning eller ett meddelande om att testet inte är tillämpligt betyder det inte att det påträffades ett problem. Om en Lenovo-supportansvarig ber dig köra testet kan du uppge denna kod som bevis. I annat fall behövs ingen åtgärd just nu. Kontakta Lenovos support om du fortfarande upplever problem.",
+            "AUDIO": "Audio",
+            "AUDIO_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "AUDIO_QUICK_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "BLUETOOTH": "Bluetooth",
+            "BLUETOOTH_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "BLUETOOTH_QUICK_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "FINGERPRINT": "Fingerprint",
+            "FINGERPRINT_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "FINGERPRINT_QUICK_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "KEYBOARD_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "KEYBOARD_QUICK_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "OPTICAL_DRIVE_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Extended tests for optical drive devices",
+            "POINTING_DEVICES": "Pointing Devices",
+            "POINTING_DEVICES_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "POINTING_DEVICES_QUICK_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "TOUCHSCREEN": "Touchscreen",
+            "TOUCHSCREEN_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
+            "TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen"
         },
         "warningMessage": "Tänk på att testen avbryts om datorn hamnar i vänte- eller viloläge",
         "refreshMessage": "Uppdateringen kan ta lite tid, eftersom alla komponenter behöver läsas in igen",
@@ -4307,7 +4324,17 @@
             "descriptionbeta": "Lenovo erbjuder ett pilotprogram för att prova funktionen Smart Performance till juli 2020.",
             "descriptionbeta1": "Du är välkommen att delta och prova alla funktioner.",
             "descriptionNonSubscriber": "Du prenumererar inte på Lenovo Smart Performance. Du kan endast genomsöka datorn. Prenumerera nu för att skydda datorn fullt ut och se till att den körs utan problem.",
-            "processStatus": "BEARBETAR"
+            "processStatus": "BEARBETAR",
+            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance,you can renew the subscription by clicking the \"Manage Subscription \" link to resume full protection for your device.",
+            "expiredStatus": "EXPIRED",
+            "expiredNote": "Your subscription will expire in",
+            "day": "day",
+            "days": "days",
+            "weeks": "weeks",
+            "week": "a week",
+            "month": "month",
+            "today": "today",
+            "next": "next"
         },
         "scanSettings": {
             "title": "Inställningar för schemalagd genomsökning",
@@ -4771,7 +4798,9 @@
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
-            "backToHome": "Tillbaka till startsidan"
+            "backToHome": "Tillbaka till startsidan",
+            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance,if you would like to resume the \"Scan and Fix\" feature,please press the \"renew and fix\" button down below to renew your subscription.",
+            "renewAndFix": "Renew & Fix"
         },
         "subscriberScanHomePage": {
             "title": "Allt fungerar som det ska på din ",

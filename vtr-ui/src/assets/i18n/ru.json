@@ -2647,8 +2647,7 @@
                 "connect": "CONNECTED",
                 "fail": "Incorrect code entered!",
                 "joinFamilyAccount": "Join family account",
-                "connecting": "Connecting...",
-                "offlinePrompt": "You are currently off-line. Please try again when you are connected to the Internet"
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Состояние системы безопасности",
@@ -4153,7 +4152,25 @@
             "LINEAR_READ_TEST": "Тест линейного чтения",
             "LINEAR_READ_TEST_DESCRIPTION": "Проверка целостности устройства хранения путем чтения его секторов линейным образом",
             "FINAL_RESULT_CODE_FAIL": "Этот окончательный код результата указывает, что при данном сканировании обнаружены проблемы. Следуйте инструкциям в нижней части результатов сканирования оборудования, чтобы связаться со службой поддержки Lenovo. Будьте готовы предоставить этот окончательный код результата по запросу.",
-            "FINAL_RESULT_CODE_SUCCESS": "Этот окончательный код результата указывает, что при данном сканировании проблем не обнаружено. Если при выполнении какого-либо теста отображается предупреждение или несоответствующее сообщение, это не означает, что обнаружена проблема. Если агент службы поддержки Lenovo попросил вас выполнить этот тест, используйте данный код в качестве доказательства; в противном случае никаких действий с вашей стороны в настоящее время не требуется. Если вы чувствуете, что все еще испытываете проблемы, обратитесь в службу поддержки Lenovo."
+            "FINAL_RESULT_CODE_SUCCESS": "Этот окончательный код результата указывает, что при данном сканировании проблем не обнаружено. Если при выполнении какого-либо теста отображается предупреждение или несоответствующее сообщение, это не означает, что обнаружена проблема. Если агент службы поддержки Lenovo попросил вас выполнить этот тест, используйте данный код в качестве доказательства; в противном случае никаких действий с вашей стороны в настоящее время не требуется. Если вы чувствуете, что все еще испытываете проблемы, обратитесь в службу поддержки Lenovo.",
+            "AUDIO": "Audio",
+            "AUDIO_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "AUDIO_QUICK_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "BLUETOOTH": "Bluetooth",
+            "BLUETOOTH_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "BLUETOOTH_QUICK_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "FINGERPRINT": "Fingerprint",
+            "FINGERPRINT_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "FINGERPRINT_QUICK_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "KEYBOARD_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "KEYBOARD_QUICK_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "OPTICAL_DRIVE_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Extended tests for optical drive devices",
+            "POINTING_DEVICES": "Pointing Devices",
+            "POINTING_DEVICES_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "POINTING_DEVICES_QUICK_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "TOUCHSCREEN": "Touchscreen",
+            "TOUCHSCREEN_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
+            "TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen"
         },
         "warningMessage": "Имейте в виду, что тесты будут отменены при переходе системы в спящий режим или режим гибернации",
         "refreshMessage": "Обновление может занять некоторое время, так как необходимо снова загрузить все компоненты",
@@ -4307,7 +4324,17 @@
             "descriptionbeta": "Lenovo предлагает пилотную программу, чтобы вы могли оценить функцию Smart Performance до июля 2020 года.",
             "descriptionbeta1": "Приглашаем вас присоединиться к программе и оценить все возможности этой функции.",
             "descriptionNonSubscriber": "Вы не подписаны на услугу Lenovo Smart Performance. Вы сможете только сканировать свой ПК. Подпишитесь прямо сейчас, чтобы воспользоваться всеми преимуществами защиты и бесперебойной работы своего ПК.",
-            "processStatus": "ОБРАБОТКА"
+            "processStatus": "ОБРАБОТКА",
+            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance,you can renew the subscription by clicking the \"Manage Subscription \" link to resume full protection for your device.",
+            "expiredStatus": "EXPIRED",
+            "expiredNote": "Your subscription will expire in",
+            "day": "day",
+            "days": "days",
+            "weeks": "weeks",
+            "week": "a week",
+            "month": "month",
+            "today": "today",
+            "next": "next"
         },
         "scanSettings": {
             "title": "Настройки расписания сканирования",
@@ -4771,7 +4798,9 @@
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
-            "backToHome": "Вернуться на Главную"
+            "backToHome": "Вернуться на Главную",
+            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance,if you would like to resume the \"Scan and Fix\" feature,please press the \"renew and fix\" button down below to renew your subscription.",
+            "renewAndFix": "Renew & Fix"
         },
         "subscriberScanHomePage": {
             "title": "У вас все хорошо ",

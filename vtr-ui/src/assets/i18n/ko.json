@@ -2647,8 +2647,7 @@
                 "connect": "CONNECTED",
                 "fail": "Incorrect code entered!",
                 "joinFamilyAccount": "Join family account",
-                "connecting": "Connecting...",
-                "offlinePrompt": "You are currently off-line. Please try again when you are connected to the Internet"
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "보안 상태",
@@ -4153,7 +4152,25 @@
             "LINEAR_READ_TEST": "선형 읽기 테스트",
             "LINEAR_READ_TEST_DESCRIPTION": "선형 패턴에 따라 섹터를 읽어 저장 장치의 무결성을 확인합니다",
             "FINAL_RESULT_CODE_FAIL": "이 최종 결과 코드는 이 검사에서 문제가 발견되었음을 나타냅니다. 하드웨어 검사 결과의 맨 아래에 있는 화면의 지시에 따라 Lenovo 지원에 문의하십시오. 요청 시 이 최종 결과 코드를 제공할 수 있도록 준비하십시오.",
-            "FINAL_RESULT_CODE_SUCCESS": "이 최종 결과 코드는 이 검사에서 문제가 발견되지 않았음을 나타냅니다. 테스트에서 경고 또는 적용할 수 없다는 메시지가 표시되는 경우 문제가 발견되었음을 의미하는 것은 아닙니다. Lenovo 지원 담당자가 이 테스트를 실행하도록 요청한 경우, 이 코드를 증거로 사용하십시오. 그렇지 않으면, 현재 사용자가 조치를 취할 필요는 없습니다. 문제가 여전히 발생한다고 판단되는 경우 Lenovo 지원에 문의하십시오."
+            "FINAL_RESULT_CODE_SUCCESS": "이 최종 결과 코드는 이 검사에서 문제가 발견되지 않았음을 나타냅니다. 테스트에서 경고 또는 적용할 수 없다는 메시지가 표시되는 경우 문제가 발견되었음을 의미하는 것은 아닙니다. Lenovo 지원 담당자가 이 테스트를 실행하도록 요청한 경우, 이 코드를 증거로 사용하십시오. 그렇지 않으면, 현재 사용자가 조치를 취할 필요는 없습니다. 문제가 여전히 발생한다고 판단되는 경우 Lenovo 지원에 문의하십시오.",
+            "AUDIO": "Audio",
+            "AUDIO_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "AUDIO_QUICK_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "BLUETOOTH": "Bluetooth",
+            "BLUETOOTH_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "BLUETOOTH_QUICK_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "FINGERPRINT": "Fingerprint",
+            "FINGERPRINT_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "FINGERPRINT_QUICK_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "KEYBOARD_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "KEYBOARD_QUICK_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "OPTICAL_DRIVE_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Extended tests for optical drive devices",
+            "POINTING_DEVICES": "Pointing Devices",
+            "POINTING_DEVICES_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "POINTING_DEVICES_QUICK_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "TOUCHSCREEN": "Touchscreen",
+            "TOUCHSCREEN_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
+            "TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen"
         },
         "warningMessage": "시스템이 절전 또는 최대 절전 모드 상태인 경우 테스트가 취소됩니다",
         "refreshMessage": "모든 구성 요소를 다시 로드해야 하므로 새로 고침이 오래 걸릴 수 있습니다",
@@ -4307,7 +4324,17 @@
             "descriptionbeta": "Lenovo는 2020년 7월까지 Smart Performance를 사용하는 파일럿 프로그램을 제공합니다.",
             "descriptionbeta1": "여기에 가입하여 완전한 기능을 사용해 보십시오.",
             "descriptionNonSubscriber": "Lenovo Smart Performance 서비스를 구독하고 있지 않습니다. PC만 검사할 수 있습니다. PC를 보호하고 원활하게 실행하는 모든 이점을 얻으려면 지금 가입하십시오.",
-            "processStatus": "처리 중"
+            "processStatus": "처리 중",
+            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance,you can renew the subscription by clicking the \"Manage Subscription \" link to resume full protection for your device.",
+            "expiredStatus": "EXPIRED",
+            "expiredNote": "Your subscription will expire in",
+            "day": "day",
+            "days": "days",
+            "weeks": "weeks",
+            "week": "a week",
+            "month": "month",
+            "today": "today",
+            "next": "next"
         },
         "scanSettings": {
             "title": "예약 검사 설정",
@@ -4771,7 +4798,9 @@
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
-            "backToHome": "홈으로 돌아가기"
+            "backToHome": "홈으로 돌아가기",
+            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance,if you would like to resume the \"Scan and Fix\" feature,please press the \"renew and fix\" button down below to renew your subscription.",
+            "renewAndFix": "Renew & Fix"
         },
         "subscriberScanHomePage": {
             "title": "모든 설정이 사용자에 적합 ",

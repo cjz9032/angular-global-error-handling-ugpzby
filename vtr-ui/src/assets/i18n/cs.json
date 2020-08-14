@@ -2139,7 +2139,7 @@
                 "note": {
                     "descriptionTitle": "Upozornění:",
                     "description1": "Při přihlášení do systému Windows jsou třeba platné možnosti přihlášení, například heslo nebo kód PIN. Jinak může funkci inteligentního varování při pohybu omylem deaktivovat kterýkoli neautorizovaný uživatel, který přistupuje k vašemu počítači.",
-                    "description2":"Než se od počítače vzdálíte, nezapomeňte jej uzamknout stisknutím kombinace kláves Windows a L. V opačném případě nebude funkce inteligentního varování při pohybu pracovat normálně."
+                    "description2": "Než se od počítače vzdálíte, nezapomeňte jej uzamknout stisknutím kombinace kláves Windows a L. V opačném případě nebude funkce inteligentního varování při pohybu pracovat normálně."
                 },
                 "alarm": {
                     "title": " VAROVÁNÍ BUDE TRVAT",
@@ -2647,8 +2647,7 @@
                 "connect": "CONNECTED",
                 "fail": "Incorrect code entered!",
                 "joinFamilyAccount": "Join family account",
-                "connecting": "Connecting...",
-                "offlinePrompt": "You are currently off-line. Please try again when you are connected to the Internet"
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Stav zabezpečení",
@@ -4149,7 +4148,29 @@
             "LINEAR_READ_TEST": "Test lineárního čtení",
             "LINEAR_READ_TEST_DESCRIPTION": "Kontroluje integritu paměťového zařízení čtením jeho sektorů podle lineárního vzoru",
             "FINAL_RESULT_CODE_FAIL": "Tento výsledný kód chyby značí, že byly zjištěny problémy s touto kontrolou. Kontaktujte podporu společnosti Lenovo podle pokynů na obrazovce uvedených ve spodní části výsledků kontroly hardwaru. Buďte připraveni na požádání poskytnout tento výsledný kód.",
-            "FINAL_RESULT_CODE_SUCCESS": "Tento výsledný kód chyby značí, že nebyly zjištěny žádné problémy s touto kontrolou. Pokud nějaký test zobrazí varování nebo zprávu o tom, že příslušný test není použitelný, nemusí to znamenat, že byl nalezen problém. Pokud vás o provedení tohoto testu požádal zástupce podpory Lenovo, použijte tento kód jako doklad; v opačném případě není v tuto chvíli potřeba provádět žádnou akci. Pokud jste přesvědčeni, že se problémy nadále objevují, kontaktujte podporu společnosti Lenovo."
+            "FINAL_RESULT_CODE_SUCCESS": "Tento výsledný kód chyby značí, že nebyly zjištěny žádné problémy s touto kontrolou. Pokud nějaký test zobrazí varování nebo zprávu o tom, že příslušný test není použitelný, nemusí to znamenat, že byl nalezen problém. Pokud vás o provedení tohoto testu požádal zástupce podpory Lenovo, použijte tento kód jako doklad; v opačném případě není v tuto chvíli potřeba provádět žádnou akci. Pokud jste přesvědčeni, že se problémy nadále objevují, kontaktujte podporu společnosti Lenovo.",
+            "HIGH_DEFINITION_AUDIO_SPECIFICATION": "High Definition Audio specification:",
+            "NUMBER_OF_BIDIRECTIONAL_STREAMS": "Number of bidirectional streams",
+            "NUMBER_OF_INPUT_STREAMS": "Number of input streams",
+            "NUMBER_OF_OUTPUT_STREAMS": "Number of output streams",
+            "AUDIO": "Audio",
+            "AUDIO_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "AUDIO_QUICK_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "BLUETOOTH": "Bluetooth",
+            "BLUETOOTH_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "BLUETOOTH_QUICK_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "FINGERPRINT": "Fingerprint",
+            "FINGERPRINT_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "FINGERPRINT_QUICK_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "KEYBOARD_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "KEYBOARD_QUICK_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "OPTICAL_DRIVE_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Extended tests for optical drive devices",
+            "POINTING_DEVICES": "Pointing Devices",
+            "POINTING_DEVICES_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "POINTING_DEVICES_QUICK_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "TOUCHSCREEN": "Touchscreen",
+            "TOUCHSCREEN_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
+            "TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen"
         },
         "warningMessage": "Mějte na paměti, že testy budou zrušeny, pokud je systém v režimu spánku nebo hibernace",
         "refreshMessage": "Obnovení může nějakou dobu trvat, protože je třeba znovu načíst všechny součásti",
@@ -4303,7 +4324,17 @@
             "descriptionbeta": "Společnost Lenovo nabízí nový program, v jehož rámci můžete nástroj Smart Performance vyzkoušet až do července 2020.",
             "descriptionbeta1": "Rádi vás tu přivítáme a zajistíme přístup ke všem funkcím.",
             "descriptionNonSubscriber": "Nejste přihlášeni k odběru služby Lenovo Smart Performance Service. Budete moci skenovat pouze svůj počítač. Přihlaste se k odběru a získejte všechny výhody, díky kterým bude váš počítač chráněn a optimálně fungovat.",
-            "processStatus": "ZPRACOVÁNÍ"
+            "processStatus": "ZPRACOVÁNÍ",
+            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance,you can renew the subscription by clicking the \"Manage Subscription \" link to resume full protection for your device.",
+            "expiredStatus": "EXPIRED",
+            "expiredNote": "Your subscription will expire in",
+            "day": "day",
+            "days": "days",
+            "weeks": "weeks",
+            "week": "a week",
+            "month": "month",
+            "today": "today",
+            "next": "next"
         },
         "scanSettings": {
             "title": "Nastavení plánované kontroly",
@@ -4767,7 +4798,9 @@
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
-            "backToHome": "Zpět domů"
+            "backToHome": "Zpět domů",
+            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance,if you would like to resume the \"Scan and Fix\" feature,please press the \"renew and fix\" button down below to renew your subscription.",
+            "renewAndFix": "Renew & Fix"
         },
         "subscriberScanHomePage": {
             "title": "Vše je v pořádku ve vašem ",

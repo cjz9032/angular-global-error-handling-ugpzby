@@ -2647,8 +2647,7 @@
                 "connect": "CONNECTED",
                 "fail": "Incorrect code entered!",
                 "joinFamilyAccount": "Join family account",
-                "connecting": "Connecting...",
-                "offlinePrompt": "You are currently off-line. Please try again when you are connected to the Internet"
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Integridade de segurança",
@@ -4153,7 +4152,25 @@
             "LINEAR_READ_TEST": "Teste de Leitura Linear",
             "LINEAR_READ_TEST_DESCRIPTION": "Verifica a integridade do dispositivo de armazenamento lendo seus setores seguindo um padrão linear",
             "FINAL_RESULT_CODE_FAIL": "Este código de resultado final indica que problemas foram encontrados com essa verificação. Siga as orientações na tela, localizadas na parte inferior dos resultados das verificações de hardware, para entrar em contato com o Suporte Lenovo. Esteja preparado para fornecer esse código de resultado final quando solicitado.",
-            "FINAL_RESULT_CODE_SUCCESS": "Este código de resultado final indica que não foram encontrados problemas com essa verificação. Se qualquer teste exibir uma mensagem de aviso ou não aplicável, não significa que um problema foi encontrado. Se um agente de suporte Lenovo pediu para que você executasse esse teste, use esse código como prova; caso contrário, nenhuma ação da sua parte é necessária neste momento. Se acredita que ainda está com problemas, entre em contato com o Suporte Lenovo."
+            "FINAL_RESULT_CODE_SUCCESS": "Este código de resultado final indica que não foram encontrados problemas com essa verificação. Se qualquer teste exibir uma mensagem de aviso ou não aplicável, não significa que um problema foi encontrado. Se um agente de suporte Lenovo pediu para que você executasse esse teste, use esse código como prova; caso contrário, nenhuma ação da sua parte é necessária neste momento. Se acredita que ainda está com problemas, entre em contato com o Suporte Lenovo.",
+            "AUDIO": "Audio",
+            "AUDIO_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "AUDIO_QUICK_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "BLUETOOTH": "Bluetooth",
+            "BLUETOOTH_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "BLUETOOTH_QUICK_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "FINGERPRINT": "Fingerprint",
+            "FINGERPRINT_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "FINGERPRINT_QUICK_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "KEYBOARD_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "KEYBOARD_QUICK_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "OPTICAL_DRIVE_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Extended tests for optical drive devices",
+            "POINTING_DEVICES": "Pointing Devices",
+            "POINTING_DEVICES_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "POINTING_DEVICES_QUICK_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "TOUCHSCREEN": "Touchscreen",
+            "TOUCHSCREEN_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
+            "TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen"
         },
         "warningMessage": "Lembre-se de que os testes serão cancelados se o sistema entrar em suspensão ou hibernar",
         "refreshMessage": "A atualização pode levar algum tempo, pois precisa carregar todos os componentes novamente",
@@ -4307,7 +4324,17 @@
             "descriptionbeta": "A Lenovo está oferecendo um programa piloto para testar o recurso Smart Performance até julho de 2020.",
             "descriptionbeta1": "Você é convidado a participar e experimentar o recurso completo.",
             "descriptionNonSubscriber": "Você não está inscrito no serviço Lenovo Smart Performance. Você só poderá fazer uma varredura no seu PC. Inscreva-se agora para obter todos os benefícios de manter seu PC protegido e funcionando sem problemas.",
-            "processStatus": "PROCESSANDO"
+            "processStatus": "PROCESSANDO",
+            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance,you can renew the subscription by clicking the \"Manage Subscription \" link to resume full protection for your device.",
+            "expiredStatus": "EXPIRED",
+            "expiredNote": "Your subscription will expire in",
+            "day": "day",
+            "days": "days",
+            "weeks": "weeks",
+            "week": "a week",
+            "month": "month",
+            "today": "today",
+            "next": "next"
         },
         "scanSettings": {
             "title": "Configurações de programação de verificação",
@@ -4771,7 +4798,9 @@
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
-            "backToHome": "Voltar para a tela inicial"
+            "backToHome": "Voltar para a tela inicial",
+            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance,if you would like to resume the \"Scan and Fix\" feature,please press the \"renew and fix\" button down below to renew your subscription.",
+            "renewAndFix": "Renew & Fix"
         },
         "subscriberScanHomePage": {
             "title": "Tudo está bem com seu ",

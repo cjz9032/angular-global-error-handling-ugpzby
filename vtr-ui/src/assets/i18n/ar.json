@@ -2141,7 +2141,7 @@
                 "note": {
                     "descriptionTitle": "تنبيه:",
                     "description1": "هناك حاجة إلى خيارات تسجيل دخول صالحة مثل كلمة المرور أو رمز PIN عندما تسجل دخولك إلى Windows. بخلاف ذلك، قد يتم تعطيل ميزة تنبيه الحركة الذكية‬ عن طريق الخطأ من قبل أي مستخدم غير مخوّل يصل إلى جهاز الكمبيوتر الخاص بك.",
-                    "description2":"قبل مغادرة الكمبيوتر، احرص على قفله بالضغط على شعار Windows والمفتاح L. بخلاف ذلك، لن تعمل وظيفة تنبيه الحركة الذكية‬ بشكل طبيعي."
+                    "description2": "قبل مغادرة الكمبيوتر، احرص على قفله بالضغط على شعار Windows والمفتاح L. بخلاف ذلك، لن تعمل وظيفة تنبيه الحركة الذكية‬ بشكل طبيعي."
                 },
                 "alarm": {
                     "title": " يستمر المنبه لمدة",
@@ -2649,8 +2649,7 @@
                 "connect": "CONNECTED",
                 "fail": "Incorrect code entered!",
                 "joinFamilyAccount": "Join family account",
-                "connecting": "Connecting...",
-                "offlinePrompt": "You are currently off-line. Please try again when you are connected to the Internet"
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "سلامة الأمن",
@@ -4151,7 +4150,29 @@
             "SMART_TEMPERATURE_TEST_DESCRIPTION": "يكشف هذا الاختبار إذا كانت درجة الحرارة الحالية للجهاز في حالة حرجة.",
             "FULL_DISK_SCAN_TEST_DESCRIPTION": "يقوم هذا الاختبار بعملية فحص كامل للقرص.",
             "FINAL_RESULT_CODE_FAIL": "يشير رمز النتيجة النهائية هذا إلى العثور على مشاكل تتعلق بهذا الفحص. اتبع الإرشادات التي تظهر على الشاشة، في أسفل نتائج فحص أجهزتك، للاتصال بدعم Lenovo. كن مستعدًا لتوفير رمز النتيجة النهائية هذا عند طلبه.",
-            "FINAL_RESULT_CODE_SUCCESS": "يشير رمز النتيجة النهائية هذا إلى عدم العثور على مشاكل تتعلق بهذا الفحص. إذا أدى أي اختبار إلى ظهور تحذير أو رسالة غير منطبقة، فهذا لا يشير إلى الكشف عن مشكلة. إذا طالبك وكيل دعم Lenovo بتشغيل هذا الاختبار، فاستخدم هذا الرمز كإثبات؛ وإلا فلا حاجة إلى اتخاذ أي إجراء من جانبك في هذه المرحلة. إذا شعرت بأنك ما زلت تواجه المشاكل، فاتصل بدعم Lenovo."
+            "FINAL_RESULT_CODE_SUCCESS": "يشير رمز النتيجة النهائية هذا إلى عدم العثور على مشاكل تتعلق بهذا الفحص. إذا أدى أي اختبار إلى ظهور تحذير أو رسالة غير منطبقة، فهذا لا يشير إلى الكشف عن مشكلة. إذا طالبك وكيل دعم Lenovo بتشغيل هذا الاختبار، فاستخدم هذا الرمز كإثبات؛ وإلا فلا حاجة إلى اتخاذ أي إجراء من جانبك في هذه المرحلة. إذا شعرت بأنك ما زلت تواجه المشاكل، فاتصل بدعم Lenovo.",
+            "HIGH_DEFINITION_AUDIO_SPECIFICATION": "High Definition Audio specification:",
+            "NUMBER_OF_BIDIRECTIONAL_STREAMS": "Number of bidirectional streams",
+            "NUMBER_OF_INPUT_STREAMS": "Number of input streams",
+            "NUMBER_OF_OUTPUT_STREAMS": "Number of output streams",
+            "AUDIO": "Audio",
+            "AUDIO_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "AUDIO_QUICK_DIAGNOSTIC_DESCRIPTION": "Audio",
+            "BLUETOOTH": "Bluetooth",
+            "BLUETOOTH_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "BLUETOOTH_QUICK_DIAGNOSTIC_DESCRIPTION": "Bluetooth",
+            "FINGERPRINT": "Fingerprint",
+            "FINGERPRINT_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "FINGERPRINT_QUICK_DIAGNOSTIC_DESCRIPTION": "Fingerprint",
+            "KEYBOARD_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "KEYBOARD_QUICK_DIAGNOSTIC_DESCRIPTION": "Keyboard",
+            "OPTICAL_DRIVE_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Extended tests for optical drive devices",
+            "POINTING_DEVICES": "Pointing Devices",
+            "POINTING_DEVICES_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "POINTING_DEVICES_QUICK_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
+            "TOUCHSCREEN": "Touchscreen",
+            "TOUCHSCREEN_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
+            "TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen"
         },
         "warningMessage": "يُرجى العلم أن الاختبارات سوف تُلغى إذا دخل النظام في وضع السكون أو الإسبات",
         "refreshMessage": "قد يستغرق التحديث بعض الوقت لأنه يحتاج إلى تحميل جميع المكونات مرةً أخرى",
@@ -4305,7 +4326,17 @@
             "descriptionbeta": "يعرض Lenovo برنامجًا تجريبيًا لتجربة ميزة Smart Performance حتى يوليو 2020.",
             "descriptionbeta1": "ونحن ندعوك بكل ترحاب إلى الانضمام وتجربة الميزة الكاملة.",
             "descriptionNonSubscriber": "أنت غير مشترك في ميزة Smart Performance من Lenovo. ستتمكن فقط من فحص جهاز الكمبيوتر الخاص بك. اشترِك الآن للحصول على الفوائد الكاملة للحفاظ على حماية جهاز الكمبيوتر الخاص بك وأدائه السلس.",
-            "processStatus": "معالجة"
+            "processStatus": "معالجة",
+            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance,you can renew the subscription by clicking the \"Manage Subscription \" link to resume full protection for your device.",
+            "expiredStatus": "EXPIRED",
+            "expiredNote": "Your subscription will expire in",
+            "day": "day",
+            "days": "days",
+            "weeks": "weeks",
+            "week": "a week",
+            "month": "month",
+            "today": "today",
+            "next": "next"
         },
         "scanSettings": {
             "title": "إعدادات جدولة الفحص",
@@ -4769,7 +4800,9 @@
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
-            "backToHome": "العودة إلى الصفحة الرئيسية"
+            "backToHome": "العودة إلى الصفحة الرئيسية",
+            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance,if you would like to resume the \"Scan and Fix\" feature,please press the \"renew and fix\" button down below to renew your subscription.",
+            "renewAndFix": "Renew & Fix"
         },
         "subscriberScanHomePage": {
             "title": "كل شيء على ما يرام في ",
