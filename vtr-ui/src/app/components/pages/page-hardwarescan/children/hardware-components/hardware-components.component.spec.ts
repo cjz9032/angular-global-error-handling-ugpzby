@@ -8,7 +8,7 @@ import { HardwareScanService } from 'src/app/services/hardware-scan/hardware-sca
 import { By } from '@angular/platform-browser';
 import { TaskType } from 'src/app/enums/hardware-scan-metrics.enum';
 
-fdescribe('HardwareComponentsComponent', () => {
+describe('HardwareComponentsComponent', () => {
 	let component: HardwareComponentsComponent;
 	let fixture: ComponentFixture<HardwareComponentsComponent>;
 	let hwScanService: HardwareScanService;
@@ -21,56 +21,54 @@ fdescribe('HardwareComponentsComponent', () => {
 		}).compileComponents();
 	}));
 
-	beforeEach( () => {
+	beforeEach(() => {
 		fixture = TestBed.createComponent(HardwareComponentsComponent);
-
 		component = fixture.componentInstance;
-
 		hwScanService = TestBed.inject(HardwareScanService);
 	});
 
-	fit('should create', () => {
+	it('should create', () => {
 		expect(component).toBeTruthy();
 	});
 
-	fit('should translate the component title token', () => {
+	it('should translate the component title token', () => {
 		// Validates if there is no syncronism issue and the token was translated.
 		expect(component.getComponentsTitle()).not.toEqual('');
 	});
 
-	fit('should call disableRefreshAnchor', () => {
+	it('should call disableRefreshAnchor', () => {
 		const spy = spyOn(component, 'disableRefreshAnchor');
 		component.disableRefreshAnchor();
 		expect(spy).toHaveBeenCalled();
 	});
 
-	fit('should call isDisableCancel', () => {
+	it('should call isDisableCancel', () => {
 		const spy = spyOn(component, 'isDisableCancel');
 		component.isDisableCancel();
 		expect(spy).toHaveBeenCalled();
 	});
 
-	fit('should call executeQuickScan method and disable refreshModules link', () => {
+	it('should call executeQuickScan method and disable refreshModules link', () => {
 		const spy = spyOn(component, 'startScanWaitingModules');
 		component.startScanWaitingModules(TaskType.QuickScan);
 		const refreshDisabled = component.disableRefreshAnchor();
 		expect(refreshDisabled).toBeTrue();
 	});
 
-	fit('should call executeCustomScan method and disable refreshModules link', () => {
+	it('should call executeCustomScan method and disable refreshModules link', () => {
 		const spy = spyOn(component, 'startScanWaitingModules');
 		component.startScanWaitingModules(TaskType.CustomScan);
 		const refreshDisabled = component.disableRefreshAnchor();
 		expect(refreshDisabled).toBeTrue();
 	});
 
-	fit('it should retrieve default items list', async(() => {
+	it('it should retrieve default items list', async(() => {
 		const spy = spyOn(hwScanService, 'getInitialHardwareComponentList');
 		hwScanService.getInitialHardwareComponentList();
 		expect(spy).not.toBeUndefined();
 	}));
 
-	fit('it should have $menu_hover color on hardware scan title', () => {
+	it('it should have $menu_hover color on hardware scan title', () => {
 		const customColor = 'rgb(74, 129, 253)'; // RGB value for $menu_hover color.
 		const refreshlink = fixture.debugElement.query(By.css('#hwscan-components-title')).nativeElement;
 		const result = window.getComputedStyle(refreshlink).color;
