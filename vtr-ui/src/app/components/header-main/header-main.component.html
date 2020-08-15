@@ -1,8 +1,8 @@
 <div class="vtr-header-main"
 	id="pageHeader">
-	<img class="vtr-header-main-img"
+	<img class="vtr-header-main-img" #dccHeaderBackground
 		[src]="dccService.headerBackground"
-		alt="">
+		alt="" [hidden] = 'dccHeaderBackground.naturalWidth === 1'>
 	<div class="vtr-header-main-inner">
 		<a class="back"
 			vtrMetrics
