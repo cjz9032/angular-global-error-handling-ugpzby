@@ -4,6 +4,14 @@
 			<div class="col text button-box">
 				<div class="row item-line">
 					<div class="item-left">
+						<!--This component is needed because after calling getDoScan function,
+							returns undefined till the promise be resolved-->
+						<div class="test-status" *ngIf="item.statusTest === undefined">
+							<vtr-ui-test-result-icon
+								[componentId]="componentId + '-list-item-' + i + '-status-icon'"
+								[testResultResponse]="0">
+							</vtr-ui-test-result-icon>
+						</div>
 						<div class="test-status" *ngIf="item.statusTest >= testResultEnum.NotStarted">
 							<span id="{{ componentId }}-list-item-{{ i }}-percentage" class="progress-value-text" role="text" *ngIf="item.statusTest === testResultEnum.InProgress; else testFinished">{{ item.percent }}%</span>
 							<ng-template #testFinished>

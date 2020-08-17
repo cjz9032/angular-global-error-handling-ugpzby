@@ -1,13 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientModule } from '@angular/common/http';
+import { TranslateModule, TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { DevService } from '../../../services/dev/dev.service';
+import { HardwareScanService } from 'src/app/services/hardware-scan/hardware-scan.service';
 import { UiHardwareListComponent } from './ui-hardware-list.component';
 
-xdescribe('UiHardwareListComponent', () => {
+fdescribe('UiHardwareListComponent', () => {
 	let component: UiHardwareListComponent;
 	let fixture: ComponentFixture<UiHardwareListComponent>;
+	let hwScanService: HardwareScanService;
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
+			imports: [ RouterTestingModule, HttpClientModule, TranslateModule.forRoot() ],
+			providers: [ DevService ],
 			declarations: [UiHardwareListComponent]
 		})
 			.compileComponents();
@@ -16,10 +23,22 @@ xdescribe('UiHardwareListComponent', () => {
 	beforeEach(() => {
 		fixture = TestBed.createComponent(UiHardwareListComponent);
 		component = fixture.componentInstance;
-		fixture.detectChanges();
+		hwScanService = TestBed.inject(HardwareScanService);
 	});
 
-	it('should create', () => {
+	fit('should create', () => {
 		expect(component).toBeTruthy();
+	});
+
+	fit('should call setTooltipInfo', () => {
+		const newTooltip = 'This is a test tooltip text';
+		const spy = spyOn(component, 'setTooltipInfo');
+		component.setTooltipInfo(newTooltip, 0);
+		expect(spy).toHaveBeenCalled();
+	});
+
+	fit('should have component id', () => {
+		const compId = component.componentId;
+		expect(compId).not.toEqual('');
 	});
 });
