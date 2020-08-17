@@ -4,6 +4,7 @@
 .light-dashline {
 	border-top: 1px solid $screen_light_15;
 }
+
 .vtr-ui-smart-performance {
 	.vtr-device-information {
 		box-shadow: $drop_shadow;
@@ -13,6 +14,7 @@
 		::ng-deep .tooltip-inner {
 			@include tt-inner()
 		}
+
 		::ng-deep .arrow::before {
 			@include arrow-before()
 		}
@@ -25,30 +27,36 @@
 			background: linear-gradient($gradient_angle, $main_darkest 0%, $main_darker 100%);
 			box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
 			padding: 0rem 4rem;
-			@media #{$breakpoint_lg}{
+
+			@media #{$breakpoint_lg} {
 				padding-left: 3rem;
 				padding-right: 3rem;
 			}
-			@media #{$breakpoint_sm}{
+
+			@media #{$breakpoint_sm} {
 				padding-left: 2.4rem;
 				padding-right: 2.4rem;
 			}
+
 			@media #{$white-on-black} {
 				box-shadow: none;
 				@include white-border;
 				border-bottom: none;
 				background: none;
 			}
+
 			@media #{$black-on-white} {
 				box-shadow: none;
 				@include black-border;
 				border-bottom: none;
 				background: none;
 			}
+
 			.hero-content {
 				max-width: 60rem;
 				margin: auto;
 			}
+
 			.main-title {
 				display: flex;
 				flex-direction: column;
@@ -58,15 +66,18 @@
 					color: $light;
 					font-size: 3.4rem;
 					font-weight: $weight_light;
-					@media #{$breakpoint_xl}{
+
+					@media #{$breakpoint_xl} {
 						font-size: 3.1rem;
 						margin-bottom: 1.2rem;
 					}
-					@media #{$breakpoint_sm}{
+
+					@media #{$breakpoint_sm} {
 						font-size: 2rem;
 						margin-bottom: 1.2rem;
 					}
 				}
+
 				h3 {
 					font-size: $fontsize_sm;
 					color: $light;
@@ -74,7 +85,8 @@
 					line-height: 2;
 					font-weight: $weight_regular;
 					line-height: 2.4rem;
-					@media #{$breakpoint_sm}{
+
+					@media #{$breakpoint_sm} {
 						font-weight: $weight_light;
 						font-size: $fontsize_sm;
 						margin-bottom: 3.2rem;
@@ -82,113 +94,136 @@
 					}
 				}
 			}
+
 			.icomoon {
 				color: #7D5FEF;
 				font-size: 13rem;
 				margin-top: 0.5rem;
 				margin-bottom: -2rem;
+
 				@media #{$breakpoint_xl} {
 					font-size: 12rem;
 					width: 12.6rem;
 				}
+
 				@media #{$breakpoint_sm} {
 					font-size: 9.7rem;
 					margin-top: -2rem;
 					width: 8rem;
 				}
 			}
+
 			.scan-button-content {
 				::ng-deep vtr-ui-button {
 					min-width: 23rem;
 				}
 			}
 		}
+
 		.pc-performance-block {
 			padding: 2.5rem 2.5rem 0 2.5rem;
+
 			@media #{$white-on-black} {
 				box-shadow: none;
 				@include white-border;
 				border-bottom: none;
 			}
+
 			@media #{$black-on-white} {
 				box-shadow: none;
 				@include black-border;
 				border-bottom: none;
 			}
+
 			h1 {
 				font-size: 3rem;
 				font-weight: $weight_light;
 				color: $shade_blue;
 				margin-bottom: 2rem;
-				@media #{$breakpoint_xl}{
+
+				@media #{$breakpoint_xl} {
 					font-size: 2.2rem;
 					margin-bottom: 1rem;
 				}
-				@media #{$breakpoint_sm}{
+
+				@media #{$breakpoint_sm} {
 					font-size: 2rem;
 					margin-bottom: 1rem;
 				}
 			}
+
 			h2 {
 				font-size: $fontsize_xl;
 				font-weight: $weight_light;
 				color: $shade_blue;
 				margin-bottom: 2rem;
 				padding: 0;
-				@media #{$breakpoint_sm}{
+
+				@media #{$breakpoint_sm} {
 					font-size: $fontsize_lg;
 					margin-bottom: 1rem;
 				}
 			}
+
 			h5 {
 				font-size: $fontsize_sm;
 				font-weight: $weight_light;
 				color: $shade_blue;
 				line-height: 2.1rem;
 				max-width: 60rem;
-				@media #{$breakpoint_xl}{
+
+				@media #{$breakpoint_xl} {
 					max-width: 54rem;
 				}
-				@media #{$breakpoint_sm}{
+
+				@media #{$breakpoint_sm} {
 					font-size: $fontsize_xs;
 					margin-bottom: 1rem;
 				}
 			}
+
 			.performance-slider-block {
 				margin: 2rem 0;
 				background: $grey_lighter;
 				width: 100%;
 				padding: 3.5rem 2rem 2rem 2rem;
 				border-radius: 0.5rem;
-				@media #{$breakpoint_sm}{
+
+				@media #{$breakpoint_sm} {
 					margin-bottom: 0rem;
 				}
+
 				.slider {
 					width: 100%;
 					height: 3rem;
 					background: linear-gradient(to right, #d02928, #d73f26, #dd5124, #e26222, #e77222, #de7d15, #d48708, #c99000, #ad9500, #909700, #729816, #51982c);
 					border-radius: 2rem;
 					position: relative;
+
 					@media #{$white-on-black} {
 						background: $light;
 						box-shadow: none;
 						@include white-border;
 					}
+
 					@media #{$black-on-white} {
 						background: $dark;
 						box-shadow: none;
 						@include black-border;
 					}
+
 					.condition {
 						padding: 0 1.5rem;
 						font-size: 1rem;
 						text-transform: uppercase;
 						font-weight: $weight_regular;
-						.critical{
+
+						.critical {
 							top: -18px;
 							color: #D00707;
 							position: absolute;
 						}
+
 						.well {
 							right: 10px;
 							color: #51982C;
@@ -196,24 +231,29 @@
 							top: -18px;
 						}
 					}
+
 					.verticle-lines {
 						counter-reset: lines -1;
 						display: flex;
 						justify-content: space-between;
 						padding: 0 2rem;
-						.line{
+
+						.line {
 							width: 0.1rem;
 							height: 2rem;
 							margin-top: 0.5rem;
 							border-left: 0.2rem dotted $main_lightest;
+
 							@media #{$white-on-black} {
 								border-left: 0.4rem dotted $dark;
 								@include high-contrast-adjust;
 							}
+
 							@media #{$black-on-white} {
 								border-left: 0.4rem dotted $light;
 								@include high-contrast-adjust;
 							}
+
 							&::after {
 								counter-increment: lines;
 								content: counter(lines);
@@ -225,17 +265,20 @@
 							}
 						}
 
-					  }
-					  .divider{
-						position:absolute;
-						left:50%;
+					}
 
-						border-left:1px solid $shade_darkest;
+					.divider {
+						position: absolute;
+						left: 50%;
+
+						border-left: 1px solid $shade_darkest;
 					}
 				}
-				.pc-status-info{
+
+				.pc-status-info {
 					margin-left: 2rem;
-					.info-text{
+
+					.info-text {
 						color: $alt;
 						margin-top: 1.8rem;
 						margin-bottom: 0rem;
@@ -246,13 +289,15 @@
 						font-weight: $weight_bold;
 						word-break: keep-all;
 						word-wrap: break-word;
-						@media #{$breakpoint_sm}{
+
+						@media #{$breakpoint_sm} {
 							font-size: 1rem;
 							width: calc(60.5% - 2rem);
 						}
-						span{
+
+						span {
 							background: $grey_lighter;
-							padding:0rem 0.2rem;
+							padding: 0rem 0.2rem;
 							position: relative;
 							z-index: 9;
 							max-width: 70%;
@@ -262,7 +307,8 @@
 							display: inline-block;
 							margin-bottom: -0.5rem;
 						}
-						&::after{
+
+						&::after {
 							content: "";
 							position: absolute;
 							width: 50%;
@@ -271,11 +317,13 @@
 							left: 25%;
 							bottom: 0rem;
 							z-index: 1;
-							@media #{$breakpoint_sm}{
+
+							@media #{$breakpoint_sm} {
 								width: 70%;
 								left: 15%;
 							}
 						}
+
 						&::before {
 							content: "";
 							position: absolute;
@@ -287,10 +335,12 @@
 							bottom: 0.5rem;
 							z-index: 0;
 						}
-						&.running-well{
+
+						&.running-well {
 							width: 39%;
 							margin-left: 0.5%;
 							color: $green_darker;
+
 							&::before {
 								border-color: $green_darker;
 							}
@@ -298,52 +348,65 @@
 					}
 				}
 			}
+
 			:host ::ng-deep .tabset1 a.nav-link {
 				color: green;
-			  }
+			}
 
-			  :host ::ng-deep .tabset1 a.nav-link.active {
+			:host ::ng-deep .tabset1 a.nav-link.active {
 				color: red;
 				font-weight: bold;
-			  }
-			.smart-features{
+			}
+
+			.smart-features {
 				padding-left: 6rem;
 				padding-right: 6rem;
-				@media #{$breakpoint_xl}{
+
+				@media #{$breakpoint_xl} {
 					padding-left: 0rem;
 					padding-right: 0rem;
+
 					.col-4:first-child {
 						padding-left: 0rem;
 					}
+
 					.col-4:last-child {
 						padding-right: 0rem;
 					}
 				}
-				@media #{$breakpoint_md}{
+
+				@media #{$breakpoint_md} {
 					padding-left: 0rem;
 					padding-right: 0rem;
+
 					.col-4:first-child {
 						padding-left: 0rem;
 					}
+
 					.col-4:last-child {
 						padding-right: 0rem;
 					}
 				}
-				@media #{$breakpoint_sm}{
+
+				@media #{$breakpoint_sm} {
 					padding-left: 0rem;
 					padding-right: 0rem;
+
 					.col-4:first-child {
 						padding-left: 0rem;
 					}
+
 					.col-4:last-child {
 						padding-right: 0rem;
 					}
 				}
-				.title{
+
+				.title {
 					font-weight: $weight_bold;
 					font-size: $fontsize_sm;
 					color: $shade_blue;
-					@media #{$breakpoint_sm}{
+
+					@media #{$breakpoint_sm} {
 						font-size: $fontsize_xs;
 						max-width: 100%;
 						display: inline-block;
@@ -351,19 +414,23 @@
 						text-overflow: ellipsis;
 					}
 				}
+
 				p {
 					font-size: $fontsize_sm;
 					color: $shade_blue;
 					margin-top: 1.1rem;
 					font-weight: $weight_light;
-					@media #{$breakpoint_sm}{
+
+					@media #{$breakpoint_sm} {
 						font-size: $fontsize_xs2;
 						line-height: 1.6rem;
 					}
 				}
-				> div {
+
+				>div {
 					position: relative;
-					&::after{
+
+					&::after {
 						position: absolute;
 						content: "";
 						right: 0;
@@ -372,37 +439,44 @@
 						width: 1px;
 						height: 100%;
 						background: $screen_dark_10;
+
 						@media #{$breakpoint_sm} {
 							display: none;
 						}
 					}
-					&:last-child{
+
+					&:last-child {
 						&::after {
 							display: none;
 						}
 					}
 				}
 			}
+
 			.icon-bar {
 				background: $grey_lighter;
 				border-radius: 0.8rem;
 
 				.listed-task-icons {
 					padding-left: 0;
-					@media #{$breakpoint_md}{
+
+					@media #{$breakpoint_md} {
 						padding-top: 0;
 						padding-bottom: 0;
 					}
+
 					.icon-box {
 						display: flex;
 						width: 20%;
 						position: relative;
-						align-items: center;						
-						padding:1rem 0.5rem;
-						@media #{$breakpoint_sm}{
+						align-items: center;
+						padding: 1rem 0.5rem;
+
+						@media #{$breakpoint_sm} {
 							min-width: 7rem;
-							position:static;
+							position: static;
 						}
+
 						&::after {
 							content: '';
 							position: absolute;
@@ -411,58 +485,69 @@
 							background: $light;
 							right: 0;
 							top: 0;
-							@media #{$breakpoint_sm}{
+
+							@media #{$breakpoint_sm} {
 								right: 0.5rem;
 							}
 						}
+
 						&:last-child {
 							&::after {
 								display: none;
 							}
 						}
-						.icomoon, .icon {
+
+						.icomoon,
+						.icon {
 							font-size: 2.2rem;
 							margin-right: 0.8rem;
 							color: $menu_hover;
+
 							// @media #{$breakpoint_xl} {
 							// 	font-size: 2.2rem;
 							// 	margin-right: 0.5rem;
 							// }
-							@media #{$breakpoint_xl}{
+							@media #{$breakpoint_xl} {
 								font-size: 1.8rem;
 								margin-right: 0.2rem;
-								margin-left:0.1rem;
+								margin-left: 0.1rem;
 							}
-							@media #{$breakpoint_md}{
+
+							@media #{$breakpoint_md} {
 								font-size: 1.8rem;
 								margin-right: 0.2rem;
-								margin-left:0.1rem;
+								margin-left: 0.1rem;
 							}
-							@media #{$breakpoint_sm}{
+
+							@media #{$breakpoint_sm} {
 								font-size: $fontsize_sm;
 								margin-right: 0.2rem;
-								margin-left:0.1rem;
+								margin-left: 0.1rem;
 							}
 						}
+
 						p {
 							font-size: 1.2rem;
-							line-height: 1.2rem;
+							line-height: 1.4;
 							margin: 0;
 							overflow: hidden;
 							text-overflow: ellipsis;
-							@media #{$breakpoint_xl}{
+
+							@media #{$breakpoint_xl} {
 								white-space: nowrap;
-							}						
-							@media #{$breakpoint_sm}{	
+							}
+
+							@media #{$breakpoint_sm} {
 								font-size: 1rem;
-								font-weight:$weight_light;
+								font-weight: $weight_light;
 							}
 						}
 					}
 				}
 			}
+
 			&::ng-deep {
-				.tabset-main{
+				.tabset-main {
 					.nav-tabs {
 						.nav-item {
 							@media #{$white-on-black} {
@@ -470,18 +555,22 @@
 								@include white-border;
 								background: none;
 							}
+
 							@media #{$black-on-white} {
 								box-shadow: none;
 								@include black-border;
 								background: none;
 							}
+
 							.nav-link {
 								&:focus {
 									@include outline-white;
 								}
 							}
+
 							&:last-child {
 								position: relative;
+
 								&:before {
 									position: absolute;
 									content: '\2605';
@@ -490,6 +579,7 @@
 									color: $light;
 									font-size: 2rem;
 									z-index: 9;
+
 									@media #{$white-on-black} {
 										color: $dark;
 										z-index: 10;
@@ -497,6 +587,7 @@
 										top: -0.4rem;
 										left: 0.2rem;
 									}
+
 									@media #{$black-on-white} {
 										color: $light;
 										z-index: 10;
@@ -505,6 +596,7 @@
 										left: 0.2rem;
 									}
 								}
+
 								&:after {
 									position: absolute;
 									content: '';
@@ -517,6 +609,7 @@
 									left: -1.8rem;
 									transform: rotate(-45deg);
 									z-index: 5;
+
 									@media #{$white-on-black} {
 										content: "▼";
 										font-size: 7rem;
@@ -528,6 +621,7 @@
 										color: $light;
 										z-index: 9;
 									}
+
 									@media #{$black-on-white} {
 										content: "▼";
 										font-size: 7rem;
@@ -540,13 +634,16 @@
 										z-index: 9;
 									}
 								}
-								.nav-link{
+
+								.nav-link {
 									box-sizing: border-box;
 									border: 0.2rem solid $main !important;
 									position: relative;
+
 									@media #{$white-on-black} {
 										border: none !important;
 									}
+
 									@media #{$black-on-white} {
 										border: none !important;
 									}
@@ -557,55 +654,71 @@
 				}
 			}
 		}
+
 		.free-scan {
 			background: $main_darkest;
 			padding: 3rem;
 			border-bottom-left-radius: 1rem;
 			border-bottom-right-radius: 1rem;
-			@media #{$breakpoint_sm}{
+
+			@media #{$breakpoint_sm} {
 				padding: 2.4rem;
 			}
+
 			@media #{$white-on-black} {
 				box-shadow: none;
 				@include white-border;
 			}
+
 			@media #{$black-on-white} {
 				box-shadow: none;
 				@include black-border;
 			}
+
 			.contents {
 				display: flex;
 				justify-content: center;
 				align-items: center;
 				width: 100%;
+
 				::ng-deep .tooltip-inner {
 					@include tt-inner()
 				}
+
 				::ng-deep .arrow::before {
 					@include arrow-before()
 				}
+
 				.btn-scan {
-						max-width: 25rem;
-						@media #{$breakpoint_md}{
-							max-width: 20rem;
-						}
-						@media #{$breakpoint_sm} {
-							max-width: 16rem;
-						}
+					max-width: 25rem;
+
+					@media #{$breakpoint_md} {
+						max-width: 20rem;
+					}
+
+					@media #{$breakpoint_sm} {
+						max-width: 16rem;
+					}
 				}
+
 				.description {
 					max-width: 40rem;
+
 					@media #{$breakpoint_sm} {
 						margin-top: 0.5rem;
 					}
+
 					p {
 						margin-bottom: 0;
+
 						strong {
 							font-weight: $weight_bold;
 						}
+
 						font-size: 1.6rem;
 						color: $main_lightest;
-						@media #{$breakpoint_sm}{
+
+						@media #{$breakpoint_sm} {
 							font-size: 1.2rem;
 						}
 					}
@@ -616,12 +729,13 @@
 
 	:host ::ng-deep .tabset1 a.nav-link {
 		color: green;
-	  }
+	}
 
-	  :host ::ng-deep .tabset1 a.nav-link.active {
+	:host ::ng-deep .tabset1 a.nav-link.active {
 		color: red;
 		font-weight: bold;
-	  }
+	}
+
 	.warranty-box {
 		border-radius: $border_radius;
 		background-size: cover;
@@ -629,6 +743,7 @@
 		box-shadow: $drop_shadow;
 		padding: 4rem;
 		letter-spacing: 0;
+
 		&.expired {
 			background: url("../../../../../../assets/images/warranty-bg.png") no-repeat, linear-gradient(to left top, #F17F14, #ED4E04);
 		}
@@ -690,23 +805,28 @@
 		background-color: $light;
 		box-shadow: 0 0 1.5rem 0 $screen_dark_15;
 		padding: 2.4rem;
+
 		@media #{$white-on-black} {
 			box-shadow: none;
 			@include white-border;
 		}
+
 		@media #{$black-on-white} {
 			box-shadow: none;
 			@include black-border;
 		}
+
 		.title {
 			font-size: 2.5rem;
 			font-weight: 500;
 		}
-		.card-info{
+
+		.card-info {
 			p {
 				font-size: 1.2rem;
 			}
 		}
+
 		.link-text {
 			font-size: 1.4rem;
 			padding-bottom: 0.3rem;
@@ -715,32 +835,39 @@
 			color: $menu_hover;
 			cursor: pointer;
 			font-weight: 600;
-			@media #{$breakpoint_sm}{
+
+			@media #{$breakpoint_sm} {
 				font-size: $fontsize_xs;
 			}
 		}
+
 		.status-list {
 			padding-left: 0;
 			padding: 1rem 1.4rem;
 			border-radius: 0.8rem;
 			background: $shade_extralight;
 			border: 0.1rem solid $shade_lighter;
+
 			li {
 				border-bottom: 0.1rem solid $screen_dark_05;
 				line-height: 3rem;
-				&:last-child{
+
+				&:last-child {
 					border-bottom: none;
 				}
 			}
+
 			.item {
 				font-weight: $weight_bold;
 				font-size: 1.2rem;
 			}
+
 			.status {
 				font-size: 1.4rem;
 				min-width: 8rem;
-            	text-align: center;
-				.badge{
+				text-align: center;
+
+				.badge {
 					height: 1.8rem;
 					font-size: 1.2rem;
 					padding-left: 1.8rem;
@@ -748,26 +875,30 @@
 				}
 			}
 		}
+
 		.chevron-list {
 			padding-left: 0;
 			border-radius: 0.8rem;
 			background: $shade_extralight;
 			border: 0.1rem solid $shade_lighter;
+
 			li {
 				padding: 1.2rem 1.6rem;
 				border-bottom: 0.1rem solid $screen_dark_05;
 				line-height: 3rem;
 				font-size: 1.4rem;
 				height: 6rem;
-				.item{
+
+				.item {
 					strong {
 						font-size: $fontsize_xs;
 						font-weight: $weight_bold;
 						line-height: 3.5rem;
 						color: $shade_blue;
 					}
-					&:first-child{
-						.icomoon{
+
+					&:first-child {
+						.icomoon {
 							margin-right: 0.8rem;
 							color: $main;
 							font-size: 2.4rem;
@@ -776,29 +907,34 @@
 						}
 					}
 				}
-				&:last-child{
+
+				&:last-child {
 					border-bottom: none;
 				}
+
 				.status {
-					strong{
+					strong {
 						font-weight: $weight_bold;
 					}
 				}
 			}
 		}
+
 		.labels {
 			.badge {
 				font-size: 1.2rem;
 				margin-bottom: 0.6rem;
 			}
-			.badge-primary{
+
+			.badge-primary {
 				position: relative;
 				height: 2rem;
+
 				&::after {
 					content: "";
 					position: absolute;
-					top:1px;
-					right:-7px;
+					top: 1px;
+					right: -7px;
 					width: 0px;
 					height: 0px;
 					border-top: 7px solid transparent;
@@ -806,44 +942,54 @@
 					border-left: 7px solid $main;
 				}
 			}
+
 			.badge-light {
 				background: transparent;
 			}
 		}
+
 		.junk-list {
 			position: relative;
 			padding-left: 3rem;
 			list-style: none;
+
 			li {
 				line-height: 2.7rem;
 				font-size: 1.2rem;
 			}
 		}
-		&.recommended-action{
+
+		&.recommended-action {
 			background-color: #526fff;
 			background-image: linear-gradient(45deg, #526fff 25%, #f175fd 100%);
+
 			@media #{$white-on-black} {
 				background-image: none;
 			}
+
 			@media #{$black-on-white} {
 				background-image: none;
 			}
-			.title{
+
+			.title {
 				color: $light;
 				text-transform: uppercase;
 			}
+
 			.card-info {
 				p {
 					font-size: 1.6rem;
 					color: $light;
 				}
 			}
-			.pricing{
+
+			.pricing {
 				.big-text {
 					font-size: 5.5rem;
 					font-weight: $weight_black;
 					color: $light;
 				}
+
 				small {
 					text-transform: uppercase;
 					color: $gray;
@@ -851,10 +997,12 @@
 					font-weight: $weight_black;
 				}
 			}
+
 			p {
 				color: $light;
 				font-size: 1.6rem;
 			}
+
 			.action-button {
 				border-radius: 2.5rem;
 				background: $light;
@@ -869,9 +1017,11 @@
 				border: 0rem;
 				cursor: pointer;
 				width: 100%;
+
 				&:focus {
 					@include outline-white;
 				}
+
 				@include ui-button-high-contrast-black;
 				@include ui-button-high-contrast-white;
 				@include high-contrast-adjust;
@@ -884,11 +1034,13 @@
 		background-color: $light;
 		box-shadow: $drop_shadow;
 		padding: $fontsize_xl;
+
 		.title {
 			color: $main_darker;
 			font-size: $fontsize_xl;
 			font-weight: $weight_600;
 		}
+
 		.description {
 			color: $main_shade;
 			font-size: $fontsize_xs;
@@ -898,21 +1050,26 @@
 		::ng-deep .tooltip-inner {
 			@include tt-inner()
 		}
+
 		::ng-deep .arrow::before {
 			@include arrow-before()
 		}
 
 	}
 }
+
 ::ng-deep {
-	vtr-subpage-scanning, vtr-subpage-smart-performance-scan-summary {
-		vtr-page-layout{
-			::ng-deep{
-				vtr-header-main{
+
+	vtr-subpage-scanning,
+	vtr-subpage-smart-performance-scan-summary {
+		vtr-page-layout {
+			::ng-deep {
+				vtr-header-main {
 					display: none;
 				}
+
 				.vtr-page-columns {
-					@media #{$mediaquery_lg}{
+					@media #{$mediaquery_lg} {
 						margin-top: calc(-5% - 4rem) !important;
 					}
 				}
