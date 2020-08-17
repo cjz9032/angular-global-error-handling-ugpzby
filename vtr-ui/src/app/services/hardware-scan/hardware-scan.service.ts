@@ -13,6 +13,7 @@ import { TaskType, TaskStep } from 'src/app/enums/hardware-scan-metrics.enum';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { HardwareScanFinishedHeaderType } from 'src/app/enums/hardware-scan-finished-header-type.enum';
+import { LoggerService } from '../logger/logger.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -22,7 +23,8 @@ export class HardwareScanService {
 	constructor(
 		shellService: VantageShellService, private commonService: CommonService, private ngZone: NgZone,
 		private translate: TranslateService, private hypSettings: HypothesisService,
-		private hardwareScanResultService: HardwareScanResultService, private previousResultService: PreviousResultService) {
+		private hardwareScanResultService: HardwareScanResultService, private previousResultService: PreviousResultService,
+		private logger: LoggerService) {
 		this.hardwareScanBridge = shellService.getHardwareScan();
 
 		// Starts all priority requests as soon as possible when this service starts.
@@ -429,7 +431,12 @@ export class HardwareScanService {
 			return this.hardwareScanBridge.getItemsToScan(scanType, culture)
 				.then((response) => {
 					return response;
+				})
+				.catch((error) => {
+					this.logger.error('[GET ITEMS TO SCAN] ' + error);
 				});
+		} else {
+			this.logger.error('[GET ITEMS TO SCAN] Hardware Scan Bridge not available');
 		}
 		return undefined;
 	}
@@ -685,8 +692,14 @@ export class HardwareScanService {
 					if (this.devicesToRecoverBadSectors.groupList.length !== 0) {
 						this.hasItemsToRecoverBadSectors = true;
 					}
+				} else {
+					this.logger.error('[INIT LOADING MODULES] Incorrect response received', response);
 				}
-			}).finally(() => {
+			})
+			.catch((error) => {
+				this.logger.error('[INIT LOADING MODULES] ' + error);
+			})
+			.finally(() => {
 				// Signalizes that the hardware list has been retrieved
 				this.hardwareModulesLoaded.next(true);
 				this.refreshingModules = false;
@@ -697,14 +710,21 @@ export class HardwareScanService {
 		if (this.hardwareScanBridge) {
 			await this.itemsToScanResponse
 				.then((response) => {
-					this.modulesRetrieved = response;
-					this.categoryInformationList = this.modulesRetrieved.categoryList;
+					if (response) {
+						this.modulesRetrieved = response;
+						this.categoryInformationList = this.modulesRetrieved.categoryList;
 
-					this.customScanRequest = this.buildScanRequest(this.modulesRetrieved, culture);
-					this.quickScanRequest = this.filterQuickRequest(this.customScanRequest);
+						this.customScanRequest = this.buildScanRequest(this.modulesRetrieved, culture);
+						this.quickScanRequest = this.filterQuickRequest(this.customScanRequest);
 
-					this.customScanResponse = this.buildScanResponse(this.modulesRetrieved);
-					this.quickScanResponse = this.filterQuickResponse(this.customScanResponse);
+						this.customScanResponse = this.buildScanResponse(this.modulesRetrieved);
+						this.quickScanResponse = this.filterQuickResponse(this.customScanResponse);
+					} else {
+						this.logger.error('[GET ALL ITEMS] Incorrect response received');
+					}
+				})
+				.catch((error) => {
+					this.logger.error('[GET ALL ITEMS] ' + error);
 				});
 		}
 	}
