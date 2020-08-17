@@ -1,9 +1,9 @@
-<div class="modal-body vtr-modal-cancel" aria-labelledby="cancel-title" aria-describedby="cancel-description cancel-confirm-message">
+<div class="modal-body vtr-modal-cancel" aria-labelledby="hwscan-cancel-modal-title" aria-describedby="hwscan-cancel-modal-description hwscan-cancel-modal-confirm-message">
 
-	<h1 id="cancel-title" class="title">{{ 'hardwareScan.attention' | translate }}</h1>
+	<h1 id="hwscan-cancel-modal-title" class="title" role="heading">{{ 'hardwareScan.attention' | translate }}</h1>
 
-	<p id="cancel-description">{{ description }}</p>
-	<p id="cancel-confirm-message" *ngIf="isInCountdown">{{ 'hardwareScan.cancelTextPrompt' | translate }}</p>
+	<p id="hwscan-cancel-modal-description" role="text">{{ description }}</p>
+	<p id="hwscan-cancel-modal-confirm-message" *ngIf="isInCountdown" role="text">{{ 'hardwareScan.cancelTextPrompt' | translate }}</p>
 
 	<!-- This is the regular button which is shown during the cancelation countdown and which is responsible for cancel the scan/rbs process if the user clicks on it
 		NOTICE: It's mandatory to use a <div class="row"> here to prevent that the button could be clicked wrongly (in its near instead of itself), caused by its 'button box' internal div-->
@@ -11,19 +11,17 @@
 		<div class="col" *ngIf="!loading">
 			<div class="row">
 				<vtr-ui-button *ngIf="isInCountdown; else noCountdown"
-					[linkId]="'cancel_modal_yes'"
+					linkId="hwscan-cancel-modal-yes-btn"
 					label="{{ 'hardwareScan.yes' | translate }} ({{ secondsCountdown }})"
-					vtrMetrics
-					metricsEvent="FeatureClick"
-					metricsParent="{{ItemParent}}"
-					metricsItem="{{ConfirmItemName}}"
+					metricsParent="{{ ItemParent }}"
+					metricsItem="{{ ConfirmItemName }}"
 					(click)= "onAgree()">
 				</vtr-ui-button>
 
 				<ng-template #noCountdown>
 					<vtr-ui-button
 						#cancel_modal_ok
-						[linkId]="'cancel_modal_ok'"
+						linkId="hwscan-cancel-modal-ok-btn"
 						(click)= "closeModal()"
 						label="{{ 'hardwareScan.ok' | translate }}">
 					</vtr-ui-button>
@@ -31,14 +29,14 @@
 			</div>
 		</div>
 
-		<div class="col loading" *ngIf="loading"  aria-live="polite" aria-labelledby="cancel-title cancel-description">
+		<div class="col loading" *ngIf="loading"  aria-live="polite" aria-labelledby="hwscan-cancel-modal-title hwscan-cancel-modal-description">
 			<fa-icon placement="auto" [spin]="true" [icon]="['fal', 'circle-notch']" container="body"></fa-icon>
 		</div>
 	</div>
 
 	<div class="btn-modal-close">
 		<vtr-ui-close-button
-			metricsEvent="FeatureClick"
+			linkId="hwscan-cancel-modal-close-btn"
 			metricsItem="{{ ItemParent }}"
 			metricsParent="{{ CancelItemName }}"
 			(clickClose)="closeModal()">
