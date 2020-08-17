@@ -42,6 +42,11 @@
 							role="status"></div>
 					</div>
 					<div class="btn-box">
+						<vtr-ui-button [hidden]="installButtonStatus !== installButtonStatusEnum.UNKNOWN"
+							[isDisabled]="true"
+							[isFullWidth]="true"
+							linkId="apps-for-you-btn-detecting"
+							[label]="'Detecting'"></vtr-ui-button>
 						<vtr-ui-button [hidden]="installButtonStatus !== installButtonStatusEnum.INSTALL"
 							[isDisabled]="!isOnline"
 							(onClick)="clickInstallButton()"
