@@ -597,7 +597,7 @@ export class HardwareScanService {
 			}).then((response) => {
 				for (let i = 0; i < this.devices.length; i++) {
 					if (Number(response.devices[i].numberOfNonFixedSectors) > 0) {
-						response.devices[i].status = HardwareScanTestResult.Warning;
+						response.devices[i].status = HardwareScanTestResult.Attention;
 					}
 				}
 

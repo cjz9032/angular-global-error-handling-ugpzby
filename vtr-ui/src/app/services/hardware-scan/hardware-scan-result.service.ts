@@ -23,7 +23,7 @@ export class HardwareScanResultService {
 		this.resultSeverityConversion[HardwareScanTestResult.NotStarted] = 0;
 		this.resultSeverityConversion[HardwareScanTestResult.InProgress] = 1;
 		this.resultSeverityConversion[HardwareScanTestResult.Na] = 2;
-		this.resultSeverityConversion[HardwareScanTestResult.Warning] = 3;
+		this.resultSeverityConversion[HardwareScanTestResult.Attention] = 3;
 		this.resultSeverityConversion[HardwareScanTestResult.Pass] = 4;
 		this.resultSeverityConversion[HardwareScanTestResult.Cancelled] = 5;
 		this.resultSeverityConversion[HardwareScanTestResult.Fail] = 6;

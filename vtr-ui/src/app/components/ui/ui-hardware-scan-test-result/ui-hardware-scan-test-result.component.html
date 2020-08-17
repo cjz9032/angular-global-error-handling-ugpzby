@@ -4,7 +4,7 @@
 			<p id="{{ componentId }}-text-not-applicable" role="text" class="not-applicable text-status" *ngSwitchCase="testResultEnum.Na">{{ 'hardwareScan.NA' | translate }}</p>
 			<p id="{{ componentId }}-text-pass" role="text" class="success text-status" *ngSwitchCase="testResultEnum.Pass">{{ 'hardwareScan.pass' | translate }}</p>
 			<p id="{{ componentId }}-text-fail" role="text" class="failure text-status" *ngSwitchCase="testResultEnum.Fail">{{ 'hardwareScan.fail' | translate }}</p>
-			<p id="{{ componentId }}-text-warning" role="text" class="warning text-status" *ngSwitchCase="testResultEnum.Warning">{{ 'hardwareScan.attention' | translate }}</p>
+			<p id="{{ componentId }}-text-warning" role="text" class="warning text-status" *ngSwitchCase="testResultEnum.Attention">{{ 'hardwareScan.attention' | translate }}</p>
 			<p id="{{ componentId }}-text-cancelled" role="text" class="not-applicable text-status" *ngSwitchCase="testResultEnum.Cancelled">{{ 'hardwareScan.cancelled' | translate }}</p>
 		</div>
 		<div class="module-result-icon">

@@ -29,10 +29,9 @@ export class PreviousResultService {
 
 	public getLastPreviousResultCompletionInfo() {
 		const item: any = this.getPreviousResultsWidget();
-		const consolidatedResult = this.hardwareScanResultService.consolidateResults(item.modules.map(module => module.resultModule));
 		return {
 			date: item.date,
-			result: consolidatedResult === HardwareScanTestResult.Warning ? 'Attention' : HardwareScanTestResult[consolidatedResult] // Changing warning to attention
+			result: HardwareScanTestResult[this.hardwareScanResultService.consolidateResults(item.modules.map(module => module.resultModule))]
 		};
 	}
 
