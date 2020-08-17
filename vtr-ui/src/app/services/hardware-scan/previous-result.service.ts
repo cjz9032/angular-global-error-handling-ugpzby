@@ -7,8 +7,6 @@ import { HardwareScanOverallResult } from 'src/app/enums/hardware-scan-overall-r
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { HardwareScanResultService } from 'src/app/services/hardware-scan/hardware-scan-result.service';
 
-
-
 @Injectable({
 	providedIn: 'root'
 })
@@ -31,9 +29,10 @@ export class PreviousResultService {
 
 	public getLastPreviousResultCompletionInfo() {
 		const item: any = this.getPreviousResultsWidget();
+		const consolidatedResult = this.hardwareScanResultService.consolidateResults(item.modules.map(module => module.resultModule));
 		return {
 			date: item.date,
-			result: this.hardwareScanResultService.consolidateResults(item.modules.map(module => module.resultModule))
+			result: consolidatedResult === HardwareScanTestResult.Warning ? 'Attention' : HardwareScanTestResult[consolidatedResult] // Changing warning to attention
 		};
 	}
 
