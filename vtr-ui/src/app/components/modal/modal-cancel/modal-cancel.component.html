@@ -37,8 +37,8 @@
 	<div class="btn-modal-close" *ngIf="isInCountdown">
 		<vtr-ui-close-button
 			linkId="hwscan-cancel-modal-close-btn"
-			metricsItem="{{ ItemParent }}"
-			metricsParent="{{ CancelItemName }}"
+			metricsItem="{{ CancelItemName }}"
+			metricsParent="{{ ItemParent }}"
 			(clickClose)="closeModal()">
 		</vtr-ui-close-button>
 	</div>
