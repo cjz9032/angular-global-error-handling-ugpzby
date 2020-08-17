@@ -1,6 +1,6 @@
 <div class="vtr-widget-carousel"
 	(swipeleft)="swipe($event.type)"
-	(swiperight)="swipe($event.type)">
+	(swiperight)="swipe($event.type)" #containerSarousel>
 	<ngb-carousel tabindex="0"
 		*ngIf="carouselModel"
 		[attr.aria-label]="'dashboard.heroBanner' | translate"

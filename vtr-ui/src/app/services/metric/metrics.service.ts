@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 import { SelfSelectService } from '../self-select/self-select.service';
 import { environment } from '../../../environments/environment';
 import { PerformanceMeasurement} from './service-components/performance-measurement';
+import { ContentDisplayDetection} from './service-components/content-display-detection';
 import { DevService } from '../dev/dev.service';
 
 declare var Windows;
@@ -33,7 +34,9 @@ export class MetricService {
 	public readonly maxScrollRecorder = {};
 	public pageContainer: ElementRef;
 	public readonly performanceMeasurement: PerformanceMeasurement;
-	private pageScollEvent = (htmlElm) => { };
+	public readonly contentDisplayDetection: ContentDisplayDetection;
+	private scollEventObservers: ((arg: any) => any) [] = [];
+	private pageScollEvent = (arg: any) => { };
 
 	constructor(
 		private shellService: VantageShellService,
@@ -42,10 +45,11 @@ export class MetricService {
 		private commonService: CommonService,
 		private activeRouter: ActivatedRoute,
 		private selfSelectService: SelfSelectService,
-		private devService: DevService
+		devService: DevService
 	) {
 		this.metricsClient = this.shellService.getMetrics();
 		this.performanceMeasurement = new PerformanceMeasurement(devService, this);
+		this.contentDisplayDetection = new ContentDisplayDetection(this);
 		this.isFirstLaunch = !this.commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
 		if (this.isFirstLaunch) {
 			this.commonService.setLocalStorageValue(LocalStorageKey.HadRunApp, true);
@@ -316,7 +320,7 @@ export class MetricService {
 		this.hasSendAppLoadedEvent = true;
 
 		// the following metrics need to be send when the welcome page was done or the page was loaded at which point the metrics privacy was determined
-		this.sendAppLaunchMetric()
+		this.sendAppLaunchMetric();
 		this.sendEnvInfoMetric();
 		this.sendAppLoadedMetric();
 	}
@@ -397,6 +401,7 @@ export class MetricService {
 	}
 
 	public notifyPageScollEvent(htmlElm: any = null) {
+		this.contentDisplayDetection.onScrollEvent();
 		this.pageScollEvent(htmlElm || this.pageContainer.nativeElement);
 	}
 }
