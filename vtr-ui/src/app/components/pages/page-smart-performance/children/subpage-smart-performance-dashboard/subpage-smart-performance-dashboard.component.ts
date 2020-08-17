@@ -100,8 +100,15 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 			// 	//this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, false);
 			// }
 		}
-		 this.getSubscriptionDetails();
-
+		if(this.commonService.getLocalStorageValue(LocalStorageKey.IsFreePCScanRun) === undefined && this.commonService.getLocalStorageValue(LocalStorageKey.IsFreePCScanRun) === false)
+		{
+			this.writeSmartPerformanceActivity('True', 'False', 'InActive');
+		}
+		else if(this.commonService.getLocalStorageValue(LocalStorageKey.IsFreePCScanRun) === true)
+		{
+			this.writeSmartPerformanceActivity('True', 'True', 'InActive');
+		}
+		this.getSubscriptionDetails();
 		if (this.smartPerformanceService.isShellAvailable) {
 			this.checkReadiness();
 		}
@@ -392,8 +399,8 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 					.then((getReadinessFromService: any) => {
 						this.logger.info('ScanNow.getReadiness.then', getReadinessFromService);
 						if (getReadinessFromService) {
+							this.commonService.setLocalStorageValue(LocalStorageKey.IsFreePCScanRun, true);							
 							this.isScheduleScanRunning = false;
-
 							this.shellServices.registerEvent(EventTypes.smartPerformanceScanStatus,
 								event => {
 									this.scheduleScanObj = null;
@@ -486,23 +493,23 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 	}
 	async getSubscriptionDetails() {
 		let machineInfo;
-		let subscriptionData = [];		
+		let subscriptionData = [];
 		machineInfo = await this.supportService.getMachineInfo();
 		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails( machineInfo.serialnumber);
-		this.logger.info('ui-smart-performance.component.getSubscriptionDetails', subscriptionDetails);		
+		this.logger.info('ui-smart-performance.component.getSubscriptionDetails', subscriptionDetails);
 		if (subscriptionDetails && subscriptionDetails.data) {
 			subscriptionData = subscriptionDetails.data;
 			const lastItem = subscriptionData[subscriptionData.length - 1];
 			const releaseDate = new Date(lastItem.releaseDate);
 			releaseDate.setMonth(releaseDate.getMonth() + +lastItem.products[0].unitTerm);
-			releaseDate.setDate(releaseDate.getDate() - 1);		
+			releaseDate.setDate(releaseDate.getDate() - 1);
 			if (lastItem && lastItem.status.toUpperCase() === 'COMPLETED') {
 				this.getExpiredStatus(releaseDate);
 			}
 		} else {
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
 			this.isSubscribed = false;
-		}		
+		}
 	}
 	getExpiredStatus(releaseDate) {
 		let expiredDate;
@@ -510,11 +517,12 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 		const nextText = this.translate.instant('smartPerformance.subscriptionDetails.next');
 		const rDate = '2022-06-15T11:25:46.212+0000';
 		const currentDate: any = new Date();
-		expiredDate = new Date(releaseDate);		 
-		if (expiredDate < currentDate) {			 
+		expiredDate = new Date(releaseDate);
+		if (expiredDate < currentDate) {
+			this.writeSmartPerformanceActivity('True', 'True', 'Expired');
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
 			this.isSubscribed = false;
-			//this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);			 
+			//this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
 		}
 		else
 		{
