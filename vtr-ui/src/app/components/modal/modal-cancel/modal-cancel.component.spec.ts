@@ -6,7 +6,7 @@ import { DevService } from '../../../services/dev/dev.service';
 import { ModalCancelComponent } from './modal-cancel.component';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
-fdescribe('ModalCancelComponent', () => {
+describe('ModalCancelComponent', () => {
 	let component: ModalCancelComponent;
 	let fixture: ComponentFixture<ModalCancelComponent>;
 	let cancelModal;
