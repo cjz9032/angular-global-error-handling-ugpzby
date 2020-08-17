@@ -213,7 +213,6 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 			releaseDate.setMonth(releaseDate.getMonth() + +lastItem.products[0].unitTerm);
 			releaseDate.setDate(releaseDate.getDate() - 1);
 			if (lastItem && lastItem.status.toUpperCase() === 'COMPLETED') {
-
 				this.getExpiredStatus(releaseDate, lastItem);
 			} else {
 				this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
@@ -261,8 +260,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		let expiredDate;
 		let expiryRemainDays: number;
 		const nextText = this.translate.instant('smartPerformance.subscriptionDetails.next');
-		const rDate = '2022-06-15T11:25:46.212+0000';
-		const currentDate: any = new Date();
+		const currentDate: any = new Date(lastItem.currentTime);
 		expiredDate = new Date(releaseDate);
 		this.subscriptionDetails = {
 			startDate: this.formatLocaleDate.transform(lastItem.releaseDate),
