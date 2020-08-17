@@ -86,6 +86,7 @@ export class HardwareScanService {
 
 	private modulesStored: any;
 	private completedStatus: boolean | undefined = undefined;
+	private scanResult: string;
 
 	private iconByModule = {
 		cpu: 'icon_hardware_processor.svg',
@@ -998,6 +999,7 @@ export class HardwareScanService {
 		}
 
 		this.completedStatus = this.modules.status;
+		this.scanResult = HardwareScanTestResult[this.hardwareScanResultService.consolidateResults(this.modules.map(module => module.resultModule))];
 		this.commonService.sendNotification(HardwareScanProgress.ScanResponse, this.modules);
 	}
 
@@ -1199,6 +1201,10 @@ export class HardwareScanService {
 
 	public getCompletedStatus(): boolean | undefined {
 		return this.completedStatus;
+	}
+
+	public getScanResult(): string | undefined {
+		return this.scanResult;
 	}
 
 	public getExecutingModule() {
