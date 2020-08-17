@@ -100,7 +100,7 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 			// 	//this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, false);
 			// }
 		}
-		if(this.commonService.getLocalStorageValue(LocalStorageKey.IsFreePCScanRun) === undefined)
+		if(this.commonService.getLocalStorageValue(LocalStorageKey.IsFreePCScanRun) === undefined && this.commonService.getLocalStorageValue(LocalStorageKey.IsFreePCScanRun) === false)
 		{
 			this.writeSmartPerformanceActivity('True', 'False', 'InActive');
 		}
