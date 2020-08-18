@@ -3011,6 +3011,7 @@
         "redeemWebsite": "Lös in på leverantörens webbplats",
         "softwareDescription": "Klicka på Hämta nedan för att hämta programvara som inkluderades i köpet av din enhet. Om du behöver ladda ned programvaran igen vid ett senare tillfälle kan du göra detta genom att välja Min programvara på Vantage-menyn.",
         "title": "MIn programvara",
+        "noteExclusiveOffers": "Nedan finns några exklusiva erbjudanden som vi tror du kan vara intresserad av.",
         "loadingDescription": "Vänta medan vi skapar en lista med programvara som var inkluderad i köpet av enheten.",
         "shortDescription": "Hämta och installera programvara som var inkluderad i köpet av din enhet.",
         "errorDescription": "<h2>Det gick inte att hämta information om nedladdning av programvara</h2>Prova att klicka på Försök igen nedan, eller gör ett nytt försök senare genom att klicka på Min programvara på Vantage-menyn."
