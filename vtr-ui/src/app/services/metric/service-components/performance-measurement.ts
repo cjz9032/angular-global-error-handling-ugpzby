@@ -9,7 +9,7 @@ export class PerformanceMeasurement {
 	private moniterApis = [
 		'/api/v1/features',
 		'/api/v1/articlecategories',
-		'/api/v1/articles/',
+		'/api/v1/articles',
 		'/api/v1/entitledapps',
 		'/api/v1/apps/',
 		'/upe/recommendation/v2/recommends',
