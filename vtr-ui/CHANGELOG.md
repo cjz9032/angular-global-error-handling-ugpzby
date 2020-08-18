@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.36](https://bitbucket.tc.lenovo.com///compare/v1.7.35...v1.7.36) (2020-08-18)
+
+
+### Features
+
+* **Modern Preload:** VAN-19964 categorize software based on entitlement type ([9c52f7b](https://bitbucket.tc.lenovo.com///commit/9c52f7b543e20c33d68d51d00d2bdd2b96fdf466))
+* **Modern Preload:** VAN-19964 offered note NLS ([8243df2](https://bitbucket.tc.lenovo.com///commit/8243df287ae53138dd7d8ba68a5f52b8542750c7))
+* **Smart Performance:** VAN-21369 remove feedback in Smart Performance page. ([13a8ae1](https://bitbucket.tc.lenovo.com///commit/13a8ae188c35c2b8dced41e2b659283947aeba91))
+
 ### [1.7.35](https://bitbucket.tc.lenovo.com///compare/v1.7.34...v1.7.35) (2020-08-17)
 
 ### [1.7.34](https://bitbucket.tc.lenovo.com///compare/v1.7.33...v1.7.34) (2020-08-14)
