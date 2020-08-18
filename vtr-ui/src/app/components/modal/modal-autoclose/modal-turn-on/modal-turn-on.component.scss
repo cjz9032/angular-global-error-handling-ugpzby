@@ -37,19 +37,19 @@ ui-popover-turn-on {
 		border-radius: 1rem;
 	}
 }
-.vtr-modal-turn-on-auto-close { 
+.vtr-modal-turn-on-auto-close {
 	.modal-body {
-		 padding: 4rem;
-			.btn-close {
-				position: absolute;
-				top: 0px; 
-				right: 0px;
-				width: 3rem;
-				height: 3rem;
-				margin: .5rem;
-				button.close {
-					@include gaming-fa-icon-popup-close-button;
-				}
+		padding: 4rem;
+		.btn-close {
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			width: 3rem;
+			height: 3rem;
+			margin: 0.5rem;
+			button.close {
+				@include gaming-fa-icon-popup-close-button;
+			}
 		}
 	}
 	.content-body {
@@ -70,13 +70,13 @@ ui-popover-turn-on {
 				color: buttonText;
 			}
 		}
-		.ask-again{
+		.ask-again {
 			position: absolute;
 			width: 1.4rem;
 			height: 1.4rem;
 			margin-top: 0.3rem;
 			outline-offset: 0.3rem;
-			&::after{
+			&::after {
 				content: "";
 				display: block;
 				position: absolute;
@@ -92,13 +92,13 @@ ui-popover-turn-on {
 					border: 0.1rem solid windowText;
 				}
 			}
-			&:hover{
-			border-color: $blueHover;
+			&:hover {
+				border-color: $blueHover;
 			}
 			@media #{$high-contrast} {
 				background-color: window;
 			}
-			&.checked{
+			&.checked {
 				background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='15px' height='15px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3c!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com --%3e%3ctitle%3e6.20pxIcon/checkLine%3c/title%3e%3cdesc%3eCreated with Sketch.%3c/desc%3e%3cg id='6.20pxIcon/checkLine' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3e%3cpath d='M8.1116626,13.630581 L16.0313582,5.35279564 C16.4676981,4.89672665 17.1911384,4.88073301 17.6472074,5.31707287 C18.1032764,5.75341272 18.11927,6.47685303 17.6829301,6.93292202 L8.93558544,16.0757787 C8.48484105,16.5469035 7.73191951,16.546056 7.28223692,16.0739175 L2.31529664,10.8589429 C1.87998466,10.4018927 1.89760695,9.67849027 2.35465713,9.24317828 C2.81170731,8.8078663 3.53510978,8.82548859 3.97042177,9.28253877 L8.1116626,13.630581 Z' id='Path-2' fill='%23FFFFFF' fill-rule='nonzero'%3e%3c/path%3e%3c/g%3e%3c/svg%3e");
 				background-repeat: no-repeat;
 				background-size: 100% auto;
@@ -124,7 +124,7 @@ ui-popover-turn-on {
 		color: $lightText;
 		padding: 0.5rem 0;
 	}
-	.action-container{
+	.action-container {
 		div {
 			display: inline-block;
 			position: relative;
@@ -138,47 +138,47 @@ ui-popover-turn-on {
 			margin-top: 1rem;
 			font-weight: $weight_bold;
 			@media #{$high-contrast} {
-				color:windowText;
+				color: windowText;
 				border: 0.1rem solid windowText;
 			}
-		&:active {
-			transform: scale(0.95);
+			&:active {
+				transform: scale(0.95);
+			}
 		}
-	}
-	.cancel-link {
-		height: 2.5rem;
-		color: $blueFill;
-		font-size: $fontsize_xs;
-		vertical-align: middle;
-		padding: 0 0.5rem;
-		font-weight: $weight_600;
-		margin-top: 1rem;
-		margin-left: 3rem;
-		border-bottom: 2px solid $blueFill;
-		margin-right: 0.3rem;
-		cursor: pointer;
-		@media #{$high-contrast}{
-			color: buttonText;
-		}
-		&:hover {
-			color: $blueHover;
-			border-bottom: 2px solid $blueHover;			
+		.cancel-link {
+			height: 2.5rem;
+			color: $blueFill;
+			font-size: $fontsize_xs;
+			vertical-align: middle;
+			padding: 0 0.5rem;
+			font-weight: $weight_600;
+			margin-top: 1rem;
+			margin-left: 3rem;
+			border-bottom: 2px solid $blueFill;
+			margin-right: 0.3rem;
+			text-decoration: none !important;
 			cursor: pointer;
-		}	
+			@media #{$high-contrast} {
+				color: buttonText;
+			}
+			&:hover {
+				color: $blueHover;
+				border-bottom: 2px solid $blueHover;
+				cursor: pointer;
+			}
+		}
 	}
-	}
-	
 }
 
-::ng-deep{
-	body.focus-enable{
-		.is-gaming{
+::ng-deep {
+	body.focus-enable {
+		.is-gaming {
 			vtr-page-autoclose {
-				.ask-again{
-					&:focus{
-						&::after{
-							border-radius: 0rem !important
-						}	
+				.ask-again {
+					&:focus {
+						&::after {
+							border-radius: 0rem !important;
+						}
 					}
 				}
 			}
