@@ -185,7 +185,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 
 		this.getSpecificSupportLink();
 		this.translateStrings();
-		this.getCashValue();
+		this.getCachedValue();
 	}
 
 	ngDoCheck(): void {
@@ -263,29 +263,30 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		}
 	}
 
-	getCashValue() {
-		let cashData = this.commonService.getLocalStorageValue(LocalStorageKey.SystemUpdateCriticalUpdateStatus);
-		if (typeof (cashData) !== 'undefined') {
-			this.autoUpdateOptions[0].isChecked = cashData;
-			this.isScheduleScanEnabled = cashData;
+	private async getCachedValue() {
+		let cachedData = await this.commonService.getLocalCacheValue(LocalStorageKey.SystemUpdateCriticalUpdateStatus);
+		if (typeof (cachedData) !== 'undefined') {
+			this.autoUpdateOptions[0].isChecked = cachedData;
+			this.isScheduleScanEnabled = cachedData;
 		}
-		cashData = this.commonService.getLocalStorageValue(LocalStorageKey.SystemUpdateRecommendUpdateStatus);
-		if (typeof (cashData) !== 'undefined') {
-			this.autoUpdateOptions[1].isChecked = cashData;
+		cachedData = await this.commonService.getLocalCacheValue(LocalStorageKey.SystemUpdateRecommendUpdateStatus);
+		if (typeof (cachedData) !== 'undefined') {
+			this.autoUpdateOptions[1].isChecked = cachedData;
 			if (!this.autoUpdateOptions[0].isChecked) {
 				this.autoUpdateOptions[1].isDisabled = true;
 			}
 		}
-		cashData = this.commonService.getLocalStorageValue(LocalStorageKey.SystemUpdateLastInstallTime);
-		if (cashData) {
-			this.lastInstallTime = cashData;
+		cachedData = await this.commonService.getLocalCacheValue(LocalStorageKey.SystemUpdateLastInstallTime);
+		if (cachedData) {
+			this.lastInstallTime = cachedData;
 		}
-		cashData = this.commonService.getLocalStorageValue(LocalStorageKey.SystemUpdateNextScheduleScanTime);
-		if (cashData) {
-			this.nextScheduleScanTime = cashData;
+		cachedData = await this.commonService.getLocalCacheValue(LocalStorageKey.SystemUpdateNextScheduleScanTime);
+		if (cachedData) {
+			this.nextScheduleScanTime = cachedData;
 		}
 
 	}
+
 	fetchCMSArticles() {
 		const queryOptions = {
 			Page: 'system-updates'
@@ -356,11 +357,11 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 				.then((value: any) => {
 					if (value.lastInstallTime && value.lastInstallTime.length > 0) {
 						this.lastInstallTime = value.lastInstallTime;
-						this.commonService.setLocalStorageValue(LocalStorageKey.SystemUpdateLastInstallTime, this.lastInstallTime);
+						this.commonService.setLocalCacheValue(LocalStorageKey.SystemUpdateLastInstallTime, this.lastInstallTime);
 					}
 					// this.lastScanTime = new Date(value.lastScanTime);
 					this.nextScheduleScanTime = value.nextScheduleScanTime;
-					this.commonService.setLocalStorageValue(LocalStorageKey.SystemUpdateNextScheduleScanTime, this.nextScheduleScanTime);
+					this.commonService.setLocalCacheValue(LocalStorageKey.SystemUpdateNextScheduleScanTime, this.nextScheduleScanTime);
 					this.isScheduleScanEnabled = value.scheduleScanEnabled;
 					this.getNextUpdatedScanText();
 					// lastInstallTime: "2019-03-01T10:09:53"
@@ -806,8 +807,8 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					this.autoUpdateOptions[0].isChecked = payload.criticalAutoUpdates;
 					this.autoUpdateOptions[1].isChecked = payload.recommendedAutoUpdates;
 					this.isScheduleScanEnabled = payload.criticalAutoUpdates;
-					this.commonService.setLocalStorageValue(LocalStorageKey.SystemUpdateCriticalUpdateStatus, payload.criticalAutoUpdates);
-					this.commonService.setLocalStorageValue(LocalStorageKey.SystemUpdateRecommendUpdateStatus, payload.recommendedAutoUpdates);
+					this.commonService.setLocalCacheValue(LocalStorageKey.SystemUpdateCriticalUpdateStatus, payload.criticalAutoUpdates);
+					this.commonService.setLocalCacheValue(LocalStorageKey.SystemUpdateRecommendUpdateStatus, payload.recommendedAutoUpdates);
 					if (!payload.criticalAutoUpdates) {
 						this.autoUpdateOptions[1].isDisabled = true;
 					} else {

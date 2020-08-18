@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {NgForage, Driver, DedicatedInstanceFactory, NgForageCache} from 'ngforage';
-import { LoggerService } from '../logger/logger.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +10,8 @@ export class LocalCacheService {
 	private store: NgForage;
 
 	constructor(
-		private readonly fact: DedicatedInstanceFactory,
-		private logger: LoggerService) {
+		private readonly fact: DedicatedInstanceFactory
+	) {
 		this.createForage(this.experienceName, this.experienceName);
 	}
 
@@ -24,28 +23,12 @@ export class LocalCacheService {
 		});
 	}
 
-	private get catcher() {
-		return (e: any) => {
-			this.logger.error('Local cache exception ', e);
-		};
-	}
-
 	public setItem(key, value) {
-		try {
-			this.store.setItem(key, value)
-			.catch(this.catcher);
-		} catch (e) {
-			this.catcher(e);
-		}
+		return this.store.setItem(key, value);
 	}
 
 	public removeItem(key) {
-		try {
-			this.store.removeItem(key)
-			.catch(this.catcher);
-		} catch (e) {
-			this.catcher(e);
-		}
+		return this.store.removeItem(key);
 	}
 
 	public async getItem(key, defaultValue?: any) {
