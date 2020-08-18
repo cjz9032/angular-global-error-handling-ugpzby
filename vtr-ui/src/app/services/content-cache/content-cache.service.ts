@@ -9,7 +9,6 @@ import { ContentActionType, ContentSource } from 'src/app/enums/content.enum';
 import { BuildInContentService } from '../build-in-content/build-in-content.service';
 import { SegmentConst } from '../self-select/self-select.service';
 
-
 interface IConfigItem {
   cardId: string;
   displayContent: any;
@@ -56,14 +55,29 @@ export class ContentCacheService {
   }
 
   public async getArticleById(actionType: ContentActionType, articleId: any) {
-    const locInfo = await this.cmsService.getLocalinfo();
+    const loclInfo = await this.cmsService.getLocalinfo();
     if (actionType == ContentActionType.BuildIn) {
-      return this.buildInContentService.getArticle(articleId, locInfo.Lang);
-    }
-    else {
-      return this.cmsService.fetchCMSArticle(articleId);
+      return this.buildInContentService.getArticle(articleId, loclInfo.Lang);
+    } else {
+      return await this.getCacheArticle(articleId, loclInfo.Lang);
     }
   }
+
+  private async getCacheArticle(articId: any, lang: any) {
+    const key = `${articId}_${lang}`;
+    let iCacheSettings: ICacheSettings = {
+      Key: key,
+      Value: null,
+      Component: "ContentCache",
+      UserName: "ContentCache_Contents"
+    };
+    const cachedObject = await this.contentLocalCacheContract.get(iCacheSettings);
+    if (cachedObject && cachedObject.Value) {
+      return JSON.parse(cachedObject.Value);
+    }
+    return null;
+  }
+
 
   private async loadBuildInContents(queryParams: any) {
     const key = `${queryParams.Page}_${queryParams.Lang}`;
@@ -142,7 +156,9 @@ export class ContentCacheService {
         }
         await this.fillCacheValue(response, contentCards, cacheValueOfContents);
         this.saveContents(cacheKey, cacheValueOfContents);
+        await this.cacheContentDetail(this.getNeedUpdateContents(cacheValueOfContents));
       }).catch(error => {
+        WaveShaperNode
         this.logger.error('cacheContents error ', error);
       });
   }
@@ -176,6 +192,87 @@ export class ContentCacheService {
     }
     this.contentLocalCacheContract.set(iCacheSettings);
   }
+
+  private getNeedUpdateContents(cacheValueOfContents: any) {
+    const contents = [];
+    for (const key in cacheValueOfContents) {
+      if ("welcome-text" == key) {
+        continue;
+      }
+      const contentList = cacheValueOfContents[key];
+      contentList.forEach(content => {
+        contents.push(content);
+      });
+    }
+    return contents;
+  }
+
+  private cacheContentDetail(contents: any) {
+    return new Promise(async (resolve, reject) => {
+      const downLoadImages = [];
+      if (contents && contents.length > 0) {
+        const localInfo = await this.getLocalInfo();
+        contents.forEach(content => {
+          this.cacheContentImage(content, downLoadImages);
+          this.cacheArticle(content, localInfo.Lang, downLoadImages);
+        });
+      }
+      const downLoadImagesTimeInterval = setInterval(() => {
+        const notComplete = downLoadImages.find(item => !item.complete);
+        if (!notComplete) {
+          clearInterval(downLoadImagesTimeInterval);
+          resolve();
+        }
+      }, 500);
+    });
+  }
+
+  private cacheContentImage(content: any, downLoadImages: any[]) {
+    if (content.FeatureImage) {
+      const image = new Image();
+      image.src = content.FeatureImage;
+      downLoadImages.push(image);
+    }
+  }
+
+  private async cacheArticle(content: any, lang: string, downLoadImages: any[]) {
+    const actionType = content.ActionType;
+    const articId = content.ActionLink;
+    if (actionType && actionType === 'Internal'
+      && articId && !articId.startsWith('lenovo-vantage3:')
+      && !articId.startsWith('dcc-demo')) {
+      const response = await this.cmsService.fetchCMSArticle(articId);
+      this.saveArticle(articId, lang, response);
+      this.cacheArticleImage(response, downLoadImages);
+    }
+  }
+
+  private saveArticle(articId: any, lang: any, response: any) {
+    const key = `${articId}_${lang}`;
+    let iCacheSettings: ICacheSettings = {
+      Key: key,
+      Value: JSON.stringify(response),
+      Component: "ContentCache",
+      UserName: "ContentCache_Contents"
+    }
+    this.contentLocalCacheContract.set(iCacheSettings);
+  }
+
+  private cacheArticleImage(response:any, downLoadImages:any[]) {
+    if (response.Results.Image) {
+			const image = new Image();
+			image.src = response.Image;
+      downLoadImages.push(image);
+    }
+    const body = response.Results.Body;
+		const div = document.createElement('div');
+		div.innerHTML = body;
+		const images: any = div.getElementsByTagName('img');
+		for (const element of images) {
+			downLoadImages.push(element);
+		}
+		div.innerHTML = '';
+  }   
 
   private async fetchCMSContent(cmsOptions: any, contentCards: any) {
     try {
