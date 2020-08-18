@@ -135,33 +135,33 @@ describe('CMSService', () => {
 			Brand: 'Lenovo',
 		};
 		const queryParams = { queryParams: { filter: 'ababab' } };
-		const spy = spyOn(service, 'requestCMSContent');
+		const spy = spyOn(service, 'getCMSContent');
 		service.fetchCMSContent(queryParams);
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call requestCMSContent - else case', async(() => {
-		const locInfo = {
-			Lang: 'en',
-			GEO: 'us',
-			OEM: 'Lenovo',
-			OS: 'Windows',
-			Segment: 'Consumer',
-			Brand: 'Lenovo',
-		};
-		// const notification: AppNotification = ({
-		// 	type: NetworkStatus.Online
-		// })
-		const queryParams = { queryParams: { filter: 'ababab' } };
-		service = TestBed.inject(CMSService);
-		commonService = TestBed.inject(CommonService);
-		commonService.isOnline = false;
-		const spy = spyOn(service, 'getCMSContent');
-		service.requestCMSContent(queryParams, locInfo).subscribe({
-			complete() { }
-		});
-		expect(spy).not.toHaveBeenCalled();
-	}));
+	// it('should call requestCMSContent - else case', async(() => {
+	// 	const locInfo = {
+	// 		Lang: 'en',
+	// 		GEO: 'us',
+	// 		OEM: 'Lenovo',
+	// 		OS: 'Windows',
+	// 		Segment: 'Consumer',
+	// 		Brand: 'Lenovo',
+	// 	};
+	// 	// const notification: AppNotification = ({
+	// 	// 	type: NetworkStatus.Online
+	// 	// })
+	// 	const queryParams = { queryParams: { filter: 'ababab' } };
+	// 	service = TestBed.inject(CMSService);
+	// 	commonService = TestBed.inject(CommonService);
+	// 	commonService.isOnline = false;
+	// 	const spy = spyOn(service, 'getCMSContent');
+	// 	service.requestCMSContent(queryParams, locInfo).subscribe({
+	// 		complete() { }
+	// 	});
+	// 	expect(spy).not.toHaveBeenCalled();
+	// }));
 
 	it('should call getCMSContent - if results', async(() => {
 		service = TestBed.inject(CMSService);
@@ -293,62 +293,62 @@ describe('CMSService', () => {
 			Segment: 'Consumer',
 			Brand: 'Lenovo',
 		};
-		const spy = spyOn(service, 'requestCMSArticleCategories');
+		const spy = spyOn(service, 'postRequest');
 		service.fetchCMSArticleCategories(queryParams);
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call requestCMSArticleCategories - if results', async(() => {
-		service = TestBed.inject(CMSService);
-		commService = TestBed.inject(CommsService);
-		const locInfo = {
-			Lang: 'en',
-			GEO: 'us',
-			OEM: 'Lenovo',
-			OS: 'Windows',
-			Segment: 'Consumer',
-			Brand: 'Lenovo',
-		};
-		const queryParams = {};
-		const spy = spyOn<any>(commService, 'endpointGetCall').and.returnValue(of(data));
-		service.requestCMSArticleCategories(queryParams, locInfo);
-		expect(spy).toHaveBeenCalled();
-	}));
+	// it('should call requestCMSArticleCategories - if results', async(() => {
+	// 	service = TestBed.inject(CMSService);
+	// 	commService = TestBed.inject(CommsService);
+	// 	const locInfo = {
+	// 		Lang: 'en',
+	// 		GEO: 'us',
+	// 		OEM: 'Lenovo',
+	// 		OS: 'Windows',
+	// 		Segment: 'Consumer',
+	// 		Brand: 'Lenovo',
+	// 	};
+	// 	const queryParams = {};
+	// 	const spy = spyOn<any>(commService, 'endpointGetCall').and.returnValue(of(data));
+	// 	service.requestCMSArticleCategories(queryParams, locInfo);
+	// 	expect(spy).toHaveBeenCalled();
+	// }));
 
-	it('should call requestCMSArticleCategories - if reason', async(() => {
-		service = TestBed.inject(CMSService);
-		commService = TestBed.inject(CommsService);
-		const locInfo = {
-			Lang: 'en',
-			GEO: 'us',
-			OEM: 'Lenovo',
-			OS: 'Windows',
-			Segment: 'Consumer',
-			Brand: 'Lenovo',
-		};
-		const dataE: any = {};
-		const queryParams = {};
-		const spy = spyOn<any>(commService, 'endpointGetCall').and.returnValue(of(dataE));
-		service.requestCMSArticleCategories(queryParams, locInfo);
-		expect(spy).toHaveBeenCalled();
-	}));
+	// it('should call requestCMSArticleCategories - if reason', async(() => {
+	// 	service = TestBed.inject(CMSService);
+	// 	commService = TestBed.inject(CommsService);
+	// 	const locInfo = {
+	// 		Lang: 'en',
+	// 		GEO: 'us',
+	// 		OEM: 'Lenovo',
+	// 		OS: 'Windows',
+	// 		Segment: 'Consumer',
+	// 		Brand: 'Lenovo',
+	// 	};
+	// 	const dataE: any = {};
+	// 	const queryParams = {};
+	// 	const spy = spyOn<any>(commService, 'endpointGetCall').and.returnValue(of(dataE));
+	// 	service.requestCMSArticleCategories(queryParams, locInfo);
+	// 	expect(spy).toHaveBeenCalled();
+	// }));
 
-	it('should call requestCMSArticleCategories - if error', async(() => {
-		service = TestBed.inject(CMSService);
-		commService = TestBed.inject(CommsService);
-		const locInfo = {
-			Lang: 'en',
-			GEO: 'us',
-			OEM: 'Lenovo',
-			OS: 'Windows',
-			Segment: 'Consumer',
-			Brand: 'Lenovo',
-		};
-		const queryParams = {};
-		const spy = spyOn<any>(commService, 'endpointGetCall').and.returnValue(throwError({ status: 404 }));
-		service.requestCMSArticleCategories(queryParams, locInfo);
-		expect(spy).toHaveBeenCalled();
-	}));
+	// it('should call requestCMSArticleCategories - if error', async(() => {
+	// 	service = TestBed.inject(CMSService);
+	// 	commService = TestBed.inject(CommsService);
+	// 	const locInfo = {
+	// 		Lang: 'en',
+	// 		GEO: 'us',
+	// 		OEM: 'Lenovo',
+	// 		OS: 'Windows',
+	// 		Segment: 'Consumer',
+	// 		Brand: 'Lenovo',
+	// 	};
+	// 	const queryParams = {};
+	// 	const spy = spyOn<any>(commService, 'endpointGetCall').and.returnValue(throwError({ status: 404 }));
+	// 	service.requestCMSArticleCategories(queryParams, locInfo);
+	// 	expect(spy).toHaveBeenCalled();
+	// }));
 
 	it('should call fetchCMSArticles', async(() => {
 		const queryParams = {};
@@ -388,75 +388,75 @@ describe('CMSService', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call fetchCMSArticles - else case', async(() => {
-		const queryParams = {};
-		const returnAll = false;
-		service = TestBed.inject(CMSService);
-		localInfoService = TestBed.inject(LocalInfoService);
-		service.localInfo = {
-			Lang: 'en',
-			GEO: 'us',
-			OEM: 'Lenovo',
-			OS: 'Windows',
-			Segment: 'Consumer',
-			Brand: 'Lenovo',
-		};
-		const spy = spyOn(service, 'requestCMSArticles');
-		service.fetchCMSArticles(queryParams, returnAll);
-		expect(spy).toHaveBeenCalled();
-	}));
+	// it('should call fetchCMSArticles - else case', async(() => {
+	// 	const queryParams = {};
+	// 	const returnAll = false;
+	// 	service = TestBed.inject(CMSService);
+	// 	localInfoService = TestBed.inject(LocalInfoService);
+	// 	service.localInfo = {
+	// 		Lang: 'en',
+	// 		GEO: 'us',
+	// 		OEM: 'Lenovo',
+	// 		OS: 'Windows',
+	// 		Segment: 'Consumer',
+	// 		Brand: 'Lenovo',
+	// 	};
+	// 	const spy = spyOn(service, 'requestCMSArticles');
+	// 	service.fetchCMSArticles(queryParams, returnAll);
+	// 	expect(spy).toHaveBeenCalled();
+	// }));
 
-	it('should call requestCMSArticles', async(() => {
-		service = TestBed.inject(CMSService);
-		commService = TestBed.inject(CommsService);
-		const locInfo = {
-			Lang: 'en',
-			GEO: 'us',
-			OEM: 'Lenovo',
-			OS: 'Windows',
-			Segment: 'Consumer',
-			Brand: 'Lenovo',
-		};
-		const queryParams = {};
-		const spy = spyOn<any>(commService, 'endpointGetCall').and.returnValue(of(data));
-		service.requestCMSArticles(queryParams, locInfo);
-		expect(spy).toHaveBeenCalled();
-	}));
+	// it('should call requestCMSArticles', async(() => {
+	// 	service = TestBed.inject(CMSService);
+	// 	commService = TestBed.inject(CommsService);
+	// 	const locInfo = {
+	// 		Lang: 'en',
+	// 		GEO: 'us',
+	// 		OEM: 'Lenovo',
+	// 		OS: 'Windows',
+	// 		Segment: 'Consumer',
+	// 		Brand: 'Lenovo',
+	// 	};
+	// 	const queryParams = {};
+	// 	const spy = spyOn<any>(commService, 'endpointGetCall').and.returnValue(of(data));
+	// 	service.requestCMSArticles(queryParams, locInfo);
+	// 	expect(spy).toHaveBeenCalled();
+	// }));
 
-	it('should call requestCMSArticles - if reason', async(() => {
-		service = TestBed.inject(CMSService);
-		commService = TestBed.inject(CommsService);
-		const locInfo = {
-			Lang: 'en',
-			GEO: 'us',
-			OEM: 'Lenovo',
-			OS: 'Windows',
-			Segment: 'Consumer',
-			Brand: 'Lenovo',
-		};
-		const dataE: any = {};
-		const queryParams = {};
-		const spy = spyOn<any>(commService, 'endpointGetCall').and.returnValue(of(dataE));
-		service.requestCMSArticles(queryParams, locInfo);
-		expect(spy).toHaveBeenCalled();
-	}));
+	// it('should call requestCMSArticles - if reason', async(() => {
+	// 	service = TestBed.inject(CMSService);
+	// 	commService = TestBed.inject(CommsService);
+	// 	const locInfo = {
+	// 		Lang: 'en',
+	// 		GEO: 'us',
+	// 		OEM: 'Lenovo',
+	// 		OS: 'Windows',
+	// 		Segment: 'Consumer',
+	// 		Brand: 'Lenovo',
+	// 	};
+	// 	const dataE: any = {};
+	// 	const queryParams = {};
+	// 	const spy = spyOn<any>(commService, 'endpointGetCall').and.returnValue(of(dataE));
+	// 	service.requestCMSArticles(queryParams, locInfo);
+	// 	expect(spy).toHaveBeenCalled();
+	// }));
 
-	it('should call requestCMSArticles - if error', async(() => {
-		service = TestBed.inject(CMSService);
-		commService = TestBed.inject(CommsService);
-		const locInfo = {
-			Lang: 'en',
-			GEO: 'us',
-			OEM: 'Lenovo',
-			OS: 'Windows',
-			Segment: 'Consumer',
-			Brand: 'Lenovo',
-		};
-		const queryParams = {};
-		const spy = spyOn<any>(commService, 'endpointGetCall').and.returnValue(throwError({ status: 404 }));
-		service.requestCMSArticles(queryParams, locInfo);
-		expect(spy).toHaveBeenCalled();
-	}));
+	// it('should call requestCMSArticles - if error', async(() => {
+	// 	service = TestBed.inject(CMSService);
+	// 	commService = TestBed.inject(CommsService);
+	// 	const locInfo = {
+	// 		Lang: 'en',
+	// 		GEO: 'us',
+	// 		OEM: 'Lenovo',
+	// 		OS: 'Windows',
+	// 		Segment: 'Consumer',
+	// 		Brand: 'Lenovo',
+	// 	};
+	// 	const queryParams = {};
+	// 	const spy = spyOn<any>(commService, 'endpointGetCall').and.returnValue(throwError({ status: 404 }));
+	// 	service.requestCMSArticles(queryParams, locInfo);
+	// 	expect(spy).toHaveBeenCalled();
+	// }));
 
 	it('should call fetchCMSArticle', async(() => {
 		const queryParams = {};
@@ -501,7 +501,7 @@ describe('CMSService', () => {
 			Segment: 'Consumer',
 			Brand: 'Lenovo',
 		};
-		const spy = spyOn(service, 'requestCMSArticle');
+		const spy = spyOn(service, 'postRequest');
 		service.fetchCMSArticle(articleId, queryParams);
 		expect(spy).toHaveBeenCalled();
 	}));
