@@ -15,7 +15,6 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { ModalSmartPerformanceSubscribeComponent } from 'src/app/components/modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
-import { ModalSmartPerformanceFeedbackComponent } from 'src/app/components/modal/modal-smart-performance-feedback/modal-smart-performance-feedback.component';
 
 @Component({
 	selector: 'vtr-subpage-smart-performance-dashboard',
@@ -461,15 +460,6 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 		} catch (err) {
 			this.logger.error('ui-smart-performance.unregisterScheduleScan.then', err);
 		}
-	}
-
-	onclickFeedback() {
-		this.modalService.open(ModalSmartPerformanceFeedbackComponent, {
-			backdrop: 'static',
-			size: 'lg',
-			centered: true,
-			windowClass: 'smart-performance-feedback-Modal'
-		});
 	}
 
 	cancelScanfromScanning() {
