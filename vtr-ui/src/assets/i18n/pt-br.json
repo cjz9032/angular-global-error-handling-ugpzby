@@ -4187,6 +4187,7 @@
         },
         "scanFinishedHeader": {
             "titleSuccess": "Verificação concluída. Seu dispositivo passou em todos os testes.",
+			"titleError": "Your device failed {{numberTestsFailed}} test(s).",
             "titleErrorPlural": "Verificação concluída. Seu dispositivo falhou em {{numberTestsFailed}} testes.",
             "titleErrorSingular": "Verificação concluída. Seu dispositivo falhou em 1 teste.",
             "frcSuccessDescription": "Este código de resultado final indica que não foram encontrados problemas com essa verificação. Se qualquer teste exibir uma mensagem de aviso ou não aplicável, não significa que um problema foi encontrado. Se um agente de suporte Lenovo pediu para que você executasse esse teste, use esse código como prova; caso contrário, nenhuma ação da sua parte é necessária neste momento. Se acredita que ainda está com problemas, entre em contato com o Suporte Lenovo.",

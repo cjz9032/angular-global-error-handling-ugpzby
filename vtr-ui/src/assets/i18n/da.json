@@ -4187,6 +4187,7 @@
         },
         "scanFinishedHeader": {
             "titleSuccess": "Søgningen er fuldført. Din enheden har bestået alle test.",
+			"titleError": "Your device failed {{numberTestsFailed}} test(s).",
             "titleErrorPlural": "Søgningen er fuldført. Din enhed bestod ikke {{numberTestsFailed}} test.",
             "titleErrorSingular": "Søgningen er fuldført. Din enhed bestod ikke 1 test.",
             "frcSuccessDescription": "Denne kode for det endelige resultat angiver, at der ikke blev fundet problemer med denne søgning. Hvis en test viser en advarsel eller en meddelelse om, at den ikke er relevant, betyder det ikke, at der blev registreret et problem. Hvis en Lenovo-supportmedarbejder har bedt dig om at køre denne test, kan du bruge denne kode som bevis. Ellers behøver du ikke at foretage dig yderligere i øjeblikket. Hvis du fortsat oplever problemer, skal du kontakt Lenovo Support.",
