@@ -136,6 +136,7 @@ export class ModernPreloadService {
 			app.size = this.calAppSize(app.size);
 			app.originalStatus = app.status;
 			app.isChecked = app.status !== ModernPreloadEnum.StatusInstalled; // set default checked for not installed app
+			app.category = '';
 			const detailFromCMS = cmsAppList.find((detail) => detail.UDCId.includes(app.partNum));
 			if (detailFromCMS) {
 				app.company = detailFromCMS.Company;
@@ -145,6 +146,7 @@ export class ModernPreloadService {
 				app.udcId = app.partNum;
 				app.size = app.size ? app.size : detailFromCMS.Size;
 				app.version = app.version ? app.version : detailFromCMS.Version;
+				app.category = detailFromCMS.Category ? detailFromCMS.Category : '';
 			}
 		});
 		return appList;
@@ -254,6 +256,7 @@ export class AppItem {
 	swHomePageURL?: string;
 	licAgreementURL?: string;
 	isCheckDisabled?: boolean;
+	category?: string;
 }
 
 export enum DownloadButtonStatusEnum {

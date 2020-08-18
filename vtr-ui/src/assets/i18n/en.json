@@ -3812,6 +3812,7 @@
 		"redeemWebsite": "Redeem at vendor website",
 		"softwareDescription": "Click download below to redeem software that was purchased with your device. If at any time you need to download your software again, you can do so by clicking the My Software button in the Vantage menu.",
 		"title": "My Software",
+		"noteExclusiveOffers": "Below are some exclusive offers we thought you may be interested in.",
 		"loadingDescription": "Please wait while we prepare a list of the software that was included in the purchase of your device.",
 		"shortDescription": "Download and install software that was included in the purchase of your device.",
 		"errorDescription": "<h2>Sorry, there was a problem retrieving the software download information</h2>Try clicking on the \"Retry\" button below or try again later by clicking on the \"My Software\" button in the Vantage menu."
