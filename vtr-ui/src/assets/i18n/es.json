@@ -3011,6 +3011,7 @@
         "redeemWebsite": "Canjear al sitio web del proveedor",
         "softwareDescription": "Haga clic en descargar a continuación para canjear el software que compró con su dispositivo. Si en cualquier momento necesita volver a descargar el software, puede hacerlo haciendo clic en el botón Mi software en el menú Vantage.",
         "title": "Mi software",
+        "noteExclusiveOffers": "A continuación encontrará algunas ofertas exclusivas que creemos podrían interesarle.",
         "loadingDescription": "Espere mientras preparamos una lista del software que se incluyó en la compra de su dispositivo.",
         "shortDescription": "Descargue e instale el software que se incluyó en la compra de su dispositivo.",
         "errorDescription": "<h2>Lo sentimos, hubo un problema para recuperar la información de descarga de software</h2>Intente hacer clic en el botón “Reintentar” o vuelva a intentarlo más tarde pulsando el botón “Mi software” en el menú Vantage."

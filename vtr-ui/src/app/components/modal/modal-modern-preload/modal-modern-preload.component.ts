@@ -1,12 +1,11 @@
-import { Component, OnInit, OnDestroy, AfterViewInit, HostListener, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit, HostListener } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModernPreloadService, AppItem, DownloadButtonStatusEnum } from 'src/app/services/modern-preload/modern-preload.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { ModernPreloadEnum } from 'src/app/enums/modern-preload.enum';
+import { ModernPreloadEnum, ModernPreloadStatusEnum, ModernPreloadAppCategoryEnum } from 'src/app/enums/modern-preload.enum';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import { ClipboardService } from 'ngx-clipboard';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { WinRT } from '@lenovo/tan-client-bridge';
 
@@ -18,10 +17,9 @@ import { WinRT } from '@lenovo/tan-client-bridge';
 export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterViewInit {
 
 	private notificationSubscription: Subscription;
-	@ViewChild('redeemUrlCopy', { static: false }) redeemUrlCopy: ElementRef;
-	@ViewChild('redeemCodeCopy', { static: false }) redeemCodeCopy: ElementRef;
 
 	isOnline: boolean;
+	isIncludesOfferedApp = false;
 	isAppInstallError = false;
 	appList: AppItem[] = [];
 	checkedAppList: any[] = [];
@@ -29,14 +27,8 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 	downloadButtonStatus: number;
 	PageNames = { LOADING: 0, APP: 1, ERROR: -1 };
 	DownloadButtonStatusEnum = DownloadButtonStatusEnum;
-	statusEnum = {
-		NOT_INSTALL: 1,
-		INSTALLED: 2,
-		DOWNLOADING: 3,
-		DOWNLOAD_COMPLETE: 4,
-		INSTALLING: 5,
-		FAILED_INSTALL: -1,
-	};
+	ModernPreloadStatusEnum = ModernPreloadStatusEnum;
+	ModernPreloadAppCategoryEnum = ModernPreloadAppCategoryEnum;
 
 	redemptionSupport = false;
 
@@ -68,7 +60,6 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 		private commonService: CommonService,
 		public modernPreloadService: ModernPreloadService,
 		private hypSettings: HypothesisService,
-		private clipboardService: ClipboardService,
 	) { }
 
 	ngOnInit() {
@@ -141,11 +132,6 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 		}
 	}
 
-	copy(text: string, id: string) {
-		this.clipboardService.copyFromContent(text);
-		this[id].nativeElement.focus();
-	}
-
 	getAppList() {
 		this.page = this.PageNames.LOADING;
 		this.modernPreloadService.getAppList((response) => this.responseHandler(response));
@@ -153,15 +139,30 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 
 	initAppList(apps: AppItem[]) {
 		this.appList = [];
+
+		apps.sort((a, b) => {
+			let compare = -1;
+			if (a.category === b.category) {
+				compare = 0;
+			} else if (a.category === ModernPreloadAppCategoryEnum.OFFERED &&
+				b.category !== ModernPreloadAppCategoryEnum.OFFERED) {
+				compare = 1;
+			}
+			return compare;
+		});
 		apps.forEach((app: AppItem) => {
-			Object.assign(app, { showStatus: this.statusEnum.NOT_INSTALL });
+			Object.assign(app, { showStatus: ModernPreloadStatusEnum.NOT_INSTALL });
 			if (app.status === ModernPreloadEnum.StatusInstalled) {
-				app.showStatus = this.statusEnum.INSTALLED;
+				app.showStatus = ModernPreloadStatusEnum.INSTALLED;
 			} else {
-				app.showStatus = this.statusEnum.NOT_INSTALL;
+				app.showStatus = ModernPreloadStatusEnum.NOT_INSTALL;
+			}
+			if (app.category === ModernPreloadAppCategoryEnum.OFFERED) {
+				this.isIncludesOfferedApp = true;
 			}
 			this.appList.push(app);
 		});
+
 		this.setAppProps();
 		this.checkedApp();
 		this.modernPreloadService.DownloadButtonStatus = DownloadButtonStatusEnum.DOWNLOAD;
@@ -192,20 +193,20 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 			setApp.progress = app.progress;
 			switch (app.status) {
 				case ModernPreloadEnum.StatusInstalled:
-					setApp.showStatus = this.statusEnum.INSTALLED;
+					setApp.showStatus = ModernPreloadStatusEnum.INSTALLED;
 					break;
 				case ModernPreloadEnum.StatusNotInstalled:
-					setApp.showStatus = this.statusEnum.FAILED_INSTALL;
+					setApp.showStatus = ModernPreloadStatusEnum.FAILED_INSTALL;
 					isInstallError = true;
 					break;
 				case ModernPreloadEnum.StatusDownloaded:
-					setApp.showStatus = this.statusEnum.DOWNLOAD_COMPLETE;
+					setApp.showStatus = ModernPreloadStatusEnum.DOWNLOAD_COMPLETE;
 					break;
 				case ModernPreloadEnum.StatusDownloading:
-					setApp.showStatus = this.statusEnum.DOWNLOADING;
+					setApp.showStatus = ModernPreloadStatusEnum.DOWNLOADING;
 					break;
 				case ModernPreloadEnum.StatusInstalling:
-					setApp.showStatus = this.statusEnum.DOWNLOAD_COMPLETE;
+					setApp.showStatus = ModernPreloadStatusEnum.DOWNLOAD_COMPLETE;
 					break;
 			}
 		});
@@ -217,9 +218,9 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 	installationCancell() {
 		if (this.modernPreloadService.CurrentInstallingId !== '') {
 			const setApp = this.appList.find(a => a.appID === this.modernPreloadService.CurrentInstallingId);
-			if (setApp.showStatus !== this.statusEnum.INSTALLED) {
+			if (setApp.showStatus !== ModernPreloadStatusEnum.INSTALLED) {
 				setApp.status = ModernPreloadEnum.StatusNotInstalled;
-				setApp.showStatus = this.statusEnum.FAILED_INSTALL;
+				setApp.showStatus = ModernPreloadStatusEnum.FAILED_INSTALL;
 				this.isAppInstallError = true;
 			}
 			this.modernPreloadService.CurrentInstallingId = '';
@@ -269,8 +270,8 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 			this.page = this.PageNames.ERROR;
 		} else if (!this.isOnline && this.page === this.PageNames.APP && this.modernPreloadService.CurrentInstallingId !== '') {
 			const setApp = this.appList.find(a => a.appID === this.modernPreloadService.CurrentInstallingId);
-			if (setApp.showStatus === this.statusEnum.DOWNLOADING ||
-				setApp.showStatus === this.statusEnum.INSTALLING) {
+			if (setApp.showStatus === ModernPreloadStatusEnum.DOWNLOADING ||
+				setApp.showStatus === ModernPreloadStatusEnum.INSTALLING) {
 				this.cancel();
 				this.isAppInstallError = true;
 			}

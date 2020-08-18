@@ -3011,6 +3011,7 @@
         "redeemWebsite": "Auf Hersteller-Website einlösen",
         "softwareDescription": "Klicken Sie unten auf „Herunterladen“, um Software, die mit Ihrem Gerät erworben wurde, einzulösen. Wenn Sie Ihre Software zu irgendeinem Zeitpunkt erneut herunterladen müssen, können Sie dies tun, indem Sie im Vantage-Menü auf die Schaltfläche „Meine Software“ klicken.",
         "title": "Meine Software",
+        "noteExclusiveOffers": "Im Folgenden finden Sie einige exklusive Angebote, die für Sie interessant sein könnten.",
         "loadingDescription": "Bitte warten Sie, während wir eine Liste der Software erstellen, die beim Kauf Ihres Gerätes enthalten war.",
         "shortDescription": "Sie können die Software herunterladen und installieren, die im Lieferumfang Ihres Geräts enthalten war.",
         "errorDescription": "<h2>Leider gab es ein Problem beim Abrufen der Software-Download-Informationen</h2>Versuchen Sie, auf die Schaltfläche „Wiederholen“ unten zu klicken, oder versuchen Sie es später erneut, indem Sie im Vantage-Menü auf die Schaltfläche „Meine Software“ klicken."

@@ -3011,6 +3011,7 @@
         "redeemWebsite": "Løs inn på leverandørnettsted",
         "softwareDescription": "Klikk på nedlastingsalternativet under for å få programvaren som var inkludert i kjøpet av enheten. Hvis du noensinne må laste ned programvaren på nytt, kan du gjøre dette ved å klikke på knappen Min programvare på Vantage-menyen.",
         "title": "Min programvare",
+        "noteExclusiveOffers": "Nedenfor finner du noen eksklusive tilbud som vi tror du kanskje kan være interessert i.",
         "loadingDescription": "Vent litt mens det lages en liste over programvaren som var inkludert i kjøpet av enheten.",
         "shortDescription": "Last ned og installer programvare som var inkludert i kjøpet av enheten.",
         "errorDescription": "<h2>Beklager, men informasjonen om nedlasting av programvare kunne ikke hentes</h2>Prøv å klikke på knappen Prøv igjen under, eller prøv på nytt senere ved å klikke på knappen Min programvare på Vantage-menyen."

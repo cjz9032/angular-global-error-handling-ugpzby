@@ -40,7 +40,6 @@ import { SubpageScanningComponent } from 'src/app/components/pages/page-smart-pe
 import { SubpageScheduleScanComponent } from 'src/app/components/pages/page-smart-performance/children/subpage-schedule-scan/subpage-schedule-scan.component';
 import { SubpageSmartPerformanceDashboardComponent } from 'src/app/components/pages/page-smart-performance/children/subpage-smart-performance-dashboard/subpage-smart-performance-dashboard.component';
 import { SubpageSmartPerformanceScanSummaryComponent } from 'src/app/components/pages/page-smart-performance/children/subpage-smart-performance-scan-summary/subpage-smart-performance-scan-summary.component';
-import { ModalSmartPerformanceFeedbackComponent } from '../../components/modal/modal-smart-performance-feedback/modal-smart-performance-feedback.component';
 import { UiButtonModule } from 'src/app/components/ui/ui-button/ui-button.module';
 import { SharedModule } from 'src/app/modules/shared.module';
 import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-info/widget-offline.module';
@@ -54,7 +53,6 @@ import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-i
 		WidgetSpeedometerComponent,
 		WidgetSubscriptiondetailsComponent,
 		WidgetScansettingsComponent,
-		ModalSmartPerformanceFeedbackComponent,
 		SubpageScanResultsAccordionComponent,
 		SubpageScanningComponent,
 		SubpageScheduleScanComponent,

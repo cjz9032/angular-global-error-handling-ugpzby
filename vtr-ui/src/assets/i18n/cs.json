@@ -3011,6 +3011,7 @@
         "redeemWebsite": "Uplatnit na webu prodejce",
         "softwareDescription": "Klepnutím na tlačítko Stáhnout níže můžete získat software zakoupený se zařízením. Pokud budete potřebovat stáhnout software znovu, můžete tak učinit kliknutím na tlačítko Můj software v nabídce Vantage.",
         "title": "Můj software",
+        "noteExclusiveOffers": "Následuje několik exkluzivních nabídek, které by vás podle nás mohly zajímat.",
         "loadingDescription": "Počkejte, než se připraví seznam softwaru, který byl zahrnut do nákupu vašeho zařízení.",
         "shortDescription": "Stáhněte a nainstalujte software, který byl zahrnut do nákupu zařízení.",
         "errorDescription": "<h2>Omlouváme se, při načítání informací o stahování softwaru došlo k potížím.</h2>Zkuste kliknout na tlačítko „Opakovat“ nebo akci opakujte později kliknutím na tlačítko „Můj software“ v nabídce Vantage."

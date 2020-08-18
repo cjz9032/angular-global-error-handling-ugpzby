@@ -3011,6 +3011,7 @@
         "redeemWebsite": "Lunasta toimittajan www-sivustolla",
         "softwareDescription": "Lunasta laitteen mukana ostettu ohjelmisto napsauttamalla alta Lataa. Voit milloin tahansa ladata ohjelmiston uudelleen valitsemalla Vantage-valikosta Oma ohjelmisto -painikkeen.",
         "title": "Oma ohjelmisto",
+        "noteExclusiveOffers": "Alla on joitakin ainutlaatuisia tarjouksia, joista saatat olla kiinnostunut.",
         "loadingDescription": "Odota sen aikaa, kun valmistelemme luetteloa laitteen mukana ostetuista ohjelmistoista.",
         "shortDescription": "Lataa ja asenna laitteen mukana ostettu ohjelmisto.",
         "errorDescription": "<h2>Ohjelmiston lataustietojen noutamisen aikana tapahtui virhe</h2>Kokeile napsauttaa alta Yritä uudelleen -painiketta tai yritä uudelleen napsauttamalla Vantage-valikosta Oma ohjelmisto -painiketta."

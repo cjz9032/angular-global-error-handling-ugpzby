@@ -7,6 +7,7 @@ import { SharedModule } from '../shared.module';
 import { ClipboardModule } from 'ngx-clipboard';
 
 import { ModalModernPreloadComponent } from 'src/app/components/modal/modal-modern-preload/modal-modern-preload.component';
+import { WidgetModernPreloadAppComponent } from 'src/app/components/widgets/widget-modern-preload-app/widget-modern-preload-app.component';
 import { ModernPreloadService } from 'src/app/services/modern-preload/modern-preload.service';
 
 import { faCopy } from '@fortawesome/pro-light-svg-icons/faCopy';
@@ -19,6 +20,7 @@ import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontaweso
 @NgModule({
 	declarations: [
 		ModalModernPreloadComponent,
+		WidgetModernPreloadAppComponent,
 	],
 	imports: [
 		CommonModule,
@@ -34,6 +36,7 @@ import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontaweso
 	],
 	entryComponents: [
 		ModalModernPreloadComponent,
+		WidgetModernPreloadAppComponent,
 	]
 })
 export class ModernPreloadModule {

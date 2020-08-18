@@ -69,7 +69,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		this.isFirstLoad = true;
 		this.spProcessStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SPProcessStatus);
 		this.spFrstRunStatus = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun);
-		
+
 		this.decryptPNListData();
 		if (this.spFrstRunStatus) {
 			this.getSubscriptionDetails();
@@ -261,6 +261,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		let expiryRemainDays: number;
 		const nextText = this.translate.instant('smartPerformance.subscriptionDetails.next');
 		const currentDate: any = new Date(lastItem.currentTime);
+		// const currentDate: any = new Date('2022-07-01T06:24:50.358+0000');
 		expiredDate = new Date(releaseDate);
 		this.subscriptionDetails = {
 			startDate: this.formatLocaleDate.transform(lastItem.releaseDate),
@@ -289,16 +290,13 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.subscriptionDetails);
 		const oneDay = 24 * 60 * 60 * 1000;
 		expiryRemainDays = Math.round(Math.abs((currentDate - expiredDate) / oneDay));
-		if (expiryRemainDays === SpSubscriptionDetails.MONTH || expiryRemainDays < SpSubscriptionDetails.MONTH && !this.isExpired) {
+		const monthDeff = expiredDate.getMonth()  - currentDate.getMonth();
+		if (!this.isExpired) {
 			switch (true) {
-				// case (expiryRemainDays === 28): {
-				// 	this.expiredDaysCount = nextText + ' ' + Math.ceil(expiryRemainDays / 7) + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.weeks');
-				// 	break;
-				//  }
-				//  case (expiryRemainDays === 21): {
-				// 	this.expiredDaysCount = nextText + ' ' + Math.ceil(expiryRemainDays / 7) + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.weeks');
-				// 	break;
-				//  }
+				case (+monthDeff === 1 && expiredDate.getFullYear() === currentDate.getFullYear()): {
+					this.expiredDaysCount = nextText + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.month');
+					break;
+				}
 				case (expiryRemainDays === 14): {
 					this.expiredDaysCount = nextText + ' ' + Math.ceil(expiryRemainDays / 7) + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.weeks');
 					break;
@@ -323,10 +321,6 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 					this.expiredDaysCount = '';
 					break;
 				}
-			}
-		} else {
-			if (expiryRemainDays === SpSubscriptionDetails.TWOMONTHS || (expiryRemainDays < SpSubscriptionDetails.TWOMONTHS && expiryRemainDays > SpSubscriptionDetails.MONTH) && !this.isExpired) {
-				this.expiredDaysCount = nextText + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.month');
 			}
 		}
 

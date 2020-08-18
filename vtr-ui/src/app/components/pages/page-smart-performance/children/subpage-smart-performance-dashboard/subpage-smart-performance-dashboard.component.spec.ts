@@ -182,13 +182,6 @@ describe('SubpageSmartPerformanceDashboardComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should open feedback form modal', async(() => {
-		modalService = TestBed.inject(NgbModal);
-		const spy = spyOn(modalService, 'open');
-		component.onclickFeedback();
-		expect(spy).toHaveBeenCalled();
-	}));
-
 	it('should cancel scanning', async(() => {
 		component.cancelScanfromScanning();
 		fixture.detectChanges();

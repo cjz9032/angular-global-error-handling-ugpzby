@@ -3011,6 +3011,7 @@
         "redeemWebsite": "Resgatar no site do fornecedor",
         "softwareDescription": "Clique abaixo em Baixar para recuperar o software adquirido com seu dispositivo. Se, a qualquer momento, você precisar baixar o software novamente, poderá fazê-lo clicando no botão Meu software no menu do Vantage.",
         "title": "Meu software",
+        "noteExclusiveOffers": "Veja abaixo algumas ofertas exclusivas que achamos que você possa ter interesse.",
         "loadingDescription": "Aguarde enquanto preparamos uma lista do software incluído na compra do seu dispositivo.",
         "shortDescription": "Baixe e instale o software incluído na compra do se dispositivo.",
         "errorDescription": "<h2>Ocorreu um problema ao recuperar as informações de download do software</h2>Tente clicar no botão \"Tentar novamente\" abaixo ou tente novamente mais tarde clicando no botão \"Meu software\" no menu do Vantage."

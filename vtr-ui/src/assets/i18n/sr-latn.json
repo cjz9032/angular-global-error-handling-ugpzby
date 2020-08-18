@@ -3011,6 +3011,7 @@
         "redeemWebsite": "Preuzmite na veb lokaciji distributera",
         "softwareDescription": "Kliknite na „Preuzmi“ ispod kako biste preuzeli softver koji ste kupili zajedno sa uređajem. Ako u bilo kom trenutku treba ponovo da preuzmete softver, možete to da učinite tako što ćete kliknuti na dugme „Moj softver“ u meniju Vantage.",
         "title": "Moj softver",
+        "noteExclusiveOffers": "U nastavku se nalaze neke ekskluzivne ponude za koje smo smatrali da će vas zanimati.",
         "loadingDescription": "Sačekajte da pripremimo listu softvera koji je bio uključen prilikom kupovine vašeg uređaja.",
         "shortDescription": "Preuzmite i instalirajte softver koji je bio uključen prilikom kupovine vašeg uređaja.",
         "errorDescription": "<h2>Žao nam je, došlo je do problema u pribavljanju informacija o preuzimanju softvera</h2>Pokušajte da kliknete na dugme „Pokušaj ponovo“ ispod ili pokušajte ponovo kasnije klikom na dugme „Moj softver“ u meniju Vantage."

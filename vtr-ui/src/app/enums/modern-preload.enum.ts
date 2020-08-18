@@ -11,3 +11,17 @@ export enum ModernPreloadEnum {
 	StatusDownloading = 'downloading',
 	StatusInstalling = 'installing'
 }
+
+export enum ModernPreloadStatusEnum {
+	NOT_INSTALL = 1,
+	INSTALLED = 2,
+	DOWNLOADING = 3,
+	DOWNLOAD_COMPLETE = 4,
+	INSTALLING = 5,
+	FAILED_INSTALL = -1,
+}
+
+export enum ModernPreloadAppCategoryEnum {
+	OFFERED = 'Offered',
+	ENTITLED = 'Entitled',
+}

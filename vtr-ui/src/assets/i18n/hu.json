@@ -3011,6 +3011,7 @@
         "redeemWebsite": "Beváltás az eladó webhelyén",
         "softwareDescription": "Az alábbi Letöltés elemre kattintva beválthatja az eszközzel vásárolt szoftvert. Ha a későbbiekben újra le szeretné tölteni a szoftvert, kattintson a Vantage menü Saját szoftver elemére.",
         "title": "Saját szoftver",
+        "noteExclusiveOffers": "Az alábbiakban néhány olyan exkluzív ajánlatot tekinthet meg, amelyekről azt gondoljuk, hogy érdekelhetik.",
         "loadingDescription": "Kérjük, várja meg, amíg összeállítjuk az eszközzel együtt megvásárolt szoftverek listáját.",
         "shortDescription": "Töltse le, és telepítse az eszközzel megvásárolt szoftvereket.",
         "errorDescription": "<h2>Hiba történt a szoftverletöltési információk lekérése során</h2>Kattintson az alábbi „Újrapróbálkozás” gombra, vagy próbálkozzon később, a Vantage menü „Saját szoftver” gombjára kattintva."

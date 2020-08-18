@@ -3011,6 +3011,7 @@
         "redeemWebsite": "在供應商網站上兌換",
         "softwareDescription": "按一下下方的下載,以兌換購買裝置時隨附的軟體。如果您需要再次下載軟體,隨時按一下 Vantage 功能表中的「我的軟體」按鈕即可下載。",
         "title": "我的軟體",
+        "noteExclusiveOffers": "以下是一些我們認為您可能會感興趣的獨家優惠。",
         "loadingDescription": "請稍候,我們正在準備購買裝置時所附的軟體清單。",
         "shortDescription": "下載並安裝購買裝置時所附的軟體。",
         "errorDescription": "<h2>抱歉,擷取軟體下載資訊時發生問題</h2>嘗試按一下下方的「重試」按鈕,或稍後再嘗試按一下 Vantage 功能表中的「我的軟體」按鈕。"
