@@ -3011,6 +3011,7 @@
         "redeemWebsite": "Rembourser sur le site Web du fournisseur",
         "softwareDescription": "Cliquez télécharger ci-dessous pour utiliser le logiciel que vous avez acheté avec votre appareil. Si à n'importe quel moment, vous avez besoin de télécharger à nouveau ce logiciel, vous pouvez effectuer cela en cliquant le bouton Mon logiciel dans le menu Vantage.",
         "title": "Mon logiciel",
+        "noteExclusiveOffers": "Voici quelques offres exclusives qui pourraient vous intéresser.",
         "loadingDescription": "Veuillez patienter pendant que nous préparons la liste des logiciels qui étaient inclus dans l'achat de votre appareil.",
         "shortDescription": "Téléchargez et installez les logiciels qui sont inclus dans l'achat de votre appareil.",
         "errorDescription": "<h2>Désolé, il y a eu un problème lors de la récupération des informations concernant le téléchargement du logiciel</h2>Essayez de cliquer sur le bouton « Réessayer » ci-dessous ou réessayez ultérieurement en cliquant sur le bouton « Mon logiciel » du menu Vantage."

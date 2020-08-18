@@ -3011,6 +3011,7 @@
         "redeemWebsite": "Zakup na stronie dostawcy",
         "softwareDescription": "Kliknij poniższy przycisk Pobierz, aby pobrać oprogramowanie zakupione wraz z urządzeniem. Możesz ponownie pobrać oprogramowanie w dowolnym momencie, wybierając opcję Moje oprogramowanie z menu aplikacji Vantage.",
         "title": "Moje oprogramowanie",
+        "noteExclusiveOffers": "Poniżej znajdziesz kilka wyjątkowych ofert, które naszym zdaniem mogą Cię zainteresować.",
         "loadingDescription": "Czekaj, tworzymy listę oprogramowania zakupionego wraz z urządzeniem.",
         "shortDescription": "Pobierz i zainstaluj oprogramowanie zakupione wraz z urządzeniem.",
         "errorDescription": "<h2>Wystąpił błąd, nie można pozyskać informacji o oprogramowaniu do pobrania</h2>Spróbuj kliknąć przycisk „Ponów” lub spróbować ponownie później, klikając przycisk „Moje oprogramowanie” w menu aplikacji Vantage."

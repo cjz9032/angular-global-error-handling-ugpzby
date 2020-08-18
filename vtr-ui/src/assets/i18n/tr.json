@@ -3011,6 +3011,7 @@
         "redeemWebsite": "Satıcı web sitesinde kullanın",
         "softwareDescription": "Cihazınızla birlikte satın alınan yazılımı kullanmak için aşağıdaki indirme bağlantısına tıklayın. Herhangi bir anda yazılımınızı yeniden indirmeniz gerekirse bunu Vantage menüsündeki Yazılımım düğmesine tıklayarak yapabilirsiniz.",
         "title": "Yazılımım",
+        "noteExclusiveOffers": "Aşağıda, ilginizi çekebileceğini düşündüğümüz bazı özel teklifleri bulabilirsiniz.",
         "loadingDescription": "Cihazınızla birlikte satın aldığınız yazılımların listesi hazırlanırken lütfen bekleyin.",
         "shortDescription": "Cihazınızla birlikte satın aldığınız yazılımları indirip yükleyin.",
         "errorDescription": "<h2>Üzgünüz, yazılım indirme bilgileri alınırken bir sorun oluştu</h2>Aşağıdaki “Yeniden Dene” düğmesine tıklayın veya daha sona Vantage menüsündeki “Yazılımım” düğmesine tıklayarak yeniden deneyin."

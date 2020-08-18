@@ -3011,6 +3011,7 @@
         "redeemWebsite": "Riscatta sul sito Web del fornitore",
         "softwareDescription": "Fare clic sul pulsante Scarica in basso per riscattare il software acquistato con il dispositivo. È possibile scaricare nuovamente il software in qualsiasi momento, facendo clic sul pulsante Il mio software nel menu di Vantage.",
         "title": "Il mio software",
+        "noteExclusiveOffers": "Di seguito sono riportate alcune offerte esclusive che potrebbero essere interessarti.",
         "loadingDescription": "È in corso la preparazione di un elenco di software inclusi con l'acquisto del dispositivo.",
         "shortDescription": "Scaricare e installare il software incluso con l'acquisto del dispositivo.",
         "errorDescription": "<h2>Si è verificato un problema durante il recupero delle informazioni di download del software</h2>Provare a fare clic sul pulsante \"Riprova\" in basso oppure riprovare più tardi facendo clic sul pulsante \"Il mio software\" nel menu Vantage."

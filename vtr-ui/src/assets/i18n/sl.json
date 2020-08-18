@@ -3011,6 +3011,7 @@
         "redeemWebsite": "Prevzem na spletnem mestu ponudnika",
         "softwareDescription": "Kliknite spodaj, da uporabite programsko opremo, ki je bila kupljena z vašo napravo. Če tega zdaj ne želite, lahko programsko opremo kadarkoli prenesete tako, da v meniju Lenovo Vantage izberete Moja programska oprema.",
         "title": "Moja programska oprema",
+        "noteExclusiveOffers": "Spodaj je nekaj ekskluzivnih ponudb, za katere menimo, da vas bodo morda zanimale.",
         "loadingDescription": "Počakajte, da pripravimo seznam programske opreme, ki je bila vključena v nakup vaše naprave.",
         "shortDescription": "Prenesite in namestite programsko opremo, ki je bila vključena v nakup naprave.",
         "errorDescription": "<h2>Pri pridobivanju informacij o prenosu programske opreme je prišlo do težave</h2>Poskusite klikniti spodnji gumb »Poskusi znova« ali poskusite znova pozneje, tako da kliknete gumb »Moja programska oprema« v meniju Vantage."

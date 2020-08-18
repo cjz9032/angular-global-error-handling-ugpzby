@@ -3011,6 +3011,7 @@
         "redeemWebsite": "Iskoristite na web mjestu dobavljača",
         "softwareDescription": "Kliknite preuzimanje u nastavku kako biste preuzeli softver kupljen s vašim uređajem. Ukoliko zatrebate iznova preuzeti svoj softver, možete to učiniti u bilo kojem trenutku klikom na gumb Moj softver na Vantage izborniku.",
         "title": "Moj softver",
+        "noteExclusiveOffers": "U nastavku su neke ekskluzivne ponude za koje mislimo da bi vas mogle zanimati.",
         "loadingDescription": "Pričekajte dok pripremimo popis softvera uključenog uz kupnju uređaja.",
         "shortDescription": "Preuzmite i instalirajte softver uključen uz kupnju vašeg uređaja.",
         "errorDescription": "<h2>Nažalost, došlo je do problema u preuzimanju informacija o preuzimanju softvera</h2>Pokušajte kliknuti gumb „Pokušaj ponovo” u nastavku ili pokušajte kasnije klikom na gumb „Moj softver” u izborniku Vantage."

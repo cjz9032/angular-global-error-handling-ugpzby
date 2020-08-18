@@ -3011,6 +3011,7 @@
         "redeemWebsite": "Resgatar no sítio da Web do fornecedor",
         "softwareDescription": "Faça clique em Transferir abaixo para resgatar software adquirido com o dispositivo. Se, em qualquer momento, precisar de transferir novamente o software, poderá fazê-lo clicando no botão O meu software no menu Vantage.",
         "title": "O meu software",
+        "noteExclusiveOffers": "Seguem-se algumas ofertas exclusivas que poderão interessar-lhe.",
         "loadingDescription": "Aguarde enquanto preparamos uma lista do software incluído na compra do dispositivo.",
         "shortDescription": "Transfira e instale o software incluído na compra do seu dispositivo.",
         "errorDescription": "<h2>Lamentamos, mas ocorreu um problema na obtenção das informações de transferência do software</h2>Tente clicar no botão \"Tentar novamente\" abaixo ou tente mais tarde clicando no botão \"O meu software\" no menu Vantage."
