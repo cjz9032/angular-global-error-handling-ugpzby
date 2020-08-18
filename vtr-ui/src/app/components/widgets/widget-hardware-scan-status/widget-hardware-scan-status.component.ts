@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HardwareScanService } from '../../../services/hardware-scan/hardware-scan.service';
 import { PreviousResultService } from '../../../services/hardware-scan/previous-result.service';
-import { HardwareScanTestResult } from '../../../enums/hardware-scan-test-result.enum';
 
 @Component({
 	selector: 'vtr-widget-hardware-scan-status',
@@ -14,7 +13,6 @@ export class WidgetHardwareScanStatusComponent implements OnInit {
 	public previousResultsModules: any = undefined;
 	public lastScanResultCompletionInfo: any = undefined;
 	public viewResultsPath = '/hardware-scan/view-results';
-	public ScanResultEnum = HardwareScanTestResult;
 
 	constructor(
 		private hardwareScanService: HardwareScanService,

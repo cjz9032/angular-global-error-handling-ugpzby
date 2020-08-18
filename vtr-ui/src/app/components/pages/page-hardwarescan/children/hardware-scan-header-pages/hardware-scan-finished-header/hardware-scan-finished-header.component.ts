@@ -39,7 +39,6 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 	ngOnInit() {
 		this.headerType = this.hardwareScanService.getScanFinishedHeaderType();
 		let scanDate: Date;
-		let scanResult: string;
 		let finalResultCode: string;
 
 		if (this.headerType === HardwareScanFinishedHeaderType.Scan) {
