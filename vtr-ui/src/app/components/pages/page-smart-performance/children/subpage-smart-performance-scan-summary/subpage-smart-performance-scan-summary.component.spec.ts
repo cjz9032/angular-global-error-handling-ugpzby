@@ -272,13 +272,6 @@ describe('SubpageSmartPerformanceScanSummaryComponent', () => {
 		expect(component.isDropDownOpen).toBe(false);
 	});
 
- it('should open Feedback form', () => {
-		modalService = TestBed.inject(NgbModal);
-		const spy = spyOn(modalService, 'open');
-		component.onclickFeedback();
-		expect(spy).toHaveBeenCalled();
-	});
-
  it('should open openSubscribeModal', () => {
 		modalService = TestBed.inject(NgbModal);
 		const spy = spyOn(modalService, 'open');

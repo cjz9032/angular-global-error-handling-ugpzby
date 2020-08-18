@@ -15,7 +15,6 @@ import moment from 'moment';
 import { v4 as uuid } from 'uuid';
 
 import { ModalSmartPerformanceSubscribeComponent } from 'src/app/components/modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
-import { ModalSmartPerformanceFeedbackComponent } from 'src/app/components/modal/modal-smart-performance-feedback/modal-smart-performance-feedback.component';
 
 @Component({
   selector: 'vtr-subpage-smart-performance-scan-summary',
@@ -872,18 +871,6 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		};
 	}
 
-	/**
-	 * SP Feedback form
-	 */
-	onclickFeedback() {
-		this.modalService.open(ModalSmartPerformanceFeedbackComponent, {
-			backdrop: true,
-			size: 'lg',
-			keyboard: true,
-			centered: true,
-			windowClass: 'smart-performance-feedback-Modal'
-		});
-	}
 	backToNonSubScriberHome() {
 		this.backToNonSubscriber.emit();
 	}

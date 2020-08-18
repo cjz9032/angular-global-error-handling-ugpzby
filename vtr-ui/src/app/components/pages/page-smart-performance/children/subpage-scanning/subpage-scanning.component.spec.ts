@@ -260,13 +260,6 @@ describe('SubpageScanningComponent', () => {
 		expect(spyGetCurrentScanninRollingTexts).toHaveBeenCalled();
 	});
 
-	it('should open feedback form', () => {
-		modalService = TestBed.inject(NgbModal);
-		const spy = spyOn(modalService, 'open');
-		component.onclickFeedback();
-		expect(spy).toHaveBeenCalled();
-	});
-
 	it('should open cancel scan modal', () => {
 		modalService = TestBed.inject(NgbModal);
 		const spy = spyOn(modalService, 'open');

@@ -9,7 +9,6 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { SPCategory, SPSubCategory } from 'src/app/enums/smart-performance.enum';
 import { SecureMath } from '@lenovo/tan-client-bridge';
 import { ModalSmartPerformanceCancelComponent } from 'src/app/components/modal/modal-smart-performance-cancel/modal-smart-performance-cancel.component';
-import { ModalSmartPerformanceFeedbackComponent } from 'src/app/components/modal/modal-smart-performance-feedback/modal-smart-performance-feedback.component';
 
 @Component({
 	selector: 'vtr-subpage-scanning',
@@ -339,20 +338,6 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 		this.currentScanningItems[0].isCurrent = true;
 
 	}
-
-	/**
-	 * SP Feedback form
-	 */
-	onclickFeedback() {
-		this.modalService.open(ModalSmartPerformanceFeedbackComponent, {
-			backdrop: true,
-			size: 'lg',
-			keyboard: true,
-			centered: true,
-			windowClass: 'smart-performance-feedback-Modal'
-		});
-	}
-
 
 }
 
