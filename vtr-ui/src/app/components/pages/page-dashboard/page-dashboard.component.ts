@@ -8,7 +8,6 @@ import trim from 'lodash/trim';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
-import { WelcomeTextContent } from 'src/app/data-models/welcomeText/welcome-text.model';
 import { Status } from 'src/app/data-models/widgets/status.model';
 import { ContentActionType, ContentSource } from 'src/app/enums/content.enum';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -82,7 +81,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	translate12Subscription: Subscription;
 	translate13Subscription: Subscription;
 	translate14Subscription: Subscription;
-	cmsSubscription: Subscription;
 
 	supportDatas = {
 		documentation: [
@@ -332,9 +330,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		}
 		if (this.translate14Subscription) {
 			this.translate14Subscription.unsubscribe();
-		}
-		if (this.cmsSubscription) {
-			this.cmsSubscription.unsubscribe();
 		}
 	}
 

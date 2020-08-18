@@ -32,7 +32,6 @@ interface ICacheSettings {
 })
 export class ContentCacheService {
   private buildInContents = {};
-  private buildInArticls = {};
   private contentLocalCacheContract: any;
 
   constructor(
@@ -179,7 +178,11 @@ export class ContentCacheService {
   }
 
   private async fetchCMSContent(cmsOptions: any, contentCards: any) {
-    return await this.cmsService.fetchContents(cmsOptions);
+    try {
+      return await this.cmsService.fetchContents(cmsOptions);
+    } catch (ex) {
+      this.logger.error('fech cms contents error.');
+    }
   }
 
   private async fetchUPEContent(contentCards: any) {
@@ -192,7 +195,7 @@ export class ContentCacheService {
       const upePositions = upeContentCards.map(contentCard => contentCard.positionParam);
       return await this.upeService.fetchUPEContent({ positions: upePositions });
     } catch (ex) {
-      throw ex;
+      this.logger.error('fech upe contents error.');
     }
   }
 
@@ -235,9 +238,9 @@ export class ContentCacheService {
       if (content.BrandName) {
         content.BrandName = content.BrandName.split('|')[0];
       }
-      if(dataSource) {
-		  content.DataSource = dataSource;
-	  }
+      if (dataSource) {
+        content.DataSource = dataSource;
+      }
     });
 
     if (cardId === 'positionA') {

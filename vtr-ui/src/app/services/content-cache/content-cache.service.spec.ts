@@ -1,17 +1,18 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed, async } from '@angular/core/testing';
 
+import { ContentActionType } from 'src/app/enums/content.enum';
 import { ContentCacheService } from './content-cache.service';
 import { MockContentLocalCacheTest } from '../../services/content-cache/mock/content-cache.mock.data';
 
 import { asyncData, asyncError } from 'src/testing/async-observable-helpers'
-import { CMS_CONTENTS, UPE_CONTENTS, NORMAL_CONTENTS, EXPIRED_DATE_INPOISTIONB, DISPALY_DATE_INPOISTIONB, MULITI_ITEM_INPOISTIONB, WELCOME_TEXT_CONTENTS } from 'src/testing/content-data';
+import { CMS_CONTENTS, UPE_CONTENTS, NORMAL_CONTENTS, EXPIRED_DATE_INPOISTIONB, DISPALY_DATE_INPOISTIONB, MULITI_ITEM_INPOISTIONB, WELCOME_TEXT_CONTENTS, ARTICLE } from 'src/testing/content-data';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 
 describe('ContentCacheService', () => {
 	let service: ContentCacheService;
 	let vantageShellService: { getContentLocalCache: jasmine.Spy };
 	let localInfoService: { getLocalInfo: jasmine.Spy };
-	let cmsService: { generateContentQueryParams: jasmine.Spy, fetchContents: jasmine.Spy, getOneCMSContent: jasmine.Spy};
+	let cmsService: { generateContentQueryParams: jasmine.Spy, getLocalinfo: jasmine.Spy, fetchCMSArticle: jasmine.Spy, fetchContents: jasmine.Spy, getOneCMSContent: jasmine.Spy };
 	let upeService: { fetchUPEContent: jasmine.Spy };
 	let buildInContentService: { getArticle: jasmine.Spy, getContents: jasmine.Spy };
 	let logger: { error: jasmine.Spy };
@@ -77,7 +78,7 @@ describe('ContentCacheService', () => {
 		expect(keys.includes('welcome-text')).toBeTruthy();
 		expect(keys.includes('positionB')).toBeTruthy();
 
-		
+
 		const ret2 = await service.getCachedContents('noOnlineContent', null);
 		expect(ret2).toBeTruthy();
 		expect(ret2).toEqual(ret);
@@ -148,10 +149,10 @@ describe('ContentCacheService', () => {
 		expect(keys.includes('positionA')).toBeTruthy();
 		expect(keys.includes('positionB')).toBeTruthy();
 		ret['positionA'].forEach(content => {
-			if (content.Title === 'Build-in article A1'){
+			if (content.Title === 'Build-in article A1') {
 				expect(content.DataSource).toEqual('cms');
 			}
-			if (content.Title === 'Build-in article A2'){
+			if (content.Title === 'Build-in article A2') {
 				expect(content.DataSource).toEqual('upe');
 			}
 		});
@@ -159,7 +160,7 @@ describe('ContentCacheService', () => {
 	});
 
 	it('save contentList only from cms', async () => {
-		let	contentCards = {
+		let contentCards = {
 			positionA: {
 				displayContent: [],
 				template: 'home-page-hero-banner',
@@ -215,7 +216,7 @@ describe('ContentCacheService', () => {
 				upeContent: undefined
 			}
 		};
-		cmsService.generateContentQueryParams.and.returnValue({ Page: 'dashboard_only_cms'});
+		cmsService.generateContentQueryParams.and.returnValue({ Page: 'dashboard_only_cms' });
 		cmsService.fetchContents.and.returnValue(CMS_CONTENTS);
 		cmsService.getOneCMSContent.and.returnValue(CMS_CONTENTS);
 		localInfoService.getLocalInfo.and.returnValue(localInfo);
@@ -235,7 +236,7 @@ describe('ContentCacheService', () => {
 	});
 
 	it('save contentList only from upe', async () => {
-		let	contentCards = {
+		let contentCards = {
 			positionA: {
 				displayContent: [],
 				template: 'home-page-hero-banner',
@@ -291,11 +292,11 @@ describe('ContentCacheService', () => {
 				upeContent: undefined
 			}
 		};
-		cmsService.getOneCMSContent.and.returnValue(CMS_CONTENTS);
+		cmsService.getOneCMSContent.and.returnValue(null);
 		upeService.fetchUPEContent.and.returnValue(UPE_CONTENTS);
-		cmsService.fetchContents.and.returnValue(CMS_CONTENTS);
+		cmsService.fetchContents.and.returnValue(null);
 		localInfoService.getLocalInfo.and.returnValue(localInfo);
-		cmsService.generateContentQueryParams.and.returnValue({ Page: 'dashboard_only_upe'});
+		cmsService.generateContentQueryParams.and.returnValue({ Page: 'dashboard_only_upe' });
 		const ret = await service.getCachedContents('dashboard_only_cms', contentCards);
 
 		expect(ret).toBeTruthy();
@@ -311,7 +312,7 @@ describe('ContentCacheService', () => {
 	});
 
 	it('save contentList from upe and cms', async () => {
-		let	contentCards = {
+		let contentCards = {
 			positionA: {
 				displayContent: [],
 				template: 'home-page-hero-banner',
@@ -371,7 +372,7 @@ describe('ContentCacheService', () => {
 		upeService.fetchUPEContent.and.returnValue(UPE_CONTENTS);
 		cmsService.fetchContents.and.returnValue(CMS_CONTENTS);
 		localInfoService.getLocalInfo.and.returnValue(localInfo);
-		cmsService.generateContentQueryParams.and.returnValue({ Page: 'dashboard'});
+		cmsService.generateContentQueryParams.and.returnValue({ Page: 'dashboard' });
 		const ret = await service.getCachedContents('dashboard', contentCards);
 
 		expect(ret).toBeTruthy();
@@ -387,7 +388,7 @@ describe('ContentCacheService', () => {
 	});
 
 	it('save contentList that segment is commercial', async () => {
-		let	contentCards = {
+		let contentCards = {
 			positionA: {
 				displayContent: [],
 				template: 'home-page-hero-banner',
@@ -443,7 +444,7 @@ describe('ContentCacheService', () => {
 				upeContent: undefined
 			}
 		};
-		cmsService.generateContentQueryParams.and.returnValue({ Page: 'dashboard_only_cms'});
+		cmsService.generateContentQueryParams.and.returnValue({ Page: 'dashboard_only_cms' });
 		cmsService.fetchContents.and.returnValue(CMS_CONTENTS);
 		cmsService.getOneCMSContent.and.returnValue(CMS_CONTENTS);
 		let currentLocalInfo = {
@@ -469,4 +470,38 @@ describe('ContentCacheService', () => {
 		expect(ret['positionC'].Title).toEqual('Smarter Data Helps Farmers Rapidly Adapt to Climate Change');
 	});
 
+	it('should throw exception when fetch contents from upe and cms', async() => {
+		let contentCards = {
+			positionB: {
+				displayContent: new FeatureContent(),
+				template: 'half-width-title-description-link-image',
+				cardId: 'positionB',
+				positionParam: 'position-B',
+				tileSource: 'UPE',
+				cmsContent: undefined,
+				upeContent: undefined
+			}
+		};
+		
+		upeService.fetchUPEContent.and.throwError('upe error');
+		cmsService.fetchContents.and.throwError('upe error');
+		localInfoService.getLocalInfo.and.returnValue(localInfo);
+		cmsService.generateContentQueryParams.and.returnValue({ Page: 'dashboard' });
+		await service.getCachedContents('dashboard', contentCards);
+		expect(logger.error.calls.count()).toBe(2, 'two calls');
+	});
+
+	it('should return the build-in article when get article by id', async () => {
+		cmsService.getLocalinfo.and.returnValue(localInfo);
+		buildInContentService.getArticle.and.returnValue(ARTICLE);
+		const ret = await service.getArticleById(ContentActionType.BuildIn, '11111');
+		expect(ret).toEqual(ARTICLE);
+	});
+
+	it('should return the online article when get article by id', async () => {
+		cmsService.getLocalinfo.and.returnValue(localInfo);
+		cmsService.fetchCMSArticle.and.returnValue(ARTICLE);
+		const ret = await service.getArticleById(ContentActionType.Internal, '11111');
+		expect(ret).toEqual(ARTICLE);
+	});
 });

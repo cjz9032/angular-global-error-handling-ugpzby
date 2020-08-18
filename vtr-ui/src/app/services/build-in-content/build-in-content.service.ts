@@ -25,7 +25,6 @@ export class BuildInContentService {
 
   public getArticle(articId: any, lang: any): Promise<any> {
     return new Promise((resolve, reject) => {
-      const key = `${articId}_${lang}`;
       this.httpClient.get(`assets/build-in-contents/${lang}/${articId}.json`).subscribe(
         (res: any) => {
           resolve(res);
