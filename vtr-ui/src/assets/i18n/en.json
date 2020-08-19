@@ -1256,7 +1256,7 @@
 					"vantageToolbar": {
 						"title": "Lenovo Vantage toolbar and premium settings",
 						"description": "Pin Lenovo Vantage toolbar to Windows taskbar to easily access to your most frequently-used settings and get premium offerings and updates for you.",
-						"hint": "The options in the image depend on the capacity of the machine. For example, some machines support backlight settings, and some may not."
+						"hint": "The options in the image depend on the device capability and characteristic. For example, some machine support keyboard backlight settings, and some may not."
 					}
 				},
 				"smartStandby": {

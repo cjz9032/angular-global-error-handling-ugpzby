@@ -1254,7 +1254,7 @@
                     "vantageToolbar": {
                         "title": "Lenovo Vantage 工具列和進階設定",
                         "description": "將 Lenovo Vantage 工作列釘選到 Windows 工作列便可輕鬆存取您最常用的設定，享有專屬於你的優質產品和更新。",
-                        "hint": "映像中的選配產品取決於電腦的容量。例如，有些電腦支援背光設定，有些則可能不支援。"
+                        "hint": "工具列中實際支援的功能取決於電腦的硬體特性和安裝了正確的驅動程式，例如，有些機型支援鍵盤背光設置，有些機型不支持。"
                     }
                 },
                 "batterySettings": {
