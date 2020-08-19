@@ -4187,6 +4187,7 @@
         },
         "scanFinishedHeader": {
             "titleSuccess": "Genomsökningen är klar. Enheten klarade alla tester.",
+			"titleError": "Your device failed {{numberTestsFailed}} test(s).",
             "titleErrorPlural": "Genomsökningen är klar. Enheten klarade inte {{numberTestsFailed}} tester.",
             "titleErrorSingular": "Genomsökningen är klar. Enheten klarade inte ett test.",
             "frcSuccessDescription": "Slutresultatkoden visar att det inte påträffades några problem under genomsökningen. Om ett test visar en varning eller ett meddelande om att testet inte är tillämpligt betyder det inte att det påträffades ett problem. Om en Lenovo-supportansvarig ber dig köra testet kan du uppge denna kod som bevis. I annat fall behövs ingen åtgärd just nu. Kontakta Lenovos support om du fortfarande upplever problem.",

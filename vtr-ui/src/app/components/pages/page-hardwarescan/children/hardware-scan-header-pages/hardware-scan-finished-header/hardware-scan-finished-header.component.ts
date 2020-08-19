@@ -17,6 +17,7 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 	headerType: HardwareScanFinishedHeaderType = HardwareScanFinishedHeaderType.None;
 	numberTestsFailed = 0;
 	lastScanResultCompletionInfo: any;
+	scanResult: string;
 
 	// Metrics
 	@Input() itemParentCancel: string;
@@ -42,9 +43,11 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 
 		if (this.headerType === HardwareScanFinishedHeaderType.Scan) {
 			scanDate =  this.hardwareScanService.getFinalResultStartDate();
+			this.scanResult = this.hardwareScanService.getScanResult();
 			finalResultCode = this.getFinalResultCode();
 		} else if (this.headerType === HardwareScanFinishedHeaderType.ViewResults) {
 			this.lastScanResultCompletionInfo = this.previousResultService.getLastPreviousResultCompletionInfo();
+			this.scanResult = this.lastScanResultCompletionInfo.result;
 			scanDate = this.lastScanResultCompletionInfo.date;
 			finalResultCode = this.getLastFinalResultCode();
 		}

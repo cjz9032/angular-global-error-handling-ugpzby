@@ -4187,6 +4187,7 @@
         },
         "scanFinishedHeader": {
             "titleSuccess": "Exploración completada. El dispositivo aprobó todas las pruebas.",
+			"titleError": "Your device failed {{numberTestsFailed}} test(s).",
             "titleErrorPlural": "Exploración completada. El dispositivo falló {{numberTestsFailed}} pruebas.",
             "titleErrorSingular": "Exploración completada. El dispositivo falló 1 prueba.",
             "frcSuccessDescription": "Este código de resultado final indica que no se encontraron problemas con esta exploración. Si cualquier prueba muestra un mensaje de advertencia o no aplicable, no significa que se encontró un problema. Si un agente de soporte de Lenovo le pidió ejecutar esta prueba, utilice el código de este como prueba; de lo contrario, no necesita realizar ninguna acción en este momento. Si cree que sigue experimentando problemas, póngase en contacto con soporte de Lenovo.",

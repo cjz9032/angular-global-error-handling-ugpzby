@@ -10,7 +10,7 @@
 	<div class="test-status-icon failure" *ngSwitchCase="testResultEnum.Fail">
 		<fa-icon id="{{ componentId }}-fail" aria-hidden="true" role="img" class="warning" [icon]="['fas', 'times']"></fa-icon>
 	</div>
-	<div class="test-status-icon warning rotate-icon" *ngSwitchCase="testResultEnum.Warning">
+	<div class="test-status-icon warning rotate-icon" *ngSwitchCase="testResultEnum.Attention">
 		<fa-icon id="{{ componentId }}-warning" aria-hidden="true" role="img" class="warning" [icon]="['fas', 'exclamation']"></fa-icon>
 	</div>
 	<div class="test-status-icon not-applicable" *ngSwitchCase="testResultEnum.Cancelled">

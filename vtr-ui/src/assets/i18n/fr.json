@@ -4187,6 +4187,7 @@
         },
         "scanFinishedHeader": {
             "titleSuccess": "Analyse terminée. Tous les tests ont été effectués avec succès sur votre périphérique.",
+			"titleError": "Your device failed {{numberTestsFailed}} test(s).",
             "titleErrorPlural": "Analyse terminée. {{numberTestsFailed}} tests ont échoué sur votre périphérique.",
             "titleErrorSingular": "Analyse terminée. 1 test a échoué sur votre périphérique.",
             "frcSuccessDescription": "Ce code de résultat final indique qu'aucun problème n'a été détecté lors de cette analyse. Si un test affiche un avertissement ou un message non pertinent, cela ne signifie pas qu'un problème a été détecté. Si un agent du support de Lenovo vous a demandé d'effectuer ce test, utilisez ce code comme preuve ; autrement, aucune action de votre part n'est nécessaire pour le moment. Si vous rencontrez toujours des problèmes, contactez le support de Lenovo.",

@@ -4187,6 +4187,7 @@
         },
         "scanFinishedHeader": {
             "titleSuccess": "Tarama tamamlandı. Cihazınız tüm testlerden geçti.",
+			"titleError": "Your device failed {{numberTestsFailed}} test(s).",
             "titleErrorPlural": "Tarama tamamlandı. Cihazınız {{numberTestsFailed}} testte başarısız oldu.",
             "titleErrorSingular": "Tarama tamamlandı. Cihazınız 1 testte başarısız oldu.",
             "frcSuccessDescription": "Bu nihai sonuç kodu, bu taramada sorun bulunmadığını belirtmektedir. Herhangi bir teste bir uyarı veya geçersiz ileti görüntülenirse bu bir sorun bulunduğu anlamına gelmez. Bir Lenovo destek aracısı sizden bu testi gerçekleştirmenizi isterse kanıt olarak bu kodu kullanın. Bunun dışında şu anda sizin yapmanız gereken bir eylem bulunmamaktadır. Hala sorun yaşadığınızı düşünüyorsanız Lenovo Destek ile iletişime geçin.",
