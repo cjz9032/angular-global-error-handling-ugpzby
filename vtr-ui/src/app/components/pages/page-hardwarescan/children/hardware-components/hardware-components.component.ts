@@ -677,10 +677,13 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 		// Ideally, FeatureClicks are sent directly through the HTML tags, but in this case, we need ItemParam
 		// data that needs to be processed. This way, we are sending them using the API.
-		if (taskType === TaskType.QuickScan) {
-			this.sendFeatureClickMetrics('HardwareScan.QuickScan', 'HardwareScan', testMapMetrics);
-		} else if (taskType === TaskType.CustomScan) {
-			this.sendFeatureClickMetrics('CustomizeScan.RunSelectedTests', 'HardwareScan.CustomizeScan', testMapMetrics);
+		// Scan Again should not send different metrics unless from it's own
+		if (!scanAgain) {
+			if (taskType === TaskType.QuickScan) {
+				this.sendFeatureClickMetrics('HardwareScan.QuickScan', 'HardwareScan', testMapMetrics);
+			} else if (taskType === TaskType.CustomScan) {
+				this.sendFeatureClickMetrics('CustomizeScan.RunSelectedTests', 'HardwareScan.CustomizeScan', testMapMetrics);
+			}
 		}
 
 		const preScanInformationRequest = {
