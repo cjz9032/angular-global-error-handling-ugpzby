@@ -56,7 +56,7 @@ export class CMSService implements OnDestroy {
 		}).catch(e => { });
 	}
 
-	private async deviceFilter(filters) {
+	async deviceFilter(filters) {
 		if (!filters) {
 			return true;
 		}
@@ -190,7 +190,7 @@ export class CMSService implements OnDestroy {
 		});
 	}
 
-	private async getCMSContent(queryParams: any) {
+	async getCMSContent(queryParams: any) {
 		const locInfo = await this.getLocalinfo();
 		const defaults = {
 			Lang: locInfo.Lang,
