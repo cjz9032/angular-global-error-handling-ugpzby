@@ -260,6 +260,16 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		let expiredDate;
 		let expiryRemainDays: number;
 		const nextText = this.translate.instant('smartPerformance.subscriptionDetails.next');
+
+		// start for PA test, will remove before 8/25 task id: VAN-21395
+		// 2020-08-19T08:42:33.967+0000
+		// localStorage.setItem('SmartPerformanceTestCurrentTime', '2021-08-03T08:42:33.967+0000')
+		const testCurrentTime = this.commonService.getLocalStorageValue('SmartPerformanceTestCurrentTime' as LocalStorageKey);
+		if (testCurrentTime) {
+			lastItem.currentTime = testCurrentTime;
+		}
+		// end for PA test, will remove before 8/25 VAN-21395
+
 		const currentDate: any = new Date(lastItem.currentTime);
 		// const currentDate: any = new Date('2022-07-01T06:24:50.358+0000');
 		expiredDate = new Date(releaseDate);
