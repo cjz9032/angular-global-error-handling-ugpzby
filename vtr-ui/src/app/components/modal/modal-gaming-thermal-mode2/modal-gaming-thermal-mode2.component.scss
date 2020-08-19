@@ -19,6 +19,10 @@ button:focus{
 				padding-bottom: 2rem;
 			}
 		}
+		.close {
+			text-shadow: none !important;
+			font-weight: normal !important;
+		}
 	}
 	.modal-body {
 		max-height: 830px;
