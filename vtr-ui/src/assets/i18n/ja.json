@@ -974,7 +974,7 @@
                 "title": "システム アップデート",
                 "notFound": "システム更新が見つかりません",
                 "detail": {
-                    "uptoDate": "更新を確認しました",
+                    "uptoDate": "更新の適用状況",
                     "updatedOn": "確認日",
                     "outdated": "更新を最近確認していません",
                     "neverRanUpdate": "更新を確認したことはありません"
@@ -2270,7 +2270,7 @@
             "next": "次回の更新スケジュール:",
             "checkButton": "更新の確認",
             "checking": "更新を確認しています",
-            "downloading": "更新のダウンロード中",
+            "downloading": "更新のダウンロード状況",
             "installing": "更新をインストールしています",
             "percent": "% 完了",
             "cancelCheck": "チェックをキャンセル",
