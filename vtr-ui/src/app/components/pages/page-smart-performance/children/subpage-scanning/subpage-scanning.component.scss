@@ -294,7 +294,7 @@ vtr-subpage-smart-performance-scan-summary {
 
 							}
 
-							.icomoon {
+                            .icomoon {
 								color: $menu_hover;
 
 								@media #{$breakpoint_sm} {
@@ -519,8 +519,7 @@ vtr-subpage-smart-performance-scan-summary {
 		.icomoon {
 			font-size: 2.2rem;
 			margin-right: 0.6rem;
-			color: $main_shade;
-			margin-top: -0.3rem;
+			color: $main_shade;		
 
 			@media #{$breakpoint_xl} {
 				font-size: $fontsize_xl;
@@ -535,30 +534,25 @@ vtr-subpage-smart-performance-scan-summary {
 
 		p {
 			font-size: 1.2rem;
-			line-height: 1.4;
-			margin-bottom: 0;
-			margin-top: 0;
+			line-height: 1.4;		
+			margin: 0;
+			padding-right: 0.6rem;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
 
 			@media #{$breakpoint_xl} {
 				font-size: 1rem;
-				max-width: 5.5rem;
-				overflow: hidden;
-				text-overflow: ellipsis;
-				white-space: nowrap;
 			}
 
 			@media #{$breakpoint_md} {
-				font-size: 1rem;
-				max-width: 5.5rem;
+				font-size: 1rem;				
 			}
 
 			@media #{$breakpoint_sm} {
-				font-size: 1rem;
-				max-width: 5.5rem;
-				overflow: hidden;
-				text-overflow: ellipsis;
-				white-space: nowrap;
+				font-size: 1rem;	
 				font-weight: $weight_light;
+				padding-right: 0.2rem;
 			}
 		}
 	}
