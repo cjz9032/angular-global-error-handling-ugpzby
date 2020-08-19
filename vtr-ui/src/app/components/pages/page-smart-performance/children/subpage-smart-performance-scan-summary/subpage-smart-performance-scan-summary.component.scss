@@ -790,19 +790,18 @@ vtr-subpage-smart-performance-scan-summary {
 								}
 
 								p {
-									font-size: 1.2rem;
-									max-width: 8.1rem;
-									margin-top: 0.6rem;
+									font-size: 1.2rem;							
+									margin:0;
 									line-height: 1.4;
+									padding-right: 0.6rem;
 									white-space: nowrap;
 									overflow: hidden;
 									text-overflow: ellipsis;
 
 									@media #{$breakpoint_sm} {
 										font-size: 1rem;
-										max-width: 100%;
-										margin-top: 0;
-
+										max-width: 100%;	
+										padding-right: 0.2rem;							
 									}
 								}
 
@@ -816,9 +815,7 @@ vtr-subpage-smart-performance-scan-summary {
 									// 	margin-right: 0.5rem;
 									// }
 									@media #{$breakpoint_sm} {
-										font-size: $fontsize_xs;
-										margin-right: 0.2rem;
-										margin-top: -0.6rem;
+										font-size: $fontsize_xs;									
 									}
 								}
 							}

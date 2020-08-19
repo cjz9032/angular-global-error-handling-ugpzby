@@ -182,17 +182,16 @@
 							}
 
 							p {
-								font-size: 1.2rem;
-								max-width: 8.1rem;
-								margin-top: 0.6rem;
+								font-size: 1.2rem;							
+								padding-right: 0.6rem;
 								overflow: hidden;
 								text-overflow: ellipsis;
 								white-space: nowrap;
+								margin:0;
 
 								@media #{$breakpoint_sm} {
 									font-size: 1rem;
-									max-width: 100%;
-									margin-top: 0;
+									padding-right: 0.2rem;															
 								}
 							}
 
@@ -201,15 +200,9 @@
 								font-size: 2.2rem;
 								margin-right: 0.2rem;
 								color: $main;
-
-								// @media #{$breakpoint_xl} {
-								// 	font-size: 2.2rem;
-								// 	margin-right: 0.5rem;
-								// }
+							
 								@media #{$breakpoint_sm} {
-									font-size: $fontsize_xs;
-									margin-right: 0.2rem;
-									margin-top: -0.6rem;
+									font-size: $fontsize_xs;								
 								}
 							}
 						}
