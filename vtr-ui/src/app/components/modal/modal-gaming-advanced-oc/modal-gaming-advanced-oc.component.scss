@@ -1,6 +1,12 @@
 @import '../../../app.theme.scss';
 .gaming-modal-fun {
     user-select: none;
+    .modal-header {
+        .close {
+            text-shadow: none !important;
+			font-weight: normal !important;
+        }
+    }
     .modal-body {
         max-height: 789px;
         @media screen and (max-height: 1000) {
