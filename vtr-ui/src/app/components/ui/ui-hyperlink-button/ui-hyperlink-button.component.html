@@ -1,5 +1,5 @@
 <div class="vtr-ui-hyperlink-button">
-	<div class="hyperlink-box" (click)="onClick()" (keyup.enter)="onClick()"
+	<button class="hyperlink-box" (click)="onClick()"
 	 	[tabindex]="tabIndex ? tabIndex : 0"
 		[ngClass]="{'disabled': isDisabled === true}">
 		<a
@@ -24,5 +24,5 @@
 			[innerText]="label">
 		</a>
 		<fa-icon [icon]="faIcon" *ngIf="faIcon" class="icon {{faIconStyle}}"></fa-icon>
-	</div>
+	</button>
 </div>
