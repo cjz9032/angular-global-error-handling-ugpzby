@@ -1,6 +1,6 @@
 <div class="modal-body vtr-modal-wait" aria-labelledby="wait-title" aria-describedby="wait-description">
-	<div id="wait-title" class="title">{{modalTitle}}</div>
-	<div id="wait-description" class="description">{{modalDescription}}</div>
+	<h1 id="wait-title" class="title" role="heading">{{modalTitle}}</h1>
+	<p id="wait-description" class="description" role="text">{{modalDescription}}</p>
 
 	<div class="row">
 		<div id="loading-div">
@@ -9,16 +9,12 @@
 		</div>
 	</div>
 
-	<a role="button"
-		aria-label="Close"
-		href="javascript:;"
-		class="close-btn"
-		vtrMetrics
-		metricsEvent="FeatureClick"
-		metricsParent="{{ItemParent}}"
-		metricsItem="{{CancelItemName}}"
-		tabindex="0"
-		(click)="closeButtonClick()">
-		<img [src]=" 'assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
-	</a>
+	<div class="btn-modal-close">
+		<vtr-ui-close-button
+			linkId="hwscan-wait-modal-close-btn"
+			metricsItem="{{ CancelItemName }}"
+			metricsParent="{{ ItemParent }}"
+			(clickClose)="closeButtonClick()">
+		</vtr-ui-close-button>
+	</div>
 </div>
