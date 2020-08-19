@@ -59,25 +59,9 @@ export class ContentCacheService {
     if (actionType == ContentActionType.BuildIn) {
       return this.buildInContentService.getArticle(articleId, loclInfo.Lang);
     } else {
-      return await this.getCacheArticle(articleId, loclInfo.Lang);
+      return this.cmsService.fetchCMSArticle(articleId);
     }
   }
-
-  private async getCacheArticle(articId: any, lang: any) {
-    const key = `${articId}_${lang}`;
-    let iCacheSettings: ICacheSettings = {
-      Key: key,
-      Value: null,
-      Component: "ContentCache",
-      UserName: "ContentCache_Contents"
-    };
-    const cachedObject = await this.contentLocalCacheContract.get(iCacheSettings);
-    if (cachedObject && cachedObject.Value) {
-      return JSON.parse(cachedObject.Value);
-    }
-    return null;
-  }
-
 
   private async loadBuildInContents(queryParams: any) {
     const key = `${queryParams.Page}_${queryParams.Lang}`;
@@ -155,8 +139,9 @@ export class ContentCacheService {
           "welcome-text": []
         }
         await this.fillCacheValue(response, contentCards, cacheValueOfContents);
+        const contents = this.getNeedUpdateContents(cacheKey, cacheValueOfContents);
         this.saveContents(cacheKey, cacheValueOfContents);
-        await this.cacheContentDetail(this.getNeedUpdateContents(cacheValueOfContents));
+        await this.cacheContentDetail(contents);
       }).catch(error => {
         WaveShaperNode
         this.logger.error('cacheContents error ', error);
@@ -193,7 +178,7 @@ export class ContentCacheService {
     this.contentLocalCacheContract.set(iCacheSettings);
   }
 
-  private getNeedUpdateContents(cacheValueOfContents: any) {
+  private getNeedUpdateContents(cacheKey: any, cacheValueOfContents: any) {
     const contents = [];
     for (const key in cacheValueOfContents) {
       if ("welcome-text" == key) {
