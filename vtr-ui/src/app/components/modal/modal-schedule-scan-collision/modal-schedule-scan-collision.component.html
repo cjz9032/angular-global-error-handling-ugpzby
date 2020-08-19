@@ -1,38 +1,25 @@
 <div class="modal-body" aria-labelledby="title" aria-describedby="description">
-		<div id="title" class="error">{{error}}</div>
+		<h2 id="hwscan-schedule-scan-collision-modal-title" class="error" role="text">{{ error }}</h2>
+		<br />
+		<p id="hwscan-schedule-scan-collision-modal-description" class="description" role="text" [innerHtml]="description"></p>
 
 		<br />
 
-		<div id="description" class="description" [innerHtml]="description"></div>
-
-		<!-- <br />
-		<div class="description question">{{question}}</div> -->
-
-		<br />
-
-		<div class="row">
-			<div class="col">
-				<vtr-ui-button
-					vtrMetrics
-					metricsEvent="FeatureClick"
-					metricsParent="{{ItemParent}}"
-					metricsItem="{{ConfirmItemName}}"
-					[label]="buttonText"
-					(onClick)="onClosing()">
-				</vtr-ui-button>
-			</div>
+		<div class="row button-row">
+			<vtr-ui-button
+				linkId="hwscan-schedule-scan-collision-modal-confirm-btn"
+				metricsParent="{{ ItemParent }}"
+				metricsItem="{{ ConfirmItemName }}"
+				[label]="buttonText"
+				(onClick)="onClosing()">
+			</vtr-ui-button>
 		</div>
-		<a role="button"
-			aria-label="Close"
-			href="javascript:;"
-			class="close-btn"
-			vtrMetrics
-			metricsEvent="FeatureClick"
-			metricsParent="{{ItemParent}}"
-			metricsItem="{{CancelItemName}}"
-			(click)="activeModal.dismiss('Cross click')">
-			<img [src]=" 'assets/icons/Close.svg' | svgInline | async"
-				alt=""
-				srcset="">
-		</a>
+		<div class="btn-modal-close">
+			<vtr-ui-close-button
+				linkId="hwscan-schedule-scan-collision-modal-close-btn"
+				metricsParent="{{ ItemParent }}"
+				metricsItem="{{ CancelItemName }}"
+				(clickClose)="onClosing()">
+			</vtr-ui-close-button>
+		</div>
 </div>

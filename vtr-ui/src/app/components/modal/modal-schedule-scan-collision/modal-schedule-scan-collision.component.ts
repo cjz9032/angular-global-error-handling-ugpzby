@@ -24,7 +24,7 @@ export class ModalScheduleScanCollisionComponent implements OnInit {
 	}
 
 	onClosing() {
-        this.activeModal.close();
-    }
+		this.activeModal.close('close');
+	}
 
 }
