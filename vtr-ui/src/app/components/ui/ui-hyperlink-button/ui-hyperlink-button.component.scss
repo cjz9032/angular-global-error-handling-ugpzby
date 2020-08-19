@@ -75,9 +75,11 @@
 		cursor: pointer;
 		user-select: none; // preventing user text selection
 
-		&:focus {
-			outline: 0.1rem solid $menu_hover;
-			outline-offset: 0.4rem;
+		.hyperlink-outline {
+			&:focus {
+				outline: 0.1rem solid $menu_hover;
+				outline-offset: 0.4rem;
+			}
 		}
 
 		&.disabled {
