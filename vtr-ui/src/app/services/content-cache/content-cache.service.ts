@@ -143,7 +143,6 @@ export class ContentCacheService {
         this.saveContents(cacheKey, cacheValueOfContents);
         await this.cacheContentDetail(contents);
       }).catch(error => {
-        WaveShaperNode
         this.logger.error('cacheContents error ', error);
       });
   }
@@ -238,7 +237,7 @@ export class ContentCacheService {
       Key: key,
       Value: JSON.stringify(response),
       Component: "ContentCache",
-      UserName: "ContentCache_Contents"
+      UserName: "ContentCache_Articles"
     }
     this.contentLocalCacheContract.set(iCacheSettings);
   }
