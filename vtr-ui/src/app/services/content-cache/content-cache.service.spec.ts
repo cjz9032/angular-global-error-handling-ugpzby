@@ -470,7 +470,7 @@ describe('ContentCacheService', () => {
 		expect(ret['positionC'].Title).toEqual('Smarter Data Helps Farmers Rapidly Adapt to Climate Change');
 	});
 
-	it('should throw exception when fetch contents from upe and cms', async() => {
+	it('should throw exception when fetch contents from upe and cms', async () => {
 		let contentCards = {
 			positionB: {
 				displayContent: new FeatureContent(),
@@ -482,7 +482,7 @@ describe('ContentCacheService', () => {
 				upeContent: undefined
 			}
 		};
-		
+
 		upeService.fetchUPEContent.and.throwError('upe error');
 		cmsService.fetchContents.and.throwError('upe error');
 		localInfoService.getLocalInfo.and.returnValue(localInfo);
@@ -496,12 +496,20 @@ describe('ContentCacheService', () => {
 		buildInContentService.getArticle.and.returnValue(ARTICLE);
 		const ret = await service.getArticleById(ContentActionType.BuildIn, '11111');
 		expect(ret).toEqual(ARTICLE);
+		expect(buildInContentService.getArticle.calls.count()).toBe(1, 'one call');
 	});
 
-	it('should return the online article when get article by id', async () => {
+	it('should return the cached article when get article by id', async () => {
 		cmsService.getLocalinfo.and.returnValue(localInfo);
 		cmsService.fetchCMSArticle.and.returnValue(ARTICLE);
 		const ret = await service.getArticleById(ContentActionType.Internal, '11111');
 		expect(ret).toEqual(ARTICLE);
+	});
+
+	it('should return the online article when get article by id', async () => {
+		cmsService.getLocalinfo.and.returnValue(localInfo);
+		const ret = await service.getArticleById(ContentActionType.Internal, 'cached_article');
+		expect(ret).toEqual(ARTICLE);
+		expect(cmsService.fetchCMSArticle.calls.count()).toBe(0, 'no call');
 	});
 });

@@ -59,6 +59,10 @@ export class ContentCacheService {
     if (actionType == ContentActionType.BuildIn) {
       return this.buildInContentService.getArticle(articleId, loclInfo.Lang);
     } else {
+      var article = await this.getCachedArticle(articleId, loclInfo.Lang);
+      if (article) {
+        return article;
+      }
       return this.cmsService.fetchCMSArticle(articleId);
     }
   }
@@ -242,21 +246,21 @@ export class ContentCacheService {
     this.contentLocalCacheContract.set(iCacheSettings);
   }
 
-  private cacheArticleImage(response:any, downLoadImages:any[]) {
+  private cacheArticleImage(response: any, downLoadImages: any[]) {
     if (response.Results.Image) {
-			const image = new Image();
-			image.src = response.Image;
+      const image = new Image();
+      image.src = response.Image;
       downLoadImages.push(image);
     }
     const body = response.Results.Body;
-		const div = document.createElement('div');
-		div.innerHTML = body;
-		const images: any = div.getElementsByTagName('img');
-		for (const element of images) {
-			downLoadImages.push(element);
-		}
-		div.innerHTML = '';
-  }   
+    const div = document.createElement('div');
+    div.innerHTML = body;
+    const images: any = div.getElementsByTagName('img');
+    for (const element of images) {
+      downLoadImages.push(element);
+    }
+    div.innerHTML = '';
+  }
 
   private async fetchCMSContent(cmsOptions: any, contentCards: any) {
     try {
@@ -312,6 +316,21 @@ export class ContentCacheService {
         return result;
       }
     }
+  }
+
+  private async getCachedArticle(articId: any, lang: any) {
+    const key = `${articId}_${lang}`;
+    let iCacheSettings: ICacheSettings = {
+      Key: key,
+      Value: null,
+      Component: "ContentCache",
+      UserName: "ContentCache_Articles"
+    }
+    const cachedObject = await this.contentLocalCacheContract.get(iCacheSettings);
+    if (cachedObject && cachedObject.Value) {
+      return JSON.parse(cachedObject.Value);
+    }
+    return undefined;
   }
 
   private formalizeContent(contents, cardId, dataSource?) {
