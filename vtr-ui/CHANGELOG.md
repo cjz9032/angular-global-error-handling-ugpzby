@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.37](https://bitbucket.tc.lenovo.com///compare/v1.7.36...v1.7.37) (2020-08-19)
+
+
+### Bug Fixes
+
+* **NLS:** VAN-21160 update Japanese text ([b2977e3](https://bitbucket.tc.lenovo.com///commit/b2977e300b8b864c52e81ba797cec5d282c17286))
+* **Smart Performance:** VAN-21069 fix scan tab text overflow\ ([38b5985](https://bitbucket.tc.lenovo.com///commit/38b5985eb307cc30eb9c0d99b4d78ceb5eb9bc28))
+
 ### [1.7.36](https://bitbucket.tc.lenovo.com///compare/v1.7.35...v1.7.36) (2020-08-18)
 
 
