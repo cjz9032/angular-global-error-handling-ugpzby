@@ -99,12 +99,12 @@ export class HardwareScanService {
 
 	// Temporary workarounds for BSOD issue (VAN-21285)
 	private blackListModules = [
-		"motherboard",
-		"pci_express",
+		'motherboard',
+		'pci_express',
 	];
 	private blackListTests = [
-		"TEST_LINEAR_READ_TEST",
-		"TEST_CONTROLLER_STATUS_TEST"
+		'TEST_LINEAR_READ_TEST',
+		'TEST_CONTROLLER_STATUS_TEST'
 	];
 
 	/**
@@ -443,8 +443,8 @@ export class HardwareScanService {
 		response.categoryList = response.categoryList.filter((value) => !this.blackListModules.includes(value.id))
 		response.mapContractNameList = response.mapContractNameList.filter((value) => !this.blackListModules.includes(value.Key))
 
-		var storageComponents = response.categoryList.filter((value) => value.id === "storage");
-		if (storageComponents != undefined) {
+		let storageComponents = response.categoryList.filter((value) => value.id === "storage");
+		if (storageComponents !== undefined) {
 			storageComponents.forEach(component => {
 				component.groupList.forEach(group => {
 					group.testList = group.testList.filter((t) => this.blackListTests.filter((bl) => t.id.includes(bl)).length === 0 )
