@@ -214,19 +214,19 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 			releaseDate.setMonth(releaseDate.getMonth() + +lastItem.products[0].unitTerm);
 			releaseDate.setDate(releaseDate.getDate() - 1);		
 			if (lastItem && lastItem.status.toUpperCase() === 'COMPLETED') {
-				this.getExpiredStatus(releaseDate);
+				this.getExpiredStatus(releaseDate, lastItem);
 			}
 		} else {
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
 			this.isSubscribed = false;
 		}		
 	}
-	getExpiredStatus(releaseDate) {
+	getExpiredStatus(releaseDate, lastItem) {
 		let expiredDate;
 		let expiryRemainDays: number;
 		const nextText = this.translate.instant('smartPerformance.subscriptionDetails.next');
 		const rDate = '2022-06-15T11:25:46.212+0000';
-		const currentDate: any = new Date();
+		const currentDate: any = new Date(lastItem.currentTime);
 		expiredDate = new Date(releaseDate);
 		 
 		if (expiredDate < currentDate) {			 
