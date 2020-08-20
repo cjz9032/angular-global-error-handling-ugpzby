@@ -97,6 +97,16 @@ export class HardwareScanService {
 		storage: 'icon_hardware_hdd.svg'
 	};
 
+	// Temporary workarounds for BSOD issue (VAN-21285)
+	private blackListModules = [
+		"motherboard",
+		"pci_express",
+	];
+	private blackListTests = [
+		"TEST_LINEAR_READ_TEST",
+		"TEST_CONTROLLER_STATUS_TEST"
+	];
+
 	/**
 	 * This method sends the requests of all information which should be available
 	 * when Hardware Scan starts.
@@ -427,10 +437,27 @@ export class HardwareScanService {
 		return segmentsA.length - segmentsB.length;
 	}
 
+	// Filters the response from GetItemsToScan according to blacklist of modules and tests
+	// This is replicated from Plugin, for cases that a user's Plugin isn't up to date
+	private filterItemsResponse(response: any) {
+		response.categoryList = response.categoryList.filter((value) => !this.blackListModules.includes(value.id))
+		response.mapContractNameList = response.mapContractNameList.filter((value) => !this.blackListModules.includes(value.Key))
+
+		var storageComponents = response.categoryList.filter((value) => value.id === "storage");
+		if (storageComponents != undefined) {
+			storageComponents.forEach(component => {
+				component.groupList.forEach(group => {
+					group.testList = group.testList.filter((t) => this.blackListTests.filter((bl) => t.id.includes(bl)).length === 0 )
+				});
+			});
+		}
+	}
+
 	public getItemsToScan(scanType: number, culture: string) {
 		if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.getItemsToScan(scanType, culture)
 				.then((response) => {
+					this.filterItemsResponse(response)
 					return response;
 				})
 				.catch((error) => {
@@ -1140,17 +1167,19 @@ export class HardwareScanService {
 		const result = [];
 
 		for (const module of Object.keys(this.iconByModule)) {
-			let moduleType = module;
-			if (!this.isDesktopMachine) {
-				if (module === 'pci_express') {
-					moduleType = module + '_laptop';
+			if (!this.blackListModules.includes(module)) {
+				let moduleType = module;
+				if (!this.isDesktopMachine) {
+					if (module === 'pci_express') {
+						moduleType = module + '_laptop';
+					}
 				}
+				result.push({
+					module: module.toUpperCase(),
+					name: '',
+					icon: moduleType
+				});
 			}
-			result.push({
-				module: module.toUpperCase(),
-				name: '',
-				icon: moduleType
-			});
 		}
 
 		return result;
