@@ -5,10 +5,10 @@
  	<div class="col button-row">
 		<vtr-ui-button
 			linkId="hwscan-quick-scan-btn"
-			[vtrMetrics]=false
+			[vtrMetricEnabled]="false"
 			[label]= " 'hardwareScan.quickScan' | translate "
 			[isDisabled]="disableButtonScan"
-			[title] =" 'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate "
+			[tooltipText] =" 'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate "
 			(onClick)="onQuickScan()">
 		</vtr-ui-button>
 		<vtr-ui-hyperlink-button
@@ -16,7 +16,6 @@
 			linkRole="button"
 			class="hyperlink-container"
 			hyperlinkStyle="xs-white"
-			metricsEvent="FeatureClick"
 			metricsParent="HardwareScan"
 			metricsItem="HardwareScan.CustomizeScan"
 			[isDisabled]="disableButtonScan"
