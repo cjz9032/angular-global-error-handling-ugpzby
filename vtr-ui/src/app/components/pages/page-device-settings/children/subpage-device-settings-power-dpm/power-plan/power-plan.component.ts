@@ -2,8 +2,8 @@ import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { PowerDpmService } from 'src/app/services/power-dpm/power-dpm.service';
 import { TranslateService } from '@ngx-translate/core';
 import { PowerPlan } from 'src/app/data-models/dpm/power-plan.model';
-import { DPMDropDownInterval } from 'src/app/data-models/common/dpm-drop-down-interval.model';
 import { Subscription } from 'rxjs';
+import { DropDownInterval } from 'src/app/data-models/common/drop-down-interval.model';
 
 @Component({
 	selector: 'vtr-power-plan',
@@ -12,8 +12,10 @@ import { Subscription } from 'rxjs';
 })
 export class PowerPlanComponent implements OnInit, OnDestroy {
 
+	public selectedPowerPlanIndex: number;
 	public selectedPowerPlanVal: PowerPlan;
-	public powerPlanIntervals: DPMDropDownInterval[];
+	public supportedPlans: PowerPlan[];
+	public powerPlanIntervals: DropDownInterval[];
 	private allPowerPlansSubscription: Subscription;
 
 	constructor(
@@ -26,7 +28,8 @@ export class PowerPlanComponent implements OnInit, OnDestroy {
 			v => {
 				if (v) {
 					this.updatePowerPlanList(v.powerPlanList);
-					this.selectedPowerPlanVal = v.powerPlanList.find(p => p.powerPlanName === v.activePowerPlan);
+					this.selectedPowerPlanIndex = v.powerPlanList.findIndex(p => p.powerPlanName === v.activePowerPlan);
+					this.selectedPowerPlanVal = v.powerPlanList[this.selectedPowerPlanIndex];
 				}
 			}
 		);
@@ -40,20 +43,24 @@ export class PowerPlanComponent implements OnInit, OnDestroy {
 
 	private updatePowerPlanList(list: PowerPlan[]) {
 		if (list) {
+			this.supportedPlans = list;
 			this.powerPlanIntervals = [];
-			list.forEach(p => {
+			list.forEach((p, i) => {
 				this.powerPlanIntervals.push({
 					name: p.powerPlanName,
-					value: p,
-					text: p.powerPlanName
+					value: i,
+					text: p.powerPlanName,
+					placeholder: '',
+					metricsValue: `plan-${p.powerPlanName}`
 				});
 			});
 		}
 	}
 
-	public onPowerPlanChange($event: DPMDropDownInterval) {
-		if ($event) {
-			this.selectedPowerPlanVal = $event.value;
+	public onPowerPlanChange($event: DropDownInterval) {
+		if ($event && this.supportedPlans.length > 0) {
+			this.selectedPowerPlanIndex = $event.value;
+			this.selectedPowerPlanVal = this.supportedPlans[$event.value];
 			this.dpmService.setCurrentPowerPlan($event.name);
 		}
 	}

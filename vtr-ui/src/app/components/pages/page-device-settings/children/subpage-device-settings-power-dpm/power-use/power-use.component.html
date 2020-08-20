@@ -17,42 +17,47 @@
 					role="text">
 					{{'device.deviceSettings.power.dpm.powerUse.turnOffDisplay' | translate}}
 				</p>
-				<vtr-ui-dpm-dropdown [label]="'device.deviceSettings.power.dpm.powerUse.turnOffDisplay' | translate"
-					[list]="timeItems"
+				<vtr-ui-dropdown [list]="timeItems"
+					[isMetricsEnabled]=false
 					[value]="turnoffDisplay"
-					(change)="onTurnOffDisplayChange($event)"
+					(selectionChange)="onTurnOffDisplayChange($event)"
+					[dropDownName]="'dpm-poweruse-display-turnoff-dropdown'"
 					[dropDownId]="'dpm-poweruse-display-dropdown'">
-				</vtr-ui-dpm-dropdown>
+				</vtr-ui-dropdown>
+
 				<p id="dpm-poweruse-turnoffhdd-label"
 					role="text">
 					{{'device.deviceSettings.power.dpm.powerUse.turnOffHDD' | translate}}
 				</p>
-				<vtr-ui-dpm-dropdown [label]="'device.deviceSettings.power.dpm.powerUse.turnOffHDD' | translate"
-					[list]="timeItems"
+				<vtr-ui-dropdown [list]="timeItems"
+					[isMetricsEnabled]=false
 					[value]="turnoffHDD"
-					(change)="onTurnOffHDDChange($event)"
+					(selectionChange)="onTurnOffHDDChange($event)"
+					[dropDownName]="'dpm-poweruse-hdd-turnoff-dropdown'"
 					[dropDownId]="'dpm-poweruse-hdd-dropdown'">
-				</vtr-ui-dpm-dropdown>
+				</vtr-ui-dropdown>
 				<p id="dpm-poweruse-sleep-label"
 					role="text">
 					{{'device.deviceSettings.power.dpm.powerUse.sleep' | translate}}
 				</p>
-				<vtr-ui-dpm-dropdown [label]="'device.deviceSettings.power.dpm.powerUse.sleep' | translate"
-					[list]="timeItems"
+				<vtr-ui-dropdown [list]="timeItems"
+					[isMetricsEnabled]=false
 					[value]="sleepAfter"
-					(change)="onSleepChange($event)"
+					(selectionChange)="onSleepChange($event)"
+					[dropDownName]="'dpm-poweruse-sleep-turnoff-dropdown'"
 					[dropDownId]="'dpm-poweruse-sleep-dropdown'">
-				</vtr-ui-dpm-dropdown>
+				</vtr-ui-dropdown>
 				<p id="dpm-poweruse-hibernate-label"
 					role="text">
 					{{'device.deviceSettings.power.dpm.powerUse.hibernate' | translate}}
 				</p>
-				<vtr-ui-dpm-dropdown [label]="'device.deviceSettings.power.dpm.powerUse.hibernate' | translate"
-					[list]="timeItems"
+				<vtr-ui-dropdown [list]="timeItems"
+					[isMetricsEnabled]=false
 					[value]="hibernateAfter"
-					(change)="onHibernateChange($event)"
+					(selectionChange)="onHibernateChange($event)"
+					[dropDownName]="'dpm-poweruse-hibernate-turnoff-dropdown'"
 					[dropDownId]="'dpm-poweruse-hibernate-dropdown'">
-				</vtr-ui-dpm-dropdown>
+				</vtr-ui-dropdown>
 			</section>
 		</div>
 	</vtr-ui-row-switch>

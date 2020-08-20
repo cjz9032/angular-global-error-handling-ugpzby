@@ -14,13 +14,13 @@
 					{{'device.deviceSettings.power.dpm.powerPlan.currentPowerPlan.label' | translate}}
 				</p>
 				<div>
-					<vtr-ui-dpm-dropdown
-						[label]="'device.deviceSettings.power.dpm.powerPlan.currentPowerPlan.label' | translate"
-						[list]="powerPlanIntervals"
-						[value]="selectedPowerPlanVal"
-						(change)="onPowerPlanChange($event)"
+					<vtr-ui-dropdown [list]="powerPlanIntervals"
+						[isMetricsEnabled]=false
+						[value]="selectedPowerPlanIndex"
+						(selectionChange)="onPowerPlanChange($event)"
+						[dropDownName]="'dpm-powerplan-action-dd-dropdown'"
 						[dropDownId]="'dpm-powerplan-action-dropdown'">
-					</vtr-ui-dpm-dropdown>
+					</vtr-ui-dropdown>
 				</div>
 				<div>
 					<h5 class="boldtitle profile"
