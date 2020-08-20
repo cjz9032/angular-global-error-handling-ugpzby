@@ -15,14 +15,14 @@
 					label="{{ 'hardwareScan.yes' | translate }} ({{ secondsCountdown }})"
 					metricsParent="{{ ItemParent }}"
 					metricsItem="{{ ConfirmItemName }}"
-					(click)= "onAgree()">
+					(onClick)= "onAgree()">
 				</vtr-ui-button>
 
 				<ng-template #noCountdown>
 					<vtr-ui-button
 						#cancel_modal_ok
 						linkId="hwscan-cancel-modal-ok-btn"
-						(click)= "closeModal()"
+						(onClick)= "closeModal()"
 						label="{{ 'hardwareScan.ok' | translate }}">
 					</vtr-ui-button>
 				</ng-template>
