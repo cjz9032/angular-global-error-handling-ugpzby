@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.38](https://bitbucket.tc.lenovo.com///compare/v1.7.37...v1.7.38) (2020-08-20)
+
+
+### Bug Fixes
+
+* **Menu:** VAN-21256 fixed where Menu Dropdown automatically pops up when subpages regain focus. ([f84d5b2](https://bitbucket.tc.lenovo.com///commit/f84d5b2f6dfcd60c256fbbcfb8b59e3e3619329b))
+* **NLS:** VAN-21114 fix text overflow issue ([90a439c](https://bitbucket.tc.lenovo.com///commit/90a439c873cc580949e8fb999ec6fa9d56832521))
+* **Smart Performance:** VAN-21325 fix disable status not correct ([9ac632d](https://bitbucket.tc.lenovo.com///commit/9ac632dccdbaa1e33977c4a742840df7916fe4c4))
+
 ### [1.7.37](https://bitbucket.tc.lenovo.com///compare/v1.7.36...v1.7.37) (2020-08-19)
 
 
