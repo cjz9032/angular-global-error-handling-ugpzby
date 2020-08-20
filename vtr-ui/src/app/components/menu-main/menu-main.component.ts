@@ -76,6 +76,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	translateSubscription: Subscription;
 	unsupportedFeatureSubscription: Subscription;
 	topRowFnSubscription: Subscription;
+	private focusMenuDropDownTimer: any;
 
 	VantageLogo = `
 		data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c
@@ -233,6 +234,15 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		if (!event.fromSearchBox && !event.fromSearchMenu) {
 			this.updateSearchBoxState(false);
 		}
+	}
+
+	@HostListener('window:focus')
+	onFocus(): void {
+		setTimeout(() => {
+			if (this.focusMenuDropDownTimer) {
+				clearTimeout(this.focusMenuDropDownTimer);
+			}
+		}, 0);
 	}
 
 	closeAllDD() {
@@ -490,10 +500,15 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	}
 
 	onFocusMenuDropDown(menuDropDown) {
-		this.closeAllOtherDD(menuDropDown);
-		if (!this.modalService.hasOpenModals()) {
-			menuDropDown.open();
+		if (this.focusMenuDropDownTimer) {
+			clearTimeout(this.focusMenuDropDownTimer);
 		}
+		this.focusMenuDropDownTimer = setTimeout(() => {
+			this.closeAllOtherDD(menuDropDown);
+			if (!this.modalService.hasOpenModals()) {
+				menuDropDown.open();
+			}
+		}, 30);
 	}
 
 	onMenuItemClick(item, event?) {
