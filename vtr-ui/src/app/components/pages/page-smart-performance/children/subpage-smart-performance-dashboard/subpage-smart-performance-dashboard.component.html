@@ -267,11 +267,11 @@
 															<p id="smart-performance-proactive-tab1-desc" role="text">{{'smartPerformance.proactiveAutomated.tabSet2.tab1Description' |translate }}</p>
 														</div>
 														<div class="col-4">
-															<h3 class="title" id="smart-performance-proactive-tab2-desc">{{'smartPerformance.proactiveAutomated.tabSet2.tab2Heading' |translate }}</h3>
+															<h3 class="title" id="smart-performance-proactive-tab2-head">{{'smartPerformance.proactiveAutomated.tabSet2.tab2Heading' |translate }}</h3>
 															<p id="smart-performance-proactive-tab2-desc" role="text">{{'smartPerformance.proactiveAutomated.tabSet2.tab2Description' |translate }}</p>
 														</div>
 														<div class="col-4">
-															<h3 class="title" id="smart-performance-proactive-tab3-desc">{{'smartPerformance.proactiveAutomated.tabSet2.tab3Heading' |translate }}</h3>
+															<h3 class="title" id="smart-performance-proactive-tab3-head">{{'smartPerformance.proactiveAutomated.tabSet2.tab3Heading' |translate }}</h3>
 															<p id="smart-performance-proactive-tab3-desc" role="text">{{'smartPerformance.proactiveAutomated.tabSet2.tab3Description' |translate }}</p>
 														</div>
 													</div>
@@ -310,15 +310,15 @@
 									<div class="w-100">
 										<div class="row d-flex justify-content-between">
 											<div class="mt-5 hero-text">
-												<h1>{{'smartPerformance.scanCompletePage.title' |translate }}</h1>
-												<h3>{{'smartPerformance.scanCompletePage.description' |translate }}</h3>
+												<h1 id="smart-performance-scan-complete-title">{{'smartPerformance.scanCompletePage.title' |translate }}</h1>
+												<h3 id="smart-performance-scan-complete-desc">{{'smartPerformance.scanCompletePage.description' |translate }}</h3>
 											</div>
 											<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
 										</div>
 										<hr class="light-dashline" />
 									</div>
 									<div class="performance-slider-block scan-results">
-										<h3 class="recomendation-text">{{'smartPerformance.scanCompletePage.scanRates' |translate }}<span>4</span></h3>
+										<h3 class="recomendation-text" id="smart-performance-scan-complete-rates">{{'smartPerformance.scanCompletePage.scanRates' |translate }}<span>4</span></h3>
 										<div class="slider">
 											<div class="verticle-lines">
 												<div class="scan-pointer">&#9660;</div>
@@ -335,8 +335,8 @@
 												<div class="line"></div>
 											</div>
 											<div class="condition">
-												<div class="critical">{{'smartPerformance.critical' |translate }}</div>
-												<div class="well">{{'smartPerformance.allisWell' |translate }}</div>
+												<div class="critical" id="smart-performance-critical" role="text">{{'smartPerformance.critical' |translate }}</div>
+												<div class="well" id="smart-performance-alliswell" role="text">{{'smartPerformance.allisWell' |translate }}</div>
 											</div>
 										</div>
 									</div>
@@ -346,20 +346,22 @@
 							<div class="row">
 								<div class="summary-block">
 									<h2 class="title-big mb-3">{{'smartPerformance.scanCompletePage.summary' |translate }}</h2>
-									<p>{{'smartPerformance.scanCompletePage.summaryDetails' |translate }}</p>
+									<p id="smart-performance-scan-complete-summary-detail" role="text">{{'smartPerformance.scanCompletePage.summaryDetails' |translate }}</p>
 									<div class="d-flex justify-content-between my-5">
 										<button class="action-button"
 											vtrMetrics
 											metricsEvent="FeatureClick"
 											metricsParent="Page.Support.SmartPerformance"
-											metricsItem="btn.backtohome">{{'smartPerformance.scanCompletePage.signupRepairButton' |translate }}</button>
+											metricsItem="btn.backtohome"
+											id="smart-performance-scan-complete-signup-repair">{{'smartPerformance.scanCompletePage.signupRepairButton' |translate }}</button>
 										<div class="desc">
-											<p>{{'smartPerformance.scanCompletePage.monthlyPricing' |translate }}<a href="#"
+											<p id="smart-performance-scan-complete-monthly-price" role="text">{{'smartPerformance.scanCompletePage.monthlyPricing' |translate }}<a href="#"
 													class="para-link"
 													vtrMetrics
 													metricsItem="btn.learnmore"
 													metricsParent="Page.Support.SmartPerformance"
-													metricsEvent="FeatureClick">Learn more</a></p>
+													metricsEvent="FeatureClick"
+													id="smart-performance-scan-complete-learn-more">Learn more</a></p>
 										</div>
 									</div>
 								</div>

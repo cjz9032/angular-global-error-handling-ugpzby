@@ -6,17 +6,11 @@
         <p *ngIf="isSubscribed">{{'smartPerformance.subscriptionDetails.description' |translate }}</p>
         <p *ngIf="!isSubscribed && !isExpired">{{'smartPerformance.subscriptionDetails.descriptionNonSubscriber' |translate }}</p>
         <p *ngIf="!isSubscribed && isExpired"> {{'smartPerformance.subscriptionDetails.descriptionExpired' |translate }}</p>
-        <!-- <a href="#" class="para-link"
-            vtrMetrics
-            metricsItem="btn.sp.subscriptionDetails"
-            metricsParent="Page.Support.SmartPerformance"
-            metricsEvent="FeatureClick"
-            >{{'smartPerformance.subscriptionDetails.learnMore' |translate }}</a> -->
-    </div>
+     </div>
     <ul class="status-list" *ngIf="isOnline">
         <li class="d-flex justify-content-between start-date-spinner">
             <div class="item">{{'smartPerformance.subscriptionDetails.startDate' |translate }}</div>
-            <div class="status" *ngIf="!isLoading">{{subscriptionDetails.startDate}}</div>
+            <div class="status" *ngIf="!isLoading" id="smart-performance-subscription-detail-start-date" role="text">{{subscriptionDetails.startDate}}</div>
             <div *ngIf="isLoading" class="loader mr-5">
                 <span></span>
                 <span></span>
@@ -25,7 +19,7 @@
         </li>
         <li class="d-flex justify-content-between end-date-spinner">
             <div class="item">{{'smartPerformance.subscriptionDetails.endDate' |translate }}</div>
-            <div class="status" *ngIf="!isLoading">{{subscriptionDetails.endDate}}</div>
+            <div class="status" *ngIf="!isLoading" id="smart-performance-subscription-detail-end-date" role="text">{{subscriptionDetails.endDate}}</div>
             <div *ngIf="isLoading" class="loader mr-5">
                 <span></span>
                 <span></span>
@@ -35,7 +29,7 @@
         <li class="d-flex justify-content-between status-spinner">
             <div class="item">{{'smartPerformance.subscriptionDetails.status' |translate }}</div>
             <div class="status" *ngIf="strStatus">
-                <div [ngClass]="{'badge-danger': strStatus==='INACTIVE', 'badge-success': strStatus==='ACTIVE', 'badge-processing' : strStatus==='PROCESSING', 'bage-expired': strStatus==='EXPIRED' }" class="badge badge-pill mr-2">{{subscriptionDetails.status |translate}}</div>
+                <div [ngClass]="{'badge-danger': strStatus==='INACTIVE', 'badge-success': strStatus==='ACTIVE', 'badge-processing' : strStatus==='PROCESSING', 'bage-expired': strStatus==='EXPIRED' }" class="badge badge-pill mr-2" id="smart-performance-subscription-detail-status" role="text">{{subscriptionDetails.status |translate}}</div>
                 <img *ngIf="isRefreshEnabled" title="{{'smartPerformance.scanningPage.refreshButton' | translate}}" src="assets/icons/refresh.svg" alt="" class="refresh-icon" (click) = "isFirstLoad = true; getSubscriptionDetails()">
         </div>
             <div *ngIf="isLoading && !strStatus">
@@ -47,19 +41,13 @@
             </div>
         </li>
     </ul>
-    <!-- <a *ngIf="isSubscribed" class="link-text" (click)=openSubscribeModal()
-        vtrMetrics
-        metricsItem="btn.manageSub"
-        metricsEvent="FeatureClick"
-        metricsParent="Page.Support.SmartPerformance">
-        {{'smartPerformance.subscriptionDetails.manageSubscription' |translate }}
-    </a> -->
     <h4 *ngIf="expiredDaysCount" class="text-danger"><fa-icon [icon]="['fas', 'exclamation-circle']" class="mr-2"></fa-icon>{{'smartPerformance.subscriptionDetails.expiredNote' |translate }} {{expiredDaysCount}}</h4>
     <button *ngIf="!isSubscribed && isOnline || expiredDaysCount"
 		class="link-text"
 		[disabled]="strStatus==='PROCESSING' || tempHide"
         (click)=openSubscribeModal() vtrMetrics metricsItem="btn.managesubscription"
-        metricsEvent="FeatureClick" metricsParent="Page.Support.SmartPerformance">
+		metricsEvent="FeatureClick" metricsParent="Page.Support.SmartPerformance"
+		id="smart-performance-subscription-detail-manage-btn">
         {{'smartPerformance.subscriptionDetails.manageSubscription' |translate }}
     </button>
     <div class="row" *ngIf="!isOnline">
