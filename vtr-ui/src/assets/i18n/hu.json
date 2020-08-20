@@ -4327,7 +4327,7 @@
             "descriptionbeta1": "Ön a próbaprogram ideje alatt korlátlanul használhatja a teljes funkciókészletet.",
             "descriptionNonSubscriber": "Ön nem fizetett elő a Lenovo Smart Performance szolgáltatásra. Csak a számítógép ellenőrzésére van lehetősége. Fizessen elő most, és élvezze a számítógép védelmével és zökkenőmentes működésének biztosításával járó előnyöket.",
             "processStatus": "FELDOLGOZÁS",
-            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance,you can renew the subscription by clicking the \"Manage Subscription \" link to resume full protection for your device.",
+            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance, you can renew the subscription by clicking the \"Manage Subscription\" link to resume full protection for your device.",
             "expiredStatus": "EXPIRED",
             "expiredNote": "Your subscription will expire in",
             "day": "day",
@@ -4801,7 +4801,7 @@
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
             "backToHome": "Vissza a kezdőlapra",
-            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance,if you would like to resume the \"Scan and Fix\" feature,please press the \"renew and fix\" button down below to renew your subscription.",
+            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance, if you would like to resume the \"Scan and Fix\" feature, please press the \"renew and fix\" button down below to renew your subscription.",
             "renewAndFix": "Renew & Fix"
         },
         "subscriberScanHomePage": {

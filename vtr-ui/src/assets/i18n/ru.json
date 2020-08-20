@@ -4327,7 +4327,7 @@
             "descriptionbeta1": "Приглашаем вас присоединиться к программе и оценить все возможности этой функции.",
             "descriptionNonSubscriber": "Вы не подписаны на услугу Lenovo Smart Performance. Вы сможете только сканировать свой ПК. Подпишитесь прямо сейчас, чтобы воспользоваться всеми преимуществами защиты и бесперебойной работы своего ПК.",
             "processStatus": "ОБРАБОТКА",
-            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance,you can renew the subscription by clicking the \"Manage Subscription \" link to resume full protection for your device.",
+            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance, you can renew the subscription by clicking the \"Manage Subscription\" link to resume full protection for your device.",
             "expiredStatus": "EXPIRED",
             "expiredNote": "Your subscription will expire in",
             "day": "day",
@@ -4801,7 +4801,7 @@
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
             "backToHome": "Вернуться на Главную",
-            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance,if you would like to resume the \"Scan and Fix\" feature,please press the \"renew and fix\" button down below to renew your subscription.",
+            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance, if you would like to resume the \"Scan and Fix\" feature, please press the \"renew and fix\" button down below to renew your subscription.",
             "renewAndFix": "Renew & Fix"
         },
         "subscriberScanHomePage": {
