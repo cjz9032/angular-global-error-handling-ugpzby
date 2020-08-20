@@ -1,9 +1,10 @@
 <div class="vtr-ui-hyperlink-button">
-	<div class="hyperlink-box" (click)="onClick()" (keyup.enter)="onClick()"
-	 	[tabindex]="tabIndex ? tabIndex : 0"
+	<div class="hyperlink-box"
 		[ngClass]="{'disabled': isDisabled === true}">
-		<a
-			class="hyperlink {{hyperlinkStyle}}"
+		<button
+			(click)="onClick()"
+			[tabindex]="tabIndex ? tabIndex : 0"
+			class="hyperlink-outline"
 			[attr.role]="linkRole"
 			[attr.id]="linkId"
 			[vtrMetrics]="vtrMetricEnabled"
@@ -16,13 +17,16 @@
 			[metricsPageNumber]="metricsPageNumber"
 			[attr.aria-label]="ariaLabel"
 			[ngbTooltip]="tooltipText" tooltipClass="vtr-system-tooltip" container="body"
-			[disableTooltip]="disableTooltip"
+			[disableTooltip]="disableTooltip">
+			<span
+			class="hyperlink {{hyperlinkStyle}}"
+			[innerHTML]="label"
 			[ngClass]="{
 				'text-upper-case': upperCaseLabel === true,
 				'text-capitalize': capitalizeLabel === true
-			}"
-			[innerText]="label">
-		</a>
-		<fa-icon [icon]="faIcon" *ngIf="faIcon" class="icon {{faIconStyle}}"></fa-icon>
+			}">
+			</span>
+			<fa-icon [icon]="faIcon" *ngIf="faIcon" class="icon {{faIconStyle}}"></fa-icon>
+		</button>
 	</div>
 </div>
