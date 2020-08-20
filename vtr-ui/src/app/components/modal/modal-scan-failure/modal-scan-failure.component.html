@@ -27,12 +27,10 @@
 			<div class="row button-row">
 				<vtr-ui-button
 					class="button-container"
-					metricsEvent="FeatureClick"
 					metricsParent="HardwareScan.ScanFailureActions"
 					metricsItem="ScanFailureActions.RecoverBadSectors"
 					linkId="hwscan-go-to-rbs-btn"
-					(click)="goToRBSPage()"
-					[tooltipText]="'hardwareScan.scanFailureModal.recoverBadSectorsButtonText' | translate"
+					(onClick)="goToRBSPage()"
 					[label]="'hardwareScan.scanFailureModal.recoverBadSectorsButtonText' | translate">
 				</vtr-ui-button>
 				<vtr-ui-hyperlink-button
@@ -41,7 +39,6 @@
 					metricsItem="ScanFailureActions.LenovoSupport"
 					linkId="hwscan-open-support-page-link"
 					(hyperlinkClick)="openSupportPage()"
-				 	[tooltipText]="'hardwareScan.scanFailureModal.supportButtonText' | translate"
 				   	[label]="'hardwareScan.scanFailureModal.supportButtonText' | translate"
 					[upperCaseLabel]="true">
 				</vtr-ui-hyperlink-button>
@@ -58,8 +55,7 @@
 						metricsParent="HardwareScan.ScanFailureActions"
 						metricsItem="ScanFailureActions.LenovoSupport"
 						linkId="hwscan-open-ticket-btn"
-						(click)="openSupportPage()"
-						[tooltipText]="'hardwareScan.scanFailureModal.supportButtonText' | translate"
+						(onClick)="openSupportPage()"
 						[label]="'hardwareScan.scanFailureModal.supportButtonText' | translate">
 					</vtr-ui-button>
 				</div>

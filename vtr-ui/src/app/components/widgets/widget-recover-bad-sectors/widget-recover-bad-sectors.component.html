@@ -34,14 +34,12 @@
 				<div class="button-row">
 					<vtr-ui-button
 						linkId="{{ widgetId }}-btn"
-						metricsEvent="FeatureClick"
 						metricsParent="HardwareScan"
 						metricsItem="HardwareScan.RecoverBadSectors"
 						[isFullWidth]="true"
 						[label]="'hardwareScan.recoverBadSectors.title' | translate"
 						[isDisabled]="disable"
 						[routerPath] = "recoverPath"
-						[active]="'true'"
 						[tooltipText]="tooltipText">
 					</vtr-ui-button>
 				</div>
