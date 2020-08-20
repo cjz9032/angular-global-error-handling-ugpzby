@@ -7,6 +7,7 @@ import { Subscription } from 'rxjs';
 import { actualMeridiem, enumScanFrequency, actualScanFrequency, enumSmartPerformance, actualDays } from 'src/app/enums/smart-performance.enum';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import moment from 'moment';
+import { MetricService } from 'src/app/services/metric/metrics.service';
 
 @Component({
   selector: 'vtr-subpage-schedule-scan',
@@ -18,7 +19,8 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 		private commonService: CommonService,
 		private logger: LoggerService,
 		public smartPerformanceService: SmartPerformanceService,
-		private translate: TranslateService
+		private translate: TranslateService,
+		private metricService: MetricService
 	) { }
 
 	// scan settings
@@ -96,6 +98,8 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 	sliceDay = true;
 	amPmPosition = false;
 	selectedMeridiem: string;
+	private disableScanMetricParam = 'Enable schedule scan: false';
+	private enableScanMetricParam = 'Enable schedule scan: true, scan frequency: ';
 
 	ngOnInit() {
 		this.spTransLangEvent = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
@@ -133,13 +137,20 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 			this.payloadData(this.type);
 		}
 
+		let taskParam = this.disableScanMetricParam;
+		let response = 'false';
 		if (this.IsScheduleScanEnabled) {
 			this.scanToggleValue = true;
+			taskParam = this.enableScanMetricParam + actualScanFrequency[this.frequencyValue];
+			response = actualScanFrequency[this.frequencyValue];
 		} else {
 			this.scanToggleValue = false;
 			// when no record is present and scan is disabled setting default day.
 			// this.selectedDay = this.days[0];
 			this.setDefaultValWhenDisabled();
+		}
+		if (this.isFirstVisit) {
+			this.metricService.sendSetScanSchedule(taskParam, response);
 		}
 
 		if (this.IsSmartPerformanceFirstRun === true && this.isSubscribed === true) {
@@ -353,6 +364,8 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled, false);
 			this.commonService.removeLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency);
+			const taskParam = this.disableScanMetricParam;
+			this.metricService.sendSetScanSchedule(taskParam, 'false');
 		} else {
 			this.IsScheduleScanEnabled = this.commonService.getLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled);
 			if (!this.IsScheduleScanEnabled) {
@@ -364,6 +377,8 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 				this.scheduleScan(this.requestScanData);
 				this.commonService.setLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled, true);
 				this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, actualScanFrequency[this.frequencyValue]);
+				const taskParam = this.enableScanMetricParam + actualScanFrequency[this.frequencyValue];
+				this.metricService.sendSetScanSchedule(taskParam, actualScanFrequency[this.frequencyValue]);
 			}
 		}
 	}

@@ -4187,6 +4187,7 @@
         },
         "scanFinishedHeader": {
             "titleSuccess": "スキャンが完了しました。お使いのデバイスはすべてのテストに合格しました。",
+			"titleError": "Your device failed {{numberTestsFailed}} test(s).",
             "titleErrorPlural": "スキャンが完了しました。お使いのデバイスは {{numberTestsFailed}} 個のテストで不合格になりました。",
             "titleErrorSingular": "スキャンが完了しました。お使いのデバイスは 1 個のテストで不合格になりました。",
             "frcSuccessDescription": "この最終結果コードは、このスキャンで問題が検出されなかったことを示しています。いずれかのテストで警告または適用外のメッセージが表示されても、問題が見つかったという意味ではありません。Lenovo サポート担当者からこのテストの実行を求められた場合は、このコードを証明として使用してください。 それ以外の場合は、現時点ではお客様の側で何もする必要はありません。まだ問題が発生していると思われる場合は、Lenovo サポートにお問い合わせください。",
@@ -4326,7 +4327,7 @@
             "descriptionbeta1": "参加して全機能を試すことができます。",
             "descriptionNonSubscriber": "Lenovo Smart Performance Service に登録されていません。PC のみをスキャンできます。今すぐ登録して、PC 保護とスムーズな動作のメリットを最大限に活用しましょう。",
             "processStatus": "処理中です",
-            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance,you can renew the subscription by clicking the \"Manage Subscription \" link to resume full protection for your device.",
+            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance, you can renew the subscription by clicking the \"Manage Subscription\" link to resume full protection for your device.",
             "expiredStatus": "EXPIRED",
             "expiredNote": "Your subscription will expire in",
             "day": "day",
@@ -4800,7 +4801,7 @@
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
             "backToHome": "ホームに戻る",
-            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance,if you would like to resume the \"Scan and Fix\" feature,please press the \"renew and fix\" button down below to renew your subscription.",
+            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance, if you would like to resume the \"Scan and Fix\" feature, please press the \"renew and fix\" button down below to renew your subscription.",
             "renewAndFix": "Renew & Fix"
         },
         "subscriberScanHomePage": {

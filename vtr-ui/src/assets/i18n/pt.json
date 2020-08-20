@@ -3677,7 +3677,7 @@
             "SMART_STATUS_TEST": "Teste de estado do SMART",
             "SMART_STATUS_TEST_DESCRIPTION": "Verifica o estado comunicado por SMART para identificar rapidamente se um dispositivo está ou não avariado",
             "SPEC_VERSION": "Versão de Especificação",
-            "STORAGE": "Memória",
+            "STORAGE": "Armazenamento",
             "SUPPORTED_STANDARDS": "Normas Suportadas",
             "TARGETED_READ_TEST": "Teste de Leitura Direcionada",
             "TARGETED_READ_TEST_DESCRIPTION": "Verifica os setores próximos de setores danificados comunicados nos registos do SMART",
@@ -4187,6 +4187,7 @@
         },
         "scanFinishedHeader": {
             "titleSuccess": "Análise concluída. O seu dispositivo passou todos os testes.",
+            "titleError": "Your device failed {{numberTestsFailed}} test(s).",
             "titleErrorPlural": "Análise concluída. O seu dispositivo falhou {{numberTestsFailed}} testes.",
             "titleErrorSingular": "Análise concluída. O seu dispositivo falhou 1 teste.",
             "frcSuccessDescription": "Este código do resultado final indica que não foram encontrados problemas nesta verificação. Se algum dos testes apresentar um aviso ou mensagem não aplicável, tal não significa que foi encontrado um problema. Se o agente de suporte da Lenovo solicitou que executasse este teste, utilize este código como prova; caso contrário, não é necessária qualquer ação da sua parte neste momento. Se continuar a deparar-se com problemas, contacte o Suporte da Lenovo.",
@@ -4326,7 +4327,7 @@
             "descriptionbeta1": "Convidamo-lo a participar e a experimentar a funcionalidade completa.",
             "descriptionNonSubscriber": "Não está subscrito no Lenovo Smart Performance Service. Só poderá analisar o seu PC. Subscreva agora para beneficiar de todas as vantagens de manter o seu PC protegido e a funcionar fluidamente.",
             "processStatus": "A PROCESSAR",
-            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance,you can renew the subscription by clicking the \"Manage Subscription \" link to resume full protection for your device.",
+            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance, you can renew the subscription by clicking the \"Manage Subscription\" link to resume full protection for your device.",
             "expiredStatus": "EXPIRED",
             "expiredNote": "Your subscription will expire in",
             "day": "day",
@@ -4800,7 +4801,7 @@
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
             "backToHome": "Voltar ao início",
-            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance,if you would like to resume the \"Scan and Fix\" feature,please press the \"renew and fix\" button down below to renew your subscription.",
+            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance, if you would like to resume the \"Scan and Fix\" feature, please press the \"renew and fix\" button down below to renew your subscription.",
             "renewAndFix": "Renew & Fix"
         },
         "subscriberScanHomePage": {

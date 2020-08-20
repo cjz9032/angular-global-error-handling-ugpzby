@@ -53,11 +53,26 @@ export class ContentDisplayDetection {
 			return;
 		}
 
-		const rec = taskContext.container.nativeElement.getBoundingClientRect();
+		let contentCard;
+		if (typeof taskContext.container === 'function') {
+			contentCard = taskContext.container();
+		} else {
+			contentCard = taskContext.container;
+		}
+
+		if (!contentCard) {
+			return;
+		}
+
+		const rec = contentCard.nativeElement.getBoundingClientRect();
 		const vp = {
 			width: window.innerWidth,
 			height: window.innerHeight
 		};
+
+		if (rec.bottom - rec.top === 0) {
+			return;
+		}
 
 		if (!taskContext.status.top) {
 			taskContext.status.top = rec.top >= 0 && rec.top < vp.height;

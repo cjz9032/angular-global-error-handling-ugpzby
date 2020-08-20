@@ -4187,6 +4187,7 @@
         },
         "scanFinishedHeader": {
             "titleSuccess": "扫描已完成。设备已通过所有测试。",
+			"titleError": "Your device failed {{numberTestsFailed}} test(s).",
             "titleErrorPlural": "扫描已完成。设备未通过 {{numberTestsFailed}} 次测试。",
             "titleErrorSingular": "扫描已完成。设备未通过 1 次测试。",
             "frcSuccessDescription": "此最终结果代码表示此次扫描未发现问题。如果任何测试显示警告或“不适用”消息，其并不表示发现了问题。如果 Lenovo 支持代理人员让您运行此测试，请使用此代码作为凭据；否则，此时您无需执行任何操作。如果您仍然有问题，请联系 Lenovo 支持人员。",
@@ -4326,7 +4327,7 @@
             "descriptionbeta1": "欢迎您加入并尝试完整功能。",
             "descriptionNonSubscriber": "您尚未订阅Smart Performance服务，所以您现阶段将只能扫描您的电脑，立即订阅，则可一键修复计算机的所有性能和安全问题。",
             "processStatus": "处理中",
-            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance,you can renew the subscription by clicking the \"Manage Subscription \" link to resume full protection for your device.",
+            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance, you can renew the subscription by clicking the \"Manage Subscription\" link to resume full protection for your device.",
             "expiredStatus": "EXPIRED",
             "expiredNote": "Your subscription will expire in",
             "day": "day",
@@ -4800,7 +4801,7 @@
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
             "backToHome": "返回主屏幕",
-            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance,if you would like to resume the \"Scan and Fix\" feature,please press the \"renew and fix\" button down below to renew your subscription.",
+            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance, if you would like to resume the \"Scan and Fix\" feature, please press the \"renew and fix\" button down below to renew your subscription.",
             "renewAndFix": "Renew & Fix"
         },
         "subscriberScanHomePage": {

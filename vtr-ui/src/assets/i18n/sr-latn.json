@@ -4187,6 +4187,7 @@
         },
         "scanFinishedHeader": {
             "titleSuccess": "Skeniranje je dovršeno. Uređaj je prošao sve testove.",
+			"titleError": "Your device failed {{numberTestsFailed}} test(s).",
             "titleErrorPlural": "Skeniranje je dovršeno. Vaš uređaj nije prošao {{numberTestsFailed}} testa.",
             "titleErrorSingular": "Skeniranje je dovršeno. Vaš uređaj nije prošao 1 test.",
             "frcSuccessDescription": "Ovaj konačni povratni kôd ukazuje da nisu pronađeni problemi u ovom skeniranju. Ukoliko neki test prikazuje upozorenje ili poruku da nešto nije primenljivo, to ne znači da je pronađen problem. Ukoliko agent Lenovo podrške zatraži od vas da pokrenete ovaj test, koristite ovaj kôd kao dokaz; u suprotnom nije potrebno ništa da uradite u ovom trenutku. Ako smatrate da i dalje imate problema, kontaktirajte Lenovo podršku.",
@@ -4326,7 +4327,7 @@
             "descriptionbeta1": "Možete da se pridružite i isprobate celokupnu funkciju.",
             "descriptionNonSubscriber": "Niste pretplaćeni na Lenovo uslugu Smart Performance. Moći ćete samo da skenirate svoj računar. Pretplatite se odmah kako biste iskoristili sve prednosti zaštite i neometanog rada računara.",
             "processStatus": "OBRADA",
-            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance,you can renew the subscription by clicking the \"Manage Subscription \" link to resume full protection for your device.",
+            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance, you can renew the subscription by clicking the \"Manage Subscription\" link to resume full protection for your device.",
             "expiredStatus": "EXPIRED",
             "expiredNote": "Your subscription will expire in",
             "day": "day",
@@ -4800,7 +4801,7 @@
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
             "backToHome": "Nazad na početnu stranicu",
-            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance,if you would like to resume the \"Scan and Fix\" feature,please press the \"renew and fix\" button down below to renew your subscription.",
+            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance, if you would like to resume the \"Scan and Fix\" feature, please press the \"renew and fix\" button down below to renew your subscription.",
             "renewAndFix": "Renew & Fix"
         },
         "subscriberScanHomePage": {

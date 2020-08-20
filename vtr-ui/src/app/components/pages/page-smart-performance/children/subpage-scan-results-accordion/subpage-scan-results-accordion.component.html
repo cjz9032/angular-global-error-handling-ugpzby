@@ -5,11 +5,11 @@
                 <ngb-panel id="Tune up performance">
                     <ng-template ngbPanelTitle>
                         <div class="d-flex justify-content-between align-items-center" accordion-heading>
-                            <div class="heading">
+                            <div class="heading" id="smart-performance-scan-result-tunPC-title" role="text">
                                 <div class="icomoon icomoon-tune-pc"></div>
                                 <h2>{{'smartPerformance.tunePCPerformance.title' |translate }}</h2>
                             </div>
-                            <div class="status-text float-right pull-right">
+                            <div class="status-text float-right pull-right" id="smart-performance-scan-result-tunPC-issue-count" role="text">
                                 <p>
                                     <b>{{'smartPerformance.scanCompletePage.tuneIssueCount' |translate:{tune: tune } }}</b>
                                     {{'smartPerformance.scanCompletePage.issues' |translate}}
@@ -30,13 +30,13 @@
                                         <div
                                             class="icon-box d-flex justify-content-center align-items-center align-items-center">
                                             <div class="icomoon icomoon-e-junk"></div>
-                                            <p
+                                            <p id="smart-performance-scan-result-tunPC-tabSet1-tab1" role="text"
                                                 title="{{'smartPerformance.tunePCPerformance.tabSet1.tab1' |translate }}">
                                                 {{'smartPerformance.tunePCPerformance.tabSet1.tab1' |translate }}</p>
                                         </div>
                                     </ng-template>
                                     <ng-template ngbTabContent>
-                                        <p class="py-4 scanned-area">
+                                        <p class="py-4 scanned-area" id="smart-performance-scan-result-tunPC-tabSet1-tab1-scanned-areas" role="text">
                                             {{'smartPerformance.scanCompletePage.scannedAreas' |translate }}
                                         </p>
                                         <ul class="scanned-list"
@@ -48,7 +48,7 @@
                                                             <div class="row">
                                                                 <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
-                                                                <p class="col">
+                                                                <p class="col" id="smart-performance-scan-result-tunPC-tabSet1-tab1-{{item.secondText}}" role="text">
                                                                     {{item.firstText}}
                                                                     <!-- {{'smartPerformance.scanCompletePage.tunepc.accumulatedjunkscannedareas.area1' |translate}} -->
                                                                 </p>
@@ -58,7 +58,7 @@
                                                             <div class="row">
                                                                 <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
-                                                                <p class="col">
+                                                                <p class="col" id="smart-performance-scan-result-tunPC-tabSet1-tab1-{{item.secondText}}" role="text">
                                                                     {{item.secondText}}
                                                                     <!-- {{'smartPerformance.scanCompletePage.tunepc.accumulatedjunkscannedareas.area2' |translate}} -->
                                                                 </p>
@@ -75,13 +75,13 @@
                                         <div
                                             class="icon-box d-flex justify-content-center align-items-center align-items-center">
                                             <div class="icomoon icomoon-usibilityIssue"></div>
-                                            <p
+                                            <p id="smart-performance-scan-result-tunPC-tabSet1-tab2" role="text"
                                                 title="{{'smartPerformance.tunePCPerformance.tabSet1.tab2' |translate }}">
                                                 {{'smartPerformance.tunePCPerformance.tabSet1.tab2' |translate }}</p>
                                         </div>
                                     </ng-template>
                                     <ng-template ngbTabContent>
-                                        <p class="py-4 scanned-area">
+                                        <p class="py-4 scanned-area" id="smart-performance-scan-result-tunPC-tabSet1-tab2-scanned-areas" role="text">
                                             {{'smartPerformance.scanCompletePage.scannedAreas' |translate }}
                                         </p>
                                         <ul class="scanned-list"
@@ -93,7 +93,7 @@
                                                             <div class="row ">
                                                                 <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
-                                                                <p class="col">
+                                                                <p class="col" id="smart-performance-scan-result-tunPC-tabSet1-tab2-{{item.firstText}}" role="text">
                                                                     {{item.firstText}}
                                                                     <!-- {{'smartPerformance.scanCompletePage.tunepc.usabilityissuesscannedareas.area1' |translate}} -->
                                                                 </p>
@@ -103,7 +103,7 @@
                                                             <div class="row">
                                                                 <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
-                                                                <p class="col">
+                                                                <p class="col" id="smart-performance-scan-result-tunPC-tabSet1-tab2-{{item.secondText}}" role="text">
                                                                     {{item.secondText}}
                                                                     <!-- {{'smartPerformance.scanCompletePage.tunepc.usabilityissuesscannedareas.area2' |translate}} -->
                                                                 </p>
@@ -120,13 +120,13 @@
                                         <div class="icon-box d-flex justify-content-center align-items-center">
                                             <div class="icomoon icomoon-windows">
                                             </div>
-                                            <p
+                                            <p id="smart-performance-scan-result-tunPC-tabSet1-tab3" role="text"
                                                 title="{{'smartPerformance.tunePCPerformance.tabSet1.tab3' |translate }}">
                                                 {{'smartPerformance.tunePCPerformance.tabSet1.tab3' |translate }}</p>
                                         </div>
                                     </ng-template>
                                     <ng-template ngbTabContent>
-                                        <p class="py-4 scanned-area">
+                                        <p class="py-4 scanned-area" id="smart-performance-scan-result-tunPC-tabSet1-tab3-scanned-areas" role="text">
                                             {{'smartPerformance.scanCompletePage.scannedAreas' |translate }}
                                         </p>
                                         <ul class="scanned-list"
@@ -138,7 +138,7 @@
                                                             <div class="row ">
                                                                 <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
-                                                                <p class="col">
+                                                                <p class="col" id="smart-performance-scan-result-tunPC-tabSet1-tab3-{{item.firstText}}" role="text">
                                                                     {{item.firstText}}
                                                                     <!-- {{'smartPerformance.scanCompletePage.tunepc.windowssettingsscannedareas.area1' |translate}} -->
                                                                 </p>
@@ -148,7 +148,7 @@
                                                             <div class="row">
                                                                 <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
-                                                                <p class="col">
+                                                                <p class="col" id="smart-performance-scan-result-tunPC-tabSet1-tab3-{{item.secondText}}" role="text">
                                                                     {{item.secondText}}
                                                                     <!-- {{'smartPerformance.scanCompletePage.tunepc.windowssettingsscannedareas.area2' |translate}} -->
                                                                 </p>
@@ -165,13 +165,13 @@
                                         <div class="icon-box d-flex justify-content-center align-items-center">
                                             <div class="icomoon icomoon-annoying-adware">
                                             </div>
-                                            <p
+                                            <p id="smart-performance-scan-result-tunPC-tabSet1-tab4" role="text"
                                                 title="{{'smartPerformance.tunePCPerformance.tabSet1.tab4' |translate }}">
                                                 {{'smartPerformance.tunePCPerformance.tabSet1.tab4' |translate }}</p>
                                         </div>
                                     </ng-template>
                                     <ng-template ngbTabContent>
-                                        <p class="py-4 scanned-area">
+                                        <p class="py-4 scanned-area" id="smart-performance-scan-result-tunPC-tabSet1-tab4-scanned-areas" role="text">
                                             {{'smartPerformance.scanCompletePage.scannedAreas' |translate }}
                                         </p>
                                         <ul class="scanned-list"
@@ -183,7 +183,7 @@
                                                             <div class="row ">
                                                                 <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
-                                                                <p class="col">
+                                                                <p class="col" id="smart-performance-scan-result-tunPC-tabSet1-tab4-{{item.firstText}}" role="text">
                                                                     {{item.firstText}}
                                                                     <!-- {{'smartPerformance.scanCompletePage.tunepc.systemerrorsscannedareas.area1' |translate}} -->
                                                                 </p>
@@ -193,7 +193,7 @@
                                                             <div class="row">
                                                                 <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
-                                                                <p class="col">
+                                                                <p class="col" id="smart-performance-scan-result-tunPC-tabSet1-tab4-{{item.secondText}}" role="text">
                                                                     {{item.secondText}}
                                                                     <!-- {{'smartPerformance.scanCompletePage.tunepc.systemerrorsscannedareas.area2' |translate}} -->
                                                                 </p>
@@ -210,13 +210,13 @@
                                         <div class="icon-box d-flex justify-content-center align-items-center">
                                             <div class="icomoon icomoon-registery-errors">
                                             </div>
-                                            <p
+                                            <p id="smart-performance-scan-result-tunPC-tabSet1-tab5" role="text"
                                                 title="{{'smartPerformance.tunePCPerformance.tabSet1.tab5' |translate }}">
                                                 {{'smartPerformance.tunePCPerformance.tabSet1.tab5' |translate }}</p>
                                         </div>
                                     </ng-template>
                                     <ng-template ngbTabContent>
-                                        <p class="py-4 scanned-area">
+                                        <p class="py-4 scanned-area" id="smart-performance-scan-result-tunPC-tabSet1-tab5-scanned-areas" role="text">
                                             {{'smartPerformance.scanCompletePage.scannedAreas' |translate }}
                                         </p>
                                         <ul class="scanned-list"
@@ -228,7 +228,7 @@
                                                             <div class="row ">
                                                                 <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
-                                                                <p class="col">
+                                                                <p class="col" id="smart-performance-scan-result-tunPC-tabSet1-tab5-{{item.firstText}}" role="text">
                                                                     {{item.firstText}}
                                                                     <!-- {{'smartPerformance.scanCompletePage.tunepc.registryerrorsscannedareas.area1' |translate}} -->
                                                                 </p>
@@ -238,7 +238,7 @@
                                                             <div class="row">
                                                                 <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
-                                                                <p class="col">
+                                                                <p class="col" id="smart-performance-scan-result-tunPC-tabSet1-tab5-{{item.secondText}}" role="text">
                                                                     {{item.secondText}}
                                                                     <!-- {{'smartPerformance.scanCompletePage.tunepc.registryerrorsscannedareas.area2' |translate}} -->
                                                                 </p>
@@ -257,14 +257,14 @@
                 <ngb-panel id="Internet performance">
                     <ng-template ngbPanelTitle>
                         <div class="d-flex justify-content-between align-items-center" accordion-heading>
-                            <div class="heading">
+                            <div class="heading" id="smart-performance-scan-result-boost-extra-title" role="title">
                                 <div class="icomoon icomoon-boost-internet">
                                 </div>
                                 <h2>{{'smartPerformance.boostInternetPerformance.extraTitle' |translate }}
                                 </h2>
                             </div>
                             <div class="status-text float-right pull-right">
-                                <p>
+                                <p id="smart-performance-scan-result-boost-issue-count" role="text">
                                     <b>{{'smartPerformance.scanCompletePage.boostIssueCount' |translate:{boost: boost } }}</b>
                                     {{'smartPerformance.scanCompletePage.issues' |translate }}
                                     <span>
@@ -283,14 +283,14 @@
                                     <ng-template ngbTabTitle>
                                         <div class="icon-box d-flex justify-content-center align-items-center">
                                             <div class="icomoon icomoon-e-junk"></div>
-                                            <p
+                                            <p id="smart-performance-scan-result-boost-tabSet1-tab1" role="text"
                                                 title="{{'smartPerformance.boostInternetPerformance.tabSet1.tab1' |translate }}">
                                                 {{'smartPerformance.boostInternetPerformance.tabSet1.tab1' |translate }}
                                             </p>
                                         </div>
                                     </ng-template>
                                     <ng-template ngbTabContent>
-                                        <p class="py-4 scanned-area">
+                                        <p class="py-4 scanned-area" id="smart-performance-scan-result-boost-tabSet1-tab1-scanned-areas" role="text">
                                             {{'smartPerformance.scanCompletePage.scannedAreas' |translate }}
                                         </p>
                                         <ul class="scanned-list"
@@ -302,7 +302,7 @@
                                                             <div class="row">
                                                                 <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
-                                                                <p class="col">
+                                                                <p class="col" id="smart-performance-scan-result-boost-tabSet1-tab1-{{item.firstText}}" role="text">
                                                                     {{item.firstText}}
                                                                     <!-- {{'smartPerformance.scanCompletePage.internetperformance.networksettingsscannedareas.area1' |translate}} -->
                                                                 </p>
@@ -312,7 +312,7 @@
                                                             <div class="row">
                                                                 <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
-                                                                <p class="col">
+                                                                <p class="col" id="smart-performance-scan-result-boost-tabSet1-tab1-{{item.secondText}}" role="text">
                                                                     {{item.secondText}}
                                                                     <!-- {{'smartPerformance.scanCompletePage.internetperformance.networksettingsscannedareas.area2' |translate}} -->
                                                                 </p>
@@ -328,14 +328,14 @@
                                     <ng-template ngbTabTitle>
                                         <div class="icon-box d-flex justify-content-center align-items-center">
                                             <div class="icomoon icomoon-network-settings"></div>
-                                            <p
+                                            <p id="smart-performance-scan-result-boost-tabSet1-tab2" role="text"
                                                 title="{{'smartPerformance.boostInternetPerformance.tabSet1.tab2' |translate }}">
                                                 {{'smartPerformance.boostInternetPerformance.tabSet1.tab2' |translate }}
                                             </p>
                                         </div>
                                     </ng-template>
                                     <ng-template ngbTabContent>
-                                        <p class="py-4 scanned-area">
+                                        <p class="py-4 scanned-area" id="smart-performance-scan-result-boost-tabSet1-tab2-scanned-areas" role="text">
                                             {{'smartPerformance.scanCompletePage.scannedAreas' |translate }}
                                         </p>
                                         <ul class="scanned-list"
@@ -347,7 +347,7 @@
                                                             <div class="row ">
                                                                 <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
-                                                                <p class="col">
+                                                                <p class="col" id="smart-performance-scan-result-boost-tabSet1-tab2-{{item.firstText}}" role="text">
                                                                     {{item.firstText}}
                                                                     <!-- {{'smartPerformance.scanCompletePage.internetperformance.browsersettingsscannedareas.area1' |translate}} -->
                                                                 </p>
@@ -357,7 +357,7 @@
                                                             <div class="row">
                                                                 <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
-                                                                <p class="col">
+                                                                <p class="col" id="smart-performance-scan-result-boost-tabSet1-tab2-{{item.secondText}}" role="text">
                                                                     {{item.secondText}}
                                                                     <!-- {{'smartPerformance.scanCompletePage.internetperformance.browsersettingsscannedareas.area2' |translate}} -->
                                                                 </p>
@@ -373,14 +373,14 @@
                                     <ng-template ngbTabTitle>
                                         <div class="icon-box d-flex justify-content-center align-items-center">
                                             <div class="icomoon icomoon-browser-settings"></div>
-                                            <p
+                                            <p id="smart-performance-scan-result-boost-tabSet1-tab3" role="text"
                                                 title="{{'smartPerformance.boostInternetPerformance.tabSet1.tab3' |translate }}">
                                                 {{'smartPerformance.boostInternetPerformance.tabSet1.tab3' |translate }}
                                             </p>
                                         </div>
                                     </ng-template>
                                     <ng-template ngbTabContent>
-                                        <p class="py-4 scanned-area">
+                                        <p class="py-4 scanned-area" id="smart-performance-scan-result-boost-tabSet1-tab3-scanned-areas" role="text">
                                             {{'smartPerformance.scanCompletePage.scannedAreas' |translate }}
                                         </p>
                                         <ul class="scanned-list"
@@ -392,7 +392,7 @@
                                                             <div class="row">
                                                                 <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
-                                                                <p class="col">
+                                                                <p class="col" id="smart-performance-scan-result-boost-tabSet1-tab3-{{item.firstText}}" role="text">
                                                                     {{item.firstText}}
                                                                     <!-- {{'smartPerformance.scanCompletePage.internetperformance.browsersecurityscannedareas.area1' |translate}} -->
                                                                 </p>
@@ -402,7 +402,7 @@
                                                             <div class="row">
                                                                 <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
-                                                                <p class="col">
+                                                                <p class="col" id="smart-performance-scan-result-boost-tabSet1-tab3-{{item.secondText}}" role="text">
                                                                     {{item.secondText}}
                                                                     <!-- {{'smartPerformance.scanCompletePage.internetperformance.browsersecurityscannedareas.area2' |translate}} -->
                                                                 </p>
@@ -418,14 +418,14 @@
                                     <ng-template ngbTabTitle>
                                         <div class="icon-box d-flex justify-content-center align-items-center">
                                             <div class="icomoon icomoon-browser-security"></div>
-                                            <p
+                                            <p id="smart-performance-scan-result-boost-tabSet1-tab4" role="text"
                                                 title="{{'smartPerformance.boostInternetPerformance.tabSet1.tab4' |translate }}">
                                                 {{'smartPerformance.boostInternetPerformance.tabSet1.tab4' |translate }}
                                             </p>
                                         </div>
                                     </ng-template>
                                     <ng-template ngbTabContent>
-                                        <p class="py-4 scanned-area">
+                                        <p class="py-4 scanned-area" id="smart-performance-scan-result-boost-tabSet1-tab4-scanned-areas" role="text">
                                             {{'smartPerformance.scanCompletePage.scannedAreas' |translate }}
                                         </p>
                                         <ul class="scanned-list"
@@ -437,7 +437,7 @@
                                                             <div class="row ">
                                                                 <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
-                                                                <p class="col">
+                                                                <p class="col" id="smart-performance-scan-result-boost-tabSet1-tab4-{{item.firstText}}" role="text">
                                                                     {{item.firstText}}
                                                                     <!-- {{'smartPerformance.scanCompletePage.internetperformance.wifiperformancescannedareas.area1' |translate}} -->
                                                                 </p>
@@ -447,7 +447,7 @@
                                                             <div class="row">
                                                                 <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
-                                                                <p class="col">
+                                                                <p class="col" id="smart-performance-scan-result-boost-tabSet1-tab4-{{item.secondText}}" role="text">
                                                                     {{item.secondText}}
                                                                     <!-- {{'smartPerformance.scanCompletePage.internetperformance.wifiperformancescannedareas.area2' |translate}} -->
                                                                 </p>
@@ -463,14 +463,14 @@
                                     <ng-template ngbTabTitle>
                                         <div class="icon-box d-flex justify-content-center align-items-center">
                                             <div class="icomoon icomoon-wifi"></div>
-                                            <p
+                                            <p id="smart-performance-scan-result-boost-tabSet1-tab5" role="text"
                                                 title="{{'smartPerformance.boostInternetPerformance.tabSet1.tab5' |translate }}">
                                                 {{'smartPerformance.boostInternetPerformance.tabSet1.tab5' |translate }}
                                             </p>
                                         </div>
                                     </ng-template>
                                     <ng-template ngbTabContent>
-                                        <p class="py-4 scanned-area">
+                                        <p class="py-4 scanned-area" id="smart-performance-scan-result-boost-tabSet1-tab5-scanned-areas" role="text">
                                             {{'smartPerformance.scanCompletePage.scannedAreas' |translate }}
                                         </p>
                                         <ul class="scanned-list"
@@ -482,7 +482,7 @@
                                                             <div class="row">
                                                                 <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
-                                                                <p class="col">
+                                                                <p class="col" id="smart-performance-scan-result-boost-tabSet1-tab5-{{item.firstText}}" role="text">
                                                                     {{item.firstText}}
                                                                     <!-- {{'smartPerformance.scanCompletePage.internetperformance.ejunkscannedareas.area1' |translate}} -->
                                                                 </p>
@@ -492,7 +492,7 @@
                                                             <div class="row">
                                                                 <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
-                                                                <p class="col">
+                                                                <p class="col" id="smart-performance-scan-result-boost-tabSet1-tab5-{{item.secondText}}" role="text">
                                                                     {{item.secondText}}
                                                                     <!-- {{'smartPerformance.scanCompletePage.internetperformance.ejunkscannedareas.area2' |translate}} -->
                                                                 </p>
@@ -514,11 +514,11 @@
                             <div class="heading">
                                 <div class="icomoon icomoon-malware">
                                 </div>
-                                <h2>{{'smartPerformance.malwareSecurity.title' |translate }}
+                                <h2 id="smart-performance-scan-result-malware-title">{{'smartPerformance.malwareSecurity.title' |translate }}
                                 </h2>
                             </div>
                             <div class="status-text float-right pull-right">
-                                <p>
+                                <p id="smart-performance-scan-result-malware-issue-count" role="text">
                                     <b>{{'smartPerformance.scanCompletePage.secureIssueCount' |translate:{secure: secure} }}</b>
                                     {{'smartPerformance.scanCompletePage.issues' |translate }}
                                     <span>
@@ -536,12 +536,13 @@
                                     <ng-template ngbTabTitle>
                                         <div class="icon-box d-flex justify-content-center align-items-center">
                                             <div class="icomoon icomoon-malware-scan"></div>
-                                            <p title="{{'smartPerformance.malwareSecurity.tabSet1.tab1' |translate }}">
+											<p id="smart-performance-scan-result-malware-tabSet1-tab1" role="text"
+											title="{{'smartPerformance.malwareSecurity.tabSet1.tab1' |translate }}">
                                                 {{'smartPerformance.malwareSecurity.tabSet1.tab1' |translate }}</p>
                                         </div>
                                     </ng-template>
                                     <ng-template ngbTabContent>
-                                        <p class="py-4 scanned-area">
+                                        <p class="py-4 scanned-area" id="smart-performance-scan-result-malware-tabSet1-tab1-scanned-areas" role="text">
                                             {{'smartPerformance.scanCompletePage.scannedAreas' |translate }}
                                         </p>
                                         <ul class="scanned-list"
@@ -553,7 +554,7 @@
                                                             <div class="row ">
                                                                 <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
-                                                                <p class="col">
+                                                                <p class="col" id="smart-performance-scan-result-malware-tabSet1-tab1-{{item.firstText}}" role="text">
                                                                     {{item.firstText}}
                                                                     <!-- {{'smartPerformance.scanCompletePage.malwaresecurity.malwarescanscannedareas.area1' |translate}} -->
                                                                 </p>
@@ -563,7 +564,7 @@
                                                             <div class="row">
                                                                 <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
-                                                                <p class="col">
+                                                                <p class="col" id="smart-performance-scan-result-malware-tabSet1-tab1-{{item.secondText}}" role="text">
                                                                     {{item.secondText}}
                                                                     <!-- {{'smartPerformance.scanCompletePage.malwaresecurity.malwarescanscannedareas.area2' |translate}} -->
                                                                 </p>
@@ -579,12 +580,13 @@
                                     <ng-template ngbTabTitle>
                                         <div class="icon-box d-flex justify-content-center align-items-center">
                                             <div class="icomoon icomoon-zero-day"></div>
-                                            <p title="{{'smartPerformance.malwareSecurity.tabSet1.tab2' |translate }}">
+											<p id="smart-performance-scan-result-malware-tabSet1-tab2" role="text"
+											title="{{'smartPerformance.malwareSecurity.tabSet1.tab2' |translate }}">
                                                 {{'smartPerformance.malwareSecurity.tabSet1.tab2' |translate }}</p>
                                         </div>
                                     </ng-template>
                                     <ng-template ngbTabContent>
-                                        <p class="py-4 scanned-area">
+                                        <p class="py-4 scanned-area" id="smart-performance-scan-result-malware-tabSet1-tab2-scanned-area" role="text">
                                             {{'smartPerformance.scanCompletePage.scannedAreas' |translate }}
                                         </p>
                                         <ul class="scanned-list"
@@ -596,7 +598,7 @@
                                                             <div class="row ">
                                                                 <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
-                                                                <p class="col">
+                                                                <p class="col" id="smart-performance-scan-result-malware-tabSet1-tab2-{{item.firstText}}" role="text">
                                                                     {{item.firstText}}
                                                                     <!-- {{'smartPerformance.scanCompletePage.malwaresecurity.zerodayinfectionsscannedareas.area1' |translate}} -->
                                                                 </p>
@@ -606,7 +608,7 @@
                                                             <div class="row">
                                                                 <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
-                                                                <p class="col">
+                                                                <p class="col" id="smart-performance-scan-result-malware-tabSet1-tab2-{{item.secondText}}" role="text">
                                                                     {{item.secondText}}
                                                                     <!-- {{'smartPerformance.scanCompletePage.malwaresecurity.zerodayinfectionsscannedareas.area2' |translate}} -->
                                                                 </p>
@@ -622,12 +624,13 @@
                                     <ng-template ngbTabTitle>
                                         <div class="icon-box d-flex justify-content-center align-items-center">
                                             <div class="icomoon icomoon-errant-program"></div>
-                                            <p title="{{'smartPerformance.malwareSecurity.tabSet1.tab3' |translate }}">
+											<p id="smart-performance-scan-result-malware-tabSet1-tab3" role="text"
+												title="{{'smartPerformance.malwareSecurity.tabSet1.tab3' |translate }}">
                                                 {{'smartPerformance.malwareSecurity.tabSet1.tab3' |translate }}</p>
                                         </div>
                                     </ng-template>
                                     <ng-template ngbTabContent>
-                                        <p class="py-4 scanned-area">
+                                        <p class="py-4 scanned-area" id="smart-performance-scan-result-malware-tabSet1-tab3-scanned-areas" role="text">
                                             {{'smartPerformance.scanCompletePage.scannedAreas' |translate }}
                                         </p>
                                         <ul class="scanned-list"
@@ -639,7 +642,7 @@
                                                             <div class="row">
                                                                 <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
-                                                                <p class="col">
+                                                                <p class="col" id="smart-performance-scan-result-malware-tabSet1-tab3-{{item.firstText}}" role="text">
                                                                     {{item.firstText}}
                                                                     <!-- {{'smartPerformance.scanCompletePage.malwaresecurity.securitysettingsscannedareas.area1' |translate}} -->
                                                                 </p>
@@ -649,7 +652,7 @@
                                                             <div class="row">
                                                                 <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
-                                                                <p class="col">
+                                                                <p class="col" id="smart-performance-scan-result-malware-tabSet1-tab3-{{item.secondText}}" role="text">
                                                                     {{item.secondText}}
                                                                     <!-- {{'smartPerformance.scanCompletePage.malwaresecurity.securitysettingsscannedareas.area2' |translate}} -->
                                                                 </p>
@@ -665,12 +668,13 @@
                                     <ng-template ngbTabTitle>
                                         <div class="icon-box d-flex justify-content-center align-items-center">
                                             <div class="icon icon-uninstall-375971"></div>
-                                            <p title="{{'smartPerformance.malwareSecurity.tabSet1.tab4' |translate }}">
+											<p id="smart-performance-scan-result-malware-tabSet1-tab4" role="text"
+												title="{{'smartPerformance.malwareSecurity.tabSet1.tab4' |translate }}">
                                                 {{'smartPerformance.malwareSecurity.tabSet1.tab4' |translate }}</p>
                                         </div>
                                     </ng-template>
                                     <ng-template ngbTabContent>
-                                        <p class="py-4 scanned-area">
+                                        <p class="py-4 scanned-area" id="smart-performance-scan-result-malware-tabSet1-tab4-scanned-areas" role="text">
                                             {{'smartPerformance.scanCompletePage.scannedAreas' |translate }}
                                         </p>
                                         <ul class="scanned-list"
@@ -682,7 +686,7 @@
                                                             <div class="row">
                                                                 <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
-                                                                <p class="col">
+                                                                <p class="col" id="smart-performance-scan-result-malware-tabSet1-tab4-{{item.firstText}}" role="text">
                                                                     {{item.firstText}}
                                                                     <!-- {{'smartPerformance.scanCompletePage.malwaresecurity.errantprogramsscannedareas.area1' |translate}} -->
                                                                 </p>
@@ -692,7 +696,7 @@
                                                             <div class="row">
                                                                 <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
-                                                                <p class="col">
+                                                                <p class="col" id="smart-performance-scan-result-malware-tabSet1-tab4-{{item.secondText}}" role="text">
                                                                     {{item.secondText}}
                                                                     <!-- {{'smartPerformance.scanCompletePage.malwaresecurity.errantprogramsscannedareas.area2' |translate}} -->
                                                                 </p>
@@ -709,12 +713,13 @@
                                     <ng-template ngbTabTitle>
                                         <div class="icon-box d-flex justify-content-center align-items-center">
                                             <div class="icomoon icomoon-security-settings"></div>
-                                            <p title="{{'smartPerformance.malwareSecurity.tabSet1.tab5' |translate }}">
+											<p id="smart-performance-scan-result-malware-tabSet1-tab5" role="text"
+												title="{{'smartPerformance.malwareSecurity.tabSet1.tab5' |translate }}">
                                                 {{'smartPerformance.malwareSecurity.tabSet1.tab5' |translate }}</p>
                                         </div>
                                     </ng-template>
                                     <ng-template ngbTabContent>
-                                        <p class="py-4 scanned-area">
+                                        <p class="py-4 scanned-area" id="smart-performance-scan-result-malware-tabSet1-tab5-scanned-areas" role="text">
                                             {{'smartPerformance.scanCompletePage.scannedAreas' |translate }}
                                         </p>
                                         <ul class="scanned-list"
@@ -726,7 +731,7 @@
                                                             <div class="row">
                                                                 <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
-                                                                <p class="col">
+                                                                <p class="col" id="smart-performance-scan-result-malware-tabSet1-tab5-{{item.firstText}}" role="text">
                                                                     {{item.firstText}}
                                                                     <!-- {{'smartPerformance.scanCompletePage.malwaresecurity.annoyingadwarescannedareas.area1' |translate}} -->
                                                                 </p>
@@ -736,7 +741,7 @@
                                                             <div class="row">
                                                                 <fa-icon class="col-1" [icon]="['fal', 'check']">
                                                                 </fa-icon>
-                                                                <p class="col">
+                                                                <p class="col" id="smart-performance-scan-result-malware-tabSet1-tab5-{{item.secondText}}" role="text">
                                                                     {{item.secondText}}
                                                                     <!-- {{'smartPerformance.scanCompletePage.malwaresecurity.annoyingadwarescannedareas.area2' |translate}} -->
                                                                 </p>

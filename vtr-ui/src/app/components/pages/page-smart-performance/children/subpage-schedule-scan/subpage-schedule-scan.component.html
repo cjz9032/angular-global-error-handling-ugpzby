@@ -1,14 +1,14 @@
 <div class="scan-settings sidebar-widget">
     <div *ngIf="!isChangeSchedule">
-        <div class="title pb-3">{{'smartPerformance.scanSettings.title' |translate }}</div>
+        <div class="title pb-3" id="smart-performance-scan-setting-title" role="title">{{'smartPerformance.scanSettings.title' |translate }}</div>
         <div class="card-info">
-            <p>{{'smartPerformance.scanSettings.description' |translate }}</p>
+            <p id="smart-performance-scan-setting-desc" role="text">{{'smartPerformance.scanSettings.description' |translate }}</p>
         </div>
         <ul class="chevron-list">
             <li class="d-flex justify-content-between">
                 <div class="item d-flex">
                     <span class="icomoon icomoon-LE-Visible-to-online-trackers2x"></span>
-                    <strong title="{{'smartPerformance.scanSettings.enableScan' |translate }}">{{'smartPerformance.scanSettings.enableScan' |translate }}</strong>
+                    <strong id="smart-performance-scan-setting-enable-scan" role="title" title="{{'smartPerformance.scanSettings.enableScan' |translate }}">{{'smartPerformance.scanSettings.enableScan' |translate }}</strong>
                 </div>
                 <div class="status d-flex justify-content-end">
                     <vtr-ui-custom-switch
@@ -22,7 +22,7 @@
                         tabindex="0"
                         triggers="manual"
                         placement="auto"
-                        id=""
+                        id="smart-performance-scan-setting-tooltip"
                         attr.aria-label=""
                         role="tooltip"
                         [ngbTooltip]="'smartPerformance.scanSettings.tooltipText' |translate"
@@ -35,15 +35,16 @@
                     </fa-icon>
                 </div>
             </li>
-            <li class="d-flex justify-content-between calendar-list" 
-                [ngClass]="{'disable-list':!scanToggleValue || !isOnline}" 
+			<li class="d-flex justify-content-between calendar-list"
+				id="smart-performance-change-scan-schedule"
+                [ngClass]="{'disable-list':!scanToggleValue || !isOnline}"
                 (click)="changeScanSchedule()">
                 <div class="item d-flex w-50">
                     <span class="icomoon icomoon-calendar"></span>
-                    <strong title="{{selectedFrequency | translate}}">{{selectedFrequency | translate}}</strong>
+                    <strong id="smart-performance-selected-frequency" role="title" title="{{selectedFrequency | translate}}">{{selectedFrequency | translate}}</strong>
                 </div>
                 <div *ngIf="loading" class="loader mr-5 mt-1"></div>
-                <div *ngIf="!loading" class="status d-flex justify-content-end w-50 align-items-center" tabindex="0" (keydown.enter)="changeScanSchedule()" #scheduledScanFrequency>
+                <div *ngIf="!loading" class="status d-flex justify-content-end w-50 align-items-center" id="smart-performance-change-schedule-time" role="button" tabindex="0" (keydown.enter)="changeScanSchedule()" #scheduledScanFrequency>
                     <p class="mr-3 text-uppercase" *ngIf="(frequencyValue === 0 || frequencyValue === 1) && amPmPosition">
                         <strong *ngIf="!sliceDay">{{selectedDay | translate}}</strong> | {{ selectedMeridiem | translate }} {{scanTime.hour+':'+scanTime.min}}
                     </p>
@@ -62,18 +63,19 @@
 
 
     <div *ngIf="isChangeSchedule" class="change-scan-schedule">
-        <div class="title pb-3">{{'smartPerformance.scanSettings.changeScanTitle' |translate }}</div>
+        <div class="title pb-3" id="smart-performance-change-scan-title" role="title">{{'smartPerformance.scanSettings.changeScanTitle' |translate }}</div>
         <div class="card-info">
-            <p>{{'smartPerformance.scanSettings.changeScanDescription' |translate }}</p>
+            <p id="smart-performance-change-scan-desc" role="text">{{'smartPerformance.scanSettings.changeScanDescription' |translate }}</p>
         </div>
         <ul class="chevron-list">
             <li class="d-flex justify-content-between">
                 <div class="item d-flex">
-                    <b>{{'smartPerformance.scanSettings.frequency' | translate }}</b>
+                    <b id="smart-performance-scan-setting-frequency" role="block">{{'smartPerformance.scanSettings.frequency' | translate }}</b>
                 </div>
-                <a class="status d-flex justify-content-end" 
-                    tabindex="0" 
-                    (keydown.enter)="openScanScheduleDropDown(1)" 
+                <a class="status d-flex justify-content-end"
+					tabindex="0"
+					id="smart-performance-scan-setting-frequency-value"
+                    (keydown.enter)="openScanScheduleDropDown(1)"
                     (click)="openScanScheduleDropDown(1)" #selectedFrequencyList>
                     {{selectedFrequency | translate}}
                     <span class="ml-3">
@@ -82,11 +84,13 @@
                         <fa-icon [icon]="scheduleTab === 1 ? ['fas', 'chevron-up'] : ['fas', 'chevron-down']"></fa-icon>
                     </span>
                 </a>
-                <div *ngIf="scheduleTab === 1" class="freq-dropdown">
-                    <div *ngFor="let freq of scanFrequency;let ind=index" 
-                        class="frequency-text"
-                        [ngClass]="{'selected-frequency':frequencyValue === ind}" 
-                        tabindex="0" 
+                <div *ngIf="scheduleTab === 1" class="freq-dropdown" id="smart-performance-scan-setting-change-scan-frequency" role="dropdown">
+                    <div *ngFor="let freq of scanFrequency;let ind=index"
+						class="frequency-text"
+						id="smart-performance-change-frequency-{{freq}}"
+						role="item"
+                        [ngClass]="{'selected-frequency':frequencyValue === ind}"
+                        tabindex="0"
                         (keydown.enter)="changeScanFrequency(ind)"
                         (click)="changeScanFrequency(ind)">
                         {{freq | translate}}
@@ -96,11 +100,12 @@
 
             <li *ngIf="frequencyValue === 2" class="d-flex justify-content-between">
                 <div class="item d-flex">
-                    <b>{{'smartPerformance.scanSettings.txtDate' |translate }}</b>
+                    <b id="smart-performance-scan-setting-txtDate" role="block">{{'smartPerformance.scanSettings.txtDate' |translate }}</b>
                 </div>
-                <a class="status d-flex justify-content-end" 
-                    tabindex="0" 
-                    (keydown.enter)="openScanScheduleDropDown(3)" 
+                <a class="status d-flex justify-content-end"
+					tabindex="0"
+					id="smart-performance-open-scan-schedule-date-value"
+                    (keydown.enter)="openScanScheduleDropDown(3)"
                     (click)="openScanScheduleDropDown(3)" #selectedNumberList>
                     {{selectedNumber}}
                     <span class="ml-3">
@@ -109,11 +114,13 @@
                         <fa-icon [icon]="scheduleTab === 3 ? ['fas', 'chevron-up'] : ['fas', 'chevron-down']"></fa-icon>
                     </span>
                 </a>
-                <div *ngIf="scheduleTab === 3" class="date-dropdown">
+                <div *ngIf="scheduleTab === 3" class="date-dropdown" id="smart-performance-open-scan-schedule-select-date" role="dropdown">
                     <div *ngFor="let date of dates;let ind=index"
-                        class="date-text" 
+                        class="date-text"
                         [ngClass]="{'selected-date':dateValue === ind}"
-                        tabindex="0" 
+						tabindex="0"
+						id="smart-performance-change-scan-date-{{date}}"
+						role="list"
                         (keydown.enter)="changeScanDate(ind)"
                         (click)="changeScanDate(ind)">
                         {{date}}
@@ -123,11 +130,12 @@
 
             <li *ngIf="frequencyValue === 0 || frequencyValue === 1" class="d-flex justify-content-between">
                 <div class="item d-flex">
-                    <b>{{'smartPerformance.scanSettings.txtDay' |translate }}</b>
+                    <b id="smart-performance-scan-setting-txtDate" role="block">{{'smartPerformance.scanSettings.txtDay' |translate }}</b>
                 </div>
-                <a class="status d-flex justify-content-end" 
-                    tabindex="0" 
-                    (keydown.enter)="openScanScheduleDropDown(3)" 
+                <a class="status d-flex justify-content-end"
+					tabindex="0"
+					id="smart-performance-open-scan-schedule-date-value"
+                    (keydown.enter)="openScanScheduleDropDown(3)"
                     (click)="openScanScheduleDropDown(3)" #selectedDayList>
                     {{selectedDay | translate}}
                     <span class="ml-3">
@@ -136,11 +144,13 @@
                         <fa-icon [icon]="scheduleTab === 3 ? ['fas', 'chevron-up'] : ['fas', 'chevron-down']"></fa-icon>
                     </span>
                 </a>
-                <div *ngIf="scheduleTab === 3" class="day-dropdown">
-                    <div *ngFor="let day of days;let ind=index" 
-                        class="days-text" 
+                <div *ngIf="scheduleTab === 3" class="day-dropdown" id="smart-performance-open-scan-schedule-select-time" role="dropdown">
+                    <div *ngFor="let day of days;let ind=index"
+						class="days-text"
+						id="smart-performance-change-scan-date-{{day}}"
+						role="list"
                         [ngClass]="{'selected-day':dayValue === ind}"
-                        tabindex="0" 
+                        tabindex="0"
                         (keydown.enter)="changeScanDay(ind)"
                         (click)="changeScanDay(ind)">
                         {{day | translate}}
@@ -149,11 +159,12 @@
             </li>
             <li class="d-flex justify-content-between">
                 <div class="item d-flex">
-                    <b>{{'smartPerformance.scanSettings.txtTime' |translate }}</b>
+                    <b id="smart-performance-scan-setting-txtTime" role="block">{{'smartPerformance.scanSettings.txtTime' |translate }}</b>
                 </div>
-                <a class="status d-flex justify-content-end" 
-                    tabindex="0"  
-                    (keydown.enter)="openScanScheduleDropDown(2)" 
+                <a class="status d-flex justify-content-end"
+					tabindex="0"
+					id="smart-performance-open-scan-schedule-time-value"
+                    (keydown.enter)="openScanScheduleDropDown(2)"
                     (click)="openScanScheduleDropDown(2)" #timeBlock>
                     {{scanTime.hour}}:{{scanTime.min}} {{selectedMeridiem | translate}}
                     <span class="ml-3">
@@ -162,23 +173,27 @@
                     [icon]="['fas', 'chevron-down']"></fa-icon> -->
                     </span>
                 </a>
-                <div *ngIf="scheduleTab === 2" class="time-dropdown">
+                <div *ngIf="scheduleTab === 2" id="smart-performance-change-scan-time" role="dropdown" class="time-dropdown">
                     <div class="row">
                         <div class="col hour-block">
-                            <div *ngFor="let hour of hours;let ind=index"  
-                                class="hour-text"
+                            <div *ngFor="let hour of hours;let ind=index"
+								class="hour-text"
+								id="smart-performance-change-scan-time-hour-{{hour}}"
+								role="text"
                                 [ngClass]="{'selected-text':copyScanTime.hourId === ind}"
-                                tabindex="0" 
+                                tabindex="0"
                                 (keydown.enter)="changeHoursTime(ind)"
                                 (click)="changeHoursTime(ind)">
                                 {{hour}}
                             </div>
                         </div>
                         <div class="col minutes-block">
-                            <div *ngFor="let min of mins;let ind=index" 
-                                class="min-text"
+                            <div *ngFor="let min of mins;let ind=index"
+								class="min-text"
+								id="smart-performance-change-scan-time-minute-{{min}}"
+								role="text"
                                 [ngClass]="{'selected-text':copyScanTime.minId === ind}"
-                                tabindex="0" 
+                                tabindex="0"
                                 (keydown.enter)="changeMinutesTime(ind)"
                                 (click)="changeMinutesTime(ind)">
                                 {{min}}
@@ -186,21 +201,27 @@
                         </div>
                         <div class="col amPm-block">
                             <div *ngFor="let ap of amPm;let ind=index"
-                                class="amPm-text"
+								class="amPm-text"
+								id="smart-performance-change-scan-time-amPm-{{ap}}"
+								role="text"
                                 [ngClass]="{'selected-text':copyScanTime.amPmId === ind}"
-                                tabindex="0" 
-                                (keydown.enter)="changeAmPm(ind)" 
+                                tabindex="0"
+                                (keydown.enter)="changeAmPm(ind)"
                                 (click)="changeAmPm(ind)">
                                 {{ ap | translate }}
                             </div>
                         </div>
                     </div>
                     <div class="row select-close py-2">
-                        <div class="col text-center" 
+						<div class="col text-center"
+							id="smart-performance-change-scan-time-save-btn"
+							role="button"
                             (keydown.enter)="saveChangeScanTime()">
                             <fa-icon [icon]="['fal', 'check']"	tabindex="0" (click)="saveChangeScanTime()"></fa-icon>
                         </div>
-                        <div class="col text-center" 
+						<div class="col text-center"
+							id="smart-performance-change-scan-time-cancel-btn"
+							role="button"
                             (keydown.enter)="cancelChangeScanTime()">
                             <fa-icon [icon]="['fal', 'times']" tabindex="0" (click)="cancelChangeScanTime()"></fa-icon>
                         </div>
@@ -208,9 +229,10 @@
                 </div>
             </li>
         </ul>
-        
+
         <div class="text-center">
-            <button class="save-button" 
+			<button class="save-button"
+				id="smart-performance-scan-schedule-setting-save-btn"
                 (click)="saveChangedScanSchedule()"
                 vtrMetrics
                 metricsItem="btn.savechangedscanschedule"
@@ -220,7 +242,8 @@
                 (keydown.enter)="saveChangedScanSchedule()">
                 {{'smartPerformance.scanSettings.txtSave' |translate }}
             </button>
-            <a class="cancel-link active" 
+			<a class="cancel-link active"
+				id="smart-performance-scan-schedule-setting-cancel-btn"
                 (click)="cancelChangedScanSchedule()"
                 vtrMetrics
                 metricsItem="btn.cancelchangedscanschedule"

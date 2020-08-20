@@ -3,7 +3,7 @@ export enum HardwareScanTestResult {
 	InProgress,
 	Pass,
 	Fail,
-	Warning,
+	Attention,
 	Cancelled,
 	Na
 }

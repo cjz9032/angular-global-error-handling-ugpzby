@@ -17,16 +17,16 @@
 											<div class="row d-flex justify-content-between">
 												<div class="mt-5 hero-text"
 													*ngIf="!isSubscribed">
-													<h1>{{'smartPerformance.scanCompletePage.title' |translate }}
+													<h1 id="smart-performance-scan-summary-title">{{'smartPerformance.scanCompletePage.title' |translate }}
 													</h1>
-													<h3>{{'smartPerformance.scanCompletePage.description' |translate }}
+													<h3 id="smart-performance-scan-summary-desc">{{'smartPerformance.scanCompletePage.description' |translate }}
 														{{machineFamilyName}}</h3>
 												</div>
 												<div class="mt-5 hero-text"
 													*ngIf="isSubscribed">
-													<h1>{{'smartPerformance.subscriberScanHomePage.title' |translate }}
+													<h1 id="smart-performance-scan-summary-title">{{'smartPerformance.subscriberScanHomePage.title' |translate }}
 														{{machineFamilyName}}</h1>
-													<h3>{{'smartPerformance.subscriberScanHomePage.serialNumber' |translate }}
+													<h3 id="smart-performance-scan-summary-desc">{{'smartPerformance.subscriberScanHomePage.serialNumber' |translate }}
 														{{systemSerialNumber}}</h3>
 												</div>
 												<span class="icomoon icomoon-pcScan"></span>
@@ -38,9 +38,9 @@
 											class="performance-slider-block before-result">
 											<div class="slider">
 												<div class="condition">
-													<div class="critical">
+													<div class="critical" id="smart-performance-scan-summary-not-complete-critical" role="text">
 														{{'smartPerformance.critical' |translate }}</div>
-													<div class="well">
+													<div class="well" id="smart-performance-scan-summary-note-complete-allIsWell" role="text">
 														{{'smartPerformance.allisWell' |translate }}</div>
 												</div>
 												<div class="verticle-lines">
@@ -59,10 +59,10 @@
 											</div>
 											<div class="pc-status-info d-flex">
 												<p class="info-text needs-tune-up">
-													<span title="{{'smartPerformance.tuneUP' |translate }}">{{'smartPerformance.tuneUP' |translate }}</span>
+													<span id="smart-performance-scan-summary-tuneup" role="text" title="{{'smartPerformance.tuneUP' |translate }}">{{'smartPerformance.tuneUP' |translate }}</span>
 												</p>
 												<p class="info-text running-well">
-													<span title="{{'smartPerformance.runningWell' |translate }}">{{'smartPerformance.runningWell' |translate }}</span>
+													<span id="smart-performance-scan-summary-running-well" role="text" title="{{'smartPerformance.runningWell' |translate }}">{{'smartPerformance.runningWell' |translate }}</span>
 												</p>
 											</div>
 										</div>
@@ -70,11 +70,7 @@
 										<div *ngIf="inputIsScanningCompleted"
 											class="performance-slider-block scan-results">
 											<h3 class="recomendation-text"
-												*ngIf="!isSubscribed">
-												{{'smartPerformance.scanCompletePage.scanRates' |translate }}<span>{{rating}}</span>
-											</h3>
-											<h3 class="recomendation-text"
-												*ngIf="(isSubscribed)">
+												id="smart-performance-scan-summary-scanRates">
 												{{'smartPerformance.scanCompletePage.scanRates' |translate }}<span>{{rating}}</span>
 											</h3>
 											<div class="slider">
@@ -98,9 +94,9 @@
 													<div class="line"></div>
 												</div>
 												<div class="condition">
-													<div class="critical">
+													<div class="critical" id="smart-performance-scan-summary-complete-critical" role="text">
 														{{'smartPerformance.critical' |translate }}</div>
-													<div class="well">
+													<div class="well" id="smart-performance-scan-summary-complete-allIsWell" role="text">
 														{{'smartPerformance.allisWell' |translate }}</div>
 												</div>
 											</div>
@@ -111,16 +107,16 @@
 								<div class="row">
 									<div class="summary-block w-100"
 										*ngIf="!isSubscribed">
-										<h1 class="title-big mb-3">
+										<h1 class="title-big mb-3" id="smart-performance-scan-summary-summary">
 											{{'smartPerformance.scanCompletePage.summary' |translate }}</h1>
-										<p *ngIf="!isSubscribed && !isExpired"
+										<p *ngIf="!isSubscribed && !isExpired" id="smart-performance-scan-summary-details" role="text"
 											[innerHTML]="'smartPerformance.scanCompletePage.summaryDetails' |translate:{issueCount: issueCount }">
 										</p>
-										<p *ngIf="!isSubscribed && isExpired" [innerHTML]="'smartPerformance.scanCompletePage.expiredSummaryDetails' |translate"></p>
+										<p *ngIf="!isSubscribed && isExpired" id="smart-performance-scan-summary-details" role="text" [innerHTML]="'smartPerformance.scanCompletePage.expiredSummaryDetails' |translate"></p>
 
 										<div class="d-flex justify-content-start my-5">
 											<vtr-ui-button (onClick)="openSubscribeModal()"
-												*ngIf="isExpired" 
+												*ngIf="isExpired"
 												class="mr-3"
 												linkId="btn.smart-performance-renew-and-fix"
 												metricsItem="btn.renewAndFix"
@@ -135,11 +131,6 @@
 												metricsParent="Page.Support.SmartPerformance"
 												[isFullWidth]="true"
 												[label]="'smartPerformance.scanCompletePage.backToHome' | translate"></vtr-ui-button>
-											<!-- <div class="desc col pl-5">
-												<p
-													[innerHTML]="'smartPerformance.scanCompletePage.monthlyPricing' |translate">
-												</p>
-											</div> -->
 										</div>
 										<vtr-subpage-scan-results-accordion [tune]="tune"
 											[boost]="boost"
@@ -149,17 +140,17 @@
 									</div>
 									<div class="summary-block w-100"
 										*ngIf="isSubscribed">
-										<h3 *ngIf="!inputIsScanningCompleted">
+										<h3 *ngIf="!inputIsScanningCompleted" id="smart-performance-scan-summary-subTitle">
 											{{'smartPerformance.subscriberScanHomePage.subTitle' |translate }}
 										</h3>
-										<p *ngIf="!inputIsScanningCompleted">
+										<p *ngIf="!inputIsScanningCompleted"  id="smart-performance-scan-summary-description" role="text">
 											{{'smartPerformance.subscriberScanHomePage.description' |translate }}
 										</p>
 
-										<h3 *ngIf="inputIsScanningCompleted">
+										<h3 *ngIf="inputIsScanningCompleted"  id="smart-performance-scan-summary-subTitle">
 											{{'smartPerformance.subscriberScanHomePage.successTitle' |translate}}
 										</h3>
-										<p *ngIf="inputIsScanningCompleted"
+										<p *ngIf="inputIsScanningCompleted" id="smart-performance-scan-summary-description" role="text"
 											[innerHTML]="'smartPerformance.subscriberScanHomePage.successDescription' |translate:{issueCount: issueCount }">
 										</p>
 										<div class="d-flex justify-content-start my-5 w-75">
@@ -183,12 +174,12 @@
 											<div class="desc-block">
 												<div class="desc desc1 col-auto"
 													*ngIf="historyScanResultsDateTime && historyScanResultsDateTime.length > 0">
-													<b title="{{'smartPerformance.subscriberScanHomePage.mostRecent' |translate }}">{{'smartPerformance.subscriberScanHomePage.mostRecent' |translate }}</b><br>
+													<b id="smart-performance-scan-summary-mostRecent" role="block" title="{{'smartPerformance.subscriberScanHomePage.mostRecent' |translate }}">{{'smartPerformance.subscriberScanHomePage.mostRecent' |translate }}</b><br>
 													{{mostRecentScan}}
 												</div>
 												<div class="desc desc2 col-auto-1"
 													*ngIf="enableNextText">
-													<b title="{{'smartPerformance.subscriberScanHomePage.nextScheduled' |translate }}">{{'smartPerformance.subscriberScanHomePage.nextScheduled' |translate }}</b><br>
+													<b id="smart-performance-scan-summary-nextScheduled" role="block" title="{{'smartPerformance.subscriberScanHomePage.nextScheduled' |translate }}">{{'smartPerformance.subscriberScanHomePage.nextScheduled' |translate }}</b><br>
 													{{nextScheduleScan}}
 												</div>
 											</div>
@@ -199,7 +190,7 @@
 												<div class="heading"
 													_ngcontent-dag-c274="">
 													<div class="icon icon-performance"></div>
-													<h3>{{'smartPerformance.tunePCPerformance.title' |translate }}</h3>
+													<h3 id="smart-performance-scan-summary-tunePC-title">{{'smartPerformance.tunePCPerformance.title' |translate }}</h3>
 												</div>
 												<div class="status">
 													<div class="icon-check">
@@ -213,7 +204,7 @@
 												<div class="heading"
 													_ngcontent-dag-c274="">
 													<div class="icon icon-internet-performance"></div>
-													<h3>{{'smartPerformance.boostInternetPerformance.extraTitle' |translate }}</h3>
+													<h3 id="smart-performance-scan-summary-extraTitle">{{'smartPerformance.boostInternetPerformance.extraTitle' |translate }}</h3>
 												</div>
 												<div class="status">
 													<div class="icon-check">
@@ -227,7 +218,7 @@
 												<div class="heading"
 													_ngcontent-dag-c274="">
 													<div class="icon icon-malware-security"></div>
-													<h3>{{'smartPerformance.malwareSecurity.title' |translate }}</h3>
+													<h3 id="smart-performance-scan-summary-malware-title">{{'smartPerformance.malwareSecurity.title' |translate }}</h3>
 												</div>
 												<div class="status">
 													<div class="icon-check">
@@ -256,15 +247,16 @@
 										<div class="navbar bkg-transparent justify-content-between w-100">
 
 											<div class="title-block">
-												<h3>{{'smartPerformance.subscriberScanHomePage.scanSummary.title' |translate }}
+												<h3 id="smart-performance-scan-summary-subscribed-title">{{'smartPerformance.subscriberScanHomePage.scanSummary.title' |translate }}
 												</h3>
-												<p>{{'smartPerformance.subscriberScanHomePage.scanSummary.description' |translate }}
+												<p id="smart-performance-scan-summary-subscribed-desc" role="text">{{'smartPerformance.subscriberScanHomePage.scanSummary.description' |translate }}
 												</p>
 											</div>
 											<div class="summary-period">
 												<ul class="list-group list-group-horizontal">
 													<li class="list-group-item"
 														tabindex="0"
+														id="smart-performance-scan-summary-{{item.itemName}}"
 														*ngFor="let item of menuItems;let ind=index"
 														(click)="scanSummaryTime(ind)"
 														(keydown.enter)="scanSummaryTime(ind)"
@@ -277,51 +269,20 @@
 														<li id="dropdownMenu1"
 															class="list-group-item cl list-selected-item">
 															<fa-icon class="calender-icon" [icon]="['fal', 'calendar-alt']"></fa-icon>
-															<!-- <span
-																*ngIf="!dropDownToggle">{{currentDateLocalFormat}}</span> -->
-															<span *ngIf="!dropDownToggle || tabIndex === 0">{{annualYear}}</span>
-															<!-- <span
-																*ngIf="tabIndex === 0">{{annualYear}}</span> -->
-															<!-- <span
-																*ngIf="tabIndex === 1">{{quarterlyMonth?.displayName}}</span> -->
-															<span *ngIf="tabIndex === 1">{{customDate}}</span>
+															<span id="smart-performance-scan-summary-annualYear" role="text" *ngIf="!dropDownToggle || tabIndex === 0">{{annualYear}}</span>
+															<span id="smart-performance-scan-summary-customeDate" role="text" *ngIf="tabIndex === 1">{{customDate}}</span>
 															<fa-icon class="drop-down-icon"
 																*ngIf="dropDownToggle && tabIndex === 1"
 																tabindex="0"
+																id="smart-performance-scan-summary-open-dropDown"
+																role="button"
 																(click)="openDropDown()"
 																(keydown.enter)="openDropDown()"
 																[icon]="!isDropDownOpen ? ['fas', 'chevron-down'] : ['fas', 'chevron-up']"></fa-icon>
-															<!-- <fa-icon class="drop-down-icon"
-																*ngIf="dropDownToggle && isDropDownOpen && tabIndex === 1"
-																tabindex="0"
-																(click)="openDropDown()"
-																(keydown.enter)="openDropDown()"
-																[icon]="['fas', 'chevron-up']">
-															</fa-icon> -->
 														</li>
 													</div>
 												</ul>
-												<!-- Annual Dropdown menu hidden -->
-												<!-- <div *ngIf="isDropDownOpen && tabIndex != 2"
-												[ngClass]="[tabIndex ===2 ? 'calender-drop' : 'dropdownmenu']">
-												<div *ngIf="tabIndex === 0">
-													<a (click)="anualScanSummary(year)" *ngFor="let year of yearsList"
-														[ngClass]="{'link-active': year.displayName == annualYear}">
-														{{year.displayName}}
-														<br>
-													</a>
-												</div> -->
 
-												<!-- Quarterly option is hidden for current 3.3 release  -->
-
-												<!-- <div *ngIf="tabIndex === 1">
-													<div *ngFor="let menu of quarterlyMenu;let ind=index">
-														<a (click)="quarterlyScanSummary(menu)"
-															[ngClass]="{'link-active':menu.key == quarterlyMonth.key}">{{menu.displayName}}</a>
-													</div>
-												</div> -->
-
-												<!-- </div> -->
 												<div *ngIf="isDropDownOpen && tabIndex === 1"
 													tabindex="-1"
 													class="calender-dropDown">
@@ -330,24 +291,25 @@
 															<div class="col">
 																<div class="custom-from-date py-3 px-3 mb-2"
 																	[ngClass]="{'selected-custom-date':isFromDate}">
-																	<div class="w-100">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtFrom' |translate }}</div>
-																	<div class="w-100"><input type='text' class="date-input" [ngModel]="displayFromDate"
+																	<div class="w-100" id="smart-performance-scan-summary-txtFrom" role="text">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtFrom' |translate }}</div>
+																	<div class="w-100"><input type='text' id="smart-performance-scan-summary-dateFrom-input" class="date-input" [ngModel]="displayFromDate"
 																			(click)="selectFromDate()" (keydown.enter)="selectFromDate()" readonly/></div>
 																</div>
 																<div class="custom-to-date py-3 px-3"
 																	[ngClass]="{'selected-custom-date':!isFromDate}">
-																	<div class="w-100">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtTo' |translate }}</div>
-																	<div class="w-100"><input type='text' class="date-input" [ngModel]="displayToDate"
+																	<div class="w-100" id="smart-performance-scan-summary-txtTo" role="text">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtTo' |translate }}</div>
+																	<div class="w-100"><input type='text' id="smart-performance-scan-summary-dateTo-input" class="date-input" [ngModel]="displayToDate"
 																			(click)="selectToDate()" (keydown.enter)="selectToDate()" readonly/></div>
 
 																</div>
 																<div class="row d-flex justify-content-center">
-																	<vtr-ui-button [isFullWidth]="false" [isDisabled]="!displayFromDate || !displayToDate" (onClick)="customDateScanSummary()" [label]="'smartPerformance.subscriberScanHomePage.scanSummary.txtGo' |translate"></vtr-ui-button>
-																	<vtr-ui-button [isFullWidth]="false" (onClick)="resetCustomDateScanSummary()" [label]="'smartPerformance.subscriberScanHomePage.scanSummary.txtClr' |translate"></vtr-ui-button>
+																	<vtr-ui-button [isFullWidth]="false" [isDisabled]="!displayFromDate || !displayToDate" linkId="smart-performance-scan-summary-customDate-btn" (onClick)="customDateScanSummary()" [label]="'smartPerformance.subscriberScanHomePage.scanSummary.txtGo' |translate"></vtr-ui-button>
+																	<vtr-ui-button [isFullWidth]="false" (onClick)="resetCustomDateScanSummary()" linkId="smart-performance-scan-summary-resetCustomDate-btn" [label]="'smartPerformance.subscriberScanHomePage.scanSummary.txtClr' |translate"></vtr-ui-button>
 																</div>
 															</div>
 															<div class="col date-picker">
 																<ngb-datepicker *ngIf="isFromDate"
+																	id="smart-performance-scan-summary-fromDate-picker"
 																	[(ngModel)]="selectedfromDate"
 																	[displayMonths]="displayMonths"
 																	[navigation]="navigation"
@@ -356,6 +318,7 @@
 																	(select)="onDateSelected()">
 																</ngb-datepicker>
 																<ngb-datepicker *ngIf="!isFromDate"
+																	id="smart-performance-scan-summary-toDate-picker"
 																	[(ngModel)]="selectedTodate"
 																	[displayMonths]="displayMonths"
 																	[navigation]="navigation"
@@ -373,7 +336,7 @@
 									</div>
 									<div *ngIf="!historyScanResultsDateTime || (historyScanResultsDateTime && historyScanResultsDateTime.length === 0)"
 										class="row my-5 d-flex justify-content-between px-0 position-relative">
-										<h4>{{'smartPerformance.noScanResults' |translate }}</h4>
+										<h4 id="smart-performance-scan-summary-noScanResults">{{'smartPerformance.noScanResults' |translate }}</h4>
 									</div>
 									<div *ngIf="historyScanResultsDateTime && historyScanResultsDateTime.length > 0"
 										class="row my-5 d-flex justify-content-between px-0 position-relative">
@@ -391,18 +354,18 @@
 											<div class="d-flex">
 												<div class="w-100">
 													<div class="box-title d-flex  justify-content-between">
-														<h5
+														<h5	id="smart-performance-scan-summary-tunePC-summaryTitle"
 															title="{{'smartPerformance.tunePCPerformance.summaryTitle' |translate }}">
 															{{'smartPerformance.tunePCPerformance.summaryTitle' |translate }}
 														</h5>
 														<div class="icon icon-performance"></div>
 													</div>
-													<div class="value justify-content-center"
+													<div class="value justify-content-center" id="smart-performance-scan-summary-tunePC-fixes-text" role="text"
 														title="{{historyRes.tuneCount || 0}} {{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}">
-														<div class="value-box">{{historyRes.tuneCount || 0}}</div>
-														<span>{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}</span>
+														<div class="value-box"  id="smart-performance-scan-summary-tuneCount" role="text">{{historyRes.tuneCount || 0}}</div>
+														<span id="smart-performance-scan-summary-tunePC-fixes" role="text">{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}</span>
 													</div>
-													<p class="w-100 text-center">
+													<p class="w-100 text-center"  id="smart-performance-scan-summary-tunePC-summaryCaption" role="text">
 														{{formatMemorySize(historyRes.tuneSize)}} <span
 															class="mr-1">{{sizeExtension}}</span>
 														{{'smartPerformance.subscriberScanHomePage.scanSummary.summaryCaption' |translate }}
@@ -416,18 +379,18 @@
 											<div class="d-flex">
 												<div class="w-100">
 													<div class="box-title d-flex  justify-content-between">
-														<h5
+														<h5  id="smart-performance-scan-summary-boost-title"
 															title="{{'smartPerformance.boostInternetPerformance.summaryTitle' |translate }}">
 															{{'smartPerformance.boostInternetPerformance.summaryTitle' |translate }}
 														</h5>
 														<div class="icon icon-internet-performance"></div>
 													</div>
-													<div class="value justify-content-center"
+													<div class="value justify-content-center"  id="smart-performance-scan-summary-boost-fixes-text" role="text"
 														title="{{historyRes.boostCount || 0}} {{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}">
-														<div class="value-box">{{historyRes.boostCount || 0}}</div>
-														<span>{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}</span>
+														<div class="value-box" id="smart-performance-scan-summary-boost-count" role="text">{{historyRes.boostCount || 0}}</div>
+														<span id="smart-performance-scan-summary-boost-fixes" role="text">{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}</span>
 													</div>
-													<p class="w-100 text-center">
+													<p class="w-100 text-center" id="smart-performance-scan-summary-boost-summaryCaption" role="text">
 														{{formatMemorySize(historyRes.boostSize)}} <span
 															class="mr-1">{{sizeExtension}}</span>
 														{{'smartPerformance.subscriberScanHomePage.scanSummary.summaryCaption' |translate }}
@@ -441,17 +404,17 @@
 											<div class="d-flex">
 												<div class="w-100">
 													<div class="box-title d-flex  justify-content-between">
-														<h5
+														<h5 id="smart-performance-scan-summary-malware-title"
 															title="{{'smartPerformance.malwareSecurity.summaryTitle' |translate }}">
 															{{'smartPerformance.malwareSecurity.summaryTitle' |translate }}
 														</h5>
 														<span class="icomoon icomoon-malware"></span>
 													</div>
 
-													<div class="value justify-content-center"
+													<div class="value justify-content-center" id="smart-performance-scan-summary-malware-fixes-text" role="text"
 														title="{{historyRes.secure || 0}} {{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}">
-														<div class="value-box">{{historyRes.secure || 0}}</div>
-														<span>{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}</span>
+														<div class="value-box" id="smart-performance-scan-summary-secure" role="text">{{historyRes.secure || 0}}</div>
+														<span id="smart-performance-scan-summary-malware-fixes" role="text">{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}</span>
 													</div>
 													<!-- <p>{{'smartPerformance.subscriberScanHomePage.scanSummary.secureSummary' |translate }}</p> -->
 												</div>
@@ -473,7 +436,7 @@
 								<div class="scan-summary-block">
 									<div class="row px-0">
 										<div class="title-block w-100">
-											<h3>{{'smartPerformance.subscriberScanHomePage.lastScanResults.title' |translate }}
+											<h3 id="smart-performance-scan-summary-lastScanResults-title">{{'smartPerformance.subscriberScanHomePage.lastScanResults.title' |translate }}
 											</h3>
 										</div>
 									</div>
@@ -486,13 +449,13 @@
 															<li class=" list-item list-heading">
 																<div class="container-fluid">
 																	<div class="row align-items-center">
-																		<div class="offset-1 col-6" title="{{'smartPerformance.subscriberScanHomePage.lastScanResults.scanDate' |translate }}">
+																		<div class="offset-1 col-6" id="smart-performance-scan-summary-lastScanResults-scanDate" role="text" title="{{'smartPerformance.subscriberScanHomePage.lastScanResults.scanDate' |translate }}">
 																			{{'smartPerformance.subscriberScanHomePage.lastScanResults.scanDate' |translate }}
 																		</div>
-																		<div class="col-3 fixes" title="{{'smartPerformance.subscriberScanHomePage.lastScanResults.results' |translate }}">
+																		<div class="col-3 fixes" id="smart-performance-scan-summary-lastScanResults-results" role="text" title="{{'smartPerformance.subscriberScanHomePage.lastScanResults.results' |translate }}">
 																			{{'smartPerformance.subscriberScanHomePage.lastScanResults.results' |translate }}
 																		</div>
-																		<div class="col-2 icon-check-box" title="{{'smartPerformance.subscriberScanHomePage.lastScanResults.status' |translate }}">
+																		<div class="col-2 icon-check-box" id="smart-performance-scan-summary-lastScanResults-status" role="text" title="{{'smartPerformance.subscriberScanHomePage.lastScanResults.status' |translate }}">
 																			{{'smartPerformance.subscriberScanHomePage.lastScanResults.status' |translate }}
 																		</div>
 																	</div>
@@ -505,6 +468,8 @@
 																		<div class="col-1 text-center">
 																			<fa-icon
 																				tabindex="0"
+																				id="smart-performance-scan-summary-expand-row"
+																				role="button"
 																				class="chevron-up"
 																				[icon]="toggleValue === ind ? ['fal', 'chevron-up'] : ['fal', 'chevron-down']"
 																				(click)="expandRow(ind)"
@@ -518,14 +483,14 @@
 																			</fa-icon> -->
 																		</div>
 																		<div class="col-6">
-																			<b>{{item.scanrunDate}}</b> - 
+																			<b>{{item.scanrunDate}}</b> -
 																			<span>{{item.scanrunTime | uppercase}}</span>
-																			<span class="ml-1"
+																			<span class="ml-1" id="smart-performance-scan-summary-manual" role="text"
 																				*ngIf="item.type.toUpperCase() == 'MS'">({{'smartPerformance.manual' |translate }})</span>
-																			<span class="ml-1"
+																			<span class="ml-1" id="smart-performance-scan-summary-auto" role="text"
 																				*ngIf="item.type.toUpperCase() == 'SS'">({{'smartPerformance.auto' |translate }})</span>
 																		</div>
-																		<div class="col-3 fixes" title="{{item.fixcount === 0 ? item.fixcount : (item.fixcount | number:'2.0')}} {{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' | translate}}">
+																		<div class="col-3 fixes" id="smart-performance-scan-summary-fixes" role="text" title="{{item.fixcount === 0 ? item.fixcount : (item.fixcount | number:'2.0')}} {{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' | translate}}">
 																			{{item.fixcount === 0 ? item.fixcount : (item.fixcount | number)}}
 																			{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' | translate}}
 																		</div>
@@ -533,7 +498,7 @@
 																			*ngIf="item.status === 'C'">
 																			<div class="icon-check">
 																				<div class="icon-bkg">
-																					<fa-icon
+																					<fa-icon id="smart-performance-scan-summary-check-icon"
 																						[icon]="['fas', 'check']">
 																					</fa-icon>
 																				</div>
@@ -543,7 +508,7 @@
 																			*ngIf="item.status === 'S'">
 																			<div class="icon-times">
 																				<div class="icon-bkg">
-																					<fa-icon
+																					<fa-icon id="smart-performance-scan-summary-exclamation-icon"
 																						[icon]="['fas', 'exclamation']">
 																					</fa-icon>
 																				</div>
@@ -559,10 +524,10 @@
 																				<div class="scan-items col-7">
 																					<div class="row">
 																						<div class="col-2 px-0 icon icon-performance"></div>
-																						<div class="col-10 px-0 text" title="{{'smartPerformance.tunePCPerformance.summaryTitle' |translate }}">{{'smartPerformance.tunePCPerformance.summaryTitle' |translate }}</div>
+																						<div class="col-10 px-0 text" id="smart-performance-scan-summary-tunePC-summaryTitle2" role="text" title="{{'smartPerformance.tunePCPerformance.summaryTitle' |translate }}">{{'smartPerformance.tunePCPerformance.summaryTitle' |translate }}</div>
 																					</div>
 																				</div>
-																				<div
+																				<div  id="smart-performance-scan-summary-tunePC-tuneValue" role="text"
 																					class="scan-item-value col-2">
 																					{{item.Tune || 0}}
 																				</div>
@@ -587,10 +552,10 @@
 																				<div class="scan-items col-7">
 																					<div class="row">
 																						<div class="col-2 px-0 icon icon-internet-performance"></div>
-																						<div class="col-10 px-0 text" title="{{'smartPerformance.boostInternetPerformance.summaryTitle' |translate }}">{{'smartPerformance.boostInternetPerformance.summaryTitle' |translate }}</div>
+																						<div class="col-10 px-0 text"  id="smart-performance-scan-summary-boost-summaryTitle2" role="text" title="{{'smartPerformance.boostInternetPerformance.summaryTitle' |translate }}">{{'smartPerformance.boostInternetPerformance.summaryTitle' |translate }}</div>
 																					</div>
 																				</div>
-																				<div
+																				<div  id="smart-performance-scan-summary-boost-boostValue" role="text"
 																					class="scan-item-value col-2">
 																					{{item.Boost || 0}}
 																				</div>
@@ -614,10 +579,10 @@
 																				<div class="scan-items col-7">
 																					<div class="row">
 																						<div class="col-2 px-0 icon icon-malware-security"></div>
-																						<div class="col-10 px-0 text" title="{{'smartPerformance.malwareSecurity.summaryTitle' |translate }}">{{'smartPerformance.malwareSecurity.summaryTitle' |translate }}</div>
+																						<div class="col-10 px-0 text"  id="smart-performance-scan-summary-malware-summaryTitle2" role="text" title="{{'smartPerformance.malwareSecurity.summaryTitle' |translate }}">{{'smartPerformance.malwareSecurity.summaryTitle' |translate }}</div>
 																					</div>
 																				</div>
-																				<div
+																				<div id="smart-performance-scan-summary-malware-secureValue" role="text"
 																					class="scan-item-value col-2">
 																					{{item.Secure || 0}}
 																				</div>
@@ -678,10 +643,10 @@
 										*ngIf="!isSubscribed && !isExpired">
 										<div class="col col-12">
 											<div class="recommended-action sidebar-widget">
-												<div class="title pb-3">
+												<div class="title pb-3"  id="smart-performance-scan-summary-recommendAction-title" role="text">
 													{{'smartPerformance.scanCompletePage.recommendedAction.title' |translate }}
 												</div>
-												<div class="card-info">
+												<div class="card-info"  id="smart-performance-scan-summary-recommendAction-desc" role="text">
 													<p>{{'smartPerformance.scanCompletePage.recommendedAction.description' |translate }}
 														<!-- <a href="#" class="link-text" vtrMetrics
 															metricsItem="smartPerformance.learnmore"
@@ -691,17 +656,17 @@
 													<!-- <p>{{'smartPerformance.scanCompletePage.recommendedAction.description1' |translate }}</p> -->
 												</div>
 												<div class="pricing">
-													<h2 class="big-text">
+													<h2 class="big-text" id="smart-performance-scan-summary-recommendAction-yearlyPricing">
 														{{'smartPerformance.scanCompletePage.recommendedAction.yearlyPricing' |translate }}
 													</h2>
-													<small>{{'smartPerformance.scanCompletePage.recommendedAction.monthlyPricing' |translate }}</small>
+													<small id="smart-performance-scan-summary-recommendAction-monthlyPricing" role="text">{{'smartPerformance.scanCompletePage.recommendedAction.monthlyPricing' |translate }}</small>
 												</div>
-												<p>{{'smartPerformance.scanCompletePage.recommendedAction.longerTerm' |translate }}
+												<p id="smart-performance-scan-summary-recommendAction-longerTerm" role="text">{{'smartPerformance.scanCompletePage.recommendedAction.longerTerm' |translate }}
 												</p>
 												<!-- These are commented as per new requirment please dont delete -->
 												<vtr-ui-button (onClick)="openSubscribeModal()"
 													class="mt-2"
-													linkId="btn.smart-performance-back-to-home"
+													linkId="btn.smart-performance-sign-up"
 													metricsItem="btn.enablefullfeature"
 													metricsEvent="FeatureClick"
 													metricsParent="Page.Support.SmartPerformance"

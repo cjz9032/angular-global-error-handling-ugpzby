@@ -4187,6 +4187,7 @@
         },
         "scanFinishedHeader": {
             "titleSuccess": "Scanare finalizată. Dispozitivul dumneavoastră a trecut toate testele.",
+			"titleError": "Your device failed {{numberTestsFailed}} test(s).",
             "titleErrorPlural": "Scanare finalizată. Dispozitivul dumneavoastră nu a trecut {{numberTestsFailed}} teste.",
             "titleErrorSingular": "Scanare finalizată. Dispozitivul dumneavoastră nu a trecut 1 test.",
             "frcSuccessDescription": "Acest cod al rezultatului final indică faptul că nu s-au descoperit probleme în urma scanării. Dacă un test afișează o avertizare sau mesajul „neaplicabil”, nu înseamnă că s-a descoperit o problemă. Dacă un agent de asistență Lenovo v-a solicitat să rulați acest test, utilizați acest cod ca dovadă; în caz contrar, momentan nu este necesară nicio acțiune din partea dumneavoastră. În cazul în care considerați că încă întâmpinați probleme, contactați Asistența Lenovo.",
@@ -4326,7 +4327,7 @@
             "descriptionbeta1": "Sunteți binevenit să vă alăturați nouă și să încercați gratuit caracteristica completă.",
             "descriptionNonSubscriber": "Nu sunteți abonat la serviciul Lenovo Smart Performance. Veți putea scana doar PC-ul dumneavoastră. Abonați-vă acum pentru a beneficia de avantajele complete oferite de un computer protejat, care funcționează fără probleme.",
             "processStatus": "SE PROCESEAZĂ",
-            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance,you can renew the subscription by clicking the \"Manage Subscription \" link to resume full protection for your device.",
+            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance, you can renew the subscription by clicking the \"Manage Subscription\" link to resume full protection for your device.",
             "expiredStatus": "EXPIRED",
             "expiredNote": "Your subscription will expire in",
             "day": "day",
@@ -4800,7 +4801,7 @@
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
             "backToHome": "Înapoi la pagina de pornire",
-            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance,if you would like to resume the \"Scan and Fix\" feature,please press the \"renew and fix\" button down below to renew your subscription.",
+            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance, if you would like to resume the \"Scan and Fix\" feature, please press the \"renew and fix\" button down below to renew your subscription.",
             "renewAndFix": "Renew & Fix"
         },
         "subscriberScanHomePage": {

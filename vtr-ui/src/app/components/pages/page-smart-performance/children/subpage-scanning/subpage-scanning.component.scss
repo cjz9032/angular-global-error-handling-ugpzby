@@ -289,12 +289,11 @@ vtr-subpage-smart-performance-scan-summary {
 									font-size: 1.2rem;
 									letter-spacing: -0.02rem;
 									margin-bottom: 0;
+
 								}
-
-
 							}
 
-                            .icomoon {
+                            .icomoon{
 								color: $menu_hover;
 
 								@media #{$breakpoint_sm} {
@@ -315,104 +314,69 @@ vtr-subpage-smart-performance-scan-summary {
 							padding: 0 0.25rem;
 						}
 					}
-
-					.status-text {
-						flex-grow: 8;
-						width: 38%;
-						max-width: 38%;
-
-						@media #{$breakpoint_sm} {
-							margin-top: 1.25rem;
-						}
-
-						p {
-							text-transform: uppercase;
-							font-size: $fontsize_xs;
-							text-align: right;
-							color: $shade_dark;
-							position: absolute;
-							right: 1.5rem;
-							top: 40%;
+					
+                    .status-text{
+						width:38%;
+						max-width:38%;
+						margin:0;					
+						display: flex;
+						align-items: center;
+                        p {
+							width: 100%;
+                            text-transform: uppercase;
+                            font-size: $fontsize_xs;
+                            text-align: right;
+							color: $shade_dark;		
+							position: relative;		
 							letter-spacing: 0;
-							word-wrap: break-word;
-
-							@media #{$breakpoint_lg} {
-								right: 1.5rem;
-								font-size: $fontsize_xs;
-								top: 36%;
+							word-wrap: break-word;	
+							margin:0;							
+							
+							@media #{$breakpoint_lg}{													
+								font-size: $fontsize_xs;								
 							}
-
-							@media #{$breakpoint_md} {
-								top: 36%;
-								right: 1.5rem;
+							@media #{$breakpoint_md}{	
 								font-size: $fontsize_xs2;
 							}
-
-							@media #{$breakpoint_xl} {
-								right: 1.5rem;
-								font-size: $fontsize_xs2;
-								top: 36%;
+							@media #{$breakpoint_xl}{										
+								font-size: $fontsize_xs2;							
 							}
-
-							@media #{$breakpoint_sm} {
-								top: 36.5%;
-								right: 1.5rem;
+							@media #{$breakpoint_sm}{
 								font-size: 1.2rem;
 							}
 
 						}
-
+					
 						vtr-widget-speedometer {
-							position: absolute;
-							right: -64%;
-							top: 2.2rem;
+							position: absolute;					
+							top: 2rem;
+							right: 2rem;
+							transform-origin: top right;
+							left: auto;						
 
-							@media #{$breakpoint_xl6} {
-								right: 1rem;
+							@media #{$breakpoint_xl6} {								
 								transform: scale(0.25);
-								transform-origin: top right;
-								left: auto;
-								margin-top: 0rem;
 							}
 
-							@media #{$breakpoint_xl2} {
-								right: 1rem;
-								transform: scale(0.25);
-								transform-origin: top right;
-								left: auto;
-								margin-top: 0rem;
+							@media #{$breakpoint_xl2} {						
+													
 							}
 
-							@media #{$breakpoint_xl} {
-								right: 1rem;
-								transform: scale(0.25);
-								transform-origin: top right;
-								left: auto;
-								margin-top: 0rem;
+							@media #{$breakpoint_xl} {						
+						
 							}
 
 							@media #{$breakpoint_lg} {
-								right: 1rem;
-								transform: scale(0.25);
-								transform-origin: top right;
-								left: auto;
-								margin-top: 0rem;
+								top: 2.2rem;
 							}
 
-							@media #{$breakpoint_md} {
-								right: 1rem;
-								transform: scale(0.25);
-								transform-origin: top right;
-								left: auto;
-								margin-top: -0.5rem;
+							@media #{$breakpoint_md} {							
+								top: 2.2rem;
 							}
 
-							@media #{$breakpoint_sm} {
-								right: 1rem;
-								transform: scale(0.18);
-								transform-origin: top right;
-								left: auto;
-								margin-top: -1.2rem;
+							@media #{$breakpoint_sm} {		
+								top: 1.5rem;				
+								transform: scale(0.18);	
 							}
 
 							&::ng-deep {
@@ -425,6 +389,7 @@ vtr-subpage-smart-performance-scan-summary {
 								}
 							}
 						}
+					
 					}
 				}
 
@@ -535,11 +500,10 @@ vtr-subpage-smart-performance-scan-summary {
 		p {
 			font-size: 1.2rem;
 			line-height: 1.4;		
-			margin: 0;
-			padding-right: 0.6rem;
+			margin: 0;			
 			overflow: hidden;
 			text-overflow: ellipsis;
-			white-space: nowrap;
+			white-space: nowrap;			
 
 			@media #{$breakpoint_xl} {
 				font-size: 1rem;
@@ -551,8 +515,7 @@ vtr-subpage-smart-performance-scan-summary {
 
 			@media #{$breakpoint_sm} {
 				font-size: 1rem;	
-				font-weight: $weight_light;
-				padding-right: 0.2rem;
+				font-weight: $weight_light;			
 			}
 		}
 	}
