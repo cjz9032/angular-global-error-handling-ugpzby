@@ -1,8 +1,8 @@
 <div class="modal-smart-performance-cancel">
 	<div class="content-block px-3">
-		<h1>{{'smartPerformance.scanningPage.cancelScan.title' |translate }}</h1>
-		<p>{{'smartPerformance.scanningPage.cancelScan.cancelMayTakeSomeTime' |translate }}</p>
-		<p *ngIf="!isLoading">{{'smartPerformance.scanningPage.cancelScan.cancelTextPrompt' |translate }}</p>
+		<h1 id="smart-performance-scanning-page-cancel-scan-title">{{'smartPerformance.scanningPage.cancelScan.title' |translate }}</h1>
+		<p id="smart-performance-scanning-page-cancel-scan-take-time" role="text">{{'smartPerformance.scanningPage.cancelScan.cancelMayTakeSomeTime' |translate }}</p>
+		<p *ngIf="!isLoading" id="smart-performance-scanning-page-cancel-scan-text" role="text">{{'smartPerformance.scanningPage.cancelScan.cancelTextPrompt' |translate }}</p>
 		<!-- <h5 *ngIf="promptMsg" class="mt-2">{{ 'hardwareScan.cancelTextPrompt' | translate }}</h5> -->
 		<hr>
 		<div *ngIf="isLoading">
@@ -13,16 +13,16 @@
 			</div>
 		</div>
 		<div class="row align-items-center" *ngIf="!isLoading">
-			<vtr-ui-button linkId="smart-performance-btn-yes-cancel" 
+			<vtr-ui-button linkId="smart-performance-btn-yes-cancel"
 				metricsEvent="FeatureClick"
-				metricsItem="btn.yes,cancel" 
+				metricsItem="btn.yes,cancel"
 				metricsParent="Page.Support.SmartPerformance"
 				[isFullWidth]="true"
 				buttonColor="red"
 				label="{{'smartPerformance.scanningPage.cancelScan.yesButton' | translate }} ({{secondsCountdown}})"
 				(onClick)="cancelScan()"></vtr-ui-button>
 			<div class="py-5 ml-5">
-				<button (click)="closeModal()" class="resume-scan" vtrMetrics metricsEvent="ItemClick"
+				<button (click)="closeModal()" id="smart-performance-scanning-page-cancel-scan-resume-btn" class="resume-scan" vtrMetrics metricsEvent="ItemClick"
 					metricsParent="Page.Support.SmartPerformance"
 					metricsItem="btn.no,resumescan" #resume>{{'smartPerformance.scanningPage.cancelScan.noButton' |translate }}
 				</button>
