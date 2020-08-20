@@ -529,19 +529,14 @@
 						p {
 							font-size: 1.2rem;
 							line-height: 1.4;
-							margin: 0;
-							padding-right: 0.6rem;
+							margin: 0;			
 							overflow: hidden;
-							text-overflow: ellipsis;
-
-							@media #{$breakpoint_xl} {
-								white-space: nowrap;
-							}
+							text-overflow: ellipsis;	
+							white-space: nowrap;						
 
 							@media #{$breakpoint_sm} {
 								font-size: 1rem;
-								font-weight: $weight_light;
-								padding-right: 0.2rem;
+								font-weight: $weight_light;							
 							}
 						}
 					}

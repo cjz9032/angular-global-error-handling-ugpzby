@@ -452,16 +452,15 @@ vtr-subpage-scanning {
                             .icon-box {
 								 p{
 									font-size: 1.2rem;                              
-									margin:0;
-									padding-right: 0.6rem;
+									margin:0;								
 									line-height: 1.6rem;
 									overflow: hidden;
 									text-overflow: ellipsis;
-									white-space:nowrap;
+									white-space: nowrap;
+								
 									@media #{$breakpoint_sm} {
 										font-size: 1rem;
-										line-height: 1rem;	
-										padding-right: 0.2rem;
+										line-height: 1rem;										
 									}
                                 }
                                 .icon {
