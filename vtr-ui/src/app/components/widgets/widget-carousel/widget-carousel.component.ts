@@ -104,9 +104,7 @@ export class WidgetCarouselComponent implements OnInit, OnChanges, OnDestroy {
 			});
 
 			if (!this.displayDetectionTaskId && carousel.DataSource && carousel.DataSource !== ContentSource.Local) {
-				setTimeout(() => {
-					this.displayDetectionTaskId = this.metricsService.contentDisplayDetection.addTask(this.data, this.containerSarousel, 1);
-				}, 0);
+				this.displayDetectionTaskId = this.metricsService.contentDisplayDetection.addTask(this.data, this.containerSarousel, 1);
 			}
 		}
 	}

@@ -49,10 +49,8 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit, OnDestroy 
 				&& itemValue.DataSource
 				&& itemValue.DataSource !== ContentSource.Local
 				&& (!preItem || preItem !== itemValue.Id)) {
-				setTimeout(() => {	// use settimeout to defer the code running to make sure that disableContentDisplay was initialized when it was run
-					this.metricsService.contentDisplayDetection.removeTask(this.displayDetectionTaskId);
-					this.displayDetectionTaskId = this.metricsService.contentDisplayDetection.addTask(itemValue, this.articleItemDiv, this.index as string);
-				}, 0);
+				this.metricsService.contentDisplayDetection.removeTask(this.displayDetectionTaskId);
+				this.displayDetectionTaskId = this.metricsService.contentDisplayDetection.addTask(itemValue, this.articleItemDiv, this.index as string);
 			}
 		}
 	}

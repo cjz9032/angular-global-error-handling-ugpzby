@@ -55,16 +55,14 @@ export class ContainerCardComponent implements OnInit, OnDestroy {
 
 				// handle content display metrics event
 				this.metricsService.contentDisplayDetection.removeTask(this.displayDetectionTaskId);
-				setTimeout(() => {
-					const container = this.containerCardLoading
+				const container = this.containerCardLoading
 						|| this.containerCardCorner
 						|| this.containerCardWideArticle
 						|| this.containerCardArticle
 						|| this.containerCardCornerArticle
 						|| this.containerCardSidebarPartnerCorner;
 
-					this.displayDetectionTaskId = this.metricsService.contentDisplayDetection.addTask(this._item, container, this.sideFlag + this.order);
-				}, 0);
+				this.displayDetectionTaskId = this.metricsService.contentDisplayDetection.addTask(this._item, container, this.sideFlag + this.order);
 			}
 			this._item = itemValue;
 		} else {
