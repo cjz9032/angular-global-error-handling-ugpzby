@@ -4200,7 +4200,7 @@
         "executingScanTitle": "{{title}} scannen",
         "showDetails": "Gegevens weergeven",
         "hideDetails": "Gegevens verbergen",
-        "NA": "N.v.t."
+        "na": "N.v.t."
     },
     "smartPerformance": {
         "title": "Smart Performance",

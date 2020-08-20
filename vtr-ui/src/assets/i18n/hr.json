@@ -4200,7 +4200,7 @@
         "executingScanTitle": "Skeniranje {{title}}",
         "showDetails": "Prikaži detalje",
         "hideDetails": "Sakrij detalje",
-        "NA": "Nije dostupno"
+        "na": "Nije dostupno"
     },
     "smartPerformance": {
         "title": "Smart Performance",

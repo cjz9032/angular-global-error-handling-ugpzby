@@ -4200,7 +4200,7 @@
         "executingScanTitle": "正在掃描 {{title}}",
         "showDetails": "檢視詳細資料",
         "hideDetails": "隱藏詳細資料",
-        "NA": "N/A"
+        "na": "N/A"
     },
     "smartPerformance": {
         "title": "Smart Performance",

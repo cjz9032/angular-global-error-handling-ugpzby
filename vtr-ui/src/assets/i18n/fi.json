@@ -4200,7 +4200,7 @@
         "executingScanTitle": "Tarkistetaan {{title}}",
         "showDetails": "Näytä tiedot",
         "hideDetails": "Piilota tiedot",
-        "NA": "Ei käytössä"
+        "na": "Ei käytössä"
     },
     "smartPerformance": {
         "title": "Smart Performance",

@@ -4200,7 +4200,7 @@
         "executingScanTitle": "Сканирование {{title}}",
         "showDetails": "Просмотреть сведения",
         "hideDetails": "Скрыть сведения",
-        "NA": "Нет"
+        "na": "Нет"
     },
     "smartPerformance": {
         "title": "Smart Performance",

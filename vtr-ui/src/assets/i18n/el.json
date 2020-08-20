@@ -4200,7 +4200,7 @@
         "executingScanTitle": "Εκτελείται σάρωση {{title}}",
         "showDetails": "Προβολή λεπτομερειών",
         "hideDetails": "Απόκρυψη λεπτομερειών",
-        "NA": "Δ/Ι"
+        "na": "Δ/Ι"
     },
     "smartPerformance": {
         "title": "Smart Performance",

@@ -4200,7 +4200,7 @@
         "executingScanTitle": "Skenovanie {{title}}",
         "showDetails": "Zobraziť podrobnosti",
         "hideDetails": "Skryť podrobnosti",
-        "NA": "–"
+        "na": "–"
     },
     "smartPerformance": {
         "title": "Smart Performance",

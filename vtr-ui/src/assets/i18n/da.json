@@ -4200,7 +4200,7 @@
         "executingScanTitle": "Søger i {{title}}",
         "showDetails": "Vis detaljer ",
         "hideDetails": "Skjul detaljer",
-        "NA": "Ikke tilgængelig"
+        "na": "Ikke tilgængelig"
     },
     "smartPerformance": {
         "title": "Smart Performance",

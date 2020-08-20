@@ -4200,7 +4200,7 @@
         "executingScanTitle": "{{title}} wird gescannt",
         "showDetails": "Details anzeigen",
         "hideDetails": "Details ausblenden",
-        "NA": "N/A"
+        "na": "N/A"
     },
     "smartPerformance": {
         "title": "Smart Performance",

@@ -4202,7 +4202,7 @@
         "executingScanTitle": "جارٍ فحص {{title}}",
         "showDetails": "عرض التفاصيل",
         "hideDetails": "إخفاء التفاصيل",
-        "NA": "غير مطبّق"
+        "na": "غير مطبّق"
     },
     "smartPerformance": {
         "title": "Smart Performance",

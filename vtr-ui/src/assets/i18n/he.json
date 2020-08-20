@@ -4200,7 +4200,7 @@
         "executingScanTitle": "סורק את {{title}}",
         "showDetails": "הצגת פרטים",
         "hideDetails": "הסתרת פרטים",
-        "NA": "לא ישים"
+        "na": "לא ישים"
     },
     "smartPerformance": {
         "title": "השירות Smart Performance",

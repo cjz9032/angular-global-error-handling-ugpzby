@@ -4200,7 +4200,7 @@
         "executingScanTitle": "{{title}} 검사 중",
         "showDetails": "세부 사항 보기",
         "hideDetails": "세부 사항 숨김",
-        "NA": "N/A"
+        "na": "N/A"
     },
     "smartPerformance": {
         "title": "Smart Performance",

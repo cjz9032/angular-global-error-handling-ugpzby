@@ -4200,7 +4200,7 @@
         "executingScanTitle": "{{title}} taranıyor",
         "showDetails": "Ayrıntıları Görüntüle",
         "hideDetails": "Ayrıntıları Gizle",
-        "NA": "Yok"
+        "na": "Yok"
     },
     "smartPerformance": {
         "title": "Smart Performance",

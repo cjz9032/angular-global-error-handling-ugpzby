@@ -4200,7 +4200,7 @@
         "executingScanTitle": "Сканування {{title}}",
         "showDetails": "Переглянути відомості",
         "hideDetails": "Приховати відомості",
-        "NA": "н. д."
+        "na": "н. д."
     },
     "smartPerformance": {
         "title": "Smart Performance",

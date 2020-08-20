@@ -4200,7 +4200,7 @@
         "executingScanTitle": "Verificando {{title}}",
         "showDetails": "Visualizar Detalhes ",
         "hideDetails": "Ocultar Detalhes",
-        "NA": "N/D"
+        "na": "N/D"
     },
     "smartPerformance": {
         "title": "Smart Performance",

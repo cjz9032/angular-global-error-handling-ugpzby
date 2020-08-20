@@ -4200,7 +4200,7 @@
         "executingScanTitle": "Pregledovanje {{title}}",
         "showDetails": "Ogled podrobnosti",
         "hideDetails": "Skrij podrobnosti",
-        "NA": "/"
+        "na": "/"
     },
     "smartPerformance": {
         "title": "Smart Performance",

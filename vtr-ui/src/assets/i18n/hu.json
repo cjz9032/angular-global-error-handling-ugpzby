@@ -4200,7 +4200,7 @@
         "executingScanTitle": "{{title}} vizsgálata",
         "showDetails": "Részletek megtekintése",
         "hideDetails": "Részletek elrejtése",
-        "NA": "Nem alk."
+        "na": "Nem alk."
     },
     "smartPerformance": {
         "title": "Smart Performance",

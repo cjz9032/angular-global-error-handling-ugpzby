@@ -4200,7 +4200,7 @@
         "executingScanTitle": "Genomsöker {{title}}",
         "showDetails": "Visa information",
         "hideDetails": "Dölj information",
-        "NA": "Ej tillämpligt"
+        "na": "Ej tillämpligt"
     },
     "smartPerformance": {
         "title": "Smart Performance",

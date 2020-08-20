@@ -5001,7 +5001,7 @@
 		"executingScanTitle": "Scanning {{title}}",
 		"showDetails": "View Details",
 		"hideDetails": "Hide Details",
-		"NA": "N/A"
+		"na": "N/A"
 	},
 	"notification": {
 		"menu": {
