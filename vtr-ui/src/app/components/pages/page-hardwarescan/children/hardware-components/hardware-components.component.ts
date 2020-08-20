@@ -701,10 +701,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			}
 
 			if (this.batteryMessage !== '') {
-				this.batteryMessage += '\n';
-			}
-
-			if (this.batteryMessage !== '') {
 				const modal: NgbModalRef = this.modalService.open(ModalScheduleScanCollisionComponent, {
 					backdrop: 'static',
 					size: 'lg',
@@ -715,7 +711,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				this.hardwareScanService.setCurrentTaskStep(TaskStep.Confirm);
 
 				( modal.componentInstance as ModalScheduleScanCollisionComponent).error = this.translate.instant('hardwareScan.warning');
-				( modal.componentInstance as ModalScheduleScanCollisionComponent).description = this.batteryMessage;
 				( modal.componentInstance as ModalScheduleScanCollisionComponent).description = this.batteryMessage;
 				( modal.componentInstance as ModalScheduleScanCollisionComponent).ItemParent = this.getMetricsParentValue();
 				( modal.componentInstance as ModalScheduleScanCollisionComponent).CancelItemName = this.getMetricsItemNameClose();
