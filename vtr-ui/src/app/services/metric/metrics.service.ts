@@ -290,6 +290,16 @@ export class MetricService {
 		));
 	}
 
+	public sendSetScanSchedule(taskParam, response) {
+		this.metricsClient.sendAsync(new TaskAction(
+			MetricConst.TaskSetScanSchedule,
+			1,
+			taskParam,
+			response,
+			0
+		));
+	}
+
 	public sendArticleView(articleView: ArticleView) {
 		this.metricsClient.sendAsync(articleView);
 	}

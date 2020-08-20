@@ -26,6 +26,7 @@ export enum MetricConst {
 	TaskCheckSystemUpdate = 'SystemUpdate.CheckForUpdates',
 	TaskInstallSystemUpdate = 'SystemUpdate.InstallUpdates',
 	TaskSetUpdateSchedule = 'SystemUpdate.SetUpdateSchedule',
+	TaskSetScanSchedule = 'SmartPerformance.SetScanSchedule',
 	ActionOpen = 'open',
 	ActionResume = 'resume',
 	ActionSuspend = 'suspend',
