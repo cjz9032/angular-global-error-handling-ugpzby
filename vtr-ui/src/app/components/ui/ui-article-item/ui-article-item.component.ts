@@ -17,8 +17,6 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit, OnDestroy 
 	@Input() index: any;
 	@Input() tabIndex: number;
 	@Input() articleType: string;
-	@Input() disableContentDisplay: boolean;
-
 	@ViewChild('articleItemDiv', { static: false }) articleItemDiv: any;
 
 	private _item: FeatureContent;
@@ -44,15 +42,23 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit, OnDestroy 
 	@Input() set item(itemValue: any) {
 		const preItem = this.item;
 		this._item = itemValue;
-		if (itemValue) {
-			if (!this.disableContentDisplay
-				&& itemValue.DataSource
-				&& itemValue.DataSource !== ContentSource.Local
-				&& (!preItem || preItem !== itemValue.Id)) {
-				this.metricsService.contentDisplayDetection.removeTask(this.displayDetectionTaskId);
-				this.displayDetectionTaskId = this.metricsService.contentDisplayDetection.addTask(itemValue, this.articleItemDiv, this.index as string);
-			}
+
+		if (preItem && preItem === itemValue.Id) {
+			return;
 		}
+
+		if (!itemValue || !itemValue.DataSource || itemValue.DataSource === ContentSource.Local) {
+			return;
+		}
+
+		setTimeout(() => { // use set timeout to make other paramter availible
+			if (this.articleItemDiv.nativeElement.offsetHeight === 0) {
+				return;
+			}
+
+			this.metricsService.contentDisplayDetection.removeTask(this.displayDetectionTaskId);
+			this.displayDetectionTaskId = this.metricsService.contentDisplayDetection.addTask(itemValue, this.articleItemDiv, this.index as string);
+		}, 0);
 	}
 
 	get item() {

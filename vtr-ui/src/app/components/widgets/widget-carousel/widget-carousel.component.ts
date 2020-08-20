@@ -89,8 +89,6 @@ export class WidgetCarouselComponent implements OnInit, OnChanges, OnDestroy {
 
 	parseToCarouselModel() {
 		this.carouselModel = [];
-		this.metricsService.contentDisplayDetection.removeTask(this.displayDetectionTaskId);
-		this.displayDetectionTaskId = null;
 		for (const carousel of this.data) {
 			this.carouselModel.push({
 				id: carousel.id,
@@ -102,10 +100,16 @@ export class WidgetCarouselComponent implements OnInit, OnChanges, OnDestroy {
 				dataSource: carousel.DataSource || '',
 				overlayThemeDark: !carousel.OverlayTheme || carousel.OverlayTheme !== CardOverlayTheme.Light,
 			});
+		}
 
-			if (!this.displayDetectionTaskId && carousel.DataSource && carousel.DataSource !== ContentSource.Local) {
-				this.displayDetectionTaskId = this.metricsService.contentDisplayDetection.addTask(this.data, this.containerSarousel, 1);
-			}
+		const firstCarousel = this.data[0];
+		if (!firstCarousel) {
+			return;
+		}
+
+		this.metricsService.contentDisplayDetection.removeTask(this.displayDetectionTaskId);
+		if (firstCarousel.DataSource && firstCarousel.DataSource !== ContentSource.Local) {
+			this.displayDetectionTaskId = this.metricsService.contentDisplayDetection.addTask(this.data, () => this.containerSarousel, 1);
 		}
 	}
 

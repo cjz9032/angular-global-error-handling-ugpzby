@@ -49,22 +49,26 @@ export class ContainerCardComponent implements OnInit, OnDestroy {
 			this.isLoading = false;
 			this.overlayThemeDefaultIsDark = !itemValue.OverlayTheme || itemValue.OverlayTheme !== CardOverlayTheme.Light
 			this.overlayThemeDefaultIsLight = !itemValue.OverlayTheme || itemValue.OverlayTheme !== CardOverlayTheme.Dark
-			if (itemValue.DataSource
-				&& itemValue.DataSource !== ContentSource.Local
-				&& (!this._item || this._item.Id !== itemValue.Id)) {
-
-				// handle content display metrics event
-				this.metricsService.contentDisplayDetection.removeTask(this.displayDetectionTaskId);
-				const container = this.containerCardLoading
-						|| this.containerCardCorner
-						|| this.containerCardWideArticle
-						|| this.containerCardArticle
-						|| this.containerCardCornerArticle
-						|| this.containerCardSidebarPartnerCorner;
-
-				this.displayDetectionTaskId = this.metricsService.contentDisplayDetection.addTask(this._item, container, this.sideFlag + this.order);
-			}
+			const preItem = this.item;
 			this._item = itemValue;
+
+			if (preItem && preItem.Id === itemValue.Id) {
+				return;
+			}
+
+			if (!itemValue.DataSource || itemValue.DataSource === ContentSource.Local) {
+				 return;
+			}
+
+			// handle content display metrics event
+			this.metricsService.contentDisplayDetection.removeTask(this.displayDetectionTaskId);
+			const container = this.containerCardLoading
+					|| this.containerCardCorner
+					|| this.containerCardWideArticle
+					|| this.containerCardArticle
+					|| this.containerCardCornerArticle
+					|| this.containerCardSidebarPartnerCorner;
+			this.displayDetectionTaskId = this.metricsService.contentDisplayDetection.addTask(itemValue, container, this.sideFlag + this.order);
 		} else {
 			this._item = new FeatureContent();
 		}
