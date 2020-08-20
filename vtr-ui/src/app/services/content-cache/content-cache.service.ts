@@ -160,8 +160,8 @@ export class ContentCacheService {
           "positionF": [],
           "welcome-text": []
         }
-        await this.fillCacheValue(response, contentCards, cacheValueOfContents);
-        const contents = this.getNeedUpdateContents(cacheKey, cacheValueOfContents);
+        await this.fillCacheValue(response, contentCards, cacheValueOfContents)
+        const contents = await this.getUpdatedContents(cacheKey, cacheValueOfContents);
         await this.saveContents(cacheKey, cacheValueOfContents);
         await this.cacheContentDetail(contents);
         this.sendCacheMetrics(startTime, 'fetchedCacheContents');
@@ -200,18 +200,52 @@ export class ContentCacheService {
     await this.contentLocalCacheContract.set(iCacheSettings);
   }
 
-  private getNeedUpdateContents(cacheKey: any, cacheValueOfContents: any) {
+  private async getUpdatedContents(cacheKey: any, cacheValueOfContents: any) {
     const contents = [];
-    for (const key in cacheValueOfContents) {
-      if ("welcome-text" == key) {
-        continue;
+    let cachedContents = [];
+    let iCacheSettings: ICacheSettings = {
+      Key: cacheKey,
+      Value: null,
+      Component: "ContentCache",
+      UserName: "ContentCache_Contents"
+    };
+    const cachedObj = await this.contentLocalCacheContract.get(iCacheSettings);
+    if (cachedObj && cachedObj.Value) {
+      cachedContents = JSON.parse(cachedObj.Value);
+      for (const key in cacheValueOfContents) {
+        if ("welcome-text" == key) {
+          continue;
+        }
+        const contentList = cacheValueOfContents[key];
+        const cachedContentList = cachedContents[key];
+        this.findUpdatedContents(contentList, cachedContentList, contents);
+        this.removeExpiredArticle(contentList, cachedContentList);
       }
-      const contentList = cacheValueOfContents[key];
-      contentList.forEach(content => {
-        contents.push(content);
-      });
+    } else {
+      for (const key in cacheValueOfContents) {
+        cacheValueOfContents[key].forEach(content => {
+          contents.push(content);
+        });
+      }
     }
     return contents;
+  }
+
+  private findUpdatedContents(contentList: any, cachedContentList: any, contents: any[]) {
+    for (const index in contentList) {
+      const content = contentList[index];
+      for (const idx in cachedContentList) {
+        const cachedContent = cachedContentList[idx];
+        if (content.Id == cachedContent.Id
+          && content.Revision != cachedContent.Revision) {
+          contents.push(content);
+        }
+      }
+    }
+  }
+
+  private removeExpiredArticle(contentList: any, cachedContentList: any) {
+
   }
 
   private cacheContentDetail(contents: any) {
