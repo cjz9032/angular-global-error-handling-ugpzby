@@ -4187,7 +4187,7 @@
         },
         "scanFinishedHeader": {
             "titleSuccess": "Pregled je končan. Naprava je uspešno opravila vse preskuse.",
-            "titleError": "Your device failed {{numberTestsFailed}} test(s).",
+            "titleError": "Naprava ni opravila toliko preskusov: {{numberTestsFailed}}.",
             "titleErrorPlural": "Pregled je končan. Naprava ni opravila {{numberTestsFailed}} preskusov.",
             "titleErrorSingular": "Pregled je končan. Naprava ni opravila 1 preskusa.",
             "frcSuccessDescription": "Koda končnega rezultata kaže, da v tem skenu niso najdene težave. Če kateri koli preskus prikaže opozorilo ali sporočilo, da ni ustrezen, to ne pomeni, da je bila najdena težava. Če vas je tehnik za podporo družbe Lenovo prosil, da izvedete ta preskus, uporabite to kodo kot dokazilo, sicer pa trenutno od vas ni potrebno nobeno ukrepanje. Če menite, da težava ni odpravljena, se obrnite na podporo družbe Lenovo.",

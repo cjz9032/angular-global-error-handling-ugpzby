@@ -4187,7 +4187,7 @@
         },
         "scanFinishedHeader": {
             "titleSuccess": "Scanare finalizată. Dispozitivul dumneavoastră a trecut toate testele.",
-			"titleError": "Your device failed {{numberTestsFailed}} test(s).",
+            "titleError": "Dispozitivul dumneavoastră nu a trecut {{numberTestsFailed}} teste.",
             "titleErrorPlural": "Scanare finalizată. Dispozitivul dumneavoastră nu a trecut {{numberTestsFailed}} teste.",
             "titleErrorSingular": "Scanare finalizată. Dispozitivul dumneavoastră nu a trecut 1 test.",
             "frcSuccessDescription": "Acest cod al rezultatului final indică faptul că nu s-au descoperit probleme în urma scanării. Dacă un test afișează o avertizare sau mesajul „neaplicabil”, nu înseamnă că s-a descoperit o problemă. Dacă un agent de asistență Lenovo v-a solicitat să rulați acest test, utilizați acest cod ca dovadă; în caz contrar, momentan nu este necesară nicio acțiune din partea dumneavoastră. În cazul în care considerați că încă întâmpinați probleme, contactați Asistența Lenovo.",

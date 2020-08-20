@@ -4187,7 +4187,7 @@
         },
         "scanFinishedHeader": {
             "titleSuccess": "Scansione completata. Il dispositivo ha superato tutti i test.",
-			"titleError": "Your device failed {{numberTestsFailed}} test(s).",
+            "titleError": "Il dispositivo non ha superato {{numberTestsFailed}} test.",
             "titleErrorPlural": "Scansione completata. Il dispositivo non ha superato {{numberTestsFailed}} test.",
             "titleErrorSingular": "Scansione completata. Il dispositivo non ha superato 1 test.",
             "frcSuccessDescription": "Questo codice del risultato finale indica che non sono stati rilevati problemi con questa scansione. Se durante un test viene visualizzato un messaggio di avvertenza o di non applicabilità, ciò non implica che sia stato rilevato un problema. Se un agente del supporto Lenovo richiede di eseguire questo test, utilizzare questo codice come prova; in caso contrario, al momento non è necessaria alcuna azione da parte dell'utente. Se si ritiene che i problemi non siano stati risolti, contattare il supporto Lenovo.",

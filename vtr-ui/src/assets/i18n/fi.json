@@ -4187,7 +4187,7 @@
         },
         "scanFinishedHeader": {
             "titleSuccess": "Tarkistus on valmis. Laitteesi läpäisi kaikki testit.",
-			"titleError": "Your device failed {{numberTestsFailed}} test(s).",
+            "titleError": "Laitteesi ei läpäissyt {{numberTestsFailed}} testiä.",
             "titleErrorPlural": "Tarkistus on valmis. Laite ei läpäissyt {{numberTestsFailed}} testiä.",
             "titleErrorSingular": "Tarkistus on valmis. Laite ei läpäissyt 1 testiä.",
             "frcSuccessDescription": "Lopullinen tuloskoodi osoittaa, että tässä tarkistuksessa ei havaittu ongelmia. Mikäli jonkin testin tuloksena näkyy varoitus tai ei käytettävissä -viesti, se ei tarkoita ongelman havaitsemista. Jos Lenovo-tuen edustajan pyysi tämän testin suorittamista, käytä tätä koodia testin todisteena. Muussa tapauksessa sinun ei tarvitse tehdä mitään tällä hetkellä. Jos ongelmia ilmenee edelleen, ota yhteyttä Lenovo-tukeen.",

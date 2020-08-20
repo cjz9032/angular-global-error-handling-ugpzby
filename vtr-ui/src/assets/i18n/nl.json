@@ -4187,7 +4187,7 @@
         },
         "scanFinishedHeader": {
             "titleSuccess": "De scan is voltooid. Uw apparaat heeft alle tests doorstaan.",
-			"titleError": "Your device failed {{numberTestsFailed}} test(s).",
+            "titleError": "Uw apparaat heeft {{numberTestsFailed}} test(s) niet doorstaan.",
             "titleErrorPlural": "De scan is voltooid. Uw apparaat heeft {{numberTestsFailed}} tests niet doorstaan.",
             "titleErrorSingular": "De scan is voltooid. Uw apparaat heeft 1 test niet doorstaan.",
             "frcSuccessDescription": "Deze laatste resultaatcode geeft aan dat er geen problemen met deze scan zijn gevonden. Als een test een waarschuwingsbericht weergeeft of een melding 'Niet van toepassing', betekent dat niet dat er een probleem is aangetroffen. Als een medewerker van ondersteuning van Lenovo u heeft gevraagd deze test uit te voeren, gebruikt u deze code als bewijs; anders is op dit moment geen actie van uw kant nodig. Als u denkt dat u nog steeds problemen hebt, neem dan contact op met ondersteuning van Lenovo.",

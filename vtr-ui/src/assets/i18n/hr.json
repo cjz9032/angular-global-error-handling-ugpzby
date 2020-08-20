@@ -4187,7 +4187,7 @@
         },
         "scanFinishedHeader": {
             "titleSuccess": "Skeniranje je završeno. Vaš uređaj prošao je sve testove.",
-			"titleError": "Your device failed {{numberTestsFailed}} test(s).",
+            "titleError": "Vaš uređaj nije prošao {{numberTestsFailed}} test(ove).",
             "titleErrorPlural": "Skeniranje je završeno. Vaš uređaj nije prošao {{numberTestsFailed}} testove.",
             "titleErrorSingular": "Skeniranje je završeno. Vaš uređaj nije prošao 1 test.",
             "frcSuccessDescription": "Taj kôd konačnih rezultata ukazuje na to da nisu pronađeni problemi s ovim pregledom. Ako bilo koji test pokaže upozorenje ili odgovarajuću poruku, to ne znači da je problem pronađen. Ako zaposlenik službe za podršku tvrtke Lenovo zatraži da pokrenete test, upotrijebite taj kôd rezultata kao dokaz; u suprotnom ne trebate ništa učiniti. Ako mislite da se problemi i dalje pojavljuju, kontaktirajte podršku tvrtke Lenovo.",

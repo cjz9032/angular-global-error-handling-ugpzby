@@ -4187,7 +4187,7 @@
         },
         "scanFinishedHeader": {
             "titleSuccess": "A vizsgálat befejeződött. Az Ön készüléke sikeresen teljesítette az összes tesztet.",
-			"titleError": "Your device failed {{numberTestsFailed}} test(s).",
+            "titleError": "Az Ön készüléke {{numberTestsFailed}} teszten megbukott.",
             "titleErrorPlural": "A vizsgálat befejeződött. Az Ön készüléke {{numberTestsFailed}} teszten megbukott.",
             "titleErrorSingular": "A vizsgálat befejeződött. Az Ön készüléke 1 teszten megbukott.",
             "frcSuccessDescription": "Ez a végső eredménykód azt jelzi, hogy nincs probléma a vizsgálattal. Nem jelez problémát, ha valamelyik teszt után figyelmeztetés vagy nem megfelelő üzenet jelenik meg. Ha a Lenovo-támogatás szakembere kérte a teszt futtatását, akkor a kódot igazolásként használhatja. Ebben az esetben nincs teendője. Ha továbbra is úgy érzi, hogy valamilyen hiba áll fenn, lépjen kapcsolatba a Lenovo-támogatással.",

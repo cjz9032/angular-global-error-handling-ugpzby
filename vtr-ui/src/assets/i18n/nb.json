@@ -4187,7 +4187,7 @@
         },
         "scanFinishedHeader": {
             "titleSuccess": "Skanning fullført. Enheten har bestått alle testene.",
-			"titleError": "Your device failed {{numberTestsFailed}} test(s).",
+            "titleError": "Enheten din mislyktes {{numberTestsFailed}} test(er).",
             "titleErrorPlural": "Skanning fullført. Enheten mislyktes med {{numberTestsFailed}} av testene.",
             "titleErrorSingular": "Skanning fullført. Enheten mislyktes med 1 av testene.",
             "frcSuccessDescription": "Denne sluttresultatkoden betyr at det ikke ble funnet problemer under skanningen. Hvis en test viser en advarsel eller en gjelder-ikke-melding, betyr ikke dette at det ble funnet et problem. Hvis du ble bedt om å kjøre denne testen av en kundestøtterepresentant fra Lenovo, bruker du denne koden som bevis. Hvis ikke trenger du ikke gjøre noe nå. Kontakt Lenovos kundestøtte hvis problemene vedvarer.",

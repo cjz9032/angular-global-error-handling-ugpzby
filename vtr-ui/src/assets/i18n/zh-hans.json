@@ -4187,7 +4187,7 @@
         },
         "scanFinishedHeader": {
             "titleSuccess": "扫描已完成。设备已通过所有测试。",
-			"titleError": "Your device failed {{numberTestsFailed}} test(s).",
+            "titleError": "设备未通过 {{numberTestsFailed}} 次测试。",
             "titleErrorPlural": "扫描已完成。设备未通过 {{numberTestsFailed}} 次测试。",
             "titleErrorSingular": "扫描已完成。设备未通过 1 次测试。",
             "frcSuccessDescription": "此最终结果代码表示此次扫描未发现问题。如果任何测试显示警告或“不适用”消息，其并不表示发现了问题。如果 Lenovo 支持代理人员让您运行此测试，请使用此代码作为凭据；否则，此时您无需执行任何操作。如果您仍然有问题，请联系 Lenovo 支持人员。",
