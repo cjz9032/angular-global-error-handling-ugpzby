@@ -4187,7 +4187,7 @@
         },
         "scanFinishedHeader": {
             "titleSuccess": "Análise concluída. O seu dispositivo passou todos os testes.",
-            "titleError": "Your device failed {{numberTestsFailed}} test(s).",
+            "titleError": "O seu dispositivo falhou {{numberTestsFailed}} teste(s).",
             "titleErrorPlural": "Análise concluída. O seu dispositivo falhou {{numberTestsFailed}} testes.",
             "titleErrorSingular": "Análise concluída. O seu dispositivo falhou 1 teste.",
             "frcSuccessDescription": "Este código do resultado final indica que não foram encontrados problemas nesta verificação. Se algum dos testes apresentar um aviso ou mensagem não aplicável, tal não significa que foi encontrado um problema. Se o agente de suporte da Lenovo solicitou que executasse este teste, utilize este código como prova; caso contrário, não é necessária qualquer ação da sua parte neste momento. Se continuar a deparar-se com problemas, contacte o Suporte da Lenovo.",
@@ -4200,7 +4200,7 @@
         "executingScanTitle": "A analisar {{title}}",
         "showDetails": "Ver Detalhes",
         "hideDetails": "Ocultar Detalhes",
-        "NA": "N/A"
+        "na": "N/A"
     },
     "smartPerformance": {
         "title": "Smart Performance",

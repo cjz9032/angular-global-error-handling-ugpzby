@@ -4189,7 +4189,7 @@
         },
         "scanFinishedHeader": {
             "titleSuccess": "اكتمل الفحص. اجتاز جهازك جميع الاختبارات.",
-			"titleError": "Your device failed {{numberTestsFailed}} test(s).",
+            "titleError": "فشل جهازك في {{numberTestsFailed}} اختبار (اختبارات).",
             "titleErrorPlural": "اكتمل الفحص. فشل جهازك في اختبارات {{numberTestsFailed}}.",
             "titleErrorSingular": "اكتمل الفحص. فشل جهازك في اختبار واحد.",
             "frcSuccessDescription": "يشير رمز النتيجة النهائية هذا إلى عدم العثور على مشاكل تتعلق بهذا الفحص. إذا أدى أي اختبار إلى ظهور تحذير أو رسالة غير منطبقة، فهذا لا يشير إلى الكشف عن مشكلة. إذا طالبك وكيل دعم Lenovo بتشغيل هذا الاختبار، فاستخدم هذا الرمز كإثبات؛ وإلا فلا حاجة إلى اتخاذ أي إجراء من جانبك في هذه المرحلة. إذا شعرت بأنك ما زلت تواجه المشاكل، فاتصل بدعم Lenovo.",
@@ -4202,7 +4202,7 @@
         "executingScanTitle": "جارٍ فحص {{title}}",
         "showDetails": "عرض التفاصيل",
         "hideDetails": "إخفاء التفاصيل",
-        "NA": "غير مطبّق"
+        "na": "غير مطبّق"
     },
     "smartPerformance": {
         "title": "Smart Performance",

@@ -4187,7 +4187,7 @@
         },
         "scanFinishedHeader": {
             "titleSuccess": "Snímání dokončeno. Vaše zařízení prošlo všemi testy.",
-			"titleError": "Your device failed {{numberTestsFailed}} test(s).",
+            "titleError": "Zařízení neprošlo testy (počet: {{numberTestsFailed}}).",
             "titleErrorPlural": "Snímání dokončeno. Vaše zařízení selhalo v {{numberTestsFailed}} testech.",
             "titleErrorSingular": "Snímání dokončeno. Vaše zařízení selhalo v 1 testu.",
             "frcSuccessDescription": "Tento výsledný kód chyby značí, že nebyly zjištěny žádné problémy s touto kontrolou. Pokud nějaký test zobrazí varování nebo zprávu o tom, že příslušný test není použitelný, nemusí to znamenat, že byl nalezen problém. Pokud vás o provedení tohoto testu požádal zástupce podpory Lenovo, použijte tento kód jako doklad; v opačném případě není v tuto chvíli potřeba provádět žádnou akci. Pokud jste přesvědčeni, že se problémy nadále objevují, kontaktujte podporu společnosti Lenovo.",
@@ -4200,7 +4200,7 @@
         "executingScanTitle": "Snímání {{title}}",
         "showDetails": "Zobrazit podrobnosti",
         "hideDetails": "Skrýt podrobnosti",
-        "NA": "není k dispozici"
+        "na": "není k dispozici"
     },
     "smartPerformance": {
         "title": "Smart Performance",

@@ -4187,7 +4187,7 @@
         },
         "scanFinishedHeader": {
             "titleSuccess": "Skenovanie dokončené. Zariadenie prešlo všetkými testami.",
-			"titleError": "Your device failed {{numberTestsFailed}} test(s).",
+            "titleError": "Zariadenie zlyhalo v {{numberTestsFailed}} teste/testoch.",
             "titleErrorPlural": "Skenovanie dokončené. Zariadenie zlyhalo v {{numberTestsFailed}} testoch.",
             "titleErrorSingular": "Skenovanie dokončené. Zariadenie zlyhalo v 1 teste.",
             "frcSuccessDescription": "Tento konečný výsledný kód signalizuje, že sa nezistili žiadne problémy s touto kontrolou. Ak sa v prípade ľubovoľného textu zobrazí varovanie alebo hlásenie o nemožnosti použitia, neznamená to, že došlo k zisteniu problému. Ak vás pracovník technickej podpory spoločnosti Lenovo požiadal o vykonanie tohto testu, použite tento kód ako doklad. Inak sa od vás momentálne nevyžaduje žiadny zásah. Ak máte pocit, že stále dochádza k problémom, obráťte sa na technickú podporu spoločnosti Lenovo.",
@@ -4200,7 +4200,7 @@
         "executingScanTitle": "Skenovanie {{title}}",
         "showDetails": "Zobraziť podrobnosti",
         "hideDetails": "Skryť podrobnosti",
-        "NA": "–"
+        "na": "–"
     },
     "smartPerformance": {
         "title": "Smart Performance",

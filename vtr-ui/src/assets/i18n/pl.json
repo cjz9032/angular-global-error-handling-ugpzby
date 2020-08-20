@@ -4187,7 +4187,7 @@
         },
         "scanFinishedHeader": {
             "titleSuccess": "Skanowanie zakończone. Twoje urządzenie przeszło wszystkie testy.",
-			"titleError": "Your device failed {{numberTestsFailed}} test(s).",
+            "titleError": "Wynik {{numberTestsFailed}} testów dotyczących Twojego urządzenia wskazywał na ich niepowodzenie.",
             "titleErrorPlural": "Skanowanie zakończone. Wynik {{numberTestsFailed}} testów dotyczących Twojego urządzenia wskazywał na ich niepowodzenie.",
             "titleErrorSingular": "Skanowanie zakończone. 1 test Twojego urządzenia zakończył się niepowodzeniem.",
             "frcSuccessDescription": "Kod wyniku końcowego wskazuje, że podczas skanowania nie znaleziono problemów. Jeśli test wyświetla ostrzeżenie lub nieodpowiedni komunikat, nie oznacza to, że problem został znaleziony. Jeśli agent pomocy technicznej firmy Lenovo poprosił Cię o przeprowadzenie tego testu, użyj kodu jako dowodu; w przeciwnym razie nie musisz wykonywać żadnych czynności. Jeśli uważasz, że nadal występują problemy, skontaktuj się z pomocą techniczną firmy Lenovo.",
@@ -4200,7 +4200,7 @@
         "executingScanTitle": "Skanowanie {{title}}",
         "showDetails": "Wyświetl szczegóły",
         "hideDetails": "Ukryj szczegóły",
-        "NA": "Nie dot."
+        "na": "Nie dot."
     },
     "smartPerformance": {
         "title": "Smart Performance",
