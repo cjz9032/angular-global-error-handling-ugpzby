@@ -1,7 +1,7 @@
 <div class="hwscan-header">
 	<div class="row">
-		<div [ngSwitch]="headerType" aria-live="polite">
-			<div id="rbs-header-height-filler" *ngSwitchCase="enumScanHeaderTypeFinished.RecoverBadSectors">
+		<div [ngSwitch]="headerType">
+			<div id="rbs-header-height-filler" *ngSwitchCase="enumScanHeaderTypeFinished.RecoverBadSectors" aria-live="polite">
 				<h2 id="hwscan-rbs-finished-title" role="heading" class="col title">{{ 'hardwareScan.recoverBadSectors.recoverCompleted' | translate }}</h2>
 			</div>
 			<div *ngSwitchCase="enumScanHeaderTypeFinished.Scan">
@@ -25,12 +25,9 @@
 					<div class="row" *ngIf="numberTestsFailed > 0; else successfulScan">
 						<vtr-ui-button
 							[linkId]="'hwscan-support-btn'"
-							vtrMetrics
-							metricsEvent="FeatureClick"
 							metricsParent="HardwareScan.ScanFailureActions"
 							metricsItem="ScanFailureActions.LenovoSupport"
 							[href]="contactusUrl"
-							[tooltipText]="'hardwareScan.scanFinishedHeader.supportButtonText' | translate"
 							[label]="'hardwareScan.scanFinishedHeader.supportButtonText' | translate">
 						</vtr-ui-button>
 						<vtr-ui-hyperlink-button
@@ -38,12 +35,10 @@
 							hyperlinkStyle="xs-white"
 							linkId="hwscan-scan-again-btn"
 							linkRole="button"
-							metricsEvent="FeatureClick"
 							metricsParent="HardwareScan"
 							metricsItem="HardwareScan.ScanAgain"
 							[upperCaseLabel]="true"
 							[label]="'hardwareScan.scanFinishedHeader.scanAgainButtonText' | translate"
-							[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
 							[tooltipText]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
 							(hyperlinkClick)="onScanAgain()">
 						</vtr-ui-hyperlink-button>
@@ -56,8 +51,7 @@
 									[linkId]="'hwscan-scan-again-btn'"
 									metricsParent="HardwareScan"
 									metricsItem="HardwareScan.ScanAgain"
-									(click)="onScanAgain()"
-									[tooltipText]="'hardwareScan.scanFinishedHeader.scanAgainButtonText' | translate"
+									(onClick)="onScanAgain()"
 									[label]="'hardwareScan.scanFinishedHeader.scanAgainButtonText' | translate">
 								</vtr-ui-button>
 							</div>
@@ -92,13 +86,10 @@
 					<div class="row">
 						<vtr-ui-button
 							[linkId]="'hwscan-support-btn'"
-							vtrMetrics
-							metricsEvent="FeatureClick"
 							metricsParent="HardwareScan.ScanFailureActions"
 							metricsItem="ScanFailureActions.LenovoSupport"
 							[href]="contactusUrl"
-							tabindex="1"
-							[tooltipText]="'hardwareScan.scanFinishedHeader.supportButtonText' | translate"
+							[tabIndex]="1"
 							[label]="'hardwareScan.scanFinishedHeader.supportButtonText' | translate">
 						</vtr-ui-button>
 					</div>
@@ -108,7 +99,7 @@
 	</div>
 
 	<ng-template #tooltipFinalResultCode>
-			<div
+			<div aria-live="polite"
 				id="hwscan-final-result-code-success-tooltip" role="text"
 				[innerHTML]="'hardwareScan.scanFinishedHeader.frcSuccessDescription' | translate">
 			</div>
@@ -143,8 +134,8 @@
 			<a *ngIf="numberTestsFailed === 0"
 				id="hwscan-final-result-code-tooltip"
 				href="javascript:void(0)"
-				role="img"
-				attr.aria-label="final-result-code-tooltip, which reads: {{('hardwareScan.scanFinishedHeader.frcSuccessDescription' | translate)}}"
+				role="link"
+				aria-label="final-result-code-tooltip"
 				class="result-code-icon"
 				triggers="click"
 				[placement]="['left','right']"
