@@ -443,7 +443,7 @@ export class HardwareScanService {
 		response.categoryList = response.categoryList.filter((value) => !this.blackListModules.includes(value.id))
 		response.mapContractNameList = response.mapContractNameList.filter((value) => !this.blackListModules.includes(value.Key))
 
-		let storageComponents = response.categoryList.filter((value) => value.id === "storage");
+		const storageComponents = response.categoryList.filter((value) => value.id === 'storage');
 		if (storageComponents !== undefined) {
 			storageComponents.forEach(component => {
 				component.groupList.forEach(group => {
