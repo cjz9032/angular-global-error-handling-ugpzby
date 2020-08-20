@@ -696,7 +696,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		this.hardwareScanService.getPreScanInfo(preScanInformationRequest).then((response) => {
 			for (const message of response.MessageList) {
 				if (message.id === 'connect-power') {
-					this.batteryMessage = message.description;
+					this.batteryMessage = this.translate.instant('hardwareScan.pluginTokens.CONNECT_POWER');
 				}
 			}
 
@@ -715,7 +715,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				this.hardwareScanService.setCurrentTaskStep(TaskStep.Confirm);
 
 				( modal.componentInstance as ModalScheduleScanCollisionComponent).error = this.translate.instant('hardwareScan.warning');
-				( modal.componentInstance as ModalScheduleScanCollisionComponent).description = this.batteryMessage;
 				( modal.componentInstance as ModalScheduleScanCollisionComponent).description = this.batteryMessage;
 				( modal.componentInstance as ModalScheduleScanCollisionComponent).ItemParent = this.getMetricsParentValue();
 				( modal.componentInstance as ModalScheduleScanCollisionComponent).CancelItemName = this.getMetricsItemNameClose();
