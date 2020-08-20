@@ -8,6 +8,7 @@ import { CMSService } from '../cms/cms.service';
 import { ContentActionType, ContentSource } from 'src/app/enums/content.enum';
 import { BuildInContentService } from '../build-in-content/build-in-content.service';
 import { SegmentConst } from '../self-select/self-select.service';
+import { MetricService } from '../metric/metrics.service';
 
 interface IConfigItem {
   cardId: string;
@@ -39,15 +40,18 @@ export class ContentCacheService {
     private cmsService: CMSService,
     private upeService: UPEService,
     private buildInContentService: BuildInContentService,
-    private logger: LoggerService) {
+    private logger: LoggerService,
+    private metrics: MetricService) {
     this.contentLocalCacheContract = this.vantageShellService.getContentLocalCache();
   }
 
   public async getCachedContents(page: string, contentCards: any) {
+    const startTime = new Date();
     const cmsOptions = await this.cmsService.generateContentQueryParams({ Page: page });
     const cacheKey = Md5.hashStr(JSON.stringify(cmsOptions));
 
     var cachedContents = await this.loadCachedContents(cacheKey) || await this.loadBuildInContents(cmsOptions);
+    this.sendCacheMetrics(startTime, 'loadedCacheContents');
 
     this.cacheContents(cacheKey, cmsOptions, contentCards);
 
@@ -65,6 +69,19 @@ export class ContentCacheService {
       }
       return this.cmsService.fetchCMSArticle(articleId);
     }
+  }
+
+  private sendCacheMetrics(startTime, metricsName){
+    const endTime = new Date();
+    const diff = endTime.getTime() - startTime.getTime();
+    
+    const metricsData = {
+      ItemParent: 'ContentCache',
+      ItemType: metricsName,
+      ItemName: 'TimeDuration(ms)',
+      ItemValue: diff
+    };
+    this.metrics.sendMetrics(metricsData);
   }
 
   private async loadBuildInContents(queryParams: any) {
@@ -131,6 +148,7 @@ export class ContentCacheService {
   }
 
   private async cacheContents(cacheKey, cmsOptions: any, contentCards: any) {
+    const startTime = new Date();
     Promise.all([this.fetchCMSContent(cmsOptions, contentCards), this.fetchUPEContent(contentCards)])
       .then(async response => {
         let cacheValueOfContents = {
@@ -144,8 +162,9 @@ export class ContentCacheService {
         }
         await this.fillCacheValue(response, contentCards, cacheValueOfContents);
         const contents = this.getNeedUpdateContents(cacheKey, cacheValueOfContents);
-        this.saveContents(cacheKey, cacheValueOfContents);
+        await this.saveContents(cacheKey, cacheValueOfContents);
         await this.cacheContentDetail(contents);
+        this.sendCacheMetrics(startTime, 'fetchedCacheContents');
       }).catch(error => {
         this.logger.error('cacheContents error ', error);
       });
@@ -171,14 +190,14 @@ export class ContentCacheService {
     }
   }
 
-  private saveContents(cacheKey: string, cacheValueOfContents: any) {
+  private async saveContents(cacheKey: string, cacheValueOfContents: any) {
     let iCacheSettings: ICacheSettings = {
       Key: cacheKey,
       Value: JSON.stringify(cacheValueOfContents),
       Component: "ContentCache",
       UserName: "ContentCache_Contents"
     }
-    this.contentLocalCacheContract.set(iCacheSettings);
+    await this.contentLocalCacheContract.set(iCacheSettings);
   }
 
   private getNeedUpdateContents(cacheKey: any, cacheValueOfContents: any) {

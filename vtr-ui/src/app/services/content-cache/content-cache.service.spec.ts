@@ -45,6 +45,9 @@ describe('ContentCacheService', () => {
 		vantageShellService = jasmine.createSpyObj('VantageShellService',
 			['getContentLocalCache']);
 
+		metrics = jasmine.createSpyObj('MetricService', 
+			['sendMetrics']);
+
 		TestBed.configureTestingModule({
 		});
 
@@ -56,7 +59,8 @@ describe('ContentCacheService', () => {
 			<any>cmsService,
 			<any>upeService,
 			<any>buildInContentService,
-			<any>logger);
+			<any>logger,
+			<any>metrics);
 
 	});
 
@@ -511,5 +515,12 @@ describe('ContentCacheService', () => {
 		const ret = await service.getArticleById(ContentActionType.Internal, 'cached_article');
 		expect(ret).toEqual(ARTICLE);
 		expect(cmsService.fetchCMSArticle.calls.count()).toBe(0, 'no call');
+	});
+
+	it('should be invoked once.', async () => {
+		cmsService.generateContentQueryParams.and.returnValue({ Page: 'normalContents' });
+		await service.getCachedContents('normalContents', null);
+		expect(metrics.sendMetrics.calls.count()).toBe(1, 'one call');
+		expect(metrics.sendMetrics.calls.allArgs().length).toBe(1, 'one call');
 	});
 });
