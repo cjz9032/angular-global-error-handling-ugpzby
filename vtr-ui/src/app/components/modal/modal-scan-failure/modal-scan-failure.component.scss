@@ -93,8 +93,19 @@
 			align-items: center;
 			padding: 1rem 0 0 0;
 
-			.hyperlink-container {
-				margin: 0 0 0 2.6rem;
+			.button-container {
+				margin: 0 2.4rem 0 0;
+			}
+
+			// Removing lef-padding from button and hyperlink-button
+			::ng-deep {
+				.vtr-ui-button .button-box {
+					padding-left: 0;
+				}
+
+				.vtr-ui-hyperlink-button {
+					padding-left: 0;
+				}
 			}
 		}
 	}
