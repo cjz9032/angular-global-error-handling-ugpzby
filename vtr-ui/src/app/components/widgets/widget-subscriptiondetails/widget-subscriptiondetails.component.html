@@ -2,7 +2,7 @@
     <div *ngIf="isSubscribed" class="title pb-3">{{'smartPerformance.subscriptionDetails.title' |translate }}</div>
     <div *ngIf="!isSubscribed" class="title pb-3">{{'smartPerformance.subscriptionDetails.title' |translate }}</div>
 
-    <div class="card-info">         
+    <div class="card-info">
         <p *ngIf="isSubscribed">{{'smartPerformance.subscriptionDetails.description' |translate }}</p>
         <p *ngIf="!isSubscribed && !isExpired">{{'smartPerformance.subscriptionDetails.descriptionNonSubscriber' |translate }}</p>
         <p *ngIf="!isSubscribed && isExpired"> {{'smartPerformance.subscriptionDetails.descriptionExpired' |translate }}</p>
@@ -46,8 +46,8 @@
                 </div>
             </div>
         </li>
-    </ul>    
-    <!-- <a *ngIf="isSubscribed" class="link-text" (click)=openSubscribeModal() 
+    </ul>
+    <!-- <a *ngIf="isSubscribed" class="link-text" (click)=openSubscribeModal()
         vtrMetrics
         metricsItem="btn.manageSub"
         metricsEvent="FeatureClick"
@@ -55,8 +55,9 @@
         {{'smartPerformance.subscriptionDetails.manageSubscription' |translate }}
     </a> -->
     <h4 *ngIf="expiredDaysCount" class="text-danger"><fa-icon [icon]="['fas', 'exclamation-circle']" class="mr-2"></fa-icon>{{'smartPerformance.subscriptionDetails.expiredNote' |translate }} {{expiredDaysCount}}</h4>
-    <button *ngIf="!isSubscribed && isOnline || expiredDaysCount" [ngClass]="{'disabled-link' : strStatus==='PROCESSING' || tempHide === true}"
-        class="link-text" [class.disabled]="strStatus==='PROCESSING' || tempHide"
+    <button *ngIf="!isSubscribed && isOnline || expiredDaysCount"
+		class="link-text"
+		[disabled]="strStatus==='PROCESSING' || tempHide"
         (click)=openSubscribeModal() vtrMetrics metricsItem="btn.managesubscription"
         metricsEvent="FeatureClick" metricsParent="Page.Support.SmartPerformance">
         {{'smartPerformance.subscriptionDetails.manageSubscription' |translate }}
