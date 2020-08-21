@@ -62,13 +62,14 @@ export class ContainerCardComponent implements OnInit, OnDestroy {
 
 			// handle content display metrics event
 			this.metricsService.contentDisplayDetection.removeTask(this.displayDetectionTaskId);
-			const container = this.containerCardLoading
+			const container = () => this.containerCardLoading
 					|| this.containerCardCorner
 					|| this.containerCardWideArticle
 					|| this.containerCardArticle
 					|| this.containerCardCornerArticle
 					|| this.containerCardSidebarPartnerCorner;
-			this.displayDetectionTaskId = this.metricsService.contentDisplayDetection.addTask(itemValue, container, this.sideFlag + this.order);
+			const position = () => this.sideFlag + this.order;
+			this.displayDetectionTaskId = this.metricsService.contentDisplayDetection.addTask(itemValue, container, position);
 		} else {
 			this._item = new FeatureContent();
 		}
