@@ -17,9 +17,9 @@ import { v4 as uuid } from 'uuid';
 import { ModalSmartPerformanceSubscribeComponent } from 'src/app/components/modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
 
 @Component({
-  selector: 'vtr-subpage-smart-performance-scan-summary',
-  templateUrl: './subpage-smart-performance-scan-summary.component.html',
-  styleUrls: ['./subpage-smart-performance-scan-summary.component.scss']
+	selector: 'vtr-subpage-smart-performance-scan-summary',
+	templateUrl: './subpage-smart-performance-scan-summary.component.html',
+	styleUrls: ['./subpage-smart-performance-scan-summary.component.scss']
 })
 export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 	constructor(
@@ -152,8 +152,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		this.isSubscribed = this.commonService.getLocalStorageValue(
 			LocalStorageKey.IsFreeFullFeatureEnabled
 		);
-		if(!this.isSubscribed)
-		{
+		if (!this.isSubscribed) {
 			this.getSubscriptionDetails();
 		}
 		const cacheMachineFamilyName = this.commonService.getLocalStorageValue(
@@ -203,23 +202,23 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 	}
 	async getSubscriptionDetails() {
 		let machineInfo;
-		let subscriptionData = [];		
+		let subscriptionData = [];
 		machineInfo = await this.supportService.getMachineInfo()
-		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails( machineInfo.serialnumber);
-		this.logger.info('subpage-smart-performance-scan-summary.component.getSubscriptionDetails', subscriptionDetails);		
+		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails(machineInfo.serialnumber);
+		this.logger.info('subpage-smart-performance-scan-summary.component.getSubscriptionDetails', subscriptionDetails);
 		if (subscriptionDetails && subscriptionDetails.data) {
 			subscriptionData = subscriptionDetails.data;
 			const lastItem = subscriptionData[subscriptionData.length - 1];
 			const releaseDate = new Date(lastItem.releaseDate);
 			releaseDate.setMonth(releaseDate.getMonth() + +lastItem.products[0].unitTerm);
-			releaseDate.setDate(releaseDate.getDate() - 1);		
+			releaseDate.setDate(releaseDate.getDate() - 1);
 			if (lastItem && lastItem.status.toUpperCase() === 'COMPLETED') {
 				this.getExpiredStatus(releaseDate, lastItem);
 			}
 		} else {
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
 			this.isSubscribed = false;
-		}		
+		}
 	}
 	getExpiredStatus(releaseDate, lastItem) {
 		let expiredDate;
@@ -228,14 +227,13 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		const rDate = '2022-06-15T11:25:46.212+0000';
 		const currentDate: any = new Date(lastItem.currentTime);
 		expiredDate = new Date(releaseDate);
-		 
-		if (expiredDate < currentDate) {			 
+
+		if (expiredDate < currentDate) {
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
 			this.isSubscribed = false;
 			//this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);			 
 		}
-		else
-		{
+		else {
 			//this.writeSmartPerformanceActivity('True', 'True', 'Active');
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
 			this.isSubscribed = true;
@@ -271,17 +269,19 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 			const momentObj = moment(dateObj);
 			const momentString = momentObj.format('YYYY-MM-DD');
 			const now =
-				new Intl.DateTimeFormat('default',
+				new Intl.DateTimeFormat(this.translate.currentLang,
 					{
 						hour12: true,
 						hour: 'numeric',
 						minute: 'numeric'
 					}).format(dateObj);
-			this.nextScheduleScan = (new Date(momentString).getMonth() + 1) + '/' + new Date(momentString).getDate() + ' at ' + now;
+
+			this.nextScheduleScan = (new Date(momentString).getMonth() + 1) + '/' + new Date(momentString).getDate() + (this.translate.currentLang === 'en' ? ' at ' : ' ') + now;
 		} catch (err) {
 			this.logger.error('ui-smart-performance-scan-summary.getNextScanScheduleTime.then', err);
 		}
 	}
+
 	getMostecentScanDateTime(scandate) {
 		try {
 			const dateObj = new Date(scandate);
@@ -289,18 +289,19 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 			// const momentString = momentObj.format('YYYY-MM-DD');
 			const spLocalDate = this.formatLocaleDate.transformWithoutYear(dateObj);
 			const now =
-				new Intl.DateTimeFormat('default',
+				new Intl.DateTimeFormat(this.translate.currentLang,
 					{
 						hour12: true,
 						hour: 'numeric',
 						minute: 'numeric'
 					}).format(dateObj);
 			// this.mostRecentScan = (new Date(momentString).getMonth() + 1) + '/' + new Date(momentString).getDate() + ' at ' + now;
-			this.mostRecentScan = spLocalDate + ' at ' + now;
+			this.mostRecentScan = spLocalDate + (this.translate.currentLang === 'en' ? ' at ' : ' ') +  now;
 		} catch (err) {
 			this.logger.error('ui-smart-performance-scan-summary.getMostecentScanDateTime.then', err);
 		}
 	}
+
 	async getNextScanRunTime(scantype) {
 		const payload = {
 			scantype
@@ -317,11 +318,13 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 			this.logger.error('ui-smart-performance-scan-summary.getNextScanRunTime.then', err);
 		}
 	}
+
 	// tslint:disable-next-line: use-lifecycle-interface
 	ngAfterViewInit() {
 		this.issueCount = this.tune + this.boost + this.secure;
 		this.leftAnimator = (this.rating * 10 - 0).toString() + '%';
 	}
+
 	expandRow(value) {
 		if (this.toggleValue === value) {
 			this.toggleValue = null;
@@ -329,6 +332,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 			this.toggleValue = value;
 		}
 	}
+
 	scanSummaryTime(value) {
 		if (!this.isLoading) {
 			this.dropDownToggle = true;
@@ -684,7 +688,17 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		}
 		this.enableNextText = nextScheduleScanEvent.nextEnable;
 		const nextScheduleScanDayMonth = this.formatLocaleDate.transformWithoutYear(nextScheduleScanEvent.nextScanDateWithYear);
-		this.nextScheduleScan = nextScheduleScanDayMonth + ' at ' + nextScheduleScanEvent.nextScanHour + ':' + nextScheduleScanEvent.nextScanMin + ' ' + this.translate.instant(nextScheduleScanEvent.nextScanAMPM);
+		const nextDateObj = new Date(nextScheduleScanEvent.nextScanDateWithYear + ', '
+			+ nextScheduleScanEvent.nextScanHour + ':' + nextScheduleScanEvent.nextScanMin
+			+ ' ' + (nextScheduleScanEvent.nextScanAMPM === 'smartPerformance.scanSettings.am' ? 'AM' : 'PM'));
+		const timeSection =
+			new Intl.DateTimeFormat(this.translate.currentLang,
+				{
+					hour12: true,
+					hour: 'numeric',
+					minute: 'numeric'
+				}).format(nextDateObj);
+		this.nextScheduleScan = nextScheduleScanDayMonth + (this.translate.currentLang === 'en' ? ' at ' : ' ') + timeSection;
 	}
 
 	public initContentLoad() {
@@ -874,7 +888,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 	backToNonSubScriberHome() {
 		this.backToNonSubscriber.emit();
 	}
-	hideBasedOnOldAddInVersionInSummaryPage($event){
+	hideBasedOnOldAddInVersionInSummaryPage($event) {
 		this.isOldVersion = $event;
 		this.enableNextText = !$event;
 	}
