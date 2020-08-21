@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.39](https://bitbucket.tc.lenovo.com///compare/v1.7.38...v1.7.39) (2020-08-21)
+
+
+### Bug Fixes
+
+* **Smart Performance:** VAN-21385 fix scan time text ([ce9ddfa](https://bitbucket.tc.lenovo.com///commit/ce9ddfab1bf6f50e88d515ec4e682e041e5c78af))
+
 ### [1.7.38](https://bitbucket.tc.lenovo.com///compare/v1.7.37...v1.7.38) (2020-08-20)
 
 
