@@ -4327,16 +4327,16 @@
             "descriptionbeta1": "Možete se pridružiti i isprobati cjelokupnu značajku.",
             "descriptionNonSubscriber": "Niste pretplaćeni na Lenovo uslugu Smart Performance. Moći ćete samo skenirati svoje računalo. Pretplatite se odmah kako biste iskoristili sve prednosti zaštite i nesmetanog rada računala.",
             "processStatus": "OBRADA",
-            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance, you can renew the subscription by clicking the \"Manage Subscription\" link to resume full protection for your device.",
-            "expiredStatus": "EXPIRED",
-            "expiredNote": "Your subscription will expire in",
-            "day": "day",
-            "days": "days",
-            "weeks": "weeks",
-            "week": "a week",
-            "month": "month",
-            "today": "today",
-            "next": "next"
+            "descriptionExpired": "Vaša pretplata je istekla i trenutno može koristiti samo značajku skeniranja u Smart Performance, a možete je obnoviti klikom na vezu \"Upravljanje pretplatom\" da biste omogućili punu zaštitu svog uređaja.",
+            "expiredStatus": "ISTEKLO",
+            "expiredNote": "Vaša pretplata istječe za",
+            "day": "dan",
+            "days": "sljedeći broj dana:",
+            "weeks": "tjedana",
+            "week": "tjedan dana",
+            "month": "mjesec",
+            "today": "danas",
+            "next": "dalje"
         },
         "scanSettings": {
             "title": "Postavke rasporeda skeniranja",
@@ -4801,8 +4801,8 @@
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
             "backToHome": "Natrag početnu stranicu",
-            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance, if you would like to resume the \"Scan and Fix\" feature, please press the \"renew and fix\" button down below to renew your subscription.",
-            "renewAndFix": "Renew & Fix"
+            "expiredSummaryDetails": "Vaša pretplata je istekla i trenutno može koristiti samo značajku skeniranja u Smart Performance; želite li nastaviti koristiti značajku \"Skeniraj i popravi\", pritisnite gumb \"obnovi i popravi\" u nastavku da biste obnovili pretplatu.",
+            "renewAndFix": "Obnovi i popravi"
         },
         "subscriberScanHomePage": {
             "title": "Sve je u redu s vašim ",

@@ -4327,16 +4327,16 @@
             "descriptionbeta1": "Sunteți binevenit să vă alăturați nouă și să încercați gratuit caracteristica completă.",
             "descriptionNonSubscriber": "Nu sunteți abonat la serviciul Lenovo Smart Performance. Veți putea scana doar PC-ul dumneavoastră. Abonați-vă acum pentru a beneficia de avantajele complete oferite de un computer protejat, care funcționează fără probleme.",
             "processStatus": "SE PROCESEAZĂ",
-            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance, you can renew the subscription by clicking the \"Manage Subscription\" link to resume full protection for your device.",
-            "expiredStatus": "EXPIRED",
-            "expiredNote": "Your subscription will expire in",
-            "day": "day",
-            "days": "days",
-            "weeks": "weeks",
-            "week": "a week",
-            "month": "month",
-            "today": "today",
-            "next": "next"
+            "descriptionExpired": "Abonamentul dumneavoastră a expirat și, în prezent, puteți utiliza numai funcția de scanare din Smart Performance. Puteți să vă reînnoiți abonamentul făcând clic pe linkul „Gestionare abonament”, pentru a relua protecția completă pentru dispozitivul dumneavoastră.",
+            "expiredStatus": "EXPIRAT",
+            "expiredNote": "Abonamentul dumneavoastră va expira",
+            "day": "zi",
+            "days": "zile",
+            "weeks": "săptămâni",
+            "week": "o săptămână",
+            "month": "o lună",
+            "today": "astăzi",
+            "next": "înainte"
         },
         "scanSettings": {
             "title": "Setări pentru programarea scanării",
@@ -4801,8 +4801,8 @@
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
             "backToHome": "Înapoi la pagina de pornire",
-            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance, if you would like to resume the \"Scan and Fix\" feature, please press the \"renew and fix\" button down below to renew your subscription.",
-            "renewAndFix": "Renew & Fix"
+            "expiredSummaryDetails": "Abonamentul dumneavoastră a expirat și, în prezent, puteți utiliza numai funcția de scanare din Smart Performance. Dacă doriți să reluați caracteristica „Scanare și remediere”, apăsați butonul „Reînnoire și remediere” din partea de jos pentru a reînnoi abonamentul.",
+            "renewAndFix": "Reînnoire și remediere"
         },
         "subscriberScanHomePage": {
             "title": "Totul funcționează corect privind ",

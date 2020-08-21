@@ -4327,16 +4327,16 @@
             "descriptionbeta1": "参加して全機能を試すことができます。",
             "descriptionNonSubscriber": "Lenovo Smart Performance Service に登録されていません。PC のみをスキャンできます。今すぐ登録して、PC 保護とスムーズな動作のメリットを最大限に活用しましょう。",
             "processStatus": "処理中です",
-            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance, you can renew the subscription by clicking the \"Manage Subscription\" link to resume full protection for your device.",
-            "expiredStatus": "EXPIRED",
-            "expiredNote": "Your subscription will expire in",
-            "day": "day",
-            "days": "days",
-            "weeks": "weeks",
-            "week": "a week",
-            "month": "month",
-            "today": "today",
-            "next": "next"
+            "descriptionExpired": "サブスクリプションの有効期限が切れており、現在は Smart Performance のスキャン機能のみを使用できます。「サブスクリプションの管理」リンクをクリックしてサブスクリプションを更新することで、デバイスのすべての保護機能を再開できます。",
+            "expiredStatus": "期限切れです",
+            "expiredNote": "サブスクリプションの有効期限まで、あと",
+            "day": "日",
+            "days": "日後",
+            "weeks": "週間",
+            "week": "1 週間",
+            "month": "カ月間",
+            "today": "今日",
+            "next": "次へ"
         },
         "scanSettings": {
             "title": "スキャン設定のスケジュール",
@@ -4801,8 +4801,8 @@
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
             "backToHome": "ホームに戻る",
-            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance, if you would like to resume the \"Scan and Fix\" feature, please press the \"renew and fix\" button down below to renew your subscription.",
-            "renewAndFix": "Renew & Fix"
+            "expiredSummaryDetails": "サブスクリプションの有効期限が切れており、現在は Smart Performance のスキャン機能のみを使用できます。「スキャンして修正」機能を再開するには、下の「更新して修正」ボタンをクリックしてサブスクリプションを更新してください。",
+            "renewAndFix": "更新して修正"
         },
         "subscriberScanHomePage": {
             "title": "問題なし",

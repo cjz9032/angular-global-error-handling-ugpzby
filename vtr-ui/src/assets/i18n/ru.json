@@ -4327,16 +4327,16 @@
             "descriptionbeta1": "Приглашаем вас присоединиться к программе и оценить все возможности этой функции.",
             "descriptionNonSubscriber": "Вы не подписаны на услугу Lenovo Smart Performance. Вы сможете только сканировать свой ПК. Подпишитесь прямо сейчас, чтобы воспользоваться всеми преимуществами защиты и бесперебойной работы своего ПК.",
             "processStatus": "ОБРАБОТКА",
-            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance, you can renew the subscription by clicking the \"Manage Subscription\" link to resume full protection for your device.",
-            "expiredStatus": "EXPIRED",
-            "expiredNote": "Your subscription will expire in",
-            "day": "day",
-            "days": "days",
-            "weeks": "weeks",
-            "week": "a week",
-            "month": "month",
-            "today": "today",
-            "next": "next"
+            "descriptionExpired": "Срок действия вашей подписки истек, и в настоящее время вы можете использовать только функцию сканирования в Smart Performance. Подписку можно продлить, щелкнув ссылку \"Управление подпиской\", чтобы возобновить обеспечение полной защиты вашего устройства.",
+            "expiredStatus": "СРОК ДЕЙСТВИЯ ИСТЕК",
+            "expiredNote": "Срок действия вашей подписки истекает через",
+            "day": "день",
+            "days": "дн.",
+            "weeks": "нед.",
+            "week": "неделю",
+            "month": "месяц",
+            "today": "сегодня",
+            "next": "след."
         },
         "scanSettings": {
             "title": "Настройки расписания сканирования",
@@ -4801,8 +4801,8 @@
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
             "backToHome": "Вернуться на Главную",
-            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance, if you would like to resume the \"Scan and Fix\" feature, please press the \"renew and fix\" button down below to renew your subscription.",
-            "renewAndFix": "Renew & Fix"
+            "expiredSummaryDetails": "Срок действия вашей подписки истек, и в настоящее время вы можете использовать только функцию сканирования в Smart Performance. Если вы хотите возобновить работу функции \"Сканировать и исправить\", нажмите кнопку \"Обновить и исправить\" ниже, чтобы продлить подписку.",
+            "renewAndFix": "Обновить и исправить"
         },
         "subscriberScanHomePage": {
             "title": "У вас все хорошо ",

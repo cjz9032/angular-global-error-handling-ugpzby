@@ -4327,16 +4327,16 @@
             "descriptionbeta1": "欢迎您加入并尝试完整功能。",
             "descriptionNonSubscriber": "您尚未订阅Smart Performance服务，所以您现阶段将只能扫描您的电脑，立即订阅，则可一键修复计算机的所有性能和安全问题。",
             "processStatus": "处理中",
-            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance, you can renew the subscription by clicking the \"Manage Subscription\" link to resume full protection for your device.",
-            "expiredStatus": "EXPIRED",
-            "expiredNote": "Your subscription will expire in",
-            "day": "day",
-            "days": "days",
-            "weeks": "weeks",
-            "week": "a week",
-            "month": "month",
-            "today": "today",
-            "next": "next"
+            "descriptionExpired": "您的订阅已过期，当前只能使用 Smart Performance 中的扫描功能，您可以通过单击“管理订阅”链接来续订订阅，从而恢复对设备的全面保护。",
+            "expiredStatus": "已到期",
+            "expiredNote": "您的订阅将于以下时间内到期：",
+            "day": "天",
+            "days": "天",
+            "weeks": "周",
+            "week": "1 周",
+            "month": "月",
+            "today": "今天",
+            "next": "接下来的"
         },
         "scanSettings": {
             "title": "设置自动扫描时间",
@@ -4801,8 +4801,8 @@
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
             "backToHome": "返回主屏幕",
-            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance, if you would like to resume the \"Scan and Fix\" feature, please press the \"renew and fix\" button down below to renew your subscription.",
-            "renewAndFix": "Renew & Fix"
+            "expiredSummaryDetails": "您的订阅已到期，当前只能使用 Smart Performance 中的扫描功能，如果您想恢复“扫描并修复”功能，请按下方的“续订并修复”按钮以续订您的订阅。",
+            "renewAndFix": "续订并修复"
         },
         "subscriberScanHomePage": {
             "title": "一切正常",

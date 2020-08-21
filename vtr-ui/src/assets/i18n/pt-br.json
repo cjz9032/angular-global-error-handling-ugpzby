@@ -4327,16 +4327,16 @@
             "descriptionbeta1": "Você é convidado a participar e experimentar o recurso completo.",
             "descriptionNonSubscriber": "Você não está inscrito no serviço Lenovo Smart Performance. Você só poderá fazer uma varredura no seu PC. Inscreva-se agora para obter todos os benefícios de manter seu PC protegido e funcionando sem problemas.",
             "processStatus": "PROCESSANDO",
-            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance, you can renew the subscription by clicking the \"Manage Subscription\" link to resume full protection for your device.",
-            "expiredStatus": "EXPIRED",
-            "expiredNote": "Your subscription will expire in",
-            "day": "day",
-            "days": "days",
-            "weeks": "weeks",
-            "week": "a week",
-            "month": "month",
-            "today": "today",
-            "next": "next"
+            "descriptionExpired": "Sua assinatura expirou e atualmente só pode usar o recurso de verificação no Smart Performance. Você pode renovar a assinatura clicando no link \"Gerenciar assinatura\" para retomar a proteção total do seu dispositivo.",
+            "expiredStatus": "EXPIRADO",
+            "expiredNote": "Sua assinatura irá expirar em",
+            "day": "dia",
+            "days": "dias",
+            "weeks": "semanas",
+            "week": "uma semana",
+            "month": "mês",
+            "today": "hoje",
+            "next": "avançar"
         },
         "scanSettings": {
             "title": "Configurações de programação de verificação",
@@ -4801,8 +4801,8 @@
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
             "backToHome": "Voltar para a tela inicial",
-            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance, if you would like to resume the \"Scan and Fix\" feature, please press the \"renew and fix\" button down below to renew your subscription.",
-            "renewAndFix": "Renew & Fix"
+            "expiredSummaryDetails": "Sua assinatura expirou e atualmente só pode usar o recurso de verificação no Smart Performance, se você quiser retomar o recurso \"Verificar e corrigir\", pressione o botão \"renovar e corrigir\" abaixo para renovar sua assinatura.",
+            "renewAndFix": "Renovar e corrigir"
         },
         "subscriberScanHomePage": {
             "title": "Tudo está bem com seu ",

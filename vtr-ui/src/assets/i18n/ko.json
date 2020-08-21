@@ -4327,16 +4327,16 @@
             "descriptionbeta1": "여기에 가입하여 완전한 기능을 사용해 보십시오.",
             "descriptionNonSubscriber": "Lenovo Smart Performance 서비스를 구독하고 있지 않습니다. PC만 검사할 수 있습니다. PC를 보호하고 원활하게 실행하는 모든 이점을 얻으려면 지금 가입하십시오.",
             "processStatus": "처리 중",
-            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance, you can renew the subscription by clicking the \"Manage Subscription\" link to resume full protection for your device.",
-            "expiredStatus": "EXPIRED",
-            "expiredNote": "Your subscription will expire in",
-            "day": "day",
-            "days": "days",
-            "weeks": "weeks",
-            "week": "a week",
-            "month": "month",
-            "today": "today",
-            "next": "next"
+            "descriptionExpired": "구독이 만료되었으며 현재 Smart Performance에서만 검사 기능을 사용할 수 있습니다. 장치에 대한 전체 보호를 다시 시작하려면 \"구독 관리\" 링크를 클릭하여 구독을 갱신할 수 있습니다.",
+            "expiredStatus": "만료됨",
+            "expiredNote": "구독 만료 전까지 남은 기간:",
+            "day": "일",
+            "days": "일",
+            "weeks": "주",
+            "week": "1주",
+            "month": "월",
+            "today": "오늘",
+            "next": "다음"
         },
         "scanSettings": {
             "title": "예약 검사 설정",
@@ -4801,8 +4801,8 @@
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
             "backToHome": "홈으로 돌아가기",
-            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance, if you would like to resume the \"Scan and Fix\" feature, please press the \"renew and fix\" button down below to renew your subscription.",
-            "renewAndFix": "Renew & Fix"
+            "expiredSummaryDetails": "구독이 만료되었으며 현재 Smart Performance에서만 검사 기능을 사용할 수 있습니다. \"검사 및 수정\" 기능을 다시 시작하려면 \"갱신 및 수정\" 버튼을 눌러 구독을 갱신하십시오.",
+            "renewAndFix": "갱신 및 수정"
         },
         "subscriberScanHomePage": {
             "title": "모든 설정이 사용자에 적합 ",
