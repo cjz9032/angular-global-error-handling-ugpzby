@@ -51,14 +51,8 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit, OnDestroy 
 			return;
 		}
 
-		setTimeout(() => { // use set timeout to make other paramter availible
-			if (this.articleItemDiv.nativeElement.offsetHeight === 0) {
-				return;
-			}
-
-			this.metricsService.contentDisplayDetection.removeTask(this.displayDetectionTaskId);
-			this.displayDetectionTaskId = this.metricsService.contentDisplayDetection.addTask(itemValue, this.articleItemDiv, this.index as string);
-		}, 0);
+		this.metricsService.contentDisplayDetection.removeTask(this.displayDetectionTaskId);
+		this.displayDetectionTaskId = this.metricsService.contentDisplayDetection.addTask(itemValue, () => this.articleItemDiv, () => this.index);
 	}
 
 	get item() {

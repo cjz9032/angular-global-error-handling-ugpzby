@@ -73,6 +73,7 @@ export class GuardService extends BasicGuard {
 			this.sendPageViewMetric(activatedRouteSnapshot);
 		}
 
+		this.metricsService.contentDisplayDetection.cleanTask();
 		return true;
 	}
 
