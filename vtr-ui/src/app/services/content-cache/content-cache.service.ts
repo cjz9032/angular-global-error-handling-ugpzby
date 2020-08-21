@@ -228,27 +228,23 @@ export class ContentCacheService {
         });
       }
     }
-    return contents;
   }
 
   private findUpdatedContents(contentList: any, cachedContentList: any, contents: any[]) {
-    let hasSameContent = false;
     for (const index in contentList) {
       const content = contentList[index];
+      let needUpdated = true;
       for (const idx in cachedContentList) {
         const cachedContent = cachedContentList[idx];
-        if (content.Id == cachedContent.Id) {
-          hasSameContent = true;
-          if (content.Revision != cachedContent.Revision) {
-            contents.push(content);
-          }
+        if (content.Id == cachedContent.Id && 
+          content.Revision == cachedContent.Revision) {
+          needUpdated = false;
+          break;
         }
       }
-    }
-    if (!hasSameContent) {
-      contentList.forEach(content => {
+      if (needUpdated) {
         contents.push(content);
-      });
+      }
     }
   }
 
