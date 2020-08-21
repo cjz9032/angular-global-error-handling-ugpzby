@@ -4329,16 +4329,16 @@
             "descriptionbeta1": "ونحن ندعوك بكل ترحاب إلى الانضمام وتجربة الميزة الكاملة.",
             "descriptionNonSubscriber": "أنت غير مشترك في ميزة Smart Performance من Lenovo. ستتمكن فقط من فحص جهاز الكمبيوتر الخاص بك. اشترِك الآن للحصول على الفوائد الكاملة للحفاظ على حماية جهاز الكمبيوتر الخاص بك وأدائه السلس.",
             "processStatus": "معالجة",
-            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance, you can renew the subscription by clicking the \"Manage Subscription\" link to resume full protection for your device.",
-            "expiredStatus": "EXPIRED",
-            "expiredNote": "Your subscription will expire in",
-            "day": "day",
-            "days": "days",
-            "weeks": "weeks",
-            "week": "a week",
-            "month": "month",
-            "today": "today",
-            "next": "next"
+            "descriptionExpired": "انتهت صلاحية اشتراكك ويمكن حاليًا استخدام ميزة الفحص في Smart Performance فقط، ,يمكنك تجديد الاشتراك بالنقر فوق ارتباط \"إدارة الاشتراك\" لاستئناف الحماية الكاملة لجهازك.",
+            "expiredStatus": "منتهي الصلاحية",
+            "expiredNote": "تنتهي صلاحية اشتراكك في",
+            "day": "يوم",
+            "days": "يوم (أيام)",
+            "weeks": "أسابيع",
+            "week": "أسبوع",
+            "month": "شهر",
+            "today": "اليوم",
+            "next": "التالي"
         },
         "scanSettings": {
             "title": "إعدادات جدولة الفحص",
@@ -4803,8 +4803,8 @@
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
             "backToHome": "العودة إلى الصفحة الرئيسية",
-            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance, if you would like to resume the \"Scan and Fix\" feature, please press the \"renew and fix\" button down below to renew your subscription.",
-            "renewAndFix": "Renew & Fix"
+            "expiredSummaryDetails": "انتهت صلاحية اشتراكك ويمكن حاليًا استخدام ميزة الفحص في Smart Performance فقط، إذا كنت ترغب في استئناف ميزة \"الفحص والإصلاح\"، فالرجاء الضغط على الزر \"تجديد وإصلاح\" أدناه لتجديد اشتراكك.",
+            "renewAndFix": "تجديد وإصلاح"
         },
         "subscriberScanHomePage": {
             "title": "كل شيء على ما يرام في ",

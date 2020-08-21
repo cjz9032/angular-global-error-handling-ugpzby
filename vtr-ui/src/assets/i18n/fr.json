@@ -4327,16 +4327,16 @@
             "descriptionbeta1": "N’hésitez pas à vous inscrire pour profiter de toutes les fonctionnalités.",
             "descriptionNonSubscriber": "Vous n’êtes pas abonné(e) au service Lenovo Smart Performance. Vous ne pourrez analyser que votre PC. Abonnez-vous dès maintenant pour profiter pleinement des avantages d’un PC bien protégé et propre.",
             "processStatus": "TRAITEMENT",
-            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance, you can renew the subscription by clicking the \"Manage Subscription\" link to resume full protection for your device.",
-            "expiredStatus": "EXPIRED",
-            "expiredNote": "Your subscription will expire in",
-            "day": "day",
-            "days": "days",
-            "weeks": "weeks",
-            "week": "a week",
-            "month": "month",
-            "today": "today",
-            "next": "next"
+            "descriptionExpired": "Votre abonnement a expiré et il peut actuellement utiliser uniquement la fonction d'analyse dans Smart Performance. Vous pouvez renouveler l'abonnement en cliquant sur le lien \"Gérer l'abonnement \" pour reprendre une protection complète de votre périphérique.",
+            "expiredStatus": "ARRIVÉ À EXPIRATION",
+            "expiredNote": "Votre abonnement va expirer dans",
+            "day": "jour",
+            "days": "jours.",
+            "weeks": "semaines",
+            "week": "une semaine",
+            "month": "mois",
+            "today": "aujourd'hui",
+            "next": "suivant"
         },
         "scanSettings": {
             "title": "Programmer les paramètres d’analyse",
@@ -4801,8 +4801,8 @@
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
             "backToHome": "Retour à l’écran Accueil",
-            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance, if you would like to resume the \"Scan and Fix\" feature, please press the \"renew and fix\" button down below to renew your subscription.",
-            "renewAndFix": "Renew & Fix"
+            "expiredSummaryDetails": "Votre abonnement a expiré et il peut actuellement utiliser uniquement la fonction d'analyse dans Smart Performance. Si vous souhaitez reprendre la fonction \"Analyser et réparer\", cliquez sur le bouton \"Renouveler et réparer\" ci-dessous pour renouveler votre abonnement.",
+            "renewAndFix": "Renouveler et réparer"
         },
         "subscriberScanHomePage": {
             "title": "Tout va bien concernant votre ",

@@ -4327,16 +4327,16 @@
             "descriptionbeta1": "歡迎加入本計畫並試用完整功能。",
             "descriptionNonSubscriber": "您沒有訂閱 Lenovo Smart Performance 服務。您只能掃描自己的 PC。立即訂閱以獲得可讓 PC 受到保護且執行順暢的完整權益。",
             "processStatus": "處理中",
-            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance, you can renew the subscription by clicking the \"Manage Subscription\" link to resume full protection for your device.",
-            "expiredStatus": "EXPIRED",
-            "expiredNote": "Your subscription will expire in",
-            "day": "day",
-            "days": "days",
-            "weeks": "weeks",
-            "week": "a week",
-            "month": "month",
-            "today": "today",
-            "next": "next"
+            "descriptionExpired": "您的訂閱已過期，目前只能使用 Smart Performance 中的掃描功能，您可以透過按一下「管理訂閱」連結來續訂該訂閱，以回復對裝置的全面保護。",
+            "expiredStatus": "已過期",
+            "expiredNote": "您的訂閱期限尚有：",
+            "day": "天",
+            "days": "天",
+            "weeks": "週",
+            "week": "一週",
+            "month": "月",
+            "today": "今天",
+            "next": "下一步"
         },
         "scanSettings": {
             "title": "排程掃描設定",
@@ -4801,8 +4801,8 @@
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
             "backToHome": "返回首頁",
-            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance, if you would like to resume the \"Scan and Fix\" feature, please press the \"renew and fix\" button down below to renew your subscription.",
-            "renewAndFix": "Renew & Fix"
+            "expiredSummaryDetails": "您的訂閱已過期，目前只能使用 Smart Performance 中的掃描功能，如果您想回復「掃描並修復」功能，請按下下方的「續訂並修復」按鈕來續訂您的訂閱。",
+            "renewAndFix": "續訂並修復"
         },
         "subscriberScanHomePage": {
             "title": "您的系統一切正常",

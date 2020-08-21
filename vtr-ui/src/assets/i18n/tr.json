@@ -4327,16 +4327,16 @@
             "descriptionbeta1": "İsterseniz katılıp tam özelliği deneyebilirsiniz.",
             "descriptionNonSubscriber": "Lenovo Smart Performance Hizmetine abone değilsiniz. Yalnızca bilgisayarınızı tarayabilirsiniz. Bilgisayarınızı korumanın ve sorunsuz çalışmanın tüm avantajlarından yararlanmak için şimdi abone olun.",
             "processStatus": "İŞLENİYOR",
-            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance, you can renew the subscription by clicking the \"Manage Subscription\" link to resume full protection for your device.",
-            "expiredStatus": "EXPIRED",
-            "expiredNote": "Your subscription will expire in",
-            "day": "day",
-            "days": "days",
-            "weeks": "weeks",
-            "week": "a week",
-            "month": "month",
-            "today": "today",
-            "next": "next"
+            "descriptionExpired": "Aboneliğinizin süresi doldu ve şu anda yalnızca Smart Performance'taki tarama özelliğini kullanabilirsiniz. Cihazınızın tam olarak korunmasına devam etmek için “Aboneliği Yönet” bağlantısını tıklayarak aboneliğinizi yenileyebilirsiniz.",
+            "expiredStatus": "SÜRESİ DOLDU",
+            "expiredNote": "Aboneliğinizin sona ermesine kalan süre:",
+            "day": "gün",
+            "days": "gün",
+            "weeks": "hafta",
+            "week": "bir hafta",
+            "month": "ay",
+            "today": "bugün",
+            "next": "gelecek"
         },
         "scanSettings": {
             "title": "Tarama ayarları planlayın",
@@ -4801,8 +4801,8 @@
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
             "backToHome": "Ana Sayfaya Dön",
-            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance, if you would like to resume the \"Scan and Fix\" feature, please press the \"renew and fix\" button down below to renew your subscription.",
-            "renewAndFix": "Renew & Fix"
+            "expiredSummaryDetails": "Aboneliğinizin süresi doldu ve şu anda yalnızca Smart Performance'taki tarama özelliğini kullanabilirsiniz. “Tara ve Düzelt” özelliğini sürdürmek istiyorsanız lütfen aboneliğinizi yenilemek için aşağıdaki “yenile ve düzelt” düğmesine basın.",
+            "renewAndFix": "Yenile ve Düzelt"
         },
         "subscriberScanHomePage": {
             "title": "Her şey yolunda: ",

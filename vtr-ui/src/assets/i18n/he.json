@@ -4327,16 +4327,16 @@
             "descriptionbeta1": "אתם מוזמנים להצטרף ולנסות את התכונה המלאה.",
             "descriptionNonSubscriber": "אינכם מנויים לשירות Lenovo Smart Performance. תוכלו לבצע סריקה של המחשב בלבד. רכשו מנוי עכשיו כדי לקבל את כל היתרונות שמספקות הגנה למחשבכם ומבטיחות את פעולתו החלקה.",
             "processStatus": "מעבד",
-            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance, you can renew the subscription by clicking the \"Manage Subscription\" link to resume full protection for your device.",
-            "expiredStatus": "EXPIRED",
-            "expiredNote": "Your subscription will expire in",
-            "day": "day",
-            "days": "days",
-            "weeks": "weeks",
-            "week": "a week",
-            "month": "month",
-            "today": "today",
-            "next": "next"
+            "descriptionExpired": "פג תוקף המנוי שלכם וכרגע אתם יכולים להשתמש רק בתכונת סריקה ב-Smart Performance, אתם יכולים לחדש את המינוי על ידי לחיצה על הקישור \"ניהול מנוי\" כדי לחדש את ההגנה המלאה על המכשיר שלכם.",
+            "expiredStatus": "פג תוקף",
+            "expiredNote": "תוקף המנוי יפוג בעוד",
+            "day": "יום",
+            "days": "ימים",
+            "weeks": "שבועות",
+            "week": "שבוע",
+            "month": "חודש",
+            "today": "היום",
+            "next": "הבא"
         },
         "scanSettings": {
             "title": "הגדרות של תזמון סריקה",
@@ -4801,8 +4801,8 @@
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
             "backToHome": "חזרה למסך הבית",
-            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance, if you would like to resume the \"Scan and Fix\" feature, please press the \"renew and fix\" button down below to renew your subscription.",
-            "renewAndFix": "Renew & Fix"
+            "expiredSummaryDetails": "פג תוקף המנוי שלכם וכרגע אתם יכולים להשתמש רק בתכונת סריקה ב-Smart Performance, אם ברצונכם לחדש את התכונה \"סריקה ותיקון\", לחצו על הלחצן \"חידוש ותיקון\" למטה כדי לחדש את המנוי.",
+            "renewAndFix": "חידוש ותיקון"
         },
         "subscriberScanHomePage": {
             "title": "הכל טוב עם המחשב ",

@@ -4327,16 +4327,16 @@
             "descriptionbeta1": "Du er velkommen til å bli med og prøve alle funksjonene.",
             "descriptionNonSubscriber": "Du abonnerer ikke på Lenovo Smart Performance Service. Du vil bare kunne skanne PC-en. Abonner nå for å få alle fordelene for at PC-en blir beskyttet og kjører problemfritt.",
             "processStatus": "BEHANDLER",
-            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance, you can renew the subscription by clicking the \"Manage Subscription\" link to resume full protection for your device.",
-            "expiredStatus": "EXPIRED",
-            "expiredNote": "Your subscription will expire in",
-            "day": "day",
-            "days": "days",
-            "weeks": "weeks",
-            "week": "a week",
-            "month": "month",
-            "today": "today",
-            "next": "next"
+            "descriptionExpired": "Abonnementet ditt er utløpt og kan for øyeblikket bare bruke skannfunksjonen i Smart Performance. Du kan fornye abonnementet ved å klikke på lenken \"Administrer abonnement \" for å gjenoppta full beskyttelse for enheten.",
+            "expiredStatus": "UTLØPT",
+            "expiredNote": "Abonnementet ditt utløper om",
+            "day": "dag",
+            "days": "dager",
+            "weeks": "uker",
+            "week": "en uke",
+            "month": "måned",
+            "today": "i dag",
+            "next": "neste"
         },
         "scanSettings": {
             "title": "Innstillinger for skanneplanlegging",
@@ -4801,8 +4801,8 @@
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
             "backToHome": "Tilbake til hjem",
-            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance, if you would like to resume the \"Scan and Fix\" feature, please press the \"renew and fix\" button down below to renew your subscription.",
-            "renewAndFix": "Renew & Fix"
+            "expiredSummaryDetails": "Abonnementet ditt er utløpt og kan for øyeblikket bare bruke skannfunksjonen i Smart Performance. Hvis du vil gjenoppta funksjonen \"Skann og reparer\", trykker du på knappen \"forny og reparer\" nedenfor for å fornye abonnementet.",
+            "renewAndFix": "Forny og reparer"
         },
         "subscriberScanHomePage": {
             "title": "Alt er bra med ",

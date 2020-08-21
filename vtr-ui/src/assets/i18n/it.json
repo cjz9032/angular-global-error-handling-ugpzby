@@ -4327,16 +4327,16 @@
             "descriptionbeta1": "Sei invitato a partecipare e a provare la funzione completa.",
             "descriptionNonSubscriber": "Non sei iscritto al servizio Lenovo Smart Performance. Potrai eseguire solo la scansione del PC. Iscriviti ora per ottenere i vantaggi di un PC sempre veloce e protetto.",
             "processStatus": "ELABORAZIONE IN CORSO...",
-            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance, you can renew the subscription by clicking the \"Manage Subscription\" link to resume full protection for your device.",
-            "expiredStatus": "EXPIRED",
-            "expiredNote": "Your subscription will expire in",
-            "day": "day",
-            "days": "days",
-            "weeks": "weeks",
-            "week": "a week",
-            "month": "month",
-            "today": "today",
-            "next": "next"
+            "descriptionExpired": "La registrazione è scaduta e attualmente può utilizzare solo la funzione di scansione in Smart Performance; è possibile rinnovare la registrazione facendo clic sul collegamento \"Gestisci registrazione\" per riprendere la protezione completa per il dispositivo.",
+            "expiredStatus": "SCADUTA",
+            "expiredNote": "La registrazione scadrà tra",
+            "day": "giorno",
+            "days": "giorni",
+            "weeks": "settimane",
+            "week": "una settimana",
+            "month": "mese",
+            "today": "oggi",
+            "next": "avanti"
         },
         "scanSettings": {
             "title": "Pianifica impostazioni scansione",
@@ -4801,8 +4801,8 @@
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
             "backToHome": "Torna alla schermata principale",
-            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance, if you would like to resume the \"Scan and Fix\" feature, please press the \"renew and fix\" button down below to renew your subscription.",
-            "renewAndFix": "Renew & Fix"
+            "expiredSummaryDetails": "La registrazione è scaduta e attualmente può utilizzare solo la funzione di scansione in Smart Performance; se si desidera riprendere la funzione \"Scansiona e correggi\", premere il pulsante \"Rinnova e correggi\" in basso per rinnovare la registrazione.",
+            "renewAndFix": "Rinnova e correggi"
         },
         "subscriberScanHomePage": {
             "title": "Il sistema funziona correttamente ",

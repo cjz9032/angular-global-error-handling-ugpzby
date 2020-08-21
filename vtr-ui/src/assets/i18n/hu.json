@@ -4327,16 +4327,16 @@
             "descriptionbeta1": "Ön a próbaprogram ideje alatt korlátlanul használhatja a teljes funkciókészletet.",
             "descriptionNonSubscriber": "Ön nem fizetett elő a Lenovo Smart Performance szolgáltatásra. Csak a számítógép ellenőrzésére van lehetősége. Fizessen elő most, és élvezze a számítógép védelmével és zökkenőmentes működésének biztosításával járó előnyöket.",
             "processStatus": "FELDOLGOZÁS",
-            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance, you can renew the subscription by clicking the \"Manage Subscription\" link to resume full protection for your device.",
-            "expiredStatus": "EXPIRED",
-            "expiredNote": "Your subscription will expire in",
-            "day": "day",
-            "days": "days",
-            "weeks": "weeks",
-            "week": "a week",
-            "month": "month",
-            "today": "today",
-            "next": "next"
+            "descriptionExpired": "Az előfizetése lejárt, és jelenleg csak a Smart Performance ellenőrzési funkcióját használhatja. Ha szeretné megújítani az előfizetését, és ismét élvezni az eszköz teljes körű védelmét, kattintson az „Előfizetés kezelése” hivatkozásra.",
+            "expiredStatus": "LEJÁRT",
+            "expiredNote": "Az előfizetés lejárata:",
+            "day": "nap",
+            "days": "nap",
+            "weeks": "hét",
+            "week": "egy hát",
+            "month": "hónap",
+            "today": "ma",
+            "next": "következő"
         },
         "scanSettings": {
             "title": "Ellenőrzés ütemezésével kapcsolatos beállítások",
@@ -4801,8 +4801,8 @@
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
             "backToHome": "Vissza a kezdőlapra",
-            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance, if you would like to resume the \"Scan and Fix\" feature, please press the \"renew and fix\" button down below to renew your subscription.",
-            "renewAndFix": "Renew & Fix"
+            "expiredSummaryDetails": "Az előfizetése lejárt, és jelenleg csak a Smart Performance ellenőrzési funkcióját használhatja. Ha szeretné továbbra is használni az „Ellenőrzés és javítás” funkciót, az előfizetés megújításához kattintson az alábbi „Megújítás és javítás” gombra.",
+            "renewAndFix": "Megújítás és javítás"
         },
         "subscriberScanHomePage": {
             "title": "Minden rendben van az Ön ",

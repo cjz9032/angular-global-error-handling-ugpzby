@@ -4327,16 +4327,16 @@
             "descriptionbeta1": "Radi vás tu privítame a zabezpečíme prístup ku všetkým funkciám.",
             "descriptionNonSubscriber": "Nie ste prihlásení na odber služby Lenovo Smart Performance Service. Budete môcť kontrolovať len svoj počítač. Prihláste sa na odber a získajte všetky výhody, vďaka ktorým zaistíte ochranu počítača, ktorý bude optimálne fungovať.",
             "processStatus": "PREBIEHA SPRACOVANIE",
-            "descriptionExpired": "Your subscription is expired and currently can only use scan feature in Smart Performance, you can renew the subscription by clicking the \"Manage Subscription\" link to resume full protection for your device.",
-            "expiredStatus": "EXPIRED",
-            "expiredNote": "Your subscription will expire in",
-            "day": "day",
-            "days": "days",
-            "weeks": "weeks",
-            "week": "a week",
-            "month": "month",
-            "today": "today",
-            "next": "next"
+            "descriptionExpired": "Platnosť vášho predplatného uplynula a momentálne môžete používať iba funkciu skenovania v službe Smart Performance. Ak chcete obnoviť úplnú ochranu svojho zariadenia, obnovte si predplatné kliknutím na odkaz „Spravovať predplatné“.",
+            "expiredStatus": "UPLYNUTÁ PLATNOSŤ",
+            "expiredNote": "Platnosť vášho predplatného uplynie po",
+            "day": "dni",
+            "days": "dňoch",
+            "weeks": "týždňoch",
+            "week": "týždni",
+            "month": "mesiaci",
+            "today": "dnes",
+            "next": "ďalej"
         },
         "scanSettings": {
             "title": "Nastavenia plánovanej kontroly",
@@ -4801,8 +4801,8 @@
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",
             "backToHome": "Späť domov",
-            "expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance, if you would like to resume the \"Scan and Fix\" feature, please press the \"renew and fix\" button down below to renew your subscription.",
-            "renewAndFix": "Renew & Fix"
+            "expiredSummaryDetails": "Platnosť vášho predplatného uplynula a momentálne môžete používať iba funkciu skenovania v službe Smart Performance. Ak chcete znova používať funkciu „Skenovať a opraviť“, obnovte svoje predplatné stlačením tlačidla „Obnoviť a opraviť“ nižšie.",
+            "renewAndFix": "Obnoviť a opraviť"
         },
         "subscriberScanHomePage": {
             "title": "Všetko je v poriadku v zariadení ",
