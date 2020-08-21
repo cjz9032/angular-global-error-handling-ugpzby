@@ -5,13 +5,11 @@ import { GamingSystemUpdateService } from './gaming-system-update.service';
 
 describe('GamingSystemUpdateService', () => {
 	let shellService: VantageShellService;
-	let service: GamingSystemUpdateService;
 
 	beforeEach(() => {
 		TestBed.configureTestingModule({
 			imports: [HttpClientModule],
 		});
-		service = TestBed.get(GamingSystemUpdateService);
 		shellService = TestBed.get(VantageShellService);
 	});
 	describe(':', () => {

@@ -280,7 +280,7 @@ export class MetricService {
 		));
 	}
 
-	public sendSetUpdateSchedure(taskParam, response) {
+	public sendSetUpdateSchedule(taskParam, response) {
 		this.metricsClient.sendAsync(new TaskAction(
 			MetricConst.TaskSetUpdateSchedule,
 			1,

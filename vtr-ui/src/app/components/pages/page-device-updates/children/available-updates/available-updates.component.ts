@@ -16,19 +16,19 @@ export class AvailableUpdatesComponent implements OnInit {
 	@Input() isInstallingAllUpdates = true;
 
 	@Input() set ignoredUpdates(value: AvailableUpdateDetail[]) {
-		this._ignoredUpdates = value;
+		this.mIgnoredUpdates = value;
 		this.expandIgnoredForDependencyUpdates();
-	};
-	get ignoredUpdates() : AvailableUpdateDetail[] {
-		return this._ignoredUpdates;
-	};
-	
+	}
+	get ignoredUpdates(): AvailableUpdateDetail[] {
+		return this.mIgnoredUpdates;
+	}
+
 	@Input() set isInstallationCompleted(value: boolean) {
-		this._isInstallationCompleted = value;
+		this.mIsInstallationCompleted = value;
 		this.expandIgnoredForInstallationResult();
-	};
-	get isInstallationCompleted() : boolean {
-		return this._isInstallationCompleted;
+	}
+	get isInstallationCompleted(): boolean {
+		return this.mIsInstallationCompleted;
 	}
 
 
@@ -41,8 +41,8 @@ export class AvailableUpdatesComponent implements OnInit {
 
 	public isCollapsed = true;
 
-	private _isInstallationCompleted = false;
-	private _ignoredUpdates: AvailableUpdateDetail[];
+	private mIsInstallationCompleted = false;
+	private mIgnoredUpdates: AvailableUpdateDetail[];
 
 	constructor(private systemUpdateService: SystemUpdateService) { }
 
@@ -89,18 +89,18 @@ export class AvailableUpdatesComponent implements OnInit {
 		this.isUpdateSelected = selectedUpdates.length > 0;
 		this.expandIgnoredForDependencyUpdates();
 	}
-	
+
 	private expandIgnoredForDependencyUpdates() {
 		if (this.isCollapsed) {
 			const dependencyInIgnored = this.ignoredUpdates.find(x => x.isDependency);
 			if (dependencyInIgnored) {
 				this.isCollapsed = false;
-			} 
-		} 	
+			}
+		}
 	}
 
 	private expandIgnoredForInstallationResult() {
-		if (this._isInstallationCompleted && this.ignoredUpdates.length > 0 && this.isCollapsed) {
+		if (this.mIsInstallationCompleted && this.ignoredUpdates.length > 0 && this.isCollapsed) {
 			this.isCollapsed = false;
 		}
 	}

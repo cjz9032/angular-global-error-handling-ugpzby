@@ -127,7 +127,7 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 		}
 		let focusId = 'su_installation_update_sort_order';
 		if (this.installationHistory && this.installationHistory.length >= 5) {
-			focusId = 'su_installation_update_expand_'+ this.installationHistory[4].packageID;
+			focusId = 'su_installation_update_expand_' + this.installationHistory[4].packageID;
 		}
 		this.focusOnElement(focusId);
 	}
@@ -138,7 +138,7 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public convertReleaseDate(datestr: string) {
-		return this.commonService.formatLocalDate(`${datestr}T00:00:00`);
+	public convertReleaseDate(dateStr: string) {
+		return this.commonService.formatLocalDate(`${dateStr}T00:00:00`);
 	}
 }
