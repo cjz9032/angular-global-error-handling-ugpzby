@@ -37,10 +37,10 @@ import { ContentActionType } from 'src/app/enums/content.enum';
 export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	title = 'systemUpdates.title';
 	back = 'systemUpdates.back';
-	backarrow = '< ';
+	backArrow = '< ';
 	updateToDateTitle = 'systemUpdates.banner.title';
 
-	supportWebsiteCard: FeatureContent = new FeatureContent()
+	supportWebsiteCard: FeatureContent = new FeatureContent();
 	cardContentPositionA: FeatureContent = new FeatureContent();
 
 	private lastUpdatedText = 'systemUpdates.banner.last';
@@ -62,8 +62,8 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	private isComponentInitialized = false;
 	public updateTitle = '';
 	private isUserCancelledUpdateCheck = false;
-	private protocalAction: string;
-	private shouldCheckingUpdateByProtocal = false;
+	private protocolAction: string;
+	private shouldCheckingUpdateByProtocol = false;
 	private backButton = 'system-update-back-btn';
 
 	public isInstallationSuccess = false;
@@ -189,10 +189,10 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	ngDoCheck(): void {
-		const lastAction = this.protocalAction;
-		this.protocalAction = this.activatedRoute.snapshot.queryParams.action;
-		if (this.protocalAction && lastAction !== this.protocalAction) {
-			if (this.protocalAction.toLowerCase() === 'enable') {
+		const lastAction = this.protocolAction;
+		this.protocolAction = this.activatedRoute.snapshot.queryParams.action;
+		if (this.protocolAction && lastAction !== this.protocolAction) {
+			if (this.protocolAction.toLowerCase() === 'enable') {
 				this.systemUpdateService.setUpdateSchedule(true, false);
 				const metricData = {
 					ItemType: 'FeatureClick',
@@ -201,8 +201,8 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					ItemParent: 'Device.SystemUpdate'
 				};
 				this.metrics.sendAsync(metricData);
-			} else if (this.protocalAction.toLowerCase() === 'start') {
-				this.shouldCheckingUpdateByProtocal = true;
+			} else if (this.protocolAction.toLowerCase() === 'start') {
+				this.shouldCheckingUpdateByProtocol = true;
 			}
 		}
 	}
@@ -253,7 +253,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 				FeatureImage: 'assets/images/support.jpg',
 				ActionType: ContentActionType.External,
 				ActionLink: this.supportLink,
-			}
+			};
 		});
 	}
 
@@ -314,8 +314,9 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 				this.notificationSubscription.unsubscribe();
 			}
 
-			if(this.cmsSubscription) this.cmsSubscription.unsubscribe();
-
+			if (this.cmsSubscription) {
+				this.cmsSubscription.unsubscribe();
+			}
 		} catch (error) {
 			this.logger.error('PageDeviceUpdatesComponent.ngOnDestroy: ', error);
 		}
@@ -436,7 +437,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		}
 	}
 
-	// private getAvailabelPackageId(packageName) {
+	// private getAvailablePackageId(packageName) {
 	// 	let packId = this.getPackageId(this.criticalUpdates, packageName);
 	// 	if (packId === '') {
 	// 		packId = this.getPackageId(this.recommendedUpdates, packageName);
@@ -584,7 +585,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		if (!isInstallAll) {
 			updatesToInstall = this.systemUpdateService.getSelectedUpdates(updatesToInstall);
 		} else {
-			this.systemUpdateService.selectCoreqUpdateForInstallAll(updatesToInstall);
+			this.systemUpdateService.selectDependedUpdateForInstallAll(updatesToInstall);
 			updatesToInstall = this.systemUpdateService.getUnIgnoredUpdatesForInstallAll(updatesToInstall);
 		}
 		const { rebootType, packages } = this.systemUpdateService.getRebootType(updatesToInstall);
@@ -914,9 +915,9 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					this.isUpdateCheckInProgress = false;
 					this.isCheckingPluginStatus = false;
 					this.isUpdateDownloading = this.systemUpdateService.isUpdateDownloading;
-					if (this.shouldCheckingUpdateByProtocal) {
+					if (this.shouldCheckingUpdateByProtocol) {
 						this.onCheckForUpdates();
-						this.shouldCheckingUpdateByProtocal = false;
+						this.shouldCheckingUpdateByProtocol = false;
 					}
 					break;
 				case UpdateProgress.ScheduleUpdateInstallationComplete:
@@ -929,7 +930,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					this.setUpdateByCategory(payload.updateList);
 					this.getLastUpdateScanDetail();
 					this.systemUpdateService.getUpdateHistory();
-					// using this check to avoid displaying more than on reboot confimation dialogs.
+					// using this check to avoid displaying more than on reboot confirm dialogs.
 					if (!this.isRebootRequested) {
 						this.checkRebootRequested();
 					}

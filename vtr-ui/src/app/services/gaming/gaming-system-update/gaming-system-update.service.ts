@@ -1,12 +1,5 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
-import { CommonService } from '../../common/common.service';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
-import { RamOCSatus } from 'src/app/data-models/gaming/ram-overclock-status.model';
-import { HybridModeStatus } from 'src/app/data-models/gaming/hybrid-mode-status.model';
-import { TouchpadLockStatus } from 'src/app/data-models/gaming/touchpad-lock-status.model';
-
 
 @Injectable({
 	providedIn: 'root'

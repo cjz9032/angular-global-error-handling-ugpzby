@@ -77,12 +77,12 @@ export class ModalUpdateChangeLogComponent implements OnInit, OnDestroy {
 
 	@HostListener('document:keydown.pageup')
 	onClickPageUp() {
-		this.commonService.scrollElementByDistance(this.logContent.nativeElement, this.logContent.nativeElement.clientHeight - 40, true)
+		this.commonService.scrollElementByDistance(this.logContent.nativeElement, this.logContent.nativeElement.clientHeight - 40, true);
 	}
 
 	@HostListener('document:keydown.pagedown')
 	onClickPageDown() {
-		this.commonService.scrollElementByDistance(this.logContent.nativeElement, this.logContent.nativeElement.clientHeight - 40)
+		this.commonService.scrollElementByDistance(this.logContent.nativeElement, this.logContent.nativeElement.clientHeight - 40);
 	}
 
 	@HostListener('document:keydown.escape', ['$event'])

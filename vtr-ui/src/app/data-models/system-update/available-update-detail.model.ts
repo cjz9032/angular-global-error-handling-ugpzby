@@ -2,7 +2,7 @@ import { UpdateActionResult } from 'src/app/enums/update-action-result.enum';
 import { UpdateInstallSeverity } from 'src/app/enums/update-install-severity.enum';
 
 export class AvailableUpdateDetail {
-	public coreqPackageID: string;
+	public dependedPackageID: string;
 	public currentInstalledVersion: string;
 	public diskSpaceRequired: string;
 	public licenseUrl: string;
