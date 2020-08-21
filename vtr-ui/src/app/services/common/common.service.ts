@@ -7,7 +7,6 @@ import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { Subject } from 'rxjs/internal/Subject';
 import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
 import { ReplaySubject } from 'rxjs';
-import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -28,9 +27,7 @@ export class CommonService {
 	public lastFeatureVersion = 0;
 	public newFeatureVersion = 3.002005;
 
-	constructor(
-		private localCacheService: LocalCacheService
-	) {
+	constructor() {
 		this.notificationSubject = new BehaviorSubject<AppNotification>(
 			new AppNotification('init')
 		);
@@ -112,49 +109,6 @@ export class CommonService {
 		const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
 		const diffDays = Math.ceil(Math.abs((firstDate.getTime() - secondDate.getTime()) / (oneDay)));
 		return diffDays;
-	}
-
-	/**
-	 * Stores given value in IndexDB
-	 * Before switch to use IndexDB, please make sure there is related feature story for PA to verify
-	 * @param key key for storage. Must define it in LocalStorageKey or DashboardLocalStorageKey enum
-	 * @param value value to store in local storage
-	 */
-	public async setLocalCacheValue(key: LocalStorageKey | DashboardLocalStorageKey, value: any) {
-		return this.localCacheService.setItem(key, value);
-	}
-
-	/**
-	 * Get value from IndexDB
-	 * Before switch to use IndexDB, please make sure there is related feature story for PA to verify
-	 * @param key key for storage. Must define it in LocalStorageKey or DashboardLocalStorageKey enum
-	 * @param defaultValue default value for not key not found in IndexDB storage
-	 */
-	public async getLocalCacheValue(key: LocalStorageKey | DashboardLocalStorageKey, defaultValue?: any): Promise<any> {
-		const valueFromIndexDb = await this.localCacheService.getItem(key, undefined);
-		if (valueFromIndexDb !== undefined
-			&& valueFromIndexDb !== null) {
-			return Promise.resolve(valueFromIndexDb);
-		} else {
-			const valueFromLocalStorage = this.getLocalStorageValue(key, undefined);
-			if (valueFromLocalStorage !== undefined
-				&& valueFromLocalStorage !== null) {
-				this.removeLocalStorageValue(key);
-				this.setLocalCacheValue(key, valueFromLocalStorage);
-				return Promise.resolve(valueFromLocalStorage);
-			} else {
-				return Promise.resolve(defaultValue);
-			}
-		}
-	}
-
-	/**
-	 * Removes the key/value pair in IndexDB storage with the given key
-	 * Before switch to use IndexDB, please make sure there is related feature story for PA to verify
-	 * @param key key use to removes the key/value pair in IndexDB storage
-	 */
-	public async removeLocalCacheItem(key: LocalStorageKey | DashboardLocalStorageKey) {
-		return this.localCacheService.removeItem(key);
 	}
 
 	/**

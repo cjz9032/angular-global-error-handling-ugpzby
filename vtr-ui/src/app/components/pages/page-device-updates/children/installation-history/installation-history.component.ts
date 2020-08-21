@@ -48,8 +48,8 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	async getCachedHistory() {
-		const cachedData = await this.commonService.getLocalCacheValue(LocalStorageKey.SystemUpdateInstallationHistoryList);
+	getCachedHistory() {
+		const cachedData = this.commonService.getLocalStorageValue(LocalStorageKey.SystemUpdateInstallationHistoryList);
 		if (typeof(cachedData) !== 'undefined' && cachedData.length > 0) {
 			this.installationHistory = cachedData;
 		}
@@ -111,7 +111,7 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 
 	private sortInstallationHistory(history: Array<UpdateHistory>) {
 		this.installationHistory = this.mapMessage(history);
-		this.commonService.setLocalCacheValue(LocalStorageKey.SystemUpdateInstallationHistoryList, this.installationHistory);
+		this.commonService.setLocalStorageValue(LocalStorageKey.SystemUpdateInstallationHistoryList, this.installationHistory);
 		this.systemUpdateService.sortInstallationHistory(this.installationHistory, this.sortAsc);
 		if (this.installationHistory.length > 5 && !this.showAll) {
 			this.installationHistory = this.installationHistory.slice(0, 5);
