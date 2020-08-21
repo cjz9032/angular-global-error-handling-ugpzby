@@ -138,9 +138,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			case LocalStorageKey.WelcomeTutorial:
 				try {
 					this.usageType = this.selfSelectService.usageType;
-					this.interests.forEach(item => {
-						item.checked = this.selfSelectService.checkedArray && this.selfSelectService.checkedArray.includes(item.label);
-					});
+					this.interests = this.commonService.cloneObj(this.selfSelectService.interests);
 					let radioId = '';
 					switch (this.usageType) {
 						case this.segmentConst.Consumer:
@@ -173,7 +171,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	private getSelfSelectStatus() {
 		this.selfSelectService.getConfig().then((result) => {
 			this.usageType = result.usageType;
-			this.interests = result.interests;
+			this.interests = this.commonService.cloneObj(result.interests);
 		});
 		this.userSelectionChanged = false;
 	}
@@ -390,22 +388,17 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 
 	saveUsageType(value) {
 		this.usageType = value;
-		this.selfSelectService.usageType = this.usageType;
-		this.userSelectionChanged = this.selfSelectService.selectionChanged();
+		this.userSelectionChanged = this.userProfileSelectionChanged();
 	}
 
-	onInterestToggle($event, value) {
-		if ($event.target.checked) {
-			this.selfSelectService.checkedArray.push(value);
-		} else {
-			this.selfSelectService.checkedArray.splice(this.selfSelectService.checkedArray.indexOf(value), 1);
-		}
-		this.userSelectionChanged = this.selfSelectService.selectionChanged();
+	onInterestToggle($event, item) {
+		item.checked = $event.target.checked;
+		this.userSelectionChanged = this.userProfileSelectionChanged();
 	}
 
 	saveUserProfile() {
-		this.selfSelectService.saveConfig();
-		this.userSelectionChanged = this.selfSelectService.selectionChanged();
+		this.selfSelectService.saveConfig({ usageType: this.usageType, interests: this.interests});
+		this.userSelectionChanged = this.userProfileSelectionChanged();
 		const usageData = {
 			ItemType: 'SettingUpdate',
 			SettingName: 'UsageType',
@@ -434,6 +427,16 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			this.startUnRegisteringScheduleScan();
 		}
 	}
+
+	userProfileSelectionChanged() {
+		let result = false;
+		if (this.usageType !== this.selfSelectService.usageType
+			|| JSON.stringify(this.interests) !== JSON.stringify(this.selfSelectService.interests)) {
+			result = true;
+		}
+		return result;
+	}
+
 	startUnRegisteringScheduleScan() {
 		this.isSPFullFeatureEnabled = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
 		if (this.isSPFullFeatureEnabled) {

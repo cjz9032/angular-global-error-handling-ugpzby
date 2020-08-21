@@ -147,7 +147,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		this.timerService.start();
 		const config = await this.selfSelectService.getConfig();
 		this.usageType = config.usageType;
-		this.interests = config.interests;
+		this.interests = this.commonService.cloneObj(config.interests);
 		if(this.deviceService.isGaming){
 			this.gamingScenario = GamingScenario.Gaming;
 		}
@@ -222,6 +222,9 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 				this.logger.info(`Won't send Vantage toolbar metric for it is not available.`);
 			}
 
+			this.selfSelectService.saveConfig(
+				{ usageType: this.usageType, interests: this.interests },
+				false);
 			if (this.deviceService.isGaming && this.gamingScenario) {
 				const gamingScenarioData = {
 					ItemType: 'SettingUpdate',
@@ -265,7 +268,6 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			// this.commonService.setLocalStorageValue(LocalStorageKey.DashboardOOBBEStatus, true);
 			// this.commonService.sendNotification(DeviceMonitorStatus.OOBEStatus, true); // never use this notification
 			this.activeModal.close(tutorialData);
-			this.selfSelectService.saveConfig(false);
 			this.SetVantageToolbar(this.vantageToolbar);
 			this.metricService.onWelcomePageDone();
 			this.initializerService.initializeAntivirus();
@@ -293,18 +295,15 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		}
 	}
 
-	toggle($event, value) {
-		if ($event.target.checked) {
-			this.selfSelectService.checkedArray.push(value);
-		} else {
-			this.selfSelectService.checkedArray.splice(this.selfSelectService.checkedArray.indexOf(value), 1);
-		}
-		this.logger.info('ModalWelcomeComponent', this.selfSelectService.checkedArray);
-		this.logger.info('ModalWelcomeComponent', this.selfSelectService.checkedArray.length);
+	toggle($event, item) {
+		item.checked = $event.target.checked;
+		const checkedArray = this.interests.filter((x) => x.checked === true);
+		this.logger.info('ModalWelcomeComponent', checkedArray);
+		this.logger.info('ModalWelcomeComponent', checkedArray.length);
 		if (!this.isInterestProgressChanged) {
 			this.progress += 16;
 			this.isInterestProgressChanged = true;
-		} else if (this.selfSelectService.checkedArray.length === 0) {
+		} else if (checkedArray.length === 0) {
 			this.progress -= 16;
 			this.isInterestProgressChanged = false;
 		}
