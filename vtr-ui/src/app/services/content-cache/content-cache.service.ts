@@ -266,18 +266,24 @@ export class ContentCacheService {
       const downLoadImages = [];
       if (contents && contents.length > 0) {
         const localInfo = await this.getLocalInfo();
+        let cacheArticleResults = [];
         contents.forEach(content => {
           this.cacheContentImage(content, downLoadImages);
-          this.cacheArticle(content, localInfo.Lang, downLoadImages);
+          const result = this.cacheArticle(content, localInfo.Lang, downLoadImages);
+          cacheArticleResults.push(result);
+        });
+        Promise.all(cacheArticleResults).then(() => {
+          const downLoadImagesTimeInterval = setInterval(() => {
+            const notComplete = downLoadImages.find(item => !item.complete);
+            if (!notComplete) {
+              clearInterval(downLoadImagesTimeInterval);
+              resolve();
+            }
+          }, 500);
+        }).catch(ex => {
+          this.logger.error('Cache content detail error.');
         });
       }
-      const downLoadImagesTimeInterval = setInterval(() => {
-        const notComplete = downLoadImages.find(item => !item.complete);
-        if (!notComplete) {
-          clearInterval(downLoadImagesTimeInterval);
-          resolve();
-        }
-      }, 500);
     });
   }
 
