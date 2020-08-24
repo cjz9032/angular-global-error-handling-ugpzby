@@ -5,7 +5,7 @@ import { DevService } from '../dev/dev.service';
 import { NetworkPerformance } from '../metric/metrics.model';
 import { MetricEventName as EventName } from 'src/app/enums/metrics.enum';
 import { MetricService } from '../metric/metrics.service';
-import { map } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 
 declare var Windows;
 
@@ -53,10 +53,9 @@ export class CommsService {
 				Duration: Date.now()
 			};
 
-			return this.http.get(url, httpOptions).pipe(map(item => {
+			return this.http.get(url, httpOptions).pipe(tap(() => {
 				performanceData.Duration = Date.now() - performanceData.Duration;
 				this.metricService.sendMetrics(performanceData);
-				return item;
 			}));
 		} else {
 			return this.http.get(url, httpOptions);
