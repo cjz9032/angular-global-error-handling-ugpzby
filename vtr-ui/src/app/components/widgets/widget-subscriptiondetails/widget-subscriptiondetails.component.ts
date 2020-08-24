@@ -291,32 +291,40 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 			this.subScribeEvent.emit(this.isSubscribed);
 		}
 		if (!this.isExpired) {
-			switch (true) {
-				case (+monthDeff === 1 && expiredDate.getFullYear() === currentDate.getFullYear()): {
-					this.expiredDaysCount = nextText + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.month');
-					break;
-				}
-				case (expiryRemainDays >= 14 && expiryRemainDays < 15): {
-					this.expiredDaysCount = nextText + ' ' + Math.floor(expiryRemainDays / 7) + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.weeks');
-					break;
-				}
-				case (expiryRemainDays >= 7 && expiryRemainDays < 8): {
-					this.expiredDaysCount = this.translate.instant('smartPerformance.subscriptionDetails.week');
-					break;
-				}
-				case (expiryRemainDays >= 3 && expiryRemainDays < 4): {
-					this.expiredDaysCount = Math.floor(expiryRemainDays)  + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.days');
-					break;
-				}
-				case (expiryRemainDays >= 0 && expiryRemainDays < 1): {
+			if (expiryRemainDays > 1 && expiryRemainDays <= 31) {
+				this.expiredDaysCount = Math.floor(expiryRemainDays) + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.days');
+
+			} else {
+				if (expiryRemainDays >= 0 && expiryRemainDays <= 1) {
 					this.expiredDaysCount = this.translate.instant('smartPerformance.subscriptionDetails.today');
-					break;
-				}
-				default: {
-					this.expiredDaysCount = '';
-					break;
 				}
 			}
+			// switch (true) {
+			// 	case (+monthDeff === 1 && expiredDate.getFullYear() === currentDate.getFullYear()): {
+			// 		this.expiredDaysCount = nextText + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.month');
+			// 		break;
+			// 	}
+			// 	case (expiryRemainDays >= 14 && expiryRemainDays < 15): {
+			// 		this.expiredDaysCount = nextText + ' ' + Math.floor(expiryRemainDays / 7) + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.weeks');
+			// 		break;
+			// 	}
+			// 	case (expiryRemainDays >= 7 && expiryRemainDays < 8): {
+			// 		this.expiredDaysCount = this.translate.instant('smartPerformance.subscriptionDetails.week');
+			// 		break;
+			// 	}
+			// 	case (expiryRemainDays >= 3 && expiryRemainDays < 4): {
+			// 		this.expiredDaysCount = Math.floor(expiryRemainDays)  + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.days');
+			// 		break;
+			// 	}
+			// 	case (expiryRemainDays >= 0 && expiryRemainDays < 1): {
+			// 		this.expiredDaysCount = this.translate.instant('smartPerformance.subscriptionDetails.today');
+			// 		break;
+			// 	}
+			// 	default: {
+			// 		this.expiredDaysCount = '';
+			// 		break;
+			// 	}
+			// }
 		}
 
 	}
