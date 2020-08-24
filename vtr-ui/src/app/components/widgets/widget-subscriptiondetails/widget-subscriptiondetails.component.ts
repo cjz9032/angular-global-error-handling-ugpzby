@@ -264,7 +264,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		expiredDate = new Date(releaseDate);
 		this.subscriptionDetails = {
 			startDate: this.formatLocaleDate.transform(lastItem.releaseDate),
-			endDate: this.formatLocaleDate.transform(releaseDate.toLocaleDateString()),
+			endDate: this.formatLocaleDate.transform(releaseDate),
 			productNumber: lastItem.products[0].productCode || '',
 			status: 'smartPerformance.subscriptionDetails.activeStatus'
 		};
