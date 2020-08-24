@@ -51,7 +51,6 @@ export class SelfSelectService {
 			this.commonService.sendReplayNotification(SelfSelectEvent.SegmentChange, this.savedSegment);
 		}
 	}
-	public savedInterests: string[] = [];
 	private selfSelect: any;
 	private vantageStub: any;
 	private machineInfo: any;
@@ -72,89 +71,44 @@ export class SelfSelectService {
 	) {
 		this.selfSelect = this.vantageShellService.getSelfSelect();
 		this.vantageStub = this.vantageShellService.getVantageStub();
-		const changedConfig = this.commonService.getLocalStorageValue(LocalStorageKey.ChangedSelfSelectConfig);
-		if (changedConfig && changedConfig.segment) {
-			this.logger.info(`SelfSelectService update segment. ${changedConfig.segment}`);
-			this.commonService.setLocalStorageValue(LocalStorageKey.LocalInfoSegment, changedConfig.segment);
-			if (this.selfSelect) {
-				this.selfSelect.updateConfig(changedConfig).catch((error) => {});
-			}
-		} else {
-			this.commonService.setLocalStorageValue(LocalStorageKey.LocalInfoSegment, SegmentConst.Consumer);
-		}
-		this.getConfig();
+		this.initialize();
 	}
 
 	public async getSegment() {
 		if (!this.savedSegment) {
-			await this.getConfig();
+			await this.initialize();
 		}
 		return this.savedSegment;
 	}
 
 	public async getConfig() {
-		try {
-			this.userProfileEnabled = true;
-			this.machineInfo = await this.deviceService.getMachineInfo();
-			const config = this.commonService.getLocalStorageValue(LocalStorageKey.ChangedSelfSelectConfig);
-			if (config && config.customtags) {
-				const checkedTags = config.customtags;
-				this.checkedArray = checkedTags.split(',');
-				this.savedInterests = [];
-				Object.assign(this.savedInterests, this.checkedArray);
-				this.interests.forEach(item => {
-					item.checked = checkedTags && checkedTags.includes(item.label);
-				});
-			}
-			if (!this.machineInfo && (!config || !config.segment)) {
-				this.usageType = SegmentConst.Consumer;
-				this.savedSegment = this.usageType;
-				this.saveConfig();
-			}
-			else if (this.machineInfo && (!config || !config.segment)) {
-				this.usageType = this.calcDefaultSegment(this.machineInfo);
-				this.savedSegment = this.usageType;
-				this.saveConfig();
-			}
-			else if (this.machineInfo && config && config.segment) {
-				if (this.machineInfo.isGaming ||
-					this.isArm(this.machineInfo)){
-					this.usageType = this.calcDefaultSegment(this.machineInfo);
-					this.savedSegment = this.usageType;
-					this.saveConfig();
-				}
-				else {
-					this.usageType = config.segment;
-					this.savedSegment = this.usageType;
-				}
-			}
-			else if (!this.machineInfo && config && config.segment){
-				this.usageType = config.segment;
-				this.savedSegment = this.usageType;
-			}
-		} catch (error) {
-			this.logger.error('SelfSelectService.getConfig failed. ', error);
-			this.usageType = this.calcDefaultSegment(this.machineInfo);
-			this.savedSegment = this.usageType;
-			this.saveConfig();
+		if (!this.usageType) {
+			await this.initialize();
 		}
-		return { usageType: this.usageType, interests: this.interests };
+		const config = { usageType: this.usageType, interests: this.interests };
+		return config;
 	}
 
-	public saveConfig(reloadRequired?) {
+	public saveConfig(changedConfig, reloadRequired?) {
 		try {
+			this.interests = this.commonService.cloneObj(changedConfig.interests);
+			this.usageType = changedConfig.usageType;
+			this.interests.forEach((item) => {
+				if (item && item.checked && !this.checkedArray.includes(item.label)) {
+					this.checkedArray.push(item.label);
+				}
+				if (item && !item.checked && this.checkedArray.includes(item.label)) {
+					this.checkedArray = this.checkedArray.filter(e => e !== item.label);
+				}
+			});
 			const config = {
 				customtags: this.checkedArray.join(','),
 				segment: this.usageType
 			};
 			const reloadNecessary = reloadRequired === true && this.savedSegment !== this.usageType;
 			this.savedSegment = this.usageType;
-			this.savedInterests = [];
-			Object.assign(this.savedInterests, this.checkedArray);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ChangedSelfSelectConfig, config);
-			if (this.selfSelect) {
-				this.selfSelect.updateConfig(config).catch((error) => { });
-			}
+			this.syncConfigToService(config);
 			if (reloadNecessary) {
 				if (this.vantageStub && typeof this.vantageStub.refresh === 'function') {
 					this.vantageStub.refresh();
@@ -162,7 +116,56 @@ export class SelfSelectService {
 					window.open(window.location.origin, '_self');
 				}
 			}
-		} catch (error) { }
+		} catch (error) {
+			this.logger.error('saveConfig failed for error: ', JSON.stringify(error));
+		}
+	}
+
+	private async initialize() {
+		let config = this.commonService.getLocalStorageValue(LocalStorageKey.ChangedSelfSelectConfig);
+		this.machineInfo = await this.deviceService.getMachineInfo();
+		if (!config
+			|| !config.segment
+			|| !this.isSegmentMatchCurrentMachine(config.segment, this.machineInfo)) {
+			const defaultSegment = this.calcDefaultSegment(this.machineInfo);
+			config = {
+				customtags: '',
+				segment: defaultSegment
+			};
+			this.commonService.setLocalStorageValue(LocalStorageKey.ChangedSelfSelectConfig, config);
+		}
+		this.setSegmentAndInterest(config);
+		this.syncConfigToService(config);
+	}
+
+	private isSegmentMatchCurrentMachine(segment, machineInfo) {
+		let result = true;
+		if ((machineInfo && machineInfo.isGaming && segment !== SegmentConst.Gaming)
+		|| (machineInfo && !machineInfo.isGaming && segment === SegmentConst.Gaming)) {
+			result = false;
+		}
+		return result;
+	}
+
+	private setSegmentAndInterest(config) {
+		this.usageType = config.segment;
+		this.savedSegment = this.usageType;
+		this.commonService.setLocalStorageValue(LocalStorageKey.LocalInfoSegment, SegmentConst.Consumer);
+		if (config && config.customtags) {
+			const checkedTags = config.customtags;
+			this.checkedArray = checkedTags.split(',');
+			this.interests.forEach(item => {
+				item.checked = checkedTags && checkedTags.includes(item.label);
+			});
+		}
+	}
+
+	private syncConfigToService(config) {
+		if (this.selfSelect) {
+			this.selfSelect.updateConfig(config).catch((error) => {
+				this.logger.error('syncConfigToService failed for updateConfig error: ', JSON.stringify(error));
+			});
+		}
 	}
 
 	private isArm(machineInfo) {
@@ -204,12 +207,6 @@ export class SelfSelectService {
 		const matchedResult = source.match(pattern);
 		result = matchedResult !== null;
 		return result;
-	}
-
-	public selectionChanged() {
-		const savedIs = JSON.stringify(this.savedInterests.sort());
-		const currentIs = JSON.stringify(this.checkedArray.sort());
-		return this.usageType !== this.savedSegment || savedIs !== currentIs;
 	}
 }
 

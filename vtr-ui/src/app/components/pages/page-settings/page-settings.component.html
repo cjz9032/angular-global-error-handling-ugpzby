@@ -239,7 +239,7 @@
 														#checkbox1
 														[checked]="interest.checked"
 														(keypress)="onKeyPress($event)"
-														(click)="onInterestToggle($event, interest.label)" />
+														(click)="onInterestToggle($event, interest)" />
 													<label [for]="interest.label + 'checkbox'"
 														aria-hidden="true">
 														{{ "welcometutorial.interests." + interest.label | translate }}

@@ -169,7 +169,7 @@
 							<input type="checkbox"
 								[attr.aria-label]="'welcometutorial.interests.' + interest.label | translate"
 								[id]="interest.label + 'checkbox-welcome'"
-								(click)="toggle($event, interest.label)"
+								(click)="toggle($event, interest)"
 								(keypress)="onKeyPress($event)"
 								[checked]="interest.checked" />
 							<label [for]="interest.label + 'checkbox-welcome'" id="{{'welcometutorial_interests_'+ interest.label | lowercase}}"
