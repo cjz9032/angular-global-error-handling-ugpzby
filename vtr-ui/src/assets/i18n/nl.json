@@ -886,8 +886,8 @@
                 "question3": "Denkt u de toepassing in de toekomst vaker te gebruiken?",
                 "question4": "Weet u dat je Lenovo Vantage kunt gebruiken voor de update van softwaredrivers, firmware en BIOS op uw computer?",
                 "question5": "Zou u Lenovo Vantage aanbevelen bij een collega of vriend?",
-                "notAtAllLikely": "Zeker niet",
-                "extremelyLikely": "Zeker wel",
+                "notAtAllLikely": "Helemaal niet tevreden",
+                "extremelyLikely": "Zeer tevreden",
                 "yes": "Ja",
                 "no": "Nee",
                 "tips1": "Laat eventuele aanvullende opmerkingen achter",
@@ -899,7 +899,7 @@
                 "messages": {
                     "feedbackSuccess": "Bedankt voor uw feedback."
                 },
-                "question6": "Hoe tevreden bent u over ons product?",
+                "question6": "Hoe tevreden bent u in het algemeen met Lenovo Vantage?",
                 "question7": "Wist u dat u met Lenovo Vantage de software (stuurprogramma's, firmware en BIOS) op uw computer up-to-date kunt houden?",
                 "question8": "Hebt u Lenovo Vantage al eens gebruikt om toegang te krijgen tot ondersteuningsinformatie over uw computer?",
                 "tips2": "Laat hieronder eventuele aanvullende opmerkingen achter",
@@ -5029,7 +5029,8 @@
                 "downloading": "Bezig met downloaden",
                 "installed": "Geïnstalleerd",
                 "launch": "Starten",
-                "seeMore": "Meer weergeven"
+                "seeMore": "Meer weergeven",
+                "detecting": "Detecteren"
             },
             "fieldName": {
                 "description": "Beschrijving",

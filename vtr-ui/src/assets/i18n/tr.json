@@ -886,8 +886,8 @@
                 "question3": "Uygulamayı gelecekte daha sık kullanır mısınız?",
                 "question4": "Bilgisayarınızdaki yazılım sürücülerini, sabit yazılımı ve BIOS'u güncellemek için Lenovo Vantage'ı kullanabileceğinizi biliyor muydunuz?",
                 "question5": "Lenovo Vantage uygulamasını bir arkadaşınıza veya meslektaşınıza tavsiye etme olasılığınız nedir?",
-                "notAtAllLikely": "Hiç olası değil",
-                "extremelyLikely": "Kuvvetle muhtemel",
+                "notAtAllLikely": "Hiç memnun değilim",
+                "extremelyLikely": "Son derece memnunum",
                 "yes": "Evet",
                 "no": "Hayır",
                 "tips1": "Lütfen ek yorumlarınızı bırakın",
@@ -899,7 +899,7 @@
                 "messages": {
                     "feedbackSuccess": "Geri bildiriminiz için teşekkürler!"
                 },
-                "question6": "Ürünümüzden ne kadar memnunsunuz?",
+                "question6": "Genel olarak Lenovo Vantage uygulamasından ne kadar memnunsunuz?",
                 "question7": "Bilgisayarınızdaki yazılımları (sürücüler, sabit yazılım ve BIOS) güncel tutmak için Lenovo Vantage'ı kullanabileceğinizi biliyor muydunuz?",
                 "question8": "Bilgisayarınızla ilgili destek bilgilerine erişmek için Lenovo Vantage'ı kullandınız mı?",
                 "tips2": "Lütfen ek yorumlarınızı aşağıya bırakın",
@@ -5029,7 +5029,8 @@
                 "downloading": "Karşıdan yükleniyor",
                 "installed": "Kurulu",
                 "launch": "Başlat",
-                "seeMore": "Daha Fazla"
+                "seeMore": "Daha Fazla",
+                "detecting": "Algılanıyor"
             },
             "fieldName": {
                 "description": "Açıklama",

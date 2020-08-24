@@ -892,11 +892,11 @@
 				"question3": "Would you use the application more often in the future?",
 				"question4": "Were you aware that you can use Lenovo Vantage to update software drivers, firmware, and BIOS on your computer?",
 				"question5": "How likely is it that you would recommend the Lenovo Vantage application to a friend of colleague?",
-				"question6": "How satisfied are you with our product?",
+				"question6": "Overall how satisfied are you with Lenovo Vantage?",
 				"question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
 				"question8": "Have you used Lenovo Vantage to access support information about your computer?",
-				"notAtAllLikely": "Not at all likely",
-				"extremelyLikely": "Extremely likely",
+				"notAtAllLikely": "Not at all satisfied",
+				"extremelyLikely": "Extremely satisfied",
 				"yes": "Yes",
 				"no": "No",
 				"tips1": "Please leave any additional comments",
@@ -5033,7 +5033,8 @@
 				"downloading": "Downloading",
 				"installed": "Installed",
 				"launch": "Launch",
-				"seeMore": "See More"
+				"seeMore": "See More",
+				"detecting": "Detecting"
 			},
 			"fieldName": {
 				"description": "Description",

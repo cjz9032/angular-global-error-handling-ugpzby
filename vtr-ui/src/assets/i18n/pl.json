@@ -886,8 +886,8 @@
                 "question3": "Czy masz zamiar częściej korzystać z tej aplikacji w przyszłości?",
                 "question4": "Czy wiesz, że możesz skorzystać z programu Lenovo Vantage w celu aktualizacji sterowników oprogramowania, oprogramowania układowego i systemu BIOS na komputerze?",
                 "question5": "Jak prawdopodobne jest, że polecisz program Lenovo Vantage znajomemu?",
-                "notAtAllLikely": "Wcale nieprawdopodobne",
-                "extremelyLikely": "Bardzo prawdopodobne",
+                "notAtAllLikely": "Zdecydowanie nie",
+                "extremelyLikely": "Zdecydowanie tak",
                 "yes": "Tak",
                 "no": "Nie",
                 "tips1": "Przekaż dodatkowe komentarze",
@@ -899,7 +899,7 @@
                 "messages": {
                     "feedbackSuccess": "Dziękujemy za opinię!"
                 },
-                "question6": "Jak oceniasz swoje zadowolenie z naszego produktu?",
+                "question6": "Czy Lenovo Vantage spełniła Twoje ogólne oczekiwania?",
                 "question7": "Czy wiesz, że dzięki aplikacji Lenovo Vantage oprogramowanie (sterowniki, oprogramowanie układowe i system BIOS) na komputerze mogą być zawsze aktualne?",
                 "question8": "Czy aplikacja Lenovo Vantage była używana do uzyskiwania dostępu do informacji pomocy technicznej dotyczącej komputera?",
                 "tips2": "Wprowadź dodatkowe komentarze poniżej",
@@ -5029,7 +5029,8 @@
                 "downloading": "Pobieranie",
                 "installed": "Zainstalowane",
                 "launch": "Uruchom",
-                "seeMore": "Zobacz więcej"
+                "seeMore": "Zobacz więcej",
+                "detecting": "Wykrywanie"
             },
             "fieldName": {
                 "description": "Opis",
