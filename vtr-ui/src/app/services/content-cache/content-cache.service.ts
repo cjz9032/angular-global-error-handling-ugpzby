@@ -33,6 +33,7 @@ interface ICacheSettings {
 export class ContentCacheService {
   private buildInContents = {};
   private contentLocalCacheContract: any;
+  private latestCachedContetns = {};
 
   constructor(
     private vantageShellService: VantageShellService,
@@ -48,7 +49,7 @@ export class ContentCacheService {
   public async getCachedContents(page: string, contentCards: any) {
     const startTime = new Date();
     const cmsOptions = await this.cmsService.generateContentQueryParams({ Page: page });
-    const cacheKey = Md5.hashStr(JSON.stringify(cmsOptions));
+    const cacheKey = Md5.hashStr(JSON.stringify(cmsOptions)) + '';
 
     var cachedContents = await this.loadCachedContents(cacheKey) || await this.loadBuildInContents(cmsOptions);
     this.sendCacheMetrics(startTime, 'loadedCacheContents');
@@ -67,14 +68,16 @@ export class ContentCacheService {
       if (article) {
         return article;
       }
-      return this.cmsService.fetchCMSArticle(articleId);
+      article = await this.cmsService.fetchCMSArticle(articleId);
+      this.saveArticleIfNeed(articleId, loclInfo.Lang, article);
+      return article;
     }
   }
 
-  private sendCacheMetrics(startTime, metricsName){
+  private sendCacheMetrics(startTime, metricsName) {
     const endTime = new Date();
     const diff = endTime.getTime() - startTime.getTime();
-    
+
     const metricsData = {
       ItemParent: 'ContentCache',
       ItemType: metricsName,
@@ -100,23 +103,40 @@ export class ContentCacheService {
   }
 
   private async loadCachedContents(cacheKey) {
-    let iCacheSettings: ICacheSettings = {
-      Key: cacheKey,
-      Value: null,
-      Component: "ContentCache",
-      UserName: "ContentCache_Contents"
-    };
-    const cachedObject = await this.contentLocalCacheContract.get(iCacheSettings);
-    if (cachedObject && cachedObject.Value) {
-      const contents = JSON.parse(cachedObject.Value);
+    var contents = await this.getCachedOnlineContents(cacheKey);
+
+    if (contents) {
+      const contentsForPage = {};
       const contentIds = Object.keys(contents);
       contentIds.forEach(id => {
-        contents[id] = this.removeInvalidContents(contents[id], id);
-        contents[id] = this.formalizeContent(contents[id], id);
+        contentsForPage[id] = this.removeInvalidContents(contents[id], id);
+        contentsForPage[id] = this.formalizeContent(contentsForPage[id], id);
       });
-      return contents;
+
+      return contentsForPage;
     }
     return undefined;
+  }
+
+  private async getCachedOnlineContents(cacheKey) {
+    var contents = null;
+    if (this.latestCachedContetns[cacheKey]) {
+      contents = this.latestCachedContetns[cacheKey];
+    }
+    else {
+      let iCacheSettings: ICacheSettings = {
+        Key: cacheKey,
+        Value: null,
+        Component: "ContentCache",
+        UserName: "ContentCache_Contents"
+      };
+      const cachedObject = await this.contentLocalCacheContract.get(iCacheSettings);
+      if (cachedObject && cachedObject.Value) {
+        contents = JSON.parse(cachedObject.Value);
+        this.latestCachedContetns[cacheKey] = contents;
+      }
+    }
+    return contents;
   }
 
   private removeInvalidContents(contents, cardId) {
@@ -163,6 +183,7 @@ export class ContentCacheService {
         await this.fillCacheValue(response, contentCards, cacheValueOfContents)
         const contents = await this.getUpdatedContents(cacheKey, cacheValueOfContents);
         await this.saveContents(cacheKey, cacheValueOfContents);
+        this.latestCachedContetns[cacheKey] = cacheValueOfContents;
         await this.cacheContentDetail(contents);
         this.sendCacheMetrics(startTime, 'fetchedCacheContents');
       }).catch(error => {
@@ -202,16 +223,8 @@ export class ContentCacheService {
 
   private async getUpdatedContents(cacheKey: any, cacheValueOfContents: any) {
     const contents = [];
-    let cachedContents = [];
-    let iCacheSettings: ICacheSettings = {
-      Key: cacheKey,
-      Value: null,
-      Component: "ContentCache",
-      UserName: "ContentCache_Contents"
-    };
-    const cachedObj = await this.contentLocalCacheContract.get(iCacheSettings);
-    if (cachedObj && cachedObj.Value) {
-      cachedContents = JSON.parse(cachedObj.Value);
+    let cachedContents = await this.getCachedOnlineContents(cacheKey);
+    if (cachedContents) {
       for (const key in cacheValueOfContents) {
         if ("welcome-text" == key) {
           continue;
@@ -219,7 +232,6 @@ export class ContentCacheService {
         const contentList = cacheValueOfContents[key];
         const cachedContentList = cachedContents[key];
         this.findUpdatedContents(contentList, cachedContentList, contents);
-        this.removeExpiredArticle(contentList, cachedContentList);
       }
     } else {
       for (const key in cacheValueOfContents) {
@@ -228,6 +240,7 @@ export class ContentCacheService {
         });
       }
     }
+    return contents;
   }
 
   private findUpdatedContents(contentList: any, cachedContentList: any, contents: any[]) {
@@ -236,7 +249,7 @@ export class ContentCacheService {
       let needUpdated = true;
       for (const idx in cachedContentList) {
         const cachedContent = cachedContentList[idx];
-        if (content.Id == cachedContent.Id && 
+        if (content.Id == cachedContent.Id &&
           content.Revision == cachedContent.Revision) {
           needUpdated = false;
           break;
@@ -246,10 +259,6 @@ export class ContentCacheService {
         contents.push(content);
       }
     }
-  }
-
-  private removeExpiredArticle(contentList: any, cachedContentList: any) {
-
   }
 
   private cacheContentDetail(contents: any) {
@@ -292,7 +301,7 @@ export class ContentCacheService {
     }
   }
 
-  private saveArticle(articId: any, lang: any, response: any) {
+  private async saveArticle(articId: any, lang: any, response: any) {
     const key = `${articId}_${lang}`;
     let iCacheSettings: ICacheSettings = {
       Key: key,
@@ -300,7 +309,7 @@ export class ContentCacheService {
       Component: "ContentCache",
       UserName: "ContentCache_Articles"
     }
-    this.contentLocalCacheContract.set(iCacheSettings);
+    await this.contentLocalCacheContract.set(iCacheSettings);
   }
 
   private cacheArticleImage(response: any, downLoadImages: any[]) {
@@ -356,6 +365,38 @@ export class ContentCacheService {
         cacheValueOfContents[contentCard.cardId] = contents;
       }
     });
+  }
+
+  private async saveArticleIfNeed(articleId, lang, article) {
+    if (!article) return;
+    if (!this.isNeedCacheArticle(articleId)) return;
+    await this.saveArticle(articleId, lang, article);
+  }
+
+  private isNeedCacheArticle(articleId) {
+    for (let key in this.latestCachedContetns) {
+      if (this.isArticleExistInCache(this.latestCachedContetns[key], articleId)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  private isArticleExistInCache(cachedContents, articleId) {
+    for (let positionId in cachedContents) {
+      const contetnsOfPosition = cachedContents[positionId];
+      if (!contetnsOfPosition || contetnsOfPosition.length == 0) {
+        continue;
+      }
+      for (let i in contetnsOfPosition) {
+        const content = contetnsOfPosition[i];
+        if (content.ActionType != ContentActionType.Internal) continue;
+        if (content.ActionLink === articleId) {
+          return true;
+        }
+      }
+    }
+    return false;
   }
 
   private filterContentsByCondition(contents: any) {

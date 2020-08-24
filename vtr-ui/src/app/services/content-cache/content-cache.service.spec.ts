@@ -16,6 +16,8 @@ describe('ContentCacheService', () => {
 	let upeService: { fetchUPEContent: jasmine.Spy };
 	let buildInContentService: { getArticle: jasmine.Spy, getContents: jasmine.Spy };
 	let logger: { error: jasmine.Spy };
+	let metrics: { sendMetrics: jasmine.Spy };
+
 	let mockTestObject: MockContentLocalCacheTest;
 	let localInfo = {
 		Brand: 'think',
@@ -45,7 +47,7 @@ describe('ContentCacheService', () => {
 		vantageShellService = jasmine.createSpyObj('VantageShellService',
 			['getContentLocalCache']);
 
-		metrics = jasmine.createSpyObj('MetricService', 
+		metrics = jasmine.createSpyObj('MetricService',
 			['sendMetrics']);
 
 		TestBed.configureTestingModule({
@@ -90,6 +92,7 @@ describe('ContentCacheService', () => {
 
 	it('should return normal cache data.', async () => {
 		cmsService.generateContentQueryParams.and.returnValue({ Page: 'normalContents' });
+		cmsService.fetchCMSArticle.and.returnValue(ARTICLE);
 		const ret = await service.getCachedContents('normalContents', null);
 
 		expect(ret).toBeTruthy();
@@ -103,6 +106,7 @@ describe('ContentCacheService', () => {
 
 	it('should not return expired cache data.', async () => {
 		cmsService.generateContentQueryParams.and.returnValue({ Page: 'expiredDateWithPoistionB' });
+		cmsService.fetchCMSArticle.and.returnValue(ARTICLE);
 		const ret = await service.getCachedContents('expiredDateWithPoistionB', null);
 
 		expect(ret).toBeTruthy();
@@ -117,6 +121,7 @@ describe('ContentCacheService', () => {
 
 	it('should not return item that cannot be displayed.', async () => {
 		cmsService.generateContentQueryParams.and.returnValue({ Page: 'NotReachDisplayDateWithPoistionB' });
+		cmsService.fetchCMSArticle.and.returnValue(ARTICLE);
 		const ret = await service.getCachedContents('NotReachDisplayDateWithPoistionB', null);
 
 		expect(ret).toBeTruthy();
@@ -131,6 +136,7 @@ describe('ContentCacheService', () => {
 
 	it('should return one item if PositionB has lots of valid items.', async () => {
 		cmsService.generateContentQueryParams.and.returnValue({ Page: 'multi-ItemsInPoistionB' });
+		cmsService.fetchCMSArticle.and.returnValue(ARTICLE);
 		const ret = await service.getCachedContents('multi-ItemsInPoistionB', null);
 
 		expect(ret).toBeTruthy();
@@ -145,6 +151,7 @@ describe('ContentCacheService', () => {
 
 	it('should not change the field DataSource.', async () => {
 		cmsService.generateContentQueryParams.and.returnValue({ Page: 'testDataResource' });
+		cmsService.fetchCMSArticle.and.returnValue(ARTICLE);
 		const ret = await service.getCachedContents('testDataResource', null);
 
 		expect(ret).toBeTruthy();
@@ -223,6 +230,7 @@ describe('ContentCacheService', () => {
 		cmsService.generateContentQueryParams.and.returnValue({ Page: 'dashboard_only_cms' });
 		cmsService.fetchContents.and.returnValue(CMS_CONTENTS);
 		cmsService.getOneCMSContent.and.returnValue(CMS_CONTENTS);
+		cmsService.fetchCMSArticle.and.returnValue(ARTICLE);
 		localInfoService.getLocalInfo.and.returnValue(localInfo);
 		const ret = await service.getCachedContents('dashboard_only_upe', contentCards);
 
@@ -300,6 +308,7 @@ describe('ContentCacheService', () => {
 		upeService.fetchUPEContent.and.returnValue(UPE_CONTENTS);
 		cmsService.fetchContents.and.returnValue(null);
 		localInfoService.getLocalInfo.and.returnValue(localInfo);
+		cmsService.fetchCMSArticle.and.returnValue(ARTICLE);
 		cmsService.generateContentQueryParams.and.returnValue({ Page: 'dashboard_only_upe' });
 		const ret = await service.getCachedContents('dashboard_only_cms', contentCards);
 
@@ -376,6 +385,7 @@ describe('ContentCacheService', () => {
 		upeService.fetchUPEContent.and.returnValue(UPE_CONTENTS);
 		cmsService.fetchContents.and.returnValue(CMS_CONTENTS);
 		localInfoService.getLocalInfo.and.returnValue(localInfo);
+		cmsService.fetchCMSArticle.and.returnValue(ARTICLE);
 		cmsService.generateContentQueryParams.and.returnValue({ Page: 'dashboard' });
 		const ret = await service.getCachedContents('dashboard', contentCards);
 
@@ -451,6 +461,7 @@ describe('ContentCacheService', () => {
 		cmsService.generateContentQueryParams.and.returnValue({ Page: 'dashboard_only_cms' });
 		cmsService.fetchContents.and.returnValue(CMS_CONTENTS);
 		cmsService.getOneCMSContent.and.returnValue(CMS_CONTENTS);
+		cmsService.fetchCMSArticle.and.returnValue(ARTICLE);
 		let currentLocalInfo = {
 			Brand: 'think',
 			GEO: 'en',
@@ -492,7 +503,7 @@ describe('ContentCacheService', () => {
 		localInfoService.getLocalInfo.and.returnValue(localInfo);
 		cmsService.generateContentQueryParams.and.returnValue({ Page: 'dashboard' });
 		await service.getCachedContents('dashboard', contentCards);
-		expect(logger.error.calls.count()).toBe(2, 'two calls');
+		expect(logger.error).toHaveBeenCalledTimes(2);
 	});
 
 	it('should return the build-in article when get article by id', async () => {
@@ -500,27 +511,38 @@ describe('ContentCacheService', () => {
 		buildInContentService.getArticle.and.returnValue(ARTICLE);
 		const ret = await service.getArticleById(ContentActionType.BuildIn, '11111');
 		expect(ret).toEqual(ARTICLE);
-		expect(buildInContentService.getArticle.calls.count()).toBe(1, 'one call');
+		expect(buildInContentService.getArticle).toHaveBeenCalledTimes(1);
 	});
 
-	it('should return the cached article when get article by id', async () => {
+	it('should return the online article when get article by id', async () => {
+		cmsService.generateContentQueryParams.and.returnValue({ Page: 'normalContents' });
+		await service.getCachedContents('normalContents', null);
 		cmsService.getLocalinfo.and.returnValue(localInfo);
 		cmsService.fetchCMSArticle.and.returnValue(ARTICLE);
 		const ret = await service.getArticleById(ContentActionType.Internal, '11111');
 		expect(ret).toEqual(ARTICLE);
 	});
 
-	it('should return the online article when get article by id', async () => {
+	it('should return the cached article when get article by id', async () => {
 		cmsService.getLocalinfo.and.returnValue(localInfo);
 		const ret = await service.getArticleById(ContentActionType.Internal, 'cached_article');
 		expect(ret).toEqual(ARTICLE);
-		expect(cmsService.fetchCMSArticle.calls.count()).toBe(0, 'no call');
+		expect(cmsService.fetchCMSArticle).toHaveBeenCalledTimes(0);
 	});
-
-	it('should be invoked once.', async () => {
+	
+	it('should return the online article and save when get article by id', async () => {
 		cmsService.generateContentQueryParams.and.returnValue({ Page: 'normalContents' });
 		await service.getCachedContents('normalContents', null);
-		expect(metrics.sendMetrics.calls.count()).toBe(1, 'one call');
+		cmsService.getLocalinfo.and.returnValue(localInfo);
+		cmsService.fetchCMSArticle.and.returnValue(ARTICLE);
+		const ret = await service.getArticleById(ContentActionType.Internal, '13cada49d4274587a80e26b00dff59a5');
+		expect(ret).toEqual(ARTICLE);
+	});
+
+	it('should send metrics when get cached contents', async () => {
+		cmsService.generateContentQueryParams.and.returnValue({ Page: 'normalContents' });
+		await service.getCachedContents('normalContents', null);
+		expect(metrics.sendMetrics).toHaveBeenCalledTimes(1);
 		expect(metrics.sendMetrics.calls.allArgs().length).toBe(1, 'one call');
 	});
 });

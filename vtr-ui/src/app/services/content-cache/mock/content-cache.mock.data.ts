@@ -11,32 +11,36 @@ export class MockContentLocalCacheTest {
 		}
 	}
 
+	public set(setting): any {
+		
+	}
+
 	private getContents(par) {
-		if (par.Key === Md5.hashStr(JSON.stringify({ Page: 'normalContents' }))) {
+		if (par.Key === '' + Md5.hashStr(JSON.stringify({ Page: 'normalContents' }))) {
 			par.Value = JSON.stringify(NORMAL_CONTENTS);
 		}
-		else if (par.Key === Md5.hashStr(JSON.stringify({ Page: 'expiredDateWithPoistionB' }))) {
+		else if (par.Key === '' + Md5.hashStr(JSON.stringify({ Page: 'expiredDateWithPoistionB' }))) {
 			par.Value = JSON.stringify(EXPIRED_DATE_INPOISTIONB);
 		}
-		else if (par.Key === Md5.hashStr(JSON.stringify({ Page: 'NotReachDisplayDateWithPoistionB' }))) {
+		else if (par.Key === '' + Md5.hashStr(JSON.stringify({ Page: 'NotReachDisplayDateWithPoistionB' }))) {
 			par.Value = JSON.stringify(DISPALY_DATE_INPOISTIONB);
 		}
-		else if (par.Key === Md5.hashStr(JSON.stringify({ Page: 'multi-ItemsInPoistionB' }))) {
+		else if (par.Key === '' + Md5.hashStr(JSON.stringify({ Page: 'multi-ItemsInPoistionB' }))) {
 			par.Value = JSON.stringify(MULITI_ITEM_INPOISTIONB);
 		}
-		else if (par.Key === Md5.hashStr(JSON.stringify({ Page: 'noOnlineContent', Lang: 'en' }))) {
+		else if (par.Key === '' + Md5.hashStr(JSON.stringify({ Page: 'noOnlineContent', Lang: 'en' }))) {
 			par.Value = null;
 		}
-		else if (par.Key === Md5.hashStr(JSON.stringify({ Page: 'noResponse' }))) {
+		else if (par.Key === '' + Md5.hashStr(JSON.stringify({ Page: 'noResponse' }))) {
 			par = null;
-		} else if (par.Key === Md5.hashStr(JSON.stringify({ Page: 'dashboard_only_upe' }))) {
+		} else if (par.Key === '' + Md5.hashStr(JSON.stringify({ Page: 'dashboard_only_upe' }))) {
 			par.Value = JSON.stringify(DASHBOARD_ONLY_UPE);
-		} else if (par.Key === Md5.hashStr(JSON.stringify({ Page: 'dashboard_only_cms' }))) {
+		} else if (par.Key === '' + Md5.hashStr(JSON.stringify({ Page: 'dashboard_only_cms' }))) {
 			par.Value = JSON.stringify(DASHBOARD_ONLY_CMS);
-		} else if (par.Key === Md5.hashStr(JSON.stringify({ Page: 'dashboard' }))) {
+		} else if (par.Key === '' + Md5.hashStr(JSON.stringify({ Page: 'dashboard' }))) {
 			par.Value = JSON.stringify(DASHBOARD);
 		}
-		else if (par.Key === Md5.hashStr(JSON.stringify({ Page: 'testDataResource' }))) {
+		else if (par.Key === '' + Md5.hashStr(JSON.stringify({ Page: 'testDataResource' }))) {
 			par.Value = JSON.stringify(TEST_DATASOURCE);
 		}
 		return par;
