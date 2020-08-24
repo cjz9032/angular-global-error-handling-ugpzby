@@ -292,7 +292,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		}
 		if (!this.isExpired) {
 			if (expiryRemainDays > 1 && expiryRemainDays <= 31) {
-				this.expiredDaysCount = Math.floor(expiryRemainDays) + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.days');
+				this.expiredDaysCount =  Math.ceil(expiryRemainDays) + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.days');
 
 			} else {
 				if (expiryRemainDays >= 0 && expiryRemainDays <= 1) {
