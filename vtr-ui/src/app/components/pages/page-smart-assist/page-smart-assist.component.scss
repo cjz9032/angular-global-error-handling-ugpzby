@@ -209,6 +209,7 @@ $fontsize_xs: 1.4rem;
 					color: $menu_hover;
 				}
 				&:focus {
+					box-shadow: none;
 					@include outline-border-blue;
 					@media #{$white-on-black} {
 						@include white-border;
