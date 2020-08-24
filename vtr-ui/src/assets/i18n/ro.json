@@ -886,8 +886,8 @@
                 "question3": "Ați folosi aplicația mai des în viitor?",
                 "question4": "Știați că puteți utiliza Lenovo Vantage pentru a actualiza driverele software, firmware-ul și BIOS-ul computerului?",
                 "question5": "Care este probabilitatea de a recomanda aplicația Lenovo Vantage unui prieten sau unui coleg?",
-                "notAtAllLikely": "Deloc probabil",
-                "extremelyLikely": "Extrem de probabil",
+                "notAtAllLikely": "Complet nemulțumit",
+                "extremelyLikely": "Extrem de satisfăcut",
                 "yes": "Da",
                 "no": "Nu",
                 "tips1": "Vă rugăm să lăsați orice comentarii suplimentare",
@@ -899,7 +899,7 @@
                 "messages": {
                     "feedbackSuccess": "Vă mulţumim pentru feedbackul furnizat!"
                 },
-                "question6": "Cât de mulțumit sunteți de produsul nostru?",
+                "question6": "În general, cât de mulțumit sunteți de Lenovo Vantage?",
                 "question7": "Știați că puteți utiliza Lenovo Vantage pentru a menține actualizat software-ul computerului (driverele, firmware-ul și BIOS-ul)?",
                 "question8": "Ați utilizat Lenovo Vantage pentru a accesa informațiile referitoare la asistența pentru computer?",
                 "tips2": "Vă rugăm să lăsați orice comentarii suplimentare mai jos",
@@ -5029,7 +5029,8 @@
                 "downloading": "Descărcare în curs",
                 "installed": "Instalat",
                 "launch": "Lansare",
-                "seeMore": "Vedeţi mai multe"
+                "seeMore": "Vedeţi mai multe",
+                "detecting": "Se detectează"
             },
             "fieldName": {
                 "description": "Descriere",

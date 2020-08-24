@@ -886,8 +886,8 @@
                 "question3": "Da li ćete u budućnosti češće koristiti aplikaciju?",
                 "question4": "Da li ste znali da možete da koristite Lenovo Vantage za ažuriranje softverskih upravljačkih programa, firmvera i sistema BIOS na vašem računaru?",
                 "question5": "Koliko je verovatno da ćete preporučiti aplikaciju Lenovo Vantage prijatelju ili kolegi?",
-                "notAtAllLikely": "Uopšte nije verovatno",
-                "extremelyLikely": "Izuzetno verovatno",
+                "notAtAllLikely": "Uopšte nisam zadovoljan/na",
+                "extremelyLikely": "Izuzetno zadovoljan/na",
                 "yes": "Da",
                 "no": "Ne",
                 "tips1": "Ostavite dodatne komentare",
@@ -899,7 +899,7 @@
                 "messages": {
                     "feedbackSuccess": "Hvala nam na povratnim informacijama!"
                 },
-                "question6": "Koliko ste zadovoljni našim proizvodom?",
+                "question6": "Koliko ste uopšteno zadovoljni aplikacijom Lenovo Vantage?",
                 "question7": "Da li ste znali da možete da koristite Lenovo Vantage za stalno ažuriranje softvera (upravljačkih programa, firmvera i sistema BIOS) na vašem računaru?",
                 "question8": "Da li ste koristili Lenovo Vantage za pristupanje informacijama o podršci računara?",
                 "tips2": "Ostavite dodatne komentare u nastavku",
@@ -5029,7 +5029,8 @@
                 "downloading": "Preuzimanje",
                 "installed": "Instalirano",
                 "launch": "Pokreni",
-                "seeMore": "Pogledajte još"
+                "seeMore": "Pogledajte još",
+                "detecting": "Otkrivanje"
             },
             "fieldName": {
                 "description": "Opis",

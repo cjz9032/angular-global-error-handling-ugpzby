@@ -886,8 +886,8 @@
                 "question3": "Avez-vous l'intention d'utiliser plus souvent l'application à l'avenir ?",
                 "question4": "Saviez-vous que vous pouvez utiliser Lenovo Vantage pour mettre à jour les pilotes de logiciels, le microprogramme et le BIOS de votre ordinateur ?",
                 "question5": "Quelle est la probabilité que vous recommandiez l'application Lenovo Vantage à un ami ou collègue ?",
-                "notAtAllLikely": "Pas du tout probable",
-                "extremelyLikely": "Très probable",
+                "notAtAllLikely": "Pas du tout satisfait",
+                "extremelyLikely": "Très satisfait",
                 "yes": "Oui",
                 "no": "Non",
                 "tips1": "Veuillez ajouter tout commentaire supplémentaire",
@@ -899,7 +899,7 @@
                 "messages": {
                     "feedbackSuccess": "Merci pour votre commentaire !"
                 },
-                "question6": "Êtes-vous satisfait du produit ?",
+                "question6": "Quel est votre niveau de satisfaction concernant Lenovo Vantage ?",
                 "question7": "Saviez-vous que vous pouvez utiliser Lenovo Vantage pour mettre à jour les logiciels (pilotes, microprogramme et BIOS) de votre ordinateur ?",
                 "question8": "Avez-vous utilisé Lenovo Vantage pour accéder aux informations d'aide concernant votre ordinateur ?",
                 "tips2": "Veuillez ajouter tout commentaire supplémentaire ci-dessous",
@@ -5029,7 +5029,8 @@
                 "downloading": "Téléchargement",
                 "installed": "Installé",
                 "launch": "Lancer",
-                "seeMore": "En savoir plus"
+                "seeMore": "En savoir plus",
+                "detecting": "Détection en cours"
             },
             "fieldName": {
                 "description": "Description",

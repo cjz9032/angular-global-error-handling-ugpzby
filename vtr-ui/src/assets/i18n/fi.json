@@ -886,8 +886,8 @@
                 "question3": "Käyttäisitkö sovellusta useammin tulevaisuudessa?",
                 "question4": "Oletko tietoinen siitä, että voit käyttää Lenovo Vantage -ohjelmaa tietokoneen ohjelmisto-ohjaimien, laiteohjelmiston ja BIOSin päivittämiseen?",
                 "question5": "Kuinka todennäköistä on, että suosittelisit Lenovo Vantage -sovellusta kollegan ystävälle?",
-                "notAtAllLikely": "Ei lainkaan todennäköistä",
-                "extremelyLikely": "Erittäin todennäköistä",
+                "notAtAllLikely": "En lainkaan tyytyväinen",
+                "extremelyLikely": "Erittäin tyytyväinen",
                 "yes": "Kyllä",
                 "no": "Ei",
                 "tips1": "Anna lisäkommentteja",
@@ -899,7 +899,7 @@
                 "messages": {
                     "feedbackSuccess": "Kiitos palautteestasi."
                 },
-                "question6": "Kuinka tyytyväinen olet tuotteeseemme?",
+                "question6": "Kuinka tyytyväinen olet Lenovon Vantageen?",
                 "question7": "Tiesitkö, että voit käyttää Lenovo Vantage -ohjelmaa pitääksesi tietokoneesi ohjelmistot (ohjaimet, laiteohjelmistot ja BIOS:n) ajan tasalla?",
                 "question8": "Oletko käyttänyt Lenovo Vantage -palvelua tietokonettasi koskevien tukitietojen hakemiseen?",
                 "tips2": "Kirjoita halutessasi muita kommentteja alle",
@@ -5029,7 +5029,8 @@
                 "downloading": "Ladataan",
                 "installed": "Asennettu",
                 "launch": "Aloita",
-                "seeMore": "Näytä lisää"
+                "seeMore": "Näytä lisää",
+                "detecting": "Havaitaan"
             },
             "fieldName": {
                 "description": "Kuvaus",

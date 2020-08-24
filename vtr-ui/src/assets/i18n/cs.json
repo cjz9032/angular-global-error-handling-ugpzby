@@ -886,8 +886,8 @@
                 "question3": "Používali byste tuto aplikaci v budoucnu častěji?",
                 "question4": "Věděli jste, že pomocí programu Lenovo Vantage můžete ve vašem počítači aktualizovat ovladače softwaru, firmware a systém BIOS?",
                 "question5": "Jak je pravděpodobné, že byste aplikaci Lenovo Vantage doporučili svému známému nebo kolegovi?",
-                "notAtAllLikely": "Vůbec ne",
-                "extremelyLikely": "Velmi pravděpodobné",
+                "notAtAllLikely": "Zcela nespokojen(a)",
+                "extremelyLikely": "Velmi spokojeni",
                 "yes": "Ano",
                 "no": "Ne",
                 "tips1": "Zanechte prosím další komentáře",
@@ -899,7 +899,7 @@
                 "messages": {
                     "feedbackSuccess": "Děkujeme za váš názor."
                 },
-                "question6": "Jak jste spokojeni s naším produktem?",
+                "question6": "Jak jste celkově spokojeni se službou Lenovo Vantage?",
                 "question7": "Věděli jste, že pomocí aplikace Lenovo Vantage můžete ve svém počítači aktualizovat software (ovladače, firmware a systém BIOS)?",
                 "question8": "Použili jste aplikaci Lenovo Vantage k dohledání informací o podpoře ke svému počítači?",
                 "tips2": "Níže uveďte případné další komentáře",
@@ -5029,7 +5029,8 @@
                 "downloading": "Stahování",
                 "installed": "Nainstalováno",
                 "launch": "Spustit",
-                "seeMore": "Další informace"
+                "seeMore": "Další informace",
+                "detecting": "Detekce"
             },
             "fieldName": {
                 "description": "Popis",

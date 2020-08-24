@@ -886,8 +886,8 @@
                 "question3": "今後もっと頻繁にアプリケーションを使いますか？",
                 "question4": "Lenovo Vantage でコンピューターのソフトウェア・ドライバー、ファームウェア、および BIOS を更新できることをご存知でしたか?",
                 "question5": "Lenovo Vantage アプリケーションを同僚の友人におすすめする可能性はどのくらいありますか?",
-                "notAtAllLikely": "まったくない",
-                "extremelyLikely": "非常に可能性が高い",
+                "notAtAllLikely": "まったく満足していない",
+                "extremelyLikely": "非常に満足",
                 "yes": "はい",
                 "no": "いいえ",
                 "tips1": "追加のコメントを残してください",
@@ -899,7 +899,7 @@
                 "messages": {
                     "feedbackSuccess": "フィードバックをありがとうございました!"
                 },
-                "question6": "当社の製品にどの程度満足していますか?",
+                "question6": "全体的に、Lenovo Vantage にどのくらい満足していますか?",
                 "question7": "Lenovo Vantage でコンピューターのソフトウェア・ドライバー、ファームウェア、および BIOS を最新の状態に維持できることをご存知でしたか?",
                 "question8": "Lenovo Vantage を使用して、コンピューターに関するサポート情報にアクセスされましたか?",
                 "tips2": "追加のコメントを以下に残してください",
@@ -5029,7 +5029,8 @@
                 "downloading": "ダウンロード中",
                 "installed": "インストール済み",
                 "launch": "起動",
-                "seeMore": "詳細を見る"
+                "seeMore": "詳細を見る",
+                "detecting": "検出中"
             },
             "fieldName": {
                 "description": "説明",

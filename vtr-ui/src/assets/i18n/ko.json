@@ -886,8 +886,8 @@
                 "question3": "나중에 응용 프로그램을 보다 자주 사용하시겠습니까?",
                 "question4": "Lenovo Vantage를 사용하여 컴퓨터에서 소프트웨어 드라이버, 펌웨어 및 BIOS를 업데이트할 수 있다는 것을 알고 있었습니까?",
                 "question5": "Lenovo Vantage 응용 프로그램을 친구나 동료에게 추천하시겠습니까?",
-                "notAtAllLikely": "전혀 추천하지 않음",
-                "extremelyLikely": "매우 추천함",
+                "notAtAllLikely": "전혀 만족하지 않음",
+                "extremelyLikely": "매우 만족함",
                 "yes": "예",
                 "no": "아니요",
                 "tips1": "추가 의견을 남겨 주십시오.",
@@ -899,7 +899,7 @@
                 "messages": {
                     "feedbackSuccess": "소중한 의견을 들려주셔서 감사합니다!"
                 },
-                "question6": "제품에 대한 만족도는 어느 정도인가요?",
+                "question6": "Lenovo Vantage에 대한 전반적인 만족도는 어떻습니까?",
                 "question7": "Lenovo Vantage를 사용하면 소프트웨어(드라이버, 펌웨어, BIOS)를 최신 상태로 유지할 수 있다는 사실을 알고 계십니까?",
                 "question8": "Lenovo Vantage를 사용하여 컴퓨터 관련 지원 정보를 얻은 적이 있으십니까?",
                 "tips2": "추가 의견은 아래에 남겨주시기 바랍니다",
@@ -5029,7 +5029,8 @@
                 "downloading": "다운로드 중",
                 "installed": "설치됨",
                 "launch": "시작",
-                "seeMore": "자세한 정보"
+                "seeMore": "자세한 정보",
+                "detecting": "감지"
             },
             "fieldName": {
                 "description": "설명",

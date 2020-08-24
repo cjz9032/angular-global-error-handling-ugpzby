@@ -886,8 +886,8 @@
                 "question3": "האם אתם מתכוונים להשתמש ביישום לעיתים קרובות יותר בעתיד?",
                 "question4": "הידעתכם שאתם יכולים להשתמש ב- Lenovo Vantage כדי לעדכן מנהלי התקן תוכנה, קושחה ו-BIOS במחשב?",
                 "question5": "עד כמה סביר שתמליצו על היישום Lenovo Vantage לחבר או לעמית?",
-                "notAtAllLikely": "בכלל לא סביר",
-                "extremelyLikely": "סביר מאוד",
+                "notAtAllLikely": "לא מרוצה בכלל",
+                "extremelyLikely": "מרוצה מאוד",
                 "yes": "כן",
                 "no": "לא",
                 "tips1": "הערות נוספות",
@@ -899,7 +899,7 @@
                 "messages": {
                     "feedbackSuccess": "תודה על המשוב!"
                 },
-                "question6": "מהי מידת שביעת הרצון שלכם מהמוצר שלנו?",
+                "question6": "בסך הכל, באיזו מידה אתם מרוצים מ- Lenovo Vantage?",
                 "question7": "הידעתם שאתם יכולים להשתמש ב-Lenovo Vantage כדי לשמור על עדכניות התוכנה (מנהלי התקנים, קושחה ו-BIOS) במחשב שלכם?",
                 "question8": "האם השתמשתם ב-Lenovo Vantage כדי לגשת למידע בנושא תמיכה במחשב שלכם?",
                 "tips2": "השאירו הערות נוספות למטה",
@@ -5029,7 +5029,8 @@
                 "downloading": "הורדה",
                 "installed": "מותקן",
                 "launch": "הפעלה",
-                "seeMore": "פרטים נוספים"
+                "seeMore": "פרטים נוספים",
+                "detecting": "מגלה"
             },
             "fieldName": {
                 "description": "תיאור",

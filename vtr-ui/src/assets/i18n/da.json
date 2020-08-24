@@ -886,8 +886,8 @@
                 "question3": "Vil du bruge programmet mere i fremtiden?",
                 "question4": "Ved du, at du kan bruge Lenovo Vantage til at opdatere softwaredrivere, firmware og BIOS på din computer?",
                 "question5": "Hvor sandsynligt er det, at du vil anbefale Lenovo Vantage-programmet til en ven eller kollega?",
-                "notAtAllLikely": "Slet ikke sandsynligt",
-                "extremelyLikely": "Meget sandsynligt",
+                "notAtAllLikely": "Slet ikke tilfreds",
+                "extremelyLikely": "Ekstremt tilfreds",
                 "yes": "Ja",
                 "no": "Nej",
                 "tips1": "Skriv eventuelle andre kommentarer",
@@ -899,7 +899,7 @@
                 "messages": {
                     "feedbackSuccess": "Tak for din feedback!"
                 },
-                "question6": "Hvor tilfreds er du med vores produkt?",
+                "question6": "Hvor tilfreds er du generelt med Lenovo Vantage?",
                 "question7": "Ved du, at du kan bruge Lenovo Vantage til at holde softwaren (drivere, firmware og BIOS) på din computer opdateret?",
                 "question8": "Har du brugt Lenovo Vantage til at få adgang til supportoplysninger om computeren?",
                 "tips2": "Skriv eventuelle andre kommentarer nedenfor",
@@ -5029,7 +5029,8 @@
                 "downloading": "Downloader",
                 "installed": "Installeret",
                 "launch": "Start",
-                "seeMore": "Se mere"
+                "seeMore": "Se mere",
+                "detecting": "Registrering"
             },
             "fieldName": {
                 "description": "Beskrivelse",

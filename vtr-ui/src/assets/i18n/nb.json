@@ -886,8 +886,8 @@
                 "question3": "Ville du brukt programmet mer i fremtiden?",
                 "question4": "Visste du at du kan bruke Lenovo Vantage til å oppdatere programvaredrivere, fastvare og BIOS på datamaskinen din?",
                 "question5": "Hvor sannsynlig er det at du anbefaler Lenovo Vantage-programmet til en venn eller kollega?",
-                "notAtAllLikely": "Ikke sannsynlig i det hele tatt",
-                "extremelyLikely": "Svært sannsynlig",
+                "notAtAllLikely": "Ikke fornøyd i det hele tatt",
+                "extremelyLikely": "Ekstremt fornøyd",
                 "yes": "Ja",
                 "no": "Nei",
                 "tips1": "Her kan du legge inn andre kommentarer",
@@ -899,7 +899,7 @@
                 "messages": {
                     "feedbackSuccess": "Takk for tilbakemeldingen!"
                 },
-                "question6": "Hvor fornøyd er du med produktet?",
+                "question6": "Hvor fornøyd er du generelt sett med Lenovo Vantage?",
                 "question7": "Visste du at du kunne bruke Lenovo Vantage for å holde programvaren (drivere, fastvare og BIOS) på datamaskinen din oppdatert?",
                 "question8": "Har du brukt Lenovo Vantage for å få tilgang til støtteinformasjon om datamaskinen din?",
                 "tips2": "Skriv inn eventuelle kommentarer nedenfor",
@@ -5029,7 +5029,8 @@
                 "downloading": "Laster ned",
                 "installed": "Installert",
                 "launch": "Start",
-                "seeMore": "Se mer"
+                "seeMore": "Se mer",
+                "detecting": "Oppdager"
             },
             "fieldName": {
                 "description": "Beskrivelse",

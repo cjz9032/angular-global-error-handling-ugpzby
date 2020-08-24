@@ -886,8 +886,8 @@
                 "question3": "Você usaria o aplicativo com mais frequência?",
                 "question4": "Você sabia que pode usar o Lenovo Vantage para atualizar drivers de software, firmware e BIOS no seu computador?",
                 "question5": "Qual a probabilidade de você recomendar o aplicativo Lenovo Vantage a um amigo ou colega?",
-                "notAtAllLikely": "Não é provável",
-                "extremelyLikely": "Extremamente provável",
+                "notAtAllLikely": "Não fiquei satisfeito",
+                "extremelyLikely": "Extremamente satisfeito",
                 "yes": "Sim",
                 "no": "Não",
                 "tips1": "Deixe outros comentários",
@@ -899,7 +899,7 @@
                 "messages": {
                     "feedbackSuccess": "Agradecemos seus comentários."
                 },
-                "question6": "Qual seu nível de satisfação com nosso produto?",
+                "question6": "De modo geral, qual é seu nível de satisfação com o Lenovo Vantage?",
                 "question7": "Você sabia que pode usar o Lenovo Vantage para atualizar o software (drivers, firmware e BIOS) no seu computador?",
                 "question8": "Você usou o Lenovo Vantage para acessar informações de suporte sobre o seu computador?",
                 "tips2": "Deixe comentários adicionais abaixo",
@@ -5029,7 +5029,8 @@
                 "downloading": "Fazendo o download",
                 "installed": "Instalado",
                 "launch": "Iniciar",
-                "seeMore": "Ver mais"
+                "seeMore": "Ver mais",
+                "detecting": "Detectando"
             },
             "fieldName": {
                 "description": "Descrição",
