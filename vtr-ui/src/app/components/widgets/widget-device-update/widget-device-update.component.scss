@@ -142,6 +142,7 @@
 			}
 
 			&:focus{
+				box-shadow: none;
 				@include outline-blue;
 			}
 
