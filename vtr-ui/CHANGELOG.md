@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.40](https://bitbucket.tc.lenovo.com///compare/v1.7.39...v1.7.40) (2020-08-24)
+
+
+### Bug Fixes
+
+* **Self Select:** VAN-19865 refactor self select logic ([2b3ac7b](https://bitbucket.tc.lenovo.com///commit/2b3ac7bca3cb43c341799c5f4b0c59da4c3cf2f3))
+
 ### [1.7.39](https://bitbucket.tc.lenovo.com///compare/v1.7.38...v1.7.39) (2020-08-21)
 
 
