@@ -260,7 +260,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public onCancelScan() {
 		const isCancelingRBS = this.isRecoverExecuting();
-
 		this.hardwareScanService.setCurrentTaskStep(TaskStep.Cancel);
 
 		const modalCancel = this.modalService.open(ModalCancelComponent, {
@@ -427,11 +426,15 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			.finally(() => {
 				this.cleaningUpScan(undefined);
 
+				// Necessary to save the current results to be used by metrics before modules being updated
+				const modulesResults = this.modules;
+
 				// Defines information about module details
 				this.onViewResults();
+
 				this.modules.forEach(module => { module.expanded = true; });
 
-				const metricsResult = this.getMetricsTaskResult();
+				const metricsResult = this.getMetricsTaskResult(modulesResults);
 				this.sendTaskActionMetrics(this.hardwareScanService.getCurrentTaskType(), metricsResult.countSuccesses,
 					'', metricsResult.scanResultJson, this.timerService.stop());
 			});
@@ -960,7 +963,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		return TaskStep[currentTaskStep] + taskTypeMetrics + '.' + ViewResultsButton;
 	}
 
-	private getMetricsTaskResult() {
+	private getMetricsTaskResult(responseModules = this.modules) {
 		let countSuccesses = 0;
 		let overalTestResult = HardwareScanTestResult.Na;
 
@@ -971,8 +974,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		};
 
 		// scanResultJson["TestsList"] = {};
-		if (this.modules) {
-			for (const module of this.modules) {
+		if (responseModules) {
+			for (const module of responseModules) {
 				for (const test of module.listTest) {
 
 					const testName = test.id.split(':::')[0];
@@ -994,7 +997,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					resultJson.TestsList[testName].push(testObj);
 				}
 			}
-			overalTestResult = this.hardwareScanResultService.consolidateResults(this.modules.map(test => test.resultModule));
+			overalTestResult = this.hardwareScanResultService.consolidateResults(responseModules.map(test => test.resultModule));
 		}
 
 		resultJson.Result = HardwareScanTestResult[overalTestResult];
