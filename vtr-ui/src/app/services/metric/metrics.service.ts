@@ -10,7 +10,6 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { ActivatedRoute } from '@angular/router';
 import { SelfSelectService } from '../self-select/self-select.service';
 import { environment } from '../../../environments/environment';
-import { PerformanceMeasurement} from './service-components/performance-measurement';
 import { ContentDisplayDetection} from './service-components/content-display-detection';
 import { DevService } from '../dev/dev.service';
 
@@ -33,9 +32,7 @@ export class MetricService {
 	public readonly isFirstLaunch: boolean;
 	public readonly maxScrollRecorder = {};
 	public pageContainer: ElementRef;
-	public readonly performanceMeasurement: PerformanceMeasurement;
 	public readonly contentDisplayDetection: ContentDisplayDetection;
-	private scollEventObservers: ((arg: any) => any) [] = [];
 	private pageScollEvent = (arg: any) => { };
 
 	constructor(
@@ -44,11 +41,9 @@ export class MetricService {
 		private hypothesisService: HypothesisService,
 		private commonService: CommonService,
 		private activeRouter: ActivatedRoute,
-		private selfSelectService: SelfSelectService,
-		devService: DevService
+		private selfSelectService: SelfSelectService
 	) {
 		this.metricsClient = this.shellService.getMetrics();
-		this.performanceMeasurement = new PerformanceMeasurement(devService, this);
 		this.contentDisplayDetection = new ContentDisplayDetection(this);
 		this.isFirstLaunch = !this.commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
 		if (this.isFirstLaunch) {

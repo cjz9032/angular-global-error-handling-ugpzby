@@ -1,9 +1,11 @@
-import { Injectable, Injector } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { DevService } from '../dev/dev.service';
-import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { Observable } from 'rxjs';
+import { NetworkPerformance } from '../metric/metrics.model';
+import { MetricEventName as EventName } from 'src/app/enums/metrics.enum';
+import { MetricService } from '../metric/metrics.service';
+import { tap } from 'rxjs/operators';
 
 declare var Windows;
 
@@ -17,7 +19,8 @@ export class CommsService {
 	private serverSwitchLocalData: any;
 	constructor(
 		private http: HttpClient,
-		private devService: DevService
+		private devService: DevService,
+		private metricService: MetricService
 	) {
 	}
 
@@ -34,27 +37,57 @@ export class CommsService {
 	}
 
 	public endpointGetCall(endpoint, queryParams: any = {}, httpOptions: any = {}) {
-		const url = this.getCmsHost() + endpoint;
+		const cmsHost = this.getCmsHost();
+		const url =  cmsHost + endpoint;
 		httpOptions.params = new HttpParams({
 			fromObject: queryParams
 		});
 
 		this.devService.writeLog('API GET ENDPOINT complete: ', url + '?' + httpOptions.params);
-		return this.http.get(url, httpOptions);
+
+		if (endpoint.indexOf('/api/v1/') > -1) {	// CMS API
+			const performanceData: NetworkPerformance = {
+				ItemType: EventName.performance,
+				Host: cmsHost,
+				Api: endpoint,
+				Duration: Date.now()
+			};
+
+			return this.http.get(url, httpOptions).pipe(tap(() => {
+				performanceData.Duration = Date.now() - performanceData.Duration;
+				this.metricService.sendMetrics(performanceData);
+			}));
+		} else {
+			return this.http.get(url, httpOptions);
+		}
 	}
 
-	public async callUpeApi(url, queryParams: any = {}) {
+	public async callUpeApi(urlStr, queryParams: any = {}) {
 		const reqHeader = new HttpHeaders({
 			'Content-Type': 'application/json;charset=UTF-8',
 			'User-Agent': this.userAgent
 		});
 
-		this.devService.writeLog('CALL UPE API: ', url);
-		return this.http.post(url, JSON.stringify(queryParams),
+		this.devService.writeLog('CALL UPE API: ', urlStr);
+
+		const url = new URL(urlStr);
+		const performanceData: NetworkPerformance = {
+			ItemType: EventName.performance,
+			Host: url.host,
+			Api: url.pathname,
+			Duration: Date.now()
+		};
+
+		const result = await this.http.post(urlStr, JSON.stringify(queryParams),
 			{
 				observe: 'response',
 				headers: reqHeader
 			}).toPromise();
+
+		performanceData.Duration = Date.now() - performanceData.Duration;
+		this.metricService.sendMetrics(performanceData);
+
+		return result;
 	}
 
 	async makeTagRequest(strUrl, headers: any = {}) {
@@ -71,12 +104,26 @@ export class CommsService {
 				request.headers.append(key, headers[key]);
 			});
 		}
+
 		request.headers.append('User-Agent', this.userAgent);
+
+		const performanceData: NetworkPerformance = {
+			ItemType: EventName.performance,
+			Host: url.host,
+			Api: url.path,
+			Duration: Date.now()
+		};
+
 		const response = await client.sendRequestAsync(request);
 		if (response.statusCode !== 200) {
-			throw { status: response.statusCode }
-		};
-		return await response.content.readAsStringAsync();
+			throw { status: response.statusCode };
+		}
+		const result = await response.content.readAsStringAsync();
+
+		performanceData.Duration = Date.now() - performanceData.Duration;
+		this.metricService.sendMetrics(performanceData);
+
+		return result;
 	}
 
 	flatGetCall(url) {

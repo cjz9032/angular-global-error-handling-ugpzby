@@ -116,8 +116,6 @@ export class UPEService {
 		} catch (ex) {
 			content = ex.message;
 			errorCode = ex.status;
-		} finally {
-			this.metricsService.performanceMeasurement.handleHttpsCompleteEvent();
 		}
 
 		return {
@@ -164,8 +162,6 @@ export class UPEService {
 		} catch (ex) {
 			content = `get  upe tags  failed upon http request`;
 			errorCode = ex.status;
-		} finally {
-			this.metricsService.performanceMeasurement.handleHttpsCompleteEvent();
 		}
 
 		return {

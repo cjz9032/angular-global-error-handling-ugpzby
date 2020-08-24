@@ -13,7 +13,6 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { throwError, Subscription } from 'rxjs';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ContentSource } from 'src/app/enums/content.enum';
-import { MetricService } from '../metric/metrics.service';
 
 const httpOptions = {
 	headers: new HttpHeaders({
@@ -48,8 +47,7 @@ export class CMSService implements OnDestroy {
 		private localInfoService: LocalInfoService,
 		private commonService: CommonService, // VAN-5872, server switch feature,
 		private logger: LoggerService,
-		private sanitizer: DomSanitizer,
-		private metricsService: MetricService
+		private sanitizer: DomSanitizer
 	) {
 		localInfoService.getLocalInfo().then(result => {
 			this.localInfo = result;
@@ -335,8 +333,6 @@ export class CMSService implements OnDestroy {
 			} else {
 				throw (ex);
 			}
-		} finally {
-			this.metricsService.performanceMeasurement.handleHttpsCompleteEvent();
 		}
 	}
 
