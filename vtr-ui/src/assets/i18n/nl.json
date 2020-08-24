@@ -1788,7 +1788,9 @@
                         "hasInstalledAppsDescription": "Selecteer de app waarin u de sneltoetsen wilt gebruiken.",
                         "noInstalledAppsDescription": "Deze functie biedt alleen ondersteuning voor de volgende toepassingen: ",
                         "hasInstalledAppsNote": "Opmerking: voor Microsoft Teams 1.0 kan de toets F11 niet worden gebruikt voor het ophangen van de oproep.",
-                        "noInstalledAppsNote": "Opmerking: als u deze functie wilt gebruiken, moet u de apps eerst downloaden en installeren."
+                        "noInstalledAppsNote": "Opmerking: als u deze functie wilt gebruiken, moet u de apps eerst downloaden en installeren.",
+                        "app-0": "Skype for<br/>Business 2016",
+                        "app-1": "Microsoft Teams"
                     }
                 },
                 "userDefinedKey": {

@@ -1788,7 +1788,9 @@
                         "hasInstalledAppsDescription": "Sélectionnez l'application dans laquelle vous souhaitez utiliser les touches de raccourci :",
                         "noInstalledAppsDescription": "Cette fonction ne prend en charge que les applications suivantes : ",
                         "hasInstalledAppsNote": "Remarque : pour Microsoft Teams 1.0, la touche F11 ne peut pas être utilisée pour mettre fin à l'appel.",
-                        "noInstalledAppsNote": "Remarque : pour utiliser cette fonction, vous devez d'abord télécharger et installer les applications."
+                        "noInstalledAppsNote": "Remarque : pour utiliser cette fonction, vous devez d'abord télécharger et installer les applications.",
+                        "app-0": "Skype for<br/>Business 2016",
+                        "app-1": "Microsoft Teams"
                     }
                 },
                 "userDefinedKey": {

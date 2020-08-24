@@ -1788,7 +1788,9 @@
                         "hasInstalledAppsDescription": "Wählen Sie die App aus, für die Sie die Hotkeys verwenden möchten:",
                         "noInstalledAppsDescription": "Diese Funktion unterstützt nur folgende Anwendungen: ",
                         "hasInstalledAppsNote": "Hinweis: Bei Microsoft Teams 1.0 kann die Taste F11 nicht zum Auflegen des Anrufs verwendet werden.",
-                        "noInstalledAppsNote": "Hinweis: Um die Funktion nutzen zu können, müssen Sie zuerst die Apps herunterladen und installieren."
+                        "noInstalledAppsNote": "Hinweis: Um die Funktion nutzen zu können, müssen Sie zuerst die Apps herunterladen und installieren.",
+                        "app-0": "Skype for<br/>Business 2016",
+                        "app-1": "Microsoft Teams"
                     }
                 },
                 "userDefinedKey": {

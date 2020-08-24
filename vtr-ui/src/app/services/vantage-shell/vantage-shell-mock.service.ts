@@ -2109,17 +2109,33 @@ export class VantageShellService {
 	}
 
 	public getVoipHotkeysObject(): any {
+		const response = {
+			errorCode: VoipErrorCodeEnum.SUCCEED,
+			capability: true,
+			appList: [
+				{
+					appName: 0,
+					isAppInstalled: true,
+					isSelected: true
+				},
+				{
+					appName: 1,
+					isAppInstalled: true,
+					isSelected: false
+				}
+			]
+		};
 		return {
-			getVOIPHotkeysSettings: () => Promise.resolve({
-				errorCode: VoipErrorCodeEnum.SUCCEED,
-				capability: true,
-				appList: [
-					{
-						isAppInstalled: true,
-						isSelected: true
+			getVOIPHotkeysSettings: () => Promise.resolve(response),
+			setVOIPHotkeysSettings: (appId: number) => {
+				response.appList.forEach(app => {
+					if (app.appName === appId) {
+						app.isSelected = true;
+					} else {
+						app.isSelected = false;
 					}
-				]
-			})
+				});
+			}
 		};
 	}
 

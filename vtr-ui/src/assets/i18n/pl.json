@@ -1788,7 +1788,9 @@
                         "hasInstalledAppsDescription": "Wybierz aplikację, w której chcesz używać klawiszy dostępu:",
                         "noInstalledAppsDescription": "Ta funkcja obsługuje tylko poniższe aplikacje: ",
                         "hasInstalledAppsNote": "Uwaga: w przypadku Microsoft Teams 1.0 klawisz F11 nie może być użyty do zawieszenia połączenia.",
-                        "noInstalledAppsNote": "Uwaga: aby użyć tej funkcji, należy najpierw pobrać i zainstalować aplikacje."
+                        "noInstalledAppsNote": "Uwaga: aby użyć tej funkcji, należy najpierw pobrać i zainstalować aplikacje.",
+                        "app-0": "Skype for<br/>Business 2016",
+                        "app-1": "Microsoft Teams"
                     }
                 },
                 "userDefinedKey": {

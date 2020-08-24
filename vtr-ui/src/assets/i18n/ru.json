@@ -1788,7 +1788,9 @@
                         "hasInstalledAppsDescription": "Выберите приложение, в котором вы хотите использовать горячие клавиши:",
                         "noInstalledAppsDescription": "Эта функция поддерживается только в следующих приложениях: ",
                         "hasInstalledAppsNote": "Примечание: в Microsoft Teams 1.0 невозможно отклонить вызов с помощью клавиши F11.",
-                        "noInstalledAppsNote": "Примечание: для использования этой функции необходимо скачать и установить приложения."
+                        "noInstalledAppsNote": "Примечание: для использования этой функции необходимо скачать и установить приложения.",
+                        "app-0": "Skype for<br/>Business 2016",
+                        "app-1": "Microsoft Teams"
                     }
                 },
                 "userDefinedKey": {

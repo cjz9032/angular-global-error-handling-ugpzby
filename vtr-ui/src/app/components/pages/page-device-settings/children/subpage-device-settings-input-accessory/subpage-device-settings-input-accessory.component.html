@@ -111,7 +111,7 @@
 								</vtr-backlight>
 
 							</li>
-
+							<!-- start of VOIP Feature card -->
 							<li class="common-li-padding voip"
 								*ngIf="showVoipHotkeysSection">
 								<vtr-ui-row-switch
@@ -146,25 +146,15 @@
 												id="VoipHotkeys-hasInstalledAppsDescription">
 												{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.hasInstalledAppsDescription' | translate}}
 											</p>
-											<div role="radiogroup"
-												id="voip-installedApps-block"
-												aria-label="installedApps selection list, select using arrow keys"
+											<div id="voip-installedApps-block"
 												class="voip-keys-block">
-												<ng-container *ngFor="let installedApp of installedApps; index as i;">
-													<vtr-ui-rectangle-radio *ngIf="installedApp.isAppInstalled"
-														[ngClass]="{'mr-5': i === 0}"
-														[radioId]="'voip-hotkeys-rectangle-radio' + i"
-														[iconName]="'app-icon ' + iconName[installedApp.appName]"
-														[label]="voipAppName[installedApp.appName]"
-														[value]="''+installedApp.appName"
-														[group]="'app'"
-														[checked]="installedApp.isSelected"
-														(change)="setVoipHotkeysSettings(installedApp)"
-														automationid="VoipHotkeys.rectangle-radio-{{i}}">
-													</vtr-ui-rectangle-radio>
-												</ng-container>
+												<vtr-ui-circle-radio-with-checkbox-list
+													[groupName]="'voip-hotkeys-radio-group'"
+													[sendMetrics]=false
+													[radioDetails]="voipUIModel"
+													(optionChange)="setVoipHotkeysSettings($event)">
+												</vtr-ui-circle-radio-with-checkbox-list>
 											</div>
-
 											<div class="row pt-5">
 												<div class="feature-note col-12 p-4">
 													<p class="mb-0"
@@ -220,6 +210,8 @@
 									</ng-template>
 								</vtr-ui-row-switch>
 							</li>
+							<!-- start of VOIP Feature card -->
+
 							<!-- fnCtrlSwap & fnAsCtrl features hidden in 3.2.001 -->
 							<li class="common-li-padding"
 								*ngIf="machineType == 1 && fnCtrlSwapCapability">

@@ -1788,7 +1788,9 @@
                         "hasInstalledAppsDescription": "选择要在其上使用热键的应用程序：",
                         "noInstalledAppsDescription": "此功能仅支持以下应用程序：",
                         "hasInstalledAppsNote": "注意：对于 Microsoft Teams 1.0，F11 键不能用于挂断电话。",
-                        "noInstalledAppsNote": "注意：要使用此功能，您需要先下载并安装应用程序。"
+                        "noInstalledAppsNote": "注意：要使用此功能，您需要先下载并安装应用程序。",
+                        "app-0": "Skype for<br/>Business 2016",
+                        "app-1": "Microsoft Teams"
                     }
                 },
                 "userDefinedKey": {

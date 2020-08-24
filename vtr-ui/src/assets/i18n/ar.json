@@ -1790,7 +1790,9 @@
                         "hasInstalledAppsDescription": "حدد التطبيق الذي تريد استخدام مفاتيح الاختصار عليه:",
                         "noInstalledAppsDescription": "تدعم هذه الميزة التطبيقات أدناه فقط: ",
                         "hasInstalledAppsNote": "ملاحظة: بالنسبة لـ Microsoft Teams 1.0، لا يمكن استخدام المفتاح F11 لتعليق المكالمة.",
-                        "noInstalledAppsNote": "ملاحظة: لاستخدام الميزة، تحتاج إلى تنزيل التطبيقات وتثبيتها أولاً."
+                        "noInstalledAppsNote": "ملاحظة: لاستخدام الميزة، تحتاج إلى تنزيل التطبيقات وتثبيتها أولاً.",
+                        "app-0": "Skype for<br/>Business 2016",
+                        "app-1": "Microsoft Teams"
                     }
                 },
                 "userDefinedKey": {

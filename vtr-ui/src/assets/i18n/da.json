@@ -1788,7 +1788,9 @@
                         "hasInstalledAppsDescription": "Vælg den app, som du vil bruge genvejstasterne på:",
                         "noInstalledAppsDescription": "Funktionen understøtter kun nedenstående programmer: ",
                         "hasInstalledAppsNote": "Bemærk: for Microsoft Teams 1.0 kan du ikke bruge F11-tasten til at afbryde opkaldet.",
-                        "noInstalledAppsNote": "Bemærk: Hvis du vil bruge funktionen, skal du først downloade og installere de relevante apps."
+                        "noInstalledAppsNote": "Bemærk: Hvis du vil bruge funktionen, skal du først downloade og installere de relevante apps.",
+                        "app-0": "Skype for<br/>Business 2016",
+                        "app-1": "Microsoft Teams"
                     }
                 },
                 "userDefinedKey": {

@@ -1788,7 +1788,9 @@
                         "hasInstalledAppsDescription": "Kısayol tuşlarını kullanmak istediğiniz uygulamayı seçin:",
                         "noInstalledAppsDescription": "Bu özellik yalnızca aşağıdaki uygulamaları desteklemektedir: ",
                         "hasInstalledAppsNote": "Not: Microsoft Teams 1.0'da F11 tuşu aramayı kapatmak için kullanılamaz.",
-                        "noInstalledAppsNote": "Not: Bu özelliği kullanmak için önce uygulamaları indirip yüklemeniz gerekir."
+                        "noInstalledAppsNote": "Not: Bu özelliği kullanmak için önce uygulamaları indirip yüklemeniz gerekir.",
+                        "app-0": "Skype for<br/>Business 2016",
+                        "app-1": "Microsoft Teams"
                     }
                 },
                 "userDefinedKey": {

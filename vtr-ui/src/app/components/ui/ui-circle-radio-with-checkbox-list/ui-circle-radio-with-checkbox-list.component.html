@@ -48,8 +48,8 @@
 				<div class="text"
 					[id]="item.componentId + '-label'"
 					[attr.aria-hidden]=false
-					[class.text-disabled]="item.isDisabled || isDisabled">
-					{{item.processLabel ? (item.label | translate | capitalizeFirst) : item.label | translate}}
+					[class.text-disabled]="item.isDisabled || isDisabled"
+					[innerHTML]="item.processLabel ? (item.label | translate | capitalizeFirst) : item.label | translate">
 				</div>
 			</div>
 		</ng-template>

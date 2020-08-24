@@ -1788,7 +1788,9 @@
                         "hasInstalledAppsDescription": "יש לבחור את היישום שבו ברצונכם להשתמש במקשי הקיצור:",
                         "noInstalledAppsDescription": "תכונה זו תומכת רק ביישומים הבאים: ",
                         "hasInstalledAppsNote": "הערה: עבור Microsoft Teams 1.0, לא ניתן להשתמש במקש F11 כדי לנתק את השיחה.",
-                        "noInstalledAppsNote": "הערה: כדי להשתמש בתכונה, ראשית יש להוריד ולהתקין את היישומים האלה."
+                        "noInstalledAppsNote": "הערה: כדי להשתמש בתכונה, ראשית יש להוריד ולהתקין את היישומים האלה.",
+                        "app-0": "Skype for<br/>Business 2016",
+                        "app-1": "Microsoft Teams"
                     }
                 },
                 "userDefinedKey": {

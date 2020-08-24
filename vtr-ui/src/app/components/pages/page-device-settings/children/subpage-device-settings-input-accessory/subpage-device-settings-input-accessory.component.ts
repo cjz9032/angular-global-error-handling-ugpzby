@@ -15,6 +15,7 @@ import { VoipErrorCodeEnum } from '../../../../../enums/voip.enum';
 import { BacklightLevelEnum } from './backlight/backlight.enum';
 import { BacklightService } from './backlight/backlight.service';
 import { TopRowFunctionsIdeapadService } from './top-row-functions-ideapad/top-row-functions-ideapad.service';
+import { UiCircleRadioWithCheckBoxListModel } from 'src/app/components/ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-input-accessory',
@@ -44,6 +45,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 
 	public selectedApp: VoipApp;
 	public installedApps: VoipApp[] = [];
+	public voipUIModel: Array<UiCircleRadioWithCheckBoxListModel> = [];
 	public showVoipHotkeysSection = false;
 	public isAppInstalled = false;
 	public fnCtrlSwapCapability = false;
@@ -52,7 +54,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	public fnAsCtrlStatus = false;
 	public isRestartRequired = false;
 	voipAppName = ['Skype For Business 2016', 'Microsoft Teams'];
-	iconName: string[] = ['icon-s4b', 'icon-teams'];
+	iconName: string[] = ['skype-business', 'microsoft-teams'];
 	public tooltipString = 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.';
 
 	public inputAccessoriesCapability: InputAccessoriesCapability;
@@ -130,6 +132,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 				});
 				if (this.isAppInstalled) {
 					this.installedApps = res.appList;
+					this.setUpVoipUIModel();
 				}
 			})
 			.catch(error => {
@@ -137,18 +140,15 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 			});
 	}
 
-	setVoipHotkeysSettings(app: VoipApp) {
-		const prev = this.selectedApp;
-		this.selectedApp = app;
-		this.keyboardService.setVoipHotkeysSettings(app.appName)
+	setVoipHotkeysSettings(model: UiCircleRadioWithCheckBoxListModel) {
+		this.keyboardService.setVoipHotkeysSettings(+model.value)
 			.then(VoipResponse => {
 				if (+VoipResponse.errorCode !== VoipErrorCodeEnum.SUCCEED) {
-					this.selectedApp.isSelected = false;
-					this.selectedApp = prev;
-					this.selectedApp.isSelected = true;
+					this.updateVoipUIModel(model.value);
 					return VoipResponse;
 				}
 				this.installedApps = VoipResponse.appList;
+				this.setUpVoipUIModel();
 			})
 			.catch(error => {
 				this.logger.error('setVoipHotkeysSettings error', error);
@@ -495,5 +495,41 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 		if (this.topRowFunctionsIdeapadSubscription) {
 			this.topRowFunctionsIdeapadSubscription.unsubscribe();
 		}
+	}
+
+	// setup model for UI rendering
+	private setUpVoipUIModel() {
+		const voipApps = this.installedApps;
+		if (voipApps) {
+			this.voipUIModel = [];
+			voipApps.forEach((app: VoipApp, index: number) => {
+				if (app.isAppInstalled) {
+					const appObj: UiCircleRadioWithCheckBoxListModel = {
+						componentId: `VoipHotkeys.rectangle-radio-${index}`,
+						label: `device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.app-${app.appName}`,
+						value: app.appName.toString(),
+						isChecked: app.isSelected.valueOf(),
+						isDisabled: false,
+						processIcon: false,
+						hideIcon: false,
+						processLabel: false,
+						customIcon: `${this.iconName[app.appName]}`,
+						metricsItem: '',
+					};
+					this.voipUIModel.push(appObj);
+				}
+			});
+		}
+	}
+
+	// updated selected option in model
+	private updateVoipUIModel(selectedAppId: string) {
+		this.voipUIModel.forEach((app: UiCircleRadioWithCheckBoxListModel) => {
+			if (app.value === selectedAppId) {
+				app.isChecked = true;
+			} else {
+				app.isChecked = false;
+			}
+		});
 	}
 }

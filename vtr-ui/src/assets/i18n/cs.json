@@ -1788,7 +1788,9 @@
                         "hasInstalledAppsDescription": "Vyberte aplikaci, ve které chcete klávesové zkratky používat:",
                         "noInstalledAppsDescription": "Tuto funkci podporují pouze dále uvedené aplikace: ",
                         "hasInstalledAppsNote": "Poznámka: U Microsoft Teams 1.0 nelze použít klávesu F11 k ukončení hovoru.",
-                        "noInstalledAppsNote": "Poznámka: Chcete-li tuto funkci používat, musíte si nejdříve stáhnout a nainstalovat aplikace."
+                        "noInstalledAppsNote": "Poznámka: Chcete-li tuto funkci používat, musíte si nejdříve stáhnout a nainstalovat aplikace.",
+                        "app-0": "Skype for<br/>Business 2016",
+                        "app-1": "Microsoft Teams"
                     }
                 },
                 "userDefinedKey": {

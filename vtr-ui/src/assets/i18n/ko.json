@@ -1788,7 +1788,9 @@
                         "hasInstalledAppsDescription": "단축키를 사용할 앱을 선택하십시오:",
                         "noInstalledAppsDescription": "이 기능은 아래 응용 프로그램만 지원합니다: ",
                         "hasInstalledAppsNote": "참고: Microsoft Teams 1.0의 경우 F11 키를 사용하여 전화를 끊을 수 없습니다.",
-                        "noInstalledAppsNote": "참고: 이 기능을 사용하려면 먼저 앱을 다운로드하고 설치해야 합니다."
+                        "noInstalledAppsNote": "참고: 이 기능을 사용하려면 먼저 앱을 다운로드하고 설치해야 합니다.",
+                        "app-0": "Skype for<br/>Business 2016",
+                        "app-1": "Microsoft Teams"
                     }
                 },
                 "userDefinedKey": {

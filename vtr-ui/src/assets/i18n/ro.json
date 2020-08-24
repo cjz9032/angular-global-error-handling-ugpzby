@@ -1788,7 +1788,9 @@
                         "hasInstalledAppsDescription": "Selectaţi aplicaţia în care doriţi să utilizaţi tastele rapide:",
                         "noInstalledAppsDescription": "Această caracteristică acceptă doar aplicaţiile de mai jos: ",
                         "hasInstalledAppsNote": "Notă: Pentru Microsoft Teams 1.0, tasta F11 nu poate fi utilizată pentru a închide apelul.",
-                        "noInstalledAppsNote": "Notă: Pentru a utiliza caracteristica, mai întâi trebuie să descărcaţi şi să instalaţi aplicaţiile."
+                        "noInstalledAppsNote": "Notă: Pentru a utiliza caracteristica, mai întâi trebuie să descărcaţi şi să instalaţi aplicaţiile.",
+                        "app-0": "Skype for<br/>Business 2016",
+                        "app-1": "Microsoft Teams"
                     }
                 },
                 "userDefinedKey": {

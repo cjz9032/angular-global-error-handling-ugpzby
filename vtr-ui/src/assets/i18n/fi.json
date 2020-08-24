@@ -1788,7 +1788,9 @@
                         "hasInstalledAppsDescription": "Valitse sovellus, jossa haluat käyttää pikanäppäimiä:",
                         "noInstalledAppsDescription": "Tämä ominaisuus tukee vain seuraavia sovelluksia: ",
                         "hasInstalledAppsNote": "Huomautus: Jos kyseessä on Microsoft Teams 1.0, F11-näppäintä ei voi käyttää puhelun katkaisuun.",
-                        "noInstalledAppsNote": "Huomautus: Jotta voit käyttää tätä toimintoa, sinun on ensin ladattava ja asennettava sovellukset."
+                        "noInstalledAppsNote": "Huomautus: Jotta voit käyttää tätä toimintoa, sinun on ensin ladattava ja asennettava sovellukset.",
+                        "app-0": "Skype for<br/>Business 2016",
+                        "app-1": "Microsoft Teams"
                     }
                 },
                 "userDefinedKey": {

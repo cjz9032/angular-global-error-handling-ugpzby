@@ -1788,7 +1788,9 @@
                         "hasInstalledAppsDescription": "Izaberite aplikaciju u kojoj želite da koristite prečice:",
                         "noInstalledAppsDescription": "Ova funkcija podržava samo dolenavedene aplikacije: ",
                         "hasInstalledAppsNote": "Napomena: Taster F11 ne može da se koristi za prekidanje poziva u aplikaciji Microsoft Teams 1.0.",
-                        "noInstalledAppsNote": "Napomene: Da biste koristili ovu funkciju, prvo morate da preuzmete i instalirate aplikacije."
+                        "noInstalledAppsNote": "Napomene: Da biste koristili ovu funkciju, prvo morate da preuzmete i instalirate aplikacije.",
+                        "app-0": "Skype for<br/>Business 2016",
+                        "app-1": "Microsoft Teams"
                     }
                 },
                 "userDefinedKey": {

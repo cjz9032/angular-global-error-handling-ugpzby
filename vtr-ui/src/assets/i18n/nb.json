@@ -1788,7 +1788,9 @@
                         "hasInstalledAppsDescription": "Velg appen du vil bruke hurtigtastene i:",
                         "noInstalledAppsDescription": "Denne funksjonen støtter bare appene under: ",
                         "hasInstalledAppsNote": "Merk: I Microsoft Teams 1.0 kan F11 ikke brukes til å legge på.",
-                        "noInstalledAppsNote": "Merk: Du må laste ned og installere appene før du kan bruke funksjonen."
+                        "noInstalledAppsNote": "Merk: Du må laste ned og installere appene før du kan bruke funksjonen.",
+                        "app-0": "Skype for<br/>Business 2016",
+                        "app-1": "Microsoft Teams"
                     }
                 },
                 "userDefinedKey": {

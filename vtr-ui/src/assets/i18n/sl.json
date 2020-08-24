@@ -1788,7 +1788,9 @@
                         "hasInstalledAppsDescription": "Izberite program, s katerim želite uporabljati bližnjice:",
                         "noInstalledAppsDescription": "Ta funkcija podpira samo naslednje programe: ",
                         "hasInstalledAppsNote": "Opomba: v programu Microsoft Teams 1.0 tipke F11 ni mogoče uporabiti za zaključek klica.",
-                        "noInstalledAppsNote": "Opomba: če želite uporabljati to funkcijo, morate najprej prenesti in namestiti programe."
+                        "noInstalledAppsNote": "Opomba: če želite uporabljati to funkcijo, morate najprej prenesti in namestiti programe.",
+                        "app-0": "Skype for<br/>Business 2016",
+                        "app-1": "Microsoft Teams"
                     }
                 },
                 "userDefinedKey": {

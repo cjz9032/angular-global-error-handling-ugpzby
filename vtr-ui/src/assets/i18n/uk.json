@@ -1788,7 +1788,9 @@
                         "hasInstalledAppsDescription": "Виберіть програму, у якій потрібно використовувати гарячі клавіші:",
                         "noInstalledAppsDescription": "Ця функція підтримує лише такі програми: ",
                         "hasInstalledAppsNote": "Примітка. У Microsoft Teams 1.0 не можна використовувати клавішу F11 для припинення дзвінків.",
-                        "noInstalledAppsNote": "Примітка. Щоб скористатися цією функцією, потрібно спочатку завантажити та інсталювати програми."
+                        "noInstalledAppsNote": "Примітка. Щоб скористатися цією функцією, потрібно спочатку завантажити та інсталювати програми.",
+                        "app-0": "Skype for<br/>Business 2016",
+                        "app-1": "Microsoft Teams"
                     }
                 },
                 "userDefinedKey": {

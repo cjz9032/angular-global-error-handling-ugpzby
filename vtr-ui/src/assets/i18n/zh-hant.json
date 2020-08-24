@@ -1788,7 +1788,9 @@
                         "hasInstalledAppsDescription": "選取您要在其中使用快速鍵的應用程式：",
                         "noInstalledAppsDescription": "這項功能僅支援下列應用程式：",
                         "hasInstalledAppsNote": "附註：用於 Microsoft Teams 1.0 時，使用 F11 鍵無法掛斷通話。",
-                        "noInstalledAppsNote": "附註：若要安裝這項功能，首先您必須下載及安裝上述應用程式。"
+                        "noInstalledAppsNote": "附註：若要安裝這項功能，首先您必須下載及安裝上述應用程式。",
+                        "app-0": "Skype for<br/>Business 2016",
+                        "app-1": "Microsoft Teams"
                     }
                 },
                 "userDefinedKey": {

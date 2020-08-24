@@ -1788,7 +1788,9 @@
                         "hasInstalledAppsDescription": "Selecione a aplicação em que pretende utilizar as teclas de atalho:",
                         "noInstalledAppsDescription": "Esta funcionalidade suporta apenas as seguintes aplicações: ",
                         "hasInstalledAppsNote": "Nota: Para Microsoft Teams 1.0, a tecla F11 não pode ser utilizada para desligar a chamada.",
-                        "noInstalledAppsNote": "Nota: Para utilizar a funcionalidade, tem de transferir e instalar primeiro as aplicações."
+                        "noInstalledAppsNote": "Nota: Para utilizar a funcionalidade, tem de transferir e instalar primeiro as aplicações.",
+                        "app-0": "Skype for<br/>Business 2016",
+                        "app-1": "Microsoft Teams"
                     }
                 },
                 "userDefinedKey": {

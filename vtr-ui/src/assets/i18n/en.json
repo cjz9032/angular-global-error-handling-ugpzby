@@ -1790,7 +1790,9 @@
 						"hasInstalledAppsDescription": "Select the app that you want to use the hotkeys on:",
 						"noInstalledAppsDescription": "This feature only support below applications: ",
 						"hasInstalledAppsNote": "Note: For Microsoft Teams 1.0, the F11 key cannot be used to hang up the call.",
-						"noInstalledAppsNote": "Note: To use the feature, you need to download and install the apps first."
+						"noInstalledAppsNote": "Note: To use the feature, you need to download and install the apps first.",
+						"app-0":"Skype for<br/>Business 2016",
+						"app-1" :"Microsoft Teams"
 					}
 				},
 				"backlight": {

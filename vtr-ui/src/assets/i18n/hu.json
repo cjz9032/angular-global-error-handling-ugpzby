@@ -1788,7 +1788,9 @@
                         "hasInstalledAppsDescription": "Válassza ki, melyik alkalmazással szeretné használni a gyorsbillentyűket:",
                         "noInstalledAppsDescription": "A funkció csak az alábbi alkalmazásokban áll rendelkezésre: ",
                         "hasInstalledAppsNote": "Megjegyzés: A Microsoft Teams 1.0 verzióban a hívás nem fejezhető be az F11 billentyűvel.",
-                        "noInstalledAppsNote": "Megjegyzés: A funkció használatához először le kell tölteni és telepíteni kell az alkalmazásokat."
+                        "noInstalledAppsNote": "Megjegyzés: A funkció használatához először le kell tölteni és telepíteni kell az alkalmazásokat.",
+                        "app-0": "Skype for<br/>Business 2016",
+                        "app-1": "Microsoft Teams"
                     }
                 },
                 "userDefinedKey": {

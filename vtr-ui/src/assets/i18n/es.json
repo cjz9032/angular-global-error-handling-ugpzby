@@ -1788,7 +1788,9 @@
                         "hasInstalledAppsDescription": "Seleccione la aplicación en la que desea usar las teclas de acceso directo:",
                         "noInstalledAppsDescription": "Esta característica solo admite las aplicaciones siguientes: ",
                         "hasInstalledAppsNote": "Nota: para Microsoft Teams 1.0, la tecla F11 no se puede utilizar para cortar la llamada.",
-                        "noInstalledAppsNote": "Nota: para utilizar la característica, debe descargar e instalar primero las aplicaciones."
+                        "noInstalledAppsNote": "Nota: para utilizar la característica, debe descargar e instalar primero las aplicaciones.",
+                        "app-0": "Skype for<br/>Business 2016",
+                        "app-1": "Microsoft Teams"
                     }
                 },
                 "userDefinedKey": {

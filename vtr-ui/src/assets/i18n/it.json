@@ -1788,7 +1788,9 @@
                         "hasInstalledAppsDescription": "Selezionare l'app con cui si desidera utilizzare i tasti di scelta rapida:",
                         "noInstalledAppsDescription": "Questa funzione supporta solo le app seguenti: ",
                         "hasInstalledAppsNote": "Nota: per Microsoft Teams 1.0, il tasto F11 non può essere utilizzato per interrompere la chiamata.",
-                        "noInstalledAppsNote": "Nota: per utilizzare la funzione, è necessario innanzitutto scaricare e installare le app."
+                        "noInstalledAppsNote": "Nota: per utilizzare la funzione, è necessario innanzitutto scaricare e installare le app.",
+                        "app-0": "Skype for<br/>Business 2016",
+                        "app-1": "Microsoft Teams"
                     }
                 },
                 "userDefinedKey": {

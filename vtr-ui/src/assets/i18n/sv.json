@@ -1788,7 +1788,9 @@
                         "hasInstalledAppsDescription": "Välj den app där du vill använda snabbtangenterna:",
                         "noInstalledAppsDescription": "Funktionen kan endast användas med följande program: ",
                         "hasInstalledAppsNote": "Obs! I Microsoft Teams 1.0 kan du inte använda F11-tangenten för att avsluta samtalet.",
-                        "noInstalledAppsNote": "Obs! Du måste ladda ned och installera apparna för att kunna använda funktionen."
+                        "noInstalledAppsNote": "Obs! Du måste ladda ned och installera apparna för att kunna använda funktionen.",
+                        "app-0": "Skype for<br/>Business 2016",
+                        "app-1": "Microsoft Teams"
                     }
                 },
                 "userDefinedKey": {

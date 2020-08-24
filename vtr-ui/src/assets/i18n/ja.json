@@ -1788,7 +1788,9 @@
                         "hasInstalledAppsDescription": "ホット・キーを使用するアプリを選択します。",
                         "noInstalledAppsDescription": "この機能は、以下のアプリケーションのみをサポートします。",
                         "hasInstalledAppsNote": "注: Microsoft Teams 1.0 の場合、F11 キーを使用して通話を切ることはできません。",
-                        "noInstalledAppsNote": "注: この機能を使用するには、最初にアプリをダウンロードしてインストールする必要があります。"
+                        "noInstalledAppsNote": "注: この機能を使用するには、最初にアプリをダウンロードしてインストールする必要があります。",
+                        "app-0": "Skype for<br/>Business 2016",
+                        "app-1": "Microsoft Teams"
                     }
                 },
                 "userDefinedKey": {
