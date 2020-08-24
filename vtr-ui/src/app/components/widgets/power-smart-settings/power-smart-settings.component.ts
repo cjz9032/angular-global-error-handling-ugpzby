@@ -253,8 +253,10 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				} else if (response.itsVersion >= 4) {
 					if (response.itsVersion === 4) {
 						this.intelligentCoolingModes = IntelligentCoolingHardware.ITS14;
+						this.showIntelligentCoolingModes = true;
 					} else if (response.itsVersion >= 5) {
 						this.intelligentCoolingModes = IntelligentCoolingHardware.ITS15;
+						this.showIntelligentCoolingModes = true;
 						this.isAutoTransitionVisible = true;
 						if (Object.prototype.hasOwnProperty.call(response, 'isAutoTransitionEnabled')) {
 							this.isAutoTransitionEnabled = response.isAutoTransitionEnabled;
