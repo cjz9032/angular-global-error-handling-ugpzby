@@ -34,7 +34,7 @@ export class ContentCacheService {
   private buildInContents = {};
   private contentLocalCacheContract: any;
   private latestCachedContetns = {};
-  private cachingLock = false;
+  private ongoingCacheProcesses = {};
 
   constructor(
     private vantageShellService: VantageShellService,
@@ -54,26 +54,15 @@ export class ContentCacheService {
 
     var cachedContents = await this.loadCachedContents(cacheKey) || await this.loadBuildInContents(cmsOptions);
     this.sendCacheMetrics(startTime, 'loadedCacheContents');
-      
-    if (!this.getLock()) {
-      this.lock();
-      this.cacheContents(cacheKey, cmsOptions, contentCards)
-          .finally(() => {this.releaseLock()});
+
+    if (!this.ongoingCacheProcesses[cacheKey]) {
+      this.ongoingCacheProcesses[cacheKey] = this.cacheContents(cacheKey, cmsOptions, contentCards)
+        .finally(() => {
+          this.ongoingCacheProcesses[cacheKey] = null;
+        });
     }
-  
+
     return cachedContents;
-  }
-  
-  private getLock() {
-    return this.cachingLock;
-  }
-
-  private lock () {
-    this.cachingLock = true;
-  }
-
-  private releaseLock() {
-    this.cachingLock = false;
   }
 
   public async getArticleById(actionType: ContentActionType, articleId: any) {
@@ -187,25 +176,25 @@ export class ContentCacheService {
   private async cacheContents(cacheKey, cmsOptions: any, contentCards: any) {
     const startTime = new Date();
     Promise.all([this.fetchCMSContent(cmsOptions, contentCards), this.fetchUPEContent(contentCards)])
-    .then(async response => {
-      let cacheValueOfContents = {
-        "positionA": [],
-        "positionB": [],
-        "positionC": [],
-        "positionD": [],
-        "positionE": [],
-        "positionF": [],
-        "welcome-text": []
-      }
-      await this.fillCacheValue(response, contentCards, cacheValueOfContents)
-      const contents = await this.getUpdatedContents(cacheKey, cacheValueOfContents);
-      await this.saveContents(cacheKey, cacheValueOfContents);
-      this.latestCachedContetns[cacheKey] = cacheValueOfContents;
-      await this.cacheContentDetail(contents);
-      this.sendCacheMetrics(startTime, 'fetchedCacheContents');
-    }).catch(error => {
-      this.logger.error('cacheContents error ', error);
-    });
+      .then(async response => {
+        let cacheValueOfContents = {
+          "positionA": [],
+          "positionB": [],
+          "positionC": [],
+          "positionD": [],
+          "positionE": [],
+          "positionF": [],
+          "welcome-text": []
+        }
+        await this.fillCacheValue(response, contentCards, cacheValueOfContents)
+        const contents = await this.getUpdatedContents(cacheKey, cacheValueOfContents);
+        await this.saveContents(cacheKey, cacheValueOfContents);
+        this.latestCachedContetns[cacheKey] = cacheValueOfContents;
+        await this.cacheContentDetail(contents);
+        this.sendCacheMetrics(startTime, 'fetchedCacheContents');
+      }).catch(error => {
+        this.logger.error('cacheContents error ', error);
+      });
   }
 
   private async fillCacheValue(response: any, contentCards: any, cacheValueOfContents: any) {
