@@ -192,6 +192,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	}
 
 	initializeCameraAsync(source: string) {
+		this.isCameraInitialized = true;
 		this.logger.info('InitializeCameraAsync', source);
 		// const self = this;
 		try {
@@ -238,7 +239,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 
 					const settings = new this.Capture.MediaCaptureInitializationSettings();
 					settings.videoDeviceId = camera.id;
-					settings.streamingCaptureMode = this.Capture.StreamingCaptureMode.audioAndVideo;
+					settings.streamingCaptureMode = 2;
 					settings.photoCaptureSource = 0; // auto
 
 					// Initialize media capture and start the preview
@@ -250,7 +251,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 						this.disabledAll = true;
 					});
 				}).then(() => {
-					this.isCameraInitialized = true;
+					// this.isCameraInitialized = true;
 					return this.startPreviewAsync();
 
 				}).done();
@@ -262,17 +263,13 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 
 	startPreviewAsync() {
 		this.ngZone.run(() => {
-			const streamType = this.Capture.MediaStreamType.videoPreview;
-			const allProperties = this.oMediaCapture.videoDeviceController.getAvailableMediaStreamProperties(streamType);
-			return this.oMediaCapture.videoDeviceController.setMediaStreamPropertiesAsync(streamType, allProperties[0]).then(() => {
-				const previewUrl = URL.createObjectURL(this.oMediaCapture);
-				this.videoElement = this.cameraPreview.nativeElement;
-				this.videoElement.src = previewUrl;
-				this.videoElement.play();
-				this.videoPreviewEvent = this.videoPreviewPlaying.bind(this);
-				this.videoElement.addEventListener('playing', this.videoPreviewEvent);
-				this.logger.info('CameraControlComponent.startPreviewAsync', { previewUrl, videoElement: this.videoElement });
-			});
+			const previewUrl = URL.createObjectURL(this.oMediaCapture);
+			this.videoElement = this.cameraPreview.nativeElement;
+			this.videoElement.src = previewUrl;
+			this.videoElement.play();
+			this.videoPreviewEvent = this.videoPreviewPlaying.bind(this);
+			this.videoElement.addEventListener('playing', this.videoPreviewEvent);
+			this.logger.info('CameraControlComponent.startPreviewAsync', { previewUrl, videoElement: this.videoElement });
 		});
 	}
 
