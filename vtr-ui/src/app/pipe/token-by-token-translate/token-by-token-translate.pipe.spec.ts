@@ -13,7 +13,7 @@ class TranslatePipeMock implements PipeTransform {
 	}
 }
 
-fdescribe('TokenByTokenTranslatePipe', () => {
+describe('TokenByTokenTranslatePipe', () => {
 	const translatePipeMock = new TranslatePipeMock();
 	let pipe: TokenByTokenTranslatePipe;
 
@@ -31,22 +31,22 @@ fdescribe('TokenByTokenTranslatePipe', () => {
 		pipe = TestBed.inject(TokenByTokenTranslatePipe);
 	});
 
-	fit('should create an instance', () => {
+	it('should create an instance', () => {
 		expect(pipe).toBeTruthy();
 	});
 
-	fit ('translates a found token should return the translated value', () => {
+	it ('translates a found token should return the translated value', () => {
 		spyOn(translatePipeMock, 'transform').and.returnValue('A translation for a valid token!');
 		const result = pipe.transform('hardwareScan.foundToken');
 		expect(result).toBe('A translation for a valid token!');
 	});
 
-	fit ('should translate from mock dependency', () => {
+	it ('should translate from mock dependency', () => {
 		const result = pipe.transform('2 x 32 KB');
 		expect(result).toBe('2 x 32 KB');
 	});
 
-	fit ('it should translate a valid token inside a line', () => {
+	it ('it should translate a valid token inside a line', () => {
 		spyOn(translatePipeMock, 'transform').and.returnValues('2', 'x', '32', 'KB', 'of some data');
 		const result = pipe.transform('2 x 32 KB ANY_TOKEN');
 		expect(result).toBe('2 x 32 KB of some data');

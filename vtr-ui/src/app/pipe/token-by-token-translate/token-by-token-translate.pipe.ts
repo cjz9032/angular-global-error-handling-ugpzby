@@ -28,7 +28,10 @@ export class TokenByTokenTranslatePipe implements PipeTransform {
 		} else {
 			finalTranslation = this.translateDefaultPipe.transform(prefix + value, value);
 		}
-		finalTranslation = finalTranslation.trim();
+		// Remove the last added space to avoid using trim and remove unexpected spaces.
+		if (finalTranslation[finalTranslation.length - 1] === ' ') {
+			finalTranslation = finalTranslation.substr(0, finalTranslation.length - 1);
+		}
 		return finalTranslation ? finalTranslation : value;
 	}
 }
