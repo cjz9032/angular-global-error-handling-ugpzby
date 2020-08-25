@@ -19,7 +19,7 @@
 					[id]="item.componentId"
 					[attr.aria-checked]="item.isChecked"
 					[attr.aria-disabled]="item.isDisabled || isDisabled"
-					[attr.aria-label]="item.label | translate"
+					[attr.aria-label]="(item.ariaLabel) ? item.ariaLabel: item.label | translate"
 					(click)="onClick($event)">
 					<span class="icomoon icomoon-icon_state_Two_combined focus"
 						*ngIf="item.componentId === focusedComponentId && item.isChecked"

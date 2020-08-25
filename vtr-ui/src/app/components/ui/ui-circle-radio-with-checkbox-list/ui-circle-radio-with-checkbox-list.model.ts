@@ -11,4 +11,5 @@ export class UiCircleRadioWithCheckBoxListModel {
 		public customIcon = '',
 		public metricsItem: string,
 	) { }
+	public ariaLabel?: string;
 }

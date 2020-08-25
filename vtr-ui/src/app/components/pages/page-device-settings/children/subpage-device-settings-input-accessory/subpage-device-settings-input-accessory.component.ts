@@ -516,6 +516,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 						customIcon: `${this.iconName[app.appName]}`,
 						metricsItem: '',
 					};
+					appObj.ariaLabel = this.voipAppName[index];
 					this.voipUIModel.push(appObj);
 				}
 			});
