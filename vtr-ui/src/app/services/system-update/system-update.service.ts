@@ -504,11 +504,11 @@ export class SystemUpdateService {
 				return false;
 			}
 
-			this.installedUpdates.forEach(update => {
+			for (const update of this.installedUpdates) {
 				if (update.packageRebootType.toLowerCase() === 'rebootrequested' && update.isInstalled) {
 					return true;
 				}
-			});
+			}
 		}
 		return false;
 	}
