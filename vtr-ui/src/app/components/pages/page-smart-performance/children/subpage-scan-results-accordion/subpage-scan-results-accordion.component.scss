@@ -17,6 +17,7 @@
 
 					.btn-link {
 						width: 100%;
+						position: relative;
 
 						@media #{$white-on-black} {
 							border: none;
@@ -27,18 +28,18 @@
 						}
 
 						&:before {
-							content: "\e9b9";
+							content: "\e903";
 							font-family: "icomoon";
 							color: $main_light;
 							font-size: 1.4rem;
 							width: 1.75rem;
 							height: 1.75rem;
 							position: absolute;
-							top: 3.5rem;
+							top: 3rem;
 							right: 1rem;
 
 							@media #{$breakpoint_sm} {
-								top: 2.5rem;
+								top: 1.5rem;
 							}
 						}
 
@@ -76,18 +77,18 @@
 
 					.collapsed {
 						&:before {
-							content: "\e9b8";
+							content: "\e902";
 							font-family: "icomoon";
 							color: $main_light;
 							font-size: 1.4rem;
 							width: 1.75rem;
 							height: 1.75rem;
 							position: absolute;
-							top: 3.5rem;
+							top: 3rem;
 							right: 1rem;
 
 							@media #{$breakpoint_sm} {
-								top: 2.5rem;
+								top: 1.5rem;
 							}
 						}
 					}
@@ -259,31 +260,25 @@
 						text-align: right;
 						color: $shade_dark;
 						position: relative;
-						padding-right: 1.5rem;
+						padding-right: 2.5rem;
 						letter-spacing: 0;
 						margin: 0;
 
 						@media #{$breakpoint_lg} {
-							font-size: $fontsize_xs;
-							// top: 36%;
+							font-size: $fontsize_xs;		
 						}
 
 						@media #{$breakpoint_md} {
-							// top: 36%;					
 							font-size: $fontsize_xs2;
 						}
 
 						@media #{$breakpoint_xl} {
 							font-size: $fontsize_xs2;
-							// top: 36%;
 						}
 
 						@media #{$breakpoint_sm} {
-							//  top: 32.5%;								
 							font-size: 1.1rem;
 						}
-
-						// top: 40%;
 					}
 
 					vtr-widget-speedometer {
