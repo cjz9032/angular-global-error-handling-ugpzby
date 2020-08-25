@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.43](https://bitbucket.tc.lenovo.com///compare/v1.7.42...v1.7.43) (2020-08-25)
+
+
+### Bug Fixes
+
+* **Smart Performance:** VAN-21326 set releative position for focus mark and update dropdown and dropup icon ([7290d1b](https://bitbucket.tc.lenovo.com///commit/7290d1bcfff84d8126c29d803eddfa437f8f5793))
+
 ### [1.7.42](https://bitbucket.tc.lenovo.com///compare/v1.7.41...v1.7.42) (2020-08-25)
 
 
