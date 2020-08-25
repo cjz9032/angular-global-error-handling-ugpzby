@@ -32,7 +32,7 @@ export class ModalArticleDetailComponent implements OnInit {
 		Loading: 1,
 		Empty: 2,
 		Content: 3,
-	}
+	};
 	contentStatus = this.AllContentStatus.Loading;
 
 	@ViewChild('articleDetailModal') articleDetailModal: ElementRef;
@@ -143,11 +143,11 @@ export class ModalArticleDetailComponent implements OnInit {
 
 	@HostListener('document:keydown.pageup')
 	onClickPageUp() {
-		this.commonService.scrollElementByDistance(this.articleDialogContent.nativeElement, this.articleDialogContent.nativeElement.clientHeight - 40, true)
+		this.commonService.scrollElementByDistance(this.articleDialogContent.nativeElement, this.articleDialogContent.nativeElement.clientHeight - 40, true);
 	}
 	@HostListener('document:keydown.pagedown')
 	onClickPageDown() {
-		this.commonService.scrollElementByDistance(this.articleDialogContent.nativeElement, this.articleDialogContent.nativeElement.clientHeight - 40)
+		this.commonService.scrollElementByDistance(this.articleDialogContent.nativeElement, this.articleDialogContent.nativeElement.clientHeight - 40);
 	}
 
 	@HostListener('document:keydown.escape', ['$event'])
@@ -172,7 +172,7 @@ export class ModalArticleDetailComponent implements OnInit {
 
 	@HostListener('click', ['$event.target'])
 	onClick(targetElement: any): boolean {
-		let count = 0
+		let count = 0;
 		while (targetElement && count < 4) {
 			if (targetElement.href) {
 				return this.openProtocol(targetElement.href);

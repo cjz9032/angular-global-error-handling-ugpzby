@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { Subject } from 'rxjs';
-import {  HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { PaymentPage } from 'src/app/enums/smart-performance.enum';
 import { environment } from 'src/environments/environment';
 
@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
 export class SmartPerformanceService {
 	getSmartPerformance: any;
 	public isShellAvailable = false;
-	scanningStopped = new Subject<boolean>()
+	scanningStopped = new Subject<boolean>();
 	constructor(shellService: VantageShellService, private http: HttpClient) {
 
 		this.getSmartPerformance = shellService.getSmartPerformance();
@@ -167,18 +167,20 @@ export class SmartPerformanceService {
 		return new Promise(resolve => {
 			const xhr = new XMLHttpRequest();
 			xhr.open('GET', reqUrl, true);
-			xhr.onreadystatechange = () => {if (xhr.readyState === 4 && xhr.status === 200) {
-				let result = JSON.parse(xhr.responseText);
+			xhr.onreadystatechange = () => {
+				if (xhr.readyState === 4 && xhr.status === 200) {
+					let result = JSON.parse(xhr.responseText);
 
-				// start for PA test, will remove before 8/25 task id: VAN-21395
-				const testResponse = localStorage.getItem('SmartPerformanceTestResponse');
-				if (testResponse) {
-					result = JSON.parse(testResponse);
+					// start for PA test, will remove before 8/25 task id: VAN-21395
+					const testResponse = localStorage.getItem('SmartPerformanceTestResponse');
+					if (testResponse) {
+						result = JSON.parse(testResponse);
+					}
+					// end for PA test, will remove before 8/25 VAN-21395
+
+					resolve(result);
 				}
-				// end for PA test, will remove before 8/25 VAN-21395
-
-				resolve(result);
-			}};
+			};
 			xhr.send();
 		});
 	}

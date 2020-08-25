@@ -6,7 +6,7 @@ xdescribe('CardService', () => {
 	beforeEach(() => TestBed.configureTestingModule({}));
 
 	it('should be created', () => {
-		const service: CardService = TestBed.get(CardService);
+		const service: CardService = TestBed.inject(CardService);
 		expect(service).toBeTruthy();
 	});
 });

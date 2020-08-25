@@ -10,6 +10,7 @@
 		.btn-link {
 			font-size: $fontsize_sm;
 			font-weight: $weight_light;
+
 			@media #{$breakpoint_xl} {
 				font-size: $fontsize_xs;
 			}
@@ -46,6 +47,7 @@
 						flex-grow: 1;
 						margin-top: 0.8rem;
 					}
+
 					.update-info {
 						flex-grow: 15;
 					}
@@ -59,9 +61,11 @@
 							font-weight: $weight_light;
 						}
 					}
+
 					.icon-check {
 						padding-right: 1rem;
 						display: inline-block;
+
 						.icon-bg {
 							display: inline-block;
 							border-radius: 50%;
@@ -73,10 +77,12 @@
 							background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
 							background-color: $go_dark;
 							border: 0.1rem solid $go_dark;
+
 							@media #{$white-on-black} {
 								background: $light;
 								border: 0.1rem solid $light;
 							}
+
 							@media #{$black-on-white} {
 								background: $dark;
 								border: 0.1rem solid $dark;
@@ -86,18 +92,22 @@
 						&::before {
 							content: "";
 						}
+
 						.ng-fa-icon {
 							@media #{$white-on-black} {
 								color: $dark;
 							}
+
 							@media #{$black-on-white} {
 								color: $light;
 							}
 						}
 					}
+
 					.icon-times {
 						display: inline-block;
 						padding-right: 1rem;
+
 						.icon-bg {
 							display: inline-block;
 							border-radius: 50%;
@@ -114,6 +124,7 @@
 								background: $light;
 								border: 0.1rem solid $light;
 							}
+
 							@media #{$black-on-white} {
 								background: $dark;
 								border: 0.1rem solid $dark;
@@ -123,10 +134,12 @@
 						&::before {
 							content: "";
 						}
+
 						.ng-fa-icon {
 							@media #{$white-on-black} {
 								color: $dark;
 							}
+
 							@media #{$black-on-white} {
 								color: $light;
 							}
@@ -162,6 +175,7 @@
 					line-height: 2.8rem;
 					font-size: 2rem;
 					padding: 0.3rem;
+
 					a {
 						text-decoration: underline;
 						cursor: pointer;
@@ -206,6 +220,7 @@
 								line-height: 2.8rem;
 								font-size: 2rem;
 							}
+
 							&:focus {
 								outline-offset: 0;
 							}

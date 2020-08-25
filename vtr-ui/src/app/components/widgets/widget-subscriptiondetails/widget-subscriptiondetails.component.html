@@ -1,58 +1,89 @@
 <div class="subscription-details sidebar-widget">
-    <div *ngIf="isSubscribed" class="title pb-3">{{'smartPerformance.subscriptionDetails.title' |translate }}</div>
-    <div *ngIf="!isSubscribed" class="title pb-3">{{'smartPerformance.subscriptionDetails.title' |translate }}</div>
+	<div *ngIf="isSubscribed"
+		class="title pb-3">{{'smartPerformance.subscriptionDetails.title' |translate }}</div>
+	<div *ngIf="!isSubscribed"
+		class="title pb-3">{{'smartPerformance.subscriptionDetails.title' |translate }}</div>
 
-    <div class="card-info">
-        <p *ngIf="isSubscribed">{{'smartPerformance.subscriptionDetails.description' |translate }}</p>
-        <p *ngIf="!isSubscribed && !isExpired">{{'smartPerformance.subscriptionDetails.descriptionNonSubscriber' |translate }}</p>
-        <p *ngIf="!isSubscribed && isExpired"> {{'smartPerformance.subscriptionDetails.descriptionExpired' |translate }}</p>
-     </div>
-    <ul class="status-list" *ngIf="isOnline">
-        <li class="d-flex justify-content-between start-date-spinner">
-            <div class="item">{{'smartPerformance.subscriptionDetails.startDate' |translate }}</div>
-            <div class="status" *ngIf="!isLoading" id="smart-performance-subscription-detail-start-date" role="text">{{subscriptionDetails.startDate}}</div>
-            <div *ngIf="isLoading" class="loader mr-5">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </li>
-        <li class="d-flex justify-content-between end-date-spinner">
-            <div class="item">{{'smartPerformance.subscriptionDetails.endDate' |translate }}</div>
-            <div class="status" *ngIf="!isLoading" id="smart-performance-subscription-detail-end-date" role="text">{{subscriptionDetails.endDate}}</div>
-            <div *ngIf="isLoading" class="loader mr-5">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </li>
-        <li class="d-flex justify-content-between status-spinner">
-            <div class="item">{{'smartPerformance.subscriptionDetails.status' |translate }}</div>
-            <div class="status" *ngIf="strStatus">
-                <div [ngClass]="{'badge-danger': strStatus==='INACTIVE', 'badge-success': strStatus==='ACTIVE', 'badge-processing' : strStatus==='PROCESSING', 'bage-expired': strStatus==='EXPIRED' }" class="badge badge-pill mr-2" id="smart-performance-subscription-detail-status" role="text">{{subscriptionDetails.status |translate}}</div>
-                <img *ngIf="isRefreshEnabled" title="{{'smartPerformance.scanningPage.refreshButton' | translate}}" src="assets/icons/refresh.svg" alt="" class="refresh-icon" (click) = "isFirstLoad = true; getSubscriptionDetails()">
-        </div>
-            <div *ngIf="isLoading && !strStatus">
-                <div class="container" [style.height.px]="40">
-                    <div class="loader center-block">
-                        <div class="spinner-border text-secondary progress-spinner" role="status"></div>
-                    </div>
-                </div>
-            </div>
-        </li>
-    </ul>
-    <h4 *ngIf="expiredDaysCount" class="text-danger"><fa-icon [icon]="['fas', 'exclamation-circle']" class="mr-2"></fa-icon>{{'smartPerformance.subscriptionDetails.expiredNote' |translate }} {{expiredDaysCount}}</h4>
-    <button *ngIf="!isSubscribed && isOnline || expiredDaysCount"
+	<div class="card-info">
+		<p *ngIf="isSubscribed">{{'smartPerformance.subscriptionDetails.description' |translate }}</p>
+		<p *ngIf="!isSubscribed && !isExpired">{{'smartPerformance.subscriptionDetails.descriptionNonSubscriber' |translate }}</p>
+		<p *ngIf="!isSubscribed && isExpired"> {{'smartPerformance.subscriptionDetails.descriptionExpired' |translate }}</p>
+	</div>
+	<ul class="status-list"
+		*ngIf="isOnline">
+		<li class="d-flex justify-content-between start-date-spinner">
+			<div class="item">{{'smartPerformance.subscriptionDetails.startDate' |translate }}</div>
+			<div class="status"
+				*ngIf="!isLoading"
+				id="smart-performance-subscription-detail-start-date"
+				role="text">{{subscriptionDetails.startDate}}</div>
+			<div *ngIf="isLoading"
+				class="loader mr-5">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</li>
+		<li class="d-flex justify-content-between end-date-spinner">
+			<div class="item">{{'smartPerformance.subscriptionDetails.endDate' |translate }}</div>
+			<div class="status"
+				*ngIf="!isLoading"
+				id="smart-performance-subscription-detail-end-date"
+				role="text">{{subscriptionDetails.endDate}}</div>
+			<div *ngIf="isLoading"
+				class="loader mr-5">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</li>
+		<li class="d-flex justify-content-between status-spinner">
+			<div class="item">{{'smartPerformance.subscriptionDetails.status' |translate }}</div>
+			<div class="status"
+				*ngIf="strStatus">
+				<div [ngClass]="{'badge-danger': strStatus==='INACTIVE', 'badge-success': strStatus==='ACTIVE', 'badge-processing' : strStatus==='PROCESSING', 'bage-expired': strStatus==='EXPIRED' }"
+					class="badge badge-pill mr-2"
+					id="smart-performance-subscription-detail-status"
+					role="text">{{subscriptionDetails.status |translate}}</div>
+				<img *ngIf="isRefreshEnabled"
+					title="{{'smartPerformance.scanningPage.refreshButton' | translate}}"
+					src="assets/icons/refresh.svg"
+					alt=""
+					class="refresh-icon"
+					(click)="isFirstLoad = true; getSubscriptionDetails()">
+			</div>
+			<div *ngIf="isLoading && !strStatus">
+				<div class="container"
+					[style.height.px]="40">
+					<div class="loader center-block">
+						<div class="spinner-border text-secondary progress-spinner"
+							role="status"></div>
+					</div>
+				</div>
+			</div>
+		</li>
+	</ul>
+	<h4 *ngIf="expiredDaysCount"
+		class="text-danger">
+		<fa-icon [icon]="['fas', 'exclamation-circle']"
+			class="mr-2"></fa-icon>{{'smartPerformance.subscriptionDetails.expiredNote' |translate }} {{expiredDaysCount}}
+	</h4>
+	<button *ngIf="!isSubscribed && isOnline || expiredDaysCount"
 		class="link-text"
 		[disabled]="strStatus==='PROCESSING' || tempHide"
-        (click)=openSubscribeModal() vtrMetrics metricsItem="btn.managesubscription"
-		metricsEvent="FeatureClick" metricsParent="Page.Support.SmartPerformance"
+		(click)=openSubscribeModal()
+		vtrMetrics
+		metricsItem="btn.managesubscription"
+		metricsEvent="FeatureClick"
+		metricsParent="Page.Support.SmartPerformance"
 		id="smart-performance-subscription-detail-manage-btn">
-        {{'smartPerformance.subscriptionDetails.manageSubscription' |translate }}
-    </button>
-    <div class="row" *ngIf="!isOnline">
-        <vtr-widget-offline-info [title]="'dashboard.offlineInfo.title' | translate" [isSubtitleVisible]="false"
-        [isButtonVisible]="false">
-    </vtr-widget-offline-info>
-    </div>
+		{{'smartPerformance.subscriptionDetails.manageSubscription' |translate }}
+	</button>
+	<div class="row"
+		*ngIf="!isOnline">
+		<vtr-widget-offline-info [title]="'dashboard.offlineInfo.title' | translate"
+			[isSubtitleVisible]="false"
+			[isButtonVisible]="false">
+		</vtr-widget-offline-info>
+	</div>
 </div>

@@ -219,7 +219,7 @@ export class ModernPreloadService {
 		}
 	}
 
-	private sendResponseNotification(type: ModernPreloadEnum,  payload: any, responseHandler: any) {
+	private sendResponseNotification(type: ModernPreloadEnum, payload: any, responseHandler: any) {
 		const notification = { type, payload };
 		responseHandler(notification);
 	}

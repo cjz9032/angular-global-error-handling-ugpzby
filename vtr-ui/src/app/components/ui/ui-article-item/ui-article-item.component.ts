@@ -19,7 +19,7 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit, OnDestroy 
 	@Input() articleType: string;
 	@ViewChild('articleItemDiv', { static: false }) articleItemDiv: any;
 
-	private _item: FeatureContent;
+	private innerItem: FeatureContent;
 	private displayDetectionTaskId;
 
 	itemCategory = '';
@@ -41,7 +41,7 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit, OnDestroy 
 
 	@Input() set item(itemValue: any) {
 		const preItem = this.item;
-		this._item = itemValue;
+		this.innerItem = itemValue;
 
 		if (preItem && preItem === itemValue.Id) {
 			return;
@@ -56,7 +56,7 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit, OnDestroy 
 	}
 
 	get item() {
-		return this._item;
+		return this.innerItem;
 	}
 
 	ngOnInit() {

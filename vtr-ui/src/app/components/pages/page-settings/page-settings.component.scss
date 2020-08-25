@@ -11,6 +11,7 @@
 				padding-bottom: 4rem;
 			}
 		}
+
 		.vtr-page-columns {
 			.vtr-page-column {
 				padding: 0 3.2rem 3.2rem !important;
@@ -270,6 +271,7 @@
 
 		.save-button {
 			padding-left: 1rem;
+
 			&::ng-deep {
 				vtr-ui-button {
 					.button-box {
@@ -290,6 +292,7 @@
 
 .subpage-settings {
 	padding-top: 2rem;
+
 	.title {
 		opacity: 0.8;
 		color: $main_darker;
@@ -300,6 +303,7 @@
 	ul.list-group {
 		list-style-type: none;
 		padding-bottom: 1rem;
+
 		::ng-deep .vtr-ui-switch-row .caption ul li {
 			list-style-type: disc;
 		}
@@ -318,14 +322,17 @@
 	.card-col {
 		padding-left: 1.2rem;
 		padding-right: 0;
+
 		&:first-child {
 			padding-left: 0;
 			padding-right: 1.2rem;
 		}
 	}
+
 	@media #{$breakpoint_xl} {
 		.card-col {
 			padding: 0;
+
 			&:first-child {
 				padding: 0;
 			}
@@ -341,10 +348,12 @@
 					color: $gaming_lightest;
 				}
 			}
+
 			.caption {
 				color: $gaming_lightest;
 			}
 		}
+
 		.settings-note {
 			color: $gaming_light_05;
 			background-color: $gaming_darker;

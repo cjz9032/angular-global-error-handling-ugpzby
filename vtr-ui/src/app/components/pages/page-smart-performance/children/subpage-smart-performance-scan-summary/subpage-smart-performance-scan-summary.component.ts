@@ -203,7 +203,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 	async getSubscriptionDetails() {
 		let machineInfo;
 		let subscriptionData = [];
-		machineInfo = await this.supportService.getMachineInfo()
+		machineInfo = await this.supportService.getMachineInfo();
 		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails(machineInfo.serialnumber);
 		this.logger.info('subpage-smart-performance-scan-summary.component.getSubscriptionDetails', subscriptionDetails);
 		if (subscriptionDetails && subscriptionDetails.data) {
@@ -228,10 +228,10 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		if (expiredDate < currentDate) {
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
 			this.isSubscribed = false;
-			// this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);			 
+			// this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
 		}
 		else {
-			//this.writeSmartPerformanceActivity('True', 'True', 'Active');
+			// this.writeSmartPerformanceActivity('True', 'True', 'Active');
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
 			this.isSubscribed = true;
 		}
@@ -293,7 +293,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 						minute: 'numeric'
 					}).format(dateObj);
 			// this.mostRecentScan = (new Date(momentString).getMonth() + 1) + '/' + new Date(momentString).getDate() + ' at ' + now;
-			this.mostRecentScan = spLocalDate + (this.translate.currentLang === 'en' ? ' at ' : ' ') +  now;
+			this.mostRecentScan = spLocalDate + (this.translate.currentLang === 'en' ? ' at ' : ' ') + now;
 		} catch (err) {
 			this.logger.error('ui-smart-performance-scan-summary.getMostecentScanDateTime.then', err);
 		}

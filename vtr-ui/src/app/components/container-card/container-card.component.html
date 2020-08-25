@@ -29,7 +29,7 @@
 						id="{{containerCardId+'_doc_link'}}"
 						metricsItemCategory="corner"
 						metricsEvent="docClick"
-						[metricsItem]="dynamicmetricsItem"
+						[metricsItem]="dynamicMetricsItem"
 						[metricsParam]="item.DataSource"
 						[metricsItemPosition]="sideFlag + order"
 						[metricsItemID]="item.Id"
@@ -51,9 +51,8 @@
 								[ngbTooltip]="item.Title | htmlText"
 								tooltipClass="vtr-system-tooltip"
 								container="body"
-								#tipCardCornerTitle = "ngbTooltip"
-								(mouseenter)="closeTipTimeout(tipCardCornerTitle)"
-								></div>
+								#tipCardCornerTitle="ngbTooltip"
+								(mouseenter)="closeTipTimeout(tipCardCornerTitle)"></div>
 							<div *ngIf="item.Description"
 								class="caption text-two-ellipsis"
 								id="{{containerCardId+'-caption'}}"
@@ -63,9 +62,8 @@
 								[ngbTooltip]="item.Description | htmlText"
 								tooltipClass="vtr-system-tooltip"
 								container="body"
-								#tipCardCornerDescription = "ngbTooltip"
-								(mouseenter)="closeTipTimeout(tipCardCornerDescription)"
-								></div>
+								#tipCardCornerDescription="ngbTooltip"
+								(mouseenter)="closeTipTimeout(tipCardCornerDescription)"></div>
 							<div *ngIf="item.BrandImage || item.BrandName"
 								class="logo">
 								<span class="logo-img">
@@ -162,7 +160,8 @@
 	</div>
 
 	<div class="container-card card-highlight"
-		*ngIf="type === 'highlight'" #containerCardWideArticle>
+		*ngIf="type === 'highlight'"
+		#containerCardWideArticle>
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col col-12 content">
@@ -195,9 +194,8 @@
 								[ngbTooltip]="item.Title | htmlText"
 								tooltipClass="vtr-system-tooltip"
 								container="body"
-								#tipCardHighlightTitle = "ngbTooltip"
-								(mouseenter)="closeTipTimeout(tipCardHighlightTitle)"
-								></div>
+								#tipCardHighlightTitle="ngbTooltip"
+								(mouseenter)="closeTipTimeout(tipCardHighlightTitle)"></div>
 						</div>
 					</a>
 				</div>
@@ -253,9 +251,8 @@
 								[ngbTooltip]="item.Title | htmlText"
 								tooltipClass="vtr-system-tooltip"
 								container="body"
-								#tipCardArticleTitle = "ngbTooltip"
-								(mouseenter)="closeTipTimeout(tipCardArticleTitle)"
-								></div>
+								#tipCardArticleTitle="ngbTooltip"
+								(mouseenter)="closeTipTimeout(tipCardArticleTitle)"></div>
 							<div *ngIf="item.ActionLink && !isOfflineArm"
 								[style.height.px]="containerCardArticle.clientWidth * 27 / 430"
 								[style.line-height.px]="containerCardArticle.clientWidth * 27 / 430"
@@ -321,10 +318,9 @@
 								[ngbTooltip]="item.Title | htmlText"
 								tooltipClass="vtr-system-tooltip"
 								container="body"
-								#tipCardSubpageArticleTitle = "ngbTooltip"
+								#tipCardSubpageArticleTitle="ngbTooltip"
 								(mouseenter)="closeTipTimeout(tipCardSubpageArticleTitle)"
-								[attr.aria-hidden]="!isOnline"
-								></div>
+								[attr.aria-hidden]="!isOnline"></div>
 							<div *ngIf="item.ActionLink && !isOfflineArm"
 								[style.height.px]="containerCardArticle.clientWidth * 27 / 430"
 								[style.line-height.px]="containerCardArticle.clientWidth * 27 / 430"
@@ -376,10 +372,9 @@
 								[ngbTooltip]="item.Title | htmlText"
 								tooltipClass="vtr-system-tooltip"
 								container="body"
-								#tipCardSubpageCornerTitle = "ngbTooltip"
+								#tipCardSubpageCornerTitle="ngbTooltip"
 								(mouseenter)="closeTipTimeout(tipCardSubpageCornerTitle)"
-								[attr.aria-hidden]="!isOnline"
-								></h2>
+								[attr.aria-hidden]="!isOnline"></h2>
 							<div *ngIf="item.Description"
 								class="caption text-two-ellipsis">
 								<p [title]=""
@@ -389,11 +384,10 @@
 									[ngbTooltip]="item.Description | htmlText"
 									tooltipClass="vtr-system-tooltip"
 									container="body"
-									#tipCardSubpageCornerDescription = "ngbTooltip"
+									#tipCardSubpageCornerDescription="ngbTooltip"
 									(mouseenter)="closeTipTimeout(tipCardSubpageCornerDescription)"
 									role="text"
-									[attr.aria-hidden]="!isOnline"
-									></p>
+									[attr.aria-hidden]="!isOnline"></p>
 							</div>
 							<div *ngIf="item.BrandImage || item.BrandName"
 								class="logo">
@@ -453,10 +447,9 @@
 								[ngbTooltip]="item.Title | htmlText"
 								tooltipClass="vtr-system-tooltip"
 								container="body"
-								#tipCardSubpagePartnerCornerTitle = "ngbTooltip"
+								#tipCardSubpagePartnerCornerTitle="ngbTooltip"
 								(mouseenter)="closeTipTimeout(tipCardSubpagePartnerCornerTitle)"
-								[attr.aria-hidden]="!isOnline"
-								></div>
+								[attr.aria-hidden]="!isOnline"></div>
 							<div *ngIf="item.ActionLink"
 								class="read-more">
 							</div>

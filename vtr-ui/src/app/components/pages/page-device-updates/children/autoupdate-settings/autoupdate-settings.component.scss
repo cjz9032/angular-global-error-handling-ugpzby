@@ -5,19 +5,23 @@
 	background-color: $light;
 	box-shadow: $drop_shadow;
 	padding: $fontsize_xl;
+
 	@media #{$white-on-black} {
 		box-shadow: none;
 		@include white-border;
 	}
+
 	@media #{$black-on-white} {
 		box-shadow: none;
 		@include black-border;
 	}
+
 	.title {
 		color: $main_dark;
 		font-size: $fontsize_xl;
 		font-weight: $weight_600;
 	}
+
 	.description {
 		color: $main_shade;
 		font-size: $fontsize_xs;
@@ -35,9 +39,11 @@
 			color: $purple_navy;
 			font-size: $fontsize_sm;
 			font-weight: $weight_light;
+
 			@media #{$breakpoint_xl} {
 				padding-right: 0.5rem;
 			}
+
 			@media #{$breakpoint_lg} {
 				padding-right: 0;
 			}
@@ -49,9 +55,11 @@
 			margin-left: 0.5rem;
 			padding-top: 0.3rem;
 			border: 0.1rem solid transparent;
+
 			@media #{$white-on-black} {
 				@include black-border;
 			}
+
 			@media #{$black-on-white} {
 				@include white-border;
 			}
@@ -59,15 +67,19 @@
 			&.question {
 				cursor: pointer;
 			}
+
 			&:focus {
 				outline: 0;
 				border: 0.1rem solid $menu_hover;
+
 				@media #{$high-contrast} {
-					border: 0.1rem solid $menu_hover!important;
+					border: 0.1rem solid $menu_hover !important;
 				}
+
 				@media #{$white-on-black} {
 					border: 0.1rem solid $light !important
 				}
+
 				@media #{$black-on-white} {
 					border: 0.1rem solid $dark !important
 				}
@@ -77,17 +89,20 @@
 		.no-pointer {
 			cursor: default;
 		}
+
 		.link-text {
 			font-size: 1.4rem;
 		}
 
 		.list-group-item {
 			padding: 0.75rem 1rem;
+
 			.media {
 				img {
 					@media #{$white-on-black} {
 						filter: brightness(0) invert(1);
 					}
+
 					@media #{$black-on-white} {
 						filter: brightness(0);
 					}
@@ -107,12 +122,15 @@
 						border-bottom: none;
 					}
 				}
+
 				.vtr-ui-switch-row {
 					margin: 0;
 					padding: 1.5rem;
+
 					.row {
 						align-items: center;
 					}
+
 					vtr-ui-switch-onoff {
 						.checkbox {
 							margin: 0;

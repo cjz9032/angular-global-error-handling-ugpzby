@@ -1,30 +1,37 @@
 @import '../../../app.theme.scss';
+
 a:focus,
 button:focus,
 input:focus,
 textarea:focus {
-    outline: none;
+	outline: none;
 }
+
 .payment-options {
 	width: 100%;
 	margin: 0px auto;
+
 	iframe {
 		width: 100%;
 		height: 70rem;
 	}
 }
+
 .modal-smart-performace-subcribe {
 	@media #{$white-on-black} {
 		box-shadow: none;
 		@include white-border;
 	}
+
 	@media #{$black-on-white} {
 		box-shadow: none;
 		@include black-border;
 	}
 }
+
 .pricing-table-container {
 	padding: 2rem 4rem;
+
 	.back {
 		display: inline-block;
 		font-size: 1.4rem;
@@ -32,71 +39,91 @@ textarea:focus {
 		text-decoration: none;
 		font-weight: $weight_bold;
 		text-transform: uppercase;
-		span{
+
+		span {
 			padding-bottom: 0.2rem;
-			border-bottom:0.2rem solid $main;
+			border-bottom: 0.2rem solid $main;
 		}
+
 		&:hover {
 			color: $main_gstart;
+
 			span {
 				border-bottom: none;
 			}
 		}
-    }
-    .page-heading {
-        font-size: 4rem;
-        font-weight: 300;
-        color: $main_shade;
-    }
+	}
+
+	.page-heading {
+		font-size: 4rem;
+		font-weight: 300;
+		color: $main_shade;
+	}
+
 	p {
 		font-size: 1.6rem;
 		color: $main_shade;
 	}
-	.pricing-tables{
+
+	.pricing-tables {
 		list-style: none;
 		padding-left: 0;
 		position: relative;
+
 		@media #{$medium-screen} {
 			justify-content: space-around !important;
 		}
+
 		@media #{$small-screen} {
 			justify-content: space-around !important;
 		}
-		input[type=radio]{
+
+		input[type=radio] {
 			position: absolute;
 			opacity: 0;
-			&:checked + .pricing-table-card {
+
+			&:checked+.pricing-table-card {
 				background: $main;
 				transform: scale(1.1);
 				box-shadow: 0 1rem 1.5rem $screen_dark_30;
+
 				.popular-text {
 					color: $light;
 				}
+
 				.duration {
 					color: $light;
-					&::after{
+
+					&::after {
 						border-bottom-color: $light;
 					}
 				}
+
 				.price {
 					color: $light;
 					font-size: 4rem;
-					small{
+
+					small {
 						color: $light;
 					}
 				}
-				.value, .billing-duration {
+
+				.value,
+				.billing-duration {
 					color: $light;
 				}
+
 				.btn-rounded {
 					color: $main;
 					background: $light;
 				}
 			}
 		}
+
 		li {
 			width: calc(20% - 1.2rem);
 		}
+
 		.pricing-table-card {
 			background: $shade_lighter;
 			border-radius: 0.6rem;
@@ -108,15 +135,18 @@ textarea:focus {
 			cursor: pointer;
 			box-shadow: 0 0.5rem 1rem $screen_dark_05;
 			transition: transform .2s ease-in-out;
+
 			@media #{$medium-screen} {
 				width: calc(33.33% - 2rem);
 				margin: 1rem 0;
 			}
+
 			@media #{$small-screen} {
 				width: calc(50% - 2rem);
 				margin: 1rem 0;
 			}
-			.popular-text{
+
+			.popular-text {
 				display: block;
 				text-align: center;
 				font-size: 1rem;
@@ -125,13 +155,15 @@ textarea:focus {
 				position: absolute;
 				top: 0.8rem;
 			}
-			.duration{
+
+			.duration {
 				font-weight: $weight_bold;
 				font-size: 2rem;
 				display: block;
 				text-align: center;
 				color: $dark;
 				position: relative;
+
 				&::after {
 					position: absolute;
 					content: '';
@@ -142,13 +174,15 @@ textarea:focus {
 					left: calc(50% - 2rem);
 				}
 			}
+
 			.price {
 				font-size: 3rem;
 				font-weight: $weight_black;
 				color: $main;
 				display: block;
 				text-align: center;
-				small{
+
+				small {
 					width: 2rem;
 					font-size: 30%;
 					line-height: 1.3rem;
@@ -157,12 +191,14 @@ textarea:focus {
 					display: inline-block;
 				}
 			}
+
 			.value {
 				text-transform: uppercase;
 				font-weight: $weight_regular;
 				color: $shade_darker;
 				margin-bottom: 3rem;
 			}
+
 			.billing-duration {
 				color: $main_dark;
 				font-size: 1.4rem;
@@ -170,6 +206,7 @@ textarea:focus {
 				text-align: center;
 				padding-bottom: 2rem;
 			}
+
 			.btn-rounded {
 				height: 3rem;
 				padding: 0rem 3.5rem;
@@ -196,8 +233,10 @@ textarea:focus {
 		@include outline-blue;
 	}
 }
+
 .container-fluid {
 	padding: 2.4rem;
+
 	.modal-header {
 		.title {
 			font-size: $title;
@@ -206,6 +245,7 @@ textarea:focus {
 			padding-right: 2.4rem;
 		}
 	}
+
 	h4 {
 		line-height: 1.5;
 	}

@@ -41,8 +41,6 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	intervalTime: string;
 	spFrstRunStatus: boolean;
 	public isLoading = false;
-	public spPaymentPageenum: any;
-	public paymenturl: string;
 	public isFirstLoad = false;
 	public isRefreshEnabled = false;
 	tempHide = false;
@@ -57,7 +55,6 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		private smartPerformanceService: SmartPerformanceService,
 		private supportService: SupportService,
 		private logger: LoggerService) {
-		this.spPaymentPageenum = PaymentPage;
 
 	}
 	public localSubscriptionDetails = {
@@ -87,7 +84,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		let subScriptionDates: any = { startDate: '', endDate: '', status: '' };
 		if (this.isSubscribed) {
 			subScriptionDates = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails);
-			if (subScriptionDates && subScriptionDates.startDate && subScriptionDates.endDate){
+			if (subScriptionDates && subScriptionDates.startDate && subScriptionDates.endDate) {
 				this.subscriptionDetails.startDate = this.formatLocaleDate.transform(subScriptionDates.startDate);
 				this.subscriptionDetails.endDate = this.formatLocaleDate.transform(subScriptionDates.endDate);
 				this.subscriptionDetails.status = subScriptionDates.status;
@@ -270,7 +267,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		};
 		const oneDay = 24 * 60 * 60 * 1000;
 		expiryRemainDays = (expiredDate - currentDate) / oneDay;
-		const monthDeff = expiredDate.getMonth()  - currentDate.getMonth();
+		const monthDeff = expiredDate.getMonth() - currentDate.getMonth();
 		this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.subscriptionDetails);
 		if (expiryRemainDays < 0) {
 			this.isExpired = true;
@@ -282,8 +279,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 			this.subScribeEvent.emit(this.isSubscribed);
 			this.expiredStatusEvent.emit(this.isExpired);
 		}
-		else
-		{
+		else {
 			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.activeStatus';
 			this.strStatus = 'ACTIVE';
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
@@ -292,7 +288,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		}
 		if (!this.isExpired) {
 			if (expiryRemainDays > 1 && expiryRemainDays <= 31) {
-				this.expiredDaysCount =  Math.ceil(expiryRemainDays) + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.days');
+				this.expiredDaysCount = Math.ceil(expiryRemainDays) + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.days');
 
 			} else {
 				if (expiryRemainDays >= 0 && expiryRemainDays <= 1) {
@@ -328,7 +324,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		}
 
 	}
-	resetSubscriptionDetails(){
+	resetSubscriptionDetails() {
 		this.subscriptionDetails.startDate = '---';
 		this.subscriptionDetails.endDate = '---';
 		this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.inactiveStatus';

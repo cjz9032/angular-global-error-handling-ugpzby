@@ -17,7 +17,7 @@ import { ModalLenovoIdComponent } from '../components/modal/modal-lenovo-id/moda
 import { Ng5SliderModule } from 'ng5-slider';
 import { PageUserComponent } from 'src/app/components/pages/page-user/page-user.component';
 import { RouterModule } from '@angular/router';
-import { SettingsService } from '../services/settings.service';
+import { SettingsService } from '../services/settings/settings.service';
 import { TranslationModule } from './translation.module';
 import { UiButtonModule } from '../components/ui/ui-button/ui-button.module';
 import { MetricsModule } from '../services/metric/metrics.module';

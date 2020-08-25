@@ -6,7 +6,7 @@ describe('NewFeatureTipService', () => {
 	beforeEach(() => TestBed.configureTestingModule({}));
 
 	it('should be created', () => {
-		const service: NewFeatureTipService = TestBed.get(NewFeatureTipService);
+		const service: NewFeatureTipService = TestBed.inject(NewFeatureTipService);
 		expect(service).toBeTruthy();
 	});
 });

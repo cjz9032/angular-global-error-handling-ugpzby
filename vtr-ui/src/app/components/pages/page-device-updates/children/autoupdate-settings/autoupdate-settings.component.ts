@@ -3,9 +3,9 @@ import { BaseComponent } from '../../../../base/base.component';
 import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
-  selector: 'vtr-autoupdate-settings',
-  templateUrl: './autoupdate-settings.component.html',
-  styleUrls: ['./autoupdate-settings.component.scss']
+	selector: 'vtr-autoupdate-settings',
+	templateUrl: './autoupdate-settings.component.html',
+	styleUrls: ['./autoupdate-settings.component.scss']
 })
 export class AutoupdateSettingsComponent extends BaseComponent implements OnInit {
 

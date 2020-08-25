@@ -12,7 +12,7 @@ export class FeedbackService {
 	) { }
 
 	openFeedbackModal() {
-		if (this.modalService.hasOpenModals()) return;
+		if (this.modalService.hasOpenModals()) { return; }
 		this.modalService.open(FeedbackFormComponent, {
 			backdrop: 'static',
 			size: 'lg',

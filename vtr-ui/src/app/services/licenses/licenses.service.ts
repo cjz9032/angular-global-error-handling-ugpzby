@@ -14,7 +14,7 @@ export class LicensesService {
 	) { }
 
 	openLicensesAgreement(isCalledbyAbout?: boolean) {
-		if (!isCalledbyAbout && this.modalService.hasOpenModals()) return;
+		if (!isCalledbyAbout && this.modalService.hasOpenModals()) { return; }
 		this.localInfoService.getLocalInfo().then(localInfo => {
 			let fileName = this.checkLangName(localInfo.Lang);
 			if (localInfo.GEO === 'cn' && localInfo.Lang === 'zh-hans') {
@@ -40,7 +40,7 @@ export class LicensesService {
 	}
 
 	openOpenSource(isCalledbyAbout?: boolean) {
-		if (!isCalledbyAbout && this.modalService.hasOpenModals()) return;
+		if (!isCalledbyAbout && this.modalService.hasOpenModals()) { return; }
 		const openSourceUrl = `assets/licenses/OpenSource/OpenSourceLicenses.txt`;
 		const licenseModalMetrics = {
 			pageName: 'Page.Support.Article',

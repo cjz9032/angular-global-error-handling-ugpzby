@@ -25,12 +25,12 @@ const res = {
 	Secure: 10,
 	recentscantime: '2020-01-03 22:32:00',
 	lastscanresults: [
-		{scanruntime: '2020-01-03 22:32:00', type: 'MS', fixcount: 7, status: 'C', Tune: 4, Boost: 1, Secure: 2},
-		{scanruntime: '2020-01-03 18:32:00', type: 'SS', fixcount: 11, status: 'C', Tune: 4, Boost: 2, Secure: 5},
-		{scanruntime: '2020-01-03 16:32:00', type: 'MS', fixcount: 7, status: 'C', Tune: 4, Boost: 1, Secure: 2},
-		{scanruntime: '2020-01-03 14:32:00', type: 'SS', fixcount: 10, status: 'C', Tune: 8, Boost: 1, Secure: 1}
-  ]
-  };
+		{ scanruntime: '2020-01-03 22:32:00', type: 'MS', fixcount: 7, status: 'C', Tune: 4, Boost: 1, Secure: 2 },
+		{ scanruntime: '2020-01-03 18:32:00', type: 'SS', fixcount: 11, status: 'C', Tune: 4, Boost: 2, Secure: 5 },
+		{ scanruntime: '2020-01-03 16:32:00', type: 'MS', fixcount: 7, status: 'C', Tune: 4, Boost: 1, Secure: 2 },
+		{ scanruntime: '2020-01-03 14:32:00', type: 'SS', fixcount: 10, status: 'C', Tune: 8, Boost: 1, Secure: 1 }
+	]
+};
 
 describe('SubpageSmartPerformanceScanSummaryComponent', () => {
 	let component: SubpageSmartPerformanceScanSummaryComponent;
@@ -78,7 +78,7 @@ describe('SubpageSmartPerformanceScanSummaryComponent', () => {
 		expect(component).toBeTruthy();
 	});
 
- it('should create SubpageSmartPerformanceScanSummaryComponent - else case in ngInit', () => {
+	it('should create SubpageSmartPerformanceScanSummaryComponent - else case in ngInit', () => {
 		commonService = TestBed.inject(CommonService);
 		spyOn(commonService, 'getLocalStorageValue').and.returnValues(
 			undefined,
@@ -88,7 +88,7 @@ describe('SubpageSmartPerformanceScanSummaryComponent', () => {
 		expect(component).toBeTruthy();
 	});
 
- it('should retrieve last 5 scan history', () => {
+	it('should retrieve last 5 scan history', () => {
 		const startDate = moment().startOf('day').format('YYYY-MM-DD HH:mm:ss');
 		const endDate = moment().endOf('day').format('YYYY-MM-DD HH:mm:ss');
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
@@ -97,26 +97,26 @@ describe('SubpageSmartPerformanceScanSummaryComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	});
 
- it('should format memory size', () => {
+	it('should format memory size', () => {
 		const result = component.formatMemorySize(5);
 		expect(result).toEqual(5);
 	});
 
- it('should format memory size - else case', () => {
+	it('should format memory size - else case', () => {
 		component.formatMemorySize(0);
 		expect(component.sizeExtension).toEqual('');
 	});
 
- it('should fetch next scan run time', () => {
+	it('should fetch next scan run time', () => {
 		const scantype = enumSmartPerformance.SCHEDULESCANANDFIX;
-		const result: any = {nextruntime: '2020-06-17T17:45:00' };
+		const result: any = { nextruntime: '2020-06-17T17:45:00' };
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
 		const spy = spyOn(smartPerformanceService, 'getNextScanRunTime').and.returnValue(Promise.resolve(result));
 		component.getNextScanRunTime(scantype);
 		expect(spy).toHaveBeenCalled();
 	});
 
- it('should fetch next scan run time - else case', () => {
+	it('should fetch next scan run time - else case', () => {
 		const scantype = enumSmartPerformance.SCHEDULESCANANDFIX;
 		const result: any = {};
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
@@ -125,26 +125,26 @@ describe('SubpageSmartPerformanceScanSummaryComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	});
 
- it('should call scanSummaryTIme when parameter value is 1', () => {
+	it('should call scanSummaryTIme when parameter value is 1', () => {
 		component.scanSummaryTime(1);
 		expect(component.isFromDate).toBe(true);
 	});
 
- it('should call scanSummary - when no yearObj', () => {
+	it('should call scanSummary - when no yearObj', () => {
 		component.isLoading = false;
 		const spy = spyOn(component, 'getYearObj').and.returnValue(null);
 		component.scanSummaryTime(0);
 		expect(spy).toHaveBeenCalled();
 	});
 
- it('should call scanSummary - else case', () => {
+	it('should call scanSummary - else case', () => {
 		component.isLoading = true;
 		const spy = spyOn(component, 'getYearObj');
 		component.scanSummaryTime(0);
 		expect(spy).not.toHaveBeenCalled();
 	});
 
- it('should call customDateScanSummary', () => {
+	it('should call customDateScanSummary', () => {
 		component.selectedfromDate = {
 			day: 'Monday',
 			month: 5,
@@ -159,7 +159,7 @@ describe('SubpageSmartPerformanceScanSummaryComponent', () => {
 		expect(component.isDropDownOpen).toBe(false);
 	});
 
- it('should call onDateSelected - if case', () => {
+	it('should call onDateSelected - if case', () => {
 		component.selectedfromDate = {
 			day: 'Monday',
 			month: 5,
@@ -172,7 +172,7 @@ describe('SubpageSmartPerformanceScanSummaryComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	});
 
- it('should call onDateSelected - else case', () => {
+	it('should call onDateSelected - else case', () => {
 		component.selectedTodate = {
 			day: 'Monday',
 			month: 5,
@@ -185,40 +185,40 @@ describe('SubpageSmartPerformanceScanSummaryComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	});
 
- it('should expand row - if case', () => {
+	it('should expand row - if case', () => {
 		const val = 1;
 		component.toggleValue = 1;
 		component.expandRow(val);
 		expect(component.toggleValue).toBe(null);
 	});
 
- it('should expand row - else case', () => {
+	it('should expand row - else case', () => {
 		const val = 1;
 		component.toggleValue = 0;
 		component.expandRow(val);
 		expect(component.toggleValue).toBe(val);
 	});
 
- it('should emit nothing', () => {
+	it('should emit nothing', () => {
 		component.isLoading = false;
 		const spy = spyOn(component.backToScan, 'emit');
 		component.ScanNowSummary();
 		expect(spy).toHaveBeenCalled();
 	});
 
- it('should call BackToSummary', () => {
+	it('should call BackToSummary', () => {
 		component.inputIsScanningCompleted = true;
 		component.BackToSummary();
 		expect(component.inputIsScanningCompleted).toBe(false);
 	});
 
- it('should call changeScanSchedule', () => {
+	it('should call changeScanSchedule', () => {
 		component.scanToggleValue = true;
 		component.changeScanSchedule();
 		expect(component.isChangeSchedule).toBe(true);
 	});
 
- it('should call changeNextScanDateValue - if case', () => {
+	it('should call changeNextScanDateValue - if case', () => {
 		const nextScanScheduleEvent = {
 			nextEnable: false,
 		};
@@ -226,7 +226,7 @@ describe('SubpageSmartPerformanceScanSummaryComponent', () => {
 		expect(component.enableNextText).toBe(false);
 	});
 
- it('should call changeNextScanDateValue', () => {
+	it('should call changeNextScanDateValue', () => {
 		const nextScanScheduleEvent = {
 			nextEnable: true,
 			nextScanDate: '06/22',
@@ -239,7 +239,7 @@ describe('SubpageSmartPerformanceScanSummaryComponent', () => {
 		expect(component.enableNextText).toBe(true);
 	});
 
- it('should call annualScanSummary', () => {
+	it('should call annualScanSummary', () => {
 		const annualYear = {
 			displayName: '2019-2020',
 			startDate: '2019-12-01 05:20:09',
@@ -249,7 +249,7 @@ describe('SubpageSmartPerformanceScanSummaryComponent', () => {
 		expect(component.tabIndex).toBe(0);
 	});
 
- it('should call quarterlyScanSummary', () => {
+	it('should call quarterlyScanSummary', () => {
 		const val = {
 			startDate: '2019-12-01 05:20:09',
 			endDate: '2020-05-31 10:10:10'
@@ -258,44 +258,44 @@ describe('SubpageSmartPerformanceScanSummaryComponent', () => {
 		expect(component.isDropDownOpen).toBe(false);
 	});
 
- it('should call openDropDown', () => {
+	it('should call openDropDown', () => {
 		component.isDropDownOpen = false;
 		component.openDropDown();
 		expect(component.isDropDownOpen).toBe(true);
 	});
 
- it('should call openDropDown - if case', () => {
+	it('should call openDropDown - if case', () => {
 		component.isDropDownOpen = true;
 		component.oldDisplayFromDate = '01/10/2020',
-		component.oldDisplayToDate = '03/10/2020';
+			component.oldDisplayToDate = '03/10/2020';
 		component.openDropDown();
 		expect(component.isDropDownOpen).toBe(false);
 	});
 
- it('should open openSubscribeModal', () => {
+	it('should open openSubscribeModal', () => {
 		modalService = TestBed.inject(NgbModal);
 		const spy = spyOn(modalService, 'open');
 		component.openSubscribeModal();
 		expect(spy).toHaveBeenCalled();
 	});
 
- it('should call backToNonSubscriberHome', () => {
+	it('should call backToNonSubscriberHome', () => {
 		const spy = spyOn(component.backToNonSubscriber, 'emit');
 		component.backToNonSubScriberHome();
 		expect(spy).toHaveBeenCalled();
 	});
 
- it('should call selectFromDate', () => {
+	it('should call selectFromDate', () => {
 		component.selectFromDate();
 		expect(component.isFromDate).toBe(true);
 	});
 
- it('should call selectToDate', () => {
+	it('should call selectToDate', () => {
 		component.selectToDate();
 		expect(component.isFromDate).toBe(false);
 	});
 
- it('should display last scan result', () => {
+	it('should display last scan result', () => {
 		const response = {
 			type: 0,
 			percentage: 0,
@@ -319,40 +319,40 @@ describe('SubpageSmartPerformanceScanSummaryComponent', () => {
 		expect(component.isScanning).toBe(false);
 	});
 
- it('should clear date input fields', () => {
+	it('should clear date input fields', () => {
 		component.resetCustomDateScanSummary();
 		expect(component.displayFromDate).toBeNull();
 	});
 
- it('should open schedule dropdown', () => {
+	it('should open schedule dropdown', () => {
 		component.scheduleTab = 1;
 		component.openScanScheduleDropDown(1);
 		expect(component.scheduleTab).toBe('');
 	});
 
- it('should open schedule dropdown -else case', () => {
+	it('should open schedule dropdown -else case', () => {
 		component.scheduleTab = 1;
 		component.openScanScheduleDropDown(3);
 		expect(component.scheduleTab).toBe(3);
 	});
 
- it('should save changed scan schedule', () => {
+	it('should save changed scan schedule', () => {
 		component.saveChangedScanSchedule();
 		expect(component.isChangeSchedule).toBe(false);
 	});
 
- it('should cancel changed scan schedule', () => {
+	it('should cancel changed scan schedule', () => {
 		component.cancelChangedScanSchedule();
 		expect(component.isChangeSchedule).toBe(false);
 	});
 
- it('should toggle enable switch', () => {
-		const event = {switchValue: true};
+	it('should toggle enable switch', () => {
+		const event = { switchValue: true };
 		component.setEnableScanStatus(event);
 		expect(component.scanToggleValue).toBe(true);
 	});
 
- it('should call changeScanScheduleDate', () => {
+	it('should call changeScanScheduleDate', () => {
 		component.changeScanScheduleDate();
 		expect(component.scheduleTab).toBe('');
 	});

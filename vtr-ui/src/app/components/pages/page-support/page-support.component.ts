@@ -91,7 +91,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		{ Lang: 'en', GEO: 'in', url: 'https://lena.lenovo.com/lena?country=India&language=English' },
 		{ Lang: 'en', GEO: 'ph', url: 'https://lena.lenovo.com/lena?country=Philippines&language=English' },
 		{ Lang: 'en', isDefault: true, url: 'https://lena.lenovo.com/lena' },
-	]
+	];
 	listFindUs = {
 		icon: ['fal', 'heart'],
 		title: 'support.needHelp.listFindUs',
@@ -221,7 +221,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		this.supportService.getSerialnumber().then(sn => {
 			this.listContactCustomerService.url = `https://support.lenovo.com/contactus?serialnumber=${sn}`;
 			this.supportDatas.needHelp.push(this.listContactCustomerService);
-			let isListYourVirtualAssistantEnabled = false
+			let isListYourVirtualAssistantEnabled = false;
 			this.localInfoService.getLocalInfo().then(info => {
 				const GEO = info.GEO;
 				const Lang = info.Lang;

@@ -100,11 +100,14 @@ $normalPadding: 2.4rem;
 					background-color: #fff;
 					border: 1px solid $shade_blue;
 				}
-				&:hover, &:active {
+
+				&:hover,
+				&:active {
 					&::before {
 						@media #{$white-on-black} {
 							@include high-contrast-black-border;
 						}
+
 						@media #{$black-on-white} {
 							@include high-contrast-white-border;
 						}
@@ -169,6 +172,7 @@ $normalPadding: 2.4rem;
 
 				.form-check-inline {
 					margin-right: 0;
+
 					.form-check-input {
 						width: 4rem;
 						height: 5rem;
@@ -238,7 +242,7 @@ $normalPadding: 2.4rem;
 		.user-email {
 			height: 6rem;
 
-			&::-ms-clear{
+			&::-ms-clear {
 				display: none;
 			}
 		}
