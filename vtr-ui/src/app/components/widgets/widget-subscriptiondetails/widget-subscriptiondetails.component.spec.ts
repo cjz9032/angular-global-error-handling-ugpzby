@@ -51,8 +51,6 @@ describe('WidgetSubscriptiondetailsComponent', () => {
 	let modalService: NgbModal;
 	let commonService: CommonService;
 	let smartPerformanceService: SmartPerformanceService;
-	let supportService: SupportService;
-	let formatLocale: FormatLocaleDatePipe;
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
@@ -81,8 +79,8 @@ describe('WidgetSubscriptiondetailsComponent', () => {
 
 	it('should create Widget Subscriptiondetails Component', () => {
 		const res = { ...response };
-		commonService = TestBed.get(CommonService);
-		smartPerformanceService = TestBed.get(SmartPerformanceService);
+		commonService = TestBed.inject(CommonService);
+		smartPerformanceService = TestBed.inject(SmartPerformanceService);
 		spyOn(commonService, 'getLocalStorageValue').and.returnValues(true, true);
 		spyOn(smartPerformanceService, 'getPaymentDetails').and.returnValue(Promise.resolve(res));
 		fixture.detectChanges();
@@ -90,7 +88,7 @@ describe('WidgetSubscriptiondetailsComponent', () => {
 	});
 
 	it('should call initSubscripionDetails when spFirstRunStatus is false', () => {
-		commonService = TestBed.get(CommonService);
+		commonService = TestBed.inject(CommonService);
 		spyOn(commonService, 'getLocalStorageValue').and.returnValues(true, false, { startDate: '2019/06/20', endDate: '2020/06/19' }, {
 			initiatedTime: '08:30',
 			isOpened: true,
@@ -103,8 +101,8 @@ describe('WidgetSubscriptiondetailsComponent', () => {
 
 	it('should create Widget Subscriptiondetails Component - settimeout', fakeAsync(() => {
 		const res = {};
-		commonService = TestBed.get(CommonService);
-		smartPerformanceService = TestBed.get(SmartPerformanceService);
+		commonService = TestBed.inject(CommonService);
+		smartPerformanceService = TestBed.inject(SmartPerformanceService);
 		const spy = spyOn(smartPerformanceService, 'getPaymentDetails').and.returnValue(Promise.resolve(res));
 		fixture.detectChanges();
 		tick(30000);
@@ -112,7 +110,7 @@ describe('WidgetSubscriptiondetailsComponent', () => {
 	}));
 
 	it('should open subcription modal', () => {
-		modalService = TestBed.get(NgbModal);
+		modalService = TestBed.inject(NgbModal);
 		const modalCancel: any = {
 			componentInstance: {
 				cancelPaymentRequest: new Observable<any>(),
@@ -125,7 +123,7 @@ describe('WidgetSubscriptiondetailsComponent', () => {
 	});
 
 	it('should enable full feature', () => {
-		commonService = TestBed.get(CommonService);
+		commonService = TestBed.inject(CommonService);
 		component.isSubscribed = false;
 		const spy = spyOn(
 			commonService,
@@ -138,8 +136,8 @@ describe('WidgetSubscriptiondetailsComponent', () => {
 	});
 
 	it('should get subscription details', () => {
-		commonService = TestBed.get(CommonService);
-		smartPerformanceService = TestBed.get(SmartPerformanceService);
+		commonService = TestBed.inject(CommonService);
+		smartPerformanceService = TestBed.inject(SmartPerformanceService);
 		const spy = spyOn(commonService, 'getLocalStorageValue').and.returnValue({
 			initiatedTime: '08:30',
 			isOpened: true,
@@ -159,8 +157,8 @@ describe('WidgetSubscriptiondetailsComponent', () => {
 	}));
 
 	it('should call subscriptionDataProcess', () => {
-		commonService = TestBed.get(CommonService);
-		smartPerformanceService = TestBed.get(SmartPerformanceService);
+		commonService = TestBed.inject(CommonService);
+		smartPerformanceService = TestBed.inject(SmartPerformanceService);
 		component.spProcessStatus = true;
 		const subscriptionData = [...response.data];
 		component.subscriptionDataProcess(subscriptionData);

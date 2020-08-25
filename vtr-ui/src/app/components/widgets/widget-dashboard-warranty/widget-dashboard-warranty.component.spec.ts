@@ -8,7 +8,7 @@ xdescribe('WidgetDashboardWarrantyComponent', () => {
 	beforeEach(
 		async(() => {
 			TestBed.configureTestingModule({
-				declarations: [ WidgetDashboardWarrantyComponent ]
+				declarations: [WidgetDashboardWarrantyComponent]
 			}).compileComponents();
 		})
 	);

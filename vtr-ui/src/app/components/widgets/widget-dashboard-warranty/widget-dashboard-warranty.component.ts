@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
 	selector: 'vtr-widget-dashboard-warranty',
 	templateUrl: './widget-dashboard-warranty.component.html',
-	styleUrls: [ './widget-dashboard-warranty.component.scss' ]
+	styleUrls: ['./widget-dashboard-warranty.component.scss']
 })
 export class WidgetDashboardWarrantyComponent implements OnInit {
 	@Input() item: any;
@@ -24,12 +24,15 @@ export class WidgetDashboardWarrantyComponent implements OnInit {
 		]
 	};
 
-	constructor(private commonService: CommonService, private activatedRoute: ActivatedRoute) {}
+	constructor(
+		private commonService: CommonService,
+		private activatedRoute: ActivatedRoute
+	) { }
 
 	ngOnInit() {
 		try {
 			this.pageParent = this.activatedRoute.snapshot.data.pageName;
-		} catch (ex) {}
+		} catch (ex) { }
 	}
 
 	getRoundYear(dayDiff: number) {

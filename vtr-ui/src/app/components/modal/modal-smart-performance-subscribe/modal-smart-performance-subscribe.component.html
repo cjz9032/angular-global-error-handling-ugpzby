@@ -1,20 +1,20 @@
 <div class="modal-smart-performace-subcribe">
 	<div class="container-fluid">
-			<div class="modal-header w-100 m-0 p-0 pb-3 mb-4">
-				<h2 class="title" id="smart-performance-subscribe-confirm-title">{{'smartPerformance.scanningPage.confirmationTitle' |translate}}</h2>
-			</div>
-			<div class="w-100 mb-3">
-				<h4 id="smart-performance-subscribe-confirm-note">{{'smartPerformance.scanningPage.confirmationNote' |translate }}</h4>
-			</div>
-			<div class="d-flex align-items-center btn-box">
-				<vtr-ui-button (onClick)="confirmProcess()"
-					linkId="smart-performance-subscribe-dialog-confirm-button"
-					metricsEvent="FeatureClick"
-					metricsItem="SendFeedbackButton"
-					metricsParent="Dialog.SmartPerformance.Subscribe"
-					[label]="'smartPerformance.scanningPage.confirmationBtn' | translate"
-					></vtr-ui-button>
-			</div>
+		<div class="modal-header w-100 m-0 p-0 pb-3 mb-4">
+			<h2 class="title"
+				id="smart-performance-subscribe-confirm-title">{{'smartPerformance.scanningPage.confirmationTitle' |translate}}</h2>
+		</div>
+		<div class="w-100 mb-3">
+			<h4 id="smart-performance-subscribe-confirm-note">{{'smartPerformance.scanningPage.confirmationNote' |translate }}</h4>
+		</div>
+		<div class="d-flex align-items-center btn-box">
+			<vtr-ui-button (onClick)="confirmProcess()"
+				linkId="smart-performance-subscribe-dialog-confirm-button"
+				metricsEvent="FeatureClick"
+				metricsItem="SendFeedbackButton"
+				metricsParent="Dialog.SmartPerformance.Subscribe"
+				[label]="'smartPerformance.scanningPage.confirmationBtn' | translate"></vtr-ui-button>
+		</div>
 	</div>
 	<div class="btn-modal-close">
 		<vtr-ui-close-button linkId="smart-performance-subscribe-dialog-close-button"

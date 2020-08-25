@@ -215,7 +215,7 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 		}
 	}
 
-	installationCancell() {
+	installationCancel() {
 		if (this.modernPreloadService.CurrentInstallingId !== '') {
 			const setApp = this.appList.find(a => a.appID === this.modernPreloadService.CurrentInstallingId);
 			if (setApp.showStatus !== ModernPreloadStatusEnum.INSTALLED) {
@@ -262,7 +262,7 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 
 	cancel() {
 		this.modernPreloadService.cancelInstall();
-		this.installationCancell();
+		this.installationCancel();
 	}
 
 	checkNetWork() {

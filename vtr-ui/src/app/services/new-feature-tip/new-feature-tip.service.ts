@@ -10,7 +10,7 @@ export class NewFeatureTipService {
 
 	constructor(
 		private componentFactoryResolver: ComponentFactoryResolver
-	) {}
+	) { }
 
 	create() {
 		const factory: ComponentFactory<ModalNewFeatureTipComponent> = this.componentFactoryResolver.resolveComponentFactory(ModalNewFeatureTipComponent);

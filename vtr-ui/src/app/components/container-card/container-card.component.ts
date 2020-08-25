@@ -22,7 +22,7 @@ export class ContainerCardComponent implements OnInit, OnDestroy {
 	@Input() sideFlag = '';
 	@Input() containerCardId = '';
 	@Input() dataSource = '';
-	@Input() dynamicmetricsItem = '';
+	@Input() dynamicMetricsItem = '';
 	@Input() isOfflineArm = false;
 
 	@ViewChild('containerCardLoading', { static: false }) containerCardLoading: ElementRef;
@@ -42,41 +42,41 @@ export class ContainerCardComponent implements OnInit, OnDestroy {
 	closeTipTimer = null;
 
 	private displayDetectionTaskId;
-	private _item: FeatureContent;
+	private innerItem: FeatureContent;
 
 	@Input() set item(itemValue: any) {
 		if (itemValue && itemValue.FeatureImage) {
 			this.isLoading = false;
-			this.overlayThemeDefaultIsDark = !itemValue.OverlayTheme || itemValue.OverlayTheme !== CardOverlayTheme.Light
-			this.overlayThemeDefaultIsLight = !itemValue.OverlayTheme || itemValue.OverlayTheme !== CardOverlayTheme.Dark
+			this.overlayThemeDefaultIsDark = !itemValue.OverlayTheme || itemValue.OverlayTheme !== CardOverlayTheme.Light;
+			this.overlayThemeDefaultIsLight = !itemValue.OverlayTheme || itemValue.OverlayTheme !== CardOverlayTheme.Dark;
 			const preItem = this.item;
-			this._item = itemValue;
+			this.innerItem = itemValue;
 
 			if (preItem && preItem.Id === itemValue.Id) {
 				return;
 			}
 
 			if (!itemValue.DataSource || itemValue.DataSource === ContentSource.Local) {
-				 return;
+				return;
 			}
 
 			// handle content display metrics event
 			this.metricsService.contentDisplayDetection.removeTask(this.displayDetectionTaskId);
 			const container = () => this.containerCardLoading
-					|| this.containerCardCorner
-					|| this.containerCardWideArticle
-					|| this.containerCardArticle
-					|| this.containerCardCornerArticle
-					|| this.containerCardSidebarPartnerCorner;
+				|| this.containerCardCorner
+				|| this.containerCardWideArticle
+				|| this.containerCardArticle
+				|| this.containerCardCornerArticle
+				|| this.containerCardSidebarPartnerCorner;
 			const position = () => this.sideFlag + this.order;
 			this.displayDetectionTaskId = this.metricsService.contentDisplayDetection.addTask(itemValue, container, position);
 		} else {
-			this._item = new FeatureContent();
+			this.innerItem = new FeatureContent();
 		}
 	}
 
 	get item() {
-		return this._item;
+		return this.innerItem;
 	}
 
 	constructor(
@@ -105,8 +105,8 @@ export class ContainerCardComponent implements OnInit, OnDestroy {
 	handleLoading() {
 		if (this.item && this.item.FeatureImage) {
 			this.isLoading = false;
-			this.overlayThemeDefaultIsDark = !this.item.OverlayTheme || this.item.OverlayTheme !== CardOverlayTheme.Light
-			this.overlayThemeDefaultIsLight = !this.item.OverlayTheme || this.item.OverlayTheme !== CardOverlayTheme.Dark
+			this.overlayThemeDefaultIsDark = !this.item.OverlayTheme || this.item.OverlayTheme !== CardOverlayTheme.Light;
+			this.overlayThemeDefaultIsLight = !this.item.OverlayTheme || this.item.OverlayTheme !== CardOverlayTheme.Dark;
 		} else {
 			const image = new Image();
 			image.onload = () => {

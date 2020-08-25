@@ -89,7 +89,7 @@ export class WarrantyService {
 	}
 
 	setWarrantyUrl(sn: string) {
-			this.warrantyURl =  `https://pcsupport.lenovo.com/warrantylookup?sn=${sn}&upgrade&cid=ww:apps:pikjhe&utm_source=Companion&utm_medium=Native&utm_campaign=Warranty`;
+		this.warrantyURl = `https://pcsupport.lenovo.com/warrantylookup?sn=${sn}&upgrade&cid=ww:apps:pikjhe&utm_source=Companion&utm_medium=Native&utm_campaign=Warranty`;
 	}
 
 	getWarrantyUrl(): string {

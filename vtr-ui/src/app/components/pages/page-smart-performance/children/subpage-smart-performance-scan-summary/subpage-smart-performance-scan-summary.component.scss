@@ -790,17 +790,17 @@ vtr-subpage-smart-performance-scan-summary {
 								}
 
 								p {
-									font-size: 1.2rem;							
-									margin:0;
-									line-height: 1.4;							
-									
+									font-size: 1.2rem;
+									margin: 0;
+									line-height: 1.4;
+
 									overflow: hidden;
 									text-overflow: ellipsis;
 									white-space: nowrap;
-									
+
 									@media #{$breakpoint_sm} {
 										font-size: 1rem;
-										max-width: 100%;															
+										max-width: 100%;
 									}
 								}
 
@@ -814,7 +814,7 @@ vtr-subpage-smart-performance-scan-summary {
 									// 	margin-right: 0.5rem;
 									// }
 									@media #{$breakpoint_sm} {
-										font-size: $fontsize_xs;									
+										font-size: $fontsize_xs;
 									}
 								}
 							}

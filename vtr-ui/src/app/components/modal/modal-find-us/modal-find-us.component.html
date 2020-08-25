@@ -9,8 +9,12 @@
 				id="find-us-modal-wechat-qrcode"
 				role="img" />
 		</div>
-		<div id="find-us-modal-basic-title" class="text-center title mb-2" role="text">{{ 'support.needHelp.listContactUsOnWechat' | translate}}</div>
-		<div id="find-us-modal-description" class="text-center description" role="text">{{ 'support.needHelp.weChatDescription' | translate}}</div>
+		<div id="find-us-modal-basic-title"
+			class="text-center title mb-2"
+			role="text">{{ 'support.needHelp.listContactUsOnWechat' | translate}}</div>
+		<div id="find-us-modal-description"
+			class="text-center description"
+			role="text">{{ 'support.needHelp.weChatDescription' | translate}}</div>
 	</div>
 	<div class="content py-40"
 		*ngIf="region !== 'cn'">
@@ -28,8 +32,11 @@
 					src="assets/images/logo-facebook.png"
 					alt="{{ 'support.needHelp.listContactUsOnFacebook' | translate}}" />
 			</div>
-			<div id="find-us-modal-basic-title" class="text-center title mb-2" [innerHtml]="'support.needHelp.listContactUsOnFacebook' | translate"></div>
-			<div class="text-center description" [innerHtml]="'support.needHelp.facebookDescription' | translate"></div>
+			<div id="find-us-modal-basic-title"
+				class="text-center title mb-2"
+				[innerHtml]="'support.needHelp.listContactUsOnFacebook' | translate"></div>
+			<div class="text-center description"
+				[innerHtml]="'support.needHelp.facebookDescription' | translate"></div>
 		</a>
 	</div>
 

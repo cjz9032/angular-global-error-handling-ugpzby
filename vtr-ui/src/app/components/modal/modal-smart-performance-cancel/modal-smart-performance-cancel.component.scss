@@ -4,11 +4,13 @@
 	.close {
 		outline: none;
 		box-shadow: none;
+
 		fa-icon {
 			font-size: $fontsize_lg;
 			color: $main;
 		}
 	}
+
 	h1 {
 		font-size: $fontsize_xl;
 		color: $main_darkest;
@@ -21,14 +23,15 @@
 		font-weight: $weight_medium;
 	}
 
-	p{
+	p {
 		font-size: $fontsize_xs;
 		color: $main_shade;
 		font-weight: $weight_light;
 		margin: 2rem 0;
 	}
+
 	.cancel-button {
-		background:$button_red_start;
+		background: $button_red_start;
 		border-radius: 3rem;
 		color: $light;
 		font-size: $fontsize_xs2;
@@ -39,7 +42,8 @@
 		line-height: 5rem;
 		@include ui-button-high-contrast-black;
 		@include ui-button-high-contrast-white;
-		@include high-contrast-adjust;		
+		@include high-contrast-adjust;
+
 		&:focus {
 			box-shadow: none;
 			@include outline-blue;
@@ -47,6 +51,7 @@
 
 
 	}
+
 	.resume-scan {
 		color: $main;
 		font-size: $fontsize_xs2;
@@ -54,18 +59,22 @@
 		font-weight: $weight_bold;
 		border-bottom: 0.1rem solid $main;
 		cursor: pointer;
-		text-transform: uppercase;		
+		text-transform: uppercase;
+
 		&:hover {
 			text-decoration: none;
 		}
+
 		&:focus {
 			@include outline-blue;
 		}
 	}
+
 	.spinner-border {
 		height: 35px;
 		width: 35px;
 	}
+
 	.loader {
 		position: absolute;
 		z-index: 999;
@@ -75,4 +84,3 @@
 	}
 
 }
-

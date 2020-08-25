@@ -6,13 +6,13 @@ import { DeviceService } from 'src/app/services/device/device.service';
 import { KeyCode } from 'src/app/enums/key-code.enum';
 
 interface IQuestion {
-	likelyValues?: number[]
-	idYes?: string
-	idNo?: string
-	hideInArm?: boolean
-	hideInSMode?: boolean
-	name: string
-	question: string
+	likelyValues?: number[];
+	idYes?: string;
+	idNo?: string;
+	hideInArm?: boolean;
+	hideInSMode?: boolean;
+	name: string;
+	question: string;
 }
 
 @Component({
@@ -32,7 +32,7 @@ export class FeedbackFormComponent implements OnInit {
 	questions: IQuestion[] = [
 		{
 			likelyValues: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-			name: 'remommendVantageToFriend',
+			name: 'recommendVantageToFriend',
 			question: 'dashboard.feedback.form.question6'
 		},
 		{
@@ -46,7 +46,7 @@ export class FeedbackFormComponent implements OnInit {
 		{
 			idYes: 'feedback-cus-support-usage-yes',
 			idNo: 'feedback-cus-support-usage-no',
-			name: 'cusSupportusage',
+			name: 'cusSupportUsage',
 			hideInArm: true,
 			question: 'dashboard.feedback.form.question8'
 		}
@@ -84,13 +84,13 @@ export class FeedbackFormComponent implements OnInit {
 	 }
 	public onFeedBackSubmit(): void {
 		this.isSubmitted = true;
-		if(!this.feedbackForm.value.userEmail){
-			this.prepareDataTosubmit();
-		} else if(this.feedbackForm.value.userEmail && !this.feedbackForm.get('userEmail').invalid){
-			this.prepareDataTosubmit();
+		if (!this.feedbackForm.value.userEmail){
+			this.prepareDataToSubmit();
+		} else if (this.feedbackForm.value.userEmail && !this.feedbackForm.get('userEmail').invalid){
+			this.prepareDataToSubmit();
 		}
 	}
-	prepareDataTosubmit(){
+	prepareDataToSubmit(){
 		const formData = this.feedbackForm.value;
 		const data = {
 			ItemType: 'UserFeedback',
@@ -99,9 +99,9 @@ export class FeedbackFormComponent implements OnInit {
 			Content: formData.userComment,
 			UserEmail: formData.userEmail,
 			QA: {
-				Cus_Support_usage: formData.cusSupportusage,
+				Cus_Support_usage: formData.cusSupportUsage,
 				SystemUpdateAwareness: formData.systemUpdateAwareness,
-				RemommendVantageToFriend: formData.remommendVantageToFriend
+				RemommendVantageToFriend: formData.recommendVantageToFriend
 			}
 		};
 		if (this.metrics) {
@@ -126,9 +126,9 @@ export class FeedbackFormComponent implements OnInit {
 				Validators.required,
 				Validators.minLength(1)
 			]),
-			cusSupportusage: new FormControl(null),
+			cusSupportUsage: new FormControl(null),
 			systemUpdateAwareness: new FormControl(null),
-			remommendVantageToFriend: new FormControl(null)
+			recommendVantageToFriend: new FormControl(null)
 		});
 	}
 

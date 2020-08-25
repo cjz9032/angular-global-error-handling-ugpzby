@@ -12,6 +12,7 @@
 		border: 0.1rem solid $light;
 		background: $dark;
 	}
+
 	@media #{$black-on-white} {
 		border: 0.1rem solid $dark;
 		background: $light;
@@ -36,10 +37,12 @@
 			linear-gradient(to left bottom, #e2e4e5, #e4e4e1);
 		color: $blue-dark;
 		@include high-contrast-background-image;
+
 		.sub-description {
 			b {
 				text-transform: lowercase;
 				display: inline-block;
+
 				&::first-letter {
 					text-transform: uppercase;
 				}
@@ -51,7 +54,7 @@
 		font-size: $fontsize_xl;
 		font-weight: $weight_600;
 		padding-bottom: 1.5rem;
-		text-transform : capitalize;
+		text-transform: capitalize;
 	}
 
 	.sub-title {
@@ -66,6 +69,7 @@
 		font-weight: $weight_light;
 		line-height: 2rem;
 		padding-bottom: 2rem;
+
 		b {
 			font-weight: $weight_bold;
 		}

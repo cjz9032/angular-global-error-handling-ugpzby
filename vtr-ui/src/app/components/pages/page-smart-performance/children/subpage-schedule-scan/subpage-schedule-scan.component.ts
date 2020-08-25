@@ -10,9 +10,9 @@ import moment from 'moment';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 
 @Component({
-  selector: 'vtr-subpage-schedule-scan',
-  templateUrl: './subpage-schedule-scan.component.html',
-  styleUrls: ['./subpage-schedule-scan.component.scss']
+	selector: 'vtr-subpage-schedule-scan',
+	templateUrl: './subpage-schedule-scan.component.html',
+	styleUrls: ['./subpage-schedule-scan.component.scss']
 })
 export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 	constructor(
@@ -389,8 +389,7 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 			// when saving schedule scan is successful, fetching next scan runtime from backend and updating respective fields
 			if (res.state) {
 
-				if (this.IsSmartPerformanceFirstRun)
-				{
+				if (this.IsSmartPerformanceFirstRun) {
 					this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, false);
 					this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, actualScanFrequency[0]);
 				}
@@ -619,15 +618,15 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 	}
 
 	toggleTooltip(tooltip: any) {
-			if (tooltip.isOpen()) {
-				tooltip.close();
-				return;
-			}
-			if (!tooltip.isOpen()) {
-				tooltip.open();
-				return;
-			}
+		if (tooltip.isOpen()) {
+			tooltip.close();
+			return;
 		}
+		if (!tooltip.isOpen()) {
+			tooltip.open();
+			return;
+		}
+	}
 
 	ngOnDestroy() {
 		if (this.spTransLangEvent) {

@@ -50,7 +50,7 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 
 	getCachedHistory() {
 		const cachedData = this.commonService.getLocalStorageValue(LocalStorageKey.SystemUpdateInstallationHistoryList);
-		if (typeof(cachedData) !== 'undefined' && cachedData.length > 0) {
+		if (typeof (cachedData) !== 'undefined' && cachedData.length > 0) {
 			this.installationHistory = cachedData;
 		}
 	}

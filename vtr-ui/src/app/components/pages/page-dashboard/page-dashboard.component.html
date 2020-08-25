@@ -1,5 +1,4 @@
-<vtr-page-layout
-	[title]="dashboardService.welcomeText"
+<vtr-page-layout [title]="dashboardService.welcomeText"
 	[textId]="'dashboard'"
 	[pageCssClass]="'dashboard'"
 	[shiftLeftUp]="true"
@@ -151,7 +150,8 @@
 				</div>
 			</div>
 
-			<div class="row" *ngIf="!androidService.isAndroid && deviceService.isArm">
+			<div class="row"
+				*ngIf="!androidService.isAndroid && deviceService.isArm">
 				<div class="col-sm-12 col-md-12 pb-20 px-0">
 					<vtr-widget-support [title]="'support.documentation.title' | translate"
 						[description]="''"
@@ -163,8 +163,7 @@
 			<div class="row"
 				*ngIf="!deviceService.isArm && showQuickSettings">
 				<div class="col-sm-12 px-0 pt-3">
-					<vtr-widget-quicksettings
-						[vtrAppSearchScroller]="['search-microphone-quick', 'search-camera-quick', 'search-eye-care-quick']">
+					<vtr-widget-quicksettings [vtrAppSearchScroller]="['search-microphone-quick', 'search-camera-quick', 'search-eye-care-quick']">
 					</vtr-widget-quicksettings>
 				</div>
 			</div>

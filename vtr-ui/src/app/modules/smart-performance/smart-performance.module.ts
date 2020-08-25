@@ -31,7 +31,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonUiModule } from '../common/common-ui.module';
 import { TranslationModule } from '../translation.module';
 import { WidgetSubscriptiondetailsComponent } from 'src/app/components/widgets/widget-subscriptiondetails/widget-subscriptiondetails.component';
-import { WidgetScansettingsComponent } from '../../components/widgets/widget-scansettings/widget-scansettings.component';
 import { PageLayoutComponent } from 'src/app/components/page-layout/page-layout.component';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 import { SanitizeModule } from '../sanitize.module';
@@ -52,7 +51,6 @@ import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-i
 		ModalSmartPerformanceSubscribeComponent,
 		WidgetSpeedometerComponent,
 		WidgetSubscriptiondetailsComponent,
-		WidgetScansettingsComponent,
 		SubpageScanResultsAccordionComponent,
 		SubpageScanningComponent,
 		SubpageScheduleScanComponent,
@@ -88,7 +86,7 @@ import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-i
 		ModalSmartPerformanceSubscribeComponent,
 		WidgetSpeedometerComponent,
 		CommonUiModule
-		
+
 	],
 	bootstrap: [
 		SubpageSmartPerformanceDashboardComponent,

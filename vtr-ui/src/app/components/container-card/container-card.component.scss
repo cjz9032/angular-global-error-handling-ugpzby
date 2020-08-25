@@ -109,6 +109,7 @@
 						div {
 							cursor: pointer;
 						}
+
 						font-size: $fontsize_md;
 						font-weight: $weight_light;
 						line-height: 1.4;
@@ -223,6 +224,7 @@
 
 	&.card-subpage-corner {
 		height: 22rem;
+
 		.content {
 			position: relative;
 			z-index: 1;
@@ -402,6 +404,7 @@
 
 	&.card-article {
 		height: 32.5rem !important;
+
 		.row {
 			max-width: 100%;
 		}
@@ -463,12 +466,14 @@
 					cursor: pointer;
 					height: 4.5rem !important;
 
-					@media #{$breakpoint_md}{
+					@media #{$breakpoint_md} {
 						margin-bottom: -1rem;
 					}
+
 					@media #{$black-on-white} {
 						@include hyperlink-blue-white;
 					}
+
 					@media #{$white-on-black} {
 						@include hyperlink-yellow-black;
 					}
@@ -493,6 +498,7 @@
 					@media #{$black-on-white} {
 						@include hyperlink-blue-white;
 					}
+
 					@media #{$white-on-black} {
 						@include hyperlink-yellow-black;
 					}
@@ -520,6 +526,7 @@
 
 	&.card-subpage-partner-corner {
 		height: 22rem;
+
 		.image {
 			height: 100%;
 			width: 100%;
@@ -583,6 +590,7 @@
 				font-size: $fontsize_xs;
 				cursor: pointer;
 				text-transform: uppercase;
+
 				a {
 					color: $light;
 					text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
@@ -684,13 +692,15 @@
 		position: relative;
 		z-index: 0;
 	}
+
 	@media #{$black-on-white} {
-		border: 0.1rem solid  $dark ;
+		border: 0.1rem solid $dark;
 
 		border-radius: $border_radius;
 	}
+
 	@media #{$white-on-black} {
-		border: 0.1rem solid $light ;
+		border: 0.1rem solid $light;
 
 		border-radius: $border_radius;
 	}
@@ -699,6 +709,6 @@
 }
 
 .spinner-border {
-  height: 50px;
-  width: 50px;
+	height: 50px;
+	width: 50px;
 }

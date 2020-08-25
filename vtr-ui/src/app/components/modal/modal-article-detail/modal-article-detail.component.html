@@ -1,4 +1,7 @@
-<div class="article-main-body" tabindex="-1" #articleDetailModal role="document">
+<div class="article-main-body"
+	tabindex="-1"
+	#articleDetailModal
+	role="document">
 	<h1 id="article-dialog-basic-title"
 		hidden>{{articleLinkTitle}}</h1>
 	<div class="modal-body vtr-modal-article-detail"
@@ -15,7 +18,8 @@
 				</div>
 				<div class="empty-content w-100 text-center"
 					*ngIf="contentStatus === AllContentStatus.Empty">
-					<img src="assets/images/support/empty.png" alt="" />
+					<img src="assets/images/support/empty.png"
+						alt="" />
 				</div>
 			</div>
 		</div>

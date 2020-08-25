@@ -44,7 +44,7 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
 
 	onAgree() {
 		if (this.timerRef) {
-			this.stopCountdown()
+			this.stopCountdown();
 		}
 		this.closeModal();
 	}
@@ -60,7 +60,7 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
 
 	public async cancelScan() {
 		if (this.timerRef) {
-			this.stopCountdown()
+			this.stopCountdown();
 		}
 		try {
 			this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, true);

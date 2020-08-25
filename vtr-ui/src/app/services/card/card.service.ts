@@ -83,4 +83,4 @@ export const CardOverlayTheme = {
 	Default: 'default',
 	Light: 'light',
 	Dark: 'dark',
-}
+};

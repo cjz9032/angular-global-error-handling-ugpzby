@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { LoggerService } from './logger/logger.service';
+import { LoggerService } from '../logger/logger.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -40,8 +40,8 @@ export class SettingsService {
 						this.isMessageSettings = true;
 					}
 				}).catch((error) => {
-                    this.isMessageSettings = false;
-                });
+					this.isMessageSettings = false;
+				});
 			} catch (error) {
 				this.loggerService.exception('SettingsService.getPreferenceSettingsValue exception', error);
 			}
