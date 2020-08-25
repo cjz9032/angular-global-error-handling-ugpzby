@@ -15,6 +15,7 @@ import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-loc
 import { HtmlTextPipe } from 'src/app/pipe/html-text/html-text.pipe';
 import { FormatLocaleDateTimePipe } from 'src/app/pipe/format-locale-datetime/format-locale-datetime.pipe';
 import { TranslateDefaultValueIfNotFoundPipe } from 'src/app/pipe/translate-default-value-if-not-found/translate-default-value-if-not-found.pipe'
+import { TokenByTokenTranslatePipe } from 'src/app/pipe/token-by-token-translate/token-by-token-translate.pipe';
 
 @NgModule({
 	declarations: [
@@ -33,6 +34,7 @@ import { TranslateDefaultValueIfNotFoundPipe } from 'src/app/pipe/translate-defa
 		RemoveSpacePipe,
 		FormatLocaleDateTimePipe,
 		TranslateDefaultValueIfNotFoundPipe,
+		TokenByTokenTranslatePipe
 	],
 	exports: [
 		CapitalizeFirstPipe,
@@ -52,6 +54,7 @@ import { TranslateDefaultValueIfNotFoundPipe } from 'src/app/pipe/translate-defa
 		RemoveSpacePipe,
 		FormatLocaleDateTimePipe,
 		TranslateDefaultValueIfNotFoundPipe,
+		TokenByTokenTranslatePipe
 	],
 	imports: [
 		SanitizeModule,
