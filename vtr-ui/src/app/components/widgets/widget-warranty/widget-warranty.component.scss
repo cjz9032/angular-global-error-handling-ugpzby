@@ -23,8 +23,9 @@
 	.title {
 		font-size: $fontsize_xl;
 		font-weight: $weight_600;
+
 		&.title-detail {
-			text-transform : capitalize;
+			text-transform: capitalize;
 		}
 	}
 

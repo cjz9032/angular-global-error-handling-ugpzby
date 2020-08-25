@@ -4,11 +4,13 @@
 	.container-card {
 		box-shadow: $drop_shadow_gaming;
 		background-color: $gaming_darkest;
+
 		@media #{$high-contrast} {
 			background-color: window;
 		}
-		.card-image{
+
+		.card-image {
 			background-color: $gaming_lightest;
 		}
-		}
 	}
+}

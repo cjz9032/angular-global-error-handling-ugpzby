@@ -12,7 +12,7 @@ import { WelcomeTutorial } from './data-models/common/welcome-tutorial.model';
 import { NetworkStatus } from './enums/network-status.enum';
 import { KeyPress } from './data-models/common/key-press.model';
 import { VantageShellService } from './services/vantage-shell/vantage-shell.service';
-import { SettingsService } from './services/settings.service';
+import { SettingsService } from './services/settings/settings.service';
 import { environment } from 'src/environments/environment';
 import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from './services/language/language.service';
@@ -57,7 +57,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	private shellVersion;
 	private newTutorialVersion = '3.1.2';
 	public notificationType = NotificationType.Banner;
-	isOldScheduleScanDeleted: any
+	isOldScheduleScanDeleted: any;
 	@ViewChild('pageContainer', { static: true }) pageContainer: ElementRef;
 
 
@@ -173,7 +173,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	private patchNgbModalOpen() {
 		const original = NgbModal.prototype.open;
 		// tslint:disable-next-line: only-arrow-functions
-		NgbModal.prototype.open = function (): NgbModalRef {
+		NgbModal.prototype.open = function(): NgbModalRef {
 			if (arguments.length > 1 && 'container' in arguments[1] === false) {
 				Object.assign(arguments[1], { container: 'vtr-root div' });
 			}
@@ -212,7 +212,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 				if (gamingTutorial) {
 					tutorial = gamingTutorial;
 				} else if (tutorial && tutorial.isDone && tutorial.tutorialVersion === '') {
-					tutorial.tutorialVersion = this.newTutorialVersion;// 3.1.6 will save tutorial empty version in gaming
+					tutorial.tutorialVersion = this.newTutorialVersion; // 3.1.6 will save tutorial empty version in gaming
 					this.commonService.setLocalStorageValue(LocalStorageKey.GamingTutorial, tutorial);
 					this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, tutorial);
 				}
@@ -494,7 +494,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	}
 
 	ngAfterViewInit() {
-		this.metricService.pageContainer = this.pageContainer
+		this.metricService.pageContainer = this.pageContainer;
 		this.metricService.onAppInitDone();
 	}
 

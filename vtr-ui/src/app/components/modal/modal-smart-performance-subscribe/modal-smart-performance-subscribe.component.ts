@@ -13,17 +13,17 @@ import moment from 'moment';
 @Component({
 	selector: 'vtr-modal-smart-performance-subscribe',
 	templateUrl: './modal-smart-performance-subscribe.component.html',
-	styleUrls: [ './modal-smart-performance-subscribe.component.scss' ]
+	styleUrls: ['./modal-smart-performance-subscribe.component.scss']
 })
 export class ModalSmartPerformanceSubscribeComponent implements OnInit {
-	public spPaymentPageenum: any;
+	public spPaymentPageEnum: any;
 	myDate = new Date();
 	machineType: any;
 	systemSerialNumber: any;
 	systemMT: any;
 	countryCode: any;
 	langCode: any;
-	paymenturl: string;
+	paymentUrl: string;
 	@Output() cancelPaymentRequest: EventEmitter<any> = new EventEmitter();
 	public subscriptionDetails = [
 		{
@@ -41,30 +41,30 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.spPaymentPageenum = PaymentPage;
+		this.spPaymentPageEnum = PaymentPage;
 		this.supportService.getMachineInfo().then(async (machineInfo) => {
 			this.loggerService.info('MachineInfo ====================================================== ', machineInfo);
-			this.countryCode =  machineInfo.country;
+			this.countryCode = machineInfo.country;
 			this.systemSerialNumber = machineInfo.serialnumber; // 'PC0ZEPQ6';
 			this.systemMT = machineInfo.mt;
 			this.langCode = this.getSPSubscriptionSupportedLanguageFromCountry(this.countryCode);
-			this.paymenturl =
+			this.paymentUrl =
 				environment.spPaymentProcessApiRoot +
 				// this.countryCode +
-				// this.spPaymentPageenum.SLASH +
+				// this.spPaymentPageEnum.SLASH +
 				// this.langCode +
-				// this.spPaymentPageenum.SLASH +
-				this.spPaymentPageenum.SERIALQUERYPARAMETER +
+				// this.spPaymentPageEnum.SLASH +
+				this.spPaymentPageEnum.SERIALQUERYPARAMETER +
 				this.systemSerialNumber +
-				this.spPaymentPageenum.SMARTPERFORMANCE +
-				this.spPaymentPageenum.TRUE +
-				this.spPaymentPageenum.SOURCEQUERYPARAMETER +
-				this.spPaymentPageenum.APPLICATIONNAME;
+				this.spPaymentPageEnum.SMARTPERFORMANCE +
+				this.spPaymentPageEnum.TRUE +
+				this.spPaymentPageEnum.SOURCEQUERYPARAMETER +
+				this.spPaymentPageEnum.APPLICATIONNAME;
 
 		});
 	}
 	confirmProcess() {
-		window.open(this.paymenturl);
+		window.open(this.paymentUrl);
 		this.cancelPaymentRequest.emit();
 		this.activeModal.close(true);
 		const currentTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
@@ -75,7 +75,7 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 		};
 		this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, modalStatus);
 	}
-	closeModal(){
+	closeModal() {
 		const modalStatus = {
 			isOpened: false
 		};

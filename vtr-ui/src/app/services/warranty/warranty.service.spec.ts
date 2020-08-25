@@ -18,7 +18,7 @@ xdescribe('WarrantyService', () => {
 	}));
 
 	it('should be created', () => {
-		const service: WarrantyService = TestBed.get(WarrantyService);
+		const service: WarrantyService = TestBed.inject(WarrantyService);
 		expect(service).toBeTruthy();
 	});
 });

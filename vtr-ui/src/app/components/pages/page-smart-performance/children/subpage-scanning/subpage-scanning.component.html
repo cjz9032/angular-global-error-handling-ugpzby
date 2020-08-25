@@ -1,4 +1,7 @@
-<vtr-page-layout [textId]="'myDevice'" [pageCssClass]="'device'" [shiftLeftUp]="true" [shiftRightUp]="true"
+<vtr-page-layout [textId]="'myDevice'"
+	[pageCssClass]="'device'"
+	[shiftLeftUp]="true"
+	[shiftRightUp]="true"
 	[backId]="'myDevice-back-btn'">
 	<left-content>
 		<div class="row vtr-page-content">
@@ -21,24 +24,30 @@
 											<hr class="light-dashline" />
 										</div>
 
-										<div *ngIf="showProgress" class="col row">
+										<div *ngIf="showProgress"
+											class="col row">
 											<div class="col col-12 row progress-div">
 												<div class="col col-6 progress-title pb-4">
-													{{'smartPerformance.scanningPage.scanningSystem' |translate }} <span
-														*ngIf="isAutoScanRunning"
-														id="smart-performance-scanning-system-title" role="title"
+													{{'smartPerformance.scanningPage.scanningSystem' |translate }} <span *ngIf="isAutoScanRunning"
+														id="smart-performance-scanning-system-title"
+														role="title"
 														class="progress-sub-title">({{'smartPerformance.auto' |translate }})</span>
 												</div>
 												<div class="col col-6 progress-percent-text">
-													<div class="row d-flex justify-content-end" *ngIf="!isLoading">
-														<span class="progress-value-text pb-4" id="smart-performance-scanning-page-progress-complete-value" role="text">{{percent}}</span>
+													<div class="row d-flex justify-content-end"
+														*ngIf="!isLoading">
+														<span class="progress-value-text pb-4"
+															id="smart-performance-scanning-page-progress-complete-value"
+															role="text">{{percent}}</span>
 														<span class="progress-complete-text"
-															id="smart-performance-scanning-page-progress-complete-text" role="text">%
+															id="smart-performance-scanning-page-progress-complete-text"
+															role="text">%
 															{{'smartPerformance.scanningPage.complete' |translate }}</span>
 													</div>
 													<div class="row d-flex justify-content-end progress-spinner w-100 text-right"
 														*ngIf="isLoading">
-														<div class="container" [style.height.px]="30">
+														<div class="container"
+															[style.height.px]="30">
 															<div class="loader center-block">
 																<div class="spinner-border text-secondary progress-spinner"
 																	role="status"></div>
@@ -52,11 +61,13 @@
 												[noPadding]="true"></vtr-ui-progress-bar>
 											<div class="col col-12 row scan-cancel-btn">
 												<div class="col col-12 p-5 d-flex justify-content-center">
-													<button type="button" id="smart-performance-scanning-page-cancel-scan"
+													<button type="button"
+														id="smart-performance-scanning-page-cancel-scan"
 														vtrMetrics
 														metricsEvent="ItemClick"
 														metricsParent="Page.Support.SmartPerformance"
-														metricsItem="'btn.cancelscan'" class="btn btn-link cancel-check"
+														metricsItem="'btn.cancelscan'"
+														class="btn btn-link cancel-check"
 														[disabled]="percent === 0 || isCheckingStatus"
 														(click)="openCancelScanModel()"
 														[ngbTooltip]="'smartPerformance.scanningPage.cancelScan.button' | translate"
@@ -69,15 +80,18 @@
 
 
 								<div class="row">
-									<div class="pc-info-card pc-accordion w-100 my-5" #spScanningAccordion>
+									<div class="pc-info-card pc-accordion w-100 my-5"
+										#spScanningAccordion>
 										<div class="col-12">
-											<ngb-accordion [closeOthers]="true" #acc="ngbAccordion">
+											<ngb-accordion [closeOthers]="true"
+												#acc="ngbAccordion">
 												<ngb-panel id="Tune up performance">
 													<ng-template ngbPanelTitle>
 														<div class="d-flex justify-content-between">
 															<div class="heading">
 																<div class="icomoon icomoon-tune-pc"></div>
-																<h2 id="smart-performance-scanning-page-turnPC-title" title="{{'smartPerformance.tunePCPerformance.title' |translate }}">
+																<h2 id="smart-performance-scanning-page-turnPC-title"
+																	title="{{'smartPerformance.tunePCPerformance.title' |translate }}">
 																	{{'smartPerformance.tunePCPerformance.title' |translate }}
 																</h2>
 															</div>
@@ -85,7 +99,8 @@
 																<vtr-widget-speedometer #speedometer
 																	*ngIf="activegroup == spCategoryenum.TUNEUPPERFORMANCE">
 																</vtr-widget-speedometer>
-																<p	id="smart-performance-scanning-page-tunePC-completed" role="text"
+																<p id="smart-performance-scanning-page-tunePC-completed"
+																	role="text"
 																	*ngIf="activegroup !== spCategoryenum.TUNEUPPERFORMANCE">
 																	{{'smartPerformance.scanningPage.completed' |translate }}
 																</p>
@@ -93,58 +108,57 @@
 														</div>
 													</ng-template>
 													<ng-template ngbPanelContent>
-														<div
-															class="mt-5 mb-3 d-flex justify-content-between align-items-center">
-															<div
-																class="icon-box d-flex justify-content-center align-items-center">
+														<div class="mt-5 mb-3 d-flex justify-content-between align-items-center">
+															<div class="icon-box d-flex justify-content-center align-items-center">
 																<div class="icomoon icomoon-e-junk"
 																	[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.HUNDEREADANDONE}">
 																</div>
-																<p id="smart-performance-scanning-page-tunePC-tabSet1-tab1" role="text"
+																<p id="smart-performance-scanning-page-tunePC-tabSet1-tab1"
+																	role="text"
 																	[title]="'smartPerformance.tunePCPerformance.tabSet1.tab1' |translate"
 																	[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.HUNDEREADANDONE}">
 																	{{'smartPerformance.tunePCPerformance.tabSet1.tab1' |translate }}
 																</p>
 															</div>
-															<div
-																class="icon-box d-flex justify-content-center align-items-center">
+															<div class="icon-box d-flex justify-content-center align-items-center">
 																<div class="icomoon icomoon-usibilityIssue"
 																	[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.HUNDEREADANDTWO}">
 																</div>
-																<p id="smart-performance-scanning-page-tunePC-tabSet1-tab2" role="text"
+																<p id="smart-performance-scanning-page-tunePC-tabSet1-tab2"
+																	role="text"
 																	[title]="'smartPerformance.tunePCPerformance.tabSet1.tab2' |translate"
 																	[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.HUNDEREADANDTWO}">
 																	{{'smartPerformance.tunePCPerformance.tabSet1.tab2' |translate }}
 																</p>
 															</div>
-															<div
-																class="icon-box d-flex justify-content-center align-items-center">
+															<div class="icon-box d-flex justify-content-center align-items-center">
 																<div class="icomoon icomoon-windows"
 																	[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.HUNDEREADANDTHREE}">
 																</div>
-																<p id="smart-performance-scanning-page-tunePC-tabSet1-tab3" role="text"
+																<p id="smart-performance-scanning-page-tunePC-tabSet1-tab3"
+																	role="text"
 																	[title]="'smartPerformance.tunePCPerformance.tabSet1.tab3' |translate"
 																	[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.HUNDEREADANDTHREE}">
 																	{{'smartPerformance.tunePCPerformance.tabSet1.tab3' |translate }}
 																</p>
 															</div>
-															<div
-																class="icon-box d-flex justify-content-center align-items-center">
+															<div class="icon-box d-flex justify-content-center align-items-center">
 																<div class="icomoon icomoon-system-error"
 																	[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.HUNDEREADANDFOUR}">
 																</div>
-																<p id="smart-performance-scanning-page-tunePC-tabSet1-tab4" role="text"
+																<p id="smart-performance-scanning-page-tunePC-tabSet1-tab4"
+																	role="text"
 																	[title]="'smartPerformance.tunePCPerformance.tabSet1.tab4' |translate"
 																	[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.HUNDEREADANDFOUR}">
 																	{{'smartPerformance.tunePCPerformance.tabSet1.tab4' |translate }}
 																</p>
 															</div>
-															<div
-																class="icon-box d-flex justify-content-center align-items-center">
+															<div class="icon-box d-flex justify-content-center align-items-center">
 																<div class="icomoon icomoon-registery-errors"
 																	[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.HUNDEREADANDFIVE}">
 																</div>
-																<p id="smart-performance-scanning-page-tunePC-tabSet1-tab5" role="text"
+																<p id="smart-performance-scanning-page-tunePC-tabSet1-tab5"
+																	role="text"
 																	[title]="'smartPerformance.tunePCPerformance.tabSet1.tab5' |translate"
 																	[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.HUNDEREADANDFIVE}">
 																	{{'smartPerformance.tunePCPerformance.tabSet1.tab5' |translate }}
@@ -154,7 +168,7 @@
 													</ng-template>
 												</ngb-panel>
 
-												<ngb-panel  id="Internet performance">
+												<ngb-panel id="Internet performance">
 													<ng-template ngbPanelTitle>
 														<div class="d-flex justify-content-between align-items-center">
 															<div class="heading">
@@ -169,11 +183,13 @@
 																<vtr-widget-speedometer #speedometer
 																	*ngIf="activegroup === spCategoryenum.INTERNETPERFORMANCE">
 																</vtr-widget-speedometer>
-																<p id="smart-performance-scanning-page-boost-waiting" role="text"
+																<p id="smart-performance-scanning-page-boost-waiting"
+																	role="text"
 																	*ngIf="activegroup === spCategoryenum.TUNEUPPERFORMANCE">
 																	{{'smartPerformance.scanningPage.waiting' |translate }}
 																</p>
-																<p id="smart-performance-scanning-page-boost-completed" role="text"
+																<p id="smart-performance-scanning-page-boost-completed"
+																	role="text"
 																	*ngIf="activegroup === spCategoryenum.MALWARESECURITY">
 																	{{'smartPerformance.scanningPage.completed' |translate }}
 																</p>
@@ -181,58 +197,57 @@
 														</div>
 													</ng-template>
 													<ng-template ngbPanelContent>
-														<div
-															class="mt-5 mb-3 d-flex justify-content-between align-items-center">
-															<div
-																class="icon-box d-flex justify-content-center align-items-center">
+														<div class="mt-5 mb-3 d-flex justify-content-between align-items-center">
+															<div class="icon-box d-flex justify-content-center align-items-center">
 																<div class="icomoon icomoon-e-junk"
 																	[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.TWOHUNDEREADANDONE}">
 																</div>
-																<p id="smart-performance-scanning-page-boost-tabSet1-tab1" role="text"
+																<p id="smart-performance-scanning-page-boost-tabSet1-tab1"
+																	role="text"
 																	[title]="'smartPerformance.boostInternetPerformance.tabSet1.tab1' |translate"
 																	[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.TWOHUNDEREADANDONE}">
 																	{{'smartPerformance.boostInternetPerformance.tabSet1.tab1' |translate }}
 																</p>
 															</div>
-															<div
-																class="icon-box d-flex justify-content-center align-items-center">
+															<div class="icon-box d-flex justify-content-center align-items-center">
 																<div class="icomoon icomoon-network-settings"
 																	[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.TWOHUNDEREADANDTWO}">
 																</div>
-																<p id="smart-performance-scanning-page-boost-tabSet1-tab2" role="text"
+																<p id="smart-performance-scanning-page-boost-tabSet1-tab2"
+																	role="text"
 																	[title]="'smartPerformance.boostInternetPerformance.tabSet1.tab2' |translate"
 																	[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.TWOHUNDEREADANDTWO}">
 																	{{'smartPerformance.boostInternetPerformance.tabSet1.tab2' |translate }}
 																</p>
 															</div>
-															<div
-																class="icon-box d-flex justify-content-center align-items-center">
+															<div class="icon-box d-flex justify-content-center align-items-center">
 																<div class="icomoon icomoon-browser-settings"
 																	[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.TWOHUNDEREADANDTHREE}">
 																</div>
-																<p id="smart-performance-scanning-page-boost-tabSet1-tab3" role="text"
+																<p id="smart-performance-scanning-page-boost-tabSet1-tab3"
+																	role="text"
 																	[title]="'smartPerformance.boostInternetPerformance.tabSet1.tab3' |translate"
 																	[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.TWOHUNDEREADANDTHREE}">
 																	{{'smartPerformance.boostInternetPerformance.tabSet1.tab3' |translate }}
 																</p>
 															</div>
-															<div
-																class="icon-box d-flex justify-content-center align-items-center">
+															<div class="icon-box d-flex justify-content-center align-items-center">
 																<div class="icomoon icomoon-browser-security"
 																	[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.TWOHUNDEREADANDFOUR}">
 																</div>
-																<p id="smart-performance-scanning-page-boost-tabSet1-tab4" role="text"
+																<p id="smart-performance-scanning-page-boost-tabSet1-tab4"
+																	role="text"
 																	[title]="'smartPerformance.boostInternetPerformance.tabSet1.tab4' |translate"
 																	[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.TWOHUNDEREADANDFOUR}">
 																	{{'smartPerformance.boostInternetPerformance.tabSet1.tab4' |translate }}
 																</p>
 															</div>
-															<div
-																class="icon-box d-flex justify-content-center align-items-center">
+															<div class="icon-box d-flex justify-content-center align-items-center">
 																<div class="icomoon icomoon-wifi"
 																	[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.TWOHUNDEREADANDFIVE}">
 																</div>
-																<p id="smart-performance-scanning-page-boost-tabSet1-tab5" role="text"
+																<p id="smart-performance-scanning-page-boost-tabSet1-tab5"
+																	role="text"
 																	[title]="'smartPerformance.boostInternetPerformance.tabSet1.tab5' |translate"
 																	[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.TWOHUNDEREADANDFIVE}">
 																	{{'smartPerformance.boostInternetPerformance.tabSet1.tab5' |translate }}
@@ -241,7 +256,7 @@
 														</div>
 													</ng-template>
 												</ngb-panel>
-												<ngb-panel  id="Malware & Security">
+												<ngb-panel id="Malware & Security">
 													<ng-template ngbPanelTitle>
 														<div class="d-flex justify-content-between align-items-center">
 															<div class="heading">
@@ -253,7 +268,8 @@
 																<vtr-widget-speedometer #speedometer
 																	*ngIf="activegroup === spCategoryenum.MALWARESECURITY">
 																</vtr-widget-speedometer>
-																<p id="smart-performance-scanning-page-malware-waiting" role="text"
+																<p id="smart-performance-scanning-page-malware-waiting"
+																	role="text"
 																	*ngIf="activegroup === spCategoryenum.INTERNETPERFORMANCE || activegroup === spCategoryenum.TUNEUPPERFORMANCE">
 																	{{'smartPerformance.scanningPage.waiting' |translate }}
 																</p>
@@ -261,58 +277,57 @@
 														</div>
 													</ng-template>
 													<ng-template ngbPanelContent>
-														<div
-															class="mt-5 mb-3 d-flex justify-content-between align-items-center">
-															<div
-																class="icon-box d-flex justify-content-center align-items-center">
+														<div class="mt-5 mb-3 d-flex justify-content-between align-items-center">
+															<div class="icon-box d-flex justify-content-center align-items-center">
 																<div class="icomoon icomoon-malware-scan"
 																	[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.THREEHUNDEREADANDONE}">
 																</div>
-																<p id="smart-performance-scanning-page-malware-tabSet1-tab1" role="text"
+																<p id="smart-performance-scanning-page-malware-tabSet1-tab1"
+																	role="text"
 																	[title]="'smartPerformance.malwareSecurity.tabSet1.tab1' |translate"
 																	[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.THREEHUNDEREADANDONE}">
 																	{{'smartPerformance.malwareSecurity.tabSet1.tab1' |translate }}
 																</p>
 															</div>
-															<div
-																class="icon-box d-flex justify-content-center align-items-center">
+															<div class="icon-box d-flex justify-content-center align-items-center">
 																<div class="icomoon icomoon-zero-day"
 																	[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.THREEHUNDEREADANDTWO}">
 																</div>
-																<p id="smart-performance-scanning-page-malware-tabSet1-tab2" role="text"
+																<p id="smart-performance-scanning-page-malware-tabSet1-tab2"
+																	role="text"
 																	[title]="'smartPerformance.malwareSecurity.tabSet1.tab2' |translate"
 																	[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.THREEHUNDEREADANDTWO}">
 																	{{'smartPerformance.malwareSecurity.tabSet1.tab2' |translate }}
 																</p>
 															</div>
-															<div
-																class="icon-box d-flex justify-content-center align-items-center">
+															<div class="icon-box d-flex justify-content-center align-items-center">
 																<div class="icomoon icomoon-errant-program"
 																	[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.THREEHUNDEREADANDTHREE}">
 																</div>
-																<p id="smart-performance-scanning-page-malware-tabSet1-tab3" role="text"
+																<p id="smart-performance-scanning-page-malware-tabSet1-tab3"
+																	role="text"
 																	[title]="'smartPerformance.malwareSecurity.tabSet1.tab3' |translate"
 																	[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.THREEHUNDEREADANDTHREE}">
 																	{{'smartPerformance.malwareSecurity.tabSet1.tab3' |translate }}
 																</p>
 															</div>
-															<div
-																class="icon-box d-flex justify-content-center align-items-center">
+															<div class="icon-box d-flex justify-content-center align-items-center">
 																<div class="icomoon icomoon-annoying-adware"
 																	[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.THREEHUNDEREADANDFOUR}">
 																</div>
-																<p id="smart-performance-scanning-page-malware-tabSet1-tab4" role="text"
+																<p id="smart-performance-scanning-page-malware-tabSet1-tab4"
+																	role="text"
 																	[title]="'smartPerformance.malwareSecurity.tabSet1.tab4' |translate"
 																	[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.THREEHUNDEREADANDFOUR}">
 																	{{'smartPerformance.malwareSecurity.tabSet1.tab4' |translate }}
 																</p>
 															</div>
-															<div
-																class="icon-box d-flex justify-content-center align-items-center">
+															<div class="icon-box d-flex justify-content-center align-items-center">
 																<div class="icomoon icomoon-security-settings"
 																	[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.THREEHUNDEREADANDFIVE}">
 																</div>
-																<p id="smart-performance-scanning-page-malware-tabSet1-tab5" role="text"
+																<p id="smart-performance-scanning-page-malware-tabSet1-tab5"
+																	role="text"
 																	[title]="'smartPerformance.malwareSecurity.tabSet1.tab5' |translate"
 																	[ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.THREEHUNDEREADANDFIVE}">
 																	{{'smartPerformance.malwareSecurity.tabSet1.tab5' |translate }}
@@ -344,27 +359,40 @@
 								<div class="row mb-40">
 									<div class="col col-12">
 										<div class="accumulated-junk sidebar-widget">
-											<div class="mini-text" id="smart-performance-scanning-page-detail-card-title" role="title">
+											<div class="mini-text"
+												id="smart-performance-scanning-page-detail-card-title"
+												role="title">
 												{{'smartPerformance.scanningPage.nowScanningDetail.cardTitle' |translate }}
 											</div>
-											<div class="title pb-3" style="font-size: 2.0rem;" id="smart-performance-scanning-page-detail-title-{{subItems.name}}" role="text">
-												<fa-icon [icon]="['fas', 'laptop']" class="mr-2"></fa-icon>
+											<div class="title pb-3"
+												style="font-size: 2.0rem;"
+												id="smart-performance-scanning-page-detail-title-{{subItems.name}}"
+												role="text">
+												<fa-icon [icon]="['fas', 'laptop']"
+													class="mr-2"></fa-icon>
 												{{subItems.name}}
 											</div>
-											<div class="card-info" id="smart-performance-scanning-page-detail-desc-{{subItems.name}}" role="text">
+											<div class="card-info"
+												id="smart-performance-scanning-page-detail-desc-{{subItems.name}}"
+												role="text">
 												<!-- <p>This is a brief description of what Accumulated Junk means to a user and why they should know more about it. What is it, why is it important, how is it affecting my computer performance, how will I benifit from the junk being cleaned up?</p> -->
 												<p>{{subItems.desc}}</p>
 											</div>
 											<div class="d-flex">
 												<div class="labels d-flex flex-column">
-													<span id="smart-performance-scanning-page-current" role="text"
+													<span id="smart-performance-scanning-page-current"
+														role="text"
 														class="badge badge-primary ">{{'smartPerformance.scanningPage.nowScanningDetail.current' |translate }}</span>
-													<span id="smart-performance-scanning-page-upNext" role="text" title="{{'smartPerformance.scanningPage.nowScanningDetail.upNext' |translate }}"
+													<span id="smart-performance-scanning-page-upNext"
+														role="text"
+														title="{{'smartPerformance.scanningPage.nowScanningDetail.upNext' |translate }}"
 														class="badge badge-light text-ellipsis">{{'smartPerformance.scanningPage.nowScanningDetail.upNext' |translate }}</span>
 												</div>
 												<div class="ms-slider">
 													<ul class="junk-list ms-slider__words">
-														<li class="ms-slider__word" id="smart-performance-scanning-page-slider-{{item.key}}" *ngFor="let item of subItems.items"
+														<li class="ms-slider__word"
+															id="smart-performance-scanning-page-slider-{{item.key}}"
+															*ngFor="let item of subItems.items"
 															title="{{item.key}}">{{item.key}}</li>
 													</ul>
 												</div>

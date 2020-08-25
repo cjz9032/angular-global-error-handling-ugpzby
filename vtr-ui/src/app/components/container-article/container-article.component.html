@@ -1,6 +1,5 @@
 <div *ngFor="let item of items, let i = index">
-	<vtr-ui-article-item
-		[item]="item"
+	<vtr-ui-article-item [item]="item"
 		[articleType]="type"
 		[index]="indexPreText + '' + (i*indexTimes+startIndex)"
 		[tabIndex]="indexPreText === 'r' ? 100 : i*indexTimes+startIndex"></vtr-ui-article-item>

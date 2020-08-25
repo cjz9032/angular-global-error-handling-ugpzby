@@ -24,10 +24,11 @@
 		</div>
 		<div class="mask-bg mask-bottom"></div>
 	</div>
-	<div class="tips-content" id="new-feature-tip-content"
+	<div class="tips-content"
+		id="new-feature-tip-content"
 		*ngIf="contentLeft"
 		[style.left.px]="contentLeft">
-		<div class="arrow-pointer" 
+		<div class="arrow-pointer"
 			[style.left.px]="pointerLeft ? pointerLeft : '10rem'"></div>
 		<div class="description mb-4"
 			[innerHTML]="description | translate"></div>

@@ -73,16 +73,16 @@ export class SystemUpdateService {
 		if (this.systemUpdateBridge) {
 			return this.systemUpdateBridge.getUpdateSchedule()
 				.then((response) => {
-				this.autoUpdateStatus = {
-					criticalAutoUpdates: (response.criticalAutoUpdates === 'ON') ? true : false,
-					recommendedAutoUpdates: (response.recommendedAutoUpdates === 'ON') ? true : false
-				};
-				if (!this.autoUpdateStatus.criticalAutoUpdates && this.autoUpdateStatus.recommendedAutoUpdates) {
-					this.autoUpdateStatus.recommendedAutoUpdates = false;
-					this.setUpdateSchedule(false, false);
-				}
-				this.commonService.sendNotification(UpdateProgress.AutoUpdateStatus, this.autoUpdateStatus);
-			});
+					this.autoUpdateStatus = {
+						criticalAutoUpdates: (response.criticalAutoUpdates === 'ON') ? true : false,
+						recommendedAutoUpdates: (response.recommendedAutoUpdates === 'ON') ? true : false
+					};
+					if (!this.autoUpdateStatus.criticalAutoUpdates && this.autoUpdateStatus.recommendedAutoUpdates) {
+						this.autoUpdateStatus.recommendedAutoUpdates = false;
+						this.setUpdateSchedule(false, false);
+					}
+					this.commonService.sendNotification(UpdateProgress.AutoUpdateStatus, this.autoUpdateStatus);
+				});
 		}
 		return undefined;
 	}
@@ -125,9 +125,9 @@ export class SystemUpdateService {
 		if (this.systemUpdateBridge) {
 			this.systemUpdateBridge.getUpdateHistory()
 				.then((response: Array<UpdateHistory>) => {
-				this.installationHistory = response;
-				this.commonService.sendNotification(UpdateProgress.FullHistory, this.installationHistory);
-			});
+					this.installationHistory = response;
+					this.commonService.sendNotification(UpdateProgress.FullHistory, this.installationHistory);
+				});
 		}
 	}
 

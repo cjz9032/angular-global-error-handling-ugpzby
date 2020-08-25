@@ -27,16 +27,16 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 		'new-feature-tip-mask',
 	];
 
-	tipsVersitions = {
+	tipsVersions = {
 		'v3.2': 3.002,
 		'v3.2.5': 3.002005,
-	}
+	};
 
 	allNewTips = {
-		security: { tipId: 'security', desc: 'notification.menu.security', version: this.tipsVersitions['v3.2'] },
-		homeSecurity: { tipId: 'home-security', desc: 'notification.menu.connectedHomeSecurity', version: this.tipsVersitions['v3.2'] },
-		hardwareScan: { tipId: 'hardware-scan', desc: 'notification.menu.hardwareScan', version: this.tipsVersitions['v3.2.5'] },
-	}
+		security: { tipId: 'security', desc: 'notification.menu.security', version: this.tipsVersions['v3.2'] },
+		homeSecurity: { tipId: 'home-security', desc: 'notification.menu.connectedHomeSecurity', version: this.tipsVersions['v3.2'] },
+		hardwareScan: { tipId: 'hardware-scan', desc: 'notification.menu.hardwareScan', version: this.tipsVersions['v3.2.5'] },
+	};
 
 	metrics: any;
 
@@ -68,15 +68,15 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 
 	nextTips(positionName: string) {
 		if (this.tipId === this.allNewTips.security.tipId) {
-			const homeSecurityAction = this.tipItemAction(this.allNewTips.homeSecurity, positionName)
-			if (homeSecurityAction) { return }
+			const homeSecurityAction = this.tipItemAction(this.allNewTips.homeSecurity, positionName);
+			if (homeSecurityAction) { return; }
 
-			const hardwareScanAction = this.tipItemAction(this.allNewTips.hardwareScan, positionName)
-			if (hardwareScanAction) { return }
+			const hardwareScanAction = this.tipItemAction(this.allNewTips.hardwareScan, positionName);
+			if (hardwareScanAction) { return; }
 		}
 		if (this.tipId === this.allNewTips.homeSecurity.tipId) {
-			const hardwareScanAction = this.tipItemAction(this.allNewTips.hardwareScan, positionName)
-			if (hardwareScanAction) { return }
+			const hardwareScanAction = this.tipItemAction(this.allNewTips.hardwareScan, positionName);
+			if (hardwareScanAction) { return; }
 		}
 		const newTipsMetrics = this.calcTipItemMetricsData(this.tipId, positionName);
 		this.sendMetricsAsync(newTipsMetrics);
@@ -142,7 +142,7 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 	}
 
 	isShowMenuTips(menuItem: HTMLElement, version: number, lastVersion: number = 0) {
-		return Boolean(menuItem && version > lastVersion)
+		return Boolean(menuItem && version > lastVersion);
 	}
 
 	showItemTip(item: HTMLElement) {
@@ -223,4 +223,4 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 	}
 }
 
-export class NewTipItem { tipId: string; desc: string; version: number }
+export class NewTipItem { tipId: string; desc: string; version: number; }

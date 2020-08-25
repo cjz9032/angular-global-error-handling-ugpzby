@@ -28,10 +28,12 @@
 			color: #fff;
 			font-weight: $weight_bold;
 			cursor: pointer;
+
 			@media #{$white-on-black} {
 				color: $dark;
 				background: $light;
 			}
+
 			@media #{$black-on-white} {
 				color: $light;
 				background: $dark;
@@ -45,9 +47,11 @@
 
 		&:hover {
 			opacity: 0.7;
+
 			@media #{$white-on-black} {
 				opacity: 1;
 			}
+
 			@media #{$black-on-white} {
 				opacity: 1;
 			}
@@ -57,6 +61,7 @@
 		&::after {
 			display: none;
 		}
+
 		&:focus {
 			outline: 0.1rem solid $light !important;
 			// outline-offset: 0.2rem;
@@ -77,11 +82,14 @@
 		border-radius: 0.9rem;
 		box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
 		width: 28rem;
+
 		@media #{$breakpoint_xl} {
 			width: 29rem;
 		}
+
 		&.in-warranty {
 			background: linear-gradient(to left bottom, #4980fc, #2e62d9);
+
 			@media #{$white-on-black} {
 				background: $dark;
 				box-shadow: none;
@@ -101,6 +109,7 @@
 
 		&.expired {
 			background: linear-gradient(to left top, #f17f14, #ed4e04);
+
 			@media #{$white-on-black} {
 				background: $dark;
 				box-shadow: none;
@@ -119,6 +128,7 @@
 
 			.button {
 				color: #c94000;
+
 				&:focus {
 					box-shadow: 0 0 0 0.4rem rgba(255, 150, 146, 0.5);
 				}
@@ -144,6 +154,7 @@
 			border-right: 0px;
 			border-bottom: 0px;
 			cursor: pointer;
+
 			@media #{$white-on-black} {
 				@include high-contrast-triangle;
 				top: -1rem;
@@ -153,6 +164,7 @@
 				border-radius: 0.2rem;
 
 			}
+
 			@media #{$black-on-white} {
 				@include high-contrast-triangle;
 				top: -1rem;
