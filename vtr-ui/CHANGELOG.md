@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.42](https://bitbucket.tc.lenovo.com///compare/v1.7.41...v1.7.42) (2020-08-25)
+
+
+### Bug Fixes
+
+* **Modern Preload:** VAN-21457 add dir ([f59cf6a](https://bitbucket.tc.lenovo.com///commit/f59cf6a8535dc173cf0c6fbdcba54c6389a6b775))
+* **System Update:** VAN-21474 change foreach to for of ([2e979f1](https://bitbucket.tc.lenovo.com///commit/2e979f1a34066276c4f43a7ff9b6b35433d8869b))
+
 ### [1.7.41](https://bitbucket.tc.lenovo.com///compare/v1.7.40...v1.7.41) (2020-08-24)
 
 ### [1.7.40](https://bitbucket.tc.lenovo.com///compare/v1.7.39...v1.7.40) (2020-08-24)
