@@ -109,7 +109,8 @@
 			}
 
 			&:hover {
-				@include list-items;
+				background: $main_lightest;
+				color: $shade_blue;
 				@media #{$white-on-black} {
 					border: 0.1rem solid transparent;
 				}
