@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { PowerDpmService } from 'src/app/services/power-dpm/power-dpm.service';
-import { Subscription } from 'rxjs';
+import { Subscription, from } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { DropDownInterval } from 'src/app/data-models/common/drop-down-interval.model';
 
@@ -20,6 +20,8 @@ export class PowerSettingsComponent implements OnInit, OnDestroy {
 	selectAction: number;
 	selectedSignInOptionVal: number;
 	allPowerPlansSubscription: Subscription;
+	private readonly powerButtonOptions = ['DoNothing', 'Sleep', 'Hibernate', 'Shutdown', 'PowerOffDisplay'];
+
 	ngOnInit() {
 		this.initPowerActions();
 		this.initSignInOptions();
@@ -39,35 +41,41 @@ export class PowerSettingsComponent implements OnInit, OnDestroy {
 	}
 
 	private initPowerActions() {
+		const doNothing = this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.doNothing');
+		const sleep = this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.sleep');
+		const hibernate = this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.hibernate');
+		const shutDown = this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.shutDown');
+		const turnOfDisplay = this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.turnOffTheDisplay');
+
 		this.powerButtonActions = [
 			{
-				name: 'DoNothing',
+				name: doNothing,
 				value: 0,
-				text: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.doNothing'), // 'Do nothing'
+				text: doNothing, // 'Do nothing'
 				placeholder: '',
 				metricsValue: ''
 			}, {
-				name: 'Sleep',
+				name: sleep,
 				value: 1,
-				text: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.sleep'), // 'Sleep'
+				text: sleep, // 'Sleep'
 				placeholder: '',
 				metricsValue: ''
 			}, {
-				name: 'Hibernate',
+				name: hibernate,
 				value: 2,
-				text: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.hibernate'), // 'Hibernate'
+				text: hibernate, // 'Hibernate'
 				placeholder: '',
 				metricsValue: ''
 			}, {
-				name: 'Shutdown',
+				name: shutDown,
 				value: 3,
-				text: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.shutDown'), // 'Shutdown'
+				text: shutDown, // 'Shutdown'
 				placeholder: '',
 				metricsValue: ''
 			}, {
-				name: 'PowerOffDisplay',
+				name: turnOfDisplay,
 				value: 4,
-				text: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.turnOffTheDisplay'), // 'Turn off the display'
+				text: turnOfDisplay, // 'Turn off the display'
 				placeholder: '',
 				metricsValue: ''
 			},
@@ -75,17 +83,19 @@ export class PowerSettingsComponent implements OnInit, OnDestroy {
 		this.selectAction = 0;
 	}
 	private initSignInOptions() {
+		const never = this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.items.never');
+		const fromSleep = this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.items.fromSleep');
 		this.signInOptions = [
 			{
-				name: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.items.never'), // 'Never',
+				name: never, // 'Never',
 				value: 0,
-				text: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.items.never'), // 'Never'
+				text: never, // 'Never'
 				placeholder: '',
 				metricsValue: ''
 			}, {
-				name: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.items.fromSleep'), // 'When PC wakes up from sleep',
+				name: fromSleep, // 'When PC wakes up from sleep',
 				value: 1,
-				text: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.items.fromSleep'), // 'When PC wakes up from sleep'
+				text: fromSleep, // 'When PC wakes up from sleep'
 				placeholder: '',
 				metricsValue: ''
 			}
@@ -96,7 +106,8 @@ export class PowerSettingsComponent implements OnInit, OnDestroy {
 	public onActionChange($event: DropDownInterval) {
 		if ($event) {
 			this.selectAction = $event.value;
-			this.dpmService.setPowerButton($event.name);
+			const value = this.powerButtonOptions[$event.value];
+			this.dpmService.setPowerButton(value);
 		}
 	}
 	public onSignInOptionChanged($event: DropDownInterval) {
