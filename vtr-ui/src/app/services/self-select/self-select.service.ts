@@ -150,7 +150,6 @@ export class SelfSelectService {
 	private setSegmentAndInterest(config) {
 		this.usageType = config.segment;
 		this.savedSegment = this.usageType;
-		this.commonService.setLocalStorageValue(LocalStorageKey.LocalInfoSegment, SegmentConst.Consumer);
 		if (config && config.customtags) {
 			const checkedTags = config.customtags;
 			this.checkedArray = checkedTags.split(',');
