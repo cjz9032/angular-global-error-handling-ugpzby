@@ -268,9 +268,11 @@ export class ContentCacheService {
   }
 
   private cacheContentDetail(contents: any) {
+    if (!contents || contents.length == 0) {
+      return;
+    }
     return new Promise(async (resolve, reject) => {
       const downLoadImages = [];
-      if (contents && contents.length > 0) {
         const localInfo = await this.getLocalInfo();
         let cacheArticleResults = [];
         contents.forEach(content => {
@@ -289,7 +291,6 @@ export class ContentCacheService {
         }).catch(ex => {
           this.logger.error('Cache content detail error.');
         });
-      }
     });
   }
 
