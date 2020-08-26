@@ -1,4 +1,4 @@
-@import 'app.theme';
+@import "app.theme";
 
 .vtr-app {
 	position: absolute;
@@ -35,6 +35,12 @@
 	}
 }
 
+.is-gaming {
+	.vtr-app {
+		z-index: inherit;
+	}
+}
+
 #main-wrapper {
 	outline: none;
 }
@@ -48,7 +54,7 @@
 
 @media only screen and (max-width: 400px) {
 	.vtr-app {
-		zoom: .7;
+		zoom: 0.7;
 	}
 }
 
