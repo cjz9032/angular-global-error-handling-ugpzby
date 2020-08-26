@@ -17,8 +17,10 @@
 .card {
 	border-radius: $border_radius;
 	box-shadow: $drop_shadow;
+
 	.left-container {
 		padding: 2.4rem;
+
 		.description-container {
 			font-size: $fontsize_sm;
 			display: block;
@@ -90,6 +92,7 @@
 			button {
 				a {
 					color: $light;
+
 					&:hover {
 						text-decoration: none;
 					}
@@ -109,4 +112,3 @@
 .icon {
 	color: $main;
 }
-

@@ -1,23 +1,27 @@
-
-
 <vtr-page-layout [title]="'faq.pageTitle' | translate"
 	[shiftLeftUp]="true"
 	[shiftRightUp]="true"
 	[back]="'common.ui.back' | translate">
 
-
 	<left-content>
 		<div class="container-fluid">
-			<div class="row card mb-5" [dir]="'dir' | translate">
+			<div class="row card mb-5"
+				[dir]="'dir' | translate">
 				<div class="col left-container">
 					<div class="row description-container">
-						<div class="col" [ngSwitch]="qa.id">
-							<vtr-support-detail-article-a *ngSwitchCase="'1'" [langCode]="langCode"></vtr-support-detail-article-a>
-							<vtr-support-detail-article-b *ngSwitchCase="'2'" [langCode]="langCode"></vtr-support-detail-article-b>
+						<div class="col"
+							[ngSwitch]="qa.id">
+							<vtr-support-detail-article-a *ngSwitchCase="'1'"
+								[langCode]="langCode"></vtr-support-detail-article-a>
+							<vtr-support-detail-article-b *ngSwitchCase="'2'"
+								[langCode]="langCode"></vtr-support-detail-article-b>
 							<vtr-support-detail-article-c *ngSwitchCase="'3'"></vtr-support-detail-article-c>
-							<vtr-support-detail-article-d *ngSwitchCase="'4'" [langCode]="langCode"></vtr-support-detail-article-d>
-							<vtr-support-detail-article-e *ngSwitchCase="'5'" [langCode]="langCode"></vtr-support-detail-article-e>
-							<vtr-support-detail-article-a *ngSwitchDefault [langCode]="langCode"></vtr-support-detail-article-a>
+							<vtr-support-detail-article-d *ngSwitchCase="'4'"
+								[langCode]="langCode"></vtr-support-detail-article-d>
+							<vtr-support-detail-article-e *ngSwitchCase="'5'"
+								[langCode]="langCode"></vtr-support-detail-article-e>
+							<vtr-support-detail-article-a *ngSwitchDefault
+								[langCode]="langCode"></vtr-support-detail-article-a>
 						</div>
 					</div>
 					<div class="row inset-content align-items-center justify-content-center py-3 invisible"
@@ -59,8 +63,7 @@
 							</div>
 							<div class="col-auto ">
 								<div class="pr-0">
-									<vtr-ui-button 
-										metricsItem="supportDetail.goToForum"
+									<vtr-ui-button metricsItem="supportDetail.goToForum"
 										[isFullWidth]="true"
 										[btnHeight]="true"
 										(onClick)="onNavigate()"
@@ -78,17 +81,17 @@
 
 	<right-content>
 		<div class="container-fluid">
-		<div class="row mn-6">
-			<div class="col">
-				<vtr-widget-questions componentName="qa"
-					[title]="'common.qAndA.title' | translate"
-					[description]="'common.qAndA.subtitle' | translate"
-					[items]="qaService.qas"
-					blockPosition="r1"
-					[linkId]="'support-detail-qa'"></vtr-widget-questions>
+			<div class="row mn-6">
+				<div class="col">
+					<vtr-widget-questions componentName="qa"
+						[title]="'common.qAndA.title' | translate"
+						[description]="'common.qAndA.subtitle' | translate"
+						[items]="qaService.qas"
+						blockPosition="r1"
+						[linkId]="'support-detail-qa'"></vtr-widget-questions>
+				</div>
 			</div>
 		</div>
-	</div>
 	</right-content>
 
 </vtr-page-layout>

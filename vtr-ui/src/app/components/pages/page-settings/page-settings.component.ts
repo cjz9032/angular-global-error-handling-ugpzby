@@ -397,7 +397,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	}
 
 	saveUserProfile() {
-		this.selfSelectService.saveConfig({ usageType: this.usageType, interests: this.interests});
+		this.selfSelectService.saveConfig({ usageType: this.usageType, interests: this.interests });
 		this.userSelectionChanged = this.userProfileSelectionChanged();
 		const usageData = {
 			ItemType: 'SettingUpdate',

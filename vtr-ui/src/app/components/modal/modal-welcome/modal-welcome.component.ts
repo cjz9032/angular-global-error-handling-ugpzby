@@ -22,8 +22,8 @@ import { InitializerService } from 'src/app/services/initializer/initializer.ser
 @Component({
 	selector: 'vtr-modal-welcome',
 	templateUrl: './modal-welcome.component.html',
-	styleUrls: [ './modal-welcome.component.scss' ],
-	providers: [ TimerService ]
+	styleUrls: ['./modal-welcome.component.scss'],
+	providers: [TimerService]
 })
 export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	public segmentConst = SegmentConst;
@@ -84,11 +84,11 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		},
 	];
 	allGamingFeatures = [
-		{ id: 'feature1', label: 'welcometutorial.gaming.gamingFeature1', autoid:'tutorial_text_list_description_computer' },
-		{ id: 'feature2', label: 'welcometutorial.gaming.gamingFeature2', autoid:'tutorial_text_list_description_performance' },
-		{ id: 'feature3', label: 'welcometutorial.gaming.gamingFeature3', autoid:'tutorial_text_list_description_lighting' },
-		{ id: 'feature4', label: 'welcometutorial.gaming.gamingFeature4', autoid:'tutorial_text_list_description_network_boost' },
-		{ id: 'feature5', label: 'welcometutorial.gaming.gamingFeature5', autoid:'tutorial_text_list_description_auto_close' },
+		{ id: 'feature1', label: 'welcometutorial.gaming.gamingFeature1', autoId: 'tutorial_text_list_description_computer' },
+		{ id: 'feature2', label: 'welcometutorial.gaming.gamingFeature2', autoId: 'tutorial_text_list_description_performance' },
+		{ id: 'feature3', label: 'welcometutorial.gaming.gamingFeature3', autoId: 'tutorial_text_list_description_lighting' },
+		{ id: 'feature4', label: 'welcometutorial.gaming.gamingFeature4', autoId: 'tutorial_text_list_description_network_boost' },
+		{ id: 'feature5', label: 'welcometutorial.gaming.gamingFeature5', autoId: 'tutorial_text_list_description_auto_close' },
 	];
 	allCoreFeatures = [
 		{ id: 'bullets1', label: 'welcometutorial.bullets1' },
@@ -102,7 +102,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	@Input() tutorialVersion: string;
 
-	@ViewChildren('welcomepage2') welcomepage2: any;
+	@ViewChildren('welcomePage2') welcomePage2: any;
 	shouldManuallyFocusPage2 = true;
 
 	constructor(
@@ -148,7 +148,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		const config = await this.selfSelectService.getConfig();
 		this.usageType = config.usageType;
 		this.interests = this.commonService.cloneObj(config.interests);
-		if(this.deviceService.isGaming){
+		if (this.deviceService.isGaming) {
 			this.gamingScenario = GamingScenario.Gaming;
 		}
 		this.getVantageToolBarCapability();
@@ -159,9 +159,9 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		const welcomeUseTime = welcomeEnd - this.welcomeStart;
 		this.logger.info(`Performance: TutorialPage after view init. ${welcomeUseTime}ms`);
 
-		this.welcomepage2.changes.subscribe(() => {
-			if (this.welcomepage2.length > 0 && this.shouldManuallyFocusPage2) {
-				this.welcomepage2.first.nativeElement.focus();
+		this.welcomePage2.changes.subscribe(() => {
+			if (this.welcomePage2.length > 0 && this.shouldManuallyFocusPage2) {
+				this.welcomePage2.first.nativeElement.focus();
 				this.shouldManuallyFocusPage2 = false;
 			}
 		});
@@ -208,7 +208,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 				forced: true
 			});
 
-			if(this.vantageToolbarStatus && this.vantageToolbarStatus.available) {
+			if (this.vantageToolbarStatus && this.vantageToolbarStatus.available) {
 				const toolbarSettingData = {
 					ItemType: 'SettingUpdate',
 					SettingName: 'Enable Lenovo Vantage Toolbar',
@@ -264,7 +264,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			this.logger.info('PageView Event', JSON.stringify(data));
 			this.metrics.sendAsync(data);
 			this.userService.sendSilentlyLoginMetric();
-			tutorialData = new WelcomeTutorial( 2, this.tutorialVersion, true, this.selfSelectService.usageType, this.selfSelectService.checkedArray);
+			tutorialData = new WelcomeTutorial(2, this.tutorialVersion, true, this.selfSelectService.usageType, this.selfSelectService.checkedArray);
 			// this.commonService.setLocalStorageValue(LocalStorageKey.DashboardOOBBEStatus, true);
 			// this.commonService.sendNotification(DeviceMonitorStatus.OOBEStatus, true); // never use this notification
 			this.activeModal.close(tutorialData);

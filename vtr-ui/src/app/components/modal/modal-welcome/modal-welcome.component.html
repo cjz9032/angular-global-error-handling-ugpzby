@@ -9,11 +9,14 @@
 		<div class="card shadow-sm">
 			<div class="card-body p-0"
 				*ngIf="'welcometutorial.title1' | translate">
-				<div class="banner-page-1 row justify-content-center align-items-center" id="tutorial_header_image_first_page" role="text">
-					<div class="col-auto title-alignment" id="tutorial_weclome_text" role="text">
+				<div class="banner-page-1 row justify-content-center align-items-center"
+					id="tutorial_header_image_first_page"
+					role="text">
+					<div class="col-auto title-alignment"
+						id="tutorial_weclome_text"
+						role="text">
 						<div class="row justify-content-center align-items-center">
-							<div class="col-auto title1 text-center"
-								>
+							<div class="col-auto title1 text-center">
 								{{ "welcometutorial.title1" | translate }}
 							</div>
 						</div>
@@ -59,7 +62,7 @@
 						[hidden]="deviceService.isArm || !deviceService.isGaming">
 						<div class="col-auto title2">
 							<div *ngFor="let item of allGamingFeatures"
-								[id]="item.autoid"
+								[id]="item.autoId"
 								role="text"
 								[innerHTML]="item.label | translate">
 							</div>
@@ -87,12 +90,14 @@
 	<!-- start of page 2-->
 	<!-- end of page1-->
 	<div *ngSwitchCase="2"
-		#welcomepage2
+		#welcomePage2
 		tabindex="-1">
 		<div class="card shadow-sm">
 			<div class="card-body p-0"
 				*ngIf="'welcometutorial.subtitle1' | translate">
-				<div class="banner-page-2 row justify-content-center align-items-center" id="tutorial_header_image_second_page" role="text">
+				<div class="banner-page-2 row justify-content-center align-items-center"
+					id="tutorial_header_image_second_page"
+					role="text">
 				</div>
 				<div class="content-page-2"
 					id="welcome-body-scroll">
@@ -146,7 +151,7 @@
 								<img src="assets/images/welcome/{{scenario.image}}"
 									alt="" />
 								<label for="gaming-scenario-choose-{{scenario.id}}"
-								id="{{'welcometutorial_scenario_choose_'+scenario.value | lowercase}}"
+									id="{{'welcometutorial_scenario_choose_'+scenario.value | lowercase}}"
 									aria-hidden="true"
 									class="centered">
 									{{ scenario.textKey | translate }}
@@ -172,8 +177,9 @@
 								(click)="toggle($event, interest)"
 								(keypress)="onKeyPress($event)"
 								[checked]="interest.checked" />
-							<label [for]="interest.label + 'checkbox-welcome'" id="{{'welcometutorial_interests_'+ interest.label | lowercase}}"
-							aria-hidden="true">{{ "welcometutorial.interests." + interest.label | translate }}</label>
+							<label [for]="interest.label + 'checkbox-welcome'"
+								id="{{'welcometutorial_interests_'+ interest.label | lowercase}}"
+								aria-hidden="true">{{ "welcometutorial.interests." + interest.label | translate }}</label>
 
 						</div>
 					</div>
@@ -197,11 +203,13 @@
 								class="custom-control-input"
 								(keypress)="onKeyPress($event)"
 								id="welcome-toolbar-label">
-							<label class="custom-control-label-out" ></label>
-							<label  class="custom-control-label" [id]="!vantageToolbar? 'tutorial_enable_toolbar_checkbox_unchecked':'tutorial_enable_toolbar_checkbox_checked'"
+							<label class="custom-control-label-out"></label>
+							<label class="custom-control-label"
+								[id]="!vantageToolbar? 'tutorial_enable_toolbar_checkbox_unchecked':'tutorial_enable_toolbar_checkbox_checked'"
 								dir="{{'dir' | translate}}"
 								for="welcome-toolbar-label">
-								<span id="tutorial_enable_toolbar_text" role="text">{{ "welcometutorial.toolbartitle" | translate }}</span>
+								<span id="tutorial_enable_toolbar_text"
+									role="text">{{ "welcometutorial.toolbartitle" | translate }}</span>
 							</label>
 						</div>
 					</div>
@@ -213,12 +221,14 @@
 								(keypress)="onKeyPress($event)"
 								[checked]="privacyPolicy"
 								class="custom-control-input"
-								id="welcome-privacy-label" >
+								id="welcome-privacy-label">
 							<label class="custom-control-label-out"></label>
-							<label class="custom-control-label" [id]="!privacyPolicy ? 'tutorial_metrics_collection_checkbox_unchecked':'tutorial_metrics_collection_checkbox_checked'"
+							<label class="custom-control-label"
+								[id]="!privacyPolicy ? 'tutorial_metrics_collection_checkbox_unchecked':'tutorial_metrics_collection_checkbox_checked'"
 								for="welcome-privacy-label"
 								[dir]="'dir' | translate">
-								<span id="tutorial_metrics_collection_text" role="text">{{ "welcometutorial.privacytitle" | translate }} </span>
+								<span id="tutorial_metrics_collection_text"
+									role="text">{{ "welcometutorial.privacytitle" | translate }} </span>
 								<a class="linktext"
 									tabindex="0"
 									id="welcome-privacy-link"
