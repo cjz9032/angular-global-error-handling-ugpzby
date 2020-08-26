@@ -13,24 +13,24 @@
 					role="text">
 					{{'device.deviceSettings.power.dpm.globalPowerSettings.powerButton.label' | translate}}
 				</p>
-				<vtr-ui-dropdown [list]="powerButtonActions"
-						[isMetricsEnabled]=false
-						[value]="selectAction"
-						(selectionChange)="onActionChange($event)"
-						[dropDownName]="'dpm-powersetting-powerbutton-dd-dropdown'"
-						[dropDownId]="'dpm-powersetting-powerbutton-dropdown'">
-					</vtr-ui-dropdown>
+				<vtr-ui-dpm-dropdown
+					[label]="'device.deviceSettings.power.dpm.globalPowerSettings.powerButton.label' | translate"
+					[list]="powerButtonActions"
+					[value]="selectAction"
+					(change)="onActionChange($event)"
+					[dropDownId]="'dpm-powersetting-powerbutton-dropdown'">
+				</vtr-ui-dpm-dropdown>
 				<p id="dpm-powersetting-requiredsignin-label"
 					role="text">
 					{{'device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.label' | translate}}
 				</p>
-				<vtr-ui-dropdown [list]="signInOptions"
-						[isMetricsEnabled]=false
-						[value]="selectedSignInOptionVal"
-						(selectionChange)="onSignInOptionChanged($event)"
-						[dropDownName]="'dpm-powersetting-requiredsignin-dd-dropdown'"
-						[dropDownId]="'dpm-powersetting-requiredsignin-dropdown'">
-					</vtr-ui-dropdown>
+				<vtr-ui-dpm-dropdown
+					[label]="'device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.label' | translate"
+					[list]="signInOptions"
+					[value]="selectedSignInOptionVal"
+					(change)="onSignInOptionChanged($event)"
+					[dropDownId]="'dpm-powersetting-requiredsignin-dropdown'">
+				</vtr-ui-dpm-dropdown>
 			</section>
 			<p class="note"
 				role="text"

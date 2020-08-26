@@ -2,7 +2,7 @@ import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { PowerDpmService } from 'src/app/services/power-dpm/power-dpm.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
-import { DropDownInterval } from 'src/app/data-models/common/drop-down-interval.model';
+import { DPMDropDownInterval } from 'src/app/data-models/common/dpm-drop-down-interval.model';
 
 @Component({
 	selector: 'vtr-power-use',
@@ -16,11 +16,12 @@ export class PowerUseComponent implements OnInit, OnDestroy {
 		public dpmService: PowerDpmService,
 		private translate: TranslateService) { }
 
-	timeItems: DropDownInterval[];
+	timeItems: DPMDropDownInterval[];
 	turnoffDisplay: number;
 	turnoffHDD: number;
 	sleepAfter: number;
 	hibernateAfter: number;
+
 	private currentPowerPlanSubscription: Subscription;
 
 	ngOnInit() {
@@ -49,116 +50,84 @@ export class PowerUseComponent implements OnInit, OnDestroy {
 
 		this.timeItems = [
 			{
-				name: `1 ${minute}`,
+				name: '1',
 				value: 1,
-				text: `1 ${minute}`,
-				placeholder: '',
-				metricsValue: '1 minute'
+				text: `1 ${minute}`
 			},
 			{
-				name: `2 ${minutes}`,
+				name: '2',
 				value: 2,
-				text: `2 ${minutes}`,
-				placeholder: '',
-				metricsValue: '2 minutes'
+				text: `2 ${minutes}`
 			},
 			{
-				name: `3 ${minutes}`,
+				name: '3',
 				value: 3,
-				text: `3 ${minutes}`,
-				placeholder: '',
-				metricsValue: '3 minutes'
+				text: `3 ${minutes}`
 			},
 			{
-				name: `5 ${minutes}`,
+				name: '5',
 				value: 5,
-				text: `5 ${minutes}`,
-				placeholder: '',
-				metricsValue: '5 minutes'
+				text: `5 ${minutes}`
 			},
 			{
-				name: `10 ${minutes}`,
+				name: '10',
 				value: 10,
-				text: `10 ${minutes}`,
-				placeholder: '',
-				metricsValue: '10 minutes'
+				text: `10 ${minutes}`
 			},
 			{
-				name: `15 ${minutes}`,
+				name: '15',
 				value: 15,
-				text: `15 ${minutes}`,
-				placeholder: '',
-				metricsValue: '10 minutes'
+				text: `15 ${minutes}`
 			},
 			{
-				name: `20 ${minutes}`,
+				name: '20',
 				value: 20,
-				text: `20 ${minutes}`,
-				placeholder: '',
-				metricsValue: '20 minutes'
+				text: `20 ${minutes}`
 			},
 			{
-				name: `25 ${minutes}`,
+				name: '25',
 				value: 25,
-				text: `25 ${minutes}`,
-				placeholder: '',
-				metricsValue: '25 minutes'
+				text: `25 ${minutes}`
 			},
 			{
-				name: `30 ${minutes}`,
+				name: '30',
 				value: 30,
-				text: `30 ${minutes}`,
-				placeholder: '',
-				metricsValue: '30 minutes'
+				text: `30 ${minutes}`
 			},
 			{
-				name: `45 ${minutes}`,
+				name: '45',
 				value: 45,
-				text: `45 ${minutes}`,
-				placeholder: '',
-				metricsValue: '45 minutes'
+				text: `45 ${minutes}`
 			},
 			{
-				name: `1 ${hour}`,
+				name: '60',
 				value: 60,
-				text: `1 ${hour}`,
-				placeholder: '',
-				metricsValue: '1 hour'
+				text: `1 ${hour}`
 			},
 			{
-				name: `2 ${hours}`,
+				name: '120',
 				value: 120,
-				text: `2 ${hours}`,
-				placeholder: '',
-				metricsValue: '2 hours'
+				text: `2 ${hours}`
 			},
 			{
-				name: `3 ${hours}`,
+				name: '180',
 				value: 180,
-				text: `3 ${hours}`,
-				placeholder: '',
-				metricsValue: '3 hours'
+				text: `3 ${hours}`
 			},
 			{
-				name:  `4 ${hours}`,
+				name: '240',
 				value: 240,
-				text: `4 ${hours}`,
-				placeholder: '',
-				metricsValue: '4 hours'
+				text: `4 ${hours}`
 			},
 			{
-				name: `5 ${hours}`,
+				name: '300',
 				value: 300,
-				text: `5 ${hours}`,
-				placeholder: '',
-				metricsValue: '5 hours'
+				text: `5 ${hours}`
 			},
 			{
-				name: never,
+				name: '0',
 				value: 0,
-				text: never,
-				placeholder: '',
-				metricsValue: 'never'
+				text: never
 			}];
 
 		this.turnoffDisplay = 0;
@@ -167,28 +136,28 @@ export class PowerUseComponent implements OnInit, OnDestroy {
 		this.hibernateAfter = 0;
 	}
 
-	public onTurnOffDisplayChange($event: DropDownInterval) {
+	public onTurnOffDisplayChange($event: DPMDropDownInterval) {
 		if ($event) {
 			this.turnoffDisplay = $event.value;
 			this.dpmService.setTurnoffDisplay($event.value.toString());
 		}
 	}
 
-	public onTurnOffHDDChange($event: DropDownInterval) {
+	public onTurnOffHDDChange($event: DPMDropDownInterval) {
 		if ($event) {
 			this.turnoffHDD = $event.value;
 			this.dpmService.setTurnoffHDD($event.value.toString());
 		}
 	}
 
-	public onSleepChange($event: DropDownInterval) {
+	public onSleepChange($event: DPMDropDownInterval) {
 		if ($event) {
 			this.sleepAfter = $event.value;
 			this.dpmService.setSleepAfter($event.value.toString());
 		}
 	}
 
-	public onHibernateChange($event: DropDownInterval) {
+	public onHibernateChange($event: DPMDropDownInterval) {
 		if ($event) {
 			this.hibernateAfter = $event.value;
 			this.dpmService.setHibernateAfter($event.value.toString());
