@@ -12,9 +12,6 @@ import { LocalInfoService } from 'src/app/services/local-info/local-info.service
 })
 export class PageSupportDetailComponent implements OnInit {
 
-	title = 'Support Detail';
-	backarrow = '< ';
-
 	qa: QA;
 	public langCode: any = '';
 
@@ -23,7 +20,7 @@ export class PageSupportDetailComponent implements OnInit {
 		private activateRoute: ActivatedRoute,
 		private commonService: CommonService,
 		private localInfoService: LocalInfoService
-	) {	}
+	) { }
 
 	ngOnInit() {
 		this.qaService.setCurrentLangTranslations();

@@ -8,7 +8,7 @@ import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-security-status/widget-security-status.module';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
-import { UiButtonModule } from 'src/app/components/ui/ui-button/ui-button.module'
+import { UiButtonModule } from 'src/app/components/ui/ui-button/ui-button.module';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faBriefcase } from '@fortawesome/pro-light-svg-icons/faBriefcase';
 import { faThumbsUp } from '@fortawesome/pro-light-svg-icons/faThumbsUp';

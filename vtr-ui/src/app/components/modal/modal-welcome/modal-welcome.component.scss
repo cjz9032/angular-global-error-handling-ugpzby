@@ -18,6 +18,7 @@
 	height: auto;
 	background: $shade_lightest;
 	overflow: hidden;
+
 	@media #{$breakpoint_md} {
 		width: 100%;
 		height: 100%;
@@ -46,10 +47,12 @@
 		width: 60rem;
 		max-height: 60rem;
 		height: auto;
+
 		@media #{$breakpoint_md} {
 			width: 100%;
 			height: 100%;
 		}
+
 		@media #{$breakpoint_sm} {
 			width: 100%;
 			height: 42rem;
@@ -62,8 +65,9 @@
 		background-position: center;
 		width: 100%;
 		height: 30rem;
-		margin-bottom:2.4rem;
+		margin-bottom: 2.4rem;
 		flex-shrink: 0;
+
 		@media #{$breakpoint_sm} {
 			height: 17.6rem;
 		}
@@ -71,6 +75,7 @@
 		.title-alignment {
 			line-height: 4rem;
 			margin-top: 15rem;
+
 			@media #{$breakpoint_sm} {
 				margin-top: 3.5rem;
 			}
@@ -84,6 +89,7 @@
 					font-size: $fontsize_xl2;
 					font-weight: $weight_bold;
 				}
+
 				@include high-contrast-adjust;
 			}
 		}
@@ -95,8 +101,9 @@
 		height: 10rem;
 		width: 100%;
 		flex-shrink: 0;
-		margin-bottom:2.4rem;
+		margin-bottom: 2.4rem;
 		background-position: center;
+
 		@media #{$breakpoint_sm} {
 			height: 4.4rem;
 		}
@@ -125,10 +132,12 @@
 		font-size: 1.5rem;
 		font-weight: $weight_regular;
 		letter-spacing: 0.05rem;
+
 		@media #{$breakpoint_md} {
 			padding: 0rem 6.9rem 1.5rem 7rem;
 			height: 100%;
 		}
+
 		@media #{$breakpoint_sm} {
 			padding: 0rem 3.4rem 1.5rem;
 			overflow-x: hidden;
@@ -144,6 +153,7 @@
 			width: 14.4rem;
 			height: 6.5rem;
 			position: relative;
+
 			@media #{$breakpoint_md} {
 				width: 12rem;
 			}
@@ -210,8 +220,10 @@
 			input {
 				width: calc(100% + 0.2rem);
 				height: calc(100% + 0.2rem);
-				&:focus ~ label {
+
+				&:focus~label {
 					outline: none !important;
+
 					&:before {
 						content: '';
 						position: absolute;
@@ -231,7 +243,7 @@
 			margin-left: 0.1rem;
 			margin-right: 0.1rem;
 
-			input[type="checkbox"] + label {
+			input[type="checkbox"]+label {
 				padding: 0.3rem 2rem;
 				border: 0.1rem solid $shade_btn_light;
 				border-radius: 2.5rem;
@@ -246,7 +258,7 @@
 				}
 			}
 
-			input[type="checkbox"]:checked + label {
+			input[type="checkbox"]:checked+label {
 				border: 0.1rem solid #21c48a;
 				background: #f5f7f8;
 			}
@@ -261,13 +273,15 @@
 				padding-left: 0;
 				padding-right: 0;
 
-				input[type="checkbox"]  {
+				input[type="checkbox"] {
 					opacity: 0;
 					width: 100%;
 					height: calc(100% - 1.2rem);
 					position: absolute;
-					&:focus ~ label {
+
+					&:focus~label {
 						outline: none !important;
+
 						&:before {
 							content: '';
 							position: absolute;
@@ -280,20 +294,22 @@
 							border: 0.1rem solid $menu_hover;
 						}
 					}
+
 					@media #{$white-on-black} {
-							&:focus ~ label {
-								&::before {
-									@include white-border;
-								}
+						&:focus~label {
+							&::before {
+								@include white-border;
 							}
+						}
 					}
+
 					@media #{$black-on-white} {
-						&:focus ~ label {
+						&:focus~label {
 							&::before {
 								@include black-border;
 							}
 						}
-				}
+					}
 				}
 
 				label {
@@ -311,6 +327,7 @@
 				color: $main;
 				text-decoration: underline;
 				padding: 0.2rem;
+
 				&:focus {
 					outline: none !important;
 					padding: 0.1rem;
@@ -333,8 +350,9 @@
 				height: 2.2rem;
 			}
 
-			input:focus ~ .custom-control-label-out {
+			input:focus~.custom-control-label-out {
 				outline: none !important;
+
 				&:before {
 					content: '';
 					position: absolute;
@@ -349,63 +367,71 @@
 			}
 
 			@media #{$high-contrast} {
-				input ~ label::before {
+				input~label::before {
 					background: none;
 				}
 			}
 
 			@media #{$black-on-white} {
-				input:checked ~ .custom-control-label::after {
+				input:checked~.custom-control-label::after {
 					background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/%3e%3c/svg%3e");
 				}
 
-				.custom-control-input:checked ~ .custom-control-label::before {
+				.custom-control-input:checked~.custom-control-label::before {
 					@include high-contrast-white-background;
 					box-shadow: none;
 					border-radius: 0.25rem !important;
 					@include high-contrast-white-border;
 				}
-				.custom-control-input:checked:hover ~ .custom-control-label::before {
+
+				.custom-control-input:checked:hover~.custom-control-label::before {
 					@include high-contrast-background-transparent;
 					@include high-contrast-white-border;
 				}
-				.custom-control-input:checked:active ~ .custom-control-label::before {
+
+				.custom-control-input:checked:active~.custom-control-label::before {
 					@include high-contrast-white-background;
 					@include high-contrast-white-border;
 
 				}
-				.custom-control-input:hover ~ .custom-control-label::before {
+
+				.custom-control-input:hover~.custom-control-label::before {
 					border-radius: 0.25rem !important;
 				}
 
-				.custom-checkbox :checked:hover.custom-control-input ~ .custom-control-label::after {
+				.custom-checkbox :checked:hover.custom-control-input~.custom-control-label::after {
 					background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%23000' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/%3e%3c/svg%3e") !important;
 				}
 			}
 
 			@media #{$white-on-black} {
-				.custom-control-input:checked ~ .custom-control-label::before {
+				.custom-control-input:checked~.custom-control-label::before {
 					@include high-contrast-black-background;
 					box-shadow: none;
 					border-radius: 0.25rem !important;
 					@include high-contrast-black-border;
 				}
-				.custom-control-input:checked:hover ~ .custom-control-label::before {
+
+				.custom-control-input:checked:hover~.custom-control-label::before {
 					@include high-contrast-background-transparent;
 					@include high-contrast-black-border;
 				}
-				.custom-control-input:checked:active ~ .custom-control-label::before {
+
+				.custom-control-input:checked:active~.custom-control-label::before {
 					@include high-contrast-black-background;
 					@include high-contrast-black-border;
 
 				}
-				.custom-control-input:hover ~ .custom-control-label::before {
+
+				.custom-control-input:hover~.custom-control-label::before {
 					border-radius: 0.25rem !important;
 				}
-				.custom-checkbox :checked.custom-control-input ~ .custom-control-label::after {
+
+				.custom-checkbox :checked.custom-control-input~.custom-control-label::after {
 					background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%23000' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/%3e%3c/svg%3e") !important;
 				}
-				.custom-checkbox :checked:hover.custom-control-input ~ .custom-control-label::after {
+
+				.custom-checkbox :checked:hover.custom-control-input~.custom-control-label::after {
 					background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/%3e%3c/svg%3e") !important;
 				}
 			}
@@ -427,9 +453,11 @@
 				left: 0.2rem;
 				box-shadow: inset 0 0 0 0.1rem $light;
 				border: 0.1rem solid $shade_darker;
+
 				@media #{$white-on-black} {
 					background: transparent;
 				}
+
 				@media #{$black-on-white} {
 					background: transparent;
 				}
@@ -442,11 +470,14 @@
 				height: 2rem;
 				left: 0.1rem;
 			}
-			&:hover, &:active {
+
+			&:hover,
+			&:active {
 				&::before {
 					@media #{$white-on-black} {
 						@include high-contrast-black-border;
 					}
+
 					@media #{$black-on-white} {
 						@include high-contrast-white-border;
 					}
@@ -464,9 +495,11 @@
 		font-weight: $weight_light;
 		letter-spacing: 0.05rem;
 		text-align: left;
+
 		@media #{$breakpoint_md} {
 			height: 100%;
 		}
+
 		@media #{$breakpoint_sm} {
 			width: 100%;
 			height: 42rem;
@@ -476,6 +509,7 @@
 		ul {
 			width: 90%;
 			margin: 0 auto;
+
 			li {
 				margin-bottom: 1rem;
 				text-align: left;
@@ -490,6 +524,7 @@
 	.next-btn {
 		padding: 0.5rem 0 1.5rem;
 		flex-shrink: 0;
+
 		@media #{$breakpoint_md} {
 			margin-top: 1rem;
 		}
@@ -572,11 +607,11 @@
 		opacity: 0;
 	}
 
-	input[type="radio"]:checked + img {
+	input[type="radio"]:checked+img {
 		border: 2pt solid $go_dark;
 	}
 
-	div.radio-is-selected input[type="radio"]:not(:checked) + img {
+	div.radio-is-selected input[type="radio"]:not(:checked)+img {
 		opacity: 0.5 !important;
 	}
 
@@ -674,9 +709,11 @@
 		font-size: $fontsize_xs;
 		outline: none !important;
 		padding: 0.1rem;
+
 		&:hover {
 			color: $dark !important;
 		}
+
 		&:focus {
 			padding: 0;
 			border: 0.1rem solid $menu_hover;
@@ -691,7 +728,7 @@
 		background-color: $shade;
 	}
 
-	.content-page-2 .interests input[type="checkbox"] + label,
+	.content-page-2 .interests input[type="checkbox"]+label,
 	.content-page-2 .privacy-check .custom-checkbox {
 		cursor: pointer;
 	}
@@ -701,17 +738,17 @@
 		color: $main_gstart;
 	}
 
-	.lang-he-privacy-link{
+	.lang-he-privacy-link {
 		float: left;
 		margin-right: 10px;
 	}
 
 	@media #{$high-contrast} {
-		.content-page-2 .interests input[type="checkbox"] + label {
+		.content-page-2 .interests input[type="checkbox"]+label {
 			border: 0.1rem solid rgba($color: $light, $alpha: 0.4);
 		}
 
-		.content-page-2 .interests input[type="checkbox"]:checked + label {
+		.content-page-2 .interests input[type="checkbox"]:checked+label {
 			border: 0.1rem solid currentColor;
 			color: currentColor;
 			background: currentColor;
@@ -725,10 +762,12 @@
 	}
 
 	@media #{$black-on-white} {
-		.content-page-2 .interests input[type="checkbox"] + label {
+		.content-page-2 .interests input[type="checkbox"]+label {
 			border: 0.1rem solid rgba($color: $dark, $alpha: 0.5);
 		}
-		.content-page-2 .interests input[type="checkbox"]:checked + label, .content-page-2 .interests input[type="checkbox"]:hover + label {
+
+		.content-page-2 .interests input[type="checkbox"]:checked+label,
+		.content-page-2 .interests input[type="checkbox"]:hover+label {
 			@include high-contrast-white-border;
 			color: $light;
 			@include high-contrast-white-background;
@@ -743,11 +782,12 @@
 	}
 
 	@media #{$white-on-black} {
-		.content-page-2 .interests input[type="checkbox"] + label {
+		.content-page-2 .interests input[type="checkbox"]+label {
 			border: 0.1rem solid rgba($color: $light, $alpha: 0.5);
 		}
 
-		.content-page-2 .interests input[type="checkbox"]:checked + label, .content-page-2 .interests input[type="checkbox"]:hover + label {
+		.content-page-2 .interests input[type="checkbox"]:checked+label,
+		.content-page-2 .interests input[type="checkbox"]:hover+label {
 			@include high-contrast-black-border;
 			color: $dark;
 			@include high-contrast-black-background;
@@ -765,6 +805,7 @@
 :host-context(.is-gaming) {
 	.vtr-modal-welcome {
 		background-color: $gaming_darkest;
+
 		.card {
 			background-color: $gaming_darkest;
 		}
@@ -786,6 +827,7 @@
 
 			ul {
 				width: 100%;
+
 				li {
 					margin-bottom: 0.2rem;
 				}
@@ -797,23 +839,24 @@
 			color: $gaming_lightest;
 		}
 
-		.content-page-2 .interests input[type="checkbox"] + label {
+		.content-page-2 .interests input[type="checkbox"]+label {
 			border: none;
 			color: $gaming_lightest;
-			background-color:$gaming_blue_grey_light;
+			background-color: $gaming_blue_grey_light;
 
 			&:hover {
 				background-color: $gaming-slate-blue;
 			}
 		}
 
-		.content-page-2 .interests input[type="checkbox"]:checked + label {
+		.content-page-2 .interests input[type="checkbox"]:checked+label {
 			border: none;
-			background:$blueFill;
+			background: $blueFill;
 		}
 
 		.more-interests {
 			color: $gaming_lightest;
+
 			&:hover {
 				color: $gaming_lighter !important;
 			}
@@ -827,11 +870,11 @@
 		}
 
 		@media #{$high-contrast} {
-			.content-page-2 .interests input[type="checkbox"] + label {
+			.content-page-2 .interests input[type="checkbox"]+label {
 				border: 0.1rem solid rgba($color: $light, $alpha: 0.4);
 			}
 
-			.content-page-2 .interests input[type="checkbox"]:checked + label {
+			.content-page-2 .interests input[type="checkbox"]:checked+label {
 				border: 0.1rem solid currentColor;
 				color: currentColor;
 				background: currentColor;
@@ -845,11 +888,11 @@
 		}
 
 		@media #{$black-on-white} {
-			.content-page-2 .interests input[type="checkbox"] + label {
+			.content-page-2 .interests input[type="checkbox"]+label {
 				border: 0.1rem solid rgba($color: $dark, $alpha: 0.5);
 			}
 
-			.content-page-2 .interests input[type="checkbox"]:checked + label {
+			.content-page-2 .interests input[type="checkbox"]:checked+label {
 				border: 0.1rem solid $dark;
 				color: $dark;
 				background: $dark;
@@ -863,11 +906,11 @@
 		}
 
 		@media #{$white-on-black} {
-			.content-page-2 .interests input[type="checkbox"] + label {
+			.content-page-2 .interests input[type="checkbox"]+label {
 				border: 0.1rem solid rgba($color: $light, $alpha: 0.5);
 			}
 
-			.content-page-2 .interests input[type="checkbox"]:checked + label {
+			.content-page-2 .interests input[type="checkbox"]:checked+label {
 				border: 0.1rem solid $light;
 				color: $light;
 				background: $light;
