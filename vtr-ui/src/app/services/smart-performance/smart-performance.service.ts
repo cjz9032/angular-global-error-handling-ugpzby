@@ -169,20 +169,11 @@ export class SmartPerformanceService {
 			xhr.open('GET', reqUrl, true);
 			xhr.onreadystatechange = () => {
 				if (xhr.readyState === 4 && xhr.status === 200) {
-					let result = JSON.parse(xhr.responseText);
-
-					// start for PA test, will remove before 8/25 task id: VAN-21395
-					const testResponse = localStorage.getItem('SmartPerformanceTestResponse');
-					if (testResponse) {
-						result = JSON.parse(testResponse);
-					}
-					// end for PA test, will remove before 8/25 VAN-21395
-
-					resolve(result);
+					resolve(JSON.parse(xhr.responseText));
 				}
 			};
 			xhr.send();
-		});
+		  });
 	}
 	writeSmartPerformanceActivity(payload: any): Promise<any> {
 		try {
