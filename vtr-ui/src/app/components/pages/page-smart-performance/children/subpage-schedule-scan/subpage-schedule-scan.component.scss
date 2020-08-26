@@ -1619,6 +1619,7 @@ vtr-subpage-scanning {
 
 				.amPm-text {
 					cursor: pointer;
+					white-space: nowrap;
 
 					&:focus {
 						@include outline-blue;
