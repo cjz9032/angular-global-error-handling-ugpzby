@@ -63,6 +63,7 @@ export class PageAutocloseComponent implements OnInit, OnDestroy {
 		this.refreshAutoCloseList();
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
+		    this.getAutoCloseStatus();
 		});
 	}
 
