@@ -139,28 +139,28 @@ export class PowerUseComponent implements OnInit, OnDestroy {
 	public onTurnOffDisplayChange($event: DPMDropDownInterval) {
 		if ($event) {
 			this.turnoffDisplay = $event.value;
-			this.dpmService.setTurnoffDisplay($event.value.toString());
+			this.dpmService.setTurnoffDisplay($event.name);
 		}
 	}
 
 	public onTurnOffHDDChange($event: DPMDropDownInterval) {
 		if ($event) {
 			this.turnoffHDD = $event.value;
-			this.dpmService.setTurnoffHDD($event.value.toString());
+			this.dpmService.setTurnoffHDD($event.name);
 		}
 	}
 
 	public onSleepChange($event: DPMDropDownInterval) {
 		if ($event) {
 			this.sleepAfter = $event.value;
-			this.dpmService.setSleepAfter($event.value.toString());
+			this.dpmService.setSleepAfter($event.name);
 		}
 	}
 
 	public onHibernateChange($event: DPMDropDownInterval) {
 		if ($event) {
 			this.hibernateAfter = $event.value;
-			this.dpmService.setHibernateAfter($event.value.toString());
+			this.dpmService.setHibernateAfter($event.name);
 		}
 	}
 }
