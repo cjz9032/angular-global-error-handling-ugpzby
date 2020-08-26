@@ -60,6 +60,7 @@ export class PageNetworkboostComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		this.notificationSubscrition = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
+			this.getNetworkBoostStatus();
 		});
 		// AutoClose Init
 		// this.toggleStatus = this.commonService.getLocalStorageValue();
