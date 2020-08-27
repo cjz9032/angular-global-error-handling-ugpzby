@@ -21,11 +21,12 @@
 			</div>
 			<hr aria-hidden="true" />
 			<!-- repeat battery-detail information -->
-			<div class="line-height-2-5 mb-3">
+			<div class="line-height-2-5 mb-3"
+				*ngIf="dataSource?.length > 0">
 				<div class="row mb-3">
 					<div class="col">
 						<!-- Section Title like Primary Battery -->
-						<h5 class="battery-header" *ngIf="dataSource[0].heading.length>0"
+						<h5 class="battery-header" *ngIf="dataSource[0]?.heading?.length>0"
 							id="{{automationId[0]}}">
 							{{ dataSource[0].heading | translate }}
 						</h5>
@@ -246,7 +247,7 @@
 				</div>
 			</div>
 			<div class="line-height-2-5 mb-3"
-				*ngIf="dataSource.length>1">
+				*ngIf="dataSource?.length>1">
 				<div class="row mb-3">
 					<div class="col">
 						<!-- Section Title like Primary Battery -->
@@ -466,6 +467,18 @@
 							<div class="battery-value-text">
 								{{ dataSource[1].firmwareVersion }}
 							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="line-height-2-5 mb-3"
+				*ngIf="isLoading">
+				<div class="row px-0 d-flex battery-detail-block">
+					<div [style.height.px]="150">
+						<div class="loader center-block">
+							<div class="spinner-border progress-spinner"
+								role="status"></div>
 						</div>
 					</div>
 				</div>

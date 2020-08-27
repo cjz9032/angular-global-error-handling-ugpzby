@@ -99,4 +99,16 @@
 			}
 		}
 	}
+	.loader {
+		position: absolute;
+		z-index: 999;
+		top: 75%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	.spinner-border {
+		height: 6rem;
+		width: 6rem;
+		color: $blue-light;
+	}
 }
