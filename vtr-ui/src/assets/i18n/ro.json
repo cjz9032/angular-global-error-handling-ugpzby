@@ -4524,12 +4524,12 @@
         },
         "scanCompletePage": {
             "title": "Scanarea sistemului este finalizată",
-            "description": "Iată rezultatele găsite pe ",
+            "description": "Iată rezultatele găsite pe {{machineFamilyName}}",
             "scanRates": "Scanarea noastră evaluează PC-ul dumneavoastră ca: ",
             "summary": "Rezumat",
             "summaryDetails": "Scanarea noastră a găsit <b>{{issueCount}} probleme</b> în următoarele zone de mai jos. Înregistrați-vă acum pentru a remedia aceste probleme și pentru ca sistemul dumneavoastră să funcționeze corespunzător. Software-ul nostru poate scana în mod proactiv aceste zone ale sistemului dumneavoastră, non-stop și poate remedia erorile pe măsură ce apar, astfel încât PC-ul dumneavoastră să aibă întotdeauna performanțe excelente.",
             "signupRepairButton": "ÎNREGISTRAȚI-VĂ ȘI REMEDIAȚI ACUM",
-            "monthlyPricing": "<b>Mai puțin de $2 pe lună.</b> Vom remedia automat aceste probleme. Astăzi și ulterior în fiecare săptămână <a  href=\"#\">Aflați mai multe</a>",
+            "monthlyPricing": "<b>Mai puțin de $2,5 pe lună.</b> Vom remedia automat aceste probleme. Astăzi și ulterior în fiecare săptămână <a  href=\"#\">Aflați mai multe</a>",
             "issueCount": "{{individualIssueCount}} PROBLEME",
             "scannedAreas": "ZONE SCANATE",
             "recommendedAction": {

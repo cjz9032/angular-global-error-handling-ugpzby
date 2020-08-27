@@ -4524,12 +4524,12 @@
         },
         "scanCompletePage": {
             "title": "Sistem taraması tamamlandı",
-            "description": "İşte bulduklarımız: ",
+            "description": "İşte bulduklarımız: {{machineFamilyName}}",
             "scanRates": "Taramamıza göre bilgisayarınızın değerlendirmesi: ",
             "summary": "Özet",
             "summaryDetails": "Taramamız aşağıdaki alanlarda <b>{{issueCount}} sorun</b> buldu. Bu sorunları gidermek ve sisteminizin sorunsuz çalışmasını sağlamak için şimdi kaydolun. Yazılımımız sorunları ortaya çıktıkça bulmak ve düzeltmek için proaktif olarak sisteminizin bu alanlarını 7/24 tarayabilir, böylece bilgisayarınız her zaman birinci sınıf performansa sahip olur.",
             "signupRepairButton": "KAYDOLUN ve HEMEN ONARIN",
-            "monthlyPricing": "<b>Ayda $2'dan az.</b> Bu sorunları otomatik olarak çözeceğiz. Bugün ve bundan sonra her hafta bir kez <a  href=\"#\">Daha fazla bilgi edinin</a>",
+            "monthlyPricing": "<b>Ayda $2,5'dan az.</b> Bu sorunları otomatik olarak çözeceğiz. Bugün ve bundan sonra her hafta bir kez <a  href=\"#\">Daha fazla bilgi edinin</a>",
             "issueCount": "{{individualIssueCount}} SORUNLAR",
             "scannedAreas": "TARANAN ALANLAR",
             "recommendedAction": {

@@ -2671,7 +2671,7 @@
 		},
 		"scanCompletePage": {
 			"title": "System scan is complete",
-			"description": "Here is what we found on your ",
+			"description": "Here is what we found on your {{machineFamilyName}}",
 			"scanRates": "Our scan rates your PC at: ",
 			"summary": "Summary",
 			"summaryDetails": "Our scan found <b>{{issueCount}} issue(s)</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
@@ -2679,7 +2679,7 @@
 			"signupRepairButton": "SIGN UP & REPAIR NOW",
 			"renewAndFix": "Renew & Fix",
 			"backToHome": "Back To Home",
-			"monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
+			"monthlyPricing": "<b>Less than $2.5 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
 			"issueCount": "{{individualIssueCount}} ISSUES",
 			"issues": "ISSUE(S)",
 			"tuneIssueCount": "{{tune}}",

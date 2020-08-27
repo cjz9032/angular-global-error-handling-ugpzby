@@ -19,8 +19,8 @@
 													*ngIf="!isSubscribed">
 													<h1 id="smart-performance-scan-summary-title">{{'smartPerformance.scanCompletePage.title' |translate }}
 													</h1>
-													<h3 id="smart-performance-scan-summary-desc">{{'smartPerformance.scanCompletePage.description' |translate }}
-														{{machineFamilyName}}</h3>
+													<h3 id="smart-performance-scan-summary-desc">{{'smartPerformance.scanCompletePage.description' |translate:{'machineFamilyName': machineFamilyName} }}
+														</h3>
 												</div>
 												<div class="mt-5 hero-text"
 													*ngIf="isSubscribed">
