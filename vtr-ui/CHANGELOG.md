@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.46](https://bitbucket.tc.lenovo.com///compare/v1.7.45...v1.7.46) (2020-08-27)
+
+
+### Bug Fixes
+
+* **Smart Performance:** VAN-21501 update russion ([de503f2](https://bitbucket.tc.lenovo.com///commit/de503f211e73ce7810fa098505201c49b5fc5a2a))
+* **Smart Performance:** VAN21501 refine Japanese translation and set all per month price to $2.5 and fix machine family name ([1d12e45](https://bitbucket.tc.lenovo.com///commit/1d12e45fa43b7b941da4f9140f9088b7a41b9a84))
+
 ### [1.7.45](https://bitbucket.tc.lenovo.com///compare/v1.7.44...v1.7.45) (2020-08-26)
 
 ### [1.7.44](https://bitbucket.tc.lenovo.com///compare/v1.7.43...v1.7.44) (2020-08-26)
