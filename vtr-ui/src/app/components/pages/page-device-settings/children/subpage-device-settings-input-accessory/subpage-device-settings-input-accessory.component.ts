@@ -505,7 +505,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 			voipApps.forEach((app: VoipApp, index: number) => {
 				if (app.isAppInstalled) {
 					const appObj: UiCircleRadioWithCheckBoxListModel = {
-						componentId: `VoipHotkeys.rectangle-radio-${index}`,
+						componentId: `divvoip-hotkeys-rectangle-radio-${app.appName}`,
 						label: `device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.app-${app.appName}`,
 						value: app.appName.toString(),
 						isChecked: app.isSelected.valueOf(),
