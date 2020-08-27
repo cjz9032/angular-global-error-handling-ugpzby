@@ -124,6 +124,7 @@ export class SelfSelectService {
 	private async initialize() {
 		let config = this.commonService.getLocalStorageValue(LocalStorageKey.ChangedSelfSelectConfig);
 		this.machineInfo = await this.deviceService.getMachineInfo();
+		this.userProfileEnabled = this.checkUserProfileEnabled();
 		if (!config
 			|| !config.segment
 			|| !this.isSegmentMatchCurrentMachine(config.segment, this.machineInfo)) {
@@ -136,6 +137,10 @@ export class SelfSelectService {
 		}
 		this.setSegmentAndInterest(config);
 		this.syncConfigToService(config);
+	}
+
+	private checkUserProfileEnabled() {
+		return !this.isArm(this.machineInfo);
 	}
 
 	private isSegmentMatchCurrentMachine(segment, machineInfo) {
