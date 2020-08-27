@@ -153,6 +153,9 @@ button:focus{
 						opacity: 0.95;
 						color: $white100;
 						&::ng-deep .oc-description {
+							&:hover {
+								text-decoration: none;
+							}
 							&.hover {
 								::ng-deep {
 									.oc-checkbox {
