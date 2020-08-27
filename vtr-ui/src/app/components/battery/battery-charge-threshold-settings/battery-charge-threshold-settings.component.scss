@@ -185,6 +185,10 @@
 					@include high-contrast-white-text-color-disabled;
 				}
 			}
+			&:active {
+				background-color: $main_lightest;
+				color: $dark;
+			}
 		}
 
 		.btn:focus,
