@@ -2,9 +2,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { TranslateDefaultValueIfNotFoundPipe } from '../translate-default-value-if-not-found/translate-default-value-if-not-found.pipe';
 
 @Pipe({
-  name: 'tokenByTokenTranslate'
+  name: 'translateTokenByToken'
 })
-export class TokenByTokenTranslatePipe implements PipeTransform {
+export class TranslateTokenByTokenPipe implements PipeTransform {
 
 	constructor(private translateDefaultPipe: TranslateDefaultValueIfNotFoundPipe) { }
 

@@ -1,4 +1,4 @@
-import { TokenByTokenTranslatePipe } from './token-by-token-translate.pipe';
+import { TranslateTokenByTokenPipe } from './translate-token-by-token.pipe';
 import { Pipe, PipeTransform } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { TranslatePipe } from '@ngx-translate/core';
@@ -13,14 +13,14 @@ class TranslatePipeMock implements PipeTransform {
 	}
 }
 
-describe('TokenByTokenTranslatePipe', () => {
+describe('TranslateTokenByTokenPipe', () => {
 	const translatePipeMock = new TranslatePipeMock();
-	let pipe: TokenByTokenTranslatePipe;
+	let pipe: TranslateTokenByTokenPipe;
 
 	beforeEach(() => {
 		TestBed.configureTestingModule({
 			providers: [
-				TokenByTokenTranslatePipe,
+				TranslateTokenByTokenPipe,
 				{
 					provide: TranslateDefaultValueIfNotFoundPipe,
 					useValue: translatePipeMock
@@ -28,7 +28,7 @@ describe('TokenByTokenTranslatePipe', () => {
 			]
 		});
 
-		pipe = TestBed.inject(TokenByTokenTranslatePipe);
+		pipe = TestBed.inject(TranslateTokenByTokenPipe);
 	});
 
 	it('should create an instance', () => {
