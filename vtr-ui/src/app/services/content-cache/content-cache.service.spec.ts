@@ -66,6 +66,80 @@ describe('ContentCacheService', () => {
 
 	});
 
+
+	it('when none contents in cache enviroment should return build-in, then download and cache the contents by fetch', async () => {
+		let contentCards = {
+			positionA: {
+				displayContent: [],
+				template: 'home-page-hero-banner',
+				cardId: 'positionA',
+				positionParam: 'position-A',
+				tileSource: 'CMS',
+				cmsContent: undefined,
+				upeContent: undefined
+			},
+			positionB: {
+				displayContent: new FeatureContent(),
+				template: 'half-width-title-description-link-image',
+				cardId: 'positionB',
+				positionParam: 'position-B',
+				tileSource: 'CMS',
+				cmsContent: undefined,
+				upeContent: undefined
+			},
+			positionC: {
+				displayContent: new FeatureContent(),
+				template: 'half-width-title-description-link-image',
+				cardId: 'positionC',
+				positionParam: 'position-C',
+				tileSource: 'CMS',
+				cmsContent: undefined,
+				upeContent: undefined
+			},
+			positionD: {
+				displayContent: new FeatureContent(),
+				template: 'full-width-title-image-background',
+				cardId: 'positionD',
+				positionParam: 'position-D',
+				tileSource: 'CMS',
+				cmsContent: undefined,
+				upeContent: undefined
+			},
+			positionE: {
+				displayContent: new FeatureContent(),
+				template: 'half-width-top-image-title-link',
+				cardId: 'positionE',
+				positionParam: 'position-E',
+				tileSource: 'CMS',
+				cmsContent: undefined,
+				upeContent: undefined
+			},
+			positionF: {
+				displayContent: new FeatureContent(),
+				template: 'half-width-top-image-title-link',
+				cardId: 'positionF',
+				positionParam: 'position-F',
+				tileSource: 'CMS',
+				cmsContent: undefined,
+				upeContent: undefined
+			}
+		};
+		cmsService.generateContentQueryParams.and.returnValue({ Page: 'noResponse' });
+		cmsService.fetchContents.and.returnValue(CMS_CONTENTS);
+		cmsService.getOneCMSContent.and.returnValue(CMS_CONTENTS);
+		cmsService.fetchCMSArticle.and.returnValue(ARTICLE);
+		localInfoService.getLocalInfo.and.returnValue(localInfo);
+		let contents = JSON.parse(JSON.stringify(NORMAL_CONTENTS));
+		buildInContentService.getContents.and.returnValue(contents);
+		const ret = await service.getCachedContents('noResponse', contentCards);
+		const keys = Object.keys(ret);
+		expect(keys).toBeTruthy();
+		expect(keys.length).toEqual(3);
+		expect(keys.includes('positionA')).toBeTruthy();
+		expect(keys.includes('welcome-text')).toBeTruthy();
+		expect(keys.includes('positionB')).toBeTruthy();
+	});
+
 	it('should be created', () => {
 		expect(service).toBeTruthy();
 	});
@@ -232,7 +306,7 @@ describe('ContentCacheService', () => {
 		cmsService.getOneCMSContent.and.returnValue(CMS_CONTENTS);
 		cmsService.fetchCMSArticle.and.returnValue(ARTICLE);
 		localInfoService.getLocalInfo.and.returnValue(localInfo);
-		const ret = await service.getCachedContents('dashboard_only_upe', contentCards);
+		const ret = await service.getCachedContents('dashboard_only_cms', contentCards);
 
 		expect(ret).toBeTruthy();
 		const keys = Object.keys(ret);
@@ -304,13 +378,13 @@ describe('ContentCacheService', () => {
 				upeContent: undefined
 			}
 		};
-		cmsService.getOneCMSContent.and.returnValue(null);
+		cmsService.getOneCMSContent.and.returnValue(UPE_CONTENTS);
 		upeService.fetchUPEContent.and.returnValue(UPE_CONTENTS);
 		cmsService.fetchContents.and.returnValue(null);
 		localInfoService.getLocalInfo.and.returnValue(localInfo);
 		cmsService.fetchCMSArticle.and.returnValue(ARTICLE);
 		cmsService.generateContentQueryParams.and.returnValue({ Page: 'dashboard_only_upe' });
-		const ret = await service.getCachedContents('dashboard_only_cms', contentCards);
+		const ret = await service.getCachedContents('dashboard_only_upe', contentCards);
 
 		expect(ret).toBeTruthy();
 		const keys = Object.keys(ret);

@@ -341,6 +341,36 @@ export const UPE_CONTENTS = [{
         }]
     },
     "DisplayStartDate": null,
+    "ExpirationDate": "02/20/2020"
+}, {
+    "Id": "c236cfebb9f742008f594615ea9fb1e2",
+    "Title": "Lenovo Tech World &#8211; The New Era of Data Intelligence Decoded",
+    "LastModified": "06-01-2020 04:21:26 PM",
+    "Revision": "8b5cc801-67a7-4511-8ea0-ecd78f0ca1a8",
+    "ShortTitle": "",
+    "Description": "Driving transformation forward for a more intelligent future.",
+    "FeatureImage": "https://stg.dxp.lenovo.com/-/media/29438d3ee7274168b23509c3a49d2941",
+    "Action": "",
+    "ActionType": "Internal",
+    "ActionLink": "dc21088b33944c3d9651c9b0fb3e9efc",
+    "BrandName": "",
+    "BrandImage": "",
+    "Priority": "P9",
+    "Page": "dashboard",
+    "Template": "half-width-title-description-link-image",
+    "Position": "position-B",
+    "OverlayTheme": "",
+    "Parameters": [],
+    "Filters": {
+        "and": [{
+            "Segments.Any": ["SMB", "Consumer"]
+        }, {
+            "!": {
+                "GEOs.Any": ["MX", "CO", "PE", "CL"]
+            }
+        }]
+    },
+    "DisplayStartDate": null,
     "ExpirationDate": null
 }]
 
