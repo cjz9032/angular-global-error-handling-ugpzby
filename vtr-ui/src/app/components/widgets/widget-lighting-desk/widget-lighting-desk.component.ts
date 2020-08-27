@@ -90,7 +90,7 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
     try {
       if (this.gamingLightingService.isShellAvailable) {
 				this.gamingLightingService.getLightingCapabilities().then((response: any) => {
-          this.logger.info("lightingCapabilities res ",response)
+          this.logger.info("lightingCapabilities res ",response);
           if(response){
             this.lightingCapabilities = response;
             this.commonService.setLocalStorageValue(LocalStorageKey.LightingCapabilitiesNewversionDesk,response);
@@ -541,7 +541,7 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
          this.getCurrentPanelImg(16,'assets/images/gaming/lighting/lighting-ui-new/T750_water.png');
          this.getCurrentPanelImg(256,'assets/images/gaming/lighting/lighting-ui-new/T750_fct.png');
        }else if(this.ledlayoutversion === 4){
-         this.getCurrentPanelImg(4,'assets/images/gaming/lighting/lighting-ui-new/T550AMD_wind.png');
+         this.getCurrentPanelImg(8,'assets/images/gaming/lighting/lighting-ui-new/T550AMD_wind.png');
          this.getCurrentPanelImg(16,'assets/images/gaming/lighting/lighting-ui-new/T550AMD_water.png');
          this.getCurrentPanelImg(256,'assets/images/gaming/lighting/lighting-ui-new/T550AMD_fct.png');
        }
