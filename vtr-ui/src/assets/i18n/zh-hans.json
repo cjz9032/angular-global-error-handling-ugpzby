@@ -4524,19 +4524,19 @@
         },
         "scanCompletePage": {
             "title": "系统扫描完毕",
-            "description": "这是我们的发现结果",
+            "description": "这是我们在您的 {{machineFamilyName}} 中发现的结果",
             "scanRates": "下面是我们的扫描对您电脑的评价结果：",
             "summary": "摘要",
             "summaryDetails": "我们的扫描在以下区域找到了 <b>{{issueCount}} 个问题</b>。请立即注册以解决这些问题并保持系统顺利运行。我们的软件可以全天候主动扫描您的系统的这些区域以查找问题，并在发现时解决，所以您的电脑性能始终非常出色。",
             "signupRepairButton": "立即注册并修复",
-            "monthlyPricing": "<b>每月不到 $2。</b>我们将自动解决这些问题。当天一次，以后每周一次。<a  href=\"#\">了解更多信息</a>",
+            "monthlyPricing": "<b>每月不到 $2.5。</b>我们将自动解决这些问题。当天一次，以后每周一次。<a  href=\"#\">了解更多信息</a>",
             "issueCount": "{{individualIssueCount}} 个问题",
             "scannedAreas": "扫描区域",
             "recommendedAction": {
                 "title": "建议操作",
                 "description": "我们将自动解决这些问题。当天一次，以后每周一次",
                 "yearlyPricing": "$29.99 / 年",
-                "monthlyPricing": "每月不到 $2。",
+                "monthlyPricing": "每月不到 $2.5。",
                 "longerTerm": "期限要更长？要更省钱？",
                 "signupButton": "注册"
             },

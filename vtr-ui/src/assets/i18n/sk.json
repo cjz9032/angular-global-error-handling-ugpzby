@@ -4524,12 +4524,12 @@
         },
         "scanCompletePage": {
             "title": "Kontrola systému je dokončená",
-            "description": "Toto je zoznam položiek, nájdených vo vašom ",
+            "description": "Toto je zoznam položiek, nájdených vo vašom {{machineFamilyName}}",
             "scanRates": "Hodnotenie vášho PC na základe našej kontroly: ",
             "summary": "Zhrnutie",
             "summaryDetails": "Počas kontroly sme v nasledujúcich oblastiach zistili <b>{{issueCount}} chybu/chyby/chýb</b>. Ak budete chcieť tieto problémy odstrániť a zabezpečiť tak hladký chod systému, môžete sa zaregistrovať. Náš softvér dokáže aktívne a nepretržite kontrolovať tieto oblasti vášho systému, vyhľadávať a odstraňovať prípadné problémy a zabezpečiť, aby mal váš počítač vždy špičkový výkon.",
             "signupRepairButton": "ZAREGISTROVAŤ A OPRAVIŤ",
-            "monthlyPricing": "<b>Necelé $2 mesačne.</b> Tieto problémy automaticky vyriešime. Dnes a potom každý týždeň <a  href=\"#\">Ďalšie informácie</a>",
+            "monthlyPricing": "<b>Necelé $2,5 mesačne.</b> Tieto problémy automaticky vyriešime. Dnes a potom každý týždeň <a  href=\"#\">Ďalšie informácie</a>",
             "issueCount": "{{individualIssueCount}} CHYBY/CHÝB",
             "scannedAreas": "KONTROLOVANÉ OBLASTI",
             "recommendedAction": {

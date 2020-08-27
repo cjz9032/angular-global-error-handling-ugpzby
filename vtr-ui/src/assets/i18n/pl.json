@@ -4524,12 +4524,12 @@
         },
         "scanCompletePage": {
             "title": "Skanowanie systemu zostało ukończone",
-            "description": "Oto, co znaleźliśmy na Twoim urządzeniu ",
+            "description": "Oto, co znaleźliśmy na Twoim urządzeniu {{machineFamilyName}}",
             "scanRates": "Ocena komputera na podstawie skanowania: ",
             "summary": "Podsumowanie",
             "summaryDetails": "Skanowanie pozwoliło dotrzeć do <b>{{issueCount}} zagrożeń</b> dotyczących obszarów wymienionych poniżej. Zarejestruj się teraz, aby rozwiązać te problemy i dalej cieszyć się płynnym działaniem systemu. Nasze oprogramowanie może aktywnie skanować te obszary komputera 24 godziny na dobę, 7 dni w tygodniu, aby znajdować i rozwiązywać pojawiające się problemy. Dzięki temu Twój komputer będzie zawsze działać z najwyższą wydajnością.",
             "signupRepairButton": "ZAREJESTRUJ SIĘ I ROZWIĄŻ PROBLEMY TERAZ",
-            "monthlyPricing": "<b>Mniej niż $2 na miesiąc.</b> Automatycznie rozwiążemy te problemy. Dziś, a potem co tydzień <a  href=\"#\">Dowiedz się więcej</a>",
+            "monthlyPricing": "<b>Mniej niż $2,5 na miesiąc.</b> Automatycznie rozwiążemy te problemy. Dziś, a potem co tydzień <a  href=\"#\">Dowiedz się więcej</a>",
             "issueCount": "PROBLEMY: {{individualIssueCount}}",
             "scannedAreas": "PRZESKANOWANE OBSZARY",
             "recommendedAction": {

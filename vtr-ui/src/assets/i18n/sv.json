@@ -4524,19 +4524,19 @@
         },
         "scanCompletePage": {
             "title": "Systemgenomsökningen är klar",
-            "description": "Detta är vad som påträffades på din ",
+            "description": "Detta är vad som påträffades på din {{machineFamilyName}}",
             "scanRates": "Enligt vår genomsökning är din dator: ",
             "summary": "Översikt",
             "summaryDetails": "Genomsökningen hittade <b>{{issueCount}} problem</b> i områdena nedan. Registrera dig nu för att åtgärda problemen och se till att datorn fungerar smidigt. Vår programvara kan proaktivt genomsöka dessa områden på din dator dygnet runt för att hitta och åtgärda problem när de uppstår så att datorn alltid körs med bästa möjliga prestanda.",
             "signupRepairButton": "REGISTRERA DIG OCH REPARERA NU",
-            "monthlyPricing": "<b>Mindre än 2 $ per månad.</b> Vi löser dessa problem automatiskt. En gång i dag och därefter varje vecka. <a  href=\"#\">Läs mer</a>",
+            "monthlyPricing": "<b>Mindre än 2,5 $ per månad.</b> Vi löser dessa problem automatiskt. En gång i dag och därefter varje vecka. <a  href=\"#\">Läs mer</a>",
             "issueCount": "{{individualIssueCount}} PROBLEM",
             "scannedAreas": "GENOMSÖKTA OMRÅDEN",
             "recommendedAction": {
                 "title": "REKOMMENDERAD ÅTGÄRD",
                 "description": "Vi löser dessa problem automatiskt. En gång i dag och därefter varje vecka.",
                 "yearlyPricing": "29,99 $/år",
-                "monthlyPricing": "MINDRE ÄN 2 $ PER MÅNAD.",
+                "monthlyPricing": "MINDRE ÄN 2,5 $ PER MÅNAD.",
                 "longerTerm": "Längre period? Spara ännu mer pengar?",
                 "signupButton": "REGISTRERA DIG"
             },

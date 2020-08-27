@@ -4524,12 +4524,12 @@
         },
         "scanCompletePage": {
             "title": "Skeniranje sistema je završeno",
-            "description": "Evo šta smo pronašli na vašem ",
+            "description": "Evo šta smo pronašli na vašem {{machineFamilyName}}",
             "scanRates": "Naše skeniranje ocenjuje vaš računar prema sledećem: ",
             "summary": "Rezime",
             "summaryDetails": "Naše je skeniranje pronašlo <b>{{issueCount}} problem(a)</b> u sledećim područjima u nastavku. Registrujte se odmah kako biste rešili ove probleme i održali neometani rad sistema. Naš softver može proaktivno da skenira ta područja sistema, 24 sata svakog dana u nedelji, kako bi pronašao i popravio probleme čim se jave, tako da vaš računar uvek ima vrhunske performanse.",
             "signupRepairButton": "ODMAH SE REGISTRUJTE I POPRAVITE",
-            "monthlyPricing": "<b>Manje od $2 mesečno.</b> Ove probleme ćemo automatski rešiti. Danas i svake naredne nedelje <a  href=\"#\">Saznajte više</a>",
+            "monthlyPricing": "<b>Manje od $2,5 mesečno.</b> Ove probleme ćemo automatski rešiti. Danas i svake naredne nedelje <a  href=\"#\">Saznajte više</a>",
             "issueCount": "{{individualIssueCount}} PROBLEMI",
             "scannedAreas": "SKENIRANA PODRUČJA",
             "recommendedAction": {

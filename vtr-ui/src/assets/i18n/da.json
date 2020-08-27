@@ -4524,19 +4524,19 @@
         },
         "scanCompletePage": {
             "title": "Systemscanning er fuldført",
-            "description": "Dette er fundet på din ",
+            "description": "Dette er fundet på din {{machineFamilyName}}",
             "scanRates": "Vores scanning vurderer din computer til: ",
             "summary": "Opsummering",
             "summaryDetails": "Vores scanning fandt <b>{{issueCount}} problem(er)</b> i følgende områder nedenfor. Tilmeld dig nu for at løse problemerne og sørge for, at systemet fungerer problemfrit. Vores software kan proaktivt scanne disse områder i dit system døgnet rundt for at finde og løse problemer, når de opstår, så computeren altid har en ydeevne, der er helt i top.",
             "signupRepairButton": "TILMELD OG REPARER NU",
-            "monthlyPricing": "<b>Mindre end $2 pr. måned.</b> Problemerne løses automatisk. Én gang i dag og hver uge herefter <a  href=\"#\">Få mere at vide</a>",
+            "monthlyPricing": "<b>Mindre end $2,5 pr. måned.</b> Problemerne løses automatisk. Én gang i dag og hver uge herefter <a  href=\"#\">Få mere at vide</a>",
             "issueCount": "{{individualIssueCount}} PROBLEMER",
             "scannedAreas": "SCANNEDE OMRÅDER",
             "recommendedAction": {
                 "title": "ANBEFALET HANDLING",
                 "description": "Problemerne løses automatisk. Én gang i dag og hver uge herefter",
                 "yearlyPricing": "$29,99 / år",
-                "monthlyPricing": "MINDRE END $2 PR. MÅNED.",
+                "monthlyPricing": "MINDRE END $2,5 PR. MÅNED.",
                 "longerTerm": "Længere tidsperiode? Endnu flere besparelser?",
                 "signupButton": "TILMELD"
             },
