@@ -1,6 +1,9 @@
 <div class="w-100 row progress-bar-div-container"
 	[class.p-0]="noPadding">
 	<div class="col col-12 progress-bar-div"
+		[attr.aria-valuemin]="minValue"
+		[attr.aria-valuenow]="value"
+		[attr.aria-valuemax]="maxValue"
 		[id]="progressId"
 		role="progressbar">
 		<ngb-progressbar type="success"
