@@ -76,13 +76,15 @@ export class UiDropDownComponent implements OnInit, OnChanges {
 			const itemValue = this.list.find(
 				(item) => item.value === this.value
 			);
-			if (this.dropdownType === 'oled-dimmer') {
-				this.settingDimmerIntervals(itemValue);
-				return;
-			}
-			if (this.dropdownType === 'userdefined-key') {
-				this.setUserDefinedKey(itemValue);
-				return;
+			if (itemValue) {
+				if (this.dropdownType === 'oled-dimmer') {
+					this.settingDimmerIntervals(itemValue);
+					return;
+				}
+				if (this.dropdownType === 'userdefined-key') {
+					this.setUserDefinedKey(itemValue);
+					return;
+				}
 			}
 		} else {
 			this.setDefaultDropValue();
