@@ -1339,7 +1339,13 @@
 			.vtr-hardware-components {
 				background: $gaming_darkest;
 				.refresh-button{
-					color: $gaming_lightest!important;
+					.hyperlink{
+						color: $gaming_lightest!important;
+						border-bottom: $gaming_lightest solid 0.1rem!important;
+						&:hover {
+							border-bottom-color: rgba($gaming_lightest, 0)!important;
+						}
+					}
 				}
 				.vtr-device-information {
 					background: $gaming_bg;
