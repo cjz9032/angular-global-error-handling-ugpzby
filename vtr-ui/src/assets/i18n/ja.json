@@ -4227,7 +4227,7 @@
         "ten": 10,
         "tuneUP": "お客様の PC はチューンアップが必要です",
         "section2Heading": "常に最高のパフォーマンスのPCへ",
-        "section2Description": "Smart Performanceは、２４時間３６５日システムを積極的にスキャンして、問題を検出して修正し、PCを常に最高のパフォーマンスに保ちます。",
+        "section2Description": "Smart Performanceは、24 時間 365 日システムを積極的にスキャンして、問題を検出して修正し、PCを常に最高のパフォーマンスに保ちます。",
         "tunePCPerformance": {
             "title": "PC パフォーマンスの調整",
             "heading": "コンピューターをもっと大切に",
@@ -4288,7 +4288,7 @@
                 "tab2Heading": "スパイウェアの削除",
                 "tab2Description": "不要と思われるプログラムをすべて削除します。",
                 "tab3Heading": "軽い動作で高速",
-                "tab3Description": "通常５～１０分でスキャンを終了します。"
+                "tab3Description": "通常 5~10 分でスキャンを終了します。"
             },
             "summaryTitle": "マルウェアとセキュリティー"
         },
@@ -4525,9 +4525,9 @@
         "scanCompletePage": {
             "title": "システムのスキャンが完了しました",
             "description": "こちらが {{machineFamilyName}} のスキャン結果です。",
-            "scanRates": "スキャンの評価(10段階): ",
+            "scanRates": "スキャンの評価(10 段階): ",
             "summary": "要約",
-            "summaryDetails": "スキャンによって <b>{{issueCount}} 件の問題</b>が見つかりました。今すぐサインアップしてこれらの問題を修正し、PCパフォーマンスを向上させましょう。Smart Performanceは、２４時間３６５日システムを積極的にスキャンして、問題を検出して修正し、PCを常に最高のパフォーマンスに保ちます。",
+            "summaryDetails": "スキャンによって <b>{{issueCount}} 件の問題</b>が見つかりました。今すぐサインアップしてこれらの問題を修正し、PCパフォーマンスを向上させましょう。Smart Performanceは、24 時間 365 日システムを積極的にスキャンして、問題を検出して修正し、PCを常に最高のパフォーマンスに保ちます。",
             "signupRepairButton": "今すぐサインアップして修復",
             "monthlyPricing": "<b>1 か月約 $2.5 です。</b>これらの問題を自動的に修正します。今日以降毎週 1 回 <a  href=\"#\">詳細を表示</a>",
             "issueCount": "{{individualIssueCount}} 件の問題",
