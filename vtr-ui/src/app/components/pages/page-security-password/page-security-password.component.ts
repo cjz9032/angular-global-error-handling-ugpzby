@@ -29,6 +29,7 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 	isOnline = true;
 	notificationSubscription: Subscription;
 	featureIntroduction: FeatureIntroduction;
+	reverseContent = false;
 
 	constructor(
 		private commonService: CommonService,
@@ -160,6 +161,7 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 
 	private getFeatureIntro(status: string) {
 		if (status === 'installed') {
+			this.reverseContent = true;
 			this.featureIntroduction.featureTitle = 'security.passwordManager.getStarted';
 			this.featureIntroduction.featureTitleDesc = 'security.passwordManager.checkOutThisGuide';
 			this.featureIntroduction.descHasLink = true;

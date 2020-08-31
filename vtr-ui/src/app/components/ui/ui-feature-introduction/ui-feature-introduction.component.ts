@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 interface IntroDetails {
 	mark?: string;
@@ -22,13 +22,9 @@ export interface FeatureIntroduction {
 	styleUrls: ['./ui-feature-introduction.component.scss']
 })
 
-export class UiFeatureIntroductionComponent implements OnInit {
+export class UiFeatureIntroductionComponent {
 	@Input() items: FeatureIntroduction;
 	@Input() textId = '';
-
-	constructor() { }
-
-	ngOnInit(): void {
-	}
+	@Input() reverse = false;
 
 }
