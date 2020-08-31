@@ -18,8 +18,6 @@ export class SanitizePipe implements PipeTransform {
 				return this.sanitizer.bypassSecurityTrustStyle(
 					this.sanitizer.sanitize(SecurityContext.STYLE, value)
 				);
-			case 'script':
-				return this.sanitizer.bypassSecurityTrustScript(value);
 			case 'url':
 				return this.sanitizer.bypassSecurityTrustUrl(
 					this.sanitizer.sanitize(SecurityContext.URL, value)
