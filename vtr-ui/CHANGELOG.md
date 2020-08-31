@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.48](https://bitbucket.tc.lenovo.com///compare/v1.7.47...v1.7.48) (2020-08-31)
+
+
+### Features
+
+* **Overall:** remove unused script sanitize pipe ([02d3292](https://bitbucket.tc.lenovo.com///commit/02d3292713a4183827ba3a51dbd5412dcbe09780))
+
+
+### Bug Fixes
+
+* **antivirus:** VAN-21490 fixed show unknown in other page ([df87f9c](https://bitbucket.tc.lenovo.com///commit/df87f9c824dbbccdeac064da6dae396b68c05af9))
+* **automation id:** VAN-21360 fixed av page duplicate auto id ([26fa321](https://bitbucket.tc.lenovo.com///commit/26fa32192b826c761afd8810d5b630ac7dd1bc84))
+* **Password manager style:** VAN-21529 fixed pm content displayed incorrect ([2071a76](https://bitbucket.tc.lenovo.com///commit/2071a76bb58df705552821d080ae4fa70829beac))
+
 ### [1.7.47](https://bitbucket.tc.lenovo.com///compare/v1.7.46...v1.7.47) (2020-08-28)
 
 ### [1.7.46](https://bitbucket.tc.lenovo.com///compare/v1.7.45...v1.7.46) (2020-08-27)
