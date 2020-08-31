@@ -154,7 +154,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 	refreshPage(id: string) {
 		clearTimeout(this.refreshTimeout);
 		this.refreshTimeout = setTimeout(() => {
-			if (id === 'sa-av-button-launch-mcafee' || id === 'sa-av-link-subscribe' || id === 'sa-av-btn-subscribe') {
+			if (id === 'sa-av-button-launch-mcafee' || (id.startsWith('sa-av') && id.endsWith('subscribe')) ) {
 				return;
 			}
 			this.antiVirus.refresh();
