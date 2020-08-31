@@ -143,6 +143,6 @@
 	}
 
 	&.icon {
-		@include icon-style($fontsize_sm, $weight_light, $blue-lighter, 0 0 0 0.5rem);
+		@include icon-style($fontsize_lg, $weight_light, $blue-lighter, 0 0 0 0.5rem);
 	}
 }

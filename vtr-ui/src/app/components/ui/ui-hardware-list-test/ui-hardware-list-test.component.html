@@ -31,9 +31,9 @@
 						(keyup.enter)="item.collapsed = !item.collapsed"
 						role="button"
 						[attr.aria-expanded]="item.collapsed">
-						<fa-icon *ngIf="item.collapsed; else expandArrow" [icon]="['fal', 'angle-up']"></fa-icon>
+						<fa-icon *ngIf="item.collapsed; else expandArrow" [icon]="['fal', 'chevron-up']"></fa-icon>
 						<ng-template #expandArrow>
-							<fa-icon [icon]="['fal', 'angle-down']"></fa-icon>
+							<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
 						</ng-template>
 					</div>
 				</div>

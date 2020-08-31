@@ -46,10 +46,10 @@
 	}
 
 	.img-icon {
-		width: 3.2rem;
-		height: 3.2rem;
-		vertical-align: top;
-		padding-top: 0.5rem;
+		width: 2.4rem;
+		height: 2.4rem;
+		vertical-align: middle;
+		margin-bottom: 1rem;
 	}
 
 	.details-link {
@@ -148,7 +148,6 @@
 
 		fa-icon {
 			font-size: $fontsize_lg;
-			color: $blue_lightest;
 			vertical-align: middle;
 		}
 
@@ -166,5 +165,9 @@
 
 	.not-wrap {
 		flex-wrap: nowrap;
+	}
+
+	p {
+		margin-bottom: 0rem;
 	}
 }
