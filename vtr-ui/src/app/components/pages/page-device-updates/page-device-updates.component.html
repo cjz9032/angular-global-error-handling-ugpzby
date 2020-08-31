@@ -24,7 +24,6 @@
 						[vtrAppSearchScroller]="['search-check-update']"
 						[subTitle1]="getLastUpdatedText()"
 						[subTitle2]="getNextUpdatedScanText()"
-						[buttonText]="'systemUpdates.banner.checkButton' | translate"
 						[percent]="percentCompleted"
 						[isCheckingStatus]="isCheckingStatus"
 						[isCancelingStatus]="isCancelingStatus"
@@ -33,8 +32,13 @@
 						[isCheckingPluginStatus]="isCheckingPluginStatus"
 						[installingPercent]="installationPercent"
 						[downloadingPercent]="downloadingPercent"
+						[isUpdatesAvailable]="updateAvailableAfterCheck()"
+						[isUpdateListVisible]="isUpdateListVisible()"
+						[isUpdateSelected]="isUpdateSelected()"
+						[isCheckedOnce]="systemUpdateService.checkedOnce"
 						(checkForUpdate)="onCheckForUpdates()"
 						(cancelUpdateCheck)="onCancelUpdateCheck()"
+						(updateNow)="showInstallConfirmation('selected')"
 						(cancelUpdateDownload)="onCancelUpdateDownload()">
 					</vtr-widget-device-update>
 				</div>

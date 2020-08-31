@@ -30,7 +30,7 @@ export class UiListCheckboxComponent implements OnInit, OnDestroy {
 	public version: string;
 	public installedVersion: string;
 	public installedVersionStatus = 0;
-	public downloadSize: string;
+	public downloadSizes: Array<string>;
 	public diskSpaceNeeded: string;
 	public readMeUrl = '';
 	public packageRebootType: string;
@@ -39,6 +39,8 @@ export class UiListCheckboxComponent implements OnInit, OnDestroy {
 	public severity = UpdateInstallSeverity.Optional;
 	public packageName: string;
 	public packageID: string;
+	public selectedColor = 'rgba(73, 127, 253, 0.102)';
+	public unselectedColor = '#f5f7f8';
 	// Random number is used to have unique id of each input field
 	randomNumber: number = Math.floor(new Date().valueOf() * SecureMath.random());
 
@@ -59,6 +61,7 @@ export class UiListCheckboxComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		this.getDownloadSize();
 	 }
 
 	onCheckChange($event: any) {
@@ -73,7 +76,6 @@ export class UiListCheckboxComponent implements OnInit, OnDestroy {
 		this.isReadMeAvailable = false;
 		this.manufacturer = update.packageVendor;
 		this.version = update.packageVersion;
-		this.downloadSize = this.commonService.formatBytes(parseInt(update.packageSize, 10));
 		this.diskSpaceNeeded = this.commonService.formatBytes(parseInt(update.diskSpaceRequired, 10));
 		this.readMeUrl = update.readmeUrl;
 		this.packageRebootType = update.packageRebootType;
@@ -170,5 +172,11 @@ export class UiListCheckboxComponent implements OnInit, OnDestroy {
 		if (this.translate2Subscription) {
 			this.translate2Subscription.unsubscribe();
 		}
+	}
+
+	private getDownloadSize() {
+		this.items.forEach(item => {
+			item.downloadSize = this.commonService.formatBytes(parseInt(item.packageSize, 10));
+		});
 	}
 }

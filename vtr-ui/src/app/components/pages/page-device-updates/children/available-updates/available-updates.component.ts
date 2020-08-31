@@ -46,6 +46,11 @@ export class AvailableUpdatesComponent implements OnInit {
 
 	constructor(private systemUpdateService: SystemUpdateService) { }
 
+	public criticalUpdatesIcon = 'assets/icons/Icon_Critical_Update.svg';
+	public recommendedUpdatesIcon = 'assets/icons/Icon_Recommended_Update.svg';
+	public optionalUpdateIcon = 'assets/icons/Icon_Optional_Update.svg';
+	public ignoredUpdateIcon = 'assets/icons/Icon_Eye_Slash.svg';
+
 	ngOnInit() {
 		if (!this.isInstallingAllUpdates) {
 			this.criticalUpdates = this.criticalUpdates.filter((item: AvailableUpdateDetail) => {

@@ -141,7 +141,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		{
 			readMoreText: '',
 			rightImageSource: ['far', 'question-circle'],
-			leftImageSource: 'assets/icons/Icon_critical_updates_20px.svg',
+			leftImageSource: 'assets/icons/Icon_Critical_Update.svg',
 			header: 'systemUpdates.autoUpdateSettings.critical.title',
 			name: 'critical-updates',
 			subHeader: '',
@@ -155,7 +155,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		{
 			readMoreText: '',
 			rightImageSource: ['far', 'question-circle'],
-			leftImageSource: 'assets/icons/Icon_recommended_updates_20px.svg',
+			leftImageSource: 'assets/icons/Icon_Recommended_Update.svg',
 			header: 'systemUpdates.autoUpdateSettings.recommended.title',
 			name: 'recommended-updates',
 			subHeader: '',
@@ -616,6 +616,21 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 				|| (this.optionalUpdates && this.optionalUpdates.length > 0)
 				|| (this.ignoredUpdates && this.ignoredUpdates.length > 0));
 		return isVisible;
+	}
+
+	public updateAvailableAfterCheck() {
+		return this.systemUpdateService.isUpdatesAvailable
+		&& !this.systemUpdateService.isUpdateDownloading
+		&& !this.systemUpdateService.isInstallationCompleted;
+	}
+
+	public isUpdateSelected() {
+		if (this.systemUpdateService.isUpdatesAvailable) {
+			const selectedUpdates = this.systemUpdateService.getSelectedUpdates(this.systemUpdateService.updateInfo.updateList);
+			return selectedUpdates.length > 0;
+		} else {
+			return false;
+		}
 	}
 
 	public onRebootClick($event) {

@@ -25,4 +25,5 @@ export class AvailableUpdateDetail {
 	public isIgnored = false;
 	public isACAttached = true;
 	public installationStatus: UpdateActionResult = UpdateActionResult.Unknown;
+	public downloadSize: string;
 }

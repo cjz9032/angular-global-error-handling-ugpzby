@@ -2,10 +2,8 @@
 
 .vtr-ui-list-checkbox {
 	.list-group {
-		margin: 3.5rem 0;
 		box-sizing: unset;
 		.list-group-item {
-			background: $grey_lighter;
 			padding: 1.5rem 1rem 1.5rem 0.2rem;
 			border: 0.1rem solid $note_border;
 			&:last-child {
@@ -24,8 +22,9 @@
 
 
 				.btn-round-sm {
+					margin-bottom: 0.6rem;
 					border-radius: 0.5rem;
-					padding: 0.5rem 1rem 0.5rem 1rem;
+					padding: 0.4rem 1rem 0.4rem 1rem;
 					font-size: 1.3rem;
 					background: $light;
 					border: 0rem;
@@ -41,10 +40,8 @@
 				}
 				.custom-control-label {
 					padding-left: 1.2rem;
-					@media #{$breakpoint_sm} {
-						padding-bottom: 1rem;
-					}
-
+					margin-bottom: 0.6rem;
+					
 					// rounded square-box background
 					&::before {
 						width: 1.8rem;
@@ -153,9 +150,16 @@
 						}
 					}
 				}
+				.download-size {
+					padding-left: 1.2rem;
+					font-size: $fontsize_xs2;
+					line-height: 1.4rem;		
+					color: $shade_blue;
+				}
 			}
 
 			.update-title {
+				line-height: 2rem;
 				font-size: $fontsize_xs;
 				font-weight: $weight_600;
 				padding-top: 0rem;
