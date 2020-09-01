@@ -404,7 +404,6 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		this.getPrivacyGuardCapabilityStatus();
 		this.getPrivacyGuardOnPasswordCapabilityStatus();
 		this.initCameraSection();
-		this.getOLEDPowerControlCapability();
 		const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 		if (machineType === 1) {
 			// commented below line to temporarily hide in current release
@@ -1400,25 +1399,6 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		}
 	}
 
-	// Updates whether device has OLEDPowerControl
-	public getOLEDPowerControlCapability() {
-		try {
-			if (this.displayService.isShellAvailable) {
-				this.displayService.getOLEDPowerControlCapability()
-					.then((result: boolean) => {
-						this.logger.debug('getOLEDPowerControlCapability.then', result);
-						this.hasOLEDPowerControlCapability = result;
-
-					}).catch(error => {
-						this.logger.error('getOLEDPowerControlCapability', error.message);
-
-					});
-			}
-		} catch (error) {
-			this.logger.error('getOLEDPowerControlCapability', error.message);
-			return EMPTY;
-		}
-	}
 	onClick(path) {
 		this.deviceService.launchUri(path);
 	}

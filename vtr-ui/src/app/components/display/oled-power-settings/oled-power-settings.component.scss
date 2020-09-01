@@ -1,29 +1,29 @@
 @import "../../../app.theme.scss";
 
 .vtr-oled-power-settings {
-	p.caption {
-		font-size: $fontsize_xs;
-		margin-left: 1rem !important;
-		color: $grey_dark;
-		font-weight: $weight_light;
-		padding-left: 0.5rem;
+  p.caption {
+    font-size: $fontsize_xs;
+	margin-left: 1rem !important;
+	color: $grey_dark;
+	font-weight: $weight_light;
+	padding-left: 0.5rem;
+  }
+  .dropdown {
+	margin-top: 2.5rem;
+	margin-left: 1.4rem;
+    section {
+      margin-bottom: 3rem;
+	  padding: 0 2rem 0 0;
+	  .oled-dimming-portions {
+		  height: 3.5rem;
+      h5 {
+        font-size: 1.1rem;
+        font-weight: $weight_bold;
+        color: rgba(66, 78, 123, 0.4);
+        margin-bottom: 1rem;
+        padding-left: 0.3rem;
+	  }
 	}
-	.dropdown {
-		margin-top: 2.5rem;
-		margin-left: 1.4rem;
-		section {
-			margin-bottom: 3rem;
-			padding: 0 2rem 0 0;
-			.oled-dimming-portions {
-				height: 3.5rem;
-				p {
-					font-size: 1.1rem;
-					font-weight: $weight_bold;
-					color: rgba(66, 78, 123, 0.4);
-					margin-bottom: 1rem;
-					padding-left: 0.3rem;
-				}
-			}
-		}
-	}
+    }
+  }
 }
