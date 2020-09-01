@@ -2,15 +2,14 @@
 	<ul class="list-group modal-scroll">
 		<li *ngFor="let item of items; let i = index"
 			id="{{ componentId }}-item-{{ i }}"
-			class="list-group-item" 
-			attr.aria-labelledby="{{ componentId }}-item-{{ i }}-name"
+			class="list-group-item"
 			>
 			<div class="module" [ngClass]="{'isSelected-item' : item.selected || item.indeterminate}">
 				<div class="custom-control">
 					<vtr-ui-checkbox
 						#checkbox
 						[componentId]="componentId + '-item-' + i"
-						[ariaLabel]="('hardwareScan.pluginTokens.' + item.name | translateDefault:item.name)"
+						[ariaLabel]="('hardwareScan.pluginTokens.' + item.name | translateDefault:item.name) + '-checkbox'"
 					 	[indeterminate]="item.indeterminate"
 						(click)="onDeviceSelectionClicked(item,checkbox.checked)"
 						[hasChild]="true"
@@ -46,7 +45,6 @@
 				<ul class="list-group">
 					<li *ngFor="let test of item.tests; let j = index"
 						id="{{ componentId }}-item-{{ i }}-subitem-{{ j }}"
-						attr.aria-labelledby="{{ componentId }}-item-{{ i }}-subitem-{{ j }}-name"
 						class="list-group-item"
 						(change)=onCheckChildren(item)
 						[ngClass]="{'isSelected-item' : test.selected}"
@@ -55,7 +53,7 @@
 							<div class="custom-control custom-checkbox">
 								<vtr-ui-checkbox
 									componentId="{{ componentId }}-item-{{ i }}-subitem-{{ j }}"
-									[ariaLabel]="('hardwareScan.pluginTokens.' + item.name | translateDefault:item.name) + ('hardwareScan.pluginTokens.' + test.name | translateDefault:test.name)"
+									[ariaLabel]="('hardwareScan.pluginTokens.' + item.name | translateDefault:item.name) + ('hardwareScan.pluginTokens.' + test.name | translateDefault:test.name) + '-checkbox'"
 									[checked]="test.selected"
 									[hasChild]="true"
 									[value]="test.selected"
