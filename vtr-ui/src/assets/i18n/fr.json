@@ -1585,12 +1585,12 @@
                 "display": {
                     "title": "Affichage",
                     "displayColorTemperature": {
-                        "title": "Mode Protection des yeux",
+                        "title": "Mode Protection visuelle",
                         "description": "Pour éviter toute fatigue oculaire, vous pouvez régler la température de couleur de votre écran afin de filtrer la lumière bleue lorsque vous utilisez votre ordinateur pendant une longue période. En outre, les couleurs chaudes favorisent un sommeil de qualité, en particulier pendant la nuit.",
                         "link": {
                             "click": "Cliquez",
                             "here": "ici",
-                            "rest": "pour changer la température des couleurs."
+                            "rest": "pour changer la température de couleur."
                         }
                     },
                     "eyeCareMode": {
@@ -1675,7 +1675,7 @@
                         "tooltip": "En mode privé, la caméra n'envoie plus d'images en direct. Activez cette fonction uniquement lorsque vous ne souhaitez pas partager d'images avec vos interlocuteurs lors d'appels vidéo.",
                         "cameraPrivacyAccessNote": "Accédez à la page <b>Paramètres Windows → Confidentialité → Caméra</b> et vérifiez que les deux options suivantes sont activées :<br>&bull; <b>Autoriser les applications de bureau à accéder à votre caméra</b><br>&bull; <b>Lenovo Vantage</b> sous \"Choisir (Microsoft Store) les applications qui peuvent accéder à votre caméra\"",
                         "noPermissionNote": "Lenovo Vantage n'a pas accès à votre caméra ou l'option « Autoriser les applications bureautiques à accéder à votre caméra » n'est pas activée.",
-                        "accessUrl": "Accéder aux paramètres Windows pour donner accès"
+                        "accessUrl": "Accéder aux paramètres Windows pour permettre l'accès"
                     },
                     "camera": {
                         "title": "Caméra",

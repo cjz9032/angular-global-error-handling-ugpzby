@@ -924,7 +924,7 @@
         },
         "systemStatus": {
             "title": "Estado del sistema",
-            "subtitle": "Actualización rápida del estado de su dispositivo.",
+            "subtitle": "Una rápida puesta al día acerca del estado de su dispositivo.",
             "memory": {
                 "title": "Memoria",
                 "detail": {
@@ -1000,7 +1000,7 @@
             "expired": "Caducó el",
             "of": "de",
             "warranty": {
-                "notFound": "No se encontró garantía",
+                "notFound": "No se encontró una garantía",
                 "detail": {
                     "title": "Ampliar garantía",
                     "inWarranty": "En garantía",
@@ -1588,7 +1588,7 @@
                         "title": "Modalidad de Cuidado de la visión",
                         "description": "Para evitar la fatiga ocular, puede ajustar la temperatura del color de la pantalla para filtrar la luz azul cuando utilice el sistema durante mucho tiempo. Además, los colores cálidos son buenos para su sueño, especialmente en la noche.",
                         "link": {
-                            "click": "Hacer clic en",
+                            "click": "Haga clic",
                             "here": "aquí",
                             "rest": "para cambiar la temperatura de color."
                         }
@@ -1675,7 +1675,7 @@
                         "tooltip": "La cámara deja de enviar imágenes en vivo cuando se activa la configuración Privado. Active esta configuración solo cuando no desee compartir sus imágenes a otros durante las llamadas de video.",
                         "cameraPrivacyAccessNote": "Vaya a la página <b>Valores de Windows → Privacidad → Cámara</b> y asegúrese de que las dos opciones a continuación estén habilitadas:<br>&bull; <b>Permitir que las aplicaciones de escritorio accedan a la cámara</b><br>&bull; <b>Lenovo Vantage</b> en “Elegir las aplicaciones de Microsoft Store que pueden acceder a la cámara”",
                         "noPermissionNote": "Lenovo Vantage no tiene acceso a la cámara o el alternador “Permitir que las aplicaciones de escritorio accedan a la cámara” no está habilitado.",
-                        "accessUrl": "Vaya a la configuración de Windows para dar acceso"
+                        "accessUrl": "Vaya a la configuración de Windows para otorgar acceso a Vantage"
                     },
                     "camera": {
                         "title": "Cámara",
