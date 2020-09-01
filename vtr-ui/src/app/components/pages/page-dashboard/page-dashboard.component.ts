@@ -341,7 +341,9 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 				}
 				if (this.isOnline) {
 					Object.keys(this.contentCards).forEach(cardId => {
-						this.contentCards[cardId].displayContent = result[cardId];
+						if(result[cardId] && result[cardId].length > 0) {
+							this.contentCards[cardId].displayContent = result[cardId];
+						}
 					});
 				}
 				this.setWelcomeTextTitle(result[this.positionOfWelcomeText]);
