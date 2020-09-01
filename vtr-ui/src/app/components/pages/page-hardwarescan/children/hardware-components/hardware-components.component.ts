@@ -264,10 +264,27 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		this.hardwareScanService.setCurrentTaskStep(TaskStep.Cancel);
 
 		const modalCancel = this.modalService.open(ModalCancelComponent, {
-			backdrop: 'static',
 			size: 'lg',
 			centered: true,
-			windowClass: 'cancel-modal-hwscan'
+			windowClass: 'cancel-modal-hwscan',
+			beforeDismiss: () => {
+				// The same modal will be used in two situations:
+				// - during countdown to start a cancelation --> we can close the modal when clicking outside it
+				// - when the actual cancelation has started --> we CAN'T close the modal when clicking outside it
+				// This way, the "beforeDismiss" event is being used to make ensure the correct behavior in both cases
+
+				const modal = (modalCancel.componentInstance as ModalCancelComponent);
+
+				// "Loading" means that the cancelation is already in progress
+				// So if I click outside the modal while cancelation didn't start yet, I'll stop the timer
+				if (!modal.loading){
+					modal.stopCountdown();
+				}
+
+				// Returning true or false indicates wheter the modal will be closed
+				// So if cancelation is already in progress (loading === true), I'll return false here to force the modal to stay open
+				return !modal.loading;
+			}
 		});
 
 		modalCancel.componentInstance.ItemParent = this.getMetricsParentValue();
@@ -585,7 +602,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	private openWaitHardwareComponentsModal() {
 		const modal: NgbModalRef = this.modalService.open(ModalWaitComponent, {
-			backdrop: 'static',
 			size: 'lg',
 			centered: true
 		});

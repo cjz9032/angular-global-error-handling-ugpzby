@@ -67,7 +67,7 @@ export class ModalCancelComponent implements OnInit, AfterViewInit {
 		}
 	}
 
-	private stopCountdown() {
+	public stopCountdown() {
 		this.isInCountdown = false;
 		clearInterval(this.timerRef);
 	}
