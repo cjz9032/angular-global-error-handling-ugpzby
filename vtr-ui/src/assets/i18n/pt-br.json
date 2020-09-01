@@ -924,7 +924,7 @@
         },
         "systemStatus": {
             "title": "Status do sistema",
-            "subtitle": "Mantenha o status do dispositivo atualizado rapidamente.",
+            "subtitle": "Atualize o status do dispositivo rapidamente.",
             "memory": {
                 "title": "Memória",
                 "detail": {
@@ -1557,7 +1557,7 @@
                     },
                     "optimize": {
                         "title": "Otimizar meu microfone para:",
-                        "tooltip": "Configure o efeito do microfone para aprimorar sua experiência de áudio em diferentes cenários e ambientes.",
+                        "tooltip": "Configurar o efeito do microfone para melhorar a experiência de áudio em diferentes cenários e ambientes.",
                         "options": {
                             "VoiceRecognition": "RECONHECIMENTO DE VOZ",
                             "OnlyMyVoice": "SOMENTE MINHA VOZ",
@@ -4952,7 +4952,7 @@
             "disconnectDevice": "Disconnect this device from Connected Home Security",
             "disconnect": "disconnect",
             "goDashboard": "go to dashboard",
-            "buyNow": "Buy Now",
+            "buyNow": "Comprar",
             "extendNow": "extend now",
             "renewNow": "Renew Now",
             "poweredBy": "Powered by Coronet",
