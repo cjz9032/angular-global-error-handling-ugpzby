@@ -7,7 +7,7 @@ export const NORMAL_CONTENTS = {
 			Action: '',
 			ActionType: 'Internal',
 			ActionLink: '13cada49d4274587a80e26b00dff59a4',
-			BrandName: '',
+			BrandName: 'BrandName A1',
 			BrandImage: '',
 			Priority: 'P1',
 			OverlayTheme: 'dark',
@@ -24,7 +24,6 @@ export const NORMAL_CONTENTS = {
 			BrandName: '',
 			BrandImage: '',
 			Priority: 'P1',
-			OverlayTheme: 'dark',
 			DisplayStartDate: null,
 			ExpirationDate: null
 		}

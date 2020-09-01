@@ -50,9 +50,16 @@ export class ContentCacheService {
   public async getCachedContents(page: string, contentCards: any) {
     const startTime = new Date();
     const cmsOptions = await this.cmsService.generateContentQueryParams({ Page: page });
-    const cacheKey = Md5.hashStr(JSON.stringify(cmsOptions)) + '';
+	const cacheKey = Md5.hashStr(JSON.stringify(cmsOptions)) + '';
+	
+	var cachedContents = null;
+	try {
+		cachedContents = await this.loadCachedContents(cacheKey) || await this.loadBuildInContents(cmsOptions);
+	}
+	catch(error) {
+		this.logger.error('Load contents error ', error);
+	}
 
-    var cachedContents = await this.loadCachedContents(cacheKey) || await this.loadBuildInContents(cmsOptions);
     this.sendCacheMetrics(startTime, 'loadedCacheContents');
 
     if (!this.ongoingCacheProcesses[cacheKey]) {

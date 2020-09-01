@@ -336,6 +336,9 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	private getCachedContent(lang?: string) {
 		this.getTileSource().then(() => {
 			this.contentLocalCache.getCachedContents(this.pageTypeOfdashboard, this.contentCards).then((result) => {
+				if(!result || result.length == 0) {
+					return;
+				}
 				if (this.isOnline) {
 					Object.keys(this.contentCards).forEach(cardId => {
 						this.contentCards[cardId].displayContent = result[cardId];

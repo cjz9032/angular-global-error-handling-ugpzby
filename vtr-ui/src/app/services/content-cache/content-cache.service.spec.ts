@@ -378,7 +378,7 @@ describe('ContentCacheService', () => {
 				upeContent: undefined
 			}
 		};
-		cmsService.getOneCMSContent.and.returnValue(UPE_CONTENTS);
+		cmsService.getOneCMSContent.and.returnValue(null);
 		upeService.fetchUPEContent.and.returnValue(UPE_CONTENTS);
 		cmsService.fetchContents.and.returnValue(null);
 		localInfoService.getLocalInfo.and.returnValue(localInfo);
@@ -609,7 +609,7 @@ describe('ContentCacheService', () => {
 		await service.getCachedContents('normalContents', null);
 		cmsService.getLocalinfo.and.returnValue(localInfo);
 		cmsService.fetchCMSArticle.and.returnValue(ARTICLE);
-		const ret = await service.getArticleById(ContentActionType.Internal, '13cada49d4274587a80e26b00dff59a5');
+		const ret = await service.getArticleById(ContentActionType.Internal, '13cada49d4274587a80e26b00dff59a4');
 		expect(ret).toEqual(ARTICLE);
 	});
 
