@@ -2264,6 +2264,9 @@
         "support": {
             "title": "联想支持网站"
         },
+        "security": {
+            "title": "For a better protection for your device"
+        },
         "banner": {
             "neverChecked": "欢迎使用系统更新。",
             "title": "保持最新状态的系统才是健康的系统。",

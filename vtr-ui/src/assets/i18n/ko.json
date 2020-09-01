@@ -2264,6 +2264,9 @@
         "support": {
             "title": "Lenovo 지원 웹 사이트"
         },
+        "security": {
+            "title": "For a better protection for your device"
+        },
         "banner": {
             "neverChecked": "시스템 업데이트를 시작합니다.",
             "title": "최신 시스템은 정상적인 시스템입니다.",

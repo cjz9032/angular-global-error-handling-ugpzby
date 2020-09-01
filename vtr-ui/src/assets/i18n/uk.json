@@ -2264,6 +2264,9 @@
         "support": {
             "title": "Веб-сайт служби підтримки Lenovo"
         },
+        "security": {
+            "title": "For a better protection for your device"
+        },
         "banner": {
             "neverChecked": "Запрошуємо скористатися функцією \"Оновлення системи\".",
             "title": "Оновлена система — це справна система.",

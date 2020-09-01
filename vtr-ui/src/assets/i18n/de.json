@@ -2264,6 +2264,9 @@
         "support": {
             "title": "Lenovo Support-Website"
         },
+        "security": {
+            "title": "For a better protection for your device"
+        },
         "banner": {
             "neverChecked": "Willkommen bei der Systemaktualisierung.",
             "title": "Ein aktuelles System ist in gutem Zustand.",

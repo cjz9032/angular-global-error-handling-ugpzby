@@ -2264,6 +2264,9 @@
         "support": {
             "title": "Lenovon tukisivusto"
         },
+        "security": {
+            "title": "For a better protection for your device"
+        },
         "banner": {
             "neverChecked": "Tervetuloa käyttämään Järjestelmäpäivitystä.",
             "title": "Ajan tasalla oleva järjestelmä on terve järjestelmä.",
