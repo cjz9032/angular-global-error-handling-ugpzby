@@ -260,6 +260,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public onCancelScan() {
 		const isCancelingRBS = this.isRecoverExecuting();
+
 		this.hardwareScanService.setCurrentTaskStep(TaskStep.Cancel);
 
 		const modalCancel = this.modalService.open(ModalCancelComponent, {
@@ -426,14 +427,12 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			.finally(() => {
 				this.cleaningUpScan(undefined);
 
-				// Necessary to save the current results to be used by metrics before modules being updated
 				const metricsResult = this.getMetricsTaskResult();
 				this.sendTaskActionMetrics(this.hardwareScanService.getCurrentTaskType(), metricsResult.countSuccesses,
 					'', metricsResult.scanResultJson, this.timerService.stop());
 
 				// Defines information about module details
 				this.onViewResults();
-
 				this.modules.forEach(module => { module.expanded = true; });
 			});
 		}
