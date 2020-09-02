@@ -336,20 +336,20 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	private getCachedContent(lang?: string) {
 		this.getTileSource().then(() => {
 			this.contentLocalCache.getCachedContents(this.pageTypeOfdashboard, this.contentCards).then((result) => {
-				if(!result || result.length == 0) {
+				if (!result) {
 					return;
 				}
 				if (this.isOnline) {
 					Object.keys(this.contentCards).forEach(cardId => {
-						if(result[cardId] && result[cardId].length > 0) {
+						if (result[cardId]) {
 							this.contentCards[cardId].displayContent = result[cardId];
 						}
 					});
 				}
 				this.setWelcomeTextTitle(result[this.positionOfWelcomeText]);
-			})	
+			})
 		});
-	
+
 		this.dccService.canShowDccDemo().then((show) => {
 			if (show) {
 				this.getHeroBannerDemoItems();
