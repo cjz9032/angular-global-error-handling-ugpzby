@@ -300,5 +300,8 @@ export enum LocalStorageKey {
 	IsFreePCScanRun = '[LocalStorageKey] IsFreePCScanRun',
 	// Hide Camera Preview on some models
 	IsCameraPreviewHidden = '[LocalStorageKey] IsCameraPreviewHidden',
-	ShouldCameraSectionDisabled = '[LocalStorageKey] ShouldCameraSectionDisabled'
+	ShouldCameraSectionDisabled = '[LocalStorageKey] ShouldCameraSectionDisabled',
+
+	// OLED power control
+	OledPowerSettings = '[LocalStorageKey] OledPowerSettings'
 }

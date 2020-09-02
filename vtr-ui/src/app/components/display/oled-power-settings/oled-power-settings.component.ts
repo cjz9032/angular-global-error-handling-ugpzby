@@ -1,41 +1,43 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
+import { DropDownInterval } from '../../../data-models/common/drop-down-interval.model';
 import { TranslateService } from '@ngx-translate/core';
-import { EMPTY } from 'rxjs';
-import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 import { DisplayService } from 'src/app/services/display/display.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { DropDownInterval } from '../../../data-models/common/drop-down-interval.model';
+import { EMPTY } from 'rxjs';
+import { CommonService } from 'src/app/services/common/common.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { OledPowerSettings } from 'src/app/data-models/device/oled-power-settings.model';
 
 @Component({
 	selector: 'vtr-oled-power-settings',
 	templateUrl: './oled-power-settings.component.html',
 	styleUrls: ['./oled-power-settings.component.scss']
 })
-export class OledPowerSettingsComponent implements OnInit, OnChanges {
+export class OledPowerSettingsComponent implements OnInit {
 	@Input() description: any;
-	@Input() hasOLEDPowerControlCapability;
 	title: string;
+	oledPowerSettingsCache: OledPowerSettings;
 	public intervals: DropDownInterval[];
-	public taskBarDimmerValue: number;
-	public backgroundDimmerValue: number;
-	public displayDimmerValue: number;
-	public metricsParent = CommonMetricsModel.ParentDeviceSettings;
+	public oledPowerSettings = new OledPowerSettings(false, 0, 0, 0);
 
 	constructor(
 		public displayService: DisplayService,
+		private commonService: CommonService,
 		private logger: LoggerService,
 		private translate: TranslateService) { }
 
 	ngOnInit() {
 		this.populateIntervals();
+		this.initOledDataFromCache();
 		this.initOledSettings();
 	}
 
-	ngOnChanges(changes: SimpleChanges) {
-		// only run when property "data" changed
-		if (changes.hasOLEDPowerControlCapability) {
-			this.logger.info(' hasOLEDPowerControlCapability value changed', this.hasOLEDPowerControlCapability);
-			this.initOledSettings();
+	private initOledDataFromCache() {
+		this.oledPowerSettingsCache = this.commonService.getLocalStorageValue(LocalStorageKey.OledPowerSettings, undefined);
+		if (this.oledPowerSettingsCache !== undefined) {
+			this.oledPowerSettings = this.oledPowerSettingsCache;
+		} else {
+			this.oledPowerSettingsCache = new OledPowerSettings(false, 0, 0, 0);
 		}
 	}
 
@@ -127,28 +129,24 @@ export class OledPowerSettingsComponent implements OnInit, OnChanges {
 	}
 
 	public initOledSettings() {
-		try {
-			if (this.displayService.isShellAvailable) {
-				this.displayService.getOLEDPowerControlCapability()
-					.then((result: boolean) => {
-						this.logger.info('OLED-Power-Settings : getOLEDPowerControlCapability.then', result);
-						this.hasOLEDPowerControlCapability = result;
-						if (this.hasOLEDPowerControlCapability === true) {
-							this.getTaskbarDimmerSetting();
-							this.getBackgroundDimmerSetting();
-							this.getDisplayDimmerSetting();
-						}
+		if (this.displayService.isShellAvailable) {
+			this.logger.info('OLED-Power-Settings : before getOLEDPowerControlCapability');
+			this.displayService.getOLEDPowerControlCapability()
+				.then((result: boolean) => {
+					this.logger.info('OLED-Power-Settings : getOLEDPowerControlCapability.then', result);
+					this.oledPowerSettings.isCapable = result;
+					if (this.oledPowerSettings.isCapable) {
+						this.getTaskbarDimmerSetting();
+						this.getBackgroundDimmerSetting();
+						this.getDisplayDimmerSetting();
+					}
+					this.oledPowerSettingsCache.isCapable = this.oledPowerSettings.isCapable;
+					this.commonService.setLocalStorageValue(LocalStorageKey.OledPowerSettings, this.oledPowerSettingsCache);
 
-					}).catch(error => {
-						this.logger.error('OLED-Power-Settings : getOLEDPowerControlCapability', error.message);
-						return EMPTY;
-					});
-			}
-		} catch (error) {
-			this.logger.error('OLED-Power-Settings : getOLEDPowerControlCapability', error.message);
-			return EMPTY;
-
-
+				}).catch(error => {
+					this.logger.error('OLED-Power-Settings : getOLEDPowerControlCapability', error.message);
+					return EMPTY;
+				});
 		}
 	}
 
@@ -157,7 +155,7 @@ export class OledPowerSettingsComponent implements OnInit, OnChanges {
 		this.logger.info('OLED-Power-Settings : onTaskBarDimmerChange', String($event.value));
 		if ($event) {
 			this.title = $event.placeholder;
-			this.taskBarDimmerValue = $event.value;
+			this.oledPowerSettings.taskBarDimmerValue = $event.value;
 			this.setTaskbarDimmerSetting($event.value);
 		}
 	}
@@ -166,7 +164,7 @@ export class OledPowerSettingsComponent implements OnInit, OnChanges {
 		this.logger.info('OLED-Power-Settings : onBackgroundDimmerChange', String($event.value));
 		if ($event) {
 			this.title = $event.placeholder;
-			this.backgroundDimmerValue = $event.value;
+			this.oledPowerSettings.backgroundDimmerValue = $event.value;
 			this.setBackgroundDimmerSetting($event.value);
 		}
 	}
@@ -175,7 +173,7 @@ export class OledPowerSettingsComponent implements OnInit, OnChanges {
 		this.logger.info('OLED-Power-Settings : onDisplayDimmerChange', String($event.value));
 		if ($event) {
 			this.title = $event.placeholder;
-			this.displayDimmerValue = $event.value;
+			this.oledPowerSettings.displayDimmerValue = $event.value;
 			this.setDisplayDimmerSetting($event.value);
 		}
 	}
@@ -183,71 +181,61 @@ export class OledPowerSettingsComponent implements OnInit, OnChanges {
 
 
 	getTaskbarDimmerSetting() {
-		try {
-			if (this.displayService.isShellAvailable && this.hasOLEDPowerControlCapability) {
-				this.displayService.getTaskbarDimmerSetting()
-					.then((result: any) => {
-						this.logger.info('OLED-Power-Settings : getTaskbarDimmerSetting.then', result.displayStrIndex);
-						// this.taskbarDimmerSetting = result;
-						this.taskBarDimmerValue = result.displayStrIndex;
+		if (this.displayService.isShellAvailable) {
+			this.logger.info('OLED-Power-Settings : before getTaskbarDimmerSetting');
+			this.displayService.getTaskbarDimmerSetting()
+				.then((result: any) => {
+					this.logger.info('OLED-Power-Settings : getTaskbarDimmerSetting.then', result);
+					this.oledPowerSettings.taskBarDimmerValue = result.displayStrIndex;
+					this.oledPowerSettingsCache.taskBarDimmerValue = result.displayStrIndex;
+					this.commonService.setLocalStorageValue(LocalStorageKey.OledPowerSettings, this.oledPowerSettingsCache);
 
-					}).catch(error => {
-						this.logger.error('OLED-Power-Settings : getTaskbarDimmerSetting error', error.message);
-						return EMPTY;
-
-					});
-			}
-		} catch (error) {
-			this.logger.error('OLED-Power-Settings : getTaskbarDimmerSetting error', error.message);
-			return EMPTY;
+				}).catch(error => {
+					this.logger.error('OLED-Power-Settings : getTaskbarDimmerSetting error', error.message);
+					return EMPTY;
+				});
 		}
 	}
 
 	getBackgroundDimmerSetting() {
-		try {
-			if (this.displayService.isShellAvailable && this.hasOLEDPowerControlCapability) {
-				this.displayService.getBackgroundDimmerSetting()
-					.then((result: any) => {
-						this.logger.info('OLED-Power-Settings : getBackgroundDimmerSetting.then', result.displayStrIndex);
-						/* this.backgroundDimmerSetting = result; */
-						this.backgroundDimmerValue = result.displayStrIndex;
+		if (this.displayService.isShellAvailable) {
+			this.logger.info('OLED-Power-Settings : before getBackgroundDimmerSetting');
+			this.displayService.getBackgroundDimmerSetting()
+				.then((result: any) => {
+					this.logger.info('OLED-Power-Settings : getBackgroundDimmerSetting.then', result);
+					this.oledPowerSettings.backgroundDimmerValue = result.displayStrIndex;
+					this.oledPowerSettingsCache.backgroundDimmerValue = result.displayStrIndex;
+					this.commonService.setLocalStorageValue(LocalStorageKey.OledPowerSettings, this.oledPowerSettingsCache);
 
-					}).catch(error => {
-						this.logger.error('OLED-Power-Settings : getBackgroundDimmerSetting error', error.message);
-						return EMPTY;
-					});
-			}
-		} catch (error) {
-			this.logger.error('OLED-Power-Settings : getBackgroundDimmerSetting error', error.message);
-			return EMPTY;
+				}).catch(error => {
+					this.logger.error('OLED-Power-Settings : getBackgroundDimmerSetting error', error.message);
+					return EMPTY;
+				});
 		}
 	}
 
 	getDisplayDimmerSetting() {
-		try {
-			if (this.displayService.isShellAvailable && this.hasOLEDPowerControlCapability) {
-				this.displayService.getDisplayDimmerSetting()
-					.then((result: any) => {
-						this.logger.info('OLED-Power-Settings : getDisplayDimmerSetting.then', result.displayStrIndex);
-						/* this.displayDimmerSetting = result; */
-						this.displayDimmerValue = result.displayStrIndex;
+		if (this.displayService.isShellAvailable) {
+			this.logger.info('OLED-Power-Settings : before getDisplayDimmerSetting');
+			this.displayService.getDisplayDimmerSetting()
+				.then((result: any) => {
+					this.logger.info('OLED-Power-Settings : getDisplayDimmerSetting.then', result);
+					this.oledPowerSettings.displayDimmerValue = result.displayStrIndex;
+					this.oledPowerSettingsCache.displayDimmerValue = result.displayStrIndex;
+					this.commonService.setLocalStorageValue(LocalStorageKey.OledPowerSettings, this.oledPowerSettingsCache);
 
-					}).catch(error => {
-						this.logger.error('OLED-Power-Settings : getDisplayDimmerSetting error', error.message);
-						return EMPTY;
-					});
-			}
-		} catch (error) {
-			this.logger.error('OLED-Power-Settings : getDisplayDimmerSetting error', error.message);
-			return EMPTY;
+				}).catch(error => {
+					this.logger.error('OLED-Power-Settings : getDisplayDimmerSetting error', error.message);
+					return EMPTY;
+				});
 		}
 	}
 
 
-	setTaskbarDimmerSetting(value: number) {
+	private setTaskbarDimmerSetting(value: number) {
 		try {
 			this.logger.info('OLED-Power-Settings : setTaskbarDimmerSetting changed in display', value);
-			if (this.displayService.isShellAvailable && this.hasOLEDPowerControlCapability) {
+			if (this.displayService.isShellAvailable) {
 				this.displayService
 					.setTaskbarDimmerSetting(String(value)).then((result: boolean) => {
 						this.logger.info('OLED-Power-Settings : setTaskbarDimmerSetting.then', result);
@@ -264,11 +252,11 @@ export class OledPowerSettingsComponent implements OnInit, OnChanges {
 	}
 
 
-	setBackgroundDimmerSetting(value: number) {
+	private setBackgroundDimmerSetting(value: number) {
 		try {
 			this.logger.info('OLED-Power-Settings : setBackgroundDimmerSetting changed in display', value);
 
-			if (this.displayService.isShellAvailable && this.hasOLEDPowerControlCapability) {
+			if (this.displayService.isShellAvailable) {
 				this.displayService
 					.setBackgroundDimmerSetting(String(value)).then((result: boolean) => {
 						this.logger.info('OLED-Power-Settings : setBackgroundDimmerSetting.then', result);
@@ -286,12 +274,12 @@ export class OledPowerSettingsComponent implements OnInit, OnChanges {
 	}
 
 
-	setDisplayDimmerSetting(value: number) {
+	private setDisplayDimmerSetting(value: number) {
 		try {
 			this.logger.info('OLED-Power-Settings : setDisplayDimmerSetting changed in display', value);
 
 
-			if (this.displayService.isShellAvailable && this.hasOLEDPowerControlCapability) {
+			if (this.displayService.isShellAvailable) {
 				this.displayService
 					.setDisplayDimmerSetting(String(value)).then((result: boolean) => {
 						this.logger.info('OLED-Power-Settings : setDisplayDimmerSetting.then', result);
