@@ -55,7 +55,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		this.hardwareScanService.setDeviceInRecover(value);
 	}
 	public get deviceInRecover(): string {
-
 		return this.hardwareScanService.getDeviceInRecover();
 	}
 
