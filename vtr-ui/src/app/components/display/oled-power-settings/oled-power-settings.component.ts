@@ -186,8 +186,9 @@ export class OledPowerSettingsComponent implements OnInit {
 			this.displayService.getTaskbarDimmerSetting()
 				.then((result: any) => {
 					this.logger.info('OLED-Power-Settings : getTaskbarDimmerSetting.then', result);
-					this.oledPowerSettings.taskBarDimmerValue = result.displayStrIndex;
-					this.oledPowerSettingsCache.taskBarDimmerValue = result.displayStrIndex;
+					const value = result.displayStrIndex >= 0 ? result.displayStrIndex : undefined;
+					this.oledPowerSettings.taskBarDimmerValue = value;
+					this.oledPowerSettingsCache.taskBarDimmerValue = value;
 					this.commonService.setLocalStorageValue(LocalStorageKey.OledPowerSettings, this.oledPowerSettingsCache);
 
 				}).catch(error => {
@@ -203,8 +204,9 @@ export class OledPowerSettingsComponent implements OnInit {
 			this.displayService.getBackgroundDimmerSetting()
 				.then((result: any) => {
 					this.logger.info('OLED-Power-Settings : getBackgroundDimmerSetting.then', result);
-					this.oledPowerSettings.backgroundDimmerValue = result.displayStrIndex;
-					this.oledPowerSettingsCache.backgroundDimmerValue = result.displayStrIndex;
+					const value = result.displayStrIndex >= 0 ? result.displayStrIndex : undefined;
+					this.oledPowerSettings.backgroundDimmerValue = value;
+					this.oledPowerSettingsCache.backgroundDimmerValue = value;
 					this.commonService.setLocalStorageValue(LocalStorageKey.OledPowerSettings, this.oledPowerSettingsCache);
 
 				}).catch(error => {
@@ -220,8 +222,9 @@ export class OledPowerSettingsComponent implements OnInit {
 			this.displayService.getDisplayDimmerSetting()
 				.then((result: any) => {
 					this.logger.info('OLED-Power-Settings : getDisplayDimmerSetting.then', result);
-					this.oledPowerSettings.displayDimmerValue = result.displayStrIndex;
-					this.oledPowerSettingsCache.displayDimmerValue = result.displayStrIndex;
+					const value = result.displayStrIndex >= 0 ? result.displayStrIndex : undefined;
+					this.oledPowerSettings.displayDimmerValue = value;
+					this.oledPowerSettingsCache.displayDimmerValue = value;
 					this.commonService.setLocalStorageValue(LocalStorageKey.OledPowerSettings, this.oledPowerSettingsCache);
 
 				}).catch(error => {
