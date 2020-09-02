@@ -11,7 +11,7 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { ModalHardwareScanCustomizeComponent } from '../../../../modal/modal-hardware-scan-customize/modal-hardware-scan-customize.component';
 import { ModalCancelComponent } from '../../../../modal/modal-cancel/modal-cancel.component';
 import { ModalScanFailureComponent } from '../../../../modal/modal-scan-failure/modal-scan-failure.component';
-import { ModalScheduleScanCollisionComponent } from '../../../../modal/modal-schedule-scan-collision/modal-schedule-scan-collision.component';
+import { ModalPreScanInfoComponent } from '../../../../modal/modal-pre-scan-info/modal-pre-scan-info.component';
 import { HardwareScanService } from '../../../../../services/hardware-scan/hardware-scan.service';
 import { HardwareScanResultService } from '../../../../../services/hardware-scan/hardware-scan-result.service';
 import { PreviousResultService } from '../../../../../services/hardware-scan/previous-result.service';
@@ -55,6 +55,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		this.hardwareScanService.setDeviceInRecover(value);
 	}
 	public get deviceInRecover(): string {
+
 		return this.hardwareScanService.getDeviceInRecover();
 	}
 
@@ -264,27 +265,10 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		this.hardwareScanService.setCurrentTaskStep(TaskStep.Cancel);
 
 		const modalCancel = this.modalService.open(ModalCancelComponent, {
+			backdrop: 'static',
 			size: 'lg',
 			centered: true,
-			windowClass: 'cancel-modal-hwscan',
-			beforeDismiss: () => {
-				// The same modal will be used in two situations:
-				// - during countdown to start a cancelation --> we can close the modal when clicking outside it
-				// - when the actual cancelation has started --> we CAN'T close the modal when clicking outside it
-				// This way, the "beforeDismiss" event is being used to make ensure the correct behavior in both cases
-
-				const modal = (modalCancel.componentInstance as ModalCancelComponent);
-
-				// "Loading" means that the cancelation is already in progress
-				// So if I click outside the modal while cancelation didn't start yet, I'll stop the timer
-				if (!modal.loading){
-					modal.stopCountdown();
-				}
-
-				// Returning true or false indicates wheter the modal will be closed
-				// So if cancelation is already in progress (loading === true), I'll return false here to force the modal to stay open
-				return !modal.loading;
-			}
+			windowClass: 'cancel-modal-hwscan'
 		});
 
 		modalCancel.componentInstance.ItemParent = this.getMetricsParentValue();
@@ -717,7 +701,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			}
 
 			if (this.batteryMessage !== '') {
-				const modal: NgbModalRef = this.modalService.open(ModalScheduleScanCollisionComponent, {
+				const modal: NgbModalRef = this.modalService.open(ModalPreScanInfoComponent, {
 					backdrop: 'static',
 					size: 'lg',
 					centered: true,
@@ -726,11 +710,11 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 				this.hardwareScanService.setCurrentTaskStep(TaskStep.Confirm);
 
-				( modal.componentInstance as ModalScheduleScanCollisionComponent).error = this.translate.instant('hardwareScan.warning');
-				( modal.componentInstance as ModalScheduleScanCollisionComponent).description = this.batteryMessage;
-				( modal.componentInstance as ModalScheduleScanCollisionComponent).ItemParent = this.getMetricsParentValue();
-				( modal.componentInstance as ModalScheduleScanCollisionComponent).CancelItemName = this.getMetricsItemNameClose();
-				( modal.componentInstance as ModalScheduleScanCollisionComponent).ConfirmItemName = this.getMetricsItemNameConfirm();
+				( modal.componentInstance as ModalPreScanInfoComponent).error = this.translate.instant('hardwareScan.warning');
+				( modal.componentInstance as ModalPreScanInfoComponent).description = this.batteryMessage;
+				( modal.componentInstance as ModalPreScanInfoComponent).ItemParent = this.getMetricsParentValue();
+				( modal.componentInstance as ModalPreScanInfoComponent).CancelItemName = this.getMetricsItemNameClose();
+				( modal.componentInstance as ModalPreScanInfoComponent).ConfirmItemName = this.getMetricsItemNameConfirm();
 
 				modal.result.then((result) => {
 					this.getDoScan(taskType, requests);

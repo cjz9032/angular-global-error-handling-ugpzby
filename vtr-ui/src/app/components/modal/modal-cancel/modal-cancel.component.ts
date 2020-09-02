@@ -1,13 +1,14 @@
-import { Component, OnInit, Output, EventEmitter, Input, ViewChildren, ElementRef, AfterViewInit, QueryList } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter, Input, ViewChildren, ElementRef, AfterViewInit, QueryList } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { disableBackgroundNavigation, reEnableBackgroundNavigation } from '../../../services/hardware-scan/utils/ModalBackgroundNavigationUtils';
 
 @Component({
 	selector: 'vtr-modal-cancel',
 	templateUrl: './modal-cancel.component.html',
 	styleUrls: ['./modal-cancel.component.scss']
 })
-export class ModalCancelComponent implements OnInit, AfterViewInit {
+export class ModalCancelComponent implements OnInit, AfterViewInit, OnDestroy  {
 
 	description: string = this.translate.instant('hardwareScan.cancelMayTakeSomeTime');
 	isInCountdown = true;
@@ -36,6 +37,11 @@ export class ModalCancelComponent implements OnInit, AfterViewInit {
 				this.onAgree();
 			}
 		}, this.MS_INTERVAL);
+		disableBackgroundNavigation(document);
+	}
+
+	ngOnDestroy(){
+		reEnableBackgroundNavigation(document);
 	}
 
 	ngAfterViewInit() {

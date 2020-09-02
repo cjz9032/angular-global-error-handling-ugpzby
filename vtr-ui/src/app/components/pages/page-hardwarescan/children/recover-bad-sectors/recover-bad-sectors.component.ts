@@ -73,6 +73,7 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 		if (leastOneSelected !== undefined) {
 
 			const modal: NgbModalRef = this.modalService.open(ModalRecoverConfirmComponent, {
+				backdrop: 'static',
 				size: 'lg',
 				centered: true,
 				windowClass: 'hardware-scan-modal-size'
