@@ -8,7 +8,7 @@ import { ModalWaitComponent } from '../../components/modal/modal-wait/modal-wait
 import { ModalCancelComponent } from '../../components/modal/modal-cancel/modal-cancel.component';
 import { ModalScanFailureComponent } from '../../components/modal/modal-scan-failure/modal-scan-failure.component';
 import { ModalScheduleNewScanComponent } from '../../components/modal/modal-schedule-new-scan/modal-schedule-new-scan.component';
-import { ModalScheduleScanCollisionComponent } from '../../components/modal/modal-schedule-scan-collision/modal-schedule-scan-collision.component';
+import { ModalPreScanInfoComponent } from '../../components/modal/modal-pre-scan-info/modal-pre-scan-info.component';
 import { ModalHardwareScanCustomizeComponent } from '../../components/modal/modal-hardware-scan-customize/modal-hardware-scan-customize.component';
 import { ModalRecoverConfirmComponent } from '../../components/modal/modal-recover-confirm/modal-recover-confirm.component';
 import { PageHardwareScanComponent } from '../../components/pages/page-hardwarescan/page-hardware-scan.component';
@@ -58,7 +58,7 @@ import { UiHyperlinkButtonComponent } from '../../components/ui/ui-hyperlink-but
 		ModalScanFailureComponent,
 		ModalHardwareScanCustomizeComponent,
 		ModalScheduleNewScanComponent,
-		ModalScheduleScanCollisionComponent,
+		ModalPreScanInfoComponent,
 		PageHardwareScanComponent,
 		UiDropdownHwscanComponent,
 		UiHardwareListComponent,
@@ -109,7 +109,7 @@ import { UiHyperlinkButtonComponent } from '../../components/ui/ui-hyperlink-but
 		ModalScanFailureComponent,
 		ModalHardwareScanCustomizeComponent,
 		ModalScheduleNewScanComponent,
-		ModalScheduleScanCollisionComponent,
+		ModalPreScanInfoComponent,
 	]
 })
 export class HardwareScanModule {

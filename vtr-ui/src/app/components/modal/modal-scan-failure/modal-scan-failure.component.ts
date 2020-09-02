@@ -1,14 +1,15 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
 import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.enum';
+import { disableBackgroundNavigation, reEnableBackgroundNavigation } from '../../../services/hardware-scan/utils/ModalBackgroundNavigationUtils';
 
 @Component({
 	selector: 'vtr-modal-scan-failure',
 	templateUrl: './modal-scan-failure.component.html',
 	styleUrls: ['./modal-scan-failure.component.scss']
 })
-export class ModalScanFailureComponent {
+export class ModalScanFailureComponent implements OnInit, OnDestroy {
 
 	@Input() supportUrl: string;
 	@Input() hasFailedRbsDevice: boolean;
@@ -20,6 +21,14 @@ export class ModalScanFailureComponent {
 
 	constructor(public activeModal: NgbActiveModal, private router: Router) {
 		this.failedRbsDevices = [];
+	}
+
+	ngOnInit(){
+		disableBackgroundNavigation(document);
+	}
+
+	ngOnDestroy(){
+		reEnableBackgroundNavigation(document);
 	}
 
 	// closes modal

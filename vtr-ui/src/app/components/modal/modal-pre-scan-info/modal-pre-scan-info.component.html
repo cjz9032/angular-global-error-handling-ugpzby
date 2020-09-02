@@ -1,7 +1,7 @@
 <div class="modal-body" aria-labelledby="title" aria-describedby="description">
-		<h1 id="hwscan-schedule-scan-collision-modal-title" class="error" role="heading">{{ error }}</h1>
+		<h1 id="hwscan-pre-scan-info-modal-title" class="error" role="heading">{{ error }}</h1>
 		<br />
-		<p id="hwscan-schedule-scan-collision-modal-description" class="description" role="text">
+		<p id="hwscan-pre-scan-info-modal-description" class="description" role="text">
 			{{ ('hardwareScan.pluginTokens.' + description) | translateDefault:description }}
 		</p>
 
@@ -9,7 +9,7 @@
 
 		<div class="row button-row">
 			<vtr-ui-button
-				linkId="hwscan-schedule-scan-collision-modal-confirm-btn"
+				linkId="hwscan-pre-scan-info-modal-confirm-btn"
 				metricsParent="{{ ItemParent }}"
 				metricsItem="{{ ConfirmItemName }}"
 				[label]="buttonText"
@@ -18,7 +18,7 @@
 		</div>
 		<div class="btn-modal-close">
 			<vtr-ui-close-button
-				linkId="hwscan-schedule-scan-collision-modal-close-btn"
+				linkId="hwscan-pre-scan-info-modal-close-btn"
 				metricsParent="{{ ItemParent }}"
 				metricsItem="{{ CancelItemName }}"
 				(clickClose)="onClosing()">

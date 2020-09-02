@@ -31,6 +31,8 @@
 
 		<div class="col loading" *ngIf="loading"  aria-live="polite" aria-labelledby="hwscan-cancel-modal-title hwscan-cancel-modal-description">
 			<fa-icon placement="auto" [spin]="true" [icon]="['fal', 'circle-notch']" container="body"></fa-icon>
+			<!--Workaround to keep focus inside modal when there is no elements to be focused-->
+			<div tabindex="1" [autofocus]=true></div>
 		</div>
 	</div>
 
