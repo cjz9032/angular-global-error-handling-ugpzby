@@ -427,16 +427,14 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				this.cleaningUpScan(undefined);
 
 				// Necessary to save the current results to be used by metrics before modules being updated
-				const modulesResults = this.modules;
+				const metricsResult = this.getMetricsTaskResult();
+				this.sendTaskActionMetrics(this.hardwareScanService.getCurrentTaskType(), metricsResult.countSuccesses,
+					'', metricsResult.scanResultJson, this.timerService.stop());
 
 				// Defines information about module details
 				this.onViewResults();
 
 				this.modules.forEach(module => { module.expanded = true; });
-
-				const metricsResult = this.getMetricsTaskResult(modulesResults);
-				this.sendTaskActionMetrics(this.hardwareScanService.getCurrentTaskType(), metricsResult.countSuccesses,
-					'', metricsResult.scanResultJson, this.timerService.stop());
 			});
 		}
 	}
@@ -963,7 +961,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		return TaskStep[currentTaskStep] + taskTypeMetrics + '.' + ViewResultsButton;
 	}
 
-	private getMetricsTaskResult(responseModules = this.modules) {
+	private getMetricsTaskResult() {
 		let countSuccesses = 0;
 		let overalTestResult = HardwareScanTestResult.Na;
 
@@ -974,8 +972,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		};
 
 		// scanResultJson["TestsList"] = {};
-		if (responseModules) {
-			for (const module of responseModules) {
+		if (this.modules) {
+			for (const module of this.modules) {
 				for (const test of module.listTest) {
 
 					const testName = test.id.split(':::')[0];
@@ -997,7 +995,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					resultJson.TestsList[testName].push(testObj);
 				}
 			}
-			overalTestResult = this.hardwareScanResultService.consolidateResults(responseModules.map(test => test.resultModule));
+			overalTestResult = this.hardwareScanResultService.consolidateResults(this.modules.map(test => test.resultModule));
 		}
 
 		resultJson.Result = HardwareScanTestResult[overalTestResult];
