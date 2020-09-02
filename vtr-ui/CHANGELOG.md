@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.49](https://bitbucket.tc.lenovo.com///compare/v1.7.48...v1.7.49) (2020-09-02)
+
+
+### Bug Fixes
+
+* **antivirus:** VAN-21761 fixed other page privacy url error ([f47099f](https://bitbucket.tc.lenovo.com///commit/f47099f1960a4ab2b9d21f16f81ef437dcc78e74))
+
 ### [1.7.48](https://bitbucket.tc.lenovo.com///compare/v1.7.47...v1.7.48) (2020-08-31)
 
 
