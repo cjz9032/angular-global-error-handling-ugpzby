@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://bitbucket.tc.lenovo.com///compare/v1.7.48...v1.8.0) (2020-09-02)
+
+
+### Features
+
+* **System Update:** VAN-18147 add security widget in System Update ([321ba81](https://bitbucket.tc.lenovo.com///commit/321ba81e306d1c79fcd2bcb52b400ea6860a383d))
+
+
+### Bug Fixes
+
+* **env:** DEV: update cmsApiRoot ([bb5ed04](https://bitbucket.tc.lenovo.com///commit/bb5ed04a576e39a701aa595a39e96e697c68b69c))
+
 ### [1.7.48](https://bitbucket.tc.lenovo.com///compare/v1.7.47...v1.7.48) (2020-08-31)
 
 
