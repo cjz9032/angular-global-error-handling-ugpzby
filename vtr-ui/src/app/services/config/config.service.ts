@@ -57,7 +57,7 @@ interface SecurityMenuCondition {
 export class ConfigService {
 
 	appBrand = 'Lenovo';
-	appName = 'Vantage';
+	appName = 'Vantage-VAN-21651-bugfix';
 	menuItemsGaming: MenuItem[] = menuItemsGaming;
 	menuItems: MenuItem[] = menuItems;
 	menu: MenuItem[] = [];
