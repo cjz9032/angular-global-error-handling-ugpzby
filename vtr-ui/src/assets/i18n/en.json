@@ -736,7 +736,8 @@
 				"name9": "Ambient  Lighting",
 				"name10": "Legion Liquid Cooling Lighting",
 				"name11": "Legion Front Fan Lighting",
-				"name12": "Legion Top Fan Lighting"
+				"name12": "Legion Top Fan Lighting",
+				"name13": "Legion Memory Lighting"
 			},
 			"lightingEffect": {
 				"effectName1": "Static",
@@ -745,7 +746,8 @@
 				"effectName4": "Random",
 				"effectName5": "Cool_Blue",
 				"effectName6": "Wave_Right",
-				"effectName7": "Wave_Left"
+				"effectName7": "Wave_Left",
+				"effectName8": "RunningMode"
 			},
 			"lightingSpeed": {
 				"title": "Speed"

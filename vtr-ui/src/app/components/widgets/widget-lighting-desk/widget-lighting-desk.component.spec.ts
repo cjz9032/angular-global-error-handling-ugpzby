@@ -48,7 +48,11 @@ let getLightingProfileById: any = {
         { lightPanelType: 1, lightEffectType: 2, lightColor: "009BFA", lightBrightness: 2, lightSpeed: 2, },
         { lightPanelType: 2, lightEffectType: 2, lightColor: "009BFA", lightBrightness: 3, lightSpeed: 3 },
         { lightPanelType: 4, lightEffectType: 1, lightColor: "009BFA", lightBrightness: 3, lightSpeed: 1 },
-        { lightPanelType: 8, lightEffectType: 1, lightColor: "009BFA", lightBrightness: 3, lightSpeed: 2 }]
+        { lightPanelType: 8, lightEffectType: 1, lightColor: "009BFA", lightBrightness: 3, lightSpeed: 2 },
+        { lightPanelType: 40961, lightEffectType: 2, lightColor: "009BFA", lightBrightness: 2, lightSpeed: 2, },
+        { lightPanelType: 40962, lightEffectType: 2, lightColor: "009BFA", lightBrightness: 3, lightSpeed: 3 },
+        { lightPanelType: 40963, lightEffectType: 1, lightColor: "009BFA", lightBrightness: 3, lightSpeed: 1 },
+        { lightPanelType: 40964, lightEffectType: 1, lightColor: "009BFA", lightBrightness: 3, lightSpeed: 2 }]
 }
 const getLightingProfileByIdFail: any = {
     didSuccess: false,
@@ -58,7 +62,11 @@ const getLightingProfileByIdFail: any = {
         { lightPanelType: 1, lightEffectType: 2, lightColor: "009BFA", lightBrightness: 2, lightSpeed: 2, },
         { lightPanelType: 2, lightEffectType: 2, lightColor: "009BFA", lightBrightness: 3, lightSpeed: 3 },
         { lightPanelType: 4, lightEffectType: 1, lightColor: "009BFA", lightBrightness: 3, lightSpeed: 1 },
-        { lightPanelType: 8, lightEffectType: 1, lightColor: "009BFA", lightBrightness: 3, lightSpeed: 2 }]
+        { lightPanelType: 8, lightEffectType: 1, lightColor: "009BFA", lightBrightness: 3, lightSpeed: 2 },
+        { lightPanelType: 40961, lightEffectType: 2, lightColor: "009BFA", lightBrightness: 2, lightSpeed: 2, },
+        { lightPanelType: 40962, lightEffectType: 2, lightColor: "009BFA", lightBrightness: 3, lightSpeed: 3 },
+        { lightPanelType: 40963, lightEffectType: 1, lightColor: "009BFA", lightBrightness: 3, lightSpeed: 1 },
+        { lightPanelType: 40964, lightEffectType: 1, lightColor: "009BFA", lightBrightness: 3, lightSpeed: 2 }]
 }
 let lightingCapility: any = {
     LightPanelType: [1, 2, 4, 8],
@@ -70,7 +78,12 @@ let lightingCapility: any = {
     SupportBrightnessSetList: [1, 2, 4, 8],
     SupportRGBSetList: [4, 8],
     SupportSpeedSetList: [4, 8],
-    UnifySetList: [0]
+    UnifySetList: [0],
+    MemoryEffect: [268435456, 1, 2, 4, 1024],
+    MemorySpeedLevel: 4,
+    MemoryBrightLevel: 4,
+    MemoryPanelType: [40961, 40962, 40963, 40964],
+    MemoryUnifySetList: [0]
 }
 const metricsMock = jasmine.createSpyObj('MetricService',['sendMetrics']);
 
@@ -124,6 +137,9 @@ describe('WidgetLightingDeskComponent', () => {
         component.ngOnInit();
         tick(10);
         expect(component.isProfileOff).toEqual(true);
+
+        component.lightingProfileById = getLightingProfileById;
+        component.ngOnInit();
     }));
 
     it('should get profile cache', () =>{
@@ -155,6 +171,13 @@ describe('WidgetLightingDeskComponent', () => {
         component.lightingCapabilities.SupportBrightnessSetList = [128];
         component.supportBrightFn(1);
         expect(component.supportBrightness).toEqual(false);
+
+        component.lightingProfileCurrentDetail.lightPanelType = 40961;
+        component.supportBrightFn(268435456);
+        expect(component.supportBrightness).toEqual(false);
+        tick(10);
+        component.supportBrightFn(1);
+        expect(component.supportBrightness).toEqual(true);
     }));
 
     it('should support speed',fakeAsync(() => {
@@ -171,6 +194,11 @@ describe('WidgetLightingDeskComponent', () => {
         component.lightingProfileCurrentDetail.lightPanelType = 1;
         component.supportSpeedFn(1);
         expect(component.supportSpeedFn(1)).toBeUndefined();
+
+        tick(10);
+        component.lightingProfileCurrentDetail.lightPanelType = 40961;
+        component.supportSpeedFn(268435456);
+        expect(component.supportSpeed).toEqual(false);
     }))
 
     it('should support color',fakeAsync(() => {
@@ -178,6 +206,11 @@ describe('WidgetLightingDeskComponent', () => {
         component.lightingProfileCurrentDetail.lightPanelType = 4;
         component.lightingCapabilities.SupportRGBSetList = [4,8];
         component.supportColorFn(8);
+        expect(component.supportColor).toEqual(false);
+
+        tick(10);
+        component.lightingProfileCurrentDetail.lightPanelType = 40961;
+        component.supportColorFn(268435456);
         expect(component.supportColor).toEqual(false);
     }))
 
@@ -197,6 +230,7 @@ describe('WidgetLightingDeskComponent', () => {
 
     it('should switch left button',() => {
         gamingLightingServiceMock.isShellAvailable = true;
+        component.currentProfileId = 1;
         component.countObj['count'+component.currentProfileId] = 1;
         component.lightingProfileById = getLightingProfileById;
         component.panelSwitchLef();
@@ -211,8 +245,9 @@ describe('WidgetLightingDeskComponent', () => {
         tick(10);
         expect(component.currentProfileId).toBeLessThanOrEqual(2);
 
-        component.countObj['count'+component.currentProfileId] = 4;
-        component.lightingCapabilities.LightPanelType.length = 5;
+        component.countObj['count'+component.currentProfileId] = 8;
+        component.lightingCapabilities.LightPanelType.length = 4;
+        component.lightingCapabilities.MemoryPanelType.length = 4;
         component.panelSwitchRig();
         tick(10);
         expect(component.isDisabledrig[component.currentProfileId-1]).toEqual(true);
@@ -308,9 +343,10 @@ describe('WidgetLightingDeskComponent', () => {
             didSuccess: true,
             profileId: 2,
             brightness: 0,
-            lightInfo: [{ lightPanelType: 16, lightEffectType: 2, lightColor: "009BFA", lightBrightness: 2, lightSpeed: 2, }]};
+            lightInfo: [{ lightPanelType: 16, lightEffectType: 2, lightColor: "009BFA", lightBrightness: 2, lightSpeed: 2, },
+            { lightPanelType: 40961, lightEffectType: 16384, lightColor: "009BFA", lightBrightness: 2, lightSpeed: 2, }]};
         const lightingCapabilitiesRes = {
-            LightPanelType: [16],
+            LightPanelType: [16, 128, 32],
             LedType_Complex: [268435456, 1, 2, 4, 8, 32, 256, 512],
             LedType_simple: [268435456, 1, 2, 3, 4],
             BrightAdjustLevel: 4,
@@ -319,7 +355,12 @@ describe('WidgetLightingDeskComponent', () => {
             SupportBrightnessSetList: [1, 2, 4, 8],
             SupportRGBSetList: [16],
             SupportSpeedSetList: [4, 8],
-            UnifySetList: [0]
+            UnifySetList: [0],
+            MemoryEffect: [268435456, 1, 2, 4, 1024],
+            MemorySpeedLevel: 4,
+            MemoryBrightLevel: 4,
+            MemoryPanelType: [40961, 40962, 40963, 40964],
+            MemoryUnifySetList: [0]
         };
         const count = 0;
         component.ledlayoutversion = 3;
@@ -353,6 +394,12 @@ describe('WidgetLightingDeskComponent', () => {
         lightingProfileByIdRes.lightInfo[0].lightPanelType = 32;
         component.lightingProfileDetail(lightingProfileByIdRes,count,lightingCapabilitiesRes);
         expect(component.lightingProfileCurrentDetail.panelName).toMatch("gaming.lightingNewversion.machineName.name3");
+        lightingProfileByIdRes.lightInfo[0].lightPanelType = 40962;
+        component.lightingProfileDetail(lightingProfileByIdRes,count,lightingCapabilitiesRes);
+        expect(component.lightingProfileCurrentDetail.lightBrightnessMax).toEqual(4);
+        lightingCapabilitiesRes.LightPanelType = [128, 32];
+        lightingProfileByIdRes.lightInfo[0].lightPanelType = 32;
+        component.lightingProfileDetail(lightingProfileByIdRes,count,lightingCapabilitiesRes);
         lightingCapabilitiesRes.LightPanelType = [0];
         component.lightingProfileDetail(lightingProfileByIdRes,count,lightingCapabilitiesRes);
         expect(component.lightingProfileDetail(lightingProfileByIdRes,count,lightingCapabilitiesRes)).toBeUndefined();
@@ -408,7 +455,7 @@ describe('WidgetLightingDeskComponent', () => {
 
         component.currentProfileId = 0;
         component.ledlayoutversion = 4;
-        component.lightingCapabilities.LightPanelType = [4];
+        component.lightingCapabilities.LightPanelType = [8];
         component.imgDefaultOff();
         tick(10);
         expect(component.lightingProfileCurrentDetail.panelImage).toMatch("assets/images/gaming/lighting/lighting-ui-new/T550AMD_wind.png");

@@ -75,6 +75,14 @@ export class LightingDataList{
               label: 'gaming.lightingNewversion.lightingEffect.effectName4',
               metricitem: 'lighting_effect_random',
               value: 512
+            },
+            {
+              header: 'gaming.lightingNewversion.lightingEffect.effectName8',
+              name: 'gaming.lightingNewversion.lightingEffect.effectName8',
+              id: 'lighting_effect_runningmode',
+              label: 'gaming.lightingNewversion.lightingEffect.effectName8',
+              metricitem: 'lighting_effect_runningmode',
+              value: 16384
             }
         ]
     };
@@ -255,6 +263,34 @@ export class LightingDataList{
         panelName:"gaming.lightingNewversion.machineName.name1", 
         panelImage:"assets/images/gaming/lighting/lighting-ui-new/T750_fct.png",
         panelImageType:false
+      },
+      {
+        value:40961, 
+        pathUrl:"M177.463663,79 L240,103.786996 L234.017235,104.055011 C233.099764,104.090329 232.48815,104.107987 232.182391,104.107987 C231.498175,104.107987 230.898959,104.353721 230.384743,104.845188 L230.233028,105 L163,87.3054289 L164.547044,79 L177.463663,79 Z M94.7899566,70 C96.2816057,70 97.5466796,71.0959266 97.7593182,72.5723418 L98.5279227,77.9089967 L130,93.630972 L125.22182,94.5981385 C123.933957,94.8588187 122.59613,94.6895271 121.413797,94.116263 L87.9869923,77.9089967 L45,79.3728796 L85.1400329,70.0518358 C85.2883643,70.0173913 85.4401442,70 85.5924223,70 L94.7899566,70 Z",
+        panelName:"gaming.lightingNewversion.machineName.name13", 
+        panelImage:"assets/images/gaming/lighting/lighting-ui-new/T750_memory.png",
+        panelImageType:true
+      },
+      {
+        value:40962, 
+        pathUrl:"M177.463663,79 L240,103.786996 L234.017235,104.055011 C233.099764,104.090329 232.48815,104.107987 232.182391,104.107987 C231.498175,104.107987 230.898959,104.353721 230.384743,104.845188 L230.233028,105 L163,87.3054289 L164.547044,79 L177.463663,79 Z M94.7899566,70 C96.2816057,70 97.5466796,71.0959266 97.7593182,72.5723418 L98.5279227,77.9089967 L130,93.630972 L125.22182,94.5981385 C123.933957,94.8588187 122.59613,94.6895271 121.413797,94.116263 L87.9869923,77.9089967 L45,79.3728796 L85.1400329,70.0518358 C85.2883643,70.0173913 85.4401442,70 85.5924223,70 L94.7899566,70 Z",
+        panelName:"gaming.lightingNewversion.machineName.name13", 
+        panelImage:"assets/images/gaming/lighting/lighting-ui-new/T750_memory.png",
+        panelImageType:true
+      },
+      {
+        value:40963, 
+        pathUrl:"M177.463663,79 L240,103.786996 L234.017235,104.055011 C233.099764,104.090329 232.48815,104.107987 232.182391,104.107987 C231.498175,104.107987 230.898959,104.353721 230.384743,104.845188 L230.233028,105 L163,87.3054289 L164.547044,79 L177.463663,79 Z M94.7899566,70 C96.2816057,70 97.5466796,71.0959266 97.7593182,72.5723418 L98.5279227,77.9089967 L130,93.630972 L125.22182,94.5981385 C123.933957,94.8588187 122.59613,94.6895271 121.413797,94.116263 L87.9869923,77.9089967 L45,79.3728796 L85.1400329,70.0518358 C85.2883643,70.0173913 85.4401442,70 85.5924223,70 L94.7899566,70 Z",
+        panelName:"gaming.lightingNewversion.machineName.name13", 
+        panelImage:"assets/images/gaming/lighting/lighting-ui-new/T750_memory.png",
+        panelImageType:true
+      },
+      {
+        value:40964, 
+        pathUrl:"M177.463663,79 L240,103.786996 L234.017235,104.055011 C233.099764,104.090329 232.48815,104.107987 232.182391,104.107987 C231.498175,104.107987 230.898959,104.353721 230.384743,104.845188 L230.233028,105 L163,87.3054289 L164.547044,79 L177.463663,79 Z M94.7899566,70 C96.2816057,70 97.5466796,71.0959266 97.7593182,72.5723418 L98.5279227,77.9089967 L130,93.630972 L125.22182,94.5981385 C123.933957,94.8588187 122.59613,94.6895271 121.413797,94.116263 L87.9869923,77.9089967 L45,79.3728796 L85.1400329,70.0518358 C85.2883643,70.0173913 85.4401442,70 85.5924223,70 L94.7899566,70 Z",
+        panelName:"gaming.lightingNewversion.machineName.name13", 
+        panelImage:"assets/images/gaming/lighting/lighting-ui-new/T750_memory.png",
+        panelImageType:true
       }
     ];
     public lightingPanelImageT550AMD:any = [
@@ -429,7 +465,12 @@ export class LightingDataList{
       "SupportBrightnessSetList":[],
       "SupportRGBSetList":[],
       "SupportSpeedSetList":[],
-      "UnifySetList":[]
+      "UnifySetList":[],
+      "MemoryEffect": [0],
+      "MemorySpeedLevel": 0,
+      "MemoryBrightLevel": 0,
+      "MemoryPanelType": [0],
+      "MemoryUnifySetList": [0]
     };
     public lightingCurrentDetailDesk:any = {
       "lightPanelType": 1, 
@@ -442,7 +483,9 @@ export class LightingDataList{
       "currentEffectName": "",
       "length": 1,
       "panelName": "",
-      "pathUrl": ""
+      "pathUrl": "",
+      "lightBrightnessMax": 1,
+      "lightSpeedMax": 1
     };
     public lightingCurrentDetailNote:any = {
       "lightPanelType": 1,
