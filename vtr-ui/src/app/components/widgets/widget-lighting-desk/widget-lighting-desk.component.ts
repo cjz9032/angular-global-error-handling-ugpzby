@@ -346,14 +346,18 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
   public panelSwitchRig(){
     this.isColorPicker = false;
     this.isShow = true;
-    if(this.countObj['count'+this.currentProfileId] < this.lightingCapabilities.LightPanelType.length-1){
+    let lenPanels = this.lightingCapabilities && this.lightingCapabilities.LightPanelType ? this.lightingCapabilities.LightPanelType.length : 0;
+    if (this.lightingCapabilities && this.lightingCapabilities.MemoryPanelType && Array.isArray(this.lightingCapabilities.MemoryPanelType)){
+      lenPanels += this.lightingCapabilities.MemoryPanelType.length;
+    }
+    if(lenPanels !== 0 && this.countObj['count'+this.currentProfileId] < (lenPanels-1)){
       this.countObj['count'+this.currentProfileId]++;
       this.isDisabledlef[this.currentProfileId-1] = false;
       this.isDisabledrig[this.currentProfileId-1] = false;
       this.isShowpageInfo(this.lightingProfileById);
       this.lightingProfileDetail(this.lightingProfileById,this.countObj['count'+this.currentProfileId],this.lightingCapabilities);
     }
-    if(this.countObj['count'+this.currentProfileId] >= this.lightingCapabilities.LightPanelType.length-1){
+    if(lenPanels !== 0 && this.countObj['count'+this.currentProfileId] >= (lenPanels-1)){
       this.isDisabledrig[this.currentProfileId-1] = true;
     }
 
@@ -395,36 +399,58 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
             // this.lightingProfileCurrentDetail.panelImage = currentNameImg[0].panelImage;
             this.lightingProfileCurrentDetail.panelImageType = currentNameImg[0].panelImageType;
             this.lightingProfileCurrentDetail.length = lightingProfileByIdRes.lightInfo.length;
-            if(this.ledlayoutversion === 3 && lightingCapabilitiesRes.LightPanelType.indexOf(16)>-1){
-              this.lightingProfileCurrentDetail.panelImage = 'assets/images/gaming/lighting/lighting-ui-new/T550_water_cold.png';
-            }else if(this.ledlayoutversion === 5 && lightingCapabilitiesRes.LightPanelType.indexOf(16)>-1){
-              this.lightingProfileCurrentDetail.panelImage = 'assets/images/gaming/lighting/lighting-ui-new/T750_water.png';
-            }else if(this.ledlayoutversion === 4 && lightingCapabilitiesRes.LightPanelType.indexOf(16)>-1){
-              this.lightingProfileCurrentDetail.panelImage = 'assets/images/gaming/lighting/lighting-ui-new/T550AMD_water.png';
-              if(this.lightingProfileCurrentDetail.lightPanelType === 128){
-                this.lightingProfileCurrentDetail.pathUrl = "M112,74.863197 L112.916507,74.8674839 C126.299053,74.9928726 137,77.8531206 137,81.363197 C137,84.9131607 126.054468,87.7984431 112.459257,87.8621223 L112,87.863197 C98.1928813,87.863197 87,84.9530479 87,81.363197 C87,77.7733462 98.1928813,74.863197 112,74.863197 Z M142.080665,63 L142.080665,76.8631566 L141.194164,76.8083655 C130.186845,76.0682405 122,73.2702241 122,69.9315783 C122,66.5039019 130.629298,63.646073 142.080665,63 Z";
-                this.lightingProfileCurrentDetail.panelName = "gaming.lightingNewversion.machineName.name6";
-              }else if(this.lightingProfileCurrentDetail.lightPanelType === 32){
-                this.lightingProfileCurrentDetail.panelName = "gaming.lightingNewversion.machineName.name3";
+            if(lightingCapabilitiesRes.LightPanelType && lightingCapabilitiesRes.LightPanelType.length !== 0
+              && lightingCapabilitiesRes.LightPanelType.indexOf(this.lightingProfileCurrentDetail.lightPanelType)>-1){
+              if(this.ledlayoutversion === 3 && lightingCapabilitiesRes.LightPanelType.indexOf(16)>-1){
+                this.lightingProfileCurrentDetail.panelImage = 'assets/images/gaming/lighting/lighting-ui-new/T550_water_cold.png';
+              }else if(this.ledlayoutversion === 5 && lightingCapabilitiesRes.LightPanelType.indexOf(16)>-1){
+                this.lightingProfileCurrentDetail.panelImage = 'assets/images/gaming/lighting/lighting-ui-new/T750_water.png';
+              }else if(this.ledlayoutversion === 4 && lightingCapabilitiesRes.LightPanelType.indexOf(16)>-1){
+                this.lightingProfileCurrentDetail.panelImage = 'assets/images/gaming/lighting/lighting-ui-new/T550AMD_water.png';
+                if(this.lightingProfileCurrentDetail.lightPanelType === 128){
+                  this.lightingProfileCurrentDetail.pathUrl = "M112,74.863197 L112.916507,74.8674839 C126.299053,74.9928726 137,77.8531206 137,81.363197 C137,84.9131607 126.054468,87.7984431 112.459257,87.8621223 L112,87.863197 C98.1928813,87.863197 87,84.9530479 87,81.363197 C87,77.7733462 98.1928813,74.863197 112,74.863197 Z M142.080665,63 L142.080665,76.8631566 L141.194164,76.8083655 C130.186845,76.0682405 122,73.2702241 122,69.9315783 C122,66.5039019 130.629298,63.646073 142.080665,63 Z";
+                  this.lightingProfileCurrentDetail.panelName = "gaming.lightingNewversion.machineName.name6";
+                }else if(this.lightingProfileCurrentDetail.lightPanelType === 32){
+                  this.lightingProfileCurrentDetail.panelName = "gaming.lightingNewversion.machineName.name3";
+                }
+              }else{
+                this.lightingProfileCurrentDetail.panelImage = currentNameImg[0].panelImage;
               }
             }else{
               this.lightingProfileCurrentDetail.panelImage = currentNameImg[0].panelImage;
             }
           }
           //Gets the returned list of effects
-          if(lightingCapabilitiesRes.SupportRGBSetList.indexOf(this.lightingProfileCurrentDetail.lightPanelType) > -1){ //Rgb effect list
-            this.lightingEffectRgbData.dropOptions = this.lightingEffectRgbData.dropOptions.filter(
-                  (i) => lightingCapabilitiesRes.LedType_Complex.includes(i.value)
-            )
-            this.lightingEffectList = this.lightingEffectRgbData;
-            currentEffectName = this.getCurrentName(this.lightingEffectRgbData.dropOptions,this.lightingProfileCurrentDetail.lightEffectType);
-          }else{  //single effect list
-            this.lightingEffectSingleData.dropOptions = this.lightingEffectSingleData.dropOptions.filter(
-                (i) => lightingCapabilitiesRes.LedType_simple.includes(i.value)
-            )
-            this.lightingEffectList = this.lightingEffectSingleData;
-            currentEffectName = this.getCurrentName(this.lightingEffectSingleData.dropOptions,this.lightingProfileCurrentDetail.lightEffectType);
+          if (lightingCapabilitiesRes.LightPanelType && lightingCapabilitiesRes.LightPanelType.length !== 0
+            && lightingCapabilitiesRes.LightPanelType.indexOf(this.lightingProfileCurrentDetail.lightPanelType) > -1) { // common light
+              if(lightingCapabilitiesRes.SupportRGBSetList.indexOf(this.lightingProfileCurrentDetail.lightPanelType) > -1){ //Rgb effect list
+                this.lightingEffectRgbData.dropOptions = this.lightingEffectRgbData.dropOptions.filter(
+                      (i) => lightingCapabilitiesRes.LedType_Complex.includes(i.value)
+                )
+                this.lightingEffectList = this.lightingEffectRgbData;
+                currentEffectName = this.getCurrentName(this.lightingEffectRgbData.dropOptions,this.lightingProfileCurrentDetail.lightEffectType);
+              }else{  //single effect list
+                this.lightingEffectSingleData.dropOptions = this.lightingEffectSingleData.dropOptions.filter(
+                    (i) => lightingCapabilitiesRes.LedType_simple.includes(i.value)
+                )
+                this.lightingEffectList = this.lightingEffectSingleData;
+                currentEffectName = this.getCurrentName(this.lightingEffectSingleData.dropOptions,this.lightingProfileCurrentDetail.lightEffectType);
+              }
+            this.lightingProfileCurrentDetail.lightBrightnessMax = lightingCapabilitiesRes.BrightAdjustLevel;
+            this.lightingProfileCurrentDetail.lightSpeedMax = lightingCapabilitiesRes.SpeedSetLevel;
           }
+          if (lightingCapabilitiesRes.MemoryPanelType && lightingCapabilitiesRes.MemoryPanelType.length !== 0
+            && lightingCapabilitiesRes.MemoryPanelType.indexOf(this.lightingProfileCurrentDetail.lightPanelType) > -1){ // memory light
+            const memoryEffect = new LightingDataList().lightingEffectRgbData;
+            memoryEffect.dropOptions = memoryEffect.dropOptions.filter(
+              (i) => lightingCapabilitiesRes.MemoryEffect.includes(i.value)
+            )
+            this.lightingEffectList = memoryEffect;
+            currentEffectName = this.getCurrentName(memoryEffect.dropOptions,this.lightingProfileCurrentDetail.lightEffectType);
+            this.lightingProfileCurrentDetail.lightBrightnessMax = lightingCapabilitiesRes.MemoryBrightLevel;
+            this.lightingProfileCurrentDetail.lightSpeedMax = lightingCapabilitiesRes.MemorySpeedLevel;
+          }
+          
           this.logger.info("effectList: ",this.lightingEffectList);
           this.lightingEffectList.curSelected  = this.lightingProfileCurrentDetail.lightEffectType;
           if(currentEffectName.length > 0){
@@ -458,7 +484,11 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
           }
         }
       }
-    }else{
+    }else if (this.lightingCapabilities.MemoryBrightLevel && this.lightingCapabilities.MemoryBrightLevel !== 0
+      && this.lightingCapabilities.MemoryPanelType.indexOf(this.lightingProfileCurrentDetail.lightPanelType) > -1) {
+      if (val === 268435456 || val === 4 || val === 256) this.supportBrightness = false;
+      else this.supportBrightness = true;
+    }else {
       this.supportBrightness = false;
     }
   }
@@ -472,7 +502,11 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
             this.supportSpeed = true;
           }
       }
-    }else{
+    }else if (this.lightingCapabilities.MemorySpeedLevel && this.lightingCapabilities.MemorySpeedLevel !== 0
+      && this.lightingCapabilities.MemoryPanelType.indexOf(this.lightingProfileCurrentDetail.lightPanelType) > -1) {
+      if (val === 268435456 || val === 1 || val === 256) this.supportSpeed = false;
+      else this.supportSpeed = true;
+    }else {
       this.supportSpeed = false;
     }
   }
@@ -484,7 +518,10 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
       }else{
         this.supportColor = false;
       }
-    }else{
+    }else if (this.lightingCapabilities.MemoryPanelType.indexOf(this.lightingProfileCurrentDetail.lightPanelType) > -1) {
+      if(val !== 256 && val !== 268435456) this.supportColor = true;
+      else this.supportColor = false;
+    } else {
       this.supportColor = false;
     }
   }

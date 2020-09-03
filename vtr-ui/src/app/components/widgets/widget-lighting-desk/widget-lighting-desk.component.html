@@ -52,13 +52,13 @@
                     <div class="lighting-panel-group">
                        <div class="lighting-panel-brightness" *ngIf="supportBrightness">
                            <h1 id="gaming_lighting_brightness_text" role="text" class="content-title">{{'device.deviceSettings.displayCamera.camera.brightness' | translate}} </h1>
-                           <vtr-ui-add-reduce-button [minData]="1" [maxData]="lightingCapabilities.BrightAdjustLevel" [step]="1" [value]="lightingProfileCurrentDetail.lightBrightness"
+                           <vtr-ui-add-reduce-button [minData]="1" [maxData]="lightingProfileCurrentDetail.lightBrightnessMax" [step]="1" [value]="lightingProfileCurrentDetail.lightBrightness"
                            (setVal) = "setLightingBrightness($event)" [isValChange] = "isValChange" [ariaLabelValue]="'Brightness'" [automationId]="'gaming_lighting_brightness'"></vtr-ui-add-reduce-button>
                        </div>
                        <div class="lighting-panel-speed" *ngIf="supportSpeed"
                         [ngClass]="{'bright-hide':supportBrightness === false}">
                            <h1 id="gaming_lighting_speed_text" role="text" class="content-title">{{'gaming.lightingNewversion.lightingSpeed.title' | translate}} </h1>
-                           <vtr-ui-add-reduce-button [minData]="1" [maxData]="lightingCapabilities.SpeedSetLevel" [step]="1" [value]="lightingProfileCurrentDetail.lightSpeed"
+                           <vtr-ui-add-reduce-button [minData]="1" [maxData]="lightingProfileCurrentDetail.lightSpeedMax" [step]="1" [value]="lightingProfileCurrentDetail.lightSpeed"
                            (setVal) = "setLightingSpeed($event)" [isValChange] = "isValChange" [ariaLabelValue]="'Speed'" [automationId]="'gaming_lighting_speed'"></vtr-ui-add-reduce-button>
                        </div>
                     </div>
