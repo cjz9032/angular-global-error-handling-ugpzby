@@ -269,8 +269,8 @@ export class ContentCacheService {
 				}
 				const contentList = cacheValueOfContents[key];
 				const cachedContentList = cachedContents[key];
-        this.findUpdatedContents(contentList, cachedContentList, contents);
-        this.removeInvalidCachedArticles(contentList, cachedContentList);
+				this.findUpdatedContents(contentList, cachedContentList, contents);
+				this.removeInvalidCachedArticles(contentList, cachedContentList);
 			}
 		} else {
 			for (const key in cacheValueOfContents) {
@@ -298,51 +298,51 @@ export class ContentCacheService {
 				contents.push(content);
 			}
 		}
-  }
-  
-  private removeInvalidCachedArticles(contentList: any, cachedContentList: any) {
-    for (const index in cachedContentList) {
-      let invalid = true;
-      const cachedContent = cachedContentList[index];
-      for (const idx in contentList) {
-        const content = contentList[idx]
-        if (content.Id == cachedContent.Id) {
-          invalid = false;
-          break;
-        }
-      }
-      if (invalid) {
-        this.doRemove(cachedContent);
-      }
-    }
-  }
-  
-  private checkArticleCacheable(actionType:any, articId: any): boolean {
-    if (actionType && actionType === 'Internal'
-      && articId && !articId.startsWith('lenovo-vantage3:') 
-      && !articId.startsWith('dcc-demo')) { 
-        return true;
-      } 
-    return false;
-  }
+	}
 
-  private async doRemove(cachedContent: any) {
-    const actionType = cachedContent.ActionType;
-    const articId = cachedContent.ActionLink;
-    if (this.checkArticleCacheable(actionType, articId)) {
-      const localInfo = await this.getLocalInfo();
-      const key = `${articId}_${localInfo.Lang}`;
-      let iCacheSettings: ICacheSettings = {
-        Key: key,
-        Value: null,
-        Component: "ContentCache",
-        UserName: "ContentCache_Articles"
-      };
-      this.contentLocalCacheContract
-        .delete(iCacheSettings)
-        .catch(ex => { this.logger.error('remove article [' + articId + '] failed.') });
-    }
-  }
+	private removeInvalidCachedArticles(contentList: any, cachedContentList: any) {
+		for (const index in cachedContentList) {
+			let invalid = true;
+			const cachedContent = cachedContentList[index];
+			for (const idx in contentList) {
+				const content = contentList[idx]
+				if (content.Id == cachedContent.Id) {
+					invalid = false;
+					break;
+				}
+			}
+			if (invalid) {
+				this.doRemove(cachedContent);
+			}
+		}
+	}
+
+	private checkArticleCacheable(actionType: any, articId: any): boolean {
+		if (actionType && actionType === 'Internal'
+			&& articId && !articId.startsWith('lenovo-vantage3:')
+			&& !articId.startsWith('dcc-demo')) {
+			return true;
+		}
+		return false;
+	}
+
+	private async doRemove(cachedContent: any) {
+		const actionType = cachedContent.ActionType;
+		const articId = cachedContent.ActionLink;
+		if (this.checkArticleCacheable(actionType, articId)) {
+			const localInfo = await this.getLocalInfo();
+			const key = `${articId}_${localInfo.Lang}`;
+			let iCacheSettings: ICacheSettings = {
+				Key: key,
+				Value: null,
+				Component: "ContentCache",
+				UserName: "ContentCache_Articles"
+			};
+			this.contentLocalCacheContract
+				.delete(iCacheSettings)
+				.catch(ex => { this.logger.error('remove article [' + articId + '] failed.') });
+		}
+	}
 
 	private cacheContentDetail(contents: any) {
 		if (!contents || contents.length == 0) {
@@ -377,16 +377,16 @@ export class ContentCacheService {
 			image.src = content.FeatureImage;
 			downLoadImages.push(image);
 		}
-  }
-  
+	}
+
 	private async cacheArticle(content: any, lang: string, downLoadImages: any[]) {
-    const actionType = content.ActionType;
+		const actionType = content.ActionType;
 		const articId = content.ActionLink;
 		if (this.checkArticleCacheable(actionType, articId)) {
-      const response = await this.cmsService.fetchCMSArticle(articId);
-      this.saveArticle(articId, lang, response);
-      this.cacheArticleImage(response, downLoadImages);
-    }
+			const response = await this.cmsService.fetchCMSArticle(articId);
+			this.saveArticle(articId, lang, response);
+			this.cacheArticleImage(response, downLoadImages);
+		}
 	}
 
 	private async saveArticle(articId: any, lang: any, response: any) {
