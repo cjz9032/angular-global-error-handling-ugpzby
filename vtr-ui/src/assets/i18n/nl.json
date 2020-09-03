@@ -4185,7 +4185,7 @@
         "scanFailureModal": {
             "title": "Probleem in hardware aangetroffen",
             "problemDetected": "Er zijn problemen aangetroffen bij de volgende onderdelen op uw computer:",
-            "suggestedActionRbs": "U kunt proberen om de opslagapparaten te herstellen door te klikken op <b>Slechte sectoren herstellen</b>. Als het probleem blijft bestaan, kunt u op <b>Ticket openen</b> klikken voor meer ondersteuning.",
+            "suggestedActionRbs": "U kunt proberen om uw opslagapparaten te herstellen door te klikken op <b>Beschadigde sectoren herstellen</b>. Als het probleem blijft bestaan, kunt u op <b>Ticket openen</b> klikken voor meer ondersteuning.",
             "suggestedActionSupport": "Als uw computer nog onder garantie valt, klikt u op <b>Ticket openen</b> om een vervangend onderdeel aan te vragen. Ga voor meer informatie naar de ondersteuningswebsite van Lenovo.",
             "supportButtonText": "Ticket openen",
             "recoverBadSectorsButtonText": "Slechte sectoren herstellen"

@@ -4185,7 +4185,7 @@
         "scanFailureModal": {
             "title": "Maskinvareproblem oppdaget",
             "problemDetected": "Det ble oppdaget problemer med de følgende komponentene på maskinen:",
-            "suggestedActionRbs": "Du kan prøve å gjenopprette lagringsenhetene ved å klikke på <b>Gjenopprett skadede sektorer</b>. Hvis problemet vedvarer, kan du klikke på <b>opprett forespørsel</b> for ytterligere støtte.",
+            "suggestedActionRbs": "Du kan prøve å gjenopprette lagringsenhetene dine ved å klikke på <b>gjenopprett dårlige sektorer</b>. Hvis problemet vedvarer, kan du klikke på <b>opprett forespørsel</b> for ytterligere støtte.",
             "suggestedActionSupport": "Hvis datamaskinen din dekkes av garantien, klikker du på <b>opprett forespørsel</b> for en erstatningsdel. Hvis du vil ha mer informasjon, kan du gå til Lenovos nettsted for kundestøtte.",
             "supportButtonText": "Opprett forespørsel",
             "recoverBadSectorsButtonText": "Gjenopprett skadde sektorer"
