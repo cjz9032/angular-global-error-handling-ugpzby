@@ -317,12 +317,12 @@ export class ContentCacheService {
     }
   }
   
-  checkArticleCacheable(actionType:any, articId: any): boolean {
-		if (actionType && actionType === 'Internal'
-			&& articId && !articId.startsWith('lenovo-vantage3:')
-			&& !articId.startsWith('dcc-demo')) {
-      return true;
-    }
+  private checkArticleCacheable(actionType:any, articId: any): boolean {
+    if (actionType && actionType === 'Internal'
+      && articId && !articId.startsWith('lenovo-vantage3:') 
+      && !articId.startsWith('dcc-demo')) { 
+        return true;
+      } 
     return false;
   }
 
