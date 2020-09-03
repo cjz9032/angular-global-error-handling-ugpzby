@@ -244,7 +244,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		this.isInstallationSuccess = this.systemUpdateService.isInstallationSuccess;
 		this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
 		this.percentCompleted = this.systemUpdateService.percentCompleted;
-		this.isUpdatesAvailable = this.systemUpdateService.isUpdatesAvailable;
+		this.isUpdatesAvailable = this.updateAvailableAfterCheck();
 		this.isInstallingAllUpdates = this.systemUpdateService.isInstallingAllUpdates;
 
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
@@ -852,7 +852,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 				case UpdateProgress.UpdatesAvailable:
 					this.isUpdateCheckInProgress = false;
 					this.percentCompleted = this.systemUpdateService.percentCompleted;
-					this.isUpdatesAvailable = this.systemUpdateService.isUpdatesAvailable;
+					this.isUpdatesAvailable = this.updateAvailableAfterCheck();
 					this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
 					this.setUpdateByCategory(payload.updateList);
 					this.systemUpdateService.getIgnoredUpdates();
@@ -917,7 +917,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 						this.isUpdateDownloading = this.systemUpdateService.isUpdateDownloading;
 						this.isInstallingAllUpdates = this.systemUpdateService.isInstallingAllUpdates;
 						this.percentCompleted = this.systemUpdateService.percentCompleted;
-						this.isUpdatesAvailable = this.systemUpdateService.isUpdatesAvailable;
+						this.isUpdatesAvailable = this.updateAvailableAfterCheck();
 						this.installationPercent = this.systemUpdateService.installationPercent;
 						this.downloadingPercent = this.systemUpdateService.downloadingPercent;
 					});
@@ -974,7 +974,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					this.isUpdateCheckInProgress = false;
 					this.isCheckingPluginStatus = false;
 					this.percentCompleted = this.systemUpdateService.percentCompleted;
-					this.isUpdatesAvailable = this.systemUpdateService.isUpdatesAvailable;
+					this.isUpdatesAvailable = this.updateAvailableAfterCheck();
 					this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
 					this.setUpdateByCategory(payload.updateList);
 					this.systemUpdateService.getIgnoredUpdates();
