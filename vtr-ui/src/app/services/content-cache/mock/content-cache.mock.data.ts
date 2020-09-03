@@ -12,7 +12,7 @@ export class MockContentLocalCacheTest {
 	}
 
 	public set(setting): any {
-		
+
 	}
 
 	private getContents(par) {

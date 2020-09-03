@@ -603,7 +603,7 @@ describe('ContentCacheService', () => {
 		expect(ret).toEqual(ARTICLE);
 		expect(cmsService.fetchCMSArticle).toHaveBeenCalledTimes(0);
 	});
-	
+
 	it('should return the online article and save when get article by id', async () => {
 		cmsService.generateContentQueryParams.and.returnValue({ Page: 'normalContents' });
 		await service.getCachedContents('normalContents', null);
