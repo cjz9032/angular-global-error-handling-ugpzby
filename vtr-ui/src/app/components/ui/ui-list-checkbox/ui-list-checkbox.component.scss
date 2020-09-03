@@ -42,7 +42,7 @@
 					cursor: pointer;
 					padding-left: 1.2rem;
 					margin-bottom: 0.6rem;
-					
+
 					// rounded square-box background
 					&::before {
 						margin-top: 1rem;
@@ -159,7 +159,7 @@
 				.download-size {
 					padding-left: 1.2rem;
 					font-size: $fontsize_xs2;
-					line-height: 1.4rem;		
+					line-height: 1.4rem;
 					color: $shade_blue;
 				}
 			}
@@ -228,6 +228,14 @@
 					color: $light;
 				}
 			}
+		}
+
+		.selected-background {
+			background-color: rgba(73, 127, 253, 0.102);
+		}
+
+		.unselected-background {
+			background-color: #f5f7f8;
 		}
 	}
 

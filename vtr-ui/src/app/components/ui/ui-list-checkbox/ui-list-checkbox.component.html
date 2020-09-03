@@ -3,7 +3,7 @@
 	<ul class="list-group"
 		*ngIf="!isInstallationCompleted">
 		<li class="list-group-item" id="su_item_candidate"
-			[ngStyle]="{'background': item.isSelected ? selectedColor : unselectedColor}"
+			[ngClass]="item.isSelected ? 'selected-background' : 'unselected-background'"
 			*ngFor="let item of items; let i = index">
 			<div class="media pl-3 align-items-center">
 				<div class="media-body pb-0 mb-0 small">

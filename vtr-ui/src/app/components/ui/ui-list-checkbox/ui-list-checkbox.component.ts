@@ -39,8 +39,6 @@ export class UiListCheckboxComponent implements OnInit, OnDestroy {
 	public severity = UpdateInstallSeverity.Optional;
 	public packageName: string;
 	public packageID: string;
-	public selectedColor = 'rgba(73, 127, 253, 0.102)';
-	public unselectedColor = '#f5f7f8';
 	// Random number is used to have unique id of each input field
 	randomNumber: number = Math.floor(new Date().valueOf() * SecureMath.random());
 
@@ -117,10 +115,10 @@ export class UiListCheckboxComponent implements OnInit, OnDestroy {
 	}
 
 	CloseToolTip(activeId){
-		if(activeId &&
-			activeId.indexOf("su-package-readme-") < 0 &&
-			activeId.indexOf("su-ignore-update-") < 0 &&
-			activeId.indexOf("su-unignore-update-") < 0 && this.currentToolTip && this.currentToolTip.isOpen()){
+		if ( activeId &&
+			activeId.indexOf('su-package-readme-') < 0 &&
+			activeId.indexOf('su-ignore-update-') < 0 &&
+			activeId.indexOf('su-unignore-update-') < 0 && this.currentToolTip && this.currentToolTip.isOpen()){
 				this.currentToolTip.close();
 		}
 	}
