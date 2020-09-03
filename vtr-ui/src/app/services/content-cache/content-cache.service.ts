@@ -316,14 +316,21 @@ export class ContentCacheService {
       }
     }
   }
+  
+  checkArticleCacheable(actionType:any, articId: any): boolean {
+		if (actionType && actionType === 'Internal'
+			&& articId && !articId.startsWith('lenovo-vantage3:')
+			&& !articId.startsWith('dcc-demo')) {
+      return true;
+    }
+    return false;
+  }
 
   private async doRemove(cachedContent: any) {
     const actionType = cachedContent.ActionType;
     const articId = cachedContent.ActionLink;
-    const localInfo = await this.getLocalInfo();
-    if (actionType && actionType === 'Internal'
-      && articId && !articId.startsWith('lenovo-vantage3:')
-      && !articId.startsWith('dcc-demo')) {
+    if (this.checkArticleCacheable(actionType, articId)) {
+      const localInfo = await this.getLocalInfo();
       const key = `${articId}_${localInfo.Lang}`;
       let iCacheSettings: ICacheSettings = {
         Key: key,
@@ -370,18 +377,16 @@ export class ContentCacheService {
 			image.src = content.FeatureImage;
 			downLoadImages.push(image);
 		}
-	}
-
+  }
+  
 	private async cacheArticle(content: any, lang: string, downLoadImages: any[]) {
-		const actionType = content.ActionType;
+    const actionType = content.ActionType;
 		const articId = content.ActionLink;
-		if (actionType && actionType === 'Internal'
-			&& articId && !articId.startsWith('lenovo-vantage3:')
-			&& !articId.startsWith('dcc-demo')) {
-			const response = await this.cmsService.fetchCMSArticle(articId);
-			this.saveArticle(articId, lang, response);
-			this.cacheArticleImage(response, downLoadImages);
-		}
+		if (this.checkArticleCacheable(actionType, articId)) {
+      const response = await this.cmsService.fetchCMSArticle(articId);
+      this.saveArticle(articId, lang, response);
+      this.cacheArticleImage(response, downLoadImages);
+    }
 	}
 
 	private async saveArticle(articId: any, lang: any, response: any) {
