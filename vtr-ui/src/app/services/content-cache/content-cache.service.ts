@@ -57,10 +57,12 @@ export class ContentCacheService {
 			cachedContents = await this.loadCachedContents(cacheKey);
 			if (cachedContents) {
 				const positionsWithoutContents = this.getPositionsWithoutContents(cachedContents);
-				const tmpBuildInContents = await this.loadBuildInContents(cmsOptions);
-				positionsWithoutContents.forEach((cardId) => {
-					cachedContents[cardId] = tmpBuildInContents[cardId];
-				})
+				if (positionsWithoutContents.length > 0) {
+					const tmpBuildInContents = await this.loadBuildInContents(cmsOptions);
+					positionsWithoutContents.forEach((cardId) => {
+						cachedContents[cardId] = tmpBuildInContents[cardId];
+					})
+				}
 			}
 			else {
 				cachedContents = await this.loadBuildInContents(cmsOptions);
