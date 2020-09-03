@@ -15,6 +15,10 @@ export class MockContentLocalCacheTest {
 
 	}
 
+	public async delete(setting) {
+		
+	}
+
 	private getContents(par) {
 		if (par.Key === '' + Md5.hashStr(JSON.stringify({ Page: 'normalContents' }))) {
 			par.Value = JSON.stringify(NORMAL_CONTENTS);

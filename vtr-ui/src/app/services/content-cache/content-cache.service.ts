@@ -269,7 +269,8 @@ export class ContentCacheService {
 				}
 				const contentList = cacheValueOfContents[key];
 				const cachedContentList = cachedContents[key];
-				this.findUpdatedContents(contentList, cachedContentList, contents);
+        this.findUpdatedContents(contentList, cachedContentList, contents);
+        this.removeInvalidCachedArticles(contentList, cachedContentList);
 			}
 		} else {
 			for (const key in cacheValueOfContents) {
@@ -297,7 +298,44 @@ export class ContentCacheService {
 				contents.push(content);
 			}
 		}
-	}
+  }
+  
+  private removeInvalidCachedArticles(contentList: any, cachedContentList: any) {
+    for (const index in cachedContentList) {
+      let invalid = true;
+      const cachedContent = cachedContentList[index];
+      for (const idx in contentList) {
+        const content = contentList[idx]
+        if (content.Id == cachedContent.Id) {
+          invalid = false;
+          break;
+        }
+      }
+      if (invalid) {
+        this.doRemove(cachedContent);
+      }
+    }
+  }
+
+  private async doRemove(cachedContent: any) {
+    const actionType = cachedContent.ActionType;
+    const articId = cachedContent.ActionLink;
+    const localInfo = await this.getLocalInfo();
+    if (actionType && actionType === 'Internal'
+      && articId && !articId.startsWith('lenovo-vantage3:')
+      && !articId.startsWith('dcc-demo')) {
+      const key = `${articId}_${localInfo.Lang}`;
+      let iCacheSettings: ICacheSettings = {
+        Key: key,
+        Value: null,
+        Component: "ContentCache",
+        UserName: "ContentCache_Articles"
+      };
+      this.contentLocalCacheContract
+        .delete(iCacheSettings)
+        .catch(ex => { this.logger.error('remove article [' + articId + '] failed.') });
+    }
+  }
 
 	private cacheContentDetail(contents: any) {
 		if (!contents || contents.length == 0) {
