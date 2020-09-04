@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.1](https://bitbucket.tc.lenovo.com///compare/v1.8.0...v1.8.1) (2020-09-04)
+
+
+### Features
+
+* **System Update:** VAN-18208, VAN-18207, VAN-18257 ([3ee9e74](https://bitbucket.tc.lenovo.com///commit/3ee9e7406f06e243263f9be5c1fc2dbb316def45))
+
 ## [1.8.0](https://bitbucket.tc.lenovo.com///compare/v1.7.48...v1.8.0) (2020-09-02)
 
 
