@@ -141,7 +141,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		{
 			readMoreText: '',
 			rightImageSource: ['far', 'question-circle'],
-			leftImageSource: 'assets/icons/Icon_critical_updates_20px.svg',
+			leftImageSource: 'assets/icons/Icon_Critical_Update.svg',
 			header: 'systemUpdates.autoUpdateSettings.critical.title',
 			name: 'critical-updates',
 			subHeader: '',
@@ -155,7 +155,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		{
 			readMoreText: '',
 			rightImageSource: ['far', 'question-circle'],
-			leftImageSource: 'assets/icons/Icon_recommended_updates_20px.svg',
+			leftImageSource: 'assets/icons/Icon_Recommended_Update.svg',
 			header: 'systemUpdates.autoUpdateSettings.recommended.title',
 			name: 'recommended-updates',
 			subHeader: '',
@@ -244,7 +244,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		this.isInstallationSuccess = this.systemUpdateService.isInstallationSuccess;
 		this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
 		this.percentCompleted = this.systemUpdateService.percentCompleted;
-		this.isUpdatesAvailable = this.systemUpdateService.isUpdatesAvailable;
+		this.isUpdatesAvailable = this.updateAvailableAfterCheck();
 		this.isInstallingAllUpdates = this.systemUpdateService.isInstallingAllUpdates;
 
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
@@ -618,6 +618,21 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		return isVisible;
 	}
 
+	public updateAvailableAfterCheck() {
+		return this.systemUpdateService.isUpdatesAvailable
+		&& !this.systemUpdateService.isUpdateDownloading
+		&& !this.systemUpdateService.isInstallationCompleted;
+	}
+
+	public isUpdateSelected() {
+		if (this.systemUpdateService.isUpdatesAvailable) {
+			const selectedUpdates = this.systemUpdateService.getSelectedUpdates(this.systemUpdateService.updateInfo.updateList);
+			return selectedUpdates.length > 0;
+		} else {
+			return false;
+		}
+	}
+
 	public onRebootClick($event) {
 		this.systemUpdateService.restartWindows();
 	}
@@ -837,7 +852,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 				case UpdateProgress.UpdatesAvailable:
 					this.isUpdateCheckInProgress = false;
 					this.percentCompleted = this.systemUpdateService.percentCompleted;
-					this.isUpdatesAvailable = this.systemUpdateService.isUpdatesAvailable;
+					this.isUpdatesAvailable = this.updateAvailableAfterCheck();
 					this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
 					this.setUpdateByCategory(payload.updateList);
 					this.systemUpdateService.getIgnoredUpdates();
@@ -902,7 +917,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 						this.isUpdateDownloading = this.systemUpdateService.isUpdateDownloading;
 						this.isInstallingAllUpdates = this.systemUpdateService.isInstallingAllUpdates;
 						this.percentCompleted = this.systemUpdateService.percentCompleted;
-						this.isUpdatesAvailable = this.systemUpdateService.isUpdatesAvailable;
+						this.isUpdatesAvailable = this.updateAvailableAfterCheck();
 						this.installationPercent = this.systemUpdateService.installationPercent;
 						this.downloadingPercent = this.systemUpdateService.downloadingPercent;
 					});
@@ -959,7 +974,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					this.isUpdateCheckInProgress = false;
 					this.isCheckingPluginStatus = false;
 					this.percentCompleted = this.systemUpdateService.percentCompleted;
-					this.isUpdatesAvailable = this.systemUpdateService.isUpdatesAvailable;
+					this.isUpdatesAvailable = this.updateAvailableAfterCheck();
 					this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
 					this.setUpdateByCategory(payload.updateList);
 					this.systemUpdateService.getIgnoredUpdates();

@@ -1,77 +1,17 @@
-<div class="vtr-available-updates p-5">
-	<div *ngIf="!isInstallationCompleted">
-		<div class="row">
-			<div class="col">
-				<div class="header">
-					<div class="heading"
-						id="su_availableUpdates"
-						role="text">{{'systemUpdates.availableUpdates.title' | translate}}</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="row no-gutters">
-			<div class="col-sm-12 col-md-12 col-lg-8">
-				<div class="text-regular"
-					id="su_availableUpdates_desc"
-					role="text">{{'systemUpdates.availableUpdates.description' | translate}}</div>
-			</div>
-			<div class="col-sm-12 col-md-12 col-lg-4">
-				<div class="button-box shift-right">
-					<vtr-ui-button [linkId]="'su_install_all_updates'"
-						(onClick)="onInstallAllUpdates($event)"
-						[isDisabled]="!((criticalUpdates && criticalUpdates.length > 0) || (recommendedUpdates && recommendedUpdates.length > 0) || (optionalUpdates && optionalUpdates.length > 0))"
-						[upperCaseLabel]="true"
-						[label]="'systemUpdates.availableUpdates.installAllUpdates' | translate"
-						metricsParent="Pages.SystemUpdate.NewUpdateAvailable"
-						metricsItem="btn.Install all updates"></vtr-ui-button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div *ngIf="isInstallationCompleted && isInstallationSuccess">
-		<div class="row">
-			<div class="col">
-				<div class="header">
-					<div class="heading">{{'systemUpdates.availableUpdates.installSuccessHeader' | translate}}</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div *ngIf="isInstallationCompleted && !isInstallationSuccess">
-		<div class="row">
-			<div class="col">
-				<div class="header">
-					<div class="heading">{{'systemUpdates.availableUpdates.installFailHeader' | translate}}</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col">
-				<div class="text-regular">{{'systemUpdates.availableUpdates.installFailDescription' | translate}}</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="row mt-20">
-		<div class="col">
-			<div class="row-seperator">&nbsp;</div>
-		</div>
-	</div>
-
+<div class="vtr-available-updates">
 	<div class="row">
 		<div class="col">
 			<div class="updates-lists-container">
 				<div class="row"
 					*ngIf="criticalUpdates && criticalUpdates.length > 0">
+					<img class="icon" [src]="criticalUpdatesIcon"/>
 					<div class="col">
 						<div class="header">
 							<div class="heading"
 								id="su_criticalUpdates"
 								role="text">{{criticalUpdates.length}}
 								{{'systemUpdates.criticalUpdates' | translate}}</div>
+							<div class="description">{{'systemUpdates.availableUpdates.criticalUpdatesDescription' | translate}}</div>
 							<vtr-ui-list-checkbox (checkChange)="onCheckChange($event)"
 								[isInstallationCompleted]="isInstallationCompleted"
 								[isInstallationSuccess]="isInstallationSuccess"
@@ -80,15 +20,17 @@
 						</div>
 					</div>
 				</div>
-
 				<div class="row"
 					*ngIf="recommendedUpdates && recommendedUpdates.length > 0">
+					<div class="row-seperator" *ngIf="criticalUpdates && criticalUpdates.length > 0"></div>
+					<img class="icon" [src]="recommendedUpdatesIcon"/>
 					<div class="col">
 						<div class="header">
 							<div class="heading"
 								id="su_recommendedUpdates"
 								role="text">{{recommendedUpdates.length}}
 								{{'systemUpdates.recommendedUpdates' | translate}}</div>
+							<div class="description">{{'systemUpdates.availableUpdates.recommendedUpdatesDescription' | translate}}</div>
 							<vtr-ui-list-checkbox (checkChange)="onCheckChange($event)"
 								(ignoreUpdate)="onIgnoreUpdate($event)"
 								[isInstallationCompleted]="isInstallationCompleted"
@@ -97,15 +39,17 @@
 						</div>
 					</div>
 				</div>
-
 				<div class="row"
 					*ngIf="optionalUpdates && optionalUpdates.length > 0">
+					<div class="row-seperator" *ngIf="criticalUpdates && criticalUpdates.length > 0 || recommendedUpdates && recommendedUpdates.length > 0"></div>
+					<img class="icon" [src]="optionalUpdateIcon"/>
 					<div class="col">
 						<div class="header">
 							<div class="heading"
 								id="su_optionalUpdates"
 								role="text">{{optionalUpdates.length}}
 								{{'systemUpdates.optionalUpdates' | translate}}</div>
+							<div class="description">{{'systemUpdates.availableUpdates.optionalUpdatesDescription' | translate}}</div>
 							<vtr-ui-list-checkbox (checkChange)="onCheckChange($event)"
 								(ignoreUpdate)="onIgnoreUpdate($event)"
 								[isInstallationCompleted]="isInstallationCompleted"
@@ -114,17 +58,18 @@
 						</div>
 					</div>
 				</div>
-
 				<div class="row"
 					*ngIf="ignoredUpdates && ignoredUpdates.length > 0">
+					<div class="row-seperator" *ngIf="criticalUpdates && criticalUpdates.length > 0 || recommendedUpdates && recommendedUpdates.length > 0 || optionalUpdates && optionalUpdates.length > 0"></div>
+					<img class="icon" [src]="ignoredUpdateIcon" style="width: 2rem; height: 2rem;"/>
 					<div class="col">
-						<div class="header">
+						<div class="header mb-20">
 							<div class="row d-flex justify-content-between w-100">
 								<div class="heading"
 									id="su_ignoredUpdates"
 									role="text">{{ignoredUpdates.length}}
 									{{'systemUpdates.ignoredUpdates' | translate}}</div>
-								<div class="px-3 collapse-control"
+								<div class="collapse-control"
 									id="su-col-exp-ignore"
 									role="button"
 									aria-label="ignored updates collapse"
@@ -141,9 +86,9 @@
 										{{'common.ui.collapse' | translate}}
 									</div>
 									<fa-icon *ngIf="isCollapsed"
-										[icon]="['fas', 'chevron-down']"></fa-icon>
+										[icon]="['fal', 'chevron-down']"></fa-icon>
 									<fa-icon *ngIf="!isCollapsed"
-										[icon]="['fas', 'chevron-up']"></fa-icon>
+										[icon]="['fal', 'chevron-up']"></fa-icon>
 								</div>
 							</div>
 						</div>
@@ -153,21 +98,6 @@
 							[isInstallationCompleted]="isInstallationCompleted"
 							[isInstallationSuccess]="isInstallationSuccess"
 							[items]="ignoredUpdates"></vtr-ui-list-checkbox>
-					</div>
-				</div>
-
-				<div class="row mt-10 no-gutters"
-					*ngIf="!isInstallationCompleted">
-					<div class="col-12">
-						<div class="button-box shift-left">
-							<vtr-ui-button (onClick)="onInstallSelectedUpdates($event)"
-								[linkId]="'su_install_selected_updates'"
-								[isDisabled]="!isUpdateSelected"
-								[upperCaseLabel]="true"
-								[label]="'systemUpdates.availableUpdates.installSelectedUpdates' | translate"
-								metricsParent="Pages.SystemUpdate.NewUpdateAvailable"
-								metricsItem="btn.Install selected updates"></vtr-ui-button>
-						</div>
 					</div>
 				</div>
 			</div>

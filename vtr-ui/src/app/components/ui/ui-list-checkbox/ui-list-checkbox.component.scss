@@ -2,10 +2,8 @@
 
 .vtr-ui-list-checkbox {
 	.list-group {
-		margin: 3.5rem 0;
 		box-sizing: unset;
 		.list-group-item {
-			background: $grey_lighter;
 			padding: 1.5rem 1rem 1.5rem 0.2rem;
 			border: 0.1rem solid $note_border;
 			&:last-child {
@@ -18,14 +16,15 @@
 				}
 			}
 			.button-box {
-				padding: 0rem;
+				padding-left: 1.2rem;
 				margin: 0rem;
 				display: inline-block;
 
 
 				.btn-round-sm {
+					margin-bottom: 0.6rem;
 					border-radius: 0.5rem;
-					padding: 0.5rem 1rem 0.5rem 1rem;
+					padding: 0.4rem 1rem 0.4rem 1rem;
 					font-size: 1.3rem;
 					background: $light;
 					border: 0rem;
@@ -40,13 +39,13 @@
 					z-index: 0;
 				}
 				.custom-control-label {
+					cursor: pointer;
 					padding-left: 1.2rem;
-					@media #{$breakpoint_sm} {
-						padding-bottom: 1rem;
-					}
+					margin-bottom: 0.6rem;
 
 					// rounded square-box background
 					&::before {
+						margin-top: 1rem;
 						width: 1.8rem;
 						height: 1.8rem;
 						box-shadow: inset 0 0 0 0.1rem $light;
@@ -55,6 +54,7 @@
 
 					// tick mark
 					&::after {
+						margin-top: 1rem;
 						width: 1.8rem;
 						height: 1.8rem;
 					}
@@ -152,10 +152,20 @@
 							}
 						}
 					}
+					.custom-control-input:disabled ~ .custom-control-label {
+						cursor: default;
+					}
+				}
+				.download-size {
+					padding-left: 1.2rem;
+					font-size: $fontsize_xs2;
+					line-height: 1.4rem;
+					color: $shade_blue;
 				}
 			}
 
 			.update-title {
+				line-height: 2rem;
 				font-size: $fontsize_xs;
 				font-weight: $weight_600;
 				padding-top: 0rem;
@@ -172,6 +182,7 @@
 			}
 
 			.question {
+				margin-top: 1rem;
 				cursor: pointer;
 				color: $main;
 				font-size: $fontsize_sm;
@@ -217,6 +228,14 @@
 					color: $light;
 				}
 			}
+		}
+
+		.selected-background {
+			background-color: rgba(73, 127, 253, 0.102);
+		}
+
+		.unselected-background {
+			background-color: #f5f7f8;
 		}
 	}
 

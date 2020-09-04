@@ -30,7 +30,7 @@ export class UiListCheckboxComponent implements OnInit, OnDestroy {
 	public version: string;
 	public installedVersion: string;
 	public installedVersionStatus = 0;
-	public downloadSize: string;
+	public downloadSizes: Array<string>;
 	public diskSpaceNeeded: string;
 	public readMeUrl = '';
 	public packageRebootType: string;
@@ -59,6 +59,7 @@ export class UiListCheckboxComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		this.getDownloadSize();
 	 }
 
 	onCheckChange($event: any) {
@@ -73,7 +74,6 @@ export class UiListCheckboxComponent implements OnInit, OnDestroy {
 		this.isReadMeAvailable = false;
 		this.manufacturer = update.packageVendor;
 		this.version = update.packageVersion;
-		this.downloadSize = this.commonService.formatBytes(parseInt(update.packageSize, 10));
 		this.diskSpaceNeeded = this.commonService.formatBytes(parseInt(update.diskSpaceRequired, 10));
 		this.readMeUrl = update.readmeUrl;
 		this.packageRebootType = update.packageRebootType;
@@ -115,10 +115,10 @@ export class UiListCheckboxComponent implements OnInit, OnDestroy {
 	}
 
 	CloseToolTip(activeId){
-		if(activeId &&
-			activeId.indexOf("su-package-readme-") < 0 &&
-			activeId.indexOf("su-ignore-update-") < 0 &&
-			activeId.indexOf("su-unignore-update-") < 0 && this.currentToolTip && this.currentToolTip.isOpen()){
+		if ( activeId &&
+			activeId.indexOf('su-package-readme-') < 0 &&
+			activeId.indexOf('su-ignore-update-') < 0 &&
+			activeId.indexOf('su-unignore-update-') < 0 && this.currentToolTip && this.currentToolTip.isOpen()){
 				this.currentToolTip.close();
 		}
 	}
@@ -170,5 +170,11 @@ export class UiListCheckboxComponent implements OnInit, OnDestroy {
 		if (this.translate2Subscription) {
 			this.translate2Subscription.unsubscribe();
 		}
+	}
+
+	private getDownloadSize() {
+		this.items.forEach(item => {
+			item.downloadSize = this.commonService.formatBytes(parseInt(item.packageSize, 10));
+		});
 	}
 }

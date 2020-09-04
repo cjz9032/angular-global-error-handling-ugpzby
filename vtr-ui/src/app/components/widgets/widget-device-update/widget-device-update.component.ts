@@ -21,9 +21,14 @@ export class WidgetDeviceUpdateComponent implements OnInit {
 	@Input() isCancelingStatus = false;
 	@Input() downloadingPercent = 0;
 	@Input() installingPercent = 0;
+	@Input() isUpdateListVisible = false;
+	@Input() isUpdatesAvailable = false;
+	@Input() isUpdateSelected = false;
+	@Input() isCheckedOnce = false;
 	@Output() checkForUpdate = new EventEmitter();
 	@Output() cancelUpdateCheck = new EventEmitter();
 	@Output() cancelUpdateDownload = new EventEmitter();
+	@Output() updateNow = new EventEmitter();
 
 	public progressValue = 0;
 	public downloadingIcon = 'spinner';
@@ -50,6 +55,10 @@ export class WidgetDeviceUpdateComponent implements OnInit {
 
 	onCancelUpdateDownload() {
 		this.cancelUpdateDownload.emit();
+	}
+
+	onUpdateNow() {
+		this.updateNow.emit();
 	}
 
 	private translateString() {

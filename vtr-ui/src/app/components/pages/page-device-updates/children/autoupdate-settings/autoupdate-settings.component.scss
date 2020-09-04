@@ -35,6 +35,11 @@
 		border-radius: 0.9rem;
 		letter-spacing: 0rem;
 
+		.left-image {
+			width: 2rem;
+			height: 2rem;
+		}
+
 		.update-title {
 			color: $purple_navy;
 			font-size: $fontsize_sm;

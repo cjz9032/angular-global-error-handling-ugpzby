@@ -35,6 +35,7 @@ export class SystemUpdateService {
 	public autoUpdateStatus: any;
 	public isShellAvailable = false;
 	public isCheckForUpdateComplete = true;
+	public checkedOnce = false;
 	public updateInfo: AvailableUpdate;
 	public installationHistory: Array<UpdateHistory>;
 	public ignoredRebootDelayUpdates: AvailableUpdateDetail[] = [];
@@ -134,6 +135,7 @@ export class SystemUpdateService {
 	public checkForUpdates() {
 		// checkForUpdates requires callback
 		this.timeStartSearch = new Date();
+		this.checkedOnce = true;
 		if (this.systemUpdateBridge) {
 			this.isCheckForUpdateComplete = false;
 			this.isInstallationCompleted = false;

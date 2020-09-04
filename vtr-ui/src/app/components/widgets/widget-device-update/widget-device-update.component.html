@@ -1,40 +1,77 @@
 <div class="vtr-widget-device-update">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col col-12 systemupdate-background">
-				<div class="row"
-					*ngIf="!isUpdateDownloading">
-					<div class="col title"
-						id="system-update-title"
-						role="heading">{{title}}</div>
+			<div class="col col-12 systemupdate-background" [ngClass]="{'no-bottom-radius': isUpdateListVisible}">
+				<div *ngIf="!showProgress && !isUpdateDownloading && !isUpdatesAvailable">
+					<div class="row"
+						*ngIf="!isUpdateDownloading">
+						<div class="col title"
+							id="system-update-title"
+							role="heading">{{title}}</div>
+					</div>
+					<div class="row">
+						<div class="col sub-title"
+							id="system-update-sub-title1"
+							role="heading">{{subTitle1}}</div>
+					</div>
+					<div class="row">
+						<div class="col sub-title"
+							id="system-update-sub-title2"
+							role="heading">{{subTitle2}}</div>
+					</div>
 				</div>
-				<div class="row"
-					*ngIf="isUpdateDownloading">
-					<div class="col title"
-						id="system-update-installing-title"
-						role="heading">{{installingTitleText}}</div>
+
+				<div *ngIf="!showProgress && !isUpdateDownloading && isUpdatesAvailable">
+					<div class="row">
+						<div class="col title"
+							id="system-update-available-updates-title"
+							role="heading">{{'systemUpdates.availableUpdates.title' | translate}}</div>
+					</div>
+
+					<div class="row" >
+						<div class="col sub-title"
+							id="system-update-available-updates-description"
+							role="heading">{{'systemUpdates.availableUpdates.description' | translate}}</div>
+					</div>
 				</div>
-				<div class="row">
-					<div class="col row1"
-						id="system-update-sub-title1"
-						role="heading">{{subTitle1}}</div>
-				</div>
-				<div class="row">
-					<div class="col row1"
-						id="system-update-sub-title2"
-						role="heading">{{subTitle2}}</div>
-				</div>
+
 				<div *ngIf="!showProgress && !isUpdateDownloading"
 					class="row">
-					<div class="button-row">
+					<div class="button-row" *ngIf="!isUpdatesAvailable">
 						<vtr-ui-button linkId="su_check_updates"
 							metricsEvent="FeatureClick"
-							metricsItem="btn.Check For Updates"
+							[metricsItem]="isCheckedOnce ? 'btn.check again' : 'btn.Check For Updates'"
 							metricsParent="Pages.SystemUpdate"
 							[isFullWidth]="true"
 							[isDisabled]="isCheckingPluginStatus"
-							[label]="buttonText"
+							[label]="(isCheckedOnce ? 'systemUpdates.banner.checkAgain' :'systemUpdates.banner.checkButton') | translate"
 							(onClick)="onCheckForUpdates()"></vtr-ui-button>
+					</div>
+					<div class="row" *ngIf="isUpdatesAvailable">
+						<div class="button-row">
+							<vtr-ui-button linkId="su_update_now"
+							[isDisabled]="!isUpdateSelected"
+							[upperCaseLabel]="true"
+							[label]="'systemUpdates.banner.updateNow' | translate"
+							metricsParent="Pages.SystemUpdate"
+							metricsItem="btn.Update Now"
+							(onClick)="onUpdateNow()"></vtr-ui-button>
+
+						</div>
+						<button type="button"
+							id="su_check_again"
+							[title]=""
+							vtrMetrics
+							metricsEvent="ItemClick"
+							metricsParent="Pages.SystemUpdate"
+							metricsItem="btn.check again"
+							class="btn btn-link cancel-check check-again"
+							(click)="onCheckForUpdates()"
+							[disabled]="isCheckingPluginStatus"
+							[ngbTooltip]="'systemUpdates.banner.checkAgain' | translate"
+							tooltipClass="vtr-system-tooltip"
+							container="body"
+							>{{'systemUpdates.banner.checkAgain' | translate}}</button>
 					</div>
 				</div>
 				<div *ngIf="showProgress"
@@ -55,7 +92,7 @@
 					<vtr-ui-progress-bar progressId="su_check_progress"
 						[value]="percent"></vtr-ui-progress-bar>
 					<div class="col col-12 row">
-						<div class="col col-12 cancel-check p-5">
+						<div class="col col-12 link-button-container">
 							<button type="button"
 								id="su_cancel_updates"
 								vtrMetrics
@@ -63,6 +100,8 @@
 								metricsParent="Pages.SystemUpdate"
 								metricsItem="'btn.cancel'"
 								class="btn btn-link cancel-check"
+								[ngbTooltip]="'systemUpdates.banner.cancelCheck' | translate"
+								tooltipClass="vtr-system-tooltip"
 								[disabled]="percent === 0 || isCheckingStatus || isCancelingStatus"
 								(click)="cancelUpdates()">{{'systemUpdates.banner.cancelCheck' | translate}}</button>
 						</div>
@@ -72,50 +111,43 @@
 				<div class="col row"
 					*ngIf="isUpdateDownloading">
 					<div class="col col-12 row progress-div">
-						<div class="col col-9 progress-title">
-							<fa-icon [icon]="['fas', 'spinner']"
-								[spin]="true"
-								*ngIf="downloadingPercent < 100">
-							</fa-icon>
-							<fa-icon [icon]="['fas', 'check-circle']"
-								class="success"
-								*ngIf="downloadingPercent === 100">
-							</fa-icon>
+						<div *ngIf="installingPercent === 0"
+							class="col col-9 progress-title"
+							id="su-progress-download-title"
+							role="heading">
 							{{downloadingUpdateText}}
 						</div>
-						<div class="col col-3 progress-percent-text">
-							<div class="row progress-right">
-								<span class="progress-value-text"
-									id="su-progress-download-value"
-									role="text">{{downloadingPercent}}</span>
-								<span class="progress-complete-text">{{'systemUpdates.banner.percent' | translate}}</span>
-							</div>
-						</div>
-					</div>
-					<vtr-ui-progress-bar progressId="su_download_progress"
-						[value]="downloadingPercent"></vtr-ui-progress-bar>
-
-					<div class="col col-12 row progress-div install-progress">
-						<div class="col col-9 progress-title">
-							<fa-icon [icon]="['fas', 'spinner']"
-								[ngClass]="{downloading: installingPercent === 0, installing: installingPercent>0}"
-								[spin]="true">
-							</fa-icon>
+						<div *ngIf="installingPercent > 0"
+							class="col col-9 progress-title"
+							id="su-progress-install-title"
+							role="heading">
 							{{'systemUpdates.banner.installing' | translate}}
 						</div>
+						<div class="col col-9 progress-subtitle"
+							id="su-progress-subtitle"
+							role="text">{{installingTitleText}}</div>
 						<div class="col col-3 progress-percent-text">
 							<div class="row progress-right">
-								<span class="progress-value-text"
+								<span *ngIf="installingPercent === 0"
+									class="progress-value-text"
+									id="su-progress-download-value"
+									role="text">{{downloadingPercent}}</span>
+								<span *ngIf="installingPercent > 0"
+									class="progress-value-text"
 									id="su-progress-install-value"
 									role="text">{{installingPercent}}</span>
 								<span class="progress-complete-text">{{'systemUpdates.banner.percent' | translate}}</span>
 							</div>
 						</div>
 					</div>
-					<vtr-ui-progress-bar progressId="su_install_progress"
+					<vtr-ui-progress-bar *ngIf="installingPercent === 0"
+						progressId="su_download_progress"
+						[value]="downloadingPercent"></vtr-ui-progress-bar>
+					<vtr-ui-progress-bar *ngIf="installingPercent > 0"
+						progressId="su_install_progress"
 						[value]="installingPercent"></vtr-ui-progress-bar>
 					<div class="col col-12 row">
-						<div class="col col-12 cancel-check p-5">
+						<div class="col col-12 link-button-container">
 							<button type="button"
 								id="su_cancel_update_download"
 								[title]=""

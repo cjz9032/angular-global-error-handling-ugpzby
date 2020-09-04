@@ -3,10 +3,11 @@
 	<ul class="list-group"
 		*ngIf="!isInstallationCompleted">
 		<li class="list-group-item" id="su_item_candidate"
+			[ngClass]="item.isSelected ? 'selected-background' : 'unselected-background'"
 			*ngFor="let item of items; let i = index">
 			<div class="media pl-3 align-items-center">
 				<div class="media-body pb-0 mb-0 small">
-					<div class="d-flex justify-content-between align-items-center w-100">
+					<div class="d-flex justify-content-between align-items-start w-100">
 						<div class="custom-control custom-checkbox">
 							<input type="checkbox"
 								id="{{ 'updateCheckbox_'  + item.packageID }}"
@@ -22,29 +23,32 @@
 									{{item.packageDesc}}</span>
 							</label>
 
-							<div class="button-box pl-4"
+							<div class="button-box"
 								*ngIf="item.packageRebootType === 'RebootForced'">
 								<div class="btn-round-sm" id="{{'su_rebootForced_'+item.packageID}}" role="text">
 									<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon> {{'systemUpdates.updateCheckbox.rebootRequiredTag' | translate}}
 								</div>
 							</div>
-							<div class="button-box pl-4"
+							<div class="button-box"
 								*ngIf="item.packageRebootType === 'RebootDelayed'">
 								<div class="btn-round-sm" id="{{'su_rebootDelayed_'+item.packageID}}" role="text">
 									<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon> {{'systemUpdates.updateCheckbox.rebootDelayTag' | translate}}
 								</div>
 							</div>
-							<div class="button-box pl-4"
+							<div class="button-box"
 								*ngIf="item.packageRebootType === 'PowerOffForced'">
 								<div class="btn-round-sm" id="{{'su_powerOffForced_'+item.packageID}}" role="text">
 									<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon> {{'systemUpdates.updateCheckbox.shutdownRequiredTag' | translate}}
 								</div>
 							</div>
-							<div class="button-box pl-1"
+							<div class="button-box"
 								*ngIf="item.isDependency">
 								<div class="btn-round-sm" id="{{'su_depended_'+item.packageID}}" role="text">
 									<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon> {{'systemUpdates.updateCheckbox.dependedPackage' | translate}}
 								</div>
+							</div>
+							<div class="download-size">
+								{{'systemUpdates.updateCheckbox.downloadSize' | translate}}<span >{{ item.downloadSize }}</span>
 							</div>
 						</div>
 
@@ -132,7 +136,6 @@
 			<li *ngIf="installedVersionStatus === 0">{{'systemUpdates.updateCheckbox.installVersion' | translate}}<span>{{ installedVersion }}</span></li>
 			<li *ngIf="installedVersionStatus === 1">{{'systemUpdates.updateCheckbox.installVersion' | translate}}<span>{{ notInstalledText }}</span></li>
 			<li *ngIf="installedVersionStatus === 2">{{'systemUpdates.updateCheckbox.installVersion' | translate}}<span>{{ notAvailableText }}</span></li>
-			<li>{{'systemUpdates.updateCheckbox.downloadSize' | translate}}<span >{{ downloadSize }}</span> </li>
 			<li>{{'systemUpdates.updateCheckbox.diskSpaceNeeded' | translate}}<span >{{ diskSpaceNeeded }}</span></li>
 		</ul>
 		<div class="row"

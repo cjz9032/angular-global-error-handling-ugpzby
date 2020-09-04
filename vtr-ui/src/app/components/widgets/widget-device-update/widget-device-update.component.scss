@@ -2,9 +2,7 @@
 
 .vtr-widget-device-update {
 	.systemupdate-background {
-		border-radius: 0.7rem;
-		border-bottom-left-radius: 0rem;
-		border-bottom-right-radius: 0rem;
+		border-radius: 1rem;
 		height: 100%;
 		width: 100%;
 		//background: linear-gradient($gradient_angle, $main_darkest 0%, $main_darker 100%);
@@ -24,12 +22,12 @@
 
 		.title {
 			color: $light;
-			font-size: 3.4rem;
-			font-weight: $weight_light;
-			line-height: 4.2rem;
+			font-family: $font_family_semibold;
+			font-size: 2.4rem;
+			line-height: 2.8rem;
 			padding-left: 2.4rem;
 			padding-top: 2.4rem;
-			padding-bottom: 2rem;
+			padding-bottom: 0.8rem;
 			padding-right: 2.4rem;
 			@media #{$breakpoint_xl} {
 				font-size: 2rem;
@@ -37,10 +35,11 @@
 			}
 		}
 
-		.row1 {
-			opacity: 0.5;
+		.sub-title {
+			opacity: 0.75;
 			color: $light;
-			font-size: 1.75rem;
+			font-size: 1.4rem;
+			font-family: $font_family_semilight;
 			line-height: 2.1rem;
 			padding-left: 2.4rem;
 			padding-top: 0rem;
@@ -49,8 +48,8 @@
 
 		.button-row {
 			padding-left: 2.4rem;
-			padding-bottom: 4rem;
-			padding-top: 2.4rem;
+			padding-bottom: 2.4rem;
+			padding-top: 4rem;
 			padding-right: 2.4rem;
 			max-width: 100%;
 			&::ng-deep{
@@ -62,65 +61,51 @@
 			}
 		}
 		.progress-div {
-			padding-left: 2.5rem;
-			padding-right: 2.5rem;
-			margin-top: 3rem;
-			border-top: 0.1rem solid;
-			border-color: rgba(255, 255, 255, 0.18);
+			padding-left: 2.4rem;
+			padding-right: 2.4rem;
+			margin-top: 2.4rem;
 
-			&.install-progress {
-				border-top: 0;
-				margin-top: 0;
-			}
 			.progress-title {
 				color: $light;
-				font-size: 2.5rem;
-				font-weight: $weight_light;
-				line-height: 2.9rem;
-				padding-top: 5rem;
-				padding-bottom: 2rem;
+				font-size: 2.4rem;
+				font-family: $font_family_semibold;
+				line-height: 2.8rem;
 				padding-right: 5rem;
+			}
 
-				.installing {
-					color: $light;
-				}
-				.downloading {
-					color: transparent;
-				}
+			.progress-subtitle {
+				color: $light;
+				font-size: 1.4rem;
+				font-family: $font_family_semilight;
+				margin-top: 0.8rem;
+				line-height: 1.9rem;
+				padding-right: 5rem;
+				opacity: 0.75;
+				text-align: left;
 			}
 
 			.progress-percent-text {
 				color: $light;
-				font-size: $fontsize_xl;
-				font-weight: $weight_light;
-				line-height: 2.9rem;
-				padding-top: 5rem;
-				padding-bottom: 2rem;
+				padding-top: 2.7rem;
+				padding-right: 0.6rem;
+				margin-top: 0.8rem;
 				float: right;
 
 				.progress-right {
 					float: right;
 					display: inline;
+					text-align: right;
 
 					.progress-value-text {
-						color: $light;
-						font-size: 1.75rem;
-						font-weight: $weight_light;
-						line-height: 2.9rem;
-						padding-right: 0rem;
-						padding-left: 0rem;
-						text-align: left;
+						font-family: $font_family_semibold;
+						line-height: 4rem;
 						font-size: 3rem !important;
 					}
 
 					.progress-complete-text {
-						color: $light;
-						font-size: 1.75rem;
-						font-weight: $weight_light;
-						line-height: 2.9rem;
-						padding-right: 0rem;
-						padding-left: 0;
-						text-align: left;
+						font-size: 1.4rem;
+						font-family: 'Segoe UI';
+						line-height: 1.9rem;
 					}
 				}
 			}
@@ -128,13 +113,15 @@
 
 		.cancel-check {
 			color: $light;
-			font-size: 1.3rem;
-			font-weight: $weight_medium;
-			line-height: 1.5rem;
+			font-size: 1.4rem;
+			font-family: 'Segoe UI Bold', sans-serif;
+			line-height: 2rem;
 			text-align: center;
 			text-transform: uppercase;
 			border-bottom: 0.2rem solid $light;
-			padding: 0 0 0.1rem;
+			padding: 0 0 0.2rem;
+			letter-spacing: 0.49px;
+			margin-top: 1.6rem;
 
 			&:hover, &:focus {
 				color: $light;
@@ -146,9 +133,22 @@
 				@include outline-blue;
 			}
 
-			button {
-				cursor: pointer;
-			}
+			cursor: pointer;
 		}
+
+		.link-button-container {
+			text-align: center;
+			margin-bottom: 2.4rem;
+		}
+
+		.check-again {
+			height: 2.2rem;
+			margin-top: 5.3rem;
+		}
+	}
+
+	.no-bottom-radius {
+		border-bottom-left-radius: 0rem;
+		border-bottom-right-radius: 0rem;
 	}
 }
