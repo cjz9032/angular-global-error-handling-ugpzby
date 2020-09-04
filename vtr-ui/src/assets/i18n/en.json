@@ -3261,7 +3261,7 @@
 			"uacTitles": "User Account Control",
 			"hde": "Hard drive encryption",
 			"level": "Security Level:",
-			"fully": "To get a better offer protect your device, stay with",
+			"fully": "To better protect your device, stay with",
 			"notFully": "To learn how to better protect your device, start with",
 			"noProtection": "No protection",
 			"noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
