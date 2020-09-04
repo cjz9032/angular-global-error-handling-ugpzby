@@ -4185,7 +4185,7 @@
         "scanFailureModal": {
             "title": "Zistil sa problém s hardvérom",
             "problemDetected": "Vo vašom počítači sa zistili problémy s týmito komponentmi:",
-            "suggestedActionRbs": "Ukladacie zariadenia môžete skúsiť obnoviť kliknutím na položku <b>Obnoviť zlé sektory</b>. Ak problém pretrváva, môžete kliknúť na položku <b>Požiadať o poskytnutie služby</b> a získať ďalšiu podporu.",
+            "suggestedActionRbs": "Ukladacie zariadenia môžete skúsiť obnoviť kliknutím na položku <b>Obnoviť chybné sektory</b>. Ak problém pretrváva, môžete kliknúť na položku <b>Požiadať o poskytnutie služby</b> a získať ďalšiu podporu.",
             "suggestedActionSupport": "Ak je počítač v záruke, kliknite na položku <b>Požiadať o poskytnutie služby</b> a požiadajte o náhradný diel. Ďalšie informácie nájdete na webovej lokalite podpory spoločnosti Lenovo.",
             "supportButtonText": "Požiadať o poskytnutie služby",
             "recoverBadSectorsButtonText": "Obnoviť chybné sektory"

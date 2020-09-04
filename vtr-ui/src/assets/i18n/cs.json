@@ -4185,7 +4185,7 @@
         "scanFailureModal": {
             "title": "Byl zjištěn problém s hardwarem",
             "problemDetected": "Ve vašem počítači byly zjištěny problémy následujících komponent:",
-            "suggestedActionRbs": "Můžete se pokusit obnovit paměťová zařízení kliknutím na <b>obnovit vadné sektory</b>. Pokud problém přetrvává, můžete kliknout na <b>otevřít tiket</b> a vyžádat si další podporu.",
+            "suggestedActionRbs": "Paměťová zařízení se můžete pokusit obnovit kliknutím na <b>obnovit vadné sektory</b>. Pokud problém přetrvává, můžete kliknout na <b>otevřít tiket</b> a vyžádat si další podporu.",
             "suggestedActionSupport": "Pokud je váš počítač v záruce, kliknutím na <b>otevřít tiket</b> požádejte o náhradní díl. Další informace naleznete na webových stránkách podpory Lenovo.",
             "supportButtonText": "Otevřít tiket",
             "recoverBadSectorsButtonText": "Obnovit vadné sektory"
