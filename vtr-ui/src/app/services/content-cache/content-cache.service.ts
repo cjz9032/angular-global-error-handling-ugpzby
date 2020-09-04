@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Md5 } from "ts-md5";
+import { Md5 } from 'ts-md5';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { LoggerService } from '../logger/logger.service';
@@ -21,10 +21,10 @@ interface IConfigItem {
 }
 
 interface ICacheSettings {
-	Key: string,
-	Value: string,
-	Component: string,
-	UserName: string
+	Key: string;
+	Value: string;
+	Component: string;
+	UserName: string;
 }
 
 @Injectable({
@@ -61,7 +61,7 @@ export class ContentCacheService {
 					const tmpBuildInContents = await this.loadBuildInContents(cmsOptions);
 					positionsWithoutContents.forEach((cardId) => {
 						cachedContents[cardId] = tmpBuildInContents[cardId];
-					})
+					});
 				}
 			}
 			else {
@@ -86,7 +86,7 @@ export class ContentCacheService {
 
 	public async getArticleById(actionType: ContentActionType, articleId: any) {
 		const loclInfo = await this.cmsService.getLocalinfo();
-		if (actionType == ContentActionType.BuildIn) {
+		if (actionType === ContentActionType.BuildIn) {
 			return this.buildInContentService.getArticle(articleId, loclInfo.Lang);
 		} else {
 			let article = await this.getCachedArticle(articleId, loclInfo.Lang);
@@ -122,13 +122,13 @@ export class ContentCacheService {
 		const contentIds = Object.keys(contents);
 		contentIds.forEach(id => {
 			contents[id] = this.formalizeContent(contents[id], id, ContentSource.Local);
-		})
+		});
 		this.buildInContents[key] = contents;
 		return contents;
 	}
 
 	private async loadCachedContents(cacheKey) {
-		var contents = await this.getCachedOnlineContents(cacheKey);
+		const contents = await this.getCachedOnlineContents(cacheKey);
 
 		if (contents) {
 			const contentsForPage = {};
@@ -157,16 +157,16 @@ export class ContentCacheService {
 	}
 
 	private async getCachedOnlineContents(cacheKey) {
-		var contents = null;
+		let contents = null;
 		if (this.latestCachedContetns[cacheKey]) {
 			contents = this.latestCachedContetns[cacheKey];
 		}
 		else {
-			let iCacheSettings: ICacheSettings = {
+			const iCacheSettings: ICacheSettings = {
 				Key: cacheKey,
 				Value: null,
-				Component: "ContentCache",
-				UserName: "ContentCache_Contents"
+				Component: 'ContentCache',
+				UserName: 'ContentCache_Contents'
 			};
 			const cachedObject = await this.contentLocalCacheContract.get(iCacheSettings);
 			if (cachedObject && cachedObject.Value) {
@@ -209,16 +209,16 @@ export class ContentCacheService {
 		const startTime = new Date();
 		Promise.all([this.fetchCMSContent(cmsOptions, contentCards), this.fetchUPEContent(contentCards)])
 			.then(async response => {
-				let cacheValueOfContents = {
-					"positionA": [],
-					"positionB": [],
-					"positionC": [],
-					"positionD": [],
-					"positionE": [],
-					"positionF": [],
-					"welcome-text": []
-				}
-				await this.fillCacheValue(response, contentCards, cacheValueOfContents)
+				const cacheValueOfContents = {
+					positionA: [],
+					positionB: [],
+					positionC: [],
+					positionD: [],
+					positionE: [],
+					positionF: [],
+					'welcome-text': []
+				};
+				await this.fillCacheValue(response, contentCards, cacheValueOfContents);
 				const contents = await this.getUpdatedContents(cacheKey, cacheValueOfContents);
 				await this.saveContents(cacheKey, cacheValueOfContents);
 				this.latestCachedContetns[cacheKey] = cacheValueOfContents;
@@ -250,21 +250,21 @@ export class ContentCacheService {
 	}
 
 	private async saveContents(cacheKey: string, cacheValueOfContents: any) {
-		let iCacheSettings: ICacheSettings = {
+		const iCacheSettings: ICacheSettings = {
 			Key: cacheKey,
 			Value: JSON.stringify(cacheValueOfContents),
-			Component: "ContentCache",
-			UserName: "ContentCache_Contents"
-		}
+			Component: 'ContentCache',
+			UserName: 'ContentCache_Contents'
+		};
 		await this.contentLocalCacheContract.set(iCacheSettings);
 	}
 
 	private async getUpdatedContents(cacheKey: any, cacheValueOfContents: any) {
 		const contents = [];
-		let cachedContents = await this.getCachedOnlineContents(cacheKey);
+		const cachedContents = await this.getCachedOnlineContents(cacheKey);
 		if (cachedContents) {
-			for (const key in cacheValueOfContents) {
-				if ("welcome-text" == key) {
+			for (const key of Object.keys(cacheValueOfContents)) {
+				if ('welcome-text' === key) {
 					continue;
 				}
 				const contentList = cacheValueOfContents[key];
@@ -273,7 +273,7 @@ export class ContentCacheService {
 				this.removeInvalidCachedArticles(contentList, cachedContentList);
 			}
 		} else {
-			for (const key in cacheValueOfContents) {
+			for (const key of Object.keys(cacheValueOfContents)) {
 				cacheValueOfContents[key].forEach(content => {
 					contents.push(content);
 				});
@@ -283,13 +283,13 @@ export class ContentCacheService {
 	}
 
 	private findUpdatedContents(contentList: any, cachedContentList: any, contents: any[]) {
-		for (const index in contentList) {
+		for (const index of Object.keys(contentList)) {
 			const content = contentList[index];
 			let needUpdated = true;
-			for (const idx in cachedContentList) {
+			for (const idx of Object.keys(cachedContentList)) {
 				const cachedContent = cachedContentList[idx];
-				if (content.Id == cachedContent.Id &&
-					content.Revision == cachedContent.Revision) {
+				if (content.Id === cachedContent.Id &&
+					content.Revision === cachedContent.Revision) {
 					needUpdated = false;
 					break;
 				}
@@ -301,12 +301,12 @@ export class ContentCacheService {
 	}
 
 	private removeInvalidCachedArticles(contentList: any, cachedContentList: any) {
-		for (const index in cachedContentList) {
+		for (const index of Object.keys(cachedContentList)) {
 			let invalid = true;
 			const cachedContent = cachedContentList[index];
-			for (const idx in contentList) {
-				const content = contentList[idx]
-				if (content.Id == cachedContent.Id) {
+			for (const idx of Object.keys(contentList)) {
+				const content = contentList[idx];
+				if (content.Id === cachedContent.Id) {
 					invalid = false;
 					break;
 				}
@@ -332,26 +332,26 @@ export class ContentCacheService {
 		if (this.checkArticleCacheable(actionType, articId)) {
 			const localInfo = await this.getLocalInfo();
 			const key = `${articId}_${localInfo.Lang}`;
-			let iCacheSettings: ICacheSettings = {
+			const iCacheSettings: ICacheSettings = {
 				Key: key,
 				Value: null,
-				Component: "ContentCache",
-				UserName: "ContentCache_Articles"
+				Component: 'ContentCache',
+				UserName: 'ContentCache_Articles'
 			};
 			this.contentLocalCacheContract
 				.delete(iCacheSettings)
-				.catch(ex => { this.logger.error('remove article [' + articId + '] failed.') });
+				.catch(ex => { this.logger.error('remove article [' + articId + '] failed.'); });
 		}
 	}
 
 	private cacheContentDetail(contents: any) {
-		if (!contents || contents.length == 0) {
+		if (!contents || contents.length === 0) {
 			return;
 		}
 		return new Promise(async (resolve, reject) => {
 			const downLoadImages = [];
 			const localInfo = await this.getLocalInfo();
-			let cacheArticleResults = [];
+			const cacheArticleResults = [];
 			contents.forEach(content => {
 				this.cacheContentImage(content, downLoadImages);
 				const result = this.cacheArticle(content, localInfo.Lang, downLoadImages);
@@ -391,12 +391,12 @@ export class ContentCacheService {
 
 	private async saveArticle(articId: any, lang: any, response: any) {
 		const key = `${articId}_${lang}`;
-		let iCacheSettings: ICacheSettings = {
+		const iCacheSettings: ICacheSettings = {
 			Key: key,
 			Value: JSON.stringify(response),
-			Component: "ContentCache",
-			UserName: "ContentCache_Articles"
-		}
+			Component: 'ContentCache',
+			UserName: 'ContentCache_Articles'
+		};
 		await this.contentLocalCacheContract.set(iCacheSettings);
 	}
 
@@ -427,7 +427,7 @@ export class ContentCacheService {
 	private async fetchUPEContent(contentCards: any) {
 		const contentCardList: IConfigItem[] = Object.values(contentCards);
 		const upeContentCards = contentCardList.filter(contentCard => contentCard.tileSource === 'UPE');
-		if (upeContentCards.length == 0) {
+		if (upeContentCards.length === 0) {
 			return;
 		}
 		try {
@@ -444,10 +444,10 @@ export class ContentCacheService {
 
 	private populateContent(response: any, contentCards: any, dataSource: ContentSource, cacheValueOfContents: any) {
 		const contentCardList: IConfigItem[] = Object.values(contentCards);
-		contentCardList.filter(contentCard => contentCard.cardId != 'welcome-text').forEach(contentCard => {
+		contentCardList.filter(contentCard => contentCard.cardId !== 'welcome-text').forEach(contentCard => {
 			let contents: any = this.cmsService.getOneCMSContent(response, contentCard.template, contentCard.positionParam, dataSource);
 			if (contents && contents.length > 0) {
-				if (contentCard.positionParam != 'position-A') {
+				if (contentCard.positionParam !== 'position-A') {
 					contents = this.filterContentsByCondition(contents);
 				}
 				cacheValueOfContents[contentCard.cardId] = contents;
@@ -456,13 +456,17 @@ export class ContentCacheService {
 	}
 
 	private async saveArticleIfNeed(articleId, lang, article) {
-		if (!article) return;
-		if (!this.isNeedCacheArticle(articleId)) return;
+		if (!article) {
+			return;
+		}
+		if (!this.isNeedCacheArticle(articleId)) {
+			return;
+		}
 		await this.saveArticle(articleId, lang, article);
 	}
 
 	private isNeedCacheArticle(articleId) {
-		for (let key in this.latestCachedContetns) {
+		for (const key of Object.keys(this.latestCachedContetns)) {
 			if (this.isArticleExistInCache(this.latestCachedContetns[key], articleId)) {
 				return true;
 			}
@@ -471,14 +475,16 @@ export class ContentCacheService {
 	}
 
 	private isArticleExistInCache(cachedContents, articleId) {
-		for (let positionId in cachedContents) {
+		for (const positionId of Object.keys(cachedContents)) {
 			const contetnsOfPosition = cachedContents[positionId];
-			if (!contetnsOfPosition || contetnsOfPosition.length == 0) {
+			if (!contetnsOfPosition || contetnsOfPosition.length === 0) {
 				continue;
 			}
-			for (let i in contetnsOfPosition) {
+			for (const i of Object.keys(contetnsOfPosition)) {
 				const content = contetnsOfPosition[i];
-				if (content.ActionType != ContentActionType.Internal) continue;
+				if (content.ActionType !== ContentActionType.Internal) {
+					continue;
+				}
 				if (content.ActionLink === articleId) {
 					return true;
 				}
@@ -491,7 +497,7 @@ export class ContentCacheService {
 		const result = [];
 		for (let i = 0; i < contents.length; i++) {
 			const content = contents[i];
-			if (i == 0) {
+			if (i === 0) {
 				result.push(content);
 				if (content.ExpirationDate == null) {
 					return result;
@@ -506,12 +512,12 @@ export class ContentCacheService {
 
 	private async getCachedArticle(articId: any, lang: any) {
 		const key = `${articId}_${lang}`;
-		let iCacheSettings: ICacheSettings = {
+		const iCacheSettings: ICacheSettings = {
 			Key: key,
 			Value: null,
-			Component: "ContentCache",
-			UserName: "ContentCache_Articles"
-		}
+			Component: 'ContentCache',
+			UserName: 'ContentCache_Articles'
+		};
 		const cachedObject = await this.contentLocalCacheContract.get(iCacheSettings);
 		if (cachedObject && cachedObject.Value) {
 			return JSON.parse(cachedObject.Value);
