@@ -3,7 +3,7 @@
 		<div class="col">
 			<div class="updates-lists-container">
 				<div class="row"
-					*ngIf="criticalUpdates && criticalUpdates.length > 0">
+					*ngIf="(!isUpdateDownloading && criticalUpdates && criticalUpdates.length > 0) || (isUpdateDownloading && criticalUpdatesToInstall && criticalUpdatesToInstall.length > 0)">
 					<img class="icon" [src]="criticalUpdatesIcon"/>
 					<div class="col">
 						<div class="header">
@@ -13,15 +13,16 @@
 								{{'systemUpdates.criticalUpdates' | translate}}</div>
 							<div class="description">{{'systemUpdates.availableUpdates.criticalUpdatesDescription' | translate}}</div>
 							<vtr-ui-list-checkbox (checkChange)="onCheckChange($event)"
+								[isUpdateDownloading]="isUpdateDownloading"
 								[isInstallationCompleted]="isInstallationCompleted"
 								[isInstallationSuccess]="isInstallationSuccess"
-								[items]="criticalUpdates">
+								[items]="isUpdateDownloading?criticalUpdatesToInstall:criticalUpdates">
 							</vtr-ui-list-checkbox>
 						</div>
 					</div>
 				</div>
 				<div class="row"
-					*ngIf="recommendedUpdates && recommendedUpdates.length > 0">
+					*ngIf="(!isUpdateDownloading && recommendedUpdates && recommendedUpdates.length > 0) || (isUpdateDownloading && recommendedUpdatesToInstall && recommendedUpdatesToInstall.length > 0)">
 					<div class="row-seperator" *ngIf="criticalUpdates && criticalUpdates.length > 0"></div>
 					<img class="icon" [src]="recommendedUpdatesIcon"/>
 					<div class="col">
@@ -33,14 +34,15 @@
 							<div class="description">{{'systemUpdates.availableUpdates.recommendedUpdatesDescription' | translate}}</div>
 							<vtr-ui-list-checkbox (checkChange)="onCheckChange($event)"
 								(ignoreUpdate)="onIgnoreUpdate($event)"
+								[isUpdateDownloading]="isUpdateDownloading"
 								[isInstallationCompleted]="isInstallationCompleted"
 								[isInstallationSuccess]="isInstallationSuccess"
-								[items]="recommendedUpdates"></vtr-ui-list-checkbox>
+								[items]="isUpdateDownloading?recommendedUpdatesToInstall:recommendedUpdates"></vtr-ui-list-checkbox>
 						</div>
 					</div>
 				</div>
 				<div class="row"
-					*ngIf="optionalUpdates && optionalUpdates.length > 0">
+					*ngIf="(!isUpdateDownloading && optionalUpdates && optionalUpdates.length > 0) || (isUpdateDownloading && optionalUpdatesToInstall && optionalUpdatesToInstall.length > 0)">
 					<div class="row-seperator" *ngIf="criticalUpdates && criticalUpdates.length > 0 || recommendedUpdates && recommendedUpdates.length > 0"></div>
 					<img class="icon" [src]="optionalUpdateIcon"/>
 					<div class="col">
@@ -52,14 +54,15 @@
 							<div class="description">{{'systemUpdates.availableUpdates.optionalUpdatesDescription' | translate}}</div>
 							<vtr-ui-list-checkbox (checkChange)="onCheckChange($event)"
 								(ignoreUpdate)="onIgnoreUpdate($event)"
+								[isUpdateDownloading]="isUpdateDownloading"
 								[isInstallationCompleted]="isInstallationCompleted"
 								[isInstallationSuccess]="isInstallationSuccess"
-								[items]="optionalUpdates"></vtr-ui-list-checkbox>
+								[items]="isUpdateDownloading?optionalUpdatesToInstall:optionalUpdates"></vtr-ui-list-checkbox>
 						</div>
 					</div>
 				</div>
 				<div class="row"
-					*ngIf="ignoredUpdates && ignoredUpdates.length > 0">
+					*ngIf="(!isUpdateDownloading && ignoredUpdates && ignoredUpdates.length > 0) || (isUpdateDownloading && ignoredUpdatesToInstall && ignoredUpdatesToInstall.length > 0)">
 					<div class="row-seperator" *ngIf="criticalUpdates && criticalUpdates.length > 0 || recommendedUpdates && recommendedUpdates.length > 0 || optionalUpdates && optionalUpdates.length > 0"></div>
 					<img class="icon" [src]="ignoredUpdateIcon" style="width: 2rem; height: 2rem;"/>
 					<div class="col">
@@ -95,9 +98,10 @@
 						<vtr-ui-list-checkbox *ngIf="!isCollapsed"
 							(checkChange)="onCheckChange($event)"
 							(ignoreUpdate)="onIgnoreUpdate($event)"
+							[isUpdateDownloading]="isUpdateDownloading"
 							[isInstallationCompleted]="isInstallationCompleted"
 							[isInstallationSuccess]="isInstallationSuccess"
-							[items]="ignoredUpdates"></vtr-ui-list-checkbox>
+							[items]="isUpdateDownloading?ignoredUpdatesToInstall:ignoredUpdates"></vtr-ui-list-checkbox>
 					</div>
 				</div>
 			</div>

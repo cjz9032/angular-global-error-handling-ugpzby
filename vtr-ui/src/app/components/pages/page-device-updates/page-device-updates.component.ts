@@ -84,6 +84,11 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	public recommendedUpdates: AvailableUpdateDetail[];
 	public optionalUpdates: AvailableUpdateDetail[];
 	public ignoredUpdates: AvailableUpdateDetail[];
+	public criticalUpdatesToInstall: AvailableUpdateDetail[];
+	public recommendedUpdatesToInstall: AvailableUpdateDetail[];
+	public optionalUpdatesToInstall: AvailableUpdateDetail[];
+	public ignoredUpdatesToInstall: AvailableUpdateDetail[];
+	public updatesToInstall: AvailableUpdateDetail[] = [];
 	public isUpdateCheckInProgress = false;
 	public isRebootRequested = false;
 	public showFullHistory = false;
@@ -562,6 +567,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			this.systemUpdateService.isInstallingAllUpdates = isInstallAll;
 			this.resetState();
 			this.systemUpdateService.installUpdatesList(removeDelayedUpdates, updateList, isInstallAll);
+			this.setInstallUpdateByCategory(updateList);
 		}
 	}
 
@@ -610,7 +616,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	public isUpdateListVisible() {
-		const isVisible = ((this.systemUpdateService.isUpdatesAvailable && !this.systemUpdateService.isUpdateDownloading) || this.systemUpdateService.isInstallationCompleted)
+		const isVisible = (this.systemUpdateService.isUpdatesAvailable || this.systemUpdateService.isInstallationCompleted)
 			&& ((this.criticalUpdates && this.criticalUpdates.length > 0)
 				|| (this.recommendedUpdates && this.recommendedUpdates.length > 0)
 				|| (this.optionalUpdates && this.optionalUpdates.length > 0)
@@ -662,16 +668,15 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			this.changeCheckboxDisplay('');
 		}, 0);
 		let removeDelayedUpdates = false;
-		let updatesToInstall = [];
-
-		this.systemUpdateService.updateInfo.updateList.map(update => updatesToInstall.push(Object.assign({}, update)));
+		this.updatesToInstall = [];
+		this.systemUpdateService.updateInfo.updateList.map(update => this.updatesToInstall.push(Object.assign({}, update)));
 		if (!isInstallAll) {
-			updatesToInstall = this.systemUpdateService.getSelectedUpdates(updatesToInstall);
+			this.updatesToInstall = this.systemUpdateService.getSelectedUpdates(this.updatesToInstall);
 		} else {
-			this.systemUpdateService.selectDependedUpdateForInstallAll(updatesToInstall);
-			updatesToInstall = this.systemUpdateService.getUnIgnoredUpdatesForInstallAll(updatesToInstall);
+			this.systemUpdateService.selectDependedUpdateForInstallAll(this.updatesToInstall);
+			this.updatesToInstall = this.systemUpdateService.getUnIgnoredUpdatesForInstallAll(this.updatesToInstall);
 		}
-		const { rebootType, packages } = this.systemUpdateService.getRebootType(updatesToInstall);
+		const { rebootType, packages } = this.systemUpdateService.getRebootType(this.updatesToInstall);
 
 		if (rebootType === UpdateRebootType.RebootDelayed) {
 			this.showRebootDelayedModal(modalRef);
@@ -684,7 +689,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			// its normal update type installation which doesn't require rebooting/power-off
 			document.querySelector('.vtr-app.container-fluid').scrollTop = 120;
 			this.focusOnElement(this.backButton);
-			this.installUpdateBySource(isInstallAll, removeDelayedUpdates, updatesToInstall);
+			this.installUpdateBySource(isInstallAll, removeDelayedUpdates, this.updatesToInstall);
 			return;
 		}
 		modalRef.componentInstance.packages = packages;
@@ -701,7 +706,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 						removeDelayedUpdates = true;
 					}
 					this.focusOnElement(this.backButton);
-					this.installUpdateBySource(isInstallAll, removeDelayedUpdates, updatesToInstall);
+					this.installUpdateBySource(isInstallAll, removeDelayedUpdates, this.updatesToInstall);
 				}
 			});
 	}
@@ -737,6 +742,16 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		modalRef.componentInstance.header = header;
 		modalRef.componentInstance.description = description;
 		modalRef.componentInstance.metricsParent = 'Pages.SystemUpdate.RebootDelayedMsgControl';
+	}
+
+	private setInstallUpdateByCategory(updateList: Array<AvailableUpdateDetail>) {
+		if (updateList) {
+			this.ignoredUpdatesToInstall = this.filterIgnoredUpdate(updateList, true);
+			const unIgnoredUpdates = this.filterIgnoredUpdate(updateList, false);
+			this.optionalUpdatesToInstall = this.filterUpdate(unIgnoredUpdates, 'optional');
+			this.recommendedUpdatesToInstall = this.filterUpdate(unIgnoredUpdates, 'recommended');
+			this.criticalUpdatesToInstall = this.filterUpdate(unIgnoredUpdates, 'critical');
+		}
 	}
 
 	private setUpdateByCategory(updateList: Array<AvailableUpdateDetail>) {

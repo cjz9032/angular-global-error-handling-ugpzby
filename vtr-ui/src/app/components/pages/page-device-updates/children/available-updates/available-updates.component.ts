@@ -12,8 +12,13 @@ export class AvailableUpdatesComponent implements OnInit {
 	@Input() criticalUpdates: AvailableUpdateDetail[];
 	@Input() recommendedUpdates: AvailableUpdateDetail[];
 	@Input() optionalUpdates: AvailableUpdateDetail[];
+	@Input() criticalUpdatesToInstall: AvailableUpdateDetail[];
+	@Input() recommendedUpdatesToInstall: AvailableUpdateDetail[];
+	@Input() optionalUpdatesToInstall: AvailableUpdateDetail[];
+	@Input() ignoredUpdatesToInstall: AvailableUpdateDetail[];
 	@Input() isInstallationSuccess = false;
 	@Input() isInstallingAllUpdates = true;
+	@Input() isUpdateDownloading = false;;
 
 	@Input() set ignoredUpdates(value: AvailableUpdateDetail[]) {
 		this.mIgnoredUpdates = value;

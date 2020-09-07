@@ -747,6 +747,8 @@ export class SystemUpdateService {
 			update.packageRebootType = updateTask.packageRebootType;
 			update.packageVersion = updateTask.packageVersion;
 			update.packageSeverity = updateTask.packageType;
+			update.packageVendor = updateTask.packageVendor;
+			update.diskSpaceRequired = updateTask.diskSpaceRequired;
 
 			if (updateTask.packageState === 'install-failed') {
 				update.installationStatus = UpdateActionResult.InstallFailed;
