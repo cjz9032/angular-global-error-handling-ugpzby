@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.2](https://bitbucket.tc.lenovo.com///compare/v1.8.1...v1.8.2) (2020-09-07)
+
+
+### Features
+
+* **Security Advisor:** VAN-21411, UI context change for SA ([2493238](https://bitbucket.tc.lenovo.com///commit/2493238d07224c9008936ce88013924156e7cf52))
+
 ### [1.8.1](https://bitbucket.tc.lenovo.com///compare/v1.8.0...v1.8.1) (2020-09-04)
 
 
