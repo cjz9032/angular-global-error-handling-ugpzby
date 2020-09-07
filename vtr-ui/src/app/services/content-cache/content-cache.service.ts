@@ -72,14 +72,14 @@ export class ContentCacheService {
 			this.logger.error('Load contents error ', error);
 		}
 
-		this.sendCacheMetrics(startTime, 'loadedCacheContents');
-
 		if (!this.ongoingCacheProcesses[cacheKey]) {
 			this.ongoingCacheProcesses[cacheKey] = this.cacheContents(cacheKey, cmsOptions, contentCards)
 				.finally(() => {
 					this.ongoingCacheProcesses[cacheKey] = null;
 				});
 		}
+
+		this.sendCacheMetrics(startTime, 'loadedCacheContents');
 
 		return cachedContents;
 	}
