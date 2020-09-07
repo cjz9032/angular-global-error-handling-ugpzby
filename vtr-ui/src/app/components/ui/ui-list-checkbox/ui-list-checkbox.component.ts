@@ -22,6 +22,7 @@ export class UiListCheckboxComponent implements OnInit, OnDestroy {
 	@Input() items: Array<AvailableUpdateDetail>;
 	@Input() isInstallationSuccess = false;
 	@Input() isInstallationCompleted = false;
+	@Input() isUpdateDownloading = false;
 	@Output() readMore = new EventEmitter<any>();
 	@Output() ignoreUpdate = new EventEmitter<any>();
 	@Output() checkChange = new EventEmitter<any>();

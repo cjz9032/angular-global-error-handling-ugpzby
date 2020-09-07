@@ -1,7 +1,7 @@
 <div class="vtr-ui-list-checkbox">
 	<!-- update list with checkbox section -->
 	<ul class="list-group"
-		*ngIf="!isInstallationCompleted">
+		*ngIf="!isInstallationCompleted && !isUpdateDownloading">
 		<li class="list-group-item" id="su_item_candidate"
 			[ngClass]="item.isSelected ? 'selected-background' : 'unselected-background'"
 			*ngFor="let item of items; let i = index">
@@ -73,10 +73,11 @@
 	</ul>
 	<!-- Installation completed section -->
 	<ul class="list-group"
-		*ngIf="isInstallationCompleted">
+		*ngIf="isInstallationCompleted || isUpdateDownloading">
 		<li class="list-group-item" id="{{'su_item_installed_' + item.packageID}}"
 			*ngFor="let item of items">
 			<div class="media pl-3 align-items-center">
+				<div *ngIf="isInstallationCompleted">
 					<div *ngIf="item.installationStatus.toLocaleLowerCase() === 'success'; else elseBlock">
 						<div class="icon-check">
 							<div class="icon-bg text-center">
@@ -91,6 +92,7 @@
 							</div>
 						</div>
 					</ng-template>
+				</div>
 					<div class="media-body pb-0 mb-0 small pl-3">
 							<!---div class="d-flex justify-content-between align-items-center w-100"-->
 						<div class="row">
@@ -109,19 +111,20 @@
 								</div>
 							</div>
 
-
-								<!-- VAN-3348 hide question mark -->
-								<!-- <a href="javascript:void();">
-									<fa-icon class="question"
-										triggers="click:blur"
-										placement="auto"
-										[ngbTooltip]="systemUpdateTooltip"
-										[icon]="['far', 'question-circle']"
-										container="body"
-										tooltipClass="tooltip-click"
-										#tooltip="ngbTooltip"
-										(click)="onTooltipClick(item, tooltip)"></fa-icon>
-								</a> -->
+							<fa-icon class="question"
+								tabindex="0"
+								triggers="manual"
+								placement="left"
+								id="{{'su_item_installed_question_mark_' + item.packageID}}"
+								role="tooltip"
+								[ngbTooltip]="systemUpdateTooltip"
+								#tooltip="ngbTooltip"
+								[icon]="['far', 'question-circle']"
+								container="vtr-root"
+								tooltipClass="tooltip-click"
+								(click)="onTooltipClick(item, tooltip)"
+								(keydown.enter)="onTooltipClick(item, tooltip)">
+							</fa-icon>
 						</div>
 					</div>
 			</div>
@@ -131,12 +134,12 @@
 <ng-template #systemUpdateTooltip>
 	<div class="tooltip-container">
 		<ul dir="{{'dir' | translate}}">
-			<li>{{'systemUpdates.updateCheckbox.manufacturer' | translate}}<span>{{ manufacturer }}</span></li>
+			<li *ngIf="manufacturer && manufacturer !== undefined">{{'systemUpdates.updateCheckbox.manufacturer' | translate}}<span>{{ manufacturer }}</span></li>
 			<li>{{'systemUpdates.updateCheckbox.version' | translate}}<span>{{ version }}</span></li>
-			<li *ngIf="installedVersionStatus === 0">{{'systemUpdates.updateCheckbox.installVersion' | translate}}<span>{{ installedVersion }}</span></li>
-			<li *ngIf="installedVersionStatus === 1">{{'systemUpdates.updateCheckbox.installVersion' | translate}}<span>{{ notInstalledText }}</span></li>
-			<li *ngIf="installedVersionStatus === 2">{{'systemUpdates.updateCheckbox.installVersion' | translate}}<span>{{ notAvailableText }}</span></li>
-			<li>{{'systemUpdates.updateCheckbox.diskSpaceNeeded' | translate}}<span >{{ diskSpaceNeeded }}</span></li>
+			<li *ngIf="!isInstallationCompleted && !isUpdateDownloading && installedVersionStatus === 0">{{'systemUpdates.updateCheckbox.installVersion' | translate}}<span>{{ installedVersion }}</span></li>
+			<li *ngIf="!isInstallationCompleted && !isUpdateDownloading && installedVersionStatus === 1">{{'systemUpdates.updateCheckbox.installVersion' | translate}}<span>{{ notInstalledText }}</span></li>
+			<li *ngIf="!isInstallationCompleted && !isUpdateDownloading && installedVersionStatus === 2">{{'systemUpdates.updateCheckbox.installVersion' | translate}}<span>{{ notAvailableText }}</span></li>
+			<li *ngIf="diskSpaceNeeded  && manufacturer !== undefined">{{'systemUpdates.updateCheckbox.diskSpaceNeeded' | translate}}<span >{{ diskSpaceNeeded }}</span></li>
 		</ul>
 		<div class="row"
 			*ngIf="isReadMeAvailable || severity !== 'Critical'">
@@ -154,7 +157,7 @@
 			</div>
 			<!-- required in MVP 2 -->
 			<div class="pl-0 pr-0 text-left"
-				*ngIf="severity !== 'Critical' && isIgnored === false">
+				*ngIf="severity !== 'Critical' && isIgnored === false && !isInstallationCompleted && !isUpdateDownloading">
 				<a href="javascript:void(0)"
 					class="ignore"
 					tabindex="0"
@@ -168,7 +171,7 @@
 					>{{'systemUpdates.updateCheckbox.ignore' | translate}}</a>
 			</div>
 			<div class="pl-0 pr-0 text-left"
-				*ngIf="severity !== 'Critical' && isIgnored === true">
+				*ngIf="severity !== 'Critical' && isIgnored === true && !isInstallationCompleted && !isUpdateDownloading">
 				<a href="javascript:void(0)"
 					class="ignore"
 					tabindex="0"

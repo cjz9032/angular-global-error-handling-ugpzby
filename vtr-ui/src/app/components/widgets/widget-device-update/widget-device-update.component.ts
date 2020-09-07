@@ -29,7 +29,8 @@ export class WidgetDeviceUpdateComponent implements OnInit {
 	@Output() cancelUpdateCheck = new EventEmitter();
 	@Output() cancelUpdateDownload = new EventEmitter();
 	@Output() updateNow = new EventEmitter();
-
+	@Input() isInstallationSuccess = false;
+	@Input() isInstallationCompleted = false;
 	public progressValue = 0;
 	public downloadingIcon = 'spinner';
 	public installingIcon = 'spinner';
