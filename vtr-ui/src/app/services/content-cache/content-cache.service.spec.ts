@@ -4,7 +4,7 @@ import { ContentActionType } from 'src/app/enums/content.enum';
 import { ContentCacheService } from './content-cache.service';
 import { MockContentLocalCacheTest } from '../../services/content-cache/mock/content-cache.mock.data';
 
-import { asyncData, asyncError } from 'src/testing/async-observable-helpers'
+import { asyncData, asyncError } from 'src/testing/async-observable-helpers';
 import { CMS_CONTENTS, UPE_CONTENTS, NORMAL_CONTENTS, EXPIRED_DATE_INPOISTIONB, DISPALY_DATE_INPOISTIONB, MULITI_ITEM_INPOISTIONB, WELCOME_TEXT_CONTENTS, ARTICLE } from 'src/testing/content-data';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 
@@ -19,14 +19,14 @@ describe('ContentCacheService', () => {
 	let metrics: { sendMetrics: jasmine.Spy };
 
 	let mockTestObject: MockContentLocalCacheTest;
-	let localInfo = {
+	const localInfo = {
 		Brand: 'think',
 		GEO: 'en',
 		Lang: 'en',
 		OEM: 'LENOVO',
 		OS: 'Windows',
 		Segment: 'Consumer'
-	}
+	};
 
 	beforeEach(() => {
 		logger = jasmine.createSpyObj('LoggerService',
@@ -56,19 +56,19 @@ describe('ContentCacheService', () => {
 		mockTestObject = new MockContentLocalCacheTest();
 		vantageShellService.getContentLocalCache.and.returnValue(mockTestObject);
 
-		service = new ContentCacheService(<any>vantageShellService,
-			<any>localInfoService,
-			<any>cmsService,
-			<any>upeService,
-			<any>buildInContentService,
-			<any>logger,
-			<any>metrics);
+		service = new ContentCacheService(vantageShellService as any,
+			localInfoService as any,
+			cmsService as any,
+			upeService as any,
+			buildInContentService as any,
+			logger as any,
+			metrics as any);
 
 	});
 
 
 	it('when none contents in cache enviroment should return build-in, then download and cache the contents by fetch', async () => {
-		let contentCards = {
+		const contentCards = {
 			positionA: {
 				displayContent: [],
 				template: 'home-page-hero-banner',
@@ -129,7 +129,7 @@ describe('ContentCacheService', () => {
 		cmsService.getOneCMSContent.and.returnValue(CMS_CONTENTS);
 		cmsService.fetchCMSArticle.and.returnValue(ARTICLE);
 		localInfoService.getLocalInfo.and.returnValue(localInfo);
-		let contents = JSON.parse(JSON.stringify(NORMAL_CONTENTS));
+		const contents = JSON.parse(JSON.stringify(NORMAL_CONTENTS));
 		buildInContentService.getContents.and.returnValue(contents);
 		const ret = await service.getCachedContents('noResponse', contentCards);
 		const keys = Object.keys(ret);
@@ -146,7 +146,7 @@ describe('ContentCacheService', () => {
 
 	it('should return build-in content when get cached contents', async () => {
 		cmsService.generateContentQueryParams.and.returnValue({ Page: 'noOnlineContent', Lang: 'en' });
-		let contents = JSON.parse(JSON.stringify(NORMAL_CONTENTS));
+		const contents = JSON.parse(JSON.stringify(NORMAL_CONTENTS));
 		buildInContentService.getContents.and.returnValue(contents);
 		const ret = await service.getCachedContents('noOnlineContent', null);
 
@@ -189,8 +189,10 @@ describe('ContentCacheService', () => {
 		expect(keys.length).toEqual(2);
 		expect(keys.includes('positionA')).toBeTruthy();
 		expect(keys.includes('positionB')).toBeTruthy();
-		expect(ret['positionA'].length).toEqual(2);
-		expect(ret['positionB']).toEqual(undefined);
+		const positionA = 'positionA';
+		expect(ret[positionA].length).toEqual(2);
+		const positionB = 'positionB';
+		expect(ret[positionB]).toEqual(undefined);
 	});
 
 	it('should not return item that cannot be displayed.', async () => {
@@ -204,8 +206,10 @@ describe('ContentCacheService', () => {
 		expect(keys.length).toEqual(2);
 		expect(keys.includes('positionA')).toBeTruthy();
 		expect(keys.includes('positionB')).toBeTruthy();
-		expect(ret['positionA'].length).toEqual(2);
-		expect(ret['positionB']).toEqual(undefined);
+		const positionA = 'positionA';
+		expect(ret[positionA].length).toEqual(2);
+		const positionB = 'positionB';
+		expect(ret[positionB]).toEqual(undefined);
 	});
 
 	it('should return one item if PositionB has lots of valid items.', async () => {
@@ -219,8 +223,10 @@ describe('ContentCacheService', () => {
 		expect(keys.length).toEqual(2);
 		expect(keys.includes('positionA')).toBeTruthy();
 		expect(keys.includes('positionB')).toBeTruthy();
-		expect(ret['positionA'].length).toEqual(2);
-		expect(ret['positionB'].Title).toEqual('Build-in article B');
+		const positionA = 'positionA';
+		expect(ret[positionA].length).toEqual(2);
+		const positionB = 'positionB';
+		expect(ret[positionB].Title).toEqual('Build-in article B');
 	});
 
 	it('should not change the field DataSource.', async () => {
@@ -233,7 +239,8 @@ describe('ContentCacheService', () => {
 		expect(keys.length).toEqual(2);
 		expect(keys.includes('positionA')).toBeTruthy();
 		expect(keys.includes('positionB')).toBeTruthy();
-		ret['positionA'].forEach(content => {
+		const positionA = 'positionA';
+		ret[positionA].forEach(content => {
 			if (content.Title === 'Build-in article A1') {
 				expect(content.DataSource).toEqual('cms');
 			}
@@ -241,11 +248,12 @@ describe('ContentCacheService', () => {
 				expect(content.DataSource).toEqual('upe');
 			}
 		});
-		expect(ret['positionB'].DataSource).toEqual('upe');
+		const positionB = 'positionB';
+		expect(ret[positionB].DataSource).toEqual('upe');
 	});
 
 	it('save contentList only from cms', async () => {
-		let contentCards = {
+		const contentCards = {
 			positionA: {
 				displayContent: [],
 				template: 'home-page-hero-banner',
@@ -315,14 +323,17 @@ describe('ContentCacheService', () => {
 		expect(keys.includes('positionA')).toBeTruthy();
 		expect(keys.includes('positionB')).toBeTruthy();
 		expect(keys.includes('positionC')).toBeTruthy();
-		expect(ret['positionA'].length).toEqual(2);
-		expect(ret['positionB'].Title).toEqual('CMS Content');
-		expect(ret['positionC'].Title).toEqual('Smarter Data Helps Farmers Rapidly Adapt to Climate Change');
+		const positionA = 'positionA';
+		expect(ret[positionA].length).toEqual(2);
+		const positionB = 'positionB';
+		expect(ret[positionB].Title).toEqual('CMS Content');
+		const positionC = 'positionC';
+		expect(ret[positionC].Title).toEqual('Smarter Data Helps Farmers Rapidly Adapt to Climate Change');
 
 	});
 
 	it('save contentList only from upe', async () => {
-		let contentCards = {
+		const contentCards = {
 			positionA: {
 				displayContent: [],
 				template: 'home-page-hero-banner',
@@ -393,13 +404,16 @@ describe('ContentCacheService', () => {
 		expect(keys.includes('positionA')).toBeTruthy();
 		expect(keys.includes('positionB')).toBeTruthy();
 		expect(keys.includes('positionC')).toBeTruthy();
-		expect(ret['positionA'].length).toEqual(2);
-		expect(ret['positionB'].Title).toEqual('UPE Content');
-		expect(ret['positionC'].Title).toEqual('Smarter Data Helps Farmers Rapidly Adapt to Climate Change');
+		const positionA = 'positionA';
+		expect(ret[positionA].length).toEqual(2);
+		const positionB = 'positionB';
+		expect(ret[positionB].Title).toEqual('UPE Content');
+		const positionC = 'positionC';
+		expect(ret[positionC].Title).toEqual('Smarter Data Helps Farmers Rapidly Adapt to Climate Change');
 	});
 
 	it('save contentList from upe and cms', async () => {
-		let contentCards = {
+		const contentCards = {
 			positionA: {
 				displayContent: [],
 				template: 'home-page-hero-banner',
@@ -470,13 +484,16 @@ describe('ContentCacheService', () => {
 		expect(keys.includes('positionA')).toBeTruthy();
 		expect(keys.includes('positionB')).toBeTruthy();
 		expect(keys.includes('positionC')).toBeTruthy();
-		expect(ret['positionA'].length).toEqual(2);
-		expect(ret['positionB'].Title).toEqual('Lenovo Tech World &#8211; The New Era of Data Intelligence Decoded');
-		expect(ret['positionC'].Title).toEqual('Smarter Data Helps Farmers Rapidly Adapt to Climate Change');
+		const positionA = 'positionA';
+		expect(ret[positionA].length).toEqual(2);
+		const positionB = 'positionB';
+		expect(ret[positionB].Title).toEqual('Lenovo Tech World &#8211; The New Era of Data Intelligence Decoded');
+		const positionC = 'positionC';
+		expect(ret[positionC].Title).toEqual('Smarter Data Helps Farmers Rapidly Adapt to Climate Change');
 	});
 
 	it('save contentList that segment is commercial', async () => {
-		let contentCards = {
+		const contentCards = {
 			positionA: {
 				displayContent: [],
 				template: 'home-page-hero-banner',
@@ -536,14 +553,14 @@ describe('ContentCacheService', () => {
 		cmsService.fetchContents.and.returnValue(CMS_CONTENTS);
 		cmsService.getOneCMSContent.and.returnValue(CMS_CONTENTS);
 		cmsService.fetchCMSArticle.and.returnValue(ARTICLE);
-		let currentLocalInfo = {
+		const currentLocalInfo = {
 			Brand: 'think',
 			GEO: 'en',
 			Lang: 'en',
 			OEM: 'LENOVO',
 			OS: 'Windows',
 			Segment: 'Commercial'
-		}
+		};
 		localInfoService.getLocalInfo.and.returnValue(currentLocalInfo);
 		const ret = await service.getCachedContents('dashboard_only_upe', contentCards);
 
@@ -554,13 +571,16 @@ describe('ContentCacheService', () => {
 		expect(keys.includes('positionA')).toBeTruthy();
 		expect(keys.includes('positionB')).toBeTruthy();
 		expect(keys.includes('positionC')).toBeTruthy();
-		expect(ret['positionA'].length).toEqual(2);
-		expect(ret['positionB'].Title).toEqual('CMS Content');
-		expect(ret['positionC'].Title).toEqual('Smarter Data Helps Farmers Rapidly Adapt to Climate Change');
+		const positionA = 'positionA';
+		expect(ret[positionA].length).toEqual(2);
+		const positionB = 'positionB';
+		expect(ret[positionB].Title).toEqual('CMS Content');
+		const positionC = 'positionC';
+		expect(ret[positionC].Title).toEqual('Smarter Data Helps Farmers Rapidly Adapt to Climate Change');
 	});
 
 	it('should throw exception when fetch contents from upe and cms', async () => {
-		let contentCards = {
+		const contentCards = {
 			positionB: {
 				displayContent: new FeatureContent(),
 				template: 'half-width-title-description-link-image',
