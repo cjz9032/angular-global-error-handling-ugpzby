@@ -91,6 +91,7 @@
 				<div class="col col-12 mb-5">
 					<vtr-container-card [item]="card.cardContent"
 						[id]="card.id"
+						[containerCardId]="card.cardContent ? card.cardContent.Id : ''"
 						[attr.aria-label]="card.ariaLabel"
 						[type]="card.type"
 						[order]="(!showSecurityWidget ? card.order - 1 : card.order).toString()"
