@@ -33,6 +33,7 @@ import { AntivirusService } from 'src/app/services/security/antivirus.service';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { SelfSelectService, SegmentConst } from 'src/app/services/self-select/self-select.service';
 import { UpdateInstallTitleId } from 'src/app/enums/update-install-id.enum';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
 	selector: 'vtr-page-device-updates',
@@ -216,6 +217,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		private hypSetting: HypothesisService,
 		private antiVirusService: AntivirusService,
 		private selfSelectService: SelfSelectService,
+		private localCacheService: LocalCacheService,
 		private metricService: MetricService
 	) {
 		this.isOnline = this.commonService.isOnline;
@@ -336,28 +338,27 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		}
 	}
 
-	private getCachedValue() {
-		let cachedData = this.commonService.getLocalStorageValue(LocalStorageKey.SystemUpdateCriticalUpdateStatus);
+	private async getCachedValue() {
+		let cachedData = await this.localCacheService.getLocalCacheValue(LocalStorageKey.SystemUpdateCriticalUpdateStatus);
 		if (typeof (cachedData) !== 'undefined') {
 			this.autoUpdateOptions[0].isChecked = cachedData;
 			this.isScheduleScanEnabled = cachedData;
 		}
-		cachedData = this.commonService.getLocalStorageValue(LocalStorageKey.SystemUpdateRecommendUpdateStatus);
+		cachedData = await this.localCacheService.getLocalCacheValue(LocalStorageKey.SystemUpdateRecommendUpdateStatus);
 		if (typeof (cachedData) !== 'undefined') {
 			this.autoUpdateOptions[1].isChecked = cachedData;
 			if (!this.autoUpdateOptions[0].isChecked) {
 				this.autoUpdateOptions[1].isDisabled = true;
 			}
 		}
-		cachedData = this.commonService.getLocalStorageValue(LocalStorageKey.SystemUpdateLastInstallTime);
+		cachedData = await this.localCacheService.getLocalCacheValue(LocalStorageKey.SystemUpdateLastInstallTime);
 		if (cachedData) {
 			this.lastInstallTime = cachedData;
 		}
-		cachedData = this.commonService.getLocalStorageValue(LocalStorageKey.SystemUpdateNextScheduleScanTime);
+		cachedData = await this.localCacheService.getLocalCacheValue(LocalStorageKey.SystemUpdateNextScheduleScanTime);
 		if (cachedData) {
 			this.nextScheduleScanTime = cachedData;
 		}
-
 	}
 
 	fetchCMSArticles() {
@@ -432,11 +433,11 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 				.then((value: any) => {
 					if (value.lastInstallTime && value.lastInstallTime.length > 0) {
 						this.lastInstallTime = value.lastInstallTime;
-						this.commonService.setLocalStorageValue(LocalStorageKey.SystemUpdateLastInstallTime, this.lastInstallTime);
+						this.localCacheService.setLocalCacheValue(LocalStorageKey.SystemUpdateLastInstallTime, this.lastInstallTime);
 					}
 					// this.lastScanTime = new Date(value.lastScanTime);
 					this.nextScheduleScanTime = value.nextScheduleScanTime;
-					this.commonService.setLocalStorageValue(LocalStorageKey.SystemUpdateNextScheduleScanTime, this.nextScheduleScanTime);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.SystemUpdateNextScheduleScanTime, this.nextScheduleScanTime);
 					this.isScheduleScanEnabled = value.scheduleScanEnabled;
 					this.getNextUpdatedScanText();
 					// lastInstallTime: "2019-03-01T10:09:53"
@@ -928,8 +929,8 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					this.autoUpdateOptions[0].isChecked = payload.criticalAutoUpdates;
 					this.autoUpdateOptions[1].isChecked = payload.recommendedAutoUpdates;
 					this.isScheduleScanEnabled = payload.criticalAutoUpdates;
-					this.commonService.setLocalStorageValue(LocalStorageKey.SystemUpdateCriticalUpdateStatus, payload.criticalAutoUpdates);
-					this.commonService.setLocalStorageValue(LocalStorageKey.SystemUpdateRecommendUpdateStatus, payload.recommendedAutoUpdates);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.SystemUpdateCriticalUpdateStatus, payload.criticalAutoUpdates);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.SystemUpdateRecommendUpdateStatus, payload.recommendedAutoUpdates);
 					if (!payload.criticalAutoUpdates) {
 						this.autoUpdateOptions[1].isDisabled = true;
 					} else {

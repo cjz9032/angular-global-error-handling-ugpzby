@@ -8,6 +8,7 @@ import { UpdateProgress } from 'src/app/enums/update-progress.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LanguageService } from 'src/app/services/language/language.service';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
 	selector: 'vtr-installation-history',
@@ -27,6 +28,7 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 		public systemUpdateService: SystemUpdateService,
 		public commonService: CommonService,
 		private translate: TranslateService,
+		private localCacheService: LocalCacheService,
 		public languageService: LanguageService
 	) {
 		this.getCachedHistory();
@@ -48,8 +50,8 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	getCachedHistory() {
-		const cachedData = this.commonService.getLocalStorageValue(LocalStorageKey.SystemUpdateInstallationHistoryList);
+	async getCachedHistory() {
+		const cachedData = await this.localCacheService.getLocalCacheValue(LocalStorageKey.SystemUpdateInstallationHistoryList);
 		if (typeof (cachedData) !== 'undefined' && cachedData.length > 0) {
 			this.installationHistory = cachedData;
 		}
@@ -111,7 +113,7 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 
 	private sortInstallationHistory(history: Array<UpdateHistory>) {
 		this.installationHistory = this.mapMessage(history);
-		this.commonService.setLocalStorageValue(LocalStorageKey.SystemUpdateInstallationHistoryList, this.installationHistory);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.SystemUpdateInstallationHistoryList, this.installationHistory);
 		this.systemUpdateService.sortInstallationHistory(this.installationHistory, this.sortAsc);
 		if (this.installationHistory.length > 5 && !this.showAll) {
 			this.installationHistory = this.installationHistory.slice(0, 5);
