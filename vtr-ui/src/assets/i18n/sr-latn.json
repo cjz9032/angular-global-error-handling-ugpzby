@@ -734,7 +734,8 @@
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
                 "name11": "Legion Front Fan Lighting",
-                "name12": "Legion Top Fan Lighting"
+                "name12": "Legion Top Fan Lighting",
+                "name13": "Legion Memory Lighting"
             },
             "lightingEffect": {
                 "effectName1": "Statično",
@@ -743,7 +744,8 @@
                 "effectName4": "Nasumično",
                 "effectName5": "Hladi_plava",
                 "effectName6": "Pokret_nadesno",
-                "effectName7": "Pokret_nalevo"
+                "effectName7": "Pokret_nalevo",
+                "effectName8": "RunningMode"
             },
             "lightingSpeed": {
                 "title": "Brzina"
@@ -2274,6 +2276,8 @@
             "last": "Poslednji put ažurirano: ",
             "next": "Sledeće planirano ažuriranje: ",
             "checkButton": "PROVERI DA LI POSTOJE ISPRAVKE",
+            "checkAgain": "Check Again",
+            "updateNow": "Update Now",
             "checking": "Traženje ažuriranja",
             "downloading": "Preuzimanje ažuriranja je završeno",
             "installing": "Instaliranje ažuriranja",
@@ -2314,7 +2318,10 @@
             "installFailHeader": "Neka ažuriranja nisu ispravno instalirana",
             "installFailDescription": "Nešto je krenulo naopako tokom preuzimanja i instalacije ovih ažuriranja. Uverite se da ste na mreži i ne isključujte računar tokom instaliranja ažuriranja.",
             "optionalUpdates": "Opcionalna ažuriranja",
-            "installSelectedUpdates": "Instaliraj izabrana ažuriranja"
+            "installSelectedUpdates": "Instaliraj izabrana ažuriranja",
+            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
+            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
+            "optionalUpdatesDescription": "Keep your computer up-to-date"
         },
         "installationHistory": {
             "name": "Ime",

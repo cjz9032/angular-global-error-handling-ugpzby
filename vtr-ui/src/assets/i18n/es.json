@@ -734,7 +734,8 @@
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
                 "name11": "Legion Front Fan Lighting",
-                "name12": "Legion Top Fan Lighting"
+                "name12": "Legion Top Fan Lighting",
+                "name13": "Legion Memory Lighting"
             },
             "lightingEffect": {
                 "effectName1": "Estático",
@@ -743,7 +744,8 @@
                 "effectName4": "Aleatorio",
                 "effectName5": "Azul_frío",
                 "effectName6": "Ola_derecha",
-                "effectName7": "Ola_izquierda"
+                "effectName7": "Ola_izquierda",
+                "effectName8": "RunningMode"
             },
             "lightingSpeed": {
                 "title": "Velocidad"
@@ -2274,6 +2276,8 @@
             "last": "Última actualización: ",
             "next": "Siguiente actualización programada: ",
             "checkButton": "COMPROBAR ACTUALIZACIONES",
+            "checkAgain": "Check Again",
+            "updateNow": "Update Now",
             "checking": "Comprobando si hay actualizaciones",
             "downloading": "Descarga de actualizaciones completa",
             "installing": "Instalación de actualizaciones",
@@ -2314,7 +2318,10 @@
             "installFailHeader": "Algunas actualizaciones no se instalaron correctamente",
             "installFailDescription": "Algo salió mal durante la descarga e instalación de estas actualizaciones. Asegúrese de que el sistema esté en línea y no apague el sistema cuando instale actualizaciones.",
             "optionalUpdates": "Actualizaciones opcionales",
-            "installSelectedUpdates": "Instalar actualizaciones seleccionadas"
+            "installSelectedUpdates": "Instalar actualizaciones seleccionadas",
+            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
+            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
+            "optionalUpdatesDescription": "Keep your computer up-to-date"
         },
         "installationHistory": {
             "name": "Nombre",

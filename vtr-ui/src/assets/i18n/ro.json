@@ -734,7 +734,8 @@
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
                 "name11": "Legion Front Fan Lighting",
-                "name12": "Legion Top Fan Lighting"
+                "name12": "Legion Top Fan Lighting",
+                "name13": "Legion Memory Lighting"
             },
             "lightingEffect": {
                 "effectName1": "Static",
@@ -743,7 +744,8 @@
                 "effectName4": "Aleatoriu",
                 "effectName5": "Albastru_rece",
                 "effectName6": "Gest_cu_mâna_spre_dreapta",
-                "effectName7": "Gest_cu_mâna_spre_stânga"
+                "effectName7": "Gest_cu_mâna_spre_stânga",
+                "effectName8": "RunningMode"
             },
             "lightingSpeed": {
                 "title": "Viteză"
@@ -2274,6 +2276,8 @@
             "last": "Ultima actualizare: ",
             "next": "Următoarea actualizare programată: ",
             "checkButton": "CĂUTAȚI ACTUALIZĂRI",
+            "checkAgain": "Check Again",
+            "updateNow": "Update Now",
             "checking": "Se caută actualizări",
             "downloading": "S-a finalizat descărcarea actualizărilor",
             "installing": "Se instalează actualizările",
@@ -2314,7 +2318,10 @@
             "installFailHeader": "Unele actualizări nu au fost instalate corect",
             "installFailDescription": "A apărut o problemă în timpul descărcării și instalării acestor actualizări. Asigurați-vă că sunteți online și nu opriți computerul când instalați actualizările.",
             "optionalUpdates": "Actualizări opționale",
-            "installSelectedUpdates": "Instalați actualizările selectate"
+            "installSelectedUpdates": "Instalați actualizările selectate",
+            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
+            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
+            "optionalUpdatesDescription": "Keep your computer up-to-date"
         },
         "installationHistory": {
             "name": "Nume",

@@ -734,7 +734,8 @@
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
                 "name11": "Legion Front Fan Lighting",
-                "name12": "Legion Top Fan Lighting"
+                "name12": "Legion Top Fan Lighting",
+                "name13": "Legion Memory Lighting"
             },
             "lightingEffect": {
                 "effectName1": "Statické",
@@ -743,7 +744,8 @@
                 "effectName4": "Náhodné",
                 "effectName5": "Studené modré",
                 "effectName6": "Vlna doprava",
-                "effectName7": "Vlna doľava"
+                "effectName7": "Vlna doľava",
+                "effectName8": "RunningMode"
             },
             "lightingSpeed": {
                 "title": "Rýchlosť"
@@ -2274,6 +2276,8 @@
             "last": "Posledná aktualizácia: ",
             "next": "Ďalšia plánovaná aktualizácia: ",
             "checkButton": "VYHĽADAŤ AKTUALIZÁCIE",
+            "checkAgain": "Check Again",
+            "updateNow": "Update Now",
             "checking": "Vyhľadávajú sa aktualizácie",
             "downloading": "Aktualizácie boli prevzaté",
             "installing": "Inštalujú sa aktualizácie",
@@ -2314,7 +2318,10 @@
             "installFailHeader": "Niektoré aktualizácie sa nenainštalovali správne",
             "installFailDescription": "Počas sťahovania a inštalácie týchto aktualizácií došlo k chybe. Pri inštalácii aktualizácií sa uistite, že ste online a nevypínajte počítač.",
             "optionalUpdates": "Voliteľné aktualizácie",
-            "installSelectedUpdates": "Inštalovať vybraté aktualizácie"
+            "installSelectedUpdates": "Inštalovať vybraté aktualizácie",
+            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
+            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
+            "optionalUpdatesDescription": "Keep your computer up-to-date"
         },
         "installationHistory": {
             "name": "Meno",

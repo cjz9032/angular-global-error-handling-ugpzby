@@ -734,7 +734,8 @@
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
                 "name11": "Legion Front Fan Lighting",
-                "name12": "Legion Top Fan Lighting"
+                "name12": "Legion Top Fan Lighting",
+                "name13": "Legion Memory Lighting"
             },
             "lightingEffect": {
                 "effectName1": "靜態",
@@ -743,7 +744,8 @@
                 "effectName4": "隨機",
                 "effectName5": "酷藍",
                 "effectName6": "向右揮手",
-                "effectName7": "向左揮手"
+                "effectName7": "向左揮手",
+                "effectName8": "RunningMode"
             },
             "lightingSpeed": {
                 "title": "速度"
@@ -2274,6 +2276,8 @@
             "last": "上次更新：",
             "next": "下次的排定更新：",
             "checkButton": "檢查更新",
+            "checkAgain": "Check Again",
+            "updateNow": "Update Now",
             "checking": "檢查更新項目",
             "downloading": "下載更新完成",
             "installing": "正在安裝更新",
@@ -2314,7 +2318,10 @@
             "installFailHeader": "部分更新項目未正確安裝",
             "installFailDescription": "下載和安裝這些更新期間出了問題。請確定您處於線上狀態，而且在安裝更新時請勿關閉電腦。",
             "optionalUpdates": "選用更新項目",
-            "installSelectedUpdates": "安裝選取的更新"
+            "installSelectedUpdates": "安裝選取的更新",
+            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
+            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
+            "optionalUpdatesDescription": "Keep your computer up-to-date"
         },
         "installationHistory": {
             "name": "名稱",

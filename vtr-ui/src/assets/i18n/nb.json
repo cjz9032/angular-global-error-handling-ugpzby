@@ -734,7 +734,8 @@
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
                 "name11": "Legion Front Fan Lighting",
-                "name12": "Legion Top Fan Lighting"
+                "name12": "Legion Top Fan Lighting",
+                "name13": "Legion Memory Lighting"
             },
             "lightingEffect": {
                 "effectName1": "Static",
@@ -743,7 +744,8 @@
                 "effectName4": "Tilfeldig",
                 "effectName5": "Kald_blå",
                 "effectName6": "Bølge_høyre",
-                "effectName7": "Bølge_venstre"
+                "effectName7": "Bølge_venstre",
+                "effectName8": "RunningMode"
             },
             "lightingSpeed": {
                 "title": "Hastighet"
@@ -2274,6 +2276,8 @@
             "last": "Sist oppdatert: ",
             "next": "Neste planlagte oppdatering: ",
             "checkButton": "SE ETTER OPPDATERINGER",
+            "checkAgain": "Check Again",
+            "updateNow": "Update Now",
             "checking": "Ser etter oppdateringer",
             "downloading": "Nedlasting av oppdateringer er ferdig",
             "installing": "Installerer oppdateringer",
@@ -2314,7 +2318,10 @@
             "installFailHeader": "Noen oppdateringer ble ikke installert korrekt",
             "installFailDescription": "Noe gikk galt under nedlastingen og installasjonen av disse oppdateringene. Kontroller at du er tilkoblet, og ikke slå av maskinen når du installerer oppdateringer.",
             "optionalUpdates": "Valgfrie oppdateringer",
-            "installSelectedUpdates": "Installer valgte oppdateringer"
+            "installSelectedUpdates": "Installer valgte oppdateringer",
+            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
+            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
+            "optionalUpdatesDescription": "Keep your computer up-to-date"
         },
         "installationHistory": {
             "name": "Navn",

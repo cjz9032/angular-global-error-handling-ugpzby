@@ -734,7 +734,8 @@
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
                 "name11": "Legion Front Fan Lighting",
-                "name12": "Legion Top Fan Lighting"
+                "name12": "Legion Top Fan Lighting",
+                "name13": "Legion Memory Lighting"
             },
             "lightingEffect": {
                 "effectName1": "Στατικό",
@@ -743,7 +744,8 @@
                 "effectName4": "Τυχαίο",
                 "effectName5": "Ψυχρό_μπλε",
                 "effectName6": "Δεξιό_νεύμα",
-                "effectName7": "Αριστερό νεύμα"
+                "effectName7": "Αριστερό νεύμα",
+                "effectName8": "RunningMode"
             },
             "lightingSpeed": {
                 "title": "Ταχύτητα"
@@ -2274,6 +2276,8 @@
             "last": "Τελευταία ενημέρωση: ",
             "next": "Επόμενη προγραμματισμένη ενημέρωση: ",
             "checkButton": "ΕΛΕΓΧΟΣ ΓΙΑ ΕΝΗΜΕΡΩΣΕΙΣ",
+            "checkAgain": "Check Again",
+            "updateNow": "Update Now",
             "checking": "Έλεγχος για ενημερώσεις",
             "downloading": "Η μεταφόρτωση ενημερώσεων ολοκληρώθηκε",
             "installing": "Εγκατάσταση ενημερώσεων",
@@ -2314,7 +2318,10 @@
             "installFailHeader": "Ορισμένες ενημερώσεις δεν εγκαταστάθηκαν σωστά",
             "installFailDescription": "Κάτι πήγε στραβά κατά τη λήψη και την εγκατάσταση αυτών των ενημερώσεων. Βεβαιωθείτε ότι είστε σε σύνδεση και μην απενεργοποιήσετε τον υπολογιστή όσο διαρκεί η εγκατάσταση των ενημερώσεων.",
             "optionalUpdates": "Προαιρετικές ενημερώσεις",
-            "installSelectedUpdates": "Εγκατάσταση επιλεγμένων ενημερώσεων"
+            "installSelectedUpdates": "Εγκατάσταση επιλεγμένων ενημερώσεων",
+            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
+            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
+            "optionalUpdatesDescription": "Keep your computer up-to-date"
         },
         "installationHistory": {
             "name": "Όνομα",

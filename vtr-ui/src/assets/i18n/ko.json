@@ -734,7 +734,8 @@
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
                 "name11": "Legion Front Fan Lighting",
-                "name12": "Legion Top Fan Lighting"
+                "name12": "Legion Top Fan Lighting",
+                "name13": "Legion Memory Lighting"
             },
             "lightingEffect": {
                 "effectName1": "고정",
@@ -743,7 +744,8 @@
                 "effectName4": "랜덤",
                 "effectName5": "차가운 블루",
                 "effectName6": "오른쪽으로 움직이기",
-                "effectName7": "왼쪽으로 움직이기"
+                "effectName7": "왼쪽으로 움직이기",
+                "effectName8": "RunningMode"
             },
             "lightingSpeed": {
                 "title": "속도"
@@ -2274,6 +2276,8 @@
             "last": "마지막 업데이트 날짜: ",
             "next": "다음 예약 업데이트 날짜: ",
             "checkButton": "업데이트 검사",
+            "checkAgain": "Check Again",
+            "updateNow": "Update Now",
             "checking": "업데이트 검사",
             "downloading": "업데이트 다운로드 완료",
             "installing": "업데이트를 설치하는 중",
@@ -2314,7 +2318,10 @@
             "installFailHeader": "일부 업데이트가 올바르게 설치되지 않았습니다",
             "installFailDescription": "이러한 업데이트의 다운로드 및 설치 중에 문제가 발생했습니다. 온라인 상태인지 확인하고 업데이트를 설치할 때 컴퓨터를 끄지 마십시오.",
             "optionalUpdates": "선택적 업데이트",
-            "installSelectedUpdates": "선택한 업데이트 설치"
+            "installSelectedUpdates": "선택한 업데이트 설치",
+            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
+            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
+            "optionalUpdatesDescription": "Keep your computer up-to-date"
         },
         "installationHistory": {
             "name": "이름",

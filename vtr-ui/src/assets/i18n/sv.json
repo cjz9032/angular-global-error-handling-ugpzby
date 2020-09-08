@@ -734,7 +734,8 @@
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
                 "name11": "Legion Front Fan Lighting",
-                "name12": "Legion Top Fan Lighting"
+                "name12": "Legion Top Fan Lighting",
+                "name13": "Legion Memory Lighting"
             },
             "lightingEffect": {
                 "effectName1": "Statisk",
@@ -743,7 +744,8 @@
                 "effectName4": "Slumpval",
                 "effectName5": "Svalt blå",
                 "effectName6": "Våg höger",
-                "effectName7": "Våg vänster"
+                "effectName7": "Våg vänster",
+                "effectName8": "RunningMode"
             },
             "lightingSpeed": {
                 "title": "Hastighet"
@@ -2274,6 +2276,8 @@
             "last": "Senast uppdaterat: ",
             "next": "Nästa schemalagda uppdatering: ",
             "checkButton": "SÖK EFTER UPPDATERINGAR",
+            "checkAgain": "Check Again",
+            "updateNow": "Update Now",
             "checking": "Söker efter uppdateringar",
             "downloading": "Uppdateringar har hämtats",
             "installing": "Installerar uppdateringar",
@@ -2314,7 +2318,10 @@
             "installFailHeader": "Vissa uppdateringar installerades inte korrekt",
             "installFailDescription": "Ett problem inträffade under hämtningen och installationen av uppdateringarna. Kontrollera att du är ansluten och stäng inte av datorn medan uppdateringarna installeras.",
             "optionalUpdates": "Valfria uppdateringar",
-            "installSelectedUpdates": "Installera valda uppdateringar"
+            "installSelectedUpdates": "Installera valda uppdateringar",
+            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
+            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
+            "optionalUpdatesDescription": "Keep your computer up-to-date"
         },
         "installationHistory": {
             "name": "Namn",

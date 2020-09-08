@@ -734,7 +734,8 @@
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
                 "name11": "Legion Front Fan Lighting",
-                "name12": "Legion Top Fan Lighting"
+                "name12": "Legion Top Fan Lighting",
+                "name13": "Legion Memory Lighting"
             },
             "lightingEffect": {
                 "effectName1": "Statisch",
@@ -743,7 +744,8 @@
                 "effectName4": "Willekeurig",
                 "effectName5": "Koel_blauw",
                 "effectName6": "Golf_rechts",
-                "effectName7": "Golf_links"
+                "effectName7": "Golf_links",
+                "effectName8": "RunningMode"
             },
             "lightingSpeed": {
                 "title": "Snelheid"
@@ -2274,6 +2276,8 @@
             "last": "Laatst bijgewerkt: ",
             "next": "Volgende geplande update: ",
             "checkButton": "CONTROLEREN OP UPDATES",
+            "checkAgain": "Check Again",
+            "updateNow": "Update Now",
             "checking": "Zoeken naar updates",
             "downloading": "Updates downloaden voltooid",
             "installing": "Updates installeren",
@@ -2314,7 +2318,10 @@
             "installFailHeader": "Enkele updates zijn niet juist geïnstalleerd",
             "installFailDescription": "Er is iets misgegaan tijdens het downloaden en installeren van deze updates. Zorg dat u online bent en zet de computer niet uit wanneer u updates installeert.",
             "optionalUpdates": "Optionele updates",
-            "installSelectedUpdates": "Geselecteerd updates installeren"
+            "installSelectedUpdates": "Geselecteerd updates installeren",
+            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
+            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
+            "optionalUpdatesDescription": "Keep your computer up-to-date"
         },
         "installationHistory": {
             "name": "Naam",

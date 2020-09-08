@@ -734,7 +734,8 @@
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
                 "name11": "Legion Front Fan Lighting",
-                "name12": "Legion Top Fan Lighting"
+                "name12": "Legion Top Fan Lighting",
+                "name13": "Legion Memory Lighting"
             },
             "lightingEffect": {
                 "effectName1": "静的",
@@ -743,7 +744,8 @@
                 "effectName4": "ランダム",
                 "effectName5": "クール_ブルー",
                 "effectName6": "ウェーブ_右",
-                "effectName7": "ウェーブ_左"
+                "effectName7": "ウェーブ_左",
+                "effectName8": "RunningMode"
             },
             "lightingSpeed": {
                 "title": "速度"
@@ -2274,6 +2276,8 @@
             "last": "最終更新日:",
             "next": "次回の更新スケジュール:",
             "checkButton": "更新の確認",
+            "checkAgain": "Check Again",
+            "updateNow": "Update Now",
             "checking": "更新を確認しています",
             "downloading": "更新のダウンロード状況",
             "installing": "更新をインストールしています",
@@ -2314,7 +2318,10 @@
             "installFailHeader": "一部の更新は正常にインストールされませんでした",
             "installFailDescription": "これらの更新のダウンロード中およびインストール中に問題が発生しました。オンラインであることを確認し、更新のインストール中はコンピューターの電源を切らないでください。",
             "optionalUpdates": "オプションの更新",
-            "installSelectedUpdates": "選択した更新をインストール"
+            "installSelectedUpdates": "選択した更新をインストール",
+            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
+            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
+            "optionalUpdatesDescription": "Keep your computer up-to-date"
         },
         "installationHistory": {
             "name": "名前",

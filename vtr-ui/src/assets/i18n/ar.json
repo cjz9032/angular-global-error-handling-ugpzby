@@ -736,7 +736,8 @@
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
                 "name11": "Legion Front Fan Lighting",
-                "name12": "Legion Top Fan Lighting"
+                "name12": "Legion Top Fan Lighting",
+                "name13": "Legion Memory Lighting"
             },
             "lightingEffect": {
                 "effectName1": "ساكن",
@@ -745,7 +746,8 @@
                 "effectName4": "عشوائي",
                 "effectName5": "أزرق هادئ",
                 "effectName6": "التلويح باليد اليمنى",
-                "effectName7": "التلويح باليد اليسرى"
+                "effectName7": "التلويح باليد اليسرى",
+                "effectName8": "RunningMode"
             },
             "lightingSpeed": {
                 "title": "السرعة"
@@ -2276,6 +2278,8 @@
             "last": "تاريخ التحديث الأخير: ",
             "next": "التحديث المجدول التالي: ",
             "checkButton": "التحقق من وجود تحديثات",
+            "checkAgain": "Check Again",
+            "updateNow": "Update Now",
             "checking": "التحقق من وجود تحديثات",
             "downloading": "تم تنزيل التحديثات",
             "installing": "تثبيت التحديثات",
@@ -2316,7 +2320,10 @@
             "installFailHeader": "لم يتم تثبيت بعض التحديثات بشكل صحيح",
             "installFailDescription": "حدث خطأ ما أثناء تنزيل هذه التحديثات وتثبيتها. يرجى التأكد من اتصالك بالإنترنت ولا توقف تشغيل الكمبيوتر عند تثبيت التحديثات.",
             "optionalUpdates": "تحديثات اختيارية",
-            "installSelectedUpdates": "تثبيت تحديثات محددة"
+            "installSelectedUpdates": "تثبيت تحديثات محددة",
+            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
+            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
+            "optionalUpdatesDescription": "Keep your computer up-to-date"
         },
         "installationHistory": {
             "name": "الاسم",

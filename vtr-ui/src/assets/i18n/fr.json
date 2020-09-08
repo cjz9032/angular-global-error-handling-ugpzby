@@ -734,7 +734,8 @@
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
                 "name11": "Legion Front Fan Lighting",
-                "name12": "Legion Top Fan Lighting"
+                "name12": "Legion Top Fan Lighting",
+                "name13": "Legion Memory Lighting"
             },
             "lightingEffect": {
                 "effectName1": "Statique",
@@ -743,7 +744,8 @@
                 "effectName4": "Aléatoire",
                 "effectName5": "Bleu_froid",
                 "effectName6": "Vague_droite",
-                "effectName7": "Vague_gauche"
+                "effectName7": "Vague_gauche",
+                "effectName8": "RunningMode"
             },
             "lightingSpeed": {
                 "title": "Vitesse"
@@ -2274,6 +2276,8 @@
             "last": "Dernière mise à jour : ",
             "next": "Prochaine mise à jour prévue : ",
             "checkButton": "RECHERCHER DES MISES À JOUR",
+            "checkAgain": "Check Again",
+            "updateNow": "Update Now",
             "checking": "Recherche de mises à jour",
             "downloading": "Téléchargement des mises à jour effectué",
             "installing": "Installation des mises à jour",
@@ -2314,7 +2318,10 @@
             "installFailHeader": "Certaines mises à jour n'ont pas été correctement installées",
             "installFailDescription": "Une erreur s'est produite lors du téléchargement et de l'installation de ces mises à jour. Vérifiez que vous êtes en ligne et que vous n'éteignez pas votre ordinateur lors de l'installation des mises à jour.",
             "optionalUpdates": "Mises à jour facultatives",
-            "installSelectedUpdates": "Installer les mises à jour sélectionnées"
+            "installSelectedUpdates": "Installer les mises à jour sélectionnées",
+            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
+            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
+            "optionalUpdatesDescription": "Keep your computer up-to-date"
         },
         "installationHistory": {
             "name": "Nom",
