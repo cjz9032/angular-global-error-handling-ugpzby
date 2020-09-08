@@ -5249,6 +5249,9 @@
 		"na": "N/A",
 		"exportLog": "Export Log"
 	},
+	"snapshot": {
+		"title": "Snapshot"
+	},
 	"notification": {
 		"menu": {
 			"security": "Do you know? Even you don't have anti-virus software installed, we still provide basic security protection for your device.",

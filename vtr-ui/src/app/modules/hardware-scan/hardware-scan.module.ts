@@ -30,6 +30,7 @@ import { HeaderMainModule } from 'src/app/components/header-main/header-main.mod
 import { ContainerCardModule } from 'src/app/components/container-card/container-card.module';
 import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
+import { SnapshotModule } from 'src/app/modules/snapshot/snapshot.module';
 
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons/faCaretUp';
@@ -49,8 +50,12 @@ import { HardwareScanFinishedHeaderComponent } from './components/header/hardwar
 import { UiHardwareScanTestResultComponent } from './components/dashboard/ui-hardware-scan-test-result/ui-hardware-scan-test-result.component';
 import { UiTestResultIconComponent } from './components/dashboard/ui-test-result-icon/ui-test-result-icon.component';
 import { UiHyperlinkButtonComponent } from '../../components/ui/ui-hyperlink-button/ui-hyperlink-button.component';
+<<<<<<< HEAD
 import { ModalExportLogComponent } from './components/modal/modal-export-log/modal-export-log.component';
 import { UiQuestionMarkButtonComponent } from './components/dashboard/ui-question-mark-button/ui-question-mark-button.component';
+=======
+import { SnapshotHeaderComponent } from '../snapshot/components/header/snapshot-header.component';
+>>>>>>> 3e9a53dcc1... VAN-21770: Create Snapshot module
 
 @NgModule({
 	declarations: [
@@ -82,7 +87,8 @@ import { UiQuestionMarkButtonComponent } from './components/dashboard/ui-questio
 		UiTestResultIconComponent,
 		UiHyperlinkButtonComponent,
 		ModalExportLogComponent,
-		UiQuestionMarkButtonComponent
+		UiQuestionMarkButtonComponent,
+		SnapshotHeaderComponent
 	],
 	imports: [
 		CommonModule,
