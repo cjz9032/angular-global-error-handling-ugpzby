@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AvailableUpdateDetail } from 'src/app/data-models/system-update/available-update-detail.model';
 import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
+import { UpdateInstallTitleId } from 'src/app/enums/update-install-id.enum';
 
 @Component({
 	selector: 'vtr-available-updates',
@@ -48,6 +49,8 @@ export class AvailableUpdatesComponent implements OnInit {
 
 	private mIsInstallationCompleted = false;
 	private mIgnoredUpdates: AvailableUpdateDetail[];
+
+	public UpdateInstallTitleId = UpdateInstallTitleId;
 
 	constructor(private systemUpdateService: SystemUpdateService) { }
 

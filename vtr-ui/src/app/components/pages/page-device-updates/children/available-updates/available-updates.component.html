@@ -28,7 +28,8 @@
 					<div class="col">
 						<div class="header">
 							<div class="heading"
-								id="su_recommendedUpdates"
+								[id]="UpdateInstallTitleId.RecommendedUpdates"
+								tabindex="-1"
 								role="text">{{recommendedUpdates.length}}
 								{{'systemUpdates.recommendedUpdates' | translate}}</div>
 							<div class="description">{{'systemUpdates.availableUpdates.recommendedUpdatesDescription' | translate}}</div>
@@ -48,7 +49,8 @@
 					<div class="col">
 						<div class="header">
 							<div class="heading"
-								id="su_optionalUpdates"
+								[id]="UpdateInstallTitleId.OptionalUpdates"
+								tabindex="-1"
 								role="text">{{optionalUpdates.length}}
 								{{'systemUpdates.optionalUpdates' | translate}}</div>
 							<div class="description">{{'systemUpdates.availableUpdates.optionalUpdatesDescription' | translate}}</div>
@@ -69,7 +71,8 @@
 						<div class="header mb-20">
 							<div class="row d-flex justify-content-between w-100">
 								<div class="heading"
-									id="su_ignoredUpdates"
+									[id]="UpdateInstallTitleId.IgnoredUpdates"
+									tabindex="-1"
 									role="text">{{ignoredUpdates.length}}
 									{{'systemUpdates.ignoredUpdates' | translate}}</div>
 								<div class="collapse-control"

@@ -38,6 +38,7 @@ export class UiListCheckboxComponent implements OnInit, OnDestroy {
 	public isReadMeAvailable = false;
 	public isIgnored = false;
 	public severity = UpdateInstallSeverity.Optional;
+	public UpdateInstallSeverity = UpdateInstallSeverity;
 	public packageName: string;
 	public packageID: string;
 	// Random number is used to have unique id of each input field
@@ -145,8 +146,8 @@ export class UiListCheckboxComponent implements OnInit, OnDestroy {
 		this.focusOnElement(this.currentQuestionMarkID);
 	}
 
-	public onIgnoreUpdateClick(packageName: string, isIgnored: boolean) {
-		this.ignoreUpdate.emit({packageName, isIgnored});
+	public onIgnoreUpdateClick(packageName: string, isIgnored: boolean, packageSeverity: UpdateInstallSeverity) {
+		this.ignoreUpdate.emit({packageName, isIgnored, packageSeverity});
 	}
 
 	private translateString() {
