@@ -77,12 +77,16 @@
 	</div>
 	<div class="row">
 		<div class="col">
-			<div class="hardware-lists-containter">
-				Abobrinha
-				<vtr-page-snapshot></vtr-page-snapshot>
-				<vtr-snapshot-header></vtr-snapshot-header>
-				<vtr-snapshot-main></vtr-snapshot-main>
-			</div>
+			<vtr-page-snapshot
+				(installedProgramInfo)="onInstalledProgramInfo()">
+			</vtr-page-snapshot>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<vtr-snapshot-header
+				[programList]="programList">
+			</vtr-snapshot-header>
 		</div>
 	</div>
 </div>

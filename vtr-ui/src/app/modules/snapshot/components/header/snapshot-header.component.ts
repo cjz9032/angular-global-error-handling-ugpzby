@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'vtr-snapshot-header',
@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SnapshotHeaderComponent implements OnInit {
 
-  constructor() { }
+	@Input() programList: any;
 
-  ngOnInit(): void {
-  }
+	constructor() { }
+
+	ngOnInit(): void {
+	}
 
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { SnapshotService } from '../snapshot/services/snapshot.service';
 
 @Component({
   selector: 'vtr-page-snapshot',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageSnapshotComponent implements OnInit {
 
-  constructor() { }
+	@Output() installedProgramInfo: EventEmitter<any> = new EventEmitter();
 
-  ngOnInit(): void {
-  }
+	constructor(private snapshotService: SnapshotService) { }
+
+	ngOnInit(): void {
+	}
+
+	public onInstalledProgramInfo() {
+		if (this.snapshotService) {
+			this.installedProgramInfo.emit();
+		}
+	}
 
 }
