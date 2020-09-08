@@ -1,4 +1,4 @@
-<div class="vtr-ui-list-checkbox">
+<div class="vtr-ui-list-system-update-checkbox">
 	<!-- update list with checkbox section -->
 	<ul class="list-group"
 		*ngIf="!isInstallationCompleted && !isUpdateDownloading">
@@ -142,7 +142,7 @@
 			<li *ngIf="diskSpaceNeeded  && manufacturer !== undefined">{{'systemUpdates.updateCheckbox.diskSpaceNeeded' | translate}}<span >{{ diskSpaceNeeded }}</span></li>
 		</ul>
 		<div class="row"
-			*ngIf="isReadMeAvailable || severity !== 'Critical'">
+			*ngIf="isReadMeAvailable || severity !== UpdateInstallSeverity.Critical">
 			<div class="pl-0 pr-3 text-left"
 			*ngIf="isReadMeAvailable">
 				<a href="javascript:void(0)"
@@ -157,7 +157,7 @@
 			</div>
 			<!-- required in MVP 2 -->
 			<div class="pl-0 pr-0 text-left"
-				*ngIf="severity !== 'Critical' && isIgnored === false && !isInstallationCompleted && !isUpdateDownloading">
+				*ngIf="severity !== UpdateInstallSeverity.Critical && isIgnored === false && !isInstallationCompleted && !isUpdateDownloading">
 				<a href="javascript:void(0)"
 					class="ignore"
 					tabindex="0"
@@ -166,12 +166,12 @@
 				    metricsItem="ignore"
 					metricsEvent="featureClick"
 					metricsParam="{{ 'packageID=' + packageID }}"
-					(click)="onIgnoreUpdateClick(packageName, true)"
-					(keyup.enter)="onIgnoreUpdateClick(packageName, true)"
+					(click)="onIgnoreUpdateClick(packageName, true, severity)"
+					(keyup.enter)="onIgnoreUpdateClick(packageName, true, severity)"
 					>{{'systemUpdates.updateCheckbox.ignore' | translate}}</a>
 			</div>
 			<div class="pl-0 pr-0 text-left"
-				*ngIf="severity !== 'Critical' && isIgnored === true && !isInstallationCompleted && !isUpdateDownloading">
+				*ngIf="severity !== UpdateInstallSeverity.Critical && isIgnored === true && !isInstallationCompleted && !isUpdateDownloading">
 				<a href="javascript:void(0)"
 					class="ignore"
 					tabindex="0"
@@ -180,8 +180,8 @@
 				    metricsItem="attend"
 					metricsEvent="featureClick"
 					metricsParam="{{ 'packageID=' + packageID }}"
-					(click)="onIgnoreUpdateClick(packageName, false)"
-					(keyup.enter)="onIgnoreUpdateClick(packageName, false)"
+					(click)="onIgnoreUpdateClick(packageName, false, severity)"
+					(keyup.enter)="onIgnoreUpdateClick(packageName, false, severity)"
 					>{{'systemUpdates.updateCheckbox.attend' | translate}}</a>
 			</div>
 		</div>

@@ -102,6 +102,7 @@ import { UiCustomSliderModule } from 'src/app/components/ui/ui-custom-slider/ui-
 import { AntiTheftComponent } from 'src/app/components/pages/page-smart-assist/anti-theft/anti-theft.component';
 import { SpinnerModule } from 'src/app/components/common/spinner/spinner.module';
 import { PageHighDensityBatteryComponent } from 'src/app/components/pages/page-high-density-battery/page-high-density-battery.component';
+import { UiListSystemUpdateCheckboxComponent } from 'src/app/components/pages/page-device-updates/children/ui-list-system-update-checkbox/ui-list-system-update-checkbox.component';
 
 @NgModule({
 	declarations: [
@@ -115,6 +116,7 @@ import { PageHighDensityBatteryComponent } from 'src/app/components/pages/page-h
 		BatteryIndicatorComponent,
 		CameraBackgroundBlurComponent,
 		CameraControlComponent,
+		UiListSystemUpdateCheckboxComponent,
 		ClockComponent,
 		DisplayColorTempComponent,
 		DolbyModesTranslationPipe,

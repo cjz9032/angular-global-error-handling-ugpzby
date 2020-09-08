@@ -32,6 +32,7 @@ import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.servic
 import { AntivirusService } from 'src/app/services/security/antivirus.service';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { SelfSelectService, SegmentConst } from 'src/app/services/self-select/self-select.service';
+import { UpdateInstallTitleId } from 'src/app/enums/update-install-id.enum';
 
 @Component({
 	selector: 'vtr-page-device-updates',
@@ -55,14 +56,14 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		type: 'subpage-partner-corner',
 		order: 2,
 		show: false
-	},{
+	}, {
 		cardContent: null,
 		id: 'su-web-support-cardcontent',
 		ariaLabel: 'su-web-support-cardcontent',
 		type: 'subpage-partner-corner',
 		order: 3,
 		show: true
-	},{
+	}, {
 		cardContent: null,
 		id: 'su-positionA-cardcontent',
 		ariaLabel: 'su-positionA-cardcontent',
@@ -292,7 +293,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 				FeatureImage: 'assets/images/support.jpg',
 				ActionType: ContentActionType.External,
 				ActionLink: this.supportLink,
-			}
+			};
 			this.rightCards[1].cardContent = this.supportWebsiteCard;
 		});
 	}
@@ -503,11 +504,24 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	public onIgnoredUpdate($event: any) {
 		const packageName = $event.packageName;
 		const isIgnored = $event.isIgnored;
+		const packageSeverity = $event.packageSeverity;
+		let focusIds: UpdateInstallTitleId[] = [];
 		if (isIgnored === true) {
 			this.systemUpdateService.ignoreUpdate(packageName);
+			if (packageSeverity === UpdateInstallSeverity.Optional) {
+				focusIds = [UpdateInstallTitleId.OptionalUpdates, UpdateInstallTitleId.IgnoredUpdates];
+			} else {
+				focusIds = [UpdateInstallTitleId.RecommendedUpdates, UpdateInstallTitleId.IgnoredUpdates];
+			}
 		} else {
 			this.systemUpdateService.unIgnoreUpdate(packageName);
+			if (packageSeverity === UpdateInstallSeverity.Optional) {
+				focusIds = [UpdateInstallTitleId.IgnoredUpdates, UpdateInstallTitleId.OptionalUpdates];
+			} else {
+				focusIds = [UpdateInstallTitleId.IgnoredUpdates, UpdateInstallTitleId.RecommendedUpdates];
+			}
 		}
+		this.systemUpdateService.ignoreFocusIds = focusIds;
 	}
 
 	// private getAvailablePackageId(packageName) {
@@ -626,8 +640,8 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 
 	public updateAvailableAfterCheck() {
 		return this.systemUpdateService.isUpdatesAvailable
-		&& !this.systemUpdateService.isUpdateDownloading
-		&& !this.systemUpdateService.isInstallationCompleted;
+			&& !this.systemUpdateService.isUpdateDownloading
+			&& !this.systemUpdateService.isInstallationCompleted;
 	}
 
 	public isUpdateSelected() {
@@ -649,6 +663,14 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	private focusOnElement(element) {
 		if (element && document.getElementById(element)) {
 			document.getElementById(element).focus();
+		}
+	}
+	private focusOnElementGroup(idArray) {
+		for (const element of idArray) {
+			if (element && document.getElementById(element)) {
+				document.getElementById(element).focus();
+				break;
+			}
 		}
 	}
 
@@ -945,7 +967,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					break;
 				case UpdateProgress.IgnoredUpdates:
 					this.setUpdateByCategory(notification.payload);
-					this.focusOnElement(this.backButton);
+					setTimeout(() => { this.focusOnElementGroup(this.systemUpdateService.ignoreFocusIds); }, 0);
 					break;
 				case AdPolicyEvent.AdPolicyUpdatedEvent:
 					if (!payload.IsSystemUpdateEnabled) {

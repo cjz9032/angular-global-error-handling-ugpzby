@@ -5,19 +5,19 @@ import { SecureMath } from '@lenovo/tan-client-bridge';
 
 import { AvailableUpdateDetail } from 'src/app/data-models/system-update/available-update-detail.model';
 import { CommonService } from 'src/app/services/common/common.service';
-import { ModalUpdateChangeLogComponent } from '../../modal/modal-update-change-log.component/modal-update-change-log.component';
+import { ModalUpdateChangeLogComponent } from 'src/app/components/modal/modal-update-change-log.component/modal-update-change-log.component';
 import { UpdateInstallSeverity } from 'src/app/enums/update-install-severity.enum';
 import { LanguageService} from 'src/app/services/language/language.service';
 import { Subscription } from 'rxjs';
 
 
 @Component({
-	selector: 'vtr-ui-list-checkbox',
-	templateUrl: './ui-list-checkbox.component.html',
-	styleUrls: ['./ui-list-checkbox.component.scss']
+	selector: 'vtr-ui-list-system-update-checkbox',
+	templateUrl: './ui-list-system-update-checkbox.component.html',
+	styleUrls: ['./ui-list-system-update-checkbox.component.scss']
 })
 
-export class UiListCheckboxComponent implements OnInit, OnDestroy {
+export class UiListSystemUpdateCheckboxComponent implements OnInit, OnDestroy {
 
 	@Input() items: Array<AvailableUpdateDetail>;
 	@Input() isInstallationSuccess = false;
@@ -38,6 +38,7 @@ export class UiListCheckboxComponent implements OnInit, OnDestroy {
 	public isReadMeAvailable = false;
 	public isIgnored = false;
 	public severity = UpdateInstallSeverity.Optional;
+	public UpdateInstallSeverity = UpdateInstallSeverity;
 	public packageName: string;
 	public packageID: string;
 	// Random number is used to have unique id of each input field
@@ -145,8 +146,8 @@ export class UiListCheckboxComponent implements OnInit, OnDestroy {
 		this.focusOnElement(this.currentQuestionMarkID);
 	}
 
-	public onIgnoreUpdateClick(packageName: string, isIgnored: boolean) {
-		this.ignoreUpdate.emit({packageName, isIgnored});
+	public onIgnoreUpdateClick(packageName: string, isIgnored: boolean, packageSeverity: UpdateInstallSeverity) {
+		this.ignoreUpdate.emit({packageName, isIgnored, packageSeverity});
 	}
 
 	private translateString() {

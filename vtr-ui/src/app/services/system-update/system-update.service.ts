@@ -14,6 +14,7 @@ import { WinRT } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { MetricService } from '../metric/metrics.service';
 import { LoggerService } from '../logger/logger.service';
+import { UpdateInstallTitleId } from 'src/app/enums/update-install-id.enum';
 
 @Injectable({
 	providedIn: 'root'
@@ -40,6 +41,7 @@ export class SystemUpdateService {
 	public installationHistory: Array<UpdateHistory>;
 	public ignoredRebootDelayUpdates: AvailableUpdateDetail[] = [];
 	public installedUpdates: AvailableUpdateDetail[] = [];
+	public ignoreFocusIds: UpdateInstallTitleId[] = [];
 
 	public isUpdatesAvailable = false;
 	public isUpdateDownloading = false;
