@@ -18,7 +18,7 @@
 							*ngFor="let item of items; index as i">
 							<div class="media pl-1 align-items-center"
 								id="{{item.name}}">
-								<img class="left-image" [src]="item.leftImageSource|svgInline|async" />
+								<img class="left-image" [src]="item.leftImageSource | svgInline | async" />
 								<div class="media-body pb-0 mb-0 small pl-2">
 									<div class="d-flex justify-content-between align-items-center w-100">
 										<div class="update-title"
