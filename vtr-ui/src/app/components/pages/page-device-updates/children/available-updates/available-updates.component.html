@@ -4,7 +4,7 @@
 			<div class="updates-lists-container">
 				<div class="row"
 					*ngIf="(!isUpdateDownloading && criticalUpdates && criticalUpdates.length > 0) || (isUpdateDownloading && criticalUpdatesToInstall && criticalUpdatesToInstall.length > 0)">
-					<img class="icon" [src]="criticalUpdatesIcon"/>
+					<img class="icon" [src]="criticalUpdatesIcon | svgInline | async"/>
 					<div class="col">
 						<div class="header">
 							<div class="heading"
@@ -24,7 +24,7 @@
 				<div class="row"
 					*ngIf="(!isUpdateDownloading && recommendedUpdates && recommendedUpdates.length > 0) || (isUpdateDownloading && recommendedUpdatesToInstall && recommendedUpdatesToInstall.length > 0)">
 					<div class="row-seperator" *ngIf="criticalUpdates && criticalUpdates.length > 0"></div>
-					<img class="icon" [src]="recommendedUpdatesIcon"/>
+					<img class="icon" [src]="recommendedUpdatesIcon | svgInline | async"/>
 					<div class="col">
 						<div class="header">
 							<div class="heading"
@@ -45,7 +45,7 @@
 				<div class="row"
 					*ngIf="(!isUpdateDownloading && optionalUpdates && optionalUpdates.length > 0) || (isUpdateDownloading && optionalUpdatesToInstall && optionalUpdatesToInstall.length > 0)">
 					<div class="row-seperator" *ngIf="criticalUpdates && criticalUpdates.length > 0 || recommendedUpdates && recommendedUpdates.length > 0"></div>
-					<img class="icon" [src]="optionalUpdateIcon"/>
+					<img class="icon" [src]="optionalUpdateIcon | svgInline | async"/>
 					<div class="col">
 						<div class="header">
 							<div class="heading"
@@ -66,7 +66,7 @@
 				<div class="row"
 					*ngIf="(!isUpdateDownloading && ignoredUpdates && ignoredUpdates.length > 0) || (isUpdateDownloading && ignoredUpdatesToInstall && ignoredUpdatesToInstall.length > 0)">
 					<div class="row-seperator" *ngIf="criticalUpdates && criticalUpdates.length > 0 || recommendedUpdates && recommendedUpdates.length > 0 || optionalUpdates && optionalUpdates.length > 0"></div>
-					<img class="icon" [src]="ignoredUpdateIcon" style="width: 2rem; height: 2rem;"/>
+					<img class="icon slash-icon" [src]="ignoredUpdateIcon | svgInline | async"/>
 					<div class="col">
 						<div class="header mb-20">
 							<div class="row d-flex justify-content-between w-100">
