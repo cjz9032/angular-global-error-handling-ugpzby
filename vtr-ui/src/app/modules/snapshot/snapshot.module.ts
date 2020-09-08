@@ -11,9 +11,11 @@ import { SnapshotMainComponent } from './components/main/snapshot-main.component
 @NgModule({
 	declarations: [
 		PageSnapshotComponent,
+		SnapshotHeaderComponent,
 		SnapshotMainComponent
 	],
 	exports: [
+		SnapshotHeaderComponent,
 		HardwareScanModule
 	],
 	imports: [
