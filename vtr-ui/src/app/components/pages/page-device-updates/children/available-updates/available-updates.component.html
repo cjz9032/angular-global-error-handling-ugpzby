@@ -12,12 +12,12 @@
 								role="text">{{criticalUpdates.length}}
 								{{'systemUpdates.criticalUpdates' | translate}}</div>
 							<div class="description">{{'systemUpdates.availableUpdates.criticalUpdatesDescription' | translate}}</div>
-							<vtr-ui-list-checkbox (checkChange)="onCheckChange($event)"
+							<vtr-ui-list-system-update-checkbox (checkChange)="onCheckChange($event)"
 								[isUpdateDownloading]="isUpdateDownloading"
 								[isInstallationCompleted]="isInstallationCompleted"
 								[isInstallationSuccess]="isInstallationSuccess"
 								[items]="isUpdateDownloading?criticalUpdatesToInstall:criticalUpdates">
-							</vtr-ui-list-checkbox>
+							</vtr-ui-list-system-update-checkbox>
 						</div>
 					</div>
 				</div>
@@ -33,12 +33,12 @@
 								role="text">{{recommendedUpdates.length}}
 								{{'systemUpdates.recommendedUpdates' | translate}}</div>
 							<div class="description">{{'systemUpdates.availableUpdates.recommendedUpdatesDescription' | translate}}</div>
-							<vtr-ui-list-checkbox (checkChange)="onCheckChange($event)"
+							<vtr-ui-list-system-update-checkbox (checkChange)="onCheckChange($event)"
 								(ignoreUpdate)="onIgnoreUpdate($event)"
 								[isUpdateDownloading]="isUpdateDownloading"
 								[isInstallationCompleted]="isInstallationCompleted"
 								[isInstallationSuccess]="isInstallationSuccess"
-								[items]="isUpdateDownloading?recommendedUpdatesToInstall:recommendedUpdates"></vtr-ui-list-checkbox>
+								[items]="isUpdateDownloading?recommendedUpdatesToInstall:recommendedUpdates"></vtr-ui-list-system-update-checkbox>
 						</div>
 					</div>
 				</div>
@@ -54,12 +54,12 @@
 								role="text">{{optionalUpdates.length}}
 								{{'systemUpdates.optionalUpdates' | translate}}</div>
 							<div class="description">{{'systemUpdates.availableUpdates.optionalUpdatesDescription' | translate}}</div>
-							<vtr-ui-list-checkbox (checkChange)="onCheckChange($event)"
+							<vtr-ui-list-system-update-checkbox (checkChange)="onCheckChange($event)"
 								(ignoreUpdate)="onIgnoreUpdate($event)"
 								[isUpdateDownloading]="isUpdateDownloading"
 								[isInstallationCompleted]="isInstallationCompleted"
 								[isInstallationSuccess]="isInstallationSuccess"
-								[items]="isUpdateDownloading?optionalUpdatesToInstall:optionalUpdates"></vtr-ui-list-checkbox>
+								[items]="isUpdateDownloading?optionalUpdatesToInstall:optionalUpdates"></vtr-ui-list-system-update-checkbox>
 						</div>
 					</div>
 				</div>
@@ -98,13 +98,13 @@
 								</div>
 							</div>
 						</div>
-						<vtr-ui-list-checkbox *ngIf="!isCollapsed"
+						<vtr-ui-list-system-update-checkbox *ngIf="!isCollapsed"
 							(checkChange)="onCheckChange($event)"
 							(ignoreUpdate)="onIgnoreUpdate($event)"
 							[isUpdateDownloading]="isUpdateDownloading"
 							[isInstallationCompleted]="isInstallationCompleted"
 							[isInstallationSuccess]="isInstallationSuccess"
-							[items]="isUpdateDownloading?ignoredUpdatesToInstall:ignoredUpdates"></vtr-ui-list-checkbox>
+							[items]="isUpdateDownloading?ignoredUpdatesToInstall:ignoredUpdates"></vtr-ui-list-system-update-checkbox>
 					</div>
 				</div>
 			</div>

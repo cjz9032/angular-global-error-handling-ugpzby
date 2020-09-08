@@ -11,7 +11,6 @@ import { UiDaysPickerComponent } from 'src/app/components/ui/ui-days-picker/ui-d
 import { UiDropDownComponent } from 'src/app/components/ui/ui-dropdown/ui-dropdown.component';
 import { UiGamingCollapsibleContainerComponent } from 'src/app/components/ui/ui-gaming-collapsible-container/ui-gaming-collapsible-container.component';
 import { UiGamingDriverPopupComponent } from './../../components/ui/ui-gaming-driver-popup/ui-gaming-driver-popup.component';
-import { UiListCheckboxComponent } from 'src/app/components/ui/ui-list-checkbox/ui-list-checkbox.component';
 import { UiNumberButtonComponent } from 'src/app/components/ui/ui-number-button/ui-number-button.component';
 import { UiPopoverComponent } from 'src/app/components/ui/ui-popover/ui-popover.component';
 import { UiProgressBarComponent } from 'src/app/components/ui/ui-progress-bar/ui-progress-bar.component';
@@ -51,7 +50,6 @@ import { SafePipeModule } from 'safe-pipe';
 		UiCircleRadioWithCheckboxComponent,
 		UiDaysPickerComponent,
 		UiDropDownComponent,
-		UiListCheckboxComponent,
 		UiNumberButtonComponent,
 		UiRectangleRadioComponent,
 		UiRoundedRectangleRadioComponent,
@@ -77,7 +75,6 @@ import { SafePipeModule } from 'safe-pipe';
 		UiCircleRadioWithCheckboxComponent,
 		UiDaysPickerComponent,
 		UiDropDownComponent,
-		UiListCheckboxComponent,
 		UiNumberButtonComponent,
 		UiRectangleRadioComponent,
 		UiRoundedRectangleRadioComponent,
