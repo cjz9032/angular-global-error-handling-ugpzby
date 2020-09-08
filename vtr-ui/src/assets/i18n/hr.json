@@ -734,7 +734,8 @@
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
                 "name11": "Legion Front Fan Lighting",
-                "name12": "Legion Top Fan Lighting"
+                "name12": "Legion Top Fan Lighting",
+                "name13": "Legion Memory Lighting"
             },
             "lightingEffect": {
                 "effectName1": "Statičko",
@@ -743,7 +744,8 @@
                 "effectName4": "Nasumično",
                 "effectName5": "Hladna_plava",
                 "effectName6": "Val_desno",
-                "effectName7": "Val_lijevo"
+                "effectName7": "Val_lijevo",
+                "effectName8": "RunningMode"
             },
             "lightingSpeed": {
                 "title": "Brzina"
@@ -2274,6 +2276,8 @@
             "last": "Zadnje ažuriranje: ",
             "next": "Sljedeće zakazano ažuriranje: ",
             "checkButton": "TRAŽI AŽURIRANJA",
+            "checkAgain": "Check Again",
+            "updateNow": "Update Now",
             "checking": "Traženje ažuriranja",
             "downloading": "Završeno preuzimanje ažuriranja",
             "installing": "Instaliranje ažuriranja",
@@ -2314,7 +2318,10 @@
             "installFailHeader": "Neka ažuriranja nisu ispravno instalirana",
             "installFailDescription": "Došlo je do problema tijekom preuzimanja i instalacije tih ažuriranja. Pobrinite se da ste na mreži i ne gasite računalo tijekom instaliranja ažuriranja.",
             "optionalUpdates": "Neobavezna ažuriranja",
-            "installSelectedUpdates": "Instaliraj odabrana ažuriranja"
+            "installSelectedUpdates": "Instaliraj odabrana ažuriranja",
+            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
+            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
+            "optionalUpdatesDescription": "Keep your computer up-to-date"
         },
         "installationHistory": {
             "name": "Naziv",

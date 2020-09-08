@@ -734,7 +734,8 @@
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
                 "name11": "Legion Front Fan Lighting",
-                "name12": "Legion Top Fan Lighting"
+                "name12": "Legion Top Fan Lighting",
+                "name13": "Legion Memory Lighting"
             },
             "lightingEffect": {
                 "effectName1": "Staattinen",
@@ -743,7 +744,8 @@
                 "effectName4": "Satunnainen",
                 "effectName5": "Viileä_Sininen",
                 "effectName6": "Heilautus_Oikealle",
-                "effectName7": "Heilautus_Vasemmalle"
+                "effectName7": "Heilautus_Vasemmalle",
+                "effectName8": "RunningMode"
             },
             "lightingSpeed": {
                 "title": "Nopeus"
@@ -2274,6 +2276,8 @@
             "last": "Viimeksi päivitetty: ",
             "next": "Seuraava ajoitettu päivitys: ",
             "checkButton": "TARKISTA PÄIVITYKSET",
+            "checkAgain": "Check Again",
+            "updateNow": "Update Now",
             "checking": "Tarkistetaan päivityksiä",
             "downloading": "Päivitysten nouto on valmis",
             "installing": "Päivityksiä asennetaan",
@@ -2314,7 +2318,10 @@
             "installFailHeader": "Joidenkin päivitysten asennus ei onnistunut",
             "installFailDescription": "Jokin meni vikaan näiden päivitysten latauksen ja asennuksen aikana. Varmista, että laite on verkkoyhteydessä äläkä katkaise tietokoneesta virtaa, kun asennat päivityksiä.",
             "optionalUpdates": "Valinnaiset päivitykset",
-            "installSelectedUpdates": "Asenna valitut päivitykset"
+            "installSelectedUpdates": "Asenna valitut päivitykset",
+            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
+            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
+            "optionalUpdatesDescription": "Keep your computer up-to-date"
         },
         "installationHistory": {
             "name": "Nimi",

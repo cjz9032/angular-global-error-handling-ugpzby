@@ -734,7 +734,8 @@
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
                 "name11": "Legion Front Fan Lighting",
-                "name12": "Legion Top Fan Lighting"
+                "name12": "Legion Top Fan Lighting",
+                "name13": "Legion Memory Lighting"
             },
             "lightingEffect": {
                 "effectName1": "Statikus",
@@ -743,7 +744,8 @@
                 "effectName4": "Véletlen",
                 "effectName5": "Hideg_kék",
                 "effectName6": "Hullám_jobb",
-                "effectName7": "Hullám_bal"
+                "effectName7": "Hullám_bal",
+                "effectName8": "RunningMode"
             },
             "lightingSpeed": {
                 "title": "Sebesség"
@@ -2274,6 +2276,8 @@
             "last": "Utolsó frissítés: ",
             "next": "Következő ütemezett frissítés: ",
             "checkButton": "FRISSÍTÉSEK KERESÉSE",
+            "checkAgain": "Check Again",
+            "updateNow": "Update Now",
             "checking": "Frissítések keresése",
             "downloading": "A frissítések letöltve",
             "installing": "Frissítések telepítése",
@@ -2314,7 +2318,10 @@
             "installFailHeader": "Egyes frissítések nem települtek megfelelően",
             "installFailDescription": "Hiba történt ezeknek a frissítéseknek a letöltése és telepítése során. Ellenőrizze az internetkapcsolatot, és a frissítések telepítése alatt ne kapcsolja ki a számítógépet.",
             "optionalUpdates": "Választható frissítések",
-            "installSelectedUpdates": "Kijelölt frissítések telepítése"
+            "installSelectedUpdates": "Kijelölt frissítések telepítése",
+            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
+            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
+            "optionalUpdatesDescription": "Keep your computer up-to-date"
         },
         "installationHistory": {
             "name": "Név",

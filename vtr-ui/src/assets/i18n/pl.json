@@ -734,7 +734,8 @@
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
                 "name11": "Legion Front Fan Lighting",
-                "name12": "Legion Top Fan Lighting"
+                "name12": "Legion Top Fan Lighting",
+                "name13": "Legion Memory Lighting"
             },
             "lightingEffect": {
                 "effectName1": "Statyczny",
@@ -743,7 +744,8 @@
                 "effectName4": "Losowy",
                 "effectName5": "Chłodny_Niebieski",
                 "effectName6": "Fala_Prawo",
-                "effectName7": "Fala_Lewo"
+                "effectName7": "Fala_Lewo",
+                "effectName8": "RunningMode"
             },
             "lightingSpeed": {
                 "title": "Szybkość"
@@ -2274,6 +2276,8 @@
             "last": "Ostatnia aktualizacja: ",
             "next": "Następna planowana aktualizacja: ",
             "checkButton": "SPRAWDŹ AKTUALIZACJE",
+            "checkAgain": "Check Again",
+            "updateNow": "Update Now",
             "checking": "Sprawdzanie aktualizacji",
             "downloading": "Ukończono pobieranie aktualizacji",
             "installing": "Instalowanie aktualizacji",
@@ -2314,7 +2318,10 @@
             "installFailHeader": "Niektóre aktualizacje nie zostały zainstalowane poprawnie",
             "installFailDescription": "Wystąpił błąd podczas pobierania i instalowania aktualizacji. Upewnij się, że masz dostęp do internetu i nie wyłączaj komputera podczas instalowania aktualizacji.",
             "optionalUpdates": "Opcjonalne aktualizacje",
-            "installSelectedUpdates": "Zainstaluj wybrane aktualizacje"
+            "installSelectedUpdates": "Zainstaluj wybrane aktualizacje",
+            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
+            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
+            "optionalUpdatesDescription": "Keep your computer up-to-date"
         },
         "installationHistory": {
             "name": "Nazwa",

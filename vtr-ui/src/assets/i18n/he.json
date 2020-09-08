@@ -734,7 +734,8 @@
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
                 "name11": "Legion Front Fan Lighting",
-                "name12": "Legion Top Fan Lighting"
+                "name12": "Legion Top Fan Lighting",
+                "name13": "Legion Memory Lighting"
             },
             "lightingEffect": {
                 "effectName1": "סטטי",
@@ -743,7 +744,8 @@
                 "effectName4": "אקראי",
                 "effectName5": "כחול קריר",
                 "effectName6": "נפנוף ימינה",
-                "effectName7": "נפנוף שמאלה"
+                "effectName7": "נפנוף שמאלה",
+                "effectName8": "RunningMode"
             },
             "lightingSpeed": {
                 "title": "מהירות"
@@ -2274,6 +2276,8 @@
             "last": "עודכן לאחרונה: ",
             "next": "העדכון המתוכנן הבא: ",
             "checkButton": "חיפוש עדכונים",
+            "checkAgain": "Check Again",
+            "updateNow": "Update Now",
             "checking": "חיפוש עדכונים",
             "downloading": "הורדת העדכונים הושלמה",
             "installing": "מתקין עדכונים",
@@ -2314,7 +2318,10 @@
             "installFailHeader": "עדכונים מסוימים לא הותקנו כראוי",
             "installFailDescription": "משהו השתבש במהלך ההורדה וההתקנה של עדכונים אלה. ודאו שאתם נמצאים במצב מקוון ואל תכבו את המחשב בעת התקנת העדכונים.",
             "optionalUpdates": "עדכונים אופציונליים",
-            "installSelectedUpdates": "התקנת עדכונים שנבחרו"
+            "installSelectedUpdates": "התקנת עדכונים שנבחרו",
+            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
+            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
+            "optionalUpdatesDescription": "Keep your computer up-to-date"
         },
         "installationHistory": {
             "name": "שם",

@@ -734,7 +734,8 @@
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
                 "name11": "Legion Front Fan Lighting",
-                "name12": "Legion Top Fan Lighting"
+                "name12": "Legion Top Fan Lighting",
+                "name13": "Legion Memory Lighting"
             },
             "lightingEffect": {
                 "effectName1": "Statik",
@@ -743,7 +744,8 @@
                 "effectName4": "Rastgele",
                 "effectName5": "Serin_Mavi",
                 "effectName6": "Dalga_Sağ",
-                "effectName7": "Dalga_Sol"
+                "effectName7": "Dalga_Sol",
+                "effectName8": "RunningMode"
             },
             "lightingSpeed": {
                 "title": "Hız"
@@ -2274,6 +2276,8 @@
             "last": "Son güncelleme: ",
             "next": "Sonraki zamanlanmış güncelleme: ",
             "checkButton": "GÜNCELLEMELERİ DENETLE",
+            "checkAgain": "Check Again",
+            "updateNow": "Update Now",
             "checking": "Güncellemeler denetleniyor",
             "downloading": "Güncellemelerin indirilmesi tamamlandı",
             "installing": "Güncellemeler yükleniyor",
@@ -2314,7 +2318,10 @@
             "installFailHeader": "Bazı güncellemeler doğru bir şekilde yüklenmedi",
             "installFailDescription": "Bu güncellemeleri indirme ve yükleme işlemi sırasında bir sorun oluştu. Lütfen güncellemeleri yüklerken çevrimiçi olduğunuzdan emin olun ve bilgisayarınızı kapatmayın.",
             "optionalUpdates": "İsteğe bağlı güncellemeler",
-            "installSelectedUpdates": "Seçili güncellemeleri yükle"
+            "installSelectedUpdates": "Seçili güncellemeleri yükle",
+            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
+            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
+            "optionalUpdatesDescription": "Keep your computer up-to-date"
         },
         "installationHistory": {
             "name": "Ad",

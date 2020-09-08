@@ -734,7 +734,8 @@
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
                 "name11": "Legion Front Fan Lighting",
-                "name12": "Legion Top Fan Lighting"
+                "name12": "Legion Top Fan Lighting",
+                "name13": "Legion Memory Lighting"
             },
             "lightingEffect": {
                 "effectName1": "Statično",
@@ -743,7 +744,8 @@
                 "effectName4": "Naključno",
                 "effectName5": "Hladna_modra",
                 "effectName6": "Valovanje_desno",
-                "effectName7": "Valovanje_levo"
+                "effectName7": "Valovanje_levo",
+                "effectName8": "RunningMode"
             },
             "lightingSpeed": {
                 "title": "Hitrost"
@@ -2274,6 +2276,8 @@
             "last": "Zadnja posodobitev: ",
             "next": "Naslednja načrtovana posodobitev: ",
             "checkButton": "ISKANJE POSODOBITEV",
+            "checkAgain": "Check Again",
+            "updateNow": "Update Now",
             "checking": "Preverite, ali so na voljo posodobitve",
             "downloading": "Prenos posodobitev je končan",
             "installing": "Nameščanje posodobitev",
@@ -2314,7 +2318,10 @@
             "installFailHeader": "Nekatere posodobitve niso bile pravilno nameščene",
             "installFailDescription": "Med prenosom in namestitvijo teh posodobitev je prišlo do napake. Poskrbite, da imate vzpostavljeno povezavo in ne izklopite računalnika med nameščanjem posodobitev.",
             "optionalUpdates": "Izbirne posodobitve",
-            "installSelectedUpdates": "Namestitev izbranih posodobitev"
+            "installSelectedUpdates": "Namestitev izbranih posodobitev",
+            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
+            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
+            "optionalUpdatesDescription": "Keep your computer up-to-date"
         },
         "installationHistory": {
             "name": "Ime",

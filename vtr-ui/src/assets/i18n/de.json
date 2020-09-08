@@ -734,7 +734,8 @@
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
                 "name11": "Legion Front Fan Lighting",
-                "name12": "Legion Top Fan Lighting"
+                "name12": "Legion Top Fan Lighting",
+                "name13": "Legion Memory Lighting"
             },
             "lightingEffect": {
                 "effectName1": "Statisch",
@@ -743,7 +744,8 @@
                 "effectName4": "Zufällig",
                 "effectName5": "Kühles_Blau",
                 "effectName6": "Welle_rechts",
-                "effectName7": "Welle_links"
+                "effectName7": "Welle_links",
+                "effectName8": "RunningMode"
             },
             "lightingSpeed": {
                 "title": "Geschwindigkeit"
@@ -2274,6 +2276,8 @@
             "last": "Letzte Aktualisierung: ",
             "next": "Nächste geplante Aktualisierung: ",
             "checkButton": "AUF UPDATES PRÜFEN",
+            "checkAgain": "Check Again",
+            "updateNow": "Update Now",
             "checking": "Es wird nach Aktualisierungen gesucht",
             "downloading": "Herunterladen von Updates abgeschlossen",
             "installing": "Updates werden installiert",
@@ -2314,7 +2318,10 @@
             "installFailHeader": "Einige Aktualisierungen wurden nicht ordnungsgemäß installiert",
             "installFailDescription": "Beim Herunterladen und Installieren dieser Updates ist etwas schief gelaufen. Bitte stellen Sie sicher, dass Sie online sind, und schalten Sie Ihren Computer nicht aus, wenn Sie Updates installieren.",
             "optionalUpdates": "Optionale Aktualisierungen",
-            "installSelectedUpdates": "Ausgewählte Updates installieren"
+            "installSelectedUpdates": "Ausgewählte Updates installieren",
+            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
+            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
+            "optionalUpdatesDescription": "Keep your computer up-to-date"
         },
         "installationHistory": {
             "name": "Name",

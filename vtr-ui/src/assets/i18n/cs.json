@@ -734,7 +734,8 @@
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
                 "name11": "Legion Front Fan Lighting",
-                "name12": "Legion Top Fan Lighting"
+                "name12": "Legion Top Fan Lighting",
+                "name13": "Legion Memory Lighting"
             },
             "lightingEffect": {
                 "effectName1": "Statická",
@@ -743,7 +744,8 @@
                 "effectName4": "Náhodná",
                 "effectName5": "Studená_modrá",
                 "effectName6": "Mávnout_doprava",
-                "effectName7": "Mávnout_doleva"
+                "effectName7": "Mávnout_doleva",
+                "effectName8": "RunningMode"
             },
             "lightingSpeed": {
                 "title": "Rychlost"
@@ -2274,6 +2276,8 @@
             "last": "Poslední aktualizace: ",
             "next": "Příští plánovaná aktualizace: ",
             "checkButton": "ZKONTROLOVAT AKTUALIZACE",
+            "checkAgain": "Check Again",
+            "updateNow": "Update Now",
             "checking": "Kontrola aktualizací",
             "downloading": "Stahování aktualizací je dokončeno",
             "installing": "Probíhá instalace aktualizací",
@@ -2314,7 +2318,10 @@
             "installFailHeader": "Některé aktualizace nebyly nainstalovány správně",
             "installFailDescription": "Během stahování a instalace těchto aktualizací se něco pokazilo. Ujistěte se, že jste online, a při instalaci aktualizací nevypínejte počítač.",
             "optionalUpdates": "Volitelné aktualizace",
-            "installSelectedUpdates": "Nainstalovat vybrané aktualizace"
+            "installSelectedUpdates": "Nainstalovat vybrané aktualizace",
+            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
+            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
+            "optionalUpdatesDescription": "Keep your computer up-to-date"
         },
         "installationHistory": {
             "name": "Název",

@@ -734,7 +734,8 @@
                 "name9": "Ambient  Lighting",
                 "name10": "Legion Liquid Cooling Lighting",
                 "name11": "Legion Front Fan Lighting",
-                "name12": "Legion Top Fan Lighting"
+                "name12": "Legion Top Fan Lighting",
+                "name13": "Legion Memory Lighting"
             },
             "lightingEffect": {
                 "effectName1": "Статический",
@@ -743,7 +744,8 @@
                 "effectName4": "Произвольно",
                 "effectName5": "Спокойный_синий",
                 "effectName6": "Волна_вправо",
-                "effectName7": "Волна_влево"
+                "effectName7": "Волна_влево",
+                "effectName8": "RunningMode"
             },
             "lightingSpeed": {
                 "title": "Скорость"
@@ -2274,6 +2276,8 @@
             "last": "Последнее обновление: ",
             "next": "Следующее запланированное обновление: ",
             "checkButton": "ПРОВЕРИТЬ НАЛИЧИЕ ОБНОВЛЕНИЙ",
+            "checkAgain": "Check Again",
+            "updateNow": "Update Now",
             "checking": "Проверка наличия обновлений",
             "downloading": "Загрузка обновлений завершена",
             "installing": "Установка обновлений",
@@ -2314,7 +2318,10 @@
             "installFailHeader": "Некоторые обновления не удалось установить",
             "installFailDescription": "Во время загрузки и установки этих обновлений произошла ошибка. Проверьте наличие подключения к Интернету и не выключайте компьютер при установке обновлений.",
             "optionalUpdates": "Необязательные обновления",
-            "installSelectedUpdates": "Установить выбранные обновления"
+            "installSelectedUpdates": "Установить выбранные обновления",
+            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
+            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
+            "optionalUpdatesDescription": "Keep your computer up-to-date"
         },
         "installationHistory": {
             "name": "Имя",

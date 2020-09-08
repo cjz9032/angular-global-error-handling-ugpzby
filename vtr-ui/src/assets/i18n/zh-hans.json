@@ -2276,6 +2276,8 @@
             "last": "上次更新时间：",
             "next": "下次计划更新时间：",
             "checkButton": "检查更新",
+            "checkAgain": "Check Again",
+            "updateNow": "Update Now",
             "checking": "正在检查更新",
             "downloading": "正在下载更新",
             "installing": "正在安装更新",
@@ -2316,7 +2318,10 @@
             "installSuccessHeader": "已成功安装所有更新",
             "installFailDescription": "下载和安装这些更新的过程中发生了问题。请确保您处于联网状态，且安装更新的过程中不要关闭计算机。",
             "optionalUpdates": "可选更新",
-            "installSelectedUpdates": "安装所选更新"
+            "installSelectedUpdates": "安装所选更新",
+            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
+            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
+            "optionalUpdatesDescription": "Keep your computer up-to-date"
         },
         "installationHistory": {
             "name": "名称",
