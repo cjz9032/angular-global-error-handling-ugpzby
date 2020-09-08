@@ -102,7 +102,8 @@ import { SnapshotHeaderComponent } from '../snapshot/components/header/snapshot-
 		ContainerCardModule,
 		MetricsModule,
 		PageLayoutModule,
-		FontAwesomeModule
+		FontAwesomeModule,
+		SnapshotModule
 	],
 	exports: [
 		NgbCollapseModule,

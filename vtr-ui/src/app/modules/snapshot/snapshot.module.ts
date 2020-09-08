@@ -15,12 +15,12 @@ import { SnapshotMainComponent } from './components/main/snapshot-main.component
 		SnapshotMainComponent
 	],
 	exports: [
+		PageSnapshotComponent,
 		SnapshotHeaderComponent,
-		HardwareScanModule
+		SnapshotMainComponent
 	],
 	imports: [
-		SnapshotRoutingModule,
-		HardwareScanModule,
+		SnapshotRoutingModule
 	]
 })
 export class SnapshotModule { }
