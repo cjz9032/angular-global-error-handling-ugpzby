@@ -20,7 +20,7 @@
                         </p>
                         <div class="overclock-range" tooltipClass="vtr-tool-tip" container="body">
                             <div class="left-slider">
-                                <vtr-ui-brightness-slider [automationId]="removeSpaces(itemUnit.gpuOCNames['gpuOCName'+item.tuneId]) + '_slider'" [minValue]="item.minValue" [maxValue]="item.maxValue" [step]="item.stepValue" [lightingData]="item.OCValue" (onSliderChanged)="setRangeValue($event,idx,'gpuParameterList',0,false)" [ariaLabelValue]="itemUnit.gpuOCNames['gpuOCName'+item.tuneId]">
+                                <vtr-ui-brightness-slider [automationId]="removeSpaces(itemUnit.gpuOCNames['gpuOCName'+item.tuneId]) + '_slider'" [vtrMetricEnabled]="false" [minValue]="item.minValue" [maxValue]="item.maxValue" [step]="item.stepValue" [lightingData]="item.OCValue" (onSliderChanged)="setRangeValue($event,idx,'gpuParameterList',0,false)" [ariaLabelValue]="itemUnit.gpuOCNames['gpuOCName'+item.tuneId]">
                                 </vtr-ui-brightness-slider>
                             </div>
                             <div class="right-range">
@@ -41,7 +41,7 @@
                         </p>
                         <div class="overclock-range" tooltipClass="vtr-tool-tip" container="body">
                             <div class="left-slider">
-                                <vtr-ui-brightness-slider [automationId]="removeSpaces(itemUnit.cpuOCNames['cpuOCName'+item.tuneId]) + '_slider'" [minValue]="item.minValue" [maxValue]="item.maxValue" [step]="item.stepValue" [lightingData]="item.OCValue" (onSliderChanged)="setRangeValue($event,idx,'cpuParameterList',item.tuneId,false)" [ariaLabelValue]="itemUnit.cpuOCNames['cpuOCName'+item.tuneId]">
+                                <vtr-ui-brightness-slider [automationId]="removeSpaces(itemUnit.cpuOCNames['cpuOCName'+item.tuneId]) + '_slider'" [vtrMetricEnabled]="false"  [minValue]="item.minValue" [maxValue]="item.maxValue" [step]="item.stepValue" [lightingData]="item.OCValue" (onSliderChanged)="setRangeValue($event,idx,'cpuParameterList',item.tuneId,false)" [ariaLabelValue]="itemUnit.cpuOCNames['cpuOCName'+item.tuneId]">
                                 </vtr-ui-brightness-slider>
                             </div>
                             <div class="right-range">
