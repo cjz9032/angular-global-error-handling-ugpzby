@@ -88,7 +88,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		this.patchNgbModalOpen();
 		// to check web and js bridge version in browser console
 		const win: any = window;
-		this.shellVersion = this.vantageShellService.getShellVersion();
+		this.shellVersion = this.commonService.getShellVersion();
 
 		win.webAppVersion = {
 			web: environment.appVersion,

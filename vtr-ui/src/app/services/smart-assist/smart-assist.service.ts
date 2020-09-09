@@ -38,7 +38,7 @@ export class SmartAssistService {
 		this.lenovoVoice = shellService.getLenovoVoice();
 		this.superResolution = shellService.getSuperResolution();
 		this.hsaIntelligentSecurity = shellService.getHsaIntelligentSecurity();
-		// this.shellVersion = shellService.getShellVersion();
+		// this.shellVersion = commonService.getShellVersion();
 		this.antiTheft = shellService.getAntiTheft();
 		this.windows = shellService.getWindows();
 		this.activeProtectionSystem ? this.isAPSavailable = true : this.isAPSavailable = false;
@@ -479,7 +479,7 @@ export class SmartAssistService {
 	public getAutoScreenOffNoteStatus(): Promise<boolean> {
 		if (this.isShellAvailable) {
 			// TODO: compare shell version and call respective API when JS Bridge is ready
-			// this.shellVersion = this.she.getShellVersion();
+			// this.shellVersion = this.commonService.getShellVersion();
 			return this.intelligentSensing.GetWalkingCautionVisibility();
 
 			// TODO: If Shell 3.2 or newer version shell
