@@ -74,7 +74,7 @@ export class MetricService {
 	// move the function from metrics.helper.ts to here
 	public initializeMetricClient() {
 		const jsBridgeVesion = this.shellService.getVersion() || '';
-		const shellVersion = this.shellService.getShellVersion();
+		const shellVersion = this.commonService.getShellVersion();
 		const webUIVersion = environment.appVersion;
 
 		this.metricsClient.init({

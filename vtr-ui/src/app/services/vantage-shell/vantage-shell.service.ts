@@ -169,15 +169,6 @@ export class VantageShellService {
 		return undefined;
 	}
 
-	public getShellVersion() {
-		if (window.Windows) {
-			const packageVersion = window.Windows.ApplicationModel.Package.current.id.version;
-			return `${packageVersion.major}.${packageVersion.minor}.${packageVersion.build}`;
-		}
-
-		return '';
-	}
-
 	/**
 	 * returns metric object from VantageShellService of JS Bridge
 	 */
@@ -984,7 +975,7 @@ export class VantageShellService {
 		return undefined;
 	}
 
-	// 3.3.2 quick setting toolbar toast 
+	// 3.3.2 quick setting toolbar toast
 	public getQuickSettingToolbar() {
 		if (this.phoenix) {
 			if (!this.phoenix.gaming) {

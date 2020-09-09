@@ -390,10 +390,6 @@ export class VantageShellService {
 		return undefined;
 	}
 
-	public getShellVersion() {
-		return '10.2003.9';
-	}
-
 	/**
 	 * returns metric object from VantageShellService of JS Bridge
 	 */

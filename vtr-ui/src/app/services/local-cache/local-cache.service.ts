@@ -3,7 +3,6 @@ import { NgForage, Driver, DedicatedInstanceFactory } from 'ngforage';
 import { CommonService } from '../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
-import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +16,6 @@ export class LocalCacheService {
 
 	constructor(
 		private readonly fact: DedicatedInstanceFactory,
-		private shellService: VantageShellService,
 		private commonService: CommonService
 	) {
 		this.createForage(this.experienceName, this.experienceName);
@@ -113,7 +111,7 @@ export class LocalCacheService {
 
 	private checkTransferEnabled() {
 		let result = false;
-		const shellVersion = this.shellService.getShellVersion();
+		const shellVersion = this.commonService.getShellVersion();
 		result = this.commonService.compareVersion(shellVersion, this.transferredShellVersion) >= 0;
 		return result;
 	}

@@ -8,6 +8,8 @@ import { Subject } from 'rxjs/internal/Subject';
 import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
 import { ReplaySubject } from 'rxjs';
 
+declare var window;
+
 @Injectable({
 	providedIn: 'root'
 })
@@ -334,5 +336,14 @@ export class CommonService {
 
 	isFirstPageLoaded(): boolean {
 		return this.getSessionStorageValue(SessionStorageKey.FirstPageLoaded, false);
+	}
+
+	public getShellVersion() {
+		if (window.Windows) {
+			const packageVersion = window.Windows.ApplicationModel.Package.current.id.version;
+			return `${packageVersion.major}.${packageVersion.minor}.${packageVersion.build}`;
+		}
+
+		return '';
 	}
 }

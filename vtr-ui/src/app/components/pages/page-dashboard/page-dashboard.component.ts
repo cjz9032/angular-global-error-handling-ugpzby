@@ -257,7 +257,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	private launchProtocol() {
 		if (this.protocolAction && (this.lastAction !== this.protocolAction)) {
 			if (this.protocolAction.toLowerCase() === 'lenovoid' && !this.userService.auth) {
-				const shellVersion = this.vantageShellService.getShellVersion();
+				const shellVersion = this.commonService.getShellVersion();
 				if (this.commonService.compareVersion(shellVersion, '10.2001.9') >= 0) {
 					// New shell use await to sync with UI, launch LID immediately
 					setTimeout(() => this.dialogService.openLenovoIdDialog(), 0);
