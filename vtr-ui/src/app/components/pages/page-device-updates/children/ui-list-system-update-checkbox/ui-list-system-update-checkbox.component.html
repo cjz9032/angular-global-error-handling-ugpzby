@@ -47,7 +47,7 @@
 									<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon> {{'systemUpdates.updateCheckbox.dependedPackage' | translate}}
 								</div>
 							</div>
-							<div class="download-size">
+							<div class="download-size" id="{{'su_downloadSize_'+item.packageID}}" role="text">
 								{{'systemUpdates.updateCheckbox.downloadSize' | translate}}<span >{{ item.downloadSize }}</span>
 							</div>
 						</div>

@@ -8,10 +8,12 @@
 					<div class="col">
 						<div class="header">
 							<div class="heading"
-								id="su_criticalUpdates"
+								[id]="UpdateInstallTitleId.CriticalUpdates"
 								role="text">{{criticalUpdates.length}}
 								{{'systemUpdates.criticalUpdates' | translate}}</div>
-							<div class="description">{{'systemUpdates.availableUpdates.criticalUpdatesDescription' | translate}}</div>
+							<div class="description"
+								[id]="UpdateInstallTitleId.CriticalUpdates + 'Description'"
+								role="text">{{'systemUpdates.availableUpdates.criticalUpdatesDescription' | translate}}</div>
 							<vtr-ui-list-system-update-checkbox (checkChange)="onCheckChange($event)"
 								[isUpdateDownloading]="isUpdateDownloading"
 								[isInstallationCompleted]="isInstallationCompleted"
@@ -32,7 +34,9 @@
 								tabindex="-1"
 								role="text">{{recommendedUpdates.length}}
 								{{'systemUpdates.recommendedUpdates' | translate}}</div>
-							<div class="description">{{'systemUpdates.availableUpdates.recommendedUpdatesDescription' | translate}}</div>
+							<div class="description"
+								[id]="UpdateInstallTitleId.RecommendedUpdates + 'Description'"
+								role="text">{{'systemUpdates.availableUpdates.recommendedUpdatesDescription' | translate}}</div>
 							<vtr-ui-list-system-update-checkbox (checkChange)="onCheckChange($event)"
 								(ignoreUpdate)="onIgnoreUpdate($event)"
 								[isUpdateDownloading]="isUpdateDownloading"
@@ -53,7 +57,9 @@
 								tabindex="-1"
 								role="text">{{optionalUpdates.length}}
 								{{'systemUpdates.optionalUpdates' | translate}}</div>
-							<div class="description">{{'systemUpdates.availableUpdates.optionalUpdatesDescription' | translate}}</div>
+							<div class="description"
+								[id]="UpdateInstallTitleId.OptionalUpdates + 'Description'"
+								role="text">{{'systemUpdates.availableUpdates.optionalUpdatesDescription' | translate}}</div>
 							<vtr-ui-list-system-update-checkbox (checkChange)="onCheckChange($event)"
 								(ignoreUpdate)="onIgnoreUpdate($event)"
 								[isUpdateDownloading]="isUpdateDownloading"
