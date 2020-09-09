@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.4](https://bitbucket.tc.lenovo.com///compare/v1.8.3...v1.8.4) (2020-09-09)
+
+
+### Features
+
+* **IndexedDB:** VAN-21989 update LocalCache service common API ([412d4b1](https://bitbucket.tc.lenovo.com///commit/412d4b1d29b128e6d11b43c4f73adf923a9b6bf3))
+* **System Update:** VAN-18208 fillup string files ([6fab830](https://bitbucket.tc.lenovo.com///commit/6fab8302bb7c6e35de06292c430cd87654b080ff))
+* **System Update:** VAN-18208 update for svg icons ([2dc1fa4](https://bitbucket.tc.lenovo.com///commit/2dc1fa42a2f6e10c60df36f953e1bbab2cf0811f))
+* **System Update:** VAN-20666 IndexedDB transition in system update ([32f850c](https://bitbucket.tc.lenovo.com///commit/32f850c39effc835025a8c1fe7c7abb3b80cfe8b))
+* **System Update:** VAN-20666 update localCacheService; revert no necessary change in getCachedValue ([02f94dd](https://bitbucket.tc.lenovo.com///commit/02f94dd42bf3b9a26f0f231c5381a4d5b495e73c))
+
+
+### Bug Fixes
+
+* **System Update:** VAN-21938 touch ignore then focus on the right position ([abec4bd](https://bitbucket.tc.lenovo.com///commit/abec4bd5496f9ddb15066885d933df8849b0a327))
+
 ### [1.8.3](https://bitbucket.tc.lenovo.com///compare/v1.8.2...v1.8.3) (2020-09-08)
 
 ### [1.8.2](https://bitbucket.tc.lenovo.com///compare/v1.8.1...v1.8.2) (2020-09-07)
