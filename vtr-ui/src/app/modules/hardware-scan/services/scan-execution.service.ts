@@ -826,7 +826,7 @@ export class ScanExecutionService {
 
 	public onInstalledProgramInfo() {
 		if (this.snapshotService) {
-			this.programList = this.snapshotService.getLoadInstalledProgramsInfo();
+			this.storageDevices = this.snapshotService.getLoadStorageDevicesInfo();
 		}
 	}
 

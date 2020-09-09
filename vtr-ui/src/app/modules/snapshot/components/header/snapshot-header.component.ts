@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SnapshotHeaderComponent implements OnInit {
 
-	@Input() programList: any;
+	@Input() storageDevices: any;
 
 	constructor() { }
 

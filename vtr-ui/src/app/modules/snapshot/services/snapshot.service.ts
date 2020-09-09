@@ -196,4 +196,30 @@ export class SnapshotService {
 		}
 		return undefined;
 	}
+
+	public getLoadStorageDevicesInfo() {
+		if (this.snapshotBridge) {
+			return this.snapshotBridge.getLoadStorageDevicesInfo()
+			.then((response) => {
+				return response;
+			})
+			.catch((error) => {
+				this.logger.error('[getLoadStorageDevicesInfo] ' + error);
+			});
+		}
+		return undefined;
+	}
+
+	public getLoadNetworkDevicesInfo() {
+		if (this.snapshotBridge) {
+			return this.snapshotBridge.getLoadNetworkDevicesInfo()
+			.then((response) => {
+				return response;
+			})
+			.catch((error) => {
+				this.logger.error('[getLoadNetworkDevicesInfo] ' + error);
+			});
+		}
+		return undefined;
+	}
 }
