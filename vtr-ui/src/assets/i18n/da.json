@@ -2240,11 +2240,11 @@
             "rebootForceMsg": "Den eller de valgte opdateringer vil få systemet til at genstarte automatiskefter installationen.",
             "shutdownForceMsg": "Den eller de valgte opdateringer vil få systemet til at lukkeautomatisk efter installationen.",
             "rebootDelayedMsg": "Den eller de valgte opdateringer vil medføre, at systemet genstartes efter installationen.Du må ikke lukke systemet ned eller fjerne strømkilden eller tilbehør, mens opdateringerne installeres.Vi anbefaler, at du gemmer dit arbejde, inden systemet genstartes.",
-            "rebootRequiredMsg": "For at du kan installere opdateringerne skal dugenstarte computeren for at sikre, at det hele fungerer sikkert, og som det skal.",
+            "rebootRequiredMsg": "Du skal genstarte computeren for at få de senest installerede pakker til at træde i kraft.",
             "okayButton": "OK",
             "cancelButton": "Annuller",
             "rebootButton": "GENSTART NU",
-            "dismissButton": "AFVIS",
+            "dismissButton": "GENSTART SENERE",
             "rebootPending": "Afventer genstart"
         },
         "autoUpdateSettings": {
@@ -2267,7 +2267,7 @@
             "title": "Websted for Lenovo Support"
         },
         "security": {
-            "title": "For a better protection for your device"
+            "title": "Bedre beskyttelse af din enhed"
         },
         "banner": {
             "neverChecked": "Velkommen til brug af systemopdatering",
@@ -2276,8 +2276,8 @@
             "last": "Senest opdateret: ",
             "next": "Næste planlagte opdatering: ",
             "checkButton": "SØG EFTER OPDATERINGER",
-            "checkAgain": "Check Again",
-            "updateNow": "Update Now",
+            "checkAgain": "Kontrollér igen",
+            "updateNow": "Opdater nu",
             "checking": "Søger efter opdateringer",
             "downloading": "Opdateringer er downloadet",
             "installing": "Opdateringer installeres",
@@ -2311,17 +2311,17 @@
             "dependedPackage": "Afhængighedspakke"
         },
         "availableUpdates": {
-            "title": "Tilgængelige opdateringer",
-            "description": "Disse pakker indeholder opdateringer, der er vigtige for, at computeren kan fungere korrekt. Vigtige opdateringer hjælper med at holde computeren mere sikker og pålidelig, og de skal installeres, når de bliver tilgængelige. Anbefalede opdateringer og valgfrie opdateringer hjælper med at holde softwaren opdateret og sikre, at computeren fungerer optimalt.",
+            "title": "Der blev fundet tilgængelige opdateringer",
+            "description": "Disse pakker inkluderer opdateringer til hardwaredrivere og andre systemværktøjer, der er nødvendige for den korrekte betjening af din computer. Installér opdateringerne for at sikre, at computeren fungerer optimalt.",
             "installAllUpdates": "Installer alle opdateringer",
             "installSuccessHeader": "Alle opdateringer er installeret korrekt",
             "installFailHeader": "Nogle opdateringer blev ikke installeret korrekt",
             "installFailDescription": "Der opstod en fejl under download og installation af disse opdateringer. Kontrollér, at du er online, og sluk ikke for computeren, mens der installeres opdateringer.",
             "optionalUpdates": "Valgfrie opdateringer",
             "installSelectedUpdates": "Installer de valgte opdateringer",
-            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
-            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
-            "optionalUpdatesDescription": "Keep your computer up-to-date"
+            "criticalUpdatesDescription": "Undgå betydelige problemer, alvorlige fejl, hardwarefejl eller ødelæggelse af data",
+            "recommendedUpdatesDescription": "Sørg for, at din computer kører med optimal ydeevne",
+            "optionalUpdatesDescription": "Hold computeren opdateret"
         },
         "installationHistory": {
             "name": "Navn",

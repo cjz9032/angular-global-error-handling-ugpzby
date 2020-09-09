@@ -2240,11 +2240,11 @@
             "rebootForceMsg": "Vybraté aktualizácie spôsobia po inštalácii automatickéreštartovanie systému.",
             "shutdownForceMsg": "Vybraté aktualizácie spôsobia po inštalácii automatickévypnutie systému.",
             "rebootDelayedMsg": "Vybraté aktualizácie spôsobia po inštalácii reštartovanie systému.Počas inštalácie aktualizácií systém nevypínajte ani neodpájajte zdroj napájania či príslušenstvo. Pred reštartovaním systému vám odporúčame uložiť si prácu.",
-            "rebootRequiredMsg": "Úspešná inštalácia aktualizácií si vyžaduje reštartovanie počítača,aby sa zabezpečilo, že všetko pobeží bezpečne a hladko.",
+            "rebootRequiredMsg": "Novo nainštalované balíky sa prejavia až po reštartovaní počítača.",
             "okayButton": "OK",
             "cancelButton": "Zrušiť",
             "rebootButton": "REŠTARTOVAŤ TERAZ",
-            "dismissButton": "ODMIETNUŤ",
+            "dismissButton": "REŠTARTOVAŤ NESKÔR",
             "rebootPending": "Čaká na reštartovanie"
         },
         "autoUpdateSettings": {
@@ -2267,7 +2267,7 @@
             "title": "Webová lokalita podpory spoločnosti Lenovo"
         },
         "security": {
-            "title": "For a better protection for your device"
+            "title": "Na lepšiu ochranu vášho zariadenia"
         },
         "banner": {
             "neverChecked": "Vitajte v službe aktualizácie systému.",
@@ -2276,8 +2276,8 @@
             "last": "Posledná aktualizácia: ",
             "next": "Ďalšia plánovaná aktualizácia: ",
             "checkButton": "VYHĽADAŤ AKTUALIZÁCIE",
-            "checkAgain": "Check Again",
-            "updateNow": "Update Now",
+            "checkAgain": "Skontrolovať znova",
+            "updateNow": "Aktualizovať",
             "checking": "Vyhľadávajú sa aktualizácie",
             "downloading": "Aktualizácie boli prevzaté",
             "installing": "Inštalujú sa aktualizácie",
@@ -2311,17 +2311,17 @@
             "dependedPackage": "Súvisiaci balík"
         },
         "availableUpdates": {
-            "title": "Dostupné aktualizácie",
-            "description": "Tieto balíky obsahujú aktualizácie, ktoré majú zásadný význam pre správnu prevádzku počítača. Kritické aktualizácie pomáhajú zabezpečiť väčšiu bezpečnosť a spoľahlivosť počítača a mali by sa nainštalovať, keď budú k dispozícii. Odporúčané aktualizácie a voliteľné aktualizácie vám pomôžu aktualizovať softvér a maximalizovať prevádzku počítača.",
+            "title": "Nájdené dostupné aktualizácie",
+            "description": "Tieto balíky obsahujú aktualizácie ovládačov hardvéru a ďalších systémových nástrojov, ktoré sú kritické pre správne fungovanie počítača. Nainštalujte si aktualizácie, aby váš počítač fungoval čo najlepšie.",
             "installAllUpdates": "Nainštalovať všetky aktualizácie",
             "installSuccessHeader": "Všetky aktualizácie sa nainštalovali správne",
             "installFailHeader": "Niektoré aktualizácie sa nenainštalovali správne",
             "installFailDescription": "Počas sťahovania a inštalácie týchto aktualizácií došlo k chybe. Pri inštalácii aktualizácií sa uistite, že ste online a nevypínajte počítač.",
             "optionalUpdates": "Voliteľné aktualizácie",
             "installSelectedUpdates": "Inštalovať vybraté aktualizácie",
-            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
-            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
-            "optionalUpdatesDescription": "Keep your computer up-to-date"
+            "criticalUpdatesDescription": "Predchádzajte závažným problémom, poruchám, zlyhaniu hardvéru alebo poškodeniu údajov",
+            "recommendedUpdatesDescription": "Zachovajte optimálny výkon počítača",
+            "optionalUpdatesDescription": "Udržujte svoj počítač aktualizovaný"
         },
         "installationHistory": {
             "name": "Meno",

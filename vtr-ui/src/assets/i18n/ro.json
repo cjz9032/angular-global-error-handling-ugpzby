@@ -2240,11 +2240,11 @@
             "rebootForceMsg": "Actualizările pe are le-ați selectat vor duce la repornirea automată a sistemuluidupă finalizarea instalării.",
             "shutdownForceMsg": "Actualizările pe care le-ați selectat vor duce la oprirea automată a sistemului,după finalizarea instalării.",
             "rebootDelayedMsg": "După instalare, actualizările selectate vor duce la repornirea automată a sistemului.În timpul instalării actualizărilor, nu opriți sistemul și nu îndepărtați sursa de alimentare sau accesoriile. Vă recomandăm să vă salvați lucrările în curs înainte de repornirea sistemului.",
-            "rebootRequiredMsg": "Pentru a instala cu succes actualizările, computerul dvs. trebuierepornit pentru a se asigura că totul funcționează fără probleme.",
+            "rebootRequiredMsg": "Trebuie să reporniți computerul pentru ca pachetele instalate recent să intre în funcțiune.",
             "okayButton": "OK",
             "cancelButton": "Anulare",
             "rebootButton": "REPORNIȚI ACUM",
-            "dismissButton": "RESPINGERE",
+            "dismissButton": "REP. MAI TÂRZIU",
             "rebootPending": "Repornire în așteptare"
         },
         "autoUpdateSettings": {
@@ -2267,7 +2267,7 @@
             "title": "Site-ul Web de asistență Lenovo"
         },
         "security": {
-            "title": "For a better protection for your device"
+            "title": "Pentru o protecție mai bună a dispozitivului dvs."
         },
         "banner": {
             "neverChecked": "Începeţi utilizarea Actualizare sistem.",
@@ -2276,8 +2276,8 @@
             "last": "Ultima actualizare: ",
             "next": "Următoarea actualizare programată: ",
             "checkButton": "CĂUTAȚI ACTUALIZĂRI",
-            "checkAgain": "Check Again",
-            "updateNow": "Update Now",
+            "checkAgain": "Verif. din nou",
+            "updateNow": "Act. imediată",
             "checking": "Se caută actualizări",
             "downloading": "S-a finalizat descărcarea actualizărilor",
             "installing": "Se instalează actualizările",
@@ -2311,17 +2311,17 @@
             "dependedPackage": "Pachet dependent"
         },
         "availableUpdates": {
-            "title": "Actualizări disponibile",
-            "description": "Aceste pachete includ actualizări critice pentru operarea corectă a computerului dvs. Actualizările critice vă ajută computerul să fie sigur și fiabil și ar trebui instalate pe măsură ce devin disponibile. Actualizările recomandate și cele opționale vă mențin software-ul la cea mai recentă versiune, iar computerul va oferi performanțe maxime.",
+            "title": "S-au găsit act. disponibile",
+            "description": "Aceste pachete includ actualizări ale driverelor hardware și ale altor instrumente de sistem foarte importante pentru funcționarea corespunzătoare a computerului dvs. Vă rugăm să instalați actualizările, pentru a menține computerul la cote de performanță maximă.",
             "installAllUpdates": "Instalați toate actualizările",
             "installSuccessHeader": "Toate actualizările s-au instalat corect",
             "installFailHeader": "Unele actualizări nu au fost instalate corect",
             "installFailDescription": "A apărut o problemă în timpul descărcării și instalării acestor actualizări. Asigurați-vă că sunteți online și nu opriți computerul când instalați actualizările.",
             "optionalUpdates": "Actualizări opționale",
             "installSelectedUpdates": "Instalați actualizările selectate",
-            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
-            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
-            "optionalUpdatesDescription": "Keep your computer up-to-date"
+            "criticalUpdatesDescription": "Preveniți probleme grave, defecțiuni, erori de hardware sau deteriorarea datelor",
+            "recommendedUpdatesDescription": "Mențineți computerul la un nivel optim de funcționare",
+            "optionalUpdatesDescription": "Mențineți computerul actualizat"
         },
         "installationHistory": {
             "name": "Nume",

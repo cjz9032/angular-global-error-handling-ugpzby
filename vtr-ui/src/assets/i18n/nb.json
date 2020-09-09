@@ -2240,11 +2240,11 @@
             "rebootForceMsg": "Oppdateringen(e) du har valgt, fører til at systemet starterpå nytt automatisk etter installasjonen.",
             "shutdownForceMsg": "Oppdateringen(e) du har valgt, fører til at systemet avsluttesautomatisk etter installasjonen.",
             "rebootDelayedMsg": "Oppdateringen(e) du har valgt, vil få systemet til å starte på nytt etter installasjonen.Under installasjonen av oppdateringene må du ikke slå av systemet, fjerne strømkilden eller tilbehør. Vi anbefaler at du lagrer arbeidet ditt før omstart av systemet.",
-            "rebootRequiredMsg": "For at installasjonen av oppdateringene skal bli vellykket, trenger datamaskinenen omstart for å sikre at alt kjører trygt og knirkefritt.",
+            "rebootRequiredMsg": "Du må starte maskinen på nytt for at nylig installerte pakker skal tre i kraft.",
             "okayButton": "OK",
             "cancelButton": "Avbryt",
             "rebootButton": "START PÅ NYTT NÅ",
-            "dismissButton": "AVVIS",
+            "dismissButton": "START PÅ NYTT SENERE",
             "rebootPending": "Omstart venter"
         },
         "autoUpdateSettings": {
@@ -2267,7 +2267,7 @@
             "title": "Nettsted for Lenovos kundestøtte"
         },
         "security": {
-            "title": "For a better protection for your device"
+            "title": "For å få bedre beskyttelse for enheten"
         },
         "banner": {
             "neverChecked": "Velkommen som bruker av Systemoppdateringer.",
@@ -2276,8 +2276,8 @@
             "last": "Sist oppdatert: ",
             "next": "Neste planlagte oppdatering: ",
             "checkButton": "SE ETTER OPPDATERINGER",
-            "checkAgain": "Check Again",
-            "updateNow": "Update Now",
+            "checkAgain": "Kontroller på nytt",
+            "updateNow": "Oppdater nå",
             "checking": "Ser etter oppdateringer",
             "downloading": "Nedlasting av oppdateringer er ferdig",
             "installing": "Installerer oppdateringer",
@@ -2311,17 +2311,17 @@
             "dependedPackage": "Avhengig pakke"
         },
         "availableUpdates": {
-            "title": "Tilgjengelige oppdateringer",
-            "description": "Disse pakkene inneholder oppdateringer som er kritiske for korrekt drift av datamaskinen din. Kritiske oppdateringer bidrar til å gjøre datamaskinen sikrere og mer pålitelig, og bør installeres når de blir tilgjengelige. Anbefalte oppdateringer og valgfrie oppdateringer hjelper deg med å holde programvaren oppdatert og datamaskinen i best mulig tilstand.",
+            "title": "Tilgjengelige oppdateringer funnet",
+            "description": "Disse pakkene inkluderer oppdateringer av maskinvaredrivere og andre systemverktøy som er kritiske for at datamaskinen skal fungere som den skal. Installer oppdateringene for at datamaskinen skal kjøre best mulig.",
             "installAllUpdates": "Installer alle oppdateringer",
             "installSuccessHeader": "Alle oppdateringer ble installert på riktig måte",
             "installFailHeader": "Noen oppdateringer ble ikke installert korrekt",
             "installFailDescription": "Noe gikk galt under nedlastingen og installasjonen av disse oppdateringene. Kontroller at du er tilkoblet, og ikke slå av maskinen når du installerer oppdateringer.",
             "optionalUpdates": "Valgfrie oppdateringer",
             "installSelectedUpdates": "Installer valgte oppdateringer",
-            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
-            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
-            "optionalUpdatesDescription": "Keep your computer up-to-date"
+            "criticalUpdatesDescription": "Forhindre alvorlige problemer, feil, maskinvarefeil eller ødeleggelse av data",
+            "recommendedUpdatesDescription": "Sørg for at datamaskinen yter best mulig",
+            "optionalUpdatesDescription": "Sørg for at datamaskinen alltid er oppdatert"
         },
         "installationHistory": {
             "name": "Navn",

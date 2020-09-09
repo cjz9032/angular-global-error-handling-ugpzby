@@ -2242,11 +2242,11 @@
             "rebootForceMsg": "سيتسبب التحديث (التحديثات) الذي حددته في إعادة تمهيد النظام بشكل تلقائيبعد التثبيت.",
             "shutdownForceMsg": "سيتسبب التحديث (التحديثات) الذي حددته في إيقاف تشغيل النظامبشكل تلقائي بعد التثبيت.",
             "rebootDelayedMsg": "سيؤدي التحديث (التحديثات) الذي حددته إلى إعادة تمهيد النظام بعد التثبيت،وأثناء تثبيت التحديثات، الرجاء عدم إيقاف تشغيل النظام أو إزالة مصدر الطاقة أو الملحقات. ننصحك بحفظ عملك استعدادًا لإيقاف تشغيل النظام.",
-            "rebootRequiredMsg": "من أجل تثبيت التحديثات بنجاح يحتاج جهاز الكمبيوتر إلىعملية إعادة تمهيد لضمان تشغيل كل شيء بشكل آمن وسلس.",
+            "rebootRequiredMsg": "تحتاج إلى إعادة تشغيل جهاز الكمبيوتر لتفعيل الحزم المثبتة مؤخرًا.",
             "okayButton": "موافق",
             "cancelButton": "إلغاء",
             "rebootButton": "إعادة التمهيد الآن",
-            "dismissButton": "رفض",
+            "dismissButton": "إعادة تشغيل لاحقًا",
             "rebootPending": "إعادة التمهيد معلقة"
         },
         "autoUpdateSettings": {
@@ -2269,7 +2269,7 @@
             "title": "موقع دعم Lenovo على الويب"
         },
         "security": {
-            "title": "For a better protection for your device"
+            "title": "لحماية أفضل لجهازك"
         },
         "banner": {
             "neverChecked": "مرحبًا بك في استخدام تحديث النظام.",
@@ -2278,8 +2278,8 @@
             "last": "تاريخ التحديث الأخير: ",
             "next": "التحديث المجدول التالي: ",
             "checkButton": "التحقق من وجود تحديثات",
-            "checkAgain": "Check Again",
-            "updateNow": "Update Now",
+            "checkAgain": "تحقق مجددًا",
+            "updateNow": "تحديث الآن",
             "checking": "التحقق من وجود تحديثات",
             "downloading": "تم تنزيل التحديثات",
             "installing": "تثبيت التحديثات",
@@ -2313,17 +2313,17 @@
             "dependedPackage": "حزمة تابعة"
         },
         "availableUpdates": {
-            "title": "التحديثات المتوفرة",
-            "description": "تتضمن هذه الحزم تحديثات مهمة تعتبر ضرورية لتشغيل الكمبيوتر بشكل صحيح. تساعد التحديثات المهمة في إبقاء الكمبيوتر أكثر أمانًا وموثوقية، ويجب تثبيتها عندما تصبح متوفرة. تساعد التحديثات المستحسنة والتحديثات الاختيارية في إبقاء البرامج محدثة وفي تمكين الكمبيوتر من تقديم أفضل أداء له.",
+            "title": "تم العثور على تحديثات متوفرة",
+            "description": "تتضمن هذه الحزم تحديثات لبرامج تشغيل الأجهزة وأدوات مساعدة أخرى للنظام تعتبر ضرورية لعمل الكمبيوتر بشكل صحيح. يرجى تثبيت التحديثات للحفاظ على تشغيل جهاز الكمبيوتر في أفضل حالاته.",
             "installAllUpdates": "تثبيت جميع التحديثات",
             "installSuccessHeader": "تم تثبيت جميع التحديثات بشكل صحيح",
             "installFailHeader": "لم يتم تثبيت بعض التحديثات بشكل صحيح",
             "installFailDescription": "حدث خطأ ما أثناء تنزيل هذه التحديثات وتثبيتها. يرجى التأكد من اتصالك بالإنترنت ولا توقف تشغيل الكمبيوتر عند تثبيت التحديثات.",
             "optionalUpdates": "تحديثات اختيارية",
             "installSelectedUpdates": "تثبيت تحديثات محددة",
-            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
-            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
-            "optionalUpdatesDescription": "Keep your computer up-to-date"
+            "criticalUpdatesDescription": "منع المشاكل الخطيرة أو الأعطال أو فشل الأجهزة أو تلف البيانات",
+            "recommendedUpdatesDescription": "مواصلة تشغيل الكمبيوتر وفق الأداء الأمثل",
+            "optionalUpdatesDescription": "الحفاظ على تحديث النظام"
         },
         "installationHistory": {
             "name": "الاسم",

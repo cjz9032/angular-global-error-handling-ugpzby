@@ -2240,11 +2240,11 @@
             "rebootForceMsg": "L'aggiornamento o gli aggiornamenti selezionati possono causare l'avvio automatico del sistemadopo l'installazione.",
             "shutdownForceMsg": "L'aggiornamento o gli aggiornamenti selezionati possono causare l'arrestoautomatico del sistema dopo l'installazione.",
             "rebootDelayedMsg": "L'aggiornamento o gli aggiornamenti selezionati causeranno il riavvio del sistema dopo l'installazione.Durante l'installazione degli aggiornamenti non spegnere il sistema, né rimuovere la fonte di alimentazione o gli accessori. Si consiglia di salvare il lavoro prima di riavviare il sistema.",
-            "rebootRequiredMsg": "Per installare correttamente gli aggiornamenti, il computer necessita di unriavvio per garantire che tutto sia in esecuzione in modo sicuro e senza problemi.",
+            "rebootRequiredMsg": "È necessario riavviare il computer perché vengano eseguiti i pacchetti installati di recente.",
             "okayButton": "OK",
             "cancelButton": "Annulla",
             "rebootButton": "RIAVVIA ORA",
-            "dismissButton": "ELIMINA",
+            "dismissButton": "RIAVVIA DOPO",
             "rebootPending": "Riavvio in sospeso"
         },
         "autoUpdateSettings": {
@@ -2267,7 +2267,7 @@
             "title": "Sito Web del supporto Lenovo"
         },
         "security": {
-            "title": "For a better protection for your device"
+            "title": "Per una migliore protezione del dispositivo in uso"
         },
         "banner": {
             "neverChecked": "Benvenuto in System Update.",
@@ -2276,8 +2276,8 @@
             "last": "Ultimo aggiornamento: ",
             "next": "Prossimo aggiornamento pianificato: ",
             "checkButton": "VERIFICA DISPONIBILITÀ AGGIORNAMENTI",
-            "checkAgain": "Check Again",
-            "updateNow": "Update Now",
+            "checkAgain": "Ricontrolla",
+            "updateNow": "Aggiorna ora",
             "checking": "Controllo degli aggiornamenti",
             "downloading": "Fine download aggiornamenti",
             "installing": "Installazione aggiornamenti",
@@ -2312,16 +2312,16 @@
         },
         "availableUpdates": {
             "title": "Aggiornamenti disponibili",
-            "description": "Questi pacchetti includono aggiornamenti critici per il corretto funzionamento del computer. Gli aggiornamenti critici contribuiscono a mantenere il computer più sicuro e affidabile e dovrebbero essere installati man mano che diventano disponibili. Gli aggiornamenti consigliati e gli aggiornamenti facoltativi consentono di mantenere il software aggiornato e di ottimizzare le prestazioni del computer.",
+            "description": "Questi pacchetti includono gli aggiornamenti per i driver hardware e altre utilità di sistema critiche per il corretto funzionamento del computer. Installare gli aggiornamenti per utilizzare il computer al massimo delle prestazioni.",
             "installAllUpdates": "Installa tutti gli aggiornamenti",
             "installSuccessHeader": "Tutti gli aggiornamenti sono stati installati correttamente",
             "installFailHeader": "Alcuni aggiornamenti non sono stati installati correttamente",
             "installFailDescription": "Si è verificato un problema durante il download e l'installazione di questi aggiornamenti. Verificare di essere online e non spegnere il computer durante l'installazione degli aggiornamenti.",
             "optionalUpdates": "Aggiornamenti facoltativi",
             "installSelectedUpdates": "Installa aggiornamenti selezionati",
-            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
-            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
-            "optionalUpdatesDescription": "Keep your computer up-to-date"
+            "criticalUpdatesDescription": "Consentono di prevenire problemi gravi, malfunzionamenti, guasti hardware o danneggiamento dei dati",
+            "recommendedUpdatesDescription": "Garantiscono le prestazioni ottimali del computer",
+            "optionalUpdatesDescription": "Mantengono il computer aggiornato"
         },
         "installationHistory": {
             "name": "Nome",

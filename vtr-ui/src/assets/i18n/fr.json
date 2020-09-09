@@ -2240,11 +2240,11 @@
             "rebootForceMsg": "La(les) mise(s) à jour sélectionnée(s) entraînera(ont) le redémarrage automatique du systèmeaprès l'installation.",
             "shutdownForceMsg": "La(les) mise(s) à jour sélectionnée(s) entraînera(ont) l'arrêtautomatique du système après l'installation.",
             "rebootDelayedMsg": "La(les) mise(s) à jour sélectionnée(s) entraînera(ont) le redémarrage du système,pendant l'installation des mises à jour, veuillez ne pas arrêter votre système, retirer la source d'alimentation ou les accessoires. Nous vous recommandons d'enregistrer votre travail en cours en vue du redémarrage du système.",
-            "rebootRequiredMsg": "Pour réussir l'installation des mises à jour, votre ordinateur doit êtreredémarrer pour que tout fonctionne correctement et en toute sécurité.",
+            "rebootRequiredMsg": "Vous devez redémarrer votre ordinateur pour que les modules récemment installés prennent effet.",
             "okayButton": "OK",
             "cancelButton": "Annuler",
             "rebootButton": "REDÉMARRER MAINTENANT",
-            "dismissButton": "IGNORER",
+            "dismissButton": "REDÉM PLUS TARD",
             "rebootPending": "Redémarrage en attente"
         },
         "autoUpdateSettings": {
@@ -2267,7 +2267,7 @@
             "title": "Site Web du support Lenovo"
         },
         "security": {
-            "title": "For a better protection for your device"
+            "title": "Pour améliorer la protection de votre périphérique"
         },
         "banner": {
             "neverChecked": "Vous êtes invité à mettre à jour le système.",
@@ -2276,8 +2276,8 @@
             "last": "Dernière mise à jour : ",
             "next": "Prochaine mise à jour prévue : ",
             "checkButton": "RECHERCHER DES MISES À JOUR",
-            "checkAgain": "Check Again",
-            "updateNow": "Update Now",
+            "checkAgain": "Vérifier encore",
+            "updateNow": "Mettre à jour",
             "checking": "Recherche de mises à jour",
             "downloading": "Téléchargement des mises à jour effectué",
             "installing": "Installation des mises à jour",
@@ -2311,17 +2311,17 @@
             "dependedPackage": "Module lié"
         },
         "availableUpdates": {
-            "title": "Mises à jour disponibles",
-            "description": "Ces modules incluent des mises à jour essentielles au bon fonctionnement de votre ordinateur. Les mises à jour critiques vous permettent de renforcer la sécurité et la fiabilité de votre ordinateur et doivent être installées dès qu'elles sont disponibles. Les mises à jour recommandées et les mises à jour facultatives vous aident à mettre à jour vos logiciels et à optimiser l'utilisation de votre ordinateur.",
+            "title": "Mises à jour trouvées",
+            "description": "Ces modules incluent les mises à jour des pilotes du matériel ainsi que d'autres utilitaires système essentiels au bon fonctionnement de l'ordinateur. Veuillez installer les mises à jour pour optimiser l'exécution de votre ordinateur.",
             "installAllUpdates": "Installer toutes les mises à jour",
             "installSuccessHeader": "Toutes les mises à jour ont été installées correctement",
             "installFailHeader": "Certaines mises à jour n'ont pas été correctement installées",
             "installFailDescription": "Une erreur s'est produite lors du téléchargement et de l'installation de ces mises à jour. Vérifiez que vous êtes en ligne et que vous n'éteignez pas votre ordinateur lors de l'installation des mises à jour.",
             "optionalUpdates": "Mises à jour facultatives",
             "installSelectedUpdates": "Installer les mises à jour sélectionnées",
-            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
-            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
-            "optionalUpdatesDescription": "Keep your computer up-to-date"
+            "criticalUpdatesDescription": "Prévention des incidents graves, des dysfonctionnements, des pannes matérielles ou des données endommagées",
+            "recommendedUpdatesDescription": "Garantissez un fonctionnement optimal de votre ordinateur",
+            "optionalUpdatesDescription": "Maintenez à jour votre ordinateur"
         },
         "installationHistory": {
             "name": "Nom",

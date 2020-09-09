@@ -2240,11 +2240,11 @@
             "rebootForceMsg": "O sistema será reiniciado automaticamente após a instalação das atualizaçõesselecionadas.",
             "shutdownForceMsg": "O sistema será desligado automaticamente após a instalação das atualizaçõesselecionadas.",
             "rebootDelayedMsg": "O sistema será reiniciado após a instalação das atualizações selecionadas,durante a instalação das atualizações, não desligue o sistema, não remova a fonte de alimentação nem os acessórios. Recomendamos que você salve o seu trabalho em preparação para a reinicialização do sistema.",
-            "rebootRequiredMsg": "Para instalar as atualizações com êxito, o computador precisa de umareinicialização para garantir que tudo esteja funcionando de forma segura e correta.",
+            "rebootRequiredMsg": "Você precisa reinicializar o computador para que os pacotes instalados recentemente tenham efeito.",
             "okayButton": "OK",
             "cancelButton": "Cancelar",
             "rebootButton": "REINICIALIZAR AGORA",
-            "dismissButton": "FECHAR",
+            "dismissButton": "REINICIALIZAR MAIS TARDE",
             "rebootPending": "Reinicialização pendente"
         },
         "autoUpdateSettings": {
@@ -2267,7 +2267,7 @@
             "title": "Web site de suporte da Lenovo"
         },
         "security": {
-            "title": "For a better protection for your device"
+            "title": "Para uma melhor proteção do seu dispositivo"
         },
         "banner": {
             "neverChecked": "Boas-vindas à Atualização do sistema.",
@@ -2276,8 +2276,8 @@
             "last": "Última atualização: ",
             "next": "Próxima atualização agendada: ",
             "checkButton": "VERIFICAR ATUALIZAÇÕES",
-            "checkAgain": "Check Again",
-            "updateNow": "Update Now",
+            "checkAgain": "Verificar novamente",
+            "updateNow": "Atualizar Agora",
             "checking": "Verificando atualizações",
             "downloading": "Download de atualizações concluído",
             "installing": "Instalando atualizações",
@@ -2311,17 +2311,17 @@
             "dependedPackage": "Pacote dependente"
         },
         "availableUpdates": {
-            "title": "Atualizações disponíveis",
-            "description": "Esses pacotes incluem atualizações críticas para o funcionamento correto do computador. As atualizações críticas ajudam a manter seu computador mais seguro e confiável e devem ser instaladas assim que forem disponibilizadas. As atualizações recomendadas e as atualizações opcionais ajudam a manter seu software atualizado e seu computador funcionando na capacidade máxima.",
+            "title": "Existem atualizações disponíveis",
+            "description": "Esses pacotes incluem atualizações para drivers de hardware e outros utilitários do sistema que são fundamentais para o funcionamento correto do computador. Instale as atualizações para manter seu computador funcionando da melhor maneira.",
             "installAllUpdates": "Instalar todas as atualizações",
             "installSuccessHeader": "Todas as atualizações foram instaladas corretamente",
             "installFailHeader": "Algumas atualizações não foram instaladas corretamente",
             "installFailDescription": "Ocorreu um erro durante o download e a instalação dessas atualizações. Verifique se você está online e não desligue o computador ao instalar as atualizações.",
             "optionalUpdates": "Atualizações Opcionais",
             "installSelectedUpdates": "Instalar atualizações selecionadas",
-            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
-            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
-            "optionalUpdatesDescription": "Keep your computer up-to-date"
+            "criticalUpdatesDescription": "Evite problemas graves, mau funcionamento, falha de hardware ou corrupção de dados",
+            "recommendedUpdatesDescription": "Mantenha seu computador funcionando com desempenho ideal",
+            "optionalUpdatesDescription": "Mantenha seu computador atualizado"
         },
         "installationHistory": {
             "name": "Nome",

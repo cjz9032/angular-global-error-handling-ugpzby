@@ -2240,11 +2240,11 @@
             "rebootForceMsg": "선택한 업데이트로 인해, 시스템이 설치 후다시 부팅됩니다.",
             "shutdownForceMsg": "선택한 업데이트로 인해 시스템이 설치 후자동으로 종료됩니다.",
             "rebootDelayedMsg": "선택한 업데이트로 인해 설치 후 시스템이 재부팅되며,업데이트를 설치하는 동안 시스템을 끄거나 전원 또는 액세서리를 제거하지 마십시오. 시스템 재부팅에 대비하여 현재의 작업을 저장하는 것이 바람직합니다.",
-            "rebootRequiredMsg": "업데이트를 성공적으로 설치하려면 컴퓨터를 다시 부팅하여모든 것이 안전하고 원활하게 실행되어야 합니다.",
+            "rebootRequiredMsg": "최근에 설치한 패키지를 적용하려면 컴퓨터를 다시 시작해야 합니다.",
             "okayButton": "확인",
             "cancelButton": "취소",
             "rebootButton": "지금 다시 부팅",
-            "dismissButton": "해제",
+            "dismissButton": "나중에 다시 시작",
             "rebootPending": "다시 부팅 보류 중"
         },
         "autoUpdateSettings": {
@@ -2267,7 +2267,7 @@
             "title": "Lenovo 지원 웹 사이트"
         },
         "security": {
-            "title": "For a better protection for your device"
+            "title": "장치 보호 강화"
         },
         "banner": {
             "neverChecked": "시스템 업데이트를 시작합니다.",
@@ -2276,8 +2276,8 @@
             "last": "마지막 업데이트 날짜: ",
             "next": "다음 예약 업데이트 날짜: ",
             "checkButton": "업데이트 검사",
-            "checkAgain": "Check Again",
-            "updateNow": "Update Now",
+            "checkAgain": "다시 확인",
+            "updateNow": "지금 업데이트",
             "checking": "업데이트 검사",
             "downloading": "업데이트 다운로드 완료",
             "installing": "업데이트를 설치하는 중",
@@ -2312,16 +2312,16 @@
         },
         "availableUpdates": {
             "title": "사용 가능한 업데이트",
-            "description": "이러한 패키지에는 컴퓨터의 올바른 작동에 중요한 업데이트가 포함되어 있습니다. 중요 업데이트는 컴퓨터를 보다 안전하고 신뢰할 수 있게 유지하는 데 도움이 되며 사용 가능할 때 설치해야 합니다. 권장 업데이트 및 선택적 업데이트는 소프트웨어를 최신 상태로 유지하고 컴퓨터를 최상의 상태로 유지하는 데 도움이 됩니다.",
+            "description": "이 패키지에는 컴퓨터의 올바른 작동에 필요한 하드웨어 드라이버 및 기타 시스템 유틸리티 관련 업데이트가 포함되어 있습니다. 컴퓨터가 최상의 상태로 실행되도록 유지하려면 업데이트를 설치하십시오.",
             "installAllUpdates": "모든 업데이트 설치",
             "installSuccessHeader": "모든 업데이트가 올바르게 설치됨",
             "installFailHeader": "일부 업데이트가 올바르게 설치되지 않았습니다",
             "installFailDescription": "이러한 업데이트의 다운로드 및 설치 중에 문제가 발생했습니다. 온라인 상태인지 확인하고 업데이트를 설치할 때 컴퓨터를 끄지 마십시오.",
             "optionalUpdates": "선택적 업데이트",
             "installSelectedUpdates": "선택한 업데이트 설치",
-            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
-            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
-            "optionalUpdatesDescription": "Keep your computer up-to-date"
+            "criticalUpdatesDescription": "심각한 문제, 오작동, 하드웨어 장애 또는 데이터 손상 방지",
+            "recommendedUpdatesDescription": "컴퓨터가 최적의 성능으로 실행되도록 유지",
+            "optionalUpdatesDescription": "컴퓨터를 최신 상태로 유지"
         },
         "installationHistory": {
             "name": "이름",

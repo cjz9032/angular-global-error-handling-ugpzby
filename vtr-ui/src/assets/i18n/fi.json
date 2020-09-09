@@ -2240,11 +2240,11 @@
             "rebootForceMsg": "Valitsemasi päivitykset aiheuttavat sen, että asennuksen jälkeen järjestelmä käynnistetäänuudelleen automaattisesti.",
             "shutdownForceMsg": "Valitsemasi päivitykset aiheuttavat sen, että asennuksen jälkeen järjestelmäsammutetaan automaattisesti.",
             "rebootDelayedMsg": "Valitsemasi päivitykset aiheuttavat sen, että järjestelmä käynnistetään uudelleen asennuksen jälkeen.Älä katkaise järjestelmän virtaa tai poista virtalähdettä tai lisävarusteita päivitysten asennuksen aikana. Suosittelemme tallentamaan työt, jotta järjestelmä voidaan valmistella uudelleenkäynnistymistä varten.",
-            "rebootRequiredMsg": "Jotta päivitysten asennus onnistuisi, tietokone onkäynnistettävä uudelleen, jotta kaikki toimii turvallisesti ja sujuvasti.",
+            "rebootRequiredMsg": "Sinun täytyy käynnistää tietokoneesi uudelleen, jotta äskettäin asentamasi paketit astuvat voimaan.",
             "okayButton": "OK",
             "cancelButton": "Peruuta",
             "rebootButton": "KÄYNNISTÄ UUDELLEEN NYT",
-            "dismissButton": "HYLKÄÄ",
+            "dismissButton": "MYÖHEMMIN",
             "rebootPending": "Uudelleenkäynnistys on meneillään"
         },
         "autoUpdateSettings": {
@@ -2267,7 +2267,7 @@
             "title": "Lenovon tukisivusto"
         },
         "security": {
-            "title": "For a better protection for your device"
+            "title": "Laitteesi suojauksen parantamiseksi"
         },
         "banner": {
             "neverChecked": "Tervetuloa käyttämään Järjestelmäpäivitystä.",
@@ -2276,8 +2276,8 @@
             "last": "Viimeksi päivitetty: ",
             "next": "Seuraava ajoitettu päivitys: ",
             "checkButton": "TARKISTA PÄIVITYKSET",
-            "checkAgain": "Check Again",
-            "updateNow": "Update Now",
+            "checkAgain": "Tarkista uudelleen",
+            "updateNow": "Päivitä nyt",
             "checking": "Tarkistetaan päivityksiä",
             "downloading": "Päivitysten nouto on valmis",
             "installing": "Päivityksiä asennetaan",
@@ -2311,17 +2311,17 @@
             "dependedPackage": "Riippuvuuspaketti"
         },
         "availableUpdates": {
-            "title": "Saatavilla olevat päivitykset",
-            "description": "Nämä paketit sisältävät päivityksiä, jotka ovat tärkeitä tietokoneen oikean toiminnan kannalta. Välttämättömät päivitykset auttavat pitämään tietokoneen suojattuna ja luotettavina, ja ne tulee asentaa heti, kun ne ovat käytettävissä. Suositeltujen päivitysten ja valinnaisten päivitysten avulla ohjelmisto pysyy ajan tasalla ja tietokone toimii parhaimmillaan.",
+            "title": "Päivityksiä löytyi",
+            "description": "Näissä paketeissa on päivityksiä laitteisto-ohjaimiin ja järjestelmätoimintoihin, jotka ovat välttämättömiä tietokoneesi toiminnan kannalta. Asenna päivitykset saadaksesi kaiken hyödyn irti tietokoneestasi.",
             "installAllUpdates": "Asenna kaikki päivitykset",
             "installSuccessHeader": "Kaikki päivitykset asennettiin oikein",
             "installFailHeader": "Joidenkin päivitysten asennus ei onnistunut",
             "installFailDescription": "Jokin meni vikaan näiden päivitysten latauksen ja asennuksen aikana. Varmista, että laite on verkkoyhteydessä äläkä katkaise tietokoneesta virtaa, kun asennat päivityksiä.",
             "optionalUpdates": "Valinnaiset päivitykset",
             "installSelectedUpdates": "Asenna valitut päivitykset",
-            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
-            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
-            "optionalUpdatesDescription": "Keep your computer up-to-date"
+            "criticalUpdatesDescription": "Välty vakavilta ongelmilta, toimintahäiriöiltä, laitevioilta ja tietojen korruptoitumiselta",
+            "recommendedUpdatesDescription": "Pidä tietokoneesi suorituskyky optimaalisella tasolla",
+            "optionalUpdatesDescription": "Pidä tietokoneesi ajan tasalla"
         },
         "installationHistory": {
             "name": "Nimi",

@@ -2240,11 +2240,11 @@
             "rebootForceMsg": "Uppdateringarna du har valt medför att systemet automatiskt startar omefter installationen.",
             "shutdownForceMsg": "Uppdateringarna du har valt medför att systemet automatiskt stängs avefter installationen.",
             "rebootDelayedMsg": "Uppdateringarna du har valt medför att datorn startas om efter installationen. Stäng inte av systemet och koppla inte bort strömkällan eller tillbehören under installationen av uppdateringarna. Vi rekommenderar att du sparar ditt arbete innan systemet startas om.",
-            "rebootRequiredMsg": "För att uppdateringarna ska installeras korrekt måste datornstartas om så att allt fungerar säkert och smidigt.",
+            "rebootRequiredMsg": "Du måste starta om datorn innan du kan börja använda de senaste installerade paketen.",
             "okayButton": "OK",
             "cancelButton": "Avbryt",
             "rebootButton": "STARTA OM NU",
-            "dismissButton": "STÄNG",
+            "dismissButton": "OMSTART SENARE",
             "rebootPending": "Väntar på omstart"
         },
         "autoUpdateSettings": {
@@ -2267,7 +2267,7 @@
             "title": "Lenovos supportwebbplats"
         },
         "security": {
-            "title": "For a better protection for your device"
+            "title": "Om du vill ha bättre skydd för enheten"
         },
         "banner": {
             "neverChecked": "Välkommen att använda Systemuppdatering.",
@@ -2276,8 +2276,8 @@
             "last": "Senast uppdaterat: ",
             "next": "Nästa schemalagda uppdatering: ",
             "checkButton": "SÖK EFTER UPPDATERINGAR",
-            "checkAgain": "Check Again",
-            "updateNow": "Update Now",
+            "checkAgain": "Kontrollera",
+            "updateNow": "Uppdatera",
             "checking": "Söker efter uppdateringar",
             "downloading": "Uppdateringar har hämtats",
             "installing": "Installerar uppdateringar",
@@ -2311,17 +2311,17 @@
             "dependedPackage": "Kvalifikationspaket"
         },
         "availableUpdates": {
-            "title": "Tillgängliga uppdateringar",
-            "description": "Dessa paket innehåller uppdateringar som är nödvändiga för att datorn ska fungera korrekt. Kritiska uppdateringar bidrar till att hålla datorn säker och tillförlitlig och bör installeras så fort de blir tillgängliga. Rekommenderade uppdateringar och valfria uppdateringar bidrar till att hålla programvaran uppdaterad och att datorn körs optimalt.",
+            "title": "Uppdateringar finns",
+            "description": "Dessa paket innehåller uppdateringar av maskinvara och andra systemverktyg som är viktiga för att datorn ska fungera på rätt sätt. Installera uppdateringarna så att datorn fungerar optimalt.",
             "installAllUpdates": "Installera alla uppdateringar",
             "installSuccessHeader": "Alla uppdateringar har installerats",
             "installFailHeader": "Vissa uppdateringar installerades inte korrekt",
             "installFailDescription": "Ett problem inträffade under hämtningen och installationen av uppdateringarna. Kontrollera att du är ansluten och stäng inte av datorn medan uppdateringarna installeras.",
             "optionalUpdates": "Valfria uppdateringar",
             "installSelectedUpdates": "Installera valda uppdateringar",
-            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
-            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
-            "optionalUpdatesDescription": "Keep your computer up-to-date"
+            "criticalUpdatesDescription": "Förhindra allvarliga problem, fel på maskinvaran eller att data skadas",
+            "recommendedUpdatesDescription": "Håll datorn igång med optimal prestanda",
+            "optionalUpdatesDescription": "Håll din dator uppdaterad"
         },
         "installationHistory": {
             "name": "Namn",
