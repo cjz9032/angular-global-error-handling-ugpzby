@@ -47,23 +47,19 @@ export class LocalCacheService {
 	 */
 	public async getLocalCacheValue(key: LocalStorageKey | DashboardLocalStorageKey, defaultValue?: any) {
 		if (this.transferEnabled) {
-			const valueInLocalStorage = this.commonService.getLocalStorageValue(key);
-			if (valueInLocalStorage !== undefined
-				&& valueInLocalStorage !== null) {
-				this.setItem(key, valueInLocalStorage).then(() => {
+			let cacheValue = defaultValue;
+			const indexedDBCache = await this.getItem(key);
+			const localStorageCache = this.commonService.getLocalStorageValue(key);
+			if (this.isAvailableValue(indexedDBCache)) {
+				cacheValue = indexedDBCache;
+			} else if (this.isAvailableValue(localStorageCache)) {
+				cacheValue = localStorageCache;
+				await this.setItem(key, localStorageCache).then(() => {
 					this.commonService.removeLocalStorageValue(key);
 				});
-				return valueInLocalStorage;
 			}
-			const valueFromIndexedDB = await this.getItem(key, defaultValue);
-			return valueFromIndexedDB;
+			return cacheValue;
 		} else {
-			const valueFromIndexedDB = await this.getItem(key, undefined);
-			if (valueFromIndexedDB !== undefined
-				&& valueFromIndexedDB !== null) {
-				this.commonService.setLocalStorageValue(key, valueFromIndexedDB);
-				this.removeItem(key);
-			}
 			return this.commonService.getLocalStorageValue(key, defaultValue);
 		}
 	}
@@ -91,7 +87,7 @@ export class LocalCacheService {
 
 	private async getItem(key, defaultValue?: any) {
 		const value = await this.store.getItem<string>(key);
-		if (value !== undefined && value !== null) {
+		if (this.isAvailableValue(value)) {
 			try {
 				return JSON.parse(value);
 			} catch (e) {
@@ -114,5 +110,9 @@ export class LocalCacheService {
 		const shellVersion = this.commonService.getShellVersion();
 		result = this.commonService.compareVersion(shellVersion, this.transferredShellVersion) >= 0;
 		return result;
+	}
+
+	private isAvailableValue(value) {
+		return value !== undefined && value !== null;
 	}
 }
