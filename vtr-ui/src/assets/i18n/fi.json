@@ -2415,7 +2415,7 @@
     },
     "security": {
         "landing": {
-            "fully": "Jos haluat paremman tarjouksen laitteesi suojaamiseen, pysy kohdassa",
+            "fully": "Jos haluat suojata laitteesi paremmin, katso",
             "notFully": "Jos haluat lisätietoja laitteen paremmasta suojauksesta, aloita kohdasta",
             "security101": "SECURITY ADVISOR 101",
             "firewall": "Palomuuri",

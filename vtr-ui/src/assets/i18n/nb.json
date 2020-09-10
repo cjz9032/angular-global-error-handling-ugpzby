@@ -2415,7 +2415,7 @@
     },
     "security": {
         "landing": {
-            "fully": "For å få et bedre tilbud bør du beskytte enheten og bli hos",
+            "fully": "For bedre å beskytte enheten, bli hos",
             "notFully": "Hvis du vil vite hvordan du kan beskytte enheten din bedre, kan du starte med",
             "security101": "SIKKERHETSRÅDGIVER 101",
             "firewall": "Brannmur",

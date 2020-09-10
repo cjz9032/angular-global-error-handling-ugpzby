@@ -2415,7 +2415,7 @@
     },
     "security": {
         "landing": {
-            "fully": "Získajte lepšiu ponuku na ochranu svojho zariadenia a naďalej používajte",
+            "fully": "Ak chcete lepšie ochrániť svoje zariadenie, naďalej používajte",
             "notFully": "Ak chcete zistiť, ako lepšie chrániť svoje zariadenie, začnite s",
             "security101": "PORADCA ZABEZPEČENÍM 101",
             "firewall": "Brána firewall",

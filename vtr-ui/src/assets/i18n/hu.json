@@ -2415,7 +2415,7 @@
     },
     "security": {
         "landing": {
-            "fully": "Ha jobb ajánlatot szeretne kapni eszköze védelmére, maradjon a következővel:",
+            "fully": "Ha szeretné hatékonyabban védeni eszközét, maradjon a következővel:",
             "notFully": "Ha meg szeretné tudni, hogyan védheti meg jobban eszközeit, kezdje a következővel:",
             "security101": "BIZTONSÁGI TANÁCSADÓ 101",
             "firewall": "Tűzfal",

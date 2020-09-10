@@ -2415,7 +2415,7 @@
     },
     "security": {
         "landing": {
-            "fully": "Cihazınızı korumayla ilgili daha iyi bir teklif almak için şunu kullanmaya devam edin:",
+            "fully": "Cihazınızın daha iyi korunması için kullanmaya devam edin:",
             "notFully": "Cihazınızı nasıl daha iyi koruyacağınızı öğrenmek için şununla başlayın:",
             "security101": "GÜVENLİK DANIŞMANI 101",
             "firewall": "Güvenlik Duvarı",
