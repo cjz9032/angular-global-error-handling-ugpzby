@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.5](https://bitbucket.tc.lenovo.com///compare/v1.8.4...v1.8.5) (2020-09-10)
+
+
+### Features
+
+* **IndexedDB:** VAN-21989 move getShellVersion to commonService to reduce dependency ([b42f720](https://bitbucket.tc.lenovo.com///commit/b42f7203b590a02e38dbda90d028f0a5fbf069bc))
+* **System Update:** VAN-18147 add error handle for hypothesis ([504818e](https://bitbucket.tc.lenovo.com///commit/504818e46c45443710ab98c224d9e56222acdfa6))
+* **System Update:** VAN-18147 should be disabled if hypothesis false ([d800182](https://bitbucket.tc.lenovo.com///commit/d8001829c52a9fdd81115d3c4af9ddb50ad44364))
+* **System Update:** VAN-18208 VAN-18147 VAN-18814 VAN-18207 VAN-18257 translated strings ([5ee76dc](https://bitbucket.tc.lenovo.com///commit/5ee76dcef2eb3719200a50f80b3c6cf9a7a5c10b))
+
 ### [1.8.4](https://bitbucket.tc.lenovo.com///compare/v1.8.3...v1.8.4) (2020-09-09)
 
 
