@@ -54,7 +54,7 @@ export class LocalCacheService {
 				cacheValue = indexedDBCache;
 			} else if (this.isAvailableValue(localStorageCache)) {
 				cacheValue = localStorageCache;
-				await this.setItem(key, localStorageCache).then(() => {
+				this.setItem(key, localStorageCache).then(() => {
 					this.commonService.removeLocalStorageValue(key);
 				});
 			}
