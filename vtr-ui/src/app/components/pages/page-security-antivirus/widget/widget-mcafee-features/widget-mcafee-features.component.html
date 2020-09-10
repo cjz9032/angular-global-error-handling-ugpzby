@@ -11,7 +11,7 @@
 	<div class="d-flex w-100 align-items-center justify-content-center">
 		<vtr-ui-button
 			[vtrMetricEnabled]="false"
-			[id]="install?'sa-av-btn-launchmcafee':'sa-av-btn-getMcafee'"
+			[linkId]="install?'sa-av-btn-launchmcafee':'sa-av-btn-getMcafee'"
 			[label]="install?launchMcafeeText:getMcafeeText"
 			[isDisabled]="isOnline === false && !install"
 			[upperCaseLabel]="false"
