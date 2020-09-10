@@ -2415,7 +2415,7 @@
     },
     "security": {
         "landing": {
-            "fully": "För att få ett bättre erbjudande om skydd av din enhet, fortsätt med",
+            "fully": "För att skydda din enhet bättre, fortsätt med",
             "notFully": "För att få ett bättre skydd av din enhet, börja med",
             "security101": "SÄKERHETSRÅDGIVARE",
             "firewall": "Brandvägg",
