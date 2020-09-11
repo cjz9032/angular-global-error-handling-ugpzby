@@ -348,7 +348,7 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
     this.isShow = true;
     let lenPanels = this.lightingCapabilities && this.lightingCapabilities.LightPanelType ? this.lightingCapabilities.LightPanelType.length : 0;
     if (this.lightingCapabilities && this.lightingCapabilities.MemoryPanelType && Array.isArray(this.lightingCapabilities.MemoryPanelType)
-      && this.lightingCapabilities.MemoryPanelType.indexOf(0) !== -1){
+      && this.lightingCapabilities.MemoryPanelType.indexOf(0) === -1){
       lenPanels += this.lightingCapabilities.MemoryPanelType.length;
     }
     if(lenPanels !== 0 && this.countObj['count'+this.currentProfileId] < (lenPanels-1)){
