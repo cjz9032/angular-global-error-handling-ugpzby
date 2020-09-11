@@ -336,7 +336,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		let enabled = true;
 		return this.hypSetting.getFeatureSetting('SystemUpdateSecurityWidget').then((result) => {
 			if (result === 'false') {
-				enabled = true;
+				enabled = false;
 			}
 			return enabled;
 		}, (error) => {
