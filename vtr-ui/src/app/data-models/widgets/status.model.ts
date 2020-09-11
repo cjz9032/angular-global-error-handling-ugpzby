@@ -19,3 +19,17 @@ export class Status {
 	public metricsItemName: string;
 	public isHidden?: boolean;
 }
+
+export class DeviceStatus {
+	constructor() {	}
+	public icon: string;
+	public title: string;
+	public subtitle: string;
+	public link: string;
+	public total: string;
+	public used: string;
+	public percent: number;
+	public checkedDate: string;
+	public showCover = true;
+  	public showSepline: boolean;
+}

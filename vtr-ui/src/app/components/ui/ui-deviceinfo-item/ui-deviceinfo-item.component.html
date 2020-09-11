@@ -1,0 +1,47 @@
+<div class="ui-deviceinfo-item">
+    <div class="d-flex h-100" (click)="itemClicked()">
+        <div class="ui-deviceinfo-left">
+            <span>
+                <img [src]="dataModel.icon|svgInline|async"/>
+                <p>{{dataModel.title}}</p>
+            </span>
+            <span class="mt-2 font-weight-bold">
+                {{dataModel.subtitle}}
+            </span>
+        </div>
+    
+        <div class="ui-deviceinfo-sepline" *ngIf="dataModel.showSepline"></div>
+
+        <div class="ui-deviceinfo-right ml-auto align-self-center">
+            <div class="circle-border" *ngIf="!!dataModel.total">
+                <svg viewBox="0 0 36 36" class="circular-chart blue">
+                    <path class="circle-bg"
+                    d="M18 2.0845
+                        a 15.9155 15.9155 0 0 1 0 31.831
+                        a 15.9155 15.9155 0 0 1 0 -31.831"
+                    />
+                    <path class="circle" [attr.stroke-dasharray]="dataModel.percent+',100'"
+                    d="M18 2.0845
+                        a 15.9155 15.9155 0 0 1 0 31.831
+                        a 15.9155 15.9155 0 0 1 0 -31.831"
+                    />
+                    <text x="18" y="14" class="percentage font-weight-bold">{{dataModel.used}}/</text>
+                    <text x="18" y="20.35" class="percentage font-weight-bold">{{dataModel.total}}</text>
+                    <text x="18" y="26.35" class="percentage">Used</text>
+                </svg>
+            </div>
+            
+            <div *ngIf="!!dataModel.checkedDate">
+                <span>Checked on:</span>
+                <div class="font-weight-bold text-center">{{dataModel.checkedDate}}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui-deviceinfo-overlay" *ngIf="dataModel.showCover">
+        <a href="javascript:void(0)" (click)="learnMoreClicked()">
+           <span>Learn more</span> <fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+        </a>
+    </div>
+ 
+</div>

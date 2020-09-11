@@ -1,0 +1,179 @@
+<div class="vtr-widget-device">
+	<div class="container-fluid my-dev-pad">
+		<div class="d-flex device-status">
+			<div class="col device-info">
+				<div class="family"
+					role="text"
+					id="myDevice-machine-info">{{myDevice.family}}</div>
+				<div class="col-12 px-0 {{'dirClass' | translate}}">
+					<span class="sub-header-separator">
+						<fa-icon [icon]="['fas', 'minus']"
+							role="img">
+						</fa-icon>
+					</span>
+					<span class="device-sub-header">
+						<span class="{{'dirClass' | translate}}"
+							id="myDevice-serial"
+							role="text"
+							dir="{{'dir' | translate}}">{{'device.myDevice.serial' | translate}}
+						</span>:
+						<span id="myDevice-serial-value"
+							role="text">{{myDevice.sn}}
+						</span>
+					</span>
+				</div>
+				<div class="col-12 px-0">
+					<span class="sub-header-separator">
+						<fa-icon [icon]="['fas', 'minus']"
+							role="img"
+							aria-hidden="true">
+						</fa-icon>
+					</span>
+					<span class="device-sub-header">
+						<span class="{{'dirClass' | translate}}"
+							id="myDevice-product-number"
+							role="text"
+							dir="{{'dir' | translate}}">{{'device.myDevice.productNumber' | translate}}
+						</span>:
+						<span id="myDevice-product-number-value"
+							role="text">{{myDevice.productNo}}</span>
+					</span>
+				</div>
+				<div class="col-12 px-0">
+					<span class="sub-header-separator">
+						<fa-icon [icon]="['fas', 'minus']"
+							role="img"
+							aria-hidden="true">
+						</fa-icon>
+					</span>
+					<span class="device-sub-header">
+						<span class="{{'dirClass' | translate}}"
+							id="myDevice-bios-version"
+							role="text"
+							dir="{{'dir' | translate}}">{{'device.myDevice.biosVersion'|translate}}
+						</span>:
+						<span id="myDevice-bios-version-value"
+							role="text">{{myDevice.bios}}
+						</span>
+					</span>
+				</div>
+			</div>
+			<div class="col device-image">
+				<div class="circleimage">
+					<img class=""
+						*ngIf="!deviceService.isGaming"
+						[src]=" 'assets/icons/logo-lenovo-red.svg' | svgInline | async"
+						alt="Lenovo logo"
+						id="myDevice-logo-lenovo-red">
+					<img class="lenovo-gaming-logo"
+						*ngIf="deviceService.isGaming"
+						[src]=" 'assets/icons/logo-lenovo-white.svg' | svgInline | async"
+						alt="Lenovo logo"
+						id="myDevice-logo-lenovo-white">
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<div class="subheader"
+					role="text"
+					id="myDevice-status-title"
+					attr.aria-label="myDevice-status-title"
+					dir="{{'dir' | translate}}">{{'device.myDevice.subtitle'|translate}}</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<ul class="status-list"
+					role="list"
+					id="myDevice-status-list">
+					<li *ngFor="let item of deviceStatus; let i=index"
+						[ngClass]="[!item.status?'good':'bad']"
+						[hidden]="item.isHidden">
+						<div class="container-fluid">
+							<div class="d-flex align-items-center {{'dirClass' | translate}}">
+								<div class="status-icon">
+									<div class="icon-bkg">
+										<fa-icon role="img"
+											[attr.aria-label]="(!item.status?' status good':' status bad')"
+											[icon]="['fas', !item.status?'check':'times']">
+										</fa-icon>
+									</div>
+								</div>
+								<div class="d-flex status-content justify-content-between">
+									<div class="title"
+										role="listitem"
+										[ngClass]="[!item.status?'good':'bad']"
+										id="myDevice-system-details-{{item.id}}">
+										{{item.title}}
+										<span *ngIf="item.systemDetails"
+											class='systemDetails'
+											dir="{{'dir' | translate}}">({{item.systemDetails}})</span>
+									</div>
+									<div *ngIf="item.status === 4"
+										class="spinner-content">
+										<div class="spinner-border text-secondary progress-spinner"
+											role="status"></div>
+									</div>
+
+									<!--Open vantage subapges if isSystemLink===undefined or  isSystemLink  === false then user routerLink to naviagate within Lenovo Vantage Application -->
+									<a routerLink="/{{item.path}}"
+										vtrMetrics
+										[metricsItem]="item.title"
+										metricsEvent="itemClick"
+										[metricsValue]="'link.'+item.id"
+										id="myDevice-status-learn-more-{{item.id}}"
+										role="link"
+										attr.aria-label="{{item.detail}}"
+										*ngIf="item.isSystemLink===undefined || (item.isSystemLink!==undefined && item.isSystemLink===false && item.status !== 4)"
+										[ngbTooltip]="item.detail"
+										tooltipClass="vtr-system-tooltip"
+										container="body">
+										<p class="detail"
+											[ngClass]="{'highlight':item.asLink}">
+											<span class="{{'dirClass' | translate}}"
+												dir="{{'dir' | translate}}">{{item.detail}}&nbsp;
+												<fa-icon [icon]="['fas', 'arrow-right']"
+													role="img"
+													attr.aria-label="arrow-right-{{item.detail}}">
+												</fa-icon></span>
+										</p>
+									</a>
+									<!--Open Windows Settings /subapges if isSystemLink is not undefined or  then sanitise URL of windows settings page like (ms-settings:storagesense) , link href instead of routerlink value is set to URL-->
+									<a *ngIf="item.isSystemLink!==undefined &&  item.isSystemLink===true && item.status !== 4"
+										vtrMetrics
+										[metricsItem]="item.title"
+										metricsEvent="itemClick"
+										[metricsValue]="'link.'+item.id"
+										href="javascript:void(0);"
+										id="myDevice-status-learn-more-{{item.id}}"
+										role="link"
+										attr.aria-label="{{item.detail}}"
+										(click)="deviceService.launchUri(item.path)"
+										[ngbTooltip]="item.detail"
+										tooltipClass="vtr-system-tooltip"
+										container="body">
+										<p class="detail"
+											[ngClass]="{'highlight':item.asLink}">
+											<span>{{item.detail}}&nbsp;
+												<fa-icon [icon]="['fas', 'arrow-right']"
+													aria-hidden="true">
+												</fa-icon>
+											</span>
+										</p>
+									</a>
+									<!-- <div class="arrow">
+										<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+									</div> -->
+								</div>
+								<!-- <div class="col-auto">
+								</div> -->
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

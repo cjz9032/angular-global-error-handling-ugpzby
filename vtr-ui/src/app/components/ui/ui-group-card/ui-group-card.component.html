@@ -1,0 +1,15 @@
+<div class="ui-group-card">
+    <div class="ui-group-header d-flex">
+        <p class="m-0" innerHTML="{{title}}"></p>
+        <div class="ml-auto" >
+            <a href="javascript:void(0)" *ngIf="!!refreshButtonText" (click)="onRefreshClicked()">
+               {{refreshButtonText}}<fa-icon class="ml-2 mr-2" [icon]="['fal', 'redo']"></fa-icon>
+            </a>
+        </div>
+    </div>
+    <div class="group-card-sperate-line"></div>
+    <div>
+        <ng-content></ng-content>
+    </div>
+</div>
+
