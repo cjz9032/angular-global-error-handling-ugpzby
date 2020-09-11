@@ -302,10 +302,10 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 
 	private async initSecurityCard() {
 		try {
-			const settingValue = await this.hypSetting.getFeatureSetting('SystemUpdateSecurityWidget');
+			const settingValue = await this.isSecurityWidgetEnabled();
 			const segmentValue = await this.selfSelectService.getSegment();
 			const currentPage = this.antiVirusService.GetAntivirusStatus().currentPage;
-			if (settingValue !== 'false'
+			if (settingValue
 				&& segmentValue === SegmentConst.Consumer
 				&& currentPage !== 'mcafee') {
 				this.translate.stream('systemUpdates.security.title').subscribe((title) => {
@@ -330,6 +330,19 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			this.rightCards[0].show = this.showSecurityWidget;
 			this.logger.exception('initSecurityCard failed with exception', ex.message);
 		}
+	}
+
+	private isSecurityWidgetEnabled() {
+		let enabled = true;
+		return this.hypSetting.getFeatureSetting('SystemUpdateSecurityWidget').then((result) => {
+			if (result === 'false') {
+				enabled = true;
+			}
+			return enabled;
+		}, (error) => {
+			this.logger.error('PageDeviceUpdatesComponent.isSecurityWidgetEnabled: promise rejected ', error);
+			return enabled;
+		});
 	}
 
 	popRebootDialogIfNecessary() {
