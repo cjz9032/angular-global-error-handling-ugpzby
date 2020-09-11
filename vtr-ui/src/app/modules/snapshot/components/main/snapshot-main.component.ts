@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { SnapshotService } from '../../services/snapshot.service';
 
 @Component({
   selector: 'vtr-snapshot-main',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SnapshotMainComponent implements OnInit {
 
-  constructor() { }
+	@Input() snapshots: any;
+	@Input() componentId: string;
 
-  ngOnInit(): void {
-  }
+	constructor(private snapshotService: SnapshotService) { }
+
+	ngOnInit(): void {
+	}
 
 }

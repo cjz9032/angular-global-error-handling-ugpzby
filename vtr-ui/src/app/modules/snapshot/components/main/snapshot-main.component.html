@@ -1,1 +1,48 @@
-<p>snapshot-main works!</p>
+<div id="{{ componentId }}" class="vtr-snapshot-main">
+	<ul class="list-group modal-scroll">
+		<li id="{{ componentId }}-item-{{ i }}" class="list-group-item" *ngFor="let snapshot of snapshots; let i = index">
+			<div class="module item-line">
+				<div class="custom-control">
+					<p id="{{ componentId }}-item-{{ i }}-name" role="text" class="custom-control-label-text name">
+						{{snapshot.title}}
+					</p>
+				</div>
+
+				<div class="col-auto">
+					<div id="{{ componentId }}-item-{{ i }}-collapse-btn"
+						class="collapse-control select-item"
+						tabindex="0"
+						(click)="snapshot.collapsed = !snapshot.collapsed"
+						(keyup.enter)="snapshot.collapsed = !snapshot.collapsed"
+						role="button"
+						[attr.aria-expanded]="snapshot.collapsed">
+						<fa-icon *ngIf="snapshot.collapsed; else expandArrow" [icon]="['fal', 'chevron-up']"></fa-icon>
+						<ng-template #expandArrow>
+							<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
+						</ng-template>
+					</div>
+				</div>
+			</div>
+			<div id="{{ componentId }}-item-{{ i }}-subitems" class="sub-module" [ngbCollapse]="!snapshot.collapsed" >
+				<ul class="list-group" *ngIf="snapshot.info.length > 1; else uniqueInfo">
+					<li id="{{ componentId }}-item-{{ i }}-subitem-{{ j }}" class="list-group-item" *ngFor="let item of snapshot.info; let j = index">
+						<p class="custom-control-label-text">
+							<span id="{{ componentId }}-item-{{ i }}-subitem-{{ j }}-name"
+								class="name-test">{{item.name}}</span>
+						</p>
+					</li>
+				</ul>
+				<ng-template #uniqueInfo>
+					<ul class="list-group">
+						<li id="{{ componentId }}-item-{{ i }}" class="list-group-item">
+							<p class="custom-control-label-text">
+								<span id="{{ componentId }}-item-{{ i }}-name"
+									class="name-test">{{snapshot.info.name}}</span>
+							</p>
+						</li>
+					</ul>
+				</ng-template>
+			</div>
+		</li>
+	</ul>
+</div>

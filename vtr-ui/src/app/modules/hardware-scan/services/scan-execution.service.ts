@@ -823,11 +823,4 @@ export class ScanExecutionService {
 	public isRefreshingModules() {
 		return this.hardwareScanService.isRefreshingModules();
 	}
-
-	public onInstalledProgramInfo() {
-		if (this.snapshotService) {
-			this.storageDevices = this.snapshotService.getLoadStorageDevicesInfo();
-		}
-	}
-
 }

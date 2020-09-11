@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PageSnapshotComponent } from './page-snapshot.component';
+import { ModalSnapshotComponent } from './modal-snapshot.component';
 
-xdescribe('PageSnapshotComponent', () => {
-	let component: PageSnapshotComponent;
-	let fixture: ComponentFixture<PageSnapshotComponent>;
+xdescribe('ModalSnapshotComponent', () => {
+	let component: ModalSnapshotComponent;
+	let fixture: ComponentFixture<ModalSnapshotComponent>;
 
 	beforeEach(async(() => {
 	TestBed.configureTestingModule({
-		declarations: [ PageSnapshotComponent ]
+		declarations: [ ModalSnapshotComponent ]
 	})
 	.compileComponents();
 	}));
 
 	beforeEach(() => {
-	fixture = TestBed.createComponent(PageSnapshotComponent);
+	fixture = TestBed.createComponent(ModalSnapshotComponent);
 	component = fixture.componentInstance;
 	fixture.detectChanges();
 	});

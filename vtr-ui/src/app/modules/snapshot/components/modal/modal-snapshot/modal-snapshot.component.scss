@@ -1,0 +1,25 @@
+@import "../../../../../app.theme";
+
+.vtr-modal-snapshot {
+	@include high-contrast-border;
+
+	.modal-information {
+		.title {
+			width: 100%;
+			font-size: $fontsize_lg;
+			font-weight: $weight_bold;
+			color: $shade_blue;
+		}
+
+		.description {
+			width: 100%;
+			color: $shade-darker;
+			font-size: $fontsize_xs2;
+			font-weight: $weight_light;
+		}
+	}
+
+	.modal-body {
+		padding: 4rem;
+	}
+}

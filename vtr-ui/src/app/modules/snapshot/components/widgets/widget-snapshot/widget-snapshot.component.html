@@ -15,6 +15,7 @@
 						metricsParent="HardwareScan"
 						metricsItem="HardwareScan.Snapshot"
 						[isFullWidth]="true"
+						(onClick)="onSnapshotInfo()"
 						[label]="'snapshot.title' | translate"
 						[tooltipText]="'snapshot.title' | translate">
 					</vtr-ui-button>
@@ -23,7 +24,3 @@
 		</div>
 	</div>
 </div>
-
-<ng-template #tooltipRef>
-	<div id="{{ widgetId }}-tooltip-text">{{description}}</div>
-</ng-template>

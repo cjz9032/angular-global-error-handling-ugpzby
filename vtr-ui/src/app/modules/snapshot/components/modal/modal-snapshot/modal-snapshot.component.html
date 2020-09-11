@@ -1,0 +1,18 @@
+<div class="modal-body vtr-modal-snapshot">
+	<div class="row modal-information">
+		<h1 class="title" id="snapshot-modal-title" role="heading">{{ 'snapshot.title' | translate }}</h1>
+		<p class="description" id="snapshot-modal-description" role="text">{{ 'snapshot.description' | translate }}</p>
+	</div>
+
+	<vtr-snapshot-main
+		[snapshots]="snapshotInfo"
+		[componentId]="'snapshot-information-list'">
+	</vtr-snapshot-main>
+
+	<div class="btn-modal-close">
+		<vtr-ui-close-button
+			linkId="snapshot-modal-close-btn"
+			(clickClose)="closeButtonClick()">
+		</vtr-ui-close-button>
+	</div>
+</div>

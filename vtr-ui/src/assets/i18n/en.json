@@ -5250,7 +5250,8 @@
 		"exportLog": "Export Log"
 	},
 	"snapshot": {
-		"title": "Snapshot"
+		"title": "Snapshot",
+		"description": "This is a snapshot POC"
 	},
 	"notification": {
 		"menu": {
