@@ -427,13 +427,13 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			.finally(() => {
 				this.cleaningUpScan(undefined);
 
-				// Defines information about module details
-				this.onViewResults();
-				this.modules.forEach(module => { module.expanded = true; });
-
 				const metricsResult = this.getMetricsTaskResult();
 				this.sendTaskActionMetrics(this.hardwareScanService.getCurrentTaskType(), metricsResult.countSuccesses,
 					'', metricsResult.scanResultJson, this.timerService.stop());
+
+				// Defines information about module details
+				this.onViewResults();
+				this.modules.forEach(module => { module.expanded = true; });
 			});
 		}
 	}
