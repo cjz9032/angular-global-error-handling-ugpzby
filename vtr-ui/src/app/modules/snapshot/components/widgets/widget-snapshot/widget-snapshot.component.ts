@@ -123,7 +123,7 @@ export class WidgetSnapshotComponent implements OnInit {
 				this.snapshots.push({
 					id: 8,
 					title: 'LoadDisplayDevicesInfoCommand',
-					info: response.DisplayDevicesList,
+					info: response.displayDevicesList,
 					collapsed: false
 				});
 			});
