@@ -16,9 +16,6 @@ export class WidgetMcafeeContentCardComponent implements OnInit {
 	}
 
 	openArticle() {
-		if (!this.isOnline) {
-			return;
-		}
 		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
 			backdrop: true,
 			size: 'lg',
