@@ -2240,11 +2240,11 @@
             "rebootForceMsg": "Po zainstalowaniu wybranych aktualizacji nastąpi automatyczne ponowne uruchomienie systemu.",
             "shutdownForceMsg": "Po zainstalowaniu wybranych aktualizacji nastąpi automatyczne zamknięcie systemu.",
             "rebootDelayedMsg": "Po zainstalowaniu wybranych aktualizacji nastąpi ponowne uruchomienie systemu,podczas instalowania aktualizacji nie wyłączaj systemu, nie odłączaj źródła zasilania ani akcesoriów. Zalecamy zapisanie pracy przed ponownym uruchomieniem systemu.",
-            "rebootRequiredMsg": "Aby pomyślnie zainstalować aktualizacje, komputer wymagaponownego uruchomienia, aby zapewnić prawidłowe i płynne działanie systemu.",
+            "rebootRequiredMsg": "Aby ostatnio zainstalowane pakiety zostały zastosowane, musisz ponownie uruchomić komputer.",
             "okayButton": "OK",
             "cancelButton": "Anuluj",
             "rebootButton": "URUCHOM PONOWNIE TERAZ",
-            "dismissButton": "ODRZUĆ",
+            "dismissButton": "URUCHOM PÓŹNIEJ",
             "rebootPending": "Oczekujące ponowne uruchomienie"
         },
         "autoUpdateSettings": {
@@ -2267,7 +2267,7 @@
             "title": "Strona internetowa pomocy technicznej Lenovo"
         },
         "security": {
-            "title": "For a better protection for your device"
+            "title": "Dla lepszej ochrony Twojego urządzenia"
         },
         "banner": {
             "neverChecked": "Witamy w programie Aktualizacja systemu.",
@@ -2276,8 +2276,8 @@
             "last": "Ostatnia aktualizacja: ",
             "next": "Następna planowana aktualizacja: ",
             "checkButton": "SPRAWDŹ AKTUALIZACJE",
-            "checkAgain": "Check Again",
-            "updateNow": "Update Now",
+            "checkAgain": "Sprawdź teraz",
+            "updateNow": "Aktualizuj",
             "checking": "Sprawdzanie aktualizacji",
             "downloading": "Ukończono pobieranie aktualizacji",
             "installing": "Instalowanie aktualizacji",
@@ -2311,17 +2311,17 @@
             "dependedPackage": "Pakiet serwisowy"
         },
         "availableUpdates": {
-            "title": "Dostępne aktualizacje",
-            "description": "Te pakiety zawierają aktualizacje, które są niezbędne dla prawidłowego działania komputera. Aktualizacje krytyczne pomagają zwiększyć bezpieczeństwo i prawidłowe działanie komputera, powinny być instalowane, gdy tylko są dostępne. Zalecane aktualizacje i opcjonalne aktualizacje zapewniają prawidłowe działanie oprogramowania i optymalną wydajność komputera.",
+            "title": "Znaleziono aktualizacje",
+            "description": "Te pakiety zawierają aktualizacje sterowników sprzętowych oraz innych narzędzi systemu, które są niezbędne dla prawidłowego działania komputera. Zainstaluj aktualizacje, aby zapewnić optymalną wydajność działania komputera.",
             "installAllUpdates": "Zainstaluj wszystkie aktualizacje",
             "installSuccessHeader": "Wszystkie aktualizacje zostały poprawnie zainstalowane",
             "installFailHeader": "Niektóre aktualizacje nie zostały zainstalowane poprawnie",
             "installFailDescription": "Wystąpił błąd podczas pobierania i instalowania aktualizacji. Upewnij się, że masz dostęp do internetu i nie wyłączaj komputera podczas instalowania aktualizacji.",
             "optionalUpdates": "Opcjonalne aktualizacje",
             "installSelectedUpdates": "Zainstaluj wybrane aktualizacje",
-            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
-            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
-            "optionalUpdatesDescription": "Keep your computer up-to-date"
+            "criticalUpdatesDescription": "Zapobiegaj poważnym problemom, nieprawidłowemu działaniu, awariom sprzętu i uszkodzeniu danych",
+            "recommendedUpdatesDescription": "Zadbaj o optymalną wydajność działania komputera",
+            "optionalUpdatesDescription": "Regularnie aktualizuj swój komputer"
         },
         "installationHistory": {
             "name": "Nazwa",

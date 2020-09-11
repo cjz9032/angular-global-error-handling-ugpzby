@@ -2240,11 +2240,11 @@
             "rebootForceMsg": "Het systeem wordt automatisch opnieuw opgestart nadat degeselecteerde update(s) zijn geïnstalleerd.",
             "shutdownForceMsg": "Het systeem wordt automatisch afgesloten nadat degeselecteerde update(s) zijn geïnstalleerd.",
             "rebootDelayedMsg": "De update(s) die u hebt geselecteerd, zorgen dat het systeem opnieuw opgestart wordt na de installatie.Schakel tijdens de installatie van updates uw systeem niet uit en verwijder de voedingsbron of accessoires niet. We raden u aan uw werk op te slaan voordat u het systeem opnieuw opstart.",
-            "rebootRequiredMsg": "Om de updates te kunnen installeren, moet de computeropnieuw worden opgestart om te zorgen dat alles veilig en probleemloos werkt.",
+            "rebootRequiredMsg": "Start de computer opnieuw op om de recent geïnstalleerde pakketten van kracht te laten worden.",
             "okayButton": "OK",
             "cancelButton": "Annuleren",
             "rebootButton": "NU OPNIEUW OPSTARTEN",
-            "dismissButton": "NEGEREN",
+            "dismissButton": "LATER OPSTARTEN",
             "rebootPending": "Opnieuw opstarten in behandeling"
         },
         "autoUpdateSettings": {
@@ -2267,7 +2267,7 @@
             "title": "Ondersteuningswebsite van Lenovo"
         },
         "security": {
-            "title": "For a better protection for your device"
+            "title": "Om uw apparaat beter te beschermen"
         },
         "banner": {
             "neverChecked": "Welkom bij het gebruik van Systeemupdate.",
@@ -2276,8 +2276,8 @@
             "last": "Laatst bijgewerkt: ",
             "next": "Volgende geplande update: ",
             "checkButton": "CONTROLEREN OP UPDATES",
-            "checkAgain": "Check Again",
-            "updateNow": "Update Now",
+            "checkAgain": "Opn. controleren",
+            "updateNow": "Nu bijwerken",
             "checking": "Zoeken naar updates",
             "downloading": "Updates downloaden voltooid",
             "installing": "Updates installeren",
@@ -2312,16 +2312,16 @@
         },
         "availableUpdates": {
             "title": "Beschikbare updates",
-            "description": "Deze pakketten bevatten updates die essentieel zijn voor de juiste werking van uw computer. Essentiële updates zorgen ervoor dat uw computer veiliger en betrouwbaarder blijft; ze moeten worden geïnstalleerd zodra ze beschikbaar zijn. Aanbevolen updates en optionele updates zorgen ervoor dat uw software up-to-date blijft en dat de computer optimaal werkt.",
+            "description": "Dit zijn pakketten met updates van stuurprogramma's en andere systeemprogramma's die onmisbaar zijn voor een juiste werking van uw computer. Installeer de updates om uw computer optimaal te laten functioneren.",
             "installAllUpdates": "Alle updates installeren",
             "installSuccessHeader": "Alle updates zijn juist geïnstalleerd",
             "installFailHeader": "Enkele updates zijn niet juist geïnstalleerd",
             "installFailDescription": "Er is iets misgegaan tijdens het downloaden en installeren van deze updates. Zorg dat u online bent en zet de computer niet uit wanneer u updates installeert.",
             "optionalUpdates": "Optionele updates",
             "installSelectedUpdates": "Geselecteerd updates installeren",
-            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
-            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
-            "optionalUpdatesDescription": "Keep your computer up-to-date"
+            "criticalUpdatesDescription": "Voorkom ernstige problemen, storingen, hardwaredefecten of beschadiging van uw gegevens",
+            "recommendedUpdatesDescription": "Zorg ervoor dat uw computer optimaal blijft functioneren",
+            "optionalUpdatesDescription": "Houd de computer up-to-date"
         },
         "installationHistory": {
             "name": "Naam",

@@ -2240,11 +2240,11 @@
             "rebootForceMsg": "Las actualizaciones seleccionadas causarán que el sistema rearranque automáticamentedespués de la instalación.",
             "shutdownForceMsg": "Las actualizaciones seleccionadas causarán que el sistema se apagueautomáticamente después de la instalación.",
             "rebootDelayedMsg": "Las actualizaciones seleccionadas causarán que el sistema se reinicie después de la instalación. No apague el sistema ni extraiga la fuente de alimentación o los accesoriosdurante la instalación de las actualizaciones. Le recomendamos guardar su trabajo para prepararse para el reinicio del sistema.",
-            "rebootRequiredMsg": "Para poder instalar satisfactoriamente las actualizaciones, es necesarioreiniciar el sistema para garantizar que todo funcione correctamente.",
+            "rebootRequiredMsg": "Debe reiniciar el sistema para que los paquetes recién instalados entren en vigor.",
             "okayButton": "Aceptar",
             "cancelButton": "Cancelar",
             "rebootButton": "REINICIAR AHORA",
-            "dismissButton": "DESCARTAR",
+            "dismissButton": "REINI. MÁS TARDE",
             "rebootPending": "Reinicio pendiente"
         },
         "autoUpdateSettings": {
@@ -2267,7 +2267,7 @@
             "title": "Sitio Web de Soporte de Lenovo"
         },
         "security": {
-            "title": "For a better protection for your device"
+            "title": "Para una mejor protección del dispositivo"
         },
         "banner": {
             "neverChecked": "Bienvenido al uso de Actualización de sistema.",
@@ -2276,8 +2276,8 @@
             "last": "Última actualización: ",
             "next": "Siguiente actualización programada: ",
             "checkButton": "COMPROBAR ACTUALIZACIONES",
-            "checkAgain": "Check Again",
-            "updateNow": "Update Now",
+            "checkAgain": "Volver a comp.",
+            "updateNow": "Actual. ahora",
             "checking": "Comprobando si hay actualizaciones",
             "downloading": "Descarga de actualizaciones completa",
             "installing": "Instalación de actualizaciones",
@@ -2311,17 +2311,17 @@
             "dependedPackage": "Paquete de dependencias"
         },
         "availableUpdates": {
-            "title": "Actualizaciones disponibles",
-            "description": "Estos paquetes incluyen actualizaciones importantes para el funcionamiento correcto del sistema. Las actualizaciones críticas ayudan a mantener su sistema más seguro y fiable y se deben instalar a medida que estén disponibles. Las actualizaciones recomendadas y las actualizaciones opcionales ayudan a mantener el software actualizado y a que el sistema a funcione mejor.",
+            "title": "Actual. disp. encontradas",
+            "description": "Estos paquetes incluyen actualizaciones de controladores de hardware y otros programas de utilidad del sistema que son críticas para el correcto funcionamiento del equipo. Instale las actualizaciones para que su sistema esté funcionando a su máxima capacidad.",
             "installAllUpdates": "Instalar todas las actualizaciones",
             "installSuccessHeader": "Todas las actualizaciones se instalaron correctamente",
             "installFailHeader": "Algunas actualizaciones no se instalaron correctamente",
             "installFailDescription": "Algo salió mal durante la descarga e instalación de estas actualizaciones. Asegúrese de que el sistema esté en línea y no apague el sistema cuando instale actualizaciones.",
             "optionalUpdates": "Actualizaciones opcionales",
             "installSelectedUpdates": "Instalar actualizaciones seleccionadas",
-            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
-            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
-            "optionalUpdatesDescription": "Keep your computer up-to-date"
+            "criticalUpdatesDescription": "Evite problemas graves, mal funcionamiento, fallas de hardware o corrupción de datos",
+            "recommendedUpdatesDescription": "Mantenga el equipo funcionando con un rendimiento óptimo",
+            "optionalUpdatesDescription": "Mantenga el sistema actualizado"
         },
         "installationHistory": {
             "name": "Nombre",

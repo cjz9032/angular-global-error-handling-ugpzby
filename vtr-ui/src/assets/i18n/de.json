@@ -2240,11 +2240,11 @@
             "rebootForceMsg": "Nach der Installation der von Ihnen ausgewählten Aktualisierungenwird das System automatisch neu gestartet.",
             "shutdownForceMsg": "Nach der Installation der von Ihnen ausgewählten Aktualisierungenwird das System automatisch heruntergefahren.",
             "rebootDelayedMsg": "Nach der Installation der von Ihnen ausgewählten Updates startet das System neu.Während der Installation von Updates dürfen Sie das System nicht ausschalten, es nicht von der Stromquelle trennen und kein Zubehör entfernen. Wir empfehlen, alle geöffneten Dokumente vorsichtshalber zu speichern.",
-            "rebootRequiredMsg": "Zur erfolgreichen Installation der Updates muss der Computer neu starten,damit alles sicher und stabil läuft.",
+            "rebootRequiredMsg": "Sie müssen Ihren Computer neu starten, damit die zuletzt installierten Pakete wirksam werden.",
             "okayButton": "OK",
             "cancelButton": "Abbrechen",
             "rebootButton": "JETZT NEU STARTEN",
-            "dismissButton": "VERWERFEN",
+            "dismissButton": "SPÄTER NEU STARTEN",
             "rebootPending": "Neustart ausstehend"
         },
         "autoUpdateSettings": {
@@ -2267,7 +2267,7 @@
             "title": "Lenovo Support-Website"
         },
         "security": {
-            "title": "For a better protection for your device"
+            "title": "Besserer Schutz für Ihre Einheit"
         },
         "banner": {
             "neverChecked": "Willkommen bei der Systemaktualisierung.",
@@ -2276,8 +2276,8 @@
             "last": "Letzte Aktualisierung: ",
             "next": "Nächste geplante Aktualisierung: ",
             "checkButton": "AUF UPDATES PRÜFEN",
-            "checkAgain": "Check Again",
-            "updateNow": "Update Now",
+            "checkAgain": "Erneut prüfen",
+            "updateNow": "Jetzt aktualisieren",
             "checking": "Es wird nach Aktualisierungen gesucht",
             "downloading": "Herunterladen von Updates abgeschlossen",
             "installing": "Updates werden installiert",
@@ -2311,17 +2311,17 @@
             "dependedPackage": "Abhängigkeitspaket"
         },
         "availableUpdates": {
-            "title": "Verfügbare Updates",
-            "description": "Diese Pakete enthalten Aktualisierungen, die für den korrekten Betrieb Ihres Computers entscheidend sind. Kritische Updates helfen, Ihren Computer sicherer und zuverlässiger zu machen, und sollten installiert werden, sobald sie verfügbar sind. Empfohlene und optionale Aktualisierungen halten Ihre Software auf dem neuesten Stand und helfen Ihnen, den Computer optimal zu betreiben.",
+            "title": "Aktualisierungen verfügbar",
+            "description": "Diese Pakete enthalten Aktualisierungen für Hardwaretreiber und andere Systemdienstprogramme, die für den ordnungsgemäßen Betrieb des Computers wichtig sind. Installieren Sie die Aktualisierungen, damit Ihr Computer optimale Leistung bietet.",
             "installAllUpdates": "Alle Updates installieren",
             "installSuccessHeader": "Alle Updates wurden ordnungsgemäß installiert",
             "installFailHeader": "Einige Aktualisierungen wurden nicht ordnungsgemäß installiert",
             "installFailDescription": "Beim Herunterladen und Installieren dieser Updates ist etwas schief gelaufen. Bitte stellen Sie sicher, dass Sie online sind, und schalten Sie Ihren Computer nicht aus, wenn Sie Updates installieren.",
             "optionalUpdates": "Optionale Aktualisierungen",
             "installSelectedUpdates": "Ausgewählte Updates installieren",
-            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
-            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
-            "optionalUpdatesDescription": "Keep your computer up-to-date"
+            "criticalUpdatesDescription": "Schwerwiegende Probleme, Fehlfunktionen, Hardwarefehler oder Datenbeschädigung vermeiden",
+            "recommendedUpdatesDescription": "Optimale Leistung für Ihren Computer sicherstellen",
+            "optionalUpdatesDescription": "Computer auf dem aktuellen Stand halten"
         },
         "installationHistory": {
             "name": "Name",

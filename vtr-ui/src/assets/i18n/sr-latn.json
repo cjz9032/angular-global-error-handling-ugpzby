@@ -2240,11 +2240,11 @@
             "rebootForceMsg": "Ažuriranja koja ste izabrali će dovesti do automatskog ponovnog pokretanja sistemanakon instalacije.",
             "shutdownForceMsg": "Ažuriranja koja ste izabrali će dovesti do automatskog isključivanjanakon instalacije.",
             "rebootDelayedMsg": "Zbog ažuriranja koja ste izabrali, sistem će se ponovo pokrenuti nakon instalacije.Tokom instalacije ažuriranja, nemojte da isključujete sistem, uklanjate izvor napajanja ili pribor. Preporučujemo vam da kao pripremu za ponovno pokretanje sistema sačuvate posao.",
-            "rebootRequiredMsg": "Da biste uspešno instalirali ažuriranja, potrebno je ponovo pokrenuti računar kako biste osigurali da sve radi besprekorno i bezbedno.",
+            "rebootRequiredMsg": "Potrebno je da ponovo pokrenete računar da bi nedavno instalirani paketi stupili na snagu.",
             "okayButton": "U redu",
             "cancelButton": "Otkaži",
             "rebootButton": "PONOVO POKRENI SADA",
-            "dismissButton": "ODBACI",
+            "dismissButton": "PONOVO POKRENI KASNIJE",
             "rebootPending": "Ponovno pokretanje je na čekanju"
         },
         "autoUpdateSettings": {
@@ -2267,7 +2267,7 @@
             "title": "Veb lokacija Lenovo podrška"
         },
         "security": {
-            "title": "For a better protection for your device"
+            "title": "Radi bolje zaštite uređaja"
         },
         "banner": {
             "neverChecked": "Dobro došli u Ažuriranje sistema.",
@@ -2276,8 +2276,8 @@
             "last": "Poslednji put ažurirano: ",
             "next": "Sledeće planirano ažuriranje: ",
             "checkButton": "PROVERI DA LI POSTOJE ISPRAVKE",
-            "checkAgain": "Check Again",
-            "updateNow": "Update Now",
+            "checkAgain": "Proverite ponovo",
+            "updateNow": "Ažurirajte sada",
             "checking": "Traženje ažuriranja",
             "downloading": "Preuzimanje ažuriranja je završeno",
             "installing": "Instaliranje ažuriranja",
@@ -2311,17 +2311,17 @@
             "dependedPackage": "Zavisni paket"
         },
         "availableUpdates": {
-            "title": "Dostupna ažuriranja",
-            "description": "Ovi paketi obuhvataju ažuriranja koja su kritična za ispravan rad vašeg računara. Kritična ažuriranja pomažu da vaš računar bude bezbedniji i pouzdaniji i trebalo bi ih instalirati čim budu dostupna. Preporučena i opciona ažuriranja vam pomažu da softver ostane ažuran i da računar radi na najbolji mogući način.",
+            "title": "Pronađene su dostupne ispravke",
+            "description": "Ovi paketi obuhvataju ispravke za upravljačke programe hardvera i druge sistemske uslužne programe koji su od kritične važnosti za pravilan rad računara. Instalirajte ispravke da bi računar radio najbolje moguće.",
             "installAllUpdates": "Instaliraj sva ažuriranja",
             "installSuccessHeader": "Sva ažuriranja su ispravno instalirana",
             "installFailHeader": "Neka ažuriranja nisu ispravno instalirana",
             "installFailDescription": "Nešto je krenulo naopako tokom preuzimanja i instalacije ovih ažuriranja. Uverite se da ste na mreži i ne isključujte računar tokom instaliranja ažuriranja.",
             "optionalUpdates": "Opcionalna ažuriranja",
             "installSelectedUpdates": "Instaliraj izabrana ažuriranja",
-            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
-            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
-            "optionalUpdatesDescription": "Keep your computer up-to-date"
+            "criticalUpdatesDescription": "Sprečavanje ozbiljnih problema, kvarova, otkazivanja hardvera ili oštećenja podataka",
+            "recommendedUpdatesDescription": "Održavajte rad računara sa optimalnim performansama",
+            "optionalUpdatesDescription": "Održavajte sistem ažurnim"
         },
         "installationHistory": {
             "name": "Ime",

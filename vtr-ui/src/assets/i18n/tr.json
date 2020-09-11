@@ -2240,11 +2240,11 @@
             "rebootForceMsg": "Seçtiğiniz güncellemelerin kurulumundan sonra sistem otomatik olarak yenidenyüklenecektir.",
             "shutdownForceMsg": "Seçtiğiniz güncellemelerin kurulumundan sonra sistem otomatikolarak kapanacaktır.",
             "rebootDelayedMsg": "Seçtiğiniz güncellemelerin kurulumundan sonra sistem yeniden yüklenecektir.Güncellemelerin kurulumu sırasında lütfen sisteminizi kapatmayın, güç kaynağını veya aksesuarları çıkarmayın. Sisteminizi yeniden yüklemeye hazırlanmak için çalışmanızı kaydetmenizi öneririz.",
-            "rebootRequiredMsg": "Güncellemelerin başarıyla yüklenmesi için sistemin yeniden yüklenipher şeyin güvenli ve sorunsuz bir şekilde çalıştığından emin olunması gerekir.",
+            "rebootRequiredMsg": "Yakın zamanda yüklediğiniz paketlerin geçerli hale gelmesi için bilgisayarınızı yeniden başlatmanız gerekiyor.",
             "okayButton": "TAMAM",
             "cancelButton": "İptal",
             "rebootButton": "ŞİMDİ YENİDEN YÜKLE",
-            "dismissButton": "İPTAL ET",
+            "dismissButton": "DAHA SONRA BAŞLAT",
             "rebootPending": "Yeniden yükleme bekletiliyor"
         },
         "autoUpdateSettings": {
@@ -2267,7 +2267,7 @@
             "title": "Lenovo Destek web sitesi"
         },
         "security": {
-            "title": "For a better protection for your device"
+            "title": "Cihazınızın daha iyi korunması için"
         },
         "banner": {
             "neverChecked": "Sistem Güncellemesi'ne hoş geldiniz.",
@@ -2276,8 +2276,8 @@
             "last": "Son güncelleme: ",
             "next": "Sonraki zamanlanmış güncelleme: ",
             "checkButton": "GÜNCELLEMELERİ DENETLE",
-            "checkAgain": "Check Again",
-            "updateNow": "Update Now",
+            "checkAgain": "Tekrar Kontrol Et",
+            "updateNow": "Şimdi Güncelle",
             "checking": "Güncellemeler denetleniyor",
             "downloading": "Güncellemelerin indirilmesi tamamlandı",
             "installing": "Güncellemeler yükleniyor",
@@ -2311,17 +2311,17 @@
             "dependedPackage": "Bağımlı Paket"
         },
         "availableUpdates": {
-            "title": "Mevcut güncellemeler",
-            "description": "Bu paketler, bilgisayarınızın doğru çalışması için kritik olan güncellemeler içerir. Kritik güncellemeler, bilgisayarınızın daha güvenli ve güvenilir kalmasına yardımcı olur ve yayınlandıklarında yüklenmeleri gerekir. Önerilen güncellemeler ve isteğe bağlı güncellemeler, yazılımınızın güncel kalmasına ve bilgisayarınızın en iyi şekilde çalışmasına yardımcı olur.",
+            "title": "Yeni güncellemeler var",
+            "description": "Bu paketler, bilgisayarınızın doğru şekilde çalışması için kritik önem taşıyan donanım sürücülerine ve diğer sistem yardımcı programlarına ilişkin güncellemeleri içerir. Bilgisayarınızın en iyi şekilde çalışmasını sağlamak için lütfen güncellemeleri yükleyin.",
             "installAllUpdates": "Tüm güncellemeleri yükle",
             "installSuccessHeader": "Tüm güncellemeler doğru bir şekilde yüklendi",
             "installFailHeader": "Bazı güncellemeler doğru bir şekilde yüklenmedi",
             "installFailDescription": "Bu güncellemeleri indirme ve yükleme işlemi sırasında bir sorun oluştu. Lütfen güncellemeleri yüklerken çevrimiçi olduğunuzdan emin olun ve bilgisayarınızı kapatmayın.",
             "optionalUpdates": "İsteğe bağlı güncellemeler",
             "installSelectedUpdates": "Seçili güncellemeleri yükle",
-            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
-            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
-            "optionalUpdatesDescription": "Keep your computer up-to-date"
+            "criticalUpdatesDescription": "Ciddi sorunları, hataları, donanım arızalarını veya veri bozulmalarını önleyin",
+            "recommendedUpdatesDescription": "Bilgisayarınızın en iyi performansla çalışmasını sağlayın",
+            "optionalUpdatesDescription": "Bilgisayarınızı güncel tutun"
         },
         "installationHistory": {
             "name": "Ad",

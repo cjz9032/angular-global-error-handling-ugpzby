@@ -2240,11 +2240,11 @@
             "rebootForceMsg": "העדכונים שנבחרו יגרמו להפעלה מחדש של המערכת באופן אוטומטילאחר ההתקנה.",
             "shutdownForceMsg": "העדכונים שנבחרו יגרמו לכיבוי המערכתבאופן אוטומטי לאחר ההתקנה.",
             "rebootDelayedMsg": "העדכונים שבחרתם יגרמו לאתחול מחדש של המערכת לאחר ההתקנה,במהלך התקנת העדכונים, נא לא לכבות את המערכת ולא להסיר את מקור המתח או עזרים אחרים. אנו ממליצים לשמור על העבודה שלכם לפני אתחול המערכת.",
-            "rebootRequiredMsg": "כדי להתקין בהצלחה את העדכונים, נדרשתהפעלה מחדש של המחשב כדי לוודא שהכל פועל בצורה בטוחה וחלקה.",
+            "rebootRequiredMsg": "יש להפעיל מחדש את המחשב כדי שהחבילות שהותקנו לאחרונה ייכנסו לתוקף.",
             "okayButton": "אישור",
             "cancelButton": "ביטול",
             "rebootButton": "הפעל מחדש כעת",
-            "dismissButton": "התעלמות",
+            "dismissButton": "הפעלה מחדש מאוחר יותר",
             "rebootPending": "הפעלה מחדש בהמתנה"
         },
         "autoUpdateSettings": {
@@ -2267,7 +2267,7 @@
             "title": "אתר התמיכה של Lenovo"
         },
         "security": {
-            "title": "For a better protection for your device"
+            "title": "להגנה טובה יותר של המכשיר"
         },
         "banner": {
             "neverChecked": "ברוכים הבאים לשימוש ב'עדכון המערכת'.",
@@ -2276,8 +2276,8 @@
             "last": "עודכן לאחרונה: ",
             "next": "העדכון המתוכנן הבא: ",
             "checkButton": "חיפוש עדכונים",
-            "checkAgain": "Check Again",
-            "updateNow": "Update Now",
+            "checkAgain": "בדיקה נוספת",
+            "updateNow": "עדכון כעת",
             "checking": "חיפוש עדכונים",
             "downloading": "הורדת העדכונים הושלמה",
             "installing": "מתקין עדכונים",
@@ -2311,17 +2311,17 @@
             "dependedPackage": "חבילה תלויה"
         },
         "availableUpdates": {
-            "title": "עדכונים זמינים",
-            "description": "חבילות אלה כוללות עדכונים החיוניים לפעולתו התקינה של המחשב. עדכונים קריטיים עוזרים לשמור על המחשב מאובטח ואמין יותר, ויש להתקינם מייד כאשר הם נעשים זמינים. עדכונים מומלצים ועדכונים אופציונליים עוזרים לשמור על עדכניות התוכנה, והמחשב פועל במיטבו.",
+            "title": "נמצאו עדכונים זמינים",
+            "description": "חבילות אלו כוללות עדכוני מנהלי התקנים של חומרה וכלי מערכת אחרים החיוניים לפעולתו התקינה של המחשב. התקינו את העדכונים כדי שהמחשב יפעל במיטבו.",
             "installAllUpdates": "התקנת כל העדכונים",
             "installSuccessHeader": "כל העדכונים הותקנו כראוי",
             "installFailHeader": "עדכונים מסוימים לא הותקנו כראוי",
             "installFailDescription": "משהו השתבש במהלך ההורדה וההתקנה של עדכונים אלה. ודאו שאתם נמצאים במצב מקוון ואל תכבו את המחשב בעת התקנת העדכונים.",
             "optionalUpdates": "עדכונים אופציונליים",
             "installSelectedUpdates": "התקנת עדכונים שנבחרו",
-            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
-            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
-            "optionalUpdatesDescription": "Keep your computer up-to-date"
+            "criticalUpdatesDescription": "מנעו בעיות מהותיות, תקלות רציניות, כשלים בחומרה או פגיעה בנתונים",
+            "recommendedUpdatesDescription": "שמרו על ביצועים אופטימליים של המחשב",
+            "optionalUpdatesDescription": "שמרו על המחשב מעודכן"
         },
         "installationHistory": {
             "name": "שם",

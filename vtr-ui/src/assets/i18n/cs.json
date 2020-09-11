@@ -2240,11 +2240,11 @@
             "rebootForceMsg": "Po instalaci vybraných aktualizací bude systém automatickyrestartován.",
             "shutdownForceMsg": "Po instalaci vybraných aktualizací se systém automatickyvypne.",
             "rebootDelayedMsg": "Po instalaci vybraných aktualizací se restartuje systém. Během instalaceaktualizací systém nevypínejte ani neodpojujte zdroj napájení ani příslušenství.Během přípravy na restartování systému doporučujeme uložit si rozpracovanou práci.",
-            "rebootRequiredMsg": "Aby bylo možné ve vašem počítači úspěšně nainstalovat aktualizace, počítačje třeba restartovat, aby byl zajištěn jeho bezpečný a hladký chod.",
+            "rebootRequiredMsg": "Změny v nově nainstalovaných balíčcích se projeví až po restartování počítače.",
             "okayButton": "OK",
             "cancelButton": "Storno",
             "rebootButton": "RESTARTOVAT NYNÍ",
-            "dismissButton": "ZRUŠIT",
+            "dismissButton": "RESTART POZDĚJI",
             "rebootPending": "Chystá se restart počítače"
         },
         "autoUpdateSettings": {
@@ -2267,7 +2267,7 @@
             "title": "Webová stránka podpory Lenovo"
         },
         "security": {
-            "title": "For a better protection for your device"
+            "title": "Kvůli lepší ochraně vašeho zařízení"
         },
         "banner": {
             "neverChecked": "Vítejte při použití Aktualizace systému.",
@@ -2276,8 +2276,8 @@
             "last": "Poslední aktualizace: ",
             "next": "Příští plánovaná aktualizace: ",
             "checkButton": "ZKONTROLOVAT AKTUALIZACE",
-            "checkAgain": "Check Again",
-            "updateNow": "Update Now",
+            "checkAgain": "Znovu zkontrolovat",
+            "updateNow": "Aktualizovat",
             "checking": "Kontrola aktualizací",
             "downloading": "Stahování aktualizací je dokončeno",
             "installing": "Probíhá instalace aktualizací",
@@ -2311,17 +2311,17 @@
             "dependedPackage": "Závislý balíček"
         },
         "availableUpdates": {
-            "title": "Dostupné aktualizace",
-            "description": "Tyto balíčky obsahují aktualizace, které jsou kriticky důležité pro správnou činnost počítače. Kriticky důležité aktualizace pomáhají uchovat počítač bezpečnějším a spolehlivějším a měly by být nainstalovány, jakmile budou k dispozici. Doporučené aktualizace a volitelné aktualizace pomáhají udržovat software v aktuálním stavu a maximálně využívat počítač.",
+            "title": "Nalezeny dostupné aktualizace",
+            "description": "Tyto balíčky obsahují aktualizace ovladačů hardwaru a ostatních systémových nástrojů, které jsou nezbytné pro správné fungování vašeho počítače. Nainstalováním aktualizací zajistíte, že váš počítač bude fungoval co nejlépe.",
             "installAllUpdates": "Nainstalovat všechny aktualizace",
             "installSuccessHeader": "Všechny aktualizace byly nainstalovány správně",
             "installFailHeader": "Některé aktualizace nebyly nainstalovány správně",
             "installFailDescription": "Během stahování a instalace těchto aktualizací se něco pokazilo. Ujistěte se, že jste online, a při instalaci aktualizací nevypínejte počítač.",
             "optionalUpdates": "Volitelné aktualizace",
             "installSelectedUpdates": "Nainstalovat vybrané aktualizace",
-            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
-            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
-            "optionalUpdatesDescription": "Keep your computer up-to-date"
+            "criticalUpdatesDescription": "Zabraňte závažným problémům, poruchám, selhání hardwaru nebo poškození dat",
+            "recommendedUpdatesDescription": "Zajistěte optimální výkon vašeho počítače",
+            "optionalUpdatesDescription": "Udržujte svůj počítač vždy aktuální"
         },
         "installationHistory": {
             "name": "Název",

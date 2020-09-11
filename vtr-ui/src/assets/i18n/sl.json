@@ -2240,11 +2240,11 @@
             "rebootForceMsg": "Posodobitve, ki ste jih izbrali, bodo povzročile samodejni ponovni zagon sistemapo namestitvi.",
             "shutdownForceMsg": "Posodobitve, ki ste jih izbrali, bodo povzročilesamodejno zaustavitev sistema po namestitvi.",
             "rebootDelayedMsg": "Izbrane posodobitve bodo povzročile ponovni zagon sistema po namestitvi,zato med nastavitvijo posodobitev ne izklapljajte sistema in ne odstranjujte vira napajanja ali dodatne opreme. Priporočamo, da shranite delo v pripravi na ponovni zagon sistema:",
-            "rebootRequiredMsg": "Če želite uspešno namestiti posodobitve, morate znova zagnatiračunalnik, da zagotovite, da se vse deluje varno in brez težav.",
+            "rebootRequiredMsg": "Če želite uveljaviti nedavno nameščene pakete, morate znova zagnati računalnik.",
             "okayButton": "V redu",
             "cancelButton": "Prekliči",
             "rebootButton": "ZNOVA ZAŽENI ZDAJ",
-            "dismissButton": "OPUSTI",
+            "dismissButton": "ZNOVA ZAŽENI POZNEJE",
             "rebootPending": "Vnovičen zagon čaka"
         },
         "autoUpdateSettings": {
@@ -2267,7 +2267,7 @@
             "title": "Spletno mesto za podporo Lenovo"
         },
         "security": {
-            "title": "For a better protection for your device"
+            "title": "Za boljšo zaščito naprave"
         },
         "banner": {
             "neverChecked": "Uporabite posodobitev sistema.",
@@ -2276,8 +2276,8 @@
             "last": "Zadnja posodobitev: ",
             "next": "Naslednja načrtovana posodobitev: ",
             "checkButton": "ISKANJE POSODOBITEV",
-            "checkAgain": "Check Again",
-            "updateNow": "Update Now",
+            "checkAgain": "Preveri znova",
+            "updateNow": "Posodobi zdaj",
             "checking": "Preverite, ali so na voljo posodobitve",
             "downloading": "Prenos posodobitev je končan",
             "installing": "Nameščanje posodobitev",
@@ -2311,17 +2311,17 @@
             "dependedPackage": "Odvisen paket"
         },
         "availableUpdates": {
-            "title": "Razpoložljive posodobitve",
-            "description": "Ti paketi vključujejo posodobitve, ki so ključne za pravilno delovanje računalnika. Pomembne posodobitve pomagajo ohranjati vaš računalnik varnejši in zanesljivejši ter jih morate namestiti, ko so na voljo. Priporočene posodobitve in izbirne posodobitve pomagajo, da je vaša programska oprema posodobljena, računalnik pa deluje v najboljšem stanju.",
+            "title": "Najdene so posodobitve",
+            "description": "Ti paketi vključujejo posodobitve gonilnikov strojne opreme in druge sistemske pripomočke, ki so ključnega pomena za pravilno delovanje računalnika. Namestite posodobitve, da bo računalnik še naprej deloval optimalno.",
             "installAllUpdates": "Namestitev vseh posodobitev",
             "installSuccessHeader": "Vse posodobitve so bile pravilno nameščene",
             "installFailHeader": "Nekatere posodobitve niso bile pravilno nameščene",
             "installFailDescription": "Med prenosom in namestitvijo teh posodobitev je prišlo do napake. Poskrbite, da imate vzpostavljeno povezavo in ne izklopite računalnika med nameščanjem posodobitev.",
             "optionalUpdates": "Izbirne posodobitve",
             "installSelectedUpdates": "Namestitev izbranih posodobitev",
-            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
-            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
-            "optionalUpdatesDescription": "Keep your computer up-to-date"
+            "criticalUpdatesDescription": "Preprečite resne težave, napake, okvare strojne opreme ali poškodbe podatkov",
+            "recommendedUpdatesDescription": "Poskrbite, da bo računalnik še naprej deloval optimalno",
+            "optionalUpdatesDescription": "Redno posodabljajte računalnik"
         },
         "installationHistory": {
             "name": "Ime",

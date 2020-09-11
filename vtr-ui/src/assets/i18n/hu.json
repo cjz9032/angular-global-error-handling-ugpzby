@@ -2240,11 +2240,11 @@
             "rebootForceMsg": "A kijelölt frissítés(ek) aktiválásához a rendszer a telepítés utánautomatikusan újraindul.",
             "shutdownForceMsg": "A kijelölt frissítés(ek) aktiválásához a rendszer a telepítés utánautomatikusan leáll.",
             "rebootDelayedMsg": "A kiválasztott frissítések telepítése után a rendszer újraindul.A frissítések telepítése során ne kapcsolja ki a gépet, és ne távolítsa el az áramforrást vagy a tartozékokat. Javasoljuk, hogy készüljön fel a rendszer leállására, és mentse a munkáját.",
-            "rebootRequiredMsg": "A frissítések sikeres telepítéséhezújra kell indítani a számítógépet; így meggyőződhet róla, hogy minden biztonságosan és megfelelően működik.",
+            "rebootRequiredMsg": "A közelmúltban telepített csomagok életbe léptetéséhez újra kell indítania a számítógépet.",
             "okayButton": "OK",
             "cancelButton": "Mégse",
             "rebootButton": "ÚJRAINDÍTÁS MOST",
-            "dismissButton": "ELVETÉS",
+            "dismissButton": "ÚJRAINDÍTÁS KÉSŐBB",
             "rebootPending": "Az újraindítás függőben van"
         },
         "autoUpdateSettings": {
@@ -2267,7 +2267,7 @@
             "title": "A Lenovo támogatási weboldala"
         },
         "security": {
-            "title": "For a better protection for your device"
+            "title": "A készülék hatékonyabb védelme érdekében"
         },
         "banner": {
             "neverChecked": "Üdvözöljük a Rendszerfrissítés szolgáltatásban!",
@@ -2276,8 +2276,8 @@
             "last": "Utolsó frissítés: ",
             "next": "Következő ütemezett frissítés: ",
             "checkButton": "FRISSÍTÉSEK KERESÉSE",
-            "checkAgain": "Check Again",
-            "updateNow": "Update Now",
+            "checkAgain": "Ellenőrzés ismét",
+            "updateNow": "Frissítés most",
             "checking": "Frissítések keresése",
             "downloading": "A frissítések letöltve",
             "installing": "Frissítések telepítése",
@@ -2311,17 +2311,17 @@
             "dependedPackage": "Előfeltételtől függő csomag"
         },
         "availableUpdates": {
-            "title": "Elérhető frissítések",
-            "description": "Ezek a csomagok olyan frissítéseket tartalmaznak, amelyek kritikus fontosságúak a számítógép megfelelő működéséhez. A kritikus frissítések biztonságosabbá és megbízhatóbbá teszik a számítógépet, és telepíteni kell őket, amint elérhetővé válnak. Az ajánlott frissítések és a választható frissítések segítenek a szoftver naprakészen tartásában és a számítógép optimális működésének fenntartásában.",
+            "title": "Frissítések érhetők el",
+            "description": "Ezek a csomagok olyan hardverillesztőkhöz és egyéb rendszereszközökhöz tartozó frissítéseket tartalmaznak, amelyek kritikus fontosságúak a számítógép megfelelő működéséhez. Telepítse a frissítéseket, hogy csúcsteljesítményen tartsa a számítógépét.",
             "installAllUpdates": "Minden frissítés telepítése",
             "installSuccessHeader": "Minden frissítés megfelelően települt",
             "installFailHeader": "Egyes frissítések nem települtek megfelelően",
             "installFailDescription": "Hiba történt ezeknek a frissítéseknek a letöltése és telepítése során. Ellenőrizze az internetkapcsolatot, és a frissítések telepítése alatt ne kapcsolja ki a számítógépet.",
             "optionalUpdates": "Választható frissítések",
             "installSelectedUpdates": "Kijelölt frissítések telepítése",
-            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
-            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
-            "optionalUpdatesDescription": "Keep your computer up-to-date"
+            "criticalUpdatesDescription": "Súlyos problémák, meghibásodások, hardverhibák és adatsérülések megelőzése",
+            "recommendedUpdatesDescription": "A számítógép optimális teljesítményének fenntartása",
+            "optionalUpdatesDescription": "A számítógép naprakészen tartása"
         },
         "installationHistory": {
             "name": "Név",

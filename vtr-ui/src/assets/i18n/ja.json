@@ -2240,7 +2240,7 @@
             "rebootForceMsg": "選択した更新は、インストール後にシステムを自動的に再起動します。",
             "shutdownForceMsg": "選択した更新は、インストール後にシステムを自動的にシャットダウンします。",
             "rebootDelayedMsg": "選択した更新によって、インストール後、更新のインストール中にシステムが再起動されます。システムの電源を切ったり、電源やアクセサリを取り外したりしないでください。システムの再起動に備えて作業を保存しておくことをお勧めします。",
-            "rebootRequiredMsg": "重要な更新プログラムのインストールを完了するためにコンピューターを再起動してください。",
+            "rebootRequiredMsg": "最近インストールしたパッケージを有効にするには、コンピューターを再起動する必要があります。",
             "okayButton": "OK",
             "cancelButton": "キャンセル",
             "rebootButton": "今すぐ再起動",
@@ -2267,7 +2267,7 @@
             "title": "Lenovo サポート Web サイト"
         },
         "security": {
-            "title": "For a better protection for your device"
+            "title": "デバイスの保護を強化"
         },
         "banner": {
             "neverChecked": "システム アップデートへようこそ。",
@@ -2276,8 +2276,8 @@
             "last": "最終更新日:",
             "next": "次回の更新スケジュール:",
             "checkButton": "更新の確認",
-            "checkAgain": "Check Again",
-            "updateNow": "Update Now",
+            "checkAgain": "再度確認する",
+            "updateNow": "今すぐ更新",
             "checking": "更新を確認しています",
             "downloading": "更新のダウンロード状況",
             "installing": "更新をインストールしています",
@@ -2311,17 +2311,17 @@
             "dependedPackage": "依存パッケージ"
         },
         "availableUpdates": {
-            "title": "利用できる更新",
-            "description": "これらのパッケージには、ご使用のコンピューターが正しく動作するために不可欠な更新が含まれています。重要な更新はコンピューターを安全で信頼できる状態にしておくのに役立つものであり、利用できるようになり次第インストールする必要があります。推奨更新と任意の更新は、ソフトウェアを最新の状態に保ち、コンピュータを最高の状態で稼働させるのに役立ちます。",
+            "title": "利用できる更新が見つかりました",
+            "description": "これらのパッケージには、コンピューターが正常に動作するために必須のハードウェア・ドライバーおよびその他のシステム・ユーティリティーの更新プログラムが含まれています。コンピューターを最高の状態に保つために、更新をインストールしてください。",
             "installAllUpdates": "すべての更新をインストール",
             "installSuccessHeader": "すべての更新は正しくインストールされました",
             "installFailHeader": "一部の更新は正常にインストールされませんでした",
             "installFailDescription": "これらの更新のダウンロード中およびインストール中に問題が発生しました。オンラインであることを確認し、更新のインストール中はコンピューターの電源を切らないでください。",
             "optionalUpdates": "オプションの更新",
             "installSelectedUpdates": "選択した更新をインストール",
-            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
-            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
-            "optionalUpdatesDescription": "Keep your computer up-to-date"
+            "criticalUpdatesDescription": "重大な問題、誤動作、ハードウェア障害、またはデータ破損を防止します",
+            "recommendedUpdatesDescription": "ご使用のコンピューターの円滑な稼働を維持します",
+            "optionalUpdatesDescription": "コンピューターを常に最新の状態にします"
         },
         "installationHistory": {
             "name": "名前",

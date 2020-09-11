@@ -2240,11 +2240,11 @@
             "rebootForceMsg": "所选更新将导致系统在安装后自动重启。",
             "shutdownForceMsg": "所选更新将导致系统在安装后自动关机。",
             "rebootDelayedMsg": "安装所选更新后，系统将重启，在安装更新的过程中，请勿关闭系统、断开电源或移除附件。我们建议保存您的工作以便为系统重启做好准备。",
-            "rebootRequiredMsg": "要成功安装更新，您的计算机需要重启以确保所有内容运行得更快、更顺畅。",
+            "rebootRequiredMsg": "您需要重新启动计算机才能使最近安装的软件包生效。",
             "okayButton": "确定",
             "cancelButton": "取消",
             "rebootButton": "立即重启",
-            "dismissButton": "取消",
+            "dismissButton": "稍后重新启动",
             "rebootPending": "重启"
         },
         "autoUpdateSettings": {
@@ -2267,7 +2267,7 @@
             "title": "联想支持网站"
         },
         "security": {
-            "title": "For a better protection for your device"
+            "title": "为您的设备提供更好的保护"
         },
         "banner": {
             "neverChecked": "欢迎使用系统更新。",
@@ -2276,8 +2276,8 @@
             "last": "上次更新时间：",
             "next": "下次计划更新时间：",
             "checkButton": "检查更新",
-            "checkAgain": "Check Again",
-            "updateNow": "Update Now",
+            "checkAgain": "再次检查",
+            "updateNow": "立即更新",
             "checking": "正在检查更新",
             "downloading": "正在下载更新",
             "installing": "正在安装更新",
@@ -2311,17 +2311,17 @@
             "dependedPackage": "被依赖的包"
         },
         "availableUpdates": {
-            "title": "可用更新",
-            "description": "这些软件包包含对计算机的正常运行至关重要的更新。关键更新有助于使您的计算机更安全、更可靠，请尽快安装。推荐更新和可选更新有助于使您的软件保持最新，以及使您的计算机保持最佳运行状态。",
+            "title": "找到可用的更新",
+            "description": "这些软件包包含对计算机的正常运行至关重要的硬件驱动程序更新和其他系统实用程序更新。请安装更新，让您的计算机以最佳状态运行。",
             "installAllUpdates": "安装所有更新",
             "installFailHeader": "某些更新未成功安装",
             "installSuccessHeader": "已成功安装所有更新",
             "installFailDescription": "下载和安装这些更新的过程中发生了问题。请确保您处于联网状态，且安装更新的过程中不要关闭计算机。",
             "optionalUpdates": "可选更新",
             "installSelectedUpdates": "安装所选更新",
-            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
-            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
-            "optionalUpdatesDescription": "Keep your computer up-to-date"
+            "criticalUpdatesDescription": "防止发生严重问题、故障、硬件故障或数据损坏",
+            "recommendedUpdatesDescription": "让计算机以最佳性能运行",
+            "optionalUpdatesDescription": "让计算机保持最新"
         },
         "installationHistory": {
             "name": "名称",

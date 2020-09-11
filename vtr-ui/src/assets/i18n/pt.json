@@ -2240,11 +2240,11 @@
             "rebootForceMsg": "A(s) atualização(ões) selecionada(s) farão com que o sistema reinicie automaticamenteapós a instalação.",
             "shutdownForceMsg": "A(s) atualização(ões) selecionada(s) farão com que o sistema encerreautomaticamente após a instalação.",
             "rebootDelayedMsg": "A(s) atualização(ões) selecionada(s) farão com que o sistema seja reiniciado após a instalação.Durante a instalação das atualizações, não desligue o sistema, não retire a fonte de alimentação nem os acessórios. Recomendamos que guarde o seu trabalho para preparar a reinicialização do sistema.",
-            "rebootRequiredMsg": "Para instalar as atualizações com êxito, o computador tem de serreiniciado para garantir que tudo está a funcionar corretamente.",
+            "rebootRequiredMsg": "É necessário reiniciar o computador para os pacotes instalados recentemente surtirem efeito.",
             "okayButton": "OK",
             "cancelButton": "Cancelar",
             "rebootButton": "REINICIAR AGORA",
-            "dismissButton": "REJEITAR",
+            "dismissButton": "REINICIAR MAIS TARDE",
             "rebootPending": "Reinicialização pendente"
         },
         "autoUpdateSettings": {
@@ -2267,7 +2267,7 @@
             "title": "Sítio de suporte na Web da Lenovo"
         },
         "security": {
-            "title": "For a better protection for your device"
+            "title": "Para melhorar a proteção do seu dispositivo"
         },
         "banner": {
             "neverChecked": "Bem-vindo à Atualização do Sistema.",
@@ -2276,8 +2276,8 @@
             "last": "Última atualização: ",
             "next": "Próxima atualização agendada: ",
             "checkButton": "VERIFICAR A EXISTÊNCIA DE ATUALIZAÇÕES",
-            "checkAgain": "Check Again",
-            "updateNow": "Update Now",
+            "checkAgain": "Verificar Novamente",
+            "updateNow": "Atualizar Agora",
             "checking": "A verificar a existência de atualizações",
             "downloading": "Transferência de atualizações concluída",
             "installing": "A instalar atualizações",
@@ -2312,16 +2312,16 @@
         },
         "availableUpdates": {
             "title": "Atualizações disponíveis",
-            "description": "Estes pacotes incluem atualizações críticas para o funcionamento correto do computador. As atualizações críticas ajudam a manter o computador seguro e fiável, devendo ser instaladas à medida que são disponibilizadas. As atualizações recomendadas e opcionais ajudam a manter o software atualizado e o computador a funcionar de forma ideal.",
+            "description": "Estes pacotes incluem atualizações aos controladores de hardware e a outros utilitários do sistema críticos para o correto funcionamento do computador. Instale as atualizações para manter o bom funcionamento do computador.",
             "installAllUpdates": "Instalar todas as atualizações",
             "installSuccessHeader": "Todas as atualizações foram instaladas corretamente",
             "installFailHeader": "Algumas atualizações não foram instaladas corretamente",
             "installFailDescription": "Algo correu mal durante a transferência e instalação destas atualizações. Certifique-se de que está online e que não desliga o computador durante a instalação de atualizações.",
             "optionalUpdates": "Atualizações opcionais",
             "installSelectedUpdates": "Instalar atualizações selecionadas",
-            "criticalUpdatesDescription": "Prevent severe problems, malfunctions, hardware failure, or data corruption",
-            "recommendedUpdatesDescription": "Keep your computer running at optimal performance",
-            "optionalUpdatesDescription": "Keep your computer up-to-date"
+            "criticalUpdatesDescription": "Evitar problemas graves, avarias, falhas de hardware ou danos nos dados",
+            "recommendedUpdatesDescription": "Manter o computador em condições de funcionamento ideais",
+            "optionalUpdatesDescription": "Manter o computador atualizado"
         },
         "installationHistory": {
             "name": "Nome",
