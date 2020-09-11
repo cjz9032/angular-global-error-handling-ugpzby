@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.6](https://bitbucket.tc.lenovo.com///compare/v1.8.5...v1.8.6) (2020-09-11)
+
+
+### Features
+
+* **IndexedDB:** VAN-21989 remove unnecessary await before setItem ([012a155](https://bitbucket.tc.lenovo.com///commit/012a1555ce8ccaf1463afbf3ea71fd32c2ac9f84))
+* **IndexedDB:** VAN-21989 update getLocalCacheValue; add Promise<boolean> in return ([618f02c](https://bitbucket.tc.lenovo.com///commit/618f02ced17144f17a53e616c390514439430bc5))
+* **NLS:** VAN-21411 SA: add NLS for new context ([bae0be6](https://bitbucket.tc.lenovo.com///commit/bae0be6e18be0e5d560678243171e74a025dbd4a))
+
 ### [1.8.5](https://bitbucket.tc.lenovo.com///compare/v1.8.4...v1.8.5) (2020-09-10)
 
 
