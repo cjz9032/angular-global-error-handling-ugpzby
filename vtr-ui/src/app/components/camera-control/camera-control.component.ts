@@ -252,8 +252,8 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 					});
 				}).then(() => {
 					// this.isCameraInitialized = true;
-					return this.startPreviewAsync();
-
+					var allProperties = this.oMediaCapture.videoDeviceController.getAvailableMediaStreamProperties(this.Capture.MediaStreamType.videoPreview);
+					return this.startPreviewAsync(this.oMediaCapture, this.Capture.MediaStreamType.videoPreview, allProperties[0]);
 				}).done();
 		} catch (error) {
 			this.disabledAll = true;
@@ -261,15 +261,18 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	startPreviewAsync() {
+	startPreviewAsync(mediaCapture, streamType, encodingProperties) {
 		this.ngZone.run(() => {
-			const previewUrl = URL.createObjectURL(this.oMediaCapture);
-			this.videoElement = this.cameraPreview.nativeElement;
-			this.videoElement.src = previewUrl;
-			this.videoElement.play();
-			this.videoPreviewEvent = this.videoPreviewPlaying.bind(this);
-			this.videoElement.addEventListener('playing', this.videoPreviewEvent);
-			this.logger.info('CameraControlComponent.startPreviewAsync', { previewUrl, videoElement: this.videoElement });
+			return mediaCapture.videoDeviceController.setMediaStreamPropertiesAsync(streamType, encodingProperties)
+            .then(() => {
+				const previewUrl = URL.createObjectURL(mediaCapture);
+				this.videoElement = this.cameraPreview.nativeElement;
+				this.videoElement.src = previewUrl;
+				this.videoElement.play();
+				this.videoPreviewEvent = this.videoPreviewPlaying.bind(this);
+				this.videoElement.addEventListener('playing', this.videoPreviewEvent);
+				this.logger.info('CameraControlComponent.startPreviewAsync', { previewUrl, videoElement: this.videoElement });
+			})
 		});
 	}
 
@@ -312,6 +315,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 
 		if (visibility.toLowerCase() === 'visible') {
 			if (!this.isCameraInitialized) {
+				this.isCameraInErrorState = false;
 				this.initializeCameraAsync('onVisibilityChange');
 			}
 		} else {
