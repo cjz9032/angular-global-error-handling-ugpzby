@@ -114,7 +114,7 @@
 							*ngIf="iconPlacement==='right'">
 							<div class="item-icon status"
 								*ngIf="item.status !== undefined && item.status !== '' && item.status !== 4 && item.status !== 7">
-								<div class="icon-bkg"
+								<div class="icon-bkg" role="icon"
 									id="{{'icon-' + getItemStatusIconClass(item) + '-' + item.id}}">
 									<fa-icon [icon]="['fas', $any(getItemStatusIconClass(item))]"></fa-icon>
 								</div>
@@ -132,7 +132,7 @@
 								container="body"></fa-icon>
 							<div class="item-icon"
 								*ngIf="item.icon">
-								<div [class.icon-bkg]="item.isIconBackground"
+								<div [class.icon-bkg]="item.isIconBackground" role="icon"
 									id="{{'icon-' + item.icon + '-' + item.id}}">
 									<fa-icon [icon]="item.icon"></fa-icon>
 								</div>
@@ -151,7 +151,7 @@
 						<div *ngIf="chevronVisibility"
 							class="col col-1 text-center">
 							<div class="arrow"
-								id="{{'icon-arrow-' + item.id}}"
+								id="{{'icon-arrow-' + item.id}}" role="icon"
 								[ngClass]="{'blue-arrow': arrowColor==='blue-arrow'}">
 								<fa-icon [icon]="['fal', 'chevron-right']"></fa-icon>
 							</div>
