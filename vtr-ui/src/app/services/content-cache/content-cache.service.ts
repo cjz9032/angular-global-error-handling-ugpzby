@@ -215,8 +215,7 @@ export class ContentCacheService {
 					positionC: [],
 					positionD: [],
 					positionE: [],
-					positionF: [],
-					'welcome-text': []
+					positionF: []
 				};
 				await this.fillCacheValue(response, contentCards, cacheValueOfContents);
 				const contents = await this.getUpdatedContents(cacheKey, cacheValueOfContents);
@@ -238,8 +237,6 @@ export class ContentCacheService {
 				const localInfo = await this.getLocalInfo();
 				if ([SegmentConst.Consumer, SegmentConst.SMB].includes(localInfo.Segment)) {
 					cacheValueOfContents['welcome-text'] = new Array(welcomeTextContent);
-				} else {
-					cacheValueOfContents['welcome-text'] = [];
 				}
 			}
 		}
