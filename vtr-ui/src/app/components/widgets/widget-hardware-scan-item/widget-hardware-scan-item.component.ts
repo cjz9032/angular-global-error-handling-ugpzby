@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { LenovoSupportService } from 'src/app/services/hardware-scan/lenovo-support.service';
+import { BreakpointObserver, BreakpointState, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
 	selector: 'vtr-widget-hardware-scan-item',
@@ -15,13 +16,15 @@ export class WidgetHardwareScanItemComponent implements OnInit {
 
 	public tooltipText: string;
 	public tooltipIndex: number;
+	public isXsBreakpoint: boolean;
 	contactusUrl: string;
 
-	constructor(private lenovoSupportService: LenovoSupportService) {
+	constructor(private lenovoSupportService: LenovoSupportService, private breakPointObserver: BreakpointObserver) {
 	}
 
 	ngOnInit() {
 		this.configureContactusUrl();
+		this.getXsBreakpointStatus();
 	}
 
 	public setTooltipInfo(text: string, index: number) {
@@ -43,5 +46,17 @@ export class WidgetHardwareScanItemComponent implements OnInit {
 
 	openContactusPage() {
 		window.open(this.contactusUrl);
+	}
+
+	/**
+	 * Retrive if current observable breakpoint xSmall is matched and
+	 * saves to isXsBreakpoint variable.
+	 */
+	getXsBreakpointStatus(): void {
+		this.breakPointObserver
+		.observe([Breakpoints.XSmall])
+		.subscribe((state: BreakpointState) => {
+			this.isXsBreakpoint = state.matches;
+		});
 	}
 }
