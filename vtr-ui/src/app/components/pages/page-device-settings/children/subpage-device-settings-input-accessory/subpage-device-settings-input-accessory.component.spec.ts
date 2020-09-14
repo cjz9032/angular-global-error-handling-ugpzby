@@ -4,6 +4,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule } from '@ngx-translate/core';
 import { of } from 'rxjs';
+import { UiCircleRadioWithCheckBoxListModel } from 'src/app/components/ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
 import {
 	VoipApp,
@@ -27,6 +28,18 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 	let topRowFunctionsIdeapadService: TopRowFunctionsIdeapadService;
 	let keyboardService: InputAccessoriesService;
 	let commonService: CommonService;
+	const circleRadioWithCheckBox: UiCircleRadioWithCheckBoxListModel ={
+		componentId: null,
+		label: null,
+		value: null,
+		isChecked: null,
+		isDisabled: null,
+		processIcon: null,
+		processLabel: null,
+		hideIcon: null,
+		customIcon: null,
+		metricsItem: null
+	}
 	// let loggerService: LoggerService;
 	// let routeHandlerService: RouteHandlerService;
 
@@ -179,7 +192,7 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 			keyboardService,
 			'setVoipHotkeysSettings'
 		).and.returnValue(Promise.resolve(voipRes));
-		component.setVoipHotkeysSettings(app);
+		component.setVoipHotkeysSettings(circleRadioWithCheckBox);
 		expect(spy).toHaveBeenCalled();
 	}));
 
@@ -202,7 +215,7 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 		spyOn(keyboardService, 'setVoipHotkeysSettings').and.returnValue(
 			Promise.resolve(voipRes)
 		);
-		component.setVoipHotkeysSettings(app);
+		component.setVoipHotkeysSettings(circleRadioWithCheckBox);
 		expect(component.installedApps).toEqual(voipRes.appList);
 	}));
 
@@ -226,7 +239,7 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 			keyboardService,
 			'setVoipHotkeysSettings'
 		).and.returnValue(Promise.reject());
-		component.setVoipHotkeysSettings(app);
+		component.setVoipHotkeysSettings(circleRadioWithCheckBox);
 		expect(spy).toHaveBeenCalled();
 	}));
 
