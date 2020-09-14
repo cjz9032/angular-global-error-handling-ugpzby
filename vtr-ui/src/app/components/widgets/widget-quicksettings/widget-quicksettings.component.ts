@@ -22,6 +22,7 @@ import { EMPTY } from 'rxjs';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { PowerService } from 'src/app/services/power/power.service';
 import { Router } from '@angular/router';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
 	selector: 'vtr-widget-quicksettings',
@@ -79,6 +80,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		public deviceService: DeviceService,
 		private ngZone: NgZone,
 		private vantageShellService: VantageShellService,
+		private localCacheService: LocalCacheService,
 		private router: Router) {
 		this.cameraStatus.permission = false;
 		this.cameraStatus.isLoading = false;
@@ -95,7 +97,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	ngOnInit() {
+	async ngOnInit() {
 		this.initDataFromCache();
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
@@ -105,7 +107,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 
 		this.isOnline = this.commonService.isOnline;
 		if (this.isOnline) {
-			const welcomeTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
+			const welcomeTutorial: WelcomeTutorial = await this.localCacheService.getLocalCacheValue(LocalStorageKey.WelcomeTutorial, undefined);
 			// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
 			if (welcomeTutorial && welcomeTutorial.isDone) {
 				this.initFeatures();

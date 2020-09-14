@@ -26,28 +26,29 @@ import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-as
 import { SmartAssistService } from '../smart-assist/smart-assist.service';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { NewFeatureTipService } from '../new-feature-tip/new-feature-tip.service';
+import { LocalCacheService } from '../local-cache/local-cache.service';
 
 interface MenuItem {
-	id: string,
-	label: string,
-	path: string,
-	icon: string | string[],
-	beta?: boolean,
-	segment?: string,
-	metricsEvent: string,
-	metricsParent: string,
-	metricsItem: string,
-	forArm: boolean,
-	subitems?: any[],
-	hide?: boolean,
-	availability?: boolean
+	id: string;
+	label: string;
+	path: string;
+	icon: string | string[];
+	beta?: boolean;
+	segment?: string;
+	metricsEvent: string;
+	metricsParent: string;
+	metricsItem: string;
+	forArm: boolean;
+	subitems?: any[];
+	hide?: boolean;
+	availability?: boolean;
 }
 
 interface SecurityMenuCondition {
-	wifiIsSupport: boolean,
-	currentSegment: string,
-	isSmode?: boolean,
-	isArm?: boolean
+	wifiIsSupport: boolean;
+	currentSegment: string;
+	isSmode?: boolean;
+	isArm?: boolean;
 }
 
 @Injectable({
@@ -87,6 +88,7 @@ export class ConfigService {
 		public dashboardService: DashboardService,
 		private smartAssist: SmartAssistService,
 		private newFeatureTipService: NewFeatureTipService,
+		private localCacheService: LocalCacheService,
 		private commonService: CommonService) {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		if (this.securityAdvisor) {
@@ -116,7 +118,7 @@ export class ConfigService {
 					this.notifyMenuChange(this.menu);
 					break;
 				case MenuItemEvent.MenuWifiItemChange:
-					this.updateWifiMenu(this.menu,notification.payload)
+					this.updateWifiMenu(this.menu, notification.payload);
 					this.notifyMenuChange(this.menu);
 					break;
 				case MenuItemEvent.MenuBetaItemChange:
@@ -240,9 +242,9 @@ export class ConfigService {
 	}
 
 	private updateSecurityMenuHide(menu: MenuItem[], securityMenuCondition: SecurityMenuCondition) {
-		const securityMenu =menu.find((item) => item.id === 'security');
-		if (!securityMenu) return;
-		if (!securityMenuCondition) return;
+		const securityMenu = menu.find((item) => item.id === 'security');
+		if (!securityMenu) { return; }
+		if (!securityMenuCondition) { return; }
 		securityMenu.hide = securityMenuCondition.isSmode
 			|| securityMenuCondition.isArm
 			|| (!securityMenuCondition.wifiIsSupport
@@ -487,7 +489,7 @@ export class ConfigService {
 				this.showCHS = chsMenuItem.availability && this.activeSegment !== SegmentConst.Commercial;
 				chsMenuItem.hide = !this.showCHS;
 			}
-			this.initializeSecurityItem(this.country,this.menu);
+			this.initializeSecurityItem(this.country, this.menu);
 			this.betaFeature.forEach(featureId => {
 				this.supportFilter(this.menu, featureId, true);
 			});
@@ -508,7 +510,7 @@ export class ConfigService {
 		this.updateBetaService(menu);
 	}
 
-	updateAvailability(menu: MenuItem[],id: string, featureAvailability: boolean) {
+	updateAvailability(menu: MenuItem[], id: string, featureAvailability: boolean) {
 		menu.forEach(item => {
 			if (item.id === id) {
 				item.availability = item.availability && featureAvailability;
@@ -586,8 +588,8 @@ export class ConfigService {
 		}
 	}
 
-	showNewFeatureTipsWithMenuItems() {
-		const welcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
+	async showNewFeatureTipsWithMenuItems() {
+		const welcomeTutorial = await this.localCacheService.getLocalCacheValue(LocalStorageKey.WelcomeTutorial);
 		if (!welcomeTutorial || !welcomeTutorial.isDone || window.innerWidth < 1200) {
 			this.commonService.setLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion, this.commonService.newFeatureVersion);
 			return;
@@ -599,8 +601,8 @@ export class ConfigService {
 			}
 			const lastVersion = this.commonService.getLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion);
 			if ((!lastVersion || lastVersion < this.commonService.newFeatureVersion) && Array.isArray(this.menu)) {
-				const idArr = ['security', 'home-security', 'hardware-scan']
-				const isIncludesItem = this.menu.find(item => idArr.includes(item.id))
+				const idArr = ['security', 'home-security', 'hardware-scan'];
+				const isIncludesItem = this.menu.find(item => idArr.includes(item.id));
 				if (isIncludesItem) {
 					if (lastVersion > 0) { this.commonService.lastFeatureVersion = lastVersion; }
 					this.newFeatureTipService.create();
@@ -613,7 +615,7 @@ export class ConfigService {
 	private async updateHide(menu: Array<any>, segment: string, beta: boolean): Promise<MenuItem[]> {
 		this.smodeFilter(menu, this.deviceService.isSMode);
 		this.armFilter(menu, this.deviceService.isArm);
-		if (segment !== SegmentConst.Gaming) this.segmentFilter(menu, segment);
+		if (segment !== SegmentConst.Gaming) { this.segmentFilter(menu, segment); }
 		await this.initializeByBeta(menu, beta);
 		return menu;
 	}

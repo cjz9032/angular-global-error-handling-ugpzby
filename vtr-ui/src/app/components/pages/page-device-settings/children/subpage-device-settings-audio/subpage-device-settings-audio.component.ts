@@ -22,6 +22,7 @@ import { RouteHandlerService } from 'src/app/services/route-handler/route-handle
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { Md5 } from 'ts-md5';
 import { DeviceService } from '../../../../../services/device/device.service';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-audio',
@@ -98,6 +99,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		private translate: TranslateService,
 		private vantageShellService: VantageShellService,
 		private batteryService: BatteryDetailService,
+		private localCacheService: LocalCacheService,
 		private deviceService: DeviceService) {
 		this.Windows = vantageShellService.getWindows();
 		if (this.Windows) {
@@ -108,7 +110,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		this.entertainmentTooltip = JSON.parse(JSON.stringify(entertainmentTooltipText).replace(/<\/?.+?\/?>/g, ''));
 	}
 
-	ngOnInit() {
+	async ngOnInit() {
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
@@ -118,7 +120,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
 		this.isOnline = this.commonService.isOnline;
 		if (this.isOnline) {
-			const welcomeTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
+			const welcomeTutorial: WelcomeTutorial = await this.localCacheService.getLocalCacheValue(LocalStorageKey.WelcomeTutorial, undefined);
 			// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
 			if (welcomeTutorial && welcomeTutorial.isDone) {
 				this.initFeatures();

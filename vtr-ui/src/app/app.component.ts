@@ -37,6 +37,7 @@ import { SessionStorageKey } from './enums/session-storage-key-enum';
 import { HistoryManager } from './services/history-manager/history-manager.service';
 import { SmartPerformanceService } from './services/smart-performance/smart-performance.service';
 import { enumSmartPerformance } from './enums/smart-performance.enum';
+import { LocalCacheService } from './services/local-cache/local-cache.service';
 
 
 declare var Windows;
@@ -82,6 +83,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		// don't delete historyManager
 		private historyManager: HistoryManager,
 		private smartPerformanceService: SmartPerformanceService,
+		private localCacheService: LocalCacheService,
 		@Inject(DOCUMENT) public document: Document
 	) {
 		this.ngbTooltipConfig.triggers = 'hover';
@@ -203,18 +205,18 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		}
 	}
 
-	private launchWelcomeModal() {
+	private async launchWelcomeModal() {
 		if (!this.deviceService.isArm && !this.deviceService.isAndroid) {
-			const gamingTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.GamingTutorial);
-			let tutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
+			const gamingTutorial: WelcomeTutorial = await this.localCacheService.getLocalCacheValue(LocalStorageKey.GamingTutorial);
+			let tutorial: WelcomeTutorial = await this.localCacheService.getLocalCacheValue(LocalStorageKey.WelcomeTutorial);
 			if (this.deviceService.isGaming) {
 				this.newTutorialVersion = '3.3.0';
 				if (gamingTutorial) {
 					tutorial = gamingTutorial;
 				} else if (tutorial && tutorial.isDone && tutorial.tutorialVersion === '') {
 					tutorial.tutorialVersion = this.newTutorialVersion; // 3.1.6 will save tutorial empty version in gaming
-					this.commonService.setLocalStorageValue(LocalStorageKey.GamingTutorial, tutorial);
-					this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, tutorial);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.GamingTutorial, tutorial);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.WelcomeTutorial, tutorial);
 				}
 			}
 			const newTutorialVersion = this.newTutorialVersion;
@@ -243,17 +245,17 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 			(result: WelcomeTutorial) => {
 				// on open
 				if (this.deviceService.isGaming) {
-					this.commonService.setLocalStorageValue(LocalStorageKey.GamingTutorial, result);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.GamingTutorial, result);
 				}
-				this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, result);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.WelcomeTutorial, result);
 			},
 			(reason: WelcomeTutorial) => {
 				// on close
 				if (reason instanceof WelcomeTutorial) {
 					if (this.deviceService.isGaming) {
-						this.commonService.setLocalStorageValue(LocalStorageKey.GamingTutorial, reason);
+						this.localCacheService.setLocalCacheValue(LocalStorageKey.GamingTutorial, reason);
 					}
-					this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, reason);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.WelcomeTutorial, reason);
 				}
 			}
 		);

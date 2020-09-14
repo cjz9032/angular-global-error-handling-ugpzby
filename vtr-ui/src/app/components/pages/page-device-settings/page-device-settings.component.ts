@@ -18,6 +18,7 @@ import { NonArmGuard } from 'src/app/services/guard/non-arm-guard';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { QaService } from '../../../services/qa/qa.service';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 declare const Windows: any;
 
@@ -95,6 +96,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		public audioService: AudioService,
 		private logger: LoggerService,
 		private translate: TranslateService,
+		private localCacheService: LocalCacheService,
 		private router: Router
 	) {
 
@@ -104,7 +106,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		});
 	}
 
-	ngOnInit() {
+	async ngOnInit() {
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
@@ -118,7 +120,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 
 		this.isOnline = this.commonService.isOnline;
 		if (this.isOnline) {
-			const welcomeTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
+			const welcomeTutorial: WelcomeTutorial = await this.localCacheService.getLocalCacheValue(LocalStorageKey.WelcomeTutorial, undefined);
 			// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
 			if (welcomeTutorial && welcomeTutorial.isDone) {
 				this.getAudioPageSettings();
