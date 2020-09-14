@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.7](https://bitbucket.tc.lenovo.com///compare/v1.8.6...v1.8.7) (2020-09-14)
+
+
+### Bug Fixes
+
+* **page - anti virus:** add disabled attribute for offline learn more link ([3a9ba17](https://bitbucket.tc.lenovo.com///commit/3a9ba177258dc6e510a855f32bef9a252ca93448))
+* **page: anti-virus:** fix button id is undefined issue ([cc6e1e4](https://bitbucket.tc.lenovo.com///commit/cc6e1e443faa224eed2dfc99ccd9f674d377b5cd))
+
 ### [1.8.6](https://bitbucket.tc.lenovo.com///compare/v1.8.5...v1.8.6) (2020-09-11)
 
 
