@@ -354,6 +354,9 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		@media #{$breakpoint_xl} {
 			max-width: 24.2rem !important;
 		}
+		@media #{$breakpoint_sm} {
+			max-width: 22rem !important;
+		}
 	}
 	&.bs-tooltip-auto[x-placement^=top], &.bs-tooltip-top {
 		margin-bottom: 0.5rem;
