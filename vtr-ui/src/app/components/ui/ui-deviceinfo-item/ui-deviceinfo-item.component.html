@@ -12,6 +12,10 @@
     
         <div class="ui-deviceinfo-sepline" *ngIf="dataModel.showSepline"></div>
 
+        <div class="spinner-content p-0 d-flex align-items-center justify-content-center" *ngIf="!dataModel.link">
+            <div class="spinner-border" role="status"></div>
+        </div>
+
         <div class="ui-deviceinfo-right ml-auto align-self-center">
             <div class="circle-border" *ngIf="!!dataModel.total">
                 <svg viewBox="0 0 36 36" class="circular-chart blue">

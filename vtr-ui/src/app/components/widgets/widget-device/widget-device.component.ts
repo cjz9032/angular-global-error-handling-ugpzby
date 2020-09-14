@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DeviceService } from '../../../services/device/device.service';
 import { MyDevice } from 'src/app/data-models/device/my-device.model';
-import { DeviceStatus } from 'src/app/data-models/widgets/status.model';
+import { DeviceStatus, DeviceCondition } from 'src/app/data-models/widgets/status.model';
 import { CommonService } from 'src/app/services/common/common.service';
 import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -21,6 +21,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 	public myDevice: MyDevice;
 	public hwStatus: DeviceStatus[] = [];
 	public swStatus: DeviceStatus[] = [];
+	public deviceStatus: DeviceCondition = DeviceCondition.Loading;
 
 	processorIcon = 'assets/icons/hardware-scan/icon_hardware_processor.svg';
 	memoryIcon = '/assets/icons/hardware-scan/icon_hardware_memory.svg';
@@ -106,6 +107,9 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		this.getSUStatus();
 		this.getSmartPerformanceStatus();
 		this.getWarrantyStatus();
+
+		// todo: decide condtion
+		this.deviceStatus = DeviceCondition.NeedRunHWScan;
 	}
 
 	private getHWStatus(){
@@ -196,6 +200,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		smartPerform.subtitle = 'Updates checked';
 		smartPerform.checkedDate = '7/12/2020';
 		smartPerform.icon = this.smartPerformanceIcon;
+		smartPerform.link = 'smart';
 		this.swStatus[1] = smartPerform;
 	}
 

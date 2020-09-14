@@ -9,7 +9,8 @@
 		color:white;
 		padding: 0;
 		font-size: 1.4rem;
-		div:first-child{
+		
+		.device-brief-bios{
 			padding-top: 2.2rem;
 			padding-left: 2.4rem;
 			p{
@@ -51,7 +52,7 @@
 			}
 		}
 
-		div:nth-child(2){
+		.device-brief-status{
 			margin-left: auto;
 			border-radius: 50%;
 			width: 14.2rem;
@@ -59,6 +60,12 @@
 			align-self: center;
 			margin-right: 5.6rem;
 			text-transform: uppercase;
+
+			.spinner-border{
+				width: 3.2rem;
+				height: 3.2rem;
+			}
+
 			span{
 				font-size: 1.6rem;
 				overflow: hidden;
@@ -73,11 +80,12 @@
 				box-shadow: 0px 0px 16px #2ECC7166;
 			}
 		}
-		.status-good-condition{
+
+		.device-status-good{
 			background: linear-gradient(31deg, #2ECC71 0%, #35E6B9 100%) 0% 0% no-repeat padding-box;
 		}
 
-		.status-loading-condition{
+		.device-status-loading{
 			background: #2F3447 0% 0% no-repeat padding-box;
 			color:#4980FC;
 			.spinner-content{
@@ -88,7 +96,7 @@
 			}
 		}
 
-		.status-needaction-condition{
+		.device-status-needaction{
 			background: linear-gradient(31deg, #DB591F 0%, #EB7200 100%) 0% 0% no-repeat padding-box;;
 		}
 	}

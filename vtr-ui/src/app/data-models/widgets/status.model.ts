@@ -33,3 +33,11 @@ export class DeviceStatus {
 	public showCover = true;
   	public showSepline: boolean;
 }
+
+export enum DeviceCondition{
+	Loading = 0,
+	Good = 1,
+	NeedRunSU = 2,
+	NeedRunScan = 3,
+	NeedRunHWScan = 4
+ }
