@@ -23,6 +23,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { Md5 } from 'ts-md5';
 import { WhiteListCapability } from '../../../../../data-models/eye-care-mode/white-list-capability.interface';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-display',
@@ -213,6 +214,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		private vantageShellService: VantageShellService,
 		private cameraFeedService: CameraFeedService,
 		private logger: LoggerService,
+		private localCacheService: LocalCacheService,
 		private route: ActivatedRoute
 	) {
 		this.dataSource = new CameraDetail();
@@ -278,7 +280,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		}
 	}
 
-	ngAfterViewInit() {
+	async ngAfterViewInit() {
 		this.inWhiteList().then(isSupport => {
 			if (isSupport) {
 				this.initDisplayColorTempFromCache();
@@ -296,7 +298,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 
 		this.isOnline = this.commonService.isOnline;
 		if (this.isOnline) {
-			const welcomeTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
+			const welcomeTutorial: WelcomeTutorial = await this.localCacheService.getLocalCacheValue(LocalStorageKey.WelcomeTutorial, undefined);
 			// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
 			if (welcomeTutorial && welcomeTutorial.isDone) {
 				this.initFeatures();

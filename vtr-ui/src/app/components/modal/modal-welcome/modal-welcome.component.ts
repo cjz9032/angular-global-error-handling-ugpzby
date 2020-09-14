@@ -18,6 +18,7 @@ import { LanguageService } from 'src/app/services/language/language.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { GamingScenario } from 'src/app/enums/gaming-scenario.enum';
 import { InitializerService } from 'src/app/services/initializer/initializer.service';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
 	selector: 'vtr-modal-welcome',
@@ -118,6 +119,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		private timerService: TimerService,
 		private userService: UserService,
 		private metricService: MetricService,
+		private localCacheService: LocalCacheService,
 		private initializerService: InitializerService) {
 		this.metrics = shellService.getMetrics();
 
@@ -184,9 +186,9 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			this.progress = 49;
 			tutorialData = new WelcomeTutorial(1, this.tutorialVersion, false);
 			if (this.deviceService.isGaming) {
-				this.commonService.setLocalStorageValue(LocalStorageKey.GamingTutorial, tutorialData);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.GamingTutorial, tutorialData);
 			}
-			this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, tutorialData);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.WelcomeTutorial, tutorialData);
 			this.focusOnModal();
 		} else {
 			const buttonClickData = {
