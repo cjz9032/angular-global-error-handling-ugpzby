@@ -19,12 +19,9 @@ import { BacklightService } from './backlight/backlight.service';
 import { SubpageDeviceSettingsInputAccessoryComponent } from './subpage-device-settings-input-accessory.component';
 import { TopRowFunctionsIdeapadService } from './top-row-functions-ideapad/top-row-functions-ideapad.service';
 
-
-
 describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 	let component: SubpageDeviceSettingsInputAccessoryComponent;
 	let fixture: ComponentFixture<SubpageDeviceSettingsInputAccessoryComponent>;
-	// let backlightService: BacklightService;
 	let topRowFunctionsIdeapadService: TopRowFunctionsIdeapadService;
 	let keyboardService: InputAccessoriesService;
 	let commonService: CommonService;
@@ -40,8 +37,6 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 		customIcon: null,
 		metricsItem: null
 	}
-	// let loggerService: LoggerService;
-	// let routeHandlerService: RouteHandlerService;
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
