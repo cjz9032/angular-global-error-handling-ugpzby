@@ -14,6 +14,7 @@
 		[tabindex]="disabled?-1:tabIndex"
 		[attr.aria-checked]="value"
 		[attr.aria-label]="ariaLabel"
+		[attr.aria-disabled]="disabled"
 		role="switch"
 		(keydown.enter)="onChange(toggle)"
 		(keyup.enter)="sendChangeEvent(toggle)">
