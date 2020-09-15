@@ -130,7 +130,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	async initMetricOption(shellService) {
-		const userDeterminePrivacy = this.commonService.getLocalStorageValue(
+		const userDeterminePrivacy = await this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.UserDeterminePrivacy
 		);
 
@@ -365,7 +365,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		} else {
 			this.progress -= 17;
 		}
-		this.commonService.setLocalStorageValue(LocalStorageKey.UserDeterminePrivacy, true);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.UserDeterminePrivacy, true);
 	}
 
 	moreInterestClicked() {

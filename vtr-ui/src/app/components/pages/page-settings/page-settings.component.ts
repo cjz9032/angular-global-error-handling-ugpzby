@@ -15,6 +15,7 @@ import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { MenuItemEvent } from 'src/app/enums/menuItemEvent.enum';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { enumSmartPerformance } from 'src/app/enums/smart-performance.enum';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
 	selector: 'vtr-page-settings',
@@ -111,6 +112,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		public betaService: BetaService,
 		private localInfoService: LocalInfoService,
 		private loggerService: LoggerService,
+		private localCacheService: LocalCacheService,
 		public smartPerformanceService: SmartPerformanceService
 	) {
 		this.preferenceSettings = this.shellService.getPreferenceSettings();
@@ -352,7 +354,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		if (this.metrics && this.metrics.sendAsyncEx) {
 			this.metrics.sendAsyncEx(settingUpdateMetrics, { forced: true });
 		}
-		this.commonService.setLocalStorageValue(LocalStorageKey.UserDeterminePrivacy, true);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.UserDeterminePrivacy, true);
 	}
 
 	onToggleOfBetaProgram(event: any) {

@@ -9,6 +9,7 @@ import { Container, BindingScopeEnum } from 'inversify';
 import { Backlight } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.interface';
 import { MetricHelper } from 'src/app/services/metric/metrics.helper';
 import { WifisecurityProxy } from '../security/wifisecurityproxy.service';
+import { LocalCacheService } from '../local-cache/local-cache.service';
 
 declare var window;
 
@@ -22,6 +23,7 @@ export class VantageShellService {
 	private shell: any;
 	constructor(
 		private commonService: CommonService,
+		private localCacheService: LocalCacheService,
 		private http: HttpClient
 	) {
 		this.shell = this.getVantageShell();
@@ -183,8 +185,8 @@ export class VantageShellService {
 	public getMetricsPolicy(callback) {
 		const self = this;
 		this.downloadMetricsPolicy().subscribe((response) => {
-			self.deviceFilter(JSON.stringify(response)).then((result) => {
-				const userDeterminePrivacy = self.commonService.getLocalStorageValue(
+			self.deviceFilter(JSON.stringify(response)).then(async (result) => {
+				const userDeterminePrivacy = await self.localCacheService.getLocalCacheValue(
 					LocalStorageKey.UserDeterminePrivacy
 				);
 				if (!userDeterminePrivacy) {

@@ -16,6 +16,7 @@ import {
 	BacklightStatusEnum
 } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.enum';
 import { MetricHelper } from 'src/app/services/metric/metrics.helper';
+import { LocalCacheService } from '../local-cache/local-cache.service';
 
 declare var Windows;
 
@@ -27,7 +28,10 @@ export class VantageShellService {
 	public phoenix: any;
 	private shell: any;
 	private isGamingDevice = false;
-	constructor(private commonService: CommonService, private http: HttpClient) {
+	constructor(
+		private commonService: CommonService,
+		private localCacheService: LocalCacheService,
+		private http: HttpClient) {
 		this.isShellAvailable = true;
 		this.shell = this.getVantageShell();
 		if (this.shell) {
@@ -404,8 +408,8 @@ export class VantageShellService {
 	public getMetricsPolicy(callback) {
 		const self = this;
 		this.downloadMetricsPolicy().subscribe((response) => {
-			self.deviceFilter(JSON.stringify(response)).then((result) => {
-				const userDeterminePrivacy = self.commonService.getLocalStorageValue(
+			self.deviceFilter(JSON.stringify(response)).then(async (result) => {
+				const userDeterminePrivacy = await self.localCacheService.getLocalCacheValue(
 					LocalStorageKey.UserDeterminePrivacy
 				);
 				if (!userDeterminePrivacy) {
