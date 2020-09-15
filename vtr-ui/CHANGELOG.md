@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.8](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.8.7...v1.8.8) (2020-09-15)
+
+
+### Features
+
+* **IndexedDB:** VAN-22059 migrate welcome tutorial to IndexedDB ([a64236d](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/a64236d41ffb89584be7a31838540668a322d534))
+
 ### [1.8.7](https://bitbucket.tc.lenovo.com///compare/v1.8.6...v1.8.7) (2020-09-14)
 
 
