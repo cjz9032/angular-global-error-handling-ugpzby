@@ -114,7 +114,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
-		this.isDTmachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
+		this.isDTmachine = await this.localCacheService.getLocalCacheValue(LocalStorageKey.DesktopMachine);
 		this.batteryService.getBatterySettings();
 		this.commonService.checkPowerPageFlagAndHide();
 

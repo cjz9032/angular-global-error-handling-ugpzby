@@ -316,8 +316,8 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 				this.deviceService
 					.getMachineType()
 					.then((value: any) => {
-						this.commonService.setLocalStorageValue(LocalStorageKey.DesktopMachine, value === 4);
-						this.commonService.setLocalStorageValue(LocalStorageKey.MachineType, value);
+						this.localCacheService.setLocalCacheValue(LocalStorageKey.DesktopMachine, value === 4);
+						this.localCacheService.setLocalCacheValue(LocalStorageKey.MachineType, value);
 					})
 					.catch((error) => { });
 			}

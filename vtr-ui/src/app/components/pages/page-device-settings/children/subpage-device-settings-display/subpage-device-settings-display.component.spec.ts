@@ -137,7 +137,7 @@ describe('SubpageDeviceSettingsDisplayComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call initCameraSection -isAllInOneMachine false ', async(() => {
+	it('should call initCameraSection -isAllInOneMachine false ', async(async () => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
@@ -147,7 +147,7 @@ describe('SubpageDeviceSettingsDisplayComponent', () => {
 			Promise.resolve(false)
 		);
 
-		component.initCameraSection();
+		await component.initCameraSection();
 		expect(spy).toHaveBeenCalled();
 	}));
 

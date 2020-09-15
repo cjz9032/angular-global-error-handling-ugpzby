@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.enum';
 import { HardwareScanOverallResult } from 'src/app/enums/hardware-scan-overall-result.enum';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { HardwareScanResultService } from 'src/app/services/hardware-scan/hardware-scan-result.service';
+import { LocalCacheService } from '../local-cache/local-cache.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -22,7 +22,7 @@ export class PreviousResultService {
 
 	constructor(
 		shellService: VantageShellService,
-		private commonService: CommonService,
+		private localCacheService: LocalCacheService,
 		private hardwareScanResultService: HardwareScanResultService) {
 		this.hardwareScanBridge = shellService.getHardwareScan();
 	}
@@ -50,7 +50,7 @@ export class PreviousResultService {
 		this.previousItemsWidget = previousItems;
 	}
 
-	public buildPreviousResults(response: any) {
+	public async buildPreviousResults(response: any) {
 		const previousResults: any = {};
 		let moduleId = 0;
 
@@ -87,7 +87,8 @@ export class PreviousResultService {
 					// Use this validation prevent cyclical dependency with hardwareScanService
 					// [NOTICE] When remove the isDesktopMachine from hardware-scan.service to another service
 					// change this line to use the newest function
-					if (!this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine)) {
+					const desktopMachine = await this.localCacheService.getLocalCacheValue(LocalStorageKey.DesktopMachine);
+					if (!desktopMachine) {
 						if (item.icon === 'pci_express') {
 							item.icon += '_laptop';
 						}
@@ -139,8 +140,8 @@ export class PreviousResultService {
 	public getLastResults() {
 		if (this.hardwareScanBridge) {
 			return this.previousResultsResponse
-				.then((response) => {
-					this.buildPreviousResults(response);
+				.then(async (response) => {
+					await this.buildPreviousResults(response);
 				});
 		}
 		return undefined;

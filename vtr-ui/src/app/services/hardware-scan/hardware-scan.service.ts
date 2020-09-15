@@ -14,6 +14,7 @@ import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.servic
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { HardwareScanFinishedHeaderType } from 'src/app/enums/hardware-scan-finished-header-type.enum';
 import { LoggerService } from '../logger/logger.service';
+import { LocalCacheService } from '../local-cache/local-cache.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -23,7 +24,9 @@ export class HardwareScanService {
 	constructor(
 		shellService: VantageShellService, private commonService: CommonService, private ngZone: NgZone,
 		private translate: TranslateService, private hypSettings: HypothesisService,
-		private hardwareScanResultService: HardwareScanResultService, private previousResultService: PreviousResultService,
+		private hardwareScanResultService: HardwareScanResultService,
+		private previousResultService: PreviousResultService,
+		private localCacheService: LocalCacheService,
 		private logger: LoggerService) {
 		this.hardwareScanBridge = shellService.getHardwareScan();
 
@@ -119,10 +122,10 @@ export class HardwareScanService {
 			this.hypSettingsPromise = this.hypSettings.getFeatureSetting(HardwareScanService.HARDWARE_SCAN_HYPHOTESIS_CONFIG_NAME);
 
 			// If HardwareScan is available, dispatch the priority requests
-			this.isAvailable().then((available) => {
+			this.isAvailable().then(async (available) => {
 				if (available) {
 					// Validate the type of this machine to load dynamically the icons.
-					this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
+					this.isDesktopMachine = await this.localCacheService.getLocalCacheValue(LocalStorageKey.DesktopMachine);
 
 					// Retrive the Plugin's version (it does not use the CLI)
 					this.getPluginInfo().then((hwscanPluginInfo: any) => {

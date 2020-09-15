@@ -9,6 +9,7 @@ import { LoggerService } from '../logger/logger.service';
 import { PowerService } from '../power/power.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CommonService } from '../common/common.service';
+import { LocalCacheService } from '../local-cache/local-cache.service';
 @Injectable({
 	providedIn: 'root'
 })
@@ -37,6 +38,7 @@ export class BatteryDetailService {
 		shellService: VantageShellService,
 		private logger: LoggerService,
 		private powerService: PowerService,
+		private localCacheService: LocalCacheService,
 		private commonService: CommonService) {
 		this.battery = shellService.getBatteryInfo();
 		if (this.battery) {
@@ -83,8 +85,8 @@ export class BatteryDetailService {
 		return this.expressChargingSubject.asObservable();
 	}
 
-	public getBatterySettings() {
-		const isThinkPad = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType) === 1;
+	public async getBatterySettings() {
+		const isThinkPad = await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType) === 1;
 		if (isThinkPad) {
 			this.getBatteryThresholdInformation();
 			this.getAirplaneModeCapabilityThinkPad();

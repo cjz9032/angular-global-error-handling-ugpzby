@@ -165,7 +165,7 @@ export class ConfigService {
 
 			this.menu = await this.updateHide(resultMenu, this.activeSegment, this.isBetaUser);
 
-			this.initializeSmartAssist();
+			await this.initializeSmartAssist();
 			this.notifyMenuChange(this.menu);
 			return resolve(this.menu);
 		});
@@ -591,15 +591,15 @@ export class ConfigService {
 	async showNewFeatureTipsWithMenuItems() {
 		const welcomeTutorial = await this.localCacheService.getLocalCacheValue(LocalStorageKey.WelcomeTutorial);
 		if (!welcomeTutorial || !welcomeTutorial.isDone || window.innerWidth < 1200) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion, this.commonService.newFeatureVersion);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.NewFeatureTipsVersion, this.commonService.newFeatureVersion);
 			return;
 		}
-		this.localInfoService.getLocalInfo().then(localInfo => {
+		this.localInfoService.getLocalInfo().then(async localInfo => {
 			if (localInfo.Segment !== SegmentConst.Consumer) {
-				this.commonService.setLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion, this.commonService.newFeatureVersion);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.NewFeatureTipsVersion, this.commonService.newFeatureVersion);
 				return;
 			}
-			const lastVersion = this.commonService.getLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion);
+			const lastVersion = await this.localCacheService.getLocalCacheValue(LocalStorageKey.NewFeatureTipsVersion);
 			if ((!lastVersion || lastVersion < this.commonService.newFeatureVersion) && Array.isArray(this.menu)) {
 				const idArr = ['security', 'home-security', 'hardware-scan'];
 				const isIncludesItem = this.menu.find(item => idArr.includes(item.id));
@@ -607,7 +607,7 @@ export class ConfigService {
 					if (lastVersion > 0) { this.commonService.lastFeatureVersion = lastVersion; }
 					this.newFeatureTipService.create();
 				}
-				this.commonService.setLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion, this.commonService.newFeatureVersion);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.NewFeatureTipsVersion, this.commonService.newFeatureVersion);
 			}
 		});
 	}
@@ -620,8 +620,8 @@ export class ConfigService {
 		return menu;
 	}
 
-	private initializeSmartAssist() {
-		const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType, undefined);
+	private async initializeSmartAssist() {
+		const machineType = await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType, undefined);
 		if (machineType) {
 			this.smartAssistFilter(machineType);
 		} else if (this.deviceService.isShellAvailable) {

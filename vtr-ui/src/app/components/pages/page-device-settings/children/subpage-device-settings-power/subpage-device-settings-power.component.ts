@@ -23,6 +23,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { FlipToBootCurrentModeEnum, FlipToBootErrorCodeEnum, FlipToBootSetStatusEnum, FlipToBootSupportedEnum } from '../../../../../services/power/flipToBoot.enum';
 import { FlipToBootSetStatus } from '../../../../../services/power/flipToBoot.interface';
 import { EventTypes } from '@lenovo/tan-client-bridge';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 
 enum PowerMode {
@@ -129,13 +130,14 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		public modalService: NgbModal,
 		public shellServices: VantageShellService,
 		private metrics: CommonMetricsService,
+		private localCacheService: LocalCacheService,
 		private activatedRoute: ActivatedRoute) {
 	}
 
-	ngOnInit() {
+	async ngOnInit() {
 		this.logger.info('Init Subpage Power');
 		this.initDataFromCache();
-		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
+		this.isDesktopMachine = await this.localCacheService.getLocalCacheValue(LocalStorageKey.DesktopMachine);
 
 		// PowerSmartSettings, SmartStandby & Battery features are not supported in Desktop type machines, links at the top removed by code below
 		if (this.isDesktopMachine) {
@@ -143,7 +145,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.checkIsPowerPageAvailable(false, 'smartStandby');
 			this.checkIsPowerPageAvailable(false, 'battery');
 		}
-		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
+		this.machineType = await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType);
 		if (this.machineType === 1) {
 			// it is triggered if battery count changes (i.e. if battery is inserted/removed)
 			this.powerBatteryStatusEventRef = this.onPowerBatteryStatusEvent.bind(this);

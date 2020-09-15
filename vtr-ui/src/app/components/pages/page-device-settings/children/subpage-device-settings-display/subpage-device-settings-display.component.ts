@@ -402,12 +402,12 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		this.displayPriorityModal.capability = available;
 	}
 
-	initFeatures() {
+	async initFeatures() {
 		this.getPrivacyGuardCapabilityStatus();
 		this.getPrivacyGuardOnPasswordCapabilityStatus();
 		this.initCameraSection();
 		this.getOLEDPowerControlCapability();
-		const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
+		const machineType = await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType);
 		if (machineType === 1) {
 			// commented below line to temporarily hide in current release
 			// this.getPriorityControlCapability();
@@ -461,7 +461,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 	}
 
 	async initCameraSection() {
-		this.isDTmachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
+		this.isDTmachine = await this.localCacheService.getLocalCacheValue(LocalStorageKey.DesktopMachine);
 		this.isAllInOneMachineFlag = await this.isAllInOneMachine();
 		if (!this.isAllInOneMachineFlag) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'camera');
