@@ -6,14 +6,10 @@ import { TranslateModule } from '@ngx-translate/core';
 import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
 import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
 import BatteryIndicator from 'src/app/data-models/battery/battery-indicator.model';
-import { BatteryConditionsEnum } from 'src/app/enums/battery-conditions.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { BatteryDetailComponent } from './battery-detail.component';
-
-
-
 
 const dataInfo: BatteryDetail[] = [
 	{
@@ -57,10 +53,7 @@ const dataIndicator: BatteryIndicator = {
 	timeText: 'timeRemaining',
 	isAirplaneMode: false,
 	isChargeThresholdOn: false,
-	convertMin: (totalMin: number) => {
-		this.hours = Math.trunc(totalMin / 60);
-		this.minutes = Math.trunc(totalMin % 60);
-	}
+	convertMin: (totalMin: number) => {}
 };
 
 const dataConditionsGood: BatteryConditionModel[] = [
@@ -74,22 +67,9 @@ const dataConditionsGood: BatteryConditionModel[] = [
 	}
 ];
 
-const dataConditionsBad: BatteryConditionModel[] = [
-	{
-		condition: BatteryConditionsEnum.Bad,
-		conditionStatus: 2,
-		getBatteryConditionTip(condition: number): string {
-			return 'device.deviceSettings.batteryGauge.condition.Bad';
-		}
-	}
-];
-
 describe('Battery Details Component:', () => {
 	let component: BatteryDetailComponent;
 	let fixture: ComponentFixture<BatteryDetailComponent>;
-	/* let commonService: CommonService;
-	let shellService: VantageShellService;
-	let logger: LoggerService; */
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
@@ -119,7 +99,6 @@ describe('Battery Details Component:', () => {
 		component = fixture.componentInstance;
 		component.dataInfo = [...dataInfo];
 		component.dataInfo[0].deviceChemistry = '';
-		// component.dataInfo[0].chargeStatus = 0
 		component.dataConditions = [...dataConditionsGood];
 		component.dataIndicator = dataIndicator;
 		component.dataIndicator.timeText = 'timeCompletion';
