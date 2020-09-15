@@ -234,12 +234,12 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		this.getSelfSelectStatus();
 		this.canShowDccDemo$ = this.dccService.canShowDccDemo();
 		this.launchProtocol();
-		this.hideTitleInCommercial();
+		this.hideTitleInCommercialAndSMB();
 	}
 
-	private hideTitleInCommercial() {
+	private hideTitleInCommercialAndSMB() {
 		this.selfselectService.getConfig().then((re) => {
-			this.hideTitle = re.usageType === SegmentConst.Commercial;
+			this.hideTitle = (re.usageType === SegmentConst.Commercial || re.usageType === SegmentConst.SMB);
 		});
 	}
 
@@ -832,7 +832,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 					if (this.isOnline) {
 						this.fetchContent();
 					}
-					this.hideTitleInCommercial();
+					this.hideTitleInCommercialAndSMB();
 					break;
 				default:
 					break;
