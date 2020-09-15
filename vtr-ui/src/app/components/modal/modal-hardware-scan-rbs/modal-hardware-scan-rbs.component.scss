@@ -1,0 +1,43 @@
+@import "../../../app.theme";
+
+.vtr-modal-hardware-scan-rbs {
+	@include high-contrast-border;
+
+	.modal-information {
+		.title {
+			width: 100%;
+			font-size: $fontsize_xl;
+			font-weight: $weight_light;
+			color: $shade_blue;
+		}
+
+		.description {
+			width: 100%;
+			color: $shade-darker;
+			font-size: $fontsize_xs2;
+			font-weight: $weight_light;
+		}
+
+		.errorMessage {
+			width: 100%;
+			color: $alt;
+			font-size: $fontsize_xs;
+			font-weight: $weight_medium;
+		}
+	}
+
+	.button-row {
+		::ng-deep .vtr-ui-button .button-box{
+			padding-left: 0;
+		}
+	}
+
+	.btn-modal-close {
+		right: 2.3rem;
+		top: 2.4rem;
+	}
+}
+
+.modal-body {
+	padding: 2.4rem;
+}
