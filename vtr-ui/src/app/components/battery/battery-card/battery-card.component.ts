@@ -19,6 +19,7 @@ import { BatteryDetailService } from 'src/app/services/battery-detail/battery-de
 import { CommonService } from 'src/app/services/common/common.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 declare var Windows;
 
@@ -75,6 +76,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		private commonService: CommonService,
 		private cd: ChangeDetectorRef,
 		private logger: LoggerService,
+		private localCacheService: LocalCacheService,
 		private activatedRoute: ActivatedRoute) {
 	}
 
@@ -157,8 +159,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		// this.shellServices.unRegisterEvent(EventTypes.pwrBatteryStatusEvent, this.powerBatteryStatusEventRef);
 	}
 
-	ngOnInit() {
-		this.isThinkPad = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType) === 1;
+	async ngOnInit() {
+		this.isThinkPad = await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType) === 1;
 		this.getBatteryDetailOnCard();
 
 		// temp

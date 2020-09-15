@@ -16,6 +16,7 @@ import { BacklightLevelEnum } from './backlight/backlight.enum';
 import { BacklightService } from './backlight/backlight.service';
 import { TopRowFunctionsIdeapadService } from './top-row-functions-ideapad/top-row-functions-ideapad.service';
 import { UiCircleRadioWithCheckBoxListModel } from 'src/app/components/ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-input-accessory',
@@ -74,13 +75,14 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 		private commonService: CommonService,
 		private logger: LoggerService,
 		private backlightService: BacklightService,
+		private localCacheService: LocalCacheService,
 		private batteryService: BatteryDetailService
 	) {
 	}
 
-	ngOnInit() {
+	async ngOnInit() {
 		this.commonService.checkPowerPageFlagAndHide();
-		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
+		this.machineType = await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType);
 		this.batteryService.getBatterySettings();
 		if (this.machineType === 1) {
 			this.initDataFromCache();

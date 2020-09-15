@@ -103,7 +103,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			this.onNotification(response);
 		});
 
-		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType, undefined);
+		this.machineType = await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType, undefined);
 
 		this.isOnline = this.commonService.isOnline;
 		if (this.isOnline) {

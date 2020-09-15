@@ -23,6 +23,7 @@ import { HsaIntelligentSecurityResponse } from 'src/app/data-models/smart-assist
 import { UiRoundedRectangleRadioModel } from '../../ui/ui-rounded-rectangle-custom-radio-list/ui-rounded-rectangle-radio-list.model';
 import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
 import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
 	selector: 'vtr-page-smart-assist',
@@ -130,6 +131,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		public modalService: NgbModal,
 		private router: Router,
 		private vantageShellService: VantageShellService,
+		private localCacheService: LocalCacheService,
 		private metrics: CommonMetricsService
 	) {
 		this.jumpToSettingsTitle = this.translate.instant('device.smartAssist.jumpTo.title');
@@ -153,9 +155,9 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	ngOnInit() {
+	async ngOnInit() {
 		if (this.smartAssist.isShellAvailable) {
-			this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
+			this.machineType =  await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType);
 			this.smartAssistCapability = this.commonService.getLocalStorageValue(LocalStorageKey.SmartAssistCapability, undefined);
 			this.getHPDAdvancedSetting();
 			this.initVisibility();

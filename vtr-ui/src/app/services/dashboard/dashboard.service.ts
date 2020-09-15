@@ -9,6 +9,7 @@ import { SegmentConst } from '../self-select/self-select.service';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 import { ContentActionType, ContentSource } from 'src/app/enums/content.enum';
+import { LocalCacheService } from '../local-cache/local-cache.service';
 interface IContentGroup {
 	positionA: any[];
 	positionB: FeatureContent;
@@ -53,6 +54,7 @@ export class DashboardService {
 	constructor(
 		shellService: VantageShellService,
 		commonService: CommonService,
+		private localCacheService: LocalCacheService,
 		private localInfoService: LocalInfoService
 	) {
 		this.dashboard = shellService.getDashboard();
@@ -192,11 +194,14 @@ export class DashboardService {
 		try {
 			if (this.sysupdate) {
 				return new Observable((observer) => {
-					// from loccal storage
-					const cacheSu = this.commonService.getLocalStorageValue(LocalStorageKey.LastSystemUpdateStatus);
-					if (cacheSu) {
-						observer.next(cacheSu);
-					}
+					// from local storage
+					this.localCacheService.getLocalCacheValue(LocalStorageKey.LastSystemUpdateStatus).then(
+						(cacheSu) => {
+							if (cacheSu) {
+								observer.next(cacheSu);
+							}
+						}
+					);
 					// from su plugin
 					const result = { lastupdate: null, status: 0 };
 					this.sysupdate.getMostRecentUpdateInfo().then(
@@ -209,13 +214,13 @@ export class DashboardService {
 								result.status = 0;
 							}
 							// save to localstorage
-							this.commonService.setLocalStorageValue(LocalStorageKey.LastSystemUpdateStatus, result);
+							this.localCacheService.setLocalCacheValue(LocalStorageKey.LastSystemUpdateStatus, result);
 							observer.next(result);
 							observer.complete();
 						},
 						(e) => {
 							observer.next(result);
-							this.commonService.setLocalStorageValue(LocalStorageKey.LastSystemUpdateStatus, result);
+							this.localCacheService.setLocalCacheValue(LocalStorageKey.LastSystemUpdateStatus, result);
 							observer.complete();
 						}
 					);

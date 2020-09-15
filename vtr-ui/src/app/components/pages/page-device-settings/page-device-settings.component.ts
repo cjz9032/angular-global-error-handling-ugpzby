@@ -111,7 +111,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			this.onNotification(response);
 		});
 		this.logger.info('DEVICE SETTINGS INIT', this.menuItems);
-		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
+		this.isDesktopMachine = await this.localCacheService.getLocalCacheValue(LocalStorageKey.DesktopMachine);
 
 		this.fetchCMSArticles();
 
@@ -173,7 +173,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	}
 
 	async initInputAccessories() {
-		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
+		this.machineType =  await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType);
 		if (this.machineType) {
 			const machineFamily = this.commonService.getLocalStorageValue(LocalStorageKey.MachineFamilyName, undefined);
 			if (machineFamily) {

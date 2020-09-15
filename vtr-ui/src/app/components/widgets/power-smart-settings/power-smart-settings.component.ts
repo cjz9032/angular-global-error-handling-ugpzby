@@ -12,6 +12,7 @@ import { ModalIntelligentCoolingModesComponent } from '../../modal/modal-intelli
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { UiCircleRadioWithCheckBoxListModel } from '../../ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
 import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 const thinkpad = 1;
 const ideapad = 0;
@@ -66,12 +67,13 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		private logger: LoggerService,
 		public commonService: CommonService,
 		public modalService: NgbModal,
+		private localCacheService: LocalCacheService,
 		private metricService: MetricService) {
 		this.initDataFromCache();
 	}
 
-	ngOnInit() {
-		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
+	async ngOnInit() {
+		this.machineType = await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType);
 		if (thinkpad === this.machineType || this.isYogo730()) {
 			this.add = 0; // thinkpad
 			this.checkDriverForThinkPad();

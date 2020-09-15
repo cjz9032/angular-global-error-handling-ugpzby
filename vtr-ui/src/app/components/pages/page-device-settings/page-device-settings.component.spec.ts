@@ -6,6 +6,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { of } from 'rxjs';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { AppNotification } from '../../../data-models/common/app-notification.model';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 import { AudioService } from '../../../services/audio/audio.service';
@@ -60,6 +61,7 @@ describe('PageDeviceSettingsComponent', () => {
 	let fixture: ComponentFixture<PageDeviceSettingsComponent>;
 	// let audioService: AudioService;
 	let commonService: CommonService;
+	let localCacheService: LocalCacheService;
 	/* 	let logger: LoggerService;
 		let deviceService: DeviceService;
 		let cmsService: CMSService;
@@ -164,9 +166,12 @@ describe('PageDeviceSettingsComponent', () => {
 		fixture = TestBed.createComponent(PageDeviceSettingsComponent);
 		component = fixture.componentInstance;
 		commonService = TestBed.inject(CommonService);
+		localCacheService = TestBed.inject(LocalCacheService);
 		component.machineType = 1;
+		const spyGetLocalCacheValue = spyOn(localCacheService, 'getLocalCacheValue');
+		spyGetLocalCacheValue.withArgs(LocalStorageKey.MachineType).and.resolveTo(1);
+
 		const spyGetLocalStorageValue = spyOn(commonService, 'getLocalStorageValue');
-		spyGetLocalStorageValue.withArgs(LocalStorageKey.MachineType).and.returnValue(1);
 		spyGetLocalStorageValue.withArgs(LocalStorageKey.MachineFamilyName, undefined).and.returnValue('LenovoTablet10');
 		const spy = spyOn(commonService, 'removeObjFrom');
 		component.initInputAccessories();
@@ -178,11 +183,14 @@ describe('PageDeviceSettingsComponent', () => {
 		const inputAccessoriesCapability = new InputAccessoriesCapability();
 		component = fixture.componentInstance;
 		commonService = TestBed.inject(CommonService);
+		localCacheService = TestBed.inject(LocalCacheService);
 		keyboardService = TestBed.inject(InputAccessoriesService);
 		component.machineType = 1;
 
+		const spyGetLocalCacheValue = spyOn(localCacheService, 'getLocalCacheValue');
+		spyGetLocalCacheValue.withArgs(LocalStorageKey.MachineType).and.resolveTo(1);
+
 		const spyGetLocalStorageValue = spyOn(commonService, 'getLocalStorageValue');
-		spyGetLocalStorageValue.withArgs(LocalStorageKey.MachineType).and.returnValue(1);
 		spyGetLocalStorageValue.withArgs(LocalStorageKey.MachineFamilyName, undefined).and.returnValue('LenovoTablet1011');
 		spyGetLocalStorageValue.withArgs(LocalStorageKey.InputAccessoriesCapability).and.returnValue(inputAccessoriesCapability);
 

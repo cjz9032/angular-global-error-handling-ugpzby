@@ -10,6 +10,7 @@ import { InputAccessoriesService } from 'src/app/services/input-accessories/inpu
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { keyboardMap } from './keyboardKeysMapping';
 import { INPUT_TEXT, INVOKE_KEY_SEQUENCE, OPEN_APPLICATIONS, OPEN_APPLICATIONS_OR_FILES, OPEN_FILES, OPEN_WEB, UDKActionInfo } from './UDKActionInfo';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 declare var Windows;
 
 @Component({
@@ -45,6 +46,7 @@ export class UserDefinedKeyComponent implements OnInit, OnDestroy {
 		private keyboardService: InputAccessoriesService,
 		private translateService: TranslateService,
 		private logger: LoggerService,
+		private localCacheService: LocalCacheService,
 		private commonService: CommonService
 	) {
 		this.userDefinedKeyOptions = [
@@ -96,7 +98,7 @@ export class UserDefinedKeyComponent implements OnInit, OnDestroy {
 	async getUDKCapability() {
 		try {
 			await this.keyboardService.StartSpecialKeyMonitor(Windows.Storage.ApplicationData.current.localFolder.path);
-			this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
+			this.machineType =  await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType);
 			if (this.machineType === 1) {
 				let inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
 				if (inputAccessoriesCapability && inputAccessoriesCapability.isUdkAvailable) {

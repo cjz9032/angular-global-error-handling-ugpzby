@@ -34,6 +34,7 @@ import { VantageShellService } from '../../services/vantage-shell/vantage-shell.
 import { BacklightLevelEnum } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.enum';
 import { BacklightService } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.service';
 import { TopRowFunctionsIdeapadService } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.service';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -122,6 +123,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		private viewContainerRef: ViewContainerRef,
 		public cardService: CardService,
 		private feedbackService: FeedbackService,
+		private localCacheService: LocalCacheService,
 		private backlightService: BacklightService
 	) {
 		newFeatureTipService.viewContainer = this.viewContainerRef;
@@ -175,7 +177,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		return assets;
 	}
 
-	private initComponent() {
+	private async initComponent() {
 		this.routerEventSubscription = this.router.events.subscribe((ev) => {
 			if (ev instanceof NavigationEnd) {
 				this.currentUrl = ev.url;
@@ -204,7 +206,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			}, 3000);
 		});
 
-		const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType, undefined);
+		const machineType = await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType, undefined);
 		if (machineType) {
 			this.loadMenuOptions(machineType);
 		} else if (this.deviceService.isShellAvailable) {
