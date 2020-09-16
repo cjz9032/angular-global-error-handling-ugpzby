@@ -10,12 +10,16 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons/faArrowRight';
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { ContainerCardOfflineComponent } from './container-card-offline/container-card-offline.component';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { RouterModule } from '@angular/router';
+import { ContainerCardStateComponent } from './container-card-state/container-card-state.component';
+
 
 
 @NgModule({
 	declarations: [
 		ContainerCardComponent,
 		ContainerCardOfflineComponent,
+		ContainerCardStateComponent,
 	],
 	imports: [
 		CommonModule,
@@ -25,10 +29,12 @@ import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 		FontAwesomeModule,
 		SanitizeModule,
 		AppSearchModule,
-		NgbTooltipModule
+		NgbTooltipModule,
+		RouterModule
 	],
 	exports: [
-		ContainerCardComponent
+		ContainerCardStateComponent,
+		ContainerCardComponent,
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA,
