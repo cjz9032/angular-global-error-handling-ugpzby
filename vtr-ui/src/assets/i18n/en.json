@@ -3933,7 +3933,7 @@
 			"numberSectors": "Number of sectors read",
 			"numberBadSectors": "Number of bad sectors found",
 			"numberFixedSectors": "Number of fixed sectors",
-			"numberNonFixedSectors": "Number of non fixed sectors",
+			"numberNonFixedSectors": "Number of sectors not fixed",
 			"status": "Operation status",
 			"elapsedTime": "Elapsed time",
 			"hours": "Hours",
@@ -3946,7 +3946,7 @@
 			"systemEvent": "Test aborted because a system event that could compromise the outcome has happened.",
 			"systemPasswordProtected": "Device may be password protected. Try disabling the password protection.",
 			"popup": {
-				"description": "The execution of scan and repair can cause data loss. It is recommended to make a backup before execute this operation. Are you sure you want to proceed?",
+				"description": "The execution of scan and repair can cause data loss. It is recommended to make a backup before executing this operation. Are you sure you want to proceed?",
 				"yes": "Yes",
 				"no": "No"
 			},
