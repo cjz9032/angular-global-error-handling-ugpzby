@@ -1,0 +1,26 @@
+<div *ngIf="isOnline" class="container-card card-corner">
+        <a  role="link"            
+            routerLink="/{{cardData.linkPath}}"
+            >
+            <div class="row">
+                <div class="left-side" > 
+                    <div class="title">
+                        <span>{{cardData.title}}</span>
+                    </div>
+                    <div class="summary">
+                        <span >{{cardData.summary}}</span>
+                    </div>
+                    <div>
+                        <span class="link">{{cardData.linkText}}</span>
+                        <fa-icon class="link-arrow ml-3" [icon]="['fas', 'arrow-right']"></fa-icon>
+                    </div>
+                </div>
+                <div class="right-side">
+                    <div class="status-box">
+                        <ng-content></ng-content>
+                    </div>
+                </div>
+            </div>
+        </a>
+</div>
+
