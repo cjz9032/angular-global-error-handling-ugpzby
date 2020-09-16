@@ -2,9 +2,9 @@ import { Component, OnInit, HostListener, EventEmitter, Output, Input, ViewChild
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { Router } from '@angular/router';
-import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
 	selector: 'vtr-modal-smart-performance-cancel',
@@ -19,7 +19,7 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
 		public activeModal: NgbActiveModal,
 		public smartPerformanceService: SmartPerformanceService,
 		private router: Router,
-		private commonService: CommonService,
+		private localCacheService: LocalCacheService,
 		private logger: LoggerService
 	) { }
 	private timerRef: any;
@@ -27,8 +27,8 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
 	public isLoading = false;
 
 	ngOnInit() {
-		// this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceForceClose, false);
-		this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
+		// this.localCacheService.setLocalCacheValue(LocalStorageKey.IsSmartPerformanceForceClose, false);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.HasSubscribedScanCompleted, false);
 		this.timerRef = setInterval(() => {
 			if (this.secondsCountdown-- === 0) {
 				this.cancelScan();
@@ -63,7 +63,7 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
 			this.stopCountdown();
 		}
 		try {
-			this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, true);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.HasSubscribedScanCompleted, true);
 			this.isLoading = true;
 			const cancelScanFromService = await this.smartPerformanceService.cancelScan();
 			this.logger.info('modal-smart-performance-cancel.cancelScan', cancelScanFromService);

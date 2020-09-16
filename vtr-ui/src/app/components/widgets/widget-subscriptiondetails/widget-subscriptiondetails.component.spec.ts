@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
 import { CommonService } from 'src/app/services/common/common.service';
 import { DevService } from 'src/app/services/dev/dev.service';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { SupportService } from 'src/app/services/support/support.service';
@@ -50,6 +51,7 @@ describe('WidgetSubscriptiondetailsComponent', () => {
 	let fixture: ComponentFixture<WidgetSubscriptiondetailsComponent>;
 	let modalService: NgbModal;
 	let commonService: CommonService;
+	let localCacheService: LocalCacheService;
 	let smartPerformanceService: SmartPerformanceService;
 
 	beforeEach(async(() => {
@@ -87,14 +89,16 @@ describe('WidgetSubscriptiondetailsComponent', () => {
 		expect(component).toBeTruthy();
 	});
 
-	it('should call initSubscripionDetails when spFirstRunStatus is false', () => {
-		commonService = TestBed.inject(CommonService);
-		spyOn(commonService, 'getLocalStorageValue').and.returnValues(true, false, { startDate: '2019/06/20', endDate: '2020/06/19' }, {
-			initiatedTime: '08:30',
-			isOpened: true,
-		});
+	it('should call initSubscripionDetails when spFirstRunStatus is false', async () => {
+		localCacheService = TestBed.inject(LocalCacheService);
+		spyOn(localCacheService, 'getLocalCacheValue').and.returnValues(
+			Promise.resolve(true),
+			Promise.resolve(false),
+			Promise.resolve({ startDate: '2019/06/20', endDate: '2020/06/19' }),
+			Promise.resolve({ initiatedTime: '08:30', isOpened: true })
+		);
 		component.isSubscribed = true;
-		component.initSubscripionDetails();
+		await component.initSubscripionDetails();
 		fixture.detectChanges();
 		expect(component.strStatus).toEqual('PROCESSING');
 	});
@@ -135,15 +139,15 @@ describe('WidgetSubscriptiondetailsComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	});
 
-	it('should get subscription details', () => {
-		commonService = TestBed.inject(CommonService);
+	it('should get subscription details', async () => {
+		localCacheService = TestBed.inject(LocalCacheService);
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
-		const spy = spyOn(commonService, 'getLocalStorageValue').and.returnValue({
+		const spy = spyOn(localCacheService, 'getLocalCacheValue').and.resolveTo({
 			initiatedTime: '08:30',
 			isOpened: true,
 		});
 		// const spy = spyOn(smartPerformanceService, 'getPaymentDetails').and.returnValue(Promise.resolve(response));
-		component.getSubscriptionDetails();
+		await component.getSubscriptionDetails();
 		fixture.detectChanges();
 		expect(spy).toHaveBeenCalled();
 	});
@@ -156,12 +160,12 @@ describe('WidgetSubscriptiondetailsComponent', () => {
 		done();
 	}));
 
-	it('should call subscriptionDataProcess', () => {
+	it('should call subscriptionDataProcess', async () => {
 		commonService = TestBed.inject(CommonService);
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
 		component.spProcessStatus = true;
 		const subscriptionData = [...response.data];
-		component.subscriptionDataProcess(subscriptionData);
+		await component.subscriptionDataProcess(subscriptionData);
 		fixture.detectChanges();
 		expect(component.strStatus).toEqual('ACTIVE');
 	});

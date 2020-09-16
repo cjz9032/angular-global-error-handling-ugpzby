@@ -14,12 +14,14 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell-mock.service';
 import { enumSmartPerformance } from 'src/app/enums/smart-performance.enum';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 describe('SubpageSmartPerformanceDashboardComponent', () => {
 	let component: SubpageSmartPerformanceDashboardComponent;
 	let fixture: ComponentFixture<SubpageSmartPerformanceDashboardComponent>;
 	let smartPerformanceService: SmartPerformanceService;
 	let commonService: CommonService;
+	let localCacheService: LocalCacheService;
 	let modalService: NgbModal;
 	let shellServices: VantageShellService;
 	let logger: LoggerService;
@@ -238,28 +240,28 @@ describe('SubpageSmartPerformanceDashboardComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should get smart performance schedule scan status', async(() => {
+	it('should get smart performance schedule scan status', async(async () => {
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
-		commonService = TestBed.inject(CommonService);
+		localCacheService = TestBed.inject(LocalCacheService);
 		const res = { scanStatus: 'scanning' };
 		smartPerformanceService.isShellAvailable = true;
 		spyOn(smartPerformanceService, 'getScheduleScanStatus').and.returnValue(Promise.resolve(res));
-		spyOn(commonService, 'getLocalStorageValue').and.returnValue(true);
+		spyOn(localCacheService, 'getLocalCacheValue').and.resolveTo(true);
 		spyOn(smartPerformanceService, 'getReadiness').and.returnValue(Promise.resolve(true));
-		component.getSmartPerformanceScheduleScanStatus();
+		await component.getSmartPerformanceScheduleScanStatus();
 		fixture.detectChanges();
 		expect(component.showSubscribersummary).toBe(false);
 	}));
 
-	it('should get smart performance schedule scan status - when spSubscribeCancelModel is false', async(() => {
+	it('should get smart performance schedule scan status - when spSubscribeCancelModel is false', async(async () => {
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
-		commonService = TestBed.inject(CommonService);
+		localCacheService = TestBed.inject(LocalCacheService);
 		const res = { scanStatus: 'scanning', result: { tune: 0, boost: 0, secure: 0, }, percentage: 100, rating: 9 };
 		smartPerformanceService.isShellAvailable = true;
 		const spy = spyOn(smartPerformanceService, 'getScheduleScanStatus').and.returnValue(Promise.resolve(res));
-		spyOn(commonService, 'getLocalStorageValue').and.returnValue(false);
+		spyOn(localCacheService, 'getLocalCacheValue').and.resolveTo(false);
 		spyOn(smartPerformanceService, 'getReadiness').and.returnValue(Promise.resolve(true));
-		component.getSmartPerformanceScheduleScanStatus();
+		await component.getSmartPerformanceScheduleScanStatus();
 		fixture.detectChanges();
 		expect(spy).toHaveBeenCalled();
 	}));
@@ -286,30 +288,30 @@ describe('SubpageSmartPerformanceDashboardComponent', () => {
 		expect(spy).not.toHaveBeenCalled();
 	}));
 
-	it('should call scanAndFixInformation with res.state true', async(() => {
+	it('should call scanAndFixInformation with res.state true', async(async () => {
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
-		commonService = TestBed.inject(CommonService);
+		localCacheService = TestBed.inject(LocalCacheService);
 		const res = { scanStatus: 'scanning', result: { tune: 0, boost: 0, secure: 0, }, percentage: 100, rating: 9, state: true };
 		smartPerformanceService.isShellAvailable = true;
 		component.isSubscribed = true;
 		spyOn(smartPerformanceService, 'getReadiness').and.returnValue(Promise.resolve(true));
-		spyOn(commonService, 'getLocalStorageValue').and.returnValue(true);
+		spyOn(localCacheService, 'getLocalCacheValue').and.resolveTo(true);
 		const spy = spyOn(smartPerformanceService, 'launchScanAndFix').and.returnValue(Promise.resolve(res));
-		component.scanAndFixInformation();
+		await component.scanAndFixInformation();
 		fixture.detectChanges();
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call scanAndFixInformation with res.state true and when spSubscribeCancelModel is false', async(() => {
+	it('should call scanAndFixInformation with res.state true and when spSubscribeCancelModel is false', async(async () => {
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
-		commonService = TestBed.inject(CommonService);
+		localCacheService = TestBed.inject(LocalCacheService);
 		const res = { scanStatus: 'scanning', result: { tune: 0, boost: 0, secure: 0, }, percentage: 100, rating: 9, state: true };
 		smartPerformanceService.isShellAvailable = true;
 		component.isSubscribed = true;
 		spyOn(smartPerformanceService, 'getReadiness').and.returnValue(Promise.resolve(true));
-		spyOn(commonService, 'getLocalStorageValue').and.returnValues(true, false);
+		spyOn(localCacheService, 'getLocalCacheValue').and.returnValues(Promise.resolve(true), Promise.resolve(false));
 		const spy = spyOn(smartPerformanceService, 'launchScanAndFix').and.returnValue(Promise.resolve(res));
-		component.scanAndFixInformation();
+		await component.scanAndFixInformation();
 		fixture.detectChanges();
 		expect(spy).toHaveBeenCalled();
 	}));
