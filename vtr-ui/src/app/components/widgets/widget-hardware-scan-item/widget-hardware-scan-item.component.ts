@@ -17,7 +17,7 @@ export class WidgetHardwareScanItemComponent implements OnInit {
 	public tooltipText: string;
 	public tooltipIndex: number;
 	public isXsBreakpoint: boolean;
-	contactusUrl: string;
+	public contactusUrl: string;
 
 	constructor(private lenovoSupportService: LenovoSupportService, private breakPointObserver: BreakpointObserver) {
 	}
@@ -33,18 +33,18 @@ export class WidgetHardwareScanItemComponent implements OnInit {
 	}
 
 	// Changes status expanded of the module test list when the user request
-	public toggleTestListVisibility(item: any) {
+	public toggleTestListVisibility(item: any): void {
 		item.expanded = !item.expanded;
 		item.expandedStatusChangedByUser = !item.expandedStatusChangedByUser;
 	}
 
-	private async configureContactusUrl() {
+	private async configureContactusUrl(): Promise<void> {
 		await this.lenovoSupportService.getContactusUrl().then((response) => {
 			this.contactusUrl = response;
 		});
 	}
 
-	openContactusPage() {
+	public openContactusPage(): void {
 		window.open(this.contactusUrl);
 	}
 
@@ -52,7 +52,7 @@ export class WidgetHardwareScanItemComponent implements OnInit {
 	 * Retrive if current observable breakpoint xSmall is matched and
 	 * saves to isXsBreakpoint variable.
 	 */
-	getXsBreakpointStatus(): void {
+	private getXsBreakpointStatus(): void {
 		this.breakPointObserver
 		.observe([Breakpoints.XSmall])
 		.subscribe((state: BreakpointState) => {
