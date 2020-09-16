@@ -255,11 +255,6 @@ export enum LocalStorageKey {
 	TopRowFunctionsCapability = '[LocalStorageKey] TopRowFunctionsCapability',
 	BacklightCapability = '[LocalStorageKey] BacklightCapability',
 	GaugeResetInformation = '[LocalStorageKey] GaugeResetInformation',
-	IsFreeFullFeatureEnabled = '[LocalStorageKey] IsFreeFullFeatureEnabled',
-	IsSmartPerformanceForceClose = '[LocalStorageKey] IsSmartPerformanceForceClose',
-	SmartPerformanceSubscriptionDetails = '[LocalStorageKey] SmartPerformanceSubscriptionDetails',
-	SmartPerformanceSubscriptionModalStatus = '[LocalStorageKey] SmartPerformanceSubscriptionModalStatus',
-	HasSubscribedScanCompleted = '[LocalStorageKey] HasSubscribedScanCompleted',
 	IsPowerPageAvailable = '[LocalStorageKey] isPowerPageAvailable',
 	DashboardWelcomeTexts = '[LocalStorageKey] DashboardWelcomeTexts',
 	IsDolbyModeAvailable = '[LocalStorageKey] IsDolbyModeAvailable',
@@ -298,6 +293,12 @@ export enum LocalStorageKey {
 	isOldScheduleScanDeleted= '[LocalStorageKey] isOldScheduleScanDeleted',
 	SPProcessStatus= '[LocalStorageKey] SPProcessStatus',
 	IsFreePCScanRun = '[LocalStorageKey] IsFreePCScanRun',
+	IsFreeFullFeatureEnabled = '[LocalStorageKey] IsFreeFullFeatureEnabled',
+	IsSmartPerformanceForceClose = '[LocalStorageKey] IsSmartPerformanceForceClose',
+	SmartPerformanceSubscriptionDetails = '[LocalStorageKey] SmartPerformanceSubscriptionDetails',
+	SmartPerformanceSubscriptionModalStatus = '[LocalStorageKey] SmartPerformanceSubscriptionModalStatus',
+	HasSubscribedScanCompleted = '[LocalStorageKey] HasSubscribedScanCompleted',
+
 	// Hide Camera Preview on some models
 	IsCameraPreviewHidden = '[LocalStorageKey] IsCameraPreviewHidden',
 	ShouldCameraSectionDisabled = '[LocalStorageKey] ShouldCameraSectionDisabled'

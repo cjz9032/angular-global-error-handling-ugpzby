@@ -15,6 +15,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { ModalSmartPerformanceSubscribeComponent } from 'src/app/components/modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
 	selector: 'vtr-subpage-smart-performance-dashboard',
@@ -69,6 +70,7 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 		public shellServices: VantageShellService,
 		public metricsTranslateService: MetricsTranslateService,
 		public metricsService: MetricService,
+		private localCacheService: LocalCacheService,
 		private supportService: SupportService,
 
 	) {
@@ -83,15 +85,15 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 			this.checkReadiness();
 		}
 	}
-	ngOnInit() {
+	async ngOnInit() {
 		this.isOnline = this.commonService.isOnline;
 
-		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
+		this.isSubscribed = await this.localCacheService.getLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled);
 		if (this.isSubscribed === undefined) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
-			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
-			this.commonService.setLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled, true);
-			this.IsSmartPerformanceFirstRun = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsSPScheduleScanEnabled, true);
+			this.IsSmartPerformanceFirstRun = await this.localCacheService.getLocalCacheValue(LocalStorageKey.IsSmartPerformanceFirstRun);
 			this.writeSmartPerformanceActivity('True', 'False', 'InActive');
 			// if (this.IsSmartPerformanceFirstRun === true) {
 			this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCANANDFIX);
@@ -99,10 +101,11 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 			// 	//this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, false);
 			// }
 		}
-		if (this.commonService.getLocalStorageValue(LocalStorageKey.IsFreePCScanRun) === undefined && this.commonService.getLocalStorageValue(LocalStorageKey.IsFreePCScanRun) === false) {
+		const isFreePCScanRun = await this.localCacheService.getLocalCacheValue(LocalStorageKey.IsFreePCScanRun);
+		if (isFreePCScanRun === undefined || isFreePCScanRun === false) {
 			this.writeSmartPerformanceActivity('True', 'False', 'InActive');
 		}
-		else if (this.commonService.getLocalStorageValue(LocalStorageKey.IsFreePCScanRun) === true) {
+		else if (isFreePCScanRun === true) {
 			this.writeSmartPerformanceActivity('True', 'True', 'InActive');
 		}
 		this.getSubscriptionDetails();
@@ -130,7 +133,7 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 			.then((getReadinessFromService: any) => {
 				this.logger.info('ui-smart-performance.ngOnInit.getReadiness.then', getReadinessFromService);
 				if (!getReadinessFromService) {
-					this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.HasSubscribedScanCompleted, false);
 					this.isScanning = true;
 					this.registerScheduleScanEvent();
 					this.getSmartPerformanceScheduleScanStatus();
@@ -213,7 +216,7 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 	// Scan Now event from Summary Page
 	changeScanEvent() {
 		this.isScanning = true;
-		this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.HasSubscribedScanCompleted, false);
 		if (this.smartPerformanceService.isShellAvailable) {
 			this.smartPerformanceService
 				.getReadiness()
@@ -238,7 +241,7 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 						}
 					}
 					else {
-						this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
+						this.localCacheService.setLocalCacheValue(LocalStorageKey.HasSubscribedScanCompleted, false);
 						this.isScanning = true;
 						this.registerScheduleScanEvent();
 						this.getSmartPerformanceScheduleScanStatus();
@@ -281,7 +284,7 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 				// );
 				res = await this.smartPerformanceService.getScheduleScanStatus();
 				if (res && res.scanstatus !== 'Idle') {
-					const spSubscribeCancelModel = this.commonService.getLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted);
+					const spSubscribeCancelModel = await this.localCacheService.getLocalCacheValue(LocalStorageKey.HasSubscribedScanCompleted);
 					if (spSubscribeCancelModel) {
 						this.scheduleScanObj = null;
 						this.showSubscribersummary = false;
@@ -330,7 +333,7 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 		let res;
 		if (this.smartPerformanceService.isShellAvailable) {
 			try {
-				this.isSubscribed = this.commonService.getLocalStorageValue(
+				this.isSubscribed = await this.localCacheService.getLocalCacheValue(
 					LocalStorageKey.IsFreeFullFeatureEnabled
 				);
 				if (this.isSubscribed === true) {
@@ -340,7 +343,7 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 				}
 				if (res && res.state === true) {
 					// Subscriber Scan cancel model
-					const spSubscribeCancelModel = this.commonService.getLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted);
+					const spSubscribeCancelModel = await this.localCacheService.getLocalCacheValue(LocalStorageKey.HasSubscribedScanCompleted);
 					if (spSubscribeCancelModel) {
 						// this.hasSubscribedScanCompleted = false;
 						this.scheduleScanObj = null;
@@ -389,14 +392,14 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 	scanNow() {
 		if (this.isOnline) {
 			this.writeSmartPerformanceActivity('True', 'True', 'InActive');
-			this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.HasSubscribedScanCompleted, false);
 			if (this.smartPerformanceService.isShellAvailable) {
 				this.smartPerformanceService
 					.getReadiness()
 					.then((getReadinessFromService: any) => {
 						this.logger.info('ScanNow.getReadiness.then', getReadinessFromService);
 						if (getReadinessFromService) {
-							this.commonService.setLocalStorageValue(LocalStorageKey.IsFreePCScanRun, true);
+							this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreePCScanRun, true);
 							this.isScheduleScanRunning = false;
 							this.shellServices.registerEvent(EventTypes.smartPerformanceScanStatus,
 								event => {
@@ -408,7 +411,7 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 							this.scanAndFixInformation();
 						}
 						else {
-							this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
+							this.localCacheService.setLocalCacheValue(LocalStorageKey.HasSubscribedScanCompleted, false);
 							this.isScanning = true;
 							this.registerScheduleScanEvent();
 							this.getSmartPerformanceScheduleScanStatus();
@@ -495,7 +498,7 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 				this.getExpiredStatus(releaseDate, lastItem);
 			}
 		} else {
-			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
 			this.isSubscribed = false;
 		}
 	}
@@ -505,13 +508,13 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 		expiredDate = new Date(releaseDate);
 		if (expiredDate < currentDate) {
 			this.writeSmartPerformanceActivity('True', 'True', 'Expired');
-			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
 			this.isSubscribed = false;
 			// this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
 		}
 		else {
 			this.writeSmartPerformanceActivity('True', 'True', 'Active');
-			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
 			this.isSubscribed = true;
 		}
 	}

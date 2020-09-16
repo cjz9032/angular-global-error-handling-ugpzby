@@ -10,6 +10,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { PaymentPage } from 'src/app/enums/smart-performance.enum';
 import { environment } from 'src/environments/environment';
 import moment from 'moment';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 @Component({
 	selector: 'vtr-modal-smart-performance-subscribe',
 	templateUrl: './modal-smart-performance-subscribe.component.html',
@@ -36,6 +37,7 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 		public activeModal: NgbActiveModal,
 		private commonService: CommonService,
 		private supportService: SupportService,
+		private localCacheService: LocalCacheService,
 		private loggerService: LoggerService
 	) {
 	}
@@ -73,13 +75,13 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 			initiatedTime: intervalTime,
 			isOpened: true
 		};
-		this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, modalStatus);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, modalStatus);
 	}
 	closeModal() {
 		const modalStatus = {
 			isOpened: false
 		};
-		this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, modalStatus);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, modalStatus);
 		this.activeModal.close('close');
 	}
 

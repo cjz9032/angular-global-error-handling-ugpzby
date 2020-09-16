@@ -8,6 +8,7 @@ import { actualMeridiem, enumScanFrequency, actualScanFrequency, enumSmartPerfor
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import moment from 'moment';
 import { MetricService } from 'src/app/services/metric/metrics.service';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
 	selector: 'vtr-subpage-schedule-scan',
@@ -20,6 +21,7 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 		private logger: LoggerService,
 		public smartPerformanceService: SmartPerformanceService,
 		private translate: TranslateService,
+		private localCacheService: LocalCacheService,
 		private metricService: MetricService
 	) { }
 
@@ -101,7 +103,7 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 	private disableScanMetricParam = 'Enable schedule scan: false';
 	private enableScanMetricParam = 'Enable schedule scan: true, scan frequency: ';
 
-	ngOnInit() {
+	async ngOnInit() {
 		this.spTransLangEvent = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 			this.translationCheck();
 		});
@@ -114,14 +116,14 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 		this.enumLocalScanFrequncy = enumScanFrequency;
 
 		// fetching values from local storage, if saved.
-		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
-		this.scheduleScanFrequency = this.commonService.getLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency);
-		this.IsSmartPerformanceFirstRun = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun);
-		this.IsScheduleScanEnabled = this.commonService.getLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled);
+		this.isSubscribed = await this.localCacheService.getLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled);
+		this.scheduleScanFrequency = await this.localCacheService.getLocalCacheValue(LocalStorageKey.SPScheduleScanFrequency);
+		this.IsSmartPerformanceFirstRun = await this.localCacheService.getLocalCacheValue(LocalStorageKey.IsSmartPerformanceFirstRun);
+		this.IsScheduleScanEnabled = await this.localCacheService.getLocalCacheValue(LocalStorageKey.IsSPScheduleScanEnabled);
 
 		// setting scan frequency when no value returned from local storage else using as selectedFrequency
 		if (this.scheduleScanFrequency === undefined) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, actualScanFrequency[0]);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.SPScheduleScanFrequency, actualScanFrequency[0]);
 			this.selectedFrequency = this.scanFrequency[0];
 			this.frequencyValue = this.scanFrequency.indexOf(this.selectedFrequency);
 		} else {
@@ -159,8 +161,8 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 
 		if (this.IsSmartPerformanceFirstRun === true && this.isSubscribed === false) {
 			this.scheduleScan(this.requestScanData);
-			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, false);
-			this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, actualScanFrequency[0]);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsSmartPerformanceFirstRun, false);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.SPScheduleScanFrequency, actualScanFrequency[0]);
 		}
 		// fetching next schedule date and time from task scheduler
 		if (this.scheduleScanFrequency !== undefined && this.IsScheduleScanEnabled && !this.IsSmartPerformanceFirstRun) {
@@ -253,13 +255,13 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 		}, 10);
 	}
 
-	cancelChangedScanSchedule() {
+	async cancelChangedScanSchedule() {
 		this.scheduleTab = '';
 		this.isChangeSchedule = false;
 		setTimeout(() => {
 			this.scheduledScanFrequency.nativeElement.focus();
 		}, 10);
-		this.scheduleScanFrequency = this.commonService.getLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency);
+		this.scheduleScanFrequency = await this.localCacheService.getLocalCacheValue(LocalStorageKey.SPScheduleScanFrequency);
 		this.changeScanFrequency(actualScanFrequency.indexOf(this.scheduleScanFrequency));
 		if (this.isSubscribed) {
 			this.getNextScanRunTime(enumSmartPerformance.SCHEDULESCANANDFIX);
@@ -323,7 +325,7 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 			this.setTypeOfFrequency();
 			this.payloadData(this.type);
 			this.scheduleScan(this.requestScanData);
-			this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, actualScanFrequency[this.frequencyValue]);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.SPScheduleScanFrequency, actualScanFrequency[this.frequencyValue]);
 			this.logger.info('ui-scan-schedule.component.saveChangedScanSchedule', JSON.stringify(this.requestScanData));
 		} catch (err) {
 			this.logger.error('ui-scan-schedule.component.saveChangedScanSchedule', err);
@@ -348,7 +350,7 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 	}
 
 	// toggle button event schedule scan
-	setEnableScanStatus(event: any) {
+	async setEnableScanStatus(event: any) {
 		this.logger.info('setEnableScanStatus', event.switchValue);
 		this.scanToggleValue = event.switchValue;
 
@@ -362,12 +364,12 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 				this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCAN);
 				this.setDefaultValWhenDisabled();
 			}
-			this.commonService.setLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled, false);
-			this.commonService.removeLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsSPScheduleScanEnabled, false);
+			this.localCacheService.removeLocalCacheItem(LocalStorageKey.SPScheduleScanFrequency);
 			const taskParam = this.disableScanMetricParam;
 			this.metricService.sendSetScanSchedule(taskParam, 'false');
 		} else {
-			this.IsScheduleScanEnabled = this.commonService.getLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled);
+			this.IsScheduleScanEnabled = await this.localCacheService.getLocalCacheValue(LocalStorageKey.IsSPScheduleScanEnabled);
 			if (!this.IsScheduleScanEnabled) {
 				this.selectedFrequency = this.scanFrequency[0];
 				this.frequencyValue = this.scanFrequency.indexOf(this.selectedFrequency);
@@ -375,8 +377,8 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 				this.type = 'firstRun';
 				this.payloadData(this.type);
 				this.scheduleScan(this.requestScanData);
-				this.commonService.setLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled, true);
-				this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, actualScanFrequency[this.frequencyValue]);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.IsSPScheduleScanEnabled, true);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.SPScheduleScanFrequency, actualScanFrequency[this.frequencyValue]);
 				const taskParam = this.enableScanMetricParam + actualScanFrequency[this.frequencyValue];
 				this.metricService.sendSetScanSchedule(taskParam, actualScanFrequency[this.frequencyValue]);
 			}
@@ -390,8 +392,8 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 			if (res.state) {
 
 				if (this.IsSmartPerformanceFirstRun) {
-					this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, false);
-					this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, actualScanFrequency[0]);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.IsSmartPerformanceFirstRun, false);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.SPScheduleScanFrequency, actualScanFrequency[0]);
 				}
 
 				if (this.isSubscribed) {
@@ -465,7 +467,7 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 				this.type = 'firstRun';
 				this.payloadData(this.type);
 				this.scheduleScan(this.requestScanData);
-				this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, actualScanFrequency[0]);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.SPScheduleScanFrequency, actualScanFrequency[0]);
 
 			}
 			if (res.nextruntime === null) {

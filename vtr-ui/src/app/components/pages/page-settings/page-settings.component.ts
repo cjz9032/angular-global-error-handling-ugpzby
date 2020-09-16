@@ -439,8 +439,8 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		return result;
 	}
 
-	startUnRegisteringScheduleScan() {
-		this.isSPFullFeatureEnabled = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
+	async startUnRegisteringScheduleScan() {
+		this.isSPFullFeatureEnabled = await this.localCacheService.getLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled);
 		if (this.isSPFullFeatureEnabled) {
 			this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCANANDFIX);
 		} else {
@@ -454,7 +454,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			const res: any = await this.smartPerformanceService.unregisterScanSchedule(payload);
 			this.loggerService.info('page-settings.unregisterScheduleScan.then', res);
 			if (res && res.state) {
-				this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
 			}
 		} catch (err) {
 			this.loggerService.error('page-settings.unregisterScheduleScan.then', err);

@@ -11,12 +11,14 @@ import { SmartPerformanceService } from 'src/app/services/smart-performance/smar
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { enumSmartPerformance } from 'src/app/enums/smart-performance.enum';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 
 describe('SubpageScheduleScanComponent', () => {
 	let component: SubpageScheduleScanComponent;
 	let fixture: ComponentFixture<SubpageScheduleScanComponent>;
 	let commonService: CommonService;
+	let localCacheService: LocalCacheService;
 	let smartPerformanceService: SmartPerformanceService;
 
 	beforeEach(async(() => {
@@ -143,19 +145,19 @@ describe('SubpageScheduleScanComponent', () => {
 		expect(component.selectedNumber).toEqual(component.dates[10]);
 	});
 
-	it('should not save changed schedule scan - subscribed user', () => {
+	it('should not save changed schedule scan - subscribed user', async () => {
 		component.isSubscribed = true;
-		commonService = TestBed.inject(CommonService);
-		spyOn(commonService, 'getLocalStorageValue').and.returnValue(component.scanFrequency[0]);
-		component.cancelChangedScanSchedule();
+		localCacheService = TestBed.inject(LocalCacheService);
+		spyOn(localCacheService, 'getLocalCacheValue').and.resolveTo(component.scanFrequency[0]);
+		await component.cancelChangedScanSchedule();
 		expect(component.scheduleScanFrequency).toEqual(component.scanFrequency[0]);
 	});
 
-	it('should not save changed schedule scan - non-subscribed user', () => {
+	it('should not save changed schedule scan - non-subscribed user', async () => {
 		component.isSubscribed = false;
-		commonService = TestBed.inject(CommonService);
-		spyOn(commonService, 'getLocalStorageValue').and.returnValue(component.scanFrequency[0]);
-		component.cancelChangedScanSchedule();
+		localCacheService = TestBed.inject(LocalCacheService);
+		spyOn(localCacheService, 'getLocalCacheValue').and.resolveTo(component.scanFrequency[0]);
+		await component.cancelChangedScanSchedule();
 		expect(component.scheduleScanFrequency).toEqual(component.scanFrequency[0]);
 	});
 
@@ -220,21 +222,21 @@ describe('SubpageScheduleScanComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	});
 
-	it('should call setEnableScanStatus - switch is enabled', () => {
-		commonService = TestBed.inject(CommonService);
+	it('should call setEnableScanStatus - switch is enabled', async () => {
+		localCacheService = TestBed.inject(LocalCacheService);
 		const event = { switchValue: true };
 		component.isSubscribed = true;
-		spyOn(commonService, 'getLocalStorageValue').and.returnValue(false);
+		spyOn(localCacheService, 'getLocalCacheValue').and.resolveTo(false);
 		const spy = spyOn(component, 'scheduleScan');
-		component.setEnableScanStatus(event);
+		await component.setEnableScanStatus(event);
 		expect(spy).toHaveBeenCalled();
 	});
 
-	it('should call setEnableScanStatus - switch is disabled', () => {
+	it('should call setEnableScanStatus - switch is disabled', async () => {
 		const event = { switchValue: false };
 		component.isSubscribed = true;
 		const spy = spyOn(component, 'unregisterScheduleScan');
-		component.setEnableScanStatus(event);
+		await component.setEnableScanStatus(event);
 		expect(spy).toHaveBeenCalled();
 	});
 

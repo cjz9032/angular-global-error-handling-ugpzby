@@ -15,6 +15,7 @@ import moment from 'moment';
 import { v4 as uuid } from 'uuid';
 
 import { ModalSmartPerformanceSubscribeComponent } from 'src/app/components/modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
 	selector: 'vtr-subpage-smart-performance-scan-summary',
@@ -32,6 +33,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		public shellServices: VantageShellService,
 		private translate: TranslateService,
 		private router: Router,
+		private localCacheService: LocalCacheService,
 		private formatLocaleDate: FormatLocaleDatePipe
 	) {
 
@@ -148,8 +150,9 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 			EndDate: formatDate(this.spEnum.SCHEDULESCANENDDATE, 'yyyy/MM/dd', 'en')
 		}
 	];
-	ngOnInit() {
-		this.isSubscribed = this.commonService.getLocalStorageValue(
+	async ngOnInit() {
+		this.leftAnimator = '0%';
+		this.isSubscribed = await this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.IsFreeFullFeatureEnabled
 		);
 		if (!this.isSubscribed) {
@@ -171,13 +174,12 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		this.selectedDate = this.calendar.getToday();
 		this.toDate = this.selectedDate;
 		this.fromDate = this.selectedDate;
-		this.isSubscribed = this.commonService.getLocalStorageValue(
+		this.isSubscribed = await this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.IsFreeFullFeatureEnabled
 		);
-		this.enableNextText = this.commonService.getLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled);
+		this.enableNextText = await this.localCacheService.getLocalCacheValue(LocalStorageKey.IsSPScheduleScanEnabled);
 		this.isDaySelectionEnable = false;
 		this.scanScheduleDate = this.selectedDate;
-		this.leftAnimator = '0%';
 		if (this.isSubscribed || this.isExpired) {
 			// 	this.getLastScanResult();
 			this.scanSummaryTime(0);
@@ -216,7 +218,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 				this.getExpiredStatus(releaseDate, lastItem);
 			}
 		} else {
-			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
 			this.isSubscribed = false;
 		}
 	}
@@ -226,13 +228,13 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		expiredDate = new Date(releaseDate);
 
 		if (expiredDate < currentDate) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
 			this.isSubscribed = false;
 			// this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
 		}
 		else {
 			// this.writeSmartPerformanceActivity('True', 'True', 'Active');
-			this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
 			this.isSubscribed = true;
 		}
 	}
@@ -506,7 +508,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 			initiatedTime: intervalTime,
 			isOpened: true
 		};
-		this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, modalStatus);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, modalStatus);
 		// const scanEnabled = this.commonService.getLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled);
 		// this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
 		// this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, 'Once a week')

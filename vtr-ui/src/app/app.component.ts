@@ -109,7 +109,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		this.vantageFocusHelper.start();
 	}
 
-	ngOnInit() {
+	async ngOnInit() {
 		if (this.deviceService.isAndroid) {
 			return;
 		}
@@ -152,7 +152,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 				}
 			});
 		}
-		this.isOldScheduleScanDeleted = this.commonService.getLocalStorageValue(LocalStorageKey.isOldScheduleScanDeleted);
+		this.isOldScheduleScanDeleted = await this.localCacheService.getLocalCacheValue(LocalStorageKey.isOldScheduleScanDeleted);
 		if (this.isOldScheduleScanDeleted === undefined || this.isOldScheduleScanDeleted === false) {
 			this.removeOldSmartPerformanceScheduleScans();
 		}
@@ -505,9 +505,9 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	}
 
 
-	private removeOldSmartPerformanceScheduleScans() {
+	private async removeOldSmartPerformanceScheduleScans() {
 		try {
-			const isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
+			const isSubscribed = await this.localCacheService.getLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled);
 			if (isSubscribed !== undefined && isSubscribed === true) {
 				this.unregisterSmartPerformanceScheduleScan(enumSmartPerformance.OLDSCHEDULESCANANDFIX);
 			} else {
@@ -524,7 +524,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		try {
 			const res: any = await this.smartPerformanceService.unregisterScanSchedule(payload);
 			if (res.state) {
-				this.commonService.setLocalStorageValue(LocalStorageKey.isOldScheduleScanDeleted, true);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.isOldScheduleScanDeleted, true);
 			}
 			this.logger.info('app.component.unregisterScheduleScan.then', res);
 		} catch (err) {
