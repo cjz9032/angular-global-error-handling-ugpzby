@@ -40,6 +40,25 @@
 	<!--			</div>-->
 	<!--		</vtr-ui-row-switch>-->
 	<!--	</div>-->
+	<div *ngSwitchCase="backlightLevelEnum.TWO_LEVELS">
+		<vtr-ui-row-switch [title]="'device.deviceSettings.inputAccessories.backlight.title' | translate"
+			[isMetricsEnabled]=false
+			componentName="Input Accessories"
+			[caption]="'device.deviceSettings.inputAccessories.backlight.description.base' | translate"
+			[leftIcon]="['fal', 'keyboard']"
+			[showChildContent]="true"
+			[theme]="'white'"
+			[isLastChild]="isLastChild"
+			[switchId]="'inputAccessories-backlight'">
+			<div class="row no-gutters">
+				<vtr-ui-circle-radio-with-checkbox-list [groupName]="'optimize-microphone-radio-group'"
+					(optionChange)="onBacklightRadioChange($event)"
+					[radioDetails]="kbBacklightUIModel">
+				</vtr-ui-circle-radio-with-checkbox-list>
+			</div>
+		</vtr-ui-row-switch>
+	</div>
+
 	<div *ngSwitchCase="backlightLevelEnum.TWO_LEVELS_AUTO">
 		<vtr-ui-row-switch [title]="'device.deviceSettings.inputAccessories.backlight.title' | translate"
 			[isMetricsEnabled]=false
