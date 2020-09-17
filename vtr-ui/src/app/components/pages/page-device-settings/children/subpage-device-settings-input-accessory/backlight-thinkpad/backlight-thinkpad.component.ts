@@ -4,6 +4,7 @@ import { UiCircleRadioWithCheckBoxListModel } from 'src/app/components/ui/ui-cir
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { BacklightLevelEnum, BacklightStatusEnum } from '../backlight/backlight.enum';
 
@@ -47,7 +48,8 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 	constructor(
 		private keyboardService: InputAccessoriesService,
 		private logger: LoggerService,
-		private commonService: CommonService) {
+		private commonService: CommonService,
+		private localCacheService: LocalCacheService) {
 		this.getKBDBacklightCapability();
 	}
 
@@ -59,12 +61,16 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 		}, 30000);
 	}
 
-	private initDataFromCache() {
-		this.cacheData = this.commonService.getLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData);
+	private async initDataFromCache() {
+		this.cacheData =  await this.localCacheService.getLocalCacheValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData);
 		this.modes = this.cacheData.modes;
 		this.currentMode = this.cacheData.currentMode;
 		this.isAutoKBDEnable = this.cacheData.isAutoKBDEnable;
 		this.isBaseAuto(this.modes, BacklightStatusEnum.AUTO);
+	}
+
+	private saveCache(): void {
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData);
 	}
 
 	// public async updateMode(mode) {
@@ -90,7 +96,7 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 						if (autoCapability) {
 							this.modes = [];
 							this.cacheData.modes = this.modes;
-							this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData);
+							this.saveCache();
 							this.showHide.emit(false);
 							this.updateBacklightModel(this.modes);
 							return;
@@ -120,7 +126,7 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 	public removeObjByValue(value: string) {
 		this.modes = this.modes.filter(e => e.value !== value);
 		this.cacheData.modes = this.modes;
-		this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData);
+		this.saveCache();
 	}
 
 	public isBaseAuto(array: any[], value: string) {
@@ -139,7 +145,7 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 			this.modes = this.commonService.sortMenuItems(this.modes);
 		}
 		this.cacheData.modes = this.modes;
-		this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData);
+		this.saveCache();
 	}
 
 	public getAutoKBDBacklightCapability() {
@@ -175,7 +181,7 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 						if (res) {
 							this.currentMode = BacklightStatusEnum.AUTO;
 							this.cacheData.currentMode = this.currentMode;
-							this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData);
+							this.saveCache();
 						}
 					}).catch(error => {
 						this.logger.error('BacklightThinkpadComponent:GetAutoKBDStatus', error.message);
@@ -197,7 +203,7 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 						if (res !== BacklightStatusEnum.AUTO && this.currentMode !== BacklightStatusEnum.AUTO) {
 							this.currentMode = this.compare(res);
 							this.cacheData.currentMode = this.currentMode;
-							this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData);
+							this.saveCache();
 							this.updateBacklightSelection();
 						}
 					}).catch(error => {
@@ -328,7 +334,7 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 	onBacklightRadioChange($event: UiCircleRadioWithCheckBoxListModel) {
 		this.currentMode = $event.value as BacklightStatusEnum;
 		this.cacheData.currentMode = this.currentMode;
-		this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData);
+		this.saveCache();
 		if (this.currentMode === BacklightStatusEnum.AUTO) {
 			this.setKBDBacklightStatus(BacklightStatusEnum.OFF);
 			this.setAutomaticKBDBacklight(false);
