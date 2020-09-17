@@ -1256,7 +1256,7 @@
                     "vantageToolbar": {
                         "title": "Panel s nástrojmi Lenovo Vantage a prémiové nastavenia",
                         "description": "Pripnite panel s nástrojmi Lenovo Vantage na panel úloh systému Windows, aby ste mali jednoduchý prístup k vašim najčastejšie používaným nastaveniam a mohli ste dostávať prémiové ponuky a aktualizácie.",
-                        "hint": "Možnosti na obrázku závisia od kapacity zariadenia. Napríklad niektoré zariadenia podporujú nastavenie podsvietenia, no iné ho podporovať nemusia."
+                        "hint": "Možnosti na obrázku závisia od schopností a vlastností zariadenia. Napríklad niektoré zariadenia podporujú nastavenie podsvietenia klávesnice, no iné ho podporovať nemusia."
                     }
                 },
                 "batterySettings": {

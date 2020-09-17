@@ -1256,7 +1256,7 @@
                     "vantageToolbar": {
                         "title": "Lenovo Vantage-Symbolleiste und Premium-Einstellungen",
                         "description": "Heften Sie die Lenovo Vantage-Symbolleiste an die Windows-Taskleiste an, um einfach auf häufig verwendete Einstellungen zuzugreifen und Premium-Angebote und Aktualisierungen zu erhalten.",
-                        "hint": "Die Optionen im Bild hängen von der Kapazität des Computers ab. Einige Computer unterstützen beispielsweise Einstellungen für die Hintergrundbeleuchtung, andere möglicherweise nicht."
+                        "hint": "Die Optionen im Bild hängen von den Funktionen und Eigenschaften der Einheit ab. Einige Computer unterstützen beispielsweise Einstellungen für die Tastaturhintergrundbeleuchtung, andere möglicherweise nicht."
                     }
                 },
                 "batterySettings": {

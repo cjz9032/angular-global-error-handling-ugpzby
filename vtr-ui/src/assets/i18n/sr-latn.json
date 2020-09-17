@@ -1256,7 +1256,7 @@
                     "vantageToolbar": {
                         "title": "Lenovo Vantage traka sa alatkama i vrhunske postavke",
                         "description": "Zakačite Lenovo Vantage traku sa alatkama na Windows traku zadataka da biste lakše pristupali najčešće korišćenim postavkama i dobili vrhunske ponude i ažuriranja namenjena vama.",
-                        "hint": "Opcije na slici zavise od kapaciteta računara. Na primer, neki računari podržavaju postavke za pozadinsko svetlo, a neki možda ne podržavaju."
+                        "hint": "Opcije na slici zavise od mogućnosti i karakteristika uređaja. Na primer, neki računari podržavaju postavke za pozadinsko svetlo tastature, a neki možda ne podržavaju."
                     }
                 },
                 "batterySettings": {

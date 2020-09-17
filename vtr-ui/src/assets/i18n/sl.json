@@ -1256,7 +1256,7 @@
                     "vantageToolbar": {
                         "title": "Orodna vrstica Lenovo Vantage in premium nastavitve",
                         "description": "Za preprost dostop do najpogosteje uporabljenih nastavitev pripnite orodno vrstico Lenovo Vantage v opravilno vrstico Windows ter si zagotovite premium ponudbe in posodobitve.",
-                        "hint": "Možnosti na sliki so odvisne od zmogljivosti računalnika. Nekateri računalniki na primer podpirajo nastavitve osvetlitve, nekateri pa ne."
+                        "hint": "Možnosti na sliki so odvisne od zmogljivosti in lastnosti naprave. Nekatere naprave na primer podpirajo nastavitve osvetlitve tipkovnice, nekateri pa ne."
                     }
                 },
                 "batterySettings": {

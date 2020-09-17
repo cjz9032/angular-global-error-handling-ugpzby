@@ -1256,7 +1256,7 @@
                     "vantageToolbar": {
                         "title": "Værktøjslinjen i Lenovo Vantage og indstillinger for førsteklasses kvalitet",
                         "description": "Fastgør værktøjslinjen i Lenovo Vantage til Windows-proceslinjen, så du nemt kan få adgang til de hyppigst anvendte indstillinger og få førsteklasses tilbud og opdateringer.",
-                        "hint": "Valgmulighederne i billedet afhænger af maskinens kapacitet. Visse maskiner understøtter f.eks. indstillinger for baggrundslys, mens andre ikke gør det."
+                        "hint": "Valgmulighederne på billedet afhænger af enhedens funktioner og egenskaber. Visse maskiner understøtter f.eks. indstillinger for tastaturets baggrundslys, mens andre ikke gør det."
                     }
                 },
                 "batterySettings": {

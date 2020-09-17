@@ -1256,7 +1256,7 @@
                     "vantageToolbar": {
                         "title": "Lenovo Vantage araç çubuğu ve premium ayarları",
                         "description": "En sık kullandığınız ayarlara kolayca erişmek ve size özel premium teklifleri ve güncellemeleri almak için Lenovo Vantage araç çubuğunu Windows görev çubuğuna sabitleyin.",
-                        "hint": "Görüntüdeki seçenekler makinenin kapasitesine bağlıdır. Örneğin, bazı makineler arka ışık ayarlarını desteklerken bazıları desteklemeyebilir."
+                        "hint": "Görüntüdeki seçenekler cihazın donanımına ve özelliklerine bağlıdır. Örneğin, bazı makineler klavye arka ışığı ayarlarını desteklerken bazıları desteklemeyebilir."
                     }
                 },
                 "batterySettings": {

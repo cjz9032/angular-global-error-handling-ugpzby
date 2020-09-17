@@ -1256,7 +1256,7 @@
                     "vantageToolbar": {
                         "title": "Barra degli strumenti e impostazioni premium di Lenovo Vantage",
                         "description": "Aggiungi la barra degli strumenti di Lenovo Vantage alla barra delle applicazioni di Windows per accedere facilmente alle impostazioni utilizzate più spesso e ottenere offerte e aggiornamenti premium.",
-                        "hint": "Le opzioni nell'immagine dipendono dalla capacità del computer. Ad esempio, le impostazioni della retroilluminazione potrebbero essere supportate solo da alcuni computer."
+                        "hint": "Le opzioni nell'immagine dipendono dalle funzioni e dalle caratteristiche del dispositivo. Ad esempio, la retroilluminazione della tastiera potrebbe essere supportata solo da alcuni computer."
                     }
                 },
                 "batterySettings": {

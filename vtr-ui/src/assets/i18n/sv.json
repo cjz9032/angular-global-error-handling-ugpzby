@@ -1256,7 +1256,7 @@
                     "vantageToolbar": {
                         "title": "Lenovo Vantage-verktygsfältet och premiuminställningar",
                         "description": "Fäst Lenovo Vantage-verktygsfältet i aktivitetsfältet i Windows så att du snabbt kommer åt dina vanligaste inställningar och får personligt anpassade premiumerbjudanden och uppdateringar.",
-                        "hint": "Alternativen i bilden beror på enhetens kapacitet. Vissa enheter har till exempel stöd för inställningar av bakgrundsbelysning och andra inte."
+                        "hint": "Alternativen på bilden beror på enhetens kapacitet och egenskaper. Vissa enheter har till exempel stöd för inställningar av bakgrundsbelysning för tangentbordet."
                     }
                 },
                 "batterySettings": {
