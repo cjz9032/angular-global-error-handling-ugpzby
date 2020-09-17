@@ -157,8 +157,8 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 
 	async ngOnInit() {
 		if (this.smartAssist.isShellAvailable) {
-			this.machineType =  await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType);
-			this.smartAssistCapability = this.commonService.getLocalStorageValue(LocalStorageKey.SmartAssistCapability, undefined);
+			this.machineType = await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType);
+			this.smartAssistCapability = await this.localCacheService.getLocalCacheValue(LocalStorageKey.SmartAssistCapability, undefined);
 			this.getHPDAdvancedSetting();
 			this.initVisibility();
 			this.setIsThinkPad(this.machineType === 1);
@@ -772,12 +772,12 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private getVideoPauseResumeStatus() {
+	private async getVideoPauseResumeStatus() {
 		this.logger.debug('PageSmartAssistComponent.getVideoPauseResumeStatus: before check cache');
 		try {
 			if (this.smartAssist.isShellAvailable) {
-				const assistCapability: SmartAssistCapability = this.commonService.getLocalStorageValue(LocalStorageKey.SmartAssistCapability, null);
-				// cache found use it
+				const assistCapability: SmartAssistCapability = await this.localCacheService.getLocalCacheValue(LocalStorageKey.SmartAssistCapability, null);
+				
 				if (assistCapability && assistCapability.isIntelligentMediaSupported) {
 					this.intelligentMedia = assistCapability.isIntelligentMediaSupported;
 					this.logger.debug('PageSmartAssistComponent.getVideoPauseResumeStatus: cache found', this.intelligentMedia);
