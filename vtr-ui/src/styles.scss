@@ -5,6 +5,9 @@
 
 @import "./hw-settings-icomoon/icomoon-base64.scss";
 
+@import "~@lenovo/material/theming";
+@include mat-core();
+
 html {
 	margin: 0;
 	padding: 0;
