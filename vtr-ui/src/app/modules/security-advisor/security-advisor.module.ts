@@ -59,7 +59,6 @@ import { WidgetQaComponent } from 'src/app/components/widgets/widget-qa/widget-q
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 import { WidgetLandingSecurityComponent } from '../../components/pages/page-security/widget/widget-landing-security/widget-landing-security.component';
 import { WidgetLandingNavComponent } from '../../components/pages/page-security/widget/widget-landing-nav/widget-landing-nav.component';
-import { WidgetSvgCircleComponent } from 'src/app/components/pages/page-security/widget/widget-svg-circle/widget-svg-circle.component';
 import { ThreatLocatorComponent } from '../../components/pages/page-security-wifi/children/threat-locator/threat-locator.component';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { UiFeatureHeadingComponent } from 'src/app/components/ui/ui-feature-heading/ui-feature-heading.component';
@@ -104,7 +103,6 @@ import { WidgetMcafeeContentCardComponent } from '../../components/pages/page-se
 		WidgetCommonAntivirusComponent,
 		WidgetLandingSecurityComponent,
 		WidgetLandingNavComponent,
-		WidgetSvgCircleComponent,
 		ThreatLocatorComponent,
 		WidgetMcafeeFeaturesComponent,
 		WidgetMcafeeGraphicIntroductionComponent,
