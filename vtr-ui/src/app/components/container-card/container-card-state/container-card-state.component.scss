@@ -3,72 +3,88 @@
 .container-card {
 	box-shadow: $drop_shadow;
 	border-radius: $border_radius;
-	background: linear-gradient(293deg, #191C28 0%, #2F3447 100%);
-	position: relative;
-	height: 28.5rem;
+	background: linear-gradient(293deg, $hover_dark 0%, $main_darker 100%);
 
-	a {
-        height: 100%;
-        
-		.row {
-			height: 100%;
-			padding: 2rem 2rem;
-
+	.content {
+		@media #{$mediaquery_X43} {
 			.left-side {
-				display: flex;
-				flex-direction: column;
-				height: 100%;
-				position: relative;
-                width: 62%;
-               
+				flex: 0 0 58.333333%;
+				max-width: 58.33%;
+			}
+			.right-side {
+				flex: 0 0 41.666667%;
+				max-width: 41.66%;
+			}
+		}
 
-				.title {
-					font-size: 2.4rem;
-					color: white;
-					flex-grow: 0;
-					font-weight: 600;
-				}
-
-				.summary {
-					font-size: 1.4rem;
-					color: white;
-					flex-grow: 1;
-					font-weight: 400;
-					line-height: 2rem;
-				}
-
-				.link {
-					font-size: 1.4rem;
-					color: white;
-					bottom: 1rem;
-					//text-decoration: underline;
-					flex-grow: 0;
-					font-weight: bold;
-					border-bottom: 1px solid white;
-					padding-bottom: 0.5rem;
-				}
-
-				.link-arrow {
-					color: white;
-					font-size: 1.4rem;
-					bottom: 1rem;
+		.right-side {
+			::ng-deep {
+				* {
+					max-height: 18rem;
 				}
 			}
+		}
 
-			.right-side {
-				width: 38%;
-				display: flex;
-				justify-content: center;
-                align-items: center;                
-                .status-box {
-                    height: 14.2rem;
-                    width: 14.2rem;
-                }
+		.inner-content {
+			padding: 2rem 2.5rem;
+			::ng-deep {
+				* {
+					cursor: pointer;
+				}
+			}
+		}
+
+		.title {
+			font-size: $fontsize_xl;
+			color: $light;
+			font-weight: $weight_semibold;
+		}
+
+		.summary {
+			font-size: $fontsize_xs;
+			color: $light;
+			font-weight: $weight_regular;
+			line-height: 2rem;
+		}
+
+		.link {
+			font-size: $fontsize_xs;
+			font-weight: $weight_bold;
+			border-bottom: 0.1rem solid $light;
+		}
+
+		.link-arrow {
+			font-size: $fontsize_xs;
+		}
+
+		.absolute-lnk {
+			position: absolute;
+			bottom: 0rem;
+			margin: 2rem 0;
+			@media #{$mediaquery_X43} {
+				position: absolute;
+				justify-content: start !important;
+			}
+			@media #{$large-screen-1} {
+				position: initial;
+				justify-content: center !important;
+				margin-bottom: 0;
+			}
+			@media #{$mediaquery_xl} {
+				position: absolute;
+			}
+			@media #{$mediaquery_lg} {
+				position: initial;
+				margin-bottom: 0;
+			}
+			@media #{$mediaquery_md} {
+				position: absolute;
+				margin: 2rem 0;
 			}
 		}
     }
-    
-    a:hover {      
-      text-decoration: none!important;        
+
+    a:hover {
+      	text-decoration: none;
     }
 }

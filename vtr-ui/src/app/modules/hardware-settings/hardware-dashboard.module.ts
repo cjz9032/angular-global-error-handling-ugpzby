@@ -28,6 +28,7 @@ import { FeedbackModule } from '../feedback/feedback.module';
 import { WidgetSystemUpdateComponent } from 'src/app/components/widgets/widget-system-update/widget-system-update.component';
 import { WidgetSupportModule } from 'src/app/components/widgets/widget-support/widget-support.module';
 import { WidgetEnergyStarComponent } from 'src/app/components/widgets/widget-energy-star/widget-energy-star.component';
+import { CommonWidgetModule } from '../common/common-widget.module';
 
 @NgModule({
 	declarations: [
@@ -40,6 +41,7 @@ import { WidgetEnergyStarComponent } from 'src/app/components/widgets/widget-ene
 	],
 	imports: [
 		CommonModule,
+		CommonWidgetModule,
 		HardwareDashboardRoutingModule,
 		TranslationModule.forChild(),
 		MetricsModule,

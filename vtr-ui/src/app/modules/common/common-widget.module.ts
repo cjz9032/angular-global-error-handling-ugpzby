@@ -16,6 +16,7 @@ import { WidgetPoweredByInfoComponent } from 'src/app/components/widgets/widget-
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { WidgetHomeSecurityComponent } from 'src/app/components/widgets/widget-home-security/widget-home-security.component';
 import { WidgetSupportModule } from 'src/app/components/widgets/widget-support/widget-support.module';
+import { WidgetSvgCircleComponent } from 'src/app/components/pages/page-security/widget/widget-svg-circle/widget-svg-circle.component';
 
 @NgModule({
 	declarations: [
@@ -26,7 +27,8 @@ import { WidgetSupportModule } from 'src/app/components/widgets/widget-support/w
 		WidgetRebootComponent,
 		WidgetWarrantyComponent,
 		WidgetPoweredByInfoComponent,
-		WidgetHomeSecurityComponent
+		WidgetHomeSecurityComponent,
+		WidgetSvgCircleComponent,
 	],
 	exports: [
 		WidgetDeviceComponent,
@@ -37,7 +39,8 @@ import { WidgetSupportModule } from 'src/app/components/widgets/widget-support/w
 		WidgetSupportComponent,
 		WidgetWarrantyComponent,
 		WidgetPoweredByInfoComponent,
-		WidgetHomeSecurityComponent
+		WidgetHomeSecurityComponent,
+		WidgetSvgCircleComponent,
 	],
 	imports: [
 		CommonModule,

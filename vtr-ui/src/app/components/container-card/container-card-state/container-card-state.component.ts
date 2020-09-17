@@ -1,7 +1,12 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { CardService } from 'src/app/services/card/card.service';
-import { Router, NavigationEnd } from '@angular/router';
+import { Component, OnInit, Input } from '@angular/core';
 import { BaseComponent } from '../../base/base.component';
+
+export interface CardData {
+	linkPath: string;
+	title: string;
+	summary?: string;
+	linkText?: string;
+}
 
 @Component({
 	selector: 'vtr-container-card-state',
@@ -9,17 +14,12 @@ import { BaseComponent } from '../../base/base.component';
 	styleUrls: ['./container-card-state.component.scss']
 })
 export class ContainerCardStateComponent extends BaseComponent implements OnInit {
-	@Input() ratio = 0.5;
-	@Input() cardData: any;
+	@Input() cardData: CardData;
+	@Input() order: string;
+	@Input() cardId: string;
 
-	isOnline = true;
-	constructor(private cardService: CardService, public router: Router) { super(); }
+	constructor() { super(); }
 
-	ngOnInit(): void {
-	}
-
-	linkClicked(actionType: string, actionLink: string, title: string = '') {
-		return this.cardService.linkClicked(actionType, actionLink, false, title);
-	}
+	ngOnInit(): void {	}
 
 }

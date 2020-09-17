@@ -1,51 +1,5 @@
 @import "../../../app.theme";
 
-.custom-card-container {
-	flex-direction: row;
-	justify-content: space-between;
-
-	.custom-card {
-		width: 50%;
-	}
-
-	@media #{$breakpoint_xl6} {
-		flex-direction: row;
-		justify-content: space-between;
-
-		.custom-card {
-			width: 50%;
-		}
-	}
-
-	@media #{$breakpoint_xl} {
-		flex-direction: column;
-		justify-content: flex-start;
-
-		.custom-card {
-			width: 100%;
-		}
-	}
-
-	@media #{$breakpoint_lg} {
-		flex-direction: row;
-		justify-content: space-between;
-
-		.custom-card {
-			width: 50%;
-		}
-	}
-
-	@media #{$breakpoint_md} {
-		flex-direction: column;
-		justify-content: flex-start;
-
-		.custom-card {
-			width: 100%;
-		}
-	}
-}
-
-
 .card-left {
 	padding-left: 0;
 	padding-right: 1.2rem;
@@ -93,5 +47,24 @@
 	@media #{$breakpoint_md} {
 		padding-left: 0;
 		padding-right: 0;
+	}
+
+	.security-card {
+		.circle-desc {
+			width: 12rem;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -6rem;
+			margin-top: -2rem;
+			text-align: center;
+			p {
+				font-size: $fontsize_sm;
+				line-height: 1.1;
+			}
+			b {
+				font-size: $fontsize_xs2;
+			}
+		}
 	}
 }

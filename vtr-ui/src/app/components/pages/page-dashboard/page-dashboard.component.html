@@ -56,8 +56,8 @@
 						link="thumbnailUrl">
 					</vtr-widget-carousel>
 				</div>
-				<div class="col-12 px-0 d-flex custom-card-container">
-					<div class="custom-card pb-20 card-left">
+				<div class="col-12 px-0 d-flex custom-card-container row justify-content-between no-gutters">
+					<div class="custom-card col-12 col-md-6 col-lg-12 col-xl-6 pb-20 card-left">
 						<vtr-container-card order=2
 							[item]="contentCards.positionB.displayContent"
 							[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && contentCards.positionB.displayContent.isLocal)"
@@ -69,7 +69,20 @@
 							aria-label="dashboard-card-b">
 						</vtr-container-card>
 					</div>
-					<div class="custom-card pb-20 card-right">
+					<div class="custom-card col-12 col-md-6 col-lg-12 col-xl-6 pb-20 card-right">
+						<!-- <vtr-container-card-state [cardData]="securityData"
+							order=3
+							cardId="dashboard-lnk-security">
+							<div class="position-relative circle-container security-card">
+								<div class="circle-box d-flex justify-content-center" >
+									<vtr-widget-svg-circle [gradientColor]="gradientColor"></vtr-widget-svg-circle>
+								</div>
+								<div class="circle-desc text-white">
+									<p class="text-two-ellipsis" [innerHTML]="'security.landing.level' | translate"></p>
+									<b class="text-ellipsis text-uppercase" [innerHTML]="securityLevelStatus"></b>
+								</div>
+							</div>
+						</vtr-container-card-state> -->
 						<vtr-container-card order=3
 							[item]="contentCards.positionC.displayContent"
 							[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && contentCards.positionC.displayContent.isLocal)"
@@ -92,8 +105,8 @@
 						aria-label="dashboard-card-d">
 					</vtr-container-card>
 				</div>
-				<div class="col-12 px-0 d-flex custom-card-container">
-					<div class="custom-card pb-20 card-left"
+				<div class="col-12 px-0 d-flex custom-card-container row no-gutters">
+					<div class="custom-card col-12 col-md-6 col-lg-12 col-xl-6 pb-20 card-left"
 						[hidden]="deviceService.isSMode">
 						<vtr-container-card order=5
 							[item]="contentCards.positionE.displayContent"
@@ -105,7 +118,7 @@
 							aria-label="dashboard-card-e">
 						</vtr-container-card>
 					</div>
-					<div class="custom-card pb-20 card-right"
+					<div class="custom-card col-12 col-md-6 col-lg-12 col-xl-6 pb-20 card-right"
 						[hidden]="deviceService.isSMode">
 						<vtr-container-card order=6
 							[item]="contentCards.positionF.displayContent"

@@ -1,26 +1,32 @@
-<div *ngIf="isOnline" class="container-card card-corner">
-        <a  role="link"            
-            routerLink="/{{cardData.linkPath}}"
-            >
-            <div class="row">
-                <div class="left-side" > 
-                    <div class="title">
-                        <span>{{cardData.title}}</span>
-                    </div>
-                    <div class="summary">
-                        <span >{{cardData.summary}}</span>
-                    </div>
-                    <div>
-                        <span class="link">{{cardData.linkText}}</span>
-                        <fa-icon class="link-arrow ml-3" [icon]="['fas', 'arrow-right']"></fa-icon>
-                    </div>
-                </div>
-                <div class="right-side">
-                    <div class="status-box">
-                        <ng-content></ng-content>
-                    </div>
-                </div>
-            </div>
-        </a>
+<div *ngIf="cardData?.linkPath" class="container-card card-corner position-relative">
+	<a	class="h-100 content d-block"
+		role="link"
+		routerLink="/{{cardData.linkPath}}"
+		tabindex="0"
+		vtrMetrics
+		id="{{cardId+'status-card'}}"
+		metricsItemCategory="corner"
+		metricsEvent="itemClick"
+		[metricsItemPosition]="order"
+		[metricsItemID]="cardId"
+		>
+		<div class="row h-100 inner-content">
+			<div class="left-side col-7 col-md-12 col-lg-7 col-xl-12 p-0 d-flex flex-column justify-content-between mb-20">
+				<div class="desc d-flex flex-column">
+					<span class="title" [innerHTML]="cardData.title | translate"></span>
+					<span class="summary" [innerHTML]="cardData.summary | translate"></span>
+				</div>
+			</div>
+			<div class="right-side col-5 col-md-12 col-lg-5 col-xl-12 p-0 d-flex align-items-center
+				justify-content-end justify-content-md-center justify-content-lg-end justify-content-xl-center">
+				<ng-content></ng-content>
+			</div>
+			<div class="col px-0 text-white absolute-lnk d-flex align-items-end
+				justify-content-start justify-content-md-center justify-content-lg-start justify-content-xl-center">
+				<span class="link text-uppercase" [innerHTML]="cardData.linkText | translate"></span>
+				<fa-icon class="link-arrow ml-3" [icon]="['fas', 'arrow-right']"></fa-icon>
+			</div>
+		</div>
+	</a>
 </div>
 
