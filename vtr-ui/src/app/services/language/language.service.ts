@@ -5,6 +5,7 @@ import { CommonService } from '../common/common.service';
 import { TranslationNotification } from 'src/app/data-models/translation/translation';
 import { DeviceInfo } from 'src/app/data-models/common/device-info.model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { LocalCacheService } from '../local-cache/local-cache.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -49,6 +50,7 @@ export class LanguageService {
 	constructor(
 		private translate: TranslateService,
 		private logger: LoggerService,
+		private localCacheService: LocalCacheService,
 		private commonService: CommonService
 	) {
 		translate.addLangs(this.supportedLanguages);
@@ -114,8 +116,8 @@ export class LanguageService {
 		return false;
 	}
 
-	public isLocaleSame(lang: string) {
-		const cachedDeviceInfo: DeviceInfo = this.commonService.getLocalStorageValue(LocalStorageKey.DeviceInfo, undefined);
+	public async isLocaleSame(lang: string) {
+		const cachedDeviceInfo: DeviceInfo = await this.localCacheService.getLocalCacheValue(LocalStorageKey.DeviceInfo, undefined);
 		if (cachedDeviceInfo && cachedDeviceInfo.locale && cachedDeviceInfo.locale.length > 0) {
 			const isLocaleSame = cachedDeviceInfo.locale === lang.toLowerCase();
 			return isLocaleSame;

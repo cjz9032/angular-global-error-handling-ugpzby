@@ -10,6 +10,7 @@ import { TranslationNotification } from 'src/app/data-models/translation/transla
 import { Subscription, EMPTY } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
 	selector: 'vtr-home',
@@ -26,6 +27,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 		private logger: LoggerService,
 		private languageService: LanguageService,
 		private commonService: CommonService,
+		private localCacheService: LocalCacheService,
 		private route: ActivatedRoute
 	) {
 		this.route.queryParams
@@ -102,8 +104,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private redirectToDashBoard() {
-		const cachedDeviceInfo: DeviceInfo = this.commonService.getLocalStorageValue(LocalStorageKey.DeviceInfo, undefined);
+	private async redirectToDashBoard() {
+		const cachedDeviceInfo: DeviceInfo = await this.localCacheService.getLocalCacheValue(LocalStorageKey.DeviceInfo, undefined);
 		if (cachedDeviceInfo) {
 			this.vantageLaunch(cachedDeviceInfo.isGamingDevice);
 		}

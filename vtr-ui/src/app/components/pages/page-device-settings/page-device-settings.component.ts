@@ -173,9 +173,9 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	}
 
 	async initInputAccessories() {
-		this.machineType =  await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType);
+		this.machineType = await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType);
 		if (this.machineType) {
-			const machineFamily = this.commonService.getLocalStorageValue(LocalStorageKey.MachineFamilyName, undefined);
+			const machineFamily = await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineFamilyName, undefined);
 			if (machineFamily) {
 				const familyName = machineFamily.replace(/\s+/g, '');
 				if (this.machineType === 1 && familyName === 'LenovoTablet10') {

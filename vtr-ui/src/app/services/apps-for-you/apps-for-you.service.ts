@@ -12,6 +12,7 @@ import { DccService } from 'src/app/services/dcc/dcc.service';
 import { Subscription } from 'rxjs';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
+import { LocalCacheService } from '../local-cache/local-cache.service';
 
 export class Category {
 	id: string; 	// app category id
@@ -76,6 +77,7 @@ export class AppsForYouService {
 		private commonService: CommonService,
 		private logService: LoggerService,
 		private localInfoService: LocalInfoService,
+		private localCacheService: LocalCacheService,
 		private dccService: DccService
 	) {
 		this.initialize();
@@ -100,8 +102,8 @@ export class AppsForYouService {
 		dccMenuClicked: false
 	};
 
-	private initialize() {
-		const cacheMachineFamilyName = this.commonService.getLocalStorageValue(
+	private async initialize() {
+		const cacheMachineFamilyName = await this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.MachineFamilyName,
 			undefined
 		);

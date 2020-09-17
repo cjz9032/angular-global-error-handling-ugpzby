@@ -390,8 +390,9 @@ export class HardwareScanService {
 
 	public isAvailable() {
 		return this.hypSettingsPromise
-			.then((result: any) => {
-				return (((result || '').toString() === 'true') && this.isMachineAvailable());
+			.then(async (result: any) => {
+				const isMachineAvailable = await this.isMachineAvailable();
+				return (((result || '').toString() === 'true') && isMachineAvailable);
 			})
 			.catch((error) => {
 				return false;
@@ -402,14 +403,14 @@ export class HardwareScanService {
 	 * This method validate if the machine family name is in the blacklist
 	 * If yes, the HWScan menu not appear.
 	 */
-	public isMachineAvailable() {
+	public async isMachineAvailable() {
 
 		// Variable containing machine names without HWScan enabled
 		const blackList = ['thinkstationp520', 'thinkstationp520c', 'thinkstationp720', 'thinkstationp920'];
 
 		// Variable containing machine family name in the specific format
-		const machineFamily = this.commonService
-			.getLocalStorageValue(LocalStorageKey.MachineFamilyName)
+		const originalMachineFamilyName = await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineFamilyName);
+		const machineFamily = originalMachineFamilyName
 			.replace(/ /g, '')
 			.toString()
 			.toLowerCase();

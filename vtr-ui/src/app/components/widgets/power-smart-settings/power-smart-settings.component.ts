@@ -74,7 +74,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 
 	async ngOnInit() {
 		this.machineType = await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType);
-		if (thinkpad === this.machineType || this.isYogo730()) {
+		const isYogo730 = await this.isYogo730();
+		if (thinkpad === this.machineType || isYogo730) {
 			this.add = 0; // thinkpad
 			this.checkDriverForThinkPad();
 		} else if (ideapad === this.machineType) {
@@ -131,7 +132,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 
 	async checkDriverForThinkPad() {
 		try {
-			if (this.isYogo730()) {
+			const isYogo730 = await this.isYogo730();
+			if (isYogo730) {
 				const isEMDriverAvailable = await this.getEMDriverStatus();
 				if (!isEMDriverAvailable) {
 					this.logger.info('PowerSmartSettingsComponent:isEMDriverAvailable', isEMDriverAvailable);
@@ -156,8 +158,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	isYogo730() {
-		const cacheMachineFamilyName = this.commonService.getLocalStorageValue(
+	async isYogo730() {
+		const cacheMachineFamilyName = await this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.MachineFamilyName,
 			undefined
 		);
