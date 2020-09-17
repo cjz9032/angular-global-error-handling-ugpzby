@@ -100,7 +100,7 @@ export class UserDefinedKeyComponent implements OnInit, OnDestroy {
 			await this.keyboardService.StartSpecialKeyMonitor(Windows.Storage.ApplicationData.current.localFolder.path);
 			this.machineType =  await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType);
 			if (this.machineType === 1) {
-				let inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
+				let inputAccessoriesCapability: InputAccessoriesCapability = await this.localCacheService.getLocalCacheValue(LocalStorageKey.InputAccessoriesCapability);
 				if (inputAccessoriesCapability && inputAccessoriesCapability.isUdkAvailable) {
 					this.hasUDKCapability = inputAccessoriesCapability.isUdkAvailable;
 				} else {
@@ -109,7 +109,7 @@ export class UserDefinedKeyComponent implements OnInit, OnDestroy {
 					if (response) {
 						inputAccessoriesCapability.isUdkAvailable = (Object.keys(response).indexOf('uDKCapability') !== -1) ? response.uDKCapability : false;
 						this.hasUDKCapability = inputAccessoriesCapability.isUdkAvailable;
-						this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, inputAccessoriesCapability);
+						this.localCacheService.setLocalCacheValue(LocalStorageKey.InputAccessoriesCapability, inputAccessoriesCapability);
 					}
 				}
 				if (this.hasUDKCapability) {
