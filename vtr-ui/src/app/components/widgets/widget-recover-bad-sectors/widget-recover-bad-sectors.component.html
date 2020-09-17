@@ -3,8 +3,8 @@
 		<div class="row">
 			<div class="col">
 				<div class="row title-box">
-					<h2 id="{{ widgetId }}-title" role="heading" class="col col-10 title">{{title}}</h2>
-					<div class="col col-2 title-question-mark">
+					<h2 id="{{ widgetId }}-title" role="heading" class="title">{{title}}</h2>
+					<div class="title-question-mark">
 
 						<!-- Ignoring the href property from narrator by using the role="img" atribute
 							and passing the tooltip information with the [attr.aria-label] -->
@@ -16,7 +16,7 @@
 							triggers="manual"
 						   	#tooltip="ngbTooltip"
 							(click)="tooltip.toggle()"
-						   	(blur)="tooltip.close()"
+							(blur)="tooltip.close()"
 							[ngbTooltip]="tooltipRef"
 							tooltipClass="vtr-tooltip"
 							[ngClass]="'recover-question-icon'"

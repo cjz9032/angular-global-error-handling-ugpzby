@@ -9,29 +9,28 @@
 
 	.title-box {
 		display: flex;
-		align-items: center;
-		justify-content: center;
+		flex-wrap: nowrap;
 
-	.title {
-		color: $main_dark;
-		font-size: $fontsize_xl;
-		font-weight: $weight_light;
-		text-align: left;
-	}
+		.title {
+			color: $main_dark;
+			font-size: $fontsize_xl;
+			font-weight: $weight_light;
+			padding-right: 1rem;
+			margin-bottom: 0;
+		}
 
-	.title-question-mark {
-		font-size: $fontsize_lg;
-		font-weight: $weight_light;
-		padding-left: 1rem;
-		text-align: right;
+		.title-question-mark {
+			font-size: $fontsize_lg;
+			font-weight: $weight_light;
+			align-self: center;
 
-		.recover-question-icon {
-			margin-left: 0.5rem;
-			color: $menu_hover;
-			cursor: pointer;
+			.recover-question-icon {
+				color: $menu_hover;
+				cursor: pointer;
 
-			&:hover {
-				color: $highlight;
+				&:hover {
+					color: $highlight;
+				}
 			}
 		}
 	}
