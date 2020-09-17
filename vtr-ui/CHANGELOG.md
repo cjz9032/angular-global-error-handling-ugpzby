@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.10](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.8.9...v1.8.10) (2020-09-17)
+
+
+### Features
+
+* **IndexedDB:** VAN-18810 migrate SP related localstorage to indexedDB ([cab4f9a](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/cab4f9a436f5e8a40d79f41d732a25bec0e12dbc))
+
 ### [1.8.9](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.8.8...v1.8.9) (2020-09-17)
 
 
