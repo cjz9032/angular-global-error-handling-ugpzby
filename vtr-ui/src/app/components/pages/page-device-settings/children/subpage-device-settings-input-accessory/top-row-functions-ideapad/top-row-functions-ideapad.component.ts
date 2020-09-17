@@ -4,6 +4,7 @@ import { concatMap, map, mergeMap, switchMap, takeWhile, tap, throttleTime } fro
 import { UiCircleRadioWithCheckBoxListModel } from 'src/app/components/ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
 import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { StringBooleanEnum } from '../../../../../../data-models/common/common.interface';
 import { LocalStorageKey } from '../../../../../../enums/local-storage-key.enum';
 import { CommonService } from '../../../../../../services/common/common.service';
@@ -38,6 +39,7 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 		private topRowFunctionsIdeapadService: TopRowFunctionsIdeapadService,
 		private metrics: CommonMetricsService,
 		private commonService: CommonService,
+		private localCacheService: LocalCacheService,
 		private ngZone: NgZone
 	) {
 	}
@@ -58,8 +60,8 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 				}),
 				tap(status => of(status).pipe(
 					takeWhile(status1 => status1),
-					tap(() => {
-						const machineFamilyName = this.commonService.getLocalStorageValue(LocalStorageKey.MachineFamilyName);
+					tap(async () => {
+						const machineFamilyName = await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineFamilyName);
 
 						this.metrics.sendMetrics(
 							KeyType.HOTKEY
@@ -80,8 +82,8 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 				}),
 				tap(status => of(status).pipe(
 					takeWhile(status1 => status1),
-					tap(() => {
-						const machineFamilyName = this.commonService.getLocalStorageValue(LocalStorageKey.MachineFamilyName);
+					tap(async () => {
+						const machineFamilyName = await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineFamilyName);
 
 						this.metrics.sendMetrics(
 							KeyType.FNKEY

@@ -3,13 +3,14 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { LanguageService } from 'src/app/services/language/language.service';
-import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { DeviceInfo } from 'src/app/data-models/common/device-info.model';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { TranslationNotification } from 'src/app/data-models/translation/translation';
 import { Subscription, EMPTY } from 'rxjs';
 import { filter } from 'rxjs/operators';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
 	selector: 'vtr-home',
@@ -26,6 +27,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 		private logger: LoggerService,
 		private languageService: LanguageService,
 		private commonService: CommonService,
+		private localCacheService: LocalCacheService,
 		private route: ActivatedRoute
 	) {
 		this.route.queryParams
@@ -102,8 +104,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private redirectToDashBoard() {
-		const cachedDeviceInfo: DeviceInfo = this.commonService.getLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, undefined);
+	private async redirectToDashBoard() {
+		const cachedDeviceInfo: DeviceInfo = await this.localCacheService.getLocalCacheValue(LocalStorageKey.DeviceInfo, undefined);
 		if (cachedDeviceInfo) {
 			this.vantageLaunch(cachedDeviceInfo.isGamingDevice);
 		}

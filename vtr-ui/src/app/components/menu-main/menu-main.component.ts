@@ -129,7 +129,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		newFeatureTipService.viewContainer = this.viewContainerRef;
 	}
 
-	ngOnInit() {
+	async ngOnInit() {
 		this.headerLogo = '';
 		this.checkLiteGaming();
 
@@ -139,7 +139,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 
 		this.isDashboard = true;
 
-		const cacheMachineFamilyName = this.commonService.getLocalStorageValue(
+		const cacheMachineFamilyName = await this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.MachineFamilyName,
 			undefined
 		);
@@ -338,7 +338,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 
 	}
 
-	private loadMenuOptions(machineType: number) {
+	private async loadMenuOptions(machineType: number) {
 		// if IdeaPad or ThinkPad then call below function
 		if (machineType === 0 || machineType === 1) {
 			// add try catch for backlight exception; this is temp solution, dongwq2 should add error handle in backlight
@@ -359,7 +359,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 
 		}
 
-		const machineFamily = this.commonService.getLocalStorageValue(LocalStorageKey.MachineFamilyName, undefined);
+		const machineFamily = await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineFamilyName, undefined);
 		// Added special case for KEI machine
 		if (machineFamily) {
 			const familyName = machineFamily.replace(/\s+/g, '');
@@ -566,7 +566,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			switch (notification.type) {
 				case 'MachineInfo':
 					this.machineFamilyName = notification.payload.family;
-					this.commonService.setLocalStorageValue(
+					this.localCacheService.setLocalCacheValue(
 						LocalStorageKey.MachineFamilyName,
 						notification.payload.family
 					);

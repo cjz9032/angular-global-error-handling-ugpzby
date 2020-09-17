@@ -301,5 +301,8 @@ export enum LocalStorageKey {
 
 	// Hide Camera Preview on some models
 	IsCameraPreviewHidden = '[LocalStorageKey] IsCameraPreviewHidden',
-	ShouldCameraSectionDisabled = '[LocalStorageKey] ShouldCameraSectionDisabled'
+	ShouldCameraSectionDisabled = '[LocalStorageKey] ShouldCameraSectionDisabled',
+
+	// Moved here from DashboardLocalStorageKey enum, don't follow this definition
+	DeviceInfo = '[DashboardLocalStorageKey] DeviceInfo',
 }

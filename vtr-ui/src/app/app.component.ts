@@ -18,7 +18,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from './services/language/language.service';
 import { version } from '@lenovo/tan-client-bridge/package.json';
 import { DeviceInfo } from './data-models/common/device-info.model';
-import { DashboardLocalStorageKey } from './enums/dashboard-local-storage-key.enum';
 import { AppNotification } from './data-models/common/app-notification.model';
 import { TranslationNotification } from './data-models/translation/translation';
 import { LoggerService } from './services/logger/logger.service';
@@ -285,7 +284,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	private onMachineInfoReceived(value: any) {
 		this.setFontFamilyByLocale(value.locale);
 		const cachedDeviceInfo: DeviceInfo = { isGamingDevice: value.isGaming, locale: value.locale };
-		this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, cachedDeviceInfo);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.DeviceInfo, cachedDeviceInfo);
 		this.machineInfo = value;
 		this.isMachineInfoLoaded = true;
 		this.isGaming = value.isGaming;
@@ -293,8 +292,8 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		if (!this.languageService.isLanguageLoaded || this.languageService.currentLanguage !== value.locale ? value.locale.toLowerCase() : 'en') {
 			this.languageService.useLanguageByLocale(value.locale);
 		}
-		this.commonService.setLocalStorageValue(LocalStorageKey.MachineFamilyName, value.family);
-		this.commonService.setLocalStorageValue(LocalStorageKey.SubBrand, value.subBrand.toLowerCase());
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.MachineFamilyName, value.family);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.SubBrand, value.subBrand.toLowerCase());
 
 		if (this.metricService.isFirstLaunch) {
 			this.metricService.sendFirstRunEvent(value);
@@ -393,7 +392,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 							if (info) {
 								if (info.cpuArchitecture && info.cpuArchitecture.toUpperCase().trim() === 'ARM64') {
 									const armTutorialData = new WelcomeTutorial(2, this.newTutorialVersion, true, SegmentConst.Consumer);
-									this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, armTutorialData);
+									this.localCacheService.setLocalCacheValue(LocalStorageKey.WelcomeTutorial, armTutorialData);
 								} else {
 									setTimeout(() => {
 										this.launchWelcomeModal();

@@ -151,18 +151,19 @@ describe('PageDeviceSettingsComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call initInputAccessories - machineType equal to 1', async(() => {
+	it('should call initInputAccessories - machineType equal to 1', async(async () => {
 		fixture = TestBed.createComponent(PageDeviceSettingsComponent);
 		component = fixture.componentInstance;
 		commonService = TestBed.inject(CommonService);
+		localCacheService = TestBed.inject(LocalCacheService);
 		component.machineType = 1;
-		spyOn(commonService, 'getLocalStorageValue').and.returnValue('LenovoTablet10');
+		spyOn(localCacheService, 'getLocalCacheValue').and.resolveTo('LenovoTablet10');
 		const spy = spyOn(commonService, 'removeObjFrom');
-		component.initInputAccessories();
+		await component.initInputAccessories();
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call initInputAccessories - machineType equal to 1,machine family LenovoTablet10', async(() => {
+	it('should call initInputAccessories - machineType equal to 1,machine family LenovoTablet10', async(async () => {
 		fixture = TestBed.createComponent(PageDeviceSettingsComponent);
 		component = fixture.componentInstance;
 		commonService = TestBed.inject(CommonService);
@@ -170,15 +171,13 @@ describe('PageDeviceSettingsComponent', () => {
 		component.machineType = 1;
 		const spyGetLocalCacheValue = spyOn(localCacheService, 'getLocalCacheValue');
 		spyGetLocalCacheValue.withArgs(LocalStorageKey.MachineType).and.resolveTo(1);
-
-		const spyGetLocalStorageValue = spyOn(commonService, 'getLocalStorageValue');
-		spyGetLocalStorageValue.withArgs(LocalStorageKey.MachineFamilyName, undefined).and.returnValue('LenovoTablet10');
+		spyGetLocalCacheValue.withArgs(LocalStorageKey.MachineFamilyName, undefined).and.resolveTo('LenovoTablet10');
 		const spy = spyOn(commonService, 'removeObjFrom');
-		component.initInputAccessories();
+		await component.initInputAccessories();
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call initInputAccessories - machineType  equal to 0.1, no input accessories', async(() => {
+	it('should call initInputAccessories - machineType  equal to 0.1, no input accessories', async(async () => {
 		fixture = TestBed.createComponent(PageDeviceSettingsComponent);
 		const inputAccessoriesCapability = new InputAccessoriesCapability();
 		component = fixture.componentInstance;
@@ -189,9 +188,8 @@ describe('PageDeviceSettingsComponent', () => {
 
 		const spyGetLocalCacheValue = spyOn(localCacheService, 'getLocalCacheValue');
 		spyGetLocalCacheValue.withArgs(LocalStorageKey.MachineType).and.resolveTo(1);
-
+		spyGetLocalCacheValue.withArgs(LocalStorageKey.MachineFamilyName, undefined).and.resolveTo('LenovoTablet1011');
 		const spyGetLocalStorageValue = spyOn(commonService, 'getLocalStorageValue');
-		spyGetLocalStorageValue.withArgs(LocalStorageKey.MachineFamilyName, undefined).and.returnValue('LenovoTablet1011');
 		spyGetLocalStorageValue.withArgs(LocalStorageKey.InputAccessoriesCapability).and.returnValue(inputAccessoriesCapability);
 
 		spyOn(keyboardService, 'GetAllCapability').and.returnValue(Promise.resolve(''));
@@ -201,7 +199,7 @@ describe('PageDeviceSettingsComponent', () => {
 		spyGetLocalStorageValue.withArgs(LocalStorageKey.BacklightCapability).and.returnValue(false);
 
 		const spy = spyOn(commonService, 'removeObjFrom');
-		component.initInputAccessories();
+		await component.initInputAccessories();
 		expect(spy).toBeTruthy();
 	}));
 

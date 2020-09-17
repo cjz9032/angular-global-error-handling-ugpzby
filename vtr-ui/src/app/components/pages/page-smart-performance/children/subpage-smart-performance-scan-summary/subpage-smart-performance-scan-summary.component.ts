@@ -158,7 +158,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		if (!this.isSubscribed) {
 			this.getSubscriptionDetails();
 		}
-		const cacheMachineFamilyName = this.commonService.getLocalStorageValue(
+		const cacheMachineFamilyName = await this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.MachineFamilyName,
 			undefined
 		);
