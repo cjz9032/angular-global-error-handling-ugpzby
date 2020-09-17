@@ -11,6 +11,12 @@ import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
 import { WarrantyService } from 'src/app/services/warranty/warranty.service';
 import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
+import { Observable } from 'rxjs';
+import { PreviousResultService } from 'src/app/services/hardware-scan/previous-result.service';
+import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
+import { ConfigService } from 'src/app/services/config/config.service';
+import moment from 'moment';
+
 @Component({
 	selector: 'vtr-widget-device',
 	templateUrl: './widget-device.component.html',
@@ -29,6 +35,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 	systemUpdateIcon = 'assets/icons/Icon_Optional_Update.svg';
 	smartPerformanceIcon = 'assets/icons/Icon-smartperformance.svg';
 	warrantyIcon = 'assets/icons/Icon-warranty.svg';
+	isSMPSubscripted: Promise<boolean>;
 
 	constructor(
 		public deviceService: DeviceService,
@@ -39,18 +46,23 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		private dashboardService: DashboardService,
 		private warrantyService: WarrantyService,
 		private adPolicyService: AdPolicyService,
+		private metricService: MetricService,
+		private previousResultService: PreviousResultService,
+		private smartPerformanceService: SmartPerformanceService,
+		private configService: ConfigService
 	) {
 		this.myDevice = new MyDevice();
 	}
 
 	ngOnInit() {
 		this.deviceService.getMachineInfo().then((machineInfo) => {
+			this.isSMPSubscripted =  this.isSmartPerformanceSuscripted(machineInfo.serialnumber);
 			this.setDefaultInfo();
-			this.myDevice.family = machineInfo.family;
-			this.myDevice.sn = machineInfo.serialnumber;
-			this.myDevice.bios = machineInfo.biosVersion;
-			this.myDevice.subBrand = machineInfo.subBrand;
-			this.myDevice.productNo = machineInfo.mtm;
+			this.myDevice.family = machineInfo?.family;
+			this.myDevice.sn = machineInfo?.serialnumber;
+			this.myDevice.bios = machineInfo?.biosVersion;
+			this.myDevice.subBrand = machineInfo?.subBrand;
+			this.myDevice.productNo = machineInfo?.mtm;
 			this.getDeviceInfo();
 		});
 	}
@@ -58,13 +70,12 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 	ngOnDestroy() {
 	}
 
-	private setDefaultInfo() {
+	private async setDefaultInfo() {
 		let index = 0;
-
 		const processor = new DeviceStatus();
 		this.translate.stream('device.myDevice.processor.title').subscribe((value) => {
 			processor.title = value;
-			processor.showCover = true;
+			processor.showCover = false;
 			processor.icon = this.processorIcon;
 			this.hwStatus[index++] = processor;
 		});
@@ -78,12 +89,36 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		});
 
 		const disk = new DeviceStatus();
-		this.translate.stream('device.myDevice.diskspace.title').subscribe((value) => {
+		// todo: translate
+		this.translate.stream('device.myDevice.diskspace.title').subscribe(() => {
 			disk.title = 'Storage';
 			disk.icon = this.storageIcon;
 			disk.showCover = false;
 			this.hwStatus[index++] = disk;
 		});
+
+		index = 0;
+		if (this.configService.isSystemUpdateEnabled()){
+			const systemUpdate = new DeviceStatus();
+			systemUpdate.title = 'System Update';
+			systemUpdate.showCover = false;
+			systemUpdate.icon = this.systemUpdateIcon;
+			this.swStatus[index++] = systemUpdate;
+		}
+
+		if (await this.configService.showSmartPerformance()){
+			const smartPerformance = new DeviceStatus();
+			smartPerformance.title = 'Smart Performance';
+			smartPerformance.showCover = false;
+			smartPerformance.icon = this.smartPerformanceIcon;
+			this.swStatus[index++] = smartPerformance;
+		}
+
+		const warranty = new DeviceStatus();
+		warranty.showCover = false;
+		warranty.title = 'Warranty';
+		warranty.icon = this.warrantyIcon;
+		this.swStatus[index++] = warranty;
 	}
 
 	public refreshClicked(){
@@ -96,23 +131,100 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 			clipboard.setData('text', info);
 			e.preventDefault();
 		};
-
-		document.addEventListener('copy', listener, false);
-		document.execCommand('copy');
-		document.removeEventListener('copy', listener, false);
+		const copyCmd = 'copy';
+		document.addEventListener(copyCmd, listener, false);
+		document.execCommand(copyCmd);
+		document.removeEventListener(copyCmd, listener, false);
 	}
 
-	private getDeviceInfo() {
-		this.getHWStatus();
-		this.getSUStatus();
-		this.getSmartPerformanceStatus();
-		this.getWarrantyStatus();
-
-		// todo: decide condtion
-		this.deviceStatus = DeviceCondition.NeedRunHWScan;
+	private async getDeviceInfo() {
+		this.updateDeviceStatus();
+		this.updateHWStatus();
+		let tileIndex = 0;
+		if (this.configService.isSystemUpdateEnabled()){
+			this.updateSUStatus(tileIndex++);
+		}
+		if (await this.configService.showSmartPerformance()){
+			this.updateSmartPerformanceStatus(tileIndex++);
+		}
+		this.updateWarrantyStatus(tileIndex++);
 	}
 
-	private getHWStatus(){
+	private async updateDeviceStatus(){
+		const machineInfo = this.deviceService.getMachineInfoSync();
+		const oobeDate = machineInfo?.firstRunDate || Date.now();
+		const isOobeOver31days = this.systemUpdateService.dateDiffInDays(oobeDate) > 31;
+		if (this.metricService.isFirstLaunch || !isOobeOver31days){
+			this.deviceStatus = DeviceCondition.Good;
+			return;
+		}
+
+		if (await this.isSUNeedPromote()){
+			this.deviceStatus = DeviceCondition.NeedRunSU;
+			return;
+		}
+
+		if (!await this.isSMPSubscripted){
+			this.deviceStatus = DeviceCondition.NeedRunSMPScan;
+			return;
+		}
+
+		if (await this.isHWScanNeedPromote()){
+			this.deviceStatus = DeviceCondition.NeedRunHWScan;
+		}
+
+		this.deviceStatus = DeviceCondition.Good;
+	}
+
+	private async isSUNeedPromote(): Promise<boolean>{
+		const suinfo = await this.systemUpdateService.getMostRecentUpdateInfo();
+		if (!suinfo?.lastScanTime){
+			this.deviceStatus = DeviceCondition.NeedRunSU;
+			return true;
+		}
+		const days = this.systemUpdateService.dateDiffInDays(suinfo.lastScanTime);
+		if (days > 30){
+			this.deviceStatus = DeviceCondition.NeedRunSU;
+			return true;
+		}
+		return false;
+	}
+
+	private async isSmartPerformanceSuscripted(serialnumber): Promise<boolean>{
+		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails(serialnumber);
+		if (!subscriptionDetails?.data){
+			return false;
+		}
+
+		const subscriptionData = subscriptionDetails.data;
+		const lastItem = subscriptionData[subscriptionData.length - 1];
+		const releaseDate = new Date(lastItem.releaseDate);
+		releaseDate.setMonth(releaseDate.getMonth() + lastItem.products[0].unitTerm);
+		releaseDate.setDate(releaseDate.getDate() - 1);
+		if (lastItem?.status?.toUpperCase() !== 'COMPLETED')
+		{
+			return false;
+		}
+
+		const currentDate: any = new Date(lastItem.currentTime);
+		const expiredDate = new Date(releaseDate);
+		if (expiredDate < currentDate) {
+			return false;
+		}
+
+		return true;
+	}
+
+	private async isHWScanNeedPromote(): Promise<boolean>{
+		await this.previousResultService.getLastResults();
+		const lastSacnInfo = this.previousResultService.getLastPreviousResultCompletionInfo();
+		if (!lastSacnInfo.date || this.systemUpdateService.dateDiffInDays(lastSacnInfo.date) > 180){
+			return true;
+		}
+		return false;
+	}
+
+	private updateHWStatus(){
 		this.deviceService.getHardwareInfo().then(data => {
 			if (data) {
 				// processor
@@ -161,9 +273,9 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		});
 	}
 
-	private getSUStatus(){
+	private updateSUStatus(tileIndex){
 		if (this.deviceService && !this.deviceService.isSMode && this.adPolicyService && this.adPolicyService.IsSystemUpdateEnabled) {
-			this.dashboardService.getRecentUpdateInfo().subscribe(data => {
+		this.dashboardService.getRecentUpdateInfo().subscribe(data => {
 				if (data) {
 					const systemUpdate = new DeviceStatus();
 					const updateStatus = data.status;
@@ -172,6 +284,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 					systemUpdate.title = 'System Update';
 					systemUpdate.link = 'device/system-updates';
 					systemUpdate.icon = this.systemUpdateIcon;
+					systemUpdate.showSepline = true;
 					if (updateStatus === 1) {
 						this.translate.stream('device.myDevice.systemUpdate.detail.uptoDate').subscribe((value) => {
 							systemUpdate.subtitle = value;
@@ -188,23 +301,31 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 							systemUpdate.subtitle = value;
 						});
 					}
-					this.swStatus[0] = systemUpdate;
+					this.swStatus[tileIndex] = systemUpdate;
 				}
 			});
 		}
 	}
 
-	private getSmartPerformanceStatus(){
+	private async updateSmartPerformanceStatus(tileIndex){
+
+		const lastScanResultRequest = {
+			scanType: await this.isSMPSubscripted ? 'ScanAndFix' : 'Scan'
+		};
+		const response = await this.smartPerformanceService.getLastScanResult(lastScanResultRequest);
+		const scanRunTime = moment(response.scanruntime).format('l');
+
 		const smartPerform = new DeviceStatus();
 		smartPerform.title = 'Smart Performance';
 		smartPerform.subtitle = 'Updates checked';
-		smartPerform.checkedDate = '7/12/2020';
+		smartPerform.checkedDate = scanRunTime;
 		smartPerform.icon = this.smartPerformanceIcon;
-		smartPerform.link = 'smart';
-		this.swStatus[1] = smartPerform;
+		smartPerform.link = 'support/smart-performance';
+		smartPerform.showSepline = true;
+		this.swStatus[tileIndex] = smartPerform;
 	}
 
-	private getWarrantyStatus(){
+	private updateWarrantyStatus(tileIndex){
 		this.warrantyService.getWarrantyInfo().subscribe(data => {
 			if (data) {
 				if (!(this.deviceService && !this.deviceService.isSMode && this.adPolicyService && this.adPolicyService.IsSystemUpdateEnabled)
@@ -238,7 +359,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 						warranty.title = value;
 					});
 				}
-				this.swStatus[2] = warranty;
+				this.swStatus[tileIndex] = warranty;
 			}
 		});
 	}

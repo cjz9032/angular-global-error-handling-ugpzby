@@ -10,13 +10,13 @@
             </span>
         </div>
     
-        <div class="ui-deviceinfo-sepline" *ngIf="dataModel.showSepline"></div>
+       
 
         <div class="spinner-content p-0 d-flex align-items-center justify-content-center" *ngIf="!dataModel.link">
             <div class="spinner-border" role="status"></div>
         </div>
 
-        <div class="ui-deviceinfo-right ml-auto align-self-center">
+        <div class="ui-deviceinfo-right ml-auto d-flex align-items-center h-100">
             <div class="circle-border" *ngIf="!!dataModel.total">
                 <svg viewBox="0 0 36 36" class="circular-chart blue">
                     <path class="circle-bg"
@@ -34,11 +34,16 @@
                     <text x="18" y="26.35" class="percentage">Used</text>
                 </svg>
             </div>
-            
-            <div *ngIf="!!dataModel.checkedDate">
-                <span>Checked on:</span>
-                <div class="font-weight-bold text-center">{{dataModel.checkedDate}}</div>
+
+            <div class="d-flex h-100 align-items-center">
+                <div class="ui-deviceinfo-sepline" *ngIf="dataModel.showSepline"></div>
+
+                <div class="sw-checked-date" *ngIf="!!dataModel.checkedDate">
+                    <span>Checked on:</span>
+                    <p class="font-weight-bold text-center">{{dataModel.checkedDate}}</p>
+                </div>
             </div>
+            
         </div>
     </div>
 

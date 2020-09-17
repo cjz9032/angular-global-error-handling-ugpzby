@@ -38,6 +38,6 @@ export enum DeviceCondition{
 	Loading = 0,
 	Good = 1,
 	NeedRunSU = 2,
-	NeedRunScan = 3,
+	NeedRunSMPScan = 3,
 	NeedRunHWScan = 4
  }

@@ -579,8 +579,14 @@ export class ConfigService {
 		}
 	}
 
-	async showNewFeatureTipsWithMenuItems() {
-		const welcomeTutorial = await this.localCacheService.getLocalCacheValue(LocalStorageKey.WelcomeTutorial);
+	public isSystemUpdateEnabled(): boolean{
+		return this.adPolicyService.IsSystemUpdateEnabled
+				&& !this.deviceService.isSMode
+				&& !this.deviceService.isArm;
+	}
+
+	showNewFeatureTipsWithMenuItems() {
+		const welcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
 		if (!welcomeTutorial || !welcomeTutorial.isDone || window.innerWidth < 1200) {
 			this.localCacheService.setLocalCacheValue(LocalStorageKey.NewFeatureTipsVersion, this.commonService.newFeatureVersion);
 			return;

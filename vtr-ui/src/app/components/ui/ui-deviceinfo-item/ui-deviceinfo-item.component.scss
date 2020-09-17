@@ -9,9 +9,14 @@
    position: relative;
    height: 100%;
    .ui-deviceinfo-left{
-      padding: 1rem 0 0 2.4rem ;
+      padding: 1rem 0 0 2.4rem;
+      white-space: nowrap;
+      overflow: hidden;
       span{
          display: block;
+         overflow: hidden;
+         text-overflow: ellipsis;
+         margin-right: 1.2rem;;
          img{
             width: 2.4rem;
             height: 2.4rem;
@@ -34,14 +39,14 @@
 
    .ui-deviceinfo-sepline{
       width: 1px;
-      height: 60%;
+      height: 55.5%;
       background-color:#e6e6e6;
       align-self: center;
-      margin:0 2rem 0 2rem;
    }
 
    .spinner-content{
       position: absolute;
+      color:$main_shade;
       width: 100%;
       height: 100%;
       .spinner-border{
@@ -52,6 +57,15 @@
 
    .ui-deviceinfo-right{
       margin-right: 2.6rem;
+      max-width: 40%;
+      span,p{
+			overflow: hidden;
+         text-overflow: ellipsis;
+         display: -webkit-box;
+         -webkit-line-clamp: 2;
+         text-align: center;
+         -webkit-box-orient: vertical;
+      }
 
       .circle-border{
          width: 10.8rem;
@@ -81,6 +95,10 @@
           fill: $grey_darker;;
           font-size: 0.32em;
           text-anchor: middle;
+      }
+      
+      .sw-checked-date{
+         margin-left: 2.4rem;
       }
 
    }

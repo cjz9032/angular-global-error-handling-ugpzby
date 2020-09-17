@@ -1,45 +1,43 @@
-<div class="vtr-widget-device">
-	<div class="container-fluid d-flex flex-wrap">
-		<div class="device-brief col-12 d-flex">
-			<div class="device-brief-bios">
-				<p>{{myDevice.family}}</p>
-				<p *ngFor="let item of [['Serical number:',myDevice.sn],['Product number:',myDevice.productNo],['Bios version:',myDevice.bios]]"> 
-					<span>
-						<span>{{item[0]}}</span>
-						<span>{{item[1]}}</span>
-						<a href="javascript:void(0)" (click)="copyClicked(item[1])">Copy</a>
-					</span>
-				</p>
+<div class="vtr-widget-device container-fluid d-flex flex-wrap">
+	<div class="device-brief col-12 d-flex">
+		<div class="device-brief-bios">
+			<p>{{myDevice.family}}</p>
+			<p *ngFor="let item of [['Serical number:',myDevice.sn],['Product number:',myDevice.productNo],['Bios version:',myDevice.bios]]"> 
+				<span>
+					<span>{{item[0]}}</span>
+					<span>{{item[1]}}</span>
+					<a href="javascript:void(0)" (click)="copyClicked(item[1])">Copy</a>
+				</span>
+			</p>
+		</div>
+		<div class="device-brief-status d-flex align-items-center justify-content-center"
+				[ngClass]="{'device-status-loading':deviceStatus===0,
+							'device-status-good':deviceStatus===1,
+							'device-status-needaction':deviceStatus!=0&&deviceStatus!=1}">
+			<div class="spinner-content p-0 d-none">
+				<div class="spinner-border" role="status"></div>
 			</div>
-			<div class="device-brief-status d-flex align-items-center justify-content-center"
-				 [ngClass]="{'device-status-loading':deviceStatus===0,
-							  'device-status-good':deviceStatus===1,
-							  'device-status-needaction':deviceStatus!=0&&deviceStatus!=1}">
-				<div class="spinner-content p-0 d-none">
-					<div class="spinner-border" role="status"></div>
-				</div>
-				<span class="device-status-text">{{deviceStatus==1?'good condition':'maintenance needed'}}</span>
+			<span class="device-status-text">{{deviceStatus==1?'good condition':'maintenance needed'}}</span>
+		</div>
+	</div>
+	
+	<vtr-ui-group-card class="device-detail col-12" [title]="'Hardware Status'" [refreshButtonText]="'Refresh Modules'" (refreshClicked)="refreshClicked()">
+		<div class="container">
+			<div class="row">
+				<div class="device-detail-item device-detail-hw-item" *ngFor="let item of hwStatus">
+					<vtr-ui-deviceinfo-item [dataModel]="item"></vtr-ui-deviceinfo-item>
+				</div> 
 			</div>
 		</div>
-		
-		<vtr-ui-group-card class="device-detail col-12" [title]="'Hardware Status'" [refreshButtonText]="'Refresh Modules'" (refreshClicked)="refreshClicked()">
-			<div class="container">
-				<div class="row">
-					<div class="device-detail-hw-item col-xs-12 col-sm-6" *ngFor="let item of hwStatus">
-						<vtr-ui-deviceinfo-item [dataModel]="item"></vtr-ui-deviceinfo-item>
-					</div> 
-				</div>
-			</div>
-		</vtr-ui-group-card>
+	</vtr-ui-group-card>
 
-		<vtr-ui-group-card class="device-detail col-12" [title]="'Software Status'">
-			<div class="container">
-				<div class="row">
-					<div class="device-detail-sw-item col-xs-12 col-sm-6" *ngFor="let item of swStatus">
-						<vtr-ui-deviceinfo-item [dataModel]="item"></vtr-ui-deviceinfo-item>
-					</div> 
-				</div>
+	<vtr-ui-group-card class="device-detail col-12" [title]="'Software Status'">
+		<div class="container">
+			<div class="row">
+				<div class="device-detail-item device-detail-sw-item" *ngFor="let item of swStatus">
+					<vtr-ui-deviceinfo-item [dataModel]="item"></vtr-ui-deviceinfo-item>
+				</div> 
 			</div>
-		</vtr-ui-group-card>
-	</div>
+		</div>
+	</vtr-ui-group-card>
 </div>

@@ -1,13 +1,20 @@
 @import "../../../app.theme";
 
+$size500px-hw-show1col: "only screen and (min-width: 500px) and (max-width: 800px)";
+$size800px-hw-show2col: "only screen and (min-width: 800px) and (max-width: 992px)";
+$size992px-hw-show1col: "only screen and (min-width: 992px) and (max-width: 1200px)";
+$size1200px-hw-show2col: "only screen and (min-width: 1200px)";
+$size500px-sw-show1col: "only screen and (min-width: 500px) and (max-width: 1200px)";
+
 .vtr-widget-device {
+	padding: 0 !important;
+
 	.device-brief{
 		box-shadow: $drop_shadow;
 		border-radius: $border_radius;
 		background: linear-gradient(102deg, #191C28 0%, #2F3447 100%) 0% 0% no-repeat padding-box;;
 		height: 22rem;
 		color:white;
-		padding: 0;
 		font-size: 1.4rem;
 		
 		.device-brief-bios{
@@ -103,24 +110,38 @@
 
 	.device-detail{
 		margin-top: 2.4rem;
-		padding: 0;
+		padding: 0 !important;
 
 		.container{
-			padding: 0;
-			margin: 0;
+			padding: 0 !important;
+			margin: 0 !important;
 			max-width: 100rem;
 			.row{
 				padding: 1.6rem;
 			}
 		}
 
-		.device-detail-hw-item{
+		.device-detail-item{
 			padding: 0.8rem;
+			@media #{$size500px-hw-show1col} {
+				width: 100%;
+			};
+			@media #{$size800px-hw-show2col} {
+				width: 50%;
+			};
+			@media #{$size992px-hw-show1col} {
+				width: 100%;
+			};
+			@media #{$size1200px-hw-show2col} {
+				width: 50%;
+			};
+		}
+
+		.device-detail-hw-item{
 			height: 16rem;
 		}
 
 		.device-detail-sw-item{
-			padding: 0.8rem;
 			height: 10.8rem;
 		}
 
