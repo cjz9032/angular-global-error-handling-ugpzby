@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.9](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.8.8...v1.8.9) (2020-09-17)
+
+
+### Features
+
+* **IndexedDB:** VAN-22046 migrate Dashboard related localstorage to indexedDB ([b5eabc7](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/b5eabc745a5deb002321e41fefbe97a844115de5))
+* **IndexedDB:** VAN-22059 migrate UserDeterminePrivacy to indexedDB ([b40e249](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/b40e249e0b05b735d6ce786d5cdb5f4014a1d005))
+
 ### [1.8.8](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.8.7...v1.8.8) (2020-09-15)
 
 
