@@ -1256,7 +1256,7 @@
                     "vantageToolbar": {
                         "title": "Lenovo Vantage eszköztár és prémium beállítások",
                         "description": "Rögzítse a Windows-tálcára a Lenovo Vantage eszköztárat, így könnyen hozzáfér a leggyakrabban használt beállításokhoz, a frissítésekhez és az Önnek szóló prémium ajánlatokhoz.",
-                        "hint": "A képen látható lehetőségek a gép felszereltségétől függően érhetők el. Például egyes gépek támogatják a háttérvilágítás beállítását, míg mások nem."
+                        "hint": "A képen látható lehetőségek az eszköz funkcióitól és jellemzőitől függően érhetők el. Például egyes gépek támogatják a billentyűzet háttérvilágításának beállítását, míg mások nem."
                     }
                 },
                 "batterySettings": {

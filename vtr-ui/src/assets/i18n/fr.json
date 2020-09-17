@@ -1256,7 +1256,7 @@
                     "vantageToolbar": {
                         "title": "Barre d'outils et paramètres Premium de Lenovo Vantage",
                         "description": "Épinglez la barre d'outils de Lenovo Vantage à la barre des tâches Windows pour accéder facilement aux paramètres les plus fréquemment utilisés et obtenir des offres et mises à jour Premium.",
-                        "hint": "Les options de l'image dépendent de la capacité de l'ordinateur. Par exemple, certains ordinateurs prennent en charge les paramètres de rétro-éclairage, d'autres non."
+                        "hint": "Les options de l'image dépendent de la capacité et des caractéristiques du périphérique. Par exemple, certaines machines prennent en charge les paramètres de rétro-éclairage du clavier, d'autres non."
                     }
                 },
                 "batterySettings": {

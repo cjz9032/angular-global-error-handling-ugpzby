@@ -1256,7 +1256,7 @@
                     "vantageToolbar": {
                         "title": "Barra de ferramentas Lenovo Vantage e definições premium",
                         "description": "Afixe a barra de ferramentas Lenovo Vantage à barra de tarefas do Windows para aceder facilmente às definições mais utilizadas, e obtenha ofertas premium e atualizações à sua medida.",
-                        "hint": "As opções na imagem dependem da capacidade da máquina. Por exemplo, algumas máquinas suportam definições de retroiluminação e outras não."
+                        "hint": "As opções na imagem dependem da capacidade e das características do dispositivo. Por exemplo, algumas máquinas suportam definições de retroiluminação do teclado e outras não."
                     }
                 },
                 "batterySettings": {

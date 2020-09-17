@@ -1256,7 +1256,7 @@
                     "vantageToolbar": {
                         "title": "Lenovo Vantage-werkbalk en premium-instellingen",
                         "description": "Zet de Lenovo Vantage-werkbalk vast op de Windows-taakbalk voor snelle toegang tot de meest gebruikte instellingen en om premium-aanbiedingen en updates voor u op te halen.",
-                        "hint": "De opties in de afbeelding zijn afhankelijk van de mogelijkheden van uw computer. Sommige computers ondersteunen bijvoorbeeld instellingen voor achtergrondverlichting, andere niet."
+                        "hint": "De opties in de afbeelding zijn afhankelijk van de mogelijkheden en eigenschappen van het apparaat. Sommige computers ondersteunen bijvoorbeeld instellingen voor achtergrondverlichting van het toetsenbord, andere niet."
                     }
                 },
                 "batterySettings": {

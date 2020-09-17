@@ -1256,7 +1256,7 @@
                     "vantageToolbar": {
                         "title": "Lenovo Vantage-verktøylinje og Premium-innstillinger",
                         "description": "Fest Lenovo Vantage-verktøylinjen på oppgavelinjen i Windows for å få enkel tilgang til innstillingene du bruker oftest, og få Premium-tilbud og oppdateringer for deg.",
-                        "hint": "Alternativene i bildet avhenger av kapasiteten til maskinen. Noen maskiner støtter for eksempel innstillingene for bakgrunnsbelysning, og noen gjør det ikke."
+                        "hint": "Alternativene i bildet avhenger av kapasiteten og egenskapene til enheten. Noen maskiner støtter for eksempel innstillingene for bakgrunnsbelysning av tastatur, og noen gjør det ikke."
                     }
                 },
                 "batterySettings": {
