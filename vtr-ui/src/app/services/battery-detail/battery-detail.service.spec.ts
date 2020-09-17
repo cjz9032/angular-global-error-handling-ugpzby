@@ -5,7 +5,7 @@ import { LocalCacheService } from '../local-cache/local-cache.service';
 import { PowerService } from '../power/power.service';
 import { BatteryDetailService } from './battery-detail.service';
 
-fdescribe('Battery Detail Service', () => {
+describe('Battery Detail Service', () => {
 	let service: BatteryDetailService;
 	let localCacheServiceSpy: jasmine.SpyObj<LocalCacheService>;
 	const batteryThresholdFixture = { battery: 'battery' };

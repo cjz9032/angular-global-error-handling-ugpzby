@@ -9,6 +9,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { SmartStandby } from 'src/app/data-models/device/smart-standby.model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CommonService } from 'src/app/services/common/common.service';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { PowerService } from 'src/app/services/power/power.service';
 import { SmartStandbyService } from 'src/app/services/smart-standby/smart-standby.service';
@@ -63,7 +64,8 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		private logger: LoggerService,
 		public commonService: CommonService,
 		public smartStandbyService: SmartStandbyService,
-		private translate: TranslateService) {
+		private translate: TranslateService,
+		private localCacheService: LocalCacheService) {
 		this.smartStandbyService.days = this.smartStandby.daysOfWeekOff;
 	}
 
@@ -85,7 +87,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 					if (this.firstTimeLoad || response !== this.smartStandby.isCapable) {
 						this.smartStandby.isCapable = response;
 						this.cache.isCapable = response;
-						this.commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, this.cache);
+						this.saveCache();
 						if (this.smartStandby.isCapable) {
 							this.setSmartStandbyEnabled();
 							this.autonomicCapabilityCheck();
@@ -118,7 +120,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		this.logger.info('getSmartStandbyEnabled response', response);
 		this.smartStandby.isEnabled = response;
 		this.cache.isEnabled = response;
-		this.commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, this.cache);
+		this.saveCache();
 		if (this.smartStandby.isEnabled) {
 			const activeStartEnd = await this.powerService.getSmartStandbyActiveStartEnd();
 			const daysOffWeek = await this.powerService.getSmartStandbyDaysOfWeekOff();
@@ -128,7 +130,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 			this.smartStandbyService.days = daysOffWeek;
 			this.cache.activeStartEnd = this.smartStandby.activeStartEnd;
 			this.cache.daysOfWeekOff = this.smartStandby.daysOfWeekOff;
-			this.commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, this.cache);
+			this.saveCache();
 			this.updateScheduleComputerModesUIModel();
 		}
 	}
@@ -144,8 +146,8 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		this.getIsAutonomicCapability();
 		this.getSmartStandbyIsAutonomic();
 	}
-	initDataFromCache() {
-		this.cache = this.commonService.getLocalStorageValue(LocalStorageKey.SmartStandbyCapability, undefined);
+	async initDataFromCache() {
+		this.cache = await this.localCacheService.getLocalCacheValue(LocalStorageKey.SmartStandbyCapability, undefined);
 		if (this.cache) {
 			this.smartStandby.isCapable = this.cache.isCapable;
 			if (!this.smartStandby.isCapable) {
@@ -179,7 +181,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 						if (value === 0) {
 							this.smartStandby.isEnabled = isEnabled;
 							this.cache.isEnabled = this.smartStandby.isEnabled;
-							this.commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, this.cache);
+							this.saveCache();
 							this.setSmartStandbySection(isEnabled);
 							this.updateScheduleComputerModesUIModel();
 						}
@@ -228,7 +230,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 							if (value === 0) {
 								this.logger.info('smartStandbyStartEndTime is set successfully');
 								this.cache.activeStartEnd = activeStartEnd;
-								this.commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, this.cache);
+								this.saveCache();
 							}
 						})
 						.catch(error => {
@@ -248,7 +250,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		this.smartStandby.daysOfWeekOff = daysOfWeekOff;
 		this.smartStandbyService.days = this.smartStandby.daysOfWeekOff;
 		this.cache.daysOfWeekOff = daysOfWeekOff;
-		this.commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, this.cache);
+		this.saveCache();
 		try {
 			this.logger.info('setSmartStandbyDaysOfWeekOff entered', event);
 			if (this.powerService.isShellAvailable) {
@@ -258,7 +260,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 						if (value === 0) {
 							this.logger.info('smartStandbyDaysOfWeekOff is set successfully');
 							this.cache.daysOfWeekOff = daysOfWeekOff;
-							this.commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, this.cache);
+							this.saveCache();
 						}
 					})
 					.catch(error => {
@@ -433,5 +435,9 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 				}
 			});
 		}
+	}
+
+	private saveCache(): void {
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartStandbyCapability, this.cache);
 	}
 }
