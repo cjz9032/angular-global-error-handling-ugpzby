@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { NgForage, Driver, DedicatedInstanceFactory } from 'ngforage';
 import { CommonService } from '../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +27,7 @@ export class LocalCacheService {
 	 * @param key key for storage. Must define it in LocalStorageKey or DashboardLocalStorageKey enum
 	 * @param value value to store in local storage
 	 */
-	public setLocalCacheValue(key: LocalStorageKey | DashboardLocalStorageKey, value: any): Promise<void> {
+	public setLocalCacheValue(key: LocalStorageKey, value: any): Promise<void> {
 		if (this.transferEnabled) {
 			return this.setItem(key, value).then(() => {
 				this.commonService.sendNotification(key, value);
@@ -45,7 +44,7 @@ export class LocalCacheService {
 	 * @param key key for storage. Must define it in LocalStorageKey or DashboardLocalStorageKey enum
 	 * @param defaultValue default value for not key not found in IndexedDB storage
 	 */
-	public async getLocalCacheValue(key: LocalStorageKey | DashboardLocalStorageKey, defaultValue?: any) {
+	public async getLocalCacheValue(key: LocalStorageKey, defaultValue?: any) {
 		if (this.transferEnabled) {
 			let cacheValue = defaultValue;
 			const indexedDBCache = await this.getItem(key);
@@ -69,7 +68,7 @@ export class LocalCacheService {
 	 * Before switch to use IndexedDB, please make sure there is related feature story for PA to verify
 	 * @param key key use to removes the key/value pair in IndexedDB storage
 	 */
-	public removeLocalCacheItem(key: LocalStorageKey | DashboardLocalStorageKey): Promise<void> {
+	public removeLocalCacheItem(key: LocalStorageKey): Promise<void> {
 		if (this.transferEnabled) {
 			return this.removeItem(key);
 		}

@@ -18,7 +18,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from './services/language/language.service';
 import { version } from '@lenovo/tan-client-bridge/package.json';
 import { DeviceInfo } from './data-models/common/device-info.model';
-import { DashboardLocalStorageKey } from './enums/dashboard-local-storage-key.enum';
 import { AppNotification } from './data-models/common/app-notification.model';
 import { TranslationNotification } from './data-models/translation/translation';
 import { LoggerService } from './services/logger/logger.service';
@@ -285,7 +284,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	private onMachineInfoReceived(value: any) {
 		this.setFontFamilyByLocale(value.locale);
 		const cachedDeviceInfo: DeviceInfo = { isGamingDevice: value.isGaming, locale: value.locale };
-		this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, cachedDeviceInfo);
+		this.commonService.setLocalStorageValue(LocalStorageKey.DeviceInfo, cachedDeviceInfo);
 		this.machineInfo = value;
 		this.isMachineInfoLoaded = true;
 		this.isGaming = value.isGaming;

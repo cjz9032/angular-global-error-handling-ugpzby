@@ -5,7 +5,6 @@ import { Observable } from 'rxjs/internal/Observable';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { Subject } from 'rxjs/internal/Subject';
-import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
 import { ReplaySubject } from 'rxjs';
 
 declare var window;
@@ -118,14 +117,14 @@ export class CommonService {
 	 * @param key key for local storage. Must define it in LocalStorageKey enum
 	 * @param value value to store in local storage
 	 */
-	public setLocalStorageValue(key: LocalStorageKey | DashboardLocalStorageKey, value: any) {
+	public setLocalStorageValue(key: LocalStorageKey, value: any) {
 		// console.log(`Setting the value for ${key}, Value => ${value}`);
 		window.localStorage.setItem(key, JSON.stringify(value));
 		// notify component that local storage value updated.
 		this.sendNotification(key, value);
 	}
 
-	public haveLocalStorageKey(key: LocalStorageKey | DashboardLocalStorageKey, defaultValue?: any): any {
+	public haveLocalStorageKey(key: LocalStorageKey, defaultValue?: any): any {
 		const value = window.localStorage.getItem(key);
 		if (value === null || value === undefined) {
 			return false;
@@ -137,7 +136,7 @@ export class CommonService {
 	 * Returns parsed json object if key is found else returns undefined
 	 * @param key key use to store value in local storage
 	 */
-	public getLocalStorageValue(key: LocalStorageKey | DashboardLocalStorageKey, defaultValue?: any): any {
+	public getLocalStorageValue(key: LocalStorageKey, defaultValue?: any): any {
 		const value = window.localStorage.getItem(key);
 		if (value) {
 			try {
@@ -153,7 +152,7 @@ export class CommonService {
 	 * Removes the key/value pair with the given key
 	 * @param key key use to removes the key/value pair in local storage
 	 */
-	public removeLocalStorageValue(key: LocalStorageKey | DashboardLocalStorageKey) {
+	public removeLocalStorageValue(key: LocalStorageKey) {
 		window.localStorage.removeItem(key);
 	}
 
