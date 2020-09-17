@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { LenovoSupportService } from 'src/app/services/hardware-scan/lenovo-support.service';
+import { BreakpointObserver, BreakpointState, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
 	selector: 'vtr-widget-hardware-scan-item',
@@ -15,13 +16,15 @@ export class WidgetHardwareScanItemComponent implements OnInit {
 
 	public tooltipText: string;
 	public tooltipIndex: number;
-	contactusUrl: string;
+	public isXsBreakpoint: boolean;
+	public contactusUrl: string;
 
-	constructor(private lenovoSupportService: LenovoSupportService) {
+	constructor(private lenovoSupportService: LenovoSupportService, private breakPointObserver: BreakpointObserver) {
 	}
 
 	ngOnInit() {
 		this.configureContactusUrl();
+		this.getXsBreakpointStatus();
 	}
 
 	public setTooltipInfo(text: string, index: number) {
@@ -30,18 +33,30 @@ export class WidgetHardwareScanItemComponent implements OnInit {
 	}
 
 	// Changes status expanded of the module test list when the user request
-	public toggleTestListVisibility(item: any) {
+	public toggleTestListVisibility(item: any): void {
 		item.expanded = !item.expanded;
 		item.expandedStatusChangedByUser = !item.expandedStatusChangedByUser;
 	}
 
-	private async configureContactusUrl() {
+	private async configureContactusUrl(): Promise<void> {
 		await this.lenovoSupportService.getContactusUrl().then((response) => {
 			this.contactusUrl = response;
 		});
 	}
 
-	openContactusPage() {
+	public openContactusPage(): void {
 		window.open(this.contactusUrl);
+	}
+
+	/**
+	 * Retrive if current observable breakpoint xSmall is matched and
+	 * saves to isXsBreakpoint variable.
+	 */
+	private getXsBreakpointStatus(): void {
+		this.breakPointObserver
+		.observe([Breakpoints.XSmall])
+		.subscribe((state: BreakpointState) => {
+			this.isXsBreakpoint = state.matches;
+		});
 	}
 }

@@ -113,7 +113,7 @@
 					[ngbTooltip]="tooltipRefModule"
 					container="vtr-root"
 					tooltipClass="vtr-tooltip"
-					placement="auto">
+					placement="{{ isXsBreakpoint ? 'left' : 'auto' }}">
 					<fa-icon [icon]="['far', 'question-circle']"></fa-icon>
 				</a>
 			</div>
