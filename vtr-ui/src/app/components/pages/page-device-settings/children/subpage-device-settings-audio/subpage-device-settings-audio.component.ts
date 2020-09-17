@@ -9,7 +9,6 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { PageAnchorLink } from 'src/app/data-models/common/page-achor-link.model';
-import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 import { DolbyAudioToggleCapability } from 'src/app/data-models/device/dolby-audio-toggle-capability';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
@@ -118,16 +117,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		this.batteryService.getBatterySettings();
 		this.commonService.checkPowerPageFlagAndHide();
 
-		this.isOnline = this.commonService.isOnline;
-		if (this.isOnline) {
-			const welcomeTutorial: WelcomeTutorial = await this.localCacheService.getLocalCacheValue(LocalStorageKey.WelcomeTutorial, undefined);
-			// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
-			if (welcomeTutorial && welcomeTutorial.isDone) {
-				this.initFeatures();
-			}
-		} else {
-			this.initFeatures();
-		}
+		this.initFeatures();
 
 		if (this.microphoneDevice) {
 			this.microphnePermissionHandler = (args: any) => {

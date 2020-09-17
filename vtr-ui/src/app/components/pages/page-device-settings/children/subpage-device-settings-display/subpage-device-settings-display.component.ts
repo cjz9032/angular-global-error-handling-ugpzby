@@ -8,7 +8,6 @@ import { EyeCareMode, SunsetToSunriseStatus } from 'src/app/data-models/camera/e
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
-import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 import { EyeCareModeCapability } from 'src/app/data-models/device/eye-care-mode-capability.model';
 import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -296,16 +295,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 			}
 		});
 
-		this.isOnline = this.commonService.isOnline;
-		if (this.isOnline) {
-			const welcomeTutorial: WelcomeTutorial = await this.localCacheService.getLocalCacheValue(LocalStorageKey.WelcomeTutorial, undefined);
-			// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
-			if (welcomeTutorial && welcomeTutorial.isDone) {
-				this.initFeatures();
-			}
-		} else {
-			this.initFeatures();
-		}
+		this.initFeatures();
 	}
 
 	initDataFromCache() {
