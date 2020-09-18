@@ -56,7 +56,7 @@
 
 				<div *ngIf="!showProgress && !isUpdateDownloading"
 					class="row">
-					<div class="button-row" *ngIf="!isUpdatesAvailable">
+					<div class="button-row" *ngIf="!isUpdatesAvailable || isInstallationCompleted">
 						<vtr-ui-button linkId="su_check_updates"
 							metricsEvent="FeatureClick"
 							[metricsItem]="isCheckedOnce ? 'btn.check again' : 'btn.Check For Updates'"
@@ -66,7 +66,7 @@
 							[label]="(isCheckedOnce ? 'systemUpdates.banner.checkAgain' :'systemUpdates.banner.checkButton') | translate"
 							(onClick)="onCheckForUpdates()"></vtr-ui-button>
 					</div>
-					<div class="row" *ngIf="isUpdatesAvailable">
+					<div class="row" *ngIf="isUpdatesAvailable && !isInstallationCompleted">
 						<div class="button-row">
 							<vtr-ui-button linkId="su_update_now"
 							[isDisabled]="!isUpdateSelected"
