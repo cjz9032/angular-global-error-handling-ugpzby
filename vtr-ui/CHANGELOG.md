@@ -15,6 +15,8 @@ All notable changes to this project will be documented in this file. See [standa
 ### Bug Fixes
 
 * **Overall:** fix ssrb finding ([a198a4e](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/a198a4e8533464c1a978530957bec9836e9c098b))
+### [1.7.53](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.7.52...v1.7.53) (2020-09-18)
+
 ### [1.7.52](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.7.51...v1.7.52) (2020-09-18)
 
 ### [1.7.51](https://bitbucket.tc.lenovo.com///compare/v1.7.50...v1.7.51) (2020-09-03)
