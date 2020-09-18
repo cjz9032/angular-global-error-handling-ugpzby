@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.enum';
 import { HardwareScanOverallResult } from 'src/app/enums/hardware-scan-overall-result.enum';
