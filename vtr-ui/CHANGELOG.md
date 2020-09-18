@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.11](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.8.10...v1.8.11) (2020-09-18)
+
+
+### Features
+
+* **Dashboard:** van-21435 add status card container style ([5f20c29](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/5f20c29e66bf924271c29a239c54e096ac7e8196))
+* **IndexedDB:** VAN-22046 migrate common used keys to indexedDB ([9444ec8](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/9444ec88178ac085840f784e68f9693a43d1e61a))
+* **IndexedDB:** VAN-22046 remove DashboardLocalStorageKey enum ([ac4e753](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/ac4e7532599fd22eaa54dc1f936fe2a09147c64a))
+* **Overall:** Introduce material and cdk library ([f45e1e2](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/f45e1e279cc99721bcf84fd4cbc8e4cdd2da029d))
+
 ### [1.8.10](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.8.9...v1.8.10) (2020-09-17)
 
 
