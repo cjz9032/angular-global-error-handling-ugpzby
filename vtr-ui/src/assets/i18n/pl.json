@@ -3134,7 +3134,8 @@
             },
             "waitAvailability": "Podczas ładowania informacji o sprzęcie lub w trakcie skanowania, przycisk jest wyłączony, jeśli urządzenia pamięci nie obsługują tej funkcji.",
             "executingTitle": "Trwa odzyskiwanie",
-            "recoverCompleted": "Odzyskiwanie zakończone"
+            "recoverCompleted": "Odzyskiwanie zakończone",
+            "modalTitle": "Wybierz napęd, który chcesz odzyskać"
         },
         "support": {
             "title": "Pobierz profesjonalne narzędzia diagnostyczne",

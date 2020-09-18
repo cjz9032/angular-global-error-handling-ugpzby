@@ -23,6 +23,16 @@
 				padding-left: 1.5rem;
 			}
 
+			.name {
+				font-size: $fontsize_xs;
+				font-weight: $weight_600;
+			}
+	
+			.subname {
+				font-size: $fontsize_xs;
+				font-weight: $weight_light !important;
+			}
+
 			// modifying global checkbox component
 			.custom-control-component ::ng-deep .auto-set-checkbox{
 				margin: 0;

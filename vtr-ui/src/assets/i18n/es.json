@@ -3134,7 +3134,8 @@
             },
             "waitAvailability": "El botón está deshabilitado si los dispositivos de almacenamiento no admiten esta funcionalidad, mientras que la información de hardware se está cargando o si hay un análisis en curso.",
             "executingTitle": "Recuperando",
-            "recoverCompleted": "Recuperación completada"
+            "recoverCompleted": "Recuperación completada",
+            "modalTitle": "Seleccione la unidad que desea recuperar"
         },
         "support": {
             "title": "Descargar herramientas de diagnóstico profesionales",

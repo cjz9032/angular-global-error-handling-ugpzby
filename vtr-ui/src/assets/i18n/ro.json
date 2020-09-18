@@ -3134,7 +3134,8 @@
             },
             "waitAvailability": "Butonul este dezactivat dacă dispozitivele de stocare nu acceptă această funcționalitate, în timp ce informațiile hardware sunt încărcate sau dacă există o scanare în curs.",
             "executingTitle": "Se recuperează acum",
-            "recoverCompleted": "Recuperare finalizată"
+            "recoverCompleted": "Recuperare finalizată",
+            "modalTitle": "Selectați unitatea pe care doriți să o recuperați"
         },
         "support": {
             "title": "Descărcare instrumente profesionale de diagnosticare",

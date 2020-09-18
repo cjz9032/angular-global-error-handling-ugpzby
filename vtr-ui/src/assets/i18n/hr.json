@@ -3134,7 +3134,8 @@
             },
             "waitAvailability": "Gumb je onemogućen ako uređaji za pohranu ne podržavaju ovu funkciju, dok se podaci o hardveru učitavaju ili je u tijeku skeniranje.",
             "executingTitle": "U tijeku je oporavak",
-            "recoverCompleted": "Oporavak je završen"
+            "recoverCompleted": "Oporavak je završen",
+            "modalTitle": "Odaberite pogon koji želite oporaviti"
         },
         "support": {
             "title": "Preuzmite profesionalne dijagnostičke alate",

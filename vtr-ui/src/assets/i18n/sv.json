@@ -3134,7 +3134,8 @@
             },
             "waitAvailability": "Knappen är inaktiverad om lagringsenheterna inte stöder den här funktionen, om maskinvaruinformationen läses in eller om en genomsökning pågår.",
             "executingTitle": "Återställer nu",
-            "recoverCompleted": "Återställningen är klar"
+            "recoverCompleted": "Återställningen är klar",
+            "modalTitle": "Välj den enhet du vill återställa"
         },
         "support": {
             "title": "Hämta professionella diagnostikverktyg",

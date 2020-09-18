@@ -3134,7 +3134,8 @@
             },
             "waitAvailability": "A gomb le van tiltva, ha a tárolóeszközök nem támogatják ezt a funkciót a hardverinformáció betöltése közben, vagy ha vizsgálat van folyamatban.",
             "executingTitle": "Helyreállítás folyamatban",
-            "recoverCompleted": "Helyreállítás kész"
+            "recoverCompleted": "Helyreállítás kész",
+            "modalTitle": "Válassza ki a meghajtót, amelyet szeretne helyreállítani"
         },
         "support": {
             "title": "Professzionális diagnosztikai eszközök letöltése",

@@ -54,7 +54,7 @@ export class ModalHardwareScanRbsComponent implements OnDestroy, OnInit {
 
 	public getComponentTitle() {
 		if (this.devices) {
-			return this.translate.instant('hardwareScan.recoverBadSectors.localDevices');
+			return this.translate.instant('hardwareScan.recoverBadSectors.modalTitle');
 		} else {
 			return this.translate.instant('hardwareScan.loadingDevices');
 		}
@@ -67,11 +67,11 @@ export class ModalHardwareScanRbsComponent implements OnDestroy, OnInit {
 
 	private buildDevicesRecoverList(groupList: any) {
 		const devices = [];
-
+		// console.log()
 		for (const group of groupList) {
 			devices.push({
 				id: group.id,
-				title: group.name,
+				title: this.translate.instant('hardwareScan.pluginTokens.STORAGE'),
 				name: group.name,
 				status: HardwareScanTestResult.NotStarted,
 				isSelected: this.failedDevicesList.some(p => p === group.id),

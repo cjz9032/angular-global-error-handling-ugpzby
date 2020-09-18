@@ -7,26 +7,15 @@
 		.title {
 			width: 100%;
 			font-size: $fontsize_xl;
-			font-weight: $weight_light;
+			font-weight: $weight_semibold;
 			color: $shade_blue;
-		}
-
-		.description {
-			width: 100%;
-			color: $shade-darker;
-			font-size: $fontsize_xs2;
-			font-weight: $weight_light;
-		}
-
-		.errorMessage {
-			width: 100%;
-			color: $alt;
-			font-size: $fontsize_xs;
-			font-weight: $weight_medium;
+			margin-bottom: 3.6rem;
 		}
 	}
 
 	.button-row {
+		margin-top: 1.2rem;
+
 		::ng-deep .vtr-ui-button .button-box {
 			padding-left: 0;
 			max-width: 24rem;

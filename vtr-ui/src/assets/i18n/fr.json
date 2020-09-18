@@ -3134,7 +3134,8 @@
             },
             "waitAvailability": "Le bouton est désactivé si les unités de stockage ne prennent pas en charge cette fonctionnalité alors que les informations matérielles sont chargées ou qu'une analyse est en cours.",
             "executingTitle": "Récupération",
-            "recoverCompleted": "Récupération terminée"
+            "recoverCompleted": "Récupération terminée",
+            "modalTitle": "Sélectionnez l'unité que vous souhaitez récupérer"
         },
         "support": {
             "title": "Télécharger les outils de diagnostic professionnels",
