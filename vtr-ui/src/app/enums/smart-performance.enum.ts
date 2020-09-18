@@ -43,7 +43,7 @@ export enum PaymentPage{
 	SOURCEQUERYPARAMETER='&source=',
 	SLASH='/',
 	TRUE='true',
-	ORDERWAITINGTIME = 15, // MINUTES,
+	ORDERWAITINGTIME = 1.5, // MINUTES,
 }
 export enum SpSubscriptionDetails {
 	MONTH = 31,

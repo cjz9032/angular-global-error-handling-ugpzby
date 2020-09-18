@@ -10,6 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class SmartPerformanceService {
 	getSmartPerformance: any;
+	modalStatus = { initiatedTime: '', isGettingStatus: false };
 	public isShellAvailable = false;
 	scanningStopped = new Subject<boolean>();
 	constructor(shellService: VantageShellService, private http: HttpClient) {
