@@ -2,7 +2,7 @@
 	<div class="row">
 		<div [ngSwitch]="headerType">
 			<div id="rbs-header-height-filler" *ngSwitchCase="enumScanHeaderTypeFinished.RecoverBadSectors" aria-live="polite">
-				<h2 id="hwscan-rbs-finished-title" role="heading" class="col title">{{ 'hardwareScan.recoverBadSectors.recoverCompleted' | translate }}</h2>
+				<h2 id="hwscan-rbs-finished-title" role="heading" class="col title">{{ 'hardwareScan.result' | translate }} : {{ 'hardwareScan.' + recoverResult.toLowerCase() | translate }}</h2>
 			</div>
 			<div *ngSwitchCase="enumScanHeaderTypeFinished.Scan">
 				<ng-container *ngTemplateOutlet="scanFinishedHeaderTitle"></ng-container>
