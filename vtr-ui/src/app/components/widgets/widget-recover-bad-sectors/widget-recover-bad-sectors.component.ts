@@ -13,8 +13,15 @@ export class WidgetRecoverBadSectorsComponent implements OnInit {
 	@Input() recoverPath: string;
 	@Input() disable = false;
 	@Input() tooltipText: string;
+	@Input() onClick: () => void;
+
+	@Output() buttonClicked: EventEmitter<any> = new EventEmitter();
 
 	constructor() { }
 
 	ngOnInit() { }
+
+	public onRecoverButtonClick(): void {
+		this.buttonClicked.emit();
+	}
 }

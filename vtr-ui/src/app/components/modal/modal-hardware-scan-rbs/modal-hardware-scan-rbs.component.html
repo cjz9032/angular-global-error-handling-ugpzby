@@ -2,7 +2,6 @@
 
 	<div class="row modal-information">
 		<h1 class="title" id="hwscan-rbs-modal-title" role="heading">{{ getComponentTitle() }}</h1>
-		<p class="errorMessage" id="hwscan-rbs-modal-error-message" role="text">{{ errorMessage }}</p>
 	</div>
 
 	<vtr-ui-hardware-list-checkbox
@@ -12,8 +11,10 @@
 
 	<div class="row button-row">
 		<vtr-ui-button
+			[isDisabled]="!isSelectedItem()"
 			linkId="hwscan-run-selected-tests-btn"
 			metricsParent="HardwareScan.RecoverBadSectors"
+			[isFullWidth]="true"
 			metricsItem="RecoverBadSectors.RunRecoverBadSectors"
 			[label]= " 'hardwareScan.recoverBadSectors.title' | translate "
 			(onClick)="onClickRun()">

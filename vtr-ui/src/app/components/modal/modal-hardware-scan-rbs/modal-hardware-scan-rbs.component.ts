@@ -10,10 +10,8 @@ import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.
 	styleUrls: ['./modal-hardware-scan-rbs.component.scss']
 })
 export class ModalHardwareScanRbsComponent implements OnDestroy, OnInit {
-	public errorMessage: string;
 	public devices: any[];
 	private failedDevicesList: Array<string>;
-
 	private isSuccessful = false;
 
 	@Output() passEntry: EventEmitter<any> = new EventEmitter();
@@ -49,13 +47,9 @@ export class ModalHardwareScanRbsComponent implements OnDestroy, OnInit {
 
 	public onClickRun() {
 		const selectedDevices = this.devices.filter(x => x.isSelected);
-		if (selectedDevices.length > 0) {
-			this.isSuccessful = true;
-			this.passEntry.emit(selectedDevices);
-			this.closeModal();
-		} else {
-			this.errorMessage = this.translate.instant('hardwareScan.errorResult');
-		}
+		this.isSuccessful = true;
+		this.passEntry.emit(selectedDevices);
+		this.closeModal();
 	}
 
 	public getComponentTitle() {
@@ -92,9 +86,7 @@ export class ModalHardwareScanRbsComponent implements OnDestroy, OnInit {
 		this.devices = devices;
 	}
 
-	public receiveSelect() {
-		if (this.errorMessage !== '') {
-			this.errorMessage = '';
-		}
+	public isSelectedItem() {
+		return this.hardwareScanService.getHasDevicesToRecover();
 	}
 }

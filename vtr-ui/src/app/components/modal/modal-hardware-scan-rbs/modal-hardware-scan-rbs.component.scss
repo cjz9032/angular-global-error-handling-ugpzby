@@ -27,8 +27,9 @@
 	}
 
 	.button-row {
-		::ng-deep .vtr-ui-button .button-box{
+		::ng-deep .vtr-ui-button .button-box {
 			padding-left: 0;
+			max-width: 24rem;
 		}
 	}
 

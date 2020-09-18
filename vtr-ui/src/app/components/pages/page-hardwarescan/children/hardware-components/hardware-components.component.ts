@@ -124,6 +124,11 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			this.onNotification(response);
 		});
 
+		this.hardwareScanService.startRecover.subscribe(() => {
+			this.initComponent();
+		});
+
+		this.setPageTitle();
 		this.initComponent();
 	}
 
@@ -134,8 +139,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	}
 
 	public initComponent() {
-		this.setPageTitle();
-
 		if (this.hardwareScanService) {
 			if (this.hardwareScanService.isRecoverInit()) {
 				this.doRecoverBadSectors();
@@ -800,7 +803,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			const results = { items: [] };
 
 			for (const device of this.devicesRecoverBadSectors) {
-
 				const item = {
 					module: storageModule.name,
 					icon: storageModule.id,

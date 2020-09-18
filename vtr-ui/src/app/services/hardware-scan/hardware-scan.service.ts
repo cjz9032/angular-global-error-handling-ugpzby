@@ -1,4 +1,4 @@
-import { Injectable, NgZone } from '@angular/core';
+import { Injectable, NgZone, EventEmitter } from '@angular/core';
 import { HardwareScanProgress } from 'src/app/enums/hw-scan-progress.enum';
 import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.enum';
 import { HardwareScanOverallResult } from 'src/app/enums/hardware-scan-overall-result.enum';
@@ -86,6 +86,8 @@ export class HardwareScanService {
 	private currentTaskType: TaskType;
 	private currentTaskStep: TaskStep;
 
+	public startRecover: EventEmitter<any> = new EventEmitter();
+	public startRecoverFromFailed: EventEmitter<any> = new EventEmitter();
 
 	private modulesStored: any;
 	private completedStatus: boolean | undefined = undefined;
@@ -1266,6 +1268,22 @@ export class HardwareScanService {
 
 	public setLastFilteredCustomScanResponse(lastFilteredCustomScanResponse) {
 		this.lastFilteredCustomScanResponse = JSON.parse(JSON.stringify(lastFilteredCustomScanResponse));
+	}
+
+	public setLastResponse(response: any) {
+		this.lastResponse = response;
+	}
+
+	public getLastResponse() {
+		return this.lastResponse;
+	}
+
+	public setProgress(progress: any) {
+		this.setProgress = progress;
+	}
+
+	public setCancelProcess(value: boolean) {
+		this.cancelRequested = value;
 	}
 
 	public getCurrentModule(): string {

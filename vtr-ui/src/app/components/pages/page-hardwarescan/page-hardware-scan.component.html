@@ -47,8 +47,8 @@
 						[widgetId]="'hwscan-rbs-widget'"
 						[title]="'hardwareScan.recoverBadSectors.title' | translate"
 						[description]="'hardwareScan.recoverBadSectors.description' | translate"
-						[recoverPath]="'recover-bad-sectors'"
 						[disable]="!hasDevicesToRecoverBadSectors() || disable()"
+						(buttonClicked)="onRecoverBadSectors()"
 						[tooltipText]="('hardwareScan.recoverBadSectors.title' | translate)">
 					</vtr-widget-recover-bad-sectors>
 				</div>

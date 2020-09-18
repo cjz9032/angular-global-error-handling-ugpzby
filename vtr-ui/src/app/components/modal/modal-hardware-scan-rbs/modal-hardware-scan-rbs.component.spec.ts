@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
 
 import { ModalHardwareScanRbsComponent } from './modal-hardware-scan-rbs.component';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
@@ -34,7 +34,6 @@ fdescribe('ModalHardwareScanRbsComponent', () => {
 	fit('should translate the component title token', () => {
 		const spy = spyOn(component, 'getComponentTitle');
 		const result = component.getComponentTitle();
-		// Validates if there is no syncronism issue and the token was translated.
 		expect(result).not.toEqual('');
 	});
 

@@ -37,10 +37,12 @@
 						metricsParent="HardwareScan"
 						metricsItem="HardwareScan.RecoverBadSectors"
 						[isFullWidth]="true"
-						[label]="'hardwareScan.recoverBadSectors.title' | translate"
-						[isDisabled]="disable"
 						[routerPath] = "recoverPath"
-						[tooltipText]="tooltipText">
+						
+						[label]="'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+						[isDisabled]="disable"
+						[tooltipText]="tooltipText"
+						(onClick)="onRecoverButtonClick()">
 					</vtr-ui-button>
 				</div>
 			</div>

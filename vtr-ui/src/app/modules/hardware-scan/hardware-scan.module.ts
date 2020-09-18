@@ -11,6 +11,7 @@ import { ModalScheduleNewScanComponent } from '../../components/modal/modal-sche
 import { ModalPreScanInfoComponent } from '../../components/modal/modal-pre-scan-info/modal-pre-scan-info.component';
 import { ModalHardwareScanCustomizeComponent } from '../../components/modal/modal-hardware-scan-customize/modal-hardware-scan-customize.component';
 import { ModalRecoverConfirmComponent } from '../../components/modal/modal-recover-confirm/modal-recover-confirm.component';
+import { ModalHardwareScanRbsComponent } from '../../components/modal/modal-hardware-scan-rbs/modal-hardware-scan-rbs.component'
 import { PageHardwareScanComponent } from '../../components/pages/page-hardwarescan/page-hardware-scan.component';
 import { HardwareScanHeaderPagesComponent } from '../../components/pages/page-hardwarescan/children/hardware-scan-header-pages/hardware-scan-header-pages.component';
 import { UiHardwareListComponent } from '../../components/ui/ui-hardware-list/ui-hardware-list.component';
@@ -59,6 +60,7 @@ import { UiHyperlinkButtonComponent } from '../../components/ui/ui-hyperlink-but
 		ModalHardwareScanCustomizeComponent,
 		ModalScheduleNewScanComponent,
 		ModalPreScanInfoComponent,
+		ModalHardwareScanRbsComponent,
 		PageHardwareScanComponent,
 		UiDropdownHwscanComponent,
 		UiHardwareListComponent,
@@ -110,6 +112,7 @@ import { UiHyperlinkButtonComponent } from '../../components/ui/ui-hyperlink-but
 		ModalHardwareScanCustomizeComponent,
 		ModalScheduleNewScanComponent,
 		ModalPreScanInfoComponent,
+		ModalHardwareScanRbsComponent,
 	]
 })
 export class HardwareScanModule {
