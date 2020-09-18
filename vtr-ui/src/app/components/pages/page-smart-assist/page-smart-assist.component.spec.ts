@@ -15,6 +15,7 @@ import { CommsService } from 'src/app/services/comms/comms.service';
 import { DevService } from 'src/app/services/dev/dev.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { DisplayService } from 'src/app/services/display/display.service';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
@@ -42,15 +43,6 @@ const antiTheftResponse: AntiTheftResponse = {
 };
 
 describe('Component: PageSmartAssistComponent', () => {
-	/* let component: PageSmartAssistComponent;
-	let fixture: ComponentFixture<PageSmartAssistComponent>;
-	let deviceService: DeviceService;
-	let smartAssistService: SmartAssistService;
-	let logger: LoggerService;
-	let commonService: CommonService;
-	let vantageShellService: VantageShellService; */
-	// const navigationExtras: NavigationExtras;
-
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			declarations: [PageSmartAssistComponent],
@@ -94,14 +86,15 @@ describe('Component: PageSmartAssistComponent', () => {
 			const smartAssistService = fixture.debugElement.injector.get(SmartAssistService);
 			const deviceService = fixture.debugElement.injector.get(DeviceService);
 			const commonService = fixture.debugElement.injector.get(CommonService);
+			const localCacheService = fixture.debugElement.injector.get(LocalCacheService);
 			const vantageShellService = fixture.debugElement.injector.get(VantageShellService);
 			const logger = fixture.debugElement.injector.get(LoggerService);
 			// smartAssistService = fixture.debugElement.injector.get(SmartAssistService);
-			return { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger };
+			return { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger, localCacheService };
 		}
 
 		it('PageSmartAssistComponent :: should create', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component, localCacheService } = setup();
 			component.intelligentScreen = intelligentScreen;
 			component.intelligentScreen.isIntelligentScreenVisible = true;
 			component.intelligentSecurity = new IntelligentSecurity();
@@ -114,20 +107,20 @@ describe('Component: PageSmartAssistComponent', () => {
 				permission: true,
 				isLoading: false
 			};
-			commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, isSuperResolutionSupported);
+			localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCapability, isSuperResolutionSupported);
 			component.superResolution = { ...isSuperResolutionSupported };
 			fixture.detectChanges();
 			expect(component).toBeTruthy();
 		});
 
 		it('PageSmartAssistComponent :: should create SmartAssistCapability isIntelligentSecuritySupported ', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component, localCacheService } = setup();
 
 			component.intelligentSecurity = new IntelligentSecurity();
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
 			const smartAssistCapability = new SmartAssistCapability();
 			smartAssistCapability.isIntelligentSecuritySupported = true;
-			commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
+			localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
 			fixture.detectChanges();
 			// const spyObject = spyOn(component, 'initZeroTouchLogin');
 			const spyObject = spyOn<any>(component, 'initZeroTouchLogin');
@@ -137,13 +130,13 @@ describe('Component: PageSmartAssistComponent', () => {
 
 
 		it('PageSmartAssistComponent :: should create SmartAssistCapability isLenovoVoiceSupported ', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component, localCacheService } = setup();
 
 			component.intelligentSecurity = new IntelligentSecurity();
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
 			const smartAssistCapability = new SmartAssistCapability();
 			smartAssistCapability.isLenovoVoiceSupported = true;
-			commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
+			localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
 			fixture.detectChanges();
 			// const spyObject = spyOn(component, 'initZeroTouchLogin');
 			const spyObject = spyOn<any>(component, 'checkHeaderMenuItems');
@@ -152,14 +145,14 @@ describe('Component: PageSmartAssistComponent', () => {
 		});
 
 		it('PageSmartAssistComponent :: should create SmartAssistCapability isIntelligentMediaSupported.available  ', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component, localCacheService } = setup();
 
 			component.intelligentSecurity = new IntelligentSecurity();
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
 			const smartAssistCapability = new SmartAssistCapability();
 			const isIntelligentMediaSupported = new FeatureStatus(true, true);
 			smartAssistCapability.isIntelligentMediaSupported = isIntelligentMediaSupported;
-			commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
+			localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
 			fixture.detectChanges();
 			// const spyObject = spyOn(component, 'initZeroTouchLogin');
 			const spyObject = spyOn<any>(component, 'checkHeaderMenuItems');
@@ -168,12 +161,12 @@ describe('Component: PageSmartAssistComponent', () => {
 		});
 
 		it('PageSmartAssistComponent :: should create SmartAssistCapability isIntelligentScreenSupported  ', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component, localCacheService } = setup();
 
 			const smartAssistCapability = new SmartAssistCapability();
 			// const isIntelligentScreenSupported = new FeatureStatus(true, true);
 			smartAssistCapability.isIntelligentScreenSupported = true;
-			commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
+			localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
 			fixture.detectChanges();
 			// const spyObject = spyOn(component, 'initZeroTouchLogin');
 			const spyObject = spyOn<any>(component, 'checkHeaderMenuItems');
@@ -183,11 +176,11 @@ describe('Component: PageSmartAssistComponent', () => {
 
 
 		it('PageSmartAssistComponent :: should create SmartAssistCapability isAPSSupported  ', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component, localCacheService } = setup();
 			const smartAssistCapability = new SmartAssistCapability();
 
 			smartAssistCapability.isAPSSupported = true;
-			commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
+			localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
 			fixture.detectChanges();
 			// const spyObject = spyOn(component, 'initZeroTouchLogin');
 			const spyObject = spyOn<any>(component, 'checkHeaderMenuItems');
@@ -196,13 +189,13 @@ describe('Component: PageSmartAssistComponent', () => {
 		});
 
 		it('PageSmartAssistComponent :: should create SmartAssistCapability isAntiTheftSupported  ', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component, localCacheService } = setup();
 
 			const smartAssistCapability = new SmartAssistCapability();
 			// const isIntelligentScreenSupported = new FeatureStatus(true, true);
 
 			smartAssistCapability.isAntiTheftSupported = antiTheftResponse;
-			commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
+			localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
 			fixture.detectChanges();
 			// const spyObject = spyOn(component, 'initZeroTouchLogin');
 			const spyObject = spyOn<any>(component, 'checkHeaderMenuItems');
@@ -211,32 +204,26 @@ describe('Component: PageSmartAssistComponent', () => {
 		});
 
 		it('PageSmartAssistComponent :: should create with no cache SmartAssistCache', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component, localCacheService } = setup();
 			component.smartAssistCache = undefined;
-			spyOn(commonService, 'getLocalStorageValue').and.returnValue(undefined);
-			// spyOnProperty(component, 'smartAssistCache', 'set').and.returnValue(undefined);
+			spyOn(localCacheService, 'getLocalCacheValue').and.returnValue(undefined);
 			component.intelligentScreen = intelligentScreen;
 			component.intelligentScreen.isIntelligentScreenVisible = true;
 			component.intelligentSecurity = new IntelligentSecurity();
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
 
 			component.superResolution = new FeatureStatus(false, true);
-			const isSuperResolutionSupported: FeatureStatus = {
-				available: false,
-				status: true,
-				permission: true,
-				isLoading: false
-			};
+
 			fixture.detectChanges();
-			// commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, isSuperResolutionSupported);
-			const spyObject = spyOn(commonService, 'setLocalStorageValue');
+			
+			const spyObject = spyOn(localCacheService, 'setLocalCacheValue');
 			component.ngOnInit();
 			expect(spyObject).toHaveBeenCalled();
 		});
 
 
 		it('PageSmartAssistComponent :: updateSensingHeaderMenu', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component } = setup();
 			component.intelligentSecurity = new IntelligentSecurity();
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
 			// commonService = TestBed.inject(CommonService);
@@ -245,7 +232,7 @@ describe('Component: PageSmartAssistComponent', () => {
 		});
 
 		it('PageSmartAssistComponent :: updateSensingHeaderMenu', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component } = setup();
 			component.intelligentSecurity = new IntelligentSecurity();
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
 			// commonService = TestBed.inject(CommonService);
@@ -254,7 +241,7 @@ describe('Component: PageSmartAssistComponent', () => {
 		});
 
 		it('PageSmartAssistComponent :: getSuperResolutionStatus', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component, smartAssistService } = setup();
 			// smartAssistService = TestBed.inject(SmartAssistService);
 			component.intelligentSecurity = new IntelligentSecurity();
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
@@ -276,7 +263,7 @@ describe('Component: PageSmartAssistComponent', () => {
 		});
 
 		it('PageSmartAssistComponent :: setHPDAdvancedSetting', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component, smartAssistService } = setup();
 			fixture.detectChanges();
 			// smartAssistService = TestBed.inject(SmartAssistService);
 			smartAssistService.isHPDShellAvailable = true;
@@ -293,7 +280,7 @@ describe('Component: PageSmartAssistComponent', () => {
 		});
 
 		it('PageSmartAssistComponent :: getHsaIntelligentSecurityStatus', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component, smartAssistService } = setup();
 			fixture.detectChanges();
 			// smartAssistService = TestBed.inject(SmartAssistService);
 			smartAssistService.isHPDShellAvailable = true;
@@ -323,7 +310,7 @@ describe('Component: PageSmartAssistComponent', () => {
 		});
 
 		it('PageSmartAssistComponent :: onZeroTouchLockDistanceSensitivityAdjustToggle', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component, smartAssistService } = setup();
 			// smartAssistService = TestBed.inject(SmartAssistService);
 			fixture.detectChanges();
 			smartAssistService.isHPDShellAvailable = true;
@@ -348,7 +335,7 @@ describe('Component: PageSmartAssistComponent', () => {
 		});
 
 		it('PageSmartAssistComponent :: SetZeroTouchLockDistanceSensitivity', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component, smartAssistService } = setup();
 			// smartAssistService = TestBed.inject(SmartAssistService);
 			fixture.detectChanges();
 			smartAssistService.isHPDShellAvailable = true;
@@ -364,7 +351,7 @@ describe('Component: PageSmartAssistComponent', () => {
 		});
 
 		it('PageSmartAssistComponent :: startMonitorHsaIntelligentSecurityStatus', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component, smartAssistService } = setup();
 			// smartAssistService = TestBed.inject(SmartAssistService);
 			component.intelligentSecurity = new IntelligentSecurity();
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
@@ -382,7 +369,7 @@ describe('Component: PageSmartAssistComponent', () => {
 		});
 
 		it('PageSmartAssistComponent :: hsaIntelligentSecurityChange', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component } = setup();
 			component.intelligentSecurity = new IntelligentSecurity();
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
 			fixture.detectChanges();
@@ -394,7 +381,7 @@ describe('Component: PageSmartAssistComponent', () => {
 		});
 
 		it('PageSmartAssistComponent :: onDisplayDimTimeChange', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component } = setup();
 			component.intelligentScreen = new IntelligentScreen();
 
 			component.intelligentSecurity = new IntelligentSecurity();
@@ -406,7 +393,7 @@ describe('Component: PageSmartAssistComponent', () => {
 		});
 
 		it('PageSmartAssistComponent :: setHPDLeaveSensitivitySetting', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component, smartAssistService } = setup();
 			component.intelligentScreen = new IntelligentScreen();
 
 			component.intelligentSecurity = new IntelligentSecurity();
@@ -419,7 +406,7 @@ describe('Component: PageSmartAssistComponent', () => {
 		});
 
 		it('PageSmartAssistComponent :: should call onHumanPresenceDetectStatusToggle', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component, smartAssistService } = setup();
 			component.intelligentSecurity = new IntelligentSecurity();
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
 			fixture.detectChanges();
@@ -431,7 +418,7 @@ describe('Component: PageSmartAssistComponent', () => {
 		});
 
 		it('PageSmartAssistComponent :: should call onZeroTouchLoginStatusToggle', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component, smartAssistService } = setup();
 			component.intelligentSecurity = new IntelligentSecurity();
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
 			fixture.detectChanges();
@@ -443,7 +430,7 @@ describe('Component: PageSmartAssistComponent', () => {
 		});
 
 		it('PageSmartAssistComponent :: should call setZeroTouchLoginSensitivity', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component, smartAssistService } = setup();
 			component.intelligentSecurity = new IntelligentSecurity();
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
 			fixture.detectChanges();
@@ -454,7 +441,7 @@ describe('Component: PageSmartAssistComponent', () => {
 		});
 
 		it('PageSmartAssistComponent :: should call onZeroTouchLockStatusToggle', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component, smartAssistService } = setup();
 			component.intelligentSecurity = new IntelligentSecurity();
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
 			fixture.detectChanges();
@@ -466,7 +453,7 @@ describe('Component: PageSmartAssistComponent', () => {
 
 
 		it('PageSmartAssistComponent :: should call onZeroTouchLockTimerChange', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component, smartAssistService } = setup();
 			component.intelligentSecurity = new IntelligentSecurity();
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
 			fixture.detectChanges();
@@ -479,7 +466,7 @@ describe('Component: PageSmartAssistComponent', () => {
 
 
 		it('PageSmartAssistComponent :: should call onZeroTouchLockFacialRecoChange', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component, smartAssistService } = setup();
 			component.intelligentSecurity = new IntelligentSecurity();
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
 			fixture.detectChanges();
@@ -491,7 +478,7 @@ describe('Component: PageSmartAssistComponent', () => {
 		});
 
 		it('PageSmartAssistComponent :: should call onDistanceSensitivityAdjustToggle', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component, smartAssistService } = setup();
 			component.intelligentSecurity = new IntelligentSecurity();
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
 			fixture.detectChanges();
@@ -503,7 +490,7 @@ describe('Component: PageSmartAssistComponent', () => {
 		});
 
 		it('PageSmartAssistComponent :: should call onAutoScreenOffToggle', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component, smartAssistService } = setup();
 			component.intelligentScreen = new IntelligentScreen();
 			component.intelligentScreen.isIntelligentScreenVisible = true;
 			fixture.detectChanges();
@@ -516,7 +503,7 @@ describe('Component: PageSmartAssistComponent', () => {
 
 
 		it('PageSmartAssistComponent :: should call onKeepMyDisplayToggle', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component, smartAssistService } = setup();
 			component.intelligentScreen = new IntelligentScreen();
 			component.intelligentScreen.isIntelligentScreenVisible = true;
 			fixture.detectChanges();
@@ -528,7 +515,7 @@ describe('Component: PageSmartAssistComponent', () => {
 		});
 
 		it('PageSmartAssistComponent :: should call ngOnDestroy isRegisterHPDRpcCallback is true', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component, smartAssistService, logger } = setup();
 			component.isRegisterHPDRpcCallback = true;
 			fixture.detectChanges();
 			// component.smartAssistCache = new SmartAssistCache();
@@ -541,14 +528,14 @@ describe('Component: PageSmartAssistComponent', () => {
 		});
 
 		it('PageSmartAssistComponent :: oonResetDefaultSettings should call', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component, smartAssistService } = setup();
 			const spy = spyOn(smartAssistService, 'resetHSAHPDSetting').and.returnValue(Promise.resolve(1));
 			fixture.detectChanges();
 			component.onResetDefaultSettings(true);
 		});
 
 		it('PageSmartAssistComponent :: onClick should call', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component, deviceService } = setup();
 			const location = 'ms-settings:privacy-webcam';
 			/* let win = window.open(location);
 			let windowOpenSpy = spyOn(window, 'open');
@@ -564,7 +551,7 @@ describe('Component: PageSmartAssistComponent', () => {
 		});
 
 		it('PageSmartAssistComponent :: launchFaceEnrollment should call', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component, deviceService } = setup();
 			const location = 'ms-settings:privacy-webcam';
 			const spyLaunchURI = spyOn(deviceService, 'launchUri').and.callFake(() => { });
 
@@ -574,7 +561,7 @@ describe('Component: PageSmartAssistComponent', () => {
 		});
 
 		it('PageSmartAssistComponent :: onJumpClick should call', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component, smartAssistService } = setup();
 			const spy = spyOn(smartAssistService, 'resetHSAHPDSetting').and.returnValue(Promise.resolve(1));
 			fixture.detectChanges();
 			component.onJumpClick();
@@ -582,14 +569,14 @@ describe('Component: PageSmartAssistComponent', () => {
 
 
 		it('PageSmartAssistComponent :: onVisibilityChanged should call', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component, smartAssistService } = setup();
 			const spy = spyOn(smartAssistService, 'resetHSAHPDSetting').and.returnValue(Promise.resolve(1));
 			fixture.detectChanges();
 			component.onVisibilityChanged();
 		});
 
 		it('PageSmartAssistComponent :: onMouseEnterEvent should call', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component, smartAssistService } = setup();
 			const spy = spyOn(component, 'getFacialRecognitionStatus');
 			fixture.detectChanges();
 			component.onMouseEnterEvent();
@@ -597,7 +584,7 @@ describe('Component: PageSmartAssistComponent', () => {
 		});
 
 		it('PageSmartAssistComponent :: permissionChanged should call', () => {
-			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
+			const { fixture, component, smartAssistService } = setup();
 			const spy = spyOn(component, 'getFacialRecognitionStatus');
 			fixture.detectChanges();
 			component.permissionChanged();
