@@ -9,13 +9,13 @@ import { TimerService } from 'src/app/services/timer/timer.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
-import { WarrantyService } from 'src/app/services/warranty/warranty.service';
-import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
-import { Observable } from 'rxjs';
+import { Subject } from 'rxjs';
 import { PreviousResultService } from 'src/app/services/hardware-scan/previous-result.service';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { ConfigService } from 'src/app/services/config/config.service';
 import moment from 'moment';
+import { Router } from '@angular/router';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
 	selector: 'vtr-widget-device',
@@ -36,93 +36,47 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 	smartPerformanceIcon = 'assets/icons/Icon-smartperformance.svg';
 	warrantyIcon = 'assets/icons/Icon-warranty.svg';
 	isSMPSubscripted: Promise<boolean>;
+	hwInfo: Promise<any>;
+	ngUnsubscribe: Subject<any> = new Subject();
 
 	constructor(
 		public deviceService: DeviceService,
 		private commonService: CommonService,
-		private formatLocaleDate: FormatLocaleDatePipe,
 		private systemUpdateService: SystemUpdateService,
 		private translate: TranslateService,
 		private dashboardService: DashboardService,
-		private warrantyService: WarrantyService,
 		private adPolicyService: AdPolicyService,
 		private metricService: MetricService,
 		private previousResultService: PreviousResultService,
 		private smartPerformanceService: SmartPerformanceService,
-		private configService: ConfigService
+		private configService: ConfigService,
+		private router: Router
 	) {
 		this.myDevice = new MyDevice();
 	}
 
 	ngOnInit() {
 		this.deviceService.getMachineInfo().then((machineInfo) => {
-			this.isSMPSubscripted =  this.isSmartPerformanceSuscripted(machineInfo.serialnumber);
-			this.setDefaultInfo();
+			this.isSMPSubscripted =  this.isSmartPerformanceSuscripted(machineInfo?.serialnumber);
+			this.hwInfo = this.deviceService.getHardwareInfo();
+			this.loadDeviceInfo();
 			this.myDevice.family = machineInfo?.family;
 			this.myDevice.sn = machineInfo?.serialnumber;
 			this.myDevice.bios = machineInfo?.biosVersion;
 			this.myDevice.subBrand = machineInfo?.subBrand;
 			this.myDevice.productNo = machineInfo?.mtm;
-			this.getDeviceInfo();
 		});
 	}
 
 	ngOnDestroy() {
-	}
-
-	private async setDefaultInfo() {
-		let index = 0;
-		const processor = new DeviceStatus();
-		this.translate.stream('device.myDevice.processor.title').subscribe((value) => {
-			processor.title = value;
-			processor.showCover = false;
-			processor.icon = this.processorIcon;
-			this.hwStatus[index++] = processor;
-		});
-
-		const memory = new DeviceStatus();
-		this.translate.stream('device.myDevice.memory.title').subscribe((value) => {
-			memory.title = value;
-			memory.showCover = false;
-			memory.icon = this.memoryIcon;
-			this.hwStatus[index++] = memory;
-		});
-
-		const disk = new DeviceStatus();
-		// todo: translate
-		this.translate.stream('device.myDevice.diskspace.title').subscribe(() => {
-			disk.title = 'Storage';
-			disk.icon = this.storageIcon;
-			disk.showCover = false;
-			this.hwStatus[index++] = disk;
-		});
-
-		index = 0;
-		if (this.configService.isSystemUpdateEnabled()){
-			const systemUpdate = new DeviceStatus();
-			systemUpdate.title = 'System Update';
-			systemUpdate.showCover = false;
-			systemUpdate.icon = this.systemUpdateIcon;
-			this.swStatus[index++] = systemUpdate;
-		}
-
-		if (await this.configService.showSmartPerformance()){
-			const smartPerformance = new DeviceStatus();
-			smartPerformance.title = 'Smart Performance';
-			smartPerformance.showCover = false;
-			smartPerformance.icon = this.smartPerformanceIcon;
-			this.swStatus[index++] = smartPerformance;
-		}
-
-		const warranty = new DeviceStatus();
-		warranty.showCover = false;
-		warranty.title = 'Warranty';
-		warranty.icon = this.warrantyIcon;
-		this.swStatus[index++] = warranty;
+		this.ngUnsubscribe.next();
+		this.ngUnsubscribe.complete();
 	}
 
 	public refreshClicked(){
-		this.getDeviceInfo();
+		this.hwInfo = this.deviceService.getHardwareInfo();
+		this.updateMemoryInfo(this.hwStatus[1]);
+		this.updateDiskInfo();
 	}
 
 	public async copyClicked(info){
@@ -137,20 +91,157 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		document.removeEventListener(copyCmd, listener, false);
 	}
 
-	private async getDeviceInfo() {
-		this.updateDeviceStatus();
-		this.updateHWStatus();
-		let tileIndex = 0;
-		if (this.configService.isSystemUpdateEnabled()){
-			this.updateSUStatus(tileIndex++);
+	public onMaintanceClicked(){
+		switch (this.deviceStatus){
+			case DeviceCondition.NeedRunHWScan:
+				this.router.navigate(['hardware-scan']);
+				break;
+			case DeviceCondition.NeedRunSMPScan:
+				this.router.navigate(['support/smart-performance']);
+				break;
+			case DeviceCondition.NeedRunSU:
+				this.router.navigate(['device/system-updates']);
+				break;
 		}
-		if (await this.configService.showSmartPerformance()){
-			this.updateSmartPerformanceStatus(tileIndex++);
-		}
-		this.updateWarrantyStatus(tileIndex++);
 	}
 
-	private async updateDeviceStatus(){
+	private async loadDeviceInfo() {
+		this.loadOverAllStatus();
+		const processor = new DeviceStatus();
+		this.translate.stream('device.myDevice.processor.title').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+			processor.title = value;
+			processor.icon = this.processorIcon;
+			this.hwStatus[0] = processor;
+			this.updateProssorInfo(processor);
+		});
+		const memory = new DeviceStatus();
+		this.translate.stream('device.myDevice.memory.title').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+			memory.title = value;
+			memory.icon = this.memoryIcon;
+			this.hwStatus[1] = memory;
+			this.updateMemoryInfo(memory);
+		});
+		const disk = new DeviceStatus();
+		// todo: translate
+		this.translate.stream('device.myDevice.diskspace.title').pipe(takeUntil(this.ngUnsubscribe)).subscribe(() => {
+			disk.title = 'Storage';
+			disk.icon = this.storageIcon;
+			this.hwStatus[2] = disk;
+			this.updateDiskInfo();
+		});
+		let index = 0;
+		if (this.configService.isSystemUpdateEnabled()){
+			const systemUpdate = new DeviceStatus();
+			systemUpdate.title = 'System Update';
+			systemUpdate.icon = this.systemUpdateIcon;
+			this.swStatus[index++] = systemUpdate;
+			this.updateSUStatus(systemUpdate);
+		}
+		if (await this.configService.showSmartPerformance()){
+			const smartPerformance = new DeviceStatus();
+			smartPerformance.title = 'Smart Performance';
+			smartPerformance.icon = this.smartPerformanceIcon;
+			this.swStatus[index++] = smartPerformance;
+			this.updateSmartPerformanceStatus(smartPerformance);
+		}
+	}
+
+	private async updateProssorInfo(processor: DeviceStatus){
+		const data = await this.hwInfo;
+		if (data){
+			processor.link = 'ms-settings:about';
+			processor.icon = this.processorIcon;
+			processor.subtitle = `${data.processor.name}`;
+			this.hwStatus[0] = processor;
+		}
+	}
+
+	private async updateMemoryInfo(memory){
+		const data = await this.hwInfo;
+		if (data){
+			const { total, used } = data.memory;
+			let type = data.memory.type;
+			if (type.toLowerCase() === 'unknown') {
+				type = '';
+			}
+			memory.link = 'ms-settings:about';
+			memory.subtitle = `Physical Memory ${type}`;
+			memory.icon = this.memoryIcon;
+			memory.used = this.commonService.formatBytes(used);
+			memory.total = this.commonService.formatBytes(total);
+			memory.percent = used / total * 100;
+			this.hwStatus[1] = {...memory};
+		}
+	}
+
+	private async updateDiskInfo(){
+		const data = await this.hwInfo;
+		if (data){
+			const disks = data.disk.disks;
+			this.translate.stream('device.myDevice.diskspace.title').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+				let statusIndex = 2;
+				for (let i = 0, len  = disks.length; i < len; i++) {
+					const disk = new DeviceStatus();
+					disk.title = 'Storage';
+					disk.icon = this.storageIcon;
+					disk.link = 'ms-settings:storagesense';
+					disk.subtitle = `${disks[i].manufacturer || ''} ${disks[i].model}`;
+					disk.used = this.commonService.formatBytes( disks[i].avaliableSize);
+					disk.total = this.commonService.formatBytes( disks[i].sizeInBytes);
+					disk.percent = disks[i].avaliableSize / disks[i].sizeInBytes * 100;
+					this.hwStatus[statusIndex++] = disk;
+				}
+			});
+		}
+	}
+
+	private async updateSUStatus(systemUpdate){
+		if (this.deviceService && !this.deviceService.isSMode && this.adPolicyService && this.adPolicyService.IsSystemUpdateEnabled) {
+			this.dashboardService.getRecentUpdateInfo().pipe(takeUntil(this.ngUnsubscribe)).subscribe(data => {
+					if (data) {
+						const updateStatus = data.status;
+						const lastUpdate = data.lastupdate;
+						const diffInDays = this.systemUpdateService.dateDiffInDays(lastUpdate);
+						systemUpdate.title = 'System Update';
+						systemUpdate.link = 'device/system-updates';
+						systemUpdate.icon = this.systemUpdateIcon;
+						systemUpdate.showSepline = true;
+						if (updateStatus === 1) {
+							this.translate.stream('device.myDevice.systemUpdate.detail.uptoDate').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+								systemUpdate.subtitle = value;
+							});
+							systemUpdate.checkedDate = this.commonService.formatLocalDate(lastUpdate);
+
+							if (diffInDays > 30) {
+								this.translate.stream('device.myDevice.systemUpdate.detail.outdated').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+									systemUpdate.subtitle = value;
+								});
+							}
+						} else {
+							this.translate.stream('device.myDevice.systemUpdate.detail.neverRanUpdate').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+								systemUpdate.subtitle = value;
+							});
+						}
+					}
+				});
+		}
+	}
+
+	private async updateSmartPerformanceStatus(smartPerform){
+		const lastScanResultRequest = {
+			scanType: await this.isSMPSubscripted ? 'ScanAndFix' : 'Scan'
+		};
+		const response = await this.smartPerformanceService.getLastScanResult(lastScanResultRequest);
+		const scanRunTime = moment(response.scanruntime).format('l');
+		smartPerform.title = 'Smart Performance';
+		smartPerform.subtitle = 'Updates checked';
+		smartPerform.checkedDate = scanRunTime;
+		smartPerform.icon = this.smartPerformanceIcon;
+		smartPerform.link = 'support/smart-performance';
+		smartPerform.showSepline = true;
+	}
+
+	private async loadOverAllStatus(){
 		const machineInfo = this.deviceService.getMachineInfoSync();
 		const oobeDate = machineInfo?.firstRunDate || Date.now();
 		const isOobeOver31days = this.systemUpdateService.dateDiffInDays(oobeDate) > 31;
@@ -224,143 +315,4 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		return false;
 	}
 
-	private updateHWStatus(){
-		this.deviceService.getHardwareInfo().then(data => {
-			if (data) {
-				// processor
-				const processor = new DeviceStatus();
-				this.translate.stream('device.myDevice.processor.title').subscribe((value) => {
-					processor.title = value;
-				});
-				processor.link = 'ms-settings:about';
-				processor.icon = this.processorIcon;
-				processor.subtitle = `${data.processor.name}`;
-				this.hwStatus[0] = processor;
-				// memory
-				const memory = new DeviceStatus();
-				const { total, used } = data.memory;
-				let type = data.memory.type;
-				this.translate.stream('device.myDevice.memory.title').subscribe((value) => {
-					memory.title = value;
-				});
-				if (type.toLowerCase() === 'unknown') {
-					type = '';
-				}
-				memory.link = 'ms-settings:about';
-				memory.subtitle = `Physical Memory ${type}`;
-				memory.icon = this.memoryIcon;
-				memory.used = this.commonService.formatBytes(used);
-				memory.total = this.commonService.formatBytes(total);
-				memory.percent = used / total * 100;
-				this.hwStatus[1] = memory;
-				// disk
-				const disks = data.disk.disks;
-				this.translate.stream('device.myDevice.diskspace.title').subscribe((value) => {
-					let statusIndex = 2;
-					for (let i = 0, len  = disks.length; i < len; i++) {
-						const disk = new DeviceStatus();
-						disk.title = 'Storage';
-						disk.icon = this.storageIcon;
-						disk.link = 'ms-settings:storagesense';
-						disk.subtitle = `${disks[i].manufacturer || ''} ${disks[i].model}`;
-						disk.used = this.commonService.formatBytes( disks[i].avaliableSize);
-						disk.total = this.commonService.formatBytes( disks[i].sizeInBytes);
-						disk.percent = used / total * 100;
-						this.hwStatus[statusIndex++] = disk;
-					}
-				});
-			}
-		});
-	}
-
-	private updateSUStatus(tileIndex){
-		if (this.deviceService && !this.deviceService.isSMode && this.adPolicyService && this.adPolicyService.IsSystemUpdateEnabled) {
-		this.dashboardService.getRecentUpdateInfo().subscribe(data => {
-				if (data) {
-					const systemUpdate = new DeviceStatus();
-					const updateStatus = data.status;
-					const lastUpdate = data.lastupdate;
-					const diffInDays = this.systemUpdateService.dateDiffInDays(lastUpdate);
-					systemUpdate.title = 'System Update';
-					systemUpdate.link = 'device/system-updates';
-					systemUpdate.icon = this.systemUpdateIcon;
-					systemUpdate.showSepline = true;
-					if (updateStatus === 1) {
-						this.translate.stream('device.myDevice.systemUpdate.detail.uptoDate').subscribe((value) => {
-							systemUpdate.subtitle = value;
-						});
-						systemUpdate.checkedDate = this.commonService.formatLocalDate(lastUpdate);
-
-						if (diffInDays > 30) {
-							this.translate.stream('device.myDevice.systemUpdate.detail.outdated').subscribe((value) => {
-								systemUpdate.subtitle = value;
-							});
-						}
-					} else {
-						this.translate.stream('device.myDevice.systemUpdate.detail.neverRanUpdate').subscribe((value) => {
-							systemUpdate.subtitle = value;
-						});
-					}
-					this.swStatus[tileIndex] = systemUpdate;
-				}
-			});
-		}
-	}
-
-	private async updateSmartPerformanceStatus(tileIndex){
-
-		const lastScanResultRequest = {
-			scanType: await this.isSMPSubscripted ? 'ScanAndFix' : 'Scan'
-		};
-		const response = await this.smartPerformanceService.getLastScanResult(lastScanResultRequest);
-		const scanRunTime = moment(response.scanruntime).format('l');
-
-		const smartPerform = new DeviceStatus();
-		smartPerform.title = 'Smart Performance';
-		smartPerform.subtitle = 'Updates checked';
-		smartPerform.checkedDate = scanRunTime;
-		smartPerform.icon = this.smartPerformanceIcon;
-		smartPerform.link = 'support/smart-performance';
-		smartPerform.showSepline = true;
-		this.swStatus[tileIndex] = smartPerform;
-	}
-
-	private updateWarrantyStatus(tileIndex){
-		this.warrantyService.getWarrantyInfo().subscribe(data => {
-			if (data) {
-				if (!(this.deviceService && !this.deviceService.isSMode && this.adPolicyService && this.adPolicyService.IsSystemUpdateEnabled)
-					|| !this.deviceService.showWarranty) {
-					return;
-				}
-				const warranty = new DeviceStatus();
-				warranty.link =  '/support';
-				warranty.icon = this.warrantyIcon;
-				const warrantyDate = this.formatLocaleDate.transform(data.endDate);
-				// in warranty
-				if (data.status === 0) {
-					const today = new Date();
-					const endDate = new Date(data.endDate);
-					const warrantyInDays = this.commonService.getDaysBetweenDates(today, endDate);
-					this.translate.stream('device.myDevice.warranty.detail.inWarranty').subscribe((value) => {
-						warranty.title = value;
-					});
-					this.translate.stream('device.myDevice.warranty.detail.daysRemaining').subscribe((value) => {
-						warranty.subtitle = `${warrantyInDays} ${value}`;
-					});
-				} else if (data.status === 1) {
-					this.translate.stream('device.myDevice.warranty.detail.outOfWarranty').subscribe((value) => {
-						warranty.title = value;
-					});
-					this.translate.stream('device.myDevice.warranty.detail.expiredOn').subscribe((value) => {
-						warranty.subtitle = `${value} ${warrantyDate}`;
-					});
-				} else {
-					this.translate.stream('device.myDevice.warranty.detail.notAvailable').subscribe((value) => {
-						warranty.title = value;
-					});
-				}
-				this.swStatus[tileIndex] = warranty;
-			}
-		});
-	}
 }

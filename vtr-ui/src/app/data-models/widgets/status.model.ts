@@ -30,7 +30,6 @@ export class DeviceStatus {
 	public used: string;
 	public percent: number;
 	public checkedDate: string;
-	public showCover = true;
   	public showSepline: boolean;
 }
 

@@ -1,23 +1,21 @@
-<div class="ui-deviceinfo-item">
+<div class="ui-deviceinfo-item" tabindex="1" (keydown.enter)="learnMoreClicked()">
     <div class="d-flex h-100" (click)="itemClicked()">
         <div class="ui-deviceinfo-left">
             <span>
                 <img [src]="dataModel.icon|svgInline|async"/>
-                <p>{{dataModel.title}}</p>
+                <p id="device-info-item-title">{{dataModel.title}}</p>
             </span>
-            <span class="mt-2 font-weight-bold">
+            <span id="device-info-item-subtitle" class="mt-2 font-weight-bold">
                 {{dataModel.subtitle}}
             </span>
         </div>
     
-       
-
         <div class="spinner-content p-0 d-flex align-items-center justify-content-center" *ngIf="!dataModel.link">
             <div class="spinner-border" role="status"></div>
         </div>
 
         <div class="ui-deviceinfo-right ml-auto d-flex align-items-center h-100">
-            <div class="circle-border" *ngIf="!!dataModel.total">
+            <div class="circle-border" *ngIf="!!dataModel.total" id="device-info-usage">
                 <svg viewBox="0 0 36 36" class="circular-chart blue">
                     <path class="circle-bg"
                     d="M18 2.0845
@@ -29,9 +27,9 @@
                         a 15.9155 15.9155 0 0 1 0 31.831
                         a 15.9155 15.9155 0 0 1 0 -31.831"
                     />
-                    <text x="18" y="14" class="percentage font-weight-bold">{{dataModel.used}}/</text>
-                    <text x="18" y="20.35" class="percentage font-weight-bold">{{dataModel.total}}</text>
-                    <text x="18" y="26.35" class="percentage">Used</text>
+                    <text x="18" y="14" class="percentage font-weight-bold" id="device-info-usage-used">{{dataModel.used}}/</text>
+                    <text x="18" y="20.35" class="percentage font-weight-bold" id="device-info-usage-total">{{dataModel.total}}</text>
+                    <text x="18" y="26.35" class="percentage" id="device-info-usage-text">Used</text>
                 </svg>
             </div>
 
@@ -39,17 +37,17 @@
                 <div class="ui-deviceinfo-sepline" *ngIf="dataModel.showSepline"></div>
 
                 <div class="sw-checked-date" *ngIf="!!dataModel.checkedDate">
-                    <span>Checked on:</span>
-                    <p class="font-weight-bold text-center">{{dataModel.checkedDate}}</p>
+                    <span role="text" id="device-info-checked-text">Checked on:</span>
+                    <p class="font-weight-bold text-center" id="device-info-checked-date">{{dataModel.checkedDate}}</p>
                 </div>
             </div>
             
         </div>
     </div>
 
-    <div class="ui-deviceinfo-overlay" *ngIf="dataModel.showCover">
-        <a href="javascript:void(0)" (click)="learnMoreClicked()">
-           <span>Learn more</span> <fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+    <div class="ui-deviceinfo-overlay" *ngIf="!!dataModel.link">
+        <a href="javascript:void(0)" (click)="learnMoreClicked()" tabindex="-1">
+           <span role="text" id="device-info-learn-more">Learn more</span> <fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
         </a>
     </div>
  

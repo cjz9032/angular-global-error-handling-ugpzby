@@ -67,6 +67,9 @@ $size500px-sw-show1col: "only screen and (min-width: 500px) and (max-width: 1200
 			align-self: center;
 			margin-right: 5.6rem;
 			text-transform: uppercase;
+			&:hover{
+				cursor: pointer;
+			}
 
 			.spinner-border{
 				width: 3.2rem;
