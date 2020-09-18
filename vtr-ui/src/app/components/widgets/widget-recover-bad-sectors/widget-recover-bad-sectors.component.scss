@@ -17,7 +17,8 @@
 			font-weight: $weight_light;
 			padding-right: 1rem;
 			margin-bottom: 0;
-			word-break: break-all;
+			width: calc(100% - 3rem); // Calculated width based on question mark and padding 
+			word-wrap: break-word;
 		}
 
 		.title-question-mark {
