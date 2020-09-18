@@ -8,7 +8,6 @@ import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { LoggerService } from '../logger/logger.service';
 import { PowerService } from '../power/power.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { CommonService } from '../common/common.service';
 import { LocalCacheService } from '../local-cache/local-cache.service';
 @Injectable({
 	providedIn: 'root'
@@ -38,8 +37,7 @@ export class BatteryDetailService {
 		shellService: VantageShellService,
 		private logger: LoggerService,
 		private powerService: PowerService,
-		private localCacheService: LocalCacheService,
-		private commonService: CommonService) {
+		private localCacheService: LocalCacheService) {
 		this.battery = shellService.getBatteryInfo();
 		if (this.battery) {
 			this.isShellAvailable = true;
@@ -96,13 +94,13 @@ export class BatteryDetailService {
 		}
 	}
 
-	public getBatteryThresholdInformation() {
+	public getBatteryThresholdInformation(): Promise<any> {
 		this.logger.info('Before getBatteryThresholdInformation');
 		if (this.powerService.isShellAvailable) {
-			this.powerService.getChargeThresholdInfo().then((response) => {
+			return this.powerService.getChargeThresholdInfo().then((response) => {
 				this.logger.info('getBatteryThresholdInformation.then', response);
 				this.chargeThresholdInfo.next(response);
-				this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, response);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.BatteryChargeThresholdCapability, response);
 			}).catch((error) => {
 				this.logger.error('getBatteryThresholdInformation :: error', error.message);
 				return EMPTY;

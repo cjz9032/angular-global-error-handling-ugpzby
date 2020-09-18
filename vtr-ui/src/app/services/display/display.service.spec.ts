@@ -7,7 +7,7 @@ import { CommonService } from '../common/common.service';
 import { LoggerService } from '../logger/logger.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { stat } from 'fs';
+import { LocalCacheService } from '../local-cache/local-cache.service';
 
 describe('DisplayService', () => {
 	beforeEach(() => TestBed.configureTestingModule({
@@ -21,9 +21,10 @@ describe('DisplayService', () => {
 	let shellService: VantageShellService;
 	let commonService: CommonService;
 	let http: HttpClient;
+	let localCacheService: LocalCacheService;
 	beforeEach(() => {
 		commonService = new CommonService();
-		shellService = new VantageShellService(commonService, http);
+		shellService = new VantageShellService(commonService, localCacheService, http);
 		loggerService = new LoggerService(shellService);
 		devServices = new DevService(loggerService);
 		displayService = new DisplayService(devServices, shellService, commonService);

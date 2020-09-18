@@ -167,7 +167,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.updateMainBatteryTime();
 		this.batteryIndicator.charging = this.getAcAttachedStatus();
 		this.isLoading = false;
-		const conditions = this.commonService.getLocalStorageValue(LocalStorageKey.BatteryCondition);
+		const conditions = await this.localCacheService.getLocalCacheValue(LocalStorageKey.BatteryCondition);
 		if (Array.isArray(conditions) && conditions.length > 0) {
 			conditions.forEach((condition: BatteryConditionModel, index) => {
 				conditions[index] = new BatteryConditionModel(condition.condition, condition.conditionStatus);
@@ -543,7 +543,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		// End code
 
 		// temp cache battery condition
-		this.commonService.setLocalStorageValue(LocalStorageKey.BatteryCondition, this.batteryConditions);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.BatteryCondition, this.batteryConditions);
 	}
 
 	/**
