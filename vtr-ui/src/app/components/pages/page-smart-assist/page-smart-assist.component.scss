@@ -46,6 +46,7 @@ $fontsize_xs: 1.4rem;
 			background-color: $grey_lighter;
 			border: 0.1rem solid $note_border;
 			width: 100%;
+			border-radius: $border_radius;
 			p {
 				font-size: $fontsize_xs;
 				font-weight: $weight_light;
@@ -72,6 +73,7 @@ $fontsize_xs: 1.4rem;
 						font-size: 1.5rem;
 					}
 				}
+
 				fa-icon {
 					color: $alt;
 					font-size: 3rem;
@@ -96,6 +98,10 @@ $fontsize_xs: 1.4rem;
 						color: $highlight;
 					}
 				}
+			}
+			&.auto-screen-off-note-red {
+				p { color: #E13836 }
+				b { font-weight: bold }
 			}
 		}
 		.card-body {
