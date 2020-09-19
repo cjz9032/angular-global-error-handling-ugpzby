@@ -11,5 +11,4 @@ export interface IEnvironment {
 	spPaymentProcessApiRoot: string;
 	spGetOrdersApiRoot: string;
 	spPnListKey: string;
-	spPnPartial: string;
 }
