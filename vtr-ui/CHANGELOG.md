@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.54](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.7.51...v1.7.54) (2020-09-19)
+
+
+### Bug Fixes
+
+* **Overall:** fix ssrb finding ([a198a4e](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/a198a4e8533464c1a978530957bec9836e9c098b))
+
 ### [1.7.51](https://bitbucket.tc.lenovo.com///compare/v1.7.50...v1.7.51) (2020-09-03)
 
 ### [1.7.50](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.7.49...v1.7.50) (2020-09-02)
