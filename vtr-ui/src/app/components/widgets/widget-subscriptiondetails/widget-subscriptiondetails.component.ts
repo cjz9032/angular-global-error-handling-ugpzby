@@ -76,7 +76,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
 	}
 	decryptPNListData() {
-		const bytes = CryptoJS.AES.decrypt(environment.spPnListKey, 'secret key 123');
+		const bytes = CryptoJS.AES.decrypt(environment.spPnListKey, atob(environment.spPnPartial));
 		this.partNumbersList = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
 	}
 
