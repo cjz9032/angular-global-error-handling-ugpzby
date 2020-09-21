@@ -1,0 +1,63 @@
+<div class="row px-3"
+    *ngFor="let note of notes; let i = index">
+    <!-- Battery Condition note icon -->
+    <div class="p-0 pr-2 col-auto"
+        id="note{{i}}"
+        *ngIf="!isAcAdapterInUse(i)">
+        <!-- Good -->
+        <span role="img"
+            id="batteryConditionIcon-GoodBattery"
+            *ngIf="isStatusGood(i)"
+            class="icomoon icomoon-ConditionGoodBattery"></span>
+        <!-- Fair -->
+        <span role="img"
+            id="batteryConditionIcon-FairBattery"
+            *ngIf="isStatusFair(i)"
+            class="icomoon icomoon-ConditionFairBattery"></span>
+        <!-- Poor -->
+        <span role="img"
+            id="batteryConditionIcon-BadBattery"
+            *ngIf="canShowPoorNote(i)"
+            class="icomoon icomoon-ConditionBadBattery"></span>
+        <!-- Adapter error conditions -->
+        <span role="img"
+            id="batteryConditionIcon-ACAdapter-notSupported"
+            *ngIf="isAcAdapterNotSupported(i)"
+            class="icomoon icomoon-ConditionACAdapterError"></span>
+    </div>
+    <!-- Full Support Adapter -->
+    <div *ngIf="canShowAdapterIcon(i)"
+        class="p-0 pr-2 col-auto">
+        <span class="icomoon icomoon-ConditionACAdapter"
+            role="img"
+            id="icon-FullACAdapterSupport"></span>
+    </div>
+    <!-- End Icons -->
+
+    <!-- Battery Condition tip Text -->
+    <div class='col battery-conditions-tips'>
+        <!-- For storage limitation conditions(Only in ThinkPads) -->
+        <h6 [innerHTML]="note | translate:storeLimitationValue"
+            *ngIf="canShowStoreLimitatedNote(i)"
+            [id]="'battery-condition-tip-'+ getCondition(i)"></h6>
+        <!-- For full support adapter with wattage > 0  -->
+        <h6 [innerHTML]="note | translate:acAdapter"
+            *ngIf="canShowFullSupportAdapterNote(i)"
+            [id]="'battery-condition-tip-'+getCondition(i)"> </h6>
+        <h6 [innerHTML]="note | translate"
+            *ngIf="canShowAcAdapterConnectedNote(i)"
+            [id]="'battery-condition-tip-'+getCondition(i)"> </h6>
+        <!-- for  all tips which does not contain any value to be added in translate string -->
+        <h6 [innerHTML]="note | translate"
+            *ngIf="!isStoreLimitated(i) && !isConditionError(i) && !isAcAdapterInUse(i)"
+            [id]="'battery-condition-tip-'+ getCondition(i)"> </h6>
+        <!-- see details link in case of short adapter note -->
+        <a *ngIf="canShowSeeDetailsLink(i)"
+            class="link-label"
+            (click)="showDetailedNote(i)"
+            (keydown.enter)="showDetailedNote(i)"
+            id="battery-condition-tip-ACAdapterError-seeDetails-link"
+            role="link">{{'device.deviceSettings.batteryGauge.seeDetailsLink' | translate}}</a>
+    </div>
+</div>
+

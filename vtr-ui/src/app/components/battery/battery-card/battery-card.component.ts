@@ -36,9 +36,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	batteryIndicator = new BatteryIndicator();
 	flag = true;
 	batteryConditions: BatteryConditionModel[] = [new BatteryConditionModel(BatteryConditionsEnum.Good, BatteryStatus.Good)];
-	batteryConditionsEnum = BatteryConditionsEnum;
-	batteryConditionNotes: string[];
-	batteryStatus = BatteryStatus;
 	batteryHealth = 0;
 	batteryConditionStatus: string;
 	airplanePowerMode = new FeatureStatus(false, false);
@@ -52,7 +49,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	public isLoading = true;
 	public acAdapterInfoParams: any;
 	public param: any;
-	shortAcErrNote = true;
 	isWinRTLoading = true;
 	isUnsupportedBattery = false;
 	isThinkPad = false;
@@ -118,7 +114,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			this.batteryConditions[0] = new BatteryConditionModel(BatteryConditionsEnum.NotDetected, BatteryStatus.Poor);
 			maininfo.percentage = 0;
 			this.batteryIndicator.percent = 0;
-			this.setConditionTips();
 		}
 		this.batteryIndicator.convertMin(time);
 		this.batteryIndicator.timeText = timetype;
@@ -174,7 +169,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			});
 			this.batteryConditions = conditions;
 		}
-		this.setConditionTips();
+
 		this.isWinRTLoading = false;
 		// temp
 		this.registerBatteryEvents();
@@ -312,10 +307,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			this.logger.info(methodName + ' : ', response);
 			this.batteryInfo = response.batteryInformation;
 			this.batteryGauge = response.batteryIndicatorInfo;
-			if (this.batteryGauge.isAttached && this.batteryGauge.acWattage && this.batteryGauge.acAdapterType) {
-				const adapterType = this.batteryGauge.acAdapterType.toLocaleLowerCase() === 'legacy' ? 'ac' : 'USB-C';
-				this.acAdapterInfoParams = { acWattage: this.batteryGauge.acWattage, acAdapterType: adapterType };
-			}
 			this.updateBatteryDetails();
 		}
 	}
@@ -479,7 +470,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				switch (condition.toLocaleLowerCase()) {
 					case 'normal':
 						batteryConditions.push(new BatteryConditionModel(healthCondition,
-							this.batteryStatus[this.batteryConditionStatus]));
+							BatteryStatus[this.batteryConditionStatus]));
 						break;
 					case 'hightemperature':
 						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.HighTemperature, BatteryStatus.Fair));
@@ -533,8 +524,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		// Updated battery information is sent to BatteryDetailsComponent
 		this.commonService.sendNotification(BatteryInformation.BatteryInfo, { detail: this.batteryInfo, indicator: this.batteryIndicator, conditions: this.batteryConditions });
 
-		this.setConditionTips();
-
 		// Below code is used to manually trigger the changes in child component (BatteryIndicatorComponent)
 		if (this.cd !== null && this.cd !== undefined &&
 			!(this.cd as ViewRef).destroyed) {
@@ -545,27 +534,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		// temp cache battery condition
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.BatteryCondition, this.batteryConditions);
 	}
-
-	/**
-	 * creates an array of condition notes(i.e. path to translation strings)
-	 */
-	setConditionTips() {
-		this.batteryConditionNotes = [];
-
-		this.batteryConditions.forEach((batteryCondition) => {
-			// get the full path of the condition tip in nls translation json file
-			let translation = batteryCondition.getBatteryConditionTip(batteryCondition.condition);
-
-			// to display short tips of adapter conditions
-			if (batteryCondition.conditionStatus === this.batteryStatus.AcAdapterStatus && batteryCondition.condition !== this.batteryConditionsEnum.FullACAdapterSupport
-				&& !this.shortAcErrNote) {
-				translation += 'Detail';
-			}
-			// End short tips
-			this.batteryConditionNotes.push(translation);
-		});
-	}
-
 
 	/**
 	 * shows a battery details modal
@@ -590,15 +558,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 					}
 				);
 		}
-	}
-
-	/**
-	 * Shows detailed tip instead of short tip for a battery condition of given index
-	 * @param index: index of a condition in batteryConditionNotes array
-	 */
-	showDetailTip(index: number) {
-		this.shortAcErrNote = false;
-		this.batteryConditionNotes[index] = this.batteryConditionNotes[index] + 'Detail';
 	}
 
 	/**
