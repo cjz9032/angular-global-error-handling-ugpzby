@@ -10,9 +10,13 @@ import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.
 	styleUrls: ['./modal-hardware-scan-rbs.component.scss']
 })
 export class ModalHardwareScanRbsComponent implements OnDestroy, OnInit {
+	public modalTitle: string;
+	public confirmDescription: string;
 	public devices: any[];
+	public isRunRbsClicked = false;
 	private failedDevicesList: Array<string>;
 	private isSuccessful = false;
+	private selectedDevices: any[];
 
 	@Output() passEntry: EventEmitter<any> = new EventEmitter();
 
@@ -36,6 +40,7 @@ export class ModalHardwareScanRbsComponent implements OnDestroy, OnInit {
 
 	public ngOnInit() {
 		this.getItemsToRecoverBadSectors();
+		this.getComponentTitle();
 	}
 	public ngOnDestroy() {
 		this.modalClosing.emit(this.isSuccessful);
@@ -46,17 +51,23 @@ export class ModalHardwareScanRbsComponent implements OnDestroy, OnInit {
 	}
 
 	public onClickRun() {
-		const selectedDevices = this.devices.filter(x => x.isSelected);
+		this.isRunRbsClicked = true;
+		this.modalTitle = this.translate.instant('hardwareScan.warning');
+		this.confirmDescription = this.translate.instant('hardwareScan.recoverBadSectors.popup.description');
+		this.selectedDevices = this.devices.filter(x => x.isSelected);
+	}
+
+	public onConfirmClick() {
 		this.isSuccessful = true;
-		this.passEntry.emit(selectedDevices);
+		this.passEntry.emit(this.selectedDevices);
 		this.closeModal();
 	}
 
-	public getComponentTitle() {
+	private getComponentTitle() {
 		if (this.devices) {
-			return this.translate.instant('hardwareScan.recoverBadSectors.modalTitle');
+			this.modalTitle = this.translate.instant('hardwareScan.recoverBadSectors.modalTitle');
 		} else {
-			return this.translate.instant('hardwareScan.loadingDevices');
+			this.modalTitle = this.translate.instant('hardwareScan.loadingDevices');
 		}
 	}
 
@@ -67,7 +78,7 @@ export class ModalHardwareScanRbsComponent implements OnDestroy, OnInit {
 
 	private buildDevicesRecoverList(groupList: any) {
 		const devices = [];
-		// console.log()
+
 		for (const group of groupList) {
 			devices.push({
 				id: group.id,
