@@ -8,6 +8,14 @@
    color: $grey_darker;   
    position: relative;
    height: 100%;
+   
+	@media #{$black-on-white} {
+		border: 0.1rem solid;
+	}
+
+	@media #{$white-on-black} {
+		border: 0.1rem solid;
+	}
  
    .ui-deviceinfo-left{
       padding: 1rem 0 0 2.4rem;
@@ -17,7 +25,7 @@
          display: block;
          overflow: hidden;
          text-overflow: ellipsis;
-         margin-right: 1.2rem;;
+         margin-right: 1.2rem;
          img{
             width: 2.4rem;
             height: 2.4rem;
@@ -54,6 +62,7 @@
          width: 2.5rem;
          height: 2.5rem;
       }
+      @include high-contrast-adjust;
    }
 
    .ui-deviceinfo-right{
@@ -93,9 +102,15 @@
       }
 
       .percentage {
-          fill: $grey_darker;;
+          fill: $grey_darker;
           font-size: 0.32em;
           text-anchor: middle;
+          @media #{$black-on-white} {
+             fill: black;
+          }
+          @media #{$white-on-black} {
+            fill: white;
+          }
       }
       
       .sw-checked-date{

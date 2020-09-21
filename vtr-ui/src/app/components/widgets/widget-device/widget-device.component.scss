@@ -8,7 +8,6 @@ $size500px-sw-show1col: "only screen and (min-width: 500px) and (max-width: 1200
 
 .vtr-widget-device {
 	padding: 0 !important;
-
 	.device-brief{
 		box-shadow: $drop_shadow;
 		border-radius: $border_radius;
@@ -67,8 +66,19 @@ $size500px-sw-show1col: "only screen and (min-width: 500px) and (max-width: 1200
 			align-self: center;
 			margin-right: 5.6rem;
 			text-transform: uppercase;
+			@media #{$black-on-white} {
+				border: 0.1rem solid;
+			}
+		
+			@media #{$white-on-black} {
+				border: 0.1rem solid;
+			}
 			&:hover{
 				cursor: pointer;
+			}
+
+			.spinner-content{
+				@include high-contrast-adjust;
 			}
 
 			.spinner-border{
@@ -92,11 +102,11 @@ $size500px-sw-show1col: "only screen and (min-width: 500px) and (max-width: 1200
 		}
 
 		.device-status-good{
-			background: linear-gradient(31deg, #2ECC71 0%, #35E6B9 100%) 0% 0% no-repeat padding-box;
+			background: linear-gradient(31deg, #2ECC71 0%, #35E6B9 100%) 0% 0% no-repeat;
 		}
 
 		.device-status-loading{
-			background: #2F3447 0% 0% no-repeat padding-box;
+			background: #2F3447 0% 0% no-repeat;
 			color:#4980FC;
 			.spinner-content{
 				display: block !important;
@@ -107,7 +117,7 @@ $size500px-sw-show1col: "only screen and (min-width: 500px) and (max-width: 1200
 		}
 
 		.device-status-needaction{
-			background: linear-gradient(31deg, #DB591F 0%, #EB7200 100%) 0% 0% no-repeat padding-box;;
+			background: linear-gradient(31deg, #DB591F 0%, #EB7200 100%) 0% 0% no-repeat;
 		}
 	}
 
@@ -152,11 +162,12 @@ $size500px-sw-show1col: "only screen and (min-width: 500px) and (max-width: 1200
 
 	@media #{$black-on-white} {
 		border: 0.1rem solid;
+		border-radius: $border_radius;
 	}
 
 	@media #{$white-on-black} {
 		border: 0.1rem solid;
+		border-radius: $border_radius; 
 	}
 
-	
 }
