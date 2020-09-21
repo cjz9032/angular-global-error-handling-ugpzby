@@ -15,16 +15,16 @@
 			color: $main_dark;
 			font-size: $fontsize_xl;
 			font-weight: $weight_light;
-			padding-right: 1rem;
-			margin-bottom: 0;
-			width: calc(100% - 3rem); // Calculated width based on question mark and padding 
+			padding-right: 2.4rem;
+			margin-bottom: 0.4rem;
+			width: 100%; // Width and word-wrap to break long words on some languages as German
 			word-wrap: break-word;
 		}
 
 		.title-question-mark {
-			font-size: $fontsize_lg;
+			font-size: $fontsize_sm;
 			font-weight: $weight_light;
-			align-self: center;
+			padding: 0.2rem;
 
 			.recover-question-icon {
 				color: $menu_hover;
