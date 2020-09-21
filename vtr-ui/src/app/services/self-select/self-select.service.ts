@@ -5,6 +5,7 @@ import { CommonService } from '../common/common.service';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LoggerService } from '../logger/logger.service';
+import { LocalCacheService } from '../local-cache/local-cache.service';
 
 export class SelfSelectConfig {
 	public customtags?: string;
@@ -46,7 +47,7 @@ export class SelfSelectService {
 	private set savedSegment(value) {
 		if (value && this._savedSegment !== value) {
 			this._savedSegment = value;
-			this.commonService.setLocalStorageValue(LocalStorageKey.LocalInfoSegment, this._savedSegment);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.LocalInfoSegment, this._savedSegment);
 			this.commonService.sendNotification(SelfSelectEvent.SegmentChange, this.savedSegment);
 			this.commonService.sendReplayNotification(SelfSelectEvent.SegmentChange, this.savedSegment);
 		}
@@ -67,6 +68,7 @@ export class SelfSelectService {
 		private vantageShellService: VantageShellService,
 		private commonService: CommonService,
 		private logger: LoggerService,
+		private localCacheService: LocalCacheService,
 		public deviceService: DeviceService
 	) {
 		this.selfSelect = this.vantageShellService.getSelfSelect();
@@ -107,7 +109,7 @@ export class SelfSelectService {
 			};
 			const reloadNecessary = reloadRequired === true && this.savedSegment !== this.usageType;
 			this.savedSegment = this.usageType;
-			this.commonService.setLocalStorageValue(LocalStorageKey.ChangedSelfSelectConfig, config);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.ChangedSelfSelectConfig, config);
 			this.syncConfigToService(config);
 			if (reloadNecessary) {
 				if (this.vantageStub && typeof this.vantageStub.refresh === 'function') {
@@ -122,7 +124,7 @@ export class SelfSelectService {
 	}
 
 	private async initialize() {
-		let config = this.commonService.getLocalStorageValue(LocalStorageKey.ChangedSelfSelectConfig);
+		let config = await this.localCacheService.getLocalCacheValue(LocalStorageKey.ChangedSelfSelectConfig);
 		this.machineInfo = await this.deviceService.getMachineInfo();
 		this.userProfileEnabled = this.checkUserProfileEnabled();
 		if (!config
@@ -133,7 +135,7 @@ export class SelfSelectService {
 				customtags: '',
 				segment: defaultSegment
 			};
-			this.commonService.setLocalStorageValue(LocalStorageKey.ChangedSelfSelectConfig, config);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.ChangedSelfSelectConfig, config);
 		}
 		this.setSegmentAndInterest(config);
 		this.syncConfigToService(config);

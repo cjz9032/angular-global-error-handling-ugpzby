@@ -3,6 +3,7 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { CommonService } from '../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { SegmentConst } from '../self-select/self-select.service';
+import { LocalCacheService } from '../local-cache/local-cache.service';
 
 export enum BetaStatus {
 	On,
@@ -18,6 +19,7 @@ export class BetaService {
 
 	constructor(
 		private vantageShellService: VantageShellService,
+		private localCacheService: LocalCacheService,
 		private commonService: CommonService
 	) {
 		if (this.vantageShellService) {
@@ -44,8 +46,8 @@ export class BetaService {
 		}
 	}
 
-	public showBetaFeature(): boolean {
-		const segment = this.commonService.getLocalStorageValue(LocalStorageKey.LocalInfoSegment);
+	public async showBetaFeature(): Promise<boolean> {
+		const segment = await this.localCacheService.getLocalCacheValue(LocalStorageKey.LocalInfoSegment);
 		return this.getBetaStatus() === BetaStatus.On && segment !== SegmentConst.Commercial;
 	}
 

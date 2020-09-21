@@ -20,6 +20,7 @@ import { DeviceService } from 'src/app/services/device/device.service';
 import { SegmentConst } from 'src/app/services/self-select/self-select.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { SecurityAdvisorNotifications } from 'src/app/enums/security-advisor-notifications.enum';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 interface WifiSecurityState {
 	state: string; // enabled,disabled,never-used
@@ -80,13 +81,14 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		public configService: ConfigService,
 		public deviceService: DeviceService,
 		private localInfoService: LocalInfoService,
+		private localCacheService: LocalCacheService,
 		public wifiSecurityService: WifiSecurityService
 	) { }
 
-	ngOnInit() {
+	async ngOnInit() {
 		this.securityAdvisor = this.shellService.getSecurityAdvisor();
 		this.homeSecurity = this.shellService.getConnectedHomeSecurity();
-		this.segment = this.commonService.getLocalStorageValue(LocalStorageKey.LocalInfoSegment, this.segmentConst.Consumer);
+		this.segment = await this.localCacheService.getLocalCacheValue(LocalStorageKey.LocalInfoSegment, this.segmentConst.Consumer);
 		if (this.securityAdvisor) {
 			this.wifiSecurity = this.securityAdvisor.wifiSecurity;
 		}

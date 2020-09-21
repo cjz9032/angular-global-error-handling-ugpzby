@@ -6,6 +6,7 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CommonService } from '../common/common.service';
 import { BasicGuard } from './basic-guard';
 import { Observable } from 'rxjs/internal/Observable';
+import { LocalCacheService } from '../local-cache/local-cache.service';
 
 @Injectable({
 	providedIn: 'root',
@@ -15,6 +16,7 @@ export class SecurityAdvisorGuard extends BasicGuard {
 	constructor(
 		public guardConstants: GuardConstants,
 		public commonService: CommonService,
+		private localCacheService: LocalCacheService,
 		private router: Router
 	) {
 		super(commonService, guardConstants);
@@ -23,10 +25,15 @@ export class SecurityAdvisorGuard extends BasicGuard {
 	canActivate(
 		route: ActivatedRouteSnapshot,
 		state: RouterStateSnapshot
-	): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-		const segment: SegmentConst = this.commonService.getLocalStorageValue(LocalStorageKey.LocalInfoSegment);
-		if (segment === SegmentConst.Consumer || segment === SegmentConst.SMB) return true;
-
-		return this.router.parseUrl('/security/wifi-security');
+	): Observable<boolean | UrlTree> | Promise<boolean | UrlTree | any> | boolean | UrlTree {
+		return this.localCacheService
+			.getLocalCacheValue(LocalStorageKey.LocalInfoSegment)
+			.then((segment) => {
+				if (segment === SegmentConst.Consumer || segment === SegmentConst.SMB) {
+					return true;
+				} else {
+					return this.router.parseUrl('/security/wifi-security');
+				}
+			});
 	}
 }
