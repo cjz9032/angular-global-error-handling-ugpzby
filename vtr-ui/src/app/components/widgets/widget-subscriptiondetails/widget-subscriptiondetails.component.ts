@@ -66,16 +66,12 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		this.spProcessStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SPProcessStatus);
 		this.spFrstRunStatus = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun);
 
-		this.decryptPNListData();
 		if (this.spFrstRunStatus) {
 			this.getSubscriptionDetails();
 		} else {
 			this.initSubscripionDetails();
 		}
 		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled);
-	}
-	decryptPNListData() {
-		this.partNumbersList = JSON.parse(atob(environment.spPnListKey.concat('CIsIjVXUzBYNTg2NzIiLCI1V1MwWDU4NjY5Il0=')));
 	}
 
 	initSubscripionDetails() {
