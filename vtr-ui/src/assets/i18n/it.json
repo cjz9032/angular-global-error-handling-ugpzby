@@ -204,7 +204,8 @@
                 },
                 "warningPromptPopup": {
                     "title": "Avvertenza!",
-                    "description": "Impostazioni non corrette dell'overclock possono provocare danni hardware irreversibili.",
+                    "description": "L'overclock è una modifica alle specifiche di fabbrica del computer. La modifica potrebbe causare malfunzionamenti o danneggiare il computer o i componenti e provocare la perdita di dati, a cui non verrà applicata la garanzia originale.",
+                    "description2": "Le opzioni avanzate di overclock sono solo strumenti di configurazione che non garantiscono le prestazioni e la stabilità del dispositivo, una volta configurati. Prima di utilizzare queste opzioni, verificare di aver compreso le conoscenze tecniche e i rischi associati.",
                     "proceed": "CONTINUA",
                     "legionAccessory": "Installare Legion Accessory Central?",
                     "accessoryDesc": "Legion Accessory Central è un'app per configurare i dispositivi Legion, come mouse, tastiera, cuffie e così via."

@@ -64,9 +64,10 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 	section: 'save_change_dialog',
 	headerText: 'save_change_dialog_header_text',
 	description: 'save_change_dialog_oc_recovery_description',
-		closeButton : 'save_change_dialog_close_button',
-		cancelButton: 'save_change_dialog_do_not_save_button',
-		okButton: 'save_change_dialog_save_button'
+	description2: 'save_change_dialog_oc_recovery_pressing_power_button',
+	closeButton : 'save_change_dialog_close_button',
+	cancelButton: 'save_change_dialog_do_not_save_button',
+	okButton: 'save_change_dialog_save_button'
 	}
 
   defaultModalAutomationId: any = {

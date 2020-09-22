@@ -204,7 +204,8 @@
                 },
                 "warningPromptPopup": {
                     "title": "¡Advertencia!",
-                    "description": "Un ajuste inadecuado de la Aceleración puede producir daños de hardware irreversible.",
+                    "description": "La aceleración es una modificación de las especificaciones de fábrica del sistema. El cambio puede causar fallos o daños al sistema o a los componentes y la pérdida de datos, a lo que no se aplicará la garantía de fábrica original.",
+                    "description2": "Las opciones de aceleración avanzadas son solo herramientas de configuración que no garantizan el rendimiento y la estabilidad del dispositivo después de la configuración. Asegúrese de comprender el conocimiento técnico y los riesgos pertinentes antes de utilizarlas.",
                     "proceed": "PROCEDER",
                     "legionAccessory": "¿Desea instalar Legion Accessory Central?",
                     "accessoryDesc": "Legion Accessory Central es una aplicación que configura su mouse, teclado, auriculares, etc. de Legion."

@@ -54,6 +54,9 @@
             font-size: 1.4rem;
             margin-bottom: 1rem;
             color: $lightText;
+            &.description-family{
+                font-family: "Microsoft YaHei UI","Segoe UI",sans-serif !important;
+            }
         }
     }
     .modal-footer {

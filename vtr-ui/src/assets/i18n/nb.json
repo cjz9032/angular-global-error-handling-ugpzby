@@ -204,7 +204,8 @@
                 },
                 "warningPromptPopup": {
                     "title": "Advarsel!",
-                    "description": "Ukorrekte innstillinger av Overklokking kan føre til uopprettelige maskinvareskader.",
+                    "description": "Overklokking er en endring i de fabrikkdefinerte spesifikasjonene til datamaskinen. Endringen kan forårsake feil eller skade på maskinen eller komponentene og føre til tap av data, som den opprinnelige fabrikkgarantien ikke omfatter.",
+                    "description2": "Avanserte innstillinger for overklokking er bare konfigurasjonsverktøy som ikke garanterer ytelsen og stabiliteten til enheten etter konfigurasjonen. Sørg for at du har den relevante tekniske kunnskapen og forstår risikoen før du bruker den.",
                     "proceed": "FORTSETT",
                     "legionAccessory": "Vil du installere Legion Accessory Central?",
                     "accessoryDesc": "Legion Accessory Central er en app for å konfigurere Legion-musen, Legion-tastaturet, Legion-hodetelefoner osv."

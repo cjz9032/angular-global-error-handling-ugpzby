@@ -204,7 +204,8 @@
                 },
                 "warningPromptPopup": {
                     "title": "Warnung!",
-                    "description": "Unsachgemäße Einstellungen für Overclocking können zu irreversiblen Hardwareschaden führen.",
+                    "description": "Übertaktung ist eine Änderung der werkseitigen Einstellungen des Computers. Die Änderung kann zu Fehlfunktionen oder Schäden am Computer oder an Komponenten und zum Verlust von Daten führen, die nicht von der ursprünglichen Herstellergarantie abgedeckt sind. ",
+                    "description2": "Erweiterte Übertaktungsoptionen sind nur Konfigurationstools, die keine Garantie für Leistung und Stabilität der Einheit nach der Konfiguration bieten. Stellen Sie sicher, dass Sie vor der Verwendung das entsprechende technische Wissen haben und die Risiken kennen.",
                     "proceed": "FORTFAHREN",
                     "legionAccessory": "Möchten Sie Legion Accessory Central installieren?",
                     "accessoryDesc": "Legion Accessory Central ist eine App zur Konfiguration Ihrer Legion Maus, Tastatur, Kopfhörer, etc."

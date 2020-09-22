@@ -204,7 +204,8 @@
                 },
                 "warningPromptPopup": {
                     "title": "Upozorenje!",
-                    "description": "Neispravne postavke procesa Overclocking mogu dovesti do nepovratnog oštećenja hardvera.",
+                    "description": "Overclocking podrazumijeva mijenjanje tvorničkih specifikacija računala. Taj proces mijenjanja može prouzročiti neispravan rad ili oštećenje računala ili komponenata te gubitak podataka, a na što se originalno tvorničko jamstvo neće primjenjivati.",
+                    "description2": "Dodatne mogućnosti overclockinga samo su konfiguracijski alati koji ne jamče učinkovitost i stabilnost uređaja nakon konfiguracije. Prije nego se odlučite na to, provjerite shvaćate li rizike kao i raspolažete li potrebnim tehničkim znanjem.",
                     "proceed": "NASTAVI",
                     "legionAccessory": "Želite li instalirati Legion Accessory Central?",
                     "accessoryDesc": "Legion Accessory Central aplikacija je za konfiguriranje vašeg Legion miša, tipkovnice, slušalica itd."

@@ -204,7 +204,8 @@
                 },
                 "warningPromptPopup": {
                     "title": "Upozorenje!",
-                    "description": "Nepravilne postavke Overkloka mogu dovesti do nepovratnog oštećenja hardvera.",
+                    "description": "Overkloking je promena fabričkih specifikacija računara. Ova promena može izazvati kvar ili oštećenje računara ili komponenti i gubitak podataka, i na to se ne primenjuje originalna fabrička garancija. ",
+                    "description2": "Napredne opcije overklokinga su samo alatke za konfiguraciju koje ne garantuju performanse i stabilnost uređaja nakon konfiguracije. Uverite se da ste pre korišćenja razumeli relevantno tehničko znanje i rizike.",
                     "proceed": "NASTAVI",
                     "legionAccessory": "Želite li da instalirate Legion Accessory Central?",
                     "accessoryDesc": "Legion Accessory Central je aplikacija za konfigurisanje Legion miša, tastature, slušalica itd."

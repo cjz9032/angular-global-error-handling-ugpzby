@@ -204,7 +204,8 @@
                 },
                 "warningPromptPopup": {
                     "title": "Uyarı!",
-                    "description": "Yanlış Hız Aşırtma ayarları geri dönüşü olmayan donanım hasarına yol açabilir.",
+                    "description": "Hız aşırtma, bilgisayarın fabrika özelliklerinde yapılan bir değişikliktir. Bu değişiklik, bilgisayarın veya bileşenlerin arızalanmasına ya da hasar görmesine ve veri kaybına neden olabilir; bu durumda, orijinal fabrika garantisi de geçerli olmayacaktır.",
+                    "description2": "Gelişmiş Hız Aşırtma seçenekleri sadece yapılandırmadan sonra cihazın performansını ve kararlılığını garanti etmeyen yapılandırma araçlarıdır. Kullanmadan önce lütfen ilgili teknik bilgileri ve riskleri anladığınızdan emin olun.",
                     "proceed": "DEVAM ET",
                     "legionAccessory": "Legion Accessory Central'ı yüklemek istiyor musunuz?",
                     "accessoryDesc": "Legion Accessory Central, Legion fareniz, klavyeniz, kulaklığınız gibi donatıları yapılandırmak için tasarlanmış bir uygulamadır."

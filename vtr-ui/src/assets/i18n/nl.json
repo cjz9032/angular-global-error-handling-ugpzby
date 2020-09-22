@@ -204,7 +204,8 @@
                 },
                 "warningPromptPopup": {
                     "title": "Waarschuwing!",
-                    "description": "Foutieve instellingen van Overklokken kunnen leiden tot onherstelbare hardwarebeschadigingen.",
+                    "description": "Overklokken is een wijziging in de fabrieksspecificaties van de computer. Deze wijziging kan leiden tot defecten of schade aan de computer of onderdelen en tot gegevensverlies, waarop de oorspronkelijke fabrieksgarantie niet van toepassing is.",
+                    "description2": "Geavanceerde opties voor overklokken zijn configuratiehulpmiddelen waarbij de prestaties en stabiliteit van het apparaat na de configuratie niet worden gegarandeerd. Zorg ervoor dat u over de benodigde technische kennis beschikt en de risico's begrijpt voordat u dit gebruikt.",
                     "proceed": "DOORGAAN",
                     "legionAccessory": "Wil je Legion Accessory Central installeren?",
                     "accessoryDesc": "Legion Accessory Central is een app waarmee je je Legion-muis, -toetsenbord, -hoofdtelefoons en dergelijke configureert."

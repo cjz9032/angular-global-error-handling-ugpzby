@@ -204,7 +204,8 @@
                 },
                 "warningPromptPopup": {
                     "title": "Opozorilo!",
-                    "description": "Nepravilne nastavitve Zvišanja takta lahko povzročijo nepopravljive poškodbe strojne opreme.",
+                    "description": "Zvišanje takta je sprememba tovarniških specifikacij računalnika. Sprememba lahko povzroči okvaro ali poškodbo računalnika ali komponent in izgubo podatkov, za katere prvotna tovarniška garancija ne velja.",
+                    "description2": "Napredne možnosti zvišanja takta so samo konfiguracijska orodja, ki po konfiguraciji ne zagotavljajo učinkovitosti in stabilnosti naprave. Pred uporabo se morate zavedati, katero ustrezno tehnično znanje potrebujete in katera tveganja so prisotna.",
                     "proceed": "NADALJUJ",
                     "legionAccessory": "Ali želite namestiti Legion Accessory Central?",
                     "accessoryDesc": "Legion Accessory Central je aplikacija za konfiguriranje miške, tipkovnice, slušalk in drugih izdelkov Legion."

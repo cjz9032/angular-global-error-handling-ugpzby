@@ -204,7 +204,8 @@
                 },
                 "warningPromptPopup": {
                     "title": "Ostrzeżenie!",
-                    "description": "Nieprawidłowe ustawienia Przetaktowywania mogą nieodwracalnie uszkodzić sprzęt.",
+                    "description": "Przetaktowywanie to zmiana w specyfikacji fabrycznej komputera. Zmiana ta może spowodować nieprawidłowe działanie lub uszkodzenie komputera albo jego komponentów oraz utratę danych — szkody te nie są objęte oryginalną gwarancją fabryczną.",
+                    "description2": "Zaawansowane opcje przetaktowywania to jedynie narzędzia konfiguracyjne, które nie gwarantują prawidłowego działania ani stabilności urządzenia po przeprowadzeniu konfiguracji. Przed użyciem upewnij się, że posiadasz odpowiednią wiedzę techniczną i rozumiesz zagrożenie.",
                     "proceed": "WYKONAJ",
                     "legionAccessory": "Czy chcesz zainstalować aplikację Legion Accessory Central?",
                     "accessoryDesc": "Legion Accessory Central to aplikacja służąca do konfiguracji myszy, klawiatury, słuchawek itp. z serii Legion."
