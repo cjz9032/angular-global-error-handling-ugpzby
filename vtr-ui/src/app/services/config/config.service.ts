@@ -5,7 +5,7 @@ import {
 	DeviceService
 } from 'src/app/services/device/device.service';
 import cloneDeep from 'lodash/cloneDeep';
-import { menuItemsGaming, menuItems, betaItem } from 'src/assets/menu/menu.json';
+import { menuItemsGaming, menuItemsArm, menuItems, betaItem } from 'src/assets/menu/menu.json';
 import { privacyPolicyLinks } from 'src/assets/privacy-policy-links/policylinks.json';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { BetaService, BetaStatus } from '../beta/beta.service';
@@ -38,7 +38,6 @@ interface MenuItem {
 	metricsEvent: string;
 	metricsParent: string;
 	metricsItem: string;
-	forArm: boolean;
 	subitems?: any[];
 	hide?: boolean;
 	availability?: boolean;
@@ -60,6 +59,7 @@ export class ConfigService {
 	appBrand = 'Lenovo';
 	appName = 'Vantage';
 	menuItemsGaming: MenuItem[] = menuItemsGaming;
+	menuItemsArm: MenuItem[] = menuItemsArm;
 	menuItems: MenuItem[] = menuItems;
 	menu: MenuItem[] = [];
 	activeSegment: string;
@@ -155,18 +155,22 @@ export class ConfigService {
 
 				this.notifyMenuChange(this.menu);
 				return resolve(this.menu);
+			} else if (this.deviceService.isArm) {
+				resultMenu = cloneDeep(this.menuItemsArm);
+				this.menu = await this.updateHide(resultMenu, this.activeSegment, this.isBetaUser);
+				this.notifyMenuChange(this.menu);
+			} else {
+				resultMenu = cloneDeep(this.menuItems);
+				this.initializeSecurityItem(this.country, resultMenu);
+				if (this.hypSettings) {
+					resultMenu = await this.initShowCHSMenu(this.country, resultMenu, machineInfo);
+				}
+
+				this.menu = await this.updateHide(resultMenu, this.activeSegment, this.isBetaUser);
+
+				await this.initializeSmartAssist();
+				this.notifyMenuChange(this.menu);
 			}
-
-			resultMenu = cloneDeep(this.menuItems);
-			this.initializeSecurityItem(this.country, resultMenu);
-			if (this.hypSettings) {
-				resultMenu = await this.initShowCHSMenu(this.country, resultMenu, machineInfo);
-			}
-
-			this.menu = await this.updateHide(resultMenu, this.activeSegment, this.isBetaUser);
-
-			await this.initializeSmartAssist();
-			this.notifyMenuChange(this.menu);
 			return resolve(this.menu);
 		});
 	}
@@ -301,19 +305,6 @@ export class ConfigService {
 			});
 		}
 		return menu;
-	}
-
-	armFilter(menu: Array<any>, isArm: boolean) {
-		if (isArm) {
-			menu.forEach(element => {
-				if (!element.forArm) {
-					element.hide = true;
-				}
-				if (element.subitems.length > 0) {
-					this.armFilter(element.subitems, isArm);
-				}
-			});
-		}
 	}
 
 	private smartAssistFilter(machineType: number) {
@@ -614,7 +605,6 @@ export class ConfigService {
 
 	private async updateHide(menu: Array<any>, segment: string, beta: boolean): Promise<MenuItem[]> {
 		this.smodeFilter(menu, this.deviceService.isSMode);
-		this.armFilter(menu, this.deviceService.isArm);
 		if (segment !== SegmentConst.Gaming) { this.segmentFilter(menu, segment); }
 		await this.initializeByBeta(menu, beta);
 		return menu;

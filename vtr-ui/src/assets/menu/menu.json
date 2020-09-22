@@ -14,7 +14,6 @@
 			"routerLinkActiveOptions": {
 				"exact": true
 			},
-			"forArm": true,
 			"sMode": true,
 			"subitems": []
 		},
@@ -29,7 +28,6 @@
 			"metricsEvent": "itemClick",
 			"metricsParent": "navbar",
 			"metricsItem": "link.security",
-			"forArm": false,
 			"subitems": [
 				{
 					"id": "wifi-security",
@@ -63,7 +61,6 @@
 			"routerLinkActiveOptions": {
 				"exact": true
 			},
-			"forArm": false,
 			"sMode": true,
 			"pre": [
 				"assets/images/support/svg_icon_about_us.svg"
@@ -130,7 +127,6 @@
 				"fal",
 				"search"
 			],
-			"forArm": false,
 			"subitems": []
 		},
 		{
@@ -144,7 +140,6 @@
 			"routerLinkActiveOptions": {
 				"exact": true
 			},
-			"forArm": true,
 			"subitems": []
 		}
 	],
@@ -163,7 +158,6 @@
 			"routerLinkActiveOptions": {
 				"exact": true
 			},
-			"forArm": true,
 			"sMode": true,
 			"subitems": []
 		},
@@ -178,7 +172,6 @@
 			"metricsEvent": "itemClick",
 			"metricsParent": "navbar",
 			"metricsItem": "link.device",
-			"forArm": false,
 			"sMode": true,
 			"subitems": [
 				{
@@ -251,7 +244,6 @@
 			"metricsEvent": "itemClick",
 			"metricsParent": "navbar",
 			"metricsItem": "link.security",
-			"forArm": false,
 			"subitems": [
 				{
 					"id": "security",
@@ -348,7 +340,6 @@
 			"routerLinkActiveOptions": {
 				"exact": true
 			},
-			"forArm": false,
 			"sMode": true,
 			"pre": [
 				"assets/images/support/svg_icon_about_us.svg"
@@ -365,7 +356,6 @@
 					"routerLinkActiveOptions": {
 						"exact": true
 					},
-					"forArm": false,
 					"sMode": true,
 					"subitems": []
 				},
@@ -383,7 +373,6 @@
 					"routerLinkActiveOptions": {
 						"exact": true
 					},
-					"forArm": true,
 					"subitems": []
 				}
 			]
@@ -403,7 +392,6 @@
 				"fal",
 				"house-signal"
 			],
-			"forArm": false,
 			"subitems": [],
 			"pre": [
 				"assets/images/connected-home-security/welcome-slide1@2x.png"
@@ -424,7 +412,6 @@
 				"fal",
 				"flask"
 			],
-			"forArm": false,
 			"subitems": []
 		},
 		{
@@ -443,7 +430,6 @@
 				"fal",
 				"search"
 			],
-			"forArm": false,
 			"subitems": []
 		},
 		{
@@ -457,8 +443,54 @@
 			"routerLinkActiveOptions": {
 				"exact": true
 			},
-			"forArm": true,
 			"sMode": true,
+			"subitems": []
+		}
+	],
+	"menuItemsArm": [
+		{
+			"id": "dashboard",
+			"label": "common.menu.dashboard",
+			"path": "dashboard",
+			"icon": [
+				"fal",
+				"columns"
+			],
+			"metricsEvent": "itemClick",
+			"metricsParent": "navbar",
+			"metricsItem": "link.dashboard",
+			"routerLinkActiveOptions": {
+				"exact": true
+			},
+			"subitems": []
+		},
+		{
+			"id": "smart-performance",
+			"label": "gaming.common.menu.smartPerformance",
+			"path": "support/smart-performance",
+			"icon": [
+				"fal",
+				"wrench"
+			],
+			"metricsEvent": "itemClick",
+			"metricsParent": "navbar",
+			"metricsItem": "link.smartPerfomance",
+			"routerLinkActiveOptions": {
+				"exact": false
+			},
+			"subitems": []
+		},
+		{
+			"id": "user",
+			"label": "User",
+			"path": "user",
+			"icon": "user",
+			"metricsEvent": "ItemClick",
+			"metricsParent": "NavigationLenovoAccount.Submenu",
+			"metricsItem": "link.user",
+			"routerLinkActiveOptions": {
+				"exact": true
+			},
 			"subitems": []
 		}
 	],
