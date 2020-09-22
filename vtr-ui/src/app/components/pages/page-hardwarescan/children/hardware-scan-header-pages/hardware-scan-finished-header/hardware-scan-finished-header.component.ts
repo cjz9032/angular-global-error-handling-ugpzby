@@ -2,6 +2,7 @@ import { Component, OnInit, Input, NgZone, Output, EventEmitter, OnChanges, Simp
 import { HardwareScanService } from '../../../../../../services/hardware-scan/hardware-scan.service';
 import { PreviousResultService } from '../../../../../../services/hardware-scan/previous-result.service';
 import { HardwareScanResultService } from '../../../../../../services/hardware-scan/hardware-scan-result.service';
+import { RecoverBadSectoresService } from '../../../../../../services/hardware-scan/recover-bad-sectores.service';
 import { LenovoSupportService } from 'src/app/services/hardware-scan/lenovo-support.service';
 import { HardwareScanFinishedHeaderType } from 'src/app/enums/hardware-scan-finished-header-type.enum';
 
@@ -18,6 +19,7 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 	numberTestsFailed = 0;
 	lastScanResultCompletionInfo: any;
 	scanResult: string;
+	recoverResult: string;
 
 	// Metrics
 	@Input() itemParentCancel: string;
@@ -33,6 +35,7 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 		private hardwareScanService: HardwareScanService,
 		private previousResultService: PreviousResultService,
 		private hardwareScanResultService: HardwareScanResultService,
+		private recoverBadSectoresService: RecoverBadSectoresService,
 		private lenovoSupportService: LenovoSupportService
 	) { }
 
@@ -50,6 +53,8 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 			this.scanResult = this.lastScanResultCompletionInfo.result;
 			scanDate = this.lastScanResultCompletionInfo.date;
 			finalResultCode = this.getLastFinalResultCode();
+		} else if (this.headerType === HardwareScanFinishedHeaderType.RecoverBadSectors) {
+			this.recoverResult = this.recoverBadSectoresService.getLastRecoverResultTitle();
 		}
 
 		this.configureSupportUrl(scanDate, finalResultCode);
