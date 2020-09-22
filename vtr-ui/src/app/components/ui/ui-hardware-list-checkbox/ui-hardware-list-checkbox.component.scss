@@ -2,8 +2,7 @@
 
 .vtr-ui-list-checkbox-hardware {
 	.list-group {
-		// margin: 3.5rem 0;
-		// min-width: 200px;
+		min-width: 200px;
 		width: 100%;
 		display: flex;
 		justify-content: center;
@@ -21,11 +20,6 @@
 				font-weight: $weight_bold;
 				padding-top: 0rem;
 				padding-left: 1.5rem;
-			}
-
-			.name {
-				font-size: $fontsize_xs;
-				font-weight: $weight_600;
 			}
 	
 			.subname {

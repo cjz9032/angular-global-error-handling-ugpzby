@@ -12,7 +12,6 @@ import { HardwareScanService } from '../../../services/hardware-scan/hardware-sc
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 import { ContentActionType } from 'src/app/enums/content.enum';
 import { ModalHardwareScanRbsComponent } from '../../modal/modal-hardware-scan-rbs/modal-hardware-scan-rbs.component';
-import { HistoryManager } from 'src/app/services/history-manager/history-manager.service';
 
 @Component({
 	selector: 'vtr-page-hardware-scan',
@@ -22,7 +21,6 @@ import { HistoryManager } from 'src/app/services/history-manager/history-manager
 })
 
 export class PageHardwareScanComponent implements OnInit, OnDestroy {
-
 	backarrow = '< ';
 	cardContentPositionA: any;
 	notificationSubscription: Subscription;
@@ -37,14 +35,10 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 		public deviceService: DeviceService,
 		private commonService: CommonService,
 		private hardwareScanService: HardwareScanService,
-		config: NgbModalConfig,
 		private translate: TranslateService,
 		private router: Router,
 		private modalService: NgbModal,
-		private historyManager: HistoryManager,
-	) {
-
-	}
+	) { }
 
 	ngOnInit() {
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
@@ -111,20 +105,20 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 			modalRef.componentInstance.failedDevicesList = failedDevices;
 		}
 
-		modalRef.componentInstance.passEntry.subscribe((devices) => {
+		modalRef.componentInstance.recoverStart.subscribe((devices) => {
 			this.startRecover(devices);
 		});
 	}
 
-	startRecover(devices) {
-		this.hardwareScanService.setDevicesRecover(devices);
-		this.hardwareScanService.setRecoverInit(true);
-		this.hardwareScanService.setRecoverExecutionStatus(true);
-		this.hardwareScanService.setIsScanDone(false);
-
-		this.hardwareScanService.startRecover.emit();
+	private startRecover(devices) {
+		if (this.hardwareScanService) {
+			this.hardwareScanService.setDevicesRecover(devices);
+			this.hardwareScanService.setRecoverInit(true);
+			this.hardwareScanService.setRecoverExecutionStatus(true);
+			this.hardwareScanService.setIsScanDone(false);
+			this.hardwareScanService.startRecover.emit();
+		}
 	}
-
 
 	public onGetSupportClick($event: any) {
 

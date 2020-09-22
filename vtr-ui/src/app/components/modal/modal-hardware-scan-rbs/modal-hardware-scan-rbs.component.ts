@@ -1,8 +1,9 @@
-import { Component, Input, Output, EventEmitter, OnDestroy, OnInit } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { Component, Output, EventEmitter, OnDestroy, OnInit } from '@angular/core';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
 import { HardwareScanService } from 'src/app/services/hardware-scan/hardware-scan.service';
 import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.enum';
+import { ModalRecoverConfirmComponent } from '../modal-recover-confirm/modal-recover-confirm.component';
 
 @Component({
 	selector: 'vtr-modal-hardware-scan-rbs',
@@ -10,15 +11,14 @@ import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.
 	styleUrls: ['./modal-hardware-scan-rbs.component.scss']
 })
 export class ModalHardwareScanRbsComponent implements OnDestroy, OnInit {
-	public modalTitle: string;
-	public confirmDescription: string;
 	public devices: any[];
-	public isRunRbsClicked = false;
-	private failedDevicesList: Array<string>;
+	private failedDevicesList = [];
 	private isSuccessful = false;
-	private selectedDevices: any[];
+	private confirmModal = ModalRecoverConfirmComponent;
 
-	@Output() passEntry: EventEmitter<any> = new EventEmitter();
+	// Used to signalize to a subscriber that the rbs will start.
+	// It emits the selected devices to be recovered.
+	@Output() recoverStart: EventEmitter<any> = new EventEmitter();
 
 	// Used to signalize to the caller that the modal is being closed.
 	// It emits true when the modal is closed in a successful way,
@@ -29,19 +29,19 @@ export class ModalHardwareScanRbsComponent implements OnDestroy, OnInit {
 		public activeModal: NgbActiveModal,
 		private translate: TranslateService,
 		private hardwareScanService: HardwareScanService,
+		private modalService: NgbModal,
 	) {
 		this.hardwareScanService.setLoadingStatus(true);
 		this.hardwareScanService.setScanExecutionStatus(false);
 		this.hardwareScanService.setRecoverExecutionStatus(false);
 		this.hardwareScanService.setIsScanDone(false);
-
-		this.failedDevicesList = [];
 	}
 
 	public ngOnInit() {
 		this.getItemsToRecoverBadSectors();
 		this.getComponentTitle();
 	}
+
 	public ngOnDestroy() {
 		this.modalClosing.emit(this.isSuccessful);
 	}
@@ -51,29 +51,42 @@ export class ModalHardwareScanRbsComponent implements OnDestroy, OnInit {
 	}
 
 	public onClickRun() {
-		this.isRunRbsClicked = true;
-		this.modalTitle = this.translate.instant('hardwareScan.warning');
-		this.confirmDescription = this.translate.instant('hardwareScan.recoverBadSectors.popup.description');
-		this.selectedDevices = this.devices.filter(x => x.isSelected);
+		let selectedDevices: any[];
+
+		if (this.devices) {
+			selectedDevices = this.devices.filter(x => x.isSelected);
+		}
+
+		this.closeModal();
+
+		const modalRef = this.modalService.open(this.confirmModal, {
+			size: '500px',
+			centered: true,
+		});
+		modalRef.componentInstance.confirmClicked.subscribe(() => {
+			this.onConfirmClick(selectedDevices);
+		});
 	}
 
-	public onConfirmClick() {
+	private onConfirmClick(selectedDevices: any[]) {
 		this.isSuccessful = true;
-		this.passEntry.emit(this.selectedDevices);
+		this.recoverStart.emit(selectedDevices);
 		this.closeModal();
 	}
 
-	private getComponentTitle() {
+	public getComponentTitle() {
 		if (this.devices) {
-			this.modalTitle = this.translate.instant('hardwareScan.recoverBadSectors.modalTitle');
+			return this.translate.instant('hardwareScan.recoverBadSectors.modalTitle');
 		} else {
-			this.modalTitle = this.translate.instant('hardwareScan.loadingDevices');
+			return this.translate.instant('hardwareScan.loadingDevices');
 		}
 	}
 
-	public getItemsToRecoverBadSectors() {
+	private getItemsToRecoverBadSectors() {
 		const devices = this.hardwareScanService.getDevicesToRecoverBadSectors();
-		this.buildDevicesRecoverList(devices.groupList);
+		if (devices) {
+			this.buildDevicesRecoverList(devices.groupList);
+		}
 	}
 
 	private buildDevicesRecoverList(groupList: any) {

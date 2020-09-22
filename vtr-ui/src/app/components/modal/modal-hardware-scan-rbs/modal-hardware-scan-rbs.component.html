@@ -1,41 +1,25 @@
 <div class="modal-body vtr-modal-hardware-scan-rbs" role="dialog" aria-labelledby="hwscan-rbs-modal-title" aria-describedby="hwscan-rbs-modal-description">
 
 	<div class="row modal-information">
-		<h1 id="hwscan-rbs-modal-title" class="title" role="heading">{{ modalTitle }}</h1>
-		<p id="hwscan-recover-description" class="description" role="text">{{ confirmDescription }}</p>
+		<h1 id="hwscan-rbs-modal-title" class="title" role="heading">{{ getComponentTitle() }}</h1>
 	</div>
 	
-	<div *ngIf="!isRunRbsClicked; else confirmationMessage" class="list-container">
-		<vtr-ui-hardware-list-checkbox
-			[componentId]="'hwscan-rbs-devices'"
-			[devices]="devices">
-		</vtr-ui-hardware-list-checkbox>
+	<vtr-ui-hardware-list-checkbox
+		[componentId]="'hwscan-rbs-devices'"
+		[devices]="devices">
+	</vtr-ui-hardware-list-checkbox>
 
-		<div class="row button-row">
-			<vtr-ui-button
-				[isDisabled]="!isSelectedItem()"
-				linkId="hwscan-run-selected-tests-btn"
-				metricsParent="HardwareScan.RecoverBadSectors"
-				[isFullWidth]="true"
-				metricsItem="RecoverBadSectors.RunRecoverBadSectors"
-				[label]= " 'hardwareScan.recoverBadSectors.title' | translate "
-				(onClick)="onClickRun()">
-			</vtr-ui-button>
-		</div>
+	<div class="row button-row">
+		<vtr-ui-button
+			[isDisabled]="!isSelectedItem()"
+			linkId="hwscan-run-selected-tests-btn"
+			metricsParent="HardwareScan.RecoverBadSectors"
+			[isFullWidth]="true"
+			metricsItem="RecoverBadSectors.RunRecoverBadSectors"
+			[label]= " 'hardwareScan.recoverBadSectors.title' | translate "
+			(onClick)="onClickRun()">
+		</vtr-ui-button>
 	</div>
-
-	<ng-template #confirmationMessage>
-		<hr class="info-divisor">
-		<div class="row">
-			<vtr-ui-button
-				linkId="hwscan-rbs-confirm-btn"
-				metricsParent="HardwareScan.ConfirmRecoverBadSectors"
-				metricsItem="ConfirmRecoverBadSectors.Confirm"
-				[label]="'hardwareScan.ok' | translate"
-				(onClick)="onConfirmClick()">
-			</vtr-ui-button>
-		</div>
-	</ng-template>
 
 	<div class="btn-modal-close">
 		<vtr-ui-close-button

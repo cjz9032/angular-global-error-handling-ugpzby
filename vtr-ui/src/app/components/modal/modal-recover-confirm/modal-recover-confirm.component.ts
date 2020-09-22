@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { disableBackgroundNavigation, reEnableBackgroundNavigation } from '../../../services/hardware-scan/utils/ModalBackgroundNavigationUtils';
 
@@ -12,14 +12,24 @@ export class ModalRecoverConfirmComponent implements OnInit, OnDestroy {
 	@Input() CancelItemName: string;
 	@Input() ConfirmItemName: string;
 
+	@Output() confirmClicked: EventEmitter<any> = new EventEmitter();
+
 	constructor(public activeModal: NgbActiveModal) {
 	}
 
-	ngOnInit(){
+	ngOnInit() {
 		disableBackgroundNavigation(document);
 	}
 
-	ngOnDestroy(){
+	ngOnDestroy() {
 		reEnableBackgroundNavigation(document);
+	}
+	public onClosing() {
+		this.activeModal.close();
+	}
+
+	public confirmClick() {
+		this.confirmClicked.emit();
+		this.onClosing();
 	}
 }

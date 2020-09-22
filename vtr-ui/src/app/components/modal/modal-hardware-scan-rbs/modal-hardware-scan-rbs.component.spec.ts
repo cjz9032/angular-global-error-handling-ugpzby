@@ -1,4 +1,4 @@
-import { async, ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ModalHardwareScanRbsComponent } from './modal-hardware-scan-rbs.component';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
@@ -7,7 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DevService } from 'src/app/services/dev/dev.service';
 import { HardwareScanService } from 'src/app/services/hardware-scan/hardware-scan.service';
 
-fdescribe('ModalHardwareScanRbsComponent', () => {
+describe('ModalHardwareScanRbsComponent', () => {
 	let hwScanService: HardwareScanService;
 	let component: ModalHardwareScanRbsComponent;
 	let fixture: ComponentFixture<ModalHardwareScanRbsComponent>;
@@ -27,25 +27,31 @@ fdescribe('ModalHardwareScanRbsComponent', () => {
 		hwScanService = TestBed.inject(HardwareScanService);
 	});
 
-	fit('should create', () => {
+	it('should create', () => {
 		expect(component).toBeTruthy();
 	});
 
-	fit('should translate the component title token', () => {
-		const spy = spyOn(component, 'getComponentTitle');
-		const result = component.getComponentTitle();
-		expect(result).not.toEqual('');
+	it('should call getItemsToRecoverBadSectors and getComponentTitle when call ngOnInit', () => {
+		const spyGetItems = spyOn<any>(component, 'getItemsToRecoverBadSectors');
+		const spyGetComponentTitle = spyOn<any>(component, 'getComponentTitle');
+		component.ngOnInit();
+		expect(spyGetItems).toHaveBeenCalled();
+		expect(spyGetComponentTitle).toHaveBeenCalled();
 	});
 
-	fit('should call get items to recover bad sectors', () => {
-		const spy = spyOn(component, 'getItemsToRecoverBadSectors');
-		component.getItemsToRecoverBadSectors();
+	it('should call getComponentTitle', () => {
+		expect(component.getComponentTitle()).not.toBeNull();
+	});
+
+	it('should call onClickRun', () => {
+		const spy = spyOn(component, 'onClickRun');
+		component.onClickRun();
 		expect(spy).toHaveBeenCalled();
 	});
 
-	fit('should call on click run', () => {
-		const spy = spyOn(component, 'onClickRun');
-		component.onClickRun();
+	it('should call isSelectedItem', () => {
+		const spy = spyOn(component, 'isSelectedItem');
+		component.isSelectedItem();
 		expect(spy).toHaveBeenCalled();
 	});
 });

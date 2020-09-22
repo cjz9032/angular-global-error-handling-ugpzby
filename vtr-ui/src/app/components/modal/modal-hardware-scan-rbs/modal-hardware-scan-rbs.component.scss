@@ -9,24 +9,8 @@
 			font-size: $fontsize_xl;
 			font-weight: $weight_semibold;
 			color: $shade_blue;
-			
+			margin-bottom: 3.6rem;
 		}
-
-		.description {
-			font-size: $fontsize_xs;
-			white-space: pre-wrap;
-			font-weight: $weight_light;
-			color: $shade_blue;
-		}
-	}
-
-	.list-container {
-		margin-top: 3.6rem;
-	}
-
-	.info-divisor {
-		margin-top: 3.6rem;
-		margin-bottom: 1.2rem;
 	}
 
 	.button-row {
