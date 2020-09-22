@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.57](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.7.55...v1.7.57) (2020-09-22)
+
+
+### Bug Fixes
+
+* **UI:** replace http by https ([f594435](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/f594435c7b6c73aea6a3a03dab383065b8fa41b6))
+
 ### [1.7.56](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.7.53...v1.7.56) (2020-09-21)
 
 ### [1.7.55](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.7.54...v1.7.55) (2020-09-19)
