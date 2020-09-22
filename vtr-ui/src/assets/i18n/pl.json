@@ -745,7 +745,7 @@
                 "effectName5": "Chłodny_Niebieski",
                 "effectName6": "Fala_Prawo",
                 "effectName7": "Fala_Lewo",
-                "effectName8": "RunningMode"
+                "effectName8": "Odbicie"
             },
             "lightingSpeed": {
                 "title": "Szybkość"
