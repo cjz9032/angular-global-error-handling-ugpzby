@@ -2004,7 +2004,6 @@ vtr-ui-smart-performance-scanning {
 
 .cancel-modal-hwscan {
 	.modal-dialog {
-		max-width: 50%;
 		margin: 0 auto;
 		@media #{$breakpoint_lg} {
 			max-width: 60%;
