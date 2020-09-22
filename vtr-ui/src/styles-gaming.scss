@@ -2070,7 +2070,7 @@ body.focus-enable{
 				}
 			}
 	  }
-		a.btn,a.enable-button{
+		a.btn,a.enable-button,button.enable-button{
 			&:focus{
 			outline: none;
 				&::before{
