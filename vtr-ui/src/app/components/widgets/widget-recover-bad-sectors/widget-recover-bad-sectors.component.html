@@ -2,7 +2,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col">
-				<div class="row">
+				<div class="row title-box">
 					<h2 id="{{ widgetId }}-title" role="heading" class="title">{{title}}</h2>
 					<div class="title-question-mark">
 
@@ -16,11 +16,11 @@
 							triggers="manual"
 						   	#tooltip="ngbTooltip"
 							(click)="tooltip.toggle()"
-						   	(blur)="tooltip.close()"
+							(blur)="tooltip.close()"
 							[ngbTooltip]="tooltipRef"
 							tooltipClass="vtr-tooltip"
 							[ngClass]="'recover-question-icon'"
-							placement="auto"
+							placement="left"
 							container="vtr-root">
 							<fa-icon [icon]="['far', 'question-circle']"></fa-icon>
 						</a>

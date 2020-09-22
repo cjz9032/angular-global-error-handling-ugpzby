@@ -7,24 +7,32 @@
 	padding: 2.4rem;
 	@include high-contrast-border;
 
-	.title {
-		color: $main_dark;
-		font-size: $fontsize_xl;
-		font-weight: $weight_light;
-	}
+	.title-box {
+		display: flex;
+		flex-wrap: nowrap;
 
-	.title-question-mark {
-		font-size: $fontsize_lg;
-		font-weight: $weight_light;
-		padding-left: 1rem;
+		.title {
+			color: $main_dark;
+			font-size: $fontsize_xl;
+			font-weight: $weight_light;
+			padding-right: 2.4rem;
+			margin-bottom: 0.4rem;
+			width: 100%; // Width and word-wrap to break long words on some languages as German
+			word-wrap: break-word;
+		}
 
-		.recover-question-icon {
-			margin-left: 0.5rem;
-			color: $menu_hover;
-			cursor: pointer;
+		.title-question-mark {
+			font-size: $fontsize_sm;
+			font-weight: $weight_light;
+			padding: 0.2rem;
 
-			&:hover {
-				color: $highlight;
+			.recover-question-icon {
+				color: $menu_hover;
+				cursor: pointer;
+
+				&:hover {
+					color: $highlight;
+				}
 			}
 		}
 	}
