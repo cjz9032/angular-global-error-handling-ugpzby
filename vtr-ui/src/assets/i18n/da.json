@@ -204,7 +204,8 @@
                 },
                 "warningPromptPopup": {
                     "title": "Advarsel!",
-                    "description": "Forkerte indstillinger for overclocking kan medføre hardwareskader, der ikke kan genoprettes.",
+                    "description": "Overclocking er en ændring af computerens oprindelige specifikationer. Ændringer kan medføre fejl eller beskadigelse af computeren eller komponenter og datatab, som den oprindelige garanti ikke dækker.",
+                    "description2": "Avancerede overclockingsindstillinger er kun konfigurationsværktøjer, der ikke garanterer enhedens ydeevne og stabilitet efter konfigurationen. Sørg for, at du har den nødvendige tekniske viden og forstår risiciene før anvendelse.",
                     "proceed": "FORTSÆT",
                     "legionAccessory": "Vil du installere Legion Accessory Central?",
                     "accessoryDesc": "Legion Accessory Central er en app til konfiguration af Legion-mus, Legion-tastatur, Legion-hovedtelefoner osv."

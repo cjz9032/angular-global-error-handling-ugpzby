@@ -180,7 +180,8 @@
                 },
                 "warningPromptPopup": {
                     "title": "警告！",
-                    "description": "超頻的設定不正確可能會導致無法還原的硬體損壞。",
+                    "description": "超頻是對電腦的原廠規格做變更。此變更可能會造成電腦或元件異常或損壞以及資料遺失，因此原始的原廠保固將不適用。",
+                    "description2": "進階超頻選配產品只是配置工具，無法保證配置之後的裝置效能和穩定性。使用前，請確保您了解相關的技術知識和風險。",
                     "proceed": "繼續",
                     "legionAccessory": "您要安裝 Legion Accessory Central 嗎？",
                     "accessoryDesc": "Legion Accessory Central 是一款用於配置 Legion 滑鼠、鍵盤、耳機等的應用程式。"

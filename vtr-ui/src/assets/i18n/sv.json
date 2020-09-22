@@ -180,7 +180,8 @@
                 },
                 "warningPromptPopup": {
                     "title": "Varning!",
-                    "description": "Felaktiga inställningar av överklockning kan leda till bestående skador på maskinvaran.",
+                    "description": "Överklockning är en ändring av datorns fabriksspecifikationer. Ändringen kan orsaka felfunktion eller skada på datorn eller komponenterna och dataförlust som inte omfattas av den ursprungliga fabriksgarantin.",
+                    "description2": "Avancerade överklockningsalternativ är endast konfigureringsverktyg och garanterar inte enhetens prestanda och stabilitet efter konfigureringen. Försäkra dig om att du har relevanta tekniska kunskaper och förstår eventuella risker innan du använder dem.",
                     "proceed": "FORTSÄTT",
                     "legionAccessory": "Vill du installera Legion Accessory Central?",
                     "accessoryDesc": "Med appen Legion Accessory Central kan du konfigurera mus, tangentbord, hörlurar och annat i Legion-serien."

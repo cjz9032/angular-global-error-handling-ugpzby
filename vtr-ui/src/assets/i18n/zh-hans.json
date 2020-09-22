@@ -204,7 +204,8 @@
                 },
                 "warningPromptPopup": {
                     "title": "警告！",
-                    "description": "超频是对机器出厂规格的更改，可能导致机器或部件故障或损坏及数据丢失，对此原厂保修将不适用。高级超频选项只提供设置工具，但无法保证超频后设备的性能和稳定性。使用前请确保您了解相关专业知识及风险。",
+                    "description": "超频是对机器出厂规格的更改，可能导致机器或部件故障或损坏及数据丢失，对此原厂保修将不适用。",
+                    "description2": "高级超频选项只提供设置工具，但无法保证超频后设备的性能和稳定性。使用前请确保您了解相关专业知识及风险。",
                     "proceed": "继续",
                     "legionAccessory": "是否要安装 Legion Accessory Central?",
                     "accessoryDesc": "Legion Accessory Central 是用于配置 Legion 鼠标、键盘、耳机等的应用程序。"

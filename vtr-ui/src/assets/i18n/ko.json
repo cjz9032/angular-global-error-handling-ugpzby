@@ -204,7 +204,8 @@
                 },
                 "warningPromptPopup": {
                     "title": "경고!",
-                    "description": "오버클럭 설정이 적절하지 않으면 하드웨어가 영구적으로 손상될 수 있습니다.",
+                    "description": "오버클러킹은 컴퓨터의 공장 사양을 변경하는 것입니다. 이러한 변경으로 인해 컴퓨터나 구성 요소가 오작동하거나 손상되고 데이터 손실이 발생할 수 있으며, 이에 대해 원래 공장 출하 보증이 적용되지 않습니다. ",
+                    "description2": "고급 오버클러킹 옵션은 구성 도구이며, 구성 후 장치의 성능과 안정성은 보장하지 않습니다. 이를 사용하기 전에 관련 기술 지식과 위험을 알고 있어야 합니다.",
                     "proceed": "계속",
                     "legionAccessory": "Legion Accessory Central을 설치하시겠습니까?",
                     "accessoryDesc": "Legion Accessory Central은 Legion 마우스, 키보드, 헤드폰 등을 구성하는 응용 프로그램입니다."

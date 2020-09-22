@@ -204,7 +204,8 @@
                 },
                 "warningPromptPopup": {
                     "title": "Avertisment!",
-                    "description": "Setările necorespunzătoare ale caracteristicii Overclocking pot produce deteriorări hardware ireversibile.",
+                    "description": "Suprasolicitarea este o modificare a specificațiilor din fabrică ale computerului. Modificarea poate provoca defecțiuni sau deteriorări ale computerului sau componentelor și pierderea datelor, cărora nu li se va aplica garanția originală din fabrică.",
+                    "description2": "Opțiunile avansate de suprasolicitare sunt doar instrumente de configurare care nu garantează performanța și stabilitatea dispozitivului după configurare. Vă rugăm să vă asigurați că înțelegeți informațiile tehnice relevante și riscurile înainte de utilizare.",
                     "proceed": "CONTINUAȚI",
                     "legionAccessory": "Doriți să instalați Legion Accessory Central?",
                     "accessoryDesc": "Legion Accessory Central este o aplicație pentru configurarea mouse-ului, tastaturii, căștilor Legion etc."

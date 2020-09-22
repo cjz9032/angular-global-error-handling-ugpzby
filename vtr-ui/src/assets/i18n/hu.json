@@ -204,7 +204,8 @@
                 },
                 "warningPromptPopup": {
                     "title": "Figyelmeztetés!",
-                    "description": "A Túlpörgetés helytelen beállítása visszafordíthatatlan hardverkárosodást okozhat.",
+                    "description": "Túlpörgetésnek azt nevezzük, amikor megváltoztatják a számítógép gyári specifikációit. Ez az átalakítás a számítógép vagy az alkatrészeinek meghibásodását vagy károsodását, valamint adatvesztést okozhat. Ezekre az esetekre nem érvényes a gyári garancia.",
+                    "description2": "A speciális túlpörgetési beállítások konfigurációs eszközök, amelyek használata esetén nem áll módunkban garantálni a készülék teljesítményét és stabilitását. Használat előtt ismerje meg a vonatkozó technikai információkat és a kockázatokat.",
                     "proceed": "FOLYTATÁS",
                     "legionAccessory": "Szeretné telepíteni a Legion Accessory Central szoftvert?",
                     "accessoryDesc": "A Legion Accessory Central alkalmazás a Legion egér, billentyűzet, fejhallgató és más eszközök konfigurálására szolgál."

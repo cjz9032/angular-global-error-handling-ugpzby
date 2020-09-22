@@ -204,7 +204,8 @@
                 },
                 "warningPromptPopup": {
                     "title": "Pozor!",
-                    "description": "Nesprávne nastavenie pretaktovania môže viesť k nezvratnému poškodeniu hardvéru.",
+                    "description": "Pretaktovanie predstavuje zmenu továrenských špecifikácií počítača. Táto zmena môže spôsobiť zlyhanie alebo poškodenie počítača alebo komponentov a stratu údajov, na čo sa nevzťahuje pôvodná záruka výrobcu.",
+                    "description2": "Rozšírené možnosti pretaktovania sú len konfiguračné nástroje, ktoré nezaručujú výkon a stabilitu zariadenia po vykonaní konfigurácie. Pred použitím sa uistite, že máte požadované technické znalosti a poznáte príslušné riziká.",
                     "proceed": "POKRAČOVAŤ",
                     "legionAccessory": "Chcete nainštalovať aplikáciu Legion Accessory Central?",
                     "accessoryDesc": "Legion Accessory Central je aplikácia na konfiguráciu myši, klávesnice, slúchadiel atď."

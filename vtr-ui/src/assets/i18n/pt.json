@@ -204,7 +204,8 @@
                 },
                 "warningPromptPopup": {
                     "title": "Atenção!",
-                    "description": "Definições de Overclocking incorretas poderão causar danos irreversíveis no hardware.",
+                    "description": "Overclocking é uma alteração às especificações de fábrica do computador. A alteração pode causar o mau funcionamento ou danos no computador, ou nos seus componentes, bem como perda de dados, aos quais não é aplicável a garantia de fábrica original.",
+                    "description2": "As opções de Overclocking Avançado são apenas ferramentas de configuração que não garantem o desempenho e a estabilidade do dispositivo após a configuração. Certifique-se de que compreende os conhecimentos técnicos e os riscos relevantes antes de utilizá-las.",
                     "proceed": "CONTINUAR",
                     "legionAccessory": "Pretende instalar o Legion Accessory Central?",
                     "accessoryDesc": "O Legion Accessory Central é uma aplicação para configurar os seus acessórios Legion, como o rato, o teclado, os auscultadores, etc."

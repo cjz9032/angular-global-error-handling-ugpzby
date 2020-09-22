@@ -204,7 +204,8 @@
                 },
                 "warningPromptPopup": {
                     "title": "Varoitus!",
-                    "description": "Ylikellotuksen epäasianmukaiset asetukset saattavat aiheuttaa peruuttamatonta laitteistovahinkoa.",
+                    "description": "Ylikellotus on muutos tietokoneen tehdasmäärityksiin. Muutos saattaa aiheuttaa toimintahäiriöitä, vahingoittaa tietokonetta tai sen osia ja johtaa tietojen katoamiseen, eikä alkuperäinen valmistustakuu päde näihin ongelmiin.",
+                    "description2": "Ylikellotuksen lisäasetukset ovat vain määritystyökaluja, jotka eivät takaa laitteen suorituskykyä ja vakautta kokoonpanon jälkeen. Varmista, että sinulla on asianmukainen tekninen omaisuuden ja että ymmärrät riskit ennen käyttöä.",
                     "proceed": "JATKA",
                     "legionAccessory": "Haluatko asentaa Legion Accessory Central?",
                     "accessoryDesc": "Legion Accessory Central on sovellus, jolla voit hallita Legion-hiirtäsi, Legion-näppäimistöäsi, Legion-kuulokkeitasi jne."

@@ -318,6 +318,7 @@ export class ModalGamingThermalMode2Component implements OnInit {
     waringModalRef.componentInstance.info = {
         title : "gaming.dashboard.device.warningPromptPopup.title",
         description : "gaming.dashboard.device.warningPromptPopup.description",
+        description2 : "gaming.dashboard.device.warningPromptPopup.description2",
         comfirmButton : "gaming.dashboard.device.warningPromptPopup.proceed",
         cancelButton : "gaming.dashboard.device.legionEdge.driverPopup.link",
         comfirmButtonAriaLabel : "PROCEED",

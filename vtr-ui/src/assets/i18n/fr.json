@@ -204,7 +204,8 @@
                 },
                 "warningPromptPopup": {
                     "title": "Avertissement !",
-                    "description": "Des paramètres inadaptés du Surfréquençage peuvent entraîner des dégâts matériel irréversibles.",
+                    "description": "Le surcadençage est une modification apportée aux spécifications d'usine de l'ordinateur. La modification peut entraîner un dysfonctionnement ou des dégâts sur l'ordinateur ou les composants, ainsi qu'une perte de données, pour lesquels la garantie d'usine ne sera pas appliquée.",
+                    "description2": "Les options de surcadençage avancées ne sont que des outils de configuration qui ne garantissent pas les performances et la stabilité du périphérique après la configuration. Assurez-vous que vous comprenez les risques et possédez les connaissances techniques nécessaires avant de les utiliser.",
                     "proceed": "CONTINUER",
                     "legionAccessory": "Voulez-vous installer Legion Accessory Central ?",
                     "accessoryDesc": "Legion Accessory Central est une application permettant de configurer votre souris, votre clavier, vos écouteurs Legion, etc."
