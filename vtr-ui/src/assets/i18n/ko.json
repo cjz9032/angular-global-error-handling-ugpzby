@@ -745,7 +745,7 @@
                 "effectName5": "차가운 블루",
                 "effectName6": "오른쪽으로 움직이기",
                 "effectName7": "왼쪽으로 움직이기",
-                "effectName8": "RunningMode"
+                "effectName8": "바운스"
             },
             "lightingSpeed": {
                 "title": "속도"

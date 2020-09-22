@@ -745,7 +745,7 @@
                 "effectName5": "Hladi_plava",
                 "effectName6": "Pokret_nadesno",
                 "effectName7": "Pokret_nalevo",
-                "effectName8": "RunningMode"
+                "effectName8": "Odbijanje"
             },
             "lightingSpeed": {
                 "title": "Brzina"

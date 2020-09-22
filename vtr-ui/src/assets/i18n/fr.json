@@ -745,7 +745,7 @@
                 "effectName5": "Bleu_froid",
                 "effectName6": "Vague_droite",
                 "effectName7": "Vague_gauche",
-                "effectName8": "RunningMode"
+                "effectName8": "Renvoi"
             },
             "lightingSpeed": {
                 "title": "Vitesse"

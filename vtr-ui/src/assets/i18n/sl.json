@@ -745,7 +745,7 @@
                 "effectName5": "Hladna_modra",
                 "effectName6": "Valovanje_desno",
                 "effectName7": "Valovanje_levo",
-                "effectName8": "RunningMode"
+                "effectName8": "Poskakovanje"
             },
             "lightingSpeed": {
                 "title": "Hitrost"

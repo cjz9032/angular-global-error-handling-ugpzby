@@ -745,7 +745,7 @@
                 "effectName5": "Холодний_Синій",
                 "effectName6": "Хвиля_Праворуч",
                 "effectName7": "Хвиля_Ліворуч",
-                "effectName8": "RunningMode"
+                "effectName8": "Відмова"
             },
             "lightingSpeed": {
                 "title": "Швидкість"

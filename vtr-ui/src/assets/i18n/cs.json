@@ -745,7 +745,7 @@
                 "effectName5": "Studená_modrá",
                 "effectName6": "Mávnout_doprava",
                 "effectName7": "Mávnout_doleva",
-                "effectName8": "RunningMode"
+                "effectName8": "Odraz"
             },
             "lightingSpeed": {
                 "title": "Rychlost"
