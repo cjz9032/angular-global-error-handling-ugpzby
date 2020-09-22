@@ -48,7 +48,7 @@
 						[title]="'hardwareScan.recoverBadSectors.title' | translate"
 						[description]="'hardwareScan.recoverBadSectors.description' | translate"
 						[disable]="!hasDevicesToRecoverBadSectors() || disable()"
-						(buttonClicked)="onRecoverBadSectors()"
+						(rbsButtonClicked)="onRecoverBadSectors()"
 						[tooltipText]="('hardwareScan.recoverBadSectors.title' | translate)">
 					</vtr-widget-recover-bad-sectors>
 				</div>

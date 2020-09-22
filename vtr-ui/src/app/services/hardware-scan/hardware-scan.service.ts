@@ -1270,22 +1270,6 @@ export class HardwareScanService {
 		this.lastFilteredCustomScanResponse = JSON.parse(JSON.stringify(lastFilteredCustomScanResponse));
 	}
 
-	public setLastResponse(response: any) {
-		this.lastResponse = response;
-	}
-
-	public getLastResponse() {
-		return this.lastResponse;
-	}
-
-	public setProgress(progress: any) {
-		this.setProgress = progress;
-	}
-
-	public setCancelProcess(value: boolean) {
-		this.cancelRequested = value;
-	}
-
 	public getCurrentModule(): string {
 		for (const module of this.modules) {
 			if (module.resultCode == null) {

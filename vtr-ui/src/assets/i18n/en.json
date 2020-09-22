@@ -3972,7 +3972,8 @@
 			},
 			"waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded.",
 			"executingTitle": "Recovering now",
-			"recoverCompleted": "Recovery completed"
+			"recoverCompleted": "Recovery completed",
+			"modalTitle": "Please select the drive you want to recover"
 		},
 		"support": {
 			"title": "Download professional diagnostic tools",
