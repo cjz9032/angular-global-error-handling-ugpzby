@@ -122,9 +122,8 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 			this.updateMemoryInfo(memory);
 		});
 		const disk = new DeviceStatus();
-		// todo: translate
-		this.translate.stream('device.myDevice.diskspace.title').pipe(takeUntil(this.ngUnsubscribe)).subscribe(() => {
-			disk.title = 'Storage';
+		this.translate.stream('device.myDevice.storage').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+			disk.title = value;
 			disk.icon = this.storageIcon;
 			this.hwStatus[2] = disk;
 			this.updateDiskInfo();
@@ -132,14 +131,18 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		let index = 0;
 		if (this.configService.isSystemUpdateEnabled()){
 			const systemUpdate = new DeviceStatus();
-			systemUpdate.title = 'System Update';
+			this.translate.stream('device.myDevice.systemUpdate.title').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+				systemUpdate.title = value;
+			});
 			systemUpdate.icon = this.systemUpdateIcon;
 			this.swStatus[index++] = systemUpdate;
 			this.updateSUStatus(systemUpdate);
 		}
 		if (await this.configService.showSmartPerformance()){
 			const smartPerformance = new DeviceStatus();
-			smartPerformance.title = 'Smart Performance';
+			this.translate.stream('smartPerformance.title').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+				smartPerformance.title = value;
+			});
 			smartPerformance.icon = this.smartPerformanceIcon;
 			this.swStatus[index++] = smartPerformance;
 			this.updateSmartPerformanceStatus(smartPerformance);
@@ -165,7 +168,9 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 				type = '';
 			}
 			memory.link = 'ms-settings:about';
-			memory.subtitle = `Physical Memory ${type}`;
+			this.translate.stream('device.myDevice.physicalMemory').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+				memory.subtitle = `${value} ${type}`;
+			});
 			memory.icon = this.memoryIcon;
 			memory.used = this.commonService.formatBytes(used);
 			memory.total = this.commonService.formatBytes(total);
@@ -178,11 +183,11 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		const data = await this.hwInfo;
 		if (data){
 			const disks = data.disk.disks;
-			this.translate.stream('device.myDevice.diskspace.title').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+			this.translate.stream('device.myDevice.storage').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
 				let statusIndex = 2;
 				for (let i = 0, len  = disks.length; i < len; i++) {
 					const disk = new DeviceStatus();
-					disk.title = 'Storage';
+					disk.title = value;
 					disk.icon = this.storageIcon;
 					disk.link = 'ms-settings:storagesense';
 					disk.subtitle = `${disks[i].manufacturer || ''} ${disks[i].model}`;
@@ -202,9 +207,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 						const updateStatus = data.status;
 						const lastUpdate = data.lastupdate;
 						const diffInDays = this.systemUpdateService.dateDiffInDays(lastUpdate);
-						systemUpdate.title = 'System Update';
 						systemUpdate.link = 'device/system-updates';
-						systemUpdate.icon = this.systemUpdateIcon;
 						systemUpdate.showSepline = true;
 						if (updateStatus === 1) {
 							this.translate.stream('device.myDevice.systemUpdate.detail.uptoDate').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
@@ -233,10 +236,12 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		};
 		const response = await this.smartPerformanceService.getLastScanResult(lastScanResultRequest);
 		const scanRunTime = moment(response.scanruntime).format('l');
-		smartPerform.title = 'Smart Performance';
-		smartPerform.subtitle = 'Updates checked';
-		smartPerform.checkedDate = scanRunTime;
-		smartPerform.icon = this.smartPerformanceIcon;
+		if (response){
+			this.translate.stream('device.myDevice.scanned').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+				smartPerform.subtitle = value;
+			});
+			smartPerform.checkedDate = scanRunTime;
+		}
 		smartPerform.link = 'support/smart-performance';
 		smartPerform.showSepline = true;
 	}

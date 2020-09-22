@@ -2,13 +2,13 @@
 	<div class="device-brief col-12 d-flex">
 		<div class="device-brief-bios">
 			<p id="myDevice-machine-info">{{myDevice.family}}</p>
-			<p *ngFor="let item of [['myDevice-sn','Serical number:',myDevice.sn],['myDevice-productNo','Product number:',myDevice.productNo],['myDevice-bios','Bios version:',myDevice.bios]]"> 
+			<p *ngFor="let item of [['myDevice-sn','device.myDevice.serial',myDevice.sn],['myDevice-productNo','device.myDevice.productNumber',myDevice.productNo],['myDevice-bios','device.myDevice.biosVersion',myDevice.bios]]"> 
 				<span>
-					<span id="{{item[0]}}" role="text">{{item[1]}}</span>
+					<span id="{{item[0]}}" role="text">{{item[1]|translate}}:</span>
 					<span id="{{item[0]}}-value" role="text">{{item[2]}}</span>
 					<a  id="{{item[0]}}-copy-link" role="link" href="javascript:void(0)" (click)="copyClicked(item[1])"
 						metricsEvent="FeatureClick" metricsItem="CopyItem-{{item[1]}}" vtrMetrics>
-						Copy</a>
+						{{'device.myDevice.copy'|translate}}</a>
 				</span>
 			</p>
 		</div>
@@ -22,11 +22,11 @@
 			<div class="spinner-content p-0 d-none">
 				<div class="spinner-border" role="status"></div>
 			</div>
-			<span role="text" id="myDevice-overall-status-text" class="device-status-text">{{deviceStatus==1?'good condition':'maintenance needed'}}</span>
+			<span role="text" id="myDevice-overall-status-text" class="device-status-text">{{(deviceStatus==1?'device.myDevice.goodCondition':'device.myDevice.needAction')|translate}}</span>
 		</div>
 	</div>
 	
-	<vtr-ui-group-card class="device-detail col-12" [hostPage]="'DevicePage'" [title]="'Hardware Status'" [refreshButtonText]="'Refresh Modules'" (refreshClicked)="refreshClicked()">
+	<vtr-ui-group-card class="device-detail col-12" [hostPage]="'DevicePage'" [title]="'device.myDevice.hwStatus'|translate" [refreshButtonText]="'device.myDevice.refreshModules'|translate" (refreshClicked)="refreshClicked()">
 		<div class="container">
 			<div class="row">
 				<div class="device-detail-item device-detail-hw-item" *ngFor="let item of hwStatus">
@@ -36,7 +36,7 @@
 		</div>
 	</vtr-ui-group-card>
 
-	<vtr-ui-group-card class="device-detail col-12" [title]="'Software Status'" *ngIf="swStatus.length>0">
+	<vtr-ui-group-card class="device-detail col-12" [title]="'device.myDevice.swStatus'|translate" *ngIf="swStatus.length>0">
 		<div class="container">
 			<div class="row">
 				<div class="device-detail-item device-detail-sw-item" *ngFor="let item of swStatus">
