@@ -6,14 +6,19 @@
 				<span>
 					<span id="{{item[0]}}" role="text">{{item[1]}}</span>
 					<span id="{{item[0]}}-value" role="text">{{item[2]}}</span>
-					<a  id="{{item[0]}}-copy-link" role="link" href="javascript:void(0)" (click)="copyClicked(item[1])">Copy</a>
+					<a  id="{{item[0]}}-copy-link" role="link" href="javascript:void(0)" (click)="copyClicked(item[1])"
+						metricsEvent="FeatureClick" metricsItem="CopyItem-{{item[1]}}" vtrMetrics>
+						Copy</a>
 				</span>
 			</p>
 		</div>
-		<div role="button" id="myDevice-overall-status" class="device-brief-status d-flex align-items-center justify-content-center" (click)="onMaintanceClicked()" tabindex="1" (keydown.enter)="onMaintanceClicked()"
-				[ngClass]="{'device-status-loading':deviceStatus===0,
-							'device-status-good':deviceStatus===1,
-							'device-status-needaction':deviceStatus!=0&&deviceStatus!=1}">
+		<div role="button" id="myDevice-overall-status" 
+			class="device-brief-status d-flex align-items-center justify-content-center"
+			(click)="onMaintanceClicked()" tabindex="1" (keydown.enter)="onMaintanceClicked()"
+			metricsEvent="FeatureClick" metricsItem="Device-Overall-Status-{{deviceStatus}}" vtrMetrics
+			[ngClass]="{'device-status-loading':deviceStatus===0,
+						'device-status-good':deviceStatus===1,
+						'device-status-needaction':deviceStatus!=0&&deviceStatus!=1}">
 			<div class="spinner-content p-0 d-none">
 				<div class="spinner-border" role="status"></div>
 			</div>
@@ -21,7 +26,7 @@
 		</div>
 	</div>
 	
-	<vtr-ui-group-card class="device-detail col-12" [title]="'Hardware Status'" [refreshButtonText]="'Refresh Modules'" (refreshClicked)="refreshClicked()">
+	<vtr-ui-group-card class="device-detail col-12" [hostPage]="'DevicePage'" [title]="'Hardware Status'" [refreshButtonText]="'Refresh Modules'" (refreshClicked)="refreshClicked()">
 		<div class="container">
 			<div class="row">
 				<div class="device-detail-item device-detail-hw-item" *ngFor="let item of hwStatus">

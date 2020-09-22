@@ -22,7 +22,7 @@ $size500px-sw-show1col: "only screen and (min-width: 500px) and (max-width: 1200
 			p{
 				font-weight: bold;
 				font-size: 2.4rem;
-				display:table;
+				word-wrap: break-word;
 				&:not(:first-child){
 					font-size: 1.4rem;
 					&:before{
@@ -61,10 +61,15 @@ $size500px-sw-show1col: "only screen and (min-width: 500px) and (max-width: 1200
 		.device-brief-status{
 			margin-left: auto;
 			border-radius: 50%;
-			width: 14.2rem;
 			height: 14.2rem;
+			width: 14.2rem;
 			align-self: center;
 			margin-right: 5.6rem;
+			@media #{$size500px-hw-show1col} {
+				margin-right: 0.6rem;
+				min-height: 14.2rem;
+				min-width: 14.2rem;
+			}
 			text-transform: uppercase;
 			@media #{$black-on-white} {
 				border: 0.1rem solid;
@@ -91,6 +96,7 @@ $size500px-sw-show1col: "only screen and (min-width: 500px) and (max-width: 1200
 				overflow: hidden;
 				font-weight: bold;
 				text-overflow: ellipsis;
+				word-wrap: break-word;
 				display: -webkit-box;
 				-webkit-line-clamp: 2;
 				text-align: center;
