@@ -54,6 +54,9 @@
             font-size: 1.4rem;
             margin-bottom: 1rem;
             color: $lightText;
+            &.description-family{
+                font-family: none !important;
+            }
         }
     }
     .modal-footer {

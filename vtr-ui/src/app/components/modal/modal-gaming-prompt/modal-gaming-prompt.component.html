@@ -7,7 +7,7 @@
     </div>
     <div class="modal-body" tabindex="-1">
         <p role="text" [id]="info.id.description ? info.id.description : ''">{{info.description | translate }}</p>
-        <p role="text" class="detailed-description" id="save_change_dialog_oc_recovery_pressing_power_button" *ngIf="info.description2">{{info.description2 | translate }}</p>
+        <p role="text" class="detailed-description" [ngClass]="{'description-family':info.fontFamily}" [id]="info.id.description2 ? info.id.description2 : ''" *ngIf="info.description2">{{info.description2 | translate }}</p>
         <p role="text" class="detailed-description" id="save_change_dialog_oc_recovery_restoring_default_overclocking" *ngIf="info.description3">{{info.description3 | translate }}</p>
     </div>
     <div class="modal-footer">

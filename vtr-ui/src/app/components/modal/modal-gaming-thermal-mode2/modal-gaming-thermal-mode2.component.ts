@@ -38,9 +38,10 @@ export class ModalGamingThermalMode2Component implements OnInit {
 		section: 'thermal_mode_warning_dialog',
     headerText: 'warning_dialog_warning_text',
     description: 'warning_dialog_warning_description',
+    description2: 'warning_dialog_warning_description2',
 		closeButton : 'thermal_mode_warning_dialog_close_button',
 		cancelButton: 'thermal_mode_warning_dialog_cancel_button',
-		okButton: 'thermal_mode_warning_dialog_proceed_button'
+    okButton: 'thermal_mode_warning_dialog_proceed_button'
 	}
   constructor(
     private modalService: NgbModal,
@@ -323,6 +324,7 @@ export class ModalGamingThermalMode2Component implements OnInit {
         cancelButton : "gaming.dashboard.device.legionEdge.driverPopup.link",
         comfirmButtonAriaLabel : "PROCEED",
         cancelButtonAriaLabel : "CANCEL",
+        fontFamily : true,
         id : this.modalAutomationId
     };
     waringModalRef.componentInstance.emitService.subscribe((emmitedValue) => {
