@@ -961,7 +961,6 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 		img {
 			max-width: 100%;
 			height: auto;
-			margin-bottom: 3rem;
 			border: none;
 		}
 
@@ -1604,29 +1603,6 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	font-style: normal;
 }
 
-@font-face {
-	font-family: 'Material Icons';
-	font-style: normal;
-	font-weight: 400;
-	src: url(assets/fonts/MaterialIcons-Regular.woff) format('woff')
-}
-
-.material-icons {
-	font-family: 'Material Icons';
-	font-weight: normal;
-	font-style: normal;
-	font-size: 24px;
-	line-height: 1;
-	letter-spacing: normal;
-	text-transform: none;
-	display: inline-block;
-	white-space: nowrap;
-	word-wrap: normal;
-	direction: ltr;
-	-webkit-font-feature-settings: 'liga';
-	-webkit-font-smoothing: antialiased;
-}
-
 [data-icon]:before {
 	font-family: "smart-icons" !important;
 	content: attr(data-icon);
@@ -2027,6 +2003,7 @@ vtr-ui-smart-performance-scanning {
 
 .cancel-modal-hwscan {
 	.modal-dialog {
+		max-width: 50%;
 		margin: 0 auto;
 		@media #{$breakpoint_lg} {
 			max-width: 60%;
