@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
 import { HardwareScanService } from '../../../services/hardware-scan/hardware-scan.service';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 import { ContentActionType } from 'src/app/enums/content.enum';
-import { ModalHardwareScanRbsComponent } from '../../modal/modal-hardware-scan-rbs/modal-hardware-scan-rbs.component';
 
 @Component({
 	selector: 'vtr-page-hardware-scan',
@@ -36,15 +35,11 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 		private hardwareScanService: HardwareScanService,
 		private translate: TranslateService,
 		private router: Router,
-		private modalService: NgbModal,
 	) { }
 
 	ngOnInit() {
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
-		});
-		this.hardwareScanService.startRecoverFromFailed.subscribe((failedDevices) => {
-			this.onRecoverBadSectors(failedDevices);
 		});
 		this.routeSubscription = this.router.events.subscribe(() => this.observerURL());
 		this.initSupportCard();
@@ -87,31 +82,6 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 				this.hidePreviousResult = false;
 				this.isRBSDeviceSelectionPage = false;
 				break;
-		}
-	}
-
-	public onRecoverBadSectors(failedDevices = null) {
-		const modalRef = this.modalService.open(ModalHardwareScanRbsComponent, {
-			size: 'lg',
-			centered: true,
-		});
-
-		if (failedDevices !== null) {
-			modalRef.componentInstance.failedDevicesList = failedDevices;
-		}
-
-		modalRef.componentInstance.recoverStart.subscribe((devices) => {
-			this.startRecover(devices);
-		});
-	}
-
-	private startRecover(devices) {
-		if (this.hardwareScanService) {
-			this.hardwareScanService.setDevicesRecover(devices);
-			this.hardwareScanService.setRecoverInit(true);
-			this.hardwareScanService.setRecoverExecutionStatus(true);
-			this.hardwareScanService.setIsScanDone(false);
-			this.hardwareScanService.startRecover.emit();
 		}
 	}
 

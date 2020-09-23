@@ -1,4 +1,7 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { HardwareScanService } from 'src/app/services/hardware-scan/hardware-scan.service';
+import { ModalHardwareScanRbsComponent } from '../../modal/modal-hardware-scan-rbs/modal-hardware-scan-rbs.component';
 
 @Component({
 	selector: 'vtr-widget-recover-bad-sectors',
@@ -15,13 +18,39 @@ export class WidgetRecoverBadSectorsComponent implements OnInit {
 	@Input() tooltipText: string;
 	@Input() onClick: () => void;
 
-	@Output() rbsButtonClicked: EventEmitter<any> = new EventEmitter();
+	constructor(
+		private modalService: NgbModal,
+		private hardwareScanService: HardwareScanService
+	) { }
 
-	constructor() { }
+	ngOnInit() {
+		this.hardwareScanService.startRecoverFromFailed.subscribe((failedDevices) => {
+			this.onRecoverBadSectors(failedDevices);
+		});
+	 }
 
-	ngOnInit() { }
+	public onRecoverBadSectors(failedDevices = null) {
+		const modalRef =  this.modalService.open(ModalHardwareScanRbsComponent, {
+			size: 'lg',
+			centered: true,
+		});
 
-	public onRecoverButtonClick(): void {
-		this.rbsButtonClicked.emit();
+		if (failedDevices !== null) {
+			modalRef.componentInstance.failedDevicesList = failedDevices;
+		}
+
+		modalRef.componentInstance.recoverStart.subscribe((devices) => {
+			this.startRecover(devices);
+		});
+	}
+
+	private startRecover(devices) {
+		if (this.hardwareScanService) {
+			this.hardwareScanService.setDevicesRecover(devices);
+			this.hardwareScanService.setRecoverInit(true);
+			this.hardwareScanService.setRecoverExecutionStatus(true);
+			this.hardwareScanService.setIsScanDone(false);
+			this.hardwareScanService.startRecover.emit();
+		}
 	}
 }

@@ -87,9 +87,9 @@ export class ModalScanFailureComponent implements OnInit, OnDestroy {
 
 	// Goes to RBS page, passing defective device list to be selected when RBS page loads
 	goToRBSPage() {
+		this.closeModal();
 		this.hardwareScanService.startRecoverFromFailed.emit(this.failedRbsDevices);
 		this.hardwareScanService.clearLastResponse();
 		this.commonService.sendNotification(HardwareScanProgress.BackEvent);
-		this.closeModal();
 	}
 }
