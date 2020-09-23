@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Subscription } from 'rxjs';
 import { HardwareScanService } from 'src/app/services/hardware-scan/hardware-scan.service';
 import { ModalHardwareScanRbsComponent } from '../../modal/modal-hardware-scan-rbs/modal-hardware-scan-rbs.component';
 
@@ -8,8 +9,7 @@ import { ModalHardwareScanRbsComponent } from '../../modal/modal-hardware-scan-r
 	templateUrl: './widget-recover-bad-sectors.component.html',
 	styleUrls: ['./widget-recover-bad-sectors.component.scss']
 })
-export class WidgetRecoverBadSectorsComponent implements OnInit {
-
+export class WidgetRecoverBadSectorsComponent implements OnInit, OnDestroy {
 	@Input() widgetId: string;
 	@Input() title: string;
 	@Input() description: string;
@@ -18,15 +18,21 @@ export class WidgetRecoverBadSectorsComponent implements OnInit {
 	@Input() tooltipText: string;
 	@Input() onClick: () => void;
 
+	private recoverFromFailedSubscription: Subscription;
+
 	constructor(
 		private modalService: NgbModal,
 		private hardwareScanService: HardwareScanService
 	) { }
 
 	ngOnInit() {
-		this.hardwareScanService.startRecoverFromFailed.subscribe((failedDevices) => {
+		this.recoverFromFailedSubscription = this.hardwareScanService.startRecoverFromFailed.subscribe((failedDevices) => {
 			this.onRecoverBadSectors(failedDevices);
 		});
+	 }
+
+	 ngOnDestroy() {
+		this.recoverFromFailedSubscription.unsubscribe();
 	 }
 
 	public onRecoverBadSectors(failedDevices = null) {
