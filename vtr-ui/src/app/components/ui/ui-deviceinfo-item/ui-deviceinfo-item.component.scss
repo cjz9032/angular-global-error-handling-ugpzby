@@ -1,0 +1,163 @@
+@import "../../../app.theme";
+
+.ui-deviceinfo-item{
+   background-color:$grey_lighter;
+   width: 100%;
+   border-radius: $border_radius;
+   font-size: 1.4rem;
+   color: $grey_darker;   
+   position: relative;
+   height: 100%;
+   
+	@media #{$black-on-white} {
+		border: 0.1rem solid;
+	}
+
+	@media #{$white-on-black} {
+		border: 0.1rem solid;
+	}
+ 
+   .ui-deviceinfo-left{
+      padding: 1rem 0 0 2.4rem;
+      white-space: nowrap;
+      overflow: hidden;
+      span{
+         display: block;
+         overflow: hidden;
+         text-overflow: ellipsis;
+         margin-right: 1.2rem;
+         img{
+            width: 2.4rem;
+            height: 2.4rem;
+         }
+
+         &:nth-child(1){
+            font-size: 1.8rem;
+            p{
+               margin-left: 1.2rem;
+               display: inline;
+               vertical-align: middle;
+            }
+         }
+
+         &:nth-child(2){
+            margin-top: 1rem !important;
+         }
+      }
+   }
+
+   .ui-deviceinfo-sepline{
+      width: 1px;
+      height: 55.5%;
+      background-color:#e6e6e6;
+      align-self: center;
+   }
+
+   .spinner-content{
+      position: absolute;
+      color:$main_shade;
+      width: 100%;
+      height: 100%;
+      .spinner-border{
+         width: 2.5rem;
+         height: 2.5rem;
+      }
+      @include high-contrast-adjust;
+   }
+
+   .ui-deviceinfo-right{
+      margin-right: 2.6rem;
+      max-width: 40%;
+      span,p{
+			overflow: hidden;
+         text-overflow: ellipsis;
+         display: -webkit-box;
+         -webkit-line-clamp: 2;
+         text-align: center;
+         -webkit-box-orient: vertical;
+      }
+
+      .circle-border{
+         width: 10.8rem;
+     }
+
+      .circle-bg {
+          fill: none;
+          stroke: #dde3f0;
+          stroke-width: 2;
+      }
+
+      .circle {
+          fill: none;
+          stroke-width: 2;
+          stroke-linecap: round;
+          animation: progress .6s ease-out forwards;
+          stroke:$blue-lighter;
+      }
+
+      @keyframes progress {
+          0% {
+              stroke-dasharray: 0 100;
+          }
+      }
+
+      .percentage {
+          fill: $grey_darker;
+          font-size: 0.32em;
+          text-anchor: middle;
+          @media #{$black-on-white} {
+             fill: black;
+          }
+          @media #{$white-on-black} {
+            fill: white;
+          }
+      }
+      
+      .sw-checked-date{
+         margin-left: 2.4rem;
+      }
+
+   }
+
+   .ui-deviceinfo-overlay{
+      background: transparent linear-gradient(90deg, rgba(57,104,212,0.8) 0%, rgba(74,129,253,0.8) 100%) 0% 0% no-repeat padding-box !important;
+      opacity: 0;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top:0;
+      left:0;
+      border-radius: $border_radius;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover{
+         opacity: 1;
+      }
+
+      a {
+         font-size: $fontsize_xs;
+         cursor: pointer;
+         text-transform: uppercase;
+         color: white;
+         font-weight: bold;
+         vertical-align: middle;
+         span{
+            border-bottom: 2px solid white;
+            padding-bottom: 3px;
+            letter-spacing: 0.49px;
+         }
+
+         &:hover {
+            span{
+               border-bottom: 0;
+            }
+            text-decoration: none;
+         }
+     
+         fa-icon {
+            margin-left: 1rem;
+         }
+      }
+   }
+}

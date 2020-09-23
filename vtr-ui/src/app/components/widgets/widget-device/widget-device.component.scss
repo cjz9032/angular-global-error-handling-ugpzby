@@ -1,333 +1,179 @@
 @import "../../../app.theme";
 
+$size500px-hw-show1col: "only screen and (min-width: 500px) and (max-width: 800px)";
+$size800px-hw-show2col: "only screen and (min-width: 800px) and (max-width: 992px)";
+$size992px-hw-show1col: "only screen and (min-width: 992px) and (max-width: 1200px)";
+$size1200px-hw-show2col: "only screen and (min-width: 1200px)";
+$size500px-sw-show1col: "only screen and (min-width: 500px) and (max-width: 1200px)";
+
 .vtr-widget-device {
-	box-shadow: $drop_shadow;
-	border-radius: $border_radius;
-	background-color: $light;
-	overflow: hidden;
-	position: relative;
-
-	.my-dev-pad {
-		padding: 2.4rem;
-	}
-
-	.device-status {
-		@media #{$breakpoint_lg} {
-			flex-direction: row;
-		}
-
-		@media #{$breakpoint_md} {
-			flex-direction: row;
-		}
-
-		@media #{$breakpoint_sm} {
-			flex-direction: column;
-		}
-
-		.device-info {
-			flex-grow: 2;
-			max-width: 65%;
-			padding-right: 1rem;
-		}
-
-		.device-image {
-			display: flex;
-			justify-content: flex-end;
-			flex-grow: 1;
-			padding-top: 3rem;
-
-			@media #{$breakpoint_sm} {
-				justify-content: flex-start;
-
-			}
-
-			.circleimage {
-				width: 22.5rem;
-
-				img {
-					@media #{$white-on-black} {
-						@include white-border;
-					}
-
-					@media #{$black-on-white} {
-						@include black-border;
-					}
-				}
-			}
-
-			.lenovo-gaming-logo {
-				@media #{$black-on-white} {
-					filter: invert(100%);
-				}
-			}
-		}
-
-		.family {
-			color: $main_dark;
-			font-size: $fontsize_xl2;
-			// overflow: hidden;
-			// text-overflow: ellipsis;
-			// white-space: nowrap;
-			word-break: break-all;
-			font-weight: $weight_light;
-		}
-	}
-
-	.device-sub-header {
-		color: $shade_darkest;
-		font-size: $fontsize_xs;
-		font-weight: $weight_light;
-
-		@media #{$breakpoint_sm} {
-			font-size: 1.25rem !important;
-		}
-	}
-
-	.sub-header-separator {
-		color: $shade_darkest;
-		margin-left: 1.5rem;
-		margin-right: 1.5rem;
+	padding: 0 !important;
+	.device-brief{
+		box-shadow: $drop_shadow;
+		border-radius: $border_radius;
+		background: linear-gradient(102deg, #191C28 0%, #2F3447 100%) 0% 0% no-repeat;
+		height: 22rem;
+		color:white;
 		font-size: 1.4rem;
-
-		@media #{$mediaquery_X1} {
-			font-size: 1.25rem;
-		}
-	}
-
-	.subheader {
-		color: $main_dark;
-		font-size: $title;
-		margin-top: 4rem;
-		font-weight: $weight_bold;
-	}
-
-	.status-list {
-		margin-top: 2.7rem;
-		list-style: none;
-		padding: 0;
-		background-color: $light;
-		border: 0.1rem solid $shade_lightest;
-
-		li {
-			margin: 0;
-			padding: 3rem 1.3rem 3rem 0;
-			border-bottom: 1px solid $shade_lighter;
-
-			&:last-child {
-				border: none;
-			}
-
-			&:hover {
-				background-color: $shade_extralight;
-			}
-
-			&.good {
-				.status-icon {
-					.icon-bkg {
-						background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
-						background-color: $go_dark;
-						border-color: $go_dark;
-
-						@media #{$white-on-black} {
-							background: $light;
+		
+		.device-brief-bios{
+			padding-top: 2.2rem;
+			padding-left: 2.4rem;
+			p{
+				font-weight: bold;
+				font-size: 2.4rem;
+				word-wrap: break-word;
+				&:not(:first-child){
+					font-size: 1.4rem;
+					&:before{
+						content: "·";
+						vertical-align: sub;
+						font-size: 2.4rem;
+						padding-right: 1.6rem;
+						line-height: 0;
+					}
+					&>span{
+						&:hover{
+							background-color: #F7F8FA;
+							border-radius: 2.2rem;
+							color: #33495e;
+							padding: 0.2rem 1.2rem;
+							a{
+								display: inline;
+							}
 						}
-
-						@media #{$black-on-white} {
-							background: $dark;
+						span:nth-child(2){
+							font-weight: lighter;
+							margin-left: 0.3rem;;
+						}
+						a{
+							margin-left: 1rem;
+							font-weight: lighter;
+							text-decoration: underline;
+							color:$blue-lighter;
+							display: none;
 						}
 					}
 				}
-
-				.detail {
-					color: $charcoal;
-
-					/*  &.highlight {
-						color: $shade_darkest;
-					} */
-					.rtl {
-						display: flex;
-						flex-direction: row-reverse;
-					}
-				}
-			}
-
-			&.bad {
-				.status-icon {
-					.icon-bkg {
-						background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
-						background-color: $stop_dark;
-						border-color: $stop_dark;
-
-						@media #{$white-on-black} {
-							background: $light;
-						}
-
-						@media #{$black-on-white} {
-							background: $dark;
-						}
-					}
-				}
-
-				.detail {
-					color: $stop;
-				}
-
-				.arrow {
-					color: $stop;
-				}
-			}
-
-			a {
-				display: block;
-				padding: 0.2rem;
-
-				&:hover {
-					text-decoration: none;
-				}
-			}
-
-			.status-icon {
-				flex-grow: 0;
-				padding: 0 1rem;
-
-				@media #{$breakpoint_sm} {
-					flex-grow: 0;
-				}
-
-				.icon-bkg {
-					display: inline-block;
-					border-radius: 50%;
-					height: 3.3rem;
-					width: 3.3rem;
-					border-width: 0.3rem;
-					border-style: solid;
-					text-align: center;
-
-					fa-icon {
-						font-size: $fontsize_sm;
-						line-height: $fontsize_xl;
-						color: $light;
-
-						@media #{$black-on-white} {
-							color: $light;
-						}
-
-						@media #{$white-on-black} {
-							color: $dark;
-						}
-
-					}
-
-				}
-			}
-
-			.status-content {
-				flex-grow: 8;
-				// @media #{$breakpoint_xl} {
-				// 	flex-direction: column;
-				// 	flex-grow: 0;
-				// 	width: 100%;
-
-				// }
-				// @media #{$breakpoint_lg} {
-				// 	flex-direction: row;
-				// }
-				// @media #{$breakpoint_md} {
-				// 	flex-direction: column;
-				// 	flex-grow: 0;
-				// }
-				// @media #{$breakpoint_sm} {
-				// 	flex-direction: column;
-				// 	flex-grow: 0;
-				// }
-			}
-
-			.title {
-				font-size: $fontsize_sm;
-				font-weight: $weight_light;
-				margin-bottom: 0.5rem;
-				color: $charcoal;
-				width: 60%;
-
-				// @media #{$breakpoint_md} {
-				// 	width: 100%;
-				// }
-				// @media #{$breakpoint_sm} {
-				// 	width: 100%;
-				// }
-				.systemDetails {
-					font-size: $fontsize_xs;
-					font-weight: $weight_light;
-					color: $grey_dark;
-				}
-			}
-
-			.description {
-				font-size: 1.4rem;
-				color: $shade;
-			}
-
-			.detail {
-				font-size: $fontsize_xs;
-				text-decoration: underline;
-				font-weight: $weight_light;
-				white-space: nowrap;
-
-				&.highlight {
-					text-decoration: underline;
-
-					&:hover {
-						text-decoration: underline;
-					}
-
-					.rtl {
-						display: flex;
-						flex-direction: row-reverse;
-					}
-				}
-
-				fa-icon {
-					margin-left: 0.3rem;
-					position: relative;
-					top: .1em;
-					color: $menu_hover;
-				}
-
-				.rtl {
-					margin-right: 0.4rem;
-				}
-			}
-
-			.arrow {
-				color: $main_darker;
-				line-height: 3.8rem;
-				font-size: 1.1rem;
-				font-weight: $weight_light;
 			}
 		}
 
-	}
+		.device-brief-status{
+			margin-left: auto;
+			border-radius: 50%;
+			height: 14.2rem;
+			width: 14.2rem;
+			align-self: center;
+			margin-right: 5.6rem;
+			@media #{$size500px-hw-show1col} {
+				margin-right: 0.6rem;
+				min-height: 14.2rem;
+				min-width: 14.2rem;
+			}
+			text-transform: uppercase;
+			@media #{$black-on-white} {
+				border: 0.1rem solid;
+			}
+		
+			@media #{$white-on-black} {
+				border: 0.1rem solid;
+			}
+			&:hover{
+				cursor: pointer;
+			}
 
-	.device-sub-header .rtl {
-		display: inline-block;
-	}
+			.spinner-content{
+				@include high-contrast-adjust;
+			}
 
-	/*
-	.status-list li .row.rtl {
-		display: flex;
-		flex-direction: row-reverse;
-		.text-right{
-			text-align: left !important;
-			flex-grow: 8;
+			.spinner-border{
+				width: 3.2rem;
+				height: 3.2rem;
+			}
+
+			span{
+				font-size: 1.6rem;
+				overflow: hidden;
+				font-weight: bold;
+				text-overflow: ellipsis;
+				word-wrap: break-word;
+				display: -webkit-box;
+				-webkit-line-clamp: 2;
+				text-align: center;
+				letter-spacing: 0.49px;
+				width: 80%;
+				-webkit-box-orient: vertical;
+				box-shadow: 0px 0px 16px #2ECC7166;
+			}
 		}
-	}*/
+
+		.device-status-good{
+			background: linear-gradient(31deg, #2ECC71 0%, #35E6B9 100%) 0% 0% no-repeat;
+		}
+
+		.device-status-loading{
+			background: #2F3447 0% 0% no-repeat;
+			color:#4980FC;
+			.spinner-content{
+				display: block !important;
+			}
+			.device-status-text{
+				display: none;
+			}
+		}
+
+		.device-status-needaction{
+			background: linear-gradient(31deg, #DB591F 0%, #EB7200 100%) 0% 0% no-repeat;
+		}
+	}
+
+	.device-detail{
+		margin-top: 2.4rem;
+		padding: 0 !important;
+
+		.container{
+			padding: 0 !important;
+			margin: 0 !important;
+			max-width: 100rem;
+			.row{
+				padding: 1.6rem;
+			}
+		}
+
+		.device-detail-item{
+			padding: 0.8rem;
+			@media #{$size500px-hw-show1col} {
+				width: 100%;
+			};
+			@media #{$size800px-hw-show2col} {
+				width: 50%;
+			};
+			@media #{$size992px-hw-show1col} {
+				width: 100%;
+			};
+			@media #{$size1200px-hw-show2col} {
+				width: 50%;
+			};
+		}
+
+		.device-detail-hw-item{
+			height: 16rem;
+		}
+
+		.device-detail-sw-item{
+			height: 10.8rem;
+		}
+
+	}
 
 	@media #{$black-on-white} {
 		border: 0.1rem solid;
+		border-radius: $border_radius;
 	}
 
 	@media #{$white-on-black} {
 		border: 0.1rem solid;
+		border-radius: $border_radius; 
 	}
 
 }

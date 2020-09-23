@@ -579,6 +579,12 @@ export class ConfigService {
 		}
 	}
 
+	public isSystemUpdateEnabled(): boolean{
+		return this.adPolicyService.IsSystemUpdateEnabled
+				&& !this.deviceService.isSMode
+				&& !this.deviceService.isArm;
+	}
+
 	async showNewFeatureTipsWithMenuItems() {
 		const welcomeTutorial = await this.localCacheService.getLocalCacheValue(LocalStorageKey.WelcomeTutorial);
 		if (!welcomeTutorial || !welcomeTutorial.isDone || window.innerWidth < 1200) {

@@ -42,6 +42,9 @@ import { SpinnerModule } from 'src/app/components/common/spinner/spinner.module'
 import { UiRoundedRectangleCustomRadioListModule } from 'src/app/components/ui/ui-rounded-rectangle-custom-radio-list/ui-rounded-rectangle-custom-radio-list.module';
 import { UiCircleRadioWithCheckBoxListModule } from 'src/app/components/ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.module';
 import { SafePipeModule } from 'safe-pipe';
+import {UiGroupCardComponent} from 'src/app/components/ui/ui-group-card/ui-group-card.component';
+import {UiDeviceinfoItemComponent} from 'src/app/components/ui/ui-deviceinfo-item/ui-deviceinfo-item.component';
+import { faRedo } from '@fortawesome/free-solid-svg-icons/faRedo';
 
 @NgModule({
 	declarations: [
@@ -67,7 +70,9 @@ import { SafePipeModule } from 'safe-pipe';
 		UiDpmDropdownComponent,
 		UiDpmEnergyComponent,
 		UiBrightnessSliderComponent,
-		UiAddReduceButtonComponent
+		UiAddReduceButtonComponent,
+		UiGroupCardComponent,
+		UiDeviceinfoItemComponent
 	],
 	exports: [
 		UiCheckboxComponent,
@@ -98,6 +103,8 @@ import { SafePipeModule } from 'safe-pipe';
 		UiCustomSwitchModule,
 		UiRoundedRectangleCustomRadioListModule,
 		UiCircleRadioWithCheckBoxListModule,
+		UiGroupCardComponent,
+		UiDeviceinfoItemComponent,
 	],
 	imports: [
 		CommonModule,
@@ -126,5 +133,6 @@ export class CommonUiModule {
 		library.addIcons(falChevronDown);
 		library.addIcons(falChevronUp);
 		library.addIcons(faChevronUp);
+		library.addIcons(faRedo);
 	}
 }

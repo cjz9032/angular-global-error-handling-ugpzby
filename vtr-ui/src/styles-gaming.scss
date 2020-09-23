@@ -235,53 +235,26 @@
 	}
 	//styles added for my device page
 	.container-fluid {
-		vtr-widget-device {
-			.vtr-widget-device {
+		.vtr-widget-device {
+			.device-brief{
 				background: $gaming_darkest !important;
-				.family {
-					color: $gaming_lightest !important;
-				}
-				.device-sub-header {
-					color: $gaming_grey_lightest;
-				}
-				.sub-header-separator {
-					color: $gaming_grey_lightest;
-				}
-				.subheader {
-					color: $gaming_lightest;
-				}
-				.status-list {
-					background-color: $gaming-bg !important;
-					border: none;
-					li {
-						border-bottom: 1px solid $gaming-Darkslate-blue !important;
-						.title {
-							color: $gaming_lightest !important;
-							.systemDetails {
-								color: $gaming_lightest !important;
-							}
-						}
-						&:hover {
-							background-color: $darkPopup !important;
-						}
-						&.good {
-							.title {
-								color: $gaming_lightest;
-							}
-							.systemDetails {
-								color: $gaming_lightest;
-							}
-							.detail {
-								color: $gaming_lightest !important;
-							}
-						}
-						.description {
-							color: $shade;
-						}
-						.arrow {
-							color: $gaming_lightest;
-						}
-					}
+			}
+		}
+
+		.ui-group-card{
+			background: $gaming_darkest;
+		}
+		
+		.group-card-sperate-line{
+			background-color: $gaming_bg !important;
+		}
+
+		.ui-deviceinfo-item{
+			background-color: $gaming_bg;
+			color: white;
+			.ui-deviceinfo-right{
+				.percentage {
+					fill: white !important;
 				}
 			}
 		}

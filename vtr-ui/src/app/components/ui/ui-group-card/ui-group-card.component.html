@@ -1,0 +1,16 @@
+<div class="ui-group-card">
+    <div class="ui-group-header d-flex">
+        <p id="group-card-title" class="m-0" innerHTML="{{title}}"></p>
+        <div class="ml-auto" >
+            <a id="group-card-refesh" role="button" href="javascript:void(0)" *ngIf="!!refreshButtonText" (click)="onRefreshClicked()" tabindex="1"
+               metricsEvent="FeatureClick" metricsItem="refresh-{{title}}" vtrMetrics>
+               {{refreshButtonText}}<fa-icon class="ml-2 mr-2" [icon]="['fal', 'redo']"></fa-icon>
+            </a>
+        </div>
+    </div>
+    <div class="group-card-sperate-line"></div>
+    <div>
+        <ng-content></ng-content>
+    </div>
+</div>
+
