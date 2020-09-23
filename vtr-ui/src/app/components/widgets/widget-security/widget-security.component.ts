@@ -25,41 +25,23 @@ export class WidgetSecurityComponent implements OnInit, DoCheck {
 	];
 	securityLevelInfo = [
 		{
-			status: 'security.landing.noProtection',
 			title: 'security.landing.noProtection',
 			desc: 'security.landing.noProtectionDesc',
 		},
 		{
-			status: 'security.landing.basic',
 			title: 'security.landing.basicTitle',
 			desc: 'security.landing.basicDesc',
 		},
 		{
-			status: 'security.landing.intermediate',
 			title: 'security.landing.intermediateTitle',
 			desc: 'security.landing.intermediateDesc',
 		},
 		{
-			status: 'security.landing.advanced',
 			title: 'security.landing.advancedTitle',
 			desc: 'security.landing.advancedDesc',
 		}
 	];
-	colors = [
-		{
-			start: '#FF5B4D',
-			end: '#DB221F'
-		}, {
-			start: '#EAB029',
-			end: '#F0D662'
-		}, {
-			start: '#346CEF',
-			end: '#2955BC'
-		}, {
-			start: '#00A886',
-			end: '#00893A'
-		}
-	];
+
 
 	constructor(
 		public modalService: NgbModal,
@@ -81,10 +63,7 @@ export class WidgetSecurityComponent implements OnInit, DoCheck {
 	}
 
 	updateSecurityStatus() {
-		this.gradient = new GradientColor();
-		this.gradient.startColor = this.colors[this.statusItem.status].start;
-		this.gradient.endColor = this.colors[this.statusItem.status].end;
-		this.gradient.percent = Math.floor(this.statusItem.percent * 100);
+		this.gradient = new GradientColor(this.statusItem.status, this.statusItem.percent);
 	}
 
 	fetchCMSArticleCategory() {

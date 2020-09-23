@@ -70,20 +70,8 @@
 						</vtr-container-card>
 					</div>
 					<div class="custom-card col-12 col-md-6 col-lg-12 col-xl-6 pb-20 card-right">
-						<!-- <vtr-container-card-state [cardData]="securityData"
+						<vtr-container-card
 							order=3
-							cardId="dashboard-lnk-security">
-							<div class="position-relative circle-container security-card">
-								<div class="circle-box d-flex justify-content-center" >
-									<vtr-widget-svg-circle [gradientColor]="gradientColor"></vtr-widget-svg-circle>
-								</div>
-								<div class="circle-desc text-white">
-									<p class="text-two-ellipsis" [innerHTML]="'security.landing.level' | translate"></p>
-									<b class="text-ellipsis text-uppercase" [innerHTML]="securityLevelStatus"></b>
-								</div>
-							</div>
-						</vtr-container-card-state> -->
-						<vtr-container-card order=3
 							[item]="contentCards.positionC.displayContent"
 							[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && contentCards.positionC.displayContent.isLocal)"
 							[type]="'corner'"

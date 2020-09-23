@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, DoCheck } from '@angular/core';
+import { Component, OnInit, Input, DoCheck, AfterViewChecked } from '@angular/core';
 import { GradientColor } from 'src/app/data-models/security-advisor/gradient-color.model';
 
 @Component({
@@ -6,7 +6,7 @@ import { GradientColor } from 'src/app/data-models/security-advisor/gradient-col
   templateUrl: './widget-svg-circle.component.html',
   styleUrls: ['./widget-svg-circle.component.scss']
 })
-export class WidgetSvgCircleComponent implements OnInit, DoCheck {
+export class WidgetSvgCircleComponent implements OnInit, DoCheck, AfterViewChecked {
 	@Input() gradientColor: GradientColor;
 	@Input() colorStep = 100;
 	@Input() fill = '#2F3447';
@@ -18,13 +18,24 @@ export class WidgetSvgCircleComponent implements OnInit, DoCheck {
 
 	ngOnInit() {
 		this.updateStatus();
-		this.oldGradientPercent = this.gradientColor.percent;
-		this.oldColor = this.gradientColor.startColor;
+		if (this.gradientColor) {
+			this.oldGradientPercent = this.gradientColor.percent;
+			this.oldColor = this.gradientColor.startColor;
+		}
 	}
 
 	ngDoCheck(): void {
-		if (!this.oldGradientPercent || this.gradientColor.percent !== this.oldGradientPercent || this.gradientColor.startColor !== this.oldColor) {
-			this.oldGradientPercent = this.gradientColor.percent;
+		if (this.gradientColor) {
+			if (this.gradientColor.percent !== this.oldGradientPercent || this.gradientColor.startColor !== this.oldColor) {
+				this.oldGradientPercent = this.gradientColor.percent;
+				this.updateStatus();
+			}
+		}
+	}
+
+	ngAfterViewChecked() {
+		const lineTags = document.getElementsByTagNameNS('http://www.w3.org/2000/svg', 'rect') ? document.getElementsByTagNameNS('http://www.w3.org/2000/svg', 'rect') : [];
+		if (lineTags.length === 0) {
 			this.updateStatus();
 		}
 	}
