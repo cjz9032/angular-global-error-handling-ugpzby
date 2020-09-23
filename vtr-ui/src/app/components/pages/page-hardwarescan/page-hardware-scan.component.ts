@@ -27,7 +27,6 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 	routeSubscription: Subscription;
 	currentRouter: any;
 	hidePreviousResult = false;
-	isRBSDeviceSelectionPage = false;
 
 	constructor(
 		public deviceService: DeviceService,
