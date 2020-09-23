@@ -76,11 +76,9 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 		switch (page) {
 			case 'view-results':
 				this.hidePreviousResult = true;
-				this.isRBSDeviceSelectionPage = false;
 				break;
 			default:
 				this.hidePreviousResult = false;
-				this.isRBSDeviceSelectionPage = false;
 				break;
 		}
 	}

@@ -13,10 +13,8 @@ export class WidgetRecoverBadSectorsComponent implements OnInit, OnDestroy {
 	@Input() widgetId: string;
 	@Input() title: string;
 	@Input() description: string;
-	@Input() recoverPath: string;
 	@Input() disable = false;
 	@Input() tooltipText: string;
-	@Input() onClick: () => void;
 
 	private recoverFromFailedSubscription: Subscription;
 
