@@ -585,8 +585,8 @@ export class ConfigService {
 				&& !this.deviceService.isArm;
 	}
 
-	showNewFeatureTipsWithMenuItems() {
-		const welcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
+	async showNewFeatureTipsWithMenuItems() {
+		const welcomeTutorial = await this.localCacheService.getLocalCacheValue(LocalStorageKey.WelcomeTutorial);
 		if (!welcomeTutorial || !welcomeTutorial.isDone || window.innerWidth < 1200) {
 			this.localCacheService.setLocalCacheValue(LocalStorageKey.NewFeatureTipsVersion, this.commonService.newFeatureVersion);
 			return;
