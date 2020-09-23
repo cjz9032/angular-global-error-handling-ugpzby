@@ -23,8 +23,18 @@
 			</div>
 			<div class="col px-0 text-white absolute-lnk d-flex align-items-end
 				justify-content-start justify-content-md-center justify-content-lg-start justify-content-xl-center">
-				<span class="link text-uppercase" [innerHTML]="cardData.linkText | translate"></span>
-				<fa-icon class="link-arrow ml-3" [icon]="['fas', 'arrow-right']"></fa-icon>
+				<button
+					mat-flat-button
+					tabindex="-1"
+					class="link-button link text-white text-uppercase p-0 m-0"
+					[innerHTML]="cardData.linkText | translate"
+				></button>
+				<button mat-icon-button
+					tabindex="-1"
+					class="m-0 text-white"
+					[disableRipple]="true">
+					<mat-icon>arrow_forward</mat-icon>
+				</button>
 			</div>
 		</div>
 	</a>

@@ -47,14 +47,23 @@
 			line-height: 2rem;
 		}
 
-		.link {
+		.link-button {
 			font-size: $fontsize_xs;
 			font-weight: $weight_bold;
 			border-bottom: 0.1rem solid $light;
+			min-width: initial;
+			line-height: 1.5;
+			border-radius: 0;
 		}
 
-		.link-arrow {
-			font-size: $fontsize_xs;
+		.mat-icon-button {
+			height: auto;
+			line-height: 1;
+			.mat-icon {
+				font-size: $fontsize_lg;
+				line-height: 1;
+				height: 2rem;
+			}
 		}
 
 		.absolute-lnk {

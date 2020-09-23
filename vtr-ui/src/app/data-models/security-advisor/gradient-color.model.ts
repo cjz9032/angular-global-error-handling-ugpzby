@@ -1,5 +1,25 @@
 export class GradientColor {
-	startColor: string;
-	endColor: string;
-	percent: number;
+	public startColor: string;
+	public endColor: string;
+	public percent = 0;
+	private colors = [
+		{
+			start: '#FF5B4D',
+			end: '#DB221F'
+		}, {
+			start: '#EAB029',
+			end: '#F0D662'
+		}, {
+			start: '#346CEF',
+			end: '#2955BC'
+		}, {
+			start: '#00A886',
+			end: '#00893A'
+		}
+	];
+	constructor(status: number, percent: number) {
+		this.startColor = this.colors[status].start;
+		this.endColor = this.colors[status].end;
+		this.percent = Math.floor(percent * 100);
+	}
 }

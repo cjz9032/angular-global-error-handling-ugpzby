@@ -837,7 +837,8 @@
 			"to": "to",
 			"clickToChange": "click to change",
 			"failedLoad": "Failed to load",
-			"retry": "Retry"
+			"retry": "Retry",
+			"improveNow": "improve now"
 		},
 		"app-update": {
 			"message": "Hey! A newer version of Vantage is available, do you want to load it?"
@@ -963,6 +964,13 @@
 					"update": "Update"
 				}
 			}
+		},
+		"securityStatus": {
+			"loadingDesc": "Detecting security information now…",
+			"noProtectionDesc": "Your device has no security protection",
+			"basicDesc": "Your device is not fully protected yet",
+			"intermediateDesc": "Your computer has intermediate security protection enabled",
+			"advancedDesc": "Your computer has advanced security protection enabled"
 		},
 		"heroBanner": "Hero banner"
 	},

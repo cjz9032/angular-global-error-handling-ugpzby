@@ -49,22 +49,4 @@
 		padding-right: 0;
 	}
 
-	.security-card {
-		.circle-desc {
-			width: 12rem;
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			margin-left: -6rem;
-			margin-top: -2rem;
-			text-align: center;
-			p {
-				font-size: $fontsize_sm;
-				line-height: 1.1;
-			}
-			b {
-				font-size: $fontsize_xs2;
-			}
-		}
-	}
 }

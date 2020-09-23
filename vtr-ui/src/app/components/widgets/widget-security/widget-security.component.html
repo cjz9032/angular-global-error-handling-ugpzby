@@ -3,15 +3,11 @@
 		<div class="row security-background">
 			<div class="status-container row d-flex flex-nowrap align-items-start mb-3">
 				<div class="left-container">
-					<div class="position-relative">
-						<div class="circle-box d-flex justify-content-center" >
-							<vtr-widget-svg-circle [gradientColor]="gradient"></vtr-widget-svg-circle>
-						</div>
-						<div class="circle-desc">
-							<p class="text-two-ellipsis" [innerHTML]="'security.landing.level' | translate"></p>
-							<b class="text-ellipsis text-uppercase" [innerHTML]="securityLevelInfo[statusItem?.status].status | translate"></b>
-						</div>
-					</div>
+					<vtr-widget-status-circle
+						[gradientColor]="gradient"
+						[status]="statusItem.status"
+						[isAbsolute]="true">
+					</vtr-widget-status-circle>
 				</div>
 				<div class="side">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 237.17">
