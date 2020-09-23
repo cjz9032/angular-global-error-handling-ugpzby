@@ -1801,7 +1801,7 @@
                     "caption": "Tähdellä varustetun näppäimen avulla voit määrittää käyttäjän määrittämän toiminnon.",
                     "dropDown": {
                         "title": "Käyttäjän määrittämän näppäimen toiminto",
-                        "note": "Huomautus: Tämän avulla voit kirjoittaa usein kirjoitetun tekstin, kuten sähköpostiosoitteen tai postiosoitteen. Älä koskaan käytä tätä toimintoa salasanojen tai muiden yksityisten tietojen tallentamiseen.",
+                        "note": "Huomautus: Tämän avulla voit syöttää usein käytettyjä merkkijonoja, kuten sähköpostiosoitteen tai postiosoitteen. Älä koskaan käytä tätä toimintoa salasanojen tai muiden yksityisten tietojen tallentamiseen.",
                         "options": {
                             "option1": "Valitse",
                             "option2": "Avaa verkkosivusto",

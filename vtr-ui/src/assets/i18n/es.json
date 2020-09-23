@@ -1801,7 +1801,7 @@
                     "caption": "La tecla representada por el icono de la estrella le permite establecer la función definida por el usuario.",
                     "dropDown": {
                         "title": "Acción de la tecla definida por el usuario",
-                        "note": "Nota: esto se puede utilizar para ingresar la tecla comúnmente ingresada, como direcciones de correo electrónico o postales. No utilice nunca esta característica para almacenar contraseñas o cualquier otra información privada.",
+                        "note": "Nota: esto se puede utilizar para ingresar las cadenas comunes, como direcciones de correo electrónico o postales. No utilice nunca esta característica para almacenar contraseñas o cualquier otra información privada.",
                         "options": {
                             "option1": "Seleccione",
                             "option2": "Sitio web abierto",

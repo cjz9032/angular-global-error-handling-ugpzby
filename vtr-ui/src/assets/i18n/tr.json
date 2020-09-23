@@ -1801,7 +1801,7 @@
                     "caption": "Yıldız simgesiyle temsil edilen tuş, kullanıcı tanımlı işlevi belirlemenize olanak sağlar.",
                     "dropDown": {
                         "title": "Kullanıcı Tanımlı Tuş İşlemi",
-                        "note": "Not: E-posta veya normal posta adresi gibi sık kullanılan metinleri girmek için kullanılabilir. Bu özelliği hiçbir zaman parolaları veya diğer özel bilgileri saklamak için kullanmayın.",
+                        "note": "Not: E-posta veya normal posta adresi gibi yaygın dizeleri girmek için kullanılabilir. Bu özelliği hiçbir zaman parolaları veya diğer özel bilgileri saklamak için kullanmayın.",
                         "options": {
                             "option1": "Lütfen seçin:",
                             "option2": "Web sitesini aç",

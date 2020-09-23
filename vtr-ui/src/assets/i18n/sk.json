@@ -1801,7 +1801,7 @@
                     "caption": "Klávesu s ikonou hviezdy môžete priradiť funkciu definovanú používateľom.",
                     "dropDown": {
                         "title": "Kláves s akciou definovanou používateľom",
-                        "note": "Poznámka: pomocou tejto funkcie môžete vkladať bežne zadávaný text, napríklad e-mailové alebo poštové adresy. Túto funkciu nikdy nepoužívajte na ukladanie hesiel alebo iných súkromných údajov.",
+                        "note": "Poznámka: Pomocou tejto funkcie môžete vkladať bežné reťazce, napríklad e-mailové alebo poštové adresy. Túto funkciu nikdy nepoužívajte na ukladanie hesiel alebo iných súkromných údajov.",
                         "options": {
                             "option1": "Vyberte",
                             "option2": "Otvorte webovú stránku",

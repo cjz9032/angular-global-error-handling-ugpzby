@@ -1801,7 +1801,7 @@
                     "caption": "Met de toets met het sterpictogram kunt u de door de gebruiker gedefinieerde functie instellen.",
                     "dropDown": {
                         "title": "Actie van de door de gebruiker gedefinieerde toets",
-                        "note": "Opmerking: dit kan worden gebruikt om veelgebruikte toetsenreeksen in te voeren, zoals een e-mail- of postadres. Gebruik deze functie nooit om wachtwoorden of andere persoonlijke informatie op te slaan.",
+                        "note": "Opmerking: dit kan worden gebruikt om veelgebruikte tekenreeksen in te voeren, zoals een e-mail- of postadres. Gebruik deze functie nooit om wachtwoorden of andere persoonlijke informatie op te slaan.",
                         "options": {
                             "option1": "Maak een keuze",
                             "option2": "Open de website",

@@ -1801,7 +1801,7 @@
                     "caption": "Den tast, der er repræsenteret ved stjerneikonet, giver dig mulighed for at indstille en brugerdefineret funktion.",
                     "dropDown": {
                         "title": "Handling for brugerdefineret tast",
-                        "note": "Bemærk: Denne kan bruges til at skrive almindelig tekst, f.eks. e-mail- eller postadresser. Brug aldrig denne funktion til at gemme adgangskoder eller andre private oplysninger.",
+                        "note": "Bemærk: Denne kan bruges til at angive en almindelig streng, f.eks. e-mail- eller postadresser. Brug aldrig denne funktion til at gemme adgangskoder eller andre private oplysninger.",
                         "options": {
                             "option1": "Vælg",
                             "option2": "Åben hjemmeside",

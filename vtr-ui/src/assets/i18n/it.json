@@ -1801,7 +1801,7 @@
                     "caption": "Il tasto rappresentato dall'icona a forma di stella consente di impostare la funzione definita dall'utente.",
                     "dropDown": {
                         "title": "Azione del tasto definito dall'utente",
-                        "note": "Nota: può essere utilizzato per immettere tasti comuni, come indirizzi e-mail o postali. Non utilizzare questa funzione per memorizzare le password o altre informazioni private.",
+                        "note": "Nota: può essere utilizzato per immettere stringhe comuni, come indirizzi e-mail o postali. Non utilizzare questa funzione per memorizzare le password o altre informazioni private.",
                         "options": {
                             "option1": "Selezionare",
                             "option2": "Apri sito Web",

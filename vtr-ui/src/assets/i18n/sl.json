@@ -1801,7 +1801,7 @@
                     "caption": "Za tipko, označeno z ikono zvezdice, lahko določite svojo funkcijo.",
                     "dropDown": {
                         "title": "Dejanje za uporabniško določeno tipko",
-                        "note": "Opomba: to lahko uporabite za vnos pogosto uporabljenega besedila, kot so e-poštni ali poštni naslovi. Te funkcije nikoli ne uporabljajte za shranjevanje gesel ali drugih zasebnih podatkov.",
+                        "note": "Opomba: to lahko uporabite za vnos pogosto uporabljenih nizov, kot so e-poštni ali poštni naslovi. Te funkcije nikoli ne uporabljajte za shranjevanje gesel ali drugih zasebnih podatkov.",
                         "options": {
                             "option1": "Prosimo, izberite",
                             "option2": "Odprite spletno stran",

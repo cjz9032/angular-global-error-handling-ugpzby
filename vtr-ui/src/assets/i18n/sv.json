@@ -1801,7 +1801,7 @@
                     "caption": "Med hjälp av tangenten med stjärnikonen kan du ställa in användardefinierade funktioner.",
                     "dropDown": {
                         "title": "Funktion användardefinierad tangent",
-                        "note": "Obs! Detta kan användas för att ange tangenter som ofta används, till exempel e-postadresser eller postadresser. Använd aldrig denna funktion för att lagra lösenord eller annan privat information.",
+                        "note": "Obs! Detta kan användas för att skriva vanliga textsträngar, till exempel e-postadresser och postadresser. Använd aldrig denna funktion för att lagra lösenord eller annan privat information.",
                         "options": {
                             "option1": "Välj",
                             "option2": "Öppna hemsidan",

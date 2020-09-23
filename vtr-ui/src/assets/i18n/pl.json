@@ -1801,7 +1801,7 @@
                     "caption": "Do klawisza z ikoną gwiazdki można przypisać funkcję zdefiniowaną przez użytkownika.",
                     "dropDown": {
                         "title": "Działanie klawisza zdefiniowanego przez użytkownika",
-                        "note": "Uwaga: może służyć do wprowadzania często wpisywanych tekstów, takich jak adresy e-mail lub adresy pocztowe. Nigdy nie używaj tej funkcji do przechowywania haseł ani innych prywatnych informacji.",
+                        "note": "Uwaga: może służyć do wprowadzania ciągów zwykłego tekstu, takich jak adresy e-mail lub adresy pocztowe. Nigdy nie używaj tej funkcji do przechowywania haseł ani innych prywatnych informacji.",
                         "options": {
                             "option1": "Wybierz",
                             "option2": "Otwórz stronę internetową",

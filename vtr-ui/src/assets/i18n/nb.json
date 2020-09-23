@@ -1801,7 +1801,7 @@
                     "caption": "Tasten som representeres med stjerneikonet, lar deg angi en brukerdefinert funksjon.",
                     "dropDown": {
                         "title": "Handling ved brukerdefinert tast",
-                        "note": "Merk: Dette kan brukes til å angi ofte brukt informasjon, som for eksempel e-postadresser eller postadresser. Du må aldri bruke denne funksjonen til å lagre passord eller privat informasjon.",
+                        "note": "Merk: Dette kan brukes til å angi ofte brukte strenger, som for eksempel e-postadresser eller postadresser. Du må aldri bruke denne funksjonen til å lagre passord eller privat informasjon.",
                         "options": {
                             "option1": "Vennligst velg",
                             "option2": "Åpen nettside",

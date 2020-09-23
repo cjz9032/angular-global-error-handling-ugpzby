@@ -1801,7 +1801,7 @@
                     "caption": "A csillag ikonnal rendelkező billentyűhöz a felhasználó tetszőleges funkciót rendelhet.",
                     "dropDown": {
                         "title": "Felhasználó által megadott billentyűhöz tartozó művelet",
-                        "note": "Megjegyzés: Itt adhat meg általánosan megadott kulcsot, pl. e-mail-címet vagy levelezési címet. Ne használja ezt a funkciót jelszavak vagy más személyes adatok tárolására.",
+                        "note": "Megjegyzés: Itt adhat meg általánosan használt karaktersorokat, például e-mail-címet vagy levelezési címet. Ne használja ezt a funkciót jelszavak vagy más személyes adatok tárolására.",
                         "options": {
                             "option1": "Válasszon",
                             "option2": "Nyissa meg a webhelyet",

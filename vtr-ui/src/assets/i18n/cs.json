@@ -1801,7 +1801,7 @@
                     "caption": "Této klávese, označené ikonou hvězdy, můžete přiřadit funkci podle svého přání.",
                     "dropDown": {
                         "title": "Akce při stisku uživatelem definované klávesy",
-                        "note": "Poznámka: Tuto funkci lze použít k zadání často používaného textu – například e-mailové či poštovní adresy. Tuto funkci nikdy nepoužívejte k ukládání hesel nebo jiných soukromých informací.",
+                        "note": "Poznámka: Tuto funkci lze použít k zadání často používaných řetězců – například e-mailové či poštovní adresy. Tuto funkci nikdy nepoužívejte k ukládání hesel nebo jiných soukromých informací.",
                         "options": {
                             "option1": "Proveďte výběr",
                             "option2": "Otevřete webové stránky",
