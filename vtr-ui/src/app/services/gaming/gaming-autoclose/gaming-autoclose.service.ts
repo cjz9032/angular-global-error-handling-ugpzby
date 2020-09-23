@@ -1,9 +1,9 @@
 import { AutoCloseNeedToAsk } from './../../../data-models/gaming/autoclose/autoclose-need-to-ask.model';
 import { VantageShellService } from './../../vantage-shell/vantage-shell.service';
 import { Injectable } from '@angular/core';
-import { CommonService } from '../../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { AutoCloseStatus } from 'src/app/data-models/gaming/autoclose/autoclose-status.model';
+import { LocalCacheService } from '../../local-cache/local-cache.service';
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +18,9 @@ export class GamingAutoCloseService {
 		FeatureImage: 'assets/cms-cache/Security4x3-zone2.jpg'
 	};
 
-  constructor(private shellService: VantageShellService,
-	            private commonService: CommonService) {
+  constructor(
+	  private shellService: VantageShellService,
+	  private localCacheService: LocalCacheService) {
 	this.gamingAutoClose = shellService.getGamingAutoClose();
 	if (this.gamingAutoClose) {
 		this.isShellAvailable = true;
@@ -116,29 +117,29 @@ export class GamingAutoCloseService {
 
   // Auto close  status changes
   setAutoCloseStatusCache(status: any) {
-	this.commonService.setLocalStorageValue(LocalStorageKey.AutoCloseStatus, status);
+	this.localCacheService.setLocalCacheValue(LocalStorageKey.AutoCloseStatus, status);
   }
 
   getAutoCloseStatusCache() {
-	return this.commonService.getLocalStorageValue(LocalStorageKey.AutoCloseStatus);
+	return this.localCacheService.getLocalCacheValue(LocalStorageKey.AutoCloseStatus);
   }
 
   // Need to ask status changes
 
   setNeedToAskStatusCache(askStatusChanges: any) {
-	this.commonService.setLocalStorageValue(LocalStorageKey.NeedToAsk, askStatusChanges);
+	this.localCacheService.setLocalCacheValue(LocalStorageKey.NeedToAsk, askStatusChanges);
   }
 
   getNeedToAskStatusCache() {
-	return this.commonService.getLocalStorageValue(LocalStorageKey.NeedToAsk);
+	return this.localCacheService.getLocalCacheValue(LocalStorageKey.NeedToAsk);
   }
 
   setAutoCloseListCache(processList: any) {
-	this.commonService.setLocalStorageValue(LocalStorageKey.AutoCloseList, processList);
+	this.localCacheService.setLocalCacheValue(LocalStorageKey.AutoCloseList, processList);
   }
 
   getAutoCloseListCache() {
-	return this.commonService.getLocalStorageValue(LocalStorageKey.AutoCloseList);
+	return this.localCacheService.getLocalCacheValue(LocalStorageKey.AutoCloseList);
   }
 
 }

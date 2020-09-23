@@ -15,6 +15,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { GamingThermalModeService } from 'src/app/services/gaming/gaming-thermal-mode/gaming-thermal-mode.service';
 import { GuardService } from 'src/app/services/guard/guardService.service';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { WifiSecurityService } from 'src/app/services/security/wifi-security.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
@@ -168,7 +169,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 	}
 	wsStateEventHandler = (value) => {
 		if (value) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, value);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityWifiSecurityState, value);
 			if (this.wifiSecurity.isLocationServiceOn !== undefined) {
 				if (value === 'enabled' && this.wifiSecurityService.isLWSEnabled === true) {
 					this.quickSettings[2].isChecked = true;
@@ -206,6 +207,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 		private gamingCapabilityService: GamingAllCapabilitiesService,
 		private gamingThermalModeService: GamingThermalModeService,
 		private commonService: CommonService,
+		private localCacheService: LocalCacheService,
 		public shellServices: VantageShellService,
 		private audioService: AudioService,
 		private powerService: PowerService,
@@ -292,9 +294,9 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 		if (status !== undefined) {
 			// setting previous value to localstorage
 			const regThermalModePreValue = this.GetThermalModeCacheStatus();
-			this.commonService.setLocalStorageValue(LocalStorageKey.PrevThermalModeStatus, regThermalModePreValue);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.PrevThermalModeStatus, regThermalModePreValue);
 			// setting current value to local storage
-			this.commonService.setLocalStorageValue(LocalStorageKey.CurrentThermalModeStatus, status);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.CurrentThermalModeStatus, status);
 			// updating model with current value
 			this.thermalModeStatusObj.thermalModeStatus = status;
 			// UI binding with current value
@@ -334,11 +336,11 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 	}
 
 	public GetThermalModeCacheStatus(): any {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.CurrentThermalModeStatus, 2);
+		return this.localCacheService.getLocalCacheValue(LocalStorageKey.CurrentThermalModeStatus, 2);
 	}
 
 	public GetThermalModePrevCacheStatus(): any {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.PrevThermalModeStatus);
+		return this.localCacheService.getLocalCacheValue(LocalStorageKey.PrevThermalModeStatus);
 	}
 
 	public async renderThermalModeStatus() {
@@ -348,7 +350,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 				const thermalModeStatus = await this.gamingThermalModeService.getThermalModeSettingStatus();
 				if (thermalModeStatus !== undefined) {
 					this.drop.curSelected = thermalModeStatus;
-					this.commonService.setLocalStorageValue(
+					this.localCacheService.setLocalCacheValue(
 						LocalStorageKey.CurrentThermalModeStatus,
 						this.drop.curSelected
 					);
@@ -374,10 +376,10 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 						this.drop.curSelected = this.setThermalModeStatus.thermalModeStatus;
 						// updating the previous local cache value with last value of current local cache value
 						const previousValue = this.GetThermalModeCacheStatus();
-						this.commonService.setLocalStorageValue(LocalStorageKey.PrevThermalModeStatus, previousValue);
+						this.localCacheService.setLocalCacheValue(LocalStorageKey.PrevThermalModeStatus, previousValue);
 						try {
 							// updating the current local cache value
-							this.commonService.setLocalStorageValue(
+							this.localCacheService.setLocalCacheValue(
 								LocalStorageKey.CurrentThermalModeStatus,
 								this.drop.curSelected
 							);
@@ -412,7 +414,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 					if (this.quickSettings[3].isVisible !== res.available || this.quickSettings[3].isChecked !== res.isAudioProfileEnabled) {
 						this.quickSettings[3].isVisible = res.available;
 						this.quickSettings[3].isChecked = res.isAudioProfileEnabled;
-						this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, res);
+						this.localCacheService.setLocalCacheValue(LocalStorageKey.DolbyAudioToggleCache, res);
 					}
 				} else {
 					this.logger.error(`Widget-quicksettingslist-getDolbySettings: return value: ${res}; dolby.visible keep ${this.quickSettings[3].isVisible}, dolby.checked keep ${this.quickSettings[3].isChecked}`);
@@ -432,9 +434,9 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 				if (res) {
 					this.logger.info(`Widget-quicksettingslist-setDolbySettings: return value: ${res}, dolbyMode from ${this.quickSettings[3].isChecked} to: ${value}`);
 					this.quickSettings[3].isChecked = value;
-					const dolbyAudioCache: DolbyModeResponse = this.commonService.getLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache);
+					const dolbyAudioCache: DolbyModeResponse = this.localCacheService.getLocalCacheValue(LocalStorageKey.DolbyAudioToggleCache);
 					dolbyAudioCache.isAudioProfileEnabled = value;
-					this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, dolbyAudioCache);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.DolbyAudioToggleCache, dolbyAudioCache);
 				} else {
 					this.quickSettings[3].isChecked = !value;
 					this.logger.error(`Widget-quicksettingslist-setDolbySettings: return value: ${res}, dolbyMode from ${this.quickSettings[3].isChecked} to: ${value}`);
@@ -469,7 +471,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 	}
 
 	public updateWifiSecurityState(state = false) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.WifiSecurityCache, state);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.WifiSecurityCache, state);
 		this.quickSettings[2].isVisible = state;
 		this.checkQuickSettingsVisibility();
 	}
@@ -523,7 +525,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 	public initialiseDolbyCache() {
 		try {
 			// version 3.3 update due to dolby api modification
-			const dolbyAudioCache: DolbyModeResponse = this.commonService.getLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache);
+			const dolbyAudioCache: DolbyModeResponse = this.localCacheService.getLocalCacheValue(LocalStorageKey.DolbyAudioToggleCache);
 			if (dolbyAudioCache) {
 				this.quickSettings[3].isVisible = dolbyAudioCache.available;
 				this.quickSettings[3].isChecked = dolbyAudioCache.isAudioProfileEnabled;
@@ -534,8 +536,8 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 	}
 
 	public initializeWifiSecCache() {
-		const cacheWifiSecurityState = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
-		const status = this.commonService.getLocalStorageValue(LocalStorageKey.WifiSecurityCache);
+		const cacheWifiSecurityState = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityWifiSecurityState);
+		const status = this.localCacheService.getLocalCacheValue(LocalStorageKey.WifiSecurityCache);
 		cacheWifiSecurityState === 'enabled' ? (this.quickSettings[2].isChecked = true) : (this.quickSettings[2].isChecked = false);
 		status === true ? (this.quickSettings[2].isVisible = true) : (this.quickSettings[2].isVisible = false);
 	}
@@ -543,7 +545,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 	public async initialiseRapidChargeSettings() {
 		try {
 			const rapidChargeSettings: FeatureStatus = await this.powerService.getRapidChargeModeStatusIdeaNoteBook();
-			this.commonService.setLocalStorageValue(LocalStorageKey.RapidChargeCache, rapidChargeSettings);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.RapidChargeCache, rapidChargeSettings);
 			this.quickSettings[1].isVisible = rapidChargeSettings.available || false;
 			this.quickSettings[1].isChecked = rapidChargeSettings.status || false;
 		} catch (err) {
@@ -556,7 +558,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 		try {
 			const isRapidChargeStatusUpdated = await this.powerService.setRapidChargeModeStatusIdeaNoteBook(status);
 			if (isRapidChargeStatusUpdated) {
-				this.commonService.setLocalStorageValue(LocalStorageKey.RapidChargeCache, {
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.RapidChargeCache, {
 					available: this.quickSettings[1].isVisible,
 					status
 				});
@@ -569,7 +571,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 	}
 
 	public initialiseRapidChargeCache() {
-		const { available, status } = this.commonService.getLocalStorageValue(LocalStorageKey.RapidChargeCache, {
+		const { available, status } = this.localCacheService.getLocalCacheValue(LocalStorageKey.RapidChargeCache, {
 			available: false,
 			status: false
 		});
@@ -623,9 +625,9 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 			this.logger.info(`Widget-quicksettingslist-handleDolbyChangeEvent: return value: ${dolbyModeResponse}, dolbyMode from ${this.quickSettings[3].isChecked} to: ${dolbyModeResponse.isAudioProfileEnabled}`);
 			if (dolbyModeResponse.isAudioProfileEnabled !== this.quickSettings[3].isChecked) {
 				this.quickSettings[3].isChecked = dolbyModeResponse.isAudioProfileEnabled;
-				const dolbyAudioCache: DolbyModeResponse = this.commonService.getLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache);
+				const dolbyAudioCache: DolbyModeResponse = this.localCacheService.getLocalCacheValue(LocalStorageKey.DolbyAudioToggleCache);
 				dolbyAudioCache.isAudioProfileEnabled = dolbyModeResponse.isAudioProfileEnabled;
-				this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, dolbyAudioCache);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.DolbyAudioToggleCache, dolbyAudioCache);
 			}
 		} else {
 			this.logger.error(`Widget-quicksettingslist-handleDolbyChangeEvent: wrong response: ${dolbyModeResponse}`);

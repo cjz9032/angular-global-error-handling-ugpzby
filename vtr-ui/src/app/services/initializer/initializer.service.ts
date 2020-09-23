@@ -21,13 +21,17 @@ export class InitializerService {
 
 	initialize(): Promise<any> {
 		this.commonService.setSessionStorageValue(SessionStorageKey.FirstPageLoaded, false);
-		this.initializeAntivirus();
-		return Promise.all([this.deviceService.initIsArm()]);
+		return Promise.all([
+			this.deviceService.initIsArm(),
+			this.localCacheService.loadCacheValues().then(() => {
+				this.initializeAntivirus();
+			})
+		]);
 	}
 
-	async initializeAntivirus() {
+	initializeAntivirus() {
 		if (this.vantageShellService.isShellAvailable) {
-			const segment: SegmentConst = await this.localCacheService.getLocalCacheValue(LocalStorageKey.LocalInfoSegment);
+			const segment: SegmentConst = this.localCacheService.getLocalCacheValue(LocalStorageKey.LocalInfoSegment);
 			if (segment && segment !== SegmentConst.Commercial && segment !== SegmentConst.Gaming && !this.deviceService.isArm && !this.deviceService.isSMode) {
 				const securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 				if (securityAdvisor && securityAdvisor.antivirus) {

@@ -80,9 +80,9 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	) {
 	}
 
-	async ngOnInit() {
-		this.commonService.checkPowerPageFlagAndHide();
-		this.machineType = await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType);
+	ngOnInit() {
+		this.batteryService.checkPowerPageFlagAndHide();
+		this.machineType = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType);
 		this.batteryService.getBatterySettings();
 		if (this.machineType === 1) {
 			this.initDataFromCache();
@@ -90,7 +90,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 				this.getKBDLayoutName();
 			}
 			// udk capability
-			const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, undefined);
+			const inputAccessoriesCapability: InputAccessoriesCapability = this.localCacheService.getLocalCacheValue(LocalStorageKey.InputAccessoriesCapability, undefined);
 			if (inputAccessoriesCapability) {
 				this.hasUDKCapability = inputAccessoriesCapability.isUdkAvailable;
 			}
@@ -163,7 +163,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 
 	initHiddenKbdFnFromCache() {
 		try {
-			this.inputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, undefined);
+			this.inputAccessoriesCapability = this.localCacheService.getLocalCacheValue(LocalStorageKey.InputAccessoriesCapability, undefined);
 			this.logger.error('initHiddenKbdFnFromCache capability from cache', this.inputAccessoriesCapability);
 			if (this.inputAccessoriesCapability) {
 				this.cacheFound = true;
@@ -184,7 +184,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 				this.keyboardService.GetAllCapability().then((response => {
 					this.keyboardCompatibility = (response != null && Object.keys(response).indexOf('keyboardMapCapability') !== -1) ? response.keyboardMapCapability : false;
 					this.inputAccessoriesCapability.isKeyboardMapAvailable = this.keyboardCompatibility;
-					this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, this.inputAccessoriesCapability);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.InputAccessoriesCapability, this.inputAccessoriesCapability);
 					if (!this.cacheFound && this.keyboardCompatibility) {
 						this.getKBDLayoutName();
 					}
@@ -220,7 +220,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 			if (this.keyboardService.isShellAvailable) {
 				this.keyboardService.GetKBDLayoutName().then((value: any) => {
 					this.inputAccessoriesCapability.keyboardLayoutName = value;
-					this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, this.inputAccessoriesCapability);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.InputAccessoriesCapability, this.inputAccessoriesCapability);
 					if (value) {
 						this.getKBDMachineType(value);
 						// fnAsCtrl feature hidden in 3.2.001
@@ -246,7 +246,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 					this.getKeyboardMap(layOutName, value);
 					this.inputAccessoriesCapability.image = this.image;
 					this.inputAccessoriesCapability.keyboardVersion = this.keyboardVersion;
-					this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, this.inputAccessoriesCapability);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.InputAccessoriesCapability, this.inputAccessoriesCapability);
 					this.getAdditionalCapabilities();
 				})
 					.catch(error => {
@@ -312,7 +312,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 							backLight: response[3],
 						};
 						this.inputAccessoriesCapability.additionalCapabilitiesObj = this.additionalCapabilitiesObj;
-						this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, this.inputAccessoriesCapability);
+						this.localCacheService.setLocalCacheValue(LocalStorageKey.InputAccessoriesCapability, this.inputAccessoriesCapability);
 					}
 				});
 			}

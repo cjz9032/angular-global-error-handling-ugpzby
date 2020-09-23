@@ -11,6 +11,7 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { Router } from '@angular/router';
 import { FeatureIntroduction } from '../../ui/ui-feature-introduction/ui-feature-introduction.component';
 import { TranslateService } from '@ngx-translate/core';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
 	selector: 'vtr-page-security-internet',
@@ -30,6 +31,7 @@ export class PageSecurityInternetComponent implements OnInit, OnDestroy {
 	constructor(
 		private cmsService: CMSService,
 		private commonService: CommonService,
+		private localCacheService: LocalCacheService,
 		public vantageShellService: VantageShellService,
 		private guard: GuardService,
 		private router: Router
@@ -50,7 +52,7 @@ export class PageSecurityInternetComponent implements OnInit, OnDestroy {
 
 		};
 		this.vpn = this.securityAdvisor.vpn;
-		const cacheStatus: string = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityVPNStatus);
+		const cacheStatus: string = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityVPNStatus);
 		if (cacheStatus) {
 			this.statusItem.status = cacheStatus;
 			this.getFeatureIntro(this.statusItem.status);
@@ -58,12 +60,12 @@ export class PageSecurityInternetComponent implements OnInit, OnDestroy {
 		if (this.vpn && this.vpn.status) {
 			this.statusItem.status = this.vpn.status;
 			this.getFeatureIntro(this.statusItem.status);
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityVPNStatus, this.statusItem.status);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityVPNStatus, this.statusItem.status);
 		}
 		this.vpn.on(EventTypes.vpnStatusEvent, (status: string) => {
 			this.statusItem.status = status;
 			this.getFeatureIntro(this.statusItem.status);
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityVPNStatus, this.statusItem.status);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityVPNStatus, this.statusItem.status);
 		});
 		this.fetchCMSArticles();
 

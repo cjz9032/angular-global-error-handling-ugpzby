@@ -150,7 +150,7 @@ describe('Component: SmartStandby', () => {
 			smartStandby.isCapable = true;
 			smartStandbyComponent.smartStandby = smartStandby;
 
-			// commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, smartStandby);
+			// this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartStandbyCapability, smartStandby);
 			spyOn(commonService, 'getLocalStorageValue').and.returnValue(smartStandby);
 			// smartStandbyComponent.cache = new SmartStandby();
 			const spy = spyOn(smartStandbyComponent, 'updateScheduleComputerModesUIModel');
@@ -167,7 +167,7 @@ describe('Component: SmartStandby', () => {
 			const commonService = fixture.debugElement.injector.get(CommonService); */
 			const { fixture, smartStandbyComponent, powerService, commonService } = setup();
 			const data = new SmartStandby();
-			// commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, undefined);
+			// this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartStandbyCapability, undefined);
 			spyOn(commonService, 'getLocalStorageValue').and.returnValue(undefined);
 			smartStandbyComponent.initDataFromCache();
 			expect(smartStandbyComponent.cache).toEqual(data);
@@ -186,7 +186,7 @@ describe('Component: SmartStandby', () => {
 
 			// smartStandbyComponent.cache.isCapable = false;
 			// smartStandbyComponent.smartStandby = smartStandbyComponent.cache;
-			// commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, smartStandby);
+			// this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartStandbyCapability, smartStandby);
 			// spyOn(commonService, 'getLocalStorageValue').and.returnValue(smartStandbyComponent.cache);
 			smartStandbyComponent.initDataFromCache();
 			expect(smartStandbyComponent.smartStandby.isEnabled).toEqual(smartStandbyComponent.cache.isEnabled);
@@ -200,7 +200,7 @@ describe('Component: SmartStandby', () => {
 			smartStandbyComponent.smartStandby = smartStandby;
 
 			spyOn(commonService, 'getLocalStorageValue').and.returnValue(smartStandby);
-			// commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, smartStandby);
+			// this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartStandbyCapability, smartStandby);
 			// smartStandbyComponent.cache = new SmartStandby();
 			const spy = spyOn(smartStandbyComponent.smartStandbyCapability, 'emit');
 			smartStandbyComponent.initDataFromCache();

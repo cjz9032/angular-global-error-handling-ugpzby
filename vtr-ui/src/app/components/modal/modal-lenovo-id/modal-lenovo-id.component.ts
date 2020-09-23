@@ -11,6 +11,7 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { ssoErroType } from 'src/app/enums/lenovo-id-key.enum';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import AES from 'crypto-js/aes';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
 	selector: 'vtr-modal-lenovo-id',
@@ -38,6 +39,7 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 		private devService: DevService,
 		private vantageShellService: VantageShellService,
 		private commonService: CommonService,
+		private localCacheService: LocalCacheService,
 		private modalService: NgbModal
 	) {
 		this.isBroswerVisible = false;
@@ -167,7 +169,7 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 					const lastname = (el.querySelector('#lastname') as HTMLInputElement).value;
 					if (firstname && userguid) {
 						const encryptedFirstName = AES.encrypt(firstname, userguid).toString();
-						this.commonService.setLocalStorageValue(LocalStorageKey.LidUserFirstName, encryptedFirstName);
+						this.localCacheService.setLocalCacheValue(LocalStorageKey.LidUserFirstName, encryptedFirstName);
 					}
 					// Default to enable SSO after login success
 					this.userService.enableSSO(useruad, username, userid, userguid).then(result => {

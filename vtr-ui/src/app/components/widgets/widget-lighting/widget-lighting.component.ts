@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
 	selector: 'vtr-widget-lighting',
@@ -37,10 +38,11 @@ export class WidgetLightingComponent implements OnInit {
 		private ngZone: NgZone,
 		private gamingLightingService: GamingLightingService,
 		private commonService: CommonService,
+		private localCacheService: LocalCacheService,
 		private deviceService: DeviceService,
 		public shellServices: VantageShellService,
 		private logger: LoggerService
-	) { 
+	) {
 		this.profileChangeEvent = this.setProfileEvent.bind(this);
 	}
 
@@ -68,14 +70,14 @@ export class WidgetLightingComponent implements OnInit {
 	}
 
 	public getCapabilities() {
-		this.ledSetFeature = this.commonService.getLocalStorageValue(LocalStorageKey.ledSetFeature);
-		this.ledDriver = this.commonService.getLocalStorageValue(LocalStorageKey.ledDriver);
-		this.ledlayoutversion = this.commonService.getLocalStorageValue(LocalStorageKey.ledLayoutVersion);
-		this.ledSwitchButtonFeature = this.commonService.getLocalStorageValue(LocalStorageKey.LedSwitchButtonFeature);
+		this.ledSetFeature = this.localCacheService.getLocalCacheValue(LocalStorageKey.ledSetFeature);
+		this.ledDriver = this.localCacheService.getLocalCacheValue(LocalStorageKey.ledDriver);
+		this.ledlayoutversion = this.localCacheService.getLocalCacheValue(LocalStorageKey.ledLayoutVersion);
+		this.ledSwitchButtonFeature = this.localCacheService.getLocalCacheValue(LocalStorageKey.LedSwitchButtonFeature);
 
 		if (this.ledSetFeature) {
 			if (LocalStorageKey.ProfileId !== undefined) {
-				this.setprofId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId) || 0;
+				this.setprofId = this.localCacheService.getLocalCacheValue(LocalStorageKey.ProfileId) || 0;
 			}
 			this.getLightingProfileId();
 		}
@@ -105,11 +107,11 @@ export class WidgetLightingComponent implements OnInit {
 					this.profileId = response.profileId;
 					if (!this.didSuccess) {
 						if (LocalStorageKey.ProfileId !== undefined) {
-							this.setprofId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId) || 0;
+							this.setprofId = this.localCacheService.getLocalCacheValue(LocalStorageKey.ProfileId) || 0;
 						}
 					} else {
 						if (LocalStorageKey.ProfileId !== undefined) {
-							this.commonService.setLocalStorageValue(LocalStorageKey.ProfileId, this.profileId);
+							this.localCacheService.setLocalCacheValue(LocalStorageKey.ProfileId, this.profileId);
 						}
 						this.setprofId = this.profileId;
 					}
@@ -139,7 +141,7 @@ export class WidgetLightingComponent implements OnInit {
 						this.didSuccess = response.didSuccess;
 						if (this.didSuccess) {
 							if (LocalStorageKey.ProfileId !== undefined) {
-								this.commonService.setLocalStorageValue(LocalStorageKey.ProfileId, response.profileId);
+								this.localCacheService.setLocalCacheValue(LocalStorageKey.ProfileId, response.profileId);
 							}
 							if (!this.isPopupVisible) {
 								this.setprofId = response.profileId;
@@ -169,7 +171,7 @@ export class WidgetLightingComponent implements OnInit {
 			if (this.setprofId === profileId) { return; }
 			this.setprofId = profileId;
 			if (this.setprofId !== undefined) {
-				this.commonService.setLocalStorageValue(LocalStorageKey.ProfileId, this.setprofId);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.ProfileId, this.setprofId);
 			}
 		});
 	}

@@ -124,7 +124,7 @@ export class SelfSelectService {
 	}
 
 	private async initialize() {
-		let config = await this.localCacheService.getLocalCacheValue(LocalStorageKey.ChangedSelfSelectConfig);
+		let config = this.localCacheService.getLocalCacheValue(LocalStorageKey.ChangedSelfSelectConfig);
 		this.machineInfo = await this.deviceService.getMachineInfo();
 		this.userProfileEnabled = this.checkUserProfileEnabled();
 		if (!config

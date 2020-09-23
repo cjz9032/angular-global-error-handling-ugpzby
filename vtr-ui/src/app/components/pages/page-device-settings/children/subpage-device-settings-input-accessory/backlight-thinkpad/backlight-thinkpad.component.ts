@@ -61,8 +61,8 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 		}, 30000);
 	}
 
-	private async initDataFromCache() {
-		this.cacheData =  await this.localCacheService.getLocalCacheValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData);
+	private initDataFromCache() {
+		this.cacheData =  this.localCacheService.getLocalCacheValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData);
 		this.modes = this.cacheData.modes;
 		this.currentMode = this.cacheData.currentMode;
 		this.isAutoKBDEnable = this.cacheData.isAutoKBDEnable;
@@ -76,7 +76,7 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 	// public async updateMode(mode) {
 	// 	this.currentMode = mode;
 	// 	this.cacheData.currentMode = this.currentMode;
-	// 	this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData)
+	// 	this.localCacheService.setLocalCacheValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData)
 	// 	if (this.currentMode === BacklightStatusEnum.AUTO) {
 	// 		await this.setKBDBacklightStatus(BacklightStatusEnum.OFF);
 	// 		this.setAutomaticKBDBacklight(false);

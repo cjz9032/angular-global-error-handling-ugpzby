@@ -46,38 +46,37 @@ export class WarrantyService {
 						if (machineInfo && machineInfo.serialnumber) {
 							this.setWarrantyUrl(machineInfo.serialnumber);
 						}
-						this.localCacheService.getLocalCacheValue(LocalStorageKey.LastWarrantyStatus).then((cacheWarranty) => {
-							// from local storage
-							if (cacheWarranty && cacheWarranty.version > 0) {
-								cacheWarranty.dayDiff = this.getDayDiff(cacheWarranty.startDate, cacheWarranty.endDate);
-								observer.next(cacheWarranty);
-							}
+						const cacheWarranty = this.localCacheService.getLocalCacheValue(LocalStorageKey.LastWarrantyStatus);
+						// from local storage
+						if (cacheWarranty && cacheWarranty.version > 0) {
+							cacheWarranty.dayDiff = this.getDayDiff(cacheWarranty.startDate, cacheWarranty.endDate);
+							observer.next(cacheWarranty);
+						}
 
-							// machineInfo.serialnumber = 'MP1FCJBF';
-							// 'PC0G9X77' 'R9T6M3E' 'R90HTPEU' 'MP1FCJBF' machineInfo.serialnumber
-							this.warranty.getWarrantyInformation(machineInfo.serialnumber).then(
-								(result) => {
-									if (result) {
-										warrantyResult.endDate = new Date(result.endDate);
-										warrantyResult.status = result.status;
-										warrantyResult.startDate = new Date(result.startDate);
-										warrantyResult.version = 1;
-									}
-									if (!(cacheWarranty && cacheWarranty.status !== WarrantyStatus.WarrantyNotFound && warrantyResult.status === WarrantyStatus.WarrantyNotFound)) {
-										warrantyResult.dayDiff = this.getDayDiff(warrantyResult.startDate, warrantyResult.endDate);
-										this.localCacheService.setLocalCacheValue(LocalStorageKey.LastWarrantyStatus, warrantyResult);
-										observer.next(warrantyResult);
-									}
-									observer.complete();
-								},
-								() => {
-									if (!cacheWarranty) {
-										observer.next(warrantyResult);
-									}
-									observer.complete();
+						// machineInfo.serialnumber = 'MP1FCJBF';
+						// 'PC0G9X77' 'R9T6M3E' 'R90HTPEU' 'MP1FCJBF' machineInfo.serialnumber
+						this.warranty.getWarrantyInformation(machineInfo.serialnumber).then(
+							(result) => {
+								if (result) {
+									warrantyResult.endDate = new Date(result.endDate);
+									warrantyResult.status = result.status;
+									warrantyResult.startDate = new Date(result.startDate);
+									warrantyResult.version = 1;
 								}
-							);
-						});
+								if (!(cacheWarranty && cacheWarranty.status !== WarrantyStatus.WarrantyNotFound && warrantyResult.status === WarrantyStatus.WarrantyNotFound)) {
+									warrantyResult.dayDiff = this.getDayDiff(warrantyResult.startDate, warrantyResult.endDate);
+									this.localCacheService.setLocalCacheValue(LocalStorageKey.LastWarrantyStatus, warrantyResult);
+									observer.next(warrantyResult);
+								}
+								observer.complete();
+							},
+							() => {
+								if (!cacheWarranty) {
+									observer.next(warrantyResult);
+								}
+								observer.complete();
+							}
+						);
 					});
 				});
 			}

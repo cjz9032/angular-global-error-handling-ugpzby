@@ -1,7 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
 	selector: 'vtr-modal-gaming-legionedge',
@@ -14,10 +14,10 @@ export class ModalGamingLegionedgeComponent implements OnInit {
 	desktopMachine = false;
 	constructor(
 		public activeModal: NgbActiveModal,
-		private commonService: CommonService,
+		private localCacheService: LocalCacheService,
 	) {
-		this.desktopMachine = this.commonService.getLocalStorageValue( LocalStorageKey.desktopType);
-		this.liteGaming = this.commonService.getLocalStorageValue( LocalStorageKey.liteGaming);
+		this.desktopMachine = this.localCacheService.getLocalCacheValue( LocalStorageKey.desktopType);
+		this.liteGaming = this.localCacheService.getLocalCacheValue( LocalStorageKey.liteGaming);
 	}
 
 	ngOnInit() {

@@ -201,10 +201,10 @@ export class DialogService {
 			return;
 		}
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage)) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityShowWelcome, showWelcome + 1);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.ConnectedHomeSecurityShowWelcome, showWelcome + 1);
 
 			if (showWelcome === 1) {
-				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
 			}
 
 			const welcomeModal = this.modalService.open(ModalChsWelcomeContainerComponent, {
@@ -233,11 +233,11 @@ export class DialogService {
 		}
 	}
 
-	async openLenovoIdDialog(appFeature = null) {
+	openLenovoIdDialog(appFeature = null) {
 		if (this.modalService.hasOpenModals()) {
 			return;
 		}
-		const segment: SegmentConst = await this.localCacheService.getLocalCacheValue(LocalStorageKey.LocalInfoSegment);
+		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(LocalStorageKey.LocalInfoSegment);
 		if (segment && segment !== SegmentConst.Commercial) {
 			if (!navigator.onLine) {
 				const modalRef = this.modalService.open(ModalCommonConfirmationComponent, {

@@ -3,11 +3,11 @@ import { AppNotification } from '../common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { TranslateService } from '@ngx-translate/core';
-import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { MetricsTranslateService } from 'src/app/services/mertics-traslate/metrics-translate.service';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 export class AntivirusCommon {
 	antivirus: Antivirus;
@@ -54,7 +54,7 @@ export class AntivirusCommon {
 	constructor(antivirus: Antivirus,
 		isOnline: boolean,
 		private localInfoService: LocalInfoService,
-		private commonService: CommonService,
+		private localCacheService: LocalCacheService,
 		public translate: TranslateService,
 		public metrics: MetricService,
 		public metricsTranslateService: MetricsTranslateService,
@@ -62,7 +62,7 @@ export class AntivirusCommon {
 		this.hypSettings.getFeatureSetting('AntivirusLaunchMcAfeeBuy').then((result) => {
 			this.pluginSupport = result === 'true';
 		})
-		const cacheMcafee = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityMcAfee);
+		const cacheMcafee = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityMcAfee);
 		if (cacheMcafee) {
 			this.mcafee = cacheMcafee;
 		}

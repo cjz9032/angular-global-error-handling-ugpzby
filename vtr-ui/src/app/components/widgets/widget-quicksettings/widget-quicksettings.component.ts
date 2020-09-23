@@ -97,17 +97,17 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	async ngOnInit() {
+	ngOnInit() {
 		this.initDataFromCache();
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
 
-		this.machineType = await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType, undefined);
+		this.machineType = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType, undefined);
 
 		this.isOnline = this.commonService.isOnline;
 		if (this.isOnline) {
-			const welcomeTutorial: WelcomeTutorial = await this.localCacheService.getLocalCacheValue(LocalStorageKey.WelcomeTutorial, undefined);
+			const welcomeTutorial: WelcomeTutorial = this.localCacheService.getLocalCacheValue(LocalStorageKey.WelcomeTutorial, undefined);
 			// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
 			if (welcomeTutorial && welcomeTutorial.isDone) {
 				this.initFeatures();
@@ -157,7 +157,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	}
 
 	initDataFromCache() {
-		const cameraState: FeatureStatus = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy);
+		const cameraState: FeatureStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.DashboardCameraPrivacy);
 		if (cameraState) {
 			if (cameraState.permission) {
 				this.cameraPrivacyGreyOut = false;
@@ -273,7 +273,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 								this.cameraNoAccessNoteShow = true;
 							}
 							this.cameraStatus.permission = result.permission;
-							this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraStatus);
+							this.localCacheService.setLocalCacheValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraStatus);
 							this.cameraStatus.isLoading = false;
 						}
 					}).catch(error => {
@@ -334,7 +334,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 							this.cameraStatus.status = featureStatus.status;
 						}
 						this.cameraStatusChangeBySet = false;
-						this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraStatus);
+						this.localCacheService.setLocalCacheValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraStatus);
 						this.startMonitorForCameraPrivacy();
 					})
 					.catch(error => {
@@ -350,7 +350,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 
 	startMonitorHandlerForCamera(value: FeatureStatus) {
 		this.cameraStatus = { ...this.cameraStatus, ...value };
-		this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraStatus);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraStatus);
 	}
 
 	startMonitorForCameraPrivacy() {
@@ -464,7 +464,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 						this.cameraStatus.isLoading = false;
 						this.cameraStatus.status = $event;
 						this.quickSettingsWidget[1].state = true;
-						this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraStatus);
+						this.localCacheService.setLocalCacheValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraStatus);
 					}).catch(error => {
 						this.cameraStatus.isLoading = false;
 						this.quickSettingsWidget[1].state = true;

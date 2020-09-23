@@ -12,6 +12,7 @@ import { LightEffectComplexType } from 'src/app/enums/light-effect-complex-type'
 import { LightEffectRGBFeature, LightEffectSingleOrComplex } from 'src/app/enums/light-effect-rgbfeature';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { ColorWheelStatus } from 'src/app/enums/color-wheel-status.enum';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
 	selector: 'vtr-ui-lighting-profile',
@@ -306,6 +307,7 @@ export class UiLightingProfileComponent implements OnInit {
 	constructor(
 		private gamingLightingService: GamingLightingService,
 		private commonService: CommonService,
+		private localCacheService: LocalCacheService,
 		private deviceService: DeviceService
 	) { }
 
@@ -316,13 +318,13 @@ export class UiLightingProfileComponent implements OnInit {
 		this.isProfileOff = false;
 		if (LocalStorageKey.LightingCapabilities !== undefined) {
 			let response: any;
-			response = this.commonService.getLocalStorageValue(LocalStorageKey.LightingCapabilities);
+			response = this.localCacheService.getLocalCacheValue(LocalStorageKey.LightingCapabilities);
 			if (response !== undefined) {
 				this.getCacheLightingCapabilities(response);
 			}
 		}
 		if (LocalStorageKey.LightingProfileById !== undefined) {
-			const res = this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileById);
+			const res = this.localCacheService.getLocalCacheValue(LocalStorageKey.LightingProfileById);
 			this.getLightingBrightness();
 			this.getLightingProfileByIdFromcache(res);
 			this.getGamingLightingCapabilities();
@@ -507,7 +509,7 @@ export class UiLightingProfileComponent implements OnInit {
 					response.BrightAdjustLevel !== null
 				) {
 					if (LocalStorageKey.LightingCapabilities !== undefined) {
-						this.commonService.setLocalStorageValue(LocalStorageKey.LightingCapabilities, response);
+						this.localCacheService.setLocalCacheValue(LocalStorageKey.LightingCapabilities, response);
 					}
 				}
 				if (response.LedType_Complex.length > 1) {
@@ -576,7 +578,7 @@ export class UiLightingProfileComponent implements OnInit {
 				// this.getLightingBrightness();
 			} else {
 				if (LocalStorageKey.LightingCapabilities !== undefined) {
-					response = this.commonService.getLocalStorageValue(LocalStorageKey.LightingCapabilities);
+					response = this.localCacheService.getLocalCacheValue(LocalStorageKey.LightingCapabilities);
 				}
 				if (response.LightPanelType.length > 0) {
 					this.profileRGBFeature = response.RGBfeature;
@@ -665,7 +667,7 @@ export class UiLightingProfileComponent implements OnInit {
 				this.showHideOverlaySide = false;
 				let res: any;
 				if (LocalStorageKey.LightingProfileById !== undefined) {
-					res = this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileById);
+					res = this.localCacheService.getLocalCacheValue(LocalStorageKey.LightingProfileById);
 				}
 				if (res.lightInfo.length > 0) {
 					if (
@@ -694,7 +696,7 @@ export class UiLightingProfileComponent implements OnInit {
 				.then((response: any) => {
 					if (response.didSuccess) {
 						if (LocalStorageKey.LightingProfileById !== undefined) {
-							this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileById, response);
+							this.localCacheService.setLocalCacheValue(LocalStorageKey.LightingProfileById, response);
 						}
 						if (response.lightInfo.length > 0) {
 							this.frontSelectedValue = response.lightInfo[0].lightEffectType;
@@ -737,7 +739,7 @@ export class UiLightingProfileComponent implements OnInit {
 						}
 					} else {
 						if (LocalStorageKey.LightingProfileById !== undefined) {
-							response = this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileById);
+							response = this.localCacheService.getLocalCacheValue(LocalStorageKey.LightingProfileById);
 						}
 						if (response.lightInfo.length > 0) {
 							if (
@@ -807,7 +809,7 @@ export class UiLightingProfileComponent implements OnInit {
 				this.showHideOverlay = false;
 				let res: any;
 				if (LocalStorageKey.LightingProfileById !== undefined) {
-					res = this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileById);
+					res = this.localCacheService.getLocalCacheValue(LocalStorageKey.LightingProfileById);
 				}
 				if (res.lightInfo.length > 0) {
 					if (
@@ -837,7 +839,7 @@ export class UiLightingProfileComponent implements OnInit {
 				.then((response: any) => {
 					if (response.didSuccess) {
 						if (LocalStorageKey.LightingProfileById !== undefined) {
-							this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileById, response);
+							this.localCacheService.setLocalCacheValue(LocalStorageKey.LightingProfileById, response);
 						}
 						if (response.lightInfo.length > 0) {
 							this.frontSelectedValue = response.lightInfo[0].lightEffectType;
@@ -879,7 +881,7 @@ export class UiLightingProfileComponent implements OnInit {
 						}
 					} else {
 						if (LocalStorageKey.LightingProfileById !== undefined) {
-							response = this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileById);
+							response = this.localCacheService.getLocalCacheValue(LocalStorageKey.LightingProfileById);
 						}
 						if (response.lightInfo.length > 0) {
 							this.frontSelectedValue = response.lightInfo[0].lightEffectType;
@@ -937,7 +939,7 @@ export class UiLightingProfileComponent implements OnInit {
 				.setLightingProfileEffectColor(this.lightingProfileEffectColorNUmber)
 				.then((response: any) => {
 					if (LocalStorageKey.LightingProfileById !== undefined) {
-						this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileById, response);
+						this.localCacheService.setLocalCacheValue(LocalStorageKey.LightingProfileById, response);
 					}
 				});
 		}
@@ -959,13 +961,13 @@ export class UiLightingProfileComponent implements OnInit {
 						.then((response: any) => {
 							if (response.didSuccess) {
 								if (LocalStorageKey.LightingProfileById !== undefined) {
-									this.commonService.setLocalStorageValue(
+									this.localCacheService.setLocalCacheValue(
 										LocalStorageKey.LightingProfileById,
 										response
 									);
 								}
 								if (LocalStorageKey.LightingSetDefaultProfile !== undefined) {
-									this.commonService.setLocalStorageValue(
+									this.localCacheService.setLocalCacheValue(
 										LocalStorageKey.LightingSetDefaultProfile,
 										response
 									);
@@ -975,7 +977,7 @@ export class UiLightingProfileComponent implements OnInit {
 									this.currentProfile = response.profileId;
 									this.profileBrightness = response.brightness;
 									if (LocalStorageKey.ProfileBrightness !== undefined) {
-										this.commonService.setLocalStorageValue(
+										this.localCacheService.setLocalCacheValue(
 											LocalStorageKey.ProfileBrightness,
 											response.brightness
 										);
@@ -1041,7 +1043,7 @@ export class UiLightingProfileComponent implements OnInit {
 								}
 							} else {
 								if (LocalStorageKey.LightingSetDefaultProfile !== undefined) {
-									response = this.commonService.getLocalStorageValue(
+									response = this.localCacheService.getLocalCacheValue(
 										LocalStorageKey.LightingSetDefaultProfile
 									);
 								}
@@ -1050,7 +1052,7 @@ export class UiLightingProfileComponent implements OnInit {
 									this.currentProfile = response.profileId;
 									this.profileBrightness = response.brightness;
 									if (LocalStorageKey.ProfileBrightness !== undefined) {
-										this.commonService.setLocalStorageValue(
+										this.localCacheService.setLocalCacheValue(
 											LocalStorageKey.ProfileBrightness,
 											response.brightness
 										);
@@ -1141,7 +1143,7 @@ export class UiLightingProfileComponent implements OnInit {
 								this.getLightingBrightness();
 							} else {
 								if (LocalStorageKey.ProfileBrightness !== undefined) {
-									this.commonService.setLocalStorageValue(
+									this.localCacheService.setLocalCacheValue(
 										LocalStorageKey.ProfileBrightness,
 										this.brightness
 									);
@@ -1159,7 +1161,7 @@ export class UiLightingProfileComponent implements OnInit {
 		try {
 			if (LocalStorageKey.ProfileBrightness !== undefined) {
 				this.profileBrightness =
-					this.commonService.getLocalStorageValue(LocalStorageKey.ProfileBrightness) || 1;
+					this.localCacheService.getLocalCacheValue(LocalStorageKey.ProfileBrightness) || 1;
 			}
 		} catch (error) { }
 	}
@@ -1171,14 +1173,14 @@ export class UiLightingProfileComponent implements OnInit {
 				this.gamingLightingService.getLightingProfileById(currProfileId).then((response: any) => {
 					if (response.didSuccess) {
 						if (LocalStorageKey.LightingProfileById !== undefined) {
-							this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileById, response);
+							this.localCacheService.setLocalCacheValue(LocalStorageKey.LightingProfileById, response);
 						}
 
 						this.currentProfileId = response.profileId;
 						this.currentProfile = response.profileId;
 						this.profileBrightness = response.brightness;
 						if (LocalStorageKey.ProfileBrightness !== undefined) {
-							this.commonService.setLocalStorageValue(
+							this.localCacheService.setLocalCacheValue(
 								LocalStorageKey.ProfileBrightness,
 								response.brightness
 							);
@@ -1252,14 +1254,14 @@ export class UiLightingProfileComponent implements OnInit {
 					} else {
 						if (LocalStorageKey.LightingProfileById !== undefined) {
 							this.response =
-								this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileById) || 0;
+								this.localCacheService.getLocalCacheValue(LocalStorageKey.LightingProfileById) || 0;
 						}
 						if (response) {
 							this.currentProfileId = response.profileId;
 							this.currentProfile = response.profileId;
 							this.profileBrightness = response.brightness;
 							if (LocalStorageKey.ProfileBrightness !== undefined) {
-								this.commonService.setLocalStorageValue(
+								this.localCacheService.setLocalCacheValue(
 									LocalStorageKey.ProfileBrightness,
 									response.brightness
 								);
@@ -1362,10 +1364,10 @@ export class UiLightingProfileComponent implements OnInit {
 				this.gamingLightingService.setLightingProfileId(1, this.isOff).then((response: any) => {
 					if (response.didSuccess) {
 						if (LocalStorageKey.LightingProfileById !== undefined) {
-							this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileById, response);
+							this.localCacheService.setLocalCacheValue(LocalStorageKey.LightingProfileById, response);
 						}
 						if (LocalStorageKey.ProfileId !== undefined) {
-							this.commonService.setLocalStorageValue(LocalStorageKey.ProfileId, response.profileId);
+							this.localCacheService.setLocalCacheValue(LocalStorageKey.ProfileId, response.profileId);
 						}
 
 						if (response.profileId > 0) {
@@ -1439,7 +1441,7 @@ export class UiLightingProfileComponent implements OnInit {
 							}
 							this.profileBrightness = response.brightness;
 							if (LocalStorageKey.ProfileBrightness !== undefined) {
-								this.commonService.setLocalStorageValue(
+								this.localCacheService.setLocalCacheValue(
 									LocalStorageKey.ProfileBrightness,
 									response.brightness
 								);
@@ -1447,7 +1449,7 @@ export class UiLightingProfileComponent implements OnInit {
 						}
 					} else {
 						if (LocalStorageKey.LightingProfileById !== undefined) {
-							response = this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileById);
+							response = this.localCacheService.getLocalCacheValue(LocalStorageKey.LightingProfileById);
 						}
 						if (response !== undefined) {
 							if (response.profileId > 0) {
@@ -1519,7 +1521,7 @@ export class UiLightingProfileComponent implements OnInit {
 								}
 								this.profileBrightness = response.brightness;
 								if (LocalStorageKey.ProfileBrightness !== undefined) {
-									this.commonService.setLocalStorageValue(
+									this.localCacheService.setLocalCacheValue(
 										LocalStorageKey.ProfileBrightness,
 										response.brightness
 									);
@@ -1547,7 +1549,7 @@ export class UiLightingProfileComponent implements OnInit {
 				.then((response: any) => {
 					if (response.didSuccess) {
 						if (LocalStorageKey.LightingProfileById !== undefined) {
-							this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileById, response);
+							this.localCacheService.setLocalCacheValue(LocalStorageKey.LightingProfileById, response);
 						}
 						this.inHex1 = $event;
 						this.applyBtnStatus1 = ColorWheelStatus.applied;
@@ -1571,7 +1573,7 @@ export class UiLightingProfileComponent implements OnInit {
 				.then((response: any) => {
 					if (response.didSuccess) {
 						if (LocalStorageKey.LightingProfileById !== undefined) {
-							this.commonService.setLocalStorageValue(LocalStorageKey.LightingProfileById, response);
+							this.localCacheService.setLocalCacheValue(LocalStorageKey.LightingProfileById, response);
 						}
 						this.inHex2 = $event;
 						this.applyBtnStatus2 = ColorWheelStatus.applied;

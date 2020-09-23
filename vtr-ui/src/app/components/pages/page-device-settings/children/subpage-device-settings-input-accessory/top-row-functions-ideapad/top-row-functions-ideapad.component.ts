@@ -60,8 +60,8 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 				}),
 				tap(status => of(status).pipe(
 					takeWhile(status1 => status1),
-					tap(async () => {
-						const machineFamilyName = await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineFamilyName);
+					tap(() => {
+						const machineFamilyName = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineFamilyName);
 
 						this.metrics.sendMetrics(
 							KeyType.HOTKEY
@@ -82,8 +82,8 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 				}),
 				tap(status => of(status).pipe(
 					takeWhile(status1 => status1),
-					tap(async () => {
-						const machineFamilyName = await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineFamilyName);
+					tap(() => {
+						const machineFamilyName = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineFamilyName);
 
 						this.metrics.sendMetrics(
 							KeyType.FNKEY

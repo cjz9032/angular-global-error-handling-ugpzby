@@ -6,6 +6,7 @@ import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { Injectable } from '@angular/core';
 import { cloneDeep, isEqual } from 'lodash';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { LocalCacheService } from '../local-cache/local-cache.service';
 
 interface WifiHistoryDetail {
 	ssid: string;
@@ -27,10 +28,11 @@ export class WifiSecurityService {
 
 	constructor(
 		private commonService: CommonService,
+		private localCacheService: LocalCacheService,
 		private shellService: VantageShellService
 		) {
-		const cacheWifiSecurityState = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
-		const cacheWifiSecurityHistory = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys);
+		const cacheWifiSecurityState = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityWifiSecurityState);
+		const cacheWifiSecurityHistory = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityWifiSecurityHistorys);
 
 		const securityAdvisor = this.shellService.getSecurityAdvisor();
 		if (securityAdvisor) {
@@ -40,14 +42,14 @@ export class WifiSecurityService {
 			if (this.wifiSecurity.isLocationServiceOn !== undefined) {
 				this.isLWSEnabled = (this.wifiSecurity.state === 'enabled' && this.wifiSecurity.isLocationServiceOn);
 			}
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, this.wifiSecurity.state);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityWifiSecurityState, this.wifiSecurity.state);
 		} else if (cacheWifiSecurityState) {
 			if (this.wifiSecurity && this.wifiSecurity.isLocationServiceOn !== undefined) {
 				this.isLWSEnabled = (cacheWifiSecurityState === 'enabled' && this.wifiSecurity.isLocationServiceOn);
 			}
 		}
 		if (this.wifiSecurity && this.wifiSecurity.wifiHistory) {
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, this.wifiSecurity.wifiHistory);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityWifiSecurityHistorys, this.wifiSecurity.wifiHistory);
 			this.initializeHistories(this.wifiSecurity.wifiHistory, 4);
 			this.preHistories = cloneDeep(this.histories);
 		} else if (cacheWifiSecurityHistory) {
@@ -60,7 +62,7 @@ export class WifiSecurityService {
 		wifiSecurity.on(EventTypes.wsWifiHistoryEvent, (value) => {
 			if (value) {
 				const cacheWifiSecurityHistoryNum = this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum)? JSON.parse(this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum)): 4;
-				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, value);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityWifiSecurityHistorys, value);
 				this.histories = this.mappingHistory(wifiSecurity.wifiHistory);
 				if (!isEqual(this.preHistories, this.histories)) {
 					this.preHistories = cloneDeep(this.histories);
@@ -76,7 +78,7 @@ export class WifiSecurityService {
 				if (typeof wifiSecurity.isLocationServiceOn === 'boolean') {
 					this.isLWSEnabled = (value === 'enabled' && wifiSecurity.isLocationServiceOn);
 				}
-				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, value);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityWifiSecurityState, value);
 			}
 		});
 

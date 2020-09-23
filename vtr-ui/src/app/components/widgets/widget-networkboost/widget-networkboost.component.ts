@@ -4,6 +4,7 @@ import { NetworkBoostService } from 'src/app/services/gaming/gaming-networkboost
 import { GamingAllCapabilities } from './../../../data-models/gaming/gaming-all-capabilities';
 import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angular/core';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
 	selector: 'vtr-widget-networkboost',
@@ -20,7 +21,10 @@ export class WidgetNetworkboostComponent implements OnInit, OnChanges {
 	public networkBoostStatus = false;
 	runningAppsList = [];
 	gamingProperties: GamingAllCapabilities = new GamingAllCapabilities();
-	constructor(private networkBoostService: NetworkBoostService, private commonService: CommonService) {
+	constructor(
+		private networkBoostService: NetworkBoostService,
+		private commonService: CommonService,
+		private localCacheService: LocalCacheService) {
 		this.getNetworkBoostListCache();
 	}
 
@@ -44,7 +48,7 @@ export class WidgetNetworkboostComponent implements OnInit, OnChanges {
 			if (appList && !isUndefined(appList.processList)) {
 				this.runningAppsList = appList.processList;
 				this.sendAddedApps();
-				this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoostList, appList);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.NetworkBoostList, appList);
 			}
 			const focusElement = document.getElementById('networkboost_addButton_clickable');
 			if (doFocus && focusElement) {
@@ -54,7 +58,7 @@ export class WidgetNetworkboostComponent implements OnInit, OnChanges {
 		}
 	}
 	getNetworkBoostListCache() {
-		const appList: any = this.commonService.getLocalStorageValue(LocalStorageKey.NetworkBoostList, {});
+		const appList: any = this.localCacheService.getLocalCacheValue(LocalStorageKey.NetworkBoostList, {});
 		if (appList && !isUndefined(appList.processList)) {
 			this.runningAppsList = appList.processList || [];
 			this.sendAddedApps();

@@ -159,15 +159,15 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		// this.shellServices.unRegisterEvent(EventTypes.pwrBatteryStatusEvent, this.powerBatteryStatusEventRef);
 	}
 
-	async ngOnInit() {
-		this.isThinkPad = await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType) === 1;
+	ngOnInit() {
+		this.isThinkPad = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType) === 1;
 		this.getBatteryDetailOnCard();
 
 		// temp
 		this.updateMainBatteryTime();
 		this.batteryIndicator.charging = this.getAcAttachedStatus();
 		this.isLoading = false;
-		const conditions = await this.localCacheService.getLocalCacheValue(LocalStorageKey.BatteryCondition);
+		const conditions = this.localCacheService.getLocalCacheValue(LocalStorageKey.BatteryCondition);
 		if (Array.isArray(conditions) && conditions.length > 0) {
 			conditions.forEach((condition: BatteryConditionModel, index) => {
 				conditions[index] = new BatteryConditionModel(condition.condition, condition.conditionStatus);

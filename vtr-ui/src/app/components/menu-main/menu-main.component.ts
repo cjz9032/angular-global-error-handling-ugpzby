@@ -129,7 +129,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		newFeatureTipService.viewContainer = this.viewContainerRef;
 	}
 
-	async ngOnInit() {
+	ngOnInit() {
 		this.headerLogo = '';
 		this.checkLiteGaming();
 
@@ -139,7 +139,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 
 		this.isDashboard = true;
 
-		const cacheMachineFamilyName = await this.localCacheService.getLocalCacheValue(
+		const cacheMachineFamilyName = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.MachineFamilyName,
 			undefined
 		);
@@ -177,7 +177,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		return assets;
 	}
 
-	private async initComponent() {
+	private initComponent() {
 		this.routerEventSubscription = this.router.events.subscribe((ev) => {
 			if (ev instanceof NavigationEnd) {
 				this.currentUrl = ev.url;
@@ -206,7 +206,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			}, 3000);
 		});
 
-		const machineType = await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType, undefined);
+		const machineType = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType, undefined);
 		if (machineType) {
 			this.loadMenuOptions(machineType);
 		} else if (this.deviceService.isShellAvailable) {
@@ -338,17 +338,17 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 
 	}
 
-	private async loadMenuOptions(machineType: number) {
+	private loadMenuOptions(machineType: number) {
 		// if IdeaPad or ThinkPad then call below function
 		if (machineType === 0 || machineType === 1) {
 			// add try catch for backlight exception; this is temp solution, dongwq2 should add error handle in backlight
 			try {
-				// this.commonService.setLocalStorageValue(LocalStorageKey.BacklightCapability, false);
+				// this.localCacheService.setLocalCacheValue(LocalStorageKey.BacklightCapability, false);
 				this.backlightCapabilitySubscription = this.backlightService.backlight.pipe(
 					map(res => res.find(item => item.key === 'KeyboardBacklightLevel')),
 					map(res => res.value !== BacklightLevelEnum.NO_CAPABILITY),
 					tap(res => {
-						this.commonService.setLocalStorageValue(LocalStorageKey.BacklightCapability, res);
+						this.localCacheService.setLocalCacheValue(LocalStorageKey.BacklightCapability, res);
 					}),
 					catchError(() => {
 						window.localStorage.removeItem(LocalStorageKey.BacklightCapability);
@@ -359,7 +359,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 
 		}
 
-		const machineFamily = await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineFamilyName, undefined);
+		const machineFamily = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineFamilyName, undefined);
 		// Added special case for KEI machine
 		if (machineFamily) {
 			const familyName = machineFamily.replace(/\s+/g, '');
@@ -370,7 +370,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 
 		if (machineType === 0) {
 			// todo: in case unexpected showing up in edge case when u remove drivers. should be a safety way to check capability.
-			this.commonService.setLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability, false);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.TopRowFunctionsCapability, false);
 			this.topRowFnSubscription = this.topRowFunctionsIdeapadService.capability
 				.pipe(
 					catchError(() => {
@@ -380,12 +380,12 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				)
 				.subscribe((capabilities: Array<any>) => {
 					if (capabilities.length === 0) {
-						this.commonService.setLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability, false);
+						this.localCacheService.setLocalCacheValue(LocalStorageKey.TopRowFunctionsCapability, false);
 					}
 					// todo: there should be a better way to operate this array
 					capabilities.forEach(capability => {
 						if (capability.key === 'FnLock') {
-							this.commonService.setLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability, capability.value === StringBooleanEnum.TRUTHY);
+							this.localCacheService.setLocalCacheValue(LocalStorageKey.TopRowFunctionsCapability, capability.value === StringBooleanEnum.TRUTHY);
 						}
 					});
 				});
@@ -606,14 +606,14 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			if (responses) {
 				this.logger.error('MenuMainComponent.initInputAccessories after API call'
 					, { GetAllCapability: responses[0], GetKeyboardVersion: responses[1] });
-				let inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, undefined);
+				let inputAccessoriesCapability: InputAccessoriesCapability = this.localCacheService.getLocalCacheValue(LocalStorageKey.InputAccessoriesCapability, undefined);
 				if (inputAccessoriesCapability === undefined) {
 					inputAccessoriesCapability = new InputAccessoriesCapability();
 				}
 				inputAccessoriesCapability.isUdkAvailable = (responses[0] != null && Object.keys(responses[0]).indexOf('uDKCapability') !== -1) ? responses[0].uDKCapability : false;
 				inputAccessoriesCapability.isKeyboardMapAvailable = (responses[0] != null && Object.keys(responses[0]).indexOf('keyboardMapCapability') !== -1) ? responses[0].keyboardMapCapability : false;
 				inputAccessoriesCapability.keyboardVersion = (responses[1] != null) ? responses[1] : '-1';
-				this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability,
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.InputAccessoriesCapability,
 					inputAccessoriesCapability
 				);
 			}
@@ -629,14 +629,14 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		// 		try {
 		// 			this.logger.error('MenuMainComponent.initInputAccessories after API call'
 		// 				, { GetAllCapability: responses[0], GetKeyboardVersion: responses[1] });
-		// 			let inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, undefined);
+		// 			let inputAccessoriesCapability: InputAccessoriesCapability = this.localCacheService.getLocalCacheValue(LocalStorageKey.InputAccessoriesCapability, undefined);
 		// 			if (inputAccessoriesCapability === undefined) {
 		// 				inputAccessoriesCapability = new InputAccessoriesCapability();
 		// 			}
 		// 			inputAccessoriesCapability.isUdkAvailable = (responses[0] != null && Object.keys(responses[0]).indexOf('uDKCapability') !== -1) ? responses[0].uDKCapability : false;
 		// 			inputAccessoriesCapability.isKeyboardMapAvailable = (responses[0] != null && Object.keys(responses[0]).indexOf('keyboardMapCapability') !== -1) ? responses[0].keyboardMapCapability : false;
 		// 			inputAccessoriesCapability.keyboardVersion = (responses[1] != null) ? responses[1] : '-1';
-		// 			this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability,
+		// 			this.localCacheService.setLocalCacheValue(LocalStorageKey.InputAccessoriesCapability,
 		// 				inputAccessoriesCapability
 		// 			);
 		// 		} catch (error) {
@@ -647,7 +647,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		this.keyboardService.getVoipHotkeysSettings()
 			.then(response => {
 				if (response.capability) {
-					this.commonService.setLocalStorageValue(LocalStorageKey.VOIPCapability, response.capability);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.VOIPCapability, response.capability);
 				}
 				return response;
 			});

@@ -113,6 +113,7 @@ export class CommonService {
 	}
 
 	/**
+	 * @deprecated since version 3.4, please use LocalCacheService for cache related functions
 	 * Stores given value in local storage in json string format
 	 * @param key key for local storage. Must define it in LocalStorageKey enum
 	 * @param value value to store in local storage
@@ -124,6 +125,9 @@ export class CommonService {
 		this.sendNotification(key, value);
 	}
 
+	/**
+	 * @deprecated since version 3.4, please use LocalCacheService for cache related functions
+	 */
 	public haveLocalStorageKey(key: LocalStorageKey, defaultValue?: any): any {
 		const value = window.localStorage.getItem(key);
 		if (value === null || value === undefined) {
@@ -133,6 +137,7 @@ export class CommonService {
 	}
 
 	/**
+	 * @deprecated since version 3.4, please use LocalCacheService for cache related functions
 	 * Returns parsed json object if key is found else returns undefined
 	 * @param key key use to store value in local storage
 	 */
@@ -149,6 +154,7 @@ export class CommonService {
 	}
 
 	/**
+	 * @deprecated since version 3.4, please use LocalCacheService for cache related functions
 	 * Removes the key/value pair with the given key
 	 * @param key key use to removes the key/value pair in local storage
 	 */
@@ -323,14 +329,6 @@ export class CommonService {
 
 	getSystemTimeFormat() {
 		return this.systemTimeFormat12Hrs.asObservable();
-	}
-
-	checkPowerPageFlagAndHide() {
-		// Solution to fix the issue VAN-14826.
-		const isPowerPageAvailable = this.getLocalStorageValue(LocalStorageKey.IsPowerPageAvailable, true);
-		if (!isPowerPageAvailable) {
-			this.sendNotification(LocalStorageKey.IsPowerPageAvailable, { available: isPowerPageAvailable, link: false });
-		}
 	}
 
 	isFirstPageLoaded(): boolean {

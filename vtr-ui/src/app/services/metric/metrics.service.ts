@@ -12,6 +12,7 @@ import { SelfSelectService } from '../self-select/self-select.service';
 import { environment } from '../../../environments/environment';
 import { ContentDisplayDetection} from './service-components/content-display-detection';
 import { DevService } from '../dev/dev.service';
+import { LocalCacheService } from '../local-cache/local-cache.service';
 
 declare var Windows;
 
@@ -40,14 +41,15 @@ export class MetricService {
 		private timerService: DurationCounterService,
 		private hypothesisService: HypothesisService,
 		private commonService: CommonService,
+		private localCacheService: LocalCacheService,
 		private activeRouter: ActivatedRoute,
 		private selfSelectService: SelfSelectService
 	) {
 		this.metricsClient = this.shellService.getMetrics();
 		this.contentDisplayDetection = new ContentDisplayDetection(this);
-		this.isFirstLaunch = !this.commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
+		this.isFirstLaunch = !this.localCacheService.getLocalCacheValue(LocalStorageKey.HadRunApp);
 		if (this.isFirstLaunch) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.HadRunApp, true);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.HadRunApp, true);
 		}
 
 		if (this.metricsClient) {
@@ -95,7 +97,7 @@ export class MetricService {
 					data.OnlineStatus = this.commonService.isOnline ? 1 : 0;
 				}
 
-				const isBeta = this.commonService.getLocalStorageValue(LocalStorageKey.BetaTag, false);
+				const isBeta = this.localCacheService.getLocalCacheValue(LocalStorageKey.BetaTag, false);
 				if (isBeta) {
 					data.IsBetaUser = true;
 				}

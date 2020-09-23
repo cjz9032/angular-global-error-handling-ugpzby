@@ -102,8 +102,8 @@ export class AppsForYouService {
 		dccMenuClicked: false
 	};
 
-	private async initialize() {
-		const cacheMachineFamilyName = await this.localCacheService.getLocalCacheValue(
+	private initialize() {
+		const cacheMachineFamilyName = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.MachineFamilyName,
 			undefined
 		);
@@ -357,7 +357,7 @@ export class AppsForYouService {
 
 	initUnreadMessage() {
 		this.resetUnreadMessageCounter();
-		const cacheUnreadMessageCount = this.commonService.getLocalStorageValue(
+		const cacheUnreadMessageCount = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.UnreadMessageCount,
 			undefined
 		);
@@ -417,7 +417,7 @@ export class AppsForYouService {
 			}
 		}
 		if (needUpdateLocalStorage) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.UnreadMessageCount, this.UnreadMessageCount);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.UnreadMessageCount, this.UnreadMessageCount);
 		}
 	}
 

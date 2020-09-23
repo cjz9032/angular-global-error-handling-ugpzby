@@ -215,7 +215,7 @@ describe('Component: PageSmartAssistComponent', () => {
 			component.superResolution = new FeatureStatus(false, true);
 
 			fixture.detectChanges();
-			
+
 			const spyObject = spyOn(localCacheService, 'setLocalCacheValue');
 			component.ngOnInit();
 			expect(spyObject).toHaveBeenCalled();
@@ -594,7 +594,7 @@ describe('Component: PageSmartAssistComponent', () => {
 		/* it('PageSmartAssistComponent :: onResetDefaultSettings should call', () => {
 			const { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger } = setup();
 			// component.smartAssistCache=new SmartAssistCache();
-			// this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+			// this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 
 			component.hsaIntelligentSecurity = new HsaIntelligentSecurityResponse(false, false);
 

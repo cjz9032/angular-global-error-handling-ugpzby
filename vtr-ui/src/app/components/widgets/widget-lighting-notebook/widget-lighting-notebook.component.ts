@@ -7,6 +7,7 @@ import { EventTypes } from '@lenovo/tan-client-bridge';
 import { LightingDataList } from 'src/app/data-models/gaming/lighting-new-version/lighting-data-list';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from '../../../services/metric/metrics.service';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
   selector: 'vtr-widget-lighting-notebook',
@@ -42,7 +43,8 @@ export class WidgetLightingNotebookComponent implements OnInit {
 
   constructor(
     private ngZone:NgZone,
-    private commonService: CommonService,
+	private commonService: CommonService,
+	private localCacheService: LocalCacheService,
     private gamingLightingService: GamingLightingService,
     public shellServices: VantageShellService,
     private logger: LoggerService,
@@ -52,8 +54,8 @@ export class WidgetLightingNotebookComponent implements OnInit {
   ngOnInit() {
     this.initProfileId();
     this.getCacheList();
-    if(this.commonService.getLocalStorageValue(LocalStorageKey.LightingCapabilitiesNewversionNote) !== undefined){
-      this.lightingCapabilities = this.commonService.getLocalStorageValue(LocalStorageKey.LightingCapabilitiesNewversionNote);
+    if(this.localCacheService.getLocalCacheValue(LocalStorageKey.LightingCapabilitiesNewversionNote) !== undefined){
+      this.lightingCapabilities = this.localCacheService.getLocalCacheValue(LocalStorageKey.LightingCapabilitiesNewversionNote);
       this.logger.info("this.lightingCapabilities cache ",this.lightingCapabilities);
       this.getLightingCapabilitiesFromcache(this.lightingCapabilities);
     }
@@ -62,7 +64,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
     }
     this.getLightingCapabilities();
 
-    this.ledSwitchButtonFeature = this.commonService.getLocalStorageValue(LocalStorageKey.LedSwitchButtonFeature);
+    this.ledSwitchButtonFeature = this.localCacheService.getLocalCacheValue(LocalStorageKey.LedSwitchButtonFeature);
     this.logger.info("ledSwitchButtonFeature: ",this.ledSwitchButtonFeature);
     if(this.ledSwitchButtonFeature){
       this.regLightingProfileIdChangeEvent();
@@ -85,8 +87,8 @@ export class WidgetLightingNotebookComponent implements OnInit {
           if(res.lightInfo !== null && res.lightInfo.length > 0){
             this.ifDisabledKeyboard(res.lightInfo[0].lightEffectType);
           }
-          if(this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId) !== undefined){
-            ProfileId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId);
+          if(this.localCacheService.getLocalCacheValue(LocalStorageKey.ProfileId) !== undefined){
+            ProfileId = this.localCacheService.getLocalCacheValue(LocalStorageKey.ProfileId);
             this.currentProfileId = ProfileId;
           }
           this.getLightingCurrentDetail(res);
@@ -102,7 +104,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
           if(response){
             this.lightingCapabilities = response;
             this.getEffectList();
-            this.commonService.setLocalStorageValue(LocalStorageKey.LightingCapabilitiesNewversionNote,response);
+            this.localCacheService.setLocalCacheValue(LocalStorageKey.LightingCapabilitiesNewversionNote,response);
             this.getLightingProfileById(this.currentProfileId)
           }
         });
@@ -157,7 +159,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
           if (response.didSuccess) {
             this.publicProfileIdInfo(response);
           }else{
-            this.currentProfileId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId);
+            this.currentProfileId = this.localCacheService.getLocalCacheValue(LocalStorageKey.ProfileId);
             if (this.currentProfileId === 0) {
               this.isProfileOff = true;
             }else{
@@ -233,7 +235,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
            this.publicPageInfo(response);
          }else{
           this.isEffectChange = false;
-          this.currentProfileId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId);
+          this.currentProfileId = this.localCacheService.getLocalCacheValue(LocalStorageKey.ProfileId);
           this.getCacheList();
           if(this.lightingProfileById !== undefined){
             if(this.lightingProfileById.lightInfo !== null && this.lightingProfileById.lightInfo.length > 0){
@@ -268,7 +270,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
              this.publicPageInfo(response);
           }else{
             this.isValChange = false;
-            this.currentProfileId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId);
+            this.currentProfileId = this.localCacheService.getLocalCacheValue(LocalStorageKey.ProfileId);
             this.getCacheList();
             this.getLightingCurrentDetail(this.lightingProfileById);
           }
@@ -300,7 +302,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
              this.publicPageInfo(response);
            }else{
              this.isValChange = false;
-             this.currentProfileId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId);
+             this.currentProfileId = this.localCacheService.getLocalCacheValue(LocalStorageKey.ProfileId);
              this.getCacheList();
              this.getLightingCurrentDetail(this.lightingProfileById);
            }
@@ -384,7 +386,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
           if(response.didSuccess) {
               this.publicPageInfo(response);
           }else{
-            this.currentProfileId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId);
+            this.currentProfileId = this.localCacheService.getLocalCacheValue(LocalStorageKey.ProfileId);
             this.getCacheList();
             this.getLightingCurrentDetail(this.lightingProfileById);
           }
@@ -437,18 +439,18 @@ export class WidgetLightingNotebookComponent implements OnInit {
 
   public getCacheList(){
     this.lightingProfileById = undefined;
-    this.toggleStatus = this.commonService.getLocalStorageValue(LocalStorageKey.KeyboardToggleStatusLNBx50);
+    this.toggleStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.KeyboardToggleStatusLNBx50);
     this.logger.info(`this.toggleStatus:  ${this.toggleStatus} ----this.currentProfileId: ${this.currentProfileId}`);
     if(this.toggleStatus !== undefined){
       if(this.currentProfileId !== 0){
         if(this.toggleStatus['profileId'+this.currentProfileId].status !== 'undefined'){
           if(this.toggleStatus['profileId'+this.currentProfileId].status){
-            if(this.commonService.getLocalStorageValue(LocalStorageKey['LightingProfileByIdNoteOn'+this.currentProfileId]) !== undefined){
-              this.lightingProfileById = this.commonService.getLocalStorageValue(LocalStorageKey['LightingProfileByIdNoteOn'+this.currentProfileId]);
+            if(this.localCacheService.getLocalCacheValue(LocalStorageKey['LightingProfileByIdNoteOn'+this.currentProfileId]) !== undefined){
+              this.lightingProfileById = this.localCacheService.getLocalCacheValue(LocalStorageKey['LightingProfileByIdNoteOn'+this.currentProfileId]);
             }
           }else{
-            if(this.commonService.getLocalStorageValue(LocalStorageKey['LightingProfileByIdNoteOff'+this.currentProfileId]) !== undefined){
-              this.lightingProfileById = this.commonService.getLocalStorageValue(LocalStorageKey['LightingProfileByIdNoteOff'+this.currentProfileId]);
+            if(this.localCacheService.getLocalCacheValue(LocalStorageKey['LightingProfileByIdNoteOff'+this.currentProfileId]) !== undefined){
+              this.lightingProfileById = this.localCacheService.getLocalCacheValue(LocalStorageKey['LightingProfileByIdNoteOff'+this.currentProfileId]);
             }
           }
         }
@@ -458,14 +460,14 @@ export class WidgetLightingNotebookComponent implements OnInit {
   }
 
   public setCacheList(){
-    this.toggleStatus = this.commonService.getLocalStorageValue(LocalStorageKey.KeyboardToggleStatusLNBx50);
+    this.toggleStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.KeyboardToggleStatusLNBx50);
     if(this.toggleStatus !== undefined){
       if(this.currentProfileId !== 0){
         if(this.toggleStatus['profileId'+this.currentProfileId].status !== 'undefined'){
           if(this.toggleStatus['profileId'+this.currentProfileId].status){
-            this.commonService.setLocalStorageValue(LocalStorageKey['LightingProfileByIdNoteOn'+this.currentProfileId],this.lightingProfileById);
+            this.localCacheService.setLocalCacheValue(LocalStorageKey['LightingProfileByIdNoteOn'+this.currentProfileId],this.lightingProfileById);
           }else{
-            this.commonService.setLocalStorageValue(LocalStorageKey['LightingProfileByIdNoteOff'+this.currentProfileId],this.lightingProfileById);
+            this.localCacheService.setLocalCacheValue(LocalStorageKey['LightingProfileByIdNoteOff'+this.currentProfileId],this.lightingProfileById);
           }
         }
       }
@@ -477,22 +479,22 @@ export class WidgetLightingNotebookComponent implements OnInit {
       let isDiffColor = this.gamingLightingService.checkAreaColorFn(this.lightingProfileById.lightInfo);
       if(isDiffColor){
         let lightcolorList = this.getColorList(JSON.parse(JSON.stringify(this.lightingProfileById)));
-        this.commonService.setLocalStorageValue(LocalStorageKey['LightingProfileByIdNoteOn'+this.currentProfileId],this.lightingProfileById);
-        this.commonService.setLocalStorageValue(LocalStorageKey['LightingProfileByIdNoteOff'+this.currentProfileId],lightcolorList);
+        this.localCacheService.setLocalCacheValue(LocalStorageKey['LightingProfileByIdNoteOn'+this.currentProfileId],this.lightingProfileById);
+        this.localCacheService.setLocalCacheValue(LocalStorageKey['LightingProfileByIdNoteOff'+this.currentProfileId],lightcolorList);
       }else{
-        this.commonService.setLocalStorageValue(LocalStorageKey['LightingProfileByIdNoteOn'+this.currentProfileId],this.lightingProfileById);
-        this.commonService.setLocalStorageValue(LocalStorageKey['LightingProfileByIdNoteOff'+this.currentProfileId],this.lightingProfileById);
+        this.localCacheService.setLocalCacheValue(LocalStorageKey['LightingProfileByIdNoteOn'+this.currentProfileId],this.lightingProfileById);
+        this.localCacheService.setLocalCacheValue(LocalStorageKey['LightingProfileByIdNoteOff'+this.currentProfileId],this.lightingProfileById);
       }
     }
   }
 
   public setCacheDafaultList(){
     let toggleOnCache:any,toggleOffCache:any;
-    this.toggleStatus = this.commonService.getLocalStorageValue(LocalStorageKey.KeyboardToggleStatusLNBx50);
+    this.toggleStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.KeyboardToggleStatusLNBx50);
     if(this.toggleStatus !== undefined){
       if(this.currentProfileId !== 0){
         if(this.toggleStatus['profileId'+this.currentProfileId].status !== 'undefined'){
-          this.commonService.setLocalStorageValue(LocalStorageKey['LightingProfileByIdDefault'+this.currentProfileId],this.lightingProfileById);
+          this.localCacheService.setLocalCacheValue(LocalStorageKey['LightingProfileByIdDefault'+this.currentProfileId],this.lightingProfileById);
           this.setCacheInitList();
         }
       }
@@ -501,12 +503,12 @@ export class WidgetLightingNotebookComponent implements OnInit {
 
   public getCacheDefaultList(){
     this.lightingProfileById = undefined;
-    this.toggleStatus = this.commonService.getLocalStorageValue(LocalStorageKey.KeyboardToggleStatusLNBx50);
+    this.toggleStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.KeyboardToggleStatusLNBx50);
     if(this.toggleStatus !== undefined){
       if(this.currentProfileId !== 0){
         if(this.toggleStatus['profileId'+this.currentProfileId].status !== 'undefined'){
-          if(this.commonService.getLocalStorageValue(LocalStorageKey['LightingProfileByIdDefault'+this.currentProfileId]) !== undefined){
-            this.lightingProfileById = this.commonService.getLocalStorageValue(LocalStorageKey['LightingProfileByIdDefault'+this.currentProfileId]);
+          if(this.localCacheService.getLocalCacheValue(LocalStorageKey['LightingProfileByIdDefault'+this.currentProfileId]) !== undefined){
+            this.lightingProfileById = this.localCacheService.getLocalCacheValue(LocalStorageKey['LightingProfileByIdDefault'+this.currentProfileId]);
           }
         }
       }
@@ -546,14 +548,14 @@ export class WidgetLightingNotebookComponent implements OnInit {
         this.gamingLightingService.getLightingProfileId().then((response: any) => {
             if (response.didSuccess) {
               this.currentProfileId = response.profileId;
-              this.commonService.setLocalStorageValue(LocalStorageKey.ProfileId,response.profileId);
+              this.localCacheService.setLocalCacheValue(LocalStorageKey.ProfileId,response.profileId);
               this.getLightingProfileById(this.currentProfileId);
             }
         });
       }
     }else{
-      if(this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId) !== undefined){
-        this.currentProfileId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId);
+      if(this.localCacheService.getLocalCacheValue(LocalStorageKey.ProfileId) !== undefined){
+        this.currentProfileId = this.localCacheService.getLocalCacheValue(LocalStorageKey.ProfileId);
       }
     }
     this.logger.info("this.currentProfileId: ",this.currentProfileId);
@@ -563,7 +565,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
     this.lightingProfileById = response;
     this.currentProfileId = response.profileId;
     this.getLightingCurrentDetail(response);
-    this.commonService.setLocalStorageValue(LocalStorageKey.ProfileId, response.profileId);
+    this.localCacheService.setLocalCacheValue(LocalStorageKey.ProfileId, response.profileId);
     this.setCacheList();
   }
 
@@ -576,13 +578,13 @@ export class WidgetLightingNotebookComponent implements OnInit {
         this.ifDisabledKeyboard(this.lightingProfileById.lightInfo[0].lightEffectType);
       }
       this.getLightingCurrentDetail(response);
-      this.commonService.setLocalStorageValue(LocalStorageKey.ProfileId, response.profileId);
+      this.localCacheService.setLocalCacheValue(LocalStorageKey.ProfileId, response.profileId);
       if(this.currentProfileId !== 0){
-        if(this.commonService.getLocalStorageValue(LocalStorageKey['LightingProfileByIdNoteOn'+this.currentProfileId]) !== undefined){
-          toggleOnCache = this.commonService.getLocalStorageValue(LocalStorageKey['LightingProfileByIdNoteOn'+this.currentProfileId]);
+        if(this.localCacheService.getLocalCacheValue(LocalStorageKey['LightingProfileByIdNoteOn'+this.currentProfileId]) !== undefined){
+          toggleOnCache = this.localCacheService.getLocalCacheValue(LocalStorageKey['LightingProfileByIdNoteOn'+this.currentProfileId]);
         }
-        if(this.commonService.getLocalStorageValue(LocalStorageKey['LightingProfileByIdNoteOff'+this.currentProfileId]) !== undefined){
-          toggleOffCache = this.commonService.getLocalStorageValue(LocalStorageKey['LightingProfileByIdNoteOff'+this.currentProfileId]);
+        if(this.localCacheService.getLocalCacheValue(LocalStorageKey['LightingProfileByIdNoteOff'+this.currentProfileId]) !== undefined){
+          toggleOffCache = this.localCacheService.getLocalCacheValue(LocalStorageKey['LightingProfileByIdNoteOff'+this.currentProfileId]);
         }
       }
       if(toggleOnCache !== undefined && toggleOffCache !== undefined){
@@ -601,7 +603,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
         this.ifDisabledKeyboard(this.lightingProfileById.lightInfo[0].lightEffectType);
       }
       this.getLightingCurrentDetail(response);
-      this.commonService.setLocalStorageValue(LocalStorageKey.ProfileId, response.profileId);
+      this.localCacheService.setLocalCacheValue(LocalStorageKey.ProfileId, response.profileId);
       this.setCacheDafaultList();
       // this.setCacheList(true);
     }

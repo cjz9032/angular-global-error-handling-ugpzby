@@ -3,6 +3,7 @@ import * as phoenix from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 export class PasswordManagerLandingViewModel {
 	pmStatus = {
@@ -19,11 +20,15 @@ export class PasswordManagerLandingViewModel {
 	};
 	translateString: any;
 
-	constructor(translate: TranslateService, pmModel: phoenix.PasswordManager, public commonService: CommonService, ) {
+	constructor(
+		translate: TranslateService,
+		pmModel: phoenix.PasswordManager,
+		public commonService: CommonService,
+		private localCacheService: LocalCacheService) {
 		pmModel.on(EventTypes.pmStatusEvent, (data) => {
 			this.setPmStatus(data);
 		});
-		const cacheStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus);
+		const cacheStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityPasswordManagerStatus);
 		translate.stream([
 			'common.securityAdvisor.installed',
 			'common.securityAdvisor.installing',
@@ -54,7 +59,7 @@ export class PasswordManagerLandingViewModel {
 		if (!this.translateString) {
 			return;
 		}
-		const cacheShowOwn: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingPasswordManagerShowOwn, null);
+		const cacheShowOwn: boolean = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingPasswordManagerShowOwn, null);
 		this.pmStatus.showOwn = cacheShowOwn ? cacheShowOwn : false;
 		switch (status) {
 			case 'installed':
@@ -69,6 +74,6 @@ export class PasswordManagerLandingViewModel {
 				this.pmStatus.detail = this.translateString['common.securityAdvisor.notInstalled'];
 				this.pmStatus.status = 'not-installed';
 		}
-		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus, status);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityPasswordManagerStatus, status);
 	}
 }

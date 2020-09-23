@@ -85,10 +85,10 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		public wifiSecurityService: WifiSecurityService
 	) { }
 
-	async ngOnInit() {
+	ngOnInit() {
 		this.securityAdvisor = this.shellService.getSecurityAdvisor();
 		this.homeSecurity = this.shellService.getConnectedHomeSecurity();
-		this.segment = await this.localCacheService.getLocalCacheValue(LocalStorageKey.LocalInfoSegment, this.segmentConst.Consumer);
+		this.segment = this.localCacheService.getLocalCacheValue(LocalStorageKey.LocalInfoSegment, this.segmentConst.Consumer);
 		if (this.securityAdvisor) {
 			this.wifiSecurity = this.securityAdvisor.wifiSecurity;
 		}
@@ -154,7 +154,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 
 	getActivateDeviceStateHandler(value: WifiSecurityState) {
 		if (value.state) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, value.state);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityWifiSecurityState, value.state);
 			this.wifiSecurity.state = value.state;
 		}
 		if (value.isLocationServiceOn !== undefined) {

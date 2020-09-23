@@ -25,14 +25,11 @@ export class NonSMBGuard extends BasicGuard {
 		route: ActivatedRouteSnapshot,
 		state: RouterStateSnapshot
 	): Observable<boolean | UrlTree> | Promise<boolean | UrlTree | any> | boolean | UrlTree {
-		return this.localCacheService
-			.getLocalCacheValue(LocalStorageKey.LocalInfoSegment)
-			.then((segment) => {
-				if (segment !== SegmentConst.SMB) {
-					return true;
-				} else {
-					return super.canActivate(route, state);
-				}
-			});
+		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(LocalStorageKey.LocalInfoSegment)
+		if (segment !== SegmentConst.SMB) {
+			return true;
+		} else {
+			return super.canActivate(route, state);
+		}
 	}
 }

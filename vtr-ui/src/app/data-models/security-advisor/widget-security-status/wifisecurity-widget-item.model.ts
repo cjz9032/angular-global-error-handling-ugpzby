@@ -5,9 +5,15 @@ import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { NgZone } from '@angular/core';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 export class WifiSecurityWidgetItem extends WidgetItem {
-	constructor(wifiSecurity: WifiSecurity, commonService: CommonService, private translateService: TranslateService, private ngZone: NgZone) {
+	constructor(
+		wifiSecurity: WifiSecurity,
+		commonService: CommonService,
+		private localCacheService: LocalCacheService,
+		private translateService: TranslateService,
+		private ngZone: NgZone) {
 		super({
 			id: 'sa-widget-lnk-ws',
 			path: 'security/wifi-security',
@@ -18,21 +24,21 @@ export class WifiSecurityWidgetItem extends WidgetItem {
 		this.translateService.stream('common.securityAdvisor.wifi').subscribe((value) => {
 			this.title = value;
 		});
-		const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
+		const cacheStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityWifiSecurityState);
 		if (cacheStatus) {
 			this.updateStatus(cacheStatus, wifiSecurity.isLocationServiceOn);
 		}
 
 		if (wifiSecurity.state) {
 			this.updateStatus(wifiSecurity.state, wifiSecurity.isLocationServiceOn);
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, wifiSecurity.state);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityWifiSecurityState, wifiSecurity.state);
 			commonService.setSessionStorageValue(SessionStorageKey.WidgetWifiStatus, wifiSecurity.state);
 		}
 
 		wifiSecurity.on(EventTypes.wsStateEvent, (status) => {
 			this.updateStatus(status, wifiSecurity.isLocationServiceOn);
 			if (status) {
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, status);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityWifiSecurityState, status);
 				commonService.setSessionStorageValue(SessionStorageKey.WidgetWifiStatus, status);
 			}
 		}).on(EventTypes.wsIsLocationServiceOnEvent, (status) => {

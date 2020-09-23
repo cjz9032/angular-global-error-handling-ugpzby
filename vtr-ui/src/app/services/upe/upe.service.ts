@@ -5,13 +5,13 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { DevService } from '../dev/dev.service';
 import { EssentialHelper } from './helper/essential.helper';
 import { IUpeEssential, IGetContentParam, IActionResult } from './model/definitions';
-import { CommonService } from '../common/common.service';
 import { LocalStorageKey } from '../../enums/local-storage-key.enum';
 import { SelfSelectService, SegmentConst } from '../self-select/self-select.service';
 import { TranslateService } from '@ngx-translate/core';
 import { UPEHelper } from './helper/upe.helper';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { MetricService } from '../metric/metrics.service';
+import { LocalCacheService } from '../local-cache/local-cache.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -25,7 +25,7 @@ export class UPEService {
 	private localInfo: any;
 	constructor(
 		private commsService: CommsService,
-		private commonService: CommonService,
+		private localCacheService: LocalCacheService,
 		private selfSelectService: SelfSelectService,
 		private deviceService: DeviceService,
 		private localInfoService: LocalInfoService,
@@ -36,7 +36,7 @@ export class UPEService {
 	) {
 		this.essentialHelper = new EssentialHelper(commsService, deviceService, vantageShellService, devService);
 		this.upeHelper = new UPEHelper(vantageShellService, devService, translate);
-		this.channelTags = this.commonService.getLocalStorageValue(LocalStorageKey.UPEChannelTags);
+		this.channelTags = this.localCacheService.getLocalCacheValue(LocalStorageKey.UPEChannelTags);
 	}
 
 	public async fetchUPEContent(params: IGetContentParam) {
@@ -137,7 +137,7 @@ export class UPEService {
 			} else {
 				this.channelTags = [];
 			}
-			this.commonService.setLocalStorageValue(LocalStorageKey.UPEChannelTags, this.channelTags);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.UPEChannelTags, this.channelTags);
 		}
 
 		return this.channelTags;

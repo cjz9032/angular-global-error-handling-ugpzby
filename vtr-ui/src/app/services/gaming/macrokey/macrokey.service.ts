@@ -3,9 +3,9 @@ import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
 import { MacroKeyInput } from 'src/app/data-models/gaming/macrokey/macrokey-input.model';
 import { MacroKeyTypeStatus } from 'src/app/data-models/gaming/macrokey/macrokey-type-status.model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { CommonService } from '../../common/common.service';
 import { MacroKeyRecordedChange } from 'src/app/data-models/gaming/macrokey/macrokey-recorded-change.model';
 import { MacroKeyInputChange } from 'src/app/data-models/gaming/macrokey/macrokey-input-change.model';
+import { LocalCacheService } from '../../local-cache/local-cache.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -22,7 +22,10 @@ export class MacrokeyService {
 		FeatureImage: 'assets/cms-cache/Security4x3-zone2.jpg'
 	};
 
-	constructor(private shellService: VantageShellService, private commonService: CommonService) {
+	constructor(
+		private shellService: VantageShellService,
+		private localCacheService: LocalCacheService
+	) {
 		this.macroKey = shellService.getGamingMacroKey();
 		if (this.macroKey) {
 			this.isMacroKeyAvailable = true;
@@ -98,33 +101,33 @@ export class MacrokeyService {
 
 	// update the macrokey status with cache
 	setMacrokeyTypeStatusCache(macrokeyStatusType: MacroKeyTypeStatus) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.MacroKeyType, macrokeyStatusType.MacroKeyType);
-		this.commonService.setLocalStorageValue(LocalStorageKey.MacroKeyStatus, macrokeyStatusType.MacroKeyStatus);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.MacroKeyType, macrokeyStatusType.MacroKeyType);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.MacroKeyStatus, macrokeyStatusType.MacroKeyStatus);
 	}
 
 	getMacrokeyTypeStatusCache(): MacroKeyTypeStatus {
 		const macrokeyStatusType = new MacroKeyTypeStatus();
-		macrokeyStatusType.MacroKeyType = this.commonService.getLocalStorageValue(LocalStorageKey.MacroKeyType);
-		macrokeyStatusType.MacroKeyStatus = this.commonService.getLocalStorageValue(LocalStorageKey.MacroKeyStatus);
+		macrokeyStatusType.MacroKeyType = this.localCacheService.getLocalCacheValue(LocalStorageKey.MacroKeyType);
+		macrokeyStatusType.MacroKeyStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.MacroKeyStatus);
 		return macrokeyStatusType;
 	}
 
 	// Macrokey recorded changes
 	setMacrokeyRecordedStatusCache(macrokeyRecordChanges: MacroKeyRecordedChange[]) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.MacroKeyRecordedStatus, macrokeyRecordChanges);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.MacroKeyRecordedStatus, macrokeyRecordChanges);
 	}
 
 	getMacrokeyRecordedStatusCache(): MacroKeyRecordedChange[] {
 		let recordChangeStatus: MacroKeyRecordedChange[];
-		recordChangeStatus = this.commonService.getLocalStorageValue(LocalStorageKey.MacroKeyRecordedStatus);
+		recordChangeStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.MacroKeyRecordedStatus);
 		return recordChangeStatus;
 	}
 
 	// Macrokey input change details
 	setMacrokeyInputChangeCache(inputChangeDetail: MacroKeyInputChange) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.CurrentMacroKeyRepeat, inputChangeDetail.macro.repeat);
-		this.commonService.setLocalStorageValue(LocalStorageKey.MacroKey, inputChangeDetail.key);
-		this.commonService.setLocalStorageValue(
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.CurrentMacroKeyRepeat, inputChangeDetail.macro.repeat);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.MacroKey, inputChangeDetail.key);
+		this.localCacheService.setLocalCacheValue(
 			LocalStorageKey.CurrentMacroKeyInterval,
 			inputChangeDetail.macro.interval
 		);
@@ -132,9 +135,9 @@ export class MacrokeyService {
 
 	getMacrokeyInputChangeCache(): MacroKeyInputChange {
 		const inputChangeStatus = new MacroKeyInputChange();
-		inputChangeStatus.macro.repeat = this.commonService.getLocalStorageValue(LocalStorageKey.CurrentMacroKeyRepeat);
-		inputChangeStatus.key = this.commonService.getLocalStorageValue(LocalStorageKey.MacroKey);
-		inputChangeStatus.macro.interval = this.commonService.getLocalStorageValue(
+		inputChangeStatus.macro.repeat = this.localCacheService.getLocalCacheValue(LocalStorageKey.CurrentMacroKeyRepeat);
+		inputChangeStatus.key = this.localCacheService.getLocalCacheValue(LocalStorageKey.MacroKey);
+		inputChangeStatus.macro.interval = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.CurrentMacroKeyInterval
 		);
 		return inputChangeStatus;
@@ -142,55 +145,55 @@ export class MacrokeyService {
 
 	// Initial key data change
 	setMacrokeyInitialKeyDataCache(macroKeyData: MacroKeyInputChange) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.InitialKeyMacroKeyData, macroKeyData);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.InitialKeyMacroKeyData, macroKeyData);
 	}
 
 	getMacrokeyInitialKeyDataCache(): MacroKeyInputChange {
 		let macroKeyData = new MacroKeyInputChange();
-		macroKeyData = this.commonService.getLocalStorageValue(LocalStorageKey.InitialKeyMacroKeyData);
+		macroKeyData = this.localCacheService.getLocalCacheValue(LocalStorageKey.InitialKeyMacroKeyData);
 		return macroKeyData;
 	}
 
 	updateMacrokeyInitialKeyRepeatDataCache(selectRepeatChange: number) {
 		let macroKeyData = new MacroKeyInputChange();
-		macroKeyData = this.commonService.getLocalStorageValue(LocalStorageKey.InitialKeyMacroKeyData);
+		macroKeyData = this.localCacheService.getLocalCacheValue(LocalStorageKey.InitialKeyMacroKeyData);
 		if (macroKeyData) {
 			macroKeyData.macro.repeat = selectRepeatChange;
-			this.commonService.setLocalStorageValue(LocalStorageKey.InitialKeyMacroKeyData, macroKeyData);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.InitialKeyMacroKeyData, macroKeyData);
 		}
 	}
 
 	updateMacrokeyInitialKeyIntervalDataCache(intervalStatus: number) {
 		let macroKeyData = new MacroKeyInputChange();
-		macroKeyData = this.commonService.getLocalStorageValue(LocalStorageKey.InitialKeyMacroKeyData);
+		macroKeyData = this.localCacheService.getLocalCacheValue(LocalStorageKey.InitialKeyMacroKeyData);
 		if (macroKeyData) {
 			macroKeyData.macro.interval = intervalStatus;
-			this.commonService.setLocalStorageValue(LocalStorageKey.InitialKeyMacroKeyData, macroKeyData);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.InitialKeyMacroKeyData, macroKeyData);
 		}
 	}
 
 	updateMacrokeyInitialKeyDataCache(inputs: any) {
 		let macroKeyData = new MacroKeyInputChange();
-		macroKeyData = this.commonService.getLocalStorageValue(LocalStorageKey.InitialKeyMacroKeyData);
+		macroKeyData = this.localCacheService.getLocalCacheValue(LocalStorageKey.InitialKeyMacroKeyData);
 		macroKeyData.macro.inputs = inputs;
-		this.commonService.setLocalStorageValue(LocalStorageKey.InitialKeyMacroKeyData, macroKeyData);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.InitialKeyMacroKeyData, macroKeyData);
 	}
 
 	// Set Macrokey change status
 
 	setMacrokeyChangeStatusCache(macrokeyStatusType: MacroKeyTypeStatus) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.MacroKeyStatus, macrokeyStatusType.MacroKeyStatus);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.MacroKeyStatus, macrokeyStatusType.MacroKeyStatus);
 	}
 
 	setOnRepeatStatusCache(selectRepeatChange: number, keySelected) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.CurrentMacroKeyRepeat, selectRepeatChange);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.CurrentMacroKeyRepeat, selectRepeatChange);
 		if (keySelected === '0' || keySelected === 'M1') {
 			this.updateMacrokeyInitialKeyRepeatDataCache(selectRepeatChange);
 		}
 	}
 
 	setOnIntervalStatusCache(intervalStatus: number, keySelected) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.CurrentMacroKeyInterval, intervalStatus);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.CurrentMacroKeyInterval, intervalStatus);
 		if (keySelected === '0' || keySelected === 'M1') {
 			this.updateMacrokeyInitialKeyIntervalDataCache(intervalStatus);
 		}

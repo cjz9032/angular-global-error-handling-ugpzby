@@ -1,11 +1,11 @@
 import { DevService } from '../dev/dev.service';
-import { CommonService } from '../common/common.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import X2JS from 'x2js';
 import { DeviceService } from '../device/device.service';
 import { environment } from '../../../environments/environment';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { UserService } from '../user/user.service';
+import { LocalCacheService } from '../local-cache/local-cache.service';
 
 declare var Windows;
 
@@ -96,7 +96,7 @@ export class LIDStarterHelper {
 
 	constructor(
 		private devService: DevService,
-		private commonService: CommonService,
+		private localCacheService: LocalCacheService,
 		private deviceService: DeviceService,
 		private vantageShellService: VantageShellService,
 		private userService: UserService
@@ -117,10 +117,10 @@ export class LIDStarterHelper {
 	}
 
 	getDeviceId() {
-		let deviceId = this.commonService.getLocalStorageValue(LocalStorageKey.LidFakeDeviceID);
+		let deviceId = this.localCacheService.getLocalCacheValue(LocalStorageKey.LidFakeDeviceID);
 		if (!deviceId) {
 			deviceId = this.vantageShellService.generateGuid().replace(/-/g, '');
-			this.commonService.setLocalStorageValue(LocalStorageKey.LidFakeDeviceID, deviceId);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.LidFakeDeviceID, deviceId);
 		}
 		return deviceId;
 	}
@@ -254,7 +254,7 @@ export class LIDStarterHelper {
 	async hadEverSignIn() {
 		try {
 			// get signin date from local
-			let signinDate = this.commonService.getLocalStorageValue(LocalStorageKey.LidFirstSignInDate);
+			let signinDate = this.localCacheService.getLocalCacheValue(LocalStorageKey.LidFirstSignInDate);
 			if (signinDate) {
 				return true;
 			}
@@ -266,7 +266,7 @@ export class LIDStarterHelper {
 			signinDate = await LIDStarterHelper.signinDateFromSSO;
 			if (signinDate) {
 				signinDate = new Date(signinDate).toISOString().substring(0, 19);
-				this.commonService.setLocalStorageValue(LocalStorageKey.LidFirstSignInDate, signinDate);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.LidFirstSignInDate, signinDate);
 				this.updateUserSettingXml({ lastSignIndate: signinDate, staterAccount: null });
 				return true;
 			}
@@ -281,7 +281,7 @@ export class LIDStarterHelper {
 	async isStarterAccountScenario() {
 		try {
 			// get signin date from local
-			let signinDate = this.commonService.getLocalStorageValue(LocalStorageKey.LidFirstSignInDate);
+			let signinDate = this.localCacheService.getLocalCacheValue(LocalStorageKey.LidFirstSignInDate);
 			if (signinDate) {
 				return false;
 			}
@@ -293,7 +293,7 @@ export class LIDStarterHelper {
 			signinDate = await LIDStarterHelper.signinDateFromSSO;
 			if (signinDate) {
 				signinDate = new Date(signinDate).toISOString().substring(0, 19);
-				this.commonService.setLocalStorageValue(LocalStorageKey.LidFirstSignInDate, signinDate);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.LidFirstSignInDate, signinDate);
 				this.updateUserSettingXml({ lastSignIndate: signinDate, staterAccount: null });
 				return false;
 			}
@@ -321,7 +321,7 @@ export class LIDStarterHelper {
 			}
 
 			// option2: get from web-localstorage
-			starterAccount = this.commonService.getLocalStorageValue(LocalStorageKey.LidStarterAccount);
+			starterAccount = this.localCacheService.getLocalCacheValue(LocalStorageKey.LidStarterAccount);
 			if (this.isStarterAccount(starterAccount)) {
 				return this.generateStarterAccountToken(starterAccount);
 			}
@@ -332,7 +332,7 @@ export class LIDStarterHelper {
 				return null;
 			}
 
-			this.commonService.setLocalStorageValue(LocalStorageKey.LidStarterAccount, starterAccount);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.LidStarterAccount, starterAccount);
 			this.updateUserSettingXml({ lastSignIndate: null, staterAccount: starterAccount });
 			return this.generateStarterAccountToken(starterAccount);
 		} catch (ex) {
@@ -369,12 +369,12 @@ export class LIDStarterHelper {
 
 	async hasCreateStarterAccount() {
 		// option1: get from web-localstorage
-		let starterAccount = this.commonService.getLocalStorageValue(LocalStorageKey.LidStarterAccount);
+		let starterAccount = this.localCacheService.getLocalCacheValue(LocalStorageKey.LidStarterAccount);
 		if (this.isStarterAccount(starterAccount)) {
 			return true;
 		}
 
-		const LidHasCreateStarterAccount = this.commonService.getLocalStorageValue(LocalStorageKey.LidHasCreateStarterAccount);
+		const LidHasCreateStarterAccount = this.localCacheService.getLocalCacheValue(LocalStorageKey.LidHasCreateStarterAccount);
 		if (LidHasCreateStarterAccount) {
 			return true;
 		}
@@ -383,7 +383,7 @@ export class LIDStarterHelper {
 		const oobeData = await this.getDataFromOOBE();
 		starterAccount = oobeData ? oobeData.starterAccount : null;
 		if (this.isStarterAccount(starterAccount)) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.LidHasCreateStarterAccount, true);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.LidHasCreateStarterAccount, true);
 			return true;
 		}
 
@@ -418,8 +418,8 @@ export class LIDStarterHelper {
 
 		if (!payload) {
 			payload = new UserSettingsPayload();
-			payload.staterAccount = this.commonService.getLocalStorageValue(LocalStorageKey.LidStarterAccount);
-			payload.lastSignIndate = this.commonService.getLocalStorageValue(LocalStorageKey.LidFirstSignInDate);
+			payload.staterAccount = this.localCacheService.getLocalCacheValue(LocalStorageKey.LidStarterAccount);
+			payload.lastSignIndate = this.localCacheService.getLocalCacheValue(LocalStorageKey.LidFirstSignInDate);
 			needUpdate = true;
 		}
 

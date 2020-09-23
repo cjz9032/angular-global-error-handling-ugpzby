@@ -232,14 +232,14 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 	ngOnInit() {
 		this.receivedBiosVersion = false;
 		this.logger.debug('subpage-device-setting-display onInit');
-		this.commonService.checkPowerPageFlagAndHide();
+		this.batteryService.checkPowerPageFlagAndHide();
 		this.initDataFromCache();
 		this.hideCameraPreviewByBiosId();
 		this.batteryService.getBatterySettings();
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
-		if (this.commonService.getLocalStorageValue(LocalStorageKey.EyeCareModeResetStatus) === 'true') {
+		if (this.localCacheService.getLocalCacheValue(LocalStorageKey.EyeCareModeResetStatus) === 'true') {
 			this.showECMReset = true;
 		}
 
@@ -287,7 +287,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 				this.statusChangedLocationPermission();
 				this.initEyecaremodeSettings();
 				this.startEyeCareMonitor();
-				this.commonService.setLocalStorageValue(LocalStorageKey.EyeCareModeResetStatus, 'false');
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.EyeCareModeResetStatus, 'false');
 				this.showECMReset = false;
 			} else {
 				this.showECMReset = true;
@@ -308,9 +308,9 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 	}
 
 	initCameraPrivacyFromCache() {
-		const privacy = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy);
-		const shouldCameraSectionDisabled = this.commonService.getLocalStorageValue(LocalStorageKey.ShouldCameraSectionDisabled, false);
-		this.isCameraPreviewHidden = this.commonService.getLocalStorageValue(LocalStorageKey.IsCameraPreviewHidden, false);
+		const privacy = this.localCacheService.getLocalCacheValue(LocalStorageKey.DashboardCameraPrivacy);
+		const shouldCameraSectionDisabled = this.localCacheService.getLocalCacheValue(LocalStorageKey.ShouldCameraSectionDisabled, false);
+		this.isCameraPreviewHidden = this.localCacheService.getLocalCacheValue(LocalStorageKey.IsCameraPreviewHidden, false);
 
 		if (privacy && privacy.available !== undefined) {
 			if (shouldCameraSectionDisabled !== undefined) {
@@ -335,7 +335,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 
 	initEyeCareModeFromCache() {
 		try {
-			this.eyeCareModeCache = this.commonService.getLocalStorageValue(LocalStorageKey.DisplayEyeCareModeCapability, undefined);
+			this.eyeCareModeCache = this.localCacheService.getLocalCacheValue(LocalStorageKey.DisplayEyeCareModeCapability, undefined);
 			if (this.eyeCareModeCache) {
 				this.eyeCareModeStatus.available = this.eyeCareModeCache.available;
 				// if (!this.eyeCareModeStatus.available) {
@@ -362,7 +362,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 
 	initDisplayColorTempFromCache() {
 		try {
-			this.displayColorTempCache = this.commonService.getLocalStorageValue(LocalStorageKey.DisplayColorTempCapability, undefined);
+			this.displayColorTempCache = this.localCacheService.getLocalCacheValue(LocalStorageKey.DisplayColorTempCapability, undefined);
 			if (this.displayColorTempCache) {
 				this.displayColorTempDataSource = {};
 				this.displayColorTempDataSource.available = this.displayColorTempCache.available;
@@ -388,22 +388,22 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 	}
 
 	initPriorityControlFromCache() {
-		const available = this.commonService.getLocalStorageValue(LocalStorageKey.PriorityControlCapability, true);
+		const available = this.localCacheService.getLocalCacheValue(LocalStorageKey.PriorityControlCapability, true);
 		this.displayPriorityModal.capability = available;
 	}
 
-	async initFeatures() {
+	initFeatures() {
 		this.getPrivacyGuardCapabilityStatus();
 		this.getPrivacyGuardOnPasswordCapabilityStatus();
 		this.initCameraSection();
 		this.getOLEDPowerControlCapability();
-		const machineType = await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType);
+		const machineType = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType);
 		if (machineType === 1) {
 			// commented below line to temporarily hide in current release
 			// this.getPriorityControlCapability();
 		} else {
 			this.displayPriorityModal.capability = false;
-			this.commonService.setLocalStorageValue(LocalStorageKey.PriorityControlCapability, false);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.PriorityControlCapability, false);
 		}
 	}
 
@@ -446,12 +446,12 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 				if (!this.isCameraPreviewHidden) {
 					this.initCameraMonitor();
 				}
-				this.commonService.setLocalStorageValue(LocalStorageKey.IsCameraPreviewHidden, this.isCameraPreviewHidden);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.IsCameraPreviewHidden, this.isCameraPreviewHidden);
 			});
 	}
 
 	async initCameraSection() {
-		this.isDTmachine = await this.localCacheService.getLocalCacheValue(LocalStorageKey.DesktopMachine);
+		this.isDTmachine = this.localCacheService.getLocalCacheValue(LocalStorageKey.DesktopMachine);
 		this.isAllInOneMachineFlag = await this.isAllInOneMachine();
 		if (!this.isAllInOneMachineFlag) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'camera');
@@ -515,7 +515,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 							this.cameraFeatureAccess.showAutoExposureSlider = true;
 						}
 					}
-					this.commonService.setLocalStorageValue(LocalStorageKey.ShouldCameraSectionDisabled, this.shouldCameraSectionDisabled);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.ShouldCameraSectionDisabled, this.shouldCameraSectionDisabled);
 					break;
 				case LocalStorageKey.WelcomeTutorial:
 					if (payload.page === 2) {
@@ -612,7 +612,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 			this.displayColorTempCache.maximum = this.displayColorTempDataSource.maximum;
 			this.displayColorTempCache.minimum = this.displayColorTempDataSource.minimum;
 			this.eyeCareDataSource = this.displayColorTempDataSource;
-			this.commonService.setLocalStorageValue(LocalStorageKey.DisplayColorTempCapability, this.displayColorTempCache);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.DisplayColorTempCapability, this.displayColorTempCache);
 		});
 	}
 
@@ -642,7 +642,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 						this.eyeCareModeCache.toggleStatus = this.eyeCareModeStatus.status;
 						this.eyeCareModeCache.enableSlider = this.enableSlider;
 						this.eyeCareModeCache.eyeCareDataSource = this.eyeCareDataSource;
-						this.commonService.setLocalStorageValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
+						this.localCacheService.setLocalCacheValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
 					}).catch(error => {
 						this.logger.error('onEyeCareModeStatusToggle.error', error.message);
 						return EMPTY;
@@ -801,7 +801,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 					this.eyeCareModeCache.available = this.eyeCareModeStatus.available;
 					this.eyeCareModeCache.toggleStatus = this.eyeCareModeStatus.status;
 					this.eyeCareModeCache.enableSlider = this.enableSlider;
-					this.commonService.setLocalStorageValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
 				})
 				.catch(error => {
 					this.logger.error('getEyeCareModeState', error.message);
@@ -819,7 +819,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 				this.eyeCareModeCache.eyeCareDataSource.current = value;
 				this.isSet.isSetEyecaremodeValue = true;
 				this.setValues.SetEyecaremodeValue = value;
-				this.commonService.setLocalStorageValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
 			}
 		} catch (error) {
 			this.logger.error('onEyeCareTemperatureChange', error.message);
@@ -842,7 +842,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 						this.eyeCareModeCache.enableSlider = this.enableSlider;
 						this.eyeCareModeCache.eyeCareDataSource = this.eyeCareDataSource;
 						this.eyeCareModeCache.sunsetToSunriseStatus = this.sunsetToSunriseModeStatus;
-						this.commonService.setLocalStorageValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
+						this.localCacheService.setLocalCacheValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
 					});
 			}
 		} catch (error) {
@@ -882,7 +882,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 							this.eyeCareModeCache.enableSlider = this.enableSlider;
 							this.eyeCareModeCache.eyeCareDataSource = this.eyeCareDataSource;
 							this.eyeCareModeCache.sunsetToSunriseStatus.status = $featureStatus.status;
-							this.commonService.setLocalStorageValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
+							this.localCacheService.setLocalCacheValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
 						}
 
 					}).catch(error => {
@@ -914,7 +914,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 
 							this.eyeCareModeCache.sunsetToSunriseStatus = this.sunsetToSunriseModeStatus;
 							this.eyeCareModeCache.enableSunsetToSunrise = this.enableSunsetToSunrise;
-							this.commonService.setLocalStorageValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
+							this.localCacheService.setLocalCacheValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
 						}
 					}).catch(error => {
 						this.logger.error('getSunsetToSunrise', error.message);
@@ -942,7 +942,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 			this.displayColorTempCache.maximum = this.displayColorTempDataSource.maximum;
 			this.displayColorTempCache.minimum = this.displayColorTempDataSource.minimum;
 			this.displayColorTempCache.eyeCareMode = this.displayColorTempDataSource.eyemodestate;
-			this.commonService.setLocalStorageValue(LocalStorageKey.DisplayColorTempCapability, this.displayColorTempCache);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.DisplayColorTempCapability, this.displayColorTempCache);
 		});
 	}
 
@@ -955,7 +955,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 				this.displayColorTempCache.current = value;
 				this.isSet.isSetDaytimeColorTemperatureValue = true;
 				this.setValues.SetDaytimeColorTemperatureValue = value;
-				this.commonService.setLocalStorageValue(LocalStorageKey.DisplayColorTempCapability, this.displayColorTempCache);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.DisplayColorTempCapability, this.displayColorTempCache);
 				if (this.eyeCareModeStatus.status) {
 					this.onEyeCareTemperatureChange(this.eyeCareDataSource.current);
 				}
@@ -987,7 +987,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 						this.displayColorTempDataSource.current = resetData || 6500;
 						this.displayColorTempDataSource = Object.assign({}, this.displayColorTempDataSource);
 						this.displayColorTempCache.current = this.displayColorTempDataSource.current;
-						this.commonService.setLocalStorageValue(LocalStorageKey.DisplayColorTempCapability, this.displayColorTempCache);
+						this.localCacheService.setLocalCacheValue(LocalStorageKey.DisplayColorTempCapability, this.displayColorTempCache);
 					});
 			}
 		} catch (error) {
@@ -1008,9 +1008,9 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 					this.cameraPrivacyModeStatus.isLoading = false;
 					this.cameraPrivacyModeStatus.status = $event.switchValue;
 					this.onPrivacyModeChange($event.switchValue);
-					const privacy = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy);
+					const privacy = this.localCacheService.getLocalCacheValue(LocalStorageKey.DashboardCameraPrivacy);
 					privacy.status = $event.switchValue;
-					this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, privacy);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.DashboardCameraPrivacy, privacy);
 				}).catch(error => {
 					this.cameraPrivacyModeStatus.isLoading = false;
 					this.logger.error('setCameraStatus', error.message);
@@ -1036,7 +1036,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 						// this.isAllInOneMachineFlag = true;
 					}
 					this.cameraPrivacyModeStatus.isLoading = false;
-					this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraPrivacyModeStatus);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraPrivacyModeStatus);
 					if (!this.cameraPrivacyModeStatus.permission) {
 						if (this.cameraControl) {
 							this.cameraControl.cleanupCameraAsync('desktopAppAccess');
@@ -1082,7 +1082,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		}
 		this.cameraAccessTemp = this.cameraPrivacyModeStatus.permission;
 		// this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, this.cameraPrivacyModeStatus);
-		this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraPrivacyModeStatus);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraPrivacyModeStatus);
 	}
 
 	startCameraPrivacyMonitor() {
@@ -1177,7 +1177,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 				this.enableSunsetToSunrise = false;
 			}
 			this.eyeCareModeCache.enableSunsetToSunrise = this.enableSunsetToSunrise;
-			this.commonService.setLocalStorageValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
 		});
 		// this.cd.detectChanges();+
 	}
@@ -1220,7 +1220,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		this.eyeCareModeCache.toggleStatus = this.eyeCareModeStatus.status;
 		this.eyeCareModeCache.eyeCareDataSource = this.eyeCareDataSource;
 		this.eyeCareModeCache.enableSlider = this.enableSlider;
-		this.commonService.setLocalStorageValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
 	}
 	public startEyeCareMonitor() {
 		this.logger.debug('start eyecare monitor');
@@ -1383,7 +1383,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 	cameraDisabled(event) {
 		this.logger.debug('disabled all is', event);
 		this.shouldCameraSectionDisabled = event;
-		this.commonService.setLocalStorageValue(LocalStorageKey.ShouldCameraSectionDisabled, this.shouldCameraSectionDisabled);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.ShouldCameraSectionDisabled, this.shouldCameraSectionDisabled);
 		this.dataSource.permission = false;
 		this.hideNote = true;
 		this.cameraFeatureAccess.exposureAutoValue = false;
@@ -1421,16 +1421,16 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 	}
 
 	resetEyecaremodeAllSettings() {
-		if (this.commonService.getLocalStorageValue(LocalStorageKey.EyeCareModeResetStatus) === 'true') {
+		if (this.localCacheService.getLocalCacheValue(LocalStorageKey.EyeCareModeResetStatus) === 'true') {
 			return;
 		}
 		this.displayService.resetEyecaremodeAllSettings()
 			.then(errorCode => {
 				if (errorCode === 0) {
-					this.commonService.setLocalStorageValue(LocalStorageKey.EyeCareModeResetStatus, 'true');
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.EyeCareModeResetStatus, 'true');
 					this.eyeCareModeStatus.available = false;
 					this.eyeCareModeCache.available = false;
-					this.commonService.setLocalStorageValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
 				}
 			});
 	}
@@ -1451,15 +1451,15 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 						if (this.displayPriorityModal.options.length !== 0) {
 							this.displayPriorityModal.capability = true;
 							this.getPriorityControlSetting();
-							this.commonService.setLocalStorageValue(LocalStorageKey.PriorityControlCapability, true);
+							this.localCacheService.setLocalCacheValue(LocalStorageKey.PriorityControlCapability, true);
 						} else {
 							this.displayPriorityModal.capability = false;
-							this.commonService.setLocalStorageValue(LocalStorageKey.PriorityControlCapability, false);
+							this.localCacheService.setLocalCacheValue(LocalStorageKey.PriorityControlCapability, false);
 						}
 					}).catch(error => {
 						this.logger.error('SubpageDeviceSettingsDisplayComponent:getPriorityControlCapability', error.message);
 						this.displayPriorityModal.capability = false;
-						this.commonService.setLocalStorageValue(LocalStorageKey.PriorityControlCapability, false);
+						this.localCacheService.setLocalCacheValue(LocalStorageKey.PriorityControlCapability, false);
 					});
 			}
 		} catch (error) {
@@ -1482,13 +1482,13 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 					}).catch(error => {
 						this.logger.error('SubpageDeviceSettingsDisplayComponent:getPriorityControlSetting', error.message);
 						this.displayPriorityModal.capability = false;
-						this.commonService.setLocalStorageValue(LocalStorageKey.PriorityControlCapability, false);
+						this.localCacheService.setLocalCacheValue(LocalStorageKey.PriorityControlCapability, false);
 					});
 			}
 		} catch (error) {
 			this.logger.error('SubpageDeviceSettingsDisplayComponent:getPriorityControlSetting', error.message);
 			this.displayPriorityModal.capability = false;
-			this.commonService.setLocalStorageValue(LocalStorageKey.PriorityControlCapability, false);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.PriorityControlCapability, false);
 			return EMPTY;
 		}
 	}
@@ -1519,7 +1519,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 			this.hideNote = true;
 			this.cameraFeatureAccess.showAutoExposureSlider = true;
 		}
-		this.commonService.setLocalStorageValue(LocalStorageKey.ShouldCameraSectionDisabled, this.shouldCameraSectionDisabled);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.ShouldCameraSectionDisabled, this.shouldCameraSectionDisabled);
 		if (this.dataSource.exposure.autoValue === true && !this.shouldCameraSectionDisabled) {
 			this.cameraFeatureAccess.exposureAutoValue = true;
 

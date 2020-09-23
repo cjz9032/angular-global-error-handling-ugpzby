@@ -19,6 +19,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import AES from 'crypto-js/aes';
 import enc_utf8 from 'crypto-js/enc-utf8';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
+import { LocalCacheService } from '../local-cache/local-cache.service';
 
 declare var Windows;
 
@@ -82,6 +83,7 @@ export class UserService implements IUserService {
 	constructor(
 		private cookieService: CookieService,
 		private commsService: CommsService,
+		private localCacheService: LocalCacheService,
 		private devService: DevService,
 		private vantageShellService: VantageShellService,
 		private commonService: CommonService,
@@ -111,7 +113,7 @@ export class UserService implements IUserService {
 
 		this.updateLidSupported();
 
-		this.lidStarterHelper = new LIDStarterHelper(devService, commonService, deviceService, vantageShellService, this);
+		this.lidStarterHelper = new LIDStarterHelper(devService, this.localCacheService, deviceService, vantageShellService, this);
 
 		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
@@ -186,7 +188,7 @@ export class UserService implements IUserService {
 	}
 
 	getLidUserFirstNameFromLocalStorage(userGuid: string) {
-		const firstName = this.commonService.getLocalStorageValue(
+		const firstName = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.LidUserFirstName,
 			undefined
 		);
@@ -328,10 +330,10 @@ export class UserService implements IUserService {
 	}
 
 	setAuth(auth = false, appFeature = null) {
-		let signinDate = this.commonService.getLocalStorageValue(LocalStorageKey.LidFirstSignInDate);
+		let signinDate = this.localCacheService.getLocalCacheValue(LocalStorageKey.LidFirstSignInDate);
 		if (!signinDate) {
 			signinDate = new Date().toISOString().substring(0, 19);
-			this.commonService.getLocalStorageValue(LocalStorageKey.LidFirstSignInDate, signinDate);
+			this.localCacheService.getLocalCacheValue(LocalStorageKey.LidFirstSignInDate, signinDate);
 			this.lidStarterHelper.updateUserSettingXml({ lastSignIndate: signinDate, staterAccount: null });
 		}
 		if (auth && this.starter) {

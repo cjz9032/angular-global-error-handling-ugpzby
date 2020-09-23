@@ -11,6 +11,7 @@ import {
 import {
 	TranslateService
 } from '@ngx-translate/core';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 export class FingerPrintLandingViewModel {
 	whStatus = {
@@ -29,6 +30,7 @@ export class FingerPrintLandingViewModel {
 		translate: TranslateService,
 		whModel: phoenix.WindowsHello,
 		public commonService: CommonService,
+		private localCacheService: LocalCacheService
 	) {
 		whModel.on(EventTypes.helloFingerPrintStatusEvent, (data) => {
 			this.setWhStatus(data);
@@ -49,7 +51,7 @@ export class FingerPrintLandingViewModel {
 			this.whStatus.title = res['security.landing.fingerprint'];
 			this.whStatus.content = res['security.landing.fingerprintContent'];
 			this.whStatus.buttonLabel = res['security.landing.visitFingerprint'];
-			const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingWindowsHelloFingerprintStatus);
+			const cacheStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingWindowsHelloFingerprintStatus);
 			if (whModel && whModel.fingerPrintStatus) {
 				this.setWhStatus(whModel.fingerPrintStatus);
 			} else if (cacheStatus) {
@@ -64,6 +66,6 @@ export class FingerPrintLandingViewModel {
 		}
 		this.whStatus.detail = this.translateString[`common.securityAdvisor.${finger === 'active' ? 'enrolled' : 'notEnrolled'}`];
 		this.whStatus.status = finger === 'active' ? 'enabled' : 'disabled';
-		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingWindowsHelloFingerprintStatus, finger);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityLandingWindowsHelloFingerprintStatus, finger);
 	}
 }

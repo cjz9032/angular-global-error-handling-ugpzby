@@ -98,9 +98,9 @@ export class UserDefinedKeyComponent implements OnInit, OnDestroy {
 	async getUDKCapability() {
 		try {
 			await this.keyboardService.StartSpecialKeyMonitor(Windows.Storage.ApplicationData.current.localFolder.path);
-			this.machineType =  await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType);
+			this.machineType =  this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType);
 			if (this.machineType === 1) {
-				let inputAccessoriesCapability: InputAccessoriesCapability = await this.localCacheService.getLocalCacheValue(LocalStorageKey.InputAccessoriesCapability);
+				let inputAccessoriesCapability: InputAccessoriesCapability = this.localCacheService.getLocalCacheValue(LocalStorageKey.InputAccessoriesCapability);
 				if (inputAccessoriesCapability && inputAccessoriesCapability.isUdkAvailable) {
 					this.hasUDKCapability = inputAccessoriesCapability.isUdkAvailable;
 				} else {

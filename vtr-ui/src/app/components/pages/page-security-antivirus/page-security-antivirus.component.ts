@@ -18,6 +18,7 @@ import { AntivirusService } from 'src/app/services/security/antivirus.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { MetricsTranslateService } from 'src/app/services/mertics-traslate/metrics-translate.service';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
 	selector: 'vtr-page-security-antivirus',
@@ -54,6 +55,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		private vantageShell: VantageShellService,
 		public cmsService: CMSService,
 		public commonService: CommonService,
+		public localCacheService: LocalCacheService,
 		public modalService: NgbModal,
 		private guard: GuardService,
 		private router: Router,
@@ -73,8 +75,8 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
-		this.common = new AntivirusCommon(this.antiVirus, this.isOnline, this.localInfoService, this.commonService, this.translate, this.metrics, this.metricsTranslateService, this.hypSettings);
-		this.viewModel = new AntiVirusViewModel(this.antiVirus, this.commonService, this.translate, this.antivirusService);
+		this.common = new AntivirusCommon(this.antiVirus, this.isOnline, this.localInfoService, this.localCacheService, this.translate, this.metrics, this.metricsTranslateService, this.hypSettings);
+		this.viewModel = new AntiVirusViewModel(this.antiVirus, this.localCacheService, this.translate, this.antivirusService);
 
 		if (!this.guard.previousPageName.startsWith('Security')) {
 			this.antiVirus.refresh();

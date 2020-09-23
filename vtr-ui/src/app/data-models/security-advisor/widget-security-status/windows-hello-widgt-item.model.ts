@@ -3,9 +3,14 @@ import { WindowsHello, EventTypes } from '@lenovo/tan-client-bridge';
 import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 export class WindowsHelloWidgetItem extends WidgetItem {
-	constructor(windowsHello: WindowsHello, commonService: CommonService, private translateService: TranslateService) {
+	constructor(
+		windowsHello: WindowsHello,
+		commonService: CommonService,
+		private localCacheService: LocalCacheService,
+		private translateService: TranslateService) {
 		super({
 			id: 'sa-widget-lnk-wh',
 			path: 'ms-settings:signinoptions',
@@ -16,7 +21,7 @@ export class WindowsHelloWidgetItem extends WidgetItem {
 		this.translateService.stream('common.securityAdvisor.fingerPrint').subscribe((value) => {
 			this.title = value;
 		});
-		const cacheStatus: string = commonService.getLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus);
+		const cacheStatus: string = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityWindowsHelloStatus);
 		if (cacheStatus) {
 			this.status = cacheStatus === 'enrolled' ? 0 : 1;
 			this.detail = cacheStatus;
@@ -26,14 +31,14 @@ export class WindowsHelloWidgetItem extends WidgetItem {
 			const active = windowsHello.fingerPrintStatus === 'active';
 			this.status = active ? 0 : 1;
 			this.detail = active ? 'enrolled' : 'notEnrolled';
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus, this.detail);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityWindowsHelloStatus, this.detail);
 			this.translateStatus(this.detail);
 		}
 
 		windowsHello.on(EventTypes.helloFingerPrintStatusEvent, (fpStatus) => {
 			this.status = fpStatus === 'active' ? 0 : 1;
 			this.detail = fpStatus === 'active' ? 'enrolled' : 'notEnrolled';
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus, this.detail);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityWindowsHelloStatus, this.detail);
 			this.translateStatus(this.detail);
 		});
 	}

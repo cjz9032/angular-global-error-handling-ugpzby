@@ -351,24 +351,24 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		}
 	}
 
-	private async getCachedValue() {
-		let cachedData = await this.localCacheService.getLocalCacheValue(LocalStorageKey.SystemUpdateCriticalUpdateStatus);
+	private getCachedValue() {
+		let cachedData = this.localCacheService.getLocalCacheValue(LocalStorageKey.SystemUpdateCriticalUpdateStatus);
 		if (typeof (cachedData) !== 'undefined') {
 			this.autoUpdateOptions[0].isChecked = cachedData;
 			this.isScheduleScanEnabled = cachedData;
 		}
-		cachedData = await this.localCacheService.getLocalCacheValue(LocalStorageKey.SystemUpdateRecommendUpdateStatus);
+		cachedData = this.localCacheService.getLocalCacheValue(LocalStorageKey.SystemUpdateRecommendUpdateStatus);
 		if (typeof (cachedData) !== 'undefined') {
 			this.autoUpdateOptions[1].isChecked = cachedData;
 			if (!this.autoUpdateOptions[0].isChecked) {
 				this.autoUpdateOptions[1].isDisabled = true;
 			}
 		}
-		cachedData = await this.localCacheService.getLocalCacheValue(LocalStorageKey.SystemUpdateLastInstallTime);
+		cachedData = this.localCacheService.getLocalCacheValue(LocalStorageKey.SystemUpdateLastInstallTime);
 		if (cachedData) {
 			this.lastInstallTime = cachedData;
 		}
-		cachedData = await this.localCacheService.getLocalCacheValue(LocalStorageKey.SystemUpdateNextScheduleScanTime);
+		cachedData = this.localCacheService.getLocalCacheValue(LocalStorageKey.SystemUpdateNextScheduleScanTime);
 		if (cachedData) {
 			this.nextScheduleScanTime = cachedData;
 		}

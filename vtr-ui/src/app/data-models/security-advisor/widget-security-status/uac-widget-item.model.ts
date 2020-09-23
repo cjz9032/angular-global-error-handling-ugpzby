@@ -1,13 +1,16 @@
 import { EventTypes, UAC } from '@lenovo/tan-client-bridge';
-import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { WidgetItem } from './widget-item.model';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 export class UACWidgetItemViewModel extends WidgetItem {
 	translateString: any;
 	public launch() {}
-	constructor(uac: UAC, private commonService: CommonService, private translate: TranslateService) {
+	constructor(
+		uac: UAC,
+		private localCacheService: LocalCacheService,
+		private translate: TranslateService) {
 		super({
 			id: 'sa-widget-lnk-uac',
 			type: 'security',
@@ -16,7 +19,7 @@ export class UACWidgetItemViewModel extends WidgetItem {
 		uac.on(EventTypes.uacStatusEvent, (data) => {
 			this.setWaStatus(data);
 		});
-		const cacheStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityUacStatus);
+		const cacheStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityUacStatus);
 		translate.stream([
 			'common.securityAdvisor.enabled',
 			'common.securityAdvisor.disabled',
@@ -39,6 +42,6 @@ export class UACWidgetItemViewModel extends WidgetItem {
 		}
 		this.detail = this.translateString[`common.securityAdvisor.${status === 'enable' ? 'enabled' : 'disabled'}`];
 		this.status = status === 'enable' ? 0 : 1;
-		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityUacStatus, status);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityUacStatus, status);
 	}
 }

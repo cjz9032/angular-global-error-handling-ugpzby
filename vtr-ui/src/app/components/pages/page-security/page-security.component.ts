@@ -45,6 +45,7 @@ import { DeviceService } from 'src/app/services/device/device.service';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { LandingView } from 'src/app/data-models/security-advisor/widegt-security-landing/landing-view.model';
 import { AntivirusService } from 'src/app/services/security/antivirus.service';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 
 @Component({
@@ -86,6 +87,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		public vantageShellService: VantageShellService,
 		private cmsService: CMSService,
 		private commonService: CommonService,
+		private localCacheService: LocalCacheService,
 		private translate: TranslateService,
 		private deviceService: DeviceService,
 		private ngZone: NgZone,
@@ -111,7 +113,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		this.windowsActive = this.securityAdvisor.windowsActivation;
 		this.bitLocker = this.securityAdvisor.bitLocker;
 		this.isOnline = this.commonService.isOnline;
-		this.landingStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingLevel);
+		this.landingStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingLevel);
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
@@ -166,26 +168,26 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 
 	createViewModels() {
 		this.antivirusLandingViewModel = new AntiVirusLandingViewModel(this.translate, this.antivirus, this.commonService, this.antivirusService);
-		this.windowsActiveLandingViewModel = new WindowsActiveLandingViewModel(this.translate, this.windowsActive, this.commonService);
-		this.uacLandingViewModel = new UacLandingViewModel(this.translate, this.uac, this.commonService);
+		this.windowsActiveLandingViewModel = new WindowsActiveLandingViewModel(this.translate, this.windowsActive, this.commonService, this.localCacheService);
+		this.uacLandingViewModel = new UacLandingViewModel(this.translate, this.uac, this.commonService, this.localCacheService);
 		// this.bitLockerLandingViewModel = new BitLockerLandingViewModel(this.translate, this.bitLocker, this.commonService);
 		if (this.showVpn) {
-			this.vpnLandingViewModel = new VpnLandingViewModel(this.translate, this.vpn, this.commonService);
+			this.vpnLandingViewModel = new VpnLandingViewModel(this.translate, this.vpn, this.commonService, this.localCacheService);
 		} else {
 			this.vpnLandingViewModel = undefined;
 		}
 		if (this.showDashlane) {
-			this.passwordManagerLandingViewModel = new PasswordManagerLandingViewModel(this.translate, this.passwordManager, this.commonService);
+			this.passwordManagerLandingViewModel = new PasswordManagerLandingViewModel(this.translate, this.passwordManager, this.commonService, this.localCacheService);
 		} else {
 			this.passwordManagerLandingViewModel = undefined;
 		}
-		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
-		const cacheShowWifiSecurity = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity);
+		const cacheShowWindowsHello = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityShowWindowsHello);
+		const cacheShowWifiSecurity = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityShowWifiSecurity);
 		if (cacheShowWindowsHello) {
-			this.fingerPrintLandingViewModel = new FingerPrintLandingViewModel(this.translate, this.windowsHello, this.commonService);
+			this.fingerPrintLandingViewModel = new FingerPrintLandingViewModel(this.translate, this.windowsHello, this.commonService, this.localCacheService);
 		}
 		if (cacheShowWifiSecurity || this.wifiSecurity.isSupported) {
-			this.wifiSecurityLandingViewModel = new WifiSecurityLandingViewModel(this.translate, this.wifiSecurity, this.commonService, this.ngZone);
+			this.wifiSecurityLandingViewModel = new WifiSecurityLandingViewModel(this.translate, this.wifiSecurity, this.commonService, this.localCacheService, this.ngZone);
 		}
 		this.windowsHello.on(phoenix.EventTypes.helloFingerPrintStatusEvent, () => {
 			this.showWindowsHelloItem(this.windowsHello);
@@ -338,7 +340,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			this.landingStatus.percent = 0;
 		}
 
-		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingLevel, this.landingStatus);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityLandingLevel, this.landingStatus);
 	}
 
 	fetchCMSArticles() {
@@ -362,8 +364,8 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 
 	showWindowsHelloItem(windowsHello: phoenix.WindowsHello) {
 		if (this.windowsHelloService.showWindowsHello(this.windowsHello)) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, true);
-			this.fingerPrintLandingViewModel = new FingerPrintLandingViewModel(this.translate, windowsHello, this.commonService);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityShowWindowsHello, true);
+			this.fingerPrintLandingViewModel = new FingerPrintLandingViewModel(this.translate, windowsHello, this.commonService, this.localCacheService);
 		} else {
 			this.fingerPrintLandingViewModel = null;
 		}
@@ -371,8 +373,8 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 
 	showWifiSecurityItem() {
 		if (this.wifiSecurity.isSupported) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, true);
-			this.wifiSecurityLandingViewModel = new WifiSecurityLandingViewModel(this.translate, this.wifiSecurity, this.commonService, this.ngZone);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityShowWifiSecurity, true);
+			this.wifiSecurityLandingViewModel = new WifiSecurityLandingViewModel(this.translate, this.wifiSecurity, this.commonService, this.localCacheService, this.ngZone);
 		} else {
 			this.wifiSecurityLandingViewModel = null;
 		}

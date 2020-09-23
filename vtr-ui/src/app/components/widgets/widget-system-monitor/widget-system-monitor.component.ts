@@ -1,11 +1,11 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { HwInfoService } from 'src/app/services/gaming/gaming-hwinfo/hw-info.service';
-import { CommonService } from 'src/app/services/common/common.service';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-capabilities';
 import { SystemStatus } from 'src/app/data-models/gaming/system-status.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
 	selector: 'app-widget-system-monitor',
@@ -69,7 +69,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 
 	constructor(
 		private hwInfoService: HwInfoService,
-		private commonService: CommonService,
+		private localCacheService: LocalCacheService,
 		private gamingCapabilityService: GamingAllCapabilitiesService,
 		private logger: LoggerService
 	) {
@@ -78,120 +78,120 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 
 	// CPU Panel Data
 	GetcpuBaseFrequencyCache(): any {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.cpuBaseFrequency);
+		return this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuBaseFrequency);
 	}
 	SetcpuBaseFrequencyeCache(cpuBaseFrequecnyCache) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.cpuBaseFrequency, cpuBaseFrequecnyCache);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuBaseFrequency, cpuBaseFrequecnyCache);
 	}
 	GetcpuCapacityCache(): any {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.cpuCapacity);
+		return this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuCapacity);
 	}
 	SetcpuCapacityCache(cpuCapacityCache) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.cpuCapacity, cpuCapacityCache);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuCapacity, cpuCapacityCache);
 	}
 	GetcpuUsageCache(): any {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.cpuUsage, this.cpuUsage);
+		return this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuUsage, this.cpuUsage);
 	}
 	SetcpuUsageCache(cpuUsageCache) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.cpuUsage, cpuUsageCache);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuUsage, cpuUsageCache);
 	}
 	GetcpuoverCache(): any {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.cpuOver);
+		return this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuOver);
 	}
 	SetcpuoverCache(cpuOverCache) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.cpuOver, cpuOverCache);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuOver, cpuOverCache);
 	}
 
 	// GPU Panel Data
 	GetgpuCapacityCache(): any {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.gpuCapacity);
+		return this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuCapacity);
 	}
 	SetgpuCapacityCache(gpuCapacityCache) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.gpuCapacity, gpuCapacityCache);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.gpuCapacity, gpuCapacityCache);
 	}
 
 	GetgpuMaxFrequencyCache(): any {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.gpuMaxFrequency);
+		return this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuMaxFrequency);
 	}
 	SetgpuMaxFrequencyCache(gpuMaxFrequenceyCache) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.gpuMaxFrequency, gpuMaxFrequenceyCache);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.gpuMaxFrequency, gpuMaxFrequenceyCache);
 	}
 	GetgpuUsageCache(): any {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.gpuUsage, this.gpuCurrent * 100 / this.gpuMax);
+		return this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuUsage, this.gpuCurrent * 100 / this.gpuMax);
 	}
 	SetgpuUsageCache(gpuUsageCache) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.gpuUsage, gpuUsageCache);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.gpuUsage, gpuUsageCache);
 	}
 	GetgpuModulenameCache(): any {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.gpuModulename);
+		return this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuModulename);
 	}
 	SetgpuModulenameCache(gpuModulenameCache) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.gpuModulename, gpuModulenameCache);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.gpuModulename, gpuModulenameCache);
 	}
 
 	// Ram Panel Data
 	GetmemorySizeCache(): any {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.memorySize);
+		return this.localCacheService.getLocalCacheValue(LocalStorageKey.memorySize);
 	}
 	SetmemorySizeCache(memorySizeCache) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.memorySize, memorySizeCache);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.memorySize, memorySizeCache);
 	}
 	GetramCapacityCache(): any {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.ramCapacity);
+		return this.localCacheService.getLocalCacheValue(LocalStorageKey.ramCapacity);
 	}
 	SetramCapacityCache(ramCapacityCache) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.ramCapacity, ramCapacityCache);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.ramCapacity, ramCapacityCache);
 	}
 	GetramUsageCache(): any {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.ramUsage, this.memoryUsage);
+		return this.localCacheService.getLocalCacheValue(LocalStorageKey.ramUsage, this.memoryUsage);
 	}
 	SetramUsageCache(ramUsageCache) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.ramUsage, ramUsageCache);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.ramUsage, ramUsageCache);
 	}
 	GetramaOverCache(): any {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.ramOver);
+		return this.localCacheService.getLocalCacheValue(LocalStorageKey.ramOver);
 	}
 	SetramOverCache(ramOverCache) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.ramOver, ramOverCache);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.ramOver, ramOverCache);
 	}
 
 	// SSD & HDD Panel
 	GetTypeCache(): any {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.type);
+		return this.localCacheService.getLocalCacheValue(LocalStorageKey.type);
 	}
 	SetTypeCache(type) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.type, type);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.type, type);
 	}
 	GetCapacityCache(): any {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.capacity);
+		return this.localCacheService.getLocalCacheValue(LocalStorageKey.capacity);
 	}
 	SetCapacityCache(capacity) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.capacity, capacity);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.capacity, capacity);
 	}
 	GetDiskUsageCache(): any {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.diskUsage);
+		return this.localCacheService.getLocalCacheValue(LocalStorageKey.diskUsage);
 	}
 	SetDiskUsageCache(diskUsage) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.diskUsage, diskUsage);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.diskUsage, diskUsage);
 	}
 	GethddNameCache(): any {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.hddName);
+		return this.localCacheService.getLocalCacheValue(LocalStorageKey.hddName);
 	}
 	SethddNameCache(hddName) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.hddName, hddName);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.hddName, hddName);
 	}
 
 	GetusedDiskkCache(): any {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.usedDisk);
+		return this.localCacheService.getLocalCacheValue(LocalStorageKey.usedDisk);
 	}
 	SetusedDiskCache(usedDisk) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.usedDisk, usedDisk);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.usedDisk, usedDisk);
 	}
 	GetisSystemDiskkCache(): any {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.isSystemDisk);
+		return this.localCacheService.getLocalCacheValue(LocalStorageKey.isSystemDisk);
 	}
 	SetisSystemDiskCache(isSystemDisk) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.isSystemDisk, isSystemDisk);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.isSystemDisk, isSystemDisk);
 	}
 
 	public getLocalSystemCache() {
@@ -315,13 +315,13 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	}
 
 	public setFormDynamicInformationCache(hwInfo: any) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.cpuBaseFrequency, this.cpuCurrent);
-		this.commonService.setLocalStorageValue(LocalStorageKey.cpuUsage, hwInfo.cpuUsage);
-		this.commonService.setLocalStorageValue(LocalStorageKey.gpuCapacity, this.gpuCurrent);
-		this.commonService.setLocalStorageValue(LocalStorageKey.gpuUsage, hwInfo.gpuUsage);
-		this.commonService.setLocalStorageValue(LocalStorageKey.memorySize, this.ramCurrent);
-		this.commonService.setLocalStorageValue(LocalStorageKey.ramUsage, hwInfo.memoryUsage);
-		this.commonService.setLocalStorageValue(LocalStorageKey.disksList, hwInfo.diskList);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuBaseFrequency, this.cpuCurrent);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuUsage, hwInfo.cpuUsage);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.gpuCapacity, this.gpuCurrent);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.gpuUsage, hwInfo.gpuUsage);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.memorySize, this.ramCurrent);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.ramUsage, hwInfo.memoryUsage);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.disksList, hwInfo.diskList);
 	}
 
 	public getMachineInfoService() {
@@ -332,29 +332,29 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 					this.cpuMax = hwInfo.cpuBaseFrequence;
 				}
 				this.SystemStatusObj.cpuCapacity = this.cpuMax;
-				this.commonService.setLocalStorageValue(LocalStorageKey.cpuCapacity, this.cpuMax);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuCapacity, this.cpuMax);
 				if (hwInfo.gpuMemorySize !== '') {
 					this.gpuMax = hwInfo.gpuMemorySize;
 				}
 				this.SystemStatusObj.gpuMaxFrequency = this.gpuMax;
-				this.commonService.setLocalStorageValue(LocalStorageKey.gpuMaxFrequency, this.gpuMax);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.gpuMaxFrequency, this.gpuMax);
 				if (hwInfo.memorySize) {
 					this.ramMax = hwInfo.memorySize;
 				}
 				this.SystemStatusObj.ramCapacity = this.ramMax;
-				this.commonService.setLocalStorageValue(LocalStorageKey.ramCapacity, this.ramMax);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.ramCapacity, this.ramMax);
 				this.cpuModuleName = hwInfo.cpuModuleName;
 				this.cpuover = this.cpuModuleName;
 				this.SystemStatusObj.cpuOver = this.cpuModuleName;
-				this.commonService.setLocalStorageValue(LocalStorageKey.cpuOver, this.cpuModuleName);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuOver, this.cpuModuleName);
 				this.gpuModuleName = hwInfo.gpuModuleName;
 				this.gpuOver = this.gpuModuleName;
 				this.SystemStatusObj.gpuOver = this.gpuModuleName;
-				this.commonService.setLocalStorageValue(LocalStorageKey.gpuOver, this.gpuOver);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.gpuOver, this.gpuOver);
 				this.memoryModuleName = hwInfo.memoryModuleName;
 				this.ramOver = this.memoryModuleName;
 				this.SystemStatusObj.ramOver = this.ramOver;
-				this.commonService.setLocalStorageValue(LocalStorageKey.ramOver, this.ramOver);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.ramOver, this.ramOver);
 			});
 		} catch (error) { }
 	}
@@ -381,7 +381,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 			LocalStorageKey.hddInfoFeature
 		);
 		this.hds = this.defaultHds;
-		this.initialiseDisksList(this.commonService.getLocalStorageValue(LocalStorageKey.disksList, this.defaultHds));
+		this.initialiseDisksList(this.localCacheService.getLocalCacheValue(LocalStorageKey.disksList, this.defaultHds));
 		this.getLocalSystemCache();
 		this.getDynamicInfoService();
 		this.getMachineInfoService();

@@ -12,6 +12,7 @@ import {
 	TranslateService
 } from '@ngx-translate/core';
 import { NgZone } from '@angular/core';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 export class WifiSecurityLandingViewModel {
 	wfStatus  = {
@@ -32,6 +33,7 @@ export class WifiSecurityLandingViewModel {
 		translate: TranslateService,
 		wfModel: phoenix.WifiSecurity,
 		public commonService: CommonService,
+		private localCacheService: LocalCacheService,
 		ngZone: NgZone
 	) {
 		wfModel.on(EventTypes.wsIsLocationServiceOnEvent, (data) => {
@@ -60,8 +62,8 @@ export class WifiSecurityLandingViewModel {
 			this.wfStatus.content = res['security.landing.wifiContent'];
 			this.wfStatus.ownTitle = res['security.landing.haveOwnWifi'];
 			this.wfStatus.buttonLabel = res['security.landing.goWifi'];
-			const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
-			const cacheShowOwn: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingWifiSecurityShowOwn, null);
+			const cacheStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityWifiSecurityState);
+			const cacheShowOwn: boolean = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingWifiSecurityShowOwn, null);
 			this.wfStatus.showOwn = cacheShowOwn ? cacheShowOwn : false;
 			if (wfModel && wfModel.state) {
 				if (wfModel.isLocationServiceOn !== undefined) {
@@ -79,7 +81,7 @@ export class WifiSecurityLandingViewModel {
 		if (!this.translateString) {
 			return;
 		}
-		const cacheShowOwn: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingWifiSecurityShowOwn, null);
+		const cacheShowOwn: boolean = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingWifiSecurityShowOwn, null);
 		this.wfStatus.showOwn = cacheShowOwn ? cacheShowOwn : false;
 		if (location) {
 			this.wfStatus.status = state === 'enabled' ? 'enabled' : 'disabled';
@@ -89,7 +91,7 @@ export class WifiSecurityLandingViewModel {
 			this.wfStatus.detail = this.translateString['common.securityAdvisor.disabled'];
 		}
 		if (state) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, state);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityWifiSecurityState, state);
 		}
 	}
 

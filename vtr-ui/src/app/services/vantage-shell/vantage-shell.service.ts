@@ -185,8 +185,8 @@ export class VantageShellService {
 	public getMetricsPolicy(callback) {
 		const self = this;
 		this.downloadMetricsPolicy().subscribe((response) => {
-			self.deviceFilter(JSON.stringify(response)).then(async (result) => {
-				const userDeterminePrivacy = await self.localCacheService.getLocalCacheValue(
+			self.deviceFilter(JSON.stringify(response)).then((result) => {
+				const userDeterminePrivacy = self.localCacheService.getLocalCacheValue(
 					LocalStorageKey.UserDeterminePrivacy
 				);
 				if (!userDeterminePrivacy) {

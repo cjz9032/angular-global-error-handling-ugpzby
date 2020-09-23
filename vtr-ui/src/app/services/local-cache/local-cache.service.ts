@@ -12,13 +12,40 @@ export class LocalCacheService {
 	private store: NgForage;
 	private transferEnabled = false;
 	private transferredShellVersion = '10.2009.17';
+	private cacheMap = {};
+	private indexedCacheKey = 'VantageExperienceCache';
+	private setPromise: Promise<any>;
 
 	constructor(
 		private readonly fact: DedicatedInstanceFactory,
 		private commonService: CommonService
 	) {
-		this.createForage(this.experienceName, this.experienceName);
 		this.transferEnabled = this.checkTransferEnabled();
+		if (this.transferEnabled) {
+			this.createForage(this.experienceName, this.experienceName);
+		}
+	}
+
+	/**
+	 * Load all cache values from IndexedDB
+	 * It should be done in App_Initializer
+	 */
+	public async loadCacheValues() {
+		if (this.transferEnabled) {
+			const start = Date.now();
+			const  indexedDBCache = await this.getItem(this.indexedCacheKey);
+			if (this.isAvailableValue(indexedDBCache)) {
+				Object.assign(this.cacheMap, indexedDBCache);
+			} else {
+				Object.assign(this.cacheMap, window.localStorage);
+				this.setPromise = this.setItem(this.indexedCacheKey, this.cacheMap).then(() => {
+					window.localStorage.clear();
+					this.setPromise = undefined;
+				});
+			}
+			const end = Date.now();
+			// console.log('Local Cache Value time cost:', end - start);
+		}
 	}
 
 	/**
@@ -28,14 +55,37 @@ export class LocalCacheService {
 	 * @param value value to store in local storage
 	 */
 	public setLocalCacheValue(key: LocalStorageKey, value: any): Promise<void> {
-		if (this.transferEnabled) {
-			return this.setItem(key, value).then(() => {
-				this.commonService.sendNotification(key, value);
-			});
-		} else {
-			this.commonService.setLocalStorageValue(key, value);
-			return Promise.resolve();
-		}
+		return new Promise((resolve, reject) => {
+			if (this.transferEnabled) {
+				const oldValue = this.cacheMap[key];
+				this.cacheMap[key] = value;
+				this.setItem(this.indexedCacheKey, this.cacheMap).then(() => {
+					this.commonService.sendNotification(key, value);
+					resolve();
+				}).catch((error) => {
+					this.cacheMap[key] = oldValue;
+					reject(error);
+				});
+				// if (this.setPromise) {
+				// 	this.setPromise.then(() => {
+				// 		this.commonService.sendNotification(key, value);
+				// 		resolve();
+				// 		this.setPromise = undefined;
+				// 	});
+				// } else {
+				// 	this.setPromise = this.setItem(this.indexedCacheKey, this.cacheMap).then(() => {
+				// 		this.commonService.sendNotification(key, value);
+				// 		resolve();
+				// 	}).catch((error) => {
+				// 		this.cacheMap[key] = oldValue;
+				// 		reject(error);
+				// 	});
+				// }
+			} else {
+				this.commonService.setLocalStorageValue(key, value);
+				resolve();
+			}
+		});
 	}
 
 	/**
@@ -44,18 +94,11 @@ export class LocalCacheService {
 	 * @param key key for storage. Must define it in LocalStorageKey or DashboardLocalStorageKey enum
 	 * @param defaultValue default value for not key not found in IndexedDB storage
 	 */
-	public async getLocalCacheValue(key: LocalStorageKey, defaultValue?: any) {
+	public getLocalCacheValue(key: LocalStorageKey, defaultValue?: any) {
 		if (this.transferEnabled) {
-			let cacheValue = defaultValue;
-			const indexedDBCache = await this.getItem(key);
-			const localStorageCache = this.commonService.getLocalStorageValue(key);
-			if (this.isAvailableValue(indexedDBCache)) {
-				cacheValue = indexedDBCache;
-			} else if (this.isAvailableValue(localStorageCache)) {
-				cacheValue = localStorageCache;
-				this.setItem(key, localStorageCache).then(() => {
-					this.commonService.removeLocalStorageValue(key);
-				});
+			let cacheValue = this.cacheMap[key];
+			if (!this.isAvailableValue(cacheValue)) {
+				cacheValue = defaultValue;
 			}
 			return cacheValue;
 		} else {
@@ -68,9 +111,10 @@ export class LocalCacheService {
 	 * Before switch to use IndexedDB, please make sure there is related feature story for PA to verify
 	 * @param key key use to removes the key/value pair in IndexedDB storage
 	 */
-	public removeLocalCacheItem(key: LocalStorageKey): Promise<void> {
+	public removeLocalCacheValue(key: LocalStorageKey): Promise<void> {
 		if (this.transferEnabled) {
-			return this.removeItem(key);
+			this.cacheMap[key] = undefined;
+			return this.setItem(this.indexedCacheKey, this.cacheMap);
 		}
 		this.commonService.removeLocalStorageValue(key);
 		return Promise.resolve();
