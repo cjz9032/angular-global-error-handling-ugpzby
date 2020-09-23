@@ -1,0 +1,10 @@
+<a class="link-box" (click)="onClick($event)" >
+	<div [ngClass]="['round-box',StateClass[status]]">
+		<div class="status-text">
+			<span *ngIf="status !== SystemState.Loading" class="text-uppercase" [innerHTML]="statusText | translate"></span>
+			<div class="spinner" *ngIf="status === SystemState.Loading">
+				<div class="spinner-border progress-spinner" role="status"></div>
+			</div>
+		</div>
+	</div>
+</a>
