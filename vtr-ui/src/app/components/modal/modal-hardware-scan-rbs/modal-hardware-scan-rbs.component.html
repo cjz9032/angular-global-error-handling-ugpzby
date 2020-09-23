@@ -1,9 +1,15 @@
 <div class="modal-body vtr-modal-hardware-scan-rbs" role="dialog" aria-labelledby="hwscan-rbs-modal-title" aria-describedby="hwscan-rbs-modal-description">
 
 	<div class="row modal-information">
-		<h1 id="hwscan-rbs-modal-title" class="title" role="heading">{{ getComponentTitle() }}</h1>
+		<div *ngIf="devices; else deviceLoading">
+			<h1 id="hwscan-rbs-modal-title" class="title" role="heading">{{ 'hardwareScan.recoverBadSectors.modalTitle' | translate }}</h1>
+		</div>
+
+		<ng-template #deviceLoading>
+			<h1 id="hwscan-rbs-modal-title" class="title" role="heading">{{ 'hardwareScan.loadingDevices' | translate }}</h1>
+		</ng-template>
 	</div>
-	
+
 	<vtr-ui-hardware-list-checkbox
 		[componentId]="'hwscan-rbs-devices'"
 		[devices]="devices">

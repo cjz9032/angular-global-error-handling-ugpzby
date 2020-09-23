@@ -39,7 +39,6 @@ export class ModalHardwareScanRbsComponent implements OnDestroy, OnInit {
 
 	public ngOnInit() {
 		this.getItemsToRecoverBadSectors();
-		this.getComponentTitle();
 	}
 
 	public ngOnDestroy() {
@@ -72,14 +71,6 @@ export class ModalHardwareScanRbsComponent implements OnDestroy, OnInit {
 		this.isSuccessful = true;
 		this.recoverStart.emit(selectedDevices);
 		this.closeModal();
-	}
-
-	public getComponentTitle() {
-		if (this.devices) {
-			return this.translate.instant('hardwareScan.recoverBadSectors.modalTitle');
-		} else {
-			return this.translate.instant('hardwareScan.loadingDevices');
-		}
 	}
 
 	private getItemsToRecoverBadSectors() {

@@ -80,10 +80,6 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 		const currentPath = this.router.url;
 		const page = currentPath.split('/').pop();
 		switch (page) {
-			case 'recover-bad-sectors':
-				this.hidePreviousResult = false;
-				this.isRBSDeviceSelectionPage = true;
-				break;
 			case 'view-results':
 				this.hidePreviousResult = true;
 				this.isRBSDeviceSelectionPage = false;

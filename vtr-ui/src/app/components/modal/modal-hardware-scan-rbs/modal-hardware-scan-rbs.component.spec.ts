@@ -31,16 +31,10 @@ describe('ModalHardwareScanRbsComponent', () => {
 		expect(component).toBeTruthy();
 	});
 
-	it('should call getItemsToRecoverBadSectors and getComponentTitle when call ngOnInit', () => {
+	it('should call getItemsToRecoverBadSectors when call ngOnInit', () => {
 		const spyGetItems = spyOn<any>(component, 'getItemsToRecoverBadSectors');
-		const spyGetComponentTitle = spyOn<any>(component, 'getComponentTitle');
 		component.ngOnInit();
 		expect(spyGetItems).toHaveBeenCalled();
-		expect(spyGetComponentTitle).toHaveBeenCalled();
-	});
-
-	it('should call getComponentTitle', () => {
-		expect(component.getComponentTitle()).not.toBeNull();
 	});
 
 	it('should call onClickRun', () => {
