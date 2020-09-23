@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { SystemState } from 'src/app/enums/system-state.enum';
 
 @Component({
 	selector: 'vtr-widget-round-status',
@@ -8,9 +9,12 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 
 export class WidgetRoundStatusComponent implements OnInit {
-	LOADING = 0;
-	GOOD_CONDITION = 1;
-	NEED_MAINTENANCE = 2;
+	StateClass = {
+		[SystemState.Loading]: 'round-box-loading',
+		[SystemState.GoodCondition]: 'round-box-good-condition',
+		[SystemState.NeedMaintenance]: 'round-box-need-maintenance',
+	};
+	SystemState = SystemState;
 
 	@Input() statusText = 'GOOD CONDITION';
 	@Input() status: any;
@@ -19,28 +23,9 @@ export class WidgetRoundStatusComponent implements OnInit {
 	constructor() { }
 
 	ngOnInit(): void {
-
 	}
 
-	getStatusClass() {
-		if (this.status === this.GOOD_CONDITION) {
-			return 'round-box-good-condition';
-		}
-
-		if (this.status === this.NEED_MAINTENANCE) {
-			return 'round-box-need-maintenance';
-		}
-
-		if (this.status === this.LOADING) {
-			return 'round-box-loading';
-		}
-	}
-
-	isLoading(){
-		return this.status === this.LOADING;
-	}
-
-	onClick($event){
+	onClick($event) {
 		this.clickAction.emit($event);
 	}
 
