@@ -13,9 +13,9 @@
 						[hasChild]="true"
 						(toggle)="onSelectDevice(device, $event)"
 						class="custom-control-component">
-						<p id="{{ componentId }}-item-{{ id }}-name" role="text" class="custom-control-label-text title">
+						<p id="{{ componentId }}-list-item-{{ id }}-title" role="text" class="custom-control-label-text title">
 							{{ 'hardwareScan.pluginTokens.' + device.title | translateDefault:device.title }}
-							<span id="{{ componentId }}-item-{{ id }}-subname" role="text"
+							<span id="{{ componentId }}-list-item-{{ id }}-subname" role="text"
 								class="subname">{{ 'hardwareScan.pluginTokens.' + device.name | translateDefault:device.name }}</span>
 						</p>
 					</vtr-ui-checkbox>

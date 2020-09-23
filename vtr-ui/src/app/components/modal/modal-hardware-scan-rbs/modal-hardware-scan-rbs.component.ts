@@ -14,7 +14,6 @@ export class ModalHardwareScanRbsComponent implements OnDestroy, OnInit {
 	public devices: any[];
 	private failedDevicesList = [];
 	private isSuccessful = false;
-	private confirmModal = ModalRecoverConfirmComponent;
 
 	// Used to signalize to a subscriber that the rbs will start.
 	// It emits the selected devices to be recovered.
@@ -58,7 +57,7 @@ export class ModalHardwareScanRbsComponent implements OnDestroy, OnInit {
 
 		this.closeModal();
 
-		const modalRef = this.modalService.open(this.confirmModal, {
+		const modalRef = this.modalService.open(ModalRecoverConfirmComponent, {
 			size: '500px',
 			centered: true,
 		});

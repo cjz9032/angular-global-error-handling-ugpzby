@@ -29,7 +29,6 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 	currentRouter: any;
 	hidePreviousResult = false;
 	isRBSDeviceSelectionPage = false;
-	private rbsModal = ModalHardwareScanRbsComponent;
 
 	constructor(
 		public deviceService: DeviceService,
@@ -92,7 +91,7 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 	}
 
 	public onRecoverBadSectors(failedDevices = null) {
-		const modalRef = this.modalService.open(this.rbsModal, {
+		const modalRef = this.modalService.open(ModalHardwareScanRbsComponent, {
 			size: 'lg',
 			centered: true,
 		});
