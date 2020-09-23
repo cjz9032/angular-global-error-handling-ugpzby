@@ -108,6 +108,14 @@ export class HomeComponent implements OnInit, OnDestroy {
 		const cachedDeviceInfo: DeviceInfo = await this.localCacheService.getLocalCacheValue(LocalStorageKey.DeviceInfo, undefined);
 		if (cachedDeviceInfo) {
 			this.vantageLaunch(cachedDeviceInfo.isGamingDevice);
+		} else {
+			this.deviceService.getMachineInfo().then((machineInfo) => {
+				if (machineInfo) {
+					this.vantageLaunch(machineInfo.isGaming);
+				} else {
+					this.vantageLaunch(false);
+				}
+			});
 		}
 	}
 
