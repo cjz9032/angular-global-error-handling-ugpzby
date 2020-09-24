@@ -5,6 +5,8 @@ import { disableBackgroundNavigation, reEnableBackgroundNavigation } from '../..
 import { HardwareScanService } from 'src/app/services/hardware-scan/hardware-scan.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { HardwareScanProgress } from 'src/app/enums/hw-scan-progress.enum';
+import { Router } from '@angular/router';
+import { RecoverBadSectorsService } from 'src/app/services/hardware-scan/recover-bad-sectors.service';
 
 @Component({
 	selector: 'vtr-modal-scan-failure',
@@ -24,7 +26,9 @@ export class ModalScanFailureComponent implements OnInit, OnDestroy {
 	constructor(
 		public activeModal: NgbActiveModal,
 		private hardwareScanService: HardwareScanService,
-		private commonService: CommonService) {
+		private commonService: CommonService,
+		private router: Router,
+		private rbsService: RecoverBadSectorsService) {
 		this.failedRbsDevices = [];
 	}
 
@@ -86,9 +90,11 @@ export class ModalScanFailureComponent implements OnInit, OnDestroy {
 	}
 
 	// Goes to RBS page, passing defective device list to be selected when RBS page loads
-	goToRBSPage() {
+	openRbsModal() {
+		// Using absolute URL, since the user could be outside HWScan when this popup is shown.
+		this.router.navigate(['/hardware-scan']);
 		this.closeModal();
-		this.hardwareScanService.startRecoverFromFailed.emit(this.failedRbsDevices);
+		this.rbsService.openRecoverBadSectorsModal(this.failedRbsDevices);
 		this.hardwareScanService.clearLastResponse();
 		this.commonService.sendNotification(HardwareScanProgress.BackEvent);
 	}

@@ -87,7 +87,6 @@ export class HardwareScanService {
 	private currentTaskStep: TaskStep;
 
 	public startRecover: EventEmitter<any> = new EventEmitter();
-	public startRecoverFromFailed: EventEmitter<any> = new EventEmitter();
 
 	private modulesStored: any;
 	private completedStatus: boolean | undefined = undefined;

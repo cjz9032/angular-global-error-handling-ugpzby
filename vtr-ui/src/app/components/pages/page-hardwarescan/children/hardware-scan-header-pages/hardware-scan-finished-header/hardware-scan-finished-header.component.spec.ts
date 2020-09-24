@@ -2,14 +2,14 @@ import { async, ComponentFixture, TestBed, waitForAsync } from '@angular/core/te
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
-import { RecoverBadSectoresService } from '../../../../../../services/hardware-scan/recover-bad-sectores.service';
+import { RecoverBadSectorsService } from '../../../../../../services/hardware-scan/recover-bad-sectors.service';
 import { DevService } from '../../../../../../services/dev/dev.service';
 
 import { HardwareScanFinishedHeaderComponent } from './hardware-scan-finished-header.component';
 
 describe('HardwareScanFinishedHeaderComponent', () => {
 	let component: HardwareScanFinishedHeaderComponent;
-	let recoverBadSectoresService: RecoverBadSectoresService;
+	let recoverBadSectorsService: RecoverBadSectorsService;
 	let fixture: ComponentFixture<HardwareScanFinishedHeaderComponent>;
 
 	beforeEach(() => {
@@ -22,7 +22,7 @@ describe('HardwareScanFinishedHeaderComponent', () => {
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(HardwareScanFinishedHeaderComponent);
-		recoverBadSectoresService = TestBed.inject(RecoverBadSectoresService);
+		recoverBadSectorsService = TestBed.inject(RecoverBadSectorsService);
 		component = fixture.componentInstance;
 	});
 
@@ -49,8 +49,8 @@ describe('HardwareScanFinishedHeaderComponent', () => {
 	});
 
 	it('should call getLastRecoverResultTitle method', () => {
-		const spy = spyOn(recoverBadSectoresService, 'getLastRecoverResultTitle');
-		recoverBadSectoresService.getLastRecoverResultTitle();
+		const spy = spyOn(recoverBadSectorsService, 'getLastRecoverResultTitle');
+		recoverBadSectorsService.getLastRecoverResultTitle();
 		expect(spy).toHaveBeenCalled();
 	});
 });

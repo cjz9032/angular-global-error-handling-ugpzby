@@ -20,7 +20,7 @@ import { TimerService } from 'src/app/services/timer/timer.service';
 import { ModalWaitComponent } from '../../../../modal/modal-wait/modal-wait.component';
 import { TaskType, TaskStep } from 'src/app/enums/hardware-scan-metrics.enum';
 import { LenovoSupportService } from 'src/app/services/hardware-scan/lenovo-support.service';
-import { RecoverBadSectoresService } from 'src/app/services/hardware-scan/recover-bad-sectores.service';
+import { RecoverBadSectorsService } from 'src/app/services/hardware-scan/recover-bad-sectors.service';
 
 const RootParent = 'HardwareScan';
 const ConfirmButton = 'Confirm';
@@ -92,7 +92,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		private commonService: CommonService,
 		private hardwareScanService: HardwareScanService,
 		private previousResultService: PreviousResultService,
-		private recoverBadSectoresService: RecoverBadSectoresService,
+		private recoverBadSectorsService: RecoverBadSectorsService,
 		private hardwareScanResultService: HardwareScanResultService,
 		private ngZone: NgZone,
 		private modalService: NgbModal,
@@ -869,7 +869,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 			results.resultModule = this.hardwareScanResultService.consolidateResults(this.devicesRecoverBadSectors.map(item => item.status));
 
-			this.recoverBadSectoresService.setRecoverResultItems(results);
+			this.recoverBadSectorsService.setRecoverResultItems(results);
 			this.modules = results.items;
 		}
 	}
