@@ -24,6 +24,7 @@ export class ModalRecoverConfirmComponent implements OnInit, OnDestroy {
 	ngOnDestroy() {
 		reEnableBackgroundNavigation(document);
 	}
+
 	public onClosing() {
 		this.activeModal.close();
 	}
