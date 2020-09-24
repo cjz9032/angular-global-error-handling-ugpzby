@@ -118,7 +118,7 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 
 	public setTitle() {
 		if (this.hardwareScanService) {
-			if (this.isRBSDeviceSelectionPage || this.isRecoverExecuting()) {
+			if (this.isRecoverExecuting()) {
 				return this.translate.instant('hardwareScan.recoverBadSectors.title');
 			} else {
 				return this.translate.instant('hardwareScan.name');
