@@ -4,7 +4,7 @@ import { HardwareScheduleScanType } from 'src/app/enums/hardware-schedule-scan-t
 import { DeviceService } from 'src/app/services/device/device.service';
 import { TranslateService } from '@ngx-translate/core';
 import { ModalScheduleNewScanComponent } from '../../modal/modal-schedule-new-scan/modal-schedule-new-scan.component';
-import { ModalScheduleScanCollisionComponent } from '../../modal/modal-schedule-scan-collision/modal-schedule-scan-collision.component';
+import { ModalPreScanInfoComponent } from '../../modal/modal-pre-scan-info/modal-pre-scan-info.component';
 import { HardwareScanService } from '../../../services/hardware-scan/hardware-scan.service';
 
 @Component({
@@ -164,7 +164,7 @@ export class WidgetScheduleScanComponent implements OnInit {
 		let modal;
 		if (size === 'sm') {
 			modal = this.modalService
-			.open(ModalScheduleScanCollisionComponent, {
+			.open(ModalPreScanInfoComponent, { // Component name renamed for PreScanInfo modal. Do it right here when implementing Schedule Scan correctly
 				backdrop: 'static',
 				size: 'sm',
 				centered: true,
@@ -172,7 +172,7 @@ export class WidgetScheduleScanComponent implements OnInit {
 			});
 		} else {
 			modal = this.modalService
-				.open(ModalScheduleScanCollisionComponent, {
+				.open(ModalPreScanInfoComponent, { // Component name renamed for PreScanInfo modal. Do it right here when implementing Schedule Scan correctly
 					backdrop: 'static',
 					size: 'lg',
 					centered: true,

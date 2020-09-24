@@ -2006,15 +2006,23 @@ export class VantageShellService {
 
 	/** returns OledSettings object from VantageShellService of JS Bridge */
 	public getOledSettings(): any {
+		const taskBarRes = {
+			displayStrIndex: -1
+		};
+		const bgDimmerRes = {
+			displayStrIndex: 6
+		};
+		const displayDimmerRes = {
+			displayStrIndex: 3
+		};
 		const oledSettings = {
 			getOLEDPowerControlCapability: this.getPromise(true),
-			getTaskbarDimmerSetting: this.getPromise(true),
-			getBackgroundDimmerSetting: this.getPromise(true),
-			getDisplayDimmerSetting: this.getPromise(true),
+			getTaskbarDimmerSetting: this.getPromise(taskBarRes),
+			getBackgroundDimmerSetting: this.getPromise(bgDimmerRes),
+			getDisplayDimmerSetting: this.getPromise(displayDimmerRes),
 			setTaskbarDimmerSetting: this.getPromise(true),
 			setBackgroundDimmerSetting: this.getPromise(true),
-			setDisplayDimmerSetting: this.getPromise(true),
-
+			setDisplayDimmerSetting: this.getPromise(true)
 		};
 		return oledSettings;
 	}

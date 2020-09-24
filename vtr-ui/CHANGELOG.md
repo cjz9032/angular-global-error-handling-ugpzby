@@ -107,6 +107,31 @@ All notable changes to this project will be documented in this file. See [standa
 
 * **env:** DEV: update cmsApiRoot ([bb5ed04](https://bitbucket.tc.lenovo.com///commit/bb5ed04a576e39a701aa595a39e96e697c68b69c))
 
+### [1.7.55](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.7.54...v1.7.55) (2020-09-19)
+
+
+### Bug Fixes
+
+* **Overall:** improve ssrb finding fix ([6f49ddb](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/6f49ddba95d2cd5436162b06bfe3c15f1d42e8ae))
+
+### [1.7.54](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.7.51...v1.7.54) (2020-09-19)
+
+
+### Bug Fixes
+
+* **Overall:** fix ssrb finding ([a198a4e](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/a198a4e8533464c1a978530957bec9836e9c098b))
+
+### [1.7.51](https://bitbucket.tc.lenovo.com///compare/v1.7.50...v1.7.51) (2020-09-03)
+
+### [1.7.50](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.7.49...v1.7.50) (2020-09-02)
+
+### [1.7.49](https://bitbucket.tc.lenovo.com///compare/v1.7.48...v1.7.49) (2020-09-02)
+
+
+### Bug Fixes
+
+* **antivirus:** VAN-21761 fixed other page privacy url error ([f47099f](https://bitbucket.tc.lenovo.com///commit/f47099f1960a4ab2b9d21f16f81ef437dcc78e74))
+
 ### [1.7.48](https://bitbucket.tc.lenovo.com///compare/v1.7.47...v1.7.48) (2020-08-31)
 
 

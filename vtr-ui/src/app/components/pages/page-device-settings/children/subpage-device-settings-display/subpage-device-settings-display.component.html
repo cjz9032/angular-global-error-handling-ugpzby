@@ -212,29 +212,10 @@
 								</vtr-ui-row-switch>
 							</li>
 
-							<li class="common-li-padding"
-								*ngIf="hasOLEDPowerControlCapability">
-								<!-- [rightIcon]="['far', 'question-circle']"  [tooltipText]="'device.deviceSettings.displayCamera.display.oledPowerSettings.tooltip' | translate" -->
-								<vtr-ui-row-switch
-									[title]="'device.deviceSettings.displayCamera.display.oledPowerSettings.title' | translate"
-									componentName="Oled Power Settings"
-									[isSwitchVisible]="false"
-									[isLastChild]="false"
-									[leftIcon]="['fal', 'tv']"
-									[showChildContent]="true"
-									[isSwitchChecked]="eyeCareModeStatus.status"
-									[switchId]="'oled-power-settings'"
-									(toggleOnOff)="onEyeCareModeStatusToggle($event)"
-									[theme]="'white'">
-									<div class="row">
-										<div class="col-12">
-											<vtr-oled-power-settings
-												[description]=" 'device.deviceSettings.displayCamera.display.oledPowerSettings.description' | translate">
-											</vtr-oled-power-settings>
-										</div>
-									</div>
-								</vtr-ui-row-switch>
-							</li>
+							<!-- OLED power settings with <li> inside -->
+							<vtr-oled-power-settings
+								[description]=" 'device.deviceSettings.displayCamera.display.oledPowerSettings.description' | translate">
+							</vtr-oled-power-settings>
 
 							<!-- commented below lines to temporarily hide in current release -->
 							<!-- Display Priority Control -->

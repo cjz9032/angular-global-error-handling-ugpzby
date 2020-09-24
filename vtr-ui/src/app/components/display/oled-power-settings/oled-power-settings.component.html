@@ -1,70 +1,77 @@
-<div class="vtr-oled-power-settings">
-	<div class="row">
-		<div class="col">
-			<p class="caption mb-0"
-				id="oled-power-settings-caption1"
-				role="text">
-				{{ description[0] }}
-			</p>
-			<p class="caption"
-				id="oled-power-settings-caption2"
-				role="text">
-				{{ description[1] }}
-			</p>
-		</div>
-	</div>
+<li class="common-li-padding"
+	*ngIf="oledPowerSettings?.isCapable">
+	<div class="vtr-oled-power-settings">
+		<vtr-ui-row-switch [title]="'device.deviceSettings.displayCamera.display.oledPowerSettings.title' | translate"
+			componentName="Oled Power Settings"
+			[name]="'device.deviceSettings.displayCamera.display.oledPowerSettings.title' | translate"
+			[isSwitchVisible]="false"
+			[isLastChild]="false"
+			[leftIcon]="['fal', 'tv']"
+			[showChildContent]="true"
+			[theme]="'white'">
+			<div class="row">
+				<div class="col-12">
+					<div class="row">
+						<div class="col">
+							<p role="text"
+								class="caption mb-0"
+								id="oled-power-settings-caption1">
+								{{ description[0] }}
+							</p>
+							<p role="text"
+								class="caption"
+								id="oled-power-settings-caption2">
+								{{ description[1] }}
+							</p>
+						</div>
+					</div>
 
-	<div class="dropdown row">
-		<section class="col-sm-12 col-md-12 col-xl-4">
-			<div class="oled-dimming-portions">
-				<p id="oled-power-settings-tb-dimmer"
-					role="text">
-					{{'device.deviceSettings.displayCamera.display.oledPowerSettings.taskBarDimmer' | translate}}
-				</p>
+					<div class="dropdown row">
+						<section class="col-sm-12 col-md-12 col-xl-4">
+							<div class="oled-dimming-portions">
+								<h5 id="oled-power-settings-tb-dimmer">
+									{{'device.deviceSettings.displayCamera.display.oledPowerSettings.taskBarDimmer' | translate}}
+								</h5>
+							</div>
+							<vtr-ui-dropdown [list]="intervals"
+								[value]="oledPowerSettings?.taskBarDimmerValue"
+								[textCase]="'oled'"
+								(selectionChange)="onTaskBarDimmerChange($event)"
+								[dropDownName]="'OLED TaskBar Dimmer'"
+								[dropDownId]="'oled-taskbar-dimmer-dropDown'">
+							</vtr-ui-dropdown>
+						</section>
+						<section class="col-sm-12 col-md-12 col-xl-4">
+							<div class="oled-dimming-portions">
+								<h5 id="oled-power-settings-bg-dimmer">
+									{{'device.deviceSettings.displayCamera.display.oledPowerSettings.backgroundDimmer' | translate}}
+								</h5>
+							</div>
+							<vtr-ui-dropdown [list]="intervals"
+								[value]="oledPowerSettings?.backgroundDimmerValue"
+								[textCase]="'oled'"
+								(selectionChange)="onBackgroundDimmerChange($event)"
+								[dropDownName]="'OLED Background Dimmer'"
+								[dropDownId]="'oled-background-dimmer-dropDown'">
+							</vtr-ui-dropdown>
+						</section>
+						<section class="col-sm-12 col-md-12 col-xl-4">
+							<div class="oled-dimming-portions">
+								<h5 id="oled-power-settings-dp-dimmer">
+									{{'device.deviceSettings.displayCamera.display.oledPowerSettings.displayDimmer' | translate}}
+								</h5>
+							</div>
+							<vtr-ui-dropdown [list]="intervals"
+								[value]="oledPowerSettings?.displayDimmerValue"
+								(selectionChange)="onDisplayDimmerChange($event)"
+								[textCase]="'oled'"
+								[dropDownName]="'OLED Display Dimmer'"
+								[dropDownId]="'oled-display-dimmer-dropDown'">
+							</vtr-ui-dropdown>
+						</section>
+					</div>
+				</div>
 			</div>
-			<vtr-ui-dropdown [list]="intervals"
-				[metricsParent]="metricsParent"
-				[isMetricsEnabled]=true
-				[value]="taskBarDimmerValue"
-				[textCase]="'oled'"
-				(selectionChange)="onTaskBarDimmerChange($event)"
-				[dropDownName]="'OledPowerSettings.TaskBarDimmer'"
-				[dropDownId]="'oled-taskbar-dimmer-dropDown'">
-			</vtr-ui-dropdown>
-		</section>
-		<section class="col-sm-12 col-md-12 col-xl-4">
-			<div class="oled-dimming-portions">
-				<p id="oled-power-settings-bg-dimmer"
-					role="text">
-					{{'device.deviceSettings.displayCamera.display.oledPowerSettings.backgroundDimmer' | translate}}
-				</p>
-			</div>
-			<vtr-ui-dropdown [list]="intervals"
-				[isMetricsEnabled]=true
-				[metricsParent]="metricsParent"
-				[value]="backgroundDimmerValue"
-				[textCase]="'oled'"
-				(selectionChange)="onBackgroundDimmerChange($event)"
-				[dropDownName]="'OledPowerSettings.BackgroundDimmer'"
-				[dropDownId]="'oled-background-dimmer-dropDown'">
-			</vtr-ui-dropdown>
-		</section>
-		<section class="col-sm-12 col-md-12 col-xl-4">
-			<div class="oled-dimming-portions">
-				<p id="oled-power-settings-dp-dimmer"
-					role="text">
-					{{'device.deviceSettings.displayCamera.display.oledPowerSettings.displayDimmer' | translate}}
-				</p>
-			</div>
-			<vtr-ui-dropdown [list]="intervals"
-				[isMetricsEnabled]=true
-				[metricsParent]="metricsParent"
-				[value]="displayDimmerValue"
-				(selectionChange)="onDisplayDimmerChange($event)"
-				[textCase]="'oled'"
-				[dropDownName]="'OledPowerSettings.DisplayDimmer'"
-				[dropDownId]="'oled-display-dimmer-dropDown'">
-			</vtr-ui-dropdown>
-		</section>
+		</vtr-ui-row-switch>
 	</div>
-</div>
+</li>

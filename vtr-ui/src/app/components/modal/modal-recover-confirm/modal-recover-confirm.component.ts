@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { disableBackgroundNavigation, reEnableBackgroundNavigation } from '../../../services/hardware-scan/utils/ModalBackgroundNavigationUtils';
 
 @Component({
 	selector: 'vtr-modal-recover-confirm',
@@ -15,12 +16,10 @@ export class ModalRecoverConfirmComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit(){
+		disableBackgroundNavigation(document);
 	}
 
 	ngOnDestroy(){
-	}
-
-	public onClosing() {
-		this.activeModal.close();
+		reEnableBackgroundNavigation(document);
 	}
 }

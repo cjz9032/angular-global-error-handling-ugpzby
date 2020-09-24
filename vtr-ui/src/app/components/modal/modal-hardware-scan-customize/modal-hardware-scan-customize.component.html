@@ -3,7 +3,7 @@
 	<div class="row modal-information">
 		<h1 class="title" id="hwscan-customize-modal-title" role="heading">{{ 'hardwareScan.customize.test' | translate }}</h1>
 		<p class="description" id="hwscan-customize-modal-description" role="text">{{ 'hardwareScan.customize.description' | translate }}</p>
-		<p class="errorMessage" id="hwscan-customize-modal-error-message" role="text">{{ errorMessage }}</p>
+		<p class="errorMessage" id="hwscan-customize-modal-error-message" role="text" [hidden]="errorMessage? false : true">{{ errorMessage }}</p>
 	</div>
 
 	<vtr-ui-hardware-list-test

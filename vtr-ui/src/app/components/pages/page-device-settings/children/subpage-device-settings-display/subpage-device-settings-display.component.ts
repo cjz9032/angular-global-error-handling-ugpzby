@@ -1392,7 +1392,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		}
 	}
 
-	// Updates whether device has OLEDPowerControl
+		// Updates whether device has OLEDPowerControl
 	public getOLEDPowerControlCapability() {
 		try {
 			if (this.displayService.isShellAvailable) {
@@ -1411,6 +1411,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 			return EMPTY;
 		}
 	}
+
 	onClick(path) {
 		this.deviceService.launchUri(path);
 	}

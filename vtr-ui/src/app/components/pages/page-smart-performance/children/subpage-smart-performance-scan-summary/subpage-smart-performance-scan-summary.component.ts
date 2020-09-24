@@ -13,6 +13,7 @@ import { formatDate } from '@angular/common';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import moment from 'moment';
 import { v4 as uuid } from 'uuid';
+import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 
 import { ModalSmartPerformanceSubscribeComponent } from 'src/app/components/modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
@@ -34,6 +35,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		private translate: TranslateService,
 		private router: Router,
 		private localCacheService: LocalCacheService,
+		private localInfoService: LocalInfoService,
 		private formatLocaleDate: FormatLocaleDatePipe
 	) {
 
@@ -150,6 +152,23 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 			EndDate: formatDate(this.spEnum.SCHEDULESCANENDDATE, 'yyyy/MM/dd', 'en')
 		}
 	];
+
+	isShowPrice = false;
+	allHidePriceGEO = [
+		'gb', // United Kingdom
+		'ie', // Ireland
+		'au', // Australia
+		'nz', // New Zealand
+		'sg', // Singapore
+		'in', // INDIA
+		'my', // Malaysia
+		'hk', // Hong Kong
+		'tw', // Taiwan
+		'kr', // South Korea
+		'jp', // Japan
+		'th', // Thailand
+	];
+
 	async ngOnInit() {
 		this.leftAnimator = '0%';
 		this.isSubscribed = await this.localCacheService.getLocalCacheValue(
@@ -201,6 +220,11 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 			month: this.currentDate.getMonth() + 1,
 			day: this.currentDate.getDate()
 		};
+		this.localInfoService.getLocalInfo().then(localInfo => {
+			if (!this.allHidePriceGEO.includes(localInfo.GEO)) {
+				this.isShowPrice = true;
+			}
+		});
 	}
 	async getSubscriptionDetails() {
 		let machineInfo;

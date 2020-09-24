@@ -305,4 +305,6 @@ export enum LocalStorageKey {
 
 	// Moved here from DashboardLocalStorageKey enum, don't follow this definition
 	DeviceInfo = '[DashboardLocalStorageKey] DeviceInfo',
+	// OLED power control
+	OledPowerSettings = '[LocalStorageKey] OledPowerSettings'
 }

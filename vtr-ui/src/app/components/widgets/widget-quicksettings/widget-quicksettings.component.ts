@@ -119,15 +119,15 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		if (this.microphoneDevice) {
 			this.microphnePermissionHandler = (args: any) => {
 				if (args && (args.status != null)) {
-					this.logger.info("microphone status changed to " + args.status);
 					switch (args.status) {
 						case 0:
 						case 1:
-						case 3:
-						case 4:
 							this.updateMicrophoneStatus();
 							break;
 						case 2:
+							this.microphoneStatus.permission = false;
+							break;
+						case 3:
 							this.microphoneStatus.permission = false;
 							break;
 					}

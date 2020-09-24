@@ -726,7 +726,7 @@
 				<div class="container-fluid">
 					<div class="row">
 
-						<div class="vtr-page-right-column">
+						<div class="vtr-page-right-column w-100">
 							<div class="vtr-page-shift-up">
 								<div class="container-fluid">
 									<div class="row mb-40"
@@ -753,15 +753,17 @@
 												<div class="card-info"
 													id="smart-performance-scan-summary-recommendAction-desc"
 													role="text">
-													<p>{{'smartPerformance.scanCompletePage.recommendedAction.description' |translate }}
+													<p *ngIf="isShowPrice">{{'smartPerformance.scanCompletePage.recommendedAction.description' |translate }}
 														<!-- <a href="#" class="link-text" vtrMetrics
 															metricsItem="smartPerformance.learnmore"
 															metricsEvent="ArticleClick"
 															metricsParent="Page.Support.SmartPerformance">{{'smartPerformance.subscriptionDetails.learnMore' |translate }}</a> -->
 													</p>
+													<p class="mb-3" *ngIf="!isShowPrice">{{'smartPerformance.scanCompletePage.recommendedAction.newDescription' |translate }}</p>
 													<!-- <p>{{'smartPerformance.scanCompletePage.recommendedAction.description1' |translate }}</p> -->
 												</div>
-												<div class="pricing">
+												<div class="pricing"
+													*ngIf="isShowPrice">
 													<h2 class="big-text"
 														id="smart-performance-scan-summary-recommendAction-yearlyPricing">
 														{{'smartPerformance.scanCompletePage.recommendedAction.yearlyPricing' |translate }}
@@ -770,6 +772,7 @@
 														role="text">{{'smartPerformance.scanCompletePage.recommendedAction.monthlyPricing' |translate }}</small>
 												</div>
 												<p id="smart-performance-scan-summary-recommendAction-longerTerm"
+													*ngIf="isShowPrice"
 													role="text">{{'smartPerformance.scanCompletePage.recommendedAction.longerTerm' |translate }}
 												</p>
 												<!-- These are commented as per new requirment please dont delete -->

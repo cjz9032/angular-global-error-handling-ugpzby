@@ -11,7 +11,7 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { ModalHardwareScanCustomizeComponent } from '../../../../modal/modal-hardware-scan-customize/modal-hardware-scan-customize.component';
 import { ModalCancelComponent } from '../../../../modal/modal-cancel/modal-cancel.component';
 import { ModalScanFailureComponent } from '../../../../modal/modal-scan-failure/modal-scan-failure.component';
-import { ModalScheduleScanCollisionComponent } from '../../../../modal/modal-schedule-scan-collision/modal-schedule-scan-collision.component';
+import { ModalPreScanInfoComponent } from '../../../../modal/modal-pre-scan-info/modal-pre-scan-info.component';
 import { HardwareScanService } from '../../../../../services/hardware-scan/hardware-scan.service';
 import { HardwareScanResultService } from '../../../../../services/hardware-scan/hardware-scan-result.service';
 import { PreviousResultService } from '../../../../../services/hardware-scan/previous-result.service';
@@ -584,7 +584,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	private openWaitHardwareComponentsModal() {
 		const modal: NgbModalRef = this.modalService.open(ModalWaitComponent, {
-			backdrop: 'static',
 			size: 'lg',
 			centered: true
 		});
@@ -700,7 +699,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			}
 
 			if (this.batteryMessage !== '') {
-				const modal: NgbModalRef = this.modalService.open(ModalScheduleScanCollisionComponent, {
+				const modal: NgbModalRef = this.modalService.open(ModalPreScanInfoComponent, {
 					backdrop: 'static',
 					size: 'lg',
 					centered: true,
@@ -709,11 +708,11 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 				this.hardwareScanService.setCurrentTaskStep(TaskStep.Confirm);
 
-				( modal.componentInstance as ModalScheduleScanCollisionComponent).error = this.translate.instant('hardwareScan.warning');
-				( modal.componentInstance as ModalScheduleScanCollisionComponent).description = this.batteryMessage;
-				( modal.componentInstance as ModalScheduleScanCollisionComponent).ItemParent = this.getMetricsParentValue();
-				( modal.componentInstance as ModalScheduleScanCollisionComponent).CancelItemName = this.getMetricsItemNameClose();
-				( modal.componentInstance as ModalScheduleScanCollisionComponent).ConfirmItemName = this.getMetricsItemNameConfirm();
+				( modal.componentInstance as ModalPreScanInfoComponent).error = this.translate.instant('hardwareScan.warning');
+				( modal.componentInstance as ModalPreScanInfoComponent).description = this.batteryMessage;
+				( modal.componentInstance as ModalPreScanInfoComponent).ItemParent = this.getMetricsParentValue();
+				( modal.componentInstance as ModalPreScanInfoComponent).CancelItemName = this.getMetricsItemNameClose();
+				( modal.componentInstance as ModalPreScanInfoComponent).ConfirmItemName = this.getMetricsItemNameConfirm();
 
 				modal.result.then((result) => {
 					this.getDoScan(taskType, requests);

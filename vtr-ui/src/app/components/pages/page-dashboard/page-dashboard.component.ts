@@ -93,7 +93,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 				clickItem: 'userGuide',
 				metricsItem: 'Documentation.UserGuideButton',
 				metricsEvent: 'FeatureClick',
-				metricsParent: 'Page.Dashboard'
+				metricsParent: 'Dashboard'
 			}
 		],
 		needHelp: [],
