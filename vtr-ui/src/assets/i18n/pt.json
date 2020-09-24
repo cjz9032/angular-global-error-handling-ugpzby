@@ -3134,7 +3134,8 @@
             },
             "waitAvailability": "O botão está desativado se os dispositivos de armazenamento não suportarem esta funcionalidade, enquanto as informações de hardware estiverem a ser carregadas ou se estiver a decorrer uma verificação.",
             "executingTitle": "A recuperar agora",
-            "recoverCompleted": "A recuperação está concluída"
+            "recoverCompleted": "A recuperação está concluída",
+            "modalTitle": "Selecione a unidade que pretende recuperar"
         },
         "support": {
             "title": "Transferir ferramentas de diagnóstico profissionais",

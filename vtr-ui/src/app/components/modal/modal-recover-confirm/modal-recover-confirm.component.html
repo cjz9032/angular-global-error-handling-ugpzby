@@ -2,13 +2,15 @@
 	<h1 id="hwscan-recover-title" class="title" role="heading">{{ 'hardwareScan.warning' | translate }}</h1>
 	<p id="hwscan-recover-description" class="description" role="text">{{ 'hardwareScan.recoverBadSectors.popup.description' | translate }}</p>
 
+	<hr class="info-divisor">
+
 	<div class="row">
 		<vtr-ui-button
 			linkId="hwscan-rbs-confirm-btn"
 			metricsParent="{{ ItemParent }}"
 			metricsItem="{{ ConfirmItemName }}"
 			[label]="'hardwareScan.ok' | translate"
-			(onClick)="activeModal.close()">
+			(onClick)="confirmClick()">
 		</vtr-ui-button>
 	</div>
 
@@ -17,7 +19,7 @@
 			linkId="hwscan-rbs-confirm-close-btn"
 			metricsParent="{{ ItemParent }}"
 			metricsItem="{{ CancelItemName }}"
-			(clickClose)="activeModal.dismiss('Cross click')">
+			(clickClose)="onClosing()">
 		</vtr-ui-close-button>
 	</div>
 </div>

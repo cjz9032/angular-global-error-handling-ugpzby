@@ -1,8 +1,12 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { Router } from '@angular/router';
 import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.enum';
 import { disableBackgroundNavigation, reEnableBackgroundNavigation } from '../../../services/hardware-scan/utils/ModalBackgroundNavigationUtils';
+import { HardwareScanService } from 'src/app/services/hardware-scan/hardware-scan.service';
+import { CommonService } from 'src/app/services/common/common.service';
+import { HardwareScanProgress } from 'src/app/enums/hw-scan-progress.enum';
+import { Router } from '@angular/router';
+import { RecoverBadSectorsService } from 'src/app/services/hardware-scan/recover-bad-sectors.service';
 
 @Component({
 	selector: 'vtr-modal-scan-failure',
@@ -19,7 +23,12 @@ export class ModalScanFailureComponent implements OnInit, OnDestroy {
 	private failedRbsDevices: Array<string>;
 	public testResultEnum = HardwareScanTestResult;
 
-	constructor(public activeModal: NgbActiveModal, private router: Router) {
+	constructor(
+		public activeModal: NgbActiveModal,
+		private hardwareScanService: HardwareScanService,
+		private commonService: CommonService,
+		private router: Router,
+		private rbsService: RecoverBadSectorsService) {
 		this.failedRbsDevices = [];
 	}
 
@@ -81,14 +90,12 @@ export class ModalScanFailureComponent implements OnInit, OnDestroy {
 	}
 
 	// Goes to RBS page, passing defective device list to be selected when RBS page loads
-	goToRBSPage() {
+	openRbsModal() {
 		// Using absolute URL, since the user could be outside HWScan when this popup is shown.
-		this.router.navigate(['/hardware-scan/recover-bad-sectors'], {
-			queryParams: {
-				failedDevices: this.failedRbsDevices
-			},
-			queryParamsHandling: 'merge'
-		});
+		this.router.navigate(['/hardware-scan']);
 		this.closeModal();
+		this.rbsService.openRecoverBadSectorsModal(this.failedRbsDevices);
+		this.hardwareScanService.clearLastResponse();
+		this.commonService.sendNotification(HardwareScanProgress.BackEvent);
 	}
 }

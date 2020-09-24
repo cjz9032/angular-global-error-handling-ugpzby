@@ -3134,7 +3134,8 @@
             },
             "waitAvailability": "Falls die Speichereinheiten diese Funktionalität nicht unterstützen und die Hardwareinformationen abgerufen werden oder ein Scanvorgang durchgeführt wird, ist die Schaltfläche deaktiviert.",
             "executingTitle": "Wiederherstellung läuft",
-            "recoverCompleted": "Wiederherstellung abgeschlossen"
+            "recoverCompleted": "Wiederherstellung abgeschlossen",
+            "modalTitle": "Wählen Sie das Laufwerk aus, das Sie wiederherstellen möchten"
         },
         "support": {
             "title": "Professionelle Diagnosetools herunterladen",

@@ -13,6 +13,11 @@
 	color: $shade_blue;
 }
 
+.info-divisor {
+	margin-top: 3.6rem;
+	margin-bottom: 1.2rem;
+}
+
 .modal-body {
 	padding: 2.4rem;
 	@include high-contrast-border;

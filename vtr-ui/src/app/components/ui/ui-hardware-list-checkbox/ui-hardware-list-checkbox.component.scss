@@ -2,8 +2,8 @@
 
 .vtr-ui-list-checkbox-hardware {
 	.list-group {
-		margin: 3.5rem 0;
 		min-width: 200px;
+		width: 100%;
 		display: flex;
 		justify-content: center;
 		border-radius: 0.1rem !important;
@@ -20,6 +20,11 @@
 				font-weight: $weight_bold;
 				padding-top: 0rem;
 				padding-left: 1.5rem;
+			}
+	
+			.subname {
+				font-size: $fontsize_xs;
+				font-weight: $weight_light !important;
 			}
 
 			// modifying global checkbox component
@@ -38,7 +43,7 @@
 		}
 
 		.options {
-			padding: 0.8rem 0;
+			padding: 2rem 0 1rem 0;
 			font-size: $fontsize_xs2;
 			display: flex;
 

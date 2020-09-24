@@ -3134,7 +3134,8 @@
             },
             "waitAvailability": "Tlačidlo je vypnuté, ak táto funkcia nie je podporovaná úložnými zariadeniami počas načítavania informácií o hardvéri ako aj počas kontroly.",
             "executingTitle": "Prebieha obnovovanie",
-            "recoverCompleted": "Obnovenie dokončené"
+            "recoverCompleted": "Obnovenie dokončené",
+            "modalTitle": "Vyberte jednotku, ktorú chcete obnoviť"
         },
         "support": {
             "title": "Stiahnite si profesionálne diagnostické nástroje",

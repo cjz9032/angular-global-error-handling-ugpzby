@@ -3134,7 +3134,8 @@
             },
             "waitAvailability": "De knop wordt uitgeschakeld als de opslagapparaten deze functionaliteit niet ondersteunen, terwijl de hardwaregegevens worden geladen of als er een scan wordt uitgevoerd.",
             "executingTitle": "Herstellen",
-            "recoverCompleted": "Herstelactie voltooid"
+            "recoverCompleted": "Herstelactie voltooid",
+            "modalTitle": "Selecteer het station dat u wilt herstellen"
         },
         "support": {
             "title": "Professionele diagnosehulpprogramma's downloaden",

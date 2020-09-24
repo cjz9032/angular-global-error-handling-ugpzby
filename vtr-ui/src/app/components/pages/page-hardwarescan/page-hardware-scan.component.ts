@@ -20,7 +20,6 @@ import { ContentActionType } from 'src/app/enums/content.enum';
 })
 
 export class PageHardwareScanComponent implements OnInit, OnDestroy {
-
 	backarrow = '< ';
 	cardContentPositionA: any;
 	notificationSubscription: Subscription;
@@ -28,18 +27,14 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 	routeSubscription: Subscription;
 	currentRouter: any;
 	hidePreviousResult = false;
-	isRBSDeviceSelectionPage = false;
 
 	constructor(
 		public deviceService: DeviceService,
 		private commonService: CommonService,
 		private hardwareScanService: HardwareScanService,
-		config: NgbModalConfig,
 		private translate: TranslateService,
 		private router: Router,
-	) {
-		// this.fetchCMSArticles();
-	}
+	) { }
 
 	ngOnInit() {
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
@@ -78,21 +73,14 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 		const currentPath = this.router.url;
 		const page = currentPath.split('/').pop();
 		switch (page) {
-			case 'recover-bad-sectors':
-				this.hidePreviousResult = false;
-				this.isRBSDeviceSelectionPage = true;
-				break;
 			case 'view-results':
 				this.hidePreviousResult = true;
-				this.isRBSDeviceSelectionPage = false;
 				break;
 			default:
 				this.hidePreviousResult = false;
-				this.isRBSDeviceSelectionPage = false;
 				break;
 		}
 	}
-
 
 	public onGetSupportClick($event: any) {
 
@@ -130,7 +118,7 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 
 	public setTitle() {
 		if (this.hardwareScanService) {
-			if (this.isRBSDeviceSelectionPage || this.isRecoverExecuting()) {
+			if (this.isRecoverExecuting()) {
 				return this.translate.instant('hardwareScan.recoverBadSectors.title');
 			} else {
 				return this.translate.instant('hardwareScan.name');

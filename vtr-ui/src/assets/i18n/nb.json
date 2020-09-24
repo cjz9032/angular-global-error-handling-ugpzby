@@ -3139,7 +3139,8 @@
             },
             "waitAvailability": "Knappen er deaktivert hvis lagringsenhetene ikke støtter denne funksjonaliteten, mens maskinvareinformasjonen lastes inn eller hvis det pågår en skanning.",
             "executingTitle": "Gjenoppretter nå",
-            "recoverCompleted": "Gjenoppretting fullført"
+            "recoverCompleted": "Gjenoppretting fullført",
+            "modalTitle": "Velg stasjonen du vil gjenopprette"
         },
         "support": {
             "title": "Last ned profesjonelle feil søkings verktøy",

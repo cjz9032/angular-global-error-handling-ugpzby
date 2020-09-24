@@ -3134,7 +3134,8 @@
             },
             "waitAvailability": "如果存储设备不支持此功能，当正在加载硬件信息或正在进行扫描时，将禁用此按钮。",
             "executingTitle": "现在正在恢复",
-            "recoverCompleted": "恢复已完成"
+            "recoverCompleted": "恢复已完成",
+            "modalTitle": "请选择要恢复的驱动器"
         },
         "support": {
             "title": "下载专业诊断工具",

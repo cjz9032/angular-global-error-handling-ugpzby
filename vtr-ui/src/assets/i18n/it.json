@@ -3134,7 +3134,8 @@
             },
             "waitAvailability": "Il pulsante è disattivato se i dispositivi di archiviazione non supportano questa funzionalità, durante il caricamento delle informazioni hardware o mentre vi è una scansione in corso.",
             "executingTitle": "Ripristino in corso ora",
-            "recoverCompleted": "Ripristino completato"
+            "recoverCompleted": "Ripristino completato",
+            "modalTitle": "Selezionare l'unità che si desidera ripristinare"
         },
         "support": {
             "title": "Scarica strumenti di diagnostica professionali",

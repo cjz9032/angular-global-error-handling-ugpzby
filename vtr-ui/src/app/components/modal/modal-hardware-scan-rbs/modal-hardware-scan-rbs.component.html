@@ -1,0 +1,38 @@
+<div class="modal-body vtr-modal-hardware-scan-rbs" role="dialog" aria-labelledby="hwscan-rbs-modal-title" aria-describedby="hwscan-rbs-modal-description">
+
+	<div class="row modal-information">
+		<div *ngIf="devices; else deviceLoading">
+			<h1 id="hwscan-rbs-modal-title" class="title" role="heading">{{ 'hardwareScan.recoverBadSectors.modalTitle' | translate }}</h1>
+		</div>
+
+		<ng-template #deviceLoading>
+			<h1 id="hwscan-rbs-modal-title" class="title" role="heading">{{ 'hardwareScan.loadingDevices' | translate }}</h1>
+		</ng-template>
+	</div>
+
+	<vtr-ui-hardware-list-checkbox
+		[componentId]="'hwscan-rbs-devices'"
+		[devices]="devices">
+	</vtr-ui-hardware-list-checkbox>
+
+	<div class="row button-row">
+		<vtr-ui-button
+			[isDisabled]="!isSelectedItem()"
+			linkId="hwscan-rbs-run-selected-devices-btn"
+			metricsParent="HardwareScan.RecoverBadSectors"
+			[isFullWidth]="true"
+			metricsItem="RecoverBadSectors.RunRecoverBadSectors"
+			[label]= " 'hardwareScan.recoverBadSectors.title' | translate "
+			(onClick)="onClickRun()">
+		</vtr-ui-button>
+	</div>
+
+	<div class="btn-modal-close">
+		<vtr-ui-close-button
+			linkId="hwscan-rbs-scan-modal-close-btn"
+			metricsParent="HardwareScan.RecoverBadSectors"
+			metricsItem="RecoverBadSectors.Close"
+			(clickClose)="closeModal()">
+		</vtr-ui-close-button>
+	</div>
+</div>

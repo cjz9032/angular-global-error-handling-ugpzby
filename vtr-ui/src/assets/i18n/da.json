@@ -3134,7 +3134,8 @@
             },
             "waitAvailability": "Knappen deaktiveres, hvis lagerenhederne ikke understøtter denne funktion, mens hardwareoplysningerne indlæses, eller hvis der er en scanning i gang.",
             "executingTitle": "Retablerer nu",
-            "recoverCompleted": "Retableringen er fuldført"
+            "recoverCompleted": "Retableringen er fuldført",
+            "modalTitle": "Vælg det drev, du vil gendanne"
         },
         "support": {
             "title": "Download professionelle fejlfindingsværktøjer",

@@ -3134,7 +3134,8 @@
             },
             "waitAvailability": "Painike on poistettu käytöstä, jos tallennuslaitteet eivät tue tätä toimintoa, kun laitteisto tietoja ladataan tai jos tarkistus on meneillään.",
             "executingTitle": "Elvytetään",
-            "recoverCompleted": "Elvytys on valmis"
+            "recoverCompleted": "Elvytys on valmis",
+            "modalTitle": "Valitse asema, jonka haluat palauttaa"
         },
         "support": {
             "title": "Lataa ammattimaiset vianmääritystyökalut",

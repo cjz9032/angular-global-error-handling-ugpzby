@@ -42,12 +42,11 @@
 
 			<div class="row">
 				<div class="col col-12 cont mb-40"
-					*ngIf="!isRBSDeviceSelectionPage && !isRecoverExecuting()">
+					*ngIf="!isRecoverExecuting()">
 					<vtr-widget-recover-bad-sectors
 						[widgetId]="'hwscan-rbs-widget'"
 						[title]="'hardwareScan.recoverBadSectors.title' | translate"
 						[description]="'hardwareScan.recoverBadSectors.description' | translate"
-						[recoverPath]="'recover-bad-sectors'"
 						[disable]="!hasDevicesToRecoverBadSectors() || disable()"
 						[tooltipText]="('hardwareScan.recoverBadSectors.title' | translate)">
 					</vtr-widget-recover-bad-sectors>

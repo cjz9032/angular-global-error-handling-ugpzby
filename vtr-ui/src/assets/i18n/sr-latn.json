@@ -3134,7 +3134,8 @@
             },
             "waitAvailability": "Dugme je onemogućeno ukoliko uređaji za skladištenje ne podržavaju ovu funkcionalnost, tokom učitavanja informacija o hardveru ili ako je u toku skeniranje.",
             "executingTitle": "Oporavlja se sada",
-            "recoverCompleted": "Oporavak je dovršen"
+            "recoverCompleted": "Oporavak je dovršen",
+            "modalTitle": "Izaberite disk koji želite da oporavite"
         },
         "support": {
             "title": "Preuzmite profesionalne dijagnostičke alatke",

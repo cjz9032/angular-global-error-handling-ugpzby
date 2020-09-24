@@ -3134,7 +3134,8 @@
             },
             "waitAvailability": "Depolama aygıtları bu işlevi desteklemiyorsa, donanım bilgileri yüklenirken veya devam eden bir tarama olduğunda düğme devre dışı bırakılır.",
             "executingTitle": "Şimdi kurtarılıyor",
-            "recoverCompleted": "Kurtarma tamamlandı"
+            "recoverCompleted": "Kurtarma tamamlandı",
+            "modalTitle": "Lütfen kurtarmak istediğiniz sürücüyü seçin"
         },
         "support": {
             "title": "Profesyonel tanılama araçlarını indirin",

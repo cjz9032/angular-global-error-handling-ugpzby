@@ -3134,7 +3134,8 @@
             },
             "waitAvailability": "當儲存裝置不支援這項功能而硬體資訊即將載入，或者其中正在進行掃描時，此按鈕為停用狀態。",
             "executingTitle": "現在正在回復",
-            "recoverCompleted": "回復已完成"
+            "recoverCompleted": "回復已完成",
+            "modalTitle": "請選取您要回復的磁碟機"
         },
         "support": {
             "title": "下載專業診斷工具",

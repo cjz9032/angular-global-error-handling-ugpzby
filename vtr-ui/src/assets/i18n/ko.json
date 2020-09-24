@@ -3134,7 +3134,8 @@
             },
             "waitAvailability": "하드웨어 정보가 로드되고 있거나 스캔 중인 파일이 있을 때 저장 장치가 해당 기능을 지원하지 않는 경우 버튼이 비활성화 됩니다.",
             "executingTitle": "지금 복구 중",
-            "recoverCompleted": "복구가 완료됨"
+            "recoverCompleted": "복구가 완료됨",
+            "modalTitle": "복구할 드라이브 선택"
         },
         "support": {
             "title": "전문 진단 도구 다운로드",

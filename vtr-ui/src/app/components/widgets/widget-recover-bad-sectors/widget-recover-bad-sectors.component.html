@@ -39,8 +39,8 @@
 						[isFullWidth]="true"
 						[label]="'hardwareScan.recoverBadSectors.title' | translate"
 						[isDisabled]="disable"
-						[routerPath] = "recoverPath"
-						[tooltipText]="tooltipText">
+						[tooltipText]="tooltipText"
+						(onClick)="onRecoverBadSectors()">
 					</vtr-ui-button>
 				</div>
 			</div>

@@ -1,4 +1,4 @@
-import { Injectable, NgZone } from '@angular/core';
+import { Injectable, NgZone, EventEmitter } from '@angular/core';
 import { HardwareScanProgress } from 'src/app/enums/hw-scan-progress.enum';
 import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.enum';
 import { HardwareScanOverallResult } from 'src/app/enums/hardware-scan-overall-result.enum';
@@ -86,6 +86,7 @@ export class HardwareScanService {
 	private currentTaskType: TaskType;
 	private currentTaskStep: TaskStep;
 
+	public startRecover: EventEmitter<any> = new EventEmitter();
 
 	private modulesStored: any;
 	private completedStatus: boolean | undefined = undefined;
