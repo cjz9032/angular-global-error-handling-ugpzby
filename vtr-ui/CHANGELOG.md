@@ -2,6 +2,46 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.13](https://bitbucket.tc.lenovo.com///compare/v1.8.12...v1.8.13) (2020-09-24)
+
+
+### Features
+
+* **Dashabord Banner:** VAN-22091 add round widget ([01e6210](https://bitbucket.tc.lenovo.com///commit/01e6210f275fe38a2c3dc8ff67863436481f38c5))
+* **meterial icon, security:** add security status circle component,mat icon file ([162f459](https://bitbucket.tc.lenovo.com///commit/162f459e23498a16bfff3d0f41be24c971e75c47))
+* **Smart Performance:** VAN-21245 enable smart performance in arm device ([a92dc0b](https://bitbucket.tc.lenovo.com///commit/a92dc0bfdd230964acc4277bb19a4de52b14d618))
+* **Smart Performance:** VAN-22091 fix review issue ([59aec89](https://bitbucket.tc.lenovo.com///commit/59aec89bc2b7ce9e659020267a1f1caf5f0f3bb1))
+
+
+### Bug Fixes
+
+* **HomeComponent:** VAN-22274 before deviceinfo cached getMachineInfo for navigate ([d0372be](https://bitbucket.tc.lenovo.com///commit/d0372be708aefb7eedffa6c2f1aaf35fdd38ed0e))
+
+### [1.7.55](https://bitbucket.tc.lenovo.com///compare/v1.7.54...v1.7.55) (2020-09-19)
+
+
+### Bug Fixes
+
+* **Overall:** improve ssrb finding fix ([6f49ddb](https://bitbucket.tc.lenovo.com///commit/6f49ddba95d2cd5436162b06bfe3c15f1d42e8ae))
+
+### [1.7.54](https://bitbucket.tc.lenovo.com///compare/v1.8.11...v1.7.54) (2020-09-19)
+
+
+### Bug Fixes
+
+* **Overall:** fix ssrb finding ([a198a4e](https://bitbucket.tc.lenovo.com///commit/a198a4e8533464c1a978530957bec9836e9c098b))
+
+### [1.7.51](https://bitbucket.tc.lenovo.com///compare/v1.7.50...v1.7.51) (2020-09-03)
+
+### [1.7.50](https://bitbucket.tc.lenovo.com///compare/v1.8.0...v1.7.50) (2020-09-02)
+
+### [1.7.49](https://bitbucket.tc.lenovo.com///compare/v1.7.48...v1.7.49) (2020-09-02)
+
+
+### Bug Fixes
+
+* **antivirus:** VAN-21761 fixed other page privacy url error ([f47099f](https://bitbucket.tc.lenovo.com///commit/f47099f1960a4ab2b9d21f16f81ef437dcc78e74))
+
 ### [1.8.12](https://bitbucket.tc.lenovo.com///compare/v1.8.11...v1.8.12) (2020-09-21)
 
 ### [1.8.11](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.8.10...v1.8.11) (2020-09-18)
