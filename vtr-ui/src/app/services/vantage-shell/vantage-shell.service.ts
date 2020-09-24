@@ -471,12 +471,23 @@ export class VantageShellService {
 		}
 		return true;
 	}
+
 	public calcDeviceFilter(filter) {
 		if (this.phoenix) {
 			return this.phoenix.deviceFilter.calc(filter);
 		}
 		return undefined;
 	}
+	
+	public async isDeviceTagExists(tagName){
+		if (this.phoenix) {
+			try{
+				return await this.phoenix.deviceFilter.deviceFilterEval(JSON.parse(`{"DeviceTags.Any": ["${tagName}"]}`));
+			} catch (error){}
+		}
+		return false;
+	}
+	
 	public getLogger(): any {
 		if (this.shell) {
 			return this.shell.Logger;
