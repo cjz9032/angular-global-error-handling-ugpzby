@@ -1801,7 +1801,7 @@
                     "caption": "A tecla representada pelo ícone de estrela permite configurar uma função definida pelo utilizador.",
                     "dropDown": {
                         "title": "Tecla de ação definida pelo utilizador",
-                        "note": "Nota: esta ação pode ser utilizada para inserir texto habitualmente usado, como endereços de correio eletrónico ou endereços postais. Nunca utilize esta funcionalidade para armazenar palavras-passe ou quaisquer outras informações privadas.",
+                        "note": "Nota: esta ação pode ser utilizada para introduzir cadeias de texto comuns, tais como endereços de correio eletrónico ou endereços postais. Nunca utilize esta funcionalidade para armazenar palavras-passe ou quaisquer outras informações privadas.",
                         "options": {
                             "option1": "Selecione",
                             "option2": "Abrir site",

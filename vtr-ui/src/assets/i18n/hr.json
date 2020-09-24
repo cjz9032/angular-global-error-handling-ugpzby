@@ -1801,7 +1801,7 @@
                     "caption": "Tipka označena ikonom zvijezde omogućuje vam postavljanje korisnički definirane funkcije.",
                     "dropDown": {
                         "title": "Radnja korisnički definirane tipke",
-                        "note": "Napomena: Ovo je moguće koristiti za često korišteni niz, primjerice e-poštu ili poštansku adresu. Nikada ne koristite ovu značajku za pohranu lozinki ili drugih privatnih podataka.",
+                        "note": "Napomena: Ovo je moguće koristiti za upis zajedničkih nizova, primjerice e-pošte ili poštanske adrese. Nikada ne koristite ovu značajku za pohranu lozinki ili drugih privatnih podataka.",
                         "options": {
                             "option1": "Odaberite",
                             "option2": "Otvori web-lokaciju",

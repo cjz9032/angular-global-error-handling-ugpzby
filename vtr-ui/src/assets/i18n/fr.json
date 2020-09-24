@@ -1801,7 +1801,7 @@
                     "caption": "La touche représentée par une icône en forme d'étoile vous permet de définir la fonction définie par l'utilisateur.",
                     "dropDown": {
                         "title": "Touche d'action définie par l'utilisateur",
-                        "note": "Remarque : cela permet d'entrer les touches les plus fréquemment saisies, comme les adresses e-mail ou postales. N'utilisez jamais cette fonction pour stocker des mots de passe ou toute autre information privée.",
+                        "note": "Remarque : cela permet d’entrer des chaînes fréquentes, comme les adresses e-mail ou postales. N'utilisez jamais cette fonction pour stocker des mots de passe ou toute autre information privée.",
                         "options": {
                             "option1": "Sélectionnez",
                             "option2": "Site ouvert",

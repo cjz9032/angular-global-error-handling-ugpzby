@@ -1801,7 +1801,7 @@
                     "caption": "Für die Taste mit dem Stern-Symbol können Sie eine benutzerdefinierte Funktion festlegen.",
                     "dropDown": {
                         "title": "Aktion für benutzerdefinierte Taste",
-                        "note": "Hinweis: Mit dieser Funktion kann Text eingefügt werden, z. B. eine E-Mail-Adresse oder Postanschrift. Verwenden Sie diese Funktion niemals zum Speichern von Kennwörtern oder anderen privaten Daten.",
+                        "note": "Hinweis: Mit dieser Funktion können allgemeine Zeichenfolgen eingefügt werden, z. B. eine E-Mail-Adresse oder Postanschrift. Verwenden Sie diese Funktion niemals zum Speichern von Kennwörtern oder anderen privaten Daten.",
                         "options": {
                             "option1": "Bitte auswählen",
                             "option2": "Webseite öffnen",

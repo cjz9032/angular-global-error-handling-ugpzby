@@ -1801,7 +1801,7 @@
                     "caption": "Taster koji je označen ikonom sa zvezdicom vam omogućava da podesite korisnički definisanu funkciju.",
                     "dropDown": {
                         "title": "Radnja korisnički definisanog tastera",
-                        "note": "Napomena: Ovo može da se koristi za unos tastera koji se često unosi kao što je e-pošta ili poštanska adresa. Nikada nemojte koristiti ovu funkciju za skladištenje lozinki ili drugih privatnih informacija.",
+                        "note": "Napomena: Ovo može da se koristi za uobičajene niske, kao što je adresa e-pošte ili poštanska adresa. Nikada nemojte koristiti ovu funkciju za skladištenje lozinki ili drugih privatnih informacija.",
                         "options": {
                             "option1": "Izaberite",
                             "option2": "Open website",

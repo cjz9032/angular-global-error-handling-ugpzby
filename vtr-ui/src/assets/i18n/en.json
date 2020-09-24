@@ -1859,7 +1859,7 @@
 					},
 					"dropDown": {
 						"title": "ACTION USER DEFINED KEY",
-						"note": "Note: This can be used to enter commonly entered key, such as e-mail or postal addresses. Never use this feature to store passwords or any other private information.",
+						"note": "Note: This can be used to enter common strings, such as e-mail or postal addresses. Never use this feature to store passwords or any other private information.",
 						"invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function.",
 						"options": {
 							"option1": "Please select",
