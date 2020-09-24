@@ -2,19 +2,32 @@ Lenovo Vantage
 
 This application was designed using open source software distributed under associated licenses, acknowledgements and required copyright notices listed below.  Your use of this application indicates your affirmative agreement to abide by and fully comply with the terms of all such open source licenses:
 ======================================================================
-@angular/packages/animations v9.1.9
-@angular/packages/common v9.1.9
-@angular/compiler v9.1.9
-@angular/packages/core v9.1.9
-@angular/packages/forms v9.1.9
-@angular/packages/platform-browser v9.1.9
-@angular/platform-browser-dynamic v9.1.9
-@angular/packages/router v9.1.9
-@angular/packages/service-worker v9.1.9
+@angular/packages/animations v10.0.11
+@angular/packages/forms v10.0.11
+@angular/packages/localize v10.0.11
+@angular/packages/platform-browser v10.0.11
+@angular/platform-browser-dynamic v10.0.11
+@angular/packages/router v10.0.11
+@angular/packages/service-worker v10.0.11
+@angular/cdk	8.2.3
+@angular/common	10.0.11
+@angular/core	10.0.11
 ======================================================================
-Homepage: https://github.com/angular/angular/tree/9.1.x/packages
+Homepage: https://github.com/angular/angular/tree/10.0.11/packages
 
-Copyright (c) 2010-2019 Google, Inc. http://angular.io
+Copyright (c) 2010-2020 Google, Inc. http://angular.io
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+======================================================================
+@angular/cdk	8.2.3
+======================================================================
+Homepage: https://github.com/angular/angular/tree/10.0.11/packages
+
+Copyright (c) 2010 Google LLC
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -22,11 +35,28 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+bundles/cdk-tree.umd.js
+bundles/cdk-table.umd.js
+bundles/cdk-scrolling.umd.js
+bundles/cdk-portal.umd.js
+bundles/cdk-overlay.umd.js
+bundles/cdk-collections.umd.js
+bundles/cdk-a11y.umd.js
+***************
+Include code under:
+
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions and limitations under the License.
+
 
 ======================================================================
-@ng-bootstrap/ng-bootstrap/src/ 6.0.2
+@ng-bootstrap/ng-bootstrap/src/ 7.0.0
 ======================================================================
-Homepage: https://github.com/ng-bootstrap/ng-bootstrap/tree/6.0.2
+Homepage: https://github.com/ng-bootstrap/ng-bootstrap/tree/master
 
 Copyright (c) 2015-2018 Angular ng-bootstrap team
 
@@ -47,9 +77,9 @@ See the Apache Version 2.0 License for specific language governing permissions a
 
 
 ======================================================================
-@ngx-translate/core 12.1.2
+@ngx-translate/core 13.0.0
 ======================================================================
-Homepage: https://github.com/ngx-translate/core/tree/v12.1.2
+Homepage: https://github.com/ngx-translate/core/tree/master
 
 Copyright (c) 2018 Olivier Combe
 
@@ -70,7 +100,7 @@ See the Apache Version 2.0 License for specific language governing permissions a
 
 
 ======================================================================
-@ngx-translate/http-loader 4.0.0
+@ngx-translate/http-loader 6.0.0
 ======================================================================
 Homepage: https://github.com/ngx-translate/http-loader/tree/v4.0.0
 
@@ -98,11 +128,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 ======================================================================
-angular-svg-icon 9.1.0
+angular-svg-icon 10.0.0
 ======================================================================
-Homepage: https://www.npmjs.com/package/angular-svg-icon/v/9.1.0
+Homepage: https://github.com/czeckd/angular-svg-icon/tree/master
 
-Copyright (c) 2019 David Czeck.
+Copyright (c) 2020 David Czeck.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -121,12 +151,12 @@ See the Apache Version 2.0 License for specific language governing permissions a
 
 
 ======================================================================
-bootstrap 4.4.1
+bootstrap 4.5.2
 ======================================================================
-Homepage: https://github.com/twbs/bootstrap/tree/v4.4.1
+Homepage: https://github.com/twbs/bootstrap/tree/main
 
-Copyright (c) 2011-2019 Twitter, Inc.
-Copyright (c) 2011-2019 The Bootstrap Authors
+Copyright (c) 2011-2020 Twitter, Inc.
+Copyright (c) 2011-2020 The Bootstrap Authors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -150,11 +180,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 ======================================================================
-Core-js 3.6.4
+Core-js 3.6.5
 ======================================================================
-Homepage: https://github.com/zloirock/core-js/tree/v3.6.4
+Homepage: https://github.com/zloirock/core-js/tree/master
 
-Copyright (c) 2014-2019 Denis Pushkarev
+Copyright (c) 2014-2020 Denis Pushkarev
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -164,9 +194,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 ======================================================================
-Crypto-js v3.3.0
+Crypto-js v4.0.0
 ======================================================================
-Homepage: https://registry.npmjs.org/crypto-js/-/crypto-js-3.3.0.tgz
+Homepage: https://registry.npmjs.org/crypto-js/-/crypto-js-4.0.0.tgz
 
 Copyright (c) 2009-2013 Jeff Mott
 Copyright (c) 2013-2016 Evan Vosberg
@@ -179,9 +209,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 ======================================================================
-d3-selection 1.4.1
+d3-selection 1.4.2
 ======================================================================
-Homepage: https://github.com/d3/d3-selection/tree/v1.4.1
+Homepage: https://github.com/d3/d3-selection/tree/master
 
 Copyright (c) 2010-2018, Michael Bostock
 All rights reserved.
@@ -226,9 +256,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 ======================================================================
-Localforage 1.7.3, 1.7.4
+Localforage 1.9.0
 ======================================================================
-Homepage: https://www.npmjs.com/package/localforage/v/1.7.3
+Homepage: https://github.com/localForage/localForage
 
 Copyright 2014 Mozilla
 
@@ -271,9 +301,9 @@ build/es5src/drivers/websql.js
 
 
 ======================================================================
-Lodash/fp/ 4.17.15
+Lodash/fp/ 4.17.20
 ======================================================================
-Homepage: https://registry.npmjs.org/lodash/-/lodash-4.17.15.tgz
+Homepage: https://registry.npmjs.org/lodash/-/lodash-4.17.20.tgz
 
 Copyright JS Foundation and other contributors <https://js.foundation/>
 
@@ -305,7 +335,7 @@ terms above.
 
 
 ======================================================================
-Microsoft.Diagnostics.Tracing.TraceEvent	2.0.56
+Microsoft.Diagnostics.Tracing.TraceEvent	2.0.57
 ======================================================================
 Homepage: https://github.com/microsoft/perfview/tree/master
 
@@ -323,9 +353,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 ======================================================================
-Microsoft.Windows.CppWinRT	2.0.200531.2
+Microsoft.Windows.CppWinRT	2.0.200729.8
 ======================================================================
-Homepage: https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/2.0.200531.2
+Homepage: https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/2.0.200729.8
 
 Copyright (c) Microsoft Corporation.
 
@@ -337,9 +367,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 ======================================================================
-Mitt 1.2.0
+Mitt 2.1.0
 ======================================================================
-Homepage: https://www.npmjs.com/package/mitt/v/1.2.0
+Homepage: https://github.com/developit/mitt
 
 © Jason Miller
 
@@ -351,9 +381,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 ======================================================================
-Moment 2.24.0
+Moment 2.27.0
 ======================================================================
-Homepage: https://www.npmjs.com/package/moment/v/2.24.0
+Homepage: https://www.npmjs.com/package/moment/v/2.27.0
 
 Copyright (c) JS Foundation and other contributors
 
@@ -403,7 +433,7 @@ See the Apache Version 2.0 License for specific language governing permissions a
 
 
 ======================================================================
-ngx-bootstrap 5.5.0
+ngx-bootstrap 5.6.1
 ======================================================================
 Homepage: https://www.npmjs.com/package/ngx-bootstrap/v/5.5.0
 
@@ -452,9 +482,9 @@ SEE FULL TEXT OF APACHE-2.0 LICENSE BELOW
 
 
 ======================================================================
-ngx-clipboard	13.0.0
+ngx-clipboard	13.0.1
 ======================================================================
-Homepage: https://www.npmjs.com/package/ngx-clipboard/v/13.0.0
+Homepage: https://www.npmjs.com/package/ngx-clipboard/v/13.0.1
 
 Copyright (c) 2018 Sam Lin
 
@@ -477,9 +507,9 @@ SEE FULL TEXT OF APACHE-2.0 LICENSE BELOW
 
 
 ======================================================================
-ngx-color-picker 9.0.0
+ngx-color-picker 10.0.1
 ======================================================================
-Homepage: https://registry.npmjs.org/ngx-color-picker/-/ngx-color-picker-9.0.0.tgz
+Homepage: https://registry.npmjs.org/ngx-color-picker/-/ngx-color-picker-10.0.1.tgz
 
 Copyright (c) 2017 ZEF Oy
 
@@ -490,7 +520,7 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ======================================================================
-ngx-cookie-service 2.4.0
+ngx-cookie-service 10.0.1
 ======================================================================
 Homepage: https://www.npmjs.com/package/ngx-cookie-service
 
@@ -541,9 +571,9 @@ Homepage: https://github.com/luncheon/reinvented-color-wheel/tree/0.2.9
 
 
 ======================================================================
-Rxjs 6.5.5
+Rxjs 6.6.2
 ======================================================================
-Homepage: https://github.com/ReactiveX/rxjs/tree/6.5.5
+Homepage: https://github.com/ReactiveX/rxjs/tree/6.6.2
 
 Copyright (c) 2015-2018 Google, Inc., Netflix, Inc., Microsoft Corp. and contributors
 
@@ -551,6 +581,32 @@ Licensed under the Apache License, Version 2.0 (the "License"); you may not use 
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
+
+PLEASE SEE FULL TEXT OF APACHE-2.0 LICENSE BELOW
+
+======================================================================
+safe-pipe 1.0.3
+======================================================================
+Homepage: https://www.npmjs.com/package/safe-pipe
+
+Copyright 2020 Igor <embarq> Lee
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+bundles/safe-pipe.umd.js
+***********
+Includes code under the following license:
+
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions and limitations under the License.
 
 PLEASE SEE FULL TEXT OF APACHE-2.0 LICENSE BELOW
 
@@ -569,6 +625,27 @@ Unless required by applicable law or agreed to in writing, software distributed 
 
 
 PLEASE SEE FULL TEXT OF APACHE-2.0 LICENSE BELOW
+
+======================================================================
+System.Data.SQLite.Core 1.0.113.1
+======================================================================
+Homepage: https://system.data.sqlite.org/index.html/doc/trunk/www/index.wiki
+
+System.Data.SQLite is in the Public Domain
+
+
+======================================================================
+System.IdentityModel.Tokens.Jwt	4.0.4.403061554
+======================================================================
+Homepage: https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet
+
+Copyright (c) Microsoft Corporation
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
 ======================================================================
@@ -633,11 +710,11 @@ SEE FULL TEXT OF APACHE-2.0 LICENSE BELOW
 
 
 ======================================================================
-zone.js 0.10.3
+zone.js 0.11.1
 ======================================================================
 Homepage: https://www.npmjs.com/package/zone.js
 
-Copyright (c) 2016-2018 Google, Inc.
+Copyright (c) 2016-2020 Google, Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the ""Software""), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -649,19 +726,19 @@ THE SOFTWARE IS PROVIDED *AS IS*, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ======================================================================
 @babel/code-frame	7.8.3
 @babel/core	7.8.3
-@babel/generator	7.9.5
-@babel/generator	7.9.6
+@babel/generator	7.9.4
+@babel/generator	7.11.4
 @babel/helper-function-name	7.8.3
 @babel/helper-get-function-arity	7.8.3
 @babel/helpers	7.9.2
 @babel/helper-split-export-declaration	7.8.3
+@babel/helper-validator-identifier	7.10.4
 @babel/helper-validator-identifier	7.9.0
-@babel/helper-validator-identifier	7.9.5
 @babel/highlight	7.9.0
 @babel/parser	7.9.4
 @babel/template	7.8.6
 @babel/traverse	7.9.0
-@babel/types	7.9.6
+@babel/types	7.11.0
 @babel/types	7.9.0
 ======================================================================
 Homepage: https://github.com/babel/babel
@@ -1087,6 +1164,20 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 ======================================================================
+lazy-get-decorator 2.2.0
+======================================================================
+Homepage: https://www.npmjs.com/package/lazy-get-decorator
+
+Copyright (c) 2017 Arturas Molcanovas (https://github.com/Alorel)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+======================================================================
 Lie 3.1.1
 ======================================================================
 Homepage: https://www.npmjs.com/package/lie
@@ -1467,19 +1558,15 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 ======================================================================
-tslib	1.11.1
+tslib	(1.13.0) (2.0.0) (2.0.1)
 ======================================================================
-Homepage: https://github.com/microsoft/tslib/tree/1.11.1
+Homepage: https://github.com/microsoft/tslib
 
-Copyright (c) Microsoft Corporation. All rights reserved.
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+Copyright (c) Microsoft Corporation.
 
-THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABLITY OR NON-INFRINGEMENT.
+Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted.
 
-See the Apache Version 2.0 License for specific language governing permissions and limitations under the License.
-
-SEE FULL TEXT OF APACHE-2.0 LICENSE BELOW
-
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 ======================================================================
 which-module	2.0.0
@@ -1505,6 +1592,18 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+======================================================================
+wrappy	1.0.2
+======================================================================
+Homepage: https://www.npmjs.com/package/wrappy
+
+Copyright (c) Isaac Z. Schlueter and Contributors
+
+Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 
 ======================================================================
@@ -1601,23 +1700,6 @@ runtime.any.System.Text.Encoding	4.0.11
 runtime.any.System.Text.Encoding.Extensions	4.0.11
 runtime.any.System.Threading.Tasks	4.0.11
 runtime.any.System.Threading.Timer	4.0.1
-runtime.aot.System.Collections	4.0.10
-runtime.aot.System.Diagnostics.Tools	4.0.1
-runtime.aot.System.Diagnostics.Tracing	4.0.20
-runtime.aot.System.Globalization	4.0.11
-runtime.aot.System.Globalization.Calendars	4.0.1
-runtime.aot.System.IO	4.1.0
-runtime.aot.System.Reflection	4.0.10
-runtime.aot.System.Reflection.Extensions	4.0.0
-runtime.aot.System.Reflection.Primitives	4.0.0
-runtime.aot.System.Resources.ResourceManager	4.0.0
-runtime.aot.System.Runtime	4.0.20
-runtime.aot.System.Runtime.Handles	4.0.1
-runtime.aot.System.Runtime.InteropServices	4.0.20
-runtime.aot.System.Text.Encoding	4.0.11
-runtime.aot.System.Text.Encoding.Extensions	4.0.11
-runtime.aot.System.Threading.Tasks	4.0.11
-runtime.aot.System.Threading.Timer	4.0.1
 runtime.native.System.IO.Compression	4.1.0
 runtime.native.System.Security.Cryptography	4.0.0
 runtime.win.Microsoft.Win32.Primitives	4.0.1
@@ -1626,12 +1708,10 @@ runtime.win.System.IO.FileSystem	4.0.1
 runtime.win.System.Net.Primitives	4.0.11
 runtime.win.System.Net.Sockets	4.1.0
 runtime.win.System.Runtime.Extensions	4.1.0
-runtime.win10-arm-aot.runtime.native.System.IO.Compression	4.0.1
 runtime.win7.System.Private.Uri	4.0.4
 runtime.win7-x86.Microsoft.NETCore.Jit	1.0.3
 runtime.win7-x86.Microsoft.NETCore.Runtime.CoreCLR	1.0.2
 runtime.win7-x86.runtime.native.System.IO.Compression	4.0.1
-runtime.win8-arm.Microsoft.NETCore.Runtime.CoreCLR	1.0.2
 System.AppContext	4.1.0
 System.Buffers	4.0.0
 System.Collections	4.0.11
