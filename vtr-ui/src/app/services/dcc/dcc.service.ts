@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+
 import { LoggerService } from '../logger/logger.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { DeviceService } from '../device/device.service';
 import { CommonService } from '../common/common.service';
+import { SelfSelectService, SegmentConst } from './../self-select/self-select.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -17,24 +18,26 @@ export class DccService {
 	public headerBackground = '';
 	private headerDefaultBackground = 'assets/images/HeaderImage.jpg';
 	private headerDccBackground = 'assets/images/HeaderImageDcc.jpg';
+	private headerSmbBackground = 'assets/images/HeaderImageSmb.png';
 
 	constructor(
-		private modalService: NgbModal,
 		private logger: LoggerService,
 		private cmsService: CMSService,
 		private deviceService: DeviceService,
 		private commonService: CommonService,
-		private vantageShellService: VantageShellService
+		private vantageShellService: VantageShellService,
+		private selfSelectService: SelfSelectService
 	) {
 		this.initialize();
 	}
 
 	private async initialize() {
-		const isDccDevice = await this.isDccCapableDevice();
-		if (isDccDevice && this.needUpdateDccHeaderBackground()) {
-			this.headerBackground = this.headerDccBackground;
+		const Segment = await this.selfSelectService.getSegment();
+		if (Segment === SegmentConst.SMB) {
+			this.headerBackground = this.headerSmbBackground;
 		} else {
-			this.headerBackground = this.headerDefaultBackground;
+			const isDccDevice = await this.isDccCapableDevice();
+			this.headerBackground = (isDccDevice && this.needUpdateDccHeaderBackground()) ? this.headerDccBackground : this.headerDefaultBackground;
 		}
 		if (!this.deviceService.isGaming) {
 			const queryOptions: any = {
