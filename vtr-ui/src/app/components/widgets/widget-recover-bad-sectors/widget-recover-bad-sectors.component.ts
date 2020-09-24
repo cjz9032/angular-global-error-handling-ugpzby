@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
 import { RecoverBadSectorsService } from 'src/app/services/hardware-scan/recover-bad-sectors.service';
 
 @Component({
@@ -14,7 +15,8 @@ export class WidgetRecoverBadSectorsComponent implements OnInit, OnDestroy {
 	@Input() tooltipText: string;
 
 	constructor(
-		private rbsService: RecoverBadSectorsService
+		private rbsService: RecoverBadSectorsService,
+		private router: Router
 	) { }
 
 	ngOnInit() { }
@@ -22,6 +24,7 @@ export class WidgetRecoverBadSectorsComponent implements OnInit, OnDestroy {
 	ngOnDestroy() { }
 
 	public onRecoverBadSectors() {
+		this.router.navigate(['/hardware-scan']);
 		if (this.rbsService) {
 			this.rbsService.openRecoverBadSectorsModal();
 		}
