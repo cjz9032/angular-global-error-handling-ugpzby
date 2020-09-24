@@ -37,7 +37,14 @@ export class LocalCacheService {
 			if (this.isAvailableValue(indexedDBCache)) {
 				Object.assign(this.cacheMap, indexedDBCache);
 			} else {
-				Object.assign(this.cacheMap, window.localStorage);
+				for (const localStorageKey in window.localStorage) {
+					if (Object.prototype.hasOwnProperty.call(window.localStorage, localStorageKey)) {
+						const cacheValue = this.commonService.getLocalStorageValue(localStorageKey as LocalStorageKey);
+						if (this.isAvailableValue(cacheValue)) {
+							this.cacheMap[localStorageKey] = cacheValue;
+						}
+					}
+				}
 				this.setPromise = this.setItem(this.indexedCacheKey, this.cacheMap).then(() => {
 					window.localStorage.clear();
 					this.setPromise = undefined;
