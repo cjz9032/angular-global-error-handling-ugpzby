@@ -10,7 +10,7 @@
 	}
 
 	.header {
-		padding: 1rem 1.5rem 0;
+		padding: 1rem 2.4rem 0;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -80,5 +80,9 @@
 		color: $grey_dark;
 		font-size: $fontsize_sm;
 		font-weight: $weight_light;
+	}
+
+	::ng-deep .vtr-ui-hyperlink-button {
+		padding-right: 0;
 	}
 }

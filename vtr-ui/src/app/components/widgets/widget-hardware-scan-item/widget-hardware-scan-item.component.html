@@ -48,7 +48,7 @@
 					</vtr-ui-hardware-scan-test-result>
 
 					<!-- Icon to expand and collapse test list -->
-					<div class="col-auto" *ngIf="isScanExecute && !isEnableViewResults">
+					<div class="col-auto collapse-item" *ngIf="isScanExecute && !isEnableViewResults">
 						<div id="hwscan-item-{{ i }}-collapse-btn" class="collapse-control"
 							tabindex="0"
 							[attr.aria-label]="!item.expanded ? item.module + 'expand-test-list': item.module + 'collapse-test-list'"
