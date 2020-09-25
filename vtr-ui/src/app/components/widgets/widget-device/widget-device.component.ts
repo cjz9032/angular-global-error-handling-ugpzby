@@ -260,7 +260,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 			return;
 		}
 
-		if (!await this.isSMPSubscripted){
+		if (await this.isSMPNeedPromote()){
 			this.deviceStatus = DeviceCondition.NeedRunSMPScan;
 			return;
 		}
@@ -286,11 +286,14 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		return false;
 	}
 
-	private async isSmartPerformanceSuscripted(serialnumber): Promise<boolean>{
+	private async isSMPNeedPromote(): Promise<boolean>{
 		if (!await this.configService.showSmartPerformance()){
 			return false;
 		}
+		return !await this.isSMPSubscripted;
+	}
 
+	private async isSmartPerformanceSuscripted(serialnumber): Promise<boolean>{
 		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails(serialnumber);
 		if (!subscriptionDetails?.data){
 			return false;
