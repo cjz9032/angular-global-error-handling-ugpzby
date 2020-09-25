@@ -32,8 +32,8 @@ export class DccService {
 	}
 
 	private async initialize() {
-		const Segment = await this.selfSelectService.getSegment();
-		if (Segment === SegmentConst.SMB) {
+		const segment = await this.selfSelectService.getSegment();
+		if (segment === SegmentConst.SMB) {
 			this.headerBackground = this.headerSmbBackground;
 		} else {
 			const isDccDevice = await this.isDccCapableDevice();
