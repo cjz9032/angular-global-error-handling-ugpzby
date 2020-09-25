@@ -97,6 +97,23 @@
 			}
 		}
 
+		&.bs-tooltip-auto[x-placement^=right-top], &.tooltip.bs-tooltip-right-top {
+			margin-top: -6rem;
+			.arrow {
+				&::before {
+					top: calc(5rem + 50%);
+				}
+
+				// Used to fix arrow top when is in high contrast
+				@media #{$white-on-black} {
+					top: calc(-7.5rem + 50%);
+				}
+				@media #{$black-on-white} {
+					top: calc(-7.5rem + 50%);
+				}
+			}
+		}
+
 	}
 }
 
