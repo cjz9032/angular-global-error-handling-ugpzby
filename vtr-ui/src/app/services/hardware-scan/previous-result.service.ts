@@ -183,4 +183,16 @@ export class PreviousResultService {
 	public setViewResultItems(items: any) {
 		this.viewResultItems = items;
 	}
+
+	public async getLastHardwareScanDate(): Promise<any> {
+		this.updatePreviousResultsResponse();
+		await this.getLastResults();
+		const previousResultsWidget: any = this.getPreviousResultsWidget();
+		if (previousResultsWidget) {
+			return previousResultsWidget.date;
+		}
+		else {
+			return undefined;
+		}
+	}
 }

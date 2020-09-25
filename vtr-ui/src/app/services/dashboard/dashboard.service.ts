@@ -10,6 +10,16 @@ import { LocalInfoService } from '../local-info/local-info.service';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 import { ContentActionType, ContentSource } from 'src/app/enums/content.enum';
 import { LocalCacheService } from '../local-cache/local-cache.service';
+import { SystemUpdateService } from '../system-update/system-update.service';
+import { PreviousResultService } from '../hardware-scan/previous-result.service';
+import { DeviceService } from '../device/device.service';
+import { SmartPerformanceService } from '../smart-performance/smart-performance.service';
+import { MetricService } from '../metric/metrics.service';
+import { AdPolicyService } from '../ad-policy/ad-policy.service';
+import { HardwareScanService } from '../hardware-scan/hardware-scan.service';
+import { ConfigService } from '../config/config.service';
+import { SystemHealthDates, SystemState } from 'src/app/enums/system-state.enum';
+
 interface IContentGroup {
 	positionA: any[];
 	positionB: FeatureContent;
@@ -51,11 +61,68 @@ export class DashboardService {
 
 	welcomeText = '';
 
+	positionBLoadingData = {
+		title: 'dashboard.positionB.cardTitle',
+		summary: 'dashboard.positionB.cardSummary.detecting',
+		linkText: 'dashboard.positionB.linkText.myDevice',
+		linkPath: 'device',
+		state: SystemState.Loading,
+		stateText: ''
+	}
+
+	goodConditionData = {
+		title: 'dashboard.positionB.cardTitle',
+		summary: 'dashboard.positionB.cardSummary.goodCondition',
+		linkText: 'dashboard.positionB.linkText.myDevice',
+		linkPath: 'device',
+		state: SystemState.GoodCondition,
+		stateText: 'dashboard.positionB.stateText.goodCondition'
+	};
+
+	needMaintainSU = {
+		title: 'dashboard.positionB.cardTitle',
+		summary: 'dashboard.positionB.cardSummary.maintenanceNeeded',
+		linkText: 'dashboard.positionB.linkText.improveNow',
+		linkPath: 'device/system-updates',
+		state: SystemState.NeedMaintenance,
+		stateText: 'dashboard.positionB.stateText.maintenanceNeeded'
+	};
+
+	needMaintainHWS = {
+		title: 'dashboard.positionB.cardTitle',
+		summary: 'dashboard.positionB.cardSummary.maintenanceNeeded',
+		linkText: 'dashboard.positionB.linkText.improveNow',
+		linkPath: 'hardware-scan',
+		state: SystemState.NeedMaintenance,
+		stateText: 'dashboard.positionB.stateText.maintenanceNeeded'
+	};
+
+	needMaintainSP = {
+		title: 'dashboard.positionB.cardTitle',
+		summary: 'dashboard.positionB.cardSummary.maintenanceNeeded',
+		linkText: 'dashboard.positionB.linkText.improveNow',
+		linkPath: 'support/smart-performance',
+		state: SystemState.NeedMaintenance,
+		stateText: 'dashboard.positionB.stateText.maintenanceNeeded'
+	};
+
+	positionBResponseReceived: boolean;
+
+
+
 	constructor(
 		shellService: VantageShellService,
 		commonService: CommonService,
 		private localCacheService: LocalCacheService,
-		private localInfoService: LocalInfoService
+		private localInfoService: LocalInfoService,
+		private systemUpdateService: SystemUpdateService,
+		private previousResultService: PreviousResultService,
+		private deviceService: DeviceService,
+		private metricService: MetricService,
+		private adPolicyService: AdPolicyService,
+		private hardwareScanService: HardwareScanService,
+		private configService: ConfigService,
+		private spService: SmartPerformanceService
 	) {
 		this.dashboard = shellService.getDashboard();
 		this.eyeCareMode = shellService.getEyeCareMode();
@@ -361,4 +428,96 @@ export class DashboardService {
 			return response;
 		});
 	}
+
+	public getPositionBData(): Observable<any> {
+		return new Observable((subscriber) => {
+			subscriber.next(this.positionBLoadingData);
+			this.positionBResponseReceived = false;
+			// if over 10s, show good condition at first
+			const gcTimer =  setTimeout(() => {
+				if (!this.positionBResponseReceived) {
+					subscriber.next(this.goodConditionData);
+				}
+			}, 10000);
+
+			if (this.isFirstRunVantage()) {
+				subscriber.next(this.goodConditionData);
+				subscriber.complete();
+			} else {
+				Promise.all([this.getLastSUInstallDate(), this.getLastHardwareScanDate(),
+				this.getSPSubscriptionData(), this.getOOBEDate()]).then((values: any) => {
+					const [suDate, hwsDate, spsData, oobeDate] = values;
+					this.positionBResponseReceived = true;
+					const nowDate = new Date();
+					clearTimeout(gcTimer);
+
+					let suDateSpan;
+					let hwsDateSpan;
+					let oobeDateSpan;
+					if (suDate) {
+						suDateSpan = this.commonService.getDaysBetweenDates(nowDate, new Date(suDate));
+					}
+					if (hwsDate) {
+						hwsDateSpan = this.commonService.getDaysBetweenDates(nowDate, new Date(hwsDate));
+					}
+					if (oobeDate) {
+						oobeDateSpan = this.commonService.getDaysBetweenDates(nowDate, new Date(oobeDate));
+					}
+
+					if (oobeDateSpan && oobeDateSpan <= SystemHealthDates.OOBE) {
+						subscriber.next(this.goodConditionData);
+					}
+					else {
+						if (suDateSpan && suDateSpan > SystemHealthDates.SystemUpdate) {
+							subscriber.next(this.needMaintainSU);
+						}
+						else {
+							if (!spsData) {
+								subscriber.next(this.needMaintainSP);
+							}
+							else {
+								if (hwsDateSpan && hwsDateSpan > SystemHealthDates.HardwareScan) {
+									subscriber.next(this.needMaintainHWS);
+								}
+								else {
+									subscriber.next(this.goodConditionData);
+								}
+							}
+						}
+					}
+					subscriber.complete();
+				});
+			}
+		});
+	}
+
+	async getLastSUInstallDate(): Promise<any> {
+		return await this.systemUpdateService.getLastScanDate();
+	}
+
+	async getLastHardwareScanDate(): Promise<any> {
+		return await this.previousResultService.getLastHardwareScanDate();
+	}
+
+	async getSPSubscriptionData(): Promise<any> {
+		return await this.spService.getSPSubscriptionData();
+	}
+
+	async getOOBEDate(): Promise<any> {
+		const machineInfo = await this.deviceService.getMachineInfo();
+		return machineInfo.firstRunDate;
+	}
+
+	private isFirstRunVantage(): boolean {
+		return this.metricService.isFirstLaunch;
+	}
+
+	public async isPositionBShowDeviceState() {
+		const isSystemUpdateEnabled = !this.deviceService.isArm && this.adPolicyService.IsSystemUpdateEnabled;
+		const isHardwareScanEnabled = !this.deviceService.isArm && await this.hardwareScanService.isAvailable();
+		const isSmartPerformanceEnabled = this.configService.isSmartPerformanceAvailable;
+
+		return !this.deviceService.isSMode && (isSystemUpdateEnabled || isHardwareScanEnabled || isSmartPerformanceEnabled);
+	}
+
 }
