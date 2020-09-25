@@ -269,6 +269,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 
 		if (await this.isHWScanNeedPromote()){
 			this.deviceStatus = DeviceCondition.NeedRunHWScan;
+			return;
 		}
 
 		this.deviceStatus = DeviceCondition.Good;
