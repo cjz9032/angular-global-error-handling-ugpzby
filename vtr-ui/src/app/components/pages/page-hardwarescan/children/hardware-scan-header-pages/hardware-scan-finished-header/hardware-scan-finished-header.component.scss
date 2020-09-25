@@ -81,34 +81,22 @@
 
 	::ng-deep ngb-tooltip-window.vtr-tooltip.tooltip {
 		&.bs-tooltip-auto[x-placement^=left-top], &.tooltip.bs-tooltip-left-top {
-			margin-left: 0.8rem;
 			margin-top: -6rem;
 			.arrow {
 				&::before {
-					border-width: 1rem 0 1rem 1rem;
-					border-left-color: $light;
 					top: calc(5rem + 50%);
-					left: 0.3rem;
-					@media #{$white-on-black} {
-						display: none;
-					}
-					@media #{$black-on-white} {
-						display: none;
-					}
 				}
-				&::after {
-					@media #{$white-on-black} {
-						@include high-contrast-tooltip-arrow;
-					}
-					@media #{$black-on-white} {
-						@include high-contrast-tooltip-arrow;
-						background: $light;
-						border-left-color: $dark;
-						border-bottom-color: $dark;
-					}
+
+				// Used to fix arrow top when is in high contrast
+				@media #{$white-on-black} {
+					top: calc(-11.5rem + 50%);
+				}
+				@media #{$black-on-white} {
+					top: calc(-11.5rem + 50%);
 				}
 			}
 		}
+
 	}
 }
 
