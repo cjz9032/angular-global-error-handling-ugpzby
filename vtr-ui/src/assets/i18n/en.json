@@ -1107,7 +1107,7 @@
 					"Bad": "<b>A battery error has occurred.</b> The battery cannot be charged/discharged. Replace the battery.",
 					"NotDetected": "<b>No battery detected.</b>",
 					"NotGood": "<b>The battery is not in a good Condition.</b>",
-					"FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected.</b>",
+					"FullACAdapterSupport": "<b>{{wattage}} W {{type}} power is connected.</b>",
 					"NotSupportACAdapter": "<b>AC adapter not supported.</b>",
 					"NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
 					"LimitedACAdapterSupport": "<b>AC adapter cannot provide enough power.</b>",
@@ -1118,7 +1118,8 @@
 					"TrickleCharge": "The battery was <b>completely discharged</b> and needs to be recharged. This might take ten hours or more.",
 					"OverheatedBattery": "The battery is <b>too hot</b>. Remove it from the computer and cool it to room temperature.",
 					"PermanentError": "The battery capacity has been <b>degraded</b>. Please replace a new one.",
-					"EmDriverInstalled": "Battery details unavailable. Please run Windows Update->Check for updates to install the <b>Lenovo ACPI - Compliant Virtual Power Controller</b>driver."
+					"EmDriverInstalled": "Battery details unavailable. Please run Windows Update->Check for updates to install the <b>Lenovo ACPI - Compliant Virtual Power Controller</b>driver.",
+					"AcAdapterConnected": "<b>AC power adapter is connected.</b>"
 				},
 				"dualConditions": {
 					"NotDetected": "<b>The primary battery is not detected.</b>"

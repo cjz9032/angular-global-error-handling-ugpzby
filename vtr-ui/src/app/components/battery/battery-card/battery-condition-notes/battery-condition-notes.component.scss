@@ -1,0 +1,48 @@
+@import "./../../../../app.theme.scss";
+
+.battery-conditions-tips {
+    font-size: $fontsize_xs;
+    line-height: 1.2em;
+    width: 100%;
+    letter-spacing: 0;
+    padding: 0.5rem 0;
+    align-self: center;
+    color: $shade_blue;
+
+    h6 {
+        font-size: $fontsize_xs;
+    }
+}
+
+.icomoon {
+    font-size: 3.5rem;
+}
+.icomoon-ConditionACAdapterError {
+    &:before {
+        color: #f17f14;
+    }
+}
+
+.icomoon-ConditionBadBattery {
+    &:before {
+        color: #e74c3c;
+    }
+}
+
+.icomoon-ConditionACAdapter {
+    &:before {
+        color: #30d487;
+    }
+}
+
+
+.icomoon-ConditionFairBattery {
+    &:before {
+        color: #f17f14;
+    }
+}
+.icomoon-ConditionGoodBattery {
+    &:before {
+        color: #30d487;
+    }
+}

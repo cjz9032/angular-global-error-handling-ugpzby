@@ -62,84 +62,12 @@
 			</vtr-battery-indicator>
 		</div>
 
-		<div class="row px-3"
-			*ngFor="let batteryConditionNote of batteryConditionNotes; let i = index">
-			<!-- Battery Condition tip icon -->
-			<div class="p-0 pr-2 col-auto"
-				id="batteryConditionNote{{i}}"
-				*ngIf="batteryConditions[i].condition!= batteryConditionsEnum.FullACAdapterSupport">
-				<!-- Good -->
-				<span role="img"
-					id="batteryConditionIcon-GoodBattery"
-					*ngIf="batteryConditions[i].conditionStatus == batteryStatus.Good"
-					class="icomoon icomoon-ConditionGoodBattery"></span>
-				<!-- Fair -->
-				<span role="img"
-					id="batteryConditionIcon-FairBattery"
-					*ngIf="batteryConditions[i].conditionStatus == batteryStatus.Fair"
-					class="icomoon icomoon-ConditionFairBattery"></span>
-				<!-- Poor -->
-				<span role="img"
-					id="batteryConditionIcon-BadBattery"
-					*ngIf="batteryConditions[i].conditionStatus == batteryStatus.Poor &&
-				batteryConditions[i].condition!=batteryConditionsEnum.Error"
-					class="icomoon icomoon-ConditionBadBattery"></span>
-				<!-- Adapter error conditions -->
-				<span role="img"
-					id="batteryConditionIcon-ACAdapter-notSupported"
-					*ngIf="batteryConditions[i].condition==batteryConditionsEnum.NotSupportACAdapter"
-					class="icomoon icomoon-ConditionACAdapterError"></span>
-			</div>
-			<!-- Full Support Adapter and acWattage > 0 -->
-			<div *ngIf="batteryConditions[i].condition == batteryConditionsEnum.FullACAdapterSupport && acAdapterInfoParams && acAdapterInfoParams.acWattage!=0"
-				class="p-0 pr-2 col-auto adapter-support">
-				<span class="icomoon icomoon-ConditionACAdapterError"
-					role="img"
-					id="icon-FullACAdapterSupport"></span>
-			</div>
-			<!-- End Icons -->
-
-			<!-- Battery Condition tip Text -->
-			<div class='col battery-conditions-tips'>
-				<!-- For storage limitation conditions(Only in ThinkPads) -->
-				<h6 [innerHTML]="batteryConditionNote | translate:param"
-					*ngIf="batteryConditions[i].condition==batteryConditionsEnum.StoreLimitation"
-					[id]="'battery-condition-tip-'+ batteryConditionsEnum[batteryConditions[i].condition]"></h6>
-				<!-- For full support adapter with wattage > 0  -->
-				<h6 [innerHTML]="batteryConditionNote | translate:acAdapterInfoParams"
-					*ngIf="batteryConditions[i].condition==batteryConditionsEnum.FullACAdapterSupport && acAdapterInfoParams && acAdapterInfoParams.acWattage!=0"
-					[id]="'battery-condition-tip-'+ batteryConditionsEnum[batteryConditions[i].condition]"></h6>
-				<!-- for  all tips which does not contain any value to be added in translate string -->
-				<h6 [innerHTML]="batteryConditionNote | translate"
-					*ngIf="batteryConditions[i].condition!=batteryConditionsEnum.StoreLimitation && batteryConditions[i].condition!=batteryConditionsEnum.Error && batteryConditions[i].condition!=batteryConditionsEnum.FullACAdapterSupport"
-					[id]="'battery-condition-tip-'+ batteryConditionsEnum[batteryConditions[i].condition]"></h6>
-				<!-- see details link in case of short adapter note -->
-				<a *ngIf="batteryConditions[i].conditionStatus===batteryStatus.AcAdapterStatus && batteryConditions[i].condition!=batteryConditionsEnum.FullACAdapterSupport && shortAcErrNote"
-					class="link-label"
-					(click)="showDetailTip(i)"
-					(keydown.enter)="showDetailTip(i)"
-					id="battery-condition-tip-ACAdapterError-seeDetails-link"
-					role="link">{{'device.deviceSettings.batteryGauge.seeDetailsLink' | translate}}</a>
-			</div>
-		</div>
-
-		<!-- Note in case of charge threshold on or Gauge reset is in progress -->
-		<div class="feature-note p-3 mt-2"
-			*ngIf="!batteryService.isInvalidBattery && (batteryIndicator.isChargeThresholdOn || batteryService.isGaugeResetRunning) ">
-			<div class="row"
-				id="myDevice-settings-batteryGauge-note">
-				<p role="text">
-					<!-- Override gauge reset over charge threshold -->
-					<span role="text"
-						*ngIf="!batteryService.isGaugeResetRunning"
-						[innerHTML]="'device.deviceSettings.batteryGauge.thresholdNote' | translate"
-						id="batteryGauge-thresholdNote"></span>
-					<span *ngIf="batteryService.isGaugeResetRunning"
-						[innerHTML]="'device.deviceSettings.batteryGauge.gaugeResetWarning' | translate"
-						id="batteryGauge-gaugeResetWarning"></span>
-				</p>
-			</div>
-		</div>
+		<vtr-battery-condition-notes 
+			[batteryConditions]="batteryConditions"
+			[batteryGauge]="batteryGauge"
+			[batteryFullChargeCapacity]="batteryInfo[0].fullChargeCapacity"
+			[batteryDesignCapacity]="batteryInfo[0].designCapacity"> 
+		</vtr-battery-condition-notes>
 
 		<div class="pt-4 text-center"
 			[class.btn-disabled]="disableBatteryDetails">
@@ -156,8 +84,6 @@
 				attr.aria-label="myDevice-settings-battery-details-btn"
 				[attr.aria-disabled]="disableBatteryDetails">
 			</vtr-ui-button>
-
-
 		</div>
 	</div>
 </div>

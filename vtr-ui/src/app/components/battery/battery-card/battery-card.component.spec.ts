@@ -286,31 +286,6 @@ describe('BatteryCardComponent', () => {
 		expect(component.batteryConditions).toContain(new BatteryConditionModel(BatteryConditionsEnum.FullACAdapterSupport, BatteryStatus.AcAdapterStatus));
 	});
 
-	it('should call showDetailTip', () => {
-		const index = 1;
-		component.batteryConditionNotes = [];
-		component.showDetailTip(index);
-		expect(component.shortAcErrNote).toEqual(false);
-	});
-
-	it('should call getConditionState - case 3', () => {
-		const conditionState = 3;
-		component.getConditionState(conditionState).toString();
-		expect(component.batteryStatus).toEqual(BatteryStatus);
-	});
-
-	it('should call getConditionState case 4', () => {
-		const conditionState = 4;
-		component.getConditionState(conditionState).toString();
-		expect(component.batteryStatus).toEqual(BatteryStatus);
-	});
-
-	it('should call getConditionState case 5', () => {
-		const conditionState = 5;
-		component.getConditionState(conditionState).toString();
-		expect(component.batteryStatus).toEqual(BatteryStatus);
-	});
-
 	it('should call reInitValue', () => {
 		component.reInitValue();
 		expect(component.flag).toEqual(false);

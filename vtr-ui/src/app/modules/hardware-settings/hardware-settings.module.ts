@@ -5,6 +5,7 @@ import { AutoupdateSettingsComponent } from 'src/app/components/pages/page-devic
 import { AvailableUpdatesComponent } from 'src/app/components/pages/page-device-updates/children/available-updates/available-updates.component';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
 import { BatteryCardComponent } from 'src/app/components/battery/battery-card/battery-card.component';
+import { BatteryConditionNotesComponent } from 'src/app/components/battery/battery-card/battery-condition-notes/battery-condition-notes.component';
 import { BatteryChargeThresholdSettingsComponent } from 'src/app/components/battery/battery-charge-threshold-settings/battery-charge-threshold-settings.component';
 import { BatteryDetailComponent } from 'src/app/components/battery/battery-detail/battery-detail.component';
 import { BatteryIndicatorComponent } from 'src/app/components/battery/battery-indicator/battery-indicator.component';
@@ -111,6 +112,7 @@ import { UiListSystemUpdateCheckboxComponent } from 'src/app/components/pages/pa
 		AutoupdateSettingsComponent,
 		AvailableUpdatesComponent,
 		BatteryCardComponent,
+		BatteryConditionNotesComponent,
 		BatteryChargeThresholdSettingsComponent,
 		BatteryDetailComponent,
 		BatteryIndicatorComponent,
