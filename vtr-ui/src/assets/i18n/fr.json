@@ -2063,7 +2063,7 @@
                 "autoScreenOff": {
                     "title": "Désactivation automatique de l'écran",
                     "caption": "Désactive automatique l'écran quand celui-ci est rabattu ou lorsque l'utilisateur s'en éloigne.",
-                    "note": "Cette fonction n'est pas disponible si les paramètres du mode de gestion de l'alimentation sont configurés sur \"Ne jamais désactiver l'affichage de la batterie\" dans la \"section Système\" des paramètres Windows. Choisissez une autre valeur que \"Jamais\" pour activer cette fonction.",
+                    "note": "Cette fonction ne fonctionne pas lorsque vos paramètres du mode de gestion de l'alimentation sont définis sur \"<b>Ne jamais</b> désactiver l'affichage de la batterie\" dans les paramètres Windows. Pour activer cette fonction, accédez à <b>Paramètres</b> -> <b>Système</b> -> <b>Alimentation et veille</b> -> <b>Écran</b>, puis sélectionnez une autre valeur.",
                     "windowsLink": "Accédez aux paramètres d'alimentation et de mise en veille dans les paramètres Windows"
                 },
                 "keepMyDisplay": {

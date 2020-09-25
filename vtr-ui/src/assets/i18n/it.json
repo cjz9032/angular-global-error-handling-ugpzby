@@ -2063,7 +2063,7 @@
                 "autoScreenOff": {
                     "title": "Spegnimento schermo automatico",
                     "caption": "Disattivare automaticamente lo schermo quando l'utente è a faccia in giù o sta camminando.",
-                    "note": "Questa funzione non è disponibile se le impostazioni del piano di alimentazione sono impostate su \"Non spegnere mai lo schermo\" nella sezione \"Sistema\" delle impostazioni di Windows. Selezionare un valore diverso da \"Mai\" per attivare questa funzione.",
+                    "note": "Questa funzione non è disponibile quando le impostazioni del piano di alimentazione sono configurate su \"<b>Non</b> spegnere lo schermo con alimentazione a batteria\" nelle impostazioni di Windows. Per abilitare questa funzione, selezionare <b>Impostazioni</b> -> <b>Sistema</b> -> <b>Alimentazione e sospensione</b> -> <b>Schermo</b> e quindi scegliere un altro valore.",
                     "windowsLink": "Accedere alle impostazioni di alimentazione e sospensione nelle impostazioni di Windows"
                 },
                 "keepMyDisplay": {

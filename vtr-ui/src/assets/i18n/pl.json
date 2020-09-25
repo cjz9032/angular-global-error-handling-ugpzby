@@ -2063,7 +2063,7 @@
                 "autoScreenOff": {
                     "title": "Automatyczne wyłączanie ekranu",
                     "caption": "Automatycznie wyłącza wyświetlacz, gdy jest skierowany w dół lub gdy użytkownik idzie.",
-                    "note": "Funkcja ta jest niedostępna, jeżeli w sekcji System w Ustawieniach systemu Windows wybrano ustawienie planu zasilania: „nigdy nie wyłączaj ekranu na zasilaniu akumulatorowym”. Aby włączyć tę funkcję, wybierz wartość inną niż „Nigdy”.",
+                    "note": "Funkcja ta nie działa, jeżeli w Ustawieniach systemu Windows wybrano Plan zasilania: „<b>Nigdy</b> nie wyłączaj ekranu na zasilaniu akumulatorowym”. Aby włączyć tę funkcję, wybierz kolejno <b>Ustawienia</b> -> <b>System</b> -> <b>Zasilanie i uśpienie</b> -> <b>Ekran</b>, a następnie wybierz inną wartość.",
                     "windowsLink": "Przechodzenie do ustawień zasilania i uśpienia w Ustawieniach systemu Windows"
                 },
                 "keepMyDisplay": {

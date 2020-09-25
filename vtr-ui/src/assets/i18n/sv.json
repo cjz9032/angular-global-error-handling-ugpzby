@@ -2063,7 +2063,7 @@
                 "autoScreenOff": {
                     "title": "Automatiskt skärmlås av",
                     "caption": "Automatisk avstängning av skärmen när du sänker huvudet eller går.",
-                    "note": "Denna funktion är inte tillgänglig om inställningen för Energischema har angetts till Stäng aldrig av skärmen med batteridrift i avsnittet System i inställningarna i Windows. Välj ett annat värde än Aldrig för att aktivera funktionen.",
+                    "note": "Denna funktion fungerar inte när inställningen för energischema i Windows-inställningarna är <b>Aldrig</b> i alternativet för när bildskärmen ska stängas av. Aktivera funktionen genom att välja <b>Inställningar</b> -> <b>System</b> -> <b>Energialternativ</b> -> <b>Bildskärm</b> och välj ett annat värde.",
                     "windowsLink": "Välj Ström- och strömsparinställningar i Windows-inställningar"
                 },
                 "keepMyDisplay": {

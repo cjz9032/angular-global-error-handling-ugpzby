@@ -2063,7 +2063,7 @@
                 "autoScreenOff": {
                     "title": "Desligamento automático de tela",
                     "caption": "Desligue a tela automaticamente quando estiver com a face para baixo ou caminhando.",
-                    "note": "Este recurso não está disponível se as configurações do Plano de Energia estiverem definidas como \"nunca desligar a tela com bateria\" na \"seção SISTEMA\" das Configurações do Windows. Selecione um valor diferente de \"Nunca\" para ativar esse recurso.",
+                    "note": "Este recurso não está funciona quando as configurações do Plano de Energia estão definidas como \"<b>Nunca</b> desligar a tela com energia da bateria\" nas Configurações do Windows. Para habilitar este recurso, vá para <b>Configurações</b> -> <b>Sistema</b> -> <b>Energia e repouso</b> -> <b>Tela</b> e selecione outro valor.",
                     "windowsLink": "Acesse as configurações de energia e suspensão em Configurações do Windows"
                 },
                 "keepMyDisplay": {

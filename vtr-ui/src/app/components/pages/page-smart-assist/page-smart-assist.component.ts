@@ -157,7 +157,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	}
 
 	private setSmartAssistCacheStorageValue(): void {
-		this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 	}
 
 	async ngOnInit() {
@@ -467,7 +467,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			this.intelligentSecurity.isWindowsHelloRegistered = windowsHelloStatusResponse;
 			this.logger.info('PageSmartAssistComponent.Promise.ZeroTouchLogin()', this.intelligentSecurity);
 			this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
-			this.setSmartAssistCacheStorageValue();
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 		}).catch(error => {
 			this.logger.error('error in PageSmartAssistComponent.Promise.ZeroTouchLogin()', error.message);
 			return EMPTY;

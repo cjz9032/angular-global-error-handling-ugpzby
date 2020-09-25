@@ -2063,7 +2063,7 @@
                 "autoScreenOff": {
                     "title": "Automatisk skærm fra",
                     "caption": "Sluk automatisk for skærmen, når låget er lukket, eller når du går.",
-                    "note": "Denne funktion er ikke tilgængelig, hvis indstillingerne for strømstyringsplan er sat til \"Sluk aldrig for skærmen, når den kører på batteri\" i afsnittet \"System\" i Windows-indstillingerne. Vælg en anden værdi end \"Aldrig\" for at aktivere denne funktion.",
+                    "note": "Denne funktion fungerer ikke, når din Strømplan er indstillet til \"<b>Sluk</b> aldrig for skærmen, når den kører på batteri\" i Windows-indstillinger. Du aktiverer denne funktion ved at gå til <b>Indstillinger</b> -> <b>System</b> -> <b>Strømstyring og slumretilstand</b> -> <b>Skærm</b> og derefter vælge en anden værdi.",
                     "windowsLink": "Gå til strøm- og slumreindstillinger i Windows-indstillingerne"
                 },
                 "keepMyDisplay": {

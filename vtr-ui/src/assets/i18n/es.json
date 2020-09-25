@@ -2063,7 +2063,7 @@
                 "autoScreenOff": {
                     "title": "Bloqueo de pantalla automático",
                     "caption": "Apagar la pantalla automáticamente cuando apunte al suelo o cuando esté caminando.",
-                    "note": "Esta función no está disponible si la configuración del plan de energía es “con batería, nunca apagar la pantalla” en la sección “Sistema” de la configuración de Windows. Seleccione un valor distinto de “Nunca” para activar esta característica.",
+                    "note": "Esta función no funciona cuando la configuración del plan de energía es “No apagar <b>nunca</b> la pantalla cuando se conecte la batería” en la configuración de Windows. Para activar esta función, vaya a <b>Configuración</b> -> <b>Sistema</b> -> <b>Inicio/apagado y suspensión</b> -> <b>Pantalla</b> y seleccione otro valor.",
                     "windowsLink": "Vaya a Configuración de Inicio/Apagado y suspensión en la configuración de Windows"
                 },
                 "keepMyDisplay": {

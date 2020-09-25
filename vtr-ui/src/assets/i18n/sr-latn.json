@@ -2063,7 +2063,7 @@
                 "autoScreenOff": {
                     "title": "Automatsko isključivanje ekrana",
                     "caption": "Automatski isključuje ekran kada se okrene nadole ili tokom šetnje.",
-                    "note": "Ova funkcija nije dostupna ako su postavke plana napajanja podešene na „never turn off the screen on battery“ (nikada ne isključuj ekran prilikom napajanja sa baterije) u odeljku Sistem („System section“) u okviru Windows Settings (Windows postavke). Izaberite neku vrednost koja nije „Never“ (nikada) da biste omogućili ovu funkciju.",
+                    "note": "Ova funkcija ne funkcioniše kada su postavke plana napajanja podešene na „<b>Nikada</b> ne isključuj ekran prilikom napajanja sa baterije“ u okviru Windows postavke. Da biste omogućili ovu funkciju, idite na <b>Postavke</b> -> <b>Sistem</b> -> <b>Napajanje i stanje spavanja</b> -> <b>Ekran</b>, a zatim izaberite drugu vrednost.",
                     "windowsLink": "Idi na Postavke za napajanje i stanje spavanja u Windows postavkama"
                 },
                 "keepMyDisplay": {

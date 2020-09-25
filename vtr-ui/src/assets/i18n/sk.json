@@ -2063,7 +2063,7 @@
                 "autoScreenOff": {
                     "title": "Automatické vypnutie obrazovky",
                     "caption": "Automaticky vypne obrazovku, ak je zariadenie otočené prednou stranou smerom nadol alebo pri chôdzi.",
-                    "note": "Táto funkcia nie je k dispozícii, ak je v časti Systém nastavení systému Windows nastavený plán napájania „nikdy nevypínať obrazovku pri napájaní z batérie“. Ak chcete túto funkciu zapnúť, vyberte inú hodnotu ako „Nikdy“.",
+                    "note": "Táto funkcia nefunguje, ak je v časti Nastavenia systému Windows nastavený plán napájania „<b>Nikdy</b> nevypínať obrazovku pri napájaní z batérie“. Ak chcete povoliť túto funkciu, prejdite na <b>Nastavenie</b> -> <b>Systém</b> -> <b>Napájanie a spánok</b> -> <b>Obrazovka</b> a potom vyberte inú hodnotu.",
                     "windowsLink": "Prejdite na nastavenia napájania a spánku v nastaveniach systému Windows"
                 },
                 "keepMyDisplay": {

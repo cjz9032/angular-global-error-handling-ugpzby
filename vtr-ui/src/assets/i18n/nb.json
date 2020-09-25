@@ -2063,7 +2063,7 @@
                 "autoScreenOff": {
                     "title": "Slå av skjermen automatisk",
                     "caption": "Slå av skjermen automatisk når den ligger med forsiden ned, eller når du går.",
-                    "note": "Denne funksjonen er ikke tilgjengelig hvis du har valgt aldri å slå av skjermen på batteristrøm i innstillingene for strømstyringsplan under System i Windows. Velg en annen verdi enn Aldri for å aktivere denne funksjonen.",
+                    "note": "Denne funksjonen virker ikke hvis strømstyringsplanen i Windows-innstillingene er angitt som \"Ved batteristrøm, slå av etter: <b>Aldri</b> i batterimodus\". Hvis du vil aktivere denne funksjonen, går du til <b>Innstillinger</b> -> <b>System</b> -> <b>Strøm og hvilemodus</b> -> <b>Skjerm</b>, og velger deretter en annen verdi.",
                     "windowsLink": "Gå til innstillingene for strøm og hvilemodus i Windows"
                 },
                 "keepMyDisplay": {

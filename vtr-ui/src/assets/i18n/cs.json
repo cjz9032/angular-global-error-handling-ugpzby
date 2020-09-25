@@ -2063,7 +2063,7 @@
                 "autoScreenOff": {
                     "title": "Automatické vypnutí obrazovky",
                     "caption": "Automaticky vypnout displej při chůzi nebo otočení zařízení displejem dolů.",
-                    "note": "Tato funkce není k dispozici, pokud je vaše schéma napájení nastaveno na hodnotu „při napájení z baterie nikdy nevypínat obrazovku“ v Nastavení systému Windows v části „Systém“. K povolení této funkce vyberte jinou hodnotu než „Nikdy“.",
+                    "note": "Tato funkce není k dispozici, pokud je vaše schéma napájení nastaveno na hodnotu „<b>Nikdy</b> nevypínat obrazovku při napájení z baterie” v Nastavení systému Windows. Chcete-li tuto funkci povolit, přejděte do části <b>Nastavení</b> -> <b>Systém</b> -> <b>Napájení a režim spánku</b> -> <b>Obrazovka</b>, a poté vyberte jinou hodnotu.",
                     "windowsLink": "Přejít k nastavení napájení a režimu spánku v systému Windows"
                 },
                 "keepMyDisplay": {
