@@ -588,7 +588,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	private openWaitHardwareComponentsModal() {
 		const modal: NgbModalRef = this.modalService.open(ModalWaitComponent, {
 			size: 'lg',
-			centered: true
+			centered: true,
+			windowClass: 'hardware-scan-modal-size'
 		});
 
 		( modal.componentInstance as ModalWaitComponent).modalTitle = this.translate.instant('hardwareScan.loadingComponents');

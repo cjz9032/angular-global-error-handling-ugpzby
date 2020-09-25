@@ -1,17 +1,22 @@
 @import "../../../app.theme";
 
 .vtr-modal-wait {
+	padding: 2.4rem;
 	@include high-contrast-border;
+
 	.title {
-		font-size: $fontsize_xl2;
+		font-size: $fontsize_xl;
+		font-weight: $weight_600;
+		color: $shade_blue;
+		word-wrap: break-word;
+		padding-right: 2.4rem; // to avoid title overlapping X button
 	}
 
 	.description {
-		font-size: $fontsize_lg;
-	}
-
-	.modal-body {
-		padding: 4rem;
+		font-size: $fontsize_xs;
+		white-space: pre-wrap;
+		font-weight: $weight_light;
+		color: $shade_blue;
 	}
 
 	#loading-icon {
