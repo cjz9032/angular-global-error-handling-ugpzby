@@ -79,34 +79,39 @@ export class ContentCacheService {
 				});
 		}
 
-		this.sendCacheMetrics(startTime, 'loadedCacheContents');
+		this.sendCacheMetrics(startTime, 'LoadCachedContents');
 
 		return cachedContents;
 	}
 
 	public async getArticleById(actionType: ContentActionType, articleId: any) {
+		const startTime = new Date();
 		const loclInfo = await this.cmsService.getLocalinfo();
+		let article;
+		let itemName = 'Cache';
 		if (actionType === ContentActionType.BuildIn) {
-			return this.buildInContentService.getArticle(articleId, loclInfo.Lang);
+			itemName = 'Build-in';
+			article = await this.buildInContentService.getArticle(articleId, loclInfo.Lang);
 		} else {
-			let article = await this.getCachedArticle(articleId, loclInfo.Lang);
-			if (article) {
-				return article;
+			article = await this.getCachedArticle(articleId, loclInfo.Lang);
+			if (!article) {
+				itemName = 'Online';
+				article = await this.cmsService.fetchCMSArticle(articleId);
+				this.saveArticleIfNeed(articleId, loclInfo.Lang, article);
 			}
-			article = await this.cmsService.fetchCMSArticle(articleId);
-			this.saveArticleIfNeed(articleId, loclInfo.Lang, article);
-			return article;
 		}
+		this.sendCacheMetrics(startTime, 'LoadArticle', itemName);
+		return article;
 	}
 
-	private sendCacheMetrics(startTime, metricsName) {
+	private sendCacheMetrics(startTime, metricsName, itemName = 'TimeDuration(ms)') {
 		const endTime = new Date();
 		const diff = endTime.getTime() - startTime.getTime();
 
 		const metricsData = {
 			ItemParent: 'ContentCache',
 			ItemType: metricsName,
-			ItemName: 'TimeDuration(ms)',
+			ItemName: itemName,
 			ItemValue: diff
 		};
 		this.metrics.sendMetrics(metricsData);
@@ -222,7 +227,7 @@ export class ContentCacheService {
 				await this.saveContents(cacheKey, cacheValueOfContents);
 				this.latestCachedContetns[cacheKey] = cacheValueOfContents;
 				await this.cacheContentDetail(contents);
-				this.sendCacheMetrics(startTime, 'fetchedCacheContents');
+				this.sendCacheMetrics(startTime, 'CacheContents');
 			}).catch(error => {
 				this.logger.error('cacheContents error ', error);
 			});
