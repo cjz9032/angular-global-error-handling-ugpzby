@@ -2063,7 +2063,7 @@
                 "autoScreenOff": {
                     "title": "Automatische scherm uit",
                     "caption": "Beeldscherm automatisch uitschakelen als het beeldscherm met het beeld omlaag ligt of als u loopt.",
-                    "note": "Deze functie is niet beschikbaar als u de energiebeheerinstellingen hebt ingesteld op \"Beeldscherm nooit uitschakelen in accumodus\" in Windows Settings \"Systeem sectie\". Selecteer een andere waarde dan \"Nooit\" om deze functie in te schakelen.",
+                    "note": "Deze functie werkt niet wanneer je energiebeheerinstellingen zijn ingesteld op \"Beeldscherm <b>nooit</b> uitschakelen in batterijmodus\" in de systeeminstellingen van Windows. Als je deze functie wilt instellen, ga je naar <b>Instellingen</b> -> <b>Systeem</b> -> <b>Energiebeheer en slaapstand</b> -> <b>Scherm</b> en selecteer je vervolgens een andere waarde.",
                     "windowsLink": "Ga naar Instellingen voor energiebeheer en slaapstand in Windows Systeeminstellingen"
                 },
                 "keepMyDisplay": {

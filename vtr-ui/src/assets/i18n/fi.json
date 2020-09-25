@@ -2063,7 +2063,7 @@
                 "autoScreenOff": {
                     "title": "Automaattinen näyttö ei käytössä",
                     "caption": "Katkaise näytön virta automaattisesti, kun en katso näyttöä tai kävelen.",
-                    "note": "Tämä ominaisuus ei ole käytettävissä, jos Windows-asetusten Järjestelmä-osiossa on määritetty virrankäyttösuunnitelman asetukseksi \"älä koskaan sammuta näyttöä käytettäessä akkuvirtaa\". Ota tämä ominaisuus käyttöön valitsemalla jokin muu arvo kuin \"Ei koskaan\".",
+                    "note": "Tämä ominaisuus ei toimi, jos virrankäyttösuunnitelman asetukseksi on valittu \"<b>Älä koskaan</b> sammuta näyttöä käytettäessä akkuvirtaa\" Windows-asetuksissa. Voit ottaa tämän ominaisuuden käyttöön valitsemalla <b>Asetukset</b> -> <b>Järjestelmä</b> -> <b>Virta ja lepotila</b> -> <b>Näyttö</b> ja valitsemalla toisen arvon.",
                     "windowsLink": "Siirry Virta- ja lepotila-asetukset -kohtaan Windows-asetuksissa"
                 },
                 "keepMyDisplay": {

@@ -2063,7 +2063,7 @@
                 "autoScreenOff": {
                     "title": "Automatische Bildschirmabschaltung",
                     "caption": "Bildschirm automatisch ausschalten, wenn das Gerät nach unten zeigt oder ich laufe.",
-                    "note": "Diese Funktion ist nicht verfügbar, wenn Sie beim Energieschema in den Windows-Systemeinstellungen eingestellt haben, dass der Bildschirm im Akkubetrieb niemals ausgeschaltet werden soll. Wählen Sie eine andere Einstellung als \"Niemals\" aus, um die Funktion zu aktivieren.",
+                    "note": "Diese Funktion funktioniert nicht, wenn Sie beim Energieschema in den Windows-Einstellungen eingestellt haben, dass der Bildschirm im Akkubetrieb <b>niemals</b> ausgeschaltet werden soll. Um diese Funktion zu aktivieren, navigieren Sie zu <b>Einstellungen</b> -> <b>System</b> -> <b>Netzbetrieb und Energiesparen</b> -> <b>Bildschirm</b> und wählen Sie einen anderen Wert aus.",
                     "windowsLink": "Zu Energie‑ und Energiesparmoduseinstellungen in den Windows-Einstellungen wechseln"
                 },
                 "keepMyDisplay": {

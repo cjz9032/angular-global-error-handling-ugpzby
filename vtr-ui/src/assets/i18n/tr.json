@@ -2063,7 +2063,7 @@
                 "autoScreenOff": {
                     "title": "Otomatik ekran kapatma",
                     "caption": "Ekran aşağı baktığında veya yürüdüğünüzde ekranı otomatik olarak kapatır.",
-                    "note": "Windows Ayarları “Sistem bölümünde” Güç Planı ayarlarınız “pil gücüyle çalışırken asla ekranı kapatma” olarak ayarlanmışsa bu özelliği kullanamazsınız. Bu özelliği etkinleştirmek için lütfen “Asla” haricinde bir değer seçin.",
+                    "note": "Windows Ayarları'nda Güç Planı ayarlarınız “Pil gücüyle çalışırken <b>asla</b> ekranı kapatma” olarak ayarlanmışsa bu özellik çalışmaz. Bu özelliği etkinleştirmek için <b>Ayarlar</b> -> <b>Sistem</b> -> <b>Güç ve Uyku</b> -> <b>Ekran</b> seçeneğine gidip başka bir değer seçin.",
                     "windowsLink": "Windows ayarlarında Güç ve uyku ayarları'na gidin"
                 },
                 "keepMyDisplay": {

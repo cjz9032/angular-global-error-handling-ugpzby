@@ -2063,7 +2063,7 @@
                 "autoScreenOff": {
                     "title": "Automatsko isključivanje zaslona",
                     "caption": "Automatski isključi zaslon kad je okrenut prema dolje ili tijekom hodanja.",
-                    "note": "Ova značajka nije dostupna ako su vaše postavke plana uštede energije postavljene na \"nikad ne isključuj zaslon računala na baterijskom napajanju\" u Postavkama sustava Windows u \"Odjeljku sustava\". Odaberite vrijednost koja nije \"Nikad\" da biste omogućili ovu značajku.",
+                    "note": "Ova značajka ne rada kada su postavke uštede energije postavljene na \"<b>Nikad</b> ne isključuj zaslon na baterijskom napajanju\" u postavkama sustava Windows. Da biste omogućili ovu značajku, idite na <b>Postavke</b> -> <b>Sustav</b> -> <b>Napajanje i mirovanje</b> -> <b>Zaslon</b>, a zatim odaberite drugu vrijednost.",
                     "windowsLink": "Idite na postavke Uključi/isključi i stanja mirovanja u postavkama sustava Windows"
                 },
                 "keepMyDisplay": {

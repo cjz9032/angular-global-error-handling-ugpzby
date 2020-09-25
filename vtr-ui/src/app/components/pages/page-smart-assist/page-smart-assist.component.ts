@@ -30,6 +30,7 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 	templateUrl: './page-smart-assist.component.html',
 	styleUrls: ['./page-smart-assist.component.scss']
 })
+
 export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	title = 'Smart Assist';
 	back = 'BACK';
@@ -155,7 +156,11 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	ngOnInit() {
+	private setSmartAssistCacheStorageValue(): void {
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+	}
+
+	async ngOnInit() {
 		if (this.smartAssist.isShellAvailable) {
 			this.machineType = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType);
 			this.smartAssistCapability = this.localCacheService.getLocalCacheValue(LocalStorageKey.SmartAssistCapability, undefined);
@@ -220,7 +225,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				this.smartAssistCache.isAPSAvailable = this.isAPSAvailable;
 				this.smartAssistCache.hpdSensorType = this.hpdSensorType;
 				this.smartAssistCache.sensitivityVisibility = this.sensitivityVisibility;
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+				this.setSmartAssistCacheStorageValue();
 			}
 			this.smartAssistCache.intelligentSecurity.isIntelligentSecuritySupported = this.smartAssistCapability.isIntelligentSecuritySupported;
 			this.updateZeroTouchLockTimersUIModel();
@@ -325,7 +330,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				this.hsaIntelligentSecurity = this.smartAssistCapability.isHsaIntelligentSecuritySupported;
 				this.getHsaIntelligentSecurityStatus();
 			}
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+			this.setSmartAssistCacheStorageValue();
 		}
 	}
 
@@ -336,7 +341,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				this.logger.info('getHPDLeaveSensitivityVisibility value----->', value);
 				this.sensitivityVisibility = value;
 				this.smartAssistCache.sensitivityVisibility = value;
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+				this.setSmartAssistCacheStorageValue();
 
 				if (this.sensitivityVisibility) {
 					this.getHPDLeaveSensitivityStatus();
@@ -387,7 +392,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				this.checkHeaderMenuItems(this.isAPSAvailable, 'aps');
 
 				this.smartAssistCache.isAPSAvailable = this.isAPSAvailable;
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+				this.setSmartAssistCacheStorageValue();
 			})
 			.catch((error) => { this.logger.info('APS ERROR------------------', error.message); });
 	}
@@ -401,22 +406,28 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			this.smartAssist.getReadingOrBrowsingVisibility(),
 			this.smartAssist.getReadingOrBrowsingStatus(),
 			this.smartAssist.getReadingOrBrowsingTime(),
-		]).then((responses: any[]) => {
-			this.intelligentScreen.isIntelligentScreenVisible = responses[0];
-			this.intelligentScreen.isAutoScreenOffVisible = responses[1];
-			this.intelligentScreen.isAutoScreenOffEnabled = responses[2];
-			this.intelligentScreen.isAutoScreenOffNoteVisible = responses[3];
-			this.intelligentScreen.isReadingOrBrowsingVisible = responses[4];
-			this.intelligentScreen.isReadingOrBrowsingEnabled = responses[5];
-			this.intelligentScreen.readingOrBrowsingTime = responses[6];
-			this.logger.info('PageSmartAssistComponent.Promise.IntelligentScreen(): responses', responses);
-			this.logger.info('PageSmartAssistComponent.Promise.IntelligentScreen(): intelligentScreen', this.intelligentScreen);
+		]).then(([
+			intelligentScreenVisibilityResponse,
+			autoScreenOffVisibilityResponse,
+			autoScreenOffStatusResponse,
+			autoScreenOffNoteStatusResponse,
+			readingOrBrowsingVisibilityResponse,
+			readingOrBrowsingStatusResponse,
+			readingOrBrowsingTimeResponse
+		]: any) => {
+			this.intelligentScreen.isIntelligentScreenVisible = intelligentScreenVisibilityResponse;
+			this.intelligentScreen.isAutoScreenOffVisible = autoScreenOffVisibilityResponse;
+			this.intelligentScreen.isAutoScreenOffEnabled = autoScreenOffStatusResponse;
+			this.intelligentScreen.isAutoScreenOffNoteVisible = autoScreenOffNoteStatusResponse;
+			this.intelligentScreen.isReadingOrBrowsingVisible = readingOrBrowsingVisibilityResponse;
+			this.intelligentScreen.isReadingOrBrowsingEnabled = readingOrBrowsingStatusResponse;
+			this.intelligentScreen.readingOrBrowsingTime = readingOrBrowsingTimeResponse;
 
 			this.featureInitialize.screen = true;
 			this.checkHeaderMenuItems(this.intelligentScreen.isIntelligentScreenVisible, 'screen');
 
 			this.smartAssistCache.intelligentScreen = this.intelligentScreen;
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+			this.setSmartAssistCacheStorageValue();
 			this.getAutoScreenOffNoteStatusFunc();
 		}).catch(error => {
 			this.logger.error('error in PageSmartAssistComponent.Promise.IntelligentScreen()', error.message);
@@ -432,7 +443,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			});
 		}, 30000);
 	}
-	private initZeroTouchLogin() {
+	private initZeroTouchLogin(): void {
 		Promise.all([
 			this.smartAssist.getZeroTouchLoginVisibility(),
 			this.smartAssist.getZeroTouchLoginStatus(),
@@ -440,13 +451,20 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			this.smartAssist.getZeroTouchLoginAdjustVisibility(),
 			this.smartAssist.getZeroTouchLoginAdjustStatus(),
 			this.smartAssist.getWindowsHelloStatus()
-		]).then((responses: any[]) => {
-			this.intelligentSecurity.isZeroTouchLoginVisible = responses[0];
-			this.intelligentSecurity.isZeroTouchLoginEnabled = responses[1];
-			this.intelligentSecurity.zeroTouchLoginDistance = responses[2];
-			this.intelligentSecurity.isDistanceSensitivityVisible = responses[3];
-			this.intelligentSecurity.isZeroTouchLoginAdjustEnabled = responses[4];
-			this.intelligentSecurity.isWindowsHelloRegistered = responses[5];
+		]).then(([
+			zeroTouchLoginVisibilityResponse,
+			zeroTouchLoginStatusResponse,
+			zeroTouchLoginDistanceResponse,
+			zeroTouchLoginAdjustVisibilityResponse,
+			zroTouchLoginAdjustStatusResponse,
+			windowsHelloStatusResponse
+		]: any) => {
+			this.intelligentSecurity.isZeroTouchLoginVisible = zeroTouchLoginVisibilityResponse;
+			this.intelligentSecurity.isZeroTouchLoginEnabled = zeroTouchLoginStatusResponse;
+			this.intelligentSecurity.zeroTouchLoginDistance = zeroTouchLoginDistanceResponse;
+			this.intelligentSecurity.isDistanceSensitivityVisible = zeroTouchLoginAdjustVisibilityResponse;
+			this.intelligentSecurity.isZeroTouchLoginAdjustEnabled = zroTouchLoginAdjustStatusResponse;
+			this.intelligentSecurity.isWindowsHelloRegistered = windowsHelloStatusResponse;
 			this.logger.info('PageSmartAssistComponent.Promise.ZeroTouchLogin()', this.intelligentSecurity);
 			this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
 			this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
@@ -464,21 +482,23 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			this.smartAssist.getHPDStatus(),
 			this.smartAssist.getHPDVisibility(),
 			this.getFacialRecognitionStatus()
-		]).then((responses: any[]) => {
-			this.intelligentSecurity.isZeroTouchLockVisible = responses[0];
-			this.intelligentSecurity.isZeroTouchLockEnabled = responses[1];
-			this.intelligentSecurity.autoScreenLockTimer = responses[2].toString();
-			this.intelligentSecurity.isHPDEnabled = responses[3];
-			this.intelligentSecurity.isIntelligentSecuritySupported = responses[4];
-
+		]).then(([
+			zeroTouchLockVisibilityResponse,
+			zeroTouchLockStatusResponse,
+			selectedLockTimerResponse,
+			HPDStatusResponse,
+			HPDVisibilityResponse
+		]: any) => {
+			this.intelligentSecurity.isZeroTouchLockVisible = zeroTouchLockVisibilityResponse;
+			this.intelligentSecurity.isZeroTouchLockEnabled = zeroTouchLockStatusResponse;
+			this.intelligentSecurity.autoScreenLockTimer = selectedLockTimerResponse.toString();
+			this.intelligentSecurity.isHPDEnabled = HPDStatusResponse;
+			this.intelligentSecurity.isIntelligentSecuritySupported = HPDVisibilityResponse;
 			this.featureInitialize.security = true;
 			this.checkHeaderMenuItems(this.intelligentSecurity.isIntelligentSecuritySupported, 'security');
-
 			this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
-			// if (this.intelligentSecurity.isZeroTouchLockVisible && this.zeroTouchLockShowAdvancedSection) {
+			this.setSmartAssistCacheStorageValue();
 			this.updateZeroTouchLockTimersUIModel();
-			// }
 
 			this.logger.info('PageSmartAssistComponent.Promise.initZeroTouchLock()', this.intelligentSecurity);
 		}).catch(error => {
@@ -487,10 +507,10 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		});
 	}
 
-	public onHumanPresenceDetectStatusToggle($event: any) {
+	public onHumanPresenceDetectStatusToggle($event): void {
 		this.intelligentSecurity.isHPDEnabled = $event.switchValue;
 		this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+		this.setSmartAssistCacheStorageValue();
 		this.updateZeroTouchLockTimersUIModel();
 		this.smartAssist.setHPDStatus(this.intelligentSecurity.isHPDEnabled)
 			.then((isSuccess: boolean) => {
@@ -498,7 +518,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			});
 	}
 
-	public onZeroTouchLoginStatusToggle(event: any) {
+	public onZeroTouchLoginStatusToggle(event): void {
 		this.intelligentSecurity.isZeroTouchLoginEnabled = event.switchValue;
 
 		this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
@@ -525,7 +545,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	}
 
 	// this is invoked when auto lock feature is toggled
-	public onZeroTouchLockStatusToggle(event: any) {
+	public onZeroTouchLockStatusToggle(event): void {
 		this.intelligentSecurity.isZeroTouchLockEnabled = event.switchValue;
 		this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
@@ -564,7 +584,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			});
 	}
 
-	public onDistanceSensitivityAdjustToggle(event: any) {
+	public onDistanceSensitivityAdjustToggle(event): void {
 		this.intelligentSecurity.isZeroTouchLoginAdjustEnabled = event.switchValue;
 
 		this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
@@ -628,7 +648,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public onZeroTouchLockDistanceSensitivityAdjustToggle(event: any) {
+	public onZeroTouchLockDistanceSensitivityAdjustToggle(event): void {
 		this.hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust = event.switchValue;
 		if (this.smartAssist.isHPDShellAvailable) {
 			this.smartAssist.setZeroTouchLockDistanceSensitivityAutoAdjust(event.switchValue)
@@ -681,7 +701,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		this.intelligentScreen.readingOrBrowsingTime = value;
 
 		this.smartAssistCache.intelligentScreen = this.intelligentScreen;
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+		this.setSmartAssistCacheStorageValue();
 
 		this.smartAssist.setReadingOrBrowsingTime(value)
 			.then((isSuccess: boolean) => {
@@ -698,11 +718,10 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		this.deviceService.launchUri('ms-settings:signinoptions');
 	}
 
-	public onAutoScreenOffToggle(event) {
+	public onAutoScreenOffToggle(event): void {
 		this.intelligentScreen.isAutoScreenOffEnabled = event.switchValue;
-
 		this.smartAssistCache.intelligentScreen = this.intelligentScreen;
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+		this.setSmartAssistCacheStorageValue();
 
 		this.smartAssist.setAutoScreenOffStatus(event.switchValue)
 			.then((isSuccess: boolean) => {
@@ -710,11 +729,11 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			});
 	}
 
-	public onKeepMyDisplayToggle(event) {
+	public onKeepMyDisplayToggle(event): void {
 		this.intelligentScreen.isReadingOrBrowsingEnabled = event.switchValue;
 
 		this.smartAssistCache.intelligentScreen = this.intelligentScreen;
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+		this.setSmartAssistCacheStorageValue();
 
 		this.smartAssist.setReadingOrBrowsingStatus(event.switchValue)
 			.then((isSuccess: boolean) => {
@@ -796,7 +815,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 						this.checkHeaderMenuItems(response.available, 'media');
 
 						this.smartAssistCache.intelligentMedia = this.intelligentMedia;
-						this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+						this.setSmartAssistCacheStorageValue();
 					}).catch(error => {
 						this.logger.error('PageSmartAssistComponent.getVideoPauseResumeStatus: error', error);
 					});
@@ -814,7 +833,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 					.then((type: number) => {
 						this.hpdSensorType = type;
 						this.smartAssistCache.hpdSensorType = this.hpdSensorType;
-						this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+						this.setSmartAssistCacheStorageValue();
 						this.logger.info('initHPDSensorType then', this.hpdSensorType);
 					}).catch(error => {
 						this.logger.error('initHPDSensorType error', error);
@@ -874,7 +893,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				this.intelligentSecurity.facilRecognitionCameraAccess = res.cameraPermission;
 				this.intelligentSecurity.facialRecognitionCameraPrivacyMode = res.privacyModeStatus;
 				this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+				this.setSmartAssistCacheStorageValue();
 			}
 			this.logger.info(`getFacialRecognitionStatus.getZeroTouchLockFacialRecoStatus after API call`, res);
 		});

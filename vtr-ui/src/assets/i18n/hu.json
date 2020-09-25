@@ -2063,7 +2063,7 @@
                 "autoScreenOff": {
                     "title": "A képernyő automatikus kikapcsolása",
                     "caption": "Ha a képernyő lefelé néz vagy mozgásba kerül, automatikusan kikapcsolódik.",
-                    "note": "A szolgáltatás nem érhető el, ha az Energiaséma beállítása „soha ne kapcsolja ki a képernyőt akkumulátor használatakor” a Windows beállításainak „Rendszer részén”. A szolgáltatás engedélyezéséhez válasszon a „Soha” értéktől eltérő beállítást.",
+                    "note": "A funkció nem használható, ha az Energiaséma beállítása „<b>Soha</b> ne kapcsolja ki a képernyőt akkumulátor használatakor” a Windows beállításaiban. A funkció engedélyezéséhez lépjen a <b>Gépház</b> -> <b>Rendszer</b> -> <b>Energiagazdálkodás</b> -> <b>Képernyő</b> lehetőséghez, és válasszon egy másik értéket.",
                     "windowsLink": "Ugrás az Energiaellátási és alvó állapottal kapcsolatos beállításokhoz a Windows beállításaiban"
                 },
                 "keepMyDisplay": {

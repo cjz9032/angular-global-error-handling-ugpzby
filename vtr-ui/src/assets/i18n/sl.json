@@ -2063,7 +2063,7 @@
                 "autoScreenOff": {
                     "title": "Samodejni zaslon je izklopljen",
                     "caption": "Samodejni izklop zaslona, ko je obrnjen navzdol ali med hojo.",
-                    "note": "Ta funkcija ni na voljo, če so nastavitve načrta porabe nastavljene tako, da nikoli ne izklopijo zaslona na bateriji v razdelku Nastavitve sistema Windows. Če želite omogočiti to funkcijo, izberite vrednost, ki ni »Nikoli«.",
+                    "note": "Ta funkcija ne deluje, če so nastavitve načrta porabe energije v nastavitvah sistema Windows nastavljene na možnost »<b>Nikoli</b> ne izklopi zaslona, ko je uporabljeno baterijsko napajanje«. Če želite funkcijo omogočiti, se pomaknite v razdelek <b>Nastavitve</b> -> <b>Sistem</b> -> <b>Napajanje in stanje pripravljenosti</b> -> <b>Zaslon</b> in izberite drugo vrednost.",
                     "windowsLink": "Nastavitve napajanja in stanja pripravljenosti v nastavitvah sistema Windows"
                 },
                 "keepMyDisplay": {

@@ -2063,7 +2063,7 @@
                 "autoScreenOff": {
                     "title": "Desligar o ecrã automaticamente",
                     "caption": "Desativa o ecrã automaticamente quando voltado para baixo ou ao caminhar.",
-                    "note": "Esta função não se encontra disponível se as definições do Esquema de energia estiverem configuradas para “nunca desligar o ecrã em bateria” na secção “Sistema” das Definições do Windows. Selecione um valor que não seja “Nunca” para ativar esta função.",
+                    "note": "Esta funcionalidade não funciona quando as definições do Esquema de Energia estão definidas para “<b>Nunca</b> desligar o ecrã em bateria” nas Definições do Windows. Para ativar esta funcionalidade, vá para <b>Definições</b> -> <b>Sistema</b> -> <b>Energia e Suspensão</b> -> <b>Ecrã</b> e, em seguida, selecione outro valor.",
                     "windowsLink": "Aceda às definições de Energia e suspensão nas definições do Windows"
                 },
                 "keepMyDisplay": {

@@ -672,17 +672,17 @@
 											[leftIcon]="['icomoon', 'icomoon-auto-screen-off']"
 											[theme]="'white'"
 											(toggleOnOff)="onAutoScreenOffToggle($event)"
-											[isDisabled]="intelligentScreen.isAutoScreenOffNoteVisible"
+											[isDisabled]="false"
 											[isSwitchChecked]="intelligentScreen.isAutoScreenOffEnabled">
 										</vtr-ui-row-switch>
 										<div class="row"
-											*ngIf="intelligentScreen.isAutoScreenOffNoteVisible">
-											<div class="feature-note auto-screen-off-note p-4">
-												<p id="smart-assist-auto-screen-off-note">
-													{{'device.smartAssist.intelligentScreen.autoScreenOff.note' | translate}}
+											*ngIf="intelligentScreen.isAutoScreenOffNoteVisible && intelligentScreen.isAutoScreenOffEnabled">
+											<div class="feature-note auto-screen-off-note auto-screen-off-note-red p-4">
+												<p 
+													id="smart-assist-auto-screen-off-note" 
+													[innerHTML]="'device.smartAssist.intelligentScreen.autoScreenOff.note' | translate"
+												>
 												</p>
-												<!-- <a href="javascript:void();"
-										(click)="launchPowerAndSleep();"><span>{{'device.smartAssist.intelligentScreen.autoScreenOff.windowsLink' | translate}}</span></a> -->
 											</div>
 										</div>
 									</li>

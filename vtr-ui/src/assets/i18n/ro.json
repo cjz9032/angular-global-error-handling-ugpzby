@@ -2063,7 +2063,7 @@
                 "autoScreenOff": {
                     "title": "Dezactivare automată ecran",
                     "caption": "Dezactivează automat ecranul când este orientat cu fața în jos sau când vă deplasați.",
-                    "note": "Această caracteristică nu este disponibilă dacă setările dvs. Plan alimentare sunt configurate la „nu se dezactivează niciodată ecranul pe baterie” în „secțiunea Sistem” din Setări Windows. Selectați o valoare diferită de „Niciodată” pentru a activa această caracteristică.",
+                    "note": "Această caracteristică nu funcționează când setările dvs. pentru Plan alimentare sunt configurate la „Nu se dezactivează <b>niciodată</b> ecranul pe baterie” în Setări Windows. Pentru a activa această caracteristică, accesați <b>Setări</b> -> <b>Sistem</b> -> <b>Alimentare și Mod inactiv</b> -> <b>Ecran</b>, apoi selectați altă valoare.",
                     "windowsLink": "Accesați Setări pentru alimentare și repaus din setările Windows"
                 },
                 "keepMyDisplay": {
