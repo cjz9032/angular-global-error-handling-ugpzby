@@ -15,6 +15,8 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { MetricService } from '../metric/metrics.service';
 import { LoggerService } from '../logger/logger.service';
 import { UpdateInstallTitleId } from 'src/app/enums/update-install-id.enum';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { LocalCacheService } from '../local-cache/local-cache.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -26,7 +28,8 @@ export class SystemUpdateService {
 		shellService: VantageShellService,
 		private commonService: CommonService,
 		private loggerService: LoggerService,
-		private metricService: MetricService) {
+		private metricService: MetricService,
+		private localCacheService: LocalCacheService) {
 		this.systemUpdateBridge = shellService.getSystemUpdate();
 		if (this.systemUpdateBridge) {
 			this.isShellAvailable = true;
@@ -866,5 +869,19 @@ export class SystemUpdateService {
 			return this.systemUpdateBridge.queueToastMessage(messageID, fileLocation, resources);
 		}
 		return false;
+	}
+
+	public async getLastScanDate(): Promise<any> {
+		let lastScanTime;
+		if (this.isShellAvailable) {
+			const updateInfo: any = await this.getMostRecentUpdateInfo();
+			if (updateInfo && updateInfo.lastScanTime && updateInfo.lastScanTime.length > 0) {
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.SystemUpdateLastScanTime, updateInfo.lastScanTime);
+				lastScanTime = updateInfo.lastScanTime;
+			} else {
+				lastScanTime = this.localCacheService.getLocalCacheValue(LocalStorageKey.SystemUpdateLastScanTime);
+			}
+		}
+		return lastScanTime;
 	}
 }

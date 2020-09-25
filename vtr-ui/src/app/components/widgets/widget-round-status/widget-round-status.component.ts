@@ -9,7 +9,7 @@ import { SystemState } from 'src/app/enums/system-state.enum';
 
 
 export class WidgetRoundStatusComponent implements OnInit {
-	StateClass = {
+	stateClass = {
 		[SystemState.Loading]: 'round-box-loading',
 		[SystemState.GoodCondition]: 'round-box-good-condition',
 		[SystemState.NeedMaintenance]: 'round-box-need-maintenance',

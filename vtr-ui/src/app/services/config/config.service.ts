@@ -21,7 +21,6 @@ import { Subscription } from 'rxjs';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { AdPolicyEvent, AdPolicyId } from 'src/app/enums/ad-policy-id.enum';
 import { AdPolicyService } from '../ad-policy/ad-policy.service';
-import { DashboardService } from '../dashboard/dashboard.service';
 import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
 import { SmartAssistService } from '../smart-assist/smart-assist.service';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
@@ -84,8 +83,7 @@ export class ConfigService {
 		private logger: LoggerService,
 		private localInfoService: LocalInfoService,
 		private vantageShellService: VantageShellService,
-		private adPolicyService: AdPolicyService,
-		public dashboardService: DashboardService,
+		private adPolicyService: AdPolicyService,	
 		private smartAssist: SmartAssistService,
 		private newFeatureTipService: NewFeatureTipService,
 		private localCacheService: LocalCacheService,

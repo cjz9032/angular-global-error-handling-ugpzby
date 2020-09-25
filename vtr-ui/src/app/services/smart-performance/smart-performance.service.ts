@@ -4,6 +4,7 @@ import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { PaymentPage } from 'src/app/enums/smart-performance.enum';
 import { environment } from 'src/environments/environment';
+import { DeviceService } from '../device/device.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -12,7 +13,9 @@ export class SmartPerformanceService {
 	getSmartPerformance: any;
 	public isShellAvailable = false;
 	scanningStopped = new Subject<boolean>();
-	constructor(shellService: VantageShellService, private http: HttpClient) {
+	constructor(shellService: VantageShellService,
+		private deviceService: DeviceService,
+		private http: HttpClient) {
 
 		this.getSmartPerformance = shellService.getSmartPerformance();
 		if (this.getSmartPerformance) {
@@ -171,10 +174,15 @@ export class SmartPerformanceService {
 				if (xhr.readyState === 4 && xhr.status === 200) {
 					resolve(JSON.parse(xhr.responseText));
 				}
+				else {
+					resolve(undefined);
+				}
 			};
 			xhr.send();
-		  });
+		});
 	}
+
+
 	writeSmartPerformanceActivity(payload: any): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
@@ -184,5 +192,16 @@ export class SmartPerformanceService {
 		} catch (error) {
 			throw new Error(error.message);
 		}
+	}
+
+	async getSPSubscriptionData(): Promise<any> {
+		const machineInfo = await this.deviceService.getMachineInfo();
+		let subscriptionData;
+		const subscriptionDetails = await this.getPaymentDetails(machineInfo.serialnumber);
+
+		if (subscriptionDetails && subscriptionDetails.data) {
+			subscriptionData = subscriptionDetails.data;
+		}
+		return subscriptionData;
 	}
 }
