@@ -16,8 +16,8 @@ import { WidgetPoweredByInfoComponent } from 'src/app/components/widgets/widget-
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { WidgetHomeSecurityComponent } from 'src/app/components/widgets/widget-home-security/widget-home-security.component';
 import { WidgetSupportModule } from 'src/app/components/widgets/widget-support/widget-support.module';
-import { WidgetSvgCircleComponent } from 'src/app/components/pages/page-security/widget/widget-svg-circle/widget-svg-circle.component';
-import { WidgetStatusCircleComponent } from 'src/app/components/widgets/widget-status-circle/widget-status-circle.component';
+import { WidgetSvgCircleComponent } from 'src/app/components/material/widget-svg-circle/widget-svg-circle.component';
+import { WidgetStatusCircleComponent } from 'src/app/components/material/widget-status-circle/widget-status-circle.component';
 
 @NgModule({
 	declarations: [

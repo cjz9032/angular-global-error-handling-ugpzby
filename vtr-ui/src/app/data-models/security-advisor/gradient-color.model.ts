@@ -2,6 +2,7 @@ export class GradientColor {
 	public startColor: string;
 	public endColor: string;
 	public percent = 0;
+	private defaultColor = '#2F3447';
 	private colors = [
 		{
 			start: '#FF5B4D',
@@ -18,8 +19,12 @@ export class GradientColor {
 		}
 	];
 	constructor(status: number, percent: number) {
-		this.startColor = this.colors[status].start;
-		this.endColor = this.colors[status].end;
-		this.percent = Math.floor(percent * 100);
+		if (typeof status === 'number' && typeof percent === 'number') {
+			this.startColor = this.colors[status].start;
+			this.endColor = this.colors[status].end;
+			this.percent = Math.floor(percent * 100);
+		} else {
+			this.startColor = this.endColor = this.defaultColor;
+		}
 	}
 }

@@ -10,6 +10,9 @@ $largeSideWidth: 3.5rem;
 		margin-left: -6rem;
 		margin-top: -2rem;
 		text-align: center;
+		color: $light;
+		@include high-contrast-adjust;
+		@include high-contrast-color-reversal;
 		p {
 			font-size: 1.6rem;
 			line-height: 1.1;

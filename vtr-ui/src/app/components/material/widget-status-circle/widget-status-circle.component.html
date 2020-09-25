@@ -1,0 +1,9 @@
+<div class="position-relative circle-container" #circleContainer>
+	<div class="circle-box d-flex justify-content-center" >
+		<vtr-widget-svg-circle [gradientColor]="gradientColor"></vtr-widget-svg-circle>
+	</div>
+	<div class="circle-desc">
+		<p class="text-two-ellipsis" [innerHTML]="'security.landing.level' | translate"></p>
+		<b class="text-ellipsis text-uppercase" [innerHTML]="levelText ? levelText : '--'"></b>
+	</div>
+</div>

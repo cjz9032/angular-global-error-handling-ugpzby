@@ -13,25 +13,25 @@
 		<div class="row h-100 inner-content">
 			<div class="left-side col-7 col-md-12 col-lg-7 col-xl-12 p-0 d-flex flex-column justify-content-between mb-20">
 				<div class="desc d-flex flex-column">
-					<span class="title" [innerHTML]="cardData.title | translate"></span>
-					<span class="summary" [innerHTML]="cardData.summary | translate"></span>
+					<h2 class="title m-0" [innerHTML]="cardData.title | translate"></h2>
+					<p class="summary m-0" [innerHTML]="cardData.summary | translate"></p>
 				</div>
 			</div>
 			<div class="right-side col-5 col-md-12 col-lg-5 col-xl-12 p-0 d-flex align-items-center
 				justify-content-end justify-content-md-center justify-content-lg-end justify-content-xl-center">
 				<ng-content></ng-content>
 			</div>
-			<div class="col px-0 text-white absolute-lnk d-flex align-items-end
+			<div class="col px-0 absolute-lnk d-flex align-items-end
 				justify-content-start justify-content-md-center justify-content-lg-start justify-content-xl-center">
 				<button
 					mat-flat-button
 					tabindex="-1"
-					class="link-button link text-white text-uppercase p-0 m-0"
+					class="link-button a absolute text-uppercase p-0 m-0"
 					[innerHTML]="cardData.linkText | translate"
 				></button>
 				<button mat-icon-button
 					tabindex="-1"
-					class="m-0 text-white"
+					class="m-0 a"
 					[disableRipple]="true">
 					<mat-icon>arrow_forward</mat-icon>
 				</button>

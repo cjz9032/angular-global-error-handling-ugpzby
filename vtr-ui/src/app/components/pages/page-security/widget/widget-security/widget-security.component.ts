@@ -1,9 +1,10 @@
 import { Component,	Input,	OnInit,	DoCheck } from '@angular/core';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
-import { CMSService } from '../../../services/cms/cms.service';
+
 import { LandingView } from 'src/app/data-models/security-advisor/widegt-security-landing/landing-view.model';
 import { GradientColor } from 'src/app/data-models/security-advisor/gradient-color.model';
+import { CMSService } from 'src/app/services/cms/cms.service';
+import { ModalArticleDetailComponent } from 'src/app/components/modal/modal-article-detail/modal-article-detail.component';
 
 @Component({
 	selector: 'vtr-widget-security',
@@ -11,7 +12,11 @@ import { GradientColor } from 'src/app/data-models/security-advisor/gradient-col
 	styleUrls: ['./widget-security.component.scss']
 })
 export class WidgetSecurityComponent implements OnInit, DoCheck {
-	@Input() statusItem: LandingView;
+	@Input() statusItem: LandingView = {
+		status: 0,
+		percent: 0,
+		fullyProtected: false
+	};
 	@Input() isOnline: boolean;
 	articleId = '1C95D1D5D20D4888AC043821E7355D35';
 	articleCategory: string;
@@ -51,19 +56,20 @@ export class WidgetSecurityComponent implements OnInit, DoCheck {
 	}
 
 	ngOnInit() {
-		this.oldPercent = this.statusItem.percent;
 		this.updateSecurityStatus();
 	}
 
 	ngDoCheck(): void {
 		if (!this.oldPercent || this.statusItem.percent !== this.oldPercent) {
-			this.oldPercent = this.statusItem.percent;
 			this.updateSecurityStatus();
 		}
 	}
 
 	updateSecurityStatus() {
-		this.gradient = new GradientColor(this.statusItem.status, this.statusItem.percent);
+		if (this.statusItem && typeof this.statusItem.status === 'number') {
+			this.oldPercent = this.statusItem.percent;
+			this.gradient = new GradientColor(this.statusItem.status, this.statusItem.percent);
+		}
 	}
 
 	fetchCMSArticleCategory() {

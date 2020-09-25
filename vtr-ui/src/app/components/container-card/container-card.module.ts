@@ -1,9 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MatButtonModule } from '@lenovo/material/button';
-import { MatIconModule } from '@lenovo/material/icon';
-
 import { CommonPipeModule } from 'src/app/modules/common/common-pipe.module';
 import { ContainerCardComponent } from './container-card.component';
 import { MetricsModule } from 'src/app/services/metric/metrics.module';
@@ -15,7 +12,6 @@ import { TranslationModule } from 'src/app/modules/translation.module';
 import { ContainerCardOfflineComponent } from './container-card-offline/container-card-offline.component';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
-import { ContainerCardStateComponent } from './container-card-state/container-card-state.component';
 
 
 
@@ -23,7 +19,6 @@ import { ContainerCardStateComponent } from './container-card-state/container-ca
 	declarations: [
 		ContainerCardComponent,
 		ContainerCardOfflineComponent,
-		ContainerCardStateComponent,
 	],
 	imports: [
 		CommonModule,
@@ -34,12 +29,9 @@ import { ContainerCardStateComponent } from './container-card-state/container-ca
 		SanitizeModule,
 		AppSearchModule,
 		NgbTooltipModule,
-		RouterModule,
-		MatButtonModule,
-		MatIconModule
+		RouterModule
 	],
 	exports: [
-		ContainerCardStateComponent,
 		ContainerCardComponent,
 	],
 	schemas: [
