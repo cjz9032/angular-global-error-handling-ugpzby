@@ -16,6 +16,7 @@ import { ConfigService } from 'src/app/services/config/config.service';
 import moment from 'moment';
 import { Router } from '@angular/router';
 import { takeUntil } from 'rxjs/operators';
+import { HardwareScanService } from 'src/app/services/hardware-scan/hardware-scan.service';
 
 @Component({
 	selector: 'vtr-widget-device',
@@ -50,6 +51,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		private previousResultService: PreviousResultService,
 		private smartPerformanceService: SmartPerformanceService,
 		private configService: ConfigService,
+		private hwScanService: HardwareScanService,
 		private router: Router
 	) {
 		this.myDevice = new MyDevice();
@@ -273,6 +275,10 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 	}
 
 	private async isSUNeedPromote(): Promise<boolean>{
+		if (!this.configService.isSystemUpdateEnabled()){
+			return false;
+		}
+
 		const suinfo = await this.systemUpdateService.getMostRecentUpdateInfo();
 		if (!suinfo?.lastScanTime){
 			this.deviceStatus = DeviceCondition.NeedRunSU;
@@ -319,6 +325,9 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 	}
 
 	private async isHWScanNeedPromote(): Promise<boolean>{
+		if (!await this.hwScanService.isAvailable()){
+			return false;
+		}
 		await this.previousResultService.getLastResults();
 		const lastSacnInfo = this.previousResultService.getLastPreviousResultCompletionInfo();
 		if (!lastSacnInfo.date || this.systemUpdateService.dateDiffInDays(lastSacnInfo.date) > 180){
