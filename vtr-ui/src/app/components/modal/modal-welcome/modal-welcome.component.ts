@@ -130,7 +130,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	async initMetricOption(shellService) {
-		const userDeterminePrivacy = await this.localCacheService.getLocalCacheValue(
+		const userDeterminePrivacy = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.UserDeterminePrivacy
 		);
 
@@ -267,7 +267,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			this.metrics.sendAsync(data);
 			this.userService.sendSilentlyLoginMetric();
 			tutorialData = new WelcomeTutorial(2, this.tutorialVersion, true, this.selfSelectService.usageType, this.selfSelectService.checkedArray);
-			// this.commonService.setLocalStorageValue(LocalStorageKey.DashboardOOBBEStatus, true);
+			// this.localCacheService.setLocalCacheValue(LocalStorageKey.DashboardOOBBEStatus, true);
 			// this.commonService.sendNotification(DeviceMonitorStatus.OOBEStatus, true); // never use this notification
 			this.activeModal.close(tutorialData);
 			this.SetVantageToolbar(this.vantageToolbar);
@@ -378,7 +378,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		// this.commonService.setLocalStorageValue(LocalStorageKey.DashboardOOBBEStatus, true);
+		// this.localCacheService.setLocalCacheValue(LocalStorageKey.DashboardOOBBEStatus, true);
 		// this.commonService.sendNotification(DeviceMonitorStatus.OOBEStatus, true); // never use this notification
 	}
 

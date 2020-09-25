@@ -10,6 +10,7 @@ import { GuardConstants } from './guard-constants';
 import { BasicGuard } from './basic-guard';
 import { MetricService } from '../metric/metrics.service';
 import { BatteryDetailService } from '../battery-detail/battery-detail.service';
+import { LocalCacheService } from '../local-cache/local-cache.service';
 
 @Injectable({
 	providedIn: 'root',
@@ -29,6 +30,7 @@ export class GuardService extends BasicGuard {
 	constructor(
 		shellService: VantageShellService,
 		public commonService: CommonService,
+		private localCacheService: LocalCacheService,
 		private adPolicy: AdPolicyService,
 		private deviceService: DeviceService,
 		public guardConstants: GuardConstants,
@@ -79,7 +81,7 @@ export class GuardService extends BasicGuard {
 
 	sendPageViewMetric(activatedRouteSnapshot: ActivatedRouteSnapshot) {
 		if (this.pageContext && this.pageContext.indexOf('[LocalStorageKey]') !== -1) {
-			this.pageContext = this.commonService.getLocalStorageValue(this.pageContext);
+			this.pageContext = this.localCacheService.getLocalCacheValue(this.pageContext);
 		}
 		const focusDuration = this.focusDurationCounter !== null ? this.focusDurationCounter.getDuration() : 0;
 		const blurDuration = this.blurDurationCounter !== null ? this.blurDurationCounter.getDuration() : 0;

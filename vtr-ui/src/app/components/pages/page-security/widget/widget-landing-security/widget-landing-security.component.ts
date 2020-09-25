@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 @Component({
 	selector: 'vtr-widget-landing-security',
 	templateUrl: './widget-landing-security.component.html',
@@ -15,14 +16,15 @@ export class WidgetLandingSecurityComponent implements OnInit {
 	checkedList: any;
 	constructor(
 		public commonService: CommonService,
+		private localCacheService: LocalCacheService,
 		private shellService: VantageShellService
 		) {}
 	badgeContent = 'security.landing.haveOwn';
 	ngOnInit() {
 		this.checkedList = {
-			passwordManager: this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingPasswordManagerShowOwn, undefined),
-			vpn: this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingVPNShowOwn, undefined),
-			wifiSecurity: this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingWifiSecurityShowOwn, undefined)
+			passwordManager: this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingPasswordManagerShowOwn, undefined),
+			vpn: this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingVPNShowOwn, undefined),
+			wifiSecurity: this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingWifiSecurityShowOwn, undefined)
 		};
 	}
 
@@ -32,17 +34,17 @@ export class WidgetLandingSecurityComponent implements OnInit {
 		if (id.includes('passwordManager')) {
 			this.checkedList.passwordManager = item.showOwn;
 			this.haveOwnChecked.emit(this.checkedList);
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingPasswordManagerShowOwn, item.showOwn);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityLandingPasswordManagerShowOwn, item.showOwn);
 		}
 		if (id.includes('vpn')) {
 			this.checkedList.vpn = item.showOwn;
 			this.haveOwnChecked.emit(this.checkedList);
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingVPNShowOwn, item.showOwn);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityLandingVPNShowOwn, item.showOwn);
 		}
 		if (id.includes('wifiSecurity')) {
 			this.checkedList.wifiSecurity = item.showOwn;
 			this.haveOwnChecked.emit(this.checkedList);
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingWifiSecurityShowOwn, item.showOwn);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityLandingWifiSecurityShowOwn, item.showOwn);
 		}
 	}
 

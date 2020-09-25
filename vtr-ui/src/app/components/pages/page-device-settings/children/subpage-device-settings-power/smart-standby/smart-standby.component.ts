@@ -146,8 +146,8 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		this.getIsAutonomicCapability();
 		this.getSmartStandbyIsAutonomic();
 	}
-	async initDataFromCache() {
-		this.cache = await this.localCacheService.getLocalCacheValue(LocalStorageKey.SmartStandbyCapability, undefined);
+	initDataFromCache() {
+		this.cache = this.localCacheService.getLocalCacheValue(LocalStorageKey.SmartStandbyCapability, undefined);
 		if (this.cache) {
 			this.smartStandby.isCapable = this.cache.isCapable;
 			if (!this.smartStandby.isCapable) {

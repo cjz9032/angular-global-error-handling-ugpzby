@@ -217,13 +217,13 @@ export class ConfigService {
 	initializeWiFiItem(items) {
 		if (typeof this.wifiSecurity.isSupported === 'boolean') {
 			items = this.supportFilter(items, 'wifi-security', this.wifiSecurity.isSupported);
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, this.wifiSecurity.isSupported);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityShowWifiSecurity, this.wifiSecurity.isSupported);
 			this.updateSecurityMenuHide(items, {
 				wifiIsSupport: this.wifiSecurity.isSupported,
 				currentSegment: this.activeSegment
 			});
 		} else {
-			const cacheWifi = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, false);
+			const cacheWifi = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityShowWifiSecurity, false);
 			items = this.supportFilter(items, 'wifi-security', cacheWifi);
 			this.updateSecurityMenuHide(items, {
 				wifiIsSupport: cacheWifi,
@@ -257,7 +257,7 @@ export class ConfigService {
 	}
 
 	updateWifiStateCache(wifiIsSupport: boolean) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, wifiIsSupport);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityShowWifiSecurity, wifiIsSupport);
 	}
 
 	segmentFilter(menu: Array<any>, segment: string) {
@@ -320,7 +320,7 @@ export class ConfigService {
 		const myDeviceItem = this.menu.find((item) => item.id === 'device');
 		if (myDeviceItem !== undefined) {
 			// if cache has value true for IsSmartAssistSupported, add menu item
-			const smartAssistCacheValue = this.commonService.getLocalStorageValue(
+			const smartAssistCacheValue = this.localCacheService.getLocalCacheValue(
 				LocalStorageKey.IsSmartAssistSupported,
 				false
 			);
@@ -413,8 +413,8 @@ export class ConfigService {
 				this.removeSmartAssistMenu(this.menu);
 			}
 
-			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, this.isSmartAssistAvailable);
-			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, assistCapability);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsSmartAssistSupported, this.isSmartAssistAvailable);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCapability, assistCapability);
 			this.notifyMenuChange(this.menu);
 			this.logger.error('configService.showSmartAssist capability check',
 				{
@@ -585,8 +585,8 @@ export class ConfigService {
 				&& !this.deviceService.isArm;
 	}
 
-	async showNewFeatureTipsWithMenuItems() {
-		const welcomeTutorial = await this.localCacheService.getLocalCacheValue(LocalStorageKey.WelcomeTutorial);
+	showNewFeatureTipsWithMenuItems() {
+		const welcomeTutorial = this.localCacheService.getLocalCacheValue(LocalStorageKey.WelcomeTutorial);
 		if (!welcomeTutorial || !welcomeTutorial.isDone || window.innerWidth < 1200) {
 			this.localCacheService.setLocalCacheValue(LocalStorageKey.NewFeatureTipsVersion, this.commonService.newFeatureVersion);
 			return;
@@ -596,7 +596,7 @@ export class ConfigService {
 				this.localCacheService.setLocalCacheValue(LocalStorageKey.NewFeatureTipsVersion, this.commonService.newFeatureVersion);
 				return;
 			}
-			const lastVersion = await this.localCacheService.getLocalCacheValue(LocalStorageKey.NewFeatureTipsVersion);
+			const lastVersion = this.localCacheService.getLocalCacheValue(LocalStorageKey.NewFeatureTipsVersion);
 			if ((!lastVersion || lastVersion < this.commonService.newFeatureVersion) && Array.isArray(this.menu)) {
 				const idArr = ['security', 'home-security', 'hardware-scan'];
 				const isIncludesItem = this.menu.find(item => idArr.includes(item.id));
@@ -616,8 +616,8 @@ export class ConfigService {
 		return menu;
 	}
 
-	private async initializeSmartAssist() {
-		const machineType = await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType, undefined);
+	private initializeSmartAssist() {
+		const machineType = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType, undefined);
 		if (machineType) {
 			this.smartAssistFilter(machineType);
 		} else if (this.deviceService.isShellAvailable) {

@@ -126,7 +126,7 @@ export class HardwareScanService {
 			this.isAvailable().then(async (available) => {
 				if (available) {
 					// Validate the type of this machine to load dynamically the icons.
-					this.isDesktopMachine = await this.localCacheService.getLocalCacheValue(LocalStorageKey.DesktopMachine);
+					this.isDesktopMachine = this.localCacheService.getLocalCacheValue(LocalStorageKey.DesktopMachine);
 
 					// Retrive the Plugin's version (it does not use the CLI)
 					this.getPluginInfo().then((hwscanPluginInfo: any) => {
@@ -391,8 +391,8 @@ export class HardwareScanService {
 
 	public isAvailable() {
 		return this.hypSettingsPromise
-			.then(async (result: any) => {
-				const isMachineAvailable = await this.isMachineAvailable();
+			.then((result: any) => {
+				const isMachineAvailable = this.isMachineAvailable();
 				return (((result || '').toString() === 'true') && isMachineAvailable);
 			})
 			.catch((error) => {
@@ -404,13 +404,13 @@ export class HardwareScanService {
 	 * This method validate if the machine family name is in the blacklist
 	 * If yes, the HWScan menu not appear.
 	 */
-	public async isMachineAvailable() {
+	public isMachineAvailable() {
 
 		// Variable containing machine names without HWScan enabled
 		const blackList = ['thinkstationp520', 'thinkstationp520c', 'thinkstationp720', 'thinkstationp920'];
 
 		// Variable containing machine family name in the specific format
-		const originalMachineFamilyName = await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineFamilyName);
+		const originalMachineFamilyName = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineFamilyName);
 		const machineFamily = originalMachineFamilyName
 			.replace(/ /g, '')
 			.toString()

@@ -2,11 +2,11 @@ import { Injectable, OnDestroy } from '@angular/core';
 import { from, Observable, BehaviorSubject } from 'rxjs';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { AllPowerPlans } from 'src/app/data-models/dpm/all-power-plans.model';
-import { CommonService } from '../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { PowerPlan } from 'src/app/data-models/dpm/power-plan.model';
 import { map, filter } from 'rxjs/operators';
 import { LoggerService } from '../logger/logger.service';
+import { LocalCacheService } from '../local-cache/local-cache.service';
 @Injectable({ providedIn: 'root' })
 export class PowerDpmService implements OnDestroy {
 
@@ -137,7 +137,7 @@ export class PowerDpmService implements OnDestroy {
 	constructor(
 		private loggerService: LoggerService,
 		private shellService: VantageShellService,
-		private commonService: CommonService) {
+		private localCacheService: LocalCacheService) {
 		this.devicePowerDPM = this.shellService.getPowerDPM();
 	}
 	ngOnDestroy(): void {
@@ -148,7 +148,7 @@ export class PowerDpmService implements OnDestroy {
 	}
 	getAllPowerPlansObs(): Observable<AllPowerPlans> {
 		if (!this.allPowerPlansSubject) {
-			let localCacheVal = this.commonService.getLocalStorageValue(LocalStorageKey.DPMAllPowerPlans, null);
+			let localCacheVal = this.localCacheService.getLocalCacheValue(LocalStorageKey.DPMAllPowerPlans, null);
 			this.allPowerPlansCache = JSON.parse(localCacheVal);
 			this.allPowerPlansSubject = new BehaviorSubject<AllPowerPlans>(this.allPowerPlansCache);
 			this.startRefreshPowerPlans();
@@ -347,7 +347,7 @@ export class PowerDpmService implements OnDestroy {
 	private updateCache(allPowerPlans) {
 		if (allPowerPlans) {
 			let localCacheVal = JSON.stringify(allPowerPlans);
-			this.commonService.setLocalStorageValue(LocalStorageKey.DPMAllPowerPlans, localCacheVal);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.DPMAllPowerPlans, localCacheVal);
 			this.allPowerPlansCache = allPowerPlans;
 		}
 	}

@@ -439,8 +439,8 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		return result;
 	}
 
-	async startUnRegisteringScheduleScan() {
-		this.isSPFullFeatureEnabled = await this.localCacheService.getLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled);
+	startUnRegisteringScheduleScan() {
+		this.isSPFullFeatureEnabled = this.localCacheService.getLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled);
 		if (this.isSPFullFeatureEnabled) {
 			this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCANANDFIX);
 		} else {

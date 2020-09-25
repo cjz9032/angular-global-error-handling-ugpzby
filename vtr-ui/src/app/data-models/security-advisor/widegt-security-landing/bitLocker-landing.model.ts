@@ -2,6 +2,7 @@ import { EventTypes, BitLocker } from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 export class BitLockerLandingViewModel {
 	blStatus = {
@@ -17,13 +18,17 @@ export class BitLockerLandingViewModel {
 	};
 	translateString: any;
 
-	constructor(translate: TranslateService, blModel: BitLocker, public commonService: CommonService, ) {
+	constructor(
+		translate: TranslateService,
+		blModel: BitLocker,
+		public commonService: CommonService,
+		private localCacheService: LocalCacheService) {
 		blModel.on(EventTypes.bitLockerStatusEvent, (data) => {
 			if (data !== 'unknown') {
 				this.setBlStatus(data);
 			}
 		});
-		const cacheStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityBitLockerStatus);
+		const cacheStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityBitLockerStatus);
 		translate.stream([
 			'common.securityAdvisor.enabled',
 			'common.securityAdvisor.disabled',
@@ -54,6 +59,6 @@ export class BitLockerLandingViewModel {
 		}
 		this.blStatus.detail = this.translateString[`common.securityAdvisor.${status === 'enable' ? 'enabled' : 'disabled'}`];
 		this.blStatus.status = status === 'enable' ? 'enabled' : 'disabled';
-		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityBitLockerStatus, status);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityBitLockerStatus, status);
 	}
 }

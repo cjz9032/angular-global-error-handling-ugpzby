@@ -12,6 +12,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { GuardService } from '../../../services/guard/guardService.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { FeatureIntroduction } from '../../ui/ui-feature-introduction/ui-feature-introduction.component';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
 	selector: 'vtr-page-security-password',
@@ -33,6 +34,7 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 
 	constructor(
 		private commonService: CommonService,
+		private localCacheService: LocalCacheService,
 		private cmsService: CMSService,
 		private modalService: NgbModal,
 		public vantageShellService: VantageShellService,
@@ -56,7 +58,7 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 			featureIntroList: []
 
 		};
-		const cacheStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus);
+		const cacheStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityPasswordManagerStatus);
 		if (cacheStatus) {
 			this.statusItem.status = cacheStatus;
 			this.getFeatureIntro(this.statusItem.status);
@@ -64,12 +66,12 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 		if (this.passwordManager && this.passwordManager.status) {
 			this.statusItem.status = this.passwordManager.status;
 			this.getFeatureIntro(this.statusItem.status);
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus, this.statusItem.status);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityPasswordManagerStatus, this.statusItem.status);
 		}
 		this.passwordManager.on(EventTypes.pmStatusEvent, (status: string) => {
 			this.statusItem.status = status;
 			this.getFeatureIntro(this.statusItem.status);
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus, this.statusItem.status);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityPasswordManagerStatus, this.statusItem.status);
 		});
 		this.fetchCMSArticles();
 

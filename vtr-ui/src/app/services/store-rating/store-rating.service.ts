@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { CommonService } from '../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { LoggerService } from '../logger/logger.service';
 import { ModalStoreRatingComponent } from 'src/app/components/modal/modal-store-rating/modal-store-rating.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { LocalCacheService } from '../local-cache/local-cache.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -16,7 +16,7 @@ export class StoreRatingService {
 	private storeRatingDaysBetween = 'StoreRatingDaysBetween';
 
 	constructor(
-		private commonService: CommonService,
+		private localCacheService: LocalCacheService,
 		private hypothesis: HypothesisService,
 		private logger: LoggerService,
 		private ngModal: NgbModal,
@@ -29,19 +29,19 @@ export class StoreRatingService {
 				centered: true,
 			});
 
-			this.commonService.setLocalStorageValue(LocalStorageKey.RatingLastPromptTime, new Date());
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.RatingLastPromptTime, new Date());
 			this.addRatingPromptCount();
 			this.markPromptRatingNextLaunch(false);
 		}
 	}
 
 	public markPromptRatingNextLaunch(needPrompt: boolean): boolean {
-		this.commonService.setLocalStorageValue(LocalStorageKey.RatingConditionMet, needPrompt)
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.RatingConditionMet, needPrompt)
 		return true;
 	}
 
 	private getRatingPromptCount(): number {
-		let currentPromptCount = this.commonService.getLocalStorageValue(LocalStorageKey.RatingPromptCount);
+		let currentPromptCount = this.localCacheService.getLocalCacheValue(LocalStorageKey.RatingPromptCount);
 		currentPromptCount = currentPromptCount ? currentPromptCount : 0;
 		currentPromptCount = parseInt(currentPromptCount, 10);
 		return currentPromptCount;
@@ -51,7 +51,7 @@ export class StoreRatingService {
 		let currentPromptCount = this.getRatingPromptCount();
 		if (isNaN(currentPromptCount)) currentPromptCount = 0;
 		currentPromptCount += 1;
-		this.commonService.setLocalStorageValue(LocalStorageKey.RatingPromptCount, currentPromptCount);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.RatingPromptCount, currentPromptCount);
 	}
 
 	private async canPromptRating(): Promise<boolean> {
@@ -59,7 +59,7 @@ export class StoreRatingService {
 			return false;
 		}
 
-		if (!this.commonService.getLocalStorageValue(LocalStorageKey.RatingConditionMet)) {
+		if (!this.localCacheService.getLocalCacheValue(LocalStorageKey.RatingConditionMet)) {
 			this.logger.info(`Rating won't show, no key action triggered.`)
 			return false;
 		}
@@ -84,7 +84,7 @@ export class StoreRatingService {
 			return false;
 		}
 
-		const lastPromptDate = this.commonService.getLocalStorageValue(LocalStorageKey.RatingLastPromptTime);
+		const lastPromptDate = this.localCacheService.getLocalCacheValue(LocalStorageKey.RatingLastPromptTime);
 		if (lastPromptDate) {
 			const date = new Date(lastPromptDate);
 			const lastPromptMillionSeconds = date.getTime();

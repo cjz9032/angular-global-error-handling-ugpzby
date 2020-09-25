@@ -21,6 +21,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { Title } from '@angular/platform-browser';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { Subscription } from 'rxjs';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
 	selector: 'vtr-page-device-gaming',
@@ -51,6 +52,7 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, OnDestroy {
 		private modalService: NgbModal,
 		config: NgbModalConfig,
 		private commonService: CommonService,
+		private localCacheService: LocalCacheService,
 		private configService: ConfigService,
 		public deviceService: DeviceService,
 		private cmsService: CMSService,
@@ -68,7 +70,7 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, OnDestroy {
 		config.keyboard = false;
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
 		// TODO Lite Gaming
-		this.desktopType = this.commonService.getLocalStorageValue(LocalStorageKey.desktopType);
+		this.desktopType = this.localCacheService.getLocalCacheValue(LocalStorageKey.desktopType);
 		this.liteGaming = this.gamingAllCapabilitiesService.getCapabilityFromCache(LocalStorageKey.liteGaming);
 	}
 

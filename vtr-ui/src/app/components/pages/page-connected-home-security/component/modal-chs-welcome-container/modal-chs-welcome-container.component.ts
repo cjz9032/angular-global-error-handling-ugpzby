@@ -12,6 +12,7 @@ import { EventTypes, ConnectedHomeSecurity } from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { DeviceLocationPermission } from 'src/app/data-models/home-security/device-location-permission.model';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
 	selector: 'vtr-modal-chs-welcome-container',
@@ -40,7 +41,7 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 	constructor(
 		public activeModal: NgbActiveModal,
 		private vantageShellService: VantageShellService,
-		private commonService: CommonService
+		private localCacheService: LocalCacheService
 	) {	}
 
 	ngOnInit() {
@@ -55,7 +56,7 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 		this.chs.on(EventTypes.wsIsLocationServiceOnEvent, (data) => {
 			this.isLocationServiceOn = data;
 			if (data) {
-				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
 				if (this.switchPage === 2) {
 					this.closeModal();
 				}
@@ -69,7 +70,7 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 		if (this.locationPermission && this.locationPermission.hasSystemPermissionShowed) {
 			this.isLocationServiceOn = this.locationPermission.isLocationServiceOn;
 			if (this.isLocationServiceOn) {
-				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
 			}
 		} else {
 			this.isLocationServiceOn = false;
@@ -81,7 +82,7 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 	}
 
 	next() {
-		this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
 		if (this.isLocationServiceOn) {
 			this.closeModal();
 		} else {
@@ -109,7 +110,7 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 		this.permission.requestPermission('geoLocatorStatus').then((status: boolean) => {
 			this.isLocationServiceOn = status;
 			if (status) {
-				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
 			}
 		});
 	}

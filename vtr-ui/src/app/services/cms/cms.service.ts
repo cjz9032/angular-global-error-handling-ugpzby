@@ -13,6 +13,7 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { throwError, Subscription } from 'rxjs';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ContentSource } from 'src/app/enums/content.enum';
+import { LocalCacheService } from '../local-cache/local-cache.service';
 
 const httpOptions = {
 	headers: new HttpHeaders({
@@ -45,6 +46,7 @@ export class CMSService implements OnDestroy {
 		private commsService: CommsService,
 		private vantageShellService: VantageShellService,
 		private localInfoService: LocalInfoService,
+		private localCacheService: LocalCacheService,
 		private commonService: CommonService, // VAN-5872, server switch feature,
 		private logger: LoggerService,
 		private sanitizer: DomSanitizer
@@ -80,7 +82,7 @@ export class CMSService implements OnDestroy {
 	private updateServerSwitchCMSOptions(defaults, queryParams) {
 		const cmsOption = Object.assign(defaults, queryParams);
 		try {
-			const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
+			const serverSwitchLocalData = this.localCacheService.getLocalCacheValue(LocalStorageKey.ServerSwitchKey);
 			if (serverSwitchLocalData) {
 
 				const langMap = {

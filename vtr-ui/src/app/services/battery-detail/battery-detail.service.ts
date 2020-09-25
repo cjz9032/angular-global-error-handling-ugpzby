@@ -9,6 +9,7 @@ import { LoggerService } from '../logger/logger.service';
 import { PowerService } from '../power/power.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LocalCacheService } from '../local-cache/local-cache.service';
+import { CommonService } from '../common/common.service';
 @Injectable({
 	providedIn: 'root'
 })
@@ -37,10 +38,21 @@ export class BatteryDetailService {
 		shellService: VantageShellService,
 		private logger: LoggerService,
 		private powerService: PowerService,
-		private localCacheService: LocalCacheService) {
+		private localCacheService: LocalCacheService,
+		private commonService: CommonService) {
 		this.battery = shellService.getBatteryInfo();
 		if (this.battery) {
 			this.isShellAvailable = true;
+		}
+	}
+
+	// move this method to here from CommonService,
+	// the feature related logic should not included in CommonService
+	checkPowerPageFlagAndHide() {
+		// Solution to fix the issue VAN-14826.
+		const isPowerPageAvailable = this.localCacheService.getLocalCacheValue(LocalStorageKey.IsPowerPageAvailable, true);
+		if (!isPowerPageAvailable) {
+			this.commonService.sendNotification(LocalStorageKey.IsPowerPageAvailable, { available: isPowerPageAvailable, link: false });
 		}
 	}
 
@@ -83,8 +95,8 @@ export class BatteryDetailService {
 		return this.expressChargingSubject.asObservable();
 	}
 
-	public async getBatterySettings() {
-		const isThinkPad = await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType) === 1;
+	public getBatterySettings() {
+		const isThinkPad = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType) === 1;
 		if (isThinkPad) {
 			this.getBatteryThresholdInformation();
 			this.getAirplaneModeCapabilityThinkPad();

@@ -108,7 +108,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		this.vantageFocusHelper.start();
 	}
 
-	async ngOnInit() {
+	ngOnInit() {
 		if (this.deviceService.isAndroid) {
 			return;
 		}
@@ -151,7 +151,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 				}
 			});
 		}
-		this.isOldScheduleScanDeleted = await this.localCacheService.getLocalCacheValue(LocalStorageKey.isOldScheduleScanDeleted);
+		this.isOldScheduleScanDeleted = this.localCacheService.getLocalCacheValue(LocalStorageKey.isOldScheduleScanDeleted);
 		if (this.isOldScheduleScanDeleted === undefined || this.isOldScheduleScanDeleted === false) {
 			this.removeOldSmartPerformanceScheduleScans();
 		}
@@ -204,10 +204,10 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		}
 	}
 
-	private async launchWelcomeModal() {
+	private launchWelcomeModal() {
 		if (!this.deviceService.isArm && !this.deviceService.isAndroid) {
-			const gamingTutorial: WelcomeTutorial = await this.localCacheService.getLocalCacheValue(LocalStorageKey.GamingTutorial);
-			let tutorial: WelcomeTutorial = await this.localCacheService.getLocalCacheValue(LocalStorageKey.WelcomeTutorial);
+			const gamingTutorial: WelcomeTutorial = this.localCacheService.getLocalCacheValue(LocalStorageKey.GamingTutorial);
+			let tutorial: WelcomeTutorial = this.localCacheService.getLocalCacheValue(LocalStorageKey.WelcomeTutorial);
 			if (this.deviceService.isGaming) {
 				this.newTutorialVersion = '3.3.0';
 				if (gamingTutorial) {
@@ -504,9 +504,9 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	}
 
 
-	private async removeOldSmartPerformanceScheduleScans() {
+	private removeOldSmartPerformanceScheduleScans() {
 		try {
-			const isSubscribed = await this.localCacheService.getLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled);
+			const isSubscribed = this.localCacheService.getLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled);
 			if (isSubscribed !== undefined && isSubscribed === true) {
 				this.unregisterSmartPerformanceScheduleScan(enumSmartPerformance.OLDSCHEDULESCANANDFIX);
 			} else {

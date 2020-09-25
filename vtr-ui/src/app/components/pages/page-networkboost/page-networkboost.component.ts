@@ -14,6 +14,7 @@ import { DeviceService } from 'src/app/services/device/device.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { GamingQuickSettingToolbarService } from 'src/app/services/gaming/gaming-quick-setting-toolbar/gaming-quick-setting-toolbar.service';
 import { EventTypes } from '@lenovo/tan-client-bridge';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
 	selector: 'vtr-page-networkboost',
@@ -26,7 +27,7 @@ export class PageNetworkboostComponent implements OnInit, OnDestroy {
 	public networkBoostEvent:any;
 	changeListNum = 0;
 	appsCount = 0;
-	toggleStatus: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.NetworkBoostStatus) || false;
+	toggleStatus: boolean = this.localCacheService.getLocalCacheValue(LocalStorageKey.NetworkBoostStatus) || false;
 	needToAsk: any;
 	autoCloseStatusObj: any = {};
 	needToAskStatusObj: any = {};
@@ -44,6 +45,7 @@ export class PageNetworkboostComponent implements OnInit, OnDestroy {
 		private cmsService: CMSService,
 		private networkBoostService: NetworkBoostService,
 		private commonService: CommonService,
+		private localCacheService: LocalCacheService,
 		// private upeService: UPEService,
 		private loggerService: LoggerService,
 		// private hypService: HypothesisService,
@@ -62,7 +64,7 @@ export class PageNetworkboostComponent implements OnInit, OnDestroy {
 			this.onNotification(notification);
 		});
 		// AutoClose Init
-		// this.toggleStatus = this.commonService.getLocalStorageValue();
+		// this.toggleStatus = this.localCacheService.getLocalCacheValue();
 		this.getNetworkBoostStatus();
 		this.networkBoostRegisterEvent();
 		const queryOptions = {
@@ -94,7 +96,7 @@ export class PageNetworkboostComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		
+
 		if(this.notificationSubscrition) {
 			this.notificationSubscrition.unsubscribe();
 		}
@@ -180,11 +182,11 @@ export class PageNetworkboostComponent implements OnInit, OnDestroy {
 			this.toggleStatus = event.switchValue;
 			await this.networkBoostService.setNetworkBoostStatus(event.switchValue);
 			if (!this.toggleStatus) {
-				if (this.commonService.getLocalStorageValue(LocalStorageKey.NetworkBoosNeedToAskPopup) === 2) {
-					this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoosNeedToAskPopup, 1);
+				if (this.localCacheService.getLocalCacheValue(LocalStorageKey.NetworkBoosNeedToAskPopup) === 2) {
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.NetworkBoosNeedToAskPopup, 1);
 				}
 			}
-			this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoostStatus, this.toggleStatus);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.NetworkBoostStatus, this.toggleStatus);
 		} catch (err) {
 			this.loggerService.error('page-networkboost.component.setNetworkBoostStatus', 'ERROR in setNetworkBoostStatus()-->' + err);
 		}
@@ -201,7 +203,7 @@ export class PageNetworkboostComponent implements OnInit, OnDestroy {
 	async getNetworkBoostStatus() {
 		try {
 			this.toggleStatus = await this.networkBoostService.getNetworkBoostStatus();
-			this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoostStatus, this.toggleStatus);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.NetworkBoostStatus, this.toggleStatus);
 		} catch (err) {
 			this.loggerService.error('page-networkboost.component.getNetworkBoostStatus', 'ERROR in setNetworkBoostStatus()-->' + err);
 		}
@@ -272,7 +274,7 @@ export class PageNetworkboostComponent implements OnInit, OnDestroy {
 			this.loggerService.info(`Widget-LegionEdge-onGamingQuickSettingsNetworkBoostStatusChangedEvent: call back from ${this.toggleStatus} to ${status}`);
 			if (status !== undefined && this.toggleStatus !== status) {
 				this.toggleStatus = status;
-				this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoostStatus, status);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.NetworkBoostStatus, status);
 			}
 		});
 	}

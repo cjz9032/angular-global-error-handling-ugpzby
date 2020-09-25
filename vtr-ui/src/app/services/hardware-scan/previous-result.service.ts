@@ -49,7 +49,7 @@ export class PreviousResultService {
 		this.previousItemsWidget = previousItems;
 	}
 
-	public async buildPreviousResults(response: any) {
+	public buildPreviousResults(response: any) {
 		const previousResults: any = {};
 		let moduleId = 0;
 
@@ -86,7 +86,7 @@ export class PreviousResultService {
 					// Use this validation prevent cyclical dependency with hardwareScanService
 					// [NOTICE] When remove the isDesktopMachine from hardware-scan.service to another service
 					// change this line to use the newest function
-					const desktopMachine = await this.localCacheService.getLocalCacheValue(LocalStorageKey.DesktopMachine);
+					const desktopMachine = this.localCacheService.getLocalCacheValue(LocalStorageKey.DesktopMachine);
 					if (!desktopMachine) {
 						if (item.icon === 'pci_express') {
 							item.icon += '_laptop';
@@ -139,8 +139,8 @@ export class PreviousResultService {
 	public getLastResults() {
 		if (this.hardwareScanBridge) {
 			return this.previousResultsResponse
-				.then(async (response) => {
-					await this.buildPreviousResults(response);
+				.then((response) => {
+					this.buildPreviousResults(response);
 				});
 		}
 		return undefined;

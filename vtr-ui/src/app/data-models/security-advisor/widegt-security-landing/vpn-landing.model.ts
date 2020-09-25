@@ -3,6 +3,7 @@ import * as phoenix from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 export class VpnLandingViewModel {
 	vpnStatus = {
@@ -18,12 +19,16 @@ export class VpnLandingViewModel {
 		detail: ''
 	};
 	translateString: any;
-	constructor(translate: TranslateService, vpnModel: phoenix.Vpn, public commonService: CommonService) {
+	constructor(
+		translate: TranslateService,
+		vpnModel: phoenix.Vpn,
+		public commonService: CommonService,
+		private localCacheService: LocalCacheService) {
 		vpnModel.on(EventTypes.vpnStatusEvent, (data) => {
 			this.setVpnStatus(data);
 		});
 
-		const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityVPNStatus);
+		const cacheStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityVPNStatus);
 		translate.stream([
 			'common.securityAdvisor.loading',
 			'security.landing.vpnVirtual',
@@ -54,7 +59,7 @@ export class VpnLandingViewModel {
 		if (!this.translateString) {
 			return;
 		}
-		const cacheShowOwn: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingVPNShowOwn, null);
+		const cacheShowOwn: boolean = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingVPNShowOwn, null);
 		this.vpnStatus.showOwn = cacheShowOwn ? cacheShowOwn : false;
 		switch (status) {
 			case 'installed':
@@ -70,6 +75,6 @@ export class VpnLandingViewModel {
 				this.vpnStatus.status = 'not-installed';
 		}
 
-		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityVPNStatus, status);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityVPNStatus, status);
 	}
 }

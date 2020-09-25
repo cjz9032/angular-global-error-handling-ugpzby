@@ -5,6 +5,7 @@ import { GamingLightingService } from './../../../services/gaming/lighting/gamin
 import { LightingDataList } from 'src/app/data-models/gaming/lighting-new-version/lighting-data-list';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from '../../../services/metric/metrics.service';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
   selector: 'vtr-widget-lighting-desk',
@@ -36,7 +37,8 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
   public isValChange:boolean = true;
 
   constructor(
-    private commonService: CommonService,
+	private commonService: CommonService,
+	private localCacheService: LocalCacheService,
     private gamingLightingService: GamingLightingService,
     private logger: LoggerService,
     private metrics: MetricService
@@ -45,8 +47,8 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
   ngOnInit() {
     this.initProfileId();
     this.getCacheList();
-    if(this.commonService.getLocalStorageValue(LocalStorageKey.LightingCapabilitiesNewversionDesk) !== undefined){
-      this.lightingCapabilities = this.commonService.getLocalStorageValue(LocalStorageKey.LightingCapabilitiesNewversionDesk);
+    if(this.localCacheService.getLocalCacheValue(LocalStorageKey.LightingCapabilitiesNewversionDesk) !== undefined){
+      this.lightingCapabilities = this.localCacheService.getLocalCacheValue(LocalStorageKey.LightingCapabilitiesNewversionDesk);
       this.imgDefaultOff();
       this.logger.info("this.lightingCapabilities  cache ",this.lightingCapabilities);
       this.getLightingCapabilitiesFromcache(this.lightingCapabilities);
@@ -73,7 +75,7 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
   public getLightingProfileByIdFromcache(lightingProfileByIdRes,lightingCapabilitiesRes){
     try {
       if(lightingProfileByIdRes !== undefined){
-        let ProfileId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId);
+        let ProfileId = this.localCacheService.getLocalCacheValue(LocalStorageKey.ProfileId);
         this.logger.info("ProfileId cache ",ProfileId);
         if (ProfileId !== 'undefined') {
           this.currentProfileId = ProfileId;
@@ -93,7 +95,7 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
           this.logger.info("lightingCapabilities res ",response);
           if(response){
             this.lightingCapabilities = response;
-            this.commonService.setLocalStorageValue(LocalStorageKey.LightingCapabilitiesNewversionDesk,response);
+            this.localCacheService.setLocalCacheValue(LocalStorageKey.LightingCapabilitiesNewversionDesk,response);
             this.imgDefaultOff();
             this.getLightingProfileById(this.currentProfileId);
           }
@@ -139,7 +141,7 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
             if (response.didSuccess) {
               this.publicPageInfo(response,1);
             }else{
-              this.currentProfileId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId);
+              this.currentProfileId = this.localCacheService.getLocalCacheValue(LocalStorageKey.ProfileId);
               if(this.currentProfileId === 0){
                 this.isProfileOff = true;
               }else{
@@ -193,7 +195,7 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
           if(response.didSuccess) {
             this.publicPageInfo(response,2);
           }else{
-            this.currentProfileId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId);
+            this.currentProfileId = this.localCacheService.getLocalCacheValue(LocalStorageKey.ProfileId);
             this.getCacheList();
             this.lightingProfileDetail(this.lightingProfileById,this.countObj['count'+this.currentProfileId],this.lightingCapabilities);
           }
@@ -228,7 +230,7 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
            this.publicPageInfo(response,2);
          }else{
            this.isEffectChange = false;
-           this.currentProfileId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId);
+           this.currentProfileId = this.localCacheService.getLocalCacheValue(LocalStorageKey.ProfileId);
            this.getCacheList();
            this.isShowpageInfo(this.lightingProfileById);
            this.lightingProfileDetail(this.lightingProfileById,this.countObj['count'+this.currentProfileId],this.lightingCapabilities);
@@ -260,7 +262,7 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
             // this.getCacheList();
             // this.publicPageInfo(this.lightingProfileById,2);
             this.isValChange = false;
-            this.currentProfileId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId);
+            this.currentProfileId = this.localCacheService.getLocalCacheValue(LocalStorageKey.ProfileId);
             this.getCacheList();
             this.lightingProfileDetail(this.lightingProfileById,this.countObj['count'+this.currentProfileId],this.lightingCapabilities);
           }
@@ -294,7 +296,7 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
             // this.getCacheList();
             // this.publicPageInfo(this.lightingProfileById,2);
             this.isValChange = false;
-            this.currentProfileId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId);
+            this.currentProfileId = this.localCacheService.getLocalCacheValue(LocalStorageKey.ProfileId);
             this.getCacheList();
             this.lightingProfileDetail(this.lightingProfileById,this.countObj['count'+this.currentProfileId],this.lightingCapabilities);
           }
@@ -451,7 +453,7 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
             this.lightingProfileCurrentDetail.lightBrightnessMax = lightingCapabilitiesRes.MemoryBrightLevel;
             this.lightingProfileCurrentDetail.lightSpeedMax = lightingCapabilitiesRes.MemorySpeedLevel;
           }
-          
+
           this.logger.info("effectList: ",this.lightingEffectList);
           this.lightingEffectList.curSelected  = this.lightingProfileCurrentDetail.lightEffectType;
           if(currentEffectName.length > 0){
@@ -538,8 +540,8 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
 
   public getCacheList(){
     if(this.currentProfileId !== 0){
-      if(this.commonService.getLocalStorageValue(LocalStorageKey['LightingProfileByIdDesk'+this.currentProfileId]) !== undefined){
-        this.lightingProfileById = this.commonService.getLocalStorageValue(LocalStorageKey['LightingProfileByIdDesk'+this.currentProfileId]);
+      if(this.localCacheService.getLocalCacheValue(LocalStorageKey['LightingProfileByIdDesk'+this.currentProfileId]) !== undefined){
+        this.lightingProfileById = this.localCacheService.getLocalCacheValue(LocalStorageKey['LightingProfileByIdDesk'+this.currentProfileId]);
         this.logger.info("this.lightingProfileById  getCache ",this.lightingProfileById);
       }
     }
@@ -547,22 +549,22 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
 
   public setCacheList(){
     if(this.currentProfileId !== 0){
-      this.commonService.setLocalStorageValue(LocalStorageKey['LightingProfileByIdDesk'+this.currentProfileId],this.lightingProfileById);
+      this.localCacheService.setLocalCacheValue(LocalStorageKey['LightingProfileByIdDesk'+this.currentProfileId],this.lightingProfileById);
     }
   }
 
   public getCacheDefaultList(){
     if(this.currentProfileId !== 0){
-      if(this.commonService.getLocalStorageValue(LocalStorageKey['LightingProfileDeskDefault'+this.currentProfileId]) !== undefined){
-        this.lightingProfileById = this.commonService.getLocalStorageValue(LocalStorageKey['LightingProfileByIdDesk'+this.currentProfileId]);
+      if(this.localCacheService.getLocalCacheValue(LocalStorageKey['LightingProfileDeskDefault'+this.currentProfileId]) !== undefined){
+        this.lightingProfileById = this.localCacheService.getLocalCacheValue(LocalStorageKey['LightingProfileByIdDesk'+this.currentProfileId]);
       }
     }
   }
 
   public setCacheDefaultList(){
     if(this.currentProfileId !== 0){
-      this.commonService.setLocalStorageValue(LocalStorageKey['LightingProfileDeskDefault'+this.currentProfileId],this.lightingProfileById);
-      this.commonService.setLocalStorageValue(LocalStorageKey['LightingProfileByIdDesk'+this.currentProfileId],this.lightingProfileById);
+      this.localCacheService.setLocalCacheValue(LocalStorageKey['LightingProfileDeskDefault'+this.currentProfileId],this.lightingProfileById);
+      this.localCacheService.setLocalCacheValue(LocalStorageKey['LightingProfileByIdDesk'+this.currentProfileId],this.lightingProfileById);
     }
   }
 
@@ -599,7 +601,7 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
       this.isShowpageInfo(this.lightingProfileById);
     };
     this.lightingProfileDetail(response,this.countObj['count'+this.currentProfileId],this.lightingCapabilities);
-    this.commonService.setLocalStorageValue(LocalStorageKey.ProfileId,response.profileId);
+    this.localCacheService.setLocalCacheValue(LocalStorageKey.ProfileId,response.profileId);
     this.setCacheList();
   }
 
@@ -609,15 +611,15 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
       if(this.gamingLightingService.isShellAvailable){
         this.gamingLightingService.getLightingProfileId().then((response: any) => {
             if (response.didSuccess) {
-              this.commonService.setLocalStorageValue(LocalStorageKey.ProfileId,response.profileId);
+              this.localCacheService.setLocalCacheValue(LocalStorageKey.ProfileId,response.profileId);
               this.currentProfileId = response.profileId;
               this.getLightingProfileById(this.currentProfileId);
             }
         });
       }
     }else{
-      if(this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId) !== undefined){
-        this.currentProfileId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId);
+      if(this.localCacheService.getLocalCacheValue(LocalStorageKey.ProfileId) !== undefined){
+        this.currentProfileId = this.localCacheService.getLocalCacheValue(LocalStorageKey.ProfileId);
       }
     }
     this.logger.info("this.currentProfileId ",this.currentProfileId);
@@ -629,7 +631,7 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
     this.countObj['count'+this.currentProfileId] = 0;
     this.isDisabledrig[this.currentProfileId-1] = false;
     this.isDisabledlef[this.currentProfileId-1] = true;
-    this.commonService.setLocalStorageValue(LocalStorageKey.ProfileId, response.profileId);
+    this.localCacheService.setLocalCacheValue(LocalStorageKey.ProfileId, response.profileId);
     this.isShowpageInfo(this.lightingProfileById);
     this.lightingProfileDetail(response,this.countObj['count'+this.currentProfileId],this.lightingCapabilities);
     this.setCacheDefaultList();

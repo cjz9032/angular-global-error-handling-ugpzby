@@ -1,7 +1,7 @@
 import { LocalStorageKey } from './../../../enums/local-storage-key.enum';
-import { CommonService } from './../../common/common.service';
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
+import { LocalCacheService } from '../../local-cache/local-cache.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -18,7 +18,10 @@ export class NetworkBoostService {
 		FeatureImage: 'assets/cms-cache/Security4x3-zone2.jpg'
 	};
 
-	constructor(private shellService: VantageShellService, private commonService: CommonService) {
+	constructor(
+		private shellService: VantageShellService,
+		private localCacheService: LocalCacheService
+	) {
 		this.gamingNetworkBoost = shellService.getNetworkBoost();
 		if (this.gamingNetworkBoost) {
 			this.isShellAvailable = true;
@@ -91,7 +94,7 @@ export class NetworkBoostService {
 
 	getNeedToAsk(): any {
 		try {
-			return this.commonService.getLocalStorageValue(LocalStorageKey.NetworkBoosNeedToAskPopup);
+			return this.localCacheService.getLocalCacheValue(LocalStorageKey.NetworkBoosNeedToAskPopup);
 		} catch (error) {
 			throw new Error(error);
 		}
@@ -100,7 +103,7 @@ export class NetworkBoostService {
 	setNeedToAsk(value: boolean) {
 		try {
 			value = value === undefined ? false : value;
-			this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoosNeedToAskPopup, value);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.NetworkBoosNeedToAskPopup, value);
 		} catch (error) {
 			throw new Error(error);
 		}

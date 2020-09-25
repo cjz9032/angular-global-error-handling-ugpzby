@@ -190,7 +190,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	) {
 	}
 
-	async ngOnInit() {
+	ngOnInit() {
 		this.getProtocalAction();
 		this.config.backdrop = 'static';
 		this.config.keyboard = false;
@@ -202,7 +202,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 				this.getSystemInfo();
 			}
 		});
-		this.brand = await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType, -1);
+		this.brand = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType, -1);
 		this.qaService.setCurrentLangTranslations();
 		this.isWarrantyVisible = this.deviceService.showWarranty;
 		this.dashboardService.isDashboardDisplayed = true;
@@ -338,9 +338,9 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		}
 	}
 
-	private async getWelcomeTextFromCache() {
+	private getWelcomeTextFromCache() {
 		if (!this.dashboardService.welcomeText) {
-			const cacheWelcomeTexts: WelcomeTextContent[] = await this.localCacheService.getLocalCacheValue(LocalStorageKey.DashboardWelcomeTexts);
+			const cacheWelcomeTexts: WelcomeTextContent[] = this.localCacheService.getLocalCacheValue(LocalStorageKey.DashboardWelcomeTexts);
 			if (cacheWelcomeTexts && cacheWelcomeTexts.length > 0) {
 				this.localInfoService.getLocalInfo().then((localInfo: any) => {
 					const isLangCacheTexts = cacheWelcomeTexts.find(content => content.language === localInfo.Lang);
@@ -355,14 +355,14 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	private getWelcomeTextFromCms(response: any) {
 		const welcomeTextContent: any = this.cmsService.getOneCMSContent(response, 'top-title-welcome-text', 'welcome-text')[0];
 		if (welcomeTextContent && welcomeTextContent.Title) {
-			this.localInfoService.getLocalInfo().then(async (localInfo: any) => {
+			this.localInfoService.getLocalInfo().then((localInfo: any) => {
 				if ([SegmentConst.Consumer, SegmentConst.SMB].includes(localInfo.Segment)) {
 					let dashboardWelcomeTexts: WelcomeTextContent[] = [];
 					const titles = map(welcomeTextContent.Title.split('|||'), trim);
 					if (!this.dashboardService.welcomeText) {
 						this.dashboardService.welcomeText = sample(titles);
 					}
-					const cacheWelcomeTexts: WelcomeTextContent[] = await this.localCacheService.getLocalCacheValue(LocalStorageKey.DashboardWelcomeTexts);
+					const cacheWelcomeTexts: WelcomeTextContent[] = this.localCacheService.getLocalCacheValue(LocalStorageKey.DashboardWelcomeTexts);
 					if (cacheWelcomeTexts && cacheWelcomeTexts.length > 0) {
 						dashboardWelcomeTexts = cacheWelcomeTexts;
 					}

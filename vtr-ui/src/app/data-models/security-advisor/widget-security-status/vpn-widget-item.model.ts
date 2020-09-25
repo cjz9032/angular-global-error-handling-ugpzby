@@ -3,9 +3,14 @@ import { Vpn, EventTypes } from '@lenovo/tan-client-bridge';
 import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 export class VPNWidgetItem extends WidgetItem {
-	constructor(vpn: Vpn, commonService: CommonService, private translateService: TranslateService) {
+	constructor(
+		vpn: Vpn,
+		commonService: CommonService,
+		private localCacheService: LocalCacheService,
+		private translateService: TranslateService) {
 		super({
 			id: 'sa-widget-lnk-vpn',
 			path: 'security/internet-protection',
@@ -16,18 +21,18 @@ export class VPNWidgetItem extends WidgetItem {
 		this.translateService.stream('common.securityAdvisor.vpn').subscribe((value) => {
 			this.title = value;
 		});
-		const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityVPNStatus);
+		const cacheStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityVPNStatus);
 		if (cacheStatus) {
 			this.updateStatus(cacheStatus);
 		}
 		if (vpn.status) {
 			this.updateStatus(vpn.status);
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityVPNStatus, vpn.status);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityVPNStatus, vpn.status);
 		}
 
 		vpn.on(EventTypes.vpnStatusEvent, (status) => {
 			this.updateStatus(status);
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityVPNStatus, status);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityVPNStatus, status);
 		});
 	}
 

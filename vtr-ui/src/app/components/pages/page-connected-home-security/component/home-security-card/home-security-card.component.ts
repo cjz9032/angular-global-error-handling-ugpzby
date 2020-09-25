@@ -4,6 +4,7 @@ import { DeviceLocationPermission } from 'src/app/data-models/home-security/devi
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CHSTrialModalPage } from 'src/app/enums/home-security-modal-trial-page.enum';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
 	selector: 'vtr-home-security-card',
@@ -16,6 +17,7 @@ export class HomeSecurityCardComponent implements OnInit {
 
 	constructor(
 		public dialogService: DialogService,
+		private localCacheService: LocalCacheService,
 		private commonService: CommonService
 	) {	}
 
@@ -49,7 +51,7 @@ export class HomeSecurityCardComponent implements OnInit {
 			&& this.location.isDeviceServiceOn) {
 			this.permission.requestPermission('geoLocatorStatus').then((status: boolean) => {
 				if (status) {
-					this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
 					if (dialog === 'join') {
 						this.dialogService.openInvitationCodeDialog();
 					} else if (dialog === 'trial') {

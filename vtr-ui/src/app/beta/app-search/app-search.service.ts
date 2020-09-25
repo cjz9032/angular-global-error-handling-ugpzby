@@ -4,11 +4,11 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { ConfigService } from 'src/app/services/config/config.service';
-import { CommonService } from 'src/app/services/common/common.service';
 import { BetaService } from 'src/app/services/beta/beta.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { environment } from 'src/environments/environment';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -47,14 +47,14 @@ export class AppSearchService {
 		private http: HttpClient,
 		private deviceService: DeviceService,
 		private configService: ConfigService,
-		private commonService: CommonService,
+		private localCacheService: LocalCacheService,
 		private localInfoService: LocalInfoService,
 		private betaService: BetaService
 		) {
 		this.betaMenuMapPaths();
 		this.loadSearchIndex();
 		this.unsupportedFeatures = new Set();
-		const featuresArray = this.commonService.getLocalStorageValue(LocalStorageKey.UnSupportFeatures);
+		const featuresArray = this.localCacheService.getLocalCacheValue(LocalStorageKey.UnSupportFeatures);
 		if (featuresArray !== undefined && featuresArray.length !== undefined) {
 			this.unsupportedFeatures = new Set(featuresArray);
 		}
@@ -137,7 +137,7 @@ export class AppSearchService {
 			return;
 		}
 
-		this.isBetaUserRes = this.betaService.showBetaFeature();
+		this.isBetaUserRes = await this.betaService.showBetaFeature();
 		this.loaded = true;
 		const tags = this.searchDB.features.tags;
 		const relevantTags = this.searchDB.features.relevantTags;
@@ -285,7 +285,7 @@ export class AppSearchService {
 	private collectError() {
 		if (this.targetFeature) {
 			this.unsupportedFeatures.add(this.targetFeature.id);
-			this.commonService.setLocalStorageValue(LocalStorageKey.UnSupportFeatures, Array.from(this.unsupportedFeatures));
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.UnSupportFeatures, Array.from(this.unsupportedFeatures));
 			this.searchResults = this.searchResults.filter(item => !this.unsupportedFeatures.has(item.id));
 			this.unSupportfeatureEvt.next(this.targetFeature.desc);
 			this.targetFeature = null;

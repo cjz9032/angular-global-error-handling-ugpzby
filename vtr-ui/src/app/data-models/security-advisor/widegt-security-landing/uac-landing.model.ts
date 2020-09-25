@@ -2,6 +2,7 @@ import { EventTypes, UAC } from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 export class UacLandingViewModel {
 	uacStatus = {
@@ -17,13 +18,18 @@ export class UacLandingViewModel {
 	};
 	translateString: any;
 
-	constructor(translate: TranslateService, uacModel: UAC, public commonService: CommonService, ) {
+	constructor(
+		translate: TranslateService,
+		uacModel: UAC,
+		public commonService: CommonService,
+		private localCacheService: LocalCacheService
+		) {
 		uacModel.on(EventTypes.uacStatusEvent, (data) => {
 			if (data !== 'unknown') {
 				this.setUacStatus(data);
 			}
 		});
-		const cacheStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityUacStatus);
+		const cacheStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityUacStatus);
 		translate.stream([
 			'common.securityAdvisor.enabled',
 			'common.securityAdvisor.disabled',
@@ -54,6 +60,6 @@ export class UacLandingViewModel {
 		}
 		this.uacStatus.detail = this.translateString[`common.securityAdvisor.${status === 'enable' ? 'enabled' : 'disabled'}`];
 		this.uacStatus.status = status === 'enable' ? 'enabled' : 'disabled';
-		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityUacStatus, status);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityUacStatus, status);
 	}
 }

@@ -107,8 +107,8 @@ export class BacklightComponent implements OnInit, OnDestroy {
 
 		this.setSubscription = this.update$
 			.pipe(
-				tap(async update => {
-					const machineFamilyName = await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineFamilyName);
+				tap(update => {
+					const machineFamilyName = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineFamilyName);
 					this.metrics.sendMetrics(update.value, 'BacklightIdeaPad', 'FeatureClick', machineFamilyName);
 				}),
 				switchMap(update => this.backlightService.setBacklight(update)),

@@ -116,8 +116,8 @@ export class LanguageService {
 		return false;
 	}
 
-	public async isLocaleSame(lang: string) {
-		const cachedDeviceInfo: DeviceInfo = await this.localCacheService.getLocalCacheValue(LocalStorageKey.DeviceInfo, undefined);
+	public isLocaleSame(lang: string) {
+		const cachedDeviceInfo: DeviceInfo = this.localCacheService.getLocalCacheValue(LocalStorageKey.DeviceInfo, undefined);
 		if (cachedDeviceInfo && cachedDeviceInfo.locale && cachedDeviceInfo.locale.length > 0) {
 			const isLocaleSame = cachedDeviceInfo.locale === lang.toLowerCase();
 			return isLocaleSame;

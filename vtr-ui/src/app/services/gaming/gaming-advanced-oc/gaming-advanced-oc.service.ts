@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from './../../vantage-shell/vantage-shell.service';
-import { CommonService } from '../../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { LocalCacheService } from '../../local-cache/local-cache.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class GamingAdvancedOCService {
 
 	constructor(
 		private shellService: VantageShellService,
-		private commonService: CommonService
+		private localCacheService: LocalCacheService,
 		) {
 		this.gamingAdvancedOC = shellService.getGamingAdvancedOC();
 		if (this.gamingAdvancedOC) {
@@ -43,10 +43,10 @@ export class GamingAdvancedOCService {
 	  }
 
 	getAdvancedOCInfoCache() {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.AdvancedOCInfo);
+		return this.localCacheService.getLocalCacheValue(LocalStorageKey.AdvancedOCInfo);
 	}
 
 	setAdvancedOCInfoCache(advancedOCInfo: any) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.AdvancedOCInfo, advancedOCInfo);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.AdvancedOCInfo, advancedOCInfo);
 	}
 }

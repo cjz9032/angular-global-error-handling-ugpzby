@@ -72,9 +72,9 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		this.initDataFromCache();
 	}
 
-	async ngOnInit() {
-		this.machineType = await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType);
-		const isYogo730 = await this.isYogo730();
+	ngOnInit() {
+		this.machineType = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType);
+		const isYogo730 = this.isYogo730();
 		if (thinkpad === this.machineType || isYogo730) {
 			this.add = 0; // thinkpad
 			this.checkDriverForThinkPad();
@@ -88,7 +88,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 
 
 	initDataFromCache() {
-		this.cache = this.commonService.getLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, undefined);
+		this.cache = this.localCacheService.getLocalCacheValue(LocalStorageKey.IntelligentCoolingCapability, undefined);
 		if (this.cache) {
 			// init ui
 			this.showIC = this.cache.showIC;
@@ -123,7 +123,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				this.showIC = 0;
 				this.cache.showIC = this.showIC;
 				this.isPowerSmartSettingVisible.emit(false);
-				this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
 			} else {
 				this.isPowerSmartSettingVisible.emit(true);
 			}
@@ -132,7 +132,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 
 	async checkDriverForThinkPad() {
 		try {
-			const isYogo730 = await this.isYogo730();
+			const isYogo730 = this.isYogo730();
 			if (isYogo730) {
 				const isEMDriverAvailable = await this.getEMDriverStatus();
 				if (!isEMDriverAvailable) {
@@ -158,8 +158,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	async isYogo730() {
-		const cacheMachineFamilyName = await this.localCacheService.getLocalCacheValue(
+	isYogo730() {
+		const cacheMachineFamilyName = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.MachineFamilyName,
 			undefined
 		);
@@ -189,7 +189,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		this.cache.autoModeToggle.status = this.enableIntelligentCoolingToggle;
 		this.cache.showIntelligentCoolingModes = this.showIntelligentCoolingModes;
 		this.cache.apsState = this.apsStatus;
-		this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
 		this.setAutoModeSetting(event);
 	}
 
@@ -344,7 +344,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		}
 		this.selectedModeText = this.translate.instant(text);
 		this.cache.selectedModeText = text;
-		this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
 	}
 
 	private setPowerSmartSettingsForIdeaPad(value: string) {
@@ -414,7 +414,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 					this.showIC = 5;
 					this.showPowerSmartSettings(true);
 					this.cache.showIC = this.showIC;
-					this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
 					this.updateIntelligentCoolingUIModel(this.showIC);
 				} else if (its === 6) {
 					// DYTC 6 supported
@@ -503,7 +503,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 			this.dytc6Mode = DYTC6Modes.Manual;
 			this.cache.captionText = DYTC6Modes.Manual;
 		}
-		this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
 	}
 
 	private getITSServiceStatus(): Promise<boolean> {
@@ -580,7 +580,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		this.cache.autoModeToggle.available = this.showIntelligentCoolingToggle;
 		this.cache.autoModeToggle.status = this.enableIntelligentCoolingToggle;
 		this.cache.showIntelligentCoolingModes = this.showIntelligentCoolingModes;
-		this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
 		this.updateIntelligentCoolingSelection();
 	}
 	private getCQLCapability() {
@@ -847,7 +847,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 						this.logger.info(`onAutoTransitionToggle.setAutoTransitionForICIdeapad failed`);
 					}
 					this.cache.isAutoTransitionEnabled = this.isAutoTransitionEnabled;
-					this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
 					this.logger.info(`onAutoTransitionToggle.setAutoTransitionForICIdeapad after API ${isSuccess} ; $event: ${$event}`);
 				});
 		}

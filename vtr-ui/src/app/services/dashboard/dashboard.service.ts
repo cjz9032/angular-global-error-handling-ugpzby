@@ -195,13 +195,10 @@ export class DashboardService {
 			if (this.sysupdate) {
 				return new Observable((observer) => {
 					// from local storage
-					this.localCacheService.getLocalCacheValue(LocalStorageKey.LastSystemUpdateStatus).then(
-						(cacheSu) => {
-							if (cacheSu) {
-								observer.next(cacheSu);
-							}
-						}
-					);
+					const cacheSu = this.localCacheService.getLocalCacheValue(LocalStorageKey.LastSystemUpdateStatus);
+					if (cacheSu) {
+						observer.next(cacheSu);
+					}
 					// from su plugin
 					const result = { lastupdate: null, status: 0 };
 					this.sysupdate.getMostRecentUpdateInfo().then(

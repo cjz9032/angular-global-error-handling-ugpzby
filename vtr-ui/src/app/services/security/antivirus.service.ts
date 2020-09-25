@@ -12,6 +12,7 @@ import {
 } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { AntivirusCommonData } from 'src/app/data-models/security-advisor/antivirus-common.data.model';
+import { LocalCacheService } from '../local-cache/local-cache.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -25,13 +26,17 @@ export class AntivirusService {
 	private cacheCurrentPage: string;
 	private cacheFirewallLink: string;
 
-	constructor(public commonService: CommonService, public shellService: VantageShellService) {
+	constructor(
+		public commonService: CommonService,
+		public shellService: VantageShellService,
+		private localCacheService: LocalCacheService,
+		) {
 		this.antivirus = this.shellService.getSecurityAdvisor().antivirus;
 
-		this.cacheAvStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus);
-		this.cacheFwStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus);
-		this.cacheCurrentPage = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityCurrentPage);
-		this.cacheFirewallLink = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityFirewallLink, '/security/anti-virus');
+		this.cacheAvStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingAntivirusStatus);
+		this.cacheFwStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus);
+		this.cacheCurrentPage = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityCurrentPage);
+		this.cacheFirewallLink = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityFirewallLink, '/security/anti-virus');
 		this.antivirusCommonData = new AntivirusCommonData();
 	}
 
@@ -78,13 +83,13 @@ export class AntivirusService {
 		}
 
 		this.setAntivirusStatus(av, fw);
-		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityCurrentPage, this.antivirusCommonData.currentPage);
-		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityFirewallLink, this.antivirusCommonData.firewallLink);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityCurrentPage, this.antivirusCommonData.currentPage);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityFirewallLink, this.antivirusCommonData.firewallLink);
 	}
 
 	private setAntivirusStatus(av: boolean | undefined, fw: boolean | undefined) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, fw !== undefined ? fw : null);
-		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus, av !== undefined ? av : null);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, fw !== undefined ? fw : null);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityLandingAntivirusStatus, av !== undefined ? av : null);
 		this.antivirusCommonData.antivirus = av;
 		this.antivirusCommonData.firewall = fw;
 	}

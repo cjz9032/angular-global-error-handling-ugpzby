@@ -2,6 +2,7 @@ import { EventTypes, WindowsActivation } from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 export class WindowsActiveLandingViewModel {
 	waStatus = {
@@ -17,13 +18,17 @@ export class WindowsActiveLandingViewModel {
 	};
 	translateString: any;
 
-	constructor(translate: TranslateService, waModel: WindowsActivation, public commonService: CommonService, ) {
+	constructor(
+		translate: TranslateService,
+		waModel: WindowsActivation,
+		public commonService: CommonService,
+		private localCacheService: LocalCacheService) {
 		waModel.on(EventTypes.waStatusEvent, (data) => {
 			if (data !== 'unknown') {
 				this.setWaStatus(data);
 			}
 		});
-		const cacheStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityWindowsActiveStatus);
+		const cacheStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityWindowsActiveStatus);
 		translate.stream([
 			'common.securityAdvisor.enabled',
 			'common.securityAdvisor.disabled',
@@ -53,6 +58,6 @@ export class WindowsActiveLandingViewModel {
 		}
 		this.waStatus.detail = this.translateString[`common.securityAdvisor.${status === 'enable' ? 'enabled' : 'disabled'}`];
 		this.waStatus.status = status === 'enable' ? 'enabled' : 'disabled';
-		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsActiveStatus, status);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityWindowsActiveStatus, status);
 	}
 }

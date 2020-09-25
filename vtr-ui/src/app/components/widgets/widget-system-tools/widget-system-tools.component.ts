@@ -11,6 +11,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalGamingPromptComponent } from './../../modal/modal-gaming-prompt/modal-gaming-prompt.component';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { GamingAccessoryService } from 'src/app/services/gaming/gaming-accessory/gaming-accessory.service';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
 	selector: 'vtr-widget-system-tools',
@@ -35,10 +36,11 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 	}
 	constructor(
 		private modalService: NgbModal,
-		private commonService: CommonService, 
+		private commonService: CommonService,
+		private localCacheService: LocalCacheService,
 		private gamingCapabilityService: GamingAllCapabilitiesService,
 		private hardwareScanService: HardwareScanService,
-		// version 3.3 show entrance & launch accessory 
+		// version 3.3 show entrance & launch accessory
 		private gamingAccessoryService: GamingAccessoryService,
 		private logger: LoggerService
 
@@ -55,8 +57,8 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 			LocalStorageKey.macroKeyFeature
 		);
 		// version 3.3 legion accessory cache
-		this.showLegionAccessory = this.commonService.getLocalStorageValue(LocalStorageKey.accessoryFeature);
-		this.showHWScanMenu = this.commonService.getLocalStorageValue(LocalStorageKey.hardwareScanFeature);
+		this.showLegionAccessory = this.localCacheService.getLocalCacheValue(LocalStorageKey.accessoryFeature);
+		this.showHWScanMenu = this.localCacheService.getLocalCacheValue(LocalStorageKey.hardwareScanFeature);
 		this.calcToolLength();
 
 		if (this.hardwareScanService && this.hardwareScanService.isAvailable) {
@@ -64,7 +66,7 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 				.then((response: any) => {
 					if(response !== this.showHWScanMenu && response !== undefined) {
 						this.showHWScanMenu = response;
-						this.commonService.setLocalStorageValue(LocalStorageKey.hardwareScanFeature, response);
+						this.localCacheService.setLocalCacheValue(LocalStorageKey.hardwareScanFeature, response);
 						this.calcToolLength();
 					}
 				})
@@ -77,9 +79,9 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 		this.gamingAccessoryService.isLACSupportUriProtocol().then(res => {
 			if(res !== this.showLegionAccessory && res !== undefined) {
 				this.showLegionAccessory = res;
-				this.commonService.setLocalStorageValue(LocalStorageKey.accessoryFeature, res);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.accessoryFeature, res);
 				this.calcToolLength();
-			} 
+			}
 		});
 	}
 

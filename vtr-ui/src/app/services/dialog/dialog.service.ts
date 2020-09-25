@@ -19,6 +19,7 @@ import { Router } from '@angular/router';
 import { DeviceService } from '../device/device.service';
 import { DeviceLocationPermission } from 'src/app/data-models/home-security/device-location-permission.model';
 import { UserService } from '../user/user.service';
+import { LocalCacheService } from '../local-cache/local-cache.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -29,6 +30,7 @@ export class DialogService {
 		public modalService: NgbModal,
 		private router: Router,
 		private userService: UserService,
+		private localCacheService: LocalCacheService,
 		private deviceService: DeviceService
 	)  { }
 
@@ -199,10 +201,10 @@ export class DialogService {
 			return;
 		}
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage)) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityShowWelcome, showWelcome + 1);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.ConnectedHomeSecurityShowWelcome, showWelcome + 1);
 
 			if (showWelcome === 1) {
-				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
 			}
 
 			const welcomeModal = this.modalService.open(ModalChsWelcomeContainerComponent, {
@@ -235,7 +237,7 @@ export class DialogService {
 		if (this.modalService.hasOpenModals()) {
 			return;
 		}
-		const segment: SegmentConst = this.commonService.getLocalStorageValue(LocalStorageKey.LocalInfoSegment);
+		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(LocalStorageKey.LocalInfoSegment);
 		if (segment && segment !== SegmentConst.Commercial) {
 			if (!navigator.onLine) {
 				const modalRef = this.modalService.open(ModalCommonConfirmationComponent, {

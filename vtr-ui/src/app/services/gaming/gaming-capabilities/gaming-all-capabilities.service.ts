@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
 import { CommonService } from '../../common/common.service';
 import { Gaming } from 'src/app/enums/gaming.enum';
+import { LocalCacheService } from '../../local-cache/local-cache.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -11,7 +12,10 @@ export class GamingAllCapabilitiesService {
 	private gamingAllCapabilities: any;
 	public isShellAvailable = false;
 	public macrokey: any;
-	constructor(shellService: VantageShellService, private commonService: CommonService) {
+	constructor(
+		shellService: VantageShellService,
+		private localCacheService: LocalCacheService,
+		private commonService: CommonService) {
 		this.gamingAllCapabilities = shellService.getGamingAllCapabilities();
 		if (this.gamingAllCapabilities) {
 			this.isShellAvailable = true;
@@ -30,41 +34,41 @@ export class GamingAllCapabilitiesService {
 	}
 
 	setCapabilityValuesGlobally(capabilities: any) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.macroKeyFeature, capabilities.macroKeyFeature);
-		this.commonService.setLocalStorageValue(LocalStorageKey.cpuOCFeature, capabilities.cpuOCFeature);
-		this.commonService.setLocalStorageValue(LocalStorageKey.memOCFeature, capabilities.memOCFeature);
-		this.commonService.setLocalStorageValue(LocalStorageKey.optimizationFeature, capabilities.optimizationFeature);
-		this.commonService.setLocalStorageValue(LocalStorageKey.networkBoostFeature, capabilities.networkBoostFeature);
-		this.commonService.setLocalStorageValue(LocalStorageKey.hybridModeFeature, capabilities.hybridModeFeature);
-		this.commonService.setLocalStorageValue(LocalStorageKey.touchpadLockFeature, capabilities.touchpadLockFeature);
-		this.commonService.setLocalStorageValue(LocalStorageKey.xtuService, capabilities.xtuService);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.macroKeyFeature, capabilities.macroKeyFeature);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuOCFeature, capabilities.cpuOCFeature);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.memOCFeature, capabilities.memOCFeature);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.optimizationFeature, capabilities.optimizationFeature);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.networkBoostFeature, capabilities.networkBoostFeature);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.hybridModeFeature, capabilities.hybridModeFeature);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.touchpadLockFeature, capabilities.touchpadLockFeature);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.xtuService, capabilities.xtuService);
 		// Version 3.2: thermal mode version 2 on 191101 by Guo Jing
-		this.commonService.setLocalStorageValue(LocalStorageKey.desktopType, capabilities.desktopType);
-		this.commonService.setLocalStorageValue(LocalStorageKey.liteGaming, capabilities.liteGaming);
-		this.commonService.setLocalStorageValue(LocalStorageKey.thermalModeVersion, capabilities.thermalModeVersion);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.desktopType, capabilities.desktopType);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.liteGaming, capabilities.liteGaming);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.thermalModeVersion, capabilities.thermalModeVersion);
 		// Version 3.2: prevent error of SupporttedThermalMode on 191227 by Guo Jing
 		if (capabilities.supporttedThermalMode.length > 1) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.supporttedThermalMode, capabilities.supporttedThermalMode);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.supporttedThermalMode, capabilities.supporttedThermalMode);
 		}
 		// Version 3.2: performance oc on 191101 by Guo Jing
-		this.commonService.setLocalStorageValue(LocalStorageKey.gpuOCFeature, capabilities.gpuOCFeature);
-		this.commonService.setLocalStorageValue(LocalStorageKey.advanceCPUOCFeature, capabilities.advanceCPUOCFeature);
-		this.commonService.setLocalStorageValue(LocalStorageKey.advanceGPUOCFeature, capabilities.advanceGPUOCFeature);
-		this.commonService.setLocalStorageValue(LocalStorageKey.nvDriver, capabilities.nvDriver);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.gpuOCFeature, capabilities.gpuOCFeature);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.advanceCPUOCFeature, capabilities.advanceCPUOCFeature);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.advanceGPUOCFeature, capabilities.advanceGPUOCFeature);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.nvDriver, capabilities.nvDriver);
 		// X50 lighting layout
-		this.commonService.setLocalStorageValue(LocalStorageKey.ledLayoutVersion, capabilities.ledLayoutVersion);
-		this.commonService.setLocalStorageValue(LocalStorageKey.LedSwitchButtonFeature, capabilities.ledSwitchButtonFeature);
-		this.commonService.setLocalStorageValue(LocalStorageKey.smartFanFeature, capabilities.smartFanFeature);
-		this.commonService.setLocalStorageValue(LocalStorageKey.ledSetFeature, capabilities.ledSetFeature);
-		this.commonService.setLocalStorageValue(LocalStorageKey.ledDriver, capabilities.ledDriver);
-		this.commonService.setLocalStorageValue(LocalStorageKey.fbNetFilter, capabilities.fbnetFilter);
-		this.commonService.setLocalStorageValue(LocalStorageKey.winKeyLockFeature, capabilities.winKeyLockFeature);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.ledLayoutVersion, capabilities.ledLayoutVersion);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.LedSwitchButtonFeature, capabilities.ledSwitchButtonFeature);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.smartFanFeature, capabilities.smartFanFeature);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.ledSetFeature, capabilities.ledSetFeature);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.ledDriver, capabilities.ledDriver);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.fbNetFilter, capabilities.fbnetFilter);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.winKeyLockFeature, capabilities.winKeyLockFeature);
 		// Version 3.3: over drive supported on 200317 by Guo Jing
-		this.commonService.setLocalStorageValue(LocalStorageKey.overDriveFeature, capabilities.overDriveFeature)
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.overDriveFeature, capabilities.overDriveFeature)
 		this.commonService.sendGamingCapabilitiesNotification(Gaming.GamingCapabilities, capabilities);
 	}
 
 	getCapabilityFromCache(storageKey: any) {
-		return this.commonService.getLocalStorageValue(storageKey);
+		return this.localCacheService.getLocalCacheValue(storageKey);
 	}
 }

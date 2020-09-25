@@ -3,9 +3,14 @@ import { PasswordManager, EventTypes, WifiSecurity } from '@lenovo/tan-client-br
 import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 export class PassWordManagerWidgetItem extends WidgetItem {
-	constructor(passwordManager: PasswordManager, commonService: CommonService, private translateService: TranslateService) {
+	constructor(
+		passwordManager: PasswordManager,
+		commonService: CommonService,
+		private localCacheService: LocalCacheService,
+		private translateService: TranslateService) {
 		super({
 			id: 'sa-widget-lnk-pm',
 			path: 'security/password-protection',
@@ -16,18 +21,18 @@ export class PassWordManagerWidgetItem extends WidgetItem {
 		this.translateService.stream('common.securityAdvisor.pswdMgr').subscribe((value) => {
 			this.title = value;
 		});
-		const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus);
+		const cacheStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityPasswordManagerStatus);
 		if (cacheStatus) {
 			this.updateStatus(cacheStatus);
 		}
 		if (passwordManager.status) {
 			this.updateStatus(passwordManager.status);
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus, passwordManager.status);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityPasswordManagerStatus, passwordManager.status);
 		}
 
 		passwordManager.on(EventTypes.pmStatusEvent, (status) => {
 			this.updateStatus(status);
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus, status);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityPasswordManagerStatus, status);
 		});
 	}
 

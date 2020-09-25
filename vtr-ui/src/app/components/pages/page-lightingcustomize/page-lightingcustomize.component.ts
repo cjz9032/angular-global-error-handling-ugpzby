@@ -12,6 +12,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { Gaming } from './../../../enums/gaming.enum';
 import { LocalStorageKey } from './../../../enums/local-storage-key.enum';
 import { Subscription } from 'rxjs/internal/Subscription';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
 	selector: 'vtr-page-lightingcustomize',
@@ -35,6 +36,7 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	constructor(
 		private titleService: Title,
 		private commonService: CommonService,
+		private localCacheService: LocalCacheService,
 		private cmsService: CMSService,
 		private route: ActivatedRoute,
 		private shellService: VantageShellService,
@@ -139,9 +141,9 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 		}
 	}
 	public getLayOutversion() {
-		let ledSetFeature = this.commonService.getLocalStorageValue(LocalStorageKey.ledSetFeature);
-		let ledDriver = this.commonService.getLocalStorageValue(LocalStorageKey.ledDriver);
-		this.ledlayoutversion = this.commonService.getLocalStorageValue(LocalStorageKey.ledLayoutVersion);
+		let ledSetFeature = this.localCacheService.getLocalCacheValue(LocalStorageKey.ledSetFeature);
+		let ledDriver = this.localCacheService.getLocalCacheValue(LocalStorageKey.ledDriver);
+		this.ledlayoutversion = this.localCacheService.getLocalCacheValue(LocalStorageKey.ledLayoutVersion);
 		if(!ledSetFeature || !ledDriver || this.ledlayoutversion === undefined){
 			this.router.navigate(['/device-gaming']);
 		}
