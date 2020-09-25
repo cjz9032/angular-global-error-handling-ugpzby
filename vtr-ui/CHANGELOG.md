@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.14](https://bitbucket.tc.lenovo.com///compare/v1.8.13...v1.8.14) (2020-09-25)
+
+
+### Features
+
+* **IndexedDB:** VAN-22060 migrate user profile related keys ([9d419d3](https://bitbucket.tc.lenovo.com///commit/9d419d3de30ba510bea4948989c7fc9417e912ae))
+* **IndexedDB:** VAN-22060 update for migrate from localstorage to indexedDB ([37ba7ea](https://bitbucket.tc.lenovo.com///commit/37ba7eaee86454aecf2fa17d2cdc2cd20c011c6e))
+* **IndexedDB:** VAN-22060 update solution to load local cache in App_Initializer ([b3881ce](https://bitbucket.tc.lenovo.com///commit/b3881ce57acd4b3a0dad8ed590893ce728fe0bc3))
+
 ### [1.8.13](https://bitbucket.tc.lenovo.com///compare/v1.8.12...v1.8.13) (2020-09-24)
 
 
