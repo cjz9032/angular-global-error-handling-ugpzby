@@ -287,6 +287,10 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 	}
 
 	private async isSmartPerformanceSuscripted(serialnumber): Promise<boolean>{
+		if (!await this.configService.showSmartPerformance()){
+			return false;
+		}
+
 		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails(serialnumber);
 		if (!subscriptionDetails?.data){
 			return false;
