@@ -24,6 +24,7 @@
 				<div class="button-row">
 					<div class="row" *ngIf="numberTestsFailed > 0; else successfulScan">
 						<vtr-ui-button
+							class="button-container"
 							[linkId]="'hwscan-support-btn'"
 							metricsParent="HardwareScan.ScanFailureActions"
 							metricsItem="ScanFailureActions.LenovoSupport"
@@ -31,7 +32,6 @@
 							[label]="'hardwareScan.scanFinishedHeader.supportButtonText' | translate">
 						</vtr-ui-button>
 						<vtr-ui-hyperlink-button
-							class="hyperlink-container"
 							hyperlinkStyle="xs-white"
 							linkId="hwscan-scan-again-btn"
 							linkRole="button"
