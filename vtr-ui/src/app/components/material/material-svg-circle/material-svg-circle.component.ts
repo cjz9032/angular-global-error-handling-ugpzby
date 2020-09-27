@@ -3,19 +3,20 @@ import { GradientColor } from 'src/app/data-models/security-advisor/gradient-col
 import * as d3 from 'd3-selection';
 
 @Component({
-	selector: 'vtr-widget-svg-circle',
-	templateUrl: './widget-svg-circle.component.html',
-	styleUrls: ['./widget-svg-circle.component.scss']
+	selector: 'vtr-material-svg-circle',
+	templateUrl: './material-svg-circle.component.html',
+	styleUrls: ['./material-svg-circle.component.scss']
 })
-export class WidgetSvgCircleComponent implements OnInit, DoCheck, AfterViewChecked {
+export class MaterialSvgCircleComponent implements OnInit, DoCheck, AfterViewChecked {
 	@Input() gradientColor: GradientColor;
 	@Input() colorStep = 100;
 	@Input() fill = '#2F3447';
 	@Input() width = '3.5';
 	@Input() height = '16';
-	oldGradientPercent: number;
-	oldColor: string;
-	gradientColorArr = [];
+
+	private oldGradientPercent: number;
+	private oldColor: string;
+	private gradientColorArr = [];
 
 	ngOnInit() {
 		this.updateStatus();

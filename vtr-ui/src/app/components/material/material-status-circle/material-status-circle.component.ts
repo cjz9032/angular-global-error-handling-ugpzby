@@ -3,18 +3,18 @@ import { TranslateService } from '@ngx-translate/core';
 import { GradientColor } from 'src/app/data-models/security-advisor/gradient-color.model';
 
 @Component({
-  selector: 'vtr-widget-status-circle',
-  templateUrl: './widget-status-circle.component.html',
-  styleUrls: ['./widget-status-circle.component.scss']
+  selector: 'vtr-material-status-circle',
+  templateUrl: './material-status-circle.component.html',
+  styleUrls: ['./material-status-circle.component.scss']
 })
-export class WidgetStatusCircleComponent implements DoCheck, AfterViewInit {
+export class MaterialStatusCircleComponent implements DoCheck, AfterViewInit {
 	@Input() gradientColor: GradientColor;
 	@Input() status: number;
 	@ViewChild('circleContainer') circleContainer: ElementRef;
 
-	translateString: any;
-	levelText: string;
-	currentStatus: number;
+	public levelText: string;
+	private translateString: any;
+	private currentStatus: number;
 
 	securityLevelInfo = [
 		'security.landing.noProtection',

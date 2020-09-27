@@ -1,20 +1,20 @@
 // import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-// import { WidgetSvgCircleComponent } from './widget-svg-circle.component';
+// import { MaterialSvgCircleComponent } from './material-svg-circle.component';
 
-// describe('WidgetSvgCircleComponent', () => {
-//   let component: WidgetSvgCircleComponent;
-//   let fixture: ComponentFixture<WidgetSvgCircleComponent>;
+// describe('MaterialSvgCircleComponent', () => {
+//   let component: MaterialSvgCircleComponent;
+//   let fixture: ComponentFixture<MaterialSvgCircleComponent>;
 
 //   beforeEach(async(() => {
 //     TestBed.configureTestingModule({
-//       declarations: [ WidgetSvgCircleComponent ]
+//       declarations: [ MaterialSvgCircleComponent ]
 //     })
 //     .compileComponents();
 //   }));
 
 //   beforeEach(() => {
-//     fixture = TestBed.createComponent(WidgetSvgCircleComponent);
+//     fixture = TestBed.createComponent(MaterialSvgCircleComponent);
 //     component = fixture.componentInstance;
 //     fixture.detectChanges();
 //   });
