@@ -36,6 +36,7 @@ const cmsMock = {
 describe('PageLightingcustomizeComponent', () => {
 	let component: PageLightingcustomizeComponent;
 	let fixture: ComponentFixture<PageLightingcustomizeComponent>;
+	let commonService:any;
 	const routerMock = { params: of({ id: 1 })};
 	const titleServiceMock = { setTitle: (title) => title };
 	const deviceServiceMock = { getMachineInfo: () => Promise.resolve({ serialnumber: 1234 }), getMachineInfoSync: () => { } };
@@ -74,6 +75,9 @@ describe('PageLightingcustomizeComponent', () => {
 				HttpClientModule
 			],
 		}).compileComponents();
+		commonService = TestBed.inject(CommonService);
+		commonService.isOnline = false;
+		spyOn(commonService, 'getCapabalitiesNotification').and.returnValue(of({type: '[Gaming] GamingCapabilities'}));
 	}));
 
 	beforeEach(() => {
@@ -94,6 +98,7 @@ describe('PageLightingcustomizeComponent', () => {
 
 	it ('should go to ofline mode', () => {
 		const notification: any = {type: NetworkStatus.Offline, payload: {isOnline: false}};
+		commonService.isOnline = undefined;
 		const res = component.onNotification(notification);
 		expect(res).toBe(undefined);
 	});
