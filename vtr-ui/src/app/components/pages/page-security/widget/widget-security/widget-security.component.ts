@@ -14,7 +14,7 @@ import { ModalArticleDetailComponent } from 'src/app/components/modal/modal-arti
 export class WidgetSecurityComponent implements OnInit, DoCheck {
 	@Input() statusItem: LandingView = {
 		status: 0,
-		percent: 0,
+		percent: 100,
 		fullyProtected: false
 	};
 	@Input() isOnline: boolean;
