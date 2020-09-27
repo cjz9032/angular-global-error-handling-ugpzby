@@ -1,4 +1,4 @@
-import { Component, Input, DoCheck, ViewChild, ElementRef, Renderer2, AfterViewInit } from '@angular/core';
+import { Component, Input, ViewChild, ElementRef, Renderer2, AfterViewInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { GradientColor } from 'src/app/data-models/security-advisor/gradient-color.model';
 
@@ -7,47 +7,17 @@ import { GradientColor } from 'src/app/data-models/security-advisor/gradient-col
   templateUrl: './material-status-circle.component.html',
   styleUrls: ['./material-status-circle.component.scss']
 })
-export class MaterialStatusCircleComponent implements DoCheck, AfterViewInit {
+export class MaterialStatusCircleComponent implements AfterViewInit {
 	@Input() gradientColor: GradientColor;
-	@Input() status: number;
+	@Input() statusText: string;
 	@ViewChild('circleContainer') circleContainer: ElementRef;
 
-	public levelText: string;
-	private translateString: any;
-	private currentStatus: number;
-
-	securityLevelInfo = [
-		'security.landing.noProtection',
-		'security.landing.basic',
-		'security.landing.intermediate',
-		'security.landing.advanced',
-	];
-
 	constructor(
-		translate: TranslateService,
+		public translate: TranslateService,
 		public elementRef: ElementRef,
 		public renderer2: Renderer2
-	) {
-		translate.stream([
-			'security.landing.noProtection',
-			'security.landing.basic',
-			'security.landing.intermediate',
-			'security.landing.advanced',
-		]).subscribe((res: any) => {
-			this.translateString = res;
-			if (this.status !== undefined) {
-				this.currentStatus = this.status;
-				this.levelText = res[this.securityLevelInfo[this.status]];
-			}
-		});
-	}
-	ngDoCheck(): void {
-		if ((!this.levelText && this.translateString && this.status !== undefined)
-			|| this.status !== this.currentStatus) {
-			this.currentStatus = this.status;
-			this.levelText = this.translateString[this.securityLevelInfo[this.status]];
-		}
-	}
+	) {	}
+
 
 	ngAfterViewInit(): void {
 		const hasClass = this.elementRef.nativeElement.hasAttribute('class');

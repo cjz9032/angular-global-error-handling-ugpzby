@@ -1,4 +1,4 @@
-import { Component,	Input,	OnInit,	DoCheck } from '@angular/core';
+import { Component,	Input } from '@angular/core';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { LandingView } from 'src/app/data-models/security-advisor/widegt-security-landing/landing-view.model';
@@ -11,7 +11,7 @@ import { ModalArticleDetailComponent } from 'src/app/components/modal/modal-arti
 	templateUrl: './widget-security.component.html',
 	styleUrls: ['./widget-security.component.scss']
 })
-export class WidgetSecurityComponent implements OnInit, DoCheck {
+export class WidgetSecurityComponent {
 	@Input() statusItem: LandingView = {
 		status: 0,
 		percent: 100,
@@ -30,46 +30,33 @@ export class WidgetSecurityComponent implements OnInit, DoCheck {
 	];
 	securityLevelInfo = [
 		{
+			status: 'security.landing.noProtection',
 			title: 'security.landing.noProtection',
 			desc: 'security.landing.noProtectionDesc',
 		},
 		{
+			status: 'security.landing.basic',
 			title: 'security.landing.basicTitle',
 			desc: 'security.landing.basicDesc',
 		},
 		{
+			status: 'security.landing.intermediate',
 			title: 'security.landing.intermediateTitle',
 			desc: 'security.landing.intermediateDesc',
 		},
 		{
+			status: 'security.landing.advanced',
 			title: 'security.landing.advancedTitle',
 			desc: 'security.landing.advancedDesc',
 		}
 	];
-
+	levelText: string;
 
 	constructor(
 		public modalService: NgbModal,
 		private cmsService: CMSService
 	) {
 		this.fetchCMSArticleCategory();
-	}
-
-	ngOnInit() {
-		this.updateSecurityStatus();
-	}
-
-	ngDoCheck(): void {
-		if (!this.oldPercent || this.statusItem.percent !== this.oldPercent) {
-			this.updateSecurityStatus();
-		}
-	}
-
-	updateSecurityStatus() {
-		if (this.statusItem && typeof this.statusItem.status === 'number') {
-			this.oldPercent = this.statusItem.percent;
-			this.gradient = new GradientColor(this.statusItem.status, this.statusItem.percent);
-		}
 	}
 
 	fetchCMSArticleCategory() {

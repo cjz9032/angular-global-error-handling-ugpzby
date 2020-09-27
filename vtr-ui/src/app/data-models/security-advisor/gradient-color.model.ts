@@ -18,7 +18,7 @@ export class GradientColor {
 			end: '#00893A'
 		}
 	];
-	constructor(status: number, percent: number) {
+	constructor(status: number | undefined, percent: number) {
 		if (typeof status === 'number' && typeof percent === 'number') {
 			this.startColor = this.colors[status].start;
 			this.endColor = this.colors[status].end;
