@@ -7,6 +7,7 @@ import { async, ComponentFixture, TestBed, fakeAsync } from '@angular/core/testi
 import { WidgetLightingComponent } from './widget-lighting.component';
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
 import { of } from 'rxjs';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 describe('WidgetLightingComponent', () => {
 	let component: WidgetLightingComponent;
@@ -16,7 +17,10 @@ describe('WidgetLightingComponent', () => {
 	let ledDriver:boolean = true;
     let profileId:number = 2;
 	let commonServiceMock = {
-        getLocalStorageValue(key: any) {
+		getCapabalitiesNotification: () => of({ type: Gaming.GamingCapabilities })
+	};
+	let LocalCacheServiceMock = {
+        getLocalCacheValue(key: any) {
             switch (key) {
                 case '[LocalStorageKey] LedSwitchButtonFeature':
                     return ledSwitchButtonFeature;
@@ -28,7 +32,7 @@ describe('WidgetLightingComponent', () => {
 					return profileId;
             }
         },
-        setLocalStorageValue(key: any, value: any) {
+        setLocalCacheValue(key: any, value: any) {
             switch (key) {
                 case '[LocalStorageKey] LedSwitchButtonFeature':
                     ledSwitchButtonFeature = value;
@@ -43,9 +47,8 @@ describe('WidgetLightingComponent', () => {
 					profileId = value;
 					break;		
             }
-		},
-		getCapabalitiesNotification: () => of({ type: Gaming.GamingCapabilities })
-    };
+		}
+	}
 	const spy = jasmine.createSpyObj('GamingLightingService',['isShellAvailable','setLightingProfileId','getLightingProfileId','regLightingProfileIdChangeEvent']);
 	const deviceServiceMock = { getMachineInfo: () => Promise.resolve({}) };
 	beforeEach(async(() => {
@@ -59,7 +62,8 @@ describe('WidgetLightingComponent', () => {
 			providers: [
 				{ provide: DeviceService, useValue: deviceServiceMock },
 				{ provide: GamingLightingService, useValue: spy },
-				{ provide: CommonService, useValue: commonServiceMock }
+				{ provide: CommonService, useValue: commonServiceMock },
+				{ provide: LocalCacheService, useValue: LocalCacheServiceMock },
 			],
 			imports: [HttpClientModule],
 			schemas: [NO_ERRORS_SCHEMA]
@@ -81,23 +85,23 @@ describe('WidgetLightingComponent', () => {
 	});
 
 	it('should get the capabilities and should set islighting as false', () => { 
-		commonServiceMock.setLocalStorageValue('[LocalStorageKey] LedSetFeature', true);
-		commonServiceMock.setLocalStorageValue('[LocalStorageKey] LedDriver', false);
+		LocalCacheServiceMock.setLocalCacheValue('[LocalStorageKey] LedSetFeature', true);
+		LocalCacheServiceMock.setLocalCacheValue('[LocalStorageKey] LedDriver', false);
 		component.ledSetFeature = true;
 		const res = component.getCapabilities();
 		expect(res).toBe(undefined);
-		commonServiceMock.setLocalStorageValue('[LocalStorageKey] LedSetFeature', false);
-		commonServiceMock.setLocalStorageValue('[LocalStorageKey] LedDriver', true);
+		LocalCacheServiceMock.setLocalCacheValue('[LocalStorageKey] LedSetFeature', false);
+		LocalCacheServiceMock.setLocalCacheValue('[LocalStorageKey] LedDriver', true);
 		component.getCapabilities();
 		expect(component.isLightingVisible).toEqual(false);
-		commonServiceMock.setLocalStorageValue('[LocalStorageKey] LedDriver', false);
+		LocalCacheServiceMock.setLocalCacheValue('[LocalStorageKey] LedDriver', false);
 		component.getCapabilities();
 		expect(component.isLightingVisible).toEqual(false);
 	});
 
 	it('should get the capabilities and should set islighting as true', () => {
-		commonServiceMock.setLocalStorageValue('[LocalStorageKey] LedSetFeature', true);
-		commonServiceMock.setLocalStorageValue('[LocalStorageKey] LedDriver', true);
+		LocalCacheServiceMock.setLocalCacheValue('[LocalStorageKey] LedSetFeature', true);
+		LocalCacheServiceMock.setLocalCacheValue('[LocalStorageKey] LedDriver', true);
 		fixture.detectChanges();
 		const res = component.getCapabilities();
 		expect(res).toBe(undefined);
@@ -111,6 +115,7 @@ describe('WidgetLightingComponent', () => {
 
 	it('should not show popup', () => {
 		component.isPopupVisible = false;
+		component.setprofId = 0;
 		spy.setLightingProfileId.and.returnValue(Promise.resolve({ didSuccess: true }));
 		component.didSuccess = true;
 		component.SetProfile({ target: {value : 1}});
@@ -133,10 +138,10 @@ describe('WidgetLightingComponent', () => {
 	});
 
 	it('should regLightingProfileIdChangeEvent', () => {
-		commonServiceMock.setLocalStorageValue('[LocalStorageKey] LedSwitchButtonFeature', true);
+		LocalCacheServiceMock.setLocalCacheValue('[LocalStorageKey] LedSwitchButtonFeature', true);
 		component.getCapabilities();
 		expect(component.ledSwitchButtonFeature).toEqual(true);
-		commonServiceMock.setLocalStorageValue('[LocalStorageKey] LedSwitchButtonFeature', false);
+		LocalCacheServiceMock.setLocalCacheValue('[LocalStorageKey] LedSwitchButtonFeature', false);
 		component.getCapabilities();
 		expect(component.getCapabilities()).toBeUndefined();
    });

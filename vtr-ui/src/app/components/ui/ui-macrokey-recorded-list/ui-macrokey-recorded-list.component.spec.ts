@@ -90,9 +90,7 @@ describe('UiMacrokeyRecordedListComponent', () => {
 	})
 	);
 
-	it(
-		'Repeat should set to 1',
-		fakeAsync(() => {
+	it('Repeat should set to 1',fakeAsync(() => {
 			macrokeyServiceMock.setRepeat.and.returnValue(Promise.resolve(true));
 			component.onRepeatChanged({ value: 1 });
 			tick(20);
@@ -100,9 +98,7 @@ describe('UiMacrokeyRecordedListComponent', () => {
 		})
 	);
 
-	it(
-		'Repeat should set to 5',
-		fakeAsync(() => {
+	it('Repeat should set to 5',fakeAsync(() => {
 			macrokeyServiceMock.setRepeat.and.returnValue(Promise.resolve(true));
 			component.onRepeatChanged({ value: 5 });
 			tick(20);
@@ -110,9 +106,7 @@ describe('UiMacrokeyRecordedListComponent', () => {
 		})
 	);
 
-	it(
-		'Interval should set to 1',
-		fakeAsync(() => {
+	it('Interval should set to 1',fakeAsync(() => {
 			macrokeyServiceMock.setInterval.and.returnValue(Promise.resolve(true));
 			component.onIntervalChanged({ value: 1 });
 			tick(20);
@@ -121,9 +115,7 @@ describe('UiMacrokeyRecordedListComponent', () => {
 		})
 	);
 
-	it(
-		'Interval should set to 2',
-		fakeAsync(() => {
+	it('Interval should set to 2',fakeAsync(() => {
 			macrokeyServiceMock.setInterval.and.returnValue(Promise.resolve(true));
 			component.onIntervalChanged({ value: 2 });
 			tick(20);
@@ -132,9 +124,12 @@ describe('UiMacrokeyRecordedListComponent', () => {
 		})
 	);
 
-	it(
-		'Do check should detect changes',
-		fakeAsync(() => {
+	it('Interval should set to false',() => {
+		    component.onIntervalChanged({ value: false });
+			expect(component.tooltips_delay).toEqual("");
+	});
+
+	it('Do check should detect changes',fakeAsync(() => {
 			component.recordsData = {
 				repeat: 3,
 				interval: 2,
@@ -150,14 +145,26 @@ describe('UiMacrokeyRecordedListComponent', () => {
 			expect(component.delaySelectedValue).toEqual(2);
 		})
 	);
+
 	it('Should clear records', fakeAsync(() => {
 		component.clearRecordPopup = false;
 		component.clearRecords();
 		tick(10);
 		fixture.detectChanges();
 		expect(component.clearRecordPopup).toEqual(true);
-	})
-	);
+	}));
+
+	it('Should Update status when page property change', fakeAsync(() => { 
+		component.ngOnChanges({'recordsData':{'currentValue':{'interval':2}}});
+		expect(component.ignoreInterval).toEqual(true);
+		component.ngOnChanges({'recordsData':{'currentValue':{'interval':4}}});
+		expect(component.ignoreInterval).toEqual(false);
+	}));
+
+	it('Should Update the pair name', fakeAsync(() => { 
+		component.getPairName(2,1);
+		expect(component.pairCounter[2]).toEqual(0);
+	}));
 
 });
 
