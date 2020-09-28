@@ -46,7 +46,6 @@ import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.servic
 import { LandingView } from 'src/app/data-models/security-advisor/widegt-security-landing/landing-view.model';
 import { AntivirusService } from 'src/app/services/security/antivirus.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
-import { Gradient, GradientColor } from 'src/app/data-models/security-advisor/gradient-color.model';
 
 
 @Component({
@@ -344,6 +343,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			this.landingStatus.fullyProtected = false;
 			this.landingStatus.percent = 0;
 		}
+
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityLandingLevel, this.landingStatus);
 	}
 
