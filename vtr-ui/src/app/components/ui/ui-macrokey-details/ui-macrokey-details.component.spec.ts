@@ -69,6 +69,12 @@ describe('UiMacrokeyDetailsComponent', () => {
 		const result = await component.ngOnChanges({ messageData: { currentValue: 'maximum' } });
 		expect(result).toEqual(undefined);
 	});
+	it('should turn on the toggle when page minimized', async () => {
+		component.recording = true;
+		Object.defineProperties(document, {'hidden': {value: true}});
+		component.toggleOnPageMinimized();
+		expect(component.recording).toEqual(false);
+	});
 });
 export function mockPipe(options: Pipe): Pipe {
 	const metadata: Pipe = {
