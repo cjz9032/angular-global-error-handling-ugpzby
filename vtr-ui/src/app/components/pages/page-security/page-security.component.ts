@@ -47,7 +47,6 @@ import { LandingView } from 'src/app/data-models/security-advisor/widegt-securit
 import { AntivirusService } from 'src/app/services/security/antivirus.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { Gradient, GradientColor } from 'src/app/data-models/security-advisor/gradient-color.model';
-import { SecurityService } from 'src/app/services/security/security.service';
 
 
 @Component({
@@ -100,8 +99,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		private router: Router,
 		private windowsHelloService: WindowsHelloService,
 		private hypSettings: HypothesisService,
-		private antivirusService: AntivirusService,
-		private securityService: SecurityService
+		private antivirusService: AntivirusService
 	) { }
 
 	@HostListener('window: focus')
@@ -346,11 +344,6 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			this.landingStatus.fullyProtected = false;
 			this.landingStatus.percent = 0;
 		}
-		const gradientColor: GradientColor = {
-			start: this.securityService.colors[this.landingStatus.status].start,
-			end: this.securityService.colors[this.landingStatus.status].end
-		};
-		this.landingStatus.gradient = new Gradient(gradientColor, this.landingStatus.percent);
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityLandingLevel, this.landingStatus);
 	}
 

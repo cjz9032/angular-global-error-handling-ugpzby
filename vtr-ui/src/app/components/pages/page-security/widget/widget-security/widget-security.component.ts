@@ -1,4 +1,4 @@
-import { Component,	Input } from '@angular/core';
+import { Component,	Input, OnInit } from '@angular/core';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { LandingView } from 'src/app/data-models/security-advisor/widegt-security-landing/landing-view.model';
@@ -11,7 +11,7 @@ import { ModalArticleDetailComponent } from 'src/app/components/modal/modal-arti
 	templateUrl: './widget-security.component.html',
 	styleUrls: ['./widget-security.component.scss']
 })
-export class WidgetSecurityComponent {
+export class WidgetSecurityComponent implements OnInit {
 	@Input() statusItem: LandingView = {
 		status: 0,
 		percent: 100,
@@ -55,7 +55,9 @@ export class WidgetSecurityComponent {
 	constructor(
 		public modalService: NgbModal,
 		private cmsService: CMSService
-	) {
+	) {	}
+
+	ngOnInit(): void {
 		this.fetchCMSArticleCategory();
 	}
 
