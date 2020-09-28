@@ -12,7 +12,7 @@ import { SvgInlinePipe } from 'src/app/pipe/svg-inline/svg-inline.pipe';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { GamingThermalModeService } from 'src/app/services/gaming/gaming-thermal-mode/gaming-thermal-mode.service';
 import { GamingOCService } from 'src/app/services/gaming/gaming-OC/gaming-oc.service';
-import { CommonService } from 'src/app/services/common/common.service';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
@@ -49,8 +49,8 @@ describe('ModalGamingThermalMode2Component', () => {
     let gpuOCStatusCache = 1;
     let setReturnValue = false;
 
-    let commonServiceMock = {
-        getLocalStorageValue(key: any) {
+    let localCacheServiceMock = {
+        getLocalCacheValue(key: any) {
             switch (key) {
                 case '[LocalStorageKey] CurrentThermalModeStatus':
                     return thermalModeSettingStatusCache;
@@ -66,7 +66,7 @@ describe('ModalGamingThermalMode2Component', () => {
                     return gpuOCStatusCache;
             }
         },
-        setLocalStorageValue(key: any, value: any) {
+        setLocalCacheValue(key: any, value: any) {
             switch (key) {
                 case '[LocalStorageKey] CurrentThermalModeStatus':
                     thermalModeSettingStatusCache = value;
@@ -185,7 +185,7 @@ describe('ModalGamingThermalMode2Component', () => {
                     NgbActiveModal,
                     TranslateStore,
                     { provide: VantageShellService, useValue: shellServiveSpy },
-                    { provide: CommonService, useValue: commonServiceMock },
+                    { provide: LocalCacheService, useValue: localCacheServiceMock },
                     { provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock },
                     { provide: GamingThermalModeService, useValue: gamingThermalModeServiceMock },
                     { provide: GamingOCService, useValue: gamingOCServiceMock },
@@ -342,7 +342,7 @@ describe('ModalGamingThermalMode2Component', () => {
                     NgbModal,
                     NgbActiveModal,
                     TranslateStore,
-                    { provide: CommonService, useValue: commonServiceMock },
+                    { provide: LocalCacheService, useValue: localCacheServiceMock },
                     { provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock },
                     { provide: GamingThermalModeService, useValue: gamingThermalModeServiceMock },
                     { provide: GamingOCService, useValue: gamingOCServiceMock },
@@ -651,7 +651,7 @@ describe('ModalGamingThermalMode2Component', () => {
                     NgbModal,
                     NgbActiveModal,
                     TranslateStore,
-                    { provide: CommonService, useValue: commonServiceMock },
+                    { provide: LocalCacheService, useValue: localCacheServiceMock },
                     { provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock },
                     { provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
                     { provide: GamingOCService, useValue: gamingOCServiceSpy },
@@ -918,7 +918,7 @@ describe('ModalGamingThermalMode2Component', () => {
                     NgbModal,
                     NgbActiveModal,
                     TranslateStore,
-                    { provide: CommonService, useValue: commonServiceMock },
+                    { provide: LocalCacheService, useValue: localCacheServiceMock },
                     { provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock },
                     { provide: GamingThermalModeService, useValue: gamingThermalModeServiceMock },
                     { provide: GamingOCService, useValue: gamingOCServiceMock },
@@ -978,7 +978,7 @@ describe('ModalGamingThermalMode2Component', () => {
                     NgbModal,
                     NgbActiveModal,
                     TranslateStore,
-                    { provide: CommonService, useValue: commonServiceMock },
+                    { provide: LocalCacheService, useValue: localCacheServiceMock },
                     { provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock },
                     { provide: GamingThermalModeService, useValue: gamingThermalModeServiceMock },
                     { provide: GamingOCService, useValue: gamingOCServiceMock },

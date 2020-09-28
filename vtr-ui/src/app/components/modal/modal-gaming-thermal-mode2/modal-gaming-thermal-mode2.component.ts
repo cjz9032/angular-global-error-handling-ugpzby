@@ -38,16 +38,16 @@ export class ModalGamingThermalMode2Component implements OnInit {
 		section: 'thermal_mode_warning_dialog',
     	headerText: 'warning_dialog_warning_text',
     	description: 'warning_dialog_warning_description',
-    	description2: 'warning_dialog_warning_description2',
-		closeButton : 'thermal_mode_warning_dialog_close_button',
-		cancelButton: 'thermal_mode_warning_dialog_cancel_button',
+      description2: 'warning_dialog_warning_description2',
+      closeButton : 'thermal_mode_warning_dialog_close_button',
+      cancelButton: 'thermal_mode_warning_dialog_cancel_button',
     	okButton: 'thermal_mode_warning_dialog_proceed_button'
 	}
   constructor(
     private modalService: NgbModal,
     private activeModalService: NgbActiveModal,
     private shellServices: VantageShellService,
-	private localCacheService: LocalCacheService,
+    private localCacheService: LocalCacheService,
     private gamingCapabilityService: GamingAllCapabilitiesService,
     private thermalModeService: GamingThermalModeService,
     private gamingOCService: GamingOCService,
