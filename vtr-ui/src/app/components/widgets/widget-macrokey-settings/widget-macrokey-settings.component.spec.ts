@@ -1,6 +1,5 @@
 import { MacrokeyService } from './../../../services/gaming/macrokey/macrokey.service';
 import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
-
 import { WidgetMacrokeySettingsComponent } from './widget-macrokey-settings.component';
 import { Pipe, NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -9,6 +8,9 @@ import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-cap
 import { TranslateStore } from '@ngx-translate/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TranslationModule } from 'src/app/modules/translation.module';
+import { CommonService } from 'src/app/services/common/common.service';
+import { of } from 'rxjs';
+import { Gaming } from './../../../enums/gaming.enum';
 
 const macrokeyServiceMock = jasmine.createSpyObj('MacrokeyService', [
 	'isMacroKeyAvailable',
@@ -23,6 +25,8 @@ const macrokeyServiceMock = jasmine.createSpyObj('MacrokeyService', [
 	'setMacrokeyInitialKeyDataCache',
 	'setStartRecording',
 	'setStopRecording',
+	'setMacroKeyApplyStatus',
+	'setMacrokeyChangeStatusCache',
 	'setKey'
 ]);
 
@@ -65,6 +69,7 @@ const sampleInputData = {
 describe('WidgetMacrokeySettingsComponent', () => {
 	let component: WidgetMacrokeySettingsComponent;
 	let fixture: ComponentFixture<WidgetMacrokeySettingsComponent>;
+	let commonService: any;
 	macrokeyServiceMock.isMacroKeyAvailable.and.returnValue(true);
 	gamingAllCapabilitiesServiceMock.getCapabilityFromCache.and.returnValue(true);
 	macrokeyServiceMock.gamingMacroKeyInitializeEvent.and.returnValue(Promise.resolve(true));
@@ -72,6 +77,7 @@ describe('WidgetMacrokeySettingsComponent', () => {
 	macrokeyServiceMock.getMacrokeyRecordedStatusCache.and.returnValue(recordedStatusSampleData);
 	macrokeyServiceMock.getMacrokeyInputChangeCache.and.returnValue(sampleInputData);
 	macrokeyServiceMock.getMacrokeyInitialKeyDataCache.and.returnValue(sampleInputData);
+	macrokeyServiceMock.setMacroKeyApplyStatus.and.returnValue(Promise.resolve(true));
 	macrokeyServiceMock.setKey.and.returnValue(true);
 
 	beforeEach(
@@ -92,11 +98,16 @@ describe('WidgetMacrokeySettingsComponent', () => {
 				],
 				imports: [FontAwesomeModule, TranslationModule]
 			}).compileComponents();
-			fixture = TestBed.createComponent(WidgetMacrokeySettingsComponent);
-			component = fixture.componentInstance;
-			fixture.detectChanges();
+			commonService = TestBed.inject(CommonService);
+			spyOn(commonService, 'notification').and.returnValue(of({type: '[Gaming] GamingCapabilities'}));
 		})
 	);
+
+	beforeEach(() => {
+		fixture = TestBed.createComponent(WidgetMacrokeySettingsComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
 
 	it('should create', () => {
 		expect(component).toBeTruthy();
@@ -169,22 +180,48 @@ describe('WidgetMacrokeySettingsComponent', () => {
 		recordingChangeData.recordingStatus = false;
 		component.onRecordingChanged(recordingChangeData);
 	});
+
 	it('Should select the number', fakeAsync(() => {
 		component.onNumberSelected({ key: 9 });
 		expect(component.numberSelected).toEqual({ key: 9 });
-	})
-	);
+	}));
+
 	it('Should route back', fakeAsync(() => {
 		const result = component.redirectBack();
 		expect(result).toEqual(undefined);
-	})
-	);
+	}));
+
 	it('Should update the macrokey message event', fakeAsync(() => {
 		component.updateMacroKeyInputMessageEvent({message: 'Dummy message here'});
 		tick(10);
 		fixture.detectChanges();
 		expect(component.macroKeyMessageData).toEqual({message: 'Dummy message here'});
 	}));
+
+	it('Should update the macrokey InputChange event', fakeAsync(() => {
+		component.onGamingMacroKeyInputChangeEvent(true);
+		expect(component.onGamingMacroKeyInputChangeEvent(true)).toEqual(undefined);
+	}));
+
+	it('Should update the macrokey InputMessage event', fakeAsync(() => {
+		component.onGamingMacroKeyInputMessageEvent(true);
+		expect(component.macroKeyMessageData).toEqual(true);
+	}));
+
+	it('Should update the macroKey subpage', fakeAsync(() => {
+		component.gamingProperties.macroKeyFeature = false;
+		component.initMacroKeySubpage();
+		expect(component.initMacroKeySubpage()).toEqual(undefined);
+	}));
+
+	it('Should update the efffect option', fakeAsync(() => {
+		component.tooltips_value = "macroKey";
+		component.optionChanged({'value': 2,'name': 'macroKey'});
+		expect(component.macroKeyTypeStatus.MacroKeyStatus).toBeLessThanOrEqual(4);
+		component.optionChanged({'value': 3,'name': 'macroKey'});
+		expect(component.tooltips_value).toMatch('');
+	}));
+
 });
 
 export function mockPipe(options: Pipe): Pipe {
