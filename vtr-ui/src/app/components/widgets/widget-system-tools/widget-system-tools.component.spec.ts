@@ -13,6 +13,7 @@ import { TranslationModule } from 'src/app/modules/translation.module';
 import { WidgetSystemToolsComponent } from './widget-system-tools.component';
 
 import { CommonService } from 'src/app/services/common/common.service';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { HardwareScanService } from 'src/app/services/hardware-scan/hardware-scan.service';
 import { GamingAccessoryService } from 'src/app/services/gaming/gaming-accessory/gaming-accessory.service';
@@ -39,24 +40,6 @@ describe('WidgetSystemToolsComponent', () => {
 	let accessoryFeatureCache = false;
 
 	let commonServiceMock = {
-		getLocalStorageValue(key: any, defaultValue?: any) {
-			switch (key) {
-				case '[LocalStorageKey] HardwareScanFeature':
-					return hardwareScanFeatureCache;
-				case '[LocalStorageKey] AccessoryFeature':
-					return accessoryFeatureCache;
-			}
-		},
-		setLocalStorageValue(key: any, value: any) {
-			switch (key) {
-				case '[LocalStorageKey] HardwareScanFeature':
-					hardwareScanFeatureCache = value;
-					break;
-				case '[LocalStorageKey] AccessoryFeature':
-					accessoryFeatureCache = value;
-					break;
-			}
-		},
 		getCapabalitiesNotification() {
 			let res = {
 				type: '[Gaming] GamingCapabilities',
@@ -67,7 +50,26 @@ describe('WidgetSystemToolsComponent', () => {
 			return of(res);
 		},
 	};
-
+	let localCacheServiceMock = {
+		getLocalCacheValue(key: any, defaultValue?: any) {
+			switch (key) {
+				case '[LocalStorageKey] HardwareScanFeature':
+					return hardwareScanFeatureCache;
+				case '[LocalStorageKey] AccessoryFeature':
+					return accessoryFeatureCache;
+			}
+		},
+		setLocalCacheValue(key: any, value: any) {
+			switch (key) {
+				case '[LocalStorageKey] HardwareScanFeature':
+					hardwareScanFeatureCache = value;
+					break;
+				case '[LocalStorageKey] AccessoryFeature':
+					accessoryFeatureCache = value;
+					break;
+			}
+		},
+	}
 	let GamingAllCapabilitiesServiceMock = {
 		isShellAvailable: true,
 		getCapabilityFromCache(key: any) {
@@ -94,6 +96,7 @@ describe('WidgetSystemToolsComponent', () => {
 					{ provide: HttpClient },
 					{ provide: HttpHandler },
 					{ provide: CommonService, useValue: commonServiceMock },
+					{ provide: LocalCacheService, useValue: localCacheServiceMock},
 					{ provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock },
 					{ provide: HardwareScanService, useValue: hardwareScanServiceSpy },
 					{ provide: GamingAccessoryService, useValue: gamingAccessoryServiceSpy }
@@ -145,6 +148,7 @@ describe('WidgetSystemToolsComponent', () => {
 					{ provide: HttpClient },
 					{ provide: HttpHandler },
 					{ provide: CommonService, useValue: commonServiceMock },
+					{ provide: LocalCacheService, useValue: localCacheServiceMock},
 					{ provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock },
 					{ provide: HardwareScanService, useValue: hardwareScanServiceSpy },
 					{ provide: GamingAccessoryService, useValue: gamingAccessoryServiceSpy }
@@ -212,6 +216,7 @@ describe('WidgetSystemToolsComponent', () => {
 					{ provide: HttpClient },
 					{ provide: HttpHandler },
 					{ provide: CommonService, useValue: commonServiceMock },
+					{ provide: LocalCacheService, useValue: localCacheServiceMock},
 					{ provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock },
 					{ provide: HardwareScanService, useValue: hardwareScanServiceSpy },
 					{ provide: GamingAccessoryService, useValue: gamingAccessoryServiceSpy }
@@ -308,6 +313,7 @@ describe('WidgetSystemToolsComponent', () => {
 					{ provide: HttpClient },
 					{ provide: HttpHandler },
 					{ provide: CommonService, useValue: commonServiceMock },
+					{ provide: LocalCacheService, useValue: localCacheServiceMock},
 					{ provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock },
 					{ provide: HardwareScanService, useValue: hardwareScanServiceSpy },
 					{ provide: GamingAccessoryService, useValue: gamingAccessoryServiceSpy }
