@@ -46,7 +46,8 @@ import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.servic
 import { LandingView } from 'src/app/data-models/security-advisor/widegt-security-landing/landing-view.model';
 import { AntivirusService } from 'src/app/services/security/antivirus.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
-import { GradientColor } from 'src/app/data-models/security-advisor/gradient-color.model';
+import { Gradient, GradientColor } from 'src/app/data-models/security-advisor/gradient-color.model';
+import { SecurityService } from 'src/app/services/security/security.service';
 
 
 @Component({
@@ -99,7 +100,8 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		private router: Router,
 		private windowsHelloService: WindowsHelloService,
 		private hypSettings: HypothesisService,
-		private antivirusService: AntivirusService
+		private antivirusService: AntivirusService,
+		private securityService: SecurityService
 	) { }
 
 	@HostListener('window: focus')
@@ -344,7 +346,11 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			this.landingStatus.fullyProtected = false;
 			this.landingStatus.percent = 0;
 		}
-		this.landingStatus.gradient = new GradientColor(this.landingStatus.status, this.landingStatus.percent);
+		const gradientColor: GradientColor = {
+			start: this.securityService.colors[this.landingStatus.status].start,
+			end: this.securityService.colors[this.landingStatus.status].end
+		};
+		this.landingStatus.gradient = new Gradient(gradientColor, this.landingStatus.percent);
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityLandingLevel, this.landingStatus);
 	}
 
@@ -399,6 +405,6 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 	}
 
 	retry(id) {
-		this.antivirusLandingViewModel.retry(id)
+		this.antivirusLandingViewModel.retry(id);
 	}
 }

@@ -1,5 +1,5 @@
 import { Component, Input, OnDestroy } from '@angular/core';
-import { GradientColor } from 'src/app/data-models/security-advisor/gradient-color.model';
+import { Gradient } from 'src/app/data-models/security-advisor/gradient-color.model';
 import * as d3 from 'd3-selection';
 
 @Component({
@@ -16,7 +16,7 @@ export class MaterialSvgCircleComponent implements OnDestroy {
 
 	private gradientColorArr = [];
 
-	@Input() set gradientColor(gradientColor: GradientColor) {
+	@Input() set gradientColor(gradientColor: Gradient) {
 
 		const els = 100;
 		const step = 360 / els;

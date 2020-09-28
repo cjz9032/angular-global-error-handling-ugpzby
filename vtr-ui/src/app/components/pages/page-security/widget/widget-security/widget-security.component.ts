@@ -2,7 +2,7 @@ import { Component,	Input } from '@angular/core';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { LandingView } from 'src/app/data-models/security-advisor/widegt-security-landing/landing-view.model';
-import { GradientColor } from 'src/app/data-models/security-advisor/gradient-color.model';
+import { Gradient } from 'src/app/data-models/security-advisor/gradient-color.model';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { ModalArticleDetailComponent } from 'src/app/components/modal/modal-article-detail/modal-article-detail.component';
 
@@ -22,7 +22,7 @@ export class WidgetSecurityComponent {
 	articleCategory: string;
 	region: string;
 	oldPercent: number;
-	gradient: GradientColor;
+	gradient: Gradient;
 
 	btnDesc = [
 		'security.landing.notFully',

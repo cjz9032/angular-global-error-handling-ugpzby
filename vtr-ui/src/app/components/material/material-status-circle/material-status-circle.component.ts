@@ -1,6 +1,6 @@
 import { Component, Input, ViewChild, ElementRef, Renderer2, AfterViewInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { GradientColor } from 'src/app/data-models/security-advisor/gradient-color.model';
+import { Gradient } from 'src/app/data-models/security-advisor/gradient-color.model';
 
 @Component({
   selector: 'vtr-material-status-circle',
@@ -8,7 +8,7 @@ import { GradientColor } from 'src/app/data-models/security-advisor/gradient-col
   styleUrls: ['./material-status-circle.component.scss']
 })
 export class MaterialStatusCircleComponent implements AfterViewInit {
-	@Input() gradientColor: GradientColor;
+	@Input() gradientColor: Gradient;
 	@Input() statusText: string;
 	@ViewChild('circleContainer') circleContainer: ElementRef;
 
