@@ -9,6 +9,7 @@ import { WidgetLegionEdgeComponent } from './widget-legion-edge.component';
 
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { CommonService } from 'src/app/services/common/common.service';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { GamingThermalModeService } from 'src/app/services/gaming/gaming-thermal-mode/gaming-thermal-mode.service';
 import { GamingOCService } from 'src/app/services/gaming/gaming-OC/gaming-oc.service';
@@ -60,7 +61,17 @@ describe('WidgetLegionEdgeComponent', () => {
 	let setReturnValue = true;
 
 	let commonServiceMock = {
-		getLocalStorageValue(key: any, defaultValue?: any) {
+		getCapabalitiesNotification() {
+			let res = {
+				type: '',
+				payload: {
+				}
+			}
+			return of(res);
+		},
+	};
+	let localCacheServiceMock = {
+		getLocalCacheValue(key: any, defaultValue?: any) {
 			let returnValue: any;
 			switch (key) {
 				case '[LocalStorageKey] RealThermalModeStatus':
@@ -100,7 +111,7 @@ describe('WidgetLegionEdgeComponent', () => {
 				return returnValue;
 			}
 		},
-		setLocalStorageValue(key: any, value: any) {
+		setLocalCacheValue(key: any, value: any) {
 			switch (key) {
 				case '[LocalStorageKey] RealThermalModeStatus':
 					thermalModeRealStatusCache = value;
@@ -134,15 +145,7 @@ describe('WidgetLegionEdgeComponent', () => {
 					break;
 			}
 		},
-		getCapabalitiesNotification() {
-			let res = {
-				type: '',
-				payload: {
-				}
-			}
-			return of(res);
-		},
-	};
+	}
 
 	let gamingAllCapabilitiesServiceMock = {
 		isShellAvailable: true,
@@ -239,6 +242,7 @@ describe('WidgetLegionEdgeComponent', () => {
 					{ provide: HttpHandler },
 					{ provide: Router, useClass: class { navigate = jasmine.createSpy('navigate'); } },
 					{ provide: CommonService, useValue: commonServiceMock },
+					{ provide: LocalCacheService, useValue: localCacheServiceMock},
 					{ provide: VantageShellService },
 					{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesServiceMock },
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceMock },
@@ -626,6 +630,7 @@ describe('WidgetLegionEdgeComponent', () => {
 					{ provide: HttpHandler },
 					{ provide: Router, useClass: class { navigate = jasmine.createSpy('navigate'); } },
 					{ provide: CommonService, useValue: commonServiceMock },
+					{ provide: LocalCacheService, useValue: localCacheServiceMock},
 					{ provide: VantageShellService },
 					{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesServiceMock },
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
@@ -783,6 +788,7 @@ describe('WidgetLegionEdgeComponent', () => {
 					{ provide: HttpHandler },
 					{ provide: Router, useClass: class { navigate = jasmine.createSpy('navigate'); } },
 					{ provide: CommonService, useValue: commonServiceMock },
+					{ provide: LocalCacheService, useValue: localCacheServiceMock},
 					{ provide: VantageShellService },
 					{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesServiceMock },
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
@@ -947,6 +953,7 @@ describe('WidgetLegionEdgeComponent', () => {
 					{ provide: HttpHandler },
 					{ provide: Router, useClass: class { navigate = jasmine.createSpy('navigate'); } },
 					{ provide: CommonService, useValue: commonServiceMock },
+					{ provide: LocalCacheService, useValue: localCacheServiceMock},
 					{ provide: VantageShellService },
 					{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesServiceMock },
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
@@ -1107,6 +1114,7 @@ describe('WidgetLegionEdgeComponent', () => {
 					{ provide: HttpHandler },
 					{ provide: Router, useClass: class { navigate = jasmine.createSpy('navigate'); } },
 					{ provide: CommonService, useValue: commonServiceMock },
+					{ provide: LocalCacheService, useValue: localCacheServiceMock},
 					{ provide: VantageShellService },
 					{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesServiceMock },
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
@@ -1247,6 +1255,7 @@ describe('WidgetLegionEdgeComponent', () => {
 					{ provide: HttpHandler },
 					{ provide: Router, useClass: class { navigate = jasmine.createSpy('navigate'); } },
 					{ provide: CommonService, useValue: commonServiceMock },
+					{ provide: LocalCacheService, useValue: localCacheServiceMock},
 					{ provide: VantageShellService },
 					{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesServiceMock },
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
@@ -1386,6 +1395,7 @@ describe('WidgetLegionEdgeComponent', () => {
 					{ provide: HttpHandler },
 					{ provide: Router, useClass: class { navigate = jasmine.createSpy('navigate'); } },
 					{ provide: CommonService, useValue: commonServiceMock },
+					{ provide: LocalCacheService, useValue: localCacheServiceMock},
 					{ provide: VantageShellService },
 					{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesServiceMock },
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
@@ -1527,6 +1537,7 @@ describe('WidgetLegionEdgeComponent', () => {
 					{ provide: HttpHandler },
 					{ provide: Router, useClass: class { navigate = jasmine.createSpy('navigate'); } },
 					{ provide: CommonService, useValue: commonServiceMock },
+					{ provide: LocalCacheService, useValue: localCacheServiceMock},
 					{ provide: VantageShellService },
 					{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesServiceMock },
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
@@ -1880,7 +1891,7 @@ describe('WidgetLegionEdgeComponent', () => {
 		});
 	})
 
-	xdescribe('ITP', () => {
+	describe('ITP', () => {
 		beforeEach(async(() => {
 			TestBed.configureTestingModule({
 				declarations: [WidgetLegionEdgeComponent, SvgInlinePipe,
@@ -1970,6 +1981,7 @@ describe('WidgetLegionEdgeComponent', () => {
 					{ provide: HttpHandler },
 					{ provide: Router, useClass: class { navigate = jasmine.createSpy('navigate'); } },
 					{ provide: CommonService, useValue: commonServiceMock },
+					{ provide: LocalCacheService, useValue: localCacheServiceMock},
 					{ provide: VantageShellService },
 					{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesServiceMock },
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },

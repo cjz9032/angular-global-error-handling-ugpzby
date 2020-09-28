@@ -9,6 +9,7 @@ import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { GamingThermalModeService } from 'src/app/services/gaming/gaming-thermal-mode/gaming-thermal-mode.service';
 import { GuardService } from 'src/app/services/guard/guardService.service';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { PowerService } from 'src/app/services/power/power.service';
 import { WifiSecurityService } from 'src/app/services/security/wifi-security.service';
@@ -39,44 +40,6 @@ describe('WidgetQuicksettingsListComponent', () => {
 	let setReturnValue = true;
 
 	const commonServiceMock = {
-		getLocalStorageValue(key: any, defaultValue?: any) {
-			switch (key) {
-				case '[LocalStorageKey] PrevThermalModeStatus':
-					return prevThermalModeStatusCache;
-				case '[LocalStorageKey] CurrentThermalModeStatus':
-					return currentThermalModeStatusCache;
-				case '[LocalStorageKey] RapidChargeCache':
-					return rapidChargeCache;
-				case '[LocalStorageKey] WifiSecurityCache':
-					return wifiSecurityFeatureCache;
-				case '[LocalStorageKey] SecurityWifiSecurityState':
-					return wifiSecurityStatusCache;
-				case '[LocalStorageKey] DolbyAudioToggleCache':
-					return dolbyAudioToggleCache;
-			}
-		},
-		setLocalStorageValue(key: any, value: any) {
-			switch (key) {
-				case '[LocalStorageKey] PrevThermalModeStatus':
-					prevThermalModeStatusCache = value;
-					break;
-				case '[LocalStorageKey] CurrentThermalModeStatus':
-					currentThermalModeStatusCache = value;
-					break;
-				case '[LocalStorageKey] RapidChargeCache':
-					rapidChargeCache = value;
-					break;
-				case '[LocalStorageKey] WifiSecurityCache':
-					wifiSecurityFeatureCache = value;
-					break;
-				case '[LocalStorageKey] SecurityWifiSecurityState':
-					wifiSecurityStatusCache = value;
-					break;
-				case '[LocalStorageKey] DolbyAudioToggleCache':
-					dolbyAudioToggleCache = value;
-					break;
-			}
-		},
 		getCapabalitiesNotification() {
 			const res = {
 				type: '[Gaming] GamingCapabilities',
@@ -106,6 +69,47 @@ describe('WidgetQuicksettingsListComponent', () => {
 			}
 		}
 	};
+
+	let localCacheServiceMock = {
+		getLocalCacheValue(key: any, defaultValue?: any) {
+			switch (key) {
+				case '[LocalStorageKey] PrevThermalModeStatus':
+					return prevThermalModeStatusCache;
+				case '[LocalStorageKey] CurrentThermalModeStatus':
+					return currentThermalModeStatusCache;
+				case '[LocalStorageKey] RapidChargeCache':
+					return rapidChargeCache;
+				case '[LocalStorageKey] WifiSecurityCache':
+					return wifiSecurityFeatureCache;
+				case '[LocalStorageKey] SecurityWifiSecurityState':
+					return wifiSecurityStatusCache;
+				case '[LocalStorageKey] DolbyAudioToggleCache':
+					return dolbyAudioToggleCache;
+			}
+		},
+		setLocalCacheValue(key: any, value: any) {
+			switch (key) {
+				case '[LocalStorageKey] PrevThermalModeStatus':
+					prevThermalModeStatusCache = value;
+					break;
+				case '[LocalStorageKey] CurrentThermalModeStatus':
+					currentThermalModeStatusCache = value;
+					break;
+				case '[LocalStorageKey] RapidChargeCache':
+					rapidChargeCache = value;
+					break;
+				case '[LocalStorageKey] WifiSecurityCache':
+					wifiSecurityFeatureCache = value;
+					break;
+				case '[LocalStorageKey] SecurityWifiSecurityState':
+					wifiSecurityStatusCache = value;
+					break;
+				case '[LocalStorageKey] DolbyAudioToggleCache':
+					dolbyAudioToggleCache = value;
+					break;
+			}
+		},
+	}
 
 	const GamingAllCapabilitiesServiceMock = {
 		isShellAvailable: true,
@@ -164,6 +168,7 @@ describe('WidgetQuicksettingsListComponent', () => {
 				providers: [
 					{ provide: VantageShellService, useValue: shellServiveSpy },
 					{ provide: CommonService, useValue: commonServiceMock },
+					{ provide: LocalCacheService, useValue: localCacheServiceMock},
 					{ provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock },
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceMock },
 					{ provide: WifiSecurityService, useValue: wifiSecurityServiceSpy },
@@ -355,6 +360,7 @@ describe('WidgetQuicksettingsListComponent', () => {
 				providers: [
 					{ provide: VantageShellService, useValue: shellServiveSpy },
 					{ provide: CommonService, useValue: commonServiceMock },
+					{ provide: LocalCacheService, useValue: localCacheServiceMock},
 					{ provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock },
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
 					{ provide: WifiSecurityService, useValue: wifiSecurityServiceSpy },
@@ -585,6 +591,7 @@ describe('WidgetQuicksettingsListComponent', () => {
 				providers: [
 					{ provide: VantageShellService, useValue: shellServiveSpy },
 					{ provide: CommonService, useValue: commonServiceMock },
+					{ provide: LocalCacheService, useValue: localCacheServiceMock},
 					{ provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock },
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
 					{ provide: WifiSecurityService, useValue: wifiSecurityServiceMock },
@@ -732,6 +739,7 @@ describe('WidgetQuicksettingsListComponent', () => {
 				providers: [
 					{ provide: VantageShellService, useValue: shellServiveSpy },
 					{ provide: CommonService, useValue: commonServiceMock },
+					{ provide: LocalCacheService, useValue: localCacheServiceMock},
 					{ provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock },
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
 					{ provide: WifiSecurityService, useValue: wifiSecurityServiceSpy },
@@ -1011,6 +1019,7 @@ describe('WidgetQuicksettingsListComponent', () => {
 				providers: [
 					{ provide: VantageShellService, useValue: shellServiveSpy },
 					{ provide: CommonService, useValue: commonServiceMock },
+					{ provide: LocalCacheService, useValue: localCacheServiceMock},
 					{ provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock },
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
 					{ provide: WifiSecurityService, useValue: wifiSecurityServiceSpy },
