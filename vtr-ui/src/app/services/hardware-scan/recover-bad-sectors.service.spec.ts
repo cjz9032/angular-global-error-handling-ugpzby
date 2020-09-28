@@ -6,7 +6,7 @@ import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.
 import { DevService } from '../dev/dev.service';
 import { RecoverBadSectorsService } from './recover-bad-sectors.service';
 
-fdescribe('RecoverBadSectorsService', () => {
+describe('RecoverBadSectorsService', () => {
 	let service: RecoverBadSectorsService;
 	const resultTitlePass = {
 		resultModule: HardwareScanTestResult.Pass,
@@ -40,7 +40,7 @@ fdescribe('RecoverBadSectorsService', () => {
 		expect(result).toEqual(HardwareScanTestResult[HardwareScanTestResult.Cancelled]);
 	});
 
-	fit('Validate openRecoverBadSectorsModal call', () => {
+	it('Validate openRecoverBadSectorsModal call', () => {
 		const spy = spyOn(service, 'openRecoverBadSectorsModal');
 
 		service.openRecoverBadSectorsModal();
