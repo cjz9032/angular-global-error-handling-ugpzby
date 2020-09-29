@@ -36,7 +36,7 @@ export class SecurityStatusService {
 	landingStatus: LandingView = {
 		status: 0,
 		fullyProtected: false,
-		percent: 0,
+		percent: 100,
 	};
 	pageToGo: string;
 	pluginSupport = true;
@@ -821,7 +821,7 @@ export class SecurityStatusService {
 		} else {
 			this.landingStatus.status = 0;
 			this.landingStatus.fullyProtected = false;
-			this.landingStatus.percent = 0;
+			this.landingStatus.percent = 100;
 		}
 		this.localCacheService.setLocalCacheValue(
 			LocalStorageKey.SecurityLandingLevel,
