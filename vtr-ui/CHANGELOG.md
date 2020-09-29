@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.16](https://bitbucket.tc.lenovo.com///compare/v1.8.15...v1.8.16) (2020-09-29)
+
+
+### Features
+
+* **NLS:** VAN-22396 update position c string ([34ae9e7](https://bitbucket.tc.lenovo.com///commit/34ae9e7b13445073f5369e5929546feabf5276fb))
+* **Security Advisor:** VAN-22332 update state card module ([4249be2](https://bitbucket.tc.lenovo.com///commit/4249be2b8ff1de44bacc0f19dcca0c8563ba2d5a))
+
+
+### Bug Fixes
+
+* **Material control:** VAN-22332 modify the component name of material ([9b93d45](https://bitbucket.tc.lenovo.com///commit/9b93d45496348706656aacf81846bd1ec5d49610))
+* **Rebase:** rebase develop ([b936747](https://bitbucket.tc.lenovo.com///commit/b93674715dda9e6330733e8023b37b6e9fdccc53))
+* **Refactor:** VAN-22332 @Input instead of docheck ([a912329](https://bitbucket.tc.lenovo.com///commit/a912329cbd1ae7e998c77ded4cd098745e3eea44))
+* **Refactor:** VAN-22332 update gradientcolor model and remove ut ([a3718ac](https://bitbucket.tc.lenovo.com///commit/a3718acc4ebb00881cb71b88572c4a8e95f2f666))
+* **security:** remove unused import ([f2ff572](https://bitbucket.tc.lenovo.com///commit/f2ff5725f84b925a9b2188964d0769e8f79cbb8f))
+* **security card:** VAN-22332 remove incorrect service ([00ed60b](https://bitbucket.tc.lenovo.com///commit/00ed60bde1f3a63d1884bd9e42b4b5c0763ffd61))
+
 ### [1.8.15](https://bitbucket.tc.lenovo.com///compare/v1.8.14...v1.8.15) (2020-09-27)
 
 ### [1.8.14](https://bitbucket.tc.lenovo.com///compare/v1.8.13...v1.8.14) (2020-09-25)
