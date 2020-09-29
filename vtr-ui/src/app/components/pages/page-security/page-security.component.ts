@@ -77,9 +77,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.isOnline = this.commonService.isOnline;
-		this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingLevel).then((data) => {
-			this.landingStatus = data;
-		});
+		this.landingStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingLevel);
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});

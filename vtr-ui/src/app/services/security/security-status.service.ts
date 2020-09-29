@@ -5,7 +5,6 @@ import * as phoenix from '@lenovo/tan-client-bridge';
 import { EventTypes, UAC } from '@lenovo/tan-client-bridge';
 
 import { AntivirusService } from './antivirus.service';
-import { CommonService } from '../common/common.service';
 import { DeviceService } from '../device/device.service';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { WindowsHelloService } from './windowsHello.service';
@@ -15,6 +14,7 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { AntivirusCommonData } from 'src/app/data-models/security-advisor/antivirus-common.data.model';
 import { toLower } from 'lodash';
+import { LocalCacheService } from '../local-cache/local-cache.service';
 
 
 @Injectable({
@@ -159,11 +159,11 @@ export class SecurityStatusService {
 
 	constructor(
 		private antivirusService: AntivirusService,
-		private commonService: CommonService,
 		private deviceService: DeviceService,
 		private hypSettings: HypothesisService,
 		private ngZone: NgZone,
 		private translate: TranslateService,
+		private localCacheService: LocalCacheService,
 		private vantageShellService: VantageShellService,
 		private windowsHelloService: WindowsHelloService
 	) {
@@ -251,13 +251,13 @@ export class SecurityStatusService {
 	}
 
 	setInitSecurityUI(trans: any) {
-		const whCacheStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingWindowsHelloFingerprintStatus);
-		const pmCacheStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityWindowsActiveStatus);
-		const uacCacheStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityUacStatus);
-		const vpnCacheStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityVPNStatus);
-		const wsCacheStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
-		const wsCacheShowOwn: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingWifiSecurityShowOwn, null);
-		const waCacheStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityWindowsActiveStatus);
+		const whCacheStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingWindowsHelloFingerprintStatus);
+		const pmCacheStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityWindowsActiveStatus);
+		const uacCacheStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityUacStatus);
+		const vpnCacheStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityVPNStatus);
+		const wsCacheStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityWifiSecurityState);
+		const wsCacheShowOwn = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingWifiSecurityShowOwn, null);
+		const waCacheStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityWindowsActiveStatus);
 
 		if (!this.avStatus.detail) {
 			this.avStatus.detail = trans['common.securityAdvisor.loading'];
@@ -403,8 +403,8 @@ export class SecurityStatusService {
 			});
 			this.isVpnSupported = true;
 		}
-		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
-		const cacheShowWifiSecurity = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity);
+		const cacheShowWindowsHello = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityShowWindowsHello);
+		const cacheShowWifiSecurity = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityShowWifiSecurity);
 		if (cacheShowWindowsHello) {
 			this.windowsHello.on(EventTypes.helloFingerPrintStatusEvent, (data) => {
 				this.setWindowsHelloStatus(data);
@@ -424,7 +424,7 @@ export class SecurityStatusService {
 		}
 		this.windowsHello.on(EventTypes.helloFingerPrintStatusEvent, (data) => {
 			if (this.windowsHelloService.showWindowsHello(this.windowsHello)) {
-				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, true);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityShowWindowsHello, true);
 				this.setWindowsHelloStatus(data);
 				this.isFingerPrintSupported = true;
 			} else {
@@ -435,7 +435,7 @@ export class SecurityStatusService {
 		this.updateStatus();
 		this.wifiSecurity.on(EventTypes.wsIsSupportWifiEvent, () => {
 			if (this.wifiSecurity.isSupported) {
-				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, true);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityShowWifiSecurity, true);
 				this.wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (data) => {
 					this.ngZone.run(() => {
 						this.setWiFiSecurityState(this.wifiSecurity.state, data);
@@ -496,14 +496,14 @@ export class SecurityStatusService {
 		}
 		this.waStatus.detail = this.translateString[`common.securityAdvisor.${status === 'enable' ? 'enabled' : 'disabled'}`];
 		this.waStatus.status = status === 'enable' ? 'enabled' : 'disabled';
-		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsActiveStatus, status);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityWindowsActiveStatus, status);
 	}
 
 	setPasswordManagerStatus(status: string) {
 		if (!this.translateString) {
 			return;
 		}
-		const cacheShowOwn: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingPasswordManagerShowOwn, null);
+		const cacheShowOwn: boolean = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingPasswordManagerShowOwn, null);
 		this.pmStatus.showOwn = cacheShowOwn ? cacheShowOwn : false;
 		switch (status) {
 			case 'installed':
@@ -518,7 +518,7 @@ export class SecurityStatusService {
 				this.pmStatus.status = 'not-installed';
 				this.pmStatus.detail = this.translateString['common.securityAdvisor.notInstalled'];
 		}
-		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus, status);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityPasswordManagerStatus, status);
 	}
 
 	setWindowsHelloStatus(finger: string) {
@@ -527,7 +527,7 @@ export class SecurityStatusService {
 		}
 		this.whStatus.detail = this.translateString[`common.securityAdvisor.${finger === 'active' ? 'enrolled' : 'notEnrolled'}`];
 		this.whStatus.status = finger === 'active' ? 'enabled' : 'disabled';
-		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingWindowsHelloFingerprintStatus, finger);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityLandingWindowsHelloFingerprintStatus, finger);
 	}
 
 	setUacStatus(status: string) {
@@ -536,14 +536,14 @@ export class SecurityStatusService {
 		}
 		this.uacStatus.detail = this.translateString[`common.securityAdvisor.${status === 'enable' ? 'enabled' : 'disabled'}`];
 		this.uacStatus.status = status === 'enable' ? 'enabled' : 'disabled';
-		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityUacStatus, status);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityUacStatus, status);
 	}
 
 	setWiFiSecurityState(state: string, location: any) {
 		if (!this.translateString) {
 			return;
 		}
-		const cacheShowOwn: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingWifiSecurityShowOwn, null);
+		const cacheShowOwn: boolean = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingWifiSecurityShowOwn, null);
 		this.wfStatus.showOwn = cacheShowOwn ? cacheShowOwn : false;
 		if (location) {
 			this.wfStatus.status = state === 'enabled' ? 'enabled' : 'disabled';
@@ -553,7 +553,7 @@ export class SecurityStatusService {
 			this.wfStatus.detail = this.translateString['common.securityAdvisor.disabled'];
 		}
 		if (state) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, state);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityWifiSecurityState, state);
 		}
 	}
 
@@ -561,7 +561,7 @@ export class SecurityStatusService {
 		if (!this.translateString) {
 			return;
 		}
-		const cacheShowOwn: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingVPNShowOwn, null);
+		const cacheShowOwn: boolean = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingVPNShowOwn, null);
 		this.vpnStatus.showOwn = cacheShowOwn ? cacheShowOwn : false;
 		switch (status) {
 			case 'installed':
@@ -577,7 +577,7 @@ export class SecurityStatusService {
 				this.vpnStatus.detail = this.translateString['common.securityAdvisor.notInstalled'];
 		}
 
-		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityVPNStatus, status);
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityVPNStatus, status);
 	}
 
 	waitTimeout(type: string) {
@@ -823,7 +823,7 @@ export class SecurityStatusService {
 			this.landingStatus.fullyProtected = false;
 			this.landingStatus.percent = 0;
 		}
-		this.commonService.setLocalStorageValue(
+		this.localCacheService.setLocalCacheValue(
 			LocalStorageKey.SecurityLandingLevel,
 			this.landingStatus
 		);
