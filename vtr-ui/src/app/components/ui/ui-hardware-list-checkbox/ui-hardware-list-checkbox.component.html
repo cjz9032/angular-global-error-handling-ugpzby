@@ -4,7 +4,6 @@
 			<li id="{{ componentId }}-list-item-{{ id }}" class="list-group-item" *ngFor="let device of devices; let id = index">
 				<div class="row">
 					<vtr-ui-checkbox
-						#checkbox
 						[id]="componentId + '-list-item-' + id + '-checkbox'"
 						[componentId]="componentId + '-list-item-' + id"
 						[ariaLabel]="'hardwareScan.pluginTokens.' + device.title | translateDefault:device.title"
@@ -28,6 +27,7 @@
 					linkId="{{ componentId }}-select-all-link"
 					hyperlinkStyle="xs-300-blue-lighter"
 					class="hyperlink-container"
+					[metricsParent]="'HardwareScan'"
 					(hyperlinkClick)="onSelectAllDevices()"
 					[label]=" 'hardwareScan.select' | translate "
 					[disableTooltip]="true"
@@ -36,6 +36,7 @@
 				<vtr-ui-hyperlink-button
 					linkId="{{ componentId }}-deselect-all-link"
 					hyperlinkStyle="xs-300-blue-lighter"
+					[metricsParent]="'HardwareScan'"
 					(hyperlinkClick)="onDeselectAllDevices()"
 					[label]=" 'hardwareScan.deselect' | translate "
 					[disableTooltip]="true">
