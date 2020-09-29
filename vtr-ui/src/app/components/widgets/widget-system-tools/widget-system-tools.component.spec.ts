@@ -15,7 +15,7 @@ import { WidgetSystemToolsComponent } from './widget-system-tools.component';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
-import { HardwareScanService } from 'src/app/services/hardware-scan/hardware-scan.service';
+import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
 import { GamingAccessoryService } from 'src/app/services/gaming/gaming-accessory/gaming-accessory.service';
 
 @Component({ selector: 'vtr-modal-gaming-prompt', template: '' })

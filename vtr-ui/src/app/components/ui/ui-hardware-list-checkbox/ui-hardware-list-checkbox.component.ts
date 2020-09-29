@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { HardwareScanService } from '../../../services/hardware-scan/hardware-scan.service';
+import { HardwareScanService } from '../../../modules/hardware-scan/services/hardware-scan.service';
 @Component({
 	selector: 'vtr-ui-hardware-list-checkbox',
 	templateUrl: './ui-hardware-list-checkbox.component.html',

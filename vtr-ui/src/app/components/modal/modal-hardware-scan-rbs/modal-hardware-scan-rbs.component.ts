@@ -1,7 +1,7 @@
 import { Component, Output, EventEmitter, OnDestroy, OnInit } from '@angular/core';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
-import { HardwareScanService } from 'src/app/services/hardware-scan/hardware-scan.service';
+import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
 import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.enum';
 import { ModalRecoverConfirmComponent } from '../modal-recover-confirm/modal-recover-confirm.component';
 

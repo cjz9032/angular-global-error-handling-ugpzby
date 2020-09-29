@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DeviceService } from 'src/app/services/device/device.service';
-import { HardwareScanService } from '../../../services/hardware-scan/hardware-scan.service';
+import { HardwareScanService } from '../../../modules/hardware-scan/services/hardware-scan.service';
 
 
 @Component({
@@ -31,7 +31,7 @@ export class UiListScheduledScanComponent implements OnInit {
 	// private tooltip: NgbTooltip;
 
 	constructor(
-		public modalService: NgbModal, 
+		public modalService: NgbModal,
 		private deviceService: DeviceService,
 		private hardwareScanService: HardwareScanService
 	) {}

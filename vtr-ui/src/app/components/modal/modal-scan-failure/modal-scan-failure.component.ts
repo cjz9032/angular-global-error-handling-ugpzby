@@ -1,12 +1,12 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.enum';
-import { disableBackgroundNavigation, reEnableBackgroundNavigation } from '../../../services/hardware-scan/utils/ModalBackgroundNavigationUtils';
-import { HardwareScanService } from 'src/app/services/hardware-scan/hardware-scan.service';
+import { disableBackgroundNavigation, reEnableBackgroundNavigation } from '../../../modules/hardware-scan/services/utils/ModalBackgroundNavigationUtils';
+import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { HardwareScanProgress } from 'src/app/enums/hw-scan-progress.enum';
 import { Router } from '@angular/router';
-import { RecoverBadSectorsService } from 'src/app/services/hardware-scan/recover-bad-sectors.service';
+import { RecoverBadSectorsService } from 'src/app/modules/hardware-scan/services/recover-bad-sectors.service';
 
 @Component({
 	selector: 'vtr-modal-scan-failure',

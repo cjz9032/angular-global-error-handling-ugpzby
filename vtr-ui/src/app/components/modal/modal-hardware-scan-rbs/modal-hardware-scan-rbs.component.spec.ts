@@ -5,7 +5,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule } from '@ngx-translate/core';
 import { HttpClientModule } from '@angular/common/http';
 import { DevService } from 'src/app/services/dev/dev.service';
-import { HardwareScanService } from 'src/app/services/hardware-scan/hardware-scan.service';
+import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
 
 describe('ModalHardwareScanRbsComponent', () => {
 	let hwScanService: HardwareScanService;

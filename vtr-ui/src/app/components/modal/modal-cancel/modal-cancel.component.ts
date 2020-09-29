@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, Output, EventEmitter, Input, ViewChildren, ElementRef, AfterViewInit, QueryList } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { disableBackgroundNavigation, reEnableBackgroundNavigation } from '../../../services/hardware-scan/utils/ModalBackgroundNavigationUtils';
+import { disableBackgroundNavigation, reEnableBackgroundNavigation } from '../../../modules/hardware-scan/services/utils/ModalBackgroundNavigationUtils';
 
 @Component({
 	selector: 'vtr-modal-cancel',

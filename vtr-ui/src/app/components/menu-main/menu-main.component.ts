@@ -20,7 +20,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { FeedbackService } from 'src/app/services/feedback/feedback.service';
-import { HardwareScanService } from 'src/app/services/hardware-scan/hardware-scan.service';
+import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { LanguageService } from 'src/app/services/language/language.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';

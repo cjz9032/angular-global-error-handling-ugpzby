@@ -5,7 +5,7 @@ import { DeviceService } from 'src/app/services/device/device.service';
 import { TranslateService } from '@ngx-translate/core';
 import { ModalScheduleNewScanComponent } from '../../modal/modal-schedule-new-scan/modal-schedule-new-scan.component';
 import { ModalPreScanInfoComponent } from '../../modal/modal-pre-scan-info/modal-pre-scan-info.component';
-import { HardwareScanService } from '../../../services/hardware-scan/hardware-scan.service';
+import { HardwareScanService } from '../../../modules/hardware-scan/services/hardware-scan.service';
 
 @Component({
 	selector: 'vtr-widget-schedule-scan',
@@ -295,7 +295,7 @@ export class WidgetScheduleScanComponent implements OnInit {
 				ampm = this.translate.instant('hardwareScan.pm');
 			}else{
 				ampm = this.translate.instant('hardwareScan.am');
-			}	
+			}
 		}
 
 		return hours + ':' + minute + ' ' + ampm;

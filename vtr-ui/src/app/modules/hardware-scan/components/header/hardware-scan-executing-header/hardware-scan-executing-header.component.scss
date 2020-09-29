@@ -1,0 +1,100 @@
+@import "../../../../../app.theme";
+
+.title {
+	color: $light;
+	font-size: $fontsize_xl;
+	font-weight: $weight_600;
+	padding: 2.4rem 2.4rem 0.5rem;
+}
+.row1 {
+	color: $light;
+	font-size: $fontsize_xs;
+	line-height: 2.1rem;
+	padding:0rem 2.4rem// updated as per new specs
+}
+
+.progress-div {
+	align-items: flex-end;
+	padding:0rem 2.4rem;
+	.progress-percent-text {
+		color: $light;
+		font-size: $fontsize_xl;
+		font-weight: $weight_light;
+		line-height: 2.9rem;
+		display: inline-flex;
+		text-align: right;
+		.progress-value-text {
+			color: $light;
+			font-weight: $weight_light;
+			margin-bottom: 0.5rem;
+			line-height: 2.9rem;
+			padding-right: 0rem;
+			padding-left: 0rem;
+			text-align: left;
+			font-size: 3rem;
+		}
+		.progress-complete-text {
+			overflow: hidden; // Use to fix high contrast background
+			margin-bottom: 0rem;
+			align-self: flex-end;
+			color: $light;
+			font-size: $fontsize_xs;
+			font-weight: $weight_light;
+			line-height: 2.9rem;
+			padding-right: 1rem;
+			padding-left: 0;
+			text-align: left;
+		}
+	}
+}
+
+.cancel-check {
+	display: flex;
+	justify-content: center;
+	padding-top: 0.5rem;
+}
+
+.hwscan-header {
+	padding-bottom: 2.5rem;
+}
+
+@mixin dots($color) {
+	animation: dots 2s steps(5, end) infinite;
+
+	@keyframes dots {
+		0%, 20% {
+			color: rgba(0,0,0,0);
+			text-shadow:
+				.25em 0 0 rgba(0,0,0,0),
+				.5em 0 0 rgba(0,0,0,0);
+		}
+		40% {
+			color: $color;
+			text-shadow:
+				.25em 0 0 rgba(0,0,0,0),
+				.5em 0 0 rgba(0,0,0,0);
+		}
+		60% {
+			text-shadow:
+				.25em 0 0 $color,
+				.5em 0 0 rgba(0,0,0,0);
+		}
+		80%, 100% {
+			text-shadow:
+				.25em 0 0 $color,
+				.5em 0 0 $color;
+		}
+	}
+}
+
+.animated-dots:after {
+	content: '. ';
+
+	// Used when high contrast is not active or is white-on-black
+	@include dots($light);
+
+	@media #{$black-on-white} {
+		@include dots($dark);
+	}
+}
+
