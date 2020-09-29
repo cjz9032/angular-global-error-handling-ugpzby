@@ -8,9 +8,9 @@ import { disableBackgroundNavigation, reEnableBackgroundNavigation } from '../..
 	styleUrls: ['./modal-recover-confirm.component.scss']
 })
 export class ModalRecoverConfirmComponent implements OnInit, OnDestroy {
-	@Input() ItemParent: string;
-	@Input() CancelItemName: string;
-	@Input() ConfirmItemName: string;
+	@Input() ItemParent = 'HardwareScan.ConfirmRecoverBadSectors';
+	@Input() CancelItemName = 'ConfirmRecoverBadSectors.Close';
+	@Input() ConfirmItemName = 'ConfirmRecoverBadSectors.Confirm';
 
 	@Output() confirmClicked: EventEmitter<any> = new EventEmitter();
 
