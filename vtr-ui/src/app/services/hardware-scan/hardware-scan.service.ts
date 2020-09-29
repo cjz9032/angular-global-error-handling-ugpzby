@@ -33,8 +33,8 @@ export class HardwareScanService {
 		this.doPriorityRequests();
 	}
 
-	// This name must be the same used in the Hyphothesis config file (HyphotesisGroup.xml).
-	private static readonly HARDWARE_SCAN_HYPHOTESIS_CONFIG_NAME: string = 'HardwareScan';
+	// This name must be the same used in the Hypothesis config file (HypothesisGroup.xml).
+	private static readonly HARDWARE_SCAN_HYPOTHESIS_CONFIG_NAME: string = 'HardwareScan';
 
 	private hardwareScanBridge: any;
 	private modulesRetrieved: any; // modules retrieve from get items [object from ItemToScanResponse]
@@ -119,7 +119,7 @@ export class HardwareScanService {
 	private doPriorityRequests() {
 		// Check whether HardwareScan is available in Hypothesis Service or not
 		if (this.hypSettingsPromise === undefined) {
-			this.hypSettingsPromise = this.hypSettings.getFeatureSetting(HardwareScanService.HARDWARE_SCAN_HYPHOTESIS_CONFIG_NAME);
+			this.hypSettingsPromise = this.hypSettings.getFeatureSetting(HardwareScanService.HARDWARE_SCAN_HYPOTHESIS_CONFIG_NAME);
 
 			// If HardwareScan is available, dispatch the priority requests
 			this.isAvailable().then(async (available) => {
@@ -516,7 +516,7 @@ export class HardwareScanService {
 						this.lastResponse = response;
 						return response;
 					} else {
-						throw new Error('Scan incompleted!');
+						throw new Error('Scan incomplete!');
 					}
 				}).catch((ex: any) => {
 					if (ex !== null) {
@@ -594,19 +594,6 @@ export class HardwareScanService {
 		}
 		return undefined;
 	}
-
-	// private updateStatusOfTests(doScanResponse: any) {
-	// 	for (const response of doScanResponse.responses) {
-	// 		for (const group of response.groupResults) {
-	// 			for (const test of group.testResultList) {
-	// 				if (test.result === HardwareScanOverallResult.Incomplete) {
-	// 					test.percentageComplete = 100;
-	// 					test.result = HardwareScanOverallResult.Cancelled;
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-	// }
 
 	public getRecoverBadSectors(payload) {
 		this.disableCancel = true;
@@ -782,15 +769,6 @@ export class HardwareScanService {
 		return quickScanResponse;
 	}
 
-	// private checkItemsForRecoverBadSectors() {
-	// 	if (this.hardwareScanBridge) {
-	// 		return this.hardwareScanBridge.checkItemsForRecoverBadSectors()
-	// 			.then((response) => {
-	// 				return response;
-	// 			});
-	// 	}
-	// }
-
 	private cleanSelectedCustomTests() {
 		for (const customScanModulesItem of this.customScanModules) {
 			customScanModulesItem.selected = false;
@@ -804,8 +782,6 @@ export class HardwareScanService {
 
 	private loadCustomModal() {
 		this.customScanModules = [];
-		// console.log('[loadCustomModal] this.customScanRequest: ', this.customScanRequest);
-		// console.log('[loadCustomModal] this.customScanResponse: ', this.customScanResponse);
 		let modalModuleId = 0;
 
 		for (const customScanResponseItem of this.customScanResponse) {
@@ -829,13 +805,10 @@ export class HardwareScanService {
 				};
 
 				const currentModule = this.customScanRequest.find(x => x.moduleId === module.moduleId);
-				// console.log('[loadCustomModel]: currentModule', currentModule);
 
 				const groupId = customScanResponseItem.groupId;
-				// console.log('[loadCustomModel]: groupId', groupId);
 				test.test = currentModule.testRequestList.find(x => x.id === test.id && x.groupId === groupId);
 
-				// console.log('[loadCustomModel]: test', test);
 				module.tests.push(test);
 			}
 
@@ -927,30 +900,6 @@ export class HardwareScanService {
 
 		return moduleList;
 	}
-
-	// private updateCustomScanRequest(quickScanRequest: any) {
-	// 	if (quickScanRequest !== undefined) {
-	// 		for (let i = 0; i < quickScanRequest.length; i++) {
-	// 			const testListReverse = quickScanRequest[i].testRequestList.reverse();
-	// 			for (const test of testListReverse) {
-	// 				this.customScanRequest[i].testRequestList.unshift(test);
-	// 			}
-	// 		}
-	// 	}
-	// }
-
-	// private updateCustomScanResponse(quickScanModules: any) {
-	// 	console.log('[Start] Update custom scan modules response');
-	// 	if (quickScanModules !== undefined) {
-	// 		for (let i = 0; i < quickScanModules.length; i++) {
-	// 			const testListReverse = quickScanModules[i].listTest.reverse();
-	// 			for (const test of testListReverse) {
-	// 				this.customScanResponse[i].listTest.unshift(test);
-	// 			}
-	// 		}
-	// 	}
-	// 	console.log('[End] Update custom scan modules response');
-	// }
 
 	private updateProgress(response: any) {
 		let totalTests = 0;
