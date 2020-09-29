@@ -835,7 +835,8 @@
             "to": "pour",
             "clickToChange": "cliquez pour modifier",
             "failedLoad": "Echec du chargement.",
-            "retry": "Réess."
+            "retry": "Réess.",
+            "improveNow": "améliorer maintenant"
         },
         "app-update": {
             "message": "Bonjour, Une version plus récente de Vantage est disponible. Voulez-vous la télécharger ?"
@@ -961,6 +962,13 @@
         "systemUpdate": {
             "subtitle": "Mettez à jour vos pilotes, BIOS et logiciels.",
             "checkForSystemUpdates": "Rechercher les mises à jour du système"
+        },
+        "securityStatus": {
+            "loadingDesc": "Détection des informations de sécurité en cours…",
+            "noProtectionDesc": "Votre périphérique n'est pas doté de protection de sécurité",
+            "basicDesc": "Votre périphérique n'est que partiellement protégé",
+            "intermediateDesc": "Seule la protection de sécurité intermédiaire est activée sur votre ordinateur.",
+            "advancedDesc": "La protection de sécurité avancée est activée sur votre ordinateur."
         },
         "heroBanner": "Bannière héros"
     },

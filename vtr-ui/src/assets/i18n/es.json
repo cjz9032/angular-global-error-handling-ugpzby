@@ -835,7 +835,8 @@
             "to": "en",
             "clickToChange": "haga clic para cambiar",
             "failedLoad": "Error al cargar.",
-            "retry": "Reint."
+            "retry": "Reint.",
+            "improveNow": "mejorar ahora"
         },
         "app-update": {
             "message": "¡Ey! Hay disponible una versión más reciente de Vantage, ¿desea cargarla?"
@@ -961,6 +962,13 @@
         "systemUpdate": {
             "subtitle": "Actualice sus controladores, BIOS y otro software.",
             "checkForSystemUpdates": "Compruebe si hay actualizaciones del sistema"
+        },
+        "securityStatus": {
+            "loadingDesc": "Detectando información de seguridad...",
+            "noProtectionDesc": "Su dispositivo no tiene protección de seguridad",
+            "basicDesc": "El dispositivo no está totalmente protegido aún",
+            "intermediateDesc": "El equipo tiene activada la protección intermedia de seguridad",
+            "advancedDesc": "El equipo tiene activada la protección avanzada de seguridad"
         },
         "heroBanner": "Cabecera de héroe"
     },

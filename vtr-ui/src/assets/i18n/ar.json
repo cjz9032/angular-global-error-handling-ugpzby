@@ -837,7 +837,8 @@
             "to": "الى",
             "clickToChange": "انقر للتغيير",
             "failedLoad": "تعذّر التحميل.",
-            "retry": "أعد المحاولة"
+            "retry": "أعد المحاولة",
+            "improveNow": "تحسين الآن"
         },
         "app-update": {
             "message": "مرحبا! يتوفر إصدار أحدث من Vantage، هل تريد تحميله؟"
@@ -963,6 +964,13 @@
         "systemUpdate": {
             "subtitle": "تحديث برامج التشغيل ونظام BIOS وبرامج أخرى.",
             "checkForSystemUpdates": "التحقق من وجود تحديثات النظام"
+        },
+        "securityStatus": {
+            "loadingDesc": "جارٍ اكتشاف معلومات الأمان الآن...",
+            "noProtectionDesc": "جهازك لا يتضمن أي حماية للأمان",
+            "basicDesc": "جهازك ليس محميًا بالكامل حتى الآن",
+            "intermediateDesc": "تم تمكين حماية أمان متوسطة على جهازك",
+            "advancedDesc": "تم تمكين حماية أمان متقدمة على جهازك"
         },
         "heroBanner": "بانر Hero"
     },

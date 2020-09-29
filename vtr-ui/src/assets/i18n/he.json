@@ -835,7 +835,8 @@
             "to": "בשורה",
             "clickToChange": "לחצו כדי לשנות",
             "failedLoad": "הטעינה נכשלה.",
-            "retry": "נסו שוב"
+            "retry": "נסו שוב",
+            "improveNow": "שפרו כעת"
         },
         "app-update": {
             "message": "היי! יש גרסה חדשה יותר של Vantage, האם ברצונכם לטעון אותה?"
@@ -961,6 +962,13 @@
         "systemUpdate": {
             "subtitle": "עדכן את מנהלי התקנים, ה-BIOS ותוכנות אחרות.",
             "checkForSystemUpdates": "בדוק אם קיימים עדכוני מערכת"
+        },
+        "securityStatus": {
+            "loadingDesc": "מזהה פרטי אבטחה עכשיו…",
+            "noProtectionDesc": "למכשיר אין הגנת אבטחה",
+            "basicDesc": "המכשיר עדיין לא מוגן לחלוטין",
+            "intermediateDesc": "במחשב שלכם מופעלת הגנת אבטחה בינונית",
+            "advancedDesc": "במחשב שלכם מופעלת הגנת אבטחה מתקדמת"
         },
         "heroBanner": "כרזת Hero"
     },

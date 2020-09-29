@@ -835,7 +835,8 @@
             "to": "->",
             "clickToChange": "değiştirmek için tıklatın",
             "failedLoad": "Yüklenemedi.",
-            "retry": "Yeniden Dene"
+            "retry": "Yeniden Dene",
+            "improveNow": "şimdi iyileştir"
         },
         "app-update": {
             "message": "Merhaba! Vantage'ın daha yeni bir sürümü var, yüklemek ister misiniz?"
@@ -961,6 +962,13 @@
         "systemUpdate": {
             "subtitle": "Sürücülerinizi, BIOS'u ve diğer yazılımları güncelleyin.",
             "checkForSystemUpdates": "Sistem güncellemelerini denetle"
+        },
+        "securityStatus": {
+            "loadingDesc": "Şimdi güvenlik bilgileri algılanıyor...",
+            "noProtectionDesc": "Cihazınızın güvenlik koruması yok",
+            "basicDesc": "Cihazınız henüz tam olarak korunmuyor",
+            "intermediateDesc": "Bilgisayarınızda orta düzey güvenlik koruması etkin",
+            "advancedDesc": "Bilgisayarınızda gelişmiş güvenlik koruması etkin"
         },
         "heroBanner": "Ana manşet"
     },

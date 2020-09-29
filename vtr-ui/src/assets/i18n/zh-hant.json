@@ -835,7 +835,8 @@
             "to": "至",
             "clickToChange": "按一下以變更",
             "failedLoad": "無法載入。",
-            "retry": "重試"
+            "retry": "重試",
+            "improveNow": "立即改善"
         },
         "app-update": {
             "message": "嘿！已有更新版的 Vantage，您要載入嗎？"
@@ -961,6 +962,13 @@
         "systemUpdate": {
             "subtitle": "更新您的驅動程式、BIOS 及其他軟體。",
             "checkForSystemUpdates": "檢查系統更新"
+        },
+        "securityStatus": {
+            "loadingDesc": "正在偵測安全資訊...",
+            "noProtectionDesc": "您的裝置沒有安全保護",
+            "basicDesc": "您的裝置尚未受到完整保護",
+            "intermediateDesc": "您的電腦已啟用中級的安全保護",
+            "advancedDesc": "您的電腦已啟用進階的安全保護"
         },
         "heroBanner": "首頁橫幅"
     },

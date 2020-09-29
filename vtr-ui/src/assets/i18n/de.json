@@ -835,7 +835,8 @@
             "to": "nach",
             "clickToChange": "zum Ändern klicken",
             "failedLoad": "Fehler beim Laden.",
-            "retry": "Wiederholen"
+            "retry": "Wiederholen",
+            "improveNow": "jetzt verbessern"
         },
         "app-update": {
             "message": "Hallo! Es ist eine neuere Version von Vantage verfügbar. Möchten Sie sie herunterladen?"
@@ -961,6 +962,13 @@
         "systemUpdate": {
             "subtitle": "Aktualisieren Sie Ihre Treiber, das BIOS und weitere Software.",
             "checkForSystemUpdates": "Nach Systemaktualisierungen suchen"
+        },
+        "securityStatus": {
+            "loadingDesc": "Sicherheitsinformationen werden ermittelt …",
+            "noProtectionDesc": "Ihre Einheit hat keinen Sicherheitsschutz",
+            "basicDesc": "Ihre Einheit ist noch nicht vollständig geschützt",
+            "intermediateDesc": "Auf Ihrem Computer ist der mittlere Sicherheitsschutz aktiviert",
+            "advancedDesc": "Auf Ihrem Computer ist der erweiterte Sicherheitsschutz aktiviert"
         },
         "heroBanner": "Hero-Banner"
     },

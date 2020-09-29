@@ -835,7 +835,8 @@
             "to": "～",
             "clickToChange": "クリックして変更",
             "failedLoad": "ロードに失敗しました。",
-            "retry": "再試行"
+            "retry": "再試行",
+            "improveNow": "今改善する"
         },
         "app-update": {
             "message": "お知らせがあります。新しいバージョンの Vantage が利用可能です。ロードしますか?"
@@ -961,6 +962,13 @@
         "systemUpdate": {
             "subtitle": "ドライバー、BIOS、およびソフトウェアを更新します。",
             "checkForSystemUpdates": "システム更新を確認"
+        },
+        "securityStatus": {
+            "loadingDesc": "セキュリティ情報を検出しています...",
+            "noProtectionDesc": "お使いのデバイスにセキュリティー保護がありません",
+            "basicDesc": "お使いのデバイスはまだ完全に保護されていません",
+            "intermediateDesc": "コンピューターでは、中間的なセキュリティー保護が有効になっています",
+            "advancedDesc": "お使いのコンピューターでは、高度なセキュリティー保護が有効になっています"
         },
         "heroBanner": "ヒーローバナー"
     },

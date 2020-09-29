@@ -835,7 +835,8 @@
             "to": "do",
             "clickToChange": "kliknite, če želite spremeniti",
             "failedLoad": "Nalaganje ni uspelo.",
-            "retry": "Znova poskusi"
+            "retry": "Znova poskusi",
+            "improveNow": "Izboljšati zdaj"
         },
         "app-update": {
             "message": "Živijo! Na voljo je novejša različica aplikacije Vantage, jo želite naložiti?"
@@ -961,6 +962,13 @@
         "systemUpdate": {
             "subtitle": "Posodobite gonilnike, BIOS in drugo programsko opremo.",
             "checkForSystemUpdates": "Preveri, ali so na voljo sistemske posodobitve"
+        },
+        "securityStatus": {
+            "loadingDesc": "Zaznavanje podatkov o varnosti ...",
+            "noProtectionDesc": "Vaša naprava nima varnostne zaščite",
+            "basicDesc": "Vaša naprava še ni popolnoma zaščitena",
+            "intermediateDesc": "Vaš računalnik ima omogočeno srednjo varnostno zaščito",
+            "advancedDesc": "Vaš računalnik ima omogočeno napredno varnostno zaščito"
         },
         "heroBanner": "Pasica junaka"
     },

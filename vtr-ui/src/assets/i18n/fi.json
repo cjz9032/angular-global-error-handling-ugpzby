@@ -835,7 +835,8 @@
             "to": "kohteeseen",
             "clickToChange": "muuta napsauttamalla tätä",
             "failedLoad": "Lataus epäonnistui.",
-            "retry": "Yritä uudelleen"
+            "retry": "Yritä uudelleen",
+            "improveNow": "paranna nyt"
         },
         "app-update": {
             "message": "Hei! Vantage on saatavilla uudempi versio. Haluatko ladata sen?"
@@ -961,6 +962,13 @@
         "systemUpdate": {
             "subtitle": "Päivitä ajurisi, BIOS ja muut ohjelmistosi.",
             "checkForSystemUpdates": "Tarkista järjestelmäpäivitysten saatavuus"
+        },
+        "securityStatus": {
+            "loadingDesc": "Etsitään suojaustietoja…",
+            "noProtectionDesc": "Laitettasi ei suojattu",
+            "basicDesc": "Laitteesi ei ole vielä täysin suojattu",
+            "intermediateDesc": "Tietokoneessasi on käytössä keskitason suojaus",
+            "advancedDesc": "Tietokoneessasi on käytössä edistynyt suojaus"
         },
         "heroBanner": "Pääbanneri"
     },

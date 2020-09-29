@@ -835,7 +835,8 @@
             "to": "změňte na",
             "clickToChange": "kliknutím upravte",
             "failedLoad": "Načtení selhalo.",
-            "retry": "Opakovat"
+            "retry": "Opakovat",
+            "improveNow": "vylepšit nyní"
         },
         "app-update": {
             "message": "Ahoj! K dispozici je novější verze aplikace Vantage, chcete ji načíst?"
@@ -961,6 +962,13 @@
         "systemUpdate": {
             "subtitle": "Aktualizace ovladačů, systému BIOS a dalšího softwaru.",
             "checkForSystemUpdates": "Vyhledat aktualizace systému"
+        },
+        "securityStatus": {
+            "loadingDesc": "Zjišťování informací ohledně zabezpečení...",
+            "noProtectionDesc": "Vaše zařízení nemá žádné zabezpečení",
+            "basicDesc": "Vaše zařízení zatím není plně chráněno",
+            "intermediateDesc": "Zařízení má povoleno středně pokročilé zabezpečení",
+            "advancedDesc": "Zařízení má povoleno rozšířené zabezpečení"
         },
         "heroBanner": "Hlavní banner"
     },
