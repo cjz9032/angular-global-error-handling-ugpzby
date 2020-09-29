@@ -23,7 +23,8 @@
 							"inversify",
 							"uuid",
 							"crypto-js",
-							"hammerjs"
+							"hammerjs",
+							"util"
 						 ],
 						"customWebpackConfig": {
 							"path": "./custom-webpack.config.js"
