@@ -835,7 +835,8 @@
             "to": "till",
             "clickToChange": "klicka för att ändra",
             "failedLoad": "Det gick inte att läsa in.",
-            "retry": "Försök igen"
+            "retry": "Försök igen",
+            "improveNow": "förbättra nu"
         },
         "app-update": {
             "message": "Hej! Det finns en nyare version av Vantage. Vill du läsa in den?"
@@ -961,6 +962,13 @@
         "systemUpdate": {
             "subtitle": "Uppdatera drivrutiner, BIOS och annan programvara.",
             "checkForSystemUpdates": "Sök efter systemuppdateringar"
+        },
+        "securityStatus": {
+            "loadingDesc": "Identifierar säkerhetsinformation nu …",
+            "noProtectionDesc": "Enheten har inget säkerhetsskydd",
+            "basicDesc": "Enheten är inte fullständigt skyddad ännu",
+            "intermediateDesc": "Datorn har medelstarkt säkerhetsskydd aktiverat",
+            "advancedDesc": "Datorn har avancerat säkerhetsskydd aktiverat"
         },
         "heroBanner": "Huvudbanner"
     },

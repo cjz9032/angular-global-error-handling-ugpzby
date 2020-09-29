@@ -835,7 +835,8 @@
             "to": "cu",
             "clickToChange": "faceţi clic pentru a schimba",
             "failedLoad": "Încărcarea nu a reușit.",
-            "retry": "Reîncercați"
+            "retry": "Reîncercați",
+            "improveNow": "îmbunătățiți acum"
         },
         "app-update": {
             "message": "Bună ziua! Este disponibilă o versiune mai nouă de Vantage, doriți să o încărcați?"
@@ -961,6 +962,13 @@
         "systemUpdate": {
             "subtitle": "Actualizați-vă driverele, BIOS-ul și alte software-uri.",
             "checkForSystemUpdates": "Căutați actualizări de sistem"
+        },
+        "securityStatus": {
+            "loadingDesc": "Se detectează informațiile despre securitate acum…",
+            "noProtectionDesc": "Dispozitivul dvs. nu are protecție de securitate",
+            "basicDesc": "Dispozitivul dvs. nu este încă complet protejat",
+            "intermediateDesc": "Computerul dvs. are activată protecția de securitate intermediară",
+            "advancedDesc": "Computerul dvs. are activată protecția de securitate avansată"
         },
         "heroBanner": "Banner principal"
     },

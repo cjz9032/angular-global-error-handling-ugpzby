@@ -835,7 +835,8 @@
             "to": "到",
             "clickToChange": "单击以更改",
             "failedLoad": "未能加载。",
-            "retry": "重试"
+            "retry": "重试",
+            "improveNow": "立即改进"
         },
         "app-update": {
             "message": "您好！已有较新版本的 Vantage，您要加载吗？"
@@ -961,6 +962,13 @@
         "systemUpdate": {
             "subtitle": "更新驱动程序、BIOS 和其他软件。",
             "checkForSystemUpdates": "检查系统更新"
+        },
+        "securityStatus": {
+            "loadingDesc": "正在检测安全信息…",
+            "noProtectionDesc": "您的设备没有安全保护",
+            "basicDesc": "您的设备尚未受到完全保护",
+            "intermediateDesc": "您的计算机已启用中级安全保护",
+            "advancedDesc": "您的计算机已启用高级安全保护"
         },
         "heroBanner": "首页横幅"
     },

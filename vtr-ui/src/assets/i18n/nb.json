@@ -835,7 +835,8 @@
             "to": "til",
             "clickToChange": "klikk for å endre",
             "failedLoad": "Kunne ikke lastes inn.",
-            "retry": "Prøv igjen"
+            "retry": "Prøv igjen",
+            "improveNow": "forbedre nå"
         },
         "app-update": {
             "message": "Hei! Det finnes en nyere versjon av Vantage, vil du laste den?"
@@ -961,6 +962,13 @@
         "systemUpdate": {
             "subtitle": "Oppdater drivere, BIOS og annen programvare.",
             "checkForSystemUpdates": "Se etter systemoppdateringer"
+        },
+        "securityStatus": {
+            "loadingDesc": "Oppdager sikkerhetsinformasjon nå …",
+            "noProtectionDesc": "Enheten har ingen sikkerhetsbeskyttelse",
+            "basicDesc": "Enheten er ikke helt beskyttet ennå",
+            "intermediateDesc": "Datamaskinen din har midlertidig sikkerhetsbeskyttelse aktivert",
+            "advancedDesc": "Datamaskinen din har avansert sikkerhetsbeskyttelse aktivert"
         },
         "heroBanner": "Hero-banner"
     },

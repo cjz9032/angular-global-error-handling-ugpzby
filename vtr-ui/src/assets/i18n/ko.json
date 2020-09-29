@@ -835,7 +835,8 @@
             "to": "백업 위치 지정",
             "clickToChange": "클릭하여 변경",
             "failedLoad": "로드에 실패했습니다.",
-            "retry": "다시 시도"
+            "retry": "다시 시도",
+            "improveNow": "지금 개선하기"
         },
         "app-update": {
             "message": "앗! 새 버전의 Vantage를 사용할 수 있습니다. 로드하시겠습니까?"
@@ -961,6 +962,13 @@
         "systemUpdate": {
             "subtitle": "드라이버, BIOS 및 기타 소프트웨어를 업데이트하십시오.",
             "checkForSystemUpdates": "시스템 업데이트 확인"
+        },
+        "securityStatus": {
+            "loadingDesc": "지금 보안 정보 검색...",
+            "noProtectionDesc": "장치에 보안 보호가 설정되어 있지 않음",
+            "basicDesc": "장치가 아직 완전히 보호되지 않음",
+            "intermediateDesc": "컴퓨터가 중간 보안 보호를 사용하도록 설정됨",
+            "advancedDesc": "컴퓨터가 고급 보안 보호를 사용하도록 설정됨"
         },
         "heroBanner": "히어로 배너"
     },

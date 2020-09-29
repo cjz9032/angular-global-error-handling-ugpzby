@@ -835,7 +835,8 @@
             "to": "u",
             "clickToChange": "kliknite za promenu",
             "failedLoad": "Učitavanje nije uspelo.",
-            "retry": "Ponovo pokušaj"
+            "retry": "Ponovo pokušaj",
+            "improveNow": "poboljšaj sada"
         },
         "app-update": {
             "message": "Hej! Novija verzija programa Vantage je raspoloživa, želite li da ga učitate?"
@@ -961,6 +962,13 @@
         "systemUpdate": {
             "subtitle": "Ažurirajte upravljačke programe, BIOS i drugi softver.",
             "checkForSystemUpdates": "Proveri da li postoje sistemske ispravke"
+        },
+        "securityStatus": {
+            "loadingDesc": "Otkrivanje bezbednosnih informacija sada...",
+            "noProtectionDesc": "Uređaj nema bezbednosnu zaštitu",
+            "basicDesc": "Uređaj još uvek nije u potpunosti zaštićen",
+            "intermediateDesc": "Na računaru je omogućena srednja zaštita bezbednosti",
+            "advancedDesc": "Na računaru je omogućena napredna zaštita bezbednosti"
         },
         "heroBanner": "Baner heroja"
     },

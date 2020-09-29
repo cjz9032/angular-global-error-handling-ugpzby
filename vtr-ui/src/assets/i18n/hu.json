@@ -835,7 +835,8 @@
             "to": "sort",
             "clickToChange": "a módosításhoz kattintson ide",
             "failedLoad": "A betöltés sikertelen volt.",
-            "retry": "Újrapróbálkozás"
+            "retry": "Újrapróbálkozás",
+            "improveNow": "javítás most"
         },
         "app-update": {
             "message": "Szia! Megjelent a Vantage legújabb verziója, szeretnéd letölteni?"
@@ -961,6 +962,13 @@
         "systemUpdate": {
             "subtitle": "Illesztőprogramok, a BIOS és más szoftverek frissítése.",
             "checkForSystemUpdates": "Rendszerfrissítések keresése"
+        },
+        "securityStatus": {
+            "loadingDesc": "Biztonsági információk észlelése...",
+            "noProtectionDesc": "Az eszköz nem rendelkezik biztonsági védelemmel",
+            "basicDesc": "Az eszköz nem élvez teljes körű védelmet",
+            "intermediateDesc": "A számítógépen csak a közepes szintű biztonsági védelem van engedélyezve",
+            "advancedDesc": "A számítógépen a magas szintű biztonsági védelem van engedélyezve"
         },
         "heroBanner": "Termékképet bemutató banner"
     },

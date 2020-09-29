@@ -835,7 +835,8 @@
             "to": "naar",
             "clickToChange": "klik om te wijzigen",
             "failedLoad": "Laden is mislukt.",
-            "retry": "Opnieuw proberen"
+            "retry": "Opnieuw proberen",
+            "improveNow": "nu verbeteren"
         },
         "app-update": {
             "message": "Hallo! Er is een nieuwere versie van Vantage beschikbaar, wilt u deze laden?"
@@ -961,6 +962,13 @@
         "systemUpdate": {
             "subtitle": "Werk uw stuurprogramma´s, BIOS en andere software bij.",
             "checkForSystemUpdates": "Controleren op systeemupdates"
+        },
+        "securityStatus": {
+            "loadingDesc": "Beveiligingsinformatie wordt gedetecteerd...",
+            "noProtectionDesc": "Uw apparaat heeft geen beveiliging",
+            "basicDesc": "Uw apparaat is nog niet volledig beveiligd",
+            "intermediateDesc": "Uw computer heeft gemiddelde beveiliging ingeschakeld",
+            "advancedDesc": "Uw computer heeft geavanceerde beveiliging ingeschakeld"
         },
         "heroBanner": "Held-spandoek"
     },
