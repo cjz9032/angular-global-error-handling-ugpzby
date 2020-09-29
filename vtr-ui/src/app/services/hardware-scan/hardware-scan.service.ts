@@ -1,7 +1,6 @@
 import { Injectable, NgZone, EventEmitter } from '@angular/core';
 import { HardwareScanProgress } from 'src/app/enums/hw-scan-progress.enum';
 import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.enum';
-import { HardwareScanOverallResult } from 'src/app/enums/hardware-scan-overall-result.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { PreviousResultService } from 'src/app/services/hardware-scan/previous-result.service';
@@ -128,7 +127,7 @@ export class HardwareScanService {
 					// Validate the type of this machine to load dynamically the icons.
 					this.isDesktopMachine = this.localCacheService.getLocalCacheValue(LocalStorageKey.DesktopMachine);
 
-					// Retrive the Plugin's version (it does not use the CLI)
+					// Retrieve the Plugin's version (it does not use the CLI)
 					this.getPluginInfo().then((hwscanPluginInfo: any) => {
 						if (hwscanPluginInfo) {
 							this.pluginVersion = hwscanPluginInfo.PluginVersion;
@@ -138,7 +137,7 @@ export class HardwareScanService {
 					// Retrieve an updated the last Scan's results (it does not use the CLI)
 					this.previousResultService.updatePreviousResultsResponse();
 
-					// Retrive the hardware component list (it does use the CLI)
+					// Retrieve the hardware component list (it does use the CLI)
 					this.culture = window.navigator.languages[0];
 					this.reloadItemsToScan(false);
 				}
@@ -445,14 +444,14 @@ export class HardwareScanService {
 	// Filters the response from GetItemsToScan according to blacklist of modules and tests
 	// This is replicated from Plugin, for cases that a user's Plugin isn't up to date
 	private filterItemsResponse(response: any) {
-		response.categoryList = response.categoryList.filter((value) => !this.blackListModules.includes(value.id))
-		response.mapContractNameList = response.mapContractNameList.filter((value) => !this.blackListModules.includes(value.Key))
+		response.categoryList = response.categoryList.filter((value) => !this.blackListModules.includes(value.id));
+		response.mapContractNameList = response.mapContractNameList.filter((value) => !this.blackListModules.includes(value.Key));
 
 		const storageComponents = response.categoryList.filter((value) => value.id === 'storage');
 		if (storageComponents !== undefined) {
 			storageComponents.forEach(component => {
 				component.groupList.forEach(group => {
-					group.testList = group.testList.filter((t) => this.blackListTests.filter((bl) => t.id.includes(bl)).length === 0 )
+					group.testList = group.testList.filter((t) => this.blackListTests.filter((bl) => t.id.includes(bl)).length === 0 );
 				});
 			});
 		}
@@ -462,7 +461,7 @@ export class HardwareScanService {
 		if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.getItemsToScan(scanType, culture)
 				.then((response) => {
-					this.filterItemsResponse(response)
+					this.filterItemsResponse(response);
 					return response;
 				})
 				.catch((error) => {
@@ -596,18 +595,18 @@ export class HardwareScanService {
 		return undefined;
 	}
 
-	private updateStatusOfTests(doScanResponse: any) {
-		for (const response of doScanResponse.responses) {
-			for (const group of response.groupResults) {
-				for (const test of group.testResultList) {
-					if (test.result === HardwareScanOverallResult.Incomplete) {
-						test.percentageComplete = 100;
-						test.result = HardwareScanOverallResult.Cancelled;
-					}
-				}
-			}
-		}
-	}
+	// private updateStatusOfTests(doScanResponse: any) {
+	// 	for (const response of doScanResponse.responses) {
+	// 		for (const group of response.groupResults) {
+	// 			for (const test of group.testResultList) {
+	// 				if (test.result === HardwareScanOverallResult.Incomplete) {
+	// 					test.percentageComplete = 100;
+	// 					test.result = HardwareScanOverallResult.Cancelled;
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+	// }
 
 	public getRecoverBadSectors(payload) {
 		this.disableCancel = true;
@@ -783,14 +782,14 @@ export class HardwareScanService {
 		return quickScanResponse;
 	}
 
-	private checkItemsForRecoverBadSectors() {
-		if (this.hardwareScanBridge) {
-			return this.hardwareScanBridge.checkItemsForRecoverBadSectors()
-				.then((response) => {
-					return response;
-				});
-		}
-	}
+	// private checkItemsForRecoverBadSectors() {
+	// 	if (this.hardwareScanBridge) {
+	// 		return this.hardwareScanBridge.checkItemsForRecoverBadSectors()
+	// 			.then((response) => {
+	// 				return response;
+	// 			});
+	// 	}
+	// }
 
 	private cleanSelectedCustomTests() {
 		for (const customScanModulesItem of this.customScanModules) {
@@ -929,16 +928,16 @@ export class HardwareScanService {
 		return moduleList;
 	}
 
-	private updateCustomScanRequest(quickScanRequest: any) {
-		if (quickScanRequest !== undefined) {
-			for (let i = 0; i < quickScanRequest.length; i++) {
-				const testListReverse = quickScanRequest[i].testRequestList.reverse();
-				for (const test of testListReverse) {
-					this.customScanRequest[i].testRequestList.unshift(test);
-				}
-			}
-		}
-	}
+	// private updateCustomScanRequest(quickScanRequest: any) {
+	// 	if (quickScanRequest !== undefined) {
+	// 		for (let i = 0; i < quickScanRequest.length; i++) {
+	// 			const testListReverse = quickScanRequest[i].testRequestList.reverse();
+	// 			for (const test of testListReverse) {
+	// 				this.customScanRequest[i].testRequestList.unshift(test);
+	// 			}
+	// 		}
+	// 	}
+	// }
 
 	// private updateCustomScanResponse(quickScanModules: any) {
 	// 	console.log('[Start] Update custom scan modules response');
@@ -967,7 +966,7 @@ export class HardwareScanService {
 					}
 				}
 
-				// Calcute Failed Tests
+				// Calculate Failed Tests
 				this.hardwareScanResultService.countFailedTests(group.testResultList);
 			}
 		}
@@ -1199,7 +1198,7 @@ export class HardwareScanService {
 	}
 
 	/**
-	 * This can be observed to know when the hardware component list is retrived
+	 * This can be observed to know when the hardware component list is retrieved
 	 */
 	public isHardwareModulesLoaded(): Observable<boolean> {
 		return this.hardwareModulesLoaded.pipe(first());
