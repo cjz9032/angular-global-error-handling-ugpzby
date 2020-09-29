@@ -1,9 +1,0 @@
-<div class="position-relative circle-container" [ngClass]="{'security-card': isAbsolute}">
-	<div class="circle-box d-flex justify-content-center" >
-		<vtr-widget-svg-circle [id]="id" [gradientColor]="gradientColor"></vtr-widget-svg-circle>
-	</div>
-	<div class="circle-desc text-white">
-		<p class="text-two-ellipsis" [innerHTML]="'security.landing.level' | translate"></p>
-		<b class="text-ellipsis text-uppercase" [innerHTML]="securityLevelInfo[status] | translate"></b>
-	</div>
-</div>

@@ -1,23 +1,28 @@
-import { Component,	Input,	OnInit,	DoCheck } from '@angular/core';
+import { Component,	Input, OnInit } from '@angular/core';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
-import { CMSService } from '../../../services/cms/cms.service';
+
 import { LandingView } from 'src/app/data-models/security-advisor/widegt-security-landing/landing-view.model';
-import { GradientColor } from 'src/app/data-models/security-advisor/gradient-color.model';
+import { Gradient } from 'src/app/data-models/security-advisor/gradient-color.model';
+import { CMSService } from 'src/app/services/cms/cms.service';
+import { ModalArticleDetailComponent } from 'src/app/components/modal/modal-article-detail/modal-article-detail.component';
 
 @Component({
 	selector: 'vtr-widget-security',
 	templateUrl: './widget-security.component.html',
 	styleUrls: ['./widget-security.component.scss']
 })
-export class WidgetSecurityComponent implements OnInit, DoCheck {
-	@Input() statusItem: LandingView;
+export class WidgetSecurityComponent implements OnInit {
+	@Input() statusItem: LandingView = {
+		status: 0,
+		percent: 100,
+		fullyProtected: false
+	};
 	@Input() isOnline: boolean;
 	articleId = '1C95D1D5D20D4888AC043821E7355D35';
 	articleCategory: string;
 	region: string;
 	oldPercent: number;
-	gradient: GradientColor;
+	gradient: Gradient;
 
 	btnDesc = [
 		'security.landing.notFully',
@@ -25,45 +30,35 @@ export class WidgetSecurityComponent implements OnInit, DoCheck {
 	];
 	securityLevelInfo = [
 		{
+			status: 'security.landing.noProtection',
 			title: 'security.landing.noProtection',
 			desc: 'security.landing.noProtectionDesc',
 		},
 		{
+			status: 'security.landing.basic',
 			title: 'security.landing.basicTitle',
 			desc: 'security.landing.basicDesc',
 		},
 		{
+			status: 'security.landing.intermediate',
 			title: 'security.landing.intermediateTitle',
 			desc: 'security.landing.intermediateDesc',
 		},
 		{
+			status: 'security.landing.advanced',
 			title: 'security.landing.advancedTitle',
 			desc: 'security.landing.advancedDesc',
 		}
 	];
-
+	levelText: string;
 
 	constructor(
 		public modalService: NgbModal,
 		private cmsService: CMSService
-	) {
+	) {	}
+
+	ngOnInit(): void {
 		this.fetchCMSArticleCategory();
-	}
-
-	ngOnInit() {
-		this.oldPercent = this.statusItem.percent;
-		this.updateSecurityStatus();
-	}
-
-	ngDoCheck(): void {
-		if (!this.oldPercent || this.statusItem.percent !== this.oldPercent) {
-			this.oldPercent = this.statusItem.percent;
-			this.updateSecurityStatus();
-		}
-	}
-
-	updateSecurityStatus() {
-		this.gradient = new GradientColor(this.statusItem.status, this.statusItem.percent);
 	}
 
 	fetchCMSArticleCategory() {

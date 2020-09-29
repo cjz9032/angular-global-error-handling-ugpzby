@@ -80,7 +80,11 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 	baseItems = [];
 	intermediateItems = [];
 	advanceItems = [];
-	landingStatus: LandingView;
+	landingStatus: LandingView = {
+		status: 0,
+		percent: 100,
+		fullyProtected: false
+	};
 	pluginSupport = true;
 
 	constructor(
@@ -394,6 +398,6 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 	}
 
 	retry(id) {
-		this.antivirusLandingViewModel.retry(id)
+		this.antivirusLandingViewModel.retry(id);
 	}
 }
