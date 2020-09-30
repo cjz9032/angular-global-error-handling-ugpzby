@@ -7,8 +7,8 @@
 	<div class="row">
 		<vtr-ui-button
 			linkId="hwscan-rbs-confirm-btn"
-			metricsParent="{{ ItemParent }}"
-			metricsItem="{{ ConfirmItemName }}"
+			[metricsParent]="'HardwareScan.ConfirmRecoverBadSectors'"
+			[metricsItem]="'ConfirmRecoverBadSectors.Close'"
 			[label]="'hardwareScan.ok' | translate"
 			(onClick)="confirmClick()">
 		</vtr-ui-button>
@@ -17,8 +17,8 @@
 	<div class="btn-modal-close">
 		<vtr-ui-close-button
 			linkId="hwscan-rbs-confirm-close-btn"
-			metricsParent="{{ ItemParent }}"
-			metricsItem="{{ CancelItemName }}"
+			[metricsParent]="'HardwareScan.ConfirmRecoverBadSectors'"
+			[metricsItem]="'ConfirmRecoverBadSectors.Confirm'"
 			(clickClose)="onClosing()">
 		</vtr-ui-close-button>
 	</div>
