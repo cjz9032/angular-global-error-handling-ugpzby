@@ -8,7 +8,7 @@
 		<vtr-ui-button
 			linkId="hwscan-rbs-confirm-btn"
 			[metricsParent]="'HardwareScan.ConfirmRecoverBadSectors'"
-			[metricsItem]="'ConfirmRecoverBadSectors.Close'"
+			[metricsItem]="'ConfirmRecoverBadSectors.Confirm'"
 			[label]="'hardwareScan.ok' | translate"
 			(onClick)="confirmClick()">
 		</vtr-ui-button>
@@ -18,7 +18,7 @@
 		<vtr-ui-close-button
 			linkId="hwscan-rbs-confirm-close-btn"
 			[metricsParent]="'HardwareScan.ConfirmRecoverBadSectors'"
-			[metricsItem]="'ConfirmRecoverBadSectors.Confirm'"
+			[metricsItem]="'ConfirmRecoverBadSectors.Close'"
 			(clickClose)="onClosing()">
 		</vtr-ui-close-button>
 	</div>
