@@ -2134,12 +2134,24 @@
             "superResolution": {
                 "title": "Upscaling della risoluzione video",
                 "desc1": "Questa funzione migliora l'esperienza della riproduzione video aumentando la risoluzione video. Funziona soprattutto in caso di scarsa risoluzione video.",
-                "desc2": "Questa funzione potrebbe influire sulla durata e la temperatura della batteria, aumentando la rumorosità del dispositivo. Non utilizzarla in modalità CC (modalità batteria). altrimenti accelererà il consumo energetico e ridurrà la durata della batteria.",
-                "tooltip": "<p id='sr-tip-one' role='text'>Questa funzione è disponibile solo per i seguenti lettori video:<br>Windows Media Player<br>Lettore basato su Chrome<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Per istruzioni su come abilitare questa funzione su PotPlayer, consultare la guida per l'utente fornita con il computer.</p>",
+                "desc2": "Questa funzione potrebbe influire sulla durata della batteria, la temperatura esterna e la rumorosità delle ventole. Non utilizzarla in modalità CC (modalità batteria). altrimenti accelererà il consumo energetico e ridurrà la durata della batteria.",
+				"tooltip": {
+					"description1": "Questa funzione è disponibile solo per i lettori video seguenti:<br>",
+					"player1":"Windows Media Player<br>",
+					"player2":"Lettore basato su Chrome<br>",
+					"player3":"PotPlayer<br>",
+					"player4":"Opera (motore Google Chromium integrato)<br>",
+					"player5":"Microsoft Edge (motore Google Chromium integrato)<br>",
+					"player6":"Microsoft Teams<br>",
+					"player7":"Zoom<br>",
+					"description2": "<p class='srTooltip' id='sr-tip' role='text'>Per istruzioni su come abilitare questa funzione su PotPlayer, consultare la guida per l'utente fornita con il computer.</p>"
+				},
                 "note": {
                     "description": "Questa funzione non può essere utilizzata quando:",
                     "description1": "La temperatura della CPU è elevata.",
-                    "description2": "Il dispositivo è impostato sulla modalità di risparmio della batteria in \"Raffreddamento intelligente\"."
+                    "description2": "Il dispositivo è impostato sulla modalità di risparmio della batteria in \"Raffreddamento intelligente\".",
+                    "description3": "Due o più lettori sono in esecuzione nello stesso momento.",
+					"description4": "Una chiamata video con app VoIP (come Microsoft Teams o Zoom) e la riproduzione di un video sono in corso contemporaneamente."
                 },
                 "imageBefore": "Prima",
                 "imageAfter": "Dopo"

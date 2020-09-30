@@ -2134,12 +2134,24 @@
             "superResolution": {
                 "title": "비디오 해상도 업스케일링",
                 "desc1": "이 기능은 비디오 해상도를 향상시켜 비디오 재생 경험을 향상시킵니다. 특히 비디오 해상도가 좋지 않을 때 해당 기능이 작동합니다.",
-                "desc2": "이 기능은 배터리 수명과 배터리 온도에 영향을 줄 수 있으며, 소음을 유발할 수 있습니다. DC 모드(배터리 모드)에서는 사용하지 마십시오. 그렇지 않으면 전력 소모를 가속화하고 배터리 수명을 단축시킵니다.",
-                "tooltip": "<p id='sr-tip-one' role='text'>이 기능은 아래의 비디오 플레이어에서만 작동합니다.<br>Windows Media Player<br>Chrome 기반 플레이어<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>PotPlayer에서 해당 기능을 사용하는 방법에 대한 지침은 컴퓨터와 함께 제공되는 사용 설명서를 참고하십시오.</p>",
+                "desc2": "이 기능은 배터리 수명, 표면 온도 및 팬 소음에 영향을 줄 수 있습니다. DC 모드(배터리 모드)에서는 사용하지 마십시오. 그렇지 않으면 전력 소모를 가속화하고 배터리 수명을 단축시킵니다.",
+				"tooltip": {
+					"description1": "이 기능은 다음 비디오 플레이어에서만 작동합니다.<br>",
+					"player1":"Windows Media Player<br>",
+					"player2":"Chrome 기반 플레이어<br>",
+					"player3":"PotPlayer<br>",
+					"player4":"Opera(내장 Google Chromium 엔진)<br>",
+					"player5":"Microsoft Edge(내장 Google Chromium 엔진)<br>",
+					"player6":"Microsoft Teams<br>",
+					"player7":"Zoom<br>",
+					"description2": "<p class='srTooltip' id='sr-tip' role='text'>PotPlayer에서 해당 기능을 사용하는 방법에 대한 지침은 컴퓨터와 함께 제공되는 사용 설명서를 참고하십시오.</p>"
+				},
                 "note": {
                     "description": "다음의 경우에는 이 기능이 작동하지 않습니다.",
                     "description1": "CPU 온도가 너무 높습니다.",
-                    "description2": "장치가 \"지능형 냉각\"에 있는 배터리 절약 모드로 설정되어 있습니다."
+                    "description2": "장치가 \"지능형 냉각\"에 있는 배터리 절약 모드로 설정되어 있습니다.",
+                    "description3": "둘 이상의 플레이어가 동시에 실행 중입니다.",
+					"description4": "VoIP 앱(예: Microsoft Teams 또는 Zoom)을 사용하는 화상 통화에서 비디오가 동시에 재생되고 있습니다."
                 },
                 "imageBefore": "이전",
                 "imageAfter": "이후"

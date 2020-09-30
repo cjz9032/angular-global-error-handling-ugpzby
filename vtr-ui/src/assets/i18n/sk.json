@@ -2134,12 +2134,24 @@
             "superResolution": {
                 "title": "Zvýšenie rozlíšenia videa",
                 "desc1": "Táto funkcia zvyšuje zážitok z prehrávania videa zlepšením jeho rozlíšenia. Prejaví sa najmä pri nízkom rozlíšení videa.",
-                "desc2": "Táto funkcia môže ovplyvniť výdrž batérie, teplotu batérie a vytvárať hluk. Nepoužívajte v režime jednosmerného prúdu (režim napájania z batérie). V opačnom prípade sa zväčší spotreba energie a skráti životnosť batérie.",
-                "tooltip": "<p id='sr-tip-one' role='text'>Táto funkcia funguje iba v prípade nasledujúcich prehrávačov videa:<br>Windows Media Player<br>Prehrávač založený na prehľadávači Chrome<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Pokyny na zapnutie tejto funkcie v prehrávači PotPlayer nájdete v používateľskej príručke dodanej s vaším počítačom.</p>",
+                "desc2": "Táto funkcia môže ovplyvniť výdrž batérie, teplotu povrchu a hluk ventilátora. Nepoužívajte v režime jednosmerného prúdu (režim napájania z batérie). V opačnom prípade sa zväčší spotreba energie a skráti životnosť batérie.",
+				"tooltip": {
+					"description1": "Táto funkcia funguje iba pre ďalej uvedené prehrávače videa:<br>",
+					"player1":"Windows Media Player<br>",
+					"player2":"Prehrávač založený na prehliadači Chrome<br>",
+					"player3":"PotPlayer<br>",
+					"player4":"Opera (zabudovaný modul Google Chromium)<br>",
+					"player5":"Microsoft Edge (zabudovaný modul Google Chromium)<br>",
+					"player6":"Microsoft Teams<br>",
+					"player7":"Zoom<br>",
+					"description2": "<p class='srTooltip' id='sr-tip' role='text'>Pokyny na zapnutie tejto funkcie v prehrávači PotPlayer nájdete v používateľskej príručke dodanej s vaším počítačom.</p>"
+				},
                 "note": {
                     "description": "Funkcia nefunguje v týchto prípadoch:",
                     "description1": "Teplota procesora je príliš vysoká.",
-                    "description2": "Funkcia „Inteligentné chladenie“ nastavila zariadenie do režimu úspory batérie."
+                    "description2": "Funkcia „Inteligentné chladenie“ nastavila zariadenie do režimu úspory batérie.",
+                    "description3": "Súčasne sú spustené dva alebo viacero prehrávačov.",
+					"description4": "Počas videohovoru s aplikáciami VoIP (napríklad Microsoft Teams alebo Zoom) sa video prehráva súbežne."
                 },
                 "imageBefore": "Pred",
                 "imageAfter": "Po"

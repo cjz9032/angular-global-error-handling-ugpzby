@@ -2146,12 +2146,24 @@
 			"superResolution": {
 				"title": "Video resolution upscaling",
 				"desc1": "This feature enhances the experience of video playback by improving the video resolution. It works especially when the video is in poor resolution.",
-				"desc2": "This function might impact the battery life, battery temperature, and cause noises. Please do not use it in DC mode (battery mode). Otherwise, it will speed up the power consumption and shorten the battery life.",
-				"tooltip": "<p id='sr-tip-one' role='text'>This feature only works for below video players:<br>Windows Media Player<br>Chrome-based player<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>For instructions on how to enable this function on PotPlayer, refer to the User Guide that comes with your computer.</p>",
+				"desc2": "This function might impact the battery life, skin temperature, and fan noises. Please do not use it in DC mode (battery mode). Otherwise, it will speed up the power consumption and shorten the battery life.",
+				"tooltip": {
+					"description1": "This feature only works for below video players:<br>",
+					"player1":"Windows Media Player<br>",
+					"player2":"Chrome-based player<br>",
+					"player3":"PotPlayer<br>",
+					"player4":"Opera (built-in Google Chromium engine)<br>",
+					"player5":"Microsoft Edge (built-in Google Chromium engine)<br>",
+					"player6":"Microsoft Teams<br>",
+					"player7":"Zoom<br>",
+					"description2": "<p class='srTooltip' id='sr-tip' role='text'>For instructions on how to enable this function on PotPlayer, refer to the User Guide that comes with your computer.</p>"
+				},
 				"note": {
 					"description": "This feature does not work when:",
 					"description1": "The CPU temperature is too high.",
-					"description2": "The device is set to Battery saving mode in \"Intelligent cooling\"."
+					"description2": "The device is set to Battery saving mode in \"Intelligent cooling\".",
+					"description3": "Two or more players are running at the same time.",
+					"description4": "On a video call with VoIP apps (such as Microsoft Teams or Zoom) and a video is playing at the same time."
 				},
 				"imageBefore": "Before",
 				"imageAfter": "After"

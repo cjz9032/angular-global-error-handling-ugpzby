@@ -2134,12 +2134,24 @@
             "superResolution": {
                 "title": "Opskalering af videoopløsning",
                 "desc1": "Denne funktion giver en bedre oplevelse i forbindelse med videoafspilning ved at forbedre videoopløsningen. Det fungerer især godt, når videoen er i dårlig opløsning.",
-                "desc2": "Denne funktion kan påvirke batteriets levetid, batteriets temperatur og medføre støj. Brug den ikke i DC-tilstand (batteritilstand). Ellers bliver strømforbruget større, og batterilevetiden afkortes.",
-                "tooltip": "<p id='sr-tip-one' role='text'>Denne funktion fungerer kun med følgende videoafspillere:<br>Windows Media Player<br>Chrome-baseret afspiller<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Oplysninger om, hvordan denne funktion aktiveres på PotPlayer, finder du i den brugervejledning, der leveres sammen med computeren.</p>",
+                "desc2": "Denne funktion kan påvirke batteriets levetid, overfladetemperatur og støj fra blæseren. Brug den ikke i DC-tilstand (batteritilstand). Ellers bliver strømforbruget større, og batterilevetiden afkortes.",
+				"tooltip": {
+					"description1": "Denne funktion fungerer kun med nedenstående videospillere:<br>",
+					"player1":"Windows Media Player<br>",
+					"player2":"Chrome-baseret afspiller<br>",
+					"player3":"PotPlayer<br>",
+					"player4":"Opera (indbygget Google Chromium-motor)<br>",
+					"player5":"Microsoft Edge (indbygget Google Chromium-motor)<br>",
+					"player6":"Microsoft Teams<br>",
+					"player7":"Zoom<br>",
+					"description2": "<p class='srTooltip' id='sr-tip' role='text'>Oplysninger om, hvordan denne funktion aktiveres på PotPlayer, finder du i den brugervejledning, der leveres sammen med computeren.</p>"
+				},
                 "note": {
                     "description": "Denne funktion virker ikke i disse situationer:",
                     "description1": "CPU-temperaturen er for høj.",
-                    "description2": "Enheden er indstillet til Strømbesparelsestilstand i \"Intelligent køling\"."
+                    "description2": "Enheden er indstillet til Strømbesparelsestilstand i \"Intelligent køling\".",
+                    "description3": "To eller flere afspillere kører samtidigt.",
+					"description4": "Under et videoopkald med VoIP-apps (f.eks. Microsoft Teams eller Zoom) og afspilning af en video samtidig."
                 },
                 "imageBefore": "Før",
                 "imageAfter": "Efter"

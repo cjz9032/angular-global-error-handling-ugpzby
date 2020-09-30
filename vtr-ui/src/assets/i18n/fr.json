@@ -2134,12 +2134,24 @@
             "superResolution": {
                 "title": "Mise à l'échelle de la résolution vidéo",
                 "desc1": "Cette fonction améliore l'expérience de la lecture vidéo en améliorant la résolution de la vidéo. Cela est particulièrement efficace lorsque la vidéo est de faible résolution.",
-                "desc2": "Cette fonction peut influencer la durée de vie de la batterie, sa température et produire des sons. Veillez à ne pas l'utiliser en mode courant continu (mode batterie). Sinon, cela accélérera la consommation d'énergie et réduira la durée de vie de la batterie.",
-                "tooltip": "<p id='sr-tip-one' role='text'>Cette fonction n'est disponible que pour les lecteurs vidéo suivants :<br>Windows Media Player<br>Lecteur Chrome<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Pour savoir comment activer cette fonction sur PotPlayer, reportez-vous au guide d'utilisation fourni avec votre ordinateur.</p>",
+                "desc2": "Cette fonction peut influencer la durée de vie de la batterie, la température de la peau et les sons de ventilateur. Veillez à ne pas l'utiliser en mode courant continu (mode batterie). Sinon, cela accélérera la consommation d'énergie et réduira la durée de vie de la batterie.",
+				"tooltip": {
+					"description1": "Cette fonction est compatible uniquement avec les lecteurs vidéo ci-dessous :<br>",
+					"player1":"Windows Media Player<br>",
+					"player2":"Lecteur basé sur Chrome<br>",
+					"player3":"PotPlayer<br>",
+					"player4":"Opera (moteur Google Chromium intégré)<br>",
+					"player5":"Microsoft Edge (moteur Google Chromium intégré)<br>",
+					"player6":"Microsoft Teams<br>",
+					"player7":"Zoom<br>",
+					"description2": "<p class='srTooltip' id='sr-tip' role='text'>Pour savoir comment activer cette fonction sur PotPlayer, reportez-vous au guide d'utilisation fourni avec votre ordinateur.</p>"
+				},
                 "note": {
                     "description": "Cette fonction est inopérante quand :",
                     "description1": "La température de l'unité centrale est trop élevée.",
-                    "description2": "Le périphérique est défini sur le mode d'économie de batterie dans le « système de refroidissement intelligent »."
+                    "description2": "Le périphérique est défini sur le mode d'économie de batterie dans le « système de refroidissement intelligent ».",
+                    "description3": "Au moins deux lecteurs sont en cours d'exécution au même moment.",
+					"description4": "Sur un appel vidéo avec des applications VoIP (telles que Microsoft teams ou Zoom) et une vidéo s'exécutent en même temps."
                 },
                 "imageBefore": "Avant",
                 "imageAfter": "Après"
