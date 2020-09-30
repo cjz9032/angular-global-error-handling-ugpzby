@@ -8,6 +8,7 @@ import { LoggerService } from '../logger/logger.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { LocalCacheService } from '../local-cache/local-cache.service';
+import { DedicatedInstanceFactory } from 'ngforage';
 
 describe('DisplayService', () => {
 	beforeEach(() => TestBed.configureTestingModule({
@@ -22,8 +23,10 @@ describe('DisplayService', () => {
 	let commonService: CommonService;
 	let http: HttpClient;
 	let localCacheService: LocalCacheService;
+	let dedicatedInstanceFactory = <DedicatedInstanceFactory>{}
 	beforeEach(() => {
 		commonService = new CommonService();
+		localCacheService = new LocalCacheService(dedicatedInstanceFactory, commonService)
 		shellService = new VantageShellService(commonService, localCacheService, http);
 		loggerService = new LoggerService(shellService);
 		devServices = new DevService(loggerService);

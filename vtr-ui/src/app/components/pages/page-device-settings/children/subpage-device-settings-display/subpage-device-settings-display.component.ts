@@ -387,23 +387,25 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		}
 	}
 
-	initPriorityControlFromCache() {
-		const available = this.localCacheService.getLocalCacheValue(LocalStorageKey.PriorityControlCapability, true);
+	async initPriorityControlFromCache() {
+		const available = await this.localCacheService.getLocalCacheValue(LocalStorageKey.PriorityControlCapability, true);
 		this.displayPriorityModal.capability = available;
 	}
 
-	initFeatures() {
-		this.getPrivacyGuardCapabilityStatus();
-		this.getPrivacyGuardOnPasswordCapabilityStatus();
-		this.initCameraSection();
-		this.getOLEDPowerControlCapability();
-		const machineType = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType);
-		if (machineType === 1) {
-			// commented below line to temporarily hide in current release
-			// this.getPriorityControlCapability();
-		} else {
-			this.displayPriorityModal.capability = false;
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.PriorityControlCapability, false);
+	async initFeatures() {
+		try {
+			this.getPrivacyGuardCapabilityStatus();
+			this.getPrivacyGuardOnPasswordCapabilityStatus();
+			this.initCameraSection();
+			this.getOLEDPowerControlCapability();
+			const machineType = await this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType);
+			if (machineType !== 1) {
+				this.displayPriorityModal.capability = false;
+				this.setPriorityControlCapabilityCache();
+			}
+		} catch (error) {
+			this.logger.error('initFeatures', error.message);
+			return EMPTY;
 		}
 	}
 
@@ -1448,18 +1450,19 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 								this.displayPriorityModal.options = this.removeObjByName(this.displayPriorityModal.options, option.name);
 							}
 						}
+
 						if (this.displayPriorityModal.options.length !== 0) {
 							this.displayPriorityModal.capability = true;
 							this.getPriorityControlSetting();
-							this.localCacheService.setLocalCacheValue(LocalStorageKey.PriorityControlCapability, true);
 						} else {
 							this.displayPriorityModal.capability = false;
-							this.localCacheService.setLocalCacheValue(LocalStorageKey.PriorityControlCapability, false);
 						}
+
+						this.setPriorityControlCapabilityCache();
 					}).catch(error => {
 						this.logger.error('SubpageDeviceSettingsDisplayComponent:getPriorityControlCapability', error.message);
 						this.displayPriorityModal.capability = false;
-						this.localCacheService.setLocalCacheValue(LocalStorageKey.PriorityControlCapability, false);
+						this.setPriorityControlCapabilityCache();
 					});
 			}
 		} catch (error) {
@@ -1482,15 +1485,19 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 					}).catch(error => {
 						this.logger.error('SubpageDeviceSettingsDisplayComponent:getPriorityControlSetting', error.message);
 						this.displayPriorityModal.capability = false;
-						this.localCacheService.setLocalCacheValue(LocalStorageKey.PriorityControlCapability, false);
+						this.setPriorityControlCapabilityCache();
 					});
 			}
 		} catch (error) {
 			this.logger.error('SubpageDeviceSettingsDisplayComponent:getPriorityControlSetting', error.message);
 			this.displayPriorityModal.capability = false;
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.PriorityControlCapability, false);
+			this.setPriorityControlCapabilityCache();
 			return EMPTY;
 		}
+	}
+
+	private setPriorityControlCapabilityCache() {
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.PriorityControlCapability, this.displayPriorityModal.capability);
 	}
 
 	public setPriorityControlSetting(option: string) {

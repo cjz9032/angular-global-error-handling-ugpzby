@@ -166,17 +166,17 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.bctInfoSubscription = this.batteryService.getChargeThresholdInfo()
 			.subscribe((value: ChargeThreshold[]) => {
 				this.setChargeThresholdUI(value);
-		});
+			});
 
 		this.airplaneModeSubscription = this.batteryService.getAirplaneMode()
 			.subscribe((value: FeatureStatus) => {
 				this.setAirplaneModeUI(value);
-		});
+			});
 
 		this.expressChargingSubscription = this.batteryService.getExpressCharging()
 			.subscribe((value: FeatureStatus) => {
 				this.setExpressChargingUI(value);
-		});
+			});
 		// End subscriptions in battery service
 
 		// When clicked on Back at High Density Battery page,
@@ -257,9 +257,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	initAirplanePowerFromCache() {
+	async initAirplanePowerFromCache() {
 		try {
-			this.airplanePowerCache = this.localCacheService.getLocalCacheValue(LocalStorageKey.AirplanePowerModeCapability, undefined);
+			this.airplanePowerCache = await this.localCacheService.getLocalCacheValue(LocalStorageKey.AirplanePowerModeCapability, undefined);
 			if (this.airplanePowerCache !== undefined) {
 				this.showAirplanePowerModeSection = this.airplanePowerCache.toggleState.available;
 				this.toggleAirplanePowerModeFlag = this.airplanePowerCache.toggleState.status;
@@ -320,9 +320,18 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	initPowerSettingsFromCache() {
+	async initPowerSettingsFromCache() {
 		try {
-			this.alwaysOnUSBCache = this.localCacheService.getLocalCacheValue(LocalStorageKey.AlwaysOnUSBCapability, undefined);
+			await this.getAlwaysOnUSBCacheFromCache();
+			await this.getEasyResumeCacheFromCache();
+		} catch (error) {
+			this.logger.info('initPowerSettingsFromCache', error);
+		}
+	}
+
+	async getAlwaysOnUSBCacheFromCache() {
+		try{
+			this.alwaysOnUSBCache = await this.localCacheService.getLocalCacheValue(LocalStorageKey.AlwaysOnUSBCapability, undefined);
 			if (this.alwaysOnUSBCache) {
 				this.toggleAlwaysOnUsbFlag = this.alwaysOnUSBCache.toggleState.status;
 				this.usbChargingInBatteryModeStatus = this.alwaysOnUSBCache.checkbox.available;
@@ -330,16 +339,22 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			} else {
 				this.alwaysOnUSBCache = new AlwaysOnUSBCapability();
 			}
+		} catch(error){
+			this.logger.info('getAlwaysOnUSBCacheFromCache', error);
+		}
+	}
 
-			this.easyResumeCache = this.localCacheService.getLocalCacheValue(LocalStorageKey.EasyResumeCapability, undefined);
+	async getEasyResumeCacheFromCache() {
+		try{
+			this.easyResumeCache = await this.localCacheService.getLocalCacheValue(LocalStorageKey.EasyResumeCapability, undefined);
 			if (this.easyResumeCache) {
 				this.showEasyResumeSection = this.easyResumeCache.available;
 				this.toggleEasyResumeStatus = this.easyResumeCache.status;
 			} else {
 				this.easyResumeCache = new FeatureStatus(false, false);
 			}
-		} catch (error) {
-			this.logger.info('initPowerSettingsFromCache', error);
+		} catch(error){
+			this.logger.info('getEasyResumeCacheFromCache', error);
 		}
 	}
 
@@ -357,9 +372,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	initEnergyStarFromCache() {
+	async initEnergyStarFromCache() {
 		try {
-			this.energyStarCache = this.localCacheService.getLocalCacheValue(LocalStorageKey.EnergyStarCapability, undefined);
+			this.energyStarCache = await this.localCacheService.getLocalCacheValue(LocalStorageKey.EnergyStarCapability, undefined);
 			if (this.energyStarCache !== undefined) {
 				this.isEnergyStarProduct = this.energyStarCache;
 			} else {
@@ -431,7 +446,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.vantageToolbarStatus = featureStatus;
 				this.updateOtherSettingsStatus(this.vantageToolbarStatus.available);
 			}).catch((error) => {
-				this.logger.error('getVantageToolBarStatus', error.message);
+				this.logger.error('getVantageToolBarStatus', error?.message);
 				return EMPTY;
 			});
 		}
@@ -448,7 +463,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.isEnergyStarProduct = response;
 				this.localCacheService.setLocalCacheValue(LocalStorageKey.EnergyStarCapability, this.isEnergyStarProduct);
 			}).catch(error => {
-				this.logger.error('getEnergyStarCapability.error', error.message);
+				this.logger.error('getEnergyStarCapability.error', error?.message);
 			});
 	}
 	// ************ End power page Capability Checks *******************
@@ -576,15 +591,12 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				});
 			}
 		}
-		if (this.gotoLinks.length === 0) {
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsPowerPageAvailable, false);
-		} else {
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsPowerPageAvailable, true);
-		}
+		const isPowerPageAvailable = this.gotoLinks.length > 0;
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.IsPowerPageAvailable, isPowerPageAvailable)
 	}
 	// ******************** End Goto Links of diff sections Updates *******************
 
-	/**
+	/*
 	 * called on changing USB charging status(checkbox),
 	 * it updates Power Mode
 	 * @param $event boolean, checkbox events value
@@ -697,7 +709,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					this.getAlwaysOnUSBStatusThinkPad();
 				}
 			}).catch((error) => {
-				this.logger.error('getAlwaysOnUSBCapabilityThinkPad.error', error.message);
+				this.logger.error('getAlwaysOnUSBCapabilityThinkPad.error', error?.message);
 				return EMPTY;
 			});
 		}
@@ -719,12 +731,12 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 					})
 					.catch(error => {
-						this.logger.error('getAlwaysOnUSBStatusThinkPad', error.message);
+						this.logger.error('getAlwaysOnUSBStatusThinkPad', error?.message);
 						return EMPTY;
 					});
 			}
 		} catch (error) {
-			this.logger.error('getAlwaysOnUSBStatusThinkPad', error.message);
+			this.logger.error('getAlwaysOnUSBStatusThinkPad', error?.message);
 			return EMPTY;
 		}
 	}
@@ -741,7 +753,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.easyResumeCache.available = this.showEasyResumeSection;
 				this.localCacheService.setLocalCacheValue(LocalStorageKey.EasyResumeCapability, this.easyResumeCache);
 			}).catch((error) => {
-				this.logger.error('getEasyResumeCapabilityThinkPad', error.message);
+				this.logger.error('getEasyResumeCapabilityThinkPad', error?.message);
 				return EMPTY;
 			});
 		}
@@ -759,12 +771,12 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						this.localCacheService.setLocalCacheValue(LocalStorageKey.EasyResumeCapability, this.easyResumeCache);
 					})
 					.catch(error => {
-						this.logger.error('getEasyResumeStatusThinkPad', error.message);
+						this.logger.error('getEasyResumeStatusThinkPad', error?.message);
 						return EMPTY;
 					});
 			}
 		} catch (error) {
-			this.logger.error('getEasyResumeStatusThinkPad', error.message);
+			this.logger.error('getEasyResumeStatusThinkPad', error?.message);
 			return EMPTY;
 		}
 	}
@@ -777,7 +789,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					this.getEasyResumeStatusThinkPad();
 				}
 			}).catch(error => {
-				this.logger.error('setEasyResumeThinkPad', error.message);
+				this.logger.error('setEasyResumeThinkPad', error?.message);
 				return EMPTY;
 			});
 		}
@@ -789,7 +801,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.logger.info('setAlwaysOnUSBStatusThinkPad.then', value);
 				this.getAlwaysOnUSBStatusThinkPad();
 			}).catch(error => {
-				this.logger.error('setAlwaysOnUSBStatusThinkPad', error.message);
+				this.logger.error('setAlwaysOnUSBStatusThinkPad', error?.message);
 				return EMPTY;
 			});
 		}
@@ -815,7 +827,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.airplanePowerCache.toggleState.status = this.toggleAirplanePowerModeFlag;
 				this.localCacheService.setLocalCacheValue(LocalStorageKey.AirplanePowerModeCapability, this.airplanePowerCache);
 			}).catch(error => {
-				this.logger.error('setAirplaneModeThinkPad', error.message);
+				this.logger.error('setAirplaneModeThinkPad', error?.message);
 				return EMPTY;
 			});
 		}
@@ -831,7 +843,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					this.localCacheService.setLocalCacheValue(LocalStorageKey.AirplanePowerModeCapability, this.airplanePowerCache);
 				})
 				.catch(error => {
-					this.logger.error('getAirplaneModeAutoDetectionOnThinkPad', error.message);
+					this.logger.error('getAirplaneModeAutoDetectionOnThinkPad', error?.message);
 					return EMPTY;
 				});
 		}
@@ -843,7 +855,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				.then((value: boolean) => {
 					this.logger.info('setAirplaneModeAutoDetectionOnThinkPad.then', value);
 				}).catch(error => {
-					this.logger.error('setAirplaneModeAutoDetectionOnThinkPad', error.message);
+					this.logger.error('setAirplaneModeAutoDetectionOnThinkPad', error?.message);
 					return EMPTY;
 				});
 		}
@@ -869,7 +881,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.alwaysOnUSBCache.toggleState.status = this.toggleAlwaysOnUsbFlag;
 				this.localCacheService.setLocalCacheValue(LocalStorageKey.AlwaysOnUSBCapability, this.alwaysOnUSBCache);
 			}).catch((error) => {
-				this.logger.error('getAlwaysOnUSBStatusIdeaNoteBook', error.message);
+				this.logger.error('getAlwaysOnUSBStatusIdeaNoteBook', error?.message);
 				return EMPTY;
 			});
 		}
@@ -890,7 +902,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					this.alwaysOnUSBCache.checkbox.status = this.usbChargingCheckboxFlag;
 					this.localCacheService.setLocalCacheValue(LocalStorageKey.AlwaysOnUSBCapability, this.alwaysOnUSBCache);
 				}).catch(error => {
-					this.logger.error('getUSBChargingInBatteryModeStatusIdeaNoteBook', error.message);
+					this.logger.error('getUSBChargingInBatteryModeStatusIdeaNoteBook', error?.message);
 					return EMPTY;
 				});
 		}
@@ -905,7 +917,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						this.getUSBChargingInBatteryModeStatusIdeaNoteBook();
 					}, 50);
 				}).catch(error => {
-					this.logger.error('setUSBChargingInBatteryModeStatusIdeaNoteBook', error.message);
+					this.logger.error('setUSBChargingInBatteryModeStatusIdeaNoteBook', error?.message);
 					return EMPTY;
 				});
 		}
@@ -921,7 +933,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						this.getAlwaysOnUSBStatusIdeaPad();
 					}, 50);
 				}).catch(error => {
-					this.logger.error('getAlwaysOnUSBStatusIdeaNoteBook', error.message);
+					this.logger.error('getAlwaysOnUSBStatusIdeaNoteBook', error?.message);
 					return EMPTY;
 				});
 		}
@@ -938,7 +950,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.conservationModeCache.isLoading = this.conservationModeLock;
 				this.localCacheService.setLocalCacheValue(LocalStorageKey.ConservationModeCapability, this.conservationModeCache);
 			}).catch((error) => {
-				this.logger.error('getConservationModeStatusIdeaNoteBook', error.message);
+				this.logger.error('getConservationModeStatusIdeaNoteBook', error?.message);
 				return EMPTY;
 			});
 		}
@@ -963,7 +975,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 			}
 		} catch (error) {
-			this.logger.error('setConservationModeStatusIdeaNoteBook', error.message);
+			this.logger.error('setConservationModeStatusIdeaNoteBook', error?.message);
 			return EMPTY;
 		}
 	}
@@ -982,7 +994,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					this.expressChargingStatus.status = false;
 				} catch (e) {
 					// if await failed
-					this.logger.info(e.message);
+					this.logger.info(e?.message);
 				}
 			} else { // Open express charge if it's close before
 				if (this.conservationModeStatus.status) { // When conservation mode is open, close it
@@ -999,7 +1011,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					this.expressChargingStatus.status = true;
 				} catch (e) {
 					// Log?
-					this.logger.info(e.message);
+					this.logger.info(e?.message);
 				}
 			}
 
@@ -1015,7 +1027,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					this.conservationModeStatus.status = false;
 				} catch (e) {
 					// if await failed
-					this.logger.info(e.message);
+					this.logger.info(e?.message);
 				}
 			} else { // Open conservation mode if it's close before
 				if (this.expressChargingStatus.status) { // When express charging is open, close it
@@ -1032,7 +1044,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					this.conservationModeStatus.status = true;
 				} catch (e) {
 					// Log?
-					this.logger.info(e.message);
+					this.logger.info(e?.message);
 				}
 			}
 
@@ -1067,7 +1079,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.logger.info('setRapidChargeModeStatusIdeaNoteBook.then', value);
 			}
 		} catch (error) {
-			this.logger.error('setRapidChargeModeStatusIdeaNoteBook', error.message);
+			this.logger.error('setRapidChargeModeStatusIdeaNoteBook', error?.message);
 			return EMPTY;
 		}
 	}
@@ -1128,7 +1140,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			}
 		} catch (error) {
 			this.isVantageToolbarSetEnd = true;
-			this.logger.error('getVantageToolBarStatus', error.message);
+			this.logger.error('getVantageToolBarStatus', error?.message);
 			return EMPTY;
 		}
 	}
@@ -1151,7 +1163,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				.then((value: any) => {
 					this.logger.info('startmonitor', value);
 				}).catch(error => {
-					this.logger.error('startmonitor', error.message);
+					this.logger.error('startmonitor', error?.message);
 					return EMPTY;
 				});
 
@@ -1295,7 +1307,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					}
 				})
 				.catch(error => {
-					this.logger.error('change threshold value', error.message);
+					this.logger.error('change threshold value', error?.message);
 					return EMPTY;
 				});
 		}
@@ -1323,7 +1335,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				}
 			})
 			.catch(error => {
-				this.logger.error('change threshold value', error.message);
+				this.logger.error('change threshold value', error?.message);
 				return EMPTY;
 			});
 	}
