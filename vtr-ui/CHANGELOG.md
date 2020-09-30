@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.17](https://bitbucket.tc.lenovo.com///compare/v1.8.16...v1.8.17) (2020-09-30)
+
+
+### Features
+
+* create a service to calculate security level ([42963ec](https://bitbucket.tc.lenovo.com///commit/42963ecf29ae26ac9f35faf9f6165f9dda474eea))
+* security level default value change to 100% ([0bb2758](https://bitbucket.tc.lenovo.com///commit/0bb27586fa89669b43f88510ca823c9758872b1b))
+* use localcache service instead of localstorage ([d035426](https://bitbucket.tc.lenovo.com///commit/d0354261ce13ab09f37f052e76da9ea8b23b2bf0))
+
 ### [1.8.16](https://bitbucket.tc.lenovo.com///compare/v1.8.15...v1.8.16) (2020-09-29)
 
 
