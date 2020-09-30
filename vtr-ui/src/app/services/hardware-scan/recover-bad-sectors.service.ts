@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalHardwareScanRbsComponent } from 'src/app/components/modal/modal-hardware-scan-rbs/modal-hardware-scan-rbs.component';
 import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.enum';
@@ -13,7 +14,8 @@ export class RecoverBadSectorsService {
 
 	constructor(
 		private hardwareScanService: HardwareScanService,
-		private modalService: NgbModal) { }
+		private modalService: NgbModal,
+		private router: Router) { }
 
 	public getLastRecoverResultTitle() {
 		return HardwareScanTestResult[this.recoverBadSectorsLastResult.resultModule];
@@ -49,6 +51,7 @@ export class RecoverBadSectorsService {
 			this.hardwareScanService.setRecoverExecutionStatus(true);
 			this.hardwareScanService.setIsScanDone(false);
 			this.hardwareScanService.startRecover.emit();
+			this.router.navigate(['/hardware-scan']);
 		}
 	}
 }

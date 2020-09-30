@@ -24,7 +24,6 @@ export class WidgetRecoverBadSectorsComponent implements OnInit, OnDestroy {
 	ngOnDestroy() { }
 
 	public onRecoverBadSectors() {
-		this.router.navigate(['/hardware-scan']);
 		if (this.rbsService) {
 			this.rbsService.openRecoverBadSectorsModal();
 		}
