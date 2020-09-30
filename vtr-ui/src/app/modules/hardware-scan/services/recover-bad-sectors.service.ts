@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalHardwareScanRbsComponent } from 'src/app/components/modal/modal-hardware-scan-rbs/modal-hardware-scan-rbs.component';
+import { ModalHardwareScanRbsComponent } from 'src/app/modules/hardware-scan/components/modal/modal-hardware-scan-rbs/modal-hardware-scan-rbs.component';
 import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.enum';
 import { HardwareScanService } from './hardware-scan.service';
 

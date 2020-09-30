@@ -1,0 +1,34 @@
+@import "../../../../../app.theme";
+
+.vtr-modal-hardware-scan-rbs {
+	@include high-contrast-border;
+
+	.modal-information {
+		.title {
+			width: 100%;
+			font-size: $fontsize_xl;
+			font-weight: $weight_semibold;
+			color: $shade_blue;
+			margin-bottom: 3.6rem;
+			padding: 0 2.4rem 0 0; // to avoid title overlapping X button
+		}
+	}
+
+	.button-row {
+		margin-top: 1.2rem;
+
+		::ng-deep .vtr-ui-button .button-box {
+			padding-left: 0;
+			max-width: 24rem;
+		}
+	}
+
+	.btn-modal-close {
+		right: 2.3rem;
+		top: 2.4rem;
+	}
+}
+
+.modal-body {
+	padding: 2.4rem;
+}
