@@ -12,19 +12,19 @@ import { ModalPreScanInfoComponent } from './components/modal/modal-pre-scan-inf
 import { ModalHardwareScanCustomizeComponent } from './components/modal/modal-hardware-scan-customize/modal-hardware-scan-customize.component';
 import { ModalRecoverConfirmComponent } from './components/modal/modal-recover-confirm/modal-recover-confirm.component';
 import { ModalHardwareScanRbsComponent } from './components/modal/modal-hardware-scan-rbs/modal-hardware-scan-rbs.component'
-import { PageHardwareScanComponent } from './page-hardwarescan/page-hardware-scan.component';
+import { PageHardwareScanComponent } from './pages/page-hardware-scan.component';
 import { HardwareScanHeaderPagesComponent } from './components/header/hardware-scan-header-pages.component';
-import { UiHardwareListComponent } from './components/hardware-scan-dashboard/ui-hardware-list/ui-hardware-list.component';
-import { UiListScheduledScanComponent } from './components/hardware-scan-dashboard/ui-list-scheduled-scan/ui-list-scheduled-scan.component';
+import { UiHardwareListComponent } from './components/dashboard/ui-hardware-list/ui-hardware-list.component';
+import { UiListScheduledScanComponent } from './components/dashboard/ui-list-scheduled-scan/ui-list-scheduled-scan.component';
 import { WidgetHardwareScanItemComponent } from './components/right-column-widgets/widget-hardware-scan-item/widget-hardware-scan-item.component';
 import { WidgetHardwareScanStatusComponent } from './components/right-column-widgets/widget-hardware-scan-status/widget-hardware-scan-status.component';
 import { WidgetRecoverBadSectorsComponent } from './components/right-column-widgets/widget-recover-bad-sectors/widget-recover-bad-sectors.component';
 import { WidgetScheduleScanComponent } from './components/right-column-widgets/widget-schedule-scan/widget-schedule-scan.component';
-import { UiHardwareListTestComponent } from './components/hardware-scan-dashboard/ui-hardware-list-test/ui-hardware-list-test.component';
-import { UiHardwareListCheckboxComponent } from './components/hardware-scan-dashboard/ui-hardware-list-checkbox/ui-hardware-list-checkbox.component';
-import { UiDropdownHwscanComponent } from './components/hardware-scan-dashboard/ui-dropdown-hwscan/ui-dropdown-hwscan.component';
-import { HardwareComponentsComponent } from './page-hardwarescan/children/hardware-components/hardware-components.component';
-import { HardwareViewResultsComponent } from './page-hardwarescan/children/hardware-view-results/hardware-view-results.component';
+import { UiHardwareListTestComponent } from './components/dashboard/ui-hardware-list-test/ui-hardware-list-test.component';
+import { UiHardwareListCheckboxComponent } from './components/dashboard/ui-hardware-list-checkbox/ui-hardware-list-checkbox.component';
+import { UiDropdownHwscanComponent } from './components/dashboard/ui-dropdown-hwscan/ui-dropdown-hwscan.component';
+import { HardwareComponentsComponent } from './pages/children/hardware-components/hardware-components.component';
+import { HardwareViewResultsComponent } from './pages/children/hardware-view-results/hardware-view-results.component';
 import { SharedModule } from 'src/app/modules/shared.module';
 import { HeaderMainModule } from 'src/app/components/header-main/header-main.module';
 import { ContainerCardModule } from 'src/app/components/container-card/container-card.module';
@@ -46,8 +46,8 @@ import { faTimesCircle } from '@fortawesome/free-solid-svg-icons/faTimesCircle';
 import { HardwareScanExecutingHeaderComponent } from './components/header/hardware-scan-executing-header/hardware-scan-executing-header.component';
 import { HardwareScanWaitSelectHeaderComponent } from './components/header/hardware-scan-wait-select-header/hardware-scan-wait-select-header.component';
 import { HardwareScanFinishedHeaderComponent } from './components/header/hardware-scan-finished-header/hardware-scan-finished-header.component';
-import { UiHardwareScanTestResultComponent } from './components/hardware-scan-execution/ui-hardware-scan-test-result/ui-hardware-scan-test-result.component';
-import { UiTestResultIconComponent } from '../../components/ui/ui-test-result-icon/ui-test-result-icon.component';
+import { UiHardwareScanTestResultComponent } from './components/dashboard/ui-hardware-scan-test-result/ui-hardware-scan-test-result.component';
+import { UiTestResultIconComponent } from './components/dashboard/ui-test-result-icon/ui-test-result-icon.component';
 import { UiHyperlinkButtonComponent } from '../../components/ui/ui-hyperlink-button/ui-hyperlink-button.component';
 
 @NgModule({
