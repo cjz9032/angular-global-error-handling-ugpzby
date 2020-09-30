@@ -81,16 +81,30 @@
 						
 					</div>
 					<div class="custom-card col-12 col-md-6 col-lg-12 col-xl-6 pb-20 card-right">
-						<vtr-container-card
-							order=3
-							[item]="contentCards.positionC.displayContent"
-							[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && contentCards.positionC.displayContent.isLocal)"
-							[type]="'corner'"
-							[ratio]="2"
-							[containerCardId]="'dashboard-lnk-content-c'"
-							id="dashboard-card-c"
-							aria-label="dashboard-card-c">
-						</vtr-container-card>
+						<ng-container *ngIf="!showSecurityStatusCard else securityCard">
+							<vtr-container-card
+								order=3
+								[item]="contentCards.positionC.displayContent"
+								[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && contentCards.positionC.displayContent.isLocal)"
+								[type]="'corner'"
+								[ratio]="2"
+								[containerCardId]="'dashboard-lnk-content-c'"
+								id="dashboard-card-c"
+								aria-label="dashboard-card-c">
+							</vtr-container-card>
+						</ng-container>
+						<ng-template #securityCard>
+							<vtr-material-state-card-container
+								[cardData]="securityInfo?.status !== undefined ? positionBData[securityInfo.status + 1] : positionBData[0]"
+								order=3
+								cardId="dashboard-lnk-security">
+								<vtr-material-status-circle
+									[gradientColor]="securityInfo"
+									[statusText]="securityInfo?.statusText">
+								</vtr-material-status-circle>
+							</vtr-material-state-card-container>
+						</ng-template>
+
 					</div>
 				</div>
 				<div class="col-sm-12 pb-20 px-0">
