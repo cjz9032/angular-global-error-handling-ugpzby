@@ -2134,12 +2134,24 @@
             "superResolution": {
                 "title": "提高视频分辨率",
                 "desc1": "此功能通过提高视频分辨率来改善视频播放的体验。特别是在视频分辨率较差时，其效果尤为明显。",
-                "desc2": "此功能可能会影响电池寿命、电池温度并产生噪音。请不要在直流电模式（电池模式）下使用。否则，会加快耗电速度并缩短电池寿命。",
-                "tooltip": "<p id='sr-tip-one' role='text'>此功能仅适用于以下视频播放器：<br>Windows Media Player<br>基于 Chrome 的播放器<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>有关如何在 PotPlayer 上启用此功能的说明，请参阅计算机随附的《用户指南》。</p>",
+                "desc2": "此功能可能会影响电池寿命、表面温度和风扇噪音。请不要在直流电模式（电池模式）下使用。否则，会加快耗电速度并缩短电池寿命。",
+				"tooltip": {
+					"description1": "此功能仅适用于以下视频播放器：<br>",
+					"player1":"Windows Media Player<br>",
+					"player2":"基于 Chrome 的播放器<br>",
+					"player3":"PotPlayer<br>",
+					"player4":"Opera（内置 Google Chromium 引擎）<br>",
+					"player5":"Microsoft Edge（内置 Google Chromium 引擎）<br>",
+					"player6":"Microsoft Teams<br>",
+					"player7":"Zoom<br>",
+					"description2": "<p class='srTooltip' id='sr-tip' role='text'>有关如何在 PotPlayer 上启用此功能的说明，请参阅计算机随附的《用户指南》。</p>"
+				},
                 "note": {
                     "description": "此功能在以下情况下无效：",
                     "description1": "CPU 温度过高。",
-                    "description2": "设备在“智能冷却”中设置为省电模式。"
+                    "description2": "设备在“智能冷却”中设置为省电模式。",
+                    "description3": "两个或多个播放器同时运行。",
+					"description4": "在使用 VoIP 应用程序（例如 Microsoft Teams 或 Zoom）进行视频通话时，同时播放视频。"
                 },
                 "imageBefore": "之前",
                 "imageAfter": "之后"

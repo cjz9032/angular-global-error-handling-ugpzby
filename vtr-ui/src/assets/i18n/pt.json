@@ -2134,12 +2134,24 @@
             "superResolution": {
                 "title": "Melhorar a resolução de vídeo",
                 "desc1": "Esta funcionalidade otimiza a experiência da reprodução de vídeo ao melhorar a resolução de video. Funciona especialmente bem quando o vídeo tem uma péssima resolução.",
-                "desc2": "Esta função poderá ter impacto na duração da bateria, na temperatura da bateria e causar ruídos. Não utilize esta funcionalidade no modo CC (modo de bateria). Caso contrário, vai acelerar o consumo de energia e reduzir a duração da bateria.",
-                "tooltip": "<p id='sr-tip-one' role='text'>Esta funcionalidade só é compatível com os seguintes leitores de vídeo:<br>Windows Media Player<br>Leitor baseado no Chrome<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Para obter instruções para ativar esta função no PotPlayer, consulte o Manual do Utilizador fornecido com o computador.</p>",
+                "desc2": "Esta função poderá ter impacto na duração da bateria, na temperatura do tema e no ruído da ventoinha. Não utilize esta funcionalidade no modo CC (modo de bateria). Caso contrário, vai acelerar o consumo de energia e reduzir a duração da bateria.",
+				"tooltip": {
+					"description1": "Esta funcionalidade só funciona com os leitores de vídeo listados abaixo:<br>",
+					"player1":"Windows Media Player<br>",
+					"player2":"Leitor baseado no Chrome<br>",
+					"player3":"PotPlayer<br>",
+					"player4":"Opera (motor Google Chromium incorporado)<br>",
+					"player5":"Microsoft Edge (motor Google Chromium incorporado)<br>",
+					"player6":"Microsoft Teams<br>",
+					"player7":"Zoom<br>",
+					"description2": "<p class='srTooltip' id='sr-tip' role='text'>Para obter instruções para ativar esta função no PotPlayer, consulte o Manual do Utilizador fornecido com o computador.</p>"
+				},
                 "note": {
                     "description": "Esta funcionalidade não funciona quando:",
                     "description1": "A temperatura da CPU é demasiado elevada.",
-                    "description2": "O dispositivo está definido para o Modo de poupança de bateria no \"Arrefecimento Inteligente\"."
+                    "description2": "O dispositivo está definido para o Modo de poupança de bateria no \"Arrefecimento Inteligente\".",
+                    "description3": "Estão a ser executados dois ou mais leitores ao mesmo tempo.",
+					"description4": "Numa videochamada com aplicações VoIP (como, por exemplo, o Microsoft Teams ou o Zoom) e com um vídeo a ser reproduzido ao mesmo tempo."
                 },
                 "imageBefore": "Antes",
                 "imageAfter": "Depois"

@@ -2134,12 +2134,24 @@
             "superResolution": {
                 "title": "Upscaling der Videoauflösung",
                 "desc1": "Diese Funktion optimiert die Videowiedergabe, indem die Videoauflösung verbessert wird. Sie ist besonders nützlich, wenn das Video eine schlechte Auflösung hat.",
-                "desc2": "Diese Funktion kann die Akkulebensdauer und -temperatur beeinflussen und Geräusche verursachen. Verwenden Sie sie nicht im Gleichstrommodus (Akkubetrieb). Andernfalls wird schneller Strom verbraucht und die Lebensdauer des Akkus verkürzt.",
-                "tooltip": "<p id='sr-tip-one' role='text'>Diese Funktion funktioniert nur mit den folgenden Videoplayern:<br>Windows Media Player<br>Chrome-basierte Player<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Anweisungen zum Aktivieren dieser Funktion auf PotPlayer finden Sie im Benutzerhandbuch, das im Lieferumfang des Computers enthalten ist.</p>",
+                "desc2": "Diese Funktion kann die Akkulebensdauer, Oberflächentemperatur und Lüftergeräusche beeinflussen. Verwenden Sie sie nicht im Gleichstrommodus (Akkubetrieb). Andernfalls wird schneller Strom verbraucht und die Lebensdauer des Akkus verkürzt.",
+				"tooltip": {
+					"description1": "Diese Funktion funktioniert nur mit den folgenden Videoplayern:<br>",
+					"player1":"Windows Media Player<br>",
+					"player2":"Chrome-basierter Player<br>",
+					"player3":"PotPlayer<br>",
+					"player4":"Opera (integrierte Google Chromium-Engine)<br>",
+					"player5":"Microsoft Edge (integrierte Google Chromium-Engine)<br>",
+					"player6":"Microsoft Teams<br>",
+					"player7":"Zoom<br>",
+					"description2": "<p class='srTooltip' id='sr-tip' role='text'>Anweisungen zum Aktivieren dieser Funktion auf PotPlayer finden Sie im Benutzerhandbuch, das im Lieferumfang des Computers enthalten ist.</p>"
+				},
                 "note": {
                     "description": "Diese Funktion funktioniert nicht, wenn:",
                     "description1": "Die CPU-Temperatur zu hoch ist.",
-                    "description2": "Die Einheit ist in \"Intelligente Kühlung\" auf den Akkusparmodus eingestellt."
+                    "description2": "Die Einheit ist in \"Intelligente Kühlung\" auf den Akkusparmodus eingestellt.",
+                    "description3": "Zwei oder mehr Player werden gleichzeitig ausgeführt.",
+					"description4": "Bei einem Videoanruf mit VoIP-Apps (wie z. B. Microsoft Teams oder Zoom) und gleichzeitiger Videowiedergabe."
                 },
                 "imageBefore": "Vorher",
                 "imageAfter": "Nachher"

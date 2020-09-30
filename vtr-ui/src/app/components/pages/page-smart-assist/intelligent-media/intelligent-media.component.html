@@ -48,7 +48,7 @@
 						[rightIcon]="['far', 'question-circle']"
 						[showChildContent]="false"
 						[isSwitchChecked]="isSRChecked"
-						[tooltipText]="'device.smartAssist.superResolution.tooltip' | translate"
+						[tooltipText]="superResolutionTip"
 						(toggleOnOff)="setSuperResolutionStatus($event)"
 						[theme]="'white'"
 						[showLoaderState]="isSRLoading">
@@ -107,6 +107,18 @@
 										<span id="superResolution-note-description-two"
 											role="text">
 											{{'device.smartAssist.superResolution.note.description2' | translate}}</span>
+									</li>
+									<li role="listitem"
+										id="superResolution-description-li-three">
+										<span id="superResolution-note-description-three"
+											role="text">
+											{{'device.smartAssist.superResolution.note.description3' | translate}}</span>
+									</li>
+									<li role="listitem"
+										id="superResolution-description-li-four">
+										<span id="superResolution-note-description-four"
+											role="text">
+											{{'device.smartAssist.superResolution.note.description4' | translate}}</span>
 									</li>
 								</ul>
 							</div>
