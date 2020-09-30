@@ -451,7 +451,7 @@ export class HardwareScanService {
 		if (storageComponents !== undefined) {
 			storageComponents.forEach(component => {
 				component.groupList.forEach(group => {
-					group.testList = group.testList.filter((t) => this.blackListTests.filter((bl) => t.id.includes(bl)).length === 0 );
+					group.testList = group.testList.filter((t) => this.blackListTests.filter((bl) => t.id.includes(bl)).length === 0);
 				});
 			});
 		}
