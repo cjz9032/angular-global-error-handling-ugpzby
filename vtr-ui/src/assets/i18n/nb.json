@@ -2264,6 +2264,9 @@
         "support": {
             "title": "Nettsted for Lenovos kundestøtte"
         },
+        "security": {
+            "title": "For a better protection for your device"
+        },
         "banner": {
             "neverChecked": "Velkommen som bruker av Systemoppdateringer.",
             "title": "Et oppdatert system er et velfungerende system.",

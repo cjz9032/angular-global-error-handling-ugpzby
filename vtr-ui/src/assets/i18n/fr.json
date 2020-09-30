@@ -2264,6 +2264,9 @@
         "support": {
             "title": "Site Web du support Lenovo"
         },
+        "security": {
+            "title": "For a better protection for your device"
+        },
         "banner": {
             "neverChecked": "Vous êtes invité à mettre à jour le système.",
             "title": "Un système mis à jour est un système sain.",

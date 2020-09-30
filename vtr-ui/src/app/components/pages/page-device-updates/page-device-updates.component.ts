@@ -28,6 +28,10 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 import { ContentActionType } from 'src/app/enums/content.enum';
+import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
+import { AntivirusService } from 'src/app/services/security/antivirus.service';
+import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
+import { SelfSelectService, SegmentConst } from 'src/app/services/self-select/self-select.service';
 
 @Component({
 	selector: 'vtr-page-device-updates',
@@ -42,6 +46,31 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 
 	supportWebsiteCard: FeatureContent = new FeatureContent();
 	cardContentPositionA: FeatureContent = new FeatureContent();
+	securityWidgetCard: FeatureContent = new FeatureContent();
+
+	rightCards = [{
+		cardContent: null,
+		id: 'su-security-widget-cardcontent',
+		ariaLabel: 'su-security-widget-cardcontent',
+		type: 'subpage-partner-corner',
+		order: 2,
+		show: false
+	},{
+		cardContent: null,
+		id: 'su-web-support-cardcontent',
+		ariaLabel: 'su-web-support-cardcontent',
+		type: 'subpage-partner-corner',
+		order: 3,
+		show: true
+	},{
+		cardContent: null,
+		id: 'su-positionA-cardcontent',
+		ariaLabel: 'su-positionA-cardcontent',
+		type: 'subpage-corner',
+		cornerShift: 'large',
+		order: 4,
+		show: true
+	}];
 
 	private lastUpdatedText = 'systemUpdates.banner.last';
 	private nextScanText = 'systemUpdates.banner.next';
@@ -58,6 +87,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	public isUpdateCheckInProgress = false;
 	public isRebootRequested = false;
 	public showFullHistory = false;
+	public showSecurityWidget = false;
 	private notificationSubscription: Subscription;
 	private isComponentInitialized = false;
 	public updateTitle = '';
@@ -177,6 +207,9 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		private deviceService: DeviceService,
 		private router: Router,
 		private logger: LoggerService,
+		private hypSetting: HypothesisService,
+		private antiVirusService: AntivirusService,
+		private selfSelectService: SelfSelectService,
 		private metricService: MetricService
 	) {
 		this.isOnline = this.commonService.isOnline;
@@ -243,6 +276,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		this.setUpdateTitle();
 		this.popRebootDialogIfNecessary();
 		this.initSupportCard();
+		this.initSecurityCard();
 	}
 
 	private initSupportCard() {
@@ -253,8 +287,41 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 				FeatureImage: 'assets/images/support.jpg',
 				ActionType: ContentActionType.External,
 				ActionLink: this.supportLink,
-			};
+			}
+			this.rightCards[1].cardContent = this.supportWebsiteCard;
 		});
+	}
+
+	private async initSecurityCard() {
+		try {
+			const settingValue = await this.hypSetting.getFeatureSetting('SystemUpdateSecurityWidget');
+			const segmentValue = await this.selfSelectService.getSegment();
+			const currentPage = this.antiVirusService.GetAntivirusStatus().currentPage;
+			if (settingValue !== 'false'
+				&& segmentValue === SegmentConst.Consumer
+				&& currentPage !== 'mcafee') {
+				this.translate.stream('systemUpdates.security.title').subscribe((title) => {
+					this.securityWidgetCard = {
+						Id: 'SecurityWidgetCard',
+						Title: title,
+						FeatureImage: 'assets/images/security-bg.jpg',
+						ActionType: ContentActionType.Internal,
+						ActionLink: 'lenovo-vantage3:anti-virus',
+						SupportOffline: true
+					};
+					this.showSecurityWidget = true;
+					this.rightCards[0].cardContent = this.securityWidgetCard;
+					this.rightCards[0].show = this.showSecurityWidget;
+				});
+			} else {
+				this.showSecurityWidget = false;
+				this.rightCards[0].show = this.showSecurityWidget;
+			}
+		} catch (ex) {
+			this.showSecurityWidget = false;
+			this.rightCards[0].show = this.showSecurityWidget;
+			this.logger.exception('initSecurityCard failed with exception', ex.message);
+		}
 	}
 
 	popRebootDialogIfNecessary() {
@@ -300,6 +367,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					if (this.cardContentPositionA.BrandName) {
 						this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
 					}
+					this.rightCards[2].cardContent = this.cardContentPositionA;
 				}
 			},
 			error => {
@@ -859,6 +927,9 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 						}
 						this.router.navigateByUrl('/dashboard');
 					}
+					break;
+				case SelfSelectEvent.SegmentChange:
+					this.initSecurityCard();
 					break;
 				default:
 					break;

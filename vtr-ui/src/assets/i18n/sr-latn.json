@@ -2264,6 +2264,9 @@
         "support": {
             "title": "Veb lokacija Lenovo podrška"
         },
+        "security": {
+            "title": "For a better protection for your device"
+        },
         "banner": {
             "neverChecked": "Dobro došli u Ažuriranje sistema.",
             "title": "Ažuran sistem je zdrav sistem.",

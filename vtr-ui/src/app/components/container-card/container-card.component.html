@@ -337,7 +337,7 @@
 				</div>
 			</a>
 			<vtr-container-card-offline [containerCardId]="containerCardId"
-				*ngIf="!isOnline"></vtr-container-card-offline>
+				*ngIf="!isOnline && !item.SupportOffline"></vtr-container-card-offline>
 		</div>
 	</div>
 
@@ -403,7 +403,7 @@
 				</div>
 			</div>
 			<vtr-container-card-offline [containerCardId]="containerCardId"
-				*ngIf="!isOnline"></vtr-container-card-offline>
+				*ngIf="!isOnline && !item.SupportOffline"></vtr-container-card-offline>
 		</div>
 	</div>
 
@@ -458,7 +458,7 @@
 				</a>
 			</div>
 			<vtr-container-card-offline [containerCardId]="containerCardId"
-				*ngIf="!isOnline"></vtr-container-card-offline>
+				*ngIf="!isOnline && !item.SupportOffline"></vtr-container-card-offline>
 		</div>
 	</div>
 
