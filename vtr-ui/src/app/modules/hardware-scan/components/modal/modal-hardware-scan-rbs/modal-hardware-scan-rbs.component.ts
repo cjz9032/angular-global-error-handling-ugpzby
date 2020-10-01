@@ -29,12 +29,7 @@ export class ModalHardwareScanRbsComponent implements OnDestroy, OnInit {
 		private translate: TranslateService,
 		private hardwareScanService: HardwareScanService,
 		private modalService: NgbModal,
-	) {
-		this.hardwareScanService.setLoadingStatus(true);
-		this.hardwareScanService.setScanExecutionStatus(false);
-		this.hardwareScanService.setRecoverExecutionStatus(false);
-		this.hardwareScanService.setIsScanDone(false);
-	}
+	) { }
 
 	public ngOnInit() {
 		this.getItemsToRecoverBadSectors();
