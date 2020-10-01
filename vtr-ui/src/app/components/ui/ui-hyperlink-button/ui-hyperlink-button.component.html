@@ -27,6 +27,7 @@
 			}">
 			</span>
 			<fa-icon [icon]="faIcon" *ngIf="faIcon" class="icon {{faIconStyle}}"></fa-icon>
+			<img [src]='imgSrcIcon | svgInline | async' role="img" class="icon image-icon" *ngIf="imgSrcIcon"/>
 		</button>
 	</div>
 </div>

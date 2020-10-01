@@ -33,6 +33,11 @@
 	}
 }
 
+.image-icon {
+	vertical-align: bottom;
+	padding-left: 5px;
+}
+
 @mixin icon-style ($icon-size: $fontsize_xs, $icon-weight: $weight_bold, $icon-color: $light, $icon-padding: 0 0 0 1rem) {
 	color: $icon-color;
 	font-size: $icon-size;
