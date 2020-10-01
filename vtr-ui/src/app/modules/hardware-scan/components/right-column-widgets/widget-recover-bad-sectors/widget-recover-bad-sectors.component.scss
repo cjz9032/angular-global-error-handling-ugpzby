@@ -1,0 +1,108 @@
+@import "../../../../../app.theme";
+
+.vtr-widget-device-recover-bad-sectors {
+	border-radius: $border_radius;
+	background-color: $light;
+	box-shadow: $drop_shadow;
+	padding: 2.4rem;
+	@include high-contrast-border;
+
+	.title-box {
+		display: flex;
+		flex-wrap: nowrap;
+
+		.title {
+			color: $main_dark;
+			font-size: $fontsize_xl;
+			font-weight: $weight_light;
+			padding-right: 2.4rem;
+			margin-bottom: 0.4rem;
+			width: 100%; // Width and word-wrap to break long words on some languages as German
+			word-wrap: break-word;
+		}
+
+		.title-question-mark {
+			font-size: $fontsize_sm;
+			font-weight: $weight_light;
+			padding: 0.2rem;
+
+			.recover-question-icon {
+				color: $menu_hover;
+				cursor: pointer;
+
+				&:hover {
+					color: $highlight;
+				}
+			}
+		}
+	}
+
+	.description {
+		color: $grey_dark;
+		font-size: $fontsize_xs;
+		font-weight: $weight_light;
+	}
+
+	.settings-container {
+		margin-top: 2.7rem;
+		list-style: none;
+		padding: 0;
+		border: 0.1rem solid $shade_lighter;
+		border-radius: 0.9rem;
+	}
+}
+
+.button-row {
+	text-align: center;
+	padding: 1.5rem 0 0 0;
+
+	.action-button {
+		border-radius: 2.5rem;
+		background: $gradient_main;
+		text-transform: uppercase;
+		padding: 0 3rem;
+		color: $light;
+		font-size: $fontsize_xs;
+		height: 5rem;
+		max-width: 100%;
+		font-weight: $weight_bold;
+		line-height: 5rem;
+
+		text-align: center;
+		border: 0rem;
+		cursor: pointer;
+
+		&:disabled {
+			background: $light-grey;
+			color: $light;
+			cursor: default;
+		}
+	}
+}
+
+// ng-deep required, without this style cannot be overridden.
+::ng-deep {
+	.vtr-widget-device-recover-bad-sectors {
+		.settings-container {
+			vtr-ui-row-switch {
+				&:last-child {
+					.vtr-ui-switch-row {
+						border-bottom: none;
+					}
+				}
+				.vtr-ui-switch-row {
+					margin: 0;
+					padding: 1.5rem;
+					.row {
+						align-items: center;
+					}
+					vtr-ui-switch-onoff {
+						.checkbox {
+							margin: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}

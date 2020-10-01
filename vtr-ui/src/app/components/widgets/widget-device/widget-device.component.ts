@@ -10,13 +10,13 @@ import { MetricService } from 'src/app/services/metric/metrics.service';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
 import { Subject } from 'rxjs';
-import { PreviousResultService } from 'src/app/services/hardware-scan/previous-result.service';
+import { PreviousResultService } from 'src/app/modules/hardware-scan/services/previous-result.service';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { ConfigService } from 'src/app/services/config/config.service';
 import moment from 'moment';
 import { Router } from '@angular/router';
 import { takeUntil } from 'rxjs/operators';
-import { HardwareScanService } from 'src/app/services/hardware-scan/hardware-scan.service';
+import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
 
 @Component({
 	selector: 'vtr-widget-device',

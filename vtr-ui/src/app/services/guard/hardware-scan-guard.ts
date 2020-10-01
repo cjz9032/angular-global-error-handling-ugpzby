@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { GuardConstants } from './guard-constants';
-import { HardwareScanService } from '../../services/hardware-scan/hardware-scan.service';
+import { HardwareScanService } from '../../modules/hardware-scan/services/hardware-scan.service';
 import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { CommonService } from '../common/common.service';
 import { BasicGuard } from './basic-guard';

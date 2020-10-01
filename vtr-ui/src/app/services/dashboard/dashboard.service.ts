@@ -11,12 +11,12 @@ import { FeatureContent } from 'src/app/data-models/common/feature-content.model
 import { ContentActionType, ContentSource } from 'src/app/enums/content.enum';
 import { LocalCacheService } from '../local-cache/local-cache.service';
 import { SystemUpdateService } from '../system-update/system-update.service';
-import { PreviousResultService } from '../hardware-scan/previous-result.service';
+import { PreviousResultService } from '../../modules/hardware-scan/services/previous-result.service';
 import { DeviceService } from '../device/device.service';
 import { SmartPerformanceService } from '../smart-performance/smart-performance.service';
 import { MetricService } from '../metric/metrics.service';
 import { AdPolicyService } from '../ad-policy/ad-policy.service';
-import { HardwareScanService } from '../hardware-scan/hardware-scan.service';
+import { HardwareScanService } from '../../modules/hardware-scan/services/hardware-scan.service';
 import { ConfigService } from '../config/config.service';
 import { SystemHealthDates, SystemState } from 'src/app/enums/system-state.enum';
 

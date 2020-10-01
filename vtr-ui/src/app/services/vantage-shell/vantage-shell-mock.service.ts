@@ -7,7 +7,7 @@ import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.mod
 import { HttpClient } from '@angular/common/http';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { BindingScopeEnum, Container } from 'inversify';
-import { HardwareScanShellMock } from 'src/app/services/hardware-scan/hardware-scan-shell-mock';
+import { HardwareScanShellMock } from 'src/app/modules/hardware-scan/services/hardware-scan-shell-mock';
 import { KeyType } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.interface';
 import { VoipErrorCodeEnum } from 'src/app/enums/voip.enum';
 import { CommonErrorCode } from 'src/app/data-models/common/common.interface';

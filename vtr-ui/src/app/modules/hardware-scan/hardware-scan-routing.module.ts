@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PageHardwareScanComponent } from '../../components/pages/page-hardwarescan/page-hardware-scan.component';
-import { HardwareComponentsComponent } from '../../components/pages/page-hardwarescan/children/hardware-components/hardware-components.component';
-import { HardwareViewResultsComponent } from '../../components/pages/page-hardwarescan/children/hardware-view-results/hardware-view-results.component';
+import { PageHardwareScanComponent } from './pages/page-hardware-scan.component';
+import { HardwareComponentsComponent } from './pages/children/hardware-components/hardware-components.component';
+import { HardwareViewResultsComponent } from './pages/children/hardware-view-results/hardware-view-results.component';
 
 import { HardwareScanGuard } from '../../services/guard/hardware-scan-guard';
 import { GuardService } from 'src/app/services/guard/guardService.service';

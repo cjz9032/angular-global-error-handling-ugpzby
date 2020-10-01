@@ -1,0 +1,66 @@
+@import "../../../../../app.theme";
+
+.vtr-ui-list-checkbox-hardware {
+	.list-group {
+		min-width: 200px;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		border-radius: 0.1rem !important;
+
+		.list-group-item {
+			width: 100%;
+			background: $shade_extralight;
+			padding: 1.5rem 1rem 1.5rem 1.5rem;
+			border: 0.1rem solid $shade_lighter;
+			color: $main_darker;
+
+			.title {
+				font-size: $fontsize_xs;
+				font-weight: $weight_bold;
+				padding-top: 0rem;
+				padding-left: 1.5rem;
+			}
+
+			.subname {
+				font-size: $fontsize_xs;
+				font-weight: $weight_light !important;
+			}
+
+			// modifying global checkbox component
+			.custom-control-component ::ng-deep .auto-set-checkbox{
+				margin: 0;
+
+				// removing default p margin
+				.custom-control-label {
+					padding-left: 1.5rem;
+
+					.custom-control-label-text {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+
+		.options {
+			padding: 2rem 0 1rem 0;
+			font-size: $fontsize_xs2;
+			display: flex;
+
+			// Remove default padding-left from Select hyperlink-button
+			:first-child {
+				&.hyperlink-container {
+					::ng-deep.vtr-ui-hyperlink-button {
+						padding-left: 0;
+					}
+				}
+			}
+
+			.select-item-subtitle {
+				padding: 0.5rem;
+				font-weight: $shade_lighter;
+				color: $shade_darker;
+			}
+		}
+	}
+}
