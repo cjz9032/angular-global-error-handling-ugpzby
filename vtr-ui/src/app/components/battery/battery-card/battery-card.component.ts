@@ -161,7 +161,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		// temp
 		this.updateMainBatteryTime();
 		this.batteryIndicator.charging = this.getAcAttachedStatus();
-		this.isLoading = false;
 		const conditions = this.localCacheService.getLocalCacheValue(LocalStorageKey.BatteryCondition);
 		if (Array.isArray(conditions) && conditions.length > 0) {
 			conditions.forEach((condition: BatteryConditionModel, index) => {
