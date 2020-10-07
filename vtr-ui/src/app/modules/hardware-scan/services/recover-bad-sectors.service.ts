@@ -33,6 +33,7 @@ export class RecoverBadSectorsService {
 		const modalRef =  this.modalService.open(ModalHardwareScanRbsComponent, {
 			size: 'lg',
 			centered: true,
+			backdrop: true,
 		});
 
 		if (failedDevices !== null) {
