@@ -165,7 +165,7 @@
 										linkId="myDevice-settings-battery-gauge-reset-stop-btn{{i+1}}"
 										[label]="battery.isResetRunning? ('device.deviceSettings.power.batterySettings.gaugeReset.btnLabel.stop'|translate): ('device.deviceSettings.power.batterySettings.gaugeReset.btnLabel.reset' | translate)"
 										(keyup)="onKeyPressBatteryGaugeReset(i,$event)"
-										(click)="onBatteryGaugeReset(i,$event)"></vtr-ui-button>
+										(onClick)="onBatteryGaugeReset(i,$event)"></vtr-ui-button>
 								</div>
 							</div>
 						</div>
