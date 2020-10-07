@@ -4212,6 +4212,31 @@
         "refreshMessage": "重新整理可能需要一些時間，因為此時需要再度載入所有元件",
         "processFinishedCannotBeCanceled": "由於執行中的程序已完成，因此不再需要取消。",
         "cancelMayTakeSomeTime": "請稍候，視您的系統而定，取消可能需要一些時間。",
+        "report": {
+			"title": "Hardware Diagnostics Log",
+			"modelTitle": "Model",
+			"startDate": "Start Date and Time",
+			"endDate": "End Date and Time",
+			"model": {
+				"serialNumber": "Serial Number",
+				"wiredInterface": "Wired Ethernet Mac Address",
+				"wirelessInterface": "Wireless Mac Address",
+				"biosVersion": "BIOS Version",
+				"productName": "Product Name"
+			},
+			"resources": "Resources",
+			"tests": "Tests",
+			"totalModulesTested": "Total Modules Tested",
+			"environmentTitle": "Environment",
+			"environment": {
+				"applicationVersion": "Application Version",
+				"pluginVersion": "Plugin Version",
+				"experienceVersion": "Experience Version",
+				"shellVersion": "Shell Version",
+				"bridgeVersion": "Bridge Version"
+			},
+			"testResult": "Test Result"
+		},
         "scanFailureModal": {
             "title": "偵測到硬體問題",
             "problemDetected": "偵測到您電腦的如下裝置有問題：",

@@ -6,6 +6,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { httpInterceptorProviders } from 'src/app/providers/net/http-interceptors';
 import { MissingTranslationDefaultHandler } from '../i18n/handler/missing-tranlsation-default-handler';
 import { WebpackTranslateLoader } from '../i18n/loader/webpack-translate-loader.loader';
+import { TranslateDefaultValueIfNotFoundPipe } from '../pipe/translate-default-value-if-not-found/translate-default-value-if-not-found.pipe';
 
 @NgModule({
 	imports: [
@@ -26,7 +27,8 @@ import { WebpackTranslateLoader } from '../i18n/loader/webpack-translate-loader.
 	exports: [TranslateModule, TranslatePipe],
 	providers: [
 		httpInterceptorProviders,
-		TranslatePipe
+		TranslatePipe,
+		TranslateDefaultValueIfNotFoundPipe
 	]
 })
 export class TranslationModule {

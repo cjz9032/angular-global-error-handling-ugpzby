@@ -58,6 +58,7 @@ import { TranslateDefaultValueIfNotFoundPipe } from 'src/app/pipe/translate-defa
 	],
 	providers: [
 		FormatLocaleDatePipe,
+		FormatLocaleDateTimePipe
 	],
 	entryComponents: [
 	],
