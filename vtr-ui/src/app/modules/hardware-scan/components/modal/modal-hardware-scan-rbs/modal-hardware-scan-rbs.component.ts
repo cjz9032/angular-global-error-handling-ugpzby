@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, OnDestroy, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter, OnDestroy, OnInit, ElementRef, HostListener } from '@angular/core';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
 import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
@@ -15,6 +15,10 @@ export class ModalHardwareScanRbsComponent implements OnDestroy, OnInit {
 	private failedDevicesList = [];
 	private isSuccessful = false;
 
+	// Its a control variable used to avoid modal to be closed on first onClick call
+	// onClicked is called the first time before modal opens
+	private isModalOpen = false;
+
 	// Used to signalize to a subscriber that the rbs will start.
 	// It emits the selected devices to be recovered.
 	@Output() recoverStart: EventEmitter<any> = new EventEmitter();
@@ -29,7 +33,26 @@ export class ModalHardwareScanRbsComponent implements OnDestroy, OnInit {
 		private translate: TranslateService,
 		private hardwareScanService: HardwareScanService,
 		private modalService: NgbModal,
+		private elementRef: ElementRef,
 	) { }
+
+	// Used to close modal when press 'ESC' key
+	@HostListener('document:keydown', ['$event'])
+	onKeyDownHandler(event: KeyboardEvent) {
+		if (event.key === 'Escape') {
+			this.closeModal();
+		}
+	}
+
+	// Used to close modal when click outside it
+	@HostListener('document:click', ['$event'])
+	onClick(event: MouseEvent) {
+		if (!this.elementRef.nativeElement.contains(event.target) && this.isModalOpen) {
+			this.closeModal();
+		}
+
+		this.isModalOpen = true;
+	}
 
 	public ngOnInit() {
 		this.getItemsToRecoverBadSectors();
