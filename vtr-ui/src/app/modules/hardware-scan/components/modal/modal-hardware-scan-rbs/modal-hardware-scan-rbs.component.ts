@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, OnDestroy, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter, OnDestroy, OnInit, HostListener } from '@angular/core';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
 import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
@@ -30,6 +30,14 @@ export class ModalHardwareScanRbsComponent implements OnDestroy, OnInit {
 		private hardwareScanService: HardwareScanService,
 		private modalService: NgbModal,
 	) { }
+
+	// Used to close modal when press 'ESC' key
+	@HostListener('document:keydown', ['$event'])
+	onKeyDownHandler(event: KeyboardEvent) {
+		if (event.key === 'Escape') {
+			this.closeModal();
+		}
+	}
 
 	public ngOnInit() {
 		this.getItemsToRecoverBadSectors();
