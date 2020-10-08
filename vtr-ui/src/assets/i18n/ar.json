@@ -4214,6 +4214,31 @@
         "refreshMessage": "قد يستغرق التحديث بعض الوقت لأنه يحتاج إلى تحميل جميع المكونات مرةً أخرى",
         "processFinishedCannotBeCanceled": "لا داعي لإلغاء العملية قيد التشغيل بعد الآن، حيث إنها قد اكتملت.",
         "cancelMayTakeSomeTime": "يرجى الانتظار، قد يستغرق الأمر بعض الوقت للإلغاء حسب نظامك.",
+        "report": {
+			"title": "Hardware Diagnostics Log",
+			"modelTitle": "Model",
+			"startDate": "Start Date and Time",
+			"endDate": "End Date and Time",
+			"model": {
+				"serialNumber": "Serial Number",
+				"wiredInterface": "Wired Ethernet Mac Address",
+				"wirelessInterface": "Wireless Mac Address",
+				"biosVersion": "BIOS Version",
+				"productName": "Product Name"
+			},
+			"resources": "Resources",
+			"tests": "Tests",
+			"totalModulesTested": "Total Modules Tested",
+			"environmentTitle": "Environment",
+			"environment": {
+				"applicationVersion": "Application Version",
+				"pluginVersion": "Plugin Version",
+				"experienceVersion": "Experience Version",
+				"shellVersion": "Shell Version",
+				"bridgeVersion": "Bridge Version"
+			},
+			"testResult": "Test Result"
+		},
         "scanFailureModal": {
             "title": "اكتشاف مشاكل تتعلق بالأجهزة",
             "problemDetected": "تم اكتشاف مشاكل تتعلق بالمكونات التالية على جهاز الكمبيوتر:",

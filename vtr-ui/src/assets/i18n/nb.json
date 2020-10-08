@@ -4212,6 +4212,31 @@
         "refreshMessage": "Oppdatering kan ta litt tid siden alle komponentene må lastes inn på nytt",
         "processFinishedCannotBeCanceled": "Den kjørende prosessen trenger ikke lenger å avbrytes fordi den er fullført.",
         "cancelMayTakeSomeTime": "Vent litt. Det kan ta litt tid å avbryte, avhengig av systemet.",
+        "report": {
+			"title": "Hardware Diagnostics Log",
+			"modelTitle": "Model",
+			"startDate": "Start Date and Time",
+			"endDate": "End Date and Time",
+			"model": {
+				"serialNumber": "Serial Number",
+				"wiredInterface": "Wired Ethernet Mac Address",
+				"wirelessInterface": "Wireless Mac Address",
+				"biosVersion": "BIOS Version",
+				"productName": "Product Name"
+			},
+			"resources": "Resources",
+			"tests": "Tests",
+			"totalModulesTested": "Total Modules Tested",
+			"environmentTitle": "Environment",
+			"environment": {
+				"applicationVersion": "Application Version",
+				"pluginVersion": "Plugin Version",
+				"experienceVersion": "Experience Version",
+				"shellVersion": "Shell Version",
+				"bridgeVersion": "Bridge Version"
+			},
+			"testResult": "Test Result"
+		},
         "scanFailureModal": {
             "title": "Maskinvareproblem oppdaget",
             "problemDetected": "Det ble oppdaget problemer med de følgende komponentene på maskinen:",

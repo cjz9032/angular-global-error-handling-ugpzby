@@ -4212,6 +4212,31 @@
         "refreshMessage": "刷新可能需要一些时间，因为它需要再次加载所有组件",
         "processFinishedCannotBeCanceled": "正在运行的进程已完成，因此不再需要取消。",
         "cancelMayTakeSomeTime": "请稍候，可能需要一些时间才能取消，具体情况视您的系统而定。",
+        "report": {
+			"title": "Hardware Diagnostics Log",
+			"modelTitle": "Model",
+			"startDate": "Start Date and Time",
+			"endDate": "End Date and Time",
+			"model": {
+				"serialNumber": "Serial Number",
+				"wiredInterface": "Wired Ethernet Mac Address",
+				"wirelessInterface": "Wireless Mac Address",
+				"biosVersion": "BIOS Version",
+				"productName": "Product Name"
+			},
+			"resources": "Resources",
+			"tests": "Tests",
+			"totalModulesTested": "Total Modules Tested",
+			"environmentTitle": "Environment",
+			"environment": {
+				"applicationVersion": "Application Version",
+				"pluginVersion": "Plugin Version",
+				"experienceVersion": "Experience Version",
+				"shellVersion": "Shell Version",
+				"bridgeVersion": "Bridge Version"
+			},
+			"testResult": "Test Result"
+		},
         "scanFailureModal": {
             "title": "检测到硬件问题",
             "problemDetected": "在计算机上的以下组件中检测到问题：",

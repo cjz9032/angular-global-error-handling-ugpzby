@@ -4212,6 +4212,31 @@
         "refreshMessage": "Osvežitev lahko traja nekaj časa, saj se morajo vse komponente znova naložiti",
         "processFinishedCannotBeCanceled": "Procesa, ki se izvaja, ni več treba preklicati, ker je dokončan.",
         "cancelMayTakeSomeTime": "Počakajte. Preklic lahko traja nekaj časa, odvisno od sistema.",
+        "report": {
+			"title": "Hardware Diagnostics Log",
+			"modelTitle": "Model",
+			"startDate": "Start Date and Time",
+			"endDate": "End Date and Time",
+			"model": {
+				"serialNumber": "Serial Number",
+				"wiredInterface": "Wired Ethernet Mac Address",
+				"wirelessInterface": "Wireless Mac Address",
+				"biosVersion": "BIOS Version",
+				"productName": "Product Name"
+			},
+			"resources": "Resources",
+			"tests": "Tests",
+			"totalModulesTested": "Total Modules Tested",
+			"environmentTitle": "Environment",
+			"environment": {
+				"applicationVersion": "Application Version",
+				"pluginVersion": "Plugin Version",
+				"experienceVersion": "Experience Version",
+				"shellVersion": "Shell Version",
+				"bridgeVersion": "Bridge Version"
+			},
+			"testResult": "Test Result"
+		},
         "scanFailureModal": {
             "title": "Zaznana je težava s strojno opremo",
             "problemDetected": "V računalniku so bile zaznane težave z naslednjimi komponentami:",

@@ -4212,6 +4212,31 @@
         "refreshMessage": "Оновлення може зайняти деякий час – потрібно знову завантажити всі компоненти",
         "processFinishedCannotBeCanceled": "Активний процес завершився, тому його вже не потрібно скасовувати.",
         "cancelMayTakeSomeTime": "Зачекайте – скасування може зайняти деякий час (залежно від вашої системи).",
+        "report": {
+			"title": "Hardware Diagnostics Log",
+			"modelTitle": "Model",
+			"startDate": "Start Date and Time",
+			"endDate": "End Date and Time",
+			"model": {
+				"serialNumber": "Serial Number",
+				"wiredInterface": "Wired Ethernet Mac Address",
+				"wirelessInterface": "Wireless Mac Address",
+				"biosVersion": "BIOS Version",
+				"productName": "Product Name"
+			},
+			"resources": "Resources",
+			"tests": "Tests",
+			"totalModulesTested": "Total Modules Tested",
+			"environmentTitle": "Environment",
+			"environment": {
+				"applicationVersion": "Application Version",
+				"pluginVersion": "Plugin Version",
+				"experienceVersion": "Experience Version",
+				"shellVersion": "Shell Version",
+				"bridgeVersion": "Bridge Version"
+			},
+			"testResult": "Test Result"
+		},
         "scanFailureModal": {
             "title": "Виявлено проблему з устаткуванням",
             "problemDetected": "Виявлено проблеми з такими компонентами вашого комп’ютера:",

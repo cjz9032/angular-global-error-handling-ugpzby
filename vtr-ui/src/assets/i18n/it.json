@@ -4212,6 +4212,31 @@
         "refreshMessage": "L'aggiornamento potrebbe richiedere del tempo poiché è necessario caricare di nuovo tutti i componenti",
         "processFinishedCannotBeCanceled": "Il processo in esecuzione non deve più essere annullato, poiché è stato completato.",
         "cancelMayTakeSomeTime": "Attendere. La procedura di annullamento potrebbe richiedere del tempo a seconda del sistema.",
+        "report": {
+			"title": "Hardware Diagnostics Log",
+			"modelTitle": "Model",
+			"startDate": "Start Date and Time",
+			"endDate": "End Date and Time",
+			"model": {
+				"serialNumber": "Serial Number",
+				"wiredInterface": "Wired Ethernet Mac Address",
+				"wirelessInterface": "Wireless Mac Address",
+				"biosVersion": "BIOS Version",
+				"productName": "Product Name"
+			},
+			"resources": "Resources",
+			"tests": "Tests",
+			"totalModulesTested": "Total Modules Tested",
+			"environmentTitle": "Environment",
+			"environment": {
+				"applicationVersion": "Application Version",
+				"pluginVersion": "Plugin Version",
+				"experienceVersion": "Experience Version",
+				"shellVersion": "Shell Version",
+				"bridgeVersion": "Bridge Version"
+			},
+			"testResult": "Test Result"
+		},
         "scanFailureModal": {
             "title": "Problema hardware rilevato",
             "problemDetected": "Sono stati rilevati problemi per i seguenti componenti del computer:",

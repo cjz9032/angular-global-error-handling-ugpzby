@@ -4212,6 +4212,31 @@
         "refreshMessage": "Tüm bileşenlerin tekrar yüklenmesi gerektiğinden yenileme işlemi biraz zaman alabilir",
         "processFinishedCannotBeCanceled": "Çalışan işlem tamamlandığından artık iptal edilmesi gerekmiyor.",
         "cancelMayTakeSomeTime": "Lütfen bekleyin, sisteminize bağlı olarak iptal işlemi biraz zaman alabilir.",
+        "report": {
+			"title": "Hardware Diagnostics Log",
+			"modelTitle": "Model",
+			"startDate": "Start Date and Time",
+			"endDate": "End Date and Time",
+			"model": {
+				"serialNumber": "Serial Number",
+				"wiredInterface": "Wired Ethernet Mac Address",
+				"wirelessInterface": "Wireless Mac Address",
+				"biosVersion": "BIOS Version",
+				"productName": "Product Name"
+			},
+			"resources": "Resources",
+			"tests": "Tests",
+			"totalModulesTested": "Total Modules Tested",
+			"environmentTitle": "Environment",
+			"environment": {
+				"applicationVersion": "Application Version",
+				"pluginVersion": "Plugin Version",
+				"experienceVersion": "Experience Version",
+				"shellVersion": "Shell Version",
+				"bridgeVersion": "Bridge Version"
+			},
+			"testResult": "Test Result"
+		},
         "scanFailureModal": {
             "title": "Donanım Sorunu Algılandı",
             "problemDetected": "Bilgisayarınızın aşağıdaki bileşenlerinde sorunlar algılandı:",
