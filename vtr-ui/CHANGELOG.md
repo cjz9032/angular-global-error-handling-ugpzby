@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.20](https://bitbucket.tc.lenovo.com///compare/v1.8.19...v1.8.20) (2020-10-09)
+
+### [1.7.57](https://bitbucket.tc.lenovo.com///compare/v1.8.12...v1.7.57) (2020-09-22)
+
+
+### Bug Fixes
+
+* **UI:** replace http by https ([f594435](https://bitbucket.tc.lenovo.com///commit/f594435c7b6c73aea6a3a03dab383065b8fa41b6))
+
 ### [1.8.19](https://bitbucket.tc.lenovo.com///compare/v1.8.17...v1.8.19) (2020-10-06)
 
 ### [1.8.18](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.8.17...v1.8.18) (2020-10-02)
