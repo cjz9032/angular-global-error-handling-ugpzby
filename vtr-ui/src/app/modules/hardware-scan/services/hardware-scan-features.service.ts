@@ -4,7 +4,7 @@ import { ScanLogService } from './scan-log.service';
 @Injectable({
 	providedIn: 'root'
 })
-export class HardwareScanFeatures {
+export class HardwareScanFeaturesService {
 
 	private exportLogAvailable = false;
 

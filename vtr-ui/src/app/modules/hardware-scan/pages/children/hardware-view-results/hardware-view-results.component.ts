@@ -8,6 +8,7 @@ import { ExportResultsService } from '../../../services/export-results.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { HardwareScanMetricsService } from '../../../services/hardware-scan-metrics.service';
+import { HardwareScanFeaturesService } from '../../../services/hardware-scan-features.service';
 
 @Component({
 	selector: 'vtr-hardware-view-results',
@@ -22,6 +23,10 @@ export class HardwareViewResultsComponent implements OnInit, OnDestroy {
 	public showProgress = false;
 	public isLoadingDone = false;
 
+	public get isFeatureExportAvailable(): boolean {
+		return this.hardwareScanFeaturesService.isExportLogAvailable;
+	}
+
 	// "Wrapper" value to be accessed from the HTML
 	public testResultEnum = HardwareScanTestResult;
 
@@ -33,7 +38,8 @@ export class HardwareViewResultsComponent implements OnInit, OnDestroy {
 		private exportService: ExportResultsService,
 		private logger: LoggerService,
 		private timerService: TimerService,
-		private hardwareScanMetricsService: HardwareScanMetricsService
+		private hardwareScanMetricsService: HardwareScanMetricsService,
+		private hardwareScanFeaturesService: HardwareScanFeaturesService,
 	) { }
 
 	ngOnInit() {

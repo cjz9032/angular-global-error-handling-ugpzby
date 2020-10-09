@@ -11,6 +11,7 @@
 				<vtr-ui-hyperlink-button class="refresh-button"
 					linkId="hwscan-view-results-refresh-modules-btn"
 					linkRole="button"
+					*ngIf="isFeatureExportAvailable"
 					hyperlinkStyle="xs-300-blue-lighter"
 					metricsEvent="FeatureClick"
 					metricsParent="HardwareScan"

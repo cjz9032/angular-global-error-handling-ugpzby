@@ -1,16 +1,16 @@
 import { HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
-import { HardwareScanFeatures } from './hardware-scan-features.service';
+import { HardwareScanFeaturesService } from './hardware-scan-features.service';
 
-describe('HardwareScanFeatures', () => {
-	let service: HardwareScanFeatures;
+describe('HardwareScanFeaturesService', () => {
+	let service: HardwareScanFeaturesService;
 
 	beforeEach(() => {
 		TestBed.configureTestingModule({
 			imports: [ HttpClientModule ],
 			providers: [ HttpClientModule ]
 		});
-		service = TestBed.inject(HardwareScanFeatures);
+		service = TestBed.inject(HardwareScanFeaturesService);
 	});
 
 	it('should be created', () => {
