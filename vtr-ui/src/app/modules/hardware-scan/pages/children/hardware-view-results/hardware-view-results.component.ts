@@ -4,6 +4,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { HardwareScanTestResult, HardwareScanFinishedHeaderType } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 import { HardwareScanService } from '../../../services/hardware-scan.service';
 import { PreviousResultService } from '../../../services/previous-result.service';
+import { ExportResultsService } from '../../../services/export-results.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-hardware-view-results',
@@ -26,6 +28,8 @@ export class HardwareViewResultsComponent implements OnInit, OnDestroy {
 		private hardwareScanService: HardwareScanService,
 		private previousResultService: PreviousResultService,
 		private translate: TranslateService,
+		private exportService: ExportResultsService,
+		private logger: LoggerService,
 	) { }
 
 	ngOnInit() {
@@ -46,5 +50,13 @@ export class HardwareViewResultsComponent implements OnInit, OnDestroy {
 
 		// Sets the Header with the type "None"
 		this.hardwareScanService.setScanFinishedHeaderType(HardwareScanFinishedHeaderType.None);
+	}
+
+	public exportResults() {
+		this.exportService.exportScanResults().then(() => {
+			// TODO, probably open modal
+		}).catch(() => {
+			this.logger.error('Export Scan Results rejected');
+		});
 	}
 }

@@ -10,10 +10,13 @@ import { ModalHardwareScanCustomizeComponent } from '../../../components/modal/m
 import { HardwareScanService } from '../../../services/hardware-scan.service';
 import { VantageShellService } from '../../../../../services/vantage-shell/vantage-shell.service';
 import { ModalWaitComponent } from '../../../components/modal/modal-wait/modal-wait.component';
-import { TaskType, TaskStep, HardwareScanProgress } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
+import { TaskType, TaskStep, HardwareScanProgress, HardwareScanFinishedHeaderType } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 import { ScanExecutionService } from '../../../services/scan-execution.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProtocolExecutionService } from '../../../services/protocol-execution.service';
+import { HardwareScanFeatures } from '../../../services/hardware-scan-features.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { ExportResultsService } from '../../../services/export-results.service';
 
 const RootParent = 'HardwareScan';
 const ViewResultsButton = 'ViewResults';
@@ -55,6 +58,14 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public isOnline = true;
 
+	public get isFeatureExportAvailable(): boolean {
+		if (this.hardwareScanService.isScanOrRBSFinished() || this.getEnableViewResults()) {
+			return this.hwscanFeaturesService.isExportLogAvailable;
+		}
+
+		return false;
+	}
+
 	// "Wrapper" value to be accessed from the HTML
 	public taskTypeEnum = TaskType;
 
@@ -82,7 +93,10 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		private scanExecutionService: ScanExecutionService,
 		private protocolExecutionService: ProtocolExecutionService,
 		private activatedRoute: ActivatedRoute,
-		private router: Router
+		private router: Router,
+		private hwscanFeaturesService: HardwareScanFeatures,
+		private exportService: ExportResultsService,
+		private logger: LoggerService,
 	) {
 		this.viewResultsPath = '/hardware-scan/view-results';
 		this.isOnline = this.commonService.isOnline;
@@ -205,6 +219,26 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	public getProgress() {
+		if (this.hardwareScanService) {
+			return this.hardwareScanService.getProgress();
+		}
+	}
+
+	public exportResults() {
+		if (this.exportService) {
+			if (this.hardwareScanService.getScanFinishedHeaderType() === HardwareScanFinishedHeaderType.Scan) {
+				this.exportService.exportScanResults().then(() => {
+					// TODO, probably open modal
+				}).catch(() => {
+					this.logger.error('Export Scan Results rejected');
+				});
+			} else if (this.hardwareScanService.getScanFinishedHeaderType() === HardwareScanFinishedHeaderType.RecoverBadSectors) {
+				// TODO
+			}
+		}
+	}
+
 	public getEnableViewResults() {
 		const isEnableViewResults = this.hardwareScanService.getEnableViewResults();
 		if (isEnableViewResults) {
@@ -269,12 +303,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	public refreshModules() {
 		if (this.scanExecutionService) {
 			this.scanExecutionService.refreshModules();
-		}
-	}
-
-	public getProgress() {
-		if (this.scanExecutionService) {
-			return this.scanExecutionService.executionProgress;
 		}
 	}
 

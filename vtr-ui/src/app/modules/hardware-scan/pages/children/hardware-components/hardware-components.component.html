@@ -35,6 +35,18 @@
 					[label]="'hardwareScan.refreshModule' | translate"
 					(hyperlinkClick)="refreshModules()">
 				</vtr-ui-hyperlink-button>
+				<vtr-ui-hyperlink-button
+					linkId="hwscan-refresh-modules-btn"
+					linkRole="button"
+					*ngIf="isFeatureExportAvailable"
+					hyperlinkStyle="xs-300-blue-lighter"
+					metricsEvent="FeatureClick"
+					metricsParent="HardwareScan"
+					metricsItem="HardwareScan.SaveLog"
+				 	[imgIconSrc]="'assets/icons/hardware-scan/icon_hardware_export-log.svg'"
+					[label]="'Export results'"
+					(hyperlinkClick)="exportResults()">
+				</vtr-ui-hyperlink-button>
 			</div>
 		</div>
 		<hr>

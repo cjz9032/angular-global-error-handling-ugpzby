@@ -9,6 +9,8 @@ import { HardwareScanResultService } from './hardware-scan-result.service';
 import { LocalCacheService } from '../../../services/local-cache/local-cache.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { environment } from 'src/environments/environment';
+import { ScanLogService } from './scan-log.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 declare var window;
 
@@ -31,7 +33,9 @@ export class ExportResultsService {
 		private hardwareScanResultService: HardwareScanResultService,
 		private localCacheService: LocalCacheService,
 		private shellService: VantageShellService,
-		private formatDateTime: FormatLocaleDateTimePipe) {
+		private formatDateTime: FormatLocaleDateTimePipe,
+		private scanLogService: ScanLogService,
+		private logger: LoggerService) {
 		this.experienceVersion = environment.appVersion;
 
 		if (window.Windows) {
@@ -455,7 +459,7 @@ export class ExportResultsService {
 		}
 	}
 
-	public async prepareDataFromScanLog(response: any): Promise<any> {
+	private async prepareDataFromScanLog(response: any): Promise<any> {
 
 		const preparedData: any = {};
 		let moduleId = 0;
@@ -564,7 +568,7 @@ export class ExportResultsService {
 	 * Retrieve a string containing the scan's results in html format
 	 * @param jsonData A json object containing all scan's result information
 	 */
-	public exportResults(jsonData: any): Promise<string> {
+	private generateScanReport(jsonData: any): Promise<string> {
 		return new Promise((resolve, reject) => {
 			this.http.get(ExportResultsService.TEMPLATE_PATH, { responseType: 'text' }).toPromise().then(htmlData => {
 				this.document = new DOMParser().parseFromString(htmlData, 'text/html');
@@ -574,5 +578,51 @@ export class ExportResultsService {
 				reject(error);
 			});
 		});
+	}
+
+	private getDateAndHour() {
+		const date = new Date();
+		const day = date.getDate().toString();
+		const maskDay = (day.length === 1) ? '0' + day : day;
+		const month = (date.getMonth() + 1).toString();
+		const maskMonth = (month.length === 1) ? '0' + month : month;
+		const year = date.getFullYear().toString();
+		const time = date.toTimeString().split(' ');
+
+		return year + maskMonth + maskDay + '_' + time[0].replace(/:/g,'');
+	}
+
+	public exportScanResults() {
+		if (this.scanLogService) {
+			return new Promise((resolve, reject) => {
+				this.scanLogService.getScanLog()
+				.then((scanLogData) => {
+					this.prepareDataFromScanLog(scanLogData)
+					.then((dataPrepared) => {
+						this.generateScanReport(dataPrepared)
+						.then((htmlData) => {
+							const fileName = 'HardwareScanLog_' + this.getDateAndHour() + '.html';
+							window.Windows.Storage.KnownFolders.documentsLibrary.createFileAsync(fileName)
+							.done((logFile) => {
+								window.Windows.Storage.FileIO.appendTextAsync(logFile, htmlData);
+								resolve();
+							});
+						})
+						.catch((error) => {
+							this.logger.error('Could not generate scan report', error);
+							reject();
+						});
+					})
+					.catch((error) => {
+						this.logger.error('Could not prepare data', error);
+						reject();
+					});
+				})
+				.catch((error) => {
+					this.logger.error('Could not get scan log', error);
+					reject();
+				});
+			});
+		}
 	}
 }

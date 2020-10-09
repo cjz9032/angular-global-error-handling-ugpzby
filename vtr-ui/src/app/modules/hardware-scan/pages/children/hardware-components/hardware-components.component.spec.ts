@@ -74,4 +74,10 @@ describe('HardwareComponentsComponent', () => {
 		const result = window.getComputedStyle(refreshlink).color;
 		expect(result).toEqual(customColor);
 	});
+
+	it('it should call exportResults', () => {
+		const spy = spyOn(component, 'exportResults');
+		component.exportResults();
+		expect(spy).toHaveBeenCalled();
+	});
 });
