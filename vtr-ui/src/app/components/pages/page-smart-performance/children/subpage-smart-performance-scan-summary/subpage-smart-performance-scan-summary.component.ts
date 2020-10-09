@@ -516,7 +516,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 
 	async openSubscribeModal() {
 		const modalRef = this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
-			backdrop: true,
+			backdrop: 'static',
 			size: 'lg',
 			centered: true,
 			windowClass: 'subscribe-modal'
@@ -526,18 +526,11 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		if (res) {
 			this.smartPerformanceService.scanningStopped.next();
 		}
-		const currentTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
-		const intervalTime = moment(currentTime).add(PaymentPage.ORDERWAITINGTIME, 'm').format('YYYY-MM-DD HH:mm:ss');
-		const modalStatus = {
-			initiatedTime: intervalTime,
-			isOpened: true
-		};
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, modalStatus);
-		// const scanEnabled = this.localCacheService.getLocalCacheValue(LocalStorageKey.IsSPScheduleScanEnabled);
-		// this.localCacheService.setLocalCacheValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
-		// this.localCacheService.setLocalCacheValue(LocalStorageKey.SPScheduleScanFrequency, 'Once a week')
-		// this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
-		// this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.subscriptionDetails);
+		// const scanEnabled = this.commonService.getLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled);
+		// this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
+		// this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, 'Once a week')
+		// this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
+		// this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.subscriptionDetails);
 		// if(!scanEnabled) {
 		// 	this.localCacheService.setLocalCacheValue(LocalStorageKey.IsSPScheduleScanEnabled, true);
 		// }

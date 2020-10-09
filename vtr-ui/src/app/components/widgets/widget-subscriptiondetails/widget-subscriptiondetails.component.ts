@@ -34,7 +34,6 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	myDate = new Date();
 	spEnum: any = enumSmartPerformance;
 	public subscriptionDate: any;
-	public modalStatus: any = { initiatedTime: '', isOpened: false };
 	public partNumbersList: any = [];
 	public systemSerialNumber: any;
 	currentTime: string;
@@ -67,16 +66,12 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		this.spProcessStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SPProcessStatus);
 		this.spFrstRunStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.IsSmartPerformanceFirstRun);
 
-		this.decryptPNListData();
 		if (this.spFrstRunStatus) {
 			this.getSubscriptionDetails();
 		} else {
 			this.initSubscripionDetails();
 		}
 		this.isSubscribed = this.localCacheService.getLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled);
-	}
-	decryptPNListData() {
-		this.partNumbersList = JSON.parse(atob(environment.spPnListKey.concat('CIsIjVXUzBYNTg2NzIiLCI1V1MwWDU4NjY5Il0=')));
 	}
 
 	initSubscripionDetails() {
@@ -98,9 +93,8 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 			this.isLoading = false;
 		}
 		const currentTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
-		this.modalStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus);
-		if (this.modalStatus && this.modalStatus.initiatedTime) {
-			this.intervalTime = this.modalStatus.initiatedTime;
+		if (this.smartPerformanceService.modalStatus && this.smartPerformanceService.modalStatus.initiatedTime) {
+			this.intervalTime = this.smartPerformanceService.modalStatus.initiatedTime;
 		} else {
 			this.intervalTime = currentTime;
 		}
@@ -149,14 +143,8 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		this.isFirstLoad = false;
 		const currentTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
 		this.intervalTime = moment(currentTime).add(PaymentPage.ORDERWAITINGTIME, 'm').format('YYYY-MM-DD HH:mm:ss');
-		this.modalStatus = {
-			initiatedTime: this.intervalTime,
-			isOpened: true
-		};
-
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, this.modalStatus);
 		const modalCancel = this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
-			backdrop: true,
+			backdrop: 'static',
 			size: 'md',
 			centered: true,
 			windowClass: 'subscribe-modal',
@@ -175,7 +163,6 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		let machineInfo;
 		machineInfo = await this.supportService.getMachineInfo();
 		this.isLoading = true;
-		this.modalStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus) || { initiatedTime: '', isOpened: false };
 		let subscriptionData = [];
 		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails(machineInfo.serialnumber);
 		this.logger.info('Subscription Details', subscriptionDetails);
@@ -218,7 +205,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 			}
 		} else {
 
-			if (this.modalStatus.isOpened) {
+			if (this.smartPerformanceService.modalStatus.isGettingStatus) {
 				this.setTimeOutCallForSubDetails();
 			} else {
 				this.resetSubscriptionDetails();
@@ -243,10 +230,10 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 					this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.inactiveStatus';
 					this.strStatus = 'INACTIVE';
 					this.isLoading = false;
-					this.isRefreshEnabled = true;
-					this.modalStatus.isOpened = false;
+					this.isFirstLoad = true;
+					this.smartPerformanceService.modalStatus.isGettingStatus = false;
 					this.tempHide = true;
-					this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, this.modalStatus);
+					this.getSubscriptionDetails();
 				}
 			}, 30000);
 		}

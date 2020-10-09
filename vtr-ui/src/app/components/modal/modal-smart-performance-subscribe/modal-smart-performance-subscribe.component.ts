@@ -10,7 +10,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { PaymentPage } from 'src/app/enums/smart-performance.enum';
 import { environment } from 'src/environments/environment';
 import moment from 'moment';
-import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 @Component({
 	selector: 'vtr-modal-smart-performance-subscribe',
 	templateUrl: './modal-smart-performance-subscribe.component.html',
@@ -36,8 +36,8 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 	constructor(
 		public activeModal: NgbActiveModal,
 		private commonService: CommonService,
+		private smartPerformanceService: SmartPerformanceService,
 		private supportService: SupportService,
-		private localCacheService: LocalCacheService,
 		private loggerService: LoggerService
 	) {
 	}
@@ -65,31 +65,35 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 
 		});
 	}
-	confirmProcess() {
-		window.open(this.paymentUrl);
-		this.cancelPaymentRequest.emit();
-		this.activeModal.close(true);
+
+	closeModal() {
 		const currentTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
 		const intervalTime = moment(currentTime).add(PaymentPage.ORDERWAITINGTIME, 'm').format('YYYY-MM-DD HH:mm:ss');
-		const modalStatus = {
-			initiatedTime: intervalTime,
-			isOpened: true
-		};
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, modalStatus);
-	}
-	closeModal() {
-		const modalStatus = {
-			isOpened: false
-		};
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartPerformanceSubscriptionModalStatus, modalStatus);
+		this.smartPerformanceService.modalStatus.initiatedTime = intervalTime;
+		this.smartPerformanceService.modalStatus.isGettingStatus = true;
+		this.cancelPaymentRequest.emit();
 		this.activeModal.close('close');
 	}
 
+	@HostListener('document:keydown.tab', ['$event'])
+	onKeyDown(event: KeyboardEvent) {
+		if (document.activeElement &&
+			document.activeElement.id.includes('smart-performance-subscribe-dialog-close-button')
+		) {
+			(document.querySelector('.subscribe-modal') as HTMLElement).focus();
+			event.preventDefault();
+			event.stopPropagation();
+		}
+	}
 
-	@HostListener('window: focus')
+	@HostListener('window: focus', ['$event'])
 	onFocus(): void {
-		const modal = document.querySelector('.subscribe-modal') as HTMLElement;
-		modal.focus();
+		if (!document.activeElement ||
+			!document.activeElement.id.includes('smart-performance-subscribe-dialog-close-button')
+		) {
+			const modal = document.querySelector('.subscribe-modal') as HTMLElement;
+			modal.focus();
+		}
 	}
 
 	getSPSubscriptionSupportedLanguageFromCountry(countrycode) {

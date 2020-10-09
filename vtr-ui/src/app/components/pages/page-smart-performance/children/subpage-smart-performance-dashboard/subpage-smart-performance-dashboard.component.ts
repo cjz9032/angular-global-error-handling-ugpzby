@@ -190,14 +190,7 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 		this.secure = $event.secure;
 		this.logger.info('changeScanStatus', this.isScanningCompleted + '>>>' + this.isScanning);
 	}
-	openSubscribeModal() {
-		this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
-			backdrop: true,
-			size: 'lg',
-			centered: true,
-			windowClass: 'subscribe-modal',
-		});
-	}
+
 	updateSubItemsList(subItem) {
 		this.currentSubItemCategory = subItem;
 		if (subItem && subItem.items) {
