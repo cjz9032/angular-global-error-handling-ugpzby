@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.enum';
-import { HardwareScanOverallResult } from 'src/app/enums/hardware-scan-overall-result.enum';
+import { HardwareScanTestResult, HardwareScanOverallResult } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { HardwareScanResultService } from 'src/app/modules/hardware-scan/services/hardware-scan-result.service';
 import { LocalCacheService } from '../../../services/local-cache/local-cache.service';

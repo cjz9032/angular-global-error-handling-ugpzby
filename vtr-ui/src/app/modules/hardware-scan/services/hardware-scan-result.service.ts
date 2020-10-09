@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.enum';
+import { HardwareScanTestResult } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 
 
 @Injectable({

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.enum';
+import { HardwareScanTestResult } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 
 @Component({
 	selector: 'vtr-ui-hardware-list',

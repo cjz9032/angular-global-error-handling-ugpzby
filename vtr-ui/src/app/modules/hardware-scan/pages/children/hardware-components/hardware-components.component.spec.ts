@@ -6,7 +6,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { DevService } from '../../../../../services/dev/dev.service';
 import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
 import { By } from '@angular/platform-browser';
-import { TaskType } from 'src/app/enums/hardware-scan-metrics.enum';
+import { TaskType } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 
 describe('HardwareComponentsComponent', () => {
 	let component: HardwareComponentsComponent;

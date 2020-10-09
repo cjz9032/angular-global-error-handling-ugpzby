@@ -4,7 +4,7 @@ import { PreviousResultService } from '../../../services/previous-result.service
 import { HardwareScanResultService } from '../../../services/hardware-scan-result.service';
 import { RecoverBadSectorsService } from '../../../services/recover-bad-sectors.service';
 import { LenovoSupportService } from 'src/app/modules/hardware-scan/services/lenovo-support.service';
-import { HardwareScanFinishedHeaderType } from 'src/app/enums/hardware-scan-finished-header-type.enum';
+import { HardwareScanFinishedHeaderType } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 
 @Component({
   selector: 'vtr-hardware-scan-finished-header',

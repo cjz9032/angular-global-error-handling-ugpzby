@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { HardwareScanService } from '../../services/hardware-scan.service';
-import { HardwareScanState } from 'src/app/enums/hardware-scan-state';
+import { HardwareScanService } from '../../../hardware-scan/services/hardware-scan.service';
+import { HardwareScanState } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 
 @Component({
 	selector: 'vtr-hardware-scan-header-pages',

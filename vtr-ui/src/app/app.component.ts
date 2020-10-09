@@ -30,7 +30,7 @@ import { SegmentConst } from './services/self-select/self-select.service';
 import { NotificationType } from './components/notification/notification.component';
 import { StoreRatingService } from './services/store-rating/store-rating.service';
 import { UpdateProgress } from './enums/update-progress.enum';
-import { HardwareScanProgress } from './enums/hw-scan-progress.enum';
+import { HardwareScanProgress } from './modules/hardware-scan/enums/hardware-scan.enum';
 import { SecurityAdvisorNotifications } from './enums/security-advisor-notifications.enum';
 import { SessionStorageKey } from './enums/session-storage-key-enum';
 import { HistoryManager } from './services/history-manager/history-manager.service';

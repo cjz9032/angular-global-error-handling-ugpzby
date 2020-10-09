@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonService } from 'src/app/services/common/common.service';
 import { Subscription } from 'rxjs';
-import { HardwareScanProgress } from 'src/app/enums/hw-scan-progress.enum';
+import { HardwareScanProgress } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { DeviceService } from 'src/app/services/device/device.service';

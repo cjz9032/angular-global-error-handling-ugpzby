@@ -1,6 +1,4 @@
 import { Injectable, NgZone, EventEmitter } from '@angular/core';
-import { HardwareScanProgress } from 'src/app/enums/hw-scan-progress.enum';
-import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { PreviousResultService } from 'src/app/modules/hardware-scan/services/previous-result.service';
@@ -8,10 +6,9 @@ import { HardwareScanResultService } from 'src/app/modules/hardware-scan/service
 import { CommonService } from 'src/app/services/common/common.service';
 import { Subject, Observable } from 'rxjs';
 import { first } from 'rxjs/operators';
-import { TaskType, TaskStep } from 'src/app/enums/hardware-scan-metrics.enum';
+import { TaskType, TaskStep, HardwareScanTestResult, HardwareScanFinishedHeaderType, HardwareScanProgress } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { HardwareScanFinishedHeaderType } from 'src/app/enums/hardware-scan-finished-header-type.enum';
 import { LoggerService } from '../../../services/logger/logger.service';
 import { LocalCacheService } from '../../../services/local-cache/local-cache.service';
 
@@ -87,7 +84,6 @@ export class HardwareScanService {
 
 	public startRecover: EventEmitter<any> = new EventEmitter();
 
-	private modulesStored: any;
 	private completedStatus: boolean | undefined = undefined;
 	private scanResult: string;
 
@@ -150,6 +146,10 @@ export class HardwareScanService {
 		this.itemsToScanResponse = this.getItemsToScan(this.ALL_MODULES, this.culture);
 		this.refreshingModules = refreshing;
 		this.showComponentList = refreshing;
+	}
+
+	public isScanOrRBSExecuting() {
+		return this.isScanExecuting() || this.isRecoverExecuting()
 	}
 
 	public isScanOrRBSFinished() {
@@ -1171,14 +1171,6 @@ export class HardwareScanService {
 
 	public getPluginVersion(): string {
 		return this.pluginVersion;
-	}
-
-	public getModules() {
-		return this.modulesStored;
-	}
-
-	public setModules(value: any) {
-		this.modulesStored = value;
 	}
 
 	public getCompletedStatus(): boolean | undefined {
