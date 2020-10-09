@@ -2,7 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule } from '@ngx-translate/core';
-import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.enum';
+import { HardwareScanTestResult } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 import { DevService } from '../../../services/dev/dev.service';
 import { RecoverBadSectorsService } from './recover-bad-sectors.service';
 

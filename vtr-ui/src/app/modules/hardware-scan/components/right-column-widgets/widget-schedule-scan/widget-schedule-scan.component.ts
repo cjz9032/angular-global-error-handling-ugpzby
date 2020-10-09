@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, NgZone, OnDestroy } from '@angular/core';
 import { NgbModal, NgbModalRef, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
-import { HardwareScheduleScanType } from 'src/app/enums/hardware-schedule-scan-type.enum';
+import { HardwareScheduleScanType } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { TranslateService } from '@ngx-translate/core';
 import { ModalScheduleNewScanComponent } from '../../modal/modal-schedule-new-scan/modal-schedule-new-scan.component';

@@ -1,8 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { TranslateService } from '@ngx-translate/core';
-import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.enum';
-import { HardwareScanFinishedHeaderType } from 'src/app/enums/hardware-scan-finished-header-type.enum';
+import { HardwareScanTestResult, HardwareScanFinishedHeaderType } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 import { HardwareScanService } from '../../../services/hardware-scan.service';
 import { PreviousResultService } from '../../../services/previous-result.service';
 

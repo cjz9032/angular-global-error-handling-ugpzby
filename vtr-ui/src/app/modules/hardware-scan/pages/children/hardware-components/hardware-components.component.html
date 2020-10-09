@@ -2,8 +2,8 @@
 	<div class="row">
 		<div class="col col-12">
 			<vtr-hardware-scan-header-pages
-				[percent]="progress"
-				[disableButtonScan]="startScanClicked || isRefreshingModules()"
+				[percent]="getProgress()"
+				[disableButtonScan]="isStartScanClicked() || isRefreshingModules()"
 				(checkCancel)="onCancelScan()"
 				[disableCancel]="isDisableCancel()"
 				(checkAnchor)="startScanWaitingModules(taskTypeEnum.CustomScan)"
@@ -11,8 +11,8 @@
 				(scanAgain)="scanAgain()"
 				[completed]="completedStatus"
 				[deviceInRecover]="deviceInRecover"
-				itemParentCancel="{{itemParentCancelScan}}"
-				itemNameCancel= "{{itemNameCancelScan}}">
+				itemParentCancel="{{getItemParentCancelScan()}}"
+				itemNameCancel= "{{getItemNameCancelScan()}}">
 			</vtr-hardware-scan-header-pages>
 		</div>
 	</div>
