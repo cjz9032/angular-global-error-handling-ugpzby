@@ -14,9 +14,11 @@ import { TaskType, TaskStep, HardwareScanProgress, HardwareScanFinishedHeaderTyp
 import { ScanExecutionService } from '../../../services/scan-execution.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProtocolExecutionService } from '../../../services/protocol-execution.service';
+import { HardwareScanMetricsService } from 'src/app/modules/hardware-scan/services/hardware-scan-metrics.service';
 import { HardwareScanFeatures } from '../../../services/hardware-scan-features.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { ExportResultsService } from '../../../services/export-results.service';
+import { TimerService } from 'src/app/services/timer/timer.service';
 
 const RootParent = 'HardwareScan';
 const ViewResultsButton = 'ViewResults';
@@ -97,6 +99,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		private hwscanFeaturesService: HardwareScanFeatures,
 		private exportService: ExportResultsService,
 		private logger: LoggerService,
+		private hardwareScanMetricsService: HardwareScanMetricsService,
+		private timerService: TimerService
 	) {
 		this.viewResultsPath = '/hardware-scan/view-results';
 		this.isOnline = this.commonService.isOnline;
@@ -228,10 +232,20 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	public exportResults() {
 		if (this.exportService) {
 			if (this.hardwareScanService.getScanFinishedHeaderType() === HardwareScanFinishedHeaderType.Scan) {
+				this.timerService.start();
+				let result = HardwareScanMetricsService.FAIL_RESULT;
 				this.exportService.exportScanResults().then(() => {
+					result = HardwareScanMetricsService.SUCCESS_RESULT;
 					// TODO, probably open modal
 				}).catch(() => {
 					this.logger.error('Export Scan Results rejected');
+				}).finally(() => {
+					this.hardwareScanMetricsService.sendTaskActionMetrics(
+						HardwareScanMetricsService.EXPORT_LOG_TASK_NAME,
+						result === HardwareScanMetricsService.SUCCESS_RESULT ? 1 : 0,
+						'',
+						result,
+						this.timerService.stop());
 				});
 			} else if (this.hardwareScanService.getScanFinishedHeaderType() === HardwareScanFinishedHeaderType.RecoverBadSectors) {
 				// TODO

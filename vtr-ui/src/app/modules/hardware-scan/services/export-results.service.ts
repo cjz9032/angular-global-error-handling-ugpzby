@@ -593,6 +593,7 @@ export class ExportResultsService {
 	}
 
 	public exportScanResults() {
+
 		if (this.scanLogService) {
 			return new Promise((resolve, reject) => {
 				this.scanLogService.getScanLog()

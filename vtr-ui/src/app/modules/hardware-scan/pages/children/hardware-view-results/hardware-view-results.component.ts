@@ -6,6 +6,8 @@ import { HardwareScanService } from '../../../services/hardware-scan.service';
 import { PreviousResultService } from '../../../services/previous-result.service';
 import { ExportResultsService } from '../../../services/export-results.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { TimerService } from 'src/app/services/timer/timer.service';
+import { HardwareScanMetricsService } from '../../../services/hardware-scan-metrics.service';
 
 @Component({
 	selector: 'vtr-hardware-view-results',
@@ -30,6 +32,8 @@ export class HardwareViewResultsComponent implements OnInit, OnDestroy {
 		private translate: TranslateService,
 		private exportService: ExportResultsService,
 		private logger: LoggerService,
+		private timerService: TimerService,
+		private hardwareScanMetricsService: HardwareScanMetricsService
 	) { }
 
 	ngOnInit() {
@@ -53,10 +57,23 @@ export class HardwareViewResultsComponent implements OnInit, OnDestroy {
 	}
 
 	public exportResults() {
-		this.exportService.exportScanResults().then(() => {
-			// TODO, probably open modal
-		}).catch(() => {
-			this.logger.error('Export Scan Results rejected');
-		});
+		if (this.exportService) {
+			this.timerService.start();
+			let result = HardwareScanMetricsService.FAIL_RESULT;
+			this.exportService.exportScanResults().then(() => {
+				result = HardwareScanMetricsService.SUCCESS_RESULT;
+				// TODO, probably open modal
+			}).catch(() => {
+				this.logger.error('Export Scan Results rejected');
+			}).finally(() => {
+				this.hardwareScanMetricsService.sendTaskActionMetrics(
+					HardwareScanMetricsService.EXPORT_LOG_TASK_NAME,
+					result === HardwareScanMetricsService.SUCCESS_RESULT ? 1 : 0,
+					'',
+					result,
+					this.timerService.stop()
+				);
+			});
+		}
 	}
 }
