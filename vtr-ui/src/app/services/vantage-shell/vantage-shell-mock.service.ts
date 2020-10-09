@@ -524,6 +524,13 @@ export class VantageShellService {
 		return undefined;
 	}
 
+	public getContentLocalCache(): any {
+		if (this.phoenix) {
+			return this.phoenix.contentLocalCache;
+		}
+		return undefined;
+	}
+
 	/**
 	 * returns sysinfo object from VantageShellService of JS Bridge
 	 */

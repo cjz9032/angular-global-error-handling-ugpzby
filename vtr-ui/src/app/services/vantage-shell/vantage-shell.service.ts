@@ -62,7 +62,8 @@ export class VantageShellService {
 				Phoenix.Features.SelfSelect,
 				Phoenix.Features.UpeAgent,
 				Phoenix.Features.SmartPerformance,
-				Phoenix.Features.SystemEvent
+				Phoenix.Features.SystemEvent,
+				Phoenix.Features.ContentLocalCache
 			]);
 		} else {
 			this.isShellAvailable = false;
@@ -977,6 +978,13 @@ export class VantageShellService {
 		const win = window as any;
 		if (win.VantageShellExtension) {
 			return win.VantageShellExtension.Utils.MSStore;
+		}
+		return undefined;
+	}
+
+	public getContentLocalCache(): any {
+		if (this.phoenix) {
+			return this.phoenix.contentLocalCache;
 		}
 		return undefined;
 	}
