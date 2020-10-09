@@ -1022,7 +1022,17 @@
                     "support": "Unterstützung"
                 }
             },
-            "helpful": "Hilfreiche Inhalte"
+            "helpful": "Hilfreiche Inhalte",
+            "copy": "kopieren",
+            "goodCondition": "Guter Zustand",
+            "needAction": "Wartung erforderlich",
+            "hwStatus": "Hardwarestatus",
+            "swStatus": "Softwarestatus",
+            "refreshModules": "Module aktualisieren",
+            "used": "Belegt",
+            "scanned": "Gescannt ",
+            "physicalMemory": "Physischer Arbeitsspeicher",
+            "storage": "Speicher"
         },
         "deviceSettings": {
             "helpful": "Hilfreiche Inhalte",
@@ -2135,23 +2145,23 @@
                 "title": "Upscaling der Videoauflösung",
                 "desc1": "Diese Funktion optimiert die Videowiedergabe, indem die Videoauflösung verbessert wird. Sie ist besonders nützlich, wenn das Video eine schlechte Auflösung hat.",
                 "desc2": "Diese Funktion kann die Akkulebensdauer, Oberflächentemperatur und Lüftergeräusche beeinflussen. Verwenden Sie sie nicht im Gleichstrommodus (Akkubetrieb). Andernfalls wird schneller Strom verbraucht und die Lebensdauer des Akkus verkürzt.",
-				"tooltip": {
-					"description1": "Diese Funktion funktioniert nur mit den folgenden Videoplayern:<br>",
-					"player1":"Windows Media Player<br>",
-					"player2":"Chrome-basierter Player<br>",
-					"player3":"PotPlayer<br>",
-					"player4":"Opera (integrierte Google Chromium-Engine)<br>",
-					"player5":"Microsoft Edge (integrierte Google Chromium-Engine)<br>",
-					"player6":"Microsoft Teams<br>",
-					"player7":"Zoom<br>",
-					"description2": "<p class='srTooltip' id='sr-tip' role='text'>Anweisungen zum Aktivieren dieser Funktion auf PotPlayer finden Sie im Benutzerhandbuch, das im Lieferumfang des Computers enthalten ist.</p>"
-				},
+                "tooltip": {
+                    "description1": "Diese Funktion funktioniert nur mit den folgenden Videoplayern:<br>",
+                    "player1": "Windows Media Player<br>",
+                    "player2": "Chrome-basierter Player<br>",
+                    "player3": "PotPlayer<br>",
+                    "player4": "Opera (integrierte Google Chromium-Engine)<br>",
+                    "player5": "Microsoft Edge (integrierte Google Chromium-Engine)<br>",
+                    "player6": "Microsoft Teams<br>",
+                    "player7": "Zoom<br>",
+                    "description2": "<p class='srTooltip' id='sr-tip' role='text'>Anweisungen zum Aktivieren dieser Funktion auf PotPlayer finden Sie im Benutzerhandbuch, das im Lieferumfang des Computers enthalten ist.</p>"
+                },
                 "note": {
                     "description": "Diese Funktion funktioniert nicht, wenn:",
                     "description1": "Die CPU-Temperatur zu hoch ist.",
                     "description2": "Die Einheit ist in \"Intelligente Kühlung\" auf den Akkusparmodus eingestellt.",
                     "description3": "Zwei oder mehr Player werden gleichzeitig ausgeführt.",
-					"description4": "Bei einem Videoanruf mit VoIP-Apps (wie z. B. Microsoft Teams oder Zoom) und gleichzeitiger Videowiedergabe."
+                    "description4": "Bei einem Videoanruf mit VoIP-Apps (wie z. B. Microsoft Teams oder Zoom) und gleichzeitiger Videowiedergabe."
                 },
                 "imageBefore": "Vorher",
                 "imageAfter": "Nachher"
@@ -4213,30 +4223,30 @@
         "processFinishedCannotBeCanceled": "Der laufende Prozess muss nicht mehr abgebrochen werden, da er abgeschlossen ist.",
         "cancelMayTakeSomeTime": "Bitte warten Sie einen Moment, je nach System kann der Abbruch einige Zeit in Anspruch nehmen.",
         "report": {
-			"title": "Hardware Diagnostics Log",
-			"modelTitle": "Model",
-			"startDate": "Start Date and Time",
-			"endDate": "End Date and Time",
-			"model": {
-				"serialNumber": "Serial Number",
-				"wiredInterface": "Wired Ethernet Mac Address",
-				"wirelessInterface": "Wireless Mac Address",
-				"biosVersion": "BIOS Version",
-				"productName": "Product Name"
-			},
-			"resources": "Resources",
-			"tests": "Tests",
-			"totalModulesTested": "Total Modules Tested",
-			"environmentTitle": "Environment",
-			"environment": {
-				"applicationVersion": "Application Version",
-				"pluginVersion": "Plugin Version",
-				"experienceVersion": "Experience Version",
-				"shellVersion": "Shell Version",
-				"bridgeVersion": "Bridge Version"
-			},
-			"testResult": "Test Result"
-		},
+            "title": "Hardware Diagnostics Log",
+            "modelTitle": "Model",
+            "startDate": "Start Date and Time",
+            "endDate": "End Date and Time",
+            "model": {
+                "serialNumber": "Serial Number",
+                "wiredInterface": "Wired Ethernet Mac Address",
+                "wirelessInterface": "Wireless Mac Address",
+                "biosVersion": "BIOS Version",
+                "productName": "Product Name"
+            },
+            "resources": "Resources",
+            "tests": "Tests",
+            "totalModulesTested": "Total Modules Tested",
+            "environmentTitle": "Environment",
+            "environment": {
+                "applicationVersion": "Application Version",
+                "pluginVersion": "Plugin Version",
+                "experienceVersion": "Experience Version",
+                "shellVersion": "Shell Version",
+                "bridgeVersion": "Bridge Version"
+            },
+            "testResult": "Test Result"
+        },
         "scanFailureModal": {
             "title": "Hardwareproblem erkannt",
             "problemDetected": "Bei den folgenden Komponenten Ihres Computers wurden Probleme gefunden:",

@@ -1022,7 +1022,17 @@
                     "support": "Поддержка"
                 }
             },
-            "helpful": "Полезные материалы"
+            "helpful": "Полезные материалы",
+            "copy": "скопировать",
+            "goodCondition": "Хорошее состояние",
+            "needAction": "Требуется обслуживание",
+            "hwStatus": "Состояние оборудования",
+            "swStatus": "Состояние ПО",
+            "refreshModules": "Обновить модули",
+            "used": "Занято",
+            "scanned": "Проверено ",
+            "physicalMemory": "Физическая память",
+            "storage": "Хранение"
         },
         "deviceSettings": {
             "helpful": "Полезные материалы",
@@ -2135,23 +2145,23 @@
                 "title": "Масштабирование разрешения видео",
                 "desc1": "Эта функция повышает качество воспроизведения видео, увеличивая его разрешение. Ее действие особенно заметно при низком разрешении видео.",
                 "desc2": "Эта функция может повлиять на время работы аккумулятора, температуру кожи и уровень шума вентилятора. Не используйте ее в режиме DC (режим работы от аккумулятора). В противном случае увеличится энергопотребление и сократится время работы аккумулятора.",
-				"tooltip": {
-					"description1": "Эта функция доступна только для указанных ниже видеоплееров:<br>",
-					"player1":"Windows Media Player<br>",
-					"player2":"Плеер Chrome<br>",
-					"player3":"PotPlayer<br>",
-					"player4":"Opera (встроенная подсистема Google Chromium)<br>",
-					"player5":"Microsoft Edge (встроенная подсистема Google Chromium)<br>",
-					"player6":"Microsoft Teams<br>",
-					"player7":"Zoom<br>",
-					"description2": "<p class='srTooltip' id='sr-tip' role='text'>Инструкции по включению этой функции в проигрывателях PotPlayer см. в Руководстве пользователя из комплекта поставки вашего компьютера.</p>"
-				},
+                "tooltip": {
+                    "description1": "Эта функция доступна только для указанных ниже видеоплееров:<br>",
+                    "player1": "Windows Media Player<br>",
+                    "player2": "Плеер Chrome<br>",
+                    "player3": "PotPlayer<br>",
+                    "player4": "Opera (встроенная подсистема Google Chromium)<br>",
+                    "player5": "Microsoft Edge (встроенная подсистема Google Chromium)<br>",
+                    "player6": "Microsoft Teams<br>",
+                    "player7": "Zoom<br>",
+                    "description2": "<p class='srTooltip' id='sr-tip' role='text'>Инструкции по включению этой функции в проигрывателях PotPlayer см. в Руководстве пользователя из комплекта поставки вашего компьютера.</p>"
+                },
                 "note": {
                     "description": "Эта функция не работает, если:",
                     "description1": "температура процессора слишком высокая.",
                     "description2": "Устройство переведено в режим экономии заряда аккумулятора в разделе \"Интеллектуальное охлаждение\".",
                     "description3": "Два или более плееров работают одновременно.",
-					"description4": "Во время видеовызова, осуществляемого с помощью приложений VoIP (таких как Microsoft Teams или Zoom), если одновременно воспроизводится видео."
+                    "description4": "Во время видеовызова, осуществляемого с помощью приложений VoIP (таких как Microsoft Teams или Zoom), если одновременно воспроизводится видео."
                 },
                 "imageBefore": "До",
                 "imageAfter": "После"
@@ -4213,30 +4223,30 @@
         "processFinishedCannotBeCanceled": "Выполняемый процесс больше не требует отмены, так как он уже завершен.",
         "cancelMayTakeSomeTime": "Подождите. Отмена может занять некоторое время в зависимости от конфигурации системы.",
         "report": {
-			"title": "Hardware Diagnostics Log",
-			"modelTitle": "Model",
-			"startDate": "Start Date and Time",
-			"endDate": "End Date and Time",
-			"model": {
-				"serialNumber": "Serial Number",
-				"wiredInterface": "Wired Ethernet Mac Address",
-				"wirelessInterface": "Wireless Mac Address",
-				"biosVersion": "BIOS Version",
-				"productName": "Product Name"
-			},
-			"resources": "Resources",
-			"tests": "Tests",
-			"totalModulesTested": "Total Modules Tested",
-			"environmentTitle": "Environment",
-			"environment": {
-				"applicationVersion": "Application Version",
-				"pluginVersion": "Plugin Version",
-				"experienceVersion": "Experience Version",
-				"shellVersion": "Shell Version",
-				"bridgeVersion": "Bridge Version"
-			},
-			"testResult": "Test Result"
-		},
+            "title": "Hardware Diagnostics Log",
+            "modelTitle": "Model",
+            "startDate": "Start Date and Time",
+            "endDate": "End Date and Time",
+            "model": {
+                "serialNumber": "Serial Number",
+                "wiredInterface": "Wired Ethernet Mac Address",
+                "wirelessInterface": "Wireless Mac Address",
+                "biosVersion": "BIOS Version",
+                "productName": "Product Name"
+            },
+            "resources": "Resources",
+            "tests": "Tests",
+            "totalModulesTested": "Total Modules Tested",
+            "environmentTitle": "Environment",
+            "environment": {
+                "applicationVersion": "Application Version",
+                "pluginVersion": "Plugin Version",
+                "experienceVersion": "Experience Version",
+                "shellVersion": "Shell Version",
+                "bridgeVersion": "Bridge Version"
+            },
+            "testResult": "Test Result"
+        },
         "scanFailureModal": {
             "title": "Обнаружена проблема с оборудованием",
             "problemDetected": "Обнаружены проблемы со следующими компонентами вашего компьютера:",

@@ -1022,7 +1022,17 @@
                     "support": "Destek"
                 }
             },
-            "helpful": "Faydalı İçerik"
+            "helpful": "Faydalı İçerik",
+            "copy": "kopya",
+            "goodCondition": "İyi durumda",
+            "needAction": "Bakım gerekiyor",
+            "hwStatus": "Donanım Durumu",
+            "swStatus": "Yazılım Durumu",
+            "refreshModules": "Modülleri Yenile",
+            "used": "Kullanılıyor",
+            "scanned": "Tarandı ",
+            "physicalMemory": "Fiziksel Bellek",
+            "storage": "Depolama Alanı"
         },
         "deviceSettings": {
             "helpful": "Faydalı İçerik",
@@ -2135,23 +2145,23 @@
                 "title": "Video çözünürlüğünü yükseltme",
                 "desc1": "Bu özellik, video çözünürlüğünü iyileştirerek video oynatma deneyimini geliştirir. Özellikle video düşük çözünürlükte olduğunda çalışır.",
                 "desc2": "Bu işlev pil ömrünü, kaplama sıcaklığını ve fan gürültüsünü etkileyebilir. Lütfen DC kipinde (pil kipi) kullanmayın. Aksi takdirde, güç tüketimini hızlandırır ve pil ömrünü kısaltır.",
-				"tooltip": {
-					"description1": "Bu özellik yalnızca aşağıdaki video oynatıcılarda çalışır:<br>",
-					"player1":"Windows Media Player<br>",
-					"player2":"Chrome tabanlı oynatıcı<br>",
-					"player3":"PotPlayer<br>",
-					"player4":"Opera (yerleşik Google Chromium motoru)<br>",
-					"player5":"Microsoft Edge (yerleşik Google Chromium motoru)<br>",
-					"player6":"Microsoft Teams<br>",
-					"player7":"Zoom<br>",
-					"description2": "<p class='srTooltip' id='sr-tip' role='text'>PotPlayer'da bu işlevin etkinleştirilmesiyle ilgili yönergeler için bilgisayarınızla birlikte verilen Kullanma Kılavuzu'na bakın.</p>"
-				},
+                "tooltip": {
+                    "description1": "Bu özellik yalnızca aşağıdaki video oynatıcılarda çalışır:<br>",
+                    "player1": "Windows Media Player<br>",
+                    "player2": "Chrome tabanlı oynatıcı<br>",
+                    "player3": "PotPlayer<br>",
+                    "player4": "Opera (yerleşik Google Chromium motoru)<br>",
+                    "player5": "Microsoft Edge (yerleşik Google Chromium motoru)<br>",
+                    "player6": "Microsoft Teams<br>",
+                    "player7": "Zoom<br>",
+                    "description2": "<p class='srTooltip' id='sr-tip' role='text'>PotPlayer'da bu işlevin etkinleştirilmesiyle ilgili yönergeler için bilgisayarınızla birlikte verilen Kullanma Kılavuzu'na bakın.</p>"
+                },
                 "note": {
                     "description": "Bu özellik şu durumlarda çalışmaz:",
                     "description1": "CPU sıcaklığı çok yüksek.",
                     "description2": "Cihaz \"Akıllı soğutma\"da Pil tasarrufu kipine ayarlanır.",
                     "description3": "Aynı anda iki veya daha fazla oynatıcı çalışıyor.",
-					"description4": "VoIP uygulamalarıyla (Microsoft Teams veya Zoom gibi) bir görüntülü aramada ve aynı anda bir video oynatılıyor."
+                    "description4": "VoIP uygulamalarıyla (Microsoft Teams veya Zoom gibi) bir görüntülü aramada ve aynı anda bir video oynatılıyor."
                 },
                 "imageBefore": "Önce",
                 "imageAfter": "Sonra"
@@ -4213,30 +4223,30 @@
         "processFinishedCannotBeCanceled": "Çalışan işlem tamamlandığından artık iptal edilmesi gerekmiyor.",
         "cancelMayTakeSomeTime": "Lütfen bekleyin, sisteminize bağlı olarak iptal işlemi biraz zaman alabilir.",
         "report": {
-			"title": "Hardware Diagnostics Log",
-			"modelTitle": "Model",
-			"startDate": "Start Date and Time",
-			"endDate": "End Date and Time",
-			"model": {
-				"serialNumber": "Serial Number",
-				"wiredInterface": "Wired Ethernet Mac Address",
-				"wirelessInterface": "Wireless Mac Address",
-				"biosVersion": "BIOS Version",
-				"productName": "Product Name"
-			},
-			"resources": "Resources",
-			"tests": "Tests",
-			"totalModulesTested": "Total Modules Tested",
-			"environmentTitle": "Environment",
-			"environment": {
-				"applicationVersion": "Application Version",
-				"pluginVersion": "Plugin Version",
-				"experienceVersion": "Experience Version",
-				"shellVersion": "Shell Version",
-				"bridgeVersion": "Bridge Version"
-			},
-			"testResult": "Test Result"
-		},
+            "title": "Hardware Diagnostics Log",
+            "modelTitle": "Model",
+            "startDate": "Start Date and Time",
+            "endDate": "End Date and Time",
+            "model": {
+                "serialNumber": "Serial Number",
+                "wiredInterface": "Wired Ethernet Mac Address",
+                "wirelessInterface": "Wireless Mac Address",
+                "biosVersion": "BIOS Version",
+                "productName": "Product Name"
+            },
+            "resources": "Resources",
+            "tests": "Tests",
+            "totalModulesTested": "Total Modules Tested",
+            "environmentTitle": "Environment",
+            "environment": {
+                "applicationVersion": "Application Version",
+                "pluginVersion": "Plugin Version",
+                "experienceVersion": "Experience Version",
+                "shellVersion": "Shell Version",
+                "bridgeVersion": "Bridge Version"
+            },
+            "testResult": "Test Result"
+        },
         "scanFailureModal": {
             "title": "Donanım Sorunu Algılandı",
             "problemDetected": "Bilgisayarınızın aşağıdaki bileşenlerinde sorunlar algılandı:",

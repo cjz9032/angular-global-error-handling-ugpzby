@@ -1022,7 +1022,17 @@
                     "support": "支持服务"
                 }
             },
-            "helpful": "常见问题"
+            "helpful": "常见问题",
+            "copy": "复制",
+            "goodCondition": "状况良好",
+            "needAction": "需要维护",
+            "hwStatus": "硬件状态",
+            "swStatus": "软件状态",
+            "refreshModules": "刷新模块",
+            "used": "已使用",
+            "scanned": "已扫描",
+            "physicalMemory": "物理内存",
+            "storage": "存储器"
         },
         "deviceSettings": {
             "helpful": "帮助内容",
@@ -2135,23 +2145,23 @@
                 "title": "提高视频分辨率",
                 "desc1": "此功能通过提高视频分辨率来改善视频播放的体验。特别是在视频分辨率较差时，其效果尤为明显。",
                 "desc2": "此功能可能会影响电池寿命、表面温度和风扇噪音。请不要在直流电模式（电池模式）下使用。否则，会加快耗电速度并缩短电池寿命。",
-				"tooltip": {
-					"description1": "此功能仅适用于以下视频播放器：<br>",
-					"player1":"Windows Media Player<br>",
-					"player2":"基于 Chrome 的播放器<br>",
-					"player3":"PotPlayer<br>",
-					"player4":"Opera（内置 Google Chromium 引擎）<br>",
-					"player5":"Microsoft Edge（内置 Google Chromium 引擎）<br>",
-					"player6":"Microsoft Teams<br>",
-					"player7":"Zoom<br>",
-					"description2": "<p class='srTooltip' id='sr-tip' role='text'>有关如何在 PotPlayer 上启用此功能的说明，请参阅计算机随附的《用户指南》。</p>"
-				},
+                "tooltip": {
+                    "description1": "此功能仅适用于以下视频播放器：<br>",
+                    "player1": "Windows Media Player<br>",
+                    "player2": "基于 Chrome 的播放器<br>",
+                    "player3": "PotPlayer<br>",
+                    "player4": "Opera（内置 Google Chromium 引擎）<br>",
+                    "player5": "Microsoft Edge（内置 Google Chromium 引擎）<br>",
+                    "player6": "Microsoft Teams<br>",
+                    "player7": "Zoom<br>",
+                    "description2": "<p class='srTooltip' id='sr-tip' role='text'>有关如何在 PotPlayer 上启用此功能的说明，请参阅计算机随附的《用户指南》。</p>"
+                },
                 "note": {
                     "description": "此功能在以下情况下无效：",
                     "description1": "CPU 温度过高。",
                     "description2": "设备在“智能冷却”中设置为省电模式。",
                     "description3": "两个或多个播放器同时运行。",
-					"description4": "在使用 VoIP 应用程序（例如 Microsoft Teams 或 Zoom）进行视频通话时，同时播放视频。"
+                    "description4": "在使用 VoIP 应用程序（例如 Microsoft Teams 或 Zoom）进行视频通话时，同时播放视频。"
                 },
                 "imageBefore": "之前",
                 "imageAfter": "之后"
@@ -4213,30 +4223,30 @@
         "processFinishedCannotBeCanceled": "正在运行的进程已完成，因此不再需要取消。",
         "cancelMayTakeSomeTime": "请稍候，可能需要一些时间才能取消，具体情况视您的系统而定。",
         "report": {
-			"title": "Hardware Diagnostics Log",
-			"modelTitle": "Model",
-			"startDate": "Start Date and Time",
-			"endDate": "End Date and Time",
-			"model": {
-				"serialNumber": "Serial Number",
-				"wiredInterface": "Wired Ethernet Mac Address",
-				"wirelessInterface": "Wireless Mac Address",
-				"biosVersion": "BIOS Version",
-				"productName": "Product Name"
-			},
-			"resources": "Resources",
-			"tests": "Tests",
-			"totalModulesTested": "Total Modules Tested",
-			"environmentTitle": "Environment",
-			"environment": {
-				"applicationVersion": "Application Version",
-				"pluginVersion": "Plugin Version",
-				"experienceVersion": "Experience Version",
-				"shellVersion": "Shell Version",
-				"bridgeVersion": "Bridge Version"
-			},
-			"testResult": "Test Result"
-		},
+            "title": "Hardware Diagnostics Log",
+            "modelTitle": "Model",
+            "startDate": "Start Date and Time",
+            "endDate": "End Date and Time",
+            "model": {
+                "serialNumber": "Serial Number",
+                "wiredInterface": "Wired Ethernet Mac Address",
+                "wirelessInterface": "Wireless Mac Address",
+                "biosVersion": "BIOS Version",
+                "productName": "Product Name"
+            },
+            "resources": "Resources",
+            "tests": "Tests",
+            "totalModulesTested": "Total Modules Tested",
+            "environmentTitle": "Environment",
+            "environment": {
+                "applicationVersion": "Application Version",
+                "pluginVersion": "Plugin Version",
+                "experienceVersion": "Experience Version",
+                "shellVersion": "Shell Version",
+                "bridgeVersion": "Bridge Version"
+            },
+            "testResult": "Test Result"
+        },
         "scanFailureModal": {
             "title": "检测到硬件问题",
             "problemDetected": "在计算机上的以下组件中检测到问题：",

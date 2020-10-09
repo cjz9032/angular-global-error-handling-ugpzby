@@ -1022,7 +1022,17 @@
                     "support": "Podpora"
                 }
             },
-            "helpful": "Užitečný obsah"
+            "helpful": "Užitečný obsah",
+            "copy": "kopírovat",
+            "goodCondition": "Dobrý stav",
+            "needAction": "Je nutná údržba",
+            "hwStatus": "Stav hardwaru",
+            "swStatus": "Stav softwaru",
+            "refreshModules": "Aktualizovat moduly",
+            "used": "Využito",
+            "scanned": "Zkontrolováno ",
+            "physicalMemory": "Fyzická paměť",
+            "storage": "Úložiště"
         },
         "deviceSettings": {
             "helpful": "Užitečný obsah",
@@ -2135,23 +2145,23 @@
                 "title": "Zvýšení rozlišení videa",
                 "desc1": "Tato funkce vylepšuje zlepšením rozlišení videa zážitek z přehrávání videa. Funguje zejména v případě, kdy má video špatné rozlišení.",
                 "desc2": "Tato funkce může ovlivnit životnost baterie, teplotu povrchu a způsobit šum ventilátoru. V režimu DC (režim s napájením z baterie) ji nepoužívejte. Jinak se zvýší spotřeba energie a zkrátí výdrž baterie.",
-				"tooltip": {
-					"description1": "Tato funkce funguje pouze pro níže uvedené přehrávače videa:<br>",
-					"player1":"Windows Media Player<br>",
-					"player2":"Přehrávač založený na Chrome<br>",
-					"player3":"PotPlayer<br>",
-					"player4":"Opera (vestavěné jádro Google Chromium)<br>",
-					"player5":"Microsoft Edge (vestavěné jádro Google Chromium)<br>",
-					"player6":"Microsoft Teams<br>",
-					"player7":"Zoom<br>",
-					"description2": "<p class='srTooltip' id='sr-tip' role='text'>Návod, jak aktivovat tuto funkci v přehrávači PotPlayer, je uveden v uživatelské příručce k vašemu počítači.</p>"
-				},
+                "tooltip": {
+                    "description1": "Tato funkce funguje pouze pro níže uvedené přehrávače videa:<br>",
+                    "player1": "Windows Media Player<br>",
+                    "player2": "Přehrávač založený na Chrome<br>",
+                    "player3": "PotPlayer<br>",
+                    "player4": "Opera (vestavěné jádro Google Chromium)<br>",
+                    "player5": "Microsoft Edge (vestavěné jádro Google Chromium)<br>",
+                    "player6": "Microsoft Teams<br>",
+                    "player7": "Zoom<br>",
+                    "description2": "<p class='srTooltip' id='sr-tip' role='text'>Návod, jak aktivovat tuto funkci v přehrávači PotPlayer, je uveden v uživatelské příručce k vašemu počítači.</p>"
+                },
                 "note": {
                     "description": "Tato funkce nepracuje v následujících případech:",
                     "description1": "Teplota procesoru je příliš vysoká.",
                     "description2": "Zařízení je nastaveno na režim úspory baterie v možnosti „Intelligent cooling“.",
                     "description3": "Je spuštěno současně dva nebo více přehrávačů.",
-					"description4": "Při videohovoru s aplikacemi VoIP (například Microsoft Teams nebo Zoom) a současném přehrávání videa."
+                    "description4": "Při videohovoru s aplikacemi VoIP (například Microsoft Teams nebo Zoom) a současném přehrávání videa."
                 },
                 "imageBefore": "Před",
                 "imageAfter": "Po"
@@ -4213,30 +4223,30 @@
         "processFinishedCannotBeCanceled": "Probíhající proces již nemusí být zrušen, protože je dokončen.",
         "cancelMayTakeSomeTime": "Počkejte prosím, v závislosti na vašem systému může zrušení chvilku trvat.",
         "report": {
-			"title": "Hardware Diagnostics Log",
-			"modelTitle": "Model",
-			"startDate": "Start Date and Time",
-			"endDate": "End Date and Time",
-			"model": {
-				"serialNumber": "Serial Number",
-				"wiredInterface": "Wired Ethernet Mac Address",
-				"wirelessInterface": "Wireless Mac Address",
-				"biosVersion": "BIOS Version",
-				"productName": "Product Name"
-			},
-			"resources": "Resources",
-			"tests": "Tests",
-			"totalModulesTested": "Total Modules Tested",
-			"environmentTitle": "Environment",
-			"environment": {
-				"applicationVersion": "Application Version",
-				"pluginVersion": "Plugin Version",
-				"experienceVersion": "Experience Version",
-				"shellVersion": "Shell Version",
-				"bridgeVersion": "Bridge Version"
-			},
-			"testResult": "Test Result"
-		},
+            "title": "Hardware Diagnostics Log",
+            "modelTitle": "Model",
+            "startDate": "Start Date and Time",
+            "endDate": "End Date and Time",
+            "model": {
+                "serialNumber": "Serial Number",
+                "wiredInterface": "Wired Ethernet Mac Address",
+                "wirelessInterface": "Wireless Mac Address",
+                "biosVersion": "BIOS Version",
+                "productName": "Product Name"
+            },
+            "resources": "Resources",
+            "tests": "Tests",
+            "totalModulesTested": "Total Modules Tested",
+            "environmentTitle": "Environment",
+            "environment": {
+                "applicationVersion": "Application Version",
+                "pluginVersion": "Plugin Version",
+                "experienceVersion": "Experience Version",
+                "shellVersion": "Shell Version",
+                "bridgeVersion": "Bridge Version"
+            },
+            "testResult": "Test Result"
+        },
         "scanFailureModal": {
             "title": "Byl zjištěn problém s hardwarem",
             "problemDetected": "Ve vašem počítači byly zjištěny problémy následujících komponent:",

@@ -1022,7 +1022,17 @@
                     "support": "Ondersteuning"
                 }
             },
-            "helpful": "Nuttige inhoud"
+            "helpful": "Nuttige inhoud",
+            "copy": "kopiëren",
+            "goodCondition": "Goede conditie",
+            "needAction": "Onderhoud vereist",
+            "hwStatus": "Hardwarestatus",
+            "swStatus": "Softwarestatus",
+            "refreshModules": "Modules vernieuwen",
+            "used": "Gebruikt",
+            "scanned": "Gescand ",
+            "physicalMemory": "Fysiek geheugen",
+            "storage": "Opslag"
         },
         "deviceSettings": {
             "helpful": "Nuttige inhoud",
@@ -2135,23 +2145,23 @@
                 "title": "Schaalverhoging beeldschermresolutie",
                 "desc1": "Deze functie verbetert de beleving van het kijken van video's door de beeldschermresolutie te verbeteren. Dit werkt het beste als de video een lage resolutie heeft.",
                 "desc2": "Deze functie kan invloed hebben op de werkingsduur van de batterij, de temperatuur en ventilatorgeluiden. Niet gebruiken in gelijkstroommodus (batterijstroom), anders neemt het stroomverbruik toe en gaat de batterij minder lang mee.",
-				"tooltip": {
-					"description1": "Deze functie werkt alleen voor de onderstaande videospelers:<br>",
-					"player1":"Windows Media Player<br>",
-					"player2":"Chrome-speler<br>",
-					"player3":"PotPlayer<br>",
-					"player4":"Opera (ingebouwde Google Chromium-engine)<br>",
-					"player5":"Microsoft Edge (ingebouwde Google Chromium-engine)<br>",
-					"player6":"Microsoft Teams<br>",
-					"player7":"Zoom<br>",
-					"description2": "<p class='srTooltip' id='sr-tip' role='text'>Instructies voor het inschakelen van deze functie in PotPlayer vindt u in de gebruikershandleiding van de computer.</p>"
-				},
+                "tooltip": {
+                    "description1": "Deze functie werkt alleen voor de onderstaande videospelers:<br>",
+                    "player1": "Windows Media Player<br>",
+                    "player2": "Chrome-speler<br>",
+                    "player3": "PotPlayer<br>",
+                    "player4": "Opera (ingebouwde Google Chromium-engine)<br>",
+                    "player5": "Microsoft Edge (ingebouwde Google Chromium-engine)<br>",
+                    "player6": "Microsoft Teams<br>",
+                    "player7": "Zoom<br>",
+                    "description2": "<p class='srTooltip' id='sr-tip' role='text'>Instructies voor het inschakelen van deze functie in PotPlayer vindt u in de gebruikershandleiding van de computer.</p>"
+                },
                 "note": {
                     "description": "Deze functie werkt niet als:",
                     "description1": "De CPU-temperatuur te hoog is.",
                     "description2": "Het apparaat is ingesteld op de energiebesparingsmodus in \"Intelligent koelen\".",
                     "description3": "Er worden twee of meer spelers tegelijk uitgevoerd.",
-					"description4": "In een videogesprek met een VoIP-app (zoals Microsoft Teams of Zoom) terwijl tegelijkertijd een video wordt afgespeeld."
+                    "description4": "In een videogesprek met een VoIP-app (zoals Microsoft Teams of Zoom) terwijl tegelijkertijd een video wordt afgespeeld."
                 },
                 "imageBefore": "Voor",
                 "imageAfter": "Na"
@@ -4213,30 +4223,30 @@
         "processFinishedCannotBeCanceled": "Het actieve proces is voltooid en hoeft niet meer te worden geannuleerd.",
         "cancelMayTakeSomeTime": "Een ogenblik geduld, het annuleren kan even duren, afhankelijk van uw systeem.",
         "report": {
-			"title": "Hardware Diagnostics Log",
-			"modelTitle": "Model",
-			"startDate": "Start Date and Time",
-			"endDate": "End Date and Time",
-			"model": {
-				"serialNumber": "Serial Number",
-				"wiredInterface": "Wired Ethernet Mac Address",
-				"wirelessInterface": "Wireless Mac Address",
-				"biosVersion": "BIOS Version",
-				"productName": "Product Name"
-			},
-			"resources": "Resources",
-			"tests": "Tests",
-			"totalModulesTested": "Total Modules Tested",
-			"environmentTitle": "Environment",
-			"environment": {
-				"applicationVersion": "Application Version",
-				"pluginVersion": "Plugin Version",
-				"experienceVersion": "Experience Version",
-				"shellVersion": "Shell Version",
-				"bridgeVersion": "Bridge Version"
-			},
-			"testResult": "Test Result"
-		},
+            "title": "Hardware Diagnostics Log",
+            "modelTitle": "Model",
+            "startDate": "Start Date and Time",
+            "endDate": "End Date and Time",
+            "model": {
+                "serialNumber": "Serial Number",
+                "wiredInterface": "Wired Ethernet Mac Address",
+                "wirelessInterface": "Wireless Mac Address",
+                "biosVersion": "BIOS Version",
+                "productName": "Product Name"
+            },
+            "resources": "Resources",
+            "tests": "Tests",
+            "totalModulesTested": "Total Modules Tested",
+            "environmentTitle": "Environment",
+            "environment": {
+                "applicationVersion": "Application Version",
+                "pluginVersion": "Plugin Version",
+                "experienceVersion": "Experience Version",
+                "shellVersion": "Shell Version",
+                "bridgeVersion": "Bridge Version"
+            },
+            "testResult": "Test Result"
+        },
         "scanFailureModal": {
             "title": "Probleem in hardware aangetroffen",
             "problemDetected": "Er zijn problemen aangetroffen bij de volgende onderdelen op uw computer:",

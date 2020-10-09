@@ -1022,7 +1022,17 @@
                     "support": "Suporte"
                 }
             },
-            "helpful": "Conteúdo útil"
+            "helpful": "Conteúdo útil",
+            "copy": "copiar",
+            "goodCondition": "Em boas condições",
+            "needAction": "Manutenção necessária",
+            "hwStatus": "Status do hardware",
+            "swStatus": "Status do software",
+            "refreshModules": "Atualizar módulos",
+            "used": "Usado",
+            "scanned": "Digitalizado ",
+            "physicalMemory": "Memória Física",
+            "storage": "Armazenamento"
         },
         "deviceSettings": {
             "helpful": "Conteúdo útil",
@@ -2135,23 +2145,23 @@
                 "title": "Upscaling da resolução de vídeo",
                 "desc1": "Esse recurso melhora a resolução do vídeo para aprimorar a experiência de reprodução. Funciona especialmente quando o vídeo tem baixa resolução.",
                 "desc2": "Essa função pode afetar a vida útil da bateria, a temperatura da pele e ruídos no ventilador. Não a use no modo DC (modo de bateria). Caso contrário, ela acelerará o consumo de energia e reduzirá a duração da bateria.",
-				"tooltip": {
-					"description1": "Este recurso só funciona para os players de vídeo abaixo:<br>",
-					"player1":"Windows Media Player<br>",
-					"player2":"Player baseado no Chrome<br>",
-					"player3":"PotPlayer<br>",
-					"player4":"Opera (mecanismo integrado do Google Chromium)<br>",
-					"player5":"Microsoft Edge (mecanismo integrado do Google Chromium)<br>",
-					"player6":"Microsoft Teams<br>",
-					"player7":"Zoom<br>",
-					"description2": "<p class='srTooltip' id='sr-tip' role='text'>Para obter instruções sobre como ativar essa função no PotPlayer, consulte o Guia do Usuário que acompanha o seu computador.</p>"
-				},
+                "tooltip": {
+                    "description1": "Este recurso só funciona para os players de vídeo abaixo:<br>",
+                    "player1": "Windows Media Player<br>",
+                    "player2": "Player baseado no Chrome<br>",
+                    "player3": "PotPlayer<br>",
+                    "player4": "Opera (mecanismo integrado do Google Chromium)<br>",
+                    "player5": "Microsoft Edge (mecanismo integrado do Google Chromium)<br>",
+                    "player6": "Microsoft Teams<br>",
+                    "player7": "Zoom<br>",
+                    "description2": "<p class='srTooltip' id='sr-tip' role='text'>Para obter instruções sobre como ativar essa função no PotPlayer, consulte o Guia do Usuário que acompanha o seu computador.</p>"
+                },
                 "note": {
                     "description": "Esse recurso não funciona quando:",
                     "description1": "A temperatura da CPU está muito alta.",
                     "description2": "O dispositivo está definido no Modo de economia de bateria em \"Resfriamento inteligente\".",
                     "description3": "Dois ou mais players estão em execução ao mesmo tempo.",
-					"description4": "Em uma chamada de vídeo com aplicativos VoIP (como Microsoft Teams ou Zoom) e um vídeo está sendo reproduzido ao mesmo tempo."
+                    "description4": "Em uma chamada de vídeo com aplicativos VoIP (como Microsoft Teams ou Zoom) e um vídeo está sendo reproduzido ao mesmo tempo."
                 },
                 "imageBefore": "Antes",
                 "imageAfter": "Depois"
@@ -4213,30 +4223,30 @@
         "processFinishedCannotBeCanceled": "O processo em execução não precisa mais ser cancelado, pois foi concluído.",
         "cancelMayTakeSomeTime": "Por favor, aguarde. Dependendo do seu sistema, o cancelamento poderá levar algum tempo.",
         "report": {
-			"title": "Hardware Diagnostics Log",
-			"modelTitle": "Model",
-			"startDate": "Start Date and Time",
-			"endDate": "End Date and Time",
-			"model": {
-				"serialNumber": "Serial Number",
-				"wiredInterface": "Wired Ethernet Mac Address",
-				"wirelessInterface": "Wireless Mac Address",
-				"biosVersion": "BIOS Version",
-				"productName": "Product Name"
-			},
-			"resources": "Resources",
-			"tests": "Tests",
-			"totalModulesTested": "Total Modules Tested",
-			"environmentTitle": "Environment",
-			"environment": {
-				"applicationVersion": "Application Version",
-				"pluginVersion": "Plugin Version",
-				"experienceVersion": "Experience Version",
-				"shellVersion": "Shell Version",
-				"bridgeVersion": "Bridge Version"
-			},
-			"testResult": "Test Result"
-		},
+            "title": "Hardware Diagnostics Log",
+            "modelTitle": "Model",
+            "startDate": "Start Date and Time",
+            "endDate": "End Date and Time",
+            "model": {
+                "serialNumber": "Serial Number",
+                "wiredInterface": "Wired Ethernet Mac Address",
+                "wirelessInterface": "Wireless Mac Address",
+                "biosVersion": "BIOS Version",
+                "productName": "Product Name"
+            },
+            "resources": "Resources",
+            "tests": "Tests",
+            "totalModulesTested": "Total Modules Tested",
+            "environmentTitle": "Environment",
+            "environment": {
+                "applicationVersion": "Application Version",
+                "pluginVersion": "Plugin Version",
+                "experienceVersion": "Experience Version",
+                "shellVersion": "Shell Version",
+                "bridgeVersion": "Bridge Version"
+            },
+            "testResult": "Test Result"
+        },
         "scanFailureModal": {
             "title": "Problema de Hardware Detectado",
             "problemDetected": "Foram detectados problemas nos seguintes componentes do seu computador:",

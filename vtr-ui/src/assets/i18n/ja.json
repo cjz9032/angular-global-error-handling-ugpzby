@@ -1022,7 +1022,17 @@
                     "support": "サポート"
                 }
             },
-            "helpful": "役に立つ情報"
+            "helpful": "役に立つ情報",
+            "copy": "コピー",
+            "goodCondition": "良好な状態です",
+            "needAction": "メンテナンスが必要です",
+            "hwStatus": "ハードウェアの状況",
+            "swStatus": "ソフトウェアの状況",
+            "refreshModules": "モジュールの更新",
+            "used": "使用済",
+            "scanned": "スキャン済み",
+            "physicalMemory": "物理メモリー",
+            "storage": "ストレージ"
         },
         "deviceSettings": {
             "helpful": "お役立ち情報",
@@ -2135,23 +2145,23 @@
                 "title": "ビデオ解像度のアップスケーリング",
                 "desc1": "この機能は、ビデオ解像度を改善することで、ビデオ再生のエクスペリエンスを向上させます。特にビデオの解像度が低い場合に効果があります。",
                 "desc2": "この機能はバッテリー寿命、温度、ファン・ノイズに影響を与える可能性があります。DC モード (バッテリー・モード) では使用しないでください。そうしないと、電力消費が速くなり、バッテリー寿命が短くなります。",
-				"tooltip": {
-					"description1": "この機能は以下のビデオ・プレイヤーでのみに機能します。<br>",
-					"player1":"Windows Media Player<br>",
-					"player2":"Chrome ベースのプレーヤー<br>",
-					"player3":"PotPlayer<br>",
-					"player4":"Opera (Google Chromium エンジン内蔵)<br>",
-					"player5":"Microsoft Edge (Google Chromium エンジン内蔵)<br>",
-					"player6":"Microsoft Teams<br>",
-					"player7":"Zoom<br>",
-					"description2": "<p class='srTooltip' id='sr-tip' role='text'>PotPlayer でこの機能を有効にする方法については、コンピューターに付属のユーザー・ガイドを参照してください。</p>"
-				},
+                "tooltip": {
+                    "description1": "この機能は以下のビデオ・プレイヤーでのみに機能します。<br>",
+                    "player1": "Windows Media Player<br>",
+                    "player2": "Chrome ベースのプレーヤー<br>",
+                    "player3": "PotPlayer<br>",
+                    "player4": "Opera (Google Chromium エンジン内蔵)<br>",
+                    "player5": "Microsoft Edge (Google Chromium エンジン内蔵)<br>",
+                    "player6": "Microsoft Teams<br>",
+                    "player7": "Zoom<br>",
+                    "description2": "<p class='srTooltip' id='sr-tip' role='text'>PotPlayer でこの機能を有効にする方法については、コンピューターに付属のユーザー・ガイドを参照してください。</p>"
+                },
                 "note": {
                     "description": "この機能は次の場合は動作しません。",
                     "description1": "CPU の温度が高すぎる場合。",
                     "description2": "デバイスは 「インテリジェント・クーリング」 でバッテリー節約モードに設定されています。",
                     "description3": "2 人以上のプレイヤーが同時に起動しています。",
-					"description4": "VoIP アプリ (Microsoft Teams や Zoom など) でのビデオ通話とビデオを同時に再生しています。"
+                    "description4": "VoIP アプリ (Microsoft Teams や Zoom など) でのビデオ通話とビデオを同時に再生しています。"
                 },
                 "imageBefore": "前",
                 "imageAfter": "後"
@@ -4213,30 +4223,30 @@
         "processFinishedCannotBeCanceled": "実行中のプロセスは完了しているため、キャンセルする必要はありません。",
         "cancelMayTakeSomeTime": "お使いのシステムによってはキャンセルに時間がかかる場合がございます。",
         "report": {
-			"title": "Hardware Diagnostics Log",
-			"modelTitle": "Model",
-			"startDate": "Start Date and Time",
-			"endDate": "End Date and Time",
-			"model": {
-				"serialNumber": "Serial Number",
-				"wiredInterface": "Wired Ethernet Mac Address",
-				"wirelessInterface": "Wireless Mac Address",
-				"biosVersion": "BIOS Version",
-				"productName": "Product Name"
-			},
-			"resources": "Resources",
-			"tests": "Tests",
-			"totalModulesTested": "Total Modules Tested",
-			"environmentTitle": "Environment",
-			"environment": {
-				"applicationVersion": "Application Version",
-				"pluginVersion": "Plugin Version",
-				"experienceVersion": "Experience Version",
-				"shellVersion": "Shell Version",
-				"bridgeVersion": "Bridge Version"
-			},
-			"testResult": "Test Result"
-		},
+            "title": "Hardware Diagnostics Log",
+            "modelTitle": "Model",
+            "startDate": "Start Date and Time",
+            "endDate": "End Date and Time",
+            "model": {
+                "serialNumber": "Serial Number",
+                "wiredInterface": "Wired Ethernet Mac Address",
+                "wirelessInterface": "Wireless Mac Address",
+                "biosVersion": "BIOS Version",
+                "productName": "Product Name"
+            },
+            "resources": "Resources",
+            "tests": "Tests",
+            "totalModulesTested": "Total Modules Tested",
+            "environmentTitle": "Environment",
+            "environment": {
+                "applicationVersion": "Application Version",
+                "pluginVersion": "Plugin Version",
+                "experienceVersion": "Experience Version",
+                "shellVersion": "Shell Version",
+                "bridgeVersion": "Bridge Version"
+            },
+            "testResult": "Test Result"
+        },
         "scanFailureModal": {
             "title": "ハードウェアの問題が検出されました",
             "problemDetected": "コンピューターの次のコンポーネントで問題が検出されました。",

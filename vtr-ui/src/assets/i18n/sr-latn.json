@@ -1022,7 +1022,17 @@
                     "support": "Podrška"
                 }
             },
-            "helpful": "Korisni sadržaj"
+            "helpful": "Korisni sadržaj",
+            "copy": "kopija",
+            "goodCondition": "U dobrom stanju",
+            "needAction": "Potrebno održavanje",
+            "hwStatus": "Status hardvera",
+            "swStatus": "Status softvera",
+            "refreshModules": "Osvežavanje modula",
+            "used": "Korišćen",
+            "scanned": "Skeniran ",
+            "physicalMemory": "Fizička memorija",
+            "storage": "Skladište"
         },
         "deviceSettings": {
             "helpful": "Korisni sadržaj",
@@ -2135,23 +2145,23 @@
                 "title": "Poboljšavanje video rezolucije",
                 "desc1": "Ova funkcija poboljšava iskustvo reprodukcije video zapisa poboljšanjem video rezolucije. On radi posebno kada je video u slaboj rezoluciji.",
                 "desc2": "Ova funkcija može da utiče na vek trajanja baterije, temperaturu baterije i na buku ventilatora. Nemojte koristiti u režimu rada na jednosmernu struju (režim baterije). U suprotnom će se baterija brže istrošiti i skratiće se radni vek baterije.",
-				"tooltip": {
-					"description1": "Ova funkcija funkcioniše samo na dolenavedenim video plejerima:<br>",
-					"player1":"Windows Media Player<br>",
-					"player2":"Plejer zasnovan na pregledaču Chrome<br>",
-					"player3":"PotPlayer<br>",
-					"player4":"Opera (ugrađen Google Chromium modul)<br>",
-					"player5":"Microsoft Edge (ugrađen Google Chromium modul)<br>",
-					"player6":"Microsoft Teams<br>",
-					"player7":"Zoom<br>",
-					"description2": "<p class='srTooltip' id='sr-tip' role='text'>Za uputstva o tome kako da omogućite ovu funkciju na PotPlayer-u, pogledajte uputstvo za korisnike koje se dobija uz računar.</p>"
-				},
+                "tooltip": {
+                    "description1": "Ova funkcija funkcioniše samo na dolenavedenim video plejerima:<br>",
+                    "player1": "Windows Media Player<br>",
+                    "player2": "Plejer zasnovan na pregledaču Chrome<br>",
+                    "player3": "PotPlayer<br>",
+                    "player4": "Opera (ugrađen Google Chromium modul)<br>",
+                    "player5": "Microsoft Edge (ugrađen Google Chromium modul)<br>",
+                    "player6": "Microsoft Teams<br>",
+                    "player7": "Zoom<br>",
+                    "description2": "<p class='srTooltip' id='sr-tip' role='text'>Za uputstva o tome kako da omogućite ovu funkciju na PotPlayer-u, pogledajte uputstvo za korisnike koje se dobija uz računar.</p>"
+                },
                 "note": {
                     "description": "Ova funkcija ne radi kada:",
                     "description1": "Temperatura procesora je previsoka.",
                     "description2": "Uređaj je podešen na režim uštede baterije u delu „Pametno hlađenje“.",
                     "description3": "Istovremeno su pokrenuta dva ili više plejera.",
-					"description4": "Na video pozivu sa VoIP aplikacijama (kao što su Microsoft Teams ili Zoom) i istovremeno se reprodukuje video zapis."
+                    "description4": "Na video pozivu sa VoIP aplikacijama (kao što su Microsoft Teams ili Zoom) i istovremeno se reprodukuje video zapis."
                 },
                 "imageBefore": "Pre",
                 "imageAfter": "Posle"
@@ -4213,30 +4223,30 @@
         "processFinishedCannotBeCanceled": "Proces pokretanja više ne mora da se otkazuje jer je završen.",
         "cancelMayTakeSomeTime": "Sačekajte, otkazivanje će možda duže potrajati, u zavisnosti od sistema.",
         "report": {
-			"title": "Hardware Diagnostics Log",
-			"modelTitle": "Model",
-			"startDate": "Start Date and Time",
-			"endDate": "End Date and Time",
-			"model": {
-				"serialNumber": "Serial Number",
-				"wiredInterface": "Wired Ethernet Mac Address",
-				"wirelessInterface": "Wireless Mac Address",
-				"biosVersion": "BIOS Version",
-				"productName": "Product Name"
-			},
-			"resources": "Resources",
-			"tests": "Tests",
-			"totalModulesTested": "Total Modules Tested",
-			"environmentTitle": "Environment",
-			"environment": {
-				"applicationVersion": "Application Version",
-				"pluginVersion": "Plugin Version",
-				"experienceVersion": "Experience Version",
-				"shellVersion": "Shell Version",
-				"bridgeVersion": "Bridge Version"
-			},
-			"testResult": "Test Result"
-		},
+            "title": "Hardware Diagnostics Log",
+            "modelTitle": "Model",
+            "startDate": "Start Date and Time",
+            "endDate": "End Date and Time",
+            "model": {
+                "serialNumber": "Serial Number",
+                "wiredInterface": "Wired Ethernet Mac Address",
+                "wirelessInterface": "Wireless Mac Address",
+                "biosVersion": "BIOS Version",
+                "productName": "Product Name"
+            },
+            "resources": "Resources",
+            "tests": "Tests",
+            "totalModulesTested": "Total Modules Tested",
+            "environmentTitle": "Environment",
+            "environment": {
+                "applicationVersion": "Application Version",
+                "pluginVersion": "Plugin Version",
+                "experienceVersion": "Experience Version",
+                "shellVersion": "Shell Version",
+                "bridgeVersion": "Bridge Version"
+            },
+            "testResult": "Test Result"
+        },
         "scanFailureModal": {
             "title": "Otkriven je problem sa hardverom",
             "problemDetected": "Otkriveni su problemi na sledećim komponentama na računaru:",
