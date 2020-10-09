@@ -1022,7 +1022,17 @@
                     "support": "Tuki"
                 }
             },
-            "helpful": "Hyödyllistä sisältöä"
+            "helpful": "Hyödyllistä sisältöä",
+            "copy": "kopioi",
+            "goodCondition": "Hyvässä kunnossa",
+            "needAction": "Vaatii huoltoa",
+            "hwStatus": "Laitteiston tila",
+            "swStatus": "Ohjelmistojen tila",
+            "refreshModules": "Päivitä moduulit",
+            "used": "Käytetty",
+            "scanned": "Tarkistettu ",
+            "physicalMemory": "Fyysinen muisti",
+            "storage": "Tallennus"
         },
         "deviceSettings": {
             "helpful": "Hyödyllistä sisältöä",
@@ -2135,23 +2145,23 @@
                 "title": "Näytön tarkkuuden skaalaus",
                 "desc1": "Tämä ominaisuus parantaa videoiden katselukokemusta parantamalla videoiden resoluutiota. Se toimii erityisen hyvin, kun videon resoluutio on alhainen.",
                 "desc2": "Tämä toiminto saattaa vaikuttaa akun käyttöaikaan, ihon lämpötilaan ja tuulettimen ääniin. Älä käytä sitä DC-tilassa (akkuvirralla). Muutoin se nopeuttaa virrankulutusta ja lyhentää akun käyttöikää.",
-				"tooltip": {
-					"description1": "Tämä ominaisuus toimii vain alla mainittujen videosoittimien kanssa:<br>",
-					"player1":"Windows Media Player<br>",
-					"player2":"Chrome-pohjainen soitin<br>",
-					"player3":"PotPlayer<br>",
-					"player4":"Opera (sisäänrakennettu Google Chromium -järjestelmä)<br>",
-					"player5":"Microsoft Edge (sisäänrakennettu Google Chromium -järjestelmä)<br>",
-					"player6":"Microsoft Teams<br>",
-					"player7":"Zoom<br>",
-					"description2": "<p class='srTooltip' id='sr-tip' role='text'>Lisätietoja tämän ominaisuuden ottamisesta käyttöön PotPlayer-soittimille on tietokoneesi mukana toimitetussa käyttöoppaassa.</p>"
-				},
+                "tooltip": {
+                    "description1": "Tämä ominaisuus toimii vain alla mainittujen videosoittimien kanssa:<br>",
+                    "player1": "Windows Media Player<br>",
+                    "player2": "Chrome-pohjainen soitin<br>",
+                    "player3": "PotPlayer<br>",
+                    "player4": "Opera (sisäänrakennettu Google Chromium -järjestelmä)<br>",
+                    "player5": "Microsoft Edge (sisäänrakennettu Google Chromium -järjestelmä)<br>",
+                    "player6": "Microsoft Teams<br>",
+                    "player7": "Zoom<br>",
+                    "description2": "<p class='srTooltip' id='sr-tip' role='text'>Lisätietoja tämän ominaisuuden ottamisesta käyttöön PotPlayer-soittimille on tietokoneesi mukana toimitetussa käyttöoppaassa.</p>"
+                },
                 "note": {
                     "description": "Wi-Fi-toiminto ei toimi seuraavissa tilanteissa:",
                     "description1": "Keskusyksikön lämpötila on liian korkea.",
                     "description2": "Laite asetetaan akun virransäästötilaan kohdasta ”Älykäs jäähdytys”.",
                     "description3": "Kaksi tai useampi soitin on käynnissä samanaikaisesti.",
-					"description4": "VoIP-sovelluksen (kuten Microsoft Teams tai Zoom) puhelu ja video ovat käynnissä samanaikaisesti."
+                    "description4": "VoIP-sovelluksen (kuten Microsoft Teams tai Zoom) puhelu ja video ovat käynnissä samanaikaisesti."
                 },
                 "imageBefore": "Ennen",
                 "imageAfter": "Jälkeen"
@@ -4213,30 +4223,30 @@
         "processFinishedCannotBeCanceled": "Käynnissä olevaa prosessia ei tarvitse peruuttaa enää, koska se on suoritettu loppuun.",
         "cancelMayTakeSomeTime": "Odota hetki, peruutus saattaa kestää jonkin aikaa järjestelmästäsi riippuen.",
         "report": {
-			"title": "Hardware Diagnostics Log",
-			"modelTitle": "Model",
-			"startDate": "Start Date and Time",
-			"endDate": "End Date and Time",
-			"model": {
-				"serialNumber": "Serial Number",
-				"wiredInterface": "Wired Ethernet Mac Address",
-				"wirelessInterface": "Wireless Mac Address",
-				"biosVersion": "BIOS Version",
-				"productName": "Product Name"
-			},
-			"resources": "Resources",
-			"tests": "Tests",
-			"totalModulesTested": "Total Modules Tested",
-			"environmentTitle": "Environment",
-			"environment": {
-				"applicationVersion": "Application Version",
-				"pluginVersion": "Plugin Version",
-				"experienceVersion": "Experience Version",
-				"shellVersion": "Shell Version",
-				"bridgeVersion": "Bridge Version"
-			},
-			"testResult": "Test Result"
-		},
+            "title": "Hardware Diagnostics Log",
+            "modelTitle": "Model",
+            "startDate": "Start Date and Time",
+            "endDate": "End Date and Time",
+            "model": {
+                "serialNumber": "Serial Number",
+                "wiredInterface": "Wired Ethernet Mac Address",
+                "wirelessInterface": "Wireless Mac Address",
+                "biosVersion": "BIOS Version",
+                "productName": "Product Name"
+            },
+            "resources": "Resources",
+            "tests": "Tests",
+            "totalModulesTested": "Total Modules Tested",
+            "environmentTitle": "Environment",
+            "environment": {
+                "applicationVersion": "Application Version",
+                "pluginVersion": "Plugin Version",
+                "experienceVersion": "Experience Version",
+                "shellVersion": "Shell Version",
+                "bridgeVersion": "Bridge Version"
+            },
+            "testResult": "Test Result"
+        },
         "scanFailureModal": {
             "title": "Laitteisto-ongelma havaittiin",
             "problemDetected": "Tietokoneesi seuraavissa osissa havaittiin ongelmia:",

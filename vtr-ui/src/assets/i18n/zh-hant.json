@@ -1022,7 +1022,17 @@
                     "support": "支援"
                 }
             },
-            "helpful": "實用內容"
+            "helpful": "實用內容",
+            "copy": "複製",
+            "goodCondition": "狀況良好",
+            "needAction": "需要維護",
+            "hwStatus": "硬體狀態",
+            "swStatus": "軟體狀態",
+            "refreshModules": "重新整理模組",
+            "used": "已用",
+            "scanned": "已掃描",
+            "physicalMemory": "實體記憶體",
+            "storage": "儲存裝置"
         },
         "deviceSettings": {
             "helpful": "實用內容",
@@ -2135,23 +2145,23 @@
                 "title": "視訊解析度升級",
                 "desc1": "此功能可改進視訊解析度，藉此強化視訊播放體驗。特別適合視訊解析度不佳時。",
                 "desc2": "此功能可能會影響電池續航力、表面溫度和風扇噪音。請勿在 DC 模式（電池模式）下使用。否則，電力會消耗得更快，且電池壽命會變得更短。",
-				"tooltip": {
-					"description1": "此功能僅適用於以下視訊播放程式：<br>",
-					"player1":"Windows Media Player<br>",
-					"player2":"Chrome 播放器<br>",
-					"player3":"PotPlayer<br>",
-					"player4":"Opera（內建 Google Chromium 引擎）<br>",
-					"player5":"Microsoft Edge（內建 Google Chromium 引擎）<br>",
-					"player6":"Microsoft Teams<br>",
-					"player7":"Zoom<br>",
-					"description2": "<p class='srTooltip' id='sr-tip' role='text'>如需在 PotPlayer 上啟用此功能的指示，請參閱電腦隨附的使用手冊。</p>"
-				},
+                "tooltip": {
+                    "description1": "此功能僅適用於以下視訊播放程式：<br>",
+                    "player1": "Windows Media Player<br>",
+                    "player2": "Chrome 播放器<br>",
+                    "player3": "PotPlayer<br>",
+                    "player4": "Opera（內建 Google Chromium 引擎）<br>",
+                    "player5": "Microsoft Edge（內建 Google Chromium 引擎）<br>",
+                    "player6": "Microsoft Teams<br>",
+                    "player7": "Zoom<br>",
+                    "description2": "<p class='srTooltip' id='sr-tip' role='text'>如需在 PotPlayer 上啟用此功能的指示，請參閱電腦隨附的使用手冊。</p>"
+                },
                 "note": {
                     "description": "此功能在下列情況中無法運作：",
                     "description1": "CPU 溫度過高。",
                     "description2": "此裝置已在「智慧型冷卻」中設為省電模式。",
                     "description3": "兩個或多個播放程式同時在執行中。",
-					"description4": "在使用 VoIP 應用程式（例如 Microsoft Teams 或 Zoom）進行視訊通話時，同時播放視訊。"
+                    "description4": "在使用 VoIP 應用程式（例如 Microsoft Teams 或 Zoom）進行視訊通話時，同時播放視訊。"
                 },
                 "imageBefore": "啟用前",
                 "imageAfter": "啟用後"
@@ -4213,30 +4223,30 @@
         "processFinishedCannotBeCanceled": "由於執行中的程序已完成，因此不再需要取消。",
         "cancelMayTakeSomeTime": "請稍候，視您的系統而定，取消可能需要一些時間。",
         "report": {
-			"title": "Hardware Diagnostics Log",
-			"modelTitle": "Model",
-			"startDate": "Start Date and Time",
-			"endDate": "End Date and Time",
-			"model": {
-				"serialNumber": "Serial Number",
-				"wiredInterface": "Wired Ethernet Mac Address",
-				"wirelessInterface": "Wireless Mac Address",
-				"biosVersion": "BIOS Version",
-				"productName": "Product Name"
-			},
-			"resources": "Resources",
-			"tests": "Tests",
-			"totalModulesTested": "Total Modules Tested",
-			"environmentTitle": "Environment",
-			"environment": {
-				"applicationVersion": "Application Version",
-				"pluginVersion": "Plugin Version",
-				"experienceVersion": "Experience Version",
-				"shellVersion": "Shell Version",
-				"bridgeVersion": "Bridge Version"
-			},
-			"testResult": "Test Result"
-		},
+            "title": "Hardware Diagnostics Log",
+            "modelTitle": "Model",
+            "startDate": "Start Date and Time",
+            "endDate": "End Date and Time",
+            "model": {
+                "serialNumber": "Serial Number",
+                "wiredInterface": "Wired Ethernet Mac Address",
+                "wirelessInterface": "Wireless Mac Address",
+                "biosVersion": "BIOS Version",
+                "productName": "Product Name"
+            },
+            "resources": "Resources",
+            "tests": "Tests",
+            "totalModulesTested": "Total Modules Tested",
+            "environmentTitle": "Environment",
+            "environment": {
+                "applicationVersion": "Application Version",
+                "pluginVersion": "Plugin Version",
+                "experienceVersion": "Experience Version",
+                "shellVersion": "Shell Version",
+                "bridgeVersion": "Bridge Version"
+            },
+            "testResult": "Test Result"
+        },
         "scanFailureModal": {
             "title": "偵測到硬體問題",
             "problemDetected": "偵測到您電腦的如下裝置有問題：",

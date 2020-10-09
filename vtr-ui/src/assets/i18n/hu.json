@@ -1022,7 +1022,17 @@
                     "support": "Támogatás"
                 }
             },
-            "helpful": "Hasznos tartalom"
+            "helpful": "Hasznos tartalom",
+            "copy": "másolás",
+            "goodCondition": "Jó állapotú",
+            "needAction": "Karbantartásra szorul",
+            "hwStatus": "Hardver állapota",
+            "swStatus": "Szoftver állapota",
+            "refreshModules": "Modulok frissítése",
+            "used": "Használt",
+            "scanned": "Ellenőrzött ",
+            "physicalMemory": "Fizikai memória",
+            "storage": "Tárterület"
         },
         "deviceSettings": {
             "helpful": "Hasznos tartalom",
@@ -2135,23 +2145,23 @@
                 "title": "Videófelbontás megnövelése",
                 "desc1": "Ez a funkció növeli a videók felbontását, és ezzel élvezetesebbé teszi a videók megtekintését. Különösen akkor hasznos, ha a videó felbontása alacsony.",
                 "desc2": "Ez a funkció befolyásolhatja az akkumulátor élettartamát, a hőmérsékletet, valamint a ventilátor által keltett zajt. Ne használja DC üzemmódban (a rendszer akkumulátorról üzemel). Ellenkező esetben felgyorsítja az energiafogyasztást és lerövidíti az akkumulátor élettartamát.",
-				"tooltip": {
-					"description1": "Ez a funkció csak az alábbi videolejátszókkal működik:<br>",
-					"player1":"Windows Media Player<br>",
-					"player2":"Chrome-alapú lejátszó<br>",
-					"player3":"PotPlayer<br>",
-					"player4":"Opera (beépített Google Chromium motor)<br>",
-					"player5":"Microsoft Edge (beépített Google Chromium motor)<br>",
-					"player6":"Microsoft Teams<br>",
-					"player7":"Zoom<br>",
-					"description2": "<p class='srTooltip' id='sr-tip' role='text'>A funkció PotPlayer lejátszóban való engedélyezésével kapcsolatban olvassa el a számítógéphez kapott felhasználói kézikönyvet.</p>"
-				},
+                "tooltip": {
+                    "description1": "Ez a funkció csak az alábbi videolejátszókkal működik:<br>",
+                    "player1": "Windows Media Player<br>",
+                    "player2": "Chrome-alapú lejátszó<br>",
+                    "player3": "PotPlayer<br>",
+                    "player4": "Opera (beépített Google Chromium motor)<br>",
+                    "player5": "Microsoft Edge (beépített Google Chromium motor)<br>",
+                    "player6": "Microsoft Teams<br>",
+                    "player7": "Zoom<br>",
+                    "description2": "<p class='srTooltip' id='sr-tip' role='text'>A funkció PotPlayer lejátszóban való engedélyezésével kapcsolatban olvassa el a számítógéphez kapott felhasználói kézikönyvet.</p>"
+                },
                 "note": {
                     "description": "A funkció az alábbi esetekben nem működik:",
                     "description1": "A processzor hőmérséklete túl magas.",
                     "description2": "\"Intelligens hűtés\" üzemmódban be van kapcsolva az Akkumulátorkímélő kód.",
                     "description3": "Két vagy több lejátszó fut egyszerre.",
-					"description4": "Ha VoIP-alkalmazásokban (például Microsoft Teamsben vagy Zoomban) folytat videohívást, és közben egy videó lejátszása is folyik a háttérben."
+                    "description4": "Ha VoIP-alkalmazásokban (például Microsoft Teamsben vagy Zoomban) folytat videohívást, és közben egy videó lejátszása is folyik a háttérben."
                 },
                 "imageBefore": "Előtte",
                 "imageAfter": "Utána"
@@ -4213,30 +4223,30 @@
         "processFinishedCannotBeCanceled": "A futó folyamatot nem lehet megszakítani, mivel befejeződött.",
         "cancelMayTakeSomeTime": "Kérjük, várjon, a megszakítás a rendszertől függően hosszabb időt vehet igénybe.",
         "report": {
-			"title": "Hardware Diagnostics Log",
-			"modelTitle": "Model",
-			"startDate": "Start Date and Time",
-			"endDate": "End Date and Time",
-			"model": {
-				"serialNumber": "Serial Number",
-				"wiredInterface": "Wired Ethernet Mac Address",
-				"wirelessInterface": "Wireless Mac Address",
-				"biosVersion": "BIOS Version",
-				"productName": "Product Name"
-			},
-			"resources": "Resources",
-			"tests": "Tests",
-			"totalModulesTested": "Total Modules Tested",
-			"environmentTitle": "Environment",
-			"environment": {
-				"applicationVersion": "Application Version",
-				"pluginVersion": "Plugin Version",
-				"experienceVersion": "Experience Version",
-				"shellVersion": "Shell Version",
-				"bridgeVersion": "Bridge Version"
-			},
-			"testResult": "Test Result"
-		},
+            "title": "Hardware Diagnostics Log",
+            "modelTitle": "Model",
+            "startDate": "Start Date and Time",
+            "endDate": "End Date and Time",
+            "model": {
+                "serialNumber": "Serial Number",
+                "wiredInterface": "Wired Ethernet Mac Address",
+                "wirelessInterface": "Wireless Mac Address",
+                "biosVersion": "BIOS Version",
+                "productName": "Product Name"
+            },
+            "resources": "Resources",
+            "tests": "Tests",
+            "totalModulesTested": "Total Modules Tested",
+            "environmentTitle": "Environment",
+            "environment": {
+                "applicationVersion": "Application Version",
+                "pluginVersion": "Plugin Version",
+                "experienceVersion": "Experience Version",
+                "shellVersion": "Shell Version",
+                "bridgeVersion": "Bridge Version"
+            },
+            "testResult": "Test Result"
+        },
         "scanFailureModal": {
             "title": "Hardverhiba észlelve",
             "problemDetected": "A rendszer problémát észlelt a számítógép következő alkatrészeinél:",

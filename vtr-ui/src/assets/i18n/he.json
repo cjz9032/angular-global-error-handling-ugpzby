@@ -1022,7 +1022,17 @@
                     "support": "תמיכה"
                 }
             },
-            "helpful": "תוכן מועיל"
+            "helpful": "תוכן מועיל",
+            "copy": "העתקה",
+            "goodCondition": "במצב טוב",
+            "needAction": "יש צורך בתחזוקה",
+            "hwStatus": "מצב חומרה",
+            "swStatus": "מצב תוכנה",
+            "refreshModules": "רענון מודולים",
+            "used": "בשימוש",
+            "scanned": "נסרק ",
+            "physicalMemory": "זיכרון פיזי",
+            "storage": "אחסון"
         },
         "deviceSettings": {
             "helpful": "תוכן מועיל",
@@ -2135,23 +2145,23 @@
                 "title": "הגדלת רזולוציית הווידאו",
                 "desc1": "תכונה זו משפרת את חוויית הפעלת הווידאו על ידי שיפור רזולוציית הווידאו. היא פועלת במיוחד כאשר הסרטון ברזולוציה נמוכה.",
                 "desc2": "פונקציה זו עלולה להשפיע על חיי הסוללה, על טמפרטורת העור ועל רעשים מהמאוורר. אין להשתמש בה במצב DC (מצב סוללה). אחרת, היא תאיץ את צריכת החשמל ותקצר את חיי הסוללה.",
-				"tooltip": {
-					"description1": "תכונה זו פועלת רק עבור נגני הווידאו שמצוינים בהמשך:<br>",
-					"player1":"Windows Media Player<br>",
-					"player2":"נגן מבוסס Chrome<br>",
-					"player3":"PotPlayer<br>",
-					"player4":"Opera (מגיע עם מנוע Google Chromium)<br>",
-					"player5":"Microsoft Edge (מגיע עם מנוע Google Chromium)<br>",
-					"player6":"Microsoft Teams<br>",
-					"player7":"Zoom<br>",
-					"description2": "<p class='srTooltip' id='sr-tip' role='text'>לקבלת הוראות להפעלת פונקציה זו ב-PotPlayer, עיינו במדריך למשתמש המצורף למחשבכם.</p>"
-				},
+                "tooltip": {
+                    "description1": "תכונה זו פועלת רק עבור נגני הווידאו שמצוינים בהמשך:<br>",
+                    "player1": "Windows Media Player<br>",
+                    "player2": "נגן מבוסס Chrome<br>",
+                    "player3": "PotPlayer<br>",
+                    "player4": "Opera (מגיע עם מנוע Google Chromium)<br>",
+                    "player5": "Microsoft Edge (מגיע עם מנוע Google Chromium)<br>",
+                    "player6": "Microsoft Teams<br>",
+                    "player7": "Zoom<br>",
+                    "description2": "<p class='srTooltip' id='sr-tip' role='text'>לקבלת הוראות להפעלת פונקציה זו ב-PotPlayer, עיינו במדריך למשתמש המצורף למחשבכם.</p>"
+                },
                 "note": {
                     "description": "התכונה אינה פועלת כאשר:",
                     "description1": "טמפרטורת המעבד גבוהה מדי.",
                     "description2": "המכשיר מוגדר למצב חיסכון בסוללה במצב של \"קירור חכם\".",
                     "description3": "שני נגנים או יותר פועלים בו זמנית.",
-					"description4": "בשיחת וידאו עם אפליקציות VoIP (כגון Microsoft Teams או Zoom), וסרטון שמופעל במקביל."
+                    "description4": "בשיחת וידאו עם אפליקציות VoIP (כגון Microsoft Teams או Zoom), וסרטון שמופעל במקביל."
                 },
                 "imageBefore": "לפני",
                 "imageAfter": "אחרי"
@@ -4213,30 +4223,30 @@
         "processFinishedCannotBeCanceled": "אין יותר צורך לבטל את תהליך ההפעלה מפני שהוא הושלם.",
         "cancelMayTakeSomeTime": "אנא המתינו, פעולת הביטול עשויה להימשך זמן מה, בהתאם למערכת.",
         "report": {
-			"title": "Hardware Diagnostics Log",
-			"modelTitle": "Model",
-			"startDate": "Start Date and Time",
-			"endDate": "End Date and Time",
-			"model": {
-				"serialNumber": "Serial Number",
-				"wiredInterface": "Wired Ethernet Mac Address",
-				"wirelessInterface": "Wireless Mac Address",
-				"biosVersion": "BIOS Version",
-				"productName": "Product Name"
-			},
-			"resources": "Resources",
-			"tests": "Tests",
-			"totalModulesTested": "Total Modules Tested",
-			"environmentTitle": "Environment",
-			"environment": {
-				"applicationVersion": "Application Version",
-				"pluginVersion": "Plugin Version",
-				"experienceVersion": "Experience Version",
-				"shellVersion": "Shell Version",
-				"bridgeVersion": "Bridge Version"
-			},
-			"testResult": "Test Result"
-		},
+            "title": "Hardware Diagnostics Log",
+            "modelTitle": "Model",
+            "startDate": "Start Date and Time",
+            "endDate": "End Date and Time",
+            "model": {
+                "serialNumber": "Serial Number",
+                "wiredInterface": "Wired Ethernet Mac Address",
+                "wirelessInterface": "Wireless Mac Address",
+                "biosVersion": "BIOS Version",
+                "productName": "Product Name"
+            },
+            "resources": "Resources",
+            "tests": "Tests",
+            "totalModulesTested": "Total Modules Tested",
+            "environmentTitle": "Environment",
+            "environment": {
+                "applicationVersion": "Application Version",
+                "pluginVersion": "Plugin Version",
+                "experienceVersion": "Experience Version",
+                "shellVersion": "Shell Version",
+                "bridgeVersion": "Bridge Version"
+            },
+            "testResult": "Test Result"
+        },
         "scanFailureModal": {
             "title": "זוהתה בעיית חומרה",
             "problemDetected": "התגלו בעיות ברכיבים הבאים במחשב שלך:",

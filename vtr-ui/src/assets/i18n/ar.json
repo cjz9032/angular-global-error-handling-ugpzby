@@ -1024,7 +1024,17 @@
                     "support": "الدعم"
                 }
             },
-            "helpful": "محتوى مفيد"
+            "helpful": "محتوى مفيد",
+            "copy": "نسخ",
+            "goodCondition": "حالة جيدة",
+            "needAction": "يلزم الصيانة",
+            "hwStatus": "حالة الأجهزة",
+            "swStatus": "حالة البرامج",
+            "refreshModules": "تحديث الوحدات",
+            "used": "مستخدم",
+            "scanned": "تم الفحص ",
+            "physicalMemory": "الذاكرة الفعلية",
+            "storage": "السعة التخزينية"
         },
         "deviceSettings": {
             "helpful": "محتوى مفيد",
@@ -2137,23 +2147,23 @@
                 "title": "رفع مستوى دقة الفيديو",
                 "desc1": "تعمل هذه الميزة على تحسين تجربة تشغيل الفيديو من خلال تحسين دقة الفيديو. وهي تعمل بشكل خاص عندما يكون الفيديو بدقة منخفضة.",
                 "desc2": "قد تؤثر هذه الوظيفة على عمر البطارية ودرجة حرارة الجلد، وقد تتسبب في حدوث ضوضاء للجمهور. يرجى عدم الاستخدام في وضع التيار المباشر (وضع البطارية)‬. وإلا سوف تسرع استهلاك الطاقة وتقصير عمر البطارية.",
-				"tooltip": {
-					"description1": "تعمل هذه الميزة فقط مع مشغلات الفيديو أدناه:<br>",
-					"player1":"Windows Media Player<br>",
-					"player2":"مشغل يعتمد على Chrome<br>",
-					"player3":"PotPlayer<br>",
-					"player4":"Opera (تم بناؤه باستخدام محرك Google Chromium)<br>",
-					"player5":"Microsoft Edge (تم بناؤه باستخدام محرك Google Chromium)<br>",
-					"player6":"Microsoft Teams<br>",
-					"player7":"Zoom<br>",
-					"description2": "<p class='srTooltip' id='sr-tip' role='text'>للحصول على إرشادات حول كيفية تمكين هذه الوظيفة على PotPlayer، راجع دليل المستخدم المرفق مع جهاز الكمبيوتر.</p>"
-				},
+                "tooltip": {
+                    "description1": "تعمل هذه الميزة فقط مع مشغلات الفيديو أدناه:<br>",
+                    "player1": "Windows Media Player<br>",
+                    "player2": "مشغل يعتمد على Chrome<br>",
+                    "player3": "PotPlayer<br>",
+                    "player4": "Opera (تم بناؤه باستخدام محرك Google Chromium)<br>",
+                    "player5": "Microsoft Edge (تم بناؤه باستخدام محرك Google Chromium)<br>",
+                    "player6": "Microsoft Teams<br>",
+                    "player7": "Zoom<br>",
+                    "description2": "<p class='srTooltip' id='sr-tip' role='text'>للحصول على إرشادات حول كيفية تمكين هذه الوظيفة على PotPlayer، راجع دليل المستخدم المرفق مع جهاز الكمبيوتر.</p>"
+                },
                 "note": {
                     "description": "لا تعمل هذه الميزة في الحالات التالية:",
                     "description1": "درجة حرارة وحدة المعالجة المركزية (CPU) مرتفعة جدًا.",
                     "description2": "الجهاز معين إلى وضع توفير طاقة البطارية في \"التبريد الذكي‬\".",
                     "description3": "يتم تشغيل اثنين من المشغلات أو أكثر في نفس الوقت.",
-					"description4": "مشغول بمكالمة فيديو باستخدام تطبيقات VoIP (مثل Microsoft Teams أو Zoom) ويجري تشغيل فيديو في نفس الوقت."
+                    "description4": "مشغول بمكالمة فيديو باستخدام تطبيقات VoIP (مثل Microsoft Teams أو Zoom) ويجري تشغيل فيديو في نفس الوقت."
                 },
                 "imageBefore": "قبل",
                 "imageAfter": "بعد‬"
@@ -4215,30 +4225,30 @@
         "processFinishedCannotBeCanceled": "لا داعي لإلغاء العملية قيد التشغيل بعد الآن، حيث إنها قد اكتملت.",
         "cancelMayTakeSomeTime": "يرجى الانتظار، قد يستغرق الأمر بعض الوقت للإلغاء حسب نظامك.",
         "report": {
-			"title": "Hardware Diagnostics Log",
-			"modelTitle": "Model",
-			"startDate": "Start Date and Time",
-			"endDate": "End Date and Time",
-			"model": {
-				"serialNumber": "Serial Number",
-				"wiredInterface": "Wired Ethernet Mac Address",
-				"wirelessInterface": "Wireless Mac Address",
-				"biosVersion": "BIOS Version",
-				"productName": "Product Name"
-			},
-			"resources": "Resources",
-			"tests": "Tests",
-			"totalModulesTested": "Total Modules Tested",
-			"environmentTitle": "Environment",
-			"environment": {
-				"applicationVersion": "Application Version",
-				"pluginVersion": "Plugin Version",
-				"experienceVersion": "Experience Version",
-				"shellVersion": "Shell Version",
-				"bridgeVersion": "Bridge Version"
-			},
-			"testResult": "Test Result"
-		},
+            "title": "Hardware Diagnostics Log",
+            "modelTitle": "Model",
+            "startDate": "Start Date and Time",
+            "endDate": "End Date and Time",
+            "model": {
+                "serialNumber": "Serial Number",
+                "wiredInterface": "Wired Ethernet Mac Address",
+                "wirelessInterface": "Wireless Mac Address",
+                "biosVersion": "BIOS Version",
+                "productName": "Product Name"
+            },
+            "resources": "Resources",
+            "tests": "Tests",
+            "totalModulesTested": "Total Modules Tested",
+            "environmentTitle": "Environment",
+            "environment": {
+                "applicationVersion": "Application Version",
+                "pluginVersion": "Plugin Version",
+                "experienceVersion": "Experience Version",
+                "shellVersion": "Shell Version",
+                "bridgeVersion": "Bridge Version"
+            },
+            "testResult": "Test Result"
+        },
         "scanFailureModal": {
             "title": "اكتشاف مشاكل تتعلق بالأجهزة",
             "problemDetected": "تم اكتشاف مشاكل تتعلق بالمكونات التالية على جهاز الكمبيوتر:",

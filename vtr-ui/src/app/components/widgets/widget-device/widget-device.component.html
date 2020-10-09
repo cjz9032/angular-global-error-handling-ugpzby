@@ -6,7 +6,7 @@
 				<span>
 					<span id="{{item[0]}}" role="text">{{item[1]|translate}}:</span>
 					<span id="{{item[0]}}-value" role="text">{{item[2]}}</span>
-					<a  id="{{item[0]}}-copy-link" role="link" href="javascript:void(0)" (click)="copyClicked(item[1])"
+					<a  id="{{item[0]}}-copy-link" role="link" href="javascript:void(0)" (click)="copyClicked(item[2])"
 						metricsEvent="FeatureClick" metricsItem="CopyItem-{{item[1]}}" vtrMetrics>
 						{{'device.myDevice.copy'|translate}}</a>
 				</span>

@@ -1022,7 +1022,17 @@
                     "support": "Support"
                 }
             },
-            "helpful": "Praktisk information"
+            "helpful": "Praktisk information",
+            "copy": "kopiera",
+            "goodCondition": "I bra skick",
+            "needAction": "Underhåll behövs",
+            "hwStatus": "Maskinvarustatus",
+            "swStatus": "Programvarustatus",
+            "refreshModules": "Uppdatera moduler",
+            "used": "Använt",
+            "scanned": "Genomsökt ",
+            "physicalMemory": "Fysiskt minne",
+            "storage": "Lagring"
         },
         "deviceSettings": {
             "helpful": "Praktisk information",
@@ -2135,23 +2145,23 @@
                 "title": "Öka videoupplösningen",
                 "desc1": "Denna funktion förbättrar videoupplösningen, vilket gör videouppspelningen bättre. Den är särskilt användbar om videon har dålig upplösning.",
                 "desc2": "Funktionen kan påverka batteriets livslängd, yttertemperatur och fläktljud. Använd inte funktionen i DC-läge (batteriläge). Detta orsakar ökad energiförbrukning och batteriets livslängd förkortas.",
-				"tooltip": {
-					"description1": "Funktionen fungerar bara med följande videospelare:<br>",
-					"player1":"Windows Media Player<br>",
-					"player2":"Chrome-baserad spelare<br>",
-					"player3":"PotPlayer<br>",
-					"player4":"Opera (Google Chromium-motorn inbyggd)<br>",
-					"player5":"Microsoft Edge (Google Chromium-motorn inbyggd)<br>",
-					"player6":"Microsoft Teams<br>",
-					"player7":"Zoom<br>",
-					"description2": "<p class='srTooltip' id='sr-tip' role='text'>Anvisningar om hur du aktiverar denna funktion i PotPlayer finns i användarhandboken som medföljer datorn.</p>"
-				},
+                "tooltip": {
+                    "description1": "Funktionen fungerar bara med följande videospelare:<br>",
+                    "player1": "Windows Media Player<br>",
+                    "player2": "Chrome-baserad spelare<br>",
+                    "player3": "PotPlayer<br>",
+                    "player4": "Opera (Google Chromium-motorn inbyggd)<br>",
+                    "player5": "Microsoft Edge (Google Chromium-motorn inbyggd)<br>",
+                    "player6": "Microsoft Teams<br>",
+                    "player7": "Zoom<br>",
+                    "description2": "<p class='srTooltip' id='sr-tip' role='text'>Anvisningar om hur du aktiverar denna funktion i PotPlayer finns i användarhandboken som medföljer datorn.</p>"
+                },
                 "note": {
                     "description": "Funktionen fungerar inte när",
                     "description1": "processortemperaturen är för hög.",
                     "description2": "Enheten är inställd på batterisparläge i Intelligent nedkylning.",
                     "description3": "Två eller flera spelare körs samtidigt.",
-					"description4": "Ett videosamtal med VoIP-appar (till exempel Microsoft Teams eller Zoom) pågår samtidigt som en video spelas upp."
+                    "description4": "Ett videosamtal med VoIP-appar (till exempel Microsoft Teams eller Zoom) pågår samtidigt som en video spelas upp."
                 },
                 "imageBefore": "Före",
                 "imageAfter": "Efter"
@@ -4213,30 +4223,30 @@
         "processFinishedCannotBeCanceled": "Den process som körs behöver inte avbrytas längre, eftersom den är klar.",
         "cancelMayTakeSomeTime": "Vänta – det kan ta en stund att avbryta beroende på ditt system.",
         "report": {
-			"title": "Hardware Diagnostics Log",
-			"modelTitle": "Model",
-			"startDate": "Start Date and Time",
-			"endDate": "End Date and Time",
-			"model": {
-				"serialNumber": "Serial Number",
-				"wiredInterface": "Wired Ethernet Mac Address",
-				"wirelessInterface": "Wireless Mac Address",
-				"biosVersion": "BIOS Version",
-				"productName": "Product Name"
-			},
-			"resources": "Resources",
-			"tests": "Tests",
-			"totalModulesTested": "Total Modules Tested",
-			"environmentTitle": "Environment",
-			"environment": {
-				"applicationVersion": "Application Version",
-				"pluginVersion": "Plugin Version",
-				"experienceVersion": "Experience Version",
-				"shellVersion": "Shell Version",
-				"bridgeVersion": "Bridge Version"
-			},
-			"testResult": "Test Result"
-		},
+            "title": "Hardware Diagnostics Log",
+            "modelTitle": "Model",
+            "startDate": "Start Date and Time",
+            "endDate": "End Date and Time",
+            "model": {
+                "serialNumber": "Serial Number",
+                "wiredInterface": "Wired Ethernet Mac Address",
+                "wirelessInterface": "Wireless Mac Address",
+                "biosVersion": "BIOS Version",
+                "productName": "Product Name"
+            },
+            "resources": "Resources",
+            "tests": "Tests",
+            "totalModulesTested": "Total Modules Tested",
+            "environmentTitle": "Environment",
+            "environment": {
+                "applicationVersion": "Application Version",
+                "pluginVersion": "Plugin Version",
+                "experienceVersion": "Experience Version",
+                "shellVersion": "Shell Version",
+                "bridgeVersion": "Bridge Version"
+            },
+            "testResult": "Test Result"
+        },
         "scanFailureModal": {
             "title": "Maskinvaruproblem påträffades",
             "problemDetected": "Problem har påträffats i följande komponenter på datorn:",
