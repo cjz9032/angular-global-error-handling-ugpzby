@@ -17,7 +17,6 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 })
 export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 	constructor(
-		private commonService: CommonService,
 		private logger: LoggerService,
 		public smartPerformanceService: SmartPerformanceService,
 		private translate: TranslateService,
@@ -37,7 +36,6 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 	@ViewChild('timeBlock') timeBlock: ElementRef;
 	private spTransLangEvent: Subscription;
 	selectedDate: any;
-	isSubscribed: any;
 	scheduleTab;
 	isChangeSchedule = false;
 	selectedFrequency: any;
@@ -116,7 +114,7 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 		this.enumLocalScanFrequncy = enumScanFrequency;
 
 		// fetching values from local storage, if saved.
-		this.isSubscribed = this.localCacheService.getLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled);
+		this.smartPerformanceService.isSubscribed = this.localCacheService.getLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled);
 		this.scheduleScanFrequency = this.localCacheService.getLocalCacheValue(LocalStorageKey.SPScheduleScanFrequency);
 		this.IsSmartPerformanceFirstRun = this.localCacheService.getLocalCacheValue(LocalStorageKey.IsSmartPerformanceFirstRun);
 		this.IsScheduleScanEnabled = this.localCacheService.getLocalCacheValue(LocalStorageKey.IsSPScheduleScanEnabled);
@@ -155,18 +153,18 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 			this.metricService.sendSetScanSchedule(taskParam, response);
 		}
 
-		if (this.IsSmartPerformanceFirstRun === true && this.isSubscribed === true) {
+		if (this.IsSmartPerformanceFirstRun === true && this.smartPerformanceService.isSubscribed === true) {
 			this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCAN);
 		}
 
-		if (this.IsSmartPerformanceFirstRun === true && this.isSubscribed === false) {
+		if (this.IsSmartPerformanceFirstRun === true && this.smartPerformanceService.isSubscribed === false) {
 			this.scheduleScan(this.requestScanData);
 			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsSmartPerformanceFirstRun, false);
 			this.localCacheService.setLocalCacheValue(LocalStorageKey.SPScheduleScanFrequency, actualScanFrequency[0]);
 		}
 		// fetching next schedule date and time from task scheduler
 		if (this.scheduleScanFrequency !== undefined && this.IsScheduleScanEnabled && !this.IsSmartPerformanceFirstRun) {
-			if (this.isSubscribed) {
+			if (this.smartPerformanceService.isSubscribed) {
 				this.getNextScanRunTime(enumSmartPerformance.SCHEDULESCANANDFIX);
 			} else {
 				this.getNextScanRunTime(enumSmartPerformance.SCHEDULESCAN);
@@ -263,7 +261,7 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 		}, 10);
 		this.scheduleScanFrequency = this.localCacheService.getLocalCacheValue(LocalStorageKey.SPScheduleScanFrequency);
 		this.changeScanFrequency(actualScanFrequency.indexOf(this.scheduleScanFrequency));
-		if (this.isSubscribed) {
+		if (this.smartPerformanceService.isSubscribed) {
 			this.getNextScanRunTime(enumSmartPerformance.SCHEDULESCANANDFIX);
 		} else {
 			this.getNextScanRunTime(enumSmartPerformance.SCHEDULESCAN);
@@ -355,7 +353,7 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 		this.scanToggleValue = event.switchValue;
 
 		if (!event.switchValue) {
-			if (this.isSubscribed) {
+			if (this.smartPerformanceService.isSubscribed) {
 				this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCANANDFIX);
 				this.setDefaultValWhenDisabled();
 				// hiding Next Schedule Scan in SP scan-summary
@@ -396,7 +394,7 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 					this.localCacheService.setLocalCacheValue(LocalStorageKey.SPScheduleScanFrequency, actualScanFrequency[0]);
 				}
 
-				if (this.isSubscribed) {
+				if (this.smartPerformanceService.isSubscribed) {
 					this.getNextScanRunTime(enumSmartPerformance.SCHEDULESCANANDFIX);
 				} else {
 					this.getNextScanRunTime(enumSmartPerformance.SCHEDULESCAN);
@@ -404,7 +402,7 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 			}
 			else {
 				this.logger.info('ui-smart-performance.scheduleScan', JSON.stringify(res));
-				if (!this.isSubscribed) {
+				if (!this.smartPerformanceService.isSubscribed) {
 					this.hideBasedOnOldAddIn.emit(true);
 					return;
 				}
@@ -472,7 +470,7 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 			}
 			if (res.nextruntime === null) {
 				this.logger.info('ui-smart-performance.getNextScanRunTime.else', JSON.stringify(res));
-				if (!this.isSubscribed) {
+				if (!this.smartPerformanceService.isSubscribed) {
 					this.hideBasedOnOldAddIn.emit(true);
 					return;
 				}
@@ -540,10 +538,10 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 					]).format('YYYY-MM-DDTHH:mm:ss'),
 					date: [],
 				};
-				if (this.isSubscribed) {
+				if (this.smartPerformanceService.isSubscribed) {
 					this.requestScanData = { scantype: enumSmartPerformance.SCHEDULESCANANDFIX, ...data, };
 				}
-				if (!this.isSubscribed) {
+				if (!this.smartPerformanceService.isSubscribed) {
 					this.requestScanData = { scantype: enumSmartPerformance.SCHEDULESCAN, ...data, };
 				}
 				break;
@@ -599,10 +597,10 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 			]).format('YYYY-MM-DDTHH:mm:ss'),
 			date: freq === 'onceamonth' ? [+this.selectedNumber] : [],
 		};
-		if (this.isSubscribed) {
+		if (this.smartPerformanceService.isSubscribed) {
 			this.requestScanData = { scantype: enumSmartPerformance.SCHEDULESCANANDFIX, ...data, };
 		}
-		if (!this.isSubscribed) {
+		if (!this.smartPerformanceService.isSubscribed) {
 			this.requestScanData = { scantype: enumSmartPerformance.SCHEDULESCAN, ...data, };
 		}
 	}

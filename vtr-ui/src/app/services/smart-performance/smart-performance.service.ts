@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { PaymentPage } from 'src/app/enums/smart-performance.enum';
 import { environment } from 'src/environments/environment';
 import { DeviceService } from '../device/device.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Injectable({
 	providedIn: 'root'
@@ -14,9 +14,22 @@ export class SmartPerformanceService {
 	modalStatus = { initiatedTime: '', isGettingStatus: false };
 	public isShellAvailable = false;
 	scanningStopped = new Subject<boolean>();
-	constructor(shellService: VantageShellService,
+
+	isScanning = false;
+	isScanningCompleted = false;
+	isSubscribed = false;
+	isExpired = false;
+	scheduleScanObj = null;
+	nextScheduleScan: any;
+	enableNextText: boolean;
+
+	subItems: any = {};
+
+
+	constructor(
+		shellService: VantageShellService,
 		private deviceService: DeviceService,
-		private http: HttpClient) {
+		) {
 
 		this.getSmartPerformance = shellService.getSmartPerformance();
 		if (this.getSmartPerformance) {
@@ -175,9 +188,9 @@ export class SmartPerformanceService {
 				if (xhr.readyState === 4 && xhr.status === 200) {
 					resolve(JSON.parse(xhr.responseText));
 				}
-				else {
-					resolve(undefined);
-				}
+				// else {
+				// 	resolve(undefined);
+				// }
 			};
 			xhr.send();
 		});
@@ -205,4 +218,5 @@ export class SmartPerformanceService {
 		}
 		return subscriptionData;
 	}
+
 }

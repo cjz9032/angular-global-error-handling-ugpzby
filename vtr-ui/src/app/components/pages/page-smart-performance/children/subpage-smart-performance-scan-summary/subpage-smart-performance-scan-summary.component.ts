@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
-import { NgbModal, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SupportService } from 'src/app/services/support/support.service';
@@ -15,8 +15,8 @@ import moment from 'moment';
 import { v4 as uuid } from 'uuid';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 
-import { ModalSmartPerformanceSubscribeComponent } from 'src/app/components/modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { SmartPerformanceDialogService } from 'src/app/services/smart-performance/smart-performance-dialog.service';
 
 @Component({
 	selector: 'vtr-subpage-smart-performance-scan-summary',
@@ -25,17 +25,14 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 })
 export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 	constructor(
-		private modalService: NgbModal,
-		private commonService: CommonService,
 		private calendar: NgbCalendar,
 		private logger: LoggerService,
 		private supportService: SupportService,
 		public smartPerformanceService: SmartPerformanceService,
+		public smartPerformanceDialogService: SmartPerformanceDialogService,
 		public shellServices: VantageShellService,
 		private translate: TranslateService,
-		private router: Router,
 		private localCacheService: LocalCacheService,
-		private localInfoService: LocalInfoService,
 		private formatLocaleDate: FormatLocaleDatePipe
 	) {
 
@@ -45,7 +42,6 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 	public machineFamilyName: string;
 	public today = new Date();
 	public items: any = [];
-	isSubscribed: any;
 	title = 'smartPerformance.title';
 	/* Quarterly option is hidden for current 3.3 release */
 	// public menuItems: any = [
@@ -67,7 +63,6 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 	@Input() secure = 0;
 	@Input() rating = 0;
 	@Input() isOnline = true;
-	@Input() isExpired;
 
 	@ViewChild('menuTab') menuTab: ElementRef;
 
@@ -126,10 +121,8 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 	frequencyValue = 1;
 	dayValue = 0;
 	dateValue = 0;
-	enableNextText: boolean;
 	scanScheduleDate: any;
 	issueCount = 0;
-	nextScheduleScan: any;
 	mostRecentScan: any;
 	IsSmartPerformanceFirstRun: any;
 	IsScheduleScanEnabled: any;
@@ -153,28 +146,12 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		}
 	];
 
-	isShowPrice = false;
-	allHidePriceGEO = [
-		'gb', // United Kingdom
-		'ie', // Ireland
-		'au', // Australia
-		'nz', // New Zealand
-		'sg', // Singapore
-		'in', // INDIA
-		'my', // Malaysia
-		'hk', // Hong Kong
-		'tw', // Taiwan
-		'kr', // South Korea
-		'jp', // Japan
-		'th', // Thailand
-	];
-
 	ngOnInit() {
 		this.leftAnimator = '0%';
-		this.isSubscribed = this.localCacheService.getLocalCacheValue(
+		this.smartPerformanceService.isSubscribed = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.IsFreeFullFeatureEnabled
 		);
-		if (!this.isSubscribed) {
+		if (!this.smartPerformanceService.isSubscribed) {
 			this.getSubscriptionDetails();
 		}
 		const cacheMachineFamilyName = this.localCacheService.getLocalCacheValue(
@@ -193,13 +170,12 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		this.selectedDate = this.calendar.getToday();
 		this.toDate = this.selectedDate;
 		this.fromDate = this.selectedDate;
-		this.isSubscribed = this.localCacheService.getLocalCacheValue(
+		this.smartPerformanceService.isSubscribed = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.IsFreeFullFeatureEnabled
 		);
-		this.enableNextText = this.localCacheService.getLocalCacheValue(LocalStorageKey.IsSPScheduleScanEnabled);
 		this.isDaySelectionEnable = false;
 		this.scanScheduleDate = this.selectedDate;
-		if (this.isSubscribed || this.isExpired) {
+		if (this.smartPerformanceService.isSubscribed || this.smartPerformanceService.isExpired) {
 			// 	this.getLastScanResult();
 			this.scanSummaryTime(0);
 		}
@@ -220,11 +196,6 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 			month: this.currentDate.getMonth() + 1,
 			day: this.currentDate.getDate()
 		};
-		this.localInfoService.getLocalInfo().then(localInfo => {
-			if (!this.allHidePriceGEO.includes(localInfo.GEO)) {
-				this.isShowPrice = true;
-			}
-		});
 	}
 	async getSubscriptionDetails() {
 		let machineInfo;
@@ -243,7 +214,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 			}
 		} else {
 			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
-			this.isSubscribed = false;
+			this.smartPerformanceService.isSubscribed = false;
 		}
 	}
 	getExpiredStatus(releaseDate, lastItem) {
@@ -253,13 +224,13 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 
 		if (expiredDate < currentDate) {
 			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
-			this.isSubscribed = false;
+			this.smartPerformanceService.isSubscribed = false;
 			// this.localCacheService.setLocalCacheValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
 		}
 		else {
 			// this.writeSmartPerformanceActivity('True', 'True', 'Active');
 			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
-			this.isSubscribed = true;
+			this.smartPerformanceService.isSubscribed = true;
 		}
 	}
 	getScanHistoryWithTime() {
@@ -286,25 +257,6 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 
 	}
 
-	getNextScanScheduleTime(scandate) {
-		try {
-			const dateObj = new Date(scandate);
-			const momentObj = moment(dateObj);
-			const momentString = momentObj.format('YYYY-MM-DD');
-			const now =
-				new Intl.DateTimeFormat(this.translate.currentLang,
-					{
-						hour12: true,
-						hour: 'numeric',
-						minute: 'numeric'
-					}).format(dateObj);
-
-			this.nextScheduleScan = (new Date(momentString).getMonth() + 1) + '/' + new Date(momentString).getDate() + (this.translate.currentLang === 'en' ? ' at ' : ' ') + now;
-		} catch (err) {
-			this.logger.error('ui-smart-performance-scan-summary.getNextScanScheduleTime.then', err);
-		}
-	}
-
 	getMostecentScanDateTime(scandate) {
 		try {
 			const dateObj = new Date(scandate);
@@ -322,23 +274,6 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 			this.mostRecentScan = spLocalDate + (this.translate.currentLang === 'en' ? ' at ' : ' ') + now;
 		} catch (err) {
 			this.logger.error('ui-smart-performance-scan-summary.getMostecentScanDateTime.then', err);
-		}
-	}
-
-	async getNextScanRunTime(scantype) {
-		const payload = {
-			scantype
-		};
-		this.logger.info('ui-smart-performance-scan-summary.getNextScanRunTime', JSON.stringify(payload));
-		try {
-			const res: any = await this.smartPerformanceService.getNextScanRunTime(payload);
-			if (res.nextruntime) {
-				this.getNextScanScheduleTime(res.nextruntime);
-			}
-			this.logger.info('ui-smart-performance-scan-summary.getNextScanRunTime.then', JSON.stringify(res));
-
-		} catch (err) {
-			this.logger.error('ui-smart-performance-scan-summary.getNextScanRunTime.then', err);
 		}
 	}
 
@@ -514,38 +449,8 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		this.selectedTodate = this.maxDate;
 	}
 
-	async openSubscribeModal() {
-		const modalRef = this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
-			backdrop: 'static',
-			size: 'lg',
-			centered: true,
-			windowClass: 'subscribe-modal'
-		});
-
-		const res = await modalRef.result;
-		if (res) {
-			this.smartPerformanceService.scanningStopped.next();
-		}
-		// const scanEnabled = this.commonService.getLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled);
-		// this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
-		// this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, 'Once a week')
-		// this.commonService.setLocalStorageValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
-		// this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.subscriptionDetails);
-		// if(!scanEnabled) {
-		// 	this.localCacheService.setLocalCacheValue(LocalStorageKey.IsSPScheduleScanEnabled, true);
-		// }
-		// //this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate(['support/smart-performance']));
-		// this.isSubscribed = this.localCacheService.getLocalCacheValue(
-		// 	LocalStorageKey.IsFreeFullFeatureEnabled
-		// );
-		// if(this.isSubscribed) {
-		// 	this.tabIndex = 0;
-		// 	this.scanSummaryTime(this.tabIndex);
-		// }
-		// if(this.inputIsScanningCompleted)
-		// {
-		// 	this.inputIsScanningCompleted = false;
-		// }
+	openSubscribeModal() {
+		this.smartPerformanceDialogService.openSubscribeModal();
 	}
 	ScanNowSummary() {
 		if (!this.isLoading && this.isOnline) {
@@ -618,7 +523,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 	async getLastScanResult() {
 		try {
 			const lastScanResultRequest = {
-				scanType: this.isSubscribed ? 'ScanAndFix' : 'Scan'
+				scanType: this.smartPerformanceService.isSubscribed ? 'ScanAndFix' : 'Scan'
 			};
 			const response = await this.smartPerformanceService.getLastScanResult(lastScanResultRequest);
 			this.logger.info('ui-smart-performance-scan-summary.getLastScanResult', response);
@@ -637,7 +542,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 					this.rating = response.rating;
 					this.issueCount = response.Tune + response.Boost + response.Secure;
 					this.leftAnimator = (response.rating * 10 - 0).toString() + '%';
-					this.isScanning = false;
+					this.smartPerformanceService.isScanning = false;
 					this.inputIsScanningCompleted = true;
 				}
 			}
@@ -695,26 +600,6 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 			this.sizeExtension = '';
 			return 0 + ' ' + 'MB';
 		}
-	}
-	changeNextScanDateValue(nextScheduleScanEvent) {
-		// retrieved this event from ui-scan-schedule component.
-		if (!nextScheduleScanEvent.nextEnable) {
-			this.enableNextText = nextScheduleScanEvent.nextEnable;
-			return;
-		}
-		this.enableNextText = nextScheduleScanEvent.nextEnable;
-		const nextScheduleScanDayMonth = this.formatLocaleDate.transformWithoutYear(nextScheduleScanEvent.nextScanDateWithYear);
-		const nextDateObj = new Date(nextScheduleScanEvent.nextScanDateWithYear + ', '
-			+ nextScheduleScanEvent.nextScanHour + ':' + nextScheduleScanEvent.nextScanMin
-			+ ' ' + (nextScheduleScanEvent.nextScanAMPM === 'smartPerformance.scanSettings.am' ? 'AM' : 'PM'));
-		const timeSection =
-			new Intl.DateTimeFormat(this.translate.currentLang,
-				{
-					hour12: true,
-					hour: 'numeric',
-					minute: 'numeric'
-				}).format(nextDateObj);
-		this.nextScheduleScan = nextScheduleScanDayMonth + (this.translate.currentLang === 'en' ? ' at ' : ' ') + timeSection;
 	}
 
 	public initContentLoad() {
@@ -904,8 +789,5 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 	backToNonSubScriberHome() {
 		this.backToNonSubscriber.emit();
 	}
-	hideBasedOnOldAddInVersionInSummaryPage($event) {
-		this.isOldVersion = $event;
-		this.enableNextText = !$event;
-	}
+	
 }

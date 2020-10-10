@@ -38,25 +38,20 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 	public panelID;
 	public spCategoryenum: any;
 	public spSubCategoryenum: any;
-	isSubscribed: any;
 	sampleDesc = '';
 	index = 0;
 	public activegroup: any;
 	currentCategory = 1;
-	subItems: any = {};
 	currentScanningItems: any = [];
 	public scanData: any = {};
 	public timer: any;
 	@Input() scheduleScanData: any = {};
-	@Input() isScheduleScan: any = false;
 	isLoading: boolean;
 	constructor(
 		private modalService: NgbModal,
 		public shellServices: VantageShellService,
 		public smartPerformanceService: SmartPerformanceService,
-		private logger: LoggerService,
 		private translate: TranslateService,
-		private commonService: CommonService
 	) { }
 
 	ngOnInit() {
@@ -289,39 +284,39 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 	}
 
 	// updateTuneUpPerformanceSubItems(name, desc) {
-	// 	this.subItems = {
+	// 	this.smartPerformanceService.subItems = {
 	// 		name,
 	// 		desc,
 	// 		items: this.currentScanningItems
 	// 	};
-	// 	// this.subItemsList.emit(this.subItems);
+	// 	// this.subItemsList.emit(this.smartPerformanceService.subItems);
 	// }
 	// updateMalwareSubItems(name, desc) {
-	// 	this.subItems = {
+	// 	this.smartPerformanceService.subItems = {
 	// 		name,
 	// 		desc,
 	// 		items: this.currentScanningItems
 	// 	};
-	// 	// this.subItemsList.emit(this.subItems);
+	// 	// this.subItemsList.emit(this.smartPerformanceService.subItems);
 	// }
 
 	updateTitleAndSubItems(nameVal, descVal) {
-		this.subItems = {
+		this.smartPerformanceService.subItems = {
 			name: nameVal, desc: descVal,
 			items: this.currentScanningItems
 		};
 		nameVal = '';
-		// this.subItemsList.emit(this.subItems);
+		// this.subItemsList.emit(this.smartPerformanceService.subItems);
 	}
 
 
 	// updateInternetPerformanceSubItems(name, desc) {
-	// 	this.subItems = {
+	// 	this.smartPerformanceService.subItems = {
 	// 		name,
 	// 		desc,
 	// 		items: this.currentScanningItems
 	// 	};
-	// 	// this.subItemsList.emit(this.subItems);
+	// 	// this.subItemsList.emit(this.smartPerformanceService.subItems);
 	// }
 
 	GetCurrentScanninRollingTexts(scanitems: any) {
