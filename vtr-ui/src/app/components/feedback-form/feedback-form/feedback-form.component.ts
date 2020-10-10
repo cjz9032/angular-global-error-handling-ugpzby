@@ -101,7 +101,7 @@ export class FeedbackFormComponent implements OnInit {
 			QA: {
 				Cus_Support_usage: formData.cusSupportUsage,
 				SystemUpdateAwareness: formData.systemUpdateAwareness,
-				RemommendVantageToFriend: formData.recommendVantageToFriend
+				OverAllSatisfiedWithVantage: formData.recommendVantageToFriend
 			}
 		};
 		if (this.metrics) {
