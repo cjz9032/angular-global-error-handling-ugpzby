@@ -233,19 +233,28 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 	}
 
 	private async updateSmartPerformanceStatus(smartPerform){
-		const lastScanResultRequest = {
-			scanType: await this.isSMPSubscripted ? 'ScanAndFix' : 'Scan'
-		};
-		const response = await this.smartPerformanceService.getLastScanResult(lastScanResultRequest);
-		const scanRunTime = moment(response.scanruntime).format('l');
-		if (response){
-			this.translate.stream('device.myDevice.scanned').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+		try{
+			const lastScanResultRequest = {
+				scanType: await this.isSMPSubscripted ? 'ScanAndFix' : 'Scan'
+			};
+			const response = await this.smartPerformanceService.getLastScanResult(lastScanResultRequest);
+			if (!response?.scanruntime){
+				throw new Error('scaned-time not correct');
+			}
+			const scanRunTime = moment(response.scanruntime).format('l');
+			if (response){
+				this.translate.stream('device.myDevice.scanned').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+					smartPerform.subtitle = value;
+				});
+				smartPerform.checkedDate = scanRunTime;
+				smartPerform.showSepline = true;
+			}
+		}catch {
+			this.translate.stream('hardwareScan.notScanned').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
 				smartPerform.subtitle = value;
 			});
-			smartPerform.checkedDate = scanRunTime;
 		}
 		smartPerform.link = 'support/smart-performance';
-		smartPerform.showSepline = true;
 	}
 
 	private async loadOverAllStatus(){
