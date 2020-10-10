@@ -2,16 +2,14 @@ import { formatDate } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
-import * as CryptoJS from 'crypto-js';
 import moment from 'moment';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { enumSmartPerformance, PaymentPage, SpSubscriptionDetails } from 'src/app/enums/smart-performance.enum';
+import { enumSmartPerformance, PaymentPage } from 'src/app/enums/smart-performance.enum';
 import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { SupportService } from 'src/app/services/support/support.service';
-import { environment } from 'src/environments/environment';
 import { v4 as uuid } from 'uuid';
 import { ModalSmartPerformanceSubscribeComponent } from '../../modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
 @Component({
@@ -23,7 +21,6 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	@Output() subScribeEvent = new EventEmitter<boolean>();
 	@Output() expiredStatusEvent = new EventEmitter<boolean>();
 	@Input() isOnline = true;
-	isSubscribed: any;
 	subscriptionDetails: any = { startDate: '', endDate: '', status: '' };
 	startDate: any;
 	endDate: any;
@@ -44,13 +41,12 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	public isRefreshEnabled = false;
 	tempHide = false;
 	spProcessStatus: any;
-	public isExpired = false;
 	public expiredDaysCount: any;
 	constructor(
 		private translate: TranslateService,
 		private modalService: NgbModal,
 		private formatLocaleDate: FormatLocaleDatePipe,
-		private smartPerformanceService: SmartPerformanceService,
+		public smartPerformanceService: SmartPerformanceService,
 		private supportService: SupportService,
 		private localCacheService: LocalCacheService,
 		private logger: LoggerService) {
@@ -71,12 +67,12 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		} else {
 			this.initSubscripionDetails();
 		}
-		this.isSubscribed = this.localCacheService.getLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled);
+		this.smartPerformanceService.isSubscribed = this.localCacheService.getLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled);
 	}
 
 	initSubscripionDetails() {
 		let subScriptionDates: any = { startDate: '', endDate: '', status: '' };
-		if (this.isSubscribed) {
+		if (this.smartPerformanceService.isSubscribed) {
 			subScriptionDates = this.localCacheService.getLocalCacheValue(LocalStorageKey.SmartPerformanceSubscriptionDetails);
 			if (subScriptionDates && subScriptionDates.startDate && subScriptionDates.endDate) {
 				this.subscriptionDetails.startDate = this.formatLocaleDate.transform(subScriptionDates.startDate);
@@ -105,7 +101,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	}
 
 	enableFullFeature(event) {
-		if (this.isSubscribed === false) {
+		if (this.smartPerformanceService.isSubscribed === false) {
 			const scanEnabled = this.localCacheService.getLocalCacheValue(LocalStorageKey.IsSPScheduleScanEnabled);
 			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
 			// this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.localSubscriptionDetails);
@@ -199,8 +195,8 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 				this.getExpiredStatus(releaseDate, lastItem);
 			} else {
 				this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
-				this.isSubscribed = false;
-				this.subScribeEvent.emit(this.isSubscribed);
+				this.smartPerformanceService.isSubscribed = false;
+				this.subScribeEvent.emit(this.smartPerformanceService.isSubscribed);
 				this.resetSubscriptionDetails();
 			}
 		} else {
@@ -256,23 +252,23 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		const monthDeff = expiredDate.getMonth() - currentDate.getMonth();
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.subscriptionDetails);
 		if (expiryRemainDays < 0) {
-			this.isExpired = true;
+			this.smartPerformanceService.isExpired = true;
 			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.expiredStatus';
 			this.strStatus = 'EXPIRED';
 			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
 			// this.localCacheService.setLocalCacheValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
-			this.isSubscribed = false;
-			this.subScribeEvent.emit(this.isSubscribed);
-			this.expiredStatusEvent.emit(this.isExpired);
+			this.smartPerformanceService.isSubscribed = false;
+			this.subScribeEvent.emit(this.smartPerformanceService.isSubscribed);
+			this.expiredStatusEvent.emit(this.smartPerformanceService.isExpired);
 		}
 		else {
 			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.activeStatus';
 			this.strStatus = 'ACTIVE';
 			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
-			this.isSubscribed = true;
-			this.subScribeEvent.emit(this.isSubscribed);
+			this.smartPerformanceService.isSubscribed = true;
+			this.subScribeEvent.emit(this.smartPerformanceService.isSubscribed);
 		}
-		if (!this.isExpired) {
+		if (!this.smartPerformanceService.isExpired) {
 			if (expiryRemainDays > 1 && expiryRemainDays <= 31) {
 				this.expiredDaysCount = Math.ceil(expiryRemainDays) + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.days');
 

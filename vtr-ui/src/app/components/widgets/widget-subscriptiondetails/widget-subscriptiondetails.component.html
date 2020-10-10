@@ -1,13 +1,13 @@
 <div class="subscription-details sidebar-widget">
-	<div *ngIf="isSubscribed"
+	<div *ngIf="smartPerformanceService.isSubscribed"
 		class="title pb-3">{{'smartPerformance.subscriptionDetails.title' |translate }}</div>
-	<div *ngIf="!isSubscribed"
+	<div *ngIf="!smartPerformanceService.isSubscribed"
 		class="title pb-3">{{'smartPerformance.subscriptionDetails.title' |translate }}</div>
 
 	<div class="card-info">
-		<p *ngIf="isSubscribed">{{'smartPerformance.subscriptionDetails.description' |translate }}</p>
-		<p *ngIf="!isSubscribed && !isExpired">{{'smartPerformance.subscriptionDetails.descriptionNonSubscriber' |translate }}</p>
-		<p *ngIf="!isSubscribed && isExpired"> {{'smartPerformance.subscriptionDetails.descriptionExpired' |translate }}</p>
+		<p *ngIf="smartPerformanceService.isSubscribed">{{'smartPerformance.subscriptionDetails.description' |translate }}</p>
+		<p *ngIf="!smartPerformanceService.isSubscribed && !smartPerformanceService.isExpired">{{'smartPerformance.subscriptionDetails.descriptionNonSubscriber' |translate }}</p>
+		<p *ngIf="!smartPerformanceService.isSubscribed && smartPerformanceService.isExpired"> {{'smartPerformance.subscriptionDetails.descriptionExpired' |translate }}</p>
 	</div>
 	<ul class="status-list"
 		*ngIf="isOnline">
@@ -68,7 +68,7 @@
 		<fa-icon [icon]="['fas', 'exclamation-circle']"
 			class="mr-2"></fa-icon>{{'smartPerformance.subscriptionDetails.expiredNote' |translate }} {{expiredDaysCount}}
 	</h4>
-	<button *ngIf="!isSubscribed && isOnline || expiredDaysCount"
+	<button *ngIf="!smartPerformanceService.isSubscribed && isOnline || expiredDaysCount"
 		class="link-text"
 		[disabled]="strStatus==='PROCESSING' || tempHide"
 		(click)=openSubscribeModal()
