@@ -8,17 +8,17 @@
 </button>
 <h1
 	mat-dialog-title
-	class="mb-3 title"
-	[innerHTML]="dialogData.title | translate"
+	class="mb-3 font-size-xl font-weight-semibold"
+	[innerHTML]="dialogData.title"
 ></h1>
 <h2
 	mat-dialog-title
 	*ngIf="dialogData.subtitle"
-	class="mb-3 subtitle"
-	[innerHTML]="dialogData.subtitle | translate"
+	class="mb-3 font-size-xs"
+	[innerHTML]="dialogData.subtitle"
 ></h2>
-<div mat-dialog-content class="pt-2 pb-4 content-text">
-	<section [innerHTML]="dialogData.describe | translate"></section>
+<div mat-dialog-content class="pt-2 pb-4 font-size-xs">
+	<section [innerHTML]="dialogData.description"></section>
 </div>
 <hr class="mb-4 line" />
 <mat-dialog-actions class="pb-0 mb-0">
@@ -27,15 +27,15 @@
 		mat-dialog-close="action"
 		color="primary"
 		class="mr-4"
-		id="btn-common-dialog-{{ buttonId | lowercase }}"
-		[innerHTML]="dialogData.buttonName | translate"
+		id="btn-common-dialog-{{ dialogData.buttonName | lowercase }}"
+		[innerHTML]="dialogData.buttonName"
 	></button>
 	<button
 		mat-flat-button
 		mat-dialog-close="linkAction"
 		class="link-button"
-		id="btn-common-dialog-{{ linkButtonId | lowercase }}"
+		id="btn-common-dialog-{{ dialogData.linkButtonName | lowercase }}"
 		*ngIf="dialogData.linkButtonName"
-		[innerHTML]="dialogData.linkButtonName | translate"
+		[innerHTML]="dialogData.linkButtonName"
 	></button>
 </mat-dialog-actions>
