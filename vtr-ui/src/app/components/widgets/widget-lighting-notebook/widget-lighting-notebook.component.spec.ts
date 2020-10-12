@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { GamingLightingService } from './../../../services/gaming/lighting/gaming-lighting.service';
-import { CommonService } from './../../../services/common/common.service';
+import { LocalCacheService } from './../../../services/local-cache/local-cache.service';
 import { WidgetLightingNotebookComponent } from './widget-lighting-notebook.component';
 import { Pipe, NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -9,8 +9,8 @@ import { MetricService } from '../../../services/metric/metrics.service';
 
 const gamingLightingServiceMock = jasmine.createSpyObj('GamingLightingService', ['getLightingProfileId', 'getLightingProfileById', 'setLightingProfileId', 'setLightingProfileBrightness',
     'isShellAvailable', 'getLightingCapabilities', 'setLightingDefaultProfileById', 'setLightingProfileEffectColor', 'checkAreaColorFn', 'regLightingProfileIdChangeEvent']);
-let commonServiceMock = {
-    getLocalStorageValue(key: any) {
+let localcacheServiceMock = {
+    getLocalCacheValue(key: any) {
         switch (key) {
             case '[LocalStorageKey] KeyboardToggleStatusLNBx50':
                 return toggleStatus;
@@ -30,7 +30,7 @@ let commonServiceMock = {
                 return lightingCapility;
         }
     },
-    setLocalStorageValue(key: any, value: any) {
+    setLocalCacheValue(key: any, value: any) {
         switch (key) {
             case '[LocalStorageKey] KeyboardToggleStatusLNBx50':
                 toggleStatus = value;
@@ -118,7 +118,7 @@ describe('WidgetLightingNotebookComponent', () => {
             providers: [
                 NgbModal,NgbActiveModal,
                 { provide: GamingLightingService, useValue: gamingLightingServiceMock },
-                { provide: CommonService, useValue: commonServiceMock },
+                { provide: LocalCacheService, useValue: localcacheServiceMock },
                 { provide: MetricService, useValue: metricsMock },
             ],
             imports: [HttpClientModule]
@@ -127,12 +127,12 @@ describe('WidgetLightingNotebookComponent', () => {
         fixture = TestBed.createComponent(WidgetLightingNotebookComponent);
         component = fixture.debugElement.componentInstance;
         component.currentProfileId = 2;
-        commonServiceMock.setLocalStorageValue('[LocalStorageKey] ProfileId', 2);
-        if (commonServiceMock.getLocalStorageValue('[LocalStorageKey] KeyboardToggleStatusLNBx50') == null || commonServiceMock.getLocalStorageValue('[LocalStorageKey] KeyboardToggleStatusLNBx50') === undefined) {
-            commonServiceMock.setLocalStorageValue('[LocalStorageKey] KeyboardToggleStatusLNBx50', toggleStatus);
+        localcacheServiceMock.setLocalCacheValue('[LocalStorageKey] ProfileId', 2);
+        if (localcacheServiceMock.getLocalCacheValue('[LocalStorageKey] KeyboardToggleStatusLNBx50') == null || localcacheServiceMock.getLocalCacheValue('[LocalStorageKey] KeyboardToggleStatusLNBx50') === undefined) {
+            localcacheServiceMock.setLocalCacheValue('[LocalStorageKey] KeyboardToggleStatusLNBx50', toggleStatus);
         }
-        if (commonServiceMock.getLocalStorageValue('[LocalStorageKey] LedSwitchButtonFeature') == null) {
-            commonServiceMock.setLocalStorageValue('[LocalStorageKey] LedSwitchButtonFeature', true);
+        if (localcacheServiceMock.getLocalCacheValue('[LocalStorageKey] LedSwitchButtonFeature') == null) {
+            localcacheServiceMock.setLocalCacheValue('[LocalStorageKey] LedSwitchButtonFeature', true);
         }
 
         fixture.detectChanges();
@@ -185,7 +185,7 @@ describe('WidgetLightingNotebookComponent', () => {
         component.setLightingProfileId(event);
         tick(10);
         expect(component.currentProfileId).toBeLessThanOrEqual(2);
-        commonServiceMock.setLocalStorageValue('[LocalStorageKey] ProfileId', 0);
+        localcacheServiceMock.setLocalCacheValue('[LocalStorageKey] ProfileId', 0);
         component.setLightingProfileId({ "target": { "value": 0 } });
         tick(10);
         expect(component.isProfileOff).toEqual(true);
@@ -263,7 +263,7 @@ describe('WidgetLightingNotebookComponent', () => {
         component.getProfileEvent(2);
         expect(component.currentProfileId).toBeLessThanOrEqual(2);
         component.isSetDefault = false;
-        commonServiceMock.setLocalStorageValue('[LocalStorageKey] KeyboardToggleStatusLNBx50',undefined);
+        localcacheServiceMock.setLocalCacheValue('[LocalStorageKey] KeyboardToggleStatusLNBx50',undefined);
         component.getProfileEvent(1);
         tick(10);
         expect(component.currentProfileId).toBeLessThanOrEqual(2);
@@ -303,7 +303,7 @@ describe('WidgetLightingNotebookComponent', () => {
             "profileId1": { "status": false, "defaultStatus": "undefined" },
             "profileId3": { "status": true, "defaultStatus": "undefined" }
         };
-        commonServiceMock.setLocalStorageValue("[LocalStorageKey] KeyboardToggleStatusLNBx50", toggleStatus);
+        localcacheServiceMock.setLocalCacheValue("[LocalStorageKey] KeyboardToggleStatusLNBx50", toggleStatus);
         component.getCacheList();
         expect(component.currentProfileId).toEqual(2);
         const toggleStatus2 = {
@@ -311,7 +311,7 @@ describe('WidgetLightingNotebookComponent', () => {
             "profileId1": { "status": false, "defaultStatus": "undefined" },
             "profileId3": { "status": true, "defaultStatus": "undefined" }
         };
-        commonServiceMock.setLocalStorageValue("[LocalStorageKey] KeyboardToggleStatusLNBx50", toggleStatus2);
+        localcacheServiceMock.setLocalCacheValue("[LocalStorageKey] KeyboardToggleStatusLNBx50", toggleStatus2);
         component.getCacheList();
         expect(component.currentProfileId).toEqual(2);
         component.lightingProfileById = lightingProfileById;
@@ -344,7 +344,7 @@ describe('WidgetLightingNotebookComponent', () => {
             "profileId1": { "status": false, "defaultStatus": "undefined" },
             "profileId3": { "status": true, "defaultStatus": "undefined" }
         };
-        commonServiceMock.setLocalStorageValue("[LocalStorageKey] KeyboardToggleStatusLNBx50", toggleStatus);
+        localcacheServiceMock.setLocalCacheValue("[LocalStorageKey] KeyboardToggleStatusLNBx50", toggleStatus);
         component.setCacheList();
         expect(component.currentProfileId).toEqual(2);
         const toggleStatus2 = {
@@ -352,15 +352,15 @@ describe('WidgetLightingNotebookComponent', () => {
             "profileId1": { "status": false, "defaultStatus": "undefined" },
             "profileId3": { "status": true, "defaultStatus": "undefined" }
         };
-        commonServiceMock.setLocalStorageValue("[LocalStorageKey] KeyboardToggleStatusLNBx50", toggleStatus2);
+        localcacheServiceMock.setLocalCacheValue("[LocalStorageKey] KeyboardToggleStatusLNBx50", toggleStatus2);
         component.setCacheList();
         expect(component.currentProfileId).toEqual(2);
     })
 
     it('should set cache default list', () => {
-         component.currentProfileId = 2;
-         component.setCacheDafaultList();
-         expect(component.currentProfileId).toEqual(2);
+        component.currentProfileId = 2;
+        component.setCacheDafaultList();
+        expect(component.currentProfileId).toEqual(2);
     })
 
     it('should show keybord is disabled', () => {
@@ -389,7 +389,7 @@ describe('WidgetLightingNotebookComponent', () => {
                 { lightPanelType: 4, lightEffectType: 2, lightColor: "009BFA", lightBrightness: 2, lightSpeed: 2 },
                 { lightPanelType: 8, lightEffectType: 2, lightColor: "009BFA", lightBrightness: 2, lightSpeed: 2 }]
         }
-        commonServiceMock.setLocalStorageValue('[LocalStorageKey] LightingProfileByIdNoteOn1',undefined);
+        localcacheServiceMock.setLocalCacheValue('[LocalStorageKey] LightingProfileByIdNoteOn1',undefined);
         component.publicProfileIdInfo(lightingProfileById);
         expect(component.currentProfileId).toEqual(1);
         component.publicProfileIdInfo(undefined);
