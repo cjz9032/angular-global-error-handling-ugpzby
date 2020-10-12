@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { WidgetLightingDeskComponent } from './widget-lighting-desk.component';
 import { GamingLightingService } from './../../../services/gaming/lighting/gaming-lighting.service';
-import { CommonService } from './../../../services/common/common.service';
+import { LocalCacheService } from './../../../services/local-cache/local-cache.service';
 import { HttpClientModule } from '@angular/common/http';
 import { Pipe, NO_ERRORS_SCHEMA } from '@angular/core';
 import { MetricService } from '../../../services/metric/metrics.service';
@@ -9,8 +9,8 @@ import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 const gamingLightingServiceMock = jasmine.createSpyObj('GamingLightingService', ['getLightingProfileId', 'getLightingProfileById', 'setLightingProfileId', 'setLightingProfileBrightness',
     'isShellAvailable', 'getLightingCapabilities', 'setLightingDefaultProfileById', 'setLightingProfileEffectColor']);
-let commonServiceMock = {
-    getLocalStorageValue(key: any) {
+let localcacheServiceMock = {
+    getLocalCacheValue(key: any) {
         switch (key) {
             case '[LocalStorageKey] LightingCapabilitiesNewversionDesk':
                 return lightingCapility;
@@ -22,7 +22,7 @@ let commonServiceMock = {
                 return getLightingProfileById;
         }
     },
-    setLocalStorageValue(key: any, value: any) {
+    setLocalCacheValue(key: any, value: any) {
         switch (key) {
             case '[LocalStorageKey] LightingCapabilitiesNewversionDesk':
                 lightingCapility = value;
@@ -102,7 +102,7 @@ describe('WidgetLightingDeskComponent', () => {
             providers: [
                 NgbModal,NgbActiveModal,
                 { provide: GamingLightingService, useValue: gamingLightingServiceMock },
-                { provide: CommonService, useValue: commonServiceMock },
+                { provide: LocalCacheService, useValue: localcacheServiceMock },
                 { provide: MetricService, useValue: metricsMock },
             ],
             schemas: [NO_ERRORS_SCHEMA],
@@ -110,10 +110,10 @@ describe('WidgetLightingDeskComponent', () => {
         }).compileComponents();
         fixture = TestBed.createComponent(WidgetLightingDeskComponent);
         component = fixture.debugElement.componentInstance;
-        if(commonServiceMock.getLocalStorageValue("[LocalStorageKey] LightingCapabilitiesNewversionDesk") === null || commonServiceMock.getLocalStorageValue("[LocalStorageKey] LightingCapabilitiesNewversionDesk") === undefined){
-            commonServiceMock.setLocalStorageValue("[LocalStorageKey] LightingCapabilitiesNewversionDesk",lightingCapility);
+        if(localcacheServiceMock.getLocalCacheValue("[LocalStorageKey] LightingCapabilitiesNewversionDesk") === null || localcacheServiceMock.getLocalCacheValue("[LocalStorageKey] LightingCapabilitiesNewversionDesk") === undefined){
+            localcacheServiceMock.setLocalCacheValue("[LocalStorageKey] LightingCapabilitiesNewversionDesk",lightingCapility);
         }
-        commonServiceMock.setLocalStorageValue('[LocalStorageKey] ProfileId', 2);
+        localcacheServiceMock.setLocalCacheValue('[LocalStorageKey] ProfileId', 2);
         fixture.detectChanges();
     }));
 
@@ -131,7 +131,7 @@ describe('WidgetLightingDeskComponent', () => {
 
     it('Profile should be off', fakeAsync(() => {
         gamingLightingServiceMock.isShellAvailable = true;
-        commonServiceMock.setLocalStorageValue('[LocalStorageKey] ProfileId', 0);
+        localcacheServiceMock.setLocalCacheValue('[LocalStorageKey] ProfileId', 0);
         component.lightingCapabilities.LightPanelType = [4];
         component.lightingProfileById = undefined;
         component.ngOnInit();
@@ -267,7 +267,7 @@ describe('WidgetLightingDeskComponent', () => {
 
         const event2 = {'target':{'value':0}};
         gamingLightingServiceMock.setLightingProfileId.and.returnValue(Promise.resolve(getLightingProfileByIdFail));
-        commonServiceMock.setLocalStorageValue('[LocalStorageKey] ProfileId', 0);
+        localcacheServiceMock.setLocalCacheValue('[LocalStorageKey] ProfileId', 0);
         component.lightingCapabilities.LightPanelType = [4];
         component.setLightingProfileId(event2);
         tick(10);
@@ -521,7 +521,7 @@ describe('WidgetLightingDeskComponent', () => {
     it('should show profileId when enter lighting subpage', () => {
         gamingLightingServiceMock.isShellAvailable = true;
         component.currentProfileId = 2;
-        commonServiceMock.setLocalStorageValue('[LocalStorageKey] ProfileId',undefined);
+        localcacheServiceMock.setLocalCacheValue('[LocalStorageKey] ProfileId',undefined);
         component.initProfileId();
         expect(component.initProfileId()).toBeUndefined();
         component.currentProfileId = null;
