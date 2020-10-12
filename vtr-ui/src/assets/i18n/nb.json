@@ -970,7 +970,15 @@
             "intermediateDesc": "Datamaskinen din har midlertidig sikkerhetsbeskyttelse aktivert",
             "advancedDesc": "Datamaskinen din har avansert sikkerhetsbeskyttelse aktivert"
         },
-        "heroBanner": "Hero-banner"
+        "heroBanner": "Hero-banner",
+        "positionB": {
+            "cardTitle": "Systeminformasjon",
+            "cardSummary": {
+                "detecting": "Oppdager systeminformasjon nå …",
+                "goodCondition": "Enheten er i god stand",
+                "maintenanceNeeded": "Enheten trenger noe vedlikehold"
+            }
+        }
     },
     "device": {
         "myDevice": {

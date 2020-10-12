@@ -64,7 +64,7 @@ export class DashboardService {
 	positionBLoadingData = {
 		title: 'dashboard.positionB.cardTitle',
 		summary: 'dashboard.positionB.cardSummary.detecting',
-		linkText: 'dashboard.positionB.linkText.myDevice',
+		linkText: 'device.myDevice.title',
 		linkPath: 'device',
 		state: SystemState.Loading,
 		stateText: ''
@@ -73,42 +73,41 @@ export class DashboardService {
 	goodConditionData = {
 		title: 'dashboard.positionB.cardTitle',
 		summary: 'dashboard.positionB.cardSummary.goodCondition',
-		linkText: 'dashboard.positionB.linkText.myDevice',
+		linkText: 'device.myDevice.title',
 		linkPath: 'device',
 		state: SystemState.GoodCondition,
-		stateText: 'dashboard.positionB.stateText.goodCondition'
+		stateText: 'device.myDevice.goodCondition'
 	};
 
 	needMaintainSU = {
 		title: 'dashboard.positionB.cardTitle',
 		summary: 'dashboard.positionB.cardSummary.maintenanceNeeded',
-		linkText: 'dashboard.positionB.linkText.improveNow',
+		linkText: 'common.ui.improveNow',
 		linkPath: 'device/system-updates',
 		state: SystemState.NeedMaintenance,
-		stateText: 'dashboard.positionB.stateText.maintenanceNeeded'
+		stateText: 'device.myDevice.needAction'
 	};
 
 	needMaintainHWS = {
 		title: 'dashboard.positionB.cardTitle',
 		summary: 'dashboard.positionB.cardSummary.maintenanceNeeded',
-		linkText: 'dashboard.positionB.linkText.improveNow',
+		linkText: 'common.ui.improveNow',
 		linkPath: 'hardware-scan',
 		state: SystemState.NeedMaintenance,
-		stateText: 'dashboard.positionB.stateText.maintenanceNeeded'
+		stateText: 'device.myDevice.needAction'
 	};
 
 	needMaintainSP = {
 		title: 'dashboard.positionB.cardTitle',
 		summary: 'dashboard.positionB.cardSummary.maintenanceNeeded',
-		linkText: 'dashboard.positionB.linkText.improveNow',
+		linkText: 'common.ui.improveNow',
 		linkPath: 'support/smart-performance',
 		state: SystemState.NeedMaintenance,
-		stateText: 'dashboard.positionB.stateText.maintenanceNeeded'
+		stateText: 'device.myDevice.needAction'
 	};
 
 	positionBResponseReceived: boolean;
-
-
+	positionBLoadingTimer: any;
 
 	constructor(
 		shellService: VantageShellService,
@@ -429,12 +428,17 @@ export class DashboardService {
 		});
 	}
 
+
 	public getPositionBData(): Observable<any> {
 		return new Observable((subscriber) => {
 			subscriber.next(this.positionBLoadingData);
 			this.positionBResponseReceived = false;
+			if (this.positionBLoadingTimer) {
+				clearTimeout(this.positionBLoadingTimer);
+				this.positionBLoadingTimer = undefined;
+			}
 			// if over 10s, show good condition at first
-			const gcTimer =  setTimeout(() => {
+			this.positionBLoadingTimer = setTimeout(() => {
 				if (!this.positionBResponseReceived) {
 					subscriber.next(this.goodConditionData);
 				}
@@ -449,7 +453,7 @@ export class DashboardService {
 					const [suDate, hwsDate, spsData, oobeDate] = values;
 					this.positionBResponseReceived = true;
 					const nowDate = new Date();
-					clearTimeout(gcTimer);
+					clearTimeout(this.positionBLoadingTimer);
 
 					let suDateSpan;
 					let hwsDateSpan;

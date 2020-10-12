@@ -970,7 +970,15 @@
             "intermediateDesc": "Bilgisayarınızda orta düzey güvenlik koruması etkin",
             "advancedDesc": "Bilgisayarınızda gelişmiş güvenlik koruması etkin"
         },
-        "heroBanner": "Ana manşet"
+        "heroBanner": "Ana manşet",
+        "positionB": {
+            "cardTitle": "Sistem Bilgileri",
+            "cardSummary": {
+                "detecting": "Şimdi sistem bilgileri algılanıyor...",
+                "goodCondition": "Cihazınız iyi durumda",
+                "maintenanceNeeded": "Cihazınızın biraz bakıma ihtiyacı var"
+            }
+        }
     },
     "device": {
         "myDevice": {

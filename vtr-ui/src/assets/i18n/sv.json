@@ -970,7 +970,15 @@
             "intermediateDesc": "Datorn har medelstarkt säkerhetsskydd aktiverat",
             "advancedDesc": "Datorn har avancerat säkerhetsskydd aktiverat"
         },
-        "heroBanner": "Huvudbanner"
+        "heroBanner": "Huvudbanner",
+        "positionB": {
+            "cardTitle": "Systeminformation",
+            "cardSummary": {
+                "detecting": "Identifierar systeminformation nu …",
+                "goodCondition": "Enheten är i gott skick",
+                "maintenanceNeeded": "Enheten behöver visst underhåll"
+            }
+        }
     },
     "device": {
         "myDevice": {
