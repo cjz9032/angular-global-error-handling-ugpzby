@@ -57,6 +57,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	offlineConnection = 'offline-connection';
 	public systemStatus: Status[] = [];
 	public isOnline = true;
+	public isShowStateCard: boolean;
 	public brand;
 	private protocolAction: any;
 	private lastAction: any;
@@ -158,6 +159,15 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			cmsContent: undefined,
 			upeContent: undefined
 		}
+	};
+
+	positionBData = {
+		title: 'System Information',
+		summary: 'Your device is in good condition',
+		linkText: 'My Device',
+		linkPath: 'device',
+		state: 1,
+		stateText: 'GOOD CONDITION'
 	};
 
 	constructor(
@@ -333,7 +343,14 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		}
 	}
 
-	private getCachedContent(lang?: string) {
+	private async getCachedContent(lang?: string) {
+		this.isShowStateCard = await this.dashboardService.isPositionBShowDeviceState();
+		if (this.isShowStateCard) {
+			this.dashboardService.getPositionBData().subscribe((data) => {
+				this.positionBData = data;
+			});
+		}
+
 		this.getTileSource().then(() => {
 			this.contentLocalCache.getCachedContents(this.pageTypeOfdashboard, this.contentCards).then((result) => {
 				if (!result) {

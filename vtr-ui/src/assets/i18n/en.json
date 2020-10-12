@@ -971,8 +971,16 @@
 			"basicDesc": "Your device is not fully protected yet",
 			"intermediateDesc": "Your computer has intermediate security protection enabled",
 			"advancedDesc": "Your computer has advanced security protection enabled"
-		},
-		"heroBanner": "Hero banner"
+		},	
+		"heroBanner": "Hero banner",
+		"positionB":{
+			"cardTitle":"System Information",
+			"cardSummary":{
+				"detecting": "Detecting system information now...",
+				"goodCondition": "Your device is in good condition",
+				"maintenanceNeeded": "Your device needs some maintenance"
+			}			
+		}
 	},
 	"device": {
 		"myDevice": {

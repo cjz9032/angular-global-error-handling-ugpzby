@@ -970,7 +970,15 @@
             "intermediateDesc": "Na računalu je omogućena srednja razina sigurnosne zaštite",
             "advancedDesc": "Na računalu je omogućena napredna razina sigurnosne zaštite"
         },
-        "heroBanner": "Natpis Hero"
+        "heroBanner": "Natpis Hero",
+        "positionB": {
+            "cardTitle": "Informacije o sustavu",
+            "cardSummary": {
+                "detecting": "Otkrivanje informacija o sustavu sada...",
+                "goodCondition": "Vaš uređaj je u dobrom stanju",
+                "maintenanceNeeded": "Vaš uređaj zahtijeva održavanje"
+            }
+        }
     },
     "device": {
         "myDevice": {

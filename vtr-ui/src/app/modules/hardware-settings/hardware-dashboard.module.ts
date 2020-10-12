@@ -36,6 +36,7 @@ import { WidgetDashboardWarrantyComponent } from 'src/app/components/widgets/wid
 import { WidgetSystemUpdateComponent } from 'src/app/components/widgets/widget-system-update/widget-system-update.component';
 import { WidgetEnergyStarComponent } from 'src/app/components/widgets/widget-energy-star/widget-energy-star.component';
 import { MaterialStateCardContainerComponent } from 'src/app/components/pages/page-dashboard/material-state-card-container/material-state-card-container.component';
+import { WidgetRoundStatusComponent } from 'src/app/components/widgets/widget-round-status/widget-round-status.component';
 
 @NgModule({
 	declarations: [
@@ -45,7 +46,8 @@ import { MaterialStateCardContainerComponent } from 'src/app/components/pages/pa
 		WidgetSystemUpdateComponent,
 		WidgetEnergyStarComponent,
 		WidgetDashboardWarrantyComponent,
-		MaterialStateCardContainerComponent
+		MaterialStateCardContainerComponent,
+		WidgetRoundStatusComponent
 	],
 	imports: [
 		CommonModule,

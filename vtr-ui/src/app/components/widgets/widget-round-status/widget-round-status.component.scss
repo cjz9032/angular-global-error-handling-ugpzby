@@ -16,11 +16,23 @@
 			font-weight: bold;
 			font-style: normal;
 			padding: 1rem;
-            text-align: center;       
+			text-align: center;    
+			@media #{$black-on-white} {
+				color: $dark;				
+			}
+			@media #{$white-on-black} {
+				color: $light;			
+			}   
 
 			.loading {
 				font-size: 2.8rem;
 				color: linear-gradient(31deg, #2ECC71, #35E6B9 100%);
+				@media #{$black-on-white} {
+					color: $dark;				
+				}
+				@media #{$white-on-black} {
+					color: $light;			
+				}   
 			}
 
 			.spinner {
@@ -54,5 +66,5 @@
 }
 
 .round-box-loading {
-	background: #2F3447;
+	background: #2F3447; 
 }

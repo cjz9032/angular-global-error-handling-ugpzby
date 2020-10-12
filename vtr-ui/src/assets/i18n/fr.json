@@ -970,7 +970,15 @@
             "intermediateDesc": "Seule la protection de sécurité intermédiaire est activée sur votre ordinateur.",
             "advancedDesc": "La protection de sécurité avancée est activée sur votre ordinateur."
         },
-        "heroBanner": "Bannière héros"
+        "heroBanner": "Bannière héros",
+        "positionB": {
+            "cardTitle": "Informations système",
+            "cardSummary": {
+                "detecting": "Détection des informations système en cours…",
+                "goodCondition": "Votre périphérique est en bon état",
+                "maintenanceNeeded": "Votre périphérique nécessite une maintenance"
+            }
+        }
     },
     "device": {
         "myDevice": {

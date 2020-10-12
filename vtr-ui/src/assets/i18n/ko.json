@@ -970,7 +970,15 @@
             "intermediateDesc": "컴퓨터가 중간 보안 보호를 사용하도록 설정됨",
             "advancedDesc": "컴퓨터가 고급 보안 보호를 사용하도록 설정됨"
         },
-        "heroBanner": "히어로 배너"
+        "heroBanner": "히어로 배너",
+        "positionB": {
+            "cardTitle": "시스템 정보",
+            "cardSummary": {
+                "detecting": "지금 시스템 정보 검색...",
+                "goodCondition": "장치의 상태가 좋음",
+                "maintenanceNeeded": "장치에 일부 유지 관리 필요"
+            }
+        }
     },
     "device": {
         "myDevice": {

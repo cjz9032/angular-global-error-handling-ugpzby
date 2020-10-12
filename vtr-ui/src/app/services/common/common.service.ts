@@ -27,7 +27,6 @@ export class CommonService {
 	public systemTimeFormat12Hrs: BehaviorSubject<boolean> = new BehaviorSubject(false);
 	public lastFeatureVersion = 0;
 	public newFeatureVersion = 3.002005;
-	public isFirstRun: boolean;
 
 	constructor() {
 		this.notificationSubject = new BehaviorSubject<AppNotification>(
@@ -36,10 +35,6 @@ export class CommonService {
 		this.replaySubject = new ReplaySubject<AppNotification>(0);
 		this.notification = this.notificationSubject;
 		this.replayNotification = this.replaySubject;
-		this.isFirstRun = !this.getLocalStorageValue(LocalStorageKey.HadRunApp);
-		if (this.isFirstRun) {
-			this.setLocalStorageValue(LocalStorageKey.HadRunApp, true);
-		}
 	}
 
 	/**

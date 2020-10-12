@@ -970,7 +970,15 @@
             "intermediateDesc": "El equipo tiene activada la protección intermedia de seguridad",
             "advancedDesc": "El equipo tiene activada la protección avanzada de seguridad"
         },
-        "heroBanner": "Cabecera de héroe"
+        "heroBanner": "Cabecera de héroe",
+        "positionB": {
+            "cardTitle": "Información del sistema",
+            "cardSummary": {
+                "detecting": "Detectando información de sistema...",
+                "goodCondition": "Su dispositivo está en buen estado",
+                "maintenanceNeeded": "El dispositivo necesita algo de mantenimiento"
+            }
+        }
     },
     "device": {
         "myDevice": {

@@ -57,8 +57,8 @@
 					</vtr-widget-carousel>
 				</div>
 				<div class="col-12 px-0 d-flex custom-card-container row justify-content-between no-gutters">
-					<div class="custom-card col-12 col-md-6 col-lg-12 col-xl-6 pb-20 card-left">
-						<vtr-container-card order=2
+					<div class="custom-card col-12 col-md-6 col-lg-12 col-xl-6 pb-20 card-left">					
+						 <vtr-container-card *ngIf="!isShowStateCard" order=2 
 							[item]="contentCards.positionB.displayContent"
 							[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && contentCards.positionB.displayContent.isLocal)"
 							[type]="'corner'"
@@ -67,7 +67,18 @@
 							[containerCardId]="'dashboard-lnk-content-b'"
 							id="dashboard-card-b"
 							aria-label="dashboard-card-b">
-						</vtr-container-card>
+						</vtr-container-card> 
+						
+						<vtr-material-state-card-container *ngIf="isShowStateCard" order=2
+							[cardData]="positionBData">
+							<div class="circle-state">
+							<vtr-widget-round-status 
+								[status]="positionBData.state"
+								[statusText]="positionBData.stateText"> 
+							</vtr-widget-round-status>
+							</div>
+						</vtr-material-state-card-container>
+						
 					</div>
 					<div class="custom-card col-12 col-md-6 col-lg-12 col-xl-6 pb-20 card-right">
 						<vtr-container-card

@@ -972,7 +972,15 @@
             "intermediateDesc": "تم تمكين حماية أمان متوسطة على جهازك",
             "advancedDesc": "تم تمكين حماية أمان متقدمة على جهازك"
         },
-        "heroBanner": "بانر Hero"
+        "heroBanner": "بانر Hero",
+        "positionB": {
+            "cardTitle": "معلومات النظام",
+            "cardSummary": {
+                "detecting": "جارٍ اكتشاف معلومات النظام الآن...",
+                "goodCondition": "جهازك بحالة جيدة.",
+                "maintenanceNeeded": "يحتاج جهازك إلى بعض الصيانة"
+            }
+        }
     },
     "device": {
         "myDevice": {
