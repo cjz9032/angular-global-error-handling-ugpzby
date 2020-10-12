@@ -3459,6 +3459,16 @@
 				"offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect.",
 				"accountText": "Account creation failed. Please try again later.",
 				"closeText": "Close"
+			},
+			"expirePromptModal": {
+				"title": "Sign in to Lenovo ID",
+				"describe": "To continue using Lenovo Wifi security, please sign in with your Lenovo ID or register for a free account.",
+				"trialWillExpire": "Your Wifi security trial will expire in:",
+				"days": "days",
+				"hasExpired": "Your Lenovo Wifi security trial has expired. Please sign in with your Lenovo ID or register for a free account.",
+				"signIn": "SIGN IN",
+				"register": "REGISTER",
+				"ignore": "IGNORE"
 			}
 		},
 		"homeprotection": {

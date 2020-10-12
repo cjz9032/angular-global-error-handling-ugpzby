@@ -8,6 +8,75 @@
 @import "~@lenovo/material/theming";
 @include mat-core();
 
+$mat-van-theme-background: (
+	selected-button: $light,
+	// primary button
+	primary-fab-button: map_get($mat-grey, 400),	// fab button background color
+	primary-button: transparent linear-gradient(45deg, $button_gradient_start 0%, $button_gradient_end 100%) 0% 0% no-repeat padding-box,	// primary button background color
+	primary-hover-button: $blue-light,	// primary button background color
+	primary-active-button: $blueHyperLink,	// primary button active background color
+	// secondary button
+	secondary-button: transparent linear-gradient(45deg, $grey_lighter 0%, $light 100%) 0% 0% no-repeat padding-box,	// accent button background color
+	secondary-hover-button: $grey_lighter,	// accent button background color
+	secondary-active-button: $light,	// accent button active background color
+	// caution button
+	caution-button: transparent linear-gradient(45deg, $button_red_start 0%, $button_red_end 100%) 0% 0% no-repeat padding-box,	// warn button background color
+	caution-hover-button: $button_red_start,	// warn button background color
+	caution-active-button: $button_red_end,	// warn button active background color
+	// primary/secondary/caution button
+	disabled-button: $grey_light,	// disabled button background
+);
+
+$mat-van-theme-foreground: (base: black,
+	disabled-button: $grey_light,	// disabled button background color
+	disabled-text:  rgba($grey_darker, 0.4),	// disabled button text color
+	secondary-text: $grey_darker,	// accent button text color
+	// button border
+	primary-border: none,	// primary button border
+	secondary-border: 0.1rem solid $grey_dark,	// accent button border
+	caution-border: none,	// warn button border
+	disabled-border: none,	// disabled button border
+	// button other config
+	primary-text: $light,	// primary button text color
+	secondary-hover-text: $grey_darker,	// accent button hover text color
+	outline-color: $menu_hover,	// button and link focus outline color
+	outline-style: '',	// button focus outline content: none--no outline, ''--has outline
+	// link button
+	link-button-color: $blueHyperLink,	// link button text color
+	link-button-decoration: underline,	// link button text decoration style
+	link-button-hover: $blue-light,	// link button hover text color
+	link-button-outline: none,	// link button outline text color
+	link-button-active: $menu_hover,	// link button active text color
+	link-button-disable: rgba($grey_darker, 0.4),	// link disabled text color
+	// link
+	link-color: $blueHyperLink,	// link color
+	link-hover: $blue-light,	// link hover color
+	link-active: $menu_hover,	// link active color
+	link-disable: $grey_darker,	// link disabled color
+	link-outline: 0.1rem solid $menu_hover,	// link outline style
+);
+$van-theme: (
+	100: $button_gradient_start ,
+ 	200: $button_red_start,
+	contrast: (
+		100: $dark,
+		200: $light
+	)
+);
+$van-typography: mat-typography-config(
+  $font-family: '"Segoe UI", sans-serif'
+);
+$van-ui-theme: mat-vcl-theme((
+		color: (
+			primary: mat-palette($van-theme, 100),
+			accent: mat-palette($van-theme, 200),
+			foreground: $mat-van-theme-foreground,
+			background: $mat-van-theme-background
+		),
+));
+@include angular-material-typography($van-typography);
+@include angular-material-theme($van-ui-theme);
+
 html {
 	margin: 0;
 	padding: 0;
@@ -2362,4 +2431,11 @@ ngb-tooltip-window.schedule-scan.tooltip {
 			}
 		}
 	}
+}
+
+.mat-dialog-container {
+	background-color: $light;
+	box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.15);
+	border-radius: 0.6rem;	
+	padding: 2.4rem;
 }

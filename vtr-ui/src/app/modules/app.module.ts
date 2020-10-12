@@ -26,6 +26,7 @@ import { RouterModule } from '@angular/router';
 import { faFlask } from '@fortawesome/pro-light-svg-icons/faFlask';
 import { ModalArticleDetailComponent } from '../components/modal/modal-article-detail/modal-article-detail.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule } from '@lenovo/material/dialog';
 
 import { faLaptop } from '@fortawesome/pro-light-svg-icons/faLaptop';
 import { faHeart } from '@fortawesome/pro-light-svg-icons/faHeart';
@@ -77,7 +78,7 @@ import { ModalStoreRatingComponent } from '../components/modal/modal-store-ratin
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope';
 import { faEllipsisH } from '@fortawesome/pro-light-svg-icons/faEllipsisH';
 import { faTimes } from '@fortawesome/pro-light-svg-icons/faTimes';
-import {faHeart as fasHeart} from '@fortawesome/free-solid-svg-icons/faHeart';
+import { faHeart as fasHeart } from '@fortawesome/free-solid-svg-icons/faHeart';
 
 @NgModule({
 	declarations: [
@@ -133,7 +134,8 @@ import {faHeart as fasHeart} from '@fortawesome/free-solid-svg-icons/faHeart';
 		HardwareScanModule,
 		HardwareScanRoutingModule,
 		UiCustomSliderModule,
-		UICustomRadioModule
+		UICustomRadioModule,
+		MatDialogModule
 	],
 	exports: [
 		NavbarModule,

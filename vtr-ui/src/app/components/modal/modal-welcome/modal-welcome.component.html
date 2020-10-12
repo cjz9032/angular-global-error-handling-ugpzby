@@ -206,7 +206,7 @@
 							<label class="custom-control-label-out"></label>
 							<label class="custom-control-label"
 								[id]="!vantageToolbar? 'tutorial_enable_toolbar_checkbox_unchecked':'tutorial_enable_toolbar_checkbox_checked'"
-								dir="{{'dir' | translate}}"
+								[dir]="'dir' | translate"
 								for="welcome-toolbar-label">
 								<span id="tutorial_enable_toolbar_text"
 									role="text">{{ "welcometutorial.toolbartitle" | translate }}</span>

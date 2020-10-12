@@ -1,0 +1,41 @@
+<button
+	mat-dialog-close="close"
+	*ngIf="dialogData.closeButton"
+	class="position-relative float-right closeButton"
+	id="btn-common-dialog-close"
+>
+	<mat-icon class="icon">close</mat-icon>
+</button>
+<h1
+	mat-dialog-title
+	class="mb-3 title"
+	[innerHTML]="dialogData.title | translate"
+></h1>
+<h2
+	mat-dialog-title
+	*ngIf="dialogData.subtitle"
+	class="mb-3 subtitle"
+	[innerHTML]="dialogData.subtitle | translate"
+></h2>
+<div mat-dialog-content class="pt-2 pb-4 content-text">
+	<section [innerHTML]="dialogData.describe | translate"></section>
+</div>
+<hr class="mb-4 line" />
+<mat-dialog-actions class="pb-0 mb-0">
+	<button
+		mat-flat-button
+		mat-dialog-close="action"
+		color="primary"
+		class="mr-4"
+		id="btn-common-dialog-{{ buttonId | lowercase }}"
+		[innerHTML]="dialogData.buttonName | translate"
+	></button>
+	<button
+		mat-flat-button
+		mat-dialog-close="linkAction"
+		class="link-button"
+		id="btn-common-dialog-{{ linkButtonId | lowercase }}"
+		*ngIf="dialogData.linkButtonName"
+		[innerHTML]="dialogData.linkButtonName | translate"
+	></button>
+</mat-dialog-actions>
