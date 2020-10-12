@@ -20,7 +20,7 @@ import { DeviceService } from 'src/app/services/device/device.service';
 import { DisplayService } from 'src/app/services/display/display.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { Md5 } from 'ts-md5';
+import sha256 from 'crypto-js/sha256';
 import { WhiteListCapability } from '../../../../../data-models/eye-care-mode/white-list-capability.interface';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
@@ -412,30 +412,30 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 	inWhiteList() {
 		// noinspection SpellCheckingInspection
 		const whitelist = [
-			'40346638a8da4aa73c765af43a709673',
-			'a8c959c9d2f5f73734de9fb94a7065a2',
-			'96442075283918afcc945d55beeeaea9',
-			'216d38800e9ca05cd02e77a37184c133',
-			'b098dbfb5ffed24d3061aba9f38bd795',
-			'bdaf0b7919db29f5db5aa4868800417e',
-			'c4c9336f94ed2b360e5a9da9d19b4d6e',
-			'1e7a21e23525d272078d685c6a0e9f9d',
-			'63971f53e52831b2a3b81896948dd92a',
-			'08d313377ea30e73b4e8ab92f0312ec9',
-			'479a92a1dccaf9467d168ede8848faba',
-			'41849d08794e53826948df3b3bfbfd83',
-			'ecc858ed4e4ce4022b04b65a94651efa',
-			'ecc858ed4e4ce4022b04b65a94651efa',
-			'3672447c877e471a3878b591d1ba5a9f',
-			'0b35dc0e49945458f12d02e6ddcd86b7',
-			'671f1454b4101503f00ff4f786d44fa0',
-			'479a92a1dccaf9467d168ede8848faba',
+			'd7f1cae63a721e30d2ad129b8c8c953ba1a871db8468f9ac32049df297cd7626',
+			'33315785125c71f61d1a1700f4e2b17b884be4bee3170a86e4a89fb0a4cd7130',
+			'01e93a48a5606d822a6ab18b35d7361d7fd013ac20691691ebb3b094066f64fd',
+			'6c098bdc2501a5046a5007e51e2b53b7c913db22d43fa3758aa0450029a9f6d9',
+			'40707c47758aa2ad28834cbfc5a313bf680dce239c4470d4270079fce7cc9f6b',
+			'73e99b3fa8ad5197e7bd768126ffe6160b25044ab8ddbe58f932e29c1bb1f5a5',
+			'0facc106411def93e0a97a5ef63650f206486ed2cb3b4c73e2d74be9626feaef',
+			'88ee3ec2bfbf8afdfe9ff03389c42e6124a03abb9be9670fef972bf6e7d1b2e8',
+			'49b5204f55cd4d27f69baf32629d40f127f5fc7285c744641fb6cb5747cd8c7c',
+			'a358b965bee5dbd2991255468990c66f24e9d5c2db7bbf7d415ae98c2ee94a26',
+			'04031256907e9c6ecef82942309f11d648de237a50297d2dfd60f2b82d9a2b2e',
+			'8f62ccb8a33fd86cdda60151aa976e6430cc4ed58a02b8cb14eee3ea8d407727',
+			'c14dacda0ad17380ef8ef0c79ebb6664a93ee6211d196167007d627172fbd1e7',
+			'c14dacda0ad17380ef8ef0c79ebb6664a93ee6211d196167007d627172fbd1e7',
+			'a9b756fb5dc52a67611c771a9eb7ff40d988aca425716b6708667b2b80c4681f',
+			'8c26d983031cb544960e3165163de9423110399a6472f65ab0b226331e26f628',
+			'51fce52c76f46ed0d6f2cae3c5749dc5b56ecc750eafba680a95b98d61bda085',
+			'04031256907e9c6ecef82942309f11d648de237a50297d2dfd60f2b82d9a2b2e'
 		];
 		return this.deviceService.getMachineInfo()
 			.then(res => res.hasOwnProperty('biosVersion')
 				&& typeof res.biosVersion === 'string'
 				&& res.biosVersion.length >= 5
-				&& whitelist.includes(Md5.hashStr(res.biosVersion.substr(0, 5)) as string));
+				&& whitelist.includes(sha256(res.biosVersion.substr(0, 5)).toString()));
 	}
 
 	hideCameraPreviewByBiosId() {
