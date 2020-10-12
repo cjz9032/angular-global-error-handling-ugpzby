@@ -1,4 +1,4 @@
-const Md5 = require('ts-md5');
+const sha256 = require('crypto-js/sha256');
 
 const whitelist = [
 	'M29KT',
@@ -51,7 +51,9 @@ const blockList = [
 	'20YC'
 ];
 
-console.log((blockList.reduce((acc, current) => {
-	acc.push(Md5.Md5.hashStr(current));
+console.log((whitelist.reduce((acc, current) => {
+	acc.push(sha256(current).toString());
 	return acc;
 }, [])));
+console.log(sha256('BYCN3').toString());
+console.log(sha256('81RS').toString());
