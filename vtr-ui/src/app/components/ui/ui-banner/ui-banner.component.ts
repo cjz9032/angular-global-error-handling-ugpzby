@@ -22,9 +22,13 @@ export class UiBannerComponent implements OnInit  {
 			: document.location.href.indexOf('dev') >= 0
 			? (document.location.href.indexOf('2') >= 0 ? 'DEV2' : 'DEV')
 			: document.location.href.indexOf('qa') >= 0
-			? (document.location.href.indexOf('2') >= 0 ? 'QA2' : 'QA') : 'non-production'
+			? (document.location.href.indexOf('2') >= 0 ? 'QA2' : 'QA') : 'non-production';
 
-		this.nonProductionTips = `You're now visiting the ${this.tips} version of Lenovo Vantage!`
+		const buildPath = document.location.pathname;
+		if (buildPath.length > 1) {
+			this.tips += `-${buildPath}`;
+		}
+		this.nonProductionTips = `You're now visiting the ${this.tips} version of Lenovo Vantage!`;
 	}
 
 
