@@ -10,7 +10,7 @@ interface DialogData {
 	description: string;
 	buttonName: string;
 	linkButtonName: string;
-	closeButton: boolean;
+	showCloseButton: boolean;
 }
 
 @Component({
