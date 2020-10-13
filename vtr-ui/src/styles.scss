@@ -339,7 +339,13 @@ $font-size-xs2: 1.2rem;
 }
 
 .border-grey-light {
-	border-color: $grey_light !important;
+	border-color: $grey_light;
+	@media #{$black-on-white} {
+		border-color: $dark !important;
+	}
+	@media #{$white-on-black} {
+		border-color: $light !important;
+	}
 }
 // @media #{$dpiquery_0} {
 // }
