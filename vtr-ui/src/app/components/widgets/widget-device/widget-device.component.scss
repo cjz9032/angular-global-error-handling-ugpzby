@@ -107,6 +107,9 @@ $size500px-sw-show1col: "only screen and (min-width: 500px) and (max-width: 1200
 
 		.device-status-good{
 			background: linear-gradient(31deg, #2ECC71 0%, #35E6B9 100%) 0% 0% no-repeat;
+			&:hover{
+				cursor: default;
+			}
 		}
 
 		.device-status-loading{

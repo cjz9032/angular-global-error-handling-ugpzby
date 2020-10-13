@@ -193,7 +193,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 					disk.icon = this.storageIcon;
 					disk.link = 'ms-settings:storagesense';
 					disk.subtitle = `${disks[i].manufacturer || ''} ${disks[i].model}`;
-					disk.used = this.commonService.formatBytes( disks[i].avaliableSize);
+					disk.used = this.commonService.formatBytes(disks[i].sizeInBytes - disks[i].avaliableSize);
 					disk.total = this.commonService.formatBytes( disks[i].sizeInBytes);
 					disk.percent = disks[i].avaliableSize / disks[i].sizeInBytes * 100;
 					this.hwStatus[statusIndex++] = disk;
