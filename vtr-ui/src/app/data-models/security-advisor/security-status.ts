@@ -1,4 +1,4 @@
-import * as phoenix from '@lenovo/tan-client-bridge';
+import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { AntivirusService } from 'src/app/services/security/antivirus.service';
@@ -111,7 +111,7 @@ let transString: any;
 const loadingTime = 15000;
 
 export const getSecurityLevel = (
-	securityAdvisor: phoenix.SecurityAdvisor,
+	securityAdvisor: SecurityAdvisor,
 	translationString: any,
 	haveOwnList: any,
 	securityFeature: SecurityFeature,
@@ -518,7 +518,7 @@ const waitTimeout = (type: string) => {
 };
 
 
-export const retryAntivirus = (id: any, securityAdvisor: phoenix.SecurityAdvisor) => {
+export const retryAntivirus = (id: any, securityAdvisor: SecurityAdvisor) => {
 	if (id.includes('antivirus')) {
 		securityStatus.avStatus.status = 'loading';
 		if (transString) {

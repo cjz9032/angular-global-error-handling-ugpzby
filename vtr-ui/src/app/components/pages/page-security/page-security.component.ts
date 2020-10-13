@@ -173,7 +173,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		this.fetchCMSArticles();
 	}
 
-	updateStatus(haveOwnList?: any) {
+	updateStatus(haveOwnList: any) {
 		this.haveOwnList = haveOwnList;
 		this.securityAdvisor.refresh().then(() => {
 			this.securityLevel = getSecurityLevel(
