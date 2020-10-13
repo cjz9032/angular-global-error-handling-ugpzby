@@ -20,7 +20,7 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { LandingView } from 'src/app/data-models/security-advisor/widegt-security-landing/landing-view.model';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
-import { getSecurityLevel, SecurityFeature, securityStatus, retry } from 'src/app/data-models/security-advisor/security-status';
+import { getSecurityLevel, SecurityFeature, securityStatus, retryAntivirus } from 'src/app/data-models/security-advisor/security-status';
 import { WindowsHelloService } from 'src/app/services/security/windowsHello.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { toLower } from 'lodash';
@@ -98,7 +98,6 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		};
 		this.securityLevel = {
 			landingStatus: { status: 0, fullyProtected: false, percent: 100 },
-			statusList: {basic: [], intermediate: [], advanced: []},
 			basicView: [securityStatus.avStatus, securityStatus.fwStatus, this.securityFeature.pluginSupport ? securityStatus.waStatus : undefined],
 			intermediateView: [this.securityFeature.pwdSupport ? securityStatus.pmStatus : undefined, this.securityFeature.pluginSupport ? securityStatus.whStatus : undefined, this.securityFeature.pluginSupport ? securityStatus.uacStatus : undefined],
 			advancedView: [this.securityAdvisor.wifiSecurity.isSupported ? securityStatus.wfStatus : undefined, this.securityFeature.vpnSupport ? securityStatus.vpnStatus : undefined]};
@@ -243,6 +242,6 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 	}
 
 	retry(id: any) {
-		retry(id, this.securityAdvisor);
+		retryAntivirus(id, this.securityAdvisor);
 	}
 }
