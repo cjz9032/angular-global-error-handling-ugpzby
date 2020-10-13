@@ -3,9 +3,9 @@
         <div class="ui-deviceinfo-left">
             <span>
                 <img [src]="dataModel.icon|svgInline|async"/>
-                <p id="device-info-item-title">{{dataModel.title}}</p>
+                <p id="device-info-item-title-{{dataModel.id}}">{{dataModel.title}}</p>
             </span>
-            <span id="device-info-item-subtitle" class="mt-2 font-weight-bold">
+            <span id="device-info-item-subtitle-{{dataModel.id}}" class="mt-2 font-weight-bold">
                 {{dataModel.subtitle}}
             </span>
         </div>
@@ -47,7 +47,7 @@
 
     <div class="ui-deviceinfo-overlay" *ngIf="!!dataModel.link">
         <a href="javascript:void(0)" (click)="learnMoreClicked()" tabindex="-1">
-           <span role="text" id="device-info-learn-more"
+           <span role="text" id="device-info-learn-more-{{dataModel.id}}"
            metricsEvent="FeatureClick" metricsItem="LearnMore-{{dataModel.title}}" vtrMetrics
            >{{'device.myDevice.learnMore'|translate}}</span> <fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
         </a>
