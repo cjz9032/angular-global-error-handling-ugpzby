@@ -4273,7 +4273,7 @@
             "lenovoSupportInstruction": "Du kan skapa ett verifieringsärende hos Lenovos support genom att ange slutresultatkoden.",
             "finalResultCodeLabel": "Slutresultatkod: ",
             "scanAgainButtonText": "Genomsök igen",
-            "supportButtonText": "Lenovo Support"
+            "supportButtonText": "Lenovo-supporten"
         },
         "executingScanTitle": "Genomsöker {{title}}",
         "showDetails": "Visa information",
