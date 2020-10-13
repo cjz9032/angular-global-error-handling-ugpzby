@@ -7,6 +7,7 @@ import sample from 'lodash/sample';
 import trim from 'lodash/trim';
 import { toLower } from 'lodash';
 import { Subscription } from 'rxjs/internal/Subscription';
+import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 import { Status } from 'src/app/data-models/widgets/status.model';
@@ -37,10 +38,11 @@ import { WarrantyService } from 'src/app/services/warranty/warranty.service';
 import { QaService } from '../../../services/qa/qa.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { ContentCacheService } from 'src/app/services/content-cache/content-cache.service';
+import { AntivirusService } from 'src/app/services/security/antivirus.service';
+import { WindowsHelloService } from 'src/app/services/security/windowsHello.service';
 import { LandingView } from 'src/app/data-models/security-advisor/widegt-security-landing/landing-view.model';
 import { DashboardStateCardData } from './material-state-card-container/material-state-card-container.component';
-import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
-import { WelcomeTextContent } from 'src/app/data-models/welcomeText/welcome-text.model';
+import { SecurityFeature, securityStatus, getSecurityLevel } from 'src/app/data-models/security-advisor/security-status';
 
 interface IConfigItem {
 	cardId: string;
@@ -204,12 +206,12 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		fullyProtected: false,
 		statusText: ''
 	};
-	private saFeatureSupport = {
-		isVpnSupported: false,
-		isUacSupported: false,
-		isFingerPrintSupported: false,
-		isPasswordManagerSupported: false,
-		isWindowsActiveSupported: false,
+	securityLevel: any;
+	private saFeatureSupport: SecurityFeature = {
+		pluginSupport: false,
+		pwdSupport: false,
+		vpnSupport: false,
+		fingerSupport: false
 	};
 	private haveOwnList = {
 		passwordManager: false,
@@ -231,7 +233,13 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	securityAdvisorHandler = () => {
 		clearTimeout(this.getSecurityInfoTimeout);
 		this.getSecurityInfoTimeout = setTimeout(() => {
-			// sa ownList saFeatureSupport
+			this.securityLevel = getSecurityLevel(this.securityAdvisor,
+				undefined,
+				this.haveOwnList,
+				this.saFeatureSupport,
+				this.antivirusService,
+				this.localCacheService);
+			this.setSecurityInfo(this.securityLevel.landingStatus);
 		}, 1000);
 	}
 
@@ -262,15 +270,14 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		private localCacheService: LocalCacheService,
 		private metricsService: MetricService,
 		private contentLocalCache: ContentCacheService,
+		private antivirusService: AntivirusService,
+		private windowsHelloService: WindowsHelloService
 	) {
 	}
 
 	ngOnInit() {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
-		this.securityAdvisor.refresh();
-		if (this.securityAdvisor) {
-			this.securityAdvisor.on('*', this.securityAdvisorHandler);
-		}
+		this.refreshSA();
 		this.getProtocalAction();
 		this.config.backdrop = 'static';
 		this.config.keyboard = false;
@@ -315,26 +322,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		this.langChangeSubscription = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 			this.getCachedContent();
 		});
-
-		this.deviceService.getMachineInfo().then(result => {
-			this.saFeatureSupport.isVpnSupported = true;
-			this.saFeatureSupport.isPasswordManagerSupported = true;
-			if (toLower(result && result.country ? result.country : 'US') === 'cn') {
-				this.saFeatureSupport.isVpnSupported = false;
-				this.saFeatureSupport.isPasswordManagerSupported = false;
-			}
-		}).catch(() => {
-			this.saFeatureSupport.isVpnSupported = true;
-			this.saFeatureSupport.isPasswordManagerSupported = true;
-		}).finally(() => {
-			this.hypService.getFeatureSetting('SecurityAdvisor').then((result) => {
-				this.saFeatureSupport.isWindowsActiveSupported = result === 'true';
-				this.saFeatureSupport.isUacSupported = result === 'true';
-			}).catch(() => {
-				this.saFeatureSupport.isWindowsActiveSupported = false;
-				this.saFeatureSupport.isUacSupported = false;
-			});
-		});
 		this.getSecurityCardInfo();
 		this.getSelfSelectStatus();
 		this.canShowDccDemo$ = this.dccService.canShowDccDemo();
@@ -342,12 +329,10 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		this.getUsageType();
 	}
 
-	// @HostListener('window: focus')
-	// onFocus(): void {
-	// 	this.securityAdvisor.refresh().then((saInfo: SecurityAdvisor) => {
-	// 		this.securityAdvisor = saInfo;
-	// 	});
-	// }
+	@HostListener('window: focus')
+	onFocus(): void {
+		this.refreshSA();
+	}
 
 	private getUsageType() {
 		this.selfselectService.getConfig().then((re) => {
@@ -821,11 +806,51 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			wifiSecurity: wifiOwnCache,
 			vpn: vpnOwnCache
 		};
+		this.securityLevel = {
+			landingStatus: { status: undefined, fullyProtected: false, percent: 0 },
+			basicView: [securityStatus.avStatus, securityStatus.fwStatus, this.saFeatureSupport.pluginSupport ? securityStatus.waStatus : undefined],
+			intermediateView: [this.saFeatureSupport.pwdSupport ? securityStatus.pmStatus : undefined, this.saFeatureSupport.fingerSupport ? securityStatus.whStatus : undefined, this.saFeatureSupport.pluginSupport ? securityStatus.uacStatus : undefined],
+			advancedView: [this.securityAdvisor.wifiSecurity.isSupported ? securityStatus.wfStatus : undefined, this.saFeatureSupport.vpnSupport ? securityStatus.vpnStatus : undefined]};
+		this.deviceService.getMachineInfo().then(result => {
+			this.saFeatureSupport.vpnSupport = true;
+			this.saFeatureSupport.pwdSupport = true;
+			if (toLower(result && result.country ? result.country : 'US') === 'cn') {
+				this.saFeatureSupport.vpnSupport = false;
+				this.saFeatureSupport.pwdSupport = false;
+			}
+		}).catch(() => {
+			this.saFeatureSupport.vpnSupport = true;
+			this.saFeatureSupport.pwdSupport = true;
+		}).finally(() => {
+			this.hypService.getFeatureSetting('SecurityAdvisor').then((result) => {
+				this.saFeatureSupport.pluginSupport = result === 'true';
+			}).catch(() => {
+				this.saFeatureSupport.pluginSupport = false;
+			}).finally(() => {
+				this.saFeatureSupport.fingerSupport = this.windowsHelloService.showWindowsHello(this.securityAdvisor.windowsHello);
+				if (this.securityAdvisor) {
+					this.securityAdvisor.on('*', this.securityAdvisorHandler);
+				}
+			});
+		});
+	}
+
+	private refreshSA(): void {
+		this.securityAdvisor.refresh().then(() => {
+			this.securityLevel = getSecurityLevel(this.securityAdvisor,
+				undefined,
+				this.haveOwnList,
+				this.saFeatureSupport,
+				this.antivirusService,
+				this.localCacheService);
+			this.setSecurityInfo(this.securityLevel.landingStatus);
+		});
 	}
 
 	private setSecurityInfo(info: LandingView) {
 		this.securityInfo = info;
-		this.securityInfo.statusText = this.securityInfo.status !== undefined ? this.dashboardService.translateString[this.positionBData[this.securityInfo.status + 1].statusText] : '--';
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityLandingLevel, this.securityInfo);
+		this.securityInfo.statusText = this.securityInfo.status !== undefined ? this.dashboardService.translateString[this.positionCData[this.securityInfo.status + 1].statusText] : '--';
 	}
 
 }
