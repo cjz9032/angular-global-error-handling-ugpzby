@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.22](https://bitbucket.tc.lenovo.com///compare/v1.8.21...v1.8.22) (2020-10-13)
+
+
+### Features
+
+* **BuildTip:** VAN-22187 add featurebuild path in tips ([e844b89](https://bitbucket.tc.lenovo.com///commit/e844b89a39b5d81114384b3d7ac0cfcd07bbce5c))
+* **Dashboard Banner:** VAN-21434 Show System status in Dashboard-banner position-B ([9024297](https://bitbucket.tc.lenovo.com///commit/9024297a1f3f34f759e58d4c7f80cf269c84fca9))
+
+
+### Bug Fixes
+
+* **Theme:** VAN-22389 get machine info in initializer; use deviceService.isGaming in home for redirect ([0dcf841](https://bitbucket.tc.lenovo.com///commit/0dcf841bbe031644e3e4abcf124bad1918476fe7))
+
 ### [1.8.21](https://bitbucket.tc.lenovo.com///compare/v1.8.20...v1.8.21) (2020-10-10)
 
 ### [1.8.20](https://bitbucket.tc.lenovo.com///compare/v1.8.19...v1.8.20) (2020-10-09)
