@@ -1,0 +1,19 @@
+@import "../../app.theme.scss";
+
+:host {
+    color: $grey_darker;
+
+    .closeButton {
+        top: -1.5rem;
+        right: -1.5rem;
+        height: 2.4rem;
+        width: 2.4rem;
+
+        &:focus {
+            outline: 0.1rem solid $menu_hover;
+        }
+        &:hover {
+            color: $menu_hover;
+        }
+    }
+}

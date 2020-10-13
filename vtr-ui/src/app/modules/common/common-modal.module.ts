@@ -17,6 +17,10 @@ import { NgbModalModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalChsWelcomeContainerComponent } from 'src/app/components/pages/page-connected-home-security/component/modal-chs-welcome-container/modal-chs-welcome-container.component';
 import { ModalChsStartTrialContainerComponent } from 'src/app/components/pages/page-connected-home-security/component/modal-chs-start-trial-container/modal-chs-start-trial-container.component';
 import { ModalSmartStandByComponent } from 'src/app/components/modal/modal-smart-stand-by/modal-smart-stand-by.component';
+import { MaterialDialogComponent } from 'src/app/material/material-dialog/material-dialog.component';
+import { MatButtonModule } from '@lenovo/material/button';
+import { MatIconModule } from '@lenovo/material/icon';
+import { MatDialogModule } from '@lenovo/material/dialog';
 
 @NgModule({
 	declarations: [
@@ -34,15 +38,18 @@ import { ModalSmartStandByComponent } from 'src/app/components/modal/modal-smart
 		ModalChsWelcomeContainerComponent,
 		ModalChsStartTrialContainerComponent,
 		ModalRebootConfirmComponent,
-		ModalSmartStandByComponent
-
+		ModalSmartStandByComponent,
+		MaterialDialogComponent
 	],
 	imports: [
 		CommonModule,
 		SharedModule,
 		MetricsModule,
 		NgbModalModule,
-		NgbTooltipModule
+		NgbTooltipModule,
+		MatButtonModule,
+		MatIconModule,
+		MatDialogModule
 	],
 	exports: [
 		SharedModule,
@@ -67,7 +74,8 @@ import { ModalSmartStandByComponent } from 'src/app/components/modal/modal-smart
 		ModalChsWelcomeContainerComponent,
 		ModalChsStartTrialContainerComponent,
 		ModalRebootConfirmComponent,
-		ModalSmartStandByComponent
+		ModalSmartStandByComponent,
+		MaterialDialogComponent
 	]
 })
 export class CommonModalModule { }

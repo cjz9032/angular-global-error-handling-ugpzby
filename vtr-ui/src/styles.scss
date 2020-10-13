@@ -6,6 +6,8 @@
 @import "./hw-settings-icomoon/icomoon-base64.scss";
 
 @import "~@lenovo/material/theming";
+@import "./app/material.scss";
+
 @include mat-core();
 
 html {
@@ -81,7 +83,270 @@ a.disabled {
 	}
 }
 
+/* font-weight
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+font-weight-medium            500 !default;
+font-weight-semibold          600 !default;
+$font-weight-bold:            700 !default;
+$font-weight-bolder:          bolder !default;
+*/
+.font-weight-light {
+	span,
+	p,
+	div,
+	a,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-weight: $weight_light !important;
+	}
+}
+.font-weight-normal {
+	span,
+	p,
+	div,
+	a,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-weight: $weight_regular !important;
+	}
+}
+.font-weight-medium {
+	&,
+	span,
+	p,
+	div,
+	a,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-weight: $weight_medium !important;
+	}
+}
+.font-weight-semibold {
+	&,
+	span,
+	p,
+	div,
+	a,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-weight: $weight_600 !important;
+	}
+}
+.font-weight-bold {
+	span,
+	p,
+	div,
+	a,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-weight: $weight_bold !important;
+	}
+}
+.font-weight-black {
+	&,
+	span,
+	p,
+	div,
+	a,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-weight: $weight_black !important;
+	}
+}
 
+/* font size
+$font-size-xl4: 4.6rem;
+$font-size-xl3: 4rem;
+$font-size-xl2: 3.4rem;
+$font-size-xl: 2.4rem;
+$font-size-lg: 2rem;
+$font-size-md: 1.8rem;
+$font-size-sm: 1.6rem;
+$font-size-xs: 1.4rem;
+$font-size-xs2: 1.2rem;
+*/
+.font-size-xl4 {
+	&,
+	span,
+	p,
+	div,
+	a,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-size: $fontsize_xl4 !important;
+	}
+}
+.font-size-xl3 {
+	&,
+	span,
+	p,
+	div,
+	a,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-size: $fontsize_xl3 !important;
+	}
+}
+.font-size-xl2 {
+	&,
+	span,
+	p,
+	div,
+	a,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-size: $fontsize_xl2 !important;
+	}
+}
+.font-size-xl {
+	&,
+	span,
+	p,
+	div,
+	a,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-size: $fontsize_xl !important;
+	}
+}
+.font-size-lg5 {
+	&,
+	span,
+	p,
+	div,
+	a,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-size: $fontsize_lg !important;
+	}
+}
+.font-size-md {
+	&,
+	span,
+	p,
+	div,
+	a,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-size: $fontsize_md !important;
+	}
+}
+.font-size-sm2 {
+	&,
+	span,
+	p,
+	div,
+	a,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-size: $fontsize_sm !important;
+	}
+}
+.font-size-xs {
+	&,
+	span,
+	p,
+	div,
+	a,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-size: $fontsize_xs !important;
+	}
+}
+.font-size-xs2 {
+	&,
+	span,
+	p,
+	div,
+	a,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-size: $fontsize_xs2 !important;
+	}
+}
+
+.border-width-1 {
+	border-width: 0.1rem !important;
+}
+
+.border-width-2 {
+	border-width: 0.2rem !important;
+}
+
+.border-solid {
+	border-style: solid !important;
+}
+
+.border-grey-light {
+	border-color: $grey_light;
+	@media #{$black-on-white} {
+		border-color: $dark !important;
+	}
+	@media #{$white-on-black} {
+		border-color: $light !important;
+	}
+}
 // @media #{$dpiquery_0} {
 // }
 
