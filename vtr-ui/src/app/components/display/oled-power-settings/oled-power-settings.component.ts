@@ -4,9 +4,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { DisplayService } from 'src/app/services/display/display.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
-import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { OledPowerSettings } from 'src/app/data-models/device/oled-power-settings.model';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
 	selector: 'vtr-oled-power-settings',
@@ -22,7 +22,7 @@ export class OledPowerSettingsComponent implements OnInit {
 
 	constructor(
 		public displayService: DisplayService,
-		private commonService: CommonService,
+		private localCacheService: LocalCacheService,
 		private logger: LoggerService,
 		private translate: TranslateService) { }
 
@@ -33,7 +33,7 @@ export class OledPowerSettingsComponent implements OnInit {
 	}
 
 	private initOledDataFromCache() {
-		this.oledPowerSettingsCache = this.commonService.getLocalStorageValue(LocalStorageKey.OledPowerSettings, undefined);
+		this.oledPowerSettingsCache = this.localCacheService.getLocalCacheValue(LocalStorageKey.OledPowerSettings, undefined);
 		if (this.oledPowerSettingsCache !== undefined) {
 			this.oledPowerSettings = this.oledPowerSettingsCache;
 		} else {
@@ -141,7 +141,7 @@ export class OledPowerSettingsComponent implements OnInit {
 						this.getDisplayDimmerSetting();
 					}
 					this.oledPowerSettingsCache.isCapable = this.oledPowerSettings.isCapable;
-					this.commonService.setLocalStorageValue(LocalStorageKey.OledPowerSettings, this.oledPowerSettingsCache);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.OledPowerSettings, this.oledPowerSettingsCache);
 
 				}).catch(error => {
 					this.logger.error('OLED-Power-Settings : getOLEDPowerControlCapability', error.message);
@@ -189,7 +189,7 @@ export class OledPowerSettingsComponent implements OnInit {
 					const value = result.displayStrIndex >= 0 ? result.displayStrIndex : undefined;
 					this.oledPowerSettings.taskBarDimmerValue = value;
 					this.oledPowerSettingsCache.taskBarDimmerValue = value;
-					this.commonService.setLocalStorageValue(LocalStorageKey.OledPowerSettings, this.oledPowerSettingsCache);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.OledPowerSettings, this.oledPowerSettingsCache);
 
 				}).catch(error => {
 					this.logger.error('OLED-Power-Settings : getTaskbarDimmerSetting error', error.message);
@@ -207,7 +207,7 @@ export class OledPowerSettingsComponent implements OnInit {
 					const value = result.displayStrIndex >= 0 ? result.displayStrIndex : undefined;
 					this.oledPowerSettings.backgroundDimmerValue = value;
 					this.oledPowerSettingsCache.backgroundDimmerValue = value;
-					this.commonService.setLocalStorageValue(LocalStorageKey.OledPowerSettings, this.oledPowerSettingsCache);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.OledPowerSettings, this.oledPowerSettingsCache);
 
 				}).catch(error => {
 					this.logger.error('OLED-Power-Settings : getBackgroundDimmerSetting error', error.message);
@@ -225,7 +225,7 @@ export class OledPowerSettingsComponent implements OnInit {
 					const value = result.displayStrIndex >= 0 ? result.displayStrIndex : undefined;
 					this.oledPowerSettings.displayDimmerValue = value;
 					this.oledPowerSettingsCache.displayDimmerValue = value;
-					this.commonService.setLocalStorageValue(LocalStorageKey.OledPowerSettings, this.oledPowerSettingsCache);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.OledPowerSettings, this.oledPowerSettingsCache);
 
 				}).catch(error => {
 					this.logger.error('OLED-Power-Settings : getDisplayDimmerSetting error', error.message);

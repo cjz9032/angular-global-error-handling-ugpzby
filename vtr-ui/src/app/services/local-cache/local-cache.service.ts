@@ -73,21 +73,6 @@ export class LocalCacheService {
 					this.cacheMap[key] = oldValue;
 					reject(error);
 				});
-				// if (this.setPromise) {
-				// 	this.setPromise.then(() => {
-				// 		this.commonService.sendNotification(key, value);
-				// 		resolve();
-				// 		this.setPromise = undefined;
-				// 	});
-				// } else {
-				// 	this.setPromise = this.setItem(this.indexedCacheKey, this.cacheMap).then(() => {
-				// 		this.commonService.sendNotification(key, value);
-				// 		resolve();
-				// 	}).catch((error) => {
-				// 		this.cacheMap[key] = oldValue;
-				// 		reject(error);
-				// 	});
-				// }
 			} else {
 				this.commonService.setLocalStorageValue(key, value);
 				resolve();
