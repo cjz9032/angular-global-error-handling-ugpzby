@@ -970,15 +970,7 @@
             "intermediateDesc": "Zařízení má povoleno středně pokročilé zabezpečení",
             "advancedDesc": "Zařízení má povoleno rozšířené zabezpečení"
         },
-        "heroBanner": "Hlavní banner",
-        "positionB": {
-            "cardTitle": "Informace o systému",
-            "cardSummary": {
-                "detecting": "Zjišťování informací o systému...",
-                "goodCondition": "Stav vašeho zařízení je dobrý",
-                "maintenanceNeeded": "Vaše zařízení vyžaduje určitou údržbu"
-            }
-        }
+        "heroBanner": "Hlavní banner"
     },
     "device": {
         "myDevice": {
@@ -4278,7 +4270,8 @@
         "executingScanTitle": "Snímání {{title}}",
         "showDetails": "Zobrazit podrobnosti",
         "hideDetails": "Skrýt podrobnosti",
-        "na": "není k dispozici"
+        "na": "není k dispozici",
+        "exportLog": "Exportovat protokol"
     },
     "smartPerformance": {
         "title": "Smart Performance",

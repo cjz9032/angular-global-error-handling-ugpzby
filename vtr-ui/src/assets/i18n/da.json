@@ -970,15 +970,7 @@
             "intermediateDesc": "Din computer har mellem sikkerhedsbeskyttelse aktiveret",
             "advancedDesc": "Din computer har avanceret sikkerhedsbeskyttelse aktiveret"
         },
-        "heroBanner": "Hero-banner",
-        "positionB": {
-            "cardTitle": "Systemoplysninger",
-            "cardSummary": {
-                "detecting": "Registrerer systemoplysninger nu...",
-                "goodCondition": "Din enhed er i god stand",
-                "maintenanceNeeded": "Din enhed har brug for vedligeholdelse"
-            }
-        }
+        "heroBanner": "Hero-banner"
     },
     "device": {
         "myDevice": {
@@ -4278,7 +4270,8 @@
         "executingScanTitle": "Søger i {{title}}",
         "showDetails": "Vis detaljer ",
         "hideDetails": "Skjul detaljer",
-        "na": "Ikke tilgængelig"
+        "na": "Ikke tilgængelig",
+        "exportLog": "Eksportér log"
     },
     "smartPerformance": {
         "title": "Smart Performance",

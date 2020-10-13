@@ -970,15 +970,7 @@
             "intermediateDesc": "Na računaru je omogućena srednja zaštita bezbednosti",
             "advancedDesc": "Na računaru je omogućena napredna zaštita bezbednosti"
         },
-        "heroBanner": "Baner heroja",
-        "positionB": {
-            "cardTitle": "Informacije o sistemu",
-            "cardSummary": {
-                "detecting": "Otkrivanje informacija o sistemu sada...",
-                "goodCondition": "Uređaj je u dobrom stanju",
-                "maintenanceNeeded": "Uređaju je potrebno održavanje"
-            }
-        }
+        "heroBanner": "Baner heroja"
     },
     "device": {
         "myDevice": {
@@ -4278,7 +4270,8 @@
         "executingScanTitle": "Skenira se {{title}}",
         "showDetails": "Prikaži detalje",
         "hideDetails": "Sakrij detalje",
-        "na": "N/A"
+        "na": "N/A",
+        "exportLog": "Evidencija izvoza"
     },
     "smartPerformance": {
         "title": "Smart Performance",

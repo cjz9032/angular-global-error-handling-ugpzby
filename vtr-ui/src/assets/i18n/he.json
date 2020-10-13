@@ -970,15 +970,7 @@
             "intermediateDesc": "במחשב שלכם מופעלת הגנת אבטחה בינונית",
             "advancedDesc": "במחשב שלכם מופעלת הגנת אבטחה מתקדמת"
         },
-        "heroBanner": "כרזת Hero",
-        "positionB": {
-            "cardTitle": "מידע מערכת",
-            "cardSummary": {
-                "detecting": "מזהה פרטי מערכת עכשיו...",
-                "goodCondition": "המכשיר במצב תקין",
-                "maintenanceNeeded": "המכשיר זקוק לתחזוקה מסוימת"
-            }
-        }
+        "heroBanner": "כרזת Hero"
     },
     "device": {
         "myDevice": {
@@ -4278,7 +4270,8 @@
         "executingScanTitle": "סורק את {{title}}",
         "showDetails": "הצגת פרטים",
         "hideDetails": "הסתרת פרטים",
-        "na": "לא ישים"
+        "na": "לא ישים",
+        "exportLog": "יומן ייצוא"
     },
     "smartPerformance": {
         "title": "השירות Smart Performance",

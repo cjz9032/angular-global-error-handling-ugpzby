@@ -970,15 +970,7 @@
             "intermediateDesc": "A számítógépen csak a közepes szintű biztonsági védelem van engedélyezve",
             "advancedDesc": "A számítógépen a magas szintű biztonsági védelem van engedélyezve"
         },
-        "heroBanner": "Termékképet bemutató banner",
-        "positionB": {
-            "cardTitle": "Rendszerinformációk",
-            "cardSummary": {
-                "detecting": "Rendszerinformációk észlelése...",
-                "goodCondition": "Az eszköz jó állapotban van",
-                "maintenanceNeeded": "Az eszköz karbantartást igényel"
-            }
-        }
+        "heroBanner": "Termékképet bemutató banner"
     },
     "device": {
         "myDevice": {
@@ -4278,7 +4270,8 @@
         "executingScanTitle": "{{title}} vizsgálata",
         "showDetails": "Részletek megtekintése",
         "hideDetails": "Részletek elrejtése",
-        "na": "Nem alk."
+        "na": "Nem alk.",
+        "exportLog": "Napló exportálása"
     },
     "smartPerformance": {
         "title": "Smart Performance",

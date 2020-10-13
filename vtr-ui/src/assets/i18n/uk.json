@@ -970,15 +970,7 @@
             "intermediateDesc": "На вашому комп'ютері ввімкнуто середній рівень захисту",
             "advancedDesc": "На вашому комп'ютері ввімкнуто розширений рівень захисту"
         },
-        "heroBanner": "Головний банер",
-        "positionB": {
-            "cardTitle": "Відомості про систему",
-            "cardSummary": {
-                "detecting": "Збирання відомостей про систему...",
-                "goodCondition": "Ваш пристрій у доброму стані",
-                "maintenanceNeeded": "Вашому пристрою потрібне обслуговування"
-            }
-        }
+        "heroBanner": "Головний банер"
     },
     "device": {
         "myDevice": {
@@ -4278,7 +4270,8 @@
         "executingScanTitle": "Сканування {{title}}",
         "showDetails": "Переглянути відомості",
         "hideDetails": "Приховати відомості",
-        "na": "н. д."
+        "na": "н. д.",
+        "exportLog": "Експортувати журнал"
     },
     "smartPerformance": {
         "title": "Smart Performance",

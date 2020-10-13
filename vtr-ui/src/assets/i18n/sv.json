@@ -970,15 +970,7 @@
             "intermediateDesc": "Datorn har medelstarkt säkerhetsskydd aktiverat",
             "advancedDesc": "Datorn har avancerat säkerhetsskydd aktiverat"
         },
-        "heroBanner": "Huvudbanner",
-        "positionB": {
-            "cardTitle": "Systeminformation",
-            "cardSummary": {
-                "detecting": "Identifierar systeminformation nu …",
-                "goodCondition": "Enheten är i gott skick",
-                "maintenanceNeeded": "Enheten behöver visst underhåll"
-            }
-        }
+        "heroBanner": "Huvudbanner"
     },
     "device": {
         "myDevice": {
@@ -4278,7 +4270,8 @@
         "executingScanTitle": "Genomsöker {{title}}",
         "showDetails": "Visa information",
         "hideDetails": "Dölj information",
-        "na": "Ej tillämpligt"
+        "na": "Ej tillämpligt",
+        "exportLog": "Exportera logg"
     },
     "smartPerformance": {
         "title": "Smart Performance",

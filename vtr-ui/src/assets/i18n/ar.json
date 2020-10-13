@@ -972,15 +972,7 @@
             "intermediateDesc": "تم تمكين حماية أمان متوسطة على جهازك",
             "advancedDesc": "تم تمكين حماية أمان متقدمة على جهازك"
         },
-        "heroBanner": "بانر Hero",
-        "positionB": {
-            "cardTitle": "معلومات النظام",
-            "cardSummary": {
-                "detecting": "جارٍ اكتشاف معلومات النظام الآن...",
-                "goodCondition": "جهازك بحالة جيدة.",
-                "maintenanceNeeded": "يحتاج جهازك إلى بعض الصيانة"
-            }
-        }
+        "heroBanner": "بانر Hero"
     },
     "device": {
         "myDevice": {
@@ -4280,7 +4272,8 @@
         "executingScanTitle": "جارٍ فحص {{title}}",
         "showDetails": "عرض التفاصيل",
         "hideDetails": "إخفاء التفاصيل",
-        "na": "غير مطبّق"
+        "na": "غير مطبّق",
+        "exportLog": "سجل التصدير"
     },
     "smartPerformance": {
         "title": "Smart Performance",

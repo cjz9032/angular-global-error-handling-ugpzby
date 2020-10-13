@@ -970,15 +970,7 @@
             "intermediateDesc": "Vaš računalnik ima omogočeno srednjo varnostno zaščito",
             "advancedDesc": "Vaš računalnik ima omogočeno napredno varnostno zaščito"
         },
-        "heroBanner": "Pasica junaka",
-        "positionB": {
-            "cardTitle": "Sistemske informacije",
-            "cardSummary": {
-                "detecting": "Zaznavanje sistemskih informacij ...",
-                "goodCondition": "Vaša naprava je v dobrem stanju",
-                "maintenanceNeeded": "Vaša naprava potrebuje nekaj vzdrževanja"
-            }
-        }
+        "heroBanner": "Pasica junaka"
     },
     "device": {
         "myDevice": {
@@ -4278,7 +4270,8 @@
         "executingScanTitle": "Pregledovanje {{title}}",
         "showDetails": "Ogled podrobnosti",
         "hideDetails": "Skrij podrobnosti",
-        "na": "/"
+        "na": "/",
+        "exportLog": "Izvozi dnevnik"
     },
     "smartPerformance": {
         "title": "Smart Performance",

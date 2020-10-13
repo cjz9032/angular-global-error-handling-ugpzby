@@ -964,21 +964,13 @@
             "checkForSystemUpdates": "Проверить наличие обновлений системы"
         },
         "securityStatus": {
-            "loadingDesc": "Обнаружение сведений о безопасности...",
+            "loadingDesc": "Обнаружение информации о безопасности...",
             "noProtectionDesc": "Устройство лишено защиты",
             "basicDesc": "Устройство защищено не полностью",
             "intermediateDesc": "На компьютере включена защита среднего уровня",
             "advancedDesc": "На компьютере включена защита продвинутого уровня"
         },
-        "heroBanner": "Показательный баннер",
-        "positionB": {
-            "cardTitle": "Сведения о системе",
-            "cardSummary": {
-                "detecting": "Обнаружение сведений о системе...",
-                "goodCondition": "Устройство в хорошем состоянии",
-                "maintenanceNeeded": "Устройству требуется обслуживание"
-            }
-        }
+        "heroBanner": "Показательный баннер"
     },
     "device": {
         "myDevice": {
@@ -4278,7 +4270,8 @@
         "executingScanTitle": "Сканирование {{title}}",
         "showDetails": "Просмотреть сведения",
         "hideDetails": "Скрыть сведения",
-        "na": "Нет"
+        "na": "Нет",
+        "exportLog": "Экспорт журнала"
     },
     "smartPerformance": {
         "title": "Smart Performance",

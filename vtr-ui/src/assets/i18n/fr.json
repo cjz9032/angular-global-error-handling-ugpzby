@@ -970,15 +970,7 @@
             "intermediateDesc": "Seule la protection de sécurité intermédiaire est activée sur votre ordinateur.",
             "advancedDesc": "La protection de sécurité avancée est activée sur votre ordinateur."
         },
-        "heroBanner": "Bannière héros",
-        "positionB": {
-            "cardTitle": "Informations système",
-            "cardSummary": {
-                "detecting": "Détection des informations système en cours…",
-                "goodCondition": "Votre périphérique est en bon état",
-                "maintenanceNeeded": "Votre périphérique nécessite une maintenance"
-            }
-        }
+        "heroBanner": "Bannière héros"
     },
     "device": {
         "myDevice": {
@@ -4278,7 +4270,8 @@
         "executingScanTitle": "Analyse de {{title}}",
         "showDetails": "Afficher les détails",
         "hideDetails": "Masquer les détails",
-        "na": "N/A"
+        "na": "N/A",
+        "exportLog": "Exporter le journal"
     },
     "smartPerformance": {
         "title": "Smart Performance",

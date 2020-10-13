@@ -970,15 +970,7 @@
             "intermediateDesc": "Il computer dispone di una protezione per la sicurezza intermedia abilitata",
             "advancedDesc": "Il computer dispone di una protezione per la sicurezza avanzata abilitata"
         },
-        "heroBanner": "Banner hero",
-        "positionB": {
-            "cardTitle": "Informazioni sul sistema",
-            "cardSummary": {
-                "detecting": "Rilevamento informazioni sul sistema in corso...",
-                "goodCondition": "Il dispositivo è in buone condizioni",
-                "maintenanceNeeded": "Il dispositivo richiede manutenzione"
-            }
-        }
+        "heroBanner": "Banner hero"
     },
     "device": {
         "myDevice": {
@@ -4278,7 +4270,8 @@
         "executingScanTitle": "Scansione di {{title}} in corso",
         "showDetails": "Visualizza dettagli ",
         "hideDetails": "Nascondi dettagli",
-        "na": "N/D"
+        "na": "N/D",
+        "exportLog": "Esporta log"
     },
     "smartPerformance": {
         "title": "Smart Performance",

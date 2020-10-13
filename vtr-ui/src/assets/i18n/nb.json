@@ -970,15 +970,7 @@
             "intermediateDesc": "Datamaskinen din har midlertidig sikkerhetsbeskyttelse aktivert",
             "advancedDesc": "Datamaskinen din har avansert sikkerhetsbeskyttelse aktivert"
         },
-        "heroBanner": "Hero-banner",
-        "positionB": {
-            "cardTitle": "Systeminformasjon",
-            "cardSummary": {
-                "detecting": "Oppdager systeminformasjon nå …",
-                "goodCondition": "Enheten er i god stand",
-                "maintenanceNeeded": "Enheten trenger noe vedlikehold"
-            }
-        }
+        "heroBanner": "Hero-banner"
     },
     "device": {
         "myDevice": {
@@ -4278,7 +4270,8 @@
         "executingScanTitle": "Skanner {{title}}",
         "showDetails": "Vis detaljer",
         "hideDetails": "Skjul detaljer",
-        "na": "N/A"
+        "na": "N/A",
+        "exportLog": "Eksporter loggen"
     },
     "smartPerformance": {
         "title": "Smart Performance",

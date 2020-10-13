@@ -970,15 +970,7 @@
             "intermediateDesc": "Twój komputer ma zapewnioną umiarkowaną ochronę",
             "advancedDesc": "Twój komputer ma zapewnioną zaawansowaną ochronę"
         },
-        "heroBanner": "Baner główny",
-        "positionB": {
-            "cardTitle": "Informacje systemowe",
-            "cardSummary": {
-                "detecting": "Wykrywanie informacji o systemie operacyjnym...",
-                "goodCondition": "Urządzenie jest w dobrym stanie",
-                "maintenanceNeeded": "Twoje urządzenie wymaga nieco konserwacji"
-            }
-        }
+        "heroBanner": "Baner główny"
     },
     "device": {
         "myDevice": {
@@ -4278,7 +4270,8 @@
         "executingScanTitle": "Skanowanie {{title}}",
         "showDetails": "Wyświetl szczegóły",
         "hideDetails": "Ukryj szczegóły",
-        "na": "Nie dot."
+        "na": "Nie dot.",
+        "exportLog": "Eksportuj dziennik"
     },
     "smartPerformance": {
         "title": "Smart Performance",

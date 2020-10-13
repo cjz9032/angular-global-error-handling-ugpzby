@@ -970,15 +970,7 @@
             "intermediateDesc": "Uw computer heeft gemiddelde beveiliging ingeschakeld",
             "advancedDesc": "Uw computer heeft geavanceerde beveiliging ingeschakeld"
         },
-        "heroBanner": "Held-spandoek",
-        "positionB": {
-            "cardTitle": "Systeemgegevens",
-            "cardSummary": {
-                "detecting": "Systeemgegevens worden gedetecteerd...",
-                "goodCondition": "De conditie van het apparaat is goed",
-                "maintenanceNeeded": "Uw apparaat heeft enig onderhoud nodig"
-            }
-        }
+        "heroBanner": "Held-spandoek"
     },
     "device": {
         "myDevice": {
@@ -4278,7 +4270,8 @@
         "executingScanTitle": "{{title}} scannen",
         "showDetails": "Gegevens weergeven",
         "hideDetails": "Gegevens verbergen",
-        "na": "N.v.t."
+        "na": "N.v.t.",
+        "exportLog": "Logboek exporteren"
     },
     "smartPerformance": {
         "title": "Smart Performance",

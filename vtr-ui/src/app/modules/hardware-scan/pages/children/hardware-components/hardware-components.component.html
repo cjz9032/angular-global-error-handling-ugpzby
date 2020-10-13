@@ -36,15 +36,15 @@
 					(hyperlinkClick)="refreshModules()">
 				</vtr-ui-hyperlink-button>
 				<vtr-ui-hyperlink-button
-					linkId="hwscan-refresh-modules-btn"
+					linkId="hwscan-export-log-btn"
 					linkRole="button"
 					*ngIf="isFeatureExportAvailable"
 					hyperlinkStyle="xs-300-blue-lighter"
 					metricsEvent="FeatureClick"
-					metricsParent="HardwareScan"
-					metricsItem="HardwareScan.SaveLog"
+					metricsParent="HardwareScan.ViewResults"
+					metricsItem="ViewResults.ExportLog"
 				 	[imgIconSrc]="'assets/icons/hardware-scan/icon_hardware_export-log.svg'"
-					[label]="'Export results'"
+					[label]="'hardwareScan.exportLog' | translate"
 					(hyperlinkClick)="exportResults()">
 				</vtr-ui-hyperlink-button>
 			</div>

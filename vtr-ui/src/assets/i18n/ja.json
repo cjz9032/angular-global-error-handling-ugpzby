@@ -970,15 +970,7 @@
             "intermediateDesc": "コンピューターでは、中間的なセキュリティー保護が有効になっています",
             "advancedDesc": "お使いのコンピューターでは、高度なセキュリティー保護が有効になっています"
         },
-        "heroBanner": "ヒーローバナー",
-        "positionB": {
-            "cardTitle": "システム情報",
-            "cardSummary": {
-                "detecting": "システム情報を検出しています...",
-                "goodCondition": "デバイスは良好な状態です",
-                "maintenanceNeeded": "デバイスのメンテナンスが必要です"
-            }
-        }
+        "heroBanner": "ヒーローバナー"
     },
     "device": {
         "myDevice": {
@@ -4278,7 +4270,8 @@
         "executingScanTitle": "{{title}} をスキャン中",
         "showDetails": "詳細の表示",
         "hideDetails": "詳細の非表示",
-        "na": "N/A"
+        "na": "N/A",
+        "exportLog": "ログのエクスポート"
     },
     "smartPerformance": {
         "title": "Smart Performance",

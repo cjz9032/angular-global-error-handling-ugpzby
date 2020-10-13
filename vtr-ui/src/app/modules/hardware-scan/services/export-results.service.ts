@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.enum';
 import { HttpClient } from '@angular/common/http';
 import { TranslateDefaultValueIfNotFoundPipe } from 'src/app/pipe/translate-default-value-if-not-found/translate-default-value-if-not-found.pipe';
-import { HardwareScanOverallResult } from 'src/app/enums/hardware-scan-overall-result.enum';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { FormatLocaleDateTimePipe } from '../../../pipe/format-locale-datetime/format-locale-datetime.pipe';
 import { HardwareScanResultService } from './hardware-scan-result.service';
@@ -11,6 +9,7 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { environment } from 'src/environments/environment';
 import { ScanLogService } from './scan-log.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { HardwareScanOverallResult, HardwareScanTestResult } from '../enums/hardware-scan.enum';
 
 declare var window;
 

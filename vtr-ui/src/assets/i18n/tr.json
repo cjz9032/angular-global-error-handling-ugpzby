@@ -970,15 +970,7 @@
             "intermediateDesc": "Bilgisayarınızda orta düzey güvenlik koruması etkin",
             "advancedDesc": "Bilgisayarınızda gelişmiş güvenlik koruması etkin"
         },
-        "heroBanner": "Ana manşet",
-        "positionB": {
-            "cardTitle": "Sistem Bilgileri",
-            "cardSummary": {
-                "detecting": "Şimdi sistem bilgileri algılanıyor...",
-                "goodCondition": "Cihazınız iyi durumda",
-                "maintenanceNeeded": "Cihazınızın biraz bakıma ihtiyacı var"
-            }
-        }
+        "heroBanner": "Ana manşet"
     },
     "device": {
         "myDevice": {
@@ -4278,7 +4270,8 @@
         "executingScanTitle": "{{title}} taranıyor",
         "showDetails": "Ayrıntıları Görüntüle",
         "hideDetails": "Ayrıntıları Gizle",
-        "na": "Yok"
+        "na": "Yok",
+        "exportLog": "Günlüğü Dışa Aktar"
     },
     "smartPerformance": {
         "title": "Smart Performance",

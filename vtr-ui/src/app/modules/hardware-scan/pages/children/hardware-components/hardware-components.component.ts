@@ -15,7 +15,7 @@ import { ScanExecutionService } from '../../../services/scan-execution.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProtocolExecutionService } from '../../../services/protocol-execution.service';
 import { HardwareScanMetricsService } from 'src/app/modules/hardware-scan/services/hardware-scan-metrics.service';
-import { HardwareScanFeatures } from '../../../services/hardware-scan-features.service';
+import { HardwareScanFeaturesService } from '../../../services/hardware-scan-features.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { ExportResultsService } from '../../../services/export-results.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
@@ -96,7 +96,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		private protocolExecutionService: ProtocolExecutionService,
 		private activatedRoute: ActivatedRoute,
 		private router: Router,
-		private hwscanFeaturesService: HardwareScanFeatures,
+		private hwscanFeaturesService: HardwareScanFeaturesService,
 		private exportService: ExportResultsService,
 		private logger: LoggerService,
 		private hardwareScanMetricsService: HardwareScanMetricsService,

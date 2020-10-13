@@ -970,15 +970,7 @@
             "intermediateDesc": "Váš počítač má zapnutú strednú úroveň ochrany",
             "advancedDesc": "Váš počítač má zapnutú pokročilú úroveň ochrany"
         },
-        "heroBanner": "Transparent Hrdina",
-        "positionB": {
-            "cardTitle": "Informácie o systéme",
-            "cardSummary": {
-                "detecting": "Teraz sa zisťujú sa informácie o systéme...",
-                "goodCondition": "Vaše zariadenie je v dobrom stave",
-                "maintenanceNeeded": "Vaše zariadenie vyžaduje určitú údržbu"
-            }
-        }
+        "heroBanner": "Transparent Hrdina"
     },
     "device": {
         "myDevice": {
@@ -4278,7 +4270,8 @@
         "executingScanTitle": "Skenovanie {{title}}",
         "showDetails": "Zobraziť podrobnosti",
         "hideDetails": "Skryť podrobnosti",
-        "na": "–"
+        "na": "–",
+        "exportLog": "Exportovať denník"
     },
     "smartPerformance": {
         "title": "Smart Performance",
