@@ -22,6 +22,7 @@ export class Status {
 
 export class DeviceStatus {
 	constructor() {	}
+	public id: string;
 	public icon: string;
 	public title: string;
 	public subtitle: string;

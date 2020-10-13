@@ -111,6 +111,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		this.loadOverAllStatus();
 		const processor = new DeviceStatus();
 		this.translate.stream('device.myDevice.processor.title').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+			processor.id = 'processor';
 			processor.title = value;
 			processor.icon = this.processorIcon;
 			this.hwStatus[0] = processor;
@@ -118,6 +119,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		});
 		const memory = new DeviceStatus();
 		this.translate.stream('device.myDevice.memory.title').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+			memory.id = 'memory';
 			memory.title = value;
 			memory.icon = this.memoryIcon;
 			this.hwStatus[1] = memory;
@@ -125,6 +127,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		});
 		const disk = new DeviceStatus();
 		this.translate.stream('device.myDevice.storage').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+			disk.id = 'disk';
 			disk.title = value;
 			disk.icon = this.storageIcon;
 			this.hwStatus[2] = disk;
@@ -133,6 +136,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		let index = 0;
 		if (this.configService.isSystemUpdateEnabled()){
 			const systemUpdate = new DeviceStatus();
+			systemUpdate.id = 'systemUpdate';
 			this.translate.stream('device.myDevice.systemUpdate.title').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
 				systemUpdate.title = value;
 			});
@@ -142,6 +146,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		}
 		if (await this.configService.showSmartPerformance()){
 			const smartPerformance = new DeviceStatus();
+			smartPerformance.id = 'smartperformance';
 			this.translate.stream('smartPerformance.title').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
 				smartPerformance.title = value;
 			});
@@ -189,6 +194,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 				let statusIndex = 2;
 				for (let i = 0, len  = disks.length; i < len; i++) {
 					const disk = new DeviceStatus();
+					disk.id = 'disk' + i;
 					disk.title = value;
 					disk.icon = this.storageIcon;
 					disk.link = 'ms-settings:storagesense';
