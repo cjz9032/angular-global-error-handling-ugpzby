@@ -315,8 +315,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	}
 
 	public getProgress() {
-		if (this.hardwareScanService) {
-			return this.hardwareScanService.getProgress();
+		if (this.scanExecutionService) {
+			return this.scanExecutionService.executionProgress;
 		}
 	}
 
