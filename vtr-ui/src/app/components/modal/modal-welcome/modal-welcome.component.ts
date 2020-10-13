@@ -4,7 +4,6 @@ import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.mod
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CommonService } from 'src/app/services/common/common.service';
-import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { UserService } from 'src/app/services/user/user.service';
@@ -19,6 +18,7 @@ import { MetricService } from 'src/app/services/metric/metrics.service';
 import { GamingScenario } from 'src/app/enums/gaming-scenario.enum';
 import { InitializerService } from 'src/app/services/initializer/initializer.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { DccService } from 'src/app/services/dcc/dcc.service';
 
 @Component({
 	selector: 'vtr-modal-welcome',
@@ -120,7 +120,9 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		private userService: UserService,
 		private metricService: MetricService,
 		private localCacheService: LocalCacheService,
-		private initializerService: InitializerService) {
+		private initializerService: InitializerService,
+		private dccService: DccService
+		) {
 		this.metrics = shellService.getMetrics();
 
 		this.initMetricOption(shellService);
@@ -243,6 +245,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 				SettingValue: this.deviceService.isGaming ? 'Gaming' : this.selfSelectService.usageType,
 				SettingParent: 'WelcomePage'
 			};
+			this.updateHeaderImage(usageData.SettingValue);
 			this.metrics.sendAsync(usageData);
 
 			const interestMetricValue = {};
@@ -275,6 +278,12 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			this.initializerService.initializeAntivirus();
 		}
 		this.page = ++page;
+	}
+
+	private updateHeaderImage(segment: SegmentConst) {
+		if (segment === SegmentConst.SMB) {
+			this.dccService.headerBackground = 'assets/images/HeaderImageSmb.png';
+		}
 	}
 
 	private async getVantageToolBarCapability() {
