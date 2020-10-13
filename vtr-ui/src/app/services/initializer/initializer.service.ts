@@ -23,6 +23,7 @@ export class InitializerService {
 		this.commonService.setSessionStorageValue(SessionStorageKey.FirstPageLoaded, false);
 		return Promise.all([
 			this.deviceService.initIsArm(),
+			this.deviceService.getMachineInfo(),
 			this.localCacheService.loadCacheValues().then(() => {
 				this.initializeAntivirus();
 			})
