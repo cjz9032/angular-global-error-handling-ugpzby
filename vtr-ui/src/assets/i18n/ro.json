@@ -970,7 +970,15 @@
             "intermediateDesc": "Computerul dvs. are activată protecția de securitate intermediară",
             "advancedDesc": "Computerul dvs. are activată protecția de securitate avansată"
         },
-        "heroBanner": "Banner principal"
+        "heroBanner": "Banner principal",
+        "positionB": {
+            "cardTitle": "Informații despre sistem",
+            "cardSummary": {
+                "detecting": "Se detectează informațiile despre sistem acum...",
+                "goodCondition": "Dispozitivul dvs. este în stare bună",
+                "maintenanceNeeded": "Dispozitivul dvs. necesită întreținere"
+            }
+        }
     },
     "device": {
         "myDevice": {

@@ -971,8 +971,16 @@
 			"basicDesc": "Your device is not fully protected yet",
 			"intermediateDesc": "Your computer has intermediate security protection enabled",
 			"advancedDesc": "Your computer has advanced security protection enabled"
-		},
-		"heroBanner": "Hero banner"
+		},	
+		"heroBanner": "Hero banner",
+		"positionB":{
+			"cardTitle":"System Information",
+			"cardSummary":{
+				"detecting": "Detecting system information now...",
+				"goodCondition": "Your device is in good condition",
+				"maintenanceNeeded": "Your device needs some maintenance"
+			}			
+		}
 	},
 	"device": {
 		"myDevice": {
@@ -3451,6 +3459,16 @@
 				"offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect.",
 				"accountText": "Account creation failed. Please try again later.",
 				"closeText": "Close"
+			},
+			"expirePromptModal": {
+				"title": "Sign in to Lenovo ID",
+				"describe": "To continue using Lenovo Wifi security, please sign in with your Lenovo ID or register for a free account.",
+				"trialWillExpire": "Your Wifi security trial will expire in:",
+				"days": "days",
+				"hasExpired": "Your Lenovo Wifi security trial has expired. Please sign in with your Lenovo ID or register for a free account.",
+				"signIn": "SIGN IN",
+				"register": "REGISTER",
+				"ignore": "IGNORE"
 			}
 		},
 		"homeprotection": {
@@ -5072,8 +5090,7 @@
 		"executingScanTitle": "Scanning {{title}}",
 		"showDetails": "View Details",
 		"hideDetails": "Hide Details",
-		"na": "N/A",
-		"exportLog": "Export Log" 
+		"na": "N/A"
 	},
 	"notification": {
 		"menu": {

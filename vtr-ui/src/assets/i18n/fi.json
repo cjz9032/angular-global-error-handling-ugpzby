@@ -970,7 +970,15 @@
             "intermediateDesc": "Tietokoneessasi on käytössä keskitason suojaus",
             "advancedDesc": "Tietokoneessasi on käytössä edistynyt suojaus"
         },
-        "heroBanner": "Pääbanneri"
+        "heroBanner": "Pääbanneri",
+        "positionB": {
+            "cardTitle": "Järjestelmän tiedot",
+            "cardSummary": {
+                "detecting": "Etsitään järjestelmän tietoja...",
+                "goodCondition": "Laitteesi on hyvässä kunnossa",
+                "maintenanceNeeded": "Laitteesi tarvitsee jonkin verran huoltoa"
+            }
+        }
     },
     "device": {
         "myDevice": {

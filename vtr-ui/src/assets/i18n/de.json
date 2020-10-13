@@ -970,7 +970,15 @@
             "intermediateDesc": "Auf Ihrem Computer ist der mittlere Sicherheitsschutz aktiviert",
             "advancedDesc": "Auf Ihrem Computer ist der erweiterte Sicherheitsschutz aktiviert"
         },
-        "heroBanner": "Hero-Banner"
+        "heroBanner": "Hero-Banner",
+        "positionB": {
+            "cardTitle": "Systeminformationen",
+            "cardSummary": {
+                "detecting": "Systeminformationen werden ermittelt …",
+                "goodCondition": "Ihre Einheit befindet sich in einem guten Zustand",
+                "maintenanceNeeded": "Ihre Einheit muss gewartet werden"
+            }
+        }
     },
     "device": {
         "myDevice": {

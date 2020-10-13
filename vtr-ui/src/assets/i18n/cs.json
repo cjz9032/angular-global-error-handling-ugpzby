@@ -970,7 +970,15 @@
             "intermediateDesc": "Zařízení má povoleno středně pokročilé zabezpečení",
             "advancedDesc": "Zařízení má povoleno rozšířené zabezpečení"
         },
-        "heroBanner": "Hlavní banner"
+        "heroBanner": "Hlavní banner",
+        "positionB": {
+            "cardTitle": "Informace o systému",
+            "cardSummary": {
+                "detecting": "Zjišťování informací o systému...",
+                "goodCondition": "Stav vašeho zařízení je dobrý",
+                "maintenanceNeeded": "Vaše zařízení vyžaduje určitou údržbu"
+            }
+        }
     },
     "device": {
         "myDevice": {

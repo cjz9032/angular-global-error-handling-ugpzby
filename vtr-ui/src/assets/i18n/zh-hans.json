@@ -970,7 +970,15 @@
             "intermediateDesc": "您的计算机已启用中级安全保护",
             "advancedDesc": "您的计算机已启用高级安全保护"
         },
-        "heroBanner": "首页横幅"
+        "heroBanner": "首页横幅",
+        "positionB": {
+            "cardTitle": "系统信息",
+            "cardSummary": {
+                "detecting": "正在检测系统信息...",
+                "goodCondition": "您的设备状况良好",
+                "maintenanceNeeded": "您的设备需要维护"
+            }
+        }
     },
     "device": {
         "myDevice": {

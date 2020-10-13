@@ -970,7 +970,15 @@
             "intermediateDesc": "Vaš računalnik ima omogočeno srednjo varnostno zaščito",
             "advancedDesc": "Vaš računalnik ima omogočeno napredno varnostno zaščito"
         },
-        "heroBanner": "Pasica junaka"
+        "heroBanner": "Pasica junaka",
+        "positionB": {
+            "cardTitle": "Sistemske informacije",
+            "cardSummary": {
+                "detecting": "Zaznavanje sistemskih informacij ...",
+                "goodCondition": "Vaša naprava je v dobrem stanju",
+                "maintenanceNeeded": "Vaša naprava potrebuje nekaj vzdrževanja"
+            }
+        }
     },
     "device": {
         "myDevice": {

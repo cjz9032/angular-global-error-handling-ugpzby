@@ -970,7 +970,15 @@
             "intermediateDesc": "Twój komputer ma zapewnioną umiarkowaną ochronę",
             "advancedDesc": "Twój komputer ma zapewnioną zaawansowaną ochronę"
         },
-        "heroBanner": "Baner główny"
+        "heroBanner": "Baner główny",
+        "positionB": {
+            "cardTitle": "Informacje systemowe",
+            "cardSummary": {
+                "detecting": "Wykrywanie informacji o systemie operacyjnym...",
+                "goodCondition": "Urządzenie jest w dobrym stanie",
+                "maintenanceNeeded": "Twoje urządzenie wymaga nieco konserwacji"
+            }
+        }
     },
     "device": {
         "myDevice": {

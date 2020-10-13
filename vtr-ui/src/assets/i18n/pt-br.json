@@ -970,7 +970,15 @@
             "intermediateDesc": "Seu computador tem proteção intermediária de segurança ativada",
             "advancedDesc": "Seu computador tem proteção avançada de segurança ativada"
         },
-        "heroBanner": "Banner principal"
+        "heroBanner": "Banner principal",
+        "positionB": {
+            "cardTitle": "Informações do Sistema",
+            "cardSummary": {
+                "detecting": "Detectando informações do sistema agora...",
+                "goodCondition": "Seu dispositivo está em boas condições",
+                "maintenanceNeeded": "Seu dispositivo precisa de alguma manutenção"
+            }
+        }
     },
     "device": {
         "myDevice": {
