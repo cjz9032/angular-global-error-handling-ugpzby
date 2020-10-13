@@ -18,16 +18,16 @@
 				<div class="col-12 p-0 mb-4">
 					<vtr-widget-security
 						[isOnline]="isOnline"
-						[statusItem]="landingStatus"></vtr-widget-security>
+						[statusItem]="securityLevel.landingStatus"></vtr-widget-security>
 				</div>
 			</div>
 			<section class="landing-nav mb-40">
 				<vtr-widget-landing-nav
 					(haveOwnChecked)="updateStatus($event)"
 					(retryClick)="retry($event)"
-					[baseItems]="baseItems"
-					[intermediateItems]="intermediateItems"
-					[advancedItems]="advanceItems"></vtr-widget-landing-nav>
+					[baseItems]="securityLevel.basicView"
+					[intermediateItems]="securityLevel.intermediateView"
+					[advancedItems]="securityLevel.advancedView"></vtr-widget-landing-nav>
 			</section>
 		</div>
 	</left-content>

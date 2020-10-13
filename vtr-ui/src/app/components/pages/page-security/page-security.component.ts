@@ -7,22 +7,9 @@ import {
 import {
 	VantageShellService
 } from '../../../services/vantage-shell/vantage-shell.service';
-import * as phoenix from '@lenovo/tan-client-bridge';
 import {
 	CMSService
 } from '../../../services/cms/cms.service';
-import {
-	AntiVirusLandingViewModel
-} from '../../../data-models/security-advisor/widegt-security-landing/antivirus-landing.model';
-import {
-	PasswordManagerLandingViewModel
-} from '../../../data-models/security-advisor/widegt-security-landing/passwordmanager-landing.model';
-import {
-	VpnLandingViewModel
-} from '../../../data-models/security-advisor/widegt-security-landing/vpn-landing.model';
-import {
-	WifiSecurityLandingViewModel
-} from '../../../data-models/security-advisor/widegt-security-landing/wifisecurity-landing.model';
 import {
 	CommonService
 } from 'src/app/services/common/common.service';
@@ -30,13 +17,16 @@ import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { FingerPrintLandingViewModel } from 'src/app/data-models/security-advisor/widegt-security-landing/fingerPrint-landing.model';
-import { WindowsActiveLandingViewModel } from 'src/app/data-models/security-advisor/widegt-security-landing/windowsActive-landing.model';
-import { UacLandingViewModel } from 'src/app/data-models/security-advisor/widegt-security-landing/uac-landing.model';
-import { BitLockerLandingViewModel } from 'src/app/data-models/security-advisor/widegt-security-landing/bitLocker-landing.model';
 import { LandingView } from 'src/app/data-models/security-advisor/widegt-security-landing/landing-view.model';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
-import { SecurityStatusService } from 'src/app/services/security/security-status.service';
+import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
+import { getSecurityLevel, SecurityFeature, securityStatus, retryAntivirus } from 'src/app/data-models/security-advisor/security-status';
+import { WindowsHelloService } from 'src/app/services/security/windowsHello.service';
+import { DeviceService } from 'src/app/services/device/device.service';
+import { toLower } from 'lodash';
+import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
+import { AntivirusService } from 'src/app/services/security/antivirus.service';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -59,15 +49,27 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		percent: 100,
 		fullyProtected: false
 	};
-	pluginSupport = true;
 	currentPage: string;
+	securityAdvisor: SecurityAdvisor;
+	securityFeature: SecurityFeature = {
+		pluginSupport: false,
+		pwdSupport: false,
+		vpnSupport: false
+	};
+	haveOwnList: any;
+	translations: any;
+	securityLevel: any;
 
 	constructor(
 		public vantageShellService: VantageShellService,
 		private cmsService: CMSService,
 		private commonService: CommonService,
 		private localCacheService: LocalCacheService,
-		private securityStatus: SecurityStatusService,
+		private windowsHelloService: WindowsHelloService,
+		private deviceService: DeviceService,
+		private hypSettings: HypothesisService,
+		private antivirusService: AntivirusService,
+		private translate: TranslateService
 	) {}
 
 	@HostListener('window: focus')
@@ -81,34 +83,113 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
-		if (this.securityStatus.wifiSecurity) {
-			this.securityStatus.wifiSecurity.getWifiSecurityState();
-		}
+		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		this.refreshAll();
-		this.securityStatus.setSecurityUI();
-		// this.securityStatus.updateSecurityItems();
-		this.securityStatus.init().then(() => {
-			this.baseItems = this.securityStatus.baseItems;
-			this.intermediateItems = this.securityStatus.intermediateItems;
-			this.advanceItems = this.securityStatus.advanceItems;
-			this.landingStatus = this.securityStatus.landingStatus;
-			this.pluginSupport = this.securityStatus.pluginSupport;
+		if (this.securityAdvisor.wifiSecurity) {
+			this.securityAdvisor.wifiSecurity.getWifiSecurityState();
+		}
+		const wsCacheShowOwn: boolean = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingWifiSecurityShowOwn, false);
+		const vpnCacheShowOwn: boolean = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingVPNShowOwn, false);
+		const pmCacheShowOwn: boolean = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingPasswordManagerShowOwn, false);
+		this.haveOwnList = {
+			passwordManager: pmCacheShowOwn,
+			wifiSecurity: wsCacheShowOwn,
+			vpn: vpnCacheShowOwn
+		};
+		this.securityLevel = {
+			landingStatus: { status: 0, fullyProtected: false, percent: 100 },
+			basicView: [securityStatus.avStatus, securityStatus.fwStatus, this.securityFeature.pluginSupport ? securityStatus.waStatus : undefined],
+			intermediateView: [this.securityFeature.pwdSupport ? securityStatus.pmStatus : undefined, this.securityFeature.pluginSupport ? securityStatus.whStatus : undefined, this.securityFeature.pluginSupport ? securityStatus.uacStatus : undefined],
+			advancedView: [this.securityAdvisor.wifiSecurity.isSupported ? securityStatus.wfStatus : undefined, this.securityFeature.vpnSupport ? securityStatus.vpnStatus : undefined]};
+		this.deviceService.getMachineInfo().then(result => {
+			this.securityFeature.vpnSupport = true;
+			this.securityFeature.pwdSupport = true;
+			if (toLower(result && result.country ? result.country : 'US') === 'cn') {
+				this.securityFeature.vpnSupport = false;
+				this.securityFeature.pwdSupport = false;
+			}
+		}).catch(e => {
+			this.securityFeature.vpnSupport = true;
+			this.securityFeature.pwdSupport = true;
+		}).finally(() => {
+			this.hypSettings.getFeatureSetting('SecurityAdvisor').then((result) => {
+				this.securityFeature.pluginSupport = result === 'true';
+			})
+			.catch((e) => {
+				this.securityFeature.pluginSupport = false;
+			}).finally(() => {
+				this.translate.stream([
+					'common.securityAdvisor.loading',
+					'common.securityAdvisor.enrolled',
+					'common.securityAdvisor.notEnrolled',
+					'common.securityAdvisor.installed',
+					'common.securityAdvisor.installing',
+					'common.securityAdvisor.notInstalled',
+					'common.securityAdvisor.enabled',
+					'common.securityAdvisor.disabled',
+					'common.securityAdvisor.wifi',
+					'common.securityAdvisor.antiVirus',
+					'common.ui.failedLoad',
+					'security.landing.fingerprint',
+					'security.landing.fingerprintContent',
+					'security.landing.visitFingerprint',
+					'security.landing.pwdHealth',
+					'security.landing.passwordContent',
+					'security.landing.haveOwnPassword',
+					'security.landing.goPassword',
+					'security.landing.uac',
+					'security.landing.uacContent',
+					'security.landing.visitUac',
+					'security.landing.vpnVirtual',
+					'security.landing.haveOwnVpn',
+					'security.landing.vpnContent',
+					'security.landing.goVpn',
+					'security.landing.goWifi',
+					'security.landing.wifiContent',
+					'security.landing.haveOwnWifi',
+					'security.landing.windows',
+					'security.landing.windowsActiveContent',
+					'security.landing.visitWindows',
+					'security.landing.firewall',
+					'security.landing.antivirusContent',
+					'security.landing.goAntivirus',
+					'security.landing.firewallContent',
+					'security.landing.goFirewall',
+				]).subscribe((trans: any) => {
+					this.translations = trans;
+					this.securityAdvisor.on('*', () => {
+						this.securityLevel = getSecurityLevel(
+							this.securityAdvisor,
+							this.translations,
+							this.haveOwnList,
+							this.securityFeature,
+							this.antivirusService,
+							this.windowsHelloService,
+							this.localCacheService);
+					});
+				});
+			});
 		});
 		this.fetchCMSArticles();
 	}
 
-	updateStatus(haveOwnList?: any) {
-		this.securityStatus.updateStatus(haveOwnList);
-		this.baseItems = this.securityStatus.baseItems;
-		this.intermediateItems = this.securityStatus.intermediateItems;
-		this.advanceItems = this.securityStatus.advanceItems;
-		this.landingStatus = this.securityStatus.landingStatus;
-		this.pluginSupport = this.securityStatus.pluginSupport;
+	updateStatus(haveOwnList: any) {
+		this.haveOwnList = haveOwnList;
+		this.securityAdvisor.refresh().then(() => {
+			this.securityLevel = getSecurityLevel(
+				this.securityAdvisor,
+				this.translations,
+				haveOwnList,
+				this.securityFeature,
+				this.antivirusService,
+				this.windowsHelloService,
+				this.localCacheService);
+		});
 	}
 
 	ngOnDestroy() {
-		if (this.securityStatus.wifiSecurity) {
-			this.securityStatus.wifiSecurity.cancelGetWifiSecurityState();
+		if (this.securityAdvisor.wifiSecurity) {
+			this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
 		}
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
@@ -116,12 +197,15 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 	}
 
 	refreshAll() {
-		this.securityStatus.refreshAll().then(() => {
-			this.baseItems = this.securityStatus.baseItems;
-			this.intermediateItems = this.securityStatus.intermediateItems;
-			this.advanceItems = this.securityStatus.advanceItems;
-			this.landingStatus = this.securityStatus.landingStatus;
-			this.pluginSupport = this.securityStatus.pluginSupport;
+		this.securityAdvisor.refresh().then(() => {
+			this.securityLevel = getSecurityLevel(
+				this.securityAdvisor,
+				this.translations,
+				this.haveOwnList,
+				this.securityFeature,
+				this.antivirusService,
+				this.windowsHelloService,
+				this.localCacheService);
 		});
 	}
 
@@ -157,7 +241,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	retry(id) {
-		this.securityStatus.retry(id);
+	retry(id: any) {
+		retryAntivirus(id, this.securityAdvisor);
 	}
 }
