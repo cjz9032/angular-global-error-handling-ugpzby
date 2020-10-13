@@ -9,7 +9,7 @@
 						<div class="header">
 							<div class="heading"
 								[id]="UpdateInstallTitleId.CriticalUpdates"
-								role="text">{{criticalUpdates.length}}
+								role="text">{{isUpdateDownloading?criticalUpdatesToInstall.length:criticalUpdates.length}}
 								{{'systemUpdates.criticalUpdates' | translate}}</div>
 							<div class="description"
 								[id]="UpdateInstallTitleId.CriticalUpdates + 'Description'"
@@ -32,7 +32,7 @@
 							<div class="heading"
 								[id]="UpdateInstallTitleId.RecommendedUpdates"
 								tabindex="-1"
-								role="text">{{recommendedUpdates.length}}
+								role="text">{{isUpdateDownloading?recommendedUpdatesToInstall.length:recommendedUpdates.length}}
 								{{'systemUpdates.recommendedUpdates' | translate}}</div>
 							<div class="description"
 								[id]="UpdateInstallTitleId.RecommendedUpdates + 'Description'"
@@ -55,7 +55,7 @@
 							<div class="heading"
 								[id]="UpdateInstallTitleId.OptionalUpdates"
 								tabindex="-1"
-								role="text">{{optionalUpdates.length}}
+								role="text">{{isUpdateDownloading?optionalUpdatesToInstall.length:optionalUpdates.length}}
 								{{'systemUpdates.optionalUpdates' | translate}}</div>
 							<div class="description"
 								[id]="UpdateInstallTitleId.OptionalUpdates + 'Description'"
@@ -79,7 +79,7 @@
 								<div class="heading"
 									[id]="UpdateInstallTitleId.IgnoredUpdates"
 									tabindex="-1"
-									role="text">{{ignoredUpdates.length}}
+									role="text">{{isUpdateDownloading?ignoredUpdatesToInstall.length:ignoredUpdates.length}}
 									{{'systemUpdates.ignoredUpdates' | translate}}</div>
 								<div class="collapse-control"
 									id="su-col-exp-ignore"
