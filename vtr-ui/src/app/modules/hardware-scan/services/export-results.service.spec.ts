@@ -16,11 +16,4 @@ describe('ExportResultsService', () => {
 	it('should be created', () => {
 		expect(service).toBeTruthy();
 	});
-
-	it('Validate exportScanResults call', () => {
-		const spy = spyOn(service, 'exportScanResults');
-
-		service.exportScanResults();
-		expect(spy).toHaveBeenCalled();
-	});
 });

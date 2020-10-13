@@ -588,41 +588,23 @@ export class ExportResultsService {
 		const year = date.getFullYear().toString();
 		const time = date.toTimeString().split(' ');
 
-		return year + maskMonth + maskDay + '_' + time[0].replace(/:/g,'');
+		return year + maskMonth + maskDay + '_' + time[0].replace(/:/g, '');
 	}
 
-	public exportScanResults() {
-
-		if (this.scanLogService) {
-			return new Promise((resolve, reject) => {
-				this.scanLogService.getScanLog()
-				.then((scanLogData) => {
-					this.prepareDataFromScanLog(scanLogData)
-					.then((dataPrepared) => {
-						this.generateScanReport(dataPrepared)
-						.then((htmlData) => {
-							const fileName = 'HardwareScanLog_' + this.getDateAndHour() + '.html';
-							window.Windows.Storage.KnownFolders.documentsLibrary.createFileAsync(fileName)
-							.done((logFile) => {
-								window.Windows.Storage.FileIO.appendTextAsync(logFile, htmlData);
-								resolve();
-							});
-						})
-						.catch((error) => {
-							this.logger.error('Could not generate scan report', error);
-							reject();
-						});
-					})
-					.catch((error) => {
-						this.logger.error('Could not prepare data', error);
-						reject();
-					});
-				})
-				.catch((error) => {
-					this.logger.error('Could not get scan log', error);
-					reject();
-				});
-			});
-		}
+	public async exportScanResults() {
+		return new Promise(async (resolve, reject) => {
+			try {
+				const scanLogData = await this.scanLogService.getScanLog();
+				const dataPrepared = await this.prepareDataFromScanLog(scanLogData);
+				const htmlData = await this.generateScanReport(dataPrepared);
+				const fileName = 'HardwareScanLog_' + this.getDateAndHour() + '.html';
+				const logFile = await window.Windows.Storage.KnownFolders.documentsLibrary.createFileAsync(fileName);
+				await window.Windows.Storage.FileIO.appendTextAsync(logFile, htmlData);
+				resolve();
+			} catch (error) {
+				this.logger.error('Could not get scan log', error);
+				reject();
+			}
+		});
 	}
 }

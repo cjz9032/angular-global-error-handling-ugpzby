@@ -223,12 +223,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public getProgress() {
-		if (this.hardwareScanService) {
-			return this.hardwareScanService.getProgress();
-		}
-	}
-
 	public exportResults() {
 		if (this.exportService) {
 			if (this.hardwareScanService.getScanFinishedHeaderType() === HardwareScanFinishedHeaderType.Scan) {
@@ -317,6 +311,12 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	public refreshModules() {
 		if (this.scanExecutionService) {
 			this.scanExecutionService.refreshModules();
+		}
+	}
+
+	public getProgress() {
+		if (this.hardwareScanService) {
+			return this.hardwareScanService.getProgress();
 		}
 	}
 
