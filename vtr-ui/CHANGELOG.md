@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.23](https://bitbucket.tc.lenovo.com///compare/v1.8.22...v1.8.23) (2020-10-14)
+
+
+### Features
+
+* add a function to calculate the security level ([81b12e5](https://bitbucket.tc.lenovo.com///commit/81b12e5109653e94d6ff667c35d7df95ef37398d))
+* add condition to set UI translations ([cc1c127](https://bitbucket.tc.lenovo.com///commit/cc1c12755c1531fe70443a0abfcbe915e03c69ec))
+* haveownList should not be selectable ([658e9ea](https://bitbucket.tc.lenovo.com///commit/658e9ea9947697b2648609db2608ddfdbf2c6463))
+* **IndexedDB:** VAN-22497 migrate newly added key; Remove comment codes ([930ff48](https://bitbucket.tc.lenovo.com///commit/930ff48a5f41f5dcdbfc35bc8b47306c101ddfe9))
+
+
+### Bug Fixes
+
+* add localcache for security level ([658523e](https://bitbucket.tc.lenovo.com///commit/658523ed041d10a8502a161ea12e9f88677ff1fd))
+
 ### [1.8.22](https://bitbucket.tc.lenovo.com///compare/v1.8.21...v1.8.22) (2020-10-13)
 
 
