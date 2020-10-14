@@ -673,18 +673,20 @@
 											[theme]="'white'"
 											(toggleOnOff)="onAutoScreenOffToggle($event)"
 											[isDisabled]="false"
-											[isSwitchChecked]="intelligentScreen.isAutoScreenOffEnabled">
-										</vtr-ui-row-switch>
-										<div class="row"
-											*ngIf="intelligentScreen.isAutoScreenOffNoteVisible && intelligentScreen.isAutoScreenOffEnabled">
-											<div class="feature-note auto-screen-off-note auto-screen-off-note-red p-4">
-												<p 
-													id="smart-assist-auto-screen-off-note" 
-													[innerHTML]="'device.smartAssist.intelligentScreen.autoScreenOff.note' | translate"
-												>
-												</p>
+											[isSwitchChecked]="intelligentScreen.isAutoScreenOffEnabled"
+											[showChildContent]="true"
+											[isLastChild]="!intelligentScreen.isReadingOrBrowsingVisible">
+											<div class="row"
+												*ngIf="intelligentScreen.isAutoScreenOffNoteVisible && intelligentScreen.isAutoScreenOffEnabled">
+												<div class="feature-note auto-screen-off-note auto-screen-off-note-red p-4 mb-3">
+													<p
+														id="smart-assist-auto-screen-off-note"
+														[innerHTML]="'device.smartAssist.intelligentScreen.autoScreenOff.note' | translate"
+													>
+													</p>
+												</div>
 											</div>
-										</div>
+										</vtr-ui-row-switch>
 									</li>
 									<li class="pt-3 keep-my-display-block"
 										*ngIf='intelligentScreen.isReadingOrBrowsingVisible'>
