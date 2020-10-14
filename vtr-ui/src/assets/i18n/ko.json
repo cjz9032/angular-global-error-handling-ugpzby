@@ -4278,7 +4278,8 @@
         "executingScanTitle": "{{title}} 검사 중",
         "showDetails": "세부 사항 보기",
         "hideDetails": "세부 사항 숨김",
-        "na": "N/A"
+        "na": "N/A",
+        "exportLog": "로그 내보내기"
     },
     "smartPerformance": {
         "title": "Smart Performance",

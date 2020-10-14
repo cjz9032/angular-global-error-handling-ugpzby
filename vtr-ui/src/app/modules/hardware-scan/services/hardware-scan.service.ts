@@ -11,6 +11,7 @@ import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.servic
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LoggerService } from '../../../services/logger/logger.service';
 import { LocalCacheService } from '../../../services/local-cache/local-cache.service';
+import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 
 @Injectable({
 	providedIn: 'root'
@@ -512,6 +513,7 @@ export class HardwareScanService {
 			}, cancelHandler)
 				.then((response) => {
 					if (response !== null && response.finalResultCode !== null) {
+						this.commonService.setSessionStorageValue(SessionStorageKey.HwScanHasExportLogData, true);
 						this.executingModule = undefined;
 						this.lastResponse = response;
 						return response;

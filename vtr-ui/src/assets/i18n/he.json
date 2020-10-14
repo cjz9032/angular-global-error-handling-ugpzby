@@ -4278,7 +4278,8 @@
         "executingScanTitle": "סורק את {{title}}",
         "showDetails": "הצגת פרטים",
         "hideDetails": "הסתרת פרטים",
-        "na": "לא ישים"
+        "na": "לא ישים",
+        "exportLog": "יומן ייצוא"
     },
     "smartPerformance": {
         "title": "השירות Smart Performance",

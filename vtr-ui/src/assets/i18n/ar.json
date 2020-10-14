@@ -4280,7 +4280,8 @@
         "executingScanTitle": "جارٍ فحص {{title}}",
         "showDetails": "عرض التفاصيل",
         "hideDetails": "إخفاء التفاصيل",
-        "na": "غير مطبّق"
+        "na": "غير مطبّق",
+        "exportLog": "سجل التصدير"
     },
     "smartPerformance": {
         "title": "Smart Performance",

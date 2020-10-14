@@ -4278,7 +4278,8 @@
         "executingScanTitle": "Snímání {{title}}",
         "showDetails": "Zobrazit podrobnosti",
         "hideDetails": "Skrýt podrobnosti",
-        "na": "není k dispozici"
+        "na": "není k dispozici",
+        "exportLog": "Exportovat protokol"
     },
     "smartPerformance": {
         "title": "Smart Performance",

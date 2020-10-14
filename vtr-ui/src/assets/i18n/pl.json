@@ -4278,7 +4278,8 @@
         "executingScanTitle": "Skanowanie {{title}}",
         "showDetails": "Wyświetl szczegóły",
         "hideDetails": "Ukryj szczegóły",
-        "na": "Nie dot."
+        "na": "Nie dot.",
+        "exportLog": "Eksportuj dziennik"
     },
     "smartPerformance": {
         "title": "Smart Performance",

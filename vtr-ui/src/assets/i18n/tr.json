@@ -4278,7 +4278,8 @@
         "executingScanTitle": "{{title}} taranıyor",
         "showDetails": "Ayrıntıları Görüntüle",
         "hideDetails": "Ayrıntıları Gizle",
-        "na": "Yok"
+        "na": "Yok",
+        "exportLog": "Günlüğü Dışa Aktar"
     },
     "smartPerformance": {
         "title": "Smart Performance",

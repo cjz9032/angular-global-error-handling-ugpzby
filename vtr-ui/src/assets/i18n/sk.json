@@ -4278,7 +4278,8 @@
         "executingScanTitle": "Skenovanie {{title}}",
         "showDetails": "Zobraziť podrobnosti",
         "hideDetails": "Skryť podrobnosti",
-        "na": "–"
+        "na": "–",
+        "exportLog": "Exportovať denník"
     },
     "smartPerformance": {
         "title": "Smart Performance",

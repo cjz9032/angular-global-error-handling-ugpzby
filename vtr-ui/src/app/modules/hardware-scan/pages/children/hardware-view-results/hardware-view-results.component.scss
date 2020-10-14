@@ -6,6 +6,13 @@
 		@include high-contrast-border;
 	}
 
+	.header {
+		padding: 1rem 2.4rem 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
 	.hardwarescan-background {
 		border-radius: 0.5rem;
 		border-bottom-left-radius: 0rem;
@@ -22,8 +29,6 @@
 	}
 
 	.header2{
-		padding: 1rem 1.5rem;
-		align-items: center;
 		color: $menu_hover;
 		font-size: $fontsize_xl;
 		font-weight: $weight_light;

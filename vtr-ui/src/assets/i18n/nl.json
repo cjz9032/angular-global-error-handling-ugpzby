@@ -4278,7 +4278,8 @@
         "executingScanTitle": "{{title}} scannen",
         "showDetails": "Gegevens weergeven",
         "hideDetails": "Gegevens verbergen",
-        "na": "N.v.t."
+        "na": "N.v.t.",
+        "exportLog": "Logboek exporteren"
     },
     "smartPerformance": {
         "title": "Smart Performance",

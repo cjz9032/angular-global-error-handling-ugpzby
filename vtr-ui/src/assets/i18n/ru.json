@@ -4278,7 +4278,8 @@
         "executingScanTitle": "Сканирование {{title}}",
         "showDetails": "Просмотреть сведения",
         "hideDetails": "Скрыть сведения",
-        "na": "Нет"
+        "na": "Нет",
+        "exportLog": "Экспорт журнала"
     },
     "smartPerformance": {
         "title": "Smart Performance",

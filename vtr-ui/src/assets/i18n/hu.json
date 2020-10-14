@@ -4278,7 +4278,8 @@
         "executingScanTitle": "{{title}} vizsgálata",
         "showDetails": "Részletek megtekintése",
         "hideDetails": "Részletek elrejtése",
-        "na": "Nem alk."
+        "na": "Nem alk.",
+        "exportLog": "Napló exportálása"
     },
     "smartPerformance": {
         "title": "Smart Performance",

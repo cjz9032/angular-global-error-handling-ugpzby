@@ -4278,7 +4278,8 @@
         "executingScanTitle": "正在扫描 {{title}}",
         "showDetails": "查看详细信息",
         "hideDetails": "隐藏详细信息",
-        "na": "不适用"
+        "na": "不适用",
+        "exportLog": "导出日志"
     },
     "smartPerformance": {
         "title": "Smart Performance",

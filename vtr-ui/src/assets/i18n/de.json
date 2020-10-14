@@ -4278,7 +4278,8 @@
         "executingScanTitle": "{{title}} wird gescannt",
         "showDetails": "Details anzeigen",
         "hideDetails": "Details ausblenden",
-        "na": "N/A"
+        "na": "N/A",
+        "exportLog": "Protokoll exportieren"
     },
     "smartPerformance": {
         "title": "Smart Performance",

@@ -4278,7 +4278,8 @@
         "executingScanTitle": "A analisar {{title}}",
         "showDetails": "Ver Detalhes",
         "hideDetails": "Ocultar Detalhes",
-        "na": "N/A"
+        "na": "N/A",
+        "exportLog": "Exportar Registo"
     },
     "smartPerformance": {
         "title": "Smart Performance",

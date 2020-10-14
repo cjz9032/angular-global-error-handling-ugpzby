@@ -4,9 +4,24 @@
 		<vtr-hardware-scan-finished-header></vtr-hardware-scan-finished-header>
 	</div>
 
-
 	<div class="body-content">
-		<h2 id="hwscan-components-title" role="heading" class="header2">{{ 'hardwareScan.hardwareComponents' | translate }}</h2>
+		<div class="row px-0">
+			<div class="col-12 header">
+				<h2 id="hwscan-components-title" role="heading" class="header2">{{ 'hardwareScan.hardwareComponents' | translate }}</h2>
+				<vtr-ui-hyperlink-button class="refresh-button"
+					linkId="hwscan-view-results-export-log-btn"
+					linkRole="button"
+					*ngIf="isFeatureExportAvailable"
+					hyperlinkStyle="xs-300-blue-lighter"
+					metricsEvent="FeatureClick"
+					metricsParent="HardwareScan.ViewResults"
+					metricsItem="ViewResults.ExportLog"
+					[imgIconSrc]="'assets/icons/hardware-scan/icon_hardware_export-log.svg'"
+					[label]="'hardwareScan.exportLog' | translate"
+					(hyperlinkClick)="exportResults()">
+				</vtr-ui-hyperlink-button>
+			</div>
+		</div>
 		<hr>
 
 		<!-- Defines the last test list executed -->

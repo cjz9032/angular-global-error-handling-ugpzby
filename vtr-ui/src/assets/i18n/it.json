@@ -4278,7 +4278,8 @@
         "executingScanTitle": "Scansione di {{title}} in corso",
         "showDetails": "Visualizza dettagli ",
         "hideDetails": "Nascondi dettagli",
-        "na": "N/D"
+        "na": "N/D",
+        "exportLog": "Esporta log"
     },
     "smartPerformance": {
         "title": "Smart Performance",

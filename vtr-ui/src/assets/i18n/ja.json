@@ -4278,7 +4278,8 @@
         "executingScanTitle": "{{title}} をスキャン中",
         "showDetails": "詳細の表示",
         "hideDetails": "詳細の非表示",
-        "na": "N/A"
+        "na": "N/A",
+        "exportLog": "ログのエクスポート"
     },
     "smartPerformance": {
         "title": "Smart Performance",

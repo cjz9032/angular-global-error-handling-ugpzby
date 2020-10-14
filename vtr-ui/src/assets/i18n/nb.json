@@ -4278,7 +4278,8 @@
         "executingScanTitle": "Skanner {{title}}",
         "showDetails": "Vis detaljer",
         "hideDetails": "Skjul detaljer",
-        "na": "N/A"
+        "na": "N/A",
+        "exportLog": "Eksporter loggen"
     },
     "smartPerformance": {
         "title": "Smart Performance",

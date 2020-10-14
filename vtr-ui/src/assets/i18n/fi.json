@@ -4278,7 +4278,8 @@
         "executingScanTitle": "Tarkistetaan {{title}}",
         "showDetails": "Näytä tiedot",
         "hideDetails": "Piilota tiedot",
-        "na": "Ei käytössä"
+        "na": "Ei käytössä",
+        "exportLog": "Vie loki"
     },
     "smartPerformance": {
         "title": "Smart Performance",

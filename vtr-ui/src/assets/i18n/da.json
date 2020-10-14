@@ -4278,7 +4278,8 @@
         "executingScanTitle": "Søger i {{title}}",
         "showDetails": "Vis detaljer ",
         "hideDetails": "Skjul detaljer",
-        "na": "Ikke tilgængelig"
+        "na": "Ikke tilgængelig",
+        "exportLog": "Eksportér log"
     },
     "smartPerformance": {
         "title": "Smart Performance",

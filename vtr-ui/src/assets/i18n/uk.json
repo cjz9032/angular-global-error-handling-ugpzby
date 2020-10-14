@@ -4278,7 +4278,8 @@
         "executingScanTitle": "Сканування {{title}}",
         "showDetails": "Переглянути відомості",
         "hideDetails": "Приховати відомості",
-        "na": "н. д."
+        "na": "н. д.",
+        "exportLog": "Експортувати журнал"
     },
     "smartPerformance": {
         "title": "Smart Performance",

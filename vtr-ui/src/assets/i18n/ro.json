@@ -4278,7 +4278,8 @@
         "executingScanTitle": "Se scanează {{title}}",
         "showDetails": "Vizualizare detalii",
         "hideDetails": "Ascundere detalii",
-        "na": "N/A"
+        "na": "N/A",
+        "exportLog": "Exportați jurnalul"
     },
     "smartPerformance": {
         "title": "Smart Performance",

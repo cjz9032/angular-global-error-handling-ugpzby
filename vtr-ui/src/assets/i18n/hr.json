@@ -4278,7 +4278,8 @@
         "executingScanTitle": "Skeniranje {{title}}",
         "showDetails": "Prikaži detalje",
         "hideDetails": "Sakrij detalje",
-        "na": "Nije dostupno"
+        "na": "Nije dostupno",
+        "exportLog": "Izvoz zapisnika"
     },
     "smartPerformance": {
         "title": "Smart Performance",

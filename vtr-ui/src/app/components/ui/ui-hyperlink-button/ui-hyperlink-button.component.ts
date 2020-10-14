@@ -35,6 +35,7 @@ export class UiHyperlinkButtonComponent implements OnInit {
 
 	@Input() faIcon: IconProp;
 	@Input() faIconStyle: string;
+	@Input() imgIconSrc: string;
 
 	@Output() hyperlinkClick = new EventEmitter();
 
