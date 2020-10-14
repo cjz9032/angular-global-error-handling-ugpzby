@@ -17,5 +17,9 @@ export enum SessionStorageKey {
 	WidgetWifiStatus = '[SessionStorageKey] WidgetWifiStatus',
 	ChsLocationDialogNextShowFlag = '[SessionStorageKey] ChsLocationDialogNextShowFlag',
 	WarrantyDataCache = '[SessionStorageKey] WarrantyDataCache',
-	FirstPageLoaded = '[SessionStorageKey] FirstPageLoaded'
+	FirstPageLoaded = '[SessionStorageKey] FirstPageLoaded',
+
+	// Hardware Scan enums
+	HwScanHasExportLogData = '[SessionStorageKey] HwScan-HasExportLogData'
+
 }

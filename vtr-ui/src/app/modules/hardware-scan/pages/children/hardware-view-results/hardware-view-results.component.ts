@@ -9,6 +9,9 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { HardwareScanMetricsService } from '../../../services/hardware-scan-metrics.service';
 import { HardwareScanFeaturesService } from '../../../services/hardware-scan-features.service';
+import { CommonService } from 'src/app/services/common/common.service';
+import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
+
 
 @Component({
 	selector: 'vtr-hardware-view-results',
@@ -23,10 +26,6 @@ export class HardwareViewResultsComponent implements OnInit, OnDestroy {
 	public showProgress = false;
 	public isLoadingDone = false;
 
-	public get isFeatureExportAvailable(): boolean {
-		return this.hardwareScanFeaturesService.isExportLogAvailable;
-	}
-
 	// "Wrapper" value to be accessed from the HTML
 	public testResultEnum = HardwareScanTestResult;
 
@@ -40,6 +39,7 @@ export class HardwareViewResultsComponent implements OnInit, OnDestroy {
 		private timerService: TimerService,
 		private hardwareScanMetricsService: HardwareScanMetricsService,
 		private hardwareScanFeaturesService: HardwareScanFeaturesService,
+		private commonService: CommonService
 	) { }
 
 	ngOnInit() {
@@ -60,6 +60,10 @@ export class HardwareViewResultsComponent implements OnInit, OnDestroy {
 
 		// Sets the Header with the type "None"
 		this.hardwareScanService.setScanFinishedHeaderType(HardwareScanFinishedHeaderType.None);
+	}
+
+	public get isFeatureExportAvailable(): boolean {
+		return this.hardwareScanFeaturesService.isExportLogAvailable && this.commonService.getSessionStorageValue(SessionStorageKey.HwScanHasExportLogData);
 	}
 
 	public exportResults() {
