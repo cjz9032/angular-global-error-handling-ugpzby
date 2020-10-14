@@ -4231,29 +4231,29 @@
         "processFinishedCannotBeCanceled": "Выполняемый процесс больше не требует отмены, так как он уже завершен.",
         "cancelMayTakeSomeTime": "Подождите. Отмена может занять некоторое время в зависимости от конфигурации системы.",
         "report": {
-            "title": "Hardware Diagnostics Log",
-            "modelTitle": "Model",
-            "startDate": "Start Date and Time",
-            "endDate": "End Date and Time",
+            "title": "Журнал диагностики оборудования",
+            "modelTitle": "Модель",
+            "startDate": "Дата и время начала",
+            "endDate": "Дата и время завершения",
             "model": {
-                "serialNumber": "Serial Number",
-                "wiredInterface": "Wired Ethernet Mac Address",
-                "wirelessInterface": "Wireless Mac Address",
-                "biosVersion": "BIOS Version",
-                "productName": "Product Name"
+                "serialNumber": "Серийный номер",
+                "wiredInterface": "Mac-адрес проводной сети Ethernet",
+                "wirelessInterface": "Mac-адрес проводной сети",
+                "biosVersion": "Версия BIOS",
+                "productName": "Название продукта"
             },
-            "resources": "Resources",
-            "tests": "Tests",
-            "totalModulesTested": "Total Modules Tested",
-            "environmentTitle": "Environment",
+            "resources": "Ресурсы",
+            "tests": "Тесты",
+            "totalModulesTested": "Всего модулей протестировано",
+            "environmentTitle": "Среда",
             "environment": {
-                "applicationVersion": "Application Version",
-                "pluginVersion": "Plugin Version",
-                "experienceVersion": "Experience Version",
-                "shellVersion": "Shell Version",
-                "bridgeVersion": "Bridge Version"
+                "applicationVersion": "Версия приложения",
+                "pluginVersion": "Версия подключаемого модуля",
+                "experienceVersion": "Версия системы",
+                "shellVersion": "Версия оболочки",
+                "bridgeVersion": "Версия моста"
             },
-            "testResult": "Test Result"
+            "testResult": "Результат теста"
         },
         "scanFailureModal": {
             "title": "Обнаружена проблема с оборудованием",

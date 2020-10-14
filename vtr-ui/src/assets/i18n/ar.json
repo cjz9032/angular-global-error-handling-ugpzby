@@ -4233,29 +4233,29 @@
         "processFinishedCannotBeCanceled": "لا داعي لإلغاء العملية قيد التشغيل بعد الآن، حيث إنها قد اكتملت.",
         "cancelMayTakeSomeTime": "يرجى الانتظار، قد يستغرق الأمر بعض الوقت للإلغاء حسب نظامك.",
         "report": {
-            "title": "Hardware Diagnostics Log",
-            "modelTitle": "Model",
-            "startDate": "Start Date and Time",
-            "endDate": "End Date and Time",
+            "title": "سجل عمليات تشخيص الأجهزة",
+            "modelTitle": "الطراز",
+            "startDate": "‏‫تاريخ ووقت البدء",
+            "endDate": "‏‫تاريخ ووقت الانتهاء",
             "model": {
-                "serialNumber": "Serial Number",
-                "wiredInterface": "Wired Ethernet Mac Address",
-                "wirelessInterface": "Wireless Mac Address",
-                "biosVersion": "BIOS Version",
-                "productName": "Product Name"
+                "serialNumber": "الرقم التسلسلي",
+                "wiredInterface": "عنوان Mac لشبكة Ethernet السلكية",
+                "wirelessInterface": "عنوان Mac اللاسلكي",
+                "biosVersion": "إصدار BIOS",
+                "productName": "اسم المنتج"
             },
-            "resources": "Resources",
-            "tests": "Tests",
-            "totalModulesTested": "Total Modules Tested",
-            "environmentTitle": "Environment",
+            "resources": "الموارد",
+            "tests": "الاختبارات",
+            "totalModulesTested": "إجمالي الوحدات التي تم اختبارها",
+            "environmentTitle": "البيئة",
             "environment": {
-                "applicationVersion": "Application Version",
-                "pluginVersion": "Plugin Version",
-                "experienceVersion": "Experience Version",
-                "shellVersion": "Shell Version",
-                "bridgeVersion": "Bridge Version"
+                "applicationVersion": "إصدار التطبيق",
+                "pluginVersion": "إصدار البرنامج الإضافي",
+                "experienceVersion": "إصدار Experience",
+                "shellVersion": "إصدار Shell",
+                "bridgeVersion": "إصدار Bridge"
             },
-            "testResult": "Test Result"
+            "testResult": "نتيجة الاختبار"
         },
         "scanFailureModal": {
             "title": "اكتشاف مشاكل تتعلق بالأجهزة",

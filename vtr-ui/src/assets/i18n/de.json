@@ -4231,29 +4231,29 @@
         "processFinishedCannotBeCanceled": "Der laufende Prozess muss nicht mehr abgebrochen werden, da er abgeschlossen ist.",
         "cancelMayTakeSomeTime": "Bitte warten Sie einen Moment, je nach System kann der Abbruch einige Zeit in Anspruch nehmen.",
         "report": {
-            "title": "Hardware Diagnostics Log",
-            "modelTitle": "Model",
-            "startDate": "Start Date and Time",
-            "endDate": "End Date and Time",
+            "title": "Hardwarediagnoseprotokoll",
+            "modelTitle": "Modell",
+            "startDate": "Startdatum und ‑uhrzeit",
+            "endDate": "Enddatum und ‑uhrzeit",
             "model": {
-                "serialNumber": "Serial Number",
-                "wiredInterface": "Wired Ethernet Mac Address",
-                "wirelessInterface": "Wireless Mac Address",
+                "serialNumber": "Seriennummer",
+                "wiredInterface": "LAN – Mac-Adresse",
+                "wirelessInterface": "WLAN – Mac-Adresse",
                 "biosVersion": "BIOS Version",
-                "productName": "Product Name"
+                "productName": "Produktname"
             },
-            "resources": "Resources",
+            "resources": "Ressourcen",
             "tests": "Tests",
-            "totalModulesTested": "Total Modules Tested",
-            "environmentTitle": "Environment",
+            "totalModulesTested": "Getestete Module insgesamt",
+            "environmentTitle": "Umgebung",
             "environment": {
-                "applicationVersion": "Application Version",
-                "pluginVersion": "Plugin Version",
-                "experienceVersion": "Experience Version",
-                "shellVersion": "Shell Version",
-                "bridgeVersion": "Bridge Version"
+                "applicationVersion": "Anwendungsversion",
+                "pluginVersion": "Plug-in-Version",
+                "experienceVersion": "Experience-Version",
+                "shellVersion": "Shell-Version",
+                "bridgeVersion": "Bridge-Version"
             },
-            "testResult": "Test Result"
+            "testResult": "Testergebnis"
         },
         "scanFailureModal": {
             "title": "Hardwareproblem erkannt",

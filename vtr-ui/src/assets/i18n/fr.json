@@ -4231,29 +4231,29 @@
         "processFinishedCannotBeCanceled": "Le processus en cours d'exécution n'a plus besoin d'être annulé, puisqu'il est terminé.",
         "cancelMayTakeSomeTime": "L'annulation peut prendre un certain temps en fonction de votre système. Merci de patienter.",
         "report": {
-            "title": "Hardware Diagnostics Log",
-            "modelTitle": "Model",
-            "startDate": "Start Date and Time",
-            "endDate": "End Date and Time",
+            "title": "Journal de diagnostic du matériel",
+            "modelTitle": "Modèle",
+            "startDate": "Date et heure de début",
+            "endDate": "Date et heure de fin",
             "model": {
-                "serialNumber": "Serial Number",
-                "wiredInterface": "Wired Ethernet Mac Address",
-                "wirelessInterface": "Wireless Mac Address",
-                "biosVersion": "BIOS Version",
-                "productName": "Product Name"
+                "serialNumber": "Numéro de série",
+                "wiredInterface": "Adresse Mac Ethernet câblé",
+                "wirelessInterface": "Adresse Mac sans fil",
+                "biosVersion": "Version BIOS",
+                "productName": "Nom du produit"
             },
-            "resources": "Resources",
+            "resources": "Ressources",
             "tests": "Tests",
-            "totalModulesTested": "Total Modules Tested",
-            "environmentTitle": "Environment",
+            "totalModulesTested": "Nombre de modules testés",
+            "environmentTitle": "Environnement",
             "environment": {
-                "applicationVersion": "Application Version",
-                "pluginVersion": "Plugin Version",
-                "experienceVersion": "Experience Version",
-                "shellVersion": "Shell Version",
-                "bridgeVersion": "Bridge Version"
+                "applicationVersion": "Version de l'application",
+                "pluginVersion": "Version du module d'extension",
+                "experienceVersion": "Version de l'expérience",
+                "shellVersion": "Version shell",
+                "bridgeVersion": "Version de passerelle"
             },
-            "testResult": "Test Result"
+            "testResult": "Résultat du test"
         },
         "scanFailureModal": {
             "title": "Problème matériel détecté",

@@ -4231,29 +4231,29 @@
         "processFinishedCannotBeCanceled": "Procesul care rulează nu mai trebuie anulat, deoarece este finalizat.",
         "cancelMayTakeSomeTime": "Așteptați, anularea poate dura un anumit timp, în funcție de sistemul dumneavoastră.",
         "report": {
-            "title": "Hardware Diagnostics Log",
+            "title": "Jurnal de diagnosticare hardware",
             "modelTitle": "Model",
-            "startDate": "Start Date and Time",
-            "endDate": "End Date and Time",
+            "startDate": "Data și ora de început",
+            "endDate": "Data și ora de sfârșit",
             "model": {
-                "serialNumber": "Serial Number",
-                "wiredInterface": "Wired Ethernet Mac Address",
-                "wirelessInterface": "Wireless Mac Address",
-                "biosVersion": "BIOS Version",
-                "productName": "Product Name"
+                "serialNumber": "Număr de serie",
+                "wiredInterface": "Adresă Mac Ethernet cu fir",
+                "wirelessInterface": "Adresă Mac fără fir",
+                "biosVersion": "Versiune BIOS",
+                "productName": "Denumire produs"
             },
-            "resources": "Resources",
-            "tests": "Tests",
-            "totalModulesTested": "Total Modules Tested",
-            "environmentTitle": "Environment",
+            "resources": "Resurse",
+            "tests": "Teste",
+            "totalModulesTested": "Total module testate",
+            "environmentTitle": "Mediu",
             "environment": {
-                "applicationVersion": "Application Version",
-                "pluginVersion": "Plugin Version",
-                "experienceVersion": "Experience Version",
-                "shellVersion": "Shell Version",
-                "bridgeVersion": "Bridge Version"
+                "applicationVersion": "Versiune aplicație",
+                "pluginVersion": "Versiune plugin",
+                "experienceVersion": "Versiune experiență",
+                "shellVersion": "Versiune shell",
+                "bridgeVersion": "Versiune bridge"
             },
-            "testResult": "Test Result"
+            "testResult": "Rezultat test"
         },
         "scanFailureModal": {
             "title": "A fost detectată o problemă hardware",

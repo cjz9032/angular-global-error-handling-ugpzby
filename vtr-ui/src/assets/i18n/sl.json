@@ -4231,29 +4231,29 @@
         "processFinishedCannotBeCanceled": "Procesa, ki se izvaja, ni več treba preklicati, ker je dokončan.",
         "cancelMayTakeSomeTime": "Počakajte. Preklic lahko traja nekaj časa, odvisno od sistema.",
         "report": {
-            "title": "Hardware Diagnostics Log",
+            "title": "Dnevnik diagnostike strojne opreme",
             "modelTitle": "Model",
-            "startDate": "Start Date and Time",
-            "endDate": "End Date and Time",
+            "startDate": "Datum in ura začetka",
+            "endDate": "Datum in ura konca",
             "model": {
-                "serialNumber": "Serial Number",
-                "wiredInterface": "Wired Ethernet Mac Address",
-                "wirelessInterface": "Wireless Mac Address",
-                "biosVersion": "BIOS Version",
-                "productName": "Product Name"
+                "serialNumber": "Serijska številka",
+                "wiredInterface": "Naslov Mac žičnega etherneta",
+                "wirelessInterface": "Naslov Mac brezžičnega omrežja",
+                "biosVersion": "Različica BIOS-a",
+                "productName": "Ime izdelka"
             },
-            "resources": "Resources",
-            "tests": "Tests",
-            "totalModulesTested": "Total Modules Tested",
-            "environmentTitle": "Environment",
+            "resources": "Sredstva",
+            "tests": "Preskusi",
+            "totalModulesTested": "Skupno število preskušenih modulov",
+            "environmentTitle": "Okolje",
             "environment": {
-                "applicationVersion": "Application Version",
-                "pluginVersion": "Plugin Version",
-                "experienceVersion": "Experience Version",
-                "shellVersion": "Shell Version",
-                "bridgeVersion": "Bridge Version"
+                "applicationVersion": "Različica aplikacije",
+                "pluginVersion": "Različica vtičnika",
+                "experienceVersion": "Različica izkušnje",
+                "shellVersion": "Različica lupine",
+                "bridgeVersion": "Različica mostu"
             },
-            "testResult": "Test Result"
+            "testResult": "Rezultat preskusa"
         },
         "scanFailureModal": {
             "title": "Zaznana je težava s strojno opremo",

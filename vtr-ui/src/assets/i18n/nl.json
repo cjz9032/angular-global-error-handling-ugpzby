@@ -4231,29 +4231,29 @@
         "processFinishedCannotBeCanceled": "Het actieve proces is voltooid en hoeft niet meer te worden geannuleerd.",
         "cancelMayTakeSomeTime": "Een ogenblik geduld, het annuleren kan even duren, afhankelijk van uw systeem.",
         "report": {
-            "title": "Hardware Diagnostics Log",
+            "title": "Logboek voor hardwarediagnose",
             "modelTitle": "Model",
-            "startDate": "Start Date and Time",
-            "endDate": "End Date and Time",
+            "startDate": "Begindatum en -tijd",
+            "endDate": "Einddatum en -tijd",
             "model": {
-                "serialNumber": "Serial Number",
-                "wiredInterface": "Wired Ethernet Mac Address",
-                "wirelessInterface": "Wireless Mac Address",
-                "biosVersion": "BIOS Version",
-                "productName": "Product Name"
+                "serialNumber": "Serienummer",
+                "wiredInterface": "Mac-adres bekabeld ethernet",
+                "wirelessInterface": "Mac-adres draadloze verbinding",
+                "biosVersion": "BIOS-versie",
+                "productName": "Productnaam"
             },
-            "resources": "Resources",
+            "resources": "Bronnen",
             "tests": "Tests",
-            "totalModulesTested": "Total Modules Tested",
-            "environmentTitle": "Environment",
+            "totalModulesTested": "Totaalaantal geteste modules",
+            "environmentTitle": "Omgeving",
             "environment": {
-                "applicationVersion": "Application Version",
-                "pluginVersion": "Plugin Version",
-                "experienceVersion": "Experience Version",
-                "shellVersion": "Shell Version",
-                "bridgeVersion": "Bridge Version"
+                "applicationVersion": "Versie toepassing",
+                "pluginVersion": "Versie invoegtoepassing",
+                "experienceVersion": "Versie ervaring",
+                "shellVersion": "Versie shell",
+                "bridgeVersion": "Versie bridge"
             },
-            "testResult": "Test Result"
+            "testResult": "Testresultaat"
         },
         "scanFailureModal": {
             "title": "Probleem in hardware aangetroffen",

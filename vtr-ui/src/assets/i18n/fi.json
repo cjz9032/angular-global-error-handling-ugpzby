@@ -4231,29 +4231,29 @@
         "processFinishedCannotBeCanceled": "Käynnissä olevaa prosessia ei tarvitse peruuttaa enää, koska se on suoritettu loppuun.",
         "cancelMayTakeSomeTime": "Odota hetki, peruutus saattaa kestää jonkin aikaa järjestelmästäsi riippuen.",
         "report": {
-            "title": "Hardware Diagnostics Log",
-            "modelTitle": "Model",
-            "startDate": "Start Date and Time",
-            "endDate": "End Date and Time",
+            "title": "Laitteiston vianmääritysloki",
+            "modelTitle": "Malli",
+            "startDate": "Aloituspäivä ja -aika",
+            "endDate": "Päättymispäivä ja -aika",
             "model": {
-                "serialNumber": "Serial Number",
-                "wiredInterface": "Wired Ethernet Mac Address",
-                "wirelessInterface": "Wireless Mac Address",
-                "biosVersion": "BIOS Version",
-                "productName": "Product Name"
+                "serialNumber": "Sarjanumero",
+                "wiredInterface": "Langallisen Ethernetin Mac-osoite",
+                "wirelessInterface": "Langaton Mac-osoite",
+                "biosVersion": "BIOS-versio",
+                "productName": "Tuotteen nimi"
             },
-            "resources": "Resources",
-            "tests": "Tests",
-            "totalModulesTested": "Total Modules Tested",
-            "environmentTitle": "Environment",
+            "resources": "Resurssit",
+            "tests": "Testit",
+            "totalModulesTested": "Testattuja moduuleja yhteensä",
+            "environmentTitle": "Käyttöympäristö",
             "environment": {
-                "applicationVersion": "Application Version",
-                "pluginVersion": "Plugin Version",
-                "experienceVersion": "Experience Version",
-                "shellVersion": "Shell Version",
-                "bridgeVersion": "Bridge Version"
+                "applicationVersion": "Sovelluksen versio",
+                "pluginVersion": "Laajennusosan versio",
+                "experienceVersion": "Käyttökokemuksen versio",
+                "shellVersion": "Shell-versio",
+                "bridgeVersion": "Sillan versio"
             },
-            "testResult": "Test Result"
+            "testResult": "Testitulos"
         },
         "scanFailureModal": {
             "title": "Laitteisto-ongelma havaittiin",

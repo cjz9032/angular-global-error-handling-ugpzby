@@ -4231,29 +4231,29 @@
         "processFinishedCannotBeCanceled": "Den kjørende prosessen trenger ikke lenger å avbrytes fordi den er fullført.",
         "cancelMayTakeSomeTime": "Vent litt. Det kan ta litt tid å avbryte, avhengig av systemet.",
         "report": {
-            "title": "Hardware Diagnostics Log",
-            "modelTitle": "Model",
-            "startDate": "Start Date and Time",
-            "endDate": "End Date and Time",
+            "title": "Logg for maskinvarediagnose",
+            "modelTitle": "Modell",
+            "startDate": "Startdato og -klokkeslett",
+            "endDate": "Sluttdato og -klokkeslett",
             "model": {
-                "serialNumber": "Serial Number",
-                "wiredInterface": "Wired Ethernet Mac Address",
-                "wirelessInterface": "Wireless Mac Address",
-                "biosVersion": "BIOS Version",
-                "productName": "Product Name"
+                "serialNumber": "Serienummer",
+                "wiredInterface": "Mac-adresse til kablet Ethernet",
+                "wirelessInterface": "Trådløs Mac-adresse",
+                "biosVersion": "BIOS-versjon",
+                "productName": "Produktnavn"
             },
-            "resources": "Resources",
-            "tests": "Tests",
-            "totalModulesTested": "Total Modules Tested",
-            "environmentTitle": "Environment",
+            "resources": "Ressurser",
+            "tests": "Tester",
+            "totalModulesTested": "Testede moduler totalt",
+            "environmentTitle": "Omgivelser",
             "environment": {
-                "applicationVersion": "Application Version",
-                "pluginVersion": "Plugin Version",
-                "experienceVersion": "Experience Version",
-                "shellVersion": "Shell Version",
-                "bridgeVersion": "Bridge Version"
+                "applicationVersion": "Programversjon",
+                "pluginVersion": "Plug-in-versjon",
+                "experienceVersion": "Opplevelsesversjon",
+                "shellVersion": "Skallversjon",
+                "bridgeVersion": "Broversjon"
             },
-            "testResult": "Test Result"
+            "testResult": "Testresultat"
         },
         "scanFailureModal": {
             "title": "Maskinvareproblem oppdaget",

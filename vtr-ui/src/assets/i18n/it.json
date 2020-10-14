@@ -4231,29 +4231,29 @@
         "processFinishedCannotBeCanceled": "Il processo in esecuzione non deve più essere annullato, poiché è stato completato.",
         "cancelMayTakeSomeTime": "Attendere. La procedura di annullamento potrebbe richiedere del tempo a seconda del sistema.",
         "report": {
-            "title": "Hardware Diagnostics Log",
-            "modelTitle": "Model",
-            "startDate": "Start Date and Time",
-            "endDate": "End Date and Time",
+            "title": "Log di diagnostica hardware",
+            "modelTitle": "Modello",
+            "startDate": "Data e ora di avvio",
+            "endDate": "Data e ora di fine",
             "model": {
-                "serialNumber": "Serial Number",
-                "wiredInterface": "Wired Ethernet Mac Address",
-                "wirelessInterface": "Wireless Mac Address",
-                "biosVersion": "BIOS Version",
-                "productName": "Product Name"
+                "serialNumber": "Numero di serie",
+                "wiredInterface": "Indirizzo Mac Ethernet cablata",
+                "wirelessInterface": "Indirizzo Mac wireless",
+                "biosVersion": "Versione BIOS",
+                "productName": "Nome prodotto"
             },
-            "resources": "Resources",
-            "tests": "Tests",
-            "totalModulesTested": "Total Modules Tested",
-            "environmentTitle": "Environment",
+            "resources": "Risorse",
+            "tests": "Test",
+            "totalModulesTested": "Totale moduli testati",
+            "environmentTitle": "Ambiente",
             "environment": {
-                "applicationVersion": "Application Version",
-                "pluginVersion": "Plugin Version",
-                "experienceVersion": "Experience Version",
-                "shellVersion": "Shell Version",
-                "bridgeVersion": "Bridge Version"
+                "applicationVersion": "Versione applicazione",
+                "pluginVersion": "Versione plugin",
+                "experienceVersion": "Versione experience",
+                "shellVersion": "Versione shell",
+                "bridgeVersion": "Versione bridge"
             },
-            "testResult": "Test Result"
+            "testResult": "Risultati del test"
         },
         "scanFailureModal": {
             "title": "Problema hardware rilevato",

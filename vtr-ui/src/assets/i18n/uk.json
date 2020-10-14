@@ -4231,29 +4231,29 @@
         "processFinishedCannotBeCanceled": "Активний процес завершився, тому його вже не потрібно скасовувати.",
         "cancelMayTakeSomeTime": "Зачекайте – скасування може зайняти деякий час (залежно від вашої системи).",
         "report": {
-            "title": "Hardware Diagnostics Log",
-            "modelTitle": "Model",
-            "startDate": "Start Date and Time",
-            "endDate": "End Date and Time",
+            "title": "Журнал діагностики обладнання",
+            "modelTitle": "Модель",
+            "startDate": "Дата й час початку",
+            "endDate": "Дата й час завершення",
             "model": {
-                "serialNumber": "Serial Number",
-                "wiredInterface": "Wired Ethernet Mac Address",
-                "wirelessInterface": "Wireless Mac Address",
-                "biosVersion": "BIOS Version",
-                "productName": "Product Name"
+                "serialNumber": "Серійний номер",
+                "wiredInterface": "Mac-адреса провідної мережі Ethernet",
+                "wirelessInterface": "Mac-адреса безпровідного підключення",
+                "biosVersion": "Версія BIOS",
+                "productName": "Назва продукту"
             },
-            "resources": "Resources",
-            "tests": "Tests",
-            "totalModulesTested": "Total Modules Tested",
-            "environmentTitle": "Environment",
+            "resources": "Ресурси",
+            "tests": "Тести",
+            "totalModulesTested": "Усього протестовано модулів",
+            "environmentTitle": "Середовище",
             "environment": {
-                "applicationVersion": "Application Version",
-                "pluginVersion": "Plugin Version",
-                "experienceVersion": "Experience Version",
-                "shellVersion": "Shell Version",
-                "bridgeVersion": "Bridge Version"
+                "applicationVersion": "Версія програми",
+                "pluginVersion": "Версія плагіна",
+                "experienceVersion": "Версія інтерфейсу",
+                "shellVersion": "Версія оболонки",
+                "bridgeVersion": "Версія мосту"
             },
-            "testResult": "Test Result"
+            "testResult": "Результати тесту"
         },
         "scanFailureModal": {
             "title": "Виявлено проблему з устаткуванням",

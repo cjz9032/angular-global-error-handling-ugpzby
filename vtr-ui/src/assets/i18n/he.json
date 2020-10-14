@@ -4231,29 +4231,29 @@
         "processFinishedCannotBeCanceled": "אין יותר צורך לבטל את תהליך ההפעלה מפני שהוא הושלם.",
         "cancelMayTakeSomeTime": "אנא המתינו, פעולת הביטול עשויה להימשך זמן מה, בהתאם למערכת.",
         "report": {
-            "title": "Hardware Diagnostics Log",
-            "modelTitle": "Model",
-            "startDate": "Start Date and Time",
-            "endDate": "End Date and Time",
+            "title": "יומן אבחון חומרה",
+            "modelTitle": "דגם",
+            "startDate": "תאריך ושעת ההתחלה",
+            "endDate": "תאריך ושעת הסיום",
             "model": {
-                "serialNumber": "Serial Number",
-                "wiredInterface": "Wired Ethernet Mac Address",
-                "wirelessInterface": "Wireless Mac Address",
-                "biosVersion": "BIOS Version",
-                "productName": "Product Name"
+                "serialNumber": "מספר סידורי",
+                "wiredInterface": "כתובת Ethernet Mac קווית",
+                "wirelessInterface": "כתובת Mac אלחוטית",
+                "biosVersion": "גירסת BIOS",
+                "productName": "שם המוצר"
             },
-            "resources": "Resources",
-            "tests": "Tests",
-            "totalModulesTested": "Total Modules Tested",
-            "environmentTitle": "Environment",
+            "resources": "משאבים",
+            "tests": "בדיקות",
+            "totalModulesTested": "סך כל המודולים שנבדקו",
+            "environmentTitle": "סביבה",
             "environment": {
-                "applicationVersion": "Application Version",
-                "pluginVersion": "Plugin Version",
-                "experienceVersion": "Experience Version",
-                "shellVersion": "Shell Version",
-                "bridgeVersion": "Bridge Version"
+                "applicationVersion": "גירסת היישום",
+                "pluginVersion": "גירסת התוסף",
+                "experienceVersion": "גרסת ניסיון",
+                "shellVersion": "גרסת מעטפת",
+                "bridgeVersion": "גרסת גשר"
             },
-            "testResult": "Test Result"
+            "testResult": "תוצאת המבחן"
         },
         "scanFailureModal": {
             "title": "זוהתה בעיית חומרה",

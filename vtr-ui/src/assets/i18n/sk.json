@@ -4231,29 +4231,29 @@
         "processFinishedCannotBeCanceled": "Spustený proces už netreba zrušiť, pretože sa skončil.",
         "cancelMayTakeSomeTime": "Čakajte, zrušenie môže v závislosti od vášho systému trvať nejaký čas.",
         "report": {
-            "title": "Hardware Diagnostics Log",
+            "title": "Denník diagnostiky hardvéru",
             "modelTitle": "Model",
-            "startDate": "Start Date and Time",
-            "endDate": "End Date and Time",
+            "startDate": "Dátum a čas začiatku",
+            "endDate": "Dátum a čas konca",
             "model": {
-                "serialNumber": "Serial Number",
-                "wiredInterface": "Wired Ethernet Mac Address",
-                "wirelessInterface": "Wireless Mac Address",
-                "biosVersion": "BIOS Version",
-                "productName": "Product Name"
+                "serialNumber": "Sériové číslo",
+                "wiredInterface": "Adresa Mac káblového pripojenia Ethernet",
+                "wirelessInterface": "Adresa Mac bezdrôtového pripojenia",
+                "biosVersion": "Verzia systému BIOS",
+                "productName": "Názov produktu"
             },
-            "resources": "Resources",
-            "tests": "Tests",
-            "totalModulesTested": "Total Modules Tested",
-            "environmentTitle": "Environment",
+            "resources": "Prostriedky",
+            "tests": "Testy",
+            "totalModulesTested": "Celkový počet testovaných modulov",
+            "environmentTitle": "Prostredie",
             "environment": {
-                "applicationVersion": "Application Version",
-                "pluginVersion": "Plugin Version",
-                "experienceVersion": "Experience Version",
-                "shellVersion": "Shell Version",
-                "bridgeVersion": "Bridge Version"
+                "applicationVersion": "Verzia aplikácie",
+                "pluginVersion": "Verzia doplnku",
+                "experienceVersion": "Verzia prostredia",
+                "shellVersion": "Verzia prostredia shell",
+                "bridgeVersion": "Verzia mosta"
             },
-            "testResult": "Test Result"
+            "testResult": "Výsledok testu"
         },
         "scanFailureModal": {
             "title": "Zistil sa problém s hardvérom",
