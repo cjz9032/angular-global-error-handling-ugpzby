@@ -17,6 +17,7 @@ import { UiMacrokeyDetailsComponent } from '../components/ui/ui-macrokey-details
 import { UiLightingProfileComponent } from '../components/ui/ui-lighting-profile/ui-lighting-profile.component';
 import { UiMacrokeyRecordedListComponent } from '../components/ui/ui-macrokey-recorded-list/ui-macrokey-recorded-list.component';
 import { UiColorPickerComponent } from '../components/ui/ui-color-picker/ui-color-picker.component';
+import { UiGamingSliderComponent } from '../components/ui/ui-gaming-slider/ui-gaming-slider.component';
 import { WidgetLightingDeskComponent } from '../components/widgets/widget-lighting-desk/widget-lighting-desk.component';
 import { WidgetLightingNotebookComponent } from '../components/widgets/widget-lighting-notebook/widget-lighting-notebook.component';
 import { UiLightingKeyboardLNBx50Component } from '../components/ui/ui-lighting-keyboard-lnbx50/ui-lighting-keyboard-lnbx50.component';
@@ -75,7 +76,8 @@ import { FeedbackModule } from './feedback/feedback.module';
 		ModalAddAppsComponent,
 		NetworkboostAddAppsComponent,
 		NetworkboostTurnOnComponent,
-		UiLightingKeyboardLNBx50Component
+		UiLightingKeyboardLNBx50Component,
+		UiGamingSliderComponent
 	],
 	imports: [
 		CommonModule,
