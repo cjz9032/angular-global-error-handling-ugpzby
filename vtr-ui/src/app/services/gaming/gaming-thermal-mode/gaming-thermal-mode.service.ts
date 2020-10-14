@@ -113,4 +113,14 @@ export class GamingThermalModeService {
 			throw new Error(error.message);
 		}
 	}
+
+	// Version 3.5 auto adjust in Thermal mode 3
+	getAutoAdjustSetting(): Promise<any> {
+		let value = localStorage.getItem("autoAdjust");
+		return Promise.resolve(JSON.parse(value));
+	}
+	setAutoAdjustSetting(value: boolean): Promise<any> {
+		localStorage.setItem("autoAdjust", value.toString());
+		return Promise.resolve(true);
+	}
 }

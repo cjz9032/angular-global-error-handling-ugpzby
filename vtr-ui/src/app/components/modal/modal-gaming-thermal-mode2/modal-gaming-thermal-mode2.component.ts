@@ -34,6 +34,9 @@ export class ModalGamingThermalMode2Component implements OnInit {
   public isPerformancOCSetted = false;
   // @Output() thermalModeMsg = new EventEmitter<number>();
   @Output() OCSettingsMsg = new EventEmitter<boolean>();
+  // Version 3.5 thermal mode 3 for x60
+  public autoAdjustSettings = true;
+  public isAutoAdjustSetted = false;
   modalAutomationId: any = {
 		section: 'thermal_mode_warning_dialog',
     	headerText: 'warning_dialog_warning_text',
@@ -68,21 +71,30 @@ export class ModalGamingThermalMode2Component implements OnInit {
     // get settings from cache
     this.thermalModeSettingStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.CurrentThermalModeStatus);
     this.autoSwitchStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.autoSwitchStatus);
+    this.autoAdjustSettings = this.localCacheService.getLocalCacheValue(LocalStorageKey.autoAdjustSettings);
+
+    // TODO thermal mode 3
+    this.gamingCapabilities.thermalModeVersion = 4
   }
 
   ngOnInit() {
-    this.renderOCSupported();
-    if (this.OCsupportted === this.thermalMode2Enum.cpu_gpu) {
-      this.OCSettings = this.localCacheService.getLocalCacheValue(LocalStorageKey.CpuOCStatus) === 1 && this.localCacheService.getLocalCacheValue(LocalStorageKey.GpuOCStatus) === 1;
-    } else if (this.OCsupportted === this.thermalMode2Enum.cpu) {
-      this.OCSettings = this.localCacheService.getLocalCacheValue(LocalStorageKey.CpuOCStatus) === 1;
-    } else if (this.OCsupportted === this.thermalMode2Enum.gpu) {
-      this.OCSettings = this.localCacheService.getLocalCacheValue(LocalStorageKey.GpuOCStatus) === 1;
-    }
     this.getThermalModeSettingStatus();
-    this.getPerformanceOCSetting();
-    this.getAutoSwitchStatus();
     this.registerThermalModeChangeEvent();
+    // Version 3.5 auto adjust in thermal mode 3
+    if(this.gamingCapabilities.thermalModeVersion !== 4) {
+      this.renderOCSupported();
+      if (this.OCsupportted === this.thermalMode2Enum.cpu_gpu) {
+        this.OCSettings = this.localCacheService.getLocalCacheValue(LocalStorageKey.CpuOCStatus) === 1 && this.localCacheService.getLocalCacheValue(LocalStorageKey.GpuOCStatus) === 1;
+      } else if (this.OCsupportted === this.thermalMode2Enum.cpu) {
+        this.OCSettings = this.localCacheService.getLocalCacheValue(LocalStorageKey.CpuOCStatus) === 1;
+      } else if (this.OCsupportted === this.thermalMode2Enum.gpu) {
+        this.OCSettings = this.localCacheService.getLocalCacheValue(LocalStorageKey.GpuOCStatus) === 1;
+      }
+      this.getPerformanceOCSetting();
+      this.getAutoSwitchStatus();
+    } else {
+      this.getAutoAdjustSetting()
+    }
     this.timer.start();
   }
 
@@ -310,7 +322,46 @@ export class ModalGamingThermalMode2Component implements OnInit {
 			EventTypes.gamingThermalModeChangeEvent,
 			this.onRegThermalModeChangeEvent.bind(this)
 		);
-	}
+  }
+  
+  // Version 3.5 auto adjust in thermal mode 3 
+  getAutoAdjustSetting() {
+    try {
+      this.thermalModeService.getAutoAdjustSetting().then(res => {
+        this.logger.info(`Modal-ThermamMode2-GetAutoAdjustSetting: get value from ${this.autoAdjustSettings} to ${res}`);
+        if (!this.isAutoAdjustSetted && res !== this.autoAdjustSettings) {
+          this.autoAdjustSettings = res;
+          this.localCacheService.setLocalCacheValue(LocalStorageKey.autoAdjustSettings, this.autoAdjustSettings);
+        }
+      });
+    } catch (error) {
+      this.logger.error('Modal-ThermamMode2-GetAutoAdjustSetting: get fail; Error message: ', error.message);
+      throw new Error(error.message);
+    }
+  }
+
+  setAutoAdjustSetting(event: any) {
+    this.isAutoAdjustSetted = true;
+    this.autoAdjustSettings = !this.autoAdjustSettings;
+    this.localCacheService.setLocalCacheValue(LocalStorageKey.autoAdjustSettings, this.autoAdjustSettings);
+    try {
+      this.thermalModeService.setAutoAdjustSetting(this.autoAdjustSettings).then(res => {
+        if(res) {
+          this.logger.info(`Modal-ThermalMode2-SetAutoAdjustSetting: return value: ${res}, AutoAdjust from ${!this.autoAdjustSettings} to ${this.autoAdjustSettings}`);
+        } else {
+          this.autoAdjustSettings = !this.autoAdjustSettings;
+          this.localCacheService.setLocalCacheValue(LocalStorageKey.autoAdjustSettings, this.autoAdjustSettings);
+          this.logger.error(`Modal-ThermalMode2-SetAutoAdjustSetting: return value: ${res}, AutoAdjust unchanged`);
+        }
+      });
+    } catch (error) {
+      this.autoAdjustSettings = !this.autoAdjustSettings;
+      this.localCacheService.setLocalCacheValue(LocalStorageKey.autoAdjustSettings, this.autoAdjustSettings);
+      this.logger.error(`Modal-ThermalMode2-SetAutoAdjustSetting: set fail; Error message: `, error.message);
+      throw new Error(error.message);
+    }
+    this.sendFeatureClickMetrics(JSON.parse(`{"ItemName":"thermalmode_enableAutoAdjust","ItemValue":"${this.autoAdjustSettings ? "checked" : "unchecked"}"}`));
+  }
 
   // fengxu start
   openWaringModal(){

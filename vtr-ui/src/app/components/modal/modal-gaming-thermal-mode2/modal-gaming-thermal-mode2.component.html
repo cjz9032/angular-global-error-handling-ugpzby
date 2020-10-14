@@ -34,10 +34,10 @@
                     </h2>
                     <p class="description" role="text" id="thermal_mode_setting_performance_mode_description">
                         {{ 'gaming.dashboard.device.thermalMode2Popup.performanceDesc' | translate }}
-                        <span *ngIf="OCsupportted !== thermalMode2Enum.none"> {{ 'gaming.dashboard.device.thermalMode2Popup.OCDesc' | translate }}</span>
+                        <span *ngIf="OCsupportted !== thermalMode2Enum.none && gamingCapabilities.thermalModeVersion!==4"> {{ 'gaming.dashboard.device.thermalMode2Popup.OCDesc' | translate }}</span>
                         <span *ngIf="!gamingCapabilities.desktopType"> {{ 'gaming.dashboard.device.thermalMode2Popup.ac_dcDesc' | translate }}</span>
                     </p>
-                    <div class="item-oc" *ngIf="OCsupportted !== thermalMode2Enum.none">
+                    <div class="item-oc" *ngIf="OCsupportted !== thermalMode2Enum.none && gamingCapabilities.thermalModeVersion!==4">
                         <ng-container *ngIf="OCsupportted === driverStatus || driverStatus === thermalMode2Enum.cpu_gpu">
                             <div class="item-oc-left">
                                 <button class="oc-checkbox" [ngClass]="{'checked':OCSettings}" role="checkbox" id="{{!OCSettings? 'enable_OC_checkbox_unchecked':'enable_OC_checkbox_checked'}}"  (click)="setPerformanceOCSetting($event)"
@@ -93,7 +93,41 @@
                     </div>
                 </div>
             </div>
-            <div class="item" *ngIf="gamingCapabilities.supporttedThermalMode.includes(thermalMode2Enum.balance)">
+            <div class="item" *ngIf="gamingCapabilities.supporttedThermalMode.includes(thermalMode2Enum.balance)&&gamingCapabilities.thermalModeVersion===4">
+                <div class="item-left">
+                    <input id="radio-intelligent" class="item-radio-button" type="radio" name="thermalMode"
+                        tabindex="1" aria-label="intelligent mode"
+                        [checked]="thermalModeSettingStatus===thermalMode2Enum.balance" value="thermalMode2Enum.balance" (click)="setThermalModeSettingStatus(thermalMode2Enum.balance)">
+                    <label for="radio-intelligent">
+                        <img class="gaming-radio-image-rest" role="radio" id="thermal_mode_setting_intelligent_mode_radio_button_unchecked" *ngIf="thermalModeSettingStatus!==thermalMode2Enum.balance"/>
+                        <img class="gaming-radio-image-selected"  role="radio" id="thermal_mode_setting_intelligent_mode_radio_button_checked" *ngIf="thermalModeSettingStatus===thermalMode2Enum.balance"/>
+                    </label>
+                </div>
+                <div class="item-right">
+                    <h2 class="thermal-mode-title" role="text" id="thermal_mode_setting_intelligent_mode">
+                        Intelligent Mode
+                    </h2>
+                    <p class="description" role="text" id="thermal_mode_setting_intelligent_mode_description">
+                        {{ 'gaming.dashboard.device.thermalMode2Popup.balanceDesc' | translate }}
+                    </p>
+                    <div class="item-oc">
+                            <div class="item-oc-left">
+                                <button class="oc-checkbox" [ngClass]="{'checked':autoAdjustSettings}" role="checkbox" id="{{!autoAdjustSettings? 'enable_autoAdjustSettings_checkbox_unchecked':'enable_autoAdjustSettings_checkbox_checked'}}"  (click)="setAutoAdjustSetting($event)"
+                                tabindex="1" aria-label="自动侦测并调优CPU和GPU在游戏下的性能" [attr.aria-checked]="autoAdjustSettings">
+                                  <label class="checkedIcon"></label>
+                                </button>
+                            </div>
+                            <div class="item-oc-right">
+                                <p role="text" id="enable_autoAdjustSettings_description">
+                                    <a class="oc-description" (click)="setAutoAdjustSetting($event)">
+                                        <span >自动侦测并调优CPU和GPU在游戏下的性能</span>
+                                    </a> 
+                                </p>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item" *ngIf="gamingCapabilities.supporttedThermalMode.includes(thermalMode2Enum.balance)&&gamingCapabilities.thermalModeVersion!==4">
                 <div class="item-left">
                     <input id="radio-banance" class="item-radio-button" type="radio" name="thermalMode"
                         tabindex="1" aria-label="balance mode"
@@ -127,7 +161,7 @@
                     </p>
                 </div>
             </div>
-            <div class="item-auto-switch">
+            <div class="item-auto-switch" *ngIf="gamingCapabilities.thermalModeVersion!==4">
                 <div class="auto-switch-left">
                     <div class="auto-switch-toggle">
                         <vtr-ui-toggle (toggleStatus)="setAutoSwitchStatus($event)" [value]="autoSwitchStatus" [toggleId]="'auto switch'"
