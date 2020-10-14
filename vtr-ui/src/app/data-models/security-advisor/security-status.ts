@@ -497,6 +497,7 @@ export const getSecurityLevel = (
 	const intermediateView = [securityFeature.pwdSupport ? securityStatus.pmStatus : undefined, securityFeature.pluginSupport ? securityStatus.whStatus : undefined, securityFeature.pluginSupport ? securityStatus.uacStatus : undefined].filter(i => i !== undefined);
 	const advancedView = [securityAdvisor.wifiSecurity.isSupported ? securityStatus.wfStatus : undefined, securityFeature.vpnSupport ? securityStatus.vpnStatus : undefined].filter(i => i !== undefined);
 
+	localCacheService.setLocalCacheValue(LocalStorageKey.SecurityLandingLevel, landingStatus);
 	return {landingStatus, basicView, intermediateView, advancedView};
 };
 
