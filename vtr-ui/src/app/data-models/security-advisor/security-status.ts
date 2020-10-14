@@ -9,7 +9,7 @@ export type SecurityFeature = {
 	pluginSupport: boolean;
 	vpnSupport: boolean;
 	pwdSupport: boolean;
-	fingerSupport: boolean;
+	fingerprintSupport: boolean;
 };
 
 export const securityStatus = {
@@ -174,7 +174,7 @@ export const getSecurityLevel = (
 			securityStatus.pmStatus.ownTitle = translationString['security.landing.haveOwnPassword'];
 		}
 
-		if (securityFeature.fingerSupport) {
+		if (securityFeature.fingerprintSupport) {
 			if (!securityStatus.whStatus.detail) {
 				securityStatus.whStatus.detail = translationString['common.securityAdvisor.loading'];
 			}
@@ -317,7 +317,7 @@ export const getSecurityLevel = (
 		securityStatus.pmStatus.status = undefined;
 	}
 	// fingerprint
-	if (securityFeature.fingerSupport) {
+	if (securityFeature.fingerprintSupport) {
 		const cacheWhStatus = localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingWindowsHelloFingerprintStatus);
 		if (windowsHello && windowsHello.fingerPrintStatus) {
 			securityStatus.whStatus.status = windowsHello.fingerPrintStatus === 'active' ? 'enabled' : 'disabled';
@@ -493,7 +493,7 @@ export const getSecurityLevel = (
 	}
 
 	const basicView = [securityStatus.avStatus, securityStatus.fwStatus, securityFeature.pluginSupport ? securityStatus.waStatus : undefined].filter(i => i !== undefined);
-	const intermediateView = [securityFeature.pwdSupport ? securityStatus.pmStatus : undefined, securityFeature.fingerSupport ? securityStatus.whStatus : undefined, securityFeature.pluginSupport ? securityStatus.uacStatus : undefined].filter(i => i !== undefined);
+	const intermediateView = [securityFeature.pwdSupport ? securityStatus.pmStatus : undefined, securityFeature.fingerprintSupport ? securityStatus.whStatus : undefined, securityFeature.pluginSupport ? securityStatus.uacStatus : undefined].filter(i => i !== undefined);
 	const advancedView = [securityAdvisor.wifiSecurity.isSupported ? securityStatus.wfStatus : undefined, securityFeature.vpnSupport ? securityStatus.vpnStatus : undefined].filter(i => i !== undefined);
 
 	localCacheService.setLocalCacheValue(LocalStorageKey.SecurityLandingLevel, landingStatus);

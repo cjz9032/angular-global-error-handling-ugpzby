@@ -211,7 +211,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		pluginSupport: false,
 		pwdSupport: false,
 		vpnSupport: false,
-		fingerSupport: false
+		fingerprintSupport: false
 	};
 	private haveOwnList = {
 		passwordManager: false,
@@ -809,7 +809,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		this.securityLevel = {
 			landingStatus: { status: undefined, fullyProtected: false, percent: 0 },
 			basicView: [securityStatus.avStatus, securityStatus.fwStatus, this.saFeatureSupport.pluginSupport ? securityStatus.waStatus : undefined],
-			intermediateView: [this.saFeatureSupport.pwdSupport ? securityStatus.pmStatus : undefined, this.saFeatureSupport.fingerSupport ? securityStatus.whStatus : undefined, this.saFeatureSupport.pluginSupport ? securityStatus.uacStatus : undefined],
+			intermediateView: [this.saFeatureSupport.pwdSupport ? securityStatus.pmStatus : undefined, this.saFeatureSupport.fingerprintSupport ? securityStatus.whStatus : undefined, this.saFeatureSupport.pluginSupport ? securityStatus.uacStatus : undefined],
 			advancedView: [this.securityAdvisor.wifiSecurity.isSupported ? securityStatus.wfStatus : undefined, this.saFeatureSupport.vpnSupport ? securityStatus.vpnStatus : undefined]};
 		this.deviceService.getMachineInfo().then(result => {
 			this.saFeatureSupport.vpnSupport = true;
@@ -827,7 +827,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			}).catch(() => {
 				this.saFeatureSupport.pluginSupport = false;
 			}).finally(() => {
-				this.saFeatureSupport.fingerSupport = this.windowsHelloService.showWindowsHello(this.securityAdvisor.windowsHello);
+				this.saFeatureSupport.fingerprintSupport = this.windowsHelloService.showWindowsHello(this.securityAdvisor.windowsHello);
 				if (this.securityAdvisor) {
 					this.securityAdvisor.on('*', this.securityAdvisorHandler);
 				}

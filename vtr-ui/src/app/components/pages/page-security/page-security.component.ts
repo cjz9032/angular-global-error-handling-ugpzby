@@ -55,7 +55,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		pluginSupport: false,
 		pwdSupport: false,
 		vpnSupport: false,
-		fingerSupport: false
+		fingerprintSupport: false
 	};
 	haveOwnList: any;
 	translations: any;
@@ -100,7 +100,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		this.securityLevel = {
 			landingStatus: this.landingStatus,
 			basicView: [securityStatus.avStatus, securityStatus.fwStatus, this.securityFeature.pluginSupport ? securityStatus.waStatus : undefined].filter(i => i !== undefined),
-			intermediateView: [this.securityFeature.pwdSupport ? securityStatus.pmStatus : undefined, this.securityFeature.fingerSupport ? securityStatus.whStatus : undefined, this.securityFeature.pluginSupport ? securityStatus.uacStatus : undefined].filter(i => i !== undefined),
+			intermediateView: [this.securityFeature.pwdSupport ? securityStatus.pmStatus : undefined, this.securityFeature.fingerprintSupport ? securityStatus.whStatus : undefined, this.securityFeature.pluginSupport ? securityStatus.uacStatus : undefined].filter(i => i !== undefined),
 			advancedView: [this.securityAdvisor.wifiSecurity.isSupported ? securityStatus.wfStatus : undefined, this.securityFeature.vpnSupport ? securityStatus.vpnStatus : undefined].filter(i => i !== undefined)};
 		this.deviceService.getMachineInfo().then(result => {
 			this.securityFeature.vpnSupport = true;
@@ -119,7 +119,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			.catch((e) => {
 				this.securityFeature.pluginSupport = false;
 			}).finally(() => {
-				this.securityFeature.fingerSupport = this.windowsHelloService.showWindowsHello(this.securityAdvisor.windowsHello);
+				this.securityFeature.fingerprintSupport = this.windowsHelloService.showWindowsHello(this.securityAdvisor.windowsHello);
 				this.translate.stream([
 					'common.securityAdvisor.loading',
 					'common.securityAdvisor.enrolled',
