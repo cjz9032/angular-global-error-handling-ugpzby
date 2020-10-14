@@ -5090,7 +5090,8 @@
 		"executingScanTitle": "Scanning {{title}}",
 		"showDetails": "View Details",
 		"hideDetails": "Hide Details",
-		"na": "N/A"
+		"na": "N/A",
+        "exportLog": "Export Log"
 	},
 	"notification": {
 		"menu": {
