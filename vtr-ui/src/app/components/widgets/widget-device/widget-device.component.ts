@@ -36,6 +36,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 	systemUpdateIcon = 'assets/icons/Icon_Optional_Update.svg';
 	smartPerformanceIcon = 'assets/icons/Icon-smartperformance.svg';
 	warrantyIcon = 'assets/icons/Icon-warranty.svg';
+	hwscanIcon = 'assets/icons/hardware-scan/icon_hardware_motherboard.svg';
 	isSMPSubscripted: Promise<boolean>;
 	hwInfo: Promise<any>;
 	ngUnsubscribe: Subject<any> = new Subject();
@@ -154,6 +155,18 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 			this.swStatus[index++] = smartPerformance;
 			this.updateSmartPerformanceStatus(smartPerformance);
 		}
+
+		if (await this.hwScanService.isAvailable()){
+			const hwscan = new DeviceStatus();
+			hwscan.id = 'hwscan';
+			this.translate.stream('hardwareScan.name').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+				hwscan.title = value;
+			});
+			hwscan.icon = this.hwscanIcon;
+			this.swStatus[index++] = hwscan;
+			this.updateHwScanStatus(hwscan);
+		}
+
 	}
 
 	private async updateProssorInfo(processor: DeviceStatus){
@@ -166,7 +179,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private async updateMemoryInfo(memory){
+	private async updateMemoryInfo(memory: DeviceStatus){
 		const data = await this.hwInfo;
 		if (data){
 			const { total, used } = data.memory;
@@ -193,22 +206,26 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 			this.translate.stream('device.myDevice.storage').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
 				let statusIndex = 2;
 				for (let i = 0, len  = disks.length; i < len; i++) {
+					if (!disks[i].partitions || disks[i].partitions.length === 0){
+						continue;
+					}
 					const disk = new DeviceStatus();
 					disk.id = 'disk' + i;
 					disk.title = value;
 					disk.icon = this.storageIcon;
 					disk.link = 'ms-settings:storagesense';
 					disk.subtitle = `${disks[i].manufacturer || ''} ${disks[i].model}`;
-					disk.used = this.commonService.formatBytes(disks[i].sizeInBytes - disks[i].avaliableSize);
+					const usedBytes = disks[i].sizeInBytes - disks[i].avaliableSize;
+					disk.used = this.commonService.formatBytes(usedBytes);
 					disk.total = this.commonService.formatBytes( disks[i].sizeInBytes);
-					disk.percent = disks[i].avaliableSize / disks[i].sizeInBytes * 100;
+					disk.percent = usedBytes / disks[i].sizeInBytes * 100;
 					this.hwStatus[statusIndex++] = disk;
 				}
 			});
 		}
 	}
 
-	private async updateSUStatus(systemUpdate){
+	private async updateSUStatus(systemUpdate: DeviceStatus){
 		if (this.deviceService && !this.deviceService.isSMode && this.adPolicyService && this.adPolicyService.IsSystemUpdateEnabled) {
 			this.dashboardService.getRecentUpdateInfo().pipe(takeUntil(this.ngUnsubscribe)).subscribe(data => {
 					if (data) {
@@ -216,13 +233,12 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 						const lastUpdate = data.lastupdate;
 						const diffInDays = this.systemUpdateService.dateDiffInDays(lastUpdate);
 						systemUpdate.link = 'device/system-updates';
-						systemUpdate.showSepline = true;
 						if (updateStatus === 1) {
 							this.translate.stream('device.myDevice.systemUpdate.detail.uptoDate').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
 								systemUpdate.subtitle = value;
 							});
 							systemUpdate.checkedDate = this.commonService.formatLocalDate(lastUpdate);
-
+							systemUpdate.showSepline = true;
 							if (diffInDays > 30) {
 								this.translate.stream('device.myDevice.systemUpdate.detail.outdated').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
 									systemUpdate.subtitle = value;
@@ -238,7 +254,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private async updateSmartPerformanceStatus(smartPerform){
+	private async updateSmartPerformanceStatus(smartPerform: DeviceStatus){
 		try{
 			const lastScanResultRequest = {
 				scanType: await this.isSMPSubscripted ? 'ScanAndFix' : 'Scan'
@@ -261,6 +277,24 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 			});
 		}
 		smartPerform.link = 'support/smart-performance';
+	}
+
+	private async updateHwScanStatus(hwscan: DeviceStatus){
+		await this.previousResultService.getLastResults();
+		const lastSacnInfo = this.previousResultService.getLastPreviousResultCompletionInfo();
+		if (lastSacnInfo.date){
+			this.translate.stream('device.myDevice.scanned').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+				hwscan.subtitle = value;
+				hwscan.checkedDate = moment(lastSacnInfo.date).format('l');
+				hwscan.showSepline = true;
+			});
+		}
+		else{
+			this.translate.stream('hardwareScan.notScanned').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+				hwscan.subtitle = value;
+			});
+		}
+		hwscan.link = '/hardware-scan';
 	}
 
 	private async loadOverAllStatus(){
