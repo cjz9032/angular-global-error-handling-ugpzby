@@ -79,7 +79,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.isOnline = this.commonService.isOnline;
-		this.landingStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingLevel);
+		this.landingStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingLevel, { status: 0, fullyProtected: false, percent: 0 });
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
@@ -97,10 +97,10 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			vpn: vpnCacheShowOwn
 		};
 		this.securityLevel = {
-			landingStatus: { status: 0, fullyProtected: false, percent: 100 },
-			basicView: [securityStatus.avStatus, securityStatus.fwStatus, this.securityFeature.pluginSupport ? securityStatus.waStatus : undefined],
-			intermediateView: [this.securityFeature.pwdSupport ? securityStatus.pmStatus : undefined, this.securityFeature.pluginSupport ? securityStatus.whStatus : undefined, this.securityFeature.pluginSupport ? securityStatus.uacStatus : undefined],
-			advancedView: [this.securityAdvisor.wifiSecurity.isSupported ? securityStatus.wfStatus : undefined, this.securityFeature.vpnSupport ? securityStatus.vpnStatus : undefined]};
+			landingStatus: this.landingStatus,
+			basicView: [securityStatus.avStatus, securityStatus.fwStatus, this.securityFeature.pluginSupport ? securityStatus.waStatus : undefined].filter(i => i !== undefined),
+			intermediateView: [this.securityFeature.pwdSupport ? securityStatus.pmStatus : undefined, this.securityFeature.pluginSupport ? securityStatus.whStatus : undefined, this.securityFeature.pluginSupport ? securityStatus.uacStatus : undefined].filter(i => i !== undefined),
+			advancedView: [this.securityAdvisor.wifiSecurity.isSupported ? securityStatus.wfStatus : undefined, this.securityFeature.vpnSupport ? securityStatus.vpnStatus : undefined].filter(i => i !== undefined)};
 		this.deviceService.getMachineInfo().then(result => {
 			this.securityFeature.vpnSupport = true;
 			this.securityFeature.pwdSupport = true;
