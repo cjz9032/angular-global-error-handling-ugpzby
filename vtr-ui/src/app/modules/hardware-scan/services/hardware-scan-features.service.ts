@@ -39,7 +39,7 @@ export class HardwareScanFeaturesService {
 			this.scanLogService.getScanLog()
 			.then((response) => {
 				// Checking if there is actually data to be exported
-				if (response.modulesResults.length > 0 && response.scanSummary !== null) {
+				if (Array.isArray(response.modulesResults) && response.modulesResults.length && response.scanSummary !== null) {
 					hasExportLogData = true;
 				}
 				resolve(true);
