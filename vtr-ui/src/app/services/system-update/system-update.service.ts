@@ -266,7 +266,7 @@ export class SystemUpdateService {
 				this.isUpdateDownloading = true;
 				this.installationPercent = 0;
 				if (response && response.downloadProgress) {
-					if (this.downloadingPercent < 100) {
+					if (this.downloadingPercent <= 100) {
 						this.downloadingPercent = response.downloadProgress.progressinPercentage;
 					}
 				}
