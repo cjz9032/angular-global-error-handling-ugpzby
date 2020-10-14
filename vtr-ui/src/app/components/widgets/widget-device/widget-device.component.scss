@@ -162,7 +162,7 @@ $size500px-sw-show1col: "only screen and (min-width: 500px) and (max-width: 1200
 		}
 
 		.device-detail-sw-item{
-			height: 10.8rem;
+			min-height: 10.8rem;
 		}
 
 	}
