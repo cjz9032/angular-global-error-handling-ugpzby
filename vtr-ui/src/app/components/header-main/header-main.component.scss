@@ -80,6 +80,9 @@
 			color: $light;
 			font-size: $fontsize_xl4;
 			font-weight: $weight_light;
+			text-overflow: ellipsis; // used to fix large titles without line break
+			overflow: hidden; // used to fix large titles without line break
+			padding: 0.5rem; // used to give necessary height for some words, after using overflow: hidden
 			margin: 0;
 			position: relative;
 			z-index: 1;
