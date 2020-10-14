@@ -62,12 +62,9 @@
 
    .ui-deviceinfo-right{
       margin-right: 2.6rem;
-      max-width: 40%;
       span,p{
-			overflow: hidden;
-         text-overflow: ellipsis;
+         width: 8rem;
          display: -webkit-box;
-         -webkit-line-clamp: 2;
          text-align: center;
          -webkit-box-orient: vertical;
       }
