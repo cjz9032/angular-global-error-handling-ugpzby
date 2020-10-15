@@ -11,7 +11,7 @@ export class LocalCacheService {
 	private experienceName = 'VantageExperience';
 	private store: NgForage;
 	private transferEnabled = false;
-	private transferredShellVersion = '10.2009.17';
+	private transferredShellVersion = '10.2011.8';
 	private cacheMap = {};
 	private indexedCacheKey = 'VantageExperienceCache';
 	private setPromise: Promise<any>;
@@ -65,7 +65,7 @@ export class LocalCacheService {
 		return new Promise((resolve, reject) => {
 			if (this.transferEnabled) {
 				const oldValue = this.cacheMap[key];
-				this.cacheMap[key] = value;
+				this.cacheMap[key] = this.cloneObjectValue(value);
 				this.setItem(this.indexedCacheKey, this.cacheMap).then(() => {
 					this.commonService.sendNotification(key, value);
 					resolve();
@@ -92,7 +92,7 @@ export class LocalCacheService {
 			if (!this.isAvailableValue(cacheValue)) {
 				cacheValue = defaultValue;
 			}
-			return cacheValue;
+			return this.cloneObjectValue(cacheValue);
 		} else {
 			return this.commonService.getLocalStorageValue(key, defaultValue);
 		}
@@ -149,5 +149,13 @@ export class LocalCacheService {
 
 	private isAvailableValue(value) {
 		return value !== undefined && value !== null;
+	}
+
+	private cloneObjectValue(value) {
+		if (value && typeof value === 'object') {
+			return this.commonService.cloneObj(value);
+		} else {
+			return value;
+		}
 	}
 }
