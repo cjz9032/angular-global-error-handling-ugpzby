@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.24](https://bitbucket.tc.lenovo.com///compare/v1.8.23...v1.8.24) (2020-10-15)
+
+
+### Features
+
+* **PositionC card:** VAN-21435 implement positionC card state ([dbb97a4](https://bitbucket.tc.lenovo.com///commit/dbb97a47c773389888f913c651c229de79e43cbc))
+* **postion c :** VAN-21435 implement position c feature ([a159496](https://bitbucket.tc.lenovo.com///commit/a1594968b332bf2869439e1a7758e304760a6c5d))
+
+
+### Bug Fixes
+
+* **PositionC:** VAN-21435 complete type name ([39df76a](https://bitbucket.tc.lenovo.com///commit/39df76ae2fba25d6126360e6e749759c2cb1b5a6))
+
 ### [1.8.23](https://bitbucket.tc.lenovo.com///compare/v1.8.22...v1.8.23) (2020-10-14)
 
 
