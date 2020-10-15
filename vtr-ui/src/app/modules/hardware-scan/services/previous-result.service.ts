@@ -28,8 +28,8 @@ export class PreviousResultService {
 	public getLastPreviousResultCompletionInfo() {
 		const item: any = this.getPreviousResultsWidget();
 		return {
-			date: item.date,
-			result: HardwareScanTestResult[this.hardwareScanResultService.consolidateResults(item.modules.map(module => module.resultModule))]
+			date: item?.date,
+			result: !item?.modules ? null : HardwareScanTestResult[this.hardwareScanResultService.consolidateResults(item.modules.map(module => module.resultModule))]
 		};
 	}
 
