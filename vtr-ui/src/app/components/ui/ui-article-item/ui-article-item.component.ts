@@ -4,7 +4,7 @@ import { CardService } from 'src/app/services/card/card.service';
 import { SupportContentStatus } from 'src/app/enums/support-content-status.enum';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
-import { ContentSource } from 'src/app/enums/content.enum';
+import { ContentActionType, ContentSource } from 'src/app/enums/content.enum';
 
 @Component({
 	selector: 'vtr-ui-article-item',
@@ -89,7 +89,7 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit, OnDestroy 
 		if (this.articleType === SupportContentStatus.Content) {
 			return this.cardService.linkClicked(this.item.ActionType, this.item.ActionLink, false, this.item.Title);
 		} else {
-			this.cardService.openArticleModal(this.item.ActionType, this.item.Id, this.item.Title);
+			this.cardService.openArticleModal(ContentActionType.Internal, this.item.Id, this.item.Title);
 			return false;
 		}
 	}
