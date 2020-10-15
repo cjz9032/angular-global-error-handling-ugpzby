@@ -1,11 +1,13 @@
-import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit, HostListener } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import map from 'lodash/map';
 import sample from 'lodash/sample';
 import trim from 'lodash/trim';
+import { toLower } from 'lodash';
 import { Subscription } from 'rxjs/internal/Subscription';
+import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 import { Status } from 'src/app/data-models/widgets/status.model';
@@ -36,6 +38,11 @@ import { WarrantyService } from 'src/app/services/warranty/warranty.service';
 import { QaService } from '../../../services/qa/qa.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { ContentCacheService } from 'src/app/services/content-cache/content-cache.service';
+import { AntivirusService } from 'src/app/services/security/antivirus.service';
+import { WindowsHelloService } from 'src/app/services/security/windowsHello.service';
+import { LandingView } from 'src/app/data-models/security-advisor/widegt-security-landing/landing-view.model';
+import { DashboardStateCardData } from './material-state-card-container/material-state-card-container.component';
+import { SecurityFeature, securityStatus, getSecurityLevel } from 'src/app/data-models/security-advisor/security-status';
 
 interface IConfigItem {
 	cardId: string;
@@ -160,6 +167,59 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			upeContent: undefined
 		}
 	};
+	showSecurityStatusCard: boolean;
+	positionCData: DashboardStateCardData[] = [
+		{
+			title: 'common.securityAdvisor.title',
+			summary: 'dashboard.securityStatus.loadingDesc',
+			linkText: 'common.menu.security.sub1',
+			linkPath: 'security'
+		}, {
+			title: 'common.securityAdvisor.title',
+			summary: 'dashboard.securityStatus.noProtectionDesc',
+			linkText: 'common.ui.improveNow',
+			linkPath: 'security/anti-virus',
+			statusText: 'security.landing.noProtection'
+		}, {
+			title: 'common.securityAdvisor.title',
+			summary: 'dashboard.securityStatus.basicDesc',
+			linkText: 'common.ui.improveNow',
+			linkPath: 'security/anti-virus',
+			statusText: 'security.landing.basic'
+		}, {
+			title: 'common.securityAdvisor.title',
+			summary: 'dashboard.securityStatus.intermediateDesc',
+			linkText: 'common.menu.security.sub1',
+			linkPath: 'security',
+			statusText: 'security.landing.intermediate'
+		}, {
+			title: 'common.securityAdvisor.title',
+			summary: 'dashboard.securityStatus.advancedDesc',
+			linkText: 'common.menu.security.sub1',
+			linkPath: 'security',
+			statusText: 'security.landing.advanced'
+		}
+	];
+	securityInfo: LandingView = {
+		status: undefined,
+		percent: 0,
+		fullyProtected: false,
+		statusText: ''
+	};
+	securityLevel: any;
+	private saFeatureSupport: SecurityFeature = {
+		pluginSupport: false,
+		pwdSupport: false,
+		vpnSupport: false,
+		fingerprintSupport: false
+	};
+	private haveOwnList = {
+		passwordManager: false,
+		wifiSecurity: false,
+		vpn: false
+	};
+	private securityAdvisor: SecurityAdvisor;
+	private getSecurityInfoTimeout: ReturnType<typeof setTimeout>;
 
 	positionBData = {
 		title: 'System Information',
@@ -169,6 +229,20 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		state: 1,
 		stateText: 'GOOD CONDITION'
 	};
+
+	securityAdvisorHandler = () => {
+		clearTimeout(this.getSecurityInfoTimeout);
+		this.getSecurityInfoTimeout = setTimeout(() => {
+			this.securityLevel = getSecurityLevel(this.securityAdvisor,
+				undefined,
+				this.haveOwnList,
+				this.saFeatureSupport,
+				this.antivirusService,
+				this.localCacheService);
+			this.setSecurityInfo(this.securityLevel.landingStatus);
+		}, 1000);
+	}
+
 
 	constructor(
 		private router: Router,
@@ -195,11 +269,15 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		private localInfoService: LocalInfoService,
 		private localCacheService: LocalCacheService,
 		private metricsService: MetricService,
-		private contentLocalCache: ContentCacheService
+		private contentLocalCache: ContentCacheService,
+		private antivirusService: AntivirusService,
+		private windowsHelloService: WindowsHelloService
 	) {
 	}
 
 	ngOnInit() {
+		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
+		this.refreshSA();
 		this.getProtocalAction();
 		this.config.backdrop = 'static';
 		this.config.keyboard = false;
@@ -228,7 +306,11 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 				'dashboard.offlineInfo.systemHealth',
 				'settings.preferenceSettings',
 				'systemUpdates.title',
-				'systemUpdates.readMore'
+				'systemUpdates.readMore',
+				'security.landing.noProtection',
+				'security.landing.basic',
+				'security.landing.intermediate',
+				'security.landing.advanced',
 			])
 			.subscribe((result) => {
 				this.dashboardService.translateString = result;
@@ -240,16 +322,23 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		this.langChangeSubscription = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 			this.getCachedContent();
 		});
-
+		this.getSecurityCardInfo();
 		this.getSelfSelectStatus();
 		this.canShowDccDemo$ = this.dccService.canShowDccDemo();
 		this.launchProtocol();
-		this.hideTitleInCommercialAndSMB();
+		this.getUsageType();
 	}
 
-	private hideTitleInCommercialAndSMB() {
+	@HostListener('window: focus')
+	onFocus(): void {
+		this.refreshSA();
+	}
+
+	private getUsageType() {
 		this.selfselectService.getConfig().then((re) => {
-			this.hideTitle = (re.usageType === SegmentConst.Commercial || re.usageType === SegmentConst.SMB);
+			const usageType = re.usageType;
+			this.hideTitle = (usageType === SegmentConst.Commercial || usageType === SegmentConst.SMB);
+			this.showSecurityStatusCard = (usageType === SegmentConst.Consumer || usageType === SegmentConst.SMB);
 		});
 	}
 
@@ -340,6 +429,9 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		}
 		if (this.translate14Subscription) {
 			this.translate14Subscription.unsubscribe();
+		}
+		if (this.securityAdvisor) {
+			this.securityAdvisor.off('*', this.securityAdvisorHandler);
 		}
 	}
 
@@ -679,7 +771,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 					if (this.isOnline) {
 						this.getCachedContent();
 					}
-					this.hideTitleInCommercialAndSMB();
+					this.getUsageType();
 					break;
 				default:
 					break;
@@ -700,4 +792,65 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	ngAfterViewInit() {
 		this.metricsService.activateScrollCounter(PageName.Dashboard);
 	}
+
+	private getSecurityCardInfo(): void {
+		const cacheSaStatus: LandingView = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingLevel);
+		if (cacheSaStatus) {
+			this.setSecurityInfo(cacheSaStatus);
+		}
+		const pmOwnCache = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingPasswordManagerShowOwn, false);
+		const wifiOwnCache = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingWifiSecurityShowOwn, false);
+		const vpnOwnCache = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingWifiSecurityShowOwn, false);
+		this.haveOwnList = {
+			passwordManager: pmOwnCache,
+			wifiSecurity: wifiOwnCache,
+			vpn: vpnOwnCache
+		};
+		this.securityLevel = {
+			landingStatus: { status: undefined, fullyProtected: false, percent: 0 },
+			basicView: [securityStatus.avStatus, securityStatus.fwStatus, this.saFeatureSupport.pluginSupport ? securityStatus.waStatus : undefined],
+			intermediateView: [this.saFeatureSupport.pwdSupport ? securityStatus.pmStatus : undefined, this.saFeatureSupport.fingerprintSupport ? securityStatus.whStatus : undefined, this.saFeatureSupport.pluginSupport ? securityStatus.uacStatus : undefined],
+			advancedView: [this.securityAdvisor.wifiSecurity.isSupported ? securityStatus.wfStatus : undefined, this.saFeatureSupport.vpnSupport ? securityStatus.vpnStatus : undefined]};
+		this.deviceService.getMachineInfo().then(result => {
+			this.saFeatureSupport.vpnSupport = true;
+			this.saFeatureSupport.pwdSupport = true;
+			if (toLower(result && result.country ? result.country : 'US') === 'cn') {
+				this.saFeatureSupport.vpnSupport = false;
+				this.saFeatureSupport.pwdSupport = false;
+			}
+		}).catch(() => {
+			this.saFeatureSupport.vpnSupport = true;
+			this.saFeatureSupport.pwdSupport = true;
+		}).finally(() => {
+			this.hypService.getFeatureSetting('SecurityAdvisor').then((result) => {
+				this.saFeatureSupport.pluginSupport = result === 'true';
+			}).catch(() => {
+				this.saFeatureSupport.pluginSupport = false;
+			}).finally(() => {
+				this.saFeatureSupport.fingerprintSupport = this.windowsHelloService.showWindowsHello(this.securityAdvisor.windowsHello);
+				if (this.securityAdvisor) {
+					this.securityAdvisor.on('*', this.securityAdvisorHandler);
+				}
+			});
+		});
+	}
+
+	private refreshSA(): void {
+		this.securityAdvisor.refresh().then(() => {
+			this.securityLevel = getSecurityLevel(this.securityAdvisor,
+				undefined,
+				this.haveOwnList,
+				this.saFeatureSupport,
+				this.antivirusService,
+				this.localCacheService);
+			this.setSecurityInfo(this.securityLevel.landingStatus);
+		});
+	}
+
+	private setSecurityInfo(info: LandingView) {
+		this.securityInfo = info;
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityLandingLevel, this.securityInfo);
+		this.securityInfo.statusText = this.securityInfo.status !== undefined ? this.dashboardService.translateString[this.positionCData[this.securityInfo.status + 1].statusText] : '--';
+	}
+
 }

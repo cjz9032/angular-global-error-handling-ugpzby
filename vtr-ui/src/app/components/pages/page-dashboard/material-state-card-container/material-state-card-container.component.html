@@ -13,12 +13,12 @@
 		<div class="row h-100 inner-content">
 			<div class="left-side col-7 col-md-12 col-lg-7 col-xl-12 p-0 d-flex flex-column justify-content-between mb-20">
 				<div class="desc d-flex flex-column">
-					<h2 class="title m-0" [innerHTML]="cardData.title | translate"></h2>
+					<h2 class="title mb-3" [innerHTML]="cardData.title | translate"></h2>
 					<p class="summary m-0" [innerHTML]="cardData.summary | translate"></p>
 				</div>
 			</div>
 			<div class="right-side col-5 col-md-12 col-lg-5 col-xl-12 p-0 d-flex align-items-center
-				justify-content-end justify-content-md-center justify-content-lg-end justify-content-xl-center">
+				justify-content-center">
 				<ng-content></ng-content>
 			</div>
 			<div class="col px-0 absolute-lnk d-flex align-items-end

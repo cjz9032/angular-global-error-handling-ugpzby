@@ -2,7 +2,6 @@ import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { AntivirusService } from 'src/app/services/security/antivirus.service';
-import { WindowsHelloService } from 'src/app/services/security/windowsHello.service';
 import { SecurityTypeConst } from './status-info.model';
 import { LandingView } from './widegt-security-landing/landing-view.model';
 
@@ -10,6 +9,7 @@ export type SecurityFeature = {
 	pluginSupport: boolean;
 	vpnSupport: boolean;
 	pwdSupport: boolean;
+	fingerprintSupport: boolean;
 };
 
 export const securityStatus = {
@@ -116,7 +116,6 @@ export const getSecurityLevel = (
 	haveOwnList: any,
 	securityFeature: SecurityFeature,
 	antivirusService: AntivirusService,
-	windowsHelloService: WindowsHelloService,
 	localCacheService: LocalCacheService
 	) => {
 	transString = translationString;
@@ -175,7 +174,7 @@ export const getSecurityLevel = (
 			securityStatus.pmStatus.ownTitle = translationString['security.landing.haveOwnPassword'];
 		}
 
-		if (windowsHelloService.showWindowsHello(securityAdvisor.windowsHello)) {
+		if (securityFeature.fingerprintSupport) {
 			if (!securityStatus.whStatus.detail) {
 				securityStatus.whStatus.detail = translationString['common.securityAdvisor.loading'];
 			}
@@ -318,7 +317,7 @@ export const getSecurityLevel = (
 		securityStatus.pmStatus.status = undefined;
 	}
 	// fingerprint
-	if (windowsHelloService.showWindowsHello(securityAdvisor.windowsHello)) {
+	if (securityFeature.fingerprintSupport) {
 		const cacheWhStatus = localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingWindowsHelloFingerprintStatus);
 		if (windowsHello && windowsHello.fingerPrintStatus) {
 			securityStatus.whStatus.status = windowsHello.fingerPrintStatus === 'active' ? 'enabled' : 'disabled';
@@ -494,7 +493,7 @@ export const getSecurityLevel = (
 	}
 
 	const basicView = [securityStatus.avStatus, securityStatus.fwStatus, securityFeature.pluginSupport ? securityStatus.waStatus : undefined].filter(i => i !== undefined);
-	const intermediateView = [securityFeature.pwdSupport ? securityStatus.pmStatus : undefined, securityFeature.pluginSupport ? securityStatus.whStatus : undefined, securityFeature.pluginSupport ? securityStatus.uacStatus : undefined].filter(i => i !== undefined);
+	const intermediateView = [securityFeature.pwdSupport ? securityStatus.pmStatus : undefined, securityFeature.fingerprintSupport ? securityStatus.whStatus : undefined, securityFeature.pluginSupport ? securityStatus.uacStatus : undefined].filter(i => i !== undefined);
 	const advancedView = [securityAdvisor.wifiSecurity.isSupported ? securityStatus.wfStatus : undefined, securityFeature.vpnSupport ? securityStatus.vpnStatus : undefined].filter(i => i !== undefined);
 
 	localCacheService.setLocalCacheValue(LocalStorageKey.SecurityLandingLevel, landingStatus);

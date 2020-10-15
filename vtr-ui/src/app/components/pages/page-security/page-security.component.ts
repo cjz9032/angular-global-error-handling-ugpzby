@@ -54,7 +54,8 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 	securityFeature: SecurityFeature = {
 		pluginSupport: false,
 		pwdSupport: false,
-		vpnSupport: false
+		vpnSupport: false,
+		fingerprintSupport: false
 	};
 	haveOwnList: any;
 	translations: any;
@@ -99,7 +100,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		this.securityLevel = {
 			landingStatus: this.landingStatus,
 			basicView: [securityStatus.avStatus, securityStatus.fwStatus, this.securityFeature.pluginSupport ? securityStatus.waStatus : undefined].filter(i => i !== undefined),
-			intermediateView: [this.securityFeature.pwdSupport ? securityStatus.pmStatus : undefined, this.securityFeature.pluginSupport ? securityStatus.whStatus : undefined, this.securityFeature.pluginSupport ? securityStatus.uacStatus : undefined].filter(i => i !== undefined),
+			intermediateView: [this.securityFeature.pwdSupport ? securityStatus.pmStatus : undefined, this.securityFeature.fingerprintSupport ? securityStatus.whStatus : undefined, this.securityFeature.pluginSupport ? securityStatus.uacStatus : undefined].filter(i => i !== undefined),
 			advancedView: [this.securityAdvisor.wifiSecurity.isSupported ? securityStatus.wfStatus : undefined, this.securityFeature.vpnSupport ? securityStatus.vpnStatus : undefined].filter(i => i !== undefined)};
 		this.deviceService.getMachineInfo().then(result => {
 			this.securityFeature.vpnSupport = true;
@@ -118,6 +119,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			.catch((e) => {
 				this.securityFeature.pluginSupport = false;
 			}).finally(() => {
+				this.securityFeature.fingerprintSupport = this.windowsHelloService.showWindowsHello(this.securityAdvisor.windowsHello);
 				this.translate.stream([
 					'common.securityAdvisor.loading',
 					'common.securityAdvisor.enrolled',
@@ -164,7 +166,6 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 							this.haveOwnList,
 							this.securityFeature,
 							this.antivirusService,
-							this.windowsHelloService,
 							this.localCacheService);
 					});
 				});
@@ -182,7 +183,6 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 				haveOwnList,
 				this.securityFeature,
 				this.antivirusService,
-				this.windowsHelloService,
 				this.localCacheService);
 		});
 	}
@@ -204,7 +204,6 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 				this.haveOwnList,
 				this.securityFeature,
 				this.antivirusService,
-				this.windowsHelloService,
 				this.localCacheService);
 		});
 	}
