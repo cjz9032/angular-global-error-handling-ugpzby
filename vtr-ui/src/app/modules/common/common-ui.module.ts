@@ -25,6 +25,7 @@ import { UiToggleComponent } from 'src/app/components/ui/ui-toggle/ui-toggle.com
 import { ContainerCollapsibleComponent } from 'src/app/components/container-collapsible/container-collapsible.component';
 import { UiBrightnessSliderComponent } from 'src/app/components/ui/ui-brightness-slider/ui-brightness-slider.component';
 import { UiAddReduceButtonComponent } from 'src/app/components/ui/ui-add-reduce-button/ui-add-reduce-button.component';
+import { UiGamingSliderComponent } from 'src/app/components/ui/ui-gaming-slider/ui-gaming-slider.component';
 
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons/faCircle';
@@ -72,7 +73,8 @@ import { faRedo } from '@fortawesome/free-solid-svg-icons/faRedo';
 		UiBrightnessSliderComponent,
 		UiAddReduceButtonComponent,
 		UiGroupCardComponent,
-		UiDeviceinfoItemComponent
+		UiDeviceinfoItemComponent,
+		UiGamingSliderComponent
 	],
 	exports: [
 		UiCheckboxComponent,
@@ -105,6 +107,7 @@ import { faRedo } from '@fortawesome/free-solid-svg-icons/faRedo';
 		UiCircleRadioWithCheckBoxListModule,
 		UiGroupCardComponent,
 		UiDeviceinfoItemComponent,
+		UiGamingSliderComponent
 	],
 	imports: [
 		CommonModule,

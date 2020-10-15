@@ -1,4 +1,4 @@
-import { Component, OnInit,ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'vtr-ui-gaming-slider',
@@ -6,12 +6,19 @@ import { Component, OnInit,ElementRef } from '@angular/core';
   styleUrls: ['./ui-gaming-slider.component.scss']
 })
 export class UiGamingSliderComponent implements OnInit {
+  @Input() minValue: number;
+  @Input() maxValue: number;
+  @Input() step: number;
+  @Input() currentVal: number;
+  @Output() onSliderChanged = new EventEmitter();
+  
   constructor(private el: ElementRef) { }
 
   ngOnInit() {
 
   }
-  public userChange(val){
+  public userChange($event:any){
+		this.onSliderChanged.emit(Number($event.target.value));
   }
 
 }
