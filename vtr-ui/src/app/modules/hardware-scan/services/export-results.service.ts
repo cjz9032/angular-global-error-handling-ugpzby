@@ -10,12 +10,9 @@ import { environment } from 'src/environments/environment';
 import { ScanLogService } from './scan-log.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { HardwareScanOverallResult, HardwareScanTestResult } from '../enums/hardware-scan.enum';
-import { ScanExecutionService } from './scan-execution.service';
 import { RecoverBadSectorsService } from './recover-bad-sectors.service';
 import { HardwareScanService } from './hardware-scan.service';
 import { DeviceService } from '../../../services/device/device.service';
-import { MyDevice } from 'src/app/data-models/device/my-device.model';
-
 
 declare var window;
 
@@ -41,7 +38,6 @@ export class ExportResultsService {
 		private formatDateTime: FormatLocaleDateTimePipe,
 		private scanLogService: ScanLogService,
 		private logger: LoggerService,
-		private scanExecutionService: ScanExecutionService,
 		private recoverBadSectorsService: RecoverBadSectorsService,
 		private hardwareScanService: HardwareScanService,
 		private deviceService: DeviceService) {
@@ -67,14 +63,6 @@ export class ExportResultsService {
 	 */
 	private getIconClassFromStatus(statusCode: HardwareScanTestResult): string {
 		return HardwareScanTestResult[statusCode].toLowerCase() + '_icon';
-		// switch (statusCode) {
-		// 	case HardwareScanTestResult.Pass: return 'pass_icon';
-		// 	case HardwareScanTestResult.Fail: return 'fail_icon';
-		// 	case HardwareScanTestResult.Attention: return 'attention_icon';
-		// 	case HardwareScanTestResult.Na: return 'na_icon';
-		// 	case HardwareScanTestResult.Cancelled: return 'cancel_icon';
-		// 	default: return 'fail_icon';
-		// }
 	}
 
 	/**
@@ -100,19 +88,6 @@ export class ExportResultsService {
 	 */
 	private getStatusName(statusCode: HardwareScanTestResult): string {
 		return this.translate.transform('hardwareScan.' + HardwareScanTestResult[statusCode].toLowerCase());
-		// switch (statusCode) {
-		// 	case HardwareScanTestResult.Cancelled:
-		// 		return this.translate.transform('hardwareScan.cancelled');
-		// 	case HardwareScanTestResult.Fail:
-		// 		return this.translate.transform('hardwareScan.fail');
-		// 	case HardwareScanTestResult.Pass:
-		// 		return this.translate.transform('hardwareScan.pass');
-		// 	case HardwareScanTestResult.Attention:
-		// 		return this.translate.transform('hardwareScan.attention');
-		// 	case HardwareScanTestResult.Na:
-		// 		return this.translate.transform('hardwareScan.na');
-		// 	default: return this.translate.transform('hardwareScan.fail');
-		// }
 	}
 
 	/**
