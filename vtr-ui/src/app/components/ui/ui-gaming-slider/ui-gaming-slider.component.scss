@@ -3,6 +3,7 @@
    width: 100%;
    input[type=range]{
       width: 100%;
+      height: 4rem;
       outline: none;
    }
    /*进度条轨道*/
@@ -16,14 +17,11 @@
    }
    /*进度条滑块*/
    input[type=range]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      height: 12px;
-      width: 12px;
-      background: #ffffff; 
+      height: 17px;
+      width: 17px;
+      background: $light; 
       border-radius: 50%;
       border: solid 0.125em rgba(205, 224, 230, 0.5); 
-      position: relative;
-      z-index: 999;
    }
    /*进度条已填充的部分*/
    input[type=range]::-ms-fill-lower{
