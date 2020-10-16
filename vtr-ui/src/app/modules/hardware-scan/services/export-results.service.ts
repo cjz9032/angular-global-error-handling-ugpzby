@@ -29,7 +29,6 @@ export class ExportResultsService {
 	private shellVersion: string;
 	private experienceVersion: string;
 	private bridgeVersion: string;
-	private deviceInfo: Promise<MyDevice>;
 
 	private document: HTMLDocument;
 
@@ -67,14 +66,15 @@ export class ExportResultsService {
 	 * @param statusCode A number representing the test result status
 	 */
 	private getIconClassFromStatus(statusCode: HardwareScanTestResult): string {
-		switch (statusCode) {
-			case HardwareScanTestResult.Pass: return 'pass_icon';
-			case HardwareScanTestResult.Fail: return 'fail_icon';
-			case HardwareScanTestResult.Attention: return 'attention_icon';
-			case HardwareScanTestResult.Na: return 'na_icon';
-			case HardwareScanTestResult.Cancelled: return 'cancel_icon';
-			default: return 'fail_icon';
-		}
+		return HardwareScanTestResult[statusCode].toLowerCase() + '_icon';
+		// switch (statusCode) {
+		// 	case HardwareScanTestResult.Pass: return 'pass_icon';
+		// 	case HardwareScanTestResult.Fail: return 'fail_icon';
+		// 	case HardwareScanTestResult.Attention: return 'attention_icon';
+		// 	case HardwareScanTestResult.Na: return 'na_icon';
+		// 	case HardwareScanTestResult.Cancelled: return 'cancel_icon';
+		// 	default: return 'fail_icon';
+		// }
 	}
 
 	/**
@@ -99,20 +99,20 @@ export class ExportResultsService {
 	 * @param statusCode A number representing the test result status
 	 */
 	private getStatusName(statusCode: HardwareScanTestResult): string {
-
-		switch (statusCode) {
-			case HardwareScanTestResult.Cancelled:
-				return this.translate.transform('hardwareScan.cancelled');
-			case HardwareScanTestResult.Fail:
-				return this.translate.transform('hardwareScan.fail');
-			case HardwareScanTestResult.Pass:
-				return this.translate.transform('hardwareScan.pass');
-			case HardwareScanTestResult.Attention:
-				return this.translate.transform('hardwareScan.attention');
-			case HardwareScanTestResult.Na:
-				return this.translate.transform('hardwareScan.na');
-			default: return this.translate.transform('hardwareScan.fail');
-		}
+		return this.translate.transform('hardwareScan.' + HardwareScanTestResult[statusCode].toLowerCase());
+		// switch (statusCode) {
+		// 	case HardwareScanTestResult.Cancelled:
+		// 		return this.translate.transform('hardwareScan.cancelled');
+		// 	case HardwareScanTestResult.Fail:
+		// 		return this.translate.transform('hardwareScan.fail');
+		// 	case HardwareScanTestResult.Pass:
+		// 		return this.translate.transform('hardwareScan.pass');
+		// 	case HardwareScanTestResult.Attention:
+		// 		return this.translate.transform('hardwareScan.attention');
+		// 	case HardwareScanTestResult.Na:
+		// 		return this.translate.transform('hardwareScan.na');
+		// 	default: return this.translate.transform('hardwareScan.fail');
+		// }
 	}
 
 	/**
@@ -221,15 +221,18 @@ export class ExportResultsService {
 	 * @param gray A boolean indicating whether the div background should be gray or not.
 	 * @param moduleCount A number to indicate the module href id.
 	 */
-	private createTestSummaryItemDiv(item: any, gray: boolean, moduleCount: number): Element {
+	private createTestSummaryItemDiv(item: any, gray: boolean, moduleCount: number, isRbs: boolean = false): Element {
 		const itemDiv = this.createElement({elementType: 'div', innerHtml: undefined, classes: ['item', 'bg_gray']});
 		const divItemTitle = this.createElement(({elementType: 'div', innerHtml: undefined, classes: ['font_weight_600', 'item_description']}));
+
+		// Creating test summary row title and link
 		const linkItemTitle = this.createElement(({elementType: 'a', innerHtml: this.translate.transform('hardwareScan.pluginTokens.' + item.module, item.module), classes: ['test_summary_item_title', 'capitalize_text']}));
+		linkItemTitle.innerHTML = isRbs ? item.name : this.translate.transform('hardwareScan.pluginTokens.' + item.module, item.module);
 		linkItemTitle.setAttribute('href', `#${item.module.toLowerCase()}-${moduleCount}`);
 		divItemTitle.appendChild(linkItemTitle);
 		itemDiv.appendChild(divItemTitle);
-		const columnWrapperDiv = this.createElement({elementType: 'div', innerHtml: undefined, classes: ['column_wrapper']});
 
+		const columnWrapperDiv = this.createElement({elementType: 'div', innerHtml: undefined, classes: ['column_wrapper']});
 		const scanStatusFiltered = this.getScanStatusFiltered();
 		for (const key of scanStatusFiltered) {
 			const colDiv = this.createElement({elementType: 'div', innerHtml: undefined, classes: ['col', 'test_result_wrapper']});
@@ -255,6 +258,11 @@ export class ExportResultsService {
 	 * @param moduleCount A number to be used as identify to the module
 	 */
 	private createModuleDiv(item: any, moduleCount: number): Element {
+		let isRbsModuleDiv = false;
+		if (item.rbsDetails !== undefined) {
+			isRbsModuleDiv = true;
+		}
+
 		// Module Section Title and icon
 		const spanModuleTitle = this.createElement({ elementType: 'span', innerHtml: this.translate.transform('hardwareScan.pluginTokens.' + item.module, item.module), classes: ['font_weight_600', 'capitalize_text', 'section_title'] });
 		const divModuleIcon = this.createElement({ elementType: 'div', innerHtml: undefined, classes: ['module_icon', this.getIconClassFromModuleId(item.icon)] });
@@ -268,9 +276,13 @@ export class ExportResultsService {
 		const spanModuleResultCode = this.createElement({ elementType: 'span', innerHtml: this.translate.transform('hardwareScan.resultCode') + ': ', classes: ['font_weight_600', 'capitalize_text'] });
 		const spanModuleResultCodeValue = this.createElement({ elementType: 'span', innerHtml: item.resultCode });
 		const divSubTitle = this.createElement({ elementType: 'div' });
-		divSubTitle.appendChild(spanModuleResultCode);
-		divSubTitle.appendChild(spanModuleResultCodeValue);
 		const divContentSubtitle = this.createElement({ elementType: 'div', innerHtml: undefined, classes: ['content_subtitle'] });
+
+		if (!isRbsModuleDiv) {
+			divSubTitle.appendChild(spanModuleResultCode);
+			divSubTitle.appendChild(spanModuleResultCodeValue);
+		}
+
 		divContentSubtitle.appendChild(spanModuleSubTitle);
 		divContentSubtitle.appendChild(divSubTitle);
 
@@ -280,7 +292,6 @@ export class ExportResultsService {
 			acc[curr.index].push(curr);
 			return acc;
 		}, Object.create(null));
-
 
 		// Module info
 		const divInfo = this.document.createElement('div');
@@ -334,10 +345,26 @@ export class ExportResultsService {
 		divTests.appendChild(spanTests);
 		divTests.appendChild(divTestItems);
 		let gray = true;
-		for (const test of item.listTest) {
-			const testItem = this.createTestItemDiv(test, gray);
-			divTestItems.appendChild(testItem);
-			gray = !gray;
+		if (item.listTest !== undefined) {
+			for (const test of item.listTest) {
+				const testItem = this.createTestItemDiv(test, gray);
+				divTestItems.appendChild(testItem);
+				gray = !gray;
+			}
+		}
+
+		const divRbsTest = this.createElement({ elementType: 'div', innerHtml: undefined, classes: ['tests'] });
+		const spanRbsTest = this.createElement({ elementType: 'span', innerHtml: this.translate.transform('hardwareScan.recoverBadSectors.title'), classes: ['resource_or_test_title'] });
+		const divRbsDetailsItems = this.createElement({ elementType: 'div', innerHtml: undefined, classes: ['test_items'] });
+		divRbsTest.appendChild(spanRbsTest);
+		divRbsTest.appendChild(divRbsDetailsItems);
+		gray = true;
+		if (isRbsModuleDiv) {
+			for (const detail of item.rbsDetails) {
+				const rbsDetailItem = this.createItemDiv(this.translate.transform('hardwareScan.recoverBadSectors.' + detail.key, detail.key), detail.value, gray, true);
+				divRbsDetailsItems.appendChild(rbsDetailItem);
+				gray = !gray;
+			}
 		}
 
 		// Whole module div
@@ -346,11 +373,17 @@ export class ExportResultsService {
 		divModule.appendChild(divModuleTitle);
 		divModule.appendChild(divContentSubtitle);
 		divModule.appendChild(divInfo);
+		if (isRbsModuleDiv) {
+			divModule.appendChild(hr);
+			divModule.appendChild(divRbsTest);
+		}
 		if (divResources !== undefined) {
 			divModule.appendChild(divResources);
 		}
-		divModule.appendChild(hr);
-		divModule.appendChild(divTests);
+		if (!isRbsModuleDiv) {
+			divModule.appendChild(hr);
+			divModule.appendChild(divTests);
+		}
 		return divModule;
 	}
 
@@ -358,7 +391,7 @@ export class ExportResultsService {
 	 * Main function that will be create each needed element
 	 * @param data A json object containing all data needed to export the results
 	 */
-	private populateTemplate(data: any) {
+	private populateScanLogTemplate(data: any) {
 
 		// Overall status
 		const headerTitle = this.document.getElementById('title');
@@ -419,7 +452,7 @@ export class ExportResultsService {
 		const totalModulesTestedElement = this.document.getElementById('total_modules_tested');
 		const divTotalModulesTestedTitle = this.createElement({elementType: 'span', innerHtml: this.translate.transform('hardwareScan.report.totalModulesTested'), classes: ['font_weight_600']});
 		divTotalModulesTestedTitle.append(': ');
-		const divTotalModulesTestedValue = this.createElement({elementType: 'span', innerHtml: '5', classes: ['font_weight_400']});
+		const divTotalModulesTestedValue = this.createElement({elementType: 'span', innerHtml: data.items.length, classes: ['font_weight_400']});
 		totalModulesTestedElement.appendChild(divTotalModulesTestedTitle);
 		totalModulesTestedElement.appendChild(divTotalModulesTestedValue);
 
@@ -582,7 +615,7 @@ export class ExportResultsService {
 		return new Promise((resolve, reject) => {
 			this.http.get(ExportResultsService.TEMPLATE_PATH, { responseType: 'text' }).toPromise().then(htmlData => {
 				this.document = new DOMParser().parseFromString(htmlData, 'text/html');
-				this.populateTemplate(jsonData);
+				this.populateScanLogTemplate(jsonData);
 				resolve(this.document.documentElement.outerHTML);
 			}).catch(error => {
 				reject(error);
@@ -607,9 +640,10 @@ export class ExportResultsService {
 
 		return new Promise<any> ((resolve, reject) => {
 			this.deviceService.getDeviceInfo().then((info) => {
-				modelData.bios = info.bios;
+				modelData.biosVersion = info.bios;
 				modelData.serialNumber = info.sn;
-				modelData.productNumber = info.productNo;
+				modelData.productName = info.productNo;
+				modelData.machineModel = info.family;
 				resolve(modelData);
 			}).catch((error) => {
 				reject(error);
@@ -617,26 +651,29 @@ export class ExportResultsService {
 		});
 	}
 
-	private async prepareDataFromRBS(rbsResultData: any) {
+	private async prepareDataFromRBS(rbsResult: any) {
 		const modulesData = this.hardwareScanService.getModulesRetrieved();
 		const storageModules = modulesData.categoryList.find(module => module.id === 'storage').groupList;
 		const preparedData: any = {};
 		const preparedRbsDevices = [];
 
-
-		rbsResultData.items.map(device => {
+		rbsResult.items.map(device => {
 			const rbsDevice = {
 				id: device.deviceId,
 				name: device.name,
-				metaInformation: storageModules.find(module => module.id === device.deviceId).metaInformation,
-				details: device.details,
+				module: device.module,
+				icon: device.module.toLowerCase(),
+				details: this.buildDetails(storageModules.find(module => module.id === device.deviceId)),
+				rbsDetails: device.details,
+				resultModule: device.listTest[0].statusTest
 			};
 			preparedRbsDevices.push(rbsDevice);
 		});
 
-		preparedData.resultModule = rbsResultData.resultModule;
-		preparedData.finishTime = rbsResultData.date;
-		preparedData.devices = preparedRbsDevices;
+		preparedData.resultModule = rbsResult.resultModule;
+		preparedData.startDate = rbsResult.startDate;
+		preparedData.endDate = rbsResult.date;
+		preparedData.items = preparedRbsDevices;
 		preparedData.model = await this.getModelData();
 
 		preparedData.environment = {
@@ -645,13 +682,123 @@ export class ExportResultsService {
 			bridgeVersion: this.bridgeVersion
 		};
 
-
+		preparedData.resultTestsTitle = rbsResult.resultModule;
+		preparedData.testSummary = this.generateTestSummaryInfo(preparedData);
 
 		return preparedData;
 	}
 
-	private generateRbsReport(data: any) {
+	private populateRbsTemplate(data: any) {
+		// Overall status
+		const headerTitle = this.document.getElementById('title');
+		headerTitle.innerText = this.document.title =  this.translate.transform('hardwareScan.report.title');
+		const scanDateElement = this.document.getElementById('scan_date');
+		const overallTestStatusDescElement = this.document.getElementById('overall_test_status_desc');
+		const overallTestStatusIconElement = this.document.getElementById('overall_test_status_icon');
+		scanDateElement.innerHTML = this.formatDateTime.transform(data.startDate);
+		overallTestStatusDescElement.innerHTML = this.getStatusName(data.resultTestsTitle);
+		overallTestStatusIconElement.classList.add(this.getIconClassFromStatus(data.resultTestsTitle));
 
+		// Machine information
+		const spanModel = this.document.getElementById('model');
+		const machineModel = this.document.getElementById('machine_model');
+		// const finalResultCodeSpan = this.document.getElementById('final_result_code_span');
+		// const finalResultCode = this.document.getElementById('final_result_code');
+		const machineInfoItems = this.document.getElementById('machine_info_items');
+
+		spanModel.innerHTML = this.translate.transform('hardwareScan.report.modelTitle');
+		machineModel.innerHTML = data.model.machineModel;
+		// finalResultCodeSpan.innerHTML = this.translate.transform('hardwareScan.finalResultCode') + ': ';
+		// finalResultCode.innerHTML = data.finalResultCode;
+
+		const summaryHeaderOrder = ['productName', 'serialNumber', 'biosVersion'];
+		for (const key of summaryHeaderOrder) {
+			const value = data.model[key];
+			const div = this.createItemDiv(this.translate.transform('hardwareScan.report.model.' + key), value );
+			machineInfoItems.appendChild(div);
+		}
+
+		// Environment Section
+		const environmentInfoItemsOrder = ['experienceVersion', 'shellVersion', 'bridgeVersion'];
+		const environmentSectionTitle = this.document.getElementById('environment_title');
+		const environmentInfoSectionItems = this.document.getElementById('environment_info_items');
+		environmentSectionTitle.innerHTML = this.translate.transform('hardwareScan.report.environmentTitle');
+
+		for (const key of environmentInfoItemsOrder) {
+			const value = data.environment[key];
+			const div = this.createItemDiv(this.translate.transform('hardwareScan.report.environment.' + key), value);
+			environmentInfoSectionItems.appendChild(div);
+		}
+
+		// Test Summary Section
+		const testSummaryHeader = this.document.getElementById('test_summary_header');
+		const testSummaryTitle = this.document.getElementById('test_summary_title');
+		testSummaryTitle.innerHTML = this.translate.transform('hardwareScan.report.testResult');
+
+		const testSummarySectionItems = this.document.getElementById('test_summary_info_items');
+		const totalModulesTestedElement = this.document.getElementById('total_modules_tested');
+		const divTotalModulesTestedTitle = this.createElement({elementType: 'span', innerHtml: this.translate.transform('hardwareScan.report.totalModulesTested'), classes: ['font_weight_600']});
+		divTotalModulesTestedTitle.append(': ');
+		const divTotalModulesTestedValue = this.createElement({elementType: 'span', innerHtml: data.items.length, classes: ['font_weight_400']});
+		totalModulesTestedElement.appendChild(divTotalModulesTestedTitle);
+		totalModulesTestedElement.appendChild(divTotalModulesTestedValue);
+
+		data.testSummary = this.generateTestSummaryInfo(data);
+
+		for (const key of this.getScanStatusFiltered()) {
+			const value = data.testSummary[HardwareScanTestResult[key]] ?? 0;
+			const spanTitle = this.createElement({elementType: 'span', innerHtml: this.translate.transform('hardwareScan.' + HardwareScanTestResult[key].toLowerCase()), classes: ['font_weight_600']});
+			const spanValue = this.createElement({elementType: 'span', innerHtml: value, classes: ['font_weight_400']});
+			const col = this.createElement({elementType: 'div', innerHtml: undefined, classes: ['col', 'test_result_wrapper']});
+
+			spanTitle.append(': ');
+			col.appendChild(spanTitle);
+			col.appendChild(spanValue);
+
+			testSummaryHeader.appendChild(col);
+		}
+
+		let gray = true;
+		let count = 0;
+		for (const item of data.items) {
+			const module = this.createTestSummaryItemDiv(item, gray, count, true);
+			testSummarySectionItems.appendChild(module);
+
+			gray = !gray;
+			count++;
+		}
+
+		// StartTime and EndTime
+		const divStartTimeTitle = this.document.getElementById('test_summary_start_time_title');
+		const divStartTimeValue = this.document.getElementById('test_summary_start_time_value');
+		divStartTimeTitle.innerHTML = this.translate.transform( 'hardwareScan.report.startDate');
+		divStartTimeValue.innerHTML = this.formatDateTime.transform(data.startDate);
+
+		const divEndTimeTitle = this.document.getElementById('test_summary_end_time_title');
+		const divEndTimeValue = this.document.getElementById('test_summary_end_time_value');
+		divEndTimeTitle.innerHTML = this.translate.transform( 'hardwareScan.report.endDate');
+		divEndTimeValue.innerHTML = this.formatDateTime.transform(data.endDate);
+
+		// Modules information
+		count = 0;
+		const modules = this.document.getElementById('modules');
+		for (const item of data.items) {
+			const module = this.createModuleDiv(item, count);
+			modules.appendChild(module);
+			count++;
+		}
+	}
+
+	private generateRbsReport(jsonData: any) {
+		return new Promise((resolve, reject) => {
+			this.http.get(ExportResultsService.TEMPLATE_PATH, { responseType: 'text' }).toPromise().then(htmlData => {
+				this.document = new DOMParser().parseFromString(htmlData, 'text/html');
+				this.populateRbsTemplate(jsonData);
+				resolve(this.document.documentElement.outerHTML);
+			}).catch(error => {
+				reject(error);
+			});
+		});
 	}
 
 	public async exportRbsResults() {
