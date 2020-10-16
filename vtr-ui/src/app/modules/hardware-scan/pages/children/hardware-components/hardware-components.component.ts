@@ -244,6 +244,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				});
 			} else if (this.hardwareScanService.getScanFinishedHeaderType() === HardwareScanFinishedHeaderType.RecoverBadSectors) {
 				// TODO
+				this.exportService.exportRbsResults();
 			}
 		}
 	}

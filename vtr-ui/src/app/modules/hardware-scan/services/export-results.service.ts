@@ -10,6 +10,12 @@ import { environment } from 'src/environments/environment';
 import { ScanLogService } from './scan-log.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { HardwareScanOverallResult, HardwareScanTestResult } from '../enums/hardware-scan.enum';
+import { ScanExecutionService } from './scan-execution.service';
+import { RecoverBadSectorsService } from './recover-bad-sectors.service';
+import { HardwareScanService } from './hardware-scan.service';
+import { DeviceService } from '../../../services/device/device.service';
+import { MyDevice } from 'src/app/data-models/device/my-device.model';
+
 
 declare var window;
 
@@ -23,6 +29,7 @@ export class ExportResultsService {
 	private shellVersion: string;
 	private experienceVersion: string;
 	private bridgeVersion: string;
+	private deviceInfo: Promise<MyDevice>;
 
 	private document: HTMLDocument;
 
@@ -34,7 +41,11 @@ export class ExportResultsService {
 		private shellService: VantageShellService,
 		private formatDateTime: FormatLocaleDateTimePipe,
 		private scanLogService: ScanLogService,
-		private logger: LoggerService) {
+		private logger: LoggerService,
+		private scanExecutionService: ScanExecutionService,
+		private recoverBadSectorsService: RecoverBadSectorsService,
+		private hardwareScanService: HardwareScanService,
+		private deviceService: DeviceService) {
 		this.experienceVersion = environment.appVersion;
 
 		if (window.Windows) {
@@ -589,6 +600,77 @@ export class ExportResultsService {
 		const time = date.toTimeString().split(' ');
 
 		return year + maskMonth + maskDay + '_' + time[0].replace(/:/g, '');
+	}
+
+	private getModelData(): Promise<any> {
+		const modelData: any = {};
+
+		return new Promise<any> ((resolve, reject) => {
+			this.deviceService.getDeviceInfo().then((info) => {
+				modelData.bios = info.bios;
+				modelData.serialNumber = info.sn;
+				modelData.productNumber = info.productNo;
+				resolve(modelData);
+			}).catch((error) => {
+				reject(error);
+			});
+		});
+	}
+
+	private async prepareDataFromRBS(rbsResultData: any) {
+		const modulesData = this.hardwareScanService.getModulesRetrieved();
+		const storageModules = modulesData.categoryList.find(module => module.id === 'storage').groupList;
+		const preparedData: any = {};
+		const preparedRbsDevices = [];
+
+
+		rbsResultData.items.map(device => {
+			const rbsDevice = {
+				id: device.deviceId,
+				name: device.name,
+				metaInformation: storageModules.find(module => module.id === device.deviceId).metaInformation,
+				details: device.details,
+			};
+			preparedRbsDevices.push(rbsDevice);
+		});
+
+		preparedData.resultModule = rbsResultData.resultModule;
+		preparedData.finishTime = rbsResultData.date;
+		preparedData.devices = preparedRbsDevices;
+		preparedData.model = await this.getModelData();
+
+		preparedData.environment = {
+			experienceVersion: this.experienceVersion,
+			shellVersion: this.shellVersion,
+			bridgeVersion: this.bridgeVersion
+		};
+
+
+
+		return preparedData;
+	}
+
+	private generateRbsReport(data: any) {
+
+	}
+
+	public async exportRbsResults() {
+		return new Promise(async (resolve, reject) => {
+			try {
+				// await this.scanExecutionService.modules;
+				const rbsResultItems = await this.recoverBadSectorsService.getRecoverResultItems();
+				const dataPrepared = await this.prepareDataFromRBS(rbsResultItems);
+
+				const htmlData = await this.generateRbsReport(dataPrepared);
+				const fileName = 'RbsHardwareScanLog_' + this.getDateAndHour() + '.html';
+				const logFile = await window.Windows.Storage.KnownFolders.documentsLibrary.createFileAsync(fileName);
+				await window.Windows.Storage.FileIO.appendTextAsync(logFile, htmlData);
+				resolve();
+			} catch (error) {
+				this.logger.error('Could not get rbs log', error);
+				reject();
+			}
+		});
 	}
 
 	public async exportScanResults() {

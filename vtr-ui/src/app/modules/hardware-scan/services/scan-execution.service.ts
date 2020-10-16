@@ -215,6 +215,7 @@ export class ScanExecutionService {
 					module: storageModule.name,
 					icon: storageModule.id,
 					name: device.name,
+					deviceId: device.id,
 					expanded: false,
 					detailsExpanded: false,
 					details: [
@@ -225,7 +226,7 @@ export class ScanExecutionService {
 						{ key: 'elapsedTime', value: device.elapsedTime }
 					],
 					listTest: [{
-						id: '',
+						id: device.id,
 						name: device.name,
 						statusTest: device.status,
 						percent: device.percent,
