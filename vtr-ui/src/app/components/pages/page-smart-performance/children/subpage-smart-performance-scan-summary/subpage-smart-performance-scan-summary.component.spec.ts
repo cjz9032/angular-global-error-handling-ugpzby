@@ -107,24 +107,6 @@ describe('SubpageSmartPerformanceScanSummaryComponent', () => {
 		expect(component.sizeExtension).toEqual('');
 	});
 
-	it('should fetch next scan run time', () => {
-		const scantype = enumSmartPerformance.SCHEDULESCANANDFIX;
-		const result: any = { nextruntime: '2020-06-17T17:45:00' };
-		smartPerformanceService = TestBed.inject(SmartPerformanceService);
-		const spy = spyOn(smartPerformanceService, 'getNextScanRunTime').and.returnValue(Promise.resolve(result));
-		component.getNextScanRunTime(scantype);
-		expect(spy).toHaveBeenCalled();
-	});
-
-	it('should fetch next scan run time - else case', () => {
-		const scantype = enumSmartPerformance.SCHEDULESCANANDFIX;
-		const result: any = {};
-		smartPerformanceService = TestBed.inject(SmartPerformanceService);
-		const spy = spyOn(smartPerformanceService, 'getNextScanRunTime').and.returnValue(Promise.resolve(result));
-		component.getNextScanRunTime(scantype);
-		expect(spy).toHaveBeenCalled();
-	});
-
 	it('should call scanSummaryTIme when parameter value is 1', () => {
 		component.scanSummaryTime(1);
 		expect(component.isFromDate).toBe(true);
@@ -218,27 +200,6 @@ describe('SubpageSmartPerformanceScanSummaryComponent', () => {
 		expect(component.isChangeSchedule).toBe(true);
 	});
 
-	it('should call changeNextScanDateValue - if case', () => {
-		const nextScanScheduleEvent = {
-			nextEnable: false,
-		};
-		component.changeNextScanDateValue(nextScanScheduleEvent);
-		expect(component.enableNextText).toBe(false);
-	});
-
-	it('should call changeNextScanDateValue', () => {
-		const nextScanScheduleEvent = {
-			nextEnable: true,
-			nextScanDate: '06/22',
-			nextScanHour: '08',
-			nextScanMin: '56',
-			nextScanAMPM: 'PM',
-			nextScanDateWithYear: '06/22/2020'
-		};
-		component.changeNextScanDateValue(nextScanScheduleEvent);
-		expect(component.enableNextText).toBe(true);
-	});
-
 	it('should call annualScanSummary', () => {
 		const annualYear = {
 			displayName: '2019-2020',
@@ -313,7 +274,7 @@ describe('SubpageSmartPerformanceScanSummaryComponent', () => {
 			},
 		};
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
-		component.isSubscribed = true;
+		
 		spyOn(smartPerformanceService, 'getLastScanResult').and.returnValue(Promise.resolve(response));
 		component.getLastScanResult();
 		expect(component.isScanning).toBe(false);

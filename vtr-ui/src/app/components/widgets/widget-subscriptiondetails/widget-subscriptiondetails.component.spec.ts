@@ -97,7 +97,7 @@ describe('WidgetSubscriptiondetailsComponent', () => {
 			Promise.resolve({ startDate: '2019/06/20', endDate: '2020/06/19' }),
 			Promise.resolve({ initiatedTime: '08:30', isOpened: true })
 		);
-		component.isSubscribed = true;
+		
 		await component.initSubscripionDetails();
 		fixture.detectChanges();
 		expect(component.strStatus).toEqual('PROCESSING');
@@ -128,7 +128,6 @@ describe('WidgetSubscriptiondetailsComponent', () => {
 
 	it('should enable full feature', () => {
 		commonService = TestBed.inject(CommonService);
-		component.isSubscribed = false;
 		const spy = spyOn(
 			commonService,
 			'getLocalStorageValue'

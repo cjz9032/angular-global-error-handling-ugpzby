@@ -146,7 +146,6 @@ describe('SubpageScheduleScanComponent', () => {
 	});
 
 	it('should not save changed schedule scan - subscribed user', async () => {
-		component.isSubscribed = true;
 		localCacheService = TestBed.inject(LocalCacheService);
 		spyOn(localCacheService, 'getLocalCacheValue').and.resolveTo(component.scanFrequency[0]);
 		await component.cancelChangedScanSchedule();
@@ -154,7 +153,6 @@ describe('SubpageScheduleScanComponent', () => {
 	});
 
 	it('should not save changed schedule scan - non-subscribed user', async () => {
-		component.isSubscribed = false;
 		localCacheService = TestBed.inject(LocalCacheService);
 		spyOn(localCacheService, 'getLocalCacheValue').and.resolveTo(component.scanFrequency[0]);
 		await component.cancelChangedScanSchedule();
@@ -225,7 +223,6 @@ describe('SubpageScheduleScanComponent', () => {
 	it('should call setEnableScanStatus - switch is enabled', async () => {
 		localCacheService = TestBed.inject(LocalCacheService);
 		const event = { switchValue: true };
-		component.isSubscribed = true;
 		spyOn(localCacheService, 'getLocalCacheValue').and.resolveTo(false);
 		const spy = spyOn(component, 'scheduleScan');
 		await component.setEnableScanStatus(event);
@@ -234,7 +231,6 @@ describe('SubpageScheduleScanComponent', () => {
 
 	it('should call setEnableScanStatus - switch is disabled', async () => {
 		const event = { switchValue: false };
-		component.isSubscribed = true;
 		const spy = spyOn(component, 'unregisterScheduleScan');
 		await component.setEnableScanStatus(event);
 		expect(spy).toHaveBeenCalled();
@@ -242,7 +238,6 @@ describe('SubpageScheduleScanComponent', () => {
 
 	it('should schedule scan - subscribed user', () => {
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
-		component.isSubscribed = true;
 		const payload = {
 			scantype: enumSmartPerformance.SCHEDULESCANANDFIX,
 			frequency: 'onceaweek',
@@ -258,7 +253,6 @@ describe('SubpageScheduleScanComponent', () => {
 
 	it('should schedule scan - non-subscribed user', () => {
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
-		component.isSubscribed = false;
 		const payload = {
 			scantype: enumSmartPerformance.SCHEDULESCAN,
 			frequency: 'onceaweek',
@@ -410,7 +404,6 @@ describe('SubpageScheduleScanComponent', () => {
 	it('should call commonLines to set payload object for schedule scan - onceaweek', () => {
 		const currentMom = moment().day(2).format('YYYY, MM, D, ss');
 		const frequency = 'Once a week';
-		component.isSubscribed = true;
 		component.commonLines(currentMom, frequency);
 		expect(component.requestScanData.frequency).toEqual('onceaweek');
 	});
@@ -418,7 +411,6 @@ describe('SubpageScheduleScanComponent', () => {
 	it('should call commonLines to set payload object for schedule scan - every other week', () => {
 		const currentMom = moment().day(4).format('YYYY, MM, D, ss');
 		const frequency = 'Every other week';
-		component.isSubscribed = false;
 		component.commonLines(currentMom, frequency);
 		expect(component.requestScanData.frequency).toEqual('everyotherweek');
 	});
@@ -426,7 +418,6 @@ describe('SubpageScheduleScanComponent', () => {
 	it('should call commonLines to set payload object for schedule scan - every month', () => {
 		const currentMom = moment().date(4).format('YYYY, MM, D, ss');
 		const frequency = 'Every month';
-		component.isSubscribed = false;
 		component.commonLines(currentMom, frequency);
 		expect(component.requestScanData.frequency).toEqual('onceamonth');
 	});
