@@ -17,6 +17,7 @@ import moment from 'moment';
 import { Router } from '@angular/router';
 import { takeUntil } from 'rxjs/operators';
 import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
 @Component({
 	selector: 'vtr-widget-device',
@@ -40,6 +41,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 	isSMPSubscripted: Promise<boolean>;
 	hwInfo: Promise<any>;
 	ngUnsubscribe: Subject<any> = new Subject();
+	sysinfo: any;
 
 	constructor(
 		public deviceService: DeviceService,
@@ -53,9 +55,11 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		private smartPerformanceService: SmartPerformanceService,
 		private configService: ConfigService,
 		private hwScanService: HardwareScanService,
-		private router: Router
+		private router: Router,
+		private shellService: VantageShellService
 	) {
 		this.myDevice = new MyDevice();
+		this.sysinfo =  this.shellService.getSysinfo();
 	}
 
 	ngOnInit() {
@@ -68,10 +72,12 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 			this.myDevice.bios = machineInfo?.biosVersion;
 			this.myDevice.subBrand = machineInfo?.subBrand;
 			this.myDevice.productNo = machineInfo?.mtm;
+			this.startMonitorPerformance();
 		});
 	}
 
 	ngOnDestroy() {
+		this.sysinfo?.stopMonitorPerformance();
 		this.ngUnsubscribe.next();
 		this.ngUnsubscribe.complete();
 	}
@@ -166,7 +172,22 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 			this.swStatus[index++] = hwscan;
 			this.updateHwScanStatus(hwscan);
 		}
+	}
 
+	startMonitorPerformance(){
+		this.sysinfo?.startMonitorPerformance((data) => {
+			const processor = this.hwStatus[0];
+			processor.percent = data?.cpuLoad;
+			processor.used =  data?.cpuLoad?.toFixed(2) + '%';
+			processor.total = data?.cpuGhz?.toFixed(2) + ' GHz';
+			this.hwStatus[0] =  {...processor};
+			const ram = this.hwStatus[1];
+			const used = data?.memoryUsage?.totalSizeInBytes - data?.memoryUsage?.avaliableSize;
+			ram.percent = used / data?.memoryUsage?.totalSizeInBytes * 100;
+			ram.used = this.commonService.formatBytes(used);
+			ram.total = this.commonService.formatBytes(data?.memoryUsage?.totalSizeInBytes);
+			this.hwStatus[1] = {...ram};
+		}, 1500);
 	}
 
 	private async updateProssorInfo(processor: DeviceStatus){
@@ -175,6 +196,9 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 			processor.link = 'ms-settings:about';
 			processor.icon = this.processorIcon;
 			processor.subtitle = `${data.processor.name}`;
+			processor.percent = 0;
+			processor.used =  '--';
+			processor.total = '-- ';
 			this.hwStatus[0] = processor;
 		}
 	}
