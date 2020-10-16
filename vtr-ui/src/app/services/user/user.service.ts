@@ -358,6 +358,8 @@ export class UserService implements IUserService {
 		this.deleteCookies('https://www.facebook.com');
 		this.deleteCookies('https://login.live.com');
 		this.deleteCookies('https://www.google.com');
+		this.deleteCookies('https://www.twitch.tv');
+		this.deleteCookies('https://steamcommunity.com');
 
 		if (this.lid !== undefined) {
 			const lidGuid = this.lid.userGuid;
