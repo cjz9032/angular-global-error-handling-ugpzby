@@ -10,6 +10,10 @@ export class UiGamingSliderComponent implements OnInit {
   @Input() maxValue: number;
   @Input() step: number;
   @Input() currentVal: number;
+  @Input() automationId: string;
+	@Input() metricsId = '';
+  @Input() ariaLabelValue: any;
+	@Input() vtrMetricEnabled: any;
   @Output() onSliderChanged = new EventEmitter();
   
   constructor(private el: ElementRef) { }
