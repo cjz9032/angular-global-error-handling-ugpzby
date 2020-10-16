@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.25](https://bitbucket.tc.lenovo.com///compare/v1.8.24...v1.8.25) (2020-10-16)
+
+
+### Bug Fixes
+
+* **IndexedDB:** VAN-22408 fix object cache will be reset in other place; Update transferred shell version to 10.2011.8 ([2b30353](https://bitbucket.tc.lenovo.com///commit/2b30353997b7df3a127f35ed928994549eea090a))
+
 ### [1.8.24](https://bitbucket.tc.lenovo.com///compare/v1.8.23...v1.8.24) (2020-10-15)
 
 
