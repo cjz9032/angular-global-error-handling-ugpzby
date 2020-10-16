@@ -27,6 +27,14 @@ const routes: Routes = [
 			pageName: 'Security'
 		}
 	}, {
+		path: 'mysecurity/:nav',
+		component: PageSecurityComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService, SecurityAdvisorGuard, NonSmodeGuard, NonArmGuard],
+		data: {
+			pageName: 'Security'
+		}
+	}, {
 		path: 'anti-virus',
 		component: PageSecurityAntivirusComponent,
 		canDeactivate: [GuardService],

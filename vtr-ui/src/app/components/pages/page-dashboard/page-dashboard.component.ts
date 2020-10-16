@@ -184,19 +184,19 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			title: 'common.securityAdvisor.title',
 			summary: 'dashboard.securityStatus.basicDesc',
 			linkText: 'common.ui.improveNow',
-			linkPath: 'security/anti-virus',
+			linkPath: 'security/mysecurity/basic',
 			statusText: 'security.landing.basic'
 		}, {
 			title: 'common.securityAdvisor.title',
 			summary: 'dashboard.securityStatus.intermediateDesc',
 			linkText: 'common.menu.security.sub1',
-			linkPath: 'security',
+			linkPath: 'security/mysecurity/intermediate',
 			statusText: 'security.landing.intermediate'
 		}, {
 			title: 'common.securityAdvisor.title',
 			summary: 'dashboard.securityStatus.advancedDesc',
 			linkText: 'common.menu.security.sub1',
-			linkPath: 'security',
+			linkPath: 'security/mysecurity/advanced',
 			statusText: 'security.landing.advanced'
 		}
 	];

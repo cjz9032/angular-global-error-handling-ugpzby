@@ -4,6 +4,8 @@ import {
 	HostListener,
 	OnDestroy
 } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 import {
 	VantageShellService
 } from '../../../services/vantage-shell/vantage-shell.service';
@@ -70,7 +72,8 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		private deviceService: DeviceService,
 		private hypSettings: HypothesisService,
 		private antivirusService: AntivirusService,
-		private translate: TranslateService
+		private translate: TranslateService,
+		private activatedRoute: ActivatedRoute
 	) {}
 
 	@HostListener('window: focus')
@@ -79,6 +82,9 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		this.activatedRoute.paramMap.subscribe(paramMap => {
+			this.currentPage = paramMap.get('nav');
+		});
 		this.isOnline = this.commonService.isOnline;
 		this.landingStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingLevel, { status: 0, fullyProtected: false, percent: 0 });
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
