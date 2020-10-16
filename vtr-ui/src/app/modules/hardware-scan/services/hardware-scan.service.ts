@@ -1078,17 +1078,21 @@ export class HardwareScanService {
 		for (const moduleObject of this.quickScanResponse) {
 			for (const test of moduleObject.listTest) {
 				test.percent = 0;
+				test.statusTest = '';
 				test.status = HardwareScanTestResult.NotStarted;
 			}
 			moduleObject.resultCode = '';
+			moduleObject.resultModule = '';
 		}
 
 		for (const moduleObject of this.customScanResponse) {
 			for (const test of moduleObject.listTest) {
 				test.percent = 0;
+				test.statusTest = '';
 				test.status = HardwareScanTestResult.NotStarted;
 			}
 			moduleObject.resultCode = '';
+			moduleObject.resultModule = '';
 		}
 	}
 
