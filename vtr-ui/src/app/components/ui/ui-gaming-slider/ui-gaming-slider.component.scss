@@ -13,19 +13,32 @@
       height: 0.6rem;
       border: none;
       border-radius: 10px;
-      background: rgba(119, 119, 119, 0.8);
+      background: $gaming_square_button20;
+      @media #{$high-contrast} {
+         background: windowText;
+         color: transparent;
+      }
    }
    /*进度条滑块*/
    input[type=range]::-webkit-slider-thumb {
       height: 17px;
       width: 17px;
-      background: $light; 
+      background: $gaming_lightest; 
       border-radius: 50%;
-      border: solid 0.125em rgba(205, 224, 230, 0.5); 
+      border: solid 0.125em rgba(205, 224, 230, 0.5);
+      box-shadow: 0 4px 8px 0 $screen_dark_20;
+      &:hover {
+         background:#c9cacc;
+      }
+      @media #{$high-contrast} {
+         background: highLight;
+         border: none;
+      } 
    }
    /*进度条已填充的部分*/
    input[type=range]::-ms-fill-lower{
        border-radius: 10px;
+       background: $blueFill;
    }
 }
 
