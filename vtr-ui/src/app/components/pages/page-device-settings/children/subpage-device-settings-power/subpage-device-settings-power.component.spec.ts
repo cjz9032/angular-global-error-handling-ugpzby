@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { async, discardPeriodicTasks, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { async, discardPeriodicTasks, fakeAsync, TestBed, tick, ComponentFixture } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateStore } from '@ngx-translate/core';
@@ -19,6 +19,8 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { PowerService } from 'src/app/services/power/power.service';
 import { SubpageDeviceSettingsPowerComponent } from './subpage-device-settings-power.component';
+import { of as observableOf } from 'rxjs';
+
 const featureStatus = {
 	available: true,
 	status: true,
@@ -881,6 +883,42 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 
 				discardPeriodicTasks();
 			}));
-		})
+		});
+	});
+});
+
+describe('Airplane Power Mode', () => {
+	let fixture: ComponentFixture<SubpageDeviceSettingsPowerComponent>;
+	let component: SubpageDeviceSettingsPowerComponent;
+	let localCacheServiceSpy: jasmine.Spy;
+
+	beforeEach(() => {
+		TestBed.configureTestingModule({
+			declarations: [SubpageDeviceSettingsPowerComponent],
+			schemas: [NO_ERRORS_SCHEMA],
+			imports: [TranslationModule, HttpClientModule, RouterTestingModule],
+			providers: [ LocalCacheService, DevService, MetricService,
+				CommonMetricsService, HypothesisService, TranslateStore,
+			]
+		}).compileComponents();
+
+		fixture = TestBed.createComponent(SubpageDeviceSettingsPowerComponent);
+		component = fixture.componentInstance;
+		const batteryService = TestBed.inject(BatteryDetailService);
+		const localCacheService = TestBed.inject(LocalCacheService);
+		const airplaneStatus = new FeatureStatus(false, true);
+		spyOn(batteryService, 'getAirplaneMode').and.returnValue(observableOf(airplaneStatus));
+		localCacheServiceSpy = spyOn(localCacheService, 'setLocalCacheValue');
+	});
+
+	it('sets airplane mode capability to local cache on component init', () => {
+		const expectedFeature = new AlwaysOnUSBCapability();
+		expectedFeature.toggleState.status = true;
+		expectedFeature.toggleState.available = false;
+
+		component.ngOnInit();
+
+		expect(component.airplanePowerCache).toEqual(expectedFeature);
+		expect(localCacheServiceSpy).toHaveBeenCalledWith(LocalStorageKey.AirplanePowerModeCapability, expectedFeature);
 	});
 });
