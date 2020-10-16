@@ -811,6 +811,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.showAirplanePowerModeSection = airplaneMode.available;
 		this.updatePowerLinkStatus(this.showAirplanePowerModeSection);
 		this.toggleAirplanePowerModeFlag = airplaneMode.status;
+		if (this.airplanePowerCache === undefined) {
+			this.airplanePowerCache = new AlwaysOnUSBCapability();
+		}
 		this.airplanePowerCache.toggleState.available = airplaneMode.available;
 		this.airplanePowerCache.toggleState.status = airplaneMode.status;
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.AirplanePowerModeCapability, this.airplanePowerCache);
