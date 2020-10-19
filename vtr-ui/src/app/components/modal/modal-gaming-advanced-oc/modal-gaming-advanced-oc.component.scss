@@ -73,10 +73,10 @@
                         display: flex;
                         .left-slider {
                             height: 4rem;
-                            flex: 1px;
+                            width: calc(100% - 15rem);
                         }
                         .right-range {
-                            width: 15rem;
+                            width: 15rem !important;
                             height: 4rem;
                             margin-left: 2rem;
                         }
