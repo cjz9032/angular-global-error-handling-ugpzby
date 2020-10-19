@@ -177,7 +177,7 @@ export class ExportResultsService {
 	 * Helper function generate the test summary data.
 	 * @param data A object containing all the diagnostic information
 	 */
-	private generateTestSummaryInfo(data: any): object {
+	private calculateTestSummaryInfo(data: any): object {
 		return data.items.reduce((result, current) => {
 			const currentKeyValue = result[HardwareScanTestResult[current.resultModule]];
 
@@ -362,121 +362,6 @@ export class ExportResultsService {
 		return divModule;
 	}
 
-	/**
-	 * Main function that will be create each needed element
-	 * @param data A json object containing all data needed to export the results
-	 */
-	private populateScanLogTemplate(data: any) {
-
-		// Overall status
-		const headerTitle = this.document.getElementById('title');
-		headerTitle.innerText = this.document.title =  this.translate.transform('hardwareScan.report.title');
-
-		const scanDateElement = this.document.getElementById('scan_date');
-		const overallTestStatusDescElement = this.document.getElementById('overall_test_status_desc');
-		const overallTestStatusIconElement = this.document.getElementById('overall_test_status_icon');
-		scanDateElement.innerHTML = this.formatDateTime.transform(data.startDate);
-		overallTestStatusDescElement.innerHTML = this.getStatusName(data.resultTestsTitle);
-		overallTestStatusIconElement.classList.add(this.getIconClassFromStatus(data.resultTestsTitle));
-
-		// Machine information
-		const spanModel = this.document.getElementById('model');
-		const machineModel = this.document.getElementById('machine_model');
-		const finalResultCodeSpan = this.document.getElementById('final_result_code_span');
-		const finalResultCode = this.document.getElementById('final_result_code');
-		const machineInfoItems = this.document.getElementById('machine_info_items');
-
-		spanModel.innerHTML = this.translate.transform('hardwareScan.report.modelTitle');
-		machineModel.innerHTML = data.model.machineModel;
-		finalResultCodeSpan.innerHTML = this.translate.transform('hardwareScan.finalResultCode') + ': ';
-		finalResultCode.innerHTML = data.finalResultCode;
-
-		const summaryHeaderOrder = ['productName', 'serialNumber', 'networkInterfaces', 'biosVersion'];
-		for (const key of summaryHeaderOrder) {
-
-			if (key !== 'networkInterfaces') {
-				const value = data.model[key];
-				const div = this.createItemDiv(this.translate.transform('hardwareScan.report.model.' + key), value );
-				machineInfoItems.appendChild(div);
-			} else {
-				for (const ni of data.model.networkInterfaces) {
-					const div = this.createItemDiv(this.translate.transform('hardwareScan.report.model.' + ni.name) + ' ' + ni.index, ni.mac);
-					machineInfoItems.appendChild(div);
-				}
-			}
-		}
-
-		// Environment Section
-		const environmentInfoItemsOrder = ['applicationVersion', 'pluginVersion', 'experienceVersion', 'shellVersion', 'bridgeVersion'];
-		const environmentSectionTitle = this.document.getElementById('environment_title');
-		const environmentInfoSectionItems = this.document.getElementById('environment_info_items');
-		environmentSectionTitle.innerHTML = this.translate.transform('hardwareScan.report.environmentTitle');
-
-		for (const key of environmentInfoItemsOrder) {
-			const value = data.environment[key];
-			const div = this.createItemDiv(this.translate.transform('hardwareScan.report.environment.' + key), value);
-			environmentInfoSectionItems.appendChild(div);
-		}
-
-		// Test Summary Section
-		const testSummaryHeader = this.document.getElementById('test_summary_header');
-		const testSummaryTitle = this.document.getElementById('test_summary_title');
-		testSummaryTitle.innerHTML = this.translate.transform('hardwareScan.report.testResult');
-
-		const testSummarySectionItems = this.document.getElementById('test_summary_info_items');
-		const totalModulesTestedElement = this.document.getElementById('total_modules_tested');
-		const divTotalModulesTestedTitle = this.createElement({elementType: 'span', innerHtml: this.translate.transform('hardwareScan.report.totalModulesTested'), classes: ['font_weight_600']});
-		divTotalModulesTestedTitle.append(': ');
-		const divTotalModulesTestedValue = this.createElement({elementType: 'span', innerHtml: data.items.length, classes: ['font_weight_400']});
-		totalModulesTestedElement.appendChild(divTotalModulesTestedTitle);
-		totalModulesTestedElement.appendChild(divTotalModulesTestedValue);
-
-		data.testSummary = this.generateTestSummaryInfo(data);
-
-		for (const key of this.getScanStatusFiltered()) {
-			const value = data.testSummary[HardwareScanTestResult[key]] ?? 0;
-			const spanTitle = this.createElement({elementType: 'span', innerHtml: this.translate.transform('hardwareScan.' + HardwareScanTestResult[key].toLowerCase()), classes: ['font_weight_600']});
-			const spanValue = this.createElement({elementType: 'span', innerHtml: value, classes: ['font_weight_400']});
-			const col = this.createElement({elementType: 'div', innerHtml: undefined, classes: ['col', 'test_result_wrapper']});
-
-			spanTitle.append(': ');
-			col.appendChild(spanTitle);
-			col.appendChild(spanValue);
-
-			testSummaryHeader.appendChild(col);
-		}
-
-		let gray = true;
-		let count = 0;
-		for (const item of data.items) {
-			const module = this.createTestSummaryItemDiv(item, gray, count);
-			testSummarySectionItems.appendChild(module);
-
-			gray = !gray;
-			count++;
-		}
-
-		// StartTime and EndTime
-		const divStartTimeTitle = this.document.getElementById('test_summary_start_time_title');
-		const divStartTimeValue = this.document.getElementById('test_summary_start_time_value');
-		divStartTimeTitle.innerHTML = this.translate.transform( 'hardwareScan.report.startDate');
-		divStartTimeValue.innerHTML = this.formatDateTime.transform(data.startDate);
-
-		const divEndTimeTitle = this.document.getElementById('test_summary_end_time_title');
-		const divEndTimeValue = this.document.getElementById('test_summary_end_time_value');
-		divEndTimeTitle.innerHTML = this.translate.transform( 'hardwareScan.report.endDate');
-		divEndTimeValue.innerHTML = this.formatDateTime.transform(data.endDate);
-
-		// Modules information
-		count = 0;
-		const modules = this.document.getElementById('modules');
-		for (const item of data.items) {
-			const module = this.createModuleDiv(item, count);
-			modules.appendChild(module);
-			count++;
-		}
-	}
-
 	private async prepareDataFromScanLog(response: any): Promise<any> {
 
 		const preparedData: any = {};
@@ -590,7 +475,7 @@ export class ExportResultsService {
 		return new Promise((resolve, reject) => {
 			this.http.get(ExportResultsService.TEMPLATE_PATH, { responseType: 'text' }).toPromise().then(htmlData => {
 				this.document = new DOMParser().parseFromString(htmlData, 'text/html');
-				this.populateScanLogTemplate(jsonData);
+				this.populateTemplate(jsonData);
 				resolve(this.document.documentElement.outerHTML);
 			}).catch(error => {
 				reject(error);
@@ -598,7 +483,7 @@ export class ExportResultsService {
 		});
 	}
 
-	private getDateAndHour() {
+	private getDateAndHour(): string {
 		const date = new Date();
 		const day = date.getDate().toString();
 		const maskDay = (day.length === 1) ? '0' + day : day;
@@ -626,7 +511,8 @@ export class ExportResultsService {
 		});
 	}
 
-	private async prepareDataFromRBS(rbsResult: any) {
+	private async prepareDataFromRecoverBadSectors(rbsResult: any) {
+		const isRecoverBadSectors = true;
 		const modulesData = this.hardwareScanService.getModulesRetrieved();
 		const storageModules = modulesData.categoryList.find(module => module.id === 'storage').groupList;
 		const preparedData: any = {};
@@ -650,6 +536,7 @@ export class ExportResultsService {
 		preparedData.endDate = rbsResult.date;
 		preparedData.items = preparedRbsDevices;
 		preparedData.model = await this.getModelData();
+		preparedData.isRecoverBadSectors = isRecoverBadSectors;
 
 		preparedData.environment = {
 			experienceVersion: this.experienceVersion,
@@ -658,13 +545,12 @@ export class ExportResultsService {
 		};
 
 		preparedData.resultTestsTitle = rbsResult.resultModule;
-		preparedData.testSummary = this.generateTestSummaryInfo(preparedData);
+		preparedData.testSummary = this.calculateTestSummaryInfo(preparedData);
 
 		return preparedData;
 	}
 
-	private populateRbsTemplate(data: any) {
-		// Overall status
+	private populateTemplateOverallStatus(data: any): void {
 		const headerTitle = this.document.getElementById('title');
 		headerTitle.innerText = this.document.title =  this.translate.transform('hardwareScan.report.title');
 		const scanDateElement = this.document.getElementById('scan_date');
@@ -673,39 +559,21 @@ export class ExportResultsService {
 		scanDateElement.innerHTML = this.formatDateTime.transform(data.startDate);
 		overallTestStatusDescElement.innerHTML = this.getStatusName(data.resultTestsTitle);
 		overallTestStatusIconElement.classList.add(this.getIconClassFromStatus(data.resultTestsTitle));
+	}
 
-		// Machine information
-		const spanModel = this.document.getElementById('model');
-		const machineModel = this.document.getElementById('machine_model');
-		// const finalResultCodeSpan = this.document.getElementById('final_result_code_span');
-		// const finalResultCode = this.document.getElementById('final_result_code');
-		const machineInfoItems = this.document.getElementById('machine_info_items');
-
-		spanModel.innerHTML = this.translate.transform('hardwareScan.report.modelTitle');
-		machineModel.innerHTML = data.model.machineModel;
-		// finalResultCodeSpan.innerHTML = this.translate.transform('hardwareScan.finalResultCode') + ': ';
-		// finalResultCode.innerHTML = data.finalResultCode;
-
-		const summaryHeaderOrder = ['productName', 'serialNumber', 'biosVersion'];
-		for (const key of summaryHeaderOrder) {
-			const value = data.model[key];
-			const div = this.createItemDiv(this.translate.transform('hardwareScan.report.model.' + key), value );
-			machineInfoItems.appendChild(div);
-		}
-
-		// Environment Section
-		const environmentInfoItemsOrder = ['experienceVersion', 'shellVersion', 'bridgeVersion'];
+	private populateTemplateEnvironmentSection(data: any, environmentItemsOrder: Array<string>): void {
 		const environmentSectionTitle = this.document.getElementById('environment_title');
 		const environmentInfoSectionItems = this.document.getElementById('environment_info_items');
 		environmentSectionTitle.innerHTML = this.translate.transform('hardwareScan.report.environmentTitle');
 
-		for (const key of environmentInfoItemsOrder) {
+		for (const key of environmentItemsOrder) {
 			const value = data.environment[key];
 			const div = this.createItemDiv(this.translate.transform('hardwareScan.report.environment.' + key), value);
 			environmentInfoSectionItems.appendChild(div);
 		}
+	}
 
-		// Test Summary Section
+	private populateTemplateTestSummarySection(data: any, isRbs: boolean = false): void {
 		const testSummaryHeader = this.document.getElementById('test_summary_header');
 		const testSummaryTitle = this.document.getElementById('test_summary_title');
 		testSummaryTitle.innerHTML = this.translate.transform('hardwareScan.report.testResult');
@@ -718,7 +586,7 @@ export class ExportResultsService {
 		totalModulesTestedElement.appendChild(divTotalModulesTestedTitle);
 		totalModulesTestedElement.appendChild(divTotalModulesTestedValue);
 
-		data.testSummary = this.generateTestSummaryInfo(data);
+		data.testSummary = this.calculateTestSummaryInfo(data);
 
 		for (const key of this.getScanStatusFiltered()) {
 			const value = data.testSummary[HardwareScanTestResult[key]] ?? 0;
@@ -736,14 +604,15 @@ export class ExportResultsService {
 		let gray = true;
 		let count = 0;
 		for (const item of data.items) {
-			const module = this.createTestSummaryItemDiv(item, gray, count, true);
+			const module = this.createTestSummaryItemDiv(item, gray, count, isRbs);
 			testSummarySectionItems.appendChild(module);
 
 			gray = !gray;
 			count++;
 		}
+	}
 
-		// StartTime and EndTime
+	private populateTemplateStartAndEndTime(data: any): void {
 		const divStartTimeTitle = this.document.getElementById('test_summary_start_time_title');
 		const divStartTimeValue = this.document.getElementById('test_summary_start_time_value');
 		divStartTimeTitle.innerHTML = this.translate.transform( 'hardwareScan.report.startDate');
@@ -753,9 +622,10 @@ export class ExportResultsService {
 		const divEndTimeValue = this.document.getElementById('test_summary_end_time_value');
 		divEndTimeTitle.innerHTML = this.translate.transform( 'hardwareScan.report.endDate');
 		divEndTimeValue.innerHTML = this.formatDateTime.transform(data.endDate);
+	}
 
-		// Modules information
-		count = 0;
+	private populateTemplateModuleSection(data: any): void {
+		let count = 0;
 		const modules = this.document.getElementById('modules');
 		for (const item of data.items) {
 			const module = this.createModuleDiv(item, count);
@@ -764,11 +634,77 @@ export class ExportResultsService {
 		}
 	}
 
-	private generateRbsReport(jsonData: any) {
+	private populateTemplateModelSection(data: any, modelItemsOrder: Array<string>, isRbs: boolean = false) {
+		const spanModel = this.document.getElementById('model');
+		const machineModel = this.document.getElementById('machine_model');
+		const machineInfoItems = this.document.getElementById('machine_info_items');
+		const finalResultCodeSpan = this.document.getElementById('final_result_code_span');
+		const finalResultCode = this.document.getElementById('final_result_code');
+
+		spanModel.innerHTML = this.translate.transform('hardwareScan.report.modelTitle');
+		machineModel.innerHTML = data.model.machineModel;
+
+		if (isRbs) {
+			finalResultCodeSpan.innerHTML = this.translate.transform('hardwareScan.finalResultCode') + ': ';
+			finalResultCode.innerHTML = data.finalResultCode;
+		}
+
+		for (const key of modelItemsOrder) {
+
+			if (key !== 'networkInterfaces') {
+				const value = data.model[key];
+				const div = this.createItemDiv(this.translate.transform('hardwareScan.report.model.' + key), value );
+				machineInfoItems.appendChild(div);
+			} else {
+				for (const ni of data.model.networkInterfaces) {
+					const div = this.createItemDiv(this.translate.transform('hardwareScan.report.model.' + ni.name) + ' ' + ni.index, ni.mac);
+					machineInfoItems.appendChild(div);
+				}
+			}
+		}
+	}
+
+	/**
+	 * Main function that will be create each needed element
+	 * @param data A json object containing all data needed to export the results
+	 */
+	private populateTemplate(data: any) {
+		const isRecoverBadSectors = data.isRecoverBadSectors ?? false;
+		let environmentInfoItemsOrder = [];
+		let modelItemsOrder = [];
+
+		if (isRecoverBadSectors) {
+			environmentInfoItemsOrder = ['experienceVersion', 'shellVersion', 'bridgeVersion'];
+			modelItemsOrder = ['productName', 'serialNumber', 'biosVersion'];
+		} else {
+			modelItemsOrder = ['productName', 'serialNumber', 'networkInterfaces', 'biosVersion'];
+			environmentInfoItemsOrder = ['applicationVersion', 'pluginVersion', 'experienceVersion', 'shellVersion', 'bridgeVersion'];
+		}
+
+		// OverallStatus and Header
+		this.populateTemplateOverallStatus(data);
+
+		// Model Section
+		this.populateTemplateModelSection(data, modelItemsOrder);
+
+		// Environment Section
+		this.populateTemplateEnvironmentSection(data, environmentInfoItemsOrder);
+
+		// Test Summary Section
+		this.populateTemplateTestSummarySection(data, isRecoverBadSectors);
+
+		// StartTime and EndTime
+		this.populateTemplateStartAndEndTime(data);
+
+		// Modules information
+		this.populateTemplateModuleSection(data);
+	}
+
+	private generateReport(jsonData: any): Promise<string> {
 		return new Promise((resolve, reject) => {
 			this.http.get(ExportResultsService.TEMPLATE_PATH, { responseType: 'text' }).toPromise().then(htmlData => {
 				this.document = new DOMParser().parseFromString(htmlData, 'text/html');
-				this.populateRbsTemplate(jsonData);
+				this.populateTemplate(jsonData);
 				resolve(this.document.documentElement.outerHTML);
 			}).catch(error => {
 				reject(error);
@@ -776,17 +712,20 @@ export class ExportResultsService {
 		});
 	}
 
-	public async exportRbsResults() {
+	private async exportReportToFile(reportFileName: string, htmlData: string): Promise<void> {
+		const fileName = reportFileName + '_' + this.getDateAndHour() + '.html';
+		const logFile = await window.Windows.Storage.KnownFolders.documentsLibrary.createFileAsync(fileName);
+		await window.Windows.Storage.FileIO.appendTextAsync(logFile, htmlData);
+	}
+
+	public exportRbsResults() {
 		return new Promise(async (resolve, reject) => {
 			try {
-				// await this.scanExecutionService.modules;
+				const reportFileName = 'RecoverBadSectorsLog';
 				const rbsResultItems = await this.recoverBadSectorsService.getRecoverResultItems();
-				const dataPrepared = await this.prepareDataFromRBS(rbsResultItems);
-
-				const htmlData = await this.generateRbsReport(dataPrepared);
-				const fileName = 'RbsHardwareScanLog_' + this.getDateAndHour() + '.html';
-				const logFile = await window.Windows.Storage.KnownFolders.documentsLibrary.createFileAsync(fileName);
-				await window.Windows.Storage.FileIO.appendTextAsync(logFile, htmlData);
+				const dataPrepared = await this.prepareDataFromRecoverBadSectors(rbsResultItems);
+				const htmlData = await this.generateReport(dataPrepared);
+				this.exportReportToFile(reportFileName, htmlData);
 				resolve();
 			} catch (error) {
 				this.logger.error('Could not get rbs log', error);
@@ -798,12 +737,11 @@ export class ExportResultsService {
 	public async exportScanResults() {
 		return new Promise(async (resolve, reject) => {
 			try {
+				const reportFileName = 'HardwareScanLog';
 				const scanLogData = await this.scanLogService.getScanLog();
 				const dataPrepared = await this.prepareDataFromScanLog(scanLogData);
-				const htmlData = await this.generateScanReport(dataPrepared);
-				const fileName = 'HardwareScanLog_' + this.getDateAndHour() + '.html';
-				const logFile = await window.Windows.Storage.KnownFolders.documentsLibrary.createFileAsync(fileName);
-				await window.Windows.Storage.FileIO.appendTextAsync(logFile, htmlData);
+				const htmlData = await this.generateReport(dataPrepared);
+				this.exportReportToFile(reportFileName, htmlData);
 				resolve();
 			} catch (error) {
 				this.logger.error('Could not get scan log', error);
