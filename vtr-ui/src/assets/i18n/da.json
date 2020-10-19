@@ -3178,7 +3178,7 @@
         },
         "support": {
             "title": "Download professionelle fejlfindingsværktøjer",
-            "subtitle": "Lenovo Support"
+            "subtitle": "Lenovo-support"
         },
         "eTicket": {
             "header": "Der blev registreret et hardwareproblem.",
@@ -4273,7 +4273,7 @@
             "lenovoSupportInstruction": "Hos Lenovo Support du kan åbne en bekræftelsesanmodning ved hjælp af koden for det endelige resultat.",
             "finalResultCodeLabel": "Kode for det endelige resultat: ",
             "scanAgainButtonText": "Søg igen",
-            "supportButtonText": "Lenovo Support"
+            "supportButtonText": "Lenovo-support"
         },
         "executingScanTitle": "Søger i {{title}}",
         "showDetails": "Vis detaljer ",
