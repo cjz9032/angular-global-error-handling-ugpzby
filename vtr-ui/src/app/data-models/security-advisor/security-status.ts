@@ -288,7 +288,7 @@ export const getSecurityLevel = (
 	if (securityFeature.pwdSupport) {
 		const cachePmStatus = localCacheService.getLocalCacheValue(LocalStorageKey.SecurityPasswordManagerStatus);
 		let pmStatus: string;
-		if (pwdManager.status !== 'unknown') {
+		if (pwdManager.status) {
 			pmStatus = pwdManager.status;
 			localCacheService.setLocalCacheValue(LocalStorageKey.SecurityPasswordManagerStatus, pwdManager.status);
 		} else if (cachePmStatus) {
