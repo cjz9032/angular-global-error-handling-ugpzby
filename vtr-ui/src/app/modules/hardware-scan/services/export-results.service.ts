@@ -233,10 +233,7 @@ export class ExportResultsService {
 	 * @param moduleCount A number to be used as identify to the module
 	 */
 	private createModuleDiv(item: any, moduleCount: number): Element {
-		let isRbsModuleDiv = false;
-		if (item.rbsDetails !== undefined) {
-			isRbsModuleDiv = true;
-		}
+		const isRecoverBadSectors = item.rbsDetails !== undefined;
 
 		// Module Section Title and icon
 		const spanModuleTitle = this.createElement({ elementType: 'span', innerHtml: this.translate.transform('hardwareScan.pluginTokens.' + item.module, item.module), classes: ['font_weight_600', 'capitalize_text', 'section_title'] });
@@ -253,7 +250,7 @@ export class ExportResultsService {
 		const divSubTitle = this.createElement({ elementType: 'div' });
 		const divContentSubtitle = this.createElement({ elementType: 'div', innerHtml: undefined, classes: ['content_subtitle'] });
 
-		if (!isRbsModuleDiv) {
+		if (!isRecoverBadSectors) {
 			divSubTitle.appendChild(spanModuleResultCode);
 			divSubTitle.appendChild(spanModuleResultCodeValue);
 		}
@@ -334,7 +331,7 @@ export class ExportResultsService {
 		divRbsTest.appendChild(spanRbsTest);
 		divRbsTest.appendChild(divRbsDetailsItems);
 		gray = true;
-		if (isRbsModuleDiv) {
+		if (isRecoverBadSectors) {
 			for (const detail of item.rbsDetails) {
 				const rbsDetailItem = this.createItemDiv(this.translate.transform('hardwareScan.recoverBadSectors.' + detail.key, detail.key), detail.value, gray, true);
 				divRbsDetailsItems.appendChild(rbsDetailItem);
@@ -348,14 +345,14 @@ export class ExportResultsService {
 		divModule.appendChild(divModuleTitle);
 		divModule.appendChild(divContentSubtitle);
 		divModule.appendChild(divInfo);
-		if (isRbsModuleDiv) {
+		if (isRecoverBadSectors) {
 			divModule.appendChild(hr);
 			divModule.appendChild(divRbsTest);
 		}
 		if (divResources !== undefined) {
 			divModule.appendChild(divResources);
 		}
-		if (!isRbsModuleDiv) {
+		if (!isRecoverBadSectors) {
 			divModule.appendChild(hr);
 			divModule.appendChild(divTests);
 		}
