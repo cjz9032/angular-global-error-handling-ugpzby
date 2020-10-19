@@ -1,0 +1,5 @@
+<div class="ui-gaming-slider">
+    <input type="range" [max]="maxValue" [min]="minValue" [step]="step" [value]="currentVal" (change)="userChange($event)" (click)="userChange($event)" [id]="automationId"  
+    [vtrMetrics]="vtrMetricEnabled" [metricsItem]="metricsId" metricsEvent="featureClick"  metricsParam="{{ metricsId }}" metricsValue="{{currentVal}}"
+    tabindex="1" role="slider" [attr.aria-label]="ariaLabelValue">
+</div>    
