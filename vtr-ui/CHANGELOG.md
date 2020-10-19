@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.26](https://bitbucket.tc.lenovo.com///compare/v1.8.25...v1.8.26) (2020-10-19)
+
+
+### Features
+
+* add routing for security navbar ([ccd33f5](https://bitbucket.tc.lenovo.com///commit/ccd33f50237d04a802873e45c0c83c309b3c9ba8))
+* use queryparams and edit routing path ([3268dbe](https://bitbucket.tc.lenovo.com///commit/3268dbedd31edc7e175c2e34baa3d3c4fc874809))
+* **Support Page:** VAN-21436 add lena urls for virtual assitant ([7da0046](https://bitbucket.tc.lenovo.com///commit/7da004635217bc7a64f82a0e5f4ec40e8e63d59f))
+
 ### [1.8.25](https://bitbucket.tc.lenovo.com///compare/v1.8.24...v1.8.25) (2020-10-16)
 
 
