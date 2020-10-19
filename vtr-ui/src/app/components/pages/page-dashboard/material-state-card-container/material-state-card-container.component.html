@@ -2,6 +2,7 @@
 	<a	class="h-100 content d-block"
 		role="link"
 		routerLink="/{{cardData.linkPath}}"
+		[queryParams]="cardData.params?{nav:cardData.params}:undefined"
 		tabindex="0"
 		vtrMetrics
 		id="{{cardId+'status-card'}}"

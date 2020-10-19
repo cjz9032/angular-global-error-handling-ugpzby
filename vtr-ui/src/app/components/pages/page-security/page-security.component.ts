@@ -82,11 +82,18 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		this.activatedRoute.paramMap.subscribe(paramMap => {
+		this.activatedRoute.queryParamMap.subscribe(paramMap => {
 			this.currentPage = paramMap.get('nav');
+			if (!this.currentPage) {
+				this.currentPage = 'basic';
+			}
 		});
 		this.isOnline = this.commonService.isOnline;
-		this.landingStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingLevel, { status: 0, fullyProtected: false, percent: 0 });
+		this.landingStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingLevel,  {
+			status: 0,
+			percent: 100,
+			fullyProtected: false
+		});
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
@@ -125,7 +132,6 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			.catch((e) => {
 				this.securityFeature.pluginSupport = false;
 			}).finally(() => {
-				this.securityFeature.fingerprintSupport = this.windowsHelloService.showWindowsHello(this.securityAdvisor.windowsHello);
 				this.translate.stream([
 					'common.securityAdvisor.loading',
 					'common.securityAdvisor.enrolled',
@@ -166,6 +172,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 				]).subscribe((trans: any) => {
 					this.translations = trans;
 					this.securityAdvisor.on('*', () => {
+						this.securityFeature.fingerprintSupport = this.windowsHelloService.showWindowsHello(this.securityAdvisor.windowsHello);
 						this.securityLevel = getSecurityLevel(
 							this.securityAdvisor,
 							this.translations,

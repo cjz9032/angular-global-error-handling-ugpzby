@@ -27,7 +27,6 @@ export class WidgetLandingNavComponent implements OnInit {
 			item: this.advancedItems
 		},
 	];
-	queryParam: string;
 	private _baseItems;
 	private _intermediateItems;
 	private _advancedItems;
@@ -35,9 +34,6 @@ export class WidgetLandingNavComponent implements OnInit {
 	constructor() { }
 
 	ngOnInit() {
-		if (!this.currentPage) {
-			this.currentPage = 'basic';
-		}
 	}
 
 	@Input() set baseItems(itemValue: any) {

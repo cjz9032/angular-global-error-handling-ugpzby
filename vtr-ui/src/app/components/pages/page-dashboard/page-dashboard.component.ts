@@ -184,19 +184,22 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			title: 'common.securityAdvisor.title',
 			summary: 'dashboard.securityStatus.basicDesc',
 			linkText: 'common.ui.improveNow',
-			linkPath: 'security/mysecurity/basic',
+			linkPath: 'security',
+			params: 'basic',
 			statusText: 'security.landing.basic'
 		}, {
 			title: 'common.securityAdvisor.title',
 			summary: 'dashboard.securityStatus.intermediateDesc',
 			linkText: 'common.menu.security.sub1',
-			linkPath: 'security/mysecurity/intermediate',
+			linkPath: 'security',
+			params: 'intermediate',
 			statusText: 'security.landing.intermediate'
 		}, {
 			title: 'common.securityAdvisor.title',
 			summary: 'dashboard.securityStatus.advancedDesc',
 			linkText: 'common.menu.security.sub1',
-			linkPath: 'security/mysecurity/advanced',
+			linkPath: 'security',
+			params: 'advanced',
 			statusText: 'security.landing.advanced'
 		}
 	];
@@ -800,7 +803,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		}
 		const pmOwnCache = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingPasswordManagerShowOwn, false);
 		const wifiOwnCache = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingWifiSecurityShowOwn, false);
-		const vpnOwnCache = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingWifiSecurityShowOwn, false);
+		const vpnOwnCache = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingVPNShowOwn, false);
 		this.haveOwnList = {
 			passwordManager: pmOwnCache,
 			wifiSecurity: wifiOwnCache,
@@ -827,7 +830,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			}).catch(() => {
 				this.saFeatureSupport.pluginSupport = false;
 			}).finally(() => {
-				this.saFeatureSupport.fingerprintSupport = this.windowsHelloService.showWindowsHello(this.securityAdvisor.windowsHello);
 				if (this.securityAdvisor) {
 					this.securityAdvisor.on('*', this.securityAdvisorHandler);
 				}
@@ -837,6 +839,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 
 	private refreshSA(): void {
 		this.securityAdvisor.refresh().then(() => {
+			this.saFeatureSupport.fingerprintSupport = this.windowsHelloService.showWindowsHello(this.securityAdvisor.windowsHello);
 			this.securityLevel = getSecurityLevel(this.securityAdvisor,
 				undefined,
 				this.haveOwnList,

@@ -6,6 +6,7 @@ export type DashboardStateCardData = {
 	summary?: string;
 	linkText?: string;
 	statusText?: string;
+	params?: string;
 };
 
 @Component({
