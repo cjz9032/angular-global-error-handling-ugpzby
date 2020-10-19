@@ -9,29 +9,21 @@ export class TranslateTokenByTokenPipe implements PipeTransform {
 	constructor(private translateDefaultPipe: TranslateDefaultValueIfNotFoundPipe) { }
 
 	transform(value: string, prefix = ''): string {
-		let finalTranslation: string;
-		let endToken: string;
+		let finalTranslation;
+		let token;
 
-		finalTranslation = '';
+		finalTranslation = [];
 
 		const tokensSplittedBySpace = value.toString().split(' ');
-		if (tokensSplittedBySpace.length > 1) {
-			tokensSplittedBySpace.forEach(token => {
-				endToken = ' ';
-				if (token[token.length - 1] === ',') {
-					token = token.substr(0, token.length - 1);
-					endToken = ', ';
-				}
-				finalTranslation += this.translateDefaultPipe.transform(prefix + token, token);
-				finalTranslation += endToken;
-			});
-		} else {
-			finalTranslation = this.translateDefaultPipe.transform(prefix + value, value);
-		}
-		// Remove the last added space to avoid using trim and remove unexpected spaces.
-		if (finalTranslation[finalTranslation.length - 1] === ' ') {
-			finalTranslation = finalTranslation.substr(0, finalTranslation.length - 1);
-		}
-		return finalTranslation ? finalTranslation : value;
+		tokensSplittedBySpace.forEach(word => {
+			if (word.slice(-1) === ','){
+				token = word.slice(0, -1);
+				finalTranslation.push(this.translateDefaultPipe.transform(prefix + token, token) + ',');
+			} else {
+				finalTranslation.push(this.translateDefaultPipe.transform(prefix + word, word));
+			}
+		});
+
+		return finalTranslation.join(' ');
 	}
 }
