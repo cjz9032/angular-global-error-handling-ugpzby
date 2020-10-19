@@ -4306,7 +4306,7 @@
         "section2Heading": "Excellentes performances du PC. Toujours",
         "section2Description": "Notre logiciel peut analyser votre PC de manière proactive, 24 h/24 et 7 j/7 afin d’identifier et de résoudre les incidents dès qu’ils surviennent. Ainsi, les performances de votre PC sont toujours de très haut niveau.",
         "tunePCPerformance": {
-            "title": "OPTIMISATION DES PERFORMANCES DU PC",
+            "title": "Optimisation Des Performances Du PC",
             "heading": "Prenez soin de votre ordinateur",
             "description": "Parfois, même le meilleur des ordinateurs doit être optimisé. Profitez d’une optimisation et gagnez en productivité grâce à notre puissante application.",
             "tabSet1": {
@@ -4328,7 +4328,7 @@
         },
         "boostInternetPerformance": {
             "title": "AMÉLIOREZ VOS PERFORMANCES INTERNET",
-            "extraTitle": "PERFORMANCES INTERNET",
+            "extraTitle": "Performances Internet",
             "heading": "Donnez un petit coup de pouce à votre Internet",
             "description": "Pour de nombreuses personnes, une connexion Wi-Fi lente ou inexistante est synonyme d’isolation totale. Configurons vos paramètres Internet, Wi-Fi et ceux de votre navigateur pour optimiser les performances.",
             "tabSet1": {
@@ -4349,7 +4349,7 @@
             "summaryTitle": "Performances Internet"
         },
         "malwareSecurity": {
-            "title": "LOGICIELS MALVEILLANTS ET SÉCURITÉ",
+            "title": "Logiciels Malveillants Et Sécurité",
             "heading": "Prenez soin de votre ordinateur",
             "description": "Les logiciels malveillants peuvent entraîner une panne d’ordinateur, une compromission des données et une dégradation des performances. Supprimez les logiciels malveillants et bien plus encore.",
             "tabSet1": {
@@ -4457,12 +4457,12 @@
                 "cancelMayTakeSomeTime": "L'annulation peut prendre un certain temps en fonction de votre système. Merci de patienter.",
                 "cancelTextPrompt": "Êtes-vous sûr de vouloir annuler ?"
             },
-            "waiting": "EN ATTENTE DE L’ANALYSE",
-            "completed": "TERMINÉE",
+            "waiting": "en attente de l’analyse",
+            "completed": "terminée",
             "nowScanningDetail": {
                 "cardTitle": "ANALYSE APPROFONDIE EN COURS",
                 "current": "ACTUEL : ",
-                "upNext": "PROCHAIN",
+                "upNext": "PROCHAIN : ",
                 "tunePCDesc": "Améliorons les performances de votre PC. Nous respectons les meilleures pratiques du secteur. Les avantages pour les abonnés incluent une durée de démarrage du PC réduite, des performances et une stabilité améliorées, mais aussi un lancement plus rapide des applications.",
                 "boostDesc": "Nous allons vous aider à améliorer votre expérience de navigation. Corrigez les incidents réseau et d’accès. Les avantages pour les abonnés incluent une meilleure connexion à Internet, une amélioration des vitesses de mise en ligne/téléchargement et un accès à Internet plus sécurisé.",
                 "malwareDesc": "Sécurisons rapidement votre ordinateur, à la demande. Pour ce faire, nous allons supprimer les logiciels espions, les logiciels malveillants et les logiciels publicitaires. Nous supprimons également les infections zero-day. Les avantages pour les abonnés incluent une sécurité optimale des données et des performances système.",
@@ -4501,7 +4501,7 @@
                         "itemd6": "Configuration des rapports d’erreur système"
                     },
                     "registryErrors": {
-                        "iteme1": "Vérification approfondie du registre Windows,",
+                        "iteme1": "Vérification approfondie du registre Windows",
                         "iteme2": "Recherche des services Windows non valides",
                         "iteme3": "Recherche d’entrées du registre endommagées",
                         "iteme4": "Recherche d’extensions de fichiers inutiles",
@@ -4610,7 +4610,7 @@
             "issueCount": "{{individualIssueCount}} PROBLÈMES",
             "scannedAreas": "ZONES ANALYSÉES",
             "recommendedAction": {
-                "title": "ACTION RECOMMANDÉE",
+                "title": "Action Recommandée",
                 "description": "Ces problèmes seront résolus automatiquement. Une fois aujourd’hui, puis toutes les semaines",
                 "yearlyPricing": "29,99 $ / an",
                 "monthlyPricing": "MOINS DE 2,5 $ PAR MOIS.",
@@ -4876,7 +4876,7 @@
                     }
                 }
             },
-            "issues": "PROBLÈME(S)",
+            "issues": "Problème(s)",
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",

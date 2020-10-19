@@ -4306,7 +4306,7 @@
         "section2Heading": "Komputer działa z najwyższą wydajnością. Zawsze",
         "section2Description": "Nasze oprogramowanie może aktywnie skanować komputer 24 godziny na dobę, 7 dni w tygodniu, aby znajdować i rozwiązywać pojawiające się problemy. Dzięki temu Twój komputer będzie zawsze działać z najwyższą wydajnością.",
         "tunePCPerformance": {
-            "title": "ZOPTYMALIZUJ WYDAJNOŚĆ KOMPUTERA",
+            "title": "Zoptymalizuj Wydajność Komputera",
             "heading": "Okaż komputerowi nieco uczucia",
             "description": "Nawet najlepszy komputer od czasu do czasu potrzebuje optymalizacji. Zoptymalizuj swoje urządzenie i zwiększ swoją wydajność pracy dzięki naszej aplikacji o potężnych możliwościach.",
             "tabSet1": {
@@ -4328,7 +4328,7 @@
         },
         "boostInternetPerformance": {
             "title": "WYDAJNIEJSZE POŁĄCZENIE",
-            "extraTitle": "WYDAJNOŚĆ POŁĄCZENIA INTERNETOWEGO",
+            "extraTitle": "Wydajność Połączenia Internetowego",
             "heading": "Przyśpiesz swoje połączenie internetowe",
             "description": "Dla wielu osób powolne połączenie Wi-Fi lub jego brak oznacza prawdziwy dramat w postaci braku łączności ze światem. Skonfigurujmy ustawienia połączenia internetowego, sieci Wi-Fi i przeglądarki w celu uzyskania optymalnej wydajności.",
             "tabSet1": {
@@ -4349,7 +4349,7 @@
             "summaryTitle": "Wydajność połączenia internetowego"
         },
         "malwareSecurity": {
-            "title": "MALWARE I OCHRONA",
+            "title": "Malware I Ochrona",
             "heading": "Poświęć nieco czasu na poprawę kondycji swojego komputera",
             "description": "Złośliwe oprogramowanie może powodować awarie komputera, naruszenia zabezpieczeń danych oraz obniżenie wydajności. Pozbądź się złośliwego oprogramowania oraz wielu innych zagrożeń.",
             "tabSet1": {
@@ -4457,12 +4457,12 @@
                 "cancelMayTakeSomeTime": "Czekaj, w zależności od systemu anulowanie może potrwać pewien czas.",
                 "cancelTextPrompt": "Czy na pewno chcesz anulować?"
             },
-            "waiting": "OCZEKIWANIE NA SKANOWANIE",
-            "completed": "UKOŃCZONO",
+            "waiting": "oczekiwanie na skanowanie",
+            "completed": "ukończono",
             "nowScanningDetail": {
                 "cardTitle": "SZCZEGÓŁOWE INFORMACJE DOTYCZĄCE BIEŻĄCEGO STANU SKANOWANIA",
                 "current": "TERAZ: ",
-                "upNext": "NASTĘPNIE",
+                "upNext": "NASTĘPNIE: ",
                 "tunePCDesc": "Poprawmy wydajność Twojego komputera. Wszystko przebiegnie bezpiecznie, ponieważ stosujemy sprawdzone procedury przyjęte w branży. Decydując się na subskrypcję, zapewnisz sobie wiele korzyści: krótszy czas uruchamiania komputera, lepszą wydajność, większą stabilność i szybsze uruchamianie aplikacji.",
                 "boostDesc": "Poprawmy wygodę przeglądania storn internetowych. Naprawmy problemy z siecią i dostępem do zawartości. Decydując się na subskrypcję, zapewnisz sobie wiele korzyści, takich jak usprawnienie łączności z Internetem, zwiększenie prędkości wysyłania/pobierania danych oraz zwiększenie bezpieczeństwa w Internecie.",
                 "malwareDesc": "Teraz zajmijmy się szybkim zabezpieczeniem komputera w trybie na żądanie. W ramach tej procedury usuniemy oprogramowanie szpiegujące, złośliwe oprogramowanie oraz oprogramowanie reklamowe. Usuniemy również potencjalne infekcje zero-day. Decydując się na subskrypcję, zapewnisz sobie wiele korzyści, takich jak bezpieczeństwo danych i optymalna wydajność systemu.",
@@ -4501,7 +4501,7 @@
                         "itemd6": "Skonfiguruj raporty o błędach systemu"
                     },
                     "registryErrors": {
-                        "iteme1": "Przeprowadź szczegółowe sprawdzenie rejestru systemu Windows,",
+                        "iteme1": "Przeprowadź szczegółowe sprawdzenie rejestru systemu Windows",
                         "iteme2": "Skanowanie w poszukiwaniu nieprawidłowych usług systemu Windows",
                         "iteme3": "Znajdowanie uszkodzonych wpisów rejestru",
                         "iteme4": "Wyszukaj bezużytecznych rozszerzenia plików",
@@ -4610,7 +4610,7 @@
             "issueCount": "PROBLEMY: {{individualIssueCount}}",
             "scannedAreas": "PRZESKANOWANE OBSZARY",
             "recommendedAction": {
-                "title": "ZALECANE DZIAŁANIA",
+                "title": "Zalecane Działania",
                 "description": "Automatycznie rozwiążemy te problemy. Dziś, a potem co tydzień",
                 "yearlyPricing": "$29,99/rok",
                 "monthlyPricing": "MNIEJ NIŻ $2,5 NA MIESIĄC.",
@@ -4876,7 +4876,7 @@
                     }
                 }
             },
-            "issues": "PROBLEMY",
+            "issues": "Problemy",
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",

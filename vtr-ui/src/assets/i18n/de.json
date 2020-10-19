@@ -4306,7 +4306,7 @@
         "section2Heading": "Erstklassige PC-Leistung. Immer",
         "section2Description": "Mit unserer Software können Sie Ihren PC rund um die Uhr proaktiv scannen und Probleme rasch finden und beheben, sodass Ihr PC immer eine erstklassige Leistung bietet.",
         "tunePCPerformance": {
-            "title": "PC-LEISTUNG OPTIMIEREN",
+            "title": "PC-leistung Optimieren",
             "heading": "Kümmern Sie sich um Ihren Computer",
             "description": "Selbst der beste Computer profitiert von regelmäßiger Optimierung. Optimieren Sie den PC mit unserer leistungsfähigen App.",
             "tabSet1": {
@@ -4328,7 +4328,7 @@
         },
         "boostInternetPerformance": {
             "title": "INTERNET-LEISTUNG STEIGERN",
-            "extraTitle": "INTERNETLEISTUNG",
+            "extraTitle": "Internetleistung",
             "heading": "Steigern Sie Ihre Internetleistung",
             "description": "Langsames oder gar kein Wi-Fi ist für viele Menschen unvorstellbar. Wir konfigurieren Ihre Internet‑, Wi-Fi‑ und Browsereinstellungen für optimale Leistung.",
             "tabSet1": {
@@ -4349,7 +4349,7 @@
             "summaryTitle": "Internetleistung"
         },
         "malwareSecurity": {
-            "title": "MALWARE UND SICHERHEIT",
+            "title": "Malware Und Sicherheit",
             "heading": "Geben Sie Ihrem Computer die zusätzliche Pflege, die er braucht",
             "description": "Malware kann zu Abstürzen, beschädigten Daten und Leistungseinbußen führen. Entfernen Sie Malware, um sicherer und schneller zu arbeiten.",
             "tabSet1": {
@@ -4457,12 +4457,12 @@
                 "cancelMayTakeSomeTime": "Bitte warten Sie einen Moment, je nach System kann der Abbruch einige Zeit in Anspruch nehmen.",
                 "cancelTextPrompt": "Sind Sie sicher, dass Sie abbrechen möchten?"
             },
-            "waiting": "WARTEN AUF SCANBEGINN",
-            "completed": "FERTIG",
+            "waiting": "warten auf scanbeginn",
+            "completed": "fertig",
             "nowScanningDetail": {
                 "cardTitle": "DETAILS WERDEN GESCANNT",
                 "current": "AKTUELL: ",
-                "upNext": "DANACH",
+                "upNext": "DANACH: ",
                 "tunePCDesc": "Wir helfen Ihnen dabei, die PC-Leistung zu optimieren. Dies geschieht auf sichere Weise mit branchenbewährten Verfahren. Abonnenten profitieren von kürzerer PC-Startzeit, verbesserter Leistung, höherer Stabilität und schnellerem Start von Anwendungen.",
                 "boostDesc": "Wir helfen Ihnen dabei, Ihre Browsererfahrung zu verbessern. Wir beheben Netzwerk‑ und Zugriffsprobleme. Abonnenten profitieren von einer optimierten Internetverbindung, höheren Upload‑/Download-Geschwindigkeiten und mehr Sicherheit im Internet.",
                 "malwareDesc": "Wir helfen Ihnen dabei, Ihren PC schnell und bedarfsgerecht zu schützen. Das passiert, indem wir Spyware, Malware und Adware entfernen. Wir entfernen auch noch unbekannte Infektionen. Abonnenten profitieren von Schutz für ihre Daten und optimaler Systemleistung.",
@@ -4501,7 +4501,7 @@
                         "itemd6": "Systemfehlerberichte konfigurieren"
                     },
                     "registryErrors": {
-                        "iteme1": "Windows-Registrierung detailliert prüfen,",
+                        "iteme1": "Windows-Registrierung detailliert prüfen",
                         "iteme2": "Auf ungültige Windows-Dienste scannen",
                         "iteme3": "Fehlerhafte Registrierungseinträge finden",
                         "iteme4": "Nach überflüssigen Dateierweiterungen suchen",
@@ -4610,7 +4610,7 @@
             "issueCount": "{{individualIssueCount}} PROBLEME",
             "scannedAreas": "GESCANNTE BEREICHE",
             "recommendedAction": {
-                "title": "EMPFOHLENE AKTION",
+                "title": "Empfohlene Aktion",
                 "description": "Wir beheben diese Probleme automatisch. Einmal heute und danach jede Woche",
                 "yearlyPricing": "$29.99/Jahr",
                 "monthlyPricing": "WENIGER ALS $2,5 IM MONAT.",
@@ -4876,7 +4876,7 @@
                     }
                 }
             },
-            "issues": "PROBLEM(E)",
+            "issues": "Problem(e)",
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",

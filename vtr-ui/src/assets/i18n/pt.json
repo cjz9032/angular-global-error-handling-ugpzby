@@ -4306,7 +4306,7 @@
         "section2Heading": "Desempenho de topo do PC. Sempre",
         "section2Description": "O nosso software pode analisar proativamente o seu PC 24 horas por dia para localizar e corrigir os problemas à medida que estes surgem, para o seu PC ter sempre um desempenho de topo.",
         "tunePCPerformance": {
-            "title": "OTIMIZAR O DESEMPENHO DO PC",
+            "title": "Otimizar O Desempenho Do PC",
             "heading": "Trate o seu computador com cuidados especiais",
             "description": "Mesmo o melhor computador beneficia de otimizações periódicas. Faça uma otimização e seja mais produtivo com a nossa potente aplicação.",
             "tabSet1": {
@@ -4328,7 +4328,7 @@
         },
         "boostInternetPerformance": {
             "title": "DÊ UM IMPULSO À INTERNET",
-            "extraTitle": "DESEMPENHO DA INTERNET",
+            "extraTitle": "Desempenho Da Internet",
             "heading": "Dê um impulso à sua Internet",
             "description": "Para muitos, uma ligação Wi-Fi lenta ou não ter ligação é como viver desligado do mundo. Vamos configurar a sua Internet, a ligação Wi-Fi e as definições do navegador para otimizar o desempenho.",
             "tabSet1": {
@@ -4349,7 +4349,7 @@
             "summaryTitle": "Desempenho da Internet"
         },
         "malwareSecurity": {
-            "title": "MALWARE E SEGURANÇA",
+            "title": "Malware E Segurança",
             "heading": "Dê ao seu computador os cuidados extra que ele precisa",
             "description": "O malware pode causar uma falha do computador, comprometer os dados e degradar o desempenho. Remova o malware e muito mais.",
             "tabSet1": {
@@ -4457,12 +4457,12 @@
                 "cancelMayTakeSomeTime": "Aguarde, poderá demorar algum tempo a cancelar consoante o sistema.",
                 "cancelTextPrompt": "Tem a certeza de que pretende cancelar?"
             },
-            "waiting": "A AGUARDAR PARA ANALISAR",
-            "completed": "CONCLUÍDO",
+            "waiting": "a aguardar para analisar",
+            "completed": "concluído",
             "nowScanningDetail": {
                 "cardTitle": "A FAZER A ANÁLISE DETALHADA",
                 "current": "ATUAL: ",
-                "upNext": "A SEGUIR",
+                "upNext": "A SEGUIR: ",
                 "tunePCDesc": "Vamos ajudar a melhorar o desempenho do seu PC. Vamos fazê-lo em segurança com as melhores práticas do setor. As vantagens para os subscritores incluem a redução do tempo de arranque do PC, a melhoria do desempenho, a melhoria da estabilidade e o início mais rápido das aplicações.",
                 "boostDesc": "Vamos ajudar a melhorar a sua experiência de navegação. Vamos resolver os problemas de rede e de acesso. As vantagens para os subscritores incluem a melhoria da conectividade à Internet, a melhoria das velocidades de carregamento/transferência e o aumento da segurança da Internet.",
                 "malwareDesc": "Vamos ajudar a proteger rapidamente o seu PC, a pedido. Fazemo-lo ao eliminar o spyware, o malware e o adware. Também eliminamos as infeções de dia zero. As vantagens para os subscritores incluem a segurança dos dados e a otimização do desempenho do sistema.",
@@ -4501,7 +4501,7 @@
                         "itemd6": "Configurar relatórios de erros do sistema"
                     },
                     "registryErrors": {
-                        "iteme1": "Verificar profundamente o registo do Windows,",
+                        "iteme1": "Verificar profundamente o registo do Windows",
                         "iteme2": "A analisar os serviços do Windows inválidos",
                         "iteme3": "A localizar entradas do registo danificadas",
                         "iteme4": "Procurar extensões de ficheiros inúteis",
@@ -4610,7 +4610,7 @@
             "issueCount": "{{individualIssueCount}} PROBLEMAS",
             "scannedAreas": "ÁREAS ANALISADAS",
             "recommendedAction": {
-                "title": "AÇÃO RECOMENDADA",
+                "title": "Ação Recomendada",
                 "description": "Vamos resolver automaticamente estes problemas. Uma vez hoje e depois todas as semanas",
                 "yearlyPricing": "29,99 $/Ano",
                 "monthlyPricing": "MENOS DE 2,5 $ POR MÊS.",
@@ -4876,7 +4876,7 @@
                     }
                 }
             },
-            "issues": "PROBLEMA(S)",
+            "issues": "Problema(s)",
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",

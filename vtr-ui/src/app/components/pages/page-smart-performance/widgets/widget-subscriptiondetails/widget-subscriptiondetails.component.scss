@@ -1,4 +1,4 @@
-@import '../../../app.theme.scss';
+@import '../../../../../app.theme.scss';
 
 .sidebar-widget {
 	border-radius: 0.9rem;
@@ -11,13 +11,17 @@
 	}
 
 	.title {
-		font-size: 2.5rem;
-		font-weight: 500;
+		font-size: $fontsize_xl;
+		font-family: $font_family_semibold;
+		color: $grey_darker;
+		text-transform: capitalize;
 	}
 
 	.card-info {
+		margin-bottom: 2rem;
 		p {
-			font-size: 1.2rem;
+			font-size: $fontsize_xs;
+			color: #303D49;
 		}
 	}
 
@@ -79,14 +83,14 @@
 
 	.status-list {
 		padding-left: 0;
-		padding: 1rem 1.4rem;
 		border-radius: 0.8rem;
 		background: $shade_extralight;
 		border: 0.1rem solid $shade_lighter;
 
 		li {
 			border-bottom: 0.1rem solid $screen_dark_05;
-			line-height: 3rem;
+			line-height: 5rem;
+			padding: 0 2rem;
 
 			&:last-child {
 				border-bottom: none;
@@ -101,7 +105,7 @@
 		.status {
 			font-size: 1.4rem;
 			min-width: 8rem;
-			text-align: center;
+			text-align: right;
 
 			.badge {
 				height: 1.8rem;
@@ -206,73 +210,6 @@
 		}
 	}
 
-	&.recommended-action {
-		background-color: #526fff;
-		background-image: linear-gradient(45deg, #526fff 25%, #f175fd 100%);
-
-		.title {
-			color: $light;
-			text-transform: uppercase;
-		}
-
-		.card-info {
-			p {
-				font-size: 1.6rem;
-				color: $light;
-			}
-		}
-
-		.pricing {
-			.big-text {
-				font-size: 5.5rem;
-				font-weight: $weight_black;
-				color: $light;
-			}
-
-			small {
-				text-transform: uppercase;
-				color: $gray;
-				font-size: 1.6rem;
-				font-weight: $weight_black;
-			}
-		}
-
-		p {
-			color: $light;
-			font-size: 1.6rem;
-		}
-
-		.action-button {
-			border-radius: 2.5rem;
-			background: $light;
-			text-transform: uppercase;
-			padding: 0 5rem;
-			color: $main;
-			font-size: 1.5rem;
-			height: 5rem;
-			font-weight: $weight_medium;
-			line-height: 5rem;
-			text-align: center;
-			border: 0rem;
-			cursor: pointer;
-			width: 100%;
-		}
-	}
-
-	// .start-date-spinner, .end-date-spinner{
-	//     position: relative;
-	//     .spinner-border {
-	//         height: 15px;
-	//         width: 15px;
-	//     }
-	//     .loader {
-	//         position: absolute;
-	//         z-index: 999;
-	//         top: 50%;
-	//         right: 0;
-	//         transform: translate(-50%, -50%);
-	//     }
-	// }
 	.refresh-icon {
 		height: 15px;
 	}

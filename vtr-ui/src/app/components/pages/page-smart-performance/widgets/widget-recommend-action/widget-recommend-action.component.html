@@ -1,0 +1,39 @@
+<div class="recommended-action sidebar-widget">
+	<div class="title pb-1"
+		id="smart-performance-scan-summary-recommendAction-title"
+		role="text">
+		{{'smartPerformance.scanCompletePage.recommendedAction.title' |translate }}
+	</div>
+	<div class="card-info"
+		id="smart-performance-scan-summary-recommendAction-desc"
+		role="text">
+		<p *ngIf="isShowPrice">{{'smartPerformance.scanCompletePage.recommendedAction.description' |translate }}
+		</p>
+		<p class="mb-3"
+			*ngIf="!isShowPrice">{{'smartPerformance.scanCompletePage.recommendedAction.newDescription' |translate }}</p>
+		<!-- <p>{{'smartPerformance.scanCompletePage.recommendedAction.description1' |translate }}</p> -->
+	</div>
+	<div class="pricing"
+		*ngIf="isShowPrice">
+		<h2 class="big-text"
+			id="smart-performance-scan-summary-recommendAction-yearlyPricing">
+			{{'smartPerformance.scanCompletePage.recommendedAction.yearlyPricing' |translate }}
+		</h2>
+		<small id="smart-performance-scan-summary-recommendAction-monthlyPricing"
+			role="text">{{'smartPerformance.scanCompletePage.recommendedAction.monthlyPricing' |translate }}</small>
+	</div>
+	<p id="smart-performance-scan-summary-recommendAction-longerTerm"
+		*ngIf="isShowPrice"
+		role="text">{{'smartPerformance.scanCompletePage.recommendedAction.longerTerm' |translate }}
+	</p>
+	<!-- These are commented as per new requirment please dont delete -->
+	<vtr-ui-button (onClick)="openSubscribeModal()"
+		class="mt-2"
+		linkId="btn.smart-performance-sign-up"
+		metricsItem="btn.enablefullfeature"
+		metricsEvent="FeatureClick"
+		metricsParent="Page.Support.SmartPerformance"
+		[isFullWidth]="true"
+		buttonColor="gray"
+		[label]="'smartPerformance.scanCompletePage.recommendedAction.signupButton' | translate"></vtr-ui-button>
+</div>

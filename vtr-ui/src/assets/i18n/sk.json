@@ -4306,7 +4306,7 @@
         "section2Heading": "Počítač je v špičkovom stave. Vždy",
         "section2Description": "Náš softvér dokáže aktívne a nepretržite kontrolovať váš počítač, vyhľadávať a odstraňovať prípadné problémy a zabezpečiť, aby mal váš počítač vždy špičkový výkon.",
         "tunePCPerformance": {
-            "title": "VYLADIŤ VÝKON POČÍTAČA",
+            "title": "Vyladiť Výkon Počítača",
             "heading": "Venujte svojmu počítaču trochu viac starostlivosti",
             "description": "Aj tie najlepšie počítače ocenia pravidelné vyladenie. Vylaďte si počítač a zvýšte svoju efektivitu pomocou našej špičkovej aplikácie.",
             "tabSet1": {
@@ -4328,7 +4328,7 @@
         },
         "boostInternetPerformance": {
             "title": "ZVÝŠTE VÝKON PRI PRÁCI NA INTERNETE",
-            "extraTitle": "VÝKON PRI PRÁCI NA INTERNETE",
+            "extraTitle": "Výkon Pri Práci Na Internete",
             "heading": "Vyšší výkon pre váš internet",
             "description": "Pre mnohých ľudí je pomalé alebo dokonca chýbajúce pripojenie Wi-Fi, ako by ich odstrihli od života. Upravte svoje nastavenia internetu, pripojenia Wi-Fi a prehliadača a dosiahnite optimálny výkon.",
             "tabSet1": {
@@ -4349,7 +4349,7 @@
             "summaryTitle": "Výkon pri práci na internete"
         },
         "malwareSecurity": {
-            "title": "MALVÉR A ZABEZPEČENIE",
+            "title": "Malvér A zabezpečenie",
             "heading": "Doprajte svojmu počítaču starostlivosť, ktorú si zaslúži",
             "description": "Malware môže spôsobiť zrútenie počítača, kompromitovať údaje a znížiť výkon. Dosiahnite odstránenie malvéru a mnohé ďalšie výhody.",
             "tabSet1": {
@@ -4457,12 +4457,12 @@
                 "cancelMayTakeSomeTime": "Čakajte, zrušenie môže v závislosti od vášho systému trvať nejaký čas.",
                 "cancelTextPrompt": "Naozaj to chcete zrušiť?"
             },
-            "waiting": "ČAKÁ SA NA DOKONČENIE KONTROLY",
-            "completed": "DOKONČENÉ",
+            "waiting": "čaká sa na dokončenie kontroly",
+            "completed": "dokončené",
             "nowScanningDetail": {
                 "cardTitle": "PODROBNOSTI O AKTUÁLNEJ KONTROLE",
                 "current": "AKTUÁLNA: ",
-                "upNext": "NASLEDUJÚCA",
+                "upNext": "NASLEDUJÚCA: ",
                 "tunePCDesc": "Zlepšime výkon vášho počítača. Všetko prebieha bezpečne s dodržiavaním najlepších osvedčených postupov v odvetví. Medzi výhody pre predplatiteľov patrí rýchlejšie spúšťanie počítača, zvýšenie výkonu, lepšia stabilita a rýchlejšie spúšťanie aplikácií.",
                 "boostDesc": "Spríjemníme vám prehliadanie internetu. Opravíme problémy so sieťou a prístupom. Medzi výhody pre predplatiteľov patrí lepšie pripojenie k internetu, vyššia rýchlosť sťahovania/odosielania údajov a zvýšenie bezpečnosti pri práci na internete.",
                 "malwareDesc": "Rýchlo a na požiadanie zabezpečíme váš počítač. Odstránime spyvér, malvér a advér. Odstraňujeme aj nové infekcie a infekcie „zero-day“. Medzi výhody pre predplatiteľov patrí zabezpečenie údajov a optimalizácia výkonu systému.",
@@ -4501,7 +4501,7 @@
                         "itemd6": "Hlásenia o chybách pri konfigurácii systému"
                     },
                     "registryErrors": {
-                        "iteme1": "Dôkladná kontrola registra systému Windows,",
+                        "iteme1": "Dôkladná kontrola registra systému Windows",
                         "iteme2": "Vyhľadávanie neplatných služieb systému Windows",
                         "iteme3": "Vyhľadávanie poškodených položiek v registri",
                         "iteme4": "Vyhľadávanie zbytočných prípon súborov",
@@ -4610,7 +4610,7 @@
             "issueCount": "{{individualIssueCount}} CHYBY/CHÝB",
             "scannedAreas": "KONTROLOVANÉ OBLASTI",
             "recommendedAction": {
-                "title": "ODPORÚČANÉ KROKY",
+                "title": "Odporúčané Kroky",
                 "description": "Tieto problémy automaticky vyriešime. Dnes a potom každý týždeň",
                 "yearlyPricing": "$29,99/rok",
                 "monthlyPricing": "NECELÝCH $2,5 MESAČNE.",
@@ -4876,7 +4876,7 @@
                     }
                 }
             },
-            "issues": "CHYBA/CHYBY/CHÝB",
+            "issues": "Chyba/Chyby/Chýb",
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",

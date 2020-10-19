@@ -4306,7 +4306,7 @@
         "section2Heading": "Počítač ve špičkovém stavu. Vždy",
         "section2Description": "Náš software dokáže aktivně a nepřetržitě kontrolovat váš počítač, vyhledávat a odstraňovat případné problémy a zajistit, že váš počítač bude mít vždy špičkový výkon.",
         "tunePCPerformance": {
-            "title": "VYLADIT VÝKON POČÍTAČE",
+            "title": "Vyladit Výkon Počítače",
             "heading": "Zajistěte péči pro svůj počítač",
             "description": "I ty nejlepší počítače ocení pravidelné vyladění. Vylaďte svůj počítač a zvyšte svoji efektivitu s naší špičkovou aplikací.",
             "tabSet1": {
@@ -4328,7 +4328,7 @@
         },
         "boostInternetPerformance": {
             "title": "ZVYŠTE VÝKON PŘI PRÁCI NA INTERNETU",
-            "extraTitle": "VÝKON PŘI PRÁCI NA INTERNETU",
+            "extraTitle": "Výkon Při Práci Na Internetu",
             "heading": "Druhý dech pro váš internet",
             "description": "Pro mnoho lidí je pomalé nebo dokonce žádné připojení Wi-Fi, jako by je odstřihli od života. Upravte své nastavení internetu, připojení Wi-Fi a prohlížeče pro dosažení optimálního výkonu.",
             "tabSet1": {
@@ -4349,7 +4349,7 @@
             "summaryTitle": "Výkon při práci na internetu"
         },
         "malwareSecurity": {
-            "title": "MALWARE A ZABEZPEČENÍ",
+            "title": "Malware A zabezpečení",
             "heading": "Dejte svému počítači péči, kterou si zaslouží",
             "description": "Malware může způsobit vést ke zhroucení počítače, kompromitaci dat a snížení výkonu. Dosáhněte odstranění malwaru a mnohem, mnohem více.",
             "tabSet1": {
@@ -4457,12 +4457,12 @@
                 "cancelMayTakeSomeTime": "Počkejte prosím, v závislosti na vašem systému může zrušení chvilku trvat.",
                 "cancelTextPrompt": "Skutečně chcete tuto operaci zrušit?"
             },
-            "waiting": "ČEKÁ SE NA DOKONČENÍ KONTROLY",
-            "completed": "DOKONČENO",
+            "waiting": "čeká se na dokončení kontroly",
+            "completed": "dokončeno",
             "nowScanningDetail": {
                 "cardTitle": "PODROBNOSTI AKTUÁLNÍ KONTROLY",
                 "current": "AKTUÁLNÍ: ",
-                "upNext": "NÁSLEDUJÍCÍ",
+                "upNext": "NÁSLEDUJÍCÍ: ",
                 "tunePCDesc": "Pojďme zlepšit výkon vašeho počítače. Vše probíhá bezpečně s dodržováním nejlépe osvědčených postupů v oboru. Mezi výhody pro předplatitele patří rychlejší spouštění počítače, zvýšení výkonu, lepší stabilita a rychlejší spouštění aplikací.",
                 "boostDesc": "Pojďme vám zpříjemnit procházení internetu. Opravíme problémy se sítí a přístupem. Mezi výhody pro předplatitele patří lepší připojení k internetu, vyšší rychlost stahování/odesílání dat a zvýšení zabezpečení při práci na internetu.",
                 "malwareDesc": "Pojďme rychle a na vyžádání zabezpečit váš počítač. Odstraníme spyware, malware a adware. Odstraňujeme také nové infekce a infekce „zero-day“. Mezi výhody pro předplatitele patří zabezpečení dat a optimalizace výkonu systému.",
@@ -4610,7 +4610,7 @@
             "issueCount": "POČET PROBLÉMŮ: {{individualIssueCount}}",
             "scannedAreas": "KONTROLOVANÉ OBLASTI",
             "recommendedAction": {
-                "title": "DOPORUČENÁ AKCE",
+                "title": "Doporučená Akce",
                 "description": "Tyto problémy automaticky vyřešíme. Jednou dnes a poté každý týden",
                 "yearlyPricing": "$29,99 ročně",
                 "monthlyPricing": "MÉNĚ NEŽ $2,5 MĚSÍČNĚ.",
@@ -4876,7 +4876,7 @@
                     }
                 }
             },
-            "issues": "PROBLÉM(Y/Ů)",
+            "issues": "Problém(y/ů)",
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",

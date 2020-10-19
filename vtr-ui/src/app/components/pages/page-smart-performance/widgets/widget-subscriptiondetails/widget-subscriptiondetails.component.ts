@@ -11,16 +11,17 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { SupportService } from 'src/app/services/support/support.service';
 import { v4 as uuid } from 'uuid';
-import { ModalSmartPerformanceSubscribeComponent } from '../../modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
+import { ModalSmartPerformanceSubscribeComponent } from 'src/app/components/modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
 @Component({
 	selector: 'vtr-widget-subscriptiondetails',
 	templateUrl: './widget-subscriptiondetails.component.html',
 	styleUrls: ['./widget-subscriptiondetails.component.scss']
 })
-export class WidgetSubscriptiondetailsComponent implements OnInit {
+export class WidgetSubscriptionDetailsComponent implements OnInit {
 	@Output() subScribeEvent = new EventEmitter<boolean>();
 	@Output() expiredStatusEvent = new EventEmitter<boolean>();
 	@Input() isOnline = true;
+	@Input() isClickDisabled = false;
 	subscriptionDetails: any = { startDate: '', endDate: '', status: '' };
 	startDate: any;
 	endDate: any;
@@ -112,7 +113,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 			}
 			// location.reload();
 			// this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-			// 	this.router.navigate(['WidgetSubscriptiondetailsComponent']);
+			// 	this.router.navigate(['WidgetSubscriptionDetailsComponent']);
 			// });
 		}
 		else {
@@ -120,7 +121,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 			// this.localCacheService.setLocalCacheValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
 			// this.localCacheService.removeLocalCacheValue(LocalStorageKey.SmartPerformanceSubscriptionDetails);
 			// // this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-			// 	this.router.navigate(['WidgetSubscriptiondetailsComponent']);
+			// 	this.router.navigate(['WidgetSubscriptionDetailsComponent']);
 			// });
 			// location.reload();
 		}

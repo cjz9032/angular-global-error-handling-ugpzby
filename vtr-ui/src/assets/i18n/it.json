@@ -4306,7 +4306,7 @@
         "section2Heading": "Il PC assicura prestazioni massime. Sempre",
         "section2Description": "Il nostro software può eseguire la scansione proattiva del PC 24x7 per individuare e risolvere i problemi, in modo che il PC assicuri sempre prestazioni di massimo livello.",
         "tunePCPerformance": {
-            "title": "OTTIMIZZA LE PRESTAZIONI DEL PC",
+            "title": "Ottimizza Le Prestazioni Del Pc",
             "heading": "Assicura la manutenzione del tuo PC",
             "description": "Anche il miglior computer beneficerà di ottimizzazioni periodiche. Ottimizza il tuo PC per aumentare le prestazioni delle app.",
             "tabSet1": {
@@ -4328,7 +4328,7 @@
         },
         "boostInternetPerformance": {
             "title": "AUMENTA LE PRESTAZIONI INTERNET",
-            "extraTitle": "PRESTAZIONI INTERNET",
+            "extraTitle": "Prestazioni Internet",
             "heading": "Aumenta le prestazioni Internet",
             "description": "Per molti, se la rete Wi-Fi è lenta o non è disponibile, è come essere isolati dal mondo. Configura le impostazioni Internet, Wi-Fi e del browser per ottenere prestazioni ottimali.",
             "tabSet1": {
@@ -4349,7 +4349,7 @@
             "summaryTitle": "Prestazioni Internet"
         },
         "malwareSecurity": {
-            "title": "MALWARE E PROTEZIONE",
+            "title": "Malware E Protezione",
             "heading": "Assicura la manutenzione extra del tuo computer",
             "description": "Il malware può causare crash del computer, violazione dei dati e riduzione delle prestazioni. Rimuovi i malware e molto altro ancora.",
             "tabSet1": {
@@ -4457,12 +4457,12 @@
                 "cancelMayTakeSomeTime": "Attendere. La procedura di annullamento potrebbe richiedere del tempo a seconda del sistema.",
                 "cancelTextPrompt": "Annullare l'operazione?"
             },
-            "waiting": "IN ATTESA DI SCANSIONE",
-            "completed": "COMPLETATA",
+            "waiting": "in attesa di scansione",
+            "completed": "completata",
             "nowScanningDetail": {
                 "cardTitle": "DETTAGLI SCANSIONE",
                 "current": "CORRENTE: ",
-                "upNext": "SUCCESSIVA",
+                "upNext": "SUCCESSIVA: ",
                 "tunePCDesc": "Aumentiamo le prestazioni del tuo PC. Ciò è possibile grazie all'uso delle procedure ottimali del settore. I vantaggi per gli utenti iscritti includono tempi di avvio ridotti del PC, prestazioni migliorate, maggiore stabilità e avvio più veloce delle applicazioni.",
                 "boostDesc": "Miglioriamo l'esperienza di navigazione. Correggiamo i problemi di rete e di accesso. I vantaggi per gli utenti iscritti includono il miglioramento della connettività Internet, velocità di caricamento/download superiori e navigazione Internet più sicura.",
                 "malwareDesc": "Proteggiamo rapidamente il tuo PC, su richiesta. Rimuoviamo spyware, malware e adware. Inoltre eliminiamo le infezioni zero-day. I vantaggi per gli utenti iscritti includono la protezione dei dati e le prestazioni ottimali del sistema.",
@@ -4501,7 +4501,7 @@
                         "itemd6": "Configura i report degli errori di sistema"
                     },
                     "registryErrors": {
-                        "iteme1": "Esegui il controllo approfondito del registro di Windows,",
+                        "iteme1": "Esegui il controllo approfondito del registro di Windows",
                         "iteme2": "Esegui la scansione dei servizi di Windows non validi",
                         "iteme3": "Cerca le voci di registro danneggiate",
                         "iteme4": "Cerca le estensioni dei file inutilizzati",
@@ -4610,7 +4610,7 @@
             "issueCount": "{{individualIssueCount}} PROBLEMI",
             "scannedAreas": "AREE ANALIZZATE",
             "recommendedAction": {
-                "title": "AZIONE CONSIGLIATA",
+                "title": "Azione Consigliata",
                 "description": "Risolveremo automaticamente questi problemi. Una volta oggi e ogni settimana",
                 "yearlyPricing": "$ 29,99 all'anno",
                 "monthlyPricing": "MENO DI $ 2,5 AL MESE.",
@@ -4876,7 +4876,7 @@
                     }
                 }
             },
-            "issues": "PROBLEMI",
+            "issues": "Problemi",
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",

@@ -4306,7 +4306,7 @@
         "section2Heading": "Uitstekende pc-prestaties. Altijd",
         "section2Description": "Onze software kan uw pc 24x7 proactief scannen om problemen op te sporen en te verhelpen, zodat uw pc altijd de beste prestaties biedt.",
         "tunePCPerformance": {
-            "title": "PC-PRESTATIES OPTIMALISEREN",
+            "title": "PC-prestaties Optimaliseren",
             "heading": "Geef uw computer wat extra aandacht",
             "description": "Zelfs de beste computer profiteert van periodieke optimalisatie. Optimaliseer uw pc en doe meer met onze krachtige app.",
             "tabSet1": {
@@ -4328,7 +4328,7 @@
         },
         "boostInternetPerformance": {
             "title": "INTERNET VERBETEREN",
-            "extraTitle": "INTERNETPRESTATIES",
+            "extraTitle": "Internetprestaties",
             "heading": "Verbeter uw internetsnelheid",
             "description": "Voor veel mensen betekent een trage of geen Wi-Fi-verbinding alsof u niet bestaat. We gaan uw internet-, Wi-Fi- en browserinstellingen configureren voor optimale prestaties.",
             "tabSet1": {
@@ -4349,7 +4349,7 @@
             "summaryTitle": "Internetprestaties"
         },
         "malwareSecurity": {
-            "title": "MALWARE EN BEVEILIGING",
+            "title": "Malware En Beveiliging",
             "heading": "Geef uw computer de extra zorg die het nodig heeft",
             "description": "Malware kan leiden tot een vastgelopen computer, inbreuk op gegevens en verminderde prestaties. Zorg dat malware wordt verwijderd en nog veel meer.",
             "tabSet1": {
@@ -4457,12 +4457,12 @@
                 "cancelMayTakeSomeTime": "Een ogenblik geduld, het annuleren kan even duren, afhankelijk van uw systeem.",
                 "cancelTextPrompt": "Weet u zeker dat u wilt annuleren?"
             },
-            "waiting": "WACHTEN OP SCAN",
-            "completed": "VOLTOOID",
+            "waiting": "wachten op scan",
+            "completed": "voltooid",
             "nowScanningDetail": {
                 "cardTitle": "DETAILS VAN HUIDIGE SCAN",
                 "current": "HUIDIGE: ",
-                "upNext": "VOLGENDE",
+                "upNext": "VOLGENDE: ",
                 "tunePCDesc": "Laten we de prestaties van uw PC verbeteren. We kunnen dit veilig doen doordat we best practices uit de branche gebruiken. Voordelen voor abonnees zijn onder meer een kortere opstarttijd van de pc, betere prestaties, verbeterde stabiliteit en sneller opstartende applicaties.",
                 "boostDesc": "Laten we de manier waarop u surft verbeteren. Laten we problemen met netwerk en toegang oplossen. Voordelen voor abonnees bestaan uit een verbetering van de internetverbinding, verbetering van de upload-/downloadsnelheid en een verbetering van de beveiliging van internet.",
                 "malwareDesc": "Laten we uw pc snel op aanvraag beveiligen. Wij doen dit door spyware, malware en adware te verwijderen. Wij verwijderen ook Zero-day-infecties. Voordelen voor abonnees zijn gegevensbeveiliging en optimale systeemprestaties.",
@@ -4501,7 +4501,7 @@
                         "itemd6": "Rapporten over systeemfouten configureren"
                     },
                     "registryErrors": {
-                        "iteme1": "Het Windows-register grondig controleren,",
+                        "iteme1": "Het Windows-register grondig controleren",
                         "iteme2": "Scannen op ongeldige Windows-services",
                         "iteme3": "Beschadigde registervermeldingen zoeken",
                         "iteme4": "Naar overbodige bestandsextensies zoeken",
@@ -4610,7 +4610,7 @@
             "issueCount": "{{individualIssueCount}} PROBLEMEN",
             "scannedAreas": "GESCANDE GEBIEDEN",
             "recommendedAction": {
-                "title": "AANBEVOLEN HANDELING",
+                "title": "Aanbevolen Handeling",
                 "description": "Deze problemen zullen automatisch worden opgelost. Een keer vandaag en daarna elke week",
                 "yearlyPricing": "$29.99/jaar",
                 "monthlyPricing": "MINDER DAN $2.5 PER MAAND.",
@@ -4876,7 +4876,7 @@
                     }
                 }
             },
-            "issues": "PROBLEMEN",
+            "issues": "Problemen",
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",

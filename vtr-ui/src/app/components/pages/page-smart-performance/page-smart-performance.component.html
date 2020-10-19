@@ -17,7 +17,6 @@
 		<vtr-subpage-smart-performance-scan-summary *ngIf="(smartPerformanceService.isScanningCompleted || smartPerformanceService.isSubscribed) && !smartPerformanceService.isScanning"
 			[hasSubscribedScanCompleted]="hasSubscribedScanCompleted"
 			[inputIsScanningCompleted]="showSubscribersummary"
-			[smartPerformanceService.isExpired]="subscriptionInfoStatus"
 			(backToScan)="changeScanEvent()"
 			(backToNonSubscriber)="changeSummaryToHome()"
 			[rating]="rating"
@@ -37,7 +36,7 @@
 							<div class="vtr-page-shift-up w-100">
 								<div class="container-fluid">
 									<ng-container *ngIf="!smartPerformanceService.isScanning && !smartPerformanceService.isScanningCompleted && !smartPerformanceService.isSubscribed">
-										<div class="row mb-40">
+										<div class="row mb-24">
 											<div class="col col-12">
 												<vtr-widget-subscriptiondetails (subScribeEvent)="changeManageSubscription($event)"
 													(expiredStatusEvent)="subscriptionInfo($event)"
@@ -45,7 +44,7 @@
 											</div>
 										</div>
 
-										<div class="row mb-40"
+										<div class="row mb-24"
 											*ngIf="!isOldVersion">
 											<div class="col col-12">
 												<!----------Scan Schedule--------------->
@@ -54,67 +53,27 @@
 												<!----------Scan Schedule--------------->
 											</div>
 										</div>
-
 									</ng-container>
 
 									<ng-container *ngIf="(smartPerformanceService.isScanningCompleted || smartPerformanceService.isSubscribed) && !smartPerformanceService.isScanning">
-										<div class="row mb-40"
+										<div class="row mb-24"
 											*ngIf="smartPerformanceService.isSubscribed && !isOldVersion">
 											<div class="col col-12">
 												<!-- --------Scan Schedule------------- -->
 												<vtr-subpage-schedule-scan (scanDatekValueChange)='changeNextScanDateValue($event)'
 													(hideBasedOnOldAddInSummary)="hideBasedOnOldAddInVersionInSummaryPage($event)"
-													[isOnline]="isOnline"
-													[smartPerformanceService.isExpired]="smartPerformanceService.isExpired">
+													[isOnline]="isOnline">
 												</vtr-subpage-schedule-scan>
 												<!-- --------Scan Schedule------------- -->
 											</div>
 										</div>
-										<div class="row mb-40"
+										<div class="row mb-24"
 											*ngIf="!smartPerformanceService.isSubscribed && !smartPerformanceService.isExpired">
 											<div class="col col-12">
-												<div class="recommended-action sidebar-widget">
-													<div class="title pb-3"
-														id="smart-performance-scan-summary-recommendAction-title"
-														role="text">
-														{{'smartPerformance.scanCompletePage.recommendedAction.title' |translate }}
-													</div>
-													<div class="card-info"
-														id="smart-performance-scan-summary-recommendAction-desc"
-														role="text">
-														<p *ngIf="isShowPrice">{{'smartPerformance.scanCompletePage.recommendedAction.description' |translate }}
-														</p>
-														<p class="mb-3"
-															*ngIf="!isShowPrice">{{'smartPerformance.scanCompletePage.recommendedAction.newDescription' |translate }}</p>
-														<!-- <p>{{'smartPerformance.scanCompletePage.recommendedAction.description1' |translate }}</p> -->
-													</div>
-													<div class="pricing"
-														*ngIf="isShowPrice">
-														<h2 class="big-text"
-															id="smart-performance-scan-summary-recommendAction-yearlyPricing">
-															{{'smartPerformance.scanCompletePage.recommendedAction.yearlyPricing' |translate }}
-														</h2>
-														<small id="smart-performance-scan-summary-recommendAction-monthlyPricing"
-															role="text">{{'smartPerformance.scanCompletePage.recommendedAction.monthlyPricing' |translate }}</small>
-													</div>
-													<p id="smart-performance-scan-summary-recommendAction-longerTerm"
-														*ngIf="isShowPrice"
-														role="text">{{'smartPerformance.scanCompletePage.recommendedAction.longerTerm' |translate }}
-													</p>
-													<!-- These are commented as per new requirment please dont delete -->
-													<vtr-ui-button (onClick)="openSubscribeModal()"
-														class="mt-2"
-														linkId="btn.smart-performance-sign-up"
-														metricsItem="btn.enablefullfeature"
-														metricsEvent="FeatureClick"
-														metricsParent="Page.Support.SmartPerformance"
-														[isFullWidth]="true"
-														buttonColor="gray"
-														[label]="'smartPerformance.scanCompletePage.recommendedAction.signupButton' | translate"></vtr-ui-button>
-												</div>
+												<vtr-widget-recommend-action></vtr-widget-recommend-action>
 											</div>
 										</div>
-										<div class="row mb-40"
+										<div class="row mb-24"
 											*ngIf="smartPerformanceService.isSubscribed || smartPerformanceService.isExpired">
 											<div class="col col-12">
 												<vtr-widget-subscriptiondetails [isOnline]="isOnline"></vtr-widget-subscriptiondetails>
@@ -122,47 +81,21 @@
 										</div>
 									</ng-container>
 									<ng-container *ngIf="smartPerformanceService.isScanning">
-										<div class="row mb-40">
+										<div class="row mb-24">
 											<div class="col col-12">
-												<div class="accumulated-junk sidebar-widget">
-													<div class="mini-text"
-														id="smart-performance-scanning-page-detail-card-title"
-														role="title">
-														{{'smartPerformance.scanningPage.nowScanningDetail.cardTitle' |translate }}
-													</div>
-													<div class="title pb-3"
-														id="smart-performance-scanning-page-detail-title-{{smartPerformanceService.subItems.name}}"
-														role="text">
-														<fa-icon [icon]="['fas', 'laptop']"
-															class="mr-2"></fa-icon>
-														{{smartPerformanceService.subItems.name}}
-													</div>
-													<div class="card-info"
-														id="smart-performance-scanning-page-detail-desc-{{smartPerformanceService.subItems.name}}"
-														role="text">
-														<!-- <p>This is a brief description of what Accumulated Junk means to a user and why they should know more about it. What is it, why is it important, how is it affecting my computer performance, how will I benifit from the junk being cleaned up?</p> -->
-														<p>{{smartPerformanceService.subItems.desc}}</p>
-													</div>
-													<div class="d-flex">
-														<div class="labels d-flex flex-column">
-															<span id="smart-performance-scanning-page-current"
-																role="text"
-																class="badge badge-primary ">{{'smartPerformance.scanningPage.nowScanningDetail.current' |translate }}</span>
-															<span id="smart-performance-scanning-page-upNext"
-																role="text"
-																title="{{'smartPerformance.scanningPage.nowScanningDetail.upNext' |translate }}"
-																class="badge badge-light text-ellipsis">{{'smartPerformance.scanningPage.nowScanningDetail.upNext' |translate }}</span>
-														</div>
-														<div class="ms-slider">
-															<ul class="junk-list ms-slider__words">
-																<li class="ms-slider__word"
-																	id="smart-performance-scanning-page-slider-{{item.key}}"
-																	*ngFor="let item of smartPerformanceService.subItems.items"
-																	title="{{item.key}}">{{item.key}}</li>
-															</ul>
-														</div>
-													</div>
-												</div>
+												<vtr-widget-subscriptiondetails (subScribeEvent)="changeManageSubscription($event)"
+													(expiredStatusEvent)="subscriptionInfo($event)"
+													[isClickDisabled]="true"
+													[isOnline]="isOnline"></vtr-widget-subscriptiondetails>
+											</div>
+										</div>
+
+										<div class="row mb-24"
+											*ngIf="!isOldVersion">
+											<div class="col col-12">
+												<vtr-subpage-schedule-scan [isOnline]="isOnline"
+													[isClickDisabled]="true"
+													(hideBasedOnOldAddIn)="hideBasedOnOldAddInVersion($event)"></vtr-subpage-schedule-scan>
 											</div>
 										</div>
 									</ng-container>

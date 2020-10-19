@@ -1,13 +1,13 @@
 <div class="scan-settings sidebar-widget">
 	<div *ngIf="!isChangeSchedule">
-		<div class="title pb-3"
+		<div class="title pb-1"
 			id="smart-performance-scan-setting-title"
 			role="title">{{'smartPerformance.scanSettings.title' |translate }}</div>
 		<div class="card-info">
 			<p id="smart-performance-scan-setting-desc"
 				role="text">{{'smartPerformance.scanSettings.description' |translate }}</p>
 		</div>
-		<ul class="chevron-list">
+		<ul class="chevron-list mb-0">
 			<li class="d-flex justify-content-between">
 				<div class="item d-flex">
 					<span class="icomoon icomoon-LE-Visible-to-online-trackers2x"></span>
@@ -20,7 +20,7 @@
 						[switchParam]="'sp.enableScan'"
 						[value]="scanToggleValue"
 						(toggle)="setEnableScanStatus($event)"
-						[isDisabled]="!isOnline">
+						[isDisabled]="!isOnline || isClickDisabled">
 					</vtr-ui-custom-switch>
 					<fa-icon class="question"
 						tabindex="0"
@@ -41,7 +41,7 @@
 			</li>
 			<li class="d-flex justify-content-between calendar-list"
 				id="smart-performance-change-scan-schedule"
-				[ngClass]="{'disable-list':!scanToggleValue || !isOnline}"
+				[ngClass]="{'disable-list':!scanToggleValue || !isOnline || isClickDisabled}"
 				(click)="changeScanSchedule()">
 				<div class="item d-flex w-50">
 					<span class="icomoon icomoon-calendar"></span>
@@ -80,14 +80,14 @@
 
 	<div *ngIf="isChangeSchedule"
 		class="change-scan-schedule">
-		<div class="title pb-3"
+		<div class="title pb-1"
 			id="smart-performance-change-scan-title"
 			role="title">{{'smartPerformance.scanSettings.changeScanTitle' |translate }}</div>
 		<div class="card-info">
 			<p id="smart-performance-change-scan-desc"
 				role="text">{{'smartPerformance.scanSettings.changeScanDescription' |translate }}</p>
 		</div>
-		<ul class="chevron-list">
+		<ul class="chevron-list mb-0">
 			<li class="d-flex justify-content-between">
 				<div class="item d-flex">
 					<b id="smart-performance-scan-setting-frequency"

@@ -13,15 +13,8 @@ vtr-subpage-smart-performance-scan-summary {
 .vtr-ui-smart-performance-scan-summary {
 	.vtr-scan-information {
 
-		// box-shadow: $drop_shadow;
-		// border-radius: 0.8rem;
-		// background: $light;
 		.scan-summary-block {
-			padding: 3rem;
-
-			@media #{$breakpoint_xl} {
-				padding: 2.4rem;
-			}
+			padding: $padding_content;
 
 			.bkg-transparent {
 				background: transparent !important;
@@ -51,18 +44,6 @@ vtr-subpage-smart-performance-scan-summary {
 					font-size: 2.4rem;
 					font-weight: $weight_600;
 					color: #303D49;
-
-					@media #{$breakpoint_lg} {
-						font-size: 2.2rem;
-					}
-
-					@media #{$breakpoint_md} {
-						font-size: 2.2rem;
-					}
-
-					@media #{$breakpoint_sm} {
-						font-size: 1.8rem;
-					}
 				}
 
 				p {
@@ -105,15 +86,16 @@ vtr-subpage-smart-performance-scan-summary {
 				}
 
 				.list-group {
-					background: $main_darker;
+					background: $grey_lighter;
 					border-radius: 0.5rem;
 					max-width: 100%;
+					border: 0.1rem solid $note_border;
 
 					.list-group-item {
 						border-radius: 0.5rem;
 						border: none;
 						background: transparent;
-						color: $light;
+						color: $grey_darker;
 						font-size: 1.2rem;
 						font-weight: $weight_bold;
 						padding: 0.6rem;
@@ -121,7 +103,7 @@ vtr-subpage-smart-performance-scan-summary {
 						cursor: pointer;
 
 						&:focus {
-							@include outline-white
+							@include outline-blue;
 						}
 
 						@media #{$breakpoint_sm} {
@@ -137,7 +119,7 @@ vtr-subpage-smart-performance-scan-summary {
 							cursor: pointer;
 
 							&:focus {
-								@include outline-white
+								@include outline-blue;
 							}
 						}
 
@@ -178,7 +160,7 @@ vtr-subpage-smart-performance-scan-summary {
 					}
 
 					.selected-list-item {
-						background-color: #45515D;
+						background-color: #fff;
 					}
 
 					.list-group-horizontal:last-child .list-group-item {
@@ -324,25 +306,18 @@ vtr-subpage-smart-performance-scan-summary {
 					font-size: $fontsize_md;
 					font-weight: $weight_bold;
 					margin-bottom: 0;
+					display: -webkit-box;
 					overflow: hidden;
+					white-space: normal;
 					text-overflow: ellipsis;
-					height: 6.5rem;
-
-					@media #{$breakpoint_xl} {
-						font-size: $fontsize_sm;
-						height: 6rem;
-					}
-
-					@media #{$breakpoint_md} {
-						font-size: $fontsize_xs;
-						height: 5rem;
-					}
+					word-wrap: break-word;
+					-webkit-line-clamp: 2;
+					/* autoprefixer: off */
+					-webkit-box-orient: vertical;
 
 					@media #{$breakpoint_sm} {
 						font-size: $fontsize_xs;
-						height: 5rem;
-						display: inline-block;
-						max-width: 85%;
+						line-height: 1.4;
 					}
 				}
 
@@ -356,6 +331,7 @@ vtr-subpage-smart-performance-scan-summary {
 					margin: auto;
 					text-align: center;
 					display: block !important;
+					padding-top: 1rem;
 
 					@media #{$breakpoint_xl} {
 						font-size: 3.2rem;
@@ -392,16 +368,32 @@ vtr-subpage-smart-performance-scan-summary {
 					height: 2.8rem;
 				}
 
-				p {
+				.summary-caption {
 					font-size: 1.5rem;
 					font-weight: $weight_regular;
 					color: $main_shade;
 					width: 99.9%;
 					margin-bottom: 0;
+					position: relative;
+					padding: 0 3rem;
 
 					@media #{$breakpoint_sm} {
-						font-size: 1.2rem;
+						font-size: 1.1rem;
 						line-height: 1.4rem;
+					}
+
+					fa-icon {
+						cursor: pointer;
+						position: absolute;
+						right: 0;
+						top: 0;
+						width: 4rem;
+						font-size: 1.6rem;
+						text-align: center;
+						color: $grey_dark;
+						&:hover {
+							color: $menu_hover;
+						}
 					}
 				}
 
@@ -434,24 +426,21 @@ vtr-subpage-smart-performance-scan-summary {
 					padding: 0;
 					border-radius: $border_radius;
 					background: #F5F7F8;
+					overflow: hidden;
 
 					.list-item {
 						padding: 1.5rem 0;
 						border-bottom: 0.1rem solid $shade_lighter;
 						color: $main_darker;
 						font-size: 1.4rem;
+						cursor: pointer;
 
-						&.list-heading {
-							padding: 1rem 0;
-							color: $light;
-							background: #303D49;
-							border-top-right-radius: $border_radius;
-							border-top-left-radius: $border_radius;
-							font-size: 1.2rem;
+						* {
+							cursor: pointer;
+						}
 
-							.col-2 {
-								text-align: center;
-							}
+						&:hover {
+							background: #f7f9fa;
 						}
 
 						.col-2,
@@ -467,52 +456,9 @@ vtr-subpage-smart-performance-scan-summary {
 							color: $light;
 						}
 
-						.icon-check {
-							display: inline-block;
-
-							.icon-bkg {
-								display: inline-block;
-								border-radius: 50%;
-								height: 1.7rem;
-								width: 1.7rem;
-								line-height: 1.5rem;
-								font-size: 1rem;
-								text-align: center;
-								background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
-								border: 0.1rem solid $go_dark;
-							}
-
-							&::before {
-								content: '';
-							}
-						}
-
-						.icon-times {
-							display: inline-block;
-
-							.icon-bkg {
-								display: inline-block;
-								border-radius: 50%;
-								height: 1.7rem;
-								width: 1.7rem;
-								line-height: 1.5rem;
-								font-size: 1rem;
-								text-align: center;
-								border: 0.1rem solid $stop_dark;
-								background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
-							}
-
-							&::before {
-								content: '';
-							}
-						}
-
-						.chevron-up {
-							color: $main;
-							cursor: pointer;
-
-							&:focus {
-								outline: 0.1rem solid $menu_hover;
+						.scan-run-time {
+							span {
+								font-family: $font_family_semilight;
 							}
 						}
 
@@ -606,311 +552,6 @@ vtr-subpage-smart-performance-scan-summary {
 			padding-bottom: 3rem;
 		}
 
-		&::ng-deep {
-			ngb-accordion {
-				.card {
-					border-radius: 0.6rem;
-					border: 1px solid $screen_dark_01;
-					background: $grey_lighter;
-					//padding: 1rem;
-					margin: 1.5rem auto;
-					width: 100%;
-
-					.card-header {
-						background-color: transparent;
-						border-bottom: none;
-
-						.btn-link {
-							width: 100%;
-
-							@media #{$white-on-black} {
-								border: none;
-							}
-
-							@media #{$black-on-white} {
-								border: none;
-							}
-
-							&:before {
-								content: "\276F";
-								transform-origin: 0 0;
-								transform: rotate(-90deg);
-								color: $shade_dark;
-								font-size: 2rem;
-								width: 1.75rem;
-								height: 1.75rem;
-								right: 2.75rem;
-
-								@media #{$breakpoint_sm} {
-									right: 5%;
-									top: 4.5rem !important;
-								}
-
-								@media #{$breakpoint_md} {
-									right: 4.5%;
-									top: 5.5rem;
-								}
-
-								position:absolute;
-								top:5.5rem;
-							}
-
-							&:hover,
-							&:focus {
-								text-decoration: none;
-							}
-
-							@media #{$breakpoint_sm} {
-								padding-left: 0;
-								padding-right: 0;
-								width: 100%;
-							}
-						}
-
-						.collapsed {
-							&:before {
-								content: "\276E";
-								transform-origin: 0 0;
-								transform: rotate(-90deg);
-								color: $shade_dark;
-								font-size: 2rem;
-								right: 2.75rem;
-
-								@media #{$breakpoint_sm} {
-									right: 5%;
-									top: 4.5rem !important;
-								}
-
-								@media #{$breakpoint_md} {
-									right: 4.5%;
-									top: 5.5rem;
-								}
-
-								width:1.75rem;
-								height:1.75rem;
-								position:absolute;
-								top:5.5rem;
-							}
-						}
-
-						.heading {
-							max-width: 60%;
-							width: 60%;
-							text-align: left;
-
-							//word-break:break-all;		
-							h3,
-							h2 {
-								text-align: left;
-								font-size: $fontsize_sm;
-								color: $main_shade !important;
-								letter-spacing: 0;
-								font-weight: $weight_bold;
-
-								@media #{$breakpoint_lg} {
-									font-size: $fontsize_xs !important;
-									;
-								}
-
-								@media #{$breakpoint_md} {
-									font-size: $fontsize_xs2 !important;
-								}
-
-								@media #{$breakpoint_sm} {
-									font-size: 1.1rem !important;
-									;
-									letter-spacing: -0.02rem;
-									margin-bottom: 0;
-								}
-							}
-
-							.icon {
-								color: $menu_hover;
-
-								@media #{$breakpoint_sm} {
-									margin-right: 0.4rem;
-									margin-bottom: 1rem;
-								}
-							}
-						}
-					}
-
-					.card-body {
-						padding: 0 1.25rem;
-
-						.scan-result-tabs {
-							.nav-tabs {
-								border-bottom: none;
-
-								.nav-item {
-									width: 20%;
-
-									@media #{$breakpoint_sm} {
-										max-width: 20%;
-										width: auto;
-									}
-
-									.nav-link {
-										border: none;
-										border-left: 1px solid $grey_light;
-										border-bottom: 1px solid $grey_light;
-										color: $dark;
-										height: 5rem;
-
-										@media #{$breakpoint_xl} {
-											padding: 0.5rem 0.2rem;
-											height: 5rem;
-										}
-
-										@media #{$breakpoint_sm} {
-											padding: 0.5rem 0.2rem;
-											height: 5rem;
-										}
-
-										&.active {
-											background-color: transparent;
-											border-bottom-color: transparent;
-										}
-									}
-
-									&:first-child {
-										.nav-link {
-											border-left: none;
-										}
-									}
-								}
-							}
-
-							.icon-box {
-								@media #{$breakpoint_sm} {
-									width: auto;
-									height: 3rem;
-									align-items: center;
-									min-width: 7rem;
-								}
-
-								p {
-									font-size: 1.2rem;
-									margin: 0;
-									line-height: 1.4;
-
-									overflow: hidden;
-									text-overflow: ellipsis;
-									white-space: nowrap;
-
-									@media #{$breakpoint_sm} {
-										font-size: 1rem;
-										max-width: 100%;
-									}
-								}
-
-								.icon {
-									font-size: 2.2rem;
-									margin-right: 0.2rem;
-									color: $main;
-
-									// @media #{$breakpoint_xl} {
-									// 	font-size: 2.2rem;
-									// 	margin-right: 0.5rem;
-									// }
-									@media #{$breakpoint_sm} {
-										font-size: $fontsize_xs;
-									}
-								}
-							}
-
-							.scanned-list {
-								list-style-type: none;
-								padding: 0;
-								margin-bottom: 0rem;
-
-								.list-item {
-									p {
-										font-size: 1.4rem;
-										overflow: hidden;
-									}
-
-									fa-icon {
-										font-size: 1.4rem;
-										margin-right: 0.8rem;
-										color: $go_dark;
-									}
-								}
-							}
-						}
-					}
-
-					.status-text {
-						margin-top: 2rem !important;
-						width: 36%;
-						max-width: 36%;
-
-						@media #{$breakpoint_sm} {
-							margin-top: 1.25rem;
-						}
-
-						p {
-							text-transform: uppercase;
-							font-size: 1.6rem;
-							text-align: right;
-							color: $shade_dark;
-							right: 5rem;
-							padding-right: 2rem;
-							letter-spacing: 0;
-
-							//word-break:break-all;
-							@media #{$breakpoint_lg} {
-								right: 1.5rem;
-								font-size: $fontsize_xs;
-								top: 36%;
-							}
-
-							@media #{$breakpoint_md} {
-								top: 36%;
-								right: 1.5rem;
-								font-size: $fontsize_xs2;
-							}
-
-							@media #{$breakpoint_xl} {
-								right: 1.5rem;
-								font-size: $fontsize_xs2;
-								top: 36%;
-							}
-
-							@media #{$breakpoint_sm} {
-								top: 32.5%;
-								right: 1.5rem;
-								font-size: 1.1rem;
-							}
-						}
-
-						vtr-widget-speedometer {
-							position: absolute;
-							right: -54%;
-							top: 2.2rem;
-						}
-					}
-				}
-
-				&.panel-open {
-					.card-header {
-						.heading {
-
-							h3,
-							h2 {
-								font-size: 2.5rem;
-								color: $dark !important;
-							}
-
-							.icon {
-								color: $menu_hover;
-							}
-						}
-					}
-				}
-			}
-		}
-
 		&.card-small {
 			margin: 2rem auto 0rem auto;
 
@@ -928,7 +569,7 @@ vtr-subpage-smart-performance-scan-summary {
 			align-items: center;
 
 			.icon {
-				font-size: 4.6rem;
+				font-size: 3.2rem;
 				margin-right: 1.5rem;
 				color: $main_gstart;
 
@@ -963,128 +604,6 @@ vtr-subpage-smart-performance-scan-summary {
 }
 
 .system-scan-complete {
-	.offline-info-background {
-		border-top-left-radius: 0.8rem;
-		border-top-right-radius: 0.8rem;
-		height: 100%;
-		width: 100%;
-		background: linear-gradient($gradient_angle, $main_darkest 0%, $main_darker 100%);
-		box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
-		padding: 0rem 4rem;
-
-		@media #{$breakpoint_xl} {
-			padding: 0 2.4rem;
-		}
-
-		@media #{$white-on-black} {
-			box-shadow: none;
-			@include white-border;
-			border-bottom: none;
-			background: none;
-		}
-
-		@media #{$black-on-white} {
-			box-shadow: none;
-			@include black-border;
-			border-bottom: none;
-			background: none;
-		}
-
-		.hero-text {
-			max-width: 80%;
-		}
-
-		h1 {
-			color: $light;
-			font-size: 3.4rem;
-			font-weight: $weight_light;
-
-			@media #{$breakpoint_xl} {
-				font-size: 2.2rem;
-			}
-
-			@media #{$breakpoint_sm} {
-				font-size: 2rem;
-			}
-		}
-
-		h3 {
-			font-size: $fontsize_sm;
-			color: $light;
-			opacity: 0.5;
-			line-height: 2;
-			font-weight: $weight_regular;
-
-			@media #{$breakpoint_sm} {
-				font-size: 1.4rem;
-				line-height: auto;
-			}
-		}
-
-		.icomoon {
-			color: #7D5FEF;
-			font-size: 10rem;
-			margin-bottom: -4.5rem;
-			max-width: 20%;
-
-			@media #{$breakpoint_xl} {
-				font-size: 9rem;
-			}
-
-			@media #{$breakpoint_sm} {
-				font-size: 6rem;
-				margin-top: 2rem;
-			}
-		}
-
-		.action-button {
-			border-radius: 2.5rem;
-			background: $gradient_main;
-			text-transform: uppercase;
-			padding: 0 5rem;
-			color: $light;
-			font-size: 1.5rem;
-			height: 5rem;
-			font-weight: $weight_medium;
-			line-height: 5rem;
-			text-align: center;
-			border: 0rem;
-			cursor: pointer;
-			overflow: hidden;
-			text-overflow: ellipsis;
-			white-space: nowrap;
-
-			&:focus {
-				@include outline-blue
-			}
-
-			@media #{$breakpoint_sm} {
-				font-size: 1.2rem;
-				padding: 0rem 2.5rem;
-			}
-
-			@include ui-button-high-contrast-black;
-			@include ui-button-high-contrast-white;
-			@include high-contrast-adjust;
-		}
-
-		.disabled-button {
-			border-radius: 2.5rem;
-			background: $main_shade;
-			text-transform: uppercase;
-			padding: 0 3rem;
-			color: $light;
-			cursor: not-allowed;
-			font-size: 1.5rem;
-			height: 5rem;
-			font-weight: $weight_medium;
-			line-height: 5rem;
-			text-align: center;
-			border: 0rem;
-			opacity: 0.7;
-			min-width: 11.5rem;
-		}
-	}
 
 	.performance-slider-block {
 		margin: 2rem 0;
@@ -1423,7 +942,7 @@ vtr-subpage-smart-performance-scan-summary {
 	}
 
 	.summary-block {
-		padding: 2.4rem 2.4rem 0;
+		padding: $padding_content;
 
 		@media #{$white-on-black} {
 			box-shadow: none;
@@ -1545,52 +1064,56 @@ vtr-subpage-smart-performance-scan-summary {
 			min-width: 11.5rem;
 		}
 
-		.desc-block {
-			display: flex;
-			align-items: center;
-			flex-direction: row;
+	}
+	.subscribe-scan-summaries {
+		padding: $padding_content $padding_content 0.9rem;
+	}
+}
+.desc-block {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	color: $light;
 
-			@media #{$breakpoint_sm} {
-				justify-content: center;
+	@media #{$breakpoint_sm} {
+		justify-content: center;
+	}
+
+	.desc {
+		font-size: 1.6rem;
+		line-height: 1.8rem;
+		// width: auto;
+		padding-left: 0.5rem;
+		// min-width: 11.5rem;
+
+		&.desc1 {
+			border-right: 0.1rem solid $shade_lighter;
+			// width: 30%;
+			// max-width: 13rem;					
+			margin: 0.5rem 0.5rem 0.5rem 1rem;
+		}
+
+
+		&.desc2 {
+			margin: 0.5rem;
+			word-break: break-all !important;
+		}
+
+		b {
+			font-size: $fontsize_xs2;
+			font-weight: $weight_bold;
+
+			@media #{$breakpoint_xl} {
+				font-size: 1.1rem;
 			}
 
-			.desc {
-				font-size: 1.6rem;
-				line-height: 1.8rem;
-				// width: auto;
-				padding-left: 0.5rem;
-				// min-width: 11.5rem;
-
-				&.desc1 {
-					border-right: 0.1rem solid $shade_lighter;
-					// width: 30%;
-					// max-width: 13rem;					
-					margin: 0.5rem 0.5rem 0.5rem 1rem;
-				}
-
-
-				&.desc2 {
-					margin: 0.5rem;
-					word-break: break-all !important;
-				}
-
-				b {
-					font-size: $fontsize_xs2;
-					font-weight: $weight_bold;
-
-					@media #{$breakpoint_xl} {
-						font-size: 1.1rem;
-					}
-
-					@media #{$breakpoint_md} {
-						font-size: 1.1rem;
-						max-width: 13.5rem;
-						white-space: nowrap;
-						text-overflow: ellipsis;
-						overflow-x: hidden;
-						display: inline-block;
-					}
-				}
+			@media #{$breakpoint_md} {
+				font-size: 1.1rem;
+				max-width: 13.5rem;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				overflow-x: hidden;
+				display: inline-block;
 			}
 		}
 	}
@@ -1660,6 +1183,19 @@ vtr-subpage-smart-performance-scan-summary {
 	}
 }
 
+.check-previous-results {
+	font-size: $body;
+	font-weight: bold;
+	padding-bottom: 0.1rem;
+	color: $blue-lighter;
+	text-decoration: none;
+	text-transform: uppercase;
+	border-bottom: 0.2rem solid $blue-lighter;
+	&:hover {
+		border-bottom: 0.2rem solid transparent;
+	}
+}
+
 @keyframes expanding {
 	0% {
 		width: 5%;
@@ -1681,4 +1217,13 @@ vtr-subpage-smart-performance-scan-summary {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+}
+
+.purchase-content {
+	p {
+		margin-bottom: 0;
+		padding-left: 1rem;
+		color: $light;
+		font-size: $body;
+	}
 }
