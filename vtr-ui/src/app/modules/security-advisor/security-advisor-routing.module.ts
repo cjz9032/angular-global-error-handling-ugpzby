@@ -20,6 +20,10 @@ import { SecurityAdvisorGuard } from 'src/app/services/guard/security-advisor-gu
 const routes: Routes = [
 	{
 		path: '',
+		redirectTo: 'mysecurity',
+		pathMatch: 'full'
+	}, {
+		path: 'mysecurity',
 		component: PageSecurityComponent,
 		canDeactivate: [GuardService],
 		canActivate: [GuardService, SecurityAdvisorGuard, NonSmodeGuard, NonArmGuard],

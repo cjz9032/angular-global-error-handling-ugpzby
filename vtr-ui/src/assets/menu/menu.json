@@ -264,14 +264,14 @@
 				{
 					"id": "security",
 					"label": "common.menu.security.sub1",
-					"path": null,
+					"path": "mysecurity",
 					"icon": null,
 					"segment": "-[Commercial]",
 					"metricsEvent": "itemClick",
 					"metricsParent": "navbar",
 					"metricsItem": "link.mysecurity",
 					"routerLinkActiveOptions": {
-						"exact": true
+						"exact": false
 					},
 					"subitems": []
 				},
