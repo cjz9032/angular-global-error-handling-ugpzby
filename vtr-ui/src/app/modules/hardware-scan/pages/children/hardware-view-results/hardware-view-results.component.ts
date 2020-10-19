@@ -63,7 +63,9 @@ export class HardwareViewResultsComponent implements OnInit, OnDestroy {
 	}
 
 	public get isFeatureExportAvailable(): boolean {
-		return this.hardwareScanFeaturesService.isExportLogAvailable && this.commonService.getSessionStorageValue(SessionStorageKey.HwScanHasExportLogData);
+		return this.hardwareScanFeaturesService.isExportLogAvailable &&
+				this.commonService.getSessionStorageValue(SessionStorageKey.HwScanHasExportLogData) &&
+				this.previousResultService.getLastFinalResultCode(); // Uses this validation to avoid cases that CLI doesn't send final result code (Abort CLI error)
 	}
 
 	public exportResults() {
