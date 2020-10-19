@@ -16,8 +16,27 @@
 					color: windowText;
 				}
 			}
-			button.add-icon-button{
-				@include add-app-icon-gaming;
+			.add-icon-button {
+				background-color: $gaming_square_button20;
+				border-radius: 0.4rem;
+				border: 0.1rem solid transparent;
+				width: 5rem;
+				height: 5rem;
+				line-height: 5rem;
+				font-size: 4rem;
+				font-family: 'Microsoft YaHeiUI';
+				font-weight: 600;
+				color: buttonText;
+				@media #{$high-contrast} {
+					border: none;
+				}
+				&:hover {
+					cursor: pointer;
+					background: $gaming_square_button10 !important;
+					@media #{$high-contrast} {
+						border: none;
+					}
+				}
 			}
 		}
 		li {
