@@ -7,7 +7,6 @@ import { httpInterceptorProviders } from 'src/app/providers/net/http-interceptor
 import { MissingTranslationDefaultHandler } from '../i18n/handler/missing-tranlsation-default-handler';
 import { WebpackTranslateLoader } from '../i18n/loader/webpack-translate-loader.loader';
 import { TranslateDefaultValueIfNotFoundPipe } from '../pipe/translate-default-value-if-not-found/translate-default-value-if-not-found.pipe';
-import { TranslateTokenByTokenPipe } from '../pipe/translate-token-by-token/translate-token-by-token.pipe';
 
 @NgModule({
 	imports: [
@@ -30,7 +29,6 @@ import { TranslateTokenByTokenPipe } from '../pipe/translate-token-by-token/tran
 		httpInterceptorProviders,
 		TranslatePipe,
 		TranslateDefaultValueIfNotFoundPipe,
-		TranslateTokenByTokenPipe
 	]
 })
 export class TranslationModule {
