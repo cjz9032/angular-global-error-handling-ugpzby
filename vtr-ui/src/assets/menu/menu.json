@@ -82,6 +82,22 @@
 					"subitems": []
 				},
 				{
+					"id": "smart-performance",
+					"label": "gaming.common.menu.smartPerformance",
+					"beta": false,
+					"path": "smart-performance",
+					"icon": "",
+					"metricsEvent": "itemClick",
+					"externallink": false,
+					"metricsParent": "navbar",
+					"metricsItem": "link.smartPerfomance",
+					"sMode": false,
+					"routerLinkActiveOptions": {
+						"exact": true
+					},
+					"subitems": []
+				},
+				{
 					"id": "facebook",
 					"label": "gaming.common.menu.support.sub2",
 					"path": "https://www.facebook.com/LenovoLegion/",
