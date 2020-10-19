@@ -814,5 +814,4 @@ export class ScanExecutionService {
 			this.metrics.sendAsync(data);
 		}
 	}
-	
 }

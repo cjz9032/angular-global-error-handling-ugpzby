@@ -226,26 +226,28 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public exportResults() {
 		if (this.exportService) {
+			let exportLogType;
 			if (this.hardwareScanService.getScanFinishedHeaderType() === HardwareScanFinishedHeaderType.Scan) {
-				this.timerService.start();
-				let result = HardwareScanMetricsService.FAIL_RESULT;
-				this.exportService.exportScanResults().then(() => {
-					result = HardwareScanMetricsService.SUCCESS_RESULT;
-					// TODO, probably open modal
-				}).catch(() => {
-					this.logger.error('Export Scan Results rejected');
-				}).finally(() => {
-					this.hardwareScanMetricsService.sendTaskActionMetrics(
-						HardwareScanMetricsService.EXPORT_LOG_TASK_NAME,
-						result === HardwareScanMetricsService.SUCCESS_RESULT ? 1 : 0,
-						'',
-						result,
-						this.timerService.stop());
-				});
+				exportLogType = this.exportService.exportScanResults();
 			} else if (this.hardwareScanService.getScanFinishedHeaderType() === HardwareScanFinishedHeaderType.RecoverBadSectors) {
-				// TODO
-				this.exportService.exportRbsResults();
+				exportLogType = this.exportService.exportRbsResults();
 			}
+
+			this.timerService.start();
+			let result = HardwareScanMetricsService.FAIL_RESULT;
+			exportLogType.then(() => {
+				result = HardwareScanMetricsService.SUCCESS_RESULT;
+				// TODO, probably open modal
+			}).catch(() => {
+				this.logger.error('Export Scan Results rejected');
+			}).finally(() => {
+				this.hardwareScanMetricsService.sendTaskActionMetrics(
+					HardwareScanMetricsService.EXPORT_LOG_TASK_NAME,
+					result === HardwareScanMetricsService.SUCCESS_RESULT ? 1 : 0,
+					'',
+					result,
+					this.timerService.stop());
+			});
 		}
 	}
 
