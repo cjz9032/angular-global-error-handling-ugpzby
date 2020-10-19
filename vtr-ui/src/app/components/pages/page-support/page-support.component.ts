@@ -86,12 +86,17 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		metricsItem: 'NeedHelp.YourVirtualAssistantButton',
 		metricsEvent: 'FeatureClick',
 	};
-	yourVirtualAssistantArr = [
-		{ Lang: 'ja', GEO: 'jp', url: 'https://jp.lena.lenovo.com/lena?country=Japan&language=Japanese' },
-		{ Lang: 'en', GEO: 'in', url: 'https://lena.lenovo.com/lena?country=India&language=English' },
-		{ Lang: 'en', GEO: 'ph', url: 'https://lena.lenovo.com/lena?country=Philippines&language=English' },
-		{ Lang: 'en', isDefault: true, url: 'https://lena.lenovo.com/lena' },
+
+	lenaUrls = [
+		{url: 'https://in.lena.lenovo.com/lena',  lang: 'en', geo: ['in', 'lk', 'bd']},
+		{url: 'https://us.lena.lenovo.com/lena',  lang: 'en', geo: ['us', 'ca']},
+		{url: 'https://uki.lena.lenovo.com/lena', lang: 'en', geo: ['gb', 'ie']},
+		{url: 'https://lena.lenovo.com/lena',     lang: 'en', geo: ['au', 'nz', 'sg', 'my', 'ph']},
+		{url: 'https://las.lena.lenovo.com/lena', lang: 'es', geo: ['mx', 'co', 'ar', 'pe', 'cl', 'cr', 'do', 'sv', 'gt', 'hn', 'ni', 'pa', 'bo', 'ec', 'py', 'uy', 've']},
+		{url: 'https://jp.lena.lenovo.com/lena',  lang: 'ja', geo: ['jp']},
+		{url: 'https://jp.lena.lenovo.com/lena',  lang: 'de', geo: ['de', 'at']},
 	];
+
 	listFindUs = {
 		icon: ['fal', 'heart'],
 		title: 'support.needHelp.listFindUs',
@@ -221,22 +226,16 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		this.supportService.getSerialnumber().then(sn => {
 			this.listContactCustomerService.url = `https://support.lenovo.com/contactus?serialnumber=${sn}`;
 			this.supportDatas.needHelp.push(this.listContactCustomerService);
-			let isListYourVirtualAssistantEnabled = false;
 			this.localInfoService.getLocalInfo().then(info => {
 				const GEO = info.GEO;
 				const Lang = info.Lang;
-				const findUrlItem = this.yourVirtualAssistantArr.find(y => y.GEO === GEO && y.Lang === Lang);
+				const data = window.btoa(`Brand=${info.Brand}&SourcePage=Lenovo Vantage`);
+				const findUrlItem = this.lenaUrls.find(item => item.geo.indexOf(GEO) >= 0 && item.lang === Lang) ;
 				if (findUrlItem) {
-					this.listYourVirtualAssistant.url = findUrlItem.url;
-					isListYourVirtualAssistantEnabled = true;
-				} else {
-					const findUrlItemDefault = this.yourVirtualAssistantArr.find(y => y.isDefault && y.Lang === Lang);
-					if (findUrlItemDefault) {
-						this.listYourVirtualAssistant.url = findUrlItemDefault.url;
-						isListYourVirtualAssistantEnabled = true;
-					}
+					this.listYourVirtualAssistant.url = findUrlItem.url + `?country=${GEO}&language=${Lang}&data=${data}`;
+					this.supportDatas.needHelp.push(this.listYourVirtualAssistant);
 				}
-				if (isListYourVirtualAssistantEnabled) { this.supportDatas.needHelp.push(this.listYourVirtualAssistant); }
+
 				this.supportDatas.needHelp.push(this.listFindUs);
 				this.supportService.supportDatas = this.supportDatas;
 			});
