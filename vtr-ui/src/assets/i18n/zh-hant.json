@@ -4288,7 +4288,7 @@
         "performanceandSecurityCheckSubTitle": "讓我們來診斷並解決電腦中的效能與安全性問題",
         "scanButton": "免費 PC 掃描",
         "section1Heading": "您如何評價 PC 效能？",
-        "section1Description": "PC 執行緩慢？應用程式遲遲無法回應？Windows 錯誤？惡意軟體問題？讓我們來診斷造成問題的原因並加以解決。",
+        "section1Description": "PC 執行緩慢？應用程式遲遲無法回應？Windows 錯誤？惡意軟體問題？<br>讓我們來診斷造成問題的原因並加以解決。",
         "critical": "重大",
         "allisWell": "都沒問題",
         "zero": 0,
@@ -4462,7 +4462,7 @@
             "nowScanningDetail": {
                 "cardTitle": "立即掃描詳細資料",
                 "current": "目前：",
-                "upNext": "接下來",
+                "upNext": "接下來：",
                 "tunePCDesc": "讓我們來協助改善您的電腦效能。我們會採用業界最佳實務，穩妥地完成。訂閱者所獲得的好處包括縮短 PC 啟動時間、提升效能、改善穩定性，以及加快啟動應用程式。",
                 "boostDesc": "讓我們來協助增進您的瀏覽體驗。讓我們來修正網路及存取問題。訂閱者所獲得的好處包括改善網際網路連線能力、提升上傳/下載速度，以及加強網際網路安全。",
                 "malwareDesc": "讓我們來協助您視需要快速保護 PC 安全。我們會透過移除間諜軟體、惡意軟體和廣告軟體來完成。我們還會移除幾近零時差的感染。訂閱者所獲得的好處包括資料安全性和最佳系統效能。",
@@ -4501,7 +4501,7 @@
                         "itemd6": "配置系統錯誤報告"
                     },
                     "registryErrors": {
-                        "iteme1": "深層檢查 Windows 登錄，",
+                        "iteme1": "深層檢查 Windows 登錄",
                         "iteme2": "掃描無效的 Windows 服務",
                         "iteme3": "尋找損毀的登錄項目",
                         "iteme4": "尋找無用的副檔名",

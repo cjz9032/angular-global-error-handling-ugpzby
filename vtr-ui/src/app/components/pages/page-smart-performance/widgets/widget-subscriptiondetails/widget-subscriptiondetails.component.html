@@ -1,15 +1,12 @@
 <div class="subscription-details sidebar-widget">
-	<div *ngIf="smartPerformanceService.isSubscribed"
-		class="title pb-3">{{'smartPerformance.subscriptionDetails.title' |translate }}</div>
-	<div *ngIf="!smartPerformanceService.isSubscribed"
-		class="title pb-3">{{'smartPerformance.subscriptionDetails.title' |translate }}</div>
+	<div class="title pb-1">{{'smartPerformance.subscriptionDetails.title' |translate }}</div>
 
 	<div class="card-info">
 		<p *ngIf="smartPerformanceService.isSubscribed">{{'smartPerformance.subscriptionDetails.description' |translate }}</p>
 		<p *ngIf="!smartPerformanceService.isSubscribed && !smartPerformanceService.isExpired">{{'smartPerformance.subscriptionDetails.descriptionNonSubscriber' |translate }}</p>
 		<p *ngIf="!smartPerformanceService.isSubscribed && smartPerformanceService.isExpired"> {{'smartPerformance.subscriptionDetails.descriptionExpired' |translate }}</p>
 	</div>
-	<ul class="status-list"
+	<ul class="status-list mb-0"
 		*ngIf="isOnline">
 		<li class="d-flex justify-content-between start-date-spinner">
 			<div class="item">{{'smartPerformance.subscriptionDetails.startDate' |translate }}</div>
@@ -42,7 +39,7 @@
 			<div class="status"
 				*ngIf="strStatus">
 				<div [ngClass]="{'badge-danger': strStatus==='INACTIVE', 'badge-success': strStatus==='ACTIVE', 'badge-processing' : strStatus==='PROCESSING', 'bage-expired': strStatus==='EXPIRED' }"
-					class="badge badge-pill mr-2"
+					class="badge badge-pill"
 					id="smart-performance-subscription-detail-status"
 					role="text">{{subscriptionDetails.status |translate}}</div>
 				<img *ngIf="isRefreshEnabled"
@@ -70,7 +67,7 @@
 	</h4>
 	<button *ngIf="!smartPerformanceService.isSubscribed && isOnline || expiredDaysCount"
 		class="link-text"
-		[disabled]="strStatus==='PROCESSING' || tempHide"
+		[disabled]="strStatus==='PROCESSING' || tempHide || isClickDisabled"
 		(click)=openSubscribeModal()
 		vtrMetrics
 		metricsItem="btn.managesubscription"

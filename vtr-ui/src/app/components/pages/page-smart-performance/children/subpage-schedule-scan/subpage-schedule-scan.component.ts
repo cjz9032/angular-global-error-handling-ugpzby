@@ -29,6 +29,7 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 	@Output() hideBasedOnOldAddIn = new EventEmitter();
 	@Output() hideBasedOnOldAddInSummary = new EventEmitter();
 	@Input() isOnline = true;
+	@Input() isClickDisabled = false;
 	@ViewChild('selectedFrequencyList') selectedFrequencyList: ElementRef;
 	@ViewChild('scheduledScanFrequency') scheduledScanFrequency: ElementRef;
 	@ViewChild('selectedNumberList') selectedNumberList: ElementRef;
@@ -175,7 +176,7 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 
 	// scan settings
 	changeScanSchedule() {
-		if (this.scanToggleValue && this.isOnline) {
+		if (this.scanToggleValue && this.isOnline && !this.isClickDisabled) {
 			this.isChangeSchedule = true;
 			setTimeout(() => {
 				this.selectedFrequencyList.nativeElement.focus();

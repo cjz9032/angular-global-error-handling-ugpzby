@@ -1,0 +1,131 @@
+@import '../../../../../app.theme.scss';
+
+$imageWH: 16rem;
+$marginLeft: calc(#{$imageWH} + #{$padding_content});
+
+.vtr-ui-smart-performance-header {
+	border-top-left-radius: 0.8rem;
+	border-top-right-radius: 0.8rem;
+	height: 100%;
+	width: 100%;
+	background: linear-gradient($gradient_angle, $main_darkest 0%, $main_darker 100%);
+	box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
+	padding: $padding_content;
+	min-height: calc(#{$imageWH} + #{$padding_content * 2});
+	position: relative;
+
+	&.bottom-radius {
+		border-bottom-left-radius: 0.8rem;
+		border-bottom-right-radius: 0.8rem;
+	}
+
+	@media #{$white-on-black} {
+		box-shadow: none;
+		@include white-border;
+		border-bottom: none;
+		background: none;
+	}
+
+	@media #{$black-on-white} {
+		box-shadow: none;
+		@include black-border;
+		border-bottom: none;
+		background: none;
+	}
+
+	.image-container {
+		float: left;
+		left: $padding_content;
+		top: $padding_content;
+		width: $imageWH;
+		height: $imageWH;
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	.main-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		min-height: $imageWH;
+		margin-left: $marginLeft;
+	}
+
+	.main-header {
+		color: $light;
+
+		h1 {
+			font-size: $title;
+			font-family: $font_family_semibold;
+			margin-bottom: 0.5rem;
+			::ng-deep .small {
+				font-size: 1.4rem;
+			}
+		}
+
+		h3 {
+			font-size: $body;
+			font-family: $font_family_semilight;
+			opacity: 0.75;
+			line-height: 1.5;
+			margin-bottom: 1.5rem;
+		}
+		&.title-wrap {
+			width: calc(100% - 20rem);
+		}
+	}
+
+	.is-content-wrap {
+		@media #{$breakpoint_xl} {
+			.main-header {
+				min-height: $imageWH;
+				&.title-wrap {
+					width: 100%;
+				}
+			}
+
+			.smart-performance-header-content {
+				margin-left: calc(#{$marginLeft} * -1);
+				clear: both;
+				width: calc(100% + #{$marginLeft});
+				padding-top: $padding_content;
+			}
+		}
+	}
+}
+
+
+@media #{$breakpoint_sm} {
+	$imageWH: 11rem;
+	$marginLeft: calc(#{$imageWH} + #{$padding_content});
+
+	.vtr-ui-smart-performance-header {
+		min-height: calc(#{$imageWH} + #{$padding_content * 2});
+
+		.image-container {
+			width: $imageWH;
+			height: $imageWH;
+		}
+
+		.main-container {
+			min-height: $imageWH;
+			margin-left: $marginLeft;
+		}
+
+		.is-content-wrap {
+			@media #{$breakpoint_xl} {
+				.main-header {
+					min-height: $imageWH;
+				}
+
+				.smart-performance-header-content {
+					margin-left: calc(#{$marginLeft} * -1);
+					width: calc(100% + #{$marginLeft});
+				}
+			}
+		}
+	}
+}

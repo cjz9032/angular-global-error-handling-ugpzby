@@ -4306,7 +4306,7 @@
         "section2Heading": "Performanțele PC-ului sunt excelente. Întotdeauna",
         "section2Description": "Software-ul nostru vă poate scana în mod proactiv PC-ul, non-stop și poate remedia erorile pe măsură ce apar, astfel încât PC-ul dumneavoastră să aibă întotdeauna performanțe excelente.",
         "tunePCPerformance": {
-            "title": "REGLARE PERFORMANŢE",
+            "title": "Reglare Performanţe",
             "heading": "Oferiți computerului dumneavoastră mai multă atenție",
             "description": "Chiar și cele mai performante computere pot beneficia de reglări periodice. Efectuați o reglare și obțineți mai multe rezultate cu ajutorul aplicației noastre.",
             "tabSet1": {
@@ -4328,7 +4328,7 @@
         },
         "boostInternetPerformance": {
             "title": "ACCELERARE INTERNET",
-            "extraTitle": "PERFORMANȚELE PE INTERNET",
+            "extraTitle": "Performanțele Pe Internet",
             "heading": "Creșteți performanțele pe internet",
             "description": "Pentru mulți, o rețea Wi-Fi lentă sau absența acesteia reprezintă o izolare completă. Vă vom configura setările internetului, rețelei Wi-Fi și ale browserului, pentru performanțe optime.",
             "tabSet1": {
@@ -4349,7 +4349,7 @@
             "summaryTitle": "Performanțele pe internet"
         },
         "malwareSecurity": {
-            "title": "MALWARE-URI ȘI SECURITATE",
+            "title": "Malware-uri Și Securitate",
             "heading": "Oferiți computerului dumneavoastră atenția de care are nevoie",
             "description": "Malware-urile pot provoca blocarea computerului, compromiterea datelor și scăderea performanțelor. Utilizați caracteristica Eliminare malware-uri și veți obține mult mai multe rezultate.",
             "tabSet1": {
@@ -4457,12 +4457,12 @@
                 "cancelMayTakeSomeTime": "Așteptați, anularea poate dura un anumit timp, în funcție de sistemul dumneavoastră.",
                 "cancelTextPrompt": "Sigur anulați?"
             },
-            "waiting": "SE AȘTEAPTĂ SCANAREA",
-            "completed": "FINALIZATĂ",
+            "waiting": "se așteaptă scanarea",
+            "completed": "finalizată",
             "nowScanningDetail": {
                 "cardTitle": "ACUM SE SCANEAZĂ DETALIILE",
                 "current": "ACUM: ",
-                "upNext": "URMEAZĂ",
+                "upNext": "URMEAZĂ: ",
                 "tunePCDesc": "Vă vom ajuta să îmbunătățiți performanțele PC-ului. Vom face acest lucru în mod securizat, utilizând cele mai bune practici din domeniu. Avantajele oferite abonaților includ un timp de pornire mai scurt al PC-ului, stabilitate și performanțe îmbunătățite și lansarea mai rapidă a aplicațiilor.",
                 "boostDesc": "Vă vom ajuta să îmbunătățiți experiența de navigare. Vom remedia problemele privind rețeaua și accesul. Avantajele oferite abonaților includ îmbunătățirea conexiunii la internet, a vitezelor de încărcare/descărcare și a securității acesteia.",
                 "malwareDesc": "Vă vom ajuta să securizați rapid PC-ul, la cerere. Vom face acest lucru eliminând spyware-urile, malware-urile și adware-urile. De asemenea, vom elimina infectările de tip zero-day. Avantajele oferite abonaților includ securitatea datelor și performanțe optime ale sistemului.",
@@ -4501,7 +4501,7 @@
                         "itemd6": "Configurează rapoartele erorilor de sistem"
                     },
                     "registryErrors": {
-                        "iteme1": "Verifică în profunzime fișierele registry din Windows,",
+                        "iteme1": "Verifică în profunzime fișierele registry din Windows",
                         "iteme2": "Se scanează pentru servicii Windows nevalide",
                         "iteme3": "Se caută înregistrările deteriorate din fișierele registry",
                         "iteme4": "Caută extensii de fișiere inutile",
@@ -4610,7 +4610,7 @@
             "issueCount": "{{individualIssueCount}} PROBLEME",
             "scannedAreas": "ZONE SCANATE",
             "recommendedAction": {
-                "title": "ACȚIUNI RECOMANDATE",
+                "title": "Acțiuni Recomandate",
                 "description": "Vom remedia automat aceste probleme. Astăzi și ulterior în fiecare săptămână",
                 "yearlyPricing": "$29,99/an",
                 "monthlyPricing": "MAI PUȚIN DE $2,5 PE LUNĂ.",
@@ -4876,7 +4876,7 @@
                     }
                 }
             },
-            "issues": "PROBLEME",
+            "issues": "Probleme",
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",

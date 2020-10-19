@@ -12,7 +12,7 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { SupportService } from 'src/app/services/support/support.service';
-import { WidgetSubscriptiondetailsComponent } from './widget-subscriptiondetails.component';
+import { WidgetSubscriptionDetailsComponent } from './widget-subscriptiondetails.component';
 
 
 
@@ -46,9 +46,9 @@ const response = {
 	],
 };
 
-describe('WidgetSubscriptiondetailsComponent', () => {
-	let component: WidgetSubscriptiondetailsComponent;
-	let fixture: ComponentFixture<WidgetSubscriptiondetailsComponent>;
+describe('WidgetSubscriptionDetailsComponent', () => {
+	let component: WidgetSubscriptionDetailsComponent;
+	let fixture: ComponentFixture<WidgetSubscriptionDetailsComponent>;
 	let modalService: NgbModal;
 	let commonService: CommonService;
 	let localCacheService: LocalCacheService;
@@ -57,7 +57,7 @@ describe('WidgetSubscriptiondetailsComponent', () => {
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			schemas: [NO_ERRORS_SCHEMA],
-			declarations: [WidgetSubscriptiondetailsComponent],
+			declarations: [WidgetSubscriptionDetailsComponent],
 			imports: [
 				TranslateModule.forRoot(),
 				NgbModule,
@@ -75,7 +75,7 @@ describe('WidgetSubscriptiondetailsComponent', () => {
 			],
 		});
 
-		fixture = TestBed.createComponent(WidgetSubscriptiondetailsComponent);
+		fixture = TestBed.createComponent(WidgetSubscriptionDetailsComponent);
 		component = fixture.componentInstance;
 	}));
 
@@ -97,7 +97,7 @@ describe('WidgetSubscriptiondetailsComponent', () => {
 			Promise.resolve({ startDate: '2019/06/20', endDate: '2020/06/19' }),
 			Promise.resolve({ initiatedTime: '08:30', isOpened: true })
 		);
-		
+		smartPerformanceService.isSubscribed = true;
 		await component.initSubscripionDetails();
 		fixture.detectChanges();
 		expect(component.strStatus).toEqual('PROCESSING');
@@ -128,6 +128,7 @@ describe('WidgetSubscriptiondetailsComponent', () => {
 
 	it('should enable full feature', () => {
 		commonService = TestBed.inject(CommonService);
+		smartPerformanceService.isSubscribed = false;
 		const spy = spyOn(
 			commonService,
 			'getLocalStorageValue'

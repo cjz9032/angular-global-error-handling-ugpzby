@@ -1,0 +1,17 @@
+<div class="vtr-ui-smart-performance-header w-100" [class.bottom-radius]="bottomRadius">
+	<div class="image-container">
+		<img src="assets/images/smart-performance/{{allImages[image]}}"
+			alt=""
+			srcset="">
+	</div>
+	<div class="main-container" [class.is-content-wrap]="contentWrap">
+		<div class="main-header" [class.title-wrap]="titleWrap">
+			<h1 [id]="headerTitleId" [innerHTML]="headerTitle"></h1>
+			<h3 [id]="subTitleId" [innerHTML]="subTitle"></h3>
+		</div>
+		<div class="smart-performance-header-content">
+			<ng-content></ng-content>
+		</div>
+	</div>
+
+</div>

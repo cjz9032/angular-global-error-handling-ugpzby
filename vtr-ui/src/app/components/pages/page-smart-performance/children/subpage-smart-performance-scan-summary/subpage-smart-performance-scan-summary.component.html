@@ -1,269 +1,113 @@
-<div class="row"
-	*ngIf="!isScanning && !isScanningCompleted">
+<div class="row">
 	<div class="col vtr-col">
 		<div class="mb-5">
-			<div class="vtr-device-information">
+			<div class="vtr-device-information mb-24">
 				<div class="container-fluid">
 					<div class="system-scan-complete">
-						<div class="row">
-							<div class="col col-12 offline-info-background">
-								<div class="w-100">
-									<div class="row d-flex justify-content-between">
-										<div class="mt-5 hero-text"
-											*ngIf="!smartPerformanceService.isSubscribed">
-											<h1 id="smart-performance-scan-summary-title">{{'smartPerformance.scanCompletePage.title' |translate }}
-											</h1>
-											<h3 id="smart-performance-scan-summary-desc">{{'smartPerformance.scanCompletePage.description' |translate:{'machineFamilyName': machineFamilyName} }}
-											</h3>
-										</div>
-										<div class="mt-5 hero-text"
-											*ngIf="smartPerformanceService.isSubscribed">
-											<h1 id="smart-performance-scan-summary-title">{{'smartPerformance.subscriberScanHomePage.title' |translate }}
-												{{machineFamilyName}}</h1>
-											<h3 id="smart-performance-scan-summary-desc">{{'smartPerformance.subscriberScanHomePage.serialNumber' |translate }}
-												{{systemSerialNumber}}</h3>
-										</div>
-										<span class="icomoon icomoon-pcScan"></span>
-									</div>
-									<hr class="light-dashline" />
-								</div>
-
-								<div *ngIf="!inputIsScanningCompleted"
-									class="performance-slider-block before-result">
-									<div class="slider">
-										<div class="condition">
-											<div class="critical"
-												id="smart-performance-scan-summary-not-complete-critical"
-												role="text">
-												{{'smartPerformance.critical' |translate }}</div>
-											<div class="well"
-												id="smart-performance-scan-summary-note-complete-allIsWell"
-												role="text">
-												{{'smartPerformance.allisWell' |translate }}</div>
-										</div>
-										<div class="verticle-lines">
-											<div class="line"></div>
-											<div class="line"></div>
-											<div class="line"></div>
-											<div class="line"></div>
-											<div class="line"></div>
-											<div class="line"></div>
-											<div class="line"></div>
-											<div class="line"></div>
-											<div class="line"></div>
-											<div class="line"></div>
-											<div class="line"></div>
-										</div>
-									</div>
-									<div class="pc-status-info d-flex">
-										<p class="info-text needs-tune-up">
-											<span id="smart-performance-scan-summary-tuneup"
-												role="text"
-												title="{{'smartPerformance.tuneUP' |translate }}">{{'smartPerformance.tuneUP' |translate }}</span>
-										</p>
-										<p class="info-text running-well">
-											<span id="smart-performance-scan-summary-running-well"
-												role="text"
-												title="{{'smartPerformance.runningWell' |translate }}">{{'smartPerformance.runningWell' |translate }}</span>
-										</p>
-									</div>
-								</div>
-
-								<div *ngIf="inputIsScanningCompleted"
-									class="performance-slider-block scan-results">
-									<h3 class="recomendation-text"
-										id="smart-performance-scan-summary-scanRates">
-										{{'smartPerformance.scanCompletePage.scanRates' |translate }}<span>{{rating}}</span>
-									</h3>
-									<div class="slider">
-										<div class="verticle-lines">
-											<div class="scan-pointer"
-												[ngStyle]="{'left': leftAnimator}"
-												*ngIf="!smartPerformanceService.isSubscribed">&#9660;</div>
-											<div class="scan-pointer"
-												[ngStyle]="{'left': leftAnimator}"
-												*ngIf="inputIsScanningCompleted">&#9660;</div>
-											<div class="line"></div>
-											<div class="line"></div>
-											<div class="line"></div>
-											<div class="line"></div>
-											<div class="line"></div>
-											<div class="line"></div>
-											<div class="line"></div>
-											<div class="line"></div>
-											<div class="line"></div>
-											<div class="line"></div>
-											<div class="line"></div>
-										</div>
-										<div class="condition">
-											<div class="critical"
-												id="smart-performance-scan-summary-complete-critical"
-												role="text">
-												{{'smartPerformance.critical' |translate }}</div>
-											<div class="well"
-												id="smart-performance-scan-summary-complete-allIsWell"
-												role="text">
-												{{'smartPerformance.allisWell' |translate }}</div>
-										</div>
-									</div>
-								</div>
-
+						<vtr-ui-smart-performance-header *ngIf="!smartPerformanceService.isSubscribed"
+							[image]="SPHeaderImageType.Issue"
+							headerTitle="Our scan found {{issueCount}} issue(s)"
+							[subTitle]="'Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.'"
+							headerTitleId="smart-performance-scan-summary-title"
+							subTitleId="smart-performance-scan-summary-desc"
+							[contentWrap]="true">
+							<vtr-ui-smart-performance-rating [leftAnimator]="leftAnimator"
+								[hideStatus]="true"></vtr-ui-smart-performance-rating>
+							<div class="d-flex align-items-center purchase-content">
+								<vtr-ui-button (onClick)="openSubscribeModal()"
+									class="mr-3"
+									linkId="btn.smart-performance-sign-up-and-fix"
+									metricsItem="btn.signUpAndFix"
+									metricsEvent="ItemClick"
+									metricsParent="Page.Support.SmartPerformance"
+									[isFullWidth]="true"
+									[label]="'Sign up & fix'"></vtr-ui-button>
+								<p id="smart-performance-scan-complete-purchase-tip"
+									role="text">Purchase the yearly plan now and we will automatically fix these issues every week.</p>
 							</div>
-						</div>
-						<div class="row">
-							<div class="summary-block w-100"
-								*ngIf="!smartPerformanceService.isSubscribed">
-								<h1 class="title-big mb-3"
-									id="smart-performance-scan-summary-summary">
-									{{'smartPerformance.scanCompletePage.summary' |translate }}</h1>
-								<p *ngIf="!smartPerformanceService.isSubscribed && !smartPerformanceService.isExpired"
-									id="smart-performance-scan-summary-details"
-									role="text"
-									[innerHTML]="'smartPerformance.scanCompletePage.summaryDetails' |translate:{issueCount: issueCount }">
-								</p>
-								<p *ngIf="!smartPerformanceService.isSubscribed && smartPerformanceService.isExpired"
-									id="smart-performance-scan-summary-details"
-									role="text"
-									[innerHTML]="'smartPerformance.scanCompletePage.expiredSummaryDetails' |translate"></p>
+						</vtr-ui-smart-performance-header>
 
-								<div class="d-flex justify-content-start my-5">
-									<vtr-ui-button (onClick)="openSubscribeModal()"
-										*ngIf="smartPerformanceService.isExpired"
-										class="mr-3"
-										linkId="btn.smart-performance-renew-and-fix"
-										metricsItem="btn.renewAndFix"
-										metricsEvent="ItemClick"
-										metricsParent="Page.Support.SmartPerformance"
-										[isFullWidth]="true"
-										[label]="'smartPerformance.scanCompletePage.renewAndFix' | translate"></vtr-ui-button>
-									<vtr-ui-button (onClick)="backToNonSubScriberHome()"
-										linkId="btn.smart-performance-back-to-home"
-										metricsItem="btn.backtohome"
-										metricsEvent="ItemClick"
-										metricsParent="Page.Support.SmartPerformance"
-										[isFullWidth]="true"
-										[label]="'smartPerformance.scanCompletePage.backToHome' | translate"></vtr-ui-button>
-								</div>
-								<vtr-subpage-scan-results-accordion [tune]="tune"
-									[boost]="boost"
-									[secure]="secure"
-									[scannigResultObj]="scannigResultObj">
-								</vtr-subpage-scan-results-accordion>
-							</div>
-							<div class="summary-block w-100"
-								*ngIf="smartPerformanceService.isSubscribed">
-								<h3 *ngIf="!inputIsScanningCompleted"
-									id="smart-performance-scan-summary-subTitle">
-									{{'smartPerformance.subscriberScanHomePage.subTitle' |translate }}
-								</h3>
-								<p *ngIf="!inputIsScanningCompleted"
-									id="smart-performance-scan-summary-description"
-									role="text">
-									{{'smartPerformance.subscriberScanHomePage.description' |translate }}
-								</p>
-
-								<h3 *ngIf="inputIsScanningCompleted"
-									id="smart-performance-scan-summary-subTitle">
-									{{'smartPerformance.subscriberScanHomePage.successTitle' |translate}}
-								</h3>
-								<p *ngIf="inputIsScanningCompleted"
-									id="smart-performance-scan-summary-description"
-									role="text"
-									[innerHTML]="'smartPerformance.subscriberScanHomePage.successDescription' |translate:{issueCount: issueCount }">
-								</p>
-								<div class="d-flex justify-content-start my-5 w-75">
-									<vtr-ui-button (onClick)="ScanNowSummary()"
-										*ngIf="!inputIsScanningCompleted"
-										linkId="btn.smart-performance-scan-and-fix"
-										metricsItem="btn.scan&fix"
-										metricsEvent="FeatureClick"
-										metricsParent="Page.Support.SmartPerformance"
-										[isDisabled]="isLoading || !isOnline"
-										[isFullWidth]="true"
-										[label]="'smartPerformance.subscriberScanHomePage.scanNow' | translate"></vtr-ui-button>
-									<vtr-ui-button (onClick)="BackToSummary()"
-										*ngIf="inputIsScanningCompleted"
-										linkId="btn.smart-performance-scan-and-fix"
-										metricsItem="btn.backtohome"
-										metricsEvent="FeatureClick"
-										metricsParent="Page.Support.SmartPerformance"
-										[isFullWidth]="true"
-										[label]="'smartPerformance.subscriberScanHomePage.backToHome' | translate"></vtr-ui-button>
-									<div class="desc-block">
-										<div class="desc desc1 col-auto"
-											*ngIf="historyScanResultsDateTime && historyScanResultsDateTime.length > 0">
-											<b id="smart-performance-scan-summary-mostRecent"
-												role="block"
-												title="{{'smartPerformance.subscriberScanHomePage.mostRecent' |translate }}">{{'smartPerformance.subscriberScanHomePage.mostRecent' |translate }}</b><br>
-											{{mostRecentScan}}
-										</div>
-										<div class="desc desc2 col-auto-1"
-											*ngIf="smartPerformanceService.enableNextText">
-											<b id="smart-performance-scan-summary-nextScheduled"
-												role="block"
-												title="{{'smartPerformance.subscriberScanHomePage.nextScheduled' |translate }}">{{'smartPerformance.subscriberScanHomePage.nextScheduled' |translate }}</b><br>
-											{{smartPerformanceService.nextScheduleScan}}
-										</div>
+						<vtr-ui-smart-performance-header *ngIf="smartPerformanceService.isSubscribed"
+							[image]="rating < 8 ? SPHeaderImageType.Issue : SPHeaderImageType.Well"
+							[headerTitle]="('smartPerformance.subscriberScanHomePage.title' |translate) + ' ' +  machineFamilyName"
+							[subTitle]="inputIsScanningCompleted ? ('smartPerformance.subscriberScanHomePage.serialNumber' |translate) + ' ' +  systemSerialNumber : ('smartPerformance.subscriberScanHomePage.description' |translate)"
+							headerTitleId="smart-performance-scan-summary-title"
+							subTitleId="smart-performance-scan-summary-desc"
+							[bottomRadius]="!inputIsScanningCompleted"
+							[contentWrap]="true">
+							<vtr-ui-smart-performance-rating [leftAnimator]="inputIsScanningCompleted ? leftAnimator : '100%'"
+								[hidePointer]="!inputIsScanningCompleted"
+								[hideStatus]="true"></vtr-ui-smart-performance-rating>
+							<div class="d-flex justify-content-start">
+								<vtr-ui-button (onClick)="ScanNowSummary()"
+									*ngIf="!inputIsScanningCompleted"
+									linkId="btn.smart-performance-scan-and-fix"
+									metricsItem="btn.scan&fix"
+									metricsEvent="FeatureClick"
+									metricsParent="Page.Support.SmartPerformance"
+									[isDisabled]="isLoading || !isOnline"
+									[isFullWidth]="true"
+									[label]="'smartPerformance.subscriberScanHomePage.scanNow' | translate"></vtr-ui-button>
+								<vtr-ui-button (onClick)="BackToSummary()"
+									*ngIf="inputIsScanningCompleted"
+									linkId="btn.smart-performance-scan-and-fix"
+									metricsItem="btn.backtohome"
+									metricsEvent="FeatureClick"
+									metricsParent="Page.Support.SmartPerformance"
+									[isFullWidth]="true"
+									[label]="'smartPerformance.subscriberScanHomePage.backToHome' | translate"></vtr-ui-button>
+								<div class="desc-block">
+									<div class="desc desc1 col-auto"
+										*ngIf="historyScanResultsDateTime && historyScanResultsDateTime.length > 0">
+										<b id="smart-performance-scan-summary-mostRecent"
+											role="block"
+											title="{{'smartPerformance.subscriberScanHomePage.mostRecent' |translate }}">{{'smartPerformance.subscriberScanHomePage.mostRecent' |translate }}</b><br>
+										{{mostRecentScan}}
 									</div>
-								</div>
-								<div *ngIf="inputIsScanningCompleted"
-									class="summary-block w-100 pt-3 mb-5">
-									<div class="scanned-items d-flex justify-content-between">
-										<div class="heading"
-											_ngcontent-dag-c274="">
-											<div class="icon icon-performance"></div>
-											<h3 id="smart-performance-scan-summary-tunePC-title">{{'smartPerformance.tunePCPerformance.title' |translate }}</h3>
-										</div>
-										<div class="status">
-											<div class="icon-check">
-												<div class="icon-bkg">
-													<fa-icon [icon]="['fas', 'check']"></fa-icon>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="scanned-items d-flex justify-content-between">
-										<div class="heading"
-											_ngcontent-dag-c274="">
-											<div class="icon icon-internet-performance"></div>
-											<h3 id="smart-performance-scan-summary-extraTitle">{{'smartPerformance.boostInternetPerformance.extraTitle' |translate }}</h3>
-										</div>
-										<div class="status">
-											<div class="icon-check">
-												<div class="icon-bkg">
-													<fa-icon [icon]="['fas', 'check']"></fa-icon>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="scanned-items d-flex justify-content-between">
-										<div class="heading"
-											_ngcontent-dag-c274="">
-											<div class="icon icon-malware-security"></div>
-											<h3 id="smart-performance-scan-summary-malware-title">{{'smartPerformance.malwareSecurity.title' |translate }}</h3>
-										</div>
-										<div class="status">
-											<div class="icon-check">
-												<div class="icon-bkg">
-													<fa-icon [icon]="['fas', 'check']"></fa-icon>
-												</div>
-											</div>
-										</div>
+									<div class="desc desc2 col-auto-1"
+										*ngIf="smartPerformanceService.enableNextText">
+										<b id="smart-performance-scan-summary-nextScheduled"
+											role="block"
+											title="{{'smartPerformance.subscriberScanHomePage.nextScheduled' |translate }}">{{'smartPerformance.subscriberScanHomePage.nextScheduled' |translate }}</b><br>
+										{{smartPerformanceService.nextScheduleScan}}
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="row"></div>
+						</vtr-ui-smart-performance-header>
 					</div>
-					<!-- <vtr-ui-smart-performance-scan-summary></vtr-ui-smart-performance-scan-summary> -->
-					<!-- subscriber part -->
-
 				</div>
 			</div>
-			<div class="vtr-device-information">
+			<div class="vtr-device-information mb-24"
+				*ngIf="inputIsScanningCompleted">
+				<div class="vtr-ui-smart-performance-scan-summary">
+					<div class="vtr-scan-information">
+						<div class="scan-summary-block">
+							<div class="row">
+								<div class="title-block w-100">
+									<h3 *ngIf="smartPerformanceService.isSubscribed"
+										id="smart-performance-scan-summary-subTitle">
+										{{'smartPerformance.subscriberScanHomePage.successTitle' |translate}}
+									</h3>
+									<p *ngIf="smartPerformanceService.isSubscribed"
+										class="mb-20"
+										id="smart-performance-scan-summary-description"
+										role="text"
+										[innerHTML]="'smartPerformance.subscriberScanHomePage.successDescription' |translate:{issueCount: issueCount }">
+									</p>
+								</div>
+							</div>
+							<vtr-subpage-scan-results-accordion [tune]="tune"
+								[boost]="boost"
+								[secure]="secure">
+							</vtr-subpage-scan-results-accordion>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="vtr-device-information mb-24">
 				<div class="vtr-ui-smart-performance-scan-summary"
 					*ngIf="smartPerformanceService.isSubscribed || smartPerformanceService.isExpired">
-					<div class="vtr-scan-information mt-5">
+					<div class="vtr-scan-information">
 						<div class="scan-summary-block">
 							<div class="row px-0">
 								<div class="navbar bkg-transparent justify-content-between w-100">
@@ -272,6 +116,7 @@
 										<h3 id="smart-performance-scan-summary-subscribed-title">{{'smartPerformance.subscriberScanHomePage.scanSummary.title' |translate }}
 										</h3>
 										<p id="smart-performance-scan-summary-subscribed-desc"
+											class="mb-0"
 											role="text">{{'smartPerformance.subscriberScanHomePage.scanSummary.description' |translate }}
 										</p>
 									</div>
@@ -384,12 +229,12 @@
 								</div>
 
 							</div>
-							<div *ngIf="!historyScanResultsDateTime || (historyScanResultsDateTime && historyScanResultsDateTime.length === 0)"
-								class="row my-5 d-flex justify-content-between px-0 position-relative">
-								<h4 id="smart-performance-scan-summary-noScanResults">{{'smartPerformance.noScanResults' |translate }}</h4>
+							<div *ngIf="!isLoading && (!historyScanResultsDateTime || (historyScanResultsDateTime && historyScanResultsDateTime.length === 0))"
+								class="row pt-4 d-flex justify-content-between px-0 position-relative">
+								<h4 class="py-5" id="smart-performance-scan-summary-noScanResults">{{'smartPerformance.noScanResults' |translate }}</h4>
 							</div>
-							<div *ngIf="historyScanResultsDateTime && historyScanResultsDateTime.length > 0"
-								class="row my-5 d-flex justify-content-between px-0 position-relative">
+							<div *ngIf="isLoading || (historyScanResultsDateTime && historyScanResultsDateTime.length > 0)"
+								class="row pt-5 d-flex justify-content-between px-0 position-relative">
 								<div *ngIf="isLoading">
 									<div class="container"
 										[style.height.px]="40">
@@ -403,7 +248,7 @@
 									class="tune">
 									<div class="d-flex">
 										<div class="w-100">
-											<div class="box-title d-flex  justify-content-between">
+											<div class="box-title d-flex align-items-center justify-content-between">
 												<h5 id="smart-performance-scan-summary-tunePC-summaryTitle"
 													title="{{'smartPerformance.tunePCPerformance.summaryTitle' |translate }}">
 													{{'smartPerformance.tunePCPerformance.summaryTitle' |translate }}
@@ -420,11 +265,26 @@
 												<span id="smart-performance-scan-summary-tunePC-fixes"
 													role="text">{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}</span>
 											</div>
-											<p class="w-100 text-center"
+											<p class="w-100 text-center summary-caption"
 												id="smart-performance-scan-summary-tunePC-summaryCaption"
 												role="text">
 												{{formatMemorySize(historyRes.tuneSize)}} <span class="mr-1">{{sizeExtension}}</span>
 												{{'smartPerformance.subscriberScanHomePage.scanSummary.summaryCaption' |translate }}
+												<fa-icon class="question"
+													tabindex="0"
+													triggers="manual"
+													placement="auto"
+													id="smart-performance-scan-summary-tunePC-tooltip"
+													attr.aria-label=""
+													role="tooltip"
+													[ngbTooltip]="'Improve overall system performance, reduce PC start time, and improve application load times.'"
+													#tooltip="ngbTooltip"
+													[icon]="['far', 'question-circle']"
+													container="vtr-root"
+													tooltipClass="vtr-tooltip"
+													(click)="toggleTooltip(tooltip)"
+													(keydown.enter)="toggleTooltip(tooltip)">
+												</fa-icon>
 											</p>
 										</div>
 
@@ -434,7 +294,7 @@
 									class="boost">
 									<div class="d-flex">
 										<div class="w-100">
-											<div class="box-title d-flex  justify-content-between">
+											<div class="box-title d-flex align-items-center justify-content-between">
 												<h5 id="smart-performance-scan-summary-boost-title"
 													title="{{'smartPerformance.boostInternetPerformance.summaryTitle' |translate }}">
 													{{'smartPerformance.boostInternetPerformance.summaryTitle' |translate }}
@@ -451,11 +311,26 @@
 												<span id="smart-performance-scan-summary-boost-fixes"
 													role="text">{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}</span>
 											</div>
-											<p class="w-100 text-center"
+											<p class="w-100 text-center summary-caption"
 												id="smart-performance-scan-summary-boost-summaryCaption"
 												role="text">
 												{{formatMemorySize(historyRes.boostSize)}} <span class="mr-1">{{sizeExtension}}</span>
 												{{'smartPerformance.subscriberScanHomePage.scanSummary.summaryCaption' |translate }}
+												<fa-icon class="question"
+													tabindex="0"
+													triggers="manual"
+													placement="auto"
+													id="smart-performance-scan-summary-boost-tooltip"
+													attr.aria-label=""
+													role="tooltip"
+													[ngbTooltip]="'Improve network performance, browsing experience, and connectivity.'"
+													#tooltip="ngbTooltip"
+													[icon]="['far', 'question-circle']"
+													container="vtr-root"
+													tooltipClass="vtr-tooltip"
+													(click)="toggleTooltip(tooltip)"
+													(keydown.enter)="toggleTooltip(tooltip)">
+												</fa-icon>
 											</p>
 										</div>
 
@@ -465,7 +340,7 @@
 									class="secure">
 									<div class="d-flex">
 										<div class="w-100">
-											<div class="box-title d-flex  justify-content-between">
+											<div class="box-title d-flex align-items-center justify-content-between">
 												<h5 id="smart-performance-scan-summary-malware-title"
 													title="{{'smartPerformance.malwareSecurity.summaryTitle' |translate }}">
 													{{'smartPerformance.malwareSecurity.summaryTitle' |translate }}
@@ -483,6 +358,26 @@
 												<span id="smart-performance-scan-summary-malware-fixes"
 													role="text">{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}</span>
 											</div>
+											<p class="w-100 text-center summary-caption"
+												id="smart-performance-scan-summary-malware-summaryCaption"
+												role="text">
+												<span class="mr-1"> </span>
+												<fa-icon class="question"
+													tabindex="0"
+													triggers="manual"
+													placement="auto"
+													id="smart-performance-scan-summary-malware-tooltip"
+													attr.aria-label=""
+													role="tooltip"
+													[ngbTooltip]="'Improve security, remove malware and infections, and restore system stability.'"
+													#tooltip="ngbTooltip"
+													[icon]="['far', 'question-circle']"
+													container="vtr-root"
+													tooltipClass="vtr-tooltip"
+													(click)="toggleTooltip(tooltip)"
+													(keydown.enter)="toggleTooltip(tooltip)">
+												</fa-icon>
+											</p>
 											<!-- <p>{{'smartPerformance.subscriberScanHomePage.scanSummary.secureSummary' |translate }}</p> -->
 										</div>
 
@@ -495,11 +390,10 @@
 				</div>
 			</div>
 
-			<div class="vtr-device-information"
-				*ngIf="smartPerformanceService.isSubscribed || smartPerformanceService.isExpired">
-				<div class="vtr-ui-smart-performance-scan-summary"
-					*ngIf="historyScanResultsDateTime && historyScanResultsDateTime.length > 0">
-					<div class="vtr-scan-information mt-5">
+			<div class="vtr-device-information mb-24"
+				*ngIf="(smartPerformanceService.isSubscribed || smartPerformanceService.isExpired) && !showResult.show && historyScanResultsDateTime && historyScanResultsDateTime.length > 0">
+				<div class="vtr-ui-smart-performance-scan-summary">
+					<div class="vtr-scan-information">
 						<div class="scan-summary-block">
 							<div class="row px-0">
 								<div class="title-block w-100">
@@ -513,51 +407,12 @@
 										<div class="row">
 											<div class="col">
 												<ul class="scan-list">
-													<li class=" list-item list-heading">
+													<li class="list-item"
+														*ngFor="let item of historyScanResultsDateTime;let ind=index"
+														(click)="seeScanResultDetails(item.scanrunDate, item.scanrunTime, item.Tune, item.Boost, item.Secure, ind, item.type.toUpperCase())">
 														<div class="container-fluid">
 															<div class="row align-items-center">
-																<div class="offset-1 col-6"
-																	id="smart-performance-scan-summary-lastScanResults-scanDate"
-																	role="text"
-																	title="{{'smartPerformance.subscriberScanHomePage.lastScanResults.scanDate' |translate }}">
-																	{{'smartPerformance.subscriberScanHomePage.lastScanResults.scanDate' |translate }}
-																</div>
-																<div class="col-3 fixes"
-																	id="smart-performance-scan-summary-lastScanResults-results"
-																	role="text"
-																	title="{{'smartPerformance.subscriberScanHomePage.lastScanResults.results' |translate }}">
-																	{{'smartPerformance.subscriberScanHomePage.lastScanResults.results' |translate }}
-																</div>
-																<div class="col-2 icon-check-box"
-																	id="smart-performance-scan-summary-lastScanResults-status"
-																	role="text"
-																	title="{{'smartPerformance.subscriberScanHomePage.lastScanResults.status' |translate }}">
-																	{{'smartPerformance.subscriberScanHomePage.lastScanResults.status' |translate }}
-																</div>
-															</div>
-														</div>
-													</li>
-													<li class=" list-item"
-														*ngFor="let item of historyScanResultsDateTime;let ind=index">
-														<div class="container-fluid">
-															<div class="row align-items-center">
-																<div class="col-1 text-center">
-																	<fa-icon tabindex="0"
-																		id="smart-performance-scan-summary-expand-row"
-																		role="button"
-																		class="chevron-up"
-																		[icon]="toggleValue === ind ? ['fal', 'chevron-up'] : ['fal', 'chevron-down']"
-																		(click)="expandRow(ind)"
-																		(keydown.enter)="expandRow(ind)">
-																	</fa-icon>
-																	<!-- <fa-icon
-																				*ngIf="toggleValue != ind"
-																				class="chevron-down"
-																				[icon]="['fal', 'chevron-down']"
-																				(click)="expandRow(ind)">
-																			</fa-icon> -->
-																</div>
-																<div class="col-6">
+																<div class="col-7 scan-run-time">
 																	<b>{{item.scanrunDate}}</b> -
 																	<span>{{item.scanrunTime | uppercase}}</span>
 																	<span class="ml-1"
@@ -569,131 +424,14 @@
 																		role="text"
 																		*ngIf="item.type.toUpperCase() == 'SS'">({{'smartPerformance.auto' |translate }})</span>
 																</div>
-																<div class="col-3 fixes"
+																<div class="col-5 fixes text-right"
 																	id="smart-performance-scan-summary-fixes"
 																	role="text"
 																	title="{{item.fixcount === 0 ? item.fixcount : (item.fixcount | number:'2.0')}} {{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' | translate}}">
-																	{{item.fixcount === 0 ? item.fixcount : (item.fixcount | number)}}
+																	<b>{{item.fixcount === 0 ? item.fixcount : (item.fixcount | number)}}</b>
 																	{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' | translate}}
-																</div>
-																<div class="col-2 d-flex icon-check-box"
-																	*ngIf="item.status === 'C'">
-																	<div class="icon-check">
-																		<div class="icon-bkg">
-																			<fa-icon id="smart-performance-scan-summary-check-icon"
-																				[icon]="['fas', 'check']">
-																			</fa-icon>
-																		</div>
-																	</div>
-																</div>
-																<div class="col-2 d-flex icon-check-box"
-																	*ngIf="item.status === 'S'">
-																	<div class="icon-times">
-																		<div class="icon-bkg">
-																			<fa-icon id="smart-performance-scan-summary-exclamation-icon"
-																				[icon]="['fas', 'exclamation']">
-																			</fa-icon>
-																		</div>
-																	</div>
-																</div>
-															</div>
-															<div class="row pl-0 pr-0"
-																*ngIf="toggleValue === ind">
-																<div class="col-12 pl-0 pr-0">
-																	<div class="row pl-0 pr-0 pt-3">
-																		<div class="col-1">&nbsp;
-																		</div>
-																		<div class="scan-items col-7">
-																			<div class="row">
-																				<div class="col-2 px-0 icon icon-performance"></div>
-																				<div class="col-10 px-0 text"
-																					id="smart-performance-scan-summary-tunePC-summaryTitle2"
-																					role="text"
-																					title="{{'smartPerformance.tunePCPerformance.summaryTitle' |translate }}">{{'smartPerformance.tunePCPerformance.summaryTitle' |translate }}</div>
-																			</div>
-																		</div>
-																		<div id="smart-performance-scan-summary-tunePC-tuneValue"
-																			role="text"
-																			class="scan-item-value col-2">
-																			{{item.Tune || 0}}
-																		</div>
-																		<!-- <div class="scan-status col-2 px-2"
-																				*ngIf="item.status === 'C'">
-																					<fa-icon
-																						[icon]="['fas', 'circle']">
-																					</fa-icon>
-																				</div>
-																				<div class="scan-status col-2 px-2"
-																				*ngIf="item.status === 'S'">
-																					<fa-icon
-																						class="red-icon"
-																						[icon]="['fas', 'circle']">
-																					</fa-icon>
-																				</div> -->
-																	</div>
-
-																	<div class="row pl-0 pr-0">
-																		<div class="col-1">&nbsp;
-																		</div>
-																		<div class="scan-items col-7">
-																			<div class="row">
-																				<div class="col-2 px-0 icon icon-internet-performance"></div>
-																				<div class="col-10 px-0 text"
-																					id="smart-performance-scan-summary-boost-summaryTitle2"
-																					role="text"
-																					title="{{'smartPerformance.boostInternetPerformance.summaryTitle' |translate }}">{{'smartPerformance.boostInternetPerformance.summaryTitle' |translate }}</div>
-																			</div>
-																		</div>
-																		<div id="smart-performance-scan-summary-boost-boostValue"
-																			role="text"
-																			class="scan-item-value col-2">
-																			{{item.Boost || 0}}
-																		</div>
-																		<!-- <div class="scan-status col-2 px-2"
-																				*ngIf="item.status === 'C'">
-																					<fa-icon
-																						[icon]="['fas', 'circle']">
-																					</fa-icon>
-																				</div>
-																				<div class="scan-status col-2 px-2"
-																				*ngIf="item.status === 'S'">
-																					<fa-icon
-																						class="red-icon"
-																						[icon]="['fas', 'circle']">
-																					</fa-icon>
-																				</div> -->
-																	</div>
-																	<div class="row pl-0 pr-0">
-																		<div class="col-1">&nbsp;
-																		</div>
-																		<div class="scan-items col-7">
-																			<div class="row">
-																				<div class="col-2 px-0 icon icon-malware-security"></div>
-																				<div class="col-10 px-0 text"
-																					id="smart-performance-scan-summary-malware-summaryTitle2"
-																					role="text"
-																					title="{{'smartPerformance.malwareSecurity.summaryTitle' |translate }}">{{'smartPerformance.malwareSecurity.summaryTitle' |translate }}</div>
-																			</div>
-																		</div>
-																		<div id="smart-performance-scan-summary-malware-secureValue"
-																			role="text"
-																			class="scan-item-value col-2">
-																			{{item.Secure || 0}}
-																		</div>
-																		<!-- <div class="scan-status col-2 px-2"
-																				*ngIf="item.status === 'C'">
-																					<fa-icon
-																						[icon]="['fas', 'circle']">
-																					</fa-icon>
-																				</div>
-																				<div class="scan-status col-2 px-2"
-																				*ngIf="item.status === 'S'">
-																					<fa-icon
-																						class="red-icon"
-																						[icon]="['fas', 'circle']">
-																					</fa-icon>
-																				</div> -->
-																	</div>
+																	<fa-icon class="pl-2 pr-3"
+																		[icon]="['fal', 'chevron-right']"></fa-icon>
 																</div>
 															</div>
 														</div>
@@ -703,6 +441,45 @@
 										</div>
 									</div>
 								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="vtr-device-information mb-24"
+				*ngIf="(smartPerformanceService.isSubscribed || smartPerformanceService.isExpired) && showResult.show">
+				<div class="vtr-ui-smart-performance-scan-summary">
+					<div class="vtr-scan-information">
+						<div class="scan-summary-block">
+							<div class="d-flex px-0">
+								<div class="title-block">
+									<h3 id="smart-performance-scan-summary-scanResults-title"
+										*ngIf="showResult.isLastFix">Last Fix</h3>
+									<h3 id="smart-performance-scan-summary-scanResults-title"
+										*ngIf="!showResult.isLastFix">Fix Result</h3>
+									<p class="mb-20">
+										<span>{{showResult.time}}</span>
+										<span class="ml-1"
+											id="smart-performance-scan-summary-manual"
+											role="text"
+											*ngIf="showResult.itemType == 'MS'">({{'smartPerformance.manual' |translate }})</span>
+										<span class="ml-1"
+											id="smart-performance-scan-summary-auto"
+											role="text"
+											*ngIf="showResult.itemType == 'SS'">({{'smartPerformance.auto' |translate }})</span>
+									</p>
+								</div>
+								<div class="ml-auto pt-2">
+									<a href="javascript:void(0)"
+										class="check-previous-results"
+										(click)="showResult.show = false">Check previous results</a>
+								</div>
+							</div>
+							<div class="summary-block w-100">
+								<vtr-subpage-scan-results-accordion [tune]="showResult.tune"
+									[boost]="showResult.boost"
+									[secure]="showResult.secure">
+								</vtr-subpage-scan-results-accordion>
 							</div>
 						</div>
 					</div>

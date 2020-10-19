@@ -277,7 +277,7 @@ describe('SubpageSmartPerformanceScanSummaryComponent', () => {
 		
 		spyOn(smartPerformanceService, 'getLastScanResult').and.returnValue(Promise.resolve(response));
 		component.getLastScanResult();
-		expect(component.isScanning).toBe(false);
+		expect(smartPerformanceService.isScanning).toBe(false);
 	});
 
 	it('should clear date input fields', () => {

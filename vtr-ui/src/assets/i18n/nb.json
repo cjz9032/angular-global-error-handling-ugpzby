@@ -4306,7 +4306,7 @@
         "section2Heading": "Topp PC-ytelse. Alltid",
         "section2Description": "Programvaren vår kan proaktivt skanne PC-en døgnet rundt for å finne og løse problemer etter hvert som de oppstår, slik at PC-en alltid har topp ytelse.",
         "tunePCPerformance": {
-            "title": "JUSTER PC-YTELSEN",
+            "title": "Juster PC-ytelsen",
             "heading": "Vis datamaskinen litt ekstra kjærlighet",
             "description": "Selv den beste maskinen vil dra nytte av periodisk justering. Få en justering og bli mer effektiv med den kraftige appen vår.",
             "tabSet1": {
@@ -4328,7 +4328,7 @@
         },
         "boostInternetPerformance": {
             "title": "ØK INTERNETTYTELSEN",
-            "extraTitle": "INTERNETTYTELSE",
+            "extraTitle": "Internettytelse",
             "heading": "Styrk Internettet ditt",
             "description": "For mange er tregt eller manglende Wi-Fi ensbetydende med å bo utenfor samfunnets infrastruktur. La oss konfigurere Internett, Wi-Fi og nettleserinnstillinger for optimal ytelse.",
             "tabSet1": {
@@ -4349,7 +4349,7 @@
             "summaryTitle": "Internettytelse"
         },
         "malwareSecurity": {
-            "title": "SKADEVARE OG SIKKERHET",
+            "title": "Skadevare Og Sikkerhet",
             "heading": "Gi datamaskinen den ekstra pleien den trenger",
             "description": "Skadevare kan føre til datakrasj, dataangrep og ytelsesreduksjon. Få fjernet skadevare og mye mer.",
             "tabSet1": {
@@ -4457,12 +4457,12 @@
                 "cancelMayTakeSomeTime": "Vent litt. Det kan ta litt tid å avbryte, avhengig av systemet.",
                 "cancelTextPrompt": "Er du sikker på at du vil avbryte?"
             },
-            "waiting": "VENTER PÅ SKANNING",
-            "completed": "FULLFØRT",
+            "waiting": "venter på skanning",
+            "completed": "fullført",
             "nowScanningDetail": {
                 "cardTitle": "SKANNER NÅ DETALJER",
                 "current": "NÅVÆRENDE: ",
-                "upNext": "NESTE",
+                "upNext": "NESTE: ",
                 "tunePCDesc": "La oss hjelpe deg med å forbedre ytelsen til PC-en din. Vi gjør det trygt ved hjelp av bransjens beste praksis. Abonnementsfordeler omfatter redusert oppstartstid for PC-en, forbedret ytelse, forbedret stabilitet og raskere oppstart av programmer.",
                 "boostDesc": "La oss hjelpe deg med å forbedre nettleseropplevelsen. La oss løse nettverks- og tilgangsproblemer. Abonnementsfordeler omfatter bedre Internettforbindelse, bedre opplastings- og nedlastingshastighet og sikrere Internett.",
                 "malwareDesc": "La oss hjelpe deg med å raskt sikre PC-en din på forespørsel. Vi gjør det ved å fjerne spionvare, skadevare og reklamevare. Vi fjerner også null-dagers infeksjoner. Abonnementsfordeler omfatter datasikkerhet og optimal systemytelse.",
@@ -4501,7 +4501,7 @@
                         "itemd6": "Konfigurer systemfeilrapporter"
                     },
                     "registryErrors": {
-                        "iteme1": "Dyp kontroll av Windows-registret,",
+                        "iteme1": "Dyp kontroll av Windows-registret",
                         "iteme2": "Skanner etter ugyldige Windows-tjenester",
                         "iteme3": "Finner korrupte registeroppføringer",
                         "iteme4": "Se etter ubrukelige filutvidelser",
@@ -4610,7 +4610,7 @@
             "issueCount": "{{individualIssueCount}} PROBLEMER",
             "scannedAreas": "SKANNEDE OMRÅDER",
             "recommendedAction": {
-                "title": "ANBEFALT HANDLING",
+                "title": "Anbefalt Handling",
                 "description": "Disse problemene vil bli løst automatisk. En gang i dag og deretter hver uke",
                 "yearlyPricing": "$29,99 / ÅR",
                 "monthlyPricing": "MINDRE ENN $2,5 PER MÅNED.",
@@ -4876,7 +4876,7 @@
                     }
                 }
             },
-            "issues": "PROBLEM(ER)",
+            "issues": "Problem(er)",
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",

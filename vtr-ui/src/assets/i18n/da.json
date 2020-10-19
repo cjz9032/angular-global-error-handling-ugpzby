@@ -4306,7 +4306,7 @@
         "section2Heading": "Computerens ydeevne er helt i top. Altid",
         "section2Description": "Vores software kan proaktivt scanne din computer døgnet rundt for at finde og løse problemer, når de opstår, så computeren altid har en ydeevne, der er helt i top.",
         "tunePCPerformance": {
-            "title": "OPTIMER COMPUTERENS YDEEVNE",
+            "title": "Optimer Computerens Ydeevne",
             "heading": "Forkæl din computer lidt mere",
             "description": "Selv den bedste computer vil kunne drage fordel af periodiske opdateringer. Få din computer optimeret med vores stærke app, og få mere fra hånden.",
             "tabSet1": {
@@ -4328,7 +4328,7 @@
         },
         "boostInternetPerformance": {
             "title": "ØG YDEEVNEN PÅ INTERNETTET",
-            "extraTitle": "YDEEVNEN PÅ INTERNETTET",
+            "extraTitle": "Ydeevnen På Internettet",
             "heading": "Skub til internettet",
             "description": "For mange mennesker er et langsomt eller slet intet Wi-Fi det samme som at være totalt isoleret. Lad os konfigurere dine Internet-, Wi-Fi- og browserindstillinger for at opnå optimal ydeevne.",
             "tabSet1": {
@@ -4349,7 +4349,7 @@
             "summaryTitle": "Ydeevnen på internettet"
         },
         "malwareSecurity": {
-            "title": "MALWARE OG SIKKERHED",
+            "title": "Malware Og Sikkerhed",
             "heading": "Giv computeren den ekstra omsorg, den har brug for",
             "description": "Malware kan føre til et computernedbrud, svækkelse af data og forringet ydeevne. Fjern malware, og få mange andre ting ordnet.",
             "tabSet1": {
@@ -4457,12 +4457,12 @@
                 "cancelMayTakeSomeTime": "Vent venligst. Det kan tage noget tid at annullere afhængigt af dit system.",
                 "cancelTextPrompt": "Er du sikker på, at du vil annullere?"
             },
-            "waiting": "VENTER PÅ SCANNING",
-            "completed": "FULDFØRT",
+            "waiting": "venter på scanning",
+            "completed": "fuldført",
             "nowScanningDetail": {
                 "cardTitle": "SCANNER DETALJER NU",
                 "current": "AKTUEL: ",
-                "upNext": "OP TIL NÆSTE",
+                "upNext": "OP TIL NÆSTE: ",
                 "tunePCDesc": "Lad os hjælp med at forbedre computerens ydeevne. Vi gør det sikkert ved at bruge branchens bedste praksis. Fordelene ved abonnementet omfatter reduceret computerstarttid, forbedret ydeevne, forbedret stabilitet og hurtigere start af programmer.",
                 "boostDesc": "Vi hjælper med at forbedre din søgeoplevelse. Lad os løse netværks- og adgangsproblemer. Fordele for abonnenter omfatter forbedret internetforbindelse, forbedret up-/downloadhastigheder og større sikkerhed i forbindelse med internettet.",
                 "malwareDesc": "Lad os hjælpe dig med hurtig on demand-sikring af din computer. Vi fjerner spyware, malware og adware. Vi fjerner også de næsten zero day-infektioner. Fordele for abonnementer omfatter datasikkerhed og optimal systemydeevne.",
@@ -4501,7 +4501,7 @@
                         "itemd6": "Konfigurer rapporter om systemfejl"
                     },
                     "registryErrors": {
-                        "iteme1": "Deep-kontrol af Windows-registreringsdatabase,",
+                        "iteme1": "Deep-kontrol af Windows-registreringsdatabase",
                         "iteme2": "Scanning efter ugyldige Windows-tjenester",
                         "iteme3": "Søgning efter ødelagte poster i registreringsdatabasen",
                         "iteme4": "Søg efter unødvendige filtyper",
@@ -4610,7 +4610,7 @@
             "issueCount": "{{individualIssueCount}} PROBLEMER",
             "scannedAreas": "SCANNEDE OMRÅDER",
             "recommendedAction": {
-                "title": "ANBEFALET HANDLING",
+                "title": "Anbefalet Handling",
                 "description": "Problemerne løses automatisk. Én gang i dag og hver uge herefter",
                 "yearlyPricing": "$29,99 / år",
                 "monthlyPricing": "MINDRE END $2,5 PR. MÅNED.",
@@ -4876,7 +4876,7 @@
                     }
                 }
             },
-            "issues": "PROBLEM(ER)",
+            "issues": "Problem(er)",
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",

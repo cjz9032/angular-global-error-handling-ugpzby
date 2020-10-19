@@ -4306,7 +4306,7 @@
         "section2Heading": "Bästa möjliga datorprestanda. Alltid",
         "section2Description": "Vår programvara kan proaktivt genomsöka din dator dygnet runt för att hitta och åtgärda problem när de uppstår så att datorn alltid körs med bästa möjliga prestanda.",
         "tunePCPerformance": {
-            "title": "FINJUSTERA DATORNS PRESTANDA",
+            "title": "Finjustera Datorns Prestanda",
             "heading": "Visa datorn lite extra omsorg",
             "description": "Också den bästa datorn fungerar bättre med regelbundna finjusteringar. Kör en finjustering och få mer gjort med vår kraftfulla app.",
             "tabSet1": {
@@ -4328,7 +4328,7 @@
         },
         "boostInternetPerformance": {
             "title": "ÖKA INTERNET-PRESTANDAN",
-            "extraTitle": "INTERNETPRESTANDA",
+            "extraTitle": "Internetprestanda",
             "heading": "Ge Internet en skjuts",
             "description": "För många användare är långsam – eller obefintlig – Wi-Fi det värsta som kan hända. Vi konfigurerar dina Internet-, Wi-Fi- och webbläsarinställningar för optimal prestanda.",
             "tabSet1": {
@@ -4349,7 +4349,7 @@
             "summaryTitle": "Internetprestanda"
         },
         "malwareSecurity": {
-            "title": "SKADLIG KOD OCH SÄKERHET",
+            "title": "Skadlig Kod Och Säkerhet",
             "heading": "Ge datorn den extra omsorg den behöver",
             "description": "Skadlig kod kan orsaka datorhaveri, försämrad dataintegritet och sämre prestanda. Ta bort skadlig kod och få mycket mer gjort.",
             "tabSet1": {
@@ -4457,12 +4457,12 @@
                 "cancelMayTakeSomeTime": "Vänta – det kan ta en stund att avbryta beroende på ditt system.",
                 "cancelTextPrompt": "Vill du verkligen avbryta?"
             },
-            "waiting": "VÄNTAR PÅ GENOMSÖKNING",
-            "completed": "KLART",
+            "waiting": "väntar på genomsökning",
+            "completed": "klart",
             "nowScanningDetail": {
                 "cardTitle": "INFORMATION OM GENOMSÖKNING",
                 "current": "JUST NU: ",
-                "upNext": "HÄRNÄST",
+                "upNext": "HÄRNÄST: ",
                 "tunePCDesc": "Vi kan hjälpa dig att förbättra datorns prestanda. Vi gör det på ett säkert sätt enligt bästa branschpraxis. Fördelarna för prenumeranter innefattar kortare starttid, förbättrad prestanda, ökad stabilitet och snabbare programstarter.",
                 "boostDesc": "Vi hjälper dig att förbättra webbsurfupplevelsen. Vi åtgärdar nätverks- och åtkomstproblem. Fördelarna för prenumeranter innefattar bättre Internetanslutning, snabbare överföring/hämtning och säkrare Internet.",
                 "malwareDesc": "Vi hjälper dig att snabbt skydda datorn på begäran. Vi gör det genom att ta bort spionprogram, skadlig kod och annonsprogram. Vi tar även bort nolldagsvirus. Fördelarna för prenumeranter innefattar skyddade data och bästa möjliga systemprestanda.",
@@ -4501,7 +4501,7 @@
                         "itemd6": "Konfigurera systemfelrapporter"
                     },
                     "registryErrors": {
-                        "iteme1": "Kör en omfattande kontroll av Windows-registret,",
+                        "iteme1": "Kör en omfattande kontroll av Windows-registret",
                         "iteme2": "Sök efter ogiltiga Windows-tjänster",
                         "iteme3": "Hitta skadade registerposter",
                         "iteme4": "Sök efter oanvändbara filtillägg",
@@ -4610,7 +4610,7 @@
             "issueCount": "{{individualIssueCount}} PROBLEM",
             "scannedAreas": "GENOMSÖKTA OMRÅDEN",
             "recommendedAction": {
-                "title": "REKOMMENDERAD ÅTGÄRD",
+                "title": "Rekommenderad Åtgärd",
                 "description": "Vi löser dessa problem automatiskt. En gång i dag och därefter varje vecka.",
                 "yearlyPricing": "29,99 $/år",
                 "monthlyPricing": "MINDRE ÄN 2,5 $ PER MÅNAD.",
@@ -4876,7 +4876,7 @@
                     }
                 }
             },
-            "issues": "PROBLEM",
+            "issues": "Problem",
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",

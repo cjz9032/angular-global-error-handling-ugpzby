@@ -26,11 +26,9 @@ import { NgbModule, NgbDatepickerModule, NgbTooltipModule } from '@ng-bootstrap/
 import { UiSmartTunePcComponent } from '../../components/ui/ui-smart-tune-pc/ui-smart-tune-pc.component';
 import { ModalSmartPerformanceCancelComponent } from '../../components/modal/modal-smart-performance-cancel/modal-smart-performance-cancel.component';
 import { ModalSmartPerformanceSubscribeComponent } from '../../components/modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
-import { WidgetSpeedometerComponent } from '../../components/widgets/widget-speedometer/widget-speedometer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonUiModule } from '../common/common-ui.module';
 import { TranslationModule } from '../translation.module';
-import { WidgetSubscriptiondetailsComponent } from 'src/app/components/widgets/widget-subscriptiondetails/widget-subscriptiondetails.component';
 import { PageLayoutComponent } from 'src/app/components/page-layout/page-layout.component';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 import { SanitizeModule } from '../sanitize.module';
@@ -42,6 +40,11 @@ import { SubpageSmartPerformanceScanSummaryComponent } from 'src/app/components/
 import { UiButtonModule } from 'src/app/components/ui/ui-button/ui-button.module';
 import { SharedModule } from 'src/app/modules/shared.module';
 import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-info/widget-offline.module';
+import { WidgetSubscriptionDetailsComponent } from 'src/app/components/pages/page-smart-performance/widgets/widget-subscriptiondetails/widget-subscriptiondetails.component';
+import { UiSmartPerformanceHeaderComponent } from 'src/app/components/pages/page-smart-performance/ui/ui-smart-performance-header/ui-smart-performance-header.component';
+import { UiSmartPerformanceRatingComponent } from 'src/app/components/pages/page-smart-performance/ui/ui-smart-performance-rating/ui-smart-performance-rating.component';
+import { UiSmartPerformanceScanningDetailComponent } from 'src/app/components/pages/page-smart-performance/ui/ui-smart-performance-scanning-detail/ui-smart-performance-scanning-detail.component';
+import { WidgetRecommendActionComponent } from 'src/app/components/pages/page-smart-performance/widgets/widget-recommend-action/widget-recommend-action.component';
 
 @NgModule({
 	declarations: [
@@ -49,8 +52,11 @@ import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-i
 		UiSmartTunePcComponent,
 		ModalSmartPerformanceCancelComponent,
 		ModalSmartPerformanceSubscribeComponent,
-		WidgetSpeedometerComponent,
-		WidgetSubscriptiondetailsComponent,
+		WidgetSubscriptionDetailsComponent,
+		WidgetRecommendActionComponent,
+		UiSmartPerformanceHeaderComponent,
+		UiSmartPerformanceRatingComponent,
+		UiSmartPerformanceScanningDetailComponent,
 		SubpageScanResultsAccordionComponent,
 		SubpageScanningComponent,
 		SubpageScheduleScanComponent,
@@ -84,7 +90,6 @@ import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-i
 		SubpageScanningComponent,
 		ModalSmartPerformanceCancelComponent,
 		ModalSmartPerformanceSubscribeComponent,
-		WidgetSpeedometerComponent,
 		CommonUiModule
 
 	],
@@ -94,7 +99,6 @@ import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-i
 		SubpageScanningComponent,
 		ModalSmartPerformanceCancelComponent,
 		ModalSmartPerformanceSubscribeComponent,
-		WidgetSpeedometerComponent
 	]
 })
 export class SmartPerformanceModule {

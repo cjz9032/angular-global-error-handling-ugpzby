@@ -7,6 +7,7 @@ import { MetricsTranslateService } from 'src/app/services/mertics-traslate/metri
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { SPHeaderImageType } from 'src/app/enums/smart-performance.enum';
 
 @Component({
 	selector: 'vtr-subpage-smart-performance-dashboard',
@@ -20,6 +21,8 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 	private subscription: Subscription;
 
 	public isOnline = true;
+
+	SPHeaderImageType = SPHeaderImageType;
 
 	constructor(
 		private commonService: CommonService,

@@ -15,7 +15,6 @@ export class SmartPerformanceDialogService {
 
 	isScanning = false;
 	isScanningCompleted = false;
-	isExpired = false;
 	scheduleScanObj = null;
 	nextScheduleScan: any;
 

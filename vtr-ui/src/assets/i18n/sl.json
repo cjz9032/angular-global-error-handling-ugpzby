@@ -4306,7 +4306,7 @@
         "section2Heading": "Vrhunska učinkovitost delovanja računalnika Vedno",
         "section2Description": "Naša programska oprema lahko pregleduje vaš računalnik 24 ur dnevno vse dni v tednu in sproti odpravi težave, ko se pojavijo, tako bo vaš računalnik vedno deloval z vrhunsko učinkovitostjo delovanja.",
         "tunePCPerformance": {
-            "title": "OPTIMALNO DELOVANJE",
+            "title": "Optimalno Delovanje",
             "heading": "Pokažite računalniku, kako ga cenite",
             "description": "Tudi najboljšemu računalniku lahko koristijo občasne optimizacije. Z našo zmogljivo aplikacijo izvedite optimizacijo in naredite več.",
             "tabSet1": {
@@ -4328,7 +4328,7 @@
         },
         "boostInternetPerformance": {
             "title": "VEČJA HITROST INTERNETA",
-            "extraTitle": "HITROST DELOVANJA INTERNETA",
+            "extraTitle": "Hitrost Delovanja Interneta",
             "heading": "Pospešite internetni dostop",
             "description": "Za mnoge je počasen Wi-Fi ali celo njegova odsotnost, kot da bi bili odrezani od sveta. Konfigurirajmo vaš internet, Wi-Fi in nastavitve brskalnika za optimalno delovanje.",
             "tabSet1": {
@@ -4349,7 +4349,7 @@
             "summaryTitle": "Hitrost delovanja interneta"
         },
         "malwareSecurity": {
-            "title": "VIRUSI IN VARNOST",
+            "title": "Virusi In Varnost",
             "heading": "Računalniku zagotovite dodatno skrb, ki jo potrebuje",
             "description": "Zlonamerna programska oprema lahko povzroči zrušitev računalnika, ogrožanje podatkov in poslabšanje učinkovitosti delovanja. Odstranite zlonamerno programsko opremo in še veliko, veliko več.",
             "tabSet1": {
@@ -4457,12 +4457,12 @@
                 "cancelMayTakeSomeTime": "Počakajte. Preklic lahko traja nekaj časa, odvisno od sistema.",
                 "cancelTextPrompt": "Ali ste prepričani, da želite preklicati?"
             },
-            "waiting": "ČAKANJE NA PREGLED",
-            "completed": "KONČANO",
+            "waiting": "čakanje na pregled",
+            "completed": "končano",
             "nowScanningDetail": {
                 "cardTitle": "PODROBNOSTI TRENUTNEGA PREGLEDA",
                 "current": "TRENUTNO: ",
-                "upNext": "NASLEDNJE",
+                "upNext": "NASLEDNJE: ",
                 "tunePCDesc": "Pomagajmo izboljšati učinkovitost delovanja računalnika. To storimo varno ob upoštevanju najboljših praks v panogi. Prednosti za naročnike vključujejo skrajšan čas zagona računalnika, izboljšano učinkovitost delovanja, večjo stabilnost in hitrejši zagon aplikacij.",
                 "boostDesc": "Pomagajmo izboljšati vašo izkušnjo pri brskanju. Odpravimo težave z omrežjem in dostopom. Prednosti za naročnike vključujejo izboljšanje internetne povezljivosti, izboljšanje hitrosti nalaganja/prenosa in večjo varnost v internetu.",
                 "malwareDesc": "Pomagajmo na zahtevo hitro zaščititi računalnik. To storimo tako, da odstranimo vohunsko, zlonamerno in oglaševalsko programsko opremo. Odstranimo tudi okužbe z napadi na nulti dan. Prednosti za naročnike vključujejo varnost podatkov in optimalno učinkovitost delovanja sistema.",
@@ -4501,7 +4501,7 @@
                         "itemd6": "Konfiguriranje poročil o sistemskih napakah"
                     },
                     "registryErrors": {
-                        "iteme1": "Poglobljeno preverjanje registra sistema Windows,",
+                        "iteme1": "Poglobljeno preverjanje registra sistema Windows",
                         "iteme2": "Iskanje neveljavnih storitev sistema Windows",
                         "iteme3": "Iskanje poškodovanih vnosov v registru",
                         "iteme4": "Iskanje neuporabljenih pripon datotek",
@@ -4610,7 +4610,7 @@
             "issueCount": "ŠT. TEŽAV: {{individualIssueCount}}",
             "scannedAreas": "PREGLEDANA PODROČJA",
             "recommendedAction": {
-                "title": "PRIPOROČEN UKREP",
+                "title": "Priporočen Ukrep",
                 "description": "Te težave bomo samodejno odpravili. Enkrat danes in nato vsak teden",
                 "yearlyPricing": "$29,99/leto",
                 "monthlyPricing": "MANJ KOT $2,5 MESEČNO.",
@@ -4876,7 +4876,7 @@
                     }
                 }
             },
-            "issues": "TEŽAVE",
+            "issues": "Težave",
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",

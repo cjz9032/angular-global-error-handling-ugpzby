@@ -38,7 +38,7 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy, OnChang
 	public tune = 0;
 	public boost = 0;
 	public secure = 0;
-	public rating = 0;
+	public rating = 10;
 
 	IsSmartPerformanceFirstRun: any;
 	IsScheduleScanEnabled: any;
@@ -56,22 +56,6 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy, OnChang
 	private metrics: any;
 	public isOnline = true;
 	public subscriptionInfoStatus = false;
-
-	isShowPrice = false;
-	allHidePriceGEO = [
-		'gb', // United Kingdom
-		'ie', // Ireland
-		'au', // Australia
-		'nz', // New Zealand
-		'sg', // Singapore
-		'in', // INDIA
-		'my', // Malaysia
-		'hk', // Hong Kong
-		'tw', // Taiwan
-		'kr', // South Korea
-		'jp', // Japan
-		'th', // Thailand
-	];
 
 	constructor(
 		private systemEventService: SystemEventService,
@@ -125,12 +109,6 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy, OnChang
 		}
 		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
-		});
-
-		this.localInfoService.getLocalInfo().then(localInfo => {
-			if (!this.allHidePriceGEO.includes(localInfo.GEO)) {
-				this.isShowPrice = true;
-			}
 		});
 
 		this.smartPerformanceService.enableNextText = this.localCacheService.getLocalCacheValue(LocalStorageKey.IsSPScheduleScanEnabled);

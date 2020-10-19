@@ -4306,7 +4306,7 @@
         "section2Heading": "Birinci Sınıf Bilgisayar Performansı. Her zaman",
         "section2Description": "Yazılımımız sorunları ortaya çıktıkça bulmak ve düzeltmek için proaktif olarak bilgisayarınızı 7/24 tarayabilir, böylece bilgisayarınız her zaman birinci sınıf performansa sahip olur.",
         "tunePCPerformance": {
-            "title": "BİLGİSAYAR PERFORMANSINI AYARLAYIN",
+            "title": "Bi̇lgi̇sayar Performansini Ayarlayin",
             "heading": "Bilgisayarınıza biraz daha ilgi gösterin",
             "description": "En iyi bilgisayara bile düzenli aralıklarla ayarlama yapılması gerekir. Güçlü uygulamamızla bir ayar yapılmasını sağlayın ve daha fazlasını yapın.",
             "tabSet1": {
@@ -4328,7 +4328,7 @@
         },
         "boostInternetPerformance": {
             "title": "İNTERNET PERFORMANSINI ARTIRIN",
-            "extraTitle": "İNTERNET PERFORMANSI",
+            "extraTitle": "İnternet Performansi",
             "heading": "İnternetinizi hızlandırın",
             "description": "Birçok kişi için yavaş Wi-Fi veya Wi-Fi olmaması şebekenin dışında yaşamak gibidir. En iyi performans için internet, Wi-Fi ve tarayıcı ayarlarınızı yapılandıralım.",
             "tabSet1": {
@@ -4457,12 +4457,12 @@
                 "cancelMayTakeSomeTime": "Lütfen bekleyin, sisteminize bağlı olarak iptal işlemi biraz zaman alabilir.",
                 "cancelTextPrompt": "İptal etmek istediğinizden emin misiniz?"
             },
-            "waiting": "TARAMA BEKLENİYOR",
-            "completed": "TAMAMLANDI",
+            "waiting": "tarama bekleni̇yor",
+            "completed": "tamamlandi",
             "nowScanningDetail": {
                 "cardTitle": "ŞİMDİ AYRINTILI OLARAK TARANIYOR",
                 "current": "MEVCUT: ",
-                "upNext": "SONRAKİ",
+                "upNext": "SONRAKİ: ",
                 "tunePCDesc": "Bilgisayar performansınızı artıralım. Sektördeki en iyi uygulamaları kullanarak güvenle yapıyoruz. Aboneler için avantajlar arasında daha düşük bilgisayar başlatma süresi, gelişmiş performans, gelişmiş kararlılık ve uygulamaların daha hızlı başlatılması yer alır.",
                 "boostDesc": "Tarama deneyiminizi geliştirmeye yardımcı olalım. Ağ ve erişim sorunlarını düzeltelim. Aboneler için avantajlar arasında internet bağlantısını iyileştirme, yükleme / indirme hızlarında artış ve interneti daha güvenli hale getirme sayılabilir.",
                 "malwareDesc": "Bilgisayarınızı, isteğe bağlı olarak hızlı bir şekilde güven altına almaya yardımcı olalım. Bunu casus yazılım, kötü amaçlı yazılım ve reklam yazılımlarını kaldırarak yaparız. Ayrıca sıfır güne yakın bulaşmaları da gideririz. Aboneler için avantajlar arasında veri güvenliği ve optimum sistem performansı yer alır.",
@@ -4501,7 +4501,7 @@
                         "itemd6": "Sistem hata raporlarını yapılandırın"
                     },
                     "registryErrors": {
-                        "iteme1": "Windows kayıt defterini derinlemesine kontrol edin,",
+                        "iteme1": "Windows kayıt defterini derinlemesine kontrol edin",
                         "iteme2": "Geçersiz Windows hizmetlerini tarama",
                         "iteme3": "Bozuk kayıt defteri girdilerini bulma",
                         "iteme4": "Yararsız dosya uzantılarını arayın",
@@ -4610,7 +4610,7 @@
             "issueCount": "{{individualIssueCount}} SORUNLAR",
             "scannedAreas": "TARANAN ALANLAR",
             "recommendedAction": {
-                "title": "ÖNERİLEN EYLEM",
+                "title": "Öneri̇len Eylem",
                 "description": "Bu sorunları otomatik olarak çözeceğiz. Bugün ve bundan sonra her hafta bir kez",
                 "yearlyPricing": "$29,99 / Yıl",
                 "monthlyPricing": "AYDA $2,5'DAN AZ.",
@@ -4876,7 +4876,7 @@
                     }
                 }
             },
-            "issues": "SORUNLAR",
+            "issues": "Sorunlar",
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",

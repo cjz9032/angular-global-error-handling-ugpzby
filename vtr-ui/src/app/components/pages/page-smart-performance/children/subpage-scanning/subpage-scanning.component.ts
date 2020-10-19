@@ -1,12 +1,11 @@
 import { Component, OnInit, OnChanges, ViewChild, Input, Output, EventEmitter, ElementRef } from '@angular/core';
-import { WidgetSpeedometerComponent } from 'src/app/components/widgets/widget-speedometer/widget-speedometer.component';
 import { NgbAccordion, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { TranslateService } from '@ngx-translate/core';
 import { CommonService } from 'src/app/services/common/common.service';
-import { SPCategory, SPSubCategory } from 'src/app/enums/smart-performance.enum';
+import { SPCategory, SPHeaderImageType, SPSubCategory } from 'src/app/enums/smart-performance.enum';
 import { SecureMath } from '@lenovo/tan-client-bridge';
 import { ModalSmartPerformanceCancelComponent } from 'src/app/components/modal/modal-smart-performance-cancel/modal-smart-performance-cancel.component';
 
@@ -16,9 +15,7 @@ import { ModalSmartPerformanceCancelComponent } from 'src/app/components/modal/m
 	styleUrls: ['./subpage-scanning.component.scss']
 })
 export class SubpageScanningComponent implements OnInit, OnChanges {
-	// @ViewChild('speedometer') speedometer: WidgetSpeedometerComponent;
-	@ViewChild('speedometer', { static: false })
-	speedometer: WidgetSpeedometerComponent;
+
 	@ViewChild('acc', { static: false }) accordionComponent: NgbAccordion;
 	@ViewChild('spScanningAccordion', { static: false }) spScanningAccordion: ElementRef;
 	loop;
@@ -47,6 +44,8 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 	public timer: any;
 	@Input() scheduleScanData: any = {};
 	isLoading: boolean;
+	SPHeaderImageType = SPHeaderImageType;
+	headerTitle = '';
 	constructor(
 		private modalService: NgbModal,
 		public shellServices: VantageShellService,
@@ -58,11 +57,15 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 		this.percent = 0;
 		this.isLoading = true;
 
+		this.headerTitle = `${this.translate.instant('smartPerformance.scanningPage.scanningSystem')}...`;
+		if (this.isAutoScanRunning) {
+			this.headerTitle += ` <span class="small">(${this.translate.instant('smartPerformance.auto')})</span>`;
+		}
+
 		this.spCategoryenum = SPCategory;
 		this.spSubCategoryenum = SPSubCategory;
 		this.activegroup = this.spCategoryenum.TUNEUPPERFORMANCE;
 
-		this.initSpeed();
 		this.sampleDesc = this.translate.instant(
 			'smartPerformance.scanningPage.nowScanningDetail.tunePCDesc'
 		);
@@ -87,17 +90,7 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 			this.updateScanResponse(this.scheduleScanData);
 		}
 	}
-	initSpeed() {
-		const self = this;
-		self.loop = setInterval(() => {
-			self.speedometer.speedCurrent = Math.floor(SecureMath.random() * (self.speedometer.speedMax / 2)) + 1;
-		}, 1000);
 
-		self.delay = setTimeout(() => {
-			clearInterval(self.loop);
-			self.speedometer.speedCurrent = self.speedometer.speedMax * .9;
-		}, 10000);
-	}
 	updateScanResponse(response) {
 		if (this.scanData.percentage) {
 			this.isLoading = false;
@@ -121,7 +114,6 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 		}
 
 		if (catVal === this.spSubCategoryenum.HUNDEREAD) {
-			this.initSpeed();
 			if (this.onehundreadFlag === true) {
 				this.sampleDesc = this.translate.instant(
 					'smartPerformance.scanningPage.nowScanningDetail.tunePCDesc'

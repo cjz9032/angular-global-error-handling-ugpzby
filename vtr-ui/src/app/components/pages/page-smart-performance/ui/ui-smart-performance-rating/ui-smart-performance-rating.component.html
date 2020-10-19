@@ -1,0 +1,50 @@
+<div class="vtr-smart-performance-rating"
+	[class.hide-pointer]="hidePointer"
+	[class.is-light]="isLight">
+	<div class="slider"
+		#sliderContainer>
+		<div class="vertical-lines"
+			[ngStyle]="{'width': leftAnimator}">
+			<img *ngIf="isLight"
+				[style.width.px]="sliderContainer.clientWidth"
+				src="assets/images/smart-performance/sp-rating-bg-light.png"
+				alt="">
+			<img *ngIf="!isLight"
+				[style.width.px]="sliderContainer.clientWidth"
+				src="assets/images/smart-performance/sp-rating-bg-dark.png"
+				alt="">
+		</div>
+		<div class="rating-value"
+			*ngIf="!hidePointer">
+			<div class="scan-pointer"
+				[ngStyle]="{'left': leftAnimator}">
+				<object type="image/svg+xml"
+					data="assets/images/smart-performance/sp-point-white.svg"></object>
+			</div>
+		</div>
+	</div>
+	<div class="number-list d-flex justify-content-between">
+		<div class="num-item num-item-{{num}}"
+			*ngFor="let num of numberArray">{{num}}</div>
+	</div>
+	<div class="condition">
+		<div class="critical"
+			id="smart-performance-rating-condition-critical"
+			role="text">{{'smartPerformance.critical' |translate }}</div>
+		<div class="well"
+			id="smart-performance-rating-condition-well"
+			role="text">{{'smartPerformance.allisWell' |translate }}</div>
+	</div>
+	<div class="pc-status-info d-flex"
+		*ngIf="!hideStatus">
+		<p class="info-text needs-fix"><span title="Fix it"
+				id="smart-performance-rating-status-fix"
+				role="text">Fix it</span></p>
+		<p class="info-text needs-optimize"><span title="Optimize it"
+				id="smart-performance-rating-status-optimize"
+				role="text">Optimize it</span></p>
+		<p class="info-text running-maintain"><span title="Maintain it"
+				id="smart-performance-rating-status-maintain"
+				role="text">Maintain it</span></p>
+	</div>
+</div>

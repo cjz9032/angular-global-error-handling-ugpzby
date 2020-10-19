@@ -4306,7 +4306,7 @@
         "section2Heading": "Računarske performanse su vrhunske. Uvek",
         "section2Description": "Naš softver može proaktivno da skenira vaš računar 24 sata svakog dana u nedelji kako bi pronašao i rešio probleme čim se jave, tako da vaš računar uvek ima vrhunske performanse.",
         "tunePCPerformance": {
-            "title": "PODEŠAVANJE PERFORMANSI RAČUNARA",
+            "title": "Podešavanje Performansi Računara",
             "heading": "Pokažite svom računaru malo više ljubavi",
             "description": "Čak i najbolji računar će imati koristi od periodičnih podešavanja. Obavite podešavanje i još mnogo toga pomoću naše moćne aplikacije.",
             "tabSet1": {
@@ -4328,7 +4328,7 @@
         },
         "boostInternetPerformance": {
             "title": "BRŽE FUNKCIONISANJE INTERNETA",
-            "extraTitle": "FUNKCIONISANJE INTERNETA",
+            "extraTitle": "Funkcionisanje Interneta",
             "heading": "Ubrzajte internet",
             "description": "Nemati Wi-Fi vezu ili imati sporu vezu, za mnoge je poput života van civilizacije. Hajde da konfigurišemo postavke vašeg interneta, Wi-Fi veze i pregledača za optimalno funkcionisanje.",
             "tabSet1": {
@@ -4349,7 +4349,7 @@
             "summaryTitle": "Funkcionisanje interneta"
         },
         "malwareSecurity": {
-            "title": "MALVER I BEZBEDNOST",
+            "title": "Malver I Bezbednost",
             "heading": "Pružite svom računaru dodatnu brigu koja mu je potrebna",
             "description": "Malver može dovesti do pada računarskog sistema, ugrožavanja podataka i smanjenja performansi. Uklonite malver i uradite još mnogo, mnogo više.",
             "tabSet1": {
@@ -4457,12 +4457,12 @@
                 "cancelMayTakeSomeTime": "Sačekajte, otkazivanje će možda duže potrajati, u zavisnosti od sistema.",
                 "cancelTextPrompt": "Želite li zaista da otkažete?"
             },
-            "waiting": "ČEKANJE NA SKENIRANJE",
-            "completed": "ZAVRŠENO",
+            "waiting": "čekanje na skeniranje",
+            "completed": "završeno",
             "nowScanningDetail": {
                 "cardTitle": "SADA SE SKENIRAJU DETALJI",
                 "current": "TRENUTNO: ",
-                "upNext": "SLEDEĆE",
+                "upNext": "SLEDEĆE: ",
                 "tunePCDesc": "Hajde da poboljšamo funkcionisanje vašeg računara. To radimo sigurno uz pomoć najbolje prakse u industriji. Prednosti za pretplatnike uključuju skraćeno vreme pokretanja računara, poboljšano funkcionisanje, poboljšanu stabilnost i brže pokretanje aplikacija.",
                 "boostDesc": "Dozvolite nam da poboljšamo vaše iskustvo pregledanja. Dozvolite nam da popravimo probleme sa mrežom i pristupom. Prednosti za pretplatnike uključuju poboljšanje internet veze i brzine otpremanja/preuzimanja i mnogo bezbedniji internet.",
                 "malwareDesc": "Dozvolite nam da brzo osiguramo vaš računar, na zahtev. To radimo uklanjanjem špijunskog softvera, malvera i advera. Takođe uklanjamo gotovo sve dosad nepoznate zaraze. Prednosti za pretplatnike uključuju bezbednost podataka i optimalno funkcionisanje sistema.",
@@ -4501,7 +4501,7 @@
                         "itemd6": "Konfigurišite izveštaje o greškama sistema"
                     },
                     "registryErrors": {
-                        "iteme1": "Dubinski proverite registar sistema Windows,",
+                        "iteme1": "Dubinski proverite registar sistema Windows",
                         "iteme2": "Skeniranje nevažećih usluga sistema Windows",
                         "iteme3": "Pronalaženje oštećenih unosa u registar",
                         "iteme4": "Potražite beskorisne nastavke datoteka",
@@ -4610,7 +4610,7 @@
             "issueCount": "{{individualIssueCount}} PROBLEMI",
             "scannedAreas": "SKENIRANA PODRUČJA",
             "recommendedAction": {
-                "title": "PREPORUČENA RADNJA",
+                "title": "Preporučena Radnja",
                 "description": "Ove probleme ćemo automatski rešiti. Danas i svake naredne nedelje",
                 "yearlyPricing": "$29,99 / god.",
                 "monthlyPricing": "MANJE OD $2,5 MESEČNO.",
@@ -4876,7 +4876,7 @@
                     }
                 }
             },
-            "issues": "PROBLEMI",
+            "issues": "Problemi",
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",

@@ -7,13 +7,21 @@
 				border-radius: 0.6rem;
 				border: 1px solid $screen_dark_01;
 				background: $grey_lighter;
-				//padding: 1rem;
-				margin: 1.5rem auto;
+				margin-top: 1rem;
 				width: 100%;
 
+				&:first-child {
+					margin-top: 0;
+				}
+
 				.card-header {
-					background-color: transparent;
 					border-bottom: none;
+					min-height: 6.3rem;
+					padding-top: 0;
+					padding-bottom: 0;
+					display: flex;
+					// pointer-events: none;
+					background: $grey_lighter;
 
 					.btn-link {
 						width: 100%;
@@ -27,20 +35,8 @@
 							border: none;
 						}
 
-						&:before {
-							content: "\e903";
-							font-family: "icomoon";
-							color: $main_light;
-							font-size: 1.4rem;
-							width: 1.75rem;
-							height: 1.75rem;
-							position: absolute;
-							top: 3rem;
-							right: 1rem;
-
-							@media #{$breakpoint_sm} {
-								top: 1.5rem;
-							}
+						@media #{$breakpoint_sm} {
+							padding-left: 0rem;
 						}
 
 						&:hover,
@@ -52,21 +48,6 @@
 							outline: 0;
 							box-shadow: none;
 
-							&::after {
-								@include button-outline-blue;
-								border-radius: 0.6rem;
-								left: 0.4rem;
-								top: 0.4rem;
-								width: calc(100% - 0.8rem);
-								height: calc(100% - 0.8rem);
-							}
-
-							@media #{$black-on-white} {
-								&::after {
-									border: thin solid $dark;
-								}
-							}
-
 							@media #{$white-on-black} {
 								&::after {
 									border: thin solid $light;
@@ -75,138 +56,157 @@
 						}
 					}
 
-					.collapsed {
-						&:before {
-							content: "\e902";
-							font-family: "icomoon";
-							color: $main_light;
-							font-size: 1.4rem;
-							width: 1.75rem;
-							height: 1.75rem;
-							position: absolute;
-							top: 3rem;
-							right: 1rem;
+					fa-icon {
+						padding-left: 1rem;
+						color: $menu_hover;
+					}
 
-							@media #{$breakpoint_sm} {
-								top: 1.5rem;
+					.chevron-up {
+						display: block;
+					}
+
+					.chevron-down {
+						display: none;
+					}
+
+					.collapsed {
+						.chevron-up {
+							display: none;
+						}
+
+						.chevron-down {
+							display: block;
+						}
+
+						.heading {
+							h2 {
+								font-size: $fontsize_xs;
+
+								@media #{$breakpoint_lg} {
+									font-size: $fontsize_xs;
+								}
+							}
+						}
+
+						.status-text {
+							p {
+								font-size: $fontsize_xs;
+	
+								&.issues-number {
+									font-size: $fontsize_xs;
+								}
+	
+								@media #{$breakpoint_lg} {
+									font-size: $fontsize_xs;
+								}
 							}
 						}
 					}
 
 					.heading {
-						overflow: hidden;
-						width: 64%;
+						max-width: 60%;
+						width: 60%;
+						text-align: left;
+						word-wrap: break-word;
+						display: flex;
+						align-items: center;
+						cursor: pointer;
+						* {
+							cursor: pointer;
+						}
 
-						h3,
 						h2 {
+							padding: 0;
+							color: $grey_darker;
+							text-transform: capitalize;
 							text-align: left;
-							font-size: $fontsize_sm;
-							color: $main_shade !important;
 							letter-spacing: 0;
 							font-weight: $weight_bold;
+							font-size: $fontsize_md;
 
 							@media #{$breakpoint_lg} {
 								font-size: $fontsize_xs;
-							}
-
-							@media #{$breakpoint_md} {
-								font-size: $fontsize_xs2;
-							}
-
-							@media #{$breakpoint_sm} {
-								font-size: 1.1rem;
-								letter-spacing: -0.02rem;
-								margin-bottom: -0.25rem;
 							}
 						}
 
 						.icon,
 						.icomoon {
+							font-size: 3.2rem;
+							margin-right: 1.5rem;
 							color: $menu_hover;
 
 							@media #{$breakpoint_sm} {
+								height: 3rem;
+								width: 3rem;
+								font-size: 3rem;
 								margin-right: 0.4rem;
-								margin-bottom: 1rem;
+								line-height: 3rem;
+							}
+						}
+					}
+
+					.status-text {
+						cursor: pointer;
+						width: 38%;
+						max-width: 38%;
+						margin: 0;
+
+						p {
+							display: flex;
+							justify-content: flex-end;
+							align-items: center;
+							font-size: $fontsize_md;
+							text-align: right;
+							color: $grey_darker;
+							position: relative;
+							letter-spacing: 0;
+							word-wrap: break-word;
+							margin: 0;
+
+							&.issues-number {
+								font-size: $fontsize_md;
+							}
+
+							b {
+								padding-right: 0.5rem;
+							}
+
+							@media #{$breakpoint_lg} {
+								font-size: $fontsize_xs;
 							}
 						}
 					}
 				}
 
 				.card-body {
-					padding: 0 1.25rem;
+					padding: 0 $padding_content $padding_content;
 
 					.scan-result-tabs {
-						.nav-tabs {
-							border-bottom: none;
+						.scan-result-content {
+							margin-bottom: 2rem;
 
-							.nav-item {
-								width: 20%;
-
-								@media #{$breakpoint_sm} {
-									max-width: 20%;
-									width: auto;
-								}
-
-								.nav-link {
-									border: none;
-									border-left: 1px solid $grey_light;
-									border-bottom: 1px solid $grey_light;
-									color: $dark;
-									height: 5rem;
-
-									@media #{$breakpoint_xl} {
-										padding: 0.5rem 0.2rem;
-										height: 4.5rem;
-									}
-
-									@media #{$breakpoint_sm} {
-										padding: 0.5rem 0.2rem;
-										height: 3.5rem;
-									}
-
-									&.active {
-										background-color: transparent;
-										border-bottom-color: transparent;
-									}
-								}
-
-								&:first-child {
-									.nav-link {
-										border-left: none;
-									}
-								}
+							&:last-child {
+								margin-bottom: 0;
 							}
 						}
 
 						.icon-box {
+							width: 15rem;
 							@media #{$breakpoint_sm} {
-								width: auto;
-								height: 3rem;
 								align-items: center;
-								min-width: 7rem;
 							}
 
 							p {
 								margin: 0;
 								font-size: 1.2rem;
-								overflow: hidden;
-								text-overflow: ellipsis;
-								white-space: nowrap;
-
-								@media #{$breakpoint_sm} {
-									font-size: 1rem;
-								}
+								font-weight: bold;
 							}
 
 							.icon,
 							.icomoon {
-								font-size: 2.2rem;
-								margin-right: 0.2rem;
+								font-size: 3rem;
+								margin-right: 1rem;
 								color: $main;
-
-								@media #{$breakpoint_sm} {
-									font-size: $fontsize_xs;
-								}
 							}
 						}
 
@@ -215,18 +215,33 @@
 						}
 
 						.scanned-list {
+							width: calc(100% - 15rem);
 							list-style-type: none;
 							padding: 0;
 							margin-bottom: 0;
+							border: 0.1rem solid $grey_light;
+							border-radius: 0.5rem;
 
 							.list-item {
+								height: 5rem;
+								display: flex;
+								align-items: center;
+								border-top: 0.1rem solid $grey_light;
+
+								&:first-child {
+									border-top: none;
+								}
+
 								.item-text {
 									margin-bottom: 1rem;
 								}
 
 								p {
 									font-size: 1.4rem;
+									padding-right: 0.5rem;
+									white-space: nowrap;
 									overflow: hidden;
+									text-overflow: ellipsis;
 								}
 
 								fa-icon {
@@ -251,111 +266,7 @@
 						}
 					}
 				}
-
-				.status-text {
-
-					p {
-						text-transform: uppercase;
-						font-size: $fontsize_xs;
-						text-align: right;
-						color: $shade_dark;
-						position: relative;
-						padding-right: 2.5rem;
-						letter-spacing: 0;
-						margin: 0;
-
-						@media #{$breakpoint_lg} {
-							font-size: $fontsize_xs;		
-						}
-
-						@media #{$breakpoint_md} {
-							font-size: $fontsize_xs2;
-						}
-
-						@media #{$breakpoint_xl} {
-							font-size: $fontsize_xs2;
-						}
-
-						@media #{$breakpoint_sm} {
-							font-size: 1.1rem;
-						}
-					}
-
-					vtr-widget-speedometer {
-						position: absolute;
-						right: -54%;
-						top: 2.2rem;
-					}
-				}
 			}
-
-			&.panel-open {
-				.card-header {
-					.heading {
-
-						h3,
-						h2 {
-							font-size: 2.5rem;
-							color: $dark !important;
-						}
-
-						.icon,
-						.icomoon {
-							color: $menu_hover;
-						}
-					}
-				}
-			}
-		}
-	}
-
-	&.card-small {
-		margin: 2rem auto 0rem auto;
-
-		.heading {
-			.icon {
-				font-size: 4rem;
-				margin-right: 1.5rem;
-				color: $main_shade;
-			}
-		}
-	}
-
-	.heading {
-		display: flex;
-		align-items: center;
-
-		.icon,
-		.icomoon {
-			font-size: 4.6rem;
-			margin-right: 1.5rem;
-			color: $main_gstart;
-
-			@media #{$breakpoint_sm} {
-				font-size: 3rem;
-				height: 3rem;
-				width: 3rem;
-			}
-		}
-
-		h2 {
-			font-size: 2.5rem;
-			padding: 0;
-			font-weight: $weight_medium;
-			color: $main_darkest;
-			text-transform: uppercase;
-
-			@media #{$breakpoint_sm} {
-				font-size: $fontsize_sm;
-			}
-		}
-
-		h3 {
-			font-size: 2rem;
-			padding: 0;
-			font-weight: $weight_medium;
-			color: $main_shade;
-			text-transform: uppercase;
 		}
 	}
 }

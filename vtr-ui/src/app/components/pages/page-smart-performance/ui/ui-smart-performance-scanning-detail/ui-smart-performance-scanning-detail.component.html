@@ -1,0 +1,24 @@
+<div class="accumulated-junk">
+	<div class="d-flex">
+		<div class="labels d-flex flex-column">
+			<span id="smart-performance-scanning-page-current"
+				role="text"
+				class="badge badge-primary "><b>{{'smartPerformance.scanningPage.nowScanningDetail.current' |translate }}</b></span>
+			<span id="smart-performance-scanning-page-upNext"
+				role="text"
+				title="{{'smartPerformance.scanningPage.nowScanningDetail.upNext' |translate }}"
+				class="badge badge-light text-ellipsis">{{'smartPerformance.scanningPage.nowScanningDetail.upNext' |translate }}</span>
+		</div>
+		<div class="ms-slider">
+			<ul class="junk-list ms-slider__words">
+				<li class="ms-slider__word"
+					id="smart-performance-scanning-page-slider-{{item.key}}"
+					*ngFor="let item of detailItems, let i = index"
+					class="li-{{i}}"
+					[style.top.px]="i * 30"
+					[class.is-current]="item.isCurrent"
+					title="{{item.key}}">{{item.key}}</li>
+			</ul>
+		</div>
+	</div>
+</div>

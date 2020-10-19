@@ -4306,7 +4306,7 @@
         "section2Heading": "Huippuluokan tietokoneen suorituskyky. Aina",
         "section2Description": "Ohjelmistomme tarkistaa tietokoneesi ympäri vuorokauden ennakoivasti niin, että ongelmat löydetään ja korjataan heti niiden ilmetessä. Näin tietokoneesi suorituskyky on aina parhaimmillaan.",
         "tunePCPerformance": {
-            "title": "VIRITÄ TIETOKONEEN SUORITUSKYKYÄ",
+            "title": "Viritä Tietokoneen Suorituskykyä",
             "heading": "Helli tietokonettasi enemmän",
             "description": "Parhaatkin tietokoneet hyötyvät säännöllisistä virityksistä. Tehokkaalla sovelluksellamme voit virittää tietokoneesi ja saat entistä enemmän aikaan.",
             "tabSet1": {
@@ -4328,7 +4328,7 @@
         },
         "boostInternetPerformance": {
             "title": "PARANNA INTERNETIN SUORITUSKYKYÄ",
-            "extraTitle": "INTERNETIN SUORITUSKYKY",
+            "extraTitle": "Internetin Suorituskyky",
             "heading": "Paranna Internetiä",
             "description": "Monen mielestä elämä hitaan Wi-Fi kanssa tai ilman Wi-Fi on kuin eläisi kokonaan irti verkosta. Määritetään Internet-, Wi-Fi ja selainasetukset suorituskyvyn optimoimiseksi.",
             "tabSet1": {
@@ -4349,7 +4349,7 @@
             "summaryTitle": "Internetin suorituskyky"
         },
         "malwareSecurity": {
-            "title": "HAITTAOHJELMAT JA SUOJAUS",
+            "title": "Haittaohjelmat Ja Suojaus",
             "heading": "Anna tietokoneelle sen tarvitsemaa hoivaa",
             "description": "Haittaohjelmat voivat johtaa tietokoneen kaatumiseen, tietojen vaarantumiseen ja suorituskyvyn heikkenemiseen. Saat haittaohjelmat poistettua ja paljon muuta.",
             "tabSet1": {
@@ -4457,12 +4457,12 @@
                 "cancelMayTakeSomeTime": "Odota hetki, peruutus saattaa kestää jonkin aikaa järjestelmästäsi riippuen.",
                 "cancelTextPrompt": "Haluatko varmasti peruuttaa?"
             },
-            "waiting": "ODOTETAAN TARKISTUSTA",
-            "completed": "VALMIS",
+            "waiting": "odotetaan tarkistusta",
+            "completed": "valmis",
             "nowScanningDetail": {
                 "cardTitle": "TÄMÄN TARKISTUKSEN TIEDOT",
                 "current": "TÄMÄNHETKINEN: ",
-                "upNext": "SEURAAVAKSI",
+                "upNext": "SEURAAVAKSI: ",
                 "tunePCDesc": "Autetaan parantamaan tietokoneesi suorituskykyä. Teemme sen turvallisesti alan parhaiden käytäntöjen mukaisesti. Tilaajan etuja ovat muun muassa tietokoneen käynnistysajan lyheneminen, suorituskyvyn paraneminen, vakauden parantaminen ja sovellusten nopeampi käynnistyminen.",
                 "boostDesc": "Autetaan parantamaan selauskokemusta. Korjataan verkko- ja käyttöongelmat. Tilaajan etuja ovat muun muassa Internet-yhteyksien, latausnopeuksien ja Internet-suojauksen paraneminen.",
                 "malwareDesc": "Autetaan suojaamaan tietokoneesi nopeasti tarvittaessa. Teemme sen poistamalla vakoilu-, haitta- ja mainosohjelmat. Poistamme myös nollapäivätartunnat. Tilaajan etuja ovat muun muassa tietojen suojaus ja järjestelmän optimaalinen suorituskyky.",
@@ -4501,7 +4501,7 @@
                         "itemd6": "Määritä järjestelmävirheraportit"
                     },
                     "registryErrors": {
-                        "iteme1": "Tarkista Windows-rekisteri perusteellisesti,",
+                        "iteme1": "Tarkista Windows-rekisteri perusteellisesti",
                         "iteme2": "Virheellisten Windows-palvelujen tarkistus",
                         "iteme3": "Vioittuneiden rekisterimerkintöjen löytäminen",
                         "iteme4": "Etsi turhia tiedostotunnisteita",
@@ -4610,7 +4610,7 @@
             "issueCount": "{{individualIssueCount}} ONGELMAA",
             "scannedAreas": "TARKISTETUT ALUEET",
             "recommendedAction": {
-                "title": "SUOSITELTAVA TOIMINTO",
+                "title": "Suositeltava Toiminto",
                 "description": "Korjaamme nämä ongelmat automaattisesti. Kerran tänään ja joka viikko sen jälkeen",
                 "yearlyPricing": "29,99 $/v",
                 "monthlyPricing": "ALLE 2,5 $ KUUKAUDESSA.",
@@ -4876,7 +4876,7 @@
                     }
                 }
             },
-            "issues": "ONGELMAA",
+            "issues": "Ongelmaa",
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",

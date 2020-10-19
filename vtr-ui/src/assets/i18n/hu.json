@@ -4306,7 +4306,7 @@
         "section2Heading": "Tökéletes teljesítmény. Mindig",
         "section2Description": "Szoftverünk képes bármikor proaktívan ellenőrizni a számítógépét, és megkeresni, majd kijavítani a felmerülő problémákat, így gépe mindig kiemelkedő teljesítményt tud nyújtani.",
         "tunePCPerformance": {
-            "title": "TELJESÍTMÉNY-NÖVELÉS",
+            "title": "Teljesítmény-növelés",
             "heading": "Szenteljen egy kis figyelmet a számítógépének",
             "description": "Időnként még a legjobb számítógépre is ráfér egy kis finomhangolás. Frissítse fel a gépét, és dolgozzon hatékonyabban e nagyszerű alkalmazás segítségével!",
             "tabSet1": {
@@ -4328,7 +4328,7 @@
         },
         "boostInternetPerformance": {
             "title": "AZ INTERNETEZÉSI TELJESÍTMÉNY NÖVELÉSE",
-            "extraTitle": "INTERNETEZÉSI TELJESÍTMÉNY",
+            "extraTitle": "Internetezési Teljesítmény",
             "heading": "Gyorsítsa fel az internetet",
             "description": "Sokak számára a lassú Wi-Fi vagy a Wi-Fi hiánya olyan, mintha elvágnák őket a civilizációtól. Konfiguráljuk az internet, a Wi-Fi-hálózat és a böngésző beállításait, hogy optimális teljesítményt érhessen el.",
             "tabSet1": {
@@ -4349,7 +4349,7 @@
             "summaryTitle": "Internetezési teljesítmény"
         },
         "malwareSecurity": {
-            "title": "KÁRTEVŐK ÉS BIZTONSÁG",
+            "title": "Kártevők És Biztonság",
             "heading": "Szenteljen egy kevés figyelmet a gépének",
             "description": "A kártevők hatására a számítógépe összeomolhat, az adatok megsérülhetnek, a teljesítmény pedig lecsökkenhet. Szabaduljon meg a kártevőktől, és élvezze szolgáltatásunk további előnyeit!",
             "tabSet1": {
@@ -4457,12 +4457,12 @@
                 "cancelMayTakeSomeTime": "Kérjük, várjon, a megszakítás a rendszertől függően hosszabb időt vehet igénybe.",
                 "cancelTextPrompt": "Biztosan megszakítja a műveletet?"
             },
-            "waiting": "VÁRAKOZÁS AZ ELLENŐRZÉSRE",
-            "completed": "KÉSZ",
+            "waiting": "várakozás az ellenőrzésre",
+            "completed": "kész",
             "nowScanningDetail": {
                 "cardTitle": "AKTUÁLISAN ELLENŐRZÖTT ELEMEK",
                 "current": "AKTUÁLIS: ",
-                "upNext": "KÖVETKEZŐ:",
+                "upNext": "KÖVETKEZŐ: ",
                 "tunePCDesc": "Segítünk, hogy számítógépe jobb teljesítményt nyújtson. Az ellenőrzést az iparágban bevált gyakorlatok alapján dolgoztuk ki, így teljesen biztonságos. Az előfizetők többek között a számítógép és az alkalmazások gyorsabb elindulására, a számítógép jobb teljesítményére, valamint nagyobb stabilitásra számíthatnak.",
                 "boostDesc": "Segítünk a böngészési élmény javításában. Javítsuk ki a hálózati és a hozzáférési problémákat! Az előfizetők az internetkapcsolat minőségének javulására, jobb feltöltési/letöltési sebességre, valamint biztonságosabb internethasználatra számíthatnak.",
                 "malwareDesc": "Bármikor segítünk biztonságosabbá tenni a számítógépét. Ennek érdekében eltávolítjuk a kémprogramokat, a kártevőket és a hirdetőprogramokat. Az ismeretlen fertőzésektől is megszabadítjuk. Az előfizetők nagyobb biztonságban tudhatják az adataikat, és optimális rendszerteljesítményre számíthatnak.",
@@ -4610,7 +4610,7 @@
             "issueCount": "{{individualIssueCount}} PROBLÉMÁK",
             "scannedAreas": "ELLENŐRZÖTT TERÜLETEK",
             "recommendedAction": {
-                "title": "AJÁNLOTT LÉPÉSEK",
+                "title": "Ajánlott Lépések",
                 "description": "Ezeket a problémákat automatikusan orvosoljuk. Először ma, aztán minden soron következő héten",
                 "yearlyPricing": "$29,99/év",
                 "monthlyPricing": "KEVESEBB MINT HAVI $2,5",
@@ -4876,7 +4876,7 @@
                     }
                 }
             },
-            "issues": "PROBLÉMÁK",
+            "issues": "Problémák",
             "tuneIssueCount": "{{tune}}",
             "boostIssueCount": "{{boost}}",
             "secureIssueCount": "{{secure}}",

@@ -50,11 +50,18 @@ export enum SpSubscriptionDetails {
 	TWOMONTHS = 60
 }
 
+export enum SPHeaderImageType {
+	Normal = 1,
+	Scan = 2,
+	Issue = 3,
+	Well = 4,
+}
+
 export const actualScanFrequency: any = [
 	'Once a week',
 	'Every other week',
 	'Every month'
-]
+];
 export const actualDays: any = [
 	'Sunday',
 	'Monday',
@@ -63,6 +70,6 @@ export const actualDays: any = [
 	'Thursday',
 	'Friday',
 	'Saturday'
-]
+];
 
-export const actualMeridiem = ['AM', 'PM']
+export const actualMeridiem = ['AM', 'PM'];
