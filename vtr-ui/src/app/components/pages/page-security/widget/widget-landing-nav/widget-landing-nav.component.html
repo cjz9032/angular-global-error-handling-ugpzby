@@ -18,15 +18,15 @@
 	<vtr-widget-landing-security
 	(haveOwnChecked)="haveOwn($event)"
 	(retryClick)="retry($event)"
-    *ngIf="currentPage === 'base-security'"
+    *ngIf="currentPage === 'basic'"
     [items]="baseItems | statusTransform"></vtr-widget-landing-security>
 	<vtr-widget-landing-security
 	(haveOwnChecked)="haveOwn($event)"
-    *ngIf="currentPage === 'intermediate-security'"
+    *ngIf="currentPage === 'intermediate'"
     [items]="intermediateItems | statusTransform"></vtr-widget-landing-security>
 	<vtr-widget-landing-security
 	(haveOwnChecked)="haveOwn($event)"
-    *ngIf="currentPage === 'advanced-security' && advancedItems.length > 0"
+    *ngIf="currentPage === 'advanced' && advancedItems.length > 0"
     [items]="advancedItems | statusTransform"></vtr-widget-landing-security>
 </section>
 

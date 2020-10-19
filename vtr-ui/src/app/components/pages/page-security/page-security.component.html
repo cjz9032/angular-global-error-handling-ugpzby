@@ -25,6 +25,7 @@
 				<vtr-widget-landing-nav
 					(haveOwnChecked)="updateStatus($event)"
 					(retryClick)="retry($event)"
+					[currentPage]="currentPage"
 					[baseItems]="securityLevel.basicView"
 					[intermediateItems]="securityLevel.intermediateView"
 					[advancedItems]="securityLevel.advancedView"></vtr-widget-landing-nav>

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'vtr-widget-landing-nav',
@@ -8,25 +9,24 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class WidgetLandingNavComponent implements OnInit {
 	@Output() haveOwnChecked = new EventEmitter<any>();
 	@Output() retryClick = new EventEmitter<any>();
-	currentPage = 'base-security';
+	@Input() currentPage = 'basic';
 	featurePagesConfig = [
 		{
 			title: 'security.landing.basicSecurity',
-			page: 'base-security',
+			page: 'basic',
 			item: this.baseItems
 		},
 		{
 			title: 'security.landing.intermediateSecurity',
-			page: 'intermediate-security',
+			page: 'intermediate',
 			item: this.intermediateItems
 		},
 		{
 			title: 'security.landing.advancedSecurity',
-			page: 'advanced-security',
+			page: 'advanced',
 			item: this.advancedItems
 		},
 	];
-
 	private _baseItems;
 	private _intermediateItems;
 	private _advancedItems;

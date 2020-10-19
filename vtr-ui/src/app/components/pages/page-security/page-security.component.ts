@@ -4,6 +4,8 @@ import {
 	HostListener,
 	OnDestroy
 } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 import {
 	VantageShellService
 } from '../../../services/vantage-shell/vantage-shell.service';
@@ -70,7 +72,8 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		private deviceService: DeviceService,
 		private hypSettings: HypothesisService,
 		private antivirusService: AntivirusService,
-		private translate: TranslateService
+		private translate: TranslateService,
+		private activatedRoute: ActivatedRoute
 	) {}
 
 	@HostListener('window: focus')
@@ -79,8 +82,18 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		this.activatedRoute.queryParamMap.subscribe(paramMap => {
+			this.currentPage = paramMap.get('nav');
+			if (!this.currentPage) {
+				this.currentPage = 'basic';
+			}
+		});
 		this.isOnline = this.commonService.isOnline;
-		this.landingStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingLevel, { status: 0, fullyProtected: false, percent: 0 });
+		this.landingStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingLevel,  {
+			status: 0,
+			percent: 100,
+			fullyProtected: false
+		});
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
@@ -119,7 +132,6 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			.catch((e) => {
 				this.securityFeature.pluginSupport = false;
 			}).finally(() => {
-				this.securityFeature.fingerprintSupport = this.windowsHelloService.showWindowsHello(this.securityAdvisor.windowsHello);
 				this.translate.stream([
 					'common.securityAdvisor.loading',
 					'common.securityAdvisor.enrolled',
@@ -160,6 +172,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 				]).subscribe((trans: any) => {
 					this.translations = trans;
 					this.securityAdvisor.on('*', () => {
+						this.securityFeature.fingerprintSupport = this.windowsHelloService.showWindowsHello(this.securityAdvisor.windowsHello);
 						this.securityLevel = getSecurityLevel(
 							this.securityAdvisor,
 							this.translations,
