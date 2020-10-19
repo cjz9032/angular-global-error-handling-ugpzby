@@ -634,7 +634,7 @@ export class ExportResultsService {
 		}
 	}
 
-	private populateTemplateModelSection(data: any, modelItemsOrder: Array<string>, isRbs: boolean = false) {
+	private populateTemplateModelSection(data: any, modelItemsOrder: Array<string>, isRecoverBadSectors: boolean = false) {
 		const spanModel = this.document.getElementById('model');
 		const machineModel = this.document.getElementById('machine_model');
 		const machineInfoItems = this.document.getElementById('machine_info_items');
@@ -644,7 +644,8 @@ export class ExportResultsService {
 		spanModel.innerHTML = this.translate.transform('hardwareScan.report.modelTitle');
 		machineModel.innerHTML = data.model.machineModel;
 
-		if (isRbs) {
+		// Set final result code data if non rbs data is received
+		if (!isRecoverBadSectors) {
 			finalResultCodeSpan.innerHTML = this.translate.transform('hardwareScan.finalResultCode') + ': ';
 			finalResultCode.innerHTML = data.finalResultCode;
 		}

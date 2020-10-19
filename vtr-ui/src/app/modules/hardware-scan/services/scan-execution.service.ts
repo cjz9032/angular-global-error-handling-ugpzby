@@ -200,14 +200,6 @@ export class ScanExecutionService {
 		if ( moduleInformation ) {
 			const storageModule = moduleInformation.categoryList.find( category => category.id === 'storage' );
 
-			// const date = new Date();
-			// const day = date.getDate().toString();
-			// const month = date.getMonth() + 1;
-			// const monthString = month.toString();
-			// const year = date.getFullYear().toString();
-			// const time = date.toTimeString().split(' ');
-			// const dateString = year + '/' + monthString + '/' + day + ' ' + time[0];
-
 			const results = {
 				resultModule: HardwareScanTestResult.Pass,
 				startDate: this.rbsStartDate,
