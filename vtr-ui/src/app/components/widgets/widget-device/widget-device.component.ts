@@ -109,7 +109,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 				this.router.navigate(['support/smart-performance']);
 				break;
 			case DeviceCondition.NeedRunSU:
-				this.router.navigate(['device/system-updates']);
+				this.router.navigate(['/device/system-updates'], { queryParams: { action: 'start' } });
 				break;
 		}
 	}
