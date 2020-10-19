@@ -141,13 +141,3 @@
 		}
 	}
 }
-
-::ng-deep body.focus-enable{
-	.is-gaming {
-		.added-app-list-wrapper {
-			.add-icon .add-icon-button:focus {
-				@include outline-blue-gaming;
-			}
-		}
-	}
-}
