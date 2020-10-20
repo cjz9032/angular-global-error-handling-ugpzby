@@ -274,6 +274,10 @@
 													tabindex="0"
 													triggers="manual"
 													placement="auto"
+													vtrMetrics
+													metricsItem="btn.showTunePCTooltip"
+													metricsEvent="FeatureClick"
+													metricsParent="Page.Support.SmartPerformance"
 													id="smart-performance-scan-summary-tunePC-tooltip"
 													attr.aria-label=""
 													role="tooltip"
@@ -320,6 +324,10 @@
 													tabindex="0"
 													triggers="manual"
 													placement="auto"
+													vtrMetrics
+													metricsItem="btn.showBoostTooltip"
+													metricsEvent="FeatureClick"
+													metricsParent="Page.Support.SmartPerformance"
 													id="smart-performance-scan-summary-boost-tooltip"
 													attr.aria-label=""
 													role="tooltip"
@@ -366,6 +374,10 @@
 													tabindex="0"
 													triggers="manual"
 													placement="auto"
+													vtrMetrics
+													metricsItem="btn.showMalwareTooltip"
+													metricsEvent="FeatureClick"
+													metricsParent="Page.Support.SmartPerformance"
 													id="smart-performance-scan-summary-malware-tooltip"
 													attr.aria-label=""
 													role="tooltip"
@@ -411,6 +423,11 @@
 														*ngFor="let item of historyScanResultsDateTime;let ind=index"
 														tabindex="0"
 														id="smart-performance-scan-summary-scan-result-{{ind + 1}}"
+														role="button"
+														vtrMetrics
+														metricsItem="btn.smartPerformanceScanResult-{{ind + 1}}"
+														metricsEvent="FeatureClick"
+														metricsParent="Page.Support.SmartPerformance"
 														(keypress)="onKeyPress($event)"
 														(click)="seeScanResultDetails(item.scanrunDate, item.scanrunTime, item.Tune, item.Boost, item.Secure, ind, item.type.toUpperCase())">
 														<div class="container-fluid">
@@ -476,6 +493,10 @@
 									<a href="javascript:void(0)"
 										id="smart-performance-check-previous-results"
 										role="link"
+										vtrMetrics
+										metricsItem="btn.smartPerformanceCheckPreviousResults"
+										metricsEvent="FeatureClick"
+										metricsParent="Page.Support.SmartPerformance"
 										class="check-previous-results"
 										(click)="checkPreviousResults()">Check previous results</a>
 								</div>
