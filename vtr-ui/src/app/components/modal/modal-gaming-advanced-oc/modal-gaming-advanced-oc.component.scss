@@ -70,15 +70,15 @@
                     }
                     div.overclock-range {
                         height: 4rem;
-                        display: flex;
                         .left-slider {
+                            float: left;
                             height: 4rem;
-                            width: calc(100% - 15rem);
+                            width: calc(100% - 17rem);
                         }
                         .right-range {
+                            float: right;
                             width: 15rem !important;
                             height: 4rem;
-                            margin-left: 2rem;
                         }
                     }
                 }
