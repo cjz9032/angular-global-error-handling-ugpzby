@@ -17,15 +17,14 @@
 				.card-header {
 					border-bottom: none;
 					min-height: 6.3rem;
-					padding-top: 0;
-					padding-bottom: 0;
 					display: flex;
-					// pointer-events: none;
+					padding: 0.75rem;
 					background: $grey_lighter;
 
 					.btn-link {
 						width: 100%;
 						position: relative;
+						padding: 0 1.25rem;
 
 						@media #{$white-on-black} {
 							border: none;
@@ -47,6 +46,7 @@
 						&:focus {
 							outline: 0;
 							box-shadow: none;
+							@include outline-blue;
 
 							@media #{$white-on-black} {
 								&::after {

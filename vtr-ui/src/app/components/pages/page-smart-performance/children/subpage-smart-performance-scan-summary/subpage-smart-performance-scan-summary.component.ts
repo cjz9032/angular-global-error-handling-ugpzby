@@ -625,6 +625,12 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		}
 	}
 
+	onKeyPress($event) {
+		if ($event.keyCode === 13) {
+			$event.target.click();
+		}
+	}
+
 	seeScanResultDetails(scanrunDate: any, scanrunTime: any, tune: number, boost: number, secure: number, index: number, itemType: string): void {
 		this.showResult = {
 			show: true,
@@ -635,5 +641,11 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 			secure,
 			itemType,
 		};
+		setTimeout(() => { document.getElementById('smart-performance-check-previous-results').focus(); }, 0);
+	}
+
+	checkPreviousResults() {
+		this.showResult.show = false;
+		setTimeout(() => { document.getElementById('smart-performance-scan-summary-scan-result-1').focus(); }, 0);
 	}
 }
