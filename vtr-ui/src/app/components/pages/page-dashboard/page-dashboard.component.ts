@@ -55,7 +55,7 @@ interface IConfigItem {
 }
 
 @Component({
-	selector: 'vtr-page-dashboard', 
+	selector: 'vtr-page-dashboard',
 	templateUrl: './page-dashboard.component.html',
 	styleUrls: ['./page-dashboard.component.scss']
 })
@@ -341,7 +341,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		this.selfselectService.getConfig().then((re) => {
 			const usageType = re.usageType;
 			this.hideTitle = (usageType === SegmentConst.Commercial || usageType === SegmentConst.SMB);
-			this.showSecurityStatusCard = (usageType === SegmentConst.Consumer || usageType === SegmentConst.SMB);
 		});
 	}
 
@@ -796,7 +795,9 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		this.metricsService.activateScrollCounter(PageName.Dashboard);
 	}
 
-	private getSecurityCardInfo(): void {
+	private async getSecurityCardInfo(): Promise<void> {
+		this.showSecurityStatusCard = await this.dashboardService.isPositionCShowSecurityCard();
+		if (!this.showSecurityStatusCard) { return; }
 		const cacheSaStatus: LandingView = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingLevel);
 		if (cacheSaStatus) {
 			this.setSecurityInfo(cacheSaStatus);

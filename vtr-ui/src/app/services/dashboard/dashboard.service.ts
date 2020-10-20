@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { SegmentConst } from '../self-select/self-select.service';
+import { SegmentConst, SelfSelectService } from '../self-select/self-select.service';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 import { ContentActionType, ContentSource } from 'src/app/enums/content.enum';
@@ -124,7 +124,8 @@ export class DashboardService {
 		private adPolicyService: AdPolicyService,
 		private hardwareScanService: HardwareScanService,
 		private configService: ConfigService,
-		private spService: SmartPerformanceService
+		private spService: SmartPerformanceService,
+		private selfselectService: SelfSelectService
 	) {
 		this.dashboard = shellService.getDashboard();
 		this.eyeCareMode = shellService.getEyeCareMode();
@@ -610,5 +611,14 @@ export class DashboardService {
 			return true;
 		}
 		return false;
+	}
+
+	public async isPositionCShowSecurityCard(): Promise<boolean> {
+		let activeSegment: SegmentConst;
+		await this.selfselectService.getConfig().then((result) => {
+			activeSegment = result.usageType;
+
+		});
+		return !this.deviceService.isSMode && !this.deviceService.isArm && (activeSegment === SegmentConst.Consumer || activeSegment === SegmentConst.SMB);
 	}
 }
