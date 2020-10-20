@@ -28,7 +28,7 @@ import { TranslateDefaultValueIfNotFoundPipe } from '../pipe/translate-default-v
 	providers: [
 		httpInterceptorProviders,
 		TranslatePipe,
-		TranslateDefaultValueIfNotFoundPipe,
+		TranslateDefaultValueIfNotFoundPipe
 	]
 })
 export class TranslationModule {
