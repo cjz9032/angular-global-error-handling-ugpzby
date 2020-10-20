@@ -614,11 +614,8 @@ export class DashboardService {
 	}
 
 	public async isPositionCShowSecurityCard(): Promise<boolean> {
-		let activeSegment: SegmentConst;
-		await this.selfselectService.getConfig().then((result) => {
-			activeSegment = result.usageType;
-
-		});
+		const result = await this.selfselectService.getConfig();
+		const activeSegment: SegmentConst = result.usageType;
 		return !this.deviceService.isSMode && !this.deviceService.isArm && (activeSegment === SegmentConst.Consumer || activeSegment === SegmentConst.SMB);
 	}
 }
