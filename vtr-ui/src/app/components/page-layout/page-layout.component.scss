@@ -2,7 +2,6 @@
 
 
 .vtr-page {
-	height: 100%; //Used to define the div size following the windows size
 	.vtr-page-header {
 		background-image: url(../../../assets/images/HeaderImage.jpg);
 		background-size: cover;
@@ -10,7 +9,6 @@
 		background-repeat: no-repeat;
 	}
 	.vtr-page-columns {
-		height: 100%; //Used to define the div size following the windows size
 		max-width: $max_page_width;
 		margin: 0 auto;
 		@media #{$white-on-black} {
