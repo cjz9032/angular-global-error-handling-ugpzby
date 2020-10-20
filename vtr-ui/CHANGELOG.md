@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.27](https://bitbucket.tc.lenovo.com///compare/v1.8.26...v1.8.27) (2020-10-20)
+
+
+### Features
+
+* **Smart Performance:** VAN-21339 VAN-22173 new UI for 3.4 ([2cebfc5](https://bitbucket.tc.lenovo.com///commit/2cebfc5798c5f8f815f760be0f62e5f8a0b41746))
+* **Smart Performance:** VAN-22225 enable sp in gaming devices ([9a712c8](https://bitbucket.tc.lenovo.com///commit/9a712c80d2451d3a868409132fb86f31b5c5ec7d))
+
+
+### Bug Fixes
+
+* **wifi security:** add missing interface for the proxy object ([3af615f](https://bitbucket.tc.lenovo.com///commit/3af615f9d3ea51e204917fff5f2347c214bc7084))
+* add mysecurity url and edit menu path ([606ce97](https://bitbucket.tc.lenovo.com///commit/606ce97c1208cbb9d2fe3eeeabc3f1ea856633e7))
+* fix dashlane status error when plugin unavailable ([b7f9587](https://bitbucket.tc.lenovo.com///commit/b7f95871d9a95b82f5c7876f6a0e5902baab72b3))
+* intermediateview shouldnot wait a while to show ([0ae545a](https://bitbucket.tc.lenovo.com///commit/0ae545a7df9ce8e582c6f631f1499fd7c366264a))
+
 ### [1.8.26](https://bitbucket.tc.lenovo.com///compare/v1.8.25...v1.8.26) (2020-10-19)
 
 
