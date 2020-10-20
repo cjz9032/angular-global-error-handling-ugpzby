@@ -6,7 +6,6 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
 import { TranslateService } from '@ngx-translate/core';
 import { TimerService } from 'src/app/services/timer/timer.service';
-import { MetricService } from 'src/app/services/metric/metrics.service';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
 import { Subject } from 'rxjs';
@@ -50,7 +49,6 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		private translate: TranslateService,
 		private dashboardService: DashboardService,
 		private adPolicyService: AdPolicyService,
-		private metricService: MetricService,
 		private previousResultService: PreviousResultService,
 		private smartPerformanceService: SmartPerformanceService,
 		private configService: ConfigService,
@@ -64,7 +62,6 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.deviceService.getMachineInfo().then((machineInfo) => {
-			this.isSMPSubscripted =  this.isSmartPerformanceSuscripted(machineInfo?.serialnumber);
 			this.hwInfo = this.deviceService.getHardwareInfo();
 			this.loadDeviceInfo();
 			this.myDevice.family = machineInfo?.family;
@@ -172,6 +169,9 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 			this.swStatus[index++] = hwscan;
 			this.updateHwScanStatus(hwscan);
 		}
+	}
+	async loadOverAllStatus() {
+		this.deviceStatus = await this.dashboardService.getDeviceStatus();
 	}
 
 	startMonitorPerformance(){
@@ -320,94 +320,4 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		}
 		hwscan.link = '/hardware-scan';
 	}
-
-	private async loadOverAllStatus(){
-		const machineInfo = this.deviceService.getMachineInfoSync();
-		const oobeDate = machineInfo?.firstRunDate || Date.now();
-		const isOobeOver31days = this.systemUpdateService.dateDiffInDays(oobeDate) > 31;
-		if (this.metricService.isFirstLaunch || !isOobeOver31days){
-			this.deviceStatus = DeviceCondition.Good;
-			return;
-		}
-
-		if (await this.isSUNeedPromote()){
-			this.deviceStatus = DeviceCondition.NeedRunSU;
-			return;
-		}
-
-		if (await this.isSMPNeedPromote()){
-			this.deviceStatus = DeviceCondition.NeedRunSMPScan;
-			return;
-		}
-
-		if (await this.isHWScanNeedPromote()){
-			this.deviceStatus = DeviceCondition.NeedRunHWScan;
-			return;
-		}
-
-		this.deviceStatus = DeviceCondition.Good;
-	}
-
-	private async isSUNeedPromote(): Promise<boolean>{
-		if (!this.configService.isSystemUpdateEnabled()){
-			return false;
-		}
-
-		const suinfo = await this.systemUpdateService.getMostRecentUpdateInfo();
-		if (!suinfo?.lastScanTime){
-			this.deviceStatus = DeviceCondition.NeedRunSU;
-			return true;
-		}
-		const days = this.systemUpdateService.dateDiffInDays(suinfo.lastScanTime);
-		if (days > 30){
-			this.deviceStatus = DeviceCondition.NeedRunSU;
-			return true;
-		}
-		return false;
-	}
-
-	private async isSMPNeedPromote(): Promise<boolean>{
-		if (!await this.configService.showSmartPerformance()){
-			return false;
-		}
-		return !await this.isSMPSubscripted;
-	}
-
-	private async isSmartPerformanceSuscripted(serialnumber): Promise<boolean>{
-		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails(serialnumber);
-		if (!subscriptionDetails?.data){
-			return false;
-		}
-
-		const subscriptionData = subscriptionDetails.data;
-		const lastItem = subscriptionData[subscriptionData.length - 1];
-		const releaseDate = new Date(lastItem.releaseDate);
-		releaseDate.setMonth(releaseDate.getMonth() + lastItem.products[0].unitTerm);
-		releaseDate.setDate(releaseDate.getDate() - 1);
-		if (lastItem?.status?.toUpperCase() !== 'COMPLETED')
-		{
-			return false;
-		}
-
-		const currentDate: any = new Date(lastItem.currentTime);
-		const expiredDate = new Date(releaseDate);
-		if (expiredDate < currentDate) {
-			return false;
-		}
-
-		return true;
-	}
-
-	private async isHWScanNeedPromote(): Promise<boolean>{
-		if (!await this.hwScanService.isAvailable()){
-			return false;
-		}
-		await this.previousResultService.getLastResults();
-		const lastSacnInfo = this.previousResultService.getLastPreviousResultCompletionInfo();
-		if (!lastSacnInfo.date || this.systemUpdateService.dateDiffInDays(lastSacnInfo.date) > 180){
-			return true;
-		}
-		return false;
-	}
-
 }

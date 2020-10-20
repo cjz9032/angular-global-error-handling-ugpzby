@@ -18,6 +18,7 @@ import { WidgetHomeSecurityComponent } from 'src/app/components/widgets/widget-h
 import { WidgetSupportModule } from 'src/app/components/widgets/widget-support/widget-support.module';
 import { MaterialSvgCircleComponent } from 'src/app/material/material-svg-circle/material-svg-circle.component';
 import { MaterialStatusCircleComponent } from 'src/app/material/material-status-circle/material-status-circle.component';
+import { WidgetRoundStatusComponent } from 'src/app/components/widgets/widget-round-status/widget-round-status.component';
 
 @NgModule({
 	declarations: [
@@ -31,6 +32,7 @@ import { MaterialStatusCircleComponent } from 'src/app/material/material-status-
 		WidgetHomeSecurityComponent,
 		MaterialSvgCircleComponent,
 		MaterialStatusCircleComponent,
+		WidgetRoundStatusComponent
 	],
 	exports: [
 		WidgetDeviceComponent,
@@ -44,6 +46,7 @@ import { MaterialStatusCircleComponent } from 'src/app/material/material-status-
 		WidgetHomeSecurityComponent,
 		MaterialSvgCircleComponent,
 		MaterialStatusCircleComponent,
+		WidgetRoundStatusComponent
 	],
 	imports: [
 		CommonModule,

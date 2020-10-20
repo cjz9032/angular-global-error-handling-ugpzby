@@ -55,7 +55,7 @@ interface IConfigItem {
 }
 
 @Component({
-	selector: 'vtr-page-dashboard',
+	selector: 'vtr-page-dashboard', 
 	templateUrl: './page-dashboard.component.html',
 	styleUrls: ['./page-dashboard.component.scss']
 })

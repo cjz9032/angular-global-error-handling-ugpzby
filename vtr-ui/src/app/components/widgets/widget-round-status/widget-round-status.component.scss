@@ -1,7 +1,6 @@
 @import "../../../app.theme.scss";
 
 .link-box {
-    cursor: pointer; 
 	.round-box {
 		border-radius: 50%;
 		height: 100%;
@@ -58,13 +57,25 @@
 .round-box-good-condition {
 	background: linear-gradient(31deg, #2ECC71, #35E6B9 100%);
 	box-shadow: 0px 0px 16px #2ECC7166;
+	cursor: default !important;
+	.status-text {	
+		cursor: default;
+	}
 }
 
 .round-box-need-maintenance {
 	background: linear-gradient(31deg, #DB591F 0%, #EB7200 100%);
 	box-shadow: 0px 0px 16px #DB221F66;
+	cursor: pointer !important;
+	.status-text {	
+		cursor: pointer;
+	}
 }
 
 .round-box-loading {
 	background: #2F3447; 
+	cursor: default !important;
+	.status-text {	
+		cursor: default;
+	}
 }
