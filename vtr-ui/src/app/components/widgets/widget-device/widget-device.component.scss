@@ -8,6 +8,7 @@ $size500px-sw-show1col: "only screen and (min-width: 500px) and (max-width: 1200
 
 .vtr-widget-device {
 	padding: 0 !important;
+
 	.device-brief{
 		box-shadow: $drop_shadow;
 		border-radius: $border_radius;
@@ -58,73 +59,18 @@ $size500px-sw-show1col: "only screen and (min-width: 500px) and (max-width: 1200
 			}
 		}
 
-		.device-brief-status{
-			margin-left: auto;
-			border-radius: 50%;
+		.device-overall-status{
 			height: 14.2rem;
 			width: 14.2rem;
+			margin-left: auto;
 			align-self: center;
 			margin-right: 5.6rem;
+			border-radius: 50%;
 			@media #{$size500px-hw-show1col} {
 				margin-right: 0.6rem;
 				min-height: 14.2rem;
 				min-width: 14.2rem;
 			}
-			text-transform: uppercase;
-			@media #{$black-on-white} {
-				border: 0.1rem solid;
-			}
-		
-			@media #{$white-on-black} {
-				border: 0.1rem solid;
-			}
-			&:hover{
-				cursor: pointer;
-			}
-
-			.spinner-content{
-				@include high-contrast-adjust;
-			}
-
-			.spinner-border{
-				width: 3.2rem;
-				height: 3.2rem;
-			}
-
-			span{
-				font-size: 1.6rem;
-				overflow: hidden;
-				font-weight: bold;
-				text-overflow: ellipsis;
-				word-wrap: break-word;
-				display: -webkit-box;
-				-webkit-line-clamp: 2;
-				text-align: center;
-				letter-spacing: 0.49px;
-				-webkit-box-orient: vertical;
-			}
-		}
-
-		.device-status-good{
-			background: linear-gradient(31deg, #2ECC71 0%, #35E6B9 100%) 0% 0% no-repeat;
-			&:hover{
-				cursor: default;
-			}
-		}
-
-		.device-status-loading{
-			background: #2F3447 0% 0% no-repeat;
-			color:#4980FC;
-			.spinner-content{
-				display: block !important;
-			}
-			.device-status-text{
-				display: none;
-			}
-		}
-
-		.device-status-needaction{
-			background: linear-gradient(31deg, #DB591F 0%, #EB7200 100%) 0% 0% no-repeat;
 		}
 	}
 

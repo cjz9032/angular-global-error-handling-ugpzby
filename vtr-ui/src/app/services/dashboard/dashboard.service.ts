@@ -19,6 +19,7 @@ import { AdPolicyService } from '../ad-policy/ad-policy.service';
 import { HardwareScanService } from '../../modules/hardware-scan/services/hardware-scan.service';
 import { ConfigService } from '../config/config.service';
 import { SystemHealthDates, SystemState } from 'src/app/enums/system-state.enum';
+import { DeviceCondition, DeviceStatus } from 'src/app/data-models/widgets/status.model';
 
 interface IContentGroup {
 	positionA: any[];
@@ -41,6 +42,8 @@ export class DashboardService {
 	public isShellAvailable = false;
 	public isDashboardDisplayed = false;
 	private commonService: CommonService;
+	private isSMPSubscriptedPromiseObj: Promise<boolean>;
+
 	offlineCardContent: IContentGroup = {
 		positionA: null,
 		positionB: null,
@@ -68,7 +71,7 @@ export class DashboardService {
 		linkPath: 'device',
 		state: SystemState.Loading,
 		stateText: ''
-	}
+	};
 
 	goodConditionData = {
 		title: 'dashboard.positionB.cardTitle',
@@ -136,6 +139,7 @@ export class DashboardService {
 		if (this.eyeCareMode) {
 			this.isShellAvailable = true;
 		}
+		this.isSMPSubscriptedPromiseObj =  this.isSmartPerformanceSuscripted();
 	}
 
 	public getMicrophoneStatus(): Promise<FeatureStatus> {
@@ -524,4 +528,87 @@ export class DashboardService {
 		return !this.deviceService.isSMode && (isSystemUpdateEnabled || isHardwareScanEnabled || isSmartPerformanceEnabled);
 	}
 
+	public async getDeviceStatus(){
+		const machineInfo = this.deviceService.getMachineInfoSync();
+		const oobeDate = machineInfo?.firstRunDate || Date.now();
+		const isOobeOver31days = this.systemUpdateService.dateDiffInDays(oobeDate) > SystemHealthDates.OOBE;
+		if (this.metricService.isFirstLaunch || !isOobeOver31days){
+			return DeviceCondition.Good;
+		}
+
+		if (await this.isSUNeedPromote()){
+			return DeviceCondition.NeedRunSU;
+		}
+
+		if (await this.isSMPNeedPromote()){
+			return DeviceCondition.NeedRunSMPScan;
+		}
+
+		if (await this.isHWScanNeedPromote()){
+			return DeviceCondition.NeedRunHWScan;
+		}
+
+		return DeviceCondition.Good;
+	}
+
+	public async isSUNeedPromote(): Promise<boolean>{
+		if (!this.configService.isSystemUpdateEnabled()){
+			return false;
+		}
+
+		const suinfo = await this.systemUpdateService.getMostRecentUpdateInfo();
+		if (!suinfo?.lastScanTime){
+			return true;
+		}
+		const days = this.systemUpdateService.dateDiffInDays(suinfo.lastScanTime);
+		if (days > SystemHealthDates.SystemUpdate){
+			return true;
+		}
+		return false;
+	}
+
+	public async isSMPNeedPromote(): Promise<boolean>{
+		if (!await this.configService.showSmartPerformance()){
+			return false;
+		}
+		return !await this.isSMPSubscriptedPromiseObj;
+	}
+
+	public async isSmartPerformanceSuscripted(): Promise<boolean>{
+		const machineInfo = this.deviceService.getMachineInfoSync();
+		const subscriptionDetails = await this.spService.getPaymentDetails(machineInfo?.serialnumber);
+		if (!subscriptionDetails?.data){
+			return false;
+		}
+
+		const subscriptionData = subscriptionDetails.data;
+		const lastItem = subscriptionData[subscriptionData.length - 1];
+		const releaseDate = new Date(lastItem.releaseDate);
+		releaseDate.setMonth(releaseDate.getMonth() + lastItem.products[0].unitTerm);
+		releaseDate.setDate(releaseDate.getDate() - 1);
+		if (lastItem?.status?.toUpperCase() !== 'COMPLETED')
+		{
+			return false;
+		}
+
+		const currentDate: any = new Date(lastItem.currentTime);
+		const expiredDate = new Date(releaseDate);
+		if (expiredDate < currentDate) {
+			return false;
+		}
+
+		return true;
+	}
+
+	public async isHWScanNeedPromote(): Promise<boolean>{
+		if (!await this.hardwareScanService.isAvailable()){
+			return false;
+		}
+		await this.previousResultService.getLastResults();
+		const lastSacnInfo = this.previousResultService.getLastPreviousResultCompletionInfo();
+		if (!lastSacnInfo.date || this.systemUpdateService.dateDiffInDays(lastSacnInfo.date) > SystemHealthDates.HardwareScan){
+			return true;
+		}
+		return false;
+	}
 }

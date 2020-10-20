@@ -47,7 +47,6 @@ import { WidgetRoundStatusComponent } from 'src/app/components/widgets/widget-ro
 		WidgetEnergyStarComponent,
 		WidgetDashboardWarrantyComponent,
 		MaterialStateCardContainerComponent,
-		WidgetRoundStatusComponent
 	],
 	imports: [
 		CommonModule,

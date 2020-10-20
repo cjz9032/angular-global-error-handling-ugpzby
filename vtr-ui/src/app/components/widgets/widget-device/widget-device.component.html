@@ -12,17 +12,10 @@
 				</span>
 			</p>
 		</div>
-		<div role="button" id="myDevice-overall-status" 
-			class="device-brief-status d-flex align-items-center justify-content-center"
-			(click)="onMaintanceClicked()" tabindex="1" (keydown.enter)="onMaintanceClicked()"
-			metricsEvent="FeatureClick" metricsItem="Device-Overall-Status-{{deviceStatus}}" vtrMetrics
-			[ngClass]="{'device-status-loading':deviceStatus===0,
-						'device-status-good':deviceStatus===1,
-						'device-status-needaction':deviceStatus!=0&&deviceStatus!=1}">
-			<div class="spinner-content p-0 d-none">
-				<div class="spinner-border" role="status"></div>
-			</div>
-			<span role="text" id="myDevice-overall-status-text" class="device-status-text">{{(deviceStatus==1?'device.myDevice.goodCondition':'device.myDevice.needAction')|translate}}</span>
+
+		<div class="device-overall-status"  tabindex="1" (keydown.enter)="onMaintanceClicked()" (click)="onMaintanceClicked()"
+			metricsEvent="FeatureClick" metricsItem="Device-Overall-Status-{{deviceStatus}}" vtrMetrics>
+			<vtr-widget-round-status [status]="(deviceStatus===0||deviceStatus===1)?deviceStatus:2" [statusText]="(deviceStatus===1?'device.myDevice.goodCondition':'device.myDevice.needAction')"></vtr-widget-round-status>
 		</div>
 	</div>
 	
