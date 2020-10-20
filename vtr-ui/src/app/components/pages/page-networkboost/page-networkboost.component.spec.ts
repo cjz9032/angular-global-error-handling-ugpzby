@@ -415,5 +415,22 @@ describe('PageNetworkboostComponent', () => {
             expect(gamingQuickSettingToolbarService.unregisterEvent).toHaveBeenCalled();
             expect(shellServices.unRegisterEvent).toHaveBeenCalled();
         })
+
+        it('openTargetModal', () => {
+            networkBoostServiceSpy.getNeedToAsk.and.returnValue(true);
+            component.openTargetModal();
+            //const spy = spyOn(gamingAutoCloseServiceSpy, 'getNeedToAskStatusCache').and.returnValue(true);
+
+            spyOn(component, 'hiddenScroll');//spyon 'hiddenScroll' function of component
+
+            component.openTargetModal();
+            expect(component.showAppsModal).toBe(false);
+            expect(component.showTurnOnModal).toBe(true);
+
+            networkBoostServiceSpy.getNeedToAsk.and.returnValue(false);
+            component.openTargetModal();
+            //expect(component.showTurnOnModal).toBe(true);
+            //expect(component.showTurnOnModal).toBe(true);
+        });
     });
 });
