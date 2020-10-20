@@ -42,7 +42,7 @@ export class DashboardService {
 	public isShellAvailable = false;
 	public isDashboardDisplayed = false;
 	private commonService: CommonService;
-	public isSMPSubscriptedPromiseObj: Promise<boolean>;
+	private isSMPSubscriptedPromiseObj: Promise<boolean>;
 
 	offlineCardContent: IContentGroup = {
 		positionA: null,
