@@ -13,6 +13,7 @@ import { HardwareScanOverallResult, HardwareScanTestResult } from '../enums/hard
 import { RecoverBadSectorsService } from './recover-bad-sectors.service';
 import { HardwareScanService } from './hardware-scan.service';
 import { DeviceService } from '../../../services/device/device.service';
+import { TranslateTokenByTokenPipe } from 'src/app/pipe/translate-token-by-token/translate-token-by-token.pipe';
 
 declare var window;
 
@@ -40,7 +41,8 @@ export class ExportResultsService {
 		private logger: LoggerService,
 		private recoverBadSectorsService: RecoverBadSectorsService,
 		private hardwareScanService: HardwareScanService,
-		private deviceService: DeviceService) {
+		private deviceService: DeviceService,
+		private translateTokenByToken: TranslateTokenByTokenPipe) {
 		this.experienceVersion = environment.appVersion;
 
 		if (window.Windows) {
@@ -274,7 +276,7 @@ export class ExportResultsService {
 		const divInfo = this.document.createElement('div');
 		if ('' in detailsGroupedByIndex) { // Empty index means the module information
 			for (const detail of detailsGroupedByIndex['']) {
-				const div = this.createItemDiv(this.translate.transform('hardwareScan.pluginTokens.' + detail.key, detail.key), this.translate.transform('hardwareScan.pluginTokens.' + detail.value, detail.value));
+				const div = this.createItemDiv(this.translate.transform('hardwareScan.pluginTokens.' + detail.key, detail.key), this.translateTokenByToken.transform(detail.value, 'hardwareScan.pluginTokens.'));
 				divInfo.appendChild(div);
 			}
 		}
@@ -302,7 +304,7 @@ export class ExportResultsService {
 				grayResource = !grayResource;
 
 				for (const detail of detailsGroupedByIndex[key]) {
-					const div = this.createItemDiv(this.translate.transform('hardwareScan.pluginTokens.' + detail.key, detail.key), this.translate.transform('hardwareScan.pluginTokens.' + detail.value, detail.value), grayResource, isResource);
+					const div = this.createItemDiv(this.translate.transform('hardwareScan.pluginTokens.' + detail.key, detail.key), this.translateTokenByToken.transform(detail.value, 'hardwareScan.pluginTokens.'), grayResource, isResource);
 					divResourceItems.appendChild(div);
 					grayResource = !grayResource;
 				}
