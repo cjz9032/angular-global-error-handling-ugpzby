@@ -60,6 +60,10 @@ export class ModalGamingThermalMode2Component implements OnInit {
   ) {
     // get capabilities from cache
     this.gamingCapabilities.desktopType = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.desktopType);
+    // Version 3.5 thermal mode 3
+    // TODO
+    // this.gamingCapabilities.thermalModeVersion = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.thermalModeVersion);
+    this.gamingCapabilities.thermalModeVersion = 4;
     this.gamingCapabilities.smartFanFeature = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.smartFanFeature);
     this.gamingCapabilities.supporttedThermalMode = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.supporttedThermalMode);
     this.gamingCapabilities.cpuOCFeature = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.cpuOCFeature);
@@ -72,9 +76,6 @@ export class ModalGamingThermalMode2Component implements OnInit {
     this.thermalModeSettingStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.CurrentThermalModeStatus);
     this.autoSwitchStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.autoSwitchStatus);
     this.autoAdjustSettings = this.localCacheService.getLocalCacheValue(LocalStorageKey.autoAdjustSettings);
-
-    // TODO thermal mode 3
-    this.gamingCapabilities.thermalModeVersion = 4
   }
 
   ngOnInit() {

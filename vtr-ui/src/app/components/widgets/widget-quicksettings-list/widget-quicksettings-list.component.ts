@@ -323,14 +323,15 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 	}
 	public quicksettingListInit() {
 		const gamingStatus = this.gamingCapabilities;
-		// Version 3.2 thermalModeVersion 2.0
-		if (gamingStatus.thermalModeVersion === 2) {
-			this.quickSettings[0].isVisible = false;
-		} else {
+		// Version 3.2 thermalModeVersion 2.0 
+		// Version 3.5 thermal mode 3
+		if (gamingStatus.thermalModeVersion === 1) {
 			this.quickSettings[0].isVisible = gamingStatus.smartFanFeature;
 			if (gamingStatus.smartFanFeature) {
 				this.renderThermalModeStatus();
 			}
+		} else {
+			this.quickSettings[0].isVisible = false;
 		}
 		this.checkQuickSettingsVisibility();
 	}

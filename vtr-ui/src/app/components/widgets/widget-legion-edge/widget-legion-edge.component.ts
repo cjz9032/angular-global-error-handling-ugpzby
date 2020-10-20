@@ -24,6 +24,7 @@ import { GamingOverDriveService } from 'src/app/services/gaming/gaming-over-driv
 import { GamingKeyLockService } from 'src/app/services/gaming/gaming-keylock/gaming-key-lock.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { GamingQuickSettingToolbarService } from 'src/app/services/gaming/gaming-quick-setting-toolbar/gaming-quick-setting-toolbar.service';
+import { TranslateService } from '@ngx-translate/core';
 // component
 import { ModalGamingThermalMode2Component } from '../../modal/modal-gaming-thermal-mode2/modal-gaming-thermal-mode2.component';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
@@ -41,8 +42,8 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 	public thermalMode2Enum = GamingThermal2;
 	public thermalModeRealStatus = this.thermalMode2Enum.balance;
 	public thermalModeEvent: any;
-	public networkBoostEvent:any;
-	public autoCloseEvent:any;
+	public networkBoostEvent: any;
+	public autoCloseEvent: any;
 	public performanceOCSettings = false;
 	private notifcationSubscription: Subscription;
 	private OCSettingsSubscription: Subscription;
@@ -272,6 +273,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 		private gamingOCService: GamingOCService,
 		private gamingOverDriveService: GamingOverDriveService,
 		private gamingQuickSettingToolbarService: GamingQuickSettingToolbarService,
+		private translateService: TranslateService,
 		private router: Router,
 		private logger: LoggerService
 	) { }
@@ -379,26 +381,28 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 			if (response.type === Gaming.GamingCapabilities) {
 				this.gamingCapabilities = response.payload;
 				this.unRegisterThermalModeRealStatusChangeEvent();
-				this.unGamingQuickSettingsStatusChangedEvent('NetworkBoost',EventTypes.gamingQuickSettingsNetworkBoostStatusChangedEvent,this.networkBoostEvent);
-				this.unGamingQuickSettingsStatusChangedEvent('AutoClose',EventTypes.gamingQuickSettingsAutoCloseStatusChangedEvent,this.autoCloseEvent);
+				this.unGamingQuickSettingsStatusChangedEvent('NetworkBoost', EventTypes.gamingQuickSettingsNetworkBoostStatusChangedEvent, this.networkBoostEvent);
+				this.unGamingQuickSettingsStatusChangedEvent('AutoClose', EventTypes.gamingQuickSettingsAutoCloseStatusChangedEvent, this.autoCloseEvent);
 				this.legionEdgeInit();
 			}
 		});
 	}
 
 	ngOnDestroy(): void {
-		if(this.notifcationSubscription) {
+		if (this.notifcationSubscription) {
 			this.notifcationSubscription.unsubscribe();
 		}
-		if(this.OCSettingsSubscription) {
+		if (this.OCSettingsSubscription) {
 			this.OCSettingsSubscription.unsubscribe();
 		}
 		this.unRegisterThermalModeRealStatusChangeEvent();
-		this.unGamingQuickSettingsStatusChangedEvent('NetworkBoost',EventTypes.gamingQuickSettingsNetworkBoostStatusChangedEvent,this.networkBoostEvent);
-		this.unGamingQuickSettingsStatusChangedEvent('AutoClose',EventTypes.gamingQuickSettingsAutoCloseStatusChangedEvent,this.autoCloseEvent);
+		this.unGamingQuickSettingsStatusChangedEvent('NetworkBoost', EventTypes.gamingQuickSettingsNetworkBoostStatusChangedEvent, this.networkBoostEvent);
+		this.unGamingQuickSettingsStatusChangedEvent('AutoClose', EventTypes.gamingQuickSettingsAutoCloseStatusChangedEvent, this.autoCloseEvent);
 	}
 
 	legionEdgeInit() {
+		// TODO thermal mode 3
+		this.gamingCapabilities.thermalModeVersion = 4;
 		//////////////////////////////////////////////////////////////////////
 		// Render isvisible according to gamingCapabilities                 //
 		// Feature 2: CPU over clock                                        //
@@ -409,7 +413,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 		// Feature 7: Version 3.3, Over drive                               //
 		// Feature 8: Touchpad lock                                         //
 		//////////////////////////////////////////////////////////////////////
-		if (this.gamingCapabilities.thermalModeVersion === 2) {
+		if (this.gamingCapabilities.thermalModeVersion === 2 || this.gamingCapabilities.thermalModeVersion === 4) {
 			this.legionUpdate[this.legionItemIndex.cpuOverclock].isVisible = false;
 		} else {
 			this.legionUpdate[this.legionItemIndex.cpuOverclock].isVisible = this.gamingCapabilities.cpuOCFeature;
@@ -440,13 +444,14 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 		//////////////////////////////////////////////////////////////////////
 		// Init status from JSbridge                                        //
 		// Feature 1: Version 3.2, Thermal Mode 2 & performanceOC           //
-		// Feature 2: CPU over clock                                        //
-		// Feature 3: Memory over clock                                     //
-		// Feature 4: Network boost                                         //
-		// Feature 5: Auto close                                            //
-		// Feature 6: Hybrid mode                                           //
-		// Feature 7: Version 3.3, Over drive                               //
-		// Feature 8: Touchpad lock                                         //
+		// Feature 2: Version 3.5, Thermal Mode 3 & performanceOC           //
+		// Feature 3: CPU over clock                                        //
+		// Feature 4: Memory over clock                                     //
+		// Feature 5: Network boost                                         //
+		// Feature 6: Auto close                                            //
+		// Feature 7: Hybrid mode                                           //
+		// Feature 8: Version 3.3, Over drive                               //
+		// Feature 9: Touchpad lock                                         //
 		//////////////////////////////////////////////////////////////////////
 		if (this.gamingCapabilities.smartFanFeature && this.gamingCapabilities.thermalModeVersion === 2) {
 			this.thermalModeEvent = this.onRegThermalModeRealStatusChangeEvent.bind(this);
@@ -454,6 +459,37 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 			this.registerThermalModeRealStatusChangeEvent();
 			if (this.gamingCapabilities.cpuOCFeature || this.gamingCapabilities.gpuOCFeature) {
 				this.renderThermalMode2OCSettings();
+			}
+		}
+		// Version 3.5 thermal mode 3
+		if (this.gamingCapabilities.smartFanFeature && this.gamingCapabilities.thermalModeVersion === 4) {
+			this.thermalModeEvent = this.onRegThermalModeRealStatusChangeEvent.bind(this);
+			this.renderThermalMode2RealStatus();
+			this.registerThermalModeRealStatusChangeEvent();
+			if (this.gamingCapabilities.cpuOCFeature && this.gamingCapabilities.gpuOCFeature) {
+				if (this.gamingCapabilities.xtuService && this.gamingCapabilities.nvDriver) {
+					this.performanceOCSettings = true;
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.CpuOCStatus, this.performanceOCSettings ? 1 : 3);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.GpuOCStatus, this.performanceOCSettings ? 1 : 3);
+				} else {
+					this.performanceOCSettings = false;
+				}
+			} else if (this.gamingCapabilities.cpuOCFeature && !this.gamingCapabilities.gpuOCFeature) {
+				if (this.gamingCapabilities.xtuService) {
+					this.performanceOCSettings = true;
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.CpuOCStatus, this.performanceOCSettings ? 1 : 3);
+				} else {
+					this.performanceOCSettings = false;
+				}
+			} else if (!this.gamingCapabilities.cpuOCFeature && this.gamingCapabilities.gpuOCFeature) {
+				if (this.gamingCapabilities.nvDriver) {
+					this.performanceOCSettings = true;
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.GpuOCStatus, this.performanceOCSettings ? 1 : 3);
+				} else {
+					this.performanceOCSettings = false;
+				}
+			} else {
+				this.performanceOCSettings = false;
 			}
 		}
 
@@ -600,6 +636,27 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 			this.performanceOCSettings = res;
 		});
 	}
+
+	//////////////////////////////////////////////////////////////////////
+	// Version 3.5: tips of Thermal Mode 2&3                            //
+	//////////////////////////////////////////////////////////////////////
+	getThermalModeTips() {
+		if (this.gamingCapabilities.thermalModeVersion === 4 && this.thermalModeRealStatus === this.thermalMode2Enum.performance && this.performanceOCSettings) {
+			let OCSupported;
+			if (this.gamingCapabilities.cpuOCFeature && this.gamingCapabilities.gpuOCFeature) {
+				OCSupported = 'CPU & GPU ';
+			} else if (this.gamingCapabilities.cpuOCFeature && !this.gamingCapabilities.gpuOCFeature) {
+				OCSupported = 'CPU ';
+			} else if (!this.gamingCapabilities.cpuOCFeature && this.gamingCapabilities.gpuOCFeature) {
+				OCSupported = 'GPU ';
+			}
+			return OCSupported + 'overclocking activated';
+		} else {
+			// return this.translateService.instant('gaming.dashboard.device.quickSettings.title');
+			return ''
+		}
+	}
+
 
 	//////////////////////////////////////////////////////////////////////
 	// Open popup of legion edge help                                   //
@@ -979,25 +1036,25 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 	}
 
 	// version:3.3.3 quick setting toolbar& toast -- start
-	quickSettingToolbarevent (status,type,localStorage) {
-		status = status ===1 ? true : false;
+	quickSettingToolbarevent(status, type, localStorage) {
+		status = status === 1 ? true : false;
 		this.logger.info(`Widget-LegionEdge-onGamingQuickSettingsChangedEvent--${type}: call back from ${this.legionUpdate[this.legionItemIndex[type]].isChecked} to ${status}`);
 		if (status !== undefined && this.legionUpdate[this.legionItemIndex[type]].isChecked !== status) {
 			this.legionUpdate[this.legionItemIndex[type]].isChecked = status;
 			this.localCacheService.setLocalCacheValue(localStorage, status);
 		}
 	}
-	onGamingQuickSettingsNetworkBoostStatusChangedEvent(status:any) {
+	onGamingQuickSettingsNetworkBoostStatusChangedEvent(status: any) {
 		this.ngZone.run(() => {
-			this.quickSettingToolbarevent(status,'networkBoost',LocalStorageKey.NetworkBoostStatus);
+			this.quickSettingToolbarevent(status, 'networkBoost', LocalStorageKey.NetworkBoostStatus);
 		});
 	}
-	onGamingQuickSettingsAutoCloseStatusChangedEvent(status:any) {
+	onGamingQuickSettingsAutoCloseStatusChangedEvent(status: any) {
 		this.ngZone.run(() => {
-			this.quickSettingToolbarevent(status,'autoClose',LocalStorageKey.AutoCloseStatus);
+			this.quickSettingToolbarevent(status, 'autoClose', LocalStorageKey.AutoCloseStatus);
 		});
 	}
-	unGamingQuickSettingsStatusChangedEvent(type,eventType,eventBind) {
+	unGamingQuickSettingsStatusChangedEvent(type, eventType, eventBind) {
 		this.gamingQuickSettingToolbarService.unregisterEvent(type);
 		this.shellServices.unRegisterEvent(eventType, eventBind);
 	}
