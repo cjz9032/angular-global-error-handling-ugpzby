@@ -3,15 +3,16 @@
 	[class.is-light]="isLight">
 	<div class="slider"
 		#sliderContainer>
+		<div class="vertical-lines-bg"
+			*ngIf="!isLight">
+			<img [style.width.px]="sliderContainer.clientWidth"
+				src="assets/images/smart-performance/sp-rating-bar-bg.png"
+				alt="">
+		</div>
 		<div class="vertical-lines"
 			[ngStyle]="{'width': leftAnimator}">
-			<img *ngIf="isLight"
-				[style.width.px]="sliderContainer.clientWidth"
-				src="assets/images/smart-performance/sp-rating-bg-light.png"
-				alt="">
-			<img *ngIf="!isLight"
-				[style.width.px]="sliderContainer.clientWidth"
-				src="assets/images/smart-performance/sp-rating-bg-dark.png"
+			<img [style.width.px]="sliderContainer.clientWidth"
+				src="assets/images/smart-performance/sp-rating-bar.png"
 				alt="">
 		</div>
 		<div class="rating-value"

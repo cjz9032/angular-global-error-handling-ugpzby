@@ -5,7 +5,7 @@
 				<div class="container-fluid">
 					<div class="system-scan-complete">
 						<vtr-ui-smart-performance-header *ngIf="!smartPerformanceService.isSubscribed"
-							[image]="SPHeaderImageType.Issue"
+							[image]="rating < 8 ? SPHeaderImageType.Issue : SPHeaderImageType.Well"
 							headerTitle="Our scan found {{issueCount}} issue(s)"
 							[subTitle]="'Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.'"
 							headerTitleId="smart-performance-scan-summary-title"
@@ -409,23 +409,26 @@
 												<ul class="scan-list">
 													<li class="list-item"
 														*ngFor="let item of historyScanResultsDateTime;let ind=index"
+														tabindex="0"
+														id="smart-performance-scan-summary-scan-result-{{ind + 1}}"
+														(keypress)="onKeyPress($event)"
 														(click)="seeScanResultDetails(item.scanrunDate, item.scanrunTime, item.Tune, item.Boost, item.Secure, ind, item.type.toUpperCase())">
 														<div class="container-fluid">
-															<div class="row align-items-center">
+															<div class="row no-gutters align-items-center">
 																<div class="col-7 scan-run-time">
 																	<b>{{item.scanrunDate}}</b> -
 																	<span>{{item.scanrunTime | uppercase}}</span>
 																	<span class="ml-1"
-																		id="smart-performance-scan-summary-manual"
+																		id="smart-performance-scan-summary-manual-{{ind + 1}}"
 																		role="text"
 																		*ngIf="item.type.toUpperCase() == 'MS'">({{'smartPerformance.manual' |translate }})</span>
 																	<span class="ml-1"
-																		id="smart-performance-scan-summary-auto"
+																		id="smart-performance-scan-summary-auto-{{ind + 1}}"
 																		role="text"
 																		*ngIf="item.type.toUpperCase() == 'SS'">({{'smartPerformance.auto' |translate }})</span>
 																</div>
 																<div class="col-5 fixes text-right"
-																	id="smart-performance-scan-summary-fixes"
+																	id="smart-performance-scan-summary-fixes-{{ind + 1}}"
 																	role="text"
 																	title="{{item.fixcount === 0 ? item.fixcount : (item.fixcount | number:'2.0')}} {{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' | translate}}">
 																	<b>{{item.fixcount === 0 ? item.fixcount : (item.fixcount | number)}}</b>
@@ -471,8 +474,10 @@
 								</div>
 								<div class="ml-auto pt-2">
 									<a href="javascript:void(0)"
+										id="smart-performance-check-previous-results"
+										role="link"
 										class="check-previous-results"
-										(click)="showResult.show = false">Check previous results</a>
+										(click)="checkPreviousResults()">Check previous results</a>
 								</div>
 							</div>
 							<div class="summary-block w-100">

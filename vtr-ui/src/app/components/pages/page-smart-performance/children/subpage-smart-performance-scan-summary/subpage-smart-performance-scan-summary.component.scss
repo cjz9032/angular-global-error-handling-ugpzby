@@ -302,6 +302,18 @@ vtr-subpage-smart-performance-scan-summary {
 					width: calc(33.33% - 0.5rem);
 				}
 
+				@media #{$high-contrast} {
+					border: 1px solid currentColor !important;
+				}
+			
+				@media #{$black-on-white} {
+					border: 1px solid $dark !important;
+				}
+			
+				@media #{$white-on-black} {
+					border: 1px solid $light !important;
+				}
+
 				h5 {
 					font-size: $fontsize_md;
 					font-weight: $weight_bold;
@@ -385,14 +397,17 @@ vtr-subpage-smart-performance-scan-summary {
 					fa-icon {
 						cursor: pointer;
 						position: absolute;
-						right: 0;
+						right: 0.8rem;
 						top: 0;
-						width: 4rem;
+						width: 2.4rem;
 						font-size: 1.6rem;
 						text-align: center;
 						color: $grey_dark;
 						&:hover {
 							color: $menu_hover;
+						}
+						&:focus {
+							@include outline-blue;
 						}
 					}
 				}
@@ -427,13 +442,33 @@ vtr-subpage-smart-performance-scan-summary {
 					border-radius: $border_radius;
 					background: #F5F7F8;
 					overflow: hidden;
+					
+					@media #{$high-contrast} {
+						border: 1px solid currentColor !important;
+					}
+				
+					@media #{$black-on-white} {
+						border: 1px solid $dark !important;
+					}
+				
+					@media #{$white-on-black} {
+						border: 1px solid $light !important;
+					}
 
 					.list-item {
-						padding: 1.5rem 0;
+						padding: 1.5rem;
 						border-bottom: 0.1rem solid $shade_lighter;
 						color: $main_darker;
 						font-size: 1.4rem;
 						cursor: pointer;
+
+
+						&:focus {
+							outline: none;
+							.container-fluid {
+								@include outline-blue;
+							}
+						}
 
 						* {
 							cursor: pointer;
@@ -528,6 +563,18 @@ vtr-subpage-smart-performance-scan-summary {
 	box-shadow: $drop_shadow;
 	border-radius: 0.8rem;
 	background: $light;
+
+	@media #{$high-contrast} {
+		border: 1px solid currentColor !important;
+	}
+
+	@media #{$black-on-white} {
+		border: 1px solid $dark !important;
+	}
+
+	@media #{$white-on-black} {
+		border: 1px solid $light !important;
+	}
 
 	.pc-info-card {
 		@media #{$white-on-black} {

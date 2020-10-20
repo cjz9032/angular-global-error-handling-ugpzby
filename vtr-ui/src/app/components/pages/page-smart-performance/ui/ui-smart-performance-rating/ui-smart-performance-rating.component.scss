@@ -18,9 +18,9 @@
 		width: 100%;
 		height: 3rem;
 		// background: linear-gradient(to right, #DB221F, #4a81fd, #2ecc71);
-		background-image: url("../../../../../../assets/images/smart-performance/sp-rating-bg-dark-bg.png");
-		background-repeat: no-repeat;
-		background-size: 100% 100%;
+		// background-image: url("../../../../../../assets/images/smart-performance/sp-rating-bg-dark-bg.png");
+		// background-repeat: no-repeat;
+		// background-size: 100% 100%;
 		position: relative;
 
 		@media #{$white-on-black} {
@@ -35,6 +35,7 @@
 			@include black-border;
 		}
 
+		.vertical-lines-bg,
 		.vertical-lines {
 			display: flex;
 			justify-content: space-between;
@@ -42,6 +43,10 @@
 			height: 100%;
 			overflow: hidden;
 			transition: width 1s ease-in-out;
+			position: relative;
+			left: 0;
+			top: 0;
+			z-index: 1;
 
 			img {
 				width: 100%;
@@ -64,17 +69,13 @@
 					@include high-contrast-adjust;
 				}
 
-				// &::after {
-				// 	counter-increment: lines;
-				// 	content: counter(lines);
-				// 	position: relative;
-				// 	bottom: -2.4rem;
-				// 	color: $shade_darker;
-				// 	font-size: 0.8rem;
-				// 	left: -0.5rem;
-				// }
 			}
 
+		}
+
+		.vertical-lines-bg {
+			position: absolute;
+			z-index: 0;
 		}
 
 		.rating-value {
@@ -280,6 +281,7 @@
 
 			.info-text {
 				color: $alt;
+
 				span {
 					color: #fff;
 				}
