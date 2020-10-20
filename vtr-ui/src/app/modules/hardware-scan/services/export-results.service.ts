@@ -14,6 +14,8 @@ import { RecoverBadSectorsService } from './recover-bad-sectors.service';
 import { HardwareScanService } from './hardware-scan.service';
 import { DeviceService } from '../../../services/device/device.service';
 import { TranslateTokenByTokenPipe } from 'src/app/pipe/translate-token-by-token/translate-token-by-token.pipe';
+import { ModalExportLogComponent } from '../components/modal/modal-export-log/modal-export-log.component';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
 declare var window;
 
@@ -38,11 +40,12 @@ export class ExportResultsService {
 		private shellService: VantageShellService,
 		private formatDateTime: FormatLocaleDateTimePipe,
 		private scanLogService: ScanLogService,
-		private logger: LoggerService,
 		private recoverBadSectorsService: RecoverBadSectorsService,
 		private hardwareScanService: HardwareScanService,
 		private deviceService: DeviceService,
-		private translateTokenByToken: TranslateTokenByTokenPipe) {
+		private translateTokenByToken: TranslateTokenByTokenPipe,
+		private modalService: NgbModal,
+		private logger: LoggerService) {
 		this.experienceVersion = environment.appVersion;
 
 		if (window.Windows) {
@@ -741,6 +744,8 @@ export class ExportResultsService {
 	}
 
 	public async exportScanResults() {
+		let logFile;
+
 		return new Promise(async (resolve, reject) => {
 			try {
 				const reportFileName = 'HardwareScanLog';
@@ -752,7 +757,21 @@ export class ExportResultsService {
 			} catch (error) {
 				this.logger.error('Could not get scan log', error);
 				reject();
+			} finally {
+				this.openExportLogComponentsModal(logFile);
 			}
 		});
+	}
+
+	private openExportLogComponentsModal(logPath: string = '') {
+		const modal: NgbModalRef = this.modalService.open(ModalExportLogComponent, {
+			size: 'lg',
+			centered: true,
+			windowClass: 'hardware-scan-modal-size'
+		});
+
+		( modal.componentInstance as ModalExportLogComponent).logFile = logPath;
+
+		return modal;
 	}
 }
