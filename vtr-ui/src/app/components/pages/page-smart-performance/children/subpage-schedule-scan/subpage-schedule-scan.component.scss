@@ -229,14 +229,18 @@
 	.cancel-link {
 		font-size: $fontsize_xs;
 		font-weight: $weight_600;
-		vertical-align: middle;
 		letter-spacing: 0.05rem;
 		color: $menu_hover;
-		margin: 1rem 0rem 0rem 3rem;
+		margin-left: 3rem;
 		cursor: pointer;
 		text-transform: uppercase;
+		text-decoration: none;
 		padding: 0.3rem 0rem;
 		border-bottom: 0.2rem solid $menu_hover;
+
+		&:hover {
+			border-bottom: 0.2rem solid transparent;
+		}
 
 		&:focus {
 			@include outline-blue;

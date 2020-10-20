@@ -276,18 +276,15 @@
 			</li>
 		</ul>
 
-		<div class="text-center">
-			<button class="save-button"
-				id="smart-performance-scan-schedule-setting-save-btn"
-				(click)="saveChangedScanSchedule()"
-				vtrMetrics
-				metricsItem="btn.savechangedscanschedule"
+		<div class="d-flex justify-content-center align-items-center pt-3">
+			<vtr-ui-button
+				linkId="smart-performance-scan-schedule-setting-save-btn"
 				metricsParent="Page.Support.SmartPerformance"
-				metricsEvent="FeatureClick"
-				tabindex="0"
-				(keydown.enter)="saveChangedScanSchedule()">
-				{{'smartPerformance.scanSettings.txtSave' |translate }}
-			</button>
+				metricsItem="btn.savechangedscanschedule"
+				[isFullWidth]="false"
+				[label]="'smartPerformance.scanSettings.txtSave' |translate"
+				(onClick)="saveChangedScanSchedule()">
+			</vtr-ui-button>
 			<a class="cancel-link active"
 				id="smart-performance-scan-schedule-setting-cancel-btn"
 				(click)="cancelChangedScanSchedule()"
