@@ -378,7 +378,7 @@ import { of } from 'rxjs';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { GamingQuickSettingToolbarService } from 'src/app/services/gaming/gaming-quick-setting-toolbar/gaming-quick-setting-toolbar.service';
-import { NetworkBoostService } from 'src/app/services/gaming/gaming-networkboost/networkboost.service';
+import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose/gaming-autoclose.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { PageAutocloseComponent } from './page-autoclose.component';
 import { TranslationModule } from 'src/app/modules/translation.module';
@@ -449,7 +449,7 @@ describe('PageAutocloseComponent', () => {
                     { provide: LoggerService, useValue: loggerServiceSpy },
                     { provide: CMSService, useValue: cmsServiceMock },
                     { provide: VantageShellService, useValue: vantageShellServiceSpy },
-                    { provide: NetworkBoostService, useValue: gamingAutoCloseServiceSpy },
+                    { provide: GamingAutoCloseService, useValue: gamingAutoCloseServiceSpy },
                     { provide: GamingQuickSettingToolbarService, useValue: gamingQuickSettingToolbarServiceSpy }
                 ]
             }).compileComponents();
@@ -490,6 +490,34 @@ describe('PageAutocloseComponent', () => {
             component.autoCloseUnRegisterEvent();
             expect(gamingQuickSettingToolbarService.unregisterEvent).toHaveBeenCalled();
             expect(shellServices.unRegisterEvent).toHaveBeenCalled();
-        })
+        });
+
+        it('openTargetModal', () => {
+            gamingAutoCloseServiceSpy.getNeedToAskStatusCache.and.returnValue(true);
+            component.openTargetModal();
+            //const spy = spyOn(gamingAutoCloseServiceSpy, 'getNeedToAskStatusCache').and.returnValue(true);
+
+            spyOn(component, 'hiddenScroll');//spyon 'hiddenScroll' function of component
+
+            component.openTargetModal();
+            expect(component.showAppsModal).toBe(true);
+            expect(component.showTurnOnModal).toBe(false);
+
+            gamingAutoCloseServiceSpy.getNeedToAskStatusCache.and.returnValue(false);
+            component.openTargetModal();
+            expect(component.showTurnOnModal).toBe(true);
+            expect(component.showTurnOnModal).toBe(true);
+        });
+
+        it('donotshowaction', () => {
+            component.doNotShowAction(true);
+            expect(component.getNeedStatus).toBe(true);
+        });
+
+        // it('initturnonaction', () => {
+        //     component.
+        //     component.doNotShowAction(true);
+        //     expect(component.getNeedStatus).toBe(true);
+        // });
     });
 });
