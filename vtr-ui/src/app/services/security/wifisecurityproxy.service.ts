@@ -100,4 +100,7 @@ export class WifisecurityProxy implements phoenix.WifiSecurity {
 		}
 	}
 
+	getWifiSecurityTrialDays(): void {
+		return this.wifisecurity.getWifiSecurityTrialDays();
+	}
 }
