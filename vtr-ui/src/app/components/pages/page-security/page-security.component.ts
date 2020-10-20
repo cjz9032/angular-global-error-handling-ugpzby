@@ -114,7 +114,8 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			landingStatus: this.landingStatus,
 			basicView: [securityStatus.avStatus, securityStatus.fwStatus, this.securityFeature.pluginSupport ? securityStatus.waStatus : undefined].filter(i => i !== undefined),
 			intermediateView: [this.securityFeature.pwdSupport ? securityStatus.pmStatus : undefined, this.securityFeature.fingerprintSupport ? securityStatus.whStatus : undefined, this.securityFeature.pluginSupport ? securityStatus.uacStatus : undefined].filter(i => i !== undefined),
-			advancedView: [this.securityAdvisor.wifiSecurity.isSupported ? securityStatus.wfStatus : undefined, this.securityFeature.vpnSupport ? securityStatus.vpnStatus : undefined].filter(i => i !== undefined)};
+			advancedView: [this.securityAdvisor.wifiSecurity.isSupported ? securityStatus.wfStatus : undefined, this.securityFeature.vpnSupport ? securityStatus.vpnStatus : undefined].filter(i => i !== undefined)
+		};
 		this.deviceService.getMachineInfo().then(result => {
 			this.securityFeature.vpnSupport = true;
 			this.securityFeature.pwdSupport = true;
@@ -132,6 +133,12 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			.catch((e) => {
 				this.securityFeature.pluginSupport = false;
 			}).finally(() => {
+				this.securityLevel = {
+					landingStatus: this.landingStatus,
+					basicView: [securityStatus.avStatus, securityStatus.fwStatus, this.securityFeature.pluginSupport ? securityStatus.waStatus : undefined].filter(i => i !== undefined),
+					intermediateView: [this.securityFeature.pwdSupport ? securityStatus.pmStatus : undefined, this.securityFeature.fingerprintSupport ? securityStatus.whStatus : undefined, this.securityFeature.pluginSupport ? securityStatus.uacStatus : undefined].filter(i => i !== undefined),
+					advancedView: [this.securityAdvisor.wifiSecurity.isSupported ? securityStatus.wfStatus : undefined, this.securityFeature.vpnSupport ? securityStatus.vpnStatus : undefined].filter(i => i !== undefined)
+				};
 				this.translate.stream([
 					'common.securityAdvisor.loading',
 					'common.securityAdvisor.enrolled',
