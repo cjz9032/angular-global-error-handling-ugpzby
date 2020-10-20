@@ -1,0 +1,33 @@
+<div class="modal-body">
+	<h1 id="hwscan-export-log-modal-title" class="title" role="heading">{{ 'hardwareScan.exportLog' | translate }}</h1>
+
+	<div *ngIf="logFile; else withoutLogFile">
+		<p id="hwscan-export-log-modal-description" class="description" role="text">
+			The Log was exported successfully and can be found at: {{logFile}}
+		</p>
+	</div>
+
+	<ng-template #withoutLogFile>
+		<p id="hwscan-export-log-modal-description" class="description" role="text">
+			A problem was found during Log export. Please try it again later.
+		</p>
+	</ng-template>
+
+	<div class="row button-row">
+		<vtr-ui-button
+			linkId="hwscan-export-log-confirm-btn"
+			[metricsParent]="'HardwareScan.ExportLog'"
+			[metricsItem]="'ExportLog.Confirm'"
+			[label]="'hardwareScan.ok' | translate"
+			(onClick)="onClosing()">
+		</vtr-ui-button>
+	</div>
+	<div class="btn-modal-close">
+		<vtr-ui-close-button
+			linkId="hwscan-export-log-modal-close-btn"
+			[metricsParent]="'HardwareScan.ExportLog'"
+			[metricsItem]="'ExportLog.Close'"
+			(clickClose)="onClosing()">
+		</vtr-ui-close-button>
+	</div>
+</div>

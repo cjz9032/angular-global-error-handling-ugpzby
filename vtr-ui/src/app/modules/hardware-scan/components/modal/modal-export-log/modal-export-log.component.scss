@@ -1,0 +1,20 @@
+@import "../../../../../app.theme";
+
+.title {
+	font-size: $fontsize_xl;
+	font-weight: $weight_600;
+	color: $shade_blue;
+}
+
+.description {
+	margin: 2rem 0rem;
+	font-size: $fontsize_xs;
+	white-space: pre-wrap;
+	font-weight: $weight_light;
+	color: $shade_blue;
+}
+
+.modal-body {
+	padding: 2.4rem;
+	@include high-contrast-border;
+}
