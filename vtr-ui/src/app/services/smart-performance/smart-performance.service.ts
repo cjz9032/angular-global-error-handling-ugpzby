@@ -187,7 +187,7 @@ export class SmartPerformanceService {
 	}
 
 	getPaymentDetails(serialNumber): Promise<any> {
-		const reqUrl = environment.spGetOrdersApiRoot + serialNumber;
+		const reqUrl = `${environment.pcsupportApiRoot}/api/v4/upsell/smart/getorders?serialNumber=${serialNumber}`;
 		return new Promise(resolve => {
 			const xhr = new XMLHttpRequest();
 			xhr.open('GET', reqUrl, true);
@@ -230,7 +230,7 @@ export class SmartPerformanceService {
 	async getLocalePrice() {
 		if (!this.localPrice) {
 			const localInfo = await this.localInfoService.getLocalInfo();
-			const url = environment.spGetPriceApiRoot + `country=${localInfo.GEO}`;
+			const url = `${environment.pcsupportApiRoot}/api/v4/upsell/smart/getPrice?country=${localInfo.GEO}`;
 			const priceData = await this.httpClient.get(url).toPromise() as any;
 			if (priceData && priceData.data) {
 				const yearPrice = priceData.data.filter(item => item.code === SPPriceCode.YEAR);

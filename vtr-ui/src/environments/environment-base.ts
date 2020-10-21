@@ -8,7 +8,5 @@ export interface IEnvironment {
 	allowMockService: boolean;
 	isLoggingEnabled: boolean;
 	isServerSwitchEnabled: boolean;
-	spPaymentProcessApiRoot: string;
-	spGetOrdersApiRoot: string;
-	spGetPriceApiRoot: string;
+	pcsupportApiRoot: string;
 }
