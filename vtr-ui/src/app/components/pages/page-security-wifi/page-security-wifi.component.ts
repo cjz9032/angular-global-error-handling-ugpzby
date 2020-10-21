@@ -288,10 +288,10 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		const dialogData: DialogData = {
 			title: Dialogtitle,
 			subtitle: '',
-			description: (hasTrialDays < 31) ? `${des1}<br/>${des2}&nbsp;<b>${timeToExpire}&nbsp;${days}</b>` : hasExpired,
+			description: (hasTrialDays < this.maxCanTrialTime) ? `${des1}<br/>${des2}&nbsp;<b>${timeToExpire}&nbsp;${days}</b>` : hasExpired,
 			buttonName: signInButton,
-			linkButtonName: (hasTrialDays < 31) ? ignore : '',
-			showCloseButton: (hasTrialDays < 31) ? true : false,
+			linkButtonName: (hasTrialDays < this.maxCanTrialTime) ? ignore : '',
+			showCloseButton: (hasTrialDays < this.maxCanTrialTime) ? true : false,
 		};
 		this.expirePromptDialogRef = this.dialogService.wifiSecurityExpirePromptDialog(dialogData);
 	}
