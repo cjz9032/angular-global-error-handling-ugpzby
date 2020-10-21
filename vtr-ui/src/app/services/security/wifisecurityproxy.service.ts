@@ -99,8 +99,4 @@ export class WifisecurityProxy implements phoenix.WifiSecurity {
 			this.commonService.sendNotification(SecurityAdvisorNotifications.WifiSecurityTurnedOn);
 		}
 	}
-
-	getWifiSecurityTrialDays(): void {
-		return this.wifisecurity.getWifiSecurityTrialDays();
-	}
 }
