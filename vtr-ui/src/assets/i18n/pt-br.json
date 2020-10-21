@@ -4606,14 +4606,14 @@
             "summary": "Resumo",
             "summaryDetails": "Nossa verificação encontrou <b>{{issueCount}} problemas</b> nas seguintes áreas abaixo. Inscreva-se agora para corrigir esses problemas e manter seu sistema funcionando sem problemas. Nosso software pode verificar proativamente essas áreas do seu sistema 24x7 para encontrar e corrigir problemas à medida que surgem, para que seu PC sempre tenha um desempenho de alto nível.",
             "signupRepairButton": "INSCREVA-SE E REPARE AGORA",
-            "monthlyPricing": "<b>Menos de US$ 2,5 por mês.</b> Nós corrigiremos esses problemas automaticamente. Uma vez hoje e toda semana depois <a  href=\"#\">Saiba mais</a>",
+            "monthlyPricing": "<b>Menos de US{{monthlyPrice}} por mês.</b> Nós corrigiremos esses problemas automaticamente. Uma vez hoje e toda semana depois <a  href=\"#\">Saiba mais</a>",
             "issueCount": "{{individualIssueCount}} PROBLEMAS",
             "scannedAreas": "ÁREAS VERIFICADAS",
             "recommendedAction": {
                 "title": "Ação Recomendada",
                 "description": "Nós corrigiremos esses problemas automaticamente. Uma vez hoje e toda semana depois",
-                "yearlyPricing": "US$ 29,99/Ano",
-                "monthlyPricing": "MENOS DE US$ 2,5 POR MÊS.",
+                "yearlyPricing": "{{yearlyPrice}}/Ano",
+                "monthlyPricing": "MENOS DE US{{monthlyPrice}} POR MÊS.",
                 "longerTerm": "Mais tempo? Ainda mais economia?",
                 "newDescription": "Após a inscrição, corrigiremos esses problemas automaticamente para você todas as semanas.",
                 "signupButton": "INSCREVA-SE"

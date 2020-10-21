@@ -4606,14 +4606,14 @@
             "summary": "Összegzés",
             "summaryDetails": "Ellenőrzésünk az alábbi területeken fedett fel <b>{{issueCount}} problémá(ka)t</b>. Fizessen elő, hogy orvosolhassuk a problémákat, és rendszere zökkenőmentesen működhessen. Szoftverünkkel bármikor proaktívan ellenőrizhetjük a rendszer érintett területeit a felmerülő problémák azonosításához és javításához, így gépe mindig kiemelkedő teljesítményt nyújt majd.",
             "signupRepairButton": "ELŐFIZETÉS ÉS JAVÍTÁS",
-            "monthlyPricing": "<b>Kevesebb mint havi $2,5.</b> Ezeket a problémákat automatikusan orvosoljuk. Először ma, aztán minden soron következő héten <a  href=\"#\">További tudnivalók</a>",
+            "monthlyPricing": "<b>Kevesebb mint havi {{monthlyPrice}}.</b> Ezeket a problémákat automatikusan orvosoljuk. Először ma, aztán minden soron következő héten <a  href=\"#\">További tudnivalók</a>",
             "issueCount": "{{individualIssueCount}} PROBLÉMÁK",
             "scannedAreas": "ELLENŐRZÖTT TERÜLETEK",
             "recommendedAction": {
                 "title": "Ajánlott Lépések",
                 "description": "Ezeket a problémákat automatikusan orvosoljuk. Először ma, aztán minden soron következő héten",
-                "yearlyPricing": "$29,99/év",
-                "monthlyPricing": "KEVESEBB MINT HAVI $2,5",
+                "yearlyPricing": "{{yearlyPrice}}/év",
+                "monthlyPricing": "KEVESEBB MINT HAVI {{monthlyPrice}}",
                 "longerTerm": "Hosszabb távban gondolkodik? Még több megtakarításra vágyik?",
                 "newDescription": "A regisztráció után minden héten automatikusan megoldjuk ezeket a problémákat.",
                 "signupButton": "REGISZTRÁLÁS"

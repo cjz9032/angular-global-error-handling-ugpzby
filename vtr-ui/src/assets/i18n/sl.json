@@ -4606,14 +4606,14 @@
             "summary": "Povzetek",
             "summaryDetails": "Naš pregled je našel <b>{{issueCount}} težav</b> na področjih, navedenih spodaj. Če želite odpraviti te težave in si zagotoviti optimalno delovanje sistema, se registrirajte. Naša programska oprema lahko 24 ur dnevno vse dni v tednu pregleduje ta področja sistema in sproti odpravi težave, ko se pojavijo, tako bo vaš računalnik vedno deloval z vrhunsko učinkovitostjo delovanja.",
             "signupRepairButton": "REGISTRIRAJTE SE IN POPRAVITE ZDAJ",
-            "monthlyPricing": "<b>Manj kot $2,5 na mesec.</b> Te težave bomo samodejno odpravili. Enkrat danes in nato vsak teden <a  href=\"#\">Več informacij</a>",
+            "monthlyPricing": "<b>Manj kot {{monthlyPrice}} na mesec.</b> Te težave bomo samodejno odpravili. Enkrat danes in nato vsak teden <a  href=\"#\">Več informacij</a>",
             "issueCount": "ŠT. TEŽAV: {{individualIssueCount}}",
             "scannedAreas": "PREGLEDANA PODROČJA",
             "recommendedAction": {
                 "title": "Priporočen Ukrep",
                 "description": "Te težave bomo samodejno odpravili. Enkrat danes in nato vsak teden",
-                "yearlyPricing": "$29,99/leto",
-                "monthlyPricing": "MANJ KOT $2,5 MESEČNO.",
+                "yearlyPricing": "{{yearlyPrice}}/leto",
+                "monthlyPricing": "MANJ KOT {{monthlyPrice}} MESEČNO.",
                 "longerTerm": "Daljši rok? Še večji prihranek?",
                 "newDescription": "Po prijavi bomo te težave samodejno odpravili vsak teden.",
                 "signupButton": "REGISTRIRAJTE SE"

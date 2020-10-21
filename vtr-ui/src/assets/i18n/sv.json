@@ -4606,14 +4606,14 @@
             "summary": "Översikt",
             "summaryDetails": "Genomsökningen hittade <b>{{issueCount}} problem</b> i områdena nedan. Registrera dig nu för att åtgärda problemen och se till att datorn fungerar smidigt. Vår programvara kan proaktivt genomsöka dessa områden på din dator dygnet runt för att hitta och åtgärda problem när de uppstår så att datorn alltid körs med bästa möjliga prestanda.",
             "signupRepairButton": "REGISTRERA DIG OCH REPARERA NU",
-            "monthlyPricing": "<b>Mindre än 2,5 $ per månad.</b> Vi löser dessa problem automatiskt. En gång i dag och därefter varje vecka. <a  href=\"#\">Läs mer</a>",
+            "monthlyPricing": "<b>Mindre än {{monthlyPrice}} per månad.</b> Vi löser dessa problem automatiskt. En gång i dag och därefter varje vecka. <a  href=\"#\">Läs mer</a>",
             "issueCount": "{{individualIssueCount}} PROBLEM",
             "scannedAreas": "GENOMSÖKTA OMRÅDEN",
             "recommendedAction": {
                 "title": "Rekommenderad Åtgärd",
                 "description": "Vi löser dessa problem automatiskt. En gång i dag och därefter varje vecka.",
-                "yearlyPricing": "29,99 $/år",
-                "monthlyPricing": "MINDRE ÄN 2,5 $ PER MÅNAD.",
+                "yearlyPricing": "{{yearlyPrice}}/år",
+                "monthlyPricing": "MINDRE ÄN {{monthlyPrice}} PER MÅNAD.",
                 "longerTerm": "Längre period? Spara ännu mer pengar?",
                 "newDescription": "Efter registreringen kommer vi att lösa dessa problem automatiskt varje vecka.",
                 "signupButton": "REGISTRERA DIG"

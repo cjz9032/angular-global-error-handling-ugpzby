@@ -4606,14 +4606,14 @@
             "summary": "Riepilogo",
             "summaryDetails": "La scansione ha rilevato <b>{{issueCount}} problemi</b> nelle seguenti aree. Registrati ora per risolvere questi problemi e assicurare le massime prestazioni del sistema. Il nostro software può eseguire la scansione di queste aree del sistema 24x7 per individuare e risolvere i problemi, in modo che il PC assicuri sempre prestazioni di massimo livello.",
             "signupRepairButton": "REGISTRATI E RIPARA ORA",
-            "monthlyPricing": "<b>Meno di $ 2,5 al mese.</b> Risolveremo automaticamente questi problemi. Una volta oggi e ogni settimana <a  href=\"#\">Ulteriori informazioni</a>",
+            "monthlyPricing": "<b>Meno di {{monthlyPrice}} al mese.</b> Risolveremo automaticamente questi problemi. Una volta oggi e ogni settimana <a  href=\"#\">Ulteriori informazioni</a>",
             "issueCount": "{{individualIssueCount}} PROBLEMI",
             "scannedAreas": "AREE ANALIZZATE",
             "recommendedAction": {
                 "title": "Azione Consigliata",
                 "description": "Risolveremo automaticamente questi problemi. Una volta oggi e ogni settimana",
-                "yearlyPricing": "$ 29,99 all'anno",
-                "monthlyPricing": "MENO DI $ 2,5 AL MESE.",
+                "yearlyPricing": "{{yearlyPrice}} all'anno",
+                "monthlyPricing": "MENO DI {{monthlyPrice}} AL MESE.",
                 "longerTerm": "Vuoi un abbonamento per più tempo? Vuoi risparmiare ancora di più?",
                 "newDescription": "Dopo la registrazione, risolveremo automaticamente questi problemi per te ogni settimana.",
                 "signupButton": "REGISTRATI"

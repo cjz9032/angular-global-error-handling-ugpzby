@@ -4606,14 +4606,14 @@
             "summary": "Özet",
             "summaryDetails": "Taramamız aşağıdaki alanlarda <b>{{issueCount}} sorun</b> buldu. Bu sorunları gidermek ve sisteminizin sorunsuz çalışmasını sağlamak için şimdi kaydolun. Yazılımımız sorunları ortaya çıktıkça bulmak ve düzeltmek için proaktif olarak sisteminizin bu alanlarını 7/24 tarayabilir, böylece bilgisayarınız her zaman birinci sınıf performansa sahip olur.",
             "signupRepairButton": "KAYDOLUN ve HEMEN ONARIN",
-            "monthlyPricing": "<b>Ayda $2,5'dan az.</b> Bu sorunları otomatik olarak çözeceğiz. Bugün ve bundan sonra her hafta bir kez <a  href=\"#\">Daha fazla bilgi edinin</a>",
+            "monthlyPricing": "<b>Ayda {{monthlyPrice}}'dan az.</b> Bu sorunları otomatik olarak çözeceğiz. Bugün ve bundan sonra her hafta bir kez <a  href=\"#\">Daha fazla bilgi edinin</a>",
             "issueCount": "{{individualIssueCount}} SORUNLAR",
             "scannedAreas": "TARANAN ALANLAR",
             "recommendedAction": {
                 "title": "Öneri̇len Eylem",
                 "description": "Bu sorunları otomatik olarak çözeceğiz. Bugün ve bundan sonra her hafta bir kez",
-                "yearlyPricing": "$29,99 / Yıl",
-                "monthlyPricing": "AYDA $2,5'DAN AZ.",
+                "yearlyPricing": "{{yearlyPrice}} / Yıl",
+                "monthlyPricing": "AYDA {{monthlyPrice}}'DAN AZ.",
                 "longerTerm": "Daha uzun vadede mi? Daha fazla tasarruf mu?",
                 "newDescription": "Kaydolduktan sonra bu sorunları sizin için her hafta otomatik olarak düzeltiriz.",
                 "signupButton": "KAYDOL"

@@ -4,7 +4,8 @@ import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { DeviceService } from '../device/device.service';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { SPPriceCode } from 'src/app/enums/smart-performance.enum';
+import { LocalInfoService } from '../local-info/local-info.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -25,16 +26,22 @@ export class SmartPerformanceService {
 
 	subItems: any = {};
 
+	localPrice: any;
+
 
 	constructor(
 		shellService: VantageShellService,
 		private deviceService: DeviceService,
-		) {
+		private httpClient: HttpClient,
+		private localInfoService: LocalInfoService,
+	) {
 
 		this.getSmartPerformance = shellService.getSmartPerformance();
 		if (this.getSmartPerformance) {
 			this.isShellAvailable = true;
 		}
+		this.getLocalePrice();
+
 	}
 
 	getReadiness(): Promise<boolean> {
@@ -217,6 +224,20 @@ export class SmartPerformanceService {
 			subscriptionData = subscriptionDetails.data;
 		}
 		return subscriptionData;
+	}
+
+
+	async getLocalePrice() {
+		if (!this.localPrice) {
+			const localInfo = await this.localInfoService.getLocalInfo();
+			const url = environment.spGetPriceApiRoot + `country=${localInfo.GEO}`;
+			const priceData = await this.httpClient.get(url).toPromise() as any;
+			if (priceData && priceData.data) {
+				const yearPrice = priceData.data.filter(item => item.code === SPPriceCode.YEAR);
+				this.localPrice = yearPrice[0];
+			}
+		}
+		return this.localPrice;
 	}
 
 }

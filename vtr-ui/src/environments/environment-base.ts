@@ -10,4 +10,5 @@ export interface IEnvironment {
 	isServerSwitchEnabled: boolean;
 	spPaymentProcessApiRoot: string;
 	spGetOrdersApiRoot: string;
+	spGetPriceApiRoot: string;
 }

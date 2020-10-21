@@ -4606,16 +4606,16 @@
             "summary": "Rezime",
             "summaryDetails": "Naše je skeniranje pronašlo <b>{{issueCount}} problem(a)</b> u sledećim područjima u nastavku. Registrujte se odmah kako biste rešili ove probleme i održali neometani rad sistema. Naš softver može proaktivno da skenira ta područja sistema, 24 sata svakog dana u nedelji, kako bi pronašao i popravio probleme čim se jave, tako da vaš računar uvek ima vrhunske performanse.",
             "signupRepairButton": "ODMAH SE REGISTRUJTE I POPRAVITE",
-            "monthlyPricing": "<b>Manje od $2,5 mesečno.</b> Ove probleme ćemo automatski rešiti. Danas i svake naredne nedelje <a  href=\"#\">Saznajte više</a>",
+            "monthlyPricing": "<b>Manje od {{monthlyPrice}} mesečno.</b> Ove probleme ćemo automatski rešiti. Danas i svake naredne nedelje <a  href=\"#\">Saznajte više</a>",
             "issueCount": "{{individualIssueCount}} PROBLEMI",
             "scannedAreas": "SKENIRANA PODRUČJA",
             "recommendedAction": {
                 "title": "Preporučena Radnja",
                 "description": "Ove probleme ćemo automatski rešiti. Danas i svake naredne nedelje",
-                "yearlyPricing": "$29,99 / god.",
-                "monthlyPricing": "MANJE OD $2,5 MESEČNO.",
+                "yearlyPricing": "{{yearlyPrice}} / god.",
+                "monthlyPricing": "MANJE OD {{monthlyPrice}} MESEČNO.",
                 "longerTerm": "Dugoročno? Još veće uštede?",
-                "newDescription": "Nakon prijave, automatski ćemo rešavati ove probleme za vas svake nedelje.",
+                "newDescription": "Nakon prijave, automatski ćemo rešavati ove probleme umesto vas, svake nedelje.",
                 "signupButton": "REGISTRUJTE SE"
             },
             "tunepc": {

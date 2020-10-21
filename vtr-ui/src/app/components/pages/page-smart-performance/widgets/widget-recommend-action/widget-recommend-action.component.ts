@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { SmartPerformanceDialogService } from 'src/app/services/smart-performance/smart-performance-dialog.service';
+import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 
 @Component({
 	selector: 'vtr-widget-recommend-action',
@@ -10,30 +10,29 @@ import { SmartPerformanceDialogService } from 'src/app/services/smart-performanc
 export class WidgetRecommendActionComponent implements OnInit {
 
 	isShowPrice = false;
-	allHidePriceGEO = [
-		'gb', // United Kingdom
-		'ie', // Ireland
-		'au', // Australia
-		'nz', // New Zealand
-		'sg', // Singapore
-		'in', // INDIA
-		'my', // Malaysia
-		'hk', // Hong Kong
-		'tw', // Taiwan
-		'kr', // South Korea
-		'jp', // Japan
-		'th', // Thailand
-	];
+	monthlyPrice: any;
+	yearlyPrice: any;
 
 	constructor(
-		private localInfoService: LocalInfoService,
 		private smartPerformanceDialogService: SmartPerformanceDialogService,
+		private spService: SmartPerformanceService,
 	) { }
 
 	ngOnInit(): void {
-		this.localInfoService.getLocalInfo().then(localInfo => {
-			if (!this.allHidePriceGEO.includes(localInfo.GEO)) {
+		this.spService.getLocalePrice().then((priceData) => {
+			if (priceData) {
+				this.yearlyPrice = priceData.formatPrice;
+				const mp = Math.ceil(priceData.price * 100 / 12) / 100;
+				if (isNaN(this.yearlyPrice.substr(0, 1))) {
+					this.monthlyPrice = priceData.symbol + mp;
+				}
+				else {
+					this.monthlyPrice = mp + priceData.symbol;
+				}
 				this.isShowPrice = true;
+			}
+			else {
+				this.isShowPrice = false;
 			}
 		});
 	}

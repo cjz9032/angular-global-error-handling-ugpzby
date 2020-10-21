@@ -17,10 +17,11 @@
 		*ngIf="isShowPrice">
 		<h2 class="big-text"
 			id="smart-performance-scan-summary-recommendAction-yearlyPricing">
-			{{'smartPerformance.scanCompletePage.recommendedAction.yearlyPricing' |translate }}
+			{{'smartPerformance.scanCompletePage.recommendedAction.yearlyPricing' |translate:{'yearlyPrice': yearlyPrice} }}
 		</h2>
 		<small id="smart-performance-scan-summary-recommendAction-monthlyPricing"
-			role="text">{{'smartPerformance.scanCompletePage.recommendedAction.monthlyPricing' |translate }}</small>
+			role="text">{{ 'smartPerformance.scanCompletePage.recommendedAction.monthlyPricing' |translate:{'monthlyPrice': monthlyPrice} }}
+		</small>
 	</div>
 	<p id="smart-performance-scan-summary-recommendAction-longerTerm"
 		*ngIf="isShowPrice"

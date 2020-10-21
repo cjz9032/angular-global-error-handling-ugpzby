@@ -14,4 +14,5 @@ export const environment: IEnvironment = {
 	isServerSwitchEnabled: true,
 	spPaymentProcessApiRoot: 'https://uatpcsupport.lenovo.com/upgradewarranty?cid=ww:apps:pikjhe&',
 	spGetOrdersApiRoot: 'https://uatpcsupport.lenovo.com/api/v4/upsell/smart/getorders?serialNumber=',
+	spGetPriceApiRoot: 'https://uatpcsupport.lenovo.com/api/v4/upsell/smart/getPrice?',
 };

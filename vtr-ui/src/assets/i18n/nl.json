@@ -4606,16 +4606,16 @@
             "summary": "Overzicht",
             "summaryDetails": "Bij onze scan zijn er <b>{{issueCount}} problemen</b> op de volgende onderstaande gebieden gevonden. Meld u nu aan om deze problemen te verhelpen en uw systeem goed te laten werken. Onze software kan deze gebieden van uw systeem 24x7 proactief scannen om problemen op te sporen en te verhelpen, zodat uw pc altijd de beste prestaties biedt.",
             "signupRepairButton": "NU AANMELDEN EN HERSTELLEN",
-            "monthlyPricing": "<b>Minder dan $2.5 per maand.</b> Deze problemen zullen automatisch worden opgelost. Een keer vandaag en daarna elke week <a  href=\"#\">Meer informatie</a>",
+            "monthlyPricing": "<b>Minder dan {{monthlyPrice}} per maand.</b> Deze problemen zullen automatisch worden opgelost. Een keer vandaag en daarna elke week <a  href=\"#\">Meer informatie</a>",
             "issueCount": "{{individualIssueCount}} PROBLEMEN",
             "scannedAreas": "GESCANDE GEBIEDEN",
             "recommendedAction": {
                 "title": "Aanbevolen Handeling",
                 "description": "Deze problemen zullen automatisch worden opgelost. Een keer vandaag en daarna elke week",
-                "yearlyPricing": "$29.99/jaar",
-                "monthlyPricing": "MINDER DAN $2.5 PER MAAND.",
+                "yearlyPricing": "{{yearlyPrice}}/jaar",
+                "monthlyPricing": "MINDER DAN {{monthlyPrice}} PER MAAND.",
                 "longerTerm": "Langere termijn? Nog meer besparingen?",
-                "newDescription": "Na het aanmelden lossen we deze problemen elke week automatisch voor je op.",
+                "newDescription": "Nadat u zich hebt aangemeld, worden deze problemen automatisch elke week voor u opgelost.",
                 "signupButton": "AANMELDEN"
             },
             "tunepc": {
