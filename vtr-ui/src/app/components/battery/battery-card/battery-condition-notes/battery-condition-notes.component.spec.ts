@@ -34,6 +34,7 @@ describe('BatteryConditionNotesComponent', () => {
     component.batteryFullChargeCapacity = 100;
     component.batteryDesignCapacity = 100;
     component.batteryConditions = goodAndAcConnectedConditions;
+    component.batteryDetected = true;
   });
 
   it('should create', () => {
@@ -125,6 +126,12 @@ describe('BatteryConditionNotesComponent', () => {
         expect(component.canShowFullSupportAdapterNote(0)).toBe(true);
         expect(component.acAdapter.wattage).toEqual(65);
         expect(component.acAdapter.type).toEqual('USB-C');
+      });
+      it("should render generic 'power is connected note' when battery is not detected", () => {
+        component.batteryDetected = false;
+        fixture.detectChanges();
+        let h6 = fixture.debugElement.query(By.css('h6')).nativeElement;
+        expect(h6.innerHTML).toBe('device.deviceSettings.batteryGauge.condition.AcAdapterConnected');
       });
     });
   });

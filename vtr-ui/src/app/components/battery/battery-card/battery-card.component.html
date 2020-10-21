@@ -65,6 +65,7 @@
 		<vtr-battery-condition-notes 
 			[batteryConditions]="batteryConditions"
 			[batteryGauge]="batteryGauge"
+			[batteryDetected]="!batteryIndicator.batteryNotDetected"
 			[batteryFullChargeCapacity]="batteryInfo[0].fullChargeCapacity"
 			[batteryDesignCapacity]="batteryInfo[0].designCapacity"> 
 		</vtr-battery-condition-notes>

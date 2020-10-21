@@ -18,6 +18,7 @@ export class BatteryConditionNotesComponent implements OnInit, OnChanges {
   @Input() batteryGauge: BatteryGaugeDetail;
   @Input() batteryFullChargeCapacity: number;
   @Input() batteryDesignCapacity: number;
+  @Input() batteryDetected = false;
 
   public _notes: string[];
   public canShowAcDetailedNote = false;
@@ -72,7 +73,7 @@ export class BatteryConditionNotesComponent implements OnInit, OnChanges {
     const isAcAdapterConnected = this.isConditionStatusAdapter(condition);
     const isAcAdapterSupported = condition.condition == Conditions.FullACAdapterSupport;
     const isAcAdapterInfoUnknown = (this.acAdapter?.isAttached) && (this.acAdapter.wattage == 0);
-    if ( isAcAdapterConnected && isAcAdapterSupported && isAcAdapterInfoUnknown ) {
+    if ( isAcAdapterConnected && isAcAdapterSupported && isAcAdapterInfoUnknown || !this.batteryDetected) {
       return BatteryConditionNotesComponent.AC_CONNECTED_TEXT;
 	}
 
@@ -131,7 +132,7 @@ export class BatteryConditionNotesComponent implements OnInit, OnChanges {
   }
 
   public canShowPoorNote(index: number): boolean {
-    return this.isStatusPoor(index) && !this.isConditionError(index);
+    return this.isStatusPoor(index) && !this.isConditionError(index) && this.batteryDetected;
   }
 
   public isConditionError(index: number): boolean {
@@ -143,7 +144,7 @@ export class BatteryConditionNotesComponent implements OnInit, OnChanges {
   }
 
   public canShowAdapterIcon(index: number): boolean {
-    return this.isAcAdapterInUse(index) && this.acAdapter && this.acAdapter.isAttached;
+    return this.isAcAdapterInUse(index) && this.acAdapter && this.acAdapter.isAttached || !this.batteryDetected;
   }
 
   public canShowAcAdapterConnectedNote(index: number): boolean {
