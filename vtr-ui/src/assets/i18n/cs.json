@@ -4606,16 +4606,16 @@
             "summary": "Souhrn",
             "summaryDetails": "Během naší kontroly jsme v následujících oblastech našli následující počet problémů: <b>{{issueCount}}</b>. Pokud budete chtít tyto problémy odstranit a zajistit tak hladký chod systému, můžete se zaregistrovat. Náš software dokáže aktivně a nepřetržitě kontrolovat tyto oblasti ve vašem systému, vyhledávat a odstraňovat případné problémy a zajistit, že váš počítač bude mít vždy špičkový výkon.",
             "signupRepairButton": "ZAREGISTROVAT A OPRAVIT",
-            "monthlyPricing": "<b>Méně než $2,5 měsíčně.</b> Tyto problémy automaticky vyřešíme. Jednou dnes a poté každý týden <a  href=\"#\">Další informace</a>",
+            "monthlyPricing": "<b>Méně než {{monthlyPrice}} měsíčně.</b> Tyto problémy automaticky vyřešíme. Jednou dnes a poté každý týden <a  href=\"#\">Další informace</a>",
             "issueCount": "POČET PROBLÉMŮ: {{individualIssueCount}}",
             "scannedAreas": "KONTROLOVANÉ OBLASTI",
             "recommendedAction": {
                 "title": "Doporučená Akce",
                 "description": "Tyto problémy automaticky vyřešíme. Jednou dnes a poté každý týden",
-                "yearlyPricing": "$29,99 ročně",
-                "monthlyPricing": "MÉNĚ NEŽ $2,5 MĚSÍČNĚ.",
+                "yearlyPricing": "{{yearlyPrice}} ročně",
+                "monthlyPricing": "MÉNĚ NEŽ {{monthlyPrice}} MĚSÍČNĚ.",
                 "longerTerm": "Chcete využít dlouhodobějšího plánu? Chcete ještě více ušetřit?",
-                "newDescription": "Po registraci tyto problémy za vás každý týden automaticky opravíme.",
+                "newDescription": "Po registraci za vás tyto problémy každý týden automaticky opravíme.",
                 "signupButton": "ZAREGISTROVAT SE"
             },
             "tunepc": {

@@ -4606,14 +4606,14 @@
             "summary": "Podsumowanie",
             "summaryDetails": "Skanowanie pozwoliło dotrzeć do <b>{{issueCount}} zagrożeń</b> dotyczących obszarów wymienionych poniżej. Zarejestruj się teraz, aby rozwiązać te problemy i dalej cieszyć się płynnym działaniem systemu. Nasze oprogramowanie może aktywnie skanować te obszary komputera 24 godziny na dobę, 7 dni w tygodniu, aby znajdować i rozwiązywać pojawiające się problemy. Dzięki temu Twój komputer będzie zawsze działać z najwyższą wydajnością.",
             "signupRepairButton": "ZAREJESTRUJ SIĘ I ROZWIĄŻ PROBLEMY TERAZ",
-            "monthlyPricing": "<b>Mniej niż $2,5 na miesiąc.</b> Automatycznie rozwiążemy te problemy. Dziś, a potem co tydzień <a  href=\"#\">Dowiedz się więcej</a>",
+            "monthlyPricing": "<b>Mniej niż {{monthlyPrice}} na miesiąc.</b> Automatycznie rozwiążemy te problemy. Dziś, a potem co tydzień <a  href=\"#\">Dowiedz się więcej</a>",
             "issueCount": "PROBLEMY: {{individualIssueCount}}",
             "scannedAreas": "PRZESKANOWANE OBSZARY",
             "recommendedAction": {
                 "title": "Zalecane Działania",
                 "description": "Automatycznie rozwiążemy te problemy. Dziś, a potem co tydzień",
-                "yearlyPricing": "$29,99/rok",
-                "monthlyPricing": "MNIEJ NIŻ $2,5 NA MIESIĄC.",
+                "yearlyPricing": "{{yearlyPrice}}/rok",
+                "monthlyPricing": "MNIEJ NIŻ {{monthlyPrice}} NA MIESIĄC.",
                 "longerTerm": "Dłuższy okres? Jeszcze większe oszczędności?",
                 "newDescription": "Po rejestracji co tydzień będziemy automatycznie rozwiązywać te problemy.",
                 "signupButton": "ZAREJESTRUJ SIĘ"

@@ -4606,14 +4606,14 @@
             "summary": "摘要",
             "summaryDetails": "我們的掃描在以下區域發現 <b>{{issueCount}} 個問題</b>。立即註冊，以修正這些問題並保持系統執行順暢。我們的軟體可以全天候主動掃描系統的這些區域，在問題開始出現時及早發現並進行修復，讓您的 PC 始終保持頂尖效能。",
             "signupRepairButton": "立即註冊並修復",
-            "monthlyPricing": "<b>每月不到 $2.5。</b>我們會自動修正這些問題。今天一次，此後每週一次<a  href=\"#\">瞭解更多</a>",
+            "monthlyPricing": "<b>每月不到 {{monthlyPrice}}。</b>我們會自動修正這些問題。今天一次，此後每週一次<a  href=\"#\">瞭解更多</a>",
             "issueCount": "{{individualIssueCount}} 個問題",
             "scannedAreas": "掃描區域",
             "recommendedAction": {
                 "title": "建議動作",
                 "description": "我們會自動修正這些問題。今天一次，此後每週一次",
-                "yearlyPricing": "$29.99/年",
-                "monthlyPricing": "每月不到 $2.5。",
+                "yearlyPricing": "{{yearlyPrice}}/年",
+                "monthlyPricing": "每月不到 {{monthlyPrice}}。",
                 "longerTerm": "更長期限？更加省錢？",
                 "newDescription": "註冊後，我們將每周自動為您解決這些問題。",
                 "signupButton": "註冊"

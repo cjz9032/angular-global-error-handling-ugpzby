@@ -4606,14 +4606,14 @@
             "summary": "Zusammenfassung",
             "summaryDetails": "Unser Scan hat <b>{{issueCount}} Problem(e)</b> in den folgenden Bereichen gefunden. Registrieren Sie sich jetzt, damit diese Probleme behoben werden und Ihr System reibungslos läuft. Mit unserer Software können diese Bereiche auf Ihrem System rund um die Uhr proaktiv gescannt und Probleme rasch gefunden und behoben werden, sodass Ihr PC immer eine erstklassige Leistung bietet.",
             "signupRepairButton": "JETZT REGISTRIEREN UND REPARIEREN",
-            "monthlyPricing": "<b>Weniger als $2,5 im Monat.</b> Wir beheben diese Probleme automatisch. Einmal heute und danach jede Woche <a  href=\"#\">Mehr erfahren</a>",
+            "monthlyPricing": "<b>Weniger als {{monthlyPrice}} im Monat.</b> Wir beheben diese Probleme automatisch. Einmal heute und danach jede Woche <a  href=\"#\">Mehr erfahren</a>",
             "issueCount": "{{individualIssueCount}} PROBLEME",
             "scannedAreas": "GESCANNTE BEREICHE",
             "recommendedAction": {
                 "title": "Empfohlene Aktion",
                 "description": "Wir beheben diese Probleme automatisch. Einmal heute und danach jede Woche",
-                "yearlyPricing": "$29.99/Jahr",
-                "monthlyPricing": "WENIGER ALS $2,5 IM MONAT.",
+                "yearlyPricing": "{{yearlyPrice}}/Jahr",
+                "monthlyPricing": "WENIGER ALS {{monthlyPrice}} IM MONAT.",
                 "longerTerm": "Langfristiger planen? Noch mehr sparen?",
                 "newDescription": "Nach der Anmeldung werden wir diese Probleme jede Woche automatisch für Sie beheben.",
                 "signupButton": "REGISTRIEREN"

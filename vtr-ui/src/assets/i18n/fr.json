@@ -4606,14 +4606,14 @@
             "summary": "Récapitulatif",
             "summaryDetails": "Notre analyse a détecté <b>{{issueCount}} problème(s)</b> dans les zones ci-dessous. Inscrivez-vous dès maintenant pour résoudre ces incidents et assurer le bon fonctionnement de votre système. Notre logiciel peut analyser proactivement ces zones de votre système 24 h/24 et 7 j/7 afin d’identifier et de résoudre les incidents dès qu’ils surviennent. Ainsi, les performances de votre PC sont toujours de très haut niveau.",
             "signupRepairButton": "S’INSCRIRE ET RÉPARER MAINTENANT",
-            "monthlyPricing": "<b>Moins de 2,5 $ par mois.</b> Ces problèmes seront résolus automatiquement. Une fois aujourd’hui, puis toutes les semaines <a  href=\"#\">En savoir plus</a>",
+            "monthlyPricing": "<b>Moins de {{monthlyPrice}} par mois.</b> Ces problèmes seront résolus automatiquement. Une fois aujourd’hui, puis toutes les semaines <a  href=\"#\">En savoir plus</a>",
             "issueCount": "{{individualIssueCount}} PROBLÈMES",
             "scannedAreas": "ZONES ANALYSÉES",
             "recommendedAction": {
                 "title": "Action Recommandée",
                 "description": "Ces problèmes seront résolus automatiquement. Une fois aujourd’hui, puis toutes les semaines",
-                "yearlyPricing": "29,99 $ / an",
-                "monthlyPricing": "MOINS DE 2,5 $ PAR MOIS.",
+                "yearlyPricing": "{{yearlyPrice}} / an",
+                "monthlyPricing": "MOINS DE {{monthlyPrice}} PAR MOIS.",
                 "longerTerm": "À plus long terme ? Encore plus d’économies ?",
                 "newDescription": "Après l'inscription, nous réglerons automatiquement ces problèmes pour vous chaque semaine.",
                 "signupButton": "S’INSCRIRE"

@@ -4606,16 +4606,16 @@
             "summary": "Sažetak",
             "summaryDetails": "Naše je skeniranje pronašlo <b>{{issueCount}} probleme</b> u sljedećim područjima u nastavku. Registrirajte se odmah kako biste riješili ove probleme i održali nesmetani rad sustava. Naš softver može proaktivno skenirati ta područja vašeg sustava 24 sata svakog dana u tjednu kako bi pronašao i popravio probleme tijekom nastajanja, tako da vaše računalo uvijek vrhunski funkcionira.",
             "signupRepairButton": "ODMAH SE REGISTRIRAJTE I POPRAVITE",
-            "monthlyPricing": "<b>Manje od 2,5 $ mjesečno.</b> Te ćemo probleme automatski riješiti. Danas i svaki tjedan nakon toga <a  href=\"#\">Saznajte više</a>",
+            "monthlyPricing": "<b>Manje od {{monthlyPrice}} mjesečno.</b> Te ćemo probleme automatski riješiti. Danas i svaki tjedan nakon toga <a  href=\"#\">Saznajte više</a>",
             "issueCount": "{{individualIssueCount}} PROBLEMI",
             "scannedAreas": "SKENIRANA PODRUČJA",
             "recommendedAction": {
                 "title": "Preporučena Radnja",
                 "description": "Te ćemo probleme automatski riješiti. Danas i svaki tjedan nakon toga",
-                "yearlyPricing": "29,99 $/god.",
-                "monthlyPricing": "MANJE OD 2,5 $ MJESEČNO.",
+                "yearlyPricing": "{{yearlyPrice}}/god.",
+                "monthlyPricing": "MANJE OD {{monthlyPrice}} MJESEČNO.",
                 "longerTerm": "Dugoročno? Još veće uštede?",
-                "newDescription": "Nakon prijave automatski ćemo vam popraviti te probleme svaki tjedan.",
+                "newDescription": "Nakon registracije, automatski ćemo rješavati ove probleme za vas svaki tjedan.",
                 "signupButton": "REGISTRIRAJTE SE"
             },
             "tunepc": {

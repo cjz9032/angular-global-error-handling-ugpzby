@@ -4606,16 +4606,16 @@
             "summary": "Rezumat",
             "summaryDetails": "Scanarea noastră a găsit <b>{{issueCount}} probleme</b> în următoarele zone de mai jos. Înregistrați-vă acum pentru a remedia aceste probleme și pentru ca sistemul dumneavoastră să funcționeze corespunzător. Software-ul nostru poate scana în mod proactiv aceste zone ale sistemului dumneavoastră, non-stop și poate remedia erorile pe măsură ce apar, astfel încât PC-ul dumneavoastră să aibă întotdeauna performanțe excelente.",
             "signupRepairButton": "ÎNREGISTRAȚI-VĂ ȘI REMEDIAȚI ACUM",
-            "monthlyPricing": "<b>Mai puțin de $2,5 pe lună.</b> Vom remedia automat aceste probleme. Astăzi și ulterior în fiecare săptămână <a  href=\"#\">Aflați mai multe</a>",
+            "monthlyPricing": "<b>Mai puțin de {{monthlyPrice}} pe lună.</b> Vom remedia automat aceste probleme. Astăzi și ulterior în fiecare săptămână <a  href=\"#\">Aflați mai multe</a>",
             "issueCount": "{{individualIssueCount}} PROBLEME",
             "scannedAreas": "ZONE SCANATE",
             "recommendedAction": {
                 "title": "Acțiuni Recomandate",
                 "description": "Vom remedia automat aceste probleme. Astăzi și ulterior în fiecare săptămână",
-                "yearlyPricing": "$29,99/an",
-                "monthlyPricing": "MAI PUȚIN DE $2,5 PE LUNĂ.",
+                "yearlyPricing": "{{yearlyPrice}}/an",
+                "monthlyPricing": "MAI PUȚIN DE {{monthlyPrice}} PE LUNĂ.",
                 "longerTerm": "Doriți o perioadă mai mare? Să faceți economii și mai mari?",
-                "newDescription": "După înscriere, vom rezolva automat aceste probleme în fiecare săptămână.",
+                "newDescription": "După înscriere, vom remedia automat aceste probleme pentru dvs. în fiecare săptămână.",
                 "signupButton": "ÎNREGISTRAȚI-VĂ"
             },
             "tunepc": {

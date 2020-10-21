@@ -17,7 +17,6 @@ import { SmartPerformanceService } from 'src/app/services/smart-performance/smar
 	styleUrls: ['./modal-smart-performance-subscribe.component.scss']
 })
 export class ModalSmartPerformanceSubscribeComponent implements OnInit {
-	public spPaymentPageEnum: any;
 	myDate = new Date();
 	machineType: any;
 	systemSerialNumber: any;
@@ -43,7 +42,6 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.spPaymentPageEnum = PaymentPage;
 		this.supportService.getMachineInfo().then(async (machineInfo) => {
 			this.loggerService.info('MachineInfo ====================================================== ', machineInfo);
 			this.countryCode = machineInfo.country;
@@ -51,18 +49,8 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 			this.systemMT = machineInfo.mt;
 			this.langCode = this.getSPSubscriptionSupportedLanguageFromCountry(this.countryCode);
 			this.paymentUrl =
-				environment.spPaymentProcessApiRoot +
-				// this.countryCode +
-				// this.spPaymentPageEnum.SLASH +
-				// this.langCode +
-				// this.spPaymentPageEnum.SLASH +
-				this.spPaymentPageEnum.SERIALQUERYPARAMETER +
-				this.systemSerialNumber +
-				this.spPaymentPageEnum.SMARTPERFORMANCE +
-				this.spPaymentPageEnum.TRUE +
-				this.spPaymentPageEnum.SOURCEQUERYPARAMETER +
-				this.spPaymentPageEnum.APPLICATIONNAME;
-
+				`${environment.pcsupportApiRoot}/upgradewarranty?serial=${this.systemSerialNumber}
+				&smartperformance=true&source=COMPANION`;
 		});
 	}
 

@@ -4606,14 +4606,14 @@
             "summary": "Yhteenveto",
             "summaryDetails": "Tarkistuksessa löydettiin <b>{{issueCount}} ongelmaa</b> seuraavilla alueilla. Rekisteröidy nyt, niin voit korjata nämä ongelmat ja pitää järjestelmän toimintakunnossa. Ohjelmistomme tarkistaa nämä järjestelmäsi alueet ympäri vuorokauden ennakoivasti niin, että ongelmat löydetään ja korjataan heti niiden ilmetessä. Näin tietokoneesi suorituskyky on aina parhaimmillaan.",
             "signupRepairButton": "REKISTERÖIDY JA KORJAA NYT",
-            "monthlyPricing": "<b>Alle 2,5 $ kuukaudessa.</b> Korjaamme nämä ongelmat automaattisesti. Kerran tänään ja joka viikko sen jälkeen <a  href=\"#\">Lue lisää</a>",
+            "monthlyPricing": "<b>Alle {{monthlyPrice}} kuukaudessa.</b> Korjaamme nämä ongelmat automaattisesti. Kerran tänään ja joka viikko sen jälkeen <a  href=\"#\">Lue lisää</a>",
             "issueCount": "{{individualIssueCount}} ONGELMAA",
             "scannedAreas": "TARKISTETUT ALUEET",
             "recommendedAction": {
                 "title": "Suositeltava Toiminto",
                 "description": "Korjaamme nämä ongelmat automaattisesti. Kerran tänään ja joka viikko sen jälkeen",
-                "yearlyPricing": "29,99 $/v",
-                "monthlyPricing": "ALLE 2,5 $ KUUKAUDESSA.",
+                "yearlyPricing": "{{yearlyPrice}}/v",
+                "monthlyPricing": "ALLE {{monthlyPrice}} KUUKAUDESSA.",
                 "longerTerm": "Pidempi aikaväli? Suurempia säästöjä?",
                 "newDescription": "Rekisteröitymisen jälkeen korjaamme nämä ongelmat automaattisesti joka viikko.",
                 "signupButton": "REKISTERÖIDY"

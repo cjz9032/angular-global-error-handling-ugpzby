@@ -4606,16 +4606,16 @@
             "summary": "Resumen",
             "summaryDetails": "Nuestro análisis detectó <b>{{issueCount}} problema(s)</b> en las siguientes áreas. Regístrese ahora para corregir estos problemas y mantener su sistema funcionando sin problemas. Nuestro software puede analizar proactivamente estas áreas de su sistema en cualquier momento para buscar y corregir los problemas a medida que surgen, de modo que su PC siempre tenga un rendimiento superior.",
             "signupRepairButton": "REGÍSTRESE Y REALICE LA REPARACIÓN AHORA MISMO",
-            "monthlyPricing": "<b>Menos de $2.5 mensuales.</b> Corregiremos estos problemas automáticamente. Una vez hoy y todas las semanas posteriores <a  href=\"#\">Más información</a>",
+            "monthlyPricing": "<b>Menos de {{monthlyPrice}} mensuales.</b> Corregiremos estos problemas automáticamente. Una vez hoy y todas las semanas posteriores <a  href=\"#\">Más información</a>",
             "issueCount": "{{individualIssueCount}} PROBLEMAS",
             "scannedAreas": "ÁREAS ANALIZADAS",
             "recommendedAction": {
                 "title": "Acción Recomendada",
                 "description": "Corregiremos estos problemas automáticamente. Una vez hoy y todas las semanas posteriores",
-                "yearlyPricing": "$29.99 / año",
-                "monthlyPricing": "MENOS DE $2.5 MENSUALES.",
+                "yearlyPricing": "{{yearlyPrice}} / año",
+                "monthlyPricing": "MENOS DE {{monthlyPrice}} MENSUALES.",
                 "longerTerm": "¿A más largo plazo? ¿Aún más ahorros?",
-                "newDescription": "Después de registrarse, solucionaremos estos problemas automáticamente cada semana.",
+                "newDescription": "Después de registrarse, resolveremos estos problemas automáticamente cada semana.",
                 "signupButton": "REGÍSTRESE"
             },
             "tunepc": {

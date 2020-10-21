@@ -2737,7 +2737,7 @@
 			"signupRepairButton": "SIGN UP & REPAIR NOW",
 			"renewAndFix": "Renew & Fix",
 			"backToHome": "Back To Home",
-			"monthlyPricing": "<b>Less than $2.5 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
+			"monthlyPricing": "<b>Less than {{monthlyPrice}} per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
 			"issueCount": "{{individualIssueCount}} ISSUES",
 			"issues": "Issue(s)",
 			"tuneIssueCount": "{{tune}}",
@@ -2751,8 +2751,8 @@
 			"recommendedAction": {
 				"title": "Recommended Action",
 				"description": "We will automatically fix these issues. Once today and every week thereafter",
-				"yearlyPricing": "$29.99 / Yr",
-				"monthlyPricing": "LESS THAN $2.5 PER MONTH.",
+				"yearlyPricing": "{{yearlyPrice}} / Yr",
+				"monthlyPricing": "LESS THAN {{monthlyPrice}} PER MONTH.",
 				"longerTerm": "Longer term? Even more savings?",
 				"newDescription": "After the sign up, we will automatically fix these issues for you every week.",
 				"signupButton": "SIGN UP"

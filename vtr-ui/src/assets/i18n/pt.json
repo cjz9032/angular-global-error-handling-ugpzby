@@ -4606,16 +4606,16 @@
             "summary": "Descrição",
             "summaryDetails": "A nossa análise encontrou <b>{{issueCount}} problema(s)</b> nas seguintes áreas abaixo. Inscreva-se agora para resolver estes problemas e manter o sistema a funcionar sem problemas. O nosso software pode analisar proativamente estas áreas do seu sistema PC 24 horas por dia para localizar e corrigir os problemas à medida que estes surgem, para o seu PC ter sempre um desempenho de topo.",
             "signupRepairButton": "INSCREVER-SE E REPARAR AGORA",
-            "monthlyPricing": "<b>Menos de 2,5 $ por mês.</b> Vamos resolver automaticamente estes problemas. Uma vez hoje e depois todas as semanas <a  href=\"#\">Saiba mais</a>",
+            "monthlyPricing": "<b>Menos de {{monthlyPrice}} por mês.</b> Vamos resolver automaticamente estes problemas. Uma vez hoje e depois todas as semanas <a  href=\"#\">Saiba mais</a>",
             "issueCount": "{{individualIssueCount}} PROBLEMAS",
             "scannedAreas": "ÁREAS ANALISADAS",
             "recommendedAction": {
                 "title": "Ação Recomendada",
                 "description": "Vamos resolver automaticamente estes problemas. Uma vez hoje e depois todas as semanas",
-                "yearlyPricing": "29,99 $/Ano",
-                "monthlyPricing": "MENOS DE 2,5 $ POR MÊS.",
+                "yearlyPricing": "{{yearlyPrice}}/Ano",
+                "monthlyPricing": "MENOS DE {{monthlyPrice}} POR MÊS.",
                 "longerTerm": "Pretende durante mais tempo? Ainda mais poupanças?",
-                "newDescription": "Após a inscrição, corrigiremos esses problemas automaticamente para você todas as semanas.",
+                "newDescription": "Depois de se registar, iremos corrigir automaticamente estes seus problemas todas as semanas.",
                 "signupButton": "INSCREVER-SE"
             },
             "tunepc": {

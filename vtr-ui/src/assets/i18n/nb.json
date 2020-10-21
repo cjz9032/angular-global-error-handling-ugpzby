@@ -4606,14 +4606,14 @@
             "summary": "Sammendrag",
             "summaryDetails": "Skanningen fant <b>{{issueCount}}problem(er)</b> i områdene nedenfor. Registrer deg nå for å løse disse problemene og sørge for at systemet ditt kjører problemfritt. Programvaren vår kan proaktivt skanne disse områdene i systemet ditt døgnet rundt for å finne og løse problemer etter hvert som de oppstår, slik at PC-en alltid har topp ytelse.",
             "signupRepairButton": "REGISTRER OG REPARER NÅ",
-            "monthlyPricing": "<b>Mindre enn $2,5 per måned.</b> Disse problemene vil bli løst automatisk. En gang i dag og deretter hver uke <a  href=\"#\">Finn ut mer</a>",
+            "monthlyPricing": "<b>Mindre enn {{monthlyPrice}} per måned.</b> Disse problemene vil bli løst automatisk. En gang i dag og deretter hver uke <a  href=\"#\">Finn ut mer</a>",
             "issueCount": "{{individualIssueCount}} PROBLEMER",
             "scannedAreas": "SKANNEDE OMRÅDER",
             "recommendedAction": {
                 "title": "Anbefalt Handling",
                 "description": "Disse problemene vil bli løst automatisk. En gang i dag og deretter hver uke",
-                "yearlyPricing": "$29,99 / ÅR",
-                "monthlyPricing": "MINDRE ENN $2,5 PER MÅNED.",
+                "yearlyPricing": "{{yearlyPrice}} / ÅR",
+                "monthlyPricing": "MINDRE ENN {{monthlyPrice}} PER MÅNED.",
                 "longerTerm": "Lengre termin? Flere kostnadsbesparelser?",
                 "newDescription": "Etter registreringen vil vi automatisk fikse disse problemene for deg hver uke.",
                 "signupButton": "REGISTRER DEG"

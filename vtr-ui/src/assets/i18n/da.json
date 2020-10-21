@@ -4606,14 +4606,14 @@
             "summary": "Opsummering",
             "summaryDetails": "Vores scanning fandt <b>{{issueCount}} problem(er)</b> i følgende områder nedenfor. Tilmeld dig nu for at løse problemerne og sørge for, at systemet fungerer problemfrit. Vores software kan proaktivt scanne disse områder i dit system døgnet rundt for at finde og løse problemer, når de opstår, så computeren altid har en ydeevne, der er helt i top.",
             "signupRepairButton": "TILMELD OG REPARER NU",
-            "monthlyPricing": "<b>Mindre end $2,5 pr. måned.</b> Problemerne løses automatisk. Én gang i dag og hver uge herefter <a  href=\"#\">Få mere at vide</a>",
+            "monthlyPricing": "<b>Mindre end {{monthlyPrice}} pr. måned.</b> Problemerne løses automatisk. Én gang i dag og hver uge herefter <a  href=\"#\">Få mere at vide</a>",
             "issueCount": "{{individualIssueCount}} PROBLEMER",
             "scannedAreas": "SCANNEDE OMRÅDER",
             "recommendedAction": {
                 "title": "Anbefalet Handling",
                 "description": "Problemerne løses automatisk. Én gang i dag og hver uge herefter",
-                "yearlyPricing": "$29,99 / år",
-                "monthlyPricing": "MINDRE END $2,5 PR. MÅNED.",
+                "yearlyPricing": "{{yearlyPrice}} / år",
+                "monthlyPricing": "MINDRE END {{monthlyPrice}} PR. MÅNED.",
                 "longerTerm": "Længere tidsperiode? Endnu flere besparelser?",
                 "newDescription": "Efter tilmeldingen løser vi automatisk disse problemer for dig hver uge.",
                 "signupButton": "TILMELD"

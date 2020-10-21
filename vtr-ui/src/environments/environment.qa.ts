@@ -12,6 +12,5 @@ export const environment: IEnvironment = {
 	allowMockService: false,
 	isLoggingEnabled: true,
 	isServerSwitchEnabled: true,
-	spPaymentProcessApiRoot: 'https://uatpcsupport.lenovo.com/upgradewarranty?cid=ww:apps:pikjhe&',
-	spGetOrdersApiRoot: 'https://uatpcsupport.lenovo.com/api/v4/upsell/smart/getorders?serialNumber=',
+	pcsupportApiRoot: 'https://uatpcsupport.lenovo.com',
 };

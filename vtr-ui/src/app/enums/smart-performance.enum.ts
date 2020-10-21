@@ -31,18 +31,18 @@ export enum enumSmartPerformance{
 	SCHEDULESCANENDDATE = '2020/07/27',
 	SUMMARYWAITINGTIME = 5,
 	OLDSCHEDULESCAN = 'Lenovo.Vantage.SmartPerformance.ScheduleScan',
-	OLDSCHEDULESCANANDFIX='Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix',
+	OLDSCHEDULESCANANDFIX= 'Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix',
 	SCHEDULESCAN = 'Lenovo.Vantage.SmartPerformance.SScan',
 	SCHEDULESCANANDFIX = 'Lenovo.Vantage.SmartPerformance.SScanAndFix'
 }
 export enum PaymentPage{
 	APPLICATIONNAME = 'COMPANION',
 	SMARTPERFORMANCE = '&smartperformance=',
-	SERIALQUERYPARAMETER='serial=',
-	MTQUERYPARAMETER='&mt=',
-	SOURCEQUERYPARAMETER='&source=',
-	SLASH='/',
-	TRUE='true',
+	SERIALQUERYPARAMETER= 'serial=',
+	MTQUERYPARAMETER= '&mt=',
+	SOURCEQUERYPARAMETER= '&source=',
+	SLASH= '/',
+	TRUE= 'true',
 	ORDERWAITINGTIME = 1.5, // MINUTES,
 }
 export enum SpSubscriptionDetails {
@@ -73,3 +73,10 @@ export const actualDays: any = [
 ];
 
 export const actualMeridiem = ['AM', 'PM'];
+
+export enum SPPriceCode {
+	YEAR = '5WS0X58671',
+	TWOYEAR = '5WS0X58670',
+	THREEYEAR = '5WS0X58672',
+	FOURYEAR = '5WS0X58669',
+}
