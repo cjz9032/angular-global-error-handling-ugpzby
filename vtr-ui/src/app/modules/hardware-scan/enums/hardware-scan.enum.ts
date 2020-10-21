@@ -73,3 +73,9 @@ export enum HardwareScanProgress {
 	HasDevicesToRecoverBadSectors = '[HardwareScan] HasDevicesToRecoverBadSectors',
 	BackEvent = '[HardwareScan] BackEvent'
 }
+
+export enum ExportLogErrorStatus {
+	SuccessExport,
+	AccessDenied,
+	GenericError
+}
