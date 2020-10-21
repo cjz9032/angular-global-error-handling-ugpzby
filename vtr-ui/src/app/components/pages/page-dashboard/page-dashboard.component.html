@@ -70,7 +70,8 @@
 						</vtr-container-card>
 
 						<vtr-material-state-card-container *ngIf="isShowStateCard" order=2
-							[cardData]="positionBData">
+							[cardData]="positionBData"
+							cardId="dashboard-lnk-systemInfo-position-b">
 							<div class="circle-state">
 							<vtr-widget-round-status
 								[status]="positionBData.state"
@@ -97,7 +98,7 @@
 							<vtr-material-state-card-container
 								[cardData]="securityInfo?.status !== undefined ? positionCData[securityInfo.status + 1] : positionCData[0]"
 								order=3
-								cardId="dashboard-lnk-security">
+								cardId="dashboard-lnk-security-position-c">
 								<vtr-material-status-circle
 									[gradientColor]="securityInfo"
 									[statusText]="securityInfo?.statusText">
